@@ -17,7 +17,6 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop ulclass,
-@prop children,
-@prop ...attributes
+@props: children?: any;
+@props:ulclass?: string | undefined;
 -->

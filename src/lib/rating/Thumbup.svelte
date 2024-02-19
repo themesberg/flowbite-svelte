@@ -64,13 +64,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop fillPercent = 100,
-@prop fillColor = '#00b500',
-@prop strokeColor = '#00b500',
-@prop size = 24,
-@prop ariaLabel = 'thumbup',
-@prop id = idGenerator(),
-@prop role = 'img',
-@prop svgclass,
-@prop ...attributes
+@props: fillPercent?:  number; = 100;
+@props:fillColor?:  string; = '#00b500';
+@props:strokeColor?:  string; = '#00b500';
+@props:size?:  number; = 24;
+@props:ariaLabel?:  string; = 'thumbup';
+@props:id?:  string; = idGenerator();
+@props:role?:  string; = 'img';
+@props:svgclass?: string;
 -->

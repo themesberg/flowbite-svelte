@@ -86,14 +86,13 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop href = undefined,
-@prop horizontal = false,
-@prop shadow = false,
-@prop reverse = false,
-@prop src = undefined,
-@prop padding = 'lg',
-@prop size = 'sm',
-@prop class: classname = '',
-@prop ...attributes
+@props: children?: any;
+@props:href?:  string | undefined; = undefined;
+@props:horizontal?:  boolean; = false;
+@props:shadow?:  boolean; = false;
+@props:reverse?:  boolean; = false;
+@props:src?:  string | undefined; = undefined;
+@props:padding?:  'none' | 'sm' | 'md' | 'lg' | 'xl'; = 'lg';
+@props:size?:  SizeType; = 'sm';
+@props:class?: string | undefined;
 -->

@@ -8,51 +8,18 @@
     value?: string | number;
     inline?: boolean;
     btnclass?: string;
-
-    // Button properties forwarding
     pill?: boolean;
     outline?: boolean;
     size?: SizeType | undefined;
     color?: ButtonColorType | undefined;
     shadow?: boolean;
   }
-  let {
-    children,
-    group,
-    value,
-    inline = true,
-    btnclass,
-    pill,
-    outline,
-    size,
-    color,
-    shadow,
-    ...attributes
-  } = $props<Props>();
-  // export let group: string | number = '';
-  // export let value: string | number = '';
-  // export let inline: boolean = true;
-
-  // Button properties forwarding
-  // export let pill: boolean = false;
-  // export let outline: boolean = false;
-  // export let size: SizeType | undefined = undefined;
-  // export let color: ButtonColorType | undefined = undefined;
-  // export let shadow: boolean = false;
+  let { children, group, value, inline = true, btnclass, pill, outline, size, color, shadow, ...attributes } = $props<Props>();
 
   let buttonCls: string = twMerge(inline ? 'inline-flex' : 'flex', btnclass);
 </script>
 
-<Button
-  tag="label"
-  checked={value === group}
-  {pill}
-  {outline}
-  {size}
-  {color}
-  {shadow}
-  btnclass={buttonCls}
->
+<Button tag="label" checked={value === group} {pill} {outline} {size} {color} {shadow} btnclass={buttonCls}>
   <input type="radio" bind:group {value} {...attributes} class="sr-only" />
   {@render children()}
 </Button>
@@ -61,15 +28,14 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop group,
-@prop value,
-@prop inline = true,
-@prop btnclass,
-@prop pill,
-@prop outline,
-@prop size,
-@prop color,
-@prop shadow,
-@prop ...attributes
+@props: children: any;
+@props:group?: string | number;
+@props:value?: string | number;
+@props:inline?: boolean;
+@props:btnclass?: string;
+@props:pill?: boolean;
+@props:outline?: boolean;
+@props:size?: SizeType | undefined;
+@props:color?: ButtonColorType | undefined;
+@props:shadow?: boolean;
 -->

@@ -16,7 +16,6 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop markclass,
-@prop ...attributes
+@props: children: any;
+@props:markclass?: string | undefined;
 -->

@@ -17,11 +17,7 @@
   };
 </script>
 
-<svelte:element
-  this={tag}
-  {...attributes}
-  class={twMerge(textSizes[tag], 'w-full text-gray-900 dark:text-white', classname)}
->
+<svelte:element this={tag} {...attributes} class={twMerge(textSizes[tag], 'w-full text-gray-900 dark:text-white', classname)}>
   {@render children()}
 </svelte:element>
 
@@ -29,8 +25,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop tag = 'h1',
-@prop class: classname,
-@prop ...attributes
+@props: children: any;
+@props:tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+@props:class?: string | undefined;
 -->

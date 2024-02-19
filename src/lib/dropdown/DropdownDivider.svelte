@@ -13,6 +13,5 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop divclass,
-@prop ...attributes
+@props: divclass?: string | undefined;
 -->

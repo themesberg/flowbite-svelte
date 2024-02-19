@@ -18,15 +18,13 @@
 
 <CodeWrapper>
   <P
-    >Track work across the enterprise through an open, collaborative platform. Link issues across
-    Jira and ingest data from other software development tools, so your IT support and operations
-    teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P
+    >Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development
+    tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P
   >
   <Hr hrclass="my-8" />
   <P
-    >Deliver great service experiences fast - without the complexity of traditional ITSM
-    solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease,
-    with a complete audit trail for every change.</P
+    >Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate
+    toil, and deploy changes with ease, with a complete audit trail for every change.</P
   >
 </CodeWrapper>
 
@@ -36,15 +34,13 @@
 
 <CodeWrapper>
   <P
-    >Track work across the enterprise through an open, collaborative platform. Link issues across
-    Jira and ingest data from other software development tools, so your IT support and operations
-    teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P
+    >Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development
+    tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P
   >
   <Hr hrclass="w-48 h-1 mx-auto my-4 rounded md:my-10" />
   <P
-    >Deliver great service experiences fast - without the complexity of traditional ITSM
-    solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease,
-    with a complete audit trail for every change.</P
+    >Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate
+    toil, and deploy changes with ease, with a complete audit trail for every change.</P
   >
 </CodeWrapper>
 
@@ -55,18 +51,16 @@
 <CodeWrapper>
   <div class="text-center">
     <P
-      >Track work across the enterprise through an open, collaborative platform. Link issues across
-      Jira and ingest data from other software development tools, so your IT support and operations
-      teams have richer contextual information to rapidly respond to requests, incidents, and
+      >Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software
+      development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and
       changes.</P
     >
     <Hr hrclass="my-8 w-64 h-1" icon>
       <QuoteSolid class="h-4 w-4 text-gray-700 dark:text-gray-300" />
     </Hr>
     <P
-      >Deliver great service experiences fast - without the complexity of traditional ITSM
-      solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease,
-      with a complete audit trail for every change.</P
+      >Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate
+      toil, and deploy changes with ease, with a complete audit trail for every change.</P
     >
   </div>
 </CodeWrapper>
@@ -78,16 +72,14 @@
 <CodeWrapper>
   <div class="text-center">
     <P
-      >Track work across the enterprise through an open, collaborative platform. Link issues across
-      Jira and ingest data from other software development tools, so your IT support and operations
-      teams have richer contextual information to rapidly respond to requests, incidents, and
+      >Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software
+      development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and
       changes.</P
     >
     <Hr hrclass="my-8 w-64">or</Hr>
     <P
-      >Deliver great service experiences fast - without the complexity of traditional ITSM
-      solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease,
-      with a complete audit trail for every change.</P
+      >Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate
+      toil, and deploy changes with ease, with a complete audit trail for every change.</P
     >
   </div>
 </CodeWrapper>
@@ -98,15 +90,14 @@
 
 <CodeWrapper>
   <P
-    >Track work across the enterprise through an open, collaborative platform. Link issues across
-    Jira and ingest data from other software development tools, so your IT support and operations
-    teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P
+    >Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development
+    tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P
   >
   <Hr hrclass="my-8 mx-auto w-8 h-8" />
   <Blockquote alignment="center">
     <p>
-      "Flowbite is just awesome. It contains tons of predesigned components and pages starting from
-      login screen to complex dashboard. Perfect choice for your next SaaS application."
+      "Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice
+      for your next SaaS application."
     </p>
   </Blockquote>
 </CodeWrapper>

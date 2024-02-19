@@ -21,8 +21,8 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop divclass,
-@prop cols = 'grid-cols-1 sm:grid-cols-2',
-@prop ...attributes
+@props: children: any;
+@props:divclass?: string | undefined;
+@props:cols?: string | undefined;
+@props:// gap?: number;
 -->

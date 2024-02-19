@@ -14,17 +14,7 @@
     defaultClass?: string;
   }
 
-  let {
-    children,
-    icon,
-    closeIcon,
-    color = 'primary',
-    rounded = true,
-    border,
-    divclass,
-    dismissable,
-    ...attributes
-  } = $props<Props>();
+  let { children, icon, closeIcon, color = 'primary', rounded = true, border, divclass, dismissable, ...attributes } = $props<Props>();
 
   let alertStatus: boolean = $state(true);
 
@@ -61,8 +51,7 @@
     purple: 'border-purple-300 dark:border-purple-800 divide-purple-300 dark:divide-purple-800',
     pink: 'border-pink-300 dark:border-pink-800 divide-pink-300 dark:divide-pink-800',
     blue: 'border-blue-300 dark:border-blue-800 divide-blue-300 dark:divide-blue-800',
-    primary:
-      'border-primary-500 dark:border-primary-200  divide-primary-500 dark:divide-primary-200 ',
+    primary: 'border-primary-500 dark:border-primary-200  divide-primary-500 dark:divide-primary-200 ',
     none: ''
   };
 
@@ -122,13 +111,13 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop icon,
-@prop closeIcon,
-@prop color = 'primary',
-@prop rounded = true,
-@prop border,
-@prop divclass,
-@prop dismissable,
-@prop ...attributes
+@props: children?: any;
+@props:icon?: any;
+@props:closeIcon?: any;
+@props:color?: CloseBtnColors;
+@props:border?: boolean;
+@props:rounded?: boolean;
+@props:divclass?: string;
+@props:dismissable?: boolean;
+@props:defaultClass?: string;
 -->

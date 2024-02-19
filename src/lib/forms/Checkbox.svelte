@@ -32,13 +32,7 @@
 </script>
 
 <Label labelclass={labelCls(inline, labelclass)}>
-  <input
-    type="checkbox"
-    bind:checked
-    {value}
-    {...attributes}
-    class={twMerge(spacing, inputCls(custom, color, true, false, inputclass))}
-  />
+  <input type="checkbox" bind:checked {value} {...attributes} class={twMerge(spacing, inputCls(custom, color, true, false, inputclass))} />
   {#if children}
     {@render children()}
   {/if}
@@ -48,15 +42,14 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop color = 'primary',
-@prop custom = false,
-@prop inline = false,
-@prop group = [],
-@prop value = 'on',
-@prop checked,
-@prop spacing = 'me-2',
-@prop labelclass = '',
-@prop inputclass = '',
-@prop ...attributes
+@props: children?: any;
+@props:color?:  FormColorType; = 'primary';
+@props:custom?:  boolean; = false;
+@props:inline?:  boolean; = false;
+@props:group?:  (string | number)[]; = [];
+@props:value?:  string | number; = 'on';
+@props:checked?: boolean | undefined;
+@props:spacing?:  string; = 'me-2';
+@props:labelclass?:  string; = '';
+@props:inputclass?:  string; = '';
 -->

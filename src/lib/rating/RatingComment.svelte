@@ -69,19 +69,12 @@
       {/if}
     </p>
     {#if helpfullink || abuselink}
-      <div
-        class="mt-3 flex items-center space-x-3 divide-x divide-gray-200 dark:divide-gray-600 rtl:space-x-reverse rtl:divide-x-reverse"
-      >
+      <div class="mt-3 flex items-center space-x-3 divide-x divide-gray-200 dark:divide-gray-600 rtl:space-x-reverse rtl:divide-x-reverse">
         {#if helpfullink}
           <Button size="xs" href="/" color="dark">Helpful</Button>
         {/if}
         {#if abuselink}
-          <a
-            href={abuselink}
-            class="ps-4 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
-          >
-            Report abuse
-          </a>
+          <a href={abuselink} class="ps-4 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"> Report abuse </a>
         {/if}
       </div>
     {/if}
@@ -92,10 +85,16 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop evaluation,
-@prop ceil,
-@prop helpfullink,
-@prop abuselink,
-@prop comment
+@props: children: any;
+@props:evaluation?: any;
+@props:ceil?: boolean;
+@props:helpfullink?: string;
+@props:abuselink?: string;
+@props:comment: {
+@props:id?: string;
+@props:user: {
+@props:name?: string;
+@props:img: {
+@props:src: string;
+@props:alt?: string;
 -->

@@ -36,6 +36,6 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop size = 'sm',
-@prop divclass
+@props: size?:  keyof Sizes; = 'sm', divclass;
+@props:divclass?: string | undefined;
 -->

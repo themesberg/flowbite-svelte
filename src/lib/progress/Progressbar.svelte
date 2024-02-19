@@ -36,8 +36,7 @@
     class: classname,
     ...attributes
   } = $props<Props>();
-  let labelInsideCls: string =
-    'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
+  let labelInsideCls: string = 'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
   let divCls: string = 'w-full bg-gray-200 rounded-full dark:bg-gray-700';
 
   const _progress = tweened(0, {
@@ -70,17 +69,11 @@
 {/if}
 <div class={twMerge(divCls, size, divclass)}>
   {#if labelInside}
-    <div
-      class={twJoin(labelInsideCls, barColors[color], size, div2class)}
-      style="width: {$_progress}%"
-    >
+    <div class={twJoin(labelInsideCls, barColors[color], size, div2class)} style="width: {$_progress}%">
       {$_progress.toFixed(precision)}%
     </div>
   {:else}
-    <div
-      class={twJoin(barColors[color], size, 'rounded-full', div2class)}
-      style="width: {$_progress}%"
-    />
+    <div class={twJoin(barColors[color], size, 'rounded-full', div2class)} style="width: {$_progress}%" />
   {/if}
 </div>
 
@@ -88,18 +81,17 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop progress = '45',
-@prop precision = 0,
-@prop tweenDuration = 400,
-@prop animate = false,
-@prop size = 'h-2.5',
-@prop labelInside = false,
-@prop labelOutside,
-@prop easing = cubicOut,
-@prop color = 'primary',
-@prop div2class,
-@prop labeloutsidedivclass,
-@prop divclass,
-@prop class: classname,
-@prop ...attributes
+@props: progress?:  string | number; = '45';
+@props:precision?:  number; = 0;
+@props:tweenDuration?:  number; = 400;
+@props:animate?:  boolean; = false;
+@props:size?:  string | undefined; = 'h-2.5';
+@props:labelInside?:  boolean; = false;
+@props:labelOutside?: string | undefined;
+@props:easing?:  EasingFunction; = cubicOut;
+@props:color?:  'primary' | 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo'; = 'primary';
+@props:div2class?: string | undefined;
+@props:labeloutsidedivclass?: string | undefined;
+@props:divclass?: string | undefined;
+@props:class?: string | undefined;
 -->

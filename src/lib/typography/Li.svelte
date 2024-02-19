@@ -19,8 +19,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop icon,
-@prop liclass,
-@prop ...attributes
+@props: children: any;
+@props:icon?: boolean;
+@props:liclass?: string | undefined;
 -->

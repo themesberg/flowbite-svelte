@@ -7,14 +7,7 @@
     class?: string | undefined;
   }
   import { twMerge } from 'tailwind-merge';
-  let {
-    children,
-    tag = 'ul',
-    list,
-    position = 'inside',
-    class: classname,
-    ...attributes
-  } = $props<Props>();
+  let { children, tag = 'ul', list, position = 'inside', class: classname, ...attributes } = $props<Props>();
 
   let lists = {
     disc: 'list-disc',
@@ -27,11 +20,7 @@
     outside: 'list-outside'
   };
 
-  let classList = twMerge(
-    lists[list ?? (tag === 'ul' ? 'disc' : 'ol' ? 'decimal' : 'none')],
-    positions[position],
-    classname
-  );
+  let classList = twMerge(lists[list ?? (tag === 'ul' ? 'disc' : 'ol' ? 'decimal' : 'none')], positions[position], classname);
 </script>
 
 <svelte:element this={tag} {...attributes} class={classList}>
@@ -42,10 +31,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop tag = 'ul',
-@prop list,
-@prop position = 'inside',
-@prop class: classname,
-@prop ...attributes
+@props: children: any;
+@props:tag?: 'ul' | 'ol' | 'dl';
+@props:list?: 'disc' | 'none' | 'decimal' | undefined;
+@props:position?: 'inside' | 'outside';
+@props:class?: string | undefined;
 -->

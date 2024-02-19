@@ -29,9 +29,7 @@
 <CodeWrapper class="flex h-28 flex-col items-center">
   <Toast>
     {#snippet icon()}
-      <FireOutline
-        class="h-5 w-5 bg-primary-100 text-primary-500 dark:bg-primary-800 dark:text-primary-200"
-      />
+      <FireOutline class="h-5 w-5 bg-primary-100 text-primary-500 dark:bg-primary-800 dark:text-primary-200" />
     {/snippet}
     Set yourself free.
   </Toast>
@@ -99,10 +97,7 @@
     Purple
   </Toast>
 
-  <Toast
-    color="none"
-    div2class="w-8 h-8 text-pink-500 bg-pink-100 dark:bg-pink-800 dark:text-pink-200"
-  >
+  <Toast color="none" div2class="w-8 h-8 text-pink-500 bg-pink-100 dark:bg-pink-800 dark:text-pink-200">
     {#snippet icon()}
       <FireOutline class="h-5 w-5" />
     {/snippet}
@@ -113,10 +108,7 @@
 
 <H2>Simple toast</H2>
 <CodeWrapper class="flex h-28 flex-col items-center">
-  <Toast
-    dismissable={false}
-    div3class="flex space-x-4 rtl:space-x-reverse divide-x rtl:divide-x-reverse divide-gray-200 dark:divide-gray-700"
-  >
+  <Toast dismissable={false} div3class="flex space-x-4 rtl:space-x-reverse divide-x rtl:divide-x-reverse divide-gray-200 dark:divide-gray-700">
     <PapperPlaneOutline class="h-5 w-5 rotate-45 text-primary-600 dark:text-primary-500" />
     <div class="ps-4 text-sm font-normal">Message sent successfully.</div>
   </Toast>
@@ -189,10 +181,7 @@
 <CodeWrapper class="flex h-[104px] flex-col items-center">
   <Toast div2class="w-full text-sm font-normal flex items-center justify-between">
     Conversation archived.
-    <a
-      class="ms-auto rounded-lg p-1.5 font-medium text-primary-600 hover:bg-primary-100 dark:text-primary-500 dark:hover:bg-gray-700"
-      href="/"
-    >
+    <a class="ms-auto rounded-lg p-1.5 font-medium text-primary-600 hover:bg-primary-100 dark:text-primary-500 dark:hover:bg-gray-700" href="/">
       Undo
     </a>
   </Toast>
@@ -208,9 +197,7 @@
     {/snippet}
     <div class="ms-3 text-sm font-normal">
       <span class="mb-1 text-sm font-semibold text-gray-900 dark:text-white">Jese Leos</span>
-      <div class="mb-2 text-sm font-normal">
-        Hi Neil, thanks for sharing your thoughts regarding Flowbite.
-      </div>
+      <div class="mb-2 text-sm font-normal">Hi Neil, thanks for sharing your thoughts regarding Flowbite.</div>
       <Button size="xs">Reply</Button>
     </div>
   </Toast>
@@ -226,9 +213,7 @@
       <div class="ms-3">
         <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Bonnie Green</h4>
         <div class="text-sm font-normal">commented on your photo</div>
-        <span class="text-xs font-medium text-primary-600 dark:text-primary-500"
-          >a few seconds ago</span
-        >
+        <span class="text-xs font-medium text-primary-600 dark:text-primary-500">a few seconds ago</span>
       </div>
     </div>
   </Toast>
@@ -255,29 +240,19 @@
 <H2>Positioning</H2>
 <CodeWrapper>
   <div class="relative h-56">
-    <Toast
-      dismissable={false}
-      position="top-left"
-      divclass="text-white dark:text-white bg-red-600 dark:bg-red-500 w-20 h-20 sm:w-48 sm:h-16"
+    <Toast dismissable={false} position="top-left" divclass="text-white dark:text-white bg-red-600 dark:bg-red-500 w-20 h-20 sm:w-48 sm:h-16"
       >Top-left</Toast
     >
-    <Toast
-      dismissable={false}
-      position="top-right"
-      divclass="text-white dark:text-white bg-green-600 dark:bg-green-500 w-20 h-20 sm:w-48 sm:h-16"
+    <Toast dismissable={false} position="top-right" divclass="text-white dark:text-white bg-green-600 dark:bg-green-500 w-20 h-20 sm:w-48 sm:h-16"
       >Top-right</Toast
     >
-    <Toast
-      dismissable={false}
-      position="bottom-left"
-      divclass="text-white dark:text-white bg-blue-600 dark:bg-blue-500 w-20 h-20 sm:w-48 sm:h-16"
+    <Toast dismissable={false} position="bottom-left" divclass="text-white dark:text-white bg-blue-600 dark:bg-blue-500 w-20 h-20 sm:w-48 sm:h-16"
       >Bottom-left</Toast
     >
     <Toast
       dismissable={false}
       position="bottom-right"
-      divclass="text-white dark:text-white bg-purple-600 dark:bg-purple-500 w-20 h-20 sm:w-48 sm:h-16"
-      >Bottom-right</Toast
+      divclass="text-white dark:text-white bg-purple-600 dark:bg-purple-500 w-20 h-20 sm:w-48 sm:h-16">Bottom-right</Toast
     >
   </div>
 </CodeWrapper>

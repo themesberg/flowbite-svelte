@@ -13,18 +13,7 @@
     href?: string;
     rounded?: boolean;
   }
-  let {
-    children,
-    icon,
-    color = 'primary',
-    large = false,
-    dismissable = false,
-    divclass,
-    border,
-    href,
-    rounded,
-    ...attributes
-  } = $props<Props>();
+  let { children, icon, color = 'primary', large = false, dismissable = false, divclass, border, href, rounded, ...attributes } = $props<Props>();
 
   let badgeStatus: boolean = $state(true);
 
@@ -43,19 +32,14 @@
   };
 
   const borderedColors = {
-    primary:
-      'bg-primary-100 text-primary-800 dark:bg-gray-700 dark:text-primary-400 border-primary-400 dark:border-primary-400',
+    primary: 'bg-primary-100 text-primary-800 dark:bg-gray-700 dark:text-primary-400 border-primary-400 dark:border-primary-400',
     blue: 'bg-blue-100 text-blue-800 dark:bg-gray-700 dark:text-blue-400 border-blue-400 dark:border-blue-400',
     dark: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-400 border-gray-500 dark:border-gray-500',
     red: 'bg-red-100 text-red-800 dark:bg-gray-700 dark:text-red-400 border-red-400 dark:border-red-400',
-    green:
-      'bg-green-100 text-green-800 dark:bg-gray-700 dark:text-green-400 border-green-400 dark:border-green-400',
-    yellow:
-      'bg-yellow-100 text-yellow-800 dark:bg-gray-700 dark:text-yellow-300 border-yellow-300 dark:border-yellow-300',
-    indigo:
-      'bg-indigo-100 text-indigo-800 dark:bg-gray-700 dark:text-indigo-400 border-indigo-400 dark:border-indigo-400',
-    purple:
-      'bg-purple-100 text-purple-800 dark:bg-gray-700 dark:text-purple-400 border-purple-400 dark:border-purple-400',
+    green: 'bg-green-100 text-green-800 dark:bg-gray-700 dark:text-green-400 border-green-400 dark:border-green-400',
+    yellow: 'bg-yellow-100 text-yellow-800 dark:bg-gray-700 dark:text-yellow-300 border-yellow-300 dark:border-yellow-300',
+    indigo: 'bg-indigo-100 text-indigo-800 dark:bg-gray-700 dark:text-indigo-400 border-indigo-400 dark:border-indigo-400',
+    purple: 'bg-purple-100 text-purple-800 dark:bg-gray-700 dark:text-purple-400 border-purple-400 dark:border-purple-400',
     pink: 'bg-pink-100 text-pink-800 dark:bg-gray-700 dark:text-pink-400 border-pink-400 dark:border-pink-400',
     none: ''
   };
@@ -125,14 +109,13 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop icon,
-@prop color = 'primary',
-@prop large = false,
-@prop dismissable = false,
-@prop divclass,
-@prop border,
-@prop href,
-@prop rounded,
-@prop ...attributes
+@props: children: any;
+@props:icon?: any;
+@props:color?: CloseBtnColors;
+@props:large?: boolean;
+@props:dismissable?: boolean;
+@props:divclass?: string;
+@props:border?: boolean;
+@props:href?: string;
+@props:rounded?: boolean;
 -->

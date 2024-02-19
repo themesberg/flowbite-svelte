@@ -89,8 +89,7 @@
 
   const inputColorClasses = {
     base: 'border-gray-300 dark:border-gray-600 dark:focus:border-primary-500 focus:border-primary-600',
-    green:
-      'border-green-600 dark:border-green-500 dark:focus:border-green-500 focus:border-green-600',
+    green: 'border-green-600 dark:border-green-500 dark:focus:border-green-500 focus:border-green-600',
     red: 'border-red-600 dark:border-red-500 dark:focus:border-red-500  focus:border-red-600'
   };
 
@@ -107,23 +106,10 @@
     {...attributes}
     {...{ type }}
     placeholder=" "
-    class={twMerge(
-      inputClasses[style],
-      inputColorClasses[color],
-      inputSizes[style][size],
-      inputclass
-    )}
+    class={twMerge(inputClasses[style], inputColorClasses[color], inputSizes[style][size], inputclass)}
   />
 
-  <label
-    for={id}
-    class={twMerge(
-      labelClasses[style],
-      labelColorClasses[color],
-      labelSizes[style][size],
-      labelclass
-    )}
-  >
+  <label for={id} class={twMerge(labelClasses[style], labelColorClasses[color], labelSizes[style][size], labelclass)}>
     {@render children()}
   </label>
 </div>
@@ -132,14 +118,14 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop id = idGenerator(),
-@prop style = 'standard',
-@prop type = 'text',
-@prop size = 'default',
-@prop color = 'base',
-@prop divclass,
-@prop inputclass,
-@prop labelclass,
-@prop ...attributes
+@props: children: any;
+@props:id?:  string; = idGenerator();
+@props:style?:  'filled' | 'outlined' | 'standard'; = 'standard';
+@props:type?:  InputType; = 'text';
+@props:size?:  'small' | 'default'; = 'default';
+@props:color?:  'base' | 'green' | 'red'; = 'base';
+@props:value?: any;
+@props:divclass?: string;
+@props:inputclass?: string;
+@props:labelclass?: string;
 -->

@@ -38,9 +38,8 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop items = [],
-@prop imgclass,
-@prop divclass,
-@prop ...attributes
+@props: children?: any;
+@props:items?: ImgType[];
+@props:imgclass?: string | undefined;
+@props:divclass?: string | undefined;
 -->

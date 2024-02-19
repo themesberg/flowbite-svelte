@@ -1,11 +1,6 @@
 <script>
   import { Kbd } from '$lib';
-  import {
-    CaretDownSolid,
-    CaretRightSolid,
-    CaretLeftSolid,
-    CaretUpSolid
-  } from 'flowbite-svelte-icons';
+  import { CaretDownSolid, CaretRightSolid, CaretLeftSolid, CaretUpSolid } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -37,9 +32,8 @@
 
 <CodeWrapper class="flex justify-center">
   <p class="text-gray-500 dark:text-gray-400">
-    Please press <Kbd kbdclass="px-2 py-1.5">Ctrl</Kbd> + <Kbd kbdclass="px-2 py-1.5">Shift</Kbd> + <Kbd
-      kbdclass="px-2 py-1.5">R</Kbd
-    > to re-render an MDN page.
+    Please press <Kbd kbdclass="px-2 py-1.5">Ctrl</Kbd> + <Kbd kbdclass="px-2 py-1.5">Shift</Kbd> + <Kbd kbdclass="px-2 py-1.5">R</Kbd> to re-render an
+    MDN page.
   </p>
 </CodeWrapper>
 

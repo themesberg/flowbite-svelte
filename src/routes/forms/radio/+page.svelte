@@ -3,12 +3,7 @@
   let colors = 'text-purple-500';
   let technology = 'svelte';
   let inline1 = 'second';
-  import {
-    ArrowRightOutline,
-    ListMusicSolid,
-    OrdoredListSolid,
-    ListSolid
-  } from 'flowbite-svelte-icons';
+  import { ArrowRightOutline, ListMusicSolid, OrdoredListSolid, ListSolid } from 'flowbite-svelte-icons';
   let radioGroup = 'notes';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
@@ -42,12 +37,7 @@
 <H2>Radio with a link</H2>
 <CodeWrapper>
   <Radio name="with-link">
-    I agree with the <a
-      href="/"
-      class="ms-1 text-primary-600 hover:underline dark:text-primary-500"
-    >
-      terms and conditions
-    </a>.
+    I agree with the <a href="/" class="ms-1 text-primary-600 hover:underline dark:text-primary-500"> terms and conditions </a>.
   </Radio>
 </CodeWrapper>
 
@@ -56,9 +46,7 @@
 <H2>Helper text</H2>
 <CodeWrapper>
   <Radio aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Radio>
-  <Helper id="helper-checkbox-text" pclass="ps-6"
-    >For orders shipped from $25 in books or $29 in other categories</Helper
-  >
+  <Helper id="helper-checkbox-text" pclass="ps-6">For orders shipped from $25 in books or $29 in other categories</Helper>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/helper-text.md']} />
@@ -82,9 +70,7 @@
   <p class="mb-4 font-semibold text-gray-900 dark:text-white">
     Technology <span class="capitalize">{technology}</span>
   </p>
-  <ul
-    class="w-48 divide-y divide-gray-200 rounded-lg border border-gray-200 bg-white dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800"
-  >
+  <ul class="w-48 divide-y divide-gray-200 rounded-lg border border-gray-200 bg-white dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800">
     <li><Radio labelclass="p-3" bind:group={technology} value="svelte">Svelte</Radio></li>
     <li><Radio labelclass="p-3" bind:group={technology} value="vue js">Vue JS</Radio></li>
     <li><Radio labelclass="p-3" bind:group={technology} value="react">React</Radio></li>

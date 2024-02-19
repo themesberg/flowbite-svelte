@@ -35,18 +35,10 @@
 <H2>Legend indicator</H2>
 
 <CodeWrapper class="flex justify-center gap-4">
-  <span class="flex items-center"
-    ><Indicator size="sm" color="orange" divclass="me-1.5" />Visitors</span
-  >
-  <span class="flex items-center"
-    ><Indicator size="sm" color="purple" divclass="me-1.5" />Sessions</span
-  >
-  <span class="flex items-center"
-    ><Indicator size="sm" color="indigo" divclass="me-1.5" />Customers</span
-  >
-  <span class="flex items-center"
-    ><Indicator size="sm" color="teal" divclass="me-1.5" />Revenue</span
-  >
+  <span class="flex items-center"><Indicator size="sm" color="orange" divclass="me-1.5" />Visitors</span>
+  <span class="flex items-center"><Indicator size="sm" color="purple" divclass="me-1.5" />Sessions</span>
+  <span class="flex items-center"><Indicator size="sm" color="indigo" divclass="me-1.5" />Customers</span>
+  <span class="flex items-center"><Indicator size="sm" color="teal" divclass="me-1.5" />Revenue</span>
 </CodeWrapper>
 
 <H2>Indicator count</H2>
@@ -67,9 +59,7 @@
 <H2>Indicator position</H2>
 
 <CodeWrapper class="flex justify-center">
-  <div
-    class="borer relative h-56 w-56 rounded-lg border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-800"
-  >
+  <div class="borer relative h-56 w-56 rounded-lg border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-800">
     <Indicator placement="top-left" color="gray" />
     <Indicator placement="top-center" color="dark" />
     <Indicator placement="top-right" color="orange" />

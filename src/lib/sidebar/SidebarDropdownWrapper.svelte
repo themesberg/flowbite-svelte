@@ -70,13 +70,7 @@
 </script>
 
 <li>
-  <button
-    {...attributes}
-    on:click={() => handleDropdown()}
-    type="button"
-    class={btnCls}
-    aria-controls="sidebar-dropdown"
-  >
+  <button {...attributes} on:click={() => handleDropdown()} type="button" class={btnCls} aria-controls="sidebar-dropdown">
     {#if icon}
       {@render icon()}
     {/if}
@@ -85,39 +79,15 @@
       {#if arrowup}
         {@render arrowup()}
       {:else}
-        <svg
-          class={svgCls}
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 10 6"
-        >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M9 5 5 1 1 5"
-          />
+        <svg class={svgCls} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5" />
         </svg>
       {/if}
     {:else if arrowdown}
       {@render arrowdown()}
     {:else}
-      <svg
-        class={svgCls}
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 10 6"
-      >
-        <path
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="m1 1 4 4 4-4"
-        />
+      <svg class={svgCls} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
       </svg>
     {/if}
   </button>
@@ -132,15 +102,16 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop arrowup,
-@prop arrowdown,
-@prop icon,
-@prop isOpen,
-@prop btnclass,
-@prop label,
-@prop spanclass,
-@prop ulclass,
-@prop transitionType = 'slide',
-@prop transitionParams = {
+@props: children: any;
+@props:arrowup?: any;
+@props:arrowdown?: any;
+@props:icon?: any;
+@props:isOpen?: boolean;
+@props:btnclass?: string | undefined;
+@props:label: string | undefined;
+@props:spanclass?: string | undefined;
+@props:ulclass?: string | undefined;
+@props:transitionType?:  TransitionTypes; = 'slide';
+@props:transitionParams?:  TransitionParamTypes; = {;
+@props:svgclass?: string;
 -->

@@ -20,8 +20,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop href = '#',
-@prop aclass,
-@prop ...attributes
+@props: children: any;
+@props:href: string;
+@props:aclass?: string | undefined;
 -->

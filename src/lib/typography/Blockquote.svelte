@@ -56,15 +56,7 @@
 
 <blockquote
   {...attributes}
-  class={twMerge(
-    baseCls,
-    alignmentClasses[alignment],
-    sizes[size],
-    bg && bgCls,
-    border && borderCls,
-    italic && 'italic',
-    classname
-  )}
+  class={twMerge(baseCls, alignmentClasses[alignment], sizes[size], bg && bgCls, border && borderCls, italic && 'italic', classname)}
 >
   {@render children()}
 </blockquote>
@@ -73,15 +65,14 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop class: classname,
-@prop border,
-@prop italic = true,
-@prop borderclass,
-@prop bgclass,
-@prop bg,
-@prop baseclass,
-@prop alignment = 'left',
-@prop size = 'lg',
-@prop ...attributes
+@props: children: any;
+@props:border?: boolean;
+@props:italic?:  boolean; = true;
+@props:borderclass?: string | undefined;
+@props:bgclass?: string | undefined;
+@props:bg?: boolean;
+@props:baseclass?: string | undefined;
+@props:alignment?:  'left' | 'center' | 'right'; = 'left';
+@props:size?:  BlockQuoteType; = 'lg';
+@props:class?: string | undefined;
 -->

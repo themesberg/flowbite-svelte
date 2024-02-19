@@ -1,11 +1,6 @@
 <script>
   import { Banner, Skeleton, ImagePlaceholder } from '$lib';
-  import {
-    BullhornOutline,
-    SalePercentSolid,
-    ArrowRightSolid,
-    BookOpenSolid
-  } from 'flowbite-svelte-icons';
+  import { BullhornOutline, SalePercentSolid, ArrowRightSolid, BookOpenSolid } from 'flowbite-svelte-icons';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -79,18 +74,9 @@
   <ImagePlaceholder divclass="py-4" />
 
   <Banner id="cta-banner" position="absolute" bannerType="cta">
-    <a
-      href="https://flowbite-svelte.com/"
-      class="mb-2 flex items-center border-gray-200 dark:border-gray-600 md:mb-0 md:me-4 md:border-e md:pe-4"
-    >
-      <img
-        src="https://flowbite-svelte.com/images/flowbite-svelte-icon-logo.svg"
-        class="me-2 h-6"
-        alt="Flowbite Logo"
-      />
-      <span class="self-center whitespace-nowrap text-lg font-semibold dark:text-white"
-        >Flowbite</span
-      >
+    <a href="https://flowbite-svelte.com/" class="mb-2 flex items-center border-gray-200 dark:border-gray-600 md:mb-0 md:me-4 md:border-e md:pe-4">
+      <img src="https://flowbite-svelte.com/images/flowbite-svelte-icon-logo.svg" class="me-2 h-6" alt="Flowbite Logo" />
+      <span class="self-center whitespace-nowrap text-lg font-semibold dark:text-white">Flowbite</span>
     </a>
     <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
       Build websites even faster with components on top of Tailwind CSS
@@ -108,10 +94,7 @@
 
   <Banner id="signup-banner" position="absolute" bannerType="signup">
     <form action="/" class="flex w-full flex-col items-center md:flex-row">
-      <label
-        for="email"
-        class="mb-2 me-auto flex-shrink-0 text-sm font-medium text-gray-500 dark:text-gray-400 md:m-0 md:mb-0 md:me-4"
-      >
+      <label for="email" class="mb-2 me-auto flex-shrink-0 text-sm font-medium text-gray-500 dark:text-gray-400 md:m-0 md:mb-0 md:me-4">
         Sign up for our newsletter
       </label>
       <input
@@ -141,12 +124,8 @@
   <Banner id="info-banner" position="absolute" bannerType="info">
     {#snippet header()}
       <div class="mb-4 md:mb-0 md:me-4">
-        <h2 class="mb-1 text-base font-semibold text-gray-900 dark:text-white">
-          Integration is the key
-        </h2>
-        <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
-          You can integrate Flowbite with many tools.
-        </p>
+        <h2 class="mb-1 text-base font-semibold text-gray-900 dark:text-white">Integration is the key</h2>
+        <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">You can integrate Flowbite with many tools.</p>
       </div>
     {/snippet}
     <a

@@ -11,8 +11,7 @@
     activeClass?: string | undefined;
     nonActiveClass?: string | undefined;
   }
-  let { closeNav, href, children, aclass, activeClass, nonActiveClass, ...attributes } =
-    $props<Props>();
+  let { closeNav, href, children, aclass, activeClass, nonActiveClass, ...attributes } = $props<Props>();
   let breakPoint: navbarType['breakPoint'];
 
   const context = getContext<navbarType>('navbarContext');
@@ -57,11 +56,10 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop closeNav,
-@prop href,
-@prop children,
-@prop aclass,
-@prop activeClass,
-@prop nonActiveClass,
-@prop ...attributes
+@props: children: any;
+@props:closeNav?: () => void;
+@props:href?: string | undefined;
+@props:aclass?: string | undefined;
+@props:activeClass?: string | undefined;
+@props:nonActiveClass?: string | undefined;
 -->

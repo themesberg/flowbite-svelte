@@ -53,16 +53,15 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop class: classname,
-@prop italic,
-@prop underline,
-@prop linethrough,
-@prop uppercase,
-@prop gradient,
-@prop highlight,
-@prop highlightClass = 'text-blue-600 dark:text-blue-500',
-@prop decorationClass = 'decoration-2 decoration-blue-400 dark:decoration-blue-600',
-@prop gradientClass = 'text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400',
-@prop ...attributes
+@props: children: any;
+@props:italic?: boolean;
+@props:underline?: boolean;
+@props:linethrough?: boolean;
+@props:uppercase?: boolean;
+@props:gradient?: boolean;
+@props:highlight?: boolean;
+@props:highlightClass?:  string | undefined; = 'text-blue-600 dark:text-blue-500';
+@props:class?: string | undefined;
+@props:decorationClass?:  string | undefined; = 'decoration-2 decoration-blue-400 dark:decoration-blue-600';
+@props:gradientClass?:  string | undefined; = 'text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400';
 -->

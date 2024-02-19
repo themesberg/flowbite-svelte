@@ -174,9 +174,7 @@
     color="gray"
     div2class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
   />
-  <Button onclick={() => (progress = `${Math.round(Math.random() * 100)}`)} btnclass="mt-8">
-    Randomize
-  </Button>
+  <Button onclick={() => (progress = `${Math.round(Math.random() * 100)}`)} btnclass="mt-8">Randomize</Button>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/animation.md']} />

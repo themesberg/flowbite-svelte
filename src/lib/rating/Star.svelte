@@ -24,15 +24,7 @@
   } = $props<Props>();
 </script>
 
-<svg
-  width={size}
-  height={size}
-  {...attributes}
-  class={svgclass}
-  aria-label={ariaLabel}
-  viewBox="100 100 120 120"
-  {role}
->
+<svg width={size} height={size} {...attributes} class={svgclass} aria-label={ariaLabel} viewBox="100 100 120 120" {role}>
   <defs>
     <linearGradient {id}>
       {#if fillPercent !== 100}
@@ -60,13 +52,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop fillPercent = 100,
-@prop fillColor = '#F5CA14',
-@prop strokeColor = '#F5CA14',
-@prop size = 24,
-@prop ariaLabel = 'star',
-@prop id = idGenerator(),
-@prop role = 'img',
-@prop svgclass,
-@prop ...attributes
+@props: fillPercent?:  number; = 100;
+@props:fillColor?:  string; = '#F5CA14';
+@props:strokeColor?:  string; = '#F5CA14';
+@props:size?:  number; = 24;
+@props:ariaLabel?:  string; = 'star';
+@props:id?:  string; = idGenerator();
+@props:role?:  string; = 'img';
+@props:svgclass?: string;
 -->

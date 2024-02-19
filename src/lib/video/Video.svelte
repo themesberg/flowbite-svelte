@@ -9,16 +9,7 @@
     class?: string | undefined;
   }
 
-  let {
-    children,
-    src,
-    type = 'video/mp4',
-    trackSrc,
-    srclang = 'en',
-    label = 'english_captions',
-    class: classname,
-    ...attributes
-  } = $props<Props>();
+  let { children, src, type = 'video/mp4', trackSrc, srclang = 'en', label = 'english_captions', class: classname, ...attributes } = $props<Props>();
 </script>
 
 <video {...attributes} class={classname}>
@@ -34,12 +25,11 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop src,
-@prop type = 'video/mp4',
-@prop trackSrc,
-@prop srclang = 'en',
-@prop label = 'english_captions',
-@prop class: classname,
-@prop ...attributes
+@props: children?: any;
+@props:src: string | undefined;
+@props:type?: string | undefined;
+@props:trackSrc?: string | undefined;
+@props:srclang?: string | undefined;
+@props:label?: string | undefined;
+@props:class?: string | undefined;
 -->

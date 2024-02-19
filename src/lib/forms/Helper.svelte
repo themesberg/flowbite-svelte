@@ -14,14 +14,7 @@
   };
 </script>
 
-<p
-  {...attributes}
-  class={twMerge(
-    'text-xs font-normal text-gray-500 dark:text-gray-300',
-    colorClasses[color],
-    pclass
-  )}
->
+<p {...attributes} class={twMerge('text-xs font-normal text-gray-500 dark:text-gray-300', colorClasses[color], pclass)}>
   {@render children()}
 </p>
 
@@ -29,8 +22,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop pclass,
-@prop color = 'gray',
-@prop ...attributes
+@props: children?: any;
+@props:pclass?: string;
+@props:color?: 'gray' | 'green' | 'red' | 'disabled';
 -->

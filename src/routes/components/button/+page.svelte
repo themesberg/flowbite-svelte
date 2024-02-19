@@ -1,11 +1,6 @@
 <script>
   import { Button, Indicator, GradientButton, Spinner } from '$lib';
-  import {
-    EnvelopeSolid,
-    ArrowRightOutline,
-    ShoppingBagSolid,
-    ThumbsUpSolid
-  } from 'flowbite-svelte-icons';
+  import { EnvelopeSolid, ArrowRightOutline, ShoppingBagSolid, ThumbsUpSolid } from 'flowbite-svelte-icons';
   const btn1 = () => {
     alert('You clicked btn1.');
   };
@@ -101,11 +96,7 @@
 <CodeWrapper>
   <Button btnclass="gap-2">
     Messages
-    <Indicator
-      color="none"
-      divclass="bg-primary-200 text-xs font-semibold text-primary-800"
-      size="lg">2</Indicator
-    >
+    <Indicator color="none" divclass="bg-primary-200 text-xs font-semibold text-primary-800" size="lg">2</Indicator>
   </Button>
 </CodeWrapper>
 
@@ -136,11 +127,7 @@
 <CodeWrapper>
   <Button btnclass="gap-2">
     Messages
-    <Indicator
-      color="none"
-      divclass="bg-primary-200 text-xs text-primary-800 font-semibold"
-      size="lg">2</Indicator
-    >
+    <Indicator color="none" divclass="bg-primary-200 text-xs text-primary-800 font-semibold" size="lg">2</Indicator>
   </Button>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/button-with-label.md']} />

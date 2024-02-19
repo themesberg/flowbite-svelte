@@ -6,7 +6,6 @@ import sveltePackage from './node_modules/svelte/package.json' assert { type: 'j
 import svelteKitPackage from './node_modules/@sveltejs/kit/package.json' assert { type: 'json' }
 import vitePackage from './node_modules/vite/package.json' assert { type: 'json' }
 
-
 export default defineConfig({
 	plugins: [sveltekit()],
 	define: {

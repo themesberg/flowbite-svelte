@@ -13,15 +13,7 @@
   // import Frame from '../utils/Frame.svelte';
   import ListgroupItem from './ListgroupItem.svelte';
 
-  let {
-    children,
-    items,
-    btn,
-    rounded = true,
-    border = true,
-    defaultclass,
-    ...attributes
-  } = $props<Props>();
+  let { children, items, btn, rounded = true, border = true, defaultclass, ...attributes } = $props<Props>();
 
   const dispatch = createEventDispatcher();
 
@@ -31,19 +23,9 @@
 
   const borderColor = 'border-gray-200 dark:border-gray-700 divide-gray-200 dark:divide-gray-700';
 
-  const divClass = twMerge(
-    bgColor,
-    textColor,
-    rounded && 'rounded-lg',
-    border && 'border',
-    borderColor
-  );
+  const divClass = twMerge(bgColor, textColor, rounded && 'rounded-lg', border && 'border', borderColor);
 
-  const defaultCls: string = twMerge(
-    'divide-y divide-gray-200 dark:divide-gray-600',
-    divClass,
-    defaultclass
-  );
+  const defaultCls: string = twMerge('divide-y divide-gray-200 dark:divide-gray-600', divClass, defaultclass);
   let tag = btn ? 'div' : 'ul';
   setContext('btn', btn);
 </script>
@@ -53,9 +35,7 @@
     {#if typeof item === 'string'}
       <ListgroupItem {btn} {index} onclick={() => dispatch('click', item)}>{item}</ListgroupItem>
     {:else}
-      <ListgroupItem {btn} {...item} {index} onclick={() => dispatch('click', item)}
-        >{item}</ListgroupItem
-      >
+      <ListgroupItem {btn} {...item} {index} onclick={() => dispatch('click', item)}>{item}</ListgroupItem>
     {/if}
   {:else}
     {@const item = items[0]}
@@ -67,11 +47,10 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop items,
-@prop btn,
-@prop rounded = true,
-@prop border = true,
-@prop defaultclass,
-@prop ...attributes
+@props: children?: any;
+@props:items: ListGroupItemType[] | string[];
+@props:btn?: boolean;
+@props:rounded?: boolean;
+@props:border?: boolean;
+@props:defaultclass?: string;
 -->

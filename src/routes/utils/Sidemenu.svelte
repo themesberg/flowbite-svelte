@@ -18,12 +18,7 @@
   aclass="p-1 pl-4"
 >
   <SidebarGroup>
-    <SidebarDropdownWrapper
-      label="Components"
-      isOpen={hasPath('components')}
-      svgclass="me-4"
-      btnclass="p-1"
-    >
+    <SidebarDropdownWrapper label="Components" isOpen={hasPath('components')} svgclass="me-4" btnclass="p-1">
       <SidebarItem label="Alert" href="/components/alert" />
       <SidebarItem label="Avatar" href="/components/avatar" />
       <SidebarItem label="Badge" href="/components/badge" />
@@ -59,12 +54,7 @@
       <SidebarItem label="Select" href="/forms/select" />
       <SidebarItem label="Toggle" href="/forms/toggle" />
     </SidebarDropdownWrapper>
-    <SidebarDropdownWrapper
-      label="Typography"
-      isOpen={hasPath('typography')}
-      svgclass="me-4"
-      btnclass="p-1"
-    >
+    <SidebarDropdownWrapper label="Typography" isOpen={hasPath('typography')} svgclass="me-4" btnclass="p-1">
       <SidebarItem label="Blockquote" href="/typography/blockquote" />
       <SidebarItem label="Heading/Span/Mark" href="/typography/heading" />
       <SidebarItem label="HR" href="/typography/hr" />

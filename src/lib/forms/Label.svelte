@@ -17,11 +17,7 @@
     disabled: 'text-gray-400 dark:text-gray-500'
   };
 
-  let labelCls = twMerge(
-    'text-sm rtl:text-right font-medium block',
-    colorClasses[color],
-    labelclass
-  );
+  let labelCls = twMerge('text-sm rtl:text-right font-medium block', colorClasses[color], labelclass);
 </script>
 
 {#if show}
@@ -36,10 +32,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop color = 'gray',
-@prop show = true,
-@prop labelclass,
-@prop forId,
-@prop ...attributes
+@props: children: any;
+@props:color?: 'gray' | 'green' | 'red' | 'disabled';
+@props:show?: boolean;
+@props:labelclass?: string | undefined;
+@props:forId?: string | undefined;
 -->

@@ -1,11 +1,6 @@
 <script>
   import { Badge, Button, Indicator } from '$lib';
-  import {
-    ClockSolid,
-    EnvelopeSolid,
-    CheckOutline,
-    CheckCircleOutline
-  } from 'flowbite-svelte-icons';
+  import { ClockSolid, EnvelopeSolid, CheckOutline, CheckCircleOutline } from 'flowbite-svelte-icons';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -98,25 +93,19 @@
   <Button btnclass="relative" size="sm">
     <EnvelopeSolid class="text-white dark:text-white" />
     <span class="sr-only">Notifications</span>
-    <Indicator color="blue" border size="xl" placement="top-right" divclass="text-xs font-bold"
-      >18</Indicator
-    >
+    <Indicator color="blue" border size="xl" placement="top-right" divclass="text-xs font-bold">18</Indicator>
   </Button>
 
   <Button btnclass="relative" size="sm">
     <EnvelopeSolid class="text-white dark:text-white" />
     <span class="sr-only">Notifications</span>
-    <Indicator color="red" border size="xl" placement="top-right" divclass="text-xs font-bold"
-      >20</Indicator
-    >
+    <Indicator color="red" border size="xl" placement="top-right" divclass="text-xs font-bold">20</Indicator>
   </Button>
 
   <Button btnclass="relative" size="sm">
     <EnvelopeSolid class="text-white dark:text-white" />
     <span class="sr-only">Notifications</span>
-    <Indicator color="dark" border size="xl" placement="bottom-right" divclass="text-xs font-bold"
-      >20</Indicator
-    >
+    <Indicator color="dark" border size="xl" placement="bottom-right" divclass="text-xs font-bold">20</Indicator>
   </Button>
 </CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/notification-badge.md']} />
@@ -125,11 +114,7 @@
 <CodeWrapper>
   <Button>
     Messages
-    <Badge
-      rounded
-      divclass="w-4 h-4 ms-2 p-0 font-semibold text-primary-800 bg-white dark:text-primary-800 dark:bg-white"
-      >2</Badge
-    >
+    <Badge rounded divclass="w-4 h-4 ms-2 p-0 font-semibold text-primary-800 bg-white dark:text-primary-800 dark:bg-white">2</Badge>
   </Button>
 </CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/button-with-badge.md']} />

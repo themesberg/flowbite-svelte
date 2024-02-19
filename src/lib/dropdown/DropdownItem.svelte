@@ -14,10 +14,7 @@
   $effect(() => {
     currentUrl = $page.url.pathname;
   });
-  const aCls = twMerge(
-    'block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white',
-    aclass
-  );
+  const aCls = twMerge('block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white', aclass);
   const activeCls = twMerge(
     'block px-4 py-2 text-primary-700 dark:text-primary-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white',
     activeclass
@@ -36,9 +33,8 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop aclass,
-@prop children,
-@prop href,
-@prop activeclass,
-@prop ...attributes
+@props: children: any;
+@props:aclass?: string | undefined;
+@props:href?: string | undefined;
+@props:activeclass?: string | undefined;
 -->

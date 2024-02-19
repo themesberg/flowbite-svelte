@@ -22,9 +22,8 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop tag,
-@prop dtclass,
-@prop ddclass,
-@prop ...attributes
+@props: children: any;
+@props:tag: 'dt' | 'dd';
+@props:dtclass?: string | undefined;
+@props:ddclass?: string | undefined;
 -->

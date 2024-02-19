@@ -43,12 +43,7 @@
     info: 'items-center flex-shrink-0'
   };
 
-  let divCls = twMerge(
-    position,
-    'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600',
-    divClasses[bannerType],
-    divclass
-  );
+  let divCls = twMerge(position, 'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600', divClasses[bannerType], divclass);
   let innerCls = twMerge('flex', insideDivClasses[bannerType], div2class);
 </script>
 
@@ -79,13 +74,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop header,
-@prop position = 'sticky',
-@prop dismissable = true,
-@prop color = 'gray',
-@prop bannerType = 'default',
-@prop divclass,
-@prop div2class,
-@prop ...attributes
+@props: children: any;
+@props:header?: any;
+@props:position?:  'static' | 'fixed' | 'absolute' | 'relative' | 'sticky'; = 'sticky';
+@props:dismissable?:  boolean; = true;
+@props:color?:  CloseBtnColors; = 'gray';
+@props:bannerType:  'default' | 'bottom' | 'cta' | 'signup' | 'info'; = 'default';
+@props:divclass: string | undefined;
+@props:div2class: string | undefined;
 -->

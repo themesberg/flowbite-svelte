@@ -40,10 +40,7 @@
 
   setContext<navbarType>('navbarContext', {
     breakPoint: breakPoint,
-    activeClass: twMerge(
-      'block py-2 px-3 text-white bg-primary-700 rounded   dark:text-white',
-      activeClass
-    ),
+    activeClass: twMerge('block py-2 px-3 text-white bg-primary-700 rounded   dark:text-white', activeClass),
     nonActiveClass: twMerge(
       'block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white',
       nonActiveClass
@@ -88,28 +85,11 @@
     {/if}
     <button onclick={toggleNav} type="button" class={btnCls} aria-controls="navbar-default">
       <span class="sr-only">Open main menu</span>
-      <svg
-        class="h-5 w-5"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 17 14"
-      >
-        <path
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M1 1h15M1 7h15M1 13h15"
-        />
+      <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
       </svg>
     </button>
-    <div
-      class="{navDisplay} {divChildrenCls}"
-      transition:slide={slideParams}
-      role="button"
-      tabindex="0"
-    >
+    <div class="{navDisplay} {divChildrenCls}" transition:slide={slideParams} role="button" tabindex="0">
       {@render children()}
     </div>
   </div>
@@ -119,18 +99,17 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop toggleNav,
-@prop closeNav,
-@prop navStatus,
-@prop fluid,
-@prop brand,
-@prop breakPoint = 'md',
-@prop navclass,
-@prop divclass,
-@prop btnclass,
-@prop div2class,
-@prop activeClass,
-@prop nonActiveClass,
-@prop ...attributes
+@props: children: any;
+@props:toggleNav: () => void;
+@props:closeNav: () => void;
+@props:navStatus: boolean;
+@props:fluid?: boolean;
+@props:brand?: any;
+@props:breakPoint?:  navbarType['breakPoint']; = 'md';
+@props:navclass?: string;
+@props:divclass?: string;
+@props:btnclass?: string;
+@props:div2class?: string;
+@props:nonActiveClass?: string;
+@props:activeClass?: string;
 -->

@@ -61,16 +61,12 @@
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
         {#snippet icon()}
-          <ChartSolid
-            class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-          />
+          <ChartSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Kanban" {spanclass}>
         {#snippet icon()}
-          <GridSolid
-            class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-          />
+          <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
           <span
@@ -96,9 +92,7 @@
       </SidebarItem>
       <SidebarItem label="Sidebar" href="/components/sidebar">
         {#snippet icon()}
-          <UserSolid
-            class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-          />
+          <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
     </SidebarGroup>
@@ -159,16 +153,12 @@
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
         {#snippet icon()}
-          <ChartSolid
-            class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-          />
+          <ChartSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Kanban" {spanclass}>
         {#snippet icon()}
-          <GridSolid
-            class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-          />
+          <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
           <span
@@ -194,9 +184,7 @@
       </SidebarItem>
       <SidebarItem label="Sidebar" href="/components/sidebar">
         {#snippet icon()}
-          <UserSolid
-            class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-          />
+          <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
     </SidebarGroup>
@@ -220,9 +208,7 @@
     <SidebarGroup>
       <SidebarItem label="Dashboard">
         {#snippet icon()}
-          <ChartSolid
-            class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-          />
+          <ChartSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarDropdownWrapper label="E-commerce" btnclass="p-2">
@@ -237,9 +223,7 @@
       </SidebarDropdownWrapper>
       <SidebarItem label="Kanban" {spanclass}>
         {#snippet icon()}
-          <GridSolid
-            class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-          />
+          <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
           <span
@@ -265,9 +249,7 @@
       </SidebarItem>
       <SidebarItem label="Users">
         {#snippet icon()}
-          <UserSolid
-            class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-          />
+          <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sign In">
@@ -279,9 +261,7 @@
       </SidebarItem>
       <SidebarItem label="Sign Up">
         {#snippet icon()}
-          <EditSolid
-            class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-          />
+          <EditSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
     </SidebarGroup>
@@ -307,16 +287,12 @@
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
         {#snippet icon()}
-          <ChartSolid
-            class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-          />
+          <ChartSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Kanban" {spanclass}>
         {#snippet icon()}
-          <GridSolid
-            class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-          />
+          <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
           <span
@@ -342,25 +318,19 @@
       </SidebarItem>
       <SidebarItem label="Sidebar" href="/sidebar">
         {#snippet icon()}
-          <UserSolid
-            class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-          />
+          <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
     </SidebarGroup>
     <SidebarGroup border>
       <SidebarItem label="Upgrade to Pro">
         {#snippet icon()}
-          <FireSolid
-            class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-          />
+          <FireSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Documentation">
         {#snippet icon()}
-          <BookSolid
-            class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-          />
+          <BookSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Components">

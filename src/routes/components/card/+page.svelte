@@ -4,11 +4,7 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import {
-    ArrowRightOutline,
-    GiftBoxSolid,
-    ArrowUpRightFromSquareOutline
-  } from 'flowbite-svelte-icons';
+  import { ArrowRightOutline, GiftBoxSolid, ArrowUpRightFromSquareOutline } from 'flowbite-svelte-icons';
 
   const modules = import.meta.glob('./md/*.md', { query: '?raw', import: 'default', eager: true });
 </script>
@@ -23,12 +19,9 @@
 
 <CodeWrapper class="flex justify-center">
   <Card href="/cards">
-    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-      Noteworthy technology acquisitions 2021
-    </h5>
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
     <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">
-      Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse
-      chronological order.
+      Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
     </p>
   </Card>
 </CodeWrapper>
@@ -39,12 +32,9 @@
 
 <CodeWrapper class="flex justify-center">
   <Card>
-    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-      Noteworthy technology acquisitions 2021
-    </h5>
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
     <p class="mb-3 font-normal leading-tight text-gray-700 dark:text-gray-400">
-      Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse
-      chronological order.
+      Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
     </p>
     <Button btnclass="w-fit">
       Read more <ArrowRightOutline class="ms-2 h-3.5 w-3.5 text-white" />
@@ -60,9 +50,7 @@
   <Card>
     <GiftBoxSolid class="mb-3 h-7 w-7 text-gray-500 dark:text-gray-400" />
     <a href="/">
-      <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
-        Need a help in Claim?
-      </h5>
+      <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Need a help in Claim?</h5>
     </a>
     <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">
       Go to this step by step guideline process on how to certify for your weekly benefits:
@@ -80,12 +68,9 @@
 
 <CodeWrapper class="flex justify-center">
   <Card src="/images/image-1.webp" reverse={true}>
-    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-      Noteworthy technology acquisitions 2021
-    </h5>
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
     <p class="mb-3 font-normal leading-tight text-gray-700 dark:text-gray-400">
-      Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse
-      chronological order.
+      Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
     </p>
     <Button>
       Read more <ArrowRightOutline class="ms-2 h-3.5 w-3.5 text-white" />
@@ -99,12 +84,9 @@
 
 <CodeWrapper class="flex justify-center">
   <Card src="/images/image-1.webp" href="/" horizontal size="md">
-    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-      Noteworthy technology acquisitions 2021
-    </h5>
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
     <p class="mb-3 font-normal leading-tight text-gray-700 dark:text-gray-400">
-      Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse
-      chronological order.
+      Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
     </p>
   </Card>
 </CodeWrapper>
@@ -118,9 +100,7 @@
     <p class="mb-5 text-base text-gray-500 dark:text-gray-400 sm:text-lg">
       Stay up to date and move work forward with Flowbite on iOS & Android. Download the app today.
     </p>
-    <div
-      class="items-center justify-center space-y-4 sm:flex sm:space-x-4 sm:space-y-0 rtl:space-x-reverse"
-    >
+    <div class="items-center justify-center space-y-4 sm:flex sm:space-x-4 sm:space-y-0 rtl:space-x-reverse">
       <Button>Download it</Button>
       <Button>Get it on</Button>
     </div>

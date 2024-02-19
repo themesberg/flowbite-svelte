@@ -27,29 +27,13 @@
   }
   import { twMerge } from 'tailwind-merge';
 
-  let {
-    children,
-    address,
-    item1,
-    item2,
-    item3,
-    review,
-    articleclass,
-    divclass,
-    imgclass,
-    ulclass,
-    liclass
-  } = $props<Props>();
+  let { children, address, item1, item2, item3, review, articleclass, divclass, imgclass, ulclass, liclass } = $props<Props>();
 </script>
 
 <article class={twMerge('md:grid md:grid-cols-3 md:gap-8', articleclass)}>
   <div>
     <div class={twMerge('mb-6 flex items-center space-x-4 rtl:space-x-reverse', divclass)}>
-      <img
-        class={twMerge('h-10 w-10 rounded-full', imgclass)}
-        src={review.imgSrc}
-        alt={review.imgAlt}
-      />
+      <img class={twMerge('h-10 w-10 rounded-full', imgclass)} src={review.imgSrc} alt={review.imgAlt} />
       <div class="space-y-1 font-medium dark:text-white">
         <p>{review.name}</p>
         {#if review.address}
@@ -95,9 +79,7 @@
           {review.title}
         </h4>
       </div>
-      <p
-        class="inline-flex items-center rounded bg-primary-700 p-1.5 text-sm font-semibold text-white"
-      >
+      <p class="inline-flex items-center rounded bg-primary-700 p-1.5 text-sm font-semibold text-white">
         {review.rating}
       </p>
     </div>
@@ -109,15 +91,15 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop address,
-@prop item1,
-@prop item2,
-@prop item3,
-@prop review,
-@prop articleclass,
-@prop divclass,
-@prop imgclass,
-@prop ulclass,
-@prop liclass
+@props: children?: any;
+@props:address?: any;
+@props:item1?: any;
+@props:item2?: any;
+@props:item3?: any;
+@props:review?: ReviewType;
+@props:articleclass?: string;
+@props:divclass?: string;
+@props:imgclass?: string;
+@props:ulclass?: string;
+@props:liclass?: string;
 -->

@@ -60,15 +60,8 @@
 <H2>Dot indicator</H2>
 <CodeWrapper class="flex justify-center gap-4">
   <Avatar src="/images/profile-picture-3.webp" dot={{ color: 'red' }} />
-  <Avatar
-    src="/images/profile-picture-3.webp"
-    dot={{ placement: 'top-right', color: 'red' }}
-    rounded
-  />
-  <Avatar
-    src="/images/profile-picture-5.webp"
-    dot={{ placement: 'bottom-right', color: 'green' }}
-  />
+  <Avatar src="/images/profile-picture-3.webp" dot={{ placement: 'top-right', color: 'red' }} rounded />
+  <Avatar src="/images/profile-picture-5.webp" dot={{ placement: 'bottom-right', color: 'green' }} />
   <Avatar src="/images/profile-picture-5.webp" dot={{ placement: 'bottom-right' }} rounded />
   <Avatar dot={{}} />
 </CodeWrapper>
@@ -108,12 +101,7 @@
 
 <H2>User dropdown</H2>
 <CodeWrapper class="h-80">
-  <Avatar
-    onclick={toggle}
-    src="/images/profile-picture-3.webp"
-    class="cursor-pointer"
-    dot={{ color: 'green' }}
-  />
+  <Avatar onclick={toggle} src="/images/profile-picture-3.webp" class="cursor-pointer" dot={{ color: 'green' }} />
   <Dropdown {isOpen}>
     {#snippet header()}
       <div>Bonnie Green</div>

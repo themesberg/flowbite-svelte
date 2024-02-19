@@ -1,11 +1,6 @@
 <script>
   import { Chart, Card, A, Button, Dropdown, DropdownItem, uiHelpers } from '$lib';
-  import {
-    UsersGroupSolid,
-    ArrowUpSolid,
-    ChevronRightSolid,
-    ChevronDownSolid
-  } from 'flowbite-svelte-icons';
+  import { UsersGroupSolid, ArrowUpSolid, ChevronRightSolid, ChevronDownSolid } from 'flowbite-svelte-icons';
   let dropdown = uiHelpers();
   let isOpen = $state(false);
   let toggle = dropdown.toggle;
@@ -75,15 +70,7 @@
       }
     ],
     xaxis: {
-      categories: [
-        '01 February',
-        '02 February',
-        '03 February',
-        '04 February',
-        '05 February',
-        '06 February',
-        '07 February'
-      ],
+      categories: ['01 February', '02 February', '03 February', '04 February', '05 February', '06 February', '07 February'],
       labels: {
         show: false
       },
@@ -312,17 +299,13 @@
         <h5 class="pb-2 text-3xl font-bold leading-none text-gray-900 dark:text-white">32.4k</h5>
         <p class="text-base font-normal text-gray-500 dark:text-gray-400">Users this week</p>
       </div>
-      <div
-        class="flex items-center px-2.5 py-0.5 text-center text-base font-semibold text-green-500 dark:text-green-500"
-      >
+      <div class="flex items-center px-2.5 py-0.5 text-center text-base font-semibold text-green-500 dark:text-green-500">
         12%
         <ChevronRightSolid class="ms-1 h-3 w-3" />
       </div>
     </div>
     <Chart {options} />
-    <div
-      class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700"
-    >
+    <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
       <div class="flex items-center justify-between pt-5">
         <Button
           onclick={toggle}
@@ -358,16 +341,12 @@
   <Card>
     <div class="mb-4 flex justify-between border-b border-gray-200 pb-4 dark:border-gray-700">
       <div class="flex items-center">
-        <div
-          class="me-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700"
-        >
+        <div class="me-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700">
           <UsersGroupSolid class="h-6 w-6 text-gray-500 dark:text-gray-400" />
         </div>
         <div>
           <h5 class="pb-1 text-2xl font-bold leading-none text-gray-900 dark:text-white">3.4k</h5>
-          <p class="text-sm font-normal text-gray-500 dark:text-gray-400">
-            Leads generated per week
-          </p>
+          <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Leads generated per week</p>
         </div>
       </div>
       <div>
@@ -390,9 +369,7 @@
       </dl>
     </div>
     <Chart options={optionCol} />
-    <div
-      class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700"
-    >
+    <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
       <div class="flex items-center justify-between pt-5">
         <Button
           onclick={toggle2}
@@ -453,9 +430,7 @@
     </div>
 
     <Chart options={optionBar} />
-    <div
-      class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700"
-    >
+    <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
       <div class="flex items-center justify-between pt-5">
         <Button
           onclick={toggle3}

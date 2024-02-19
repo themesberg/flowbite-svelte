@@ -46,10 +46,8 @@
     green: 'text-white bg-green-700 hover:bg-green-800 dark:bg-green-600 dark:hover:bg-green-700',
     light:
       'text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600',
-    primary:
-      'text-white bg-primary-700 hover:bg-primary-800 dark:bg-primary-600 dark:hover:bg-primary-700',
-    purple:
-      'text-white bg-purple-700 hover:bg-purple-800 dark:bg-purple-600 dark:hover:bg-purple-700',
+    primary: 'text-white bg-primary-700 hover:bg-primary-800 dark:bg-primary-600 dark:hover:bg-primary-700',
+    purple: 'text-white bg-purple-700 hover:bg-purple-800 dark:bg-purple-600 dark:hover:bg-purple-700',
     red: 'text-white bg-red-700 hover:bg-red-800 dark:bg-red-600 dark:hover:bg-red-700',
     yellow: 'text-white bg-yellow-400 hover:bg-yellow-500 ',
     none: ''
@@ -60,17 +58,13 @@
       'text-primary-700 border dark:text-primary-500 bg-gray-100 dark:bg-gray-700 border-gray-300 shadow-gray-300 dark:shadow-gray-800 shadow-inner',
     blue: 'text-blue-900 bg-blue-400 dark:bg-blue-500 shadow-blue-700 dark:shadow-blue-800 shadow-inner',
     dark: 'text-white bg-gray-500 dark:bg-gray-600 shadow-gray-800 dark:shadow-gray-900 shadow-inner',
-    green:
-      'text-green-900 bg-green-400 dark:bg-green-500 shadow-green-700 dark:shadow-green-800 shadow-inner',
+    green: 'text-green-900 bg-green-400 dark:bg-green-500 shadow-green-700 dark:shadow-green-800 shadow-inner',
     light:
       'text-gray-900 bg-gray-100 border border-gray-300 dark:bg-gray-500 dark:text-gray-900 dark:border-gray-700 shadow-gray-300 dark:shadow-gray-700 shadow-inner',
-    primary:
-      'text-primary-900 bg-primary-400 dark:bg-primary-500 shadow-primary-700 dark:shadow-primary-800 shadow-inner',
-    purple:
-      'text-purple-900 bg-purple-400 dark:bg-purple-500 shadow-purple-700 dark:shadow-purple-800 shadow-inner',
+    primary: 'text-primary-900 bg-primary-400 dark:bg-primary-500 shadow-primary-700 dark:shadow-primary-800 shadow-inner',
+    purple: 'text-purple-900 bg-purple-400 dark:bg-purple-500 shadow-purple-700 dark:shadow-purple-800 shadow-inner',
     red: 'text-red-900 bg-red-400 dark:bg-red-500 shadow-red-700 dark:shadow-red-800 shadow-inner',
-    yellow:
-      'text-yellow-900 bg-yellow-300 dark:bg-yellow-400 shadow-yellow-500 dark:shadow-yellow-700 shadow-inner',
+    yellow: 'text-yellow-900 bg-yellow-300 dark:bg-yellow-400 shadow-yellow-500 dark:shadow-yellow-700 shadow-inner',
     none: ''
   };
 
@@ -155,8 +149,7 @@
       coloredFocusClasses[color],
       hasBorder() && group && 'border-s-0 first:border-s',
       group
-        ? (pill && 'first:rounded-s-full last:rounded-e-full') ||
-            'first:rounded-s-lg last:rounded-e-lg'
+        ? (pill && 'first:rounded-s-full last:rounded-e-full') || 'first:rounded-s-lg last:rounded-e-lg'
         : (pill && 'rounded-full') || 'rounded-lg',
       shadow && 'shadow-lg',
       shadow && coloredShadowClasses[color],
@@ -184,17 +177,16 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop pill = false,
-@prop outline = false,
-@prop size = group ? 'sm' : 'md',
-@prop href = undefined,
-@prop type = 'button',
-@prop color = group ? (outline ? 'dark' : 'alternative') : 'primary',
-@prop shadow = false,
-@prop tag = 'button',
-@prop checked = undefined,
-@prop disabled = false,
-@prop btnclass,
-@prop ...attributes
+@props: children?: any;
+@props:pill?:  boolean; = false;
+@props:outline?:  boolean; = false;
+@props:size?:  'xs' | 'sm' | 'md' | 'lg' | 'xl'; = group ? 'sm' : 'md';
+@props:href?:  string | undefined; = undefined;
+@props:type?:  HTMLButtonAttributes['type']; = 'button';
+@props:color?:  ButtonColor; = group ? (outline ? 'dark' : 'alternative') : 'primary';
+@props:shadow?:  boolean; = false;
+@props:tag?:  string; = 'button';
+@props:checked?:  boolean | undefined; = undefined;
+@props:disabled?:  boolean; = false;
+@props:btnclass?: string | undefined;
 -->

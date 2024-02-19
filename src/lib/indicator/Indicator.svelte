@@ -12,16 +12,7 @@
   import type { IndicatorPlacementType } from '$lib/types';
   import { twMerge } from 'tailwind-merge';
 
-  let {
-    children,
-    color = 'gray',
-    rounded = false,
-    size = 'md',
-    border = false,
-    placement,
-    offset = true,
-    divclass
-  } = $props<Props>();
+  let { children, color = 'gray', rounded = false, size = 'md', border = false, placement, offset = true, divclass } = $props<Props>();
   // export let color: IndicatorColorType = 'gray';
   // export let rounded: boolean = false;
   // export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
@@ -61,8 +52,7 @@
 
     // center
     'center-left': 'top-1/2 -translate-y-1/2 start-0',
-    center:
-      'top-1/2 -translate-y-1/2 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 rtl:translate-x-1/2',
+    center: 'top-1/2 -translate-y-1/2 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 rtl:translate-x-1/2',
     'center-right': 'top-1/2 -translate-y-1/2 end-0',
 
     // bottom
@@ -111,12 +101,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop color = 'gray',
-@prop rounded = false,
-@prop size = 'md',
-@prop border = false,
-@prop placement,
-@prop offset = true,
-@prop divclass
+@props: children?: any;
+@props:color?: IndicatorColorType;
+@props:rounded?: boolean;
+@props:size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+@props:border?: boolean;
+@props:placement?: IndicatorPlacementType | undefined;
+@props:divclass?: string | undefined;
+@props:offset?: boolean;
 -->

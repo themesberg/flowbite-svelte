@@ -62,13 +62,13 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop text,
-@prop divclass,
-@prop size = 24,
-@prop total = 5,
-@prop rating = 4,
-@prop partialId = 'partialStar' + idGenerator(),
-@prop icon = Star,
-@prop count = false
+@props: children?: any;
+@props:text?: any;
+@props:divclass?: string;
+@props:size?:  number; = 24;
+@props:total?:  number; = 5;
+@props:rating?:  number; = 4;
+@props:partialId?:  string; = 'partialStar' + idGenerator();
+@props:icon?:  ComponentType; = Star;
+@props:count?:  boolean; = false;
 -->

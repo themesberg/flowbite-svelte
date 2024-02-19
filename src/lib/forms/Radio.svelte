@@ -14,17 +14,10 @@
     blue: 'text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600'
   };
 
-  export const labelCls = (inline: boolean, extraClass: string) =>
-    twMerge(inline ? 'inline-flex' : 'flex', 'items-center', extraClass);
+  export const labelCls = (inline: boolean, extraClass: string) => twMerge(inline ? 'inline-flex' : 'flex', 'items-center', extraClass);
   export let spacing: string = 'me-2';
 
-  export const inputCls = (
-    custom: boolean,
-    color: FormColorType,
-    rounded: boolean,
-    tinted: boolean,
-    extraClass: string
-  ) =>
+  export const inputCls = (custom: boolean, color: FormColorType, rounded: boolean, tinted: boolean, extraClass: string) =>
     twMerge(
       'w-4 h-4 bg-gray-100 border-gray-300 dark:ring-offset-gray-800 focus:ring-2',
       spacing,
@@ -68,13 +61,7 @@
 </script>
 
 <Label labelclass={labelCls(inline, labelclass)}>
-  <input
-    type="radio"
-    bind:group
-    {value}
-    {...attributes}
-    class={inputCls(custom, color, false, background, inputclass)}
-  />
+  <input type="radio" bind:group {value} {...attributes} class={inputCls(custom, color, false, background, inputclass)} />
   {#if children}
     {@render children()}
   {/if}
@@ -84,13 +71,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop labelclass = '',
-@prop color = 'primary',
-@prop custom = false,
-@prop inline = false,
-@prop group,
-@prop value,
-@prop inputclass = '',
-@prop ...attributes
+@props: children?: any;
+@props:labelclass?:  string; = '';
+@props:color?:  FormColorType; = 'primary';
+@props:custom?:  boolean; = false;
+@props:inline?:  boolean; = false;
+@props:group?: number | string | undefined;
+@props:value?: number | string;
+@props:inputclass?:  string; = '';
 -->

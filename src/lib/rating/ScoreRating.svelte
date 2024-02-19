@@ -24,8 +24,7 @@
   const desc2Cls: string = 'ms-2 w-24 font-medium text-gray-900 dark:text-white';
   const desc3spanCls: string = 'mx-2 w-1 h-1 bg-gray-900 rounded-full dark:bg-gray-500';
   const desc3pCls: string = 'text-sm  w-24 font-medium text-gray-500 dark:text-gray-400';
-  const linkCls: string =
-    'ms-auto w-32 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500';
+  const linkCls: string = 'ms-auto w-32 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500';
   const barColor: string = 'bg-primary-600 h-2.5 rounded dark:bg-primary-500';
 </script>
 
@@ -77,7 +76,5 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop ratings,
-@prop ratings2,
-@prop headerLabel
+@props: ratings?: { label
 -->

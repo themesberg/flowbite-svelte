@@ -4,10 +4,7 @@
   }
   import { twMerge } from 'tailwind-merge';
   let { divclass } = $props<Props>();
-  let divCls: string = twMerge(
-    'p-4 max-w-sm rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700',
-    divclass
-  );
+  let divCls: string = twMerge('p-4 max-w-sm rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700', divclass);
 </script>
 
 <div role="status" class={divCls}>
@@ -29,5 +26,5 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop divclass
+@props: divclass?: string | undefined;
 -->

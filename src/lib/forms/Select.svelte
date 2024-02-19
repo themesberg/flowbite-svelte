@@ -41,15 +41,7 @@
     lg: 'text-base py-3 px-4'
   };
 
-  let selectCls: string = $state(
-    twMerge(
-      common,
-      underline ? underlineCls : defaultCls,
-      sizes[size],
-      underline && '!px-0',
-      selectclass
-    )
-  );
+  let selectCls: string = $state(twMerge(common, underline ? underlineCls : defaultCls, sizes[size], underline && '!px-0', selectclass));
 </script>
 
 <select {...attributes} bind:value class={selectCls} on:change on:contextmenu on:input>
@@ -68,13 +60,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop items,
-@prop value,
-@prop placeholder = 'Choose option ...',
-@prop underline,
-@prop size = 'md',
-@prop selectclass,
-@prop underlineClass,
-@prop ...attributes
+@props: children?: any;
+@props:items: SelectOptionType<any>[];
+@props:value?: any;
+@props:placeholder?:  string | undefined; = 'Choose option ...';
+@props:underline?: boolean;
+@props:size?:  'sm' | 'md' | 'lg'; = 'md';
+@props:selectclass?: string | undefined;
+@props:underlineClass?: string | undefined;
 -->

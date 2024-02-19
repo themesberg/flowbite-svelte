@@ -35,12 +35,7 @@
 
 <CodeWrapper class="h-48">
   <Label for="select-disabled" color="disabled" labelclass="mb-2">Disabled select</Label>
-  <Select
-    id="select-disabled"
-    disabled
-    items={countries}
-    placeholder="You can't select anything..."
-  />
+  <Select id="select-disabled" disabled items={countries} placeholder="You can't select anything..." />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/disabled.md']} />

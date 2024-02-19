@@ -23,10 +23,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop href,
-@prop ariaLabel,
-@prop aclass,
-@prop target,
-@prop ...attributes
+@props: children: any;
+@props:href?: string | undefined;
+@props:ariaLabel?: string | undefined;
+@props:aclass?: string | undefined;
+@props:target?: string | undefined;
 -->

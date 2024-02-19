@@ -63,46 +63,11 @@ export type drawerTransitionTypes =
   | 'out:blur'
   | undefined;
 
-export type PsizeType =
-  | 'xs'
-  | 'sm'
-  | 'base'
-  | 'lg'
-  | 'xl'
-  | '2xl'
-  | '3xl'
-  | '4xl'
-  | '5xl'
-  | '6xl'
-  | '7xl'
-  | '8xl'
-  | '9xl';
+export type PsizeType = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | '8xl' | '9xl';
 
-export type PweightType =
-  | 'thin'
-  | 'extralight'
-  | 'light'
-  | 'normal'
-  | 'medium'
-  | 'semibold'
-  | 'bold'
-  | 'extrabold'
-  | 'black';
+export type PweightType = 'thin' | 'extralight' | 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'extrabold' | 'black';
 
-export type BlockQuoteType =
-  | 'xs'
-  | 'sm'
-  | 'base'
-  | 'lg'
-  | 'xl'
-  | '2xl'
-  | '3xl'
-  | '4xl'
-  | '5xl'
-  | '6xl'
-  | '7xl'
-  | '8xl'
-  | '9xl';
+export type BlockQuoteType = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | '8xl' | '9xl';
 
 import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
 
@@ -114,27 +79,8 @@ export interface ListGroupItemType {
   [propName: string]: any;
 }
 
-export type FormColorType =
-  | 'blue'
-  | 'red'
-  | 'green'
-  | 'purple'
-  | 'teal'
-  | 'yellow'
-  | 'orange'
-  | 'primary'
-  | 'secondary';
-export type ButtonColorType =
-  | 'alternative'
-  | 'blue'
-  | 'dark'
-  | 'green'
-  | 'light'
-  | 'primary'
-  | 'purple'
-  | 'red'
-  | 'yellow'
-  | 'none';
+export type FormColorType = 'blue' | 'red' | 'green' | 'purple' | 'teal' | 'yellow' | 'orange' | 'primary' | 'secondary';
+export type ButtonColorType = 'alternative' | 'blue' | 'dark' | 'green' | 'light' | 'primary' | 'purple' | 'red' | 'yellow' | 'none';
 
 export type InputType =
   | 'color'
@@ -160,17 +106,7 @@ export type SidebarType = {
   nonActiveClass: string;
 };
 
-export type CloseBtnColors =
-  | 'gray'
-  | 'red'
-  | 'yellow'
-  | 'green'
-  | 'indigo'
-  | 'purple'
-  | 'pink'
-  | 'blue'
-  | 'primary'
-  | 'none';
+export type CloseBtnColors = 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'primary' | 'none';
 
 export interface ButtonClassesTypes {
   default?: string;

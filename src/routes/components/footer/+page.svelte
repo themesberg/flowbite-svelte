@@ -1,15 +1,5 @@
 <script>
-  import {
-    Footer,
-    FooterBrand,
-    FooterLi,
-    FooterUl,
-    FooterCopyright,
-    FooterIcon,
-    Skeleton,
-    ImagePlaceholder,
-    TextPlaceholder
-  } from '$lib';
+  import { Footer, FooterBrand, FooterLi, FooterUl, FooterCopyright, FooterIcon, Skeleton, ImagePlaceholder, TextPlaceholder } from '$lib';
   import { FacebookSolid, GithubSolid, DiscordSolid, TwitterSolid } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -30,9 +20,7 @@
   <Footer footerclass="shadow-none" footerType="logo">
     <div class="sm:flex sm:items-center sm:justify-between">
       <FooterBrand href="/" name="Svelt 5 UI Lib" />
-      <FooterUl
-        ulclass="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"
-      >
+      <FooterUl ulclass="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
         <FooterLi href="https://github.com/shinokada/svelte-5-ui-lib">Repo</FooterLi>
         <FooterLi href="">About</FooterLi>
       </FooterUl>
@@ -46,15 +34,8 @@
 <CodeWrapper>
   <Footer footerType="logo">
     <div class="sm:flex sm:items-center sm:justify-between">
-      <FooterBrand
-        href="https://flowbite.com"
-        src="/images/flowbite-svelte-icon-logo.svg"
-        alt="Flowbite Logo"
-        name="Flowbite"
-      />
-      <FooterUl
-        ulclass="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"
-      >
+      <FooterBrand href="https://flowbite.com" src="/images/flowbite-svelte-icon-logo.svg" alt="Flowbite Logo" name="Flowbite" />
+      <FooterUl ulclass="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
         <FooterLi href="/">About</FooterLi>
         <FooterLi href="/">Privacy Policy</FooterLi>
         <FooterLi href="/">Licensing</FooterLi>
@@ -73,27 +54,18 @@
   <Footer footerType="socialmedia">
     <div class="md:flex md:justify-between">
       <div class="mb-6 md:mb-0">
-        <FooterBrand
-          href="https://flowbite.com"
-          src="/images/flowbite-svelte-icon-logo.svg"
-          alt="Flowbite Logo"
-          name="Flowbite"
-        />
+        <FooterBrand href="https://flowbite.com" src="/images/flowbite-svelte-icon-logo.svg" alt="Flowbite Logo" name="Flowbite" />
       </div>
       <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
         <div>
-          <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
-            Resources
-          </h2>
+          <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Resources</h2>
           <FooterUl>
             <FooterLi liclass="mb-4" href="/">Flowbite</FooterLi>
             <FooterLi liclass="mb-4" href="/">Tailwind CSS</FooterLi>
           </FooterUl>
         </div>
         <div>
-          <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
-            Follow us
-          </h2>
+          <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Follow us</h2>
           <FooterUl>
             <FooterLi liclass="mb-4" href="/">GitHub</FooterLi>
             <FooterLi liclass="mb-4" href="/">Discord</FooterLi>
@@ -113,24 +85,16 @@
       <FooterCopyright href="/" by="Flowbite™" />
       <div class="mt-4 flex space-x-6 sm:mt-0 sm:justify-center rtl:space-x-reverse">
         <FooterIcon href="/">
-          <FacebookSolid
-            class="h-4 w-4 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
-          />
+          <FacebookSolid class="h-4 w-4 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white" />
         </FooterIcon>
         <FooterIcon href="/">
-          <DiscordSolid
-            class="h-4 w-4 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
-          />
+          <DiscordSolid class="h-4 w-4 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white" />
         </FooterIcon>
         <FooterIcon href="/">
-          <TwitterSolid
-            class="h-4 w-4 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
-          />
+          <TwitterSolid class="h-4 w-4 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white" />
         </FooterIcon>
         <FooterIcon href="/">
-          <GithubSolid
-            class="h-4 w-4 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
-          />
+          <GithubSolid class="h-4 w-4 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white" />
         </FooterIcon>
       </div>
     </div>
@@ -183,24 +147,16 @@
       <FooterCopyright spanclass="text-sm text-gray-300 sm:text-center" href="/" by="Flowbite™" />
       <div class="mt-4 flex space-x-6 sm:justify-center md:mt-0 rtl:space-x-reverse">
         <FooterIcon href="/">
-          <FacebookSolid
-            class="h-4 w-4 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
-          />
+          <FacebookSolid class="h-4 w-4 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white" />
         </FooterIcon>
         <FooterIcon href="/">
-          <DiscordSolid
-            class="h-4 w-4 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
-          />
+          <DiscordSolid class="h-4 w-4 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white" />
         </FooterIcon>
         <FooterIcon href="/">
-          <TwitterSolid
-            class="h-4 w-4 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
-          />
+          <TwitterSolid class="h-4 w-4 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white" />
         </FooterIcon>
         <FooterIcon href="/">
-          <GithubSolid
-            class="h-4 w-4 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
-          />
+          <GithubSolid class="h-4 w-4 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white" />
         </FooterIcon>
       </div>
     </div>
@@ -220,9 +176,7 @@
     </div>
     <Footer footerclass="absolute bottom-0 start-0 z-20 w-full">
       <FooterCopyright href="/" by="Flowbite™" />
-      <FooterUl
-        ulclass="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"
-      >
+      <FooterUl ulclass="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
         <FooterLi href="/">About</FooterLi>
         <FooterLi href="/">Privacy Policy</FooterLi>
         <FooterLi href="/">Licensing</FooterLi>

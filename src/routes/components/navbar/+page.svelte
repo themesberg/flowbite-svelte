@@ -1,15 +1,5 @@
 <script lang="ts">
-  import {
-    Navbar,
-    NavLi,
-    NavBrand,
-    NavUl,
-    uiHelpers,
-    ImagePlaceholder,
-    Skeleton,
-    TextPlaceholder,
-    P
-  } from '$lib';
+  import { Navbar, NavLi, NavBrand, NavUl, uiHelpers, ImagePlaceholder, Skeleton, TextPlaceholder, P } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -63,10 +53,7 @@
 <HighlightCompo code={modules['./md/default-nav.md']} />
 
 <H2>Breakpoint</H2>
-<P
-  >Use the `breakPoint` prop to change the breakpoint. There are 4 breakpoints: `md`, `lg`, `xl`,
-  `xxl`.</P
->
+<P>Use the `breakPoint` prop to change the breakpoint. There are 4 breakpoints: `md`, `lg`, `xl`, `xxl`.</P>
 <CodeWrapper>
   <Navbar toggleNav={toggleNavLg} closeNav={closeNavLg} navStatus={navStatusLg} breakPoint="lg">
     {#snippet brand()}

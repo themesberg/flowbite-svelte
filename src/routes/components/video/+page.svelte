@@ -53,12 +53,7 @@
 
 <H3>Responsive</H3>
 <CodeWrapper>
-  <Video
-    src="/videos/flowbite.mp4"
-    controls
-    class="h-auto w-full max-w-full"
-    trackSrc="flowbite.mp4"
-  />
+  <Video src="/videos/flowbite.mp4" controls class="h-auto w-full max-w-full" trackSrc="flowbite.mp4" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/responsive.md']} />

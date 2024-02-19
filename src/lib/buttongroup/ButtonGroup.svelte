@@ -23,8 +23,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop size = 'md',
-@prop divclass = '',
-@prop ...attributes
+@props: children: any;
+@props:size?: SizeType;
+@props:divclass?: string | undefined;
 -->

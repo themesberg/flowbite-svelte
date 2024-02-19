@@ -13,35 +13,15 @@
     header?: any;
     activeUrl?: string;
     position?: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky';
-    navType?:
-      | 'default'
-      | 'border'
-      | 'application'
-      | 'pagination'
-      | 'group'
-      | 'card'
-      | 'meeting'
-      | 'video';
+    navType?: 'default' | 'border' | 'application' | 'pagination' | 'group' | 'card' | 'meeting' | 'video';
     divclass?: string;
     div2class?: string;
     activeClass?: string;
   }
 
-  let {
-    children,
-    header,
-    position = 'fixed',
-    navType = 'default',
-    divclass,
-    div2class,
-    activeClass,
-    ...attributes
-  } = $props<Props>();
+  let { children, header, position = 'fixed', navType = 'default', divclass, div2class, activeClass, ...attributes } = $props<Props>();
 
-  const activeCls = twMerge(
-    'text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900',
-    activeClass
-  );
+  const activeCls = twMerge('text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900', activeClass);
 
   setContext('navType', navType);
   setContext<BottomNavType>('bottomNavType', { activeClass: activeCls });
@@ -49,8 +29,7 @@
   const outerDivClasses = {
     default: 'bottom-0 start-0 h-16 bg-white border-t',
     border: 'bottom-0 start-0 h-16 bg-white border-t',
-    application:
-      'h-16 max-w-lg -translate-x-1/2 rtl:translate-x-1/2 bg-white border rounded-full bottom-4 start-1/2',
+    application: 'h-16 max-w-lg -translate-x-1/2 rtl:translate-x-1/2 bg-white border rounded-full bottom-4 start-1/2',
     pagination: 'bottom-0 h-16 -translate-x-1/2 rtl:translate-x-1/2 bg-white border-t start-1/2',
     group: 'bottom-0 -translate-x-1/2 rtl:translate-x-1/2 bg-white border-t start-1/2',
     card: 'bottom-0 start-0 h-16 bg-white border-t',
@@ -69,12 +48,7 @@
     video: 'flex items-center w-full'
   };
 
-  const outerCls = twMerge(
-    position,
-    'w-full z-30 border-gray-200 dark:bg-gray-700 dark:border-gray-600',
-    outerDivClasses[navType],
-    divclass
-  );
+  const outerCls = twMerge(position, 'w-full z-30 border-gray-200 dark:bg-gray-700 dark:border-gray-600', outerDivClasses[navType], divclass);
   const innerCls = twMerge('grid h-full max-w-lg mx-auto', innerDivClasses[navType], div2class);
 </script>
 
@@ -91,12 +65,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop children,
-@prop header,
-@prop position = 'fixed',
-@prop navType = 'default',
-@prop divclass,
-@prop div2class,
-@prop activeClass,
-@prop ...attributes
+@props: children: any;
+@props:header?: any;
+@props:activeUrl?: string;
+@props:position?: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky';
+@props:navType?: 'default' | 'border' | 'application' | 'pagination' | 'group' | 'card' | 'meeting' | 'video';
+@props:divclass?: string;
+@props:div2class?: string;
+@props:activeClass?: string;
 -->

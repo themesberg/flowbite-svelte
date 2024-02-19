@@ -11,14 +11,10 @@
     name?: string | undefined;
     target?: string | undefined;
   }
-  let { children, aclass, spanclass, imgclass, href, src, alt, name, target, ...attributes } =
-    $props<Props>();
+  let { children, aclass, spanclass, imgclass, href, src, alt, name, target, ...attributes } = $props<Props>();
 
   let aCls: string = twMerge('flex items-center', aclass);
-  let spanCls: string = twMerge(
-    'self-center text-2xl font-semibold whitespace-nowrap dark:text-white',
-    spanclass
-  );
+  let spanCls: string = twMerge('self-center text-2xl font-semibold whitespace-nowrap dark:text-white', spanclass);
   let imgCls: string = twMerge('me-3 h-8', imgclass);
 </script>
 
@@ -37,3 +33,18 @@
 {:else}
   <img {src} class={imgCls} {alt} />
 {/if}
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@props: children?: any;
+@props:aclass?: string | undefined;
+@props:spanclass?: string | undefined;
+@props:imgclass?: string | undefined;
+@props:href?: string | undefined;
+@props:src?: string | undefined;
+@props:alt?: string | undefined;
+@props:name?: string | undefined;
+@props:target?: string | undefined;
+-->

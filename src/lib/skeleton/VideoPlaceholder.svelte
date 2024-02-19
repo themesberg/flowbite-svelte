@@ -18,11 +18,7 @@
   };
 
   let { size = 'sm', divclass } = $props<Props>();
-  let outDivcls = twMerge(
-    sizes[size],
-    'flex justify-center items-center h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700',
-    divclass
-  );
+  let outDivcls = twMerge(sizes[size], 'flex justify-center items-center h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700', divclass);
 </script>
 
 <div role="status" class={outDivcls}>
@@ -46,6 +42,6 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop size = 'sm',
-@prop divclass
+@props: size?:  keyof Sizes; = 'sm', divclass;
+@props:divclass?: string | undefined;
 -->

@@ -31,3 +31,10 @@
 </script>
 
 <div use:initChart={options} class={classname} />
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@props: 
+-->

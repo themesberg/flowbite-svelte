@@ -18,11 +18,7 @@
   };
 
   let { size = 'sm', divclass } = $props<Props>();
-  let outDivclass = twMerge(
-    sizes[size],
-    'p-4 rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700',
-    divclass
-  );
+  let outDivclass = twMerge(sizes[size], 'p-4 rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700', divclass);
 </script>
 
 <div role="status" class={outDivclass}>
@@ -71,6 +67,6 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
-@prop size = 'sm',
-@prop divclass
+@props: size?:  keyof Sizes; = 'sm', divclass;
+@props:divclass?: string | undefined;
 -->
