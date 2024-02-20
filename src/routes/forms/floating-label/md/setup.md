@@ -1,3 +1,3 @@
 <script>
-	import { FloatingLabel, Helper } from '$lib';
+	import { FloatingLabel, Helper } from 'svelte-5-ui-lib';
 </script>

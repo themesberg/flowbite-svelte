@@ -1,5 +1,5 @@
 <script>
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper } from '$lib';
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper } from 'svelte-5-ui-lib';
   import { ChartSolid, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketSolid, EditSolid, ShoppingBagSolid, FireSolid, BookSolid, RestoreWindowOutline } from 'flowbite-svelte-icons';
   import PlusPlaceholder from '../../utils/PlusPlaceholder.svelte';
   const spanclass = 'flex-1 ms-3 whitespace-nowrap';
