@@ -14,18 +14,13 @@
   const tailwindcssVersion = __TAILWINDCSSVERSION__;
 </script>
 
-<H1>Svelte 5 UI Lib</H1>
+<H1><a class='hover:underline' href={githuburl}>{removeHyphensAndCapitalize(name)}: v{version}</H1>
 
 <p>
-  Introducing Svelte 5 UI Lib – a UI library crafted with Svelte 5 and built upon Flowbite/Flowbite-Svelte. Explore our collection featuring over 36
-  components.
+  Svelte 5 UI Lib is a UI library crafted for Svelte 5. Explore our collection featuring over 36 components.
 </p>
 
-<ul>
-  <li><a href={githuburl}>{removeHyphensAndCapitalize(name)}: v{version}</a></li>
-</ul>
-
-<H2>Dependencies</H2>
+<H2>Dependency info</H2>
 <ul>
   <li>Svelte: {svelteVersion}</li>
   <li>SvelteKit: {svelteKitVersion}</li>
