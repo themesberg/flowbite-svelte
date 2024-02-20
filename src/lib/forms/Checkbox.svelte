@@ -52,7 +52,7 @@
 </script>
 
 <Label class={labelClass(inline, $$props.class)} show={$$slots.default}>
-  <input use:init={group} type="checkbox" bind:checked on:keyup on:keydown on:keypress on:focus on:blur on:click on:mouseover on:mouseenter on:mouseleave on:paste on:change={onChange} on:change {value} {...$$restProps} class={twMerge(spacing, inputClass(custom, color, true, background, $$slots.default || $$props.class))} />
+  <input use:init={group} type="checkbox" bind:checked on:keyup on:keydown on:keypress on:focus on:blur on:click on:mouseover on:mouseenter on:mouseleave on:paste on:change={onChange} on:change {value} {...$$restProps} class={inputClass(custom, color, true, background, spacing, $$slots.default || $$props.class)} />
   <slot />
 </Label>
 
