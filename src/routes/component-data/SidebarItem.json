@@ -5,7 +5,7 @@
   "props": [
     ["href", "string", "''"],
     ["label", "string", "''"],
-    ["spanClass", "string", "'ml-3'"],
+    ["spanClass", "string", "'ms-3'"],
     ["activeClass", "string | undefined", "undefined"],
     ["nonActiveClass", "string | undefined", "undefined"]
   ]

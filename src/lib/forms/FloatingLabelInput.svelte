@@ -9,7 +9,6 @@
   export let size: 'small' | 'default' = 'default';
   export let color: 'base' | 'green' | 'red' = 'base';
   export let value: any = undefined;
-  export let label: string = '';
 
   const divClasses = {
     filled: 'relative',
@@ -54,9 +53,9 @@
   };
 
   const labelClasses = {
-    filled: 'absolute text-sm duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4',
-    outlined: 'absolute text-sm duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1',
-    standard: 'absolute text-sm duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
+    filled: 'absolute text-sm duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-left rtl:origin-right start-2.5  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4',
+    outlined: 'absolute text-sm duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-left rtl:origin-right bg-white dark:bg-gray-900 px-2 peer-focus:px-2  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1',
+    standard: 'absolute text-sm duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-left rtl:origin-right peer-focus:start-0  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
   };
 
   const inputColorClasses = {
@@ -76,7 +75,7 @@
   <input {id} {...$$restProps} bind:value on:blur on:change on:click on:focus on:input on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover on:paste {...{ type }} placeholder=" " class={twMerge(inputClasses[style], inputColorClasses[color], inputSizes[style][size], $$props.classInput)} />
 
   <label for={id} class={twMerge(labelClasses[style], labelColorClasses[color], labelSizes[style][size], $$props.classLabel)}>
-    {label}
+    <slot />
   </label>
 </div>
 
@@ -90,5 +89,4 @@
 @prop export let size: 'small' | 'default' = 'default';
 @prop export let color: 'base' | 'green' | 'red' = 'base';
 @prop export let value: any = undefined;
-@prop export let label: string = '';
 -->

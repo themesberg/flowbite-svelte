@@ -6,7 +6,7 @@
     ["color", "'primary' | 'blue' | 'gray' | 'green' | 'red' | 'yellow' | 'pink' | 'purple' | 'white' | 'custom' | undefined", "'primary'"],
     ["bg", "string", "'text-gray-300'"],
     ["customColor", "string", "''"],
-    ["size", "string", "'8'"],
+    ["size", "string | number", "'8'"],
     ["currentFill", "string", "'currentFill'"],
     ["currentColor", "string", "'currentColor'"]
   ]

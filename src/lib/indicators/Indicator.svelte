@@ -1,12 +1,12 @@
 <script lang="ts">
+  import type { IndicatorPlacementType } from '$lib/types';
   import { twMerge } from 'tailwind-merge';
-  import type { PlacementType } from '../types';
 
   export let color: IndicatorColorType = 'gray';
   export let rounded: boolean = false;
   export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
   export let border: boolean = false;
-  export let placement: PlacementType | undefined = undefined;
+  export let placement: IndicatorPlacementType | undefined = undefined;
   export let offset: boolean = true;
 
   const colors = {
@@ -35,36 +35,36 @@
 
   const placements = {
     // top
-    'top-left': 'top-0 left-0',
-    'top-center': 'top-0 left-1/2 -translate-x-1/2',
-    'top-right': 'top-0 right-0',
+    'top-left': 'top-0 start-0',
+    'top-center': 'top-0 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 rtl:translate-x-1/2',
+    'top-right': 'top-0 end-0',
 
     // center
-    'center-left': 'top-1/2 -translate-y-1/2 left-0',
-    center: 'top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2',
-    'center-right': 'top-1/2 -translate-y-1/2 right-0',
+    'center-left': 'top-1/2 -translate-y-1/2 start-0',
+    center: 'top-1/2 -translate-y-1/2 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 rtl:translate-x-1/2',
+    'center-right': 'top-1/2 -translate-y-1/2 end-0',
 
     // bottom
-    'bottom-left': 'bottom-0 left-0',
-    'bottom-center': 'bottom-0 left-1/2 -translate-x-1/2',
-    'bottom-right': 'bottom-0 right-0'
+    'bottom-left': 'bottom-0 start-0',
+    'bottom-center': 'bottom-0 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 rtl:translate-x-1/2',
+    'bottom-right': 'bottom-0 end-0'
   };
 
   const offsets = {
     // top
-    'top-left': '-translate-x-1/3 -translate-y-1/3',
+    'top-left': '-translate-x-1/3 rtl:translate-x-1/3 -translate-y-1/3',
     'top-center': '-translate-y-1/3',
-    'top-right': 'translate-x-1/3 -translate-y-1/3',
+    'top-right': 'translate-x-1/3 rtl:-translate-x-1/3 -translate-y-1/3',
 
     // center
-    'center-left': '-translate-x-1/3',
+    'center-left': '-translate-x-1/3 rtl:translate-x-1/3',
     center: '',
-    'center-right': 'translate-x-1/3',
+    'center-right': 'translate-x-1/3 rtl:-translate-x-1/3',
 
     // bottom
-    'bottom-left': '-translate-x-1/3 translate-y-1/3',
+    'bottom-left': '-translate-x-1/3 rtl:translate-x-1/3 translate-y-1/3',
     'bottom-center': 'translate-y-1/3',
-    'bottom-right': 'translate-x-1/3 translate-y-1/3'
+    'bottom-right': 'translate-x-1/3 rtl:-translate-x-1/3 translate-y-1/3'
   };
 
   let dotClass: string;
@@ -81,6 +81,6 @@
 @prop export let rounded: boolean = false;
 @prop export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
 @prop export let border: boolean = false;
-@prop export let placement: PlacementType | undefined = undefined;
+@prop export let placement: IndicatorPlacementType | undefined = undefined;
 @prop export let offset: boolean = true;
 -->

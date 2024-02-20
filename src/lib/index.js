@@ -69,6 +69,7 @@ export { default as FooterLinkGroup } from './footer/FooterLinkGroup.svelte';
 
 // Forms
 export { default as Checkbox } from './forms/Checkbox.svelte';
+export { default as CheckboxButton } from './forms/CheckboxButton.svelte';
 export { default as Dropzone } from './forms/Dropzone.svelte';
 export { default as Fileupload } from './forms/Fileupload.svelte';
 export { default as FloatingLabelInput } from './forms/FloatingLabelInput.svelte';
@@ -79,6 +80,7 @@ export { default as Label } from './forms/Label.svelte';
 export { default as MultiSelect } from './forms/MultiSelect.svelte';
 export { default as NumberInput } from './forms/NumberInput.svelte';
 export { default as Radio } from './forms/Radio.svelte';
+export { default as RadioButton } from './forms/RadioButton.svelte';
 export { default as Range } from './forms/Range.svelte';
 export { default as Search } from './forms/Search.svelte';
 export { default as Select } from './forms/Select.svelte';
@@ -218,6 +220,7 @@ export { default as Span } from './typography/Span.svelte';
 // utils
 export { default as CloseButton } from './utils/CloseButton.svelte';
 export { default as Frame } from './utils/Frame.svelte';
+export { default as TransitionFrame } from './utils/TransitionFrame.svelte';
 
 // video
 export { default as Video } from './video/Video.svelte';

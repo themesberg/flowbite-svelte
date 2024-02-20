@@ -27,7 +27,7 @@
   export let color: FormColorType = 'primary';
   export let custom: boolean = false;
   export let inline: boolean = false;
-  export let group: number | string = '';
+  export let group: number | string | undefined = undefined;
   export let value: number | string = '';
   export let spacing: string = 'mr-2';
 
@@ -47,7 +47,7 @@
 @prop export let color: FormColorType = 'primary';
 @prop export let custom: boolean = false;
 @prop export let inline: boolean = false;
-@prop export let group: number | string = '';
+@prop export let group: number | string | undefined = undefined;
 @prop export let value: number | string = '';
 @prop export let spacing: string = 'mr-2';
 -->

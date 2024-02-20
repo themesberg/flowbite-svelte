@@ -54,15 +54,15 @@ This example can be used to apply custom icons instead of the default bullets fo
 <Heading tag="h2" customSize="text-lg font-semibold" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
 <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
   <Li icon>
-    <CheckCircleSolid class="w-3.5 h-3.5 mr-2 text-green-500 dark:text-green-400" />
+    <CheckCircleSolid class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400" />
     At least 10 characters (and up to 100 characters)
   </Li>
   <Li icon>
-    <CheckCircleSolid class="w-3.5 h-3.5 mr-2 text-green-500 dark:text-green-400" />
+    <CheckCircleSolid class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400" />
     At least one lowercase character
   </Li>
   <Li icon>
-    <CloseCircleSolid class="w-3.5 h-3.5 mr-2 text-gray-500 dark:text-gray-400" />
+    <CloseCircleSolid class="w-3.5 h-3.5 me-2 text-gray-500 dark:text-gray-400" />
     Inclusion of at least one special character, e.g., ! @ # ?
   </Li>
 </List>
@@ -80,7 +80,7 @@ Use this example to nested another list of items inside the parent list element.
 <List tag="ul" class="space-y-4 text-gray-500 dark:text-gray-400">
   <Li>
     List item one
-    <List tag="ol" class="pl-5 mt-2 space-y-1">
+    <List tag="ol" class="ps-5 mt-2 space-y-1">
       <Li>You might feel like you are being really "organized" o</Li>
       <Li>Nested navigation in UIs is a bad idea too, keep things as flat as possible.</Li>
       <Li>Nesting tons of folders in your source code is also not helpful.</Li>
@@ -88,7 +88,7 @@ Use this example to nested another list of items inside the parent list element.
   </Li>
   <Li>
     List item two
-    <List tag="ol" class="pl-5 mt-2 space-y-1">
+    <List tag="ol" class="ps-5 mt-2 space-y-1">
       <Li>I'm not sure if we'll bother styling more than two levels deep.</Li>
       <Li>Two is already too much, three is guaranteed to be a bad idea.</Li>
       <Li>If you nest four levels deep you belong in prison.</Li>
@@ -96,7 +96,7 @@ Use this example to nested another list of items inside the parent list element.
   </Li>
   <Li>
     List item three
-    <List tag="ol" class="pl-5 mt-2 space-y-1">
+    <List tag="ol" class="ps-5 mt-2 space-y-1">
       <Li>Again please don't nest lists if you want</Li>
       <Li>Nobody wants to look at this.</Li>
       <Li>I'm upset that we even have to bother styling this.</Li>
@@ -132,7 +132,7 @@ Use the `tag="ol"` prop to create an ordered list of items with numbers.
 </script>
 
 <Heading tag="h2" customSize="text-lg font-semibold" class="mb-2 text-lg font-semibold  text-gray-900 dark:text-white">Top students:</Heading>
-<List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400">
+<List tag="ol" class="space-y-1 text-gray-500 dark:text-gray-400">
   <Li><Span>Bonnie Green</Span> with <Span>70</Span> points</Li>
   <Li><Span>Jese Leos</Span> with <Span>63</Span> points</Li>
   <Li><Span>Leslie Livingston</Span> with <Span>57</Span> points</Li>
@@ -151,7 +151,7 @@ This example can be used to nest multiple lists into each other.
 <List tag="ol" list="decimal" class="text-gray-500 dark:text-gray-400">
   <Li>
     List item one
-    <List tag="ul" class="pl-5 mt-2 space-y-1">
+    <List tag="ul" class="ps-5 mt-2 space-y-1">
       <Li>You might feel like you are being really "organized" o</Li>
       <Li>Nested navigation in UIs is a bad idea too, keep things as flat as possible.</Li>
       <Li>Nesting tons of folders in your source code is also not helpful.</Li>
@@ -159,7 +159,7 @@ This example can be used to nest multiple lists into each other.
   </Li>
   <Li>
     List item two
-    <List tag="ul" class="pl-5 mt-2 space-y-1">
+    <List tag="ul" class="ps-5 mt-2 space-y-1">
       <Li>I'm not sure if we'll bother styling more than two levels deep.</Li>
       <Li>Two is already too much, three is guaranteed to be a bad idea.</Li>
       <Li>If you nest four levels deep you belong in prison.</Li>
@@ -167,7 +167,7 @@ This example can be used to nest multiple lists into each other.
   </Li>
   <Li>
     List item three
-    <List tag="ul" class="pl-5 mt-2 space-y-1 text-gray-500 dark:text-gray-400">
+    <List tag="ul" class="ps-5 mt-2 space-y-1 text-gray-500 dark:text-gray-400">
       <Li>Again please don't nest lists if you want</Li>
       <Li>Nobody wants to look at this.</Li>
       <Li>I'm upset that we even have to bother styling this.</Li>
@@ -246,7 +246,7 @@ This example can be used to show more details for each list item such as the use
 
 <List tag="ul" list="none" class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
   <Li class="pb-3 sm:pb-4">
-    <div class="flex items-center space-x-4">
+    <div class="flex items-center space-x-4 rtl:space-x-reverse">
       <div class="flex-shrink-0">
         <img class="w-8 h-8 rounded-full" src="/images/profile-picture-1.webp" alt="Neil profile" />
       </div>
@@ -258,7 +258,7 @@ This example can be used to show more details for each list item such as the use
     </div>
   </Li>
   <Li class="py-3 sm:py-4">
-    <div class="flex items-center space-x-4">
+    <div class="flex items-center space-x-4 rtl:space-x-reverse">
       <div class="flex-shrink-0">
         <img class="w-8 h-8 rounded-full" src="/images/profile-picture-2.webp" alt="Bonnie profile" />
       </div>
@@ -270,7 +270,7 @@ This example can be used to show more details for each list item such as the use
     </div>
   </Li>
   <Li class="py-3 sm:py-4">
-    <div class="flex items-center space-x-4">
+    <div class="flex items-center space-x-4 rtl:space-x-reverse">
       <div class="flex-shrink-0">
         <img class="w-8 h-8 rounded-full" src="/images/profile-picture-3.webp" alt="Michael profile" />
       </div>
@@ -282,7 +282,7 @@ This example can be used to show more details for each list item such as the use
     </div>
   </Li>
   <Li class="py-3 sm:py-4">
-    <div class="flex items-center space-x-4">
+    <div class="flex items-center space-x-4 rtl:space-x-reverse">
       <div class="flex-shrink-0">
         <img class="w-8 h-8 rounded-full" src="/images/profile-picture-4.webp" alt="Thomas profile" />
       </div>
@@ -294,7 +294,7 @@ This example can be used to show more details for each list item such as the use
     </div>
   </Li>
   <Li class="py-3 sm:py-4">
-    <div class="flex items-center space-x-4">
+    <div class="flex items-center space-x-4 rtl:space-x-reverse">
       <div class="flex-shrink-0">
         <img class="w-8 h-8 rounded-full" src="/images/profile-picture-5.webp" alt="Lana profile" />
       </div>
@@ -319,22 +319,22 @@ Use this example to create a horizontally aligned list of items.
 
 <List tag="ul" list="none" class="flex flex-wrap justify-center items-center mb-6">
   <Li>
-    <A href="/" class="mr-4 hover:underline md:mr-6" textColor="text-gray-700 dark:text-white">About</A>
+    <A href="/" class="me-4 hover:underline md:me-6" textColor="text-gray-700 dark:text-white">About</A>
   </Li>
   <Li>
-    <A href="/" class="mr-4 hover:underline md:mr-6" textColor="text-gray-700 dark:text-white">Premium</A>
+    <A href="/" class="me-4 hover:underline md:me-6" textColor="text-gray-700 dark:text-white">Premium</A>
   </Li>
   <Li>
-    <A href="/" class="mr-4 hover:underline md:mr-6" textColor="text-gray-700 dark:text-white">Campaigns</A>
+    <A href="/" class="me-4 hover:underline md:me-6" textColor="text-gray-700 dark:text-white">Campaigns</A>
   </Li>
   <Li>
-    <A href="/" class="mr-4 hover:underline md:mr-6" textColor="text-gray-700 dark:text-white">Blog</A>
+    <A href="/" class="me-4 hover:underline md:me-6" textColor="text-gray-700 dark:text-white">Blog</A>
   </Li>
   <Li>
-    <A href="/" class="mr-4 hover:underline md:mr-6" textColor="text-gray-700 dark:text-white">Affiliate Program</A>
+    <A href="/" class="me-4 hover:underline md:me-6" textColor="text-gray-700 dark:text-white">Affiliate Program</A>
   </Li>
   <Li>
-    <A href="/" class="mr-4 hover:underline md:mr-6" textColor="text-gray-700 dark:text-white">FAQs</A>
+    <A href="/" class="me-4 hover:underline md:me-6" textColor="text-gray-700 dark:text-white">FAQs</A>
   </Li>
 </List>
 ```

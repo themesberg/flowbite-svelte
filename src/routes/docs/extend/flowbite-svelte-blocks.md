@@ -4,7 +4,7 @@ breadcrumb_title: Flowbite Svelte Blocks
 title: Flowbite Svelte Blocks
 component_title: Block Sections
 dir: Extend
-description: Flowbite-Svete-Blocks provides all necessary components to get started quickly
+description: Flowbite-Svelte-Blocks provides all necessary components to get started quickly
 ---
 
 <script>

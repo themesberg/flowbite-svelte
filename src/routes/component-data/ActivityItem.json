@@ -4,8 +4,8 @@
   "events": [],
   "props": [
     ["activities", "ActivityType[]", ""],
-    ["liClass", "string", "'mb-10 ml-6'"],
-    ["spanClass", "string", "'flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900'"],
+    ["liClass", "string", "'mb-10 ms-6'"],
+    ["spanClass", "string", "'flex absolute -start-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900'"],
     ["imgClass", "string", "'rounded-full shadow-lg'"],
     ["outerDivClass", "string", "'p-4 bg-white rounded-lg border border-gray-200 shadow-sm dark:bg-gray-700 dark:border-gray-600'"],
     ["innerDivClass", "string", "'justify-between items-center mb-3 sm:flex'"],

@@ -36,7 +36,7 @@ Use this example to show a responsive list of menu items inside the sidebar with
   import { page } from '$app/stores';
   import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from 'flowbite-svelte';
   import { ChartPieSolid, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketSolid, FileEditSolid } from 'flowbite-svelte-icons';
-  let spanClass = 'flex-1 ml-3 whitespace-nowrap';
+  let spanClass = 'flex-1 ms-3 whitespace-nowrap';
   $: activeUrl = $page.url.pathname;
 </script>
 
@@ -53,7 +53,7 @@ Use this example to show a responsive list of menu items inside the sidebar with
           <GridSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
         <svelte:fragment slot="subtext">
-          <span class="inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"> Pro </span>
+          <span class="inline-flex justify-center items-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"> Pro </span>
         </svelte:fragment>
       </SidebarItem>
       <SidebarItem label="Inbox" {spanClass}>
@@ -61,7 +61,7 @@ Use this example to show a responsive list of menu items inside the sidebar with
           <MailBoxSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
         <svelte:fragment slot="subtext">
-          <span class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-primary-600 bg-primary-200 rounded-full dark:bg-primary-900 dark:text-primary-200"> 3 </span>
+          <span class="inline-flex justify-center items-center p-3 ms-3 w-3 h-3 text-sm font-medium text-primary-600 bg-primary-200 rounded-full dark:bg-primary-900 dark:text-primary-200"> 3 </span>
         </svelte:fragment>
       </SidebarItem>
       <SidebarItem label="Sidebar" href="/docs/components/sidebar" active={activeUrl === '/docs/components/sidebar'}>
@@ -184,7 +184,7 @@ Use this sidebar example to create multi-level menu items by using the SidebarDr
 <script>
   import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarDropdownItem, SidebarDropdownWrapper } from 'flowbite-svelte';
   import { ChartPieSolid, GridSolid, ShoppingCartSolid, MailBoxSolid, UserSolid, ArrowRightToBracketSolid, FileEditSolid } from 'flowbite-svelte-icons';
-  let spanClass = 'flex-1 ml-3 whitespace-nowrap';
+  let spanClass = 'flex-1 ms-3 whitespace-nowrap';
 </script>
 
 <Sidebar>
@@ -208,7 +208,7 @@ Use this sidebar example to create multi-level menu items by using the SidebarDr
           <GridSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
         <svelte:fragment slot="subtext">
-          <span class="inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"> Pro </span>
+          <span class="inline-flex justify-center items-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"> Pro </span>
         </svelte:fragment>
       </SidebarItem>
       <SidebarItem label="Inbox" {spanClass}>
@@ -216,7 +216,7 @@ Use this sidebar example to create multi-level menu items by using the SidebarDr
           <MailBoxSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
         <svelte:fragment slot="subtext">
-          <span class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-primary-600 bg-primary-200 rounded-full dark:bg-primary-900 dark:text-primary-200"> 3 </span>
+          <span class="inline-flex justify-center items-center p-3 ms-3 w-3 h-3 text-sm font-medium text-primary-600 bg-primary-200 rounded-full dark:bg-primary-900 dark:text-primary-200"> 3 </span>
         </svelte:fragment>
       </SidebarItem>
       <SidebarItem label="Users">
@@ -245,7 +245,7 @@ You can change the icons using `arrowup` and `arrowdown` slots.
 <script>
   import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarDropdownItem, SidebarDropdownWrapper } from 'flowbite-svelte';
   import { ChartPieSolid, ShoppingCartSolid, ChevronDoubleUpOutline, ChevronDoubleDownOutline } from 'flowbite-svelte-icons';
-  let spanClass = 'flex-1 ml-3 whitespace-nowrap';
+  let spanClass = 'flex-1 ms-3 whitespace-nowrap';
 </script>
 
 <Sidebar>
@@ -283,7 +283,7 @@ Separate the content inside the sidebar component by applying a border separator
 <script>
   import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from 'flowbite-svelte';
   import { ChartPieSolid, GridSolid, MailBoxSolid, UserSolid, BagSolid, ArrowRightToBracketSolid, FileEditSolid, FireSolid, BookSolid, WindowRestoreOutline, LifeBuoySolid } from 'flowbite-svelte-icons';
-  let spanClass = 'flex-1 ml-3 whitespace-nowrap';
+  let spanClass = 'flex-1 ms-3 whitespace-nowrap';
 </script>
 
 <Sidebar>
@@ -299,7 +299,7 @@ Separate the content inside the sidebar component by applying a border separator
           <GridSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
         <svelte:fragment slot="subtext">
-          <span class="inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"> Pro </span>
+          <span class="inline-flex justify-center items-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"> Pro </span>
         </svelte:fragment>
       </SidebarItem>
       <SidebarItem label="Inbox" {spanClass}>
@@ -307,7 +307,7 @@ Separate the content inside the sidebar component by applying a border separator
           <MailBoxSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
         <svelte:fragment slot="subtext">
-          <span class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-primary-600 bg-primary-200 rounded-full dark:bg-primary-900 dark:text-primary-200"> 3 </span>
+          <span class="inline-flex justify-center items-center p-3 ms-3 w-3 h-3 text-sm font-medium text-primary-600 bg-primary-200 rounded-full dark:bg-primary-900 dark:text-primary-200"> 3 </span>
         </svelte:fragment>
       </SidebarItem>
       <SidebarItem label="Users">
@@ -366,7 +366,7 @@ Use this example to add a CTA button inside the sidebar component and encourage 
   import { page } from '$app/stores';
   import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarCta } from 'flowbite-svelte';
   import { ChartPieSolid, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketSolid, FileEditSolid, CloseOutline } from 'flowbite-svelte-icons';
-  let spanClass = 'flex-1 ml-3 whitespace-nowrap';
+  let spanClass = 'flex-1 ms-3 whitespace-nowrap';
 </script>
 
 <Sidebar>
@@ -382,7 +382,7 @@ Use this example to add a CTA button inside the sidebar component and encourage 
           <GridSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
         <svelte:fragment slot="subtext">
-          <span class="inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"> Pro </span>
+          <span class="inline-flex justify-center items-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"> Pro </span>
         </svelte:fragment>
       </SidebarItem>
       <SidebarItem label="Inbox" {spanClass}>
@@ -390,7 +390,7 @@ Use this example to add a CTA button inside the sidebar component and encourage 
           <MailBoxSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
         <svelte:fragment slot="subtext">
-          <span class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-primary-600 bg-primary-200 rounded-full dark:bg-primary-900 dark:text-primary-200"> 3 </span>
+          <span class="inline-flex justify-center items-center p-3 ms-3 w-3 h-3 text-sm font-medium text-primary-600 bg-primary-200 rounded-full dark:bg-primary-900 dark:text-primary-200"> 3 </span>
         </svelte:fragment>
       </SidebarItem>
       <SidebarItem label="Users">
@@ -410,7 +410,7 @@ Use this example to add a CTA button inside the sidebar component and encourage 
       </SidebarItem>
       <SidebarCta label="Beta">
         <svelte:fragment slot="icon">
-          <button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-primary-50 text-primary-900 rounded-lg focus:ring-2 focus:ring-primary-400 p-1 hover:bg-primary-200 inline-flex h-6 w-6 dark:bg-primary-900 dark:text-primary-400 dark:hover:bg-primary-800" data-collapse-toggle="dropdown-cta" aria-label="Close">
+          <button type="button" class="ms-auto -mx-1.5 -my-1.5 bg-primary-50 text-primary-900 rounded-lg focus:ring-2 focus:ring-primary-400 p-1 hover:bg-primary-200 inline-flex h-6 w-6 dark:bg-primary-900 dark:text-primary-400 dark:hover:bg-primary-800" data-collapse-toggle="dropdown-cta" aria-label="Close">
             <span class="sr-only">Close</span>
             <CloseOutline class="w-2 h-2" />
           </button>
@@ -431,7 +431,7 @@ Show the logo of your brand and link back to the homepage from the top part of t
 <script>
   import { Sidebar, SidebarWrapper, SidebarBrand, SidebarItem, SidebarGroup } from 'flowbite-svelte';
   import { ChartPieSolid, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketSolid, FileEditSolid } from 'flowbite-svelte-icons';
-  let spanClass = 'flex-1 ml-3 whitespace-nowrap';
+  let spanClass = 'flex-1 ms-3 whitespace-nowrap';
 
   let site = {
     name: 'Flowbite-Svelte',
@@ -454,7 +454,7 @@ Show the logo of your brand and link back to the homepage from the top part of t
           <GridSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
         <svelte:fragment slot="subtext">
-          <span class="inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"> Pro </span>
+          <span class="inline-flex justify-center items-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"> Pro </span>
         </svelte:fragment>
       </SidebarItem>
       <SidebarItem label="Inbox" {spanClass}>
@@ -462,7 +462,7 @@ Show the logo of your brand and link back to the homepage from the top part of t
           <MailBoxSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
         <svelte:fragment slot="subtext">
-          <span class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-primary-600 bg-primary-200 rounded-full dark:bg-primary-900 dark:text-primary-200"> 3 </span>
+          <span class="inline-flex justify-center items-center p-3 ms-3 w-3 h-3 text-sm font-medium text-primary-600 bg-primary-200 rounded-full dark:bg-primary-900 dark:text-primary-200"> 3 </span>
         </svelte:fragment>
       </SidebarItem>
       <SidebarItem label="Users">
@@ -494,7 +494,7 @@ You can add own transition by setting `transitionType` and `transitionParams`.
   import { page } from '$app/stores';
   import { sineIn } from 'svelte/easing';
   import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarDropdownWrapper, SidebarDropdownItem } from 'flowbite-svelte';
-  let spanClass = 'flex-1 ml-3 whitespace-nowrap';
+  let spanClass = 'flex-1 ms-3 whitespace-nowrap';
   $: activeUrl = $page.url.pathname;
   $: containPath = () => {
     // add your logic here

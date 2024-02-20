@@ -2,7 +2,7 @@
   import { twMerge } from 'tailwind-merge';
   export let aClass: string = 'flex items-center';
   export let spanClass: string = 'self-center text-2xl font-semibold whitespace-nowrap dark:text-white';
-  export let imgClass: string = 'mr-3 h-8';
+  export let imgClass: string = 'me-3 h-8';
   export let href: string = '';
   export let src: string = '';
   export let alt: string = '';
@@ -30,7 +30,7 @@
 ## Props
 @prop export let aClass: string = 'flex items-center';
 @prop export let spanClass: string = 'self-center text-2xl font-semibold whitespace-nowrap dark:text-white';
-@prop export let imgClass: string = 'mr-3 h-8';
+@prop export let imgClass: string = 'me-3 h-8';
 @prop export let href: string = '';
 @prop export let src: string = '';
 @prop export let alt: string = '';

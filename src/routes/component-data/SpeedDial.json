@@ -3,7 +3,7 @@
   "slots": ["icon", "icon"],
   "events": [],
   "props": [
-    ["defaultClass", "string", "'fixed right-6 bottom-6'"],
+    ["defaultClass", "string", "'fixed end-6 bottom-6'"],
     ["popperDefaultClass", "string", "'flex items-center mb-4 gap-2'"],
     ["placement", "Placement", "'top'"],
     ["pill", "boolean", "true"],

@@ -1,8 +1,8 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
-  import type { ButtonType } from '../types';
   import type { SizeType } from '$lib/types';
+  import type { HTMLButtonAttributes } from 'svelte/elements';
 
   type ButtonColor = keyof typeof colorClasses;
 
@@ -12,12 +12,14 @@
   export let outline: boolean = false;
   export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = group ? 'sm' : 'md';
   export let href: string | undefined = undefined;
-  export let type: ButtonType = 'button';
+  export let type: HTMLButtonAttributes['type'] = 'button';
   export let color: ButtonColor = group ? (outline ? 'dark' : 'alternative') : 'primary';
   export let shadow: boolean = false;
+  export let tag: string = 'button';
+  export let checked: boolean | undefined = undefined;
 
   const colorClasses = {
-    alternative: 'text-gray-900 bg-white border border-gray-200 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-400 hover:text-primary-700 focus:text-primary-700 dark:focus:text-white dark:hover:text-white',
+    alternative: 'text-gray-900 bg-white border border-gray-200 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-400 hover:text-primary-700 focus-within:text-primary-700 dark:focus-within:text-white dark:hover:text-white dark:hover:bg-gray-700',
     blue: 'text-white bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700',
     dark: 'text-white bg-gray-800 hover:bg-gray-900 dark:bg-gray-800 dark:hover:bg-gray-700',
     green: 'text-white bg-green-700 hover:bg-green-800 dark:bg-green-600 dark:hover:bg-green-700',
@@ -29,16 +31,29 @@
     none: ''
   };
 
+  const colorCheckedClasses = {
+    alternative: 'text-primary-700 border dark:text-primary-500 bg-gray-100 dark:bg-gray-700 border-gray-300 shadow-gray-300 dark:shadow-gray-800 shadow-inner',
+    blue: 'text-blue-900 bg-blue-400 dark:bg-blue-500 shadow-blue-700 dark:shadow-blue-800 shadow-inner',
+    dark: 'text-white bg-gray-500 dark:bg-gray-600 shadow-gray-800 dark:shadow-gray-900 shadow-inner',
+    green: 'text-green-900 bg-green-400 dark:bg-green-500 shadow-green-700 dark:shadow-green-800 shadow-inner',
+    light: 'text-gray-900 bg-gray-100 border border-gray-300 dark:bg-gray-500 dark:text-gray-900 dark:border-gray-700 shadow-gray-300 dark:shadow-gray-700 shadow-inner',
+    primary: 'text-primary-900 bg-primary-400 dark:bg-primary-500 shadow-primary-700 dark:shadow-primary-800 shadow-inner',
+    purple: 'text-purple-900 bg-purple-400 dark:bg-purple-500 shadow-purple-700 dark:shadow-purple-800 shadow-inner',
+    red: 'text-red-900 bg-red-400 dark:bg-red-500 shadow-red-700 dark:shadow-red-800 shadow-inner',
+    yellow: 'text-yellow-900 bg-yellow-300 dark:bg-yellow-400 shadow-yellow-500 dark:shadow-yellow-700 shadow-inner',
+    none: ''
+  };
+
   const coloredFocusClasses = {
-    alternative: 'focus:ring-gray-200 dark:focus:ring-gray-700',
-    blue: 'focus:ring-blue-300 dark:focus:ring-blue-800',
-    dark: 'focus:ring-gray-300 dark:focus:ring-gray-700',
-    green: 'focus:ring-green-300 dark:focus:ring-green-800',
-    light: 'focus:ring-gray-200 dark:focus:ring-gray-700',
-    primary: 'focus:ring-primary-300 dark:focus:ring-primary-800',
-    purple: 'focus:ring-purple-300 dark:focus:ring-purple-900',
-    red: 'focus:ring-red-300 dark:focus:ring-red-900',
-    yellow: 'focus:ring-yellow-300 dark:focus:ring-yellow-900',
+    alternative: 'focus-within:ring-gray-200 dark:focus-within:ring-gray-700',
+    blue: 'focus-within:ring-blue-300 dark:focus-within:ring-blue-800',
+    dark: 'focus-within:ring-gray-300 dark:focus-within:ring-gray-700',
+    green: 'focus-within:ring-green-300 dark:focus-within:ring-green-800',
+    light: 'focus-within:ring-gray-200 dark:focus-within:ring-gray-700',
+    primary: 'focus-within:ring-primary-300 dark:focus-within:ring-primary-800',
+    purple: 'focus-within:ring-purple-300 dark:focus-within:ring-purple-900',
+    red: 'focus-within:ring-red-300 dark:focus-within:ring-red-900',
+    yellow: 'focus-within:ring-yellow-300 dark:focus-within:ring-yellow-900',
     none: ''
   };
 
@@ -56,9 +71,9 @@
   };
 
   const outlineClasses = {
-    alternative: 'text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:bg-gray-900 focus:text-white focus:ring-gray-300 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800',
+    alternative: 'text-gray-900 dark:text-gray-400 hover:text-white border border-gray-800 hover:bg-gray-900 focus-within:bg-gray-900 focus-within:text-white focus-within:ring-gray-300 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-600 dark:focus-within:ring-gray-800',
     blue: 'text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600',
-    dark: 'text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:bg-gray-900 focus:text-white dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-600',
+    dark: 'text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus-within:bg-gray-900 focus-within:text-white dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-600',
     green: 'text-green-700 hover:text-white border border-green-700 hover:bg-green-800 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600',
     light: 'text-gray-500 hover:text-gray-900 bg-white border border-gray-200 dark:border-gray-600 dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600',
     primary: 'text-primary-700 hover:text-white border border-primary-700 hover:bg-primary-700 dark:border-primary-500 dark:text-primary-500 dark:hover:text-white dark:hover:bg-primary-600',
@@ -79,12 +94,42 @@
   const hasBorder = () => outline || color === 'alternative' || color === 'light';
 
   let buttonClass: string;
-  $: buttonClass = twMerge('text-center font-medium', group ? 'focus:ring-2' : 'focus:ring-4', group && 'focus:z-10', group || 'focus:outline-none', 'inline-flex items-center justify-center ' + sizeClasses[size], outline ? outlineClasses[color] : colorClasses[color], color === 'alternative' && (group ? 'dark:bg-gray-700 dark:text-white dark:border-gray-700 dark:hover:border-gray-600 dark:hover:bg-gray-600' : 'dark:bg-transparent dark:border-gray-600 dark:hover:border-gray-700'), outline && color === 'dark' && (group ? 'dark:text-white dark:border-white' : 'dark:text-gray-400 dark:border-gray-700'), coloredFocusClasses[color], hasBorder() && group && 'border-l-0 first:border-l', group ? (pill && 'first:rounded-l-full last:rounded-r-full') || 'first:rounded-l-lg last:rounded-r-lg' : (pill && 'rounded-full') || 'rounded-lg', shadow && 'shadow-lg', shadow && coloredShadowClasses[color], $$props.disabled && 'cursor-not-allowed opacity-50', $$props.class);
+  $: buttonClass = twMerge(
+    'text-center font-medium',
+    group ? 'focus-within:ring-2' : 'focus-within:ring-4',
+    group && 'focus-within:z-10',
+    group || 'focus-within:outline-none',
+    'inline-flex items-center justify-center ' + sizeClasses[size],
+    outline && checked && 'border dark:border-gray-900',
+    outline && checked && colorCheckedClasses[color],
+    outline && !checked && outlineClasses[color],
+    !outline && checked && colorCheckedClasses[color],
+    !outline && !checked && colorClasses[color],
+    color === 'alternative' && (group && !checked ? 'dark:bg-gray-700 dark:text-white dark:border-gray-700 dark:hover:border-gray-600 dark:hover:bg-gray-600' : 'dark:bg-transparent dark:border-gray-600 dark:hover:border-gray-600'),
+    outline && color === 'dark' && (group ? (checked ? 'bg-gray-900 border-gray-800 dark:border-white dark:bg-gray-600' : 'dark:text-white border-gray-800 dark:border-white') : 'dark:text-gray-400 dark:border-gray-700'),
+    coloredFocusClasses[color],
+    hasBorder() && group && 'border-s-0 first:border-s',
+    group ? (pill && 'first:rounded-s-full last:rounded-e-full') || 'first:rounded-s-lg last:rounded-e-lg' : (pill && 'rounded-full') || 'rounded-lg',
+    shadow && 'shadow-lg',
+    shadow && coloredShadowClasses[color],
+    $$props.disabled && 'cursor-not-allowed opacity-50',
+    $$props.class
+  );
 </script>
 
-<svelte:element this={href ? 'a' : 'button'} type={href ? undefined : type} {href} role={href ? 'link' : 'button'} {...$$restProps} class={buttonClass} on:click on:change on:keydown on:keyup on:touchstart|passive on:touchend on:touchcancel on:mouseenter on:mouseleave>
-  <slot />
-</svelte:element>
+{#if href}
+  <a {href} {...$$restProps} class={buttonClass} role="button" on:click on:change on:keydown on:keyup on:touchstart|passive on:touchend on:touchcancel on:mouseenter on:mouseleave>
+    <slot />
+  </a>
+{:else if tag === 'button'}
+  <button {type} {...$$restProps} class={buttonClass} on:click on:change on:keydown on:keyup on:touchstart|passive on:touchend on:touchcancel on:mouseenter on:mouseleave>
+    <slot />
+  </button>
+{:else}
+  <svelte:element this={tag} {...$$restProps} class={buttonClass}>
+    <slot />
+  </svelte:element>
+{/if}
 
 <!--
 @component
@@ -94,7 +139,9 @@
 @prop export let outline: boolean = false;
 @prop export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = group ? 'sm' : 'md';
 @prop export let href: string | undefined = undefined;
-@prop export let type: ButtonType = 'button';
+@prop export let type: HTMLButtonAttributes['type'] = 'button';
 @prop export let color: ButtonColor = group ? (outline ? 'dark' : 'alternative') : 'primary';
 @prop export let shadow: boolean = false;
+@prop export let tag: string = 'button';
+@prop export let checked: boolean | undefined = undefined;
 -->

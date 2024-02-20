@@ -1,0 +1,11 @@
+{
+  "name": "TransitionFrame",
+  "slots": [],
+  "events": [],
+  "props": [
+    ["transition", "TransitionFunc", "fade"],
+    ["params", "object", "{}"],
+    ["open", "boolean", "true"],
+    ["dismissable", "boolean", "false"]
+  ]
+}

@@ -4,7 +4,7 @@
   export let color: 'primary' | 'blue' | 'gray' | 'green' | 'red' | 'yellow' | 'pink' | 'purple' | 'white' | 'custom' | undefined = 'primary';
   export let bg: string = 'text-gray-300';
   export let customColor: string = '';
-  export let size: string = '8';
+  export let size: string | number = '8';
   // these two props add fine control over the spinner colors
   export let currentFill: string = 'currentFill';
   export let currentColor: string = 'currentColor';
@@ -43,7 +43,7 @@
 @prop export let color: 'primary' | 'blue' | 'gray' | 'green' | 'red' | 'yellow' | 'pink' | 'purple' | 'white' | 'custom' | undefined = 'primary';
 @prop export let bg: string = 'text-gray-300';
 @prop export let customColor: string = '';
-@prop export let size: string = '8';
+@prop export let size: string | number = '8';
 @prop export let currentFill: string = 'currentFill';
 @prop export let currentColor: string = 'currentColor';
 -->

@@ -1,12 +1,10 @@
 <script lang="ts">
-  import { createEventDispatcher, type ComponentProps } from 'svelte';
-  import { twMerge, twJoin } from 'tailwind-merge';
+  import TransitionFrame from '$lib/utils/TransitionFrame.svelte';
+  import type { ComponentProps } from 'svelte';
+  import { twMerge } from 'tailwind-merge';
   import CloseButton from '../utils/CloseButton.svelte';
-  import { fade } from 'svelte/transition';
-  import Frame from '$lib/utils/Frame.svelte';
-  import type { Dismissable } from '$lib/types';
 
-  interface $$Props extends Omit<ComponentProps<Frame>, 'color'>, Dismissable {
+  interface $$Props extends Omit<ComponentProps<TransitionFrame>, 'color'> {
     color?: 'primary' | 'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' | 'none';
     large?: boolean;
   }
@@ -73,30 +71,16 @@
     pink: 'text-pink-400 hover:text-pink-900 dark:hover:bg-pink-800 dark:hover:text-pink-300',
     none: ''
   };
-
-  $: {
-    if (dismissable) $$restProps.transition = $$restProps.transition ?? fade;
-  }
-
-  let open = true;
-  const dispatch = createEventDispatcher();
-  $: dispatch(open ? 'open' : 'close');
-  const close = (e: MouseEvent) => {
-    e.stopPropagation();
-    open = false;
-  };
 </script>
 
-{#if open}
-  <Frame {...$$restProps} class={badgeClass}>
-    <slot />
-    {#if dismissable}
-      <slot name="close-button" {close}>
-        <CloseButton {color} on:click={close} size={large ? 'sm' : 'xs'} name="Remove badge" class="ml-1.5 -mr-1.5" />
-      </slot>
-    {/if}
-  </Frame>
-{/if}
+<TransitionFrame {dismissable} {...$$restProps} class={badgeClass} let:close on:close>
+  <slot />
+  {#if dismissable}
+    <slot name="close-button" {close}>
+      <CloseButton {color} on:click={close} size={large ? 'sm' : 'xs'} name="Remove badge" class="ms-1.5 -me-1.5" />
+    </slot>
+  {/if}
+</TransitionFrame>
 
 <!--
 @component

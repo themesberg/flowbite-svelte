@@ -7,7 +7,7 @@
     ["horizontal", "boolean", "false"],
     ["reverse", "boolean", "false"],
     ["img", "string | undefined", "undefined"],
-    ["padding", "'none' | 'sm' | 'md' | 'lg' | 'xl'", "'lg'"],
-    ["size", "SizeType", "'sm'"]
+    ["padding", "SizeType | 'none'", "'lg'"],
+    ["size", "SizeType | 'none'", "'sm'"]
   ]
 }

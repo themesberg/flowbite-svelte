@@ -16,12 +16,12 @@
   import generateId from '$lib/utils/generateId';
   import GradientButton from '$lib/buttons/GradientButton.svelte';
 
-  export let defaultClass: string = 'fixed right-6 bottom-6';
+  export let defaultClass: string = 'fixed end-6 bottom-6';
   export let popperDefaultClass: string = 'flex items-center mb-4 gap-2';
   export let placement: Placement = 'top';
   export let pill: boolean = true;
   export let tooltip: Placement | 'none' = 'left';
-  export let trigger: 'hover' | 'click' = 'hover';
+  export let trigger: 'hover' | 'click' | 'focus' = 'hover';
   export let textOutside: boolean = false;
   export let id: string = generateId();
   export let name: string = 'Open actions menu';
@@ -66,12 +66,12 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let defaultClass: string = 'fixed right-6 bottom-6';
+@prop export let defaultClass: string = 'fixed end-6 bottom-6';
 @prop export let popperDefaultClass: string = 'flex items-center mb-4 gap-2';
 @prop export let placement: Placement = 'top';
 @prop export let pill: boolean = true;
 @prop export let tooltip: Placement | 'none' = 'left';
-@prop export let trigger: 'hover' | 'click' = 'hover';
+@prop export let trigger: 'hover' | 'click' | 'focus' = 'hover';
 @prop export let textOutside: boolean = false;
 @prop export let id: string = generateId();
 @prop export let name: string = 'Open actions menu';

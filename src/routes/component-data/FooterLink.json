@@ -3,7 +3,7 @@
   "slots": [],
   "events": [],
   "props": [
-    ["liClass", "string", "'mr-4 last:mr-0 md:mr-6'"],
+    ["liClass", "string", "'me-4 last:me-0 md:me-6'"],
     ["aClass", "string", "'hover:underline'"],
     ["href", "string", "''"],
     ["target", "string | undefined", "undefined"]

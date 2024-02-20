@@ -36,7 +36,7 @@ Use this example to create a circle and rounded avatar on an image element.
   import { Avatar } from 'flowbite-svelte';
 </script>
 
-<div class="flex space-x-4">
+<div class="flex space-x-4 rtl:space-x-reverse">
   <Avatar src="/images/profile-picture-2.webp" />
   <Avatar src="/images/profile-picture-2.webp" rounded />
 </div>
@@ -148,7 +148,7 @@ This example can be used if you want to show additional information in the form 
   import { Avatar } from 'flowbite-svelte';
 </script>
 
-<div class="flex items-center space-x-4">
+<div class="flex items-center space-x-4 rtl:space-x-reverse">
   <Avatar src="/images/profile-picture-1.webp" rounded />
   <div class="space-y-1 font-medium dark:text-white">
     <div>Jese Leos</div>
@@ -182,19 +182,30 @@ Use this example if you want to show a dropdown menu when clicking on the avatar
 
 ## Sizes
 
-Select size from xs | sm | md | lg | xl.
+You can set `size` property to preset values of `xs | sm | md | lg | xl`. Custom size can be achieved by setting size to `none` and adding any of the Tailwind Css size classes like `w-[x] h-[x]`.
+
+Preset values are equivalents of:
+
+| Size |     |   Classes   |
+| :--: | --- | :---------: |
+|  xs  |     |  `w-6 h-6`  |
+|  sm  |     |  `w-8 h-8`  |
+|  md  |     | `w-10 h-10` |
+|  lg  |     | `w-20 h-20` |
+|  xl  |     | `w-36 h-36` |
 
 ```svelte example class="flex flex-col gap-4" hideScript hideResponsiveButtons
 <script>
   import { Avatar } from 'flowbite-svelte';
 </script>
 
-<div class=" flex flex-wrap justify-center space-x-4">
+<div class=" flex flex-wrap justify-center space-x-4 rtl:space-x-reverse">
   <Avatar src="/images/profile-picture-3.webp" rounded size="xs" />
   <Avatar src="/images/profile-picture-3.webp" rounded size="sm" />
   <Avatar src="/images/profile-picture-3.webp" rounded size="md" />
   <Avatar src="/images/profile-picture-3.webp" rounded size="lg" />
   <Avatar src="/images/profile-picture-3.webp" rounded size="xl" />
+  <Avatar src="/images/profile-picture-3.webp" rounded size="none" class="w-28 h-28" />
 </div>
 ```
 
@@ -205,7 +216,6 @@ The component has the following props, type, and default values. See [types page
 ### Avatar styling
 
 - Use the `class` prop to overwrite the default class.
-- Use the `classPlaceholder` prop to overwrite the placeholder class.
 
 <CompoAttributesViewer {dirName}/>
 

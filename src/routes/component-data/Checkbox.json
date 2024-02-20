@@ -9,6 +9,6 @@
     ["group", "(string | number)[]", "[]"],
     ["value", "string | number", "'on'"],
     ["checked", "boolean | undefined", "undefined"],
-    ["spacing", "string", "'mr-2'"]
+    ["spacing", "string", "'me-2'"]
   ]
 }

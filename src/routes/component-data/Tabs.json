@@ -4,7 +4,7 @@
   "events": [],
   "props": [
     ["style", "'full' | 'pill' | 'underline' | 'none'", "'none'"],
-    ["defaultClass", "string", "'flex flex-wrap space-x-2'"],
+    ["defaultClass", "string", "'flex flex-wrap space-x-2 rtl:space-x-reverse'"],
     ["contentClass", "string", "'p-4 bg-gray-50 rounded-lg dark:bg-gray-800 mt-4'"],
     ["divider", "boolean", "true"],
     ["activeClasses", "string", "'p-4 text-primary-600 bg-gray-100 rounded-t-lg dark:bg-gray-800 dark:text-primary-500'"],

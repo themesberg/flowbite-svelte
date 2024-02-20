@@ -1,14 +1,16 @@
 {
   "name": "Button",
   "slots": [],
-  "events": ["on:click", "on:change", "on:keydown", "on:keyup", "on:touchend", "on:touchcancel", "on:mouseenter", "on:mouseleave"],
+  "events": ["on:click", "on:change", "on:keydown", "on:keyup", "on:touchend", "on:touchcancel", "on:mouseenter", "on:mouseleave", "on:click", "on:change", "on:keydown", "on:keyup", "on:touchend", "on:touchcancel", "on:mouseenter", "on:mouseleave"],
   "props": [
     ["pill", "boolean", "false"],
     ["outline", "boolean", "false"],
     ["size", "'xs' | 'sm' | 'md' | 'lg' | 'xl'", "group ? 'sm' : 'md'"],
     ["href", "string | undefined", "undefined"],
-    ["type", "ButtonType", "'button'"],
+    ["type", "HTMLButtonAttributes['type']", "'button'"],
     ["color", "ButtonColor", "group ? (outline ? 'dark' : 'alternative') : 'primary'"],
-    ["shadow", "boolean", "false"]
+    ["shadow", "boolean", "false"],
+    ["tag", "string", "'button'"],
+    ["checked", "boolean | undefined", "undefined"]
   ]
 }

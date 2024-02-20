@@ -6,7 +6,7 @@
     ["type", "InputType", "'text'"],
     ["value", "any", "undefined"],
     ["size", "FormSizeType | undefined", "undefined"],
-    ["defaultClass", "string", "'block w-full disabled:cursor-not-allowed disabled:opacity-50'"],
+    ["defaultClass", "string", "'block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right'"],
     ["color", "'base' | 'green' | 'red'", "'base'"],
     ["floatClass", "string", "'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400'"]
   ]

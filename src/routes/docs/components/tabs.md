@@ -232,7 +232,7 @@ If you want to show the tabs on the full width relative to the parent element us
   import { Tabs, TabItem } from 'flowbite-svelte';
 </script>
 
-<Tabs style="full" defaultClass="flex rounded-lg divide-x divide-gray-200 shadow dark:divide-gray-700">
+<Tabs style="full" defaultClass="flex rounded-lg divide-x rtl:divide-x-reverse divide-gray-200 shadow dark:divide-gray-700">
   <TabItem class="w-full" open>
     <span slot="title">Profile</span>
     <p class="text-sm text-gray-500 dark:text-gray-400">
@@ -282,7 +282,7 @@ You can add other components to the `TabItem` component. Here we are adding a ti
         <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
         <Button color="alternative">
           Learn more
-          <ArrowRightOutline class="ml-2 w-3 h-3" />
+          <ArrowRightOutline class="ms-2 w-3 h-3" />
         </Button>
       </TimelineItem>
       <TimelineItem title="Application UI code in Tailwind CSS" date="March 2022">

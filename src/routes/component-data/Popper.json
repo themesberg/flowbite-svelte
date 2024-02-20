@@ -12,6 +12,7 @@
     ["reference", "string | undefined", "undefined"],
     ["strategy", "'absolute' | 'fixed'", "'absolute'"],
     ["open", "boolean", "false"],
-    ["yOnly", "boolean", "false"]
+    ["yOnly", "boolean", "false"],
+    ["middlewares", "Middleware[]", "[dom.flip(), dom.shift()]"]
   ]
 }

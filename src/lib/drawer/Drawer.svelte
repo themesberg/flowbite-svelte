@@ -7,8 +7,8 @@
   export let activateClickOutside: boolean = true;
   export let hidden: boolean = true;
   export let position: 'fixed' | 'absolute' = 'fixed';
-  export let leftOffset: string = 'inset-y-0 left-0';
-  export let rightOffset: string = 'inset-y-0 right-0';
+  export let leftOffset: string = 'inset-y-0 start-0';
+  export let rightOffset: string = 'inset-y-0 end-0';
   export let topOffset: string = 'inset-x-0 top-0';
   export let bottomOffset: string = 'inset-x-0 bottom-0';
   export let width: string = 'w-80';
@@ -47,7 +47,7 @@
 
   const handleClickOutside = () => activateClickOutside && !hidden && handleDrawer();
 
-  let backdropDivClass = twMerge('fixed top-0 left-0 z-50 w-full h-full', backdrop && bgColor, backdrop && bgOpacity);
+  let backdropDivClass = twMerge('fixed top-0 start-0 z-50 w-full h-full', backdrop && bgColor, backdrop && bgOpacity);
 
   function clickOutsideWrapper(node: HTMLElement, callback: () => void) {
     return activateClickOutside ? clickOutside(node, callback) : undefined;
@@ -73,8 +73,8 @@
 @prop export let activateClickOutside: boolean = true;
 @prop export let hidden: boolean = true;
 @prop export let position: 'fixed' | 'absolute' = 'fixed';
-@prop export let leftOffset: string = 'inset-y-0 left-0';
-@prop export let rightOffset: string = 'inset-y-0 right-0';
+@prop export let leftOffset: string = 'inset-y-0 start-0';
+@prop export let rightOffset: string = 'inset-y-0 end-0';
 @prop export let topOffset: string = 'inset-x-0 top-0';
 @prop export let bottomOffset: string = 'inset-x-0 bottom-0';
 @prop export let width: string = 'w-80';

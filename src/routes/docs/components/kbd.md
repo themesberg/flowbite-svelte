@@ -85,19 +85,19 @@ The KBD component can also be used inside table components to denote what type o
     </TableBodyRow>
     <TableBodyRow>
       <TableBodyCell>
-        <Kbd class="inline-flex items-center mr-1 px-2 py-1.5">
+        <Kbd class="inline-flex items-center me-1 px-2 py-1.5">
           <ArrowKeyUp />
           <span class="sr-only">Arrow key up</span>
         </Kbd>
-        <Kbd class="inline-flex items-center mr-1 px-2 py-1.5">
+        <Kbd class="inline-flex items-center me-1 px-2 py-1.5">
           <ArrowKeyDown />
           <span class="sr-only">Arrow key down</span>
         </Kbd> or
-        <Kbd class="inline-flex items-center mr-1 px-2 py-1.5">
+        <Kbd class="inline-flex items-center me-1 px-2 py-1.5">
           <ArrowKeyLeft />
           <span class="sr-only">Arrow key left</span>
         </Kbd>
-        <Kbd class="inline-flex items-center mr-1 px-2 py-1.5">
+        <Kbd class="inline-flex items-center me-1 px-2 py-1.5">
           <ArrowKeyRight />
           <span class="sr-only">Arrow key right</span>
         </Kbd>
@@ -117,19 +117,19 @@ Use this example to show arrow keys inside the KBD styled element.
   import { Kbd, ArrowKeyUp, ArrowKeyDown, ArrowKeyRight, ArrowKeyLeft } from 'flowbite-svelte';
 </script>
 
-<Kbd class="inline-flex items-center mr-1 px-2 py-1.5">
+<Kbd class="inline-flex items-center me-1 px-2 py-1.5">
   <ArrowKeyUp />
   <span class="sr-only">Arrow key up</span>
 </Kbd>
-<Kbd class="inline-flex items-center mr-1 px-2 py-1.5">
+<Kbd class="inline-flex items-center me-1 px-2 py-1.5">
   <ArrowKeyDown />
   <span class="sr-only">Arrow key down</span>
 </Kbd>
-<Kbd class="inline-flex items-center mr-1 px-2 py-1.5">
+<Kbd class="inline-flex items-center me-1 px-2 py-1.5">
   <ArrowKeyLeft />
   <span class="sr-only">Arrow key left</span>
 </Kbd>
-<Kbd class="inline-flex items-center mr-1 px-2 py-1.5">
+<Kbd class="inline-flex items-center me-1 px-2 py-1.5">
   <ArrowKeyRight />
   <span class="sr-only">Arrow key right</span>
 </Kbd>

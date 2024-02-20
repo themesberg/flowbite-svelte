@@ -4,7 +4,7 @@
   "events": [],
   "props": [
     ["color", "'gray' | 'green' | 'red' | 'disabled'", "'gray'"],
-    ["defaultClass", "string", "'text-sm font-medium block'"],
+    ["defaultClass", "string", "'text-sm rtl:text-right font-medium block'"],
     ["show", "boolean", "true"]
   ]
 }

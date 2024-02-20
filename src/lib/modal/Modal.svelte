@@ -12,11 +12,15 @@
     open?: boolean;
     title?: string;
     size?: SizeType;
-    placement?: 'top-left' | 'top-center' | 'top-right' | 'center-left' | 'center' | 'center-right' | 'bottom-left' | 'bottom-center' | 'bottom-right';
+    placement?: ModalPlacementType;
     autoclose?: boolean;
     backdropClass?: string;
+    bodyClass?: string;
+    classBackdrop?: string;
+    classDialog?: string;
     defaultClass?: string;
     outsideclose?: boolean;
+    dialogClass?: string;
   }
 
   export let open: boolean = false;
@@ -28,7 +32,7 @@
   export let backdropClass: string = 'fixed inset-0 z-40 bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
   export let defaultClass: string = 'relative flex flex-col mx-auto';
   export let outsideclose: boolean = false;
-  export let dialogClass: string = 'fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex';
+  export let dialogClass: string = 'fixed top-0 start-0 end-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex';
 
   const dispatch = createEventDispatcher();
   $: dispatch(open ? 'open' : 'close');
@@ -88,6 +92,10 @@
   const onAutoClose = (e: MouseEvent) => {
     const target: Element = e.target as Element;
     if (autoclose && target?.tagName === 'BUTTON') hide(e); // close on any button click
+  };
+
+  const onOutsideClose = (e: MouseEvent) => {
+    const target: Element = e.target as Element;
     if (outsideclose && target === e.currentTarget) hide(e); // close on click outside
   };
 
@@ -97,7 +105,7 @@
   };
 
   let frameClass: string;
-  $: frameClass = twMerge(defaultClass, 'w-full', $$props.class);
+  $: frameClass = twMerge(defaultClass, 'w-full divide-y', $$props.class);
 
   const isScrollable = (e: HTMLElement): boolean[] => [e.scrollWidth > e.clientWidth && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowX) >= 0, e.scrollHeight > e.clientHeight && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowY) >= 0];
 
@@ -113,13 +121,14 @@
   <div class={backdropCls} />
   <!-- dialog -->
   <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-  <div on:keydown={handleKeys} on:wheel|preventDefault|nonpassive use:prepareFocus use:focusTrap on:click={onAutoClose} class={twMerge(dialogClass, $$props.classDialog, ...getPlacementClasses())} tabindex="-1" aria-modal="true" role="dialog">
+  <div on:keydown={handleKeys} on:wheel|preventDefault|nonpassive use:prepareFocus use:focusTrap on:click={onAutoClose} on:mousedown={onOutsideClose} class={twMerge(dialogClass, $$props.classDialog, ...getPlacementClasses())} tabindex="-1" aria-modal="true" role="dialog">
     <div class="flex relative {sizes[size]} w-full max-h-full">
       <!-- Modal content -->
+
       <Frame rounded shadow {...$$restProps} class={frameClass}>
         <!-- Modal header -->
         {#if $$slots.header || title}
-          <Frame color={$$restProps.color} class="flex justify-between items-center p-4 rounded-t border-b">
+          <Frame color={$$restProps.color} class="flex justify-between items-center p-4 rounded-t-lg">
             <slot name="header">
               <h3 class="text-xl font-semibold {$$restProps.color ? '' : 'text-gray-900 dark:text-white'} p-0">
                 {title}
@@ -127,16 +136,17 @@
             </slot>
             {#if dismissable}<CloseButton name="Close modal" on:click={hide} color={$$restProps.color} />{/if}
           </Frame>
-        {:else if dismissable}
-          <CloseButton name="Close modal" class="absolute top-3 right-2.5" on:click={hide} color={$$restProps.color} />
         {/if}
         <!-- Modal body -->
         <div class={twMerge('p-6 space-y-6 flex-1 overflow-y-auto overscroll-contain', $$props.bodyClass)} on:keydown|stopPropagation={handleKeys} role="document" on:wheel|stopPropagation|passive>
+          {#if dismissable && !$$slots.header && !title}
+            <CloseButton name="Close modal" class="absolute top-3 end-2.5" on:click={hide} color={$$restProps.color} />
+          {/if}
           <slot />
         </div>
         <!-- Modal footer -->
         {#if $$slots.footer}
-          <Frame color={$$restProps.color} class="flex items-center p-6 space-x-2 rounded-b border-t">
+          <Frame color={$$restProps.color} class="flex items-center p-6 space-x-2 rtl:space-x-reverse rounded-b-lg">
             <slot name="footer" />
           </Frame>
         {/if}
@@ -158,5 +168,5 @@
 @prop export let backdropClass: string = 'fixed inset-0 z-40 bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
 @prop export let defaultClass: string = 'relative flex flex-col mx-auto';
 @prop export let outsideclose: boolean = false;
-@prop export let dialogClass: string = 'fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex';
+@prop export let dialogClass: string = 'fixed top-0 start-0 end-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex';
 -->

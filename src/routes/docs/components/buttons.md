@@ -184,11 +184,11 @@ Use these examples if you want to use smaller or larger buttons.
   import { EnvelopeSolid } from 'flowbite-svelte-icons';
 </script>
 
-<Button size="xs"><EnvelopeSolid class="w-3 h-3 mr-2" />Extra small</Button>
-<Button size="sm"><EnvelopeSolid class="w-3 h-3 mr-2" />Small</Button>
-<Button size="md"><EnvelopeSolid class="w-3.5 h-3.5 mr-2" />Base</Button>
-<Button size="lg"><EnvelopeSolid class="w-4 h-4 mr-2" />Large</Button>
-<Button size="xl"><EnvelopeSolid class="w-4 h-4 mr-2" />Extra large</Button>
+<Button size="xs"><EnvelopeSolid class="w-3 h-3 me-2" />Extra small</Button>
+<Button size="sm"><EnvelopeSolid class="w-3 h-3 me-2" />Small</Button>
+<Button size="md"><EnvelopeSolid class="w-3.5 h-3.5 me-2" />Base</Button>
+<Button size="lg"><EnvelopeSolid class="w-4 h-4 me-2" />Large</Button>
+<Button size="xl"><EnvelopeSolid class="w-4 h-4 me-2" />Extra large</Button>
 ```
 
 ## Button with icon
@@ -202,10 +202,10 @@ Use the following examples to add a SVG icon inside the button either on the lef
 </script>
 
 <Button>
-  <ShoppingCartSolid class="w-3.5 h-3.5 mr-2" /> Buy Now
+  <ShoppingCartSolid class="w-3.5 h-3.5 me-2" /> Buy Now
 </Button>
 <Button>
-  Choose Plan <ArrowRightOutline class="w-3.5 h-3.5 ml-2" />
+  Choose Plan <ArrowRightOutline class="w-3.5 h-3.5 ms-2" />
 </Button>
 ```
 
@@ -256,10 +256,10 @@ Use the spinner components from Flowbite-Svelte to indicate a loader animation i
 </script>
 
 <Button>
-  <Spinner class="mr-3" size="4" color="white" />Loading ...
+  <Spinner class="me-3" size="4" color="white" />Loading ...
 </Button>
 <Button color="alternative">
-  <Spinner class="mr-3" size="4" />Loading ...
+  <Spinner class="me-3" size="4" />Loading ...
 </Button>
 ```
 

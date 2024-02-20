@@ -10,6 +10,6 @@
     ["stacked", "boolean", "false"],
     ["dot", "object | undefined", "undefined"],
     ["alt", "string", "''"],
-    ["size", "'xs' | 'sm' | 'md' | 'lg' | 'xl'", "'md'"]
+    ["size", "'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none'", "'md'"]
   ]
 }

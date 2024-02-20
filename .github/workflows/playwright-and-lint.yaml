@@ -13,12 +13,12 @@ jobs:
     name: 'Playwright and Lint'
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.38.1-focal
+      image: mcr.microsoft.com/playwright:v1.41.2-focal
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 'latest'
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
@@ -38,6 +38,8 @@ jobs:
       - name: Install dependencies
         run: pnpm i
       - name: Run playwright tests
+        env:
+          NODE_OPTIONS: '--max_old_space_size=4096'
         run: pnpm test:integration
 #      - name: Run typecheck
 #        if: always()

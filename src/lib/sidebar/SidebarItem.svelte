@@ -5,7 +5,7 @@
 
   export let href: string = '';
   export let label: string = '';
-  export let spanClass: string = 'ml-3';
+  export let spanClass: string = 'ms-3';
   export let activeClass: string | undefined = undefined;
   export let nonActiveClass: string | undefined = undefined;
   // export let active: boolean = false;
@@ -42,7 +42,7 @@
 ## Props
 @prop export let href: string = '';
 @prop export let label: string = '';
-@prop export let spanClass: string = 'ml-3';
+@prop export let spanClass: string = 'ms-3';
 @prop export let activeClass: string | undefined = undefined;
 @prop export let nonActiveClass: string | undefined = undefined;
 @prop export let active: boolean = false;
