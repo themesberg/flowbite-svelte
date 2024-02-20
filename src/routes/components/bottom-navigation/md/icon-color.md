@@ -10,7 +10,7 @@
       <WalletSolid class={activeUrl === '/docs/pages/quickstart' ? svgActiveClass : svgClass} />
     </BottomNavItem>
     <BottomNavItem btnName="BottomNav" href="/docs/components/bottom-navigation">
-      <AdjustmentsVerticalOutline class={activeUrl === '/docs/components/bottom-navigation' ? svgActiveClass : svgClass} />
+      <AdjustmentsVerticalSolid class={activeUrl === '/docs/components/bottom-navigation' ? svgActiveClass : svgClass} />
     </BottomNavItem>
     <BottomNavItem btnName="Accordion" href="/docs/components/accordion">
       <UserCircleSolid class={activeUrl === '/docs/components/accordion' ? svgActiveClass : svgClass} />

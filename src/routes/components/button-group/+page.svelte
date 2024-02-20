@@ -1,6 +1,6 @@
 <script>
   import { ButtonGroup, Button, GradientButton } from '$lib';
-  import { UserCircleSolid, AdjustmentsVerticalOutline, DownloadSolid } from 'flowbite-svelte-icons';
+  import { UserCircleSolid, AdjustmentsVerticalSolid, DownloadSolid } from 'flowbite-svelte-icons';
   const handleClick = () => {
     alert('Clicked');
   };
@@ -86,7 +86,7 @@
       Profile
     </Button>
     <Button>
-      <AdjustmentsVerticalOutline class="me-2 h-3 w-3" />
+      <AdjustmentsVerticalSolid class="me-2 h-3 w-3" />
       Settings
     </Button>
     <Button>
@@ -117,7 +117,7 @@
       Profile
     </Button>
     <Button outline color="dark">
-      <AdjustmentsVerticalOutline class="me-2 h-3 w-3" />
+      <AdjustmentsVerticalSolid class="me-2 h-3 w-3" />
       Settings
     </Button>
     <Button outline color="dark">

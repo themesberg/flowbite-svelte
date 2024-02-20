@@ -4,7 +4,7 @@
         Profile
     </Button>
     <Button>
-        <AdjustmentsVerticalOutline class="me-2 h-3 w-3" />
+        <AdjustmentsVerticalSolid class="me-2 h-3 w-3" />
         Settings
     </Button>
     <Button>

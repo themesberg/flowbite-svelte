@@ -2,7 +2,7 @@
   import { Toast, Avatar, Button } from '$lib';
   import {
     FireOutline,
-    CircleCheckSolid,
+    CheckCircleSolid,
     ExclamationCircleSolid,
     CloseSolid,
     PapperPlaneOutline,
@@ -40,7 +40,7 @@
 <CodeWrapper class="flex h-[700px] flex-col items-center space-y-2">
   <Toast color="green">
     {#snippet icon()}
-      <CircleCheckSolid class="h-5 w-5" />
+      <CheckCircleSolid class="h-5 w-5" />
       <span class="sr-only">Check icon</span>
     {/snippet}
     Item moved successfully.
@@ -120,21 +120,21 @@
 <CodeWrapper class="flex h-[350px] flex-col items-center space-y-2">
   <Toast transition={slide}>
     {#snippet icon()}
-      <CircleCheckSolid class="h-5 w-5" />
+      <CheckCircleSolid class="h-5 w-5" />
     {/snippet}
     Transition type: slide
   </Toast>
 
   <Toast transition={slide} params={{ delay: 250, duration: 300, easing: quintOut }}>
     {#snippet icon()}
-      <CircleCheckSolid class="h-5 w-5" />
+      <CheckCircleSolid class="h-5 w-5" />
     {/snippet}
     Transition type: slide, delay: 250, duration: 300, easing: quintOut
   </Toast>
 
   <Toast transition={slide} params={{ delay: 250, duration: 2000, easing: elasticOut }}>
     {#snippet icon()}
-      <CircleCheckSolid class="h-5 w-5" />
+      <CheckCircleSolid class="h-5 w-5" />
     {/snippet}
     Transition type: slide, delay: 250, duration: 2000, easing: elasticOut
   </Toast>

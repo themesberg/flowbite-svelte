@@ -10,7 +10,7 @@
       <WalletSolid />
     </BottomNavItem>
     <BottomNavItem btnName="BottomNav" href="/components/bottom-navigation">
-      <AdjustmentsVerticalOutline />
+      <AdjustmentsVerticalSolid />
     </BottomNavItem>
     <BottomNavItem btnName="Accordion" href="/components/accordion">
       <UserCircleSolid />

@@ -10,7 +10,7 @@
       <WalletSolid />
     </BottomNavItem>
     <BottomNavItem btnName="Settings">
-      <AdjustmentsVerticalOutline />
+      <AdjustmentsVerticalSolid />
     </BottomNavItem>
     <BottomNavItem btnName="Profile">
       <UserCircleSolid />

@@ -1,7 +1,7 @@
 <script>
   import { page } from '$app/stores';
   import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder, Card, Listgroup, Avatar } from '$lib';
-  import { HomeSolid, WalletSolid, AdjustmentsVerticalOutline, UserCircleSolid } from 'flowbite-svelte-icons';
+  import { HomeSolid, WalletSolid, AdjustmentsVerticalSolid, UserCircleSolid } from 'flowbite-svelte-icons';
   let svgClass = 'mb-1 text-pink-500 dark:text-pink-400 group-hover:text-pink-600 dark:group-hover:text-pink-500';
   let svgActiveClass = 'mb-1 text-green-500 dark:text-green-500 group-hover:text-green-700 dark:group-hover:text-green-700';
   let activeUrl = $state('');
@@ -35,7 +35,7 @@
       <WalletSolid class="mb-1 h-5 w-5 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
     </BottomNavItem>
     <BottomNavItem btnName="Settings">
-      <AdjustmentsVerticalOutline
+      <AdjustmentsVerticalSolid
         class="mb-1 h-5 w-5 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500"
       />
     </BottomNavItem>
@@ -59,7 +59,7 @@
       <WalletSolid />
     </BottomNavItem>
     <BottomNavItem btnName="BottomNav" href="/components/bottom-navigation">
-      <AdjustmentsVerticalOutline />
+      <AdjustmentsVerticalSolid />
     </BottomNavItem>
     <BottomNavItem btnName="Accordion" href="/components/accordion">
       <UserCircleSolid />
@@ -85,7 +85,7 @@
       <WalletSolid />
     </BottomNavItem>
     <BottomNavItem btnName="BottomNav" href="/components/bottom-navigation">
-      <AdjustmentsVerticalOutline />
+      <AdjustmentsVerticalSolid />
     </BottomNavItem>
     <BottomNavItem btnName="Accordion" href="/components/accordion">
       <UserCircleSolid />
@@ -107,7 +107,7 @@
       <WalletSolid class={activeUrl === '/docs/pages/quickstart' ? svgActiveClass : svgClass} />
     </BottomNavItem>
     <BottomNavItem btnName="BottomNav" href="/docs/components/bottom-navigation">
-      <AdjustmentsVerticalOutline class={activeUrl === '/docs/components/bottom-navigation' ? svgActiveClass : svgClass} />
+      <AdjustmentsVerticalSolid class={activeUrl === '/docs/components/bottom-navigation' ? svgActiveClass : svgClass} />
     </BottomNavItem>
     <BottomNavItem btnName="Accordion" href="/docs/components/accordion">
       <UserCircleSolid class={activeUrl === '/docs/components/accordion' ? svgActiveClass : svgClass} />
@@ -129,7 +129,7 @@
       <WalletSolid />
     </BottomNavItem>
     <BottomNavItem btnName="Settings">
-      <AdjustmentsVerticalOutline />
+      <AdjustmentsVerticalSolid />
     </BottomNavItem>
     <BottomNavItem btnName="Profile">
       <UserCircleSolid />
