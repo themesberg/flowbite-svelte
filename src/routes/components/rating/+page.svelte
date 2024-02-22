@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Rating, Star, Heart, Thumbup, AdvancedRating, ScoreRating, RatingComment, Review } from '$lib';
   const headerLabel = {
     desc1: '8.7',
@@ -52,7 +52,7 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default rating</H2>
 
@@ -61,7 +61,7 @@
   <Rating id="example-1b" total={5} size={30} rating={4.66} />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/default-rating.md']} />
+<HighlightCompo code={modules['./md/default-rating.md'] as string} />
 
 <H2>Star</H2>
 
@@ -79,7 +79,7 @@
   <Star size={30} id="100" fillPercent={100} />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/star.md']} />
+<HighlightCompo code={modules['./md/star.md'] as string} />
 
 <H2>Rating with text</H2>
 <CodeWrapper>
@@ -90,7 +90,7 @@
   </Rating>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/rating-with-text.md']} />
+<HighlightCompo code={modules['./md/rating-with-text.md'] as string} />
 
 <H2>Rating count</H2>
 <CodeWrapper>
@@ -100,7 +100,7 @@
   </Rating>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/rating-count.md']} />
+<HighlightCompo code={modules['./md/rating-count.md'] as string} />
 
 <H2>Icon size and color</H2>
 
@@ -113,7 +113,7 @@
   <Rating total={10} rating={8.2} id="example-5d" icon={Thumbup} />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/size-and-color.md']} />
+<HighlightCompo code={modules['./md/size-and-color.md'] as string} />
 
 <H2>AdvancedRating component</H2>
 <CodeWrapper>
@@ -139,7 +139,7 @@
   </AdvancedRating>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/advancedrating-component.md']} />
+<HighlightCompo code={modules['./md/advancedrating-component.md'] as string} />
 
 <H2>Different icon</H2>
 
@@ -166,7 +166,7 @@
   </AdvancedRating>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/different-icon.md']} />
+<HighlightCompo code={modules['./md/different-icon.md'] as string} />
 
 <H2>Score rating</H2>
 <CodeWrapper>
@@ -186,7 +186,7 @@
   />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/score-rating.md']} />
+<HighlightCompo code={modules['./md/score-rating.md'] as string} />
 
 <H2>Rating comment</H2>
 <CodeWrapper>
@@ -206,7 +206,7 @@
   </RatingComment>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/rating-comment.md']} />
+<HighlightCompo code={modules['./md/rating-comment.md'] as string} />
 
 <H2>Review content</H2>
 <CodeWrapper>
@@ -251,4 +251,4 @@
   </Review>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/review-content.md']} />
+<HighlightCompo code={modules['./md/review-content.md'] as string} />

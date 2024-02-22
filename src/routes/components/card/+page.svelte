@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Card, Button } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -13,7 +13,7 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default card</H2>
 
@@ -26,7 +26,7 @@
   </Card>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/card1.md']} />
+<HighlightCompo code={modules['./md/card1.md'] as string} />
 
 <H2>Card with action button</H2>
 
@@ -42,7 +42,7 @@
   </Card>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/card2.md']} />
+<HighlightCompo code={modules['./md/card2.md'] as string} />
 
 <H2>Card with link</H2>
 
@@ -62,7 +62,7 @@
   </Card>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/card-with-link.md']} />
+<HighlightCompo code={modules['./md/card-with-link.md'] as string} />
 
 <H2>Card with image</H2>
 
@@ -78,7 +78,7 @@
   </Card>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/card-with-image.md']} />
+<HighlightCompo code={modules['./md/card-with-image.md'] as string} />
 
 <H2>Horizontal card</H2>
 
@@ -91,7 +91,7 @@
   </Card>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/horizontal-card.md']} />
+<HighlightCompo code={modules['./md/horizontal-card.md'] as string} />
 
 <H2>Call to action card</H2>
 <CodeWrapper class="flex justify-center">
@@ -107,4 +107,4 @@
   </Card>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/call-to-action-card.md']} />
+<HighlightCompo code={modules['./md/call-to-action-card.md'] as string} />

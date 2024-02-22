@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Toast, Avatar, Button } from '$lib';
   import {
     FireOutline,
@@ -23,7 +23,7 @@
 
 <H1>Toast</H1>
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default toast</H2>
 <CodeWrapper class="flex h-28 flex-col items-center">
@@ -34,7 +34,7 @@
     Set yourself free.
   </Toast>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/default-toast.md']} />
+<HighlightCompo code={modules['./md/default-toast.md'] as string} />
 
 <H2>Colors</H2>
 <CodeWrapper class="flex h-[700px] flex-col items-center space-y-2">
@@ -104,7 +104,7 @@
     Customize your colors.
   </Toast>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/colors.md']} />
+<HighlightCompo code={modules['./md/colors.md'] as string} />
 
 <H2>Simple toast</H2>
 <CodeWrapper class="flex h-28 flex-col items-center">
@@ -113,7 +113,7 @@
     <div class="ps-4 text-sm font-normal">Message sent successfully.</div>
   </Toast>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/simple-toast.md']} />
+<HighlightCompo code={modules['./md/simple-toast.md'] as string} />
 
 <H2>Transitions</H2>
 <H3>Slide</H3>
@@ -139,7 +139,7 @@
     Transition type: slide, delay: 250, duration: 2000, easing: elasticOut
   </Toast>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/slide.md']} />
+<HighlightCompo code={modules['./md/slide.md'] as string} />
 
 <H3>Blur</H3>
 <CodeWrapper class="flex h-[200px] flex-col items-center space-y-2">
@@ -157,7 +157,7 @@
     Transition type: blur, amount: 50, delay 1000
   </Toast>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/blur.md']} />
+<HighlightCompo code={modules['./md/blur.md'] as string} />
 
 <H3>Fly</H3>
 <CodeWrapper class="flex h-[200px] flex-col items-center space-y-2">
@@ -175,7 +175,7 @@
     Transition type: fly down
   </Toast>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/fly.md']} />
+<HighlightCompo code={modules['./md/fly.md'] as string} />
 
 <H2>Undo button</H2>
 <CodeWrapper class="flex h-[104px] flex-col items-center">
@@ -186,7 +186,7 @@
     </a>
   </Toast>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/undo-button.md']} />
+<HighlightCompo code={modules['./md/undo-button.md'] as string} />
 
 <H2>Advanced examples</H2>
 <H3>Toast message</H3>
@@ -202,7 +202,7 @@
     </div>
   </Toast>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/toast-message.md']} />
+<HighlightCompo code={modules['./md/toast-message.md'] as string} />
 
 <H3>Push notification</H3>
 <CodeWrapper class="flex h-44 flex-col items-center">
@@ -218,7 +218,7 @@
     </div>
   </Toast>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/push-notification.md']} />
+<HighlightCompo code={modules['./md/push-notification.md'] as string} />
 
 <H3>Interactive toast</H3>
 <CodeWrapper class="flex h-48 flex-col items-center">
@@ -235,7 +235,7 @@
     </div>
   </Toast>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/interactive-toast.md']} />
+<HighlightCompo code={modules['./md/interactive-toast.md'] as string} />
 
 <H2>Positioning</H2>
 <CodeWrapper>
@@ -256,4 +256,4 @@
     >
   </div>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/positioning.md']} />
+<HighlightCompo code={modules['./md/positioning.md'] as string} />

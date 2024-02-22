@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Gallery, Button } from '$lib';
   const images = [
     { alt: 'erbology', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg' },
@@ -94,14 +94,14 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default gallery</H2>
 <CodeWrapper>
   <Gallery items={images} divclass="gap-4 grid-cols-2 md:grid-cols-3" />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/default-gallery.md']} />
+<HighlightCompo code={modules['./md/default-gallery.md'] as string} />
 
 <H2>Mansory grid</H2>
 
@@ -115,7 +115,7 @@
   </Gallery>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/mansory-grid.md']} />
+<HighlightCompo code={modules['./md/mansory-grid.md'] as string} />
 
 <H2>Featured image</H2>
 <CodeWrapper>
@@ -126,14 +126,14 @@
   </Gallery>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/featured-image.md']} />
+<HighlightCompo code={modules['./md/featured-image.md'] as string} />
 
 <H2>Quad gallery</H2>
 <CodeWrapper>
   <Gallery divclass="gap-2 grid-cols-2" items={images7} />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/quad-gallery.md']} />
+<HighlightCompo code={modules['./md/quad-gallery.md'] as string} />
 
 <H2>Gallery with tag filters</H2>
 <CodeWrapper>
@@ -148,7 +148,7 @@
   <Gallery items={images8} divclass="gap-4 grid-cols-2 md:grid-cols-3" />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/gallery-with-tag-filters.md']} />
+<HighlightCompo code={modules['./md/gallery-with-tag-filters.md'] as string} />
 
 <H2>Heterogeneous gallery</H2>
 <CodeWrapper>
@@ -160,7 +160,7 @@
   </Gallery>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/heterogenuous-gallery.md']} />
+<HighlightCompo code={modules['./md/heterogenuous-gallery.md'] as string} />
 
 <H2>Custom image rendering</H2>
 <CodeWrapper>
@@ -177,4 +177,4 @@
   </Gallery>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/custom-image-rendering.md']} />
+<HighlightCompo code={modules['./md/custom-image-rendering.md'] as string} />

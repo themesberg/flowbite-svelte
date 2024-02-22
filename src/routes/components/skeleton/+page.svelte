@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import {
     Skeleton,
     CardPlaceholder,
@@ -20,7 +20,7 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default skeleton</H2>
 
@@ -32,7 +32,7 @@
   <Skeleton size="xxl" divclass="mb-2.5 mt-8" />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/skeleton.md']} />
+<HighlightCompo code={modules['./md/skeleton.md'] as string} />
 
 <H2>Image placeholder</H2>
 
@@ -41,7 +41,7 @@
   <ImagePlaceholder imgHeight="h-60" divclass="mt-8" />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/imageplaceholder.md']} />
+<HighlightCompo code={modules['./md/imageplaceholder.md'] as string} />
 
 <H2>Video placeholder</H2>
 
@@ -53,7 +53,7 @@
   <VideoPlaceholder size="xxl" divclass="mt-8" />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/videoplaceholder.md']} />
+<HighlightCompo code={modules['./md/videoplaceholder.md'] as string} />
 
 <H2>Text placeholder</H2>
 
@@ -65,7 +65,7 @@
   <TextPlaceholder size="xxl" divclass="mt-8" />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/textplaceholder.md']} />
+<HighlightCompo code={modules['./md/textplaceholder.md'] as string} />
 
 <H2>Card placeholder</H2>
 
@@ -77,14 +77,14 @@
   <CardPlaceholder size="xxl" divclass="mt-8" />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/cardplaceholder.md']} />
+<HighlightCompo code={modules['./md/cardplaceholder.md'] as string} />
 
 <H2>Widget placeholder</H2>
 
 <CodeWrapper>
   <WidgetPlaceholder />
 </CodeWrapper>
-<HighlightCompo code={modules['./md/widgetplaceholder.md']} />
+<HighlightCompo code={modules['./md/widgetplaceholder.md'] as string} />
 
 <H2>List placeholder</H2>
 
@@ -92,7 +92,7 @@
   <ListPlaceholder />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/listplaceholder.md']} />
+<HighlightCompo code={modules['./md/listplaceholder.md'] as string} />
 
 <H2>Testimonial placeholder</H2>
 
@@ -100,4 +100,4 @@
   <TestimonialPlaceholder />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/testimonialplaceholder.md']} />
+<HighlightCompo code={modules['./md/testimonialplaceholder.md'] as string} />

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Indicator, Button } from '$lib';
   import { EnvelopeSolid } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
@@ -13,7 +13,7 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default indicator</H2>
 
@@ -30,7 +30,7 @@
   <Indicator color="teal" />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/defaultindicator.md']} />
+<HighlightCompo code={modules['./md/defaultindicator.md'] as string} />
 
 <H2>Legend indicator</H2>
 
@@ -54,7 +54,7 @@
   </Button>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/indicator-count.md']} />
+<HighlightCompo code={modules['./md/indicator-count.md'] as string} />
 
 <H2>Indicator position</H2>
 
@@ -72,4 +72,4 @@
   </div>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/position.md']} />
+<HighlightCompo code={modules['./md/position.md'] as string} />

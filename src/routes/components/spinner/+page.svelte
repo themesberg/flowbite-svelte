@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Spinner, Button } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -11,7 +11,7 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default spinner</H2>
 
@@ -19,7 +19,7 @@
   <Spinner />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/defaultspinner.md']} />
+<HighlightCompo code={modules['./md/defaultspinner.md'] as string} />
 
 <H2>Colors</H2>
 
@@ -33,7 +33,7 @@
   <Spinner color="purple" />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/colors.md']} />
+<HighlightCompo code={modules['./md/colors.md'] as string} />
 
 <H2>Sizes</H2>
 
@@ -43,7 +43,7 @@
   <Spinner size={8} />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/sizes.md']} />
+<HighlightCompo code={modules['./md/sizes.md'] as string} />
 
 <H2>Alignment</H2>
 
@@ -53,7 +53,7 @@
   <div class="text-right"><Spinner /></div>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/alignment.md']} />
+<HighlightCompo code={modules['./md/alignment.md'] as string} />
 
 <H2>Button</H2>
 
@@ -70,4 +70,4 @@
   </div>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/button.md']} />
+<HighlightCompo code={modules['./md/button.md'] as string} />

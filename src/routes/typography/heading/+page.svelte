@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Heading, Button, P, A, Span, Mark } from '$lib';
   import { ArrowRightOutline, ChevronRightSolid } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
@@ -12,7 +12,7 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default heading</H2>
 
@@ -29,7 +29,7 @@
   </div>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/default-heading.md']} />
+<HighlightCompo code={modules['./md/default-heading.md'] as string} />
 
 <H2>Second-level heading</H2>
 
@@ -49,7 +49,7 @@
   </A>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/second-level-heading.md']} />
+<HighlightCompo code={modules['./md/second-level-heading.md'] as string} />
 
 <H2>Highlighted heading</H2>
 
@@ -58,7 +58,7 @@
   <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/highlighted-heading.md']} />
+<HighlightCompo code={modules['./md/highlighted-heading.md'] as string} />
 
 <H2>Heading mark</H2>
 
@@ -67,7 +67,7 @@
   <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/heading-mark.md']} />
+<HighlightCompo code={modules['./md/heading-mark.md'] as string} />
 
 <H2>Heading gradient</H2>
 
@@ -78,4 +78,4 @@
   <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/heading-gradient.md']} />
+<HighlightCompo code={modules['./md/heading-gradient.md'] as string} />

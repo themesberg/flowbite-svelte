@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Range, Label } from '$lib';
 
   let minmaxValue = 5;
@@ -14,21 +14,21 @@
 <H1>Range</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Range slider example</H2>
 <CodeWrapper>
   <Label>Default range</Label>
   <Range id="range1" />
 </CodeWrapper>
-<HighlightCompo code={modules['./md/range-slider-example.md']} />
+<HighlightCompo code={modules['./md/range-slider-example.md'] as string} />
 
 <H2>Disabled state</H2>
 <CodeWrapper>
   <Label>Default range</Label>
   <Range id="range-disabled" disabled />
 </CodeWrapper>
-<HighlightCompo code={modules['./md/disabled-state.md']} />
+<HighlightCompo code={modules['./md/disabled-state.md'] as string} />
 
 <H2>Min and max</H2>
 <CodeWrapper>
@@ -36,7 +36,7 @@
   <Range id="range-minmax" min="0" max="10" bind:value={minmaxValue} />
   <p>Value: {minmaxValue}</p>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/min-and-max.md']} />
+<HighlightCompo code={modules['./md/min-and-max.md'] as string} />
 
 <H2>Steps</H2>
 <CodeWrapper>
@@ -44,7 +44,7 @@
   <Range id="range-steps" min="0" max="5" bind:value={stepValue} step="0.5" />
   <p>Value: {stepValue}</p>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/steps.md']} />
+<HighlightCompo code={modules['./md/steps.md'] as string} />
 
 <H2>Sizes</H2>
 <CodeWrapper class="space-y-6">
@@ -56,4 +56,4 @@
   <Range id="large-range" size="lg" />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/sizes.md']} />
+<HighlightCompo code={modules['./md/sizes.md'] as string} />

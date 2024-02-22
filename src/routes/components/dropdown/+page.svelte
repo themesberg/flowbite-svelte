@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -59,4 +59,4 @@
   </div>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/dropdown1.md']} />
+<HighlightCompo code={modules['./md/dropdown1.md'] as string} />

@@ -50,7 +50,7 @@
   </Navbar>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/default-nav.md']} />
+<HighlightCompo code={modules['./md/default-nav.md'] as string} />
 
 <H2>Breakpoint</H2>
 <P>Use the `breakPoint` prop to change the breakpoint. There are 4 breakpoints: `md`, `lg`, `xl`, `xxl`.</P>
@@ -69,7 +69,7 @@
     </NavUl>
   </Navbar>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/breakpoint.md']} />
+<HighlightCompo code={modules['./md/breakpoint.md'] as string} />
 
 <H2>Sticky navbar</H2>
 <CodeWrapper class="p-2">
@@ -101,4 +101,4 @@
   </div>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/sticky-navbar.md']} />
+<HighlightCompo code={modules['./md/sticky-navbar.md'] as string} />

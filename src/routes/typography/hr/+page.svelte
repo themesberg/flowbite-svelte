@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Hr, P, Blockquote } from '$lib';
   import { QuoteSolid } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
@@ -12,7 +12,7 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default HR</H2>
 
@@ -28,7 +28,7 @@
   >
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/default-hr.md']} />
+<HighlightCompo code={modules['./md/default-hr.md'] as string} />
 
 <H2>Trimmed</H2>
 
@@ -44,7 +44,7 @@
   >
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/trimmed.md']} />
+<HighlightCompo code={modules['./md/trimmed.md'] as string} />
 
 <H2>Icon HR</H2>
 
@@ -65,7 +65,7 @@
   </div>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/icon-hr.md']} />
+<HighlightCompo code={modules['./md/icon-hr.md'] as string} />
 
 <H2>HR with text</H2>
 
@@ -84,7 +84,7 @@
   </div>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/hr-with-text.md']} />
+<HighlightCompo code={modules['./md/hr-with-text.md'] as string} />
 
 <H2>HR with shape</H2>
 
@@ -102,4 +102,4 @@
   </Blockquote>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/hr-with-shape.md']} />
+<HighlightCompo code={modules['./md/hr-with-shape.md'] as string} />

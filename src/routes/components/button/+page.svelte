@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Button, Indicator, GradientButton, Spinner } from '$lib';
   import { EnvelopeSolid, ArrowRightOutline, ShoppingBagSolid, ThumbsUpSolid } from 'flowbite-svelte-icons';
   const btn1 = () => {
@@ -16,7 +16,7 @@
 
 <H1>Buttons</H1>
 <H2>Setup</H2>
-<HighlightCompo codeLang="ts" code={modules['./md/setup.md']} />
+<HighlightCompo codeLang="ts" code={modules['./md/setup.md'] as string} />
 
 <H2>Default buttons</H2>
 
@@ -32,7 +32,7 @@
   <Button color="purple">Purple</Button>
 </CodeWrapper>
 
-<HighlightCompo codeLang="js" code={modules['./md/default-buttons.md']} />
+<HighlightCompo codeLang="js" code={modules['./md/default-buttons.md'] as string} />
 
 <H2>Button with link</H2>
 
@@ -40,7 +40,7 @@
   <Button href="/">Home</Button>
 </CodeWrapper>
 
-<HighlightCompo codeLang="plain" code={modules['./md/button-with-link.md']} />
+<HighlightCompo codeLang="plain" code={modules['./md/button-with-link.md'] as string} />
 
 <H2>Button pills</H2>
 
@@ -56,7 +56,7 @@
   <Button color="purple" pill>Purple</Button>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/button-pills.md']} />
+<HighlightCompo code={modules['./md/button-pills.md'] as string} />
 
 <H2>Outline buttons</H2>
 
@@ -69,7 +69,7 @@
   <Button outline color="purple">Purple</Button>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/outline-buttons.md']} />
+<HighlightCompo code={modules['./md/outline-buttons.md'] as string} />
 
 <H2>Button sizes with icons</H2>
 
@@ -81,7 +81,7 @@
   <Button size="xl"><EnvelopeSolid class="me-2 h-4 w-4" />Extra large</Button>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/button-sizes-with-icons.md']} />
+<HighlightCompo code={modules['./md/button-sizes-with-icons.md'] as string} />
 
 <H2>Button with icon</H2>
 <CodeWrapper class="flex flex-wrap gap-2">
@@ -89,7 +89,7 @@
   <Button>Choose Plan<ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/button-with-icon.md']} />
+<HighlightCompo code={modules['./md/button-with-icon.md'] as string} />
 
 <H2>Button with label</H2>
 
@@ -100,7 +100,7 @@
   </Button>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/button-with-label.md']} />
+<HighlightCompo code={modules['./md/button-with-label.md'] as string} />
 
 <H2>Outline buttons</H2>
 <CodeWrapper class="flex flex-wrap gap-2">
@@ -111,7 +111,7 @@
   <Button outline color="yellow">Yellow</Button>
   <Button outline color="purple">Purple</Button>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/outline-buttons.md']} />
+<HighlightCompo code={modules['./md/outline-buttons.md'] as string} />
 
 <H2>Button sizes with icons</H2>
 <CodeWrapper>
@@ -121,7 +121,7 @@
   <Button size="lg"><EnvelopeSolid class="me-2 h-4 w-4" />Large</Button>
   <Button size="xl"><EnvelopeSolid class="me-2 h-4 w-4" />Extra large</Button>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/button-sizes-with-icons.md']} />
+<HighlightCompo code={modules['./md/button-sizes-with-icons.md'] as string} />
 
 <H2>Button with label</H2>
 <CodeWrapper>
@@ -130,7 +130,7 @@
     <Indicator color="none" divclass="bg-primary-200 text-xs text-primary-800 font-semibold" size="lg">2</Indicator>
   </Button>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/button-with-label.md']} />
+<HighlightCompo code={modules['./md/button-with-label.md'] as string} />
 
 <H2>Icon buttons</H2>
 <CodeWrapper>
@@ -145,7 +145,7 @@
     </Button>
   </div>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/icon-buttons.md']} />
+<HighlightCompo code={modules['./md/icon-buttons.md'] as string} />
 
 <H2>Loader</H2>
 <CodeWrapper>
@@ -156,20 +156,20 @@
     <Spinner svgclass="me-3" size="4" />Loading ...
   </Button>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/loader.md']} />
+<HighlightCompo code={modules['./md/loader.md'] as string} />
 
 <H2>Disabled</H2>
 <CodeWrapper>
   <Button disabled>Disabled</Button>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/disabled.md']} />
+<HighlightCompo code={modules['./md/disabled.md'] as string} />
 
 <H2>Events</H2>
 <CodeWrapper>
   <Button onclick={btn1}>Button 1</Button>
   <Button ontouchstart={btn2}>Button 2</Button>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/events.md']} />
+<HighlightCompo code={modules['./md/events.md'] as string} />
 
 <H2>Gradient monochrome</H2>
 <CodeWrapper class="flex flex-wrap gap-2">
@@ -182,7 +182,7 @@
   <GradientButton color="pink">Pink</GradientButton>
   <GradientButton color="purple">Purple</GradientButton>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/gradient-monochrome.md']} />
+<HighlightCompo code={modules['./md/gradient-monochrome.md'] as string} />
 
 <H2>Gradient duotone</H2>
 <CodeWrapper class="flex flex-wrap gap-2">
@@ -194,7 +194,7 @@
   <GradientButton color="tealToLime">Teal to Lime</GradientButton>
   <GradientButton color="redToYellow">Red to Yellow</GradientButton>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/gradient-duotone.md']} />
+<HighlightCompo code={modules['./md/gradient-duotone.md'] as string} />
 
 <H2>Gradient outline</H2>
 <CodeWrapper class="flex flex-wrap gap-2">
@@ -207,7 +207,7 @@
   <GradientButton outline color="redToYellow">Red to Yellow</GradientButton>
   <GradientButton outline color="redToYellow" divclass="w-72">Red to Yellow</GradientButton>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/gradient-outline.md']} />
+<HighlightCompo code={modules['./md/gradient-outline.md'] as string} />
 
 <H2>Colored shadows</H2>
 <CodeWrapper class="flex flex-wrap gap-2">
@@ -220,7 +220,7 @@
   <GradientButton shadow color="pink">Pink</GradientButton>
   <GradientButton shadow color="purple">Purple</GradientButton>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/colored-shadows.md']} />
+<HighlightCompo code={modules['./md/colored-shadows.md'] as string} />
 
 <H2>Gradient pills</H2>
 <CodeWrapper class="flex flex-wrap gap-2">
@@ -248,4 +248,4 @@
   <GradientButton pill shadow color="pink">Pink</GradientButton>
   <GradientButton pill shadow color="purple">Purple</GradientButton>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/gradient-pills.md']} />
+<HighlightCompo code={modules['./md/gradient-pills.md'] as string} />

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { DeviceMockup } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -10,7 +10,7 @@
 <H1>Device mockup</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default mockup</H2>
 <CodeWrapper>
@@ -27,7 +27,7 @@
     />
   </DeviceMockup>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/default-mockup.md']} />
+<HighlightCompo code={modules['./md/default-mockup.md'] as string} />
 
 <H2>iPhone 12 mockup (iOS)</H2>
 <CodeWrapper>
@@ -44,7 +44,7 @@
     />
   </DeviceMockup>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/iphone-12-mockup.md']} />
+<HighlightCompo code={modules['./md/iphone-12-mockup.md'] as string} />
 
 <H2>Google Pixel mockup (Android)</H2>
 <CodeWrapper>
@@ -61,7 +61,7 @@
     />
   </DeviceMockup>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/google-pixel-mockup.md']} />
+<HighlightCompo code={modules['./md/google-pixel-mockup.md'] as string} />
 
 <H2>Tablet mockup</H2>
 <CodeWrapper>
@@ -78,7 +78,7 @@
     />
   </DeviceMockup>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/tablet-mockup.md']} />
+<HighlightCompo code={modules['./md/tablet-mockup.md'] as string} />
 
 <H2>Laptop mockup</H2>
 <CodeWrapper>
@@ -95,7 +95,7 @@
     />
   </DeviceMockup>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/laptop-mockup.md']} />
+<HighlightCompo code={modules['./md/laptop-mockup.md'] as string} />
 
 <H2>Desktop mockup</H2>
 <CodeWrapper>
@@ -112,7 +112,7 @@
     />
   </DeviceMockup>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/desktop-mockup.md']} />
+<HighlightCompo code={modules['./md/desktop-mockup.md'] as string} />
 
 <H2>Smartwatch mockup</H2>
 <CodeWrapper>
@@ -129,4 +129,4 @@
     />
   </DeviceMockup>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/smartwatch-mockup.md']} />
+<HighlightCompo code={modules['./md/smartwatch-mockup.md'] as string} />

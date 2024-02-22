@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Radio, Helper, RadioButton, ButtonGroup } from '$lib';
   let colors = 'text-purple-500';
   let technology = 'svelte';
@@ -16,7 +16,7 @@
 <H1>Radio, Helper, and RadioButton</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Radio examples</H2>
 <CodeWrapper class="flex flex-col gap-4">
@@ -24,7 +24,7 @@
   <Radio name="example">Checked state</Radio>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/radio-examples.md']} />
+<HighlightCompo code={modules['./md/radio-examples.md'] as string} />
 
 <H2>Disabled state</H2>
 <CodeWrapper class="flex flex-col gap-4">
@@ -32,7 +32,7 @@
   <Radio name="disabled-state" disabled>Disabled checked</Radio>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/disabled-state.md']} />
+<HighlightCompo code={modules['./md/disabled-state.md'] as string} />
 
 <H2>Radio with a link</H2>
 <CodeWrapper>
@@ -41,7 +41,7 @@
   </Radio>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/radio-with-a-link.md']} />
+<HighlightCompo code={modules['./md/radio-with-a-link.md'] as string} />
 
 <H2>Helper text</H2>
 <CodeWrapper>
@@ -49,7 +49,7 @@
   <Helper id="helper-checkbox-text" pclass="ps-6">For orders shipped from $25 in books or $29 in other categories</Helper>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/helper-text.md']} />
+<HighlightCompo code={modules['./md/helper-text.md'] as string} />
 
 <H2>Bordered</H2>
 <CodeWrapper>
@@ -63,7 +63,7 @@
   </div>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/bordered.md']} />
+<HighlightCompo code={modules['./md/bordered.md'] as string} />
 
 <H2>Radio list group</H2>
 <CodeWrapper>
@@ -78,7 +78,7 @@
   </ul>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/radio-list-group.md']} />
+<HighlightCompo code={modules['./md/radio-list-group.md'] as string} />
 
 <H2>Horizontal list group</H2>
 <CodeWrapper>
@@ -92,7 +92,7 @@
     <li class="w-full"><Radio name="hor-list" labelclass="p-3">Angular</Radio></li>
   </ul>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/horizontal-list-group.md']} />
+<HighlightCompo code={modules['./md/horizontal-list-group.md'] as string} />
 
 <H2>Inline layout</H2>
 <CodeWrapper>
@@ -103,7 +103,7 @@
     <Radio group={inline1} name="inline-layout" value="fourth" disabled>Inline disabled</Radio>
   </div>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/inline-layout.md']} />
+<HighlightCompo code={modules['./md/inline-layout.md'] as string} />
 
 <H2>Advanced layout</H2>
 <CodeWrapper>
@@ -134,7 +134,7 @@
     </Radio>
   </div>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/advanced-layout.md']} />
+<HighlightCompo code={modules['./md/advanced-layout.md'] as string} />
 
 <H2>Radio button</H2>
 <CodeWrapper class="space-y-4">
@@ -152,4 +152,4 @@
 
   <p>List style: {radioGroup}</p>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/radio-button.md']} />
+<HighlightCompo code={modules['./md/radio-button.md'] as string} />

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Darkmode } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -12,7 +12,7 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default Darkmode</H2>
 
@@ -20,13 +20,13 @@
   <Darkmode />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/darkmode.md']} />
+<HighlightCompo code={modules['./md/darkmode.md'] as string} />
 
 <H2>Initial theme</H2>
 
 Add the following to `app.html`:
 
-<HighlightCompo code={modules['./md/initialtheme.md']} />
+<HighlightCompo code={modules['./md/initialtheme.md'] as string} />
 
 <H2>Switcher style</H2>
 
@@ -47,4 +47,4 @@ Use the lightIcon and darkIcon slots to change icons:
   </Darkmode>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/modeicon.md']} />
+<HighlightCompo code={modules['./md/modeicon.md'] as string} />

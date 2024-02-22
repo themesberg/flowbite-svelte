@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Toggle } from '$lib';
   const customSize = 'w-16 h-10 after:top-1 after:left-[4px]  after:h-8 after:w-8';
 
@@ -12,7 +12,7 @@
 <H1>Toggle</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 <H2>Default toggle</H2>
 
 <CodeWrapper class="flex flex-col gap-2">
@@ -21,7 +21,7 @@
   <Toggle disabled>Disabled toggle</Toggle>
   <Toggle checked disabled>Disabled checked</Toggle>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/default-toggle.md']} />
+<HighlightCompo code={modules['./md/default-toggle.md'] as string} />
 
 <H2>Colors</H2>
 <CodeWrapper class="flex justify-between">
@@ -32,7 +32,7 @@
   <Toggle color="teal" checked>Teal</Toggle>
   <Toggle color="orange" checked>Orange</Toggle>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/colors.md']} />
+<HighlightCompo code={modules['./md/colors.md'] as string} />
 
 <H2>Sizes</H2>
 <CodeWrapper class="flex flex-col gap-2">
@@ -41,4 +41,4 @@
   <Toggle size="large" checked>Large toggle</Toggle>
   <Toggle size="custom" {customSize}>Custom toggle</Toggle>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/sizes.md']} />
+<HighlightCompo code={modules['./md/sizes.md'] as string} />

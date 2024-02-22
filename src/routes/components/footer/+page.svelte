@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Footer, FooterBrand, FooterLi, FooterUl, FooterCopyright, FooterIcon, Skeleton, ImagePlaceholder, TextPlaceholder } from '$lib';
   import { FacebookSolid, GithubSolid, DiscordSolid, TwitterSolid } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
@@ -12,7 +12,7 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default footer</H2>
 
@@ -28,7 +28,7 @@
   </Footer>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/default-footer.md']} />
+<HighlightCompo code={modules['./md/default-footer.md'] as string} />
 
 <H2>Footer with logo</H2>
 <CodeWrapper>
@@ -47,7 +47,7 @@
   </Footer>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/footer-with-logo.md']} />
+<HighlightCompo code={modules['./md/footer-with-logo.md'] as string} />
 
 <H2>Social media icons</H2>
 <CodeWrapper>
@@ -101,7 +101,7 @@
   </Footer>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/social-media-icons.md']} />
+<HighlightCompo code={modules['./md/social-media-icons.md'] as string} />
 
 <H2>Sitemap links</H2>
 <CodeWrapper>
@@ -163,7 +163,7 @@
   </Footer>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/sitemap-links.md']} />
+<HighlightCompo code={modules['./md/sitemap-links.md'] as string} />
 
 <H2>Sticky footer</H2>
 
@@ -186,4 +186,4 @@
   </div>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/sticky-footer.md']} />
+<HighlightCompo code={modules['./md/sticky-footer.md'] as string} />

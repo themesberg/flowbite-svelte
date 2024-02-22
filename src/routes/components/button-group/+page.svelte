@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { ButtonGroup, Button, GradientButton } from '$lib';
   import { UserCircleSolid, AdjustmentsVerticalSolid, DownloadSolid } from 'flowbite-svelte-icons';
   const handleClick = () => {
@@ -15,7 +15,7 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default buttongroup</H2>
 <CodeWrapper class="flex justify-center">
@@ -26,7 +26,7 @@
   </ButtonGroup>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/default-buttongroup.md']} />
+<HighlightCompo code={modules['./md/default-buttongroup.md'] as string} />
 
 <H2>More examples</H2>
 
@@ -65,7 +65,7 @@
   </div>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/more-examples.md']} />
+<HighlightCompo code={modules['./md/more-examples.md'] as string} />
 
 <H2>Button group as links</H2>
 <CodeWrapper class="flex justify-center">
@@ -76,7 +76,7 @@
   </ButtonGroup>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/button-group-as-links.md']} />
+<HighlightCompo code={modules['./md/button-group-as-links.md'] as string} />
 
 <H2>Group button with icons</H2>
 <CodeWrapper class="flex justify-center">
@@ -96,7 +96,7 @@
   </ButtonGroup>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/group-button-with-icons.md']} />
+<HighlightCompo code={modules['./md/group-button-with-icons.md'] as string} />
 
 <H2>Outline</H2>
 <CodeWrapper class="flex justify-center">
@@ -107,7 +107,7 @@
   </ButtonGroup>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/outline.md']} />
+<HighlightCompo code={modules['./md/outline.md'] as string} />
 
 <H2>Outline with icon</H2>
 <CodeWrapper class="flex justify-center">
@@ -127,7 +127,7 @@
   </ButtonGroup>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/outline-with-icon.md']} />
+<HighlightCompo code={modules['./md/outline-with-icon.md'] as string} />
 
 <H2>Events</H2>
 <CodeWrapper class="flex justify-center">
@@ -138,4 +138,4 @@
   </ButtonGroup>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/events.md']} />
+<HighlightCompo code={modules['./md/events.md'] as string} />

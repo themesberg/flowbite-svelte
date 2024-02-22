@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Alert, List, Li, Button } from '$lib';
   import { InfoCircleSolid, EyeSolid } from 'flowbite-svelte-icons';
 
@@ -11,7 +11,7 @@
 
 <H1>Alert</H1>
 <H2>Setup</H2>
-<HighlightCompo codeLang="ts" code={modules['./md/setup.md']} />
+<HighlightCompo codeLang="ts" code={modules['./md/setup.md'] as string} />
 
 <H2>Default alert</H2>
 <CodeWrapper class="space-y-4">
@@ -40,7 +40,7 @@
     Change a few things up and try submitting again.
   </Alert>
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/default-alert.md']} />
+<HighlightCompo codeLang="ts" code={modules['./md/default-alert.md'] as string} />
 
 <H2>Alerts with icon</H2>
 <CodeWrapper class="space-y-4">
@@ -87,7 +87,7 @@
     Change a few things up and try submitting again.
   </Alert>
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/alerts-with-icon.md']} />
+<HighlightCompo codeLang="ts" code={modules['./md/alerts-with-icon.md'] as string} />
 
 <H2>Bordered alerts</H2>
 <CodeWrapper class="space-y-4">
@@ -134,7 +134,7 @@
     Change a few things up and try submitting again.
   </Alert>
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/bordered-alerts.md']} />
+<HighlightCompo codeLang="ts" code={modules['./md/bordered-alerts.md'] as string} />
 
 <H2>Alerts with list</H2>
 <CodeWrapper class="space-y-4">
@@ -163,7 +163,7 @@
     </List>
   </Alert>
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/alerts-with-list.md']} />
+<HighlightCompo codeLang="ts" code={modules['./md/alerts-with-list.md'] as string} />
 
 <H2>Dismissable alerts</H2>
 <CodeWrapper class="min-h-[450px] space-y-4">
@@ -210,7 +210,7 @@
     Change a few things up and try submitting again.
   </Alert>
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/dismissable-alerts.md']} />
+<HighlightCompo codeLang="ts" code={modules['./md/dismissable-alerts.md'] as string} />
 
 <H2>Border accent</H2>
 <CodeWrapper class="space-y-4">
@@ -250,7 +250,7 @@
     Change a few things up and try submitting again.
   </Alert>
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/border-accent.md']} />
+<HighlightCompo codeLang="ts" code={modules['./md/border-accent.md'] as string} />
 
 <H2>Additional content</H2>
 <CodeWrapper class="space-y-4">
@@ -287,13 +287,13 @@
     </div>
   </Alert>
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/additional-content.md']} />
+<HighlightCompo codeLang="ts" code={modules['./md/additional-content.md'] as string} />
 
 <H2>Custom color</H2>
 <CodeWrapper>
   <Alert color="none" divclass="bg-sky-500 text-white">Your content</Alert>
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/custom-color.md']} />
+<HighlightCompo codeLang="ts" code={modules['./md/custom-color.md'] as string} />
 
 <H2>Events</H2>
 <CodeWrapper class="h-24">
@@ -304,4 +304,4 @@
     }}>Close me</Alert
   >
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/events.md']} />
+<HighlightCompo codeLang="ts" code={modules['./md/events.md'] as string} />

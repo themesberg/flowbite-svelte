@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Heading, P, A, List, Li } from '$lib';
   import { removeHyphensAndCapitalize } from '../../utils/helpers';
   import H1 from '../../utils/H1.svelte';

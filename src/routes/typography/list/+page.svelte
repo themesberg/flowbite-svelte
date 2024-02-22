@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { List, Li, Heading, Span, DescriptionList, A } from '$lib';
   import { CheckCircleOutline, XCircleSolid, CheckOutline } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
@@ -13,7 +13,7 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Unordored list</H2>
 <CodeWrapper>
@@ -25,7 +25,7 @@
   </List>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/unordered-list.md']} />
+<HighlightCompo code={modules['./md/unordered-list.md'] as string} />
 
 <H3>Icon</H3>
 <CodeWrapper>
@@ -46,7 +46,7 @@
   </List>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/icon1.md']} />
+<HighlightCompo code={modules['./md/icon1.md'] as string} />
 
 <H3>Nested</H3>
 <CodeWrapper>
@@ -78,7 +78,7 @@
   </List>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/nested1.md']} />
+<HighlightCompo code={modules['./md/nested1.md'] as string} />
 
 <H3>Unstyled</H3>
 
@@ -91,7 +91,7 @@
   </List>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/unstyled.md']} />
+<HighlightCompo code={modules['./md/unstyled.md'] as string} />
 
 <H2>Ordered list</H2>
 <CodeWrapper>
@@ -103,7 +103,7 @@
   </List>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/ordered-list.md']} />
+<HighlightCompo code={modules['./md/ordered-list.md'] as string} />
 
 <H3>Nested</H3>
 
@@ -136,7 +136,7 @@
   </List>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/nested2.md']} />
+<HighlightCompo code={modules['./md/nested2.md'] as string} />
 
 <H2>Description list</H2>
 <CodeWrapper>
@@ -156,7 +156,7 @@
   </List>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/description-list.md']} />
+<HighlightCompo code={modules['./md/description-list.md'] as string} />
 
 <H2>List with icon</H2>
 
@@ -185,7 +185,7 @@
   </List>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/list-with-icon.md']} />
+<HighlightCompo code={modules['./md/list-with-icon.md'] as string} />
 
 <H2>Advanced layout</H2>
 <CodeWrapper>
@@ -253,7 +253,7 @@
   </List>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/advanced-layout.md']} />
+<HighlightCompo code={modules['./md/advanced-layout.md'] as string} />
 
 <H2>Horizontal list</H2>
 <CodeWrapper>
@@ -279,4 +279,4 @@
   </List>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/horizontal-list.md']} />
+<HighlightCompo code={modules['./md/horizontal-list.md'] as string} />

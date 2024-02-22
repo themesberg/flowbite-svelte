@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { FloatingLabel, Helper } from '$lib';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
@@ -11,7 +11,7 @@
 
 <H1>Floating label</H1>
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 <H2>Floating label examples</H2>
 <CodeWrapper>
   <div id="exampleWrapper" class="grid w-full items-end gap-6 md:grid-cols-3">
@@ -20,7 +20,7 @@
     <FloatingLabel id="floating_standard" name="floating_standard" type="text" label="Floating standard">Floating standard</FloatingLabel>
   </div>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/floating-label-examples.md']} />
+<HighlightCompo code={modules['./md/floating-label-examples.md'] as string} />
 <H2>Disabled state</H2>
 <CodeWrapper>
   <div id="exampleWrapper" class="grid w-full items-end gap-6 md:grid-cols-3">
@@ -29,7 +29,7 @@
     <FloatingLabel id="disabled_standard" name="disabled_standard" type="text" disabled>Disabled standard</FloatingLabel>
   </div>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/disabled-state.md']} />
+<HighlightCompo code={modules['./md/disabled-state.md'] as string} />
 
 <H2>Validation</H2>
 <CodeWrapper>
@@ -108,7 +108,7 @@
     </div>
   </div>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/validation.md']} />
+<HighlightCompo code={modules['./md/validation.md'] as string} />
 
 <H2>Sizes</H2>
 <CodeWrapper>
@@ -123,7 +123,7 @@
     <FloatingLabel id="default_standard" name="default_standard" type="text">Default standard</FloatingLabel>
   </div>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/sizes.md']} />
+<HighlightCompo code={modules['./md/sizes.md'] as string} />
 
 <H2>Helper text</H2>
 <CodeWrapper>
@@ -136,4 +136,4 @@
     </a>.
   </Helper>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/helper-text.md']} />
+<HighlightCompo code={modules['./md/helper-text.md'] as string} />

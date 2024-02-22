@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Kbd } from '$lib';
   import { CaretDownSolid, CaretRightSolid, CaretLeftSolid, CaretUpSolid } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
@@ -12,7 +12,7 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default KBD</H2>
 
@@ -26,7 +26,7 @@
   <Kbd kbdclass="px-2 py-1.5">Enter</Kbd>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/defaultkbd.md']} />
+<HighlightCompo code={modules['./md/defaultkbd.md'] as string} />
 
 <H2>KBD inside text</H2>
 
@@ -37,7 +37,7 @@
   </p>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/insidetext.md']} />
+<HighlightCompo code={modules['./md/insidetext.md'] as string} />
 
 <H2>Arrow keys</H2>
 
@@ -60,7 +60,7 @@
   </Kbd>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/arrow.md']} />
+<HighlightCompo code={modules['./md/arrow.md'] as string} />
 
 <H2>Letter keys</H2>
 
@@ -93,7 +93,7 @@
   <Kbd kbdclass="px-2 py-1.5">M</Kbd>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/letter.md']} />
+<HighlightCompo code={modules['./md/letter.md'] as string} />
 
 <H2>Number keys</H2>
 
@@ -110,7 +110,7 @@
   <Kbd kbdclass="px-2 py-1.5">0</Kbd>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/number.md']} />
+<HighlightCompo code={modules['./md/number.md'] as string} />
 
 <H2>Function keys</H2>
 
@@ -129,4 +129,4 @@
   <Kbd kbdclass="px-2 py-1.5">F12</Kbd>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/functionkbd.md']} />
+<HighlightCompo code={modules['./md/functionkbd.md'] as string} />

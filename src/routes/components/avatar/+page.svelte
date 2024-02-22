@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Avatar, Dropdown, DropdownItem, DropdownDivider, uiHelpers } from '$lib';
   let dropdown = uiHelpers();
 
@@ -22,7 +22,7 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default avatar</H2>
 <CodeWrapper class="flex justify-center gap-4 rtl:space-x-reverse">
@@ -30,7 +30,7 @@
   <Avatar src="/images/profile-picture-2.webp" rounded />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/default-avatar.md']} />
+<HighlightCompo code={modules['./md/default-avatar.md'] as string} />
 
 <H2>Bordered</H2>
 <CodeWrapper class="flex justify-center gap-4">
@@ -38,7 +38,7 @@
   <Avatar src="/images/profile-picture-2.webp" border class="ring-red-400 dark:ring-red-300" />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/bordered.md']} />
+<HighlightCompo code={modules['./md/bordered.md'] as string} />
 
 <H2>Placeholder</H2>
 <CodeWrapper class="flex justify-center gap-4">
@@ -48,14 +48,14 @@
   <Avatar rounded border />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/placeholder.md']} />
+<HighlightCompo code={modules['./md/placeholder.md'] as string} />
 
 <H2>Placeholder initials</H2>
 <CodeWrapper class="flex justify-center">
   <Avatar>JL</Avatar>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/placeholder-initials.md']} />
+<HighlightCompo code={modules['./md/placeholder-initials.md'] as string} />
 
 <H2>Dot indicator</H2>
 <CodeWrapper class="flex justify-center gap-4">
@@ -66,7 +66,7 @@
   <Avatar dot={{}} />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/dot-indicator.md']} />
+<HighlightCompo code={modules['./md/dot-indicator.md'] as string} />
 
 <H2>Stacked</H2>
 <CodeWrapper>
@@ -84,7 +84,7 @@
   </div>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/stacked.md']} />
+<HighlightCompo code={modules['./md/stacked.md'] as string} />
 
 <H2>Avatar text</H2>
 <CodeWrapper class="flex justify-center">
@@ -97,7 +97,7 @@
   </div>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/avatar-text.md']} />
+<HighlightCompo code={modules['./md/avatar-text.md'] as string} />
 
 <H2>User dropdown</H2>
 <CodeWrapper class="h-80">
@@ -117,4 +117,4 @@
   </Dropdown>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/user-dropdown.md']} />
+<HighlightCompo code={modules['./md/user-dropdown.md'] as string} />

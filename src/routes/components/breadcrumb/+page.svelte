@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Breadcrumb, BreadcrumbItem } from '$lib';
   import { HomeOutline, ChevronDoubleRightOutline } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
@@ -12,7 +12,7 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default Breadcrumb</H2>
 
@@ -24,7 +24,7 @@
   </Breadcrumb>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/defaultbreadcrumb.md']} />
+<HighlightCompo code={modules['./md/defaultbreadcrumb.md'] as string} />
 
 <H2>Solid Breadcrumb</H2>
 
@@ -36,7 +36,7 @@
   </Breadcrumb>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/solidbreadcrumb.md']} />
+<HighlightCompo code={modules['./md/solidbreadcrumb.md'] as string} />
 
 <H2>Icons</H2>
 
@@ -62,4 +62,4 @@
   </Breadcrumb>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/icons.md']} />
+<HighlightCompo code={modules['./md/icons.md'] as string} />

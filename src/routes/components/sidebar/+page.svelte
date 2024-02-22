@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper } from '$lib';
   import {
     ChartSolid,
@@ -53,7 +53,7 @@
 <H1>Sidebar</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default Sidebar</H2>
 <CodeWrapper class="relative">
@@ -108,7 +108,7 @@
   </div>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/default-sidebar.md']} />
+<HighlightCompo code={modules['./md/default-sidebar.md'] as string} />
 
 <H2>Using object</H2>
 <CodeWrapper class="relative">
@@ -144,7 +144,7 @@
   </div>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/using-object.md']} />
+<HighlightCompo code={modules['./md/using-object.md'] as string} />
 
 <H2>Adding active class</H2>
 
@@ -199,7 +199,7 @@
     </div>
   </div>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/adding-active-class.md']} />
+<HighlightCompo code={modules['./md/adding-active-class.md'] as string} />
 
 <H2>Multi-level dropdown</H2>
 
@@ -278,7 +278,7 @@
   </div>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/multi-level-dropdown.md']} />
+<HighlightCompo code={modules['./md/multi-level-dropdown.md'] as string} />
 
 <H2>Content separator</H2>
 
@@ -344,4 +344,4 @@
   </Sidebar>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/content-separator.md']} />
+<HighlightCompo code={modules['./md/content-separator.md'] as string} />

@@ -18,7 +18,7 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Select input example</H2>
 
@@ -29,7 +29,7 @@
   </Label>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/defaultselect.md']} />
+<HighlightCompo code={modules['./md/defaultselect.md'] as string} />
 
 <H2>Disabled state</H2>
 
@@ -38,7 +38,7 @@
   <Select id="select-disabled" disabled items={countries} placeholder="You can't select anything..." />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/disabled.md']} />
+<HighlightCompo code={modules['./md/disabled.md'] as string} />
 
 <H2>Underline select</H2>
 
@@ -47,4 +47,4 @@
   <Select id="select-underline" underline selectclass="mt-2" items={countries} />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/underline.md']} />
+<HighlightCompo code={modules['./md/underline.md'] as string} />

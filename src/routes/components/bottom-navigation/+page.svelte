@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { page } from '$app/stores';
   import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder, Card, Listgroup, Avatar } from '$lib';
   import { HomeSolid, WalletSolid, AdjustmentsVerticalSolid, UserCircleSolid } from 'flowbite-svelte-icons';
@@ -20,7 +20,7 @@
 <H1>Bottom navigation</H1>
 
 <H2>Setup</H2>
-<HighlightCompo codeLang="ts" code={modules['./md/setup.md']} />
+<HighlightCompo codeLang="ts" code={modules['./md/setup.md'] as string} />
 
 <H2>Default bottom navigation</H2>
 <CodeWrapper class="relative flex flex-col">
@@ -44,7 +44,7 @@
     </BottomNavItem>
   </BottomNav>
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/default-bottom-navigation.md']} />
+<HighlightCompo codeLang="ts" code={modules['./md/default-bottom-navigation.md'] as string} />
 
 <H2>Links and active class</H2>
 <CodeWrapper class="relative flex flex-col">
@@ -66,7 +66,7 @@
     </BottomNavItem>
   </BottomNav>
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/links-and-active-class.md']} />
+<HighlightCompo codeLang="ts" code={modules['./md/links-and-active-class.md'] as string} />
 
 <H2>Overwriting activeClass</H2>
 <CodeWrapper class="relative flex flex-col">
@@ -92,7 +92,7 @@
     </BottomNavItem>
   </BottomNav>
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/overwriting-activeclass.md']} />
+<HighlightCompo codeLang="ts" code={modules['./md/overwriting-activeclass.md'] as string} />
 
 <H2>Icon color</H2>
 <CodeWrapper class="relative flex flex-col">
@@ -114,7 +114,7 @@
     </BottomNavItem>
   </BottomNav>
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/icon-color.md']} />
+<HighlightCompo codeLang="ts" code={modules['./md/icon-color.md'] as string} />
 
 <H2>Menu items with border</H2>
 <CodeWrapper class="relative flex flex-col">
@@ -137,4 +137,4 @@
   </BottomNav>
 </CodeWrapper>
 
-<HighlightCompo codeLang="ts" code={modules['./md/menu-items-with-border.md']} />
+<HighlightCompo codeLang="ts" code={modules['./md/menu-items-with-border.md'] as string} />

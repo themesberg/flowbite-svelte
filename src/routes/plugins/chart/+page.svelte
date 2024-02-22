@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Chart, Card, A, Button, Dropdown, DropdownItem, uiHelpers } from '$lib';
   import { UsersGroupSolid, ArrowUpSolid, ChevronRightSolid, ChevronDownSolid } from 'flowbite-svelte-icons';
   let dropdown = uiHelpers();
@@ -290,7 +290,7 @@
 
 <H1>Chart</H1>
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 <H2>Area chart</H2>
 <CodeWrapper class="flex items-start justify-center">
   <Card>
@@ -334,7 +334,7 @@
     </div>
   </Card>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/area-chart.md']} />
+<HighlightCompo code={modules['./md/area-chart.md'] as string} />
 
 <H2>Column chart</H2>
 <CodeWrapper class="flex items-start justify-center">
@@ -398,7 +398,7 @@
     </div>
   </Card>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/column-chart.md']} />
+<HighlightCompo code={modules['./md/column-chart.md'] as string} />
 
 <H2>Bar chart</H2>
 <CodeWrapper class="flex items-start justify-center">
@@ -459,4 +459,4 @@
     </div>
   </Card>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/bar-chart.md']} />
+<HighlightCompo code={modules['./md/bar-chart.md'] as string} />

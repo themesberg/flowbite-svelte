@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { A, P } from '$lib';
   import { ArrowRightOutline } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
@@ -12,7 +12,7 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default link</H2>
 
@@ -20,7 +20,7 @@
   <A href="/" aclass="font-medium hover:underline">Read more</A>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/default-link.md']} />
+<HighlightCompo code={modules['./md/default-link.md'] as string} />
 
 <H2>Paragraph</H2>
 <CodeWrapper>
@@ -30,7 +30,7 @@
   </P>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/paragraph.md']} />
+<HighlightCompo code={modules['./md/paragraph.md'] as string} />
 
 <H2>Icon link</H2>
 <CodeWrapper>
@@ -43,4 +43,4 @@
   </P>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/icon-link.md']} />
+<HighlightCompo code={modules['./md/icon-link.md'] as string} />

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Blockquote, P } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -13,7 +13,7 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default blockquote</H2>
 
@@ -24,7 +24,7 @@
   >
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/default-blockquote.md']} />
+<HighlightCompo code={modules['./md/default-blockquote.md'] as string} />
 
 <H2>Solid background</H2>
 
@@ -45,7 +45,7 @@
   >
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/solid-background.md']} />
+<HighlightCompo code={modules['./md/solid-background.md'] as string} />
 
 <H2>Blockquote icon</H2>
 
@@ -57,7 +57,7 @@
   </Blockquote>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/blockquote-icon.md']} />
+<HighlightCompo code={modules['./md/blockquote-icon.md'] as string} />
 
 <H2>Paragraph context</H2>
 
@@ -83,7 +83,7 @@
   >
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/paragraph-context.md']} />
+<HighlightCompo code={modules['./md/paragraph-context.md'] as string} />
 
 <H2>User testimonial</H2>
 
@@ -108,7 +108,7 @@
   </figure>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/user-testimonial.md']} />
+<HighlightCompo code={modules['./md/user-testimonial.md'] as string} />
 
 <H2>Alignment</H2>
 
@@ -121,7 +121,7 @@
   >
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/left.md']} />
+<HighlightCompo code={modules['./md/left.md'] as string} />
 
 <H3>Center</H3>
 
@@ -132,7 +132,7 @@
   >
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/center.md']} />
+<HighlightCompo code={modules['./md/center.md'] as string} />
 
 <H3>Right</H3>
 
@@ -143,7 +143,7 @@
   >
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/right.md']} />
+<HighlightCompo code={modules['./md/right.md'] as string} />
 
 <H2>Sizes</H2>
 
@@ -156,7 +156,7 @@
   >
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/small.md']} />
+<HighlightCompo code={modules['./md/small.md'] as string} />
 
 <H3>Medium</H3>
 
@@ -167,7 +167,7 @@
   >
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/medium.md']} />
+<HighlightCompo code={modules['./md/medium.md'] as string} />
 
 <H3>Large</H3>
 
@@ -178,4 +178,4 @@
   >
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/large.md']} />
+<HighlightCompo code={modules['./md/large.md'] as string} />

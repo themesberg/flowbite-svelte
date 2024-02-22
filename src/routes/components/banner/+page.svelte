@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Banner, Skeleton, ImagePlaceholder } from '$lib';
   import { BullhornOutline, SalePercentSolid, ArrowRightSolid, BookOpenSolid } from 'flowbite-svelte-icons';
 
@@ -13,7 +13,7 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default sticky banner</H2>
 
@@ -39,7 +39,7 @@
   </Banner>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/defaultsticky.md']} />
+<HighlightCompo code={modules['./md/defaultsticky.md'] as string} />
 
 <H2>Bottom banner position</H2>
 
@@ -65,7 +65,7 @@
   </Banner>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/bottombanner.md']} />
+<HighlightCompo code={modules['./md/bottombanner.md'] as string} />
 
 <H2>Marketing CTA banner</H2>
 
@@ -84,7 +84,7 @@
   </Banner>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/marketing.md']} />
+<HighlightCompo code={modules['./md/marketing.md'] as string} />
 
 <H2>Newsletter sign-up banner</H2>
 
@@ -114,7 +114,7 @@
   </Banner>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/newsletter.md']} />
+<HighlightCompo code={modules['./md/newsletter.md'] as string} />
 
 <H2>Informational banner</H2>
 
@@ -144,4 +144,4 @@
   </Banner>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/informational.md']} />
+<HighlightCompo code={modules['./md/informational.md'] as string} />

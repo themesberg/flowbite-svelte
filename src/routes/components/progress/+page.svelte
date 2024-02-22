@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Progressbar, Button } from '$lib';
   import { sineOut } from 'svelte/easing';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
@@ -14,7 +14,7 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default progress bar</H2>
 
@@ -22,7 +22,7 @@
   <Progressbar progress="50" />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/defaultprogressbar.md']} />
+<HighlightCompo code={modules['./md/defaultprogressbar.md'] as string} />
 
 <H2>Sizes</H2>
 
@@ -48,7 +48,7 @@
   </div>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/sizes.md']} />
+<HighlightCompo code={modules['./md/sizes.md'] as string} />
 
 <H2>With label inside</H2>
 
@@ -56,7 +56,7 @@
   <Progressbar progress="50" size="h-4" labelInside />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/labelinside.md']} />
+<HighlightCompo code={modules['./md/labelinside.md'] as string} />
 
 <H2>With label outside</H2>
 
@@ -64,7 +64,7 @@
   <Progressbar progress="50" labelOutside="Flowbite-Svelte" />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/labeloutside.md']} />
+<HighlightCompo code={modules['./md/labeloutside.md'] as string} />
 
 <H2>Colors</H2>
 
@@ -105,7 +105,7 @@
   </div>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/colors.md']} />
+<HighlightCompo code={modules['./md/colors.md'] as string} />
 
 <H2>Custom style</H2>
 
@@ -149,7 +149,7 @@
   />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/custom.md']} />
+<HighlightCompo code={modules['./md/custom.md'] as string} />
 
 <H2>Animation</H2>
 
@@ -177,4 +177,4 @@
   <Button onclick={() => (progress = `${Math.round(Math.random() * 100)}`)} btnclass="mt-8">Randomize</Button>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/animation.md']} />
+<HighlightCompo code={modules['./md/animation.md'] as string} />

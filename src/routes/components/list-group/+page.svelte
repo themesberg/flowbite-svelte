@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Listgroup } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -32,7 +32,7 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default list group</H2>
 
@@ -40,7 +40,7 @@
   <Listgroup items={simpleList} defaultclass="w-48" />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/default-list-group.md']} />
+<HighlightCompo code={modules['./md/default-list-group.md'] as string} />
 
 <H2>List group with links</H2>
 
@@ -48,18 +48,18 @@
   <Listgroup btn items={links} defaultclass="w-48" />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/list-group-with-links.md']} />
+<HighlightCompo code={modules['./md/list-group-with-links.md'] as string} />
 
 <H2>List group with buttons</H2>
 <CodeWrapper class="flex justify-center">
   <Listgroup btn items={buttons} defaultclass="w-48" onclick={(e) => alert('mycustomfield: ' + e.target.attributes.mycustomfield.value)} />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/list-group-with-buttons.md']} />
+<HighlightCompo code={modules['./md/list-group-with-buttons.md'] as string} />
 
 <H2>List group with icons</H2>
 <CodeWrapper class="flex justify-center">
   <Listgroup btn items={icons} defaultclass="w-48" onclick={(e) => console.log(e.target.attributes.name.value)} />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/list-group-with-icons.md']} />
+<HighlightCompo code={modules['./md/list-group-with-icons.md'] as string} />

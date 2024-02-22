@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { P, Layout } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -12,7 +12,7 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default paragraph</H2>
 
@@ -27,7 +27,7 @@
   >
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/default-paragraph.md']} />
+<HighlightCompo code={modules['./md/default-paragraph.md'] as string} />
 
 <H2>Leading paragraph</H2>
 
@@ -41,7 +41,7 @@
   >
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/leading-paragraph.md']} />
+<HighlightCompo code={modules['./md/leading-paragraph.md'] as string} />
 
 <H2>First letter</H2>
 
@@ -56,7 +56,7 @@
   >
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/first-letter.md']} />
+<HighlightCompo code={modules['./md/first-letter.md'] as string} />
 
 <H2>Paragraph bold</H2>
 
@@ -70,7 +70,7 @@
   </P>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/paragraph-bold.md']} />
+<HighlightCompo code={modules['./md/paragraph-bold.md'] as string} />
 
 <H2>Paragraph underline</H2>
 
@@ -82,7 +82,7 @@
   </P>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/paragraph-underline.md']} />
+<HighlightCompo code={modules['./md/paragraph-underline.md'] as string} />
 
 <H2>Paragraph italic</H2>
 
@@ -99,7 +99,7 @@
   </P>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/paragraph-italic.md']} />
+<HighlightCompo code={modules['./md/paragraph-italic.md'] as string} />
 
 <H2>Layout</H2>
 
@@ -116,7 +116,7 @@
   >
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/one-column.md']} />
+<HighlightCompo code={modules['./md/one-column.md'] as string} />
 
 <H3>Two columns even</H3>
 <CodeWrapper>
@@ -141,7 +141,7 @@
   >
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/two-columns-even.md']} />
+<HighlightCompo code={modules['./md/two-columns-even.md'] as string} />
 
 <H3>Three columns even</H3>
 <CodeWrapper>
@@ -170,7 +170,7 @@
   >
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/three-columns-even.md']} />
+<HighlightCompo code={modules['./md/three-columns-even.md'] as string} />
 
 <H3>Two columns uneven</H3>
 
@@ -202,7 +202,7 @@
   >
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/three-columns-uneven.md']} />
+<HighlightCompo code={modules['./md/three-columns-uneven.md'] as string} />
 
 <H2>Text alignment</H2>
 
@@ -215,7 +215,7 @@
   >
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/left.md']} />
+<HighlightCompo code={modules['./md/left.md'] as string} />
 
 <H3>Center</H3>
 
@@ -226,7 +226,7 @@
   >
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/center.md']} />
+<HighlightCompo code={modules['./md/center.md'] as string} />
 
 <H3>Right</H3>
 
@@ -237,4 +237,4 @@
   >
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/right.md']} />
+<HighlightCompo code={modules['./md/right.md'] as string} />

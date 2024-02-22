@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Drawer, Button, uiHelpers, Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper } from '$lib';
   import {
     InfoCircleSolid,
@@ -109,7 +109,7 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default drawer</H2>
 
@@ -148,7 +148,7 @@
   </Drawer>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/defaultdrawer.md']} />
+<HighlightCompo code={modules['./md/defaultdrawer.md'] as string} />
 
 <H2>Drawer navigation</H2>
 
@@ -247,7 +247,7 @@
   </Drawer>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/navigation.md']} />
+<HighlightCompo code={modules['./md/navigation.md'] as string} />
 
 <H2>Placement</H2>
 
@@ -287,7 +287,7 @@
   </Drawer>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/leftdrawer.md']} />
+<HighlightCompo code={modules['./md/leftdrawer.md'] as string} />
 
 <H3>Right drawer</H3>
 
@@ -325,7 +325,7 @@
   </Drawer>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/rightdrawer.md']} />
+<HighlightCompo code={modules['./md/rightdrawer.md'] as string} />
 
 <H3>Top drawer</H3>
 
@@ -370,7 +370,7 @@
   </Drawer>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/topdrawer.md']} />
+<HighlightCompo code={modules['./md/topdrawer.md'] as string} />
 
 <H3>Bottom drawer</H3>
 
@@ -415,7 +415,7 @@
   </Drawer>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/bottomdrawer.md']} />
+<HighlightCompo code={modules['./md/bottomdrawer.md'] as string} />
 
 <H2>Backdrop</H2>
 
@@ -456,7 +456,7 @@
   </Drawer>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/backdrop.md']} />
+<HighlightCompo code={modules['./md/backdrop.md'] as string} />
 
 <H3>Disabled</H3>
 
@@ -495,7 +495,7 @@
   </Drawer>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/backdropdisabled.md']} />
+<HighlightCompo code={modules['./md/backdropdisabled.md'] as string} />
 
 <H2>Offset position</H2>
 
@@ -534,7 +534,7 @@
   </Drawer>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/offset.md']} />
+<HighlightCompo code={modules['./md/offset.md'] as string} />
 
 <H2>Disabling outside click and backdrop</H2>
 
@@ -573,7 +573,7 @@
   </Drawer>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/disabling-outside-click-and-backdrop.md']} />
+<HighlightCompo code={modules['./md/disabling-outside-click-and-backdrop.md'] as string} />
 
 <H2>Disabling only outside click</H2>
 
@@ -612,4 +612,4 @@
   </Drawer>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/disabling-outside-click.md']} />
+<HighlightCompo code={modules['./md/disabling-outside-click.md'] as string} />
