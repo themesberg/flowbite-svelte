@@ -446,6 +446,7 @@
     "./Video.svelte": {
       "types": "./dist/video/Video.svelte.d.ts",
       "svelte": "./dist/video/Video.svelte"
-    }
+    },
+    "./package.json": "./package.json"
   }
 }
