@@ -128,7 +128,7 @@
       <Frame rounded shadow {...$$restProps} class={frameClass}>
         <!-- Modal header -->
         {#if $$slots.header || title}
-          <Frame color={$$restProps.color} class="flex justify-between items-center p-4 rounded-t-lg">
+          <Frame color={$$restProps.color} class="flex justify-between items-center p-4 md:p-5 rounded-t-lg">
             <slot name="header">
               <h3 class="text-xl font-semibold {$$restProps.color ? '' : 'text-gray-900 dark:text-white'} p-0">
                 {title}
@@ -138,7 +138,7 @@
           </Frame>
         {/if}
         <!-- Modal body -->
-        <div class={twMerge('p-6 space-y-6 flex-1 overflow-y-auto overscroll-contain', $$props.bodyClass)} on:keydown|stopPropagation={handleKeys} role="document" on:wheel|stopPropagation|passive>
+        <div class={twMerge('p-4 md:p-5 space-y-4 flex-1 overflow-y-auto overscroll-contain', $$props.bodyClass)} on:keydown|stopPropagation={handleKeys} role="document" on:wheel|stopPropagation|passive>
           {#if dismissable && !$$slots.header && !title}
             <CloseButton name="Close modal" class="absolute top-3 end-2.5" on:click={hide} color={$$restProps.color} />
           {/if}
@@ -146,7 +146,7 @@
         </div>
         <!-- Modal footer -->
         {#if $$slots.footer}
-          <Frame color={$$restProps.color} class="flex items-center p-6 space-x-2 rtl:space-x-reverse rounded-b-lg">
+          <Frame color={$$restProps.color} class="flex items-center p-4 md:p-5 space-x-3 rtl:space-x-reverse rounded-b-lg">
             <slot name="footer" />
           </Frame>
         {/if}
