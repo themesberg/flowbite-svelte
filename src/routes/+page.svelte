@@ -15,7 +15,7 @@
   const tailwindcssVersion = __TAILWINDCSSVERSION__;
 </script>
 
-<H1><a class='hover:underline' href={githuburl}>{removeHyphensAndCapitalize(name)}: v{version}</H1>
+<H1><a class='hover:underline dark:text-primary-500' href={githuburl}>{removeHyphensAndCapitalize(name)}: v{version}</H1>
 
 <p>
   Svelte 5 UI Lib is a UI library crafted for Svelte 5. Explore our collection featuring over 36 components.
@@ -32,6 +32,14 @@ After installing Svelte-5, update `svelte.config.js` to enable `runes`:
 Install `svelte-5-ui-lib:
 
 <HighlightCompo codeLang="sh" code={modules['./md/svelte-5-ui-lib.md'] as string} />
+
+<H3>Flowbite-Svelte-Icons@next</H3>
+
+Install flowbite-svelte-icons@2.0.0-next.1:
+
+<HighlightCompo codeLang="sh" code={modules['./md/flowbite-svelte-icons.md'] as string} />
+
+Check if it has the latest version at <a class='hover:underline dark:text-primary-500' href="https://github.com/themesberg/flowbite-svelte-icons/releases">Releases page</a>.
 
 <H3>Tailwind</H3>
 Install tailwindcss:
