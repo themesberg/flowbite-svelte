@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.46
+
+### Patch Changes
+
+- fix: update icon names ([`ee34fc70dc928c5fec9b2d892f49d930a54a1ab0`](https://github.com/shinokada/svelte-5-ui-lib/commit/ee34fc70dc928c5fec9b2d892f49d930a54a1ab0))
+
+- add runes: true to svelte.config.js ([`ad4dfa7c918613819617f3e75ddf85a3fceaa312`](https://github.com/shinokada/svelte-5-ui-lib/commit/ad4dfa7c918613819617f3e75ddf85a3fceaa312))
+  update flowbite-svelte-icons@2.0.0-next.1
+
 ## 0.2.45
 
 ### Patch Changes
