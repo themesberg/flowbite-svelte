@@ -83,7 +83,11 @@
 @prop export let activeUrl: string = '';
 @prop export let open: boolean = false;
 @prop export let containerClass: string = 'divide-y z-50';
+@prop export let classContainer: string | undefined = undefined;
 @prop export let headerClass: string = 'py-1 overflow-hidden rounded-t-lg';
+@prop export let classHeader: string | undefined = undefined;
 @prop export let footerClass: string = 'py-1 overflow-hidden rounded-b-lg';
+@prop export let classFooter: string | undefined = undefined;
 @prop export let activeClass: string = 'text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900';
+@prop export let classActive: string | undefined = undefined;
 -->

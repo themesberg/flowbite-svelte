@@ -34,14 +34,14 @@
   "devDependencies": {
     "@docsearch/js": "^3.5.2",
     "@playwright/test": "^1.41.2",
-    "@sveltejs/adapter-vercel": "^4.0.5",
-    "@sveltejs/kit": "^2.5.0",
-    "@sveltejs/package": "2.2.2",
+    "@sveltejs/adapter-vercel": "^5.1.0",
+    "@sveltejs/kit": "^2.5.1",
+    "@sveltejs/package": "2.2.7",
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "@typescript-eslint/parser": "^6.21.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
     "autoprefixer": "^10.4.17",
-    "esbuild": "0.19.5",
+    "esbuild": "0.20.1",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-svelte": "^2.35.1",
@@ -49,23 +49,23 @@
     "mdsvex": "^0.11.0",
     "mdsvexamples": "^0.4.1",
     "postcss": "^8.4.35",
-    "postcss-load-config": "^4.0.2",
+    "postcss-load-config": "^5.0.3",
     "prettier": "^3.2.5",
-    "prettier-plugin-svelte": "^3.1.2",
+    "prettier-plugin-svelte": "^3.2.1",
     "prism-themes": "^1.9.0",
     "publint": "^0.2.7",
-    "svelte": "^4.2.10",
-    "svelte-check": "^3.6.3",
-    "svelte-lib-helpers": "^0.3.17",
+    "svelte": "^4.2.11",
+    "svelte-check": "^3.6.4",
+    "svelte-lib-helpers": "^0.4.1",
     "svelte-meta-tags": "^3.1.0",
     "svelte-preprocess": "^5.1.3",
-    "svelte2tsx": "^0.7.0",
+    "svelte2tsx": "^0.7.1",
     "tailwind-merge": "^1.13.1",
     "tailwindcss": "^3.4.1",
     "tslib": "^2.6.2",
     "typescript": "^5.3.3",
-    "vite": "^5.0.12",
-    "vitest": "^0.34.6"
+    "vite": "^5.1.4",
+    "vitest": "^1.3.1"
   },
   "peerDependencies": {
     "svelte": "^4.0.0"
@@ -114,9 +114,9 @@
     "url": "https://github.com/themesberg/flowbite-svelte"
   },
   "dependencies": {
-    "@floating-ui/dom": "^1.6.1",
-    "apexcharts": "^3.45.2",
-    "flowbite": "^2.2.1",
+    "@floating-ui/dom": "^1.6.3",
+    "apexcharts": "^3.46.0",
+    "flowbite": "^2.3.0",
     "tailwind-merge": "^2.2.1"
   },
   "engines": {
@@ -750,6 +750,7 @@
     "./Video.svelte": {
       "types": "./dist/video/Video.svelte.d.ts",
       "svelte": "./dist/video/Video.svelte"
-    }
+    },
+    "./package.json": "./package.json"
   }
 }

@@ -1,13 +1,1 @@
-{
-  "name": "Indicator",
-  "slots": [],
-  "events": [],
-  "props": [
-    ["color", "IndicatorColorType", "'gray'"],
-    ["rounded", "boolean", "false"],
-    ["size", "'xs' | 'sm' | 'md' | 'lg' | 'xl'", "'md'"],
-    ["border", "boolean", "false"],
-    ["placement", "IndicatorPlacementType | undefined", "undefined"],
-    ["offset", "boolean", "true"]
-  ]
-}
+{"name":"Indicator","slots":[],"events":[],"props":[["color","IndicatorColorType","'gray'"],["rounded","boolean","false"],["size","'xs' | 'sm' | 'md' | 'lg' | 'xl'","'md'"],["border","boolean","false"],["placement","IndicatorPlacementType | undefined","undefined"],["offset","boolean","true"]]}

@@ -4,15 +4,14 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.44.23](https://github.com/themesberg/flowbite-svelte/compare/v0.44.22...v0.44.23) (2024-02-08)
 
-
 ### Bug Fixes
 
-* add focus:ring-0 to menu btns ([b81c875](https://github.com/themesberg/flowbite-svelte/commit/b81c875a54700d144e9c96c311cd4d63090595db))
-* engines npm to pnpm 8.0.0 in package.json ([6770c92](https://github.com/themesberg/flowbite-svelte/commit/6770c92b03b435c949c1fd13e58cfa2f4e241e81))
-* playwright version in workflows ([046b908](https://github.com/themesberg/flowbite-svelte/commit/046b908346bf1dcae4a9b33142b5460c0590e0b0))
-* remove focus from DarkMode ([22c48db](https://github.com/themesberg/flowbite-svelte/commit/22c48db00250f8f2adbda2c183953ad0c8977205))
-* spinner typings, docs ([#1151](https://github.com/themesberg/flowbite-svelte/issues/1151)) ([ed17997](https://github.com/themesberg/flowbite-svelte/commit/ed17997e61162844aab8131e9040f1125b4a4103))
-* workflow pnpm to latest ([a1358fe](https://github.com/themesberg/flowbite-svelte/commit/a1358fe577597e85edc46e84bff01cdc24785c0a))
+- add focus:ring-0 to menu btns ([b81c875](https://github.com/themesberg/flowbite-svelte/commit/b81c875a54700d144e9c96c311cd4d63090595db))
+- engines npm to pnpm 8.0.0 in package.json ([6770c92](https://github.com/themesberg/flowbite-svelte/commit/6770c92b03b435c949c1fd13e58cfa2f4e241e81))
+- playwright version in workflows ([046b908](https://github.com/themesberg/flowbite-svelte/commit/046b908346bf1dcae4a9b33142b5460c0590e0b0))
+- remove focus from DarkMode ([22c48db](https://github.com/themesberg/flowbite-svelte/commit/22c48db00250f8f2adbda2c183953ad0c8977205))
+- spinner typings, docs ([#1151](https://github.com/themesberg/flowbite-svelte/issues/1151)) ([ed17997](https://github.com/themesberg/flowbite-svelte/commit/ed17997e61162844aab8131e9040f1125b4a4103))
+- workflow pnpm to latest ([a1358fe](https://github.com/themesberg/flowbite-svelte/commit/a1358fe577597e85edc46e84bff01cdc24785c0a))
 
 ### [0.44.22](https://github.com/themesberg/flowbite-svelte/compare/v0.44.21...v0.44.22) (2024-01-12)
 

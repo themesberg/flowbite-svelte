@@ -1,18 +1,1 @@
-{
-  "name": "Popper",
-  "slots": [],
-  "events": [],
-  "props": [
-    ["activeContent", "boolean", "false"],
-    ["arrow", "boolean", "true"],
-    ["offset", "number", "8"],
-    ["placement", "Placement", "'top'"],
-    ["trigger", "'hover' | 'click'", "'hover'"],
-    ["triggeredBy", "string | undefined", "undefined"],
-    ["reference", "string | undefined", "undefined"],
-    ["strategy", "'absolute' | 'fixed'", "'absolute'"],
-    ["open", "boolean", "false"],
-    ["yOnly", "boolean", "false"],
-    ["middlewares", "Middleware[]", "[dom.flip(), dom.shift()]"]
-  ]
-}
+{"name":"Popper","slots":[],"events":[],"props":[["activeContent","boolean","false"],["arrow","boolean","true"],["offset","number","8"],["placement","Placement","'top'"],["trigger","'hover' | 'click' | 'focus'","'hover'"],["triggeredBy","string | undefined","undefined"],["reference","string | undefined","undefined"],["strategy","'absolute' | 'fixed'","'absolute'"],["open","boolean","false"],["yOnly","boolean","false"],["middlewares","Middleware[]","[dom.flip(), dom.shift()]"]]}
