@@ -36,7 +36,9 @@
     </div>
   {/if}
 {:else}
-  <Frame {...$$restProps}><slot {close} /></Frame>
+  {#if open}
+    <Frame {...$$restProps}><slot /></Frame>
+  {/if}
 {/if}
 
 <!--
