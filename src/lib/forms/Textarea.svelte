@@ -13,7 +13,7 @@
   $: wrapped = $$slots.header || $$slots.footer;
 
   let wrapperClass: string;
-  $: wrapperClass = twMerge('w-full rounded-lg', background ? 'bg-white dark:bg-gray-800' : 'bg-gray-50 dark:bg-gray-700', 'text-gray-900 dark:placeholder-gray-400 dark:text-white ', 'border border-gray-200 dark:border-gray-600', $$props.class);
+  $: wrapperClass = twMerge('w-full rounded-lg bg-gray-50', background ? 'dark:bg-gray-800' : 'dark:bg-gray-700', 'text-gray-900 dark:placeholder-gray-400 dark:text-white ', 'border border-gray-200 dark:border-gray-600', $$props.class);
 
   let textareaClass: string;
   $: textareaClass = wrapped ? wrappedClass : twMerge(wrapperClass, unWrappedClass);
