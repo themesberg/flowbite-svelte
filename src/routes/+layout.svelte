@@ -11,6 +11,7 @@
   import YouTube from './utils/icons/YouTube.svelte';
   import ToolbarLink from './utils/ToolbarLink.svelte';
   import AlgoliaSearch from './utils/AlgoliaSearch.svelte';
+  import CarbonAds from './utils/CarbonAds.svelte';
 
   let isHomePage: boolean;
   $: isHomePage = $page.route.id === '/';
@@ -94,3 +95,4 @@
 <div class="lg:flex">
   <slot />
 </div>
+<CarbonAds />
