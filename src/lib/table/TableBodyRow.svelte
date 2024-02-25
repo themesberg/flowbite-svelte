@@ -3,6 +3,9 @@
   import { getContext } from 'svelte';
 
   export let color: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom' = getContext('color');
+  export let draggable: 'true' | 'false' = 'false';
+
+  $: draggableBoolean = draggable === 'true';
 
   const colors = {
     default: 'bg-white dark:bg-gray-800 dark:border-gray-700',
@@ -38,7 +41,7 @@
   $: trClass = twMerge([!getContext('noborder') && 'border-b last:border-b-0', colors[color], getContext('hoverable') && hoverColors[color], getContext('striped') && stripColors[color], $$props.class]);
 </script>
 
-<tr {...$$restProps} class={trClass} on:click on:contextmenu on:dblclick>
+<tr {...$$restProps} class={trClass} on:click on:contextmenu on:dblclick draggable={draggableBoolean} on:drag on:dragend on:dragenter on:dragleave on:dragover on:dragstart on:drop>
   <slot />
 </tr>
 
@@ -47,4 +50,5 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let color: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom' = getContext('color');
+@prop export let draggable: 'true' | 'false' = 'false';
 -->
