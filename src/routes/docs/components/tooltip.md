@@ -33,8 +33,22 @@ To get started with using tooltips all you need to do is set `triggeredBy` attri
   import { Tooltip, Button } from 'flowbite-svelte';
 </script>
 
+// only works if the button and tooltip are adjacent on your page. Like this:
 <Button>Default tooltip</Button>
 <Tooltip>Tooltip content</Tooltip>
+```
+If you have anything else between the button and tooltip, they won't find each other.
+```
+<Button>Default tooltip</Button>
+<span>hi mom</span>
+<Tooltip>Tooltip content</Tooltip>
+```
+Need to add _id_ to the button to link to the tooltip's _triggeredBy_ attribute, and it works ANYWHERE on the page!
+```
+<Button id="specific-button-anywhere-on-page">Default tooltip</Button>
+<span>hi mom</span>
+<span>lorem ipsum, content blah blah, other stuff</span>
+<Tooltip triggeredBy="[id='specific-button-anywhere-on-page']">Tooltip content</Tooltip>
 ```
 
 ## Tooltip types
