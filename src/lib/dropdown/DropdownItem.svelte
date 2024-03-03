@@ -2,7 +2,7 @@
   import { twMerge } from 'tailwind-merge';
   import { page } from '$app/stores';
   interface Props {
-    children: any;
+    children?: any;
     aclass?: string | undefined;
     href?: string | undefined;
     activeclass?: string | undefined;
@@ -33,7 +33,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children?: any;
 @props:aclass?: string | undefined;
 @props:href?: string | undefined;
 @props:activeclass?: string | undefined;

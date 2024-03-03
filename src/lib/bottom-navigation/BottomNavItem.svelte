@@ -6,7 +6,7 @@
   import { page } from '$app/stores';
 
   interface Props {
-    children: any;
+    children?: any;
     btnName?: string;
     appBtnPosition?: 'left' | 'middle' | 'right';
     activeClass?: string;
@@ -78,7 +78,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children?: any;
 @props:btnName?: string;
 @props:appBtnPosition?: 'left' | 'middle' | 'right';
 @props:activeClass?: string;

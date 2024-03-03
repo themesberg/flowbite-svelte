@@ -1,6 +1,6 @@
 <script lang="ts">
   interface Props {
-    children: any;
+    children?: any;
     tag: 'dt' | 'dd';
     dtclass?: string | undefined;
     ddclass?: string | undefined;
@@ -22,7 +22,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children?: any;
 @props:tag: 'dt' | 'dd';
 @props:dtclass?: string | undefined;
 @props:ddclass?: string | undefined;

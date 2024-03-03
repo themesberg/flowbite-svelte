@@ -2,7 +2,7 @@
   import Button from '../buttons/Button.svelte';
   import Rating from './Rating.svelte';
   interface Props {
-    children: any;
+    children?: any;
     evaluation?: any;
     ceil?: boolean;
     helpfullink?: string;
@@ -85,7 +85,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children?: any;
 @props:evaluation?: any;
 @props:ceil?: boolean;
 @props:helpfullink?: string;

@@ -3,7 +3,7 @@
   import { twMerge } from 'tailwind-merge';
   import type { navbarType } from '$lib/types';
   interface Props {
-    children: any;
+    children?: any;
     ulclass?: string | undefined;
   }
   let { children, ulclass, ...attributes } = $props<Props>();
@@ -35,6 +35,6 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children?: any;
 @props:ulclass?: string | undefined;
 -->

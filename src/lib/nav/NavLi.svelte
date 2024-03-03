@@ -4,7 +4,7 @@
   import { page } from '$app/stores';
   import type { navbarType } from '$lib/types';
   interface Props {
-    children: any;
+    children?: any;
     closeNav?: () => void;
     href?: string | undefined;
     aclass?: string | undefined;
@@ -56,7 +56,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children?: any;
 @props:closeNav?: () => void;
 @props:href?: string | undefined;
 @props:aclass?: string | undefined;

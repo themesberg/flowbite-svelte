@@ -1,6 +1,6 @@
 <script lang="ts">
   interface Props {
-    children: any;
+    children?: any;
     tag?: 'ul' | 'ol' | 'dl';
     list?: 'disc' | 'none' | 'decimal' | undefined;
     position?: 'inside' | 'outside';
@@ -31,7 +31,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children?: any;
 @props:tag?: 'ul' | 'ol' | 'dl';
 @props:list?: 'disc' | 'none' | 'decimal' | undefined;
 @props:position?: 'inside' | 'outside';

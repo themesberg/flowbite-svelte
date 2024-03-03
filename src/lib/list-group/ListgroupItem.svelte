@@ -1,6 +1,6 @@
 <script lang="ts">
   interface Props {
-    children: any;
+    children?: any;
     btn?: boolean;
     current?: boolean;
     disabled?: boolean;
@@ -65,7 +65,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children?: any;
 @props:btn?: boolean;
 @props:current?: boolean;
 @props:disabled?: boolean;

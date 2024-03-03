@@ -1,7 +1,7 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
   interface Props {
-    children: any;
+    children?: any;
     divclass?: string;
     div2class?: string;
     div3class?: string;
@@ -28,7 +28,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children?: any;
 @props:divclass?: string;
 @props:div2class?: string;
 @props:div3class?: string;

@@ -1,6 +1,6 @@
 <script lang="ts">
   interface Props {
-    children: any;
+    children?: any;
     divclass?: string | undefined;
     cols?: string | undefined;
     // gap?: number;
@@ -21,7 +21,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children?: any;
 @props:divclass?: string | undefined;
 @props:cols?: string | undefined;
 @props:// gap?: number;

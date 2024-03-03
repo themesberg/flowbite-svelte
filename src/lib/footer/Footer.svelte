@@ -1,6 +1,6 @@
 <script lang="ts">
   interface Props {
-    children: any;
+    children?: any;
     footerType?: 'sitemap' | 'default' | 'logo' | 'socialmedia' | undefined;
     footerclass?: string | undefined;
   }
@@ -24,7 +24,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children?: any;
 @props:footerType?: 'sitemap' | 'default' | 'logo' | 'socialmedia' | undefined;
 @props:footerclass?: string | undefined;
 -->

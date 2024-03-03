@@ -6,7 +6,7 @@
   type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 
   interface Props {
-    children: any;
+    children?: any;
     icon?: any;
     dismissable?: boolean;
     color?: CloseBtnColors;
@@ -98,7 +98,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children?: any;
 @props:icon?: any;
 @props:dismissable?:  boolean; = true;
 @props:color?:  CloseBtnColors; = 'primary';

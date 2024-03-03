@@ -1,6 +1,6 @@
 <script lang="ts">
   interface Props {
-    children: any;
+    children?: any;
     class?: string | undefined;
   }
   import { twMerge } from 'tailwind-merge';

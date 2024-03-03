@@ -1,6 +1,6 @@
 <script lang="ts">
   interface Props {
-    children: any;
+    children?: any;
     border?: boolean;
     italic?: boolean;
     borderclass?: string | undefined;
@@ -65,7 +65,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children?: any;
 @props:border?: boolean;
 @props:italic?:  boolean; = true;
 @props:borderclass?: string | undefined;

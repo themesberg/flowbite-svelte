@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { TransitionTypes, TransitionParamTypes } from '../types';
   interface Props {
-    children: any;
+    children?: any;
     arrowup?: any;
     arrowdown?: any;
     icon?: any;
@@ -102,7 +102,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children?: any;
 @props:arrowup?: any;
 @props:arrowdown?: any;
 @props:icon?: any;

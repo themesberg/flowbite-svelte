@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { drawerTransitionParamTypes, drawerTransitionTypes } from '../types';
   interface Props {
-    children: any;
+    children?: any;
     drawerStatus: boolean;
     toggleDrawer?: () => void;
     closeDrawer?: () => void;
@@ -90,7 +90,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children?: any;
 @props:drawerStatus: boolean;
 @props:toggleDrawer?: () => void;
 @props:closeDrawer?: () => void;

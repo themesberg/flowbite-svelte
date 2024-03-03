@@ -1,6 +1,6 @@
 <script lang="ts">
   interface Props {
-    children: any;
+    children?: any;
     asideclass?: string | undefined;
     ariaLabel?: string | undefined;
     divclass?: string | undefined;
@@ -47,7 +47,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children?: any;
 @props:asideclass?: string | undefined;
 @props:ariaLabel?: string | undefined;
 @props:divclass?: string | undefined;

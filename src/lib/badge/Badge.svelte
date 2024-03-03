@@ -3,7 +3,7 @@
   import { CloseButton } from '$lib';
   import type { CloseBtnColors } from '$lib/types';
   interface Props {
-    children: any;
+    children?: any;
     icon?: any;
     color?: CloseBtnColors;
     large?: boolean;
@@ -109,7 +109,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children?: any;
 @props:icon?: any;
 @props:color?: CloseBtnColors;
 @props:large?: boolean;

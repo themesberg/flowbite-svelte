@@ -1,6 +1,6 @@
 <script lang="ts">
   interface Props {
-    children: any;
+    children?: any;
     href: string;
     aclass?: string | undefined;
   }
@@ -20,7 +20,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children?: any;
 @props:href: string;
 @props:aclass?: string | undefined;
 -->

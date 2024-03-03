@@ -4,7 +4,7 @@
   import { CloseButton } from '$lib';
 
   interface Props {
-    children: any;
+    children?: any;
     header?: any;
     position?: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky';
     dismissable?: boolean;
@@ -74,7 +74,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children?: any;
 @props:header?: any;
 @props:position?:  'static' | 'fixed' | 'absolute' | 'relative' | 'sticky'; = 'sticky';
 @props:dismissable?:  boolean; = true;

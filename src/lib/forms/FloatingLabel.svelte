@@ -3,7 +3,7 @@
   import { idGenerator } from '../uiHelpers.svelte';
   import type { InputType } from '../types';
   interface Props {
-    children: any;
+    children?: any;
     id?: string;
     style?: 'filled' | 'outlined' | 'standard';
     type?: InputType;
@@ -118,7 +118,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children?: any;
 @props:id?:  string; = idGenerator();
 @props:style?:  'filled' | 'outlined' | 'standard'; = 'standard';
 @props:type?:  InputType; = 'text';

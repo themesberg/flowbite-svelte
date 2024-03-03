@@ -6,10 +6,10 @@
   import { quintOut } from 'svelte/easing';
   import type { navbarType } from '$lib/types';
   interface Props {
-    children: any;
-    toggleNav: () => void;
-    closeNav: () => void;
-    navStatus: boolean;
+    children?: any;
+    toggleNav?: () => void;
+    closeNav?: () => void;
+    navStatus?: boolean;
     fluid?: boolean;
     brand?: any;
     breakPoint?: navbarType['breakPoint'];
@@ -99,10 +99,10 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:toggleNav: () => void;
-@props:closeNav: () => void;
-@props:navStatus: boolean;
+@props: children?: any;
+@props:toggleNav?: () => void;
+@props:closeNav?: () => void;
+@props:navStatus?: boolean;
 @props:fluid?: boolean;
 @props:brand?: any;
 @props:breakPoint?:  navbarType['breakPoint']; = 'md';

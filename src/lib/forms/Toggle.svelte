@@ -4,7 +4,7 @@
   import Checkbox from './Checkbox.svelte';
   import type { FormColorType } from '../types';
   interface Props {
-    children: any;
+    children?: any;
     size?: 'small' | 'default' | 'large' | 'custom';
     group?: (string | number)[];
     value?: string | number;
@@ -66,7 +66,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children?: any;
 @props:size?: 'small' | 'default' | 'large' | 'custom';
 @props:group?: (string | number)[];
 @props:value?: string | number;

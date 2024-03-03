@@ -9,7 +9,7 @@
   import { twMerge } from 'tailwind-merge';
 
   interface Props {
-    children: any;
+    children?: any;
     header?: any;
     activeUrl?: string;
     position?: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky';
@@ -65,7 +65,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children?: any;
 @props:header?: any;
 @props:activeUrl?: string;
 @props:position?: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky';

@@ -3,7 +3,7 @@
   import type { ButtonColorType, SizeType } from '$lib/types';
   import { twMerge } from 'tailwind-merge';
   interface Props {
-    children: any;
+    children?: any;
     group?: string | number;
     value?: string | number;
     inline?: boolean;
@@ -28,7 +28,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children?: any;
 @props:group?: string | number;
 @props:value?: string | number;
 @props:inline?: boolean;

@@ -3,7 +3,7 @@
   import type { PsizeType, PweightType } from '../types';
 
   interface Props {
-    children: any;
+    children?: any;
     color?: string | undefined;
     pclass?: string | undefined;
     height?: 'normal' | 'relaxed' | 'loose';
@@ -121,7 +121,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children?: any;
 @props:color?:  string | undefined; = 'text-gray-900 dark:text-white';
 @props:pclass?: string | undefined;
 @props:height?:  'normal' | 'relaxed' | 'loose'; = 'normal';
