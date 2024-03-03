@@ -2,7 +2,7 @@
 
 UI library for Svelte 5
 
-- [Demo](https://svelte-5-ui-lib.vercel.app/)
+- [Demo](https://svelte-5-ui-lib.codewithshin.com/)
 - [Repo](https://github.com/shinokada/svelte-5-ui-lib)
 
 

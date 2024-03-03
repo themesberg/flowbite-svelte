@@ -63,7 +63,7 @@
 
 <!--
 @component
-[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: color?:  'primary' | 'blue' | 'gray' | 'green' | 'red' | 'yellow' | 'pink' | 'purple' | 'white' | 'custom' | undefined; = 'primary';
 @props:bg?:  string | undefined; = 'text-gray-300';

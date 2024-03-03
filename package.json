@@ -4,7 +4,7 @@
   "description": "A UI library for Svelte 5.",
   "license": "MIT",
   "main": "dist/index.js",
-  "homepage": "https://svelte-5-ui-lib.vercel.app/",
+  "homepage": "https://svelte-5-ui-lib.codewithshin.com/",
   "author": {
     "name": "Shinichi Okada",
     "email": "connect@codewithshin.com",

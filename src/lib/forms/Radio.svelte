@@ -69,7 +69,7 @@
 
 <!--
 @component
-[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children?: any;
 @props:labelclass?:  string; = '';
