@@ -90,7 +90,9 @@
       </svg>
     </button>
     <div class="{navDisplay} {divChildrenCls}" transition:slide={slideParams} role="button" tabindex="0">
+      {#if children}
       {@render children()}
+      {/if}
     </div>
   </div>
 </nav>
