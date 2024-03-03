@@ -9,6 +9,8 @@
   export let wrappedClass: string = 'block w-full text-sm border-0 px-0 bg-inherit dark:bg-inherit focus:outline-none focus:ring-0';
   export let unWrappedClass: string = 'p-2.5 text-sm focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500';
   export let innerWrappedClass: string = 'py-2 px-4 bg-white dark:bg-gray-800';
+  export let element: HTMLTextAreaElement | undefined = undefined;
+
   let wrapped: boolean;
   $: wrapped = $$slots.header || $$slots.footer;
 
@@ -31,7 +33,7 @@
     </div>
   {/if}
   <Wrapper show={wrapped} class={innerWrapperClass}>
-    <textarea bind:value on:blur on:change on:click on:contextmenu on:focus on:input on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover on:paste {...$$restProps} class={textareaClass} />
+    <textarea bind:value bind:this={element} on:blur on:change on:click on:contextmenu on:focus on:input on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover on:paste {...$$restProps} class={textareaClass} />
   </Wrapper>
   {#if $$slots.footer}
     <div class={headerClass(false)}>
@@ -48,4 +50,5 @@
 @prop export let wrappedClass: string = 'block w-full text-sm border-0 px-0 bg-inherit dark:bg-inherit focus:outline-none focus:ring-0';
 @prop export let unWrappedClass: string = 'p-2.5 text-sm focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500';
 @prop export let innerWrappedClass: string = 'py-2 px-4 bg-white dark:bg-gray-800';
+@prop export let element: HTMLTextAreaElement | undefined = undefined;
 -->

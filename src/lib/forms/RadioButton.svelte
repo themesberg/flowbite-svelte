@@ -6,6 +6,7 @@
   export let group: string | number = '';
   export let value: string | number = '';
   export let inline: boolean = true;
+  export let element: HTMLInputElement | undefined = undefined;
 
   // Button properties forwarding
   export let pill: boolean = false;
@@ -22,6 +23,7 @@
   <input
     type="radio"
     bind:group
+    bind:this={element}
     {value}
     {...$$restProps}
     class="sr-only"
@@ -46,6 +48,7 @@
 @prop export let group: string | number = '';
 @prop export let value: string | number = '';
 @prop export let inline: boolean = true;
+@prop export let element: HTMLInputElement | undefined = undefined;
 @prop export let pill: boolean = false;
 @prop export let outline: boolean = false;
 @prop export let size: SizeType | undefined = undefined;

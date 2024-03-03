@@ -9,6 +9,7 @@
   export let value: string | number = '';
   export let checked: boolean | undefined = undefined;
   export let customSize: string = '';
+  export let element: HTMLInputElement | undefined = undefined;
 
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
@@ -39,7 +40,7 @@
   $: divClass = twMerge(common, background ? 'dark:bg-gray-600 dark:border-gray-500' : 'dark:bg-gray-700 dark:border-gray-600', colors[($$restProps.color as FormColorType) ?? 'primary'], sizes[size], 'relative', $$props.classDiv);
 </script>
 
-<Checkbox custom {...$$restProps} class={$$props.class} {value} bind:checked bind:group on:click on:change>
+<Checkbox custom {...$$restProps} class={$$props.class} {value} bind:checked bind:group bind:element on:click on:change>
   <span class={divClass} />
   <slot />
 </Checkbox>
@@ -53,4 +54,5 @@
 @prop export let value: string | number = '';
 @prop export let checked: boolean | undefined = undefined;
 @prop export let customSize: string = '';
+@prop export let element: HTMLInputElement | undefined = undefined;
 -->

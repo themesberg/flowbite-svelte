@@ -378,6 +378,30 @@ If you need a full control over `input` HTML element while still re-using the Fl
 </Input>
 ```
 
+## Reference to input HTML element
+
+If you need a reference to `input` HTML element, you can bind `element`. The example below shows how to focus on an Input.
+
+
+```svelte example
+<script>
+  import { Label, Input, Button } from 'flowbite-svelte';
+  let element;
+</script>
+
+<div class="mb-6">
+  <Label for="focus-input" class="block mb-2">Focus input</Label>
+  <Input bind:element id="focus-input" size="lg" placeholder="Focus input" />
+</div>
+
+<div>
+  <Button on:click={() => {element.focus()}}>
+    Focus
+  </Button>
+</div>
+```
+
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
