@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.49
+
+### Patch Changes
+
+- fix: add openMainMenu to control menu button for a small screen ([`ec830d9422d30e6ca4589d2cc413394336148d11`](https://github.com/shinokada/svelte-5-ui-lib/commit/ec830d9422d30e6ca4589d2cc413394336148d11))
+
 ## 0.2.48
 
 ### Patch Changes
