@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.47
+
+### Patch Changes
+
+- - ec25597 (HEAD -> main) fix: change to chilren?: any ([`35d2b4573ff8cf1e187637f1f3700605c01339ab`](https://github.com/shinokada/svelte-5-ui-lib/commit/35d2b4573ff8cf1e187637f1f3700605c01339ab))
+  - cc1482c (origin/main, origin/HEAD) fix: update links
+  - 66b7cd4 fix: update links
+  - 3644446 fix: change vercel.app to codewithshin.com
+
 ## 0.2.46
 
 ### Patch Changes
