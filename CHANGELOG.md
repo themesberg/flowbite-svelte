@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.48
+
+### Patch Changes
+
+- - 490669e fix: add if children to Navbar ([`a7cd201631728bd3ddb8b7d572bf2f33b11a2542`](https://github.com/shinokada/svelte-5-ui-lib/commit/a7cd201631728bd3ddb8b7d572bf2f33b11a2542))
+
 ## 0.2.47
 
 ### Patch Changes
