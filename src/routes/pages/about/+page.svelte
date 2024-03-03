@@ -20,7 +20,7 @@
     <Li><A href="https://flowbite-svelte.com/">Flowbite-Svelte</A></Li>
     <Li><A href="https://flowbite-svelte-icons.codewithshin.com/">Flowbite-Svelte-Icons</A></Li>
     <Li><A href="https://flowbite-svelte-blocks.codewithshin.com/">Flowbite-Svelte-Blocks</A></Li>
-    <Li><A href="https://flowbite-svelte-admin-dashboard.codewithshin.com/">Flowbite-Svelte-Dashboard</A></Li>
+    <Li><A href="https://flowbite-svelte-admin-dashboard.vercel.app/">Flowbite-Svelte-Dashboard</A></Li>
   </List>
 
   <H2>Techinical info</H2>
