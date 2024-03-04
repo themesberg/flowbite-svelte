@@ -2,14 +2,14 @@
   import { fade, type TransitionConfig } from 'svelte/transition';
   import { twMerge } from 'tailwind-merge';
   import { CloseButton } from '$lib';
-  import type { CloseBtnColors } from '$lib/types';
+
   type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 
   interface Props {
     children?: any;
     icon?: any;
     dismissable?: boolean;
-    color?: CloseBtnColors;
+    color?: 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'primary' | 'none';
     position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none';
     divclass?: string;
     div2class?: string;

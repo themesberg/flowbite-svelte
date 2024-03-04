@@ -1,5 +1,4 @@
 <script lang="ts">
-  import type { CloseBtnColors } from '$lib/types';
   import { twMerge } from 'tailwind-merge';
   import { CloseButton } from '$lib';
 
@@ -8,7 +7,7 @@
     header?: any;
     position?: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky';
     dismissable?: boolean;
-    color?: CloseBtnColors;
+    color?: 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'primary' | 'none';
     bannerType: 'default' | 'bottom' | 'cta' | 'signup' | 'info';
     divclass: string | undefined;
     div2class: string | undefined;
