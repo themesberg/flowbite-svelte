@@ -22,3 +22,13 @@
 <svelte:element this={onclick ? 'button' : 'td'} {...attributes} class={tdCls} on:click role={onclick ? 'button' : undefined}>
   <slot />
 </svelte:element>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@props: children?: any;
+@props:class?: string;
+@props:tdclass?: string;
+@props:onclick?: () => void;
+-->

@@ -75,3 +75,27 @@
   {@render footer()}
   {/if}
 </div>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@props: children?: any;
+@props:svgSearch?: any;
+@props:header?: any;
+@props:footer?: any;
+@props:divclass?: string;
+@props:inputValue?: string;
+@props:striped?: boolean;
+@props:hoverable?: boolean;
+@props:placeholder?: string;
+@props:customColor?: string;
+@props:color?: string;
+@props:innerDivClass?: string;
+@props:inputclass?: string;
+@props:searchClass?: string;
+@props:svgDivClass?: string;
+@props:svgClass?: string;
+@props:classDiv?: string;
+@props:class?: string;
+-->

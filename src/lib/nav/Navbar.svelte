@@ -108,6 +108,7 @@
 @props: children?: any;
 @props:toggleNav?: () => void;
 @props:closeNav?: () => void;
+@props:openMainMenu?:  boolean; = true;
 @props:navStatus?: boolean;
 @props:fluid?: boolean;
 @props:brand?: any;

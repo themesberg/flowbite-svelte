@@ -52,3 +52,17 @@
     {@render children()}
   </table>
 </div>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@props: children?: any;
+@props:divclass?: string;
+@props:striped?: boolean;
+@props:hoverable?: boolean;
+@props:noborder?: boolean;
+@props:shadow?: boolean;
+@props:color?: TableColrType;
+@props:customeColor?: string;
+-->

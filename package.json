@@ -391,6 +391,34 @@
       "types": "./dist/spinner/Spinner.svelte.d.ts",
       "svelte": "./dist/spinner/Spinner.svelte"
     },
+    "./Table.svelte": {
+      "types": "./dist/table/Table.svelte.d.ts",
+      "svelte": "./dist/table/Table.svelte"
+    },
+    "./TableBody.svelte": {
+      "types": "./dist/table/TableBody.svelte.d.ts",
+      "svelte": "./dist/table/TableBody.svelte"
+    },
+    "./TableBodyCell.svelte": {
+      "types": "./dist/table/TableBodyCell.svelte.d.ts",
+      "svelte": "./dist/table/TableBodyCell.svelte"
+    },
+    "./TableBodyRow.svelte": {
+      "types": "./dist/table/TableBodyRow.svelte.d.ts",
+      "svelte": "./dist/table/TableBodyRow.svelte"
+    },
+    "./TableHead.svelte": {
+      "types": "./dist/table/TableHead.svelte.d.ts",
+      "svelte": "./dist/table/TableHead.svelte"
+    },
+    "./TableHeadCell.svelte": {
+      "types": "./dist/table/TableHeadCell.svelte.d.ts",
+      "svelte": "./dist/table/TableHeadCell.svelte"
+    },
+    "./TableSearch.svelte": {
+      "types": "./dist/table/TableSearch.svelte.d.ts",
+      "svelte": "./dist/table/TableSearch.svelte"
+    },
     "./Toast.svelte": {
       "types": "./dist/toast/Toast.svelte.d.ts",
       "svelte": "./dist/toast/Toast.svelte"
