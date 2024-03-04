@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.2
+
+### Patch Changes
+
+- fix: add lang="ts" to context="module" ([`3081cb37fc5d78d5f8bbcb6cea7beb1aacf23ada`](https://github.com/shinokada/svelte-5-ui-lib/commit/3081cb37fc5d78d5f8bbcb6cea7beb1aacf23ada))
+  fix: add $state() to let variables
+
 ## 0.3.1
 
 ### Patch Changes
