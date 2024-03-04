@@ -3,13 +3,13 @@
   import { getContext } from 'svelte';
   import type TableCtxType from './Table.svelte';
   // import type TableColrType from './Table.svelte';
-  interface Props{
+  interface Props {
     children?: any;
     class?: string;
     color?: string;
   }
   let { children, class: className, color, ...attributes } = $props<Props>();
-  
+
   const tableCtx: TableCtxType = getContext('tableCtx');
   let rowColor: string = $state(color ? color : tableCtx.color || 'default');
   const hoverable = tableCtx.hoverable;
@@ -52,10 +52,10 @@
   };
 
   const trClass: string = twMerge([
-    !tableCtx.noborder && 'border-b last:border-b-0', 
-    colors[rowColor], 
-    hoverable && hoverColors[rowColor], 
-    striped && stripColors[rowColor], 
+    !tableCtx.noborder && 'border-b last:border-b-0',
+    colors[rowColor],
+    hoverable && hoverColors[rowColor],
+    striped && stripColors[rowColor],
     className
   ]);
 </script>

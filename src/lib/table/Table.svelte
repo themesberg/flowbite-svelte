@@ -4,16 +4,16 @@
     hoverable?: boolean;
     noborder?: boolean;
     color?: TableColrType;
-  }
+  };
 
-  type TableColrType = 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default'  | 'indigo' | 'pink'| 'custom';
+  type TableColrType = 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'indigo' | 'pink' | 'custom';
 </script>
 
 <script lang="ts">
   import { twMerge, twJoin } from 'tailwind-merge';
   import { setContext } from 'svelte';
 
-  interface Props{
+  interface Props {
     children?: any;
     divclass?: string;
     striped?: boolean;
@@ -23,7 +23,17 @@
     color?: TableColrType;
     customeColor?: string;
   }
-  let { children, divclass = 'relative overflow-x-auto', striped, hoverable, noborder, shadow, color = 'default', customeColor, ...attributes } = $props<Props>();
+  let {
+    children,
+    divclass = 'relative overflow-x-auto',
+    striped,
+    hoverable,
+    noborder,
+    shadow,
+    color = 'default',
+    customeColor,
+    ...attributes
+  } = $props<Props>();
 
   const colors = {
     default: 'text-gray-500 dark:text-gray-400',

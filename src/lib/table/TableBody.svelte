@@ -1,5 +1,5 @@
 <script lang="ts">
-  interface Props{
+  interface Props {
     children?: any;
     class?: string | undefined;
   }

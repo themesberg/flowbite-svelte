@@ -2,15 +2,15 @@
   import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
   import type TableCtxType from './Table.svelte';
-  
-  interface Props{
+
+  interface Props {
     children?: any;
     defaultRow?: boolean;
     theadClass?: string;
     class?: string;
   }
 
-  let { children, class: className, theadClass = 'text-xs uppercase', defaultRow = true, ...attributes } = $props<Props>(); 
+  let { children, class: className, theadClass = 'text-xs uppercase', defaultRow = true, ...attributes } = $props<Props>();
 
   const tableCtx: TableCtxType = getContext('tableCtx');
   const color = tableCtx.color;
