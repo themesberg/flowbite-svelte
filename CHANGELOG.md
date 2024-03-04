@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.1
+
+### Patch Changes
+
+- fix: Table by running lib-helpers ([`fcb9cbd62909112c1d53dc5468349f716f5e9a9b`](https://github.com/shinokada/svelte-5-ui-lib/commit/fcb9cbd62909112c1d53dc5468349f716f5e9a9b))
+
 ## 0.3.0
 
 ### Minor Changes
