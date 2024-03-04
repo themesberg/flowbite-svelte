@@ -14,18 +14,7 @@
     inputclass?: string;
     labelclass?: string;
   }
-  let {
-    children,
-    id = idGenerator(),
-    style = 'standard',
-    type = 'text',
-    size = 'default',
-    color = 'base',
-    divclass,
-    inputclass,
-    labelclass,
-    ...attributes
-  } = $props<Props>();
+  let { children, id = idGenerator(), style = 'standard', type = 'text', size = 'default', color = 'base', divclass, inputclass, labelclass, ...attributes } = $props<Props>();
   // export let id: string = idGenerator();
   // export let style: 'filled' | 'outlined' | 'standard' = 'standard';
   // export let type: InputType = 'text';
@@ -70,12 +59,9 @@
   };
 
   const inputClasses = {
-    filled:
-      'block rounded-t-lg w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 appearance-none dark:text-white focus:outline-none focus:ring-0 peer',
-    outlined:
-      'block w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 appearance-none dark:text-white  focus:outline-none focus:ring-0 peer',
-    standard:
-      'block w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none dark:text-white  focus:outline-none focus:ring-0 peer'
+    filled: 'block rounded-t-lg w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 appearance-none dark:text-white focus:outline-none focus:ring-0 peer',
+    outlined: 'block w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 appearance-none dark:text-white  focus:outline-none focus:ring-0 peer',
+    standard: 'block w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none dark:text-white  focus:outline-none focus:ring-0 peer'
   };
 
   const labelClasses = {
@@ -101,13 +87,7 @@
 </script>
 
 <div class={twMerge(divClasses[style], divclass)}>
-  <input
-    {id}
-    {...attributes}
-    {...{ type }}
-    placeholder=" "
-    class={twMerge(inputClasses[style], inputColorClasses[color], inputSizes[style][size], inputclass)}
-  />
+  <input {id} {...attributes} {...{ type }} placeholder=" " class={twMerge(inputClasses[style], inputColorClasses[color], inputSizes[style][size], inputclass)} />
 
   <label for={id} class={twMerge(labelClasses[style], labelColorClasses[color], labelSizes[style][size], labelclass)}>
     {@render children()}

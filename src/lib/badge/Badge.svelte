@@ -1,7 +1,7 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
   import { CloseButton } from '$lib';
-  
+
   interface Props {
     children?: any;
     icon?: any;
@@ -111,7 +111,7 @@
 ## Props
 @props: children?: any;
 @props:icon?: any;
-@props:color?: CloseBtnColors;
+@props:color?: 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'primary' | 'none';
 @props:large?: boolean;
 @props:dismissable?: boolean;
 @props:divclass?: string;

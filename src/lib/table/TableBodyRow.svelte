@@ -51,13 +51,7 @@
     custom: ''
   };
 
-  const trClass: string = twMerge([
-    !tableCtx.noborder && 'border-b last:border-b-0',
-    colors[rowColor],
-    hoverable && hoverColors[rowColor],
-    striped && stripColors[rowColor],
-    className
-  ]);
+  const trClass: string = twMerge([!tableCtx.noborder && 'border-b last:border-b-0', colors[rowColor], hoverable && hoverColors[rowColor], striped && stripColors[rowColor], className]);
 </script>
 
 <tr {...attributes} class={trClass}>

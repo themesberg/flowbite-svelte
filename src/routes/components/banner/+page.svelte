@@ -54,10 +54,7 @@
         <span class="sr-only">Discount coupon</span>
       </span>
       <span>
-        Get 5% commission per sale <a
-          href="https://flowbite.com"
-          class="ms-0 flex items-center text-sm font-medium text-primary-600 hover:underline dark:text-primary-500 md:ms-1 md:inline-flex"
-        >
+        Get 5% commission per sale <a href="https://flowbite.com" class="ms-0 flex items-center text-sm font-medium text-primary-600 hover:underline dark:text-primary-500 md:ms-1 md:inline-flex">
           Become a partner <ArrowRightSolid class="ms-2 h-3 w-3" />
         </a>
       </span>
@@ -78,9 +75,7 @@
       <img src="https://flowbite-svelte.com/images/flowbite-svelte-icon-logo.svg" class="me-2 h-6" alt="Flowbite Logo" />
       <span class="self-center whitespace-nowrap text-lg font-semibold dark:text-white">Flowbite</span>
     </a>
-    <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
-      Build websites even faster with components on top of Tailwind CSS
-    </p>
+    <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">Build websites even faster with components on top of Tailwind CSS</p>
   </Banner>
 </CodeWrapper>
 
@@ -94,9 +89,7 @@
 
   <Banner id="signup-banner" position="absolute" bannerType="signup">
     <form action="/" class="flex w-full flex-col items-center md:flex-row">
-      <label for="email" class="mb-2 me-auto flex-shrink-0 text-sm font-medium text-gray-500 dark:text-gray-400 md:m-0 md:mb-0 md:me-4">
-        Sign up for our newsletter
-      </label>
+      <label for="email" class="mb-2 me-auto flex-shrink-0 text-sm font-medium text-gray-500 dark:text-gray-400 md:m-0 md:mb-0 md:me-4"> Sign up for our newsletter </label>
       <input
         type="email"
         id="email"

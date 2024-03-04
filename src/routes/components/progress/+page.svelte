@@ -130,23 +130,9 @@
     labelOutside="Size h-10"
   />
 
-  <Progressbar
-    progress="50"
-    size="h-10"
-    color="indigo"
-    div2class="bg-blue-600 text-blue-100 text-2xl font-medium text-center p-2 leading-none rounded-full"
-    class="my-4"
-    labelOutside="Size h-10"
-  />
+  <Progressbar progress="50" size="h-10" color="indigo" div2class="bg-blue-600 text-blue-100 text-2xl font-medium text-center p-2 leading-none rounded-full" class="my-4" labelOutside="Size h-10" />
 
-  <Progressbar
-    progress="50"
-    size="h-6"
-    labelInside
-    div2class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
-    class="my-4"
-    labelOutside="Size h-6"
-  />
+  <Progressbar progress="50" size="h-6" labelInside div2class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full" class="my-4" labelOutside="Size h-6" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/custom.md'] as string} />
@@ -166,14 +152,7 @@
     color="yellow"
     div2class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full mb-8"
   />
-  <Progressbar
-    {progress}
-    labelOutside="Without animation"
-    labelInside
-    size="h-6"
-    color="gray"
-    div2class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
-  />
+  <Progressbar {progress} labelOutside="Without animation" labelInside size="h-6" color="gray" div2class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full" />
   <Button onclick={() => (progress = `${Math.round(Math.random() * 100)}`)} btnclass="mt-8">Randomize</Button>
 </CodeWrapper>
 

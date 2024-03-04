@@ -1,23 +1,10 @@
 <script lang="ts">
   import { Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper } from '$lib';
-  import {
-    ChartSolid,
-    GridSolid,
-    MailBoxSolid,
-    UserSolid,
-    ArrowRightToBracketSolid,
-    EditSolid,
-    ShoppingBagSolid,
-    FireSolid,
-    BookSolid,
-    RestoreWindowOutline
-  } from 'flowbite-svelte-icons';
+  import { ChartSolid, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketSolid, EditSolid, ShoppingBagSolid, FireSolid, BookSolid, RestoreWindowOutline } from 'flowbite-svelte-icons';
   import PlusPlaceholder from '../../utils/PlusPlaceholder.svelte';
   const spanclass = 'flex-1 ms-3 whitespace-nowrap';
-  const activeClass =
-    'flex items-center p-2 text-base font-normal text-primary-900 bg-primary-200 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-100 dark:hover:bg-gray-700';
-  const nonActiveClass =
-    'flex items-center p-2 text-base font-normal text-green-900 rounded-lg dark:text-white hover:bg-green-100 dark:hover:bg-green-700';
+  const activeClass = 'flex items-center p-2 text-base font-normal text-primary-900 bg-primary-200 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-100 dark:hover:bg-gray-700';
+  const nonActiveClass = 'flex items-center p-2 text-base font-normal text-green-900 rounded-lg dark:text-white hover:bg-green-100 dark:hover:bg-green-700';
   const sidebarEx1 = [
     {
       label: 'Dashboard',
@@ -69,25 +56,15 @@
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
-          <span
-            class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300"
-          >
-            Pro
-          </span>
+          <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300"> Pro </span>
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Inbox" {spanclass}>
         {#snippet icon()}
-          <MailBoxSolid
-            class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-          />
+          <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
-          <span
-            class="ms-3 inline-flex h-3 w-3 items-center justify-center rounded-full bg-primary-200 p-3 text-sm font-medium text-primary-600 dark:bg-primary-900 dark:text-primary-200"
-          >
-            3
-          </span>
+          <span class="ms-3 inline-flex h-3 w-3 items-center justify-center rounded-full bg-primary-200 p-3 text-sm font-medium text-primary-600 dark:bg-primary-900 dark:text-primary-200"> 3 </span>
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sidebar" href="/components/sidebar">
@@ -117,15 +94,10 @@
       {#each sidebarEx1 as { label, href, iconName, subContent }}
         <SidebarItem {label} {href} {spanclass}>
           {#snippet icon()}
-            <svelte:component
-              this={iconName}
-              class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-            />
+            <svelte:component this={iconName} class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
           {/snippet}
           {#snippet subtext()}
-            <span
-              class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300"
-            >
+            <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">
               {subContent}
             </span>
           {/snippet}
@@ -161,25 +133,15 @@
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
-          <span
-            class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300"
-          >
-            Pro
-          </span>
+          <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300"> Pro </span>
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Inbox" {spanclass}>
         {#snippet icon()}
-          <MailBoxSolid
-            class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-          />
+          <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
-          <span
-            class="ms-3 inline-flex h-3 w-3 items-center justify-center rounded-full bg-primary-200 p-3 text-sm font-medium text-primary-600 dark:bg-primary-900 dark:text-primary-200"
-          >
-            3
-          </span>
+          <span class="ms-3 inline-flex h-3 w-3 items-center justify-center rounded-full bg-primary-200 p-3 text-sm font-medium text-primary-600 dark:bg-primary-900 dark:text-primary-200"> 3 </span>
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sidebar" href="/components/sidebar">
@@ -213,9 +175,7 @@
       </SidebarItem>
       <SidebarDropdownWrapper label="E-commerce" btnclass="p-2">
         {#snippet icon()}
-          <ShoppingBagSolid
-            class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-          />
+          <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         <SidebarItem label="Sidebar" href="/components/sidebar" />
         <SidebarItem label="Billing" />
@@ -226,25 +186,15 @@
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
-          <span
-            class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300"
-          >
-            Pro
-          </span>
+          <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300"> Pro </span>
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Inbox" {spanclass}>
         {#snippet icon()}
-          <MailBoxSolid
-            class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-          />
+          <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
-          <span
-            class="ms-3 inline-flex h-3 w-3 items-center justify-center rounded-full bg-primary-200 p-3 text-sm font-medium text-primary-600 dark:bg-primary-900 dark:text-primary-200"
-          >
-            3
-          </span>
+          <span class="ms-3 inline-flex h-3 w-3 items-center justify-center rounded-full bg-primary-200 p-3 text-sm font-medium text-primary-600 dark:bg-primary-900 dark:text-primary-200"> 3 </span>
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Users">
@@ -254,9 +204,7 @@
       </SidebarItem>
       <SidebarItem label="Sign In">
         {#snippet icon()}
-          <ArrowRightToBracketSolid
-            class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-          />
+          <ArrowRightToBracketSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sign Up">
@@ -295,25 +243,15 @@
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
-          <span
-            class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300"
-          >
-            Pro
-          </span>
+          <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300"> Pro </span>
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Inbox" {spanclass}>
         {#snippet icon()}
-          <MailBoxSolid
-            class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-          />
+          <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
-          <span
-            class="ms-3 inline-flex h-3 w-3 items-center justify-center rounded-full bg-primary-200 p-3 text-sm font-medium text-primary-600 dark:bg-primary-900 dark:text-primary-200"
-          >
-            3
-          </span>
+          <span class="ms-3 inline-flex h-3 w-3 items-center justify-center rounded-full bg-primary-200 p-3 text-sm font-medium text-primary-600 dark:bg-primary-900 dark:text-primary-200"> 3 </span>
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sidebar" href="/sidebar">
@@ -335,9 +273,7 @@
       </SidebarItem>
       <SidebarItem label="Components">
         {#snippet icon()}
-          <RestoreWindowOutline
-            class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-          />
+          <RestoreWindowOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
     </SidebarGroup>

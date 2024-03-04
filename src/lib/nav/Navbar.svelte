@@ -43,21 +43,13 @@
   setContext<navbarType>('navbarContext', {
     breakPoint: breakPoint,
     activeClass: twMerge('block py-2 px-3 text-white bg-primary-700 rounded   dark:text-white', activeClass),
-    nonActiveClass: twMerge(
-      'block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white',
-      nonActiveClass
-    ),
+    nonActiveClass: twMerge('block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white', nonActiveClass),
     closeNav: closeNav
   });
 
   let navDisplay = $derived(navStatus ? 'block' : 'hidden');
   let navCls = twMerge('border-gray-200 bg-transparent dark:bg-gray-900', navclass);
-  let divCls = twMerge(
-    'mx-auto flex flex-wrap items-center justify-between p-4',
-    breakPoint === 'xxl' ? 'w-full' : 'max-w-screen-xl',
-    fluid ? 'w-full' : 'container',
-    divclass
-  );
+  let divCls = twMerge('mx-auto flex flex-wrap items-center justify-between p-4', breakPoint === 'xxl' ? 'w-full' : 'max-w-screen-xl', fluid ? 'w-full' : 'container', divclass);
   const btnBreak = {
     md: 'md:hidden',
     lg: 'lg:hidden',

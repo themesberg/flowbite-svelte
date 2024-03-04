@@ -14,10 +14,7 @@
   let { children, icon, home = false, href, a2class, spanclass, aclass, class: classname, ...attributes } = $props<Props>();
   let a2Cls: string = twMerge('ms-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ms-2 dark:text-gray-400 dark:hover:text-white', a2class);
   let spanCls: string = twMerge('ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400', spanclass);
-  let aCls: string = twMerge(
-    'inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white',
-    aclass
-  );
+  let aCls: string = twMerge('inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white', aclass);
 </script>
 
 <li class={twMerge('inline-flex items-center', classname)} {...attributes}>
@@ -39,11 +36,7 @@
       {@render icon()}
     {:else}
       <svg class="h-6 w-6 text-gray-400 rtl:-scale-x-100" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-        <path
-          fill-rule="evenodd"
-          d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-          clip-rule="evenodd"
-        />
+        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
       </svg>
     {/if}
     {#if href}

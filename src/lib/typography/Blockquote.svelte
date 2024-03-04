@@ -14,19 +14,7 @@
   import { twMerge } from 'tailwind-merge';
   import type { BlockQuoteType } from '../types';
 
-  let {
-    children,
-    class: classname,
-    border,
-    italic = true,
-    borderclass,
-    bgclass,
-    bg,
-    baseclass,
-    alignment = 'left',
-    size = 'lg',
-    ...attributes
-  } = $props<Props>();
+  let { children, class: classname, border, italic = true, borderclass, bgclass, bg, baseclass, alignment = 'left', size = 'lg', ...attributes } = $props<Props>();
 
   const borderCls: string = twMerge('border-s-4 border-gray-300 dark:border-gray-500', borderclass);
   const bgCls: string = twMerge('bg-gray-50 dark:bg-gray-800', bgclass);
@@ -54,10 +42,7 @@
   };
 </script>
 
-<blockquote
-  {...attributes}
-  class={twMerge(baseCls, alignmentClasses[alignment], sizes[size], bg && bgCls, border && borderCls, italic && 'italic', classname)}
->
+<blockquote {...attributes} class={twMerge(baseCls, alignmentClasses[alignment], sizes[size], bg && bgCls, border && borderCls, italic && 'italic', classname)}>
   {@render children()}
 </blockquote>
 

@@ -35,9 +35,7 @@
       <WalletSolid class="mb-1 h-5 w-5 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
     </BottomNavItem>
     <BottomNavItem btnName="Settings">
-      <AdjustmentsVerticalSolid
-        class="mb-1 h-5 w-5 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500"
-      />
+      <AdjustmentsVerticalSolid class="mb-1 h-5 w-5 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
     </BottomNavItem>
     <BottomNavItem btnName="Profile">
       <UserCircleSolid class="mb-1 h-5 w-5 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
@@ -73,11 +71,7 @@
   <Skeleton divclass="py-4" />
   <ImagePlaceholder divclass="pb-20" />
 
-  <BottomNav
-    position="absolute"
-    div2class="grid-cols-4"
-    activeClass="font-bold text-green-500 hover:text-green-900 dark:hover:text-green-700 dark:text-green-300"
-  >
+  <BottomNav position="absolute" div2class="grid-cols-4" activeClass="font-bold text-green-500 hover:text-green-900 dark:hover:text-green-700 dark:text-green-300">
     <BottomNavItem btnName="Home" href="/">
       <HomeSolid />
     </BottomNavItem>

@@ -15,12 +15,11 @@
 <div id="accordion-collapse-body-3" class="hidden" aria-labelledby="accordion-collapse-heading-3">
   <div class="border border-t-0 border-gray-200 p-5 dark:border-gray-700">
     <p class="mb-2 text-gray-500 dark:text-gray-400">
-      The main difference is that the core components from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product.
-      Another difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers sections of pages.
+      The main difference is that the core components from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another difference is that Flowbite relies on smaller
+      and standalone components, whereas Tailwind UI offers sections of pages.
     </p>
     <p class="mb-2 text-gray-500 dark:text-gray-400">
-      However, we actually recommend using both Flowbite, Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using
-      the best of two worlds.
+      However, we actually recommend using both Flowbite, Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the best of two worlds.
     </p>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
     <ul class="list-disc ps-5 text-gray-500 dark:text-gray-400">

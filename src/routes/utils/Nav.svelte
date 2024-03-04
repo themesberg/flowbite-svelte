@@ -23,8 +23,7 @@
     navDrawerStatus = navDrawer.isOpen;
     navStatus = nav.isOpen;
   });
-  const activeClass =
-    'flex items-center p-2 text-base font-normal text-white bg-primary-500 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-100 dark:hover:bg-gray-700';
+  const activeClass = 'flex items-center p-2 text-base font-normal text-white bg-primary-500 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-100 dark:hover:bg-gray-700';
 </script>
 
 <header class="sticky top-0 z-50 mx-auto w-full flex-none border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-950 lg:pl-4">

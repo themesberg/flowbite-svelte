@@ -16,19 +16,7 @@
     inputclass?: string;
   }
 
-  let {
-    children,
-    color = 'primary',
-    custom = false,
-    inline = false,
-    group = [],
-    value = 'on',
-    checked,
-    spacing = 'me-2',
-    labelclass = '',
-    inputclass = '',
-    ...attributes
-  } = $props<Props>();
+  let { children, color = 'primary', custom = false, inline = false, group = [], value = 'on', checked, spacing = 'me-2', labelclass = '', inputclass = '', ...attributes } = $props<Props>();
 </script>
 
 <Label labelclass={labelCls(inline, labelclass)}>

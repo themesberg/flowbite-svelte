@@ -350,9 +350,7 @@
         </div>
       </div>
       <div>
-        <span
-          class="inline-flex items-center rounded-md bg-green-100 px-2.5 py-1 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300"
-        >
+        <span class="inline-flex items-center rounded-md bg-green-100 px-2.5 py-1 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300">
           <ArrowUpSolid class="me-1.5 h-2.5 w-2.5" />
           42.5%
         </span>
@@ -409,9 +407,7 @@
         <dd class="text-3xl font-bold leading-none text-gray-900 dark:text-white">$5,405</dd>
       </dl>
       <div>
-        <span
-          class="inline-flex items-center rounded-md bg-green-100 px-2.5 py-1 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300"
-        >
+        <span class="inline-flex items-center rounded-md bg-green-100 px-2.5 py-1 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300">
           <ArrowUpSolid class="me-1.5 h-2.5 w-2.5" />
           Profit rate 23.5%
         </span>

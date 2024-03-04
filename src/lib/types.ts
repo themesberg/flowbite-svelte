@@ -5,19 +5,7 @@ export declare const lg = 'lg';
 export declare const xl = 'xl';
 export declare type SizeType = typeof xs | typeof sm | typeof md | typeof lg | typeof xl;
 
-export type TransitionTypes =
-  | 'fade'
-  | 'fly'
-  | 'slide'
-  | 'blur'
-  | 'in:fly'
-  | 'out:fly'
-  | 'in:slide'
-  | 'out:slide'
-  | 'in:fade'
-  | 'out:fade'
-  | 'in:blur'
-  | 'out:blur';
+export type TransitionTypes = 'fade' | 'fly' | 'slide' | 'blur' | 'in:fly' | 'out:fly' | 'in:slide' | 'out:slide' | 'in:fade' | 'out:fade' | 'in:blur' | 'out:blur';
 export interface TransitionParamTypes {
   delay?: number;
   duration?: number;
@@ -26,17 +14,7 @@ export interface TransitionParamTypes {
   tick?: (t: number, u: number) => void;
 }
 
-export type IndicatorPlacementType =
-  | 'top-left'
-  | 'top-center'
-  | 'top-right'
-  | 'center-left'
-  | 'center'
-  | 'center-right'
-  | 'bottom-left'
-  | 'bottom-center'
-  | 'bottom-right'
-  | undefined;
+export type IndicatorPlacementType = 'top-left' | 'top-center' | 'top-right' | 'center-left' | 'center' | 'center-right' | 'bottom-left' | 'bottom-center' | 'bottom-right' | undefined;
 
 export interface drawerTransitionParamTypes {
   amount?: number;
@@ -48,20 +26,7 @@ export interface drawerTransitionParamTypes {
   y?: number;
 }
 
-export type drawerTransitionTypes =
-  | 'fade'
-  | 'fly'
-  | 'slide'
-  | 'blur'
-  | 'in:fly'
-  | 'out:fly'
-  | 'in:slide'
-  | 'out:slide'
-  | 'in:fade'
-  | 'out:fade'
-  | 'in:blur'
-  | 'out:blur'
-  | undefined;
+export type drawerTransitionTypes = 'fade' | 'fly' | 'slide' | 'blur' | 'in:fly' | 'out:fly' | 'in:slide' | 'out:slide' | 'in:fade' | 'out:fade' | 'in:blur' | 'out:blur' | undefined;
 
 export type PsizeType = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | '8xl' | '9xl';
 

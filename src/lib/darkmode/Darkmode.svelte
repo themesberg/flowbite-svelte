@@ -11,10 +11,7 @@
   const THEME_PREFERENCE_KEY = 'color-theme';
 
   let { btnclass, lightIcon, darkIcon, size = 'md', ariaLabel = 'Dark mode', ...attributes } = $props<Props>();
-  let btnCls: string = twMerge(
-    'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none rounded-lg text-sm p-2.5',
-    btnclass
-  );
+  let btnCls: string = twMerge('text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none rounded-lg text-sm p-2.5', btnclass);
 
   const sizes = {
     sm: 'w-4 h-4',
@@ -34,9 +31,7 @@
 <svelte:head>
   <script>
     if ('THEME_PREFERENCE_KEY' in localStorage) {
-      localStorage.getItem('THEME_PREFERENCE_KEY') === 'dark'
-        ? window.document.documentElement.classList.add('dark')
-        : window.document.documentElement.classList.remove('dark');
+      localStorage.getItem('THEME_PREFERENCE_KEY') === 'dark' ? window.document.documentElement.classList.add('dark') : window.document.documentElement.classList.remove('dark');
     } else {
       if (window.matchMedia('(prefers-color-scheme: dark)').matches) window.document.documentElement.classList.add('dark');
     }

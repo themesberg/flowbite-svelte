@@ -10,16 +10,7 @@
   }
   import { twMerge } from 'tailwind-merge';
 
-  let {
-    svgclass,
-    color = 'primary',
-    bg = 'text-gray-300',
-    customColor,
-    size = '8',
-    currentFill = 'currentFill',
-    currentColor = 'currentColor',
-    ...attributes
-  } = $props<Props>();
+  let { svgclass, color = 'primary', bg = 'text-gray-300', customColor, size = '8', currentFill = 'currentFill', currentColor = 'currentColor', ...attributes } = $props<Props>();
 
   let iconsize = `w-${size} h-${size}`;
 

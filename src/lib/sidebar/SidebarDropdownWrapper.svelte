@@ -18,26 +18,9 @@
   import { fade, blur, fly, slide } from 'svelte/transition';
   import { uiHelpers } from '$lib';
 
-  let {
-    children,
-    arrowup,
-    arrowdown,
-    icon,
-    isOpen,
-    btnclass,
-    label,
-    spanclass,
-    ulclass,
-    transitionType = 'slide',
-    transitionParams = {},
-    svgclass,
-    ...attributes
-  } = $props<Props>();
+  let { children, arrowup, arrowdown, icon, isOpen, btnclass, label, spanclass, ulclass, transitionType = 'slide', transitionParams = {}, svgclass, ...attributes } = $props<Props>();
 
-  let btnCls = twMerge(
-    'flex items-center w-full text-base font-normal text-gray-900 rounded transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700',
-    btnclass
-  );
+  let btnCls = twMerge('flex items-center w-full text-base font-normal text-gray-900 rounded transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700', btnclass);
 
   let spanCls: string = twMerge('flex-1 ms-3 text-left whitespace-nowrap', spanclass);
   let ulCls: string = twMerge('py-2 space-y-2', ulclass);

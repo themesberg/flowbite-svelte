@@ -44,17 +44,7 @@
     value?: number | string;
     inputclass?: string;
   }
-  let {
-    children,
-    labelclass = '',
-    color = 'primary',
-    custom = false,
-    inline = false,
-    group,
-    value,
-    inputclass = '',
-    ...attributes
-  } = $props<Props>();
+  let { children, labelclass = '', color = 'primary', custom = false, inline = false, group, value, inputclass = '', ...attributes } = $props<Props>();
 
   // tinted if put in component having its own background
   let background: boolean = getContext('background');

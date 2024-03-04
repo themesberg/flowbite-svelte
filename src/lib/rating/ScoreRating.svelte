@@ -19,8 +19,7 @@
   //   desc3: string;
   //   link: { label: string; url: string };
   // };
-  const desc1Cls: string =
-    'bg-primary-100 w-8 text-primary-800 text-sm font-semibold inline-flex items-center p-1.5 rounded dark:bg-primary-200 dark:text-primary-800';
+  const desc1Cls: string = 'bg-primary-100 w-8 text-primary-800 text-sm font-semibold inline-flex items-center p-1.5 rounded dark:bg-primary-200 dark:text-primary-800';
   const desc2Cls: string = 'ms-2 w-24 font-medium text-gray-900 dark:text-white';
   const desc3spanCls: string = 'mx-2 w-1 h-1 bg-gray-900 rounded-full dark:bg-gray-500';
   const desc3pCls: string = 'text-sm  w-24 font-medium text-gray-500 dark:text-gray-400';

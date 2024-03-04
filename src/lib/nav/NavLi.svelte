@@ -35,11 +35,7 @@
     xxl: '2xl:bg-transparent 2xl:text-primary-700 2xl:p-0 2xl:dark:text-primary-500'
   };
 
-  let aCls = $derived(
-    currentUrl === href
-      ? activeClass ?? twMerge(context.activeClass, activeBreaks[breakPoint])
-      : nonActiveClass ?? twMerge(context.nonActiveClass, linkBreaks[breakPoint])
-  );
+  let aCls = $derived(currentUrl === href ? activeClass ?? twMerge(context.activeClass, activeBreaks[breakPoint]) : nonActiveClass ?? twMerge(context.nonActiveClass, linkBreaks[breakPoint]));
 
   let linkClass = $derived(twMerge(aCls, aclass));
 

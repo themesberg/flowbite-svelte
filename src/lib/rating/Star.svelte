@@ -11,17 +11,7 @@
     svgclass?: string;
   }
 
-  let {
-    fillPercent = 100,
-    fillColor = '#F5CA14',
-    strokeColor = '#F5CA14',
-    size = 24,
-    ariaLabel = 'star',
-    id = idGenerator(),
-    role = 'img',
-    svgclass,
-    ...attributes
-  } = $props<Props>();
+  let { fillPercent = 100, fillColor = '#F5CA14', strokeColor = '#F5CA14', size = 24, ariaLabel = 'star', id = idGenerator(), role = 'img', svgclass, ...attributes } = $props<Props>();
 </script>
 
 <svg width={size} height={size} {...attributes} class={svgclass} aria-label={ariaLabel} viewBox="100 100 120 120" {role}>

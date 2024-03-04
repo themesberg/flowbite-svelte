@@ -60,12 +60,7 @@
 
 <H2>Custom styles</H2>
 <CodeWrapper>
-  <Video
-    src="/videos/flowbite.mp4"
-    controls
-    class="h-auto w-full max-w-full rounded-3xl border border-gray-200 dark:border-gray-700"
-    trackSrc="flowbite.mp4"
-  />
+  <Video src="/videos/flowbite.mp4" controls class="h-auto w-full max-w-full rounded-3xl border border-gray-200 dark:border-gray-700" trackSrc="flowbite.mp4" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/custom-style.md'] as string} />

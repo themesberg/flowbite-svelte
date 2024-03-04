@@ -15,17 +15,7 @@
     icon?: ComponentType;
     count?: boolean;
   }
-  let {
-    children,
-    text,
-    divclass,
-    size = 24,
-    total = 5,
-    rating = 4,
-    partialId = 'partialStar' + idGenerator(),
-    icon = Star,
-    count = false
-  } = $props<Props>();
+  let { children, text, divclass, size = 24, total = 5, rating = 4, partialId = 'partialStar' + idGenerator(), icon = Star, count = false } = $props<Props>();
 
   // generate unique id for full star and gray star
   const fullStarId: string = idGenerator();

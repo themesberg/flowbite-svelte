@@ -13,18 +13,7 @@
   import type { SizeType } from '$lib/types';
   import { twMerge } from 'tailwind-merge';
 
-  let {
-    children,
-    href = undefined,
-    horizontal = false,
-    shadow = false,
-    reverse = false,
-    src = undefined,
-    padding = 'lg',
-    size = 'sm',
-    class: classname = '',
-    ...attributes
-  } = $props<Props>();
+  let { children, href = undefined, horizontal = false, shadow = false, reverse = false, src = undefined, padding = 'lg', size = 'sm', class: classname = '', ...attributes } = $props<Props>();
 
   const paddings = {
     none: 'p-0',

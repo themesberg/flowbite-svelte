@@ -83,9 +83,7 @@
 <H2>Horizontal list group</H2>
 <CodeWrapper>
   <p class="mb-4 font-semibold text-gray-900 dark:text-white">Identification</p>
-  <ul
-    class="w-full items-center divide-x divide-gray-200 rounded-lg border border-gray-200 dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800 sm:flex rtl:divide-x-reverse"
-  >
+  <ul class="w-full items-center divide-x divide-gray-200 rounded-lg border border-gray-200 dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800 sm:flex rtl:divide-x-reverse">
     <li class="w-full"><Radio name="hor-list" labelclass="p-3">Svelte</Radio></li>
     <li class="w-full"><Radio name="hor-list" labelclass="p-3">Vue JS</Radio></li>
     <li class="w-full"><Radio name="hor-list" labelclass="p-3">React</Radio></li>

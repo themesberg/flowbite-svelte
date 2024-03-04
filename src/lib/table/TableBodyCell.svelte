@@ -15,9 +15,7 @@
 
   let color = $state(tableCtx.color ? tableCtx.color : 'default');
 
-  let tdCls: string = $state(
-    twMerge(tdclass, color === 'default' ? 'text-gray-900 dark:text-white' : 'text-blue-50 whitespace-nowrap dark:text-blue-100', className)
-  );
+  let tdCls: string = $state(twMerge(tdclass, color === 'default' ? 'text-gray-900 dark:text-white' : 'text-blue-50 whitespace-nowrap dark:text-blue-100', className));
 </script>
 
 <svelte:element this={onclick ? 'button' : 'td'} {...attributes} class={tdCls} on:click role={onclick ? 'button' : undefined}>

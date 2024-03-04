@@ -23,17 +23,7 @@
     color?: TableColrType;
     customeColor?: string;
   }
-  let {
-    children,
-    divclass = 'relative overflow-x-auto',
-    striped,
-    hoverable,
-    noborder,
-    shadow,
-    color = 'default',
-    customeColor,
-    ...attributes
-  } = $props<Props>();
+  let { children, divclass = 'relative overflow-x-auto', striped, hoverable, noborder, shadow, color = 'default', customeColor, ...attributes } = $props<Props>();
 
   const colors = {
     default: 'text-gray-500 dark:text-gray-400',
@@ -68,11 +58,11 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children?: any;
-@props:divclass?: string;
+@props:divclass?:  string; = 'relative overflow-x-auto';
 @props:striped?: boolean;
 @props:hoverable?: boolean;
 @props:noborder?: boolean;
 @props:shadow?: boolean;
-@props:color?: TableColrType;
+@props:color?:  TableColrType; = 'default';
 @props:customeColor?: string;
 -->

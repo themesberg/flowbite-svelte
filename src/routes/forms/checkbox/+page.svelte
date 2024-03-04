@@ -69,9 +69,7 @@
 <H2>Horizontal list group</H2>
 <CodeWrapper>
   <p class="mb-4 font-semibold text-gray-900 dark:text-white">Identification</p>
-  <ul
-    class="w-full items-center divide-x divide-gray-200 rounded-lg border border-gray-200 dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800 sm:flex rtl:divide-x-reverse"
-  >
+  <ul class="w-full items-center divide-x divide-gray-200 rounded-lg border border-gray-200 dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800 sm:flex rtl:divide-x-reverse">
     <li class="w-full"><Checkbox checked labelclass="p-3">Svelte</Checkbox></li>
     <li class="w-full"><Checkbox labelclass="p-3">Vue JS</Checkbox></li>
     <li class="w-full"><Checkbox labelclass="p-3">React</Checkbox></li>

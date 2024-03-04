@@ -114,7 +114,7 @@
 @props: children?: any;
 @props:icon?: any;
 @props:closeIcon?: any;
-@props:color?: CloseBtnColors;
+@props:color?: 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'primary' | 'none';
 @props:border?: boolean;
 @props:rounded?: boolean;
 @props:divclass?: string;

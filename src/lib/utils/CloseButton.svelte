@@ -45,13 +45,7 @@
     lg: 'm-0.5 rounded-lg focus:ring-2 p-2.5'
   };
 
-  let buttonClass: string = twMerge(
-    'focus:outline-none whitespace-normal',
-    sizing[size],
-    colors[color],
-    color === 'default' && 'hover:bg-gray-100 dark:hover:bg-gray-700',
-    divclass
-  );
+  let buttonClass: string = twMerge('focus:outline-none whitespace-normal', sizing[size], colors[color], color === 'default' && 'hover:bg-gray-100 dark:hover:bg-gray-700', divclass);
 
   const svgSizes = {
     xs: 'w-3 h-3',

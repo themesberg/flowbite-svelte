@@ -1,15 +1,6 @@
 <script lang="ts">
   import { Toast, Avatar, Button } from '$lib';
-  import {
-    FireOutline,
-    CheckCircleSolid,
-    ExclamationCircleSolid,
-    CloseSolid,
-    PapperPlaneOutline,
-    BellOutline,
-    DownloadOutline,
-    CameraFotoOutline
-  } from 'flowbite-svelte-icons';
+  import { FireOutline, CheckCircleSolid, ExclamationCircleSolid, CloseSolid, PapperPlaneOutline, BellOutline, DownloadOutline, CameraFotoOutline } from 'flowbite-svelte-icons';
   import { slide, blur, fly } from 'svelte/transition';
   import { quintOut, elasticOut } from 'svelte/easing';
 
@@ -181,9 +172,7 @@
 <CodeWrapper class="flex h-[104px] flex-col items-center">
   <Toast div2class="w-full text-sm font-normal flex items-center justify-between">
     Conversation archived.
-    <a class="ms-auto rounded-lg p-1.5 font-medium text-primary-600 hover:bg-primary-100 dark:text-primary-500 dark:hover:bg-gray-700" href="/">
-      Undo
-    </a>
+    <a class="ms-auto rounded-lg p-1.5 font-medium text-primary-600 hover:bg-primary-100 dark:text-primary-500 dark:hover:bg-gray-700" href="/"> Undo </a>
   </Toast>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/undo-button.md'] as string} />
@@ -240,20 +229,10 @@
 <H2>Positioning</H2>
 <CodeWrapper>
   <div class="relative h-56">
-    <Toast dismissable={false} position="top-left" divclass="text-white dark:text-white bg-red-600 dark:bg-red-500 w-20 h-20 sm:w-48 sm:h-16"
-      >Top-left</Toast
-    >
-    <Toast dismissable={false} position="top-right" divclass="text-white dark:text-white bg-green-600 dark:bg-green-500 w-20 h-20 sm:w-48 sm:h-16"
-      >Top-right</Toast
-    >
-    <Toast dismissable={false} position="bottom-left" divclass="text-white dark:text-white bg-blue-600 dark:bg-blue-500 w-20 h-20 sm:w-48 sm:h-16"
-      >Bottom-left</Toast
-    >
-    <Toast
-      dismissable={false}
-      position="bottom-right"
-      divclass="text-white dark:text-white bg-purple-600 dark:bg-purple-500 w-20 h-20 sm:w-48 sm:h-16">Bottom-right</Toast
-    >
+    <Toast dismissable={false} position="top-left" divclass="text-white dark:text-white bg-red-600 dark:bg-red-500 w-20 h-20 sm:w-48 sm:h-16">Top-left</Toast>
+    <Toast dismissable={false} position="top-right" divclass="text-white dark:text-white bg-green-600 dark:bg-green-500 w-20 h-20 sm:w-48 sm:h-16">Top-right</Toast>
+    <Toast dismissable={false} position="bottom-left" divclass="text-white dark:text-white bg-blue-600 dark:bg-blue-500 w-20 h-20 sm:w-48 sm:h-16">Bottom-left</Toast>
+    <Toast dismissable={false} position="bottom-right" divclass="text-white dark:text-white bg-purple-600 dark:bg-purple-500 w-20 h-20 sm:w-48 sm:h-16">Bottom-right</Toast>
   </div>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/positioning.md'] as string} />

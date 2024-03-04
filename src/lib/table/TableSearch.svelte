@@ -82,11 +82,7 @@
     <div class={searchClass}>
       <div class={svgDivCls}>
         <svg class={svgClass} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <path
-            fill-rule="evenodd"
-            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-            clip-rule="evenodd"
-          />
+          <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
         </svg>
       </div>
       <input bind:value={inputValue} type="text" id="table-search" class={inputCls} {placeholder} />
@@ -111,18 +107,18 @@
 @props:svgSearch?: any;
 @props:header?: any;
 @props:footer?: any;
-@props:divclass?: string;
+@props:divclass?:  string; = 'relative overflow-x-auto shadow-md sm:rounded-lg';
 @props:inputValue?: string;
 @props:striped?: boolean;
 @props:hoverable?: boolean;
-@props:placeholder?: string;
-@props:customColor?: string;
-@props:color?: string;
-@props:innerDivClass?: string;
+@props:placeholder?:  string; = 'Search';
+@props:customColor?:  string; = '';
+@props:color?:  string; = 'default';
+@props:innerDivClass?:  string; = 'p-4';
 @props:inputclass?: string;
-@props:searchClass?: string;
+@props:searchClass?:  string; = 'relative mt-1';
 @props:svgDivClass?: string;
-@props:svgClass?: string;
+@props:svgClass?:  string; = 'w-5 h-5 text-gray-500 dark:text-gray-400';
 @props:classDiv?: string;
 @props:class?: string;
 -->

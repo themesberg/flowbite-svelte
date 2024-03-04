@@ -13,17 +13,7 @@
     div2class: string | undefined;
   }
 
-  let {
-    children,
-    header,
-    position = 'sticky',
-    dismissable = true,
-    color = 'gray',
-    bannerType = 'default',
-    divclass,
-    div2class,
-    ...attributes
-  } = $props<Props>();
+  let { children, header, position = 'sticky', dismissable = true, color = 'gray', bannerType = 'default', divclass, div2class, ...attributes } = $props<Props>();
   let bannerStatus = $state(true);
 
   const divClasses = {
@@ -77,7 +67,7 @@
 @props:header?: any;
 @props:position?:  'static' | 'fixed' | 'absolute' | 'relative' | 'sticky'; = 'sticky';
 @props:dismissable?:  boolean; = true;
-@props:color?:  CloseBtnColors; = 'gray';
+@props:color?:  'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'primary' | 'none'; = 'gray';
 @props:bannerType:  'default' | 'bottom' | 'cta' | 'signup' | 'info'; = 'default';
 @props:divclass: string | undefined;
 @props:div2class: string | undefined;

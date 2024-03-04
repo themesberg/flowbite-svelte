@@ -18,20 +18,7 @@
     transition?: TransitionFunc;
     params?: object;
   }
-  let {
-    children,
-    icon,
-    dismissable = true,
-    color = 'primary',
-    position = 'none',
-    divclass,
-    div2class,
-    div3class,
-    align = true,
-    transition = fade,
-    params,
-    ...attributes
-  } = $props<Props>();
+  let { children, icon, dismissable = true, color = 'primary', position = 'none', divclass, div2class, div3class, align = true, transition = fade, params, ...attributes } = $props<Props>();
 
   let toastStatus: boolean = $state(true);
 
@@ -101,7 +88,7 @@
 @props: children?: any;
 @props:icon?: any;
 @props:dismissable?:  boolean; = true;
-@props:color?:  CloseBtnColors; = 'primary';
+@props:color?:  'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'primary' | 'none'; = 'primary';
 @props:position?:  'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none'; = 'none';
 @props:divclass?: string;
 @props:div2class?: string;
