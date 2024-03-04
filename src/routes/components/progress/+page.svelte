@@ -7,7 +7,7 @@
   import H2 from '../../utils/H2.svelte';
   const modules = import.meta.glob('./md/*.md', { query: '?raw', import: 'default', eager: true });
 
-  let progress = '45';
+  let progress = $state('45');
 </script>
 
 <H1>Progress bar</H1>

@@ -1,8 +1,8 @@
 <script lang="ts">
   import { Range, Label } from '$lib';
 
-  let minmaxValue = 5;
-  let stepValue = 2.5;
+  let minmaxValue = $state(5);
+  let stepValue = $state(2.5);
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';

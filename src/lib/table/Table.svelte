@@ -1,4 +1,4 @@
-<script context="module">
+<script context="module" lang="ts">
   type TableCtxType = {
     striped?: boolean;
     hoverable?: boolean;
