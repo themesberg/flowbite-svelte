@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.0
+
+### Minor Changes
+
+- feat: add table components ([`970d66e9b4350f3b11160c18e0a498d989e985ef`](https://github.com/shinokada/svelte-5-ui-lib/commit/970d66e9b4350f3b11160c18e0a498d989e985ef))
+
 ## 0.2.49
 
 ### Patch Changes
