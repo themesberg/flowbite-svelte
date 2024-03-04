@@ -97,6 +97,15 @@ export { default as TestimonialPlaceholder } from './skeleton/TestimonialPlaceho
 export { default as WidgetPlaceholder } from './skeleton/WidgetPlaceholder.svelte';
 // spinner
 export { default as Spinner } from './spinner/Spinner.svelte';
+// table
+export { default as Table } from './table/Table.svelte';
+export { default as TableBody } from './table/TableBody.svelte';
+export { default as TableBodyCell } from './table/TableBodyCell.svelte';
+export { default as TableBodyRow } from './table/TableBodyRow.svelte';
+export { default as TableHeadCell } from './table/TableHeadCell.svelte';
+export { default as TableHead } from './table/TableHead.svelte';
+export { default as TableSearch } from './table/TableSearch.svelte';
+
 // toast
 export { default as Toast } from './toast/Toast.svelte';
 // typography
