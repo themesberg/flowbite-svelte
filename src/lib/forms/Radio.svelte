@@ -17,16 +17,7 @@
   export const labelCls = (inline: boolean, extraClass: string) => twMerge(inline ? 'inline-flex' : 'flex', 'items-center', extraClass);
   export let spacing: string = 'me-2';
 
-  export const inputCls = (custom: boolean, color: FormColorType, rounded: boolean, tinted: boolean, extraClass: string) =>
-    twMerge(
-      'w-4 h-4 bg-gray-100 border-gray-300 dark:ring-offset-gray-800 focus:ring-2',
-      spacing,
-      tinted ? 'dark:bg-gray-600 dark:border-gray-500' : 'dark:bg-gray-700 dark:border-gray-600',
-      custom && 'sr-only peer',
-      rounded && 'rounded',
-      colorClasses[color],
-      extraClass
-    );
+  export const inputCls = (custom: boolean, color: FormColorType, rounded: boolean, tinted: boolean, extraClass: string) => twMerge('w-4 h-4 bg-gray-100 border-gray-300 dark:ring-offset-gray-800 focus:ring-2', spacing, tinted ? 'dark:bg-gray-600 dark:border-gray-500' : 'dark:bg-gray-700 dark:border-gray-600', custom && 'sr-only peer', rounded && 'rounded', colorClasses[color], extraClass);
 </script>
 
 <script lang="ts">
@@ -62,11 +53,11 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children?: any;
-@props:labelclass?:  string; = '';
-@props:color?:  FormColorType; = 'primary';
-@props:custom?:  boolean; = false;
-@props:inline?:  boolean; = false;
+@props:labelclass?: string;
+@props:color?: FormColorType;
+@props:custom?: boolean;
+@props:inline?: boolean;
 @props:group?: number | string | undefined;
 @props:value?: number | string;
-@props:inputclass?:  string; = '';
+@props:inputclass?: string;
 -->

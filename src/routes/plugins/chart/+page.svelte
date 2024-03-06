@@ -307,11 +307,7 @@
     <Chart {options} />
     <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
       <div class="flex items-center justify-between pt-5">
-        <Button
-          onclick={toggle}
-          btnclass="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0"
-          >Last 7 days<ChevronDownSolid class="m-2.5 ms-1.5 w-2.5" /></Button
-        >
+        <Button onclick={toggle} btnclass="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0">Last 7 days<ChevronDownSolid class="m-2.5 ms-1.5 w-2.5" /></Button>
         <div class="relative">
           <Dropdown divclass="absolute top-[5px] -left-[180px]" {isOpen}>
             {#snippet children()}
@@ -323,10 +319,7 @@
             {/snippet}
           </Dropdown>
         </div>
-        <A
-          href="/"
-          aclass="uppercase text-sm font-semibold hover:text-primary-700 dark:hover:text-primary-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2 hover:no-underline"
-        >
+        <A href="/" aclass="uppercase text-sm font-semibold hover:text-primary-700 dark:hover:text-primary-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2 hover:no-underline">
           Users Report
           <ChevronRightSolid class="ms-1.5 h-2.5 w-2.5" />
         </A>
@@ -369,11 +362,7 @@
     <Chart options={optionCol} />
     <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
       <div class="flex items-center justify-between pt-5">
-        <Button
-          onclick={toggle2}
-          btnclass="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0"
-          >Last 7 days<ChevronDownSolid class="m-2.5 ms-1.5 w-2.5" /></Button
-        >
+        <Button onclick={toggle2} btnclass="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0">Last 7 days<ChevronDownSolid class="m-2.5 ms-1.5 w-2.5" /></Button>
         <div class="relative">
           <Dropdown divclass="absolute top-[5px] -left-[180px]" isOpen={isOpen2}>
             {#snippet children()}
@@ -385,10 +374,7 @@
             {/snippet}
           </Dropdown>
         </div>
-        <A
-          href="/"
-          aclass="uppercase text-sm font-semibold hover:text-primary-700 dark:hover:text-primary-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2 hover:no-underline"
-        >
+        <A href="/" aclass="uppercase text-sm font-semibold hover:text-primary-700 dark:hover:text-primary-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2 hover:no-underline">
           Leads Report
           <ChevronRightSolid class="ms-1.5 h-2.5 w-2.5" />
         </A>
@@ -428,11 +414,7 @@
     <Chart options={optionBar} />
     <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
       <div class="flex items-center justify-between pt-5">
-        <Button
-          onclick={toggle3}
-          btnclass="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0"
-          >Last 7 days<ChevronDownSolid class="m-2.5 ms-1.5 w-2.5" /></Button
-        >
+        <Button onclick={toggle3} btnclass="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0">Last 7 days<ChevronDownSolid class="m-2.5 ms-1.5 w-2.5" /></Button>
         <div class="relative">
           <Dropdown divclass="absolute top-[5px] -left-[180px]" isOpen={isOpen3}>
             {#snippet children()}
@@ -444,10 +426,7 @@
             {/snippet}
           </Dropdown>
         </div>
-        <A
-          href="/"
-          aclass="uppercase text-sm font-semibold hover:text-primary-700 dark:hover:text-primary-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2 hover:no-underline"
-        >
+        <A href="/" aclass="uppercase text-sm font-semibold hover:text-primary-700 dark:hover:text-primary-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2 hover:no-underline">
           Leads Report
           <ChevronRightSolid class="ms-1.5 h-2.5 w-2.5" />
         </A>

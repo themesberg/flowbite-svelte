@@ -55,16 +55,7 @@
     none: ''
   };
 
-  let divCls: string = twMerge(
-    'p-4 gap-3 text-sm',
-    (icon || dismissable) && 'flex items-center',
-    bgColors[color],
-    textColors[color],
-    rounded && 'rounded-lg',
-    border && 'border',
-    borderColors[color],
-    divclass
-  );
+  let divCls: string = twMerge('p-4 gap-3 text-sm', (icon || dismissable) && 'flex items-center', bgColors[color], textColors[color], rounded && 'rounded-lg', border && 'border', borderColors[color], divclass);
 </script>
 
 {#if alertStatus}

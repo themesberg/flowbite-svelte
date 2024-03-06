@@ -2,11 +2,11 @@
   import type { SizeType } from '$lib/types';
   import { twMerge } from 'tailwind-merge';
   type CardSizeType = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  
+
   type ImgType = {
     src: string;
     alt: string;
-  }
+  };
   interface Props {
     children?: any;
     href?: string;
@@ -20,7 +20,7 @@
     customSize?: string;
   }
 
-  let { children, href, horizontal = false, shadow = false, reverse = false, img , padding = 'lg', size = 'sm', class: classname, customSize, ...attributes } = $props<Props>();
+  let { children, href, horizontal = false, shadow = false, reverse = false, img, padding = 'lg', size = 'sm', class: classname, customSize, ...attributes } = $props<Props>();
 
   const paddings = {
     none: 'p-0',
@@ -29,7 +29,7 @@
     lg: 'p-4 sm:p-6',
     xl: 'p-4 sm:p-8'
   };
-  
+
   const sizes = {
     xs: 'max-w-xs',
     sm: 'max-w-sm',
@@ -45,28 +45,14 @@
   // $inspect('href: ', href)
   $effect(() => {
     innerPadding = paddings[padding];
-    cardClass = twMerge(
-      'w-full flex max-w-sm bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700',
-      customSize ? customSize : sizes[size],
-      shadow && 'shadow-md',
-      reverse ? 'flex-col-reverse' : 'flex-col',
-      horizontal && (reverse ? 'md:flex-row-reverse' : 'md:flex-row'),
-      href && 'cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700',
-      !img && innerPadding,
-      classname
-    );
-    imgClass = twMerge(
-      reverse ? 'rounded-b-lg' : 'rounded-t-lg',
-      horizontal && 'object-cover w-full h-96 md:h-auto md:w-48 md:rounded-none',
-      horizontal && (reverse ? 'md:rounded-e-lg' : 'md:rounded-s-lg')
-    );
+    cardClass = twMerge('w-full flex max-w-sm bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700', customSize ? customSize : sizes[size], shadow && 'shadow-md', reverse ? 'flex-col-reverse' : 'flex-col', horizontal && (reverse ? 'md:flex-row-reverse' : 'md:flex-row'), href && 'cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700', !img && innerPadding, classname);
+    imgClass = twMerge(reverse ? 'rounded-b-lg' : 'rounded-t-lg', horizontal && 'object-cover w-full h-96 md:h-auto md:w-48 md:rounded-none', horizontal && (reverse ? 'md:rounded-e-lg' : 'md:rounded-s-lg'));
   });
-
 </script>
 
 <svelte:element this={tag} {role} {...attributes} class={cardClass}>
   {#if img}
-    <img class={imgClass} src={img.src} alt="{img.alt}" />
+    <img class={imgClass} src={img.src} alt={img.alt} />
     <div class={innerPadding}>
       {@render children()}
     </div>
@@ -80,12 +66,13 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children?: any;
-@props:href?:  string | undefined; = undefined;
-@props:horizontal?:  boolean; = false;
-@props:shadow?:  boolean; = false;
-@props:reverse?:  boolean; = false;
-@props:src?:  string | undefined; = undefined;
-@props:padding?:  'none' | 'sm' | 'md' | 'lg' | 'xl'; = 'lg';
-@props:size?:  SizeType; = 'sm';
+@props:href?: string;
+@props:horizontal?: boolean;
+@props:shadow?: boolean;
+@props:reverse?: boolean;
+@props:img?: ImgType;
+@props:padding?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
+@props:size?: CardSizeType;
 @props:class?: string | undefined;
+@props:customSize?: string;
 -->

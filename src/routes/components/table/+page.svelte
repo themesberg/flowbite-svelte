@@ -332,9 +332,7 @@
   <Table>
     <caption class="bg-white p-5 text-left text-lg font-semibold text-gray-900 dark:bg-gray-800 dark:text-white">
       Our products
-      <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-        Browse a list of Flowbite products designed to help you work and play, stay organized, get answers, keep in touch, grow your business, and more.
-      </p>
+      <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Browse a list of Flowbite products designed to help you work and play, stay organized, get answers, keep in touch, grow your business, and more.</p>
     </caption>
     <TableHead>
       <TableHeadCell>Product name</TableHeadCell>

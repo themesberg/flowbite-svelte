@@ -94,7 +94,7 @@
 @props:label: string | undefined;
 @props:spanclass?: string | undefined;
 @props:ulclass?: string | undefined;
-@props:transitionType?:  TransitionTypes; = 'slide';
-@props:transitionParams?:  TransitionParamTypes; = {;
+@props:transitionType?: TransitionTypes;
+@props:transitionParams?: TransitionParamTypes;
 @props:svgclass?: string;
 -->

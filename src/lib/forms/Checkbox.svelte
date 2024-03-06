@@ -31,13 +31,13 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children?: any;
-@props:color?:  FormColorType; = 'primary';
-@props:custom?:  boolean; = false;
-@props:inline?:  boolean; = false;
-@props:group?:  (string | number)[]; = [];
-@props:value?:  string | number; = 'on';
+@props:color?: FormColorType;
+@props:custom?: boolean;
+@props:inline?: boolean;
+@props:group?: (string | number)[];
+@props:value?: string | number;
 @props:checked?: boolean | undefined;
-@props:spacing?:  string; = 'me-2';
-@props:labelclass?:  string; = '';
-@props:inputclass?:  string; = '';
+@props:spacing?: string;
+@props:labelclass?: string;
+@props:inputclass?: string;
 -->

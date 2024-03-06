@@ -78,17 +78,7 @@
     'bottom-right': 'translate-x-1/3 rtl:-translate-x-1/3 translate-y-1/3'
   };
 
-  let dotClass: string = twMerge(
-    'flex-shrink-0',
-    rounded ? 'rounded' : 'rounded-full',
-    border && 'border-2 border-white dark:border-gray-800',
-    sizes[size],
-    colors[color],
-    children && 'inline-flex items-center justify-center',
-    placement && 'absolute ' + placements[placement],
-    placement && offset && offsets[placement],
-    divclass
-  );
+  let dotClass: string = twMerge('flex-shrink-0', rounded ? 'rounded' : 'rounded-full', border && 'border-2 border-white dark:border-gray-800', sizes[size], colors[color], children && 'inline-flex items-center justify-center', placement && 'absolute ' + placements[placement], placement && offset && offsets[placement], divclass);
 </script>
 
 <div class={dotClass}>

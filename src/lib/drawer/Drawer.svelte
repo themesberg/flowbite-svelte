@@ -25,27 +25,7 @@
   import { fly, slide, blur, fade } from 'svelte/transition';
   // import { clickOutside } from '$lib';
 
-  let {
-    children,
-    drawerStatus,
-    toggleDrawer,
-    closeDrawer,
-    activateClickOutside = true,
-    position = 'fixed',
-    leftOffset = 'inset-y-0 start-0',
-    rightOffset = 'inset-y-0 end-0',
-    topOffset = 'inset-x-0 top-0',
-    bottomOffset = 'inset-x-0 bottom-0',
-    width = 'w-80',
-    backdrop = true,
-    bgColor = 'bg-gray-900',
-    bgOpacity = 'bg-opacity-75',
-    placement = 'left',
-    divclass = '',
-    transitionParams,
-    transitionType = 'fly',
-    ...attributes
-  } = $props<Props>();
+  let { children, drawerStatus, toggleDrawer, closeDrawer, activateClickOutside = true, position = 'fixed', leftOffset = 'inset-y-0 start-0', rightOffset = 'inset-y-0 end-0', topOffset = 'inset-x-0 top-0', bottomOffset = 'inset-x-0 bottom-0', width = 'w-80', backdrop = true, bgColor = 'bg-gray-900', bgOpacity = 'bg-opacity-75', placement = 'left', divclass = '', transitionParams, transitionType = 'fly', ...attributes } = $props<Props>();
 
   function multiple(node: HTMLElement, params: any) {
     switch (transitionType) {

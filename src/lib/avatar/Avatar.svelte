@@ -27,14 +27,7 @@
     none: ''
   };
 
-  let avatarCls = twMerge(
-    rounded ? 'rounded' : 'rounded-full',
-    border && 'p-1 ring-2 ring-gray-300 dark:ring-gray-500',
-    sizes[size],
-    stacked && 'border-2 -ms-4 border-white dark:border-gray-800',
-    'bg-gray-100 dark:bg-gray-600 text-gray-600 dark:text-gray-300',
-    classname
-  );
+  let avatarCls = twMerge(rounded ? 'rounded' : 'rounded-full', border && 'p-1 ring-2 ring-gray-300 dark:ring-gray-500', sizes[size], stacked && 'border-2 -ms-4 border-white dark:border-gray-800', 'bg-gray-100 dark:bg-gray-600 text-gray-600 dark:text-gray-300', classname);
 </script>
 
 {#if !src || !!href || children || dot}

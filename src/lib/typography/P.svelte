@@ -19,23 +19,7 @@
     weight?: PweightType;
   }
 
-  let {
-    children,
-    color = 'text-gray-900 dark:text-white',
-    pclass,
-    height = 'normal',
-    align = 'left',
-    justify = false,
-    italic = false,
-    firstupper = false,
-    upperclass = 'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:me-3 first-letter:float-left',
-    opacity,
-    whitespace = 'normal',
-    size = 'base',
-    space,
-    weight = 'normal',
-    ...attributes
-  } = $props<Props>();
+  let { children, color = 'text-gray-900 dark:text-white', pclass, height = 'normal', align = 'left', justify = false, italic = false, firstupper = false, upperclass = 'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:me-3 first-letter:float-left', opacity, whitespace = 'normal', size = 'base', space, weight = 'normal', ...attributes } = $props<Props>();
 
   const sizes = {
     xs: 'text-xs',
@@ -98,19 +82,7 @@
     .map((element) => element + '/' + String(opacity))
     .join(' ');
 
-  let classP = twMerge(
-    size && sizes[size],
-    (opacity && colorAndopacity) || (color && color),
-    height && heights[height],
-    weight && weights[weight],
-    space && spaces[space],
-    align && aligns[align],
-    justify && 'text-justify',
-    italic && 'italic',
-    firstupper && upperclass,
-    whitespace && whitespaces[whitespace],
-    pclass
-  );
+  let classP = twMerge(size && sizes[size], (opacity && colorAndopacity) || (color && color), height && heights[height], weight && weights[weight], space && spaces[space], align && aligns[align], justify && 'text-justify', italic && 'italic', firstupper && upperclass, whitespace && whitespaces[whitespace], pclass);
 </script>
 
 <p {...attributes} class={classP}>

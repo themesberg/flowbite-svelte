@@ -52,8 +52,7 @@
 
   let iconClass: string = twMerge('inline-flex items-center justify-center shrink-0 rounded-lg', colors[color], defaultIconCls, div2class);
 
-  const clsBtnExtraClass =
-    'ms-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700';
+  const clsBtnExtraClass = 'ms-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700';
 </script>
 
 {#if toastStatus}
@@ -87,13 +86,13 @@
 ## Props
 @props: children?: any;
 @props:icon?: any;
-@props:dismissable?:  boolean; = true;
-@props:color?:  'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'primary' | 'none'; = 'primary';
-@props:position?:  'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none'; = 'none';
+@props:dismissable?: boolean;
+@props:color?: 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'primary' | 'none';
+@props:position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none';
 @props:divclass?: string;
 @props:div2class?: string;
 @props:div3class?: string;
-@props:align?:  boolean; = true;
-@props:transition?:  TransitionFunc; = fade;
+@props:align?: boolean;
+@props:transition?: TransitionFunc;
 @props:params?: object;
 -->

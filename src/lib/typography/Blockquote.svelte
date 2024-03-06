@@ -52,12 +52,12 @@
 ## Props
 @props: children?: any;
 @props:border?: boolean;
-@props:italic?:  boolean; = true;
+@props:italic?: boolean;
 @props:borderclass?: string | undefined;
 @props:bgclass?: string | undefined;
 @props:bg?: boolean;
 @props:baseclass?: string | undefined;
-@props:alignment?:  'left' | 'center' | 'right'; = 'left';
-@props:size?:  BlockQuoteType; = 'lg';
+@props:alignment?: 'left' | 'center' | 'right';
+@props:size?: BlockQuoteType;
 @props:class?: string | undefined;
 -->

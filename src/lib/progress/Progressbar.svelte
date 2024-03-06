@@ -20,22 +20,7 @@
   import type { EasingFunction } from 'svelte/transition';
   import { twMerge, twJoin } from 'tailwind-merge';
 
-  let {
-    progress = '45',
-    precision = 0,
-    tweenDuration = 400,
-    animate = false,
-    size = 'h-2.5',
-    labelInside = false,
-    labelOutside,
-    easing = cubicOut,
-    color = 'primary',
-    div2class,
-    labeloutsidedivclass,
-    divclass,
-    class: classname,
-    ...attributes
-  } = $props<Props>();
+  let { progress = '45', precision = 0, tweenDuration = 400, animate = false, size = 'h-2.5', labelInside = false, labelOutside, easing = cubicOut, color = 'primary', div2class, labeloutsidedivclass, divclass, class: classname, ...attributes } = $props<Props>();
   let labelInsideCls: string = 'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
   let divCls: string = 'w-full bg-gray-200 rounded-full dark:bg-gray-700';
 

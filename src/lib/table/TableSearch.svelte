@@ -28,32 +28,9 @@
     class?: string;
   }
 
-  let {
-    children,
-    svgSearch,
-    header,
-    footer,
-    divclass = 'relative overflow-x-auto shadow-md sm:rounded-lg',
-    inputValue,
-    striped,
-    hoverable,
-    placeholder = 'Search',
-    customColor = '',
-    color = 'default',
-    innerDivClass = 'p-4',
-    inputclass,
-    searchClass = 'relative mt-1',
-    svgDivClass,
-    svgClass = 'w-5 h-5 text-gray-500 dark:text-gray-400',
-    classDiv,
-    class: className,
-    ...attributes
-  } = $props<Props>();
+  let { children, svgSearch, header, footer, divclass = 'relative overflow-x-auto shadow-md sm:rounded-lg', inputValue, striped, hoverable, placeholder = 'Search', customColor = '', color = 'default', innerDivClass = 'p-4', inputclass, searchClass = 'relative mt-1', svgDivClass, svgClass = 'w-5 h-5 text-gray-500 dark:text-gray-400', classDiv, class: className, ...attributes } = $props<Props>();
 
-  let inputCls = twMerge(
-    'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 p-2.5 ps-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500',
-    inputclass
-  );
+  let inputCls = twMerge('bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 p-2.5 ps-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500', inputclass);
   let svgDivCls = twMerge('absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none', svgDivClass);
 
   const colors: { [key: string]: string } = {

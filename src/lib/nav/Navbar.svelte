@@ -22,23 +22,7 @@
     activeClass?: string;
   }
 
-  let {
-    children,
-    toggleNav,
-    closeNav,
-    openMainMenu = true,
-    navStatus,
-    fluid,
-    brand,
-    breakPoint = 'md',
-    navclass,
-    divclass,
-    btnclass,
-    div2class,
-    activeClass,
-    nonActiveClass,
-    ...attributes
-  } = $props<Props>();
+  let { children, toggleNav, closeNav, openMainMenu = true, navStatus, fluid, brand, breakPoint = 'md', navclass, divclass, btnclass, div2class, activeClass, nonActiveClass, ...attributes } = $props<Props>();
 
   setContext<navbarType>('navbarContext', {
     breakPoint: breakPoint,
@@ -56,11 +40,7 @@
     xl: 'xl:hidden',
     xxl: '2xl:hidden'
   };
-  let btnCls = twMerge(
-    'inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600',
-    btnBreak[breakPoint],
-    btnclass
-  );
+  let btnCls = twMerge('inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600', btnBreak[breakPoint], btnclass);
   const blockBreak = {
     md: 'md:block md:w-auto',
     lg: 'lg:block lg:w-auto',

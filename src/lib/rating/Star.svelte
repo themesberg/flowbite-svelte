@@ -42,12 +42,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: fillPercent?:  number; = 100;
-@props:fillColor?:  string; = '#F5CA14';
-@props:strokeColor?:  string; = '#F5CA14';
-@props:size?:  number; = 24;
-@props:ariaLabel?:  string; = 'star';
-@props:id?:  string; = idGenerator();
-@props:role?:  string; = 'img';
+@props: fillPercent?:  number; = 100, fillColor;
+@props:fillColor?: string;
+@props:strokeColor?: string;
+@props:size?: number;
+@props:ariaLabel?: string;
+@props:id?: string;
+@props:role?: string;
 @props:svgclass?: string;
 -->

@@ -55,10 +55,10 @@
 @props: children?: any;
 @props:text?: any;
 @props:divclass?: string;
-@props:size?:  number; = 24;
-@props:total?:  number; = 5;
-@props:rating?:  number; = 4;
-@props:partialId?:  string; = 'partialStar' + idGenerator();
-@props:icon?:  ComponentType; = Star;
-@props:count?:  boolean; = false;
+@props:size?: number;
+@props:total?: number;
+@props:rating?: number;
+@props:partialId?: string;
+@props:icon?: ComponentType;
+@props:count?: boolean;
 -->

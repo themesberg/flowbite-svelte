@@ -24,26 +24,26 @@
 <p>Use <code>'xs' | 'sm' | 'md' | 'lg' | 'xl'</code> or <code>customSize</code> props to change the card size.</p>
 
 <CodeWrapper class="flex justify-center">
-  <div class='flex flex-col space-y-4'>
-  <Card size='xs'>
-    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions </h5>
-    <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of  so far, in reverse chronological order.</p>
-  </Card>
+  <div class="flex flex-col space-y-4">
+    <Card size="xs">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
+      <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
+    </Card>
 
-  <Card>
-    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions </h5>
-    <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of  so far, in reverse chronological order.</p>
-  </Card>
+    <Card>
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
+      <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
+    </Card>
 
-  <Card size='md'>
-    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions </h5>
-    <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of  so far, in reverse chronological order.</p>
-  </Card>
+    <Card size="md">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
+      <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
+    </Card>
 
-  <Card customSize='max-w-[220px]'>
-    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Technology acquisitions </h5>
-    <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions.</p>
-  </Card>
+    <Card customSize="max-w-[220px]">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Technology acquisitions</h5>
+      <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions.</p>
+    </Card>
   </div>
 </CodeWrapper>
 
@@ -53,8 +53,8 @@
 
 <CodeWrapper class="flex justify-center">
   <Card>
-    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions </h5>
-    <p class="mb-3 font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of  so far, in reverse chronological order.</p>
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
+    <p class="mb-3 font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
     <Button btnclass="w-fit">
       Read more <ArrowRightOutline class="ms-2 h-3.5 w-3.5 text-white" />
     </Button>
@@ -68,9 +68,9 @@
 <p>To create a linkable card, use the <code>href</code> prop. However, avoid including an additional link inside the card itself, since you are adding a-tag within a-tag.</p>
 
 <CodeWrapper class="flex justify-center">
-  <Card href='/'>
+  <Card href="/">
     <GiftBoxSolid class="mb-3 h-7 w-7 text-gray-500 dark:text-gray-400" />
-      <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Need a help in Claim?</h5>
+    <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Need a help in Claim?</h5>
     <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
     <span class="inline-flex items-center text-primary-600 hover:underline">
       See our guideline
@@ -84,10 +84,10 @@
 <H2>Card with image</H2>
 
 <CodeWrapper class="flex justify-center">
-  <div class='flex flex-col space-y-4'>
-    <Card img={{src:"/images/image-1.webp", alt:'my image'}} reverse={vCard}>
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions </h5>
-      <p class="mb-3 font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of  so far, in reverse chronological order.</p>
+  <div class="flex flex-col space-y-4">
+    <Card img={{ src: '/images/image-1.webp', alt: 'my image' }} reverse={vCard}>
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
+      <p class="mb-3 font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
       <Button>
         Read more <ArrowRightOutline class="ms-2 h-3.5 w-3.5 text-white" />
       </Button>
@@ -101,10 +101,10 @@
 <H2>Horizontal card</H2>
 
 <CodeWrapper class="flex justify-center">
-  <div class='flex flex-col space-y-4'>
-    <Card img={{src:"/images/image-1.webp", alt:'my image'}} href="/" reverse={hCard} horizontal size="md">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions </h5>
-      <p class="mb-3 font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of  so far, in reverse chronological order.</p>
+  <div class="flex flex-col space-y-4">
+    <Card img={{ src: '/images/image-1.webp', alt: 'my image' }} href="/" reverse={hCard} horizontal size="md">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
+      <p class="mb-3 font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
     </Card>
     <Toggle bind:checked={hCard} spanclass="italic dark:text-gray-500">Reverse: {hCard}</Toggle>
   </div>

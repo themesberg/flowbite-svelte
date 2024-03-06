@@ -59,14 +59,7 @@
 
   const baseClass: string = 'font-medium inline-flex items-center justify-center px-2.5 py-0.5';
 
-  let badgeClass: string = twMerge(
-    baseClass,
-    large ? 'text-sm' : 'text-xs',
-    border ? `border ${borderedColors[color]}` : colors[color],
-    href && hoverColors[color],
-    rounded ? 'rounded-full' : 'rounded',
-    divclass
-  );
+  let badgeClass: string = twMerge(baseClass, large ? 'text-sm' : 'text-xs', border ? `border ${borderedColors[color]}` : colors[color], href && hoverColors[color], rounded ? 'rounded-full' : 'rounded', divclass);
 </script>
 
 {#if badgeStatus}

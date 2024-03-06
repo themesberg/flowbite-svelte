@@ -40,10 +40,7 @@
       </NavBrand>
 
       <div class="ml-auto flex items-center md:order-1">
-        <a
-          class="hidden whitespace-normal rounded-lg p-2.5 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-0 focus:ring-gray-400 dark:hover:bg-gray-600 dark:hover:text-white sm:inline-block"
-          href="https://github.com/shinokada/svelte-5-ui-lib"
-        >
+        <a class="hidden whitespace-normal rounded-lg p-2.5 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-0 focus:ring-gray-400 dark:hover:bg-gray-600 dark:hover:text-white sm:inline-block" href="https://github.com/shinokada/svelte-5-ui-lib">
           <GitHub />
         </a>
         <Darkmode />
@@ -61,12 +58,7 @@
 <Drawer width="64" drawerStatus={navDrawerStatus} closeDrawer={closeNavDrawer} {transitionParams}>
   <div class="flex items-center pb-4">
     <h5 id="drawer-label" class="inline-flex items-center text-lg font-semibold text-gray-500 dark:text-gray-400">Svelte 5 UI Lib</h5>
-    <button
-      type="button"
-      onclick={closeNavDrawer}
-      class="ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
-      data-modal-hide="default-modal"
-    >
+    <button type="button" onclick={closeNavDrawer} class="ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
       <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
       </svg>

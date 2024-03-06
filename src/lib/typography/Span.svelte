@@ -14,35 +14,14 @@
   }
   import { twMerge } from 'tailwind-merge';
 
-  let {
-    children,
-    class: classname,
-    italic,
-    underline,
-    linethrough,
-    uppercase,
-    gradient,
-    highlight,
-    highlightClass = 'text-blue-600 dark:text-blue-500',
-    decorationClass = 'decoration-2 decoration-blue-400 dark:decoration-blue-600',
-    gradientClass = 'text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400',
-    ...attributes
-  } = $props<Props>();
+  let { children, class: classname, italic, underline, linethrough, uppercase, gradient, highlight, highlightClass = 'text-blue-600 dark:text-blue-500', decorationClass = 'decoration-2 decoration-blue-400 dark:decoration-blue-600', gradientClass = 'text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400', ...attributes } = $props<Props>();
 
   // const highlightClass: string = 'text-blue-600 dark:text-blue-500';
   // export let decorationClass: string = 'decoration-2 decoration-blue-400 dark:decoration-blue-600';
   // export let gradientClass: string = 'text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400';
 
   let underlineClass = twMerge('underline', decorationClass);
-  let classSpan: string = twMerge(
-    italic && 'italic',
-    underline && underlineClass,
-    linethrough && 'line-through',
-    uppercase && 'uppercase',
-    gradient ? gradientClass : 'font-semibold text-gray-900 dark:text-white',
-    highlight && highlightClass,
-    classname
-  );
+  let classSpan: string = twMerge(italic && 'italic', underline && underlineClass, linethrough && 'line-through', uppercase && 'uppercase', gradient ? gradientClass : 'font-semibold text-gray-900 dark:text-white', highlight && highlightClass, classname);
 </script>
 
 <span {...attributes} class={classSpan}>

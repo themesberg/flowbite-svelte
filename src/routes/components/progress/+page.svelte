@@ -110,25 +110,9 @@
 <H2>Custom style</H2>
 
 <CodeWrapper>
-  <Progressbar
-    progress="50"
-    size="h-3"
-    labelInside
-    color="green"
-    div2class="bg-blue-600 text-blue-100 text-xs font-medium text-center p-0 leading-none rounded-full"
-    class="my-4"
-    labelOutside="Size h-3"
-  />
+  <Progressbar progress="50" size="h-3" labelInside color="green" div2class="bg-blue-600 text-blue-100 text-xs font-medium text-center p-0 leading-none rounded-full" class="my-4" labelOutside="Size h-3" />
 
-  <Progressbar
-    progress="50"
-    size="h-10"
-    labelInside
-    color="red"
-    div2class="bg-blue-600 text-blue-100 text-2xl font-medium text-center p-2 leading-none rounded-full"
-    class="my-4"
-    labelOutside="Size h-10"
-  />
+  <Progressbar progress="50" size="h-10" labelInside color="red" div2class="bg-blue-600 text-blue-100 text-2xl font-medium text-center p-2 leading-none rounded-full" class="my-4" labelOutside="Size h-10" />
 
   <Progressbar progress="50" size="h-10" color="indigo" div2class="bg-blue-600 text-blue-100 text-2xl font-medium text-center p-2 leading-none rounded-full" class="my-4" labelOutside="Size h-10" />
 
@@ -140,18 +124,7 @@
 <H2>Animation</H2>
 
 <CodeWrapper>
-  <Progressbar
-    {progress}
-    animate
-    precision={2}
-    labelOutside="With animation"
-    labelInside
-    tweenDuration={1500}
-    easing={sineOut}
-    size="h-6"
-    color="yellow"
-    div2class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full mb-8"
-  />
+  <Progressbar {progress} animate precision={2} labelOutside="With animation" labelInside tweenDuration={1500} easing={sineOut} size="h-6" color="yellow" div2class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full mb-8" />
   <Progressbar {progress} labelOutside="Without animation" labelInside size="h-6" color="gray" div2class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full" />
   <Button onclick={() => (progress = `${Math.round(Math.random() * 100)}`)} btnclass="mt-8">Randomize</Button>
 </CodeWrapper>

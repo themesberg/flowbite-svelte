@@ -60,14 +60,7 @@
     'transition-all duration-75 ease-in group-hover:!bg-opacity-0 group-hover:!text-inherit'
   );
 
-  let divClass: string = twMerge(
-    outline && 'p-0.5',
-    gradientClasses[color],
-    shadow && 'shadow-lg',
-    shadow && coloredShadowClasses[color],
-    group ? (pill && 'first:rounded-s-full last:rounded-e-full') || 'first:rounded-s-lg last:rounded-e-lg' : (pill && 'rounded-full') || 'rounded-lg',
-    divclass
-  );
+  let divClass: string = twMerge(outline && 'p-0.5', gradientClasses[color], shadow && 'shadow-lg', shadow && coloredShadowClasses[color], group ? (pill && 'first:rounded-s-full last:rounded-e-full') || 'first:rounded-s-lg last:rounded-e-lg' : (pill && 'rounded-full') || 'rounded-lg', divclass);
 </script>
 
 {#if outline}

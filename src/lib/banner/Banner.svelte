@@ -65,10 +65,10 @@
 ## Props
 @props: children?: any;
 @props:header?: any;
-@props:position?:  'static' | 'fixed' | 'absolute' | 'relative' | 'sticky'; = 'sticky';
-@props:dismissable?:  boolean; = true;
-@props:color?:  'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'primary' | 'none'; = 'gray';
-@props:bannerType:  'default' | 'bottom' | 'cta' | 'signup' | 'info'; = 'default';
+@props:position?: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky';
+@props:dismissable?: boolean;
+@props:color?: 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'primary' | 'none';
+@props:bannerType: 'default' | 'bottom' | 'cta' | 'signup' | 'info';
 @props:divclass: string | undefined;
 @props:div2class: string | undefined;
 -->
