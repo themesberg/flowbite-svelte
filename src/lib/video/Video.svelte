@@ -9,7 +9,16 @@
     class?: string | undefined;
   }
 
-  let { children, src, type = 'video/mp4', trackSrc, srclang = 'en', label = 'english_captions', class: classname, ...attributes } = $props<Props>();
+  let {
+    children,
+    src,
+    type = 'video/mp4',
+    trackSrc,
+    srclang = 'en',
+    label = 'english_captions',
+    class: classname,
+    ...attributes
+  } = $props<Props>();
 </script>
 
 <video {...attributes} class={classname}>
@@ -27,9 +36,9 @@
 ## Props
 @props: children?: any;
 @props:src: string | undefined;
-@props:type?: string | undefined;
+@props:type?:  string | undefined; = 'video/mp4';
 @props:trackSrc?: string | undefined;
-@props:srclang?: string | undefined;
-@props:label?: string | undefined;
+@props:srclang?:  string | undefined; = 'en';
+@props:label?:  string | undefined; = 'english_captions';
 @props:class?: string | undefined;
 -->

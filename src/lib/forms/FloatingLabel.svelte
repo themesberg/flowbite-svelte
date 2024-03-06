@@ -14,7 +14,18 @@
     inputclass?: string;
     labelclass?: string;
   }
-  let { children, id = idGenerator(), style = 'standard', type = 'text', size = 'default', color = 'base', divclass, inputclass, labelclass, ...attributes } = $props<Props>();
+  let {
+    children,
+    id = idGenerator(),
+    style = 'standard',
+    type = 'text',
+    size = 'default',
+    color = 'base',
+    divclass,
+    inputclass,
+    labelclass,
+    ...attributes
+  } = $props<Props>();
   // export let id: string = idGenerator();
   // export let style: 'filled' | 'outlined' | 'standard' = 'standard';
   // export let type: InputType = 'text';
@@ -59,20 +70,27 @@
   };
 
   const inputClasses = {
-    filled: 'block rounded-t-lg w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 appearance-none dark:text-white focus:outline-none focus:ring-0 peer',
-    outlined: 'block w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 appearance-none dark:text-white  focus:outline-none focus:ring-0 peer',
-    standard: 'block w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none dark:text-white  focus:outline-none focus:ring-0 peer'
+    filled:
+      'block rounded-t-lg w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 appearance-none dark:text-white focus:outline-none focus:ring-0 peer',
+    outlined:
+      'block w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 appearance-none dark:text-white  focus:outline-none focus:ring-0 peer',
+    standard:
+      'block w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none dark:text-white  focus:outline-none focus:ring-0 peer'
   };
 
   const labelClasses = {
-    filled: 'absolute text-sm duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-left rtl:origin-right start-2.5  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4',
-    outlined: 'absolute text-sm duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-left rtl:origin-right bg-white dark:bg-gray-900 px-2 peer-focus:px-2  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1',
-    standard: 'absolute text-sm duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-left rtl:origin-right peer-focus:start-0  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
+    filled:
+      'absolute text-sm duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-left rtl:origin-right start-2.5  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4',
+    outlined:
+      'absolute text-sm duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-left rtl:origin-right bg-white dark:bg-gray-900 px-2 peer-focus:px-2  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1',
+    standard:
+      'absolute text-sm duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-left rtl:origin-right peer-focus:start-0  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
   };
 
   const inputColorClasses = {
     base: 'border-gray-300 dark:border-gray-600 dark:focus:border-primary-500 focus:border-primary-600',
-    green: 'border-green-600 dark:border-green-500 dark:focus:border-green-500 focus:border-green-600',
+    green:
+      'border-green-600 dark:border-green-500 dark:focus:border-green-500 focus:border-green-600',
     red: 'border-red-600 dark:border-red-500 dark:focus:border-red-500  focus:border-red-600'
   };
 
@@ -84,9 +102,28 @@
 </script>
 
 <div class={twMerge(divClasses[style], divclass)}>
-  <input {id} {...attributes} {...{ type }} placeholder=" " class={twMerge(inputClasses[style], inputColorClasses[color], inputSizes[style][size], inputclass)} />
+  <input
+    {id}
+    {...attributes}
+    {...{ type }}
+    placeholder=" "
+    class={twMerge(
+      inputClasses[style],
+      inputColorClasses[color],
+      inputSizes[style][size],
+      inputclass
+    )}
+  />
 
-  <label for={id} class={twMerge(labelClasses[style], labelColorClasses[color], labelSizes[style][size], labelclass)}>
+  <label
+    for={id}
+    class={twMerge(
+      labelClasses[style],
+      labelColorClasses[color],
+      labelSizes[style][size],
+      labelclass
+    )}
+  >
     {@render children()}
   </label>
 </div>
@@ -96,11 +133,11 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children?: any;
-@props:id?: string;
-@props:style?: 'filled' | 'outlined' | 'standard';
-@props:type?: InputType;
-@props:size?: 'small' | 'default';
-@props:color?: 'base' | 'green' | 'red';
+@props:id?:  string; = idGenerator();
+@props:style?:  'filled' | 'outlined' | 'standard'; = 'standard';
+@props:type?:  InputType; = 'text';
+@props:size?:  'small' | 'default'; = 'default';
+@props:color?:  'base' | 'green' | 'red'; = 'base';
 @props:value?: any;
 @props:divclass?: string;
 @props:inputclass?: string;

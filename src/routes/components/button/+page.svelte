@@ -1,6 +1,11 @@
 <script lang="ts">
   import { Button, Indicator, GradientButton, Spinner } from '$lib';
-  import { EnvelopeSolid, ArrowRightOutline, ShoppingBagSolid, ThumbsUpSolid } from 'flowbite-svelte-icons';
+  import {
+    EnvelopeSolid,
+    ArrowRightOutline,
+    ShoppingBagSolid,
+    ThumbsUpSolid
+  } from 'flowbite-svelte-icons';
   const btn1 = () => {
     alert('You clicked btn1.');
   };
@@ -11,7 +16,11 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  const modules = import.meta.glob('./md/*.md', { query: '?raw', import: 'default', eager: true });
+  const modules = import.meta.glob('./md/*.md', {
+    query: '?raw',
+    import: 'default',
+    eager: true
+  });
 </script>
 
 <H1>Buttons</H1>
@@ -32,7 +41,10 @@
   <Button color="purple">Purple</Button>
 </CodeWrapper>
 
-<HighlightCompo codeLang="js" code={modules['./md/default-buttons.md'] as string} />
+<HighlightCompo
+  codeLang="js"
+  code={modules['./md/default-buttons.md'] as string}
+/>
 
 <H2>Button with link</H2>
 
@@ -40,7 +52,10 @@
   <Button href="/">Home</Button>
 </CodeWrapper>
 
-<HighlightCompo codeLang="plain" code={modules['./md/button-with-link.md'] as string} />
+<HighlightCompo
+  codeLang="plain"
+  code={modules['./md/button-with-link.md'] as string}
+/>
 
 <H2>Button pills</H2>
 
@@ -96,7 +111,11 @@
 <CodeWrapper>
   <Button btnclass="gap-2">
     Messages
-    <Indicator color="none" divclass="bg-primary-200 text-xs font-semibold text-primary-800" size="lg">2</Indicator>
+    <Indicator
+      color="none"
+      divclass="bg-primary-200 text-xs font-semibold text-primary-800"
+      size="lg">2</Indicator
+    >
   </Button>
 </CodeWrapper>
 
@@ -127,7 +146,11 @@
 <CodeWrapper>
   <Button btnclass="gap-2">
     Messages
-    <Indicator color="none" divclass="bg-primary-200 text-xs text-primary-800 font-semibold" size="lg">2</Indicator>
+    <Indicator
+      color="none"
+      divclass="bg-primary-200 text-xs text-primary-800 font-semibold"
+      size="lg">2</Indicator
+    >
   </Button>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/button-with-label.md'] as string} />
@@ -136,7 +159,9 @@
 <CodeWrapper>
   <div class="flex flex-wrap items-center gap-2">
     <Button btnclass="!p-2"><ArrowRightOutline class="h-5 w-5" /></Button>
-    <Button pill={true} btnclass="!p-2"><ArrowRightOutline class="h-4 w-4" /></Button>
+    <Button pill={true} btnclass="!p-2"
+      ><ArrowRightOutline class="h-4 w-4" /></Button
+    >
     <Button outline={true} btnclass="!p-2" size="lg">
       <ThumbsUpSolid class="h-5 w-5 text-primary-700" />
     </Button>
@@ -205,7 +230,9 @@
   <GradientButton outline color="pinkToOrange">Pink to Orange</GradientButton>
   <GradientButton outline color="tealToLime">Teal to Lime</GradientButton>
   <GradientButton outline color="redToYellow">Red to Yellow</GradientButton>
-  <GradientButton outline color="redToYellow" divclass="w-72">Red to Yellow</GradientButton>
+  <GradientButton outline color="redToYellow" divclass="w-72"
+    >Red to Yellow</GradientButton
+  >
 </CodeWrapper>
 <HighlightCompo code={modules['./md/gradient-outline.md'] as string} />
 
@@ -232,13 +259,21 @@
   <GradientButton pill color="red">Red</GradientButton>
   <GradientButton pill color="pink">Pink</GradientButton>
   <GradientButton pill color="purple">Purple</GradientButton>
-  <GradientButton pill outline color="purpleToBlue">Purple to Blue</GradientButton>
+  <GradientButton pill outline color="purpleToBlue"
+    >Purple to Blue</GradientButton
+  >
   <GradientButton pill outline color="cyanToBlue">Cyan to Blue</GradientButton>
-  <GradientButton pill outline color="greenToBlue">Green to Blue</GradientButton>
-  <GradientButton pill outline color="purpleToPink">Purple to Pink</GradientButton>
-  <GradientButton pill outline color="pinkToOrange">Pink to Orange</GradientButton>
+  <GradientButton pill outline color="greenToBlue">Green to Blue</GradientButton
+  >
+  <GradientButton pill outline color="purpleToPink"
+    >Purple to Pink</GradientButton
+  >
+  <GradientButton pill outline color="pinkToOrange"
+    >Pink to Orange</GradientButton
+  >
   <GradientButton pill outline color="tealToLime">Teal to Lime</GradientButton>
-  <GradientButton pill outline color="redToYellow">Red to Yellow</GradientButton>
+  <GradientButton pill outline color="redToYellow">Red to Yellow</GradientButton
+  >
   <GradientButton pill shadow color="blue">Blue</GradientButton>
   <GradientButton pill shadow color="green">Green</GradientButton>
   <GradientButton pill shadow color="cyan">Cyan</GradientButton>

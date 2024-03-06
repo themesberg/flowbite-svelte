@@ -8,7 +8,14 @@
   }
   import { twMerge } from 'tailwind-merge';
 
-  let { children, color = 'gray', show = true, labelclass, forId, ...attributes } = $props<Props>();
+  let {
+    children,
+    color = 'gray',
+    show = true,
+    labelclass,
+    forId,
+    ...attributes
+  } = $props<Props>();
 
   const colorClasses = {
     gray: 'text-gray-900 dark:text-gray-300',
@@ -17,7 +24,11 @@
     disabled: 'text-gray-400 dark:text-gray-500'
   };
 
-  let labelCls = twMerge('text-sm rtl:text-right font-medium block', colorClasses[color], labelclass);
+  let labelCls = twMerge(
+    'text-sm rtl:text-right font-medium block',
+    colorClasses[color],
+    labelclass
+  );
 </script>
 
 {#if show}
@@ -33,8 +44,8 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children?: any;
-@props:color?: 'gray' | 'green' | 'red' | 'disabled';
-@props:show?: boolean;
+@props:color?:  'gray' | 'green' | 'red' | 'disabled'; = 'gray';
+@props:show?:  boolean; = true;
 @props:labelclass?: string | undefined;
 @props:forId?: string | undefined;
 -->

@@ -8,10 +8,24 @@
   }
   import { twMerge } from 'tailwind-merge';
 
-  let { children, icon, divclass, hrclass, div2class, ...attributes } = $props<Props>();
-  let horizontalCls: string = twMerge('h-px my-8 bg-gray-200 border-0 dark:bg-gray-700', hrclass);
-  let divCls = twMerge('inline-flex items-center justify-center w-full', divclass, children && 'relative');
-  let innerDivCls = twMerge('absolute px-4 -translate-x-1/2 rtl:translate-x-1/2 bg-white start-1/2 dark:bg-gray-900', icon ? 'absolute start-1/2 px-4 bg-white -translate-x-1/2 rtl:translate-x-1/2' : 'absolute px-3 font-medium text-gray-900 -translate-x-1/2 rtl:translate-x-1/2 bg-white start-1/2 dark:text-white dark:bg-gray-900 ', div2class);
+  let { children, icon, divclass, hrclass, div2class, ...attributes } =
+    $props<Props>();
+  let horizontalCls: string = twMerge(
+    'h-px my-8 bg-gray-200 border-0 dark:bg-gray-700',
+    hrclass
+  );
+  let divCls = twMerge(
+    'inline-flex items-center justify-center w-full',
+    divclass,
+    children && 'relative'
+  );
+  let innerDivCls = twMerge(
+    'absolute px-4 -translate-x-1/2 rtl:translate-x-1/2 bg-white start-1/2 dark:bg-gray-900',
+    icon
+      ? 'absolute start-1/2 px-4 bg-white -translate-x-1/2 rtl:translate-x-1/2'
+      : 'absolute px-3 font-medium text-gray-900 -translate-x-1/2 rtl:translate-x-1/2 bg-white start-1/2 dark:text-white dark:bg-gray-900 ',
+    div2class
+  );
 </script>
 
 {#if children}

@@ -1,12 +1,17 @@
 <script lang="ts">
   import { Toggle } from '$lib';
-  const customSize = 'w-16 h-10 after:top-1 after:left-[4px]  after:h-8 after:w-8';
+  const customSize =
+    'w-16 h-10 after:top-1 after:left-[4px]  after:h-8 after:w-8';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  const modules = import.meta.glob('./md/*.md', { query: '?raw', import: 'default', eager: true });
+  const modules = import.meta.glob('./md/*.md', {
+    query: '?raw',
+    import: 'default',
+    eager: true
+  });
 </script>
 
 <H1>Toggle</H1>

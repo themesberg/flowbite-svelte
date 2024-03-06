@@ -10,11 +10,23 @@
   }
 
   import { twMerge } from 'tailwind-merge';
-  let { spanclass, aclass, href, by, target, copyrightMessage = 'All Rights Reserved.', year, ...attributes } = $props<Props>();
+  let {
+    spanclass,
+    aclass,
+    href,
+    by,
+    target,
+    copyrightMessage = 'All Rights Reserved.',
+    year,
+    ...attributes
+  } = $props<Props>();
 
   if (!year) year = new Date().getFullYear();
 
-  let spanCls: string = twMerge('block text-sm text-gray-500 sm:text-center dark:text-gray-400', spanclass);
+  let spanCls: string = twMerge(
+    'block text-sm text-gray-500 sm:text-center dark:text-gray-400',
+    spanclass
+  );
   let aCls: string = twMerge('hover:underline', aclass);
 </script>
 
@@ -39,6 +51,6 @@
 @props:href?: string | undefined;
 @props:by?: string | undefined;
 @props:target?: string | undefined;
-@props:copyrightMessage?: string | undefined;
+@props:copyrightMessage?:  string | undefined; = 'All Rights Reserved.';
 @props:year?: number | undefined;
 -->

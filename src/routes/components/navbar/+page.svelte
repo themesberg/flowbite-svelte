@@ -1,11 +1,25 @@
 <script lang="ts">
-  import { Navbar, NavLi, NavBrand, NavUl, uiHelpers, ImagePlaceholder, Skeleton, TextPlaceholder, P } from '$lib';
+  import {
+    Navbar,
+    NavLi,
+    NavBrand,
+    NavUl,
+    uiHelpers,
+    ImagePlaceholder,
+    Skeleton,
+    TextPlaceholder,
+    P
+  } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
 
-  const modules = import.meta.glob('./md/*.md', { query: '?raw', import: 'default', eager: true });
+  const modules = import.meta.glob('./md/*.md', {
+    query: '?raw',
+    import: 'default',
+    eager: true
+  });
   let nav1 = uiHelpers();
   let navStatus1 = $state(false);
   let toggleNav1 = nav1.toggle;
@@ -35,7 +49,12 @@
 <H2>Default Nav</H2>
 
 <CodeWrapper>
-  <Navbar toggleNav={toggleNav1} closeNav={closeNav1} navStatus={navStatus1} breakPoint="md">
+  <Navbar
+    toggleNav={toggleNav1}
+    closeNav={closeNav1}
+    navStatus={navStatus1}
+    breakPoint="md"
+  >
     {#snippet brand()}
       <NavBrand siteName="Svelte 5">
         <img width="30" src="/images/svelte-icon.png" alt="svelte icon" />
@@ -53,9 +72,17 @@
 <HighlightCompo code={modules['./md/default-nav.md'] as string} />
 
 <H2>Breakpoint</H2>
-<P>Use the `breakPoint` prop to change the breakpoint. There are 4 breakpoints: `md`, `lg`, `xl`, `xxl`.</P>
+<P
+  >Use the `breakPoint` prop to change the breakpoint. There are 4 breakpoints:
+  `md`, `lg`, `xl`, `xxl`.</P
+>
 <CodeWrapper>
-  <Navbar toggleNav={toggleNavLg} closeNav={closeNavLg} navStatus={navStatusLg} breakPoint="lg">
+  <Navbar
+    toggleNav={toggleNavLg}
+    closeNav={closeNavLg}
+    navStatus={navStatusLg}
+    breakPoint="lg"
+  >
     {#snippet brand()}
       <NavBrand siteName="Svelte 5">
         <img width="30" src="/images/svelte-icon.png" alt="svelte icon" />
@@ -74,7 +101,13 @@
 <H2>Sticky navbar</H2>
 <CodeWrapper class="p-2">
   <div class="relative">
-    <Navbar toggleNav={toggleNav2} closeNav={closeNav2} navStatus={navStatus2} breakPoint="md" navclass="absolute w-full z-20 top-0 start-0 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
+    <Navbar
+      toggleNav={toggleNav2}
+      closeNav={closeNav2}
+      navStatus={navStatus2}
+      breakPoint="md"
+      navclass="absolute w-full z-20 top-0 start-0 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700"
+    >
       {#snippet brand()}
         <NavBrand siteName="Svelte 5">
           <img width="30" src="/images/svelte-icon.png" alt="svelte icon" />

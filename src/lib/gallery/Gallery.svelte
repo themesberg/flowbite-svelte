@@ -11,7 +11,13 @@
     divclass?: string | undefined;
   }
   import { twMerge } from 'tailwind-merge';
-  let { children, items = [], imgclass, divclass, ...attributes } = $props<Props>();
+  let {
+    children,
+    items = [],
+    imgclass,
+    divclass,
+    ...attributes
+  } = $props<Props>();
   // export let items: ImgType[] = [];
   const imgCls: string = 'h-auto max-w-full rounded-lg';
 
@@ -23,7 +29,9 @@
 </script>
 
 {#snippet figure(item)}
-  <div><img src={item.src} alt={item.alt} class={twMerge(imgCls, imgclass)} /></div>
+  <div>
+    <img src={item.src} alt={item.alt} class={twMerge(imgCls, imgclass)} />
+  </div>
 {/snippet}
 
 <div {...attributes} class={divCls} use:init>
@@ -39,7 +47,7 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children?: any;
-@props:items?: ImgType[];
+@props:items?:  ImgType[]; = [];
 @props:imgclass?: string | undefined;
 @props:divclass?: string | undefined;
 -->

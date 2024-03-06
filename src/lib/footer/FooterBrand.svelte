@@ -11,10 +11,24 @@
     name?: string | undefined;
     target?: string | undefined;
   }
-  let { children, aclass, spanclass, imgclass, href, src, alt, name, target, ...attributes } = $props<Props>();
+  let {
+    children,
+    aclass,
+    spanclass,
+    imgclass,
+    href,
+    src,
+    alt,
+    name,
+    target,
+    ...attributes
+  } = $props<Props>();
 
   let aCls: string = twMerge('flex items-center', aclass);
-  let spanCls: string = twMerge('self-center text-2xl font-semibold whitespace-nowrap dark:text-white', spanclass);
+  let spanCls: string = twMerge(
+    'self-center text-2xl font-semibold whitespace-nowrap dark:text-white',
+    spanclass
+  );
   let imgCls: string = twMerge('me-3 h-8', imgclass);
 </script>
 

@@ -19,11 +19,16 @@
   //   desc3: string;
   //   link: { label: string; url: string };
   // };
-  const desc1Cls: string = 'bg-primary-100 w-8 text-primary-800 text-sm font-semibold inline-flex items-center p-1.5 rounded dark:bg-primary-200 dark:text-primary-800';
-  const desc2Cls: string = 'ms-2 w-24 font-medium text-gray-900 dark:text-white';
-  const desc3spanCls: string = 'mx-2 w-1 h-1 bg-gray-900 rounded-full dark:bg-gray-500';
-  const desc3pCls: string = 'text-sm  w-24 font-medium text-gray-500 dark:text-gray-400';
-  const linkCls: string = 'ms-auto w-32 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500';
+  const desc1Cls: string =
+    'bg-primary-100 w-8 text-primary-800 text-sm font-semibold inline-flex items-center p-1.5 rounded dark:bg-primary-200 dark:text-primary-800';
+  const desc2Cls: string =
+    'ms-2 w-24 font-medium text-gray-900 dark:text-white';
+  const desc3spanCls: string =
+    'mx-2 w-1 h-1 bg-gray-900 rounded-full dark:bg-gray-500';
+  const desc3pCls: string =
+    'text-sm  w-24 font-medium text-gray-500 dark:text-gray-400';
+  const linkCls: string =
+    'ms-auto w-32 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500';
   const barColor: string = 'bg-primary-600 h-2.5 rounded dark:bg-primary-500';
 </script>
 
@@ -46,12 +51,16 @@
   <div>
     {#each ratings as { label, rating }}
       <dl>
-        <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">{label}</dt>
+        <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">
+          {label}
+        </dt>
         <dd class="mb-3 flex items-center">
           <div class="me-2 h-2.5 w-full rounded bg-gray-200 dark:bg-gray-700">
             <div class={barColor} style="width: {rating * 10}%" />
           </div>
-          <span class="text-sm font-medium text-gray-500 dark:text-gray-400">{rating}</span>
+          <span class="text-sm font-medium text-gray-500 dark:text-gray-400"
+            >{rating}</span
+          >
         </dd>
       </dl>
     {/each}
@@ -59,12 +68,16 @@
   <div>
     {#each ratings2 as { label, rating }}
       <dl>
-        <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">{label}</dt>
+        <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">
+          {label}
+        </dt>
         <dd class="mb-3 flex items-center">
           <div class="me-2 h-2.5 w-full rounded bg-gray-200 dark:bg-gray-700">
             <div class={barColor} style="width: {rating * 10}%" />
           </div>
-          <span class="text-sm font-medium text-gray-500 dark:text-gray-400">{rating}</span>
+          <span class="text-sm font-medium text-gray-500 dark:text-gray-400"
+            >{rating}</span
+          >
         </dd>
       </dl>
     {/each}

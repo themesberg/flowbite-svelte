@@ -8,7 +8,15 @@
     labelInside?: boolean;
     labelOutside?: string | undefined;
     easing?: EasingFunction;
-    color?: 'primary' | 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo';
+    color?:
+      | 'primary'
+      | 'blue'
+      | 'gray'
+      | 'red'
+      | 'green'
+      | 'yellow'
+      | 'purple'
+      | 'indigo';
     div2class?: string | undefined;
     labeloutsidedivclass?: string | undefined;
     divclass?: string | undefined;
@@ -20,8 +28,24 @@
   import type { EasingFunction } from 'svelte/transition';
   import { twMerge, twJoin } from 'tailwind-merge';
 
-  let { progress = '45', precision = 0, tweenDuration = 400, animate = false, size = 'h-2.5', labelInside = false, labelOutside, easing = cubicOut, color = 'primary', div2class, labeloutsidedivclass, divclass, class: classname, ...attributes } = $props<Props>();
-  let labelInsideCls: string = 'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
+  let {
+    progress = '45',
+    precision = 0,
+    tweenDuration = 400,
+    animate = false,
+    size = 'h-2.5',
+    labelInside = false,
+    labelOutside,
+    easing = cubicOut,
+    color = 'primary',
+    div2class,
+    labeloutsidedivclass,
+    divclass,
+    class: classname,
+    ...attributes
+  } = $props<Props>();
+  let labelInsideCls: string =
+    'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
   let divCls: string = 'w-full bg-gray-200 rounded-full dark:bg-gray-700';
 
   const _progress = tweened(0, {
@@ -47,18 +71,31 @@
 </script>
 
 {#if labelOutside}
-  <div {...attributes} class={twMerge('mb-1 flex justify-between', labeloutsidedivclass)}>
-    <span class="text-base font-medium text-blue-700 dark:text-white">{labelOutside}</span>
-    <span class="text-sm font-medium text-blue-700 dark:text-white">{progress}%</span>
+  <div
+    {...attributes}
+    class={twMerge('mb-1 flex justify-between', labeloutsidedivclass)}
+  >
+    <span class="text-base font-medium text-blue-700 dark:text-white"
+      >{labelOutside}</span
+    >
+    <span class="text-sm font-medium text-blue-700 dark:text-white"
+      >{progress}%</span
+    >
   </div>
 {/if}
 <div class={twMerge(divCls, size, divclass)}>
   {#if labelInside}
-    <div class={twJoin(labelInsideCls, barColors[color], size, div2class)} style="width: {$_progress}%">
+    <div
+      class={twJoin(labelInsideCls, barColors[color], size, div2class)}
+      style="width: {$_progress}%"
+    >
       {$_progress.toFixed(precision)}%
     </div>
   {:else}
-    <div class={twJoin(barColors[color], size, 'rounded-full', div2class)} style="width: {$_progress}%" />
+    <div
+      class={twJoin(barColors[color], size, 'rounded-full', div2class)}
+      style="width: {$_progress}%"
+    />
   {/if}
 </div>
 
@@ -74,7 +111,7 @@
 @props:labelInside?:  boolean; = false;
 @props:labelOutside?: string | undefined;
 @props:easing?:  EasingFunction; = cubicOut;
-@props:color?:  'primary' | 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo'; = 'primary';
+@props:color?:   = 'primary';
 @props:div2class?: string | undefined;
 @props:labeloutsidedivclass?: string | undefined;
 @props:divclass?: string | undefined;

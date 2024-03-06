@@ -9,7 +9,10 @@
   let { ulclass, children, ...attributes } = $props<Props>();
 </script>
 
-<ul {...attributes} class={twMerge('text-gray-600 dark:text-gray-400', ulclass)}>
+<ul
+  {...attributes}
+  class={twMerge('text-gray-600 dark:text-gray-400', ulclass)}
+>
   {@render children()}
 </ul>
 

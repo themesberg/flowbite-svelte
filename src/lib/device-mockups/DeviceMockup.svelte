@@ -9,7 +9,14 @@
   import Tablet from './Tablet.svelte';
   interface Props {
     children?: any;
-    device?: 'default' | 'ios' | 'android' | 'tablet' | 'laptop' | 'desktop' | 'smartwatch';
+    device?:
+      | 'default'
+      | 'ios'
+      | 'android'
+      | 'tablet'
+      | 'laptop'
+      | 'desktop'
+      | 'smartwatch';
   }
 
   let { children, device = 'default' } = $props<Props>();
@@ -38,5 +45,5 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children?: any;
-@props:device?: 'default' | 'ios' | 'android' | 'tablet' | 'laptop' | 'desktop' | 'smartwatch';
+@props:device?: 
 -->

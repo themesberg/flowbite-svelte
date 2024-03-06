@@ -14,11 +14,29 @@
   import { twMerge } from 'tailwind-merge';
   import type { BlockQuoteType } from '../types';
 
-  let { children, class: classname, border, italic = true, borderclass, bgclass, bg, baseclass, alignment = 'left', size = 'lg', ...attributes } = $props<Props>();
+  let {
+    children,
+    class: classname,
+    border,
+    italic = true,
+    borderclass,
+    bgclass,
+    bg,
+    baseclass,
+    alignment = 'left',
+    size = 'lg',
+    ...attributes
+  } = $props<Props>();
 
-  const borderCls: string = twMerge('border-s-4 border-gray-300 dark:border-gray-500', borderclass);
+  const borderCls: string = twMerge(
+    'border-s-4 border-gray-300 dark:border-gray-500',
+    borderclass
+  );
   const bgCls: string = twMerge('bg-gray-50 dark:bg-gray-800', bgclass);
-  const baseCls: string = twMerge('font-semibold text-gray-900 dark:text-white', baseclass);
+  const baseCls: string = twMerge(
+    'font-semibold text-gray-900 dark:text-white',
+    baseclass
+  );
 
   let alignmentClasses = {
     left: 'text-left',
@@ -42,7 +60,18 @@
   };
 </script>
 
-<blockquote {...attributes} class={twMerge(baseCls, alignmentClasses[alignment], sizes[size], bg && bgCls, border && borderCls, italic && 'italic', classname)}>
+<blockquote
+  {...attributes}
+  class={twMerge(
+    baseCls,
+    alignmentClasses[alignment],
+    sizes[size],
+    bg && bgCls,
+    border && borderCls,
+    italic && 'italic',
+    classname
+  )}
+>
   {@render children()}
 </blockquote>
 
@@ -52,12 +81,12 @@
 ## Props
 @props: children?: any;
 @props:border?: boolean;
-@props:italic?: boolean;
+@props:italic?:  boolean; = true;
 @props:borderclass?: string | undefined;
 @props:bgclass?: string | undefined;
 @props:bg?: boolean;
 @props:baseclass?: string | undefined;
-@props:alignment?: 'left' | 'center' | 'right';
-@props:size?: BlockQuoteType;
+@props:alignment?:  'left' | 'center' | 'right'; = 'left';
+@props:size?:  BlockQuoteType; = 'lg';
 @props:class?: string | undefined;
 -->

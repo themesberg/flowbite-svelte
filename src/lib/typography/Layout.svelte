@@ -8,7 +8,12 @@
 
   import { twMerge } from 'tailwind-merge';
 
-  let { children, divclass, cols = 'grid-cols-1 sm:grid-cols-2', ...attributes } = $props<Props>();
+  let {
+    children,
+    divclass,
+    cols = 'grid-cols-1 sm:grid-cols-2',
+    ...attributes
+  } = $props<Props>();
 
   let classDiv = twMerge('grid', cols, divclass);
 </script>
@@ -23,6 +28,6 @@
 ## Props
 @props: children?: any;
 @props:divclass?: string | undefined;
-@props:cols?: string | undefined;
+@props:cols?:  string | undefined; = 'grid-cols-1 sm:grid-cols-2';
 @props:// gap?: number;
 -->

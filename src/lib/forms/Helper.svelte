@@ -14,7 +14,14 @@
   };
 </script>
 
-<p {...attributes} class={twMerge('text-xs font-normal text-gray-500 dark:text-gray-300', colorClasses[color], pclass)}>
+<p
+  {...attributes}
+  class={twMerge(
+    'text-xs font-normal text-gray-500 dark:text-gray-300',
+    colorClasses[color],
+    pclass
+  )}
+>
   {@render children()}
 </p>
 

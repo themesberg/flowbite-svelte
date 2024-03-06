@@ -3,9 +3,26 @@ export declare const sm = 'sm';
 export declare const md = 'md';
 export declare const lg = 'lg';
 export declare const xl = 'xl';
-export declare type SizeType = typeof xs | typeof sm | typeof md | typeof lg | typeof xl;
+export declare type SizeType =
+  | typeof xs
+  | typeof sm
+  | typeof md
+  | typeof lg
+  | typeof xl;
 
-export type TransitionTypes = 'fade' | 'fly' | 'slide' | 'blur' | 'in:fly' | 'out:fly' | 'in:slide' | 'out:slide' | 'in:fade' | 'out:fade' | 'in:blur' | 'out:blur';
+export type TransitionTypes =
+  | 'fade'
+  | 'fly'
+  | 'slide'
+  | 'blur'
+  | 'in:fly'
+  | 'out:fly'
+  | 'in:slide'
+  | 'out:slide'
+  | 'in:fade'
+  | 'out:fade'
+  | 'in:blur'
+  | 'out:blur';
 export interface TransitionParamTypes {
   delay?: number;
   duration?: number;
@@ -14,7 +31,17 @@ export interface TransitionParamTypes {
   tick?: (t: number, u: number) => void;
 }
 
-export type IndicatorPlacementType = 'top-left' | 'top-center' | 'top-right' | 'center-left' | 'center' | 'center-right' | 'bottom-left' | 'bottom-center' | 'bottom-right' | undefined;
+export type IndicatorPlacementType =
+  | 'top-left'
+  | 'top-center'
+  | 'top-right'
+  | 'center-left'
+  | 'center'
+  | 'center-right'
+  | 'bottom-left'
+  | 'bottom-center'
+  | 'bottom-right'
+  | undefined;
 
 export interface drawerTransitionParamTypes {
   amount?: number;
@@ -26,15 +53,66 @@ export interface drawerTransitionParamTypes {
   y?: number;
 }
 
-export type drawerTransitionTypes = 'fade' | 'fly' | 'slide' | 'blur' | 'in:fly' | 'out:fly' | 'in:slide' | 'out:slide' | 'in:fade' | 'out:fade' | 'in:blur' | 'out:blur' | undefined;
+export type drawerTransitionTypes =
+  | 'fade'
+  | 'fly'
+  | 'slide'
+  | 'blur'
+  | 'in:fly'
+  | 'out:fly'
+  | 'in:slide'
+  | 'out:slide'
+  | 'in:fade'
+  | 'out:fade'
+  | 'in:blur'
+  | 'out:blur'
+  | undefined;
 
-export type PsizeType = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | '8xl' | '9xl';
+export type PsizeType =
+  | 'xs'
+  | 'sm'
+  | 'base'
+  | 'lg'
+  | 'xl'
+  | '2xl'
+  | '3xl'
+  | '4xl'
+  | '5xl'
+  | '6xl'
+  | '7xl'
+  | '8xl'
+  | '9xl';
 
-export type PweightType = 'thin' | 'extralight' | 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'extrabold' | 'black';
+export type PweightType =
+  | 'thin'
+  | 'extralight'
+  | 'light'
+  | 'normal'
+  | 'medium'
+  | 'semibold'
+  | 'bold'
+  | 'extrabold'
+  | 'black';
 
-export type BlockQuoteType = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | '8xl' | '9xl';
+export type BlockQuoteType =
+  | 'xs'
+  | 'sm'
+  | 'base'
+  | 'lg'
+  | 'xl'
+  | '2xl'
+  | '3xl'
+  | '4xl'
+  | '5xl'
+  | '6xl'
+  | '7xl'
+  | '8xl'
+  | '9xl';
 
-import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
+import type {
+  HTMLAnchorAttributes,
+  HTMLButtonAttributes
+} from 'svelte/elements';
 
 export interface ListGroupItemType {
   current?: boolean;
@@ -44,10 +122,47 @@ export interface ListGroupItemType {
   [propName: string]: any;
 }
 
-export type FormColorType = 'blue' | 'red' | 'green' | 'purple' | 'teal' | 'yellow' | 'orange' | 'primary' | 'secondary';
-export type ButtonColorType = 'alternative' | 'blue' | 'dark' | 'green' | 'light' | 'primary' | 'purple' | 'red' | 'yellow' | 'none';
+export type FormColorType =
+  | 'blue'
+  | 'red'
+  | 'green'
+  | 'purple'
+  | 'teal'
+  | 'yellow'
+  | 'orange'
+  | 'primary'
+  | 'secondary';
+export type ButtonColorType =
+  | 'alternative'
+  | 'blue'
+  | 'dark'
+  | 'green'
+  | 'light'
+  | 'primary'
+  | 'purple'
+  | 'red'
+  | 'yellow'
+  | 'none';
 
-export type InputType = 'color' | 'date' | 'datetime-local' | 'email' | 'file' | 'hidden' | 'image' | 'month' | 'number' | 'password' | 'reset' | 'submit' | 'tel' | 'text' | 'time' | 'url' | 'week' | 'search';
+export type InputType =
+  | 'color'
+  | 'date'
+  | 'datetime-local'
+  | 'email'
+  | 'file'
+  | 'hidden'
+  | 'image'
+  | 'month'
+  | 'number'
+  | 'password'
+  | 'reset'
+  | 'submit'
+  | 'tel'
+  | 'text'
+  | 'time'
+  | 'url'
+  | 'week'
+  | 'search';
 export type SidebarType = {
   activeClass: string;
   nonActiveClass: string;

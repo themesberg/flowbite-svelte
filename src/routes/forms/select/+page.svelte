@@ -11,7 +11,11 @@
     { value: 'ca', name: 'Canada' },
     { value: 'fr', name: 'France' }
   ];
-  const modules = import.meta.glob('./md/*.md', { query: '?raw', import: 'default', eager: true });
+  const modules = import.meta.glob('./md/*.md', {
+    query: '?raw',
+    import: 'default',
+    eager: true
+  });
 </script>
 
 <H1>Select</H1>
@@ -34,8 +38,15 @@
 <H2>Disabled state</H2>
 
 <CodeWrapper class="h-48">
-  <Label for="select-disabled" color="disabled" labelclass="mb-2">Disabled select</Label>
-  <Select id="select-disabled" disabled items={countries} placeholder="You can't select anything..." />
+  <Label for="select-disabled" color="disabled" labelclass="mb-2"
+    >Disabled select</Label
+  >
+  <Select
+    id="select-disabled"
+    disabled
+    items={countries}
+    placeholder="You can't select anything..."
+  />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/disabled.md'] as string} />
@@ -44,7 +55,12 @@
 
 <CodeWrapper class="h-48">
   <Label for="select-underline" labelclass="sr-only">Underline select</Label>
-  <Select id="select-underline" underline selectclass="mt-2" items={countries} />
+  <Select
+    id="select-underline"
+    underline
+    selectclass="mt-2"
+    items={countries}
+  />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/underline.md'] as string} />

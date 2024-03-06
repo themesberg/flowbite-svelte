@@ -8,7 +8,8 @@
   }
 
   import { twMerge } from 'tailwind-merge';
-  let { children, liclass, aclass, href, target, ...attributes } = $props<Props>();
+  let { children, liclass, aclass, href, target, ...attributes } =
+    $props<Props>();
 
   let liCls: string = twMerge('me-4 last:me-0 md:me-6', liclass);
   let aCls: string = twMerge('hover:underline', aclass);

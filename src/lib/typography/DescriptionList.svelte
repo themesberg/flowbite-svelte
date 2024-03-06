@@ -8,7 +8,10 @@
   import { twMerge } from 'tailwind-merge';
   let { children, tag, dtclass, ddclass, ...attributes } = $props<Props>();
   // export let tag: 'dt' | 'dd';
-  const dtCls: string = twMerge('text-gray-500 md:text-lg dark:text-gray-400', dtclass);
+  const dtCls: string = twMerge(
+    'text-gray-500 md:text-lg dark:text-gray-400',
+    dtclass
+  );
   const ddCls: string = twMerge('text-lg font-semibold', ddclass);
 
   let classDesc = twMerge(tag === 'dt' ? dtCls : ddCls);

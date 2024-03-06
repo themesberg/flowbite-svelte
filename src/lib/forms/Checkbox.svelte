@@ -16,11 +16,29 @@
     inputclass?: string;
   }
 
-  let { children, color = 'primary', custom = false, inline = false, group = [], value = 'on', checked, spacing = 'me-2', labelclass = '', inputclass = '', ...attributes } = $props<Props>();
+  let {
+    children,
+    color = 'primary',
+    custom = false,
+    inline = false,
+    group = [],
+    value = 'on',
+    checked,
+    spacing = 'me-2',
+    labelclass = '',
+    inputclass = '',
+    ...attributes
+  } = $props<Props>();
 </script>
 
 <Label labelclass={labelCls(inline, labelclass)}>
-  <input type="checkbox" bind:checked {value} {...attributes} class={twMerge(spacing, inputCls(custom, color, true, false, inputclass))} />
+  <input
+    type="checkbox"
+    bind:checked
+    {value}
+    {...attributes}
+    class={twMerge(spacing, inputCls(custom, color, true, false, inputclass))}
+  />
   {#if children}
     {@render children()}
   {/if}
@@ -31,13 +49,13 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children?: any;
-@props:color?: FormColorType;
-@props:custom?: boolean;
-@props:inline?: boolean;
-@props:group?: (string | number)[];
-@props:value?: string | number;
+@props:color?:  FormColorType; = 'primary';
+@props:custom?:  boolean; = false;
+@props:inline?:  boolean; = false;
+@props:group?:  (string | number)[]; = [];
+@props:value?:  string | number; = 'on';
 @props:checked?: boolean | undefined;
-@props:spacing?: string;
-@props:labelclass?: string;
-@props:inputclass?: string;
+@props:spacing?:  string; = 'me-2';
+@props:labelclass?:  string; = '';
+@props:inputclass?:  string; = '';
 -->

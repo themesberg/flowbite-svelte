@@ -1,6 +1,10 @@
 <script lang="ts">
   import { ButtonGroup, Button, GradientButton } from '$lib';
-  import { UserCircleSolid, AdjustmentsVerticalSolid, DownloadSolid } from 'flowbite-svelte-icons';
+  import {
+    UserCircleSolid,
+    AdjustmentsVerticalSolid,
+    DownloadSolid
+  } from 'flowbite-svelte-icons';
   const handleClick = () => {
     alert('Clicked');
   };
@@ -8,7 +12,11 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  const modules = import.meta.glob('./md/*.md', { query: '?raw', import: 'default', eager: true });
+  const modules = import.meta.glob('./md/*.md', {
+    query: '?raw',
+    import: 'default',
+    eager: true
+  });
 </script>
 
 <H1>Button group</H1>

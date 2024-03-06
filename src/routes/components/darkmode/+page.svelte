@@ -5,7 +5,11 @@
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
   import { ThumbsUpSolid, ThumbsDownSolid } from 'flowbite-svelte-icons';
-  const modules = import.meta.glob('./md/*.md', { query: '?raw', import: 'default', eager: true });
+  const modules = import.meta.glob('./md/*.md', {
+    query: '?raw',
+    import: 'default',
+    eager: true
+  });
 </script>
 
 <H1>Darkmode</H1>
@@ -30,7 +34,8 @@ Add the following to `app.html`:
 
 <H2>Switcher style</H2>
 
-Use the btnClass prop to overwrite the default classes or just use class attribute to append classes to the default classes.
+Use the btnClass prop to overwrite the default classes or just use class
+attribute to append classes to the default classes.
 
 <H2>Mode icon</H2>
 

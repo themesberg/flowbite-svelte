@@ -1,10 +1,23 @@
 <script lang="ts">
-  import { Skeleton, CardPlaceholder, ImagePlaceholder, VideoPlaceholder, TextPlaceholder, ListPlaceholder, TestimonialPlaceholder, WidgetPlaceholder } from '$lib';
+  import {
+    Skeleton,
+    CardPlaceholder,
+    ImagePlaceholder,
+    VideoPlaceholder,
+    TextPlaceholder,
+    ListPlaceholder,
+    TestimonialPlaceholder,
+    WidgetPlaceholder
+  } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  const modules = import.meta.glob('./md/*.md', { query: '?raw', import: 'default', eager: true });
+  const modules = import.meta.glob('./md/*.md', {
+    query: '?raw',
+    import: 'default',
+    eager: true
+  });
 </script>
 
 <H1>Skeleton</H1>

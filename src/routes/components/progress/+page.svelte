@@ -5,7 +5,11 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  const modules = import.meta.glob('./md/*.md', { query: '?raw', import: 'default', eager: true });
+  const modules = import.meta.glob('./md/*.md', {
+    query: '?raw',
+    import: 'default',
+    eager: true
+  });
 
   let progress = $state('45');
 </script>
@@ -75,31 +79,43 @@
   </div>
 
   <div class="my-4">
-    <div class="mb-1 text-base font-medium text-blue-700 dark:text-blue-500">Blue</div>
+    <div class="mb-1 text-base font-medium text-blue-700 dark:text-blue-500">
+      Blue
+    </div>
     <Progressbar progress="50" color="blue" />
   </div>
 
   <div class="my-4">
-    <div class="mb-1 text-base font-medium text-red-700 dark:text-red-500">Red</div>
+    <div class="mb-1 text-base font-medium text-red-700 dark:text-red-500">
+      Red
+    </div>
     <Progressbar progress="50" color="red" />
   </div>
 
   <div class="my-4">
-    <div class="mb-1 text-base font-medium text-green-700 dark:text-green-500">Green</div>
+    <div class="mb-1 text-base font-medium text-green-700 dark:text-green-500">
+      Green
+    </div>
     <Progressbar progress="50" color="green" />
   </div>
 
-  <div class="mb-1 text-base font-medium text-yellow-700 dark:text-yellow-500">Yellow</div>
+  <div class="mb-1 text-base font-medium text-yellow-700 dark:text-yellow-500">
+    Yellow
+  </div>
   <div class="my-4">
     <Progressbar progress="50" color="yellow" />
   </div>
 
-  <div class="mb-1 text-base font-medium text-indigo-700 dark:text-indigo-400">Indigo</div>
+  <div class="mb-1 text-base font-medium text-indigo-700 dark:text-indigo-400">
+    Indigo
+  </div>
   <div class="my-4">
     <Progressbar progress="50" color="indigo" />
   </div>
 
-  <div class="mb-1 text-base font-medium text-purple-700 dark:text-purple-400">Purple</div>
+  <div class="mb-1 text-base font-medium text-purple-700 dark:text-purple-400">
+    Purple
+  </div>
   <div class="my-4">
     <Progressbar progress="50" color="purple" />
   </div>
@@ -110,13 +126,43 @@
 <H2>Custom style</H2>
 
 <CodeWrapper>
-  <Progressbar progress="50" size="h-3" labelInside color="green" div2class="bg-blue-600 text-blue-100 text-xs font-medium text-center p-0 leading-none rounded-full" class="my-4" labelOutside="Size h-3" />
+  <Progressbar
+    progress="50"
+    size="h-3"
+    labelInside
+    color="green"
+    div2class="bg-blue-600 text-blue-100 text-xs font-medium text-center p-0 leading-none rounded-full"
+    class="my-4"
+    labelOutside="Size h-3"
+  />
 
-  <Progressbar progress="50" size="h-10" labelInside color="red" div2class="bg-blue-600 text-blue-100 text-2xl font-medium text-center p-2 leading-none rounded-full" class="my-4" labelOutside="Size h-10" />
+  <Progressbar
+    progress="50"
+    size="h-10"
+    labelInside
+    color="red"
+    div2class="bg-blue-600 text-blue-100 text-2xl font-medium text-center p-2 leading-none rounded-full"
+    class="my-4"
+    labelOutside="Size h-10"
+  />
 
-  <Progressbar progress="50" size="h-10" color="indigo" div2class="bg-blue-600 text-blue-100 text-2xl font-medium text-center p-2 leading-none rounded-full" class="my-4" labelOutside="Size h-10" />
+  <Progressbar
+    progress="50"
+    size="h-10"
+    color="indigo"
+    div2class="bg-blue-600 text-blue-100 text-2xl font-medium text-center p-2 leading-none rounded-full"
+    class="my-4"
+    labelOutside="Size h-10"
+  />
 
-  <Progressbar progress="50" size="h-6" labelInside div2class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full" class="my-4" labelOutside="Size h-6" />
+  <Progressbar
+    progress="50"
+    size="h-6"
+    labelInside
+    div2class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
+    class="my-4"
+    labelOutside="Size h-6"
+  />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/custom.md'] as string} />
@@ -124,9 +170,30 @@
 <H2>Animation</H2>
 
 <CodeWrapper>
-  <Progressbar {progress} animate precision={2} labelOutside="With animation" labelInside tweenDuration={1500} easing={sineOut} size="h-6" color="yellow" div2class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full mb-8" />
-  <Progressbar {progress} labelOutside="Without animation" labelInside size="h-6" color="gray" div2class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full" />
-  <Button onclick={() => (progress = `${Math.round(Math.random() * 100)}`)} btnclass="mt-8">Randomize</Button>
+  <Progressbar
+    {progress}
+    animate
+    precision={2}
+    labelOutside="With animation"
+    labelInside
+    tweenDuration={1500}
+    easing={sineOut}
+    size="h-6"
+    color="yellow"
+    div2class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full mb-8"
+  />
+  <Progressbar
+    {progress}
+    labelOutside="Without animation"
+    labelInside
+    size="h-6"
+    color="gray"
+    div2class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
+  />
+  <Button
+    onclick={() => (progress = `${Math.round(Math.random() * 100)}`)}
+    btnclass="mt-8">Randomize</Button
+  >
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/animation.md'] as string} />
