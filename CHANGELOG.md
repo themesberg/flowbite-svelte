@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.3
+
+### Patch Changes
+
+- fix: Card component fix href prop ([`b4dc6bd0b3801b8857c81734d77b38bbdae3623c`](https://github.com/shinokada/svelte-5-ui-lib/commit/b4dc6bd0b3801b8857c81734d77b38bbdae3623c))
+  fix: Card component add customSize prop
+
 ## 0.3.2
 
 ### Patch Changes
