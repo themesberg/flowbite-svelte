@@ -1,19 +1,26 @@
 <script lang="ts">
+  import type { SizeType } from '$lib/types';
+  import { twMerge } from 'tailwind-merge';
+  type CardSizeType = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  
+  type ImgType = {
+    src: string;
+    alt: string;
+  }
   interface Props {
     children?: any;
-    href?: string | undefined;
+    href?: string;
     horizontal?: boolean;
     shadow?: boolean;
     reverse?: boolean;
-    src?: string | undefined;
+    img?: ImgType;
     padding?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
-    size?: SizeType;
+    size?: CardSizeType;
     class?: string | undefined;
+    customSize?: string;
   }
-  import type { SizeType } from '$lib/types';
-  import { twMerge } from 'tailwind-merge';
 
-  let { children, href = undefined, horizontal = false, shadow = false, reverse = false, src = undefined, padding = 'lg', size = 'sm', class: classname = '', ...attributes } = $props<Props>();
+  let { children, href, horizontal = false, shadow = false, reverse = false, img , padding = 'lg', size = 'sm', class: classname, customSize, ...attributes } = $props<Props>();
 
   const paddings = {
     none: 'p-0',
@@ -22,7 +29,7 @@
     lg: 'p-4 sm:p-6',
     xl: 'p-4 sm:p-8'
   };
-
+  
   const sizes = {
     xs: 'max-w-xs',
     sm: 'max-w-sm',
@@ -30,7 +37,7 @@
     lg: 'max-w-2xl',
     xl: 'max-w-screen-xl'
   };
-
+  let role = href ? 'link' : 'presentation';
   let innerPadding: string = $state('');
   let cardClass: string = $state('');
   let tag = href ? 'a' : 'div';
@@ -38,18 +45,14 @@
   // $inspect('href: ', href)
   $effect(() => {
     innerPadding = paddings[padding];
-    //  twMerge('flex w-full', sizes[size], reverse ? 'flex-col-reverse' : 'flex-col',
-    //  horizontal && (reverse ? 'md:flex-row-reverse' : 'md:flex-row'),
-    // href && 'hover:bg-gray-100 dark:hover:bg-gray-700',
-    // !img && innerPadding, $$props.class);
     cardClass = twMerge(
       'w-full flex max-w-sm bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700',
-      sizes[size],
+      customSize ? customSize : sizes[size],
       shadow && 'shadow-md',
       reverse ? 'flex-col-reverse' : 'flex-col',
       horizontal && (reverse ? 'md:flex-row-reverse' : 'md:flex-row'),
-      href && 'hover:bg-gray-100 dark:hover:bg-gray-700',
-      !src && innerPadding,
+      href && 'cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700',
+      !img && innerPadding,
       classname
     );
     imgClass = twMerge(
@@ -58,11 +61,12 @@
       horizontal && (reverse ? 'md:rounded-e-lg' : 'md:rounded-s-lg')
     );
   });
+
 </script>
 
-<svelte:element this={tag} role="presentation" {href} {...attributes} class={cardClass}>
-  {#if src}
-    <img class={imgClass} {src} alt="" />
+<svelte:element this={tag} {role} {...attributes} class={cardClass}>
+  {#if img}
+    <img class={imgClass} src={img.src} alt="{img.alt}" />
     <div class={innerPadding}>
       {@render children()}
     </div>
