@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.4
+
+### Patch Changes
+
+- fix: Card component update ([`f63a4a3a3f95ccb04ca876f0f043c898b8fef124`](https://github.com/shinokada/svelte-5-ui-lib/commit/f63a4a3a3f95ccb04ca876f0f043c898b8fef124))
+
 ## 0.3.3
 
 ### Patch Changes
