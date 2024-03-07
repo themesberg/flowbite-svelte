@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.5
+
+### Patch Changes
+
+- fix: card href prop ([`6164df0d0d0ad13cd121d103728fd1cf9bf7a0d5`](https://github.com/shinokada/svelte-5-ui-lib/commit/6164df0d0d0ad13cd121d103728fd1cf9bf7a0d5))
+
 ## 0.3.4
 
 ### Patch Changes

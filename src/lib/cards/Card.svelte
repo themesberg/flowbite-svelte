@@ -86,7 +86,7 @@
 
 <div {...attributes} class={cardClass}>
   {#if href}
-    <a href={href}>
+    <a {href}>
       {@render content()}
     </a>
   {:else}
