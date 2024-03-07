@@ -46,10 +46,10 @@
     lg: 'max-w-2xl',
     xl: 'max-w-screen-xl'
   };
-  let role = href ? 'link' : 'presentation';
+  // let role = href ? 'link' : 'presentation';
   let innerPadding: string = $state('');
   let cardClass: string = $state('');
-  let tag = href ? 'a' : 'div';
+  // let tag = href ? 'a' : 'div';
   let imgClass: string = $state('');
   // $inspect('href: ', href)
   $effect(() => {
@@ -73,7 +73,7 @@
   });
 </script>
 
-<svelte:element this={tag} {role} {...attributes} class={cardClass}>
+{#snippet content()}
   {#if img}
     <img class={imgClass} src={img.src} alt={img.alt} />
     <div class={innerPadding}>
@@ -82,7 +82,17 @@
   {:else}
     {@render children()}
   {/if}
-</svelte:element>
+{/snippet}
+
+<div {...attributes} class={cardClass}>
+  {#if href}
+    <a href={href}>
+      {@render content()}
+    </a>
+  {:else}
+    {@render content()}
+  {/if}
+</div>
 
 <!--
 @component
