@@ -32,7 +32,7 @@
       ></Li
     >
     <Li
-      ><A href="https://flowbite-svelte-admin-dashboard.vercel.app/"
+      ><A href="https://flowbite-svelte-admin-dashboard.codewithshin.com/"
         >Flowbite-Svelte-Dashboard</A
       ></Li
     >
