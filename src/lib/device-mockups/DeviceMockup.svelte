@@ -1,4 +1,5 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte';
   import type { ComponentType } from 'svelte';
   import Android from './Android.svelte';
   import DefaultMockup from './DefaultMockup.svelte';
@@ -8,15 +9,8 @@
   import Smartwatch from './Smartwatch.svelte';
   import Tablet from './Tablet.svelte';
   interface Props {
-    children?: any;
-    device?:
-      | 'default'
-      | 'ios'
-      | 'android'
-      | 'tablet'
-      | 'laptop'
-      | 'desktop'
-      | 'smartwatch';
+    children?: Snippet;
+    device?: 'default' | 'ios' | 'android' | 'tablet' | 'laptop' | 'desktop' | 'smartwatch';
   }
 
   let { children, device = 'default' }: Props = $props();
@@ -34,16 +28,16 @@
   let component: ComponentType = componets[device];
 </script>
 
-{#if component}
-  <svelte:component this={component}>{@render children()}</svelte:component>
-{:else}
-  <div class="border p-3 text-xl">Unknow device</div>
+{#if component && children}
+  <svelte:component this={component}>
+  {@render children()}
+  </svelte:component>
 {/if}
 
 <!--
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: any;
-@props:device?: 
+@props: children?: Snippet;
+@props:device?: 'default' | 'ios' | 'android' | 'tablet' | 'laptop' | 'desktop' | 'smartwatch';
 -->

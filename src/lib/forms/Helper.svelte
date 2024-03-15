@@ -1,7 +1,8 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   interface Props {
-    children?: any;
+    children?: Snippet;
     pclass?: string;
     color?: 'gray' | 'green' | 'red' | 'disabled';
   }
@@ -14,22 +15,19 @@
   };
 </script>
 
-<p
-  {...attributes}
-  class={twMerge(
-    'text-xs font-normal text-gray-500 dark:text-gray-300',
-    colorClasses[color],
-    pclass
-  )}
->
+{#if children}
+<p {...attributes} class={twMerge('text-xs font-normal text-gray-500 dark:text-gray-300', colorClasses[color], pclass)}>
   {@render children()}
 </p>
+{:else}
+  Helper content
+{/if}
 
 <!--
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: any;
+@props: children?: Snippet;
 @props:pclass?: string;
 @props:color?: 'gray' | 'green' | 'red' | 'disabled';
 -->

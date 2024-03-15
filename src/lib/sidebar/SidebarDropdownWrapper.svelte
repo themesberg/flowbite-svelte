@@ -1,11 +1,15 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte';
   import type { TransitionTypes, TransitionParamTypes } from '../types';
+  import { twMerge } from 'tailwind-merge';
+  import { fade, blur, fly, slide } from 'svelte/transition';
+  import { uiHelpers } from '$lib';
   interface Props {
-    children?: any;
-    arrowup?: any;
-    arrowdown?: any;
-    icon?: any;
-    isOpen?: boolean;
+    children?: Snippet;
+    arrowup?: Snippet;
+    arrowdown?: Snippet;
+    icon?: Snippet;
+    isOpen: boolean;
     btnclass?: string | undefined;
     label: string | undefined;
     spanclass?: string | undefined;
@@ -14,40 +18,14 @@
     transitionParams?: TransitionParamTypes;
     svgclass?: string;
   }
-  import { twMerge } from 'tailwind-merge';
-  import { fade, blur, fly, slide } from 'svelte/transition';
-  import { uiHelpers } from '$lib';
 
-  let {
-    children,
-    arrowup,
-    arrowdown,
-    icon,
-    isOpen,
-    btnclass,
-    label,
-    spanclass,
-    ulclass,
-    transitionType = 'slide',
-    transitionParams = {},
-    svgclass,
-    ...attributes
-  }: Props = $props();
+  let { children, arrowup, arrowdown, icon, isOpen, btnclass, label, spanclass, ulclass, transitionType = 'slide', transitionParams = {}, svgclass, ...attributes }: Props = $props();
 
-  let btnCls = twMerge(
-    'flex items-center w-full text-base font-normal text-gray-900 rounded transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700',
-    btnclass
-  );
+  let btnCls = twMerge('flex items-center w-full text-base font-normal text-gray-900 rounded transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700', btnclass);
 
-  let spanCls: string = twMerge(
-    'flex-1 ms-3 text-left whitespace-nowrap',
-    spanclass
-  );
+  let spanCls: string = twMerge('flex-1 ms-3 text-left whitespace-nowrap', spanclass);
   let ulCls: string = twMerge('py-2 space-y-2', ulclass);
-  let svgCls: string = twMerge(
-    'h-3 w-3 text-gray-800 dark:text-white',
-    svgclass
-  );
+  let svgCls: string = twMerge('h-3 w-3 text-gray-800 dark:text-white', svgclass);
 
   // make a custom transition function that returns the desired transition
   const multiple = (node: HTMLElement, params: any) => {
@@ -76,13 +54,7 @@
 </script>
 
 <li>
-  <button
-    {...attributes}
-    on:click={() => handleDropdown()}
-    type="button"
-    class={btnCls}
-    aria-controls="sidebar-dropdown"
-  >
+  <button {...attributes} on:click={() => handleDropdown()} type="button" class={btnCls} aria-controls="sidebar-dropdown">
     {#if icon}
       {@render icon()}
     {/if}
@@ -91,45 +63,23 @@
       {#if arrowup}
         {@render arrowup()}
       {:else}
-        <svg
-          class={svgCls}
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 10 6"
-        >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M9 5 5 1 1 5"
-          />
+        <svg class={svgCls} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5" />
         </svg>
       {/if}
     {:else if arrowdown}
       {@render arrowdown()}
     {:else}
-      <svg
-        class={svgCls}
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 10 6"
-      >
-        <path
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="m1 1 4 4 4-4"
-        />
+      <svg class={svgCls} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
       </svg>
     {/if}
   </button>
   {#if isOpen}
     <ul class={ulCls} transition:multiple={transitionParams}>
-      {@render children()}
+      {#if children}
+        {@render children()}
+      {/if}
     </ul>
   {/if}
 </li>
@@ -138,7 +88,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: any;
+@props: children?: Snippet;
 @props:arrowup?: any;
 @props:arrowdown?: any;
 @props:icon?: any;
@@ -147,7 +97,7 @@
 @props:label: string | undefined;
 @props:spanclass?: string | undefined;
 @props:ulclass?: string | undefined;
-@props:transitionType?:  TransitionTypes; = 'slide';
-@props:transitionParams?:  TransitionParamTypes; = {;
+@props:transitionType?: TransitionTypes;
+@props:transitionParams?: TransitionParamTypes;
 @props:svgclass?: string;
 -->

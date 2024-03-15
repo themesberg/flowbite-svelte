@@ -1,25 +1,18 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte';
   import { getContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import { page } from '$app/stores';
   import type { navbarType } from '$lib/types';
   interface Props {
-    children?: any;
+    children?: Snippet;
     closeNav?: () => void;
     href?: string | undefined;
     aclass?: string | undefined;
     activeClass?: string | undefined;
     nonActiveClass?: string | undefined;
   }
-  let {
-    closeNav,
-    href,
-    children,
-    aclass,
-    activeClass,
-    nonActiveClass,
-    ...attributes
-  }: Props = $props();
+  let { closeNav, href, children, aclass, activeClass, nonActiveClass, ...attributes }: Props = $props();
   let breakPoint: navbarType['breakPoint'];
 
   const context = getContext<navbarType>('navbarContext');
@@ -43,12 +36,7 @@
     xxl: '2xl:bg-transparent 2xl:text-primary-700 2xl:p-0 2xl:dark:text-primary-500'
   };
 
-  let aCls = $derived(
-    currentUrl === href
-      ? activeClass ?? twMerge(context.activeClass, activeBreaks[breakPoint])
-      : nonActiveClass ??
-          twMerge(context.nonActiveClass, linkBreaks[breakPoint])
-  );
+  let aCls = $derived(currentUrl === href ? activeClass ?? twMerge(context.activeClass, activeBreaks[breakPoint]) : nonActiveClass ?? twMerge(context.nonActiveClass, linkBreaks[breakPoint]));
 
   let linkClass = $derived(twMerge(aCls, aclass));
 
@@ -56,14 +44,10 @@
 </script>
 
 <li>
-  <a
-    {href}
-    onclick={closeNav}
-    {...attributes}
-    aria-current={currentUrl === href}
-    class={linkClass}
-  >
-    {@render children()}
+  <a {href} onclick={closeNav} {...attributes} aria-current={currentUrl === href} class={linkClass}>
+    {#if children}
+      {@render children()}
+    {/if}
   </a>
 </li>
 
@@ -71,7 +55,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: any;
+@props: children?: Snippet;
 @props:closeNav?: () => void;
 @props:href?: string | undefined;
 @props:aclass?: string | undefined;

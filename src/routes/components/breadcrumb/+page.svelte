@@ -1,9 +1,6 @@
 <script lang="ts">
   import { Breadcrumb, BreadcrumbItem } from '$lib';
-  import {
-    HomeOutline,
-    ChevronDoubleRightOutline
-  } from 'flowbite-svelte-icons';
+  import { HomeOutline, ChevronDoubleRightOutline } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';

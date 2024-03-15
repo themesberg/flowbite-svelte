@@ -8,15 +8,7 @@
     labelInside?: boolean;
     labelOutside?: string | undefined;
     easing?: EasingFunction;
-    color?:
-      | 'primary'
-      | 'blue'
-      | 'gray'
-      | 'red'
-      | 'green'
-      | 'yellow'
-      | 'purple'
-      | 'indigo';
+    color?: 'primary' | 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo';
     div2class?: string | undefined;
     labeloutsidedivclass?: string | undefined;
     divclass?: string | undefined;
@@ -44,8 +36,7 @@
     class: classname,
     ...attributes
   }: Props = $props();
-  let labelInsideCls: string =
-    'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
+  let labelInsideCls: string = 'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
   let divCls: string = 'w-full bg-gray-200 rounded-full dark:bg-gray-700';
 
   const _progress = tweened(0, {
@@ -71,31 +62,18 @@
 </script>
 
 {#if labelOutside}
-  <div
-    {...attributes}
-    class={twMerge('mb-1 flex justify-between', labeloutsidedivclass)}
-  >
-    <span class="text-base font-medium text-blue-700 dark:text-white"
-      >{labelOutside}</span
-    >
-    <span class="text-sm font-medium text-blue-700 dark:text-white"
-      >{progress}%</span
-    >
+  <div {...attributes} class={twMerge('mb-1 flex justify-between', labeloutsidedivclass)}>
+    <span class="text-base font-medium text-blue-700 dark:text-white">{labelOutside}</span>
+    <span class="text-sm font-medium text-blue-700 dark:text-white">{progress}%</span>
   </div>
 {/if}
 <div class={twMerge(divCls, size, divclass)}>
   {#if labelInside}
-    <div
-      class={twJoin(labelInsideCls, barColors[color], size, div2class)}
-      style="width: {$_progress}%"
-    >
+    <div class={twJoin(labelInsideCls, barColors[color], size, div2class)} style="width: {$_progress}%">
       {$_progress.toFixed(precision)}%
     </div>
   {:else}
-    <div
-      class={twJoin(barColors[color], size, 'rounded-full', div2class)}
-      style="width: {$_progress}%"
-    />
+    <div class={twJoin(barColors[color], size, 'rounded-full', div2class)} style="width: {$_progress}%" />
   {/if}
 </div>
 
@@ -103,15 +81,15 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: progress?:  string | number; = '45';
-@props:precision?:  number; = 0;
-@props:tweenDuration?:  number; = 400;
-@props:animate?:  boolean; = false;
-@props:size?:  string | undefined; = 'h-2.5';
-@props:labelInside?:  boolean; = false;
+@props: progress?: string | number;
+@props:precision?: number;
+@props:tweenDuration?: number;
+@props:animate?: boolean;
+@props:size?: string | undefined;
+@props:labelInside?: boolean;
 @props:labelOutside?: string | undefined;
-@props:easing?:  EasingFunction; = cubicOut;
-@props:color?:   = 'primary';
+@props:easing?: EasingFunction;
+@props:color?: 'primary' | 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo';
 @props:div2class?: string | undefined;
 @props:labeloutsidedivclass?: string | undefined;
 @props:divclass?: string | undefined;

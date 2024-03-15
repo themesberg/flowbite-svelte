@@ -1,6 +1,7 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte';
   interface Props {
-    children?: any;
+    children?: Snippet;
     color?: IndicatorColorType;
     rounded?: boolean;
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
@@ -12,22 +13,7 @@
   import type { IndicatorPlacementType } from '$lib/types';
   import { twMerge } from 'tailwind-merge';
 
-  let {
-    children,
-    color = 'gray',
-    rounded = false,
-    size = 'md',
-    border = false,
-    placement,
-    offset = true,
-    divclass
-  }: Props = $props();
-  // export let color: IndicatorColorType = 'gray';
-  // export let rounded: boolean = false;
-  // export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
-  // export let border: boolean = false;
-  // export let placement: IndicatorPlacementType | undefined = undefined;
-  // export let offset: boolean = true;
+  let { children, color = 'gray', rounded = false, size = 'md', border = false, placement, offset = true, divclass }: Props = $props();
 
   const colors = {
     gray: 'bg-gray-200',
@@ -56,20 +42,17 @@
   const placements = {
     // top
     'top-left': 'top-0 start-0',
-    'top-center':
-      'top-0 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 rtl:translate-x-1/2',
+    'top-center': 'top-0 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 rtl:translate-x-1/2',
     'top-right': 'top-0 end-0',
 
     // center
     'center-left': 'top-1/2 -translate-y-1/2 start-0',
-    center:
-      'top-1/2 -translate-y-1/2 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 rtl:translate-x-1/2',
+    center: 'top-1/2 -translate-y-1/2 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 rtl:translate-x-1/2',
     'center-right': 'top-1/2 -translate-y-1/2 end-0',
 
     // bottom
     'bottom-left': 'bottom-0 start-0',
-    'bottom-center':
-      'bottom-0 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 rtl:translate-x-1/2',
+    'bottom-center': 'bottom-0 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 rtl:translate-x-1/2',
     'bottom-right': 'bottom-0 end-0'
   };
 
@@ -113,12 +96,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: any;
-@props:color?:  IndicatorColorType; = 'gray';
-@props:rounded?:  boolean; = false;
-@props:size?:  'xs' | 'sm' | 'md' | 'lg' | 'xl'; = 'md';
-@props:border?:  boolean; = false;
+@props: children?: Snippet;
+@props:color?: IndicatorColorType;
+@props:rounded?: boolean;
+@props:size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+@props:border?: boolean;
 @props:placement?: IndicatorPlacementType | undefined;
 @props:divclass?: string | undefined;
-@props:offset?:  boolean; = true;
+@props:offset?: boolean;
 -->

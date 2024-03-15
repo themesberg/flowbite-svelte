@@ -1,6 +1,10 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte';
+  import { twMerge } from 'tailwind-merge';
+  import type { BlockQuoteType } from '../types';
+
   interface Props {
-    children?: any;
+    children?: Snippet;
     border?: boolean;
     italic?: boolean;
     borderclass?: string | undefined;
@@ -11,32 +15,12 @@
     size?: BlockQuoteType;
     class?: string | undefined;
   }
-  import { twMerge } from 'tailwind-merge';
-  import type { BlockQuoteType } from '../types';
 
-  let {
-    children,
-    class: classname,
-    border,
-    italic = true,
-    borderclass,
-    bgclass,
-    bg,
-    baseclass,
-    alignment = 'left',
-    size = 'lg',
-    ...attributes
-  }: Props = $props();
+  let { children, class: classname, border, italic = true, borderclass, bgclass, bg, baseclass, alignment = 'left', size = 'lg', ...attributes }: Props = $props();
 
-  const borderCls: string = twMerge(
-    'border-s-4 border-gray-300 dark:border-gray-500',
-    borderclass
-  );
+  const borderCls: string = twMerge('border-s-4 border-gray-300 dark:border-gray-500', borderclass);
   const bgCls: string = twMerge('bg-gray-50 dark:bg-gray-800', bgclass);
-  const baseCls: string = twMerge(
-    'font-semibold text-gray-900 dark:text-white',
-    baseclass
-  );
+  const baseCls: string = twMerge('font-semibold text-gray-900 dark:text-white', baseclass);
 
   let alignmentClasses = {
     left: 'text-left',
@@ -60,33 +44,24 @@
   };
 </script>
 
-<blockquote
-  {...attributes}
-  class={twMerge(
-    baseCls,
-    alignmentClasses[alignment],
-    sizes[size],
-    bg && bgCls,
-    border && borderCls,
-    italic && 'italic',
-    classname
-  )}
->
+<blockquote {...attributes} class={twMerge(baseCls, alignmentClasses[alignment], sizes[size], bg && bgCls, border && borderCls, italic && 'italic', classname)}>
+  {#if children}
   {@render children()}
+  {/if}
 </blockquote>
 
 <!--
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: any;
+@props: children?: Snippet;
 @props:border?: boolean;
-@props:italic?:  boolean; = true;
+@props:italic?: boolean;
 @props:borderclass?: string | undefined;
 @props:bgclass?: string | undefined;
 @props:bg?: boolean;
 @props:baseclass?: string | undefined;
-@props:alignment?:  'left' | 'center' | 'right'; = 'left';
-@props:size?:  BlockQuoteType; = 'lg';
+@props:alignment?: 'left' | 'center' | 'right';
+@props:size?: BlockQuoteType;
 @props:class?: string | undefined;
 -->

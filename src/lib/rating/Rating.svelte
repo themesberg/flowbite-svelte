@@ -1,12 +1,13 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte';
   import Star from './Star.svelte';
   import { twMerge } from 'tailwind-merge';
   import { idGenerator } from '$lib/uiHelpers.svelte';
   import type { ComponentType } from 'svelte';
 
   interface Props {
-    children?: any;
-    text?: any;
+    children?: Snippet;
+    text?: Snippet;
     divclass?: string;
     size?: number;
     total?: number;
@@ -15,17 +16,7 @@
     icon?: ComponentType;
     count?: boolean;
   }
-  let {
-    children,
-    text,
-    divclass,
-    size = 24,
-    total = 5,
-    rating = 4,
-    partialId = 'partialStar' + idGenerator(),
-    icon = Star,
-    count = false
-  }: Props = $props();
+  let { children, text, divclass, size = 24, total = 5, rating = 4, partialId = 'partialStar' + idGenerator(), icon = Star, count = false }: Props = $props();
 
   // generate unique id for full star and gray star
   const fullStarId: string = idGenerator();
@@ -38,7 +29,7 @@
 </script>
 
 <div class={twMerge('flex items-center', divclass)}>
-  {#if count}
+  {#if count && children}
     <svelte:component this={icon} fillPercent={100} {size} />
     <p class="ms-2 text-sm font-bold text-gray-900 dark:text-white">{rating}</p>
     {@render children()}
@@ -47,12 +38,7 @@
       <svelte:component this={icon} {size} fillPercent={100} id={fullStarId} />
     {/each}
     {#if percentRating}
-      <svelte:component
-        this={icon}
-        {size}
-        fillPercent={percentRating}
-        id={partialId}
-      />
+      <svelte:component this={icon} {size} fillPercent={percentRating} id={partialId} />
     {/if}
     {#each Array(grayStars) as star}
       <svelte:component this={icon} {size} fillPercent={0} id={grayStarId} />
@@ -67,13 +53,13 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: any;
+@props: children?: Snippet;
 @props:text?: any;
 @props:divclass?: string;
-@props:size?:  number; = 24;
-@props:total?:  number; = 5;
-@props:rating?:  number; = 4;
-@props:partialId?:  string; = 'partialStar' + idGenerator();
-@props:icon?:  ComponentType; = Star;
-@props:count?:  boolean; = false;
+@props:size?: number;
+@props:total?: number;
+@props:rating?: number;
+@props:partialId?: string;
+@props:icon?: ComponentType;
+@props:count?: boolean;
 -->

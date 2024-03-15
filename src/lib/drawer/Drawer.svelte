@@ -1,10 +1,11 @@
 <script lang="ts">
-  import type {
-    drawerTransitionParamTypes,
-    drawerTransitionTypes
-  } from '../types';
+  import type { Snippet } from 'svelte';
+  import type { drawerTransitionParamTypes, drawerTransitionTypes } from '../types';
+  import { twMerge } from 'tailwind-merge';
+  import { fly, slide, blur, fade } from 'svelte/transition';
+
   interface Props {
-    children?: any;
+    children?: Snippet;
     drawerStatus: boolean;
     toggleDrawer?: () => void;
     closeDrawer?: () => void;
@@ -23,10 +24,6 @@
     transitionParams: drawerTransitionParamTypes;
     transitionType?: drawerTransitionTypes;
   }
-
-  import { twMerge } from 'tailwind-merge';
-  import { fly, slide, blur, fade } from 'svelte/transition';
-  // import { clickOutside } from '$lib';
 
   let {
     children,
@@ -70,18 +67,8 @@
     bottom: bottomOffset
   };
 
-  let backdropDivClass = twMerge(
-    'fixed top-0 start-0 z-50 w-full h-full',
-    backdrop && bgColor,
-    backdrop && bgOpacity
-  );
-  let divCls = twMerge(
-    'overflow-y-auto z-50 p-4 bg-white dark:bg-gray-800',
-    width,
-    position,
-    placements[placement],
-    divclass
-  );
+  let backdropDivClass = twMerge('fixed top-0 start-0 z-50 w-full h-full', backdrop && bgColor, backdrop && bgOpacity);
+  let divCls = twMerge('overflow-y-auto z-50 p-4 bg-white dark:bg-gray-800', width, position, placements[placement], divclass);
 </script>
 
 {#if drawerStatus}
@@ -90,21 +77,14 @@
   {:else if backdrop && !activateClickOutside}
     <div role="presentation" class={backdropDivClass} />
   {:else if !backdrop && activateClickOutside}
-    <div
-      role="presentation"
-      class="fixed start-0 top-0 z-50 h-full w-full"
-      onclick={closeDrawer}
-    />
+    <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full" onclick={closeDrawer} />
   {:else if !backdrop && !activateClickOutside}
     <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full" />
   {/if}
-  <div
-    {...attributes}
-    class={divCls}
-    transition:multiple={transitionParams}
-    tabindex="-1"
-  >
-    {@render children()}
+  <div {...attributes} class={divCls} transition:multiple={transitionParams} tabindex="-1">
+    {#if children}
+      {@render children()}
+    {/if}
   </div>
 {/if}
 
@@ -112,22 +92,22 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: any;
+@props: children?: Snippet;
 @props:drawerStatus: boolean;
 @props:toggleDrawer?: () => void;
 @props:closeDrawer?: () => void;
-@props:activateClickOutside?:  boolean; = true;
-@props:position?:  'fixed' | 'absolute'; = 'fixed';
-@props:leftOffset?:  string | undefined; = 'inset-y-0 start-0';
-@props:rightOffset?:  string | undefined; = 'inset-y-0 end-0';
-@props:topOffset?:  string | undefined; = 'inset-x-0 top-0';
-@props:bottomOffset?:  string | undefined; = 'inset-x-0 bottom-0';
-@props:width?:  string; = 'w-80';
-@props:backdrop?:  boolean; = true;
-@props:bgColor?:  string | undefined; = 'bg-gray-900';
-@props:bgOpacity?:  string | undefined; = 'bg-opacity-75';
-@props:placement?:  'left' | 'right' | 'top' | 'bottom'; = 'left';
-@props:divclass?:  string | undefined; = '';
+@props:activateClickOutside?: boolean;
+@props:position?: 'fixed' | 'absolute';
+@props:leftOffset?: string | undefined;
+@props:rightOffset?: string | undefined;
+@props:topOffset?: string | undefined;
+@props:bottomOffset?: string | undefined;
+@props:width?: string;
+@props:backdrop?: boolean;
+@props:bgColor?: string | undefined;
+@props:bgOpacity?: string | undefined;
+@props:placement?: 'left' | 'right' | 'top' | 'bottom';
+@props:divclass?: string | undefined;
 @props:transitionParams: drawerTransitionParamTypes;
-@props:transitionType?:  drawerTransitionTypes; = 'fly';
+@props:transitionType?: drawerTransitionTypes;
 -->

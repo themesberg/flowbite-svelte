@@ -1,9 +1,10 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import { idGenerator } from '../uiHelpers.svelte';
   import type { InputType } from '../types';
   interface Props {
-    children?: any;
+    children?: Snippet;
     id?: string;
     style?: 'filled' | 'outlined' | 'standard';
     type?: InputType;
@@ -14,24 +15,7 @@
     inputclass?: string;
     labelclass?: string;
   }
-  let {
-    children,
-    id = idGenerator(),
-    style = 'standard',
-    type = 'text',
-    size = 'default',
-    color = 'base',
-    divclass,
-    inputclass,
-    labelclass,
-    ...attributes
-  }: Props = $props();
-  // export let id: string = idGenerator();
-  // export let style: 'filled' | 'outlined' | 'standard' = 'standard';
-  // export let type: InputType = 'text';
-  // export let size: 'small' | 'default' = 'default';
-  // export let color: 'base' | 'green' | 'red' = 'base';
-  // export let value: any = undefined;
+  let { children, id = idGenerator(), style = 'standard', type = 'text', size = 'default', color = 'base', divclass, inputclass, labelclass, ...attributes }: Props = $props();
 
   const divClasses = {
     filled: 'relative',
@@ -70,12 +54,9 @@
   };
 
   const inputClasses = {
-    filled:
-      'block rounded-t-lg w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 appearance-none dark:text-white focus:outline-none focus:ring-0 peer',
-    outlined:
-      'block w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 appearance-none dark:text-white  focus:outline-none focus:ring-0 peer',
-    standard:
-      'block w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none dark:text-white  focus:outline-none focus:ring-0 peer'
+    filled: 'block rounded-t-lg w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 appearance-none dark:text-white focus:outline-none focus:ring-0 peer',
+    outlined: 'block w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 appearance-none dark:text-white  focus:outline-none focus:ring-0 peer',
+    standard: 'block w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none dark:text-white  focus:outline-none focus:ring-0 peer'
   };
 
   const labelClasses = {
@@ -89,8 +70,7 @@
 
   const inputColorClasses = {
     base: 'border-gray-300 dark:border-gray-600 dark:focus:border-primary-500 focus:border-primary-600',
-    green:
-      'border-green-600 dark:border-green-500 dark:focus:border-green-500 focus:border-green-600',
+    green: 'border-green-600 dark:border-green-500 dark:focus:border-green-500 focus:border-green-600',
     red: 'border-red-600 dark:border-red-500 dark:focus:border-red-500  focus:border-red-600'
   };
 
@@ -102,29 +82,14 @@
 </script>
 
 <div class={twMerge(divClasses[style], divclass)}>
-  <input
-    {id}
-    {...attributes}
-    {...{ type }}
-    placeholder=" "
-    class={twMerge(
-      inputClasses[style],
-      inputColorClasses[color],
-      inputSizes[style][size],
-      inputclass
-    )}
-  />
+  <input {id} {...attributes} {...{ type }} placeholder=" " class={twMerge(inputClasses[style], inputColorClasses[color], inputSizes[style][size], inputclass)} />
 
-  <label
-    for={id}
-    class={twMerge(
-      labelClasses[style],
-      labelColorClasses[color],
-      labelSizes[style][size],
-      labelclass
-    )}
-  >
-    {@render children()}
+  <label for={id} class={twMerge(labelClasses[style], labelColorClasses[color], labelSizes[style][size], labelclass)}>
+    {#if children}
+      {@render children()}
+    {:else}
+      FloatingLabel content
+    {/if}
   </label>
 </div>
 
@@ -132,12 +97,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: any;
-@props:id?:  string; = idGenerator();
-@props:style?:  'filled' | 'outlined' | 'standard'; = 'standard';
-@props:type?:  InputType; = 'text';
-@props:size?:  'small' | 'default'; = 'default';
-@props:color?:  'base' | 'green' | 'red'; = 'base';
+@props: children?: Snippet;
+@props:id?: string;
+@props:style?: 'filled' | 'outlined' | 'standard';
+@props:type?: InputType;
+@props:size?: 'small' | 'default';
+@props:color?: 'base' | 'green' | 'red';
 @props:value?: any;
 @props:divclass?: string;
 @props:inputclass?: string;

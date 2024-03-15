@@ -11,12 +11,10 @@
 <Nav />
 <div class="lg:flex">
   <Sidemenu />
-  <main
-    class="mx-auto min-w-0 max-w-5xl flex-auto px-8 pb-20 lg:static lg:max-h-full lg:overflow-visible"
-  > 
-  <div id="mainContent">
-    {@render children()}
-  </div>
+  <main class="mx-auto min-w-0 max-w-5xl flex-auto px-8 pb-20 lg:static lg:max-h-full lg:overflow-visible">
+    <div id="mainContent">
+      {@render children()}
+    </div>
   </main>
 </div>
 <Footer />

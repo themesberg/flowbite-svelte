@@ -12,31 +12,10 @@
     svgclass?: string;
   }
 
-  let {
-    fillPercent = 100,
-    fillColor = '#ff0000',
-    strokeColor = '#ff0000',
-    size = 24,
-    ariaLabel = 'heart',
-    id = idGenerator(),
-    role = 'img',
-    svgclass,
-    ...attributes
-  }: Props = $props();
+  let { fillPercent = 100, fillColor = '#ff0000', strokeColor = '#ff0000', size = 24, ariaLabel = 'heart', id = idGenerator(), role = 'img', svgclass, ...attributes }: Props = $props();
 </script>
 
-<svg
-  width={size}
-  height={size}
-  class={svgclass}
-  {...attributes}
-  aria-label={ariaLabel}
-  viewBox="0 0 24 24"
-  {role}
-  stroke-width="1.5"
-  stroke="currentColor"
-  fill="none"
->
+<svg width={size} height={size} class={svgclass} {...attributes} aria-label={ariaLabel} viewBox="0 0 24 24" {role} stroke-width="1.5" stroke="currentColor" fill="none">
   <defs>
     <linearGradient {id}>
       {#if fillPercent !== 100}
@@ -63,12 +42,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: fillPercent?:  number; = 100;
-@props:fillColor?:  string; = '#ff0000';
-@props:strokeColor?:  string; = '#ff0000';
-@props:size?:  number; = 24;
-@props:ariaLabel?:  string; = 'heart';
-@props:id?:  string; = idGenerator();
-@props:role?:  string; = 'img';
+@props: fillPercent?: number;
+@props:fillColor?: string;
+@props:strokeColor?: string;
+@props:size?: number;
+@props:ariaLabel?: string;
+@props:id?: string;
+@props:role?: string;
 @props:svgclass?: string;
 -->

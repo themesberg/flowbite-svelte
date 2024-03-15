@@ -1,6 +1,6 @@
 <script lang="ts">
   interface Props {
-    children?: any;
+    children?: Snippet;
     src: string | undefined;
     type?: string | undefined;
     trackSrc?: string | undefined;
@@ -9,16 +9,7 @@
     class?: string | undefined;
   }
 
-  let {
-    children,
-    src,
-    type = 'video/mp4',
-    trackSrc,
-    srclang = 'en',
-    label = 'english_captions',
-    class: classname,
-    ...attributes
-  }: Props = $props();
+  let { children, src, type = 'video/mp4', trackSrc, srclang = 'en', label = 'english_captions', class: classname, ...attributes }: Props = $props();
 </script>
 
 <video {...attributes} class={classname}>
@@ -34,11 +25,11 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: any;
+@props: children?: Snippet;
 @props:src: string | undefined;
-@props:type?:  string | undefined; = 'video/mp4';
+@props:type?: string | undefined;
 @props:trackSrc?: string | undefined;
-@props:srclang?:  string | undefined; = 'en';
-@props:label?:  string | undefined; = 'english_captions';
+@props:srclang?: string | undefined;
+@props:label?: string | undefined;
 @props:class?: string | undefined;
 -->

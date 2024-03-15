@@ -1,28 +1,21 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte';
+  import { getContext } from 'svelte';
+  import type { SidebarType } from '$lib/types';
+  import { page } from '$app/stores';
+  import { twMerge } from 'tailwind-merge';
+
   interface Props {
-    icon?: any;
-    subtext?: any;
+    icon?: Snippet;
+    subtext?: Snippet;
     href?: string | undefined;
     label?: string | undefined;
     spanclass?: string | undefined;
     activeClass?: string | undefined;
     nonActiveClass?: string | undefined;
   }
-  import { getContext } from 'svelte';
-  import type { SidebarType } from '$lib/types';
-  import { page } from '$app/stores';
-  import { twMerge } from 'tailwind-merge';
 
-  let {
-    icon,
-    subtext,
-    href,
-    label,
-    spanclass,
-    activeClass,
-    nonActiveClass,
-    ...attributes
-  }: Props = $props();
+  let { icon, subtext, href, label, spanclass, activeClass, nonActiveClass, ...attributes }: Props = $props();
   const context = getContext<SidebarType>('sidebarContext') ?? {};
   let currentUrl = $state();
   let spanCls: string = twMerge('ms-3', spanclass);
@@ -31,11 +24,7 @@
     currentUrl = $page.url.pathname;
   });
 
-  let aCls = $derived(
-    currentUrl === href
-      ? activeClass ?? context.activeClass
-      : nonActiveClass ?? context.nonActiveClass
-  );
+  let aCls = $derived(currentUrl === href ? activeClass ?? context.activeClass : nonActiveClass ?? context.nonActiveClass);
   // $inspect('aCls', aCls)
 </script>
 

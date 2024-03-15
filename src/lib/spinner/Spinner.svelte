@@ -1,41 +1,21 @@
 <script lang="ts">
   interface Props {
-    color?:
-      | 'primary'
-      | 'blue'
-      | 'gray'
-      | 'green'
-      | 'red'
-      | 'yellow'
-      | 'pink'
-      | 'purple'
-      | 'white'
-      | 'custom'
-      | undefined;
-    bg?: string | undefined;
-    customColor?: string | undefined;
-    size?: string | number | undefined;
-    currentFill?: string | undefined;
-    currentColor?: string | undefined;
-    svgclass?: string | undefined;
+    color?: 'primary' | 'blue' | 'gray' | 'green' | 'red' | 'yellow' | 'pink' | 'purple' | 'white' | 'custom' ;
+    bg?: string ;
+    customColor?: string ;
+    size?: string | number ;
+    currentFill?: string ;
+    currentColor?: string ;
+    svgclass?: string ;
   }
   import { twMerge } from 'tailwind-merge';
 
-  let {
-    svgclass,
-    color = 'primary',
-    bg = 'text-gray-300',
-    customColor,
-    size = '8',
-    currentFill = 'currentFill',
-    currentColor = 'currentColor',
-    ...attributes
-  }: Props = $props();
+  let { svgclass, color = 'primary', bg = 'text-gray-300', customColor, size = '8', currentFill = 'currentFill', currentColor = 'currentColor', ...attributes }: Props = $props();
 
   let iconsize = `w-${size} h-${size}`;
 
   if (currentFill !== 'currentFill') {
-    color = '';
+    color = 'custom';
   }
 
   const fillColorClasses = {
@@ -51,20 +31,13 @@
     custom: customColor
   };
 
-  let fillColorCls: string =
-    color === undefined ? '' : fillColorClasses[color] ?? fillColorClasses.blue;
+  let fillColorCls: string = color === undefined ? '' : fillColorClasses[color] ?? fillColorClasses.blue;
 </script>
 
 <svg
   {...attributes}
   role="status"
-  class={twMerge(
-    '-mt-px inline animate-spin dark:text-gray-600',
-    iconsize,
-    bg,
-    fillColorCls,
-    svgclass
-  )}
+  class={twMerge('-mt-px inline animate-spin dark:text-gray-600', iconsize, bg, fillColorCls, svgclass)}
   viewBox="0 0 100 101"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
@@ -83,11 +56,11 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: color?:   = 'primary';
-@props:bg?:  string | undefined; = 'text-gray-300';
+@props: color?: 'primary' | 'blue' | 'gray' | 'green' | 'red' | 'yellow' | 'pink' | 'purple' | 'white' | 'custom' | undefined;
+@props:bg?: string | undefined;
 @props:customColor?: string | undefined;
-@props:size?:  string | number | undefined; = '8';
-@props:currentFill?:  string | undefined; = 'currentFill';
-@props:currentColor?:  string | undefined; = 'currentColor';
+@props:size?: string | number | undefined;
+@props:currentFill?: string | undefined;
+@props:currentColor?: string | undefined;
 @props:svgclass?: string | undefined;
 -->

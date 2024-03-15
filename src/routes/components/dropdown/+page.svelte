@@ -3,13 +3,7 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import {
-    Button,
-    Dropdown,
-    DropdownDivider,
-    DropdownItem,
-    uiHelpers
-  } from '$lib';
+  import { Button, Dropdown, DropdownDivider, DropdownItem, uiHelpers } from '$lib';
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
 
   let dropdown = uiHelpers();
@@ -60,11 +54,7 @@
       {/snippet}
       {#snippet footer()}
         <div class="py-2">
-          <a
-            href="/"
-            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-            >Sign out</a
-          >
+          <a href="/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
         </div>
       {/snippet}
     </Dropdown>

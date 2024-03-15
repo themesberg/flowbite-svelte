@@ -1,4 +1,5 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   type CardSizeType = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
@@ -7,7 +8,7 @@
     alt: string;
   };
   interface Props {
-    children?: any;
+    children?: Snippet;
     href?: string;
     horizontal?: boolean;
     shadow?: boolean;
@@ -18,18 +19,7 @@
     class?: string | undefined;
   }
 
-  let {
-    children,
-    href,
-    horizontal = false,
-    shadow = false,
-    reverse = false,
-    img,
-    padding = 'lg',
-    size = 'sm',
-    class: classname,
-    ...attributes
-  }: Props = $props();
+  let { children, href, horizontal = false, shadow = false, reverse = false, img, padding = 'lg', size = 'sm', class: classname, ...attributes }: Props = $props();
 
   const paddings = {
     none: 'p-0',
@@ -66,21 +56,22 @@
     );
     imgClass = twMerge(
       reverse ? 'rounded-b-lg' : 'rounded-t-lg',
-      horizontal &&
-        'object-cover w-full h-96 md:h-auto md:w-48 md:rounded-none',
+      horizontal && 'object-cover w-full h-96 md:h-auto md:w-48 md:rounded-none',
       horizontal && (reverse ? 'md:rounded-e-lg' : 'md:rounded-s-lg')
     );
   });
 </script>
 
 {#snippet content()}
-  {#if img}
-    <img class={imgClass} src={img.src} alt={img.alt} />
-    <div class={innerPadding}>
+  {#if children}  
+    {#if img}
+      <img class={imgClass} src={img.src} alt={img.alt} />
+      <div class={innerPadding}>
+        {@render children()}
+      </div>
+    {:else}
       {@render children()}
-    </div>
-  {:else}
-    {@render children()}
+    {/if}
   {/if}
 {/snippet}
 
@@ -98,13 +89,13 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: any;
+@props: children?: Snippet;
 @props:href?: string;
-@props:horizontal?:  boolean; = false;
-@props:shadow?:  boolean; = false;
-@props:reverse?:  boolean; = false;
+@props:horizontal?: boolean;
+@props:shadow?: boolean;
+@props:reverse?: boolean;
 @props:img?: ImgType;
-@props:padding?:  'none' | 'sm' | 'md' | 'lg' | 'xl'; = 'lg';
-@props:size?:  CardSizeType; = 'sm';
+@props:padding?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
+@props:size?: CardSizeType;
 @props:class?: string | undefined;
 -->

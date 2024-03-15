@@ -1,11 +1,5 @@
 <script lang="ts">
-  import {
-    Avatar,
-    Dropdown,
-    DropdownItem,
-    DropdownDivider,
-    uiHelpers
-  } from '$lib';
+  import { Avatar, Dropdown, DropdownItem, DropdownDivider, uiHelpers } from '$lib';
   let dropdown = uiHelpers();
 
   let isOpen = $state(false);
@@ -45,11 +39,7 @@
 <H2>Bordered</H2>
 <CodeWrapper class="flex justify-center gap-4">
   <Avatar src="/images/profile-picture-2.webp" border />
-  <Avatar
-    src="/images/profile-picture-2.webp"
-    border
-    class="ring-red-400 dark:ring-red-300"
-  />
+  <Avatar src="/images/profile-picture-2.webp" border class="ring-red-400 dark:ring-red-300" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/bordered.md'] as string} />
@@ -74,20 +64,9 @@
 <H2>Dot indicator</H2>
 <CodeWrapper class="flex justify-center gap-4">
   <Avatar src="/images/profile-picture-3.webp" dot={{ color: 'red' }} />
-  <Avatar
-    src="/images/profile-picture-3.webp"
-    dot={{ placement: 'top-right', color: 'red' }}
-    rounded
-  />
-  <Avatar
-    src="/images/profile-picture-5.webp"
-    dot={{ placement: 'bottom-right', color: 'green' }}
-  />
-  <Avatar
-    src="/images/profile-picture-5.webp"
-    dot={{ placement: 'bottom-right' }}
-    rounded
-  />
+  <Avatar src="/images/profile-picture-3.webp" dot={{ placement: 'top-right', color: 'red' }} rounded />
+  <Avatar src="/images/profile-picture-5.webp" dot={{ placement: 'bottom-right', color: 'green' }} />
+  <Avatar src="/images/profile-picture-5.webp" dot={{ placement: 'bottom-right' }} rounded />
   <Avatar dot={{}} />
 </CodeWrapper>
 
@@ -105,11 +84,7 @@
     <Avatar src="/images/profile-picture-1.webp" stacked />
     <Avatar src="/images/profile-picture-2.webp" stacked />
     <Avatar src="/images/profile-picture-3.webp" stacked />
-    <Avatar
-      stacked
-      href="/"
-      class="bg-gray-700 text-sm text-white hover:bg-gray-600">+99</Avatar
-    >
+    <Avatar stacked href="/" class="bg-gray-700 text-sm text-white hover:bg-gray-600">+99</Avatar>
   </div>
 </CodeWrapper>
 
@@ -121,9 +96,7 @@
     <Avatar src="/images/profile-picture-1.webp" rounded />
     <div class="space-y-1 font-medium dark:text-white">
       <div>Jese Leos</div>
-      <div class="text-sm text-gray-500 dark:text-gray-400">
-        Joined in August 2014
-      </div>
+      <div class="text-sm text-gray-500 dark:text-gray-400">Joined in August 2014</div>
     </div>
   </div>
 </CodeWrapper>
@@ -132,12 +105,7 @@
 
 <H2>User dropdown</H2>
 <CodeWrapper class="h-80">
-  <Avatar
-    onclick={toggle}
-    src="/images/profile-picture-3.webp"
-    class="cursor-pointer"
-    dot={{ color: 'green' }}
-  />
+  <Avatar onclick={toggle} src="/images/profile-picture-3.webp" class="cursor-pointer" dot={{ color: 'green' }} />
   <Dropdown {isOpen}>
     {#snippet header()}
       <div>Bonnie Green</div>

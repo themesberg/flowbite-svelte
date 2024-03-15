@@ -1,10 +1,12 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte';
+  import { twMerge } from 'tailwind-merge';
+
   interface Props {
-    children?: any;
+    children?: Snippet;
     href: string;
     aclass?: string | undefined;
   }
-  import { twMerge } from 'tailwind-merge';
 
   let { children, href = '#', aclass, ...attributes }: Props = $props();
 
@@ -13,14 +15,16 @@
 </script>
 
 <a {...attributes} {href} class={twMerge(aCls, colorCls, aclass)}>
+  {#if children}
   {@render children()}
+  {/if}
 </a>
 
 <!--
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: any;
+@props: children?: Snippet;
 @props:href: string;
 @props:aclass?: string | undefined;
 -->

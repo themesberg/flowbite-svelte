@@ -1,9 +1,11 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte';
   import { getContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import type { navbarType } from '$lib/types';
+
   interface Props {
-    children?: any;
+    children?: Snippet;
     ulclass?: string | undefined;
   }
   let { children, ulclass, ...attributes }: Props = $props();
@@ -19,22 +21,20 @@
     xxl: '2xl:mt-0 2xl:flex-row 2xl:space-x-8 2xl:border-0 2xl:p-0 2xl:dark:bg-gray-900'
   };
 
-  let ulCls = twMerge(
-    'font-medium flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-transparent rtl:space-x-reverse dark:bg-gray-800 dark:border-gray-700',
-    ulBreaks[breakPoint],
-    ulclass
-  );
+  let ulCls = twMerge('font-medium flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-transparent rtl:space-x-reverse dark:bg-gray-800 dark:border-gray-700', ulBreaks[breakPoint], ulclass);
   // $inspect('context.breakPoint: ',ulBreak[breakPoint])
 </script>
 
 <ul class={ulCls} {...attributes}>
-  {@render children()}
+  {#if children}
+    {@render children()}
+  {/if}
 </ul>
 
 <!--
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: any;
+@props: children?: Snippet;
 @props:ulclass?: string | undefined;
 -->
