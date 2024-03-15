@@ -48,7 +48,7 @@
     transitionParams,
     transitionType = 'fly',
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   function multiple(node: HTMLElement, params: any) {
     switch (transitionType) {

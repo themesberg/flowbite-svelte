@@ -17,7 +17,7 @@
     xxl: 'max-w-2xl'
   };
 
-  let { size = 'sm', divclass } = $props<Props>();
+  let { size = 'sm', divclass }: Props = $props();
   let outDivclass = twMerge(
     sizes[size],
     'p-4 rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700',

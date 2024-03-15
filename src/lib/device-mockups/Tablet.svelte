@@ -17,7 +17,7 @@
     div4class,
     div5class,
     div6class
-  } = $props<Props>();
+  }: Props = $props();
   const div: string =
     'relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[454px] max-w-[341px] md:h-[682px] md:max-w-[512px]';
   const slot: string =

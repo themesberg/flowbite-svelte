@@ -36,7 +36,7 @@
     disabled = false,
     btnclass,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   const colorClasses = {
     alternative:

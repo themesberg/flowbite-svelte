@@ -35,7 +35,7 @@
     href,
     divclass,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
   // const background = getContext('background');
 
   // export let color: ToolbarButtonType = 'default';

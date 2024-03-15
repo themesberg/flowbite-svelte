@@ -34,7 +34,7 @@
     href,
     rounded,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   let badgeStatus: boolean = $state(true);
 

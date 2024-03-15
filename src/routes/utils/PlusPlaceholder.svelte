@@ -4,7 +4,7 @@
     rownum?: number;
   }
 
-  let { colnum = 1, rownum = 1 } = $props<Props>();
+  let { colnum = 1, rownum = 1 }: Props = $props();
   function calculateGridItems() {
     return colnum * rownum;
   }

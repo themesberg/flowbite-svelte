@@ -11,7 +11,7 @@
     spanclass?: string | undefined;
   }
 
-  let { children, siteName, closeNav, aclass, spanclass } = $props<Props>();
+  let { children, siteName, closeNav, aclass, spanclass }: Props = $props();
 
   const context = getContext<navbarType>('navbarContext');
   closeNav = context.closeNav ?? closeNav;

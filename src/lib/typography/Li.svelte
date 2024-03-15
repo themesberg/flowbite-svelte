@@ -5,7 +5,7 @@
     liclass?: string | undefined;
   }
   import { twMerge } from 'tailwind-merge';
-  let { children, icon, liclass, ...attributes } = $props<Props>();
+  let { children, icon, liclass, ...attributes }: Props = $props();
   // export let icon: boolean = false;
   // export let liClass: string = '';
   let classLi: string = twMerge(liclass, icon && 'flex items-center');

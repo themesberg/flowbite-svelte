@@ -10,7 +10,7 @@
     footerType = 'default',
     footerclass,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   let footerCls = twMerge(
     footerType === 'sitemap' && 'bg-gray-800',

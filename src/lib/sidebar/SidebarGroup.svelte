@@ -13,7 +13,7 @@
     borderClass,
     border = false,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   let ulCls: string = $state(twMerge('space-y-2', ulclass));
   let borderCls: string = twMerge(

@@ -7,7 +7,7 @@
     div3class?: string;
     div4class?: string;
   }
-  let { children, divclass, div2class, div3class, div4class } = $props<Props>();
+  let { children, divclass, div2class, div3class, div4class }: Props = $props();
   const div: string =
     'relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]';
   const inner: string =

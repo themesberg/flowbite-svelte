@@ -21,7 +21,7 @@
     aclass,
     class: classname,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
   let a2Cls: string = twMerge(
     'ms-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ms-2 dark:text-gray-400 dark:hover:text-white',
     a2class

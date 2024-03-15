@@ -22,7 +22,7 @@
     name,
     target,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   let aCls: string = twMerge('flex items-center', aclass);
   let spanCls: string = twMerge(

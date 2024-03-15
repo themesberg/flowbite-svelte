@@ -6,7 +6,7 @@
     ddclass?: string | undefined;
   }
   import { twMerge } from 'tailwind-merge';
-  let { children, tag, dtclass, ddclass, ...attributes } = $props<Props>();
+  let { children, tag, dtclass, ddclass, ...attributes }: Props = $props();
   // export let tag: 'dt' | 'dd';
   const dtCls: string = twMerge(
     'text-gray-500 md:text-lg dark:text-gray-400',

@@ -19,7 +19,7 @@
     div5class,
     div6class,
     div7class
-  } = $props<Props>();
+  }: Props = $props();
 
   const div: string =
     'relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-xl h-[600px] w-[300px] shadow-xl';

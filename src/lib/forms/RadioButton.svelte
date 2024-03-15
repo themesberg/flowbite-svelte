@@ -26,7 +26,7 @@
     color,
     shadow,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   let buttonCls: string = twMerge(inline ? 'inline-flex' : 'flex', btnclass);
 </script>

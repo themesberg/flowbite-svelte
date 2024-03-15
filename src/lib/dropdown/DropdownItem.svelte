@@ -8,7 +8,7 @@
     activeclass?: string | undefined;
   }
 
-  let { aclass, children, href, activeclass, ...attributes } = $props<Props>();
+  let { aclass, children, href, activeclass, ...attributes }: Props = $props();
 
   let currentUrl = $state();
   $effect(() => {

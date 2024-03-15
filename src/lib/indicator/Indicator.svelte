@@ -21,7 +21,7 @@
     placement,
     offset = true,
     divclass
-  } = $props<Props>();
+  }: Props = $props();
   // export let color: IndicatorColorType = 'gray';
   // export let rounded: boolean = false;
   // export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';

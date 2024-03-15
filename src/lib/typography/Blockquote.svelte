@@ -26,7 +26,7 @@
     alignment = 'left',
     size = 'lg',
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   const borderCls: string = twMerge(
     'border-s-4 border-gray-300 dark:border-gray-500',

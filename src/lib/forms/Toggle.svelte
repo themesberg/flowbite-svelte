@@ -24,7 +24,7 @@
     spanclass,
     color,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
   // export let size: 'small' | 'default' | 'large' | 'custom' = 'default';
   // export let group: (string | number)[] = [];
   // export let value: string | number = '';

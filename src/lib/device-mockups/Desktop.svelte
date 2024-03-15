@@ -7,7 +7,7 @@
     div3class?: string;
     div4class?: string;
   }
-  let { children, divclass, div2class, div3class, div4class } = $props<Props>();
+  let { children, divclass, div2class, div3class, div4class }: Props = $props();
 
   const inner: string = 'rounded-xl overflow-hidden h-[140px] md:h-[262px]';
   const bot: string =

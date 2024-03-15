@@ -17,7 +17,7 @@
     imgclass,
     divclass,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
   // export let items: ImgType[] = [];
   const imgCls: string = 'h-auto max-w-full rounded-lg';
 

@@ -32,7 +32,7 @@
     transitionParams = {},
     svgclass,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   let btnCls = twMerge(
     'flex items-center w-full text-base font-normal text-gray-900 rounded transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700',

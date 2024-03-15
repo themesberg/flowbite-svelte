@@ -3,7 +3,7 @@
     children?: any;
     class?: string | undefined;
   }
-  let { children, class: className, ...attributes } = $props<Props>();
+  let { children, class: className, ...attributes }: Props = $props();
   // export let tableBodyClass: string | undefined = undefined;
 </script>
 

@@ -19,7 +19,7 @@
     copyrightMessage = 'All Rights Reserved.',
     year,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   if (!year) year = new Date().getFullYear();
 

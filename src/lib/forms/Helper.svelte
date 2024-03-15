@@ -5,7 +5,7 @@
     pclass?: string;
     color?: 'gray' | 'green' | 'red' | 'disabled';
   }
-  let { children, pclass, color = 'gray', ...attributes } = $props<Props>();
+  let { children, pclass, color = 'gray', ...attributes }: Props = $props();
   const colorClasses = {
     gray: 'text-gray-900 dark:text-gray-300',
     green: 'text-green-700 dark:text-green-500',

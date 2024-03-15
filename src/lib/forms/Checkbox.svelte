@@ -28,7 +28,7 @@
     labelclass = '',
     inputclass = '',
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 </script>
 
 <Label labelclass={labelCls(inline, labelclass)}>

@@ -6,7 +6,7 @@
   }
   import { twMerge } from 'tailwind-merge';
 
-  let { children, href = '#', aclass, ...attributes } = $props<Props>();
+  let { children, href = '#', aclass, ...attributes }: Props = $props();
 
   const colorCls: string = 'text-primary-600 dark:text-primary-500';
   const aCls: string = 'inline-flex items-center hover:underline';

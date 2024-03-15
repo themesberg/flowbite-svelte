@@ -10,7 +10,7 @@
     tag = 'h1',
     class: classname,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   const textSizes = {
     h1: 'text-5xl font-extrabold',

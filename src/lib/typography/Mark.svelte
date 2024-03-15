@@ -4,7 +4,7 @@
     markclass?: string | undefined;
   }
   import { twMerge } from 'tailwind-merge';
-  let { children, markclass, ...attributes } = $props<Props>();
+  let { children, markclass, ...attributes }: Props = $props();
   let markCls: string = 'text-white dark:bg-blue-500 bg-blue-600 px-2 rounded';
 </script>
 

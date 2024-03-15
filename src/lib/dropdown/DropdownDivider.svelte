@@ -4,7 +4,7 @@
   }
 
   import { twMerge } from 'tailwind-merge';
-  let { divclass, ...attributes } = $props<Props>();
+  let { divclass, ...attributes }: Props = $props();
 </script>
 
 <div

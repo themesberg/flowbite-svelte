@@ -26,7 +26,7 @@
     btnclass,
     spanclass,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   const navType:
     | 'default'

@@ -42,7 +42,7 @@
     space,
     weight = 'normal',
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   const sizes = {
     xs: 'text-xs',

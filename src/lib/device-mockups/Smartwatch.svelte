@@ -17,7 +17,7 @@
     div4class,
     div5class,
     div6class
-  } = $props<Props>();
+  }: Props = $props();
   const div: string =
     'relative mx-auto bg-gray-800 dark:bg-gray-700 rounded-t-[2.5rem] h-[63px] max-w-[133px]';
   const slot: string = 'rounded-[2rem] overflow-hidden h-[193px] w-[188px]';

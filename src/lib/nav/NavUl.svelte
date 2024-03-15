@@ -6,7 +6,7 @@
     children?: any;
     ulclass?: string | undefined;
   }
-  let { children, ulclass, ...attributes } = $props<Props>();
+  let { children, ulclass, ...attributes }: Props = $props();
   let breakPoint: navbarType['breakPoint'];
 
   // breakPoint = getContext('breakPoint');

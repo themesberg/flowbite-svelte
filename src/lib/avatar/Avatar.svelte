@@ -26,7 +26,7 @@
     size = 'md',
     class: classname,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   dot = dot && { placement: 'top-right', color: 'gray', size: 'lg', ...dot };
 

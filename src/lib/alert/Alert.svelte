@@ -34,7 +34,7 @@
     divclass,
     dismissable,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   let alertStatus: boolean = $state(true);
 

@@ -29,7 +29,7 @@
     size = 'sm',
     class: classname,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   const paddings = {
     none: 'p-0',

@@ -30,7 +30,7 @@
     currentFill = 'currentFill',
     currentColor = 'currentColor',
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   let iconsize = `w-${size} h-${size}`;
 

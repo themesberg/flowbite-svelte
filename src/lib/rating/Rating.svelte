@@ -25,7 +25,7 @@
     partialId = 'partialStar' + idGenerator(),
     icon = Star,
     count = false
-  } = $props<Props>();
+  }: Props = $props();
 
   // generate unique id for full star and gray star
   const fullStarId: string = idGenerator();

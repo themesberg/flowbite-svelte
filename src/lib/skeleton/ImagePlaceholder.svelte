@@ -6,7 +6,7 @@
 
   import { twMerge } from 'tailwind-merge';
 
-  let { imgHeight = 'h-48', divclass } = $props<Props>();
+  let { imgHeight = 'h-48', divclass }: Props = $props();
   let divCls: string = twMerge(
     'space-y-8 animate-pulse md:space-y-0 md:space-x-8 rtl:space-x-reverse md:flex md:items-center',
     divclass

@@ -27,7 +27,7 @@
     decorationClass = 'decoration-2 decoration-blue-400 dark:decoration-blue-600',
     gradientClass = 'text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400',
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   // const highlightClass: string = 'text-blue-600 dark:text-blue-500';
   // export let decorationClass: string = 'decoration-2 decoration-blue-400 dark:decoration-blue-600';

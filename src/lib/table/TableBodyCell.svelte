@@ -15,7 +15,7 @@
     tdclass = 'px-6 py-4 whitespace-nowrap font-medium',
     onclick,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   const tableCtx: TableCtxType = getContext('tableCtx');
 

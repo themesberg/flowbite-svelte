@@ -17,7 +17,7 @@
     xxl: 'max-w-2xl'
   };
 
-  let { size = 'sm', divclass } = $props<Props>();
+  let { size = 'sm', divclass }: Props = $props();
   let outDivcls = twMerge(
     sizes[size],
     'flex justify-center items-center h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700',

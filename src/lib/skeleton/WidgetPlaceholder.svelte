@@ -3,7 +3,7 @@
     divclass?: string | undefined;
   }
   import { twMerge } from 'tailwind-merge';
-  let { divclass } = $props<Props>();
+  let { divclass }: Props = $props();
   let divCls: string = twMerge(
     'p-4 max-w-sm rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700',
     divclass

@@ -17,7 +17,7 @@
     xxl: 'max-w-2xl'
   };
 
-  let { size = 'sm', divclass } = $props<Props>();
+  let { size = 'sm', divclass }: Props = $props();
   let outDivcls = $state(twMerge(sizes[size], 'animate-pulse', divclass));
 </script>
 

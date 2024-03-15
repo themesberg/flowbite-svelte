@@ -15,7 +15,7 @@
     labelclass,
     forId,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   const colorClasses = {
     gray: 'text-gray-900 dark:text-gray-300',

@@ -7,7 +7,7 @@
   import { setContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import type { SizeType } from '$lib/types';
-  let { children, size = 'md', divclass = '', ...attributes } = $props<Props>();
+  let { children, size = 'md', divclass = '', ...attributes }: Props = $props();
 
   // export let size: SizeType = 'md';
   const divCls: string = 'inline-flex rounded-lg shadow-sm';

@@ -6,7 +6,7 @@
 
   import { twMerge } from 'tailwind-merge';
 
-  let { ulclass, children, ...attributes } = $props<Props>();
+  let { ulclass, children, ...attributes }: Props = $props();
 </script>
 
 <ul

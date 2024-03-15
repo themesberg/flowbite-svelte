@@ -21,7 +21,7 @@
     headerclass,
     ulclass,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   let hidden = $state('hidden');
 

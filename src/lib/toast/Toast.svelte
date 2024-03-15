@@ -46,7 +46,7 @@
     transition = fade,
     params,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   let toastStatus: boolean = $state(true);
 

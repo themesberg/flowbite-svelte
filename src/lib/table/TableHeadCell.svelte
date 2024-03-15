@@ -10,7 +10,7 @@
     class: className,
     padding = 'px-6 py-3',
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 </script>
 
 <th {...attributes} class={twMerge(padding, className)}>

@@ -22,7 +22,7 @@
     role = 'img',
     svgclass,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 </script>
 
 <svg

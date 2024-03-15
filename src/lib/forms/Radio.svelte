@@ -65,7 +65,7 @@
     value,
     inputclass = '',
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   // tinted if put in component having its own background
   let background: boolean = getContext('background');

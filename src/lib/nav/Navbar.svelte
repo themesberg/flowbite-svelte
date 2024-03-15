@@ -38,7 +38,7 @@
     activeClass,
     nonActiveClass,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   setContext<navbarType>('navbarContext', {
     breakPoint: breakPoint,

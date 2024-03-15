@@ -3,7 +3,7 @@
     divclass?: string | undefined;
   }
   import { twMerge } from 'tailwind-merge';
-  let { divclass } = $props<Props>();
+  let { divclass }: Props = $props();
   let divCls: string = twMerge('animate-pulse', divclass);
 </script>
 

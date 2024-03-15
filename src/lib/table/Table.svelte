@@ -42,7 +42,7 @@
     color = 'default',
     customeColor,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   const colors = {
     default: 'text-gray-500 dark:text-gray-400',

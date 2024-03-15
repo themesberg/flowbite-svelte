@@ -10,7 +10,7 @@
     };
   }
 
-  let { ratings, ratings2, headerLabel } = $props<Props>();
+  let { ratings, ratings2, headerLabel }: Props = $props();
   // export let ratings: { label: string; rating: number }[] = [];
   // export let ratings2: { label: string; rating: number }[] = [];
   // export let headerLabel: {

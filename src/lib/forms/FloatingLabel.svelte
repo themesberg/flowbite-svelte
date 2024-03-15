@@ -25,7 +25,7 @@
     inputclass,
     labelclass,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
   // export let id: string = idGenerator();
   // export let style: 'filled' | 'outlined' | 'standard' = 'standard';
   // export let type: InputType = 'text';

@@ -8,7 +8,7 @@
     class?: string;
     color?: string;
   }
-  let { children, class: className, color, ...attributes } = $props<Props>();
+  let { children, class: className, color, ...attributes }: Props = $props();
 
   const tableCtx: TableCtxType = getContext('tableCtx');
   let rowColor: string = $state(color ? color : tableCtx.color || 'default');

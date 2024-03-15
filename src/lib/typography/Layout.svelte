@@ -13,7 +13,7 @@
     divclass,
     cols = 'grid-cols-1 sm:grid-cols-2',
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   let classDiv = twMerge('grid', cols, divclass);
 </script>

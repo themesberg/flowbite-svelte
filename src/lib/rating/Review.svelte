@@ -39,7 +39,7 @@
     imgclass,
     ulclass,
     liclass
-  } = $props<Props>();
+  }: Props = $props();
 </script>
 
 <article class={twMerge('md:grid md:grid-cols-3 md:gap-8', articleclass)}>

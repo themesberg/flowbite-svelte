@@ -18,7 +18,7 @@
     ariaLabel = 'Breadcrumb',
     class: classname,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
   let navCls: string = twMerge('flex', navclass);
   let solidCls: string = twMerge(
     'flex px-5 py-3 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700',

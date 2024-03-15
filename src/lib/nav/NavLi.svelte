@@ -19,7 +19,7 @@
     activeClass,
     nonActiveClass,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
   let breakPoint: navbarType['breakPoint'];
 
   const context = getContext<navbarType>('navbarContext');

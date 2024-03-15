@@ -16,7 +16,7 @@
     theadClass = 'text-xs uppercase',
     defaultRow = true,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   const tableCtx: TableCtxType = getContext('tableCtx');
   const color = tableCtx.color;

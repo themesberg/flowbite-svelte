@@ -18,7 +18,7 @@
     label = 'english_captions',
     class: classname,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 </script>
 
 <video {...attributes} class={classname}>

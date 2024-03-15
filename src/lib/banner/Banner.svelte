@@ -33,7 +33,7 @@
     divclass,
     div2class,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
   let bannerStatus = $state(true);
 
   const divClasses = {

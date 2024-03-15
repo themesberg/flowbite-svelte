@@ -14,7 +14,7 @@
     position = 'inside',
     class: classname,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   let lists = {
     disc: 'list-disc',

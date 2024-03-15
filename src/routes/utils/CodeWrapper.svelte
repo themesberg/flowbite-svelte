@@ -4,7 +4,7 @@
     class?: string | undefined;
   }
   import { twMerge } from 'tailwind-merge';
-  let { children, class: classname } = $props<Props>();
+  let { children, class: classname }: Props = $props();
 </script>
 
 <div

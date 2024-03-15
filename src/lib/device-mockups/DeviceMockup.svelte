@@ -19,7 +19,7 @@
       | 'smartwatch';
   }
 
-  let { children, device = 'default' } = $props<Props>();
+  let { children, device = 'default' }: Props = $props();
 
   const componets = {
     android: Android,

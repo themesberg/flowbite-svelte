@@ -25,7 +25,7 @@
     border = true,
     defaultclass,
     ...attributes
-  } = $props<Props>();
+  }: Props = $props();
 
   const dispatch = createEventDispatcher();
 
