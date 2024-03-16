@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.7
+
+### Patch Changes
+
+- fix: add default values to component docs ([`273e64b520543375ccd10761a5103ea4e81cae26`](https://github.com/shinokada/svelte-5-ui-lib/commit/273e64b520543375ccd10761a5103ea4e81cae26))
+  update: svelte next-80
+  fix: remove option(?) from some children
+  docs: sidebar menu in Nav.svelte to keep open when $page.url.pathname has the directory
+  fix: add if to Video.svelte since it is optional
+
 ## 0.3.6
 
 ### Patch Changes
