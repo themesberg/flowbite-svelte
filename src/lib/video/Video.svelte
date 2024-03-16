@@ -1,6 +1,5 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  
   interface Props {
     children: Snippet;
     src: string | undefined;
@@ -25,9 +24,9 @@
 
 <video {...attributes} class={classname}>
   <source {src} {type} />
-
-    {@render children()}
-
+    {#if children}
+      {@render children()}
+    {/if}
   <track src={trackSrc} kind="captions" {srclang} {label} />
   Your browser does not support the video tag.
 </video>
