@@ -2,9 +2,7 @@
 
 UI library for Svelte 5
 
-- [Demo](https://svelte-5-ui-lib.codewithshin.com/)
-- [Repo](https://github.com/shinokada/svelte-5-ui-lib)
-
+- [Docs](https://svelte-5-ui-lib.codewithshin.com/)
 
 ## Installation
 
@@ -72,14 +70,6 @@ const config = {
 
 module.exports = config;
 ```
-
-## Credits
-
-- Svelte 5
-- SvelteKit 2
-- TailwindCSS
-- Flowbite
-- Flowbite-Svelte
 
 ## License
 
