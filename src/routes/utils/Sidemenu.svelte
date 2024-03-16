@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { page } from '$app/stores';
   import {
     Sidebar,
@@ -10,7 +10,7 @@
   $effect(() => {
     currentUrl = $page.url.pathname;
   });
-  const hasPath = (key) => currentUrl.includes(key);
+  const hasPath = (key: string) => currentUrl.includes(key);
   // console.log(hasPath('typography'))
   const activeClass =
     'flex items-center p-2 text-base font-normal text-white bg-primary-500 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-100 dark:hover:bg-gray-700';
@@ -56,6 +56,7 @@
       <SidebarItem label="Sidebar" href="/components/sidebar" />
       <SidebarItem label="Skeleton" href="/components/skeleton" />
       <SidebarItem label="Spinner" href="/components/spinner" />
+      <SidebarItem label="Table" href="/components/table" />
       <SidebarItem label="Toast" href="/components/toast" />
       <SidebarItem label="Video" href="/components/video" />
     </SidebarDropdownWrapper>

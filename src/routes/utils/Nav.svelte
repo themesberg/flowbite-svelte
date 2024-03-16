@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+  import { page } from '$app/stores';
   import {
     Navbar,
     NavLi,
@@ -30,11 +31,15 @@
   let navStatus = $state(false);
   let toggleNav = nav.toggle;
   let closeNav = nav.close;
-
+  
+  let currentUrl = $page.url.pathname;
   $effect(() => {
     navDrawerStatus = navDrawer.isOpen;
     navStatus = nav.isOpen;
+    currentUrl = $page.url.pathname;
   });
+  
+  const hasPath = (key: string) => currentUrl.includes(key);
   const activeClass =
     'flex items-center p-2 text-base font-normal text-white bg-primary-500 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-100 dark:hover:bg-gray-700';
 </script>
@@ -77,7 +82,6 @@
             height="36"
             style="border:0px;height:36px;"
             src="https://storage.ko-fi.com/cdn/kofi3.png?v=3"
-            border="0"
             alt="Buy Me a Coffee at ko-fi.com"
           /></a
         >
@@ -143,7 +147,7 @@
     aclass="p-1 pl-4"
   >
     <SidebarGroup>
-      <SidebarDropdownWrapper label="Components" svgclass="me-4" btnclass="p-1">
+      <SidebarDropdownWrapper isOpen={hasPath('components')} label="Components" svgclass="me-4" btnclass="p-1">
         <SidebarItem
           onclick={closeNavDrawer}
           label="Alert"
@@ -266,6 +270,11 @@
         />
         <SidebarItem
           onclick={closeNavDrawer}
+          label="Table"
+          href="/components/table"
+        />
+        <SidebarItem
+          onclick={closeNavDrawer}
           label="Toast"
           href="/components/toast"
         />
@@ -275,7 +284,7 @@
           href="/components/video"
         />
       </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper label="Forms" svgclass="me-4" btnclass="p-1">
+      <SidebarDropdownWrapper isOpen={hasPath('forms')} label="Forms" svgclass="me-4" btnclass="p-1">
         <SidebarItem
           onclick={closeNavDrawer}
           label="Checkbox"
@@ -307,7 +316,7 @@
           href="/forms/toggle"
         />
       </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper label="Typography" svgclass="me-4" btnclass="p-1">
+      <SidebarDropdownWrapper isOpen={hasPath('typography')} label="Typography" svgclass="me-4" btnclass="p-1">
         <SidebarItem
           onclick={closeNavDrawer}
           label="Blockquote"
@@ -339,7 +348,7 @@
           href="/typography/paragraph"
         />
       </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper label="Plugins" svgclass="me-4" btnclass="p-1">
+      <SidebarDropdownWrapper isOpen={hasPath('plugins')} label="Plugins" svgclass="me-4" btnclass="p-1">
         <SidebarItem
           onclick={closeNavDrawer}
           label="Chart"

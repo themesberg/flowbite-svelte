@@ -58,6 +58,6 @@
   <H2>Repo</H2>
   <List>
     <Li><A href="https://github.com/shinokada/svelte-5-ui-lib">GitHub</A></Li>
-    <Li><A href="https://github.com/shinokada">Author</A></Li>
+    <Li><A href="https://codewithshin.com">codewithshin</A></Li>
   </List>
 </div>
