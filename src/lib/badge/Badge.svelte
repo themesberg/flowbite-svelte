@@ -2,10 +2,10 @@
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import { CloseButton } from '$lib';
-  import type { ColorVariant } from './types';
+  import type { ColorVariant } from '../types';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     icon?: Snippet;
     color?: ColorVariant;
     large?: boolean;
@@ -93,15 +93,14 @@
 
 {#if badgeStatus}
   <div {...attributes} class={badgeClass}>
-    {#if children}
-      {#if href}
-        <a {href}>
-          {@render children()}
-        </a>
-      {:else}
+    {#if href}
+      <a {href}>
         {@render children()}
-      {/if}
+      </a>
+    {:else}
+      {@render children()}
     {/if}
+ 
     {#if dismissable}
       {#if icon}
         <button

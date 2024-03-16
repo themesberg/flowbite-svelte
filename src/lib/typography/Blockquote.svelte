@@ -4,7 +4,7 @@
   import type { BlockQuoteType } from '../types';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     border?: boolean;
     italic?: boolean;
     borderclass?: string | undefined;
@@ -74,9 +74,9 @@
     classname
   )}
 >
-  {#if children}
+ 
     {@render children()}
-  {/if}
+
 </blockquote>
 
 <!--

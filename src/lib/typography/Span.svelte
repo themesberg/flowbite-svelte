@@ -3,7 +3,7 @@
   import { twMerge } from 'tailwind-merge';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     italic?: boolean;
     underline?: boolean;
     linethrough?: boolean;
@@ -44,9 +44,9 @@
 </script>
 
 <span {...attributes} class={classSpan}>
-  {#if children}
+
     {@render children()}
-  {/if}
+
 </span>
 
 <!--

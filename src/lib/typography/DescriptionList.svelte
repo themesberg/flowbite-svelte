@@ -2,7 +2,7 @@
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     tag: 'dt' | 'dd';
     dtclass?: string | undefined;
     ddclass?: string | undefined;
@@ -20,9 +20,9 @@
 </script>
 
 <svelte:element this={tag} {...attributes} class={classDesc}>
-  {#if children}
+ 
     {@render children()}
-  {/if}
+  
 </svelte:element>
 
 <!--

@@ -2,7 +2,7 @@
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     pclass?: string;
     color?: 'gray' | 'green' | 'red' | 'disabled';
   }
@@ -15,7 +15,7 @@
   };
 </script>
 
-{#if children}
+
   <p
     {...attributes}
     class={twMerge(
@@ -26,9 +26,7 @@
   >
     {@render children()}
   </p>
-{:else}
-  Helper content
-{/if}
+
 
 <!--
 @component

@@ -4,7 +4,7 @@
   import type { ButtonColorType, SizeType } from '$lib/types';
   import { twMerge } from 'tailwind-merge';
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     group?: string | number;
     value?: string | number;
     inline?: boolean;
@@ -43,11 +43,9 @@
   btnclass={buttonCls}
 >
   <input type="radio" bind:group {value} {...attributes} class="sr-only" />
-  {#if children}
+
     {@render children()}
-  {:else}
-    RadioButton content
-  {/if}
+
 </Button>
 
 <!--

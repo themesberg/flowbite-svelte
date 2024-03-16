@@ -3,7 +3,7 @@
   import { twMerge } from 'tailwind-merge';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     href: string;
     aclass?: string | undefined;
   }
@@ -15,9 +15,9 @@
 </script>
 
 <a {...attributes} {href} class={twMerge(aCls, colorCls, aclass)}>
-  {#if children}
+  
     {@render children()}
-  {/if}
+ 
 </a>
 
 <!--

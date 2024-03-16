@@ -5,7 +5,7 @@
   import type { ColorVariant } from './types';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     header?: Snippet;
     position?: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky';
     dismissable?: boolean;
@@ -58,11 +58,11 @@
     {#if header}
       {@render header()}
     {/if}
-    {#if children}
-      <div class={innerCls}>
-        {@render children()}
-      </div>
-    {/if}
+  
+    <div class={innerCls}>
+      {@render children()}
+    </div>
+   
     {#if dismissable}
       <div class="flex items-center">
         <CloseButton

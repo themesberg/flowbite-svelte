@@ -3,7 +3,7 @@
   import { twMerge } from 'tailwind-merge';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     divclass?: string | undefined;
     cols?: string | undefined;
     // gap?: number;
@@ -20,9 +20,9 @@
 </script>
 
 <div {...attributes} class={classDiv}>
-  {#if children}
+  
     {@render children()}
-  {/if}
+  
 </div>
 
 <!--

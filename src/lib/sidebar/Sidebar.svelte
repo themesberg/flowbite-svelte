@@ -4,7 +4,7 @@
   import type { SidebarType } from '$lib/types';
   import { twMerge } from 'tailwind-merge';
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     asideclass?: string | undefined;
     ariaLabel?: string | undefined;
     divclass?: string | undefined;
@@ -42,9 +42,9 @@
 
 <aside {...attributes} class={asideCls} aria-label={ariaLabel}>
   <div class={twMerge(divCls)}>
-    {#if children}
+ 
       {@render children()}
-    {/if}
+ 
   </div>
 </aside>
 

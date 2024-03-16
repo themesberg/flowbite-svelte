@@ -3,7 +3,7 @@
   import { twMerge } from 'tailwind-merge';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     liclass?: string | undefined;
     aclass?: string | undefined;
     href?: string | undefined;
@@ -17,15 +17,12 @@
   let aCls: string = twMerge('hover:underline', aclass);
 </script>
 
-{#if children}
+
   <li class={liCls}>
     <a {...attributes} {href} class={aCls} {target}>
       {@render children()}
     </a>
   </li>
-{:else}
-  Footer Li content
-{/if}
 
 <!--
 @component

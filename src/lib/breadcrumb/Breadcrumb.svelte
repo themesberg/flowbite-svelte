@@ -3,7 +3,7 @@
   import { twMerge } from 'tailwind-merge';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     solid?: boolean;
     navclass?: string | undefined;
     solidclass?: string | undefined;
@@ -40,11 +40,11 @@
   {...attributes}
   class={twMerge(classNav, classname)}
 >
-  {#if children}
-    <ol class={olCls}>
-      {@render children()}
-    </ol>
-  {/if}
+  
+  <ol class={olCls}>
+    {@render children()}
+  </ol>
+  
 </nav>
 
 <!--

@@ -1,5 +1,7 @@
 <script lang="ts">
   import type { SpinnerColorType } from '$lib/types';
+  import { twMerge } from 'tailwind-merge';
+
   interface Props {
     color?: SpinnerColorType;
     bg?: string;
@@ -9,7 +11,6 @@
     currentColor?: string;
     svgclass?: string;
   }
-  import { twMerge } from 'tailwind-merge';
 
   let {
     svgclass,

@@ -5,7 +5,7 @@
   import type { SizeType } from '$lib/types';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     size?: SizeType;
     divclass?: string | undefined;
   }
@@ -19,9 +19,9 @@
 </script>
 
 <div {...attributes} class={twMerge(divCls, divclass)} role="group">
-  {#if children}
-    {@render children()}
-  {/if}
+
+  {@render children()}
+
 </div>
 
 <!--

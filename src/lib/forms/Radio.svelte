@@ -47,7 +47,7 @@
   import Label from './Label.svelte';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     labelclass?: string;
     color?: FormColorType;
     custom?: boolean;
@@ -80,9 +80,9 @@
     {...attributes}
     class={inputCls(custom, color, false, background, inputclass)}
   />
-  {#if children}
+ 
     {@render children()}
-  {/if}
+
 </Label>
 
 <!--

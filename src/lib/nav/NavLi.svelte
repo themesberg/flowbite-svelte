@@ -5,7 +5,7 @@
   import { page } from '$app/stores';
   import type { navbarType } from '$lib/types';
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     closeNav?: () => void;
     href?: string | undefined;
     aclass?: string | undefined;
@@ -64,9 +64,9 @@
     aria-current={currentUrl === href}
     class={linkClass}
   >
-    {#if children}
+ 
       {@render children()}
-    {/if}
+
   </a>
 </li>
 

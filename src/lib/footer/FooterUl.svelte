@@ -3,23 +3,20 @@
   import { twMerge } from 'tailwind-merge';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     ulclass?: string | undefined;
   }
 
   let { ulclass, children, ...attributes }: Props = $props();
 </script>
 
-{#if children}
+
   <ul
     {...attributes}
     class={twMerge('text-gray-600 dark:text-gray-400', ulclass)}
   >
     {@render children()}
   </ul>
-{:else}
-  Footer Ul content
-{/if}
 
 <!--
 @component

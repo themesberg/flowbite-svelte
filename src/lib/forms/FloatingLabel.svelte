@@ -5,7 +5,7 @@
   import type { InputType } from '../types';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     id?: string;
     style?: 'filled' | 'outlined' | 'standard';
     type?: InputType;
@@ -120,11 +120,9 @@
       labelclass
     )}
   >
-    {#if children}
+ 
       {@render children()}
-    {:else}
-      FloatingLabel content
-    {/if}
+ 
   </label>
 </div>
 

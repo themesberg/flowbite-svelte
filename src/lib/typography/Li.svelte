@@ -3,7 +3,7 @@
   import { twMerge } from 'tailwind-merge';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     icon?: boolean;
     liclass?: string | undefined;
   }
@@ -13,9 +13,9 @@
 </script>
 
 <li {...attributes} class={classLi}>
-  {#if children}
+ 
     {@render children()}
-  {/if}
+
 </li>
 
 <!--

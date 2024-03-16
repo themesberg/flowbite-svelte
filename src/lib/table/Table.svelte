@@ -24,7 +24,7 @@
   import { setContext } from 'svelte';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     divclass?: string;
     striped?: boolean;
     hoverable?: boolean;
@@ -72,9 +72,9 @@
     {...attributes}
     class={twMerge('w-full text-left text-sm', colors[color])}
   >
-    {#if children}
+    
       {@render children()}
-    {/if}
+  
   </table>
 </div>
 

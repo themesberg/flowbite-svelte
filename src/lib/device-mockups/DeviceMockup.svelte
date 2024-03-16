@@ -11,7 +11,7 @@
   import Tablet from './Tablet.svelte';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     device?: DeviceVariantType;
   }
 
@@ -30,7 +30,7 @@
   let component: ComponentType = componets[device];
 </script>
 
-{#if component && children}
+{#if component}
   <svelte:component this={component}>
     {@render children()}
   </svelte:component>

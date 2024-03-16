@@ -2,7 +2,7 @@
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     ulclass?: string | undefined;
     borderClass?: string | undefined;
     border?: boolean;
@@ -24,9 +24,9 @@
 </script>
 
 <ul {...attributes} class={border ? borderCls : ulCls}>
-  {#if children}
+
     {@render children()}
-  {/if}
+
 </ul>
 
 <!--

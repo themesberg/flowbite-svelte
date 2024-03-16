@@ -2,7 +2,7 @@
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     footerType?: 'sitemap' | 'default' | 'logo' | 'socialmedia' | undefined;
     footerclass?: string | undefined;
   }
@@ -26,11 +26,9 @@
 </script>
 
 <footer {...attributes} class={footerCls}>
-  {#if children}
+
     {@render children()}
-  {:else}
-    Footer content
-  {/if}
+
 </footer>
 
 <!--

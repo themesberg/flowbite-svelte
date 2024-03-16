@@ -3,7 +3,7 @@
   import { twMerge } from 'tailwind-merge';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     divclass?: string | undefined;
     header?: Snippet;
     headerclass?: string | undefined;
@@ -57,11 +57,11 @@
       {@render header()}
     </div>
   {/if}
-  {#if children}
+  
     <ul class={ulCls}>
       {@render children()}
     </ul>
-  {/if}
+  
   {#if footer}
     <div class={footerCls}>
       {@render footer()}

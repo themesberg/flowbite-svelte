@@ -7,7 +7,7 @@
   import { page } from '$app/stores';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     btnName?: string;
     appBtnPosition?: 'left' | 'middle' | 'right';
     activeClass?: string;
@@ -112,9 +112,9 @@
   {...attributes}
   class={btnCls}
 >
-  {#if children}
-    {@render children()}
-  {/if}
+  
+  {@render children()}
+
   <span class={spanCls}>{btnName}</span>
 </svelte:element>
 

@@ -8,7 +8,7 @@
     alt: string;
   };
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     href?: string;
     horizontal?: boolean;
     shadow?: boolean;
@@ -75,7 +75,7 @@
 </script>
 
 {#snippet content()}
-  {#if children}
+
     {#if img}
       <img class={imgClass} src={img.src} alt={img.alt} />
       <div class={innerPadding}>
@@ -84,7 +84,7 @@
     {:else}
       {@render children()}
     {/if}
-  {/if}
+
 {/snippet}
 
 <div {...attributes} class={cardClass}>

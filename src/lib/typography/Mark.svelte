@@ -3,7 +3,7 @@
   import { twMerge } from 'tailwind-merge';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     markclass?: string | undefined;
   }
 
@@ -12,9 +12,9 @@
 </script>
 
 <mark {...attributes} class={twMerge(markCls, markclass)}>
-  {#if children}
+ 
     {@render children()}
-  {/if}
+
 </mark>
 
 <!--

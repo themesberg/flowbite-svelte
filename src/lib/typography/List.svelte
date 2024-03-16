@@ -3,7 +3,7 @@
   import { twMerge } from 'tailwind-merge';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     tag?: 'ul' | 'ol' | 'dl';
     list?: 'disc' | 'none' | 'decimal' | undefined;
     position?: 'inside' | 'outside';
@@ -38,9 +38,9 @@
 </script>
 
 <svelte:element this={tag} {...attributes} class={classList}>
-  {#if children}
+ 
     {@render children()}
-  {/if}
+
 </svelte:element>
 
 <!--

@@ -8,7 +8,7 @@
   type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     icon?: any;
     dismissable?: boolean;
     color?: ColorVariant;
@@ -101,9 +101,9 @@
     {/if}
 
     <div class={twMerge(contentCls, div3class)}>
-      {#if children}
+      
         {@render children()}
-      {/if}
+  
     </div>
 
     {#if dismissable}

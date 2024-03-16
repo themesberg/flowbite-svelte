@@ -3,7 +3,7 @@
   import { twMerge } from 'tailwind-merge';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     color?: 'gray' | 'green' | 'red' | 'disabled';
     show?: boolean;
     labelclass?: string | undefined;
@@ -33,7 +33,7 @@
   );
 </script>
 
-{#if children}
+
   {#if show}
     <label {...attributes} class={labelCls} for={forId}>
       {@render children()}
@@ -41,7 +41,7 @@
   {:else}
     {@render children()}
   {/if}
-{/if}
+
 
 <!--
 @component

@@ -5,7 +5,7 @@
   import { getContext } from 'svelte';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     color?: keyof typeof gradientClasses;
     shadow?: boolean;
     outline?: boolean;
@@ -90,21 +90,20 @@
   );
 </script>
 
-{#if children}
-  {#if outline}
-    <div class={divClass}>
-      <!-- Trick to prentend outline without using border
-        This has a limitation of no supporting transparency as
-        is set to bg-white dark:bg-gray-900 -->
-      <Button {...attributes} color="none" btnclass={gradientOutlineClass}>
-        {@render children()}
-      </Button>
-    </div>
-  {:else}
-    <Button {...attributes} color="none" btnclass={divClass}>
+
+{#if outline}
+  <div class={divClass}>
+    <!-- Trick to prentend outline without using border
+      This has a limitation of no supporting transparency as
+      is set to bg-white dark:bg-gray-900 -->
+    <Button {...attributes} color="none" btnclass={gradientOutlineClass}>
       {@render children()}
     </Button>
-  {/if}
+  </div>
+{:else}
+  <Button {...attributes} color="none" btnclass={divClass}>
+    {@render children()}
+  </Button>
 {/if}
 
 <!--

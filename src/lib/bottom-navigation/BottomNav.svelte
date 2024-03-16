@@ -11,7 +11,7 @@
   import type { BottomNavVariantType } from '../types';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     header?: Snippet;
     activeUrl?: string;
     position?: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky';
@@ -84,11 +84,10 @@
   {#if header}
     {@render header()}
   {/if}
-  {#if children}
-    <div class={innerCls}>
-      {@render children()}
-    </div>
-  {/if}
+  
+  <div class={innerCls}>
+    {@render children()}
+  </div>
 </div>
 
 <!--

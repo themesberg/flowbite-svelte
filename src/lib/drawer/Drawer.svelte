@@ -8,7 +8,7 @@
   import { fly, slide, blur, fade } from 'svelte/transition';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     drawerStatus: boolean;
     toggleDrawer?: () => void;
     closeDrawer?: () => void;
@@ -104,9 +104,9 @@
     transition:multiple={transitionParams}
     tabindex="-1"
   >
-    {#if children}
-      {@render children()}
-    {/if}
+   
+    {@render children()}
+  
   </div>
 {/if}
 

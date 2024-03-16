@@ -3,7 +3,7 @@
   import { twMerge } from 'tailwind-merge';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     href?: string | undefined;
     ariaLabel?: string | undefined;
     aclass?: string | undefined;
@@ -18,7 +18,6 @@
   );
 </script>
 
-{#if children}
   {#if href}
     <a {...attributes} {href} {target} aria-label={ariaLabel} class={aCls}>
       {@render children()}
@@ -26,7 +25,6 @@
   {:else}
     {@render children()}
   {/if}
-{/if}
 
 <!--
 @component

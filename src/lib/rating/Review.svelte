@@ -16,7 +16,7 @@
   };
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     address?: any;
     item1?: any;
     item2?: any;
@@ -117,9 +117,9 @@
           {review.rating}
         </p>
       </div>
-      {#if children}
+    
         {@render children()}
-      {/if}
+    
     </div>
   </article>
 {/if}

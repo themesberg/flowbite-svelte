@@ -6,7 +6,7 @@
   import Label from './Label.svelte';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     color?: FormColorType;
     custom?: boolean;
     inline?: boolean;
@@ -41,9 +41,9 @@
     {...attributes}
     class={twMerge(spacing, inputCls(custom, color, true, false, inputclass))}
   />
-  {#if children}
+
     {@render children()}
-  {/if}
+
 </Label>
 
 <!--

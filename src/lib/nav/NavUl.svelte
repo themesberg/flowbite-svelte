@@ -5,7 +5,7 @@
   import type { navbarType } from '$lib/types';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     ulclass?: string | undefined;
   }
   let { children, ulclass, ...attributes }: Props = $props();
@@ -30,9 +30,9 @@
 </script>
 
 <ul class={ulCls} {...attributes}>
-  {#if children}
+
     {@render children()}
-  {/if}
+
 </ul>
 
 <!--

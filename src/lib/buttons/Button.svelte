@@ -6,7 +6,7 @@
   import type { HTMLButtonAttributes } from 'svelte/elements';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     pill?: boolean;
     outline?: boolean;
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
@@ -170,21 +170,22 @@
   );
 </script>
 
-{#if children}
-  {#if href}
-    <a {href} {...attributes} class={buttonCls} role="button">
-      {@render children()}
-    </a>
-  {:else if tag === 'button'}
-    <button {type} {...attributes} class={buttonCls}>
-      {@render children()}
-    </button>
-  {:else}
-    <svelte:element this={tag} {...attributes} class={buttonCls}>
-      {@render children()}
-    </svelte:element>
-  {/if}
+
+{#if href}
+  <a {href} {...attributes} class={buttonCls} role="button">
+    {@render children()}
+  </a>
+{:else if tag === 'button'}
+  <button {type} {...attributes} class={buttonCls}>
+    {@render children()}
+  </button>
+{:else}
+  <svelte:element this={tag} {...attributes} class={buttonCls}>
+    {@render children()}
+  </svelte:element>
+  
 {/if}
+
 
 <!--
 @component

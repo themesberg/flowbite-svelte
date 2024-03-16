@@ -3,7 +3,7 @@
   import { twMerge } from 'tailwind-merge';
   import { page } from '$app/stores';
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     aclass?: string | undefined;
     href?: string | undefined;
     activeclass?: string | undefined;
@@ -26,7 +26,7 @@
 </script>
 
 <li>
-  {#if children}
+  
     {#if href}
       <a {href} class={currentUrl === href ? activeCls : aCls} {...attributes}>
         {@render children()}
@@ -34,7 +34,7 @@
     {:else}
       {@render children()}
     {/if}
-  {/if}
+
 </li>
 
 <!--

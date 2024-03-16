@@ -3,7 +3,7 @@
   import Button from '../buttons/Button.svelte';
   import Rating from './Rating.svelte';
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     evaluation?: Snippet;
     ceil?: boolean;
     helpfullink?: string;
@@ -72,9 +72,9 @@
       <p>Reviewed in {comment.address} on {comment.datetime}</p>
     </footer>
   {/if}
-  {#if children}
+ 
     {@render children()}
-  {/if}
+  
   <aside>
     <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
       {#if evaluation}

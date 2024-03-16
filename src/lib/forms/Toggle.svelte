@@ -4,7 +4,7 @@
   import Checkbox from './Checkbox.svelte';
   import type { FormColorType } from '../types';
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     size?: 'small' | 'default' | 'large' | 'custom';
     group?: (string | number)[];
     value?: string | number;
@@ -75,9 +75,9 @@
 
 <Checkbox custom {...attributes} {value} bind:checked>
   <span class={divClass} />
-  {#if children}
+
     {@render children()}
-  {/if}
+
 </Checkbox>
 
 <!--

@@ -4,7 +4,7 @@
   import type { PsizeType, PweightType, SpaceType } from '../types';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     color?: string | undefined;
     pclass?: string | undefined;
     height?: 'normal' | 'relaxed' | 'loose';
@@ -115,9 +115,9 @@
 </script>
 
 <p {...attributes} class={classP}>
-  {#if children}
+ 
     {@render children()}
-  {/if}
+
 </p>
 
 <!--

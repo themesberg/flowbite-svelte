@@ -8,7 +8,7 @@
   import type { navbarType } from '$lib/types';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     toggleNav?: () => void;
     closeNav?: () => void;
     openMainMenu?: boolean;
@@ -128,9 +128,9 @@
       role="button"
       tabindex="0"
     >
-      {#if children}
+      
         {@render children()}
-      {/if}
+     
     </div>
   </div>
 </nav>

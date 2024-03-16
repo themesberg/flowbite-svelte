@@ -4,8 +4,9 @@
   import { twMerge } from 'tailwind-merge';
   import { fade, blur, fly, slide } from 'svelte/transition';
   import { uiHelpers } from '$lib';
+  
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     arrowup?: Snippet;
     arrowdown?: Snippet;
     icon?: Snippet;
@@ -130,9 +131,9 @@
   </button>
   {#if isOpen}
     <ul class={ulCls} transition:multiple={transitionParams}>
-      {#if children}
+     
         {@render children()}
-      {/if}
+     
     </ul>
   {/if}
 </li>

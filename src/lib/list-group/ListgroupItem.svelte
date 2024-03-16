@@ -4,7 +4,7 @@
   import { twMerge } from 'tailwind-merge';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     btn?: boolean;
     current?: boolean;
     disabled?: boolean;

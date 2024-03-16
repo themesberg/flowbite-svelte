@@ -3,7 +3,7 @@
   import { twMerge } from 'tailwind-merge';
 
   interface Props {
-    children?: Snippet;
+    children: Snippet;
     icon?: Snippet;
     home?: boolean;
     href?: string | undefined;
@@ -56,11 +56,9 @@
           />
         </svg>
       {/if}
-      {#if children}
+      
         {@render children()}
-      {:else}
-        <span class={spanCls}>Home</span>
-      {/if}
+    
     </a>
   {:else}
     {#if icon}
@@ -79,7 +77,7 @@
         />
       </svg>
     {/if}
-    {#if children}
+    
       {#if href}
         <a class={a2Cls} {href}>
           {@render children()}
@@ -89,7 +87,7 @@
           {@render children()}
         </span>
       {/if}
-    {/if}
+    
   {/if}
 </li>
 
