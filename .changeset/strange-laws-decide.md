@@ -6,3 +6,4 @@ fix: add default values to component docs
 update: svelte next-80
 fix: remove option(?) from some children
 docs: sidebar menu in Nav.svelte to keep open when $page.url.pathname has the directory 
+fix: add if to Video.svelte since it is optional
