@@ -17,9 +17,27 @@
     spanclass?: string;
   }
 
-  let { children, btnName, appBtnPosition = 'middle', activeClass, href = '', exact = true, btnclass, spanclass, ...attributes }: Props = $props();
+  let {
+    children,
+    btnName,
+    appBtnPosition = 'middle',
+    activeClass,
+    href = '',
+    exact = true,
+    btnclass,
+    spanclass,
+    ...attributes
+  }: Props = $props();
 
-  const navType: 'default' | 'border' | 'application' | 'pagination' | 'group' | 'card' | 'meeting' | 'video' = getContext('navType');
+  const navType:
+    | 'default'
+    | 'border'
+    | 'application'
+    | 'pagination'
+    | 'group'
+    | 'card'
+    | 'meeting'
+    | 'video' = getContext('navType');
 
   const context = getContext<BottomNavType>('bottomNavType') ?? {};
 
@@ -31,19 +49,25 @@
   // let active = navUrl && exact ? href === navUrl : navUrl ? navUrl.startsWith(href) : false;
 
   const btnClasses: ButtonClassesTypes = {
-    default: 'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
-    border: 'inline-flex flex-col items-center justify-center px-5 border-gray-200 border-x hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600',
+    default:
+      'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
+    border:
+      'inline-flex flex-col items-center justify-center px-5 border-gray-200 border-x hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600',
     application: '',
-    pagination: 'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
-    group: 'inline-flex flex-col items-center justify-center p-4 hover:bg-gray-50 dark:hover:bg-gray-800 group',
+    pagination:
+      'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
+    group:
+      'inline-flex flex-col items-center justify-center p-4 hover:bg-gray-50 dark:hover:bg-gray-800 group',
     card: 'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
     meeting: '',
     video: ''
   };
 
   const spanClasses: ButtonClassesTypes = {
-    default: 'text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500',
-    border: 'text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500',
+    default:
+      'text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500',
+    border:
+      'text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500',
     application: 'sr-only',
     pagination: 'sr-only',
     group: 'sr-only',
@@ -54,8 +78,10 @@
 
   const appBtnClasses = {
     left: 'inline-flex flex-col items-center justify-center px-5 rounded-s-full hover:bg-gray-50 dark:hover:bg-gray-800 group',
-    middle: 'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
-    right: 'inline-flex flex-col items-center justify-center px-5 rounded-e-full hover:bg-gray-50 dark:hover:bg-gray-800 group'
+    middle:
+      'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
+    right:
+      'inline-flex flex-col items-center justify-center px-5 rounded-e-full hover:bg-gray-50 dark:hover:bg-gray-800 group'
   };
   let btnCls: string = $state('');
   let spanCls: string = $state('');
@@ -63,15 +89,31 @@
     currentUrl = $page.url.pathname;
     active = href === currentUrl;
 
-    btnCls = twMerge(btnClasses[navType], appBtnClasses[appBtnPosition], active && (activeClass ?? context.activeClass), btnclass);
+    btnCls = twMerge(
+      btnClasses[navType],
+      appBtnClasses[appBtnPosition],
+      active && (activeClass ?? context.activeClass),
+      btnclass
+    );
 
-    spanCls = twMerge(spanClasses[navType], active && (activeClass ?? context.activeClass), spanclass);
+    spanCls = twMerge(
+      spanClasses[navType],
+      active && (activeClass ?? context.activeClass),
+      spanclass
+    );
   });
 </script>
 
-<svelte:element this={href ? 'a' : 'button'} aria-label={btnName} {href} role={href ? 'link' : 'button'} {...attributes} class={btnCls}>
+<svelte:element
+  this={href ? 'a' : 'button'}
+  aria-label={btnName}
+  {href}
+  role={href ? 'link' : 'button'}
+  {...attributes}
+  class={btnCls}
+>
   {#if children}
-  {@render children()}
+    {@render children()}
   {/if}
   <span class={spanCls}>{btnName}</span>
 </svelte:element>
@@ -82,10 +124,10 @@
 ## Props
 @props: children?: Snippet;
 @props:btnName?: string;
-@props:appBtnPosition?: 'left' | 'middle' | 'right';
+@props:appBtnPosition?:  'left' | 'middle' | 'right'; = 'middle';
 @props:activeClass?: string;
-@props:href?: string;
-@props:exact?: boolean;
+@props:href?:  string; = '';
+@props:exact?:  boolean; = true;
 @props:btnclass?: string;
 @props:spanclass?: string;
 -->

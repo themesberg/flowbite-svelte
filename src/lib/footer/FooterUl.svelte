@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
-  
+
   interface Props {
     children?: Snippet;
     ulclass?: string | undefined;
@@ -11,9 +11,12 @@
 </script>
 
 {#if children}
-<ul {...attributes} class={twMerge('text-gray-600 dark:text-gray-400', ulclass)}>
-  {@render children()}
-</ul>
+  <ul
+    {...attributes}
+    class={twMerge('text-gray-600 dark:text-gray-400', ulclass)}
+  >
+    {@render children()}
+  </ul>
 {:else}
   Footer Ul content
 {/if}

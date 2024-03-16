@@ -29,7 +29,10 @@
 <H2>Paragraph</H2>
 <CodeWrapper>
   <P>
-    The free updates that will be provided is based on the <A href="/" aclass="underline hover:no-underline">roadmap</A> that we have laid out for this project. It is also possible that we will provide
+    The free updates that will be provided is based on the <A
+      href="/"
+      aclass="underline hover:no-underline">roadmap</A
+    > that we have laid out for this project. It is also possible that we will provide
     extra updates outside of the roadmap as well.
   </P>
 </CodeWrapper>
@@ -40,7 +43,10 @@
 <CodeWrapper>
   <P>
     500,000 people have made over a million apps with Glide.
-    <A href="/" aclass="text-primary-600 dark:text-primary-500 inline-flex items-center font-medium  hover:underline">
+    <A
+      href="/"
+      aclass="text-primary-600 dark:text-primary-500 inline-flex items-center font-medium  hover:underline"
+    >
       Read their stories
       <ArrowRightOutline class="ms-2 h-4 w-4" />
     </A>

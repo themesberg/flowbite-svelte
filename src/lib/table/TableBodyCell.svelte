@@ -10,16 +10,36 @@
     tdclass?: string;
     onclick?: () => void;
   }
-  let { children, class: className, tdclass = 'px-6 py-4 whitespace-nowrap font-medium', onclick, ...attributes }: Props = $props();
+  let {
+    children,
+    class: className,
+    tdclass = 'px-6 py-4 whitespace-nowrap font-medium',
+    onclick,
+    ...attributes
+  }: Props = $props();
 
   const tableCtx: TableCtxType = getContext('tableCtx');
 
   let color = $state(tableCtx.color ? tableCtx.color : 'default');
 
-  let tdCls: string = $state(twMerge(tdclass, color === 'default' ? 'text-gray-900 dark:text-white' : 'text-blue-50 whitespace-nowrap dark:text-blue-100', className));
+  let tdCls: string = $state(
+    twMerge(
+      tdclass,
+      color === 'default'
+        ? 'text-gray-900 dark:text-white'
+        : 'text-blue-50 whitespace-nowrap dark:text-blue-100',
+      className
+    )
+  );
 </script>
 
-<svelte:element this={onclick ? 'button' : 'td'} {...attributes} class={tdCls} on:click role={onclick ? 'button' : undefined}>
+<svelte:element
+  this={onclick ? 'button' : 'td'}
+  {...attributes}
+  class={tdCls}
+  on:click
+  role={onclick ? 'button' : undefined}
+>
   {#if children}
     {@render children()}
   {/if}
@@ -31,6 +51,6 @@
 ## Props
 @props: children?: Snippet;
 @props:class?: string;
-@props:tdclass?: string;
+@props:tdclass?:  string; = 'px-6 py-4 whitespace-nowrap font-medium';
 @props:onclick?: () => void;
 -->

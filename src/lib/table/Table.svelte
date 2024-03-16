@@ -6,7 +6,16 @@
     color?: TableColrType;
   };
 
-  type TableColrType = 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'indigo' | 'pink' | 'custom';
+  type TableColrType =
+    | 'blue'
+    | 'green'
+    | 'red'
+    | 'yellow'
+    | 'purple'
+    | 'default'
+    | 'indigo'
+    | 'pink'
+    | 'custom';
 </script>
 
 <script lang="ts">
@@ -24,7 +33,17 @@
     color?: TableColrType;
     customeColor?: string;
   }
-  let { children, divclass = 'relative overflow-x-auto', striped, hoverable, noborder, shadow, color = 'default', customeColor, ...attributes }: Props = $props();
+  let {
+    children,
+    divclass = 'relative overflow-x-auto',
+    striped,
+    hoverable,
+    noborder,
+    shadow,
+    color = 'default',
+    customeColor,
+    ...attributes
+  }: Props = $props();
 
   const colors = {
     default: 'text-gray-500 dark:text-gray-400',
@@ -49,7 +68,10 @@
 </script>
 
 <div class={twJoin(divclass, shadow && 'shadow-md sm:rounded-lg')}>
-  <table {...attributes} class={twMerge('w-full text-left text-sm', colors[color])}>
+  <table
+    {...attributes}
+    class={twMerge('w-full text-left text-sm', colors[color])}
+  >
     {#if children}
       {@render children()}
     {/if}
@@ -61,11 +83,11 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children?: Snippet;
-@props:divclass?: string;
+@props:divclass?:  string; = 'relative overflow-x-auto';
 @props:striped?: boolean;
 @props:hoverable?: boolean;
 @props:noborder?: boolean;
 @props:shadow?: boolean;
-@props:color?: TableColrType;
+@props:color?:  TableColrType; = 'default';
 @props:customeColor?: string;
 -->

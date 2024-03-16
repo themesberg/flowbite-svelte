@@ -36,6 +36,6 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: size?: keyof Sizes;
+@props: size?:  keyof Sizes; = 'sm', divclass;
 @props:divclass?: string | undefined;
 -->

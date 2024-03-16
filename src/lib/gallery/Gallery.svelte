@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
-  
+
   type ImgType = {
     src: string;
     alt?: string;
@@ -13,8 +13,14 @@
     imgclass?: string | undefined;
     divclass?: string | undefined;
   }
-  
-  let { children, items = [], imgclass, divclass, ...attributes }: Props = $props();
+
+  let {
+    children,
+    items = [],
+    imgclass,
+    divclass,
+    ...attributes
+  }: Props = $props();
   // export let items: ImgType[] = [];
   const imgCls: string = 'h-auto max-w-full rounded-lg';
 
@@ -46,7 +52,7 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children?: Snippet;
-@props:items?: ImgType[];
+@props:items?:  ImgType[]; = [];
 @props:imgclass?: string | undefined;
 @props:divclass?: string | undefined;
 -->

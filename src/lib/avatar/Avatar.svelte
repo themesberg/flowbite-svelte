@@ -2,7 +2,7 @@
   import type { Snippet } from 'svelte';
   import { Indicator } from '$lib';
   import { twMerge } from 'tailwind-merge';
-  
+
   interface Props {
     children?: Snippet;
     href?: string | undefined;
@@ -16,7 +16,19 @@
     class?: string | undefined;
   }
 
-  let { children, src, href, rounded, border, stacked, dot, alt, size = 'md', class: classname, ...attributes }: Props = $props();
+  let {
+    children,
+    src,
+    href,
+    rounded,
+    border,
+    stacked,
+    dot,
+    alt,
+    size = 'md',
+    class: classname,
+    ...attributes
+  }: Props = $props();
 
   dot = dot && { placement: 'top-right', color: 'gray', size: 'lg', ...dot };
 
@@ -40,14 +52,28 @@
 </script>
 
 {#if !src || !!href || children || dot}
-  <svelte:element this={href ? 'a' : 'div'} {href} {...attributes} class="relative flex items-center justify-center {avatarCls}">
+  <svelte:element
+    this={href ? 'a' : 'div'}
+    {href}
+    {...attributes}
+    class="relative flex items-center justify-center {avatarCls}"
+  >
     {#if src}
       <img {alt} {src} class={rounded ? 'rounded' : 'rounded-full'} />
     {:else if children}
       {@render children()}
     {:else}
-      <svg class="h-full w-full {rounded ? 'rounded' : 'rounded-full'}" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+      <svg
+        class="h-full w-full {rounded ? 'rounded' : 'rounded-full'}"
+        fill="currentColor"
+        viewBox="0 0 16 16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M8 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+          clip-rule="evenodd"
+        />
       </svg>
     {/if}
     {#if dot}
@@ -70,6 +96,6 @@
 @props:stacked?: boolean;
 @props:dot?: object | undefined;
 @props:alt?: string | undefined;
-@props:size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none';
+@props:size?:  'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none'; = 'md';
 @props:class?: string | undefined;
 -->

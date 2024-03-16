@@ -8,7 +8,12 @@
     class?: string | undefined;
   }
 
-  let { children, tag = 'h1', class: classname, ...attributes }: Props = $props();
+  let {
+    children,
+    tag = 'h1',
+    class: classname,
+    ...attributes
+  }: Props = $props();
 
   const textSizes = {
     h1: 'text-5xl font-extrabold',
@@ -20,9 +25,17 @@
   };
 </script>
 
-<svelte:element this={tag} {...attributes} class={twMerge(textSizes[tag], 'w-full text-gray-900 dark:text-white', classname)}>
+<svelte:element
+  this={tag}
+  {...attributes}
+  class={twMerge(
+    textSizes[tag],
+    'w-full text-gray-900 dark:text-white',
+    classname
+  )}
+>
   {#if children}
-  {@render children()}
+    {@render children()}
   {/if}
 </svelte:element>
 
@@ -31,6 +44,6 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children?: Snippet;
-@props:tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+@props:tag?:  'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'; = 'h1';
 @props:class?: string | undefined;
 -->

@@ -14,7 +14,17 @@
     color?: FormColorType;
   }
 
-  let { children, size = 'default', group, value, checked, customSize, spanclass, color, ...attributes }: Props = $props();
+  let {
+    children,
+    size = 'default',
+    group,
+    value,
+    checked,
+    customSize,
+    spanclass,
+    color,
+    ...attributes
+  }: Props = $props();
   // export let size: 'small' | 'default' | 'large' | 'custom' = 'default';
   // export let group: (string | number)[] = [];
   // export let value: string | number = '';
@@ -28,14 +38,20 @@
     "me-3 shrink-0 bg-gray-200 rounded-full peer-focus:ring-4 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:bg-white after:border-gray-300 after:border after:rounded-full after:transition-all";
 
   const colors = {
-    primary: 'peer-focus:ring-primary-300 dark:peer-focus:ring-primary-800 peer-checked:bg-primary-600',
-    secondary: 'peer-focus:ring-secondary-300 dark:peer-focus:ring-secondary-800 peer-checked:bg-secondary-600',
+    primary:
+      'peer-focus:ring-primary-300 dark:peer-focus:ring-primary-800 peer-checked:bg-primary-600',
+    secondary:
+      'peer-focus:ring-secondary-300 dark:peer-focus:ring-secondary-800 peer-checked:bg-secondary-600',
     red: 'peer-focus:ring-red-300 dark:peer-focus:ring-red-800 peer-checked:bg-red-600',
-    green: 'peer-focus:ring-green-300 dark:peer-focus:ring-green-800 peer-checked:bg-green-600',
-    purple: 'peer-focus:ring-purple-300 dark:peer-focus:ring-purple-800 peer-checked:bg-purple-600',
-    yellow: 'peer-focus:ring-yellow-300 dark:peer-focus:ring-yellow-800 peer-checked:bg-yellow-400',
+    green:
+      'peer-focus:ring-green-300 dark:peer-focus:ring-green-800 peer-checked:bg-green-600',
+    purple:
+      'peer-focus:ring-purple-300 dark:peer-focus:ring-purple-800 peer-checked:bg-purple-600',
+    yellow:
+      'peer-focus:ring-yellow-300 dark:peer-focus:ring-yellow-800 peer-checked:bg-yellow-400',
     teal: 'peer-focus:ring-teal-300 dark:peer-focus:ring-teal-800 peer-checked:bg-teal-600',
-    orange: 'peer-focus:ring-orange-300 dark:peer-focus:ring-orange-800 peer-checked:bg-orange-500',
+    orange:
+      'peer-focus:ring-orange-300 dark:peer-focus:ring-orange-800 peer-checked:bg-orange-500',
     blue: 'peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 peer-checked:bg-blue-600'
   };
 
@@ -69,7 +85,7 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children?: Snippet;
-@props:size?: 'small' | 'default' | 'large' | 'custom';
+@props:size?:  'small' | 'default' | 'large' | 'custom'; = 'default';
 @props:group?: (string | number)[];
 @props:value?: string | number;
 @props:checked?: boolean | undefined;

@@ -15,7 +15,16 @@
     nonActiveClass?: string | undefined;
   }
 
-  let { icon, subtext, href, label, spanclass, activeClass, nonActiveClass, ...attributes }: Props = $props();
+  let {
+    icon,
+    subtext,
+    href,
+    label,
+    spanclass,
+    activeClass,
+    nonActiveClass,
+    ...attributes
+  }: Props = $props();
   const context = getContext<SidebarType>('sidebarContext') ?? {};
   let currentUrl = $state();
   let spanCls: string = twMerge('ms-3', spanclass);
@@ -24,7 +33,11 @@
     currentUrl = $page.url.pathname;
   });
 
-  let aCls = $derived(currentUrl === href ? activeClass ?? context.activeClass : nonActiveClass ?? context.nonActiveClass);
+  let aCls = $derived(
+    currentUrl === href
+      ? activeClass ?? context.activeClass
+      : nonActiveClass ?? context.nonActiveClass
+  );
   // $inspect('aCls', aCls)
 </script>
 
@@ -44,8 +57,8 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: icon?: any;
-@props:subtext?: any;
+@props: icon?: Snippet;
+@props:subtext?: Snippet;
 @props:href?: string | undefined;
 @props:label?: string | undefined;
 @props:spanclass?: string | undefined;

@@ -10,8 +10,12 @@
     target?: string | undefined;
   }
 
-  let { children, href, ariaLabel, aclass, target, ...attributes }: Props = $props();
-  const aCls: string = twMerge('text-gray-500 hover:text-gray-900 dark:hover:text-white', aclass);
+  let { children, href, ariaLabel, aclass, target, ...attributes }: Props =
+    $props();
+  const aCls: string = twMerge(
+    'text-gray-500 hover:text-gray-900 dark:hover:text-white',
+    aclass
+  );
 </script>
 
 {#if children}

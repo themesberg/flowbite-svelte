@@ -16,7 +16,17 @@
     icon?: ComponentType;
     count?: boolean;
   }
-  let { children, text, divclass, size = 24, total = 5, rating = 4, partialId = 'partialStar' + idGenerator(), icon = Star, count = false }: Props = $props();
+  let {
+    children,
+    text,
+    divclass,
+    size = 24,
+    total = 5,
+    rating = 4,
+    partialId = 'partialStar' + idGenerator(),
+    icon = Star,
+    count = false
+  }: Props = $props();
 
   // generate unique id for full star and gray star
   const fullStarId: string = idGenerator();
@@ -38,7 +48,12 @@
       <svelte:component this={icon} {size} fillPercent={100} id={fullStarId} />
     {/each}
     {#if percentRating}
-      <svelte:component this={icon} {size} fillPercent={percentRating} id={partialId} />
+      <svelte:component
+        this={icon}
+        {size}
+        fillPercent={percentRating}
+        id={partialId}
+      />
     {/if}
     {#each Array(grayStars) as star}
       <svelte:component this={icon} {size} fillPercent={0} id={grayStarId} />
@@ -54,12 +69,12 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children?: Snippet;
-@props:text?: any;
+@props:text?: Snippet;
 @props:divclass?: string;
-@props:size?: number;
-@props:total?: number;
-@props:rating?: number;
-@props:partialId?: string;
-@props:icon?: ComponentType;
-@props:count?: boolean;
+@props:size?:  number; = 24;
+@props:total?:  number; = 5;
+@props:rating?:  number; = 4;
+@props:partialId?:  string; = 'partialStar' + idGenerator();
+@props:icon?:  ComponentType; = Star;
+@props:count?:  boolean; = false;
 -->

@@ -9,7 +9,7 @@
     size?: SizeType;
     divclass?: string | undefined;
   }
-  
+
   let { children, size = 'md', divclass = '', ...attributes }: Props = $props();
 
   // export let size: SizeType = 'md';

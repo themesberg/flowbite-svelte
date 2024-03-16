@@ -10,7 +10,7 @@
 
 <tbody class={className} {...attributes}>
   {#if children}
-  {@render children()}
+    {@render children()}
   {/if}
 </tbody>
 

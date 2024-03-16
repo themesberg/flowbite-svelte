@@ -2,7 +2,10 @@
   import type { ApexOptions } from 'apexcharts';
   import './chart.css';
 
-  let { options = {}, class: classname = '' }: {
+  let {
+    options = {},
+    class: classname = ''
+  }: {
     options: ApexOptions;
     class?: string;
   } = $props();

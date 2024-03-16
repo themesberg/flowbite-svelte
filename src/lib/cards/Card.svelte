@@ -19,7 +19,18 @@
     class?: string | undefined;
   }
 
-  let { children, href, horizontal = false, shadow = false, reverse = false, img, padding = 'lg', size = 'sm', class: classname, ...attributes }: Props = $props();
+  let {
+    children,
+    href,
+    horizontal = false,
+    shadow = false,
+    reverse = false,
+    img,
+    padding = 'lg',
+    size = 'sm',
+    class: classname,
+    ...attributes
+  }: Props = $props();
 
   const paddings = {
     none: 'p-0',
@@ -56,14 +67,15 @@
     );
     imgClass = twMerge(
       reverse ? 'rounded-b-lg' : 'rounded-t-lg',
-      horizontal && 'object-cover w-full h-96 md:h-auto md:w-48 md:rounded-none',
+      horizontal &&
+        'object-cover w-full h-96 md:h-auto md:w-48 md:rounded-none',
       horizontal && (reverse ? 'md:rounded-e-lg' : 'md:rounded-s-lg')
     );
   });
 </script>
 
 {#snippet content()}
-  {#if children}  
+  {#if children}
     {#if img}
       <img class={imgClass} src={img.src} alt={img.alt} />
       <div class={innerPadding}>
@@ -91,11 +103,11 @@
 ## Props
 @props: children?: Snippet;
 @props:href?: string;
-@props:horizontal?: boolean;
-@props:shadow?: boolean;
-@props:reverse?: boolean;
+@props:horizontal?:  boolean; = false;
+@props:shadow?:  boolean; = false;
+@props:reverse?:  boolean; = false;
 @props:img?: ImgType;
-@props:padding?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
-@props:size?: CardSizeType;
+@props:padding?:  'none' | 'sm' | 'md' | 'lg' | 'xl'; = 'lg';
+@props:size?:  CardSizeType; = 'sm';
 @props:class?: string | undefined;
 -->

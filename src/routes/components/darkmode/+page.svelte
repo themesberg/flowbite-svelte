@@ -34,7 +34,8 @@ Add the following to `app.html`:
 
 <H2>Switcher style</H2>
 
-Use the btnClass prop to overwrite the default classes or just use class attribute to append classes to the default classes.
+Use the btnClass prop to overwrite the default classes or just use class
+attribute to append classes to the default classes.
 
 <H2>Mode icon</H2>
 

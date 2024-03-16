@@ -10,7 +10,10 @@
 
   let { children, tag, dtclass, ddclass, ...attributes }: Props = $props();
   // export let tag: 'dt' | 'dd';
-  const dtCls: string = twMerge('text-gray-500 md:text-lg dark:text-gray-400', dtclass);
+  const dtCls: string = twMerge(
+    'text-gray-500 md:text-lg dark:text-gray-400',
+    dtclass
+  );
   const ddCls: string = twMerge('text-lg font-semibold', ddclass);
 
   let classDesc = twMerge(tag === 'dt' ? dtCls : ddCls);
@@ -18,7 +21,7 @@
 
 <svelte:element this={tag} {...attributes} class={classDesc}>
   {#if children}
-  {@render children()}
+    {@render children()}
   {/if}
 </svelte:element>
 

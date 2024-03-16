@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.6
+
+### Patch Changes
+
+- fix: add svelte type Snippet to children and other snippets ([`4624147a35d8bcde511a57f31666390cce18d084`](https://github.com/shinokada/svelte-5-ui-lib/commit/4624147a35d8bcde511a57f31666390cce18d084))
+  fix: add if-statement for children
+
 ## 0.3.5
 
 ### Patch Changes

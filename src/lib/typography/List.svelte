@@ -10,7 +10,14 @@
     class?: string | undefined;
   }
 
-  let { children, tag = 'ul', list, position = 'inside', class: classname, ...attributes }: Props = $props();
+  let {
+    children,
+    tag = 'ul',
+    list,
+    position = 'inside',
+    class: classname,
+    ...attributes
+  }: Props = $props();
 
   let lists = {
     disc: 'list-disc',
@@ -23,12 +30,16 @@
     outside: 'list-outside'
   };
 
-  let classList = twMerge(lists[list ?? (tag === 'ul' ? 'disc' : 'ol' ? 'decimal' : 'none')], positions[position], classname);
+  let classList = twMerge(
+    lists[list ?? (tag === 'ul' ? 'disc' : 'ol' ? 'decimal' : 'none')],
+    positions[position],
+    classname
+  );
 </script>
 
 <svelte:element this={tag} {...attributes} class={classList}>
   {#if children}
-  {@render children()}
+    {@render children()}
   {/if}
 </svelte:element>
 
@@ -37,8 +48,8 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children?: Snippet;
-@props:tag?: 'ul' | 'ol' | 'dl';
+@props:tag?:  'ul' | 'ol' | 'dl'; = 'ul';
 @props:list?: 'disc' | 'none' | 'decimal' | undefined;
-@props:position?: 'inside' | 'outside';
+@props:position?:  'inside' | 'outside'; = 'inside';
 @props:class?: string | undefined;
 -->

@@ -2,19 +2,30 @@
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import { CloseButton } from '$lib';
+  import type { ColorVariant } from './types';
 
   interface Props {
     children?: Snippet;
     header?: Snippet;
     position?: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky';
     dismissable?: boolean;
-    color?: 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'primary' | 'none';
+    color?: ColorVariant;
     bannerType: 'default' | 'bottom' | 'cta' | 'signup' | 'info';
     divclass: string | undefined;
     div2class: string | undefined;
   }
 
-  let { children, header, position = 'sticky', dismissable = true, color = 'gray', bannerType = 'default', divclass, div2class, ...attributes }: Props = $props();
+  let {
+    children,
+    header,
+    position = 'sticky',
+    dismissable = true,
+    color = 'gray',
+    bannerType = 'default',
+    divclass,
+    div2class,
+    ...attributes
+  }: Props = $props();
   let bannerStatus = $state(true);
 
   const divClasses = {
@@ -33,7 +44,12 @@
     info: 'items-center flex-shrink-0'
   };
 
-  let divCls = twMerge(position, 'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600', divClasses[bannerType], divclass);
+  let divCls = twMerge(
+    position,
+    'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600',
+    divClasses[bannerType],
+    divclass
+  );
   let innerCls = twMerge('flex', insideDivClasses[bannerType], div2class);
 </script>
 
@@ -43,9 +59,9 @@
       {@render header()}
     {/if}
     {#if children}
-    <div class={innerCls}>
-      {@render children()}
-    </div>
+      <div class={innerCls}>
+        {@render children()}
+      </div>
     {/if}
     {#if dismissable}
       <div class="flex items-center">
@@ -67,11 +83,11 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children?: Snippet;
-@props:header?: any;
-@props:position?: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky';
-@props:dismissable?: boolean;
-@props:color?: 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'primary' | 'none';
-@props:bannerType: 'default' | 'bottom' | 'cta' | 'signup' | 'info';
+@props:header?: Snippet;
+@props:position?:  'static' | 'fixed' | 'absolute' | 'relative' | 'sticky'; = 'sticky';
+@props:dismissable?:  boolean; = true;
+@props:color?:  ColorVariant; = 'gray';
+@props:bannerType:  'default' | 'bottom' | 'cta' | 'signup' | 'info'; = 'default';
 @props:divclass: string | undefined;
 @props:div2class: string | undefined;
 -->

@@ -1,5 +1,15 @@
 <script lang="ts">
-  import { Navbar, NavLi, NavBrand, NavUl, uiHelpers, ImagePlaceholder, Skeleton, TextPlaceholder, P } from '$lib';
+  import {
+    Navbar,
+    NavLi,
+    NavBrand,
+    NavUl,
+    uiHelpers,
+    ImagePlaceholder,
+    Skeleton,
+    TextPlaceholder,
+    P
+  } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -39,7 +49,12 @@
 <H2>Default Nav</H2>
 
 <CodeWrapper>
-  <Navbar toggleNav={toggleNav1} closeNav={closeNav1} navStatus={navStatus1} breakPoint="md">
+  <Navbar
+    toggleNav={toggleNav1}
+    closeNav={closeNav1}
+    navStatus={navStatus1}
+    breakPoint="md"
+  >
     {#snippet brand()}
       <NavBrand siteName="Svelte 5">
         <img width="30" src="/images/svelte-icon.png" alt="svelte icon" />
@@ -57,9 +72,17 @@
 <HighlightCompo code={modules['./md/default-nav.md'] as string} />
 
 <H2>Breakpoint</H2>
-<P>Use the `breakPoint` prop to change the breakpoint. There are 4 breakpoints: `md`, `lg`, `xl`, `xxl`.</P>
+<P
+  >Use the `breakPoint` prop to change the breakpoint. There are 4 breakpoints:
+  `md`, `lg`, `xl`, `xxl`.</P
+>
 <CodeWrapper>
-  <Navbar toggleNav={toggleNavLg} closeNav={closeNavLg} navStatus={navStatusLg} breakPoint="lg">
+  <Navbar
+    toggleNav={toggleNavLg}
+    closeNav={closeNavLg}
+    navStatus={navStatusLg}
+    breakPoint="lg"
+  >
     {#snippet brand()}
       <NavBrand siteName="Svelte 5">
         <img width="30" src="/images/svelte-icon.png" alt="svelte icon" />

@@ -92,8 +92,8 @@ devDependencies:
     specifier: ^7.6.0
     version: 7.6.0
   svelte-lib-helpers:
-    specifier: ^0.4.3
-    version: 0.4.3
+    specifier: ^0.4.5
+    version: 0.4.5
   svelte-rune-highlight:
     specifier: ^0.3.0
     version: 0.3.0(svelte@5.0.0-next.79)
@@ -3871,8 +3871,8 @@ packages:
       svelte: 5.0.0-next.79
     dev: true
 
-  /svelte-lib-helpers@0.4.3:
-    resolution: {integrity: sha512-K+xFCZUEwd2Ll0KacfuAa9F/RbUO13zYTfnZ0C0zoDDK+0v0NN6cC7BzmaICKPLVWoRYKT8CfD5Hn8C45dMEug==}
+  /svelte-lib-helpers@0.4.5:
+    resolution: {integrity: sha512-dtEWqjQBI2ZyLffAbfrqoOETUzIkDQ3ug7+3efWIw+Iff8x/3yyIQImDj9JXB7KMk7LFYmXQ7KGXRGxje5qKyQ==}
     hasBin: true
     dependencies:
       yargs: 17.7.2

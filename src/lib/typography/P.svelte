@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
-  import type { PsizeType, PweightType } from '../types';
+  import type { PsizeType, PweightType, SpaceType } from '../types';
 
   interface Props {
     children?: Snippet;
@@ -16,7 +16,7 @@
     opacity?: number | undefined;
     whitespace?: 'normal' | 'nowrap' | 'pre' | 'preline' | 'prewrap';
     size?: PsizeType;
-    space?: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest' | undefined;
+    space?: SpaceType;
     weight?: PweightType;
   }
 
@@ -116,7 +116,7 @@
 
 <p {...attributes} class={classP}>
   {#if children}
-  {@render children()}
+    {@render children()}
   {/if}
 </p>
 
@@ -125,17 +125,17 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children?: Snippet;
-@props:color?: string | undefined;
+@props:color?:  string | undefined; = 'text-gray-900 dark:text-white';
 @props:pclass?: string | undefined;
-@props:height?: 'normal' | 'relaxed' | 'loose';
-@props:align?: 'left' | 'center' | 'right';
-@props:justify?: boolean;
-@props:italic?: boolean;
-@props:firstupper?: boolean;
-@props:upperclass?: string | undefined;
+@props:height?:  'normal' | 'relaxed' | 'loose'; = 'normal';
+@props:align?:  'left' | 'center' | 'right'; = 'left';
+@props:justify?:  boolean; = false;
+@props:italic?:  boolean; = false;
+@props:firstupper?:  boolean; = false;
+@props:upperclass?:  string | undefined; = 'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:me-3 first-letter:float-left';
 @props:opacity?: number | undefined;
-@props:whitespace?: 'normal' | 'nowrap' | 'pre' | 'preline' | 'prewrap';
-@props:size?: PsizeType;
-@props:space?: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest' | undefined;
-@props:weight?: PweightType;
+@props:whitespace?:  'normal' | 'nowrap' | 'pre' | 'preline' | 'prewrap'; = 'normal';
+@props:size?:  PsizeType; = 'base';
+@props:space?: SpaceType;
+@props:weight?:  PweightType; = 'normal';
 -->

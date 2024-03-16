@@ -1,6 +1,10 @@
 <script lang="ts">
   import { ButtonGroup, Button, GradientButton } from '$lib';
-  import { UserCircleSolid, AdjustmentsVerticalSolid, DownloadSolid } from 'flowbite-svelte-icons';
+  import {
+    UserCircleSolid,
+    AdjustmentsVerticalSolid,
+    DownloadSolid
+  } from 'flowbite-svelte-icons';
   const handleClick = () => {
     alert('Clicked');
   };

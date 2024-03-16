@@ -28,7 +28,12 @@
       attrs: { type: 'submit' }
     }
   ];
-  import { AdjustmentsHorizontalSolid, DownloadSolid, MessagesSolid, UserCircleSolid } from 'flowbite-svelte-icons';
+  import {
+    AdjustmentsHorizontalSolid,
+    DownloadSolid,
+    MessagesSolid,
+    UserCircleSolid
+  } from 'flowbite-svelte-icons';
   let icons = [
     { name: 'Profile', icon: UserCircleSolid },
     { name: 'Settings', icon: AdjustmentsHorizontalSolid },
@@ -61,14 +66,25 @@
 
 <H2>List group with buttons</H2>
 <CodeWrapper class="flex justify-center">
-  <Listgroup btn items={buttons} defaultclass="w-48" onclick={(e) => alert('mycustomfield: ' + e.target.attributes.mycustomfield.value)} />
+  <Listgroup
+    btn
+    items={buttons}
+    defaultclass="w-48"
+    onclick={(e) =>
+      alert('mycustomfield: ' + e.target.attributes.mycustomfield.value)}
+  />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/list-group-with-buttons.md'] as string} />
 
 <H2>List group with icons</H2>
 <CodeWrapper class="flex justify-center">
-  <Listgroup btn items={icons} defaultclass="w-48" onclick={(e) => console.log(e.target.attributes.name.value)} />
+  <Listgroup
+    btn
+    items={icons}
+    defaultclass="w-48"
+    onclick={(e) => console.log(e.target.attributes.name.value)}
+  />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/list-group-with-icons.md'] as string} />

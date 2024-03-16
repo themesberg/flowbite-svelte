@@ -13,7 +13,7 @@
 
 <mark {...attributes} class={twMerge(markCls, markclass)}>
   {#if children}
-  {@render children()}
+    {@render children()}
   {/if}
 </mark>
 

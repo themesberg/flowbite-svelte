@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
-  
+
   type SelectOptionType<T> = {
     name: string | number;
     value: T;
@@ -17,7 +17,17 @@
     underlineClass?: string | undefined;
   }
 
-  let { children, items, value, placeholder = 'Choose option ...', underline, size = 'md', selectclass, underlineClass, ...attributes }: Props = $props();
+  let {
+    children,
+    items,
+    value,
+    placeholder = 'Choose option ...',
+    underline,
+    size = 'md',
+    selectclass,
+    underlineClass,
+    ...attributes
+  }: Props = $props();
   let defaultCls: string =
     'text-gray-900 bg-gray-50 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500';
 
@@ -33,10 +43,25 @@
     lg: 'text-base py-3 px-4'
   };
 
-  let selectCls: string = $state(twMerge(common, underline ? underlineCls : defaultCls, sizes[size], underline && '!px-0', selectclass));
+  let selectCls: string = $state(
+    twMerge(
+      common,
+      underline ? underlineCls : defaultCls,
+      sizes[size],
+      underline && '!px-0',
+      selectclass
+    )
+  );
 </script>
 
-<select {...attributes} bind:value class={selectCls} on:change on:contextmenu on:input>
+<select
+  {...attributes}
+  bind:value
+  class={selectCls}
+  on:change
+  on:contextmenu
+  on:input
+>
   {#if placeholder}
     <option disabled selected value="">{placeholder}</option>
   {/if}
@@ -57,9 +82,9 @@
 @props: children?: Snippet;
 @props:items: SelectOptionType<any>[];
 @props:value?: any;
-@props:placeholder?: string | undefined;
+@props:placeholder?:  string | undefined; = 'Choose option ...';
 @props:underline?: boolean;
-@props:size?: 'sm' | 'md' | 'lg';
+@props:size?:  'sm' | 'md' | 'lg'; = 'md';
 @props:selectclass?: string | undefined;
 @props:underlineClass?: string | undefined;
 -->

@@ -14,7 +14,7 @@
 
 <li {...attributes} class={classLi}>
   {#if children}
-  {@render children()}
+    {@render children()}
   {/if}
 </li>
 

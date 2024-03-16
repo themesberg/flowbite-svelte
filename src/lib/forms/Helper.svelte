@@ -16,9 +16,16 @@
 </script>
 
 {#if children}
-<p {...attributes} class={twMerge('text-xs font-normal text-gray-500 dark:text-gray-300', colorClasses[color], pclass)}>
-  {@render children()}
-</p>
+  <p
+    {...attributes}
+    class={twMerge(
+      'text-xs font-normal text-gray-500 dark:text-gray-300',
+      colorClasses[color],
+      pclass
+    )}
+  >
+    {@render children()}
+  </p>
 {:else}
   Helper content
 {/if}

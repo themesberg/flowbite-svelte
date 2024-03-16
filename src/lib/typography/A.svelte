@@ -16,7 +16,7 @@
 
 <a {...attributes} {href} class={twMerge(aCls, colorCls, aclass)}>
   {#if children}
-  {@render children()}
+    {@render children()}
   {/if}
 </a>
 

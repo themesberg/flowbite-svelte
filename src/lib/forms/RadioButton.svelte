@@ -15,12 +15,33 @@
     color?: ButtonColorType | undefined;
     shadow?: boolean;
   }
-  let { children, group, value, inline = true, btnclass, pill, outline, size, color, shadow, ...attributes }: Props = $props();
+  let {
+    children,
+    group,
+    value,
+    inline = true,
+    btnclass,
+    pill,
+    outline,
+    size,
+    color,
+    shadow,
+    ...attributes
+  }: Props = $props();
 
   let buttonCls: string = twMerge(inline ? 'inline-flex' : 'flex', btnclass);
 </script>
 
-<Button tag="label" checked={value === group} {pill} {outline} {size} {color} {shadow} btnclass={buttonCls}>
+<Button
+  tag="label"
+  checked={value === group}
+  {pill}
+  {outline}
+  {size}
+  {color}
+  {shadow}
+  btnclass={buttonCls}
+>
   <input type="radio" bind:group {value} {...attributes} class="sr-only" />
   {#if children}
     {@render children()}
@@ -36,7 +57,7 @@
 @props: children?: Snippet;
 @props:group?: string | number;
 @props:value?: string | number;
-@props:inline?: boolean;
+@props:inline?:  boolean; = true;
 @props:btnclass?: string;
 @props:pill?: boolean;
 @props:outline?: boolean;

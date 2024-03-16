@@ -44,7 +44,10 @@
     Change a few things up and try submitting again.
   </Alert>
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/default-alert.md'] as string} />
+<HighlightCompo
+  codeLang="ts"
+  code={modules['./md/default-alert.md'] as string}
+/>
 
 <H2>Alerts with icon</H2>
 <CodeWrapper class="space-y-4">
@@ -91,7 +94,10 @@
     Change a few things up and try submitting again.
   </Alert>
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/alerts-with-icon.md'] as string} />
+<HighlightCompo
+  codeLang="ts"
+  code={modules['./md/alerts-with-icon.md'] as string}
+/>
 
 <H2>Bordered alerts</H2>
 <CodeWrapper class="space-y-4">
@@ -138,7 +144,10 @@
     Change a few things up and try submitting again.
   </Alert>
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/bordered-alerts.md'] as string} />
+<HighlightCompo
+  codeLang="ts"
+  code={modules['./md/bordered-alerts.md'] as string}
+/>
 
 <H2>Alerts with list</H2>
 <CodeWrapper class="space-y-4">
@@ -167,7 +176,10 @@
     </List>
   </Alert>
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/alerts-with-list.md'] as string} />
+<HighlightCompo
+  codeLang="ts"
+  code={modules['./md/alerts-with-list.md'] as string}
+/>
 
 <H2>Dismissable alerts</H2>
 <CodeWrapper class="min-h-[450px] space-y-4">
@@ -214,7 +226,10 @@
     Change a few things up and try submitting again.
   </Alert>
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/dismissable-alerts.md'] as string} />
+<HighlightCompo
+  codeLang="ts"
+  code={modules['./md/dismissable-alerts.md'] as string}
+/>
 
 <H2>Border accent</H2>
 <CodeWrapper class="space-y-4">
@@ -254,7 +269,10 @@
     Change a few things up and try submitting again.
   </Alert>
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/border-accent.md'] as string} />
+<HighlightCompo
+  codeLang="ts"
+  code={modules['./md/border-accent.md'] as string}
+/>
 
 <H2>Additional content</H2>
 <CodeWrapper class="space-y-4">
@@ -266,7 +284,9 @@
       <span class="text-lg font-medium">This is a info alert</span>
     </div>
     <p class="mb-4 mt-2 text-sm">
-      More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
+      More info about this info alert goes here. This example text is going to
+      run a bit longer so that you can see how spacing within an alert works
+      with this kind of content.
     </p>
     <div class="flex gap-2">
       <Button size="xs"><EyeSolid class="me-2 h-4 w-4" />View more</Button>
@@ -281,21 +301,31 @@
       <span class="text-lg font-medium">This is a info alert</span>
     </div>
     <p class="mb-4 mt-2 text-sm">
-      More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
+      More info about this info alert goes here. This example text is going to
+      run a bit longer so that you can see how spacing within an alert works
+      with this kind of content.
     </p>
     <div class="flex gap-2">
-      <Button size="xs" color="green"><EyeSolid class="me-2 h-4 w-4" />View more</Button>
+      <Button size="xs" color="green"
+        ><EyeSolid class="me-2 h-4 w-4" />View more</Button
+      >
       <Button size="xs" outline color="green">Go to Home</Button>
     </div>
   </Alert>
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/additional-content.md'] as string} />
+<HighlightCompo
+  codeLang="ts"
+  code={modules['./md/additional-content.md'] as string}
+/>
 
 <H2>Custom color</H2>
 <CodeWrapper>
   <Alert color="none" divclass="bg-sky-500 text-white">Your content</Alert>
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/custom-color.md'] as string} />
+<HighlightCompo
+  codeLang="ts"
+  code={modules['./md/custom-color.md'] as string}
+/>
 
 <H2>Events</H2>
 <CodeWrapper class="h-24">

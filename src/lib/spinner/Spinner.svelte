@@ -1,16 +1,26 @@
 <script lang="ts">
+  import type { SpinnerColorType } from '$lib/types';
   interface Props {
-    color?: 'primary' | 'blue' | 'gray' | 'green' | 'red' | 'yellow' | 'pink' | 'purple' | 'white' | 'custom' ;
-    bg?: string ;
-    customColor?: string ;
-    size?: string | number ;
-    currentFill?: string ;
-    currentColor?: string ;
-    svgclass?: string ;
+    color?: SpinnerColorType;
+    bg?: string;
+    customColor?: string;
+    size?: string | number;
+    currentFill?: string;
+    currentColor?: string;
+    svgclass?: string;
   }
   import { twMerge } from 'tailwind-merge';
 
-  let { svgclass, color = 'primary', bg = 'text-gray-300', customColor, size = '8', currentFill = 'currentFill', currentColor = 'currentColor', ...attributes }: Props = $props();
+  let {
+    svgclass,
+    color = 'primary',
+    bg = 'text-gray-300',
+    customColor,
+    size = '8',
+    currentFill = 'currentFill',
+    currentColor = 'currentColor',
+    ...attributes
+  }: Props = $props();
 
   let iconsize = `w-${size} h-${size}`;
 
@@ -31,13 +41,20 @@
     custom: customColor
   };
 
-  let fillColorCls: string = color === undefined ? '' : fillColorClasses[color] ?? fillColorClasses.blue;
+  let fillColorCls: string =
+    color === undefined ? '' : fillColorClasses[color] ?? fillColorClasses.blue;
 </script>
 
 <svg
   {...attributes}
   role="status"
-  class={twMerge('-mt-px inline animate-spin dark:text-gray-600', iconsize, bg, fillColorCls, svgclass)}
+  class={twMerge(
+    '-mt-px inline animate-spin dark:text-gray-600',
+    iconsize,
+    bg,
+    fillColorCls,
+    svgclass
+  )}
   viewBox="0 0 100 101"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
@@ -56,11 +73,11 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: color?: 'primary' | 'blue' | 'gray' | 'green' | 'red' | 'yellow' | 'pink' | 'purple' | 'white' | 'custom' | undefined;
-@props:bg?: string | undefined;
-@props:customColor?: string | undefined;
-@props:size?: string | number | undefined;
-@props:currentFill?: string | undefined;
-@props:currentColor?: string | undefined;
-@props:svgclass?: string | undefined;
+@props: color?:  SpinnerColorType; = 'primary';
+@props:bg?:  string; = 'text-gray-300';
+@props:customColor?: string;
+@props:size?:  string | number; = '8';
+@props:currentFill?:  string; = 'currentFill';
+@props:currentColor?:  string; = 'currentColor';
+@props:svgclass?: string;
 -->

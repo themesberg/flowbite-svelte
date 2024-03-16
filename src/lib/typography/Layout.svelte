@@ -9,14 +9,19 @@
     // gap?: number;
   }
 
-  let { children, divclass, cols = 'grid-cols-1 sm:grid-cols-2', ...attributes }: Props = $props();
+  let {
+    children,
+    divclass,
+    cols = 'grid-cols-1 sm:grid-cols-2',
+    ...attributes
+  }: Props = $props();
 
   let classDiv = twMerge('grid', cols, divclass);
 </script>
 
 <div {...attributes} class={classDiv}>
   {#if children}
-  {@render children()}
+    {@render children()}
   {/if}
 </div>
 
@@ -26,6 +31,6 @@
 ## Props
 @props: children?: Snippet;
 @props:divclass?: string | undefined;
-@props:cols?: string | undefined;
+@props:cols?:  string | undefined; = 'grid-cols-1 sm:grid-cols-2';
 @props:// gap?: number;
 -->

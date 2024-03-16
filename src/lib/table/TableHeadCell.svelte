@@ -6,12 +6,17 @@
     class?: string;
     padding?: string;
   }
-  let { children, class: className, padding = 'px-6 py-3', ...attributes }: Props = $props();
+  let {
+    children,
+    class: className,
+    padding = 'px-6 py-3',
+    ...attributes
+  }: Props = $props();
 </script>
 
 <th {...attributes} class={twMerge(padding, className)}>
   {#if children}
-  {@render children()}
+    {@render children()}
   {/if}
 </th>
 
@@ -21,5 +26,5 @@
 ## Props
 @props: children?: Snippet;
 @props:class?: string;
-@props:padding?: string;
+@props:padding?:  string; = 'px-6 py-3';
 -->
