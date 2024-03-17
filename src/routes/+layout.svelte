@@ -6,8 +6,6 @@
   import Footer from './utils/Footer.svelte';
   import Sidemenu from './utils/Sidemenu.svelte';
   import MetaTag from './utils/MetaTag.svelte';
-  import { inject } from '@vercel/analytics';
-  inject();
 </script>
 
 <MetaTag />
