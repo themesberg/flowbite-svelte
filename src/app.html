@@ -6,12 +6,19 @@
 		<title>Svelte 5 UI lib</title>
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-56Q5D99ZCL"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-56Q5D99ZCL');
+		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover" class="bg-white dark:bg-gray-950 text-gray-700 dark:text-gray-300 antialiased">
 		<div style="display: contents" class="max-h-screen overflow-auto relative w-full">
 			%sveltekit.body%
 		</div>
-		<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "dd5bcd0c1df640a5be07f188c46462a9"}'></script><!-- End Cloudflare Web Analytics -->
 	</body>
 </html>
