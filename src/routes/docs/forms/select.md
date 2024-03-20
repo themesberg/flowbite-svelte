@@ -238,6 +238,10 @@ Get started with the default toggle component example as a checkbox element to r
 <MultiSelect items={countries} bind:value={selected} />
 ```
 
+### Keyboard Usage
+
+Some keyboard interaction was implemented. Use `up`/`down` arrows to highlight an item, then press `enter` or `spacebar` to toggle the highlighted item. Press `escape` to close the selection pop-up.
+
 ### Customization
 
 To customize the look and feel use the `slot` to insert inner [`Badge`](/docs/components/badge) component.
