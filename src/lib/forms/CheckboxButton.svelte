@@ -14,6 +14,7 @@
   export let size: SizeType | undefined = undefined;
   export let color: ButtonColorType | undefined = undefined;
   export let shadow: boolean = false;
+  export let element: HTMLInputElement | undefined = undefined;
 
   // react on external group changes
   function init(_: HTMLElement, _group: (string | number)[]) {
@@ -57,6 +58,7 @@
     use:init={group}
     type="checkbox"
     bind:checked
+    bind:this={element}
     {value}
     {...$$restProps}
     class="sr-only"
@@ -88,4 +90,5 @@
 @prop export let size: SizeType | undefined = undefined;
 @prop export let color: ButtonColorType | undefined = undefined;
 @prop export let shadow: boolean = false;
+@prop export let element: HTMLInputElement | undefined = undefined;
 -->

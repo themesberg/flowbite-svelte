@@ -17,6 +17,7 @@
   export let defaultClass: string = 'block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right';
   export let color: 'base' | 'green' | 'red' = 'base';
   export let floatClass: string = 'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400';
+  export let element: HTMLInputElement | undefined = undefined;
 
   const borderClasses = {
     base: 'border-gray-300 dark:border-gray-600',
@@ -63,7 +64,7 @@
     </div>
   {/if}
   <slot props={{ ...$$restProps, class: inputClass }}>
-    <input {...$$restProps} bind:value on:blur on:change on:click on:contextmenu on:focus on:keydown on:keypress on:keyup on:mouseover on:mouseenter on:mouseleave on:paste on:input {...{ type }} class={inputClass} />
+    <input {...$$restProps} bind:value bind:this={element} on:blur on:change on:click on:contextmenu on:focus on:keydown on:keypress on:keyup on:mouseover on:mouseenter on:mouseleave on:paste on:input {...{ type }} class={inputClass} />
   </slot>
   {#if $$slots.right}
     <div class="{twMerge(floatClass, $$props.classRight)} end-0 pe-2.5"><slot name="right" /></div>
@@ -80,4 +81,5 @@
 @prop export let defaultClass: string = 'block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right';
 @prop export let color: 'base' | 'green' | 'red' = 'base';
 @prop export let floatClass: string = 'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400';
+@prop export let element: HTMLInputElement | undefined = undefined;
 -->

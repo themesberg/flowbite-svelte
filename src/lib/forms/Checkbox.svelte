@@ -13,6 +13,7 @@
   export let value: string | number = 'on';
   export let checked: boolean | undefined = undefined;
   export let spacing: string = 'me-2';
+  export let element: HTMLInputElement | undefined = undefined;
 
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
@@ -52,7 +53,7 @@
 </script>
 
 <Label class={labelClass(inline, $$props.class)} show={$$slots.default}>
-  <input use:init={group} type="checkbox" bind:checked on:keyup on:keydown on:keypress on:focus on:blur on:click on:mouseover on:mouseenter on:mouseleave on:paste on:change={onChange} on:change {value} {...$$restProps} class={inputClass(custom, color, true, background, spacing, $$slots.default || $$props.class)} />
+  <input use:init={group} type="checkbox" bind:checked bind:this={element} on:keyup on:keydown on:keypress on:focus on:blur on:click on:mouseover on:mouseenter on:mouseleave on:paste on:change={onChange} on:change {value} {...$$restProps} class={inputClass(custom, color, true, background, spacing, $$slots.default || $$props.class)} />
   <slot />
 </Label>
 
@@ -67,4 +68,5 @@
 @prop export let value: string | number = 'on';
 @prop export let checked: boolean | undefined = undefined;
 @prop export let spacing: string = 'me-2';
+@prop export let element: HTMLInputElement | undefined = undefined;
 -->
