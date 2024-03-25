@@ -1,13 +1,15 @@
 <script lang="ts">
-  import { setContext } from 'svelte';
+  import { createEventDispatcher, setContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
 
   import type { Action } from 'svelte/action';
   import type { HTMLAnchorAttributes } from 'svelte/elements';
+  import { type TransitionConfig } from 'svelte/transition';
 
   const noop = () => {};
 
   type FrameColor = keyof typeof bgColors;
+  type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 
   interface $$Props extends HTMLAnchorAttributes {
     tag?: string;
@@ -20,6 +22,9 @@
     options?: object;
     class?: string;
     role?: string;
+    open?: boolean;
+    transition?: TransitionFunc;
+    params?: any;
   }
 
   setContext('background', true);
@@ -37,6 +42,17 @@
   export let options = {};
 
   export let role: string | undefined = undefined;
+
+  // Export a prop through which you can set a desired svelte transition
+  export let transition: TransitionFunc | undefined = undefined;
+  // Pass in extra transition params
+  export let params: object = {};
+
+  export let open: boolean = true;
+
+  const dispatch = createEventDispatcher();
+  $: dispatch(open ? 'open' : 'close');
+  $: dispatch('show', open);
 
   $: color = color ?? 'default'; // for cases when undefined
   $: setContext('color', color);
@@ -109,9 +125,15 @@
   $: divClass = twMerge(bgColors[color], textColors[color], rounded && 'rounded-lg', border && 'border', borderColors[color], shadow && 'shadow-md', $$props.class);
 </script>
 
-<svelte:element this={tag} use:use={options} bind:this={node} {role} {...$$restProps} class={divClass} on:click on:mouseenter on:mouseleave on:focusin on:focusout>
-  <slot />
-</svelte:element>
+{#if transition && open}
+  <svelte:element this={tag} transition:transition={params} use:use={options} bind:this={node} {role} {...$$restProps} class={divClass} on:click on:mouseenter on:mouseleave on:focusin on:focusout>
+    <slot />
+  </svelte:element>
+{:else if open}
+  <svelte:element this={tag} use:use={options} bind:this={node} {role} {...$$restProps} class={divClass} on:click on:mouseenter on:mouseleave on:focusin on:focusout>
+    <slot />
+  </svelte:element>
+{/if}
 
 <!--
 @component
