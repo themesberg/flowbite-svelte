@@ -14,7 +14,7 @@
   let {
     children,
     class: className,
-    theadClass = 'text-xs uppercase',
+    theadClass = '',
     defaultRow = true,
     ...attributes
   }: Props = $props();
@@ -52,6 +52,7 @@
         : `border-${color}-400`;
 
   let theadCls = twMerge(
+    'text-xs uppercase',
     theadClass,
     textColor,
     striped && borderColors,

@@ -23,6 +23,7 @@
     svgclass,
     ...attributes
   }: Props = $props();
+  
 </script>
 
 <svg

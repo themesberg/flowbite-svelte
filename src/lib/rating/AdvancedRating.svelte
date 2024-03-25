@@ -23,6 +23,7 @@
     span2class,
     unit
   }: Props = $props();
+  
   let divCls: string = twMerge('flex items-center mt-4', divclass);
   let spanCls: string = twMerge(
     'text-sm font-medium text-gray-600 dark:text-gray-500',

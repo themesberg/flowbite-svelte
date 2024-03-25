@@ -21,6 +21,7 @@
     nonActiveClass,
     ...attributes
   }: Props = $props();
+  
   let breakPoint: navbarType['breakPoint'];
 
   const context = getContext<navbarType>('navbarContext');

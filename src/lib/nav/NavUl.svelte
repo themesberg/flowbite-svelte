@@ -9,9 +9,8 @@
     ulclass?: string | undefined;
   }
   let { children, ulclass, ...attributes }: Props = $props();
-  let breakPoint: navbarType['breakPoint'];
 
-  // breakPoint = getContext('breakPoint');
+  let breakPoint: navbarType['breakPoint'];
   const context = getContext<navbarType>('navbarContext');
   breakPoint = context.breakPoint ?? 'md';
   const ulBreaks = {

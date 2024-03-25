@@ -12,11 +12,11 @@
   let {
     children,
     divclass,
-    cols = 'grid-cols-1 sm:grid-cols-2',
+    cols = '',
     ...attributes
   }: Props = $props();
 
-  let classDiv = twMerge('grid', cols, divclass);
+  let classDiv = twMerge('grid grid-cols-1 sm:grid-cols-2', cols, divclass);
 </script>
 
 <div {...attributes} class={classDiv}>

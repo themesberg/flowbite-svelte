@@ -31,6 +31,7 @@
     liclass,
     ...attributes
   }: Props = $props();
+  
   btn = getContext('btn');
   const currentCls: string = twMerge(
     'text-white bg-primary-700 dark:text-white dark:bg-gray-800',

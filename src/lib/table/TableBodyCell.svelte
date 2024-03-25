@@ -13,17 +13,18 @@
   let {
     children,
     class: className,
-    tdclass = 'px-6 py-4 whitespace-nowrap font-medium',
+    tdclass = '',
     onclick,
     ...attributes
   }: Props = $props();
 
   const tableCtx: TableCtxType = getContext('tableCtx');
-
+  
   let color = $state(tableCtx.color ? tableCtx.color : 'default');
 
   let tdCls: string = $state(
     twMerge(
+      'px-6 py-4 whitespace-nowrap font-medium',
       tdclass,
       color === 'default'
         ? 'text-gray-900 dark:text-white'

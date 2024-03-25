@@ -23,6 +23,7 @@
     defaultclass,
     ...attributes
   }: Props = $props();
+  
   const dispatch = createEventDispatcher();
   const bgColor = 'bg-white dark:bg-gray-800';
   const textColor = 'text-gray-500 dark:text-gray-400';

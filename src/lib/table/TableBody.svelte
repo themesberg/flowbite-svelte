@@ -5,7 +5,6 @@
     class?: string | undefined;
   }
   let { children, class: className, ...attributes }: Props = $props();
-  // export let tableBodyClass: string | undefined = undefined;
 </script>
 
 <tbody class={className} {...attributes}>

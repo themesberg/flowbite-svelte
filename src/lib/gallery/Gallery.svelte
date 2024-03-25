@@ -21,7 +21,7 @@
     divclass,
     ...attributes
   }: Props = $props();
-  // export let items: ImgType[] = [];
+ 
   const imgCls: string = 'h-auto max-w-full rounded-lg';
 
   let divCls = twMerge('grid', divclass);

@@ -25,6 +25,7 @@
     nonActiveClass,
     ...attributes
   }: Props = $props();
+  
   const context = getContext<SidebarType>('sidebarContext') ?? {};
   let currentUrl = $state();
   let spanCls: string = twMerge('ms-3', spanclass);

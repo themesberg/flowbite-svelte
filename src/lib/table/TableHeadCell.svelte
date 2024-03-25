@@ -9,12 +9,12 @@
   let {
     children,
     class: className,
-    padding = 'px-6 py-3',
+    padding = '',
     ...attributes
   }: Props = $props();
 </script>
 
-<th {...attributes} class={twMerge(padding, className)}>
+<th {...attributes} class={twMerge('px-6 py-3',padding, className)}>
   {#if children}
     {@render children()}
   {/if}

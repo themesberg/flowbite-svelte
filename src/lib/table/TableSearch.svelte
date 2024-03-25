@@ -34,18 +34,18 @@
     svgSearch,
     header,
     footer,
-    divclass = 'relative overflow-x-auto shadow-md sm:rounded-lg',
+    divclass = '',
     inputValue,
     striped,
     hoverable,
     placeholder = 'Search',
     customColor = '',
     color = 'default',
-    innerDivClass = 'p-4',
+    innerDivClass = '',
     inputclass,
-    searchClass = 'relative mt-1',
+    searchClass = '',
     svgDivClass,
-    svgClass = 'w-5 h-5 text-gray-500 dark:text-gray-400',
+    svgClass = '',
     classDiv,
     class: className,
     ...attributes
@@ -80,13 +80,13 @@
   setContext('tableCtx', tableSearchCtx);
 </script>
 
-<div class={divclass}>
-  <div class={innerDivClass}>
+<div class={twMerge('relative overflow-x-auto shadow-md sm:rounded-lg',divclass)}>
+  <div class={twMerge('p-4',innerDivClass)}>
     <label for="table-search" class="sr-only">Search</label>
-    <div class={searchClass}>
+    <div class={twMerge('relative mt-1',searchClass)}>
       <div class={svgDivCls}>
         <svg
-          class={svgClass}
+          class={twMerge('w-5 h-5 text-gray-500 dark:text-gray-400',svgClass)}
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"

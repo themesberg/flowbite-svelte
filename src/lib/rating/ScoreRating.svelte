@@ -11,14 +11,7 @@
   }
 
   let { ratings, ratings2, headerLabel }: Props = $props();
-  // export let ratings: { label: string; rating: number }[] = [];
-  // export let ratings2: { label: string; rating: number }[] = [];
-  // export let headerLabel: {
-  //   desc1: string;
-  //   desc2: string;
-  //   desc3: string;
-  //   link: { label: string; url: string };
-  // };
+
   const desc1Cls: string =
     'bg-primary-100 w-8 text-primary-800 text-sm font-semibold inline-flex items-center p-1.5 rounded dark:bg-primary-200 dark:text-primary-800';
   const desc2Cls: string =

@@ -42,6 +42,7 @@
     ulclass,
     liclass
   }: Props = $props();
+  
 </script>
 
 {#if review}
