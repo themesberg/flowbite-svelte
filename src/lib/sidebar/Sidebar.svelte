@@ -17,12 +17,14 @@
     divclass,
     asideclass,
     ariaLabel,
-    nonActiveClass = 'flex items-center text-base font-normal text-gray-900 rounded dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700',
-    activeClass = 'flex items-center text-base font-normal text-gray-900 bg-gray-200 dark:bg-gray-700 rounded dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700',
+    nonActiveClass = '',
+    activeClass = '',
     aclass,
     ...attributes
   }: Props = $props();
-
+  
+  const activeCls = 'flex items-center text-base font-normal text-gray-900 bg-gray-200 dark:bg-gray-700 rounded dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'
+  const nonActiveCls = 'flex items-center text-base font-normal text-gray-900 rounded dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'
   let divCls = twMerge(
     'overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800',
     divclass
@@ -34,8 +36,8 @@
   // nonActiveClass = twMerge(nonActiveClass, aclass);
   // $inspect('aclass: ', aclass)
   setContext<SidebarType>('sidebarContext', {
-    activeClass: twMerge(activeClass, aclass),
-    nonActiveClass: twMerge(nonActiveClass, aclass)
+    activeClass: twMerge(activeCls, activeClass, aclass),
+    nonActiveClass: twMerge(nonActiveCls, nonActiveClass, aclass)
   });
   // $inspect('activeClass: ', activeClass)
 </script>
