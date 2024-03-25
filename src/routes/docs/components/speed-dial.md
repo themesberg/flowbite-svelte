@@ -503,6 +503,34 @@ Use the `open` property to control the state of the popup menu.
 
 The default trigger type is hover for each speed dial component.
 
+## Custom main button
+
+You can change the main button to any element you want by using the `slot='button'`.
+
+```svelte example class="relative h-96" hideResponsiveButtons
+<script>
+  import { SpeedDial, SpeedDialButton, Rating } from 'flowbite-svelte';
+  import { ShareNodesSolid, PrintSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
+</script>
+
+<SpeedDial defaultClass="absolute end-6 bottom-6">
+  <Rating slot="button" total={1} rating={0.5} size={48}/>
+  <SpeedDialButton name="Share">
+    <ShareNodesSolid class="w-5 h-5" />
+  </SpeedDialButton>
+  <SpeedDialButton name="Print">
+    <PrintSolid class="w-5 h-5" />
+  </SpeedDialButton>
+  <SpeedDialButton name="Download">
+    <DownloadSolid class="w-5 h-5" />
+  </SpeedDialButton>
+  <SpeedDialButton name="Copy">
+    <FileCopySolid class="w-5 h-5" />
+  </SpeedDialButton>
+</SpeedDial>
+```
+
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
