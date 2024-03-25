@@ -33,22 +33,24 @@ To get started with using tooltips all you need to do is set `triggeredBy` attri
   import { Tooltip, Button } from 'flowbite-svelte';
 </script>
 
-// only works if the button and tooltip are adjacent on your page. Like this:
+<!-- only works if the button and tooltip are adjacent on your page. Like this: -->
 <Button>Default tooltip</Button>
 <Tooltip>Tooltip content</Tooltip>
 ```
-If you have anything else between the button and tooltip, they won't find each other.
-```
-<Button>Default tooltip</Button>
-<span>hi mom</span>
-<Tooltip>Tooltip content</Tooltip>
-```
-Need to add _id_ to the button to link to the tooltip's _triggeredBy_ attribute, and it works ANYWHERE on the page!
-```
+
+If you have anything else between the button and tooltip, they won't find each other and you will need to specify the link between them by setting
+the property `triggeredBy` to the CSS query of the element that triggers the tooltip. Most of the time you will want to use the `id` attribute of the element to link them, but you can use any CSS query you want. See the examples further down.
+
+
+```svelte example hideScript class="h-32 flex items-end gap-2"
+<script>
+  import { Tooltip, Button, P } from 'flowbite-svelte';
+</script>
+
 <Button id="specific-button-anywhere-on-page">Default tooltip</Button>
-<span>hi mom</span>
-<span>lorem ipsum, content blah blah, other stuff</span>
-<Tooltip triggeredBy="[id='specific-button-anywhere-on-page']">Tooltip content</Tooltip>
+<P>hi mom</P>
+<P>lorem ipsum, content blah blah, other stuff</P>
+<Tooltip triggeredBy="#specific-button-anywhere-on-page">Tooltip content</Tooltip>
 ```
 
 ## Tooltip types
@@ -73,7 +75,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 
 **Note!** This examples shows you also how to share one tooltip between multiple triggering elements using advanced CSS query.
 
-```svelte example class="flex items-center gap-2 h-36" hideResponsiveButtons
+```svelte example class="flex items-center justify-center gap-2 h-36" hideResponsiveButtons
 <script>
   import { Tooltip, Button } from 'flowbite-svelte';
   let placement = 'left';
