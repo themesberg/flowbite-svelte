@@ -333,7 +333,7 @@ Use this example of an advanced layout of checkbox elements where the label pare
   <Checkbox bind:group value={2}>Two</Checkbox>
   <Checkbox bind:group value={3}>Three</Checkbox>
 </div>
-<div class="my-2 border border-gray-200 dark:border-gray-700 rounded-lg p-2 w-44">Group: {group}</div>
+<div class="my-2 border border-gray-200 dark:border-gray-700 rounded-lg p-2 w-44 dark:text-gray-400">Group: {group}</div>
 <Button on:click={() => (group.length = 0)}>Clear</Button>
 ```
 
