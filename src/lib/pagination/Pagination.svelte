@@ -26,7 +26,7 @@
 </script>
 
 <nav aria-label={ariaLabel}>
-  <ul class={twMerge(ulClass, table && 'divide-x rtl:divide-x-reverse dark divide-gray-700 dark:divide-gray-700', $$props.class)}>
+  <ul class={twMerge(ulClass, table && 'divide-x rtl:divide-x-reverse divide-gray-300 dark:divide-gray-700', $$props.class)}>
     <li>
       <PaginationItem {large} on:click={previous} {normalClass} class={table ? 'rounded-l' : 'rounded-s-lg'}>
         <slot name="prev">Previous</slot>
