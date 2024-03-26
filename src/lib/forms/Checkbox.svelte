@@ -12,7 +12,7 @@
   export let group: (string | number)[] = [];
   export let value: string | number = 'on';
   export let checked: boolean | undefined = undefined;
-  export let spacing: string = 'me-2';
+  export let spacing: string = $$slots.default ? 'me-2' : '';
 
   // tinted if put in component having its own background
   let background: boolean = getContext('background');

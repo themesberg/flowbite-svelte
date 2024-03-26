@@ -29,7 +29,7 @@
   export let inline: boolean = false;
   export let group: number | string | undefined = undefined;
   export let value: number | string = '';
-  export let spacing: string = 'mr-2';
+  export let spacing: string = $$slots.default ? 'me-2' : '';
 
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
