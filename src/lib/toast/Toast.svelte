@@ -9,7 +9,6 @@
   interface $$Props extends ComponentProps<TransitionFrame> {
     color?: 'primary' | 'gray' | 'red' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple' | 'orange' | 'none';
     position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none';
-    open?: boolean;
     divClass?: string;
     defaultIconClass?: string;
     extraIconClass?: string;
@@ -54,7 +53,7 @@
   const clsBtnExtraClass = '-mx-1.5 -my-1.5 text-gray-400 hover:text-gray-900 focus:!ring-gray-300 hover:bg-gray-100 dark:text-gray-500 dark:hover:text-white dark:hover:bg-gray-700';
 </script>
 
-<TransitionFrame rounded {dismissable} color="none" role="alert" {...$$restProps} class={finalDivClass} let:close on:close>
+<TransitionFrame rounded color="none" role="alert" {...$$restProps} class={finalDivClass} let:close on:close>
   {#if $$slots.icon}
     <Frame rounded color="none" class={iconClass}>
       <slot name="icon" />

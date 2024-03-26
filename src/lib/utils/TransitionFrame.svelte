@@ -15,7 +15,6 @@
   export let params: object = {};
 
   export let open: boolean = true;
-  export let dismissable: boolean = false;
 
   function close(ev: MouseEvent | undefined) {
     if (ev?.stopPropagation) ev.stopPropagation();
@@ -23,11 +22,7 @@
   }
 </script>
 
-{#if dismissable}
-  <Frame bind:open {transition} {params} {...$$restProps} on:show><slot {close} /></Frame>
-{:else}
-  <Frame {...$$restProps} on:show><slot /></Frame>
-{/if}
+<Frame bind:open {transition} {params} {...$$restProps} on:show><slot {close} /></Frame>
 
 <!--
 @component
