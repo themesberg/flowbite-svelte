@@ -116,6 +116,7 @@ export { default as MegaMenu } from './mega-menu/MegaMenu.svelte';
 // Navbar
 export { default as Navbar } from './navbar/Navbar.svelte';
 export { default as NavBrand } from './navbar/NavBrand.svelte';
+export { default as NavContainer } from './navbar/NavContainer.svelte';
 export { default as NavHamburger } from './navbar/NavHamburger.svelte';
 export { default as NavLi } from './navbar/NavLi.svelte';
 export { default as NavUl } from './navbar/NavUl.svelte';
