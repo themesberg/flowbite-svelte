@@ -270,6 +270,11 @@
         />
         <SidebarItem
           onclick={closeNavDrawer}
+          label="Tab"
+          href="/components/tab"
+        />
+        <SidebarItem
+          onclick={closeNavDrawer}
           label="Table"
           href="/components/table"
         />

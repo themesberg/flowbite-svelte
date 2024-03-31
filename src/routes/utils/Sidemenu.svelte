@@ -58,6 +58,7 @@
       <SidebarItem label="Skeleton" href="/components/skeleton" />
       <SidebarItem label="Spinner" href="/components/spinner" />
       <SidebarItem label="Table" href="/components/table" />
+      <SidebarItem label="Tab" href="/components/tab" />
       <SidebarItem label="Toast" href="/components/toast" />
       <SidebarItem label="Video" href="/components/video" />
     </SidebarDropdownWrapper>

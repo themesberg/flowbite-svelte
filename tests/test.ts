@@ -125,6 +125,11 @@ test('spinner page has expected h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Spinner');
 });
 
+test('tab page has expected h1', async ({ page }) => {
+	await page.goto('/components/tab');
+	expect(await page.textContent('h1')).toBe('Tabs');
+});
+
 test('table page has expected h1', async ({ page }) => {
 	await page.goto('/components/table');
 	expect(await page.textContent('h1')).toBe('Table');
