@@ -23,8 +23,7 @@
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
-  <TabItem disabled>
-    <span slot="title" class="text-gray-400 dark:text-gray-500">Disabled</span>
+  <TabItem title='Disabled'disabled>
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Disabled:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

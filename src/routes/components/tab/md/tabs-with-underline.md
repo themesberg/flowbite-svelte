@@ -1,4 +1,3 @@
-
 <Tabs style="underline">
   <TabItem open title="Profile">
     <p class="text-sm text-gray-500 dark:text-gray-400">
@@ -25,7 +24,9 @@
     </p>
   </TabItem>
   <TabItem disabled>
-    <span slot="title" class="text-gray-400 dark:text-gray-500">Disabled</span>
+    {#snippet titleSlot()}
+    <span class="text-red-400 dark:text-red-500">Disabled</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Disabled:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
