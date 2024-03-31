@@ -72,3 +72,17 @@
     <div class="h-px bg-gray-200 dark:bg-gray-700" />
 {/if}
 <div class={contentCls} role="tabpanel" aria-labelledby="id-tab" use:init />
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@props: children: Snippet;
+@props:style?: 'full' | 'pill' | 'underline' | 'none';
+@props:defaultClass?: string;
+@props:contentClass?: string;
+@props:divider?: boolean;
+@props:activeClasses?: string;
+@props:inactiveClasses?: string;
+@props:class?: string;
+-->

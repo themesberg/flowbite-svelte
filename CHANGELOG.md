@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.1
+
+### Patch Changes
+
+- fix: TabItem style update ([`18e50b3218e11bd87878f919efd96e062bf5185d`](https://github.com/shinokada/svelte-5-ui-lib/commit/18e50b3218e11bd87878f919efd96e062bf5185d))
+
 ## 0.4.0
 
 ### Minor Changes

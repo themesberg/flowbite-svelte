@@ -62,3 +62,18 @@
     </div>
   {/if}
 </li>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@props: children?: Snippet;
+@props:titleSlot?: Snippet;
+@props:open?: boolean;
+@props:title?: string;
+@props:activeClasses?: string;
+@props:inactiveClasses?: string;
+@props:defaultClass?: string;
+@props:class?: string;
+@props:disabled?: boolean;
+-->
