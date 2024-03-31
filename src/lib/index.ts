@@ -97,6 +97,9 @@ export { default as TestimonialPlaceholder } from './skeleton/TestimonialPlaceho
 export { default as WidgetPlaceholder } from './skeleton/WidgetPlaceholder.svelte';
 // spinner
 export { default as Spinner } from './spinner/Spinner.svelte';
+// tabs
+export { default as Tabs } from './tab/Tabs.svelte';
+export { default as TabItem } from './tab/TabItem.svelte';
 // table
 export { default as Table } from './table/Table.svelte';
 export { default as TableBody } from './table/TableBody.svelte';
