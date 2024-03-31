@@ -79,6 +79,6 @@
 ## Props
 @props: children?: Snippet;
 @props:defaultRow?:  boolean; = true;
-@props:theadClass?:  string; = 'text-xs uppercase';
+@props:theadClass?:  string; = '';
 @props:class?: string;
 -->

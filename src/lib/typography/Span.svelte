@@ -53,15 +53,15 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: Snippet;
+@props: children: Snippet;
 @props:italic?: boolean;
 @props:underline?: boolean;
 @props:linethrough?: boolean;
 @props:uppercase?: boolean;
 @props:gradient?: boolean;
 @props:highlight?: boolean;
-@props:highlightClass?:  string | undefined; = 'text-blue-600 dark:text-blue-500';
+@props:highlightClass?:  string | undefined; = '';
 @props:class?: string | undefined;
-@props:decorationClass?:  string | undefined; = 'decoration-2 decoration-blue-400 dark:decoration-blue-600';
+@props:decorationClass?:  string | undefined; = '';
 @props:gradientClass?:  string | undefined; = 'text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400';
 -->

@@ -42,12 +42,11 @@
     {@render children()}
   {/if}
 
-
 <!--
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: Snippet;
+@props: children: Snippet;
 @props:color?:  'gray' | 'green' | 'red' | 'disabled'; = 'gray';
 @props:show?:  boolean; = true;
 @props:labelclass?: string | undefined;

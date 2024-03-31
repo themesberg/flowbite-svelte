@@ -26,5 +26,5 @@
 ## Props
 @props: children?: Snippet;
 @props:class?: string;
-@props:padding?:  string; = 'px-6 py-3';
+@props:padding?:  string; = '';
 -->

@@ -52,6 +52,6 @@
 ## Props
 @props: children?: Snippet;
 @props:class?: string;
-@props:tdclass?:  string; = 'px-6 py-4 whitespace-nowrap font-medium';
+@props:tdclass?:  string; = '';
 @props:onclick?: () => void;
 -->

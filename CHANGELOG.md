@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.0
+
+### Minor Changes
+
+- feat: TabItem, and Tabs components ([`69db35d4d1f32ef4cfc64b34ceb982627d50009e`](https://github.com/shinokada/svelte-5-ui-lib/commit/69db35d4d1f32ef4cfc64b34ceb982627d50009e))
+
+  - docs: tab page is added
+
 ## 0.3.7
 
 ### Patch Changes

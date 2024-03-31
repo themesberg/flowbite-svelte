@@ -131,18 +131,18 @@
 @props:svgSearch?: any;
 @props:header?: Snippet;
 @props:footer?: Snippet;
-@props:divclass?:  string; = 'relative overflow-x-auto shadow-md sm:rounded-lg';
+@props:divclass?:  string; = '';
 @props:inputValue?: string;
 @props:striped?: boolean;
 @props:hoverable?: boolean;
 @props:placeholder?:  string; = 'Search';
 @props:customColor?:  string; = '';
 @props:color?:  string; = 'default';
-@props:innerDivClass?:  string; = 'p-4';
+@props:innerDivClass?:  string; = '';
 @props:inputclass?: string;
-@props:searchClass?:  string; = 'relative mt-1';
+@props:searchClass?:  string; = '';
 @props:svgDivClass?: string;
-@props:svgClass?:  string; = 'w-5 h-5 text-gray-500 dark:text-gray-400';
+@props:svgClass?:  string; = '';
 @props:classDiv?: string;
 @props:class?: string;
 -->

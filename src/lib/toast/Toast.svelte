@@ -123,7 +123,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: Snippet;
+@props: children: Snippet;
 @props:icon?: any;
 @props:dismissable?:  boolean; = true;
 @props:color?:  ColorVariant; = 'primary';

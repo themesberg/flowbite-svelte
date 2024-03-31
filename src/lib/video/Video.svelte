@@ -35,7 +35,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: Snippet;
+@props: children: Snippet;
 @props:src: string | undefined;
 @props:type?:  string | undefined; = 'video/mp4';
 @props:trackSrc?: string | undefined;

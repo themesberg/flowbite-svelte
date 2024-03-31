@@ -43,7 +43,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: Snippet;
+@props: children: Snippet;
 @props:tag?:  'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'; = 'h1';
 @props:class?: string | undefined;
 -->

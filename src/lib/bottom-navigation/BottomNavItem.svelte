@@ -122,7 +122,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: Snippet;
+@props: children: Snippet;
 @props:btnName?: string;
 @props:appBtnPosition?:  'left' | 'middle' | 'right'; = 'middle';
 @props:activeClass?: string;

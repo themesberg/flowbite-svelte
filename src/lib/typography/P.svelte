@@ -124,7 +124,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: Snippet;
+@props: children: Snippet;
 @props:color?:  string | undefined; = 'text-gray-900 dark:text-white';
 @props:pclass?: string | undefined;
 @props:height?:  'normal' | 'relaxed' | 'loose'; = 'normal';
