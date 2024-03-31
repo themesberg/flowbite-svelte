@@ -16,16 +16,16 @@
   interface Props {
     children: Snippet;
     style?: 'full' | 'pill' | 'underline' | 'none';
-    fullwidthClass?: string;
+    defaultClass?: string;
     contentClass?: string;
     divider?: boolean;
     activeClasses?: string;
     inactiveClasses?: string;
     class?: string;
   }
-  let { children, style = 'none', fullwidthClass, contentClass, divider = true, activeClasses, inactiveClasses, class:classname, ...attributes }: Props = $props();
+  let { children, style = 'none', defaultClass, contentClass, divider = true, activeClasses, inactiveClasses, class:classname, ...attributes }: Props = $props();
 
-  let defaultCls: string = fullwidthClass ? fullwidthClass : 'flex flex-wrap space-x-2 rtl:space-x-reverse';
+  let defaultCls: string = twMerge('flex flex-wrap space-x-2 rtl:space-x-reverse', defaultClass);
   let contentCls: string = twMerge('p-4 bg-gray-50 rounded-lg dark:bg-gray-800 mt-4', contentClass);
   let activeCls: string = twMerge('p-4 text-primary-600 bg-gray-100 rounded-t-lg dark:bg-gray-800 dark:text-primary-500', activeClasses);
   let inactiveCls: string = twMerge('p-4 text-gray-500 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-300', inactiveClasses);
@@ -59,33 +59,16 @@
     const destroy = ctx.selected.subscribe((x: HTMLElement) => {
       if (x) node.replaceChildren(x);
     });
-
     return { destroy };
   }
 
-  let ulClass = twMerge(defaultCls, style === 'underline' && '-mb-px', classname);
+  let ulClass = twMerge(defaultCls, style === 'underline' && '-mb-px', classname,);
 </script>
 
 <ul class={ulClass}>
   {@render children()}
 </ul>
-{#if dividerBool}
-  
+{#if divider}
     <div class="h-px bg-gray-200 dark:bg-gray-700" />
-  
 {/if}
 <div class={contentCls} role="tabpanel" aria-labelledby="id-tab" use:init />
-
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: Snippet;
-@props:style?: 'full' | 'pill' | 'underline' | 'none';
-@props:fullwidthClass?: string;
-@props:contentClass?: string;
-@props:divider?: boolean;
-@props:activeClasses?: string;
-@props:inactiveClasses?: string;
-@props:class?: string;
--->

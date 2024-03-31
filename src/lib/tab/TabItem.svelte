@@ -11,20 +11,16 @@
     title?: string;
     activeClasses?: string;
     inactiveClasses?: string;
-    fullwidthClass?: string;
+    defaultClass?: string;
     class?: string;
     disabled?: boolean;
   }
 
-  let { children, titleSlot, open = false, title = 'Tab title', activeClasses, inactiveClasses, fullwidthClass, class: className, disabled, ...attributes }: Props = $props();
-  // export let open: boolean = false;
-  // export let title: string = 'Tab title';
-  // let activeCls: string | undefined = undefined;
-  // export let inactiveClasses: string | undefined = undefined;
-  let defaultCls: string = fullwidthClass ? fullwidthClass : 'inline-block w-full p-4 bg-white border-r border-gray-200 dark:border-gray-700 hover:text-gray-700 hover:bg-gray-50 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700';
-// inline-block w-full p-4 bg-white border-r border-gray-200 dark:border-gray-700 hover:text-gray-700 hover:bg-gray-50 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700
+  let { children, titleSlot, open = false, title = 'Tab title', activeClasses, inactiveClasses, defaultClass, class: className, disabled, ...attributes }: Props = $props();
+  
+  let defaultCls: string = twMerge('inline-block text-sm font-medium text-center disabled:cursor-not-allowed', defaultClass);
+
   const ctx = getContext<TabCtxType>('ctx') ?? {};
-  // single selection
   const selected = ctx.selected ?? writable<HTMLElement>();
 
   function init(node: HTMLElement) {
@@ -41,11 +37,10 @@
   let buttonClass = $state('')
   $effect(() => {
     buttonClass = twMerge(
-    defaultCls,
-    open ? activeClasses ?? ctx.activeClasses : inactiveClasses ?? ctx.inactiveClasses,
-    open && 'active'
-    // $$restProps.disabled && 'cursor-not-allowed pointer-events-none'
-  );
+      defaultCls,
+      open ? activeClasses ?? ctx.activeClasses : inactiveClasses ?? ctx.inactiveClasses,
+      open && 'active'
+    );
   })
  
 </script>
@@ -67,18 +62,3 @@
     </div>
   {/if}
 </li>
-
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children?: Snippet;
-@props:titleSlot?: Snippet;
-@props:open?: boolean;
-@props:title?: string;
-@props:activeClasses?: string;
-@props:inactiveClasses?: string;
-@props:fullwidthClass?: string;
-@props:class?: string;
-@props:disabled?: boolean;
--->
