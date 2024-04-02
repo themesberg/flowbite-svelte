@@ -9,7 +9,7 @@
     children: Snippet;
     arrowup?: Snippet;
     arrowdown?: Snippet;
-    icon?: Snippet;
+    iconSlot?: Snippet;
     isOpen: boolean;
     btnclass?: string | undefined;
     label: string | undefined;
@@ -24,7 +24,7 @@
     children,
     arrowup,
     arrowdown,
-    icon,
+    iconSlot,
     isOpen,
     btnclass,
     label,
@@ -85,8 +85,8 @@
     class={btnCls}
     aria-controls="sidebar-dropdown"
   >
-    {#if icon}
-      {@render icon()}
+    {#if iconSlot}
+      {@render iconSlot()}
     {/if}
     <span class={spanCls}>{label}</span>
     {#if isOpen}
