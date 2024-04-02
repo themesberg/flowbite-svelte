@@ -4,7 +4,7 @@
   import githubDark from 'svelte-rune-highlight/styles/github-dark';
   import markdown from 'svelte-rune-highlight/languages/markdown';
   // import classicdark from 'svelte-highlight/styles/classic-dark';
-  let { code, codeLang } = $props<{ code: string; codeLang?: string }>();
+  let { code, codeLang }: { code: string; codeLang?: string } = $props();
 </script>
 
 <svelte:head>

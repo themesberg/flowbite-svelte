@@ -1,14 +1,14 @@
 <Sidebar aclass='p-2'>
   <SidebarGroup>
     <SidebarItem label="Dashboard" href="/">
-      {#snippet icon()}
+      {#snippet iconSlot()}
         <ChartSolid
           class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
         />
       {/snippet}
     </SidebarItem>
     <SidebarItem label="Kanban" {spanclass}>
-      {#snippet icon()}
+      {#snippet iconSlot()}
         <GridSolid
           class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
         />
@@ -22,7 +22,7 @@
       {/snippet}
     </SidebarItem>
     <SidebarItem label="Inbox" {spanclass}>
-      {#snippet icon()}
+      {#snippet iconSlot()}
         <MailBoxSolid
           class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
         />
@@ -36,7 +36,7 @@
       {/snippet}
     </SidebarItem>
     <SidebarItem label="Sidebar" href="/sidebar">
-      {#snippet icon()}
+      {#snippet iconSlot()}
         <UserSolid
           class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
         />

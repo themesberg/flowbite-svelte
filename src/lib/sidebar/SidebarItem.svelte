@@ -6,23 +6,25 @@
   import { twMerge } from 'tailwind-merge';
 
   interface Props {
-    icon?: Snippet;
+    iconSlot?: Snippet;
     subtext?: Snippet;
-    href?: string | undefined;
-    label?: string | undefined;
-    spanclass?: string | undefined;
-    activeClass?: string | undefined;
-    nonActiveClass?: string | undefined;
+    href?: string ;
+    label?: string ;
+    spanclass?: string ;
+    activeClass?: string ;
+    nonActiveClass?: string ;
+    aclass?: string;
   }
 
   let {
-    icon,
+    iconSlot,
     subtext,
     href,
     label,
     spanclass,
     activeClass,
     nonActiveClass,
+    aclass,
     ...attributes
   }: Props = $props();
   
@@ -43,9 +45,9 @@
 </script>
 
 <li>
-  <a {...attributes} {href} aria-current={currentUrl === href} class={aCls}>
-    {#if icon}
-      {@render icon()}
+  <a {...attributes} {href} aria-current={currentUrl === href} class={twMerge(aCls, aclass)}>
+    {#if iconSlot}
+      {@render iconSlot()}
     {/if}
     <span class={spanCls}>{label}</span>
     {#if subtext}
@@ -58,7 +60,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: icon?: Snippet;
+@props: iconSlot?: Snippet;
 @props:subtext?: Snippet;
 @props:href?: string | undefined;
 @props:label?: string | undefined;

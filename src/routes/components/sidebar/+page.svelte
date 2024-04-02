@@ -27,24 +27,24 @@
     {
       label: 'Dashboard',
       href: '/',
-      iconName: ChartSolid
+      icon: ChartSolid
     },
     {
       label: 'Kanban',
       href: '/',
-      iconName: GridSolid,
+      icon: GridSolid,
       subContent: 'Pro'
     },
     {
       label: 'Inbox',
       href: '/',
-      iconName: MailBoxSolid,
+      icon: MailBoxSolid,
       subContent: '3'
     },
     {
       label: 'Sidebar',
       href: '/components/sidebar',
-      iconName: UserSolid
+      icon: UserSolid
     }
   ];
 
@@ -69,14 +69,14 @@
   <Sidebar aclass="p-2" asideclass="absolute top-6 left-6 z-40">
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
-        {#snippet icon()}
+        {#snippet iconSlot()}
           <ChartSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Kanban" {spanclass}>
-        {#snippet icon()}
+        {#snippet iconSlot()}
           <GridSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
@@ -90,7 +90,7 @@
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Inbox" {spanclass}>
-        {#snippet icon()}
+        {#snippet iconSlot()}
           <MailBoxSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
@@ -104,7 +104,7 @@
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sidebar" href="/components/sidebar">
-        {#snippet icon()}
+        {#snippet iconSlot()}
           <UserSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
@@ -131,11 +131,11 @@
 <CodeWrapper class="relative">
   <Sidebar aclass="p-2" asideclass="absolute top-6 left-6 z-40">
     <SidebarGroup>
-      {#each sidebarEx1 as { label, href, iconName, subContent }}
+      {#each sidebarEx1 as { label, href, icon, subContent }}
         <SidebarItem {label} {href} {spanclass}>
-          {#snippet icon()}
+          {#snippet iconSlot()}
             <svelte:component
-              this={iconName}
+              this={icon}
               class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
             />
           {/snippet}
@@ -176,14 +176,14 @@
   >
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
-        {#snippet icon()}
+        {#snippet iconSlot()}
           <ChartSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Kanban" {spanclass}>
-        {#snippet icon()}
+        {#snippet iconSlot()}
           <GridSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
@@ -197,7 +197,7 @@
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Inbox" {spanclass}>
-        {#snippet icon()}
+        {#snippet iconSlot()}
           <MailBoxSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
@@ -211,7 +211,7 @@
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sidebar" href="/components/sidebar">
-        {#snippet icon()}
+        {#snippet iconSlot()}
           <UserSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
@@ -239,14 +239,14 @@
   <Sidebar aclass="p-2" asideclass="absolute top-6 left-6 z-40">
     <SidebarGroup>
       <SidebarItem label="Dashboard">
-        {#snippet icon()}
+        {#snippet iconSlot()}
           <ChartSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
         {/snippet}
       </SidebarItem>
       <SidebarDropdownWrapper label="E-commerce" btnclass="p-2">
-        {#snippet icon()}
+        {#snippet iconSlot()}
           <ShoppingBagSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
@@ -256,7 +256,7 @@
         <SidebarItem label="Invoice" />
       </SidebarDropdownWrapper>
       <SidebarItem label="Kanban" {spanclass}>
-        {#snippet icon()}
+        {#snippet iconSlot()}
           <GridSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
@@ -270,7 +270,7 @@
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Inbox" {spanclass}>
-        {#snippet icon()}
+        {#snippet iconSlot()}
           <MailBoxSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
@@ -284,21 +284,21 @@
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Users">
-        {#snippet icon()}
+        {#snippet iconSlot()}
           <UserSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sign In">
-        {#snippet icon()}
+        {#snippet iconSlot()}
           <ArrowRightToBracketSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sign Up">
-        {#snippet icon()}
+        {#snippet iconSlot()}
           <EditSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
@@ -328,14 +328,14 @@
   <Sidebar aclass="p-2">
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
-        {#snippet icon()}
+        {#snippet iconSlot()}
           <ChartSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Kanban" {spanclass}>
-        {#snippet icon()}
+        {#snippet iconSlot()}
           <GridSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
@@ -349,7 +349,7 @@
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Inbox" {spanclass}>
-        {#snippet icon()}
+        {#snippet iconSlot()}
           <MailBoxSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
@@ -363,7 +363,7 @@
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sidebar" href="/sidebar">
-        {#snippet icon()}
+        {#snippet iconSlot()}
           <UserSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
@@ -372,21 +372,21 @@
     </SidebarGroup>
     <SidebarGroup border>
       <SidebarItem label="Upgrade to Pro">
-        {#snippet icon()}
+        {#snippet iconSlot()}
           <FireSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Documentation">
-        {#snippet icon()}
+        {#snippet iconSlot()}
           <BookSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Components">
-        {#snippet icon()}
+        {#snippet iconSlot()}
           <RestoreWindowOutline
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
