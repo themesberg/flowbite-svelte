@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.2
+
+### Patch Changes
+
+- fix: SidebarItem: change icon snippet to iconSlot ([`d4c8b51c4a14fb56e7b768942b909aa792ea4022`](https://github.com/shinokada/svelte-5-ui-lib/commit/d4c8b51c4a14fb56e7b768942b909aa792ea4022))
+
+  - fix: add aclass to SidebarItem
+
 ## 0.4.1
 
 ### Patch Changes

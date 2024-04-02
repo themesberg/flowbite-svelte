@@ -62,9 +62,10 @@
 ## Props
 @props: iconSlot?: Snippet;
 @props:subtext?: Snippet;
-@props:href?: string | undefined;
-@props:label?: string | undefined;
-@props:spanclass?: string | undefined;
-@props:activeClass?: string | undefined;
-@props:nonActiveClass?: string | undefined;
+@props:href?: string ;
+@props:label?: string ;
+@props:spanclass?: string ;
+@props:activeClass?: string ;
+@props:nonActiveClass?: string ;
+@props:aclass?: string;
 -->
