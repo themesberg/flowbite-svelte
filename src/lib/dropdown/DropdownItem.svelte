@@ -42,7 +42,8 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children: Snippet;
-@props:aclass?: string | undefined;
-@props:href?: string | undefined;
-@props:activeclass?: string | undefined;
+@props:aclass?: string;
+@props:href?: string;
+@props:activeclass?: string;
+@props:liclass?: string;
 -->

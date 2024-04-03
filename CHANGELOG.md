@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.4
+
+### Patch Changes
+
+- fix: update DropdownItem and SidebarDropdownWrapper ([`c93161d02f18ec2f42cb77f808602661efa9312a`](https://github.com/shinokada/svelte-5-ui-lib/commit/c93161d02f18ec2f42cb77f808602661efa9312a))
+
 ## 0.4.3
 
 ### Patch Changes
