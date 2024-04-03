@@ -145,7 +145,7 @@
 @props: children: Snippet;
 @props:arrowup?: Snippet;
 @props:arrowdown?: Snippet;
-@props:icon?: Snippet;
+@props:iconSlot?: Snippet;
 @props:isOpen: boolean;
 @props:btnclass?: string | undefined;
 @props:label: string | undefined;

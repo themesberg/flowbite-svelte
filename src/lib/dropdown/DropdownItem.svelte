@@ -4,12 +4,13 @@
   import { page } from '$app/stores';
   interface Props {
     children: Snippet;
-    aclass?: string | undefined;
-    href?: string | undefined;
-    activeclass?: string | undefined;
+    aclass?: string;
+    href?: string;
+    activeclass?: string;
+    liclass?: string;
   }
 
-  let { aclass, children, href, activeclass, ...attributes }: Props = $props();
+  let { aclass, children, href, activeclass, liclass, ...attributes }: Props = $props();
 
   let currentUrl = $state();
   $effect(() => {
@@ -25,8 +26,7 @@
   );
 </script>
 
-<li>
-  
+<li class={liclass}>
     {#if href}
       <a {href} class={currentUrl === href ? activeCls : aCls} {...attributes}>
         {@render children()}

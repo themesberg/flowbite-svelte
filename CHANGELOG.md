@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.3
+
+### Patch Changes
+
+- fix: change snippet icon to iconSlot in SidebarDropdownWrapper
+
 ## 0.4.2
 
 ### Patch Changes
