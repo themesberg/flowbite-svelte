@@ -44,9 +44,7 @@
 
 <aside {...attributes} class={asideCls} aria-label={ariaLabel}>
   <div class={twMerge(divCls)}>
- 
       {@render children()}
- 
   </div>
 </aside>
 

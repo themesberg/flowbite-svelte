@@ -17,6 +17,7 @@
     padding?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
     size?: CardSizeType;
     class?: string | undefined;
+    onclick?: () => void;
   }
 
   let {
@@ -29,6 +30,7 @@
     padding = 'lg',
     size = 'sm',
     class: classname,
+    onclick,
     ...attributes
   }: Props = $props();
 
@@ -75,7 +77,6 @@
 </script>
 
 {#snippet content()}
-
     {#if img}
       <img class={imgClass} src={img.src} alt={img.alt} />
       <div class={innerPadding}>
@@ -87,7 +88,7 @@
 
 {/snippet}
 
-<div {...attributes} class={cardClass}>
+<div {...attributes} class={cardClass} role={href ? 'link' : 'presentation'} {onclick}>
   {#if href}
     <a {href}>
       {@render content()}

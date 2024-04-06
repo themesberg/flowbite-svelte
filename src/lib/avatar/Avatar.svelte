@@ -14,6 +14,7 @@
     alt?: string | undefined;
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none';
     class?: string | undefined;
+    onclick?: () => void;
   }
 
   let {
@@ -27,6 +28,7 @@
     alt,
     size = 'md',
     class: classname,
+    onclick,
     ...attributes
   }: Props = $props();
 
@@ -54,6 +56,8 @@
 {#if !src || !!href || children || dot}
   <svelte:element
     this={href ? 'a' : 'div'}
+    role={href ? 'link' : 'img'}
+    {onclick}
     {href}
     {...attributes}
     class="relative flex items-center justify-center {avatarCls}"
@@ -81,7 +85,9 @@
     {/if}
   </svelte:element>
 {:else}
-  <img {alt} {src} {...attributes} class={avatarCls} />
+  <div role="presentation" {onclick}>
+    <img {alt} {src} {...attributes} class={avatarCls} />
+  </div>
 {/if}
 
 <!--

@@ -104,7 +104,7 @@
 </header>
 
 <Drawer
-  width="64"
+  width="w-64"
   drawerStatus={navDrawerStatus}
   closeDrawer={closeNavDrawer}
   {transitionParams}
@@ -142,7 +142,7 @@
   </div>
   <Sidebar
     {activeClass}
-    asideclass="w-48 p-0"
+    asideclass="w-full p-0"
     divclass="bg-transparent p-0"
     aclass="p-1 pl-4"
   >

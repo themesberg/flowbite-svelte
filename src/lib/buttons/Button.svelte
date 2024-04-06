@@ -18,6 +18,7 @@
     checked?: boolean | undefined;
     disabled?: boolean;
     btnclass?: string | undefined;
+    onclick?: () => void;
   }
 
   type ButtonColor = keyof typeof colorClasses;
@@ -37,6 +38,7 @@
     checked = undefined,
     disabled = false,
     btnclass,
+    onclick,
     ...attributes
   }: Props = $props();
 
@@ -176,14 +178,13 @@
     {@render children()}
   </a>
 {:else if tag === 'button'}
-  <button {type} {...attributes} class={buttonCls}>
+  <button {type} {...attributes} class={buttonCls} {onclick}>
     {@render children()}
   </button>
 {:else}
-  <svelte:element this={tag} {...attributes} class={buttonCls}>
+  <svelte:element this={tag} {...attributes} class={buttonCls} >
     {@render children()}
   </svelte:element>
-  
 {/if}
 
 <!--

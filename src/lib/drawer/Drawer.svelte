@@ -104,9 +104,7 @@
     transition:multiple={transitionParams}
     tabindex="-1"
   >
-   
     {@render children()}
-  
   </div>
 {/if}
 
