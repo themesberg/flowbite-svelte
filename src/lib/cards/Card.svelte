@@ -111,4 +111,5 @@
 @props:padding?:  'none' | 'sm' | 'md' | 'lg' | 'xl'; = 'lg';
 @props:size?:  CardSizeType; = 'sm';
 @props:class?: string | undefined;
+@props:onclick?: () => void;
 -->

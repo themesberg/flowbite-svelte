@@ -1,6 +1,6 @@
 {
   "name": "svelte-5-ui-lib",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "description": "A UI library for Svelte 5.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -44,10 +44,10 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
-    "@playwright/test": "^1.42.1",
+    "@playwright/test": "^1.43.0",
     "@sveltejs/adapter-auto": "^3.2.0",
     "@sveltejs/kit": "^2.5.5",
-    "@sveltejs/package": "^2.3.0",
+    "@sveltejs/package": "^2.3.1",
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
     "@svitejs/changesets-changelog-github-compact": "^1.1.0",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
@@ -64,7 +64,7 @@
     "prettier-plugin-svelte": "^3.2.2",
     "prettier-plugin-tailwindcss": "^0.5.13",
     "publint": "^0.1.16",
-    "svelte": "5.0.0-next.93",
+    "svelte": "5.0.0-next.95",
     "svelte-check": "^3.6.9",
     "svelte-flag-icons": "^1.0.3",
     "svelte-highlight": "^7.6.0",
@@ -72,7 +72,7 @@
     "svelte-rune-highlight": "^0.3.1",
     "tailwindcss": "^3.4.3",
     "tslib": "^2.6.2",
-    "typescript": "^5.4.3",
+    "typescript": "^5.4.4",
     "vite": "^5.2.8"
   },
   "peerDependencies": {

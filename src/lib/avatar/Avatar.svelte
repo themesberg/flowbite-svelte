@@ -104,4 +104,5 @@
 @props:alt?: string | undefined;
 @props:size?:  'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none'; = 'md';
 @props:class?: string | undefined;
+@props:onclick?: () => void;
 -->

@@ -203,4 +203,5 @@
 @props:checked?:  boolean | undefined; = undefined;
 @props:disabled?:  boolean; = false;
 @props:btnclass?: string | undefined;
+@props:onclick?: () => void;
 -->

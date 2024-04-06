@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.5
+
+### Patch Changes
+
+- feat: add onclick to Avatar, Button, GradientButton, Card components. ([`8805dfe9890a002104444c3e7c9293e7cd3831c7`](https://github.com/shinokada/svelte-5-ui-lib/commit/8805dfe9890a002104444c3e7c9293e7cd3831c7))
+
+  fix: update Sidebar, Drawer, Nav components
+
 ## 0.4.4
 
 ### Patch Changes

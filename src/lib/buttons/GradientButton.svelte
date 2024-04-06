@@ -118,4 +118,5 @@
 @props:outline?: boolean;
 @props:pill?: boolean;
 @props:divclass?: string;
+@props:onclick?: () => void;
 -->
