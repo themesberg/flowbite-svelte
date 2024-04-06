@@ -15,8 +15,8 @@
     "url": "https://github.com/shinokada/svelte-5-ui-lib"
   },
   "engines": {
-    "npm": ">=7.0.0",
-    "node": ">=18.0.0"
+    "npm": ">=10.0.0",
+    "node": ">=20.0.0"
   },
   "files": [
     "dist",
