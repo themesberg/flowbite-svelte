@@ -27,7 +27,7 @@ The checkbox component can be used to receive one or more selected options from 
 
 ## Checkbox examples
 
-Use this default example of a checbkox element in a checked and unchecked state.
+Use this default example of a checbkox element in a checked, unchecked and indeterminate state.
 
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
@@ -36,6 +36,7 @@ Use this default example of a checbkox element in a checked and unchecked state.
 
 <Checkbox>Default checkbox</Checkbox>
 <Checkbox checked>Checked state</Checkbox>
+<Checkbox indeterminate>Indeterminate state</Checkbox>
 ```
 
 ## Disabled state
@@ -49,6 +50,7 @@ This example can be used for the disabled state of the checkbox component by app
 
 <Checkbox disabled>Disabled checkbox</Checkbox>
 <Checkbox disabled checked>Disabled checked</Checkbox>
+<Checkbox disabled indeterminate>Disabled indeterminate</Checkbox>
 ```
 
 ## Alternative syntax
