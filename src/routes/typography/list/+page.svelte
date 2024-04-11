@@ -2,7 +2,7 @@
   import { List, Li, Heading, Span, DescriptionList, A } from '$lib';
   import {
     CheckCircleOutline,
-    XCircleSolid,
+    CloseCircleOutline,
     CheckOutline
   } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
@@ -60,7 +60,7 @@
       At least one lowercase character
     </Li>
     <Li icon>
-      <XCircleSolid class="me-2 h-3.5 w-3.5 text-gray-500 dark:text-gray-400" />
+      <CloseCircleOutline class="me-2 h-3.5 w-3.5 text-gray-500 dark:text-gray-400" />
       Inclusion of at least one special character, e.g., ! @ # ?
     </Li>
   </List>

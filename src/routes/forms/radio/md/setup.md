@@ -3,6 +3,6 @@
     let colors = "text-purple-500";
     let technology = 'svelte';
     let inline1 = 'second';
-    import { ArrowRightOutline, ListMusicSolid, OrdoredListSolid, ListSolid } from 'flowbite-svelte-icons';
+    import { ArrowRightOutline, ListMusicSolid, OrderedListOutline, ListOutline } from 'flowbite-svelte-icons';
     let radioGroup = "notes";
 </script>

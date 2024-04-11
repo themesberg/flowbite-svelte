@@ -10,7 +10,7 @@
     DropdownItem,
     uiHelpers
   } from '$lib';
-  import { ChevronDownSolid } from 'flowbite-svelte-icons';
+  import { ChevronDownOutline } from 'flowbite-svelte-icons';
 
   let dropdown = uiHelpers();
 
@@ -43,7 +43,7 @@
 <CodeWrapper class="flex h-96 items-start justify-center">
   <Button onclick={toggle}
     >Dropdown
-    <ChevronDownSolid class="ms-2 h-3 w-3 text-white dark:text-white" />
+    <ChevronDownOutline class="ms-2 h-3 w-3 text-white dark:text-white" />
   </Button>
   <div class="relative">
     <Dropdown {isOpen} divclass="absolute top-[40px] -left-[150px]">

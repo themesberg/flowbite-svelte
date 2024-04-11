@@ -8,7 +8,7 @@
 
 <Toast color="red">
   {#snippet icon()}
-    <CloseSolid class="w-5 h-5" />
+    <CloseOutline class="w-5 h-5" />
     <span class="sr-only">Error icon</span>
   {/snippet}
   Item has been deleted.

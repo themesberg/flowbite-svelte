@@ -1,6 +1,6 @@
 <script>
 	import { Button, Dropdown, DropdownDivider, DropdownItem, uiHelpers } from 'svelte-5-ui-lib';
-	import { ChevronDownSolid } from 'flowbite-svelte-icons'
+	import { ChevronDownOutline } from 'flowbite-svelte-icons'
 
 	let dropdown = uiHelpers();
 
@@ -19,7 +19,7 @@
 <div class="mx-auto w-48">
 	<Button onclick={toggle}
 		>Dropdown
-		<ChevronDownSolid class="ms-2 h-3 w-3 text-white dark:text-white" />
+		<ChevronDownOutline class="ms-2 h-3 w-3 text-white dark:text-white" />
 	</Button>
 	<div class="relative">
 		<Dropdown {isOpen} divclass="absolute -left-[27px]">

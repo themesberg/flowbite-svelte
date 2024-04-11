@@ -6,11 +6,11 @@
     SidebarDropdownWrapper
   } from '$lib';
   import {
-    ChartSolid,
+    ChartOutline,
     GridSolid,
     MailBoxSolid,
     UserSolid,
-    ArrowRightToBracketSolid,
+    ArrowRightToBracketOutline,
     EditSolid,
     ShoppingBagSolid,
     FireSolid,
@@ -27,7 +27,7 @@
     {
       label: 'Dashboard',
       href: '/',
-      icon: ChartSolid
+      icon: ChartOutline
     },
     {
       label: 'Kanban',
@@ -70,7 +70,7 @@
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
         {#snippet iconSlot()}
-          <ChartSolid
+          <ChartOutline
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
         {/snippet}
@@ -177,7 +177,7 @@
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
         {#snippet iconSlot()}
-          <ChartSolid
+          <ChartOutline
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
         {/snippet}
@@ -240,7 +240,7 @@
     <SidebarGroup>
       <SidebarItem label="Dashboard">
         {#snippet iconSlot()}
-          <ChartSolid
+          <ChartOutline
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
         {/snippet}
@@ -292,7 +292,7 @@
       </SidebarItem>
       <SidebarItem label="Sign In">
         {#snippet iconSlot()}
-          <ArrowRightToBracketSolid
+          <ArrowRightToBracketOutline
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
         {/snippet}
@@ -329,7 +329,7 @@
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
         {#snippet iconSlot()}
-          <ChartSolid
+          <ChartOutline
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
           />
         {/snippet}

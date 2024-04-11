@@ -10,9 +10,9 @@
   } from '$lib';
   import {
     UsersGroupSolid,
-    ArrowUpSolid,
-    ChevronRightSolid,
-    ChevronDownSolid
+    ArrowUpOutline,
+    ChevronRightOutline,
+    ChevronDownOutline
   } from 'flowbite-svelte-icons';
   let dropdown = uiHelpers();
   let isOpen = $state(false);
@@ -334,7 +334,7 @@
         class="flex items-center px-2.5 py-0.5 text-center text-base font-semibold text-green-500 dark:text-green-500"
       >
         12%
-        <ChevronRightSolid class="ms-1 h-3 w-3" />
+        <ChevronRightOutline class="ms-1 h-3 w-3" />
       </div>
     </div>
     <Chart {options} />
@@ -345,7 +345,7 @@
         <Button
           onclick={toggle}
           btnclass="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0"
-          >Last 7 days<ChevronDownSolid class="m-2.5 ms-1.5 w-2.5" /></Button
+          >Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button
         >
         <div class="relative">
           <Dropdown divclass="absolute top-[5px] -left-[180px]" {isOpen}>
@@ -363,7 +363,7 @@
           aclass="uppercase text-sm font-semibold hover:text-primary-700 dark:hover:text-primary-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2 hover:no-underline"
         >
           Users Report
-          <ChevronRightSolid class="ms-1.5 h-2.5 w-2.5" />
+          <ChevronRightOutline class="ms-1.5 h-2.5 w-2.5" />
         </A>
       </div>
     </div>
@@ -398,7 +398,7 @@
         <span
           class="inline-flex items-center rounded-md bg-green-100 px-2.5 py-1 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300"
         >
-          <ArrowUpSolid class="me-1.5 h-2.5 w-2.5" />
+          <ArrowUpOutline class="me-1.5 h-2.5 w-2.5" />
           42.5%
         </span>
       </div>
@@ -429,7 +429,7 @@
         <Button
           onclick={toggle2}
           btnclass="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0"
-          >Last 7 days<ChevronDownSolid class="m-2.5 ms-1.5 w-2.5" /></Button
+          >Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button
         >
         <div class="relative">
           <Dropdown
@@ -450,7 +450,7 @@
           aclass="uppercase text-sm font-semibold hover:text-primary-700 dark:hover:text-primary-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2 hover:no-underline"
         >
           Leads Report
-          <ChevronRightSolid class="ms-1.5 h-2.5 w-2.5" />
+          <ChevronRightOutline class="ms-1.5 h-2.5 w-2.5" />
         </A>
       </div>
     </div>
@@ -478,7 +478,7 @@
         <span
           class="inline-flex items-center rounded-md bg-green-100 px-2.5 py-1 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300"
         >
-          <ArrowUpSolid class="me-1.5 h-2.5 w-2.5" />
+          <ArrowUpOutline class="me-1.5 h-2.5 w-2.5" />
           Profit rate 23.5%
         </span>
       </div>
@@ -515,7 +515,7 @@
         <Button
           onclick={toggle3}
           btnclass="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0"
-          >Last 7 days<ChevronDownSolid class="m-2.5 ms-1.5 w-2.5" /></Button
+          >Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button
         >
         <div class="relative">
           <Dropdown
@@ -536,7 +536,7 @@
           aclass="uppercase text-sm font-semibold hover:text-primary-700 dark:hover:text-primary-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2 hover:no-underline"
         >
           Leads Report
-          <ChevronRightSolid class="ms-1.5 h-2.5 w-2.5" />
+          <ChevronRightOutline class="ms-1.5 h-2.5 w-2.5" />
         </A>
       </div>
     </div>

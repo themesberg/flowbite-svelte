@@ -6,7 +6,7 @@
     </span>
     <span>
       Get 5% commission per sale <a href="https://flowbite.com" class="flex items-center ms-0 text-sm font-medium text-primary-600 md:ms-1 md:inline-flex dark:text-primary-500 hover:underline">
-        Become a partner <ArrowRightSolid class="w-3 h-3 ms-2" />
+        Become a partner <ArrowRightOutline class="w-3 h-3 ms-2" />
       </a>
     </span>
   </p>

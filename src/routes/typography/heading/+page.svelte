@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Heading, Button, P, A, Span, Mark } from '$lib';
-  import { ArrowRightOutline, ChevronRightSolid } from 'flowbite-svelte-icons';
+  import { ArrowRightOutline, ChevronRightOutline } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -58,7 +58,7 @@
   >
   <A href="/">
     Read more
-    <ChevronRightSolid class="ms-2 h-3.5 w-3.5" />
+    <ChevronRightOutline class="ms-2 h-3.5 w-3.5" />
   </A>
 </CodeWrapper>
 

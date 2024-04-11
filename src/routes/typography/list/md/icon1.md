@@ -14,7 +14,7 @@
     At least one lowercase character
   </Li>
   <Li icon>
-    <XCircleSolid class="w-3.5 h-3.5 me-2 text-gray-500 dark:text-gray-400" />
+    <CloseCircleOutline class="w-3.5 h-3.5 me-2 text-gray-500 dark:text-gray-400" />
     Inclusion of at least one special character, e.g., ! @ # ?
   </Li>
 </List>

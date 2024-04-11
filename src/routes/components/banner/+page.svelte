@@ -3,7 +3,7 @@
   import {
     BullhornOutline,
     SalePercentSolid,
-    ArrowRightSolid,
+    ArrowRightOutline,
     BookOpenSolid
   } from 'flowbite-svelte-icons';
 
@@ -75,7 +75,7 @@
           href="https://flowbite.com"
           class="ms-0 flex items-center text-sm font-medium text-primary-600 hover:underline dark:text-primary-500 md:ms-1 md:inline-flex"
         >
-          Become a partner <ArrowRightSolid class="ms-2 h-3 w-3" />
+          Become a partner <ArrowRightOutline class="ms-2 h-3 w-3" />
         </a>
       </span>
     </p>
@@ -177,7 +177,7 @@
       href="/"
       class="me-2 inline-flex rounded-lg bg-primary-700 px-3 py-2 text-xs font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
     >
-      Get started <ArrowRightSolid class="ms-2 h-3 w-3" />
+      Get started <ArrowRightOutline class="ms-2 h-3 w-3" />
     </a>
   </Banner>
 </CodeWrapper>

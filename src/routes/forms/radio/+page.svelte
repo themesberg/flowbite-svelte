@@ -6,8 +6,8 @@
   import {
     ArrowRightOutline,
     ListMusicSolid,
-    OrdoredListSolid,
-    ListSolid
+    OrderedListOutline,
+    ListOutline
   } from 'flowbite-svelte-icons';
   let radioGroup = $state('notes');
 
@@ -192,10 +192,10 @@
       ><ListMusicSolid /></RadioButton
     >
     <RadioButton value={'numbers'} bind:group={radioGroup}
-      ><OrdoredListSolid /></RadioButton
+      ><OrderedListOutline /></RadioButton
     >
     <RadioButton value={'bullets'} bind:group={radioGroup}
-      ><ListSolid /></RadioButton
+      ><ListOutline /></RadioButton
     >
   </div>
 
@@ -204,10 +204,10 @@
       ><ListMusicSolid /></RadioButton
     >
     <RadioButton value={'numbers'} bind:group={radioGroup}
-      ><OrdoredListSolid /></RadioButton
+      ><OrderedListOutline /></RadioButton
     >
     <RadioButton value={'bullets'} bind:group={radioGroup}
-      ><ListSolid /></RadioButton
+      ><ListOutline /></RadioButton
     >
   </ButtonGroup>
 

@@ -4,11 +4,11 @@
     FireOutline,
     CheckCircleSolid,
     ExclamationCircleSolid,
-    CloseSolid,
-    PapperPlaneOutline,
+    CloseOutline,
+    PaperPlaneOutline,
     BellOutline,
     DownloadOutline,
-    CameraFotoOutline
+    CameraPhotoOutline
   } from 'flowbite-svelte-icons';
   import { slide, blur, fly } from 'svelte/transition';
   import { quintOut, elasticOut } from 'svelte/easing';
@@ -54,7 +54,7 @@
 
   <Toast color="red">
     {#snippet icon()}
-      <CloseSolid class="h-5 w-5" />
+      <CloseOutline class="h-5 w-5" />
       <span class="sr-only">Error icon</span>
     {/snippet}
     Item has been deleted.
@@ -121,7 +121,7 @@
     dismissable={false}
     div3class="flex space-x-4 rtl:space-x-reverse divide-x rtl:divide-x-reverse divide-gray-200 dark:divide-gray-700"
   >
-    <PapperPlaneOutline
+    <PaperPlaneOutline
       class="h-5 w-5 rotate-45 text-primary-600 dark:text-primary-500"
     />
     <div class="ps-4 text-sm font-normal">Message sent successfully.</div>
@@ -259,7 +259,7 @@
 <CodeWrapper class="flex h-48 flex-col items-center">
   <Toast align={false}>
     {#snippet icon()}
-      <CameraFotoOutline class="h-5 w-5" />
+      <CameraPhotoOutline class="h-5 w-5" />
     {/snippet}
     <span class="font-semibold text-gray-900 dark:text-white"
       >Update available</span

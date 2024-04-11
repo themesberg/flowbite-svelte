@@ -1,6 +1,6 @@
 <script>
   import { Chart, Card, A, Button, Dropdown, DropdownItem, uiHelpers } from 'svelte-5-ui-lib';
-  import { UsersGroupSolid, ArrowUpSolid, ChevronRightSolid, ChevronDownSolid } from 'flowbite-svelte-icons';
+  import { UsersGroupSolid, ArrowUpOutline, ChevronRightOutline, ChevronDownOutline } from 'flowbite-svelte-icons';
   
 	let dropdown = uiHelpers();
 	let isOpen = $state(false);

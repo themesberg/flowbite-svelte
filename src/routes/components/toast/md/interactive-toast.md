@@ -1,6 +1,6 @@
 <Toast align={false}>
   {#snippet icon()}
-    <CameraFotoOutline class="w-5 h-5" />
+    <CameraPhotoOutline class="w-5 h-5" />
   {/snippet}
   <span class="font-semibold text-gray-900 dark:text-white">Update available</span>
   <div class="mt-3">
