@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.8
+
+### Patch Changes
+
+- fix: install svelte-rune-highlight that has next.100 ([`785736d03a1c1d4bc6dfdbea5f45ad39695a8b21`](https://github.com/shinokada/svelte-5-ui-lib/commit/785736d03a1c1d4bc6dfdbea5f45ad39695a8b21))
+
 ## 0.4.7
 
 ### Patch Changes
