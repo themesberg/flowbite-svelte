@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.6
+
+### Patch Changes
+
+- fix: svelte@5.0.0next.100 installed for hmr fix ([`de65f6598082ab3ab859b3feb69f257b29880b52`](https://github.com/shinokada/svelte-5-ui-lib/commit/de65f6598082ab3ab859b3feb69f257b29880b52))
+
 ## 0.4.5
 
 ### Patch Changes
