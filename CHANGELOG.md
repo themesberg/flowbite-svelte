@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.7
+
+### Patch Changes
+
+- fix: update flowbite-svelte-icons names ([`b366d721a02d447ceaeead354268434f43f2991a`](https://github.com/shinokada/svelte-5-ui-lib/commit/b366d721a02d447ceaeead354268434f43f2991a))
+
 ## 0.4.6
 
 ### Patch Changes
