@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.9
+
+### Patch Changes
+
+- feat: dropdown components update ([`b3d65dd9b7ff0de0bc62ac7bdc7a9480449c936f`](https://github.com/shinokada/svelte-5-ui-lib/commit/b3d65dd9b7ff0de0bc62ac7bdc7a9480449c936f))
+  docs: dropdown page update
+
 ## 0.4.8
 
 ### Patch Changes

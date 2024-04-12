@@ -100,17 +100,21 @@
 <div role="presentation" class={backdropDivClass} onclick={closeDropdown} />
 {/if}
 
-
 <!--
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children: Snippet;
-@props:divclass?: string | undefined;
 @props:header?: Snippet;
-@props:headerclass?: string | undefined;
-@props:isOpen: boolean;
 @props:footer?: Snippet;
-@props:footerclass?: string | undefined;
-@props:ulclass?: string | undefined;
+@props:dropdownStatus: boolean;
+@props:toggleDropdown?: () => void;
+@props:closeDropdown?: () => void;
+@props:activateClickOutside?:  boolean ; = true;
+@props:divclass?: string ;
+@props:footerclass?: string ;
+@props:headerclass?: string ;
+@props:ulclass?: string ;
+@props:transitionParams?: TransitionParamTypes;
+@props:transitionType?:  TransitionTypes; = 'fly';
 -->
