@@ -1,40 +1,65 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
+  import { fly, slide, blur, fade } from 'svelte/transition';
+  import type {
+    TransitionParamTypes,
+    TransitionTypes
+  } from '../types';
 
   interface Props {
     children: Snippet;
-    divclass?: string | undefined;
     header?: Snippet;
-    headerclass?: string | undefined;
-    isOpen: boolean;
     footer?: Snippet;
-    footerclass?: string | undefined;
-    ulclass?: string | undefined;
+
+    dropdownStatus: boolean;
+    toggleDropdown?: () => void;
+    closeDropdown?: () => void;
+    activateClickOutside?: boolean ;
+
+    divclass?: string ;
+    footerclass?: string ;
+    headerclass?: string ;
+    ulclass?: string ;
+    transitionParams?: TransitionParamTypes;
+    transitionType?: TransitionTypes;
   }
 
   let {
     children,
     header,
-    isOpen,
     footer,
-    footerclass,
+
+    dropdownStatus,
+    toggleDropdown,
+    closeDropdown,
+    activateClickOutside = true,
+    
     divclass,
+    footerclass,
     headerclass,
     ulclass,
+    transitionParams,
+    transitionType = 'fly',
     ...attributes
   }: Props = $props();
 
-  let hidden = $state('hidden');
-
-  $effect(() => {
-    hidden = isOpen ? '' : 'hidden';
-  });
+  function multiple(node: HTMLElement, params: any) {
+    switch (transitionType) {
+      case 'slide':
+        return slide(node, params);
+      case 'blur':
+        return blur(node, params);
+      case 'fade':
+        return fade(node, params);
+      default:
+        return fly(node, params);
+    }
+  }
 
   const divCls = $derived(
     twMerge(
-      'z-10 w-44 mt-2 divide-y divide-gray-100 rounded-lg bg-white shadow dark:bg-gray-700',
-      hidden,
+      'z-10 w-44 mt-2 divide-y divide-gray-300 dark:divide-gray-500 overflow-hidden rounded-lg bg-white shadow dark:bg-gray-700',
       divclass
     )
   );
@@ -47,11 +72,13 @@
     ulclass
   );
   const footerCls = twMerge('overflow-hidden rounded-b-lg py-1', footerclass);
-  //   $inspect('Dropdown isOpen: ', isOpen, 'hidden: ', hidden)
+  const backdropDivClass = 'fixed top-0 start-0 w-full h-full'
+
 </script>
 
 <!-- Dropdown menu -->
-<div {...attributes} class={divCls}>
+{#if dropdownStatus}
+<div {...attributes} class={divCls} transition:multiple={transitionParams}>
   {#if header}
     <div class={headerCls}>
       {@render header()}
@@ -68,6 +95,11 @@
     </div>
   {/if}
 </div>
+
+
+<div role="presentation" class={backdropDivClass} onclick={closeDropdown} />
+{/if}
+
 
 <!--
 @component

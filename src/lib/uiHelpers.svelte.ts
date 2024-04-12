@@ -59,3 +59,4 @@ let n = Date.now();
 export function idGenerator() {
   return (++n).toString(36);
 }
+
