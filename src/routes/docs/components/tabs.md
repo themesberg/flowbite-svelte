@@ -225,7 +225,7 @@ If you want to use pills as a style for the tabs component use `style="pill"`.
 
 ## Full width tabs
 
-If you want to show the tabs on the full width relative to the parent element use `tabStype="full"` prop.
+If you want to show the tabs on the full width relative to the parent element use `style="full"` prop.
 
 ```svelte example
 <script>
