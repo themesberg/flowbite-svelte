@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.45.0
+
+### Minor Changes
+
+- BREAKING: flowbie-svelte-icons updated 1.5.0 ([#1308](https://github.com/themesberg/flowbite-svelte/pull/1308))
+
+  fix: update icon sizes
+
+  chore: lib-helpers
+
+  fix: update engines node >=20.0.0
+
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 ### [0.44.24](https://github.com/themesberg/flowbite-svelte/compare/v0.44.23...v0.44.24) (2024-02-23)
