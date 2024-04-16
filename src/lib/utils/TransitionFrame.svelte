@@ -31,5 +31,4 @@
 @prop export let transition: TransitionFunc = fade;
 @prop export let params: object = {};
 @prop export let open: boolean = true;
-@prop export let dismissable: boolean = false;
 -->

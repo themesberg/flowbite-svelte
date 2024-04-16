@@ -1,9 +1,1 @@
-{
-  "name": "backdrop",
-  "slots": [],
-  "events": [],
-  "props": [
-    ["open", "string", "false"],
-    ["placement", "string", ""]
-  ]
-}
+{"name":"backdrop","slots":[],"events":[],"props":[["open","string","false"],["placement","string",""]]}

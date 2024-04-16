@@ -1,16 +1,1 @@
-{
-  "name": "Frame",
-  "slots": [],
-  "events": ["on:click", "on:mouseenter", "on:mouseleave", "on:focusin", "on:focusout"],
-  "props": [
-    ["tag", "string", "$$restProps.href ? 'a' : 'div'"],
-    ["color", "FrameColor", "'default'"],
-    ["rounded", "boolean", "false"],
-    ["border", "boolean", "false"],
-    ["shadow", "boolean", "false"],
-    ["node", "HTMLElement | undefined", "undefined"],
-    ["use", "Action<HTMLElement, any>", "noop"],
-    ["options", "string", "{}"],
-    ["role", "string | undefined", "undefined"]
-  ]
-}
+{"name":"Frame","slots":[],"events":["on:click","on:mouseenter","on:mouseleave","on:focusin","on:focusout","on:click","on:mouseenter","on:mouseleave","on:focusin","on:focusout"],"props":[["tag","string","$$restProps.href ? 'a' : 'div'"],["color","FrameColor","'default'"],["rounded","boolean","false"],["border","boolean","false"],["shadow","boolean","false"],["node","HTMLElement | undefined","undefined"],["use","Action<HTMLElement, any>","noop"],["options","string","{}"],["role","string | undefined","undefined"],["transition","TransitionFunc | undefined","undefined"],["params","object","{}"],["open","boolean","true"]]}
