@@ -4,18 +4,16 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.44.24](https://github.com/themesberg/flowbite-svelte/compare/v0.44.23...v0.44.24) (2024-02-23)
 
-
 ### Features
 
-* add focus only trigger mode for Popper ([#1241](https://github.com/themesberg/flowbite-svelte/issues/1241)) ([f7ca868](https://github.com/themesberg/flowbite-svelte/commit/f7ca86872d0899cab2ee67da63a2f35bc5c33a10))
-
+- add focus only trigger mode for Popper ([#1241](https://github.com/themesberg/flowbite-svelte/issues/1241)) ([f7ca868](https://github.com/themesberg/flowbite-svelte/commit/f7ca86872d0899cab2ee67da63a2f35bc5c33a10))
 
 ### Bug Fixes
 
-* add if statement to TransitionFrame component ([#1250](https://github.com/themesberg/flowbite-svelte/issues/1250)) ([394413e](https://github.com/themesberg/flowbite-svelte/commit/394413ef928620d75bd7a4b730d90bf203a2484f))
-* correct padding in Modal ([#1249](https://github.com/themesberg/flowbite-svelte/issues/1249)) ([913ad38](https://github.com/themesberg/flowbite-svelte/commit/913ad38dbb7371d43a9c263d622555dea8c61810))
-* properly handle class props in dropdown ([#1239](https://github.com/themesberg/flowbite-svelte/issues/1239)) ([0e5ff6c](https://github.com/themesberg/flowbite-svelte/commit/0e5ff6cda13e97cee8606d7ba018ba0e45fb5864))
-* properly handle spacing prop in Radio ([#1108](https://github.com/themesberg/flowbite-svelte/issues/1108)) ([7f34738](https://github.com/themesberg/flowbite-svelte/commit/7f34738df99c886a59afca5d56951fa36dcdf927))
+- add if statement to TransitionFrame component ([#1250](https://github.com/themesberg/flowbite-svelte/issues/1250)) ([394413e](https://github.com/themesberg/flowbite-svelte/commit/394413ef928620d75bd7a4b730d90bf203a2484f))
+- correct padding in Modal ([#1249](https://github.com/themesberg/flowbite-svelte/issues/1249)) ([913ad38](https://github.com/themesberg/flowbite-svelte/commit/913ad38dbb7371d43a9c263d622555dea8c61810))
+- properly handle class props in dropdown ([#1239](https://github.com/themesberg/flowbite-svelte/issues/1239)) ([0e5ff6c](https://github.com/themesberg/flowbite-svelte/commit/0e5ff6cda13e97cee8606d7ba018ba0e45fb5864))
+- properly handle spacing prop in Radio ([#1108](https://github.com/themesberg/flowbite-svelte/issues/1108)) ([7f34738](https://github.com/themesberg/flowbite-svelte/commit/7f34738df99c886a59afca5d56951fa36dcdf927))
 
 ### [0.44.23](https://github.com/themesberg/flowbite-svelte/compare/v0.44.22...v0.44.23) (2024-02-08)
 

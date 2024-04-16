@@ -530,7 +530,6 @@ You can change the main button to any element you want by using the `slot='butto
 </SpeedDial>
 ```
 
-
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

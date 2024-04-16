@@ -38,9 +38,7 @@ To get started with using tooltips all you need to do is set `triggeredBy` attri
 <Tooltip>Tooltip content</Tooltip>
 ```
 
-If you have anything else between the button and tooltip, they won't find each other and you will need to specify the link between them by setting
-the property `triggeredBy` to the CSS query of the element that triggers the tooltip. Most of the time you will want to use the `id` attribute of the element to link them, but you can use any CSS query you want. See the examples further down.
-
+If you have anything else between the button and tooltip, they won't find each other and you will need to specify the link between them by setting the property `triggeredBy` to the CSS query of the element that triggers the tooltip. Most of the time you will want to use the `id` attribute of the element to link them, but you can use any CSS query you want. See the examples further down.
 
 ```svelte example hideScript class="h-32 flex items-end gap-2"
 <script>
