@@ -66,5 +66,5 @@
 @prop export let group: (string | number)[] = [];
 @prop export let value: string | number = 'on';
 @prop export let checked: boolean | undefined = undefined;
-@prop export let spacing: string = 'me-2';
+@prop export let spacing: string = $$slots.default ? 'me-2' : '';
 -->

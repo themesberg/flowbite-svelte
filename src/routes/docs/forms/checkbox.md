@@ -173,10 +173,10 @@ Use this example to show a list of checkbox items inside a dropdown menu.
 ```svelte example class="flex justify-center items-start h-96"
 <script>
   import { Dropdown, DropdownItem, Checkbox, Button, Search } from 'flowbite-svelte';
-  import { ChevronDownSolid, UserRemoveSolid } from 'flowbite-svelte-icons';
+  import { ChevronDownOutline, UserRemoveSolid } from 'flowbite-svelte-icons';
 </script>
 
-<Button>Project users<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
+<Button>Project users<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
 <Dropdown class="overflow-y-auto px-3 pb-3 text-sm h-44">
   <div slot="header" class="p-3">
     <Search size="md" />
@@ -269,17 +269,17 @@ This component accepts all props from the [Button](/docs/components/buttons) for
 </script>
 
   <div>
-    <CheckboxButton><AppleSolid class="me-2"/>Apple</CheckboxButton>
-    <CheckboxButton><FacebookSolid class="me-2"/>Facebook</CheckboxButton>
-    <CheckboxButton><DiscordSolid class="me-2"/>Discord</CheckboxButton>
-    <CheckboxButton><DropboxSolid class="me-2"/>Dropbox</CheckboxButton>
+    <CheckboxButton><AppleSolid class="w-6 h-6 me-2"/>Apple</CheckboxButton>
+    <CheckboxButton><FacebookSolid class="w-6 h-6 me-2"/>Facebook</CheckboxButton>
+    <CheckboxButton><DiscordSolid class="w-6 h-6 me-2"/>Discord</CheckboxButton>
+    <CheckboxButton><DropboxSolid class="w-6 h-6 me-2"/>Dropbox</CheckboxButton>
   </div>
 
   <ButtonGroup>
-    <CheckboxButton><AppleSolid class="me-2"/>Apple</CheckboxButton>
-    <CheckboxButton><FacebookSolid class="me-2"/>Facebook</CheckboxButton>
-    <CheckboxButton><DiscordSolid class="me-2"/>Discord</CheckboxButton>
-    <CheckboxButton><DropboxSolid class="me-2"/>Dropbox</CheckboxButton>
+    <CheckboxButton><AppleSolid class="w-6 h-6 me-2"/>Apple</CheckboxButton>
+    <CheckboxButton><FacebookSolid class="w-6 h-6 me-2"/>Facebook</CheckboxButton>
+    <CheckboxButton><DiscordSolid class="w-6 h-6 me-2"/>Discord</CheckboxButton>
+    <CheckboxButton><DropboxSolid class="w-6 h-6 me-2"/>Dropbox</CheckboxButton>
   </ButtonGroup>
 ```
 

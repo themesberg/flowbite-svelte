@@ -6,7 +6,7 @@
   import { getContext } from 'svelte';
   import type { Writable } from 'svelte/store';
   import type { PageData } from '../$types';
-  import { ChevronDownSolid, ChevronUpSolid } from 'flowbite-svelte-icons';
+  import { ChevronDownOutline, ChevronUpOutline } from 'flowbite-svelte-icons';
 
   export let data: PageData;
 
@@ -52,8 +52,8 @@
       <SidebarGroup ulClass="list-unstyled fw-normal small mb-4">
         {#each Object.entries(posts) as [key, values] (key)}
           <SidebarDropdownWrapper bind:isOpen={dropdowns[key]} label={names_mapping[key] ?? key} ulClass="space-y-2.5" btnClass="flex items-center justify-between w-full my-4 text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600" spanClass="" class={dropdowns[key] ? 'text-primary-700 dark:text-primary-700' : 'text-gray-900 dark:text-white'}>
-            <ChevronDownSolid slot="arrowdown" class="w-3 h-3 text-gray-800 dark:text-white" />
-            <ChevronUpSolid slot="arrowup" class="w-3 h-3 text-gray-800 dark:text-white" />
+            <ChevronDownOutline slot="arrowdown" class="w-6 h-6 text-gray-800 dark:text-white" />
+            <ChevronUpOutline slot="arrowup" class="w-6 h-6 text-gray-800 dark:text-white" />
             {#each values as { meta, path }}
               {@const href = `/docs/${key}${path}`}
               {#if meta}

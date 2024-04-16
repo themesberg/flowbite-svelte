@@ -29,21 +29,21 @@ To initialize a speed dial component you need to wrap the trigger element and th
 ```svelte example class="relative h-96" hideResponsiveButtons
 <script>
   import { SpeedDial, SpeedDialButton } from 'flowbite-svelte';
-  import { ShareNodesSolid, PrintSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
+  import { ShareNodesSolid, PrinterSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
 </script>
 
 <SpeedDial defaultClass="absolute end-6 bottom-6">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Print">
-    <PrintSolid class="w-5 h-5" />
+    <PrinterSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Download">
-    <DownloadSolid class="w-5 h-5" />
+    <DownloadSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Copy">
-    <FileCopySolid class="w-5 h-5" />
+    <FileCopySolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 ```
@@ -60,127 +60,127 @@ The Speed Dial components accommodate a variety of Button component properties, 
 
 <SpeedDial color="primary" defaultClass="absolute start-6 bottom-6">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 <SpeedDial color="purple" defaultClass="absolute start-24 bottom-6">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 <SpeedDial color="light" defaultClass="absolute start-44 bottom-6">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 <SpeedDial color="dark" defaultClass="absolute start-64 bottom-6">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 
 <SpeedDial color="red" defaultClass="absolute end-6 bottom-6">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 <SpeedDial color="green" defaultClass="absolute end-24 bottom-6">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 <SpeedDial color="yellow" defaultClass="absolute end-44 bottom-6">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 <SpeedDial color="blue" defaultClass="absolute end-64 bottom-6">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 
 <SpeedDial color="purpleToBlue" gradient defaultClass="absolute start-6 bottom-36">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 <SpeedDial color="cyanToBlue" gradient defaultClass="absolute start-24 bottom-36">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 <SpeedDial color="greenToBlue" gradient defaultClass="absolute start-44 bottom-36">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 <SpeedDial color="purpleToPink" gradient defaultClass="absolute start-64 bottom-36">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 
 <SpeedDial color="green" outline defaultClass="absolute end-6 bottom-36">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 <SpeedDial color="red" outline defaultClass="absolute end-24 bottom-36">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 <SpeedDial color="blue" outline defaultClass="absolute end-44 bottom-36">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 <SpeedDial color="purple" outline defaultClass="absolute end-64 bottom-36">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 
 <SpeedDial color="blue" gradient defaultClass="absolute start-6 bottom-64">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 <SpeedDial color="green" gradient defaultClass="absolute start-24 bottom-64">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 <SpeedDial color="cyan" gradient defaultClass="absolute start-44 bottom-64">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 <SpeedDial color="teal" gradient defaultClass="absolute start-64 bottom-64">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 
 <SpeedDial shadow="blue" gradient color="blue" defaultClass="absolute end-6 bottom-64">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 <SpeedDial shadow="green" gradient color="green" defaultClass="absolute end-24 bottom-64">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 <SpeedDial shadow="purple" gradient color="purple" defaultClass="absolute end-44 bottom-64">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 <SpeedDial shadow="pink" gradient color="pink" defaultClass="absolute end-64 bottom-64">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 ```
@@ -192,21 +192,21 @@ Use this example to make the trigger button’s style square instead of a full c
 ```svelte example class="relative h-96" hideResponsiveButtons
 <script>
   import { SpeedDial, SpeedDialButton } from 'flowbite-svelte';
-  import { ShareNodesSolid, PrintSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
+  import { ShareNodesSolid, PrinterSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
 </script>
 
 <SpeedDial defaultClass="absolute end-6 bottom-6" pill={false}>
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Print">
-    <PrintSolid class="w-5 h-5" />
+    <PrinterSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Download">
-    <DownloadSolid class="w-5 h-5" />
+    <DownloadSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Copy">
-    <FileCopySolid class="w-5 h-5" />
+    <FileCopySolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 ```
@@ -218,36 +218,36 @@ This example can be used to show the descriptive text inside the button instead 
 ```svelte example class="relative h-96" hideResponsiveButtons
 <script>
   import { SpeedDial, SpeedDialButton } from 'flowbite-svelte';
-  import { ShareNodesSolid, PrintSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
+  import { ShareNodesSolid, PrinterSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
 </script>
 
 <SpeedDial defaultClass="absolute end-24 bottom-6" tooltip="none">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Print">
-    <PrintSolid class="w-5 h-5" />
+    <PrinterSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Save">
-    <DownloadSolid class="w-5 h-5" />
+    <DownloadSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Copy">
-    <FileCopySolid class="w-5 h-5" />
+    <FileCopySolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 
 <SpeedDial defaultClass="absolute end-6 bottom-6" pill={false} tooltip="none">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Print">
-    <PrintSolid class="w-5 h-5" />
+    <PrinterSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Save">
-    <DownloadSolid class="w-5 h-5" />
+    <DownloadSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Copy">
-    <FileCopySolid class="w-5 h-5" />
+    <FileCopySolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 ```
@@ -259,36 +259,36 @@ Use this example to show the text of each button outside of the speed dial as an
 ```svelte example class="relative h-96" hideResponsiveButtons
 <script>
   import { SpeedDial, SpeedDialButton } from 'flowbite-svelte';
-  import { ShareNodesSolid, PrintSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
+  import { ShareNodesSolid, PrinterSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
 </script>
 
 <SpeedDial defaultClass="absolute end-24 bottom-6" tooltip="none" textOutside>
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Print">
-    <PrintSolid class="w-5 h-5" />
+    <PrinterSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Save">
-    <DownloadSolid class="w-5 h-5" />
+    <DownloadSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Copy">
-    <FileCopySolid class="w-5 h-5" />
+    <FileCopySolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 
 <SpeedDial defaultClass="absolute end-6 bottom-6" pill={false} tooltip="none" textOutside>
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Print">
-    <PrintSolid class="w-5 h-5" />
+    <PrinterSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Save">
-    <DownloadSolid class="w-5 h-5" />
+    <DownloadSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Copy">
-    <FileCopySolid class="w-5 h-5" />
+    <FileCopySolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 ```
@@ -300,26 +300,26 @@ This example can be used to show a list of menu items instead of buttons when ac
 ```svelte example class="relative h-96" hideResponsiveButtons
 <script>
   import { SpeedDial, Listgroup, ListgroupItem } from 'flowbite-svelte';
-  import { DotsHorizontalOutline, ShareNodesSolid, PrintSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
+  import { DotsHorizontalOutline, ShareNodesSolid, PrinterSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
 </script>
 
 <SpeedDial defaultClass="absolute end-24 bottom-6" tooltip="none" placement="top-end">
   <DotsHorizontalOutline slot="icon" class="w-8 h-8" />
   <Listgroup class="divide-none" active>
     <ListgroupItem class="flex gap-2 md:px-5">
-      <ShareNodesSolid class="w-3.5 h-3.5" />
+      <ShareNodesSolid class="w-5 h-5" />
       Share
     </ListgroupItem>
     <ListgroupItem class="flex gap-2 md:px-5">
-      <PrintSolid class="w-3.5 h-3.5" />
+      <PrinterSolid class="w-5 h-5" />
       Print
     </ListgroupItem>
     <ListgroupItem class="flex gap-2 md:px-5">
-      <DownloadSolid class="w-3.5 h-3.5" />
+      <DownloadSolid class="w-5 h-5" />
       Save
     </ListgroupItem>
     <ListgroupItem class="flex gap-2 md:px-5">
-      <FileCopySolid class="w-3.5 h-3.5" />
+      <FileCopySolid class="w-5 h-5" />
       Copy
     </ListgroupItem>
   </Listgroup>
@@ -329,19 +329,19 @@ This example can be used to show a list of menu items instead of buttons when ac
   <DotsHorizontalOutline slot="icon" class="w-8 h-8" />
   <Listgroup class="divide-none" active>
     <ListgroupItem class="flex gap-2 md:px-5">
-      <ShareNodesSolid class="w-3.5 h-3.5" />
+      <ShareNodesSolid class="w-5 h-5" />
       Share
     </ListgroupItem>
     <ListgroupItem class="flex gap-2 md:px-5">
-      <PrintSolid class="w-3.5 h-3.5" />
+      <PrinterSolid class="w-5 h-5" />
       Print
     </ListgroupItem>
     <ListgroupItem class="flex gap-2 md:px-5">
-      <DownloadSolid class="w-3.5 h-3.5" />
+      <DownloadSolid class="w-5 h-5" />
       Save
     </ListgroupItem>
     <ListgroupItem class="flex gap-2 md:px-5">
-      <FileCopySolid class="w-3.5 h-3.5" />
+      <FileCopySolid class="w-5 h-5" />
       Copy
     </ListgroupItem>
   </Listgroup>
@@ -355,7 +355,7 @@ This example can be used to show an alternative style when showing a list of men
 ```svelte example class="relative h-96" hideResponsiveButtons
 <script>
   import { SpeedDial, Listgroup, ListgroupItem } from 'flowbite-svelte';
-  import { PenSolid, ShareNodesSolid, PrintSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
+  import { PenSolid, ShareNodesSolid, PrinterSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
 </script>
 
 <SpeedDial defaultClass="absolute end-24 bottom-6" tooltip="none" placement="top-end">
@@ -366,7 +366,7 @@ This example can be used to show an alternative style when showing a list of men
       Share
     </ListgroupItem>
     <ListgroupItem class="flex">
-      <PrintSolid class="me-2 w-5 h-5" />
+      <PrinterSolid class="me-2 w-5 h-5" />
       Print
     </ListgroupItem>
     <ListgroupItem class="flex">
@@ -387,7 +387,7 @@ This example can be used to show an alternative style when showing a list of men
       Share
     </ListgroupItem>
     <ListgroupItem class="flex">
-      <PrintSolid class="me-2 w-5 h-5" />
+      <PrinterSolid class="me-2 w-5 h-5" />
       Print
     </ListgroupItem>
     <ListgroupItem class="flex">
@@ -411,7 +411,7 @@ Control the main button position using the flexbox utility classes from Tailwind
 ```svelte example class="relative h-[400px]" hideResponsiveButtons
 <script>
   import { SpeedDial, SpeedDialButton } from 'flowbite-svelte';
-  import { ShareNodesSolid, PrintSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
+  import { ShareNodesSolid, PrinterSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
   const placements = [
     ['start-2 top-2', 'right', 'bottom'],
     ['end-6 top-2', 'bottom', 'left'],
@@ -423,16 +423,16 @@ Control the main button position using the flexbox utility classes from Tailwind
 {#each placements as [position, placement, tooltip]}
   <SpeedDial defaultClass="absolute {position}" {placement}>
     <SpeedDialButton name="Share" {tooltip}>
-      <ShareNodesSolid class="w-5 h-5" />
+      <ShareNodesSolid class="w-6 h-6" />
     </SpeedDialButton>
     <SpeedDialButton name="Print" {tooltip}>
-      <PrintSolid class="w-5 h-5" />
+      <PrinterSolid class="w-6 h-6" />
     </SpeedDialButton>
     <SpeedDialButton name="Download" {tooltip}>
-      <DownloadSolid class="w-5 h-5" />
+      <DownloadSolid class="w-6 h-6" />
     </SpeedDialButton>
     <SpeedDialButton name="Copy" {tooltip}>
-      <FileCopySolid class="w-5 h-5" />
+      <FileCopySolid class="w-6 h-6" />
     </SpeedDialButton>
   </SpeedDial>
 {/each}
@@ -447,36 +447,36 @@ The default trigger type is hover for each speed dial component.
 ```svelte example class="relative h-96" hideResponsiveButtons
 <script>
   import { SpeedDial, SpeedDialButton } from 'flowbite-svelte';
-  import { ShareNodesSolid, PrintSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
+  import { ShareNodesSolid, PrinterSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
 </script>
 
 <SpeedDial defaultClass="absolute start-2 bottom-6" trigger="hover" tooltip="right">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Print">
-    <PrintSolid class="w-5 h-5" />
+    <PrinterSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Download">
-    <DownloadSolid class="w-5 h-5" />
+    <DownloadSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Copy">
-    <FileCopySolid class="w-5 h-5" />
+    <FileCopySolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 
 <SpeedDial defaultClass="absolute end-6 bottom-6" trigger="click">
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Print">
-    <PrintSolid class="w-5 h-5" />
+    <PrinterSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Download">
-    <DownloadSolid class="w-5 h-5" />
+    <DownloadSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Copy">
-    <FileCopySolid class="w-5 h-5" />
+    <FileCopySolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 ```
@@ -510,26 +510,25 @@ You can change the main button to any element you want by using the `slot='butto
 ```svelte example class="relative h-96" hideResponsiveButtons
 <script>
   import { SpeedDial, SpeedDialButton, Rating } from 'flowbite-svelte';
-  import { ShareNodesSolid, PrintSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
+  import { ShareNodesSolid, PrinterSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
 </script>
 
 <SpeedDial defaultClass="absolute end-6 bottom-6">
   <Rating slot="button" total={1} rating={0.5} size={48}/>
   <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-5 h-5" />
+    <ShareNodesSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Print">
-    <PrintSolid class="w-5 h-5" />
+    <PrinterSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Download">
-    <DownloadSolid class="w-5 h-5" />
+    <DownloadSolid class="w-6 h-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Copy">
-    <FileCopySolid class="w-5 h-5" />
+    <FileCopySolid class="w-6 h-6" />
   </SpeedDialButton>
 </SpeedDial>
 ```
-
 
 ## Component data
 

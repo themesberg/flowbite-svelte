@@ -49,5 +49,5 @@
 @prop export let inline: boolean = false;
 @prop export let group: number | string | undefined = undefined;
 @prop export let value: number | string = '';
-@prop export let spacing: string = 'mr-2';
+@prop export let spacing: string = $$slots.default ? 'me-2' : '';
 -->

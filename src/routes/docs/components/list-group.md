@@ -110,7 +110,7 @@ Use the following example to create a list of buttons as a menu together with SV
 
 
 <Listgroup active items={icons} let:item class="w-48" on:click={console.log}>
-  <svelte:component this={item.icon} class="w-3 h-3 me-2.5"/>
+  <svelte:component this={item.icon} class="w-4 h-4 me-2.5"/>
   {item.name}
 </Listgroup>
 ```

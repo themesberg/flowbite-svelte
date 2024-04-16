@@ -54,15 +54,15 @@ This example can be used to apply custom icons instead of the default bullets fo
 <Heading tag="h2" customSize="text-lg font-semibold" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
 <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
   <Li icon>
-    <CheckCircleSolid class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400" />
+    <CheckCircleSolid class="w-5 h-5 me-2 text-green-500 dark:text-green-400" />
     At least 10 characters (and up to 100 characters)
   </Li>
   <Li icon>
-    <CheckCircleSolid class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400" />
+    <CheckCircleSolid class="w-5 h-5 me-2 text-green-500 dark:text-green-400" />
     At least one lowercase character
   </Li>
   <Li icon>
-    <CloseCircleSolid class="w-3.5 h-3.5 me-2 text-gray-500 dark:text-gray-400" />
+    <CloseCircleSolid class="w-5 h-5 me-2 text-gray-500 dark:text-gray-400" />
     Inclusion of at least one special character, e.g., ! @ # ?
   </Li>
 </List>
@@ -213,23 +213,23 @@ Use this example to create a list of items with custom SVG icons instead of the 
 
 <List tag="ul" class="mb-8 space-y-4 text-gray-500 dark:text-gray-400" list="none">
   <Li icon class="gap-3">
-    <CheckOutline class="w-3.5 h-3.5 text-green-500 dark:text-green-400" />
+    <CheckOutline class="w-5 h-5 text-green-500 dark:text-green-400" />
     Individual configuration
   </Li>
   <Li icon class="gap-3">
-    <CheckOutline class="w-3.5 h-3.5 text-green-500 dark:text-green-400" />
+    <CheckOutline class="w-5 h-5 text-green-500 dark:text-green-400" />
     No setup, or hidden fees
   </Li>
   <Li icon class="gap-3">
-    <CheckOutline class="w-3.5 h-3.5 text-green-500 dark:text-green-400" />
+    <CheckOutline class="w-5 h-5 text-green-500 dark:text-green-400" />
     <span>Team size: <Span>1 developer</Span></span>
   </Li>
   <Li icon class="gap-3">
-    <CheckOutline class="w-3.5 h-3.5 text-green-500 dark:text-green-400" />
+    <CheckOutline class="w-5 h-5 text-green-500 dark:text-green-400" />
     <span>Premium support: <Span>6 months</Span></span>
   </Li>
   <Li icon class="gap-3">
-    <CheckOutline class="w-3.5 h-3.5 text-green-500 dark:text-green-400" />
+    <CheckOutline class="w-5 h-5 text-green-500 dark:text-green-400" />
     <span>Free updates: <Span>6 months</Span></span>
   </Li>
 </List>

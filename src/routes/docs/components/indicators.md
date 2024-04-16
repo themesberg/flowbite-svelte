@@ -71,7 +71,7 @@ This example can be used to show a number count inside the indicator and positio
 </script>
 
 <Button size="lg" class="relative">
-  <EnvelopeSolid class="w-4 h-4 me-2 text-white dark:text-white" />
+  <EnvelopeSolid class="w-6 h-6 me-2 text-white dark:text-white" />
   <span class="sr-only">Notifications</span>
   Messages
   <Indicator color="red" border size="xl" placement="top-right">

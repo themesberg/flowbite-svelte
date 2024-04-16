@@ -125,11 +125,11 @@ The following pagination component example shows how you can use SVG icons inste
 <Pagination {pages} large on:previous={previous} on:next={next} icon>
   <svelte:fragment slot="prev">
     <span class="sr-only">Previous</span>
-    <ChevronLeftOutline class="w-3 h-3" />
+    <ChevronLeftOutline class="w-6 h-6" />
   </svelte:fragment>
   <svelte:fragment slot="next">
     <span class="sr-only">Next</span>
-    <ChevronRightOutline class="w-3 h-3" />
+    <ChevronRightOutline class="w-6 h-6" />
   </svelte:fragment>
 </Pagination>
 ```
@@ -166,7 +166,7 @@ Use the following code to show simple previous and next elements with icons.
 ```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
 <script>
   import { Pagination, PaginationItem } from 'flowbite-svelte';
-  import { ArrowLeftSolid, ArrowRightSolid } from 'flowbite-svelte-icons';
+  import { ArrowLeftOutline, ArrowRightOutline } from 'flowbite-svelte-icons';
   const previous = () => {
     alert('Previous btn clicked. Make a call to your server to fetch data.');
   };
@@ -177,22 +177,22 @@ Use the following code to show simple previous and next elements with icons.
 
 <div class="flex space-x-3 rtl:space-x-reverse">
   <PaginationItem class="flex items-center" on:click={previous}>
-    <ArrowLeftSolid class="me-2 w-3.5 h-3.5" />
+    <ArrowLeftOutline class="me-2 w-3.5 h-3.5" />
     Previous
   </PaginationItem>
   <PaginationItem class="flex items-center" on:click={next}>
     Next
-    <ArrowRightSolid class="ms-2 w-3.5 h-3.5" />
+    <ArrowRightOutline class="ms-2 w-3.5 h-3.5" />
   </PaginationItem>
 </div>
 <div class="flex space-x-3 rtl:space-x-reverse">
   <PaginationItem large class="flex items-center" on:click={previous}>
-    <ArrowLeftSolid class="me-2 w-5 h-5" />
+    <ArrowLeftOutline class="me-2 w-5 h-5" />
     Previous
   </PaginationItem>
   <PaginationItem large class="flex items-center" on:click={next}>
     Next
-    <ArrowRightSolid class="ms-2 w-5 h-5" />
+    <ArrowRightOutline class="ms-2 w-5 h-5" />
   </PaginationItem>
 </div>
 ```
@@ -280,7 +280,7 @@ You can use the following code to show the number of data shown inside a table e
     </div>
     <div slot="next" class="flex items-center gap-2 text-white bg-gray-800">
       Next
-      <ArrowRightOutline class="w-3.5 h-3.5 ms-2" />
+      <ArrowRightOutline class="w-6 h-6 ms-2" />
     </div>
   </Pagination>
 </div>
@@ -301,7 +301,7 @@ You can use the following code to show the number of data shown inside a table e
     </div>
     <div slot="next" class="flex items-center gap-2 text-white bg-gray-800">
       Next
-      <ArrowRightOutline class="w-3.5 h-3.5 me-2" />
+      <ArrowRightOutline class="w-6 h-6 me-2" />
     </div>
   </Pagination>
 </div>

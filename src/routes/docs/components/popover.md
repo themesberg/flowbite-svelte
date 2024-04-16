@@ -141,7 +141,7 @@ Use this example to trigger a popover component with detailed information and an
 ```svelte example class="flex h-96 items-end" hideResponsiveButtons
 <script>
   import { Popover } from 'flowbite-svelte';
-  import { ChevronRightSolid } from 'flowbite-svelte-icons';
+  import { ChevronRightOutline } from 'flowbite-svelte-icons';
 </script>
 
 <p class="font-light text-gray-500 dark:text-gray-400">
@@ -157,7 +157,7 @@ Use this example to trigger a popover component with detailed information and an
           <h3>
             <p class="text-gray-500 dark:text-gray-500">Italy is located in the middle of the Mediterranean Sea, in Southern Europe it is also considered part of Western Europe. A unitary parliamentary republic with Rome as its capital and largest city.</p>
             <a href="/" class="flex items-center font-medium text-primary-600 dark:text-primary-500 dark:hover:text-primary-600 hover:text-primary-700">
-              Read more <ChevronRightSolid class="w-2 h-2 ms-1.5 text-primary-600 dark:text-primary-500" />
+              Read more <ChevronRightOutline class="w-2 h-2 ms-1.5 text-primary-600 dark:text-primary-500" />
             </a>
           </h3>
         </h3>
@@ -181,7 +181,7 @@ Show helpful information inside a popover when hovering over a question mark but
 <div class="flex items-center text-sm font-light text-gray-500 dark:text-gray-400">
   This is just some informational text
   <button id="b3">
-    <QuestionCircleSolid class="w-4 h-4 ms-1.5" />
+    <QuestionCircleSolid class="w-5 h-5 ms-1.5" />
     <span class="sr-only">Show information</span>
   </button>
 </div>
@@ -192,7 +192,7 @@ Show helpful information inside a popover when hovering over a question mark but
     <h3 class="font-semibold text-gray-900 dark:text-white">Calculation</h3>
     For each date bucket, the all-time volume of activities is calculated. This means that activities in period n contain all activities up to period n.
     <a href="/" class="flex items-center font-medium text-primary-600 dark:text-primary-500 dark:hover:text-primary-600 hover:text-primary-700">
-      Read more <ChevronRightOutline class="w-2 h-2 ms-1.5 text-primary-600 dark:text-primary-500" />
+      Read more <ChevronRightOutline class="w-4 h-4 ms-1.5 text-primary-600 dark:text-primary-500" />
     </a>
   </div>
 </Popover>
@@ -209,7 +209,7 @@ Show a progress bar with details inside a popover when hovering over a settings 
 </script>
 
 <Button id="progress">
-  <DatabaseSolid class="me-2 w-4 h-4 text-white dark:text-white" /> Storage status
+  <DatabaseSolid class="me-2 w-5 h-5 text-white dark:text-white" /> Storage status
 </Button>
 <Popover triggeredBy="#progress" class="text-sm w-64 font-light">
   <div class="space-y-2">
@@ -224,7 +224,7 @@ Show a progress bar with details inside a popover when hovering over a settings 
       <div class="bg-red-600 h-2.5 rounded-full" style="width: 85%" />
     </div>
     <a href="/" class="flex items-center font-medium text-primary-600 dark:text-primary-500 dark:hover:text-primary-600 hover:text-primary-700">
-      Upgrade now <ChevronRightOutline class="w-2 h-2 ms-1.5 text-primary-600 dark:text-primary-500" />
+      Upgrade now <ChevronRightOutline class="w-4 h-4 ms-1.5 text-primary-600 dark:text-primary-500" />
     </a>
   </div>
 </Popover>

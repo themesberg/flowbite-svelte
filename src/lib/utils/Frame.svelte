@@ -148,4 +148,7 @@
 @prop export let use: Action<HTMLElement, any> = noop;
 @prop export let options = {};
 @prop export let role: string | undefined = undefined;
+@prop export let transition: TransitionFunc | undefined = undefined;
+@prop export let params: object = {};
+@prop export let open: boolean = true;
 -->

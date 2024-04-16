@@ -55,7 +55,7 @@ Use the following example of a card element if you also want to have an action b
   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
   <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
   <Button class="w-fit">
-    Read more <ArrowRightOutline class="w-3.5 h-3.5 ms-2 text-white" />
+    Read more <ArrowRightOutline class="w-6 h-6 ms-2 text-white" />
   </Button>
 </Card>
 ```
@@ -71,14 +71,14 @@ This example can be used to show a CTA as a link instead of a button inside the 
 </script>
 
 <Card>
-  <GiftBoxSolid class="w-7 h-7 mb-3 text-gray-500 dark:text-gray-400" />
+  <GiftBoxSolid class="w-8 h-8 mb-3 text-gray-500 dark:text-gray-400" />
   <a href="/">
     <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Need a help in Claim?</h5>
   </a>
   <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
   <a href="/" class="inline-flex items-center text-primary-600 hover:underline">
     See our guideline
-    <ArrowUpRightFromSquareOutline class="w-3 h-3 ms-2.5" />
+    <ArrowUpRightFromSquareOutline class="w-4 h-4 ms-2.5" />
   </a>
 </Card>
 ```
@@ -101,7 +101,7 @@ You can use the following example of a card element with an image for blog posts
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
     <Button>
-      Read more <ArrowRightOutline class="w-3.5 h-3.5 ms-2 text-white" />
+      Read more <ArrowRightOutline class="w-6 h-6 ms-2 text-white" />
     </Button>
   </Card>
   <Toggle bind:checked={vCard} class="italic dark:text-gray-500">Reverse</Toggle>

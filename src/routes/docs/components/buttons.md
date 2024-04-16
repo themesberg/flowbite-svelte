@@ -184,11 +184,11 @@ Use these examples if you want to use smaller or larger buttons.
   import { EnvelopeSolid } from 'flowbite-svelte-icons';
 </script>
 
-<Button size="xs"><EnvelopeSolid class="w-3 h-3 me-2" />Extra small</Button>
-<Button size="sm"><EnvelopeSolid class="w-3 h-3 me-2" />Small</Button>
-<Button size="md"><EnvelopeSolid class="w-3.5 h-3.5 me-2" />Base</Button>
-<Button size="lg"><EnvelopeSolid class="w-4 h-4 me-2" />Large</Button>
-<Button size="xl"><EnvelopeSolid class="w-4 h-4 me-2" />Extra large</Button>
+<Button size="xs"><EnvelopeSolid class="w-4 h-4 me-2" />Extra small</Button>
+<Button size="sm"><EnvelopeSolid class="w-4 h-4 me-2" />Small</Button>
+<Button size="md"><EnvelopeSolid class="w-5 h-5 me-2" />Base</Button>
+<Button size="lg"><EnvelopeSolid class="w-5 h-5 me-2" />Large</Button>
+<Button size="xl"><EnvelopeSolid class="w-6 h-6 me-2" />Extra large</Button>
 ```
 
 ## Button with icon
@@ -198,14 +198,14 @@ Use the following examples to add a SVG icon inside the button either on the lef
 ```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>
   import { Button } from 'flowbite-svelte';
-  import { ArrowRightOutline, ShoppingCartSolid } from 'flowbite-svelte-icons';
+  import { ArrowRightOutline, CartSolid } from 'flowbite-svelte-icons';
 </script>
 
 <Button>
-  <ShoppingCartSolid class="w-3.5 h-3.5 me-2" /> Buy Now
+  <CartSolid class="w-5 h-5 me-2" /> Buy Now
 </Button>
 <Button>
-  Choose Plan <ArrowRightOutline class="w-3.5 h-3.5 ms-2" />
+  Choose Plan <ArrowRightOutline class="w-5 h-5 ms-2" />
 </Button>
 ```
 
@@ -235,13 +235,13 @@ Sometimes you need a button to indicate an action using only an icon.
 </script>
 
 <div class="flex flex-wrap items-center gap-2">
-  <Button class="!p-2"><ArrowRightOutline class="w-5 h-5" /></Button>
-  <Button pill={true} class="!p-2"><ArrowRightOutline class="w-4 h-4" /></Button>
+  <Button class="!p-2"><ArrowRightOutline class="w-6 h-6" /></Button>
+  <Button pill={true} class="!p-2"><ArrowRightOutline class="w-6 h-6" /></Button>
   <Button outline={true} class="!p-2" size="lg">
-    <ThumbsUpSolid class="w-5 h-5 text-primary-700" />
+    <ThumbsUpSolid class="w-7 h-7 text-primary-700" />
   </Button>
   <Button pill={true} outline={true} class="!p-2" size="xl">
-    <ThumbsUpSolid class="w-4 h-4 text-primary-700" />
+    <ThumbsUpSolid class="w-6 h-6 text-primary-700" />
   </Button>
 </div>
 ```

@@ -87,7 +87,7 @@ If you want to add other actions as buttons alongside your textarea component, s
 ```svelte example
 <script>
   import { Textarea, Toolbar, ToolbarGroup, ToolbarButton, Button } from 'flowbite-svelte';
-  import { PaperClipOutline, MapPinAltSolid, ImageOutline, CodeOutline, FaceGrinOutline, PapperPlaneOutline } from 'flowbite-svelte-icons';
+  import { PaperClipOutline, MapPinAltSolid, ImageOutline, CodeOutline, FaceGrinOutline, PaperPlaneOutline } from 'flowbite-svelte-icons';
 </script>
 
 <form>
@@ -103,7 +103,7 @@ If you want to add other actions as buttons alongside your textarea component, s
         <ToolbarButton name="Format code"><CodeOutline class="w-5 h-5" /></ToolbarButton>
         <ToolbarButton name="Add emoji"><FaceGrinOutline class="w-5 h-5" /></ToolbarButton>
       </ToolbarGroup>
-      <ToolbarButton name="send" slot="end"><PapperPlaneOutline class="w-5 h-5 rotate-45" /></ToolbarButton>
+      <ToolbarButton name="send" slot="end"><PaperPlaneOutline class="w-5 h-5 rotate-45" /></ToolbarButton>
     </Toolbar>
   </Textarea>
   <Button>Publish post</Button>

@@ -42,7 +42,7 @@ Use this example of a H1 heading in the context of a paragraph and CTA button fo
   <P class="mb-6 text-lg lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
   <Button href="/">
     Learn more
-    <ArrowRightOutline class="w-3.5 h-3.5 ms-2" />
+    <ArrowRightOutline class="w-6 h-6 ms-2" />
   </Button>
 </div>
 ```
@@ -54,7 +54,7 @@ Use this example of a second-level H2 heading as the main subtitle for each sect
 ```svelte example
 <script>
   import { Heading, P, A } from 'flowbite-svelte';
-  import { ChevronRightSolid } from 'flowbite-svelte-icons';
+  import { ChevronRightOutline } from 'flowbite-svelte-icons';
 </script>
 
 <Heading tag="h2" customSize="text-4xl font-extrabold ">Payments tool for companies</Heading>
@@ -62,7 +62,7 @@ Use this example of a second-level H2 heading as the main subtitle for each sect
 <P class="mb-4">Deliver great service experiences fast - without the complexity of traditional ITSM solutions. Accelerate critical development work, eliminate toil, and deploy changes with ease.</P>
 <A>
   Read more
-  <ChevronRightSolid class="w-3.5 h-3.5 ms-2" />
+  <ChevronRightOutline class="w-3.5 h-3.5 ms-2" />
 </A>
 ```
 

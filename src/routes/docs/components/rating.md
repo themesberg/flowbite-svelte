@@ -258,15 +258,15 @@ Use this component to show the review content from a user alongside the avatar, 
   <p class="mb-2 font-light text-gray-500 dark:text-gray-400">The flat was spotless, very comfortable, and the host was amazing. I highly recommend this accommodation for anyone visiting Brasov city centre. It's quite a while since we are no longer using hotel facilities but self contained places. And the main reason is poor cleanliness and staff not being trained properly. This place exceeded our expectation and will return for sure.</p>
   <p class="mb-5 font-light text-gray-500 dark:text-gray-400">It is obviously not the same build quality as those very expensive watches. But that is like comparing a Citroën to a Ferrari. This watch was well under £100! An absolute bargain.</p>
   <svelte:fragment slot="item1">
-    <LandmarkSolid class="w-3 h-3 me-2" />
+    <LandmarkSolid class="w-4 h-4 me-2" />
     {review.item1}
   </svelte:fragment>
   <svelte:fragment slot="item2">
-    <CalendarMonthSolid class="w-3 h-3 me-2" />
+    <CalendarMonthSolid class="w-4 h-4 me-2" />
     {review.item2}
   </svelte:fragment>
   <svelte:fragment slot="item3">
-    <UsersGroupOutline class="w-3 h-3 me-2" />
+    <UsersGroupOutline class="w-4 h-4 me-2" />
     {review.item3}
   </svelte:fragment>
   <aside class="flex items-center mt-3 space-x-5 rtl:space-x-reverse">
