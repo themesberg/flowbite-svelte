@@ -112,16 +112,16 @@ The footer is one of the most underestimated sections of a website being located
     <FooterCopyright href="/" by="Flowbite™" />
     <div class="flex mt-4 space-x-6 rtl:space-x-reverse sm:justify-center sm:mt-0">
       <FooterIcon href="/">
-        <FacebookSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <FacebookSolid class="w-5 h-5 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <DiscordSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <DiscordSolid class="w-5 h-5 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <TwitterSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <TwitterSolid class="w-5 h-5 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <GithubSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <GithubSolid class="w-5 h-5 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
         <Dribble />
@@ -184,16 +184,16 @@ The footer is one of the most underestimated sections of a website being located
     <FooterCopyright spanClass="text-sm text-gray-300 sm:text-center" href="/" by="Flowbite™" />
     <div class="flex mt-4 space-x-6 rtl:space-x-reverse sm:justify-center md:mt-0">
       <FooterIcon href="/">
-        <FacebookSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <FacebookSolid class="w-5 h-5 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <DiscordSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <DiscordSolid class="w-5 h-5 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <TwitterSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <TwitterSolid class="w-5 h-5 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <GithubSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <GithubSolid class="w-5 h-5 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
         <Dribble />

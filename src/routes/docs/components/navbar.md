@@ -153,7 +153,7 @@ This example can be used to show a secondary dropdown menu when clicking on one 
   <NavUl {activeUrl}>
     <NavLi href="/">Home</NavLi>
     <NavLi class="cursor-pointer">
-      Dropdown<ChevronDownOutline class="w-3 h-3 ms-2 text-primary-800 dark:text-white inline" />
+      Dropdown<ChevronDownOutline class="w-6 h-6 ms-2 text-primary-800 dark:text-white inline" />
     </NavLi>
     <Dropdown class="w-44 z-20">
       <DropdownItem href="/">Dashboard</DropdownItem>

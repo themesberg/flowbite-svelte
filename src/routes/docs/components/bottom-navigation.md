@@ -42,16 +42,16 @@ Use the default bottom navigation bar example to show a list of menu items as bu
 
 <BottomNav position="absolute" classInner="grid-cols-4">
   <BottomNavItem btnName="Home">
-    <HomeSolid class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    <HomeSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
   </BottomNavItem>
   <BottomNavItem btnName="Wallet">
-    <WalletSolid class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    <WalletSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
   </BottomNavItem>
   <BottomNavItem btnName="Settings">
-    <AdjustmentsVerticalOutline class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    <AdjustmentsVerticalOutline class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
   </BottomNavItem>
   <BottomNavItem btnName="Profile">
-    <UserCircleSolid class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    <UserCircleSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
   </BottomNavItem>
 </BottomNav>
 ```
@@ -164,16 +164,16 @@ This example can be used to show a border between the menu items inside the bott
 
 <BottomNav position="absolute" navType="border" classInner="grid-cols-4">
   <BottomNavItem btnName="Home">
-    <HomeSolid class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    <HomeSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
   </BottomNavItem>
   <BottomNavItem btnName="Wallet">
-    <WalletSolid class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    <WalletSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
   </BottomNavItem>
   <BottomNavItem btnName="Settings">
-    <AdjustmentsVerticalOutline class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    <AdjustmentsVerticalOutline class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
   </BottomNavItem>
   <BottomNavItem btnName="Profile">
-    <UserCircleSolid class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    <UserCircleSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
   </BottomNavItem>
 </BottomNav>
 ```
@@ -185,7 +185,7 @@ Use this example to show a CTA button in the center of the navigation component 
 ```svelte example class="flex flex-col relative"
 <script>
   import { BottomNav, BottomNavItem, Tooltip, Skeleton, ImagePlaceholder } from 'flowbite-svelte';
-  import { HomeSolid, WalletSolid, AdjustmentsVerticalOutline, UserCircleSolid, PlusSolid } from 'flowbite-svelte-icons';
+  import { HomeSolid, WalletSolid, AdjustmentsVerticalOutline, UserCircleSolid, PlusOutline } from 'flowbite-svelte-icons';
 </script>
 
 <Skeleton class="py-4" />
@@ -193,25 +193,25 @@ Use this example to show a CTA button in the center of the navigation component 
 
 <BottomNav position="absolute" navType="application" classInner="grid-cols-5">
   <BottomNavItem btnName="Home" appBtnPosition="left">
-    <HomeSolid class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    <HomeSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
     <Tooltip arrow={false}>Home</Tooltip>
   </BottomNavItem>
   <BottomNavItem btnName="Wallet" appBtnPosition="middle">
-    <WalletSolid class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    <WalletSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
     <Tooltip arrow={false}>Wallet</Tooltip>
   </BottomNavItem>
   <div class="flex items-center justify-center">
     <BottomNavItem btnName="Create new item" appBtnPosition="middle" btnClass="inline-flex items-center justify-center w-10 h-10 font-medium bg-primary-600 rounded-full hover:bg-primary-700 group focus:ring-4 focus:ring-primary-300 focus:outline-none dark:focus:ring-primary-800">
-      <PlusSolid class="text-white" />
+      <PlusOutline class="text-white" />
       <Tooltip arrow={false}>Create new item</Tooltip>
     </BottomNavItem>
   </div>
   <BottomNavItem btnName="Settings" appBtnPosition="middle">
-    <AdjustmentsVerticalOutline class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    <AdjustmentsVerticalOutline class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
     <Tooltip arrow={false}>Settings</Tooltip>
   </BottomNavItem>
   <BottomNavItem btnName="Profile" appBtnPosition="right">
-    <UserCircleSolid class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    <UserCircleSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
     <Tooltip arrow={false}>Profile</Tooltip>
   </BottomNavItem>
 </BottomNav>
@@ -224,7 +224,7 @@ This example be used to paginate multiple pages on a single view alongside other
 ```svelte example class="flex flex-col relative"
 <script>
   import { BottomNav, BottomNavItem, Tooltip, Skeleton, ImagePlaceholder } from 'flowbite-svelte';
-  import { FilePlusSolid, BookmarkSolid, AngleLeftSolid, AngleRightSolid, AdjustmentsVerticalOutline, UserCircleSolid } from 'flowbite-svelte-icons';
+  import { FileCirclePlusOutline, BookmarkSolid, AngleLeftOutline, AngleRightOutline, AdjustmentsVerticalOutline, UserCircleSolid } from 'flowbite-svelte-icons';
 </script>
 
 <Skeleton class="py-4" />
@@ -232,32 +232,32 @@ This example be used to paginate multiple pages on a single view alongside other
 
 <BottomNav position="absolute" navType="pagination" classInner="grid-cols-6">
   <BottomNavItem btnName="New document">
-    <FilePlusSolid class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    <FileCirclePlusOutline class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
     <Tooltip arrow={false}>New document</Tooltip>
   </BottomNavItem>
   <BottomNavItem btnName="Bookmark">
-    <BookmarkSolid class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    <BookmarkSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
     <Tooltip arrow={false}>Bookmark</Tooltip>
   </BottomNavItem>
   <div class="flex items-center justify-center col-span-2">
     <div class="flex items-center justify-between w-full text-gray-600 dark:text-gray-400 bg-gray-100 rounded-lg dark:bg-gray-600 max-w-[128px] mx-2">
       <button type="button" class="inline-flex items-center justify-center h-8 px-1 bg-gray-100 rounded-s-lg dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-800">
-        <AngleLeftSolid class="w-2 h-2 ms-1" />
+        <AngleLeftOutline class="w-2 h-2 ms-1" />
         <span class="sr-only">Previous page</span>
       </button>
       <span class="flex-shrink-0 mx-1 text-sm font-medium">1 of 345</span>
       <button type="button" class="inline-flex items-center justify-center h-8 px-1 bg-gray-100 rounded-e-lg dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-800">
-        <AngleRightSolid class="w-2 h-2 me-1" />
+        <AngleRightOutline class="w-2 h-2 me-1" />
         <span class="sr-only">Next page</span>
       </button>
     </div>
   </div>
   <BottomNavItem btnName="Settings">
-    <AdjustmentsVerticalOutline class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    <AdjustmentsVerticalOutline class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
     <Tooltip arrow={false}>Settings</Tooltip>
   </BottomNavItem>
   <BottomNavItem btnName="Profile">
-    <UserCircleSolid class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    <UserCircleSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
     <Tooltip arrow={false}>Profile</Tooltip>
   </BottomNavItem>
 </BottomNav>
@@ -268,7 +268,7 @@ This example be used to paginate multiple pages on a single view alongside other
 ```svelte example class="flex flex-col relative"
 <script>
   import { BottomNav, BottomNavItem, BottomNavHeader, BottomNavHeaderItem, Tooltip, Skeleton, ImagePlaceholder } from 'flowbite-svelte';
-  import { HomeSolid, BookmarkSolid, PlusSolid, SearchOutline,  AdjustmentsVerticalOutline } from 'flowbite-svelte-icons';
+  import { HomeSolid, BookmarkSolid, PlusOutline, SearchOutline,  AdjustmentsVerticalOutline } from 'flowbite-svelte-icons';
 </script>
 
 <Skeleton class="py-4" />
@@ -281,23 +281,23 @@ This example be used to paginate multiple pages on a single view alongside other
     <BottomNavHeaderItem itemName="Following" />
   </BottomNavHeader>
   <BottomNavItem btnName="Home" id="group-home">
-    <HomeSolid class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    <HomeSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
     <Tooltip arrow={false}>Home</Tooltip>
   </BottomNavItem>
   <BottomNavItem btnName="Bookmark" id="group-bookmark">
-    <BookmarkSolid class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    <BookmarkSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
     <Tooltip arrow={false}>Bookmark</Tooltip>
   </BottomNavItem>
   <BottomNavItem btnName="New post" id="group-new">
-    <PlusSolid class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    <PlusOutline class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
     <Tooltip arrow={false}>New Post</Tooltip>
   </BottomNavItem>
   <BottomNavItem btnName="Search" id="group-search">
-    <SearchOutline class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    <SearchOutline class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
     <Tooltip arrow={false}>Search</Tooltip>
   </BottomNavItem>
   <BottomNavItem btnName="Settings" id="group-settings">
-    <AdjustmentsVerticalOutline class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    <AdjustmentsVerticalOutline class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
     <Tooltip arrow={false}>Settings</Tooltip>
   </BottomNavItem>
 </BottomNav>
@@ -312,7 +312,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
 ```svelte example class="flex justify-center"
 <script>
   import { BottomNav, BottomNavItem, Card, Listgroup, Avatar } from 'flowbite-svelte';
-  import { ClockSolid, UserGroupSolid, StarSolid } from 'flowbite-svelte-icons';
+  import { ClockSolid, UsersGroupOutline, StarSolid } from 'flowbite-svelte-icons';
   let list = [
     {
       img: { src: '/images/profile-picture-1.webp', alt: 'Neil Sims' },
@@ -354,13 +354,13 @@ You can even use the other bottom navbar examples to exchange the default one pr
   </Listgroup>
   <BottomNav position="sticky" navType="card" classInner="grid-cols-3 pt-2 pb-4">
     <BottomNavItem btnName="Latest" id="card-latest">
-      <ClockSolid class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+      <ClockSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
     </BottomNavItem>
     <BottomNavItem btnName="Following" id="card-following">
-      <UserGroupSolid class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+      <UsersGroupOutline class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
     </BottomNavItem>
     <BottomNavItem btnName="Favorites" id="card-favorites">
-      <StarSolid class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+      <StarSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
     </BottomNavItem>
   </BottomNav>
 </Card>

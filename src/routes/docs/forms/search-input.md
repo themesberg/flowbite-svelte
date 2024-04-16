@@ -51,7 +51,7 @@ Use the simplest form of a search input component with an icon and a search butt
 <form class="flex gap-2">
   <Search size="md" />
   <Button class="!p-2.5">
-    <SearchOutline class="w-5 h-5" />
+    <SearchOutline class="w-6 h-6" />
   </Button>
 </form>
 ```
@@ -63,7 +63,7 @@ Use this search component with a dropdown to let your users select a category in
 ```svelte example class="flex flex-col gap-4 h-72"
 <script>
   import { Search, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
-  import { SearchOutline, ChevronDownSolid } from 'flowbite-svelte-icons';
+  import { SearchOutline, ChevronDownOutline } from 'flowbite-svelte-icons';
 
   const items = [
     {
@@ -91,7 +91,7 @@ Use this search component with a dropdown to let your users select a category in
   <div class="relative">
     <Button class="rounded-e-none whitespace-nowrap border border-e-0 border-primary-700">
       {selectCategory}
-      <ChevronDownSolid class="w-2.5 h-2.5 ms-2.5" />
+      <ChevronDownOutline class="w-2.5 h-2.5 ms-2.5" />
     </Button>
     <Dropdown classContainer="w-40">
       {#each items as { label }}
@@ -108,7 +108,7 @@ Use this search component with a dropdown to let your users select a category in
   </div>
   <Search size="md" class="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
   <Button class="!p-2.5 rounded-s-none">
-    <SearchOutline class="w-5 h-5" />
+    <SearchOutline class="w-6 h-6" />
   </Button>
 </form>
 ```
@@ -120,7 +120,7 @@ Use this example where you can select a country in which you want to search for 
 ```svelte example class="flex flex-col gap-4 h-72"
 <script>
   import { Search, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
-  import { SearchOutline, ChevronDownSolid } from 'flowbite-svelte-icons';
+  import { SearchOutline, ChevronDownOutline } from 'flowbite-svelte-icons';
 
   const countries = [
     {
@@ -156,7 +156,7 @@ Use this example where you can select a country in which you want to search for 
     <Button class="rounded-e-none whitespace-nowrap border border-e-0 border-primary-700">
       <img class="h-3.5 w-3.5 rounded-full me-2" src={buttonLabel.icon} alt={buttonLabel.label}>
       {buttonLabel.labelSelected}
-      <ChevronDownSolid class="w-2.5 h-2.5 ms-2.5" />
+      <ChevronDownOutline class="w-2.5 h-2.5 ms-2.5" />
     </Button>
     <Dropdown classContainer="w-40">
       {#each countries as country}
@@ -174,7 +174,7 @@ Use this example where you can select a country in which you want to search for 
   </div>
   <Search size="md" class="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
   <Button class="!p-2.5 rounded-s-none">
-    <SearchOutline class="w-5 h-5" />
+    <SearchOutline class="w-6 h-6" />
   </Button>
 </form>
 ```
@@ -195,11 +195,11 @@ Get started with this example if you would like to enable voice search for your 
 <form class="flex gap-2">
   <Search size="md" class="flex gap-2 items-center" placeholder="Search Mockups, Logos, Design Templates...">
     <button type="button" on:click={handleVoiceBtn} class="outline-none">
-      <MicrophoneSolid class="w-4 h-4 me-2" />
+      <MicrophoneSolid class="w-5 h-5 me-2" />
     </button>
   </Search>
   <Button size="sm">
-    <SearchOutline class="w-5 h-5 me-2 -ms-1" />
+    <SearchOutline class="w-6 h-6 me-2 -ms-1" />
     Search
   </Button>
 </form>

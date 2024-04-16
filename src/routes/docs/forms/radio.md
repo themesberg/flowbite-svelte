@@ -177,11 +177,11 @@ Here’s an example of a list group that you can use right away.
 ```svelte example class="flex justify-center items-start h-80"
 <script>
   import { Radio, Dropdown, Button, Helper } from 'flowbite-svelte';
-  import { ChevronDownSolid } from 'flowbite-svelte-icons';
+  import { ChevronDownOutline } from 'flowbite-svelte-icons';
   let group3 = 2;
 </script>
 
-<Button>Dropdown radio<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
+<Button>Dropdown radio<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
 <Dropdown class="w-60">
   <ul class="p-2">
     <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
@@ -269,7 +269,7 @@ Use this example of an advanced layout of radio elements where the label parent 
         <div class="w-full text-lg font-semibold">0-50 MB</div>
         <div class="w-full">Good for small websites</div>
       </div>
-      <ArrowRightOutline class="ms-3 w-6 h-6" />
+      <ArrowRightOutline class="ms-3 w-10 h-10" />
     </div>
   </Radio>
   <Radio name="custom" custom>
@@ -278,7 +278,7 @@ Use this example of an advanced layout of radio elements where the label parent 
         <div class="w-full text-lg font-semibold">500-1000 MB</div>
         <div class="w-full">Good for large websites</div>
       </div>
-      <ArrowRightOutline class="ms-3 w-6 h-6" />
+      <ArrowRightOutline class="ms-3 w-10 h-10" />
     </div>
   </Radio>
 </div>
@@ -293,21 +293,21 @@ This component accepts all props from the [Button](/docs/components/buttons) for
 ```svelte example class="space-y-4"
 <script>
   import { RadioButton, ButtonGroup } from 'flowbite-svelte';
-  import { ListMusicSolid, ListOrdoredSolid, ListSolid } from 'flowbite-svelte-icons';
+  import { ListMusicSolid, OrderedListOutline, ListOutline } from 'flowbite-svelte-icons';
 
   let radioGroup = "notes";
 </script>
 
 <div>
-  <RadioButton value={"notes"} bind:group={radioGroup}><ListMusicSolid /></RadioButton>
-  <RadioButton value={"numbers"} bind:group={radioGroup}><ListOrdoredSolid /></RadioButton>
-  <RadioButton value={"bullets"} bind:group={radioGroup}><ListSolid /></RadioButton>
+  <RadioButton value={"notes"} bind:group={radioGroup}><ListMusicSolid class="w-7 h-7" /></RadioButton>
+  <RadioButton value={"numbers"} bind:group={radioGroup}><OrderedListOutline class="w-7 h-7"/></RadioButton>
+  <RadioButton value={"bullets"} bind:group={radioGroup}><ListOutline class="w-7 h-7"/></RadioButton>
 </div>
 
 <ButtonGroup>
-  <RadioButton value={"notes"} bind:group={radioGroup}><ListMusicSolid /></RadioButton>
-  <RadioButton value={"numbers"} bind:group={radioGroup}><ListOrdoredSolid /></RadioButton>
-  <RadioButton value={"bullets"} bind:group={radioGroup}><ListSolid /></RadioButton>
+  <RadioButton value={"notes"} bind:group={radioGroup}><ListMusicSolid class="w-7 h-7"/></RadioButton>
+  <RadioButton value={"numbers"} bind:group={radioGroup}><OrderedListOutline class="w-7 h-7"/></RadioButton>
+  <RadioButton value={"bullets"} bind:group={radioGroup}><ListOutline class="w-7 h-7"/></RadioButton>
 </ButtonGroup>
 
 <p>List style: {radioGroup}</p>

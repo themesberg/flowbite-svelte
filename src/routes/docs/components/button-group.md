@@ -108,15 +108,15 @@ You can also use SVG icons inside the grouped buttons.
 
 <ButtonGroup>
   <Button>
-    <UserCircleSolid class="w-3 h-3 me-2" />
+    <UserCircleSolid class="w-4 h-4 me-2" />
     Profile
   </Button>
   <Button>
-    <AdjustmentsVerticalOutline class="w-3 h-3 me-2" />
+    <AdjustmentsVerticalOutline class="w-4 h-4 me-2" />
     Settings
   </Button>
   <Button>
-    <DownloadSolid class="w-3 h-3 me-2" />
+    <DownloadSolid class="w-4 h-4 me-2" />
     Download
   </Button>
 </ButtonGroup>
@@ -150,15 +150,15 @@ Group a series of buttons together on a single line or stack them in a vertical 
 
 <ButtonGroup>
   <Button outline color="dark">
-    <UserCircleSolid class="w-3 h-3 me-2" />
+    <UserCircleSolid class="w-4 h-4 me-2" />
     Profile
   </Button>
   <Button outline color="dark">
-    <AdjustmentsVerticalOutline class="w-3 h-3 me-2" />
+    <AdjustmentsVerticalOutline class="w-4 h-4 me-2" />
     Settings
   </Button>
   <Button outline color="dark">
-    <DownloadSolid class="w-3 h-3 me-2" />
+    <DownloadSolid class="w-4 h-4 me-2" />
     Download
   </Button>
 </ButtonGroup>
