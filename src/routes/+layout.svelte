@@ -1,13 +1,25 @@
 
 <script>
+  import { RunesMetaTags, deepMerge } from 'runes-meta-tags';
+  import { page } from '$app/stores';
   import '../app.pcss';
-  let { children, data } = $props();
+  
   import Nav from './utils/Nav.svelte';
   import Footer from './utils/Footer.svelte';
   import Sidemenu from './utils/Sidemenu.svelte';
-  import MetaTag from './utils/MetaTag.svelte';
+
+  let { children, data } = $props();
+
   const analytics = data.ANALYTICS_ID
+  let metaTags = $state(
+    $page.data.pageMetaTags
+      ? deepMerge($page.data.layoutMetaTags, $page.data.pageMetaTags)
+      : data.layoutMetaTags
+  );
+
   $effect(() => {
+    metaTags = $page.data.pageMetaTags ? deepMerge($page.data.layoutMetaTags, $page.data.pageMetaTags ) : data.layoutMetaTags
+
     const script = document.createElement('script');
     script.innerHTML = `
       window.dataLayer = window.dataLayer || [];
@@ -21,7 +33,9 @@
 <svelte:head>
   <script async src="https://www.googletagmanager.com/gtag/js?id={analytics}"></script>
 </svelte:head>
-<MetaTag />
+
+<RunesMetaTags {...metaTags}/>
+
 <Nav />
 <div class="lg:flex">
   <Sidemenu />

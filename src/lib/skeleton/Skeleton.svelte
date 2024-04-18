@@ -22,13 +22,13 @@
 </script>
 
 <div role="status" class={outDivcls}>
-  <div class="mb-4 h-2.5 w-1/2 rounded-full bg-gray-200 dark:bg-gray-700" />
-  <div class="mb-2.5 h-2 w-9/12 rounded-full bg-gray-200 dark:bg-gray-700" />
-  <div class="mb-2.5 h-2 rounded-full bg-gray-200 dark:bg-gray-700" />
-  <div class="mb-2.5 h-2 rounded-full bg-gray-200 dark:bg-gray-700" />
-  <div class="mb-2.5 h-2 w-10/12 rounded-full bg-gray-200 dark:bg-gray-700" />
-  <div class="mb-2.5 h-2 w-11/12 rounded-full bg-gray-200 dark:bg-gray-700" />
-  <div class="h-2 w-9/12 rounded-full bg-gray-200 dark:bg-gray-700" />
+  <div class="mb-4 h-2.5 w-1/2 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+  <div class="mb-2.5 h-2 w-9/12 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+  <div class="mb-2.5 h-2 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+  <div class="mb-2.5 h-2 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+  <div class="mb-2.5 h-2 w-10/12 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+  <div class="mb-2.5 h-2 w-11/12 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+  <div class="h-2 w-9/12 rounded-full bg-gray-200 dark:bg-gray-700"></div>
   <span class="sr-only">Loading...</span>
 </div>
 

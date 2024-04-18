@@ -23,34 +23,34 @@
 
 <div role="status" class={outDivcls}>
   <div class="flex w-full items-center space-x-2 rtl:space-x-reverse">
-    <div class="h-2.5 w-32 rounded-full bg-gray-200 dark:bg-gray-700" />
-    <div class="h-2.5 w-24 rounded-full bg-gray-300 dark:bg-gray-600" />
-    <div class="h-2.5 w-full rounded-full bg-gray-300 dark:bg-gray-600" />
+    <div class="h-2.5 w-32 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+    <div class="h-2.5 w-24 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+    <div class="h-2.5 w-full rounded-full bg-gray-300 dark:bg-gray-600"></div>
   </div>
   <div class="flex w-11/12 items-center space-x-2 rtl:space-x-reverse">
-    <div class="h-2.5 w-full rounded-full bg-gray-200 dark:bg-gray-700" />
-    <div class="h-2.5 w-full rounded-full bg-gray-300 dark:bg-gray-600" />
-    <div class="h-2.5 w-24 rounded-full bg-gray-300 dark:bg-gray-600" />
+    <div class="h-2.5 w-full rounded-full bg-gray-200 dark:bg-gray-700"></div>
+    <div class="h-2.5 w-full rounded-full bg-gray-300 dark:bg-gray-600"></div>
+    <div class="h-2.5 w-24 rounded-full bg-gray-300 dark:bg-gray-600"></div>
   </div>
   <div class="flex w-9/12 items-center space-x-2 rtl:space-x-reverse">
-    <div class="h-2.5 w-full rounded-full bg-gray-300 dark:bg-gray-600" />
-    <div class="h-2.5 w-80 rounded-full bg-gray-200 dark:bg-gray-700" />
-    <div class="h-2.5 w-full rounded-full bg-gray-300 dark:bg-gray-600" />
+    <div class="h-2.5 w-full rounded-full bg-gray-300 dark:bg-gray-600"></div>
+    <div class="h-2.5 w-80 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+    <div class="h-2.5 w-full rounded-full bg-gray-300 dark:bg-gray-600"></div>
   </div>
   <div class="flex w-11/12 items-center space-x-2 rtl:space-x-reverse">
-    <div class="h-2.5 w-full rounded-full bg-gray-200 dark:bg-gray-700" />
-    <div class="h-2.5 w-full rounded-full bg-gray-300 dark:bg-gray-600" />
-    <div class="h-2.5 w-24 rounded-full bg-gray-300 dark:bg-gray-600" />
+    <div class="h-2.5 w-full rounded-full bg-gray-200 dark:bg-gray-700"></div>
+    <div class="h-2.5 w-full rounded-full bg-gray-300 dark:bg-gray-600"></div>
+    <div class="h-2.5 w-24 rounded-full bg-gray-300 dark:bg-gray-600"></div>
   </div>
   <div class="flex w-10/12 items-center space-x-2 rtl:space-x-reverse">
-    <div class="h-2.5 w-32 rounded-full bg-gray-300 dark:bg-gray-600" />
-    <div class="h-2.5 w-24 rounded-full bg-gray-300 dark:bg-gray-600" />
-    <div class="h-2.5 w-full rounded-full bg-gray-200 dark:bg-gray-700" />
+    <div class="h-2.5 w-32 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+    <div class="h-2.5 w-24 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+    <div class="h-2.5 w-full rounded-full bg-gray-200 dark:bg-gray-700"></div>
   </div>
   <div class="flex w-8/12 items-center space-x-2 rtl:space-x-reverse">
-    <div class="h-2.5 w-full rounded-full bg-gray-300 dark:bg-gray-600" />
-    <div class="h-2.5 w-80 rounded-full bg-gray-200 dark:bg-gray-700" />
-    <div class="h-2.5 w-full rounded-full bg-gray-300 dark:bg-gray-600" />
+    <div class="h-2.5 w-full rounded-full bg-gray-300 dark:bg-gray-600"></div>
+    <div class="h-2.5 w-80 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+    <div class="h-2.5 w-full rounded-full bg-gray-300 dark:bg-gray-600"></div>
   </div>
   <span class="sr-only">Loading...</span>
 </div>

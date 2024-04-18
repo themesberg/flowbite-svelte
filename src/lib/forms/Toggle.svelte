@@ -66,7 +66,7 @@
 </script>
 
 <Checkbox custom {...attributes} {value} bind:checked>
-  <span class={divClass} />
+  <span class={divClass} ></span>
 
     {@render children()}
 

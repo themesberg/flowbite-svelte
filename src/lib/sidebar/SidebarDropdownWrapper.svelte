@@ -80,7 +80,7 @@
 <li>
   <button
     {...attributes}
-    on:click={() => handleDropdown()}
+    onclick={() => handleDropdown()}
     type="button"
     class={btnCls}
     aria-controls="sidebar-dropdown"

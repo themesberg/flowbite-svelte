@@ -33,17 +33,17 @@
     'relative mx-auto bg-gray-800 dark:bg-gray-700 rounded-b-[2.5rem] h-[63px] max-w-[133px]';
 </script>
 
-<div class={twMerge(div, divclass)} />
+<div class={twMerge(div, divclass)}></div>
 <div class={twMerge(top, div2class)}>
-  <div class={twMerge(rightTop, div3class)} />
-  <div class={twMerge(rightBot, div4class)} />
+  <div class={twMerge(rightTop, div3class)}></div>
+  <div class={twMerge(rightBot, div4class)}></div>
   <div class={twMerge(slot, div5class)}>
     {#if children}
       {@render children()}
     {/if}
   </div>
 </div>
-<div class={twMerge(bot, div6class)} />
+<div class={twMerge(bot, div6class)}></div>
 
 <!--
 @component

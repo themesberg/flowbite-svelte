@@ -29,7 +29,7 @@
 </div>
 
 <div class={twMerge(bot, div3class)}>
-  <div class={twMerge(botCen, div4class)} />
+  <div class={twMerge(botCen, div4class)} ></div>
 </div>
 
 <!--

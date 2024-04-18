@@ -97,7 +97,7 @@
 </div>
 
 
-<div role="presentation" class={backdropDivClass} onclick={closeDropdown} />
+<div role="presentation" class={backdropDivClass} onclick={closeDropdown} ></div>
 {/if}
 
 <!--

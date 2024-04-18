@@ -90,7 +90,7 @@
     <div
       class={twJoin(barColors[color], size, 'rounded-full', div2class)}
       style="width: {$_progress}%"
-    />
+      ></div>
   {/if}
 </div>
 

@@ -38,7 +38,7 @@
   this={onclick ? 'button' : 'td'}
   {...attributes}
   class={tdCls}
-  on:click
+  onclick={onclick}
   role={onclick ? 'button' : undefined}
 >
   {#if children}

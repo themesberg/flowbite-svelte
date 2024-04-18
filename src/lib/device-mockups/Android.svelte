@@ -40,11 +40,11 @@
 </script>
 
 <div class={twMerge(div, divclass)}>
-  <div class={twMerge(top, div2class)} />
-  <div class={twMerge(leftTop, div3class)} />
-  <div class={twMerge(leftMid, div4class)} />
-  <div class={twMerge(leftBot, div5class)} />
-  <div class={twMerge(right, div6class)} />
+  <div class={twMerge(top, div2class)}></div>
+  <div class={twMerge(leftTop, div3class)}></div>
+  <div class={twMerge(leftMid, div4class)}></div>
+  <div class={twMerge(leftBot, div5class)}></div>
+  <div class={twMerge(right, div6class)} ></div>
   <div class={twMerge(slot, div7class)}>
     {#if children}
       {@render children()}

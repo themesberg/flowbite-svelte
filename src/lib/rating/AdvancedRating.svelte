@@ -50,7 +50,7 @@
   <div class={divCls}>
     <span class={spanCls}>{label}</span>
     <div class={div2Cls}>
-      <div class={div3Cls} style="width: {rating}%" />
+      <div class={div3Cls} style="width: {rating}%" ></div>
     </div>
     <span class={span2Cls}>{rating}{unit}</span>
   </div>

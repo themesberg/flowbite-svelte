@@ -34,7 +34,7 @@
       <p class={desc2Cls}>{headerLabel.desc2}</p>
     {/if}
     {#if headerLabel.desc3}
-      <span class={desc3spanCls} />
+      <span class={desc3spanCls}></span>
       <p class={desc3pCls}>{headerLabel.desc3}</p>
     {/if}
     {#if headerLabel.link}
@@ -53,7 +53,7 @@
           </dt>
           <dd class="mb-3 flex items-center">
             <div class="me-2 h-2.5 w-full rounded bg-gray-200 dark:bg-gray-700">
-              <div class={barColor} style="width: {rating * 10}%" />
+              <div class={barColor} style="width: {rating * 10}%" ></div>
             </div>
             <span class="text-sm font-medium text-gray-500 dark:text-gray-400"
               >{rating}</span
@@ -72,7 +72,7 @@
           </dt>
           <dd class="mb-3 flex items-center">
             <div class="me-2 h-2.5 w-full rounded bg-gray-200 dark:bg-gray-700">
-              <div class={barColor} style="width: {rating * 10}%" />
+              <div class={barColor} style="width: {rating * 10}%" ></div>
             </div>
             <span class="text-sm font-medium text-gray-500 dark:text-gray-400"
               >{rating}</span

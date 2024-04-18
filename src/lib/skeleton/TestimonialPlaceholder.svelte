@@ -10,10 +10,10 @@
 <div role="status" class={divCls}>
   <div
     class="mx-auto mb-2.5 h-2.5 max-w-[640px] rounded-full bg-gray-300 dark:bg-gray-700"
-  />
+  ></div>
   <div
     class="mx-auto h-2.5 max-w-[540px] rounded-full bg-gray-300 dark:bg-gray-700"
-  />
+    ></div>
   <div class="mt-4 flex items-center justify-center">
     <svg
       class="me-2 h-10 w-10 text-gray-200 dark:text-gray-700"
@@ -28,8 +28,8 @@
         clip-rule="evenodd"
       />
     </svg>
-    <div class="me-3 h-2.5 w-20 rounded-full bg-gray-200 dark:bg-gray-700" />
-    <div class="h-2 w-24 rounded-full bg-gray-200 dark:bg-gray-700" />
+    <div class="me-3 h-2.5 w-20 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+    <div class="h-2 w-24 rounded-full bg-gray-200 dark:bg-gray-700"></div>
   </div>
   <span class="sr-only">Loading...</span>
 </div>

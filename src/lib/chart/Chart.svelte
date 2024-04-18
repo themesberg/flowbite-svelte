@@ -33,7 +33,7 @@
   }
 </script>
 
-<div use:initChart={options} class={classname} />
+<div use:initChart={options} class={classname}></div>
 
 <!--
 @component

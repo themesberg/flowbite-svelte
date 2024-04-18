@@ -69,9 +69,9 @@
   {@render children()}
 </ul>
 {#if divider}
-    <div class="h-px bg-gray-200 dark:bg-gray-700" />
+    <div class="h-px bg-gray-200 dark:bg-gray-700" ></div>
 {/if}
-<div class={contentCls} role="tabpanel" aria-labelledby="id-tab" use:init />
+<div class={contentCls} role="tabpanel" aria-labelledby="id-tab" use:init></div>
 
 <!--
 @component

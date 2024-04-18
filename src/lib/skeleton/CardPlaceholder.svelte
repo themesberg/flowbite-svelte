@@ -43,10 +43,10 @@
       />
     </svg>
   </div>
-  <div class="mb-4 h-2.5 w-1/2 rounded-full bg-gray-200 dark:bg-gray-700" />
-  <div class="mb-2.5 h-2 rounded-full bg-gray-200 dark:bg-gray-700" />
-  <div class="mb-2.5 h-2 rounded-full bg-gray-200 dark:bg-gray-700" />
-  <div class="h-2 rounded-full bg-gray-200 dark:bg-gray-700" />
+  <div class="mb-4 h-2.5 w-1/2 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+  <div class="mb-2.5 h-2 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+  <div class="mb-2.5 h-2 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+  <div class="h-2 rounded-full bg-gray-200 dark:bg-gray-700"></div>
   <div class="mt-4 flex items-center space-x-3 rtl:space-x-reverse">
     <svg
       class="h-14 w-14 text-gray-200 dark:text-gray-700"
@@ -62,8 +62,8 @@
       />
     </svg>
     <div>
-      <div class="mb-2 h-2.5 w-32 rounded-full bg-gray-200 dark:bg-gray-700" />
-      <div class="h-2 w-48 rounded-full bg-gray-200 dark:bg-gray-700" />
+      <div class="mb-2 h-2.5 w-32 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+      <div class="h-2 w-48 rounded-full bg-gray-200 dark:bg-gray-700"></div>
     </div>
   </div>
   <span class="sr-only">Loading...</span>

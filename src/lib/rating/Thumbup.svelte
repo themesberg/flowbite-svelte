@@ -10,6 +10,7 @@
     id?: string;
     role?: string;
     svgclass?: string;
+    onclick?: () => void;
   }
 
   let {
@@ -21,6 +22,7 @@
     id = idGenerator(),
     role = 'img',
     svgclass,
+    onclick,
     ...attributes
   }: Props = $props();
 </script>
@@ -36,7 +38,7 @@
   stroke-width="1.5"
   stroke="currentColor"
   fill="none"
-  on:click
+  onclick={onclick}
 >
   <defs>
     <linearGradient {id}>

@@ -15,6 +15,9 @@
     size?: 'sm' | 'md' | 'lg';
     selectclass?: string | undefined;
     underlineClass?: string | undefined;
+    onchange?: () => void;
+    oninput?: () => void;
+    oncontextmenu?: () => void;
   }
 
   let {
@@ -26,6 +29,9 @@
     size = 'md',
     selectclass,
     underlineClass,
+    onchange,
+    oninput,
+    oncontextmenu,
     ...attributes
   }: Props = $props();
   let defaultCls: string =
@@ -58,9 +64,9 @@
   {...attributes}
   bind:value
   class={selectCls}
-  on:change
-  on:contextmenu
-  on:input
+  onchange={onchange}
+  oncontextmenu={oncontextmenu}
+  oninput={oninput}
 >
   {#if placeholder}
     <option disabled selected value="">{placeholder}</option>

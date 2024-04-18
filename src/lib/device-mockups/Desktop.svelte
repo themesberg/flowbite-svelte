@@ -27,8 +27,8 @@
     {/if}
   </div>
 </div>
-<div class={twMerge(bot, div3class)} />
-<div class={twMerge(botUnder, div4class)} />
+<div class={twMerge(bot, div3class)} ></div>
+<div class={twMerge(botUnder, div4class)} ></div>
 
 <!--
 @component
