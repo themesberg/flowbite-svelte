@@ -58,7 +58,7 @@ pnpm dev
 Run the following command to install all Flowbite dependencies and libraries:
 
 ```sh
-pnpm i -D flowbite-svelte flowbite
+pnpm i -D flowbite-svelte flowbite flowbite-svelte-icons
 ```
 
 ### Configuration
