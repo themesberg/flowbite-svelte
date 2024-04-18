@@ -18,8 +18,6 @@
   let isHomePage: boolean;
   $: isHomePage = $page.route.id === '/';
 
-  let version = import.meta.env.VITE_APP_VERSION;
-
   $: activeUrl = $page.url.pathname;
   let logo = '/images/flowbite-svelte-icon-logo.svg';
   let divClass = 'w-full ms-auto lg:block lg:w-auto order-1 lg:order-none';
@@ -86,7 +84,7 @@
     </div>
     <a href="https://www.npmjs.com/package/flowbite-svelte" class="hidden sm:block">
       <DocBadge large class="ms-2 xl:ms-6 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-800 dark:hover:text-white">
-        v{version}
+        v{__VERSION__}
       </DocBadge>
     </a>
 
