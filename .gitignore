@@ -5,6 +5,10 @@ node_modules
 /package
 /dist
 
+.env
+.env.*
+!.env.example
+
 .vercel
 .vscode/
 
