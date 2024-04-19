@@ -63,7 +63,7 @@
     {#if helpfullink || abuselink}
       <div class="flex items-center mt-3 space-x-3 rtl:space-x-reverse divide-x rtl:divide-x-reverse divide-gray-200 dark:divide-gray-600">
         {#if helpfullink}
-          <Button size="xs" href="/" color="dark">Helpful</Button>
+          <Button size="xs" href={helpfullink} color="dark">Helpful</Button>
         {/if}
         {#if abuselink}
           <a href={abuselink} class="ps-4 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"> Report abuse </a>
