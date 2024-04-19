@@ -2,7 +2,8 @@
   import { browser } from '$app/environment';
   import { onMount } from 'svelte';
   import docsearch from '@docsearch/js';
-
+  import '@docsearch/css';
+  
   let searchContainer: HTMLElement;
 
   onMount(() => {

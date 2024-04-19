@@ -22,6 +22,9 @@ devDependencies:
   '@changesets/cli':
     specifier: ^2.27.1
     version: 2.27.1
+  '@docsearch/css':
+    specifier: '3'
+    version: 3.6.0
   '@docsearch/js':
     specifier: ^3.6.0
     version: 3.6.0(@algolia/client-search@4.23.3)(search-insights@2.13.0)
