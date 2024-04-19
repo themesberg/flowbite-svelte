@@ -72,7 +72,7 @@
     "vitest": "^1.5.0"
   },
   "peerDependencies": {
-    "svelte": "^4.0.0"
+    "svelte": "^3.55.1 || ^4.0.0"
   },
   "type": "module",
   "keywords": [
