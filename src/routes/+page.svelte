@@ -26,7 +26,7 @@
 >
 
 <p>
-  Svelte 5 UI Lib is a UI library crafted for Svelte 5 Runes. Explore our
+  Svelte 5 UI Lib is a UI library for Svelte 5 Runes. Explore our
   collection featuring over 36 components.
 </p>
 

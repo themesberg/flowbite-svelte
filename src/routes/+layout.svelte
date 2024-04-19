@@ -1,6 +1,7 @@
 
 <script>
   import { RunesMetaTags, deepMerge } from 'runes-meta-tags';
+  import { Runatics } from 'runatics'
   import { page } from '$app/stores';
   import '../app.pcss';
   
@@ -10,7 +11,8 @@
 
   let { children, data } = $props();
 
-  const analytics = data.ANALYTICS_ID
+  const analyticsId = data.ANALYTICS_ID
+  // meta tags
   let metaTags = $state(
     $page.data.pageMetaTags
       ? deepMerge($page.data.layoutMetaTags, $page.data.pageMetaTags)
@@ -19,22 +21,11 @@
 
   $effect(() => {
     metaTags = $page.data.pageMetaTags ? deepMerge($page.data.layoutMetaTags, $page.data.pageMetaTags ) : data.layoutMetaTags
-
-    const script = document.createElement('script');
-    script.innerHTML = `
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', '${analytics}');
-      `;
-      document.head.appendChild(script);
-    })
+  })
 </script>
-<svelte:head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id={analytics}"></script>
-</svelte:head>
 
 <RunesMetaTags {...metaTags}/>
+<Runatics {analyticsId} />
 
 <Nav />
 <div class="lg:flex">

@@ -79,6 +79,9 @@ devDependencies:
   publint:
     specifier: ^0.2.7
     version: 0.2.7
+  runatics:
+    specifier: ^0.1.3
+    version: 0.1.3(svelte@5.0.0-next.108)
   runes-meta-tags:
     specifier: ^0.2.4
     version: 0.2.4(svelte@5.0.0-next.108)
@@ -3560,6 +3563,14 @@ packages:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
     dependencies:
       queue-microtask: 1.2.3
+    dev: true
+
+  /runatics@0.1.3(svelte@5.0.0-next.108):
+    resolution: {integrity: sha512-iUZqtI4F8fz9l40XHW8XdvNr9lfKd+XMNNgB8JRxRnWQJCRZ5gKI4QJKkOaOc7Wdbd0nAoDVNnSbHfXYPtl/ZA==}
+    peerDependencies:
+      svelte: ^5.0.0
+    dependencies:
+      svelte: 5.0.0-next.108
     dev: true
 
   /runes-meta-tags@0.2.4(svelte@5.0.0-next.108):
