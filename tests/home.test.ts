@@ -6,11 +6,11 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('index page has expected h1', async ({ page }) => {
-	await expect(page.getByRole('heading', { name: 'Svelte 5 UI Lib', level: 1 })).toBeVisible();
+	await expect(page.getByRole('heading', { name: 'Svelte 5 Ui Lib', level: 1 })).toBeVisible();
 });
 
 test('index page has expected meta title', async ({ page }) => {
-  await expect(page).toHaveTitle('Svelte 5 UI Lib');
+  await expect(page).toHaveTitle('Svelte 5 Ui Lib');
 });
 
 test('index page has expected meta description', async ({ page }) => {
@@ -25,7 +25,7 @@ test('index page has expected meta keywords', async ({ page }) => {
 
 test('index page has expected meta og', async ({ page }) => {
   const metaOgTitle = page.locator('meta[property="og:title"]');
-  await expect(metaOgTitle).toHaveAttribute('content', 'Svelte 5 UI Lib');
+  await expect(metaOgTitle).toHaveAttribute('content', 'Svelte 5 Ui Lib');
   const metaOgDescription = page.locator('meta[property="og:description"]');
   await expect(metaOgDescription).toHaveAttribute('content', 'A UI library for Svelte 5 Runes.');
   const metaOgUrl = page.locator('meta[property="og:url"]');
@@ -39,7 +39,7 @@ test('index page has expected meta og', async ({ page }) => {
 
 test('index page has expected meta twitter', async ({ page }) => {
   const metaTwitterTitle = page.locator('meta[name="twitter:title"]');
-  await expect(metaTwitterTitle).toHaveAttribute('content', 'Svelte 5 UI Lib');
+  await expect(metaTwitterTitle).toHaveAttribute('content', 'Svelte 5 Ui Lib');
   const metaTwitterDescription = page.locator('meta[name="twitter:description"]');
   await expect(metaTwitterDescription).toHaveAttribute('content', 'A UI library for Svelte 5 Runes.');
   const metaTwitterImage = page.locator('meta[name="twitter:image"]');

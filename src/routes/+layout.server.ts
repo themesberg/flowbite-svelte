@@ -1,10 +1,10 @@
 import { ANALYTICS_ID } from '$env/static/private';
 import type { MetaProps } from 'runes-meta-tags';
-import {splitAndCapitalize} from './utils/helpers';
+import { splitAndCapitalize, removeHyphensAndCapitalize } from './utils/helpers';
 export const load = ({ url }) => {
-  let title = splitAndCapitalize(url.pathname) ? `${splitAndCapitalize(url.pathname)} - Svelte 5 UI Lib` : 'Svelte 5 UI Lib';
-  let description = splitAndCapitalize(url.pathname) ? `${splitAndCapitalize(url.pathname)} component for Svelte 5 Runes.` : 'A UI library for Svelte 5 Runes.';
-  let image = splitAndCapitalize(url.pathname) ? `https://open-graph-vercel.vercel.app/api/svelte-5-ui-lib?title=${splitAndCapitalize(url.pathname)}` : 'https://open-graph-vercel.vercel.app/api/svelte-5-ui-lib';
+  const title = splitAndCapitalize(url.pathname) ? `${splitAndCapitalize(url.pathname)} - ${removeHyphensAndCapitalize(__NAME__)}` : `${removeHyphensAndCapitalize(__NAME__)}`;
+  const description = splitAndCapitalize(url.pathname) ? `${splitAndCapitalize(url.pathname)} component for Svelte 5 Runes.` : 'A UI library for Svelte 5 Runes.';
+  const image = splitAndCapitalize(url.pathname) ? `https://open-graph-vercel.vercel.app/api/svelte-5-ui-lib?title=${splitAndCapitalize(url.pathname)}` : 'https://open-graph-vercel.vercel.app/api/svelte-5-ui-lib';
   // console.log('url: ', splitAndCapitalize(url.pathname));
   const layoutMetaTags: MetaProps = {
     title,

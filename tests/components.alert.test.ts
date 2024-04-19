@@ -10,7 +10,7 @@ test('alert page has expected h1', async ({ page }) => {
 });
 
 test('alert page has expected meta title', async ({ page }) => {
-  await expect(page).toHaveTitle('Alert - Svelte 5 UI Lib');
+  await expect(page).toHaveTitle('Alert - Svelte 5 Ui Lib');
 });
 
 test('alert page has expected meta description', async ({ page }) => {
@@ -25,7 +25,7 @@ test('alert page has expected meta keywords', async ({ page }) => {
 
 test('alert page has expected meta og', async ({ page }) => {
   const metaOgTitle = page.locator('meta[property="og:title"]');
-  await expect(metaOgTitle).toHaveAttribute('content', 'Alert - Svelte 5 UI Lib');
+  await expect(metaOgTitle).toHaveAttribute('content', 'Alert - Svelte 5 Ui Lib');
   const metaOgDescription = page.locator('meta[property="og:description"]');
   await expect(metaOgDescription).toHaveAttribute('content', 'Alert component for Svelte 5 Runes.');
   const metaOgUrl = page.locator('meta[property="og:url"]');
@@ -39,7 +39,7 @@ test('alert page has expected meta og', async ({ page }) => {
 
 test('alert page has expected meta twitter', async ({ page }) => {
   const metaTwitterTitle = page.locator('meta[name="twitter:title"]');
-  await expect(metaTwitterTitle).toHaveAttribute('content', 'Alert - Svelte 5 UI Lib');
+  await expect(metaTwitterTitle).toHaveAttribute('content', 'Alert - Svelte 5 Ui Lib');
   const metaTwitterDescription = page.locator('meta[name="twitter:description"]');
   await expect(metaTwitterDescription).toHaveAttribute('content', 'Alert component for Svelte 5 Runes.');
   const metaTwitterImage = page.locator('meta[name="twitter:image"]');
