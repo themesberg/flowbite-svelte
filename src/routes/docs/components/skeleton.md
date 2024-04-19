@@ -47,6 +47,7 @@ Use the skeleton component to indicate a loading status with placeholder element
 
 <ImagePlaceholder />
 <ImagePlaceholder imgHeight={60} class="mt-8" />
+<ImagePlaceholder imgOnly class="mt-8" />
 ```
 
 ## Video placeholder
