@@ -74,4 +74,5 @@
 @props:id?:  string; = idGenerator();
 @props:role?:  string; = 'img';
 @props:svgclass?: string;
+@props:onclick?: () => void;
 -->

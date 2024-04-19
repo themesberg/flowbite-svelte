@@ -93,4 +93,7 @@
 @props:size?:  'sm' | 'md' | 'lg'; = 'md';
 @props:selectclass?: string | undefined;
 @props:underlineClass?: string | undefined;
+@props:onchange?: () => void;
+@props:oninput?: () => void;
+@props:oncontextmenu?: () => void;
 -->

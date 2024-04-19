@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.10
+
+### Patch Changes
+
+- fix: add </div> for closing tag for svelte@5.0.0-next.108 ([`6b8a82f0b22f7767eb2f07ff4ccaba8fe584189b`](https://github.com/shinokada/svelte-5-ui-lib/commit/6b8a82f0b22f7767eb2f07ff4ccaba8fe584189b))
+  tests: add components.test.ts and home.test.ts
+  fix: update meta tags
+
 ## 0.4.9
 
 ### Patch Changes
