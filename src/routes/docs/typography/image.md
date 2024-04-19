@@ -10,7 +10,7 @@ thumnailSize: w-64
 
 <script>
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
-  import { A, Heading } from '$lib'
+  import { A, Heading, Badge } from '$lib'
 
   const components = 'Img'
 </script>
@@ -39,7 +39,7 @@ Use this example to show the a responsive image that won’t grow beyond the max
 
 ## Image caption
 
-This example can be used to add a caption for the image often used inside articles.
+This example can be used to add a caption for the image often used inside articles. <Badge large>Warning: the caption is using @html.</Badge>
 
 ```svelte example class="flex justify-center" hideScript
 <script>

@@ -10,6 +10,7 @@ thumbnailSize: w-64
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { Badge } from '$lib'
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -134,6 +135,8 @@ Use this horizontally aligned timeline component to show a series of data in a c
 
 This component can be used to show the timline of a user’s activity history inside your application by using an avatar, datetime, description, and links to specific pages.
 
+<Badge large>Warning: the ActivityItem title and text are using @html.</Badge>
+
 ```svelte example
 <script>
   import { Activity, ActivityItem } from 'flowbite-svelte';
@@ -168,6 +171,8 @@ This component can be used to show the timline of a user’s activity history in
 ## Grouped timeline
 
 Use this component to group multiple data entries inside a single date and show elements like the avatar, title, description, tag and link to a relevant page.
+
+<Badge large>Warning: the GroupItem title is using @html.</Badge>
 
 ```svelte example
 <script>
