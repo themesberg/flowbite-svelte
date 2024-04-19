@@ -145,4 +145,5 @@
 @prop export let shadow: boolean = false;
 @prop export let tag: string = 'button';
 @prop export let checked: boolean | undefined = undefined;
+@prop export let disabled: boolean = false;
 -->
