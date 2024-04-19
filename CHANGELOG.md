@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.45.1
+
+### Patch Changes
+
+- - 3eb228d3 fix: node from 20.0.0 to 18.0.0 in package.json engines ([`987f564b0e7cc62c68898fd5e0b73af96610c406`](https://github.com/themesberg/flowbite-svelte/commit/987f564b0e7cc62c68898fd5e0b73af96610c406))
+  - 0d9a9332 fix: adjust eslint configuration to eslint-plugin-svelte (previously used eslint-plugin-svelte3) (#1310)
+  - 191ca2e0 fix: add define to vite.config.ts for **VERSION**
+  - ad3d1c7f fix: move FATHOM_ID to .env and use FathomAnalytics.svelte
+  - 6011780a > Gitignore updated at 2024-04-18 06:10:47
+  - ba81e3bb fix: update gitignore
+
 ## 0.45.0
 
 ### Minor Changes
