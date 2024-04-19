@@ -12,7 +12,7 @@
   import { twMerge } from 'tailwind-merge';
   import { setContext } from 'svelte';
 
-  export let style: 'full' | 'pill' | 'underline' | 'none' = 'none';
+  export let tabStyle: 'full' | 'pill' | 'underline' | 'none' = 'none';
   export let defaultClass: string = 'flex flex-wrap space-x-2 rtl:space-x-reverse';
   export let contentClass: string = 'p-4 bg-gray-50 rounded-lg dark:bg-gray-800 mt-4';
   export let divider: boolean = true;
@@ -35,12 +35,12 @@
   };
 
   const ctx: TabCtxType = {
-    activeClasses: styledActiveClasses[style] || activeClasses,
-    inactiveClasses: styledInactiveClasses[style] || inactiveClasses,
+    activeClasses: styledActiveClasses[tabStyle] || activeClasses,
+    inactiveClasses: styledInactiveClasses[tabStyle] || inactiveClasses,
     selected: writable<HTMLElement>()
   };
 
-  $: divider = ['full', 'pill'].includes(style) ? false : divider;
+  $: divider = ['full', 'pill'].includes(tabStyle) ? false : divider;
 
   setContext('ctx', ctx);
 
@@ -52,11 +52,11 @@
     return { destroy };
   }
 
-  $: ulClass = twMerge(defaultClass, style === 'underline' && '-mb-px', $$props.class);
+  $: ulClass = twMerge(defaultClass, tabStyle === 'underline' && '-mb-px', $$props.class);
 </script>
 
 <ul class={ulClass}>
-  <slot {style} />
+  <slot {tabStyle} />
 </ul>
 {#if divider}
   <slot name="divider">
