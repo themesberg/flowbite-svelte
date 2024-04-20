@@ -8,7 +8,7 @@
   export let value: (string | number)[] = [];
   export let size: FormSizeType = 'md';
   export let dropdownClass: string = '';
-
+  export let placeholder: string = '';
   let selectItems: SelectOptionType<any>[] = items.filter((x) => value.includes(x.value));
   let show: boolean = false;
 
@@ -76,6 +76,9 @@
 </select>
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div on:click={() => (show = !show)} on:focusout={() => (show = false)} tabindex="-1" role="listbox" class={twMerge(multiSelectClass, sizes[size], $$props.class)}>
+  {#if !selectItems.length}
+    <span class="text-gray-400">{placeholder}</span>
+  {/if}
   <span class="flex gap-2 flex-wrap">
     {#if selectItems.length}
       {#each selectItems as item (item.name)}

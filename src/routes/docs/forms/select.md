@@ -219,6 +219,26 @@ Get started with the default toggle component example as a checkbox element to r
 <MultiSelect items={countries} bind:value={selected} size="lg" />
 ```
 
+### Placeholder
+
+```svelte example class="h-80"
+<script>
+  import { MultiSelect } from 'flowbite-svelte';
+
+  let placeholder = 'placeholder text';
+  let selected = [];
+  let countries = [
+    { value: 'us', name: 'United States' },
+    { value: 'ca', name: 'Canada' },
+    { value: 'fr', name: 'France' },
+    { value: 'jp', name: 'Japan' },
+    { value: 'en', name: 'England' }
+  ];
+</script>
+
+<MultiSelect items={countries} bind:value={selected} size="lg" placeholder={placeholder} />
+```
+
 ### Pre-select values
 
 ```svelte example class="h-96"
