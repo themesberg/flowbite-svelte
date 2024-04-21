@@ -92,7 +92,7 @@
   </span>
   <div class="flex ms-auto gap-2 items-center">
     {#if selectItems.length}
-      <CloseButton {size} on:click={clearAll} color="none" class="p-0 focus:ring-gray-400" />
+      <CloseButton {size} on:click={clearAll} color="none" class="p-0 focus:ring-gray-400 dark:text-white" />
     {/if}
     <div class="w-[1px] bg-gray-300 dark:bg-gray-600" />
     <svg class="cursor-pointer h-3 w-3 ms-1 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
