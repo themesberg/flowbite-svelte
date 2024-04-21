@@ -439,31 +439,25 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
 <script>
   import { Button, Dropdown, DropdownItem, Checkbox, Search } from 'flowbite-svelte';
   import { ChevronDownOutline, UserRemoveSolid } from 'flowbite-svelte-icons';
+  let searchTerm = ''
+  const people = [
+    { name: 'Robert Gouth', checked: false },
+    { name: 'Jese Leos', checked: false },
+    { name: 'Bonnie Green', checked: true },
+  ]
+  $: filteredItems = people.filter((person) => person.name.toLowerCase().indexOf(searchTerm?.toLowerCase()) !== -1);
 </script>
 
 <Button>Dropdown search<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
 <Dropdown class="overflow-y-auto px-3 pb-3 text-sm h-44">
   <div slot="header" class="p-3">
-    <Search size="md" />
+    <Search size="md" bind:value={searchTerm}/>
   </div>
-  <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-    <Checkbox>Robert Gouth</Checkbox>
-  </li>
-  <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-    <Checkbox>Jese Leos</Checkbox>
-  </li>
-  <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-    <Checkbox checked>Bonnie Green</Checkbox>
-  </li>
-  <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-    <Checkbox>Jese Leos</Checkbox>
-  </li>
-  <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-    <Checkbox>Robert Gouth</Checkbox>
-  </li>
-  <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-    <Checkbox>Bonnie Green</Checkbox>
-  </li>
+  {#each filteredItems as person (person.name)}
+    <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <Checkbox bind:checked={person.checked}>{person.name}</Checkbox>
+    </li>
+  {/each}
   <a slot="footer" href="/" class="flex items-center p-3 -mb-1 text-sm font-medium text-red-600 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
     <UserRemoveSolid class="w-4 h-4 me-2 text-primary-700 dark:text-primary-700" />Delete user
   </a>
