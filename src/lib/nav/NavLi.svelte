@@ -65,9 +65,7 @@
     aria-current={currentUrl === href}
     class={linkClass}
   >
- 
-      {@render children()}
-
+    {@render children()}
   </a>
 </li>
 

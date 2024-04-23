@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  import { createEventDispatcher, setContext } from 'svelte';
+  import { setContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import type { ListGroupItemType } from '../types';
   import ListgroupItem from './ListgroupItem.svelte';
@@ -9,6 +9,7 @@
     children?: Snippet;
     items: ListGroupItemType[] | string[];
     btn?: boolean;
+    onclick?: () => void;
     rounded?: boolean;
     border?: boolean;
     defaultclass?: string;
@@ -18,13 +19,13 @@
     children,
     items,
     btn,
+    onclick,
     rounded = true,
     border = true,
     defaultclass,
     ...attributes
   }: Props = $props();
   
-  const dispatch = createEventDispatcher();
   const bgColor = 'bg-white dark:bg-gray-800';
   const textColor = 'text-gray-500 dark:text-gray-400';
   const borderColor =
@@ -46,17 +47,16 @@
 </script>
 
 <svelte:element this={tag} {...attributes} class={defaultCls}>
-  {#each items as item, index}
+  {#each items as item}
     {#if typeof item === 'string'}
-      <ListgroupItem {btn} {index} onclick={() => dispatch('click', item)}
+      <ListgroupItem {btn} {onclick}
         >{item}</ListgroupItem
       >
     {:else}
       <ListgroupItem
         {btn}
         {...item}
-        {index}
-        onclick={() => dispatch('click', item)}>{item}</ListgroupItem
+        {onclick}>{item}</ListgroupItem
       >
     {/if}
   {:else}

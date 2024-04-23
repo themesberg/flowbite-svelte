@@ -101,9 +101,7 @@
     {/if}
 
     <div class={twMerge(contentCls, div3class)}>
-      
         {@render children()}
-  
     </div>
 
     {#if dismissable}

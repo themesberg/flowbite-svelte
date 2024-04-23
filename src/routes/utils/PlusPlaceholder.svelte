@@ -40,21 +40,3 @@
     {@render figure()}
   {/each}
 </div>
-
-<style>
-  /* Base grid styles */
-  .grid {
-    display: grid;
-  }
-
-  /* Dynamic column classes based on props */
-  .grid[colnum='2'] {
-    @apply grid-cols-2;
-  }
-
-  .grid[colnum='3'] {
-    @apply grid-cols-3;
-  }
-
-  /* Adjust gap, margin, or other styles as needed */
-</style>

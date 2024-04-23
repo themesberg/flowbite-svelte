@@ -8,6 +8,7 @@
   interface Props {
     iconSlot?: Snippet;
     subtext?: Snippet;
+    onclick?: () => void;
     href?: string ;
     label?: string ;
     spanclass?: string ;
@@ -19,6 +20,7 @@
   let {
     iconSlot,
     subtext,
+    onclick,
     href,
     label,
     spanclass,
@@ -45,7 +47,7 @@
 </script>
 
 <li>
-  <a {...attributes} {href} aria-current={currentUrl === href} class={twMerge(aCls, aclass)}>
+  <a {...attributes} {onclick} {href} aria-current={currentUrl === href} class={twMerge(aCls, aclass)}>
     {#if iconSlot}
       {@render iconSlot()}
     {/if}

@@ -77,8 +77,8 @@
 <H2>Default rating</H2>
 
 <CodeWrapper>
-  <Rating id="example-1" total={5} size={30} rating={1.4} />
-  <Rating id="example-1b" total={5} size={30} rating={4.66} />
+  <Rating total={5} size={30} rating={1.4} />
+  <Rating total={5} size={30} rating={4.66} />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/default-rating.md'] as string} />
@@ -103,9 +103,9 @@
 
 <H2>Rating with text</H2>
 <CodeWrapper>
-  <Rating id="example-3" total={5} rating={3.4}>
+  <Rating total={5} rating={3.4}>
     {#snippet text()}
-      <p class="ms-2 text-sm font-medium text-gray-500 dark:text-gray-400">
+      <p class="ms-2 pt-4 text-sm font-medium text-gray-500 dark:text-gray-400">
         3.4 out of 5
       </p>
     {/snippet}
@@ -116,7 +116,7 @@
 
 <H2>Rating count</H2>
 <CodeWrapper>
-  <Rating count rating={4.95} id="example-4">
+  <Rating count rating={4.95} r_p="pt-4">
     <span class="mx-1.5 h-1 w-1 rounded-full bg-gray-500 dark:bg-gray-400"></span>
     <a
       href="/"
@@ -133,11 +133,11 @@
 
 <H3>Size and color</H3>
 <CodeWrapper>
-  <Rating total={5} rating={3.3} id="example-5" icon={Heart} />
-  <Rating total={10} rating={7.6} id="example-5b" icon={Heart} />
+  <Rating total={5} rating={3.3} icon={Heart} />
+  <Rating total={10} rating={7.6} icon={Heart} />
 
-  <Rating total={5} rating={4.7} id="example-5c" icon={Thumbup} />
-  <Rating total={10} rating={8.2} id="example-5d" icon={Thumbup} />
+  <Rating total={5} rating={4.7} icon={Thumbup} />
+  <Rating total={10} rating={8.2} icon={Thumbup} />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/size-and-color.md'] as string} />
@@ -154,9 +154,9 @@
     ]}
   >
     {#snippet rating()}
-      <Rating total={5} rating={3.72} id="example-8">
+      <Rating total={5} rating={3.72} >
         {#snippet text()}
-          <p class="ms-2 text-sm font-medium text-gray-500 dark:text-gray-400">
+          <p class="ms-2 pt-4 text-sm font-medium text-gray-500 dark:text-gray-400">
             3.72 out of 5
           </p>
         {/snippet}
@@ -185,9 +185,9 @@
     ]}
   >
     {#snippet rating()}
-      <Rating total={5} rating={3.8} icon={Thumbup} id="example-9">
+      <Rating total={5} rating={3.8} icon={Thumbup}>
         {#snippet text()}
-          <p class="ms-2 text-sm font-medium text-gray-500 dark:text-gray-400">
+          <p class="ms-2 pt-4 text-sm font-medium text-gray-500 dark:text-gray-400">
             3.8 out of 5
           </p>
         {/snippet}
@@ -269,19 +269,19 @@
     </p>
     {#snippet item1()}
       <div class="flex">
-        <LandmarkSolid class="mr-2 h-3 w-3" />
+        <LandmarkSolid class="mr-2 h-5 w-5" />
         {review.item1}
       </div>
     {/snippet}
     {#snippet item2()}
       <div class="flex">
-        <CalendarMonthSolid class="mr-2 h-3 w-3" />
+        <CalendarMonthSolid class="mr-2 h-5 w-5" />
         {review.item2}
       </div>
     {/snippet}
     {#snippet item3()}
       <div class="flex">
-        <UsersGroupOutline class="mr-2 h-3 w-3" />
+        <UsersGroupOutline class="mr-2 h-5 w-5" />
         {review.item3}
       </div>
     {/snippet}

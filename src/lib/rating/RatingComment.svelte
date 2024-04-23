@@ -56,7 +56,7 @@
   <div class="mb-1 flex items-center">
     <Rating total={comment.total} rating={comment.rating}>
       {#snippet text()}
-        <p class="ms-2 text-sm font-medium text-gray-500 dark:text-gray-400">
+        <p class="ms-2 pt-4 text-sm font-medium text-gray-500 dark:text-gray-400">
           {comment.rating} out of {comment.total}
         </p>
       {/snippet}

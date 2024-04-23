@@ -118,9 +118,7 @@
           {review.rating}
         </p>
       </div>
-    
         {@render children()}
-    
     </div>
   </article>
 {/if}

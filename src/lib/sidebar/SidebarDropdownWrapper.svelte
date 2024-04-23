@@ -10,7 +10,7 @@
     arrowup?: Snippet;
     arrowdown?: Snippet;
     iconSlot?: Snippet;
-    isOpen: boolean;
+    isOpen?: boolean | undefined;
     btnclass?: string | undefined;
     label: string | undefined;
     spanclass?: string | undefined;
@@ -66,7 +66,7 @@
   };
 
   let sidebarDropdown = uiHelpers();
-  sidebarDropdown.isOpen = isOpen;
+  sidebarDropdown.isOpen = isOpen ? isOpen : false;
   let handleDropdown = sidebarDropdown.toggle;
 
   $effect(() => {
@@ -131,9 +131,7 @@
   </button>
   {#if isOpen}
     <ul class={ulCls} transition:multiple={transitionParams}>
-     
         {@render children()}
-     
     </ul>
   {/if}
 </li>

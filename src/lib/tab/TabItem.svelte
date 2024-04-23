@@ -54,7 +54,7 @@
     {/if}
   </button>
 
-  {#if open}
+  {#if open && children}
     <div class="hidden tab_content_placeholder">
       <div use:init>
         {@render children()}

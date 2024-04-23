@@ -28,7 +28,7 @@
 
 <CodeWrapper class="relative">
   <Skeleton divclass="py-4" />
-  <ImagePlaceholder class="py-4" />
+  <ImagePlaceholder divclass="py-4" />
 
   <Banner id="default-banner" position="absolute">
     <p

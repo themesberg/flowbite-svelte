@@ -233,14 +233,14 @@
     <Sidebar aclass="p-2">
       <SidebarGroup>
         <SidebarItem label="Dashboard">
-          {#snippet icon()}
+          {#snippet iconSlot()}
             <ChartOutline
               class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
             />
           {/snippet}
         </SidebarItem>
         <SidebarDropdownWrapper label="E-commerce" btnclass="p-2">
-          {#snippet icon()}
+          {#snippet iconSlot()}
             <ShoppingBagSolid
               class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
             />
@@ -250,7 +250,7 @@
           <SidebarItem label="Invoice" />
         </SidebarDropdownWrapper>
         <SidebarItem label="Drawer" href="/components/drawer" {spanclass}>
-          {#snippet icon()}
+          {#snippet iconSlot()}
             <GridSolid
               class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
             />
@@ -264,7 +264,7 @@
           {/snippet}
         </SidebarItem>
         <SidebarItem label="Inbox" {spanclass}>
-          {#snippet icon()}
+          {#snippet iconSlot()}
             <MailBoxSolid
               class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
             />
@@ -278,21 +278,21 @@
           {/snippet}
         </SidebarItem>
         <SidebarItem label="Users">
-          {#snippet icon()}
+          {#snippet iconSlot()}
             <UserSolid
               class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
             />
           {/snippet}
         </SidebarItem>
         <SidebarItem label="Sign In">
-          {#snippet icon()}
+          {#snippet iconSlot()}
             <ArrowRightToBracketOutline
               class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
             />
           {/snippet}
         </SidebarItem>
         <SidebarItem label="Sign Up">
-          {#snippet icon()}
+          {#snippet iconSlot()}
             <EditSolid
               class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
             />

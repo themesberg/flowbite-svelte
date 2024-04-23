@@ -1,15 +1,12 @@
 <script>
-    import { Avatar, Dropdown, DropdownItem, DropdownDivider, uiHelpers } from 'svelte-5-ui-lib';
-    let dropdown = uiHelpers();
+  import { Avatar, Dropdown, DropdownItem, DropdownDivider, uiHelpers } from 'svelte-5-ui-lib';
 
-    let isOpen = $state(false);
-    let toggle = dropdown.toggle;
-    let close = dropdown.close;
+  let dropdown = uiHelpers();
+  let dropdownStatus = $state(false);
+  let closeDropdown = dropdown.close;
 
-    $effect(() => {
-        // this can be done adding nav.navStatus directly to DOM element
-        // without using effect
-        isOpen = dropdown.isOpen;
-    });
+  $effect(() => {
+    dropdownStatus = dropdown.isOpen;
+  });
     
 </script>

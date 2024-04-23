@@ -1,21 +1,21 @@
 <script lang="ts">
   import {
     Avatar,
+    Button,
     Dropdown,
     DropdownItem,
     DropdownDivider,
     uiHelpers
   } from '$lib';
+  
   let dropdown = uiHelpers();
-
-  let isOpen = $state(false);
-  let toggle = dropdown.toggle;
-  let close = dropdown.close;
+  let dropdownStatus = $state(false);
+  let closeDropdown = dropdown.close;
 
   $effect(() => {
     // this can be done adding nav.navStatus directly to DOM element
     // without using effect
-    isOpen = dropdown.isOpen;
+    dropdownStatus = dropdown.isOpen;
   });
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -131,14 +131,15 @@
 <HighlightCompo code={modules['./md/avatar-text.md'] as string} />
 
 <H2>User dropdown</H2>
-<CodeWrapper class="h-80">
+<CodeWrapper class="flex h-96 items-start justify-center">
   <Avatar
-    onclick={toggle}
+    onclick={dropdown.toggle}
     src="/images/profile-picture-3.webp"
     class="cursor-pointer"
     dot={{ color: 'green' }}
   />
-  <Dropdown {isOpen}>
+  <div class="relative">
+  <Dropdown {dropdownStatus} {closeDropdown} divclass="absolute top-[40px] -left-[100px]">
     {#snippet header()}
       <div>Bonnie Green</div>
       <div class="truncate font-medium">name@flowbite.com</div>
@@ -151,6 +152,7 @@
       <DropdownItem href="/dropdown">Dropdown</DropdownItem>
     {/snippet}
   </Dropdown>
+  </div>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/user-dropdown.md'] as string} />

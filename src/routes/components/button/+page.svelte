@@ -192,7 +192,6 @@
 <H2>Events</H2>
 <CodeWrapper>
   <Button onclick={btn1}>Button 1</Button>
-  <Button ontouchstart={btn2}>Button 2</Button>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/events.md'] as string} />
 

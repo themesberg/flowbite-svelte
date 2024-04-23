@@ -2,12 +2,16 @@
   import type { Snippet } from 'svelte';
   import { getContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
+  import type { ComponentType } from 'svelte';
 
   interface Props {
     children: Snippet;
+    onclick?: () => void;
     btn?: boolean;
     current?: boolean;
     disabled?: boolean;
+    name?: string;
+    icon?: ComponentType;
     href?: string;
     currentclass?: string;
     normalclass?: string;
@@ -19,9 +23,12 @@
 
   let {
     children,
+    onclick,
     btn,
     current,
     disabled,
+    name,
+    icon,
     href,
     currentclass,
     normalclass,
@@ -80,21 +87,22 @@
     {@render children()}
   </li>
 {:else if href}
-  <a {...attributes} {href} class="block {itemClass}" aria-current={current}>
-    {attributes.name}
+  <a {...attributes} {onclick} {href} class="block {itemClass}" aria-current={current}>
+    {name}
   </a>
 {:else}
   <button
     type="button"
     {...attributes}
+    {onclick}
     class="flex items-center text-left {itemClass}"
     {disabled}
     aria-current={current}
   >
-    {#if attributes.icon}
-      <svelte:component this={attributes.icon} class="me-2.5 h-3 w-3" />
+    {#if icon}
+      <svelte:component this={icon} class="me-2.5 h-5 w-5" />
     {/if}
-    {attributes.name}
+    {name}
   </button>
 {/if}
 

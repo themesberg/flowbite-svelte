@@ -27,7 +27,7 @@
   let {
     children,
     toggleNav,
-    closeNav,
+    closeNav = () => {},
     openMainMenu = true,
     navStatus,
     fluid,

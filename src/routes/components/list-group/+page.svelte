@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Listgroup } from '$lib';
+  import type { ListGroupItemType } from '$lib/types';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -11,7 +12,7 @@
     eager: true
   });
   let simpleList = ['Profile', 'Settings', 'Messages', 'Download'];
-  let links = [
+  let links: ListGroupItemType[] = [
     { name: 'Avatar', href: '/components/avatar' },
     { name: 'List group', href: '/components/list-group', current: true },
     { name: 'Banner', href: '/components/banner' },
@@ -35,11 +36,25 @@
     UserCircleSolid
   } from 'flowbite-svelte-icons';
   let icons = [
-    { name: 'Profile', icon: UserCircleSolid },
-    { name: 'Settings', icon: AdjustmentsHorizontalSolid },
-    { name: 'Messages', icon: MessagesSolid },
-    { name: 'Download', icon: DownloadSolid }
+    { name: 'Profile', icon: UserCircleSolid, mycustomfield: 'data1' },
+    { name: 'Settings', icon: AdjustmentsHorizontalSolid, mycustomfield: 'data2' },
+    { name: 'Messages', icon: MessagesSolid, mycustomfield: 'data3' },
+    { name: 'Download', icon: DownloadSolid, mycustomfield: 'data4' }
   ];
+  const handleClick = (e?: MouseEvent) =>{
+    if (e?.target instanceof HTMLElement) {
+      alert('mycustomfield: ' + e.target.attributes.getNamedItem('mycustomfield')?.value);
+    } else {
+      console.warn('Unexpected event target type. Cannot access attributes.')
+    }
+  }
+  const handleClick2 = (e?: MouseEvent) =>{
+      if (e?.target instanceof HTMLElement) {
+        console.log(e.target.attributes.getNamedItem('mycustomfield')?.value);
+      } else {
+        console.warn('Unexpected event target type. Cannot access attributes.');
+      }
+  }
 </script>
 
 <H1>List group</H1>
@@ -70,8 +85,7 @@
     btn
     items={buttons}
     defaultclass="w-48"
-    onclick={(e) =>
-      alert('mycustomfield: ' + e.target.attributes.mycustomfield.value)}
+    onclick={handleClick}
   />
 </CodeWrapper>
 
@@ -83,7 +97,7 @@
     btn
     items={icons}
     defaultclass="w-48"
-    onclick={(e) => console.log(e.target.attributes.name.value)}
+    onclick={handleClick2}
   />
 </CodeWrapper>
 

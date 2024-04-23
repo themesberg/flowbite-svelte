@@ -115,7 +115,7 @@ import type {
 } from 'svelte/elements';
 
 export interface ListGroupItemType {
-  index: number;
+  index?: number;
   current?: boolean;
   disabled?: boolean;
   href?: string;

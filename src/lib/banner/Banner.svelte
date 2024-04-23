@@ -7,17 +7,19 @@
   interface Props {
     children: Snippet;
     header?: Snippet;
+    id?: string;
     position?: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky';
     dismissable?: boolean;
     color?: ColorVariant;
-    bannerType: 'default' | 'bottom' | 'cta' | 'signup' | 'info';
-    divclass: string | undefined;
-    div2class: string | undefined;
+    bannerType?: 'default' | 'bottom' | 'cta' | 'signup' | 'info';
+    divclass?: string | undefined;
+    div2class?: string | undefined;
   }
 
   let {
     children,
     header,
+    id,
     position = 'sticky',
     dismissable = true,
     color = 'gray',
@@ -54,7 +56,7 @@
 </script>
 
 {#if bannerStatus}
-  <div tabindex="-1" class={divCls} {...attributes}>
+  <div tabindex="-1" class={divCls} {...attributes} {id}>
     {#if header}
       {@render header()}
     {/if}

@@ -331,9 +331,9 @@
 <CodeWrapper class="h-24">
   <Alert
     dismissable
-    onclick={() => {
+    ><button onclick={() => {
       alert('Clicked closeAlert.');
-    }}>Close me</Alert
+    }}>Close me</button></Alert
   >
 </CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/events.md'] as string} />

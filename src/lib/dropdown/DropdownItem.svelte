@@ -27,14 +27,13 @@
 </script>
 
 <li class={liclass}>
-    {#if href}
-      <a {href} class={currentUrl === href ? activeCls : aCls} {...attributes}>
-        {@render children()}
-      </a>
-    {:else}
+  {#if href}
+    <a {href} class={currentUrl === href ? activeCls : aCls} {...attributes}>
       {@render children()}
-    {/if}
-
+    </a>
+  {:else}
+    {@render children()}
+  {/if}
 </li>
 
 <!--

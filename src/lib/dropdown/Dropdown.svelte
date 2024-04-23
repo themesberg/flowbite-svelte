@@ -29,12 +29,10 @@
     children,
     header,
     footer,
-
     dropdownStatus,
     toggleDropdown,
     closeDropdown,
     activateClickOutside = true,
-    
     divclass,
     footerclass,
     headerclass,

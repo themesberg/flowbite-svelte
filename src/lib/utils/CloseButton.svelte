@@ -4,6 +4,7 @@
 
   interface Props {
     color?: CloseButtonColorType;
+    onclick?: () => void;
     name?: string;
     ariaLabel?: string;
     size?: 'xs' | 'sm' | 'md' | 'lg';
@@ -13,6 +14,7 @@
 
   let {
     color = 'default',
+    onclick,
     name = 'Close',
     ariaLabel,
     size = 'md',
@@ -65,7 +67,7 @@
 </script>
 
 {#if href}
-  <a {href} {...attributes} class={buttonClass} aria-label={ariaLabel ?? name}>
+  <a {href} {...attributes} {onclick} class={buttonClass} aria-label={ariaLabel ?? name}>
     {#if name}<span class="sr-only">{name}</span>{/if}
     <svg
       class={svgSizes[size]}
