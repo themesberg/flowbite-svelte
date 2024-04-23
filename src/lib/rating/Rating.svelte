@@ -80,4 +80,5 @@
 @props:partialId?:  string; = 'partialStar' + idGenerator();
 @props:icon?:  ComponentType; = Star;
 @props:count?:  boolean; = false;
+@props:r_p?: string;
 -->

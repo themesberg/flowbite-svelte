@@ -144,7 +144,7 @@
 @props:arrowup?: Snippet;
 @props:arrowdown?: Snippet;
 @props:iconSlot?: Snippet;
-@props:isOpen: boolean;
+@props:isOpen?: boolean | undefined;
 @props:btnclass?: string | undefined;
 @props:label: string | undefined;
 @props:spanclass?: string | undefined;

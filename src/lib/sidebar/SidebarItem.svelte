@@ -64,6 +64,7 @@
 ## Props
 @props: iconSlot?: Snippet;
 @props:subtext?: Snippet;
+@props:onclick?: () => void;
 @props:href?: string ;
 @props:label?: string ;
 @props:spanclass?: string ;

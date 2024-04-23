@@ -110,6 +110,7 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: color?:  CloseButtonColorType; = 'default';
+@props:onclick?: () => void;
 @props:name?:  string; = 'Close';
 @props:ariaLabel?: string;
 @props:size?:  'xs' | 'sm' | 'md' | 'lg'; = 'md';

@@ -142,11 +142,11 @@
 @props: children: Snippet;
 @props:toggleNav?: () => void;
 @props:closeNav?: () => void;
-@props:openMainMenu?:  boolean; = true;
+@props:openMainMenu?: boolean;
 @props:navStatus?: boolean;
 @props:fluid?: boolean;
 @props:brand?: Snippet;
-@props:breakPoint?:  navbarType['breakPoint']; = 'md';
+@props:breakPoint?: navbarType['breakPoint'];
 @props:navclass?: string;
 @props:divclass?: string;
 @props:btnclass?: string;

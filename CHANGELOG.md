@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.11
+
+### Patch Changes
+
+- fix: update types
+
 ## 0.4.10
 
 ### Patch Changes

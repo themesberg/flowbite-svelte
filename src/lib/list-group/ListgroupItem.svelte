@@ -111,9 +111,12 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children: Snippet;
+@props:onclick?: () => void;
 @props:btn?: boolean;
 @props:current?: boolean;
 @props:disabled?: boolean;
+@props:name?: string;
+@props:icon?: ComponentType;
 @props:href?: string;
 @props:currentclass?: string;
 @props:normalclass?: string;

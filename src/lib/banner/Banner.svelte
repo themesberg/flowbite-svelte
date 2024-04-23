@@ -86,10 +86,11 @@
 ## Props
 @props: children: Snippet;
 @props:header?: Snippet;
+@props:id?: string;
 @props:position?:  'static' | 'fixed' | 'absolute' | 'relative' | 'sticky'; = 'sticky';
 @props:dismissable?:  boolean; = true;
 @props:color?:  ColorVariant; = 'gray';
-@props:bannerType:  'default' | 'bottom' | 'cta' | 'signup' | 'info'; = 'default';
-@props:divclass: string | undefined;
-@props:div2class: string | undefined;
+@props:bannerType?:  'default' | 'bottom' | 'cta' | 'signup' | 'info'; = 'default';
+@props:divclass?: string | undefined;
+@props:div2class?: string | undefined;
 -->

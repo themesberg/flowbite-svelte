@@ -74,6 +74,7 @@
 @props: children?: Snippet;
 @props:items: ListGroupItemType[] | string[];
 @props:btn?: boolean;
+@props:onclick?: () => void;
 @props:rounded?:  boolean; = true;
 @props:border?:  boolean; = true;
 @props:defaultclass?: string;
