@@ -392,3 +392,226 @@ pre.language-svelte .token.comment {
   bottom: 0;
   right: 0;
 }
+
+/* DocSearch */
+
+.DocSearch .DocSearch-Modal {
+  @apply mx-auto mt-[1rem] max-h-[calc(100vh-2rem)] w-full max-w-[calc(100vw-2rem)] overflow-hidden rounded-lg lg:mt-[4rem] lg:max-h-none lg:max-w-xl;
+}
+
+.DocSearch.DocSearch-Button {
+  @apply m-0 ml-0 flex h-[40px] w-[40px] items-center justify-center rounded-lg border bg-white p-2 shadow-none hover:bg-gray-100 hover:shadow-none focus:shadow-none focus:outline-none focus:ring-4 focus:ring-gray-200 md:mr-0 md:w-52 md:justify-between md:border-solid md:border-gray-300 md:bg-gray-50 xl:w-64 xl:pl-4;
+}
+
+.DocSearch .DocSearch-Button-Placeholder {
+  @apply text-sm font-normal text-gray-500;
+}
+
+.DocSearch .DocSearch-Search-Icon {
+  @apply h-4 w-4 text-transparent md:mr-1 md:h-3 md:w-3 !important;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20"><path stroke="%236A7280" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/></svg>');
+}
+
+.dark .DocSearch .DocSearch-Search-Icon {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20"><path stroke="%239BA3AF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/></svg>');
+}
+
+.DocSearch .DocSearch-Button-Keys {
+  @apply min-w-0 items-center;
+}
+
+.DocSearch .DocSearch-Button-Key:first-child {
+  @apply mr-px text-base;
+}
+
+.DocSearch .DocSearch-Button-Key {
+  @apply m-0 w-auto bg-none pb-0 pt-1 text-xs font-normal text-gray-500 shadow-none;
+}
+
+.DocSearch.DocSearch-Button .DocSearch-Search-Icon {
+  @apply text-gray-500;
+}
+
+.DocSearch .DocSearch-Hit-icon {
+  @apply hidden;
+}
+
+.DocSearch .DocSearch-Hits mark {
+  @apply text-cyan-600 decoration-cyan-600 decoration-2 underline-offset-2;
+}
+
+.DocSearch .DocSearch-Hit[aria-selected="true"] a {
+  @apply bg-cyan-700;
+}
+
+.DocSearch .DocSearch-Hit-source {
+  @apply bg-white pb-1 text-gray-700;
+}
+
+.DocSearch .DocSearch-Container {
+  @apply bg-gray-900 bg-opacity-50;
+}
+
+.DocSearch .DocSearch-Modal {
+  @apply shadow-none;
+}
+
+.DocSearch .DocSearch-SearchBar {
+  @apply border-b border-gray-100 p-0;
+}
+
+.DocSearch .DocSearch-Form {
+  @apply shadow-none;
+}
+
+.DocSearch .DocSearch-Input {
+  @apply text-sm text-gray-500 shadow-none focus:shadow-none focus:outline-none focus:ring-0;
+}
+
+.DocSearch .DocSearch-LoadingIndicator svg,
+.DocSearch .DocSearch-MagnifierLabel svg {
+  @apply h-4 w-4;
+}
+
+.DocSearch .DocSearch-Commands {
+  @apply hidden;
+}
+
+.DocSearch .DocSearch-Footer {
+  @apply h-12 border-t border-gray-100 shadow-none;
+}
+
+.DocSearch .DocSearch-Dropdown {
+  @apply bg-white;
+}
+
+.DocSearch .DocSearch-Hit {
+  @apply pb-2 shadow-none;
+}
+
+.DocSearch .DocSearch-Hit a {
+  @apply rounded-lg bg-gray-50 shadow-none;
+}
+
+.DocSearch .DocSearch-Hit[aria-selected="true"] .DocSearch-Hit-Select-Icon,
+.DocSearch .DocSearch-Hit-action-button {
+  @apply hidden;
+}
+
+.DocSearch .DocSearch-Hit .DocSearch-Hit-action:last-child {
+  @apply h-5 w-5;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m11 9 3 3-3 3' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.DocSearch .DocSearch-Hit[aria-selected="true"] .DocSearch-Hit-action:last-child {
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m11 9 3 3-3 3' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.DocSearch .DocSearch-Screen-Icon,
+.DocSearch .DocSearch-NoResults-Prefill-List,
+.DocSearch .DocSearch-Cancel {
+  @apply hidden;
+}
+
+.DocSearch .DocSearch-Title {
+  @apply mb-1 text-lg font-normal text-gray-700;
+}
+
+.DocSearch .DocSearch-Reset {
+  @apply hover:text-black;
+}
+
+.formkit-alert.formkit-alert-success {
+  @apply mb-4 rounded-lg bg-green-100 p-4 text-sm font-medium text-green-700;
+}
+
+.formkit-alert.formkit-alert-error:not(:empty) {
+  @apply mb-4 rounded-lg bg-red-100 p-4 text-sm text-red-700;
+}
+
+/* DARK MODE */
+.dark {
+  .DocSearch.DocSearch-Button {
+    @apply border-gray-600 bg-gray-800 hover:bg-gray-600 focus:bg-gray-600 focus:ring-gray-700 md:bg-gray-700;
+  }
+
+  .DocSearch .DocSearch-Button-Placeholder {
+    @apply text-gray-400;
+  }
+
+  .DocSearch .DocSearch-Search-Icon {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20"><path stroke="%239BA3AF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/></svg>');
+  }
+
+  .DocSearch .DocSearch-Button-Key {
+    @apply text-gray-400;
+  }
+
+  .DocSearch .DocSearch-Hits mark {
+    @apply text-white decoration-white;
+  }
+
+  .DocSearch .DocSearch-Hit[aria-selected="true"] a {
+    @apply bg-cyan-600;
+  }
+
+  .DocSearch .DocSearch-Hit-source {
+    @apply bg-gray-700 text-gray-400;
+  }
+
+  .DocSearch .DocSearch-Container {
+    @apply bg-opacity-80;
+  }
+
+  .DocSearch .DocSearch-Modal {
+    @apply bg-gray-700;
+  }
+
+  .DocSearch .DocSearch-SearchBar {
+    @apply border-gray-600;
+  }
+
+  .DocSearch .DocSearch-Form {
+    @apply bg-gray-700;
+  }
+
+  .DocSearch .DocSearch-Input {
+    @apply bg-gray-700 text-white;
+  }
+
+  .DocSearch .DocSearch-Footer {
+    @apply border-gray-600 bg-gray-700;
+  }
+
+  .DocSearch .DocSearch-Dropdown {
+    @apply bg-gray-700;
+  }
+
+  .DocSearch .DocSearch-Hit a {
+    @apply bg-gray-600 hover:bg-cyan-600;
+  }
+
+  .DocSearch .DocSearch-Title {
+    @apply text-gray-200;
+  }
+
+  .DocSearch .DocSearch-Hit-Container {
+    @apply text-gray-300;
+  }
+
+  .DocSearch .DocSearch-Logo svg {
+    @apply text-gray-400;
+  }
+
+  .DocSearch .DocSearch-Reset {
+    @apply text-gray-300 hover:text-white;
+  }
+
+  .formkit-alert.formkit-alert-success {
+    @apply bg-gray-800 text-green-400;
+  }
+
+  .formkit-alert.formkit-alert-error:not(:empty) {
+    @apply bg-gray-800 text-red-400;
+  }
+}
