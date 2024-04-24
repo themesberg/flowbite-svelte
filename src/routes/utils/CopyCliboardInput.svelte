@@ -34,7 +34,7 @@
   };
 </script>
 
-<Input size="lg" {placeholder} readonly class="text-sm py-2.5 focus:ring-primary-600 focus:border-primary-600 md:min-w-[315px] {$$props.class ?? ''}">
+<Input size="lg" {placeholder} readonly class="text-sm py-3 sm:text-sm focus:ring-primary-600 focus:border-primary-600 md:min-w-[315px] {$$props.class ?? ''}">
   <div slot="right" class="flex items-center ps-32">
     <button on:click={copyToClipboard} class="hover:text-primary-700 py-2 px-1">
       {#if tooltip_text == text_not_copied}<Clipboard />{:else}<Check />{/if}
