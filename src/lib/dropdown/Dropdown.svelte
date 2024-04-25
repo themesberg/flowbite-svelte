@@ -49,6 +49,7 @@
   $: ulCls = twMerge('py-1', $$props.class);
   $: footerCls = twMerge(footerClass, classFooter);
 
+
   $: {
     // set default values
     $$restProps.arrow = $$restProps.arrow ?? false;
