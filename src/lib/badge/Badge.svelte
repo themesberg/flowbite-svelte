@@ -1,6 +1,6 @@
 <script lang="ts">
   import TransitionFrame from '$lib/utils/TransitionFrame.svelte';
-  import type { ComponentProps } from 'svelte';
+  import { type ComponentProps, createEventDispatcher } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import CloseButton from '../utils/CloseButton.svelte';
 
@@ -12,6 +12,8 @@
   export let color: 'primary' | 'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' | 'none' = 'primary';
   export let large: boolean = false;
   export let dismissable: boolean = false;
+
+  const dispatcher = createEventDispatcher();
 
   const colors = {
     primary: 'bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-300',
@@ -77,7 +79,10 @@
   <slot />
   {#if dismissable}
     <slot name="close-button" {close}>
-      <CloseButton {color} on:click={close} size={large ? 'sm' : 'xs'} name="Remove badge" class="ms-1.5 -me-1.5" />
+      <CloseButton {color} on:click={()=>{
+         close(undefined);
+         dispatcher('close');
+      }} size={large ? 'sm' : 'xs'} name="Remove badge" class="ms-1.5 -me-1.5" />
     </slot>
   {/if}
 </TransitionFrame>
