@@ -17,7 +17,7 @@
   export let shadow: boolean = false;
   export let tag: string = 'button';
   export let checked: boolean | undefined = undefined;
-  export let disabled: boolean = false;
+  // export let disabled: boolean = false;
 
   const colorClasses = {
     alternative: 'text-gray-900 bg-white border border-gray-200 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-400 hover:text-primary-700 focus-within:text-primary-700 dark:focus-within:text-white dark:hover:text-white dark:hover:bg-gray-700',
@@ -113,21 +113,21 @@
     group ? (pill && 'first:rounded-s-full last:rounded-e-full') || 'first:rounded-s-lg last:rounded-e-lg' : (pill && 'rounded-full') || 'rounded-lg',
     shadow && 'shadow-lg',
     shadow && coloredShadowClasses[color],
-    $$props.disabled && 'cursor-not-allowed opacity-50',
+    $$restProps.disabled && 'cursor-not-allowed opacity-50',
     $$props.class
   );
 </script>
 
-{#if href && !disabled}
+{#if href && !$$restProps.disabled}
   <a {href} {...$$restProps} class={buttonClass} role="button" on:click on:change on:keydown on:keyup on:touchstart|passive on:touchend on:touchcancel on:mouseenter on:mouseleave>
     <slot />
   </a>
-{:else if tag === 'button'}
+{:else if tag === 'button' && !$$restProps.disabled }
   <button {type} {...$$restProps} class={buttonClass} on:click on:change on:keydown on:keyup on:touchstart|passive on:touchend on:touchcancel on:mouseenter on:mouseleave>
     <slot />
   </button>
 {:else}
-  <svelte:element this={tag} {...$$restProps} class={buttonClass}>
+  <svelte:element this={tag} class={buttonClass}>
     <slot />
   </svelte:element>
 {/if}
