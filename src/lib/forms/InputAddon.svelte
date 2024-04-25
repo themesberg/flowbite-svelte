@@ -32,7 +32,8 @@
   // size: explicit, inherited, default
   $: _size = size || clampSize(group?.size) || 'md';
 
-  $: divClass = twMerge(textSizes[_size], prefixPadding[_size], background ? borderClasses['tinted'] : borderClasses['base'], 'text-gray-500 bg-gray-200', background ? darkBgClasses.tinted : darkBgClasses.base, background ? divider.tinted : divider.base, 'inline-flex items-center border-t border-b first:border-s border-e', 'first:rounded-s-lg last:rounded-e-lg', $$props.class);
+  $: divClass = twMerge(textSizes[_size], prefixPadding[_size], 'text-gray-500 bg-gray-200', background ? darkBgClasses.tinted : darkBgClasses.base, background ? divider.tinted : divider.base, background ? borderClasses['tinted'] : borderClasses['base'],'inline-flex items-center border border-e-0', 'first:rounded-s-lg last:rounded-e-lg', $$props.class);
+  console.log('borderClasses', borderClasses['base'])
 </script>
 
 <div {...$$restProps} class={divClass}>
