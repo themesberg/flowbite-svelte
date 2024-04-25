@@ -13,7 +13,7 @@
   export let tooltip: Placement | 'none' = context.tooltip;
   export let pill: boolean = context.pill;
   export let textOutside: boolean = context.textOutside;
-  export let textOutsideClass: string = 'block absolute -left-14 top-1/2 mb-px text-sm font-medium -translate-y-1/2';
+  export let textOutsideClass: string = 'block absolute -start-14 top-1/2 mb-px text-sm font-medium -translate-y-1/2';
   export let textDefaultClass: string = 'block mb-px text-xs font-medium';
 
   let btnClass: string;
@@ -44,6 +44,6 @@
 @prop export let tooltip: Placement | 'none' = context.tooltip;
 @prop export let pill: boolean = context.pill;
 @prop export let textOutside: boolean = context.textOutside;
-@prop export let textOutsideClass: string = 'block absolute -left-14 top-1/2 mb-px text-sm font-medium -translate-y-1/2';
+@prop export let textOutsideClass: string = 'block absolute -start-14 top-1/2 mb-px text-sm font-medium -translate-y-1/2';
 @prop export let textDefaultClass: string = 'block mb-px text-xs font-medium';
 -->

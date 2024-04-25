@@ -54,7 +54,7 @@
   );
 
   let divClass: string;
-  $: divClass = twMerge($$props.outline && 'p-0.5', gradientClasses[color], shadow && 'shadow-lg', shadow && coloredShadowClasses[color], group ? ($$props.pill && 'first:rounded-l-full last:rounded-r-full') || 'first:rounded-l-lg last:rounded-r-lg' : ($$props.pill && 'rounded-full') || 'rounded-lg', $$props.class);
+  $: divClass = twMerge($$props.outline && 'p-0.5', gradientClasses[color], shadow && 'shadow-lg', shadow && coloredShadowClasses[color], group ? ($$props.pill && 'first:rounded-s-full last:rounded-e-full') || 'first:rounded-s-lg last:rounded-e-lg' : ($$props.pill && 'rounded-full') || 'rounded-lg', $$props.class);
 </script>
 
 {#if $$props.outline}

@@ -75,7 +75,7 @@ The default value for `duration` is set to zero that means no autochange of imag
 ```svelte example
 <script>
   import { Carousel } from 'flowbite-svelte';
-  import { images } from './imageData/+server.js';
+  import images from './imageData/images.json';
 </script>
 
 <div class="max-w-4xl">
@@ -92,7 +92,7 @@ You can customize the control elements with the `class` property.
 ```svelte example
 <script>
   import { Carousel } from 'flowbite-svelte';
-  import { images } from './imageData/+server.js';
+  import images from './imageData/images.json';
 </script>
 
 <div class="max-w-4xl">
@@ -109,7 +109,7 @@ Show the carousel indicators by adding the internal `Indicators` component.
 ```svelte example
 <script>
   import { Carousel } from 'flowbite-svelte';
-  import { images } from './imageData/+server.js';
+  import images from './imageData/images.json';
 </script>
 
 <div class="max-w-4xl">
@@ -126,7 +126,7 @@ You can control the `Carousel` component externally by the `index` prop. Here is
 ```svelte example
 <script>
   import { Carousel, Thumbnails } from 'flowbite-svelte';
-  import { images } from './imageData/+server.js';
+  import images from './imageData/images.json';
 
   let index = 0;
   let forward = true; // sync animation direction between Thumbnails and Carousel
@@ -148,7 +148,7 @@ The `Carousel` exposes the `change` event containing info about the currently di
 ```svelte example
 <script>
   import { Carousel } from 'flowbite-svelte';
-  import { images } from './imageData/+server.js';
+  import images from './imageData/images.json';
 
   let index = 0;
   let image;
@@ -174,7 +174,7 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
 ```svelte example
 <script>
   import { Carousel } from 'flowbite-svelte';
-  import { images } from './imageData/+server.js';
+  import images from './imageData/images.json';
 </script>
 
 <div class="max-w-4xl space-y-4">
@@ -194,7 +194,7 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
 ```svelte example
 <script>
   import { Carousel } from 'flowbite-svelte';
-  import { images } from './imageData/+server.js';
+  import images from './imageData/images.json';
 </script>
 
 <div class="max-w-4xl space-y-4">
@@ -211,7 +211,7 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
 <script>
   import { Carousel, Thumbnails, Button, Indicator } from 'flowbite-svelte';
   import { CaretRightOutline } from 'flowbite-svelte-icons';
-  import { images } from './imageData/+server.js';
+  import images from './imageData/images.json';
   let index = 0;
 </script>
 
@@ -224,7 +224,7 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
     </Indicators>
     <Controls let:changeSlide let:ControlButton>
       <ControlButton name="Previous" forward={false} on:click={changeSlide(false)} class="bg-red-300/50 dark:bg-red-400/50" />
-      <Button pill class="p-2 absolute top-1/2 -translate-y-1/2 right-4 font-bold" on:click={changeSlide(true)}><CaretRightOutline /></Button>
+      <Button pill class="p-2 absolute top-1/2 -translate-y-1/2 end-4 font-bold" on:click={changeSlide(true)}><CaretRightOutline /></Button>
     </Controls>
   </Carousel>
   <Thumbnails class="bg-transparent gap-3" let:Thumbnail let:image let:selected {images} bind:index>
@@ -238,7 +238,7 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
 ```svelte example
 <script>
   import { Carousel } from 'flowbite-svelte';
-  import { images } from './imageData/+server.js';
+  import images from './imageData/images.json';
   import { scale } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
 

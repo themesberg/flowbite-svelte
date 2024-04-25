@@ -27,7 +27,7 @@
 </script>
 
 <article>
-  <div class="flex items-center mb-4 space-x-4">
+  <div class="flex items-center mb-4 space-x-4 rtl:space-x-reverse">
     <img class="w-10 h-10 rounded-full" src={comment.user.img.src} alt={comment.user.img.alt} />
     <div class="space-y-1 font-medium dark:text-white">
       <p>
@@ -40,12 +40,12 @@
   </div>
   <div class="flex items-center mb-1">
     <Rating total={comment.total} rating={comment.rating}>
-      <p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">
+      <p slot="text" class="ms-2 text-sm font-medium text-gray-500 dark:text-gray-400">
         {comment.rating} out of {comment.total}
       </p>
     </Rating>
     {#if comment.heading}
-      <h3 class="ml-2 text-sm font-semibold text-gray-900 dark:text-white">
+      <h3 class="ms-2 text-sm font-semibold text-gray-900 dark:text-white">
         {comment.heading}
       </h3>
     {/if}
@@ -61,12 +61,12 @@
       <slot name="evaluation" />
     </p>
     {#if helpfullink || abuselink}
-      <div class="flex items-center mt-3 space-x-3 divide-x divide-gray-200 dark:divide-gray-600">
+      <div class="flex items-center mt-3 space-x-3 rtl:space-x-reverse divide-x rtl:divide-x-reverse divide-gray-200 dark:divide-gray-600">
         {#if helpfullink}
-          <Button size="xs" href="/" color="dark">Helpful</Button>
+          <Button size="xs" href={helpfullink} color="dark">Helpful</Button>
         {/if}
         {#if abuselink}
-          <a href={abuselink} class="pl-4 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"> Report abuse </a>
+          <a href={abuselink} class="ps-4 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"> Report abuse </a>
         {/if}
       </div>
     {/if}

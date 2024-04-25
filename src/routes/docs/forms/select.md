@@ -9,7 +9,7 @@ description: Get started with the select component to allow the user to choose f
 
 <script>
 import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
-import { Badge, A } from '$lib'
+import { Badge, A, Kbd, ArrowKeyDown, ArrowKeyUp } from '$lib'
 const components = 'Select, MultiSelect'
 </script>
 
@@ -87,7 +87,7 @@ Use this example if you want to create a multi-level dropdown and select compone
 ```svelte example class="h-64"
 <script>
   import { Select, Dropdown, DropdownItem } from 'flowbite-svelte';
-  import { ChevronDownSolid } from 'flowbite-svelte-icons';
+  import { ChevronDownOutline } from 'flowbite-svelte-icons';
   import Usa from '../../utils/icons/Usa.svelte';
   import Germany from '../../utils/icons/Germany.svelte';
   import Italy from '../../utils/icons/Italy.svelte';
@@ -109,10 +109,10 @@ Use this example if you want to create a multi-level dropdown and select compone
 </script>
 
 <div class="flex">
-  <button id="states-button" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-500 bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600" type="button">
+  <button id="states-button" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-500 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600" type="button">
     <Usa />
     USA
-    <ChevronDownSolid class="w-3 h-3 ml-2" />
+    <ChevronDownOutline class="w-6 h-6 ms-2" />
   </button>
   <Dropdown triggeredBy="#states-button">
     <DropdownItem class="flex items-center">
@@ -132,7 +132,7 @@ Use this example if you want to create a multi-level dropdown and select compone
       China
     </DropdownItem>
   </Dropdown>
-  <Select items={states} placeholder="Choose the state" class="!rounded-l-none" />
+  <Select items={states} placeholder="Choose the state" class="!rounded-s-none" />
 </div>
 ```
 
@@ -219,6 +219,26 @@ Get started with the default toggle component example as a checkbox element to r
 <MultiSelect items={countries} bind:value={selected} size="lg" />
 ```
 
+### Placeholder
+
+```svelte example class="h-80"
+<script>
+  import { MultiSelect } from 'flowbite-svelte';
+
+  let placeholder = 'placeholder text';
+  let selected = [];
+  let countries = [
+    { value: 'us', name: 'United States' },
+    { value: 'ca', name: 'Canada' },
+    { value: 'fr', name: 'France' },
+    { value: 'jp', name: 'Japan' },
+    { value: 'en', name: 'England' }
+  ];
+</script>
+
+<MultiSelect items={countries} bind:value={selected} size="lg" placeholder={placeholder} />
+```
+
 ### Pre-select values
 
 ```svelte example class="h-96"
@@ -237,6 +257,10 @@ Get started with the default toggle component example as a checkbox element to r
 
 <MultiSelect items={countries} bind:value={selected} />
 ```
+
+### Keyboard Usage
+
+Some keyboard interaction was implemented. Use <Kbd class="p-1.5"><ArrowKeyUp class="inline-block"/></Kbd>/<Kbd class="p-1.5"><ArrowKeyDown class="inline-block"/></Kbd> to highlight an item, then press <Kbd class="p-1.5">Enter</Kbd> or <Kbd class="p-1.5">SpaceBar</Kbd> to toggle the highlighted item. Press <Kbd class="p-1.5">Esc</Kbd> to close the selection pop-up.
 
 ### Customization
 

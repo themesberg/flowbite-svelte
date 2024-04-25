@@ -75,7 +75,7 @@ Use this example as a generic form element which includes multiple input fields 
     <Label for="confirm_password" class="mb-2">Confirm password</Label>
     <Input type="password" id="confirm_password" placeholder="•••••••••" required />
   </div>
-  <Checkbox class="mb-6 space-x-1" required>
+  <Checkbox class="mb-6 space-x-1 rtl:space-x-reverse" required>
     I agree with the <A href="/" class="text-primary-700 dark:text-primary-600 hover:underline">terms and conditions</A>.
   </Checkbox>
   <Button type="submit">Submit</Button>
@@ -141,7 +141,7 @@ Use the following example to apply validation styles for success and error messa
 </div>
 <div class="mb-6">
   <Label for="error" color="red" class="block mb-2">Your name</Label>
-  <Input id="success" color="red" placeholder="Success input" />
+  <Input id="error" color="red" placeholder="Error input" />
   <Helper class="mt-2" color="red">
     <span class="font-medium">Oh, snapp!</span>
     Some error message.
@@ -342,12 +342,12 @@ Use this example to show a dropdown menu right next to the input field.
 ```svelte example class="h-64"
 <script>
   import { Input, InputAddon, ButtonGroup, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
-  import { ChevronDownSolid, SearchOutline } from 'flowbite-svelte-icons';
+  import { ChevronDownOutline, SearchOutline } from 'flowbite-svelte-icons';
 </script>
 
 <ButtonGroup class="w-full">
   <Button color="none" class="flex-shrink-0 text-gray-900 bg-gray-100 border border-gray-300 dark:border-gray-700 dark:text-white hover:bg-gray-200 focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-    All categories<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" />
+    All categories<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" />
   </Button>
   <Dropdown>
     <DropdownItem>Shopping</DropdownItem>

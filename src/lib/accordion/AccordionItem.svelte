@@ -16,8 +16,8 @@
   export let paddingDefault: string = 'p-5';
   export let textFlushOpen: string = 'text-gray-900 dark:text-white';
   export let textFlushDefault: string = 'text-gray-500 dark:text-gray-400';
-  export let borderClass: string = 'border-l border-r group-first:border-t';
-  export let borderOpenClass: string = 'border-l border-r';
+  export let borderClass: string = 'border-s border-e group-first:border-t';
+  export let borderOpenClass: string = 'border-s border-e';
   export let borderBottomClass: string = 'border-b';
   export let borderSharedClass: string = 'border-gray-200 dark:border-gray-700';
 
@@ -111,8 +111,8 @@
 @prop export let paddingDefault: string = 'p-5';
 @prop export let textFlushOpen: string = 'text-gray-900 dark:text-white';
 @prop export let textFlushDefault: string = 'text-gray-500 dark:text-gray-400';
-@prop export let borderClass: string = 'border-l border-r group-first:border-t';
-@prop export let borderOpenClass: string = 'border-l border-r';
+@prop export let borderClass: string = 'border-s border-e group-first:border-t';
+@prop export let borderOpenClass: string = 'border-s border-e';
 @prop export let borderBottomClass: string = 'border-b';
 @prop export let borderSharedClass: string = 'border-gray-200 dark:border-gray-700';
 @prop export let classActive: string | undefined = undefined;

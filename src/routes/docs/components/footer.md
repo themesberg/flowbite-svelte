@@ -110,18 +110,18 @@ The footer is one of the most underestimated sections of a website being located
   <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
   <div class="sm:flex sm:items-center sm:justify-between">
     <FooterCopyright href="/" by="Flowbite™" />
-    <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+    <div class="flex mt-4 space-x-6 rtl:space-x-reverse sm:justify-center sm:mt-0">
       <FooterIcon href="/">
-        <FacebookSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <FacebookSolid class="w-5 h-5 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <DiscordSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <DiscordSolid class="w-5 h-5 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <TwitterSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <TwitterSolid class="w-5 h-5 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <GithubSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <GithubSolid class="w-5 h-5 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
         <Dribble />
@@ -182,18 +182,18 @@ The footer is one of the most underestimated sections of a website being located
   </div>
   <div class="py-6 px-4 bg-gray-700 md:flex md:items-center md:justify-between">
     <FooterCopyright spanClass="text-sm text-gray-300 sm:text-center" href="/" by="Flowbite™" />
-    <div class="flex mt-4 space-x-6 sm:justify-center md:mt-0">
+    <div class="flex mt-4 space-x-6 rtl:space-x-reverse sm:justify-center md:mt-0">
       <FooterIcon href="/">
-        <FacebookSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <FacebookSolid class="w-5 h-5 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <DiscordSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <DiscordSolid class="w-5 h-5 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <TwitterSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <TwitterSolid class="w-5 h-5 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <GithubSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <GithubSolid class="w-5 h-5 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
         <Dribble />
@@ -217,7 +217,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
   <ImagePlaceholder class="my-8" />
   <TextPlaceholder class="my-8" />
 </div>
-<Footer class="absolute bottom-0 left-0 z-20 w-full">
+<Footer class="absolute bottom-0 start-0 z-20 w-full">
   <FooterCopyright href="/" by="Flowbite™" year={2022} />
   <FooterLinkGroup ulClass="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
     <FooterLink href="/">About</FooterLink>

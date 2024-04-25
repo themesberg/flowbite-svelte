@@ -14,25 +14,39 @@
     size?: SizeType;
     placement?: ModalPlacementType;
     autoclose?: boolean;
+    outsideclose?: boolean;
     backdropClass?: string;
-    bodyClass?: string;
     classBackdrop?: string;
+    dialogClass?: string;
     classDialog?: string;
     defaultClass?: string;
-    outsideclose?: boolean;
-    dialogClass?: string;
+    headerClass?: string;
+    classHeader?: string;
+    bodyClass?: string;
+    classBody?: string;
+    footerClass?: string;
+    classFooter?: string;
   }
 
   export let open: boolean = false;
   export let title: string = '';
   export let size: SizeType = 'md';
+  export let color: ComponentProps<Frame>['color'] = 'default';
   export let placement: ModalPlacementType = 'center';
   export let autoclose: boolean = false;
+  export let outsideclose: boolean = false;
   export let dismissable: boolean = true;
   export let backdropClass: string = 'fixed inset-0 z-40 bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
+  export let classBackdrop: string | undefined = undefined;
+  export let dialogClass: string = 'fixed top-0 start-0 end-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex';
+  export let classDialog: string | undefined = undefined;
   export let defaultClass: string = 'relative flex flex-col mx-auto';
-  export let outsideclose: boolean = false;
-  export let dialogClass: string = 'fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex';
+  export let headerClass: string = 'flex justify-between items-center p-4 md:p-5 rounded-t-lg';
+  export let classHeader: string | undefined = undefined;
+  export let bodyClass: string = 'p-4 md:p-5 space-y-4 flex-1 overflow-y-auto overscroll-contain';
+  export let classBody: string | undefined = undefined;
+  export let footerClass: string = 'flex items-center p-4 md:p-5 space-x-3 rtl:space-x-reverse rounded-b-lg';
+  export let classFooter: string | undefined = undefined;
 
   const dispatch = createEventDispatcher();
   $: dispatch(open ? 'open' : 'close');
@@ -50,7 +64,7 @@
     node.focus();
   }
 
-  const getPlacementClasses = () => {
+  const getPlacementClasses = (placement: ModalPlacementType) => {
     switch (placement) {
       // top
       case 'top-left':
@@ -92,6 +106,10 @@
   const onAutoClose = (e: MouseEvent) => {
     const target: Element = e.target as Element;
     if (autoclose && target?.tagName === 'BUTTON') hide(e); // close on any button click
+  };
+
+  const onOutsideClose = (e: MouseEvent) => {
+    const target: Element = e.target as Element;
     if (outsideclose && target === e.currentTarget) hide(e); // close on click outside
   };
 
@@ -100,17 +118,18 @@
     open = false;
   };
 
-  let frameClass: string;
-  $: frameClass = twMerge(defaultClass, 'w-full divide-y', $$props.class);
-
   const isScrollable = (e: HTMLElement): boolean[] => [e.scrollWidth > e.clientWidth && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowX) >= 0, e.scrollHeight > e.clientHeight && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowY) >= 0];
-
-  let backdropCls: string = twMerge(backdropClass, $$props.classBackdrop);
 
   function handleKeys(e: KeyboardEvent) {
     if (e.key === 'Escape' && dismissable) return hide(e);
   }
 
+  $: backdropCls = twMerge(backdropClass, classBackdrop);
+  $: dialogCls = twMerge(dialogClass, classDialog, getPlacementClasses(placement));
+  $: frameCls = twMerge(defaultClass, 'w-full divide-y', $$props.class);
+  $: headerCls = twMerge(headerClass, classHeader);
+  $: bodyCls = twMerge(bodyClass, classBody);
+  $: footerCls = twMerge(footerClass, classFooter);
 </script>
 
 {#if open}
@@ -118,30 +137,31 @@
   <div class={backdropCls} />
   <!-- dialog -->
   <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-  <div on:keydown={handleKeys} on:wheel|preventDefault|nonpassive use:prepareFocus use:focusTrap on:click={onAutoClose} class={twMerge(dialogClass, $$props.classDialog, ...getPlacementClasses())} tabindex="-1" aria-modal="true" role="dialog">
+  <div on:keydown={handleKeys} on:wheel|preventDefault|nonpassive use:prepareFocus use:focusTrap on:click={onAutoClose} on:mousedown={onOutsideClose} class={dialogCls} tabindex="-1" aria-modal="true" role="dialog">
     <div class="flex relative {sizes[size]} w-full max-h-full">
       <!-- Modal content -->
-      <Frame rounded shadow {...$$restProps} class={frameClass}>
+      <Frame rounded shadow {...$$restProps} class={frameCls} {color}>
         <!-- Modal header -->
         {#if $$slots.header || title}
-          <Frame color={$$restProps.color} class="flex justify-between items-center p-4 rounded-t">
+          <Frame class={headerCls} {color}>
             <slot name="header">
-              <h3 class="text-xl font-semibold {$$restProps.color ? '' : 'text-gray-900 dark:text-white'} p-0">
+              <h3 class="text-xl font-semibold {color === 'default' ? '' : 'text-gray-900 dark:text-white'} p-0">
                 {title}
               </h3>
             </slot>
-            {#if dismissable}<CloseButton name="Close modal" on:click={hide} color={$$restProps.color} />{/if}
+            {#if dismissable}<CloseButton name="Close modal" {color} on:click={hide} />{/if}
           </Frame>
-        {:else if dismissable}
-          <CloseButton name="Close modal" class="absolute top-3 right-2.5" on:click={hide} color={$$restProps.color} />
         {/if}
         <!-- Modal body -->
-        <div class={twMerge('p-6 space-y-6 flex-1 overflow-y-auto overscroll-contain', $$props.bodyClass)} on:keydown|stopPropagation={handleKeys} role="document" on:wheel|stopPropagation|passive>
+        <div class={bodyCls} role="document" on:keydown|stopPropagation={handleKeys} on:wheel|stopPropagation|passive>
+          {#if dismissable && !$$slots.header && !title}
+            <CloseButton name="Close modal" class="absolute top-3 end-2.5" {color} on:click={hide} />
+          {/if}
           <slot />
         </div>
         <!-- Modal footer -->
         {#if $$slots.footer}
-          <Frame color={$$restProps.color} class="flex items-center p-6 space-x-2 rounded-b">
+          <Frame class={footerCls} {color}>
             <slot name="footer" />
           </Frame>
         {/if}
@@ -157,11 +177,20 @@
 @prop export let open: boolean = false;
 @prop export let title: string = '';
 @prop export let size: SizeType = 'md';
+@prop export let color: ComponentProps<Frame>['color'] = 'default';
 @prop export let placement: ModalPlacementType = 'center';
 @prop export let autoclose: boolean = false;
+@prop export let outsideclose: boolean = false;
 @prop export let dismissable: boolean = true;
 @prop export let backdropClass: string = 'fixed inset-0 z-40 bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
+@prop export let classBackdrop: string | undefined = undefined;
+@prop export let dialogClass: string = 'fixed top-0 start-0 end-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex';
+@prop export let classDialog: string | undefined = undefined;
 @prop export let defaultClass: string = 'relative flex flex-col mx-auto';
-@prop export let outsideclose: boolean = false;
-@prop export let dialogClass: string = 'fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex';
+@prop export let headerClass: string = 'flex justify-between items-center p-4 md:p-5 rounded-t-lg';
+@prop export let classHeader: string | undefined = undefined;
+@prop export let bodyClass: string = 'p-4 md:p-5 space-y-4 flex-1 overflow-y-auto overscroll-contain';
+@prop export let classBody: string | undefined = undefined;
+@prop export let footerClass: string = 'flex items-center p-4 md:p-5 space-x-3 rtl:space-x-reverse rounded-b-lg';
+@prop export let classFooter: string | undefined = undefined;
 -->

@@ -122,7 +122,7 @@ Get started with this example to show a popover with extra information inside pa
 ```svelte example class="flex items-end h-96"
 <script>
   import { Popover, P, A } from 'flowbite-svelte';
-  import { ChevronRightSolid } from 'flowbite-svelte-icons';
+  import { ChevronRightOutline } from 'flowbite-svelte-icons';
 </script>
 
 <P weight="font-light" color="text-gray-500 dark:text-gray-400">
@@ -134,10 +134,10 @@ Get started with this example to show a popover with extra information inside pa
       <div class="space-y-2">
         <h3 class="text-xl font-medium text-gray-900 dark:text-white">About Italy</h3>
         <p class="text-gray-500 dark:text-gray-400">Italy is located in the middle of the Mediterranean Sea, in Southern Europe it is also considered part of Western Europe.</p>
-        <A href="/">Read more <ChevronRightSolid class="w-2 h-2 ml-1.5" /></A>
+        <A href="/">Read more <ChevronRightOutline class="w-2 h-2 ms-1.5" /></A>
       </div>
     </div>
-    <img src="/images/image-1.webp" class="col-span-2 h-full rounded-r-lg" alt="Italy map" />
+    <img src="/images/image-1.webp" class="col-span-2 h-full rounded-e-lg" alt="Italy map" />
   </div>
 </Popover>
 ```

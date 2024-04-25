@@ -1,10 +1,9 @@
 <script lang="ts">
   import type { ComputePositionReturn, Middleware, Placement, Side } from '@floating-ui/dom';
   import * as dom from '@floating-ui/dom';
-  import { onMount, type ComponentProps } from 'svelte';
+  import { onMount, type ComponentProps, createEventDispatcher } from 'svelte';
   import { twJoin } from 'tailwind-merge';
   import Frame from './Frame.svelte';
-  import createEventDispatcher from './createEventDispatcher';
 
   // propagate props type from underlying Frame
   interface $$Props extends ComponentProps<Frame> {
@@ -12,7 +11,7 @@
     arrow?: boolean;
     offset?: number;
     placement?: Placement;
-    trigger?: 'hover' | 'click';
+    trigger?: 'hover' | 'click' | 'focus';
     triggeredBy?: string;
     reference?: string;
     strategy?: 'absolute' | 'fixed';
@@ -24,7 +23,7 @@
   export let arrow: boolean = true;
   export let offset: number = 8;
   export let placement: Placement = 'top';
-  export let trigger: 'hover' | 'click' = 'hover';
+  export let trigger: 'hover' | 'click' | 'focus' = 'hover';
   export let triggeredBy: string | undefined = undefined;
   export let reference: string | undefined = undefined;
   export let strategy: 'absolute' | 'fixed' = 'absolute';
@@ -38,7 +37,10 @@
   let clickable: boolean;
   $: clickable = trigger === 'click';
 
-  $: dispatch('show', referenceEl, open);
+  let hoverable: boolean;
+  $: hoverable = trigger === 'hover';
+
+  $: dispatch('show', open);
   $: placement && (referenceEl = referenceEl);
 
   let referenceEl: Element;
@@ -121,8 +123,8 @@
       ['focusin', showHandler, true],
       ['focusout', hideHandler, true],
       ['click', showHandler, clickable],
-      ['mouseenter', showHandler, !clickable],
-      ['mouseleave', hideHandler, !clickable]
+      ['mouseenter', showHandler, hoverable],
+      ['mouseleave', hideHandler, hoverable]
     ];
 
     if (triggeredBy) triggerEls = [...document.querySelectorAll<HTMLElement>(triggeredBy)];
@@ -143,7 +145,7 @@
         console.error(`Popup reference not found: '${reference}'`);
       } else {
         referenceEl.addEventListener('focusout', hideHandler);
-        if (!clickable) referenceEl.addEventListener('mouseleave', hideHandler);
+        if (hoverable) referenceEl.addEventListener('mouseleave', hideHandler);
       }
     } else {
       referenceEl = triggerEls[0];
@@ -168,7 +170,7 @@
   }
 
   let arrowClass: string;
-  $: arrowClass = twJoin('absolute pointer-events-none block w-[10px] h-[10px] rotate-45 bg-inherit border-inherit', $$props.border && arrowSide === 'bottom' && 'border-b border-r', $$props.border && arrowSide === 'top' && 'border-t border-l ', $$props.border && arrowSide === 'right' && 'border-t border-r ', $$props.border && arrowSide === 'left' && 'border-b border-l ');
+  $: arrowClass = twJoin('absolute pointer-events-none block w-[10px] h-[10px] rotate-45 bg-inherit border-inherit', $$props.border && arrowSide === 'bottom' && 'border-b border-e', $$props.border && arrowSide === 'top' && 'border-t border-s ', $$props.border && arrowSide === 'right' && 'border-t border-e ', $$props.border && arrowSide === 'left' && 'border-b border-s ');
 
   function initArrow(node: HTMLElement) {
     arrowEl = node;
@@ -184,8 +186,8 @@
   <div bind:this={contentEl} />
 {/if}
 
-{#if open && referenceEl}
-  <Frame use={init} options={referenceEl} role="tooltip" tabindex={activeContent ? -1 : undefined} on:focusin={optional(activeContent, showHandler)} on:focusout={optional(activeContent, hideHandler)} on:mouseenter={optional(activeContent && !clickable, showHandler)} on:mouseleave={optional(activeContent && !clickable, hideHandler)} {...$$restProps}>
+{#if referenceEl}
+  <Frame use={init} options={referenceEl} bind:open role="tooltip" tabindex={activeContent ? -1 : undefined} on:focusin={optional(activeContent, showHandler)} on:focusout={optional(activeContent, hideHandler)} on:mouseenter={optional(activeContent && hoverable, showHandler)} on:mouseleave={optional(activeContent && hoverable, hideHandler)} {...$$restProps}>
     <slot />
     {#if arrow}<div use:initArrow class={arrowClass} />{/if}
   </Frame>
@@ -199,10 +201,11 @@
 @prop export let arrow: boolean = true;
 @prop export let offset: number = 8;
 @prop export let placement: Placement = 'top';
-@prop export let trigger: 'hover' | 'click' = 'hover';
+@prop export let trigger: 'hover' | 'click' | 'focus' = 'hover';
 @prop export let triggeredBy: string | undefined = undefined;
 @prop export let reference: string | undefined = undefined;
 @prop export let strategy: 'absolute' | 'fixed' = 'absolute';
 @prop export let open: boolean = false;
 @prop export let yOnly: boolean = false;
+@prop export let middlewares: Middleware[] = [dom.flip(), dom.shift()];
 -->

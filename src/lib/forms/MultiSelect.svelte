@@ -3,15 +3,12 @@
   import CloseButton from '$lib/utils/CloseButton.svelte';
   import { twMerge } from 'tailwind-merge';
   import type { FormSizeType, SelectOptionType } from '../types';
-  import createEventDispatcher from '$lib/utils/createEventDispatcher';
-
-  const dispatch = createEventDispatcher();
 
   export let items: SelectOptionType<any>[] = [];
   export let value: (string | number)[] = [];
   export let size: FormSizeType = 'md';
   export let dropdownClass: string = '';
-
+  export let placeholder: string = '';
   let selectItems: SelectOptionType<any>[] = items.filter((x) => value.includes(x.value));
   let show: boolean = false;
 
@@ -22,16 +19,21 @@
   };
 
   // Container
-  const multiSelectClass: string = 'relative border border-gray-300 flex items-center rounded-lg gap-2 dark:border-gray-600 focus-within:ring-1 focus-within:border-primary-500 ring-primary-500 dark:focus-within:border-primary-500 dark:ring-primary-500';
+  const multiSelectClass: string = 'relative border border-gray-300 flex items-center rounded-lg gap-2 dark:border-gray-600 focus-within:ring-1 focus-within:border-primary-500 ring-primary-500 dark:focus-within:border-primary-500 dark:ring-primary-500 focus-visible:outline-none';
 
   // Dropdown
   let multiSelectDropdown: string;
-  $: multiSelectDropdown = twMerge('absolute z-50 p-3 flex flex-col gap-1 max-h-64 bg-white border border-gray-300 dark:bg-gray-700 dark:border-gray-600 left-0 top-[calc(100%+1rem)] rounded-lg cursor-pointer overflow-y-scroll w-full', dropdownClass);
+  $: multiSelectDropdown = twMerge('absolute z-50 p-3 flex flex-col gap-1 max-h-64 bg-white border border-gray-300 dark:bg-gray-700 dark:border-gray-600 start-0 top-[calc(100%+1rem)] rounded-lg cursor-pointer overflow-y-scroll w-full', dropdownClass);
 
   // Items
   const itemsClass: string = 'py-2 px-3 rounded-lg text-gray-600 hover:text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:text-gray-300 dark:hover:bg-gray-600';
   // Selected items
-  const itemsSelectClass: string = 'bg-gray-100 text-black hover:text-black dark:text-white dark:bg-gray-600 dark:hover:text-white';
+  const itemsSelectClass: string = 'bg-gray-100 text-black font-semibold hover:text-black dark:text-white dark:bg-gray-600 dark:hover:text-white';
+  // Active item
+  let activeIndex: number | null = null;
+  $: activeItem = activeIndex !== null? items[((activeIndex % items.length) + items.length) % items.length] : null;
+
+  const activeItemClass: string = 'bg-primary-100 text-primary-500 dark:bg-primary-500 dark:text-primary-100 hover:bg-primary-100 dark:hover:bg-primary-500 hover:text-primary-600 dark:hover:text-primary-100';
 
   const selectOption = (select: SelectOptionType<any>) => {
     if (value.includes(select.value)) {
@@ -52,6 +54,10 @@
     }
   };
 
+  function create_custom_event(type: string, detail: any, { bubbles = false, cancelable = false } = {}) {
+    return new CustomEvent(type, { detail, bubbles, cancelable });
+  }
+
   function init(node: HTMLSelectElement, value: any) {
     const inital = value; // hack for below
     return {
@@ -59,22 +65,77 @@
         selectItems = items.filter((x) => value.includes(x.value));
         // avoid initial event emitting
         if (value !== inital) {
-          dispatch('change', node, selectItems);
-          dispatch('input', node, selectItems);
+          node.dispatchEvent(create_custom_event('input', selectItems));
+          node.dispatchEvent(create_custom_event('change', selectItems));
         }
       }
     };
   }
+
+  // Keyboard navigation
+  function handleEscape() {
+    if (show) {
+      show = false;
+    }
+  }
+  function handleToggleActiveItem() {
+    if (!show) {
+      show = true;
+      activeIndex = 0;
+    }
+    else {
+      if (activeItem !== null) selectOption(activeItem);
+    }
+  }
+  function handleArrowUpDown(offset: number) {
+    if (!show) {
+      show = true;
+      activeIndex = 0;
+    }
+    else {
+      if (activeIndex !== null) {
+        activeIndex += offset;
+      }
+      else {
+        activeIndex = 0;
+      }
+    }
+  }
+  function handleKeyDown(event: KeyboardEvent) {
+    switch (event.key) {
+      case 'Escape':
+        handleEscape();
+        break;
+      case 'Enter':
+      case ' ':
+        handleToggleActiveItem();
+        break;
+      case 'ArrowDown':
+        handleArrowUpDown(1);
+        break;
+      case 'ArrowUp':
+        handleArrowUpDown(-1);
+        break;
+      default:
+        return;
+    }
+    event.stopPropagation();
+    event.preventDefault();
+  }
+
 </script>
 
 <!-- Hidden select for form submission -->
-<select use:init={value} {...$$restProps} {value} hidden multiple>
+<select use:init={value} {...$$restProps} {value} hidden multiple on:change on:input>
   {#each items as { value, name }}
     <option {value}>{name}</option>
   {/each}
 </select>
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div on:click={() => (show = !show)} on:focusout={() => (show = false)} tabindex="-1" role="listbox" class={twMerge(multiSelectClass, sizes[size], $$props.class)}>
+<div on:click={() => (show = !show)} on:focusout={() => (show = false)} on:keydown={handleKeyDown} tabindex="0" role="listbox" class={twMerge(multiSelectClass, sizes[size], $$props.class)}>
+  {#if !selectItems.length}
+    <span class="text-gray-400">{placeholder}</span>
+  {/if}
   <span class="flex gap-2 flex-wrap">
     {#if selectItems.length}
       {#each selectItems as item (item.name)}
@@ -86,12 +147,12 @@
       {/each}
     {/if}
   </span>
-  <div class="flex ml-auto gap-2 items-center">
+  <div class="flex ms-auto gap-2 items-center">
     {#if selectItems.length}
-      <CloseButton {size} on:click={clearAll} color="none" class="p-0 focus:ring-gray-400" />
+      <CloseButton {size} on:click={clearAll} color="none" class="p-0 focus:ring-gray-400 dark:text-white" />
     {/if}
     <div class="w-[1px] bg-gray-300 dark:bg-gray-600" />
-    <svg class="cursor-pointer h-3 w-3 ml-1 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+    <svg class="cursor-pointer h-3 w-3 ms-1 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={show ? 'm1 5 4-4 4 4' : 'm9 1-4 4-4-4'} />
     </svg>
   </div>
@@ -100,7 +161,7 @@
     <div on:click|stopPropagation role="presentation" class={multiSelectDropdown}>
       {#each items as item (item.name)}
         <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <div on:click={() => selectOption(item)} role="presentation" class={twMerge(itemsClass, selectItems.includes(item) && itemsSelectClass)}>
+        <div on:click={() => selectOption(item)} role="presentation" class={twMerge(itemsClass, selectItems.includes(item) && itemsSelectClass, activeItem === item && activeItemClass)}>
           {item.name}
         </div>
       {/each}

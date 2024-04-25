@@ -61,6 +61,14 @@ Run the following command to install all Flowbite dependencies and libraries:
 pnpm i -D flowbite-svelte flowbite
 ```
 
+### Optional
+
+Install `flowbite-svelte-icons` for the examples to work properly:
+
+```sh
+pnpm i -D flowbite-svelte-icons
+```
+
 ### Configuration
 
 Update the `tailwind.config.cjs` file from your root project folder to let the Tailwind CSS compiler know where to look for the utility classes and also set up the Flowbite plugin.
@@ -73,7 +81,7 @@ const config = {
 
   plugins: [require('flowbite/plugin')],
 
-  darkMode: 'class',
+  darkMode: 'selector',
 
   theme: {
     extend: {

@@ -33,8 +33,22 @@ To get started with using tooltips all you need to do is set `triggeredBy` attri
   import { Tooltip, Button } from 'flowbite-svelte';
 </script>
 
+<!-- only works if the button and tooltip are adjacent on your page. Like this: -->
 <Button>Default tooltip</Button>
 <Tooltip>Tooltip content</Tooltip>
+```
+
+If you have anything else between the button and tooltip, they won't find each other and you will need to specify the link between them by setting the property `triggeredBy` to the CSS query of the element that triggers the tooltip. Most of the time you will want to use the `id` attribute of the element to link them, but you can use any CSS query you want. See the examples further down.
+
+```svelte example hideScript class="h-32 flex items-end gap-2"
+<script>
+  import { Tooltip, Button, P } from 'flowbite-svelte';
+</script>
+
+<Button id="specific-button-anywhere-on-page">Default tooltip</Button>
+<P>hi mom</P>
+<P>lorem ipsum, content blah blah, other stuff</P>
+<Tooltip triggeredBy="#specific-button-anywhere-on-page">Tooltip content</Tooltip>
 ```
 
 ## Tooltip types
@@ -47,10 +61,10 @@ You can use choose between dark and light version styles for the tooltip compone
   let type = 'dark';
 </script>
 
-<Button id="type-light">Light tooltip</Button>
-<Button id="type-auto">Default tooltip</Button>
-<Button id="type-dark">Dark tooltip</Button>
-<Tooltip {type} triggeredBy="[id^='type-']" on:show={(ev) => (type = ev.target.id.split('-')[1])}>Tooltip content</Tooltip>
+<Button id="type-1" on:mouseenter={()=> type='light'}>Light tooltip</Button>
+<Button id="type-2" on:mouseenter={()=> type='auto'}>Default tooltip</Button>
+<Button id="type-3" on:mouseenter={()=> type='dark'}>Dark tooltip</Button>
+<Tooltip {type} triggeredBy="[id^='type-']">Tooltip content</Tooltip>
 ```
 
 ## Placement
@@ -59,17 +73,17 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 
 **Note!** This examples shows you also how to share one tooltip between multiple triggering elements using advanced CSS query.
 
-```svelte example class="flex items-center gap-2 h-36" hideResponsiveButtons
+```svelte example class="flex items-center justify-center gap-2 h-36" hideResponsiveButtons
 <script>
   import { Tooltip, Button } from 'flowbite-svelte';
   let placement = 'left';
 </script>
 
-<Button id="placement-left">Tooltip left</Button>
-<Button id="placement-top">Tooltip top</Button>
-<Button id="placement-bottom">Tooltip bottom</Button>
-<Button id="placement-right">Tooltip right</Button>
-<Tooltip triggeredBy="[id^='placement-']" {placement} on:show={(e) => ([, placement] = e.target.id.split('-'))}>
+<Button id="placement-1" on:mouseenter={()=> placement='left'}>Tooltip left</Button>
+<Button id="placement-2" on:mouseenter={()=> placement='top'}>Tooltip top</Button>
+<Button id="placement-3" on:mouseenter={()=> placement='bottom'}>Tooltip bottom</Button>
+<Button id="placement-4" on:mouseenter={()=> placement='right'}>Tooltip right</Button>
+<Tooltip triggeredBy="[id^='placement-']" {placement}>
   Tooltip content - {placement}
 </Tooltip>
 ```
@@ -109,7 +123,7 @@ If you need the tooltip to be attached to the other element then the tiggering o
 </script>
 
 <div id="ext-ref" class="p-2 rounded-lg border border-gray-200 dark:border-gray-600">External reference</div>
-<div class="space-x-4">
+<div class="space-x-4 rtl:space-x-reverse">
   <Button id="ref-left" on:mouseenter={() => (placement = 'left')}>Left</Button>
   <Button id="ref-top" on:mouseenter={() => (placement = 'top')}>Top</Button>
   <Button id="ref-right" on:mouseenter={() => (placement = 'right')}>Right</Button>

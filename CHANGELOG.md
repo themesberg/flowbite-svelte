@@ -1,19 +1,99 @@
 # Changelog
 
+## 0.46.0
+
+### Minor Changes
+
+- - 998d0176 BREAKING: #1277 change style prop to tabStyle to avoid conflict with CSS attr ([`40a1d6581d555c28ff00e5b373d5742a314b6b02`](https://github.com/themesberg/flowbite-svelte/commit/40a1d6581d555c28ff00e5b373d5742a314b6b02))
+  - 572888c4 docs: #1282 add warnings in the docs where components are using @html
+  - bb479286 fix: docsearch style using @docsearch/css@3
+  - 656f2223 fix: #1287 #1304
+  - 113de668 fix: add disabled prop to Button component
+  - 4fbd9bd0 docs: change tailwind.config.cjs darkMode class to selector
+
+## 0.45.1
+
+### Patch Changes
+
+- - 3eb228d3 fix: node from 20.0.0 to 18.0.0 in package.json engines ([`987f564b0e7cc62c68898fd5e0b73af96610c406`](https://github.com/themesberg/flowbite-svelte/commit/987f564b0e7cc62c68898fd5e0b73af96610c406))
+  - 0d9a9332 fix: adjust eslint configuration to eslint-plugin-svelte (previously used eslint-plugin-svelte3) (#1310)
+  - 191ca2e0 fix: add define to vite.config.ts for **VERSION**
+  - ad3d1c7f fix: move FATHOM_ID to .env and use FathomAnalytics.svelte
+  - 6011780a > Gitignore updated at 2024-04-18 06:10:47
+  - ba81e3bb fix: update gitignore
+
+## 0.45.0
+
+### Minor Changes
+
+- BREAKING: flowbie-svelte-icons updated 1.5.0 ([#1308](https://github.com/themesberg/flowbite-svelte/pull/1308))
+
+  fix: update icon sizes
+
+  chore: lib-helpers
+
+  fix: update engines node >=20.0.0
+
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.44.19](https://github.com/themesberg/flowbite-svelte/compare/v0.44.18...v0.44.19) (2023-10-31)
+### [0.44.24](https://github.com/themesberg/flowbite-svelte/compare/v0.44.23...v0.44.24) (2024-02-23)
 
+### Features
+
+- add focus only trigger mode for Popper ([#1241](https://github.com/themesberg/flowbite-svelte/issues/1241)) ([f7ca868](https://github.com/themesberg/flowbite-svelte/commit/f7ca86872d0899cab2ee67da63a2f35bc5c33a10))
 
 ### Bug Fixes
 
-* add missing types on modal $$Props ([#1110](https://github.com/themesberg/flowbite-svelte/issues/1110)) ([f929a4a](https://github.com/themesberg/flowbite-svelte/commit/f929a4a46617ced99b0e9faf5f2f86dd99ce81ef))
-* add missing types on modal $$Props ([#1110](https://github.com/themesberg/flowbite-svelte/issues/1110)) ([f387c81](https://github.com/themesberg/flowbite-svelte/commit/f387c81984280fad7d7f5af34d57ea8f95a04a2c))
-* change Carousel.ts to CarouselSlide.ts to fix compo-data for Carousel ([a3c75f3](https://github.com/themesberg/flowbite-svelte/commit/a3c75f3bedd1756f43428e55e6f35021910fe4ef))
-* change Carousel.ts to CarouselSlide.ts to fix compo-data for Carousel ([f97fa4d](https://github.com/themesberg/flowbite-svelte/commit/f97fa4dcafabfd697e3b99bfb7fcdcfda8968b78))
-* modal divide-y instead of border ([#1136](https://github.com/themesberg/flowbite-svelte/issues/1136)) ([c9a2a9b](https://github.com/themesberg/flowbite-svelte/commit/c9a2a9be366f35c40252c1eaa8e89a63e6151364))
-* playwright config timeout: 600000 ([7abe468](https://github.com/themesberg/flowbite-svelte/commit/7abe46866411fc7ca94806a1ec4b4ac7399bb727))
-* playwright config timeout: 600000 ([872502d](https://github.com/themesberg/flowbite-svelte/commit/872502d2d96aa7f6e516fd9a41af40229ffddca5))
+- add if statement to TransitionFrame component ([#1250](https://github.com/themesberg/flowbite-svelte/issues/1250)) ([394413e](https://github.com/themesberg/flowbite-svelte/commit/394413ef928620d75bd7a4b730d90bf203a2484f))
+- correct padding in Modal ([#1249](https://github.com/themesberg/flowbite-svelte/issues/1249)) ([913ad38](https://github.com/themesberg/flowbite-svelte/commit/913ad38dbb7371d43a9c263d622555dea8c61810))
+- properly handle class props in dropdown ([#1239](https://github.com/themesberg/flowbite-svelte/issues/1239)) ([0e5ff6c](https://github.com/themesberg/flowbite-svelte/commit/0e5ff6cda13e97cee8606d7ba018ba0e45fb5864))
+- properly handle spacing prop in Radio ([#1108](https://github.com/themesberg/flowbite-svelte/issues/1108)) ([7f34738](https://github.com/themesberg/flowbite-svelte/commit/7f34738df99c886a59afca5d56951fa36dcdf927))
+
+### [0.44.23](https://github.com/themesberg/flowbite-svelte/compare/v0.44.22...v0.44.23) (2024-02-08)
+
+### Bug Fixes
+
+- add focus:ring-0 to menu btns ([b81c875](https://github.com/themesberg/flowbite-svelte/commit/b81c875a54700d144e9c96c311cd4d63090595db))
+- engines npm to pnpm 8.0.0 in package.json ([6770c92](https://github.com/themesberg/flowbite-svelte/commit/6770c92b03b435c949c1fd13e58cfa2f4e241e81))
+- playwright version in workflows ([046b908](https://github.com/themesberg/flowbite-svelte/commit/046b908346bf1dcae4a9b33142b5460c0590e0b0))
+- remove focus from DarkMode ([22c48db](https://github.com/themesberg/flowbite-svelte/commit/22c48db00250f8f2adbda2c183953ad0c8977205))
+- spinner typings, docs ([#1151](https://github.com/themesberg/flowbite-svelte/issues/1151)) ([ed17997](https://github.com/themesberg/flowbite-svelte/commit/ed17997e61162844aab8131e9040f1125b4a4103))
+- workflow pnpm to latest ([a1358fe](https://github.com/themesberg/flowbite-svelte/commit/a1358fe577597e85edc46e84bff01cdc24785c0a))
+
+### [0.44.22](https://github.com/themesberg/flowbite-svelte/compare/v0.44.21...v0.44.22) (2024-01-12)
+
+### Bug Fixes
+
+- 1125 ([#1195](https://github.com/themesberg/flowbite-svelte/issues/1195)) ([f0b3d9c](https://github.com/themesberg/flowbite-svelte/commit/f0b3d9ce7fbfad3a5db93bffd680c028af1e3409))
+- 1209 ([#1210](https://github.com/themesberg/flowbite-svelte/issues/1210)) ([671a950](https://github.com/themesberg/flowbite-svelte/commit/671a950d96bc2e96fb4d85a999f7317dd5b9fd4f))
+- sidebar md:block ([0bd2f01](https://github.com/themesberg/flowbite-svelte/commit/0bd2f012986fcdd2b925fe05e69f7114478ab440))
+
+### [0.44.21](https://github.com/themesberg/flowbite-svelte/compare/v0.44.20...v0.44.21) (2023-12-22)
+
+### Bug Fixes
+
+- [#1157](https://github.com/themesberg/flowbite-svelte/issues/1157) ([#1176](https://github.com/themesberg/flowbite-svelte/issues/1176)) ([a15a361](https://github.com/themesberg/flowbite-svelte/commit/a15a36173b644b7549c72c57d738df3e5af97bbc))
+- issue1178 ([#1179](https://github.com/themesberg/flowbite-svelte/issues/1179)) ([12281fd](https://github.com/themesberg/flowbite-svelte/commit/12281fdebe6428f2159b28a1ba5379ac4bbb2ce0))
+- modal outside click only on mouse down ([#1160](https://github.com/themesberg/flowbite-svelte/issues/1160)) ([96e4d4b](https://github.com/themesberg/flowbite-svelte/commit/96e4d4b9681db725a0208e1aa786cc330bfa9498))
+
+### [0.44.20](https://github.com/themesberg/flowbite-svelte/compare/v0.44.19...v0.44.20) (2023-11-24)
+
+### Bug Fixes
+
+- add NODE_OPTIONS to playwright-and-lint ([4f255f5](https://github.com/themesberg/flowbite-svelte/commit/4f255f57199f6214856feef12d3206b3216db5f2))
+- textarea inner rounded ([#1141](https://github.com/themesberg/flowbite-svelte/issues/1141)) ([6995e54](https://github.com/themesberg/flowbite-svelte/commit/6995e54cf788a39cb12a7a1d3df8a00f93cdfb28))
+
+### [0.44.19](https://github.com/themesberg/flowbite-svelte/compare/v0.44.18...v0.44.19) (2023-10-31)
+
+### Bug Fixes
+
+- add missing types on modal $$Props ([#1110](https://github.com/themesberg/flowbite-svelte/issues/1110)) ([f929a4a](https://github.com/themesberg/flowbite-svelte/commit/f929a4a46617ced99b0e9faf5f2f86dd99ce81ef))
+- add missing types on modal $$Props ([#1110](https://github.com/themesberg/flowbite-svelte/issues/1110)) ([f387c81](https://github.com/themesberg/flowbite-svelte/commit/f387c81984280fad7d7f5af34d57ea8f95a04a2c))
+- change Carousel.ts to CarouselSlide.ts to fix compo-data for Carousel ([a3c75f3](https://github.com/themesberg/flowbite-svelte/commit/a3c75f3bedd1756f43428e55e6f35021910fe4ef))
+- change Carousel.ts to CarouselSlide.ts to fix compo-data for Carousel ([f97fa4d](https://github.com/themesberg/flowbite-svelte/commit/f97fa4dcafabfd697e3b99bfb7fcdcfda8968b78))
+- modal divide-y instead of border ([#1136](https://github.com/themesberg/flowbite-svelte/issues/1136)) ([c9a2a9b](https://github.com/themesberg/flowbite-svelte/commit/c9a2a9be366f35c40252c1eaa8e89a63e6151364))
+- playwright config timeout: 600000 ([7abe468](https://github.com/themesberg/flowbite-svelte/commit/7abe46866411fc7ca94806a1ec4b4ac7399bb727))
+- playwright config timeout: 600000 ([872502d](https://github.com/themesberg/flowbite-svelte/commit/872502d2d96aa7f6e516fd9a41af40229ffddca5))
 
 ### [0.44.18](https://github.com/themesberg/flowbite-svelte/compare/v0.44.17...v0.44.18) (2023-10-01)
 

@@ -35,7 +35,7 @@ Use this simple toast component with an icon, message, and dismissable close but
 </script>
 
 <Toast>
-  <FireOutline slot="icon" class="w-5 h-5 text-primary-500 bg-primary-100 dark:bg-primary-800 dark:text-primary-200" />
+  <FireOutline slot="icon" class="w-6 h-6 text-primary-500 bg-primary-100 dark:bg-primary-800 dark:text-primary-200" />
   Set yourself free.
 </Toast>
 ```
@@ -77,32 +77,32 @@ Usually, green, red, and orange are used to show success, danger, or warning ale
 </Toast>
 
 <Toast color="gray">
-  <FireOutline slot="icon" class="w-5 h-5" />
+  <FireOutline slot="icon" class="w-6 h-6" />
   Gray
 </Toast>
 
 <Toast color="yellow">
-  <FireOutline slot="icon" class="w-5 h-5" />
+  <FireOutline slot="icon" class="w-6 h-6" />
   Yellow
 </Toast>
 
 <Toast color="blue">
-  <FireOutline slot="icon" class="w-5 h-5" />
+  <FireOutline slot="icon" class="w-6 h-6" />
   Blue
 </Toast>
 
 <Toast color="indigo">
-  <FireOutline slot="icon" class="w-5 h-5" />
+  <FireOutline slot="icon" class="w-6 h-6" />
   Indigo
 </Toast>
 
 <Toast color="purple">
-  <FireOutline slot="icon" class="w-5 h-5" />
+  <FireOutline slot="icon" class="w-6 h-6" />
   Purple
 </Toast>
 
 <Toast color="none" defaultIconClass="w-8 h-8 text-pink-500 bg-pink-100 dark:bg-pink-800 dark:text-pink-200">
-  <FireOutline slot="icon" class="w-5 h-5" />
+  <FireOutline slot="icon" class="w-6 h-6" />
   Customize your colors.
 </Toast>
 ```
@@ -114,12 +114,12 @@ This component can be used to show simple messages and notifications without the
 ```svelte example class="flex justify-center"
 <script>
   import { Toast } from 'flowbite-svelte';
-  import { PapperPlaneOutline } from 'flowbite-svelte-icons';
+  import { PaperPlaneOutline } from 'flowbite-svelte-icons';
 </script>
 
-<Toast dismissable={false} contentClass="flex space-x-4 divide-x divide-gray-200 dark:divide-gray-700">
-  <PapperPlaneOutline class="w-5 h-5 text-primary-600 dark:text-primary-500 rotate-45" />
-  <div class="pl-4 text-sm font-normal">Message sent successfully.</div>
+<Toast dismissable={false} contentClass="flex space-x-4 rtl:space-x-reverse divide-x rtl:divide-x-reverse divide-gray-200 dark:divide-gray-700">
+  <PaperPlaneOutline class="w-5 h-5 text-primary-600 dark:text-primary-500 rotate-45" />
+  <div class="ps-4 text-sm font-normal">Message sent successfully.</div>
 </Toast>
 ```
 
@@ -169,7 +169,7 @@ You can use any [icon components](/icons).
 <div class="flex gap-10">
   <Button on:click={trigger} class="my-3">Restart</Button>
   <Toast dismissable={false} transition={slide} bind:open>
-    <CheckCircleSolid slot="icon" class="w-4 h-4" />
+    <CheckCircleSolid slot="icon" class="w-5 h-5" />
     Autohide in {counter}s.
   </Toast>
 </div>
@@ -188,17 +188,17 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 </script>
 
 <Toast transition={slide} class="mb-4">
-  <CheckCircleSolid slot="icon" class="w-5 h-5" />
+  <CheckCircleSolid slot="icon" class="w-6 h-6" />
   Transition type: slide
 </Toast>
 
 <Toast transition={slide} params={{ delay: 250, duration: 300, easing: quintOut }} class="mb-4">
-  <CheckCircleSolid slot="icon" class="w-5 h-5" />
+  <CheckCircleSolid slot="icon" class="w-6 h-6" />
   Transition type: slide, delay: 250, duration: 300, easing: quintOut
 </Toast>
 
 <Toast transition={slide} params={{ delay: 250, duration: 2000, easing: elasticOut }}>
-  <CheckCircleSolid slot="icon" class="w-5 h-5" />
+  <CheckCircleSolid slot="icon" class="w-6 h-6" />
   Transition type: slide, delay: 250, duration: 2000, easing: elasticOut
 </Toast>
 ```
@@ -213,12 +213,12 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 </script>
 
 <Toast transition={blur} color="purple" params={{ amount: 10 }} class="mb-4">
-  <BellOutline slot="icon" class="w-5 h-5" />
+  <BellOutline slot="icon" class="w-6 h-6" />
   Transition type: blur, amount: 10
 </Toast>
 
 <Toast transition={blur} color="purple" params={{ amount: 50, delay: 1000 }}>
-  <BellOutline slot="icon" class="w-5 h-5" />
+  <BellOutline slot="icon" class="w-6 h-6" />
   Transition type: blur, amount: 50, delay 1000
 </Toast>
 ```
@@ -233,12 +233,12 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 </script>
 
 <Toast transition={fly} params={{ x: 200 }} color="green" class="mb-4">
-  <DownloadOutline slot="icon" class="w-5 h-5" />
+  <DownloadOutline slot="icon" class="w-6 h-6" />
   Transition type: fly right
 </Toast>
 
 <Toast transition={fly} params={{ y: 200 }} color="green">
-  <DownloadOutline slot="icon" class="w-5 h-5" />
+  <DownloadOutline slot="icon" class="w-6 h-6" />
   Transition type: fly down
 </Toast>
 ```
@@ -254,7 +254,7 @@ Use this toast component to also show an “undo” button to reverse the action
 
 <Toast contentClass="w-full text-sm font-normal flex items-center justify-between">
   Conversation archived.
-  <a class="ml-auto font-medium text-primary-600 p-1.5 hover:bg-primary-100 rounded-lg dark:text-primary-500 dark:hover:bg-gray-700" href="/"> Undo </a>
+  <a class="ms-auto font-medium text-primary-600 p-1.5 hover:bg-primary-100 rounded-lg dark:text-primary-500 dark:hover:bg-gray-700" href="/"> Undo </a>
 </Toast>
 ```
 
@@ -273,7 +273,7 @@ This component can be used to show messages and a CTA button when receiving chat
 
 <Toast align={false} color="none" defaultIconClass="">
   <Avatar slot="icon" src="/images/profile-picture-1.webp" />
-  <div class="ml-3 text-sm font-normal">
+  <div class="ms-3 text-sm font-normal">
     <span class="mb-1 text-sm font-semibold text-gray-900 dark:text-white">Jese Leos</span>
     <div class="mb-2 text-sm font-normal">Hi Neil, thanks for sharing your thoughts regarding Flowbite.</div>
     <Button size="xs">Reply</Button>
@@ -294,7 +294,7 @@ This component can be used to show notifications for an action from another user
   <span class="font-semibold text-gray-900 dark:text-white">New notification</span>
   <div class="flex items-center mt-3">
     <Avatar src="/images/profile-picture-3.webp" />
-    <div class="ml-3">
+    <div class="ms-3">
       <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Bonnie Green</h4>
       <div class="text-sm font-normal">commented on your photo</div>
       <span class="text-xs font-medium text-primary-600 dark:text-primary-500">a few seconds ago</span>
@@ -312,11 +312,11 @@ Use this interactive toast component to encourage users to make a certain action
 ```svelte example class="flex justify-center"
 <script>
   import { Toast, Button } from 'flowbite-svelte';
-  import { CameraFotoOutline } from 'flowbite-svelte-icons';
+  import { CameraPhotoOutline } from 'flowbite-svelte-icons';
 </script>
 
 <Toast align={false}>
-  <CameraFotoOutline slot="icon" class="w-5 h-5" />
+  <CameraPhotoOutline slot="icon" class="w-6 h-6" />
 
   <span class="font-semibold text-gray-900 dark:text-white">Update available</span>
   <div class="mt-3">

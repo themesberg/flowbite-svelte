@@ -2,7 +2,8 @@
   import { browser } from '$app/environment';
   import { onMount } from 'svelte';
   import docsearch from '@docsearch/js';
-
+  import '@docsearch/css';
+  
   let searchContainer: HTMLElement;
 
   onMount(() => {
@@ -19,4 +20,4 @@
   });
 </script>
 
-<div bind:this={searchContainer} id="docsearch" class="ml-3 xl:pl-4" />
+<div bind:this={searchContainer} id="docsearch" class="ms-3 xl:ps-4" />

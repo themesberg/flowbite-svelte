@@ -63,7 +63,7 @@ Use this example to show more information about a user profile when hovering ove
       .
     </div>
     <ul class="flex text-sm font-light">
-      <li class="mr-2">
+      <li class="me-2">
         <a href="/" class="hover:underline">
           <span class="font-semibold text-gray-900 dark:text-white">799</span>
           <span>Following</span>
@@ -93,7 +93,7 @@ This example can be used to show more information about a company profile.
 <Button class="-mb-4">Company profile</Button>
 <Popover class="w-80 text-sm">
   <div class="flex">
-    <div class="mr-3 shrink-0">
+    <div class="me-3 shrink-0">
       <a href="/" class="block p-2 bg-gray-100 rounded-lg dark:bg-gray-700">
         <img class="w-8 h-8 rounded-full" src="/images/flowbite-svelte-icon-logo.svg" alt="Flowbite logo" />
       </a>
@@ -106,23 +106,23 @@ This example can be used to show more information about a company profile.
       <p class="mb-4 text-sm font-light">Open-source library of Tailwind CSS components and Figma design system.</p>
       <ul class="text-sm font-light">
         <li class="flex items-center mb-2">
-          <GlobeOutline class="w-3.5 h-3.5 mr-2" />
+          <GlobeOutline class="w-3.5 h-3.5 me-2" />
           <a href="/" class="text-primary-600 dark:text-primary-500 hover:underline"> https://flowbite.com/ </a>
         </li>
         <li class="flex items-start mb-2">
-          <HeartSolid class="w-5 h-5 mr-2" />
+          <HeartSolid class="w-5 h-5 me-2" />
           <span>4,567,346 people like this including 5 of your friends</span>
         </li>
       </ul>
-      <div class="flex mb-3 ml-4">
+      <div class="flex mb-3 ms-4">
         <Avatar src="/images/profile-picture-1.webp" stacked />
         <Avatar src="/images/profile-picture-2.webp" stacked />
         <Avatar src="/images/profile-picture-3.webp" stacked />
         <Avatar stacked href="/" class="bg-gray-700 dark:bg-gray-700 text-white hover:bg-gray-600">+3</Avatar>
       </div>
       <div class="flex">
-        <Button color="alternative" class="mr-2 w-full">
-          <ThumbsUpSolid class="mr-2" />
+        <Button color="alternative" class="me-2 w-full">
+          <ThumbsUpSolid class="me-2" />
           Like page
         </Button>
         <Button color="alternative">
@@ -141,7 +141,7 @@ Use this example to trigger a popover component with detailed information and an
 ```svelte example class="flex h-96 items-end" hideResponsiveButtons
 <script>
   import { Popover } from 'flowbite-svelte';
-  import { ChevronRightSolid } from 'flowbite-svelte-icons';
+  import { ChevronRightOutline } from 'flowbite-svelte-icons';
 </script>
 
 <p class="font-light text-gray-500 dark:text-gray-400">
@@ -157,13 +157,13 @@ Use this example to trigger a popover component with detailed information and an
           <h3>
             <p class="text-gray-500 dark:text-gray-500">Italy is located in the middle of the Mediterranean Sea, in Southern Europe it is also considered part of Western Europe. A unitary parliamentary republic with Rome as its capital and largest city.</p>
             <a href="/" class="flex items-center font-medium text-primary-600 dark:text-primary-500 dark:hover:text-primary-600 hover:text-primary-700">
-              Read more <ChevronRightSolid class="w-2 h-2 ml-1.5 text-primary-600 dark:text-primary-500" />
+              Read more <ChevronRightOutline class="w-2 h-2 ms-1.5 text-primary-600 dark:text-primary-500" />
             </a>
           </h3>
         </h3>
       </div>
     </div>
-    <img src="/images/italy.png" class="col-span-2 h-full rounded-r-lg" alt="Italy map" />
+    <img src="/images/italy.png" class="col-span-2 h-full rounded-e-lg" alt="Italy map" />
   </div>
 </Popover>
 ```
@@ -181,7 +181,7 @@ Show helpful information inside a popover when hovering over a question mark but
 <div class="flex items-center text-sm font-light text-gray-500 dark:text-gray-400">
   This is just some informational text
   <button id="b3">
-    <QuestionCircleSolid class="w-4 h-4 ml-1.5" />
+    <QuestionCircleSolid class="w-5 h-5 ms-1.5" />
     <span class="sr-only">Show information</span>
   </button>
 </div>
@@ -192,7 +192,7 @@ Show helpful information inside a popover when hovering over a question mark but
     <h3 class="font-semibold text-gray-900 dark:text-white">Calculation</h3>
     For each date bucket, the all-time volume of activities is calculated. This means that activities in period n contain all activities up to period n.
     <a href="/" class="flex items-center font-medium text-primary-600 dark:text-primary-500 dark:hover:text-primary-600 hover:text-primary-700">
-      Read more <ChevronRightOutline class="w-2 h-2 ml-1.5 text-primary-600 dark:text-primary-500" />
+      Read more <ChevronRightOutline class="w-4 h-4 ms-1.5 text-primary-600 dark:text-primary-500" />
     </a>
   </div>
 </Popover>
@@ -209,7 +209,7 @@ Show a progress bar with details inside a popover when hovering over a settings 
 </script>
 
 <Button id="progress">
-  <DatabaseSolid class="mr-2 w-4 h-4 text-white dark:text-white" /> Storage status
+  <DatabaseSolid class="me-2 w-5 h-5 text-white dark:text-white" /> Storage status
 </Button>
 <Popover triggeredBy="#progress" class="text-sm w-64 font-light">
   <div class="space-y-2">
@@ -224,7 +224,7 @@ Show a progress bar with details inside a popover when hovering over a settings 
       <div class="bg-red-600 h-2.5 rounded-full" style="width: 85%" />
     </div>
     <a href="/" class="flex items-center font-medium text-primary-600 dark:text-primary-500 dark:hover:text-primary-600 hover:text-primary-700">
-      Upgrade now <ChevronRightOutline class="w-2 h-2 ml-1.5 text-primary-600 dark:text-primary-500" />
+      Upgrade now <ChevronRightOutline class="w-4 h-4 ms-1.5 text-primary-600 dark:text-primary-500" />
     </a>
   </div>
 </Popover>
@@ -263,15 +263,15 @@ Dynamically show the password strength progress when creating a new password pos
   <p class="py-2">It’s better to have:</p>
   <ul>
     <li class="flex items-center mb-1">
-      <CheckOutline class="mr-2 w-4 h-4 text-green-400 dark:text-green-500" />
+      <CheckOutline class="me-2 w-4 h-4 text-green-400 dark:text-green-500" />
       Upper &amp; lower case letters
     </li>
     <li class="flex items-center mb-1">
-      <CheckOutline class="mr-2 w-4 h-4 text-green-400 dark:text-green-500" />
+      <CheckOutline class="me-2 w-4 h-4 text-green-400 dark:text-green-500" />
       A symbol (#$&amp;)
     </li>
     <li class="flex items-center">
-      <CloseOutline class="mr-2 w-4 h-4 text-gray-300 dark:text-gray-400" />A longer password (min. 12 chars.)
+      <CloseOutline class="me-2 w-4 h-4 text-gray-300 dark:text-gray-400" />A longer password (min. 12 chars.)
     </li>
   </ul>
 </Popover>
@@ -288,7 +288,7 @@ Set the position of the popover component relative to the trigger element by usi
 </script>
 
 <Button id="placement-top" on:mouseenter={() => (placement = 'top')}>Top popover</Button>
-<div class="space-x-4">
+<div class="space-x-4 rtl:space-x-reverse">
   <Button id="placement-left" on:mouseenter={() => (placement = 'left')}>Left popover</Button>
   <Button id="placement-right" on:mouseenter={() => (placement = 'right')}>Right popover</Button>
 </div>
@@ -305,8 +305,10 @@ Set the position of the popover component relative to the trigger element by usi
 
 <Button id="hover">Hover popover</Button>
 <Button id="click">Click popover</Button>
+<Button id="focus">Focus popover</Button>
 <Popover class="w-64 text-sm font-light " title="Popover title" triggeredBy="#hover" trigger="hover">And here's some amazing content. It's very engaging. Right?</Popover>
 <Popover class="w-64 text-sm font-light " title="Popover title" triggeredBy="#click" trigger="click">And here's some amazing content. It's very engaging. Right?</Popover>
+<Popover class="w-64 text-sm font-light " title="Popover title" triggeredBy="#focus" trigger="focus">And here's some amazing content. It's very engaging. Right?</Popover>
 ```
 
 ## Offset
@@ -364,7 +366,7 @@ If you need the popover to be attached to the other element then the tiggering o
 </script>
 
 <div id="ext-ref" class="p-2 rounded-lg border border-gray-200 dark:border-gray-600">External reference</div>
-<div class="space-x-4">
+<div class="space-x-4 rtl:space-x-reverse">
   <Button id="ref-1" on:mouseenter={() => (placement = 'left')}>Left</Button>
   <Button id="ref-2" on:mouseenter={() => (placement = 'top')}>Top</Button>
   <Button id="ref-3" on:mouseenter={() => (placement = 'right')}>Right</Button>

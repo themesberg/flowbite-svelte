@@ -5,7 +5,7 @@
 
   export let btnClass: string = 'flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700';
   export let label: string = '';
-  export let spanClass: string = 'flex-1 ml-3 text-left whitespace-nowrap';
+  export let spanClass: string = 'flex-1 ms-3 text-left whitespace-nowrap';
   export let ulClass: string = 'py-2 space-y-2';
   export let transitionType: TransitionTypes = 'slide';
   export let transitionParams: TransitionParamTypes = {};
@@ -63,7 +63,7 @@
 ## Props
 @prop export let btnClass: string = 'flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700';
 @prop export let label: string = '';
-@prop export let spanClass: string = 'flex-1 ml-3 text-left whitespace-nowrap';
+@prop export let spanClass: string = 'flex-1 ms-3 text-left whitespace-nowrap';
 @prop export let ulClass: string = 'py-2 space-y-2';
 @prop export let transitionType: TransitionTypes = 'slide';
 @prop export let transitionParams: TransitionParamTypes = {};

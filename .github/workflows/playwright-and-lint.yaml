@@ -13,37 +13,19 @@ jobs:
     name: 'Playwright and Lint'
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.39.0-focal
+      image: mcr.microsoft.com/playwright:v1.43.1-focal
     steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+      - uses: actions/setup-node@v4
         with:
-          version: 7
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18'
+          node-version: '20'
           cache: 'pnpm'
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-      - uses: actions/cache@v3
-        name: Setup pnpm cache
-        with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
       - name: Install dependencies
         run: pnpm i
       - name: Run playwright tests
         env:
-          NODE_OPTIONS: "--max_old_space_size=4096"
+          NODE_OPTIONS: '--max_old_space_size=4096'
+          FATHOM_ID: 'ABCDEFGF'
         run: pnpm test:integration
-#      - name: Run typecheck
-#        if: always()
-#        run: pnpm check
-#      - name: Run lint
-#        if: always()
-#        run: pnpm lint
+

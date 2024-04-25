@@ -1,6 +1,7 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import path from 'path';
 import examples from 'mdsvexamples/vite';
+import pkg from './package.json' assert { type: 'json' };
 
 /** @type {import('vite').UserConfig} */
 const config = {
@@ -19,7 +20,10 @@ const config = {
     alias: {
       'flowbite-svelte': path.resolve(process.cwd(), './src/lib/index.js')
     }
-  }
+  },
+  define: {
+		__VERSION__: `"${pkg.version}"`,
+	},
 };
 
 export default config;

@@ -73,7 +73,7 @@ Or just use `class` attribute to append classes to the default classes:
   import { DarkMode } from 'flowbite-svelte';
 </script>
 
-<DarkMode class="text-2xl" />
+<DarkMode class="text-primary-500 dark:text-primary-600 border dark:border-gray-800" />
 ```
 
 ## Mode icon
@@ -83,16 +83,12 @@ Use the `lightIcon` and `darkIcon` slots to change icons:
 ```svelte example
 <script>
   import { DarkMode } from 'flowbite-svelte';
-  import { SunSolid, MoonSolid } from 'flowbite-svelte-icons';
+  import { ThumbsUpSolid, ThumbsDownSolid } from 'flowbite-svelte-icons';
 </script>
 
 <DarkMode class="text-lg">
-  <svelte:fragment slot="lightIcon">
-    <SunSolid />
-  </svelte:fragment>
-  <svelte:fragment slot="darkIcon">
-    <MoonSolid />
-  </svelte:fragment>
+    <ThumbsUpSolid slot="lightIcon" color="red" />
+    <ThumbsDownSolid slot="darkIcon" color="green" />
 </DarkMode>
 ```
 

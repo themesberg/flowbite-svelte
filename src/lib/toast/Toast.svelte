@@ -9,7 +9,6 @@
   interface $$Props extends ComponentProps<TransitionFrame> {
     color?: 'primary' | 'gray' | 'red' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple' | 'orange' | 'none';
     position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none';
-    open?: boolean;
     divClass?: string;
     defaultIconClass?: string;
     extraIconClass?: string;
@@ -25,10 +24,10 @@
   export let align: boolean = true;
 
   const positions = {
-    'top-left': 'absolute top-5 left-5',
-    'top-right': 'absolute top-5 right-5',
-    'bottom-left': 'absolute bottom-5 left-5',
-    'bottom-right': 'absolute bottom-5 right-5',
+    'top-left': 'absolute top-5 start-5',
+    'top-right': 'absolute top-5 end-5',
+    'bottom-left': 'absolute bottom-5 start-5',
+    'bottom-right': 'absolute bottom-5 end-5',
     none: ''
   };
 
@@ -54,7 +53,7 @@
   const clsBtnExtraClass = '-mx-1.5 -my-1.5 text-gray-400 hover:text-gray-900 focus:!ring-gray-300 hover:bg-gray-100 dark:text-gray-500 dark:hover:text-white dark:hover:bg-gray-700';
 </script>
 
-<TransitionFrame rounded {dismissable} color="none" role="alert" {...$$restProps} class={finalDivClass} let:close on:close>
+<TransitionFrame rounded color="none" role="alert" {...$$restProps} class={finalDivClass} let:close on:close>
   {#if $$slots.icon}
     <Frame rounded color="none" class={iconClass}>
       <slot name="icon" />
@@ -79,7 +78,6 @@
 @prop export let dismissable: boolean = true;
 @prop export let color: 'primary' | 'gray' | 'red' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple' | 'orange' | 'none' = 'primary';
 @prop export let position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none' = 'none';
-@prop export let open: boolean = true;
 @prop export let divClass: string = 'w-full max-w-xs p-4 text-gray-500 bg-white shadow dark:text-gray-400 dark:bg-gray-800 gap-3';
 @prop export let defaultIconClass: string = 'w-8 h-8';
 @prop export let contentClass: string = 'w-full text-sm font-normal';

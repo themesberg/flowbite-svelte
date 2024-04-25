@@ -50,7 +50,7 @@ To prevent that behavior set `multiple` property to `true`.
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-    <ul class="list-disc pl-5 dark:text-gray-400 text-gray-500">
+    <ul class="list-disc ps-5 dark:text-gray-400 text-gray-500">
       <li>
         <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline"> Lorem ipsum </a>
       </li>
@@ -92,7 +92,7 @@ You can control the look and feel of `AccordionItems` by overwriting the `active
   import { AccordionItem, Accordion } from 'flowbite-svelte';
 </script>
 
-<Accordion activeClasses="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800" inactiveClasses="text-gray-500 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800">
+<Accordion activeClass="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800" inactiveClasses="text-gray-500 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800">
   <AccordionItem class="">
     <span slot="header">Header 2-1</span>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
@@ -139,20 +139,20 @@ Use the `arrowup` and `arrowdown` slots to set up and down icons.
   <AccordionItem>
     <span slot="header">Header 2-1</span>
     <div slot="arrowup">
-      <ChevronDoubleUpOutline class="h-3 w-3 -mr-0.5" />
+      <ChevronDoubleUpOutline class="h-6 w-6 -me-0.5" />
     </div>
     <span slot="arrowdown">
-      <ChevronDoubleDownOutline class="h-3 w-3 -mr-0.5" />
+      <ChevronDoubleDownOutline class="h-6 w-6 -me-0.5" />
     </span>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
   <AccordionItem>
     <span slot="header">Header 2-2</span>
     <div slot="arrowup">
-      <ChevronDoubleUpOutline class="h-3 w-3 -mr-0.5" />
+      <ChevronDoubleUpOutline class="h-6 w-6 -me-0.5" />
     </div>
     <span slot="arrowdown">
-      <ChevronDoubleDownOutline class="h-3 w-3 -mr-0.5" />
+      <ChevronDoubleDownOutline class="h-6 w-6 -me-0.5" />
     </span>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
@@ -164,13 +164,13 @@ Use the `arrowup` and `arrowdown` slots to set up and down icons.
 ```svelte example
 <script>
   import { AccordionItem, Accordion } from 'flowbite-svelte';
-  import { ShoppingCartSolid, CogOutline } from 'flowbite-svelte-icons';
+  import { CartSolid, CogOutline } from 'flowbite-svelte-icons';
 </script>
 
 <Accordion>
   <AccordionItem>
     <span slot="header" class="text-base flex gap-2">
-      <ShoppingCartSolid class="mt-0.5" />
+      <CartSolid class="mt-0.5" />
       <span>My Header 1</span>
     </span>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo...</p>
@@ -274,7 +274,7 @@ Accordions can be nested. All of the mentioned options are supported.
         <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
         <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
         <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-        <ul class="list-disc pl-5 dark:text-gray-400 text-gray-500">
+        <ul class="list-disc ps-5 dark:text-gray-400 text-gray-500">
           <li><a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline">Lorem ipsum</a></li>
           <li><a href="https://tailwindui.com/" rel="noreferrer" target="_blank" class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
         </ul>
@@ -286,7 +286,7 @@ Accordions can be nested. All of the mentioned options are supported.
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-    <ul class="list-disc pl-5 dark:text-gray-400 text-gray-500">
+    <ul class="list-disc ps-5 dark:text-gray-400 text-gray-500">
       <li><a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline">Lorem ipsum</a></li>
       <li><a href="https://tailwindui.com/" rel="noreferrer" target="_blank" class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
     </ul>
