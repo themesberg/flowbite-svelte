@@ -20,7 +20,7 @@ export default function focusTrap(node) {
       return;
     }
 
-    const tabbable = Array.from(node.querySelectorAll(selectorTabbable));
+    const tabbable = Array.from(node.querySelectorAll(selectorTabbable)).filter((el) => el.hidden !== true);
 
     let index = tabbable.indexOf(document.activeElement ?? node);
     if (index === -1 && e.shiftKey) index = 0;
