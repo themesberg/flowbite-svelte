@@ -177,4 +177,5 @@
 @prop export let value: (string | number)[] = [];
 @prop export let size: FormSizeType = 'md';
 @prop export let dropdownClass: string = '';
+@prop export let placeholder: string = '';
 -->
