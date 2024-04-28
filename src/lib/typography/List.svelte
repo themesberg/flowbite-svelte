@@ -1,12 +1,14 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
+  import { setContext } from 'svelte';
 
   interface Props {
     children: Snippet;
     tag?: 'ul' | 'ol' | 'dl';
     list?: 'disc' | 'none' | 'decimal' | undefined;
     position?: 'inside' | 'outside';
+    ctxclass?: string;
     class?: string | undefined;
   }
 
@@ -15,9 +17,12 @@
     tag = 'ul',
     list,
     position = 'inside',
+    ctxclass='',
     class: classname,
     ...attributes
   }: Props = $props();
+
+  setContext('ctxclass', ctxclass);
 
   let lists = {
     disc: 'list-disc',

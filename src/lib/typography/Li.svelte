@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
+  import { getContext } from 'svelte';
 
   interface Props {
     children: Snippet;
@@ -9,13 +10,12 @@
   }
 
   let { children, icon, liclass, ...attributes }: Props = $props();
-  let classLi: string = twMerge(liclass, icon && 'flex items-center');
+  const ctxclass: string = getContext('ctxclass');
+  let classLi: string = twMerge(liclass, ctxclass, icon && 'flex items-center');
 </script>
 
 <li {...attributes} class={classLi}>
- 
-    {@render children()}
-
+  {@render children()}
 </li>
 
 <!--

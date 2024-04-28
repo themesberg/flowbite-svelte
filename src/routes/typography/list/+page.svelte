@@ -420,3 +420,16 @@
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/horizontal-list.md'] as string} />
+
+<H2>ctxclass</H2>
+
+<CodeWrapper>
+  <List tag="ul" list="none" ctxclass="my-4">
+    <Li>Example 1</Li>
+    <Li>Example 2</Li>
+    <Li>Example 3</Li>
+    <Li>Example 4</Li>
+  </List>
+</CodeWrapper>
+
+<HighlightCompo code={modules['./md/ctxclass.md'] as string} />
