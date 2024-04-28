@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.12
+
+### Patch Changes
+
+- feat: add ctxclass to List/Li
+
 ## 0.4.11
 
 ### Patch Changes

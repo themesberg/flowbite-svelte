@@ -56,5 +56,6 @@
 @props:tag?:  'ul' | 'ol' | 'dl'; = 'ul';
 @props:list?: 'disc' | 'none' | 'decimal' | undefined;
 @props:position?:  'inside' | 'outside'; = 'inside';
+@props:ctxclass?:  string; = ';
 @props:class?: string | undefined;
 -->
