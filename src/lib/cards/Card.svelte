@@ -10,6 +10,7 @@
   export let img: string | undefined = undefined;
   export let padding: SizeType | 'none' = 'lg';
   export let size: SizeType | 'none' = 'sm';
+  export let imgClass: string = '';
 
   // propagate props type from underlying Frame
   interface $$Props extends ComponentProps<Frame> {
@@ -44,13 +45,13 @@
   let cardClass: string;
   $: cardClass = twMerge('flex w-full', sizes[size], reverse ? 'flex-col-reverse' : 'flex-col', horizontal && (reverse ? 'md:flex-row-reverse' : 'md:flex-row'), href && 'hover:bg-gray-100 dark:hover:bg-gray-700', !img && innerPadding, $$props.class);
 
-  let imgClass: string;
-  $: imgClass = twMerge(reverse ? 'rounded-b-lg' : 'rounded-t-lg', horizontal && 'object-cover w-full h-96 md:h-auto md:w-48 md:rounded-none', horizontal && (reverse ? 'md:rounded-e-lg' : 'md:rounded-s-lg'));
+  let imgCls: string;
+  $: imgCls = twMerge(reverse ? 'rounded-b-lg' : 'rounded-t-lg', horizontal && 'object-cover w-full h-96 md:h-auto md:w-48 md:rounded-none', horizontal && (reverse ? 'md:rounded-e-lg' : 'md:rounded-s-lg'), imgClass);
 </script>
 
 <Frame tag={href ? 'a' : 'div'} rounded shadow border on:click on:focusin on:focusout on:mouseenter on:mouseleave {href} {...$$restProps} class={cardClass}>
   {#if img}
-    <img class={imgClass} src={img} alt="" />
+    <img class={imgCls} src={img} alt="" />
     <div class={innerPadding}>
       <slot />
     </div>
