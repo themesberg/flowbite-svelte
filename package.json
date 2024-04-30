@@ -50,8 +50,8 @@
     "@sveltejs/package": "^2.3.1",
     "@sveltejs/vite-plugin-svelte": "^3.1.0",
     "@svitejs/changesets-changelog-github-compact": "^1.1.0",
-    "@typescript-eslint/eslint-plugin": "^7.7.1",
-    "@typescript-eslint/parser": "^7.7.1",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
@@ -66,7 +66,7 @@
     "publint": "^0.2.7",
     "runatics": "^0.1.3",
     "runes-meta-tags": "^0.2.5",
-    "svelte": "5.0.0-next.115",
+    "svelte": "5.0.0-next.118",
     "svelte-check": "^3.7.0",
     "svelte-lib-helpers": "^0.4.5",
     "svelte-rune-highlight": "^0.5.9",
@@ -90,7 +90,7 @@
   ],
   "type": "module",
   "dependencies": {
-    "@floating-ui/dom": "^1.6.3",
+    "@floating-ui/dom": "^1.6.4",
     "apexcharts": "^3.49.0",
     "tailwind-merge": "^2.3.0"
   },
