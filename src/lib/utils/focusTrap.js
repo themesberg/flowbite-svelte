@@ -22,7 +22,7 @@ export default function focusTrap(node) {
 
     const tabbable = Array.from(node.querySelectorAll(selectorTabbable)).filter((el) => el.hidden !== true);
 
-    const activeElement = !!document.activeElement?.shadowRoot ? document.activeElement.shadowRoot.activeElement : document.activeElement;
+    const activeElement = document.activeElement && document.activeElement.shadowRoot ? document.activeElement.shadowRoot.activeElement : document.activeElement;
 
     let index = tabbable.indexOf(activeElement ?? node);
     if (index === -1 && e.shiftKey) index = 0;
