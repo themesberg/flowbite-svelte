@@ -3,13 +3,15 @@
   import CloseButton from '$lib/utils/CloseButton.svelte';
   import { twMerge } from 'tailwind-merge';
   import type { FormSizeType, SelectOptionType } from '../types';
+  import { createEventDispatcher } from 'svelte';
 
+  const dispatcher = createEventDispatcher();
   export let items: SelectOptionType<any>[] = [];
   export let value: (string | number)[] = [];
   export let size: FormSizeType = 'md';
   export let dropdownClass: string = '';
   export let placeholder: string = '';
-  let selectItems: SelectOptionType<any>[] = items.filter((x) => value.includes(x.value));
+  $: selectItems = items.filter((x) => value.includes(x.value));
   let show: boolean = false;
 
   const sizes = {
@@ -38,39 +40,24 @@
   const selectOption = (select: SelectOptionType<any>) => {
     if (value.includes(select.value)) {
       clearThisOption(select);
-    } else {
-      if (!value.includes(select.value)) value = [...value, select.value];
+    } else if (!value.includes(select.value)) {
+      value = [...value, select.value];
+      dispatcher('change');
     }
   };
 
   const clearAll = (e: MouseEvent) => {
     e.stopPropagation();
     value = [];
+    dispatcher('change');
   };
 
   const clearThisOption = (select: SelectOptionType<any>) => {
     if (value.includes(select.value)) {
       value = value.filter((o) => o !== select.value);
+      dispatcher('change');
     }
   };
-
-  function create_custom_event(type: string, detail: any, { bubbles = false, cancelable = false } = {}) {
-    return new CustomEvent(type, { detail, bubbles, cancelable });
-  }
-
-  function init(node: HTMLSelectElement, value: any) {
-    const inital = value; // hack for below
-    return {
-      update: (value: any) => {
-        selectItems = items.filter((x) => value.includes(x.value));
-        // avoid initial event emitting
-        if (value !== inital) {
-          node.dispatchEvent(create_custom_event('input', selectItems));
-          node.dispatchEvent(create_custom_event('change', selectItems));
-        }
-      }
-    };
-  }
 
   // Keyboard navigation
   function handleEscape() {
@@ -126,7 +113,7 @@
 </script>
 
 <!-- Hidden select for form submission -->
-<select use:init={value} {...$$restProps} {value} hidden multiple on:change on:input>
+<select {...$$restProps} {value} hidden multiple on:input>
   {#each items as { value, name }}
     <option {value}>{name}</option>
   {/each}
