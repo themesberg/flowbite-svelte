@@ -21,7 +21,7 @@
         stroke-linejoin="round"
         stroke-width="2"
         d="M9 5 5 1 1 5"
-      />
+      ></path>
     </svg>
   </button>
 </h2>
