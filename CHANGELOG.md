@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.13
+
+### Patch Changes
+
+- fix: self-closing HTML tags
+
 ## 0.4.12
 
 ### Patch Changes
