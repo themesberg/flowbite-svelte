@@ -89,12 +89,6 @@
       <slot />
     </div>
   </div>
-{:else}
-  <div class="hidden">
-    <div class={contentClass}>
-      <slot />
-    </div>
-  </div>
 {/if}
 
 <!--
