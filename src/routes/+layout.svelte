@@ -11,7 +11,7 @@
 
   let { children, data } = $props();
 
-  const analyticsId = data.ANALYTICS_ID
+  const analyticsId = data.ANALYTICS_ID_RUNES_LIB
   // meta tags
   let metaTags = $state(
     $page.data.pageMetaTags

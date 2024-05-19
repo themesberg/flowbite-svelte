@@ -1,4 +1,4 @@
-import { ANALYTICS_ID } from '$env/static/private';
+import { ANALYTICS_ID_RUNES_LIB } from '$env/static/private';
 import type { MetaProps } from 'runes-meta-tags';
 import { splitAndCapitalize, removeHyphensAndCapitalize } from './utils/helpers';
 export const load = ({ url }) => {
@@ -33,6 +33,6 @@ export const load = ({ url }) => {
   };
   return {
 		layoutMetaTags,
-		ANALYTICS_ID
+		ANALYTICS_ID_RUNES_LIB
   };
 };
