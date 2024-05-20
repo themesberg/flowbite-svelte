@@ -25,11 +25,11 @@
 
 <select {...$$restProps} bind:value class={selectClass} on:change on:contextmenu on:input>
   {#if placeholder}
-    <option disabled selected value="">{placeholder}</option>
+    <option disabled selected={(value === undefined) ? true : undefined} value="">{placeholder}</option>
   {/if}
 
-  {#each items as { value, name }}
-    <option {value}>{name}</option>
+  {#each items as { value: itemValue, name }}
+    <option value={itemValue} selected={(itemValue === value) ? true : undefined}>{name}</option>
   {:else}
     <slot />
   {/each}
