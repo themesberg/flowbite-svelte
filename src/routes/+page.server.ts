@@ -1,4 +1,5 @@
 const json = (r: Response) => r.json();
+export const prerender = true;
 
 /** @type {import('./$types').PageServerLoad} */
 export const load = async ({ fetch }) => {
