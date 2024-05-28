@@ -14,12 +14,15 @@
   export let checked: boolean | undefined = undefined;
   export let spacing: string = $$slots.default ? 'me-2' : '';
 
+  // to work around a bug happening in svelte 5 where inital values
+  // are not passed to the component
+  const init_helper = checked;
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
 
   // react on external group changes
   function init(_: HTMLElement, _group: (string | number)[]) {
-    if (checked === undefined) checked = _group.includes(value);
+    if (init_helper === undefined) checked = _group.includes(value);
     onChange();
 
     return {
