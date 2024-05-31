@@ -2,7 +2,7 @@
   import type { Snippet } from 'svelte';
   import { getContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
-  import type { ComponentType } from 'svelte';
+  import type { Component } from 'svelte';
 
   interface Props {
     children: Snippet;
@@ -11,7 +11,7 @@
     current?: boolean;
     disabled?: boolean;
     name?: string;
-    icon?: ComponentType;
+    icon?: Component;
     href?: string;
     currentclass?: string;
     normalclass?: string;

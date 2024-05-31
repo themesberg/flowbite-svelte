@@ -3,7 +3,7 @@
   import Star from './Star.svelte';
   import { twMerge } from 'tailwind-merge';
   import { idGenerator } from '$lib/uiHelpers.svelte';
-  import type { ComponentType } from 'svelte';
+  import type { Component } from 'svelte';
 
   interface Props {
     children?: Snippet;
@@ -13,7 +13,7 @@
     total?: number;
     rating?: number;
     partialId?: string;
-    icon?: ComponentType;
+    icon?: Component;
     count?: boolean;
     r_p?: string;
   }
