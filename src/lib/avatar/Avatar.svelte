@@ -94,15 +94,16 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: Snippet;
-@props:href?: string | undefined;
-@props:src?: string | undefined;
-@props:rounded?: boolean;
-@props:border?: boolean;
-@props:stacked?: boolean;
-@props:dot?: object | undefined;
-@props:alt?: string | undefined;
-@props:size?:  'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none'; = 'md';
-@props:class?: string | undefined;
-@props:onclick?: () => void;
+@prop children
+@prop src
+@prop href
+@prop rounded
+@prop border
+@prop stacked
+@prop dot
+@prop alt
+@prop size = 'md'
+@prop class: classname
+@prop onclick
+@prop ...attributes
 -->

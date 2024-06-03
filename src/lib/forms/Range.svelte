@@ -31,7 +31,13 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: value: number;
-@props:size: 'sm' | 'md' | 'lg';
-@props:inputclass: string;
+@prop id
+@prop disabled
+@prop min
+@prop max
+@prop step
+@prop value = $bindable()
+@prop size = 'md'
+@prop inputclass
+@prop ...attributes
 -->

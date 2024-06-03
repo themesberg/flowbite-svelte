@@ -51,8 +51,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: Snippet;
-@props:items?:  ImgType[]; = [];
-@props:imgclass?: string | undefined;
-@props:divclass?: string | undefined;
+@prop children
+@prop items = []
+@prop imgclass
+@prop divclass
+@prop ...attributes
 -->

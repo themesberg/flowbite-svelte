@@ -77,8 +77,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: Snippet;
-@props:defaultRow?:  boolean; = true;
-@props:theadClass?:  string; = '';
-@props:class?: string;
+@prop children
+@prop class: className
+@prop theadClass = ''
+@prop defaultRow = true
+@prop ...attributes
 -->

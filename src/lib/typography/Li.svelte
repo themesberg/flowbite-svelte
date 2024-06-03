@@ -22,7 +22,8 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:icon?: boolean;
-@props:liclass?: string | undefined;
+@prop children
+@prop icon
+@prop liclass
+@prop ...attributes
 -->

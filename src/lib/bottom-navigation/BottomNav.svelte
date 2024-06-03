@@ -94,12 +94,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:header?: Snippet;
-@props:activeUrl?: string;
-@props:position?:  'static' | 'fixed' | 'absolute' | 'relative' | 'sticky'; = 'fixed';
-@props:navType?:  BottomNavVariantType; = 'default';
-@props:divclass?: string;
-@props:div2class?: string;
-@props:activeClass?: string;
+@prop children
+@prop header
+@prop position = 'fixed'
+@prop navType = 'default'
+@prop divclass
+@prop div2class
+@prop activeClass
+@prop ...attributes
 -->

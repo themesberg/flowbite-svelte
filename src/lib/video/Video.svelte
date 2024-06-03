@@ -41,11 +41,15 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:src: string | undefined;
-@props:type?:  string | undefined; = 'video/mp4';
-@props:trackSrc?: string | undefined;
-@props:srclang?:  string | undefined; = 'en';
-@props:label?:  string | undefined; = 'english_captions';
-@props:class?: string | undefined;
+@prop children
+@prop src
+@prop controls
+@prop autoplay
+@prop muted
+@prop type = 'video/mp4'
+@prop trackSrc
+@prop srclang = 'en'
+@prop label = 'english_captions'
+@prop class: classname
+@prop ...attributes
 -->

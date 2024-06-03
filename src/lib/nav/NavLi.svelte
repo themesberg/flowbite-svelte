@@ -76,10 +76,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:closeNav?: () => void;
-@props:href?: string 
-@props:aclass?: string 
-@props:activeClass?: string 
-@props:nonActiveClass?: string 
+@prop closeNav
+@prop href
+@prop target
+@prop children
+@prop aclass
+@prop activeClass
+@prop nonActiveClass
+@prop ...attributes
 -->

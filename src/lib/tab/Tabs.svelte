@@ -77,12 +77,13 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:style?: 'full' | 'pill' | 'underline' | 'none';
-@props:defaultClass?: string;
-@props:contentClass?: string;
-@props:divider?: boolean;
-@props:activeClasses?: string;
-@props:inactiveClasses?: string;
-@props:class?: string;
+@prop children
+@prop style = 'none'
+@prop defaultClass
+@prop contentClass
+@prop divider = true
+@prop activeClasses
+@prop inactiveClasses
+@prop class:classname
+@prop ...attributes
 -->

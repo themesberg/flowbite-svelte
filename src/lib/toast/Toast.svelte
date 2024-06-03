@@ -121,15 +121,16 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:icon?: any;
-@props:dismissable?:  boolean; = true;
-@props:color?:  ColorVariant; = 'primary';
-@props:position?:  ToastPositionType; = 'none';
-@props:divclass?: string;
-@props:div2class?: string;
-@props:div3class?: string;
-@props:align?:  boolean; = true;
-@props:transition?:  TransitionFunc; = fade;
-@props:params?: object;
+@prop children
+@prop icon
+@prop dismissable = true
+@prop color = 'primary'
+@prop position = 'none'
+@prop divclass
+@prop div2class
+@prop div3class
+@prop align = true
+@prop transition = fade
+@prop params
+@prop ...attributes
 -->

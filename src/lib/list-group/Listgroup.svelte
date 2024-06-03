@@ -71,11 +71,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: Snippet;
-@props:items: ListGroupItemType[] | string[];
-@props:btn?: boolean;
-@props:onclick?: () => void;
-@props:rounded?:  boolean; = true;
-@props:border?:  boolean; = true;
-@props:defaultclass?: string;
+@prop children
+@prop items
+@prop btn
+@prop onclick
+@prop rounded = true
+@prop border = true
+@prop defaultclass
+@prop ...attributes
 -->

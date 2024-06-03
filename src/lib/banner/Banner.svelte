@@ -84,13 +84,14 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:header?: Snippet;
-@props:id?: string;
-@props:position?:  'static' | 'fixed' | 'absolute' | 'relative' | 'sticky'; = 'sticky';
-@props:dismissable?:  boolean; = true;
-@props:color?:  ColorVariant; = 'gray';
-@props:bannerType?:  'default' | 'bottom' | 'cta' | 'signup' | 'info'; = 'default';
-@props:divclass?: string | undefined;
-@props:div2class?: string | undefined;
+@prop children
+@prop header
+@prop id
+@prop position = 'sticky'
+@prop dismissable = true
+@prop color = 'gray'
+@prop bannerType = 'default'
+@prop divclass
+@prop div2class
+@prop ...attributes
 -->

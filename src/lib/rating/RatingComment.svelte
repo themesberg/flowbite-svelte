@@ -105,16 +105,10 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:evaluation?: Snippet;
-@props:ceil?: boolean;
-@props:helpfullink?: string;
-@props:abuselink?: string;
-@props:comment: {
-@props:id?: string;
-@props:user: {
-@props:name?: string;
-@props:img: {
-@props:src: string;
-@props:alt?: string;
+@prop children
+@prop evaluation
+@prop ceil
+@prop helpfullink
+@prop abuselink
+@prop comment
 -->

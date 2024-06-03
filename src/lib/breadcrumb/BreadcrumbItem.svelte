@@ -95,12 +95,13 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:icon?: Snippet;
-@props:home?:  boolean; = false;
-@props:href?: string | undefined;
-@props:a2class?: string | undefined;
-@props:spanclass?: string | undefined;
-@props:aclass?: string | undefined;
-@props:class?: string | undefined;
+@prop children
+@prop icon
+@prop home = false
+@prop href
+@prop a2class
+@prop spanclass
+@prop aclass
+@prop class: classname
+@prop ...attributes
 -->

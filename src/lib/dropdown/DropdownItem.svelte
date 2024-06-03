@@ -41,9 +41,11 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:aclass?: string;
-@props:href?: string;
-@props:activeclass?: string;
-@props:liclass?: string;
+@prop aclass
+@prop children
+@prop href
+@prop target
+@prop activeclass
+@prop liclass
+@prop ...attributes
 -->

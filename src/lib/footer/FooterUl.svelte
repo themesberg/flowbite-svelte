@@ -22,6 +22,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:ulclass?: string | undefined;
+@prop ulclass
+@prop children
+@prop ...attributes
 -->

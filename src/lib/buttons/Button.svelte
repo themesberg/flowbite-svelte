@@ -191,17 +191,18 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:pill?:  boolean; = false;
-@props:outline?:  boolean; = false;
-@props:size?:  'xs' | 'sm' | 'md' | 'lg' | 'xl'; = group ? 'sm' : 'md';
-@props:href?:  string | undefined; = undefined;
-@props:type?:  HTMLButtonAttributes['type']; = 'button';
-@props:color?:  ButtonColor; = group ? (outline ? 'dark' : 'alternative') : 'primary';
-@props:shadow?:  boolean; = false;
-@props:tag?:  string; = 'button';
-@props:checked?:  boolean | undefined; = undefined;
-@props:disabled?:  boolean; = false;
-@props:btnclass?: string | undefined;
-@props:onclick?: () => void;
+@prop children
+@prop pill = false
+@prop outline = false
+@prop size = group ? 'sm' : 'md'
+@prop href = undefined
+@prop type = 'button'
+@prop color = group ? (outline ? 'dark' : 'alternative') : 'primary'
+@prop shadow = false
+@prop tag = 'button'
+@prop checked = undefined
+@prop disabled = false
+@prop btnclass
+@prop onclick
+@prop ...attributes
 -->

@@ -127,15 +127,15 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:address?: any;
-@props:item1?: any;
-@props:item2?: any;
-@props:item3?: any;
-@props:review?: ReviewType;
-@props:articleclass?: string;
-@props:divclass?: string;
-@props:imgclass?: string;
-@props:ulclass?: string;
-@props:liclass?: string;
+@prop children
+@prop address
+@prop item1
+@prop item2
+@prop item3
+@prop review
+@prop articleclass
+@prop divclass
+@prop imgclass
+@prop ulclass
+@prop liclass
 -->

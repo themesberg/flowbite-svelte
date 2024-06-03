@@ -33,8 +33,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:ulclass?: string | undefined;
-@props:borderClass?: string | undefined;
-@props:border?:  boolean; = false;
+@prop children
+@prop ulclass
+@prop borderClass
+@prop border = false
+@prop ...attributes
 -->

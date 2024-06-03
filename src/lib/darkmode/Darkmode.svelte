@@ -106,9 +106,10 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: btnclass?: string | undefined;
-@props:lightIcon?: Snippet;
-@props:darkIcon?: Snippet;
-@props:size?:  'sm' | 'md' | 'lg'; = 'md';
-@props:ariaLabel?:  string | undefined; = 'Dark mode';
+@prop btnclass
+@prop lightIcon
+@prop darkIcon
+@prop size = 'md'
+@prop ariaLabel = 'Dark mode'
+@prop ...attributes
 -->

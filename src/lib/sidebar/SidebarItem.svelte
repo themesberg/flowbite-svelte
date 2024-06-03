@@ -64,13 +64,15 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: iconSlot?: Snippet;
-@props:subtext?: Snippet;
-@props:onclick?: () => void;
-@props:href?: string ;
-@props:label?: string ;
-@props:spanclass?: string ;
-@props:activeClass?: string ;
-@props:nonActiveClass?: string ;
-@props:aclass?: string;
+@prop iconSlot
+@prop subtext
+@prop onclick
+@prop href
+@prop target
+@prop label
+@prop spanclass
+@prop activeClass
+@prop nonActiveClass
+@prop aclass
+@prop ...attributes
 -->

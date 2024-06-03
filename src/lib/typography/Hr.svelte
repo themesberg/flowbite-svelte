@@ -45,9 +45,10 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: Snippet;
-@props:icon?: boolean;
-@props:divclass?: string | undefined;
-@props:hrclass?: string | undefined;
-@props:div2class?: string | undefined;
+@prop children
+@prop icon
+@prop divclass
+@prop hrclass
+@prop div2class
+@prop ...attributes
 -->

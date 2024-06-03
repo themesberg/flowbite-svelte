@@ -112,11 +112,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:color?:  keyof typeof gradientClasses; = 'blue';
-@props:shadow?: boolean;
-@props:outline?: boolean;
-@props:pill?: boolean;
-@props:divclass?: string;
-@props:onclick?: () => void;
+@prop children
+@prop outline
+@prop pill
+@prop color = 'blue'
+@prop shadow
+@prop divclass
+@prop onclick
+@prop ...attributes
 -->

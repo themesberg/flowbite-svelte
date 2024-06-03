@@ -52,14 +52,15 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:group?: string | number;
-@props:value?: string | number;
-@props:inline?:  boolean; = true;
-@props:btnclass?: string;
-@props:pill?: boolean;
-@props:outline?: boolean;
-@props:size?: SizeType | undefined;
-@props:color?: ButtonColorType | undefined;
-@props:shadow?: boolean;
+@prop children
+@prop group = $bindable()
+@prop value
+@prop inline = true
+@prop btnclass
+@prop pill
+@prop outline
+@prop size
+@prop color
+@prop shadow
+@prop ...attributes
 -->

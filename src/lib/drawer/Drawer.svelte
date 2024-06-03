@@ -112,22 +112,23 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:drawerStatus: boolean;
-@props:toggleDrawer?: () => void;
-@props:closeDrawer?: () => void;
-@props:activateClickOutside?:  boolean; = true;
-@props:position?:  'fixed' | 'absolute'; = 'fixed';
-@props:leftOffset?:  string | undefined; = 'inset-y-0 start-0';
-@props:rightOffset?:  string | undefined; = 'inset-y-0 end-0';
-@props:topOffset?:  string | undefined; = 'inset-x-0 top-0';
-@props:bottomOffset?:  string | undefined; = 'inset-x-0 bottom-0';
-@props:width?:  string; = 'w-80';
-@props:backdrop?:  boolean; = true;
-@props:bgColor?:  string | undefined; = 'bg-gray-900';
-@props:bgOpacity?:  string | undefined; = 'bg-opacity-75';
-@props:placement?:  'left' | 'right' | 'top' | 'bottom'; = 'left';
-@props:divclass?:  string | undefined; = '';
-@props:transitionParams: drawerTransitionParamTypes;
-@props:transitionType?:  drawerTransitionTypes; = 'fly';
+@prop children
+@prop drawerStatus
+@prop toggleDrawer
+@prop closeDrawer
+@prop activateClickOutside = true
+@prop position = 'fixed'
+@prop leftOffset = 'inset-y-0 start-0'
+@prop rightOffset = 'inset-y-0 end-0'
+@prop topOffset = 'inset-x-0 top-0'
+@prop bottomOffset = 'inset-x-0 bottom-0'
+@prop width = 'w-80'
+@prop backdrop = true
+@prop bgColor = 'bg-gray-900'
+@prop bgOpacity = 'bg-opacity-75'
+@prop placement = 'left'
+@prop divclass = ''
+@prop transitionParams
+@prop transitionType = 'fly'
+@prop ...attributes
 -->

@@ -136,14 +136,16 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:id?:  string; = idGenerator();
-@props:style?:  'filled' | 'outlined' | 'standard'; = 'standard';
-@props:type?:  InputType; = 'text';
-@props:size?:  'small' | 'default'; = 'default';
-@props:color?:  'base' | 'green' | 'red'; = 'base';
-@props:value?: any;
-@props:divclass?: string;
-@props:inputclass?: string;
-@props:labelclass?: string;
+@prop children
+@prop id = idGenerator()
+@prop aria_describedby
+@prop disabled
+@prop style = 'standard'
+@prop type = 'text'
+@prop size = 'default'
+@prop color = 'base'
+@prop divclass
+@prop inputclass
+@prop labelclass
+@prop ...attributes
 -->

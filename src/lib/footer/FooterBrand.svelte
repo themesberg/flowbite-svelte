@@ -53,13 +53,14 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: Snippet;
-@props:aclass?: string | undefined;
-@props:spanclass?: string | undefined;
-@props:imgclass?: string | undefined;
-@props:href?: string | undefined;
-@props:src?: string | undefined;
-@props:alt?: string | undefined;
-@props:name?: string | undefined;
-@props:target?: string | undefined;
+@prop children
+@prop aclass
+@prop spanclass
+@prop imgclass
+@prop href
+@prop src
+@prop alt
+@prop name
+@prop target
+@prop ...attributes
 -->

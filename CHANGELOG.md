@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.0
+
+### Minor Changes
+
+- fix: add missing attributes, target, disabled, etc.
+
 ## 0.4.13
 
 ### Patch Changes

@@ -51,11 +51,11 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: Snippet;
-@props:divclass?: string;
-@props:div2class?: string;
-@props:div3class?: string;
-@props:div4class?: string;
-@props:div5class?: string;
-@props:div6class?: string;
+@prop children
+@prop divclass
+@prop div2class
+@prop div3class
+@prop div4class
+@prop div5class
+@prop div6class
 -->

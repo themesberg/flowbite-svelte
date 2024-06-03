@@ -35,7 +35,8 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:footerType?:  'sitemap' | 'default' | 'logo' | 'socialmedia' | undefined; = 'default';
-@props:footerclass?: string | undefined;
+@prop children
+@prop footerType = 'default'
+@prop footerclass
+@prop ...attributes
 -->

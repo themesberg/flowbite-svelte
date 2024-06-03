@@ -60,7 +60,13 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: rating?: Snippet;
-@props:globalText?: Snippet;
-@props:ratings: { label
+@prop rating
+@prop globalText
+@prop ratings
+@prop divclass
+@prop spanclass
+@prop div2class
+@prop div3class
+@prop span2class
+@prop unit
 -->

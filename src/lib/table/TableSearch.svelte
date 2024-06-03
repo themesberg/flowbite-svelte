@@ -127,22 +127,23 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: Snippet;
-@props:svgSearch?: any;
-@props:header?: Snippet;
-@props:footer?: Snippet;
-@props:divclass?:  string; = '';
-@props:inputValue?: string;
-@props:striped?: boolean;
-@props:hoverable?: boolean;
-@props:placeholder?:  string; = 'Search';
-@props:customColor?:  string; = '';
-@props:color?:  string; = 'default';
-@props:innerDivClass?:  string; = '';
-@props:inputclass?: string;
-@props:searchClass?:  string; = '';
-@props:svgDivClass?: string;
-@props:svgClass?:  string; = '';
-@props:classDiv?: string;
-@props:class?: string;
+@prop children
+@prop svgSearch
+@prop header
+@prop footer
+@prop divclass = ''
+@prop inputValue = $bindable()
+@prop striped
+@prop hoverable
+@prop placeholder = 'Search'
+@prop customColor = ''
+@prop color = 'default'
+@prop innerDivClass = ''
+@prop inputclass
+@prop searchClass = ''
+@prop svgDivClass
+@prop svgClass = ''
+@prop classDiv
+@prop class: className
+@prop ...attributes
 -->

@@ -102,17 +102,18 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:header?: Snippet;
-@props:footer?: Snippet;
-@props:dropdownStatus: boolean;
-@props:toggleDropdown?: () => void;
-@props:closeDropdown?: () => void;
-@props:activateClickOutside?:  boolean ; = true;
-@props:divclass?: string ;
-@props:footerclass?: string ;
-@props:headerclass?: string ;
-@props:ulclass?: string ;
-@props:transitionParams?: TransitionParamTypes;
-@props:transitionType?:  TransitionTypes; = 'fly';
+@prop children
+@prop header
+@prop footer
+@prop dropdownStatus
+@prop toggleDropdown
+@prop closeDropdown
+@prop activateClickOutside = true
+@prop divclass
+@prop footerclass
+@prop headerclass
+@prop ulclass
+@prop transitionParams
+@prop transitionType = 'fly'
+@prop ...attributes
 -->

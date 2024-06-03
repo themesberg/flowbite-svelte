@@ -52,10 +52,11 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:tag?:  'ul' | 'ol' | 'dl'; = 'ul';
-@props:list?: 'disc' | 'none' | 'decimal' | undefined;
-@props:position?:  'inside' | 'outside'; = 'inside';
-@props:ctxclass?:  string; = ';
-@props:class?: string | undefined;
+@prop children
+@prop tag = 'ul'
+@prop list
+@prop position = 'inside'
+@prop ctxclass=''
+@prop class: classname
+@prop ...attributes
 -->

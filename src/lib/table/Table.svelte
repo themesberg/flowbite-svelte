@@ -82,12 +82,13 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:divclass?:  string; = 'relative overflow-x-auto';
-@props:striped?: boolean;
-@props:hoverable?: boolean;
-@props:noborder?: boolean;
-@props:shadow?: boolean;
-@props:color?:  TableColrType; = 'default';
-@props:customeColor?: string;
+@prop children
+@prop divclass = 'relative overflow-x-auto'
+@prop striped
+@prop hoverable
+@prop noborder
+@prop shadow
+@prop color = 'default'
+@prop customeColor
+@prop ...attributes
 -->

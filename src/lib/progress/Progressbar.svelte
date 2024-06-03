@@ -98,17 +98,18 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: progress?:  string | number; = '45';
-@props:precision?:  number; = 0;
-@props:tweenDuration?:  number; = 400;
-@props:animate?:  boolean; = false;
-@props:size?:  string | undefined; = 'h-2.5';
-@props:labelInside?:  boolean; = false;
-@props:labelOutside?: string | undefined;
-@props:easing?:  EasingFunction; = cubicOut;
-@props:color?:  ProgressBarColorType; = 'primary';
-@props:div2class?: string | undefined;
-@props:labeloutsidedivclass?: string | undefined;
-@props:divclass?: string | undefined;
-@props:class?: string | undefined;
+@prop progress = '45'
+@prop precision = 0
+@prop tweenDuration = 400
+@prop animate = false
+@prop size = 'h-2.5'
+@prop labelInside = false
+@prop labelOutside
+@prop easing = cubicOut
+@prop color = 'primary'
+@prop div2class
+@prop labeloutsidedivclass
+@prop divclass
+@prop class: classname
+@prop ...attributes
 -->

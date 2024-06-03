@@ -52,11 +52,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:asideclass?: string | undefined;
-@props:ariaLabel?: string | undefined;
-@props:divclass?: string | undefined;
-@props:nonActiveClass?:  string | undefined; = '';
-@props:activeClass?:  string | undefined; = '';
-@props:aclass?: string | undefined;
+@prop children
+@prop divclass
+@prop asideclass
+@prop ariaLabel
+@prop nonActiveClass = ''
+@prop activeClass = ''
+@prop aclass
+@prop ...attributes
 -->

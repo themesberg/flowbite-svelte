@@ -74,11 +74,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: color?:  SpinnerColorType; = 'primary';
-@props:bg?:  string; = 'text-gray-300';
-@props:customColor?: string;
-@props:size?:  string | number; = '8';
-@props:currentFill?:  string; = 'currentFill';
-@props:currentColor?:  string; = 'currentColor';
-@props:svgclass?: string;
+@prop svgclass
+@prop color = 'primary'
+@prop bg = 'text-gray-300'
+@prop customColor
+@prop size = '8'
+@prop currentFill = 'currentFill'
+@prop currentColor = 'currentColor'
+@prop ...attributes
 -->

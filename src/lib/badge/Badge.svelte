@@ -132,13 +132,14 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:icon?: Snippet;
-@props:color?:  ColorVariant; = 'primary';
-@props:large?:  boolean; = false;
-@props:dismissable?:  boolean; = false;
-@props:divclass?: string;
-@props:border?: boolean;
-@props:href?: string;
-@props:rounded?: boolean;
+@prop children
+@prop icon
+@prop color = 'primary'
+@prop large = false
+@prop dismissable = false
+@prop divclass
+@prop border
+@prop href
+@prop rounded
+@prop ...attributes
 -->

@@ -110,18 +110,19 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:onclick?: () => void;
-@props:btn?: boolean;
-@props:current?: boolean;
-@props:disabled?: boolean;
-@props:name?: string;
-@props:icon?: ComponentType;
-@props:href?: string;
-@props:currentclass?: string;
-@props:normalclass?: string;
-@props:disabledclass?: string;
-@props:focusclass?: string;
-@props:hoverclass?: string;
-@props:liclass?: string;
+@prop children
+@prop onclick
+@prop btn
+@prop current
+@prop disabled
+@prop name
+@prop icon
+@prop href
+@prop currentclass
+@prop normalclass
+@prop disabledclass
+@prop focusclass
+@prop hoverclass
+@prop liclass
+@prop ...attributes
 -->

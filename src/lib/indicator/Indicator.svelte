@@ -108,12 +108,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: Snippet;
-@props:color?:  IndicatorColorType; = 'gray';
-@props:rounded?:  boolean; = false;
-@props:size?:  'xs' | 'sm' | 'md' | 'lg' | 'xl'; = 'md';
-@props:border?:  boolean; = false;
-@props:placement?: IndicatorPlacementType | undefined;
-@props:divclass?: string | undefined;
-@props:offset?:  boolean; = true;
+@prop children
+@prop color = 'gray'
+@prop rounded = false
+@prop size = 'md'
+@prop border = false
+@prop placement
+@prop offset = true
+@prop divclass
 -->

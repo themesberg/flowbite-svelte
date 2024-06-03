@@ -50,8 +50,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: Snippet;
-@props:class?: string;
-@props:tdclass?:  string; = '';
-@props:onclick?: () => void;
+@prop children
+@prop class: className
+@prop tdclass = ''
+@prop onclick
+@prop ...attributes
 -->

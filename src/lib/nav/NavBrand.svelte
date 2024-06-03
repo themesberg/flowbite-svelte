@@ -35,9 +35,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: Snippet;
-@props:siteName: string;
-@props:closeNav?: () => void;
-@props:aclass?: string | undefined;
-@props:spanclass?: string | undefined;
+@prop children
+@prop siteName
+@prop closeNav
+@prop aclass
+@prop spanclass
 -->

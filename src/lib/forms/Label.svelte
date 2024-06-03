@@ -46,9 +46,10 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:color?:  'gray' | 'green' | 'red' | 'disabled'; = 'gray';
-@props:show?:  boolean; = true;
-@props:labelclass?: string | undefined;
-@props:forId?: string | undefined;
+@prop children
+@prop color = 'gray'
+@prop show = true
+@prop labelclass
+@prop forId
+@prop ...attributes
 -->

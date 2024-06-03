@@ -97,12 +97,16 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:labelclass?:  string; = '';
-@props:color?:  FormColorType; = 'primary';
-@props:custom?:  boolean; = false;
-@props:inline?:  boolean; = false;
-@props:group?: number | string | undefined;
-@props:value?: number | string;
-@props:inputclass?:  string; = '';
+@prop children
+@prop name
+@prop disabled = false
+@prop aria_describedby
+@prop labelclass = ''
+@prop color = 'primary'
+@prop custom = false
+@prop inline = false
+@prop group = $bindable()
+@prop value
+@prop inputclass = ''
+@prop ...attributes
 -->

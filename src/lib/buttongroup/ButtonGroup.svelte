@@ -28,7 +28,8 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:size?: SizeType;
-@props:divclass?: string | undefined;
+@prop children
+@prop size = 'md'
+@prop divclass = ''
+@prop ...attributes
 -->

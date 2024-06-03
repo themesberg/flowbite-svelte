@@ -46,11 +46,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: spanclass?: string | undefined;
-@props:aclass?: string | undefined;
-@props:href?: string | undefined;
-@props:by?: string | undefined;
-@props:target?: string | undefined;
-@props:copyrightMessage?:  string | undefined; = 'All Rights Reserved.';
-@props:year?: number | undefined;
+@prop spanclass
+@prop aclass
+@prop href
+@prop by
+@prop target
+@prop copyrightMessage = 'All Rights Reserved.'
+@prop year
+@prop ...attributes
 -->

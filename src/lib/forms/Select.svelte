@@ -91,15 +91,18 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children?: Snippet;
-@props:items: SelectOptionType<any>[];
-@props:value?: any;
-@props:placeholder?:  string | undefined; = 'Choose option ...';
-@props:underline?: boolean;
-@props:size?:  'sm' | 'md' | 'lg'; = 'md';
-@props:selectclass?: string | undefined;
-@props:underlineClass?: string | undefined;
-@props:onchange?: () => void;
-@props:oninput?: () => void;
-@props:oncontextmenu?: () => void;
+@prop children
+@prop id
+@prop disabled
+@prop items
+@prop value = $bindable()
+@prop placeholder = 'Choose option ...'
+@prop underline
+@prop size = 'md'
+@prop selectclass
+@prop underlineClass
+@prop onchange
+@prop oninput
+@prop oncontextmenu
+@prop ...attributes
 -->

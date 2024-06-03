@@ -76,12 +76,14 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:size?:  'small' | 'default' | 'large' | 'custom'; = 'default';
-@props:group?: (string | number)[];
-@props:value?: string | number;
-@props:checked?: boolean | undefined;
-@props:customSize?: string;
-@props:spanclass?: string;
-@props:color?: FormColorType;
+@prop children
+@prop disabled
+@prop size = 'default'
+@prop group
+@prop value
+@prop checked = $bindable()
+@prop customSize
+@prop spanclass
+@prop color
+@prop ...attributes
 -->

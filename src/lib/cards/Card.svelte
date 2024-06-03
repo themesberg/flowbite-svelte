@@ -104,14 +104,16 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:href?: string;
-@props:horizontal?:  boolean; = false;
-@props:shadow?:  boolean; = false;
-@props:reverse?:  boolean; = false;
-@props:img?: ImgType;
-@props:padding?:  'none' | 'sm' | 'md' | 'lg' | 'xl'; = 'lg';
-@props:size?:  CardSizeType; = 'sm';
-@props:class?: string | undefined;
-@props:onclick?: () => void;
+@prop children
+@prop href
+@prop horizontal = false
+@prop target
+@prop shadow = false
+@prop reverse = false
+@prop img
+@prop padding = 'lg'
+@prop size = 'sm'
+@prop class: classname
+@prop onclick
+@prop ...attributes
 -->

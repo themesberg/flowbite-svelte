@@ -125,12 +125,14 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:btnName?: string;
-@props:appBtnPosition?:  'left' | 'middle' | 'right'; = 'middle';
-@props:activeClass?: string;
-@props:href?:  string; = '';
-@props:exact?:  boolean; = true;
-@props:btnclass?: string;
-@props:spanclass?: string;
+@prop children
+@prop btnName
+@prop appBtnPosition = 'middle'
+@prop target
+@prop activeClass
+@prop href = ''
+@prop exact = true
+@prop btnclass
+@prop spanclass
+@prop ...attributes
 -->

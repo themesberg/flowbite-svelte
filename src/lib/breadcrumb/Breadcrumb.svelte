@@ -51,11 +51,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:solid?:  boolean; = false;
-@props:navclass?: string | undefined;
-@props:solidclass?: string | undefined;
-@props:olclass?: string | undefined;
-@props:ariaLabel?:  string | undefined; = 'Breadcrumb';
-@props:class?: string | undefined;
+@prop children
+@prop solid = false
+@prop navclass
+@prop solidclass
+@prop olclass
+@prop ariaLabel = 'Breadcrumb'
+@prop class: classname
+@prop ...attributes
 -->
