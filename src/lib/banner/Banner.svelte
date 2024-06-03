@@ -2,7 +2,7 @@
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import { CloseButton } from '$lib';
-  import type { ColorVariant } from './types';
+  import type { ColorVariant } from '../types';
 
   interface Props {
     children: Snippet;

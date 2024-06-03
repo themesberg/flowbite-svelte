@@ -8,6 +8,8 @@
   };
   interface Props {
     children?: Snippet;
+    id?: string;
+    disabled?: boolean;
     items: SelectOptionType<any>[];
     value?: any;
     placeholder?: string | undefined;
@@ -22,8 +24,10 @@
 
   let {
     children,
+    id,
+    disabled,
     items,
-    value,
+    value = $bindable(),
     placeholder = 'Choose option ...',
     underline,
     size = 'md',
@@ -61,6 +65,8 @@
 </script>
 
 <select
+  {id}
+  {disabled}
   {...attributes}
   bind:value
   class={selectCls}

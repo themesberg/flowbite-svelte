@@ -46,10 +46,10 @@
 
 <H2>Helper text</H2>
 <CodeWrapper class="space-y-1">
-  <Checkbox aria-describedby="helper-checkbox-text"
+  <Checkbox aria_describedby="helper-checkbox-text"
     >Free shipping via Flowbite</Checkbox
   >
-  <Helper id="helper-checkbox-text" class="ps-6"
+  <Helper id="helper-checkbox-text" pclass="ps-6"
     >For orders shipped from $25 in books or $29 in other categories</Helper
   >
 </CodeWrapper>

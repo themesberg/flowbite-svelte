@@ -1,18 +1,24 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   interface Props {
-    children: Snippet;
-    src: string | undefined;
-    type?: string | undefined;
-    trackSrc?: string | undefined;
-    srclang?: string | undefined;
-    label?: string | undefined;
-    class?: string | undefined;
+    children?: Snippet;
+    src: string ;
+    controls?: boolean ;
+    autoplay?: boolean ;
+    muted?: boolean ;
+    type?: string ;
+    trackSrc?: string ;
+    srclang?: string ;
+    label?: string ;
+    class?: string ;
   }
 
   let {
     children,
     src,
+    controls,
+    autoplay,
+    muted,
     type = 'video/mp4',
     trackSrc,
     srclang = 'en',
@@ -22,7 +28,7 @@
   }: Props = $props();
 </script>
 
-<video {...attributes} class={classname}>
+<video {...attributes} class={classname} {controls} {autoplay} {muted}>
   <source {src} {type} />
     {#if children}
       {@render children()}

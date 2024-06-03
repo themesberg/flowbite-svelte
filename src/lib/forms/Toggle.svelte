@@ -5,6 +5,7 @@
   import type { FormColorType } from '../types';
   interface Props {
     children: Snippet;
+    disabled?: boolean;
     size?: 'small' | 'default' | 'large' | 'custom';
     group?: (string | number)[];
     value?: string | number;
@@ -16,10 +17,11 @@
 
   let {
     children,
+    disabled,
     size = 'default',
     group,
     value,
-    checked,
+    checked = $bindable(),
     customSize,
     spanclass,
     color,
@@ -65,11 +67,9 @@
   );
 </script>
 
-<Checkbox custom {...attributes} {value} bind:checked>
+<Checkbox custom {...attributes} {value} {disabled} bind:checked>
   <span class={divClass} ></span>
-
     {@render children()}
-
 </Checkbox>
 
 <!--

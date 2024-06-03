@@ -1,4 +1,5 @@
 <script lang="ts">
+  import type { ApexOptions } from 'apexcharts';
   import {
     Chart,
     Card,
@@ -36,7 +37,7 @@
     chart: {
       height: '400px',
       maxWidth: '100%',
-      type: 'area',
+      type: 'area' as "area",
       fontFamily: 'Inter, sans-serif',
       dropShadow: {
         enabled: false
@@ -138,7 +139,7 @@
       }
     ],
     chart: {
-      type: 'bar',
+      type: 'bar' as "bar",
       height: '320px',
       fontFamily: 'Inter, sans-serif',
       toolbar: {
@@ -149,7 +150,7 @@
       bar: {
         horizontal: false,
         columnWidth: '70%',
-        borderRadiusApplication: 'end',
+        borderRadiusApplication: 'end' as "end",
         borderRadius: 8
       }
     },
@@ -216,11 +217,11 @@
       {
         name: 'Income',
         color: '#31C48D',
-        data: ['1420', '1620', '1820', '1420', '1650', '2120']
+        data: [1420, 1620, 1820, 1420, 1650, 2120]
       },
       {
         name: 'Expense',
-        data: ['788', '810', '866', '788', '1100', '1200'],
+        data: [788, 810, 866, 788, 1100, 1200],
         color: '#F05252'
       }
     ],
@@ -228,7 +229,7 @@
       sparkline: {
         enabled: false
       },
-      type: 'bar',
+      type: 'bar' as "bar",
       width: '100%',
       height: 400,
       toolbar: {
@@ -242,7 +243,7 @@
       bar: {
         horizontal: true,
         columnWidth: '100%',
-        borderRadiusApplication: 'end',
+        borderRadiusApplication: 'end' as "end",
         borderRadius: 6,
         dataLabels: {
           position: 'top'
@@ -251,7 +252,7 @@
     },
     legend: {
       show: true,
-      position: 'bottom'
+      position: 'bottom' as "bottom"
     },
     dataLabels: {
       enabled: false
@@ -259,7 +260,7 @@
     tooltip: {
       shared: true,
       intersect: false,
-      formatter: function (value) {
+      formatter: function (value: number) {
         return '$' + value;
       }
     },
@@ -270,7 +271,7 @@
           fontFamily: 'Inter, sans-serif',
           cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
         },
-        formatter: function (value) {
+        formatter: function (value: string) {
           return '$' + value;
         }
       },
@@ -348,7 +349,7 @@
           >Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button
         >
         <div class="relative">
-          <Dropdown divclass="absolute top-[5px] -left-[180px]" {isOpen}>
+          <Dropdown divclass="absolute top-[5px] -left-[180px]" dropdownStatus={isOpen}>
             {#snippet children()}
               <DropdownItem href="/">Yesterday</DropdownItem>
               <DropdownItem href="/">Today</DropdownItem>
@@ -434,7 +435,7 @@
         <div class="relative">
           <Dropdown
             divclass="absolute top-[5px] -left-[180px]"
-            isOpen={isOpen2}
+            dropdownStatus={isOpen2}
           >
             {#snippet children()}
               <DropdownItem href="/">Yesterday</DropdownItem>
@@ -520,7 +521,7 @@
         <div class="relative">
           <Dropdown
             divclass="absolute top-[5px] -left-[180px]"
-            isOpen={isOpen3}
+            dropdownStatus={isOpen3}
           >
             {#snippet children()}
               <DropdownItem href="/">Yesterday</DropdownItem>

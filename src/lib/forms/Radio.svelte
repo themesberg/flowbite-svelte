@@ -48,6 +48,9 @@
 
   interface Props {
     children: Snippet;
+    name?: string;
+    disabled?: boolean;
+    aria_describedby?: string;
     labelclass?: string;
     color?: FormColorType;
     custom?: boolean;
@@ -58,15 +61,19 @@
   }
   let {
     children,
+    name,
+    disabled = false,
+    aria_describedby,
     labelclass = '',
     color = 'primary',
     custom = false,
     inline = false,
-    group,
+    group = $bindable(),
     value,
     inputclass = '',
     ...attributes
   }: Props = $props();
+
 
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
@@ -77,12 +84,13 @@
     type="radio"
     bind:group
     {value}
+    {name}
+    {disabled}
+    aria-describedby={aria_describedby}
     {...attributes}
     class={inputCls(custom, color, false, background, inputclass)}
   />
- 
     {@render children()}
-
 </Label>
 
 <!--

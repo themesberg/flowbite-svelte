@@ -319,8 +319,8 @@
   <Table>
     <TableHead defaultRow={false}>
       <tr>
-        <TableHeadCell colspan="2">Product</TableHeadCell>
-        <TableHeadCell colspan="3">Info</TableHeadCell>
+        <TableHeadCell colspan={2}>Product</TableHeadCell>
+        <TableHeadCell colspan={3}>Info</TableHeadCell>
       </tr>
       <tr>
         <TableHeadCell>Brand</TableHeadCell>

@@ -1,13 +1,18 @@
 <script lang="ts">
   interface Props {
-    value: number;
-    size: 'sm' | 'md' | 'lg';
-    inputclass: string;
+    id?: string;
+    min?: string;
+    max?: string;
+    step?: string;
+    disabled?: boolean;
+    value?: number;
+    size?: 'sm' | 'md' | 'lg';
+    inputclass?: string;
   }
   import { twMerge } from 'tailwind-merge';
   // import '$lib/style.css';
 
-  let { value, size = 'md', inputclass, ...attributes }: Props = $props();
+  let { id, disabled, min, max, step, value = $bindable(), size = 'md', inputclass, ...attributes }: Props = $props();
 
   const sizes = {
     sm: 'h-1 range-sm',
@@ -20,7 +25,7 @@
   );
 </script>
 
-<input type="range" bind:value {...attributes} class={inputClass} />
+<input type="range" bind:value {id} {...attributes} {disabled} {min} {max} {step} class={inputClass} />
 
 <!--
 @component

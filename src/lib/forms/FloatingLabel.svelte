@@ -7,6 +7,8 @@
   interface Props {
     children: Snippet;
     id?: string;
+    aria_describedby?: string;
+    disabled?: boolean;
     style?: 'filled' | 'outlined' | 'standard';
     type?: InputType;
     size?: 'small' | 'default';
@@ -19,6 +21,8 @@
   let {
     children,
     id = idGenerator(),
+    aria_describedby,
+    disabled,
     style = 'standard',
     type = 'text',
     size = 'default',
@@ -101,6 +105,8 @@
   <input
     {id}
     {...attributes}
+    {disabled}
+    aria-describedby={aria_describedby}
     {...{ type }}
     placeholder=" "
     class={twMerge(

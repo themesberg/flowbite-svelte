@@ -1,11 +1,11 @@
-export function removeHyphensAndCapitalize(str) {
+export function removeHyphensAndCapitalize(str: string) {
   // Handle empty string or strings without '-'
   if (!str || !str.includes('-')) {
     return str;
   }
 
   // Capitalize the first letter (including after hyphens)
-  const capitalized = str.replace(/(^|\s|-)\w/g, (match) =>
+  const capitalized = str.replace(/(^|\s|-)\w/g, (match: string) =>
     match.toUpperCase()
   );
 

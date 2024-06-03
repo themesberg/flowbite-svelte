@@ -5,16 +5,20 @@
     children?: Snippet;
     class?: string;
     padding?: string;
+    colspan?: number;
+    rowspan?: number;
   }
   let {
     children,
     class: className,
     padding = '',
+    colspan,
+    rowspan,
     ...attributes
   }: Props = $props();
 </script>
 
-<th {...attributes} class={twMerge('px-6 py-3',padding, className)}>
+<th {...attributes} {colspan} {rowspan} class={twMerge('px-6 py-3',padding, className)}>
   {#if children}
     {@render children()}
   {/if}

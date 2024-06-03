@@ -10,6 +10,7 @@
     subtext?: Snippet;
     onclick?: () => void;
     href?: string ;
+    target?: string ;
     label?: string ;
     spanclass?: string ;
     activeClass?: string ;
@@ -22,6 +23,7 @@
     subtext,
     onclick,
     href,
+    target,
     label,
     spanclass,
     activeClass,
@@ -47,7 +49,7 @@
 </script>
 
 <li>
-  <a {...attributes} {onclick} {href} aria-current={currentUrl === href} class={twMerge(aCls, aclass)}>
+  <a {...attributes} {onclick} {href} {target} aria-current={currentUrl === href} class={twMerge(aCls, aclass)}>
     {#if iconSlot}
       {@render iconSlot()}
     {/if}

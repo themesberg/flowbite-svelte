@@ -3,10 +3,11 @@
   import { twMerge } from 'tailwind-merge';
   interface Props {
     children: Snippet;
+    id?: string;
     pclass?: string;
     color?: 'gray' | 'green' | 'red' | 'disabled';
   }
-  let { children, pclass, color = 'gray', ...attributes }: Props = $props();
+  let { children, id, pclass, color = 'gray', ...attributes }: Props = $props();
   const colorClasses = {
     gray: 'text-gray-900 dark:text-gray-300',
     green: 'text-green-700 dark:text-green-500',
@@ -18,6 +19,7 @@
 
   <p
     {...attributes}
+    {id}
     class={twMerge(
       'text-xs font-normal text-gray-500 dark:text-gray-300',
       colorClasses[color],

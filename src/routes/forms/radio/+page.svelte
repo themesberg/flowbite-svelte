@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Radio, Helper, RadioButton, ButtonGroup } from '$lib';
+  // let { group = $bindable() ,technology = $bindable('svelte'), radioGroup = $bindable('notes') } = $props(); 
   let colors = 'text-purple-500';
   let technology = $state('svelte');
   let inline1 = 'second';
@@ -59,7 +60,7 @@
 
 <H2>Helper text</H2>
 <CodeWrapper>
-  <Radio aria-describedby="helper-checkbox-text"
+  <Radio aria_describedby="helper-checkbox-text"
     >Free shipping via Flowbite</Radio
   >
   <Helper id="helper-checkbox-text" pclass="ps-6"
@@ -160,6 +161,7 @@
   <div class="grid w-full gap-6 md:grid-cols-2">
     <Radio name="custom" custom>
       <div
+        id="hosting-small"
         class="inline-flex w-full cursor-pointer items-center justify-between rounded-lg border border-gray-200 bg-white p-5 text-gray-500 hover:bg-gray-100 hover:text-gray-600 peer-checked:border-primary-600 peer-checked:text-primary-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:peer-checked:text-primary-500"
       >
         <div>
@@ -171,7 +173,7 @@
     </Radio>
     <Radio name="custom" custom>
       <div
-        for="hosting-big"
+        id="hosting-big"
         class="inline-flex w-full cursor-pointer items-center justify-between rounded-lg border border-gray-200 bg-white p-5 text-gray-500 hover:bg-gray-100 hover:text-gray-600 peer-checked:border-primary-600 peer-checked:text-primary-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:peer-checked:text-primary-500"
       >
         <div class="block">

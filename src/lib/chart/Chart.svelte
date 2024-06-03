@@ -3,7 +3,7 @@
   import './chart.css';
 
   let {
-    options = {},
+    options,
     class: classname = ''
   }: {
     options: ApexOptions;

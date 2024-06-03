@@ -10,6 +10,7 @@
     children: Snippet;
     btnName?: string;
     appBtnPosition?: 'left' | 'middle' | 'right';
+    target?: string;
     activeClass?: string;
     href?: string;
     exact?: boolean;
@@ -21,6 +22,7 @@
     children,
     btnName,
     appBtnPosition = 'middle',
+    target,
     activeClass,
     href = '',
     exact = true,
@@ -108,6 +110,7 @@
   this={href ? 'a' : 'button'}
   aria-label={btnName}
   {href}
+  {target}
   role={href ? 'link' : 'button'}
   {...attributes}
   class={btnCls}

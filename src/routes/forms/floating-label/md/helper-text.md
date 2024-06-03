@@ -1,4 +1,4 @@
-<FloatingLabel style="filled" id="floating_helper" aria-describedby="floating_helper_text" name="floating_helper" type="text">
+<FloatingLabel style="filled" id="floating_helper" aria_describedby="floating_helper_text" type="text">
         Floating helper
 </FloatingLabel>
 <Helper pclass="pt-2">

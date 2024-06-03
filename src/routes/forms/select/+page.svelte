@@ -38,7 +38,7 @@
 <H2>Disabled state</H2>
 
 <CodeWrapper class="h-48">
-  <Label for="select-disabled" color="disabled" labelclass="mb-2"
+  <Label forId="select-disabled" color="disabled" labelclass="mb-2"
     >Disabled select</Label
   >
   <Select
@@ -54,7 +54,7 @@
 <H2>Underline select</H2>
 
 <CodeWrapper class="h-48">
-  <Label for="select-underline" labelclass="sr-only">Underline select</Label>
+  <Label forId="select-underline" labelclass="sr-only">Underline select</Label>
   <Select
     id="select-underline"
     underline

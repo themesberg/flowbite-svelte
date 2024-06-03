@@ -7,6 +7,8 @@
 
   interface Props {
     children?: Snippet;
+    disabled?: boolean;
+    aria_describedby?: string;
     color?: FormColorType;
     custom?: boolean;
     inline?: boolean;
@@ -20,12 +22,14 @@
 
   let {
     children,
+    disabled,
+    aria_describedby,
     color = 'primary',
     custom = false,
     inline = false,
     group = [],
     value = 'on',
-    checked,
+    checked = $bindable(false),
     spacing = 'me-2',
     labelclass = '',
     inputclass = '',
@@ -38,6 +42,8 @@
     type="checkbox"
     bind:checked
     {value}
+    aria-describedby={aria_describedby}
+    {disabled}
     {...attributes}
     class={twMerge(spacing, inputCls(custom, color, true, false, inputclass))}
   />

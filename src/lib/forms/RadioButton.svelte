@@ -17,7 +17,7 @@
   }
   let {
     children,
-    group,
+    group = $bindable(),
     value,
     inline = true,
     btnclass,

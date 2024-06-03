@@ -7,14 +7,16 @@
   interface Props {
     children: Snippet;
     closeNav?: () => void;
-    href?: string | undefined;
-    aclass?: string | undefined;
-    activeClass?: string | undefined;
-    nonActiveClass?: string | undefined;
+    href?: string 
+    target?: string ;
+    aclass?: string 
+    activeClass?: string 
+    nonActiveClass?: string 
   }
   let {
     closeNav,
     href,
+    target,
     children,
     aclass,
     activeClass,
@@ -61,6 +63,7 @@
   <a
     {href}
     onclick={closeNav}
+    {target}
     {...attributes}
     aria-current={currentUrl === href}
     class={linkClass}
@@ -75,8 +78,8 @@
 ## Props
 @props: children: Snippet;
 @props:closeNav?: () => void;
-@props:href?: string | undefined;
-@props:aclass?: string | undefined;
-@props:activeClass?: string | undefined;
-@props:nonActiveClass?: string | undefined;
+@props:href?: string 
+@props:aclass?: string 
+@props:activeClass?: string 
+@props:nonActiveClass?: string 
 -->

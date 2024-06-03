@@ -11,6 +11,7 @@
     children: Snippet;
     href?: string;
     horizontal?: boolean;
+    target?: string;
     shadow?: boolean;
     reverse?: boolean;
     img?: ImgType;
@@ -24,6 +25,7 @@
     children,
     href,
     horizontal = false,
+    target,
     shadow = false,
     reverse = false,
     img,
@@ -90,7 +92,7 @@
 
 <div {...attributes} class={cardClass} role={href ? 'link' : 'presentation'} {onclick}>
   {#if href}
-    <a {href}>
+    <a {href} {target}>
       {@render content()}
     </a>
   {:else}

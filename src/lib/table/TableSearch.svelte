@@ -35,7 +35,7 @@
     header,
     footer,
     divclass = '',
-    inputValue,
+    inputValue = $bindable(),
     striped,
     hoverable,
     placeholder = 'Search',

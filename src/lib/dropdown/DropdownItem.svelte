@@ -6,11 +6,12 @@
     children: Snippet;
     aclass?: string;
     href?: string;
+    target?: string;
     activeclass?: string;
     liclass?: string;
   }
 
-  let { aclass, children, href, activeclass, liclass, ...attributes }: Props = $props();
+  let { aclass, children, href, target, activeclass, liclass, ...attributes }: Props = $props();
 
   let currentUrl = $state();
   $effect(() => {
@@ -28,7 +29,7 @@
 
 <li class={liclass}>
   {#if href}
-    <a {href} class={currentUrl === href ? activeCls : aCls} {...attributes}>
+    <a {href} class={currentUrl === href ? activeCls : aCls} {target} {...attributes}>
       {@render children()}
     </a>
   {:else}

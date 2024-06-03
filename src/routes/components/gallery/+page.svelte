@@ -330,13 +330,12 @@
 <HighlightCompo code={modules['./md/heterogenuous-gallery.md'] as string} />
 
 <H2>Custom image rendering</H2>
+{#snippet figure(item)}
+  <div class="p-1 ring-4 ring-red-600 dark:ring-red-400">
+    <img src={item.src} alt={item.alt} class="h-auto max-w-full" />
+  </div>
+{/snippet}
 <CodeWrapper>
-  {#snippet figure(item)}
-    <div class="p-1 ring-4 ring-red-600 dark:ring-red-400">
-      <img src={item.src} alt={item.alt} class="h-auto max-w-full" />
-    </div>
-  {/snippet}
-
   <Gallery divclass="gap-4 grid-cols-3">
     {#each images9 as item}
       {@render figure(item)}
