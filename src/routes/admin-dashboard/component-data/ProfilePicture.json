@@ -1,0 +1,6 @@
+{
+	"name": "ProfilePicture",
+	"slots": [],
+	"events": [],
+	"props": [["src", "string", "@prop export let src: string"]]
+}

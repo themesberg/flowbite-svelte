@@ -1,0 +1,29 @@
+{
+	"name": "ServerError",
+	"slots": [],
+	"events": [],
+	"props": [
+		["title", "string", "'Something has gone seriously wrong'"],
+		[
+			"description",
+			"string",
+			"\"It's always time for a coffee break. We should be back by the time you finish your coffee.\""
+		],
+		["image", "string", "{"],
+		["btnHref", "string", "'/'"],
+		["btnTitle", "string", "'Go back home'"],
+		["mainClass", "string", "'bg-gray-50 dark:bg-gray-900'"],
+		[
+			"mainDivClass",
+			"string",
+			"'flex flex-col justify-center items-center px-6 mx-auto h-screen xl:px-0 dark:bg-gray-900'"
+		],
+		[
+			"h1Class",
+			"string",
+			"'mb-3 text-2xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl dark:text-white'"
+		],
+		["imgDiv", "string", "'block md:max-w-lg'"],
+		["div2Class", "string", "'text-center xl:max-w-4xl'"]
+	]
+}

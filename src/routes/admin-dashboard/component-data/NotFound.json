@@ -1,0 +1,29 @@
+{
+	"name": "NotFound",
+	"slots": [],
+	"events": [],
+	"props": [
+		["title", "string", "'Page not found'"],
+		[
+			"description",
+			"string",
+			"'Oops! Looks like you followed a bad link. If you think this is a problem with us, please\ttell us.'"
+		],
+		["image", "string", "{"],
+		["btnTitle", "string", "'Go back home'"],
+		["btnHref", "string", "'/'"],
+		["mainClass", "string", "'bg-gray-50 dark:bg-gray-900'"],
+		[
+			"mainDivClass",
+			"string",
+			"'flex flex-col items-center justify-center px-6 pt-8 mx-auto md:h-screen pt:mt-0 dark:bg-gray-900'"
+		],
+		[
+			"h1Class",
+			"string",
+			"'mb-3 text-2xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl dark:text-white'"
+		],
+		["imgDiv", "string", "'block md:max-w-lg'"],
+		["div2Class", "string", "'text-center xl:max-w-4xl'"]
+	]
+}

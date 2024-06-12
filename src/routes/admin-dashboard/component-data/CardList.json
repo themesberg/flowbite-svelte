@@ -1,0 +1,11 @@
+{
+	"name": "CardList",
+	"slots": [],
+	"events": [],
+	"props": [
+		["title", "string", ""],
+		["subtitle", "string", "''"],
+		["buttonLabel", "string", "'Save all'"],
+		["items", "any[]", "[]"]
+	]
+}

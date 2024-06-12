@@ -66,7 +66,7 @@
       <NavLi class="lg:px-2 lg:mb-0" href="/docs/components/accordion">Components</NavLi>
       <NavLi class="lg:px-2 lg:mb-0" href="https://flowbite-svelte-icons.codewithshin.com/">Icons</NavLi>
       <NavLi class="lg:px-2 lg:mb-0" href="https://flowbite-svelte-blocks.codewithshin.com/">Blocks</NavLi>
-      <NavLi class="lg:px-2 lg:mb-0" target="_blank" href="https://flowbite-svelte-admin-dashboard.vercel.app/">Dashboard</NavLi>
+      <NavLi class="lg:px-2 lg:mb-0" target="_blank" href="/admin-dashboard">Dashboard</NavLi>
     </NavUl>
 
     <div class="flex items-center ms-auto">
@@ -92,7 +92,7 @@
   </Navbar>
 </header>
 
-<div class="lg:flex">
+<div class="lg:flex w-full bg-gray-50 dark:bg-gray-900">
   <slot />
 </div>
 <CarbonAds />

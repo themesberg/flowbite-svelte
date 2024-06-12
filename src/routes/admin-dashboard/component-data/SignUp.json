@@ -1,0 +1,28 @@
+{
+	"name": "SignUp",
+	"slots": [],
+	"events": [],
+	"props": [
+		["title", "string", "'Create a Free Account'"],
+		["site", "string", "{"],
+		["acceptTerms", "boolean", "true"],
+		["haveAccount", "boolean", "true"],
+		["btnTitle", "string", "'Create account'"],
+		["termsLink", "string", "'/'"],
+		["loginLink", "string", "'/'"],
+		["mainClass", "string", "'bg-gray-50 dark:bg-gray-900 w-full'"],
+		[
+			"mainDivClass",
+			"string",
+			"'flex flex-col items-center justify-center px-6 pt-8 mx-auto md:h-screen pt:mt-0 dark:bg-gray-900'"
+		],
+		[
+			"siteLinkClass",
+			"string",
+			"'flex items-center justify-center mb-8 text-2xl font-semibold lg:mb-10 dark:text-white'"
+		],
+		["siteImgClass", "string", "'mr-4 h-11'"],
+		["cardH1Class", "string", "'text-2xl font-bold text-gray-900 dark:text-white'"],
+		["haveAccountDivClass", "string", "'text-sm font-medium text-gray-500 dark:text-gray-400'"]
+	]
+}

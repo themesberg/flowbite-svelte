@@ -1,0 +1,10 @@
+{
+	"name": "ChartWidget",
+	"slots": [],
+	"events": [],
+	"props": [
+		["title", "string", "''"],
+		["subtitle", "string", "''"],
+		["chartOptions", "ApexOptions", "@prop export let title: string = ''"]
+	]
+}

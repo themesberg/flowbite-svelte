@@ -1,0 +1,10 @@
+{
+	"name": "UserMenu",
+	"slots": [],
+	"events": [],
+	"props": [
+		["name", "string", "''; // \"Neil Sims\","],
+		["avatar", "string", "''; // \"neil-sims.png\","],
+		["email", "string", "''; // \"neil.sims@flowbite.com\","]
+	]
+}

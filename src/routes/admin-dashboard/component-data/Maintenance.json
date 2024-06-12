@@ -1,0 +1,29 @@
+{
+	"name": "Maintenance",
+	"slots": [],
+	"events": [],
+	"props": [
+		["title", "string", "'Under Maintenance'"],
+		[
+			"description = 'Sorry for the inconvenience but we’re performing some maintenance at the moment. If you need to you can always <a href=\"/\" class=\"text-primary-700 hover:underline dark:text-primary-500\">contact us</a>, otherwise we’ll be back online shortly!.';",
+			"string",
+			""
+		],
+		["image", "string", "{"],
+		["btnTitle", "string", "'Go back home'"],
+		["btnHref", "string", "'/'"],
+		["mainClass", "string", "'bg-gray-50 dark:bg-gray-900'"],
+		[
+			"mainDivClass",
+			"string",
+			"'flex flex-col justify-center items-center px-6 mx-auto h-screen xl:px-0 dark:bg-gray-900'"
+		],
+		[
+			"h1Class",
+			"string",
+			"'mb-3 text-2xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl dark:text-white'"
+		],
+		["imgDiv", "string", "'block mb-5 md:max-w-md'"],
+		["div2Class", "string", "'text-center xl:max-w-4xl'"]
+	]
+}
