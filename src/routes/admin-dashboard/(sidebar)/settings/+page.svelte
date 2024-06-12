@@ -23,7 +23,7 @@
 
 <MetaTag {path} {description} {title} {subtitle} />
 
-<main class="p-4">
+<main class="p-4 dark:bg-gray-900">
 	<div class="grid grid-cols-1 space-y-2 dark:bg-gray-900 xl:grid-cols-3 xl:gap-3.5">
 		<div class="col-span-full xl:mb-0">
 			<Breadcrumb class="mb-6">
