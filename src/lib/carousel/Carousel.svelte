@@ -28,6 +28,7 @@
   export let transition: TransitionFunc | null = null;
   export let duration: number = 0;
   export let ariaLabel: string = 'Draggable Carousel';
+  export let disableSwipe: boolean = false;
 
   // Carousel
   let divClass: string = 'grid overflow-hidden relative rounded-lg h-56 sm:h-64 xl:h-80 2xl:h-96';
@@ -114,6 +115,8 @@
   };
 
   const onDragStart = (evt: MouseEvent | TouchEvent) => {
+    if (disableSwipe) return;
+
     touchEvent = evt;
     evt.cancelable && evt.preventDefault();
     const start = getPositionFromEvent(evt);
