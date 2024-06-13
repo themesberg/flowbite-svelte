@@ -13,7 +13,7 @@ jobs:
     name: 'Playwright and Lint'
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.43.1-focal
+      image: mcr.microsoft.com/playwright:v1.44.1-focal
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v3
