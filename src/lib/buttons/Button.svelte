@@ -127,7 +127,7 @@
     <slot />
   </button>
 {:else}
-  <svelte:element this={tag} class={buttonClass}>
+  <svelte:element this={tag} class={buttonClass} {...$$restProps}>
     <slot />
   </svelte:element>
 {/if}
