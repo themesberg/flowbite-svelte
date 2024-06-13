@@ -227,6 +227,6 @@ The component has the following props, type, and default values. See [types page
 
 ## References
 
-- [Flowbite Gallery](https://flowbite.com/docs/components/forms/)
+- [Flowbite Gallery](https://flowbite.com/docs/components/gallery/)
 
 <GitHubCompoLinks />
