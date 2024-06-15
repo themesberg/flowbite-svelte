@@ -29,6 +29,7 @@ export const fetchMarkdownPosts = async () => {
   const exampleFiles = import.meta.glob<Mdsvex>('/src/routes/docs/examples/*.md');
   const experimentalFiles = import.meta.glob<Mdsvex>('/src/routes/docs/experimental/*.md');
   const pluginsFiles = import.meta.glob<Mdsvex>('/src/routes/docs/plugins/*.md');
+  const iconFiles = import.meta.glob<Mdsvex>('/src/routes/icons/*.md');
   // returns an array of files
   const iterableComponentFiles = Object.entries(componentFiles);
   const iterableFormFiles = Object.entries(formFiles);
@@ -39,6 +40,7 @@ export const fetchMarkdownPosts = async () => {
   const iterableExampleFiles = Object.entries(exampleFiles);
   const iterableExperimentalFiles = Object.entries(experimentalFiles);
   const iterablePluginsFiles = Object.entries(pluginsFiles);
+  const iterableIconFiles = Object.entries(iconFiles);
 
   const allComponents = await Promise.all(
     iterableComponentFiles.map(async ([path, resolver]) => {
@@ -69,6 +71,7 @@ export const fetchMarkdownPosts = async () => {
       };
     })
   );
+
   // returns an array of paths, /closebutton from /src/routes/utilities/closebutton.md
   const allUtils = await Promise.all(
     iterableUtilFiles.map(async ([path, resolver]) => {
@@ -82,6 +85,16 @@ export const fetchMarkdownPosts = async () => {
 
   const allPlugins = await Promise.all(
     iterablePluginsFiles.map(async ([path, resolver]) => {
+      const { metadata } = await resolver();
+      return {
+        meta: metadata,
+        path: filePath(path)
+      };
+    })
+  );
+
+  const allIcons = await Promise.all(
+    iterableIconFiles.map(async ([path, resolver]) => {
       const { metadata } = await resolver();
       return {
         meta: metadata,
@@ -139,6 +152,7 @@ export const fetchMarkdownPosts = async () => {
     components: allComponents,
     forms: allForms,
     typography: allTypographys,
+    icons: allIcons,
     examples: allExamples,
     extend: allExtends,
     utilities: allUtils,

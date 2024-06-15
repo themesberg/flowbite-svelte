@@ -1,4 +1,4 @@
-const site = 'https://flowbite-svelte.com/admin-dashboard'; 
+const site = 'https://flowbite-svelte-admin-dashboard.vercel.app/'; 
 const pages: string[] = [
   '',
   'dashboard',

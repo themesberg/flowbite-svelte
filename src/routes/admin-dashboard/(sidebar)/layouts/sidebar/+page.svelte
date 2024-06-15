@@ -13,7 +13,7 @@
 
 <MetaTag {path} {description} {title} {subtitle} />
 
-<main class="p-4 dark:bg-gray-900">
+<main class="p-4">
 	<Dashboard {data} />
 </main>
 <Footer />

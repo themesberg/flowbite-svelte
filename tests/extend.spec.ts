@@ -1,11 +1,5 @@
 import { expect, test } from '@playwright/test';
 
-// Icons
-test('Icon page should have h1', async ({ page }) => {
-  await page.goto('/docs/extend/icons');
-  expect(await page.textContent('h1')).toBe('Svelte Icons - Flowbite');
-});
-
 // flowbite-svelte-starter
 test('Flowbite Svelte Starter page should have h1', async ({ page }) => {
   await page.goto('/docs/extend/flowbite-svelte-starter');

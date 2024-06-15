@@ -10,7 +10,7 @@
 	};
 	export let btnTitle = 'Go back home';
 	export let btnHref = '/';
-	export let mainClass = 'bg-gray-50 dark:bg-gray-900 h-full w-full';
+	export let mainClass = 'bg-gray-50 dark:bg-gray-900';
 	export let mainDivClass =
 		'flex flex-col items-center justify-center px-6 pt-8 mx-auto md:h-screen pt:mt-0 dark:bg-gray-900';
 	export let h1Class =
@@ -48,3 +48,25 @@
 		</div>
 	</div>
 </main>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte-admin-dashboard.vercel.app/)
+## Props
+@prop export let title = 'Page not found';
+@prop export let description =
+		'Oops! Looks like you followed a bad link. If you think this is a problem with us, please	tell us.';
+@prop export let image = {
+		src: imagesPath('404.svg', 'illustrations'),
+		alt: 'astronaut'
+	};
+@prop export let btnTitle = 'Go back home';
+@prop export let btnHref = '/';
+@prop export let mainClass = 'bg-gray-50 dark:bg-gray-900';
+@prop export let mainDivClass =
+		'flex flex-col items-center justify-center px-6 pt-8 mx-auto md:h-screen pt:mt-0 dark:bg-gray-900';
+@prop export let h1Class =
+		'mb-3 text-2xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl dark:text-white';
+@prop export let imgDiv = 'block md:max-w-lg';
+@prop export let div2Class = 'text-center xl:max-w-4xl';
+-->

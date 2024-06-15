@@ -14,7 +14,6 @@
 		Search
 	} from 'flowbite-svelte';
 	import { ChevronDownOutline } from 'flowbite-svelte-icons';
-
 	import Users from '../data/users.json';
 
 	export let fluid = true;
@@ -28,7 +27,7 @@
 			onClick={() => (drawerHidden = !drawerHidden)}
 			class="m-0 me-3 md:block lg:hidden"
 		/>
-		<NavBrand href="/admin-dashboard" class={list ? 'w-40' : 'lg:w-60'}>
+		<NavBrand href="/" class={list ? 'w-40' : 'lg:w-60'}>
 			<img
 				src="/images/flowbite-svelte-icon-logo.svg"
 				class="me-2.5 h-6 sm:h-8"

@@ -8,7 +8,7 @@
 >
 	<Navbar />
 </header>
-<div class="w-full bg-gray-50">
+<div class="mx-auto max-w-screen-2xl pt-[70px]">
 	<slot />
 	<Footer />
 </div>

@@ -12,6 +12,6 @@
 
 <MetaTag {path} {description} {title} {subtitle} />
 
-<main class="py-4 dark:bg-gray-900">
+<main class="py-4">
 	<Dashboard {data} />
 </main>
