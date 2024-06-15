@@ -63,6 +63,7 @@
             {/each}
           </SidebarDropdownWrapper>
         {/each}
+        <SidebarItem label='Admin Dashboard' href='/admin-dashboard' spanClass='w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-900 dark:text-white' {activeClass} active={activeMainSidebar === '/admin-dashboard'} />
       </SidebarGroup>
     </nav>
   </SidebarWrapper>
