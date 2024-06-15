@@ -1,4 +1,5 @@
 <script lang="ts">
+  import FlowbiteSvelteLayout from './layouts/FlowbiteSvelteLayout.svelte';
   import { MetaTags } from 'svelte-meta-tags';
   import type { PageData } from './$types';
   import Components from './landing/Components.svelte';
@@ -18,7 +19,7 @@
   let default_title = 'Svelte UI Components';
   const image = `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${default_title}`;
 </script>
-
+<FlowbiteSvelteLayout>
 <MetaTags
   {title}
   {description}
@@ -53,3 +54,4 @@
   
 </main>
 
+</FlowbiteSvelteLayout>
