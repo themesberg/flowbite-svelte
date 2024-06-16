@@ -20,7 +20,7 @@ description: Outline icons
   const keywordsToInclude = 'Outline';
   const keyIcons = filterIconsByKeyword(Icons, keywordsToInclude);
 
-  const contentClass = ' rounded-lg dark:bg-neutral-900 mt-4';
+  const contentClass = ' rounded-lg mt-4';
   let searchTerm = '';
 
   $: filteredEntries = Object.entries(keyIcons).filter(([name, component]) => {
