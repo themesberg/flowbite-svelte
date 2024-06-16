@@ -3,16 +3,13 @@
   "compilerOptions": {
     "allowJs": true,
     "checkJs": true,
-    "declaration": true,
-    "declarationMap": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "allowImportingTsExtensions": true,
-    "noEmit": true
+    "moduleResolution": "bundler"
   }
   // Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
   //

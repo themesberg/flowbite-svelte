@@ -2,7 +2,7 @@
   // import { MetaTag } from './utils';
   import { MetaTags } from 'svelte-meta-tags';
   import type { PageData } from './$types';
-  import SectionCompo from './utils/SectionCompo.svelte';
+  import { SectionComponent } from './utils';
 
   export let data: PageData;
 
@@ -39,4 +39,4 @@
     <p class="text-lg text-gray-500 lg:mb-0 dark:text-gray-400">Get started with 122 free and premium UI components built with the utility classes from Tailwind CSS to upgrade your web development stack and customize the colors, fonts, and dark mode using the configurator.</p>
   </div>
 </div>
-<SectionCompo {data} section={undefined} />
+<SectionComponent {data} section={undefined} />

@@ -17,7 +17,7 @@
     <Breadcrumb navClass="flex mb-3">
       <BreadcrumbItem href="/blocks" home>{home}</BreadcrumbItem>
       {#if allowedDirs.includes(category)}
-      <BreadcrumbItem href="/blocks/{category}">{capitalized} UI</BreadcrumbItem>
+      <BreadcrumbItem>{capitalized} UI</BreadcrumbItem>
       {/if}
       {#if breadcrumb_title}
         <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>

@@ -30,7 +30,7 @@
       <p class="text-sm text-gray-500 dark:text-gray-400">{no_of_components}</p>
     </div>
     <div class="text-gray-900 dark:text-white">
-      <a href="/blocks/{dir}"><span class={twMerge('capitalize text-xs font-medium px-2.5 py-0.5 rounded', colors[dir])}>{dir} UI</span></a>
+      <span class={twMerge('capitalize text-xs font-medium px-2.5 py-0.5 rounded', colors[dir])}>{dir} UI</span>
     </div>
   </article>
   <div class="relative flex items-center justify-center h-[calc(100%_-_4rem)]">

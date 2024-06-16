@@ -1,9 +1,8 @@
 <script lang="ts">
-  import { Button } from 'flowbite-svelte';
+  import { Button, TableSearch } from 'flowbite-svelte';
   import type { PageData } from '../$types';
   import CompoCard from './CompoCard.svelte';
   import Section from './Section.svelte';
-  import {TableSearch} from 'flowbite-svelte';
 
   export let data: PageData;
   export let section;

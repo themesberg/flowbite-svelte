@@ -10,8 +10,9 @@ category: true
 
 <script lang="ts">
   import type { PageData } from './$types';
-  import SectionCompo from '../utils';
   export let data: PageData;
+  import { SectionComponent } from '../utils';
+  
 </script>
 
-<SectionCompo {data} section="marketing"/>
+<SectionComponent {data} section="marketing"/>

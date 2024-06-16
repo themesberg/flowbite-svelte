@@ -8,6 +8,8 @@
   import YoutubeHome from './utils/icons/YoutubeHome.svelte';
   import ToolbarLink from './utils/ToolbarLink.svelte';
   import { ChevronDownOutline } from 'flowbite-svelte-icons';
+
+  // $: activeUrl = $page.url.pathname;
   // export let data;
   // console.log('data: ', JSON.stringify(data));
   let version = import.meta.env.VITE_APP_VERSION;
@@ -39,20 +41,12 @@
         <img src="/images/flowbite-svelte-icon-logo.svg" class="h-8 mr-3" alt="Flowbite Logo" />
         <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"> Flowbite Svelte Blocks </span>
       </NavBrand>
-      <NavUl {hidden} {divClass} {ulClass} nonActiveClass="md:!pl-3 md:!py-2 lg:!pl-0 text-gray-700 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 dark:text-gray-400 lg:dark:text-white lg:dark:hover:text-primary-700 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent" activeClass="md:!pl-3 md:!py-2 lg:!pl-0 text-white bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:dark:text-primary-700 dark:bg-primary-600 lg:dark:bg-transparent cursor-default">
-        <NavLi class="lg:px-2 lg:mb-0" active={activeUrl === '/'} href="/">Home</NavLi>
-        <NavLi id="nav-menu1" active={activeCategory} class="cursor-pointer">
-          Categories<ChevronDownOutline class="w-3 h-3 ml-2 text-gray-500 dark:text-white inline" />
-        </NavLi>
-        <NavLi href="/pages/quickstart">Quickstart</NavLi>
-        <NavLi href="https://flowbite-svelte.com">Flowbite-Svelte</NavLi>
-        <NavLi href="https://flowbite-svelte-icons.codewithshin.com">Icons</NavLi>
-        <Dropdown triggeredBy="#nav-menu1" placement="bottom-start" class="w-44 z-20">
-          <DropdownItem href="/blocks/application">Application</DropdownItem>
-          <DropdownItem href="/blocks/marketing">Marketing</DropdownItem>
-          <DropdownItem href="/blocks/publisher">Publisher</DropdownItem>
-          <DropdownItem href="/blocks/example">Example</DropdownItem>
-        </Dropdown>
+      <NavUl {hidden} {divClass} {ulClass} {activeUrl} nonActiveClass="md:!pl-3 md:!py-2 lg:!pl-0 text-gray-700 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 dark:text-gray-400 lg:dark:text-white lg:dark:hover:text-primary-700 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent" activeClass="md:!pl-3 md:!py-2 lg:!pl-0 text-white bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:dark:text-primary-700 dark:bg-primary-600 lg:dark:bg-transparent cursor-default">
+        <NavLi class="lg:px-2 lg:mb-0" href="/blocks">Blocks</NavLi>
+        <NavLi href="/blocks/pages/quickstart">Quickstart</NavLi>
+        <NavLi href="/">Flowbite Svelte</NavLi>
+        <NavLi href="/icons">Icons</NavLi>
+        <NavLi href="/admin-dashboard">Dashboard</NavLi>
       </NavUl>
       <div class="flex items-center ml-auto">
         <ToolbarLink class="hidden sm:inline-block dark:hover:text-white hover:text-gray-900" name="View on GitHub" href="https://github.com/themesberg/flowbite-svelte-blocks">

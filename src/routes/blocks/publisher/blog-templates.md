@@ -65,7 +65,7 @@ Use this free blog template to show the content of an article using the Flowbite
 
 <Section name='blogTemplate' classSection='pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900'>
   <article class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
-    <BlogTemplate {blog} />
+    <BlogTemplate {blog} classArticle='dark:text-white'/>
 
     <Section name='comment' classSection='not-format' classDiv="px-0">
       <Comment title="Discussion (20)">
@@ -94,5 +94,4 @@ Use this free blog template to show the content of an article using the Flowbite
     </Section>
   </article>
 </Section>
-
 ```

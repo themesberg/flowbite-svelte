@@ -28,7 +28,7 @@ export { default as Newsletter } from './Newsletter.svelte';
 export { default as PageHeadSection } from './PageHeadSection.svelte';
 export { default as Paging } from './Paging.svelte';
 export { default as Section } from './Section.svelte';
-export { default as SectionCompo } from './SectionCompo.svelte';
+export { default as SectionComponent } from './SectionComponent.svelte';
 export { default as SectionHeader } from './SectionHeader.svelte';
 export { default as TableDefaultRow } from './TableDefaultRow.svelte';
 export { default as TableProp } from './TableProp.svelte';
