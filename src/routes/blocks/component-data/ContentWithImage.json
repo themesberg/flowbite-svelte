@@ -1,0 +1,10 @@
+{
+  "name": "ContentWithImage",
+  "slots": ["h2", "image"],
+  "events": [],
+  "props": [
+    ["divClass", "string", "'font-light text-gray-500 sm:text-lg dark:text-gray-400'"],
+    ["h2Class", "string", "'mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white'"],
+    ["imgDivClass", "string", "'grid grid-cols-2 gap-4 mt-8'"]
+  ]
+}

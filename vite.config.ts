@@ -18,7 +18,8 @@ const config = {
   },
   resolve: {
     alias: {
-      'flowbite-svelte': path.resolve(process.cwd(), './src/lib/index.js')
+      'flowbite-svelte': path.resolve(process.cwd(), './src/lib/index.js'),
+      'flowbite-svelte-blocks': path.resolve(process.cwd(), './node_modules/flowbite-svelte-blocks/dist/index.js')
     }
   },
   define: {

@@ -1,0 +1,16 @@
+{
+  "name": "TeamItem",
+  "slots": ["social"],
+  "events": [],
+  "props": [
+    ["divClass", "string", "'items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700'"],
+    ["imgClass", "string", "'w-full rounded-lg sm:rounded-none sm:rounded-l-lg'"],
+    ["h3Class", "string", "'text-xl font-bold tracking-tight text-gray-900 dark:text-white'"],
+    ["spanClass", "string", "'text-gray-500 dark:text-gray-400'"],
+    ["href", "string", "''"],
+    ["src", "string", "''"],
+    ["alt", "string", "''"],
+    ["name", "string", "''"],
+    ["jobTitle", "string", "''"]
+  ]
+}

@@ -3,7 +3,8 @@ import examples from 'mdsvexamples';
 
 const config = defineConfig({
   layout: {
-    componentLayout: './src/routes/layouts/component/+page.svelte'
+    componentLayout: './src/routes/layouts/component/+page.svelte',
+    blockComponentLayout: './src/routes/blocks/layouts/+page.svelte'
   },
   extensions: ['.svelte.md', '.md', '.svx'],
 

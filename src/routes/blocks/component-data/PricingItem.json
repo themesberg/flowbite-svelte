@@ -1,0 +1,1 @@
+{ "name": "PricingItem", "slots": [], "events": [], "props": [["liClass", "string", "'flex items-center space-x-3'"]] }

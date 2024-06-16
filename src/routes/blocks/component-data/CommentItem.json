@@ -1,0 +1,9 @@
+{
+  "name": "CommentItem",
+  "slots": ["dropdownMenu", "reply"],
+  "events": [],
+  "props": [
+    ["replyButton", "boolean", "true"],
+    ["comment", "Comment", "@prop export let replyButton: boolean = true"]
+  ]
+}

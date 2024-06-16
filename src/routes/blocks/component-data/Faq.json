@@ -1,0 +1,1 @@
+{ "name": "Faq", "slots": [], "events": [], "props": [["divClass", "string", "'grid pt-8 text-left border-t border-gray-200 md:gap-16 dark:border-gray-700 md:grid-cols-2'"]] }

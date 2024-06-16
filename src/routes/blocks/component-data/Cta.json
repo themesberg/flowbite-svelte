@@ -1,0 +1,1 @@
+{ "name": "Cta", "slots": ["img", "h2"], "events": [], "props": [["ctatype", "'default' | 'image' | 'heading' | 'none'", "'default'"]] }
