@@ -107,23 +107,21 @@ If you want to build a chatroom component you will usually want to use a textare
 
 <form>
   <label for="chat" class="sr-only">Your message</label>
-  <Alert color="dark" class="px-3 py-2">
-    <svelte:fragment slot="icon">
-      <ToolbarButton color="dark" class="text-gray-500 dark:text-gray-400">
-        <ImageOutline class="w-6 h-6" />
-        <span class="sr-only">Upload image</span>
-      </ToolbarButton>
-      <ToolbarButton color="dark" class="text-gray-500 dark:text-gray-400">
-        <FaceGrinOutline class="w-6 h-6" />
-        <span class="sr-only">Add emoji</span>
-      </ToolbarButton>
-      <Textarea id="chat" class="mx-4" rows="1" placeholder="Your message..." />
-      <ToolbarButton type="submit" color="blue" class="rounded-full text-primary-600 dark:text-primary-500">
-        <PaperPlaneOutline class="w-6 h-6 rotate-45" />
-        <span class="sr-only">Send message</span>
-      </ToolbarButton>
-    </svelte:fragment>
-  </Alert>
+  <div class="flex items-center px-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-700">
+    <ToolbarButton color="dark" class="text-gray-500 dark:text-gray-400">
+      <ImageOutline class="w-6 h-6" />
+      <span class="sr-only">Upload image</span>
+    </ToolbarButton>
+    <ToolbarButton color="dark" class="text-gray-500 dark:text-gray-400">
+      <FaceGrinOutline class="w-6 h-6" />
+      <span class="sr-only">Add emoji</span>
+    </ToolbarButton>
+    <Textarea id="chat" class="mx-4 bg-white dark:bg-gray-800" rows="1" placeholder="Your message..." />
+    <ToolbarButton type="submit" color="blue" class="rounded-full text-primary-600 dark:text-primary-500">
+      <PaperPlaneOutline class="w-6 h-6 rotate-45" />
+      <span class="sr-only">Send message</span>
+    </ToolbarButton>
+  </div>
 </form>
 ```
 
