@@ -209,5 +209,6 @@
 @prop export let transition: TransitionFunc | null = null;
 @prop export let duration: number = 0;
 @prop export let ariaLabel: string = 'Draggable Carousel';
+@prop export let disableSwipe: boolean = false;
 @prop export let imgClass: string = '';
 -->

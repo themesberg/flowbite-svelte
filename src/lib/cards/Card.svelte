@@ -70,4 +70,5 @@
 @prop export let img: string | undefined = undefined;
 @prop export let padding: SizeType | 'none' = 'lg';
 @prop export let size: SizeType | 'none' = 'sm';
+@prop export let imgClass: string = '';
 -->

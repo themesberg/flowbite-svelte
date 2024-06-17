@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.46.2
+
+### Patch Changes
+
+- fix: textarea, button, multiselect, carousel, gallery components update ([`17acd58cf0fb1ec8b6bccef78bcfb89d9e83b201`](https://github.com/themesberg/flowbite-svelte/commit/17acd58cf0fb1ec8b6bccef78bcfb89d9e83b201))
+
 ## 0.46.1
 
 ### Patch Changes
