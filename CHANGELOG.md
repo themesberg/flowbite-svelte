@@ -4,7 +4,35 @@
 
 ### Patch Changes
 
-- fix: textarea, button, multiselect, carousel, gallery components update ([`17acd58cf0fb1ec8b6bccef78bcfb89d9e83b201`](https://github.com/themesberg/flowbite-svelte/commit/17acd58cf0fb1ec8b6bccef78bcfb89d9e83b201))
+* 1790b498 fix: add test-results to gitignore
+* 0833cf6d fix: correct border and background colors for textarea compon
+ent (#1363)
+* 6d75ffe5 docs: README update
+* 0ecae1f3 chore: cleanup
+* f6ed5e8f fix: blocks version and icon link update
+* 587682ac fix: remove bg color from icon pages
+* dec9ab7a (new-blocks) feat: add blocks
+* 95343155 (origin/new-blocks) > Gitignore updated at 2024-06-16 07:17:57
+* 04309ad8 fix: add admin dashboard to sidebar menu
+* deea452c feat: add admin-dashboard and icons
+* c4efa031 fix: create FlowbiteSvelteLayout and ComponentsLayout
+* bf2df482 Pass $$restProps to button (#1339)
+* 137f5570 fix:MultiSelect on:change triggered twice (#1341)
+* 21f03a61 feat: Add disableSwipe prop to Carousel (#1353)
+* 1b458271 docs: Properly setting Flowbite component link for Gallery (#1359)
+* e4e50278 [forms/Select] correctly initialize "selected" attribute for SSR (#1352)
+* 41f2fc92 fix: playwright version in workflows
+* 7a83eb1e fix: link to vercel for admin-dashboard
+* c6962464 fix: bg-color update
+* ce0e03f0 feat: add admin-dashboard
+* 4b1e19f7 feat: add prerender true
+* 2d808845 chore: add google file
+* 70b65c34 fix: add textarea on select handler (#1346)
+* 6d077922 fix: #1350 remove else from AccordionItem
+* 6ff61d2d fix: #1332 add imgClass prop
+* d51c7d86 remove console.log from InputAddon.svelte (#1333)
+* a15568b9 fix: link update
+* 7c2b90ac fix: url updates
 
 ## 0.46.1
 
