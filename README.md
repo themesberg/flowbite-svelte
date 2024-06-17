@@ -15,20 +15,6 @@
 
 [Visualize this repo's codebase](https://mango-dune-07a8b7110.1.azurestaticapps.net/?repo=themesberg%2Fflowbite-svelte)
 
-## Flowbite Svelte Starters
-
-You can find all the starters in the Starters directory.
-
-- [Flowbite SvelteKit starter](https://github.com/shinokada/flowbite-svelte-starter)
-- [Svelte starter](https://github.com/shinokada/svelte-starter)
-- [Svelte TS starter](https://github.com/shinokada/svelte-ts-starter)
-
-## Flowbite Svelte Examples
-
-You can find all the examples in the Examples directory.
-
-- [Flowbite SvelteKit responsive sidebar layout](https://github.com/shinokada/flowbite-sveltekit-responsive-sidebar-layout)
-
 ## Installation
 
 - [Getting started](https://flowbite-svelte.com/docs/pages/quickstart)
@@ -474,24 +460,6 @@ For casual chatting with others using the library:
 
 💬 [Join the Flowbite Discord Server](https://discord.gg/4eeurUVvTy)
 
-## Tests
-
-**Please use node v16.xx.x.**
-
-Run:
-
-```sh
-npm run test
-```
-
-## Create props
-
-```sh
-npm run gen:props
-```
-
-This will pull all props from components and replace files in `/src/routes/props` directory.
-
 ## Contribute
 
 Please read [how to contribute](https://github.com/themesberg/flowbite-svelte/blob/main/CONTRIBUTING.md) if you'd like to be part of the Flowbite community of contributors.
@@ -500,9 +468,6 @@ Please read [how to contribute](https://github.com/themesberg/flowbite-svelte/bl
 
 View the full [changelog](https://github.com/themesberg/flowbite-svelte/blob/main/CHANGELOG.md) on this page.
 
-## SvelteKit version
-
-1.0.1
 
 ## License
 
