@@ -151,6 +151,8 @@
       referenceEl = triggerEls[0];
     }
 
+    document.addEventListener('click', closeOnClickOutside);
+
     return () => {
       // This is onDestroy function
       triggerEls.forEach((element: HTMLElement) => {
@@ -162,8 +164,21 @@
         referenceEl.removeEventListener('focusout', hideHandler);
         referenceEl.removeEventListener('mouseleave', hideHandler);
       }
+      document.removeEventListener('click', closeOnClickOutside);
     };
   });
+
+  /**
+   * Close the popper when clicking outside of it.
+   * This is necessary to get around a bug in Safari where clicking outside of the open popper does not close it.
+   */
+  function closeOnClickOutside(event: MouseEvent) {
+    if (open) {
+      if (!event.composedPath().includes(floatingEl) && !triggerEls.some((el) => event.composedPath().includes(el))) {
+        hideHandler(event);
+      }
+    }
+  }
 
   function optional(pred: boolean, func: (ev: Event) => void) {
     return pred ? func : () => undefined;
