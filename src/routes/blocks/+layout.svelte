@@ -1,17 +1,13 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { afterNavigate } from '$app/navigation';
-  import { Footer, FooterBrand, FooterLinkGroup, FooterLink, FooterCopyright, FooterIcon, Navbar, NavBrand, NavHamburger, NavUl, NavLi, Dropdown, DropdownItem, DarkMode, Tooltip } from 'flowbite-svelte';
+  import { Footer, FooterBrand, FooterLinkGroup, FooterLink, FooterCopyright, FooterIcon, Navbar, NavBrand, NavHamburger, NavUl, NavLi, DarkMode, Tooltip } from 'flowbite-svelte';
   import GitHubHome from './utils/icons/GitHubHome.svelte';
   import DocBadge from './utils/DocBadge.svelte';
   import Discord from './utils/icons/Discord.svelte';
   import YoutubeHome from './utils/icons/YoutubeHome.svelte';
   import ToolbarLink from './utils/ToolbarLink.svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
 
-  // $: activeUrl = $page.url.pathname;
-  // export let data;
-  // console.log('data: ', JSON.stringify(data));
   let version = __BLOCKS_VERSION__;
 
   // to fix scrolling problem
