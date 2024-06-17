@@ -21,3 +21,4 @@ yarn.lock
 src/routes/testdir/*
 
 .idea/
+/test-results
