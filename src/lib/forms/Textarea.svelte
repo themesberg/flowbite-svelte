@@ -13,12 +13,12 @@
   $: wrapped = $$slots.header || $$slots.footer;
 
   let wrapperClass: string;
-  $: wrapperClass = twMerge('w-full rounded-lg bg-gray-50', background ? 'dark:bg-gray-800' : 'dark:bg-gray-700', 'text-gray-900 dark:placeholder-gray-400 dark:text-white ', 'border border-gray-200 dark:border-gray-600', $$props.class);
+  $: wrapperClass = twMerge('w-full rounded-lg bg-gray-50', background ? 'dark:bg-gray-600' : 'dark:bg-gray-700', 'text-gray-900 dark:placeholder-gray-400 dark:text-white ', 'border border-gray-300', background ? 'dark:border-gray-500' : 'dark:border-gray-600', $$props.class);
 
   let textareaClass: string;
   $: textareaClass = wrapped ? wrappedClass : twMerge(wrapperClass, unWrappedClass);
 
-  const headerClass = (header: boolean) => twMerge(header ? 'border-b' : 'border-t', 'py-2 px-3 border-gray-200 dark:border-gray-600');
+  const headerClass = (header: boolean) => twMerge(header ? 'border-b' : 'border-t', 'py-2 px-3 border-gray-300', background ? 'dark:border-gray-500' : 'dark:border-gray-600');
 
   let innerWrapperClass: string;
   $: innerWrapperClass = twMerge(innerWrappedClass, $$slots.footer ? '' : 'rounded-b-lg', $$slots.header ? '' : 'rounded-t-lg');
