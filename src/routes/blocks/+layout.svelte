@@ -12,7 +12,7 @@
   // $: activeUrl = $page.url.pathname;
   // export let data;
   // console.log('data: ', JSON.stringify(data));
-  let version = import.meta.env.VITE_APP_VERSION;
+  let version = __BLOCKS_VERSION__;
 
   // to fix scrolling problem
   afterNavigate((navigation) => {
@@ -45,7 +45,7 @@
         <NavLi class="lg:px-2 lg:mb-0" href="/blocks">Blocks</NavLi>
         <NavLi href="/blocks/pages/quickstart">Quickstart</NavLi>
         <NavLi href="/">Flowbite Svelte</NavLi>
-        <NavLi href="/icons">Icons</NavLi>
+        <NavLi href="/icons/svelte-4">Icons</NavLi>
         <NavLi href="/admin-dashboard">Dashboard</NavLi>
       </NavUl>
       <div class="flex items-center ml-auto">
@@ -111,8 +111,8 @@
       <FooterLinkGroup>
         <FooterLink liClass="mb-4" href="https://flowbite.com/">Flowbite</FooterLink>
         <FooterLink liClass="mb-4" href="https://tailwindcss.com/">Tailwind CSS</FooterLink>
-        <FooterLink liClass="mb-4" href="https://flowbite-svelte.com/">Flowbite-Svelte</FooterLink>
-        <FooterLink liClass="mb-4" href="https://flowbite-svelte-icons.com/">Flowbite-Svelte-Icons</FooterLink>
+        <FooterLink liClass="mb-4" href="/">Flowbite-Svelte</FooterLink>
+        <FooterLink liClass="mb-4" href="/icons/svelte-4">Flowbite-Svelte-Icons</FooterLink>
       </FooterLinkGroup>
     </div>
     <div>
