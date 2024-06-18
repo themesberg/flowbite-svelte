@@ -109,7 +109,7 @@
     color === 'alternative' && (group && !checked ? 'dark:bg-gray-700 dark:text-white dark:border-gray-700 dark:hover:border-gray-600 dark:hover:bg-gray-600' : 'dark:bg-transparent dark:border-gray-600 dark:hover:border-gray-600'),
     outline && color === 'dark' && (group ? (checked ? 'bg-gray-900 border-gray-800 dark:border-white dark:bg-gray-600' : 'dark:text-white border-gray-800 dark:border-white') : 'dark:text-gray-400 dark:border-gray-700'),
     coloredFocusClasses[color],
-    hasBorder() && group && 'border-s-0 first:border-s',
+    hasBorder() && group && '[&:not(:first-child)]:-ms-px',
     group ? (pill && 'first:rounded-s-full last:rounded-e-full') || 'first:rounded-s-lg last:rounded-e-lg' : (pill && 'rounded-full') || 'rounded-lg',
     shadow && 'shadow-lg',
     shadow && coloredShadowClasses[color],
