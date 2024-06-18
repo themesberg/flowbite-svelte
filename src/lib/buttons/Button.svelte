@@ -13,7 +13,7 @@
   export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = group ? 'sm' : 'md';
   export let href: string | undefined = undefined;
   export let type: HTMLButtonAttributes['type'] = 'button';
-  export let color: ButtonColor = group ? (outline ? 'dark' : 'light') : 'primary';
+  export let color: ButtonColor = group ? (outline ? 'dark' : 'alternative') : 'primary';
   export let shadow: boolean = false;
   export let tag: string = 'button';
   export let checked: boolean | undefined = undefined;
