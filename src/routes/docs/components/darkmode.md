@@ -14,7 +14,7 @@ thumnailSize: w-24
   const dirName = toKebabCase(component_title)
 </script>
 
-In Flowbite-Svelte, the `class` strategy is used to support toggling dark mode manually, so you should explicitly configure it in Talwind CSS:
+In Flowbite-Svelte, the `class` strategy is used to support toggling dark mode manually, so you should explicitly configure it in Tailwind CSS:
 
 ```js example
 // tailwind.config.cjs
