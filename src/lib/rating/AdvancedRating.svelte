@@ -16,16 +16,16 @@
 </script>
 
 {#if $$slots.rating}
-  <slot name="rating" />
+  <slot name="rating"></slot>
 {/if}
 {#if $$slots.globalText}
-  <slot name="globalText" />
+  <slot name="globalText"></slot>
 {/if}
 {#each ratings as { label, rating }}
   <div class={divCls}>
     <span class={labelCls}>{label}</span>
     <div class={ratingDivCls}>
-      <div class={ratingCls} style="width: {rating}%" />
+      <div class={ratingCls} style="width: {rating}%"></div>
     </div>
     <span class={rightLabelCls}>{rating}{unit}</span>
   </div>

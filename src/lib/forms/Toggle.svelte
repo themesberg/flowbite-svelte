@@ -40,8 +40,8 @@
 </script>
 
 <Checkbox custom {...$$restProps} class={$$props.class} {value} bind:checked bind:group on:click on:change>
-  <span class={divClass} />
-  <slot />
+  <span class={divClass}></span>
+  <slot></slot>
 </Checkbox>
 
 <!--

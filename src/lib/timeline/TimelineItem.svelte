@@ -38,7 +38,7 @@
 </script>
 
 <li class={liCls}>
-  <div class={divCls} />
+  <div class={divCls}></div>
   {#if order !== 'default'}
     <slot name="icon">
       <svg aria-hidden="true" class={svgClass} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +61,7 @@
     {/if}
   {/if}
 
-  <slot />
+  <slot></slot>
 </li>
 
 <!--

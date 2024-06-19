@@ -11,13 +11,13 @@
 </script>
 
 <div class={twMerge(div, $$props.class)}>
-  <div class={twMerge(top, $$props.classTop)} />
-  <div class={twMerge(leftTop, $$props.classLeftTop)} />
-  <div class={twMerge(leftMid, $$props.classLeftMid)} />
-  <div class={twMerge(leftBot, $$props.classLeftBot)} />
-  <div class={twMerge(right, $$props.classRight)} />
+  <div class={twMerge(top, $$props.classTop)}></div>
+  <div class={twMerge(leftTop, $$props.classLeftTop)}></div>
+  <div class={twMerge(leftMid, $$props.classLeftMid)}></div>
+  <div class={twMerge(leftBot, $$props.classLeftBot)}></div>
+  <div class={twMerge(right, $$props.classRight)}></div>
   <div class={twMerge(slot, $$props.classSlot)}>
-    <slot />
+    <slot></slot>
   </div>
 </div>
 

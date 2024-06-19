@@ -48,7 +48,7 @@
       {$_progress.toFixed(precision)}%
     </div>
   {:else}
-    <div class={twJoin(barColors[color], size, 'rounded-full')} style="width: {$_progress}%" />
+    <div class={twJoin(barColors[color], size, 'rounded-full')} style="width: {$_progress}%"></div>
   {/if}
 </div>
 

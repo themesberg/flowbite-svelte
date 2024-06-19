@@ -56,14 +56,14 @@
 </script>
 
 <ul class={ulClass}>
-  <slot {tabStyle} />
+  <slot {tabStyle}></slot>
 </ul>
 {#if divider}
   <slot name="divider">
-    <div class="h-px bg-gray-200 dark:bg-gray-700" />
+    <div class="h-px bg-gray-200 dark:bg-gray-700"></div>
   </slot>
 {/if}
-<div class={contentClass} role="tabpanel" aria-labelledby="id-tab" use:init />
+<div class={contentClass} role="tabpanel" aria-labelledby="id-tab" use:init></div>
 
 <!--
 @component

@@ -9,12 +9,12 @@
 
 <div class={twMerge(div, $$props.class)}>
   <div class={twMerge(inner, $$props.classInner)}>
-    <slot />
+    <slot></slot>
   </div>
 </div>
 
 <div class={twMerge(bot, $$props.classBot)}>
-  <div class={twMerge(botCen, $$props.classBotCen)} />
+  <div class={twMerge(botCen, $$props.classBotCen)}></div>
 </div>
 
 <!--

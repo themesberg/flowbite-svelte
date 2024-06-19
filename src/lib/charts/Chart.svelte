@@ -25,7 +25,7 @@
   }
 </script>
 
-<div use:initChart={options} class={$$props.class} />
+<div use:initChart={options} class={$$props.class}></div>
 
 <!--
 @component

@@ -134,7 +134,7 @@
 
 {#if open}
   <!-- backdrop -->
-  <div class={backdropCls} />
+  <div class={backdropCls}></div>
   <!-- dialog -->
   <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
   <div on:keydown={handleKeys} on:wheel|preventDefault|nonpassive use:prepareFocus use:focusTrap on:click={onAutoClose} on:mousedown={onOutsideClose} class={dialogCls} tabindex="-1" aria-modal="true" role="dialog">
@@ -157,12 +157,12 @@
           {#if dismissable && !$$slots.header && !title}
             <CloseButton name="Close modal" class="absolute top-3 end-2.5" {color} on:click={hide} />
           {/if}
-          <slot />
+          <slot></slot>
         </div>
         <!-- Modal footer -->
         {#if $$slots.footer}
           <Frame class={footerCls} {color}>
-            <slot name="footer" />
+            <slot name="footer"></slot>
           </Frame>
         {/if}
       </Frame>

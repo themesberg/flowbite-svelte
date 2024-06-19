@@ -27,7 +27,7 @@
 <Wrapper show={wrapped} class={wrapperClass}>
   {#if $$slots.header}
     <div class={headerClass(true)}>
-      <slot name="header" />
+      <slot name="header"></slot>
     </div>
   {/if}
   <Wrapper show={wrapped} class={innerWrapperClass}>
@@ -35,7 +35,7 @@
   </Wrapper>
   {#if $$slots.footer}
     <div class={headerClass(false)}>
-      <slot name="footer" />
+      <slot name="footer"></slot>
     </div>
   {/if}
 </Wrapper>

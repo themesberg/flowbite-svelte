@@ -9,15 +9,15 @@
   export let bot: string = 'relative mx-auto bg-gray-800 dark:bg-gray-700 rounded-b-[2.5rem] h-[63px] max-w-[133px]';
 </script>
 
-<div class={twMerge(div, $$props.class)} />
+<div class={twMerge(div, $$props.class)}></div>
 <div class={twMerge(top, $$props.classTop)}>
-  <div class={twMerge(rightTop, $$props.classRightTop)} />
-  <div class={twMerge(rightBot, $$props.classRightBot)} />
+  <div class={twMerge(rightTop, $$props.classRightTop)}></div>
+  <div class={twMerge(rightBot, $$props.classRightBot)}></div>
   <div class={twMerge(slot, $$props.classSlot)}>
-    <slot />
+    <slot></slot>
   </div>
 </div>
-<div class={twMerge(bot, $$props.classBot)} />
+<div class={twMerge(bot, $$props.classBot)}></div>
 
 <!--
 @component
