@@ -31,7 +31,7 @@
     </div>
   {/if}
   <Wrapper show={wrapped} class={innerWrapperClass}>
-    <textarea bind:value on:blur on:change on:click on:contextmenu on:focus on:input on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover on:paste on:select {...$$restProps} class={textareaClass} />
+    <textarea bind:value on:blur on:change on:click on:contextmenu on:focus on:input on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover on:paste on:select {...$$restProps} class={textareaClass}></textarea>
   </Wrapper>
   {#if $$slots.footer}
     <div class={headerClass(false)}>
