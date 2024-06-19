@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.46.4
+
+### Patch Changes
+
+- fix: Self-closing HTML tags for Textarea component' ([`5fc9f589630c7cf6ffe3f5b5ea59b0a5a3e4116a`](https://github.com/themesberg/flowbite-svelte/commit/5fc9f589630c7cf6ffe3f5b5ea59b0a5a3e4116a))
+
 ## 0.46.3
 
 ### Patch Changes
