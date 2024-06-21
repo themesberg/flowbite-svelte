@@ -59,7 +59,7 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/button">
+        <a href="https://flowbite-svelte.com/docs/components/buttons">
             <img alt="Svelte Buttons" src="https://flowbite.s3.amazonaws.com/github/svelte/buttons.jpg">
         </a>
     </td>
