@@ -2,6 +2,8 @@
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import Checkbox from './Checkbox.svelte';
+  import Label from './Label.svelte';
+  import { labelCls, inputCls } from './Radio.svelte';
   import type { FormColorType } from '../types';
   interface Props {
     children: Snippet;
@@ -13,6 +15,12 @@
     customSize?: string;
     spanclass?: string;
     color?: FormColorType;
+    inline?: boolean;
+    labelclass?: string;
+    aria_describedby?: string;
+    spacing?: string;
+    custom?: boolean;
+    inputclass?: string;
   }
 
   let {
@@ -24,7 +32,13 @@
     checked = $bindable(),
     customSize,
     spanclass,
-    color,
+    color = 'primary',
+    inline = false,
+    labelclass = '',
+    aria_describedby,
+    spacing = 'me-2',
+    custom = true,
+    inputclass = '',
     ...attributes
   }: Props = $props();
   
@@ -67,10 +81,19 @@
   );
 </script>
 
-<Checkbox custom {...attributes} {value} {disabled} bind:checked>
+<Label labelclass={labelCls(inline, labelclass)}>
+<input
+    type="checkbox"
+    bind:checked
+    {value}
+    aria-describedby={aria_describedby}
+    {disabled}
+    {...attributes}
+    class={twMerge(spacing, inputCls(custom, color, true, false, inputclass))}
+  />
   <span class={divClass} ></span>
     {@render children()}
-</Checkbox>
+</Label>
 
 <!--
 @component

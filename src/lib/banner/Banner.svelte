@@ -55,7 +55,6 @@
   let innerCls = twMerge('flex', insideDivClasses[bannerType], div2class);
   const clickToDismiss = () => {
     bannerStatus = false;
-    console.log('clickToDismiss');
   }
 </script>
 
