@@ -94,9 +94,11 @@ Use this example to show a tooltip when hovering over the avatar.
 </script>
 
 <Avatar data-name="Jese Leos" rounded src="/images/profile-picture-1.webp" />
+<Tooltip>Jese Leos</Tooltip>
 <Avatar data-name="Robert Gouth" rounded src="/images/profile-picture-2.webp" />
+<Tooltip>Robert Gouth</Tooltip>
 <Avatar data-name="Bonnie Green" rounded src="/images/profile-picture-3.webp" />
-<Tooltip triggeredBy="[data-name]" on:show={(e) => (name = e.target.dataset.name)}>{name}</Tooltip>
+<Tooltip>Bonnie Green</Tooltip>
 ```
 
 ## Dot indicator
@@ -105,7 +107,7 @@ Use a dot element relative to the avatar component as an indicator for the user 
 
 ```svelte example class="flex justify-center gap-4" hideResponsiveButtons
 <script>
-  import { Avatar, Indicator } from 'flowbite-svelte';
+  import { Avatar } from 'flowbite-svelte';
 </script>
 
 <Avatar src="/images/profile-picture-3.webp" dot={{ color: 'red' }} />
