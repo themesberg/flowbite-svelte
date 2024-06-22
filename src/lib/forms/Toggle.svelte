@@ -107,6 +107,12 @@
 @prop checked = $bindable()
 @prop customSize
 @prop spanclass
-@prop color
+@prop color = 'primary'
+@prop inline = false
+@prop labelclass = ''
+@prop aria_describedby
+@prop spacing = 'me-2'
+@prop custom = true
+@prop inputclass = ''
 @prop ...attributes
 -->

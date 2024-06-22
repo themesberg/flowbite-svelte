@@ -111,5 +111,6 @@
 @prop group = $bindable()
 @prop value
 @prop inputclass = ''
+@prop checked
 @prop ...attributes
 -->
