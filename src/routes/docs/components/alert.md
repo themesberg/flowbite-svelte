@@ -278,7 +278,7 @@ The following alert components can be used if you wish to disclose more informat
 
 <Alert>
   <div class="flex items-center gap-3">
-    <InfoCircleSolid slot="icon" class="w-5 h-5" />
+    <InfoCircleSolid class="w-5 h-5" />
     <span class="text-lg font-medium">This is a info alert</span>
   </div>
   <p class="mt-2 mb-4 text-sm">More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
@@ -289,7 +289,7 @@ The following alert components can be used if you wish to disclose more informat
 </Alert>
 <Alert color="green">
   <div class="flex items-center gap-3">
-    <InfoCircleSolid slot="icon" class="w-5 h-5" />
+    <InfoCircleSolid class="w-5 h-5" />
     <span class="text-lg font-medium">This is a info alert</span>
   </div>
   <p class="mt-2 mb-4 text-sm">More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
