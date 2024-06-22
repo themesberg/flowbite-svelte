@@ -58,6 +58,7 @@
     group?: number | string | undefined;
     value?: number | string;
     inputclass?: string;
+    checked?: boolean;
   }
   let {
     children,
@@ -71,6 +72,7 @@
     group = $bindable(),
     value,
     inputclass = '',
+    checked,
     ...attributes
   }: Props = $props();
 
@@ -86,6 +88,7 @@
     {value}
     {name}
     {disabled}
+    {checked}
     aria-describedby={aria_describedby}
     {...attributes}
     class={inputCls(custom, color, false, background, inputclass)}

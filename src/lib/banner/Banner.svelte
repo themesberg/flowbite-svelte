@@ -29,7 +29,7 @@
     ...attributes
   }: Props = $props();
   let bannerStatus = $state(true);
-
+  $inspect('bannerStatus: ', bannerStatus);
   const divClasses = {
     default: 'top-0 start-0 w-full border-b border-gray-200 bg-gray-50',
     bottom: 'bottom-0 start-0 w-full border-t border-gray-200 bg-gray-50',
@@ -53,6 +53,10 @@
     divclass
   );
   let innerCls = twMerge('flex', insideDivClasses[bannerType], div2class);
+  const clickToDismiss = () => {
+    bannerStatus = false;
+    console.log('clickToDismiss');
+  }
 </script>
 
 {#if bannerStatus}
@@ -71,9 +75,7 @@
           divclass="-mx-1.5 -my-1.5"
           {color}
           ariaLabel="Remove badge"
-          onclick={() => {
-            bannerStatus = false;
-          }}
+          onclick={clickToDismiss}
         />
       </div>
     {/if}

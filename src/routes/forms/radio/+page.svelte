@@ -3,7 +3,7 @@
   // let { group = $bindable() ,technology = $bindable('svelte'), radioGroup = $bindable('notes') } = $props(); 
   let colors = 'text-purple-500';
   let technology = $state('svelte');
-  let inline1 = 'second';
+  let inline1 = $state('second');
   import {
     ArrowRightOutline,
     ListMusicSolid,
@@ -31,7 +31,7 @@
 <H2>Radio examples</H2>
 <CodeWrapper class="flex flex-col gap-4">
   <Radio name="example">Default radio</Radio>
-  <Radio name="example">Checked state</Radio>
+  <Radio name="example" checked>Checked state</Radio>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/radio-examples.md'] as string} />
@@ -39,7 +39,7 @@
 <H2>Disabled state</H2>
 <CodeWrapper class="flex flex-col gap-4">
   <Radio name="disabled-state" disabled>Disabled radio</Radio>
-  <Radio name="disabled-state" disabled>Disabled checked</Radio>
+  <Radio name="disabled-state" disabled checked>Disabled checked</Radio>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/disabled-state.md'] as string} />
@@ -77,7 +77,7 @@
       <Radio name="bordered" labelclass="p-4">Default radio</Radio>
     </div>
     <div class="rounded border border-gray-200 dark:border-gray-700">
-      <Radio name="bordered" labelclass="p-4">Checked state</Radio>
+      <Radio name="bordered" checked labelclass="p-4">Checked state</Radio>
     </div>
   </div>
 </CodeWrapper>
@@ -141,12 +141,12 @@
 <H2>Inline layout</H2>
 <CodeWrapper>
   <div class="flex gap-3">
-    <Radio group={inline1} name="inline-layout" value="first">Inline 1</Radio>
-    <Radio group={inline1} name="inline-layout" value="second"
+    <Radio bind:group={inline1} name="inline-layout" value="first">Inline 1</Radio>
+    <Radio bind:group={inline1} name="inline-layout" value="second"
       >Inline 2 checked</Radio
     >
-    <Radio group={inline1} name="inline-layout" value="third">Inline 3</Radio>
-    <Radio group={inline1} name="inline-layout" value="fourth" disabled
+    <Radio bind:group={inline1} name="inline-layout" value="third">Inline 3</Radio>
+    <Radio bind:group={inline1} name="inline-layout" value="fourth" disabled
       >Inline disabled</Radio
     >
   </div>

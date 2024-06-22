@@ -87,6 +87,7 @@
     type="button"
     {...attributes}
     class={buttonClass}
+    {onclick}
     aria-label={ariaLabel ?? name}
   >
     {#if name}<span class="sr-only">{name}</span>{/if}
