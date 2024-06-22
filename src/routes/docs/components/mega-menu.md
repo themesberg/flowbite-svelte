@@ -74,19 +74,19 @@ This example of a mega menu dropdown can be used to also show an icon near the t
 ```svelte example class="h-[30rem] md:h-80"
 <script>
   import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from 'flowbite-svelte';
-  import { IconOutline, ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { IconOutline, ChevronDownOutline, UserCircleOutline } from 'flowbite-svelte-icons';
   let menu = [
-    { name: 'About us', href: '/about', icon: 'user-circle-outline' },
-    { name: 'Blog', href: '/blog', icon: 'user-circle-outline' },
-    { name: 'Contact us', href: '/contact', icon: 'user-circle-outline' },
-    { name: 'Library', href: '/library', icon: 'user-circle-outline' },
-    { name: 'Newsletter', href: '/news', icon: 'user-circle-outline' },
-    { name: 'Support Center', href: '/support', icon: 'user-circle-outline' },
-    { name: 'Resources', href: '/resource', icon: 'user-circle-outline' },
-    { name: 'Playground', href: '/play', icon: 'user-circle-outline' },
-    { name: 'Terms', href: '/tersm', icon: 'user-circle-outline' },
-    { name: 'Pro Version', href: '/pro', icon: 'user-circle-outline' },
-    { name: 'License', href: '/license', icon: 'user-circle-outline' }
+    { name: 'About us', href: '/about', icon: UserCircleOutline },
+    { name: 'Blog', href: '/blog', icon: UserCircleOutline },
+    { name: 'Contact us', href: '/contact', icon: UserCircleOutline },
+    { name: 'Library', href: '/library', icon: UserCircleOutline },
+    { name: 'Newsletter', href: '/news', icon: UserCircleOutline },
+    { name: 'Support Center', href: '/support', icon: UserCircleOutline },
+    { name: 'Resources', href: '/resource', icon: UserCircleOutline },
+    { name: 'Playground', href: '/play', icon: UserCircleOutline },
+    { name: 'Terms', href: '/tersm', icon: UserCircleOutline },
+    { name: 'Pro Version', href: '/pro', icon: UserCircleOutline },
+    { name: 'License', href: '/license', icon: UserCircleOutline }
   ];
 </script>
 
@@ -104,7 +104,7 @@ This example of a mega menu dropdown can be used to also show an icon near the t
     <MegaMenu items={menu} let:item>
       <a href={item.href} class="flex items-center hover:text-primary-600 dark:hover:text-primary-500">
         <span class="sr-only">{item.name}</span>
-        <svelte:component this={IconOutline} name={item.icon} class="w-4 h-4 me-2" />{item.name}
+        <svelte:component this={IconOutline} icon={item.icon} class="w-4 h-4 me-2" />{item.name}
       </a>
     </MegaMenu>
     <NavLi href="/services">Services</NavLi>
@@ -193,7 +193,7 @@ This example can be used to also show a CTA button or link next to the menu item
   <NavUl {hidden}>
     <NavLi href="/">Home</NavLi>
     <NavLi class="cursor-pointer">
-      Mega menu<ChevronDownOutline class="w-6 h-6 ms-2 text-primary-800 dark:text-white inline" />
+      Company<ChevronDownOutline class="w-6 h-6 ms-2 text-primary-800 dark:text-white inline" />
     </NavLi>
     <MegaMenu full items={menu} let:item>
       <a href={item.href} class="hover:underline hover:text-primary-600 dark:hover:text-primary-500">
@@ -209,24 +209,8 @@ This example can be used to also show a CTA button or link next to the menu item
         </a>
       </div>
     </MegaMenu>
-    <NavLi href="/services">Services</NavLi>
-
-    <NavLi class="cursor-pointer">
-      Mega menu<ChevronDownOutline class="w-6 h-6 ms-2 text-primary-800 dark:text-white inline" />
-      <MegaMenu full items={menu} let:item offset={12}>
-        <a href={item.href} class="hover:underline hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
-        <div slot="extra" class="">
-          <h2 class="mt-4 mb-2 font-semibold text-gray-900 dark:text-white">Our brands</h2>
-          <p class="mb-2 p-0 text-sm font-light text-gray-500 dark:text-gray-300">At Flowbite, we have a portfolio of brands that cater to a variety of preferences.</p>
-          <a href="/" class="inline-flex items-center text-sm font-medium text-primary-600 hover:underline hover:text-primary-600 dark:text-primary-500 dark:hover:text-primary-700">
-            Explore our brands
-            <span class="sr-only">Explore our brands </span>
-            <svg class="ms-1 w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
-          </a>
-        </div>
-      </MegaMenu>
-    </NavLi>
-    <NavLi href="/services">Products</NavLi>
+    <NavLi href="/services">Marketplace</NavLi>
+    <NavLi href="/services">Resources</NavLi>
     <NavLi href="/services">Contact</NavLi>
   </NavUl>
 </Navbar>
