@@ -48,10 +48,11 @@ This example can be used for the disabled state of the radio component by applyi
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
   import { Radio } from 'flowbite-svelte';
+  let selectedValue = "2";
 </script>
 
-<Radio name="disabled-state" disabled>Disabled radio</Radio>
-<Radio name="disabled-state" disabled>Disabled checked</Radio>
+<Radio name="disabled-state" disabled value="1" bind:group={selectedValue}>Disabled radio</Radio>
+<Radio name="disabled-state" disabled value="2" bind:group={selectedValue}>Disabled checked</Radio>
 ```
 
 ## Alternative syntax
