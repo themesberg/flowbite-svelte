@@ -32,10 +32,11 @@ Use the default example of a radio component with the checked and unchecked stat
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
   import { Radio } from 'flowbite-svelte';
+  let selectedValue = "2";
 </script>
 
-<Radio name="example">Default radio</Radio>
-<Radio name="example">Checked state</Radio>
+<Radio name="example1" value="1" bind:group={selectedValue}>Default radio</Radio>
+<Radio name="example1" value="2" bind:group={selectedValue}>Checked state</Radio>
 ```
 
 ## Disabled state
@@ -211,10 +212,10 @@ You can align the radio elements horizontally by using a wrapper tag and applyin
 </script>
 
 <div class="flex gap-3">
-  <Radio group={inline1} value="first">Inline 1</Radio>
-  <Radio group={inline1} value="second">Inline 2 checked</Radio>
-  <Radio group={inline1} value="third">Inline 3</Radio>
-  <Radio group={inline1} value="fourth" disabled>Inline disabled</Radio>
+  <Radio bind:group={inline1} value="first">Inline 1</Radio>
+  <Radio bind:group={inline1} value="second">Inline 2 checked</Radio>
+  <Radio bind:group={inline1} value="third">Inline 3</Radio>
+  <Radio bind:group={inline1} value="fourth" disabled>Inline disabled</Radio>
 </div>
 ```
 
@@ -226,10 +227,10 @@ You can use the property `inline` as the alternative.
   let inline2 = 'third';
 </script>
 
-<Radio group={inline2} inline value="first" class="me-2">Inline 1</Radio>
-<Radio group={inline2} inline value="second" class="me-2">Inline 2</Radio>
-<Radio group={inline2} inline value="third" class="me-2">Inline checked</Radio>
-<Radio group={inline2} inline value="fourth" class="me-2" disabled>Inline disabled</Radio>
+<Radio bind:group={inline2} inline value="first" class="me-2">Inline 1</Radio>
+<Radio bind:group={inline2} inline value="second" class="me-2">Inline 2</Radio>
+<Radio bind:group={inline2} inline value="third" class="me-2">Inline checked</Radio>
+<Radio bind:group={inline2} inline value="fourth" class="me-2" disabled>Inline disabled</Radio>
 ```
 
 ## Colors
