@@ -155,7 +155,7 @@ Use this example to show a list and a description inside an alert component.
 
 <Alert class="!items-start">
   <span slot="icon">
-    <InfoCircleSolid slot="icon" class="w-5 h-5" />
+    <InfoCircleSolid class="w-5 h-5" />
     <span class="sr-only">Info</span>
   </span>
   <p class="font-medium">Ensure that these requirements are met:</p>
@@ -167,7 +167,7 @@ Use this example to show a list and a description inside an alert component.
 </Alert>
 <Alert color="blue" class="!items-start">
   <span slot="icon">
-    <InfoCircleSolid slot="icon" class="w-5 h-5" />
+    <InfoCircleSolid class="w-5 h-5" />
     <span class="sr-only">Info</span>
   </span>
   <p class="font-medium">Ensure that these requirements are met:</p>
