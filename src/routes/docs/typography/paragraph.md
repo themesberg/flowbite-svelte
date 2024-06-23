@@ -125,7 +125,7 @@ Get started with this example to show a popover with extra information inside pa
   import { ChevronRightOutline } from 'flowbite-svelte-icons';
 </script>
 
-<P weight="font-light" color="text-gray-500 dark:text-gray-400">
+<P weight="light" color="text-gray-500 dark:text-gray-400">
   Due to its central geographic location in Southern Europe, <A href="/" id="popover-image">Italy</A> has historically been home to myriad peoples and cultures. In addition to the various ancient peoples dispersed throughout what is now modern-day Italy, the most predominant being the Indo-European Italic peoples who gave the peninsula its name, beginning from the classical era, Phoenicians and Carthaginians founded colonies mostly in insular Italy
 </P>
 <Popover triggeredBy="#popover-image" class="w-96 text-sm font-light" defaultClass="">
