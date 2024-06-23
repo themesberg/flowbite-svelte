@@ -32,7 +32,7 @@ The range component can be used as an input field to get a number from the user 
 </script>
 
 <Label>Default range</Label>
-<Range id="range1" />
+<Range id="range1"  value={50} />
 ```
 
 ## Disabled state
@@ -43,7 +43,7 @@ The range component can be used as an input field to get a number from the user 
 </script>
 
 <Label>Default range</Label>
-<Range id="range-disabled" disabled />
+<Range id="range-disabled" disabled  value={50}/>
 ```
 
 ## Binding value
@@ -84,11 +84,11 @@ Use bind:value to bind the range input value as seen the the following examples.
 </script>
 
 <Label>Small range</Label>
-<Range id="small-range" size="sm" />
+<Range id="small-range" size="sm"  value={50}/>
 <Label>Default range</Label>
-<Range id="default-range" size="md" />
+<Range id="default-range" size="md"  value={50}/>
 <Label>Large range</Label>
-<Range id="large-range" size="lg" />
+<Range id="large-range" size="lg"  value={50}/>
 ```
 
 ## Unknown attributes
