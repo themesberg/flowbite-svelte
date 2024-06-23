@@ -67,7 +67,7 @@ If you need separate control over the label and the checkbox you can use the ver
     <TableHeadCell>Left column</TableHeadCell>
     <TableHeadCell>Right column</TableHeadCell>
   </TableHead>
-  <TableBody class="divide-y dark:divide-gray-700">
+  <TableBody tableBodyClass="divide-y dark:divide-gray-700">
     <TableBodyRow class="divide-x rtl:divide-x-reverse dark:divide-gray-700">
       <TableBodyCell><Label for="checkbox1">Default checkbox</Label></TableBodyCell>
       <TableBodyCell><Label for="checkbox2">Disabled checkbox</Label></TableBodyCell>
