@@ -17,7 +17,7 @@ description: Solid icons
     random_hex_color_code
   } from './utils/utils.js';
   import * as Icons from 'flowbite-svelte-icons';
-  const keywordsToInclude = 'Outline';
+  const keywordsToInclude = 'Solid';
   const keyIcons = filterIconsByKeyword(Icons, keywordsToInclude);
 
   const contentClass = ' rounded-lg mt-4';
