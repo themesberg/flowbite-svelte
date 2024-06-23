@@ -30,7 +30,7 @@ Get started with the default example of a select input component to get a single
 ```svelte example
 <script>
   import { Select, Label } from 'flowbite-svelte';
-  let selected;
+  let selected = '';
   let countries = [
     { value: 'us', name: 'United States' },
     { value: 'ca', name: 'Canada' },

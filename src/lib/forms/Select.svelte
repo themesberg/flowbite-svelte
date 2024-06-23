@@ -3,7 +3,7 @@
   import type { SelectOptionType } from '../types';
 
   export let items: SelectOptionType<any>[] = [];
-  export let value: any = undefined;
+  export let value: any = '';
   export let placeholder: string = 'Choose option ...';
   export let underline: boolean = false;
   export let size: 'sm' | 'md' | 'lg' = 'md';
@@ -23,7 +23,7 @@
   $: selectClass = twMerge(common, underline ? underlineClass : defaultClass, sizes[size], underline && '!px-0', $$props.class);
 </script>
 
-<select {...$$restProps} bind:value class={selectClass} on:change on:contextmenu on:input>
+<select {...$$restProps} bind:value={value} class={selectClass} on:change on:contextmenu on:input>
   {#if placeholder}
     <option disabled selected={(value === undefined) ? true : undefined} value="">{placeholder}</option>
   {/if}
