@@ -67,9 +67,9 @@ Use the following code to stack together buttons into a single group.
   </ButtonGroup>
   <div class="py-4">Gradient with shadows</div>
   <ButtonGroup>
-    <GradientButton shadow="green" color="green">Profile</GradientButton>
-    <GradientButton shadow="pink" color="pink">Settings</GradientButton>
-    <GradientButton shadow="teal" color="teal">Messages</GradientButton>
+    <GradientButton shadow color="green">Profile</GradientButton>
+    <GradientButton shadow color="pink">Settings</GradientButton>
+    <GradientButton shadow color="teal">Messages</GradientButton>
   </ButtonGroup>
   <div class="py-4">Dualtone gradient</div>
   <ButtonGroup class="space-x-px">
