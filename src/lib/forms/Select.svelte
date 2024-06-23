@@ -40,7 +40,7 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let items: SelectOptionType<any>[] = [];
-@prop export let value: any = undefined;
+@prop export let value: any = '';
 @prop export let placeholder: string = 'Choose option ...';
 @prop export let underline: boolean = false;
 @prop export let size: 'sm' | 'md' | 'lg' = 'md';

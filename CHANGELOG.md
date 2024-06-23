@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.46.5
+
+### Patch Changes
+
+- fix: Select component update value
+
 ## 0.46.4
 
 ### Patch Changes
