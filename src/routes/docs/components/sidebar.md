@@ -412,7 +412,7 @@ Use this example to add a CTA button inside the sidebar component and encourage 
         <svelte:fragment slot="icon">
           <button type="button" class="ms-auto -mx-1.5 -my-1.5 bg-primary-50 text-primary-900 rounded-lg focus:ring-2 focus:ring-primary-400 p-1 hover:bg-primary-200 inline-flex h-6 w-6 dark:bg-primary-900 dark:text-primary-400 dark:hover:bg-primary-800" data-collapse-toggle="dropdown-cta" aria-label="Close">
             <span class="sr-only">Close</span>
-            <CloseOutline class="w-2 h-2" />
+            <CloseOutline class="w-4 h-4" />
           </button>
         </svelte:fragment>
         <p class="mb-3 text-sm text-primary-900 dark:text-primary-400">Preview the new Flowbite dashboard navigation! You can turn the new navigation off for a limited time in your profile.</p>
