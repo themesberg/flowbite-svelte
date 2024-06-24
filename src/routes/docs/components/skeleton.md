@@ -48,7 +48,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 </script>
 
 <ImagePlaceholder />
-<ImagePlaceholder imgHeight={60} class="mt-8" />
+<ImagePlaceholder imgHeight="60" class="mt-8" />
 <ImagePlaceholder imgOnly class="mt-8" />
 ```
 
