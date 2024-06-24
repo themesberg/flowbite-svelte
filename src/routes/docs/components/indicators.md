@@ -150,7 +150,7 @@ You can also use the indicators inside of a stepper component when completing a 
       <Indicator size="xl" color="none" class="bg-primary-200 dark:bg-primary-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
         <CheckCircleSolid class="w-6 h-6 text-primary-600 dark:text-primary-300" />
       </Indicator>
-      <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
+      <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
     </div>
     <div class="mt-3">
       <h3 class="font-medium text-gray-900 dark:text-white">Step 1</h3>
@@ -161,7 +161,7 @@ You can also use the indicators inside of a stepper component when completing a 
       <Indicator size="xl" color="none" class="bg-primary-200 dark:bg-primary-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
         <CheckCircleSolid class="w-6 h-6 text-primary-600 dark:text-primary-300" />
       </Indicator>
-      <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
+      <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
     </div>
     <div class="mt-3">
       <h3 class="font-medium text-gray-900 dark:text-white">Step 2</h3>
@@ -172,7 +172,7 @@ You can also use the indicators inside of a stepper component when completing a 
       <Indicator size="xl" color="none" class="bg-primary-200 dark:bg-primary-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
         <CheckCircleSolid class="w-6 h-6 text-primary-600 dark:text-primary-300" />
       </Indicator>
-      <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
+      <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
     </div>
     <div class="mt-3">
       <h3 class="font-medium text-gray-900 dark:text-white">Step 2</h3>
@@ -195,7 +195,7 @@ You can also use the indicators inside of a stepper component when completing a 
       <Indicator size="xl" color="none" class="bg-primary-200 dark:bg-primary-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
         <Indicator color="orange" />
       </Indicator>
-      <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
+      <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
     </div>
     <div class="mt-3">
       <h3 class="font-medium text-gray-900 dark:text-white">Step 1</h3>
@@ -206,7 +206,7 @@ You can also use the indicators inside of a stepper component when completing a 
       <Indicator size="xl" color="none" class="bg-primary-200 dark:bg-primary-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
         <Indicator color="orange" />
       </Indicator>
-      <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
+      <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
     </div>
     <div class="mt-3">
       <h3 class="font-medium text-gray-900 dark:text-white">Step 2</h3>
@@ -217,7 +217,7 @@ You can also use the indicators inside of a stepper component when completing a 
       <Indicator size="xl" color="none" class="bg-primary-200 dark:bg-primary-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
         <Indicator color="orange" />
       </Indicator>
-      <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
+      <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
     </div>
     <div class="mt-3">
       <h3 class="font-medium text-gray-900 dark:text-white">Step 2</h3>
