@@ -261,10 +261,10 @@ You can change the icons using `arrowup` and `arrowdown` slots.
           <CartSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
         <svelte:fragment slot="arrowup">
-          <ChevronDoubleUpOutline class="w-3 h-3" />
+          <ChevronDoubleUpOutline class="w-6 h-6" />
         </svelte:fragment>
         <svelte:fragment slot="arrowdown">
-          <ChevronDoubleDownOutline class="w-3 h-3" />
+          <ChevronDoubleDownOutline class="w-6 h-6" />
         </svelte:fragment>
         <SidebarDropdownItem label="Products" />
         <SidebarDropdownItem label="Billing" />
