@@ -7,6 +7,12 @@ dir: Pages
 description: Tips for your apps.
 ---
 
+## Does Flowbite-Svelte work on Svelte 5?
+
+You can find [the progress report](https://flowbite-svelte-5-dev.vercel.app/) for Flowbite-Svelte on Svelte 5.
+
+For Svelte 5: Runes, we need to rewrite and you can find most of the components at [Svelte 5 UI Lib](https://svelte-5-ui-lib.codewithshin.com/) which is a beta version.
+
 ## Svelte key blocks
 
 Svelte key blocks destroy and recreate their contents when the value of an expression changes. This can be useful when you are using SvelteKit (group) routing.
