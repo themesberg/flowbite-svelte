@@ -107,3 +107,19 @@
     {/if}
   </div>
 {/if}
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let color: ColorVariant = 'primary'
+  export let large: boolean = false
+  export let dismissable: boolean = false
+  export let border: boolean = false
+  export let href: string = ''
+  export let rounded: boolean = false
+  export let transition = fade
+  export let params = {}
+
+  let badgeStatus: boolean = true;
+-->

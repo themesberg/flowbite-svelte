@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.46.6
+
+### Patch Changes
+
+- fix: add default values to Badge component props ([`2bb23fd9717f028f387c26ff8ab1239a07bec21f`](https://github.com/themesberg/flowbite-svelte/commit/2bb23fd9717f028f387c26ff8ab1239a07bec21f))
+
+- fix: Badge component update ([`2bb23fd9717f028f387c26ff8ab1239a07bec21f`](https://github.com/themesberg/flowbite-svelte/commit/2bb23fd9717f028f387c26ff8ab1239a07bec21f))
+
 ## 0.46.5
 
 ### Patch Changes
