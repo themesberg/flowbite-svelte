@@ -7,6 +7,18 @@ export type ButtonType = 'button' | 'submit' | 'reset';
 
 export type ButtonColorType = 'alternative' | 'blue' | 'dark' | 'green' | 'light' | 'primary' | 'purple' | 'red' | 'yellow' | 'none';
 
+export type ColorVariant =
+  | 'dark'
+  | 'red'
+  | 'yellow'
+  | 'green'
+  | 'indigo'
+  | 'purple'
+  | 'pink'
+  | 'blue'
+  | 'primary'
+  | 'none';
+
 export type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink' | 'white' | 'custom' | 'primary' | 'secondary';
 
 export type ImgType = {
