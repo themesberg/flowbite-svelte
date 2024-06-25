@@ -10,9 +10,9 @@
   export let color: ColorVariant = 'primary'
   export let large: boolean = false
   export let dismissable: boolean = false
-  export let border: boolean
-  export let href: string
-  export let rounded: boolean
+  export let border: boolean = false
+  export let href: string = ''
+  export let rounded: boolean = false
   export let transition = fade
   export let params = {}
 
