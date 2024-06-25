@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.3
+
+### Patch Changes
+
+- feat: add transition to badge
+
 ## 0.5.2
 
 ### Patch Changes
