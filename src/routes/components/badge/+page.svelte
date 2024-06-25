@@ -6,12 +6,20 @@
     CheckOutline,
     CheckCircleOutline
   } from 'flowbite-svelte-icons';
+  import { slide } from 'svelte/transition';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
   import H3 from '../../utils/H3.svelte';
+  import { quintOut } from 'svelte/easing';
+  const slideParams = {
+    delay: 250, 
+    duration: 500, 
+    easing: quintOut, 
+    axis: 'y' 
+  }
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -188,6 +196,7 @@
 
 <H2>Dismissable badge</H2>
 <CodeWrapper class="min-h-20 space-y-1">
+  <Badge dismissable transition={slide} params={slideParams} large>Slide transition</Badge>
   <Badge dismissable large>Default</Badge>
   <Badge dismissable large color="gray">Gray</Badge>
   <Badge dismissable large color="red">Red</Badge>

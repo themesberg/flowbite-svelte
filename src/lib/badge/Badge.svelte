@@ -3,6 +3,8 @@
   import { twMerge } from 'tailwind-merge';
   import { CloseButton } from '$lib';
   import type { ColorVariant } from '../types';
+  import { fade, type TransitionConfig } from 'svelte/transition';
+  type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 
   interface Props {
     children: Snippet;
@@ -14,6 +16,8 @@
     border?: boolean;
     href?: string;
     rounded?: boolean;
+    transition?: TransitionFunc;
+    params?: any;
   }
   let {
     children,
@@ -25,6 +29,8 @@
     border,
     href,
     rounded,
+    transition = fade,
+    params = {},
     ...attributes
   }: Props = $props();
 
@@ -92,7 +98,7 @@
 </script>
 
 {#if badgeStatus}
-  <div {...attributes} class={badgeClass}>
+  <div {...attributes} transition:transition={params} class={badgeClass}>
     {#if href}
       <a {href}>
         {@render children()}
@@ -100,7 +106,7 @@
     {:else}
       {@render children()}
     {/if}
- 
+
     {#if dismissable}
       {#if icon}
         <button
