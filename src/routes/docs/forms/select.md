@@ -243,7 +243,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 ```svelte example class="h-96"
 <script>
-  import { MultiSelect, Badge } from 'flowbite-svelte';
+  import { MultiSelect } from 'flowbite-svelte';
 
   let countries = [
     { value: 'us', name: 'United States', color: 'indigo' },
