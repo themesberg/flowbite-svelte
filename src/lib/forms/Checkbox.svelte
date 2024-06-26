@@ -4,7 +4,7 @@
   label: string; 
   isChecked?: boolean; 
 };
-  import { twMerge } from 'tailwind-merge';
+ 
   import { getContext } from 'svelte';
   import type { FormColorType } from '../types';
   import { labelClass, inputClass } from './Radio.svelte';
@@ -15,8 +15,8 @@
   export let color: FormColorType = 'primary';
   export let custom: boolean = false;
   export let inline: boolean = false;
-  export let group: CheckboxItem[] = [];
-  export let choices: CheckboxItem[] = [];
+  export let group: CheckboxItem[];
+  export let choices: CheckboxItem[];
   export let value: string | number = 'on';
   export let checked: boolean | undefined = undefined;
   export let spacing: string = $$slots.default ? 'me-2' : '';
