@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.46.8
+
+### Patch Changes
+
+- fix: Checkbox group ([`540e8c32933ccafc19c338f8aa3676fdb5575dc4`](https://github.com/themesberg/flowbite-svelte/commit/540e8c32933ccafc19c338f8aa3676fdb5575dc4))
+
 ## 0.46.7
 
 ### Patch Changes

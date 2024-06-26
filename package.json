@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "0.46.7",
+  "version": "0.46.8",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "packageManager": "pnpm@8.15.4",
@@ -49,7 +49,7 @@
     "eslint": "^9.5.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-svelte": "^2.41.0",
-    "flowbite-svelte": "^0.46.7",
+    "flowbite-svelte": "^0.46.8",
     "flowbite-svelte-blocks": "^1.1.3",
     "flowbite-svelte-icons": "^1.6.1",
     "mdsvex": "^0.11.2",

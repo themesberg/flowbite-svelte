@@ -24,38 +24,7 @@
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
 
-  // react on external group changes
-  // function init(_: HTMLElement, _group: (string | number)[]) {
-  //   if (checked === undefined) checked = _group.includes(value);
-  //   onChange();
-
-  //   return {
-  //     update(_group: (string | number)[]) {
-  //       checked = _group.includes(value);
-  //     }
-  //   };
-  // }
-
-  // function onChange() {
-  //   // There's a bug in Svelte and bind:group is not working with wrapped checkbox
-  //   // This workaround is taken from:
-  //   // https://svelte.dev/repl/de117399559f4e7e9e14e2fc9ab243cc?version=3.12.1
-  //   const index = group.indexOf(value);
-
-  //   if (checked === undefined) checked = index >= 0;
-
-  //   if (checked) {
-  //     if (index < 0) {
-  //       group.push(value);
-  //       group = group;
-  //     }
-  //   } else {
-  //     if (index >= 0) {
-  //       group.splice(index, 1);
-  //       group = group;
-  //     }
-  //   }
-  // }
+  // group example is from https://svelte.dev/repl/faabda4cabd544bd858a8a8abd0095f5?version=3.12.1
 </script>
 {#if group}
   {#each choices as checkbox}
@@ -68,14 +37,17 @@
   <slot />
 </Label>
 {/if}
+
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
+@prop export let name: string;
 @prop export let color: FormColorType = 'primary';
 @prop export let custom: boolean = false;
 @prop export let inline: boolean = false;
-@prop export let group: (string | number)[] = [];
+@prop export let group: CheckboxItem[] = [];
+@prop export let choices: CheckboxItem[] = [];
 @prop export let value: string | number = 'on';
 @prop export let checked: boolean | undefined = undefined;
 @prop export let spacing: string = $$slots.default ? 'me-2' : '';
