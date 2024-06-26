@@ -46,8 +46,8 @@
 @prop export let color: FormColorType = 'primary';
 @prop export let custom: boolean = false;
 @prop export let inline: boolean = false;
-@prop export let group: CheckboxItem[] = [];
-@prop export let choices: CheckboxItem[] = [];
+@prop export let group: CheckboxItem[];
+@prop export let choices: CheckboxItem[];
 @prop export let value: string | number = 'on';
 @prop export let checked: boolean | undefined = undefined;
 @prop export let spacing: string = $$slots.default ? 'me-2' : '';

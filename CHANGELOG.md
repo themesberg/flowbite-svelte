@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.46.9
+
+### Patch Changes
+
+- fix: remove the default values for Checkbox group and choices ([`20686def610fca25f1a49013216dbbbdd7ca657d`](https://github.com/themesberg/flowbite-svelte/commit/20686def610fca25f1a49013216dbbbdd7ca657d))
+
 ## 0.46.8
 
 ### Patch Changes
