@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.46.7
+
+### Patch Changes
+
+- fix: TableBodyCell separate td and button ([`ba1705a6bbebf05ab3274e3bcb4ab811931440f5`](https://github.com/themesberg/flowbite-svelte/commit/ba1705a6bbebf05ab3274e3bcb4ab811931440f5))
+
 ## 0.46.6
 
 ### Patch Changes
