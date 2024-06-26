@@ -874,6 +874,7 @@ An example to use on:click (main row) and on:dblclick (expanded row)
 
   let openRow
   let details
+  let doubleClickModal = false
 
   const toggleRow = (i) => {
     openRow = openRow === i ? null : i
@@ -897,7 +898,10 @@ An example to use on:click (main row) and on:dblclick (expanded row)
         <TableBodyCell>{item.price}</TableBodyCell>
       </TableBodyRow>
       {#if openRow === i}
-        <TableBodyRow on:dblclick={() => (details = item)}>
+        <TableBodyRow on:dblclick={() => {
+          doubleClickModal = true;
+          details = item;
+        }}>
           <TableBodyCell colspan="4" class="p-0">
             <div class="px-2 py-3" transition:slide={{ duration: 300, axis: 'y' }}>
               <ImagePlaceholder />
@@ -908,7 +912,7 @@ An example to use on:click (main row) and on:dblclick (expanded row)
     {/each}
   </TableBody>
 </Table>
-<Modal title={details?.name} open={!!details} autoclose outsideclose>
+<Modal title={details?.name} bind:open={doubleClickModal} autoclose outsideclose>
   <ImagePlaceholder />
 </Modal>
 ```
