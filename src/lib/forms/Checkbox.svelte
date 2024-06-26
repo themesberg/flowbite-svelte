@@ -73,5 +73,7 @@
 @prop spacing = 'me-2'
 @prop labelclass = ''
 @prop inputclass = ''
+@prop indeterminate = false
+@prop id
 @prop ...attributes
 -->

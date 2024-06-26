@@ -81,5 +81,7 @@
 @prop children
 @prop class: className
 @prop color
+@prop onclick
+@prop ondblclick
 @prop ...attributes
 -->

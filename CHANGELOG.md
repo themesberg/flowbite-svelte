@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.4
+
+### Patch Changes
+
+- fix: TableBodyCell separate onclick to button
+
 ## 0.5.3
 
 ### Patch Changes
