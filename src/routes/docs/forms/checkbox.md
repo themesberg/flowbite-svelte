@@ -326,14 +326,16 @@ Use this example of an advanced layout of checkbox elements where the label pare
 ```svelte example
 <script>
   import { Button, Checkbox } from 'flowbite-svelte';
-
+  let choices = [
+    { value: 1, label: 'One'},
+    { value: 2, label: 'Two'},
+    { value: 3, label: 'Three' }
+  ]
   let group = [2, 3];
 </script>
 
 <div class="flex gap-2">
-  <Checkbox bind:group value={1}>One</Checkbox>
-  <Checkbox bind:group value={2}>Two</Checkbox>
-  <Checkbox bind:group value={3}>Three</Checkbox>
+  <Checkbox name="flavours" {choices} bind:group />
 </div>
 <div class="my-2 border border-gray-200 dark:border-gray-700 rounded-lg p-2 w-44 dark:text-gray-400">Group: {group}</div>
 <Button on:click={() => (group.length = 0)}>Clear</Button>
