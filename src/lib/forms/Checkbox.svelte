@@ -18,6 +18,8 @@
     spacing?: string;
     labelclass?: string;
     inputclass?: string;
+    indeterminate?: boolean;
+    id?: string;
   }
 
   let {
@@ -33,6 +35,8 @@
     spacing = 'me-2',
     labelclass = '',
     inputclass = '',
+    indeterminate = false,
+    id,
     ...attributes
   }: Props = $props();
 </script>
@@ -44,6 +48,7 @@
     {value}
     aria-describedby={aria_describedby}
     {disabled}
+    {indeterminate}
     {...attributes}
     class={twMerge(spacing, inputCls(custom, color, true, false, inputclass))}
   />

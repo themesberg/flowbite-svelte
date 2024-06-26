@@ -34,17 +34,22 @@
   );
 </script>
 
-<svelte:element
-  this={onclick ? 'button' : 'td'}
+<td
   {...attributes}
   class={tdCls}
-  onclick={onclick}
-  role={onclick ? 'button' : undefined}
 >
+{#if onclick}
+  <button onclick={onclick}>
   {#if children}
     {@render children()}
   {/if}
-</svelte:element>
+  </button>
+{:else}
+  {#if children}
+    {@render children()}
+  {/if}
+{/if}
+</td>
 
 <!--
 @component

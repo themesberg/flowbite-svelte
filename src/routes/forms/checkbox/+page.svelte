@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Checkbox, Helper, Label } from '$lib';
+  import { Checkbox, Helper, Label, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, TableBodyRow } from '$lib';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -21,6 +21,7 @@
 <CodeWrapper class="space-y-4">
   <Checkbox>Default checkbox</Checkbox>
   <Checkbox checked>Checked state</Checkbox>
+  <Checkbox indeterminate>Indeterminate state</Checkbox>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/checkbox-examples.md'] as string} />
 
@@ -28,8 +29,34 @@
 <CodeWrapper class="space-y-4">
   <Checkbox disabled>Disabled checkbox</Checkbox>
   <Checkbox disabled checked>Disabled checked</Checkbox>
+  <Checkbox disabled indeterminate>Disabled indeterminate</Checkbox>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/disabled-state.md'] as string} />
+
+<H2>Alternative syntax</H2>
+<CodeWrapper class="flex flex-col gap-4">
+  <Table>
+    <TableHead>
+      <TableHeadCell>Left column</TableHeadCell>
+      <TableHeadCell>Right column</TableHeadCell>
+    </TableHead>
+    <TableBody class="divide-y dark:divide-gray-700">
+      <TableBodyRow class="divide-x rtl:divide-x-reverse dark:divide-gray-700">
+        <TableBodyCell><Label forId="checkbox1">Default checkbox</Label></TableBodyCell>
+        <TableBodyCell><Label forId="checkbox2">Disabled checkbox</Label></TableBodyCell>
+      </TableBodyRow>
+      <TableBodyRow class="divide-x rtl:divide-x-reverse dark:divide-gray-700">
+        <TableBodyCell><Checkbox id="checkbox1" checked /></TableBodyCell>
+        <TableBodyCell><Checkbox id="checkbox2" disabled /></TableBodyCell>
+      </TableBodyRow>
+    </TableBody>
+  </Table>
+  
+  <Label color="red" labelclass="mt-4 flex items-center font-bold italic">
+    Label on the other side <Checkbox labelclass="ms-2" />
+  </Label>
+</CodeWrapper>
+
 
 <H2>Checkbox with a link</H2>
 <CodeWrapper>

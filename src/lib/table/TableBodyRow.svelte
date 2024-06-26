@@ -8,8 +8,10 @@
     children?: Snippet;
     class?: string;
     color?: string;
+    onclick?: () => void;
+    ondblclick?: () => void;
   }
-  let { children, class: className, color, ...attributes }: Props = $props();
+  let { children, class: className, color, onclick, ondblclick, ...attributes }: Props = $props();
 
   const tableCtx: TableCtxType = getContext('tableCtx');
   let rowColor: string = $state(color ? color : tableCtx.color || 'default');
@@ -66,7 +68,7 @@
   ]);
 </script>
 
-<tr {...attributes} class={trClass}>
+<tr {...attributes} class={trClass} {onclick} {ondblclick}>
   {#if children}
     {@render children()}
   {/if}
