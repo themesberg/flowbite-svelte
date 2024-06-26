@@ -1,35 +1,34 @@
 <script lang="ts">
-  type CheckboxItem = {
-  value: string;
-  label: string; 
-  isChecked?: boolean; 
-};
- 
   import { getContext } from 'svelte';
   import type { FormColorType } from '../types';
   import { labelClass, inputClass } from './Radio.svelte';
   import Label from './Label.svelte';
+  import type { CheckboxItem } from '../types';
 
   // properties forwarding
-  export let name: string;
+  export let name: string | undefined = undefined;
   export let color: FormColorType = 'primary';
   export let custom: boolean = false;
   export let inline: boolean = false;
-  export let group: CheckboxItem[];
-  export let choices: CheckboxItem[];
+  export let group: string[] = [];
+  export let choices: CheckboxItem[] = [];
   export let value: string | number = 'on';
   export let checked: boolean | undefined = undefined;
   export let spacing: string = $$slots.default ? 'me-2' : '';
+  export let groupLabelClass: string = '';
+  export let groupInputClass: strixng = '';
+  
 
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
-
   // group example is from https://svelte.dev/repl/faabda4cabd544bd858a8a8abd0095f5?version=3.12.1
 </script>
-{#if group}
-  {#each choices as checkbox}
-    <label for={`checkbox-${value}`}>{ checkbox.label }</label>
-    <input type="checkbox" value={ checkbox.value } bind:group>
+{#if choices.length > 0}
+  {#each choices as {value, label}, i}
+    <Label class={labelClass(inline, groupLabelClass)} show={$$slots.default} for={`checkbox-${i}`}>{ label }
+      <input {name} id={`checkbox-${i}`} type="checkbox" value={ value } bind:group {...$$restProps}  class={inputClass(custom, color, true, background, spacing, groupInputClass)} />
+      <slot />
+    </Label>
   {/each}
 {:else}
 <Label class={labelClass(inline, $$props.class)} show={$$slots.default}>

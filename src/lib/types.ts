@@ -7,6 +7,12 @@ export type ButtonType = 'button' | 'submit' | 'reset';
 
 export type ButtonColorType = 'alternative' | 'blue' | 'dark' | 'green' | 'light' | 'primary' | 'purple' | 'red' | 'yellow' | 'none';
 
+export type CheckboxItem = {
+  value: string;
+  label?: string; 
+  isChecked?: boolean; 
+};
+
 export type ColorVariant =
   | 'dark'
   | 'red'
