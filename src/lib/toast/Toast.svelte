@@ -45,7 +45,7 @@
   const colors = {
     primary:
       'text-primary-500 bg-primary-100 dark:bg-primary-800 dark:text-primary-200',
-    gray: 'text-gray-500 bg-gray-100 dark:bg-gray-700 dark:text-gray-200',
+    dark: 'text-gray-500 bg-gray-100 dark:bg-gray-700 dark:text-gray-200',
     red: 'text-red-500 bg-red-100 dark:bg-red-800 dark:text-red-200',
     yellow:
       'text-yellow-500 bg-yellow-100 dark:bg-yellow-800 dark:text-yellow-200',

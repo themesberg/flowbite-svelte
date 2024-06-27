@@ -14,7 +14,7 @@ export type CheckboxItem = {
 };
 
 export type ColorVariant =
-  | 'gray'
+  | 'dark'
   | 'red'
   | 'yellow'
   | 'green'

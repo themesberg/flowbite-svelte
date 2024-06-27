@@ -76,9 +76,9 @@ Usually, green, red, and orange are used to show success, danger, or warning ale
   Improve password difficulty.
 </Toast>
 
-<Toast color="gray">
+<Toast color="dark">
   <FireOutline slot="icon" class="w-6 h-6" />
-  Gray
+  Dark
 </Toast>
 
 <Toast color="yellow">
