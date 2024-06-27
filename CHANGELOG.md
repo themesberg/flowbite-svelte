@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.46.11
+
+### Patch Changes
+
+- fix: Badge and Toast component transition ([`ab24e307598ef53ab2b714ebce3f6541c9eb37e4`](https://github.com/themesberg/flowbite-svelte/commit/ab24e307598ef53ab2b714ebce3f6541c9eb37e4))
+
 ## 0.46.10
 
 ### Patch Changes
