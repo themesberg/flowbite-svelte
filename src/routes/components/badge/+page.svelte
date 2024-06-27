@@ -211,7 +211,7 @@
   code={modules['./md/dismissable-badge.md'] as string}
 />
 
-<H2>Icon</H2>
+
 <CodeWrapper class="h-20">
   <Badge dismissable>
     Default

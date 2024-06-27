@@ -201,7 +201,7 @@
         <SidebarItem
           onclick={closeNavDrawer}
           label="Darkmode"
-          href="/componentsdarkmode"
+          href="/components/darkmode"
         />
         <SidebarItem
           onclick={closeNavDrawer}
