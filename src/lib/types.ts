@@ -14,7 +14,7 @@ export type CheckboxItem = {
 };
 
 export type ColorVariant =
-  | 'dark'
+  | 'gray'
   | 'red'
   | 'yellow'
   | 'green'
@@ -161,3 +161,10 @@ export interface ButtonClassesTypes {
   video?: string;
   custom?: string;
 }
+
+export type ToastPositionType =
+  | 'top-left'
+  | 'top-right'
+  | 'bottom-left'
+  | 'bottom-right'
+  | 'none';

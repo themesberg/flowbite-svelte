@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type ComponentProps, createEventDispatcher } from 'svelte';
+  import { createEventDispatcher } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import { CloseButton } from '$lib';
   import type { ColorVariant } from '../types';

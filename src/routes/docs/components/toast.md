@@ -151,24 +151,24 @@ You can use any [icon components](/icons).
   import { slide } from 'svelte/transition';
   import { CheckCircleSolid } from 'flowbite-svelte-icons';
 
-  let open = true;
+  let toastStatus = true;
   let counter = 6;
 
   function trigger() {
-    open = true;
+    toastStatus = true;
     counter = 6;
     timeout();
   }
 
   function timeout() {
     if (--counter > 0) return setTimeout(timeout, 1000);
-    open = false;
+    toastStatus = false;
   }
 </script>
 
 <div class="flex gap-10">
   <Button on:click={trigger} class="my-3">Restart</Button>
-  <Toast dismissable={false} transition={slide} bind:open>
+  <Toast dismissable={false} transition={slide} bind:toastStatus>
     <CheckCircleSolid slot="icon" class="w-5 h-5" />
     Autohide in {counter}s.
   </Toast>
