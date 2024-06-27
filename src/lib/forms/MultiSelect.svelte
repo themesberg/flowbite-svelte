@@ -11,6 +11,7 @@
   export let size: FormSizeType = 'md';
   export let dropdownClass: string = '';
   export let placeholder: string = '';
+  export let disabled: boolean = false;
   $: selectItems = items.filter((x) => value.includes(x.value));
   let show: boolean = false;
 
@@ -21,7 +22,7 @@
   };
 
   // Container
-  const multiSelectClass: string = 'relative border border-gray-300 flex items-center rounded-lg gap-2 dark:border-gray-600 focus-within:ring-1 focus-within:border-primary-500 ring-primary-500 dark:focus-within:border-primary-500 dark:ring-primary-500 focus-visible:outline-none';
+  const multiSelectClass: string = 'relative border border-gray-300 flex items-center rounded-lg gap-2 dark:border-gray-600 ring-primary-500 dark:ring-primary-500 focus-visible:outline-none';
 
   // Dropdown
   let multiSelectDropdown: string;
@@ -38,6 +39,10 @@
   const activeItemClass: string = 'bg-primary-100 text-primary-500 dark:bg-primary-500 dark:text-primary-100 hover:bg-primary-100 dark:hover:bg-primary-500 hover:text-primary-600 dark:hover:text-primary-100';
 
   const selectOption = (select: SelectOptionType<any>) => {
+    if (disabled) {
+      return;
+    }
+
     if (value.includes(select.value)) {
       clearThisOption(select);
     } else if (!value.includes(select.value)) {
@@ -47,12 +52,20 @@
   };
 
   const clearAll = (e: MouseEvent) => {
+    if (disabled) {
+      return;
+    }
+
     e.stopPropagation();
     value = [];
     dispatcher('change');
   };
 
   const clearThisOption = (select: SelectOptionType<any>) => {
+    if (disabled) {
+      return;
+    }
+
     if (value.includes(select.value)) {
       value = value.filter((o) => o !== select.value);
       dispatcher('change');
@@ -61,11 +74,19 @@
 
   // Keyboard navigation
   function handleEscape() {
+    if (disabled) {
+      return;
+    }
+
     if (show) {
       show = false;
     }
   }
   function handleToggleActiveItem() {
+    if (disabled) {
+      return;
+    }
+
     if (!show) {
       show = true;
       activeIndex = 0;
@@ -75,6 +96,10 @@
     }
   }
   function handleArrowUpDown(offset: number) {
+    if (disabled) {
+      return;
+    }
+
     if (!show) {
       show = true;
       activeIndex = 0;
@@ -89,6 +114,10 @@
     }
   }
   function handleKeyDown(event: KeyboardEvent) {
+    if (disabled) {
+      return;
+    }
+
     switch (event.key) {
       case 'Escape':
         handleEscape();
@@ -119,7 +148,7 @@
   {/each}
 </select>
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div on:click={() => (show = !show)} on:focusout={() => (show = false)} on:keydown={handleKeyDown} tabindex="0" role="listbox" class={twMerge(multiSelectClass, sizes[size], $$props.class)}>
+<div on:click={() => !disabled && (show = !show)} on:focusout={() => !disabled && (show = false)} on:keydown={handleKeyDown} tabindex="0" role="listbox" class={twMerge(multiSelectClass, sizes[size], $$props.class, !disabled && "focus-within:ring-1 focus-within:border-primary-500 dark:focus-within:border-primary-500", disabled && "opacity-50 cursor-not-allowed"))}>
   {#if !selectItems.length}
     <span class="text-gray-400">{placeholder}</span>
   {/if}
@@ -127,7 +156,7 @@
     {#if selectItems.length}
       {#each selectItems as item (item.name)}
         <slot {item} clear={() => clearThisOption(item)}>
-          <Badge color="dark" large={size === 'lg'} dismissable params={{ duration: 100 }} on:close={() => clearThisOption(item)}>
+          <Badge color="dark" large={size === 'lg'} dismissable params={{ duration: 100 }} on:close={() => clearThisOption(item)} class={disabled && "pointer-events-none"} >
             {item.name}
           </Badge>
         </slot>
@@ -136,10 +165,10 @@
   </span>
   <div class="flex ms-auto gap-2 items-center">
     {#if selectItems.length}
-      <CloseButton {size} on:click={clearAll} color="none" class="p-0 focus:ring-gray-400 dark:text-white" />
+      <CloseButton {size} on:click={clearAll} color="none" class={twMerge("p-0 focus:ring-gray-400 dark:text-white", disabled && "cursor-not-allowed")} disabled={disabled} />
     {/if}
     <div class="w-[1px] bg-gray-300 dark:bg-gray-600"></div>
-    <svg class="cursor-pointer h-3 w-3 ms-1 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+    <svg class={twMerge("cursor-pointer h-3 w-3 ms-1 text-gray-800 dark:text-white", disabled && "cursor-not-allowed")} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={show ? 'm1 5 4-4 4 4' : 'm9 1-4 4-4-4'} />
     </svg>
   </div>
@@ -148,7 +177,7 @@
     <div on:click|stopPropagation role="presentation" class={multiSelectDropdown}>
       {#each items as item (item.name)}
         <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <div on:click={() => selectOption(item)} role="presentation" class={twMerge(itemsClass, selectItems.includes(item) && itemsSelectClass, activeItem === item && activeItemClass)}>
+        <div on:click={() => selectOption(item)} role="presentation" class={twMerge(itemsClass, selectItems.includes(item) && itemsSelectClass, activeItem === item && activeItemClass, disabled && "pointer-events-none")}>
           {item.name}
         </div>
       {/each}
