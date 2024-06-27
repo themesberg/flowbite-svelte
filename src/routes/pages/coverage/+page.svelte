@@ -254,7 +254,7 @@
 
 </script>
 
-<H1>Flowbite Svelte Check for Svelte 5 (No Runes)</H1>
+<H1>Component and example checks</H1>
 
 <H2>Components</H2>
 <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">

@@ -25,6 +25,15 @@
 >
   <SidebarGroup>
     <SidebarDropdownWrapper
+      label="GETTING STARTED"
+      isOpen={hasPath('pages')}
+      svgclass="me-4"
+      btnclass="p-1"
+    >
+      <SidebarItem label="About" href="/pages/about" />
+      <SidebarItem label="Coverage" href="/pages/coverage" />
+    </SidebarDropdownWrapper>
+    <SidebarDropdownWrapper
       label="Components"
       isOpen={hasPath('components')}
       svgclass="me-4"
