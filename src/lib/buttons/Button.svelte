@@ -17,7 +17,7 @@
     tag?: string;
     checked?: boolean | undefined;
     disabled?: boolean;
-    btnclass?: string | undefined;
+    class?: string | undefined;
     onclick?: () => void;
   }
 
@@ -37,7 +37,7 @@
     tag = 'button',
     checked = undefined,
     disabled = false,
-    btnclass,
+    class: btnclass,
     onclick,
     ...attributes
   }: Props = $props();
@@ -202,7 +202,7 @@
 @prop tag = 'button'
 @prop checked = undefined
 @prop disabled = false
-@prop btnclass
+@prop class
 @prop onclick
 @prop ...attributes
 -->

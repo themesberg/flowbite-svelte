@@ -100,7 +100,7 @@
       Here are the biggest enterprise technology acquisitions of so far, in
       reverse chronological order.
     </p>
-    <Button btnclass="w-fit">
+    <Button class="w-fit">
       Read more <ArrowRightOutline class="ms-2 h-3.5 w-3.5 text-white" />
     </Button>
   </Card>

@@ -37,6 +37,6 @@
 ## Props
 @prop children
 @prop footerType = 'default'
-@prop footerclass
+@prop class
 @prop ...attributes
 -->

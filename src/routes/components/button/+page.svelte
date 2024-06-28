@@ -73,128 +73,6 @@
 
 <HighlightCompo code={modules['./md/button-pills.md'] as string} />
 
-<H2>Outline buttons</H2>
-
-<CodeWrapper class="flex flex-wrap gap-2">
-  <Button outline>Default</Button>
-  <Button outline color="dark">Dark</Button>
-  <Button outline color="green">Green</Button>
-  <Button outline color="red">Red</Button>
-  <Button outline color="yellow">Yellow</Button>
-  <Button outline color="purple">Purple</Button>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/outline-buttons.md'] as string} />
-
-<H2>Button sizes with icons</H2>
-
-<CodeWrapper>
-  <Button size="xs"><EnvelopeSolid class="me-2 h-3 w-3" />Extra small</Button>
-  <Button size="sm"><EnvelopeSolid class="me-2 h-3 w-3" />Small</Button>
-  <Button size="md"><EnvelopeSolid class="me-2 h-3.5 w-3.5" />Base</Button>
-  <Button size="lg"><EnvelopeSolid class="me-2 h-4 w-4" />Large</Button>
-  <Button size="xl"><EnvelopeSolid class="me-2 h-4 w-4" />Extra large</Button>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/button-sizes-with-icons.md'] as string} />
-
-<H2>Button with icon</H2>
-<CodeWrapper class="flex flex-wrap gap-2">
-  <Button><ShoppingBagSolid class="me-2 h-3 w-3" />Buy Now</Button>
-  <Button>Choose Plan<ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/button-with-icon.md'] as string} />
-
-<H2>Button with label</H2>
-
-<CodeWrapper>
-  <Button btnclass="gap-2">
-    Messages
-    <Indicator
-      color="none"
-      divclass="bg-primary-200 text-xs font-semibold text-primary-800"
-      size="lg">2</Indicator
-    >
-  </Button>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/button-with-label.md'] as string} />
-
-<H2>Outline buttons</H2>
-<CodeWrapper class="flex flex-wrap gap-2">
-  <Button outline>Default</Button>
-  <Button outline color="dark">Dark</Button>
-  <Button outline color="green">Green</Button>
-  <Button outline color="red">Red</Button>
-  <Button outline color="yellow">Yellow</Button>
-  <Button outline color="purple">Purple</Button>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/outline-buttons.md'] as string} />
-
-<H2>Button sizes with icons</H2>
-<CodeWrapper>
-  <Button size="xs"><EnvelopeSolid class="me-2 h-3 w-3" />Extra small</Button>
-  <Button size="sm"><EnvelopeSolid class="me-2 h-3 w-3" />Small</Button>
-  <Button size="md"><EnvelopeSolid class="me-2 h-3.5 w-3.5" />Base</Button>
-  <Button size="lg"><EnvelopeSolid class="me-2 h-4 w-4" />Large</Button>
-  <Button size="xl"><EnvelopeSolid class="me-2 h-4 w-4" />Extra large</Button>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/button-sizes-with-icons.md'] as string} />
-
-<H2>Button with label</H2>
-<CodeWrapper>
-  <Button btnclass="gap-2">
-    Messages
-    <Indicator
-      color="none"
-      divclass="bg-primary-200 text-xs text-primary-800 font-semibold"
-      size="lg">2</Indicator
-    >
-  </Button>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/button-with-label.md'] as string} />
-
-<H2>Icon buttons</H2>
-<CodeWrapper>
-  <div class="flex flex-wrap items-center gap-2">
-    <Button btnclass="!p-2"><ArrowRightOutline class="h-5 w-5" /></Button>
-    <Button pill={true} btnclass="!p-2"
-      ><ArrowRightOutline class="h-4 w-4" /></Button
-    >
-    <Button outline={true} btnclass="!p-2" size="lg">
-      <ThumbsUpSolid class="h-5 w-5 text-primary-700" />
-    </Button>
-    <Button pill={true} outline={true} btnclass="!p-2" size="xl">
-      <ThumbsUpSolid class="h-4 w-4 text-primary-700" />
-    </Button>
-  </div>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/icon-buttons.md'] as string} />
-
-<H2>Loader</H2>
-<CodeWrapper>
-  <Button>
-    <Spinner svgclass="me-3" size="4" color="white" />Loading ...
-  </Button>
-  <Button color="alternative">
-    <Spinner svgclass="me-3" size="4" />Loading ...
-  </Button>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/loader.md'] as string} />
-
-<H2>Disabled</H2>
-<CodeWrapper>
-  <Button disabled>Disabled</Button>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/disabled.md'] as string} />
-
-<H2>Events</H2>
-<CodeWrapper>
-  <Button onclick={btn1}>Button 1</Button>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/events.md'] as string} />
-
 <H2>Gradient monochrome</H2>
 <CodeWrapper class="flex flex-wrap gap-2">
   <GradientButton color="blue">Blue</GradientButton>
@@ -229,7 +107,7 @@
   <GradientButton outline color="pinkToOrange">Pink to Orange</GradientButton>
   <GradientButton outline color="tealToLime">Teal to Lime</GradientButton>
   <GradientButton outline color="redToYellow">Red to Yellow</GradientButton>
-  <GradientButton outline color="redToYellow" divclass="w-72"
+  <GradientButton outline color="redToYellow" class="w-72"
     >Red to Yellow</GradientButton
   >
 </CodeWrapper>
@@ -283,3 +161,94 @@
   <GradientButton pill shadow color="purple">Purple</GradientButton>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/gradient-pills.md'] as string} />
+
+
+<H2>Outline buttons</H2>
+
+<CodeWrapper class="flex flex-wrap gap-2">
+  <Button outline>Default</Button>
+  <Button outline color="dark">Dark</Button>
+  <Button outline color="green">Green</Button>
+  <Button outline color="red">Red</Button>
+  <Button outline color="yellow">Yellow</Button>
+  <Button outline color="purple">Purple</Button>
+</CodeWrapper>
+
+<HighlightCompo code={modules['./md/outline-buttons.md'] as string} />
+
+<H2>Button sizes with icons</H2>
+
+<CodeWrapper>
+  <Button size="xs"><EnvelopeSolid class="me-2 h-3 w-3" />Extra small</Button>
+  <Button size="sm"><EnvelopeSolid class="me-2 h-3 w-3" />Small</Button>
+  <Button size="md"><EnvelopeSolid class="me-2 h-3.5 w-3.5" />Base</Button>
+  <Button size="lg"><EnvelopeSolid class="me-2 h-4 w-4" />Large</Button>
+  <Button size="xl"><EnvelopeSolid class="me-2 h-4 w-4" />Extra large</Button>
+</CodeWrapper>
+
+<HighlightCompo code={modules['./md/button-sizes-with-icons.md'] as string} />
+
+<H2>Button with icon</H2>
+<CodeWrapper class="flex flex-wrap gap-2">
+  <Button><ShoppingBagSolid class="me-2 h-4 w-4" />Buy Now</Button>
+  <Button>Choose Plan<ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
+</CodeWrapper>
+
+<HighlightCompo code={modules['./md/button-with-icon.md'] as string} />
+
+<H2>Button with label</H2>
+
+<CodeWrapper>
+  <Button class="gap-2">
+    Messages
+    <Indicator
+      color="none"
+      class="bg-primary-200 text-xs font-semibold text-primary-800"
+      size="lg">2</Indicator
+    >
+  </Button>
+</CodeWrapper>
+
+<HighlightCompo code={modules['./md/button-with-label.md'] as string} />
+
+
+<H2>Icon buttons</H2>
+<CodeWrapper>
+  <div class="flex flex-wrap items-center gap-2">
+    <Button class="!p-2"><ArrowRightOutline class="h-7 w-7" /></Button>
+    <Button pill={true} class="!p-2"
+      ><ArrowRightOutline class="h-5 w-5" /></Button
+    >
+    <Button outline={true} class="!p-2" size="lg">
+      <ThumbsUpSolid class="h-7 w-7 text-primary-700" />
+    </Button>
+    <Button pill={true} outline={true} class="!p-2" size="xl">
+      <ThumbsUpSolid class="h-5 w-5 text-primary-700" />
+    </Button>
+  </div>
+</CodeWrapper>
+<HighlightCompo code={modules['./md/icon-buttons.md'] as string} />
+
+<H2>Loader</H2>
+<CodeWrapper>
+  <Button>
+    <Spinner svgclass="me-3" size="4" color="white" />Loading ...
+  </Button>
+  <Button color="alternative">
+    <Spinner svgclass="me-3" size="4" />Loading ...
+  </Button>
+</CodeWrapper>
+<HighlightCompo code={modules['./md/loader.md'] as string} />
+
+<H2>Disabled</H2>
+<CodeWrapper>
+  <Button disabled>Disabled</Button>
+</CodeWrapper>
+<HighlightCompo code={modules['./md/disabled.md'] as string} />
+
+<H2>Events</H2>
+<CodeWrapper>
+  <Button onclick={btn1}>Button 1</Button>
+</CodeWrapper>
+<HighlightCompo code={modules['./md/events.md'] as string} />
+

@@ -269,7 +269,7 @@
         A new software version is available for download.
       </div>
       <div class="grid grid-cols-2 gap-2">
-        <Button size="xs" btnclass="w-full">Update</Button>
+        <Button size="xs" class="w-full">Update</Button>
       </div>
     </div>
   </Toast>

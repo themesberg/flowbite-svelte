@@ -1,2 +1,2 @@
-<Button><ShoppingBagSolid class="w-3 h-3 me-2" />Buy Now</Button>
-<Button>Choose Plan<ArrowRightOutline class="w-3.5 h-3.5 ms-2" /></Button>
+<Button><ShoppingBagSolid class="me-2 h-4 w-4" />Buy Now</Button>
+<Button>Choose Plan<ArrowRightOutline class="ms-2 h-5 w-5" /></Button>

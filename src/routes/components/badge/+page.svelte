@@ -124,7 +124,7 @@
 
 <H2>Notification badge</H2>
 <CodeWrapper class="space-x-4">
-  <Button btnclass="relative" size="sm">
+  <Button class="relative" size="sm">
     <EnvelopeSolid class="text-white dark:text-white" />
     <span class="sr-only">Notifications</span>
     <Indicator
@@ -132,11 +132,11 @@
       border
       size="xl"
       placement="top-right"
-      divclass="text-xs font-bold">18</Indicator
+      class="text-xs font-bold">18</Indicator
     >
   </Button>
 
-  <Button btnclass="relative" size="sm">
+  <Button class="relative" size="sm">
     <EnvelopeSolid class="text-white dark:text-white" />
     <span class="sr-only">Notifications</span>
     <Indicator
@@ -144,11 +144,11 @@
       border
       size="xl"
       placement="top-right"
-      divclass="text-xs font-bold">20</Indicator
+      class="text-xs font-bold">20</Indicator
     >
   </Button>
 
-  <Button btnclass="relative" size="sm">
+  <Button class="relative" size="sm">
     <EnvelopeSolid class="text-white dark:text-white" />
     <span class="sr-only">Notifications</span>
     <Indicator
@@ -156,7 +156,7 @@
       border
       size="xl"
       placement="bottom-right"
-      divclass="text-xs font-bold">20</Indicator
+      class="text-xs font-bold">20</Indicator
     >
   </Button>
 </CodeWrapper>

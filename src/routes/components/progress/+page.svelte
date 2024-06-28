@@ -192,7 +192,7 @@
   />
   <Button
     onclick={() => (progress = `${Math.round(Math.random() * 100)}`)}
-    btnclass="mt-8">Randomize</Button
+    class="mt-8">Randomize</Button
   >
 </CodeWrapper>
 

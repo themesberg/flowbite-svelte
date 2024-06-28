@@ -56,7 +56,7 @@
 <H2>Indicator count</H2>
 
 <CodeWrapper class="flex justify-center">
-  <Button size="lg" btnclass="relative">
+  <Button size="lg" class="relative">
     <EnvelopeSolid class="me-2 h-4 w-4 text-white dark:text-white" />
     <span class="sr-only">Notifications</span>
     Messages

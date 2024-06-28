@@ -18,6 +18,7 @@
     rounded?: boolean;
     transition?: TransitionFunc;
     params?: any;
+    onclick?: () => void;
   }
   let {
     children,
@@ -31,6 +32,7 @@
     rounded,
     transition = fade,
     params = {},
+    onclick,
     ...attributes
   }: Props = $props();
 

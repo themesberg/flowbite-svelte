@@ -10,7 +10,7 @@
     shadow?: boolean;
     outline?: boolean;
     pill?: boolean;
-    divclass?: string;
+    class?: string;
     onclick?: () => void;
   }
   const group = getContext('group');
@@ -21,7 +21,7 @@
     pill,
     color = 'blue',
     shadow,
-    divclass,
+    class: divclass,
     onclick,
     ...attributes
   }: Props = $props();
@@ -98,12 +98,12 @@
     <!-- Trick to prentend outline without using border
       This has a limitation of no supporting transparency as
       is set to bg-white dark:bg-gray-900 -->
-    <Button {...attributes} color="none" btnclass={gradientOutlineClass} {onclick}>
+    <Button {...attributes} color="none" class={gradientOutlineClass} {onclick}>
       {@render children()}
     </Button>
   </div>
 {:else}
-  <Button {...attributes} color="none" btnclass={divClass} {onclick}>
+  <Button {...attributes} color="none" class={divClass} {onclick}>
     {@render children()}
   </Button>
 {/if}

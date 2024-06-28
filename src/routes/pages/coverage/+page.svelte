@@ -51,7 +51,7 @@
 		},
 		buttons: {
 			checked: true,
-      problems: 'Gradient monochrome, Gradient duotone, Gradient outline, Colored shadows'
+			notes: 'Updated: class names'
 		},
 		cards: {
 			checked: true,

@@ -17,6 +17,7 @@
     class?: string;
     transition?: TransitionFunc;
     params?: any;
+    onclick?: () => void;
   }
 
   let {
@@ -30,6 +31,7 @@
     dismissable,
     transition = fade,
     params = {},
+    onclick,
     ...attributes
   }: Props = $props();
 

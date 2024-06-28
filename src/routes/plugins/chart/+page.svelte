@@ -345,7 +345,7 @@
       <div class="flex items-center justify-between pt-5">
         <Button
           onclick={toggle}
-          btnclass="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0"
+          class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0"
           >Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button
         >
         <div class="relative">
@@ -429,7 +429,7 @@
       <div class="flex items-center justify-between pt-5">
         <Button
           onclick={toggle2}
-          btnclass="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0"
+          class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0"
           >Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button
         >
         <div class="relative">
@@ -515,7 +515,7 @@
       <div class="flex items-center justify-between pt-5">
         <Button
           onclick={toggle3}
-          btnclass="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0"
+          class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0"
           >Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button
         >
         <div class="relative">
