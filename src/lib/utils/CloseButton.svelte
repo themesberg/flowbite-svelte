@@ -9,7 +9,7 @@
     ariaLabel?: string;
     size?: 'xs' | 'sm' | 'md' | 'lg';
     href?: string;
-    divclass?: string;
+    class?: string;
   }
 
   let {
@@ -19,7 +19,7 @@
     ariaLabel,
     size = 'md',
     href,
-    divclass,
+    class: divclass,
     ...attributes
   }: Props = $props();
 

@@ -7,7 +7,7 @@
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     border?: boolean;
     placement?: IndicatorPlacementType | undefined;
-    divclass?: string | undefined;
+    class?: string | undefined;
     offset?: boolean;
   }
   import type { IndicatorPlacementType } from '$lib/types';
@@ -21,7 +21,7 @@
     border = false,
     placement,
     offset = true,
-    divclass
+    class: divclass
   }: Props = $props();
 
   const colors = {

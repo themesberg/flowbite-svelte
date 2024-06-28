@@ -71,7 +71,7 @@
     {#if dismissable}
       <div class="flex items-center">
         <CloseButton
-          divclass="-mx-1.5 -my-1.5"
+          class="-mx-1.5 -my-1.5"
           {color}
           ariaLabel="Remove badge"
           onclick={clickToDismiss}

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Badge, Button, Indicator } from '$lib';
   import {
-    ClockSolid,
+    ClockSolid, CloseCircleSolid,
     EnvelopeSolid,
     CheckOutline,
     CheckCircleOutline
@@ -19,6 +19,9 @@
     duration: 500, 
     easing: quintOut, 
     axis: 'y' 
+  }
+  function handleClose() {
+    alert('Badge dismissed');
   }
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
@@ -220,3 +223,11 @@
     {/snippet}
   </Badge>
 </CodeWrapper>
+
+<HighlightCompo codeLang="ts" code={modules['./md/dismissable-badge-2.md'] as string} />
+
+<CodeWrapper class="h-20">
+  <Badge dismissable large onclick={handleClose}>Default</Badge>
+</CodeWrapper>
+
+<HighlightCompo codeLang="ts" code={modules['./md/dismissable-badge-3.md'] as string} />

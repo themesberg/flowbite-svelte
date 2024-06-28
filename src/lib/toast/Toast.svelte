@@ -106,7 +106,7 @@
 
     {#if dismissable}
       <CloseButton
-        divclass={clsBtnExtraClass}
+        class={clsBtnExtraClass}
         ariaLabel="Remove toast"
         {color}
         onclick={() => {

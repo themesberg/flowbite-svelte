@@ -151,7 +151,7 @@
 
 <H2>Alerts with list</H2>
 <CodeWrapper class="space-y-4">
-  <Alert divclass="!items-start">
+  <Alert class="!items-start">
     {#snippet icon()}
       <InfoCircleSolid class="h-4 w-4" />
       <span class="sr-only">Info</span>
@@ -163,7 +163,7 @@
       <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
     </ul>
   </Alert>
-  <Alert color="blue" divclass="!items-start">
+  <Alert color="blue" class="!items-start">
     {#snippet icon()}
       <InfoCircleSolid class="h-4 w-4" />
       <span class="sr-only">Info</span>
@@ -233,35 +233,35 @@
 
 <H2>Border accent</H2>
 <CodeWrapper class="space-y-4">
-  <Alert rounded={false} divclass="border-t-4">
+  <Alert rounded={false} class="border-t-4">
     {#snippet icon()}
       <InfoCircleSolid class="h-4 w-4" />
     {/snippet}
     <span class="font-medium">Info alert!</span>
     Change a few things up and try submitting again.
   </Alert>
-  <Alert color="red" rounded={false} divclass="border-t-4">
+  <Alert color="red" rounded={false} class="border-t-4">
     {#snippet icon()}
       <InfoCircleSolid class="h-4 w-4" />
     {/snippet}
     <span class="font-medium">Danger alert!</span>
     Change a few things up and try submitting again.
   </Alert>
-  <Alert color="green" rounded={false} divclass="border-t-4">
+  <Alert color="green" rounded={false} class="border-t-4">
     {#snippet icon()}
       <InfoCircleSolid class="h-4 w-4" />
     {/snippet}
     <span class="font-medium">Success alert!</span>
     Change a few things up and try submitting again.
   </Alert>
-  <Alert color="yellow" rounded={false} divclass="border-t-4">
+  <Alert color="yellow" rounded={false} class="border-t-4">
     {#snippet icon()}
       <InfoCircleSolid class="h-4 w-4" />
     {/snippet}
     <span class="font-medium">Warning alert!</span>
     Change a few things up and try submitting again.
   </Alert>
-  <Alert color="pink" rounded={false} divclass="border-t-4 flex-row-reverse">
+  <Alert color="pink" rounded={false} class="border-t-4 flex-row-reverse">
     {#snippet icon()}
       <InfoCircleSolid class="h-4 w-4" />
     {/snippet}
@@ -320,7 +320,7 @@
 
 <H2>Custom color</H2>
 <CodeWrapper>
-  <Alert color="none" divclass="bg-sky-500 text-white">Your content</Alert>
+  <Alert color="none" class="bg-sky-500 text-white">Your content</Alert>
 </CodeWrapper>
 <HighlightCompo
   codeLang="ts"
@@ -329,11 +329,11 @@
 
 <H2>Events</H2>
 <CodeWrapper class="h-24">
-  <Alert
-    dismissable
-    ><button onclick={() => {
-      alert('Clicked closeAlert.');
-    }}>Close me</button></Alert
-  >
+  <Alert dismissable onclick={() => {
+    alert('Clicked closeAlert.');
+  }}>
+    Close me
+    
+  </Alert>
 </CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/events.md'] as string} />

@@ -121,7 +121,7 @@
         </button>
       {:else}
         <CloseButton
-          divclass="ms-1.5 -me-1.5"
+          class="ms-1.5 -me-1.5"
           {color}
           size={large ? 'sm' : 'xs'}
           ariaLabel="Remove badge"

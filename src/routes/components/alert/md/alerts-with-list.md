@@ -1,4 +1,4 @@
-<Alert divclass="!items-start">
+<Alert class="!items-start">
   {#snippet icon()}
     <InfoCircleSolid class="w-4 h-4" />
     <span class="sr-only">Info</span>
@@ -10,7 +10,7 @@
     <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
   </ul>
 </Alert>
-<Alert color="blue" divclass="!items-start">
+<Alert color="blue" class="!items-start">
   {#snippet icon()}
     <InfoCircleSolid class="w-4 h-4" />
     <span class="sr-only">Info</span>

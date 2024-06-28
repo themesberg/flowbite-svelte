@@ -3,6 +3,8 @@
   import { twMerge } from 'tailwind-merge';
   import { CloseButton } from '$lib';
   import type { ColorVariant } from '../types';
+  import { fade, type TransitionConfig } from 'svelte/transition';
+  type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 
   interface Props {
     children: Snippet;
@@ -11,9 +13,10 @@
     color?: ColorVariant;
     border?: boolean;
     rounded?: boolean;
-    divclass?: string;
     dismissable?: boolean;
-    defaultClass?: string;
+    class?: string;
+    transition?: TransitionFunc;
+    params?: any;
   }
 
   let {
@@ -23,8 +26,10 @@
     color = 'primary',
     rounded = true,
     border,
-    divclass,
+    class: divclass,
     dismissable,
+    transition = fade,
+    params = {},
     ...attributes
   }: Props = $props();
 
@@ -85,7 +90,7 @@
 </script>
 
 {#if alertStatus}
-  <div role="alert" {...attributes} class={divCls}>
+  <div role="alert" {...attributes} transition:transition={params} class={divCls}>
     {#if icon}
       {@render icon()}
     {/if}
@@ -115,7 +120,7 @@
         </button>
       {:else}
         <CloseButton
-          divclass="ms-auto -me-1.5 -my-1.5 dark:hover:bg-gray-700"
+          class="ms-auto -me-1.5 -my-1.5 dark:hover:bg-gray-700"
           {color}
           ariaLabel="Remove badge"
           onclick={() => {

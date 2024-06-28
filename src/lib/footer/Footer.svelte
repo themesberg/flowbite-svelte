@@ -4,13 +4,13 @@
   interface Props {
     children: Snippet;
     footerType?: 'sitemap' | 'default' | 'logo' | 'socialmedia' | undefined;
-    footerclass?: string | undefined;
+    class?: string | undefined;
   }
 
   let {
     children,
     footerType = 'default',
-    footerclass,
+    class: footerclass,
     ...attributes
   }: Props = $props();
 

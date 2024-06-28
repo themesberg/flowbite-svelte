@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Indicator, Button } from '$lib';
-  import { EnvelopeSolid } from 'flowbite-svelte-icons';
+  import { Indicator, Button, Avatar, Badge } from '$lib';
+  import { EnvelopeSolid, CheckCircleSolid } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -40,16 +40,16 @@
 
 <CodeWrapper class="flex justify-center gap-4">
   <span class="flex items-center"
-    ><Indicator size="sm" color="orange" divclass="me-1.5" />Visitors</span
+    ><Indicator size="sm" color="orange" class="me-1.5" />Visitors</span
   >
   <span class="flex items-center"
-    ><Indicator size="sm" color="purple" divclass="me-1.5" />Sessions</span
+    ><Indicator size="sm" color="purple" class="me-1.5" />Sessions</span
   >
   <span class="flex items-center"
-    ><Indicator size="sm" color="indigo" divclass="me-1.5" />Customers</span
+    ><Indicator size="sm" color="indigo" class="me-1.5" />Customers</span
   >
   <span class="flex items-center"
-    ><Indicator size="sm" color="teal" divclass="me-1.5" />Revenue</span
+    ><Indicator size="sm" color="teal" class="me-1.5" />Revenue</span
   >
 </CodeWrapper>
 
@@ -67,6 +67,139 @@
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/indicator-count.md'] as string} />
+
+<H2>Status indicator</H2>
+
+<CodeWrapper class="flex justify-center">
+  <Avatar src="/images/profile-picture-5.webp" dot={{ color: 'green', size: 'lg', placement: 'top-right' }} />
+  <Avatar src="/images/profile-picture-5.webp" dot={{ color: 'red', size: 'lg', placement: 'top-right' }} />
+</CodeWrapper>
+
+<H2>Badge indicator</H2>
+<CodeWrapper class="flex gap-2">
+  <ul class="max-w-sm divide-y divide-gray-200 dark:divide-gray-700 w-full">
+    <li class="py-3 sm:py-4">
+      <div class="flex items-center space-x-3 rtl:space-x-reverse">
+        <Avatar src="/images/profile-picture-5.webp" alt="Neil image" />
+        <div class="flex-1 min-w-0">
+          <p class="text-sm font-semibold text-gray-900 truncate dark:text-white">Neil Sims</p>
+          <p class="text-sm text-gray-500 truncate dark:text-gray-400">email@flowbite.com</p>
+        </div>
+        <Badge color="green" rounded class="px-2.5 py-0.5">
+          <Indicator color="green" size="xs" class="me-1" />Available
+        </Badge>
+      </div>
+    </li>
+    <li class="py-3 sm:py-4">
+      <div class="flex items-center space-x-3 rtl:space-x-reverse">
+        <div class="flex-shrink-0">
+          <Avatar src="/images/profile-picture-4.webp" alt="Bonnie image" />
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-sm font-semibold text-gray-900 truncate dark:text-white">Bonnie Green</p>
+          <p class="text-sm text-gray-500 truncate dark:text-gray-400">email@flowbite.com</p>
+        </div>
+        <Badge color="red" rounded class="px-2.5 py-0.5">
+          <Indicator color="red" size="xs" class="me-1" />Unavailable
+        </Badge>
+      </div>
+    </li>
+  </ul>
+</CodeWrapper>
+
+<H2>Stepper indicator</H2>
+<CodeWrapper class="space-y-8">
+  <ol class="flex items-center">
+    <li class="relative w-full mb-6">
+      <div class="flex items-center">
+        <Indicator size="xl" color="none" class="bg-primary-200 dark:bg-primary-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
+          <CheckCircleSolid class="w-6 h-6 text-primary-600 dark:text-primary-300" />
+        </Indicator>
+        <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
+      </div>
+      <div class="mt-3">
+        <h3 class="font-medium text-gray-900 dark:text-white">Step 1</h3>
+      </div>
+    </li>
+    <li class="relative w-full mb-6">
+      <div class="flex items-center">
+        <Indicator size="xl" color="none" class="bg-primary-200 dark:bg-primary-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
+          <CheckCircleSolid class="w-6 h-6 text-primary-600 dark:text-primary-300" />
+        </Indicator>
+        <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
+      </div>
+      <div class="mt-3">
+        <h3 class="font-medium text-gray-900 dark:text-white">Step 2</h3>
+      </div>
+    </li>
+    <li class="relative w-full mb-6">
+      <div class="flex items-center">
+        <Indicator size="xl" color="none" class="bg-primary-200 dark:bg-primary-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
+          <CheckCircleSolid class="w-6 h-6 text-primary-600 dark:text-primary-300" />
+        </Indicator>
+        <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
+      </div>
+      <div class="mt-3">
+        <h3 class="font-medium text-gray-900 dark:text-white">Step 2</h3>
+      </div>
+    </li>
+    <li class="relative w-full mb-6">
+      <div class="flex items-center">
+        <Indicator size="xl" color="gray" class="dark:bg-gray-700 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
+          <CheckCircleSolid class="w-6 h-6 text-gray-800 dark:text-gray-300" />
+        </Indicator>
+      </div>
+      <div class="mt-3">
+        <h3 class="font-medium text-gray-900 dark:text-white">Step 3</h3>
+      </div>
+    </li>
+  </ol>
+  <ol class="flex items-center">
+    <li class="relative w-full mb-6">
+      <div class="flex items-center">
+        <Indicator size="xl" color="none" class="bg-primary-200 dark:bg-primary-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
+          <Indicator color="orange" />
+        </Indicator>
+        <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
+      </div>
+      <div class="mt-3">
+        <h3 class="font-medium text-gray-900 dark:text-white">Step 1</h3>
+      </div>
+    </li>
+    <li class="relative w-full mb-6">
+      <div class="flex items-center">
+        <Indicator size="xl" color="none" class="bg-primary-200 dark:bg-primary-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
+          <Indicator color="orange" />
+        </Indicator>
+        <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
+      </div>
+      <div class="mt-3">
+        <h3 class="font-medium text-gray-900 dark:text-white">Step 2</h3>
+      </div>
+    </li>
+    <li class="relative w-full mb-6">
+      <div class="flex items-center">
+        <Indicator size="xl" color="none" class="bg-primary-200 dark:bg-primary-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
+          <Indicator color="orange" />
+        </Indicator>
+        <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
+      </div>
+      <div class="mt-3">
+        <h3 class="font-medium text-gray-900 dark:text-white">Step 2</h3>
+      </div>
+    </li>
+    <li class="relative w-full mb-6">
+      <div class="flex items-center">
+        <Indicator size="xl" color="gray" class="dark:bg-gray-700 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
+          <Indicator color="dark" class="dark:!bg-gray-300" />
+        </Indicator>
+      </div>
+      <div class="mt-3">
+        <h3 class="font-medium text-gray-900 dark:text-white">Step 3</h3>
+      </div>
+    </li>
+  </ol>
+</CodeWrapper>
 
 <H2>Indicator position</H2>
 
@@ -87,3 +220,4 @@
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/position.md'] as string} />
+

@@ -17,7 +17,6 @@
 		},
 		alert: {
 			checked: true,
-      problems: 'Dismissabel alerts, Events'
 		},
 		avatar: {
 			checked: true,
@@ -25,7 +24,6 @@
 		},
 		badge: {
 			checked: true,
-      problems: 'Dismissabel badge 2, 3'
 		},
 		banner: {
 			checked: true
@@ -69,7 +67,6 @@
 		},
 		footer: {
 			checked: true,
-      problems: 'Default footer'
 		},
 		forms: {
 			checked: false,
@@ -79,11 +76,9 @@
 		},
 		indicators: {
 			checked: true,
-      problems: 'Status indicator, Badge indicator, Stepper indicator'
 		},
 		kbd: {
 			checked: true,
-      problems: 'KBD inside table'
 		},
 		listGroup: {
 			checked: true,
