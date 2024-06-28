@@ -5,9 +5,9 @@
   interface Props {
     children: Snippet;
     solid?: boolean;
-    navclass?: string | undefined;
-    solidclass?: string | undefined;
-    olclass?: string | undefined;
+    navClass?: string | undefined;
+    solidClass?: string | undefined;
+    olClass?: string | undefined;
     ariaLabel?: string | undefined;
     class?: string | undefined;
   }
@@ -15,22 +15,22 @@
   let {
     children,
     solid = false,
-    navclass,
-    solidclass,
-    olclass,
+    navClass,
+    solidClass,
+    olClass,
     ariaLabel = 'Breadcrumb',
     class: classname,
     ...attributes
   }: Props = $props();
 
-  let navCls: string = twMerge('flex', navclass);
+  let navCls: string = twMerge('flex', navClass);
   let solidCls: string = twMerge(
     'flex px-5 py-3 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700',
-    solidclass
+    solidClass
   );
   let olCls: string = twMerge(
     'inline-flex items-center space-x-1 rtl:space-x-reverse md:space-x-3 rtl:space-x-reverse',
-    olclass
+    olClass
   );
   let classNav: string = solid ? solidCls : navCls;
 </script>
@@ -40,11 +40,9 @@
   {...attributes}
   class={twMerge(classNav, classname)}
 >
-  
   <ol class={olCls}>
     {@render children()}
-  </ol>
-  
+  </ol> 
 </nav>
 
 <!--
@@ -53,9 +51,9 @@
 ## Props
 @prop children
 @prop solid = false
-@prop navclass
-@prop solidclass
-@prop olclass
+@prop navClass
+@prop solidClass
+@prop olClass
 @prop ariaLabel = 'Breadcrumb'
 @prop class: classname
 @prop ...attributes

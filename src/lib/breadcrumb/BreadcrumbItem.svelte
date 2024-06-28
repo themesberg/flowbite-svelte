@@ -7,9 +7,9 @@
     icon?: Snippet;
     home?: boolean;
     href?: string | undefined;
-    a2class?: string | undefined;
-    spanclass?: string | undefined;
-    aclass?: string | undefined;
+    linkClass?: string | undefined;
+    spanClass?: string | undefined;
+    homeClass?: string | undefined;
     class?: string | undefined;
   }
 
@@ -18,24 +18,24 @@
     icon,
     home = false,
     href,
-    a2class,
-    spanclass,
-    aclass,
+    linkClass,
+    spanClass,
+    homeClass,
     class: classname,
     ...attributes
   }: Props = $props();
 
   let a2Cls: string = twMerge(
     'ms-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ms-2 dark:text-gray-400 dark:hover:text-white',
-    a2class
+    linkClass
   );
   let spanCls: string = twMerge(
     'ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400',
-    spanclass
+    spanClass
   );
   let aCls: string = twMerge(
     'inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white',
-    aclass
+    homeClass
   );
 </script>
 
@@ -99,8 +99,8 @@
 @prop icon
 @prop home = false
 @prop href
-@prop a2class
-@prop spanclass
+@prop linkClass
+@prop spanClass
 @prop aclass
 @prop class: classname
 @prop ...attributes
