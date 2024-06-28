@@ -314,7 +314,7 @@ Use `color='none'` to disable coloring. Then use `class` to add your custom colo
 
 ## Events
 
-Use the `close` event with `dismissable` prop.
+Use the `click` event with `dismissable` prop.
 
 ```svelte example class="flex flex-col gap-4"
 <script>
@@ -324,7 +324,7 @@ Use the `close` event with `dismissable` prop.
   };
 </script>
 
-<Alert dismissable on:close={closeAlert}>Close me</Alert>
+<Alert dismissable on:click={closeAlert}>Close me</Alert>
 ```
 
 ## Component data
