@@ -1,12 +1,12 @@
 <script lang="ts">
   interface Props {
-    divclass?: string | undefined;
+    divClass ?: string | undefined;
   }
   import { twMerge } from 'tailwind-merge';
-  let { divclass }: Props = $props();
+  let { divClass  }: Props = $props();
   let divCls: string = twMerge(
     'p-4 max-w-sm rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700',
-    divclass
+    divClass 
   );
 </script>
 
@@ -29,5 +29,5 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop divclass
+@prop divClass 
 -->

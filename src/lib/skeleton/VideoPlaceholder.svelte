@@ -2,7 +2,7 @@
   import { twMerge } from 'tailwind-merge';
   interface Props {
     size?: keyof Sizes;
-    divclass?: string | undefined;
+    divClass ?: string | undefined;
   }
 
   interface Sizes {
@@ -17,11 +17,11 @@
     xxl: 'max-w-2xl'
   };
 
-  let { size = 'sm', divclass }: Props = $props();
+  let { size = 'sm', divClass  }: Props = $props();
   let outDivcls = twMerge(
     sizes[size],
     'flex justify-center items-center h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700',
-    divclass
+    divClass 
   );
 </script>
 
@@ -47,5 +47,5 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop size = 'sm'
-@prop divclass
+@prop divClass 
 -->

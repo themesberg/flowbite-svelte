@@ -30,7 +30,8 @@
 			notes: 'Updated: class names'
 		},
 		banner: {
-			checked: true
+			checked: true,
+			notes: 'Updated: class names'
 		},
 		bottomNavigation: {
 			checked: true,
@@ -117,6 +118,7 @@
 		},
 		skeleton: {
 			checked: true,
+			notes: 'Updated: class names'
 		},
 		spinner: {
 			checked: true,

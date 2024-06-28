@@ -1,5 +1,4 @@
-<Skeleton size="sm" class="my-8" />
-<Skeleton size="md" class="my-8" />
-<Skeleton size="lg" class="my-8" />
-<Skeleton size="xl" class="my-8" />
-<Skeleton size="xxl" class="mt-8 mb-2.5" />
+  <Skeleton size="md" divClass ="my-8" />
+  <Skeleton size="lg" divClass ="my-8" />
+  <Skeleton size="xl" divClass ="my-8" />
+  <Skeleton size="xxl" divClass ="mb-2.5 mt-8" />

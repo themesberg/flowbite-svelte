@@ -3,7 +3,7 @@
 
   interface Props {
     size?: keyof Sizes;
-    divclass?: string | undefined;
+    divClass ?: string | undefined;
   }
   interface Sizes {
     [key: string]: string;
@@ -17,8 +17,8 @@
     xxl: 'max-w-2xl'
   };
 
-  let { size = 'sm', divclass }: Props = $props();
-  let outDivcls = twMerge(sizes[size], 'space-y-2.5 animate-pulse', divclass);
+  let { size = 'sm', divClass  }: Props = $props();
+  let outDivcls = twMerge(sizes[size], 'space-y-2.5 animate-pulse', divClass );
 </script>
 
 <div role="status" class={outDivcls}>
@@ -60,5 +60,5 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop size = 'sm'
-@prop divclass
+@prop divClass 
 -->

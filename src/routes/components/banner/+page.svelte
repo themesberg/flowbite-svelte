@@ -27,8 +27,8 @@
 <H2>Default sticky banner</H2>
 
 <CodeWrapper class="relative">
-  <Skeleton divclass="py-4" />
-  <ImagePlaceholder divclass="py-4" />
+  <Skeleton divClass ="py-4" />
+  <ImagePlaceholder divClass ="py-4" />
 
   <Banner id="default-banner" position="absolute">
     <p
@@ -57,8 +57,8 @@
 <H2>Bottom banner position</H2>
 
 <CodeWrapper class="relative">
-  <Skeleton divclass="py-4" />
-  <ImagePlaceholder divclass="py-4" />
+  <Skeleton divClass ="py-4" />
+  <ImagePlaceholder divClass ="py-4" />
 
   <Banner id="bottom-banner" position="absolute" bannerType="bottom">
     <p
@@ -87,8 +87,8 @@
 <H2>Marketing CTA banner</H2>
 
 <CodeWrapper class="relative">
-  <Skeleton divclass="py-4" />
-  <ImagePlaceholder divclass="py-4" />
+  <Skeleton divClass ="py-4" />
+  <ImagePlaceholder divClass ="py-4" />
 
   <Banner id="cta-banner" position="absolute" bannerType="cta">
     <a
@@ -118,8 +118,8 @@
 <H2>Newsletter sign-up banner</H2>
 
 <CodeWrapper class="relative">
-  <Skeleton divclass="py-4" />
-  <ImagePlaceholder divclass="py-4" />
+  <Skeleton divClass ="py-4" />
+  <ImagePlaceholder divClass ="py-4" />
 
   <Banner id="signup-banner" position="absolute" bannerType="signup">
     <form action="/" class="flex w-full flex-col items-center md:flex-row">
@@ -151,8 +151,8 @@
 <H2>Informational banner</H2>
 
 <CodeWrapper class="relative">
-  <Skeleton divclass="py-4" />
-  <ImagePlaceholder divclass="py-4" />
+  <Skeleton divClass ="py-4" />
+  <ImagePlaceholder divClass ="py-4" />
   <Banner id="info-banner" position="absolute" bannerType="info">
     {#snippet header()}
       <div class="mb-4 md:mb-0 md:me-4">

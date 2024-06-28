@@ -12,8 +12,8 @@
     dismissable?: boolean;
     color?: ColorVariant;
     bannerType?: 'default' | 'bottom' | 'cta' | 'signup' | 'info';
-    divclass?: string | undefined;
-    div2class?: string | undefined;
+    divClass?: string | undefined;
+    innerClass?: string | undefined;
   }
 
   let {
@@ -24,8 +24,8 @@
     dismissable = true,
     color = 'gray',
     bannerType = 'default',
-    divclass,
-    div2class,
+    divClass,
+    innerClass,
     ...attributes
   }: Props = $props();
   let bannerStatus = $state(true);
@@ -50,9 +50,9 @@
     position,
     'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600',
     divClasses[bannerType],
-    divclass
+    divClass
   );
-  let innerCls = twMerge('flex', insideDivClasses[bannerType], div2class);
+  let innerCls = twMerge('flex', insideDivClasses[bannerType], innerClass);
   const clickToDismiss = () => {
     bannerStatus = false;
   }
