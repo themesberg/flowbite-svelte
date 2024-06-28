@@ -147,6 +147,20 @@
     aclass="p-1 pl-4"
   >
     <SidebarGroup>
+      <SidebarDropdownWrapper isOpen={hasPath('pages')} label="GETTING STARTED" svgclass="me-4" btnclass="p-1">
+        <SidebarItem
+          onclick={closeNavDrawer}
+          label="About"
+          href="/pages/about"
+        />
+        <SidebarItem
+          onclick={closeNavDrawer}
+          label="Coverage"
+          href="/pages/coverage"
+        />
+        </SidebarDropdownWrapper>
+    </SidebarGroup>
+    <SidebarGroup>
       <SidebarDropdownWrapper isOpen={hasPath('components')} label="Components" svgclass="me-4" btnclass="p-1">
         <SidebarItem
           onclick={closeNavDrawer}

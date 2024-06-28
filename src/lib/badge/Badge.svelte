@@ -12,7 +12,7 @@
     color?: ColorVariant;
     large?: boolean;
     dismissable?: boolean;
-    divclass?: string;
+    class?: string;
     border?: boolean;
     href?: string;
     rounded?: boolean;
@@ -25,7 +25,7 @@
     color = 'primary',
     large = false,
     dismissable = false,
-    divclass,
+    class: divclass,
     border,
     href,
     rounded,

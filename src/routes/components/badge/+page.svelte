@@ -171,7 +171,7 @@
     Messages
     <Badge
       rounded
-      divclass="w-4 h-4 ms-2 p-0 font-semibold text-primary-800 bg-white dark:text-primary-800 dark:bg-white"
+      class="w-4 h-4 ms-2 p-0 font-semibold text-primary-800 bg-white dark:text-primary-800 dark:bg-white"
       >2</Badge
     >
   </Button>
@@ -183,11 +183,11 @@
 
 <H2>Badge with icon only</H2>
 <CodeWrapper>
-  <Badge color="gray" rounded large divclass="!p-1 !font-semibold">
+  <Badge color="gray" rounded large class="!p-1 !font-semibold">
     <CheckOutline class="h-3 w-3" />
     <span class="sr-only">Icon description</span>
   </Badge>
-  <Badge rounded large divclass="!p-1 !font-semibold">
+  <Badge rounded large class="!p-1 !font-semibold">
     <CheckOutline class="h-3 w-3 text-primary-800 dark:text-primary-400" />
     <span class="sr-only">Icon description</span>
   </Badge>

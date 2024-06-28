@@ -6,6 +6,7 @@
 	interface Component {
 		checked: boolean;
 		problems?: string;
+		notes?: string;
 	}
 
 	interface ListType {
@@ -17,13 +18,16 @@
 		},
 		alert: {
 			checked: true,
+			notes: 'Updated: class names'
 		},
 		avatar: {
 			checked: true,
-			problems: 'Avatar tooltip, Stacked, Sizes'
+			problems: 'Avatar tooltip, Stacked, Sizes',
+			notes: 'Updated: class names'
 		},
 		badge: {
 			checked: true,
+			notes: 'Updated: class names'
 		},
 		banner: {
 			checked: true
@@ -76,6 +80,7 @@
 		},
 		indicators: {
 			checked: true,
+			notes: 'Updated: class names'
 		},
 		kbd: {
 			checked: true,
@@ -284,7 +289,7 @@
 	class="mb-2 py-4 text-2xl font-semibold text-gray-900 dark:text-white">Components</Heading
 >
 <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
-	{#each Object.entries(components) as [key, { checked, problems }]}
+	{#each Object.entries(components) as [key, { checked, problems, notes }]}
 		<Li icon>
 			{#if checked && !problems}
 				<CheckCircleSolid class="me-2 h-8 w-8 text-green-500 dark:text-green-400" />
@@ -293,7 +298,7 @@
 			{:else}
 				<QuestionCircleSolid class="me-2 h-8 w-8 text-gray-500 dark:text-gray-400" />
 			{/if}
-			<a href="/components/{key}" class='hover:underline'>{key}</a> {#if problems} <span class="text-red-500 ml-4">({problems})</span> {/if}
+			<a href="/components/{key}" class='hover:underline'>{key}</a> {#if problems} <span class="text-red-500 ml-4">(TODOS: {problems})</span>{/if}{#if notes}<span class="text-green-500 ml-4">(DONE: {notes})</span> {/if}
 		</Li>
 	{/each}
 </List>
@@ -303,7 +308,7 @@
 	class="mb-2 py-4 text-2xl font-semibold text-gray-900 dark:text-white">Forms</Heading
 >
 <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
-	{#each Object.entries(forms) as [key, { checked, problems }]}
+	{#each Object.entries(forms) as [key, { checked, problems, notes }]}
 		<Li icon>
 			{#if checked && !problems}
 				<CheckCircleSolid class="me-2 h-8 w-8 text-green-500 dark:text-green-400" />
@@ -312,7 +317,7 @@
 			{:else}
 				<QuestionCircleSolid class="me-2 h-8 w-8 text-gray-500 dark:text-gray-400" />
 			{/if}
-			<a href="/forms/{key}" class='hover:underline'>{key}</a> {#if problems} <span class="text-red-500 ml-4">({problems})</span> {/if}
+			<a href="/forms/{key}" class='hover:underline'>{key}</a> {#if problems} <span class="text-red-500 ml-4">(TODOS: {problems})</span>{/if}{#if notes}<span class="text-green-500 ml-4">(DONE: {notes})</span> {/if}
 		</Li>
 	{/each}
 </List>
@@ -322,7 +327,7 @@
 	class="mb-2 py-4 text-2xl font-semibold text-gray-900 dark:text-white">Typography</Heading
 >
 <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
-	{#each Object.entries(typography) as [key, { checked, problems }]}
+	{#each Object.entries(typography) as [key, { checked, problems, notes }]}
 		<Li icon>
 			{#if checked && !problems}
 				<CheckCircleSolid class="me-2 h-8 w-8 text-green-500 dark:text-green-400" />
@@ -331,7 +336,7 @@
 			{:else}
 				<QuestionCircleSolid class="me-2 h-8 w-8 text-gray-500 dark:text-gray-400" />
 			{/if}
-			<a href="/typography/{key}" class='hover:underline'>{key}</a> {#if problems} <span class="text-red-500 ml-4">({problems})</span> {/if}
+			<a href="/typography/{key}" class='hover:underline'>{key}</a> {#if problems} <span class="text-red-500 ml-4">(TODOS: {problems})</span>{/if}{#if notes}<span class="text-green-500 ml-4">(DONE: {notes})</span> {/if}
 		</Li>
 	{/each}
 </List>
