@@ -1,6 +1,6 @@
 <div class='relative'>
-  <Skeleton divclass="py-4" />
-  <ImagePlaceholder divclass="pb-20" />
+  <Skeleton divClass="py-4" />
+  <ImagePlaceholder divClass="pb-20" />
 
   <BottomNav position="absolute" div2class="grid-cols-4">
     <BottomNavItem btnName="Home" href="/">

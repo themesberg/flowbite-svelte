@@ -14,8 +14,8 @@
     activeClass?: string;
     href?: string;
     exact?: boolean;
-    btnclass?: string;
-    spanclass?: string;
+    btnClass?: string;
+    spanClass?: string;
   }
 
   let {
@@ -26,8 +26,8 @@
     activeClass,
     href = '',
     exact = true,
-    btnclass,
-    spanclass,
+    btnClass,
+    spanClass,
     ...attributes
   }: Props = $props();
 
@@ -95,13 +95,13 @@
       btnClasses[navType],
       appBtnClasses[appBtnPosition],
       active && (activeClass ?? context.activeClass),
-      btnclass
+      btnClass
     );
 
     spanCls = twMerge(
       spanClasses[navType],
       active && (activeClass ?? context.activeClass),
-      spanclass
+      spanClass
     );
   });
 </script>

@@ -16,8 +16,8 @@
     activeUrl?: string;
     position?: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky';
     navType?: BottomNavVariantType;
-    divclass?: string;
-    div2class?: string;
+    outerClass?: string;
+    innerClass?: string;
     activeClass?: string;
   }
 
@@ -26,8 +26,8 @@
     header,
     position = 'fixed',
     navType = 'default',
-    divclass,
-    div2class,
+    outerClass,
+    innerClass,
     activeClass,
     ...attributes
   }: Props = $props();
@@ -71,12 +71,12 @@
     position,
     'w-full z-30 border-gray-200 dark:bg-gray-700 dark:border-gray-600',
     outerDivClasses[navType],
-    divclass
+    outerClass
   );
   const innerCls = twMerge(
     'grid h-full max-w-lg mx-auto',
     innerDivClasses[navType],
-    div2class
+    innerClass
   );
 </script>
 
@@ -98,8 +98,8 @@
 @prop header
 @prop position = 'fixed'
 @prop navType = 'default'
-@prop divclass
-@prop div2class
+@prop outerClass
+@prop innerClass
 @prop activeClass
 @prop ...attributes
 -->

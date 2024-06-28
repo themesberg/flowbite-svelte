@@ -43,10 +43,10 @@
 
 <H2>Default bottom navigation</H2>
 <CodeWrapper class="relative flex flex-col">
-  <Skeleton divclass="py-4" />
-  <ImagePlaceholder divclass="pb-20" />
+  <Skeleton divClass="py-4" />
+  <ImagePlaceholder divClass="pb-20" />
 
-  <BottomNav position="absolute" div2class="grid-cols-4">
+  <BottomNav position="absolute" innerClass="grid-cols-4">
     <BottomNavItem btnName="Home">
       <HomeSolid
         class="mb-1 h-5 w-5 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500"
@@ -76,10 +76,10 @@
 
 <H2>Links, target and active class</H2>
 <CodeWrapper class="relative flex flex-col">
-  <Skeleton divclass="py-4" />
-  <ImagePlaceholder divclass="pb-20" />
+  <Skeleton divClass="py-4" />
+  <ImagePlaceholder divClass="pb-20" />
 
-  <BottomNav position="absolute" div2class="grid-cols-4">
+  <BottomNav position="absolute" innerClass="grid-cols-4">
     <BottomNavItem btnName="Home" href="/">
       <HomeSolid />
     </BottomNavItem>
@@ -101,12 +101,12 @@
 
 <H2>Overwriting activeClass</H2>
 <CodeWrapper class="relative flex flex-col">
-  <Skeleton divclass="py-4" />
-  <ImagePlaceholder divclass="pb-20" />
+  <Skeleton divClass="py-4" />
+  <ImagePlaceholder divClass="pb-20" />
 
   <BottomNav
     position="absolute"
-    div2class="grid-cols-4"
+    innerClass="grid-cols-4"
     activeClass="font-bold text-green-500 hover:text-green-900 dark:hover:text-green-700 dark:text-green-300"
   >
     <BottomNavItem btnName="Home" href="/">
@@ -130,10 +130,10 @@
 
 <H2>Icon color</H2>
 <CodeWrapper class="relative flex flex-col">
-  <Skeleton divclass="py-4" />
-  <ImagePlaceholder divclass="pb-20" />
+  <Skeleton divClass="py-4" />
+  <ImagePlaceholder divClass="pb-20" />
 
-  <BottomNav position="absolute" div2class="grid-cols-4">
+  <BottomNav position="absolute" innerClass="grid-cols-4">
     <BottomNavItem btnName="Home" href="/">
       <HomeSolid class={activeUrl === '/' ? svgActiveClass : svgClass} />
     </BottomNavItem>
@@ -167,10 +167,10 @@
 
 <H2>Menu items with border</H2>
 <CodeWrapper class="relative flex flex-col">
-  <Skeleton divclass="py-4" />
-  <ImagePlaceholder divclass="pb-20" />
+  <Skeleton divClass="py-4" />
+  <ImagePlaceholder divClass="pb-20" />
 
-  <BottomNav position="absolute" navType="border" div2class="grid-cols-4">
+  <BottomNav position="absolute" navType="border" innerClass="grid-cols-4">
     <BottomNavItem btnName="Home">
       <HomeSolid />
     </BottomNavItem>

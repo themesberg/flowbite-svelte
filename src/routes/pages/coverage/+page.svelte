@@ -3,6 +3,9 @@
 	import { CheckCircleSolid, CloseCircleSolid, QuestionCircleSolid } from 'flowbite-svelte-icons';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+	function convertStringToKebabCase(text: string) {
+		return text.replace(/[A-Z]/g, (match) => '-' + match.toLowerCase())
+	}
 	interface Component {
 		checked: boolean;
 		problems?: string;
@@ -35,7 +38,8 @@
 		},
 		bottomNavigation: {
 			checked: true,
-      problems: 'Application bar example, Example with pagination, Button group bottom bar, Card with bottom bar'
+      problems: 'Application bar example, Example with pagination, Button group bottom bar, Card with bottom bar',
+			notes: 'Updated: class names'
 		},
 		breadcrumb: {
 			checked: true
@@ -300,7 +304,7 @@
 			{:else}
 				<QuestionCircleSolid class="me-2 h-8 w-8 text-gray-500 dark:text-gray-400" />
 			{/if}
-			<a href="/components/{key}" class='hover:underline'>{key}</a> {#if problems} <span class="text-red-500 ml-4">(TODOS: {problems})</span>{/if}{#if notes}<span class="text-green-500 ml-4">(DONE: {notes})</span> {/if}
+			<a href="/components/{convertStringToKebabCase(key)}" class='hover:underline'>{key}</a> {#if problems} <span class="text-red-500 ml-4">(TODOS: {problems})</span>{/if}{#if notes}<span class="text-green-500 ml-4">(DONE: {notes})</span> {/if}
 		</Li>
 	{/each}
 </List>
@@ -319,7 +323,7 @@
 			{:else}
 				<QuestionCircleSolid class="me-2 h-8 w-8 text-gray-500 dark:text-gray-400" />
 			{/if}
-			<a href="/forms/{key}" class='hover:underline'>{key}</a> {#if problems} <span class="text-red-500 ml-4">(TODOS: {problems})</span>{/if}{#if notes}<span class="text-green-500 ml-4">(DONE: {notes})</span> {/if}
+			<a href="/forms/{convertStringToKebabCase(key)}" class='hover:underline'>{key}</a> {#if problems} <span class="text-red-500 ml-4">(TODOS: {problems})</span>{/if}{#if notes}<span class="text-green-500 ml-4">(DONE: {notes})</span> {/if}
 		</Li>
 	{/each}
 </List>
@@ -338,7 +342,7 @@
 			{:else}
 				<QuestionCircleSolid class="me-2 h-8 w-8 text-gray-500 dark:text-gray-400" />
 			{/if}
-			<a href="/typography/{key}" class='hover:underline'>{key}</a> {#if problems} <span class="text-red-500 ml-4">(TODOS: {problems})</span>{/if}{#if notes}<span class="text-green-500 ml-4">(DONE: {notes})</span> {/if}
+			<a href="/typography/{convertStringToKebabCase(key)}" class='hover:underline'>{key}</a> {#if problems} <span class="text-red-500 ml-4">(TODOS: {problems})</span>{/if}{#if notes}<span class="text-green-500 ml-4">(DONE: {notes})</span> {/if}
 		</Li>
 	{/each}
 </List>
