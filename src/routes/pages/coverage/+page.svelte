@@ -42,10 +42,12 @@
 			notes: 'Updated: class names'
 		},
 		breadcrumb: {
-			checked: true
+			checked: true,
+			notes: 'Updated: class names'
 		},
 		buttonGroup: {
-			checked: true
+			checked: true,
+			notes: 'Updated: class names'
 		},
 		buttons: {
 			checked: true,

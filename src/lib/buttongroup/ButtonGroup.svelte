@@ -7,10 +7,10 @@
   interface Props {
     children: Snippet;
     size?: SizeType;
-    divclass?: string | undefined;
+    divClass?: string | undefined;
   }
 
-  let { children, size = 'md', divclass = '', ...attributes }: Props = $props();
+  let { children, size = 'md', divClass = '', ...attributes }: Props = $props();
 
   // export let size: SizeType = 'md';
   const divCls: string = 'inline-flex rounded-lg shadow-sm';
@@ -18,7 +18,7 @@
   setContext('group', { size });
 </script>
 
-<div {...attributes} class={twMerge(divCls, divclass)} role="group">
+<div {...attributes} class={twMerge(divCls, divClass)} role="group">
 
   {@render children()}
 
@@ -30,6 +30,6 @@
 ## Props
 @prop children
 @prop size = 'md'
-@prop divclass = ''
+@prop divClass = ''
 @prop ...attributes
 -->
