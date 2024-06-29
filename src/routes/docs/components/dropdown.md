@@ -380,7 +380,7 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
   <NavUl {hidden} class="ms-3 pt-6">
     <NavLi href="/" active={true}>Home</NavLi>
     <NavLi class="cursor-pointer">
-      Dropdown<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" />
+      Dropdown<ChevronDownOutline class="w-6 h-6 ms-2 text-primary-800 dark:text-white inline" />
     </NavLi>
     <Dropdown>
       <DropdownItem>Dashboard</DropdownItem>

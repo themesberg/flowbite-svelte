@@ -1,3 +1,27 @@
+<script context="module" lang="ts">
+  export type FrameColor = keyof typeof bgColors;
+  const bgColors = {
+    gray: 'bg-gray-50 dark:bg-gray-800',
+    red: 'bg-red-50 dark:bg-gray-800',
+    yellow: 'bg-yellow-50 dark:bg-gray-800 ',
+    green: 'bg-green-50 dark:bg-gray-800 ',
+    indigo: 'bg-indigo-50 dark:bg-gray-800 ',
+    purple: 'bg-purple-50 dark:bg-gray-800 ',
+    pink: 'bg-pink-50 dark:bg-gray-800 ',
+    blue: 'bg-blue-50 dark:bg-gray-800 ',
+    light: 'bg-gray-50 dark:bg-gray-700',
+    dark: 'bg-gray-50 dark:bg-gray-800',
+    default: 'bg-white dark:bg-gray-800',
+    dropdown: 'bg-white dark:bg-gray-700',
+    navbar: 'bg-white dark:bg-gray-900',
+    navbarUl: 'bg-gray-50 dark:bg-gray-800',
+    form: 'bg-gray-50 dark:bg-gray-700',
+    primary: 'bg-primary-50 dark:bg-gray-800 ',
+    orange: 'bg-orange-50 dark:bg-orange-800',
+    none: ''
+  };
+</script>
+
 <script lang="ts">
   import { createEventDispatcher, setContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
@@ -8,7 +32,7 @@
 
   const noop = () => {};
 
-  type FrameColor = keyof typeof bgColors;
+  
   type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 
   interface $$Props extends HTMLAnchorAttributes {
@@ -58,26 +82,7 @@
   $: setContext('color', color);
 
   // your script goes here
-  const bgColors = {
-    gray: 'bg-gray-50 dark:bg-gray-800',
-    red: 'bg-red-50 dark:bg-gray-800',
-    yellow: 'bg-yellow-50 dark:bg-gray-800 ',
-    green: 'bg-green-50 dark:bg-gray-800 ',
-    indigo: 'bg-indigo-50 dark:bg-gray-800 ',
-    purple: 'bg-purple-50 dark:bg-gray-800 ',
-    pink: 'bg-pink-50 dark:bg-gray-800 ',
-    blue: 'bg-blue-50 dark:bg-gray-800 ',
-    light: 'bg-gray-50 dark:bg-gray-700',
-    dark: 'bg-gray-50 dark:bg-gray-800',
-    default: 'bg-white dark:bg-gray-800',
-    dropdown: 'bg-white dark:bg-gray-700',
-    navbar: 'bg-white dark:bg-gray-900',
-    navbarUl: 'bg-gray-50 dark:bg-gray-800',
-    form: 'bg-gray-50 dark:bg-gray-700',
-    primary: 'bg-primary-50 dark:bg-gray-800 ',
-    orange: 'bg-orange-50 dark:bg-orange-800',
-    none: ''
-  };
+  
 
   const textColors = {
     gray: 'text-gray-800 dark:text-gray-300',

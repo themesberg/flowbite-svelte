@@ -5,11 +5,12 @@
 </script>
 
 <script lang="ts">
+  import type { Placement } from '@floating-ui/dom';
   import { twMerge } from 'tailwind-merge';
   import Popper from '$lib/utils/Popper.svelte';
-  import type { ComponentProps } from 'svelte';
   import { setContext } from 'svelte';
   import { writable } from 'svelte/store';
+  import type {FrameColor} from '$lib/utils/Frame.svelte';
 
   const activeUrlStore = writable('');
 
@@ -23,6 +24,12 @@
   export let classFooter: string | undefined = undefined;
   export let activeClass: string = 'text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900';
   export let classActive: string | undefined = undefined;
+  export let arrow: boolean = false;
+  export let trigger: 'hover' | 'click' | 'focus' = 'click';
+  export let placement: Placement = 'bottom';
+  export let color: FrameColor = 'dropdown';
+  export let shadow: boolean = true;
+  export let rounded: boolean = true;
 
   let activeCls = twMerge(activeClass, classActive);
 
@@ -32,36 +39,17 @@
 
   setContext('activeUrl', activeUrlStore);
   // propagate props type from underlying Frame
-  interface $$Props extends ComponentProps<Popper> {
-    activeUrl?: string;
-    containerClass?: string;
-    classContainer?: string;
-    headerClass?: string;
-    classHeader?: string;
-    footerClass?: string;
-    classFooter?: string;
-    activeClass?: string;
-    classActive?: string;
-  }
+ 
 
   $: containerCls = twMerge(containerClass, classContainer);
   $: headerCls = twMerge(headerClass, classHeader);
   $: ulCls = twMerge('py-1', $$props.class);
   $: footerCls = twMerge(footerClass, classFooter);
-
-
-  $: {
-    // set default values
-    $$restProps.arrow = $$restProps.arrow ?? false;
-    $$restProps.trigger = $$restProps.trigger ?? 'click';
-    $$restProps.placement = $$restProps.placement ?? 'bottom';
-    $$restProps.color = $$restProps.color ?? 'dropdown';
-    $$restProps.shadow = $$restProps.shadow ?? true;
-    $$restProps.rounded = $$restProps.rounded ?? true;
-  }
+  // let arrow, trigger, placement, color, shadow, rounded;
+  
 </script>
 
-<Popper activeContent {...$$restProps} class={containerCls} on:show bind:open>
+<Popper activeContent {...$$restProps} {trigger} {arrow} {placement} {shadow} {rounded} {color} class={containerCls} on:show bind:open>
   {#if $$slots.header}
     <div class={headerCls}>
       <slot name="header" />
