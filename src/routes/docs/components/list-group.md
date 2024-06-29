@@ -97,7 +97,7 @@ Use the following example to create a list of buttons as a menu together with SV
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import Listgroup from "$lib/list-group/Listgroup.svelte";
+  import { Listgroup } from "flowbite-svelte";
   import { AdjustmentsHorizontalSolid, DownloadSolid, MessagesSolid, UserCircleSolid } from 'flowbite-svelte-icons';
   let icons = [
     { name: 'Profile', icon: UserCircleSolid },
