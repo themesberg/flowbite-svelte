@@ -79,4 +79,10 @@
 @prop export let classFooter: string | undefined = undefined;
 @prop export let activeClass: string = 'text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900';
 @prop export let classActive: string | undefined = undefined;
+@prop export let arrow: boolean = false;
+@prop export let trigger: 'hover' | 'click' | 'focus' = 'click';
+@prop export let placement: Placement = 'bottom';
+@prop export let color: FrameColor = 'dropdown';
+@prop export let shadow: boolean = true;
+@prop export let rounded: boolean = true;
 -->

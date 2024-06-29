@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.46.12
+
+### Patch Changes
+
+- fix: : Dropdown change to component prop since $restProps does not work with Svelte 5
+
 ## 0.46.11
 
 ### Patch Changes
