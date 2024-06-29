@@ -72,7 +72,7 @@ To change the active class, use the `activeClass` prop:
   import { ChevronDownOutline } from 'flowbite-svelte-icons';
   import { page } from '$app/stores';
   $: activeUrl = $page.url.pathname;
-  let activeClass = 'text-green-700 dark:text-green-300 hover:text-green-900 dark:hover:text-green-500';
+  let activeClass = 'text-green-500 dark:text-green-300 hover:text-green-700 dark:hover:text-green-500';
 </script>
 
 <Button>Dropdown button<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
