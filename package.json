@@ -37,8 +37,8 @@
     "@docsearch/css": "^3.6.0",
     "@docsearch/js": "^3.6.0",
     "@playwright/test": "^1.45.0",
-    "@sveltejs/adapter-vercel": "^5.3.2",
-    "@sveltejs/kit": "^2.5.17",
+    "@sveltejs/adapter-vercel": "^5.4.0",
+    "@sveltejs/kit": "^2.5.18",
     "@sveltejs/package": "2.3.2",
     "@sveltejs/vite-plugin-svelte": "^3.1.1",
     "@svitejs/changesets-changelog-github-compact": "^1.1.0",
@@ -46,7 +46,7 @@
     "autoprefixer": "^10.4.19",
     "dayjs": "^1.11.11",
     "esbuild": "0.21.5",
-    "eslint": "^9.5.0",
+    "eslint": "^9.6.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-svelte": "^2.41.0",
     "flowbite-svelte": "^0.46.12",
@@ -54,7 +54,7 @@
     "flowbite-svelte-icons": "^1.6.1",
     "mdsvex": "^0.11.2",
     "mdsvexamples": "^0.4.1",
-    "postcss": "^8.4.38",
+    "postcss": "^8.4.39",
     "prettier": "^3.3.2",
     "prettier-plugin-svelte": "^3.2.5",
     "prism-themes": "^1.9.0",
@@ -70,7 +70,7 @@
     "tslib": "^2.6.3",
     "typescript": "^5.5.2",
     "typescript-eslint": "8.0.0-alpha.30",
-    "vite": "^5.3.1",
+    "vite": "^5.3.2",
     "vitest": "^1.6.0"
   },
   "peerDependencies": {
@@ -120,9 +120,9 @@
     "url": "https://github.com/themesberg/flowbite-svelte"
   },
   "dependencies": {
-    "@floating-ui/dom": "^1.6.6",
+    "@floating-ui/dom": "^1.6.7",
     "apexcharts": "^3.49.2",
-    "flowbite": "^2.3.0",
+    "flowbite": "^2.4.1",
     "tailwind-merge": "^2.3.0"
   },
   "engines": {
