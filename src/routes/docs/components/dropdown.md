@@ -627,7 +627,25 @@ You can also use the `placement={top|right|bottom|left}` options to choose the p
   let placement = 'left';
 </script>
 
-<Dropdown {placement} triggeredBy="#placements button">
+<Dropdown placement='top' triggeredBy="#top-dd">
+  <DropdownItem>Dashboard</DropdownItem>
+  <DropdownItem>Settings</DropdownItem>
+  <DropdownItem>Earnings</DropdownItem>
+  <DropdownItem slot="footer">Sign out</DropdownItem>
+</Dropdown>
+<Dropdown placement='bottom' triggeredBy="#bottom-dd">
+  <DropdownItem>Dashboard</DropdownItem>
+  <DropdownItem>Settings</DropdownItem>
+  <DropdownItem>Earnings</DropdownItem>
+  <DropdownItem slot="footer">Sign out</DropdownItem>
+</Dropdown>
+<Dropdown placement='right' triggeredBy="#right-dd">
+  <DropdownItem>Dashboard</DropdownItem>
+  <DropdownItem>Settings</DropdownItem>
+  <DropdownItem>Earnings</DropdownItem>
+  <DropdownItem slot="footer">Sign out</DropdownItem>
+</Dropdown>
+<Dropdown placement='left' triggeredBy="#left-dd">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
@@ -635,13 +653,13 @@ You can also use the `placement={top|right|bottom|left}` options to choose the p
 </Dropdown>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div id="placements" class="flex flex-col justify-center items-center gap-2 h-96 my-8" on:mousedown={(e) => (placement = e.target.textContent.trim().split(' ')[1])}>
-  <Button>Dropdown top<ChevronUpOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
+<div id="placements" class="flex flex-col justify-center items-center gap-2 h-96 my-8">
+  <Button id='top-dd'>Dropdown top<ChevronUpOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
   <div class="flex space-x-2 rtl:space-x-reverse">
-    <Button><ChevronLeftOutline class="w-6 h-6 me-2 text-white dark:text-white" />Dropdown left</Button>
-    <Button>Dropdown right<ChevronRightOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
+    <Button id='left-dd'><ChevronLeftOutline class="w-6 h-6 me-2 text-white dark:text-white" />Dropdown left</Button>
+    <Button id='right-dd'>Dropdown right<ChevronRightOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
   </div>
-  <Button>Dropdown bottom<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
+  <Button id='bottom-dd'>Dropdown bottom<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
 </div>
 ```
 
