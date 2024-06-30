@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Listgroup } from '$lib';
+  import { Listgroup, ListgroupItem, Avatar } from '$lib';
   import type { ListGroupItemType } from '$lib/types';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -33,7 +33,7 @@
     AdjustmentsHorizontalSolid,
     DownloadSolid,
     MessagesSolid,
-    UserCircleSolid
+    UserCircleSolid, TrashBinSolid
   } from 'flowbite-svelte-icons';
   let icons = [
     { name: 'Profile', icon: UserCircleSolid, mycustomfield: 'data1' },
@@ -49,11 +49,11 @@
     }
   }
   const handleClick2 = (e?: MouseEvent) =>{
-      if (e?.target instanceof HTMLElement) {
-        console.log(e.target.attributes.getNamedItem('mycustomfield')?.value);
-      } else {
-        console.warn('Unexpected event target type. Cannot access attributes.');
-      }
+    if (e?.target instanceof HTMLElement) {
+      console.log(e.target.attributes.getNamedItem('mycustomfield')?.value);
+    } else {
+      console.warn('Unexpected event target type. Cannot access attributes.');
+    }
   }
 </script>
 
@@ -66,7 +66,7 @@
 <H2>Default list group</H2>
 
 <CodeWrapper class="flex justify-center">
-  <Listgroup items={simpleList} defaultclass="w-48" />
+  <Listgroup items={simpleList} defaultClass="w-48" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/default-list-group.md'] as string} />
@@ -74,7 +74,7 @@
 <H2>List group with links</H2>
 
 <CodeWrapper class="flex justify-center">
-  <Listgroup btn items={links} defaultclass="w-48" />
+  <Listgroup active items={links} defaultClass="w-48" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/list-group-with-links.md'] as string} />
@@ -82,9 +82,9 @@
 <H2>List group with buttons</H2>
 <CodeWrapper class="flex justify-center">
   <Listgroup
-    btn
+    active
     items={buttons}
-    defaultclass="w-48"
+    defaultClass="w-48"
     onclick={handleClick}
   />
 </CodeWrapper>
@@ -94,9 +94,9 @@
 <H2>List group with icons</H2>
 <CodeWrapper class="flex justify-center">
   <Listgroup
-    btn
+    active
     items={icons}
-    defaultclass="w-48"
+    defaultClass="w-48"
     onclick={handleClick2}
   />
 </CodeWrapper>

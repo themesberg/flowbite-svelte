@@ -7,22 +7,24 @@
 
   interface Props {
     children?: Snippet;
-    items: ListGroupItemType[] | string[];
-    btn?: boolean;
+    items?: ListGroupItemType[] | string[];
+    active?: boolean;
     onclick?: () => void;
     rounded?: boolean;
     border?: boolean;
-    defaultclass?: string;
+    defaultClass?: string;
+    class?: string;
   }
 
   let {
     children,
     items,
-    btn,
+    active,
     onclick,
     rounded = true,
     border = true,
-    defaultclass,
+    defaultClass = 'divide-y divide-gray-200 dark:divide-gray-600',
+    class: className,
     ...attributes
   }: Props = $props();
   
@@ -38,33 +40,34 @@
     borderColor
   );
   const defaultCls: string = twMerge(
-    'divide-y divide-gray-200 dark:divide-gray-600',
+    defaultClass,
     divClass,
-    defaultclass
+    className
   );
-  let tag = btn ? 'div' : 'ul';
-  setContext('btn', btn);
+  let tag = active ? 'div' : 'ul';
+  setContext('active', active);
 </script>
 
 <svelte:element this={tag} {...attributes} class={defaultCls}>
-  {#each items as item}
-    {#if typeof item === 'string'}
-      <ListgroupItem {btn} {onclick}
-        >{item}</ListgroupItem
-      >
-    {:else}
-      <ListgroupItem
-        {btn}
-        {...item}
-        {onclick}>{item}</ListgroupItem
-      >
-    {/if}
+  {#if items}
+    {#each items as item}
+      {#if typeof item === 'string'}
+        <ListgroupItem {active} {onclick}
+          >{item}</ListgroupItem
+        >
+      {:else}
+        <ListgroupItem
+          {active}
+          {...item}
+          {onclick}>{item}</ListgroupItem
+        >
+      {/if}
+    {/each}
   {:else}
-    {@const item = items[0]}
     {#if children}
       {@render children()}
     {/if}
-  {/each}
+  {/if}
 </svelte:element>
 
 <!--
@@ -73,10 +76,10 @@
 ## Props
 @prop children
 @prop items
-@prop btn
+@prop active
 @prop onclick
 @prop rounded = true
 @prop border = true
-@prop defaultclass
+@prop defaultClass
 @prop ...attributes
 -->

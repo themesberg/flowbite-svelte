@@ -7,10 +7,10 @@
     children: Snippet;
     border?: boolean;
     italic?: boolean;
-    borderclass?: string | undefined;
-    bgclass?: string | undefined;
+    borderClass?: string | undefined;
+    bgClass?: string | undefined;
     bg?: boolean;
-    baseclass?: string | undefined;
+    baseClass?: string | undefined;
     alignment?: 'left' | 'center' | 'right';
     size?: BlockQuoteType;
     class?: string | undefined;
@@ -21,10 +21,10 @@
     class: classname,
     border,
     italic = true,
-    borderclass,
-    bgclass,
+    borderClass,
+    bgClass,
     bg,
-    baseclass,
+    baseClass,
     alignment = 'left',
     size = 'lg',
     ...attributes
@@ -32,12 +32,12 @@
 
   const borderCls: string = twMerge(
     'border-s-4 border-gray-300 dark:border-gray-500',
-    borderclass
+    borderClass
   );
-  const bgCls: string = twMerge('bg-gray-50 dark:bg-gray-800', bgclass);
+  const bgCls: string = twMerge('bg-gray-50 dark:bg-gray-800', bgClass);
   const baseCls: string = twMerge(
     'font-semibold text-gray-900 dark:text-white',
-    baseclass
+    baseClass
   );
 
   let alignmentClasses = {
@@ -87,10 +87,10 @@
 @prop class: classname
 @prop border
 @prop italic = true
-@prop borderclass
-@prop bgclass
+@prop borderClass
+@prop bgClass
 @prop bg
-@prop baseclass
+@prop baseClass
 @prop alignment = 'left'
 @prop size = 'lg'
 @prop ...attributes

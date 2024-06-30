@@ -38,7 +38,7 @@
 		},
 		bottomNavigation: {
 			checked: true,
-      problems: 'Application bar example, Example with pagination, Button group bottom bar, Card with bottom bar',
+      problems: '(Tooltip) Application bar example, Example with pagination, Button group bottom bar, Card with bottom bar',
 			notes: 'Updated: class names'
 		},
 		breadcrumb: {
@@ -199,7 +199,7 @@
 	const typography: ListType = {
 		blockquote: {
 			checked: true,
-      problems: 'User Review'
+			notes: 'Updated: class names'
 		},
 		heading: {
 			checked: true,

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Blockquote, P } from '$lib';
+  import { Blockquote, P, Rating } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -212,3 +212,20 @@
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/large.md'] as string} />
+
+<H2>User Review</H2>
+<CodeWrapper>
+  <figure class="max-w-screen-md">
+    <div class="flex items-center mb-4 text-yellow-300">
+      <Rating total={5} rating={4.66} size={24} />
+    </div>
+    <Blockquote italic={false} size="2xl">"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</Blockquote>
+    <figcaption class="flex items-center mt-6 space-x-3 rtl:space-x-reverse">
+      <img class="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" alt="Bonnie Green profile" />
+      <div class="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-300 dark:divide-gray-700">
+        <cite class="pe-3 font-medium text-gray-900 dark:text-white">Bonnie Green</cite>
+        <cite class="ps-3 text-sm font-light text-gray-500 dark:text-gray-400">CTO at Flowbite</cite>
+      </div>
+    </figcaption>
+  </figure>
+</CodeWrapper>

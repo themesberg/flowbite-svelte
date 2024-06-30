@@ -7,64 +7,46 @@
   interface Props {
     children: Snippet;
     onclick?: () => void;
-    btn?: boolean;
+    active?: boolean;
     current?: boolean;
     disabled?: boolean;
     name?: string;
     icon?: Component;
     href?: string;
-    currentclass?: string;
-    normalclass?: string;
-    disabledclass?: string;
-    focusclass?: string;
-    hoverclass?: string;
-    liclass?: string;
+    currentClass?: string;
+    normalClass?: string;
+    disabledClass?: string;
+    focusClass?: string;
+    hoverClass?: string;
+    liClass?: string;
+    class?: string;
   }
 
   let {
     children,
     onclick,
-    btn,
+    active,
     current,
     disabled,
     name,
     icon,
     href,
-    currentclass,
-    normalclass,
-    disabledclass,
-    focusclass,
-    hoverclass,
-    liclass,
+    currentClass = 'text-white bg-primary-700 dark:text-white dark:bg-gray-800',
+    normalClass,
+    disabledClass = 'text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400',
+    focusClass = 'focus:z-40 focus:outline-none focus:ring-2 focus:ring-primary-700 focus:text-primary-700 dark:focus:ring-gray-500 dark:focus:text-white',
+    hoverClass = 'hover:bg-gray-100 hover:text-primary-700 dark:hover:bg-gray-600 dark:hover:text-white',
+    liClass = 'py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg',
+    class: className,
     ...attributes
   }: Props = $props();
   
-  btn = getContext('btn');
-  const currentCls: string = twMerge(
-    'text-white bg-primary-700 dark:text-white dark:bg-gray-800',
-    currentclass
-  );
-  const disabledCls: string = twMerge(
-    'text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400',
-    disabledclass
-  );
-  const focusCls: string = twMerge(
-    'focus:z-40 focus:outline-none focus:ring-2 focus:ring-primary-700 focus:text-primary-700 dark:focus:ring-gray-500 dark:focus:text-white',
-    focusclass
-  );
-  const hoverCls: string = twMerge(
-    'hover:bg-gray-100 hover:text-primary-700 dark:hover:bg-gray-600 dark:hover:text-white',
-    hoverclass
-  );
-  const liCls: string = twMerge(
-    'py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg',
-    liclass
-  );
+  active = getContext('active');
 
   const states = {
-    current: currentCls,
-    normal: normalclass,
-    disabled: disabledCls
+    current: currentClass,
+    normal: normalClass,
+    disabled: disabledClass
   };
 
   let state: 'disabled' | 'current' | 'normal' = disabled
@@ -74,15 +56,16 @@
       : 'normal';
 
   let itemClass: string = twMerge(
-    liCls,
+    liClass,
     states[state],
-    btn && state === 'disabled' && 'cursor-not-allowed',
-    btn && state === 'normal' && hoverCls,
-    btn && state === 'normal' && focusCls
+    active && state === 'disabled' && 'cursor-not-allowed',
+    active && state === 'normal' && hoverClass,
+    active && state === 'normal' && focusClass,
+    className
   );
 </script>
 
-{#if !btn && children}
+{#if !active && children}
   <li class={itemClass}>
     {@render children()}
   </li>
@@ -112,17 +95,17 @@
 ## Props
 @prop children
 @prop onclick
-@prop btn
+@prop active
 @prop current
 @prop disabled
 @prop name
 @prop icon
 @prop href
-@prop currentclass
-@prop normalclass
-@prop disabledclass
-@prop focusclass
-@prop hoverclass
+@prop currentClass
+@prop normalClass
+@prop disabledClass
+@prop focusClass
+@prop hoverClass
 @prop liclass
 @prop ...attributes
 -->
