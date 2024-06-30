@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.46.13
+
+### Patch Changes
+
+- fix: add headerClass and footerClass to Textarea, #1380 ([`6ff73c2865522fed10ebc893340b4bee45b6e235`](https://github.com/themesberg/flowbite-svelte/commit/6ff73c2865522fed10ebc893340b4bee45b6e235))
+
 ## 0.46.12
 
 ### Patch Changes

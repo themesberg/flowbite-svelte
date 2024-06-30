@@ -66,7 +66,7 @@
 @prop export let divClass: string = 'w-full md:block md:w-auto';
 @prop export let ulClass: string = 'flex flex-col p-4 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:text-sm md:font-medium';
 @prop export let hidden: boolean | undefined = undefined;
-@prop export let slideParams: SlideParams = { delay: 250, duration: 500, easing: quintOut };
+@prop export let slideParams: SlideParams = { delay: 250, duration: 500, easing: sineIn };
 @prop export let activeClass: string = 'text-white bg-primary-700 md:bg-transparent md:text-primary-700 md:dark:text-white dark:bg-primary-600 md:dark:bg-transparent';
 @prop export let nonActiveClass: string = 'text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent';
 -->
