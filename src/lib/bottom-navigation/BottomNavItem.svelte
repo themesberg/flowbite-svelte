@@ -9,6 +9,7 @@
   export let activeClass: string | undefined = undefined;
   export let href: string = '';
   export let exact: boolean = true;
+  export let spanClass: string = '';
 
   const navType: 'default' | 'border' | 'application' | 'pagination' | 'group' | 'card' | 'meeting' | 'video' = getContext('navType');
 
@@ -54,14 +55,14 @@
 
   $: btnClass = twMerge(btnClasses[navType], appBtnClasses[appBtnPosition], active && (activeClass ?? context.activeClass), $$props.btnClass);
 
-  let spanClass: string;
+  let spanCls: string;
 
-  $: spanClass = twMerge(spanClasses[navType], active && (activeClass ?? context.activeClass), $$props.spanClass);
+  $: spanCls = twMerge(spanClasses[navType], active && (activeClass ?? context.activeClass), spanClass);
 </script>
 
 <svelte:element this={href ? 'a' : 'button'} aria-label={btnName} {href} role={href ? 'link' : 'button'} {...$$restProps} class={btnClass} on:click on:change on:keydown on:keyup on:focus on:blur on:mouseenter on:mouseleave>
   <slot />
-  <span class={spanClass}>{btnName}</span>
+  <span class={spanCls}>{btnName}</span>
 </svelte:element>
 
 <!--
