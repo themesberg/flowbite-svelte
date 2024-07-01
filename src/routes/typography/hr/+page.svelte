@@ -69,7 +69,7 @@
       information to rapidly respond to requests, incidents, and changes.</P
     >
     <Hr hrclass="my-8 w-64 h-1" icon>
-      <QuoteSolid class="h-4 w-4 text-gray-700 dark:text-gray-300" />
+      <QuoteSolid class="h-6 w-6 text-gray-700 dark:text-gray-300" />
     </Hr>
     <P
       >Deliver great service experiences fast - without the complexity of

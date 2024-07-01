@@ -207,21 +207,21 @@
 		},
 		hr: {
 			checked: true,
-      problems: 'Default HR - margin, Icon HR - icon size,'
+      // problems: 'Icon HR - icon size,'
 		},
 		image: {
 			checked: false
 		},
 		link: {
 			checked: true,
-      problems: 'Button, CTA link, Card link, Image link '
+      // problems: 'Button, CTA link, Card link, Image link '
 		},
 		list: {
 			checked: true
 		},
 		paragraph: {
 			checked: true,
-      problems: 'Paragraph link, Paragraph popover '
+      problems: 'Paragraph popover '
 		},
 		text: {
 			checked: false

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { P, Layout } from '$lib';
+  import { P, Layout, A } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -76,6 +76,13 @@
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/first-letter.md'] as string} />
+
+<H2>Paragraph link</H2>
+<CodeWrapper>
+  <P weight="light" color="text-gray-500 dark:text-gray-400">
+    Track work across the enterprise through an open, collaborative platform. <A href="/">Link issues across Jira</A> and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.
+  </P>
+</CodeWrapper>
 
 <H2>Paragraph bold</H2>
 
