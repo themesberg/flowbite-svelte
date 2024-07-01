@@ -6,12 +6,16 @@
     children: Snippet;
     tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     class?: string | undefined;
+    color?: string;
+    customSize?: string;
   }
 
   let {
     children,
     tag = 'h1',
     class: classname,
+    customSize = '',
+    color = 'text-gray-900 dark:text-white',
     ...attributes
   }: Props = $props();
 
@@ -29,8 +33,8 @@
   this={tag}
   {...attributes}
   class={twMerge(
-    textSizes[tag],
-    'w-full text-gray-900 dark:text-white',
+    customSize ? customSize : textSizes[tag],
+    color,
     classname
   )}
 >

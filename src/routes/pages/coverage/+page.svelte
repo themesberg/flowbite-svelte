@@ -203,7 +203,7 @@
 		},
 		heading: {
 			checked: true,
-      problems: 'Highlighted heading, Heading underline, Breadcrumb context, Badge context, Secondary text, Sizes'
+      // problems: 'Highlighted heading, Heading underline, Breadcrumb context, Badge context, Secondary text, Sizes'
 		},
 		hr: {
 			checked: true,

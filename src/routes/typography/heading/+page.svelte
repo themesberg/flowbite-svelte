@@ -1,10 +1,11 @@
 <script lang="ts">
-  import { Heading, Button, P, A, Span, Mark } from '$lib';
+  import { Heading, Button, P, A, Span, Mark, Breadcrumb, BreadcrumbItem, Badge, Secondary } from '$lib';
   import { ArrowRightOutline, ChevronRightOutline } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import H3 from '../../utils/H3.svelte';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -93,7 +94,6 @@
 <HighlightCompo code={modules['./md/heading-mark.md'] as string} />
 
 <H2>Heading gradient</H2>
-
 <CodeWrapper>
   <Heading
     tag="h1"
@@ -108,3 +108,70 @@
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/heading-gradient.md'] as string} />
+
+<H2>Heading underline</H2>
+<CodeWrapper>
+  <Heading tag="h1" class="mb-4">
+    We invest in the <Span underline decorationClass="decoration-8 decoration-blue-400 dark:decoration-blue-600">world’s potential</Span>
+  </Heading>
+  <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>  
+</CodeWrapper>
+
+<H2>Breadcrumb context</H2>
+<CodeWrapper>
+  <Breadcrumb class="mb-4">
+    <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
+    <BreadcrumbItem href="/">Settings</BreadcrumbItem>
+    <BreadcrumbItem>Team</BreadcrumbItem>
+  </Breadcrumb>
+  <Heading tag="h2" class="mb-4">Team management</Heading>
+</CodeWrapper>
+
+<H2>Badge context</H2>
+<CodeWrapper>
+  <Heading tag="h1" class="flex items-center" size="text-5xl">
+    Flowbite <Badge class="text-2xl font-semibold ms-2">PRO</Badge>
+  </Heading>
+</CodeWrapper>
+
+<H2>Secondary text</H2>
+<CodeWrapper>
+  <Heading tag="h1" customSize="text-5xl font-extrabold">
+    Flowbite <Secondary class="ms-2">This is secondary text</Secondary>
+  </Heading>
+</CodeWrapper>
+
+<H2>Sizes</H2>
+<H3>Heading one (H1)</H3>
+<CodeWrapper>
+  <Heading tag="h1">Heading 1</Heading>
+</CodeWrapper>
+
+<H3>Heading two (H2)</H3>
+<CodeWrapper>
+  <Heading tag="h2">Heading 2</Heading>
+</CodeWrapper>
+
+<H3>Heading three (H3)</H3>
+<CodeWrapper>
+  <Heading tag="h3">Heading 3</Heading>
+</CodeWrapper>
+
+
+<H3>Heading four (H4)</H3>
+<CodeWrapper>
+  <Heading tag="h4">Heading 4</Heading>
+</CodeWrapper>
+
+
+<H3>Heading five (H5)</H3>
+<CodeWrapper>
+  <Heading tag="h5">Heading 5</Heading>
+</CodeWrapper>
+
+
+<H3>Heading six (H6)</H3>
+<CodeWrapper>
+  <Heading tag="h6">Heading 6</Heading>
+</CodeWrapper>
+
