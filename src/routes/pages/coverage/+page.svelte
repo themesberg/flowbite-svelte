@@ -25,7 +25,7 @@
 		},
 		avatar: {
 			checked: true,
-			problems: 'Avatar tooltip, Stacked, Sizes',
+			problems: 'Avatar tooltip',
 			notes: 'Updated: class names'
 		},
 		badge: {
@@ -53,9 +53,9 @@
 			checked: true,
 			notes: 'Updated: class names'
 		},
-		cards: {
+		card: {
 			checked: true,
-			problems: 'User profile card, Card with form inputs, E-commerce card, Card with list, Pricing card, Testimonial card.'
+			// problems: 'Shadow,User profile card, Card with form inputs, E-commerce card, Card with list, Pricing card, Testimonial card.'
 		},
 		carousel: {
 			checked: false,
@@ -240,6 +240,15 @@
 			checked += components[component].checked ? 1 : 0;
 			unchecked += !components[component].checked ? 1 : 0;
 			withProblems += components[component].problems ? 1 : 0;
+			let numberOfProblemsForComponent = 0;
+			if (components[component].problems) {
+				// Split the problems string by commas (ignoring whitespaces)
+				const problemsArray = components[component].problems.split(/\s*,\s*/);
+				// Count the number of elements in the array (number of problems)
+				numberOfProblemsForComponent = problemsArray.length;
+			}
+			// Add the number of problems for this component to the total count
+			withProblems += numberOfProblemsForComponent;
 		}
 		withoutProblems = checked - withProblems; 
 
@@ -248,7 +257,8 @@
 			checked,
 			unchecked,
 			withProblems,
-			withoutProblems
+			withoutProblems,
+			numberOfProblems: withProblems
 		};
 	}
 
@@ -271,6 +281,7 @@
 	<Li># of pages unchecked - {componentsAnalysis.unchecked}</Li>
 	<Li liclass='text-green-500'># of pages without problems - {componentsAnalysis.withoutProblems}</Li>
 	<Li liclass='text-red-500'># of pages with problems - {componentsAnalysis.withProblems}</Li>
+	<Li liclass='text-red-500'># of problems - {componentsAnalysis.numberOfProblems}</Li>
 </List>
 	
 
@@ -281,6 +292,7 @@
 	<Li># of pages unchecked - {formsAnalysis.unchecked}</Li>
 	<Li liclass='text-green-500'># of pages without problems - {formsAnalysis.withoutProblems}</Li>
 	<Li liclass='text-red-500'># of pages with problems - {formsAnalysis.withProblems}</Li>
+	<Li liclass='text-red-500'># of problems - {formsAnalysis.numberOfProblems}</Li>
 </List>
 
 <H2>Typography</H2>
@@ -290,6 +302,7 @@
 	<Li># of pages unchecked - {typographyAnalysis.unchecked}</Li>
 	<Li liclass='text-green-500'># of pages without problems - {typographyAnalysis.withoutProblems}</Li>
 	<Li liclass='text-red-500'># of pages with problems - {typographyAnalysis.withProblems}</Li>
+	<Li liclass='text-red-500'># of problems - {typographyAnalysis.numberOfProblems}</Li>
 </List>
 
 <Heading
@@ -306,7 +319,7 @@
 			{:else}
 				<QuestionCircleSolid class="me-2 h-8 w-8 text-gray-500 dark:text-gray-400" />
 			{/if}
-			<a href="/components/{convertStringToKebabCase(key)}" class='hover:underline'>{key}</a> {#if problems} <span class="text-red-500 ml-4">(TODOS: {problems})</span>{/if}{#if notes}<span class="text-green-500 ml-4">(DONE: {notes})</span> {/if}
+			<a href="/components/{convertStringToKebabCase(key)}" class='hover:underline'>{key}</a> {#if problems} <span class="text-red-500 ml-4">( {problems})</span>{/if}{#if notes}<span class="text-green-500 ml-4">(DONE: {notes})</span> {/if}
 		</Li>
 	{/each}
 </List>
@@ -325,7 +338,7 @@
 			{:else}
 				<QuestionCircleSolid class="me-2 h-8 w-8 text-gray-500 dark:text-gray-400" />
 			{/if}
-			<a href="/forms/{convertStringToKebabCase(key)}" class='hover:underline'>{key}</a> {#if problems} <span class="text-red-500 ml-4">(TODOS: {problems})</span>{/if}{#if notes}<span class="text-green-500 ml-4">(DONE: {notes})</span> {/if}
+			<a href="/forms/{convertStringToKebabCase(key)}" class='hover:underline'>{key}</a> {#if problems} <span class="text-red-500 ml-4">( {problems})</span>{/if}{#if notes}<span class="text-green-500 ml-4">(DONE: {notes})</span> {/if}
 		</Li>
 	{/each}
 </List>
@@ -344,7 +357,7 @@
 			{:else}
 				<QuestionCircleSolid class="me-2 h-8 w-8 text-gray-500 dark:text-gray-400" />
 			{/if}
-			<a href="/typography/{convertStringToKebabCase(key)}" class='hover:underline'>{key}</a> {#if problems} <span class="text-red-500 ml-4">(TODOS: {problems})</span>{/if}{#if notes}<span class="text-green-500 ml-4">(DONE: {notes})</span> {/if}
+			<a href="/typography/{convertStringToKebabCase(key)}" class='hover:underline'>{key}</a> {#if problems} <span class="text-red-500 ml-4">( {problems})</span>{/if}{#if notes}<span class="text-green-500 ml-4">(DONE: {notes})</span> {/if}
 		</Li>
 	{/each}
 </List>

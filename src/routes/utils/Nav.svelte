@@ -159,8 +159,6 @@
           href="/pages/coverage"
         />
         </SidebarDropdownWrapper>
-    </SidebarGroup>
-    <SidebarGroup>
       <SidebarDropdownWrapper isOpen={hasPath('components')} label="Components" svgclass="me-4" btnclass="p-1">
         <SidebarItem
           onclick={closeNavDrawer}

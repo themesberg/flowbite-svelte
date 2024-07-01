@@ -93,8 +93,13 @@
 
 <HighlightCompo code={modules['./md/dot-indicator.md'] as string} />
 
+<H2>Avatar tooltip</H2>
+<CodeWrapper class='flex justify-center gap-4'>
+  NOT COMPLETED
+</CodeWrapper>
+
 <H2>Stacked</H2>
-<CodeWrapper>
+<CodeWrapper class='flex flex-col justify-center gap-4'>
   <div class="mb-5 flex">
     <Avatar src="/images/profile-picture-1.webp" stacked />
     <Avatar src="/images/profile-picture-2.webp" stacked />
@@ -156,3 +161,15 @@
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/user-dropdown.md'] as string} />
+
+<H2>Sizes</H2>
+<CodeWrapper class='flex flex-col gap-4'>
+  <div class=" flex flex-wrap justify-center space-x-4 rtl:space-x-reverse">
+    <Avatar src="/images/profile-picture-3.webp" rounded size="xs" />
+    <Avatar src="/images/profile-picture-3.webp" rounded size="sm" />
+    <Avatar src="/images/profile-picture-3.webp" rounded size="md" />
+    <Avatar src="/images/profile-picture-3.webp" rounded size="lg" />
+    <Avatar src="/images/profile-picture-3.webp" rounded size="xl" />
+    <Avatar src="/images/profile-picture-3.webp" rounded size="none" class="w-28 h-28" />
+  </div>
+</CodeWrapper>

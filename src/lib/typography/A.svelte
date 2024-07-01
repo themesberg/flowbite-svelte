@@ -6,16 +6,16 @@
     children: Snippet;
     href: string;
     target?: string;
-    aclass?: string;
+    aClass?: string;
   }
 
-  let { children, href = '#', target, aclass, ...attributes }: Props = $props();
+  let { children, href = '#', target, aClass, ...attributes }: Props = $props();
 
   const colorCls: string = 'text-primary-600 dark:text-primary-500';
   const aCls: string = 'inline-flex items-center hover:underline';
 </script>
 
-<a {...attributes} {href} {target} class={twMerge(aCls, colorCls, aclass)}>
+<a {...attributes} {href} {target} class={twMerge(aCls, colorCls, aClass)}>
     {@render children()}
 </a>
 

@@ -85,9 +85,7 @@
     {/if}
   </svelte:element>
 {:else}
-  <div role="presentation" {onclick}>
-    <img {alt} {src} {...attributes} class={avatarCls} />
-  </div>
+    <img {alt} {src} {...attributes} class={avatarCls}/>
 {/if}
 
 <!--
