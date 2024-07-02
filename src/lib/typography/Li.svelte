@@ -6,12 +6,12 @@
   interface Props {
     children: Snippet;
     icon?: boolean;
-    liclass?: string | undefined;
+    liClass?: string | undefined;
   }
 
-  let { children, icon, liclass, ...attributes }: Props = $props();
+  let { children, icon, liClass, ...attributes }: Props = $props();
   const ctxclass: string = getContext('ctxclass');
-  let classLi: string = twMerge(liclass, ctxclass, icon && 'flex items-center');
+  let classLi: string = twMerge(liClass, ctxclass, icon && 'flex items-center');
 </script>
 
 <li {...attributes} class={classLi}>
@@ -24,6 +24,6 @@
 ## Props
 @prop children
 @prop icon
-@prop liclass
+@prop liClass
 @prop ...attributes
 -->

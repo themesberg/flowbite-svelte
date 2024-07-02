@@ -99,8 +99,8 @@
             Resources
           </h2>
           <FooterUl>
-            <FooterLi liclass="mb-4" href="/">Flowbite</FooterLi>
-            <FooterLi liclass="mb-4" href="/">Tailwind CSS</FooterLi>
+            <FooterLi liClass="mb-4" href="/">Flowbite</FooterLi>
+            <FooterLi liClass="mb-4" href="/">Tailwind CSS</FooterLi>
           </FooterUl>
         </div>
         <div>
@@ -110,8 +110,8 @@
             Follow us
           </h2>
           <FooterUl>
-            <FooterLi liclass="mb-4" href="/">GitHub</FooterLi>
-            <FooterLi liclass="mb-4" href="/">Discord</FooterLi>
+            <FooterLi liClass="mb-4" href="/">GitHub</FooterLi>
+            <FooterLi liClass="mb-4" href="/">Discord</FooterLi>
           </FooterUl>
         </div>
         <div>
@@ -121,8 +121,8 @@
             Legal
           </h2>
           <FooterUl>
-            <FooterLi liclass="mb-4" href="/">Privacy Policy</FooterLi>
-            <FooterLi liclass="mb-4" href="/">Terms & Conditions</FooterLi>
+            <FooterLi liClass="mb-4" href="/">Privacy Policy</FooterLi>
+            <FooterLi liClass="mb-4" href="/">Terms & Conditions</FooterLi>
           </FooterUl>
         </div>
       </div>
@@ -169,10 +169,10 @@
           Company
         </h2>
         <FooterUl ulclass="text-gray-300">
-          <FooterLi liclass="mb-4" href="/">About</FooterLi>
-          <FooterLi liclass="mb-4" href="/">Careers</FooterLi>
-          <FooterLi liclass="mb-4" href="/">Brand Center</FooterLi>
-          <FooterLi liclass="mb-4" href="/">Blog</FooterLi>
+          <FooterLi liClass="mb-4" href="/">About</FooterLi>
+          <FooterLi liClass="mb-4" href="/">Careers</FooterLi>
+          <FooterLi liClass="mb-4" href="/">Brand Center</FooterLi>
+          <FooterLi liClass="mb-4" href="/">Blog</FooterLi>
         </FooterUl>
       </div>
       <div>
@@ -180,10 +180,10 @@
           Download
         </h2>
         <FooterUl ulclass="text-gray-300">
-          <FooterLi liclass="mb-4" href="/">Discord Server</FooterLi>
-          <FooterLi liclass="mb-4" href="/">Twitter</FooterLi>
-          <FooterLi liclass="mb-4" href="/">Facebook</FooterLi>
-          <FooterLi liclass="mb-4" href="/">Contact Us</FooterLi>
+          <FooterLi liClass="mb-4" href="/">Discord Server</FooterLi>
+          <FooterLi liClass="mb-4" href="/">Twitter</FooterLi>
+          <FooterLi liClass="mb-4" href="/">Facebook</FooterLi>
+          <FooterLi liClass="mb-4" href="/">Contact Us</FooterLi>
         </FooterUl>
       </div>
       <div>
@@ -191,9 +191,9 @@
           Legal
         </h2>
         <FooterUl ulclass="text-gray-300">
-          <FooterLi liclass="mb-4" href="/">Privacy Policy</FooterLi>
-          <FooterLi liclass="mb-4" href="/">Licensing</FooterLi>
-          <FooterLi liclass="mb-4" href="/">Terms & Conditions</FooterLi>
+          <FooterLi liClass="mb-4" href="/">Privacy Policy</FooterLi>
+          <FooterLi liClass="mb-4" href="/">Licensing</FooterLi>
+          <FooterLi liClass="mb-4" href="/">Terms & Conditions</FooterLi>
         </FooterUl>
       </div>
       <div>
@@ -201,10 +201,10 @@
           Download
         </h2>
         <FooterUl ulclass="text-gray-300">
-          <FooterLi liclass="mb-4" href="/">iOS</FooterLi>
-          <FooterLi liclass="mb-4" href="/">Android</FooterLi>
-          <FooterLi liclass="mb-4" href="/">Windows</FooterLi>
-          <FooterLi liclass="mb-4" href="/">MacOS</FooterLi>
+          <FooterLi liClass="mb-4" href="/">iOS</FooterLi>
+          <FooterLi liClass="mb-4" href="/">Android</FooterLi>
+          <FooterLi liClass="mb-4" href="/">Windows</FooterLi>
+          <FooterLi liClass="mb-4" href="/">MacOS</FooterLi>
         </FooterUl>
       </div>
     </div>

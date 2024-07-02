@@ -26,7 +26,7 @@
     color = 'primary',
     large = false,
     dismissable = false,
-    class: divclass,
+    class: divClass,
     border,
     href,
     rounded,
@@ -95,7 +95,7 @@
     border ? `border ${borderedColors[color]}` : colors[color],
     href && hoverColors[color],
     rounded ? 'rounded-full' : 'rounded',
-    divclass
+    divClass
   );
 </script>
 
@@ -145,7 +145,7 @@
 @prop color = 'primary'
 @prop large = false
 @prop dismissable = false
-@prop divclass
+@prop divClass
 @prop border
 @prop href
 @prop rounded

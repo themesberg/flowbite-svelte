@@ -243,7 +243,7 @@
 
 <H2>Default gallery</H2>
 <CodeWrapper>
-  <Gallery items={images} divclass="gap-4 grid-cols-2 md:grid-cols-3" />
+  <Gallery items={images} divClass="gap-4 grid-cols-2 md:grid-cols-3" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/default-gallery.md'] as string} />
@@ -251,9 +251,9 @@
 <H2>Mansory grid</H2>
 
 <CodeWrapper>
-  <Gallery divclass="gap-4 grid-cols-2 md:grid-cols-4">
+  <Gallery divClass="gap-4 grid-cols-2 md:grid-cols-4">
     <!-- Safari needs gap -->
-    <Gallery items={images1} divclass="gap-4" />
+    <Gallery items={images1} divClass="gap-4" />
     <Gallery items={images2} />
     <Gallery items={images3} />
     <Gallery items={images4} />
@@ -264,14 +264,14 @@
 
 <H2>Featured image</H2>
 <CodeWrapper>
-  <Gallery divclass="gap-4">
+  <Gallery divClass="gap-4">
     <img
       src={image5.src}
       alt={image5.alt}
       class="h-auto max-w-full rounded-lg"
     />
     <!-- Safari needs gap -->
-    <Gallery divclass="grid-cols-5 gap-4" items={images6} />
+    <Gallery divClass="grid-cols-5 gap-4" items={images6} />
   </Gallery>
 </CodeWrapper>
 
@@ -279,7 +279,7 @@
 
 <H2>Quad gallery</H2>
 <CodeWrapper>
-  <Gallery divclass="gap-2 grid-cols-2" items={images7} />
+  <Gallery divClass="gap-2 grid-cols-2" items={images7} />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/quad-gallery.md'] as string} />
@@ -296,14 +296,14 @@
     <Button pill size="xl" color="alternative">Gaming</Button>
   </div>
 
-  <Gallery items={images8} divclass="gap-4 grid-cols-2 md:grid-cols-3" />
+  <Gallery items={images8} divClass="gap-4 grid-cols-2 md:grid-cols-3" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/gallery-with-tag-filters.md'] as string} />
 
 <H2>Heterogeneous gallery</H2>
 <CodeWrapper>
-  <Gallery divclass="gap-4 grid-cols-2">
+  <Gallery divClass="gap-4 grid-cols-2">
     <img
       src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg"
       alt="shoas"
@@ -336,7 +336,7 @@
   </div>
 {/snippet}
 <CodeWrapper>
-  <Gallery divclass="gap-4 grid-cols-3">
+  <Gallery divClass="gap-4 grid-cols-3">
     {#each images9 as item}
       {@render figure(item)}
     {/each}

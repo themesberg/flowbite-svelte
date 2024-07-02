@@ -5,20 +5,22 @@
   interface Props {
     children?: Snippet;
     icon?: boolean;
-    divclass?: string | undefined;
-    hrclass?: string | undefined;
-    div2class?: string | undefined;
+    divClass?: string | undefined;
+    hrClass?: string | undefined;
+    iconDivClass?: string | undefined;
+    textSpanClass?: string | undefined;
+    innerDivClass?: string | undefined;
   }
 
-  let { children, icon, divclass, hrclass, div2class, ...attributes }: Props =
-    $props();
+  let { children, icon, divClass, hrClass, innerDivClass, ...attributes }: Props = $props();
+
   let horizontalCls: string = twMerge(
     'h-px my-8 bg-gray-200 border-0 dark:bg-gray-700',
-    hrclass
+    hrClass
   );
   let divCls = twMerge(
     'inline-flex items-center justify-center w-full',
-    divclass,
+    divClass,
     children && 'relative'
   );
   let innerDivCls = twMerge(
@@ -26,7 +28,7 @@
     icon
       ? 'absolute start-1/2 px-4 bg-white -translate-x-1/2 rtl:translate-x-1/2'
       : 'absolute px-3 font-medium text-gray-900 -translate-x-1/2 rtl:translate-x-1/2 bg-white start-1/2 dark:text-white dark:bg-gray-900 ',
-    div2class
+    innerDivClass
   );
 </script>
 
@@ -47,8 +49,8 @@
 ## Props
 @prop children
 @prop icon
-@prop divclass
-@prop hrclass
+@prop divClass
+@prop hrClass
 @prop div2class
 @prop ...attributes
 -->

@@ -5,7 +5,7 @@
     rating?: Snippet;
     globalText?: Snippet;
     ratings: { label: string; rating: number }[];
-    divclass?: string;
+    divClass?: string;
     spanclass?: string;
     div2class?: string;
     div3class?: string;
@@ -16,7 +16,7 @@
     rating,
     globalText,
     ratings,
-    divclass,
+    divClass,
     spanclass,
     div2class,
     div3class,
@@ -24,7 +24,7 @@
     unit
   }: Props = $props();
   
-  let divCls: string = twMerge('flex items-center mt-4', divclass);
+  let divCls: string = twMerge('flex items-center mt-4', divClass);
   let spanCls: string = twMerge(
     'text-sm font-medium text-gray-600 dark:text-gray-500',
     spanclass
@@ -63,7 +63,7 @@
 @prop rating
 @prop globalText
 @prop ratings
-@prop divclass
+@prop divClass
 @prop spanclass
 @prop div2class
 @prop div3class

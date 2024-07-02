@@ -92,7 +92,7 @@
 @prop dismissable = true
 @prop color = 'gray'
 @prop bannerType = 'default'
-@prop divclass
+@prop divClass
 @prop div2class
 @prop ...attributes
 -->

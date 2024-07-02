@@ -19,7 +19,7 @@
     ariaLabel,
     size = 'md',
     href,
-    class: divclass,
+    class: divClass,
     ...attributes
   }: Props = $props();
 
@@ -55,7 +55,7 @@
     sizing[size],
     colors[color],
     color === 'default' && 'hover:bg-gray-100 dark:hover:bg-gray-700',
-    divclass
+    divClass
   );
 
   const svgSizes = {
@@ -116,6 +116,6 @@
 @prop ariaLabel
 @prop size = 'md'
 @prop href
-@prop divclass
+@prop divClass
 @prop ...attributes
 -->

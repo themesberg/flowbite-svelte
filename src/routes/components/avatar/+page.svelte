@@ -144,7 +144,7 @@
     dot={{ color: 'green' }}
   />
   <div class="relative">
-  <Dropdown {dropdownStatus} {closeDropdown} divclass="absolute top-[40px] -left-[100px]">
+  <Dropdown {dropdownStatus} {closeDropdown} divClass="absolute top-[40px] -left-[100px]">
     {#snippet header()}
       <div>Bonnie Green</div>
       <div class="truncate font-medium">name@flowbite.com</div>

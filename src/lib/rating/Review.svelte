@@ -23,10 +23,10 @@
     item3?: any;
     review?: ReviewType;
     articleclass?: string;
-    divclass?: string;
+    divClass?: string;
     imgclass?: string;
     ulclass?: string;
-    liclass?: string;
+    liClass?: string;
   }
 
   let {
@@ -37,10 +37,10 @@
     item3,
     review,
     articleclass,
-    divclass,
+    divClass,
     imgclass,
     ulclass,
-    liclass
+    liClass
   }: Props = $props();
   
 </script>
@@ -51,7 +51,7 @@
       <div
         class={twMerge(
           'mb-6 flex items-center space-x-4 rtl:space-x-reverse',
-          divclass
+          divClass
         )}
       >
         <img
@@ -80,17 +80,17 @@
           )}
         >
           {#if review.item1}
-            <li class={twMerge(liclass)}>
+            <li class={twMerge(liClass)}>
               {@render item1()}
             </li>
           {/if}
           {#if review.item2}
-            <li class={twMerge('flex items-center', liclass)}>
+            <li class={twMerge('flex items-center', liClass)}>
               {@render item2()}
             </li>
           {/if}
           {#if review.item3}
-            <li class={twMerge(liclass)}>
+            <li class={twMerge(liClass)}>
               {@render item3()}
             </li>
           {/if}
@@ -134,8 +134,8 @@
 @prop item3
 @prop review
 @prop articleclass
-@prop divclass
+@prop divClass
 @prop imgclass
 @prop ulclass
-@prop liclass
+@prop liClass
 -->

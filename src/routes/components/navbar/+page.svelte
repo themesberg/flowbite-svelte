@@ -123,7 +123,7 @@
     <div style="height:300px;" class="overflow-scroll px-8 py-24">
       <Skeleton divClass="mt-16 mb-8" />
       <ImagePlaceholder divClass="my-8" />
-      <TextPlaceholder divclass="my-8" />
+      <TextPlaceholder divClass="my-8" />
     </div>
   </div>
 </CodeWrapper>

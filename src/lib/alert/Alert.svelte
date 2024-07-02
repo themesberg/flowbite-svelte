@@ -27,7 +27,7 @@
     color = 'primary',
     rounded = true,
     border,
-    class: divclass,
+    class: divClass,
     dismissable,
     transition = fade,
     params = {},
@@ -87,7 +87,7 @@
     rounded && 'rounded-lg',
     border && 'border',
     borderColors[color],
-    divclass
+    divClass
   );
 </script>
 
@@ -144,7 +144,7 @@
 @prop color = 'primary'
 @prop rounded = true
 @prop border
-@prop divclass
+@prop divClass
 @prop dismissable
 @prop ...attributes
 -->

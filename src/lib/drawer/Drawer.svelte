@@ -23,7 +23,7 @@
     bgColor?: string | undefined;
     bgOpacity?: string | undefined;
     placement?: 'left' | 'right' | 'top' | 'bottom';
-    divclass?: string | undefined;
+    divClass?: string | undefined;
     transitionParams: drawerTransitionParamTypes;
     transitionType?: drawerTransitionTypes;
   }
@@ -44,7 +44,7 @@
     bgColor = 'bg-gray-900',
     bgOpacity = 'bg-opacity-75',
     placement = 'left',
-    divclass = '',
+    divClass = '',
     transitionParams,
     transitionType = 'fly',
     ...attributes
@@ -80,7 +80,7 @@
     width,
     position,
     placements[placement],
-    divclass
+    divClass
   );
 </script>
 
@@ -127,7 +127,7 @@
 @prop bgColor = 'bg-gray-900'
 @prop bgOpacity = 'bg-opacity-75'
 @prop placement = 'left'
-@prop divclass = ''
+@prop divClass = ''
 @prop transitionParams
 @prop transitionType = 'fly'
 @prop ...attributes

@@ -21,7 +21,7 @@
     border = false,
     placement,
     offset = true,
-    class: divclass
+    class: divClass
   }: Props = $props();
 
   const colors = {
@@ -94,7 +94,7 @@
     children && 'inline-flex items-center justify-center',
     placement && 'absolute ' + placements[placement],
     placement && offset && offsets[placement],
-    divclass
+    divClass
   );
 </script>
 
@@ -115,5 +115,5 @@
 @prop border = false
 @prop placement
 @prop offset = true
-@prop divclass
+@prop divClass
 -->

@@ -25,7 +25,7 @@
 
   interface Props {
     children: Snippet;
-    divclass?: string;
+    divClass?: string;
     striped?: boolean;
     hoverable?: boolean;
     noborder?: boolean;
@@ -35,7 +35,7 @@
   }
   let {
     children,
-    divclass = 'relative overflow-x-auto',
+    divClass = 'relative overflow-x-auto',
     striped,
     hoverable,
     noborder,
@@ -67,7 +67,7 @@
   setContext('tableCtx', tableCtx);
 </script>
 
-<div class={twJoin(divclass, shadow && 'shadow-md sm:rounded-lg')}>
+<div class={twJoin(divClass, shadow && 'shadow-md sm:rounded-lg')}>
   <table
     {...attributes}
     class={twMerge('w-full text-left text-sm', colors[color])}
@@ -83,7 +83,7 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
-@prop divclass = 'relative overflow-x-auto'
+@prop divClass = 'relative overflow-x-auto'
 @prop striped
 @prop hoverable
 @prop noborder

@@ -17,7 +17,7 @@
     brand?: Snippet;
     breakPoint?: navbarType['breakPoint'];
     navclass?: string;
-    divclass?: string;
+    divClass?: string;
     btnclass?: string;
     div2class?: string;
     nonActiveClass?: string;
@@ -34,7 +34,7 @@
     brand,
     breakPoint = 'md',
     navclass,
-    divclass,
+    divClass,
     btnclass,
     div2class,
     activeClass,
@@ -64,7 +64,7 @@
     'mx-auto flex flex-wrap items-center justify-between p-4',
     breakPoint === 'xxl' ? 'w-full' : 'max-w-screen-xl',
     fluid ? 'w-full' : 'container',
-    divclass
+    divClass
   );
   const btnBreak = {
     md: 'md:hidden',
@@ -148,7 +148,7 @@
 @props:brand?: Snippet;
 @props:breakPoint?: navbarType['breakPoint'];
 @props:navclass?: string;
-@props:divclass?: string;
+@props:divClass?: string;
 @props:btnclass?: string;
 @props:div2class?: string;
 @props:nonActiveClass?: string;

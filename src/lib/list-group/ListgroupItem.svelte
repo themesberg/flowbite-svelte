@@ -106,6 +106,6 @@
 @prop disabledClass
 @prop focusClass
 @prop hoverClass
-@prop liclass
+@prop liClass
 @prop ...attributes
 -->

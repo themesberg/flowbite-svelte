@@ -13,7 +13,7 @@
     dismissable?: boolean;
     color?: ColorVariant;
     position?: ToastPositionType;
-    divclass?: string;
+    divClass?: string;
     div2class?: string;
     div3class?: string;
     align?: boolean;
@@ -26,7 +26,7 @@
     dismissable = true,
     color = 'primary',
     position = 'none',
-    divclass,
+    divClass,
     div2class,
     div3class,
     align = true,
@@ -54,7 +54,7 @@
     'flex',
     align ? 'items-center' : 'items-start',
     divCls,
-    divclass,
+    divClass,
     positions[position]
   );
 
@@ -126,7 +126,7 @@
 @prop dismissable = true
 @prop color = 'primary'
 @prop position = 'none'
-@prop divclass
+@prop divClass
 @prop div2class
 @prop div3class
 @prop align = true

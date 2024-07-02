@@ -4,7 +4,7 @@
 
   interface Props {
     children?: Snippet;
-    divclass?: string;
+    divClass?: string;
     div2class?: string;
     div3class?: string;
     div4class?: string;
@@ -13,7 +13,7 @@
   }
   let {
     children,
-    divclass,
+    divClass,
     div2class,
     div3class,
     div4class,
@@ -33,7 +33,7 @@
     'relative mx-auto bg-gray-800 dark:bg-gray-700 rounded-b-[2.5rem] h-[63px] max-w-[133px]';
 </script>
 
-<div class={twMerge(div, divclass)}></div>
+<div class={twMerge(div, divClass)}></div>
 <div class={twMerge(top, div2class)}>
   <div class={twMerge(rightTop, div3class)}></div>
   <div class={twMerge(rightBot, div4class)}></div>
@@ -50,7 +50,7 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
-@prop divclass
+@prop divClass
 @prop div2class
 @prop div3class
 @prop div4class

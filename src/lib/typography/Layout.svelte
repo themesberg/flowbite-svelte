@@ -4,19 +4,19 @@
 
   interface Props {
     children: Snippet;
-    divclass?: string | undefined;
+    divClass?: string | undefined;
     cols?: string | undefined;
     // gap?: number;
   }
 
   let {
     children,
-    divclass,
+    divClass,
     cols = '',
     ...attributes
   }: Props = $props();
 
-  let classDiv = twMerge('grid grid-cols-1 sm:grid-cols-2', cols, divclass);
+  let classDiv = twMerge('grid grid-cols-1 sm:grid-cols-2', cols, divClass);
 </script>
 
 <div {...attributes} class={classDiv}>
@@ -30,7 +30,7 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
-@prop divclass
+@prop divClass
 @prop cols = ''
 @prop ...attributes
 -->

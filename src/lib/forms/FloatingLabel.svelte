@@ -14,7 +14,7 @@
     size?: 'small' | 'default';
     color?: 'base' | 'green' | 'red';
     value?: any;
-    divclass?: string;
+    divClass?: string;
     inputclass?: string;
     labelclass?: string;
   }
@@ -27,7 +27,7 @@
     type = 'text',
     size = 'default',
     color = 'base',
-    divclass,
+    divClass,
     inputclass,
     labelclass,
     ...attributes
@@ -101,7 +101,7 @@
   };
 </script>
 
-<div class={twMerge(divClasses[style], divclass)}>
+<div class={twMerge(divClasses[style], divClass)}>
   <input
     {id}
     {...attributes}
@@ -144,7 +144,7 @@
 @prop type = 'text'
 @prop size = 'default'
 @prop color = 'base'
-@prop divclass
+@prop divClass
 @prop inputclass
 @prop labelclass
 @prop ...attributes

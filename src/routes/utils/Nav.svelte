@@ -143,7 +143,7 @@
   <Sidebar
     {activeClass}
     asideclass="w-full p-0"
-    divclass="bg-transparent p-0"
+    divClass="bg-transparent p-0"
     aclass="p-1 pl-4"
   >
     <SidebarGroup>

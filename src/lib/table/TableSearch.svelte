@@ -13,7 +13,7 @@
     svgSearch?: any;
     header?: Snippet;
     footer?: Snippet;
-    divclass?: string;
+    divClass?: string;
     inputValue?: string;
     striped?: boolean;
     hoverable?: boolean;
@@ -34,7 +34,7 @@
     svgSearch,
     header,
     footer,
-    divclass = '',
+    divClass = '',
     inputValue = $bindable(),
     striped,
     hoverable,
@@ -80,7 +80,7 @@
   setContext('tableCtx', tableSearchCtx);
 </script>
 
-<div class={twMerge('relative overflow-x-auto shadow-md sm:rounded-lg',divclass)}>
+<div class={twMerge('relative overflow-x-auto shadow-md sm:rounded-lg',divClass)}>
   <div class={twMerge('p-4',innerDivClass)}>
     <label for="table-search" class="sr-only">Search</label>
     <div class={twMerge('relative mt-1',searchClass)}>
@@ -131,7 +131,7 @@
 @prop svgSearch
 @prop header
 @prop footer
-@prop divclass = ''
+@prop divClass = ''
 @prop inputValue = $bindable()
 @prop striped
 @prop hoverable

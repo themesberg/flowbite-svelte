@@ -7,14 +7,14 @@
     children: Snippet;
     asideclass?: string | undefined;
     ariaLabel?: string | undefined;
-    divclass?: string | undefined;
+    divClass?: string | undefined;
     nonActiveClass?: string | undefined;
     activeClass?: string | undefined;
     aclass?: string | undefined;
   }
   let {
     children,
-    divclass,
+    divClass,
     asideclass,
     ariaLabel,
     nonActiveClass = '',
@@ -27,7 +27,7 @@
   const nonActiveCls = 'flex items-center text-base font-normal text-gray-900 rounded dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'
   let divCls = twMerge(
     'overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800',
-    divclass
+    divClass
   );
   // let activeCls = twMerge(activeClass, aclass)
   // let nonActiveCls = twMerge(nonActiveClass, aclass)
@@ -53,7 +53,7 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
-@prop divclass
+@prop divClass
 @prop asideclass
 @prop ariaLabel
 @prop nonActiveClass = ''

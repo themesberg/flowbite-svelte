@@ -17,7 +17,7 @@
     closeDropdown?: () => void;
     activateClickOutside?: boolean ;
 
-    divclass?: string ;
+    divClass?: string ;
     footerclass?: string ;
     headerclass?: string ;
     ulclass?: string ;
@@ -33,7 +33,7 @@
     toggleDropdown,
     closeDropdown,
     activateClickOutside = true,
-    divclass,
+    divClass,
     footerclass,
     headerclass,
     ulclass,
@@ -58,7 +58,7 @@
   const divCls = $derived(
     twMerge(
       'z-10 w-44 mt-2 divide-y divide-gray-300 dark:divide-gray-500 overflow-hidden rounded-lg bg-white shadow dark:bg-gray-700',
-      divclass
+      divClass
     )
   );
   const headerCls = twMerge(
@@ -109,7 +109,7 @@
 @prop toggleDropdown
 @prop closeDropdown
 @prop activateClickOutside = true
-@prop divclass
+@prop divClass
 @prop footerclass
 @prop headerclass
 @prop ulclass

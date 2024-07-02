@@ -21,7 +21,7 @@
     pill,
     color = 'blue',
     shadow,
-    class: divclass,
+    class: className,
     onclick,
     ...attributes
   }: Props = $props();
@@ -88,7 +88,7 @@
       ? (pill && 'first:rounded-s-full last:rounded-e-full') ||
           'first:rounded-s-lg last:rounded-e-lg'
       : (pill && 'rounded-full') || 'rounded-lg',
-    divclass
+      className
   );
 </script>
 
@@ -117,7 +117,7 @@
 @prop pill
 @prop color = 'blue'
 @prop shadow
-@prop divclass
+@prop divClass
 @prop onclick
 @prop ...attributes
 -->

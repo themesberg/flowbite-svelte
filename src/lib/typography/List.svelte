@@ -43,9 +43,7 @@
 </script>
 
 <svelte:element this={tag} {...attributes} class={classList}>
- 
-    {@render children()}
-
+  {@render children()}
 </svelte:element>
 
 <!--

@@ -27,7 +27,7 @@
     tools, so your IT support and operations teams have richer contextual
     information to rapidly respond to requests, incidents, and changes.</P
   >
-  <Hr hrclass="my-8" />
+  <Hr hrClass="my-8" />
   <P
     >Deliver great service experiences fast - without the complexity of
     traditional ITSM solutions.Accelerate critical development work, eliminate
@@ -47,7 +47,7 @@
     tools, so your IT support and operations teams have richer contextual
     information to rapidly respond to requests, incidents, and changes.</P
   >
-  <Hr hrclass="w-48 h-1 mx-auto my-4 rounded md:my-10" />
+  <Hr hrClass="w-48 h-1 mx-auto my-4 rounded md:my-10" />
   <P
     >Deliver great service experiences fast - without the complexity of
     traditional ITSM solutions.Accelerate critical development work, eliminate
@@ -68,7 +68,7 @@
       tools, so your IT support and operations teams have richer contextual
       information to rapidly respond to requests, incidents, and changes.</P
     >
-    <Hr hrclass="my-8 w-64 h-1" icon>
+    <Hr hrClass="my-8 w-64 h-1" icon>
       <QuoteSolid class="h-6 w-6 text-gray-700 dark:text-gray-300" />
     </Hr>
     <P
@@ -92,7 +92,7 @@
       tools, so your IT support and operations teams have richer contextual
       information to rapidly respond to requests, incidents, and changes.</P
     >
-    <Hr hrclass="my-8 w-64">or</Hr>
+    <Hr hrClass="my-8 w-64">or</Hr>
     <P
       >Deliver great service experiences fast - without the complexity of
       traditional ITSM solutions.Accelerate critical development work, eliminate
@@ -113,7 +113,7 @@
     tools, so your IT support and operations teams have richer contextual
     information to rapidly respond to requests, incidents, and changes.</P
   >
-  <Hr hrclass="my-8 mx-auto w-8 h-8" />
+  <Hr hrClass="my-8 mx-auto w-8 h-8" />
   <Blockquote alignment="center">
     <p>
       "Flowbite is just awesome. It contains tons of predesigned components and

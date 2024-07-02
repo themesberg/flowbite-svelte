@@ -4,17 +4,17 @@
   interface Props {
     children: Snippet;
     tag: 'dt' | 'dd';
-    dtclass?: string | undefined;
-    ddclass?: string | undefined;
+    dtClass?: string | undefined;
+    ddClass?: string | undefined;
   }
 
-  let { children, tag, dtclass, ddclass, ...attributes }: Props = $props();
+  let { children, tag, dtClass, ddClass, ...attributes }: Props = $props();
   
   const dtCls: string = twMerge(
     'text-gray-500 md:text-lg dark:text-gray-400',
-    dtclass
+    dtClass
   );
-  const ddCls: string = twMerge('text-lg font-semibold', ddclass);
+  const ddCls: string = twMerge('text-lg font-semibold', ddClass);
 
   let classDesc = twMerge(tag === 'dt' ? dtCls : ddCls);
 </script>
@@ -31,7 +31,7 @@
 ## Props
 @prop children
 @prop tag
-@prop dtclass
-@prop ddclass
+@prop dtClass
+@prop ddClass
 @prop ...attributes
 -->

@@ -349,7 +349,7 @@
           >Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button
         >
         <div class="relative">
-          <Dropdown divclass="absolute top-[5px] -left-[180px]" dropdownStatus={isOpen}>
+          <Dropdown divClass="absolute top-[5px] -left-[180px]" dropdownStatus={isOpen}>
             {#snippet children()}
               <DropdownItem href="/">Yesterday</DropdownItem>
               <DropdownItem href="/">Today</DropdownItem>
@@ -434,7 +434,7 @@
         >
         <div class="relative">
           <Dropdown
-            divclass="absolute top-[5px] -left-[180px]"
+            divClass="absolute top-[5px] -left-[180px]"
             dropdownStatus={isOpen2}
           >
             {#snippet children()}
@@ -520,7 +520,7 @@
         >
         <div class="relative">
           <Dropdown
-            divclass="absolute top-[5px] -left-[180px]"
+            divClass="absolute top-[5px] -left-[180px]"
             dropdownStatus={isOpen3}
           >
             {#snippet children()}

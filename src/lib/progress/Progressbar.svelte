@@ -12,8 +12,8 @@
     easing?: EasingFunction;
     color?: ProgressBarColorType;
     div2class?: string | undefined;
-    labeloutsidedivclass?: string | undefined;
-    divclass?: string | undefined;
+    labeloutsidedivClass?: string | undefined;
+    divClass?: string | undefined;
     class?: string | undefined;
   }
 
@@ -33,8 +33,8 @@
     easing = cubicOut,
     color = 'primary',
     div2class,
-    labeloutsidedivclass,
-    divclass,
+    labeloutsidedivClass,
+    divClass,
     class: classname,
     ...attributes
   }: Props = $props();
@@ -68,7 +68,7 @@
 {#if labelOutside}
   <div
     {...attributes}
-    class={twMerge('mb-1 flex justify-between', labeloutsidedivclass)}
+    class={twMerge('mb-1 flex justify-between', labeloutsidedivClass)}
   >
     <span class="text-base font-medium text-blue-700 dark:text-white"
       >{labelOutside}</span
@@ -78,7 +78,7 @@
     >
   </div>
 {/if}
-<div class={twMerge(divCls, size, divclass)}>
+<div class={twMerge(divCls, size, divClass)}>
   {#if labelInside}
     <div
       class={twJoin(labelInsideCls, barColors[color], size, div2class)}
@@ -108,8 +108,8 @@
 @prop easing = cubicOut
 @prop color = 'primary'
 @prop div2class
-@prop labeloutsidedivclass
-@prop divclass
+@prop labeloutsidedivClass
+@prop divClass
 @prop class: classname
 @prop ...attributes
 -->

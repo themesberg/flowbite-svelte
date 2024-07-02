@@ -11,20 +11,20 @@
     children?: Snippet;
     items?: ImgType[];
     imgclass?: string | undefined;
-    divclass?: string | undefined;
+    divClass?: string | undefined;
   }
 
   let {
     children,
     items = [],
     imgclass,
-    divclass,
+    divClass,
     ...attributes
   }: Props = $props();
  
   const imgCls: string = 'h-auto max-w-full rounded-lg';
 
-  let divCls = twMerge('grid', divclass);
+  let divCls = twMerge('grid', divClass);
 
   function init(node: HTMLElement) {
     if (getComputedStyle(node).gap === 'normal') node.style.gap = 'inherit';
@@ -54,6 +54,6 @@
 @prop children
 @prop items = []
 @prop imgclass
-@prop divclass
+@prop divClass
 @prop ...attributes
 -->

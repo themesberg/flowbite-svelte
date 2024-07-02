@@ -184,17 +184,17 @@
     class="divide-y divide-gray-200 text-gray-900 dark:divide-gray-700  dark:text-white"
   >
     <div class="flex flex-col pb-3">
-      <DescriptionList tag="dt" dtclass="mb-1">Email address</DescriptionList>
+      <DescriptionList tag="dt" dtClass="mb-1">Email address</DescriptionList>
       <DescriptionList tag="dd">yourname@flowbite.com</DescriptionList>
     </div>
     <div class="flex flex-col pb-3">
-      <DescriptionList tag="dt" dtclass="mb-1">Home address</DescriptionList>
+      <DescriptionList tag="dt" dtClass="mb-1">Home address</DescriptionList>
       <DescriptionList tag="dd"
         >92 Miles Drive, Newark, NJ 07103, California, USA</DescriptionList
       >
     </div>
     <div class="flex flex-col pb-3">
-      <DescriptionList tag="dt" dtclass="mb-1">Phone number</DescriptionList>
+      <DescriptionList tag="dt" dtClass="mb-1">Phone number</DescriptionList>
       <DescriptionList tag="dd">+00 123 456 789 / +12 345 678</DescriptionList>
     </div>
   </List>
@@ -210,23 +210,23 @@
     class="mb-8 space-y-4 text-gray-500 dark:text-gray-400"
     list="none"
   >
-    <Li icon liclass="gap-3">
+    <Li icon liClass="gap-3">
       <CheckOutline class="h-3.5 w-3.5 text-green-500 dark:text-green-400" />
       Individual configuration
     </Li>
-    <Li icon liclass="gap-3">
+    <Li icon liClass="gap-3">
       <CheckOutline class="h-3.5 w-3.5 text-green-500 dark:text-green-400" />
       No setup, or hidden fees
     </Li>
-    <Li icon liclass="gap-3">
+    <Li icon liClass="gap-3">
       <CheckOutline class="h-3.5 w-3.5 text-green-500 dark:text-green-400" />
       <span>Team size: <Span>1 developer</Span></span>
     </Li>
-    <Li icon liclass="gap-3">
+    <Li icon liClass="gap-3">
       <CheckOutline class="h-3.5 w-3.5 text-green-500 dark:text-green-400" />
       <span>Premium support: <Span>6 months</Span></span>
     </Li>
-    <Li icon liclass="gap-3">
+    <Li icon liClass="gap-3">
       <CheckOutline class="h-3.5 w-3.5 text-green-500 dark:text-green-400" />
       <span>Free updates: <Span>6 months</Span></span>
     </Li>
@@ -242,7 +242,7 @@
     list="none"
     class="max-w-md divide-y divide-gray-200 dark:divide-gray-700"
   >
-    <Li liclass="pb-3 sm:pb-4">
+    <Li liClass="pb-3 sm:pb-4">
       <div class="flex items-center space-x-4 rtl:space-x-reverse">
         <div class="flex-shrink-0">
           <img
@@ -266,7 +266,7 @@
         </div>
       </div>
     </Li>
-    <Li liclass="py-3 sm:py-4">
+    <Li liClass="py-3 sm:py-4">
       <div class="flex items-center space-x-4 rtl:space-x-reverse">
         <div class="flex-shrink-0">
           <img
@@ -290,7 +290,7 @@
         </div>
       </div>
     </Li>
-    <Li liclass="py-3 sm:py-4">
+    <Li liClass="py-3 sm:py-4">
       <div class="flex items-center space-x-4 rtl:space-x-reverse">
         <div class="flex-shrink-0">
           <img
@@ -314,7 +314,7 @@
         </div>
       </div>
     </Li>
-    <Li liclass="py-3 sm:py-4">
+    <Li liClass="py-3 sm:py-4">
       <div class="flex items-center space-x-4 rtl:space-x-reverse">
         <div class="flex-shrink-0">
           <img
@@ -338,7 +338,7 @@
         </div>
       </div>
     </Li>
-    <Li liclass="py-3 sm:py-4">
+    <Li liClass="py-3 sm:py-4">
       <div class="flex items-center space-x-4 rtl:space-x-reverse">
         <div class="flex-shrink-0">
           <img

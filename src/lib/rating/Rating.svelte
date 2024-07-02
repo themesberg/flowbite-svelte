@@ -8,7 +8,7 @@
   interface Props {
     children?: Snippet;
     text?: Snippet;
-    divclass?: string;
+    divClass?: string;
     size?: number;
     total?: number;
     rating?: number;
@@ -20,7 +20,7 @@
   let {
     children,
     text,
-    divclass,
+    divClass,
     size = 24,
     total = 5,
     rating = 4,
@@ -41,7 +41,7 @@
   // console.log(fullStars, grayStars, rateDiffence, percentRating)
 </script>
 
-<div class={twMerge('flex items-center', divclass)}>
+<div class={twMerge('flex items-center', divClass)}>
   {#if count && children}
     <svelte:component this={icon} fillPercent={100} {size} />
     <p class="{r_p_cls} r_p">{rating}</p>
@@ -73,7 +73,7 @@
 ## Props
 @prop children
 @prop text
-@prop divclass
+@prop divClass
 @prop size = 24
 @prop total = 5
 @prop rating = 4

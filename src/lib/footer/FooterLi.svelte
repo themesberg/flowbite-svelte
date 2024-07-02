@@ -4,16 +4,16 @@
 
   interface Props {
     children: Snippet;
-    liclass?: string | undefined;
+    liClass?: string | undefined;
     aclass?: string | undefined;
     href?: string | undefined;
     target?: string | undefined;
   }
 
-  let { children, liclass, aclass, href, target, ...attributes }: Props =
+  let { children, liClass, aclass, href, target, ...attributes }: Props =
     $props();
 
-  let liCls: string = twMerge('me-4 last:me-0 md:me-6', liclass);
+  let liCls: string = twMerge('me-4 last:me-0 md:me-6', liClass);
   let aCls: string = twMerge('hover:underline', aclass);
 </script>
 
@@ -29,7 +29,7 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
-@prop liclass
+@prop liClass
 @prop aclass
 @prop href
 @prop target
