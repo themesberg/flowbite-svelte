@@ -114,7 +114,7 @@
     drawerStatusJ = drawerJ.isOpen;
     drawerStatusK = drawerK.isOpen;
   });
-  let spanclass = 'flex-1 ms-3 whitespace-nowrap';
+  let spanClass = 'flex-1 ms-3 whitespace-nowrap';
 </script>
 
 <H1>Drawer</H1>
@@ -249,7 +249,7 @@
           <SidebarItem label="Billing" />
           <SidebarItem label="Invoice" />
         </SidebarDropdownWrapper>
-        <SidebarItem label="Drawer" href="/components/drawer" {spanclass}>
+        <SidebarItem label="Drawer" href="/components/drawer" {spanClass}>
           {#snippet iconSlot()}
             <GridSolid
               class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
@@ -263,7 +263,7 @@
             </span>
           {/snippet}
         </SidebarItem>
-        <SidebarItem label="Inbox" {spanclass}>
+        <SidebarItem label="Inbox" {spanClass}>
           {#snippet iconSlot()}
             <MailBoxSolid
               class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"

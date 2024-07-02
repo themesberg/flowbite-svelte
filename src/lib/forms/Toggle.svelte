@@ -13,7 +13,7 @@
     value?: string | number;
     checked?: boolean | undefined;
     customSize?: string;
-    spanclass?: string;
+    spanClass?: string;
     color?: FormColorType;
     inline?: boolean;
     labelclass?: string;
@@ -31,7 +31,7 @@
     value,
     checked = $bindable(),
     customSize,
-    spanclass,
+    spanClass,
     color = 'primary',
     inline = false,
     labelclass = '',
@@ -77,7 +77,7 @@
     colors[color ?? 'primary'],
     sizes[size],
     'relative',
-    spanclass
+    spanClass
   );
 </script>
 
@@ -106,7 +106,7 @@
 @prop value
 @prop checked = $bindable()
 @prop customSize
-@prop spanclass
+@prop spanClass
 @prop color = 'primary'
 @prop inline = false
 @prop labelclass = ''

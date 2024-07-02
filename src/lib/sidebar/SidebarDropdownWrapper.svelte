@@ -13,7 +13,7 @@
     isOpen?: boolean | undefined;
     btnclass?: string | undefined;
     label: string | undefined;
-    spanclass?: string | undefined;
+    spanClass?: string | undefined;
     ulclass?: string | undefined;
     transitionType?: TransitionTypes;
     transitionParams?: TransitionParamTypes;
@@ -28,7 +28,7 @@
     isOpen,
     btnclass,
     label,
-    spanclass,
+    spanClass,
     ulclass,
     transitionType = 'slide',
     transitionParams = {},
@@ -43,7 +43,7 @@
 
   let spanCls: string = twMerge(
     'flex-1 ms-3 text-left whitespace-nowrap',
-    spanclass
+    spanClass
   );
   let ulCls: string = twMerge('py-2 space-y-2', ulclass);
   let svgCls: string = twMerge(
@@ -147,7 +147,7 @@
 @props:isOpen?: boolean | undefined;
 @props:btnclass?: string | undefined;
 @props:label: string | undefined;
-@props:spanclass?: string | undefined;
+@props:spanClass?: string | undefined;
 @props:ulclass?: string | undefined;
 @props:transitionType?: TransitionTypes;
 @props:transitionParams?: TransitionParamTypes;

@@ -12,7 +12,7 @@
     href?: string ;
     target?: string ;
     label?: string ;
-    spanclass?: string ;
+    spanClass?: string ;
     activeClass?: string ;
     nonActiveClass?: string ;
     aclass?: string;
@@ -25,7 +25,7 @@
     href,
     target,
     label,
-    spanclass,
+    spanClass,
     activeClass,
     nonActiveClass,
     aclass,
@@ -34,7 +34,7 @@
   
   const context = getContext<SidebarType>('sidebarContext') ?? {};
   let currentUrl = $state();
-  let spanCls: string = twMerge('ms-3', spanclass);
+  let spanCls: string = twMerge('ms-3', spanClass);
 
   $effect(() => {
     currentUrl = $page.url.pathname;
@@ -70,7 +70,7 @@
 @prop href
 @prop target
 @prop label
-@prop spanclass
+@prop spanClass
 @prop activeClass
 @prop nonActiveClass
 @prop aclass

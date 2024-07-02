@@ -4,7 +4,7 @@
   interface Props {
     children?: Snippet;
     aclass?: string | undefined;
-    spanclass?: string | undefined;
+    spanClass?: string | undefined;
     imgclass?: string | undefined;
     href?: string | undefined;
     src?: string | undefined;
@@ -15,7 +15,7 @@
   let {
     children,
     aclass,
-    spanclass,
+    spanClass,
     imgclass,
     href,
     src,
@@ -28,7 +28,7 @@
   let aCls: string = twMerge('flex items-center', aclass);
   let spanCls: string = twMerge(
     'self-center text-2xl font-semibold whitespace-nowrap dark:text-white',
-    spanclass
+    spanClass
   );
   let imgCls: string = twMerge('me-3 h-8', imgclass);
 </script>
@@ -55,7 +55,7 @@
 ## Props
 @prop children
 @prop aclass
-@prop spanclass
+@prop spanClass
 @prop imgclass
 @prop href
 @prop src

@@ -159,7 +159,7 @@
         Read more <ArrowRightOutline class="ms-2 h-3.5 w-3.5 text-white" />
       </Button>
     </Card>
-    <Toggle bind:checked={vCard} spanclass="italic dark:text-gray-500"
+    <Toggle bind:checked={vCard} spanClass="italic dark:text-gray-500"
       >Reverse: {vCard}</Toggle
     >
   </div>
@@ -190,7 +190,7 @@
         reverse chronological order.
       </p>
     </Card>
-    <Toggle bind:checked={hCard} spanclass="italic dark:text-gray-500"
+    <Toggle bind:checked={hCard} spanClass="italic dark:text-gray-500"
       >Reverse: {hCard}</Toggle
     >
   </div>

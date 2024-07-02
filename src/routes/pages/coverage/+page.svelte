@@ -189,10 +189,11 @@
       problems: 'Select with dropdown, Sizes, Custom options, MultiSelect'
 		},
 		textarea: {
-			checked: false
+			checked: false,
 		},
 		toggle: {
-			checked: true
+			checked: true,
+			notes: 'Updated: class names'
 		}
 	};
 

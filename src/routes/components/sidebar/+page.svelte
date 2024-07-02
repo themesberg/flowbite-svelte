@@ -18,7 +18,7 @@
     RestoreWindowOutline
   } from 'flowbite-svelte-icons';
   import PlusPlaceholder from '../../utils/PlusPlaceholder.svelte';
-  const spanclass = 'flex-1 ms-3 whitespace-nowrap';
+  const spanClass = 'flex-1 ms-3 whitespace-nowrap';
   const activeClass =
     'flex items-center p-2 text-base font-normal text-primary-900 bg-primary-200 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-100 dark:hover:bg-gray-700';
   const nonActiveClass =
@@ -75,7 +75,7 @@
           />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" {spanclass}>
+      <SidebarItem label="Kanban" {spanClass}>
         {#snippet iconSlot()}
           <GridSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
@@ -89,7 +89,7 @@
           </span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanclass}>
+      <SidebarItem label="Inbox" {spanClass}>
         {#snippet iconSlot()}
           <MailBoxSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
@@ -132,7 +132,7 @@
   <Sidebar aclass="p-2" asideclass="absolute top-6 left-6 z-40">
     <SidebarGroup>
       {#each sidebarEx1 as { label, href, icon, subContent }}
-        <SidebarItem {label} {href} {spanclass}>
+        <SidebarItem {label} {href} {spanClass}>
           {#snippet iconSlot()}
             <svelte:component
               this={icon}
@@ -182,7 +182,7 @@
           />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" {spanclass}>
+      <SidebarItem label="Kanban" {spanClass}>
         {#snippet iconSlot()}
           <GridSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
@@ -196,7 +196,7 @@
           </span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanclass}>
+      <SidebarItem label="Inbox" {spanClass}>
         {#snippet iconSlot()}
           <MailBoxSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
@@ -255,7 +255,7 @@
         <SidebarItem label="Billing" />
         <SidebarItem label="Invoice" />
       </SidebarDropdownWrapper>
-      <SidebarItem label="Kanban" {spanclass}>
+      <SidebarItem label="Kanban" {spanClass}>
         {#snippet iconSlot()}
           <GridSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
@@ -269,7 +269,7 @@
           </span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanclass}>
+      <SidebarItem label="Inbox" {spanClass}>
         {#snippet iconSlot()}
           <MailBoxSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
@@ -334,7 +334,7 @@
           />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" {spanclass}>
+      <SidebarItem label="Kanban" {spanClass}>
         {#snippet iconSlot()}
           <GridSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
@@ -348,7 +348,7 @@
           </span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanclass}>
+      <SidebarItem label="Inbox" {spanClass}>
         {#snippet iconSlot()}
           <MailBoxSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"

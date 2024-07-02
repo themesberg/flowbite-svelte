@@ -212,7 +212,7 @@
       class="bg-gray-700 px-4 py-6 md:flex md:items-center md:justify-between"
     >
       <FooterCopyright
-        spanclass="text-sm text-gray-300 sm:text-center"
+        spanClass="text-sm text-gray-300 sm:text-center"
         href="/"
         by="Flowbite™"
       />

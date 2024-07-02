@@ -133,6 +133,6 @@
 @prop href = ''
 @prop exact = true
 @prop btnclass
-@prop spanclass
+@prop spanClass
 @prop ...attributes
 -->
