@@ -96,6 +96,7 @@
       <SidebarItem label="Link" href="/typography/link" />
       <SidebarItem label="List" href="/typography/list" />
       <SidebarItem label="Paragraph" href="/typography/paragraph" />
+      <SidebarItem label="Text" href="/typography/text" />
     </SidebarDropdownWrapper>
     <SidebarDropdownWrapper label="Plugins" svgclass="me-4" btnclass="p-1">
       <SidebarItem label="Chart" href="/plugins/chart" />

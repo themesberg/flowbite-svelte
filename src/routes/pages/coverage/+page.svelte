@@ -210,7 +210,7 @@
       // problems: 'Icon HR - icon size,'
 		},
 		image: {
-			checked: false
+			checked: true,
 		},
 		link: {
 			checked: true,
@@ -221,10 +221,13 @@
 		},
 		paragraph: {
 			checked: true,
-      problems: 'Paragraph popover '
+      problems: 'Paragraph popover ',
+			notes: 'Updated: class names'
 		},
 		text: {
-			checked: false
+			checked: true,
+			problems: 'Opacity',
+			notes: 'Updated: class names'
 		}
 	};
 

@@ -6,13 +6,13 @@
   interface Props {
     children: Snippet;
     color?: string | undefined;
-    pclass?: string | undefined;
+    class?: string | undefined;
     height?: 'normal' | 'relaxed' | 'loose';
     align?: 'left' | 'center' | 'right';
     justify?: boolean;
     italic?: boolean;
     firstupper?: boolean;
-    upperclass?: string | undefined;
+    upperClass?: string | undefined;
     opacity?: number | undefined;
     whitespace?: 'normal' | 'nowrap' | 'pre' | 'preline' | 'prewrap';
     size?: PsizeType;
@@ -23,13 +23,13 @@
   let {
     children,
     color = 'text-gray-900 dark:text-white',
-    pclass,
+    class: className,
     height = 'normal',
     align = 'left',
     justify = false,
     italic = false,
     firstupper = false,
-    upperclass = 'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:me-3 first-letter:float-left',
+    upperClass = 'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:me-3 first-letter:float-left',
     opacity,
     whitespace = 'normal',
     size = 'base',
@@ -93,13 +93,13 @@
     prewrap: 'whitespace-pre-wrap'
   };
 
-  let colorAndopacity = color
+  let colorAndopacity = $derived(color
     .split(' ')
     .map((element) => element.trim())
     .map((element) => element + '/' + String(opacity))
-    .join(' ');
+    .join(' '));
 
-  let classP = twMerge(
+  let classP = $derived(twMerge(
     size && sizes[size],
     (opacity && colorAndopacity) || (color && color),
     height && heights[height],
@@ -108,16 +108,14 @@
     align && aligns[align],
     justify && 'text-justify',
     italic && 'italic',
-    firstupper && upperclass,
+    firstupper && upperClass,
     whitespace && whitespaces[whitespace],
-    pclass
-  );
+    className
+  ));
 </script>
 
 <p {...attributes} class={classP}>
- 
-    {@render children()}
-
+  {@render children()}
 </p>
 
 <!--
@@ -132,7 +130,7 @@
 @prop justify = false
 @prop italic = false
 @prop firstupper = false
-@prop upperclass = 'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:me-3 first-letter:float-left'
+@prop upperClass = 'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:me-3 first-letter:float-left'
 @prop opacity
 @prop whitespace = 'normal'
 @prop size = 'base'

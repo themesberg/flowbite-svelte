@@ -364,6 +364,11 @@
           label="Paragraph"
           href="/typography/paragraph"
         />
+        <SidebarItem
+          onclick={closeNavDrawer}
+          label="Text"
+          href="/typography/text"
+        />
       </SidebarDropdownWrapper>
       <SidebarDropdownWrapper isOpen={hasPath('plugins')} label="Plugins" svgclass="me-4" btnclass="p-1">
         <SidebarItem
