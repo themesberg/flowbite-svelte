@@ -16,10 +16,11 @@
     value?: string | number;
     checked?: boolean | undefined;
     spacing?: string;
-    labelclass?: string;
-    inputclass?: string;
+    groupLabelClass?: string;
+    groupInputClass?: string;
     indeterminate?: boolean;
     id?: string;
+    class?: string;
   }
 
   let {
@@ -33,15 +34,16 @@
     value = 'on',
     checked = $bindable(false),
     spacing = 'me-2',
-    labelclass = '',
-    inputclass = '',
+    groupLabelClass = '',
+    groupInputClass = '',
     indeterminate = false,
     id,
+    class: className,
     ...attributes
   }: Props = $props();
 </script>
 
-<Label labelclass={labelCls(inline, labelclass)}>
+<Label class={labelCls(inline, groupLabelClass)}>
   <input
     type="checkbox"
     bind:checked
@@ -50,7 +52,7 @@
     {disabled}
     {indeterminate}
     {...attributes}
-    class={twMerge(spacing, inputCls(custom, color, true, false, inputclass))}
+    class={twMerge(spacing, inputCls(custom, color, true, false, groupInputClass), className)}
   />
   {#if children}
     {@render children()}

@@ -233,9 +233,9 @@
       "types": "./dist/forms/Checkbox.svelte.d.ts",
       "svelte": "./dist/forms/Checkbox.svelte"
     },
-    "./FloatingLabel.svelte": {
-      "types": "./dist/forms/FloatingLabel.svelte.d.ts",
-      "svelte": "./dist/forms/FloatingLabel.svelte"
+    "./FloatingLabelInput.svelte": {
+      "types": "./dist/forms/FloatingLabelInput.svelte.d.ts",
+      "svelte": "./dist/forms/FloatingLabelInput.svelte"
     },
     "./Helper.svelte": {
       "types": "./dist/forms/Helper.svelte.d.ts",

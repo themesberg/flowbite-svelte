@@ -48,7 +48,7 @@ export { default as FooterLi } from './footer/FooterLi.svelte';
 export { default as FooterUl } from './footer/FooterUl.svelte';
 // forms
 export { default as Checkbox } from './forms/Checkbox.svelte';
-export { default as FloatingLabel } from './forms/FloatingLabel.svelte';
+export { default as FloatingLabelInput } from './forms/FloatingLabelInput.svelte';
 export { default as Helper } from './forms/Helper.svelte';
 export { default as Label } from './forms/Label.svelte';
 export { default as Select } from './forms/Select.svelte';

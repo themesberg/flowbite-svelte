@@ -81,7 +81,7 @@
   );
 </script>
 
-<Label labelclass={labelCls(inline, labelclass)}>
+<Label class={labelCls(inline, labelclass)}>
 <input
     type="checkbox"
     bind:checked

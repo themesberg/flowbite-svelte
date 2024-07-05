@@ -52,8 +52,8 @@
     </TableBody>
   </Table>
   
-  <Label color="red" labelclass="mt-4 flex items-center font-bold italic">
-    Label on the other side <Checkbox labelclass="ms-2" />
+  <Label color="red" class="mt-4 flex items-center font-bold italic">
+    Label on the other side <Checkbox class="ms-2" />
   </Label>
 </CodeWrapper>
 
@@ -76,7 +76,7 @@
   <Checkbox aria_describedby="helper-checkbox-text"
     >Free shipping via Flowbite</Checkbox
   >
-  <Helper id="helper-checkbox-text" pclass="ps-6"
+  <Helper id="helper-checkbox-text" class="ps-6"
     >For orders shipped from $25 in books or $29 in other categories</Helper
   >
 </CodeWrapper>
@@ -85,10 +85,10 @@
 <H2>Bordered</H2>
 <CodeWrapper>
   <div class="rounded border border-gray-200 dark:border-gray-700">
-    <Checkbox labelclass="w-full p-4">Default radio</Checkbox>
+    <Checkbox class="w-full p-4">Default radio</Checkbox>
   </div>
   <div class="rounded border border-gray-200 dark:border-gray-700">
-    <Checkbox checked labelclass="w-full p-4">Checked state</Checkbox>
+    <Checkbox checked class="w-full p-4">Checked state</Checkbox>
   </div>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/bordered.md'] as string} />
@@ -99,10 +99,10 @@
   <ul
     class="w-48 divide-y divide-gray-200 rounded-lg border border-gray-200 bg-white dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800"
   >
-    <li><Checkbox checked labelclass="p-3">svelte</Checkbox></li>
-    <li><Checkbox labelclass="p-3">Vue JS</Checkbox></li>
-    <li><Checkbox labelclass="p-3">React</Checkbox></li>
-    <li><Checkbox labelclass="p-3">Angular</Checkbox></li>
+    <li><Checkbox checked class="p-3">svelte</Checkbox></li>
+    <li><Checkbox class="p-3">Vue JS</Checkbox></li>
+    <li><Checkbox class="p-3">React</Checkbox></li>
+    <li><Checkbox class="p-3">Angular</Checkbox></li>
   </ul>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/checkbox-list-group.md'] as string} />
@@ -113,10 +113,10 @@
   <ul
     class="w-full items-center divide-x divide-gray-200 rounded-lg border border-gray-200 dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800 sm:flex rtl:divide-x-reverse"
   >
-    <li class="w-full"><Checkbox checked labelclass="p-3">Svelte</Checkbox></li>
-    <li class="w-full"><Checkbox labelclass="p-3">Vue JS</Checkbox></li>
-    <li class="w-full"><Checkbox labelclass="p-3">React</Checkbox></li>
-    <li class="w-full"><Checkbox labelclass="p-3">Angular</Checkbox></li>
+    <li class="w-full"><Checkbox checked class="p-3">Svelte</Checkbox></li>
+    <li class="w-full"><Checkbox class="p-3">Vue JS</Checkbox></li>
+    <li class="w-full"><Checkbox class="p-3">React</Checkbox></li>
+    <li class="w-full"><Checkbox class="p-3">Angular</Checkbox></li>
   </ul>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/horizontal-list-group.md'] as string} />

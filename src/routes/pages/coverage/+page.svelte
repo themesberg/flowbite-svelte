@@ -161,14 +161,16 @@
 	const forms: ListType = {
 		checkbox: {
 			checked: true,
-      problems: 'Checkbox dropdown, Colors, CheckboxButton, Advanced layout, Group variable'
+      problems: 'Checkbox dropdown, Colors, CheckboxButton, Advanced layout, Group variable',
+			notes: 'Updated: class names'
 		},
 		fileInput: {
 			checked: false
 		},
 		floatingLabel: {
 			checked: true,
-      problems: 'Disabled state - disabled outlined, Validation -  Outlined, Sized - outlined'
+      problems: 'Disabled state - disabled outlined, Validation -  Outlined, Sized - outlined',
+			notes: 'Updated: class names'
 		},
 		inputField: {
 			checked: false,
@@ -236,6 +238,13 @@
 			notes: 'Updated: class names'
 		}
 	};
+
+	const othercomponents: ListType = {
+		helper: {
+			checked: true,
+			notes: 'Updated: class names'
+		}
+	}
 
 	function analyzeComponents(components: ListType) {
 		let total = 0;
