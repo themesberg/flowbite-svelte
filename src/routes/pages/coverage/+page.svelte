@@ -299,29 +299,29 @@
 <H2>Components</H2>
 <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
 	<Li># of pages: {componentsAnalysis.total}</Li>
-	<Li># of pages checked: {componentsAnalysis.pageChecked}</Li>
-	<Li># of pages unchecked: {componentsAnalysis.pageUnchecked}</Li>
+	<Li># of components/pages checked: {componentsAnalysis.pageChecked}</Li>
+	<Li># of components/pages to be completed: {componentsAnalysis.pageUnchecked}</Li>
 	<Li liClass='text-green-500'># of pages without problems: {componentsAnalysis.pageWithoutProblems}</Li>
-	<Li liClass='text-red-500'># of examples to complete: {componentsAnalysis.exampleProblems}</Li>
+	<Li liClass='text-red-500'># of examples to be completed: {componentsAnalysis.exampleProblems}</Li>
 </List>
 	
 
 <H2>Forms</H2>
 <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
 	<Li># of pages: {formsAnalysis.total}</Li>
-	<Li># of pages checked: {formsAnalysis.pageChecked}</Li>
-	<Li># of pages unchecked: {formsAnalysis.pageUnchecked}</Li>
+	<Li># of components/pages checked: {formsAnalysis.pageChecked}</Li>
+	<Li># of components/pages to be completed: {formsAnalysis.pageUnchecked}</Li>
 	<Li liClass='text-green-500'># of pages without problems: {formsAnalysis.pageWithoutProblems}</Li>
-	<Li liClass='text-red-500'># of examples to complete: {formsAnalysis.exampleProblems}</Li>
+	<Li liClass='text-red-500'># of examples to be completed: {formsAnalysis.exampleProblems}</Li>
 </List>
 
 <H2>Typography</H2>
 <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
 	<Li># of pages: {typographyAnalysis.total}</Li>
-	<Li># of pages checked: {typographyAnalysis.pageChecked}</Li>
-	<Li># of pages unchecked: {typographyAnalysis.pageUnchecked}</Li>
+	<Li># of components/pages checked: {typographyAnalysis.pageChecked}</Li>
+	<Li># of components/pages to be completed: {typographyAnalysis.pageUnchecked}</Li>
 	<Li liClass='text-green-500'># of pages without problems: {typographyAnalysis.pageWithoutProblems}</Li>
-	<Li liClass='text-red-500'># of examples to complete: {typographyAnalysis.exampleProblems}</Li>
+	<Li liClass='text-red-500'># of examples to be completed: {typographyAnalysis.exampleProblems}</Li>
 </List>
 
 <Heading
