@@ -80,7 +80,7 @@
 <HighlightCompo code={modules['./md/footer-with-logo.md'] as string} />
 
 <H2>Social media icons</H2>
-<CodeWrapper>
+<CodeWrapper class='p-2'>
   <Footer footerType="socialmedia">
     <div class="md:flex md:justify-between">
       <div class="mb-6 md:mb-0">

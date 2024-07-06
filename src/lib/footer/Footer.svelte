@@ -26,9 +26,7 @@
 </script>
 
 <footer {...attributes} class={footerCls}>
-
     {@render children()}
-
 </footer>
 
 <!--

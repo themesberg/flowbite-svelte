@@ -248,19 +248,20 @@
 
 	function analyzeComponents(components: ListType) {
 		let total = 0;
-		let checked = 0;
-		let unchecked = 0;
-		let withProblems = 0;
-		let withoutProblems = 0;
-		let pageProblems = 0;
+		let pageChecked = 0;
+		let pageUnchecked = 0;
+		let pageWithProblems = 0;
+		let pageWithoutProblems = 0;
+		let exampleProblems = 0;
 
 		for (const component in components) {
 			total++;
-			checked += components[component].checked ? 1 : 0;
-			unchecked += !components[component].checked ? 1 : 0;
-			withProblems += components[component].problems ? 1 : 0;
-			pageProblems += components[component].problems ? 1 : 0;
+			pageChecked += components[component].checked ? 1 : 0;
+			pageUnchecked += !components[component].checked ? 1 : 0;
+			pageWithProblems += components[component].problems ? 1 : 0;
+			// exampleProblems += components[component].problems ? 1 : 0;
 
+			// count the number of example problems
 			let numberOfProblemsForComponent = 0;
 			if (components[component].problems) {
 				// Split the problems string by commas (ignoring whitespaces)
@@ -269,17 +270,17 @@
 				numberOfProblemsForComponent = problemsArray.length;
 			}
 			// Add the number of problems for this component to the total count
-			withProblems += numberOfProblemsForComponent;
+			exampleProblems += numberOfProblemsForComponent;
 		}
-		withoutProblems = checked - withProblems; 
+		pageWithoutProblems = pageChecked - pageWithProblems; 
 
 		return {
 			total,
-			checked,
-			unchecked,
-			withProblems,
-			withoutProblems,
-			pageProblems,
+			pageChecked,
+			pageUnchecked,
+			pageWithProblems,
+			pageWithoutProblems,
+			exampleProblems,
 		};
 	}
 
@@ -297,33 +298,30 @@
 
 <H2>Components</H2>
 <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
-	<Li># of pages - {componentsAnalysis.total}</Li>
-	<Li># of pages checked - {componentsAnalysis.checked}</Li>
-	<Li># of pages unchecked - {componentsAnalysis.unchecked}</Li>
-	<Li liClass='text-green-500'># of pages without problems - {componentsAnalysis.withoutProblems}</Li>
-	<Li liClass='text-red-500'># of pages with problems - {componentsAnalysis.pageProblems}</Li>
-	<Li liClass='text-red-500'># of problems - {componentsAnalysis.withProblems}</Li>
+	<Li># of pages: {componentsAnalysis.total}</Li>
+	<Li># of pages checked: {componentsAnalysis.pageChecked}</Li>
+	<Li># of pages unchecked: {componentsAnalysis.pageUnchecked}</Li>
+	<Li liClass='text-green-500'># of pages without problems: {componentsAnalysis.pageWithoutProblems}</Li>
+	<Li liClass='text-red-500'># of examples to complete: {componentsAnalysis.exampleProblems}</Li>
 </List>
 	
 
 <H2>Forms</H2>
 <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
-	<Li># of pages - {formsAnalysis.total}</Li>
-	<Li># of pages checked - {formsAnalysis.checked}</Li>
-	<Li># of pages unchecked - {formsAnalysis.unchecked}</Li>
-	<Li liClass='text-green-500'># of pages without problems - {formsAnalysis.withoutProblems}</Li>
-	<Li liClass='text-red-500'># of pages with problems - {formsAnalysis.pageProblems}</Li>
-	<Li liClass='text-red-500'># of problems - {formsAnalysis.withProblems}</Li>
+	<Li># of pages: {formsAnalysis.total}</Li>
+	<Li># of pages checked: {formsAnalysis.pageChecked}</Li>
+	<Li># of pages unchecked: {formsAnalysis.pageUnchecked}</Li>
+	<Li liClass='text-green-500'># of pages without problems: {formsAnalysis.pageWithoutProblems}</Li>
+	<Li liClass='text-red-500'># of examples to complete: {formsAnalysis.exampleProblems}</Li>
 </List>
 
 <H2>Typography</H2>
 <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
-	<Li># of pages - {typographyAnalysis.total}</Li>
-	<Li># of pages checked - {typographyAnalysis.checked}</Li>
-	<Li># of pages unchecked - {typographyAnalysis.unchecked}</Li>
-	<Li liClass='text-green-500'># of pages without problems - {typographyAnalysis.withoutProblems}</Li>
-	<Li liClass='text-red-500'># of pages with problems - {typographyAnalysis.pageProblems}</Li>
-	<Li liClass='text-red-500'># of problems - {typographyAnalysis.withProblems}</Li>
+	<Li># of pages: {typographyAnalysis.total}</Li>
+	<Li># of pages checked: {typographyAnalysis.pageChecked}</Li>
+	<Li># of pages unchecked: {typographyAnalysis.pageUnchecked}</Li>
+	<Li liClass='text-green-500'># of pages without problems: {typographyAnalysis.pageWithoutProblems}</Li>
+	<Li liClass='text-red-500'># of examples to complete: {typographyAnalysis.exampleProblems}</Li>
 </List>
 
 <Heading

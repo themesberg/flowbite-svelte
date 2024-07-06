@@ -6,9 +6,9 @@
 
   interface Props {
     children: Snippet;
-    ulclass?: string | undefined;
+    class?: string | undefined;
   }
-  let { children, ulclass, ...attributes }: Props = $props();
+  let { children, class:ulclass, ...attributes }: Props = $props();
 
   let breakPoint: navbarType['breakPoint'];
   const context = getContext<navbarType>('navbarContext');
@@ -29,9 +29,7 @@
 </script>
 
 <ul class={ulCls} {...attributes}>
-
-    {@render children()}
-
+  {@render children()}
 </ul>
 
 <!--
