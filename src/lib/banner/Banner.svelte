@@ -1,17 +1,23 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
   import CloseButton from '../utils/CloseButton.svelte';
-  import { createEventDispatcher } from 'svelte';
+  // import { createEventDispatcher } from 'svelte';
+  import { fade, type TransitionConfig } from 'svelte/transition';
+
+  type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 
   export let position: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky' = 'sticky';
   export let dismissable: boolean = true;
   export let bannerType: 'default' | 'bottom' | 'cta' | 'signup' | 'info' = 'default';
   export let divClass: string = 'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600';
   export let innerClass: string = 'flex';
+  export let bannerStatus: boolean = true;
+  export let transition: TransitionFunc = fade;
+  export let params = {};
 
-  let open = true;
-  const dispatch = createEventDispatcher();
-  $: dispatch(open ? 'open' : 'close');
+  // let open = true;
+  // const dispatch = createEventDispatcher();
+  // $: dispatch(open ? 'open' : 'close');
 
   const divClasses = {
     default: 'top-0 start-0 w-full border-b border-gray-200 bg-gray-50',
@@ -34,12 +40,13 @@
 
   function close(e: MouseEvent) {
     e.preventDefault();
-    open = false;
+    bannerStatus = false;
   }
 </script>
 
-{#if open}
-  <div tabindex="-1" class={divClass} {...$$restProps}>
+{#if bannerStatus}
+  <div tabindex="-1" class={divClass} {...$$restProps}
+  transition:transition={params}>
     <slot name="header" />
     <div class={div2Class}>
       <slot />
