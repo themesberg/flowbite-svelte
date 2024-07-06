@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.46.14
+
+### Patch Changes
+
+- fix: Banner transition ([`5f0e807469d079e790fbeb188b777a4bb5b7a009`](https://github.com/themesberg/flowbite-svelte/commit/5f0e807469d079e790fbeb188b777a4bb5b7a009))
+
 ## 0.46.13
 
 ### Patch Changes

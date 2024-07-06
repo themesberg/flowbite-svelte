@@ -68,4 +68,7 @@
 @prop export let bannerType: 'default' | 'bottom' | 'cta' | 'signup' | 'info' = 'default';
 @prop export let divClass: string = 'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600';
 @prop export let innerClass: string = 'flex';
+@prop export let bannerStatus: boolean = true;
+@prop export let transition: TransitionFunc = fade;
+@prop export let params = {};
 -->

@@ -74,4 +74,5 @@
 @prop export let activeClass: string | undefined = undefined;
 @prop export let href: string = '';
 @prop export let exact: boolean = true;
+@prop export let spanClass: string = '';
 -->
