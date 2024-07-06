@@ -70,8 +70,8 @@
 
 <H2>Default bottom navigation</H2>
 <CodeWrapper class="relative flex flex-col">
-  <Skeleton divClass="py-4" />
-  <ImagePlaceholder divClass="pb-20" />
+  <Skeleton class="py-4" />
+  <ImagePlaceholder class="pb-20" />
 
   <BottomNav position="absolute" innerClass="grid-cols-4">
     <BottomNavItem btnName="Home">
@@ -103,8 +103,8 @@
 
 <H2>Links, target and active class</H2>
 <CodeWrapper class="relative flex flex-col">
-  <Skeleton divClass="py-4" />
-  <ImagePlaceholder divClass="pb-20" />
+  <Skeleton class="py-4" />
+  <ImagePlaceholder class="pb-20" />
 
   <BottomNav position="absolute" innerClass="grid-cols-4">
     <BottomNavItem btnName="Home" href="/">
@@ -128,8 +128,8 @@
 
 <H2>Overwriting activeClass</H2>
 <CodeWrapper class="relative flex flex-col">
-  <Skeleton divClass="py-4" />
-  <ImagePlaceholder divClass="pb-20" />
+  <Skeleton class="py-4" />
+  <ImagePlaceholder class="pb-20" />
 
   <BottomNav
     position="absolute"
@@ -157,8 +157,8 @@
 
 <H2>Icon color</H2>
 <CodeWrapper class="relative flex flex-col">
-  <Skeleton divClass="py-4" />
-  <ImagePlaceholder divClass="pb-20" />
+  <Skeleton class="py-4" />
+  <ImagePlaceholder class="pb-20" />
 
   <BottomNav position="absolute" innerClass="grid-cols-4">
     <BottomNavItem btnName="Home" href="/">
@@ -194,8 +194,8 @@
 
 <H2>Menu items with border</H2>
 <CodeWrapper class="relative flex flex-col">
-  <Skeleton divClass="py-4" />
-  <ImagePlaceholder divClass="pb-20" />
+  <Skeleton class="py-4" />
+  <ImagePlaceholder class="pb-20" />
 
   <BottomNav position="absolute" navType="border" innerClass="grid-cols-4">
     <BottomNavItem btnName="Home">

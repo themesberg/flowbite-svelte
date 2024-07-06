@@ -1,11 +1,15 @@
 <script lang="ts">
+  import { slide } from 'svelte/transition';
+  import { quintOut } from 'svelte/easing';
   import { Banner, Skeleton, ImagePlaceholder } from '$lib';
   import {
     BullhornOutline,
     SalePercentSolid,
     ArrowRightOutline,
-    BookOpenSolid
+    BookOpenSolid, BullhornSolid
   } from 'flowbite-svelte-icons';
+
+  const params = { delay: 250, duration: 500, easing: quintOut }
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -27,8 +31,8 @@
 <H2>Default sticky banner</H2>
 
 <CodeWrapper class="relative">
-  <Skeleton divClass ="py-4" />
-  <ImagePlaceholder divClass ="py-4" />
+  <Skeleton class="py-4" />
+  <ImagePlaceholder class ="py-4" />
 
   <Banner id="default-banner" position="absolute">
     <p
@@ -57,8 +61,8 @@
 <H2>Bottom banner position</H2>
 
 <CodeWrapper class="relative">
-  <Skeleton divClass ="py-4" />
-  <ImagePlaceholder divClass ="py-4" />
+  <Skeleton class="py-4" />
+  <ImagePlaceholder class ="py-4" />
 
   <Banner id="bottom-banner" position="absolute" bannerType="bottom">
     <p
@@ -87,8 +91,8 @@
 <H2>Marketing CTA banner</H2>
 
 <CodeWrapper class="relative">
-  <Skeleton divClass ="py-4" />
-  <ImagePlaceholder divClass ="py-4" />
+  <Skeleton class="py-4" />
+  <ImagePlaceholder class ="py-4" />
 
   <Banner id="cta-banner" position="absolute" bannerType="cta">
     <a
@@ -118,8 +122,8 @@
 <H2>Newsletter sign-up banner</H2>
 
 <CodeWrapper class="relative">
-  <Skeleton divClass ="py-4" />
-  <ImagePlaceholder divClass ="py-4" />
+  <Skeleton class="py-4" />
+  <ImagePlaceholder class ="py-4" />
 
   <Banner id="signup-banner" position="absolute" bannerType="signup">
     <form action="/" class="flex w-full flex-col items-center md:flex-row">
@@ -151,8 +155,8 @@
 <H2>Informational banner</H2>
 
 <CodeWrapper class="relative">
-  <Skeleton divClass ="py-4" />
-  <ImagePlaceholder divClass ="py-4" />
+  <Skeleton class="py-4" />
+  <ImagePlaceholder class ="py-4" />
   <Banner id="info-banner" position="absolute" bannerType="info">
     {#snippet header()}
       <div class="mb-4 md:mb-0 md:me-4">
@@ -183,3 +187,24 @@
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/informational.md'] as string} />
+
+<H2>Transition</H2>
+
+<p>The `transition` and `params` props allow you to apply transition effects to components when they enter or leave the view.  Svelte provides built-in transitions like `fly`, `slide`, `blur`, `fade`, and `scale`.</p>
+
+<CodeWrapper class="flex flex-col relative">
+<Skeleton class="py-4" />
+<ImagePlaceholder class="py-4" />
+
+<Banner id="default-banner" position="absolute" transition={slide} {params}>
+  <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
+    <span class="inline-flex p-1 me-3 bg-gray-200 rounded-full dark:bg-gray-600">
+      <BullhornSolid class="w-3 h-3 text-gray-500 dark:text-gray-400" />
+      <span class="sr-only">Light bulb</span>
+    </span>
+    <span>
+      New brand identity has been launched for the <a href="https://flowbite.com" class="inline font-medium text-primary-600 underline dark:text-primary-500 underline-offset-2 decoration-600 dark:decoration-500 decoration-solid hover:no-underline"> Flowbite Library </a>
+    </span>
+  </p>
+</Banner>
+</CodeWrapper>

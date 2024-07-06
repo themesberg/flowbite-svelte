@@ -1,9 +1,9 @@
 <script lang="ts">
   interface Props {
-    divClass ?: string | undefined;
+    class ?: string | undefined;
   }
   import { twMerge } from 'tailwind-merge';
-  let { divClass  }: Props = $props();
+  let { class: divClass  }: Props = $props();
   let divCls: string = twMerge('animate-pulse', divClass );
 </script>
 

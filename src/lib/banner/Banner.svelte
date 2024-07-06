@@ -3,6 +3,9 @@
   import { twMerge } from 'tailwind-merge';
   import { CloseButton } from '$lib';
   import type { ColorVariant } from '../types';
+  import { fade, type TransitionConfig } from 'svelte/transition';
+
+  type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 
   interface Props {
     children: Snippet;
@@ -14,6 +17,8 @@
     bannerType?: 'default' | 'bottom' | 'cta' | 'signup' | 'info';
     divClass?: string | undefined;
     innerClass?: string | undefined;
+    transition?: TransitionFunc;
+    params?: any;
   }
 
   let {
@@ -26,8 +31,11 @@
     bannerType = 'default',
     divClass,
     innerClass,
+    transition = fade,
+    params = {},
     ...attributes
   }: Props = $props();
+
   let bannerStatus = $state(true);
   $inspect('bannerStatus: ', bannerStatus);
   const divClasses = {
@@ -59,7 +67,7 @@
 </script>
 
 {#if bannerStatus}
-  <div tabindex="-1" class={divCls} {...attributes} {id}>
+  <div tabindex="-1" class={divCls} {...attributes} {id} transition:transition={params}>
     {#if header}
       {@render header()}
     {/if}

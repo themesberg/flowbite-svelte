@@ -1,9 +1,9 @@
 <script lang="ts">
   interface Props {
-    divClass ?: string | undefined;
+    class ?: string | undefined;
   }
   import { twMerge } from 'tailwind-merge';
-  let { divClass  }: Props = $props();
+  let { class:divClass  }: Props = $props();
   let divCls: string = twMerge(
     'p-4 max-w-sm rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700',
     divClass 

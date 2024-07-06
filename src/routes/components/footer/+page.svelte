@@ -251,9 +251,9 @@
 <CodeWrapper class="h-96">
   <div class="relative">
     <div style="height:300px;" class="overflow-scroll pb-16">
-      <Skeleton divClass="my-8" />
-      <ImagePlaceholder divClass="my-8" />
-      <TextPlaceholder divClass="my-8" />
+      <Skeleton class="my-8" />
+      <ImagePlaceholder class="my-8" />
+      <TextPlaceholder class="my-8" />
     </div>
     <Footer class="absolute bottom-0 start-0 z-20 w-full">
       <FooterCopyright href="/" by="Flowbite™" />
