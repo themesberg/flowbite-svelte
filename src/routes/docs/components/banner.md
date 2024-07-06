@@ -159,7 +159,7 @@ This example demonstrates a sliding transition using the slide transition from s
 ```svelte example class="flex flex-col relative"
 <script>
   import { slide } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
+  import { quintOut } from 'svelte/easing';
   import { Banner, Skeleton, ImagePlaceholder } from 'flowbite-svelte';
   import { BullhornSolid } from 'flowbite-svelte-icons';
   
