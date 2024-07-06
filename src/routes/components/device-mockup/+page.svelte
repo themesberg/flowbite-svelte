@@ -17,7 +17,7 @@
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default mockup</H2>
-<CodeWrapper>
+<CodeWrapper class='overflow-x-scroll'>
   <DeviceMockup>
     <img
       src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-1-light.png"
@@ -34,7 +34,7 @@
 <HighlightCompo code={modules['./md/default-mockup.md'] as string} />
 
 <H2>iPhone 12 mockup (iOS)</H2>
-<CodeWrapper>
+<CodeWrapper class='overflow-x-scroll'>
   <DeviceMockup device="ios">
     <img
       src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-2-light.png"
@@ -51,7 +51,7 @@
 <HighlightCompo code={modules['./md/iphone-12-mockup.md'] as string} />
 
 <H2>Google Pixel mockup (Android)</H2>
-<CodeWrapper>
+<CodeWrapper class='overflow-x-scroll'>
   <DeviceMockup device="android">
     <img
       src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-1-light.png"
@@ -68,7 +68,7 @@
 <HighlightCompo code={modules['./md/google-pixel-mockup.md'] as string} />
 
 <H2>Tablet mockup</H2>
-<CodeWrapper>
+<CodeWrapper class='overflow-x-scroll'>
   <DeviceMockup device="tablet">
     <img
       src="https://flowbite.s3.amazonaws.com/docs/device-mockups/tablet-mockup-image.png"
@@ -85,7 +85,7 @@
 <HighlightCompo code={modules['./md/tablet-mockup.md'] as string} />
 
 <H2>Laptop mockup</H2>
-<CodeWrapper>
+<CodeWrapper class='overflow-x-scroll'>
   <DeviceMockup device="laptop">
     <img
       src="https://flowbite.s3.amazonaws.com/docs/device-mockups/laptop-screen.png"
@@ -102,7 +102,7 @@
 <HighlightCompo code={modules['./md/laptop-mockup.md'] as string} />
 
 <H2>Desktop mockup</H2>
-<CodeWrapper>
+<CodeWrapper class='overflow-x-scroll'>
   <DeviceMockup device="desktop">
     <img
       src="https://flowbite.s3.amazonaws.com/docs/device-mockups/screen-image-imac.png"
@@ -119,7 +119,7 @@
 <HighlightCompo code={modules['./md/desktop-mockup.md'] as string} />
 
 <H2>Smartwatch mockup</H2>
-<CodeWrapper>
+<CodeWrapper class='overflow-x-scroll'>
   <DeviceMockup device="smartwatch">
     <img
       src="https://flowbite.s3.amazonaws.com/docs/device-mockups/watch-screen-image.png"
