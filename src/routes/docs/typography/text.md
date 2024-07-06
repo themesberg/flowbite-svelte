@@ -88,7 +88,7 @@ Use the `color` prop to set the color of the inline text.
 
 Increase or decrease the spacing between letters using the `space` prop.
 
-```svelte example class="flex flex-wrap items-center space-x-4 rtl:space-x-reverse" hideScript
+```svelte example class="flex flex-wrap items-center rtl:space-x-reverse" hideScript
 <script>
   import { P } from 'flowbite-svelte';
 </script>

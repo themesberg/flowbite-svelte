@@ -95,7 +95,7 @@ Use this example to set a hyperlink on a CTA element with text and a custom icon
   import Figma from '../../utils/icons/Figma.svelte';
 </script>
 
-<A href="/" aClass="text-gray-500 dark:text-gray-400 dark:hover:text-white inline-flex justify-center items-center p-5 text-base font-medium bg-gray-50 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
+<A href="/" aClass="dark:hover:text-white inline-flex justify-center items-center p-5 text-base font-medium bg-gray-50 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 hover:no-underline">
   <Figma />
   <span class="w-full ms-3">Get started with our Figma Design System</span>
   <ArrowRightOutline class="w-6 h-6 ms-2" />
