@@ -38,7 +38,7 @@
 
 <H2>Legend indicator</H2>
 
-<CodeWrapper class="flex justify-center gap-4">
+<CodeWrapper class="flex flex-wrap justify-start md:justify-center gap-4 ">
   <span class="flex items-center"
     ><Indicator size="sm" color="orange" class="me-1.5" />Visitors</span
   >

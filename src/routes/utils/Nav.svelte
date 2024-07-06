@@ -47,7 +47,7 @@
 <header
   class="sticky top-0 z-50 mx-auto w-full flex-none border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-950 lg:pl-4"
 >
-  <Navbar {toggleNav} {closeNav} {navStatus} fluid div2class="ml-auto w-full">
+  <Navbar {toggleNav} {closeNav} {navStatus} fluid  div2class="ml-auto w-full">
     {#snippet brand()}
       <button
         onclick={navDrawer.toggle}
@@ -77,7 +77,7 @@
       </NavBrand>
 
       <div class="ml-auto flex items-center md:order-1">
-        <a href="https://ko-fi.com/Z8Z2CHALG" target="_blank"
+        <a class='hidden md:block' href="https://ko-fi.com/Z8Z2CHALG" target="_blank"
           ><img
             height="36"
             style="border:0px;height:36px;"
@@ -237,8 +237,8 @@
         />
         <SidebarItem
           onclick={closeNavDrawer}
-          label="Indicator"
-          href="/components/indicator"
+          label="Indicators"
+          href="/components/indicators"
         />
         <SidebarItem
           onclick={closeNavDrawer}

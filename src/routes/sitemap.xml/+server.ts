@@ -89,7 +89,7 @@ const pages: Page[] = [
 		priority: '0.5',
 	},
 	{
-		loc: 'components/indicator',
+		loc: 'components/indicators',
 		changefreq: 'weekly',
 		priority: '0.5',
 	},

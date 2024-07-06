@@ -57,7 +57,7 @@
       <SidebarItem label="Dropdown" href="/components/dropdown" />
       <SidebarItem label="Footer" href="/components/footer" />
       <SidebarItem label="Gallery" href="/components/gallery" />
-      <SidebarItem label="Indicator" href="/components/indicator" />
+      <SidebarItem label="Indicators" href="/components/indicators" />
       <SidebarItem label="Kbd" href="/components/kbd" />
       <SidebarItem label="List group" href="/components/list-group" />
       <SidebarItem label="Navbar" href="/components/navbar" />
