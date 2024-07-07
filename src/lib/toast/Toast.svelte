@@ -1,5 +1,6 @@
 <script lang="ts">
   // import type { Snippet } from 'svelte';
+  import {createEventDispatcher} from 'svelte';
   import { fade, type TransitionConfig } from 'svelte/transition';
   import { twMerge } from 'tailwind-merge';
   import { CloseButton } from '$lib';
@@ -20,6 +21,7 @@
   export let params = {};
 
   export let toastStatus: boolean = true;
+  const dispatch = createEventDispatcher();
 
   // const divCls: string =
   //   'w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800 gap-3';
@@ -94,6 +96,7 @@
         {color}
         on:click={() => {
           toastStatus = false;
+          dispatch('close');
         }}
       />
     {/if}

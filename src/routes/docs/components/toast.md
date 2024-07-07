@@ -345,6 +345,19 @@ Use the position property to position these toast components relative to the mai
   <Toast dismissable={false} position="bottom-right">Bottom right positioning.</Toast>
 </div>
 ```
+## Events
+
+You can use on:close to execute custom logic when the toast is closed. 
+
+```svelte example hideScript
+<script>
+  import { Toast } from 'flowbite-svelte';
+</script>
+
+<div class="relative h-56">
+  <Toast on:close={() => alert('Toast closed')}>Click the close button to see the event.</Toast>
+</div>
+```
 
 ## Component data
 
