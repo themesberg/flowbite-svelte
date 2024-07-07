@@ -294,9 +294,9 @@ Accordions can be nested. All of the mentioned options are supported.
 </Accordion>
 ```
 
-## Changing Header tag
+## Customizing the Header tag
 
-The default tag for the header is `h2`. Use the `tag` props to change the header `tag`.
+The default HTML element used for the header is an `h2` tag. You can customize this by providing a `tag` prop to `AccordionItem` component.
 
 ```svelte example
 <script>
