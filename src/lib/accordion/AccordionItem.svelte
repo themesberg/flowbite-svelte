@@ -6,6 +6,7 @@
   import type { TransitionTypes, TransitionParamTypes } from '../types';
   import type { AccordionCtxType } from './Accordion.svelte';
 
+  export let tag: string = 'h2';
   export let open: boolean = false;
   export let activeClass: string | undefined = undefined;
   export let inactiveClass: string | undefined = undefined;
@@ -65,7 +66,7 @@
   $: contentClass = twMerge([ctx.flush ? paddingFlush : paddingDefault, ctx.flush ? '' : borderOpenClass, borderBottomClass, borderSharedClass]);
 </script>
 
-<h2 class="group">
+<svelte:element this={tag} class="group">
   <button on:click={handleToggle} type="button" class={buttonClass} aria-expanded={open}>
     <slot name="header" />
     {#if open}
@@ -82,7 +83,7 @@
       </slot>
     {/if}
   </button>
-</h2>
+</svelte:element>
 {#if open}
   <div transition:multiple={transitionParams}>
     <div class={contentClass}>
