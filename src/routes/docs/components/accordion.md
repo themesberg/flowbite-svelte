@@ -251,7 +251,7 @@ The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#r
 </Accordion>
 ```
 
-## Nesting accordians
+## Nesting accordions
 
 Accordions can be nested. All of the mentioned options are supported.
 
