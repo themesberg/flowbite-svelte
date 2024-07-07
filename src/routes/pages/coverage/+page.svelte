@@ -17,7 +17,8 @@
 	}
 	const components: ListType = {
 		accordion: {
-			checked: false,
+			checked: true,
+			problems: 'Always open, Multiple mode, Custom transitions, Nesting accordions'
 		},
 		alert: {
 			checked: true,

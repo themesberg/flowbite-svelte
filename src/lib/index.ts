@@ -1,6 +1,10 @@
 // import './style.css';
 
 export { uiHelpers, clickOutside } from './uiHelpers.svelte';
+
+// accordion
+export { default as Accordion } from './accordion/Accordion.svelte';
+export { default as AccordionItem } from './accordion/AccordionItem.svelte';
 // alert
 export { default as Alert } from './alert/Alert.svelte';
 // avatar
