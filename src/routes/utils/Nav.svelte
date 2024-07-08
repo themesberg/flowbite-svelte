@@ -351,6 +351,11 @@
         />
         <SidebarItem
           onclick={closeNavDrawer}
+          label="Image"
+          href="/typography/image"
+        />
+        <SidebarItem
+          onclick={closeNavDrawer}
           label="Link"
           href="/typography/link"
         />

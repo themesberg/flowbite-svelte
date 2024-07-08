@@ -93,6 +93,7 @@
       <SidebarItem label="Blockquote" href="/typography/blockquote" />
       <SidebarItem label="Heading/Span/Mark" href="/typography/heading" />
       <SidebarItem label="HR" href="/typography/hr" />
+      <SidebarItem label="Image" href="/typography/image" />
       <SidebarItem label="Link" href="/typography/link" />
       <SidebarItem label="List" href="/typography/list" />
       <SidebarItem label="Paragraph" href="/typography/paragraph" />

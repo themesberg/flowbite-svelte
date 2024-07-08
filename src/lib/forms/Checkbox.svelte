@@ -21,6 +21,7 @@
     indeterminate?: boolean;
     id?: string;
     class?: string;
+    required?: boolean;
   }
 
   let {
@@ -39,6 +40,7 @@
     indeterminate = false,
     id,
     class: className,
+    required = false,
     ...attributes
   }: Props = $props();
 </script>
@@ -48,6 +50,7 @@
     type="checkbox"
     bind:checked
     {value}
+    {required}
     aria-describedby={aria_describedby}
     {disabled}
     {indeterminate}
@@ -59,23 +62,3 @@
   {/if}
 </Label>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@prop children
-@prop disabled
-@prop aria_describedby
-@prop color = 'primary'
-@prop custom = false
-@prop inline = false
-@prop group = []
-@prop value = 'on'
-@prop checked = $bindable(false)
-@prop spacing = 'me-2'
-@prop labelclass = ''
-@prop inputclass = ''
-@prop indeterminate = false
-@prop id
-@prop ...attributes
--->
