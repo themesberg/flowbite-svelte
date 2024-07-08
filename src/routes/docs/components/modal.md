@@ -151,7 +151,7 @@ Use this web3 modal component to show crypto wallet connection options like Meta
 
 <Button on:click={() => (walletModal = true)}>Crypto wallet modal</Button>
 
-<Modal title="Connect wallet" bind:open={walletModal} size="xs" padding="xs">
+<Modal title="Connect wallet" bind:open={walletModal} size="xs">
   <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Connect with one of our available wallet providers or create a new one.</p>
   <ul class="my-4 space-y-3">
     <li>
