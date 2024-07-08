@@ -115,6 +115,7 @@ export interface GroupTimelineType {
 }
 
 export interface ListGroupItemType {
+  name?: string;
   current?: boolean;
   disabled?: boolean;
   href?: string;

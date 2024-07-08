@@ -16,7 +16,7 @@
   export let checked: boolean | undefined = undefined;
   export let spacing: string = $$slots.default ? 'me-2' : '';
   export let groupLabelClass: string = '';
-  export let groupInputClass: strixng = '';
+  export let groupInputClass: string = '';
   
 
   // tinted if put in component having its own background
