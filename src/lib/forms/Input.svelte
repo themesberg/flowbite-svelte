@@ -19,10 +19,10 @@
   export let floatClass: string = 'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400';
 
   const borderClasses = {
-    base: 'border-gray-300 dark:border-gray-600',
-    tinted: 'border-gray-300 dark:border-gray-500',
-    green: 'border-green-500 dark:border-green-400',
-    red: 'border-red-500 dark:border-red-400'
+    base: 'border border-gray-300 dark:border-gray-600',
+    tinted: 'border border-gray-300 dark:border-gray-500',
+    green: 'border border-green-500 dark:border-green-400',
+    red: 'border border-red-500 dark:border-red-400'
   };
 
   const ringClasses = {
