@@ -11,6 +11,7 @@
   import { getContext, type Snippet } from 'svelte';
   import type { InputType } from '../types';
   interface Props {
+    children?: Snippet;
     left?: Snippet;
     right?: Snippet;
     id?: string;
@@ -28,9 +29,11 @@
     class?: string;
     disabled?: boolean;
     readonly?: boolean;
+    show?: boolean;
   }
 
   let { 
+    children,
     left,
     right,
     id,
@@ -38,7 +41,7 @@
     placeholder,
     pattern,
     type = 'text',
-    value,
+    value = $bindable(),
     size,
     defaultClass = 'block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right',
     color = 'base',
@@ -48,14 +51,15 @@
     classRight,
     disabled = false,
     readonly = false,
+    show = false,
     ...attributes
    }: Props = $props();
 
   const borderClasses = {
-    base: 'border-gray-300 dark:border-gray-600',
-    tinted: 'border-gray-300 dark:border-gray-500',
-    green: 'border-green-500 dark:border-green-400',
-    red: 'border-red-500 dark:border-red-400'
+    base: 'border border-gray-300 dark:border-gray-600',
+    tinted: 'border border-gray-300 dark:border-gray-500',
+    green: 'border border-green-500 dark:border-green-400',
+    red: 'border border-red-500 dark:border-red-400'
   };
 
   const ringClasses = {
@@ -75,6 +79,7 @@
   let background: boolean = getContext('background');
 
   let group: { size: SizeType } = getContext('group');
+  // console.log('group', group);
 
   const textSizes = { sm: 'sm:text-xs', md: 'text-sm', lg: 'sm:text-base' };
   const leftPadding = { sm: 'ps-9', md: 'ps-10', lg: 'ps-11' };
@@ -83,7 +88,7 @@
 
   let _size = size || clampSize(group?.size) || 'md';
   const _color = $derived(color === 'base' && background ? 'tinted' : color);
-  let inputClass = $derived(twMerge([defaultClass, inputPadding[_size], (left && leftPadding[_size]) || (right && rightPadding[_size]), ringClasses[color], colorClasses[_color], borderClasses[_color], textSizes[_size], group ? '': 'rounded-lg', group && 'first:rounded-s-lg last:rounded-e-lg', group && '[&:not(:first-child)]:-ms-px', className]));
+  let inputClass = $derived(twMerge(defaultClass, inputPadding[_size], (left && leftPadding[_size]) || (right && rightPadding[_size]), ringClasses[color], colorClasses[_color], borderClasses[_color], textSizes[_size], group ? '': 'rounded-lg', group && 'first:rounded-s-lg last:rounded-e-lg', group && '[&:not(:first-child)]:-ms-px',  className));
 </script>
 
 <div class="relative w-full">
@@ -93,6 +98,9 @@
     </div>
   {/if}
     <input {id} {placeholder} {required} {pattern} {disabled} {readonly} {...attributes} bind:value {...{ type }} class={inputClass} />
+  {#if children}
+    {@render children()}
+  {/if}
   {#if right}
     <div class="{twMerge(floatClass, classRight)} end-0 pe-2.5">
       {@render right()}

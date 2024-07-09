@@ -10,18 +10,32 @@
     eager: true
   });
 
-  import { Input, Label, Helper, Button, Checkbox, A, CloseButton, InputAddon,  ButtonGroup,  Dropdown, DropdownItem } from '$lib';
+  import { Input, Label, Helper, Button, Checkbox, A, CloseButton, InputAddon,  ButtonGroup,  Dropdown, DropdownItem, uiHelpers } from '$lib';
   // import { Dropdown, DropdownItem } from '$lib'
   import { EyeOutline, EyeSlashOutline, EnvelopeSolid, ChevronDownOutline, SearchOutline } from 'flowbite-svelte-icons';
-  let show = false;
-  let show1 = false;
-  let value = 5;
+  import { sineIn } from 'svelte/easing';
+  let show = $state(false);
+  let show1 = $state(false);
+  let value = $state(5);
+  let dropdown = uiHelpers();
+  let dropdownStatus = $state(false);
+  let closeDropdown = dropdown.close;
+  let transitionParams = {
+    y: 0,
+    duration: 200,
+    easing: sineIn
+  };
+  $effect(() => {
+    // this can be done adding nav.navStatus directly to DOM element
+    // without using effect
+    dropdownStatus = dropdown.isOpen;
+  });
 </script>
 
 <H1>Input field</H1>
 <H2>Input fields</H2>
 
-<h2>Input fields</h2>
+<H2>Input fields</H2>
 
 Use this example as a generic form element which includes multiple input fields types such as text, email, password, number, URL, and phone number and use the grid layout to add multiple columns and rows.
 
@@ -72,7 +86,7 @@ Use this example as a generic form element which includes multiple input fields 
 </form>
 </div>
 
-<h2>Input sizes</h2>
+<H2>Input sizes</H2>
 
 Use the following examples to apply a small, default or large size for the input fields.
 
@@ -95,7 +109,7 @@ User the size prop to change the input size. Choose one from 'sm:text-md' | 'tex
 </Label>
 </div>
 
-<h2>Disabled state</h2>
+<H2>Disabled state</H2>
 
 Get started with this example if you want to apply the disabled state to an input field. Add the disabled to change the input to disabled.
 
@@ -104,7 +118,7 @@ Get started with this example if you want to apply the disabled state to an inpu
 <Input class="mb-6" disabled readonly value="Disabled readonly input" />
 </div>
 
-<h2>Validation</h2>
+<H2>Validation</H2>
 
 Use the following example to apply validation styles for success and error messages.
 
@@ -127,7 +141,7 @@ Use the following example to apply validation styles for success and error messa
 </div>
 </div>
 
-<h2>Input with icon</h2>
+<H2>Input with icon</H2>
 
 <div class='mt-8 border w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-6'>
 <Label class="space-y-2">
@@ -161,7 +175,7 @@ Use the following example to apply validation styles for success and error messa
 </Label>
 </div>
 
-<h2>Input group</h2>
+<H2>Input group</H2>
 
 This example can be used to add a descriptive icon or additional text inside the input field.
 
@@ -216,7 +230,7 @@ This example can be used to add a descriptive icon or additional text inside the
 </div>
 </div>
 
-<h2>Icon click handler</h2>
+<H2>Icon click handler</H2>
 
 This example shows how to add `on:click` event handler to the icon in `Input`. By clicking an icon, it toggles icon and `type`:
 
@@ -253,7 +267,7 @@ This example shows how to add `on:click` event handler to the icon in `Input`. B
 </div>
 </div>
 
-<h2>Helper text</h2>
+<H2>Helper text</H2>
 
 Use the helper prop to add your helper text. You can use HTML in the helper text.
 
@@ -268,21 +282,19 @@ Use the helper prop to add your helper text. You can use HTML in the helper text
 </Label>
 </div>
 
-<h2>Number input</h2>
-
-By default the `Input` component binds the `value` as `string`. If you need a variable bound as `number` you need to use a specialised version of `Input` called `NumberInput`.
+<H2>Number input</H2>
 
 <div class='mt-8 border w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-6'>
 <Label class="space-y-2 mb-4">
-  <span>Your Email</span>
-  N/A
+  <span>Your lucky number</span>
+  <Input type='number' bind:value/>
 </Label>
 
 <p>Value: {value}</p>
 <p>Type of value: {typeof value}</p>
 </div>
 
-<h2>Search input</h2>
+<H2>Search input</H2>
 
 <div class='mt-8 border w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-6'>
 <form>
@@ -298,37 +310,35 @@ By default the `Input` component binds the `value` as `string`. If you need a va
 </form>
 </div>
 
-<h2>Dropdown</h2>
+<H2>Dropdown</H2>
 
 Use this example to show a dropdown menu right next to the input field.
 
 <div class='mt-8 border w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-6 h-64'>
 <ButtonGroup class="w-full">
-  <Button color="none" class="flex-shrink-0 text-gray-900 bg-gray-100 border border-gray-300 dark:border-gray-700 dark:text-white hover:bg-gray-200 focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+  <Button onclick={dropdown.toggle} color="none" class="flex-shrink-0 text-gray-900 bg-gray-100 border border-gray-300 dark:border-gray-700 dark:text-white hover:bg-gray-200 focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
     All categories<ChevronDownOutline class="w-6 h-6 ms-2" />
   </Button>
-  <Dropdown>
-    <DropdownItem>Shopping</DropdownItem>
-    <DropdownItem>Images</DropdownItem>
-    <DropdownItem>News</DropdownItem>
-    <DropdownItem>Finance</DropdownItem>
-  </Dropdown>
+
   <Input placeholder="Search" />
   <Button color="primary" class="!p-2.5" type="submit">
     <SearchOutline class="w-5 h-5" />
   </Button>
 </ButtonGroup>
+<Dropdown dropdownStatus={dropdownStatus} closeDropdown={closeDropdown} transitionParams={transitionParams}>
+  <DropdownItem>Shopping</DropdownItem>
+  <DropdownItem>Images</DropdownItem>
+  <DropdownItem>News</DropdownItem>
+  <DropdownItem>Finance</DropdownItem>
+</Dropdown>
 </div>
 
-<h2>Advanced usage</h2>
+<H2>Advanced usage</H2>
 
 If you need a full control over `input` HTML element while still re-using the Flowbite formatting, you can put the `input` element as a default slot. The example below is in fact the implementation of the above mentioned `NumberInput`.
 
 <div class='mt-8 border w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-6 space-y-4'>
-<Input let:props>
-  <div slot="left">#</div>
-  <input type="number" {...props} bind:value />
-</Input>
+N/A
 </div>
 
 <div class='h-96 w-full'></div>

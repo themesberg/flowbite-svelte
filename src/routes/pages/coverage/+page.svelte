@@ -174,7 +174,8 @@
 			notes: 'Updated: class names'
 		},
 		inputField: {
-			checked: false,
+			checked: true,
+			problems: 'Group examples add rounded radius'
 		},
 		radio: {
 			checked: true,
