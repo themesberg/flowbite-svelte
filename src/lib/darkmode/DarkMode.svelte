@@ -4,6 +4,7 @@
   export let btnClass: string = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none rounded-lg text-sm p-2.5';
   export let size: 'sm' | 'md' | 'lg' = 'md';
   export let ariaLabel: string = 'Dark mode';
+  export let defaultMode: 'light' | 'dark' | undefined = undefined;
 
   const sizes = {
     sm: 'w-4 h-4',
@@ -25,8 +26,10 @@
     if ('color-theme' in localStorage) {
       // explicit preference - overrides author's choice
       localStorage.getItem('color-theme') === 'dark' ? window.document.documentElement.classList.add('dark') : window.document.documentElement.classList.remove('dark');
+    } else if (defaultMode) {
+      defaultMode === 'dark' ? window.document.documentElement.classList.add('dark') : window.document.documentElement.classList.remove('dark');
     } else {
-      // browser preference - does not overrides
+      // browser preference - does not override
       if (window.matchMedia('(prefers-color-scheme: dark)').matches) window.document.documentElement.classList.add('dark');
     }
   </script>
