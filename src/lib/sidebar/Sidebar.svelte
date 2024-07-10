@@ -55,6 +55,6 @@
 @prop ariaLabel
 @prop nonActiveClass = ''
 @prop activeClass = ''
-@prop class
+@prop class: className
 @prop ...attributes
 -->

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.6
+
+### Patch Changes
+
+- fix: update class names
+
 ## 0.5.5
 
 ### Patch Changes
