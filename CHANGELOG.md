@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.5
+
+### Patch Changes
+
+- fix: footer classes
+
 ## 0.5.4
 
 ### Patch Changes

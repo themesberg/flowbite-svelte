@@ -40,7 +40,7 @@
     <div class="sm:flex sm:items-center sm:justify-between">
       <FooterCopyright href='/' by='Flowbite' year={2022} />
       <FooterUl
-        ulclass="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"
+        class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"
       >
         <FooterLi href="/">About</FooterLi>
         <FooterLi href="/">Privacy Policy</FooterLi>
@@ -64,7 +64,7 @@
         name="Flowbite"
       />
       <FooterUl
-        ulclass="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"
+        class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"
       >
         <FooterLi href="/">About</FooterLi>
         <FooterLi href="/">Privacy Policy</FooterLi>
@@ -168,7 +168,7 @@
         <h2 class="mb-6 text-sm font-semibold uppercase text-gray-400">
           Company
         </h2>
-        <FooterUl ulclass="text-gray-300">
+        <FooterUl class="text-gray-300">
           <FooterLi liClass="mb-4" href="/">About</FooterLi>
           <FooterLi liClass="mb-4" href="/">Careers</FooterLi>
           <FooterLi liClass="mb-4" href="/">Brand Center</FooterLi>
@@ -179,7 +179,7 @@
         <h2 class="mb-6 text-sm font-semibold uppercase text-gray-400">
           Download
         </h2>
-        <FooterUl ulclass="text-gray-300">
+        <FooterUl class="text-gray-300">
           <FooterLi liClass="mb-4" href="/">Discord Server</FooterLi>
           <FooterLi liClass="mb-4" href="/">Twitter</FooterLi>
           <FooterLi liClass="mb-4" href="/">Facebook</FooterLi>
@@ -190,7 +190,7 @@
         <h2 class="mb-6 text-sm font-semibold uppercase text-gray-400">
           Legal
         </h2>
-        <FooterUl ulclass="text-gray-300">
+        <FooterUl class="text-gray-300">
           <FooterLi liClass="mb-4" href="/">Privacy Policy</FooterLi>
           <FooterLi liClass="mb-4" href="/">Licensing</FooterLi>
           <FooterLi liClass="mb-4" href="/">Terms & Conditions</FooterLi>
@@ -200,7 +200,7 @@
         <h2 class="mb-6 text-sm font-semibold uppercase text-gray-400">
           Download
         </h2>
-        <FooterUl ulclass="text-gray-300">
+        <FooterUl class="text-gray-300">
           <FooterLi liClass="mb-4" href="/">iOS</FooterLi>
           <FooterLi liClass="mb-4" href="/">Android</FooterLi>
           <FooterLi liClass="mb-4" href="/">Windows</FooterLi>
@@ -258,7 +258,7 @@
     <Footer class="absolute bottom-0 start-0 z-20 w-full">
       <FooterCopyright href="/" by="Flowbite™" />
       <FooterUl
-        ulclass="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"
+        class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"
       >
         <FooterLi href="/">About</FooterLi>
         <FooterLi href="/">Privacy Policy</FooterLi>

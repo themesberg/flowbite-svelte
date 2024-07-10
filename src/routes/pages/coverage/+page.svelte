@@ -79,6 +79,7 @@
 		},
 		footer: {
 			checked: true,
+			notes: 'Updated: class names'
 		},
 		forms: {
 			checked: false,
