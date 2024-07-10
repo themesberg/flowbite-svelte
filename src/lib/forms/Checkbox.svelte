@@ -62,3 +62,25 @@
   {/if}
 </Label>
 
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@prop children
+@prop disabled
+@prop aria_describedby
+@prop color = 'primary'
+@prop custom = false
+@prop inline = false
+@prop group = []
+@prop value = 'on'
+@prop checked = $bindable(false)
+@prop spacing = 'me-2'
+@prop groupLabelClass = ''
+@prop groupInputClass = ''
+@prop indeterminate = false
+@prop id
+@prop class: className
+@prop required = false
+@prop ...attributes
+-->

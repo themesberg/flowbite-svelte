@@ -33,7 +33,7 @@
 @prop children
 @prop href
 @prop ariaLabel
-@prop aClass
+@prop class: aClass
 @prop target
 @prop ...attributes
 -->

@@ -80,6 +80,7 @@
 @prop onclick
 @prop rounded = true
 @prop border = true
-@prop defaultClass
+@prop defaultClass = 'divide-y divide-gray-200 dark:divide-gray-600'
+@prop class: className
 @prop ...attributes
 -->

@@ -109,7 +109,7 @@
 @prop href
 @prop horizontal = false
 @prop target
-@prop shadow = false
+@prop shadow = true
 @prop reverse = false
 @prop img
 @prop padding = 'lg'

@@ -26,6 +26,6 @@
 @prop children
 @prop href = '#'
 @prop target
-@prop aclass
+@prop class: aClass
 @prop ...attributes
 -->

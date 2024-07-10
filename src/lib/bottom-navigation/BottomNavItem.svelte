@@ -132,7 +132,7 @@
 @prop activeClass
 @prop href = ''
 @prop exact = true
-@prop btnclass
+@prop btnClass
 @prop spanClass
 @prop ...attributes
 -->

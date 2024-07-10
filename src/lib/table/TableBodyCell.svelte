@@ -60,6 +60,7 @@
 ## Props
 @prop children
 @prop class: className
+@prop colspan
 @prop tdclass = ''
 @prop onclick
 @prop ...attributes

@@ -202,7 +202,7 @@
 @prop tag = 'button'
 @prop checked = undefined
 @prop disabled = false
-@prop class
+@prop class: btnclass
 @prop onclick
 @prop ...attributes
 -->

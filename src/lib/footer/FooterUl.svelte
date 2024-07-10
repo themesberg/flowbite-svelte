@@ -22,7 +22,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop ulclass
+@prop class:ulclass
 @prop children
 @prop ...attributes
 -->

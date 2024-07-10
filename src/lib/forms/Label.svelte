@@ -49,7 +49,7 @@
 @prop children
 @prop color = 'gray'
 @prop show = true
-@prop class
+@prop class: className
 @prop forId
 @prop ...attributes
 -->

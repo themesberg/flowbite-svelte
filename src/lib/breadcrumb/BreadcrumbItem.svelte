@@ -101,7 +101,7 @@
 @prop href
 @prop linkClass
 @prop spanClass
-@prop aclass
+@prop homeClass
 @prop class: classname
 @prop ...attributes
 -->

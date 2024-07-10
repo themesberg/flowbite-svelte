@@ -30,6 +30,6 @@
 ## Props
 @prop children
 @prop size = 'md'
-@prop divClass = ''
+@prop class: divClass
 @prop ...attributes
 -->

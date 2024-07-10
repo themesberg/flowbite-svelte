@@ -107,3 +107,29 @@
     </div>
   {/if}
 </div>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@prop children
+@prop left
+@prop right
+@prop id
+@prop required = false
+@prop placeholder
+@prop pattern
+@prop type = 'text'
+@prop value = $bindable()
+@prop size
+@prop defaultClass = 'block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right'
+@prop color = 'base'
+@prop floatClass = 'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400'
+@prop class:className
+@prop classLeft
+@prop classRight
+@prop disabled = false
+@prop readonly = false
+@prop show = false
+@prop ...attributes
+-->

@@ -22,5 +22,5 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
-@prop kbdclass
+@prop class: kbdclass
 -->

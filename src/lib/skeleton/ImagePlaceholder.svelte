@@ -49,5 +49,5 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop imgHeight = 'h-48'
-@prop divClass 
+@prop class: divClass
 -->

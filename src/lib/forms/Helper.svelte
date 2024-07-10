@@ -35,7 +35,7 @@
 ## Props
 @prop children
 @prop id
-@prop class
+@prop class: className
 @prop color = 'gray'
 @prop ...attributes
 -->

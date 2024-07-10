@@ -51,6 +51,6 @@
 @prop icon
 @prop divClass
 @prop hrClass
-@prop div2class
+@prop innerDivClass
 @prop ...attributes
 -->

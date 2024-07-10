@@ -97,6 +97,10 @@
       "types": "./dist/index.d.ts",
       "svelte": "./dist/index.js"
     },
+    "./Accordion.svelte": {
+      "types": "./dist/accordion/Accordion.svelte.d.ts",
+      "svelte": "./dist/accordion/Accordion.svelte"
+    },
     "./AccordionItem.svelte": {
       "types": "./dist/accordion/AccordionItem.svelte.d.ts",
       "svelte": "./dist/accordion/AccordionItem.svelte"
@@ -241,6 +245,14 @@
       "types": "./dist/forms/Helper.svelte.d.ts",
       "svelte": "./dist/forms/Helper.svelte"
     },
+    "./Input.svelte": {
+      "types": "./dist/forms/Input.svelte.d.ts",
+      "svelte": "./dist/forms/Input.svelte"
+    },
+    "./InputAddon.svelte": {
+      "types": "./dist/forms/InputAddon.svelte.d.ts",
+      "svelte": "./dist/forms/InputAddon.svelte"
+    },
     "./Label.svelte": {
       "types": "./dist/forms/Label.svelte.d.ts",
       "svelte": "./dist/forms/Label.svelte"
@@ -260,6 +272,10 @@
     "./Select.svelte": {
       "types": "./dist/forms/Select.svelte.d.ts",
       "svelte": "./dist/forms/Select.svelte"
+    },
+    "./Textarea.svelte": {
+      "types": "./dist/forms/Textarea.svelte.d.ts",
+      "svelte": "./dist/forms/Textarea.svelte"
     },
     "./Toggle.svelte": {
       "types": "./dist/forms/Toggle.svelte.d.ts",
@@ -449,6 +465,10 @@
       "types": "./dist/typography/Hr.svelte.d.ts",
       "svelte": "./dist/typography/Hr.svelte"
     },
+    "./Img.svelte": {
+      "types": "./dist/typography/Img.svelte.d.ts",
+      "svelte": "./dist/typography/Img.svelte"
+    },
     "./Layout.svelte": {
       "types": "./dist/typography/Layout.svelte.d.ts",
       "svelte": "./dist/typography/Layout.svelte"
@@ -469,6 +489,10 @@
       "types": "./dist/typography/P.svelte.d.ts",
       "svelte": "./dist/typography/P.svelte"
     },
+    "./Secondary.svelte": {
+      "types": "./dist/typography/Secondary.svelte.d.ts",
+      "svelte": "./dist/typography/Secondary.svelte"
+    },
     "./Span.svelte": {
       "types": "./dist/typography/Span.svelte.d.ts",
       "svelte": "./dist/typography/Span.svelte"
@@ -476,6 +500,10 @@
     "./CloseButton.svelte": {
       "types": "./dist/utils/CloseButton.svelte.d.ts",
       "svelte": "./dist/utils/CloseButton.svelte"
+    },
+    "./Pump.svelte": {
+      "types": "./dist/utils/Pump.svelte.d.ts",
+      "svelte": "./dist/utils/Pump.svelte"
     },
     "./Video.svelte": {
       "types": "./dist/video/Video.svelte.d.ts",
