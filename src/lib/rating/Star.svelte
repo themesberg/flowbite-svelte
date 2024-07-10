@@ -8,7 +8,7 @@
     ariaLabel?: string;
     id?: string;
     role?: string;
-    svgclass?: string;
+    svgClass?: string;
   }
 
   let {
@@ -19,7 +19,7 @@
     ariaLabel = 'star',
     id = idGenerator(),
     role = 'img',
-    svgclass,
+    svgClass,
     ...attributes
   }: Props = $props();
 </script>
@@ -28,7 +28,7 @@
   width={size}
   height={size}
   {...attributes}
-  class={svgclass}
+  class={svgClass}
   aria-label={ariaLabel}
   viewBox="100 100 120 120"
   {role}
@@ -67,6 +67,6 @@
 @prop ariaLabel = 'star'
 @prop id = idGenerator()
 @prop role = 'img'
-@prop svgclass
+@prop svgClass
 @prop ...attributes
 -->

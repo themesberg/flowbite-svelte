@@ -37,7 +37,7 @@
   }: Props = $props();
 
   let bannerStatus = $state(true);
-  $inspect('bannerStatus: ', bannerStatus);
+  // $inspect('bannerStatus: ', bannerStatus);
   const divClasses = {
     default: 'top-0 start-0 w-full border-b border-gray-200 bg-gray-50',
     bottom: 'bottom-0 start-0 w-full border-t border-gray-200 bg-gray-50',

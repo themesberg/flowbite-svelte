@@ -142,12 +142,12 @@
   </div>
   <Sidebar
     {activeClass}
-    asideclass="w-full p-0"
+    asideClass="w-full p-0"
     divClass="bg-transparent p-0"
-    aclass="p-1 pl-4"
+    class="p-1 pl-4"
   >
     <SidebarGroup>
-      <SidebarDropdownWrapper isOpen={hasPath('pages')} label="GETTING STARTED" svgclass="me-4" btnclass="p-1">
+      <SidebarDropdownWrapper isOpen={hasPath('pages')} label="GETTING STARTED" svgClass="me-4" btnClass="p-1">
         <SidebarItem
           onclick={closeNavDrawer}
           label="About"
@@ -159,7 +159,7 @@
           href="/pages/coverage"
         />
         </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper isOpen={hasPath('components')} label="Components" svgclass="me-4" btnclass="p-1">
+      <SidebarDropdownWrapper isOpen={hasPath('components')} label="Components" svgClass="me-4" btnClass="p-1">
         <SidebarItem
           onclick={closeNavDrawer}
           label="Alert"
@@ -301,7 +301,7 @@
           href="/components/video"
         />
       </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper isOpen={hasPath('forms')} label="Forms" svgclass="me-4" btnclass="p-1">
+      <SidebarDropdownWrapper isOpen={hasPath('forms')} label="Forms" svgClass="me-4" btnClass="p-1">
         <SidebarItem
           onclick={closeNavDrawer}
           label="Checkbox"
@@ -333,7 +333,7 @@
           href="/forms/toggle"
         />
       </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper isOpen={hasPath('typography')} label="Typography" svgclass="me-4" btnclass="p-1">
+      <SidebarDropdownWrapper isOpen={hasPath('typography')} label="Typography" svgClass="me-4" btnClass="p-1">
         <SidebarItem
           onclick={closeNavDrawer}
           label="Blockquote"
@@ -375,7 +375,7 @@
           href="/typography/text"
         />
       </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper isOpen={hasPath('plugins')} label="Plugins" svgclass="me-4" btnclass="p-1">
+      <SidebarDropdownWrapper isOpen={hasPath('plugins')} label="Plugins" svgClass="me-4" btnClass="p-1">
         <SidebarItem
           onclick={closeNavDrawer}
           label="Chart"

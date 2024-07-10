@@ -57,7 +57,7 @@
   // let tag = href ? 'a' : 'div';
   let imgClass: string = $state('');
   // $inspect('href: ', href)
-  $inspect('shadow: ', shadow)
+  // $inspect('shadow: ', shadow)
   $effect(() => {
     innerPadding = paddings[padding];
     cardClass = twMerge(

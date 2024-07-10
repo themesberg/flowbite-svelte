@@ -11,13 +11,13 @@
     arrowdown?: Snippet;
     iconSlot?: Snippet;
     isOpen?: boolean | undefined;
-    btnclass?: string | undefined;
+    btnClass?: string | undefined;
     label: string | undefined;
     spanClass?: string | undefined;
-    ulclass?: string | undefined;
+    ulClass?: string | undefined;
     transitionType?: TransitionTypes;
     transitionParams?: TransitionParamTypes;
-    svgclass?: string;
+    svgClass?: string;
   }
 
   let {
@@ -26,29 +26,29 @@
     arrowdown,
     iconSlot,
     isOpen,
-    btnclass,
+    btnClass,
     label,
     spanClass,
-    ulclass,
+    ulClass,
     transitionType = 'slide',
     transitionParams = {},
-    svgclass,
+    svgClass,
     ...attributes
   }: Props = $props();
 
   let btnCls = twMerge(
     'flex items-center w-full text-base font-normal text-gray-900 rounded transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700',
-    btnclass
+    btnClass
   );
 
   let spanCls: string = twMerge(
     'flex-1 ms-3 text-left whitespace-nowrap',
     spanClass
   );
-  let ulCls: string = twMerge('py-2 space-y-2', ulclass);
+  let ulCls: string = twMerge('py-2 space-y-2', ulClass);
   let svgCls: string = twMerge(
     'h-3 w-3 text-gray-800 dark:text-white',
-    svgclass
+    svgClass
   );
 
   // make a custom transition function that returns the desired transition
@@ -145,11 +145,11 @@
 @props:arrowdown?: Snippet;
 @props:iconSlot?: Snippet;
 @props:isOpen?: boolean | undefined;
-@props:btnclass?: string | undefined;
+@props:btnClass?: string | undefined;
 @props:label: string | undefined;
 @props:spanClass?: string | undefined;
-@props:ulclass?: string | undefined;
+@props:ulClass?: string | undefined;
 @props:transitionType?: TransitionTypes;
 @props:transitionParams?: TransitionParamTypes;
-@props:svgclass?: string;
+@props:svgClass?: string;
 -->

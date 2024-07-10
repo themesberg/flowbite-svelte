@@ -66,7 +66,7 @@
 
 <H2>Default Sidebar</H2>
 <CodeWrapper class="relative">
-  <Sidebar aclass="p-2" asideclass="absolute top-6 left-6 z-40">
+  <Sidebar class="p-2" asideClass="absolute top-6 left-6 z-40">
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
         {#snippet iconSlot()}
@@ -129,7 +129,7 @@
 
 <H2>Using object</H2>
 <CodeWrapper class="relative">
-  <Sidebar aclass="p-2" asideclass="absolute top-6 left-6 z-40">
+  <Sidebar class="p-2" asideClass="absolute top-6 left-6 z-40">
     <SidebarGroup>
       {#each sidebarEx1 as { label, href, icon, subContent }}
         <SidebarItem {label} {href} {spanClass}>
@@ -171,8 +171,8 @@
   <Sidebar
     {activeClass}
     {nonActiveClass}
-    aclass="p-2"
-    asideclass="absolute top-6 left-6 z-40"
+    class="p-2"
+    asideClass="absolute top-6 left-6 z-40"
   >
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
@@ -236,7 +236,7 @@
 <H2>Multi-level dropdown</H2>
 
 <CodeWrapper class="relative">
-  <Sidebar aclass="p-2" asideclass="absolute top-6 left-6 z-40">
+  <Sidebar class="p-2" asideClass="absolute top-6 left-6 z-40">
     <SidebarGroup>
       <SidebarItem label="Dashboard">
         {#snippet iconSlot()}
@@ -245,7 +245,7 @@
           />
         {/snippet}
       </SidebarItem>
-      <SidebarDropdownWrapper label="E-commerce" btnclass="p-2">
+      <SidebarDropdownWrapper label="E-commerce" btnClass="p-2">
         {#snippet iconSlot()}
           <ShoppingBagSolid
             class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
@@ -325,7 +325,7 @@
 <H2>Content separator</H2>
 
 <CodeWrapper>
-  <Sidebar aclass="p-2">
+  <Sidebar class="p-2">
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
         {#snippet iconSlot()}

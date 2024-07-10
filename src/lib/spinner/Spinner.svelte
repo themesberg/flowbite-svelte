@@ -9,11 +9,11 @@
     size?: string | number;
     currentFill?: string;
     currentColor?: string;
-    svgclass?: string;
+    svgClass?: string;
   }
 
   let {
-    svgclass,
+    svgClass,
     color = 'primary',
     bg = 'text-gray-300',
     customColor,
@@ -54,7 +54,7 @@
     iconsize,
     bg,
     fillColorCls,
-    svgclass
+    svgClass
   )}
   viewBox="0 0 100 101"
   fill="none"
@@ -74,7 +74,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop svgclass
+@prop svgClass
 @prop color = 'primary'
 @prop bg = 'text-gray-300'
 @prop customColor
