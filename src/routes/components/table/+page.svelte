@@ -52,7 +52,7 @@
   let openRow = $state()
   let details
 
-  const toggleRow = (i) => {
+  const toggleRow = (i: number) => {
     openRow = openRow === i ? null : i
   }
 
@@ -788,7 +788,7 @@
         </TableBodyRow>
         {#if openRow === i}
           <TableBodyRow ondblclick={() => (details = item)}>
-            <TableBodyCell colspan="4" class="p-0">
+            <TableBodyCell colspan={4} class="p-0">
               <div class="px-2 py-3" transition:slide={{ duration: 300, axis: 'y' }}>
                 <ImagePlaceholder />
               </div>

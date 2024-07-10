@@ -7,12 +7,14 @@
   interface Props {
     children?: Snippet;
     class?: string;
+    colspan?: number;
     tdclass?: string;
     onclick?: () => void;
   }
   let {
     children,
     class: className,
+    colspan,
     tdclass = '',
     onclick,
     ...attributes
@@ -37,6 +39,7 @@
 <td
   {...attributes}
   class={tdCls}
+  colspan={colspan ?? 1}
 >
 {#if onclick}
   <button onclick={onclick}>
