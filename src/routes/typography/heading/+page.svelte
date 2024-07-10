@@ -129,7 +129,7 @@
 
 <H2>Badge context</H2>
 <CodeWrapper>
-  <Heading tag="h1" class="flex items-center" size="text-5xl">
+  <Heading tag="h1" class="flex items-center text-5xl">
     Flowbite <Badge class="text-2xl font-semibold ms-2">PRO</Badge>
   </Heading>
 </CodeWrapper>

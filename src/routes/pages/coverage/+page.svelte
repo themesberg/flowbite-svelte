@@ -340,7 +340,7 @@
 			{:else}
 				<QuestionCircleSolid class="me-2 h-8 w-8 text-gray-500 dark:text-gray-400" />
 			{/if}
-			<a href="/components/{convertStringToKebabCase(key)}" class='hover:underline'>{key}</a> {#if problems} <span class="text-red-500 ml-4">( {problems})</span>{/if}{#if notes}<span class="text-green-500 ml-4">(DONE: {notes})</span> {/if}
+			<a href="/components/{convertStringToKebabCase(key)}" class='text-blue-800 hover:text-blue-500 underline'>{key}</a> {#if problems} <span class="text-red-500 ml-4">( {problems})</span>{/if}{#if notes}<span class="text-green-500 ml-4">(DONE: {notes})</span> {/if}
 		</Li>
 	{/each}
 </List>

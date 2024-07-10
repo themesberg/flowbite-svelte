@@ -14,7 +14,7 @@
     class?: string;
   }
   
-  let { caption, src = undefined, srcset = undefined, size = 'max-w-full', alignment = '', imgClass = 'h-auto', figClass = 'max-w-lg', alt = '', effect = '', captionClass = 'mt-2 text-sm text-center text-gray-500 dark:text-gray-400', class: className = '', ...attributes } = $props()
+  let { caption='', src='', srcset='', size = 'max-w-full', alignment = '', imgClass = 'h-auto', figClass = 'max-w-lg', alt = '', effect = '', captionClass = 'mt-2 text-sm text-center text-gray-500 dark:text-gray-400', class: className = '', ...attributes } = $props()
 </script>
 
 {#if caption}
