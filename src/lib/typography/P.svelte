@@ -124,7 +124,7 @@
 ## Props
 @prop children
 @prop color = 'text-gray-900 dark:text-white'
-@prop pclass
+@prop class: className
 @prop height = 'normal'
 @prop align = 'left'
 @prop justify = false

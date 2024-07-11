@@ -76,7 +76,7 @@ test('gallery page has expected h1', async ({ page }) => {
 });
 
 test('indicator page has expected h1', async ({ page }) => {
-	await page.goto('/components/indicator');
+	await page.goto('/components/indicators');
 	expect(await page.textContent('h1')).toContain('Indicator');
 });
 

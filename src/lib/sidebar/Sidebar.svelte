@@ -5,21 +5,21 @@
   import { twMerge } from 'tailwind-merge';
   interface Props {
     children: Snippet;
-    asideclass?: string | undefined;
+    asideClass?: string | undefined;
     ariaLabel?: string | undefined;
     divClass?: string | undefined;
     nonActiveClass?: string | undefined;
     activeClass?: string | undefined;
-    aclass?: string | undefined;
+    class?: string | undefined;
   }
   let {
     children,
     divClass,
-    asideclass,
+    asideClass,
     ariaLabel,
     nonActiveClass = '',
     activeClass = '',
-    aclass,
+    class: className,
     ...attributes
   }: Props = $props();
   
@@ -29,15 +29,12 @@
     'overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800',
     divClass
   );
-  // let activeCls = twMerge(activeClass, aclass)
-  // let nonActiveCls = twMerge(nonActiveClass, aclass)
-  let asideCls = twMerge('w-64', asideclass);
-  // activeCls = twMerge(activeClass, aclass);
-  // nonActiveClass = twMerge(nonActiveClass, aclass);
-  // $inspect('aclass: ', aclass)
+
+  let asideCls = twMerge('w-64', asideClass);
+  
   setContext<SidebarType>('sidebarContext', {
-    activeClass: twMerge(activeCls, activeClass, aclass),
-    nonActiveClass: twMerge(nonActiveCls, nonActiveClass, aclass)
+    activeClass: twMerge(activeCls, activeClass, className),
+    nonActiveClass: twMerge(nonActiveCls, nonActiveClass, className)
   });
   // $inspect('activeClass: ', activeClass)
 </script>
@@ -54,10 +51,10 @@
 ## Props
 @prop children
 @prop divClass
-@prop asideclass
+@prop asideClass
 @prop ariaLabel
 @prop nonActiveClass = ''
 @prop activeClass = ''
-@prop aclass
+@prop class: className
 @prop ...attributes
 -->

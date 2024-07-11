@@ -116,6 +116,6 @@
 @prop ariaLabel
 @prop size = 'md'
 @prop href
-@prop divClass
+@prop class: divClass
 @prop ...attributes
 -->

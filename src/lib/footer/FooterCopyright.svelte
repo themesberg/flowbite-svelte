@@ -1,7 +1,7 @@
 <script lang="ts">
   interface Props {
     spanClass?: string | undefined;
-    aclass?: string | undefined;
+    aClass?: string | undefined;
     href?: string | undefined;
     by?: string | undefined;
     target?: string | undefined;
@@ -12,7 +12,7 @@
   import { twMerge } from 'tailwind-merge';
   let {
     spanClass,
-    aclass,
+    aClass,
     href,
     by,
     target,
@@ -27,7 +27,7 @@
     'block text-sm text-gray-500 sm:text-center dark:text-gray-400',
     spanClass
   );
-  let aCls: string = twMerge('hover:underline', aclass);
+  let aCls: string = twMerge('hover:underline', aClass);
 </script>
 
 <span class={spanCls}>
@@ -47,7 +47,7 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop spanClass
-@prop aclass
+@prop aClass
 @prop href
 @prop by
 @prop target

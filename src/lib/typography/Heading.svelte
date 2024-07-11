@@ -50,5 +50,7 @@
 @prop children
 @prop tag = 'h1'
 @prop class: classname
+@prop customSize = ''
+@prop color = 'text-gray-900 dark:text-white'
 @prop ...attributes
 -->

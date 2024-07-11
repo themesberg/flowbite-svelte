@@ -19,16 +19,16 @@
 <Sidebar
   {activeClass}
   nonActiveClass='hover:bg-gray-200'
-  asideclass="fixed inset-0 z-30 flex-none h-full w-64 lg:static lg:h-auto border-e border-gray-200 dark:border-gray-600 lg:overflow-y-visible bg-gray-100 dark:bg-gray-900 lg:pt-0 lg:block hidden"
+  asideClass="fixed inset-0 z-30 flex-none h-full w-64 lg:static lg:h-auto border-e border-gray-200 dark:border-gray-600 lg:overflow-y-visible bg-gray-100 dark:bg-gray-900 lg:pt-0 lg:block hidden"
   divClass="dark:bg-gray-900 bg-transparent"
-  aclass="p-1 pl-4"
+  class="p-1 pl-4"
 >
   <SidebarGroup>
     <SidebarDropdownWrapper
       label="GETTING STARTED"
       isOpen={hasPath('pages')}
-      svgclass="me-4"
-      btnclass="p-1"
+      svgClass="me-4"
+      btnClass="p-1"
     >
       <SidebarItem label="About" href="/pages/about" />
       <SidebarItem label="Coverage" href="/pages/coverage" />
@@ -36,8 +36,8 @@
     <SidebarDropdownWrapper
       label="Components"
       isOpen={hasPath('components')}
-      svgclass="me-4"
-      btnclass="p-1"
+      svgClass="me-4"
+      btnClass="p-1"
     >
       <SidebarItem label="Alert" href="/components/alert" />
       <SidebarItem label="Avatar" href="/components/avatar" />
@@ -57,7 +57,7 @@
       <SidebarItem label="Dropdown" href="/components/dropdown" />
       <SidebarItem label="Footer" href="/components/footer" />
       <SidebarItem label="Gallery" href="/components/gallery" />
-      <SidebarItem label="Indicator" href="/components/indicator" />
+      <SidebarItem label="Indicators" href="/components/indicators" />
       <SidebarItem label="Kbd" href="/components/kbd" />
       <SidebarItem label="List group" href="/components/list-group" />
       <SidebarItem label="Navbar" href="/components/navbar" />
@@ -74,8 +74,8 @@
     <SidebarDropdownWrapper
       label="Forms"
       isOpen={hasPath('forms')}
-      svgclass="me-4"
-      btnclass="p-1"
+      svgClass="me-4"
+      btnClass="p-1"
     >
       <SidebarItem label="Checkbox" href="/forms/checkbox" />
       <SidebarItem label="Floating label" href="/forms/floating-label" />
@@ -87,18 +87,19 @@
     <SidebarDropdownWrapper
       label="Typography"
       isOpen={hasPath('typography')}
-      svgclass="me-4"
-      btnclass="p-1"
+      svgClass="me-4"
+      btnClass="p-1"
     >
       <SidebarItem label="Blockquote" href="/typography/blockquote" />
       <SidebarItem label="Heading/Span/Mark" href="/typography/heading" />
       <SidebarItem label="HR" href="/typography/hr" />
+      <SidebarItem label="Image" href="/typography/image" />
       <SidebarItem label="Link" href="/typography/link" />
       <SidebarItem label="List" href="/typography/list" />
       <SidebarItem label="Paragraph" href="/typography/paragraph" />
       <SidebarItem label="Text" href="/typography/text" />
     </SidebarDropdownWrapper>
-    <SidebarDropdownWrapper label="Plugins" svgclass="me-4" btnclass="p-1">
+    <SidebarDropdownWrapper label="Plugins" svgClass="me-4" btnClass="p-1">
       <SidebarItem label="Chart" href="/plugins/chart" />
     </SidebarDropdownWrapper>
   </SidebarGroup>

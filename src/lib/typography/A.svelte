@@ -6,10 +6,10 @@
     children: Snippet;
     href: string;
     target?: string;
-    aClass?: string;
+    class?: string;
   }
 
-  let { children, href = '#', target, aClass, ...attributes }: Props = $props();
+  let { children, href = '#', target, class: aClass, ...attributes }: Props = $props();
 
   const colorCls: string = 'text-primary-600 dark:text-primary-500';
   const aCls: string = 'inline-flex items-center hover:underline';
@@ -26,6 +26,6 @@
 @prop children
 @prop href = '#'
 @prop target
-@prop aclass
+@prop class: aClass
 @prop ...attributes
 -->

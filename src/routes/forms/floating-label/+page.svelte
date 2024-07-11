@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { FloatingLabel, Helper } from '$lib';
+  import { FloatingLabelInput, Helper } from '$lib';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -19,20 +19,20 @@
 <H2>Floating label examples</H2>
 <CodeWrapper>
   <div id="exampleWrapper" class="grid w-full items-end gap-6 md:grid-cols-3">
-    <FloatingLabel
+    <FloatingLabelInput
       style="filled"
       id="floating_filled"
-      type="text">Floating filled</FloatingLabel
+      type="text">Floating filled</FloatingLabelInput
     >
-    <FloatingLabel
+    <FloatingLabelInput
       style="outlined"
       id="floating_outlined"
-      type="text">Floating outlined</FloatingLabel
+      type="text">Floating outlined</FloatingLabelInput
     >
-    <FloatingLabel
+    <FloatingLabelInput
       id="floating_standard"
       type="text"
-      >Floating standard</FloatingLabel
+      >Floating standard</FloatingLabelInput
     >
   </div>
 </CodeWrapper>
@@ -40,22 +40,22 @@
 <H2>Disabled state</H2>
 <CodeWrapper>
   <div id="exampleWrapper" class="grid w-full items-end gap-6 md:grid-cols-3">
-    <FloatingLabel
+    <FloatingLabelInput
       style="filled"
       id="disabled_filled"
       type="text"
-      disabled>Disabled filled</FloatingLabel
+      disabled>Disabled filled</FloatingLabelInput
     >
-    <FloatingLabel
+    <FloatingLabelInput
       style="outlined"
       id="disabled_outlined"
       type="text"
-      disabled>Disabled outlined</FloatingLabel
+      disabled>Disabled outlined</FloatingLabelInput
     >
-    <FloatingLabel
+    <FloatingLabelInput
       id="disabled_standard"
       type="text"
-      disabled>Disabled standard</FloatingLabel
+      disabled>Disabled standard</FloatingLabelInput
     >
   </div>
 </CodeWrapper>
@@ -66,12 +66,12 @@
   <!-- Success messages -->
   <div class="mb-6 grid items-end gap-6 md:grid-cols-3">
     <div>
-      <FloatingLabel
+      <FloatingLabelInput
         color="green"
         style="filled"
         id="filled_success"
         aria_describedby="filled_success_help"
-        type="text">Filled success</FloatingLabel
+        type="text">Filled success</FloatingLabelInput
       >
       <Helper color="green">
         <span class="font-medium">Well done!</span>
@@ -79,12 +79,12 @@
       </Helper>
     </div>
     <div>
-      <FloatingLabel
+      <FloatingLabelInput
         color="green"
         style="outlined"
         id="outlined_success"
         aria_describedby="outlined_success_help"
-        type="text">Outlined success</FloatingLabel
+        type="text">Outlined success</FloatingLabelInput
       >
       <Helper color="green">
         <span class="font-medium">Well done!</span>
@@ -92,12 +92,12 @@
       </Helper>
     </div>
     <div>
-      <FloatingLabel
+      <FloatingLabelInput
         color="green"
         style="standard"
         id="standard_success"
         aria_describedby="standard_success_help"
-        type="text">Standard success</FloatingLabel
+        type="text">Standard success</FloatingLabelInput
       >
       <Helper color="green">
         <span class="font-medium">Well done!</span>
@@ -108,12 +108,12 @@
   <!-- Error messages -->
   <div class="mb-6 grid items-end gap-6 md:grid-cols-3">
     <div>
-      <FloatingLabel
+      <FloatingLabelInput
         color="red"
         style="filled"
         id="filled_error"
         aria_describedby="filled_error_help"
-        type="text">Filled error</FloatingLabel
+        type="text">Filled error</FloatingLabelInput
       >
       <Helper color="red">
         <span class="font-medium">Oh, snapp!</span>
@@ -121,12 +121,12 @@
       </Helper>
     </div>
     <div>
-      <FloatingLabel
+      <FloatingLabelInput
         color="red"
         style="outlined"
         id="outlined_error"
         aria_describedby="outlined_error_help"
-        type="text">Outlined error</FloatingLabel
+        type="text">Outlined error</FloatingLabelInput
       >
       <Helper color="red">
         <span class="font-medium">Oh, snapp!</span>
@@ -134,12 +134,12 @@
       </Helper>
     </div>
     <div>
-      <FloatingLabel
+      <FloatingLabelInput
         color="red"
         style="standard"
         id="standard_error"
         aria_describedby="standard_error_help"
-        type="text">Standard error</FloatingLabel
+        type="text">Standard error</FloatingLabelInput
       >
       <Helper color="red">
         <span class="font-medium">Oh, snapp!</span>
@@ -153,37 +153,37 @@
 <H2>Sizes</H2>
 <CodeWrapper>
   <div class="mb-6 grid items-end gap-6 md:grid-cols-3">
-    <FloatingLabel
+    <FloatingLabelInput
       size="small"
       style="filled"
       id="small_filled"
-      type="text">Small filled</FloatingLabel
+      type="text">Small filled</FloatingLabelInput
     >
-    <FloatingLabel
+    <FloatingLabelInput
       size="small"
       style="outlined"
       id="small_outlined"
-      type="text">Small outlined</FloatingLabel
+      type="text">Small outlined</FloatingLabelInput
     >
-    <FloatingLabel
+    <FloatingLabelInput
       size="small"
       id="small_standard"
-      type="text">Small standard</FloatingLabel
+      type="text">Small standard</FloatingLabelInput
     >
   </div>
   <div class="grid items-end gap-6 md:grid-cols-3">
-    <FloatingLabel
+    <FloatingLabelInput
       style="filled"
       id="default_filled"
-      type="text">Default filled</FloatingLabel
+      type="text">Default filled</FloatingLabelInput
     >
-    <FloatingLabel
+    <FloatingLabelInput
       style="outlined"
       id="default_outlined"
-      type="text">Default outlined</FloatingLabel
+      type="text">Default outlined</FloatingLabelInput
     >
-    <FloatingLabel id="default_standard" type="text"
-      >Default standard</FloatingLabel
+    <FloatingLabelInput id="default_standard" type="text"
+      >Default standard</FloatingLabelInput
     >
   </div>
 </CodeWrapper>
@@ -191,13 +191,13 @@
 
 <H2>Helper text</H2>
 <CodeWrapper>
-  <FloatingLabel
+  <FloatingLabelInput
     style="filled"
     id="floating_helper"
     aria_describedby="floating_helper_text"
-    type="text">Floating helper</FloatingLabel
+    type="text">Floating helper</FloatingLabelInput
   >
-  <Helper pclass="pt-2">
+  <Helper class="pt-2">
     Remember, contributions to this topic should follow our <a
       href="/"
       class="text-primary-600 hover:underline dark:text-primary-500"

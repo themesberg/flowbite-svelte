@@ -26,9 +26,7 @@
 </script>
 
 <footer {...attributes} class={footerCls}>
-
     {@render children()}
-
 </footer>
 
 <!--
@@ -37,6 +35,6 @@
 ## Props
 @prop children
 @prop footerType = 'default'
-@prop class
+@prop class: footerclass
 @prop ...attributes
 -->

@@ -4,10 +4,10 @@
 
   interface Props {
     children: Snippet;
-    ulclass?: string | undefined;
+    class?: string | undefined;
   }
 
-  let { ulclass, children, ...attributes }: Props = $props();
+  let { class:ulclass, children, ...attributes }: Props = $props();
 </script>
 
 
@@ -22,7 +22,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop ulclass
+@prop class:ulclass
 @prop children
 @prop ...attributes
 -->

@@ -1,73 +1,127 @@
-<h2>
-  <button
-    type="button"
-    class="flex w-full items-center justify-between gap-3 border border-gray-200 p-5 font-medium text-gray-500 hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:focus:ring-gray-800 rtl:text-right"
-    data-accordion-target="#accordion-collapse-body-3"
-    aria-expanded="false"
-    aria-controls="accordion-collapse-body-3"
-  >
-    <span>What are the differences between Flowbite and Tailwind UI?</span>
-    <svg
-      data-accordion-icon
-      class="h-3 w-3 shrink-0 rotate-180"
-      aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 10 6"
-    >
-      <path
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M9 5 5 1 1 5"
-      ></path>
-    </svg>
+<script lang="ts">
+  import type { Snippet } from 'svelte';
+  import { twMerge } from 'tailwind-merge';
+  import { getContext } from 'svelte';
+  import { writable } from 'svelte/store';
+  import { fade, blur, fly, slide } from 'svelte/transition';
+  import type { TransitionTypes, TransitionParamTypes } from '../types';
+  import type { AccordionCtxType } from './Accordion.svelte';
+  
+  interface Props {
+    children: Snippet;
+    header?: Snippet;
+    arrowup?: Snippet;
+    arrowdown?: Snippet;
+    open?: boolean;
+    activeClass?: string;
+    inactiveClass?: string;
+    defaultClass?: string;
+    transitionType?: TransitionTypes;
+    transitionParams?: TransitionParamTypes;
+    paddingFlush?: string;
+    paddingDefault?: string;
+    textFlushOpen?: string;
+    textFlushDefault?: string;
+    borderClass?: string;
+    borderOpenClass?: string;
+    borderBottomClass?: string;
+    borderSharedClass?: string;
+    classActive?: string;
+    classInactive?: string;
+    class?: string;
+  }
+
+  let {
+    children,
+    header,
+    arrowup,
+    arrowdown,
+    open = false,
+    activeClass = undefined,
+    inactiveClass = undefined,
+    defaultClass = 'flex items-center justify-between w-full font-medium text-left group-first:rounded-t-xl border-gray-200 dark:border-gray-700',
+    transitionType = 'slide',
+    transitionParams = {},
+    paddingFlush = 'py-5',
+    paddingDefault = 'p-5',
+    textFlushOpen = 'text-gray-900 dark:text-white',
+    textFlushDefault = 'text-gray-500 dark:text-gray-400',
+    borderClass = 'border-s border-e group-first:border-t',
+    borderOpenClass = 'border-s border-e',
+    borderBottomClass = 'border-b',
+    borderSharedClass = 'border-gray-200 dark:border-gray-700',
+    classActive = undefined,
+    classInactive = undefined,
+    class: className,
+  }: Props = $props();
+
+  let activeCls = twMerge(activeClass, classActive);
+  let inactiveCls = twMerge(inactiveClass, classInactive);
+
+  // make a custom transition function that returns the desired transition
+  const multiple = (node: HTMLElement, params: any) => {
+    switch (transitionType) {
+      case 'blur':
+        return blur(node, params);
+      case 'fly':
+        return fly(node, params);
+      case 'fade':
+        return fade(node, params);
+      default:
+        return slide(node, params);
+    }
+  };
+
+  const ctx = getContext<AccordionCtxType>('ctx') ?? {};
+
+  // single selection
+  const self = {};
+  const selected = ctx.selected ?? writable();
+
+  let _open: boolean = $state(open);
+
+  $effect(() => {
+    if (_open) $selected = self;
+
+    // this will trigger unsubscribe on destroy
+    return selected.subscribe((x) => (open = x === self));
+  });
+
+  const handleToggle = (_: Event) => selected.set(open ? {} : self);
+
+  let buttonClass: string = twMerge(defaultClass, ctx.flush? '' : borderClass , borderBottomClass, borderSharedClass, ctx.flush ? paddingFlush : paddingDefault, open && (ctx.flush ? textFlushOpen : activeCls || ctx.activeClass), !open && (ctx.flush ? textFlushDefault : inactiveCls || ctx.inactiveClass), className);
+
+  let contentClass = twMerge([ctx.flush ? paddingFlush : paddingDefault, ctx.flush ? '' : borderOpenClass, borderBottomClass, borderSharedClass]);
+</script>
+
+<h2 class="group">
+  <button onclick={handleToggle} type="button" class={buttonClass} aria-expanded={open}>
+    {#if header}
+      {@render header()}
+      {#if open}
+        {#if !arrowup}
+          <svg class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5" />
+          </svg>
+        {:else}
+          {@render arrowup()}
+        {/if}
+      {:else}
+        {#if !arrowdown}
+          <svg class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+          </svg>
+        {:else}
+          {@render arrowdown()}
+        {/if}
+      {/if}
+    {/if}
   </button>
 </h2>
-<div
-  id="accordion-collapse-body-3"
-  class="hidden"
-  aria-labelledby="accordion-collapse-heading-3"
->
-  <div class="border border-t-0 border-gray-200 p-5 dark:border-gray-700">
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      The main difference is that the core components from Flowbite are open
-      source under the MIT license, whereas Tailwind UI is a paid product.
-      Another difference is that Flowbite relies on smaller and standalone
-      components, whereas Tailwind UI offers sections of pages.
-    </p>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      However, we actually recommend using both Flowbite, Flowbite Pro, and even
-      Tailwind UI as there is no technical reason stopping you from using the
-      best of two worlds.
-    </p>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Learn more about these technologies:
-    </p>
-    <ul class="list-disc ps-5 text-gray-500 dark:text-gray-400">
-      <li>
-        <a
-          href="https://flowbite.com/pro/"
-          class="text-blue-600 hover:underline dark:text-blue-500"
-          >Flowbite Pro</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://tailwindui.com/"
-          rel="nofollow"
-          class="text-blue-600 hover:underline dark:text-blue-500"
-          >Tailwind UI</a
-        >
-      </li>
-    </ul>
+{#if open}
+  <div transition:multiple={transitionParams}>
+    <div class={contentClass}>
+      {@render children()}
+    </div>
   </div>
-</div>
-
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: 
--->
+{/if}

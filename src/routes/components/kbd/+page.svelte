@@ -25,7 +25,7 @@
 
 <H2>Default KBD</H2>
 
-<CodeWrapper class="flex justify-center gap-1">
+<CodeWrapper class="flex justify-center gap-1 flex-wrap">
   <Kbd class="px-2 py-1.5">Shift</Kbd>
   <Kbd class="px-2 py-1.5">Ctrl</Kbd>
   <Kbd class="px-2 py-1.5">Tab</Kbd>
@@ -39,7 +39,7 @@
 
 <H2>KBD inside text</H2>
 
-<CodeWrapper class="flex justify-center">
+<CodeWrapper class="flex justify-center flex-wrap">
   <p class="text-gray-500 dark:text-gray-400">
     Please press <Kbd class="px-2 py-1.5">Ctrl</Kbd> + <Kbd
       class="px-2 py-1.5">Shift</Kbd
@@ -97,7 +97,7 @@
 
 <H2>Arrow keys</H2>
 
-<CodeWrapper class="flex justify-center">
+<CodeWrapper class="flex justify-center flex-wrap">
   <Kbd class="me-1 inline-flex items-center px-2 py-1.5">
     <CaretUpSolid size="xs" />
     <span class="sr-only">Arrow key up</span>
@@ -120,7 +120,7 @@
 
 <H2>Letter keys</H2>
 
-<CodeWrapper class="flex justify-center gap-1">
+<CodeWrapper class="flex justify-center gap-1 flex-wrap">
   <Kbd class="px-2 py-1.5">Q</Kbd>
   <Kbd class="px-2 py-1.5">W</Kbd>
   <Kbd class="px-2 py-1.5">E</Kbd>
@@ -153,7 +153,7 @@
 
 <H2>Number keys</H2>
 
-<CodeWrapper class="flex justify-center gap-1">
+<CodeWrapper class="flex justify-center gap-1 flex-wrap">
   <Kbd class="px-2 py-1.5">1</Kbd>
   <Kbd class="px-2 py-1.5">2</Kbd>
   <Kbd class="px-2 py-1.5">3</Kbd>
@@ -170,7 +170,7 @@
 
 <H2>Function keys</H2>
 
-<CodeWrapper class="flex justify-center gap-1">
+<CodeWrapper class="flex justify-center gap-1 flex-wrap">
   <Kbd class="px-2 py-1.5">F1</Kbd>
   <Kbd class="px-2 py-1.5">F2</Kbd>
   <Kbd class="px-2 py-1.5">F3</Kbd>

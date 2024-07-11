@@ -6,7 +6,7 @@
     children: Snippet;
     color?: 'gray' | 'green' | 'red' | 'disabled';
     show?: boolean;
-    labelclass?: string | undefined;
+    class?: string | undefined;
     forId?: string | undefined;
   }
 
@@ -14,7 +14,7 @@
     children,
     color = 'gray',
     show = true,
-    labelclass,
+    class: className,
     forId,
     ...attributes
   }: Props = $props();
@@ -29,7 +29,7 @@
   let labelCls = twMerge(
     'text-sm rtl:text-right font-medium block',
     colorClasses[color],
-    labelclass
+    className
   );
 </script>
 
@@ -49,7 +49,7 @@
 @prop children
 @prop color = 'gray'
 @prop show = true
-@prop labelclass
+@prop class: className
 @prop forId
 @prop ...attributes
 -->

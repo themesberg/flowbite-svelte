@@ -128,9 +128,7 @@
       role="button"
       tabindex="0"
     >
-      
-        {@render children()}
-     
+      {@render children()}
     </div>
   </div>
 </nav>

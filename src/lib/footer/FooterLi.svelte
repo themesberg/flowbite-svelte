@@ -5,16 +5,16 @@
   interface Props {
     children: Snippet;
     liClass?: string | undefined;
-    aclass?: string | undefined;
+    aClass?: string | undefined;
     href?: string | undefined;
     target?: string | undefined;
   }
 
-  let { children, liClass, aclass, href, target, ...attributes }: Props =
+  let { children, liClass, aClass, href, target, ...attributes }: Props =
     $props();
 
   let liCls: string = twMerge('me-4 last:me-0 md:me-6', liClass);
-  let aCls: string = twMerge('hover:underline', aclass);
+  let aCls: string = twMerge('hover:underline', aClass);
 </script>
 
 
@@ -30,7 +30,7 @@
 ## Props
 @prop children
 @prop liClass
-@prop aclass
+@prop aClass
 @prop href
 @prop target
 @prop ...attributes

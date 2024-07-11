@@ -230,7 +230,7 @@
         <span class="sr-only">Close modal</span>
       </button>
     </div>
-    <Sidebar aclass="p-2">
+    <Sidebar class="p-2">
       <SidebarGroup>
         <SidebarItem label="Dashboard">
           {#snippet iconSlot()}
@@ -239,7 +239,7 @@
             />
           {/snippet}
         </SidebarItem>
-        <SidebarDropdownWrapper label="E-commerce" btnclass="p-2">
+        <SidebarDropdownWrapper label="E-commerce" btnClass="p-2">
           {#snippet iconSlot()}
             <ShoppingBagSolid
               class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"

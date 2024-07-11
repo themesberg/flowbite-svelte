@@ -6,7 +6,7 @@
 
   interface Props {
     size?: keyof Sizes;
-    divClass?: string | undefined;
+    class?: string | undefined;
   }
 
   const sizes: Sizes = {
@@ -17,7 +17,7 @@
     xxl: 'max-w-2xl'
   };
 
-  let { size = 'sm', divClass }: Props = $props();
+  let { size = 'sm', class: divClass }: Props = $props();
   let outDivclass = twMerge(
     sizes[size],
     'p-4 rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700',
@@ -74,5 +74,5 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop size = 'sm'
-@prop divClass 
+@prop class: divClass
 -->

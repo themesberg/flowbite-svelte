@@ -4,10 +4,10 @@
   interface Props {
     children: Snippet;
     id?: string;
-    pclass?: string;
+    class?: string;
     color?: 'gray' | 'green' | 'red' | 'disabled';
   }
-  let { children, id, pclass, color = 'gray', ...attributes }: Props = $props();
+  let { children, id, class: className, color = 'gray', ...attributes }: Props = $props();
   const colorClasses = {
     gray: 'text-gray-900 dark:text-gray-300',
     green: 'text-green-700 dark:text-green-500',
@@ -23,7 +23,7 @@
     class={twMerge(
       'text-xs font-normal text-gray-500 dark:text-gray-300',
       colorClasses[color],
-      pclass
+      className
     )}
   >
     {@render children()}
@@ -35,7 +35,7 @@
 ## Props
 @prop children
 @prop id
-@prop pclass
+@prop class: className
 @prop color = 'gray'
 @prop ...attributes
 -->

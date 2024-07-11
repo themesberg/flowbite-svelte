@@ -17,7 +17,8 @@
 	}
 	const components: ListType = {
 		accordion: {
-			checked: false,
+			checked: true,
+			problems: 'Always open, Multiple mode, Custom transitions, Nesting accordions'
 		},
 		alert: {
 			checked: true,
@@ -78,6 +79,7 @@
 		},
 		footer: {
 			checked: true,
+			notes: 'Updated: class names'
 		},
 		forms: {
 			checked: false,
@@ -161,17 +163,20 @@
 	const forms: ListType = {
 		checkbox: {
 			checked: true,
-      problems: 'Checkbox dropdown, Colors, CheckboxButton, Advanced layout, Group variable'
+      problems: 'Checkbox dropdown, Colors, CheckboxButton, Advanced layout, Group variable',
+			notes: 'Updated: class names'
 		},
 		fileInput: {
 			checked: false
 		},
 		floatingLabel: {
 			checked: true,
-      problems: 'Disabled state - disabled outlined, Validation -  Outlined, Sized - outlined'
+      problems: 'Disabled state - disabled outlined, Validation -  Outlined, Sized - outlined',
+			notes: 'Updated: class names'
 		},
 		inputField: {
-			checked: false,
+			checked: true,
+			problems: 'Group examples add rounded radius'
 		},
 		radio: {
 			checked: true,
@@ -237,21 +242,29 @@
 		}
 	};
 
+	const othercomponents: ListType = {
+		helper: {
+			checked: true,
+			notes: 'Updated: class names'
+		}
+	}
+
 	function analyzeComponents(components: ListType) {
 		let total = 0;
-		let checked = 0;
-		let unchecked = 0;
-		let withProblems = 0;
-		let withoutProblems = 0;
-		let pageProblems = 0;
+		let pageChecked = 0;
+		let pageUnchecked = 0;
+		let pageWithProblems = 0;
+		let pageWithoutProblems = 0;
+		let exampleProblems = 0;
 
 		for (const component in components) {
 			total++;
-			checked += components[component].checked ? 1 : 0;
-			unchecked += !components[component].checked ? 1 : 0;
-			withProblems += components[component].problems ? 1 : 0;
-			pageProblems += components[component].problems ? 1 : 0;
+			pageChecked += components[component].checked ? 1 : 0;
+			pageUnchecked += !components[component].checked ? 1 : 0;
+			pageWithProblems += components[component].problems ? 1 : 0;
+			// exampleProblems += components[component].problems ? 1 : 0;
 
+			// count the number of example problems
 			let numberOfProblemsForComponent = 0;
 			if (components[component].problems) {
 				// Split the problems string by commas (ignoring whitespaces)
@@ -260,17 +273,17 @@
 				numberOfProblemsForComponent = problemsArray.length;
 			}
 			// Add the number of problems for this component to the total count
-			withProblems += numberOfProblemsForComponent;
+			exampleProblems += numberOfProblemsForComponent;
 		}
-		withoutProblems = checked - withProblems; 
+		pageWithoutProblems = pageChecked - pageWithProblems; 
 
 		return {
 			total,
-			checked,
-			unchecked,
-			withProblems,
-			withoutProblems,
-			pageProblems,
+			pageChecked,
+			pageUnchecked,
+			pageWithProblems,
+			pageWithoutProblems,
+			exampleProblems,
 		};
 	}
 
@@ -288,33 +301,30 @@
 
 <H2>Components</H2>
 <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
-	<Li># of pages - {componentsAnalysis.total}</Li>
-	<Li># of pages checked - {componentsAnalysis.checked}</Li>
-	<Li># of pages unchecked - {componentsAnalysis.unchecked}</Li>
-	<Li liClass='text-green-500'># of pages without problems - {componentsAnalysis.withoutProblems}</Li>
-	<Li liClass='text-red-500'># of pages with problems - {componentsAnalysis.pageProblems}</Li>
-	<Li liClass='text-red-500'># of problems - {componentsAnalysis.withProblems}</Li>
+	<Li># of pages: {componentsAnalysis.total}</Li>
+	<Li># of components/pages checked: {componentsAnalysis.pageChecked}</Li>
+	<Li># of components/pages to be completed: {componentsAnalysis.pageUnchecked}</Li>
+	<Li liClass='text-green-500'># of pages without problems: {componentsAnalysis.pageWithoutProblems}</Li>
+	<Li liClass='text-red-500'># of examples to be completed: {componentsAnalysis.exampleProblems}</Li>
 </List>
 	
 
 <H2>Forms</H2>
 <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
-	<Li># of pages - {formsAnalysis.total}</Li>
-	<Li># of pages checked - {formsAnalysis.checked}</Li>
-	<Li># of pages unchecked - {formsAnalysis.unchecked}</Li>
-	<Li liClass='text-green-500'># of pages without problems - {formsAnalysis.withoutProblems}</Li>
-	<Li liClass='text-red-500'># of pages with problems - {formsAnalysis.pageProblems}</Li>
-	<Li liClass='text-red-500'># of problems - {formsAnalysis.withProblems}</Li>
+	<Li># of pages: {formsAnalysis.total}</Li>
+	<Li># of components/pages checked: {formsAnalysis.pageChecked}</Li>
+	<Li># of components/pages to be completed: {formsAnalysis.pageUnchecked}</Li>
+	<Li liClass='text-green-500'># of pages without problems: {formsAnalysis.pageWithoutProblems}</Li>
+	<Li liClass='text-red-500'># of examples to be completed: {formsAnalysis.exampleProblems}</Li>
 </List>
 
 <H2>Typography</H2>
 <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
-	<Li># of pages - {typographyAnalysis.total}</Li>
-	<Li># of pages checked - {typographyAnalysis.checked}</Li>
-	<Li># of pages unchecked - {typographyAnalysis.unchecked}</Li>
-	<Li liClass='text-green-500'># of pages without problems - {typographyAnalysis.withoutProblems}</Li>
-	<Li liClass='text-red-500'># of pages with problems - {typographyAnalysis.pageProblems}</Li>
-	<Li liClass='text-red-500'># of problems - {typographyAnalysis.withProblems}</Li>
+	<Li># of pages: {typographyAnalysis.total}</Li>
+	<Li># of components/pages checked: {typographyAnalysis.pageChecked}</Li>
+	<Li># of components/pages to be completed: {typographyAnalysis.pageUnchecked}</Li>
+	<Li liClass='text-green-500'># of pages without problems: {typographyAnalysis.pageWithoutProblems}</Li>
+	<Li liClass='text-red-500'># of examples to be completed: {typographyAnalysis.exampleProblems}</Li>
 </List>
 
 <Heading
@@ -331,7 +341,7 @@
 			{:else}
 				<QuestionCircleSolid class="me-2 h-8 w-8 text-gray-500 dark:text-gray-400" />
 			{/if}
-			<a href="/components/{convertStringToKebabCase(key)}" class='hover:underline'>{key}</a> {#if problems} <span class="text-red-500 ml-4">( {problems})</span>{/if}{#if notes}<span class="text-green-500 ml-4">(DONE: {notes})</span> {/if}
+			<a href="/components/{convertStringToKebabCase(key)}" class='text-blue-800 hover:text-blue-500 underline'>{key}</a> {#if problems} <span class="text-red-500 ml-4">( {problems})</span>{/if}{#if notes}<span class="text-green-500 ml-4">(DONE: {notes})</span> {/if}
 		</Li>
 	{/each}
 </List>

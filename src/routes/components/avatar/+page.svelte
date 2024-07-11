@@ -164,7 +164,7 @@
 
 <H2>Sizes</H2>
 <CodeWrapper class='flex flex-col gap-4'>
-  <div class=" flex flex-wrap justify-center space-x-4 rtl:space-x-reverse">
+  <div class="flex flex-wrap flex-col sm:flex-row justify-center rtl:space-x-reverse gap-4">
     <Avatar src="/images/profile-picture-3.webp" rounded size="xs" />
     <Avatar src="/images/profile-picture-3.webp" rounded size="sm" />
     <Avatar src="/images/profile-picture-3.webp" rounded size="md" />

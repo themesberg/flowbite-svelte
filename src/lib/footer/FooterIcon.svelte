@@ -6,15 +6,15 @@
     children: Snippet;
     href?: string | undefined;
     ariaLabel?: string | undefined;
-    aclass?: string | undefined;
+    class?: string | undefined;
     target?: string | undefined;
   }
 
-  let { children, href, ariaLabel, aclass, target, ...attributes }: Props =
+  let { children, href, ariaLabel, class: aClass, target, ...attributes }: Props =
     $props();
   const aCls: string = twMerge(
     'text-gray-500 hover:text-gray-900 dark:hover:text-white',
-    aclass
+    aClass
   );
 </script>
 
@@ -33,7 +33,7 @@
 @prop children
 @prop href
 @prop ariaLabel
-@prop aclass
+@prop class: aClass
 @prop target
 @prop ...attributes
 -->

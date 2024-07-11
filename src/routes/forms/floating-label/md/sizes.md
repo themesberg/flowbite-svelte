@@ -1,22 +1,22 @@
 <div class="grid gap-6 items-end mb-6 md:grid-cols-3">
-    <FloatingLabel size="small" style="filled" id="small_filled" type="text">
+    <FloatingLabelInput size="small" style="filled" id="small_filled" type="text">
         Small filled
-    </FloatingLabel>
-    <FloatingLabel size="small" style="outlined" id="small_outlined" type="text">
+    </FloatingLabelInput>
+    <FloatingLabelInput size="small" style="outlined" id="small_outlined" type="text">
         Small outlined
-    </FloatingLabel>
-    <FloatingLabel size="small" id="small_standard" type="text">
+    </FloatingLabelInput>
+    <FloatingLabelInput size="small" id="small_standard" type="text">
         Small standard
-    </FloatingLabel>
+    </FloatingLabelInput>
 </div>
 <div class="grid gap-6 items-end md:grid-cols-3">
-    <FloatingLabel style="filled" id="default_filled" type="text">
+    <FloatingLabelInput style="filled" id="default_filled" type="text">
         Default filled
-    </FloatingLabel>
-    <FloatingLabel style="outlined" id="default_outlined" type="text">
+    </FloatingLabelInput>
+    <FloatingLabelInput style="outlined" id="default_outlined" type="text">
         Default outlined
-    </FloatingLabel>
-    <FloatingLabel id="default_standard" type="text">
+    </FloatingLabelInput>
+    <FloatingLabelInput id="default_standard" type="text">
         Default standard
-    </FloatingLabel>
+    </FloatingLabelInput>
 </div>

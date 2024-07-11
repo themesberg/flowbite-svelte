@@ -23,7 +23,7 @@
 
 <H2>Default link</H2>
 <CodeWrapper>
-  <A href="/" aClass="font-medium hover:underline">Read more</A>
+  <A href="/" class="font-medium hover:underline">Read more</A>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/default-link.md'] as string} />
 
@@ -37,7 +37,7 @@
   <P>
     The free updates that will be provided is based on the <A
       href="/"
-      aClass="underline hover:no-underline">roadmap</A
+      class="underline hover:no-underline">roadmap</A
     > that we have laid out for this project. It is also possible that we will provide
     extra updates outside of the roadmap as well.
   </P>
@@ -51,7 +51,7 @@
     500,000 people have made over a million apps with Glide.
     <A
       href="/"
-      aClass="text-primary-600 dark:text-primary-500 inline-flex items-center font-medium hover:underline"
+      class="text-primary-600 dark:text-primary-500 inline-flex items-center font-medium hover:underline"
     >
       Read their stories
       <ArrowRightOutline class="ms-2 h-6 w-6" />
@@ -62,7 +62,7 @@
 
 <H2>CTA link</H2>
 <CodeWrapper>
-  <A href="/" aClass="dark:hover:text-white inline-flex justify-center items-center p-5 text-base font-medium bg-gray-50 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 hover:no-underline">
+  <A href="/" class="dark:hover:text-white inline-flex justify-center items-center p-5 text-base font-medium bg-gray-50 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 hover:no-underline">
     <Figma />
     <span class="w-full ms-3">Get started with our Figma Design System</span>
     <ArrowRightOutline class="w-6 h-6 ms-2" />

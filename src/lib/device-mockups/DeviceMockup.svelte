@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  // import type { Component } from 'svelte';
+  import type { Component } from 'svelte';
   import type { DeviceVariantType } from '$lib/types';
   import Android from './Android.svelte';
   import DefaultMockup from './DefaultMockup.svelte';
@@ -27,7 +27,7 @@
     desktop: Desktop
   };
 
-  let component = componets[device];
+  let component: Component = componets[device];
 </script>
 
 {#if component}

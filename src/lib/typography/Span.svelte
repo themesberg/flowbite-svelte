@@ -61,8 +61,8 @@
 @prop uppercase
 @prop gradient
 @prop highlight
-@prop highlightClass = ''
-@prop decorationClass = ''
+@prop highlightClass = 'text-blue-600 dark:text-blue-500'
+@prop decorationClass = 'decoration-2 decoration-blue-400 dark:decoration-blue-600'
 @prop gradientClass = 'text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400'
 @prop ...attributes
 -->

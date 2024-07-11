@@ -28,7 +28,7 @@
       class="mb-4 text-4xl font-extrabold  md:text-5xl lg:text-6xl"
       >We invest in the world’s potential</Heading
     >
-    <P pclass="mb-6 text-lg lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400"
+    <P class="mb-6 text-lg lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400"
       >Here at Flowbite we focus on markets where technology, innovation, and
       capital can unlock long-term value and drive economic growth.</P
     >
@@ -47,12 +47,12 @@
   <Heading tag="h2" class="text-4xl font-extrabold "
     >Payments tool for companies</Heading
   >
-  <P pclass="my-4 text-gray-500"
+  <P class="my-4 text-gray-500"
     >Start developing with an open-source library of over 450+ UI components,
     sections, and pages built with the utility classes from Tailwind CSS and
     designed in Figma.</P
   >
-  <P pclass="mb-4"
+  <P class="mb-4"
     >Deliver great service experiences fast - without the complexity of
     traditional ITSM solutions. Accelerate critical development work, eliminate
     toil, and deploy changes with ease.</P
@@ -129,7 +129,7 @@
 
 <H2>Badge context</H2>
 <CodeWrapper>
-  <Heading tag="h1" class="flex items-center" size="text-5xl">
+  <Heading tag="h1" class="flex items-center text-5xl">
     Flowbite <Badge class="text-2xl font-semibold ms-2">PRO</Badge>
   </Heading>
 </CodeWrapper>

@@ -1,4 +1,8 @@
-{#if $$props.small}
+<script>
+  let { small = false } = $props();
+</script>
+
+{#if small}
   <svg width="85" height="28" viewBox="0 0 85 28" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M14.4317 28C22.1637 28 28.4317 21.732 28.4317 14C28.4317 6.26801 22.1637 0 14.4317 0C6.69967 0 0.431641 6.26801 0.431641 14C0.431641 21.732 6.69967 28 14.4317 28Z" fill="#6B7280" />
     <path

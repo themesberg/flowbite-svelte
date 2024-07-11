@@ -3,9 +3,9 @@
   import { twMerge } from 'tailwind-merge';
   interface Props {
     children?: Snippet;
-    aclass?: string | undefined;
+    aClass?: string | undefined;
     spanClass?: string | undefined;
-    imgclass?: string | undefined;
+    imgClass?: string | undefined;
     href?: string | undefined;
     src?: string | undefined;
     alt?: string | undefined;
@@ -14,9 +14,9 @@
   }
   let {
     children,
-    aclass,
+    aClass,
     spanClass,
-    imgclass,
+    imgClass,
     href,
     src,
     alt,
@@ -25,12 +25,12 @@
     ...attributes
   }: Props = $props();
 
-  let aCls: string = twMerge('flex items-center', aclass);
+  let aCls: string = twMerge('flex items-center', aClass);
   let spanCls: string = twMerge(
     'self-center text-2xl font-semibold whitespace-nowrap dark:text-white',
     spanClass
   );
-  let imgCls: string = twMerge('me-3 h-8', imgclass);
+  let imgCls: string = twMerge('me-3 h-8', imgClass);
 </script>
 
 {#if href}
@@ -54,9 +54,9 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
-@prop aclass
+@prop aClass
 @prop spanClass
-@prop imgclass
+@prop imgClass
 @prop href
 @prop src
 @prop alt

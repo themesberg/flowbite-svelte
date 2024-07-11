@@ -101,11 +101,12 @@
 @prop name
 @prop icon
 @prop href
-@prop currentClass
+@prop currentClass = 'text-white bg-primary-700 dark:text-white dark:bg-gray-800'
 @prop normalClass
-@prop disabledClass
-@prop focusClass
-@prop hoverClass
-@prop liClass
+@prop disabledClass = 'text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400'
+@prop focusClass = 'focus:z-40 focus:outline-none focus:ring-2 focus:ring-primary-700 focus:text-primary-700 dark:focus:ring-gray-500 dark:focus:text-white'
+@prop hoverClass = 'hover:bg-gray-100 hover:text-primary-700 dark:hover:bg-gray-600 dark:hover:text-white'
+@prop liClass = 'py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg'
+@prop class: className
 @prop ...attributes
 -->

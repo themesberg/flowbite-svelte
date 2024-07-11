@@ -9,7 +9,7 @@
     ariaLabel?: string;
     id?: string;
     role?: string;
-    svgclass?: string;
+    svgClass?: string;
     onclick?: () => void;
   }
 
@@ -21,7 +21,7 @@
     ariaLabel = 'thumbup',
     id = idGenerator(),
     role = 'img',
-    svgclass,
+    svgClass,
     onclick,
     ...attributes
   }: Props = $props();
@@ -31,7 +31,7 @@
   width={size}
   height={size}
   {...attributes}
-  class={svgclass}
+  class={svgClass}
   aria-label={ariaLabel}
   viewBox="0 0 24 24"
   {role}
@@ -73,7 +73,7 @@
 @prop ariaLabel = 'thumbup'
 @prop id = idGenerator()
 @prop role = 'img'
-@prop svgclass
+@prop svgClass
 @prop onclick
 @prop ...attributes
 -->

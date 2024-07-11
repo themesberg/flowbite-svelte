@@ -115,5 +115,5 @@
 @prop border = false
 @prop placement
 @prop offset = true
-@prop divClass
+@prop class: divClass
 -->

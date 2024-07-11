@@ -117,7 +117,7 @@
 @prop pill
 @prop color = 'blue'
 @prop shadow
-@prop divClass
+@prop class: className
 @prop onclick
 @prop ...attributes
 -->

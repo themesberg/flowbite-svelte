@@ -47,7 +47,7 @@
 <header
   class="sticky top-0 z-50 mx-auto w-full flex-none border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-950 lg:pl-4"
 >
-  <Navbar {toggleNav} {closeNav} {navStatus} fluid div2class="ml-auto w-full">
+  <Navbar {toggleNav} {closeNav} {navStatus} fluid  div2class="ml-auto w-full">
     {#snippet brand()}
       <button
         onclick={navDrawer.toggle}
@@ -77,7 +77,7 @@
       </NavBrand>
 
       <div class="ml-auto flex items-center md:order-1">
-        <a href="https://ko-fi.com/Z8Z2CHALG" target="_blank"
+        <a class='hidden md:block' href="https://ko-fi.com/Z8Z2CHALG" target="_blank"
           ><img
             height="36"
             style="border:0px;height:36px;"
@@ -142,12 +142,12 @@
   </div>
   <Sidebar
     {activeClass}
-    asideclass="w-full p-0"
+    asideClass="w-full p-0"
     divClass="bg-transparent p-0"
-    aclass="p-1 pl-4"
+    class="p-1 pl-4"
   >
     <SidebarGroup>
-      <SidebarDropdownWrapper isOpen={hasPath('pages')} label="GETTING STARTED" svgclass="me-4" btnclass="p-1">
+      <SidebarDropdownWrapper isOpen={hasPath('pages')} label="GETTING STARTED" svgClass="me-4" btnClass="p-1">
         <SidebarItem
           onclick={closeNavDrawer}
           label="About"
@@ -159,7 +159,7 @@
           href="/pages/coverage"
         />
         </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper isOpen={hasPath('components')} label="Components" svgclass="me-4" btnclass="p-1">
+      <SidebarDropdownWrapper isOpen={hasPath('components')} label="Components" svgClass="me-4" btnClass="p-1">
         <SidebarItem
           onclick={closeNavDrawer}
           label="Alert"
@@ -237,8 +237,8 @@
         />
         <SidebarItem
           onclick={closeNavDrawer}
-          label="Indicator"
-          href="/components/indicator"
+          label="Indicators"
+          href="/components/indicators"
         />
         <SidebarItem
           onclick={closeNavDrawer}
@@ -301,7 +301,7 @@
           href="/components/video"
         />
       </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper isOpen={hasPath('forms')} label="Forms" svgclass="me-4" btnclass="p-1">
+      <SidebarDropdownWrapper isOpen={hasPath('forms')} label="Forms" svgClass="me-4" btnClass="p-1">
         <SidebarItem
           onclick={closeNavDrawer}
           label="Checkbox"
@@ -333,7 +333,7 @@
           href="/forms/toggle"
         />
       </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper isOpen={hasPath('typography')} label="Typography" svgclass="me-4" btnclass="p-1">
+      <SidebarDropdownWrapper isOpen={hasPath('typography')} label="Typography" svgClass="me-4" btnClass="p-1">
         <SidebarItem
           onclick={closeNavDrawer}
           label="Blockquote"
@@ -348,6 +348,11 @@
           onclick={closeNavDrawer}
           label="HR"
           href="/typography/hr"
+        />
+        <SidebarItem
+          onclick={closeNavDrawer}
+          label="Image"
+          href="/typography/image"
         />
         <SidebarItem
           onclick={closeNavDrawer}
@@ -370,7 +375,7 @@
           href="/typography/text"
         />
       </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper isOpen={hasPath('plugins')} label="Plugins" svgclass="me-4" btnclass="p-1">
+      <SidebarDropdownWrapper isOpen={hasPath('plugins')} label="Plugins" svgClass="me-4" btnClass="p-1">
         <SidebarItem
           onclick={closeNavDrawer}
           label="Chart"
