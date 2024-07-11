@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.46.15
+
+### Patch Changes
+
+- feat: add 5.0.0 to peerDependencies ([`69108a0080373c686cead96d80cdfa1d44ab5ef8`](https://github.com/themesberg/flowbite-svelte/commit/69108a0080373c686cead96d80cdfa1d44ab5ef8))
+
 ## 0.46.14
 
 ### Patch Changes

@@ -51,5 +51,5 @@
 @prop export let checked: boolean | undefined = undefined;
 @prop export let spacing: string = $$slots.default ? 'me-2' : '';
 @prop export let groupLabelClass: string = '';
-@prop export let groupInputClass: strixng = '';
+@prop export let groupInputClass: string = '';
 -->
