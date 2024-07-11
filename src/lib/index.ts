@@ -55,6 +55,7 @@ export { default as Select } from './forms/Select.svelte';
 export { default as Radio } from './forms/Radio.svelte';
 export { default as RadioButton } from './forms/RadioButton.svelte';
 export { default as Range } from './forms/Range.svelte';
+export { default as Textarea } from './forms/Textarea.svelte';
 export { default as Toggle } from './forms/Toggle.svelte';
 // gallery
 export { default as Gallery } from './gallery/Gallery.svelte';

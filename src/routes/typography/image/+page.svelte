@@ -69,10 +69,6 @@
 <p>Use the srcset attribute to set Retina-ready images with double resolution.</p>
 
 <CodeWrapper>svelte example class="flex justify-center" hideScript
-<script>
-  import { Img } from 'flowbite-svelte';
-</script>
-
 <Img srcset="/images/examples/image-1.jpg 1x, /images/examples/image-1@2x.jpg 2x" alt="sample 1" size="w-full max-w-xl" class="rounded-lg" />
 </CodeWrapper>
 
