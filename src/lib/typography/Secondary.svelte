@@ -5,8 +5,8 @@
 
   interface Props extends HTMLAttributes<HTMLElement>{
     children: Snippet;
-    secondaryClass?: string;
-    class?: string;
+    secondaryClass?: string | undefined | null;
+    class?: string | undefined | null;
   }
   let { 
     children,

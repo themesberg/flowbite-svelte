@@ -1,7 +1,7 @@
 <script lang="ts">
   interface Props {
     small?: boolean;
-    class?: string;
+    class?: string | undefined | null;
   }
   let { small = false, class: className }: Props = $props();
 </script>

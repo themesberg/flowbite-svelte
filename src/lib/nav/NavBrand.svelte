@@ -6,7 +6,7 @@
 
   interface Props {
     children?: Snippet;
-    siteName: string;
+    siteName: string | undefined | null;
     closeNav?: () => void;
     aclass?: string | undefined;
     spanClass?: string | undefined;

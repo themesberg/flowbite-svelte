@@ -18,7 +18,7 @@
     rightOffset?: string | undefined;
     topOffset?: string | undefined;
     bottomOffset?: string | undefined;
-    width?: string;
+    width?: string | undefined | null;
     backdrop?: boolean;
     bgColor?: string | undefined;
     bgOpacity?: string | undefined;

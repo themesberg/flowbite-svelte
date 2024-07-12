@@ -5,7 +5,7 @@
 
   interface Props extends HTMLAttributes<HTMLParagraphElement> {
     children: Snippet;
-    class?: string;
+    class?: string | undefined | null;
     color?: 'gray' | 'green' | 'red' | 'disabled';
   }
   let { children, class: className, color = 'gray', ...attributes }: Props = $props();

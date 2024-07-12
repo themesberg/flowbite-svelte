@@ -2,13 +2,13 @@
   import { idGenerator } from '$lib/uiHelpers.svelte';
   interface Props {
     fillPercent?: number;
-    fillColor?: string;
-    strokeColor?: string;
+    fillColor?: string | undefined | null;
+    strokeColor?: string | undefined | null;
     size?: number;
-    ariaLabel?: string;
-    id?: string;
-    role?: string;
-    svgClass?: string;
+    ariaLabel?: string | undefined | null;
+    id?: string | undefined | null;
+    role?: string | undefined | null;
+    svgClass?: string | undefined | null;
   }
 
   let {

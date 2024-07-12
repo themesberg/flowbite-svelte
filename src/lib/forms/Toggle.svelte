@@ -12,15 +12,15 @@
     group?: (string | number)[];
     value?: string | number;
     checked?: boolean | undefined;
-    customSize?: string;
-    spanClass?: string;
+    customSize?: string | undefined | null;
+    spanClass?: string | undefined | null;
     color?: FormColorType;
     inline?: boolean;
-    labelClass?: string;
-    aria_describedby?: string;
-    spacing?: string;
+    labelClass?: string | undefined;
+    aria_describedby?: string | undefined | null;
+    spacing?: string | undefined | null;
     custom?: boolean;
-    inputClass?: string;
+    inputClass?: string | undefined;
   }
 
   let {

@@ -3,8 +3,8 @@
   import { twMerge } from 'tailwind-merge';
   interface Props {
     children?: Snippet;
-    class?: string;
-    padding?: string;
+    class?: string | undefined | null;
+    padding?: string | undefined | null;
     colspan?: number;
     rowspan?: number;
   }

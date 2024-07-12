@@ -10,7 +10,7 @@
     end?: Snippet;
     embedded?: boolean;
     color?: FrameColor;
-    class?: string;
+    class?: string | undefined | null;
   }
 
   let { children, end, color = 'default', embedded, class: className, ...attributes }: Props = $props();

@@ -6,23 +6,23 @@
     children: Snippet;
     evaluation?: Snippet;
     ceil?: boolean;
-    helpfullink?: string;
-    abuselink?: string;
+    helpfullink?: string | undefined | null;
+    abuselink?: string | undefined | null;
     comment: {
-      id?: string;
+      id?: string | undefined | null;
       user: {
-        name?: string;
+        name?: string | undefined | null;
         img: {
-          src: string;
-          alt?: string;
+          src: string | undefined | null;
+          alt?: string | undefined | null;
         };
-        joined?: string;
+        joined?: string | undefined | null;
       };
       total?: number;
       rating: number;
-      heading?: string;
-      address?: string;
-      datetime?: string;
+      heading?: string | undefined | null;
+      address?: string | undefined | null;
+      datetime?: string | undefined | null;
     };
   }
 

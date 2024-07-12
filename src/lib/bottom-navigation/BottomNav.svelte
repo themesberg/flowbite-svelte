@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
   export type BottomNavType = {
-    activeClass: string;
+    activeClass: string | undefined | null;
   };
 </script>
 
@@ -9,16 +9,17 @@
   import { setContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import type { BottomNavVariantType } from '../types';
+  import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLAttributes<HTMLDivElement> {
     children: Snippet;
     header?: Snippet;
-    activeUrl?: string;
+    activeUrl?: string | undefined | null;
     position?: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky';
     navType?: BottomNavVariantType;
-    outerClass?: string;
-    innerClass?: string;
-    activeClass?: string;
+    outerClass?: string | undefined | null;
+    innerClass?: string | undefined | null;
+    activeClass?: string | undefined | null;
   }
 
   let {

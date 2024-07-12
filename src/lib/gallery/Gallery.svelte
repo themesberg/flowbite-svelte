@@ -3,8 +3,8 @@
   import { twMerge } from 'tailwind-merge';
 
   type ImgType = {
-    src: string;
-    alt?: string;
+    src: string | undefined | null;
+    alt?: string | undefined | null;
   };
 
   interface Props {

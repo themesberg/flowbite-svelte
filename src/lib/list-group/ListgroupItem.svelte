@@ -10,16 +10,16 @@
     active?: boolean;
     current?: boolean;
     disabled?: boolean;
-    name?: string;
+    name?: string | undefined | null;
     icon?: Component;
-    href?: string;
-    currentClass?: string;
-    normalClass?: string;
-    disabledClass?: string;
-    focusClass?: string;
-    hoverClass?: string;
-    liClass?: string;
-    class?: string;
+    href?: string | undefined | null;
+    currentClass?: string | undefined | null;
+    normalClass?: string | undefined | null;
+    disabledClass?: string | undefined | null;
+    focusClass?: string | undefined | null;
+    hoverClass?: string | undefined | null;
+    liClass?: string | undefined | null;
+    class?: string | undefined | null;
   }
 
   let {

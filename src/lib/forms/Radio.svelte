@@ -49,13 +49,13 @@
 
   interface Props extends HTMLInputAttributes{
     children: Snippet;
-    aria_describedby?: string;
-    labelClass?: string;
+    aria_describedby?: string | undefined | null;
+    labelClass?: string | undefined;
     color?: FormColorType;
     custom?: boolean;
     inline?: boolean;
     group?: number | string | undefined;
-    inputClass?: string;
+    inputClass?: string | undefined;
   }
   let {
     children,

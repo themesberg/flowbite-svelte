@@ -6,14 +6,14 @@
 
   interface Props extends HTMLInputAttributes{
     children: Snippet;
-    id?: string;
-    aria_describedby?: string;
+    id?: string | undefined | null;
+    aria_describedby?: string | undefined | null;
     style?: 'filled' | 'outlined' | 'standard';
     inputSize?: 'small' | 'default';
     color?: 'base' | 'green' | 'red';
-    divClass?: string;
-    inputClass?: string;
-    labelClass?: string;
+    divClass?: string | undefined | null;
+    inputClass?: string | undefined | null;
+    labelClass?: string | undefined | null;
   }
   let {
     children,

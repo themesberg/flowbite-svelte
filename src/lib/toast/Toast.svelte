@@ -13,9 +13,9 @@
     dismissable?: boolean;
     color?: ColorVariant;
     position?: ToastPositionType;
-    divClass?: string;
-    div2class?: string;
-    div3class?: string;
+    divClass?: string | undefined | null;
+    div2class?: string | undefined | null;
+    div3class?: string | undefined | null;
     align?: boolean;
     transition?: TransitionFunc;
     params?: object;

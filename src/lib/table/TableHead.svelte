@@ -7,8 +7,8 @@
   interface Props {
     children?: Snippet;
     defaultRow?: boolean;
-    theadClass?: string;
-    class?: string;
+    theadClass?: string | undefined | null;
+    class?: string | undefined | null;
   }
 
   let {

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
   interface Sizes {
-    [key: string]: string;
+    [key: string]: string | undefined | null;
   }
 
   interface Props {

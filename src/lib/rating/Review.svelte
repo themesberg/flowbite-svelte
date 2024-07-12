@@ -3,12 +3,12 @@
   import { twMerge } from 'tailwind-merge';
 
   type ReviewType = {
-    name?: string;
-    imgSrc?: string;
-    imgAlt?: string;
+    name?: string | undefined | null;
+    imgSrc?: string | undefined | null;
+    imgAlt?: string | undefined | null;
     address?: string | undefined;
     reviewDate?: string | undefined;
-    title?: string;
+    title?: string | undefined | null;
     rating?: number;
     item1?: string | undefined;
     item2?: string | undefined;
@@ -22,11 +22,11 @@
     item2?: any;
     item3?: any;
     review?: ReviewType;
-    articleclass?: string;
-    divClass?: string;
-    imgclass?: string;
-    ulclass?: string;
-    liClass?: string;
+    articleclass?: string | undefined | null;
+    divClass?: string | undefined | null;
+    imgclass?: string | undefined | null;
+    ulclass?: string | undefined | null;
+    liClass?: string | undefined | null;
   }
 
   let {

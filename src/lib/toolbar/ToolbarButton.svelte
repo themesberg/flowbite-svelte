@@ -7,11 +7,11 @@
   interface Props {
     children: Snippet;
     color?: ToolbarButtonType;
-    name?: string;
-    ariaLabel?: string;
+    name?: string | undefined | null;
+    ariaLabel?: string | undefined | null;
     size?: 'xs' | 'sm' | 'md' | 'lg';
-    href?: string;
-    class?: string;
+    href?: string | undefined | null;
+    class?: string | undefined | null;
     onclick?: () => void;
   }
   const background = getContext('background');

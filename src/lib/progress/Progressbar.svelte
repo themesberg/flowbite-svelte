@@ -48,7 +48,7 @@
     easing
   });
 
-  // let barColor: string;
+  // let barColor: string | undefined | null;
   const barColors = {
     primary: 'bg-primary-600',
     blue: 'bg-blue-600',

@@ -4,12 +4,12 @@
 
   interface Props {
     color?: SpinnerColorType;
-    bg?: string;
-    customColor?: string;
+    bg?: string | undefined | null;
+    customColor?: string | undefined | null;
     size?: string | number;
-    currentFill?: string;
-    currentColor?: string;
-    svgClass?: string;
+    currentFill?: string | undefined | null;
+    currentColor?: string | undefined | null;
+    svgClass?: string | undefined | null;
   }
 
   let {

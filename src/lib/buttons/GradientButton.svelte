@@ -11,7 +11,7 @@
     shadow?: boolean;
     outline?: boolean;
     pill?: boolean;
-    class?: string;
+    class?: string | undefined | null;
     onclick?: () => void;
     href?: HTMLAnchorAttributes['href'];
     target?: HTMLAnchorAttributes['target'];

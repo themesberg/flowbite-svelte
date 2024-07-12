@@ -1,15 +1,16 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
+  import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLAttributes<HTMLElement> {
     children: Snippet;
     solid?: boolean;
-    navClass?: string | undefined;
-    solidClass?: string | undefined;
-    olClass?: string | undefined;
-    ariaLabel?: string | undefined;
-    class?: string | undefined;
+    navClass?: string | undefined | null;
+    solidClass?: string | undefined | null;
+    olClass?: string | undefined | null;
+    ariaLabel?: string | undefined | null;
+    class?: string | undefined | null;
   }
 
   let {

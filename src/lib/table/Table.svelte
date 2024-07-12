@@ -25,13 +25,13 @@
 
   interface Props {
     children: Snippet;
-    divClass?: string;
+    divClass?: string | undefined | null;
     striped?: boolean;
     hoverable?: boolean;
     noborder?: boolean;
     shadow?: boolean;
     color?: TableColrType;
-    customeColor?: string;
+    customeColor?: string | undefined | null;
   }
   let {
     children,

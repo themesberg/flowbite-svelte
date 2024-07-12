@@ -8,17 +8,17 @@
 
   interface Props extends HTMLInputAttributes{
     children?: Snippet;
-    aria_describedby?: string;
+    aria_describedby?: string | undefined | null;
     color?: FormColorType;
     custom?: boolean;
     inline?: boolean;
     group?: (string | number)[];
     checked?: boolean | undefined | null;
-    spacing?: string;
-    groupLabelClass?: string;
-    groupInputClass?: string;
+    spacing?: string | undefined | null;
+    groupLabelClass?: string | undefined;
+    groupInputClass?: string | undefined;
     indeterminate?: boolean;
-    class?: string;
+    class?: string | undefined | null;
   }
 
   let {

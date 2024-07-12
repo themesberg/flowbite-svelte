@@ -6,7 +6,7 @@
     class ?: string | undefined;
   }
   interface Sizes {
-    [key: string]: string;
+    [key: string]: string | undefined | null;
   }
 
   const sizes: Sizes = {

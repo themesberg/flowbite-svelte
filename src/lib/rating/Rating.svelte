@@ -8,14 +8,14 @@
   interface Props {
     children?: Snippet;
     text?: Snippet;
-    divClass?: string;
+    divClass?: string | undefined | null;
     size?: number;
     total?: number;
     rating?: number;
-    partialId?: string;
+    partialId?: string | undefined | null;
     icon?: Component;
     count?: boolean;
-    r_p?: string;
+    r_p?: string | undefined | null;
   }
   let {
     children,

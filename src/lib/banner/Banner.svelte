@@ -4,13 +4,13 @@
   import { CloseButton } from '$lib';
   import type { ColorVariant } from '../types';
   import { fade, type TransitionConfig } from 'svelte/transition';
+  import type { HTMLAttributes } from 'svelte/elements';
 
   type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 
-  interface Props {
+  interface Props extends HTMLAttributes<HTMLDivElement> {
     children: Snippet;
     header?: Snippet;
-    id?: string;
     position?: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky';
     dismissable?: boolean;
     color?: ColorVariant;
@@ -24,7 +24,6 @@
   let {
     children,
     header,
-    id,
     position = 'sticky',
     dismissable = true,
     color = 'gray',
@@ -67,7 +66,7 @@
 </script>
 
 {#if bannerStatus}
-  <div tabindex="-1" class={divCls} {...attributes} {id} transition:transition={params}>
+  <div tabindex="-1" class={divCls} {...attributes} transition:transition={params}>
     {#if header}
       {@render header()}
     {/if}

@@ -18,7 +18,7 @@
     name?: HTMLButtonAttributes['name'];
     color?: ButtonColor;
     shadow?: boolean;
-    tag?: string;
+    tag?: string | undefined | null;
     checked?: boolean | undefined;
     class?: string | undefined;
     onclick?: () => void;

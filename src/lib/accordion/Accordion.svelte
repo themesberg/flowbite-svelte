@@ -3,11 +3,11 @@
 
   export interface AccordionCtxType {
     flush: boolean;
-    activeClass: string;
-    inactiveClass: string;
+    activeClass: string | undefined | null;
+    inactiveClass: string | undefined | null;
     selected?: Writable<object>;
-    classActive?: string;
-    classInactive?: string;
+    classActive?: string | undefined | null;
+    classInactive?: string | undefined | null;
   }
 </script>
 
@@ -17,19 +17,20 @@
   import { twMerge } from 'tailwind-merge';
   import { setContext, type ComponentProps } from 'svelte';
   import { type TransitionConfig } from 'svelte/transition';
+  import type { HTMLAttributes } from 'svelte/elements';
 
   type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 
-  interface Props{
+  interface Props extends HTMLAttributes<HTMLDivElement>{
     children: Snippet;
     multiple?: boolean;
     flush?: boolean;
-    activeClass?: string;
-    inactiveClass?: string;
-    defaultClass?: string;
-    classActive?: string;
-    classInactive?: string;
-    class?: string;
+    activeClass?: string | undefined | null;
+    inactiveClass?: string | undefined | null;
+    defaultClass?: string | undefined | null;
+    classActive?: string | undefined | null;
+    classInactive?: string | undefined | null;
+    class?: string | undefined | null;
     transition?: TransitionFunc;
     params?: any;
   }

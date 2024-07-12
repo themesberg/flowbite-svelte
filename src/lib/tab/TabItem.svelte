@@ -8,11 +8,11 @@
     children?: Snippet;
     titleSlot?: Snippet;
     open?: boolean;
-    title?: string;
-    activeClasses?: string;
-    inactiveClasses?: string;
-    defaultClass?: string;
-    class?: string;
+    title?: string | undefined | null;
+    activeClasses?: string | undefined | null;
+    inactiveClasses?: string | undefined | null;
+    defaultClass?: string | undefined | null;
+    class?: string | undefined | null;
     disabled?: boolean;
   }
 

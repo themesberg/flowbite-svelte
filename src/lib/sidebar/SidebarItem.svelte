@@ -15,7 +15,7 @@
     spanClass?: string ;
     activeClass?: string ;
     nonActiveClass?: string ;
-    aclass?: string;
+    aclass?: string | undefined | null;
   }
 
   let {

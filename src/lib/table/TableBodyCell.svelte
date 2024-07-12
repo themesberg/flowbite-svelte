@@ -6,9 +6,9 @@
 
   interface Props {
     children?: Snippet;
-    class?: string;
+    class?: string | undefined | null;
     colspan?: number;
-    tdclass?: string;
+    tdclass?: string | undefined | null;
     onclick?: () => void;
   }
   let {

@@ -109,7 +109,7 @@ export interface ListGroupItemType {
   index?: number;
   current?: boolean;
   disabled?: boolean;
-  href?: string;
+  href?: string | undefined | null;
   attrs?: HTMLAnchorAttributes | HTMLButtonAttributes;
   [propName: string]: any;
 }
@@ -137,26 +137,26 @@ export type ButtonColorType =
   | 'none';
 
 export type SidebarType = {
-  activeClass: string;
-  nonActiveClass: string;
+  activeClass: string | undefined | null;
+  nonActiveClass: string | undefined | null;
 };
 
 export interface ButtonClassesTypes {
-  default?: string;
-  border?: string;
-  application?: string;
-  pagination?: string;
-  group?: string;
-  card?: string;
-  meeting?: string;
-  video?: string;
-  custom?: string;
+  default?: string | undefined | null;
+  border?: string | undefined | null;
+  application?: string | undefined | null;
+  pagination?: string | undefined | null;
+  group?: string | undefined | null;
+  card?: string | undefined | null;
+  meeting?: string | undefined | null;
+  video?: string | undefined | null;
+  custom?: string | undefined | null;
 }
 
 export type navbarType = {
   breakPoint: 'md' | 'lg' | 'xl' | 'xxl';
-  activeClass: string;
-  nonActiveClass: string;
+  activeClass: string | undefined | null;
+  nonActiveClass: string | undefined | null;
   closeNav: () => void;
 };
 
@@ -256,6 +256,6 @@ export interface TransitionParamTypes {
   delay?: number;
   duration?: number;
   easing?: (t: number) => number;
-  css?: (t: number, u: number) => string;
+  css?: (t: number, u: number) => string | undefined | null;
   tick?: (t: number, u: number) => void;
 }

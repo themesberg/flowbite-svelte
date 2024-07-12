@@ -6,8 +6,8 @@
   // import type TableColrType from './Table.svelte';
   interface Props {
     children?: Snippet;
-    class?: string;
-    color?: string;
+    class?: string | undefined | null;
+    color?: string | undefined | null;
     onclick?: () => void;
     ondblclick?: () => void;
   }

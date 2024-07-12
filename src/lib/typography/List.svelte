@@ -8,7 +8,7 @@
     tag?: 'ul' | 'ol' | 'dl';
     list?: 'disc' | 'none' | 'decimal' | undefined;
     position?: 'inside' | 'outside';
-    ctxclass?: string;
+    ctxclass?: string | undefined | null;
     class?: string | undefined;
   }
 

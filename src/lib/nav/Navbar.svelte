@@ -16,12 +16,12 @@
     fluid?: boolean;
     brand?: Snippet;
     breakPoint?: navbarType['breakPoint'];
-    navclass?: string;
-    divClass?: string;
-    btnclass?: string;
-    div2class?: string;
-    nonActiveClass?: string;
-    activeClass?: string;
+    navclass?: string | undefined | null;
+    divClass?: string | undefined | null;
+    btnclass?: string | undefined | null;
+    div2class?: string | undefined | null;
+    nonActiveClass?: string | undefined | null;
+    activeClass?: string | undefined | null;
   }
 
   let {
@@ -145,10 +145,10 @@
 @props:fluid?: boolean;
 @props:brand?: Snippet;
 @props:breakPoint?: navbarType['breakPoint'];
-@props:navclass?: string;
-@props:divClass?: string;
-@props:btnclass?: string;
-@props:div2class?: string;
-@props:nonActiveClass?: string;
-@props:activeClass?: string;
+@props:navclass?: string | undefined | null;
+@props:divClass?: string | undefined | null;
+@props:btnclass?: string | undefined | null;
+@props:div2class?: string | undefined | null;
+@props:nonActiveClass?: string | undefined | null;
+@props:activeClass?: string | undefined | null;
 -->

@@ -5,11 +5,11 @@
   interface Props {
     color?: CloseButtonColorType;
     onclick?: () => void;
-    name?: string;
-    ariaLabel?: string;
+    name?: string | undefined | null;
+    ariaLabel?: string | undefined | null;
     size?: 'xs' | 'sm' | 'md' | 'lg';
-    href?: string;
-    class?: string;
+    href?: string | undefined | null;
+    class?: string | undefined | null;
   }
 
   let {

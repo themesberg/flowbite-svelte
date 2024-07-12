@@ -8,14 +8,14 @@
 
   interface Props {
     children: Snippet;
-    btnName?: string;
+    btnName?: string | undefined | null;
     appBtnPosition?: 'left' | 'middle' | 'right';
-    target?: string;
-    activeClass?: string;
-    href?: string;
+    target?: string | undefined | null;
+    activeClass?: string | undefined | null;
+    href?: string | undefined | null;
     exact?: boolean;
-    btnClass?: string;
-    spanClass?: string;
+    btnClass?: string | undefined | null;
+    spanClass?: string | undefined | null;
   }
 
   let {
@@ -115,9 +115,7 @@
   {...attributes}
   class={btnCls}
 >
-  
   {@render children()}
-
   <span class={spanCls}>{btnName}</span>
 </svelte:element>
 

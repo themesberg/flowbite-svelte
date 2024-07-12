@@ -5,15 +5,15 @@
 
   interface Props {
     children?: Snippet;
-    href?: string | undefined;
-    src?: string | undefined;
+    href?: string | undefined | null;
+    src?: string | undefined | null;
     rounded?: boolean;
     border?: boolean;
     stacked?: boolean;
     dot?: object | undefined;
-    alt?: string | undefined;
+    alt?: string | undefined | null;
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none';
-    class?: string | undefined;
+    class?: string | undefined | null;
     onclick?: () => void;
   }
 

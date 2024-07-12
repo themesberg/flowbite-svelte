@@ -16,12 +16,12 @@
     right?: Snippet;
     inputSize?: FormSizeType;
     value?: any;
-    defaultClass?: string;
+    defaultClass?: string | undefined | null;
     color?: 'base' | 'green' | 'red';
-    floatClass?: string;
-    classLeft?: string;
-    classRight?: string;
-    class?: string;
+    floatClass?: string | undefined | null;
+    classLeft?: string | undefined | null;
+    classRight?: string | undefined | null;
+    class?: string | undefined | null;
     show?: boolean;
   }
 

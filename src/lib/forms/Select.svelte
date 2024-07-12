@@ -18,7 +18,7 @@
     onchange?: () => void;
     oninput?: () => void;
     oncontextmenu?: () => void;
-    placeholder?: string;
+    placeholder?: string | undefined | null;
   }
 
   let {

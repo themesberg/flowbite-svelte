@@ -36,7 +36,7 @@
 
   interface Props extends HTMLAnchorAttributes {
     children: Snippet;
-    tag?: string;
+    tag?: string | undefined | null;
     color?: FrameColor;
     rounded?: boolean;
     border?: boolean;
@@ -44,9 +44,9 @@
     node?: HTMLElement | undefined;
     use?: Action<HTMLElement, any>;
     options?: object;
-    href?: string;
-    class?: string;
-    role?: string;
+    href?: string | undefined | null;
+    class?: string | undefined | null;
+    role?: string | undefined | null;
     open?: boolean;
     transition?: TransitionFunc;
     params?: any;

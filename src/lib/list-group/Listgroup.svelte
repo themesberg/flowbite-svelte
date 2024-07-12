@@ -12,8 +12,8 @@
     onclick?: () => void;
     rounded?: boolean;
     border?: boolean;
-    defaultClass?: string;
-    class?: string;
+    defaultClass?: string | undefined | null;
+    class?: string | undefined | null;
   }
 
   let {

@@ -4,14 +4,14 @@
   type CardSizeType = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
   type ImgType = {
-    src: string;
-    alt: string;
+    src: string | undefined | null;
+    alt: string | undefined | null;
   };
   interface Props {
     children: Snippet;
-    href?: string;
+    href?: string | undefined | null;
     horizontal?: boolean;
-    target?: string;
+    target?: string | undefined | null;
     shadow?: boolean;
     reverse?: boolean;
     img?: ImgType;

@@ -2,8 +2,8 @@
   import { writable, type Writable } from 'svelte/store';
 
   export interface TabCtxType {
-    activeClasses: string;
-    inactiveClasses: string;
+    activeClasses: string | undefined | null;
+    inactiveClasses: string | undefined | null;
     selected: Writable<HTMLElement>;
   }
 </script>
@@ -16,12 +16,12 @@
   interface Props {
     children: Snippet;
     style?: 'full' | 'pill' | 'underline' | 'none';
-    defaultClass?: string;
-    contentClass?: string;
+    defaultClass?: string | undefined | null;
+    contentClass?: string | undefined | null;
     divider?: boolean;
-    activeClasses?: string;
-    inactiveClasses?: string;
-    class?: string;
+    activeClasses?: string | undefined | null;
+    inactiveClasses?: string | undefined | null;
+    class?: string | undefined | null;
   }
   let { children, style = 'none', defaultClass, contentClass, divider = true, activeClasses, inactiveClasses, class:classname, ...attributes }: Props = $props();
 

@@ -4,10 +4,10 @@
 
   interface Props {
     children?: Snippet;
-    divClass?: string;
-    div2class?: string;
-    div3class?: string;
-    div4class?: string;
+    divClass?: string | undefined | null;
+    div2class?: string | undefined | null;
+    div3class?: string | undefined | null;
+    div4class?: string | undefined | null;
   }
   let { children, divClass, div2class, div3class, div4class }: Props = $props();
   const div: string =

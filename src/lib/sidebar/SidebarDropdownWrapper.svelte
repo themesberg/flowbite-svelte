@@ -17,7 +17,7 @@
     ulClass?: string | undefined;
     transitionType?: TransitionTypes;
     transitionParams?: TransitionParamTypes;
-    svgClass?: string;
+    svgClass?: string | undefined | null;
   }
 
   let {
@@ -151,5 +151,5 @@
 @props:ulClass?: string | undefined;
 @props:transitionType?: TransitionTypes;
 @props:transitionParams?: TransitionParamTypes;
-@props:svgClass?: string;
+@props:svgClass?: string | undefined | null;
 -->

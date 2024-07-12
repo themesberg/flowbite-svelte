@@ -6,7 +6,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('alert page has expected h1', async ({ page }) => {
-	await expect(page.getByRole('heading', { name: 'Alert', level: 1 })).toBeVisible();
+  expect(await page.textContent('h1')).toContain('Alert');
 });
 
 test('alert page has expected meta title', async ({ page }) => {

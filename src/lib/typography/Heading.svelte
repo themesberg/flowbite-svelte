@@ -7,8 +7,8 @@
     children: Snippet;
     tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     class?: string | undefined;
-    color?: string;
-    customSize?: string;
+    color?: string | undefined | null;
+    customSize?: string | undefined | null;
   }
 
   let {

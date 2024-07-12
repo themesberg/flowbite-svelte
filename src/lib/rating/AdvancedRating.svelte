@@ -4,13 +4,13 @@
   interface Props {
     rating?: Snippet;
     globalText?: Snippet;
-    ratings: { label: string; rating: number }[];
-    divClass?: string;
-    spanClass?: string;
-    div2class?: string;
-    div3class?: string;
-    span2class?: string;
-    unit?: string;
+    ratings: { label: string | undefined | null; rating: number }[];
+    divClass?: string | undefined | null;
+    spanClass?: string | undefined | null;
+    div2class?: string | undefined | null;
+    div3class?: string | undefined | null;
+    span2class?: string | undefined | null;
+    unit?: string | undefined | null;
   }
   let {
     rating,

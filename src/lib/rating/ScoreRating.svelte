@@ -1,12 +1,12 @@
 <script lang="ts">
   interface Props {
-    ratings?: { label: string; rating: number }[];
-    ratings2?: { label: string; rating: number }[];
+    ratings?: { label: string | undefined | null; rating: number }[];
+    ratings2?: { label: string | undefined | null; rating: number }[];
     headerLabel?: {
-      desc1?: string;
-      desc2?: string;
-      desc3?: string;
-      link?: { label: string; url: string };
+      desc1?: string | undefined | null;
+      desc2?: string | undefined | null;
+      desc3?: string | undefined | null;
+      link?: { label: string | undefined | null; url: string };
     };
   }
 

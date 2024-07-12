@@ -4,7 +4,7 @@
 
   interface Props {
     children: Snippet;
-    class: string;
+    class: string | undefined | null;
   }
 
   let { children, class: kbdclass }: Props = $props();

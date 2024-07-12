@@ -4,17 +4,19 @@
   import { CloseButton } from '$lib';
   import type { ColorVariant } from '../types';
   import { fade, type TransitionConfig } from 'svelte/transition';
+  import type { HTMLAttributes } from 'svelte/elements';
+
   type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 
-  interface Props {
+  interface Props extends HTMLAttributes<HTMLDivElement>{
     children: Snippet;
     icon?: Snippet;
     color?: ColorVariant;
     large?: boolean;
     dismissable?: boolean;
-    class?: string;
+    class?: string | undefined | null;
     border?: boolean;
-    href?: string;
+    href?: string | undefined | null;
     rounded?: boolean;
     transition?: TransitionFunc;
     params?: any;

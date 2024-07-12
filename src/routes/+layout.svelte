@@ -25,7 +25,7 @@
 </script>
 
 <RunesMetaTags {...metaTags}/>
-<Runatics {analyticsId} />
+
 
 <Nav />
 <div class="lg:flex">

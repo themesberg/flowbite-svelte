@@ -9,12 +9,12 @@
     header?: Snippet;
     footer?: Snippet;
     value?: string | string[] | number | undefined | null;
-    wrappedClass?: string;
-    unWrappedClass?: string;
-    innerWrappedClass?: string;
-    headerClass?: string;
-    footerClass?: string;
-    class?: string;
+    wrappedClass?: string | undefined | null;
+    unWrappedClass?: string | undefined | null;
+    innerWrappedClass?: string | undefined | null;
+    headerClass?: string | undefined | null;
+    footerClass?: string | undefined | null;
+    class?: string | undefined | null;
   }
 
   let {
@@ -35,10 +35,10 @@
   let wrapped: boolean = $state(false);
   if(header || footer) {wrapped = true} else {wrapped = false}
 
-  // let wrapperClass: string;
+  // let wrapperClass: string | undefined | null;
   let wrapperClass = twMerge('w-full rounded-lg bg-gray-50', background ? 'dark:bg-gray-600' : 'dark:bg-gray-700', 'text-gray-900 dark:placeholder-gray-400 dark:text-white', 'border border-gray-200', background ? 'dark:border-gray-500' : 'dark:border-gray-600', className);
 
-  let textareaClass: string = $derived(wrapped ? wrappedClass : twMerge(wrapperClass, unWrappedClass));
+  let textareaClass: string | undefined | null = $derived(wrapped ? wrappedClass : twMerge(wrapperClass, unWrappedClass));
 
   const headerCls = (isheader: boolean) => twMerge(isheader ? 'border-b' : 'border-t', 'py-2 px-3 border-gray-200', background ? 'dark:border-gray-500' : 'dark:border-gray-600', isheader ? headerClass : footerClass);
  

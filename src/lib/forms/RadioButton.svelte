@@ -10,7 +10,7 @@
     group?: string | number;
     value?: string | number;
     inline?: boolean;
-    btnClass?: string;
+    btnClass?: string | undefined | null;
     pill?: boolean;
     outline?: boolean;
     buttonSize?: SizeType | undefined;

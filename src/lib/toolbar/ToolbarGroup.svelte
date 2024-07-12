@@ -6,8 +6,8 @@
 
   interface Props {
     children: Snippet;
-    class?: string;
-    divClass?: string;
+    class?: string | undefined | null;
+    divClass?: string | undefined | null;
   }
 
   let { children, class: className, divClass = 'flex items-center space-x-1 rtl:space-x-reverse sm:pe-4 sm:ps-4 first:sm:ps-0 last:sm:pe-0' }: Props = $props();

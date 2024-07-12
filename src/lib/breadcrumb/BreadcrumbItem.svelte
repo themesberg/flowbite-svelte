@@ -1,13 +1,14 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
+  import type { HTMLLiAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLLiAttributes{
     children: Snippet;
     icon?: Snippet;
     home?: boolean;
     href?: string | undefined;
-    linkClass?: string | undefined;
+    linkClass?: string | undefined | null;
     spanClass?: string | undefined;
     homeClass?: string | undefined;
     class?: string | undefined;

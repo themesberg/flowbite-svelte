@@ -4,7 +4,7 @@
   interface Props extends HTMLInputAttributes {
     value?: any;
     rangeSize?: 'sm' | 'md' | 'lg';
-    inputClass?: string;
+    inputClass?: string | undefined | null;
   }
   import { twMerge } from 'tailwind-merge';
   // import '$lib/style.css';

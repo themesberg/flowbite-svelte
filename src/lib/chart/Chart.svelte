@@ -7,7 +7,7 @@
     class: classname = ''
   }: {
     options: ApexOptions;
-    class?: string;
+    class?: string | undefined | null;
   } = $props();
   // export let options: ApexOptions;
 

@@ -6,27 +6,27 @@
   type TableSearchType = {
     striped?: boolean;
     hoverable?: boolean;
-    color?: string;
+    color?: string | undefined | null;
   };
   interface Props {
     children?: Snippet;
     svgSearch?: any;
     header?: Snippet;
     footer?: Snippet;
-    divClass?: string;
-    inputValue?: string;
+    divClass?: string | undefined | null;
+    inputValue?: string | undefined | null;
     striped?: boolean;
     hoverable?: boolean;
-    placeholder?: string;
-    customColor?: string;
-    color?: string;
-    innerDivClass?: string;
-    inputclass?: string;
-    searchClass?: string;
-    svgDivClass?: string;
-    svgClass?: string;
-    classDiv?: string;
-    class?: string;
+    placeholder?: string | undefined | null;
+    customColor?: string | undefined;
+    color?: string | undefined;
+    innerDivClass?: string | undefined | null;
+    inputclass?: string | undefined | null;
+    searchClass?: string | undefined | null;
+    svgDivClass?: string | undefined | null;
+    svgClass?: string | undefined | null;
+    classDiv?: string | undefined | null;
+    class?: string | undefined | null;
   }
 
   let {

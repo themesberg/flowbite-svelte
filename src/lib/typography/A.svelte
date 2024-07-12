@@ -5,7 +5,7 @@
 
   interface Props extends HTMLAnchorAttributes{
     children: Snippet;
-    class?: string;
+    class?: string | undefined | null;
   }
 
   let { children, class: aClass, ...attributes }: Props = $props();

@@ -4,13 +4,13 @@
 
   interface Props {
     children?: Snippet;
-    divClass?: string;
-    div2class?: string;
-    div3class?: string;
-    div4class?: string;
-    div5class?: string;
-    div6class?: string;
-    div7class?: string;
+    divClass?: string | undefined | null;
+    div2class?: string | undefined | null;
+    div3class?: string | undefined | null;
+    div4class?: string | undefined | null;
+    div5class?: string | undefined | null;
+    div6class?: string | undefined | null;
+    div7class?: string | undefined | null;
   }
   let {
     children,

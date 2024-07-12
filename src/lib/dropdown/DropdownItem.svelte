@@ -4,11 +4,11 @@
   import { page } from '$app/stores';
   interface Props {
     children: Snippet;
-    aclass?: string;
-    href?: string;
-    target?: string;
-    activeclass?: string;
-    liClass?: string;
+    aclass?: string | undefined | null;
+    href?: string | undefined | null;
+    target?: string | undefined | null;
+    activeclass?: string | undefined | null;
+    liClass?: string | undefined | null;
   }
 
   let { aclass, children, href, target, activeclass, liClass, ...attributes }: Props = $props();
