@@ -2,7 +2,7 @@
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import { idGenerator } from '../uiHelpers.svelte';
-  import type { InputType } from '../types';
+  import type { HTMLInputTypeAttribute } from 'svelte/elements';
 
   interface Props {
     children: Snippet;
@@ -10,7 +10,7 @@
     aria_describedby?: string;
     disabled?: boolean;
     style?: 'filled' | 'outlined' | 'standard';
-    type?: InputType;
+    type?: HTMLInputTypeAttribute;
     size?: 'small' | 'default';
     color?: 'base' | 'green' | 'red';
     value?: any;

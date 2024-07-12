@@ -9,7 +9,8 @@
   // import Wrapper from '$lib/utils/Wrapper.svelte';
   import { twMerge } from 'tailwind-merge';
   import { getContext, type Snippet } from 'svelte';
-  import type { InputType } from '../types';
+  import type { HTMLInputTypeAttribute } from 'svelte/elements';
+  
   interface Props {
     children?: Snippet;
     left?: Snippet;
@@ -18,7 +19,7 @@
     placeholder?: string;
     required?: boolean;
     pattern?: any;
-    type?: InputType;
+    type?: HTMLInputTypeAttribute;
     value?: any;
     size?: FormSizeType;
     defaultClass?: string;
