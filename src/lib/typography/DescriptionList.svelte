@@ -1,7 +1,9 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
-  interface Props {
+  import type { HTMLAttributes } from 'svelte/elements';
+
+  interface Props extends HTMLAttributes<HTMLElement>{
     children: Snippet;
     tag: 'dt' | 'dd';
     dtClass?: string | undefined;
@@ -20,9 +22,7 @@
 </script>
 
 <svelte:element this={tag} {...attributes} class={classDesc}>
- 
-    {@render children()}
-  
+  {@render children()}
 </svelte:element>
 
 <!--

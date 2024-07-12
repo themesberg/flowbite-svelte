@@ -2,8 +2,9 @@
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import type { BlockQuoteType } from '../types';
+  import type { HTMLBlockquoteAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLBlockquoteAttributes{
     children: Snippet;
     border?: boolean;
     italic?: boolean;
