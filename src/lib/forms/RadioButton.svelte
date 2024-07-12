@@ -57,10 +57,10 @@
 @prop group = $bindable()
 @prop value
 @prop inline = true
-@prop btnclass
+@prop btnClass
 @prop pill
 @prop outline
-@prop size
+@prop buttonSize
 @prop color
 @prop shadow
 @prop ...attributes

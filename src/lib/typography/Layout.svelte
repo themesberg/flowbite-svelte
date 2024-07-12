@@ -26,7 +26,6 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
-@prop divClass
-@prop cols = ''
+@prop class: className
 @prop ...attributes
 -->

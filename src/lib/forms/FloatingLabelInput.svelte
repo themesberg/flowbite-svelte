@@ -129,13 +129,11 @@
 @prop children
 @prop id = idGenerator()
 @prop aria_describedby
-@prop disabled
 @prop style = 'standard'
-@prop type = 'text'
-@prop size = 'default'
+@prop inputSize = 'default'
 @prop color = 'base'
 @prop divClass
-@prop inputclass
-@prop labelclass
+@prop inputClass
+@prop labelClass
 @prop ...attributes
 -->

@@ -92,3 +92,24 @@
   <span class={divClass} ></span>
     {@render children()}
 </Label>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@prop children
+@prop toggleSize = 'default'
+@prop group
+@prop value
+@prop checked = $bindable()
+@prop customSize
+@prop spanClass
+@prop color = 'primary'
+@prop inline = false
+@prop labelClass = ''
+@prop aria_describedby
+@prop spacing = 'me-2'
+@prop custom = true
+@prop inputClass = ''
+@prop ...attributes
+-->

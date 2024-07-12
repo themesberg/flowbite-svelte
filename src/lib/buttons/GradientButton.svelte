@@ -132,5 +132,11 @@
 @prop shadow
 @prop class: className
 @prop onclick
+@prop href
+@prop target
+@prop rel
+@prop type
+@prop disabled
+@prop name
 @prop ...attributes
 -->

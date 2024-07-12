@@ -26,3 +26,13 @@
   >
     {@render children()}
   </p>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@prop children
+@prop class: className
+@prop color = 'gray'
+@prop ...attributes
+-->

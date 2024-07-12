@@ -50,6 +50,5 @@
 @prop color = 'gray'
 @prop show = true
 @prop class: className
-@prop for
 @prop ...attributes
 -->

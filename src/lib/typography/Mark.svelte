@@ -26,6 +26,7 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
+@prop markClass = 'text-white dark:bg-blue-500 bg-blue-600 px-2 rounded'
 @prop class: className
 @prop ...attributes
 -->

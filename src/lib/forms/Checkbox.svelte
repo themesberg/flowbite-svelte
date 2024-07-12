@@ -51,3 +51,22 @@
     {@render children()}
   {/if}
 </Label>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@prop children
+@prop aria_describedby
+@prop color = 'primary'
+@prop custom = false
+@prop inline = false
+@prop group = []
+@prop checked = $bindable(false)
+@prop spacing = 'me-2'
+@prop groupLabelClass = ''
+@prop groupInputClass = ''
+@prop indeterminate = false
+@prop class: className
+@prop ...attributes
+-->

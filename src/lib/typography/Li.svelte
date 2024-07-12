@@ -24,6 +24,6 @@
 ## Props
 @prop children
 @prop icon
-@prop class
+@prop class: className
 @prop ...attributes
 -->

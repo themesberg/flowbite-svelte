@@ -65,3 +65,17 @@
   </button>
 {/if}
 
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@prop children
+@prop color = 'default'
+@prop name
+@prop ariaLabel
+@prop size = 'md'
+@prop href
+@prop class: className
+@prop onclick
+@prop ...attributes
+-->

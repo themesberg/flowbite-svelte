@@ -81,3 +81,21 @@
     {/if}
   {/each}
 </select>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@prop children
+@prop items
+@prop value = $bindable()
+@prop underline
+@prop selectSize = 'md'
+@prop selectClass
+@prop underlineClass
+@prop onchange
+@prop oninput
+@prop oncontextmenu
+@prop placeholder = 'Choose option ...'
+@prop ...attributes
+-->

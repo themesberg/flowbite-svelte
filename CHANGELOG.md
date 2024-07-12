@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.6.0
+
+### Minor Changes
+
+- fix: extends svelte/element for typography and form components
+
 ## 0.5.6
 
 ### Patch Changes

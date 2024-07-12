@@ -25,8 +25,7 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
-@prop color = 'text-gray-500 dark:text-gray-400'
-@prop secondaryClass = 'font-semibold'
+@prop secondaryClass = 'text-gray-500 dark:text-gray-400 font-semibold'
 @prop class: className
 @prop ...attributes
 -->

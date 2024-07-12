@@ -115,3 +115,25 @@
     {@render children()}
   </svelte:element>
 {/if}
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@prop children
+@prop href
+@prop tag = href ? 'a' : 'div'
+@prop color = 'default'
+@prop rounded
+@prop border
+@prop shadow
+@prop class: className
+@prop node
+@prop use
+@prop options
+@prop role
+@prop transition
+@prop params
+@prop open
+@prop ...attributes
+-->

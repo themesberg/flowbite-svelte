@@ -202,12 +202,15 @@
 @prop outline = false
 @prop size = group ? 'sm' : 'md'
 @prop href = undefined
+@prop target = undefined
+@prop rel = undefined
 @prop type = 'button'
 @prop color = group ? (outline ? 'dark' : 'alternative') : 'primary'
 @prop shadow = false
 @prop tag = 'button'
 @prop checked = undefined
 @prop disabled = false
+@prop name = undefined
 @prop class: btnclass
 @prop onclick
 @prop ...attributes
