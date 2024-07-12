@@ -180,7 +180,7 @@
 		},
 		radio: {
 			checked: true,
-      problems: 'Alternative syntax, Radio in dropdown, Colors'
+      problems: 'Alternative syntax, Radio in dropdown, Colors, RadioButton'
 		},
 		range: {
 			checked: true,

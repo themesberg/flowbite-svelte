@@ -45,34 +45,28 @@
   import { getContext } from 'svelte';
   import type { FormColorType } from '../types';
   import Label from './Label.svelte';
+  import type { HTMLInputAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLInputAttributes{
     children: Snippet;
-    name?: string;
-    disabled?: boolean;
     aria_describedby?: string;
-    labelclass?: string;
+    labelClass?: string;
     color?: FormColorType;
     custom?: boolean;
     inline?: boolean;
     group?: number | string | undefined;
-    value?: number | string;
-    inputclass?: string;
-    checked?: boolean;
+    inputClass?: string;
   }
   let {
     children,
-    name,
-    disabled = false,
     aria_describedby,
-    labelclass = '',
+    labelClass = '',
     color = 'primary',
     custom = false,
     inline = false,
     group = $bindable(),
     value,
-    inputclass = '',
-    checked,
+    inputClass = '',
     ...attributes
   }: Props = $props();
 
@@ -81,36 +75,14 @@
   let background: boolean = getContext('background');
 </script>
 
-<Label class={labelCls(inline, labelclass)}>
+<Label class={labelCls(inline, labelClass)}>
   <input
     type="radio"
     bind:group
     {value}
-    {name}
-    {disabled}
-    {checked}
     aria-describedby={aria_describedby}
     {...attributes}
-    class={inputCls(custom, color, false, background, inputclass)}
+    class={inputCls(custom, color, false, background, inputClass)}
   />
     {@render children()}
 </Label>
-
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@prop children
-@prop name
-@prop disabled = false
-@prop aria_describedby
-@prop labelclass = ''
-@prop color = 'primary'
-@prop custom = false
-@prop inline = false
-@prop group = $bindable()
-@prop value
-@prop inputclass = ''
-@prop checked
-@prop ...attributes
--->

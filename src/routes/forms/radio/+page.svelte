@@ -74,10 +74,10 @@
 <CodeWrapper>
   <div class="grid grid-cols-2 gap-6">
     <div class="rounded border border-gray-200 dark:border-gray-700">
-      <Radio name="bordered" labelclass="p-4">Default radio</Radio>
+      <Radio name="bordered" labelClass="p-4">Default radio</Radio>
     </div>
     <div class="rounded border border-gray-200 dark:border-gray-700">
-      <Radio name="bordered" checked labelclass="p-4">Checked state</Radio>
+      <Radio name="bordered" checked labelClass="p-4">Checked state</Radio>
     </div>
   </div>
 </CodeWrapper>
@@ -93,21 +93,21 @@
     class="w-48 divide-y divide-gray-200 rounded-lg border border-gray-200 bg-white dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800"
   >
     <li>
-      <Radio labelclass="p-3" bind:group={technology} value="svelte"
+      <Radio labelClass="p-3" bind:group={technology} value="svelte"
         >Svelte</Radio
       >
     </li>
     <li>
-      <Radio labelclass="p-3" bind:group={technology} value="vue js"
+      <Radio labelClass="p-3" bind:group={technology} value="vue js"
         >Vue JS</Radio
       >
     </li>
     <li>
-      <Radio labelclass="p-3" bind:group={technology} value="react">React</Radio
+      <Radio labelClass="p-3" bind:group={technology} value="react">React</Radio
       >
     </li>
     <li>
-      <Radio labelclass="p-3" bind:group={technology} value="angular"
+      <Radio labelClass="p-3" bind:group={technology} value="angular"
         >Angular</Radio
       >
     </li>
@@ -123,16 +123,16 @@
     class="w-full items-center divide-x divide-gray-200 rounded-lg border border-gray-200 dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800 sm:flex rtl:divide-x-reverse"
   >
     <li class="w-full">
-      <Radio name="hor-list" labelclass="p-3">Svelte</Radio>
+      <Radio name="hor-list" labelClass="p-3">Svelte</Radio>
     </li>
     <li class="w-full">
-      <Radio name="hor-list" labelclass="p-3">Vue JS</Radio>
+      <Radio name="hor-list" labelClass="p-3">Vue JS</Radio>
     </li>
     <li class="w-full">
-      <Radio name="hor-list" labelclass="p-3">React</Radio>
+      <Radio name="hor-list" labelClass="p-3">React</Radio>
     </li>
     <li class="w-full">
-      <Radio name="hor-list" labelclass="p-3">Angular</Radio>
+      <Radio name="hor-list" labelClass="p-3">Angular</Radio>
     </li>
   </ul>
 </CodeWrapper>

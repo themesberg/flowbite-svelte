@@ -4,43 +4,36 @@
   import type { FormColorType } from '../types';
   import { labelCls, inputCls } from './Radio.svelte';
   import Label from './Label.svelte';
+  import type { HTMLInputAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLInputAttributes{
     children?: Snippet;
-    disabled?: boolean;
     aria_describedby?: string;
     color?: FormColorType;
     custom?: boolean;
     inline?: boolean;
     group?: (string | number)[];
-    value?: string | number;
-    checked?: boolean | undefined;
+    checked?: boolean | undefined | null;
     spacing?: string;
     groupLabelClass?: string;
     groupInputClass?: string;
     indeterminate?: boolean;
-    id?: string;
     class?: string;
-    required?: boolean;
   }
 
   let {
     children,
-    disabled,
     aria_describedby,
     color = 'primary',
     custom = false,
     inline = false,
     group = [],
-    value = 'on',
     checked = $bindable(false),
     spacing = 'me-2',
     groupLabelClass = '',
     groupInputClass = '',
     indeterminate = false,
-    id,
     class: className,
-    required = false,
     ...attributes
   }: Props = $props();
 </script>
@@ -49,10 +42,7 @@
   <input
     type="checkbox"
     bind:checked
-    {value}
-    {required}
     aria-describedby={aria_describedby}
-    {disabled}
     {indeterminate}
     {...attributes}
     class={twMerge(spacing, inputCls(custom, color, true, false, groupInputClass), className)}
@@ -61,26 +51,3 @@
     {@render children()}
   {/if}
 </Label>
-
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@prop children
-@prop disabled
-@prop aria_describedby
-@prop color = 'primary'
-@prop custom = false
-@prop inline = false
-@prop group = []
-@prop value = 'on'
-@prop checked = $bindable(false)
-@prop spacing = 'me-2'
-@prop groupLabelClass = ''
-@prop groupInputClass = ''
-@prop indeterminate = false
-@prop id
-@prop class: className
-@prop required = false
-@prop ...attributes
--->
