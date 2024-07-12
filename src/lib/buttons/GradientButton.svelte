@@ -3,6 +3,7 @@
   import { twMerge } from 'tailwind-merge';
   import Button from './Button.svelte';
   import { getContext } from 'svelte';
+  import type { HTMLButtonAttributes, HTMLAnchorAttributes } from 'svelte/elements';
 
   interface Props {
     children: Snippet;
@@ -12,6 +13,12 @@
     pill?: boolean;
     class?: string;
     onclick?: () => void;
+    href?: HTMLAnchorAttributes['href'];
+    target?: HTMLAnchorAttributes['target'];
+    rel?: HTMLAnchorAttributes['rel'];
+    type?: HTMLButtonAttributes['type'];
+    disabled?: HTMLButtonAttributes['disabled'];
+    name?: HTMLButtonAttributes['name'];
   }
   const group = getContext('group');
 
@@ -23,6 +30,12 @@
     shadow,
     class: className,
     onclick,
+    href,
+    target,
+    rel,
+    type,
+    disabled,
+    name,
     ...attributes
   }: Props = $props();
 
@@ -98,12 +111,12 @@
     <!-- Trick to prentend outline without using border
       This has a limitation of no supporting transparency as
       is set to bg-white dark:bg-gray-900 -->
-    <Button {...attributes} color="none" class={gradientOutlineClass} {onclick}>
+    <Button {...attributes} color="none" class={gradientOutlineClass} {onclick} {disabled} {name} {type} {href} {target} {rel} >
       {@render children()}
     </Button>
   </div>
 {:else}
-  <Button {...attributes} color="none" class={divClass} {onclick}>
+  <Button {...attributes} color="none" class={divClass} {onclick} {disabled} {name} {type} {href} {target} {rel}>
     {@render children()}
   </Button>
 {/if}

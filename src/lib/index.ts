@@ -118,6 +118,12 @@ export { default as TableSearch } from './table/TableSearch.svelte';
 
 // toast
 export { default as Toast } from './toast/Toast.svelte';
+
+// toolbars
+export { default as Toolbar } from './toolbar/Toolbar.svelte';
+export { default as ToolbarButton } from './toolbar/ToolbarButton.svelte';
+export { default as ToolbarGroup } from './toolbar/ToolbarGroup.svelte';
+
 // typography
 export { default as A } from './typography/A.svelte';
 export { default as Blockquote } from './typography/Blockquote.svelte';

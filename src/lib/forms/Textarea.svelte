@@ -15,6 +15,11 @@
     footerClass?: string;
     disabled?: boolean;
     class?: string;
+    id?: string;
+    name?: string;
+    placeholder?: string;
+    rows?: number;
+    cols?: number;
   }
 
   let {
@@ -27,21 +32,26 @@
     innerWrappedClass = 'py-2 px-4 bg-white dark:bg-gray-800',
     headerClass = '',
     footerClass = '',
-    disabled,
+    disabled = false,
     class: className = '',
+    id = '',
+    name = '',
+    placeholder = '',
+    rows,
+    cols,
     ...attributes
-  } = $props();
+  }: Props = $props();
   const background = getContext('background');
 
   let wrapped: boolean = $state(false);
   if(header || footer) {wrapped = true} else {wrapped = false}
 
   // let wrapperClass: string;
-  let wrapperClass = $derived(twMerge('w-full rounded-lg bg-gray-50', background ? 'dark:bg-gray-600' : 'dark:bg-gray-700', 'text-gray-900 dark:placeholder-gray-400 dark:text-white', 'border border-gray-200', background ? 'dark:border-gray-500' : 'dark:border-gray-600', className));
+  let wrapperClass = twMerge('w-full rounded-lg bg-gray-50', background ? 'dark:bg-gray-600' : 'dark:bg-gray-700', 'text-gray-900 dark:placeholder-gray-400 dark:text-white', 'border border-gray-200', background ? 'dark:border-gray-500' : 'dark:border-gray-600', className);
 
-  let textareaClass: string = wrapped ? wrappedClass : twMerge(wrapperClass, unWrappedClass);
+  let textareaClass: string = $derived(wrapped ? wrappedClass : twMerge(wrapperClass, unWrappedClass));
 
-  const headerCls = (header: boolean) => twMerge(header ? 'border-b' : 'border-t', 'py-2 px-3 border-gray-200', background ? 'dark:border-gray-500' : 'dark:border-gray-600', header ? headerClass : footerClass);
+  const headerCls = (isheader: boolean) => twMerge(isheader ? 'border-b' : 'border-t', 'py-2 px-3 border-gray-200', background ? 'dark:border-gray-500' : 'dark:border-gray-600', isheader ? headerClass : footerClass);
  
   let innerWrapperClass: string = twMerge(innerWrappedClass, footer ? '' : 'rounded-b-lg', header ? '' : 'rounded-t-lg');
 </script>
@@ -53,7 +63,7 @@
     </div>
   {/if}
   <div class={innerWrapperClass}>
-    <textarea bind:value {...attributes} class={textareaClass}></textarea>
+    <textarea bind:value {...attributes} class={textareaClass} {id} {disabled} {placeholder} {name} {rows} {cols}></textarea>
   </div>
   {#if footer}
     <div class={headerCls(false)}>

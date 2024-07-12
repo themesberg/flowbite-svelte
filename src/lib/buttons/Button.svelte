@@ -3,20 +3,23 @@
   import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
   import type { SizeType } from '$lib/types';
-  import type { HTMLButtonAttributes } from 'svelte/elements';
+  import type { HTMLButtonAttributes, HTMLAnchorAttributes } from 'svelte/elements';
 
   interface Props {
     children: Snippet;
     pill?: boolean;
     outline?: boolean;
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-    href?: string | undefined;
+    href?: HTMLAnchorAttributes['href'];
+    target?: HTMLAnchorAttributes['target'];
+    rel?: HTMLAnchorAttributes['rel'];
     type?: HTMLButtonAttributes['type'];
+    disabled?: HTMLButtonAttributes['disabled'];
+    name?: HTMLButtonAttributes['name'];
     color?: ButtonColor;
     shadow?: boolean;
     tag?: string;
     checked?: boolean | undefined;
-    disabled?: boolean;
     class?: string | undefined;
     onclick?: () => void;
   }
@@ -31,12 +34,15 @@
     outline = false,
     size = group ? 'sm' : 'md',
     href = undefined,
+    target = undefined,
+    rel = undefined,
     type = 'button',
     color = group ? (outline ? 'dark' : 'alternative') : 'primary',
     shadow = false,
     tag = 'button',
     checked = undefined,
     disabled = false,
+    name = undefined,
     class: btnclass,
     onclick,
     ...attributes
@@ -174,11 +180,11 @@
 
 
 {#if href}
-  <a {href} {...attributes} class={buttonCls} role="button">
+  <a {href} {...attributes} class={buttonCls} {rel} {target} role="button">
     {@render children()}
   </a>
 {:else if tag === 'button'}
-  <button {type} {...attributes} class={buttonCls} {onclick}>
+  <button {type} {...attributes} class={buttonCls} {disabled} {name} {onclick}>
     {@render children()}
   </button>
 {:else}

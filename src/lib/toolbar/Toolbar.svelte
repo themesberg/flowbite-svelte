@@ -1,0 +1,37 @@
+<script lang="ts">
+  import Frame from '$lib/utils/Frame.svelte';
+  import type { FrameColor } from '$lib/utils/Frame.svelte';
+  import { setContext, type Snippet } from 'svelte';
+  import { writable } from 'svelte/store';
+  import { twJoin, twMerge } from 'tailwind-merge';
+
+  interface Props{
+    children: Snippet;
+    end?: Snippet;
+    embedded?: boolean;
+    color?: FrameColor;
+    class?: string;
+  }
+
+  let { children, end, color = 'default', embedded, class: className, ...attributes }: Props = $props();
+
+
+  const separators = writable(false);
+  setContext('toolbar', separators);
+
+  let frameColor = embedded ? 'none' : color;
+
+  let separatorsClass: string = twJoin($separators && 'sm:divide-x rtl:divide-x-reverse');
+
+  let divClass: string = twMerge('flex justify-between items-center', !embedded && 'py-2 px-3', className);
+</script>
+
+<Frame {...attributes} class={divClass} color={frameColor} rounded={!embedded}> 
+  <Frame class="flex flex-wrap items-center {separatorsClass}" color={frameColor} rounded={!embedded}>
+    {@render children()}
+  </Frame>
+  {#if end}
+    {@render end()}
+  {/if}
+</Frame>
+
