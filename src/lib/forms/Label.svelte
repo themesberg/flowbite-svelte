@@ -1,13 +1,14 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
+  import type { HTMLLabelAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLLabelAttributes {
     children: Snippet;
     color?: 'gray' | 'green' | 'red' | 'disabled';
     show?: boolean;
     class?: string | undefined;
-    forId?: string | undefined;
+    for?: string | undefined | null;
   }
 
   let {
@@ -15,7 +16,6 @@
     color = 'gray',
     show = true,
     class: className,
-    forId,
     ...attributes
   }: Props = $props();
 
@@ -35,7 +35,7 @@
 
 
   {#if show}
-    <label {...attributes} class={labelCls} for={forId}>
+    <label {...attributes} class={labelCls}>
       {@render children()}
     </label>
   {:else}
@@ -50,6 +50,6 @@
 @prop color = 'gray'
 @prop show = true
 @prop class: className
-@prop forId
+@prop for
 @prop ...attributes
 -->

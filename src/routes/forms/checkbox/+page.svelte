@@ -42,8 +42,8 @@
     </TableHead>
     <TableBody class="divide-y dark:divide-gray-700">
       <TableBodyRow class="divide-x rtl:divide-x-reverse dark:divide-gray-700">
-        <TableBodyCell><Label forId="checkbox1">Default checkbox</Label></TableBodyCell>
-        <TableBodyCell><Label forId="checkbox2">Disabled checkbox</Label></TableBodyCell>
+        <TableBodyCell><Label for="checkbox1">Default checkbox</Label></TableBodyCell>
+        <TableBodyCell><Label for="checkbox2">Disabled checkbox</Label></TableBodyCell>
       </TableBodyRow>
       <TableBodyRow class="divide-x rtl:divide-x-reverse dark:divide-gray-700">
         <TableBodyCell><Checkbox id="checkbox1" checked /></TableBodyCell>

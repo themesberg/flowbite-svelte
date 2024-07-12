@@ -43,40 +43,40 @@ Use this example as a generic form element which includes multiple input fields 
 <form>
   <div class="grid gap-6 mb-6 md:grid-cols-2">
     <div>
-      <Label forId="first_name" class="mb-2">First name</Label>
+      <Label for="first_name" class="mb-2">First name</Label>
       <Input type="text" id="first_name" placeholder="John" required />
     </div>
     <div>
-      <Label forId="last_name" class="mb-2">Last name</Label>
+      <Label for="last_name" class="mb-2">Last name</Label>
       <Input type="text" id="last_name" placeholder="Doe" required />
     </div>
     <div>
-      <Label forId="company" class="mb-2">Company</Label>
+      <Label for="company" class="mb-2">Company</Label>
       <Input type="text" id="company" placeholder="Flowbite" required />
     </div>
     <div>
-      <Label forId="phone" class="mb-2">Phone number</Label>
+      <Label for="phone" class="mb-2">Phone number</Label>
       <Input type="tel" id="phone" placeholder="123-45-678" pattern={"[0-9]{3}-[0-9]{2}-[0-9]{3}"} required />
     </div>
     <div>
-      <Label forId="website" class="mb-2">Website URL</Label>
+      <Label for="website" class="mb-2">Website URL</Label>
       <Input type="url" id="website" placeholder="flowbite.com" required />
     </div>
     <div>
-      <Label forId="visitors" class="mb-2">Unique visitors (per month)</Label>
+      <Label for="visitors" class="mb-2">Unique visitors (per month)</Label>
       <Input type="number" id="visitors" placeholder="" required />
     </div>
   </div>
   <div class="mb-6">
-    <Label forId="email" class="mb-2">Email address</Label>
+    <Label for="email" class="mb-2">Email address</Label>
     <Input type="email" id="email" placeholder="john.doe@company.com" required />
   </div>
   <div class="mb-6">
-    <Label forId="password" class="mb-2">Password</Label>
+    <Label for="password" class="mb-2">Password</Label>
     <Input type="password" id="password" placeholder="•••••••••" required />
   </div>
   <div class="mb-6">
-    <Label forId="confirm_password" class="mb-2">Confirm password</Label>
+    <Label for="confirm_password" class="mb-2">Confirm password</Label>
     <Input type="password" id="confirm_password" placeholder="•••••••••" required />
   </div>
   <Checkbox class="mb-6 space-x-1 rtl:space-x-reverse" required>
@@ -95,17 +95,17 @@ User the size prop to change the input size. Choose one from 'sm:text-md' | 'tex
 <div class='mt-8 border w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-6 space-y-6'>
 <Label class="space-y-2">
   <span>Small icon input</span>
-  <Input type="email" placeholder="Small input" size="sm" />
+  <Input type="email" placeholder="Small input" inputSize="sm" />
 </Label>
 
 <Label class="space-y-2">
   <span>Default icon input</span>
-  <Input type="email" placeholder="Default input" size="md" />
+  <Input type="email" placeholder="Default input" inputSize="md" />
 </Label>
 
 <Label class="space-y-2">
   <span>Large icon input</span>
-  <Input type="email" placeholder="Large input" size="lg" />
+  <Input type="email" placeholder="Large input" inputSize="lg" />
 </Label>
 </div>
 
@@ -124,7 +124,7 @@ Use the following example to apply validation styles for success and error messa
 
 <div class='mt-8 border w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-6'>
 <div class="mb-6">
-  <Label forId="success" color="green" class="block mb-2">Your name</Label>
+  <Label for="success" color="green" class="block mb-2">Your name</Label>
   <Input id="success" color="green" placeholder="Success input" />
   <Helper class="mt-2" color="green">
     <span class="font-medium">Well done!</span>
@@ -132,7 +132,7 @@ Use the following example to apply validation styles for success and error messa
   </Helper>
 </div>
 <div class="mb-6">
-  <Label forId="error" color="red" class="block mb-2">Your name</Label>
+  <Label for="error" color="red" class="block mb-2">Your name</Label>
   <Input id="error" color="red" placeholder="Error input" />
   <Helper class="mt-2" color="red">
     <span class="font-medium">Oh, snapp!</span>
@@ -146,7 +146,7 @@ Use the following example to apply validation styles for success and error messa
 <div class='mt-8 border w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-6'>
 <Label class="space-y-2">
   <span>Small input - left icon</span>
-  <Input type="email" placeholder="name@flowbite.com" size="sm">
+  <Input type="email" placeholder="name@flowbite.com" inputSize="sm">
     {#snippet left()}
     <EnvelopeSolid class="w-4 h-4" />
     {/snippet}
@@ -155,7 +155,7 @@ Use the following example to apply validation styles for success and error messa
 
 <Label class="space-y-2">
   <span>Default input - right icon</span>
-  <Input type="email" placeholder="name@flowbite.com" size="md">
+  <Input type="email" placeholder="name@flowbite.com" inputSize="md">
     {#snippet right()}
     <EnvelopeSolid class="w-5 h-5" />
     {/snippet}
@@ -164,7 +164,7 @@ Use the following example to apply validation styles for success and error messa
 
 <Label class="space-y-2">
   <span>Large input - both icons</span>
-  <Input type="email" placeholder="name@flowbite.com" size="lg">
+  <Input type="email" placeholder="name@flowbite.com" inputSize="lg">
     {#snippet left()}
     <EnvelopeSolid class="w-6 h-6" />
     {/snippet}
@@ -182,7 +182,7 @@ This example can be used to add a descriptive icon or additional text inside the
 
 <div class='mt-8 border w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-6 space-y-6'>
 <div>
-  <Label class="mb-2" forId="input-addon-sm">Small additional text</Label>
+  <Label class="mb-2" for="input-addon-sm">Small additional text</Label>
   <ButtonGroup class="w-full" size="sm">
     <InputAddon>@</InputAddon>
     <Input id="input-addon-sm" type="email" placeholder="elonmusk" />
@@ -190,7 +190,7 @@ This example can be used to add a descriptive icon or additional text inside the
 </div>
 
 <div>
-  <Label class="mb-2" forId="input-addon-md">Default additional text</Label>
+  <Label class="mb-2" for="input-addon-md">Default additional text</Label>
   <ButtonGroup class="w-full" size="md">
     <Input id="input-addon-md" type="email" placeholder="elonmusk" />
     <InputAddon>.com</InputAddon>
@@ -198,7 +198,7 @@ This example can be used to add a descriptive icon or additional text inside the
 </div>
 
 <div>
-  <Label class="mb-2" forId="input-addon-lg">Large additional text</Label>
+  <Label class="mb-2" for="input-addon-lg">Large additional text</Label>
   <ButtonGroup class="w-full" size="lg">
     <InputAddon>@</InputAddon>
     <Input id="input-addon-lg" type="email" placeholder="elonmusk" />
@@ -207,7 +207,7 @@ This example can be used to add a descriptive icon or additional text inside the
 </div>
 
 <div class="pt-8">
-  <Label forId="input-addon" class="mb-2">Grouped with button</Label>
+  <Label for="input-addon" class="mb-2">Grouped with button</Label>
   <ButtonGroup class="w-full">
     <InputAddon>@</InputAddon>
     <Input id="input-addon" type="email" placeholder="elonmusk" />
@@ -216,7 +216,7 @@ This example can be used to add a descriptive icon or additional text inside the
 </div>
 
 <div>
-  <Label forId="input-addon" class="mb-2">Crazy example</Label>
+  <Label for="input-addon" class="mb-2">Crazy example</Label>
   <ButtonGroup class="w-full">
     <InputAddon><Checkbox /></InputAddon>
     <Button color="primary">Search</Button>
@@ -236,8 +236,8 @@ This example shows how to add `on:click` event handler to the icon in `Input`. B
 
 <div class='mt-8 border w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-6 space-y-6'>
 <div>
-  <Label forId="show-password" class="mb-2">Your password</Label>
-  <Input id="show-password" type={show ? 'text' : 'password'} placeholder="Your password here" size="lg">
+  <Label for="show-password" class="mb-2">Your password</Label>
+  <Input id="show-password" type={show ? 'text' : 'password'} placeholder="Your password here" inputSize="lg">
     {#snippet left()}
     <button onclick={() => (show = !show)} class="pointer-events-auto">
       {#if show}
@@ -251,7 +251,7 @@ This example shows how to add `on:click` event handler to the icon in `Input`. B
 </div>
 
 <div>
-  <Label forId="show-password1" class="mb-2">Your password</Label>
+  <Label for="show-password1" class="mb-2">Your password</Label>
   <ButtonGroup class="w-full">
     <InputAddon>
       <button onclick={() => (show1 = !show1)}>
@@ -298,8 +298,8 @@ Use the helper prop to add your helper text. You can use HTML in the helper text
 
 <div class='mt-8 border w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-6'>
 <form>
-  <Label forId="search" class="block mb-2">Your Email</Label>
-  <Input id="search" placeholder="Search" size="lg">
+  <Label for="search" class="block mb-2">Your Email</Label>
+  <Input id="search" placeholder="Search" inputSize="lg">
     {#snippet left()}
     <SearchOutline class="w-6 h-6 text-gray-500 dark:text-gray-400" />
     {/snippet}

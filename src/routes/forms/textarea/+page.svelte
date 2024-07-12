@@ -19,7 +19,7 @@
 <p>Get started with the default example of a textarea component below.
 </p>
 <CodeWrapper>
-  <Label forId="textarea-id" class="mb-2">Your message</Label>
+  <Label for="textarea-id" class="mb-2">Your message</Label>
 <Textarea id="textarea-id" placeholder="Your message" rows={4} name="message" />
 </CodeWrapper>
 

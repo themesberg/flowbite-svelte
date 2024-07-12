@@ -53,7 +53,7 @@
 
   const headerCls = (isheader: boolean) => twMerge(isheader ? 'border-b' : 'border-t', 'py-2 px-3 border-gray-200', background ? 'dark:border-gray-500' : 'dark:border-gray-600', isheader ? headerClass : footerClass);
  
-  let innerWrapperClass: string = twMerge(innerWrappedClass, footer ? '' : 'rounded-b-lg', header ? '' : 'rounded-t-lg');
+  let innerWrapperCls: string = twMerge(innerWrappedClass, footer ? '' : 'rounded-b-lg', header ? '' : 'rounded-t-lg');
 </script>
 
 <div class={wrapperClass}>
@@ -62,7 +62,7 @@
       {@render header()}
     </div>
   {/if}
-  <div class={innerWrapperClass}>
+  <div class={innerWrapperCls}>
     <textarea bind:value {...attributes} class={textareaClass} {id} {disabled} {placeholder} {name} {rows} {cols}></textarea>
   </div>
   {#if footer}

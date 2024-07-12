@@ -6,30 +6,22 @@
 </script>
 
 <script lang="ts">
-  // import Wrapper from '$lib/utils/Wrapper.svelte';
   import { twMerge } from 'tailwind-merge';
   import { getContext, type Snippet } from 'svelte';
-  import type { HTMLInputTypeAttribute } from 'svelte/elements';
+  import type { HTMLInputAttributes } from 'svelte/elements';
   
-  interface Props {
+  interface Props extends HTMLInputAttributes{
     children?: Snippet;
     left?: Snippet;
     right?: Snippet;
-    id?: string;
-    placeholder?: string;
-    required?: boolean;
-    pattern?: any;
-    type?: HTMLInputTypeAttribute;
+    inputSize?: FormSizeType;
     value?: any;
-    size?: FormSizeType;
     defaultClass?: string;
     color?: 'base' | 'green' | 'red';
     floatClass?: string;
     classLeft?: string;
     classRight?: string;
     class?: string;
-    disabled?: boolean;
-    readonly?: boolean;
     show?: boolean;
   }
 
@@ -37,21 +29,14 @@
     children,
     left,
     right,
-    id,
-    required = false,
-    placeholder,
-    pattern,
-    type = 'text',
     value = $bindable(),
-    size,
+    inputSize,
     defaultClass = 'block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right',
     color = 'base',
     floatClass = 'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400',
     class:className,
     classLeft,
     classRight,
-    disabled = false,
-    readonly = false,
     show = false,
     ...attributes
    }: Props = $props();
@@ -87,7 +72,7 @@
   const rightPadding = { sm: 'pe-9', md: 'pe-10', lg: 'pe-11' };
   const inputPadding = { sm: 'p-2', md: 'p-2.5', lg: 'p-3' };
 
-  let _size = size || clampSize(group?.size) || 'md';
+  let _size = inputSize || clampSize(group?.size) || 'md';
   const _color = $derived(color === 'base' && background ? 'tinted' : color);
   let inputClass = $derived(twMerge(defaultClass, inputPadding[_size], (left && leftPadding[_size]) || (right && rightPadding[_size]), ringClasses[color], colorClasses[_color], borderClasses[_color], textSizes[_size], group ? '': 'rounded-lg', group && 'first:rounded-s-lg last:rounded-e-lg', group && '[&:not(:first-child)]:-ms-px',  className));
 </script>
@@ -98,7 +83,7 @@
       {@render left()}
     </div>
   {/if}
-    <input {id} {placeholder} {required} {pattern} {disabled} {readonly} {...attributes} bind:value {...{ type }} class={inputClass} />
+    <input {...attributes} bind:value class={inputClass} />
   {#if children}
     {@render children()}
   {/if}
