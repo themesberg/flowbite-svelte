@@ -141,7 +141,7 @@
   const hasBorder = () =>
     outline || color === 'alternative' || color === 'light';
 
-  let buttonCls: string = $state(
+  let buttonCls: string = $derived(
     twMerge(
       'text-center font-medium',
       group ? 'focus-within:ring-2' : 'focus-within:ring-4',

@@ -3,15 +3,17 @@
   import Button from '$lib/buttons/Button.svelte';
   import type { ButtonColorType, SizeType } from '$lib/types';
   import { twMerge } from 'tailwind-merge';
-  interface Props {
+  import type { HTMLInputAttributes } from 'svelte/elements';
+
+  interface Props extends HTMLInputAttributes {
     children: Snippet;
     group?: string | number;
     value?: string | number;
     inline?: boolean;
-    btnclass?: string;
+    btnClass?: string;
     pill?: boolean;
     outline?: boolean;
-    size?: SizeType | undefined;
+    buttonSize?: SizeType | undefined;
     color?: ButtonColorType | undefined;
     shadow?: boolean;
   }
@@ -20,16 +22,17 @@
     group = $bindable(),
     value,
     inline = true,
-    btnclass,
+    btnClass,
     pill,
     outline,
-    size,
+    buttonSize,
     color,
     shadow,
     ...attributes
   }: Props = $props();
 
-  let buttonCls: string = twMerge(inline ? 'inline-flex' : 'flex', btnclass);
+  let buttonCls: string = twMerge(inline ? 'inline-flex' : 'flex', btnClass);
+  // $inspect('group: ', group, value, value === group)
 </script>
 
 <Button
@@ -37,15 +40,13 @@
   checked={value === group}
   {pill}
   {outline}
-  {size}
+  size={buttonSize}
   {color}
   {shadow}
   class={buttonCls}
 >
   <input type="radio" bind:group {value} {...attributes} class="sr-only" />
-
     {@render children()}
-
 </Button>
 
 <!--

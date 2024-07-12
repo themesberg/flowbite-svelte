@@ -190,25 +190,25 @@
 <H2>Radio button</H2>
 <CodeWrapper class="space-y-4">
   <div>
-    <RadioButton value={'notes'} bind:group={radioGroup}
+    <RadioButton value='notes' bind:group={radioGroup}
       ><ListMusicSolid /></RadioButton
     >
-    <RadioButton value={'numbers'} bind:group={radioGroup}
+    <RadioButton value='numbers' bind:group={radioGroup}
       ><OrderedListOutline /></RadioButton
     >
-    <RadioButton value={'bullets'} bind:group={radioGroup}
+    <RadioButton value='bullets' bind:group={radioGroup}
       ><ListOutline /></RadioButton
     >
   </div>
 
   <ButtonGroup>
-    <RadioButton value={'notes'} bind:group={radioGroup}
+    <RadioButton value='notes' bind:group={radioGroup}
       ><ListMusicSolid /></RadioButton
     >
-    <RadioButton value={'numbers'} bind:group={radioGroup}
+    <RadioButton value='numbers' bind:group={radioGroup}
       ><OrderedListOutline /></RadioButton
     >
-    <RadioButton value={'bullets'} bind:group={radioGroup}
+    <RadioButton value='bullets' bind:group={radioGroup}
       ><ListOutline /></RadioButton
     >
   </ButtonGroup>
