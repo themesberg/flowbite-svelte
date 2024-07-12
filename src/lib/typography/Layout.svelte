@@ -1,28 +1,24 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
+  import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLAttributes<HTMLElement>{
     children: Snippet;
-    divClass?: string | undefined;
-    cols?: string | undefined;
-    // gap?: number;
+    class?: string | undefined;
   }
 
   let {
     children,
-    divClass,
-    cols = '',
+    class: className,
     ...attributes
   }: Props = $props();
 
-  let classDiv = twMerge('grid grid-cols-1 sm:grid-cols-2', cols, divClass);
+  let classDiv = twMerge('grid grid-cols-1 sm:grid-cols-2', className);
 </script>
 
 <div {...attributes} class={classDiv}>
-  
-    {@render children()}
-  
+  {@render children()}
 </div>
 
 <!--
