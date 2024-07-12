@@ -1,43 +1,27 @@
 <script lang="ts">
-  interface Props {
-    id?: string;
-    min?: string;
-    max?: string;
-    step?: string;
-    disabled?: boolean;
-    value?: number;
-    size?: 'sm' | 'md' | 'lg';
-    inputclass?: string;
+  import type { HTMLInputAttributes } from 'svelte/elements';
+
+  interface Props extends HTMLInputAttributes {
+    value?: any;
+    rangeSize?: 'sm' | 'md' | 'lg';
+    inputClass?: string;
   }
   import { twMerge } from 'tailwind-merge';
   // import '$lib/style.css';
 
-  let { id, disabled, min, max, step, value = $bindable(), size = 'md', inputclass, ...attributes }: Props = $props();
+  let { value = $bindable(), rangeSize = 'md', inputClass, ...attributes }: Props = $props();
 
   const sizes = {
     sm: 'h-1 range-sm',
     md: 'h-2',
     lg: 'h-3 range-lg'
   };
-  let inputClass: string = twMerge(
+  let inputCls: string = twMerge(
     'w-full bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700',
-    sizes[size] ?? sizes.md
+    sizes[rangeSize] ?? sizes.md,
+    inputClass
   );
 </script>
 
-<input type="range" bind:value {id} {...attributes} {disabled} {min} {max} {step} class={inputClass} />
+<input type="range" bind:value {...attributes} class={inputCls} />
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@prop id
-@prop disabled
-@prop min
-@prop max
-@prop step
-@prop value = $bindable()
-@prop size = 'md'
-@prop inputclass
-@prop ...attributes
--->

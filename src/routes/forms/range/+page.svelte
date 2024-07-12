@@ -53,11 +53,11 @@
 <H2>Sizes</H2>
 <CodeWrapper class="space-y-6">
   <Label>Small range</Label>
-  <Range id="small-range" size="sm" />
+  <Range id="small-range" rangeSize="sm" />
   <Label>Default range</Label>
-  <Range id="default-range" size="md" />
+  <Range id="default-range" rangeSize="md" />
   <Label>Large range</Label>
-  <Range id="large-range" size="lg" />
+  <Range id="large-range" rangeSize="lg" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/sizes.md'] as string} />
