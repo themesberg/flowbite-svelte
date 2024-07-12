@@ -39,6 +39,7 @@
       svgClass="me-4"
       btnClass="p-1"
     >
+      <SidebarItem label="Accordion" href="/components/accordion" />
       <SidebarItem label="Alert" href="/components/alert" />
       <SidebarItem label="Avatar" href="/components/avatar" />
       <SidebarItem label="Badge" href="/components/badge" />
@@ -51,24 +52,34 @@
       <SidebarItem label="Button" href="/components/button" />
       <SidebarItem label="Button group" href="/components/button-group" />
       <SidebarItem label="Card" href="/components/card" />
-      <SidebarItem label="Drawer" href="/components/drawer" />
+      <SidebarItem label="Carousel" href="/components/carousel" />
       <SidebarItem label="Darkmode" href="/components/darkmode" />
       <SidebarItem label="Device mockup" href="/components/device-mockup" />
+      <SidebarItem label="Drawer" href="/components/drawer" />
       <SidebarItem label="Dropdown" href="/components/dropdown" />
       <SidebarItem label="Footer" href="/components/footer" />
+      <SidebarItem label="Forms" href="/components/forms" />
       <SidebarItem label="Gallery" href="/components/gallery" />
       <SidebarItem label="Indicators" href="/components/indicators" />
       <SidebarItem label="Kbd" href="/components/kbd" />
       <SidebarItem label="List group" href="/components/list-group" />
+      <SidebarItem label="Mega menu" href="/components/mega-menu" />
+      <SidebarItem label="Modal" href="/components/modal" />
       <SidebarItem label="Navbar" href="/components/navbar" />
+      <SidebarItem label="Pagination" href="/components/pagination" />
+      <SidebarItem label="Popover" href="/components/popover" />
       <SidebarItem label="Progress" href="/components/progress" />
       <SidebarItem label="Rating" href="/components/rating" />
       <SidebarItem label="Sidebar" href="/components/sidebar" />
       <SidebarItem label="Skeleton" href="/components/skeleton" />
+      <SidebarItem label="Speed dial" href="/components/speed-dial" />
       <SidebarItem label="Spinner" href="/components/spinner" />
-      <SidebarItem label="Table" href="/components/table" />
       <SidebarItem label="Tab" href="/components/tab" />
+      <SidebarItem label="Table" href="/components/table" />
+      <SidebarItem label="Timeline" href="/components/timeline" />
       <SidebarItem label="Toast" href="/components/toast" />
+      <SidebarItem label="Tooltip" href="/components/tooltip" />
+      <SidebarItem label="Typography" href="/components/typography" />
       <SidebarItem label="Video" href="/components/video" />
     </SidebarDropdownWrapper>
     <SidebarDropdownWrapper
@@ -78,10 +89,14 @@
       btnClass="p-1"
     >
       <SidebarItem label="Checkbox" href="/forms/checkbox" />
+      <SidebarItem label="File input" href="/forms/file-input" />
       <SidebarItem label="Floating label" href="/forms/floating-label" />
+      <SidebarItem label="Input field" href="/forms/input-field" />
       <SidebarItem label="Radio" href="/forms/radio" />
       <SidebarItem label="Range" href="/forms/range" />
+      <SidebarItem label="Search input" href="/forms/search-input" />
       <SidebarItem label="Select" href="/forms/select" />
+      <SidebarItem label="Textarea" href="/forms/textarea" />
       <SidebarItem label="Toggle" href="/forms/toggle" />
     </SidebarDropdownWrapper>
     <SidebarDropdownWrapper

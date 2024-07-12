@@ -162,6 +162,11 @@
       <SidebarDropdownWrapper isOpen={hasPath('components')} label="Components" svgClass="me-4" btnClass="p-1">
         <SidebarItem
           onclick={closeNavDrawer}
+          label="Accordion"
+          href="/components/accordion"
+        />
+        <SidebarItem
+          onclick={closeNavDrawer}
           label="Alert"
           href="/components/alert"
         />
@@ -207,8 +212,8 @@
         />
         <SidebarItem
           onclick={closeNavDrawer}
-          label="Drawer"
-          href="/components/drawer"
+          label="Carousel"
+          href="/components/carousel"
         />
         <SidebarItem
           onclick={closeNavDrawer}
@@ -222,6 +227,11 @@
         />
         <SidebarItem
           onclick={closeNavDrawer}
+          label="Drawer"
+          href="/components/drawer"
+        />
+        <SidebarItem
+          onclick={closeNavDrawer}
           label="Dropdown"
           href="/components/dropdown"
         />
@@ -229,6 +239,11 @@
           onclick={closeNavDrawer}
           label="Footer"
           href="/components/footer"
+        />
+        <SidebarItem
+          onclick={closeNavDrawer}
+          label="Forms"
+          href="/components/forms"
         />
         <SidebarItem
           onclick={closeNavDrawer}
@@ -252,8 +267,28 @@
         />
         <SidebarItem
           onclick={closeNavDrawer}
+          label="Mega menu"
+          href="/components/mega-menu"
+        />
+        <SidebarItem
+          onclick={closeNavDrawer}
+          label="Modal"
+          href="/components/modal"
+        />
+        <SidebarItem
+          onclick={closeNavDrawer}
           label="Navbar"
           href="/components/navbar"
+        />
+        <SidebarItem
+          onclick={closeNavDrawer}
+          label="Pagination"
+          href="/components/pagination"
+        />
+        <SidebarItem
+          onclick={closeNavDrawer}
+          label="Popover"
+          href="/components/popover"
         />
         <SidebarItem
           onclick={closeNavDrawer}
@@ -277,6 +312,11 @@
         />
         <SidebarItem
           onclick={closeNavDrawer}
+          label="Speed dial"
+          href="/components/speed-dial"
+        />
+        <SidebarItem
+          onclick={closeNavDrawer}
           label="Spinner"
           href="/components/spinner"
         />
@@ -292,8 +332,23 @@
         />
         <SidebarItem
           onclick={closeNavDrawer}
+          label="Timeline"
+          href="/components/timeline"
+        />
+        <SidebarItem
+          onclick={closeNavDrawer}
           label="Toast"
           href="/components/toast"
+        />
+        <SidebarItem
+          onclick={closeNavDrawer}
+          label="Tooltip"
+          href="/components/tooltip"
+        />
+        <SidebarItem
+          onclick={closeNavDrawer}
+          label="Typography"
+          href="/components/typography"
         />
         <SidebarItem
           onclick={closeNavDrawer}
@@ -309,8 +364,18 @@
         />
         <SidebarItem
           onclick={closeNavDrawer}
+          label="File input"
+          href="/forms/file-input"
+        />
+        <SidebarItem
+          onclick={closeNavDrawer}
           label="Floating label"
           href="/forms/floating-label"
+        />
+        <SidebarItem
+          onclick={closeNavDrawer}
+          label="Input Field"
+          href="/forms/input-field"
         />
         <SidebarItem
           onclick={closeNavDrawer}
@@ -324,8 +389,18 @@
         />
         <SidebarItem
           onclick={closeNavDrawer}
+          label="Search input"
+          href="/forms/search-input"
+        />
+        <SidebarItem
+          onclick={closeNavDrawer}
           label="Select"
           href="/forms/select"
+        />
+        <SidebarItem
+          onclick={closeNavDrawer}
+          label="Textarea"
+          href="/forms/textarea"
         />
         <SidebarItem
           onclick={closeNavDrawer}

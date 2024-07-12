@@ -4,8 +4,9 @@
   import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
   import { clampSize } from '$lib/forms/Input.svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLAttributes<HTMLDivElement>{
     children: Snippet;
     class?: string;
     size?: 'sm' | 'md' | 'lg' | undefined;
