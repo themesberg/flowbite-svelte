@@ -1,8 +1,9 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
+  import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLAttributes<HTMLSpanElement>{
     children: Snippet;
     italic?: boolean;
     underline?: boolean;

@@ -2,19 +2,19 @@
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
+  import type { HTMLLiAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLLiAttributes{
     children: Snippet;
     icon?: boolean;
-    liClass?: string | undefined;
+    class?: string | undefined;
   }
 
-  let { children, icon, liClass, ...attributes }: Props = $props();
+  let { children, icon, class: className, ...attributes }: Props = $props();
   const ctxclass: string = getContext('ctxclass');
-  let classLi: string = twMerge(liClass, ctxclass, icon && 'flex items-center');
 </script>
 
-<li {...attributes} class={classLi}>
+<li {...attributes} class={twMerge(className, ctxclass, icon && 'flex items-center')}>
   {@render children()}
 </li>
 
@@ -24,6 +24,6 @@
 ## Props
 @prop children
 @prop icon
-@prop liClass
+@prop class
 @prop ...attributes
 -->

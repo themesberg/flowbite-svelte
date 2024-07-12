@@ -304,8 +304,8 @@
 	<Li># of pages: {componentsAnalysis.total}</Li>
 	<Li># of components/pages checked: {componentsAnalysis.pageChecked}</Li>
 	<Li># of components/pages to be completed: {componentsAnalysis.pageUnchecked}</Li>
-	<Li liClass='text-green-500'># of pages without problems: {componentsAnalysis.pageWithoutProblems}</Li>
-	<Li liClass='text-red-500'># of examples to be completed: {componentsAnalysis.exampleProblems}</Li>
+	<Li class='text-green-500'># of pages without problems: {componentsAnalysis.pageWithoutProblems}</Li>
+	<Li class='text-red-500'># of examples to be completed: {componentsAnalysis.exampleProblems}</Li>
 </List>
 	
 
@@ -314,8 +314,8 @@
 	<Li># of pages: {formsAnalysis.total}</Li>
 	<Li># of components/pages checked: {formsAnalysis.pageChecked}</Li>
 	<Li># of components/pages to be completed: {formsAnalysis.pageUnchecked}</Li>
-	<Li liClass='text-green-500'># of pages without problems: {formsAnalysis.pageWithoutProblems}</Li>
-	<Li liClass='text-red-500'># of examples to be completed: {formsAnalysis.exampleProblems}</Li>
+	<Li class='text-green-500'># of pages without problems: {formsAnalysis.pageWithoutProblems}</Li>
+	<Li class='text-red-500'># of examples to be completed: {formsAnalysis.exampleProblems}</Li>
 </List>
 
 <H2>Typography</H2>
@@ -323,8 +323,8 @@
 	<Li># of pages: {typographyAnalysis.total}</Li>
 	<Li># of components/pages checked: {typographyAnalysis.pageChecked}</Li>
 	<Li># of components/pages to be completed: {typographyAnalysis.pageUnchecked}</Li>
-	<Li liClass='text-green-500'># of pages without problems: {typographyAnalysis.pageWithoutProblems}</Li>
-	<Li liClass='text-red-500'># of examples to be completed: {typographyAnalysis.exampleProblems}</Li>
+	<Li class='text-green-500'># of pages without problems: {typographyAnalysis.pageWithoutProblems}</Li>
+	<Li class='text-red-500'># of examples to be completed: {typographyAnalysis.exampleProblems}</Li>
 </List>
 
 <Heading

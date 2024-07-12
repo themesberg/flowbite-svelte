@@ -1,16 +1,22 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
-  interface Props {
+  import type { HTMLAttributes } from 'svelte/elements';
+
+  interface Props extends HTMLAttributes<HTMLElement>{
     children: Snippet;
-    color?: string;
     secondaryClass?: string;
     class?: string;
   }
-  let { children, color = 'text-gray-500 dark:text-gray-400', secondaryClass = 'font-semibold', class: className, ...attributes }: Props = $props();
+  let { 
+    children,
+    secondaryClass = 'text-gray-500 dark:text-gray-400 font-semibold',
+    class: className, 
+    ...attributes 
+  }: Props = $props();
 </script>
 
-<small {...attributes} class={twMerge(color, secondaryClass, className)}>
+<small {...attributes} class={twMerge(secondaryClass, className)}>
   {@render children()}
 </small>
 

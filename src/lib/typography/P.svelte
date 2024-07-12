@@ -2,8 +2,9 @@
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import type { PsizeType, PweightType, SpaceType } from '../types';
+  import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLAttributes<HTMLParagraphElement>{
     children: Snippet;
     color?: string | undefined;
     class?: string | undefined;
