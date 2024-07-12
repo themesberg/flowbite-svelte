@@ -1,8 +1,9 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
+  import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLAttributes<HTMLElement> {
     children: Snippet;
     tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     class?: string | undefined;
@@ -38,9 +39,7 @@
     classname
   )}
 >
-  
-    {@render children()}
- 
+  {@render children()}
 </svelte:element>
 
 <!--
