@@ -1,8 +1,9 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
+  import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLAttributes<HTMLElement>{
     children?: Snippet;
     icon?: boolean;
     divClass?: string | undefined;
@@ -40,7 +41,7 @@
     </div>
   </div>
 {:else}
-  <hr class={horizontalCls} />
+  <hr class={horizontalCls} {...attributes} />
 {/if}
 
 <!--
