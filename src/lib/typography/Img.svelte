@@ -1,27 +1,23 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
-  interface Props {
+  import type { HTMLImgAttributes } from 'svelte/elements';
+
+  interface Props extends HTMLImgAttributes{
     caption?: string;
-    src?: string;
-    srcset?: string;
-    size?: string;
-    alignment?: string;
     imgClass?: string;
     figClass?: string;
-    alt?: string;
-    effect?: string;
     captionClass?: string;
     class?: string;
   }
   
-  let { caption='', src='', srcset='', size = 'max-w-full', alignment = '', imgClass = 'h-auto', figClass = 'max-w-lg', alt = '', effect = '', captionClass = 'mt-2 text-sm text-center text-gray-500 dark:text-gray-400', class: className = '', ...attributes } = $props()
+  let { caption='', imgClass = 'max-w-full h-auto', figClass = 'max-w-lg', captionClass = 'mt-2 text-sm text-center text-gray-500 dark:text-gray-400', class: className = '', ...attributes } = $props()
 </script>
 
 {#if caption}
   <figure class={figClass}>
-    <img class={twMerge(imgClass, size, alignment, effect, className)} {src} {srcset} {alt} />
+    <img {...attributes} class={twMerge(imgClass, className)}/>
     <figcaption class={captionClass}>{@html caption}</figcaption>
   </figure>
 {:else}
-  <img {...attributes} class={twMerge(imgClass, size, alignment, effect, className)} {src} {srcset} {alt} />
+  <img {...attributes} class={twMerge(imgClass, className)}/>
 {/if}
