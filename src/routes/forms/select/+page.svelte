@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Select, Label } from '$lib';
+  import { Select, Label, Helper } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -29,8 +29,9 @@
 <CodeWrapper class="h-48">
   <Label>
     Select an option
-    <Select selectclass="mt-2" items={countries} bind:value={selected} />
+    <Select selectClass="mt-2" items={countries} bind:value={selected} />
   </Label>
+  <Helper class="mt-2">Your selected value is: {selected}</Helper>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/defaultselect.md'] as string} />
@@ -58,7 +59,7 @@
   <Select
     id="select-underline"
     underline
-    selectclass="mt-2"
+    selectClass="mt-2"
     items={countries}
   />
 </CodeWrapper>

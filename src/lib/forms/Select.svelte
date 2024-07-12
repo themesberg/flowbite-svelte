@@ -1,41 +1,38 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
+  import type { HTMLSelectAttributes } from 'svelte/elements';
 
   type SelectOptionType<T> = {
     name: string | number;
     value: T;
   };
-  interface Props {
+  interface Props extends HTMLSelectAttributes{
     children?: Snippet;
-    id?: string;
-    disabled?: boolean;
     items: SelectOptionType<any>[];
     value?: any;
-    placeholder?: string | undefined;
     underline?: boolean;
-    size?: 'sm' | 'md' | 'lg';
-    selectclass?: string | undefined;
+    selectSize?: 'sm' | 'md' | 'lg';
+    selectClass?: string | undefined;
     underlineClass?: string | undefined;
     onchange?: () => void;
     oninput?: () => void;
     oncontextmenu?: () => void;
+    placeholder?: string;
   }
 
   let {
     children,
-    id,
-    disabled,
     items,
     value = $bindable(),
-    placeholder = 'Choose option ...',
     underline,
-    size = 'md',
-    selectclass,
+    selectSize = 'md',
+    selectClass,
     underlineClass,
     onchange,
     oninput,
     oncontextmenu,
+    placeholder = 'Choose option ...',
     ...attributes
   }: Props = $props();
   let defaultCls: string =
@@ -57,16 +54,14 @@
     twMerge(
       common,
       underline ? underlineCls : defaultCls,
-      sizes[size],
+      sizes[selectSize],
       underline && '!px-0',
-      selectclass
+      selectClass
     )
   );
 </script>
 
 <select
-  {id}
-  {disabled}
   {...attributes}
   bind:value
   class={selectCls}
@@ -86,23 +81,3 @@
     {/if}
   {/each}
 </select>
-
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@prop children
-@prop id
-@prop disabled
-@prop items
-@prop value = $bindable()
-@prop placeholder = 'Choose option ...'
-@prop underline
-@prop size = 'md'
-@prop selectclass
-@prop underlineClass
-@prop onchange
-@prop oninput
-@prop oncontextmenu
-@prop ...attributes
--->
