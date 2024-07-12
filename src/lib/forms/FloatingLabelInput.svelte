@@ -2,34 +2,29 @@
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import { idGenerator } from '../uiHelpers.svelte';
-  import type { HTMLInputTypeAttribute } from 'svelte/elements';
+  import type { HTMLInputAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLInputAttributes{
     children: Snippet;
     id?: string;
     aria_describedby?: string;
-    disabled?: boolean;
     style?: 'filled' | 'outlined' | 'standard';
-    type?: HTMLInputTypeAttribute;
-    size?: 'small' | 'default';
+    inputSize?: 'small' | 'default';
     color?: 'base' | 'green' | 'red';
-    value?: any;
     divClass?: string;
-    inputclass?: string;
-    labelclass?: string;
+    inputClass?: string;
+    labelClass?: string;
   }
   let {
     children,
     id = idGenerator(),
     aria_describedby,
-    disabled,
     style = 'standard',
-    type = 'text',
-    size = 'default',
+    inputSize = 'default',
     color = 'base',
     divClass,
-    inputclass,
-    labelclass,
+    inputClass,
+    labelClass,
     ...attributes
   }: Props = $props();
 
@@ -73,9 +68,9 @@
     filled:
       'block rounded-t-lg w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 appearance-none dark:text-white focus:outline-none focus:ring-0 peer',
     outlined:
-      'block w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 appearance-none dark:text-white  focus:outline-none focus:ring-0 peer',
+      'block w-full text-sm text-gray-900 bg-transparent rounded-lg border appearance-none dark:text-white focus:outline-none focus:ring-0 peer',
     standard:
-      'block w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none dark:text-white  focus:outline-none focus:ring-0 peer'
+      'block w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none dark:text-white focus:outline-none focus:ring-0 peer'
   };
 
   const labelClasses = {
@@ -105,15 +100,12 @@
   <input
     {id}
     {...attributes}
-    {disabled}
     aria-describedby={aria_describedby}
-    {...{ type }}
-    placeholder=" "
     class={twMerge(
       inputClasses[style],
       inputColorClasses[color],
-      inputSizes[style][size],
-      inputclass
+      inputSizes[style][inputSize],
+      inputClass
     )}
   />
 
@@ -122,13 +114,11 @@
     class={twMerge(
       labelClasses[style],
       labelColorClasses[color],
-      labelSizes[style][size],
-      labelclass
+      labelSizes[style][inputSize],
+      labelClass
     )}
   >
- 
-      {@render children()}
- 
+    {@render children()}
   </label>
 </div>
 
