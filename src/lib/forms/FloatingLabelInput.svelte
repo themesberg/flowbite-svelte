@@ -48,7 +48,7 @@
 
   const inputClasses = {
     filled: 'block rounded-t-lg w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 appearance-none dark:text-white focus:outline-none focus:ring-0 peer',
-    outlined: 'block w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 appearance-none dark:text-white  focus:outline-none focus:ring-0 peer',
+    outlined: 'block w-full text-sm text-gray-900 bg-transparent rounded-lg border appearance-none dark:text-white  focus:outline-none focus:ring-0 peer',
     standard: 'block w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none dark:text-white  focus:outline-none focus:ring-0 peer'
   };
 
