@@ -2,24 +2,19 @@
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
+  import type { HTMLTextareaAttributes } from 'svelte/elements';
   // import Wrapper from '../utils/Wrapper.svelte';
-  interface Props {
+  interface Props extends HTMLTextareaAttributes{
     children?: Snippet;
     header?: Snippet;
     footer?: Snippet;
-    value?: any;
+    value?: string | string[] | number | undefined | null;
     wrappedClass?: string;
     unWrappedClass?: string;
     innerWrappedClass?: string;
     headerClass?: string;
     footerClass?: string;
-    disabled?: boolean;
     class?: string;
-    id?: string;
-    name?: string;
-    placeholder?: string;
-    rows?: number;
-    cols?: number;
   }
 
   let {
@@ -32,13 +27,7 @@
     innerWrappedClass = 'py-2 px-4 bg-white dark:bg-gray-800',
     headerClass = '',
     footerClass = '',
-    disabled = false,
     class: className = '',
-    id = '',
-    name = '',
-    placeholder = '',
-    rows,
-    cols,
     ...attributes
   }: Props = $props();
   const background = getContext('background');
@@ -63,7 +52,7 @@
     </div>
   {/if}
   <div class={innerWrapperCls}>
-    <textarea bind:value {...attributes} class={textareaClass} {id} {disabled} {placeholder} {name} {rows} {cols}></textarea>
+    <textarea bind:value {...attributes} class={textareaClass}></textarea>
   </div>
   {#if footer}
     <div class={headerCls(false)}>

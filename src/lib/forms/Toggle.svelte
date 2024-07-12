@@ -1,14 +1,14 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
-  import Checkbox from './Checkbox.svelte';
   import Label from './Label.svelte';
   import { labelCls, inputCls } from './Radio.svelte';
   import type { FormColorType } from '../types';
-  interface Props {
+  import type { HTMLInputAttributes } from 'svelte/elements';
+
+  interface Props extends HTMLInputAttributes{
     children: Snippet;
-    disabled?: boolean;
-    size?: 'small' | 'default' | 'large' | 'custom';
+    toggleSize?: 'small' | 'default' | 'large' | 'custom';
     group?: (string | number)[];
     value?: string | number;
     checked?: boolean | undefined;
@@ -16,17 +16,16 @@
     spanClass?: string;
     color?: FormColorType;
     inline?: boolean;
-    labelclass?: string;
+    labelClass?: string;
     aria_describedby?: string;
     spacing?: string;
     custom?: boolean;
-    inputclass?: string;
+    inputClass?: string;
   }
 
   let {
     children,
-    disabled,
-    size = 'default',
+    toggleSize = 'default',
     group,
     value,
     checked = $bindable(),
@@ -34,11 +33,11 @@
     spanClass,
     color = 'primary',
     inline = false,
-    labelclass = '',
+    labelClass = '',
     aria_describedby,
     spacing = 'me-2',
     custom = true,
-    inputclass = '',
+    inputClass = '',
     ...attributes
   }: Props = $props();
   
@@ -75,44 +74,21 @@
     'dark:bg-gray-600 dark:border-gray-500',
     // background ? 'dark:bg-gray-600 dark:border-gray-500' : 'dark:bg-gray-700 dark:border-gray-600',
     colors[color ?? 'primary'],
-    sizes[size],
+    sizes[toggleSize],
     'relative',
     spanClass
   );
 </script>
 
-<Label class={labelCls(inline, labelclass)}>
+<Label class={labelCls(inline, labelClass)}>
 <input
     type="checkbox"
     bind:checked
     {value}
     aria-describedby={aria_describedby}
-    {disabled}
     {...attributes}
-    class={twMerge(spacing, inputCls(custom, color, true, false, inputclass))}
+    class={twMerge(spacing, inputCls(custom, color, true, false, inputClass))}
   />
   <span class={divClass} ></span>
     {@render children()}
 </Label>
-
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@prop children
-@prop disabled
-@prop size = 'default'
-@prop group
-@prop value
-@prop checked = $bindable()
-@prop customSize
-@prop spanClass
-@prop color = 'primary'
-@prop inline = false
-@prop labelclass = ''
-@prop aria_describedby
-@prop spacing = 'me-2'
-@prop custom = true
-@prop inputclass = ''
-@prop ...attributes
--->

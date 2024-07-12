@@ -41,9 +41,9 @@
 
 <H2>Sizes</H2>
 <CodeWrapper class="flex flex-col gap-2">
-  <Toggle size="small">Small toggle</Toggle>
-  <Toggle size="default" checked>Default toggle</Toggle>
-  <Toggle size="large" checked>Large toggle</Toggle>
-  <Toggle size="custom" {customSize}>Custom toggle</Toggle>
+  <Toggle toggleSize="small">Small toggle</Toggle>
+  <Toggle toggleSize="default" checked>Default toggle</Toggle>
+  <Toggle toggleSize="large" checked>Large toggle</Toggle>
+  <Toggle toggleSize="custom" {customSize}>Custom toggle</Toggle>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/sizes.md'] as string} />
