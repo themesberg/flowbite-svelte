@@ -6,8 +6,9 @@
   import { slide, type SlideParams } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
   import type { navbarType } from '$lib/types';
+  import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLAttributes<HTMLElement>{
     children: Snippet;
     toggleNav?: () => void;
     closeNav?: () => void;
@@ -16,10 +17,10 @@
     fluid?: boolean;
     brand?: Snippet;
     breakPoint?: navbarType['breakPoint'];
-    navclass?: string | undefined | null;
+    navClass?: string | undefined | null;
     divClass?: string | undefined | null;
-    btnclass?: string | undefined | null;
-    div2class?: string | undefined | null;
+    btnClass?: string | undefined | null;
+    div2Class?: string | undefined | null;
     nonActiveClass?: string | undefined | null;
     activeClass?: string | undefined | null;
   }
@@ -33,10 +34,10 @@
     fluid,
     brand,
     breakPoint = 'md',
-    navclass,
+    navClass,
     divClass,
-    btnclass,
-    div2class,
+    btnClass,
+    div2Class,
     activeClass,
     nonActiveClass,
     ...attributes
@@ -58,7 +59,7 @@
   let navDisplay = $derived(navStatus ? 'block' : 'hidden');
   let navCls = twMerge(
     'border-gray-200 bg-transparent dark:bg-gray-900',
-    navclass
+    navClass
   );
   let divCls = twMerge(
     'mx-auto flex flex-wrap items-center justify-between p-4',
@@ -75,7 +76,7 @@
   let btnCls = twMerge(
     'inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600',
     btnBreak[breakPoint],
-    btnclass
+    btnClass
   );
   const blockBreak = {
     md: 'md:block md:w-auto',
@@ -83,7 +84,7 @@
     xl: 'xl:block xl:w-auto',
     xxl: '2xl:block 2xl:w-auto'
   };
-  let divChildrenCls = twMerge('w-full', blockBreak[breakPoint], div2class);
+  let divChildrenCls = twMerge('w-full', blockBreak[breakPoint], div2Class);
   // $inspect('Navbar: ', breakPoint);
   let slideParams: SlideParams = {
     delay: 250,
@@ -145,10 +146,10 @@
 @props:fluid?: boolean;
 @props:brand?: Snippet;
 @props:breakPoint?: navbarType['breakPoint'];
-@props:navclass?: string | undefined | null;
+@props:navClass?: string | undefined | null;
 @props:divClass?: string | undefined | null;
-@props:btnclass?: string | undefined | null;
-@props:div2class?: string | undefined | null;
+@props:btnClass?: string | undefined | null;
+@props:div2Class?: string | undefined | null;
 @props:nonActiveClass?: string | undefined | null;
 @props:activeClass?: string | undefined | null;
 -->

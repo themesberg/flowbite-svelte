@@ -1,7 +1,8 @@
 <script lang="ts">
   import type { ProgressBarColorType } from '$lib/types';
+  import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLAttributes<HTMLDivElement> {
     progress?: string | number;
     precision?: number;
     tweenDuration?: number;
@@ -11,7 +12,7 @@
     labelOutside?: string | undefined;
     easing?: EasingFunction;
     color?: ProgressBarColorType;
-    div2class?: string | undefined;
+    div2Class?: string | undefined;
     labeloutsidedivClass?: string | undefined;
     divClass?: string | undefined;
     class?: string | undefined;
@@ -32,7 +33,7 @@
     labelOutside,
     easing = cubicOut,
     color = 'primary',
-    div2class,
+    div2Class,
     labeloutsidedivClass,
     divClass,
     class: classname,
@@ -78,17 +79,17 @@
     >
   </div>
 {/if}
-<div class={twMerge(divCls, size, divClass)}>
+<div class={twMerge(divCls, size, divClass)} {...attributes}>
   {#if labelInside}
     <div
-      class={twJoin(labelInsideCls, barColors[color], size, div2class)}
+      class={twJoin(labelInsideCls, barColors[color], size, div2Class)}
       style="width: {$_progress}%"
     >
       {$_progress.toFixed(precision)}%
     </div>
   {:else}
     <div
-      class={twJoin(barColors[color], size, 'rounded-full', div2class)}
+      class={twJoin(barColors[color], size, 'rounded-full', div2Class)}
       style="width: {$_progress}%"
       ></div>
   {/if}
@@ -107,7 +108,7 @@
 @prop labelOutside
 @prop easing = cubicOut
 @prop color = 'primary'
-@prop div2class
+@prop div2Class
 @prop labeloutsidedivClass
 @prop divClass
 @prop class: classname

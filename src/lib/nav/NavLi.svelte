@@ -4,21 +4,21 @@
   import { twMerge } from 'tailwind-merge';
   import { page } from '$app/stores';
   import type { navbarType } from '$lib/types';
-  interface Props {
+  import type { HTMLAnchorAttributes } from 'svelte/elements';
+
+  interface Props extends HTMLAnchorAttributes {
     children: Snippet;
     closeNav?: () => void;
     href?: string 
-    target?: string ;
-    aclass?: string 
+    aClass?: string 
     activeClass?: string 
     nonActiveClass?: string 
   }
   let {
     closeNav,
     href,
-    target,
     children,
-    aclass,
+    aClass,
     activeClass,
     nonActiveClass,
     ...attributes
@@ -54,7 +54,7 @@
           twMerge(context.nonActiveClass, linkBreaks[breakPoint])
   );
 
-  let linkClass = $derived(twMerge(aCls, aclass));
+  let linkClass = $derived(twMerge(aCls, aClass));
 
   // $inspect('context.activeClass', linkBreaks[breakPoint]);
 </script>
@@ -63,7 +63,6 @@
   <a
     {href}
     onclick={closeNav}
-    {target}
     {...attributes}
     aria-current={currentUrl === href}
     class={linkClass}
@@ -80,7 +79,7 @@
 @prop href
 @prop target
 @prop children
-@prop aclass
+@prop aClass
 @prop activeClass
 @prop nonActiveClass
 @prop ...attributes

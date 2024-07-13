@@ -1,28 +1,27 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
+  import type { HTMLAnchorAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLAnchorAttributes {
     children: Snippet;
     liClass?: string | undefined;
     aClass?: string | undefined;
     href?: string | undefined;
-    target?: string | undefined;
   }
 
-  let { children, liClass, aClass, href, target, ...attributes }: Props =
+  let { children, liClass, aClass, href, ...attributes }: Props =
     $props();
 
   let liCls: string = twMerge('me-4 last:me-0 md:me-6', liClass);
   let aCls: string = twMerge('hover:underline', aClass);
 </script>
 
-
-  <li class={liCls}>
-    <a {...attributes} {href} class={aCls} {target}>
-      {@render children()}
-    </a>
-  </li>
+<li class={liCls}>
+  <a {...attributes} {href} class={aCls}>
+    {@render children()}
+  </a>
+</li>
 
 <!--
 @component

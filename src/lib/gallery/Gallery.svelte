@@ -1,23 +1,24 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
+  import type { HTMLAttributes } from 'svelte/elements';
 
   type ImgType = {
     src: string | undefined | null;
     alt?: string | undefined | null;
   };
 
-  interface Props {
+  interface Props extends HTMLAttributes<HTMLDivElement>{
     children?: Snippet;
     items?: ImgType[];
-    imgclass?: string | undefined;
+    imgClass?: string | undefined;
     divClass?: string | undefined;
   }
 
   let {
     children,
     items = [],
-    imgclass,
+    imgClass,
     divClass,
     ...attributes
   }: Props = $props();
@@ -33,7 +34,7 @@
 
 {#snippet figure(item)}
   <div>
-    <img src={item.src} alt={item.alt} class={twMerge(imgCls, imgclass)} />
+    <img src={item.src} alt={item.alt} class={twMerge(imgCls, imgClass)} />
   </div>
 {/snippet}
 
@@ -53,7 +54,7 @@
 ## Props
 @prop children
 @prop items = []
-@prop imgclass
+@prop imgClass
 @prop divClass
 @prop ...attributes
 -->

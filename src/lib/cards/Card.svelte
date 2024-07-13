@@ -1,13 +1,14 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
+  import type { HTMLAttributes } from 'svelte/elements';
   type CardSizeType = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
   type ImgType = {
     src: string | undefined | null;
     alt: string | undefined | null;
   };
-  interface Props {
+  interface Props extends HTMLAttributes<HTMLDivElement> {
     children: Snippet;
     href?: string | undefined | null;
     horizontal?: boolean;

@@ -1,9 +1,10 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
+  import type { HTMLButtonAttributes } from 'svelte/elements';
 
-  interface Props {
-    btnclass?: string | undefined;
+  interface Props extends HTMLButtonAttributes {
+    class?: string | undefined;
     lightIcon?: Snippet;
     darkIcon?: Snippet;
     size?: 'sm' | 'md' | 'lg';
@@ -13,7 +14,7 @@
   const THEME_PREFERENCE_KEY = 'color-theme';
 
   let {
-    btnclass,
+    class: className,
     lightIcon,
     darkIcon,
     size = 'md',
@@ -22,7 +23,7 @@
   }: Props = $props();
   let btnCls: string = twMerge(
     'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none rounded-lg text-sm p-2.5',
-    btnclass
+    className
   );
 
   const sizes = {
@@ -106,7 +107,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop btnclass
+@prop class: className
 @prop lightIcon
 @prop darkIcon
 @prop size = 'md'

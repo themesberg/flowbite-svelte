@@ -1,6 +1,8 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  interface Props {
+  import type { HTMLAttributes } from 'svelte/elements';
+
+  interface Props extends HTMLAttributes<HTMLDivElement> {
     children?: Snippet;
     color?: IndicatorColorType;
     rounded?: boolean;
@@ -21,7 +23,8 @@
     border = false,
     placement,
     offset = true,
-    class: divClass
+    class: divClass,
+    ...attributes
   }: Props = $props();
 
   const colors = {
@@ -98,7 +101,7 @@
   );
 </script>
 
-<div class={dotClass}>
+<div class={dotClass} {...attributes}>
   {#if children}
     {@render children()}
   {/if}

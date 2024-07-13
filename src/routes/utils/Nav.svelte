@@ -47,7 +47,7 @@
 <header
   class="sticky top-0 z-50 mx-auto w-full flex-none border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-950 lg:pl-4"
 >
-  <Navbar {toggleNav} {closeNav} {navStatus} fluid  div2class="ml-auto w-full">
+  <Navbar {toggleNav} {closeNav} {navStatus} fluid  div2Class="ml-auto w-full">
     {#snippet brand()}
       <button
         onclick={navDrawer.toggle}

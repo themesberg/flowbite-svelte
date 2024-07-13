@@ -1,24 +1,26 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
+  import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLAttributes<HTMLDivElement> {
     children?: Snippet;
     divClass?: string | undefined | null;
-    div2class?: string | undefined | null;
-    div3class?: string | undefined | null;
-    div4class?: string | undefined | null;
-    div5class?: string | undefined | null;
-    div6class?: string | undefined | null;
+    div2Class?: string | undefined | null;
+    div3Class?: string | undefined | null;
+    div4Class?: string | undefined | null;
+    div5Class?: string | undefined | null;
+    div6Class?: string | undefined | null;
   }
   let {
     children,
     divClass,
-    div2class,
-    div3class,
-    div4class,
-    div5class,
-    div6class
+    div2Class,
+    div3Class,
+    div4Class,
+    div5Class,
+    div6Class,
+    ...attributes
   }: Props = $props();
   const div: string =
     'relative mx-auto bg-gray-800 dark:bg-gray-700 rounded-t-[2.5rem] h-[63px] max-w-[133px]';
@@ -33,17 +35,19 @@
     'relative mx-auto bg-gray-800 dark:bg-gray-700 rounded-b-[2.5rem] h-[63px] max-w-[133px]';
 </script>
 
+<div {...attributes}>
 <div class={twMerge(div, divClass)}></div>
-<div class={twMerge(top, div2class)}>
-  <div class={twMerge(rightTop, div3class)}></div>
-  <div class={twMerge(rightBot, div4class)}></div>
-  <div class={twMerge(slot, div5class)}>
+<div class={twMerge(top, div2Class)}>
+  <div class={twMerge(rightTop, div3Class)}></div>
+  <div class={twMerge(rightBot, div4Class)}></div>
+  <div class={twMerge(slot, div5Class)}>
     {#if children}
       {@render children()}
     {/if}
   </div>
 </div>
-<div class={twMerge(bot, div6class)}></div>
+<div class={twMerge(bot, div6Class)}></div>
+</div>
 
 <!--
 @component
@@ -51,9 +55,10 @@
 ## Props
 @prop children
 @prop divClass
-@prop div2class
-@prop div3class
-@prop div4class
-@prop div5class
-@prop div6class
+@prop div2Class
+@prop div3Class
+@prop div4Class
+@prop div5Class
+@prop div6Class
+@prop ...attributes
 -->

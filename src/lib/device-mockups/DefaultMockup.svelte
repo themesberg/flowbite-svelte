@@ -1,24 +1,26 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
+  import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLAttributes<HTMLDivElement> {
     children?: Snippet;
     divClass?: string | undefined | null;
-    div2class?: string | undefined | null;
-    div3class?: string | undefined | null;
-    div4class?: string | undefined | null;
-    div5class?: string | undefined | null;
-    div6class?: string | undefined | null;
+    div2Class?: string | undefined | null;
+    div3Class?: string | undefined | null;
+    div4Class?: string | undefined | null;
+    div5Class?: string | undefined | null;
+    div6Class?: string | undefined | null;
   }
   let {
     children,
     divClass,
-    div2class,
-    div3class,
-    div4class,
-    div5class,
-    div6class
+    div2Class,
+    div3Class,
+    div4Class,
+    div5Class,
+    div6Class,
+    ...attributes
   }: Props = $props();
 
   const div: string =
@@ -35,12 +37,12 @@
     'h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg';
 </script>
 
-<div class={twMerge(div, divClass)}>
-  <div class={twMerge(top, div2class)}></div>
-  <div class={twMerge(leftTop, div3class)}></div>
-  <div class={twMerge(leftBot, div4class)}></div>
-  <div class={twMerge(right, div5class)}></div>
-  <div class={twMerge(slot, div6class)}>
+<div class={twMerge(div, divClass)} {...attributes}>
+  <div class={twMerge(top, div2Class)}></div>
+  <div class={twMerge(leftTop, div3Class)}></div>
+  <div class={twMerge(leftBot, div4Class)}></div>
+  <div class={twMerge(right, div5Class)}></div>
+  <div class={twMerge(slot, div6Class)}>
     {#if children}
       {@render children()}
     {/if}
@@ -53,9 +55,10 @@
 ## Props
 @prop children
 @prop divClass
-@prop div2class
-@prop div3class
-@prop div4class
-@prop div5class
-@prop div6class
+@prop div2Class
+@prop div3Class
+@prop div4Class
+@prop div5Class
+@prop div6Class
+@prop ...attributes
 -->

@@ -3,8 +3,9 @@
   import { getContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import type { navbarType } from '$lib/types';
+  import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLAttributes<HTMLUListElement>{
     children: Snippet;
     class?: string | undefined;
   }

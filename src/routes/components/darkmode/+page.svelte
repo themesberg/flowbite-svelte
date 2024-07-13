@@ -42,7 +42,7 @@ attribute to append classes to the default classes.
 Use the lightIcon and darkIcon slots to change icons:
 
 <CodeWrapper>
-  <Darkmode btnclass="text-lg">
+  <Darkmode class="text-lg">
     {#snippet lightIcon()}
       <ThumbsUpSolid color="red" />
     {/snippet}

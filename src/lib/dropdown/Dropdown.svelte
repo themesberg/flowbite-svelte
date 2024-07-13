@@ -6,21 +6,20 @@
     TransitionParamTypes,
     TransitionTypes
   } from '../types';
+  import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLAttributes<HTMLDivElement> {
     children: Snippet;
     header?: Snippet;
     footer?: Snippet;
-
     dropdownStatus: boolean;
     toggleDropdown?: () => void;
     closeDropdown?: () => void;
     activateClickOutside?: boolean ;
-
     divClass?: string ;
-    footerclass?: string ;
-    headerclass?: string ;
-    ulclass?: string ;
+    footerClass?: string ;
+    headerClass?: string ;
+    ulClass?: string ;
     transitionParams?: TransitionParamTypes;
     transitionType?: TransitionTypes;
   }
@@ -34,9 +33,9 @@
     closeDropdown,
     activateClickOutside = true,
     divClass,
-    footerclass,
-    headerclass,
-    ulclass,
+    footerClass,
+    headerClass,
+    ulClass,
     transitionParams,
     transitionType = 'fly',
     ...attributes
@@ -63,13 +62,13 @@
   );
   const headerCls = twMerge(
     'px-4 py-3 text-sm text-gray-900 dark:text-white',
-    headerclass
+    headerClass
   );
   const ulCls = twMerge(
     'py-2 text-sm text-gray-700 dark:text-gray-200',
-    ulclass
+    ulClass
   );
-  const footerCls = twMerge('overflow-hidden rounded-b-lg py-1', footerclass);
+  const footerCls = twMerge('overflow-hidden rounded-b-lg py-1', footerClass);
   const backdropDivClass = 'fixed top-0 start-0 w-full h-full'
 
 </script>
@@ -110,9 +109,9 @@
 @prop closeDropdown
 @prop activateClickOutside = true
 @prop divClass
-@prop footerclass
-@prop headerclass
-@prop ulclass
+@prop footerClass
+@prop headerClass
+@prop ulClass
 @prop transitionParams
 @prop transitionType = 'fly'
 @prop ...attributes

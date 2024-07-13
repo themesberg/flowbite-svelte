@@ -1,10 +1,12 @@
 <script lang="ts">
-  interface Props {
-    divClass?: string | undefined;
+  import type { HTMLAttributes } from 'svelte/elements';
+
+  interface Props extends HTMLAttributes<HTMLDivElement> {
+    class?: string | undefined;
   }
 
   import { twMerge } from 'tailwind-merge';
-  let { divClass, ...attributes }: Props = $props();
+  let { class: divClass, ...attributes }: Props = $props();
 </script>
 
 <div

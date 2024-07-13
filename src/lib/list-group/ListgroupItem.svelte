@@ -3,8 +3,9 @@
   import { getContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import type { Component } from 'svelte';
+  import type { HTMLAnchorAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLAnchorAttributes {
     children: Snippet;
     onclick?: () => void;
     active?: boolean;
@@ -75,8 +76,6 @@
   </a>
 {:else}
   <button
-    type="button"
-    {...attributes}
     {onclick}
     class="flex items-center text-left {itemClass}"
     {disabled}

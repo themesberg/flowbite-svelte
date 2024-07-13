@@ -1,7 +1,9 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
-  interface Props {
+  import type { HTMLAnchorAttributes } from 'svelte/elements';
+
+  interface Props extends HTMLAnchorAttributes {
     children?: Snippet;
     aClass?: string | undefined;
     spanClass?: string | undefined;
@@ -10,7 +12,6 @@
     src?: string | undefined;
     alt?: string | undefined;
     name?: string | undefined;
-    target?: string | undefined;
   }
   let {
     children,
@@ -21,7 +22,6 @@
     src,
     alt,
     name,
-    target,
     ...attributes
   }: Props = $props();
 
@@ -34,7 +34,7 @@
 </script>
 
 {#if href}
-  <a {...attributes} {href} {target} class={aCls}>
+  <a {...attributes} {href} class={aCls}>
     {#if src}
       <img {src} class={imgCls} {alt} />
     {/if}

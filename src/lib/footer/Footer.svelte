@@ -1,7 +1,9 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
-  interface Props {
+  import type { HTMLAttributes } from 'svelte/elements';
+
+  interface Props extends HTMLAttributes<HTMLElement> {
     children: Snippet;
     footerType?: 'sitemap' | 'default' | 'logo' | 'socialmedia' | undefined;
     class?: string | undefined;

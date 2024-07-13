@@ -1,26 +1,22 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  interface Props {
+  import type { HTMLVideoAttributes } from 'svelte/elements';
+
+  interface Props extends HTMLVideoAttributes {
     children?: Snippet;
-    src: string ;
-    controls?: boolean ;
-    autoplay?: boolean ;
-    muted?: boolean ;
-    type?: string ;
-    trackSrc?: string ;
-    srclang?: string ;
-    label?: string ;
-    class?: string ;
+    type?: string;
+    src?: string;
+    trackSrc?: string;
+    srclang?: string;
+    label?: string;
+    class?: string;
   }
 
   let {
     children,
-    src,
-    controls,
-    autoplay,
-    muted,
     type = 'video/mp4',
     trackSrc,
+    src,
     srclang = 'en',
     label = 'english_captions',
     class: classname,
@@ -28,7 +24,7 @@
   }: Props = $props();
 </script>
 
-<video {...attributes} class={classname} {controls} {autoplay} {muted}>
+<video {...attributes} class={classname}>
   <source {src} {type} />
     {#if children}
       {@render children()}

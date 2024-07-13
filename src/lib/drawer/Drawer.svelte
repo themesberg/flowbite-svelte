@@ -6,8 +6,9 @@
   } from '../types';
   import { twMerge } from 'tailwind-merge';
   import { fly, slide, blur, fade } from 'svelte/transition';
+  import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLAttributes<HTMLDivElement> {
     children: Snippet;
     drawerStatus: boolean;
     toggleDrawer?: () => void;
@@ -23,7 +24,7 @@
     bgColor?: string | undefined;
     bgOpacity?: string | undefined;
     placement?: 'left' | 'right' | 'top' | 'bottom';
-    divClass?: string | undefined;
+    class?: string | undefined;
     transitionParams: drawerTransitionParamTypes;
     transitionType?: drawerTransitionTypes;
   }
@@ -44,7 +45,7 @@
     bgColor = 'bg-gray-900',
     bgOpacity = 'bg-opacity-75',
     placement = 'left',
-    divClass = '',
+    class: className = '',
     transitionParams,
     transitionType = 'fly',
     ...attributes
@@ -80,7 +81,7 @@
     width,
     position,
     placements[placement],
-    divClass
+    className
   );
 </script>
 
@@ -127,7 +128,7 @@
 @prop bgColor = 'bg-gray-900'
 @prop bgOpacity = 'bg-opacity-75'
 @prop placement = 'left'
-@prop divClass = ''
+@prop class: className = ''
 @prop transitionParams
 @prop transitionType = 'fly'
 @prop ...attributes

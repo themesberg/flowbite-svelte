@@ -2,16 +2,17 @@
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import { page } from '$app/stores';
-  interface Props {
+  import type { HTMLAnchorAttributes } from 'svelte/elements';
+
+  interface Props extends HTMLAnchorAttributes{
     children: Snippet;
-    aclass?: string | undefined | null;
+    aClass?: string | undefined | null;
     href?: string | undefined | null;
-    target?: string | undefined | null;
-    activeclass?: string | undefined | null;
+    activeClass?: string | undefined | null;
     liClass?: string | undefined | null;
   }
 
-  let { aclass, children, href, target, activeclass, liClass, ...attributes }: Props = $props();
+  let { aClass, children, href, activeClass, liClass, ...attributes }: Props = $props();
 
   let currentUrl = $state();
   $effect(() => {
@@ -19,17 +20,17 @@
   });
   const aCls = twMerge(
     'block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white',
-    aclass
+    aClass
   );
   const activeCls = twMerge(
     'block px-4 py-2 text-primary-700 dark:text-primary-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white',
-    activeclass
+    activeClass
   );
 </script>
 
 <li class={liClass}>
   {#if href}
-    <a {href} class={currentUrl === href ? activeCls : aCls} {target} {...attributes}>
+    <a {href} class={currentUrl === href ? activeCls : aCls} {...attributes}>
       {@render children()}
     </a>
   {:else}

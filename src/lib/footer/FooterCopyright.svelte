@@ -1,10 +1,11 @@
 <script lang="ts">
-  interface Props {
+  import type { HTMLAnchorAttributes } from 'svelte/elements';
+
+  interface Props extends HTMLAnchorAttributes{
     spanClass?: string | undefined;
     aClass?: string | undefined;
     href?: string | undefined;
     by?: string | undefined;
-    target?: string | undefined;
     copyrightMessage?: string | undefined;
     year?: number | undefined;
   }
@@ -15,7 +16,6 @@
     aClass,
     href,
     by,
-    target,
     copyrightMessage = 'All Rights Reserved.',
     year,
     ...attributes
@@ -33,7 +33,7 @@
 <span class={spanCls}>
   &copy; {year}
   {#if href}
-    <a {...attributes} {href} {target} class={aCls}>
+    <a {...attributes} {href} class={aCls}>
       {by}
     </a>
   {:else}

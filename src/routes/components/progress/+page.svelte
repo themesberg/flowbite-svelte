@@ -131,7 +131,7 @@
     size="h-3"
     labelInside
     color="green"
-    div2class="bg-blue-600 text-blue-100 text-xs font-medium text-center p-0 leading-none rounded-full"
+    div2Class="bg-blue-600 text-blue-100 text-xs font-medium text-center p-0 leading-none rounded-full"
     class="my-4"
     labelOutside="Size h-3"
   />
@@ -141,7 +141,7 @@
     size="h-10"
     labelInside
     color="red"
-    div2class="bg-blue-600 text-blue-100 text-2xl font-medium text-center p-2 leading-none rounded-full"
+    div2Class="bg-blue-600 text-blue-100 text-2xl font-medium text-center p-2 leading-none rounded-full"
     class="my-4"
     labelOutside="Size h-10"
   />
@@ -150,7 +150,7 @@
     progress="50"
     size="h-10"
     color="indigo"
-    div2class="bg-blue-600 text-blue-100 text-2xl font-medium text-center p-2 leading-none rounded-full"
+    div2Class="bg-blue-600 text-blue-100 text-2xl font-medium text-center p-2 leading-none rounded-full"
     class="my-4"
     labelOutside="Size h-10"
   />
@@ -159,7 +159,7 @@
     progress="50"
     size="h-6"
     labelInside
-    div2class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
+    div2Class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
     class="my-4"
     labelOutside="Size h-6"
   />
@@ -180,7 +180,7 @@
     easing={sineOut}
     size="h-6"
     color="yellow"
-    div2class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full mb-8"
+    div2Class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full mb-8"
   />
   <Progressbar
     {progress}
@@ -188,7 +188,7 @@
     labelInside
     size="h-6"
     color="gray"
-    div2class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
+    div2Class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
   />
   <Button
     onclick={() => (progress = `${Math.round(Math.random() * 100)}`)}

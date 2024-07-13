@@ -1,16 +1,16 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
+  import type { HTMLAnchorAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLAnchorAttributes {
     children: Snippet;
     href?: string | undefined;
     ariaLabel?: string | undefined;
     class?: string | undefined;
-    target?: string | undefined;
   }
 
-  let { children, href, ariaLabel, class: aClass, target, ...attributes }: Props =
+  let { children, href, ariaLabel, class: aClass, ...attributes }: Props =
     $props();
   const aCls: string = twMerge(
     'text-gray-500 hover:text-gray-900 dark:hover:text-white',
@@ -19,7 +19,7 @@
 </script>
 
   {#if href}
-    <a {...attributes} {href} {target} aria-label={ariaLabel} class={aCls}>
+    <a {...attributes} {href} aria-label={ariaLabel} class={aCls}>
       {@render children()}
     </a>
   {:else}
