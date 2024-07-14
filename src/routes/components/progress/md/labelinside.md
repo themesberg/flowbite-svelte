@@ -1,1 +1,0 @@
-<Progressbar progress="50" size="h-4" labelInside />

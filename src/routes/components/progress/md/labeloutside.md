@@ -1,1 +1,0 @@
-<Progressbar progress="50" labelOutside="Svelte 5 UI Lib" />

@@ -1,1 +1,0 @@
-<Alert dismissable onclick={() => {alert('Clicked closeAlert.')}}>Close me</Alert>
