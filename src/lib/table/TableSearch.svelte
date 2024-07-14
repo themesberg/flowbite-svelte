@@ -2,13 +2,14 @@
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import { setContext } from 'svelte';
+  import type { HTMLTableAttributes } from 'svelte/elements';
 
   type TableSearchType = {
     striped?: boolean;
     hoverable?: boolean;
     color?: string | undefined | null;
   };
-  interface Props {
+  interface Props extends HTMLTableAttributes{
     children?: Snippet;
     svgSearch?: any;
     header?: Snippet;
@@ -17,14 +18,14 @@
     inputValue?: string | undefined | null;
     striped?: boolean;
     hoverable?: boolean;
-    placeholder?: string | undefined | null;
     customColor?: string | undefined;
     color?: string | undefined;
     innerDivClass?: string | undefined | null;
-    inputclass?: string | undefined | null;
+    inputClass?: string | undefined | null;
     searchClass?: string | undefined | null;
     svgDivClass?: string | undefined | null;
     svgClass?: string | undefined | null;
+    tableClass? : string | undefined | null;
     classDiv?: string | undefined | null;
     class?: string | undefined | null;
   }
@@ -34,18 +35,18 @@
     svgSearch,
     header,
     footer,
-    divClass = '',
+    divClass = 'relative overflow-x-auto shadow-md sm:rounded-lg',
     inputValue = $bindable(),
     striped,
     hoverable,
-    placeholder = 'Search',
     customColor = '',
     color = 'default',
-    innerDivClass = '',
-    inputclass,
-    searchClass = '',
+    innerDivClass = 'p-4',
+    inputClass,
+    searchClass = 'relative mt-1',
     svgDivClass,
-    svgClass = '',
+    svgClass = 'w-5 h-5 text-gray-500 dark:text-gray-400',
+    tableClass = 'w-full text-left text-sm',
     classDiv,
     class: className,
     ...attributes
@@ -53,7 +54,7 @@
 
   let inputCls = twMerge(
     'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 p-2.5 ps-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500',
-    inputclass
+    inputClass
   );
   let svgDivCls = twMerge(
     'absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none',
@@ -80,13 +81,13 @@
   setContext('tableCtx', tableSearchCtx);
 </script>
 
-<div class={twMerge('relative overflow-x-auto shadow-md sm:rounded-lg',divClass)}>
-  <div class={twMerge('p-4',innerDivClass)}>
+<div class={divClass}>
+  <div class={innerDivClass}>
     <label for="table-search" class="sr-only">Search</label>
-    <div class={twMerge('relative mt-1',searchClass)}>
+    <div class={searchClass}>
       <div class={svgDivCls}>
         <svg
-          class={twMerge('w-5 h-5 text-gray-500 dark:text-gray-400',svgClass)}
+          class={svgClass}
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
@@ -103,7 +104,6 @@
         type="text"
         id="table-search"
         class={inputCls}
-        {placeholder}
       />
     </div>
     {#if header}
@@ -112,7 +112,7 @@
   </div>
   <table
     {...attributes}
-    class={twMerge('w-full text-left text-sm', colors[color], className)}
+    class={twMerge(tableClass, colors[color], className)}
   >
     {#if children}
       {@render children()}
@@ -139,7 +139,7 @@
 @prop customColor = ''
 @prop color = 'default'
 @prop innerDivClass = ''
-@prop inputclass
+@prop inputClass
 @prop searchClass = ''
 @prop svgDivClass
 @prop svgClass = ''

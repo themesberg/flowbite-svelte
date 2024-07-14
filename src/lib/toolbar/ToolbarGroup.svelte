@@ -3,20 +3,21 @@
   import type { Snippet } from 'svelte';
   import type { Writable } from 'svelte/store';
   import { getContext } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLAttributes<HTMLDivElement>{
     children: Snippet;
     class?: string | undefined | null;
     divClass?: string | undefined | null;
   }
 
-  let { children, class: className, divClass = 'flex items-center space-x-1 rtl:space-x-reverse sm:pe-4 sm:ps-4 first:sm:ps-0 last:sm:pe-0' }: Props = $props();
+  let { children, class: className, divClass = 'flex items-center space-x-1 rtl:space-x-reverse sm:pe-4 sm:ps-4 first:sm:ps-0 last:sm:pe-0', ...attributes }: Props = $props();
 
   const options: Writable<boolean> = getContext('toolbar');
   if (options) $options = true;
 </script>
 
-<div class={twMerge(divClass, className)}>
+<div class={twMerge(divClass, className)} {...attributes}>
   {@render children()}
 </div>
 

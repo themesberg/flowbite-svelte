@@ -3,19 +3,19 @@
   import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
   import type TableCtxType from './Table.svelte';
+  import type { HTMLTdAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLTdAttributes{
     children?: Snippet;
     class?: string | undefined | null;
     colspan?: number;
-    tdclass?: string | undefined | null;
     onclick?: () => void;
   }
+  
   let {
     children,
     class: className,
     colspan,
-    tdclass = '',
     onclick,
     ...attributes
   }: Props = $props();
@@ -27,7 +27,6 @@
   let tdCls: string = $state(
     twMerge(
       'px-6 py-4 whitespace-nowrap font-medium',
-      tdclass,
       color === 'default'
         ? 'text-gray-900 dark:text-white'
         : 'text-blue-50 whitespace-nowrap dark:text-blue-100',
@@ -61,7 +60,6 @@
 @prop children
 @prop class: className
 @prop colspan
-@prop tdclass = ''
 @prop onclick
 @prop ...attributes
 -->

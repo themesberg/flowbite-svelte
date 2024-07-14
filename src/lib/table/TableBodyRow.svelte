@@ -3,15 +3,15 @@
   import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
   import type TableCtxType from './Table.svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
+
   // import type TableColrType from './Table.svelte';
-  interface Props {
+  interface Props extends HTMLAttributes<HTMLTableRowElement>{
     children?: Snippet;
     class?: string | undefined | null;
     color?: string | undefined | null;
-    onclick?: () => void;
-    ondblclick?: () => void;
   }
-  let { children, class: className, color, onclick, ondblclick, ...attributes }: Props = $props();
+  let { children, class: className, color, ...attributes }: Props = $props();
 
   const tableCtx: TableCtxType = getContext('tableCtx');
   let rowColor: string = $state(color ? color : tableCtx.color || 'default');
@@ -68,7 +68,7 @@
   ]);
 </script>
 
-<tr {...attributes} class={trClass} {onclick} {ondblclick}>
+<tr {...attributes} class={trClass}>
   {#if children}
     {@render children()}
   {/if}

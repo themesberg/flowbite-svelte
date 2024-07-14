@@ -3,18 +3,17 @@
   import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
   import type TableCtxType from './Table.svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLAttributes<HTMLTableSectionElement>{
     children?: Snippet;
     defaultRow?: boolean;
-    theadClass?: string | undefined | null;
     class?: string | undefined | null;
   }
 
   let {
     children,
     class: className,
-    theadClass = '',
     defaultRow = true,
     ...attributes
   }: Props = $props();
@@ -53,7 +52,6 @@
 
   let theadCls = twMerge(
     'text-xs uppercase',
-    theadClass,
     textColor,
     striped && borderColors,
     bgColors[color],

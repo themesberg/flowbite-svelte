@@ -4,18 +4,19 @@
   import { twMerge } from 'tailwind-merge';
   import { CloseButton } from '$lib';
   import type { ColorVariant, ToastPositionType } from '$lib/types';
+  import type { HTMLAttributes } from 'svelte/elements';
 
   type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 
-  interface Props {
+  interface Props extends HTMLAttributes<HTMLDivElement>{
     children: Snippet;
     icon?: any;
     dismissable?: boolean;
     color?: ColorVariant;
     position?: ToastPositionType;
     divClass?: string | undefined | null;
-    div2class?: string | undefined | null;
-    div3class?: string | undefined | null;
+    div2Class?: string | undefined | null;
+    div3Class?: string | undefined | null;
     align?: boolean;
     transition?: TransitionFunc;
     params?: object;
@@ -27,8 +28,8 @@
     color = 'primary',
     position = 'none',
     divClass,
-    div2class,
-    div3class,
+    div2Class,
+    div3Class,
     align = true,
     transition = fade,
     params,
@@ -80,7 +81,7 @@
     'inline-flex items-center justify-center shrink-0 rounded-lg',
     colors[color],
     defaultIconCls,
-    div2class
+    div2Class
   );
 
   const clsBtnExtraClass =
@@ -100,7 +101,7 @@
       </div>
     {/if}
 
-    <div class={twMerge(contentCls, div3class)}>
+    <div class={twMerge(contentCls, div3Class)}>
         {@render children()}
     </div>
 
@@ -127,8 +128,8 @@
 @prop color = 'primary'
 @prop position = 'none'
 @prop divClass
-@prop div2class
-@prop div3class
+@prop div2Class
+@prop div3Class
 @prop align = true
 @prop transition = fade
 @prop params

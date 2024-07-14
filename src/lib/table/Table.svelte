@@ -1,4 +1,6 @@
 <script context="module" lang="ts">
+  import type { HTMLTableAttributes } from 'svelte/elements';
+
   type TableCtxType = {
     striped?: boolean;
     hoverable?: boolean;
@@ -23,7 +25,7 @@
   import { twMerge, twJoin } from 'tailwind-merge';
   import { setContext } from 'svelte';
 
-  interface Props {
+  interface Props extends HTMLTableAttributes{
     children: Snippet;
     divClass?: string | undefined | null;
     striped?: boolean;
@@ -72,9 +74,7 @@
     {...attributes}
     class={twMerge('w-full text-left text-sm', colors[color])}
   >
-    
-      {@render children()}
-  
+    {@render children()}
   </table>
 </div>
 

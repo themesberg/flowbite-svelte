@@ -1,24 +1,20 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
-  interface Props {
+  import type { HTMLThAttributes } from 'svelte/elements';
+
+  interface Props extends HTMLThAttributes{
     children?: Snippet;
     class?: string | undefined | null;
-    padding?: string | undefined | null;
-    colspan?: number;
-    rowspan?: number;
   }
   let {
     children,
     class: className,
-    padding = '',
-    colspan,
-    rowspan,
     ...attributes
   }: Props = $props();
 </script>
 
-<th {...attributes} {colspan} {rowspan} class={twMerge('px-6 py-3',padding, className)}>
+<th {...attributes} class={twMerge('px-6 py-3', className)}>
   {#if children}
     {@render children()}
   {/if}
