@@ -119,4 +119,5 @@
 @prop placement
 @prop offset = true
 @prop class: divClass
+@prop ...attributes
 -->

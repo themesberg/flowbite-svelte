@@ -77,7 +77,6 @@
 ## Props
 @prop children
 @prop class: className
-@prop theadClass = ''
 @prop defaultRow = true
 @prop ...attributes
 -->

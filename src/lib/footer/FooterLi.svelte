@@ -31,6 +31,5 @@
 @prop liClass
 @prop aClass
 @prop href
-@prop target
 @prop ...attributes
 -->

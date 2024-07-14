@@ -24,4 +24,5 @@
 ## Props
 @prop children
 @prop class: kbdclass
+@prop ...attributes
 -->

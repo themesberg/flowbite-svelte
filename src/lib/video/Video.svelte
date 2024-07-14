@@ -38,12 +38,9 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
-@prop src
-@prop controls
-@prop autoplay
-@prop muted
 @prop type = 'video/mp4'
 @prop trackSrc
+@prop src
 @prop srclang = 'en'
 @prop label = 'english_captions'
 @prop class: classname

@@ -28,4 +28,5 @@
 @prop children
 @prop class: className
 @prop divClass = 'flex items-center space-x-1 rtl:space-x-reverse sm:pe-4 sm:ps-4 first:sm:ps-0 last:sm:pe-0'
+@prop ...attributes
 -->

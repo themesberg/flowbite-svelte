@@ -61,6 +61,5 @@
 @prop src
 @prop alt
 @prop name
-@prop target
 @prop ...attributes
 -->

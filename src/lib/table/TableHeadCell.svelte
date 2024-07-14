@@ -26,8 +26,5 @@
 ## Props
 @prop children
 @prop class: className
-@prop padding = ''
-@prop colspan
-@prop rowspan
 @prop ...attributes
 -->

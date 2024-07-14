@@ -34,6 +34,5 @@
 @prop href
 @prop ariaLabel
 @prop class: aClass
-@prop target
 @prop ...attributes
 -->

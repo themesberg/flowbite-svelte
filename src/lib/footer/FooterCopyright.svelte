@@ -50,7 +50,6 @@
 @prop aClass
 @prop href
 @prop by
-@prop target
 @prop copyrightMessage = 'All Rights Reserved.'
 @prop year
 @prop ...attributes

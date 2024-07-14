@@ -131,18 +131,18 @@
 @prop svgSearch
 @prop header
 @prop footer
-@prop divClass = ''
+@prop divClass = 'relative overflow-x-auto shadow-md sm:rounded-lg'
 @prop inputValue = $bindable()
 @prop striped
 @prop hoverable
-@prop placeholder = 'Search'
 @prop customColor = ''
 @prop color = 'default'
-@prop innerDivClass = ''
+@prop innerDivClass = 'p-4'
 @prop inputClass
-@prop searchClass = ''
+@prop searchClass = 'relative mt-1'
 @prop svgDivClass
-@prop svgClass = ''
+@prop svgClass = 'w-5 h-5 text-gray-500 dark:text-gray-400'
+@prop tableClass = 'w-full text-left text-sm'
 @prop classDiv
 @prop class: className
 @prop ...attributes

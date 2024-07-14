@@ -77,7 +77,6 @@
 ## Props
 @prop closeNav
 @prop href
-@prop target
 @prop children
 @prop aClass
 @prop activeClass

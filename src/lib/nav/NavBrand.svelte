@@ -41,4 +41,5 @@
 @prop closeNav
 @prop aClass
 @prop spanClass
+@prop ...attributes
 -->
