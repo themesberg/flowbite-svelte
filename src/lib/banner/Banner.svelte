@@ -31,7 +31,7 @@
     divClass,
     innerClass,
     transition = fade,
-    params = {},
+    params,
     ...attributes
   }: Props = $props();
 
@@ -99,12 +99,13 @@
 ## Props
 @prop children
 @prop header
-@prop id
 @prop position = 'sticky'
 @prop dismissable = true
 @prop color = 'gray'
 @prop bannerType = 'default'
 @prop divClass
-@prop div2class
+@prop innerClass
+@prop transition = fade
+@prop params
 @prop ...attributes
 -->

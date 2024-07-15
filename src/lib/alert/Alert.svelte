@@ -32,7 +32,7 @@
     class: divClass,
     dismissable,
     transition = fade,
-    params = {},
+    params,
     onclick,
     ...attributes
   }: Props = $props();
@@ -151,7 +151,10 @@
 @prop color = 'primary'
 @prop rounded = true
 @prop border
-@prop divClass
+@prop class: divClass
 @prop dismissable
+@prop transition = fade
+@prop params
+@prop onclick
 @prop ...attributes
 -->

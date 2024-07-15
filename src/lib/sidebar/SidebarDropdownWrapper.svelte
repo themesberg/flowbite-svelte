@@ -32,7 +32,7 @@
     spanClass,
     ulClass,
     transitionType = 'slide',
-    transitionParams = {},
+    transitionParams,
     svgClass,
     ...attributes
   }: Props = $props();
@@ -141,16 +141,17 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:arrowup?: Snippet;
-@props:arrowdown?: Snippet;
-@props:iconSlot?: Snippet;
-@props:isOpen?: boolean | undefined;
-@props:btnClass?: string | undefined;
-@props:label: string | undefined;
-@props:spanClass?: string | undefined;
-@props:ulClass?: string | undefined;
-@props:transitionType?: TransitionTypes;
-@props:transitionParams?: TransitionParamTypes;
-@props:svgClass?: string | undefined | null;
+@prop children
+@prop arrowup
+@prop arrowdown
+@prop iconSlot
+@prop isOpen
+@prop btnClass
+@prop label
+@prop spanClass
+@prop ulClass
+@prop transitionType = 'slide'
+@prop transitionParams
+@prop svgClass
+@prop ...attributes
 -->

@@ -46,7 +46,7 @@
     classInactive,
     class: className,
     transition = undefined,
-    params = {},
+    params,
     ...attributes
   }: Props = $props();
 
@@ -65,3 +65,21 @@
 <div {...attributes} class={frameClass} color="none">
   {@render children()}
 </div>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@prop children
+@prop multiple = false
+@prop flush = false
+@prop activeClass = 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800'
+@prop inactiveClass = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800'
+@prop defaultClass = 'text-gray-500 dark:text-gray-400'
+@prop classActive
+@prop classInactive
+@prop class: className
+@prop transition = undefined
+@prop params
+@prop ...attributes
+-->

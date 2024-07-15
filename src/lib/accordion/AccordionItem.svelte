@@ -41,7 +41,7 @@
     inactiveClass = undefined,
     defaultClass = 'flex items-center justify-between w-full font-medium text-left group-first:rounded-t-xl border-gray-200 dark:border-gray-700',
     transitionType = 'slide',
-    transitionParams = {},
+    transitionParams,
     paddingFlush = 'py-5',
     paddingDefault = 'p-5',
     textFlushOpen = 'text-gray-900 dark:text-white',
@@ -166,3 +166,30 @@
     </div>
   </div>
 {/if}
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@prop children
+@prop header
+@prop arrowup
+@prop arrowdown
+@prop open = false
+@prop activeClass = undefined
+@prop inactiveClass = undefined
+@prop defaultClass = 'flex items-center justify-between w-full font-medium text-left group-first:rounded-t-xl border-gray-200 dark:border-gray-700'
+@prop transitionType = 'slide'
+@prop transitionParams
+@prop paddingFlush = 'py-5'
+@prop paddingDefault = 'p-5'
+@prop textFlushOpen = 'text-gray-900 dark:text-white'
+@prop textFlushDefault = 'text-gray-500 dark:text-gray-400'
+@prop borderClass = 'border-s border-e group-first:border-t'
+@prop borderOpenClass = 'border-s border-e'
+@prop borderBottomClass = 'border-b'
+@prop borderSharedClass = 'border-gray-200 dark:border-gray-700'
+@prop classActive = undefined
+@prop classInactive = undefined
+@prop class: className
+-->

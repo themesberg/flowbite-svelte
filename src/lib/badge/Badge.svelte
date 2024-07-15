@@ -33,7 +33,7 @@
     href,
     rounded,
     transition = fade,
-    params = {},
+    params,
     onclick,
     ...attributes
   }: Props = $props();
@@ -147,9 +147,12 @@
 @prop color = 'primary'
 @prop large = false
 @prop dismissable = false
-@prop divClass
+@prop class: divClass
 @prop border
 @prop href
 @prop rounded
+@prop transition = fade
+@prop params
+@prop onclick
 @prop ...attributes
 -->
