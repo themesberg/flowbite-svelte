@@ -6,7 +6,7 @@
   import { twMerge } from 'tailwind-merge';
   import type { HTMLLiAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLLiAttributes{
+  interface Props extends HTMLLiAttributes {
     children?: Snippet;
     titleSlot?: Snippet;
     open?: boolean;

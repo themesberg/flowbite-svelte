@@ -6,7 +6,7 @@
   import { twMerge } from 'tailwind-merge';
   import type { HTMLAnchorAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLAnchorAttributes{
+  interface Props extends HTMLAnchorAttributes {
     iconSlot?: Snippet;
     subtext?: Snippet;
     label?: string;
@@ -65,13 +65,11 @@
 ## Props
 @prop iconSlot
 @prop subtext
-@prop onclick
 @prop href
-@prop target
 @prop label
-@prop spanClass
+@prop spanClass = 'ms-3'
 @prop activeClass
 @prop nonActiveClass
-@prop aclass
+@prop aClass
 @prop ...attributes
 -->

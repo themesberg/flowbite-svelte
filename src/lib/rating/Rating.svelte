@@ -43,7 +43,7 @@
 <div class={divClass}>
   {#if count && children}
     <svelte:component this={icon} fillPercent={100} {size} />
-    <p class="{pClass}">{rating}</p>
+    <p class={pClass}>{rating}</p>
     {@render children()}
   {:else}
     {#each Array(fullStars) as star}
@@ -72,12 +72,12 @@
 ## Props
 @prop children
 @prop text
-@prop divClass
+@prop divClass = 'flex items-center'
 @prop size = 24
 @prop total = 5
 @prop rating = 4
 @prop partialId = 'partialStar' + idGenerator()
 @prop icon = Star
 @prop count = false
-@prop r_p
+@prop pClass = 'ms-2 text-sm font-bold text-gray-900 dark:text-white'
 -->

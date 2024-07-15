@@ -2,7 +2,7 @@
   import { idGenerator } from '$lib/uiHelpers.svelte';
   import type { SVGAttributes } from 'svelte/elements';
 
-  interface Props extends SVGAttributes<SVGSVGElement>{
+  interface Props extends SVGAttributes<SVGSVGElement> {
     fillPercent?: number;
     fillColor?: string | undefined | null;
     strokeColor?: string | undefined | null;
@@ -72,6 +72,5 @@
 @prop id = idGenerator()
 @prop role = 'img'
 @prop svgClass
-@prop onclick
 @prop ...attributes
 -->

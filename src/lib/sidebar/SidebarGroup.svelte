@@ -3,7 +3,7 @@
   import { twMerge } from 'tailwind-merge';
   import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLAttributes<HTMLUListElement>{
+  interface Props extends HTMLAttributes<HTMLUListElement> {
     children: Snippet;
     class?: string | undefined;
     borderClass?: string | undefined;
@@ -17,7 +17,6 @@
     border = false,
     ...attributes
   }: Props = $props();
-
 </script>
 
 <ul {...attributes} class={border ? borderClass : className}>
@@ -29,8 +28,8 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
-@prop ulclass
-@prop borderClass
+@prop class: className = 'space-y-2'
+@prop borderClass = 'pt-4 mt-4 border-t border-gray-200 dark:border-gray-700'
 @prop border = false
 @prop ...attributes
 -->

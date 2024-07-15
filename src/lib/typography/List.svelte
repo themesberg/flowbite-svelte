@@ -54,7 +54,7 @@
 @prop tag = 'ul'
 @prop list
 @prop position = 'inside'
-@prop ctxclass=''
+@prop ctxclass = ''
 @prop class: classname
 @prop ...attributes
 -->

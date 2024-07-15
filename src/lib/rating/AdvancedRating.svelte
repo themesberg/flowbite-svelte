@@ -23,7 +23,6 @@
     span2Class = 'text-sm font-medium text-gray-600 dark:text-gray-500',
     unit
   }: Props = $props();
-
 </script>
 
 {#if rating}
@@ -49,10 +48,10 @@
 @prop rating
 @prop globalText
 @prop ratings
-@prop divClass
-@prop spanClass
-@prop div2Class
-@prop div3Class
-@prop span2Class
+@prop divClass = 'flex items-center mt-4'
+@prop spanClass = 'text-sm font-medium text-gray-600 dark:text-gray-500'
+@prop div2Class = 'mx-4 w-2/4 h-5 bg-gray-200 rounded dark:bg-gray-700'
+@prop div3Class = 'h-5 bg-yellow-400 rounded'
+@prop span2Class = 'text-sm font-medium text-gray-600 dark:text-gray-500'
 @prop unit
 -->

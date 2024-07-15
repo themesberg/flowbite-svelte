@@ -115,6 +115,6 @@
 @prop divider = true
 @prop activeClasses
 @prop inactiveClasses
-@prop class:classname
+@prop class: classname
 @prop ...attributes
 -->

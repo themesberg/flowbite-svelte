@@ -38,6 +38,6 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
-@prop class:ulclass
+@prop class: ulclass
 @prop ...attributes
 -->

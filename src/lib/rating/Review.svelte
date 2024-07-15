@@ -16,7 +16,7 @@
     item3?: string | undefined;
   };
 
-  interface Props extends HTMLAttributes<HTMLElement>{
+  interface Props extends HTMLAttributes<HTMLElement> {
     children: Snippet;
     address?: any;
     item1?: any;
@@ -53,11 +53,7 @@
   <article class={articleClass}>
     <div>
       <div class={divClass}>
-        <img
-          class={imgClass}
-          src={review.imgSrc}
-          alt={review.imgAlt}
-        />
+        <img class={imgClass} src={review.imgSrc} alt={review.imgAlt} />
         <div class={div2Class}>
           <p>{review.name}</p>
           {#if review.address}
@@ -125,9 +121,11 @@
 @prop item2
 @prop item3
 @prop review
-@prop articleClass
-@prop divClass
-@prop imgClass
-@prop ulClass
-@prop liClass
+@prop articleClass = 'md:grid md:grid-cols-3 md:gap-8'
+@prop divClass = 'mb-6 flex items-center space-x-4 rtl:space-x-reverse'
+@prop div2Class = 'space-y-1 font-medium dark:text-white'
+@prop div3Class = 'flex items-center text-sm text-gray-500 dark:text-gray-400'
+@prop imgClass = 'h-10 w-10 rounded-full'
+@prop ulClass = 'space-y-4 text-sm text-gray-500 dark:text-gray-400'
+@prop liClass = 'flex items-center'
 -->
