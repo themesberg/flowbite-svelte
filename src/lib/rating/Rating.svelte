@@ -15,19 +15,20 @@
     partialId?: string | undefined | null;
     icon?: Component;
     count?: boolean;
-    r_p?: string | undefined | null;
+    pClass?: string | undefined | null;
   }
+
   let {
     children,
     text,
-    divClass,
+    divClass = 'flex items-center',
     size = 24,
     total = 5,
     rating = 4,
     partialId = 'partialStar' + idGenerator(),
     icon = Star,
     count = false,
-    r_p
+    pClass = 'ms-2 text-sm font-bold text-gray-900 dark:text-white'
   }: Props = $props();
 
   // generate unique id for full star and gray star
@@ -37,14 +38,12 @@
   let rateDiffence = rating - fullStars;
   let percentRating = Math.round(rateDiffence * 100);
   let grayStars: number = total - (fullStars + Math.ceil(rateDiffence));
-  const r_p_cls: string = twMerge('ms-2 text-sm font-bold text-gray-900 dark:text-white', r_p);
-  // console.log(fullStars, grayStars, rateDiffence, percentRating)
 </script>
 
-<div class={twMerge('flex items-center', divClass)}>
+<div class={divClass}>
   {#if count && children}
     <svelte:component this={icon} fillPercent={100} {size} />
-    <p class="{r_p_cls} r_p">{rating}</p>
+    <p class="{pClass}">{rating}</p>
     {@render children()}
   {:else}
     {#each Array(fullStars) as star}

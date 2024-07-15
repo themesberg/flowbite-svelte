@@ -4,7 +4,7 @@
   import { getContext } from 'svelte';
   import type { HTMLTextareaAttributes } from 'svelte/elements';
   // import Wrapper from '../utils/Wrapper.svelte';
-  interface Props extends HTMLTextareaAttributes{
+  interface Props extends HTMLTextareaAttributes {
     children?: Snippet;
     header?: Snippet;
     footer?: Snippet;
@@ -33,16 +33,39 @@
   const background = getContext('background');
 
   let wrapped: boolean = $state(false);
-  if(header || footer) {wrapped = true} else {wrapped = false}
+  if (header || footer) {
+    wrapped = true;
+  } else {
+    wrapped = false;
+  }
 
   // let wrapperClass: string | undefined | null;
-  let wrapperClass = twMerge('w-full rounded-lg bg-gray-50', background ? 'dark:bg-gray-600' : 'dark:bg-gray-700', 'text-gray-900 dark:placeholder-gray-400 dark:text-white', 'border border-gray-200', background ? 'dark:border-gray-500' : 'dark:border-gray-600', className);
+  let wrapperClass = twMerge(
+    'w-full rounded-lg bg-gray-50',
+    background ? 'dark:bg-gray-600' : 'dark:bg-gray-700',
+    'text-gray-900 dark:placeholder-gray-400 dark:text-white',
+    'border border-gray-200',
+    background ? 'dark:border-gray-500' : 'dark:border-gray-600',
+    className
+  );
 
-  let textareaClass: string | undefined | null = $derived(wrapped ? wrappedClass : twMerge(wrapperClass, unWrappedClass));
+  let textareaClass: string | undefined | null = $derived(
+    wrapped ? wrappedClass : twMerge(wrapperClass, unWrappedClass)
+  );
 
-  const headerCls = (isheader: boolean) => twMerge(isheader ? 'border-b' : 'border-t', 'py-2 px-3 border-gray-200', background ? 'dark:border-gray-500' : 'dark:border-gray-600', isheader ? headerClass : footerClass);
- 
-  let innerWrapperCls: string = twMerge(innerWrappedClass, footer ? '' : 'rounded-b-lg', header ? '' : 'rounded-t-lg');
+  const headerCls = (isheader: boolean) =>
+    twMerge(
+      isheader ? 'border-b' : 'border-t',
+      'py-2 px-3 border-gray-200',
+      background ? 'dark:border-gray-500' : 'dark:border-gray-600',
+      isheader ? headerClass : footerClass
+    );
+
+  let innerWrapperCls: string = twMerge(
+    innerWrappedClass,
+    footer ? '' : 'rounded-b-lg',
+    header ? '' : 'rounded-t-lg'
+  );
 </script>
 
 <div class={wrapperClass}>
@@ -59,7 +82,7 @@
       {@render footer()}
     </div>
   {/if}
-  </div>
+</div>
 
 <!--
 @component

@@ -60,7 +60,9 @@
       At least one lowercase character
     </Li>
     <Li icon>
-      <CloseCircleOutline class="me-2 h-3.5 w-3.5 text-gray-500 dark:text-gray-400" />
+      <CloseCircleOutline
+        class="me-2 h-3.5 w-3.5 text-gray-500 dark:text-gray-400"
+      />
       Inclusion of at least one special character, e.g., ! @ # ?
     </Li>
   </List>
@@ -377,42 +379,42 @@
     <Li>
       <A
         href="/"
-        class="me-4 hover:underline md:me-6 text-red-700 dark:text-red-200"
+        class="me-4 text-red-700 hover:underline md:me-6 dark:text-red-200"
         >About</A
       >
     </Li>
     <Li>
       <A
         href="/"
-        class="me-4 hover:underline md:me-6 text-blue-700 dark:text-blue-200"
+        class="me-4 text-blue-700 hover:underline md:me-6 dark:text-blue-200"
         >Premium</A
       >
     </Li>
     <Li>
       <A
         href="/"
-        class="me-4 hover:underline md:me-6 text-green-700 dark:text-green-200"
+        class="me-4 text-green-700 hover:underline md:me-6 dark:text-green-200"
         >Campaigns</A
       >
     </Li>
     <Li>
       <A
         href="/"
-        class="me-4 hover:underline md:me-6 text-yellow-700 dark:text-yellow-200"
+        class="me-4 text-yellow-700 hover:underline md:me-6 dark:text-yellow-200"
         >Blog</A
       >
     </Li>
     <Li>
       <A
         href="/"
-        class="me-4 hover:underline md:me-6 text-gray-700 dark:text-gray-200"
+        class="me-4 text-gray-700 hover:underline md:me-6 dark:text-gray-200"
         >Affiliate Program</A
       >
     </Li>
     <Li>
       <A
         href="/"
-        class="me-4 hover:underline md:me-6 text-pink-700 dark:text-pink-200"
+        class="me-4 text-pink-700 hover:underline md:me-6 dark:text-pink-200"
         >FAQs</A
       >
     </Li>

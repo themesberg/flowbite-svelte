@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Radio, Helper, RadioButton, ButtonGroup } from '$lib';
-  // let { group = $bindable() ,technology = $bindable('svelte'), radioGroup = $bindable('notes') } = $props(); 
+  // let { group = $bindable() ,technology = $bindable('svelte'), radioGroup = $bindable('notes') } = $props();
   let colors = 'text-purple-500';
   let technology = $state('svelte');
   let inline1 = $state('second');
@@ -120,7 +120,7 @@
 <CodeWrapper>
   <p class="mb-4 font-semibold text-gray-900 dark:text-white">Identification</p>
   <ul
-    class="w-full items-center divide-x divide-gray-200 rounded-lg border border-gray-200 dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800 sm:flex rtl:divide-x-reverse"
+    class="w-full items-center divide-x divide-gray-200 rounded-lg border border-gray-200 sm:flex rtl:divide-x-reverse dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800"
   >
     <li class="w-full">
       <Radio name="hor-list" labelClass="p-3">Svelte</Radio>
@@ -141,11 +141,15 @@
 <H2>Inline layout</H2>
 <CodeWrapper>
   <div class="flex gap-3">
-    <Radio bind:group={inline1} name="inline-layout" value="first">Inline 1</Radio>
+    <Radio bind:group={inline1} name="inline-layout" value="first"
+      >Inline 1</Radio
+    >
     <Radio bind:group={inline1} name="inline-layout" value="second"
       >Inline 2 checked</Radio
     >
-    <Radio bind:group={inline1} name="inline-layout" value="third">Inline 3</Radio>
+    <Radio bind:group={inline1} name="inline-layout" value="third"
+      >Inline 3</Radio
+    >
     <Radio bind:group={inline1} name="inline-layout" value="fourth" disabled
       >Inline disabled</Radio
     >
@@ -190,25 +194,25 @@
 <H2>Radio button</H2>
 <CodeWrapper class="space-y-4">
   <div>
-    <RadioButton value='notes' bind:group={radioGroup}
+    <RadioButton value="notes" bind:group={radioGroup}
       ><ListMusicSolid /></RadioButton
     >
-    <RadioButton value='numbers' bind:group={radioGroup}
+    <RadioButton value="numbers" bind:group={radioGroup}
       ><OrderedListOutline /></RadioButton
     >
-    <RadioButton value='bullets' bind:group={radioGroup}
+    <RadioButton value="bullets" bind:group={radioGroup}
       ><ListOutline /></RadioButton
     >
   </div>
 
   <ButtonGroup>
-    <RadioButton value='notes' bind:group={radioGroup}
+    <RadioButton value="notes" bind:group={radioGroup}
       ><ListMusicSolid /></RadioButton
     >
-    <RadioButton value='numbers' bind:group={radioGroup}
+    <RadioButton value="numbers" bind:group={radioGroup}
       ><OrderedListOutline /></RadioButton
     >
-    <RadioButton value='bullets' bind:group={radioGroup}
+    <RadioButton value="bullets" bind:group={radioGroup}
       ><ListOutline /></RadioButton
     >
   </ButtonGroup>

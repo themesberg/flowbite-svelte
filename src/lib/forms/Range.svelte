@@ -9,7 +9,12 @@
   import { twMerge } from 'tailwind-merge';
   // import '$lib/style.css';
 
-  let { value = $bindable(), rangeSize = 'md', inputClass, ...attributes }: Props = $props();
+  let {
+    value = $bindable(),
+    rangeSize = 'md',
+    inputClass,
+    ...attributes
+  }: Props = $props();
 
   const sizes = {
     sm: 'h-1 range-sm',

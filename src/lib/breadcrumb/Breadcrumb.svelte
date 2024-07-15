@@ -43,7 +43,7 @@
 >
   <ol class={olCls}>
     {@render children()}
-  </ol> 
+  </ol>
 </nav>
 
 <!--

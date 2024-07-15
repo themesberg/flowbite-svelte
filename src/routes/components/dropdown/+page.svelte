@@ -79,7 +79,12 @@
     <ChevronDownOutline class="ms-2 h-3 w-3 text-white dark:text-white" />
   </Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownAStatus} closeDropdown={closeDropdownA} transitionParams={transitionParams} divClass="absolute top-[40px] -left-[150px]">
+    <Dropdown
+      dropdownStatus={dropdownAStatus}
+      closeDropdown={closeDropdownA}
+      {transitionParams}
+      divClass="absolute top-[40px] -left-[150px]"
+    >
       {#snippet children()}
         <DropdownItem href="/">Dashboard</DropdownItem>
         <DropdownItem href="/components/drawer">Drawer</DropdownItem>
@@ -100,7 +105,12 @@
     <ChevronDownOutline class="ms-2 h-3 w-3 text-white dark:text-white" />
   </Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownBStatus} closeDropdown={closeDropdownB} transitionParams={transitionParams} divClass="absolute top-[40px] -left-[150px]">
+    <Dropdown
+      dropdownStatus={dropdownBStatus}
+      closeDropdown={closeDropdownB}
+      {transitionParams}
+      divClass="absolute top-[40px] -left-[150px]"
+    >
       {#snippet children()}
         <DropdownItem href="/">Dashboard</DropdownItem>
         <DropdownItem href="/components/dropdown">Dropdown</DropdownItem>
@@ -119,7 +129,12 @@
     <ChevronDownOutline class="ms-2 h-3 w-3 text-white dark:text-white" />
   </Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownCStatus} closeDropdown={closeDropdownC} transitionParams={transitionParams} divClass="absolute top-[40px] -left-[150px]">
+    <Dropdown
+      dropdownStatus={dropdownCStatus}
+      closeDropdown={closeDropdownC}
+      {transitionParams}
+      divClass="absolute top-[40px] -left-[150px]"
+    >
       {#snippet header()}
         <div>Bonnie Green</div>
         <div class="truncate font-medium">name@flowbite.com</div>
@@ -153,8 +168,12 @@
     <ChevronDownOutline class="ms-2 h-3 w-3 text-white dark:text-white" />
   </Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownTransition1Status} closeDropdown={closeDropdownTransition1} transitionParams={transitionParams2} 
-    divClass="absolute top-[40px] -left-[150px]">
+    <Dropdown
+      dropdownStatus={dropdownTransition1Status}
+      closeDropdown={closeDropdownTransition1}
+      transitionParams={transitionParams2}
+      divClass="absolute top-[40px] -left-[150px]"
+    >
       {#snippet children()}
         <DropdownItem href="/">Dashboard</DropdownItem>
         <DropdownItem href="/components/drawer">Drawer</DropdownItem>
@@ -172,9 +191,13 @@
     <ChevronDownOutline class="ms-2 h-3 w-3 text-white dark:text-white" />
   </Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownTransition2Status} closeDropdown={closeDropdownTransition2} transitionParams={transitionParams3}
-    transitionType='blur' 
-    divClass="absolute top-[40px] -left-[150px]">
+    <Dropdown
+      dropdownStatus={dropdownTransition2Status}
+      closeDropdown={closeDropdownTransition2}
+      transitionParams={transitionParams3}
+      transitionType="blur"
+      divClass="absolute top-[40px] -left-[150px]"
+    >
       {#snippet children()}
         <DropdownItem href="/">Dashboard</DropdownItem>
         <DropdownItem href="/components/drawer">Drawer</DropdownItem>

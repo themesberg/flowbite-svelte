@@ -33,28 +33,36 @@
     AdjustmentsHorizontalSolid,
     DownloadSolid,
     MessagesSolid,
-    UserCircleSolid, TrashBinSolid
+    UserCircleSolid,
+    TrashBinSolid
   } from 'flowbite-svelte-icons';
   let icons = [
     { name: 'Profile', icon: UserCircleSolid, mycustomfield: 'data1' },
-    { name: 'Settings', icon: AdjustmentsHorizontalSolid, mycustomfield: 'data2' },
+    {
+      name: 'Settings',
+      icon: AdjustmentsHorizontalSolid,
+      mycustomfield: 'data2'
+    },
     { name: 'Messages', icon: MessagesSolid, mycustomfield: 'data3' },
     { name: 'Download', icon: DownloadSolid, mycustomfield: 'data4' }
   ];
-  const handleClick = (e?: MouseEvent) =>{
+  const handleClick = (e?: MouseEvent) => {
     if (e?.target instanceof HTMLElement) {
-      alert('mycustomfield: ' + e.target.attributes.getNamedItem('mycustomfield')?.value);
+      alert(
+        'mycustomfield: ' +
+          e.target.attributes.getNamedItem('mycustomfield')?.value
+      );
     } else {
-      console.warn('Unexpected event target type. Cannot access attributes.')
+      console.warn('Unexpected event target type. Cannot access attributes.');
     }
-  }
-  const handleClick2 = (e?: MouseEvent) =>{
+  };
+  const handleClick2 = (e?: MouseEvent) => {
     if (e?.target instanceof HTMLElement) {
       console.log(e.target.attributes.getNamedItem('mycustomfield')?.value);
     } else {
       console.warn('Unexpected event target type. Cannot access attributes.');
     }
-  }
+  };
 </script>
 
 <H1>List group</H1>
@@ -81,24 +89,14 @@
 
 <H2>List group with buttons</H2>
 <CodeWrapper class="flex justify-center">
-  <Listgroup
-    active
-    items={buttons}
-    defaultClass="w-48"
-    onclick={handleClick}
-  />
+  <Listgroup active items={buttons} defaultClass="w-48" onclick={handleClick} />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/list-group-with-buttons.md'] as string} />
 
 <H2>List group with icons</H2>
 <CodeWrapper class="flex justify-center">
-  <Listgroup
-    active
-    items={icons}
-    defaultClass="w-48"
-    onclick={handleClick2}
-  />
+  <Listgroup active items={icons} defaultClass="w-48" onclick={handleClick2} />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/list-group-with-icons.md'] as string} />

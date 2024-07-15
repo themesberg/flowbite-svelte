@@ -7,7 +7,7 @@
   import { twMerge } from 'tailwind-merge';
 
   let { imgHeight = 'h-48', class: divClass }: Props = $props();
-  
+
   let divCls: string = twMerge(
     'space-y-8 animate-pulse md:space-y-0 md:space-x-8 rtl:space-x-reverse md:flex md:items-center',
     divClass
@@ -16,7 +16,7 @@
 
 <div role="status" class={divCls}>
   <div
-    class="flex w-full items-center justify-center {imgHeight} rounded bg-gray-300 dark:bg-gray-700 sm:w-96"
+    class="flex w-full items-center justify-center {imgHeight} rounded bg-gray-300 sm:w-96 dark:bg-gray-700"
   >
     <svg
       width="48"
@@ -33,12 +33,20 @@
     </svg>
   </div>
   <div class="w-full">
-    <div class="mb-4 h-2.5 w-1/2 rounded-full bg-gray-200 dark:bg-gray-700"></div>
-    <div class="mb-2.5 h-2 w-9/12 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+    <div
+      class="mb-4 h-2.5 w-1/2 rounded-full bg-gray-200 dark:bg-gray-700"
+    ></div>
+    <div
+      class="mb-2.5 h-2 w-9/12 rounded-full bg-gray-200 dark:bg-gray-700"
+    ></div>
     <div class="mb-2.5 h-2 rounded-full bg-gray-200 dark:bg-gray-700"></div>
     <div class="mb-2.5 h-2 rounded-full bg-gray-200 dark:bg-gray-700"></div>
-    <div class="mb-2.5 h-2 w-10/12 rounded-full bg-gray-200 dark:bg-gray-700"></div>
-    <div class="mb-2.5 h-2 w-11/12 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+    <div
+      class="mb-2.5 h-2 w-10/12 rounded-full bg-gray-200 dark:bg-gray-700"
+    ></div>
+    <div
+      class="mb-2.5 h-2 w-11/12 rounded-full bg-gray-200 dark:bg-gray-700"
+    ></div>
     <div class="h-2 w-9/12 rounded-full bg-gray-200 dark:bg-gray-700"></div>
   </div>
   <span class="sr-only">Loading...</span>

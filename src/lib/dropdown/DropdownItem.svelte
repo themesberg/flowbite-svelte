@@ -4,7 +4,7 @@
   import { page } from '$app/stores';
   import type { HTMLAnchorAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLAnchorAttributes{
+  interface Props extends HTMLAnchorAttributes {
     children: Snippet;
     aClass?: string | undefined | null;
     href?: string | undefined | null;
@@ -12,7 +12,8 @@
     liClass?: string | undefined | null;
   }
 
-  let { aClass, children, href, activeClass, liClass, ...attributes }: Props = $props();
+  let { aClass, children, href, activeClass, liClass, ...attributes }: Props =
+    $props();
 
   let currentUrl = $state();
   $effect(() => {

@@ -17,7 +17,7 @@
     tag = 'ul',
     list,
     position = 'inside',
-    ctxclass='',
+    ctxclass = '',
     class: classname,
     ...attributes
   }: Props = $props();

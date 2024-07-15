@@ -162,7 +162,6 @@
 </CodeWrapper>
 <HighlightCompo code={modules['./md/gradient-pills.md'] as string} />
 
-
 <H2>Outline buttons</H2>
 
 <CodeWrapper class="flex flex-wrap gap-2">
@@ -211,7 +210,6 @@
 
 <HighlightCompo code={modules['./md/button-with-label.md'] as string} />
 
-
 <H2>Icon buttons</H2>
 <CodeWrapper>
   <div class="flex flex-wrap items-center gap-2">
@@ -251,4 +249,3 @@
   <Button onclick={btn1}>Button 1</Button>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/events.md'] as string} />
-

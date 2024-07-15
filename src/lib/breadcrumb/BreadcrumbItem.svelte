@@ -3,7 +3,7 @@
   import { twMerge } from 'tailwind-merge';
   import type { HTMLLiAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLLiAttributes{
+  interface Props extends HTMLLiAttributes {
     children: Snippet;
     icon?: Snippet;
     home?: boolean;
@@ -57,9 +57,8 @@
           />
         </svg>
       {/if}
-      
-        {@render children()}
-    
+
+      {@render children()}
     </a>
   {:else}
     {#if icon}
@@ -78,17 +77,16 @@
         />
       </svg>
     {/if}
-    
-      {#if href}
-        <a class={a2Cls} {href}>
-          {@render children()}
-        </a>
-      {:else}
-        <span class={spanCls}>
-          {@render children()}
-        </span>
-      {/if}
-    
+
+    {#if href}
+      <a class={a2Cls} {href}>
+        {@render children()}
+      </a>
+    {:else}
+      <span class={spanCls}>
+        {@render children()}
+      </span>
+    {/if}
   {/if}
 </li>
 

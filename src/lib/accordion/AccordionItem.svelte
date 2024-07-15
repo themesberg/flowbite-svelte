@@ -6,7 +6,7 @@
   import { fade, blur, fly, slide } from 'svelte/transition';
   import type { TransitionTypes, TransitionParamTypes } from '../types';
   import type { AccordionCtxType } from './Accordion.svelte';
-  
+
   interface Props {
     children: Snippet;
     header?: Snippet;
@@ -52,7 +52,7 @@
     borderSharedClass = 'border-gray-200 dark:border-gray-700',
     classActive = undefined,
     classInactive = undefined,
-    class: className,
+    class: className
   }: Props = $props();
 
   let activeCls = twMerge(activeClass, classActive);
@@ -89,31 +89,72 @@
 
   const handleToggle = (_: Event) => selected.set(open ? {} : self);
 
-  let buttonClass: string = twMerge(defaultClass, ctx.flush? '' : borderClass , borderBottomClass, borderSharedClass, ctx.flush ? paddingFlush : paddingDefault, open && (ctx.flush ? textFlushOpen : activeCls || ctx.activeClass), !open && (ctx.flush ? textFlushDefault : inactiveCls || ctx.inactiveClass), className);
+  let buttonClass: string = twMerge(
+    defaultClass,
+    ctx.flush ? '' : borderClass,
+    borderBottomClass,
+    borderSharedClass,
+    ctx.flush ? paddingFlush : paddingDefault,
+    open && (ctx.flush ? textFlushOpen : activeCls || ctx.activeClass),
+    !open && (ctx.flush ? textFlushDefault : inactiveCls || ctx.inactiveClass),
+    className
+  );
 
-  let contentClass = twMerge([ctx.flush ? paddingFlush : paddingDefault, ctx.flush ? '' : borderOpenClass, borderBottomClass, borderSharedClass]);
+  let contentClass = twMerge([
+    ctx.flush ? paddingFlush : paddingDefault,
+    ctx.flush ? '' : borderOpenClass,
+    borderBottomClass,
+    borderSharedClass
+  ]);
 </script>
 
 <h2 class="group">
-  <button onclick={handleToggle} type="button" class={buttonClass} aria-expanded={open}>
+  <button
+    onclick={handleToggle}
+    type="button"
+    class={buttonClass}
+    aria-expanded={open}
+  >
     {#if header}
       {@render header()}
       {#if open}
         {#if !arrowup}
-          <svg class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5" />
+          <svg
+            class="h-3 w-3 text-gray-800 dark:text-white"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 10 6"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5 5 1 1 5"
+            />
           </svg>
         {:else}
           {@render arrowup()}
         {/if}
+      {:else if !arrowdown}
+        <svg
+          class="h-3 w-3 text-gray-800 dark:text-white"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 10 6"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m1 1 4 4 4-4"
+          />
+        </svg>
       {:else}
-        {#if !arrowdown}
-          <svg class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
-          </svg>
-        {:else}
-          {@render arrowdown()}
-        {/if}
+        {@render arrowdown()}
       {/if}
     {/if}
   </button>

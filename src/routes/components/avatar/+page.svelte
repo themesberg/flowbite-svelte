@@ -7,7 +7,7 @@
     DropdownDivider,
     uiHelpers
   } from '$lib';
-  
+
   let dropdown = uiHelpers();
   let dropdownStatus = $state(false);
   let closeDropdown = dropdown.close;
@@ -94,12 +94,10 @@
 <HighlightCompo code={modules['./md/dot-indicator.md'] as string} />
 
 <H2>Avatar tooltip</H2>
-<CodeWrapper class='flex justify-center gap-4'>
-  NOT COMPLETED
-</CodeWrapper>
+<CodeWrapper class="flex justify-center gap-4">NOT COMPLETED</CodeWrapper>
 
 <H2>Stacked</H2>
-<CodeWrapper class='flex flex-col justify-center gap-4'>
+<CodeWrapper class="flex flex-col justify-center gap-4">
   <div class="mb-5 flex">
     <Avatar src="/images/profile-picture-1.webp" stacked />
     <Avatar src="/images/profile-picture-2.webp" stacked />
@@ -144,32 +142,43 @@
     dot={{ color: 'green' }}
   />
   <div class="relative">
-  <Dropdown {dropdownStatus} {closeDropdown} divClass="absolute top-[40px] -left-[100px]">
-    {#snippet header()}
-      <div>Bonnie Green</div>
-      <div class="truncate font-medium">name@flowbite.com</div>
-    {/snippet}
-    {#snippet children()}
-      <DropdownItem href="/">Dashboard</DropdownItem>
-      <DropdownItem href="/nav">Navbar</DropdownItem>
-      <DropdownItem href="/footer">Footer</DropdownItem>
-      <DropdownDivider />
-      <DropdownItem href="/dropdown">Dropdown</DropdownItem>
-    {/snippet}
-  </Dropdown>
+    <Dropdown
+      {dropdownStatus}
+      {closeDropdown}
+      divClass="absolute top-[40px] -left-[100px]"
+    >
+      {#snippet header()}
+        <div>Bonnie Green</div>
+        <div class="truncate font-medium">name@flowbite.com</div>
+      {/snippet}
+      {#snippet children()}
+        <DropdownItem href="/">Dashboard</DropdownItem>
+        <DropdownItem href="/nav">Navbar</DropdownItem>
+        <DropdownItem href="/footer">Footer</DropdownItem>
+        <DropdownDivider />
+        <DropdownItem href="/dropdown">Dropdown</DropdownItem>
+      {/snippet}
+    </Dropdown>
   </div>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/user-dropdown.md'] as string} />
 
 <H2>Sizes</H2>
-<CodeWrapper class='flex flex-col gap-4'>
-  <div class="flex flex-wrap flex-col sm:flex-row justify-center rtl:space-x-reverse gap-4">
+<CodeWrapper class="flex flex-col gap-4">
+  <div
+    class="flex flex-col flex-wrap justify-center gap-4 sm:flex-row rtl:space-x-reverse"
+  >
     <Avatar src="/images/profile-picture-3.webp" rounded size="xs" />
     <Avatar src="/images/profile-picture-3.webp" rounded size="sm" />
     <Avatar src="/images/profile-picture-3.webp" rounded size="md" />
     <Avatar src="/images/profile-picture-3.webp" rounded size="lg" />
     <Avatar src="/images/profile-picture-3.webp" rounded size="xl" />
-    <Avatar src="/images/profile-picture-3.webp" rounded size="none" class="w-28 h-28" />
+    <Avatar
+      src="/images/profile-picture-3.webp"
+      rounded
+      size="none"
+      class="h-28 w-28"
+    />
   </div>
 </CodeWrapper>

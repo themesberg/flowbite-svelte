@@ -87,7 +87,11 @@
 
 {#if drawerStatus}
   {#if backdrop && activateClickOutside}
-    <div role="presentation" class={backdropDivClass} onclick={closeDrawer}></div>
+    <div
+      role="presentation"
+      class={backdropDivClass}
+      onclick={closeDrawer}
+    ></div>
   {:else if backdrop && !activateClickOutside}
     <div role="presentation" class={backdropDivClass}></div>
   {:else if !backdrop && activateClickOutside}
@@ -95,9 +99,12 @@
       role="presentation"
       class="fixed start-0 top-0 z-50 h-full w-full"
       onclick={closeDrawer}
-      ></div>
+    ></div>
   {:else if !backdrop && !activateClickOutside}
-    <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full"></div>
+    <div
+      role="presentation"
+      class="fixed start-0 top-0 z-50 h-full w-full"
+    ></div>
   {/if}
   <div
     {...attributes}

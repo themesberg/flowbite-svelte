@@ -47,7 +47,7 @@
   <div class={twMerge(leftTop, div3Class)}></div>
   <div class={twMerge(leftMid, div4Class)}></div>
   <div class={twMerge(leftBot, div5Class)}></div>
-  <div class={twMerge(right, div6Class)} ></div>
+  <div class={twMerge(right, div6Class)}></div>
   <div class={twMerge(slot, div7Class)}>
     {#if children}
       {@render children()}

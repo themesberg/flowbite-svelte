@@ -3,15 +3,11 @@
   import { twMerge } from 'tailwind-merge';
   import type { HTMLThAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLThAttributes{
+  interface Props extends HTMLThAttributes {
     children?: Snippet;
     class?: string | undefined | null;
   }
-  let {
-    children,
-    class: className,
-    ...attributes
-  }: Props = $props();
+  let { children, class: className, ...attributes }: Props = $props();
 </script>
 
 <th {...attributes} class={twMerge('px-6 py-3', className)}>

@@ -116,8 +116,9 @@
 
 <H2>Rating count</H2>
 <CodeWrapper>
-  <Rating count rating={4.95} r_p="pt-4">
-    <span class="mx-1.5 h-1 w-1 rounded-full bg-gray-500 dark:bg-gray-400"></span>
+  <Rating count rating={4.95}>
+    <span class="mx-1.5 h-1 w-1 rounded-full bg-gray-500 dark:bg-gray-400"
+    ></span>
     <a
       href="/"
       class="text-sm font-medium text-gray-900 underline hover:no-underline dark:text-white"
@@ -154,9 +155,11 @@
     ]}
   >
     {#snippet rating()}
-      <Rating total={5} rating={3.72} >
+      <Rating total={5} rating={3.72}>
         {#snippet text()}
-          <p class="ms-2 pt-4 text-sm font-medium text-gray-500 dark:text-gray-400">
+          <p
+            class="ms-2 pt-4 text-sm font-medium text-gray-500 dark:text-gray-400"
+          >
             3.72 out of 5
           </p>
         {/snippet}
@@ -187,7 +190,9 @@
     {#snippet rating()}
       <Rating total={5} rating={3.8} icon={Thumbup}>
         {#snippet text()}
-          <p class="ms-2 pt-4 text-sm font-medium text-gray-500 dark:text-gray-400">
+          <p
+            class="ms-2 pt-4 text-sm font-medium text-gray-500 dark:text-gray-400"
+          >
             3.8 out of 5
           </p>
         {/snippet}

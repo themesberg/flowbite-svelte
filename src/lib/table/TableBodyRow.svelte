@@ -6,7 +6,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
 
   // import type TableColrType from './Table.svelte';
-  interface Props extends HTMLAttributes<HTMLTableRowElement>{
+  interface Props extends HTMLAttributes<HTMLTableRowElement> {
     children?: Snippet;
     class?: string | undefined | null;
     color?: string | undefined | null;

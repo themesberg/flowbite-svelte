@@ -6,7 +6,7 @@
   import type { FormColorType } from '../types';
   import type { HTMLInputAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLInputAttributes{
+  interface Props extends HTMLInputAttributes {
     children: Snippet;
     toggleSize?: 'small' | 'default' | 'large' | 'custom';
     group?: (string | number)[];
@@ -40,7 +40,7 @@
     inputClass = '',
     ...attributes
   }: Props = $props();
-  
+
   const common =
     "me-3 shrink-0 bg-gray-200 rounded-full peer-focus:ring-4 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:bg-white after:border-gray-300 after:border after:rounded-full after:transition-all";
 
@@ -81,7 +81,7 @@
 </script>
 
 <Label class={labelCls(inline, labelClass)}>
-<input
+  <input
     type="checkbox"
     bind:checked
     {value}
@@ -89,8 +89,8 @@
     {...attributes}
     class={twMerge(spacing, inputCls(custom, color, true, false, inputClass))}
   />
-  <span class={divClass} ></span>
-    {@render children()}
+  <span class={divClass}></span>
+  {@render children()}
 </Label>
 
 <!--

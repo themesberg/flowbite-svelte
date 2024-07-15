@@ -17,7 +17,7 @@
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default mockup</H2>
-<CodeWrapper class='overflow-x-scroll'>
+<CodeWrapper class="overflow-x-scroll">
   <DeviceMockup>
     <img
       src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-1-light.png"
@@ -34,7 +34,7 @@
 <HighlightCompo code={modules['./md/default-mockup.md'] as string} />
 
 <H2>iPhone 12 mockup (iOS)</H2>
-<CodeWrapper class='overflow-x-scroll'>
+<CodeWrapper class="overflow-x-scroll">
   <DeviceMockup device="ios">
     <img
       src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-2-light.png"
@@ -51,7 +51,7 @@
 <HighlightCompo code={modules['./md/iphone-12-mockup.md'] as string} />
 
 <H2>Google Pixel mockup (Android)</H2>
-<CodeWrapper class='overflow-x-scroll'>
+<CodeWrapper class="overflow-x-scroll">
   <DeviceMockup device="android">
     <img
       src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-1-light.png"
@@ -68,16 +68,16 @@
 <HighlightCompo code={modules['./md/google-pixel-mockup.md'] as string} />
 
 <H2>Tablet mockup</H2>
-<CodeWrapper class='overflow-x-scroll'>
+<CodeWrapper class="overflow-x-scroll">
   <DeviceMockup device="tablet">
     <img
       src="https://flowbite.s3.amazonaws.com/docs/device-mockups/tablet-mockup-image.png"
-      class="h-[426px] dark:hidden md:h-[654px]"
+      class="h-[426px] md:h-[654px] dark:hidden"
       alt="tablet example 1"
     />
     <img
       src="https://flowbite.s3.amazonaws.com/docs/device-mockups/tablet-mockup-image-dark.png"
-      class="hidden h-[426px] dark:block md:h-[654px]"
+      class="hidden h-[426px] md:h-[654px] dark:block"
       alt="tablet example 2"
     />
   </DeviceMockup>
@@ -85,16 +85,16 @@
 <HighlightCompo code={modules['./md/tablet-mockup.md'] as string} />
 
 <H2>Laptop mockup</H2>
-<CodeWrapper class='overflow-x-scroll'>
+<CodeWrapper class="overflow-x-scroll">
   <DeviceMockup device="laptop">
     <img
       src="https://flowbite.s3.amazonaws.com/docs/device-mockups/laptop-screen.png"
-      class="h-[156px] w-full rounded-xl dark:hidden md:h-[278px]"
+      class="h-[156px] w-full rounded-xl md:h-[278px] dark:hidden"
       alt="laptop example 1"
     />
     <img
       src="https://flowbite.s3.amazonaws.com/docs/device-mockups/laptop-screen-dark.png"
-      class="hidden h-[156px] w-full rounded-lg dark:block md:h-[278px]"
+      class="hidden h-[156px] w-full rounded-lg md:h-[278px] dark:block"
       alt="laptop example 2"
     />
   </DeviceMockup>
@@ -102,16 +102,16 @@
 <HighlightCompo code={modules['./md/laptop-mockup.md'] as string} />
 
 <H2>Desktop mockup</H2>
-<CodeWrapper class='overflow-x-scroll'>
+<CodeWrapper class="overflow-x-scroll">
   <DeviceMockup device="desktop">
     <img
       src="https://flowbite.s3.amazonaws.com/docs/device-mockups/screen-image-imac.png"
-      class="h-[140px] w-full rounded-xl dark:hidden md:h-[262px]"
+      class="h-[140px] w-full rounded-xl md:h-[262px] dark:hidden"
       alt="desktop example 1"
     />
     <img
       src="https://flowbite.s3.amazonaws.com/docs/device-mockups/screen-image-imac-dark.png"
-      class="hidden h-[140px] w-full rounded-xl dark:block md:h-[262px]"
+      class="hidden h-[140px] w-full rounded-xl md:h-[262px] dark:block"
       alt="desktop example 2"
     />
   </DeviceMockup>
@@ -119,7 +119,7 @@
 <HighlightCompo code={modules['./md/desktop-mockup.md'] as string} />
 
 <H2>Smartwatch mockup</H2>
-<CodeWrapper class='overflow-x-scroll'>
+<CodeWrapper class="overflow-x-scroll">
   <DeviceMockup device="smartwatch">
     <img
       src="https://flowbite.s3.amazonaws.com/docs/device-mockups/watch-screen-image.png"

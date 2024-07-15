@@ -1,5 +1,13 @@
 <script lang="ts">
-  import { Kbd, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, TableBodyRow } from '$lib';
+  import {
+    Kbd,
+    Table,
+    TableHead,
+    TableHeadCell,
+    TableBody,
+    TableBodyCell,
+    TableBodyRow
+  } from '$lib';
   import {
     CaretDownSolid,
     CaretRightSolid,
@@ -25,7 +33,7 @@
 
 <H2>Default KBD</H2>
 
-<CodeWrapper class="flex justify-center gap-1 flex-wrap">
+<CodeWrapper class="flex flex-wrap justify-center gap-1">
   <Kbd class="px-2 py-1.5">Shift</Kbd>
   <Kbd class="px-2 py-1.5">Ctrl</Kbd>
   <Kbd class="px-2 py-1.5">Tab</Kbd>
@@ -39,10 +47,10 @@
 
 <H2>KBD inside text</H2>
 
-<CodeWrapper class="flex justify-center flex-wrap">
+<CodeWrapper class="flex flex-wrap justify-center">
   <p class="text-gray-500 dark:text-gray-400">
-    Please press <Kbd class="px-2 py-1.5">Ctrl</Kbd> + <Kbd
-      class="px-2 py-1.5">Shift</Kbd
+    Please press <Kbd class="px-2 py-1.5">Ctrl</Kbd> + <Kbd class="px-2 py-1.5"
+      >Shift</Kbd
     > + <Kbd class="px-2 py-1.5">R</Kbd> to re-render an MDN page.
   </p>
 </CodeWrapper>
@@ -51,7 +59,6 @@
 
 <H2>KBD inside table</H2>
 <CodeWrapper>
-
   <Table>
     <TableHead>
       <TableHeadCell>Key</TableHeadCell>
@@ -60,34 +67,41 @@
     <TableBody class="divide-y">
       <TableBodyRow>
         <TableBodyCell>
-          <Kbd class="px-2 py-1.5">Shift</Kbd> or <Kbd class="px-2 py-1.5">Tab</Kbd>
+          <Kbd class="px-2 py-1.5">Shift</Kbd> or <Kbd class="px-2 py-1.5"
+            >Tab</Kbd
+          >
         </TableBodyCell>
         <TableBodyCell>Navigate to interactive elements</TableBodyCell>
       </TableBodyRow>
       <TableBodyRow>
         <TableBodyCell>
-          <Kbd class="px-2 py-1.5">Enter</Kbd> or <Kbd class="px-4 py-1.5">Space bar</Kbd>
+          <Kbd class="px-2 py-1.5">Enter</Kbd> or <Kbd class="px-4 py-1.5"
+            >Space bar</Kbd
+          >
         </TableBodyCell>
-        <TableBodyCell>Ensure elements with ARIA role="button" can be activated with both key commands.</TableBodyCell>
+        <TableBodyCell
+          >Ensure elements with ARIA role="button" can be activated with both
+          key commands.</TableBodyCell
+        >
       </TableBodyRow>
       <TableBodyRow>
         <TableBodyCell>
-          <Kbd class="inline-flex items-center me-1 px-2 py-1.5">
-            <CaretUpSolid size="xs"/>
+          <Kbd class="me-1 inline-flex items-center px-2 py-1.5">
+            <CaretUpSolid size="xs" />
             <span class="sr-only">Arrow key up</span>
-        </Kbd>
-        <Kbd class="inline-flex items-center me-1 px-2 py-1.5">
-          <CaretDownSolid  size="xs"/>
-          <span class="sr-only">Arrow key down</span>
-        </Kbd> or
-        <Kbd class="inline-flex items-center me-1 px-2 py-1.5">
-          <CaretLeftSolid  size="xs"/>
-          <span class="sr-only">Arrow key left</span>
-      </Kbd>
-      <Kbd class="inline-flex items-center me-1 px-2 py-1.5">
-          <CaretRightSolid  size="xs"/>
-          <span class="sr-only">Arrow key right</span>
-      </Kbd>
+          </Kbd>
+          <Kbd class="me-1 inline-flex items-center px-2 py-1.5">
+            <CaretDownSolid size="xs" />
+            <span class="sr-only">Arrow key down</span>
+          </Kbd> or
+          <Kbd class="me-1 inline-flex items-center px-2 py-1.5">
+            <CaretLeftSolid size="xs" />
+            <span class="sr-only">Arrow key left</span>
+          </Kbd>
+          <Kbd class="me-1 inline-flex items-center px-2 py-1.5">
+            <CaretRightSolid size="xs" />
+            <span class="sr-only">Arrow key right</span>
+          </Kbd>
         </TableBodyCell>
         <TableBodyCell>Choose and activate previous/next tab.</TableBodyCell>
       </TableBodyRow>
@@ -97,7 +111,7 @@
 
 <H2>Arrow keys</H2>
 
-<CodeWrapper class="flex justify-center flex-wrap">
+<CodeWrapper class="flex flex-wrap justify-center">
   <Kbd class="me-1 inline-flex items-center px-2 py-1.5">
     <CaretUpSolid size="xs" />
     <span class="sr-only">Arrow key up</span>
@@ -120,7 +134,7 @@
 
 <H2>Letter keys</H2>
 
-<CodeWrapper class="flex justify-center gap-1 flex-wrap">
+<CodeWrapper class="flex flex-wrap justify-center gap-1">
   <Kbd class="px-2 py-1.5">Q</Kbd>
   <Kbd class="px-2 py-1.5">W</Kbd>
   <Kbd class="px-2 py-1.5">E</Kbd>
@@ -153,7 +167,7 @@
 
 <H2>Number keys</H2>
 
-<CodeWrapper class="flex justify-center gap-1 flex-wrap">
+<CodeWrapper class="flex flex-wrap justify-center gap-1">
   <Kbd class="px-2 py-1.5">1</Kbd>
   <Kbd class="px-2 py-1.5">2</Kbd>
   <Kbd class="px-2 py-1.5">3</Kbd>
@@ -170,7 +184,7 @@
 
 <H2>Function keys</H2>
 
-<CodeWrapper class="flex justify-center gap-1 flex-wrap">
+<CodeWrapper class="flex flex-wrap justify-center gap-1">
   <Kbd class="px-2 py-1.5">F1</Kbd>
   <Kbd class="px-2 py-1.5">F2</Kbd>
   <Kbd class="px-2 py-1.5">F3</Kbd>

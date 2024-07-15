@@ -5,7 +5,7 @@
   import { twMerge } from 'tailwind-merge';
   import type { HTMLAnchorAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLAnchorAttributes{
+  interface Props extends HTMLAnchorAttributes {
     children?: Snippet;
     siteName: string | undefined | null;
     closeNav?: () => void;
@@ -13,7 +13,14 @@
     spanClass?: string | undefined;
   }
 
-  let { children, siteName, closeNav, aClass, spanClass, ...attributes }: Props = $props();
+  let {
+    children,
+    siteName,
+    closeNav,
+    aClass,
+    spanClass,
+    ...attributes
+  }: Props = $props();
 
   const context = getContext<navbarType>('navbarContext');
   closeNav = context.closeNav ?? closeNav;

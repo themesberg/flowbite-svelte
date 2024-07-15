@@ -10,7 +10,14 @@
     div3Class?: string | undefined | null;
     div4Class?: string | undefined | null;
   }
-  let { children, divClass, div2Class, div3Class, div4Class, ...attributes }: Props = $props();
+  let {
+    children,
+    divClass,
+    div2Class,
+    div3Class,
+    div4Class,
+    ...attributes
+  }: Props = $props();
   const div: string =
     'relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]';
   const inner: string =
@@ -22,17 +29,17 @@
 </script>
 
 <div {...attributes}>
-<div class={twMerge(div, divClass)}>
-  <div class={twMerge(inner, div2Class)}>
-    {#if children}
-      {@render children()}
-    {/if}
+  <div class={twMerge(div, divClass)}>
+    <div class={twMerge(inner, div2Class)}>
+      {#if children}
+        {@render children()}
+      {/if}
+    </div>
   </div>
-</div>
 
-<div class={twMerge(bot, div3Class)}>
-  <div class={twMerge(botCen, div4Class)} ></div>
-</div>
+  <div class={twMerge(bot, div3Class)}>
+    <div class={twMerge(botCen, div4Class)}></div>
+  </div>
 </div>
 
 <!--

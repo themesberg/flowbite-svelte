@@ -81,18 +81,22 @@
 </script>
 
 {#snippet content()}
-    {#if img}
-      <img class={imgClass} src={img.src} alt={img.alt} />
-      <div class={innerPadding}>
-        {@render children()}
-      </div>
-    {:else}
+  {#if img}
+    <img class={imgClass} src={img.src} alt={img.alt} />
+    <div class={innerPadding}>
       {@render children()}
-    {/if}
-
+    </div>
+  {:else}
+    {@render children()}
+  {/if}
 {/snippet}
 
-<div {...attributes} class={cardClass} role={href ? 'link' : 'presentation'} {onclick}>
+<div
+  {...attributes}
+  class={cardClass}
+  role={href ? 'link' : 'presentation'}
+  {onclick}
+>
   {#if href}
     <a {href} {target}>
       {@render content()}

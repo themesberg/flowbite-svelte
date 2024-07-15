@@ -67,7 +67,13 @@
 </script>
 
 {#if href}
-  <a {href} {...attributes} {onclick} class={buttonClass} aria-label={ariaLabel ?? name}>
+  <a
+    {href}
+    {...attributes}
+    {onclick}
+    class={buttonClass}
+    aria-label={ariaLabel ?? name}
+  >
     {#if name}<span class="sr-only">{name}</span>{/if}
     <svg
       class={svgSizes[size]}

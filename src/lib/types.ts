@@ -4,7 +4,6 @@ export declare const md = 'md';
 export declare const lg = 'lg';
 export declare const xl = 'xl';
 
-
 export type CloseButtonColorType =
   | 'dark'
   | 'default'
@@ -18,7 +17,6 @@ export type CloseButtonColorType =
   | 'blue'
   | 'primary'
   | 'none';
-
 
 export type IndicatorPlacementType =
   | 'top-left'
@@ -229,8 +227,17 @@ export type SpaceType =
   | 'widest'
   | undefined;
 
-export type ToolbarButtonType = 'dark' | 'default' | 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue';
-
+export type ToolbarButtonType =
+  | 'dark'
+  | 'default'
+  | 'gray'
+  | 'red'
+  | 'yellow'
+  | 'green'
+  | 'indigo'
+  | 'purple'
+  | 'pink'
+  | 'blue';
 
 export declare type SizeType =
   | typeof xs

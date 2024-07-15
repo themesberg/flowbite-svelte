@@ -39,7 +39,7 @@
     class: classname,
     ...attributes
   }: Props = $props();
-  
+
   let labelInsideCls: string =
     'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
   let divCls: string = 'w-full bg-gray-200 rounded-full dark:bg-gray-700';
@@ -91,7 +91,7 @@
     <div
       class={twJoin(barColors[color], size, 'rounded-full', div2Class)}
       style="width: {$_progress}%"
-      ></div>
+    ></div>
   {/if}
 </div>
 

@@ -8,7 +8,7 @@
     alt?: string | undefined | null;
   };
 
-  interface Props extends HTMLAttributes<HTMLDivElement>{
+  interface Props extends HTMLAttributes<HTMLDivElement> {
     children?: Snippet;
     items?: ImgType[];
     imgClass?: string | undefined;
@@ -22,7 +22,7 @@
     divClass,
     ...attributes
   }: Props = $props();
- 
+
   const imgCls: string = 'h-auto max-w-full rounded-lg';
 
   let divCls = twMerge('grid', divClass);

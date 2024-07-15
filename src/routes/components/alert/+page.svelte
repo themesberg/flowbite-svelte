@@ -261,7 +261,7 @@
     <span class="font-medium">Warning alert!</span>
     Change a few things up and try submitting again.
   </Alert>
-  <Alert color="pink" rounded={false} class="border-t-4 flex-row-reverse">
+  <Alert color="pink" rounded={false} class="flex-row-reverse border-t-4">
     {#snippet icon()}
       <InfoCircleSolid class="h-4 w-4" />
     {/snippet}
@@ -329,11 +329,13 @@
 
 <H2>Events</H2>
 <CodeWrapper class="h-24">
-  <Alert dismissable onclick={() => {
-    alert('Clicked closeAlert.');
-  }}>
+  <Alert
+    dismissable
+    onclick={() => {
+      alert('Clicked closeAlert.');
+    }}
+  >
     Close me
-    
   </Alert>
 </CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/events.md'] as string} />

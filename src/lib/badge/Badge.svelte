@@ -8,7 +8,7 @@
 
   type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 
-  interface Props extends HTMLAttributes<HTMLDivElement>{
+  interface Props extends HTMLAttributes<HTMLDivElement> {
     children: Snippet;
     icon?: Snippet;
     color?: ColorVariant;
@@ -125,7 +125,7 @@
         </button>
       {:else}
         <CloseButton
-          class="ms-1.5 -me-1.5"
+          class="-me-1.5 ms-1.5"
           {color}
           size={large ? 'sm' : 'xs'}
           ariaLabel="Remove badge"

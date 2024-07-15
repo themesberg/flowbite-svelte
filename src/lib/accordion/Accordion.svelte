@@ -21,7 +21,7 @@
 
   type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 
-  interface Props extends HTMLAttributes<HTMLDivElement>{
+  interface Props extends HTMLAttributes<HTMLDivElement> {
     children: Snippet;
     multiple?: boolean;
     flush?: boolean;
@@ -35,20 +35,21 @@
     params?: any;
   }
 
-  let { 
+  let {
     children,
-    multiple = false, 
-    flush=false, 
-    activeClass = 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800', 
-    inactiveClass = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800', 
-    defaultClass = 'text-gray-500 dark:text-gray-400', 
-    classActive, 
-    classInactive, 
-    class: className, 
+    multiple = false,
+    flush = false,
+    activeClass = 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800',
+    inactiveClass = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800',
+    defaultClass = 'text-gray-500 dark:text-gray-400',
+    classActive,
+    classInactive,
+    class: className,
     transition = undefined,
     params = {},
-    ...attributes }: Props = $props();
- 
+    ...attributes
+  }: Props = $props();
+
   const ctx: AccordionCtxType = {
     flush,
     activeClass: twMerge(activeClass, classActive),

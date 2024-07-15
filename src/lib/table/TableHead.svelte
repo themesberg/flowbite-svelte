@@ -5,7 +5,7 @@
   import type TableCtxType from './Table.svelte';
   import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLAttributes<HTMLTableSectionElement>{
+  interface Props extends HTMLAttributes<HTMLTableSectionElement> {
     children?: Snippet;
     defaultRow?: boolean;
     class?: string | undefined | null;

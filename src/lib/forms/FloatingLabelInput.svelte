@@ -4,7 +4,7 @@
   import { idGenerator } from '../uiHelpers.svelte';
   import type { HTMLInputAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLInputAttributes{
+  interface Props extends HTMLInputAttributes {
     children: Snippet;
     id?: string | undefined | null;
     aria_describedby?: string | undefined | null;

@@ -3,7 +3,7 @@
   import { twMerge } from 'tailwind-merge';
   import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLAttributes<HTMLElement>{
+  interface Props extends HTMLAttributes<HTMLElement> {
     children: Snippet;
     tag: 'dt' | 'dd';
     dtClass?: string | undefined;
@@ -11,7 +11,7 @@
   }
 
   let { children, tag, dtClass, ddClass, ...attributes }: Props = $props();
-  
+
   const dtCls: string = twMerge(
     'text-gray-500 md:text-lg dark:text-gray-400',
     dtClass

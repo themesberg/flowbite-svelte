@@ -1,8 +1,9 @@
 <script lang="ts">
   import type { SpinnerColorType } from '$lib/types';
   import { twMerge } from 'tailwind-merge';
+  import type { SVGAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends SVGAttributes<SVGSVGElement> {
     color?: SpinnerColorType;
     bg?: string | undefined | null;
     customColor?: string | undefined | null;
@@ -43,7 +44,9 @@
   };
 
   let fillColorCls: string =
-    color === undefined ? '' : fillColorClasses[color] ?? fillColorClasses.blue;
+    color === undefined
+      ? ''
+      : (fillColorClasses[color] ?? fillColorClasses.blue);
 </script>
 
 <svg

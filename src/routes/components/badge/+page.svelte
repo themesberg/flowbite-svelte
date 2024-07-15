@@ -1,7 +1,8 @@
 <script lang="ts">
   import { Badge, Button, Indicator } from '$lib';
   import {
-    ClockSolid, CloseCircleSolid,
+    ClockSolid,
+    CloseCircleSolid,
     EnvelopeSolid,
     CheckOutline,
     CheckCircleOutline
@@ -15,11 +16,11 @@
   import H3 from '../../utils/H3.svelte';
   import { quintOut } from 'svelte/easing';
   const slideParams = {
-    delay: 250, 
-    duration: 500, 
-    easing: quintOut, 
-    axis: 'y' 
-  }
+    delay: 250,
+    duration: 500,
+    easing: quintOut,
+    axis: 'y'
+  };
   function handleClose() {
     alert('Badge dismissed');
   }
@@ -171,7 +172,7 @@
     Messages
     <Badge
       rounded
-      class="w-4 h-4 ms-2 p-0 font-semibold text-primary-800 bg-white dark:text-primary-800 dark:bg-white"
+      class="ms-2 h-4 w-4 bg-white p-0 font-semibold text-primary-800 dark:bg-white dark:text-primary-800"
       >2</Badge
     >
   </Button>
@@ -199,7 +200,9 @@
 
 <H2>Dismissable badge</H2>
 <CodeWrapper class="min-h-20 space-y-1">
-  <Badge dismissable transition={slide} params={slideParams} large>Slide transition</Badge>
+  <Badge dismissable transition={slide} params={slideParams} large
+    >Slide transition</Badge
+  >
   <Badge dismissable large>Default</Badge>
   <Badge dismissable large color="gray">Gray</Badge>
   <Badge dismissable large color="red">Red</Badge>
@@ -214,7 +217,6 @@
   code={modules['./md/dismissable-badge.md'] as string}
 />
 
-
 <CodeWrapper class="h-20">
   <Badge dismissable>
     Default
@@ -224,10 +226,16 @@
   </Badge>
 </CodeWrapper>
 
-<HighlightCompo codeLang="ts" code={modules['./md/dismissable-badge-2.md'] as string} />
+<HighlightCompo
+  codeLang="ts"
+  code={modules['./md/dismissable-badge-2.md'] as string}
+/>
 
 <CodeWrapper class="h-20">
   <Badge dismissable large onclick={handleClose}>Default</Badge>
 </CodeWrapper>
 
-<HighlightCompo codeLang="ts" code={modules['./md/dismissable-badge-3.md'] as string} />
+<HighlightCompo
+  codeLang="ts"
+  code={modules['./md/dismissable-badge-3.md'] as string}
+/>

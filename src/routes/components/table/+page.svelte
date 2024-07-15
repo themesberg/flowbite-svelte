@@ -7,8 +7,8 @@
     TableHead,
     TableHeadCell,
     Checkbox,
-    TableSearch, ImagePlaceholder,
-  
+    TableSearch,
+    ImagePlaceholder
   } from '$lib';
 
   let searchTerm = $state('');
@@ -31,30 +31,30 @@
   const items2 = [
     {
       name: 'Apple MacBook Pro 17"',
-      color: "Sliver",
-      type: "Laptop",
-      price: "$2999",
+      color: 'Sliver',
+      type: 'Laptop',
+      price: '$2999'
     },
     {
-      name: "Microsoft Surface Pro",
-      color: "White",
-      type: "Laptop PC",
-      price: "$1999",
+      name: 'Microsoft Surface Pro',
+      color: 'White',
+      type: 'Laptop PC',
+      price: '$1999'
     },
     {
-      name: "Magic Mouse 2",
-      color: "Black",
-      type: "Accessories",
-      price: "$99",
-    },
+      name: 'Magic Mouse 2',
+      color: 'Black',
+      type: 'Accessories',
+      price: '$99'
+    }
   ];
 
-  let openRow = $state()
-  let details
+  let openRow = $state();
+  let details;
 
   const toggleRow = (i: number) => {
-    openRow = openRow === i ? null : i
-  }
+    openRow = openRow === i ? null : i;
+  };
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -789,7 +789,10 @@
         {#if openRow === i}
           <TableBodyRow ondblclick={() => (details = item)}>
             <TableBodyCell colspan={4} class="p-0">
-              <div class="px-2 py-3" transition:slide={{ duration: 300, axis: 'y' }}>
+              <div
+                class="px-2 py-3"
+                transition:slide={{ duration: 300, axis: 'y' }}
+              >
                 <ImagePlaceholder />
               </div>
             </TableBodyCell>
@@ -798,5 +801,4 @@
       {/each}
     </TableBody>
   </Table>
- 
 </CodeWrapper>

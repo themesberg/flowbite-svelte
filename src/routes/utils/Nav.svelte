@@ -31,23 +31,23 @@
   let navStatus = $state(false);
   let toggleNav = nav.toggle;
   let closeNav = nav.close;
-  
+
   let currentUrl = $page.url.pathname;
   $effect(() => {
     navDrawerStatus = navDrawer.isOpen;
     navStatus = nav.isOpen;
     currentUrl = $page.url.pathname;
   });
-  
+
   const hasPath = (key: string) => currentUrl.includes(key);
   const activeClass =
     'flex items-center p-2 text-base font-normal text-white bg-primary-500 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-100 dark:hover:bg-gray-700';
 </script>
 
 <header
-  class="sticky top-0 z-50 mx-auto w-full flex-none border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-950 lg:pl-4"
+  class="sticky top-0 z-50 mx-auto w-full flex-none border-b border-gray-200 bg-white lg:pl-4 dark:border-gray-600 dark:bg-gray-950"
 >
-  <Navbar {toggleNav} {closeNav} {navStatus} fluid  div2Class="ml-auto w-full">
+  <Navbar {toggleNav} {closeNav} {navStatus} fluid div2Class="ml-auto w-full">
     {#snippet brand()}
       <button
         onclick={navDrawer.toggle}
@@ -77,7 +77,10 @@
       </NavBrand>
 
       <div class="ml-auto flex items-center md:order-1">
-        <a class='hidden md:block' href="https://ko-fi.com/Z8Z2CHALG" target="_blank"
+        <a
+          class="hidden md:block"
+          href="https://ko-fi.com/Z8Z2CHALG"
+          target="_blank"
           ><img
             height="36"
             style="border:0px;height:36px;"
@@ -86,7 +89,7 @@
           /></a
         >
         <a
-          class="hidden whitespace-normal rounded-lg p-2.5 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-0 focus:ring-gray-400 dark:hover:bg-gray-600 dark:hover:text-white sm:inline-block"
+          class="hidden whitespace-normal rounded-lg p-2.5 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-0 focus:ring-gray-400 sm:inline-block dark:hover:bg-gray-600 dark:hover:text-white"
           href="https://github.com/shinokada/svelte-5-ui-lib"
         >
           <GitHub />
@@ -147,7 +150,12 @@
     class="p-1 pl-4"
   >
     <SidebarGroup>
-      <SidebarDropdownWrapper isOpen={hasPath('pages')} label="GETTING STARTED" svgClass="me-4" btnClass="p-1">
+      <SidebarDropdownWrapper
+        isOpen={hasPath('pages')}
+        label="GETTING STARTED"
+        svgClass="me-4"
+        btnClass="p-1"
+      >
         <SidebarItem
           onclick={closeNavDrawer}
           label="About"
@@ -158,8 +166,13 @@
           label="Coverage"
           href="/pages/coverage"
         />
-        </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper isOpen={hasPath('components')} label="Components" svgClass="me-4" btnClass="p-1">
+      </SidebarDropdownWrapper>
+      <SidebarDropdownWrapper
+        isOpen={hasPath('components')}
+        label="Components"
+        svgClass="me-4"
+        btnClass="p-1"
+      >
         <SidebarItem
           onclick={closeNavDrawer}
           label="Accordion"
@@ -356,7 +369,12 @@
           href="/components/video"
         />
       </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper isOpen={hasPath('forms')} label="Forms" svgClass="me-4" btnClass="p-1">
+      <SidebarDropdownWrapper
+        isOpen={hasPath('forms')}
+        label="Forms"
+        svgClass="me-4"
+        btnClass="p-1"
+      >
         <SidebarItem
           onclick={closeNavDrawer}
           label="Checkbox"
@@ -408,7 +426,12 @@
           href="/forms/toggle"
         />
       </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper isOpen={hasPath('typography')} label="Typography" svgClass="me-4" btnClass="p-1">
+      <SidebarDropdownWrapper
+        isOpen={hasPath('typography')}
+        label="Typography"
+        svgClass="me-4"
+        btnClass="p-1"
+      >
         <SidebarItem
           onclick={closeNavDrawer}
           label="Blockquote"
@@ -450,7 +473,12 @@
           href="/typography/text"
         />
       </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper isOpen={hasPath('plugins')} label="Plugins" svgClass="me-4" btnClass="p-1">
+      <SidebarDropdownWrapper
+        isOpen={hasPath('plugins')}
+        label="Plugins"
+        svgClass="me-4"
+        btnClass="p-1"
+      >
         <SidebarItem
           onclick={closeNavDrawer}
           label="Chart"

@@ -1,10 +1,10 @@
 <script lang="ts">
   interface Props {
-    class ?: string | undefined;
+    class?: string | undefined;
   }
   import { twMerge } from 'tailwind-merge';
-  let { class: divClass  }: Props = $props();
-  let divCls: string = twMerge('animate-pulse', divClass );
+  let { class: divClass }: Props = $props();
+  let divCls: string = twMerge('animate-pulse', divClass);
 </script>
 
 <div role="status" class={divCls}>
@@ -13,7 +13,7 @@
   ></div>
   <div
     class="mx-auto h-2.5 max-w-[540px] rounded-full bg-gray-300 dark:bg-gray-700"
-    ></div>
+  ></div>
   <div class="mt-4 flex items-center justify-center">
     <svg
       class="me-2 h-10 w-10 text-gray-200 dark:text-gray-700"
@@ -28,7 +28,9 @@
         clip-rule="evenodd"
       ></path>
     </svg>
-    <div class="me-3 h-2.5 w-20 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+    <div
+      class="me-3 h-2.5 w-20 rounded-full bg-gray-200 dark:bg-gray-700"
+    ></div>
     <div class="h-2 w-24 rounded-full bg-gray-200 dark:bg-gray-700"></div>
   </div>
   <span class="sr-only">Loading...</span>

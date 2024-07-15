@@ -62,19 +62,24 @@
   let innerCls = twMerge('flex', insideDivClasses[bannerType], innerClass);
   const clickToDismiss = () => {
     bannerStatus = false;
-  }
+  };
 </script>
 
 {#if bannerStatus}
-  <div tabindex="-1" class={divCls} {...attributes} transition:transition={params}>
+  <div
+    tabindex="-1"
+    class={divCls}
+    {...attributes}
+    transition:transition={params}
+  >
     {#if header}
       {@render header()}
     {/if}
-  
+
     <div class={innerCls}>
       {@render children()}
     </div>
-   
+
     {#if dismissable}
       <div class="flex items-center">
         <CloseButton

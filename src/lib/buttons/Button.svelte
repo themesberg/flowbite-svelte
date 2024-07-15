@@ -3,7 +3,10 @@
   import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
   import type { SizeType } from '$lib/types';
-  import type { HTMLButtonAttributes, HTMLAnchorAttributes } from 'svelte/elements';
+  import type {
+    HTMLButtonAttributes,
+    HTMLAnchorAttributes
+  } from 'svelte/elements';
 
   interface Props {
     children: Snippet;
@@ -178,7 +181,6 @@
   );
 </script>
 
-
 {#if href}
   <a {href} {...attributes} class={buttonCls} {rel} {target} role="button">
     {@render children()}
@@ -188,7 +190,7 @@
     {@render children()}
   </button>
 {:else}
-  <svelte:element this={tag} {...attributes} class={buttonCls} >
+  <svelte:element this={tag} {...attributes} class={buttonCls}>
     {@render children()}
   </svelte:element>
 {/if}

@@ -5,13 +5,13 @@
   import type TableCtxType from './Table.svelte';
   import type { HTMLTdAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLTdAttributes{
+  interface Props extends HTMLTdAttributes {
     children?: Snippet;
     class?: string | undefined | null;
     colspan?: number;
     onclick?: () => void;
   }
-  
+
   let {
     children,
     class: className,
@@ -21,7 +21,7 @@
   }: Props = $props();
 
   const tableCtx: TableCtxType = getContext('tableCtx');
-  
+
   let color = $state(tableCtx.color ? tableCtx.color : 'default');
 
   let tdCls: string = $state(
@@ -35,22 +35,16 @@
   );
 </script>
 
-<td
-  {...attributes}
-  class={tdCls}
-  colspan={colspan ?? 1}
->
-{#if onclick}
-  <button onclick={onclick}>
-  {#if children}
+<td {...attributes} class={tdCls} colspan={colspan ?? 1}>
+  {#if onclick}
+    <button {onclick}>
+      {#if children}
+        {@render children()}
+      {/if}
+    </button>
+  {:else if children}
     {@render children()}
   {/if}
-  </button>
-{:else}
-  {#if children}
-    {@render children()}
-  {/if}
-{/if}
 </td>
 
 <!--

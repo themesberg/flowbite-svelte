@@ -25,7 +25,7 @@
   import { twMerge, twJoin } from 'tailwind-merge';
   import { setContext } from 'svelte';
 
-  interface Props extends HTMLTableAttributes{
+  interface Props extends HTMLTableAttributes {
     children: Snippet;
     divClass?: string | undefined | null;
     striped?: boolean;

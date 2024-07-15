@@ -4,8 +4,9 @@
   import { twMerge } from 'tailwind-merge';
   import { fade, blur, fly, slide } from 'svelte/transition';
   import { uiHelpers } from '$lib';
-  
-  interface Props {
+  import type { HTMLButtonAttributes } from 'svelte/elements';
+
+  interface Props extends HTMLButtonAttributes {
     children: Snippet;
     arrowup?: Snippet;
     arrowdown?: Snippet;
@@ -131,7 +132,7 @@
   </button>
   {#if isOpen}
     <ul class={ulCls} transition:multiple={transitionParams}>
-        {@render children()}
+      {@render children()}
     </ul>
   {/if}
 </li>

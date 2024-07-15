@@ -33,11 +33,7 @@
 <svelte:element
   this={tag}
   {...attributes}
-  class={twMerge(
-    customSize ? customSize : textSizes[tag],
-    color,
-    classname
-  )}
+  class={twMerge(customSize ? customSize : textSizes[tag], color, classname)}
 >
   {@render children()}
 </svelte:element>

@@ -10,7 +10,14 @@
     div3Class?: string | undefined | null;
     div4Class?: string | undefined | null;
   }
-  let { children, divClass, div2Class, div3Class, div4Class, ...attributes }: Props = $props();
+  let {
+    children,
+    divClass,
+    div2Class,
+    div3Class,
+    div4Class,
+    ...attributes
+  }: Props = $props();
 
   const inner: string = 'rounded-xl overflow-hidden h-[140px] md:h-[262px]';
   const bot: string =
@@ -28,8 +35,8 @@
     {/if}
   </div>
 </div>
-<div class={twMerge(bot, div3Class)} ></div>
-<div class={twMerge(botUnder, div4Class)} ></div>
+<div class={twMerge(bot, div3Class)}></div>
+<div class={twMerge(botUnder, div4Class)}></div>
 
 <!--
 @component

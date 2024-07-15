@@ -26,9 +26,9 @@
 
 <video {...attributes} class={classname}>
   <source {src} {type} />
-    {#if children}
-      {@render children()}
-    {/if}
+  {#if children}
+    {@render children()}
+  {/if}
   <track src={trackSrc} kind="captions" {srclang} {label} />
   Your browser does not support the video tag.
 </video>

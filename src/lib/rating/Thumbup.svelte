@@ -1,7 +1,8 @@
 <script lang="ts">
   import { idGenerator } from '$lib/uiHelpers.svelte';
+  import type { SVGAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends SVGAttributes<SVGSVGElement>{
     fillPercent?: number;
     fillColor?: string | undefined | null;
     strokeColor?: string | undefined | null;
@@ -10,7 +11,6 @@
     id?: string | undefined | null;
     role?: string | undefined | null;
     svgClass?: string | undefined | null;
-    onclick?: () => void;
   }
 
   let {
@@ -22,7 +22,6 @@
     id = idGenerator(),
     role = 'img',
     svgClass,
-    onclick,
     ...attributes
   }: Props = $props();
 </script>
@@ -38,7 +37,6 @@
   stroke-width="1.5"
   stroke="currentColor"
   fill="none"
-  onclick={onclick}
 >
   <defs>
     <linearGradient {id}>

@@ -1,5 +1,15 @@
 <script lang="ts">
-  import { Checkbox, Helper, Label, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, TableBodyRow } from '$lib';
+  import {
+    Checkbox,
+    Helper,
+    Label,
+    Table,
+    TableHead,
+    TableHeadCell,
+    TableBody,
+    TableBodyCell,
+    TableBodyRow
+  } from '$lib';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -42,8 +52,12 @@
     </TableHead>
     <TableBody class="divide-y dark:divide-gray-700">
       <TableBodyRow class="divide-x rtl:divide-x-reverse dark:divide-gray-700">
-        <TableBodyCell><Label for="checkbox1">Default checkbox</Label></TableBodyCell>
-        <TableBodyCell><Label for="checkbox2">Disabled checkbox</Label></TableBodyCell>
+        <TableBodyCell
+          ><Label for="checkbox1">Default checkbox</Label></TableBodyCell
+        >
+        <TableBodyCell
+          ><Label for="checkbox2">Disabled checkbox</Label></TableBodyCell
+        >
       </TableBodyRow>
       <TableBodyRow class="divide-x rtl:divide-x-reverse dark:divide-gray-700">
         <TableBodyCell><Checkbox id="checkbox1" checked /></TableBodyCell>
@@ -51,12 +65,11 @@
       </TableBodyRow>
     </TableBody>
   </Table>
-  
+
   <Label color="red" class="mt-4 flex items-center font-bold italic">
     Label on the other side <Checkbox class="ms-2" />
   </Label>
 </CodeWrapper>
-
 
 <H2>Checkbox with a link</H2>
 <CodeWrapper>
@@ -111,9 +124,11 @@
 <CodeWrapper>
   <p class="mb-4 font-semibold text-gray-900 dark:text-white">Identification</p>
   <ul
-    class="w-full items-center divide-x divide-gray-200 rounded-lg border border-gray-200 dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800 sm:flex rtl:divide-x-reverse"
+    class="w-full items-center divide-x divide-gray-200 rounded-lg border border-gray-200 sm:flex rtl:divide-x-reverse dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800"
   >
-    <li class="w-full"><Checkbox checked groupLabelClass="p-3">Svelte</Checkbox></li>
+    <li class="w-full">
+      <Checkbox checked groupLabelClass="p-3">Svelte</Checkbox>
+    </li>
     <li class="w-full"><Checkbox groupLabelClass="p-3">Vue JS</Checkbox></li>
     <li class="w-full"><Checkbox groupLabelClass="p-3">React</Checkbox></li>
     <li class="w-full"><Checkbox groupLabelClass="p-3">Angular</Checkbox></li>

@@ -204,7 +204,7 @@
     <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">
       Work fast from anywhere
     </h5>
-    <p class="mb-5 text-base text-gray-500 dark:text-gray-400 sm:text-lg">
+    <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">
       Stay up to date and move work forward with Flowbite on iOS & Android.
       Download the app today.
     </p>

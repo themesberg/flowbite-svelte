@@ -105,7 +105,7 @@
 
   <Toast
     color="none"
-    div2class="w-8 h-8 text-pink-500 bg-pink-100 dark:bg-pink-800 dark:text-pink-200"
+    div2Class="w-8 h-8 text-pink-500 bg-pink-100 dark:bg-pink-800 dark:text-pink-200"
   >
     {#snippet icon()}
       <FireOutline class="h-5 w-5" />
@@ -119,7 +119,7 @@
 <CodeWrapper class="flex h-28 flex-col items-center">
   <Toast
     dismissable={false}
-    div3class="flex space-x-4 rtl:space-x-reverse divide-x rtl:divide-x-reverse divide-gray-200 dark:divide-gray-700"
+    div3Class="flex space-x-4 rtl:space-x-reverse divide-x rtl:divide-x-reverse divide-gray-200 dark:divide-gray-700"
   >
     <PaperPlaneOutline
       class="h-5 w-5 rotate-45 text-primary-600 dark:text-primary-500"
@@ -200,7 +200,7 @@
 <H2>Undo button</H2>
 <CodeWrapper class="flex h-[104px] flex-col items-center">
   <Toast
-    div2class="w-full text-sm font-normal flex items-center justify-between"
+    div2Class="w-full text-sm font-normal flex items-center justify-between"
   >
     Conversation archived.
     <a
@@ -216,7 +216,7 @@
 <H2>Advanced examples</H2>
 <H3>Toast message</H3>
 <CodeWrapper class="flex h-[204px] flex-col items-center">
-  <Toast align={false} div2class="w-10 h-10 rounded-full">
+  <Toast align={false} div2Class="w-10 h-10 rounded-full">
     {#snippet icon()}
       <Avatar src="/images/profile-picture-1.webp" />
     {/snippet}

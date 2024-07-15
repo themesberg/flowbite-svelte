@@ -14,8 +14,7 @@
 
   const desc1Cls: string =
     'bg-primary-100 w-8 text-primary-800 text-sm font-semibold inline-flex items-center p-1.5 rounded dark:bg-primary-200 dark:text-primary-800';
-  const desc2Cls: string =
-    'ms-2 font-medium text-gray-900 dark:text-white';
+  const desc2Cls: string = 'ms-2 font-medium text-gray-900 dark:text-white';
   const desc3spanCls: string =
     'w-1 h-1 mx-2 mb-4 bg-gray-900 rounded-full dark:bg-gray-500';
   const desc3pCls: string =
@@ -53,7 +52,7 @@
           </dt>
           <dd class="mb-3 flex items-center">
             <div class="me-2 h-2.5 w-full rounded bg-gray-200 dark:bg-gray-700">
-              <div class={barColor} style="width: {rating * 10}%" ></div>
+              <div class={barColor} style="width: {rating * 10}%"></div>
             </div>
             <span class="text-sm font-medium text-gray-500 dark:text-gray-400"
               >{rating}</span
@@ -72,7 +71,7 @@
           </dt>
           <dd class="mb-3 flex items-center">
             <div class="me-2 h-2.5 w-full rounded bg-gray-200 dark:bg-gray-700">
-              <div class={barColor} style="width: {rating * 10}%" ></div>
+              <div class={barColor} style="width: {rating * 10}%"></div>
             </div>
             <span class="text-sm font-medium text-gray-500 dark:text-gray-400"
               >{rating}</span

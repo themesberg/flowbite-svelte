@@ -23,8 +23,8 @@
 
 <H2>Default Breadcrumb</H2>
 
-<CodeWrapper class='overflow-x-scroll p-2 sm:p-6'>
-  <Breadcrumb class='overflow-x-scroll'>
+<CodeWrapper class="overflow-x-scroll p-2 sm:p-6">
+  <Breadcrumb class="overflow-x-scroll">
     <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
     <BreadcrumbItem href="/">Projects</BreadcrumbItem>
     <BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
@@ -35,8 +35,8 @@
 
 <H2>Solid Breadcrumb</H2>
 
-<CodeWrapper class='overflow-x-scroll p-2 sm:p-6'>
-  <Breadcrumb solid class='overflow-x-scroll'>
+<CodeWrapper class="overflow-x-scroll p-2 sm:p-6">
+  <Breadcrumb solid class="overflow-x-scroll">
     <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
     <BreadcrumbItem href="/">Projects</BreadcrumbItem>
     <BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
@@ -47,8 +47,8 @@
 
 <H2>Icons</H2>
 
-<CodeWrapper class='overflow-x-scroll p-2 sm:p-6'>
-  <Breadcrumb class="bg-gray-50 px-5 py-3 dark:bg-gray-900 overflow-x-scroll">
+<CodeWrapper class="overflow-x-scroll p-2 sm:p-6">
+  <Breadcrumb class="overflow-x-scroll bg-gray-50 px-5 py-3 dark:bg-gray-900">
     <BreadcrumbItem href="/" home>
       {#snippet icon()}
         <HomeOutline class="me-2 h-4 w-4" />

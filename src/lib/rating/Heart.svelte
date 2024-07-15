@@ -1,7 +1,8 @@
 <script lang="ts">
   import { idGenerator } from '$lib/uiHelpers.svelte';
+  import type { SVGAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends SVGAttributes<SVGSVGElement>{
     fillPercent?: number;
     fillColor?: string | undefined | null;
     strokeColor?: string | undefined | null;
@@ -23,7 +24,6 @@
     svgClass,
     ...attributes
   }: Props = $props();
-  
 </script>
 
 <svg

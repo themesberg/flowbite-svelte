@@ -41,7 +41,7 @@
     class: className,
     ...attributes
   }: Props = $props();
-  
+
   active = getContext('active');
 
   const states = {
@@ -71,7 +71,13 @@
     {@render children()}
   </li>
 {:else if href}
-  <a {...attributes} {onclick} {href} class="block {itemClass}" aria-current={current}>
+  <a
+    {...attributes}
+    {onclick}
+    {href}
+    class="block {itemClass}"
+    aria-current={current}
+  >
     {name}
   </a>
 {:else}

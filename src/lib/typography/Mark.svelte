@@ -3,18 +3,18 @@
   import { twMerge } from 'tailwind-merge';
   import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLAttributes<HTMLElement>{
+  interface Props extends HTMLAttributes<HTMLElement> {
     children: Snippet;
     markClass?: string | undefined;
     class?: string | undefined;
   }
 
-  let { 
-    children, 
+  let {
+    children,
     markClass = 'text-white dark:bg-blue-500 bg-blue-600 px-2 rounded',
-    class: className, ...attributes 
+    class: className,
+    ...attributes
   }: Props = $props();
-  
 </script>
 
 <mark {...attributes} class={twMerge(markClass, className)}>

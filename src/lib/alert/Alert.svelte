@@ -94,7 +94,12 @@
 </script>
 
 {#if alertStatus}
-  <div role="alert" {...attributes} transition:transition={params} class={divCls}>
+  <div
+    role="alert"
+    {...attributes}
+    transition:transition={params}
+    class={divCls}
+  >
     {#if icon}
       {@render icon()}
     {/if}
@@ -124,7 +129,7 @@
         </button>
       {:else}
         <CloseButton
-          class="ms-auto -me-1.5 -my-1.5 dark:hover:bg-gray-700"
+          class="-my-1.5 -me-1.5 ms-auto dark:hover:bg-gray-700"
           {color}
           ariaLabel="Remove badge"
           onclick={() => {

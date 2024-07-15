@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
+  import type { HTMLAttributes } from 'svelte/elements';
 
   type ReviewType = {
     name?: string | undefined | null;
@@ -15,17 +16,19 @@
     item3?: string | undefined;
   };
 
-  interface Props {
+  interface Props extends HTMLAttributes<HTMLElement>{
     children: Snippet;
     address?: any;
     item1?: any;
     item2?: any;
     item3?: any;
     review?: ReviewType;
-    articleclass?: string | undefined | null;
+    articleClass?: string | undefined | null;
     divClass?: string | undefined | null;
-    imgclass?: string | undefined | null;
-    ulclass?: string | undefined | null;
+    div2Class?: string | undefined | null;
+    div3Class?: string | undefined | null;
+    imgClass?: string | undefined | null;
+    ulClass?: string | undefined | null;
     liClass?: string | undefined | null;
   }
 
@@ -36,36 +39,30 @@
     item2,
     item3,
     review,
-    articleclass,
-    divClass,
-    imgclass,
-    ulclass,
-    liClass
+    articleClass = 'md:grid md:grid-cols-3 md:gap-8',
+    divClass = 'mb-6 flex items-center space-x-4 rtl:space-x-reverse',
+    div2Class = 'space-y-1 font-medium dark:text-white',
+    div3Class = 'flex items-center text-sm text-gray-500 dark:text-gray-400',
+    imgClass = 'h-10 w-10 rounded-full',
+    ulClass = 'space-y-4 text-sm text-gray-500 dark:text-gray-400',
+    liClass = 'flex items-center'
   }: Props = $props();
-  
 </script>
 
 {#if review}
-  <article class={twMerge('md:grid md:grid-cols-3 md:gap-8', articleclass)}>
+  <article class={articleClass}>
     <div>
-      <div
-        class={twMerge(
-          'mb-6 flex items-center space-x-4 rtl:space-x-reverse',
-          divClass
-        )}
-      >
+      <div class={divClass}>
         <img
-          class={twMerge('h-10 w-10 rounded-full', imgclass)}
+          class={imgClass}
           src={review.imgSrc}
           alt={review.imgAlt}
         />
-        <div class="space-y-1 font-medium dark:text-white">
+        <div class={div2Class}>
           <p>{review.name}</p>
           {#if review.address}
             {#if address}
-              <div
-                class="flex items-center text-sm text-gray-500 dark:text-gray-400"
-              >
+              <div class={div3Class}>
                 {@render address()}
               </div>
             {/if}
@@ -73,19 +70,14 @@
         </div>
       </div>
       {#if review.item1 || review.item2 || review.item3}
-        <ul
-          class={twMerge(
-            'space-y-4 text-sm text-gray-500 dark:text-gray-400',
-            ulclass
-          )}
-        >
+        <ul class={ulClass}>
           {#if review.item1}
             <li class={twMerge(liClass)}>
               {@render item1()}
             </li>
           {/if}
           {#if review.item2}
-            <li class={twMerge('flex items-center', liClass)}>
+            <li class={liClass}>
               {@render item2()}
             </li>
           {/if}
@@ -118,7 +110,7 @@
           {review.rating}
         </p>
       </div>
-        {@render children()}
+      {@render children()}
     </div>
   </article>
 {/if}
@@ -133,9 +125,9 @@
 @prop item2
 @prop item3
 @prop review
-@prop articleclass
+@prop articleClass
 @prop divClass
-@prop imgclass
-@prop ulclass
+@prop imgClass
+@prop ulClass
 @prop liClass
 -->

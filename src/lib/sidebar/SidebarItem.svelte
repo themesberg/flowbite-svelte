@@ -4,37 +4,32 @@
   import type { SidebarType } from '$lib/types';
   import { page } from '$app/stores';
   import { twMerge } from 'tailwind-merge';
+  import type { HTMLAnchorAttributes } from 'svelte/elements';
 
-  interface Props {
+  interface Props extends HTMLAnchorAttributes{
     iconSlot?: Snippet;
     subtext?: Snippet;
-    onclick?: () => void;
-    href?: string ;
-    target?: string ;
-    label?: string ;
-    spanClass?: string ;
-    activeClass?: string ;
-    nonActiveClass?: string ;
-    aclass?: string | undefined | null;
+    label?: string;
+    spanClass?: string;
+    activeClass?: string;
+    nonActiveClass?: string;
+    aClass?: string | undefined | null;
   }
 
   let {
     iconSlot,
     subtext,
-    onclick,
     href,
-    target,
     label,
-    spanClass,
+    spanClass = 'ms-3',
     activeClass,
     nonActiveClass,
-    aclass,
+    aClass,
     ...attributes
   }: Props = $props();
-  
+
   const context = getContext<SidebarType>('sidebarContext') ?? {};
   let currentUrl = $state();
-  let spanCls: string = twMerge('ms-3', spanClass);
 
   $effect(() => {
     currentUrl = $page.url.pathname;
@@ -42,18 +37,22 @@
 
   let aCls = $derived(
     currentUrl === href
-      ? activeClass ?? context.activeClass
-      : nonActiveClass ?? context.nonActiveClass
+      ? (activeClass ?? context.activeClass)
+      : (nonActiveClass ?? context.nonActiveClass)
   );
-  // $inspect('aCls', aCls)
 </script>
 
 <li>
-  <a {...attributes} {onclick} {href} {target} aria-current={currentUrl === href} class={twMerge(aCls, aclass)}>
+  <a
+    {...attributes}
+    {href}
+    aria-current={currentUrl === href}
+    class={twMerge(aCls, aClass)}
+  >
     {#if iconSlot}
       {@render iconSlot()}
     {/if}
-    <span class={spanCls}>{label}</span>
+    <span class={spanClass}>{label}</span>
     {#if subtext}
       {@render subtext()}
     {/if}

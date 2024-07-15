@@ -27,7 +27,7 @@
     class: className,
     ...attributes
   }: Props = $props();
-  
+
   const bgColor = 'bg-white dark:bg-gray-800';
   const textColor = 'text-gray-500 dark:text-gray-400';
   const borderColor =
@@ -39,11 +39,7 @@
     border && 'border',
     borderColor
   );
-  const defaultCls: string = twMerge(
-    defaultClass,
-    divClass,
-    className
-  );
+  const defaultCls: string = twMerge(defaultClass, divClass, className);
   let tag = active ? 'div' : 'ul';
   setContext('active', active);
 </script>
@@ -52,21 +48,13 @@
   {#if items}
     {#each items as item}
       {#if typeof item === 'string'}
-        <ListgroupItem {active} {onclick}
-          >{item}</ListgroupItem
-        >
+        <ListgroupItem {active} {onclick}>{item}</ListgroupItem>
       {:else}
-        <ListgroupItem
-          {active}
-          {...item}
-          {onclick}>{item}</ListgroupItem
-        >
+        <ListgroupItem {active} {...item} {onclick}>{item}</ListgroupItem>
       {/if}
     {/each}
-  {:else}
-    {#if children}
-      {@render children()}
-    {/if}
+  {:else if children}
+    {@render children()}
   {/if}
 </svelte:element>
 

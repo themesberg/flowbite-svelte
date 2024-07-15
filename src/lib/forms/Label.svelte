@@ -33,14 +33,13 @@
   );
 </script>
 
-
-  {#if show}
-    <label {...attributes} class={labelCls}>
-      {@render children()}
-    </label>
-  {:else}
+{#if show}
+  <label {...attributes} class={labelCls}>
     {@render children()}
-  {/if}
+  </label>
+{:else}
+  {@render children()}
+{/if}
 
 <!--
 @component

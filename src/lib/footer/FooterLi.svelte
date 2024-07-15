@@ -10,8 +10,7 @@
     href?: string | undefined;
   }
 
-  let { children, liClass, aClass, href, ...attributes }: Props =
-    $props();
+  let { children, liClass, aClass, href, ...attributes }: Props = $props();
 
   let liCls: string = twMerge('me-4 last:me-0 md:me-6', liClass);
   let aCls: string = twMerge('hover:underline', aClass);

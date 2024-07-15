@@ -3,7 +3,10 @@
   import { twMerge } from 'tailwind-merge';
   import Button from './Button.svelte';
   import { getContext } from 'svelte';
-  import type { HTMLButtonAttributes, HTMLAnchorAttributes } from 'svelte/elements';
+  import type {
+    HTMLButtonAttributes,
+    HTMLAnchorAttributes
+  } from 'svelte/elements';
 
   interface Props {
     children: Snippet;
@@ -101,22 +104,43 @@
       ? (pill && 'first:rounded-s-full last:rounded-e-full') ||
           'first:rounded-s-lg last:rounded-e-lg'
       : (pill && 'rounded-full') || 'rounded-lg',
-      className
+    className
   );
 </script>
-
 
 {#if outline}
   <div class={divClass}>
     <!-- Trick to prentend outline without using border
       This has a limitation of no supporting transparency as
       is set to bg-white dark:bg-gray-900 -->
-    <Button {...attributes} color="none" class={gradientOutlineClass} {onclick} {disabled} {name} {type} {href} {target} {rel} >
+    <Button
+      {...attributes}
+      color="none"
+      class={gradientOutlineClass}
+      {onclick}
+      {disabled}
+      {name}
+      {type}
+      {href}
+      {target}
+      {rel}
+    >
       {@render children()}
     </Button>
   </div>
 {:else}
-  <Button {...attributes} color="none" class={divClass} {onclick} {disabled} {name} {type} {href} {target} {rel}>
+  <Button
+    {...attributes}
+    color="none"
+    class={divClass}
+    {onclick}
+    {disabled}
+    {name}
+    {type}
+    {href}
+    {target}
+    {rel}
+  >
     {@render children()}
   </Button>
 {/if}

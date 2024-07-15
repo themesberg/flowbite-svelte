@@ -9,8 +9,8 @@
   import { twMerge } from 'tailwind-merge';
   import { getContext, type Snippet } from 'svelte';
   import type { HTMLInputAttributes } from 'svelte/elements';
-  
-  interface Props extends HTMLInputAttributes{
+
+  interface Props extends HTMLInputAttributes {
     children?: Snippet;
     left?: Snippet;
     right?: Snippet;
@@ -25,7 +25,7 @@
     show?: boolean;
   }
 
-  let { 
+  let {
     children,
     left,
     right,
@@ -34,12 +34,12 @@
     defaultClass = 'block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right',
     color = 'base',
     floatClass = 'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400',
-    class:className,
+    class: className,
     classLeft,
     classRight,
     show = false,
     ...attributes
-   }: Props = $props();
+  }: Props = $props();
 
   const borderClasses = {
     base: 'border border-gray-300 dark:border-gray-600',
@@ -50,14 +50,17 @@
 
   const ringClasses = {
     base: 'focus:border-primary-500 focus:ring-primary-500 dark:focus:border-primary-500 dark:focus:ring-primary-500',
-    green: 'focus:ring-green-500 focus:border-green-500 dark:focus:border-green-500 dark:focus:ring-green-500',
+    green:
+      'focus:ring-green-500 focus:border-green-500 dark:focus:border-green-500 dark:focus:ring-green-500',
     red: 'focus:ring-red-500 focus:border-red-500 dark:focus:ring-red-500 dark:focus:border-red-500'
   };
 
   const colorClasses = {
     base: 'bg-gray-50 text-gray-900 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400',
-    tinted: 'bg-gray-50 text-gray-900 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400',
-    green: 'bg-green-50 text-green-900 placeholder-green-700 dark:text-green-400 dark:placeholder-green-500 dark:bg-gray-700',
+    tinted:
+      'bg-gray-50 text-gray-900 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400',
+    green:
+      'bg-green-50 text-green-900 placeholder-green-700 dark:text-green-400 dark:placeholder-green-500 dark:bg-gray-700',
     red: 'bg-red-50 text-red-900 placeholder-red-700 dark:text-red-500 dark:placeholder-red-500 dark:bg-gray-700'
   };
 
@@ -74,16 +77,35 @@
 
   let _size = inputSize || clampSize(group?.size) || 'md';
   const _color = $derived(color === 'base' && background ? 'tinted' : color);
-  let inputClass = $derived(twMerge(defaultClass, inputPadding[_size], (left && leftPadding[_size]) || (right && rightPadding[_size]), ringClasses[color], colorClasses[_color], borderClasses[_color], textSizes[_size], group ? '': 'rounded-lg', group && 'first:rounded-s-lg last:rounded-e-lg', group && '[&:not(:first-child)]:-ms-px',  className));
+  let inputClass = $derived(
+    twMerge(
+      defaultClass,
+      inputPadding[_size],
+      (left && leftPadding[_size]) || (right && rightPadding[_size]),
+      ringClasses[color],
+      colorClasses[_color],
+      borderClasses[_color],
+      textSizes[_size],
+      group ? '' : 'rounded-lg',
+      group && 'first:rounded-s-lg last:rounded-e-lg',
+      group && '[&:not(:first-child)]:-ms-px',
+      className
+    )
+  );
 </script>
 
 <div class="relative w-full">
   {#if left}
-    <div class="{twMerge(floatClass, classLeft)} start-0 ps-2.5 pointer-events-none">
+    <div
+      class="{twMerge(
+        floatClass,
+        classLeft
+      )} pointer-events-none start-0 ps-2.5"
+    >
       {@render left()}
     </div>
   {/if}
-    <input {...attributes} bind:value class={inputClass} />
+  <input {...attributes} bind:value class={inputClass} />
   {#if children}
     {@render children()}
   {/if}

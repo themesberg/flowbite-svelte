@@ -10,7 +10,12 @@
     class?: string | undefined;
   }
 
-  let { children, size = 'md', class: divClass, ...attributes }: Props = $props();
+  let {
+    children,
+    size = 'md',
+    class: divClass,
+    ...attributes
+  }: Props = $props();
 
   // export let size: SizeType = 'md';
   const divCls: string = 'inline-flex rounded-lg shadow-sm';
@@ -19,9 +24,7 @@
 </script>
 
 <div {...attributes} class={twMerge(divCls, divClass)} role="group">
-
   {@render children()}
-
 </div>
 
 <!--

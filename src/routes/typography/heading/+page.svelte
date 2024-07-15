@@ -1,6 +1,20 @@
 <script lang="ts">
-  import { Heading, Button, P, A, Span, Mark, Breadcrumb, BreadcrumbItem, Badge, Secondary } from '$lib';
-  import { ArrowRightOutline, ChevronRightOutline } from 'flowbite-svelte-icons';
+  import {
+    Heading,
+    Button,
+    P,
+    A,
+    Span,
+    Mark,
+    Breadcrumb,
+    BreadcrumbItem,
+    Badge,
+    Secondary
+  } from '$lib';
+  import {
+    ArrowRightOutline,
+    ChevronRightOutline
+  } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -28,7 +42,7 @@
       class="mb-4 text-4xl font-extrabold  md:text-5xl lg:text-6xl"
       >We invest in the world’s potential</Heading
     >
-    <P class="mb-6 text-lg lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400"
+    <P class="mb-6 text-lg sm:px-16 lg:text-xl xl:px-48 dark:text-gray-400"
       >Here at Flowbite we focus on markets where technology, innovation, and
       capital can unlock long-term value and drive economic growth.</P
     >
@@ -112,9 +126,16 @@
 <H2>Heading underline</H2>
 <CodeWrapper>
   <Heading tag="h1" class="mb-4">
-    We invest in the <Span underline decorationClass="decoration-8 decoration-blue-400 dark:decoration-blue-600">world’s potential</Span>
+    We invest in the <Span
+      underline
+      decorationClass="decoration-8 decoration-blue-400 dark:decoration-blue-600"
+      >world’s potential</Span
+    >
   </Heading>
-  <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>  
+  <P
+    >Here at Flowbite we focus on markets where technology, innovation, and
+    capital can unlock long-term value and drive economic growth.</P
+  >
 </CodeWrapper>
 
 <H2>Breadcrumb context</H2>
@@ -130,7 +151,7 @@
 <H2>Badge context</H2>
 <CodeWrapper>
   <Heading tag="h1" class="flex items-center text-5xl">
-    Flowbite <Badge class="text-2xl font-semibold ms-2">PRO</Badge>
+    Flowbite <Badge class="ms-2 text-2xl font-semibold">PRO</Badge>
   </Heading>
 </CodeWrapper>
 
@@ -157,21 +178,17 @@
   <Heading tag="h3">Heading 3</Heading>
 </CodeWrapper>
 
-
 <H3>Heading four (H4)</H3>
 <CodeWrapper>
   <Heading tag="h4">Heading 4</Heading>
 </CodeWrapper>
-
 
 <H3>Heading five (H5)</H3>
 <CodeWrapper>
   <Heading tag="h5">Heading 5</Heading>
 </CodeWrapper>
 
-
 <H3>Heading six (H6)</H3>
 <CodeWrapper>
   <Heading tag="h6">Heading 6</Heading>
 </CodeWrapper>
-

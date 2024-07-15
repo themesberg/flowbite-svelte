@@ -4,7 +4,9 @@
   import type { TabCtxType } from './Tabs.svelte';
   import { writable } from 'svelte/store';
   import { twMerge } from 'tailwind-merge';
-  interface Props {
+  import type { HTMLLiAttributes } from 'svelte/elements';
+
+  interface Props extends HTMLLiAttributes{
     children?: Snippet;
     titleSlot?: Snippet;
     open?: boolean;
@@ -16,9 +18,23 @@
     disabled?: boolean;
   }
 
-  let { children, titleSlot, open = false, title = 'Tab title', activeClasses, inactiveClasses, defaultClass, class: className, disabled, ...attributes }: Props = $props();
-  
-  let defaultCls: string = twMerge('inline-block text-sm font-medium text-center disabled:cursor-not-allowed', defaultClass);
+  let {
+    children,
+    titleSlot,
+    open = false,
+    title = 'Tab title',
+    activeClasses,
+    inactiveClasses,
+    defaultClass,
+    class: className,
+    disabled,
+    ...attributes
+  }: Props = $props();
+
+  let defaultCls: string = twMerge(
+    'inline-block text-sm font-medium text-center disabled:cursor-not-allowed',
+    defaultClass
+  );
 
   const ctx = getContext<TabCtxType>('ctx') ?? {};
   const selected = ctx.selected ?? writable<HTMLElement>();
@@ -34,19 +50,26 @@
 
     return { destroy };
   }
-  let buttonClass = $state('')
+  let buttonClass = $state('');
   $effect(() => {
     buttonClass = twMerge(
       defaultCls,
-      open ? activeClasses ?? ctx.activeClasses : inactiveClasses ?? ctx.inactiveClasses,
+      open
+        ? (activeClasses ?? ctx.activeClasses)
+        : (inactiveClasses ?? ctx.inactiveClasses),
       open && 'active'
     );
-  })
- 
+  });
 </script>
 
-<li class={twMerge('group', className)} role="presentation" >
-  <button type="button" onclick={() => (open = true)} role="tab" {disabled} class={buttonClass}>
+<li class={twMerge('group', className)} role="presentation" {...attributes}>
+  <button
+    type="button"
+    onclick={() => (open = true)}
+    role="tab"
+    {disabled}
+    class={buttonClass}
+  >
     {#if titleSlot}
       {@render titleSlot()}
     {:else}
@@ -55,7 +78,7 @@
   </button>
 
   {#if open && children}
-    <div class="hidden tab_content_placeholder">
+    <div class="tab_content_placeholder hidden">
       <div use:init>
         {@render children()}
       </div>

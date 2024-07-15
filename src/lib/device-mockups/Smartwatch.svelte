@@ -36,17 +36,17 @@
 </script>
 
 <div {...attributes}>
-<div class={twMerge(div, divClass)}></div>
-<div class={twMerge(top, div2Class)}>
-  <div class={twMerge(rightTop, div3Class)}></div>
-  <div class={twMerge(rightBot, div4Class)}></div>
-  <div class={twMerge(slot, div5Class)}>
-    {#if children}
-      {@render children()}
-    {/if}
+  <div class={twMerge(div, divClass)}></div>
+  <div class={twMerge(top, div2Class)}>
+    <div class={twMerge(rightTop, div3Class)}></div>
+    <div class={twMerge(rightBot, div4Class)}></div>
+    <div class={twMerge(slot, div5Class)}>
+      {#if children}
+        {@render children()}
+      {/if}
+    </div>
   </div>
-</div>
-<div class={twMerge(bot, div6Class)}></div>
+  <div class={twMerge(bot, div6Class)}></div>
 </div>
 
 <!--

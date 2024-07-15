@@ -56,7 +56,24 @@
 
   setContext('background', true);
 
-  let { children, href, tag = href ? 'a' : 'div', color = 'default', rounded, border, shadow, class: className, node, use, options, role, transition, params, open, ...attributes }: Props = $props();
+  let {
+    children,
+    href,
+    tag = href ? 'a' : 'div',
+    color = 'default',
+    rounded,
+    border,
+    shadow,
+    class: className,
+    node,
+    use,
+    options,
+    role,
+    transition,
+    params,
+    open,
+    ...attributes
+  }: Props = $props();
 
   let frameColor = $state(color ?? 'default'); // for cases when undefined
   setContext('color', frameColor);
@@ -85,33 +102,64 @@
   const borderColors = {
     gray: 'border-gray-300 dark:border-gray-800 divide-gray-300 dark:divide-gray-800',
     red: 'border-red-300 dark:border-red-800 divide-red-300 dark:divide-red-800',
-    yellow: 'border-yellow-300 dark:border-yellow-800 divide-yellow-300 dark:divide-yellow-800',
-    green: 'border-green-300 dark:border-green-800 divide-green-300 dark:divide-green-800',
-    indigo: 'border-indigo-300 dark:border-indigo-800 divide-indigo-300 dark:divide-indigo-800',
-    purple: 'border-purple-300 dark:border-purple-800 divide-purple-300 dark:divide-purple-800',
+    yellow:
+      'border-yellow-300 dark:border-yellow-800 divide-yellow-300 dark:divide-yellow-800',
+    green:
+      'border-green-300 dark:border-green-800 divide-green-300 dark:divide-green-800',
+    indigo:
+      'border-indigo-300 dark:border-indigo-800 divide-indigo-300 dark:divide-indigo-800',
+    purple:
+      'border-purple-300 dark:border-purple-800 divide-purple-300 dark:divide-purple-800',
     pink: 'border-pink-300 dark:border-pink-800 divide-pink-300 dark:divide-pink-800',
     blue: 'border-blue-300 dark:border-blue-800 divide-blue-300 dark:divide-blue-800',
     light: 'border-gray-500 divide-gray-500',
     dark: 'border-gray-500 divide-gray-500',
-    default: 'border-gray-200 dark:border-gray-700 divide-gray-200 dark:divide-gray-700',
-    dropdown: 'border-gray-100 dark:border-gray-600 divide-gray-100 dark:divide-gray-600',
-    navbar: 'border-gray-100 dark:border-gray-700 divide-gray-100 dark:divide-gray-700',
-    navbarUl: 'border-gray-100 dark:border-gray-700 divide-gray-100 dark:divide-gray-700',
+    default:
+      'border-gray-200 dark:border-gray-700 divide-gray-200 dark:divide-gray-700',
+    dropdown:
+      'border-gray-100 dark:border-gray-600 divide-gray-100 dark:divide-gray-600',
+    navbar:
+      'border-gray-100 dark:border-gray-700 divide-gray-100 dark:divide-gray-700',
+    navbarUl:
+      'border-gray-100 dark:border-gray-700 divide-gray-100 dark:divide-gray-700',
     form: 'border-gray-300 dark:border-gray-700 divide-gray-300 dark:divide-gray-700',
-    primary: 'border-primary-500 dark:border-primary-200  divide-primary-500 dark:divide-primary-200 ',
-    orange: 'border-orange-300 dark:border-orange-800 divide-orange-300 dark:divide-orange-800',
+    primary:
+      'border-primary-500 dark:border-primary-200  divide-primary-500 dark:divide-primary-200 ',
+    orange:
+      'border-orange-300 dark:border-orange-800 divide-orange-300 dark:divide-orange-800',
     none: ''
   };
 
-  let divClass: string = twMerge(bgColors[color], textColors[color], rounded && 'rounded-lg', border && 'border', borderColors[color], shadow && 'shadow-md', className);
+  let divClass: string = twMerge(
+    bgColors[color],
+    textColors[color],
+    rounded && 'rounded-lg',
+    border && 'border',
+    borderColors[color],
+    shadow && 'shadow-md',
+    className
+  );
 </script>
 
 {#if transition && open}
-  <svelte:element this={tag} transition:transition={params} bind:this={node} {role} {...attributes} class={divClass} >
+  <svelte:element
+    this={tag}
+    transition:transition={params}
+    bind:this={node}
+    {role}
+    {...attributes}
+    class={divClass}
+  >
     {@render children()}
   </svelte:element>
 {:else if open}
-  <svelte:element this={tag} bind:this={node} {role} {...attributes} class={divClass}>
+  <svelte:element
+    this={tag}
+    bind:this={node}
+    {role}
+    {...attributes}
+    class={divClass}
+  >
     {@render children()}
   </svelte:element>
 {/if}

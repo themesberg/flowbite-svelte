@@ -85,7 +85,7 @@
   {#if header}
     {@render header()}
   {/if}
-  
+
   <div class={innerCls}>
     {@render children()}
   </div>

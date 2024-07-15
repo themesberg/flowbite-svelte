@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { HTMLAnchorAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLAnchorAttributes{
+  interface Props extends HTMLAnchorAttributes {
     spanClass?: string | undefined;
     aClass?: string | undefined;
     href?: string | undefined;

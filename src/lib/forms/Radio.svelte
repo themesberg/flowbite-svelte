@@ -47,7 +47,7 @@
   import Label from './Label.svelte';
   import type { HTMLInputAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLInputAttributes{
+  interface Props extends HTMLInputAttributes {
     children: Snippet;
     aria_describedby?: string | undefined | null;
     labelClass?: string | undefined;
@@ -70,7 +70,6 @@
     ...attributes
   }: Props = $props();
 
-
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
 </script>
@@ -84,7 +83,7 @@
     {...attributes}
     class={inputCls(custom, color, false, background, inputClass)}
   />
-    {@render children()}
+  {@render children()}
 </Label>
 
 <!--

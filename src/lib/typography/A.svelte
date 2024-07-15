@@ -3,7 +3,7 @@
   import { twMerge } from 'tailwind-merge';
   import type { HTMLAnchorAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLAnchorAttributes{
+  interface Props extends HTMLAnchorAttributes {
     children: Snippet;
     class?: string | undefined | null;
   }
@@ -15,7 +15,7 @@
 </script>
 
 <a {...attributes} class={twMerge(aCls, colorCls, aClass)}>
-    {@render children()}
+  {@render children()}
 </a>
 
 <!--

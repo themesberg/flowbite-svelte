@@ -121,7 +121,7 @@
       </NavUl>
     </Navbar>
     <div style="height:300px;" class="overflow-scroll px-8 py-24">
-      <Skeleton class="mt-16 mb-8" />
+      <Skeleton class="mb-8 mt-16" />
       <ImagePlaceholder class="my-8" />
       <TextPlaceholder class="my-8" />
     </div>

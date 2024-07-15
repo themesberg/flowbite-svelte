@@ -3,7 +3,7 @@
   import { twMerge } from 'tailwind-merge';
   import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLAttributes<HTMLSpanElement>{
+  interface Props extends HTMLAttributes<HTMLSpanElement> {
     children: Snippet;
     italic?: boolean;
     underline?: boolean;
@@ -45,9 +45,7 @@
 </script>
 
 <span {...attributes} class={classSpan}>
-
-    {@render children()}
-
+  {@render children()}
 </span>
 
 <!--

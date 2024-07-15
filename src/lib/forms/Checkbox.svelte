@@ -6,7 +6,7 @@
   import Label from './Label.svelte';
   import type { HTMLInputAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLInputAttributes{
+  interface Props extends HTMLInputAttributes {
     children?: Snippet;
     aria_describedby?: string | undefined | null;
     color?: FormColorType;
@@ -45,7 +45,11 @@
     aria-describedby={aria_describedby}
     {indeterminate}
     {...attributes}
-    class={twMerge(spacing, inputCls(custom, color, true, false, groupInputClass), className)}
+    class={twMerge(
+      spacing,
+      inputCls(custom, color, true, false, groupInputClass),
+      className
+    )}
   />
   {#if children}
     {@render children()}

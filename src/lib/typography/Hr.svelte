@@ -3,7 +3,7 @@
   import { twMerge } from 'tailwind-merge';
   import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLAttributes<HTMLElement>{
+  interface Props extends HTMLAttributes<HTMLElement> {
     children?: Snippet;
     icon?: boolean;
     divClass?: string | undefined;
@@ -13,7 +13,14 @@
     innerDivClass?: string | undefined;
   }
 
-  let { children, icon, divClass, hrClass, innerDivClass, ...attributes }: Props = $props();
+  let {
+    children,
+    icon,
+    divClass,
+    hrClass,
+    innerDivClass,
+    ...attributes
+  }: Props = $props();
 
   let horizontalCls: string = twMerge(
     'h-px my-8 bg-gray-200 border-0 dark:bg-gray-700',

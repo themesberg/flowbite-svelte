@@ -80,7 +80,11 @@
 <H2>Paragraph link</H2>
 <CodeWrapper>
   <P weight="light" color="text-gray-500 dark:text-gray-400">
-    Track work across the enterprise through an open, collaborative platform. <A href="/">Link issues across Jira</A> and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.
+    Track work across the enterprise through an open, collaborative platform. <A
+      href="/">Link issues across Jira</A
+    > and ingest data from other software development tools, so your IT support and
+    operations teams have richer contextual information to rapidly respond to requests,
+    incidents, and changes.
   </P>
 </CodeWrapper>
 
@@ -132,11 +136,7 @@
     incidents, and changes.
   </P>
 
-  <P
-    italic
-    class="mb-3"
-    weight="light"
-    color="text-gray-500 dark:text-gray-400"
+  <P italic class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400"
     >Track work across the enterprise through an open, collaborative platform.
     Link issues across Jira and ingest data from other software development
     tools, so your IT support and operations teams have richer contextual
@@ -207,7 +207,7 @@
     tools, so your IT support and operations teams have richer contextual
     information to rapidly respond to requests, incidents, and changes.</P
   >
-  <Layout class="gap-6 grid-cols-1 sm:grid-cols-3">
+  <Layout class="grid-cols-1 gap-6 sm:grid-cols-3">
     <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400"
       >Track work across the enterprise through an open, collaborative platform.
       Link issues across Jira and ingest data from other software development
@@ -246,7 +246,7 @@
     tools, so your IT support and operations teams have richer contextual
     information to rapidly respond to requests, incidents, and changes.</P
   >
-  <Layout class="gap-6 grid-cols-1 sm:grid-cols-3">
+  <Layout class="grid-cols-1 gap-6 sm:grid-cols-3">
     <div class="col-span-2">
       <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400"
         >Track work across the enterprise through an open, collaborative

@@ -2,7 +2,7 @@
   import { twMerge } from 'tailwind-merge';
   interface Props {
     size?: keyof Sizes;
-    class ?: string | undefined;
+    class?: string | undefined;
   }
 
   interface Sizes {
@@ -17,11 +17,11 @@
     xxl: 'max-w-2xl'
   };
 
-  let { size = 'sm', class:divClass  }: Props = $props();
+  let { size = 'sm', class: divClass }: Props = $props();
   let outDivcls = twMerge(
     sizes[size],
     'flex justify-center items-center h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700',
-    divClass 
+    divClass
   );
 </script>
 

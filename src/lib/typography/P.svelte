@@ -4,7 +4,7 @@
   import type { PsizeType, PweightType, SpaceType } from '../types';
   import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLAttributes<HTMLParagraphElement>{
+  interface Props extends HTMLAttributes<HTMLParagraphElement> {
     children: Snippet;
     color?: string | undefined;
     class?: string | undefined;
@@ -94,25 +94,29 @@
     prewrap: 'whitespace-pre-wrap'
   };
 
-  let colorAndopacity = $derived(color
-    .split(' ')
-    .map((element) => element.trim())
-    .map((element) => element + '/' + String(opacity))
-    .join(' '));
+  let colorAndopacity = $derived(
+    color
+      .split(' ')
+      .map((element) => element.trim())
+      .map((element) => element + '/' + String(opacity))
+      .join(' ')
+  );
 
-  let classP = $derived(twMerge(
-    size && sizes[size],
-    (opacity && colorAndopacity) || (color && color),
-    height && heights[height],
-    weight && weights[weight],
-    space && spaces[space],
-    align && aligns[align],
-    justify && 'text-justify',
-    italic && 'italic',
-    firstupper && upperClass,
-    whitespace && whitespaces[whitespace],
-    className
-  ));
+  let classP = $derived(
+    twMerge(
+      size && sizes[size],
+      (opacity && colorAndopacity) || (color && color),
+      height && heights[height],
+      weight && weights[weight],
+      space && spaces[space],
+      align && aligns[align],
+      justify && 'text-justify',
+      italic && 'italic',
+      firstupper && upperClass,
+      whitespace && whitespaces[whitespace],
+      className
+    )
+  );
 </script>
 
 <p {...attributes} class={classP}>

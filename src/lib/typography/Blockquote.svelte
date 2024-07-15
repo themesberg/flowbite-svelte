@@ -4,7 +4,7 @@
   import type { BlockQuoteType } from '../types';
   import type { HTMLBlockquoteAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLBlockquoteAttributes{
+  interface Props extends HTMLBlockquoteAttributes {
     children: Snippet;
     border?: boolean;
     italic?: boolean;
@@ -75,9 +75,7 @@
     classname
   )}
 >
- 
-    {@render children()}
-
+  {@render children()}
 </blockquote>
 
 <!--

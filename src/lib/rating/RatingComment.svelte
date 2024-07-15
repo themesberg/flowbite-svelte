@@ -56,7 +56,9 @@
   <div class="mb-1 flex items-center">
     <Rating total={comment.total} rating={comment.rating}>
       {#snippet text()}
-        <p class="ms-2 pt-4 text-sm font-medium text-gray-500 dark:text-gray-400">
+        <p
+          class="ms-2 pt-4 text-sm font-medium text-gray-500 dark:text-gray-400"
+        >
           {comment.rating} out of {comment.total}
         </p>
       {/snippet}
@@ -72,9 +74,9 @@
       <p>Reviewed in {comment.address} on {comment.datetime}</p>
     </footer>
   {/if}
- 
-    {@render children()}
-  
+
+  {@render children()}
+
   <aside>
     <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
       {#if evaluation}
@@ -83,7 +85,7 @@
     </p>
     {#if helpfullink || abuselink}
       <div
-        class="mt-3 flex items-center space-x-3 divide-x divide-gray-200 dark:divide-gray-600 rtl:space-x-reverse rtl:divide-x-reverse"
+        class="mt-3 flex items-center space-x-3 divide-x divide-gray-200 rtl:space-x-reverse rtl:divide-x-reverse dark:divide-gray-600"
       >
         {#if helpfullink}
           <Button size="xs" href="/" color="dark">Helpful</Button>

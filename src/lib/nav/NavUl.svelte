@@ -5,11 +5,11 @@
   import type { navbarType } from '$lib/types';
   import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLAttributes<HTMLUListElement>{
+  interface Props extends HTMLAttributes<HTMLUListElement> {
     children: Snippet;
     class?: string | undefined;
   }
-  let { children, class:ulclass, ...attributes }: Props = $props();
+  let { children, class: ulclass, ...attributes }: Props = $props();
 
   let breakPoint: navbarType['breakPoint'];
   const context = getContext<navbarType>('navbarContext');

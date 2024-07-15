@@ -1,10 +1,19 @@
 import { ANALYTICS_ID_RUNES_LIB } from '$env/static/private';
 import type { MetaProps } from 'runes-meta-tags';
-import { splitAndCapitalize, removeHyphensAndCapitalize } from './utils/helpers';
+import {
+  splitAndCapitalize,
+  removeHyphensAndCapitalize
+} from './utils/helpers';
 export const load = ({ url }) => {
-  const title = splitAndCapitalize(url.pathname) ? `${splitAndCapitalize(url.pathname)} - ${removeHyphensAndCapitalize(__NAME__)}` : `${removeHyphensAndCapitalize(__NAME__)}`;
-  const description = splitAndCapitalize(url.pathname) ? `${splitAndCapitalize(url.pathname)} component for Svelte 5 Runes.` : 'A UI library for Svelte 5 Runes.';
-  const image = splitAndCapitalize(url.pathname) ? `https://open-graph-vercel.vercel.app/api/svelte-5-ui-lib?title=${splitAndCapitalize(url.pathname)}` : 'https://open-graph-vercel.vercel.app/api/svelte-5-ui-lib';
+  const title = splitAndCapitalize(url.pathname)
+    ? `${splitAndCapitalize(url.pathname)} - ${removeHyphensAndCapitalize(__NAME__)}`
+    : `${removeHyphensAndCapitalize(__NAME__)}`;
+  const description = splitAndCapitalize(url.pathname)
+    ? `${splitAndCapitalize(url.pathname)} component for Svelte 5 Runes.`
+    : 'A UI library for Svelte 5 Runes.';
+  const image = splitAndCapitalize(url.pathname)
+    ? `https://open-graph-vercel.vercel.app/api/svelte-5-ui-lib?title=${splitAndCapitalize(url.pathname)}`
+    : 'https://open-graph-vercel.vercel.app/api/svelte-5-ui-lib';
   // console.log('url: ', splitAndCapitalize(url.pathname));
   const layoutMetaTags: MetaProps = {
     title,
@@ -17,7 +26,7 @@ export const load = ({ url }) => {
       title,
       description,
       image,
-      imageAlt: title,
+      imageAlt: title
     },
     og: {
       type: 'website',
@@ -32,7 +41,7 @@ export const load = ({ url }) => {
     }
   };
   return {
-		layoutMetaTags,
-		ANALYTICS_ID_RUNES_LIB
+    layoutMetaTags,
+    ANALYTICS_ID_RUNES_LIB
   };
 };

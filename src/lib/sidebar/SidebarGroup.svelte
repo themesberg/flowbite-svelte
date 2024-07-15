@@ -1,32 +1,27 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
-  interface Props {
+  import type { HTMLAttributes } from 'svelte/elements';
+
+  interface Props extends HTMLAttributes<HTMLUListElement>{
     children: Snippet;
-    ulclass?: string | undefined;
+    class?: string | undefined;
     borderClass?: string | undefined;
     border?: boolean;
   }
 
   let {
     children,
-    ulclass,
-    borderClass,
+    class: className = 'space-y-2',
+    borderClass = 'pt-4 mt-4 border-t border-gray-200 dark:border-gray-700',
     border = false,
     ...attributes
   }: Props = $props();
 
-  let ulCls: string = $state(twMerge('space-y-2', ulclass));
-  let borderCls: string = twMerge(
-    'pt-4 mt-4 border-t border-gray-200 dark:border-gray-700',
-    borderClass
-  );
 </script>
 
-<ul {...attributes} class={border ? borderCls : ulCls}>
-
-    {@render children()}
-
+<ul {...attributes} class={border ? borderClass : className}>
+  {@render children()}
 </ul>
 
 <!--

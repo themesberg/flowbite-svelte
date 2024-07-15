@@ -46,7 +46,7 @@
   class={buttonCls}
 >
   <input type="radio" bind:group {value} {...attributes} class="sr-only" />
-    {@render children()}
+  {@render children()}
 </Button>
 
 <!--

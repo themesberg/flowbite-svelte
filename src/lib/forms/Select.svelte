@@ -7,7 +7,7 @@
     name: string | number;
     value: T;
   };
-  interface Props extends HTMLSelectAttributes{
+  interface Props extends HTMLSelectAttributes {
     children?: Snippet;
     items: SelectOptionType<any>[];
     value?: any;
@@ -65,9 +65,9 @@
   {...attributes}
   bind:value
   class={selectCls}
-  onchange={onchange}
-  oncontextmenu={oncontextmenu}
-  oninput={oninput}
+  {onchange}
+  {oncontextmenu}
+  {oninput}
 >
   {#if placeholder}
     <option disabled selected value="">{placeholder}</option>

@@ -9,7 +9,7 @@
     hoverable?: boolean;
     color?: string | undefined | null;
   };
-  interface Props extends HTMLTableAttributes{
+  interface Props extends HTMLTableAttributes {
     children?: Snippet;
     svgSearch?: any;
     header?: Snippet;
@@ -25,7 +25,7 @@
     searchClass?: string | undefined | null;
     svgDivClass?: string | undefined | null;
     svgClass?: string | undefined | null;
-    tableClass? : string | undefined | null;
+    tableClass?: string | undefined | null;
     classDiv?: string | undefined | null;
     class?: string | undefined | null;
   }
@@ -110,10 +110,7 @@
       {@render header()}
     {/if}
   </div>
-  <table
-    {...attributes}
-    class={twMerge(tableClass, colors[color], className)}
-  >
+  <table {...attributes} class={twMerge(tableClass, colors[color], className)}>
     {#if children}
       {@render children()}
     {/if}

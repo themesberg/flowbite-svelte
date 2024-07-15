@@ -4,7 +4,7 @@
   import { getContext } from 'svelte';
   import type { HTMLLiAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLLiAttributes{
+  interface Props extends HTMLLiAttributes {
     children: Snippet;
     icon?: boolean;
     class?: string | undefined;
@@ -14,7 +14,10 @@
   const ctxclass: string = getContext('ctxclass');
 </script>
 
-<li {...attributes} class={twMerge(className, ctxclass, icon && 'flex items-center')}>
+<li
+  {...attributes}
+  class={twMerge(className, ctxclass, icon && 'flex items-center')}
+>
   {@render children()}
 </li>
 

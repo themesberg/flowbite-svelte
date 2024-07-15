@@ -85,7 +85,7 @@
     {/if}
   </svelte:element>
 {:else}
-    <img {alt} {src} {...attributes} class={avatarCls}/>
+  <img {alt} {src} {...attributes} class={avatarCls} />
 {/if}
 
 <!--

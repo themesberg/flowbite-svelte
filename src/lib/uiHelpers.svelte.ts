@@ -27,7 +27,10 @@ export function uiHelpers() {
   };
 }
 
-export function clickOutside(element: HTMLElement, callbackFunction?: () => void) {
+export function clickOutside(
+  element: HTMLElement,
+  callbackFunction?: () => void
+) {
   function onClick(event: MouseEvent) {
     if (typeof callbackFunction === 'function') {
       const targetNode = event.target as Node | null;
@@ -60,4 +63,3 @@ let n = Date.now();
 export function idGenerator() {
   return (++n).toString(36);
 }
-

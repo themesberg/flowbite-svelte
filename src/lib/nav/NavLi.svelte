@@ -9,10 +9,10 @@
   interface Props extends HTMLAnchorAttributes {
     children: Snippet;
     closeNav?: () => void;
-    href?: string 
-    aClass?: string 
-    activeClass?: string 
-    nonActiveClass?: string 
+    href?: string;
+    aClass?: string;
+    activeClass?: string;
+    nonActiveClass?: string;
   }
   let {
     closeNav,
@@ -23,7 +23,7 @@
     nonActiveClass,
     ...attributes
   }: Props = $props();
-  
+
   let breakPoint: navbarType['breakPoint'];
 
   const context = getContext<navbarType>('navbarContext');
@@ -49,9 +49,9 @@
 
   let aCls = $derived(
     currentUrl === href
-      ? activeClass ?? twMerge(context.activeClass, activeBreaks[breakPoint])
-      : nonActiveClass ??
-          twMerge(context.nonActiveClass, linkBreaks[breakPoint])
+      ? (activeClass ?? twMerge(context.activeClass, activeBreaks[breakPoint]))
+      : (nonActiveClass ??
+          twMerge(context.nonActiveClass, linkBreaks[breakPoint]))
   );
 
   let linkClass = $derived(twMerge(aCls, aClass));

@@ -7,37 +7,23 @@
     ratings: { label: string | undefined | null; rating: number }[];
     divClass?: string | undefined | null;
     spanClass?: string | undefined | null;
-    div2class?: string | undefined | null;
-    div3class?: string | undefined | null;
-    span2class?: string | undefined | null;
+    div2Class?: string | undefined | null;
+    div3Class?: string | undefined | null;
+    span2Class?: string | undefined | null;
     unit?: string | undefined | null;
   }
   let {
     rating,
     globalText,
     ratings,
-    divClass,
-    spanClass,
-    div2class,
-    div3class,
-    span2class,
+    divClass = 'flex items-center mt-4',
+    spanClass = 'text-sm font-medium text-gray-600 dark:text-gray-500',
+    div2Class = 'mx-4 w-2/4 h-5 bg-gray-200 rounded dark:bg-gray-700',
+    div3Class = 'h-5 bg-yellow-400 rounded',
+    span2Class = 'text-sm font-medium text-gray-600 dark:text-gray-500',
     unit
   }: Props = $props();
-  
-  let divCls: string = twMerge('flex items-center mt-4', divClass);
-  let spanCls: string = twMerge(
-    'text-sm font-medium text-gray-600 dark:text-gray-500',
-    spanClass
-  );
-  let div2Cls: string = twMerge(
-    'mx-4 w-2/4 h-5 bg-gray-200 rounded dark:bg-gray-700',
-    div2class
-  );
-  let div3Cls: string = twMerge('h-5 bg-yellow-400 rounded', div3class);
-  let span2Cls: string = twMerge(
-    'text-sm font-medium text-gray-600 dark:text-gray-500',
-    span2class
-  );
+
 </script>
 
 {#if rating}
@@ -47,12 +33,12 @@
   {@render globalText()}
 {/if}
 {#each ratings as { label, rating }}
-  <div class={divCls}>
-    <span class={spanCls}>{label}</span>
-    <div class={div2Cls}>
-      <div class={div3Cls} style="width: {rating}%" ></div>
+  <div class={divClass}>
+    <span class={spanClass}>{label}</span>
+    <div class={div2Class}>
+      <div class={div3Class} style="width: {rating}%"></div>
     </div>
-    <span class={span2Cls}>{rating}{unit}</span>
+    <span class={span2Class}>{rating}{unit}</span>
   </div>
 {/each}
 
@@ -65,8 +51,8 @@
 @prop ratings
 @prop divClass
 @prop spanClass
-@prop div2class
-@prop div3class
-@prop span2class
+@prop div2Class
+@prop div3Class
+@prop span2Class
 @prop unit
 -->

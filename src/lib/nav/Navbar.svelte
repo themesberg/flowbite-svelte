@@ -8,7 +8,7 @@
   import type { navbarType } from '$lib/types';
   import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLAttributes<HTMLElement>{
+  interface Props extends HTMLAttributes<HTMLElement> {
     children: Snippet;
     toggleNav?: () => void;
     closeNav?: () => void;

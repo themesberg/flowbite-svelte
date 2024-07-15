@@ -19,19 +19,13 @@
 <H2>Floating label examples</H2>
 <CodeWrapper>
   <div id="exampleWrapper" class="grid w-full items-end gap-6 md:grid-cols-3">
-    <FloatingLabelInput
-      style="filled"
-      id="floating_filled"
-      type="text">Floating filled</FloatingLabelInput
+    <FloatingLabelInput style="filled" id="floating_filled" type="text"
+      >Floating filled</FloatingLabelInput
     >
-    <FloatingLabelInput
-      style="outlined"
-      id="floating_outlined"
-      type="text">Floating outlined</FloatingLabelInput
+    <FloatingLabelInput style="outlined" id="floating_outlined" type="text"
+      >Floating outlined</FloatingLabelInput
     >
-    <FloatingLabelInput
-      id="floating_standard"
-      type="text"
+    <FloatingLabelInput id="floating_standard" type="text"
       >Floating standard</FloatingLabelInput
     >
   </div>
@@ -40,11 +34,8 @@
 <H2>Disabled state</H2>
 <CodeWrapper>
   <div id="exampleWrapper" class="grid w-full items-end gap-6 md:grid-cols-3">
-    <FloatingLabelInput
-      style="filled"
-      id="disabled_filled"
-      type="text"
-      disabled>Disabled filled</FloatingLabelInput
+    <FloatingLabelInput style="filled" id="disabled_filled" type="text" disabled
+      >Disabled filled</FloatingLabelInput
     >
     <FloatingLabelInput
       style="outlined"
@@ -52,10 +43,8 @@
       type="text"
       disabled>Disabled outlined</FloatingLabelInput
     >
-    <FloatingLabelInput
-      id="disabled_standard"
-      type="text"
-      disabled>Disabled standard</FloatingLabelInput
+    <FloatingLabelInput id="disabled_standard" type="text" disabled
+      >Disabled standard</FloatingLabelInput
     >
   </div>
 </CodeWrapper>
@@ -165,22 +154,16 @@
       id="small_outlined"
       type="text">Small outlined</FloatingLabelInput
     >
-    <FloatingLabelInput
-      inputSize="small"
-      id="small_standard"
-      type="text">Small standard</FloatingLabelInput
+    <FloatingLabelInput inputSize="small" id="small_standard" type="text"
+      >Small standard</FloatingLabelInput
     >
   </div>
   <div class="grid items-end gap-6 md:grid-cols-3">
-    <FloatingLabelInput
-      style="filled"
-      id="default_filled"
-      type="text">Default filled</FloatingLabelInput
+    <FloatingLabelInput style="filled" id="default_filled" type="text"
+      >Default filled</FloatingLabelInput
     >
-    <FloatingLabelInput
-      style="outlined"
-      id="default_outlined"
-      type="text">Default outlined</FloatingLabelInput
+    <FloatingLabelInput style="outlined" id="default_outlined" type="text"
+      >Default outlined</FloatingLabelInput
     >
     <FloatingLabelInput id="default_standard" type="text"
       >Default standard</FloatingLabelInput

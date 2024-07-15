@@ -51,7 +51,7 @@
     500,000 people have made over a million apps with Glide.
     <A
       href="/"
-      class="text-primary-600 dark:text-primary-500 inline-flex items-center font-medium hover:underline"
+      class="inline-flex items-center font-medium text-primary-600 hover:underline dark:text-primary-500"
     >
       Read their stories
       <ArrowRightOutline class="ms-2 h-6 w-6" />
@@ -62,18 +62,28 @@
 
 <H2>CTA link</H2>
 <CodeWrapper>
-  <A href="/" class="dark:hover:text-white inline-flex justify-center items-center p-5 text-base font-medium bg-gray-50 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 hover:no-underline">
+  <A
+    href="/"
+    class="inline-flex items-center justify-center rounded-lg bg-gray-50 p-5 text-base font-medium hover:bg-gray-100 hover:text-gray-900 hover:no-underline dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
+  >
     <Figma />
-    <span class="w-full ms-3">Get started with our Figma Design System</span>
-    <ArrowRightOutline class="w-6 h-6 ms-2" />
+    <span class="ms-3 w-full">Get started with our Figma Design System</span>
+    <ArrowRightOutline class="ms-2 h-6 w-6" />
   </A>
 </CodeWrapper>
 
 <H2>Card link</H2>
 <CodeWrapper>
   <Card href="/">
-    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-    <p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+    <h5
+      class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+    >
+      Noteworthy technology acquisitions 2021
+    </h5>
+    <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">
+      Here are the biggest enterprise technology acquisitions of 2021 so far, in
+      reverse chronological order.
+    </p>
   </Card>
 </CodeWrapper>
 

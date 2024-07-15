@@ -1,17 +1,16 @@
-
 <script>
   import { RunesMetaTags, deepMerge } from 'runes-meta-tags';
-  import { Runatics } from 'runatics'
+  import { Runatics } from 'runatics';
   import { page } from '$app/stores';
   import '../app.pcss';
-  
+
   import Nav from './utils/Nav.svelte';
   import Footer from './utils/Footer.svelte';
   import Sidemenu from './utils/Sidemenu.svelte';
 
   let { children, data } = $props();
 
-  const analyticsId = data.ANALYTICS_ID_RUNES_LIB
+  const analyticsId = data.ANALYTICS_ID_RUNES_LIB;
   // meta tags
   let metaTags = $state(
     $page.data.pageMetaTags
@@ -20,12 +19,13 @@
   );
 
   $effect(() => {
-    metaTags = $page.data.pageMetaTags ? deepMerge($page.data.layoutMetaTags, $page.data.pageMetaTags ) : data.layoutMetaTags
-  })
+    metaTags = $page.data.pageMetaTags
+      ? deepMerge($page.data.layoutMetaTags, $page.data.pageMetaTags)
+      : data.layoutMetaTags;
+  });
 </script>
 
-<RunesMetaTags {...metaTags}/>
-
+<RunesMetaTags {...metaTags} />
 
 <Nav />
 <div class="lg:flex">

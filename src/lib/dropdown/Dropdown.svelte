@@ -2,10 +2,7 @@
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import { fly, slide, blur, fade } from 'svelte/transition';
-  import type {
-    TransitionParamTypes,
-    TransitionTypes
-  } from '../types';
+  import type { TransitionParamTypes, TransitionTypes } from '../types';
   import type { HTMLAttributes } from 'svelte/elements';
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
@@ -15,11 +12,11 @@
     dropdownStatus: boolean;
     toggleDropdown?: () => void;
     closeDropdown?: () => void;
-    activateClickOutside?: boolean ;
-    divClass?: string ;
-    footerClass?: string ;
-    headerClass?: string ;
-    ulClass?: string ;
+    activateClickOutside?: boolean;
+    divClass?: string;
+    footerClass?: string;
+    headerClass?: string;
+    ulClass?: string;
     transitionParams?: TransitionParamTypes;
     transitionType?: TransitionTypes;
   }
@@ -69,32 +66,34 @@
     ulClass
   );
   const footerCls = twMerge('overflow-hidden rounded-b-lg py-1', footerClass);
-  const backdropDivClass = 'fixed top-0 start-0 w-full h-full'
-
+  const backdropDivClass = 'fixed top-0 start-0 w-full h-full';
 </script>
 
 <!-- Dropdown menu -->
 {#if dropdownStatus}
-<div {...attributes} class={divCls} transition:multiple={transitionParams}>
-  {#if header}
-    <div class={headerCls}>
-      {@render header()}
-    </div>
-  {/if}
-  
+  <div {...attributes} class={divCls} transition:multiple={transitionParams}>
+    {#if header}
+      <div class={headerCls}>
+        {@render header()}
+      </div>
+    {/if}
+
     <ul class={ulCls}>
       {@render children()}
     </ul>
-  
-  {#if footer}
-    <div class={footerCls}>
-      {@render footer()}
-    </div>
-  {/if}
-</div>
 
+    {#if footer}
+      <div class={footerCls}>
+        {@render footer()}
+      </div>
+    {/if}
+  </div>
 
-<div role="presentation" class={backdropDivClass} onclick={closeDropdown} ></div>
+  <div
+    role="presentation"
+    class={backdropDivClass}
+    onclick={closeDropdown}
+  ></div>
 {/if}
 
 <!--

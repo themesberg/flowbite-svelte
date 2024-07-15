@@ -3,16 +3,16 @@
   import { twMerge } from 'tailwind-merge';
   import type { HTMLAttributes } from 'svelte/elements';
 
-  interface Props extends HTMLAttributes<HTMLElement>{
+  interface Props extends HTMLAttributes<HTMLElement> {
     children: Snippet;
     secondaryClass?: string | undefined | null;
     class?: string | undefined | null;
   }
-  let { 
+  let {
     children,
     secondaryClass = 'text-gray-500 dark:text-gray-400 font-semibold',
-    class: className, 
-    ...attributes 
+    class: className,
+    ...attributes
   }: Props = $props();
 </script>
 

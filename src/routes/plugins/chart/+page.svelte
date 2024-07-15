@@ -37,7 +37,7 @@
     chart: {
       height: '400px',
       maxWidth: '100%',
-      type: 'area' as "area",
+      type: 'area' as 'area',
       fontFamily: 'Inter, sans-serif',
       dropShadow: {
         enabled: false
@@ -139,7 +139,7 @@
       }
     ],
     chart: {
-      type: 'bar' as "bar",
+      type: 'bar' as 'bar',
       height: '320px',
       fontFamily: 'Inter, sans-serif',
       toolbar: {
@@ -150,7 +150,7 @@
       bar: {
         horizontal: false,
         columnWidth: '70%',
-        borderRadiusApplication: 'end' as "end",
+        borderRadiusApplication: 'end' as 'end',
         borderRadius: 8
       }
     },
@@ -229,7 +229,7 @@
       sparkline: {
         enabled: false
       },
-      type: 'bar' as "bar",
+      type: 'bar' as 'bar',
       width: '100%',
       height: 400,
       toolbar: {
@@ -243,7 +243,7 @@
       bar: {
         horizontal: true,
         columnWidth: '100%',
-        borderRadiusApplication: 'end' as "end",
+        borderRadiusApplication: 'end' as 'end',
         borderRadius: 6,
         dataLabels: {
           position: 'top'
@@ -252,7 +252,7 @@
     },
     legend: {
       show: true,
-      position: 'bottom' as "bottom"
+      position: 'bottom' as 'bottom'
     },
     dataLabels: {
       enabled: false
@@ -345,11 +345,14 @@
       <div class="flex items-center justify-between pt-5">
         <Button
           onclick={toggle}
-          class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0"
+          class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent"
           >Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button
         >
         <div class="relative">
-          <Dropdown divClass="absolute top-[5px] -left-[180px]" dropdownStatus={isOpen}>
+          <Dropdown
+            divClass="absolute top-[5px] -left-[180px]"
+            dropdownStatus={isOpen}
+          >
             {#snippet children()}
               <DropdownItem href="/">Yesterday</DropdownItem>
               <DropdownItem href="/">Today</DropdownItem>
@@ -361,7 +364,7 @@
         </div>
         <A
           href="/"
-          class="uppercase text-sm font-semibold hover:text-primary-700 dark:hover:text-primary-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2 hover:no-underline"
+          class="rounded-lg px-3 py-2 text-sm font-semibold uppercase hover:bg-gray-100 hover:text-primary-700 hover:no-underline dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-primary-500 dark:focus:ring-gray-700"
         >
           Users Report
           <ChevronRightOutline class="ms-1.5 h-2.5 w-2.5" />
@@ -429,7 +432,7 @@
       <div class="flex items-center justify-between pt-5">
         <Button
           onclick={toggle2}
-          class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0"
+          class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent"
           >Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button
         >
         <div class="relative">
@@ -448,7 +451,7 @@
         </div>
         <A
           href="/"
-          class="uppercase text-sm font-semibold hover:text-primary-700 dark:hover:text-primary-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2 hover:no-underline"
+          class="rounded-lg px-3 py-2 text-sm font-semibold uppercase hover:bg-gray-100 hover:text-primary-700 hover:no-underline dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-primary-500 dark:focus:ring-gray-700"
         >
           Leads Report
           <ChevronRightOutline class="ms-1.5 h-2.5 w-2.5" />
@@ -515,7 +518,7 @@
       <div class="flex items-center justify-between pt-5">
         <Button
           onclick={toggle3}
-          class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0"
+          class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent"
           >Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button
         >
         <div class="relative">
@@ -534,7 +537,7 @@
         </div>
         <A
           href="/"
-          class="uppercase text-sm font-semibold hover:text-primary-700 dark:hover:text-primary-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2 hover:no-underline"
+          class="rounded-lg px-3 py-2 text-sm font-semibold uppercase hover:bg-gray-100 hover:text-primary-700 hover:no-underline dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-primary-500 dark:focus:ring-gray-700"
         >
           Leads Report
           <ChevronRightOutline class="ms-1.5 h-2.5 w-2.5" />

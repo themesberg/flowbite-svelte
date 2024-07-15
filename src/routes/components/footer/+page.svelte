@@ -38,9 +38,9 @@
 <CodeWrapper>
   <Footer class="shadow-none" footerType="logo">
     <div class="sm:flex sm:items-center sm:justify-between">
-      <FooterCopyright href='/' by='Flowbite' year={2022} />
+      <FooterCopyright href="/" by="Flowbite" year={2022} />
       <FooterUl
-        class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"
+        class="mt-3 flex flex-wrap items-center text-sm text-gray-500 sm:mt-0 dark:text-gray-400"
       >
         <FooterLi href="/">About</FooterLi>
         <FooterLi href="/">Privacy Policy</FooterLi>
@@ -64,7 +64,7 @@
         name="Flowbite"
       />
       <FooterUl
-        class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"
+        class="mb-6 flex flex-wrap items-center text-sm text-gray-500 sm:mb-0 dark:text-gray-400"
       >
         <FooterLi href="/">About</FooterLi>
         <FooterLi href="/">Privacy Policy</FooterLi>
@@ -72,7 +72,7 @@
         <FooterLi href="/">Contact</FooterLi>
       </FooterUl>
     </div>
-    <hr class="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
+    <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8 dark:border-gray-700" />
     <FooterCopyright href="/" by="Flowbite™" />
   </Footer>
 </CodeWrapper>
@@ -80,7 +80,7 @@
 <HighlightCompo code={modules['./md/footer-with-logo.md'] as string} />
 
 <H2>Social media icons</H2>
-<CodeWrapper class='p-2'>
+<CodeWrapper class="p-2">
   <Footer footerType="socialmedia">
     <div class="md:flex md:justify-between">
       <div class="mb-6 md:mb-0">
@@ -127,7 +127,7 @@
         </div>
       </div>
     </div>
-    <hr class="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
+    <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8 dark:border-gray-700" />
     <div class="sm:flex sm:items-center sm:justify-between">
       <FooterCopyright href="/" by="Flowbite™" />
       <div
@@ -258,7 +258,7 @@
     <Footer class="absolute bottom-0 start-0 z-20 w-full">
       <FooterCopyright href="/" by="Flowbite™" />
       <FooterUl
-        class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"
+        class="mt-3 flex flex-wrap items-center text-sm text-gray-500 sm:mt-0 dark:text-gray-400"
       >
         <FooterLi href="/">About</FooterLi>
         <FooterLi href="/">Privacy Policy</FooterLi>
