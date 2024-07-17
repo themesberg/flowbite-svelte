@@ -72,5 +72,6 @@
 @prop activeClass
 @prop nonActiveClass
 @prop aClass
+@prop class: className
 @prop ...attributes
 -->

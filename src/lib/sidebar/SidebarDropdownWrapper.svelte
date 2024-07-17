@@ -154,5 +154,6 @@
 @prop transitionType = 'slide'
 @prop transitionParams
 @prop svgClass
+@prop class: className
 @prop ...attributes
 -->
