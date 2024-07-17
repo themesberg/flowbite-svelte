@@ -10,6 +10,7 @@ description: Svelte 5 Getting started
 
 <script>
   import { Banner } from 'flowbite-svelte';
+  import { A } from '$lib'
   import { removeHyphensAndCapitalize } from './utils/utils';
 </script>
 
@@ -68,6 +69,8 @@ const config = {
 export default config;
 ```
 
+## tailwind.config.cjs
+
 To make sure the classes used by flowbite-svelte-icons are included by the Tailwindcss, add the following to `tailwind.config.cjs`.
 
 ```js
@@ -106,10 +109,15 @@ If you need only a few icons from this library in your Svelte app, import them d
 
 ## Passing down other attributes
 
-Since all icons have `{...$$restProps}`, you can pass other attibutes as well.
+Since all icons have `{...restProps}` and extended <A href="https://github.com/sveltejs/svelte/blob/main/packages/svelte/elements.d.ts">`SVGAttributes<SVGSVGElement>`</A>, you can pass other attibutes.
 
 ```html
-<AddressBookOutline id="my-svg" transform="rotate(45)"/>
+<AddressBookOutline
+  id="my-svg"
+  transform="rotate(45)"
+  class="hover:cursor-pointer dark:text-white"
+  onclick={() => alert('hello')}
+/>
 ```
 
 ## Using svelte:component
@@ -122,7 +130,7 @@ Since all icons have `{...$$restProps}`, you can pass other attibutes as well.
 <svelte:component this="{AddressBookOutline}" />
 ```
 
-## Using onMount
+## Using onMount (Svelte 5 legacy mode)
 
 ```html
 <script>
@@ -156,25 +164,18 @@ Use `import * as Icon from 'flowbite-svelte-icons`.
 <Icon.AddressBookOutline class="text-blue-500" />
 ```
 
-## Outline Props
+## Props
+
+All icons are extended <A href="https://github.com/sveltejs/svelte/blob/main/packages/svelte/elements.d.ts">`SVGAttributes<SVGSVGElement>`</A>  from svelte/elements.
 
 ```markdown
-- size: "xs" | "sm" | "md" | "lg" | "xl" = ctx.size || 'md';
-- role = ctx.role || 'img';
-- ariaLabel="address book outline"
-- class
-- ariaLabel =  "<icon file name>"
-- ...restProps
-```
-
-## Solid Props
-
-```md
-- size: "xs" | "sm" | "md" | "lg" | "xl" = ctx.size || 'md';
-- role = ctx.role || 'img';
-- ariaLabel="address book outline"
-- class
-- ariaLabel =  "<icon file name>"
+- size?: "xs" | "sm" | "md" | "lg" | "xl" = ctx.size || 'md';
+- color?: string | undefined | null = ctx.color || 'currentColor'
+- class?: string | undefined | null = ''
+- ariaLabel?: string =  "<icon file name>"
+- title?: TitleType
+- desc?: DescType
+- strokeWidth?: string | undefined | null = ctx.strokeWidth || '2' // only Outline icons
 - ...restProps
 ```
 
@@ -241,15 +242,6 @@ Use `ariaLabel` prop to modify the `aria-label` value.
 ```html
 <AddressBookOutline ariaLabel="address card outline" />
 ```
-
-## Passing down other attributes
-
-Since all icons have `{...restProps}`, you can pass other attibutes as well.
-
-```html
-<AddressBookOutline id="my-svg" transform="rotate(45)"/>
-```
-
 
 ## Custom Default Icons
 

@@ -38,7 +38,7 @@
 <div class="flex-none hidden w-64 ps-8 xl:text-sm xl:block end-0" use:init>
   {#if headings.length}
     <div class="flex overflow-y-auto sticky top-20 flex-col justify-between pb-6 h-[calc(100vh-5rem)]">
-      <div class="mb-8">
+      <div class="mb-40">
         <h4 class="ps-2.5 my-4 text-sm font-semibold tracking-wide text-gray-900 uppercase dark:text-white">On this page</h4>
         <nav>
           <ul class="overflow-x-hidden font-medium text-gray-500 dark:text-gray-400 space-y-2.5">
