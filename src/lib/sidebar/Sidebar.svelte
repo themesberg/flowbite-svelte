@@ -12,7 +12,6 @@
     divClass?: string | undefined;
     nonActiveClass?: string | undefined;
     activeClass?: string | undefined;
-    class?: string | undefined;
   }
   let {
     children,

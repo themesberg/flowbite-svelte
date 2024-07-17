@@ -25,6 +25,7 @@
     activeClass,
     nonActiveClass,
     aClass,
+    class: className,
     ...attributes
   }: Props = $props();
 
@@ -42,7 +43,7 @@
   );
 </script>
 
-<li>
+<li class={className}>
   <a
     {...attributes}
     {href}

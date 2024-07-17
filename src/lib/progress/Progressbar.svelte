@@ -15,7 +15,6 @@
     div2Class?: string | undefined;
     labeloutsidedivClass?: string | undefined;
     divClass?: string | undefined;
-    class?: string | undefined;
   }
 
   import { cubicOut } from 'svelte/easing';
@@ -36,7 +35,6 @@
     div2Class,
     labeloutsidedivClass,
     divClass,
-    class: classname,
     ...attributes
   }: Props = $props();
 
@@ -111,6 +109,5 @@
 @prop div2Class
 @prop labeloutsidedivClass
 @prop divClass
-@prop class: classname
 @prop ...attributes
 -->

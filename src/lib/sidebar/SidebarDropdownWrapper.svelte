@@ -34,6 +34,7 @@
     transitionType = 'slide',
     transitionParams,
     svgClass,
+    class: className,
     ...attributes
   }: Props = $props();
 
@@ -78,7 +79,7 @@
   });
 </script>
 
-<li>
+<li class={className}>
   <button
     {...attributes}
     onclick={() => handleDropdown()}

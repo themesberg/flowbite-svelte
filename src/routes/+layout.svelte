@@ -25,6 +25,7 @@
   });
 </script>
 
+<Runatics {analyticsId} />
 <RunesMetaTags {...metaTags} />
 
 <Nav />
