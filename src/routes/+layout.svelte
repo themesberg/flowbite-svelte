@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { RunesMetaTags, deepMerge } from 'runes-meta-tags';
   import { Runatics } from 'runatics';
   import { page } from '$app/stores';

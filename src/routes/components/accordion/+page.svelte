@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { AccordionItem, Accordion } from '$lib';
   import {
     ChevronDoubleUpOutline,
@@ -19,6 +19,10 @@
 </script>
 
 <H1>Accordion</H1>
+<H2>Setup</H2>
+
+<HighlightCompo code={modules['./md/setup.md'] as string} />
+
 <H2>Default accordion</H2>
 <CodeWrapper>
   <Accordion>
@@ -84,6 +88,8 @@
   </Accordion>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/default-accordion.md'] as string} />
+
 <H2>Always open</H2>
 <CodeWrapper>TBD</CodeWrapper>
 
@@ -114,6 +120,8 @@
   </Accordion>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/color-option.md'] as string} />
+
 <H2>Flush accordion</H2>
 <CodeWrapper>
   <Accordion flush>
@@ -137,6 +145,8 @@
     </AccordionItem>
   </Accordion>
 </CodeWrapper>
+
+<HighlightCompo code={modules['./md/flush-accordion.md'] as string} />
 
 <H2>Arrow style</H2>
 <CodeWrapper>
@@ -173,6 +183,8 @@
     </AccordionItem>
   </Accordion>
 </CodeWrapper>
+
+<HighlightCompo code={modules['./md/arrow-style.md'] as string} />
 
 <H2>Icon Accordion</H2>
 <CodeWrapper>
@@ -214,6 +226,8 @@
     </AccordionItem>
   </Accordion>
 </CodeWrapper>
+
+<HighlightCompo code={modules['./md/icon-accordion.md'] as string} />
 
 <H2>Multiple mode</H2>
 <CodeWrapper>TBD</CodeWrapper>

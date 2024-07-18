@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Footer, FooterBrand, FooterLi, FooterUl } from '$lib';
 </script>
 
