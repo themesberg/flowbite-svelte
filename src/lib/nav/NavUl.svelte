@@ -12,8 +12,11 @@
   let { children, class: ulclass, ...attributes }: Props = $props();
 
   let breakPoint: navbarType['breakPoint'];
+  let navStatus: navbarType['navStatus'];
   const context = getContext<navbarType>('navbarContext');
   breakPoint = context.breakPoint ?? 'md';
+  navStatus = context.navStatus;
+
   const ulBreaks = {
     md: 'md:mt-0 md:flex-row md:space-x-8 md:border-0 md:p-0 md:dark:bg-gray-900',
     lg: 'lg:mt-0 lg:flex-row lg:space-x-8 lg:border-0 lg:p-0 lg:dark:bg-gray-900',

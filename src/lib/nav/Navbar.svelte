@@ -12,8 +12,7 @@
     children: Snippet;
     toggleNav?: () => void;
     closeNav?: () => void;
-    openMainMenu?: boolean;
-    navStatus?: boolean;
+    navStatus?: boolean | undefined;
     fluid?: boolean;
     brand?: Snippet;
     breakPoint?: navbarType['breakPoint'];
@@ -29,7 +28,6 @@
     children,
     toggleNav,
     closeNav = () => {},
-    openMainMenu = true,
     navStatus,
     fluid,
     brand,
@@ -44,7 +42,8 @@
   }: Props = $props();
 
   setContext<navbarType>('navbarContext', {
-    breakPoint: breakPoint,
+    navStatus,
+    breakPoint,
     activeClass: twMerge(
       'block py-2 px-3 text-white bg-primary-700 rounded   dark:text-white',
       activeClass
@@ -98,39 +97,47 @@
     {#if brand}
       {@render brand()}
     {/if}
-    {#if openMainMenu}
-      <button
-        onclick={toggleNav}
-        type="button"
-        class={btnCls}
-        aria-controls="navbar-default"
+    <button
+      onclick={toggleNav}
+      type="button"
+      class={btnCls}
+      aria-controls="navbar-default"
+    >
+      <span class="sr-only">Open main menu</span>
+      <svg
+        class="h-5 w-5"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 17 14"
       >
-        <span class="sr-only">Open main menu</span>
-        <svg
-          class="h-5 w-5"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 17 14"
-        >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M1 1h15M1 7h15M1 13h15"
-          />
-        </svg>
-      </button>
-    {/if}
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M1 1h15M1 7h15M1 13h15"
+        />
+      </svg>
+    </button>
+    {#if navStatus}
     <div
-      class="{navDisplay} {divChildrenCls}"
+      class="block {divChildrenCls}"
       transition:slide={slideParams}
       role="button"
       tabindex="0"
     >
       {@render children()}
     </div>
+    {:else}
+      <div
+        class="hidden {divChildrenCls}"
+        role="button"
+        tabindex="0"
+      >
+        {@render children()}
+      </div>
+    {/if}
   </div>
 </nav>
 

@@ -152,6 +152,7 @@ export interface ButtonClassesTypes {
 }
 
 export type navbarType = {
+  navStatus: boolean | undefined;
   breakPoint: 'md' | 'lg' | 'xl' | 'xxl';
   activeClass: string | undefined | null;
   nonActiveClass: string | undefined | null;
