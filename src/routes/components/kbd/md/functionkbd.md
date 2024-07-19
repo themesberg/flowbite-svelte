@@ -1,0 +1,12 @@
+<Kbd kbdclass="px-2 py-1.5">F1</Kbd>
+<Kbd kbdclass="px-2 py-1.5">F2</Kbd>
+<Kbd kbdclass="px-2 py-1.5">F3</Kbd>
+<Kbd kbdclass="px-2 py-1.5">F4</Kbd>
+<Kbd kbdclass="px-2 py-1.5">F5</Kbd>
+<Kbd kbdclass="px-2 py-1.5">F6</Kbd>
+<Kbd kbdclass="px-2 py-1.5">F7</Kbd>
+<Kbd kbdclass="px-2 py-1.5">F8</Kbd>
+<Kbd kbdclass="px-2 py-1.5">F9</Kbd>
+<Kbd kbdclass="px-2 py-1.5">F10</Kbd>
+<Kbd kbdclass="px-2 py-1.5">F11</Kbd>
+<Kbd kbdclass="px-2 py-1.5">F12</Kbd>

@@ -1,0 +1,1 @@
+pnpm i -D flowbite-svelte-icons@2.0.0-next.1

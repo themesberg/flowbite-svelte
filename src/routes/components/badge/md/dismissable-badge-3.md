@@ -1,0 +1,1 @@
+<Badge dismissable large onclick={handleClose}>Default</Badge>
