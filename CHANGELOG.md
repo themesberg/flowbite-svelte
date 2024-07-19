@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.7.2
+
+### Patch Changes
+
+- fix: Navbar transition ([`0437219877b09b62be4fdccdb634b52ea251fad2`](https://github.com/shinokada/svelte-5-ui-lib/commit/0437219877b09b62be4fdccdb634b52ea251fad2))
+
 ## 0.7.1
 
 ### Patch Changes

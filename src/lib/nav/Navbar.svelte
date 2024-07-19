@@ -55,7 +55,7 @@
     closeNav: closeNav
   });
 
-  let navDisplay = $derived(navStatus ? 'block' : 'hidden');
+  // let navDisplay = $derived(navStatus ? 'block' : 'hidden');
   let navCls = twMerge(
     'border-gray-200 bg-transparent dark:bg-gray-900',
     navClass
@@ -121,20 +121,16 @@
       </svg>
     </button>
     {#if navStatus}
-    <div
-      class="block {divChildrenCls}"
-      transition:slide={slideParams}
-      role="button"
-      tabindex="0"
-    >
-      {@render children()}
-    </div>
-    {:else}
       <div
-        class="hidden {divChildrenCls}"
+        class="block {divChildrenCls}"
+        transition:slide={slideParams}
         role="button"
         tabindex="0"
       >
+        {@render children()}
+      </div>
+    {:else}
+      <div class="hidden {divChildrenCls}" role="button" tabindex="0">
         {@render children()}
       </div>
     {/if}
