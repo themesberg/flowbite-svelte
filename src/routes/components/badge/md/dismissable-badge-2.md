@@ -1,6 +1,6 @@
   <Badge dismissable>
     Default
     {#snippet icon()}
-      <CheckCircleOutline class="h-4 w-4" />
+      <CheckCircleOutline class="h-5 w-5" />
     {/snippet}
   </Badge>

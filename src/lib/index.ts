@@ -10,7 +10,8 @@ export { default as Alert } from './alert/Alert.svelte';
 // avatar
 export { default as Avatar } from './avatar/Avatar.svelte';
 // badge
-export { default as Badge } from './badge/Badge.svelte';
+// export { default as Badge } from './badge/Badge.svelte';
+export * from './badge/index';
 // banner
 export { default as Banner } from './banner/Banner.svelte';
 // bottom-navigation

@@ -21,9 +21,18 @@
     easing: quintOut,
     axis: 'y'
   };
+  let myStatus = $state(true);
   function handleClose() {
+    console.log('Badge dismissed');
     alert('Badge dismissed');
+    myStatus = false;
   }
+
+  let btnBadge = $state(false);
+  function openBadge() {
+    btnBadge = true;
+  }
+
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -96,9 +105,9 @@
 <H2>Badge as links</H2>
 <CodeWrapper>
   <Badge href="/">Badge link</Badge>
-  <Badge href="/" large>Badge link</Badge>
-  <Badge href="/" border>Badge link</Badge>
-  <Badge href="/" rounded>Badge link</Badge>
+  <Badge href="/" color="blue" large>Badge link</Badge>
+  <Badge href="/" color="green" border>Badge link</Badge>
+  <Badge href="/" color="yellow" rounded>Badge link</Badge>
 </CodeWrapper>
 <HighlightCompo
   codeLang="ts"
@@ -217,11 +226,12 @@
   code={modules['./md/dismissable-badge.md'] as string}
 />
 
+<H3>Dismissing with icon</H3>
 <CodeWrapper class="h-20">
   <Badge dismissable>
     Default
     {#snippet icon()}
-      <CheckCircleOutline class="h-4 w-4" />
+      <CheckCircleOutline class="h-5 w-5" />
     {/snippet}
   </Badge>
 </CodeWrapper>
@@ -230,12 +240,23 @@
   codeLang="ts"
   code={modules['./md/dismissable-badge-2.md'] as string}
 />
-
+<H3>Dismissing with events</H3>
 <CodeWrapper class="h-20">
-  <Badge dismissable large onclick={handleClose}>Default</Badge>
+  <Badge dismissable large onclick={handleClose} bind:badgeStatus={myStatus}>Default</Badge>
 </CodeWrapper>
 
 <HighlightCompo
   codeLang="ts"
   code={modules['./md/dismissable-badge-3.md'] as string}
+/>
+
+<H2>Opening badge</H2>
+<CodeWrapper class="h-20">
+  <Button onclick={openBadge}>Open badge</Button>
+  <Badge class='ml-4' color='blue' dismissable large bind:badgeStatus={btnBadge}>Default</Badge>
+</CodeWrapper>
+
+<HighlightCompo
+  codeLang="ts"
+  code={modules['./md/opening-badge.md'] as string}
 />
