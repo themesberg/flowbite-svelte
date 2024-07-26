@@ -70,8 +70,8 @@ importers:
         specifier: ^2.41.0
         version: 2.41.0(eslint@9.6.0)(svelte@4.2.18)
       flowbite-svelte:
-        specifier: ^0.46.15
-        version: 0.46.15(rollup@4.18.0)(svelte@4.2.18)
+        specifier: ^0.46.12
+        version: 0.46.12(rollup@4.18.0)(svelte@4.2.18)
       flowbite-svelte-blocks:
         specifier: ^1.1.3
         version: 1.1.3(rollup@4.18.0)(svelte@4.2.18)
@@ -1307,11 +1307,11 @@ packages:
       tailwind-merge: ^2.0.0
       tailwindcss: ^3.3.2
 
-  flowbite-svelte@0.46.15:
-    resolution: {integrity: sha512-xWhyLDez/gafTAmQayPMPKmWj1BAoq80SoA48yHZ12Wk3Vu3hFrELLUZf0UksxnjQL9hMOKRUlYl3/IH6pHwnQ==}
+  flowbite-svelte@0.46.12:
+    resolution: {integrity: sha512-0LC+LrrVi7XkRq6LbU4TLx9XhQCLZFHyrUANZt1egpq+Uji30icW/2i4KiYSfiTMwdokqXYdLheoOmbX6889Dg==}
     engines: {node: '>=18.0.0', pnpm: '>=8.0.0'}
     peerDependencies:
-      svelte: ^3.55.1 || ^4.0.0 || ^5.0.0
+      svelte: ^3.55.1 || ^4.0.0
 
   flowbite@2.4.1:
     resolution: {integrity: sha512-I++vDsSOOlzHNuxY2OcFMNVC4CNzpPU2K14YHJ81cYrANXdzgizqniMB/1KQ219x8fqw+S0msY9Q45ZSXDqAPw==}
@@ -4037,7 +4037,7 @@ snapshots:
   flowbite-svelte-blocks@1.1.3(rollup@4.18.0)(svelte@4.2.18):
     dependencies:
       flowbite: 2.4.1(rollup@4.18.0)
-      flowbite-svelte: 0.46.15(rollup@4.18.0)(svelte@4.2.18)
+      flowbite-svelte: 0.46.12(rollup@4.18.0)(svelte@4.2.18)
       svelte: 4.2.18
       tailwind-merge: 2.3.0
     transitivePeerDependencies:
@@ -4049,7 +4049,7 @@ snapshots:
       tailwind-merge: 2.3.0
       tailwindcss: 3.4.4
 
-  flowbite-svelte@0.46.15(rollup@4.18.0)(svelte@4.2.18):
+  flowbite-svelte@0.46.12(rollup@4.18.0)(svelte@4.2.18):
     dependencies:
       '@floating-ui/dom': 1.6.7
       apexcharts: 3.49.2
