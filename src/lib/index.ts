@@ -6,7 +6,8 @@ export { uiHelpers, clickOutside } from './uiHelpers.svelte';
 export { default as Accordion } from './accordion/Accordion.svelte';
 export { default as AccordionItem } from './accordion/AccordionItem.svelte';
 // alert
-export { default as Alert } from './alert/Alert.svelte';
+// export { default as Alert } from './alert/Alert.svelte';
+export * from './alert/index';
 // avatar
 export { default as Avatar } from './avatar/Avatar.svelte';
 // badge

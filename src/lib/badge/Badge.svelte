@@ -41,8 +41,6 @@
     ...attributes
   }: Props = $props();
 
-  // let badgeStatus: boolean = $state(true);
-
   let badgeClass = cn(badgeVariants({ 
     color, 
     size: large ? 'large' : 'small', 

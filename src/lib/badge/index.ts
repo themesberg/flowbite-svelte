@@ -1,8 +1,8 @@
 import { type VariantProps, tv } from "tailwind-variants";
-import type { HTMLAttributes } from 'svelte/elements';
-export { default as Badge } from "./Badge.svelte";
+// export { default as Badge } from "./Badge.svelte";
+import Root from "./Badge.svelte"
 
-export const badgeVariants = tv({
+const badgeVariants = tv({
   base: 'font-medium inline-flex items-center justify-center px-2.5 py-0.5',
   variants: {
     color: {
@@ -128,4 +128,11 @@ export const badgeVariants = tv({
   }
 });
 
-export type badgeColor = VariantProps<typeof badgeVariants>["color"];
+type badgeColor = VariantProps<typeof badgeVariants>["color"];
+
+export {
+	Root,
+	Root as Badge,
+  type badgeColor,
+  badgeVariants
+};

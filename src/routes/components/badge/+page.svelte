@@ -21,16 +21,16 @@
     easing: quintOut,
     axis: 'y'
   };
-  let myStatus = $state(true);
+  let eventStatus = $state(true);
   function handleClose() {
     console.log('Badge dismissed');
     alert('Badge dismissed');
-    myStatus = false;
+    eventStatus = false;
   }
 
-  let btnBadge = $state(false);
+  let openBadgeStatus = $state(false);
   function openBadge() {
-    btnBadge = true;
+    openBadgeStatus = true;
   }
 
   const modules = import.meta.glob('./md/*.md', {
@@ -242,7 +242,7 @@
 />
 <H3>Dismissing with events</H3>
 <CodeWrapper class="h-20">
-  <Badge dismissable large onclick={handleClose} bind:badgeStatus={myStatus}>Default</Badge>
+  <Badge dismissable large onclick={handleClose} bind:badgeStatus={eventStatus}>Default</Badge>
 </CodeWrapper>
 
 <HighlightCompo
@@ -253,7 +253,7 @@
 <H2>Opening badge</H2>
 <CodeWrapper class="h-20">
   <Button onclick={openBadge}>Open badge</Button>
-  <Badge class='ml-4' color='blue' dismissable large bind:badgeStatus={btnBadge}>Default</Badge>
+  <Badge class='ml-4' color='blue' dismissable large bind:badgeStatus={openBadgeStatus}>Default</Badge>
 </CodeWrapper>
 
 <HighlightCompo
