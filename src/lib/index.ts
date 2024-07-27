@@ -3,24 +3,19 @@
 export { uiHelpers, clickOutside } from './uiHelpers.svelte';
 
 // accordion
-export { default as Accordion } from './accordion/Accordion.svelte';
-export { default as AccordionItem } from './accordion/AccordionItem.svelte';
+export * from './accordion/index';
 // alert
-// export { default as Alert } from './alert/Alert.svelte';
 export * from './alert/index';
 // avatar
-export { default as Avatar } from './avatar/Avatar.svelte';
+export * from './avatar/index';
 // badge
-// export { default as Badge } from './badge/Badge.svelte';
 export * from './badge/index';
 // banner
-export { default as Banner } from './banner/Banner.svelte';
+export * from './banner/index';
 // bottom-navigation
-export { default as BottomNav } from './bottom-navigation/BottomNav.svelte';
-export { default as BottomNavItem } from './bottom-navigation/BottomNavItem.svelte';
+export * from './bottom-navigation/index';
 // breadcrumb
-export { default as Breadcrumb } from './breadcrumb/Breadcrumb.svelte';
-export { default as BreadcrumbItem } from './breadcrumb/BreadcrumbItem.svelte';
+export * from './breadcrumb/index';
 // button
 export { default as Button } from './buttons/Button.svelte';
 export { default as GradientButton } from './buttons/GradientButton.svelte';

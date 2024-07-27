@@ -1,42 +1,17 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
   import { writable } from 'svelte/store';
   import { fade, blur, fly, slide } from 'svelte/transition';
-  import type { TransitionTypes, TransitionParamTypes } from '../types';
-  import type { AccordionCtxType } from './Accordion.svelte';
-
-  interface Props {
-    children: Snippet;
-    header?: Snippet;
-    arrowup?: Snippet;
-    arrowdown?: Snippet;
-    open?: boolean;
-    activeClass?: string | undefined | null;
-    inactiveClass?: string | undefined | null;
-    defaultClass?: string | undefined | null;
-    transitionType?: TransitionTypes;
-    transitionParams?: TransitionParamTypes;
-    paddingFlush?: string | undefined | null;
-    paddingDefault?: string | undefined | null;
-    textFlushOpen?: string | undefined | null;
-    textFlushDefault?: string | undefined | null;
-    borderClass?: string | undefined | null;
-    borderOpenClass?: string | undefined | null;
-    borderBottomClass?: string | undefined | null;
-    borderSharedClass?: string | undefined | null;
-    classActive?: string | undefined | null;
-    classInactive?: string | undefined | null;
-    class?: string | undefined | null;
-  }
+  import type { AccordionCtxType } from './accordion';
+  import type { AccordionItemProps as Props } from './accordionItem';
 
   let {
     children,
     header,
     arrowup,
     arrowdown,
-    open = false,
+    open = $bindable(false),
     activeClass = undefined,
     inactiveClass = undefined,
     defaultClass = 'flex items-center justify-between w-full font-medium text-left group-first:rounded-t-xl border-gray-200 dark:border-gray-700',
@@ -175,7 +150,7 @@
 @prop header
 @prop arrowup
 @prop arrowdown
-@prop open = false
+@prop open = $bindable(false)
 @prop activeClass = undefined
 @prop inactiveClass = undefined
 @prop defaultClass = 'flex items-center justify-between w-full font-medium text-left group-first:rounded-t-xl border-gray-200 dark:border-gray-700'

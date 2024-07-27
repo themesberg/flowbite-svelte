@@ -1,17 +1,9 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import { twMerge } from 'tailwind-merge';
-  import type { HTMLAttributes } from 'svelte/elements';
-
-  interface Props extends HTMLAttributes<HTMLElement> {
-    children: Snippet;
-    solid?: boolean;
-    navClass?: string | undefined | null;
-    solidClass?: string | undefined | null;
-    olClass?: string | undefined | null;
-    ariaLabel?: string | undefined | null;
-    class?: string | undefined | null;
-  }
+  import {
+    type BreadcrumbProps as Props,
+    breadcrumbVariants,
+    breadcrumbListVariants
+  } from './index';
 
   let {
     children,
@@ -20,28 +12,15 @@
     solidClass,
     olClass,
     ariaLabel = 'Breadcrumb',
-    class: classname,
     ...attributes
   }: Props = $props();
 
-  let navCls: string = twMerge('flex', navClass);
-  let solidCls: string = twMerge(
-    'flex px-5 py-3 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700',
-    solidClass
-  );
-  let olCls: string = twMerge(
-    'inline-flex items-center space-x-1 rtl:space-x-reverse md:space-x-3 rtl:space-x-reverse',
-    olClass
-  );
-  let classNav: string = solid ? solidCls : navCls;
+  let classNav = breadcrumbVariants({ solid, class: navClass });
+  let classList = breadcrumbListVariants({ class: olClass });
 </script>
 
-<nav
-  aria-label={ariaLabel}
-  {...attributes}
-  class={twMerge(classNav, classname)}
->
-  <ol class={olCls}>
+<nav aria-label={ariaLabel} {...attributes} class={classNav}>
+  <ol class={classList}>
     {@render children()}
   </ol>
 </nav>
@@ -56,6 +35,5 @@
 @prop solidClass
 @prop olClass
 @prop ariaLabel = 'Breadcrumb'
-@prop class: classname
 @prop ...attributes
 -->

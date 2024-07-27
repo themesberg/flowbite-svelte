@@ -1,26 +1,12 @@
-<script lang="ts" context="module">
-  export type BottomNavType = {
-    activeClass: string | undefined | null;
-  };
-</script>
-
 <script lang="ts">
-  import type { Snippet } from 'svelte';
   import { setContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
-  import type { BottomNavVariantType } from '../types';
-  import type { HTMLAttributes } from 'svelte/elements';
-
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    children: Snippet;
-    header?: Snippet;
-    activeUrl?: string | undefined | null;
-    position?: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky';
-    navType?: BottomNavVariantType;
-    outerClass?: string | undefined | null;
-    innerClass?: string | undefined | null;
-    activeClass?: string | undefined | null;
-  }
+  import {
+    outerDivVariants,
+    innerDivVariants,
+    type BottomNavProps as Props,
+    type BottomNavContextType
+  } from './index';
 
   let {
     children,
@@ -39,46 +25,11 @@
   );
 
   setContext('navType', navType);
-  setContext<BottomNavType>('bottomNavType', { activeClass: activeCls });
+  setContext<BottomNavContextType>('bottomNavType', { activeClass: activeCls });
 
-  const outerDivClasses = {
-    default: 'bottom-0 start-0 h-16 bg-white border-t',
-    border: 'bottom-0 start-0 h-16 bg-white border-t',
-    application:
-      'h-16 max-w-lg -translate-x-1/2 rtl:translate-x-1/2 bg-white border rounded-full bottom-4 start-1/2',
-    pagination:
-      'bottom-0 h-16 -translate-x-1/2 rtl:translate-x-1/2 bg-white border-t start-1/2',
-    group:
-      'bottom-0 -translate-x-1/2 rtl:translate-x-1/2 bg-white border-t start-1/2',
-    card: 'bottom-0 start-0 h-16 bg-white border-t',
-    meeting:
-      'bottom-0 start-0 grid h-16 grid-cols-1 px-8 bg-white border-t md:grid-cols-3',
-    video:
-      'bottom-0 start-0 grid h-24 grid-cols-1 px-8 bg-white border-t md:grid-cols-3'
-  };
-
-  const innerDivClasses = {
-    default: '',
-    border: '',
-    application: '',
-    pagination: '',
-    group: '',
-    card: '',
-    meeting: 'flex items-center justify-center mx-auto',
-    video: 'flex items-center w-full'
-  };
-
-  const outerCls = twMerge(
-    position,
-    'w-full z-30 border-gray-200 dark:bg-gray-700 dark:border-gray-600',
-    outerDivClasses[navType],
-    outerClass
-  );
-  const innerCls = twMerge(
-    'grid h-full max-w-lg mx-auto',
-    innerDivClasses[navType],
-    innerClass
-  );
+  $inspect('position: ', position);
+  const outerCls = twMerge(outerDivVariants({ position, navType }), outerClass);
+  const innerCls = twMerge(innerDivVariants({ navType }), innerClass);
 </script>
 
 <div {...attributes} class={outerCls}>

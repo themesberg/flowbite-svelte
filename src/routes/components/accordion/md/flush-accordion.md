@@ -1,3 +1,7 @@
+<script lang="ts">
+  import { AccordionItem, Accordion } from 'svelte-5-ui-lib';
+</script>
+
 <Accordion flush>
   <AccordionItem>
     {#snippet header()}

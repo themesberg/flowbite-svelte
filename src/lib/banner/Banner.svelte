@@ -1,25 +1,12 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import { CloseButton } from '$lib';
-  import type { ColorVariant } from '../types';
-  import { fade, type TransitionConfig } from 'svelte/transition';
-  import type { HTMLAttributes } from 'svelte/elements';
-
-  type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
-
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    children: Snippet;
-    header?: Snippet;
-    position?: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky';
-    dismissable?: boolean;
-    color?: ColorVariant;
-    bannerType?: 'default' | 'bottom' | 'cta' | 'signup' | 'info';
-    divClass?: string | undefined;
-    innerClass?: string | undefined;
-    transition?: TransitionFunc;
-    params?: any;
-  }
+  import { fade } from 'svelte/transition';
+  import {
+    type BannerProps as Props,
+    bannerVariants,
+    insideDivVariants
+  } from './index';
 
   let {
     children,
@@ -36,30 +23,13 @@
   }: Props = $props();
 
   let bannerStatus = $state(true);
-  // $inspect('bannerStatus: ', bannerStatus);
-  const divClasses = {
-    default: 'top-0 start-0 w-full border-b border-gray-200 bg-gray-50',
-    bottom: 'bottom-0 start-0 w-full border-t border-gray-200 bg-gray-50',
-    cta: 'flex-col md:flex-row  w-[calc(100%-2rem)] -translate-x-1/2 rtl:translate-x-1/2 bg-white border border-gray-100 rounded-lg shadow-sm lg:max-w-7xl start-1/2 top-6',
-    signup: 'top-0 start-0 w-full border-b border-gray-200 bg-gray-50',
-    info: 'top-0 start-0 flex-col w-full border-b border-gray-200 md:flex-row bg-gray-50'
-  };
-
-  const insideDivClasses = {
-    default: 'items-center mx-auto',
-    bottom: 'items-center mx-auto',
-    cta: 'flex-col items-start mb-3 me-4 md:items-center md:flex-row md:mb-0',
-    signup: 'items-center flex-shrink-0 w-full mx-auto sm:w-auto',
-    info: 'items-center flex-shrink-0'
-  };
-
-  let divCls = twMerge(
-    position,
-    'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600',
-    divClasses[bannerType],
+  let bannerClass = twMerge(
+    bannerVariants({ position, bannerType, color }),
     divClass
   );
-  let innerCls = twMerge('flex', insideDivClasses[bannerType], innerClass);
+
+  let innerCls = twMerge('flex', insideDivVariants({ bannerType }), innerClass);
+
   const clickToDismiss = () => {
     bannerStatus = false;
   };
@@ -68,7 +38,7 @@
 {#if bannerStatus}
   <div
     tabindex="-1"
-    class={divCls}
+    class={bannerClass}
     {...attributes}
     transition:transition={params}
   >

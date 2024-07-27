@@ -1,28 +1,8 @@
 <script lang="ts">
-  import { cn } from "../utils";
-  import type { Snippet } from 'svelte';
-  import { alertVariants, type alertColor } from './index';
-  import { twMerge } from 'tailwind-merge';
+  // import { cn } from "../utils";
+  import { alertVariants, type AlertProps as Props } from './index';
   import { CloseButton } from '$lib';
-  // import type { ColorVariant } from '../types';
-  import { fade, type TransitionConfig } from 'svelte/transition';
-  import type { HTMLAttributes } from 'svelte/elements';
-
-  type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
-
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    children: Snippet;
-    icon?: Snippet;
-    alertStatus?: boolean;
-    closeIcon?: any;
-    color?: alertColor;
-    border?: boolean;
-    rounded?: boolean;
-    dismissable?: boolean;
-    transition?: TransitionFunc;
-    params?: any;
-    onclick?: () => void;
-  }
+  import { fade } from 'svelte/transition';
 
   let {
     children,
@@ -40,15 +20,14 @@
     ...attributes
   }: Props = $props();
 
-  // let alertStatus: boolean = $state(true);
-  let divCls = cn(alertVariants({ 
-    color, 
-    rounded, 
-    border, 
-    icon: !!icon, 
+  let divCls = alertVariants({
+    color,
+    rounded,
+    border,
+    icon: !!icon,
     dismissable,
-    className 
-  }))
+    className
+  });
 </script>
 
 {#if alertStatus}
@@ -85,15 +64,14 @@
             {@render icon()}
           {/if}
         </button>
+      {:else if onclick}
+        <CloseButton
+          class="-my-1.5 -me-1.5 ms-auto dark:hover:bg-gray-700"
+          {color}
+          ariaLabel="Remove badge"
+          {onclick}
+        />
       {:else}
-        {#if onclick}
-          <CloseButton
-            class="-my-1.5 -me-1.5 ms-auto dark:hover:bg-gray-700"
-            {color}
-            ariaLabel="Remove badge"
-            onclick={onclick}
-          />
-        {:else}
         <CloseButton
           class="-my-1.5 -me-1.5 ms-auto dark:hover:bg-gray-700"
           {color}
@@ -102,7 +80,6 @@
             alertStatus = false;
           }}
         />
-        {/if}
       {/if}
     {/if}
   </div>
@@ -114,11 +91,12 @@
 ## Props
 @prop children
 @prop icon
+@prop alertStatus = $bindable(true)
 @prop closeIcon
 @prop color = 'primary'
 @prop rounded = true
 @prop border
-@prop class: divClass
+@prop class: className
 @prop dismissable
 @prop transition = fade
 @prop params

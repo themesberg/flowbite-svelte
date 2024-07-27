@@ -1,21 +1,7 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
   import { Indicator } from '$lib';
   import { twMerge } from 'tailwind-merge';
-
-  interface Props {
-    children?: Snippet;
-    href?: string | undefined | null;
-    src?: string | undefined | null;
-    rounded?: boolean;
-    border?: boolean;
-    stacked?: boolean;
-    dot?: object | undefined;
-    alt?: string | undefined | null;
-    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none';
-    class?: string | undefined | null;
-    onclick?: () => void;
-  }
+  import { avatarVariants, type AvatarProps as Props } from './index';
 
   let {
     children,
@@ -25,31 +11,18 @@
     border,
     stacked,
     dot,
+    class: className,
     alt,
     size = 'md',
-    class: classname,
     onclick,
     ...attributes
   }: Props = $props();
 
   dot = dot && { placement: 'top-right', color: 'gray', size: 'lg', ...dot };
 
-  const sizes = {
-    xs: 'w-6 h-6',
-    sm: 'w-8 h-8',
-    md: 'w-10 h-10',
-    lg: 'w-20 h-20',
-    xl: 'w-36 h-36',
-    none: ''
-  };
-
-  let avatarCls = twMerge(
-    rounded ? 'rounded' : 'rounded-full',
-    border && 'p-1 ring-2 ring-gray-300 dark:ring-gray-500',
-    sizes[size],
-    stacked && 'border-2 -ms-4 border-white dark:border-gray-800',
-    'bg-gray-100 dark:bg-gray-600 text-gray-600 dark:text-gray-300',
-    classname
+  let avatarClass = twMerge(
+    avatarVariants({ rounded, border, stacked, size }),
+    className
   );
 </script>
 
@@ -60,7 +33,7 @@
     {onclick}
     {href}
     {...attributes}
-    class="relative flex items-center justify-center {avatarCls}"
+    class={avatarClass}
   >
     {#if src}
       <img {alt} {src} class={rounded ? 'rounded' : 'rounded-full'} />
@@ -85,7 +58,7 @@
     {/if}
   </svelte:element>
 {:else}
-  <img {alt} {src} {...attributes} class={avatarCls} />
+  <img {alt} {src} {...attributes} class={avatarClass} />
 {/if}
 
 <!--
@@ -99,9 +72,9 @@
 @prop border
 @prop stacked
 @prop dot
+@prop class: className
 @prop alt
 @prop size = 'md'
-@prop class: classname
 @prop onclick
 @prop ...attributes
 -->

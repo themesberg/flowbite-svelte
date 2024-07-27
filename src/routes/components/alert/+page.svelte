@@ -389,11 +389,7 @@
 
 <H2>Events</H2>
 <CodeWrapper class="h-24">
-  <Alert
-    dismissable
-    onclick={handleClose}
-    bind:alertStatus={alertEventStatus}
-  >
+  <Alert dismissable onclick={handleClose} bind:alertStatus={alertEventStatus}>
     Close me
   </Alert>
 </CodeWrapper>

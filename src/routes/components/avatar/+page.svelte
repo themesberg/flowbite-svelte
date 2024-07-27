@@ -71,6 +71,9 @@
 
 <HighlightCompo code={modules['./md/placeholder-initials.md'] as string} />
 
+<H2>Avatar tooltip</H2>
+<CodeWrapper class="flex justify-center gap-4">NOT COMPLETED</CodeWrapper>
+
 <H2>Dot indicator</H2>
 <CodeWrapper class="flex justify-center gap-4">
   <Avatar src="/images/profile-picture-3.webp" dot={{ color: 'red' }} />
@@ -92,9 +95,6 @@
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/dot-indicator.md'] as string} />
-
-<H2>Avatar tooltip</H2>
-<CodeWrapper class="flex justify-center gap-4">NOT COMPLETED</CodeWrapper>
 
 <H2>Stacked</H2>
 <CodeWrapper class="flex flex-col justify-center gap-4">
@@ -182,3 +182,4 @@
     />
   </div>
 </CodeWrapper>
+<HighlightCompo code={modules['./md/sizes.md'] as string} />

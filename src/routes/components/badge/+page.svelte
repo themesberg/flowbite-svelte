@@ -242,7 +242,9 @@
 />
 <H3>Dismissing with events</H3>
 <CodeWrapper class="h-20">
-  <Badge dismissable large onclick={handleClose} bind:badgeStatus={eventStatus}>Default</Badge>
+  <Badge dismissable large onclick={handleClose} bind:badgeStatus={eventStatus}
+    >Default</Badge
+  >
 </CodeWrapper>
 
 <HighlightCompo
@@ -253,7 +255,13 @@
 <H2>Opening badge</H2>
 <CodeWrapper class="h-20">
   <Button onclick={openBadge}>Open badge</Button>
-  <Badge class='ml-4' color='blue' dismissable large bind:badgeStatus={openBadgeStatus}>Default</Badge>
+  <Badge
+    class="ml-4"
+    color="blue"
+    dismissable
+    large
+    bind:badgeStatus={openBadgeStatus}>Default</Badge
+  >
 </CodeWrapper>
 
 <HighlightCompo

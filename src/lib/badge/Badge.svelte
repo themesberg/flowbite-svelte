@@ -1,29 +1,9 @@
 <script lang="ts">
-  import { cn } from "../utils";
-  import { badgeVariants, type badgeColor } from './index';
-  import type { Snippet } from 'svelte';
+  // import { cn } from "../utils";
+  import { badgeVariants, type BadgeProps as Props } from './index';
   import { CloseButton } from '$lib';
-  // import type { ColorVariant } from '../types';
-  import { fade, type TransitionConfig } from 'svelte/transition';
-  import type { HTMLAttributes } from 'svelte/elements';
- 
-  type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
+  import { fade } from 'svelte/transition';
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    children: Snippet;
-    icon?: Snippet;
-    badgeStatus?: boolean;
-    color?: badgeColor;
-    large?: boolean;
-    dismissable?: boolean;
-    class?: string | undefined | null;
-    border?: boolean;
-    href?: string | undefined | null;
-    rounded?: boolean;
-    transition?: TransitionFunc;
-    params?: any;
-    onclick?: () => void;
-  }
   let {
     children,
     icon,
@@ -41,13 +21,13 @@
     ...attributes
   }: Props = $props();
 
-  let badgeClass = cn(badgeVariants({ 
-    color, 
-    size: large ? 'large' : 'small', 
+  let badgeClass = badgeVariants({
+    color,
+    size: large ? 'large' : 'small',
     border,
     rounded,
     className
-  }));
+  });
   // $inspect('badgeStatus: ', badgeStatus);
 </script>
 
@@ -73,26 +53,24 @@
           ><span class="sr-only">Remove badge</span>
           {@render icon()}
         </button>
+      {:else if onclick}
+        <CloseButton
+          class="-me-1.5 ms-1.5"
+          {color}
+          size={large ? 'sm' : 'xs'}
+          ariaLabel="Remove badge"
+          {onclick}
+        />
       {:else}
-        {#if onclick}
-          <CloseButton
-            class="-me-1.5 ms-1.5"
-            {color}
-            size={large ? 'sm' : 'xs'}
-            ariaLabel="Remove badge"
-            onclick={onclick}
-          />
-        {:else}
-          <CloseButton
-            class="-me-1.5 ms-1.5"
-            {color}
-            size={large ? 'sm' : 'xs'}
-            ariaLabel="Remove badge"
-            onclick={() => {
-              badgeStatus = false;
-            }}
-          />
-        {/if}
+        <CloseButton
+          class="-me-1.5 ms-1.5"
+          {color}
+          size={large ? 'sm' : 'xs'}
+          ariaLabel="Remove badge"
+          onclick={() => {
+            badgeStatus = false;
+          }}
+        />
       {/if}
     {/if}
   </div>
@@ -104,10 +82,11 @@
 ## Props
 @prop children
 @prop icon
+@prop badgeStatus = $bindable(true)
 @prop color = 'primary'
 @prop large = false
 @prop dismissable = false
-@prop class: divClass
+@prop class: className
 @prop border
 @prop href
 @prop rounded

@@ -22,35 +22,34 @@
   const components: ListType = {
     accordion: {
       checked: true,
-      problems:
-        'Always open, Multiple mode, Custom transitions, Nesting accordions'
+      notes: 'Variants'
     },
     alert: {
       checked: true,
-      notes: 'Updated: class names'
+      notes: 'Variants'
     },
     avatar: {
       checked: true,
       problems: 'Avatar tooltip',
-      notes: 'Updated: class names'
+      notes: 'Variants'
     },
     badge: {
       checked: true,
-      notes: 'Updated: class names'
+      notes: 'Variants'
     },
     banner: {
       checked: true,
-      notes: 'Updated: class names'
+      notes: 'Variants'
     },
     bottomNavigation: {
       checked: true,
       problems:
         '(Tooltip) Application bar example, Example with pagination, Button group bottom bar, Card with bottom bar',
-      notes: 'Updated: class names'
+      notes: 'Variants'
     },
     breadcrumb: {
       checked: true,
-      notes: 'Updated: class names'
+      notes: 'Variants'
     },
     buttonGroup: {
       checked: true,
