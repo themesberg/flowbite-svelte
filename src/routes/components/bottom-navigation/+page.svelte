@@ -230,3 +230,15 @@
   codeLang="ts"
   code={modules['./md/menu-items-with-border.md'] as string}
 />
+
+<H2>Application bar example</H2>
+<CodeWrapper>TBD</CodeWrapper>
+
+<H2>Example with pagination</H2>
+<CodeWrapper>TBD</CodeWrapper>
+
+<H2>Button group bottom bar</H2>
+<CodeWrapper>TBD</CodeWrapper>
+
+<H2>Card with bottom bar</H2>
+<CodeWrapper>TBD</CodeWrapper>
