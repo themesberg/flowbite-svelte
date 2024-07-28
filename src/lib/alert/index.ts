@@ -1,5 +1,6 @@
 import { type VariantProps, tv } from 'tailwind-variants';
 import type { Snippet } from 'svelte';
+import Alert from './Alert.svelte';
 import { type TransitionConfig } from 'svelte/transition';
 import type { HTMLAttributes } from 'svelte/elements';
 
@@ -114,6 +115,4 @@ interface AlertProps extends HTMLAttributes<HTMLDivElement> {
   onclick?: () => void;
 }
 
-export { type alertColor, type AlertProps, alertVariants };
-
-export { default as Alert } from './Alert.svelte';
+export { type alertColor, type AlertProps, alertVariants, Alert };

@@ -1,27 +1,9 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
+  
   import { twMerge } from 'tailwind-merge';
-  import Label from './Label.svelte';
-  import { labelCls, inputCls } from './Radio.svelte';
-  import type { FormColorType } from '../types';
-  import type { HTMLInputAttributes } from 'svelte/elements';
-
-  interface Props extends HTMLInputAttributes {
-    children: Snippet;
-    toggleSize?: 'small' | 'default' | 'large' | 'custom';
-    group?: (string | number)[];
-    value?: string | number;
-    checked?: boolean | undefined;
-    customSize?: string | undefined | null;
-    spanClass?: string | undefined | null;
-    color?: FormColorType;
-    inline?: boolean;
-    labelClass?: string | undefined;
-    aria_describedby?: string | undefined | null;
-    spacing?: string | undefined | null;
-    custom?: boolean;
-    inputClass?: string | undefined;
-  }
+  import Label from '../Label.svelte';
+  import { labelCls, inputCls } from '../Radio.svelte';
+  import { type ToggleProps as Props, toggleVariants } from './index';
 
   let {
     children,
@@ -30,7 +12,7 @@
     value,
     checked = $bindable(),
     customSize,
-    spanClass,
+    class: className,
     color = 'primary',
     inline = false,
     labelClass = '',
@@ -69,14 +51,14 @@
     custom: customSize
   };
 
-  let divClass: string = twMerge(
+  let spanCls: string = twMerge(
     common,
     'dark:bg-gray-600 dark:border-gray-500',
     // background ? 'dark:bg-gray-600 dark:border-gray-500' : 'dark:bg-gray-700 dark:border-gray-600',
     colors[color ?? 'primary'],
     sizes[toggleSize],
     'relative',
-    spanClass
+    className
   );
 </script>
 
@@ -89,7 +71,7 @@
     {...attributes}
     class={twMerge(spacing, inputCls(custom, color, true, false, inputClass))}
   />
-  <span class={divClass}></span>
+  <span class={spanCls}></span>
   {@render children()}
 </Label>
 

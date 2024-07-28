@@ -21,12 +21,6 @@ const accordionVariants = tv({
 
 type Flush = VariantProps<typeof accordionVariants>['flush'];
 
-// type Props = AccordionCtxType & {
-//     flush?: Flush;
-//     activeClass?: string;
-//     inactiveClass?: string;
-//     class?: string;
-// };
 interface AccordionCtxType {
   flush: Flush;
   activeClass: string | undefined | null;

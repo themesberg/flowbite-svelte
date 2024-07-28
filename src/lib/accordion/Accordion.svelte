@@ -7,7 +7,7 @@
     type AccordionCtxType,
     type AccordionProps as Props
   } from './accordion';
-  import { writable } from 'svelte/store';
+  // import { writable } from 'svelte/store';
 
   let {
     children,

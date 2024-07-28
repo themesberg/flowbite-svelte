@@ -128,7 +128,7 @@
   <Heading tag="h1" class="mb-4">
     We invest in the <Span
       underline
-      decorationClass="decoration-8 decoration-blue-400 dark:decoration-blue-600"
+      class="decoration-8 decoration-blue-400 dark:decoration-blue-600"
       >world’s potential</Span
     >
   </Heading>
@@ -157,7 +157,7 @@
 
 <H2>Secondary text</H2>
 <CodeWrapper>
-  <Heading tag="h1" customSize="text-5xl font-extrabold">
+  <Heading tag="h1" class="text-5xl font-extrabold">
     Flowbite <Secondary class="ms-2">This is secondary text</Secondary>
   </Heading>
 </CodeWrapper>

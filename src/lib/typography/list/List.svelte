@@ -1,16 +1,7 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import { setContext } from 'svelte';
-
-  interface Props {
-    children: Snippet;
-    tag?: 'ul' | 'ol' | 'dl';
-    list?: 'disc' | 'none' | 'decimal' | undefined;
-    position?: 'inside' | 'outside';
-    ctxclass?: string | undefined | null;
-    class?: string | undefined;
-  }
+  import { type ListProps as Props, listVariants } from './index';
 
   let {
     children,
@@ -24,20 +15,8 @@
 
   setContext('ctxclass', ctxclass);
 
-  let lists = {
-    disc: 'list-disc',
-    none: 'list-none',
-    decimal: 'list-decimal'
-  };
-
-  let positions = {
-    inside: 'list-inside',
-    outside: 'list-outside'
-  };
-
   let classList = twMerge(
-    lists[list ?? (tag === 'ul' ? 'disc' : 'ol' ? 'decimal' : 'none')],
-    positions[position],
+    listVariants({list, position, tag}),
     classname
   );
 </script>

@@ -20,7 +20,7 @@ export * from './breadcrumb/index';
 export { default as Button } from './buttons/Button.svelte';
 export { default as GradientButton } from './buttons/GradientButton.svelte';
 // buttongroup
-export { default as ButtonGroup } from './buttongroup/ButtonGroup.svelte';
+export * from './buttongroup/index';
 // card
 export { default as Card } from './cards/Card.svelte';
 // darkmode
@@ -47,19 +47,7 @@ export { default as FooterCopyright } from './footer/FooterCopyright.svelte';
 export { default as FooterIcon } from './footer/FooterIcon.svelte';
 export { default as FooterLi } from './footer/FooterLi.svelte';
 export { default as FooterUl } from './footer/FooterUl.svelte';
-// forms
-export { default as Checkbox } from './forms/Checkbox.svelte';
-export { default as FloatingLabelInput } from './forms/FloatingLabelInput.svelte';
-export { default as Helper } from './forms/Helper.svelte';
-export { default as Input } from './forms/Input.svelte';
-export { default as InputAddon } from './forms/InputAddon.svelte';
-export { default as Label } from './forms/Label.svelte';
-export { default as Select } from './forms/Select.svelte';
-export { default as Radio } from './forms/Radio.svelte';
-export { default as RadioButton } from './forms/RadioButton.svelte';
-export { default as Range } from './forms/Range.svelte';
-export { default as Textarea } from './forms/Textarea.svelte';
-export { default as Toggle } from './forms/Toggle.svelte';
+
 // gallery
 export { default as Gallery } from './gallery/Gallery.svelte';
 // indicator
@@ -121,22 +109,35 @@ export { default as Toolbar } from './toolbar/Toolbar.svelte';
 export { default as ToolbarButton } from './toolbar/ToolbarButton.svelte';
 export { default as ToolbarGroup } from './toolbar/ToolbarGroup.svelte';
 
+// forms
+export { default as Checkbox } from './forms/Checkbox.svelte';
+export { default as FloatingLabelInput } from './forms/FloatingLabelInput.svelte';
+export { default as Helper } from './forms/Helper.svelte';
+export { default as Input } from './forms/Input.svelte';
+export { default as InputAddon } from './forms/InputAddon.svelte';
+export { default as Label } from './forms/Label.svelte';
+export { default as Select } from './forms/Select.svelte';
+export { default as Radio } from './forms/Radio.svelte';
+export { default as RadioButton } from './forms/RadioButton.svelte';
+export { default as Range } from './forms/Range.svelte';
+export { default as Textarea } from './forms/Textarea.svelte';
+export * from './forms/toggle/index';
+
 // typography
-export { default as A } from './typography/A.svelte';
-export { default as Blockquote } from './typography/Blockquote.svelte';
-export { default as DescriptionList } from './typography/DescriptionList.svelte';
-export { default as Heading } from './typography/Heading.svelte';
-export { default as Hr } from './typography/Hr.svelte';
-export { default as Img } from './typography/Img.svelte';
-export { default as Layout } from './typography/Layout.svelte';
-export { default as List } from './typography/List.svelte';
-export { default as Li } from './typography/Li.svelte';
-export { default as Mark } from './typography/Mark.svelte';
-export { default as P } from './typography/P.svelte';
-export { default as Secondary } from './typography/Secondary.svelte';
-export { default as Span } from './typography/Span.svelte';
+export * from './typography/anchor/index';
+export * from './typography/blockquote/index';
+export * from './typography/descriptionlist/index';
+export * from './typography/heading/index';
+export * from './typography/hr/index';
+export * from './typography/img/index';
+export * from './typography/layout/index';
+export * from './typography/list/index';
+export * from './typography/mark/index';
+export * from './typography/paragraph/index';
+export * from './typography/secondary/index';
+export * from './typography/span/index';
 // video
-export { default as Video } from './video/Video.svelte';
+export * from './video/index';
 
 // utils
 export { default as CloseButton } from './utils/CloseButton.svelte';

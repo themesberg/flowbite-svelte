@@ -1,7 +1,7 @@
 <script lang="ts">
   import { List, Li, Heading, Span, DescriptionList, A } from '$lib';
   import {
-    CheckCircleOutline,
+    CheckCircleSolid,
     CloseCircleOutline,
     CheckOutline
   } from 'flowbite-svelte-icons';
@@ -48,20 +48,20 @@
   >
   <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
     <Li icon>
-      <CheckCircleOutline
-        class="me-2 h-3.5 w-3.5 text-green-500 dark:text-green-400"
+      <CheckCircleSolid
+        class="me-2 h-5 w-5 text-green-500 dark:text-green-400"
       />
       At least 10 characters (and up to 100 characters)
     </Li>
     <Li icon>
-      <CheckCircleOutline
-        class="me-2 h-3.5 w-3.5 text-green-500 dark:text-green-400"
+      <CheckCircleSolid
+        class="me-2 h-5 w-5 text-green-500 dark:text-green-400"
       />
       At least one lowercase character
     </Li>
     <Li icon>
-      <CloseCircleOutline
-        class="me-2 h-3.5 w-3.5 text-gray-500 dark:text-gray-400"
+      <CheckCircleSolid
+        class="me-2 h-5 w-5 text-gray-500 dark:text-gray-400"
       />
       Inclusion of at least one special character, e.g., ! @ # ?
     </Li>
@@ -213,23 +213,23 @@
     list="none"
   >
     <Li icon class="gap-3">
-      <CheckOutline class="h-3.5 w-3.5 text-green-500 dark:text-green-400" />
+      <CheckOutline class="h-5 w-5 text-green-500 dark:text-green-400" />
       Individual configuration
     </Li>
     <Li icon class="gap-3">
-      <CheckOutline class="h-3.5 w-3.5 text-green-500 dark:text-green-400" />
+      <CheckOutline class="h-5 w-5 text-green-500 dark:text-green-400" />
       No setup, or hidden fees
     </Li>
     <Li icon class="gap-3">
-      <CheckOutline class="h-3.5 w-3.5 text-green-500 dark:text-green-400" />
+      <CheckOutline class="h-5 w-5 text-green-500 dark:text-green-400" />
       <span>Team size: <Span>1 developer</Span></span>
     </Li>
     <Li icon class="gap-3">
-      <CheckOutline class="h-3.5 w-3.5 text-green-500 dark:text-green-400" />
+      <CheckOutline class="h-5 w-5 text-green-500 dark:text-green-400" />
       <span>Premium support: <Span>6 months</Span></span>
     </Li>
     <Li icon class="gap-3">
-      <CheckOutline class="h-3.5 w-3.5 text-green-500 dark:text-green-400" />
+      <CheckOutline class="h-5 w-5 text-green-500 dark:text-green-400" />
       <span>Free updates: <Span>6 months</Span></span>
     </Li>
   </List>

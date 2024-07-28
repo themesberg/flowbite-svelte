@@ -1,9 +1,7 @@
 import { type VariantProps, tv } from 'tailwind-variants';
 import type { Snippet } from 'svelte';
-import { type TransitionConfig } from 'svelte/transition';
 import type { HTMLAttributes } from 'svelte/elements';
 import type { HTMLLiAttributes } from 'svelte/elements';
-// import type { BottomNavVariantType } from '../types';
 import Breadcrumb from './Breadcrumb.svelte';
 import BreadcrumbItem from './BreadcrumbItem.svelte';
 

@@ -61,7 +61,7 @@
 <H2>First letter</H2>
 
 <CodeWrapper>
-  <P class="mb-3" color="text-gray-500 dark:text-gray-400" firstupper
+  <P class="mb-3" color="text-gray-500 dark:text-gray-400" firstUpper
     >Track work across the enterprise through an open, collaborative platform.
     Link issues across Jira and ingest data from other software development
     tools, so your IT support and operations teams have richer contextual

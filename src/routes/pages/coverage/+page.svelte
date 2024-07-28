@@ -53,7 +53,7 @@
     },
     buttonGroup: {
       checked: true,
-      notes: 'Updated: class names'
+      notes: 'Variants'
     },
     buttons: {
       checked: true,
@@ -162,7 +162,8 @@
       checked: false
     },
     video: {
-      checked: true
+      checked: true,
+      notes: 'Variants'
     }
   };
 
@@ -213,40 +214,40 @@
   const typography: ListType = {
     blockquote: {
       checked: true,
-      notes: 'Updated: class names'
+      notes: 'Variants'
     },
     heading: {
       checked: true,
-      notes: 'Updated: class names'
+      notes: 'Variants'
       // problems: 'Highlighted heading, Heading underline, Breadcrumb context, Badge context, Secondary text, Sizes'
     },
     hr: {
       checked: true,
-      notes: 'Updated: class names'
+      notes: 'Variants'
       // problems: 'Icon HR - icon size,'
     },
     image: {
       checked: true,
-      notes: 'Updated: class names'
+      notes: 'Variants'
     },
     link: {
       checked: true,
-      notes: 'Updated: class names'
+      notes: 'Variants'
       // problems: 'Button, CTA link, Card link, Image link '
     },
     list: {
       checked: true,
-      notes: 'Updated: class names'
+      notes: 'Variants'
     },
     paragraph: {
       checked: true,
-      problems: 'Paragraph popover ',
-      notes: 'Updated: class names'
+      problems: 'Paragraph popover',
+      notes: 'Variants'
     },
     text: {
       checked: true,
       problems: 'Opacity',
-      notes: 'Updated: class names'
+      notes: 'Variants'
     }
   };
 
