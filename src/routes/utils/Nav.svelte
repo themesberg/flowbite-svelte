@@ -336,7 +336,7 @@
         <SidebarItem
           onclick={closeNavDrawer}
           label="Tab"
-          href="/components/tab"
+          href="/components/tabs"
         />
         <SidebarItem
           onclick={closeNavDrawer}

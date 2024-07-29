@@ -140,6 +140,6 @@ export * from './typography/span/index';
 export * from './video/index';
 
 // utils
-export { default as CloseButton } from './utils/CloseButton.svelte';
+export * from './utils/index';
 // plugins
 export { default as Chart } from './chart/Chart.svelte';

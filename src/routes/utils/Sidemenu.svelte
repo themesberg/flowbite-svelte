@@ -74,7 +74,7 @@
       <SidebarItem label="Skeleton" href="/components/skeleton" />
       <SidebarItem label="Speed dial" href="/components/speed-dial" />
       <SidebarItem label="Spinner" href="/components/spinner" />
-      <SidebarItem label="Tab" href="/components/tab" />
+      <SidebarItem label="Tab" href="/components/tabs" />
       <SidebarItem label="Table" href="/components/table" />
       <SidebarItem label="Timeline" href="/components/timeline" />
       <SidebarItem label="Toast" href="/components/toast" />

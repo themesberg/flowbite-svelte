@@ -1,64 +1,47 @@
 <script lang="ts">
-  import type { SpinnerColorType } from '$lib/types';
   import { twMerge } from 'tailwind-merge';
-  import type { SVGAttributes } from 'svelte/elements';
-
-  interface Props extends SVGAttributes<SVGSVGElement> {
-    color?: SpinnerColorType;
-    bg?: string | undefined | null;
-    customColor?: string | undefined | null;
-    size?: string | number;
-    currentFill?: string | undefined | null;
-    currentColor?: string | undefined | null;
-    svgClass?: string | undefined | null;
-  }
+  import { type SpinnerProps as Props, spinnerVariants } from './index'; 
 
   let {
-    svgClass,
     color = 'primary',
     bg = 'text-gray-300',
-    customColor,
     size = '8',
+    class: className,
     currentFill = 'currentFill',
     currentColor = 'currentColor',
     ...attributes
   }: Props = $props();
 
-  let iconsize = `w-${size} h-${size}`;
+  // let iconsize = `w-${size} h-${size}`;
 
-  if (currentFill !== 'currentFill') {
-    color = 'custom';
-  }
+  // if (currentFill !== 'currentFill') {
+  //   color = 'custom';
+  // }
 
-  const fillColorClasses = {
-    primary: 'fill-primary-600',
-    blue: 'fill-blue-600',
-    gray: 'fill-gray-600 dark:fill-gray-300',
-    green: 'fill-green-500',
-    red: 'fill-red-600',
-    yellow: 'fill-yellow-400',
-    pink: 'fill-pink-600',
-    purple: 'fill-purple-600',
-    white: 'fill-white',
-    custom: customColor
-  };
+  // const fillColorClasses = {
+  //   primary: 'fill-primary-600',
+  //   blue: 'fill-blue-600',
+  //   gray: 'fill-gray-600 dark:fill-gray-300',
+  //   green: 'fill-green-500',
+  //   red: 'fill-red-600',
+  //   yellow: 'fill-yellow-400',
+  //   pink: 'fill-pink-600',
+  //   purple: 'fill-purple-600',
+  //   white: 'fill-white',
+  //   custom: customColor
+  // };
 
-  let fillColorCls: string =
-    color === undefined
-      ? ''
-      : (fillColorClasses[color] ?? fillColorClasses.blue);
+  // let fillColorCls: string =
+  //   color === undefined
+  //     ? ''
+  //     : (fillColorClasses[color] ?? fillColorClasses.blue);
+  let spinnerClass = spinnerVariants({ color, size, className });
 </script>
 
 <svg
   {...attributes}
   role="status"
-  class={twMerge(
-    '-mt-px inline animate-spin dark:text-gray-600',
-    iconsize,
-    bg,
-    fillColorCls,
-    svgClass
-  )}
+  class={spinnerClass}
   viewBox="0 0 100 101"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
@@ -72,17 +55,3 @@
     fill={currentFill}
   />
 </svg>
-
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@prop svgClass
-@prop color = 'primary'
-@prop bg = 'text-gray-300'
-@prop customColor
-@prop size = '8'
-@prop currentFill = 'currentFill'
-@prop currentColor = 'currentColor'
-@prop ...attributes
--->
