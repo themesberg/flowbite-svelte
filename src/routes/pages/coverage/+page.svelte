@@ -97,7 +97,8 @@
       notes: 'Updated: class names'
     },
     kbd: {
-      checked: true
+      checked: true,
+      notes: 'Varants checked'
     },
     listGroup: {
       checked: true,
@@ -207,7 +208,7 @@
     },
     toggle: {
       checked: true,
-      notes: 'Updated: class names'
+      notes: 'Variants',
     }
   };
 

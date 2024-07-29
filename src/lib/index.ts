@@ -62,8 +62,8 @@ export { default as Navbar } from './nav/Navbar.svelte';
 export { default as NavUl } from './nav/NavUl.svelte';
 export { default as NavBrand } from './nav/NavBrand.svelte';
 export { default as NavLi } from './nav/NavLi.svelte';
-// progress
-export { default as Progressbar } from './progress/Progressbar.svelte';
+// progressbar
+export * from './progress/index';
 // rating
 export { default as AdvancedRating } from './rating/AdvancedRating.svelte';
 export { default as Star } from './rating/Star.svelte';

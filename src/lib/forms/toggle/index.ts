@@ -4,7 +4,7 @@ import type { Snippet } from 'svelte';
 import type { FormColorType } from '../../types';
 import type { HTMLInputAttributes } from 'svelte/elements';
 
-const toggleVariants = tv({
+const toggleSpanVariants = tv({
   base: "me-3 shrink-0 bg-gray-200 rounded-full peer-focus:ring-4 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:bg-white after:border-gray-300 after:border after:rounded-full after:transition-all dark:bg-gray-600 dark:border-gray-500 relative",
   variants: {
     color: {
@@ -35,11 +35,10 @@ const toggleVariants = tv({
 
 interface ToggleProps extends HTMLInputAttributes {
   children: Snippet;
-  toggleSize?: 'small' | 'default' | 'large' | 'custom';
+  toggleSize?: 'small' | 'default' | 'large';
   group?: (string | number)[];
   value?: string | number;
   checked?: boolean | undefined;
-  customSize?: string | undefined | null;
   spanClass?: string | undefined | null;
   color?: FormColorType;
   inline?: boolean;
@@ -52,6 +51,6 @@ interface ToggleProps extends HTMLInputAttributes {
 
 export {
   Toggle,
-  toggleVariants,
+  toggleSpanVariants,
   type ToggleProps
 }

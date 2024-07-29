@@ -1,26 +1,10 @@
 <script lang="ts">
-  import type { ProgressBarColorType } from '$lib/types';
-  import type { HTMLAttributes } from 'svelte/elements';
-
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    progress?: string | number;
-    precision?: number;
-    tweenDuration?: number;
-    animate?: boolean;
-    size?: string | undefined;
-    labelInside?: boolean;
-    labelOutside?: string | undefined;
-    easing?: EasingFunction;
-    color?: ProgressBarColorType;
-    div2Class?: string | undefined;
-    labeloutsidedivClass?: string | undefined;
-    divClass?: string | undefined;
-  }
 
   import { cubicOut } from 'svelte/easing';
   import { tweened } from 'svelte/motion';
-  import type { EasingFunction } from 'svelte/transition';
+
   import { twMerge, twJoin } from 'tailwind-merge';
+  import { type ProgressbarProps as Props } from '.';
 
   let {
     progress = '45',

@@ -44,6 +44,6 @@
   <Toggle toggleSize="small">Small toggle</Toggle>
   <Toggle toggleSize="default" checked>Default toggle</Toggle>
   <Toggle toggleSize="large" checked>Large toggle</Toggle>
-  <Toggle toggleSize="custom" {customSize}>Custom toggle</Toggle>
+  <Toggle class={customSize}>Custom toggle</Toggle>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/sizes.md'] as string} />

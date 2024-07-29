@@ -519,10 +519,6 @@
       "types": "./dist/utils/Frame.svelte.d.ts",
       "svelte": "./dist/utils/Frame.svelte"
     },
-    "./Pump.svelte": {
-      "types": "./dist/utils/Pump.svelte.d.ts",
-      "svelte": "./dist/utils/Pump.svelte"
-    },
     "./Video.svelte": {
       "types": "./dist/video/Video.svelte.d.ts",
       "svelte": "./dist/video/Video.svelte"
