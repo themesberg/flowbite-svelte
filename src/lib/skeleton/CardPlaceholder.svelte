@@ -1,38 +1,23 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
-  interface Sizes {
-    [key: string]: string | undefined | null;
-  }
+  import { type CardPlaceholderProps as Props, cardPlaceholderVariants } from './index';
 
-  interface Props {
-    size?: keyof Sizes;
-    class?: string | undefined;
-  }
+  let { size = 'sm', class: className, ...attributes }: Props = $props();
 
-  const sizes: Sizes = {
-    sm: 'max-w-sm',
-    md: 'max-w-md',
-    lg: 'max-w-lg',
-    xl: 'max-w-xl',
-    xxl: 'max-w-2xl'
-  };
-
-  let { size = 'sm', class: divClass }: Props = $props();
-  let outDivclass = twMerge(
-    sizes[size],
-    'p-4 rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700',
-    divClass
-  );
+  const {
+    base,
+    imageArea,
+    imageIcon,
+    line,
+    footerArea,
+  } = cardPlaceholderVariants({ size });
 </script>
 
-<div role="status" class={outDivclass}>
-  <div
-    class="mb-4 flex h-48 items-center justify-center rounded bg-gray-300 dark:bg-gray-700"
-  >
+<div role="status" class={base({ className})} {...attributes}>
+  <div class={imageArea()}>
     <svg
       width="48"
       height="48"
-      class="text-gray-200 dark:text-gray-600"
+      class={imageIcon()}
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
       fill="currentColor"
@@ -43,13 +28,13 @@
       ></path>
     </svg>
   </div>
-  <div class="mb-4 h-2.5 w-1/2 rounded-full bg-gray-200 dark:bg-gray-700"></div>
-  <div class="mb-2.5 h-2 rounded-full bg-gray-200 dark:bg-gray-700"></div>
-  <div class="mb-2.5 h-2 rounded-full bg-gray-200 dark:bg-gray-700"></div>
-  <div class="h-2 rounded-full bg-gray-200 dark:bg-gray-700"></div>
-  <div class="mt-4 flex items-center space-x-3 rtl:space-x-reverse">
+  <div class={line({ class: "mb-4 h-2.5 w-1/2" })}></div>
+  <div class={line({ class: "mb-2.5 h-2" })}></div>
+  <div class={line({ class: "mb-2.5 h-2" })}></div>
+  <div class={line({ class: "h-2" })}></div>
+  <div class={footerArea()}>
     <svg
-      class="h-14 w-14 text-gray-200 dark:text-gray-700"
+      class={line({ class: "h-14 w-14" })}
       aria-hidden="true"
       fill="currentColor"
       viewBox="0 0 20 20"
@@ -61,20 +46,8 @@
         clip-rule="evenodd"
       ></path>
     </svg>
-    <div>
-      <div
-        class="mb-2 h-2.5 w-32 rounded-full bg-gray-200 dark:bg-gray-700"
-      ></div>
-      <div class="h-2 w-48 rounded-full bg-gray-200 dark:bg-gray-700"></div>
-    </div>
+    <div class={line({ class: "mb-2 h-2.5 w-32" })}></div>
+    <div class={line({ class: "h-2 w-48" })}></div>
   </div>
   <span class="sr-only">Loading...</span>
 </div>
-
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@prop size = 'sm'
-@prop class: divClass
--->

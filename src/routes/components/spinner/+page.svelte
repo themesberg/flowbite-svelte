@@ -42,9 +42,9 @@
 <H2>Sizes</H2>
 
 <CodeWrapper>
-  <Spinner size={4} />
+  <Spinner size="4" />
   <Spinner size="6" />
-  <Spinner size={8} />
+  <Spinner size="8" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/sizes.md'] as string} />

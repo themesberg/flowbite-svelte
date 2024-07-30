@@ -1,35 +1,21 @@
 <script lang="ts">
-  interface Props {
-    class?: string | undefined;
-  }
-  import { twMerge } from 'tailwind-merge';
-  let { class: divClass }: Props = $props();
-  let divCls: string = twMerge(
-    'p-4 max-w-sm rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700',
-    divClass
-  );
+  import { widgetPlaceholderVariants, type WidgetPlaceholderProps as Props } from './index';
+  
+  let { class: className }: Props = $props();
+  const { base, wrapper, vLine, hLine } = widgetPlaceholderVariants({});
 </script>
 
-<div role="status" class={divCls}>
-  <div
-    class="mb-2.5 h-2.5 w-32 rounded-full bg-gray-200 dark:bg-gray-700"
-  ></div>
-  <div class="mb-10 h-2 w-48 rounded-full bg-gray-200 dark:bg-gray-700"></div>
-  <div class="mt-4 flex items-baseline space-x-6 rtl:space-x-reverse">
-    <div class="h-72 w-full rounded-t-lg bg-gray-200 dark:bg-gray-700"></div>
-    <div class="h-56 w-full rounded-t-lg bg-gray-200 dark:bg-gray-700"></div>
-    <div class="h-72 w-full rounded-t-lg bg-gray-200 dark:bg-gray-700"></div>
-    <div class="h-64 w-full rounded-t-lg bg-gray-200 dark:bg-gray-700"></div>
-    <div class="h-80 w-full rounded-t-lg bg-gray-200 dark:bg-gray-700"></div>
-    <div class="h-72 w-full rounded-t-lg bg-gray-200 dark:bg-gray-700"></div>
-    <div class="h-80 w-full rounded-t-lg bg-gray-200 dark:bg-gray-700"></div>
+<div role="status" class={base({ className})}>
+  <div class={hLine({ class: "mb-2.5 h-2.5 w-32"})}></div>
+  <div class={hLine({ class: "mb-10 h-2 w-48"})}></div>
+  <div class={wrapper()}>
+    <div class={vLine({ class: "h-72"})}></div>
+    <div class={vLine({ class: "h-56"})}></div>
+    <div class={vLine({ class: "h-72"})}></div>
+    <div class={vLine({ class: "h-64"})}></div>
+    <div class={vLine({ class: "h-80"})}></div>
+    <div class={vLine({ class: "h-72"})}></div>
+    <div class={vLine({ class: "h-80"})}></div>
   </div>
   <span class="sr-only">Loading...</span>
 </div>
-
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@prop class: divClass
--->

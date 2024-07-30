@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
   import { type SpinnerProps as Props, spinnerVariants } from './index'; 
 
   let {
@@ -12,29 +11,6 @@
     ...attributes
   }: Props = $props();
 
-  // let iconsize = `w-${size} h-${size}`;
-
-  // if (currentFill !== 'currentFill') {
-  //   color = 'custom';
-  // }
-
-  // const fillColorClasses = {
-  //   primary: 'fill-primary-600',
-  //   blue: 'fill-blue-600',
-  //   gray: 'fill-gray-600 dark:fill-gray-300',
-  //   green: 'fill-green-500',
-  //   red: 'fill-red-600',
-  //   yellow: 'fill-yellow-400',
-  //   pink: 'fill-pink-600',
-  //   purple: 'fill-purple-600',
-  //   white: 'fill-white',
-  //   custom: customColor
-  // };
-
-  // let fillColorCls: string =
-  //   color === undefined
-  //     ? ''
-  //     : (fillColorClasses[color] ?? fillColorClasses.blue);
   let spinnerClass = spinnerVariants({ color, size, className });
 </script>
 

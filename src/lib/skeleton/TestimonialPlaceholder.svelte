@@ -1,22 +1,16 @@
 <script lang="ts">
-  interface Props {
-    class?: string | undefined;
-  }
-  import { twMerge } from 'tailwind-merge';
-  let { class: divClass }: Props = $props();
-  let divCls: string = twMerge('animate-pulse', divClass);
+  import { testimonialPlaceholderVariants, type TestimonialPlaceholderProps as Props } from './index';
+
+  let { class: className, ...attributes }: Props = $props();
+  const { wrapper, line1, line2, svg, subContent } = testimonialPlaceholderVariants();
 </script>
 
-<div role="status" class={divCls}>
-  <div
-    class="mx-auto mb-2.5 h-2.5 max-w-[640px] rounded-full bg-gray-300 dark:bg-gray-700"
-  ></div>
-  <div
-    class="mx-auto h-2.5 max-w-[540px] rounded-full bg-gray-300 dark:bg-gray-700"
-  ></div>
-  <div class="mt-4 flex items-center justify-center">
+<div role="status" class={wrapper({ className })} {...attributes}>
+  <div class={line2({ class: "mx-auto mb-2.5 h-2.5 max-w-[640px]"})}></div>
+  <div class={line2({ class: "mx-auto h-2.5 max-w-[540px]"})}></div>
+  <div class={subContent()}>
     <svg
-      class="me-2 h-10 w-10 text-gray-200 dark:text-gray-700"
+      class={svg()}
       aria-hidden="true"
       fill="currentColor"
       viewBox="0 0 20 20"
@@ -28,17 +22,9 @@
         clip-rule="evenodd"
       ></path>
     </svg>
-    <div
-      class="me-3 h-2.5 w-20 rounded-full bg-gray-200 dark:bg-gray-700"
-    ></div>
-    <div class="h-2 w-24 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+    <div class={line1({ class: "me-3 h-2.5 w-20"})}></div>
+    <div class={line1({ class: "h-2 w-24"})}></div>
   </div>
   <span class="sr-only">Loading...</span>
 </div>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@prop class: divClass
--->

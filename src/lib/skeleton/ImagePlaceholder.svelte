@@ -1,27 +1,17 @@
 <script lang="ts">
-  interface Props {
-    imgHeight?: string | undefined;
-    class?: string | undefined;
-  }
+  import { imagePlaceholderVariants, type ImagePlaceholderProps as Props } from './index'
 
-  import { twMerge } from 'tailwind-merge';
+  let { size, rounded, class: className, ...attributes }: Props = $props();
 
-  let { imgHeight = 'h-48', class: divClass }: Props = $props();
-
-  let divCls: string = twMerge(
-    'space-y-8 animate-pulse md:space-y-0 md:space-x-8 rtl:space-x-reverse md:flex md:items-center',
-    divClass
-  );
+  const { base, image, svg, content, line } = imagePlaceholderVariants({ size, rounded });
 </script>
 
-<div role="status" class={divCls}>
-  <div
-    class="flex w-full items-center justify-center {imgHeight} rounded bg-gray-300 sm:w-96 dark:bg-gray-700"
-  >
+<div role="status" class={base({ className })} {...attributes}>
+  <div class={image()} >
     <svg
       width="48"
       height="48"
-      class="text-gray-200"
+      class={svg()}
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
       fill="currentColor"
@@ -32,30 +22,15 @@
       ></path>
     </svg>
   </div>
-  <div class="w-full">
-    <div
-      class="mb-4 h-2.5 w-1/2 rounded-full bg-gray-200 dark:bg-gray-700"
-    ></div>
-    <div
-      class="mb-2.5 h-2 w-9/12 rounded-full bg-gray-200 dark:bg-gray-700"
-    ></div>
-    <div class="mb-2.5 h-2 rounded-full bg-gray-200 dark:bg-gray-700"></div>
-    <div class="mb-2.5 h-2 rounded-full bg-gray-200 dark:bg-gray-700"></div>
-    <div
-      class="mb-2.5 h-2 w-10/12 rounded-full bg-gray-200 dark:bg-gray-700"
-    ></div>
-    <div
-      class="mb-2.5 h-2 w-11/12 rounded-full bg-gray-200 dark:bg-gray-700"
-    ></div>
-    <div class="h-2 w-9/12 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+  <div class={content()}>
+    <div class={line({ class: "mb-4 h-2.5 w-1/2" })}></div>
+    <div class={line({ class: "mb-2.5 h-2 w-9/12" })}></div>
+    <div class={line({ class: "mb-2.5 h-2" })}></div>
+    <div class={line({ class: "mb-2.5 h-2" })}></div>
+    <div class={line({ class: "mb-2.5 h-2 w-10/12" })}></div>
+    <div class={line({ class: "mb-2.5 h-2 w-11/12" })}></div>
+    <div class={line({ class: "h-2 w-9/12" })}></div>
   </div>
   <span class="sr-only">Loading...</span>
 </div>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@prop imgHeight = 'h-48'
-@prop class: divClass
--->

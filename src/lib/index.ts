@@ -88,7 +88,7 @@ export { default as ListPlaceholder } from './skeleton/ListPlaceholder.svelte';
 export { default as TestimonialPlaceholder } from './skeleton/TestimonialPlaceholder.svelte';
 export { default as WidgetPlaceholder } from './skeleton/WidgetPlaceholder.svelte';
 // spinner
-export { default as Spinner } from './spinner/Spinner.svelte';
+export * from './spinner/index';
 // tabs
 export { default as Tabs } from './tab/Tabs.svelte';
 export { default as TabItem } from './tab/TabItem.svelte';

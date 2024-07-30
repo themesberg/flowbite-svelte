@@ -1,31 +1,33 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
-  interface Props {
-    size?: keyof Sizes;
-    class?: string | undefined;
-  }
+  import { type VideoPlaceholderProps as Props, videoPlaceholderVariants } from './index';
 
-  interface Sizes {
-    [key: string]: string | undefined | null;
-  }
+  // interface Props {
+  //   size?: keyof Sizes;
+  //   class?: string | undefined;
+  // }
 
-  const sizes: Sizes = {
-    sm: 'max-w-sm',
-    md: 'max-w-md',
-    lg: 'max-w-lg',
-    xl: 'max-w-xl',
-    xxl: 'max-w-2xl'
-  };
+  // interface Sizes {
+  //   [key: string]: string | undefined | null;
+  // }
 
-  let { size = 'sm', class: divClass }: Props = $props();
-  let outDivcls = twMerge(
-    sizes[size],
-    'flex justify-center items-center h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700',
-    divClass
-  );
+  // const sizes: Sizes = {
+  //   sm: 'max-w-sm',
+  //   md: 'max-w-md',
+  //   lg: 'max-w-lg',
+  //   xl: 'max-w-xl',
+  //   xxl: 'max-w-2xl'
+  // };
+
+  let { size = 'sm', class: className }: Props = $props();
+  // let outDivcls = twMerge(
+  //   sizes[size],
+  //   'flex justify-center items-center h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700',
+  //   className
+  // );
+  const { wrapper } = videoPlaceholderVariants({ size });
 </script>
 
-<div role="status" class={outDivcls}>
+<div role="status" class={wrapper({ className })}>
   <svg
     width="48"
     height="48"
@@ -41,11 +43,3 @@
   </svg>
   <span class="sr-only">Loading...</span>
 </div>
-
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@prop size = 'sm'
-@prop class: divClass
--->
