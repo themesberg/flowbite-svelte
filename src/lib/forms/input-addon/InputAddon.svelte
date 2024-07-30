@@ -3,7 +3,7 @@
   import type { SizeType } from '$lib/types';
   import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
-  import { clampSize } from '$lib/forms/Input.svelte';
+  import { clampSize } from '$lib/forms/input/Input.svelte';
   import type { HTMLAttributes } from 'svelte/elements';
 
   interface Props extends HTMLAttributes<HTMLDivElement> {

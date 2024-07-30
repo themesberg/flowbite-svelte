@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
-  import { idGenerator } from '../uiHelpers.svelte';
+  import { idGenerator } from '../../uiHelpers.svelte';
   import type { HTMLInputAttributes } from 'svelte/elements';
 
   interface Props extends HTMLInputAttributes {

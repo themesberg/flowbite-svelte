@@ -1,7 +1,7 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
-  import Label from '../Label.svelte';
-  import { labelCls, inputCls } from '../Radio.svelte';
+  import { Label } from '../label';
+  import { labelCls, inputCls } from '../radio/Radio.svelte';
   import { type ToggleProps as Props, toggleSpanVariants } from './index';
 
   let {

@@ -43,8 +43,8 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { getContext } from 'svelte';
-  import type { FormColorType } from '../types';
-  import Label from './Label.svelte';
+  import type { FormColorType } from '../../types';
+  import Label from '../label/Label.svelte';
   import type { HTMLInputAttributes } from 'svelte/elements';
 
   interface Props extends HTMLInputAttributes {
