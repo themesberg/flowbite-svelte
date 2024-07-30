@@ -1,6 +1,4 @@
-// import './style.css';
-
-export { uiHelpers, clickOutside } from './uiHelpers.svelte';
+export * from './uiHelpers.svelte';
 export * from './accordion';
 export * from './alert';
 export * from './avatar';
