@@ -71,7 +71,8 @@
       problems: 'Switcher style'
     },
     deviceMockups: {
-      checked: true
+      checked: true,
+      notes: 'Variants'
     },
     drawer: {
       checked: true,
