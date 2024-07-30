@@ -1,7 +1,7 @@
 import Gallery from "./Gallery.svelte";
 import { type VariantProps, tv } from 'tailwind-variants';
 import type { Snippet } from 'svelte';
-import type { HTMLAttributes } from 'svelte/elements';
+import type { HTMLImgAttributes } from 'svelte/elements';
 
 const galleryVariants = tv({
   slots: {
@@ -15,9 +15,9 @@ type ImgType = {
   alt?: string | undefined | null;
 };
 
-interface GalleryProps extends HTMLAttributes<HTMLDivElement> {
+interface GalleryProps {
   children?: Snippet;
-  items?: ImgType[];
+  items?: HTMLImgAttributes[];
   imgClass?: string | undefined;
   divClass?: string | undefined;
 }
