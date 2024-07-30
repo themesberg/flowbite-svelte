@@ -1,5 +1,3 @@
-import RadioButton from "./RadioButton.svelte";
+import RadioButton from './RadioButton.svelte';
 
-export {
-  RadioButton
-}
+export { RadioButton };

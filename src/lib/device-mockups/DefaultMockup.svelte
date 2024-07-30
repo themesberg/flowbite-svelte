@@ -1,17 +1,6 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import { twMerge } from 'tailwind-merge';
-  import type { HTMLAttributes } from 'svelte/elements';
+  import { defaultMockupVariants, type DefaultMockupProps as Props } from '.';
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    children?: Snippet;
-    divClass?: string | undefined | null;
-    div2Class?: string | undefined | null;
-    div3Class?: string | undefined | null;
-    div4Class?: string | undefined | null;
-    div5Class?: string | undefined | null;
-    div6Class?: string | undefined | null;
-  }
   let {
     children,
     divClass,
@@ -23,26 +12,15 @@
     ...attributes
   }: Props = $props();
 
-  const div: string =
-    'relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px]';
-  const slot: string =
-    'rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-800';
-  const top: string =
-    'h-[32px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[72px] rounded-l-lg';
-  const leftTop: string =
-    'h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[124px] rounded-l-lg';
-  const leftBot: string =
-    'h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg';
-  const right: string =
-    'h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg';
+  const { div, slot, top, leftTop, leftBot, right } = defaultMockupVariants();
 </script>
 
-<div class={twMerge(div, divClass)} {...attributes}>
-  <div class={twMerge(top, div2Class)}></div>
-  <div class={twMerge(leftTop, div3Class)}></div>
-  <div class={twMerge(leftBot, div4Class)}></div>
-  <div class={twMerge(right, div5Class)}></div>
-  <div class={twMerge(slot, div6Class)}>
+<div class={div({ class: divClass })} {...attributes}>
+  <div class={top({ class: div2Class })}></div>
+  <div class={leftTop({ class: div3Class })}></div>
+  <div class={leftBot({ class: div4Class })}></div>
+  <div class={right({ class: div5Class })}></div>
+  <div class={slot({ class: div6Class })}>
     {#if children}
       {@render children()}
     {/if}

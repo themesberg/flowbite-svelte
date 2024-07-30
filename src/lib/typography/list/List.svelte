@@ -15,10 +15,7 @@
 
   setContext('ctxclass', ctxclass);
 
-  let classList = twMerge(
-    listVariants({list, position, tag}),
-    classname
-  );
+  let classList = twMerge(listVariants({ list, position, tag }), classname);
 </script>
 
 <svelte:element this={tag} {...attributes} class={classList}>

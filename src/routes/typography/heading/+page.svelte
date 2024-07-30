@@ -128,7 +128,7 @@
   <Heading tag="h1" class="mb-4">
     We invest in the <Span
       underline
-      class="decoration-8 decoration-blue-400 dark:decoration-blue-600"
+      class="decoration-blue-400 decoration-8 dark:decoration-blue-600"
       >world’s potential</Span
     >
   </Heading>

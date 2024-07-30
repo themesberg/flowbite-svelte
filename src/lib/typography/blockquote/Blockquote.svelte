@@ -16,19 +16,33 @@
     ...attributes
   }: Props = $props();
 
-  let blockquoteClass = blockquoteVariants({ 
-    border, 
-    italic, 
-    bg, 
-    alignment, 
+  let blockquoteClass = blockquoteVariants({
+    border,
+    italic,
+    bg,
+    alignment,
     size,
     class: twMerge(borderClass, bgClass, baseClass, classname)
   });
 </script>
 
-<blockquote
-  {...attributes}
-  class={blockquoteClass}
->
+<blockquote {...attributes} class={blockquoteClass}>
   {@render children()}
 </blockquote>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@prop children
+@prop class: classname
+@prop border
+@prop italic = true
+@prop borderClass
+@prop bgClass
+@prop bg
+@prop baseClass
+@prop alignment = 'left'
+@prop size = 'lg'
+@prop ...attributes
+-->

@@ -13,7 +13,4 @@ interface VideoProps extends HTMLVideoAttributes {
   class?: string;
 }
 
-export {
-  Video,
-  type VideoProps
-}
+export { Video, type VideoProps };

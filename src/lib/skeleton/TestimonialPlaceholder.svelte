@@ -1,13 +1,17 @@
 <script lang="ts">
-  import { testimonialPlaceholderVariants, type TestimonialPlaceholderProps as Props } from './index';
+  import {
+    testimonialPlaceholderVariants,
+    type TestimonialPlaceholderProps as Props
+  } from './index';
 
   let { class: className, ...attributes }: Props = $props();
-  const { wrapper, line1, line2, svg, subContent } = testimonialPlaceholderVariants();
+  const { wrapper, line1, line2, svg, subContent } =
+    testimonialPlaceholderVariants();
 </script>
 
 <div role="status" class={wrapper({ className })} {...attributes}>
-  <div class={line2({ class: "mx-auto mb-2.5 h-2.5 max-w-[640px]"})}></div>
-  <div class={line2({ class: "mx-auto h-2.5 max-w-[540px]"})}></div>
+  <div class={line2({ class: 'mx-auto mb-2.5 h-2.5 max-w-[640px]' })}></div>
+  <div class={line2({ class: 'mx-auto h-2.5 max-w-[540px]' })}></div>
   <div class={subContent()}>
     <svg
       class={svg()}
@@ -22,9 +26,16 @@
         clip-rule="evenodd"
       ></path>
     </svg>
-    <div class={line1({ class: "me-3 h-2.5 w-20"})}></div>
-    <div class={line1({ class: "h-2 w-24"})}></div>
+    <div class={line1({ class: 'me-3 h-2.5 w-20' })}></div>
+    <div class={line1({ class: 'h-2 w-24' })}></div>
   </div>
   <span class="sr-only">Loading...</span>
 </div>
 
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@prop class: className
+@prop ...attributes
+-->

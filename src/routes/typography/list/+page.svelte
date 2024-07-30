@@ -60,9 +60,7 @@
       At least one lowercase character
     </Li>
     <Li icon>
-      <CheckCircleSolid
-        class="me-2 h-5 w-5 text-gray-500 dark:text-gray-400"
-      />
+      <CheckCircleSolid class="me-2 h-5 w-5 text-gray-500 dark:text-gray-400" />
       Inclusion of at least one special character, e.g., ! @ # ?
     </Li>
   </List>

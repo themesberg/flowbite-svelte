@@ -2,14 +2,18 @@
   import { twMerge } from 'tailwind-merge';
   import { type SecondaryProps as Props, secondaryVariants } from './index';
 
-  let {
-    children,
-    class: className,
-    ...attributes
-  }: Props = $props();
+  let { children, class: className, ...attributes }: Props = $props();
 </script>
 
 <small {...attributes} class={twMerge(secondaryVariants(), className)}>
   {@render children()}
 </small>
 
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@prop children
+@prop class: className
+@prop ...attributes
+-->

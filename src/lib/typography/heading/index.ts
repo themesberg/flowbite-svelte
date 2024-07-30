@@ -1,4 +1,4 @@
-import Heading from "./Heading.svelte";
+import Heading from './Heading.svelte';
 import { type VariantProps, tv } from 'tailwind-variants';
 import type { Snippet } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
@@ -12,23 +12,19 @@ const headingVariants = tv({
       h3: 'text-3xl',
       h4: 'text-2xl',
       h5: 'text-xl',
-      h6: 'text-lg',
-    },
+      h6: 'text-lg'
+    }
   },
   defaultVariants: {
     tag: 'h1'
-  },
+  }
 });
 
-type TagType = VariantProps<typeof headingVariants>["tag"];
+type TagType = VariantProps<typeof headingVariants>['tag'];
 interface HeadingProps extends HTMLAttributes<HTMLElement> {
   children: Snippet;
   tag?: TagType;
   class?: string | undefined;
 }
 
-export {
-  Heading,
-  headingVariants,
-  type HeadingProps
-}
+export { Heading, headingVariants, type HeadingProps };

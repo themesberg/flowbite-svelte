@@ -18,11 +18,16 @@
 
 {#snippet figure(item)}
   <div>
-    <img src={item.src} alt={item.alt} class={image({class:imgClass})} {...attributes}/>
+    <img
+      src={item.src}
+      alt={item.alt}
+      class={image({ class: imgClass })}
+      {...attributes}
+    />
   </div>
 {/snippet}
 
-<div class={div({class: divClass})} use:init >
+<div class={div({ class: divClass })} use:init>
   {#each items as item}
     {@render figure(item)}
   {:else}
@@ -31,3 +36,14 @@
     {/if}
   {/each}
 </div>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@prop children
+@prop items = []
+@prop imgClass
+@prop divClass
+@prop ...attributes
+-->

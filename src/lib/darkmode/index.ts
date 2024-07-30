@@ -1,6 +1,3 @@
-import Darkmode from "./Darkmode.svelte";
+import Darkmode from './Darkmode.svelte';
 
-
-export {
-  Darkmode
-}
+export { Darkmode };

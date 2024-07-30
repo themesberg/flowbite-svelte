@@ -1,5 +1,3 @@
-import Toast from "./Toast.svelte";
+import Toast from './Toast.svelte';
 
-export {
-  Toast
-}
+export { Toast };

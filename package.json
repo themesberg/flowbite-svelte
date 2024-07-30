@@ -236,52 +236,52 @@
       "svelte": "./dist/footer/FooterUl.svelte"
     },
     "./Checkbox.svelte": {
-      "types": "./dist/forms/Checkbox.svelte.d.ts",
-      "svelte": "./dist/forms/Checkbox.svelte"
+      "types": "./dist/forms/checkbox/Checkbox.svelte.d.ts",
+      "svelte": "./dist/forms/checkbox/Checkbox.svelte"
     },
     "./FloatingLabelInput.svelte": {
-      "types": "./dist/forms/FloatingLabelInput.svelte.d.ts",
-      "svelte": "./dist/forms/FloatingLabelInput.svelte"
+      "types": "./dist/forms/floating-label-input/FloatingLabelInput.svelte.d.ts",
+      "svelte": "./dist/forms/floating-label-input/FloatingLabelInput.svelte"
     },
     "./Helper.svelte": {
-      "types": "./dist/forms/Helper.svelte.d.ts",
-      "svelte": "./dist/forms/Helper.svelte"
+      "types": "./dist/forms/helper/Helper.svelte.d.ts",
+      "svelte": "./dist/forms/helper/Helper.svelte"
     },
     "./Input.svelte": {
-      "types": "./dist/forms/Input.svelte.d.ts",
-      "svelte": "./dist/forms/Input.svelte"
+      "types": "./dist/forms/input/Input.svelte.d.ts",
+      "svelte": "./dist/forms/input/Input.svelte"
     },
     "./InputAddon.svelte": {
-      "types": "./dist/forms/InputAddon.svelte.d.ts",
-      "svelte": "./dist/forms/InputAddon.svelte"
+      "types": "./dist/forms/input-addon/InputAddon.svelte.d.ts",
+      "svelte": "./dist/forms/input-addon/InputAddon.svelte"
     },
     "./Label.svelte": {
-      "types": "./dist/forms/Label.svelte.d.ts",
-      "svelte": "./dist/forms/Label.svelte"
+      "types": "./dist/forms/label/Label.svelte.d.ts",
+      "svelte": "./dist/forms/label/Label.svelte"
     },
     "./Radio.svelte": {
-      "types": "./dist/forms/Radio.svelte.d.ts",
-      "svelte": "./dist/forms/Radio.svelte"
+      "types": "./dist/forms/radio/Radio.svelte.d.ts",
+      "svelte": "./dist/forms/radio/Radio.svelte"
     },
     "./RadioButton.svelte": {
-      "types": "./dist/forms/RadioButton.svelte.d.ts",
-      "svelte": "./dist/forms/RadioButton.svelte"
+      "types": "./dist/forms/radio-button/RadioButton.svelte.d.ts",
+      "svelte": "./dist/forms/radio-button/RadioButton.svelte"
     },
     "./Range.svelte": {
-      "types": "./dist/forms/Range.svelte.d.ts",
-      "svelte": "./dist/forms/Range.svelte"
+      "types": "./dist/forms/range/Range.svelte.d.ts",
+      "svelte": "./dist/forms/range/Range.svelte"
     },
     "./Select.svelte": {
-      "types": "./dist/forms/Select.svelte.d.ts",
-      "svelte": "./dist/forms/Select.svelte"
+      "types": "./dist/forms/select/Select.svelte.d.ts",
+      "svelte": "./dist/forms/select/Select.svelte"
     },
     "./Textarea.svelte": {
-      "types": "./dist/forms/Textarea.svelte.d.ts",
-      "svelte": "./dist/forms/Textarea.svelte"
+      "types": "./dist/forms/textarea/Textarea.svelte.d.ts",
+      "svelte": "./dist/forms/textarea/Textarea.svelte"
     },
     "./Toggle.svelte": {
-      "types": "./dist/forms/Toggle.svelte.d.ts",
-      "svelte": "./dist/forms/Toggle.svelte"
+      "types": "./dist/forms/toggle/Toggle.svelte.d.ts",
+      "svelte": "./dist/forms/toggle/Toggle.svelte"
     },
     "./Gallery.svelte": {
       "types": "./dist/gallery/Gallery.svelte.d.ts",
@@ -460,56 +460,56 @@
       "svelte": "./dist/toolbar/ToolbarGroup.svelte"
     },
     "./A.svelte": {
-      "types": "./dist/typography/A.svelte.d.ts",
-      "svelte": "./dist/typography/A.svelte"
+      "types": "./dist/typography/anchor/A.svelte.d.ts",
+      "svelte": "./dist/typography/anchor/A.svelte"
     },
     "./Blockquote.svelte": {
-      "types": "./dist/typography/Blockquote.svelte.d.ts",
-      "svelte": "./dist/typography/Blockquote.svelte"
+      "types": "./dist/typography/blockquote/Blockquote.svelte.d.ts",
+      "svelte": "./dist/typography/blockquote/Blockquote.svelte"
     },
     "./DescriptionList.svelte": {
-      "types": "./dist/typography/DescriptionList.svelte.d.ts",
-      "svelte": "./dist/typography/DescriptionList.svelte"
+      "types": "./dist/typography/descriptionlist/DescriptionList.svelte.d.ts",
+      "svelte": "./dist/typography/descriptionlist/DescriptionList.svelte"
     },
     "./Heading.svelte": {
-      "types": "./dist/typography/Heading.svelte.d.ts",
-      "svelte": "./dist/typography/Heading.svelte"
+      "types": "./dist/typography/heading/Heading.svelte.d.ts",
+      "svelte": "./dist/typography/heading/Heading.svelte"
     },
     "./Hr.svelte": {
-      "types": "./dist/typography/Hr.svelte.d.ts",
-      "svelte": "./dist/typography/Hr.svelte"
+      "types": "./dist/typography/hr/Hr.svelte.d.ts",
+      "svelte": "./dist/typography/hr/Hr.svelte"
     },
     "./Img.svelte": {
-      "types": "./dist/typography/Img.svelte.d.ts",
-      "svelte": "./dist/typography/Img.svelte"
+      "types": "./dist/typography/img/Img.svelte.d.ts",
+      "svelte": "./dist/typography/img/Img.svelte"
     },
     "./Layout.svelte": {
-      "types": "./dist/typography/Layout.svelte.d.ts",
-      "svelte": "./dist/typography/Layout.svelte"
+      "types": "./dist/typography/layout/Layout.svelte.d.ts",
+      "svelte": "./dist/typography/layout/Layout.svelte"
     },
     "./Li.svelte": {
-      "types": "./dist/typography/Li.svelte.d.ts",
-      "svelte": "./dist/typography/Li.svelte"
+      "types": "./dist/typography/list/Li.svelte.d.ts",
+      "svelte": "./dist/typography/list/Li.svelte"
     },
     "./List.svelte": {
-      "types": "./dist/typography/List.svelte.d.ts",
-      "svelte": "./dist/typography/List.svelte"
+      "types": "./dist/typography/list/List.svelte.d.ts",
+      "svelte": "./dist/typography/list/List.svelte"
     },
     "./Mark.svelte": {
-      "types": "./dist/typography/Mark.svelte.d.ts",
-      "svelte": "./dist/typography/Mark.svelte"
+      "types": "./dist/typography/mark/Mark.svelte.d.ts",
+      "svelte": "./dist/typography/mark/Mark.svelte"
     },
     "./P.svelte": {
-      "types": "./dist/typography/P.svelte.d.ts",
-      "svelte": "./dist/typography/P.svelte"
+      "types": "./dist/typography/paragraph/P.svelte.d.ts",
+      "svelte": "./dist/typography/paragraph/P.svelte"
     },
     "./Secondary.svelte": {
-      "types": "./dist/typography/Secondary.svelte.d.ts",
-      "svelte": "./dist/typography/Secondary.svelte"
+      "types": "./dist/typography/secondary/Secondary.svelte.d.ts",
+      "svelte": "./dist/typography/secondary/Secondary.svelte"
     },
     "./Span.svelte": {
-      "types": "./dist/typography/Span.svelte.d.ts",
-      "svelte": "./dist/typography/Span.svelte"
+      "types": "./dist/typography/span/Span.svelte.d.ts",
+      "svelte": "./dist/typography/span/Span.svelte"
     },
     "./CloseButton.svelte": {
       "types": "./dist/utils/CloseButton.svelte.d.ts",

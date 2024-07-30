@@ -1,6 +1,3 @@
-import Drawer from "./Drawer.svelte";
+import Drawer from './Drawer.svelte';
 
-
-export {
-  Drawer
-}
+export { Drawer };

@@ -1,6 +1,3 @@
-import Label from "./Label.svelte";
+import Label from './Label.svelte';
 
-
-export {
-  Label
-}
+export { Label };

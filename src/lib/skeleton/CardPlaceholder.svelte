@@ -1,18 +1,16 @@
 <script lang="ts">
-  import { type CardPlaceholderProps as Props, cardPlaceholderVariants } from './index';
+  import {
+    type CardPlaceholderProps as Props,
+    cardPlaceholderVariants
+  } from './index';
 
   let { size = 'sm', class: className, ...attributes }: Props = $props();
 
-  const {
-    base,
-    imageArea,
-    imageIcon,
-    line,
-    footerArea,
-  } = cardPlaceholderVariants({ size });
+  const { base, imageArea, imageIcon, line, footerArea } =
+    cardPlaceholderVariants({ size });
 </script>
 
-<div role="status" class={base({ className})} {...attributes}>
+<div role="status" class={base({ className })} {...attributes}>
   <div class={imageArea()}>
     <svg
       width="48"
@@ -28,13 +26,13 @@
       ></path>
     </svg>
   </div>
-  <div class={line({ class: "mb-4 h-2.5 w-1/2" })}></div>
-  <div class={line({ class: "mb-2.5 h-2" })}></div>
-  <div class={line({ class: "mb-2.5 h-2" })}></div>
-  <div class={line({ class: "h-2" })}></div>
+  <div class={line({ class: 'mb-4 h-2.5 w-1/2' })}></div>
+  <div class={line({ class: 'mb-2.5 h-2' })}></div>
+  <div class={line({ class: 'mb-2.5 h-2' })}></div>
+  <div class={line({ class: 'h-2' })}></div>
   <div class={footerArea()}>
     <svg
-      class={line({ class: "h-14 w-14" })}
+      class={line({ class: 'h-14 w-14' })}
       aria-hidden="true"
       fill="currentColor"
       viewBox="0 0 20 20"
@@ -46,8 +44,17 @@
         clip-rule="evenodd"
       ></path>
     </svg>
-    <div class={line({ class: "mb-2 h-2.5 w-32" })}></div>
-    <div class={line({ class: "h-2 w-48" })}></div>
+    <div class={line({ class: 'mb-2 h-2.5 w-32' })}></div>
+    <div class={line({ class: 'h-2 w-48' })}></div>
   </div>
   <span class="sr-only">Loading...</span>
 </div>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@prop size = 'sm'
+@prop class: className
+@prop ...attributes
+-->

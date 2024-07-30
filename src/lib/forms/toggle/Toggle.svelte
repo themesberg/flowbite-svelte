@@ -21,7 +21,7 @@
   }: Props = $props();
 
   let spanCls: string = twMerge(
-    toggleSpanVariants({color, size: toggleSize}),
+    toggleSpanVariants({ color, size: toggleSize }),
     className
   );
 </script>
@@ -39,3 +39,21 @@
   {@render children()}
 </Label>
 
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@prop children
+@prop toggleSize = 'default'
+@prop value
+@prop checked = $bindable()
+@prop class: className
+@prop color = 'primary'
+@prop inline = false
+@prop labelClass = ''
+@prop aria_describedby
+@prop spacing = 'me-2'
+@prop custom = true
+@prop inputClass = ''
+@prop ...attributes
+-->

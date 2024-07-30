@@ -6,7 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 const paragraphVariants = tv({
   base: 'text-gray-900 dark:text-white',
   variants: {
-    size:{
+    size: {
       xs: 'text-xs',
       sm: 'text-sm',
       base: 'text-base',
@@ -68,19 +68,18 @@ const paragraphVariants = tv({
     },
     justify: {
       true: 'text-justify',
-      false:''
+      false: ''
     }
   }
-})
+});
 
-type PsizeType = VariantProps<typeof paragraphVariants>["size"];
-type PweightType = VariantProps<typeof paragraphVariants>["weight"];
-type SpaceType = VariantProps<typeof paragraphVariants>["space"];
-type HeightType = VariantProps<typeof paragraphVariants>["height"];
-type AlignType = VariantProps<typeof paragraphVariants>["align"];
-type WhitespaceType = VariantProps<typeof paragraphVariants>["whitespace"];
-type StyleType = VariantProps<typeof paragraphVariants>["style"];
-
+type PsizeType = VariantProps<typeof paragraphVariants>['size'];
+type PweightType = VariantProps<typeof paragraphVariants>['weight'];
+type SpaceType = VariantProps<typeof paragraphVariants>['space'];
+type HeightType = VariantProps<typeof paragraphVariants>['height'];
+type AlignType = VariantProps<typeof paragraphVariants>['align'];
+type WhitespaceType = VariantProps<typeof paragraphVariants>['whitespace'];
+type StyleType = VariantProps<typeof paragraphVariants>['style'];
 
 interface ParagraphProps extends HTMLAttributes<HTMLParagraphElement> {
   children: Snippet;
@@ -99,8 +98,4 @@ interface ParagraphProps extends HTMLAttributes<HTMLParagraphElement> {
   justify?: boolean;
 }
 
-export {
-  P,
-  paragraphVariants,
-  type ParagraphProps
-}
+export { P, paragraphVariants, type ParagraphProps };

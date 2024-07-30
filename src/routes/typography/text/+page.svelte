@@ -125,15 +125,12 @@
       underline>Link issues across Jira</Span
     > and ingest data from other <Span
       underline
-      class="decoration-blue-500 decoration-double"
-      >software development</Span
+      class="decoration-blue-500 decoration-double">software development</Span
     > tools, so your IT support and operations teams have richer contextual information
     to rapidly respond to <Span
       underline
       class="decoration-green-500 decoration-dotted">requests</Span
-    >, <Span
-      underline
-      class="decoration-4 decoration-red-500 decoration-dashed"
+    >, <Span underline class="decoration-red-500 decoration-dashed decoration-4"
       >incidents</Span
     >, and <Span underline class="decoration-sky-500 decoration-wavy"
       >changes</Span
@@ -171,7 +168,7 @@
 <p>Use the `italic` prop to set italic font style to a text element.</p>
 
 <CodeWrapper>
-  <P style='italic'>The crypto identity primitive.</P>
+  <P style="italic">The crypto identity primitive.</P>
 </CodeWrapper>
 
 <H3>Normal</H3>
@@ -341,15 +338,12 @@
       underline>Link issues across Jira</Span
     > and ingest data from other <Span
       underline
-      class="decoration-blue-500 decoration-double"
-      >software development</Span
+      class="decoration-blue-500 decoration-double">software development</Span
     > tools, so your IT support and operations teams have richer contextual information
     to rapidly respond to <Span
       underline
       class="decoration-green-500 decoration-dotted">requests</Span
-    >, <Span
-      underline
-      class="decoration-4 decoration-red-500 decoration-dashed"
+    >, <Span underline class="decoration-red-500 decoration-dashed decoration-4"
       >incidents</Span
     >, and <Span underline class="decoration-sky-500 decoration-wavy"
       >changes</Span

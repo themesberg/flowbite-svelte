@@ -3,7 +3,7 @@
   import { setContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   // import type { SizeType } from '$lib/types';
-  import { type ButtonGroupProps as Props, buttonGroupVariants } from './index'
+  import { type ButtonGroupProps as Props, buttonGroupVariants } from './index';
 
   // interface Props {
   //   children: Snippet;
@@ -27,3 +27,13 @@
 <div {...attributes} class={groupClass} role="group">
   {@render children()}
 </div>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@prop children
+@prop size = 'md'
+@prop class: divClass
+@prop ...attributes
+-->

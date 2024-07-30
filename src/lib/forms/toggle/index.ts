@@ -1,4 +1,4 @@
-import Toggle from './Toggle.svelte'
+import Toggle from './Toggle.svelte';
 import { type VariantProps, tv } from 'tailwind-variants';
 import type { Snippet } from 'svelte';
 import type { FormColorType } from '../../types';
@@ -27,11 +27,10 @@ const toggleSpanVariants = tv({
     size: {
       small: 'w-9 h-5 after:top-[2px] after:start-[2px] after:h-4 after:w-4',
       default: 'w-11 h-6 after:top-0.5 after:start-[2px] after:h-5 after:w-5',
-      large: 'w-14 h-7 after:top-0.5 after:start-[4px]  after:h-6 after:w-6',
+      large: 'w-14 h-7 after:top-0.5 after:start-[4px]  after:h-6 after:w-6'
     }
   }
-
-})
+});
 
 interface ToggleProps extends HTMLInputAttributes {
   children: Snippet;
@@ -49,8 +48,4 @@ interface ToggleProps extends HTMLInputAttributes {
   inputClass?: string | undefined;
 }
 
-export {
-  Toggle,
-  toggleSpanVariants,
-  type ToggleProps
-}
+export { Toggle, toggleSpanVariants, type ToggleProps };

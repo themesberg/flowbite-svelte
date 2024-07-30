@@ -6,7 +6,7 @@
 
   // const colorCls: string = 'text-primary-600 dark:text-primary-500';
   // const aCls: string = 'inline-flex items-center hover:underline';
-  let linkClass = anchorVariants({className});
+  let linkClass = anchorVariants({ className });
 </script>
 
 <a {...attributes} class={linkClass}>
@@ -18,6 +18,6 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
-@prop class: aClass
+@prop class: className
 @prop ...attributes
 -->

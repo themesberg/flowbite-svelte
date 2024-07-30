@@ -1,2 +1,2 @@
-import Range from "./Range.svelte";
-export { Range }
+import Range from './Range.svelte';
+export { Range };

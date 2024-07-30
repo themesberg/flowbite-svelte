@@ -1,5 +1,3 @@
-import Radio from "./Radio.svelte";
+import Radio from './Radio.svelte';
 
-export {
-  Radio
-}
+export { Radio };

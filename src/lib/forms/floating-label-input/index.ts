@@ -1,5 +1,3 @@
-import FloatingLabelInput from "./FloatingLabelInput.svelte";
+import FloatingLabelInput from './FloatingLabelInput.svelte';
 
-export {
-  FloatingLabelInput
-}
+export { FloatingLabelInput };

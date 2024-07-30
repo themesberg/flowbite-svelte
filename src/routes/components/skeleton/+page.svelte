@@ -30,10 +30,10 @@
 
 <CodeWrapper>
   <Skeleton size="sm" />
-  <Skeleton size="md" class="mt-8"/>
-  <Skeleton size="lg" class="mt-8"/>
-  <Skeleton size="xl" class="mt-8"/>
-  <Skeleton size="xxl" class="mt-8"/>
+  <Skeleton size="md" class="mt-8" />
+  <Skeleton size="lg" class="mt-8" />
+  <Skeleton size="xl" class="mt-8" />
+  <Skeleton size="xxl" class="mt-8" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/skeleton.md'] as string} />
@@ -42,8 +42,8 @@
 
 <CodeWrapper>
   <ImagePlaceholder size="sm" />
-  <ImagePlaceholder class="mt-8"/>
-  <ImagePlaceholder size="lg" class="mt-8"/>
+  <ImagePlaceholder class="mt-8" />
+  <ImagePlaceholder size="lg" class="mt-8" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/imageplaceholder.md'] as string} />
@@ -76,10 +76,10 @@
 
 <CodeWrapper>
   <CardPlaceholder />
-  <CardPlaceholder size="md" class="mt-8"/>
-  <CardPlaceholder size="lg" class="mt-8"/>
-  <CardPlaceholder size="xl" class="mt-8"/>
-  <CardPlaceholder size="xxl" class="mt-8"/>
+  <CardPlaceholder size="md" class="mt-8" />
+  <CardPlaceholder size="lg" class="mt-8" />
+  <CardPlaceholder size="xl" class="mt-8" />
+  <CardPlaceholder size="xxl" class="mt-8" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/cardplaceholder.md'] as string} />
@@ -95,8 +95,8 @@
 
 <CodeWrapper>
   <ListPlaceholder itemNumber={3} size="sm" />
-  <ListPlaceholder class="mt-8"/>
-  <ListPlaceholder itemNumber={7} size="lg" class="mt-8"/>
+  <ListPlaceholder class="mt-8" />
+  <ListPlaceholder itemNumber={7} size="lg" class="mt-8" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/listplaceholder.md'] as string} />
@@ -104,8 +104,8 @@
 <H2>Testimonial placeholder</H2>
 
 <CodeWrapper class="flex flex-col">
-  <TestimonialPlaceholder/>
-  <TestimonialPlaceholder class='w-[400px] mx-auto mt-8'/>
+  <TestimonialPlaceholder />
+  <TestimonialPlaceholder class="mx-auto mt-8 w-[400px]" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/testimonialplaceholder.md'] as string} />

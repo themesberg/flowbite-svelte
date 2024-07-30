@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type CloseButtonProps as Props, closeButtonVariants } from "./index";
+  import { type CloseButtonProps as Props, closeButtonVariants } from './index';
 
   let {
     color = 'default',
@@ -71,6 +71,6 @@
 @prop ariaLabel
 @prop size = 'md'
 @prop href
-@prop class: divClass
+@prop class: className
 @prop ...attributes
 -->

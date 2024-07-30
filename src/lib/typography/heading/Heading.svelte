@@ -11,11 +11,7 @@
   let headingClass = headingVariants({ tag, className });
 </script>
 
-<svelte:element
-  this={tag}
-  {...attributes}
-  class={headingClass}
->
+<svelte:element this={tag} {...attributes} class={headingClass}>
   {@render children()}
 </svelte:element>
 
@@ -25,8 +21,6 @@
 ## Props
 @prop children
 @prop tag = 'h1'
-@prop class: classname
-@prop customSize = ''
-@prop color = 'text-gray-900 dark:text-white'
+@prop class: className
 @prop ...attributes
 -->

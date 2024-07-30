@@ -1,5 +1,3 @@
-import InputAddon from "./InputAddon.svelte";
+import InputAddon from './InputAddon.svelte';
 
-export {
-  InputAddon
-}
+export { InputAddon };

@@ -23,10 +23,6 @@ interface ButtonGroupProps {
   class?: string | undefined;
 }
 
-type SizeType = VariantProps<typeof buttonGroupVariants>["size"];
+type SizeType = VariantProps<typeof buttonGroupVariants>['size'];
 
-export {
-  ButtonGroup,
-  type ButtonGroupProps,
-  buttonGroupVariants
-}
+export { ButtonGroup, type ButtonGroupProps, buttonGroupVariants };

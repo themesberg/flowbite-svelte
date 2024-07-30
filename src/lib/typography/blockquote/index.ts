@@ -1,5 +1,5 @@
 import { type VariantProps, tv } from 'tailwind-variants';
-import Blockquote from "./Blockquote.svelte";
+import Blockquote from './Blockquote.svelte';
 import type { Snippet } from 'svelte';
 // import type { BlockQuoteType } from '../../types';
 import type { HTMLBlockquoteAttributes } from 'svelte/elements';
@@ -9,20 +9,20 @@ const blockquoteVariants = tv({
   variants: {
     border: {
       true: 'border-s-4 border-gray-300 dark:border-gray-500',
-      false: '',
+      false: ''
     },
     italic: {
       true: 'italic',
-      false: '',
+      false: ''
     },
     bg: {
       true: 'bg-gray-50 dark:bg-gray-800',
-      false: '',
+      false: ''
     },
     alignment: {
       left: 'text-left',
       center: 'text-center',
-      right: 'text-right',
+      right: 'text-right'
     },
     size: {
       xs: 'text-xs',
@@ -37,19 +37,19 @@ const blockquoteVariants = tv({
       '6xl': 'text-6xl',
       '7xl': 'text-7xl',
       '8xl': 'text-8xl',
-      '9xl': 'text-9xl',
-    },
+      '9xl': 'text-9xl'
+    }
   },
   defaultVariants: {
     border: false,
     italic: true,
     bg: false,
     alignment: 'left',
-    size: 'lg',
-  },
+    size: 'lg'
+  }
 });
 
-type SizeType = VariantProps<typeof blockquoteVariants>["size"];
+type SizeType = VariantProps<typeof blockquoteVariants>['size'];
 
 interface BlockquoteProps extends HTMLBlockquoteAttributes {
   children: Snippet;
@@ -64,8 +64,4 @@ interface BlockquoteProps extends HTMLBlockquoteAttributes {
   class?: string | undefined;
 }
 
-export {
-  Blockquote,
-  blockquoteVariants,
-  type BlockquoteProps
-}
+export { Blockquote, blockquoteVariants, type BlockquoteProps };

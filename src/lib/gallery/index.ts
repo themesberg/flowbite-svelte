@@ -1,4 +1,4 @@
-import Gallery from "./Gallery.svelte";
+import Gallery from './Gallery.svelte';
 import { type VariantProps, tv } from 'tailwind-variants';
 import type { Snippet } from 'svelte';
 import type { HTMLImgAttributes } from 'svelte/elements';
@@ -22,8 +22,4 @@ interface GalleryProps {
   divClass?: string | undefined;
 }
 
-export {
-  Gallery,
-  galleryVariants,
-  type GalleryProps
-}
+export { Gallery, galleryVariants, type GalleryProps };

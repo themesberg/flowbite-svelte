@@ -13,8 +13,4 @@ interface MarkProps extends HTMLAttributes<HTMLElement> {
   class?: string | undefined;
 }
 
-export {
-  Mark,
-  markVariants,
-  type MarkProps
-}
+export { Mark, markVariants, type MarkProps };

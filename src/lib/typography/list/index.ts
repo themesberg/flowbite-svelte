@@ -28,9 +28,9 @@ const listVariants = tv({
   }
 });
 
-type TagType = VariantProps<typeof listVariants>["tag"];
-type ListType = VariantProps<typeof listVariants>["list"];
-type PositionType = VariantProps<typeof listVariants>["position"];
+type TagType = VariantProps<typeof listVariants>['tag'];
+type ListType = VariantProps<typeof listVariants>['list'];
+type PositionType = VariantProps<typeof listVariants>['position'];
 
 interface ListProps {
   children: Snippet;
@@ -47,10 +47,4 @@ interface LiProps extends HTMLLiAttributes {
   class?: string | undefined;
 }
 
-export {
-  List, Li,
-  listVariants,
-  type ListProps,
-  type LiProps
-}
- 
+export { List, Li, listVariants, type ListProps, type LiProps };

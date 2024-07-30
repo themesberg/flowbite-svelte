@@ -1,4 +1,4 @@
-import Hr from "./Hr.svelte";
+import Hr from './Hr.svelte';
 import { type VariantProps, tv } from 'tailwind-variants';
 import type { Snippet } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
@@ -8,17 +8,17 @@ const hrVariants = tv({
   variants: {
     withChildren: {
       true: 'w-full',
-      false: '',
+      false: ''
     },
     icon: {
       true: '',
-      false: '',
-    },
+      false: ''
+    }
   },
   defaultVariants: {
     withChildren: false,
-    icon: false,
-  },
+    icon: false
+  }
 });
 
 const hrContainerVariants = tv({
@@ -26,12 +26,12 @@ const hrContainerVariants = tv({
   variants: {
     withChildren: {
       true: 'relative',
-      false: '',
-    },
+      false: ''
+    }
   },
   defaultVariants: {
-    withChildren: false,
-  },
+    withChildren: false
+  }
 });
 
 const hrInnerDivVariants = tv({
@@ -39,12 +39,13 @@ const hrInnerDivVariants = tv({
   variants: {
     icon: {
       true: 'absolute start-1/2 px-4 bg-white -translate-x-1/2 rtl:translate-x-1/2',
-      false: 'absolute px-3 font-medium text-gray-900 -translate-x-1/2 rtl:translate-x-1/2 bg-white start-1/2 dark:text-white dark:bg-gray-900',
-    },
+      false:
+        'absolute px-3 font-medium text-gray-900 -translate-x-1/2 rtl:translate-x-1/2 bg-white start-1/2 dark:text-white dark:bg-gray-900'
+    }
   },
   defaultVariants: {
-    icon: false,
-  },
+    icon: false
+  }
 });
 
 interface HrProps extends HTMLAttributes<HTMLElement> {
@@ -63,4 +64,4 @@ export {
   hrContainerVariants,
   hrInnerDivVariants,
   type HrProps
-}
+};

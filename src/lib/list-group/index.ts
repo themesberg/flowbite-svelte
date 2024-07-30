@@ -1,7 +1,4 @@
-import Listgroup from "./Listgroup.svelte";
-import ListgroupItem from "./ListgroupItem.svelte";
+import Listgroup from './Listgroup.svelte';
+import ListgroupItem from './ListgroupItem.svelte';
 
-export {
-  Listgroup,
-  ListgroupItem
-}
+export { Listgroup, ListgroupItem };

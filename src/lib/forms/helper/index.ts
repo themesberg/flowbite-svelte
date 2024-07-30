@@ -1,5 +1,3 @@
-import Helper from "./Helper.svelte";
+import Helper from './Helper.svelte';
 
-export {
-  Helper
-}
+export { Helper };

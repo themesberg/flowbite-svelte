@@ -90,11 +90,12 @@
       checked: false
     },
     gallery: {
-      checked: true
+      checked: true,
+      notes: 'Variants'
     },
     indicators: {
       checked: true,
-      notes: 'Updated: class names'
+      notes: 'Variants'
     },
     kbd: {
       checked: true,
@@ -133,10 +134,11 @@
     },
     skeleton: {
       checked: true,
-      notes: 'Updated: class names'
+      notes: 'Variants'
     },
     spinner: {
-      checked: true
+      checked: true,
+      notes: 'Variants'
     },
     speedDial: {
       checked: false
@@ -208,7 +210,7 @@
     },
     toggle: {
       checked: true,
-      notes: 'Variants',
+      notes: 'Variants'
     }
   };
 
