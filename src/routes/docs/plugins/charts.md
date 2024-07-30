@@ -975,6 +975,73 @@ To create a radial chart with multiple data entries you need to set the type: "r
 </Card>
 ```
 
+## Binding chart
+
+```svelte example class="flex justify-center"
+<script lang="ts">
+  import { Chart } from 'flowbite-svelte';
+  import { onMount, onDestroy } from 'svelte';
+  
+  let chart: ApexCharts;
+  
+  const initialData = [6500, 6418, 6456, 6526, 6356, 6456];
+  const alternateData = [5500, 5418, 5456, 4526, 4356, 3456];
+  
+  let options = {
+    chart: {
+      height: '400px',
+      maxWidth: '100%',
+      type: 'area',
+      fontFamily: 'Inter, sans-serif',
+      dropShadow: {
+        enabled: false
+      },
+      toolbar: {
+        show: false
+      }
+    },
+    tooltip: {
+      enabled: true,
+      x: {
+        show: false
+      }
+    },
+    series: [
+      {
+        name: 'New users',
+        data: initialData,
+        color: '#1A56DB'
+      }
+    ]
+  };
+  
+  let intervalId: number;
+  
+  function toggleData() {
+    options = {
+      ...options,
+      series: [
+        {
+          ...options.series[0],
+          data: options.series[0].data === initialData ? alternateData : initialData
+        }
+      ]
+    };
+    chart.updateOptions(options);
+  }
+  
+  onMount(() => {
+    intervalId = setInterval(toggleData, 5000);
+  });
+  
+  onDestroy(() => {
+    clearInterval(intervalId);
+  });
+  </script>
+  
+  <Chart {options} bind:chart />
+```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
