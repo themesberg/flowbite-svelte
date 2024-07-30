@@ -1,5 +1,13 @@
 import type { HTMLAttributes } from 'svelte/elements';
 import { type VariantProps, tv } from 'tailwind-variants';
+import CardPlaceholder from './CardPlaceholder.svelte';
+import ImagePlaceholder from './ImagePlaceholder.svelte';
+import ListPlaceholder from './ListPlaceholder.svelte';
+import Skeleton from './Skeleton.svelte';
+import TestimonialPlaceholder from './TestimonialPlaceholder.svelte';
+import TextPlaceholder from './TextPlaceholder.svelte';
+import VideoPlaceholder from './VideoPlaceholder.svelte';
+import WidgetPlaceholder from './WidgetPlaceholder.svelte';
 // card placeholder
 const cardPlaceholderVariants = tv({
   slots: {
@@ -249,6 +257,14 @@ const widgetPlaceholderVariants = tv({
 interface WidgetPlaceholderProps extends HTMLAttributes<HTMLDivElement> {}
 
 export {
+  CardPlaceholder,
+  ImagePlaceholder,
+  ListPlaceholder,
+  Skeleton,
+  TestimonialPlaceholder,
+  TextPlaceholder,
+  VideoPlaceholder,
+  WidgetPlaceholder,
   cardPlaceholderVariants,
   imagePlaceholderVariants,
   listPlaceholderVariants,

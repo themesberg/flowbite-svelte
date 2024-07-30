@@ -1,26 +1,16 @@
 // import './style.css';
 
 export { uiHelpers, clickOutside } from './uiHelpers.svelte';
-
-// accordion
-export * from './accordion/index';
-// alert
-export * from './alert/index';
-// avatar
-export * from './avatar/index';
-// badge
-export * from './badge/index';
-// banner
-export * from './banner/index';
-// bottom-navigation
-export * from './bottom-navigation/index';
-// breadcrumb
-export * from './breadcrumb/index';
-// button
+export * from './accordion';
+export * from './alert';
+export * from './avatar';
+export * from './badge';
+export * from './banner';
+export * from './bottom-navigation';
+export * from './breadcrumb';
 export { default as Button } from './buttons/Button.svelte';
 export { default as GradientButton } from './buttons/GradientButton.svelte';
-// buttongroup
-export * from './buttongroup/index';
+export * from './buttongroup';
 // card
 export { default as Card } from './cards/Card.svelte';
 // darkmode
@@ -62,8 +52,7 @@ export { default as Navbar } from './nav/Navbar.svelte';
 export { default as NavUl } from './nav/NavUl.svelte';
 export { default as NavBrand } from './nav/NavBrand.svelte';
 export { default as NavLi } from './nav/NavLi.svelte';
-// progressbar
-export * from './progress/index';
+export * from './progress';
 // rating
 export { default as AdvancedRating } from './rating/AdvancedRating.svelte';
 export { default as Star } from './rating/Star.svelte';
@@ -78,17 +67,8 @@ export { default as Sidebar } from './sidebar/Sidebar.svelte';
 export { default as SidebarGroup } from './sidebar/SidebarGroup.svelte';
 export { default as SidebarItem } from './sidebar/SidebarItem.svelte';
 export { default as SidebarDropdownWrapper } from './sidebar/SidebarDropdownWrapper.svelte';
-// skeleton
-export { default as CardPlaceholder } from './skeleton/CardPlaceholder.svelte';
-export { default as Skeleton } from './skeleton/Skeleton.svelte';
-export { default as ImagePlaceholder } from './skeleton/ImagePlaceholder.svelte';
-export { default as VideoPlaceholder } from './skeleton/VideoPlaceholder.svelte';
-export { default as TextPlaceholder } from './skeleton/TextPlaceholder.svelte';
-export { default as ListPlaceholder } from './skeleton/ListPlaceholder.svelte';
-export { default as TestimonialPlaceholder } from './skeleton/TestimonialPlaceholder.svelte';
-export { default as WidgetPlaceholder } from './skeleton/WidgetPlaceholder.svelte';
-// spinner
-export * from './spinner/index';
+export * from './skeleton';
+export * from './spinner';
 // tabs
 export { default as Tabs } from './tab/Tabs.svelte';
 export { default as TabItem } from './tab/TabItem.svelte';
@@ -121,25 +101,22 @@ export { default as Radio } from './forms/Radio.svelte';
 export { default as RadioButton } from './forms/RadioButton.svelte';
 export { default as Range } from './forms/Range.svelte';
 export { default as Textarea } from './forms/Textarea.svelte';
-export * from './forms/toggle/index';
+export * from './forms/toggle';
 
 // typography
-export * from './typography/anchor/index';
-export * from './typography/blockquote/index';
-export * from './typography/descriptionlist/index';
-export * from './typography/heading/index';
-export * from './typography/hr/index';
-export * from './typography/img/index';
-export * from './typography/layout/index';
-export * from './typography/list/index';
-export * from './typography/mark/index';
-export * from './typography/paragraph/index';
-export * from './typography/secondary/index';
-export * from './typography/span/index';
-// video
-export * from './video/index';
-
-// utils
-export * from './utils/index';
+export * from './typography/anchor';
+export * from './typography/blockquote';
+export * from './typography/descriptionlist';
+export * from './typography/heading';
+export * from './typography/hr';
+export * from './typography/img';
+export * from './typography/layout';
+export * from './typography/list';
+export * from './typography/mark';
+export * from './typography/paragraph';
+export * from './typography/secondary';
+export * from './typography/span';
+export * from './video';
+export * from './utils';
 // plugins
 export { default as Chart } from './chart/Chart.svelte';
