@@ -154,7 +154,6 @@ interface BadgeProps extends HTMLAttributes<HTMLDivElement> {
   color?: badgeColor;
   large?: boolean;
   dismissable?: boolean;
-  class?: string | undefined | null;
   border?: boolean;
   href?: string | undefined | null;
   rounded?: boolean;

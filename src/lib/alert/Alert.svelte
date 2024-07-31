@@ -20,14 +20,15 @@
     ...attributes
   }: Props = $props();
 
-  let divCls = alertVariants({
+  let divCls = $derived(alertVariants({
     color,
     rounded,
     border,
     icon: !!icon,
     dismissable,
     className
-  });
+  }));
+  $inspect('divCls: ', divCls);
 </script>
 
 {#if alertStatus}
