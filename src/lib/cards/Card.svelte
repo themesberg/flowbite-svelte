@@ -70,32 +70,26 @@
   });
 </script>
 
+{#snippet cardContent()}
+  {#if img}
+    <img class={image()} src={img.src} alt={img.alt} />
+    <div class={content()}>
+      {@render children()}
+    </div>
+  {:else}
+    <div class={content()}>
+      {@render children()}
+    </div>
+  {/if}
+{/snippet}
 
-<div class={base()} role={href ? 'link' : 'presentation'} onclick={onclick} {...attributes}>
+<div class={base()} role={href ? 'link' : 'presentation'} on:click={onclick} {...attributes}>
   {#if href}
     <a {href} {target}>
-      {#if img}
-        <img class={image()} src={img.src} alt={img.alt} />
-        <div class={content()}>
-          {@render children()}
-        </div>
-      {:else}
-        <div class={content()}>
-          {@render children()}
-        </div>
-      {/if}
+      {@render cardContent()}
     </a>
   {:else}
-    {#if img}
-      <img class={image()} src={img.src} alt={img.alt} />
-      <div class={content()}>
-        {@render children()}
-      </div>
-    {:else}
-      <div class={content()}>
-        {@render children()}
-      </div>
-    {/if}
+  {@render cardContent()}
   {/if}
 </div>
 
