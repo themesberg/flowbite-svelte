@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Badge, Button, Indicator, Radio,  Label, type BadgeProps } from '$lib';
+  import { Badge, Button, Indicator, Radio, Label, type BadgeProps } from '$lib';
   import {
     ClockSolid,
     CloseCircleSolid,
@@ -315,8 +315,8 @@
   <Button color="blue" onclick={changeSize}>{badgeSize? 'Small' : 'Large'}</Button>
   <Button color="green" onclick={changeDismissable}>{badgeDismissable? 'Not dismissable' : 'Dismissable'}</Button>
   <Button color="purple" onclick={changeClass}>{badgeClass? 'Remove class' : 'Add class'}</Button>
- 
   <Button color="yellow" onclick={changeBorder}>{border? 'Remove border' : 'Add border'}</Button>
   <Button color="dark" onclick={changeRounded}>{rounded? 'Remove rounded' : 'Add rounded'}</Button>
-
 </CodeWrapper>
+
+<HighlightCompo codeLang="ts" code={modules['./md/reactive-badge.md'] as string} />

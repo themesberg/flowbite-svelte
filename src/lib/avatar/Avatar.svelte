@@ -20,10 +20,9 @@
 
   dot = dot && { placement: 'top-right', color: 'gray', size: 'lg', ...dot };
 
-  let avatarClass = twMerge(
-    avatarVariants({ rounded, border, stacked, size }),
-    className
-  );
+  let avatarClass = $derived(avatarVariants({ 
+    rounded, border, stacked, size, className 
+  }));
 </script>
 
 {#if !src || !!href || children || dot}
