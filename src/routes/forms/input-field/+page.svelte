@@ -287,7 +287,7 @@ input field.
 
 <H2>Icon click handler</H2>
 
-This example shows how to add `on:click` event handler to the icon in `Input`.
+This example shows how to add `onclick` event handler to the icon in `Input`.
 By clicking an icon, it toggles icon and `type`:
 
 <div

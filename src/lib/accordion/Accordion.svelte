@@ -1,5 +1,4 @@
 <script lang="ts">
-  // import { cn } from "../utils";
   import { twMerge } from 'tailwind-merge';
   import { setContext } from 'svelte';
   import {
@@ -7,17 +6,13 @@
     type AccordionCtxType,
     type AccordionProps as Props
   } from './accordion';
-  // import { writable } from 'svelte/store';
 
   let {
     children,
-    // multiple = false,
     flush = false,
-    activeClass = 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800',
-    inactiveClass = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800',
+    activeClass = '',
+    inactiveClass = '',
     defaultClass = 'text-gray-500 dark:text-gray-400',
-    classActive,
-    classInactive,
     class: className,
     transition = undefined,
     params,
@@ -26,18 +21,18 @@
 
   const ctx: AccordionCtxType = {
     flush,
-    activeClass: twMerge(activeClass, classActive),
-    inactiveClass: twMerge(inactiveClass, classInactive)
+    activeClass: twMerge('bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800', activeClass),
+    inactiveClass: twMerge('text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800', inactiveClass)
     // selected: multiple ? undefined : writable()
   };
 
   setContext<AccordionCtxType>('ctx', ctx);
 
-  let accordionClass = twMerge(
+  let accordionClass = $derived(twMerge(
     accordionVariants({ flush }),
     defaultClass,
     className
-  );
+  ));
 </script>
 
 <div {...attributes} class={accordionClass} color="none">

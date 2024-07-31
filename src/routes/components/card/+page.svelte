@@ -3,6 +3,7 @@
 
   let vCard = $state(false);
   let hCard = $state(false);
+  $inspect('vCard: ', vCard, 'hCard: ', hCard);
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
