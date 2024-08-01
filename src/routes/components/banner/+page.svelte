@@ -35,9 +35,14 @@
     if (bannerType === 'cta'){ position = 'absolute' };
   }
   let color: BannerProps['color'] = $state('gray');
-  $effect(() => {
-    console.log('position', position, 'bannerType', bannerType, 'color', color);
-  })
+  let bannerClass: BannerProps['class'] = $state('')
+  const changeClass = () => {
+    bannerClass = bannerClass === '' ? 'my-4' : ''
+  }
+  let bannerStatus = $state(true)
+  const changeStatus = () => {
+    bannerStatus = true
+  }
 </script>
 
 <H1>Banner</H1>
@@ -48,7 +53,7 @@
   <Skeleton class="py-4" />
   <ImagePlaceholder class="py-4" />
 
-  <Banner id="sample-banner" {position} {bannerType} {color}>
+  <Banner id="sample-banner" {position} {bannerType} {color} class={bannerClass} bind:bannerStatus={bannerStatus}>
     <p
       class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400"
     >
@@ -78,8 +83,12 @@
     <Radio name="color" bind:group={color} value="purple">Purple</Radio>
     <Radio name="color" bind:group={color} value="pink">Pink</Radio>
   </div>
-  <Button onclick={changePosition}>Change position</Button>{position}
-  <Button onclick={changeBannerType}>Change banner type</Button>{bannerType}
+  <Button onclick={changePosition}>Change position</Button>
+  <Button color="blue" onclick={changeBannerType}>Change banner type</Button>
+  <Button color="green" onclick={changeClass}>{bannerClass? 'Remove class' : 'Add class'}</Button>
+  {#if !bannerStatus}
+    <Button color="light" onclick={changeStatus}>Open banner</Button>
+  {/if}
 </div>
 </CodeWrapper>
 <H2>Setup</H2>

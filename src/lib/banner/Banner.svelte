@@ -16,16 +16,15 @@
     dismissable = true,
     color = 'gray',
     bannerType = 'default',
-    divClass,
+    class: className,
     innerClass,
     transition = fade,
     params,
     ...attributes
   }: Props = $props();
 
-  // let bannerStatus = $state(true);
   let bannerClass = $derived(
-    bannerVariants({ position, bannerType, color, class:divClass })
+    bannerVariants({ position, bannerType, color, className })
   );
 
   let innerCls = twMerge('flex', insideDivVariants({ bannerType }), innerClass);

@@ -90,6 +90,30 @@
   code={modules['./md/default-alert.md'] as string}
 />
 
+<H2>Reactive alert</H2>
+<CodeWrapper class="space-y-4">
+  <Alert {color} {rounded} {border} {dismissable} class={alertClass} bind:alertStatus={alertStatus2}>
+    <span class="font-medium">Default alert!</span>
+  </Alert>
+  {#if !alertStatus2}
+    <Button color="light" onclick={changeStatus}>Open alert</Button>
+  {/if}
+  <div class="flex space-x-4">
+    <Label>Change color</Label>
+    <Radio name="color" bind:group={color} value="red">Red</Radio>
+    <Radio name="color" bind:group={color} value="green">Green</Radio>
+    <Radio name="color" bind:group={color} value="yellow">Yellow</Radio>
+    <Radio name="color" bind:group={color} value="indigo">Indigo</Radio>
+    <Radio name="color" bind:group={color} value="purple">Purple</Radio>
+    <Radio name="color" bind:group={color} value="pink">Pink</Radio>
+  </div>
+  <Button color="blue" onclick={changeRounded}>{rounded? 'Remove rounded' : 'Add rounded'}</Button>
+  <Button color="red" onclick={changeBorder}>{border? 'Remove border' : 'Add border'}</Button>
+  <Button color="yellow" onclick={changeDismissable}>{dismissable? 'Remove dismissable' : 'Add dismissable'}</Button>
+  <Button color="green" onclick={changeClass}>{alertClass? 'Remove class' : 'Add class'}</Button>
+</CodeWrapper>
+<HighlightCompo codeLang="ts" code={modules['./md/reactive-alert.md'] as string} />
+
 <H2>Alerts with icon</H2>
 <CodeWrapper class="space-y-4">
   <Alert>
@@ -418,26 +442,4 @@
 </CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/events.md'] as string} />
 
-<H2>Reactive alert</H2>
-<CodeWrapper class="space-y-4">
-  <Alert {color} {rounded} {border} {dismissable} class={alertClass} bind:alertStatus={alertStatus2}>
-    <span class="font-medium">Default alert!</span>
-  </Alert>
-  {#if !alertStatus2}
-    <Button color="light" onclick={changeStatus}>Open alert</Button>
-  {/if}
-  <div class="flex space-x-4">
-    <Label>Change color</Label>
-    <Radio name="color" bind:group={color} value="red">Red</Radio>
-    <Radio name="color" bind:group={color} value="green">Green</Radio>
-    <Radio name="color" bind:group={color} value="yellow">Yellow</Radio>
-    <Radio name="color" bind:group={color} value="indigo">Indigo</Radio>
-    <Radio name="color" bind:group={color} value="purple">Purple</Radio>
-    <Radio name="color" bind:group={color} value="pink">Pink</Radio>
-  </div>
-  <Button color="blue" onclick={changeRounded}>{rounded? 'Remove rounded' : 'Add rounded'}</Button>
-  <Button color="red" onclick={changeBorder}>{border? 'Remove border' : 'Add border'}</Button>
-  <Button color="yellow" onclick={changeDismissable}>{dismissable? 'Remove dismissable' : 'Add dismissable'}</Button>
-  <Button color="green" onclick={changeClass}>{alertClass? 'Remove class' : 'Add class'}</Button>
-</CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/reactive-alert.md'] as string} />
+

@@ -57,8 +57,22 @@
   <Avatar src="/images/profile-picture-2.webp" />
   <Avatar src="/images/profile-picture-2.webp" rounded />
 </CodeWrapper>
-
 <HighlightCompo code={modules['./md/default-avatar.md'] as string} />
+
+<H2>Reactive avatars</H2>
+<CodeWrapper class="space-y-4">
+  <div class="mb-5 flex">
+  <Avatar src="/images/profile-picture-1.webp" {rounded} {border} {stacked} class={avatarClass}/>
+  <Avatar src="/images/profile-picture-2.webp" {rounded} {border} {stacked} class={avatarClass}/>
+  <Avatar src="/images/profile-picture-3.webp" {rounded} {border} {stacked} class={avatarClass}/>
+  </div>
+  <Button color='blue' onclick={changeRounded}>{rounded?'Add rounded' : 'Remove rounded'}</Button>
+  <Button color='red' onclick={changeBorder}>{border?'Remove border' : 'Add border'}</Button>
+  <Button color='green' onclick={changeStacked}>{stacked?'Remove stacked' : 'Add  stacked'}</Button>
+  <Button color='purple' onclick={changeClass}>Change class</Button>
+</CodeWrapper>
+
+<HighlightCompo code={modules['./md/reactive-avatars.md'] as string} />
 
 <H2>Bordered</H2>
 <CodeWrapper class="flex justify-center gap-4">
@@ -201,18 +215,3 @@
   </div>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/sizes.md'] as string} />
-
-<H2>Reactive avatars</H2>
-<CodeWrapper class="space-y-4">
-  <div class="mb-5 flex">
-  <Avatar src="/images/profile-picture-1.webp" {rounded} {border} {stacked} class={avatarClass}/>
-  <Avatar src="/images/profile-picture-2.webp" {rounded} {border} {stacked} class={avatarClass}/>
-  <Avatar src="/images/profile-picture-3.webp" {rounded} {border} {stacked} class={avatarClass}/>
-  </div>
-  <Button color='blue' onclick={changeRounded}>{rounded?'Add rounded' : 'Remove rounded'}</Button>
-  <Button color='red' onclick={changeBorder}>{border?'Remove border' : 'Add border'}</Button>
-  <Button color='green' onclick={changeStacked}>{stacked?'Remove stacked' : 'Add  stacked'}</Button>
-  <Button color='purple' onclick={changeClass}>Change class</Button>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/reactive-avatars.md'] as string} />
