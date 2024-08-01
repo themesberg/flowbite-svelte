@@ -46,6 +46,39 @@
 </script>
 
 <H1>Banner</H1>
+<H2>Setup</H2>
+
+<HighlightCompo code={modules['./md/setup.md'] as string} />
+
+<H2>Default sticky banner</H2>
+
+<CodeWrapper class="relative">
+  <Skeleton class="py-4" />
+  <ImagePlaceholder class="py-4" />
+
+  <Banner id="default-banner" position="absolute">
+    <p
+      class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400"
+    >
+      <span
+        class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600"
+      >
+        <BullhornOutline class="h-3 w-3 text-gray-500 dark:text-gray-400" />
+        <span class="sr-only">Light bulb</span>
+      </span>
+      <span>
+        New brand identity has been launched for the <a
+          href="https://flowbite.com"
+          class="decoration-600 dark:decoration-500 inline font-medium text-primary-600 underline decoration-solid underline-offset-2 hover:no-underline dark:text-primary-500"
+        >
+          Flowbite Library
+        </a>
+      </span>
+    </p>
+  </Banner>
+</CodeWrapper>
+
+<HighlightCompo code={modules['./md/defaultsticky.md'] as string} />
 
 <H2>Reactive banner</H2>
 <CodeWrapper class="relative">
@@ -91,39 +124,6 @@
   {/if}
 </div>
 </CodeWrapper>
-<H2>Setup</H2>
-
-<HighlightCompo code={modules['./md/setup.md'] as string} />
-
-<H2>Default sticky banner</H2>
-
-<CodeWrapper class="relative">
-  <Skeleton class="py-4" />
-  <ImagePlaceholder class="py-4" />
-
-  <Banner id="default-banner" position="absolute">
-    <p
-      class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400"
-    >
-      <span
-        class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600"
-      >
-        <BullhornOutline class="h-3 w-3 text-gray-500 dark:text-gray-400" />
-        <span class="sr-only">Light bulb</span>
-      </span>
-      <span>
-        New brand identity has been launched for the <a
-          href="https://flowbite.com"
-          class="decoration-600 dark:decoration-500 inline font-medium text-primary-600 underline decoration-solid underline-offset-2 hover:no-underline dark:text-primary-500"
-        >
-          Flowbite Library
-        </a>
-      </span>
-    </p>
-  </Banner>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/defaultsticky.md'] as string} />
 
 <H2>Bottom banner position</H2>
 

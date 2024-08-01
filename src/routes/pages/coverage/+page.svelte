@@ -39,7 +39,7 @@
     },
     banner: {
       checked: true,
-      notes: 'Variants'
+      notes: 'Variants reactive examples'
     },
     bottomNavigation: {
       checked: true,

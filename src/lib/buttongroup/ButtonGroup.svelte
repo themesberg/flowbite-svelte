@@ -1,26 +1,15 @@
 <script lang="ts">
-  // import type { Snippet } from 'svelte';
   import { setContext } from 'svelte';
-  import { twMerge } from 'tailwind-merge';
-  // import type { SizeType } from '$lib/types';
   import { type ButtonGroupProps as Props, buttonGroupVariants } from './index';
-
-  // interface Props {
-  //   children: Snippet;
-  //   size?: SizeType;
-  //   class?: string | undefined;
-  // }
 
   let {
     children,
     size = 'md',
-    class: divClass,
+    class: className,
     ...attributes
   }: Props = $props();
 
-  // export let size: SizeType = 'md';
-  // const divCls: string = 'inline-flex rounded-lg shadow-sm';
-  let groupClass = buttonGroupVariants({ size, class: divClass });
+  let groupClass = $derived(buttonGroupVariants({ size, className }));
   setContext('group', { size });
 </script>
 

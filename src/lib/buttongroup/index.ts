@@ -1,7 +1,6 @@
 import { type VariantProps, tv } from 'tailwind-variants';
 import type { Snippet } from 'svelte';
 import ButtonGroup from './ButtonGroup.svelte';
-// import type { SizeType } from '$lib/types';
 
 const buttonGroupVariants = tv({
   base: 'inline-flex rounded-lg shadow-sm',
