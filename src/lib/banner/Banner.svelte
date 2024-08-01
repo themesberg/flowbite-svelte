@@ -11,6 +11,7 @@
   let {
     children,
     header,
+    bannerStatus = $bindable(true),
     position = 'sticky',
     dismissable = true,
     color = 'gray',
@@ -22,10 +23,9 @@
     ...attributes
   }: Props = $props();
 
-  let bannerStatus = $state(true);
-  let bannerClass = twMerge(
-    bannerVariants({ position, bannerType, color }),
-    divClass
+  // let bannerStatus = $state(true);
+  let bannerClass = $derived(
+    bannerVariants({ position, bannerType, color, class:divClass })
   );
 
   let innerCls = twMerge('flex', insideDivVariants({ bannerType }), innerClass);

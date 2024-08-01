@@ -26,16 +26,16 @@
     },
     alert: {
       checked: true,
-      notes: 'Variants'
+      notes: 'Variants, reactive examples'
     },
     avatar: {
       checked: true,
       problems: 'Avatar tooltip',
-      notes: 'Variants'
+      notes: 'Variants, reactive examples'
     },
     badge: {
       checked: true,
-      notes: 'Variants'
+      notes: 'Variants, reactive examples'
     },
     banner: {
       checked: true,

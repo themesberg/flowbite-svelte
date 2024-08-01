@@ -1,7 +1,7 @@
 <script lang="ts">
   import { slide } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
-  import { Banner, Skeleton, ImagePlaceholder } from '$lib';
+  import { Banner, Button, Skeleton, ImagePlaceholder, Label, Radio, type BannerProps } from '$lib';
   import {
     BullhornOutline,
     SalePercentSolid,
@@ -21,10 +21,67 @@
     import: 'default',
     eager: true
   });
+
+  // reactive example
+  // position, bannerType, color, class:divClass
+  let position: BannerProps['position'] = $state('sticky');
+  const changePosition = () => {
+    position = position === 'sticky' ? 'absolute' : 'sticky';
+    if ( position === 'sticky'){ bannerType = 'default' };
+  }
+  let bannerType: BannerProps['bannerType'] = $state('default');
+  const changeBannerType = () => {
+    bannerType = bannerType === 'default' ? 'cta' : 'default';
+    if (bannerType === 'cta'){ position = 'absolute' };
+  }
+  let color: BannerProps['color'] = $state('gray');
+  $effect(() => {
+    console.log('position', position, 'bannerType', bannerType, 'color', color);
+  })
 </script>
 
 <H1>Banner</H1>
 
+<H2>Reactive banner</H2>
+<CodeWrapper class="relative">
+  
+  <Skeleton class="py-4" />
+  <ImagePlaceholder class="py-4" />
+
+  <Banner id="sample-banner" {position} {bannerType} {color}>
+    <p
+      class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400"
+    >
+      <span
+        class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600"
+      >
+        <BullhornOutline class="h-3 w-3 text-gray-500 dark:text-gray-400" />
+        <span class="sr-only">Light bulb</span>
+      </span>
+      <span>
+        New brand identity has been launched for the <a
+          href="https://flowbite.com"
+          class="decoration-600 dark:decoration-500 inline font-medium text-primary-600 underline decoration-solid underline-offset-2 hover:no-underline dark:text-primary-500"
+        >
+          Flowbite Library
+        </a>
+      </span>
+    </p>
+  </Banner>
+ <div class="mt-8 space-y-4">
+  <div class="flex space-x-4">
+    <Label>Change color {color}</Label>
+    <Radio name="color" bind:group={color} value="red">Red</Radio>
+    <Radio name="color" bind:group={color} value="green">Green</Radio>
+    <Radio name="color" bind:group={color} value="yellow">Yellow</Radio>
+    <Radio name="color" bind:group={color} value="indigo">Indigo</Radio>
+    <Radio name="color" bind:group={color} value="purple">Purple</Radio>
+    <Radio name="color" bind:group={color} value="pink">Pink</Radio>
+  </div>
+  <Button onclick={changePosition}>Change position</Button>{position}
+  <Button onclick={changeBannerType}>Change banner type</Button>{bannerType}
+</div>
+</CodeWrapper>
 <H2>Setup</H2>
 
 <HighlightCompo code={modules['./md/setup.md'] as string} />

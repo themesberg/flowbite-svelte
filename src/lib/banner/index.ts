@@ -64,6 +64,7 @@ type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 interface BannerProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   header?: Snippet;
+  bannerStatus?: boolean;
   position?: PositionVariants;
   dismissable?: boolean;
   color?: ColorVariants;
