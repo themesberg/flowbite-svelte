@@ -14,7 +14,7 @@
   }: Props = $props();
 
   let hasChildren = !!children;
-  const { base } = indicatorVariants({
+  const { base } = $derived(indicatorVariants({
     color,
     size,
     rounded,
@@ -22,7 +22,7 @@
     placement,
     offset,
     hasChildren
-  });
+  }));
 </script>
 
 <div class={base({ className })} {...attributes}>

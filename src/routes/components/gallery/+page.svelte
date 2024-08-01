@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Gallery, Button } from '$lib';
+  import { Gallery, Button, type ImgType } from '$lib';
   const images = [
     {
       alt: 'erbology',
@@ -330,7 +330,7 @@
 <HighlightCompo code={modules['./md/heterogenuous-gallery.md'] as string} />
 
 <H2>Custom image rendering</H2>
-{#snippet figure(item)}
+{#snippet figure(item: ImgType)}
   <div class="p-1 ring-4 ring-red-600 dark:ring-red-400">
     <img src={item.src} alt={item.alt} class="h-auto max-w-full" />
   </div>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { galleryVariants, type GalleryProps as Props } from '.';
+  import { galleryVariants, type GalleryProps as Props, type ImgType } from '.';
 
   let {
     children,
@@ -16,7 +16,7 @@
   const { image, div } = galleryVariants();
 </script>
 
-{#snippet figure(item)}
+{#snippet figure(item:ImgType)}
   <div>
     <img
       src={item.src}

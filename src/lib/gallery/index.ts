@@ -11,7 +11,7 @@ const galleryVariants = tv({
 });
 
 type ImgType = {
-  src: string | undefined | null;
+  src?: string | undefined | null;
   alt?: string | undefined | null;
 };
 
@@ -22,4 +22,4 @@ interface GalleryProps {
   divClass?: string | undefined;
 }
 
-export { Gallery, galleryVariants, type GalleryProps };
+export { Gallery, galleryVariants, type GalleryProps, type ImgType };

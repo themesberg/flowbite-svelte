@@ -39,7 +39,7 @@
     },
     banner: {
       checked: true,
-      notes: 'Variants reactive examples'
+      notes: 'Variants, reactive examples'
     },
     bottomNavigation: {
       checked: true,
@@ -53,7 +53,7 @@
     },
     buttonGroup: {
       checked: true,
-      notes: 'Variants'
+      notes: 'Variants, reactive examples'
     },
     buttons: {
       checked: true,

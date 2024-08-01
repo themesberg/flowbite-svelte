@@ -82,7 +82,6 @@
 
 <H2>Reactive banner</H2>
 <CodeWrapper class="relative">
-  
   <Skeleton class="py-4" />
   <ImagePlaceholder class="py-4" />
 
@@ -124,6 +123,7 @@
   {/if}
 </div>
 </CodeWrapper>
+<HighlightCompo code={modules['./md/reactive.md'] as string} />
 
 <H2>Bottom banner position</H2>
 
