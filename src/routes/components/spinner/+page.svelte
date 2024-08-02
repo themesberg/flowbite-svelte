@@ -42,9 +42,9 @@
 <CodeWrapper>
   <Spinner color={spinnerColor} />
   <div class="flex flex-wrap space-x-4 mt-8">
-    <Label class="w-full mb-4">Change color</Label>
+    <Label class="w-full mb-4 font-bold">Change color</Label>
     {#each colors as color}
-      <Radio name="spinnercolor" bind:group={spinnerColor} value={color}>{color}</Radio>
+      <Radio labelClass="w-24 my-1" name="spinnercolor" bind:group={spinnerColor} value={color}>{color}</Radio>
     {/each}
   </div>
 </CodeWrapper>
@@ -58,9 +58,9 @@
     <Spinner size={spinnerSize} />
   </div>
   <div class="flex flex-wrap space-x-4 mt-4">
-    <Label class="w-full mb-4">Change size</Label>
+    <Label class="w-full mb-4 font-bold">Change size</Label>
     {#each sizes as size}
-      <Radio name="spinnersize" bind:group={spinnerSize} value={size}>{size}</Radio>
+      <Radio labelClass="w-24 my-1" name="spinnersize" bind:group={spinnerSize} value={size}>{size}</Radio>
     {/each}
   </div>
 </CodeWrapper>

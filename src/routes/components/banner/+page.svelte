@@ -110,9 +110,9 @@
   </div>
  <div class="mt-8 space-y-4">
   <div class="flex flex-wrap space-x-4">
-    <Label class="w-full mb-4">Change color {color}</Label>
+    <Label class="w-full mb-4 font-bold">Change color {color}</Label>
     {#each colors as colorOption}
-      <Radio name="color" bind:group={color} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="color" bind:group={color} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <Button class="w-48" onclick={changePosition}>Change position</Button>

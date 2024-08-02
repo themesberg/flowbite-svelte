@@ -45,22 +45,22 @@
 
 <H2>Reactive button group</H2>
 <CodeWrapper>
-  <div class="h-12">
+  <div class="h-16">
   <ButtonGroup {size} class={buttonGroupClass}>
     <Button>Profile</Button>
     <Button>Settings</Button>
     <Button>Messages</Button>
   </ButtonGroup>
   </div>
-  <div class="mt-8 space-y-4">
-    <div class="flex space-x-4">
-      <Label class="w-full mb-4">Current size: {size}</Label>
-      {#each sizes as sizeOption}
-        <Radio name="size" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
-      {/each}
-    </div>
-    <Button color="green" onclick={changeClass}>{buttonGroupClass? 'Remove class' : 'Add class'}</Button>
+  
+  <div class="flex flex-wrap space-x-4 mb-4">
+    <Label class="w-full mb-4 font-bold">Current size: {size}</Label>
+    {#each sizes as sizeOption}
+      <Radio labelClass="w-24 my-1" name="size" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
+    {/each}
   </div>
+  <Button color="green" onclick={changeClass}>{buttonGroupClass? 'Remove class' : 'Add class'}</Button>
+
 </CodeWrapper>
 <HighlightCompo code={modules['./md/reactive-buttongroup.md'] as string} />
 

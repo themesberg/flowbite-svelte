@@ -64,9 +64,9 @@
   </div>
 
   <div class="flex flex-wrap space-x-4">
-    <Label class="w-full mb-4">Change color</Label>
+    <Label class="w-full mb-4 font-bold">Change color</Label>
     {#each colors as colorOption}
-      <Radio name="default_alert_color" bind:group={defaultColor} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="default_alert_color" bind:group={defaultColor} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   
@@ -90,9 +90,9 @@
   </div>
 
   <div class="flex flex-wrap space-x-4">
-    <Label class="w-full mb-4">Change color</Label>
+    <Label class="w-full mb-4 font-bold">Change color</Label>
     {#each colors as colorOption}
-      <Radio name="icon_alert_color" bind:group={iconColor} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={iconColor} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
 </CodeWrapper>
@@ -114,9 +114,9 @@
   </div>
 
   <div class="flex flex-wrap space-x-4">
-    <Label class="w-full mb-4">Change color</Label>
+    <Label class="w-full mb-4 font-bold">Change color</Label>
     {#each colors as colorOption}
-      <Radio name="bordered_alert_color" bind:group={borderColor} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="bordered_alert_color" bind:group={borderColor} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
 </CodeWrapper>
@@ -127,7 +127,7 @@
 
 <H2>Alerts with list</H2>
 <CodeWrapper class="space-y-4">
-  <div class="h-32">
+  <div class="h-48 sm:h-32">
     <Alert color={listColor} class="!items-start">
       {#snippet icon()}
         <InfoCircleSolid class="h-5 w-5" />
@@ -142,9 +142,9 @@
   </div>
 
   <div class="flex flex-wrap space-x-4">
-    <Label class="w-full mb-4">Change color</Label>
+    <Label class="w-full mb-4 font-bold">Change color</Label>
     {#each colors as colorOption}
-      <Radio name="list_alert_color" bind:group={listColor} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="list_alert_color" bind:group={listColor} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
 </CodeWrapper>
@@ -169,9 +169,9 @@
   </div>
 
   <div class="flex flex-wrap space-x-4">
-    <Label class="w-full mb-4">Change color</Label>
+    <Label class="w-full mb-4 font-bold">Change color</Label>
     {#each colors as colorOption}
-      <Radio name="dissmissible_alert_color" bind:group={dismissableColor} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="dissmissible_alert_color" bind:group={dismissableColor} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <Button class="w-48" color="yellow" onclick={changeDismissable}>{dismissable? 'Remove dismissable' : 'Add dismissable'}</Button>
@@ -194,9 +194,9 @@
   </div>
 
   <div class="flex flex-wrap space-x-4">
-    <Label class="w-full mb-4">Change color</Label>
+    <Label class="w-full mb-4 font-bold">Change color</Label>
     {#each colors as colorOption}
-      <Radio name="border_accent_alert_color" bind:group={borderAccessColor} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="border_accent_alert_color" bind:group={borderAccessColor} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
 
@@ -215,7 +215,7 @@
 
 <H2>Additional content</H2>
 <CodeWrapper class="space-y-4">
-  <div class="h-48">
+  <div class="h-52">
     <Alert color={additionalColor}>
       <div class="flex items-center gap-3">
         {#snippet icon()}
@@ -236,9 +236,9 @@
   </div>
 
   <div class="flex flex-wrap space-x-4">
-    <Label class="w-full mb-4">Change color</Label>
+    <Label class="w-full mb-4 font-bold">Change color</Label>
     {#each colors as colorOption}
-      <Radio name="additional_alert_color" bind:group={additionalColor} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="additional_alert_color" bind:group={additionalColor} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
 </CodeWrapper>
@@ -257,9 +257,9 @@
   </div>
 
   <div class="flex flex-wrap space-x-4">
-    <Label class="w-full mb-4">Change color</Label>
+    <Label class="w-full mb-4 font-bold">Change color</Label>
     {#each colors as colorOption}
-      <Radio name="alert_reactive" bind:group={color} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="alert_reactive" bind:group={color} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <Button class="w-48" color="blue" onclick={changeRounded}>{rounded? 'Remove rounded' : 'Add rounded'}</Button>
@@ -295,9 +295,9 @@
   </div>
 
   <div class="flex flex-wrap space-x-4">
-    <Label class="w-full mb-4">Change color</Label>
+    <Label class="w-full mb-4 font-bold">Change color</Label>
     {#each colors as colorOption}
-      <Radio name="alert_reactive" bind:group={color} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="alert_reactive" bind:group={color} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <Button class="w-48" color="blue" onclick={changeRounded}>{rounded? 'Remove rounded' : 'Add rounded'}</Button>

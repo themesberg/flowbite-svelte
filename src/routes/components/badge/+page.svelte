@@ -99,9 +99,9 @@
 </div>
 
   <div class="flex flex-wrap space-x-4">
-    <Label class="w-full mb-4">Change color</Label>
+    <Label class="w-full mb-4 font-bold">Change color</Label>
     {#each colors as colorOption}
-      <Radio name="color" bind:group={color} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="color" bind:group={color} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <Button class="w-40" color="blue" onclick={changeSize}>{badgeSize? 'Small' : 'Large'}</Button>

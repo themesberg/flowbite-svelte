@@ -61,7 +61,7 @@
 
 <H2>Reactive avatars</H2>
 <CodeWrapper class="space-y-4">
-  <div class="mb-5 flex">
+  <div class="mb-5 flex justify-center">
   <Avatar src="/images/profile-picture-1.webp" {rounded} {border} {stacked} class={avatarClass}/>
   <Avatar src="/images/profile-picture-2.webp" {rounded} {border} {stacked} class={avatarClass}/>
   <Avatar src="/images/profile-picture-3.webp" {rounded} {border} {stacked} class={avatarClass}/>
@@ -69,7 +69,7 @@
   <Button class="w-40" color='blue' onclick={changeRounded}>{rounded?'Add rounded' : 'Remove rounded'}</Button>
   <Button class="w-40" color='red' onclick={changeBorder}>{border?'Remove border' : 'Add border'}</Button>
   <Button class="w-40" color='green' onclick={changeStacked}>{stacked?'Remove stacked' : 'Add  stacked'}</Button>
-  <Button class="w-40" color='purple' onclick={changeClass}>Change class</Button>
+  <Button class="w-40" color='purple' onclick={changeClass}>{avatarClass?'Remove class' : 'Add class'}</Button>
 </CodeWrapper>
 
 <H2>Bordered</H2>

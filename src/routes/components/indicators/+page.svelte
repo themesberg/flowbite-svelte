@@ -53,21 +53,21 @@
   </div>
   <div class="mt-8 space-y-4">
   <div class="flex flex-wrap space-x-2">
-    <Label class="w-full mb-4">Change color</Label>
+    <Label class="w-full mb-4 font-bold">Change color</Label>
     {#each colors as colorOption}
-      <Radio name="color" bind:group={color} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="color" bind:group={color} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap space-x-4">
-    <Label class="w-full mb-4">Change size</Label>
+    <Label class="w-full mb-4 font-bold">Change size</Label>
     {#each sizes as sizeOption}
-      <Radio name="size" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="size" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap space-x-4" >
-    <Label class="w-full mb-4">Change placement</Label>
+    <Label class="w-full mb-4 font-bold">Change placement</Label>
     {#each positions as positionOption}
-      <Radio name="placement" bind:group={placement} value={positionOption}>{positionOption}</Radio>
+      <Radio labelClass="w-32 my-1" name="placement" bind:group={placement} value={positionOption}>{positionOption}</Radio>
     {/each}
   </div>
   <Button onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
