@@ -1,3 +1,3 @@
-<ImagePlaceholder size="sm" />
-<ImagePlaceholder class="mt-8"/>
-<ImagePlaceholder size="lg" class="mt-8"/>
+// size: sm | md(default) | lg
+// round: none | sm | md(default) | lg | full
+<ImagePlaceholder size="lg" round="full" class="your-class"/>

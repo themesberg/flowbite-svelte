@@ -32,9 +32,9 @@ const cardPlaceholderVariants = tv({
   }
 });
 
-type SizeType = VariantProps<typeof cardPlaceholderVariants>['size'];
+type CardSizeType = VariantProps<typeof cardPlaceholderVariants>['size'];
 interface CardPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
-  size?: SizeType;
+  size?: CardSizeType;
   class?: string | undefined;
 }
 
@@ -282,5 +282,6 @@ export {
   type TestimonialPlaceholderProps,
   type TextPlaceholderProps,
   type VideoPlaceholderProps,
+  type SizeVideoType,
   type WidgetPlaceholderProps
 };

@@ -6,8 +6,8 @@
     VideoPlaceholder,
     TextPlaceholder,
     ListPlaceholder,
-    TestimonialPlaceholder,
-    WidgetPlaceholder
+    TestimonialPlaceholder, Label, Radio,
+    WidgetPlaceholder, type SkeletonProps, type ImagePlaceholderProps, type VideoPlaceholderProps, type SizeVideoType
   } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -18,32 +18,49 @@
     import: 'default',
     eager: true
   });
+  // size
+  const sizes = ['sm', 'md', 'lg', 'xl', 'xxl'];
+  let skeletonSize: SkeletonProps['size'] = $state('sm');
+  let imagePlaceholderSize: ImagePlaceholderProps['size'] = $state('md');
+  let imagePlaceholderRounded: ImagePlaceholderProps['rounded'] = $state('none');
+  let videoPlaceholderSize: VideoPlaceholderProps['size'] = $state('md');
 </script>
 
 <H1>Skeleton</H1>
-
 <H2>Setup</H2>
-
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default skeleton</H2>
-
 <CodeWrapper>
-  <Skeleton size="sm" />
-  <Skeleton size="md" class="mt-8" />
-  <Skeleton size="lg" class="mt-8" />
-  <Skeleton size="xl" class="mt-8" />
-  <Skeleton size="xxl" class="mt-8" />
-</CodeWrapper>
+  <Skeleton size={skeletonSize} class="mt-8"/>
 
+  <div class="flex space-x-4 mt-8">
+    <Label>Change size</Label>
+    {#each sizes as size}
+      <Radio name="size" bind:group={skeletonSize} value={size}>{size}</Radio>
+    {/each}
+  </div>
+</CodeWrapper>
 <HighlightCompo code={modules['./md/skeleton.md'] as string} />
 
 <H2>Image placeholder</H2>
-
 <CodeWrapper>
-  <ImagePlaceholder size="sm" />
-  <ImagePlaceholder class="mt-8" />
-  <ImagePlaceholder size="lg" class="mt-8" />
+  <ImagePlaceholder size={imagePlaceholderSize} rounded={imagePlaceholderRounded}/>
+
+  <div class="flex space-x-4 mt-8">
+    <Label>Change size</Label>
+    <Radio name="size" bind:group={imagePlaceholderSize} value="sm">sm</Radio>
+    <Radio name="size" bind:group={imagePlaceholderSize} value="md">md</Radio>
+    <Radio name="size" bind:group={imagePlaceholderSize} value="lg">lg</Radio>
+  </div>
+  <div class="flex space-x-4 mt-4">
+    <Label>Change round</Label>
+    <Radio name="rounded" bind:group={imagePlaceholderRounded} value="none">none</Radio>
+    <Radio name="rounded" bind:group={imagePlaceholderRounded} value="sm">sm</Radio>
+    <Radio name="rounded" bind:group={imagePlaceholderRounded} value="md">md</Radio>
+    <Radio name="rounded" bind:group={imagePlaceholderRounded} value="lg">lg</Radio>
+    <Radio name="rounded" bind:group={imagePlaceholderRounded} value="full">full</Radio>
+  </div>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/imageplaceholder.md'] as string} />
@@ -51,11 +68,13 @@
 <H2>Video placeholder</H2>
 
 <CodeWrapper>
-  <VideoPlaceholder />
-  <VideoPlaceholder size="md" class="mt-8" />
-  <VideoPlaceholder size="lg" class="mt-8" />
-  <VideoPlaceholder size="xl" class="mt-8" />
-  <VideoPlaceholder size="xxl" class="mt-8" />
+  <VideoPlaceholder size={videoPlaceholderSize} />
+  <div class="flex space-x-4 mt-8">
+    <Label>Change size</Label>
+    {#each sizes as size}
+      <Radio name="size" bind:group={videoPlaceholderSize} value={size}>{size}</Radio>
+    {/each}
+  </div>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/videoplaceholder.md'] as string} />

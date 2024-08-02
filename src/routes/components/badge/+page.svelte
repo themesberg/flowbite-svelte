@@ -40,7 +40,8 @@
   });
 
   // reactive example
-  let color: BadgeProps['color'] = $state('red')
+  const colors = ['primary', 'gray', 'blue', 'red', 'green', 'yellow', 'indigo', 'purple', 'pink', 'none']
+  let color: BadgeProps['color'] = $state('primary')
   let badgeSize: BadgeProps['large'] = $state(false)
   const changeSize = () => {
     badgeSize = !badgeSize
@@ -90,27 +91,25 @@
 
 <H2>Reactive badge</H2>
 <CodeWrapper class="space-y-4">
-  <Badge {color} large={badgeSize} dismissable={badgeDismissable} class={badgeClass} bind:badgeStatus={badgeStatus2} {border} {rounded} >Default</Badge>
+  <div class="h-12">
   {#if !badgeStatus2}
     <Button color="light" onclick={changeStatus}>Open badge</Button>
   {/if}
-  <div class="flex space-x-4">
-    <Label>Change color</Label>
-  <Radio name="color" bind:group={color} value="red">Red</Radio>
-  <Radio name="color" bind:group={color} value="green">Green</Radio>
-  <Radio name="color" bind:group={color} value="yellow">Yellow</Radio>
-  <Radio name="color" bind:group={color} value="indigo">Indigo</Radio>
-  <Radio name="color" bind:group={color} value="purple">Purple</Radio>
-  <Radio name="color" bind:group={color} value="pink">Pink</Radio>
-  </div>
-  <Button color="blue" onclick={changeSize}>{badgeSize? 'Small' : 'Large'}</Button>
-  <Button color="green" onclick={changeDismissable}>{badgeDismissable? 'Not dismissable' : 'Dismissable'}</Button>
-  <Button color="purple" onclick={changeClass}>{badgeClass? 'Remove class' : 'Add class'}</Button>
-  <Button color="yellow" onclick={changeBorder}>{border? 'Remove border' : 'Add border'}</Button>
-  <Button color="dark" onclick={changeRounded}>{rounded? 'Remove rounded' : 'Add rounded'}</Button>
-</CodeWrapper>
+  <Badge {color} large={badgeSize} dismissable={badgeDismissable} class={badgeClass} bind:badgeStatus={badgeStatus2} {border} {rounded} >Default</Badge>
+</div>
 
-<HighlightCompo codeLang="ts" code={modules['./md/reactive-badge.md'] as string} />
+  <div class="flex flex-wrap space-x-4">
+    <Label class="w-full mb-4">Change color</Label>
+    {#each colors as colorOption}
+      <Radio name="color" bind:group={color} value={colorOption}>{colorOption}</Radio>
+    {/each}
+  </div>
+  <Button class="w-40" color="blue" onclick={changeSize}>{badgeSize? 'Small' : 'Large'}</Button>
+  <Button class="w-40" color="green" onclick={changeDismissable}>{badgeDismissable? 'Not dismissable' : 'Dismissable'}</Button>
+  <Button class="w-40" color="purple" onclick={changeClass}>{badgeClass? 'Remove class' : 'Add class'}</Button>
+  <Button class="w-40" color="yellow" onclick={changeBorder}>{border? 'Remove border' : 'Add border'}</Button>
+  <Button class="w-40" color="dark" onclick={changeRounded}>{rounded? 'Remove rounded' : 'Add rounded'}</Button>
+</CodeWrapper>
 
 <H2>Large badge</H2>
 <CodeWrapper class="space-y-1">

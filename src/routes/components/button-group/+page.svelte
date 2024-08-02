@@ -19,6 +19,7 @@
   });
 
   // size, class
+  const sizes = ['sm', 'md', 'lg'];
   let size: ButtonGroupProps['size'] = $state('md');
   let buttonGroupClass: ButtonGroupProps['class'] = $state('')
   const changeClass = () => {
@@ -44,17 +45,19 @@
 
 <H2>Reactive button group</H2>
 <CodeWrapper>
+  <div class="h-12">
   <ButtonGroup {size} class={buttonGroupClass}>
     <Button>Profile</Button>
     <Button>Settings</Button>
     <Button>Messages</Button>
   </ButtonGroup>
+  </div>
   <div class="mt-8 space-y-4">
     <div class="flex space-x-4">
       <Label>Current size: {size}</Label>
-      <Radio name="size" bind:group={size} value="sm">sm</Radio>
-      <Radio name="size" bind:group={size} value="md">md</Radio>
-      <Radio name="size" bind:group={size} value="lg">lg</Radio>
+      {#each sizes as sizeOption}
+        <Radio name="size" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
+      {/each}
     </div>
     <Button color="green" onclick={changeClass}>{buttonGroupClass? 'Remove class' : 'Add class'}</Button>
   </div>

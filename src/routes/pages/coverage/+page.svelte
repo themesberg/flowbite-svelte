@@ -96,7 +96,7 @@
     },
     indicators: {
       checked: true,
-      notes: 'Variants'
+      notes: 'Variants, reactive examples'
     },
     kbd: {
       checked: true,

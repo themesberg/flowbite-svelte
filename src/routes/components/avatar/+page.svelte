@@ -66,13 +66,11 @@
   <Avatar src="/images/profile-picture-2.webp" {rounded} {border} {stacked} class={avatarClass}/>
   <Avatar src="/images/profile-picture-3.webp" {rounded} {border} {stacked} class={avatarClass}/>
   </div>
-  <Button color='blue' onclick={changeRounded}>{rounded?'Add rounded' : 'Remove rounded'}</Button>
-  <Button color='red' onclick={changeBorder}>{border?'Remove border' : 'Add border'}</Button>
-  <Button color='green' onclick={changeStacked}>{stacked?'Remove stacked' : 'Add  stacked'}</Button>
-  <Button color='purple' onclick={changeClass}>Change class</Button>
+  <Button class="w-40" color='blue' onclick={changeRounded}>{rounded?'Add rounded' : 'Remove rounded'}</Button>
+  <Button class="w-40" color='red' onclick={changeBorder}>{border?'Remove border' : 'Add border'}</Button>
+  <Button class="w-40" color='green' onclick={changeStacked}>{stacked?'Remove stacked' : 'Add  stacked'}</Button>
+  <Button class="w-40" color='purple' onclick={changeClass}>Change class</Button>
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/reactive-avatars.md'] as string} />
 
 <H2>Bordered</H2>
 <CodeWrapper class="flex justify-center gap-4">

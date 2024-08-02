@@ -12,6 +12,9 @@
     eager: true
   });
   // color, size, rounded, border, placement and offset
+  const sizes =[ 'xs', 'sm', 'md', 'lg', 'xl']
+  const colors = ['gray', 'dark', 'orange', 'blue', 'green', 'red', 'purple', 'indigo', 'yellow', 'teal']
+  const positions = ['top-left', 'top-center', 'top-right', 'center-left', 'center', 'center-right',  'bottom-left', 'bottom-center', 'bottom-right']
   let color: IndicatorProps['color'] = $state('red');
   let size: IndicatorProps['size'] = $state('md');
   let border: IndicatorProps['border'] = $state(false);
@@ -49,48 +52,29 @@
     <Indicator {color} {size} {border} {placement}/>
   </div>
   <div class="mt-8 space-y-4">
-  <div class="flex space-x-2">
-    <Label>Change color</Label>
-    <Radio name="color" bind:group={color} value="gray">Gray</Radio>
-    <Radio name="color" bind:group={color} value="dark">Dark</Radio>
-    <Radio name="color" bind:group={color} value="orange">Orange</Radio>
-    <Radio name="color" bind:group={color} value="blue">Blue</Radio>
-    <Radio name="color" bind:group={color} value="green">Green</Radio>
-    <Radio name="color" bind:group={color} value="red">Red</Radio>
-    <Radio name="color" bind:group={color} value="purple">Purple</Radio>
-    <Radio name="color" bind:group={color} value="indigo">Indigo</Radio>
-    <Radio name="color" bind:group={color} value="yellow">Yellow</Radio>
-    <Radio name="color" bind:group={color} value="teal">Teal</Radio>
+  <div class="flex flex-wrap space-x-2">
+    <Label class="w-full mb-4">Change color</Label>
+    {#each colors as colorOption}
+      <Radio name="color" bind:group={color} value={colorOption}>{colorOption}</Radio>
+    {/each}
   </div>
-  <div class="flex space-x-4">
-    <Label>Change size</Label>
-    <Radio name="size" bind:group={size} value="xs">xs</Radio>
-    <Radio name="size" bind:group={size} value="sm">sm</Radio>
-    <Radio name="size" bind:group={size} value="md">md</Radio>
-    <Radio name="size" bind:group={size} value="lg">lg</Radio>
-    <Radio name="size" bind:group={size} value="xl">xl</Radio>
+  <div class="flex flex-wrap space-x-4">
+    <Label class="w-full mb-4">Change size</Label>
+    {#each sizes as sizeOption}
+      <Radio name="size" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
+    {/each}
   </div>
-  <div>
-    <Label class="my-2">Change placement</Label>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5" >
-      <Radio name="placement" bind:group={placement} value="top-left">top-left</Radio>
-      <Radio name="placement" bind:group={placement} value="top-center">top-center</Radio>
-      <Radio name="placement" bind:group={placement} value="top-right">top-right</Radio>
-      <Radio name="placement" bind:group={placement} value="center-left">center-left</Radio>
-      <Radio name="placement" bind:group={placement} value="center">center</Radio>
-      <Radio name="placement" bind:group={placement} value="center-right">center-right</Radio>
-      <Radio name="placement" bind:group={placement} value="bottom-left">bottom-left</Radio>
-      <Radio name="placement" bind:group={placement} value="bottom-center">bottom-center</Radio>
-      <Radio name="placement" bind:group={placement} value="bottom-right">bottom-right</Radio>
-    </div>
+  <div class="flex flex-wrap space-x-4" >
+    <Label class="w-full mb-4">Change placement</Label>
+    {#each positions as positionOption}
+      <Radio name="placement" bind:group={placement} value={positionOption}>{positionOption}</Radio>
+    {/each}
   </div>
   <Button onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
   </div>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/reactive-indicator.md'] as string} />
 
 <H2>Legend indicator</H2>
-
 <CodeWrapper class="flex flex-wrap justify-start gap-4 md:justify-center ">
   <span class="flex items-center"
     ><Indicator size="sm" color="orange" class="me-1.5" />Visitors</span

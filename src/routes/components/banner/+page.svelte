@@ -24,6 +24,7 @@
 
   // reactive example
   // position, bannerType, color, class:divClass
+  const colors = ['blue', 'gray', 'red', 'green', 'yellow', 'indigo', 'purple', 'pink']
   let position: BannerProps['position'] = $state('sticky');
   const changePosition = () => {
     position = position === 'sticky' ? 'absolute' : 'sticky';
@@ -82,6 +83,7 @@
 
 <H2>Reactive banner</H2>
 <CodeWrapper class="relative">
+  <div class="h-[600px] md:h-[450px]">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="py-4" />
 
@@ -105,25 +107,22 @@
       </span>
     </p>
   </Banner>
- <div class="mt-8 space-y-4">
-  <div class="flex space-x-4">
-    <Label>Change color {color}</Label>
-    <Radio name="color" bind:group={color} value="red">Red</Radio>
-    <Radio name="color" bind:group={color} value="green">Green</Radio>
-    <Radio name="color" bind:group={color} value="yellow">Yellow</Radio>
-    <Radio name="color" bind:group={color} value="indigo">Indigo</Radio>
-    <Radio name="color" bind:group={color} value="purple">Purple</Radio>
-    <Radio name="color" bind:group={color} value="pink">Pink</Radio>
   </div>
-  <Button onclick={changePosition}>Change position</Button>
-  <Button color="blue" onclick={changeBannerType}>Change banner type</Button>
-  <Button color="green" onclick={changeClass}>{bannerClass? 'Remove class' : 'Add class'}</Button>
+ <div class="mt-8 space-y-4">
+  <div class="flex flex-wrap space-x-4">
+    <Label class="w-full mb-4">Change color {color}</Label>
+    {#each colors as colorOption}
+      <Radio name="color" bind:group={color} value={colorOption}>{colorOption}</Radio>
+    {/each}
+  </div>
+  <Button class="w-48" onclick={changePosition}>Change position</Button>
+  <Button class="w-48" color="blue" onclick={changeBannerType}>Change banner type</Button>
+  <Button class="w-48" color="green" onclick={changeClass}>{bannerClass? 'Remove class' : 'Add class'}</Button>
   {#if !bannerStatus}
-    <Button color="light" onclick={changeStatus}>Open banner</Button>
+    <Button class="w-48" color="light" onclick={changeStatus}>Open banner</Button>
   {/if}
 </div>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/reactive.md'] as string} />
 
 <H2>Bottom banner position</H2>
 
