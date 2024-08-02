@@ -1,1 +1,1 @@
-<Alert color="none" divclass="bg-sky-500 text-white">Your content</Alert>
+  <Alert color="none" class="bg-sky-500 text-white">Your content</Alert>

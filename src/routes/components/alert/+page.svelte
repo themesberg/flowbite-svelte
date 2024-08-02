@@ -247,9 +247,28 @@
   code={modules['./md/additional-content.md'] as string}
 />
 
+
+<H2>Rounded</H2>
+<CodeWrapper class="space-y-4">
+    <div class="h-20">
+    <Alert {color} {rounded}>
+      <span class="font-medium">Default alert!</span>
+    </Alert>
+  </div>
+
+  <div class="flex flex-wrap space-x-4">
+    <Label class="w-full mb-4">Change color</Label>
+    {#each colors as colorOption}
+      <Radio name="alert_reactive" bind:group={color} value={colorOption}>{colorOption}</Radio>
+    {/each}
+  </div>
+  <Button class="w-48" color="blue" onclick={changeRounded}>{rounded? 'Remove rounded' : 'Add rounded'}</Button>
+</CodeWrapper>
+
+
 <H2>Custom color</H2>
 <CodeWrapper>
-  <Alert color="none" class="bg-sky-500 text-white">Your content</Alert>
+  <Alert dismissable color="none" class="bg-sky-500 text-white">Your content</Alert>
 </CodeWrapper>
 <HighlightCompo
   codeLang="ts"
@@ -263,7 +282,6 @@
   </Alert>
 </CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/events.md'] as string} />
-
 
 <H2>Reactive alert</H2>
 <CodeWrapper class="space-y-4">
