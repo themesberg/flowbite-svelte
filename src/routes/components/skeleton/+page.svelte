@@ -7,7 +7,7 @@
     TextPlaceholder,
     ListPlaceholder,
     TestimonialPlaceholder, Label, Radio,
-    WidgetPlaceholder
+    WidgetPlaceholder, Button
   } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -37,6 +37,49 @@
   let listPlaceholderSize: ListPlaceholder['size'] = $state('md');
   let listPlaceholderRounded: ListPlaceholder['rounded'] = $state('none');
   let listPlaceholderItemNumber: ListPlaceholder['itemNumber'] = $state(3);
+  // let skeletonClass: Skeleton['class'] = $state('')
+  // let imageClass: Skeleton['class'] = $state('')
+  // let videoClass: Skeleton['class'] = $state('')
+  // let textClass: Skeleton['class'] = $state('')
+  // let cardClass: Skeleton['class'] = $state('')
+  // let listClass: Skeleton['class'] = $state('')
+  // let testimonialClass: Skeleton['class'] = $state('')
+  // const changeSkeletonClass = () => {
+  //   skeletonClass = skeletonClass === '' ? 'pt-8' : '';
+  // }
+  // const changeImageClass = () => {
+  //   imageClass = imageClass === '' ? 'm-4' : '';
+  // }
+  // const changeVideoClass = () => {
+  //   videoClass = videoClass === '' ? 'm-4' : '';
+  // }
+  // const changeTextClass = () => {
+  //   textClass = textClass === '' ? 'm-4' : '';
+  // }
+  // const changeCardClass = () => {
+  //   cardClass = cardClass === '' ? 'm-4' : '';
+  // }
+  // const changeListClass = () => {
+  //   listClass = listClass === '' ? 'm-4' : '';
+  // }
+  // const changeTestimonialClass = () => {
+  //   testimonialClass = testimonialClass === '' ? 'm-4' : '';
+  // } 
+  type SkeletonType = 'skeleton' | 'image' | 'video' | 'text' | 'card' | 'list' | 'testimonial';
+
+  let classes: Record<SkeletonType, Skeleton['class']> = $state({
+    skeleton: '',
+    image: '',
+    video: '',
+    text: '',
+    card: '',
+    list: '',
+    testimonial: ''
+  });
+
+  const changeClass = (type: SkeletonType) => {
+    classes[type] = classes[type] === '' ? 'ml-4' : '';
+  };
 </script>
 
 <H1>Skeleton</H1>
@@ -45,32 +88,37 @@
 
 <H2>Default skeleton</H2>
 <CodeWrapper>
-  <Skeleton size={skeletonSize} class="mt-8"/>
-  <div class="flex flex-wrap space-x-4 mt-8">
-    <Label>Change size</Label>
+  <div class="h-40">
+    <Skeleton size={skeletonSize} class={classes.skeleton}/>
+  </div>
+  <div class="flex flex-wrap space-x-4 my-4">
+    <Label class="w-full mb-4">Change size</Label>
     {#each skeletonSizes as size}
       <Radio name="skeletonsize" bind:group={skeletonSize} value={size}>{size}</Radio>
     {/each}
   </div>
+  <Button class="w-48" onclick={()=>changeClass('skeleton')}>{classes.skeleton? 'Remove class' : 'Add class'}</Button>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/skeleton.md'] as string} />
 
 <H2>Image placeholder</H2>
 <CodeWrapper>
-  <ImagePlaceholder size={imagePlaceholderSize} rounded={imagePlaceholderRounded}/>
-
-  <div class="flex flex-wrap space-x-4 mt-8">
-    <Label>Change size</Label>
+  <div class="h-64">
+  <ImagePlaceholder size={imagePlaceholderSize} rounded={imagePlaceholderRounded} class={classes.image}/>
+  </div>
+  <div class="flex flex-wrap space-x-4 my-4">
+    <Label class="w-full mb-4">Change size</Label>
     {#each imageSizes as size}
       <Radio name="imageSize" bind:group={imagePlaceholderSize} value={size}>{size}</Radio>
     {/each}
     </div>
-  <div class="flex flex-wrap space-x-4 mt-4">
-    <Label>Change rounded</Label>
+  <div class="flex flex-wrap space-x-4 my-4">
+    <Label class="w-full mb-4">Change rounded</Label>
     {#each imageRoundedSizes as size}
       <Radio name="imageRoundedSize" bind:group={imagePlaceholderRounded} value={size}>{size}</Radio>
     {/each}
   </div>
+  <Button class="w-48" onclick={()=>changeClass('image')}>{classes.image? 'Remove class' : 'Add class'}</Button>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/imageplaceholder.md'] as string} />
@@ -78,13 +126,16 @@
 <H2>Video placeholder</H2>
 
 <CodeWrapper>
-  <VideoPlaceholder size={videoPlaceholderSize} />
-  <div class="flex flex-wrap space-x-4 mt-8">
-    <Label>Change size</Label>
+  <div class="h-64">
+  <VideoPlaceholder size={videoPlaceholderSize} class={classes.video}/>
+  </div>
+  <div class="flex flex-wrap space-x-4 my-4">
+    <Label class="w-full mb-4">Change size</Label>
     {#each videoSizes as size}
       <Radio name="videoSize" bind:group={videoPlaceholderSize} value={size}>{size}</Radio>
     {/each}
   </div>
+  <Button class="w-48" onclick={()=>changeClass('video')}>{classes.video? 'Remove class' : 'Add class'}</Button>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/videoplaceholder.md'] as string} />
@@ -93,8 +144,8 @@
 
 <CodeWrapper>
   <TextPlaceholder size={textPlaceholderSize}/>
-  <div class="flex flex-wrap space-x-4 mt-8">
-    <Label>Change size</Label>
+  <div class="flex flex-wrap space-x-4 my-4">
+    <Label class="w-full mb-4">Change size</Label>
     {#each textSizes as size}
       <Radio name="textSize" bind:group={textPlaceholderSize} value={size}>{size}</Radio>
     {/each}
@@ -107,8 +158,8 @@
 
 <CodeWrapper>
   <CardPlaceholder size={cardPlaceholderSize}/>
-  <div class="flex flex-wrap space-x-4 mt-8">
-    <Label>Change size</Label>
+  <div class="flex flex-wrap space-x-4 my-4">
+    <Label class="w-full mb-4">Change size</Label>
     {#each cardSizes as size}
       <Radio name="cardSize" bind:group={cardPlaceholderSize} value={size}>{size}</Radio>
     {/each}
@@ -130,20 +181,20 @@
   <div class="h-96">
     <ListPlaceholder itemNumber={listPlaceholderItemNumber} size={listPlaceholderSize} rounded={listPlaceholderRounded}/>
   </div>
-  <div class="flex flex-wrap space-x-4 mt-8">
-    <Label>Change size</Label>
+  <div class="flex flex-wrap space-x-4 my-4">
+    <Label class="w-full mb-4">Change size</Label>
     {#each listSizes as size}
       <Radio name="size" bind:group={listPlaceholderSize} value={size}>{size}</Radio>
     {/each}
     </div>
-  <div class="flex flex-wrap space-x-4 mt-4">
-    <Label>Change rounded</Label>
+  <div class="flex flex-wrap space-x-4 my-4">
+    <Label class="w-full mb-4">Change rounded</Label>
     {#each listRoundedSizes as size}
       <Radio name="roundedSize" bind:group={listPlaceholderRounded} value={size}>{size}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-4 mt-4">
-    <Label>Change item number</Label>
+  <div class="flex flex-wrap space-x-4 my-4">
+    <Label class="w-full mb-4">Change item number</Label>
     {#each listItemNumbers as itemNumber}
       <Radio name="itemNumber" bind:group={listPlaceholderItemNumber} value={itemNumber}>{itemNumber}</Radio>
     {/each}

@@ -5,10 +5,10 @@
   } from './index';
 
   let { size = 'sm', class: className }: Props = $props();
-  const { wrapper } = $derived(videoPlaceholderVariants({ size }));
+  const base = $derived(videoPlaceholderVariants({ size, className }));
 </script>
 
-<div role="status" class={wrapper({ className })}>
+<div role="status" class={base}>
   <svg
     width="48"
     height="48"

@@ -19,7 +19,15 @@
   }
   // reactive  color, rounded, border, dismissable, class
   const colors = ['primary', 'blue', 'gray', 'green', 'indigo', 'pink', 'purple', 'red', 'yellow', 'none']
-  let color: AlertProps['color'] = $state('gray');
+  let color: AlertProps['color'] = $state('primary');
+  let defaultColor: AlertProps['color'] = $state('primary');
+  let iconColor: AlertProps['color'] = $state('primary');
+  let borderColor: AlertProps['color'] = $state('primary');
+  let listColor: AlertProps['color'] = $state('primary');
+  let dismissableColor: AlertProps['color'] = $state('primary');
+  let borderAccessColor: AlertProps['color'] = $state('primary');
+  let additionalColor: AlertProps['color'] = $state('primary');
+
   let rounded: AlertProps['rounded'] = $state(false);
   const changeRounded = () => {
     rounded = !rounded;
@@ -28,7 +36,7 @@
   const changeBorder = () => {
     border = !border;
   }
-  let dismissable: AlertProps['dismissable'] = $state(false);
+  let dismissable: AlertProps['dismissable'] = $state(true);
   const changeDismissable = () => {
     dismissable = !dismissable;
   }
@@ -49,55 +57,8 @@
 
 <H2>Default alert</H2>
 <CodeWrapper class="space-y-4">
-  <Alert>
-    <span class="font-medium">Default alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="blue">
-    <span class="font-medium">Blue alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="gray">
-    <span class="font-medium">Gray alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="green">
-    <span class="font-medium">Green alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="indigo">
-    <span class="font-medium">Indigo alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="pink">
-    <span class="font-medium">Pink alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="purple">
-    <span class="font-medium">Purple alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="red">
-    <span class="font-medium">Red alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="yellow">
-    <span class="font-medium">Yellow alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-</CodeWrapper>
-<HighlightCompo
-  codeLang="ts"
-  code={modules['./md/default-alert.md'] as string}
-/>
-
-<H2>Reactive alert</H2>
-<CodeWrapper class="space-y-4">
-    <div class="h-20">
-    {#if !alertStatus2}
-      <Button color="light" onclick={changeStatus}>Open alert</Button>
-    {/if}
-    <Alert {color} {rounded} {border} {dismissable} class={alertClass} bind:alertStatus={alertStatus2}>
+  <div class="h-20">
+    <Alert color={defaultColor} class={alertClass}>
       <span class="font-medium">Default alert!</span>
     </Alert>
   </div>
@@ -105,80 +66,35 @@
   <div class="flex flex-wrap space-x-4">
     <Label class="w-full mb-4">Change color</Label>
     {#each colors as colorOption}
-      <Radio name="color" bind:group={color} value={colorOption}>{colorOption}</Radio>
+      <Radio name="default_alert_color" bind:group={defaultColor} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
-  <Button class="w-48" color="blue" onclick={changeRounded}>{rounded? 'Remove rounded' : 'Add rounded'}</Button>
-  <Button class="w-48" color="red" onclick={changeBorder}>{border? 'Remove border' : 'Add border'}</Button>
-  <Button class="w-48" color="yellow" onclick={changeDismissable}>{dismissable? 'Remove dismissable' : 'Add dismissable'}</Button>
+  
   <Button class="w-48" color="green" onclick={changeClass}>{alertClass? 'Remove class' : 'Add class'}</Button>
 </CodeWrapper>
+<HighlightCompo
+  codeLang="ts"
+  code={modules['./md/default-alert.md'] as string}
+/>
 
 <H2>Alerts with icon</H2>
 <CodeWrapper class="space-y-4">
-  <Alert>
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Default alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="blue">
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Blue alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="gray">
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Gray alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="green">
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Green alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="indigo">
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Indigo alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="pink">
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Pink alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="purple">
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Purple alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="red">
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Red alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="yellow">
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Yellow alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
+  <div class="h-20">
+    <Alert color={iconColor}>
+      {#snippet icon()}
+        <InfoCircleSolid class="h-5 w-5" />
+      {/snippet}
+      <span class="font-medium">Default alert!</span>
+      Change a few things up and try submitting again.
+    </Alert>
+  </div>
+
+  <div class="flex flex-wrap space-x-4">
+    <Label class="w-full mb-4">Change color</Label>
+    {#each colors as colorOption}
+      <Radio name="icon_alert_color" bind:group={iconColor} value={colorOption}>{colorOption}</Radio>
+    {/each}
+  </div>
 </CodeWrapper>
 <HighlightCompo
   codeLang="ts"
@@ -187,69 +103,22 @@
 
 <H2>Bordered alerts</H2>
 <CodeWrapper class="space-y-4">
-  <Alert border>
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Default alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="blue" border>
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Blue alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="gray" border>
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Gray alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="green" border>
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Green alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="indigo" border>
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Indigo alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="pink" border>
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Pink alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="purple" border>
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Purple alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="red" border>
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Red alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="yellow" border>
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Yellow alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
+  <div class="h-20">
+    <Alert border color={borderColor}>
+      {#snippet icon()}
+        <InfoCircleSolid class="h-5 w-5" />
+      {/snippet}
+      <span class="font-medium">Default alert!</span>
+      Change a few things up and try submitting again.
+    </Alert>
+  </div>
+
+  <div class="flex flex-wrap space-x-4">
+    <Label class="w-full mb-4">Change color</Label>
+    {#each colors as colorOption}
+      <Radio name="bordered_alert_color" bind:group={borderColor} value={colorOption}>{colorOption}</Radio>
+    {/each}
+  </div>
 </CodeWrapper>
 <HighlightCompo
   codeLang="ts"
@@ -258,30 +127,26 @@
 
 <H2>Alerts with list</H2>
 <CodeWrapper class="space-y-4">
-  <Alert class="!items-start">
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-      <span class="sr-only">Info</span>
-    {/snippet}
-    <p class="font-medium">Ensure that these requirements are met:</p>
-    <ul class="ms-4 mt-1.5 list-inside list-disc">
-      <li>At least 10 characters (and up to 100 characters)</li>
-      <li>At least one lowercase character</li>
-      <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
-    </ul>
-  </Alert>
-  <Alert color="blue" class="!items-start">
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-      <span class="sr-only">Info</span>
-    {/snippet}
-    <p class="font-medium">Ensure that these requirements are met:</p>
-    <List class="ms-4 mt-1.5">
-      <Li>At least 10 characters (and up to 100 characters)</Li>
-      <Li>At least one lowercase character</Li>
-      <Li>Inclusion of at least one special character, e.g., ! @ # ?</Li>
-    </List>
-  </Alert>
+  <div class="h-32">
+    <Alert color={listColor} class="!items-start">
+      {#snippet icon()}
+        <InfoCircleSolid class="h-5 w-5" />
+      {/snippet}
+      <p class="font-medium">Ensure that these requirements are met:</p>
+      <ul class="ms-4 mt-1.5 list-inside list-disc">
+        <li>At least 10 characters (and up to 100 characters)</li>
+        <li>At least one lowercase character</li>
+        <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+      </ul>
+    </Alert>
+  </div>
+
+  <div class="flex flex-wrap space-x-4">
+    <Label class="w-full mb-4">Change color</Label>
+    {#each colors as colorOption}
+      <Radio name="list_alert_color" bind:group={listColor} value={colorOption}>{colorOption}</Radio>
+    {/each}
+  </div>
 </CodeWrapper>
 <HighlightCompo
   codeLang="ts"
@@ -289,49 +154,27 @@
 />
 
 <H2>Dismissable alerts</H2>
-<CodeWrapper class="min-h-[450px] space-y-4">
-  <Alert dismissable>
-    {#snippet icon()}
+<CodeWrapper class="space-y-4">
+  <div class="h-20">
+    {#if !alertStatus2}
+      <Button color="light" onclick={changeStatus}>Open alert</Button>
+    {/if}
+    <Alert color={dismissableColor} {dismissable} bind:alertStatus={alertStatus2}>
+      {#snippet icon()}
       <InfoCircleSolid class="h-5 w-5" />
     {/snippet}
     <span class="font-medium">Default alert!</span>
     Change a few things up and try submitting again.
-  </Alert>
-  <Alert dismissable color="blue">
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Info alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert dismissable color="red">
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Danger alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert dismissable color="green">
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Success alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert dismissable color="yellow">
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Warning alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert dismissable color="pink">
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Dark alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
+    </Alert>
+  </div>
+
+  <div class="flex flex-wrap space-x-4">
+    <Label class="w-full mb-4">Change color</Label>
+    {#each colors as colorOption}
+      <Radio name="dissmissible_alert_color" bind:group={dismissableColor} value={colorOption}>{colorOption}</Radio>
+    {/each}
+  </div>
+  <Button class="w-48" color="yellow" onclick={changeDismissable}>{dismissable? 'Remove dismissable' : 'Add dismissable'}</Button>
 </CodeWrapper>
 <HighlightCompo
   codeLang="ts"
@@ -340,34 +183,23 @@
 
 <H2>Border accent</H2>
 <CodeWrapper class="space-y-4">
-  <Alert rounded={false} class="border-t-4">
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Info alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="red" rounded={false} class="border-t-4">
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Danger alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="green" rounded={false} class="border-t-4">
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Success alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="yellow" rounded={false} class="border-t-4">
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Warning alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
+  <div class="h-20">
+    <Alert rounded={false} color={borderAccessColor} class="border-t-4">
+      {#snippet icon()}
+        <InfoCircleSolid class="h-5 w-5" />
+      {/snippet}
+      <span class="font-medium">Default alert!</span>
+      Change a few things up and try submitting again.
+    </Alert>
+  </div>
+
+  <div class="flex flex-wrap space-x-4">
+    <Label class="w-full mb-4">Change color</Label>
+    {#each colors as colorOption}
+      <Radio name="border_accent_alert_color" bind:group={borderAccessColor} value={colorOption}>{colorOption}</Radio>
+    {/each}
+  </div>
+
   <Alert color="pink" rounded={false} class="flex-row-reverse border-t-4">
     {#snippet icon()}
       <InfoCircleSolid class="h-5 w-5" />
@@ -383,42 +215,32 @@
 
 <H2>Additional content</H2>
 <CodeWrapper class="space-y-4">
-  <Alert>
-    <div class="flex items-center gap-3">
-      {#snippet icon()}
-        <InfoCircleSolid class="h-5 w-5" />
-      {/snippet}
-      <span class="text-lg font-medium">This is a info alert</span>
-    </div>
-    <p class="mb-4 mt-2 text-sm">
-      More info about this info alert goes here. This example text is going to
-      run a bit longer so that you can see how spacing within an alert works
-      with this kind of content.
-    </p>
-    <div class="flex gap-2">
-      <Button size="xs"><EyeSolid class="me-2 h-4 w-4" />View more</Button>
-      <Button size="xs" outline>Go to Home</Button>
-    </div>
-  </Alert>
-  <Alert color="green">
-    <div class="flex items-center gap-3">
-      {#snippet icon()}
-        <InfoCircleSolid class="h-5 w-5" />
-      {/snippet}
-      <span class="text-lg font-medium">This is a info alert</span>
-    </div>
-    <p class="mb-4 mt-2 text-sm">
-      More info about this info alert goes here. This example text is going to
-      run a bit longer so that you can see how spacing within an alert works
-      with this kind of content.
-    </p>
-    <div class="flex gap-2">
-      <Button size="xs" color="green"
-        ><EyeSolid class="me-2 h-4 w-4" />View more</Button
-      >
-      <Button size="xs" outline color="green">Go to Home</Button>
-    </div>
-  </Alert>
+  <div class="h-48">
+    <Alert color={additionalColor}>
+      <div class="flex items-center gap-3">
+        {#snippet icon()}
+          <InfoCircleSolid class="h-5 w-5" />
+        {/snippet}
+        <span class="text-lg font-medium">This is a info alert</span>
+      </div>
+      <p class="mb-4 mt-2 text-sm">
+        More info about this info alert goes here. This example text is going to
+        run a bit longer so that you can see how spacing within an alert works
+        with this kind of content.
+      </p>
+      <div class="flex gap-2">
+        <Button size="xs"><EyeSolid class="me-2 h-4 w-4" />View more</Button>
+        <Button size="xs" outline>Go to Home</Button>
+      </div>
+    </Alert>
+  </div>
+
+  <div class="flex flex-wrap space-x-4">
+    <Label class="w-full mb-4">Change color</Label>
+    {#each colors as colorOption}
+      <Radio name="additional_alert_color" bind:group={additionalColor} value={colorOption}>{colorOption}</Radio>
+    {/each}
+  </div>
 </CodeWrapper>
 <HighlightCompo
   codeLang="ts"
@@ -443,3 +265,25 @@
 <HighlightCompo codeLang="ts" code={modules['./md/events.md'] as string} />
 
 
+<H2>Reactive alert</H2>
+<CodeWrapper class="space-y-4">
+    <div class="h-20">
+    {#if !alertStatus2}
+      <Button color="light" onclick={changeStatus}>Open alert</Button>
+    {/if}
+    <Alert {color} {rounded} {border} {dismissable} class={alertClass} bind:alertStatus={alertStatus2}>
+      <span class="font-medium">Default alert!</span>
+    </Alert>
+  </div>
+
+  <div class="flex flex-wrap space-x-4">
+    <Label class="w-full mb-4">Change color</Label>
+    {#each colors as colorOption}
+      <Radio name="alert_reactive" bind:group={color} value={colorOption}>{colorOption}</Radio>
+    {/each}
+  </div>
+  <Button class="w-48" color="blue" onclick={changeRounded}>{rounded? 'Remove rounded' : 'Add rounded'}</Button>
+  <Button class="w-48" color="red" onclick={changeBorder}>{border? 'Remove border' : 'Add border'}</Button>
+  <Button class="w-48" color="yellow" onclick={changeDismissable}>{dismissable? 'Remove dismissable' : 'Add dismissable'}</Button>
+  <Button class="w-48" color="green" onclick={changeClass}>{alertClass? 'Remove class' : 'Add class'}</Button>
+</CodeWrapper>

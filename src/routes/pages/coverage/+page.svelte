@@ -139,7 +139,7 @@
     },
     spinner: {
       checked: true,
-      notes: 'Variants'
+      notes: 'Variants, reactive examples'
     },
     speedDial: {
       checked: false

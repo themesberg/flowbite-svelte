@@ -225,17 +225,15 @@ interface TextPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
 
 // VideoPlaceholder
 const videoPlaceholderVariants = tv({
-  slots: {
-    wrapper:
-      'flex justify-center items-center h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700'
-  },
+  base:
+    'flex justify-center items-center h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700',
   variants: {
     size: {
-      sm: { wrapper: 'max-w-sm' },
-      md: { wrapper: 'max-w-md' },
-      lg: { wrapper: 'max-w-lg' },
-      xl: { wrapper: 'max-w-xl' },
-      xxl: { wrapper: 'max-w-2xl' }
+      sm: 'max-w-sm',
+      md: 'max-w-md',
+      lg: 'max-w-lg',
+      xl: 'max-w-xl',
+      xxl: 'max-w-2xl'
     }
   }
 });

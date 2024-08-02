@@ -1,1 +1,1 @@
-<Spinner />
+<Spinner class="your-class"/>

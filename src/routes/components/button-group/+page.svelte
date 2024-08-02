@@ -54,7 +54,7 @@
   </div>
   <div class="mt-8 space-y-4">
     <div class="flex space-x-4">
-      <Label>Current size: {size}</Label>
+      <Label class="w-full mb-4">Current size: {size}</Label>
       {#each sizes as sizeOption}
         <Radio name="size" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
       {/each}

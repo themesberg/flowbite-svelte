@@ -13,8 +13,12 @@
   // color, size, class
   const colors: Spinner['color'][] = ['primary', 'blue', 'gray', 'green', 'red', 'yellow', 'pink', 'purple', 'white'];
   let spinnerColor: Spinner['color'] = $state('primary');
-  const sizes: Spinner['size'][] = ['4', '6', '8'];
+  const sizes: Spinner['size'][] = ['4', '5', '6', '8', '10', '12', '16'];
   let spinnerSize: Spinner['size'] = $state('8');
+  let spinnerClass: Spinner['class'] = $state('')
+  const changeClass = () => {
+    spinnerClass = spinnerClass === '' ? 'm-4' : ''
+  }
 </script>
 
 <H1>Spinner</H1>
@@ -25,7 +29,10 @@
 <H2>Default spinner</H2>
 
 <CodeWrapper>
-  <Spinner />
+  <div class="h-20">
+  <Spinner class={spinnerClass}/>
+  </div>
+  <Button class="w-48" onclick={changeClass}>{spinnerClass? 'Remove class' : 'Add class'}</Button>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/defaultspinner.md'] as string} />
@@ -35,9 +42,9 @@
 <CodeWrapper>
   <Spinner color={spinnerColor} />
   <div class="flex flex-wrap space-x-4 mt-8">
-    <Label>Change color</Label>
+    <Label class="w-full mb-4">Change color</Label>
     {#each colors as color}
-      <Radio name="skeletonsize" bind:group={spinnerColor} value={color}>{color}</Radio>
+      <Radio name="spinnercolor" bind:group={spinnerColor} value={color}>{color}</Radio>
     {/each}
   </div>
 </CodeWrapper>
@@ -47,11 +54,13 @@
 <H2>Sizes</H2>
 
 <CodeWrapper>
-  <Spinner size={spinnerSize} />
-  <div class="flex flex-wrap space-x-4 mt-8">
-    <Label>Change color</Label>
+  <div class="h-20">
+    <Spinner size={spinnerSize} />
+  </div>
+  <div class="flex flex-wrap space-x-4 mt-4">
+    <Label class="w-full mb-4">Change size</Label>
     {#each sizes as size}
-      <Radio name="skeletonsize" bind:group={spinnerSize} value={size}>{size}</Radio>
+      <Radio name="spinnersize" bind:group={spinnerSize} value={size}>{size}</Radio>
     {/each}
   </div>
 </CodeWrapper>

@@ -28,7 +28,7 @@
     dismissable,
     className
   }));
-  $inspect('divCls: ', divCls);
+  // $inspect('divCls: ', divCls);
 </script>
 
 {#if alertStatus}
