@@ -7,7 +7,7 @@
     TextPlaceholder,
     ListPlaceholder,
     TestimonialPlaceholder, Label, Radio,
-    WidgetPlaceholder, type SkeletonProps, type ImagePlaceholderProps, type VideoPlaceholderProps, type SizeVideoType
+    WidgetPlaceholder
   } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -46,7 +46,7 @@
 <H2>Default skeleton</H2>
 <CodeWrapper>
   <Skeleton size={skeletonSize} class="mt-8"/>
-  <div class="flex space-x-4 mt-8">
+  <div class="flex flex-wrap space-x-4 mt-8">
     <Label>Change size</Label>
     {#each skeletonSizes as size}
       <Radio name="skeletonsize" bind:group={skeletonSize} value={size}>{size}</Radio>
@@ -59,13 +59,13 @@
 <CodeWrapper>
   <ImagePlaceholder size={imagePlaceholderSize} rounded={imagePlaceholderRounded}/>
 
-  <div class="flex space-x-4 mt-8">
+  <div class="flex flex-wrap space-x-4 mt-8">
     <Label>Change size</Label>
     {#each imageSizes as size}
       <Radio name="imageSize" bind:group={imagePlaceholderSize} value={size}>{size}</Radio>
     {/each}
     </div>
-  <div class="flex space-x-4 mt-4">
+  <div class="flex flex-wrap space-x-4 mt-4">
     <Label>Change rounded</Label>
     {#each imageRoundedSizes as size}
       <Radio name="imageRoundedSize" bind:group={imagePlaceholderRounded} value={size}>{size}</Radio>
@@ -79,7 +79,7 @@
 
 <CodeWrapper>
   <VideoPlaceholder size={videoPlaceholderSize} />
-  <div class="flex space-x-4 mt-8">
+  <div class="flex flex-wrap space-x-4 mt-8">
     <Label>Change size</Label>
     {#each videoSizes as size}
       <Radio name="videoSize" bind:group={videoPlaceholderSize} value={size}>{size}</Radio>
@@ -93,7 +93,7 @@
 
 <CodeWrapper>
   <TextPlaceholder size={textPlaceholderSize}/>
-  <div class="flex space-x-4 mt-8">
+  <div class="flex flex-wrap space-x-4 mt-8">
     <Label>Change size</Label>
     {#each textSizes as size}
       <Radio name="textSize" bind:group={textPlaceholderSize} value={size}>{size}</Radio>
@@ -107,7 +107,7 @@
 
 <CodeWrapper>
   <CardPlaceholder size={cardPlaceholderSize}/>
-  <div class="flex space-x-4 mt-8">
+  <div class="flex flex-wrap space-x-4 mt-8">
     <Label>Change size</Label>
     {#each cardSizes as size}
       <Radio name="cardSize" bind:group={cardPlaceholderSize} value={size}>{size}</Radio>
@@ -130,19 +130,19 @@
   <div class="h-96">
     <ListPlaceholder itemNumber={listPlaceholderItemNumber} size={listPlaceholderSize} rounded={listPlaceholderRounded}/>
   </div>
-  <div class="flex space-x-4 mt-8">
+  <div class="flex flex-wrap space-x-4 mt-8">
     <Label>Change size</Label>
     {#each listSizes as size}
       <Radio name="size" bind:group={listPlaceholderSize} value={size}>{size}</Radio>
     {/each}
     </div>
-  <div class="flex space-x-4 mt-4">
+  <div class="flex flex-wrap space-x-4 mt-4">
     <Label>Change rounded</Label>
     {#each listRoundedSizes as size}
       <Radio name="roundedSize" bind:group={listPlaceholderRounded} value={size}>{size}</Radio>
     {/each}
   </div>
-  <div class="flex space-x-4 mt-4">
+  <div class="flex flex-wrap space-x-4 mt-4">
     <Label>Change item number</Label>
     {#each listItemNumbers as itemNumber}
       <Radio name="itemNumber" bind:group={listPlaceholderItemNumber} value={itemNumber}>{itemNumber}</Radio>

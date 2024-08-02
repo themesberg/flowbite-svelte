@@ -11,7 +11,7 @@
     ...attributes
   }: Props = $props();
 
-  let spinnerClass = spinnerVariants({ color, size, className });
+  let spinnerClass = $derived(spinnerVariants({ color, size, className }));
 </script>
 
 <svg

@@ -1,3 +1,2 @@
-<Spinner size={4} />
-<Spinner size="6" />
-<Spinner size={8} />
+// size: '4' | '5' | '6' | '8' | '10' | '12' | '16'
+<Spinner size="4" />

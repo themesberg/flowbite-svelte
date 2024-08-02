@@ -135,7 +135,7 @@
     },
     skeleton: {
       checked: true,
-      notes: 'Variants'
+      notes: 'Variants, reactive examples'
     },
     spinner: {
       checked: true,

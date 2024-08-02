@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Spinner, Button } from '$lib';
+  import { Spinner, Button, Label, Radio } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -9,12 +9,17 @@
     import: 'default',
     eager: true
   });
+
+  // color, size, class
+  const colors: Spinner['color'][] = ['primary', 'blue', 'gray', 'green', 'red', 'yellow', 'pink', 'purple', 'white'];
+  let spinnerColor: Spinner['color'] = $state('primary');
+  const sizes: Spinner['size'][] = ['4', '6', '8'];
+  let spinnerSize: Spinner['size'] = $state('8');
 </script>
 
 <H1>Spinner</H1>
 
 <H2>Setup</H2>
-
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default spinner</H2>
@@ -28,13 +33,13 @@
 <H2>Colors</H2>
 
 <CodeWrapper>
-  <Spinner />
-  <Spinner color="gray" />
-  <Spinner color="green" />
-  <Spinner color="red" />
-  <Spinner color="yellow" />
-  <Spinner color="pink" />
-  <Spinner color="purple" />
+  <Spinner color={spinnerColor} />
+  <div class="flex flex-wrap space-x-4 mt-8">
+    <Label>Change color</Label>
+    {#each colors as color}
+      <Radio name="skeletonsize" bind:group={spinnerColor} value={color}>{color}</Radio>
+    {/each}
+  </div>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/colors.md'] as string} />
@@ -42,9 +47,13 @@
 <H2>Sizes</H2>
 
 <CodeWrapper>
-  <Spinner size="4" />
-  <Spinner size="6" />
-  <Spinner size="8" />
+  <Spinner size={spinnerSize} />
+  <div class="flex flex-wrap space-x-4 mt-8">
+    <Label>Change color</Label>
+    {#each sizes as size}
+      <Radio name="skeletonsize" bind:group={spinnerSize} value={size}>{size}</Radio>
+    {/each}
+  </div>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/sizes.md'] as string} />

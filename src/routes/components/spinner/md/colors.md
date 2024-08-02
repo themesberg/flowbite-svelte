@@ -1,7 +1,2 @@
-<Spinner />
+// color: "primary" | "blue" | "gray" | "green" | "red" | "yellow" | "pink" | "purple" | "white", (default: primary)
 <Spinner color="gray" />
-<Spinner color="green" />
-<Spinner color="red" />
-<Spinner color="yellow" />
-<Spinner color="pink" />
-<Spinner color="purple" />
