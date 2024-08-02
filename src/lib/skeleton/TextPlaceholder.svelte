@@ -5,9 +5,9 @@
   } from './index';
 
   let { size = 'sm', class: className, ...attributes }: Props = $props();
-  const { baseWrapper, divWrapper, lineA, lineB } = textPlaceholderVariants({
+  const { baseWrapper, divWrapper, lineA, lineB } = $derived(textPlaceholderVariants({
     size
-  });
+  }));
 </script>
 
 <div role="status" class={baseWrapper({ className })} {...attributes}>

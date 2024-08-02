@@ -132,7 +132,7 @@ const listPlaceholderVariants = tv({
       sm: { base: 'rounded-sm' },
       md: { base: 'rounded' },
       lg: { base: 'rounded-lg' },
-      full: { base: 'rounded-full' }
+      full: { base: 'rounded-full p-8 md:p-16' }
     }
   },
   defaultVariants: {

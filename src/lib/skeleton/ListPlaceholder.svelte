@@ -13,9 +13,9 @@
   }: Props = $props();
 
   const { base, item, itemContent, itemTitle, itemSubtitle, itemExtra } =
-    listPlaceholderVariants({ size, rounded });
+    $derived(listPlaceholderVariants({ size, rounded }));
 
-  let items = [...Array(itemNumber).keys()];
+  let items = $derived([...Array(itemNumber).keys()]);
 </script>
 
 <div role="status" class={base({ className })} {...attributes}>

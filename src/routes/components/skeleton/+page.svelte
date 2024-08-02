@@ -19,11 +19,24 @@
     eager: true
   });
   // size
-  const sizes = ['sm', 'md', 'lg', 'xl', 'xxl'];
-  let skeletonSize: SkeletonProps['size'] = $state('sm');
-  let imagePlaceholderSize: ImagePlaceholderProps['size'] = $state('md');
-  let imagePlaceholderRounded: ImagePlaceholderProps['rounded'] = $state('none');
-  let videoPlaceholderSize: VideoPlaceholderProps['size'] = $state('md');
+  const skeletonSizes = ['sm', 'md', 'lg', 'xl', 'xxl'];
+  let skeletonSize: Skeleton['size'] = $state('sm');
+  const imageSizes = ['sm', 'md', 'lg'];
+  let imagePlaceholderSize: ImagePlaceholder['size'] = $state('md');
+  let imagePlaceholderRounded: ImagePlaceholder['rounded'] = $state('none');
+  const videoSizes = skeletonSizes;
+  let videoPlaceholderSize: VideoPlaceholder['size'] = $state('md');
+  const imageRoundedSizes = ['none', 'sm', 'md', 'lg', 'full'];
+  const textSizes = skeletonSizes;
+  let textPlaceholderSize: TextPlaceholder['size'] = $state('md');
+  const cardSizes = skeletonSizes;
+  let cardPlaceholderSize: CardPlaceholder['size'] = $state('md');
+  const listSizes = imageSizes;
+  const listRoundedSizes = imageRoundedSizes;
+  const listItemNumbers = [1, 2, 3, 4];
+  let listPlaceholderSize: ListPlaceholder['size'] = $state('md');
+  let listPlaceholderRounded: ListPlaceholder['rounded'] = $state('none');
+  let listPlaceholderItemNumber: ListPlaceholder['itemNumber'] = $state(3);
 </script>
 
 <H1>Skeleton</H1>
@@ -33,11 +46,10 @@
 <H2>Default skeleton</H2>
 <CodeWrapper>
   <Skeleton size={skeletonSize} class="mt-8"/>
-
   <div class="flex space-x-4 mt-8">
     <Label>Change size</Label>
-    {#each sizes as size}
-      <Radio name="size" bind:group={skeletonSize} value={size}>{size}</Radio>
+    {#each skeletonSizes as size}
+      <Radio name="skeletonsize" bind:group={skeletonSize} value={size}>{size}</Radio>
     {/each}
   </div>
 </CodeWrapper>
@@ -49,17 +61,15 @@
 
   <div class="flex space-x-4 mt-8">
     <Label>Change size</Label>
-    <Radio name="size" bind:group={imagePlaceholderSize} value="sm">sm</Radio>
-    <Radio name="size" bind:group={imagePlaceholderSize} value="md">md</Radio>
-    <Radio name="size" bind:group={imagePlaceholderSize} value="lg">lg</Radio>
-  </div>
+    {#each imageSizes as size}
+      <Radio name="imageSize" bind:group={imagePlaceholderSize} value={size}>{size}</Radio>
+    {/each}
+    </div>
   <div class="flex space-x-4 mt-4">
-    <Label>Change round</Label>
-    <Radio name="rounded" bind:group={imagePlaceholderRounded} value="none">none</Radio>
-    <Radio name="rounded" bind:group={imagePlaceholderRounded} value="sm">sm</Radio>
-    <Radio name="rounded" bind:group={imagePlaceholderRounded} value="md">md</Radio>
-    <Radio name="rounded" bind:group={imagePlaceholderRounded} value="lg">lg</Radio>
-    <Radio name="rounded" bind:group={imagePlaceholderRounded} value="full">full</Radio>
+    <Label>Change rounded</Label>
+    {#each imageRoundedSizes as size}
+      <Radio name="imageRoundedSize" bind:group={imagePlaceholderRounded} value={size}>{size}</Radio>
+    {/each}
   </div>
 </CodeWrapper>
 
@@ -71,8 +81,8 @@
   <VideoPlaceholder size={videoPlaceholderSize} />
   <div class="flex space-x-4 mt-8">
     <Label>Change size</Label>
-    {#each sizes as size}
-      <Radio name="size" bind:group={videoPlaceholderSize} value={size}>{size}</Radio>
+    {#each videoSizes as size}
+      <Radio name="videoSize" bind:group={videoPlaceholderSize} value={size}>{size}</Radio>
     {/each}
   </div>
 </CodeWrapper>
@@ -82,11 +92,13 @@
 <H2>Text placeholder</H2>
 
 <CodeWrapper>
-  <TextPlaceholder />
-  <TextPlaceholder size="md" class="mt-8" />
-  <TextPlaceholder size="lg" class="mt-8" />
-  <TextPlaceholder size="xl" class="mt-8" />
-  <TextPlaceholder size="xxl" class="mt-8" />
+  <TextPlaceholder size={textPlaceholderSize}/>
+  <div class="flex space-x-4 mt-8">
+    <Label>Change size</Label>
+    {#each textSizes as size}
+      <Radio name="textSize" bind:group={textPlaceholderSize} value={size}>{size}</Radio>
+    {/each}
+  </div>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/textplaceholder.md'] as string} />
@@ -94,11 +106,13 @@
 <H2>Card placeholder</H2>
 
 <CodeWrapper>
-  <CardPlaceholder />
-  <CardPlaceholder size="md" class="mt-8" />
-  <CardPlaceholder size="lg" class="mt-8" />
-  <CardPlaceholder size="xl" class="mt-8" />
-  <CardPlaceholder size="xxl" class="mt-8" />
+  <CardPlaceholder size={cardPlaceholderSize}/>
+  <div class="flex space-x-4 mt-8">
+    <Label>Change size</Label>
+    {#each cardSizes as size}
+      <Radio name="cardSize" bind:group={cardPlaceholderSize} value={size}>{size}</Radio>
+    {/each}
+  </div>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/cardplaceholder.md'] as string} />
@@ -113,9 +127,27 @@
 <H2>List placeholder</H2>
 
 <CodeWrapper>
-  <ListPlaceholder itemNumber={3} size="sm" />
-  <ListPlaceholder class="mt-8" />
-  <ListPlaceholder itemNumber={7} size="lg" class="mt-8" />
+  <div class="h-96">
+    <ListPlaceholder itemNumber={listPlaceholderItemNumber} size={listPlaceholderSize} rounded={listPlaceholderRounded}/>
+  </div>
+  <div class="flex space-x-4 mt-8">
+    <Label>Change size</Label>
+    {#each listSizes as size}
+      <Radio name="size" bind:group={listPlaceholderSize} value={size}>{size}</Radio>
+    {/each}
+    </div>
+  <div class="flex space-x-4 mt-4">
+    <Label>Change rounded</Label>
+    {#each listRoundedSizes as size}
+      <Radio name="roundedSize" bind:group={listPlaceholderRounded} value={size}>{size}</Radio>
+    {/each}
+  </div>
+  <div class="flex space-x-4 mt-4">
+    <Label>Change item number</Label>
+    {#each listItemNumbers as itemNumber}
+      <Radio name="itemNumber" bind:group={listPlaceholderItemNumber} value={itemNumber}>{itemNumber}</Radio>
+    {/each}
+  </div>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/listplaceholder.md'] as string} />
