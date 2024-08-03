@@ -222,7 +222,7 @@
     },
     heading: {
       checked: true,
-      notes: 'Variants'
+      notes: 'Variants, reactive examples'
       // problems: 'Highlighted heading, Heading underline, Breadcrumb context, Badge context, Secondary text, Sizes'
     },
     hr: {
@@ -312,7 +312,7 @@
 <H1>Component and example checks</H1>
 
 <H2>Components</H2>
-<List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
+<List class="space-y-1 text-gray-500 dark:text-gray-400" >
   <Li># of pages: {componentsAnalysis.total}</Li>
   <Li># of components/pages checked: {componentsAnalysis.pageChecked}</Li>
   <Li
@@ -327,7 +327,7 @@
 </List>
 
 <H2>Forms</H2>
-<List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
+<List class="space-y-1 text-gray-500 dark:text-gray-400" >
   <Li># of pages: {formsAnalysis.total}</Li>
   <Li># of components/pages checked: {formsAnalysis.pageChecked}</Li>
   <Li># of components/pages to be completed: {formsAnalysis.pageUnchecked}</Li>
@@ -340,7 +340,7 @@
 </List>
 
 <H2>Typography</H2>
-<List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
+<List class="space-y-1 text-gray-500 dark:text-gray-400" >
   <Li># of pages: {typographyAnalysis.total}</Li>
   <Li># of components/pages checked: {typographyAnalysis.pageChecked}</Li>
   <Li
@@ -359,7 +359,7 @@
   class="mb-2 py-4 text-2xl font-semibold text-gray-900 dark:text-white"
   >Components</Heading
 >
-<List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
+<List class="space-y-1 text-gray-500 dark:text-gray-400">
   {#each Object.entries(components) as [key, { checked, problems, notes }]}
     <Li icon>
       {#if checked && !problems}
@@ -391,7 +391,7 @@
   class="mb-2 py-4 text-2xl font-semibold text-gray-900 dark:text-white"
   >Forms</Heading
 >
-<List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
+<List class="space-y-1 text-gray-500 dark:text-gray-400">
   {#each Object.entries(forms) as [key, { checked, problems, notes }]}
     <Li icon>
       {#if checked && !problems}
@@ -422,7 +422,7 @@
   class="mb-2 py-4 text-2xl font-semibold text-gray-900 dark:text-white"
   >Typography</Heading
 >
-<List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
+<List class="space-y-1 text-gray-500 dark:text-gray-400" >
   {#each Object.entries(typography) as [key, { checked, problems, notes }]}
     <Li icon>
       {#if checked && !problems}

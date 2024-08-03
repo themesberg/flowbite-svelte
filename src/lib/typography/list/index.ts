@@ -7,7 +7,7 @@ import type { HTMLLiAttributes } from 'svelte/elements';
 const listVariants = tv({
   base: '',
   variants: {
-    list: {
+    tag: {
       disc: 'list-disc',
       none: 'list-none',
       decimal: 'list-decimal'
@@ -15,27 +15,25 @@ const listVariants = tv({
     position: {
       inside: 'list-inside',
       outside: 'list-outside'
-    },
-    tag: {
-      ul: 'list-disc',
-      ol: 'list-decimal',
-      dl: 'list-none'
     }
   },
   defaultVariants: {
     position: 'inside',
-    tag: 'ul'
+    tag: 'disc'
   }
+  // tag: {
+  //   ul: 'list-disc',
+  //   ol: 'list-decimal',
+  //   dl: 'list-none'
+  // }
 });
 
 type TagType = VariantProps<typeof listVariants>['tag'];
-type ListType = VariantProps<typeof listVariants>['list'];
 type PositionType = VariantProps<typeof listVariants>['position'];
 
 interface ListProps {
   children: Snippet;
   tag?: TagType;
-  list?: ListType;
   position?: PositionType;
   ctxclass?: string | undefined | null;
   class?: string | undefined;

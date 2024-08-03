@@ -1,12 +1,10 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
   import { setContext } from 'svelte';
   import { type ListProps as Props, listVariants } from './index';
 
   let {
     children,
-    tag = 'ul',
-    list,
+    tag = 'disc',
     position = 'inside',
     ctxclass = '',
     class: className,
@@ -15,7 +13,7 @@
 
   setContext('ctxclass', ctxclass);
 
-  let classList = $derived(listVariants({ list, position, tag, className }));
+  let classList = $derived(listVariants({ position, tag, className }));
 </script>
 
 <svelte:element this={tag} {...attributes} class={classList}>

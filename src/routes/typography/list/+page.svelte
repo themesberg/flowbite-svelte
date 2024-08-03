@@ -30,7 +30,7 @@
     class="mb-2 text-lg text-lg font-semibold font-semibold text-gray-900 dark:text-white"
     >Password requirements</Heading
   >
-  <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400">
+  <List class="space-y-1 text-gray-500 dark:text-gray-400">
     <Li>At least 10 characters (and up to 100 characters)</Li>
     <Li>At least one lowercase character</Li>
     <Li>Inclusion of at least one special character, e.g., ! @ # ?</Li>
@@ -46,7 +46,7 @@
     class="mb-2 text-lg text-lg font-semibold font-semibold text-gray-900 dark:text-white"
     >Password requirements</Heading
   >
-  <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
+  <List class="space-y-1 text-gray-500 dark:text-gray-400">
     <Li icon>
       <CheckCircleSolid
         class="me-2 h-5 w-5 text-green-500 dark:text-green-400"
@@ -66,14 +66,14 @@
   </List>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/icon1.md'] as string} />
+<HighlightCompo code={modules['./md/icon.md'] as string} />
 
 <H3>Nested</H3>
 <CodeWrapper>
-  <List tag="ul" class="space-y-4 text-gray-500 dark:text-gray-400">
+  <List class="space-y-4 text-gray-500 dark:text-gray-400">
     <Li>
       List item one
-      <List tag="ol" class="mt-2 space-y-1 ps-5">
+      <List tag="decimal" ctxclass="mt-2 space-y-1 ps-5">
         <Li>You might feel like you are being really "organized" o</Li>
         <Li
           >Nested navigation in UIs is a bad idea too, keep things as flat as
@@ -85,7 +85,7 @@
     </Li>
     <Li>
       List item two
-      <List tag="ol" class="mt-2 space-y-1 ps-5">
+      <List tag="decimal" ctxclass="mt-2 space-y-1 ps-5">
         <Li>I'm not sure if we'll bother styling more than two levels deep.</Li>
         <Li>Two is already too much, three is guaranteed to be a bad idea.</Li>
         <Li>If you nest four levels deep you belong in prison.</Li>
@@ -93,7 +93,7 @@
     </Li>
     <Li>
       List item three
-      <List tag="ol" class="mt-2 space-y-1 ps-5">
+      <List tag="decimal" ctxclass="mt-2 space-y-1 ps-5">
         <Li>Again please don't nest lists if you want</Li>
         <Li>Nobody wants to look at this.</Li>
         <Li>I'm upset that we even have to bother styling this.</Li>
@@ -102,7 +102,7 @@
   </List>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/nested1.md'] as string} />
+<HighlightCompo code={modules['./md/nested.md'] as string} />
 
 <H3>Unstyled</H3>
 
@@ -112,7 +112,7 @@
     class="mb-2 text-lg text-lg font-semibold font-semibold text-gray-900 dark:text-white"
     >Password requirements</Heading
   >
-  <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
+  <List class="space-y-1 text-gray-500 dark:text-gray-400">
     <Li>At least 10 characters (and up to 100 characters)</Li>
     <Li>At least one lowercase character</Li>
     <Li>Inclusion of at least one special character, e.g., ! @ # ?</Li>
@@ -128,7 +128,7 @@
     class="mb-2 text-lg text-lg font-semibold font-semibold  text-gray-900 dark:text-white"
     >Top students:</Heading
   >
-  <List tag="ol" class="space-y-1 text-gray-500 dark:text-gray-400">
+  <List tag="decimal" class="space-y-1 text-gray-500 dark:text-gray-400">
     <Li><Span>Bonnie Green</Span> with <Span>70</Span> points</Li>
     <Li><Span>Jese Leos</Span> with <Span>63</Span> points</Li>
     <Li><Span>Leslie Livingston</Span> with <Span>57</Span> points</Li>
@@ -137,50 +137,10 @@
 
 <HighlightCompo code={modules['./md/ordered-list.md'] as string} />
 
-<H3>Nested</H3>
-
-<CodeWrapper>
-  <List tag="ol" list="decimal" class="text-gray-500 dark:text-gray-400">
-    <Li>
-      List item one
-      <List tag="ul" class="mt-2 space-y-1 ps-5">
-        <Li>You might feel like you are being really "organized" o</Li>
-        <Li
-          >Nested navigation in UIs is a bad idea too, keep things as flat as
-          possible.</Li
-        >
-        <Li>Nesting tons of folders in your source code is also not helpful.</Li
-        >
-      </List>
-    </Li>
-    <Li>
-      List item two
-      <List tag="ul" class="mt-2 space-y-1 ps-5">
-        <Li>I'm not sure if we'll bother styling more than two levels deep.</Li>
-        <Li>Two is already too much, three is guaranteed to be a bad idea.</Li>
-        <Li>If you nest four levels deep you belong in prison.</Li>
-      </List>
-    </Li>
-    <Li>
-      List item three
-      <List
-        tag="ul"
-        class="mt-2 space-y-1 ps-5 text-gray-500 dark:text-gray-400"
-      >
-        <Li>Again please don't nest lists if you want</Li>
-        <Li>Nobody wants to look at this.</Li>
-        <Li>I'm upset that we even have to bother styling this.</Li>
-      </List>
-    </Li>
-  </List>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/nested2.md'] as string} />
-
 <H2>Description list</H2>
 <CodeWrapper>
   <List
-    tag="dl"
+    tag="none"
     class="divide-y divide-gray-200 text-gray-900 dark:divide-gray-700  dark:text-white"
   >
     <div class="flex flex-col pb-3">
@@ -206,9 +166,8 @@
 
 <CodeWrapper>
   <List
-    tag="ul"
+    tag="disc"
     class="mb-8 space-y-4 text-gray-500 dark:text-gray-400"
-    list="none"
   >
     <Li icon class="gap-3">
       <CheckOutline class="h-5 w-5 text-green-500 dark:text-green-400" />
@@ -238,8 +197,7 @@
 <H2>Advanced layout</H2>
 <CodeWrapper>
   <List
-    tag="ul"
-    list="none"
+    tag="none"
     class="max-w-md divide-y divide-gray-200 dark:divide-gray-700"
   >
     <Li class="pb-3 sm:pb-4">
@@ -370,8 +328,7 @@
 <H2>Horizontal list</H2>
 <CodeWrapper>
   <List
-    tag="ul"
-    list="none"
+    tag="disc"
     class="mb-6 flex flex-wrap items-center justify-center"
   >
     <Li>
@@ -422,9 +379,8 @@
 <HighlightCompo code={modules['./md/horizontal-list.md'] as string} />
 
 <H2>ctxclass</H2>
-
 <CodeWrapper>
-  <List tag="ul" list="none" ctxclass="my-4">
+  <List ctxclass="my-4">
     <Li>Example 1</Li>
     <Li>Example 2</Li>
     <Li>Example 3</Li>
