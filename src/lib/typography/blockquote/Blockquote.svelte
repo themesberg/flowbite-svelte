@@ -16,14 +16,14 @@
     ...attributes
   }: Props = $props();
 
-  let blockquoteClass = blockquoteVariants({
+  let blockquoteClass = $derived(blockquoteVariants({
     border,
     italic,
     bg,
     alignment,
     size,
     class: twMerge(borderClass, bgClass, baseClass, classname)
-  });
+  }));
 </script>
 
 <blockquote {...attributes} class={blockquoteClass}>

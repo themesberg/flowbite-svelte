@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Breadcrumb, BreadcrumbItem } from '$lib';
+  import { Breadcrumb, BreadcrumbItem, Button } from '$lib';
   import {
     HomeOutline,
     ChevronDoubleRightOutline
@@ -13,6 +13,15 @@
     import: 'default',
     eager: true
   });
+
+  let navClass: Breadcrumb['class'] = $state('')
+  const changeNavClass = () => {
+    navClass = navClass === '' ? 'border border-red-500 p-2' : ''
+  }
+  let olClass: Breadcrumb['olClass'] = $state('')
+  const changeOlClass = () => {
+    olClass = olClass === '' ? 'border border-blue-500 p-2' : ''
+  }
 </script>
 
 <H1>Breadcrumb</H1>
@@ -24,11 +33,15 @@
 <H2>Default Breadcrumb</H2>
 
 <CodeWrapper class="overflow-x-scroll p-2 sm:p-6">
-  <Breadcrumb class="overflow-x-scroll">
+  <div class="h-20">
+  <Breadcrumb {navClass} {olClass} >
     <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
     <BreadcrumbItem href="/">Projects</BreadcrumbItem>
     <BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
   </Breadcrumb>
+  </div>
+  <Button class="w-48" onclick={changeNavClass}>{navClass? 'Remove navClass' : 'Add navClass'}</Button>
+  <Button class="w-48" color="green" onclick={changeOlClass}>{olClass? 'Remove olClass' : 'Add olClass'}</Button>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/defaultbreadcrumb.md'] as string} />

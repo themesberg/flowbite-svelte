@@ -15,8 +15,8 @@
     ...attributes
   }: Props = $props();
 
-  let classNav = breadcrumbVariants({ solid, class: navClass });
-  let classList = breadcrumbListVariants({ class: olClass });
+  let classNav = $derived(breadcrumbVariants({ solid, class: navClass }));
+  let classList = $derived(breadcrumbListVariants({ class: olClass }));
 </script>
 
 <nav aria-label={ariaLabel} {...attributes} class={classNav}>

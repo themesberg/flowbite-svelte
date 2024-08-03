@@ -9,13 +9,13 @@
     list,
     position = 'inside',
     ctxclass = '',
-    class: classname,
+    class: className,
     ...attributes
   }: Props = $props();
 
   setContext('ctxclass', ctxclass);
 
-  let classList = twMerge(listVariants({ list, position, tag }), classname);
+  let classList = $derived(listVariants({ list, position, tag, className }));
 </script>
 
 <svelte:element this={tag} {...attributes} class={classList}>

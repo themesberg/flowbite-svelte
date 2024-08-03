@@ -49,7 +49,7 @@
     },
     breadcrumb: {
       checked: true,
-      notes: 'Variants'
+      notes: 'Variants, reactive examples'
     },
     buttonGroup: {
       checked: true,
@@ -72,7 +72,7 @@
     },
     deviceMockups: {
       checked: true,
-      notes: 'Variants'
+      notes: 'Variants checked'
     },
     drawer: {
       checked: true,
@@ -92,7 +92,7 @@
     },
     gallery: {
       checked: true,
-      notes: 'Variants'
+      notes: 'Variants checked'
     },
     indicators: {
       checked: true,
@@ -167,7 +167,7 @@
     },
     video: {
       checked: true,
-      notes: 'Variants'
+      notes: 'Variants checked'
     }
   };
 

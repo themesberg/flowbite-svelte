@@ -14,10 +14,10 @@
     ...attributes
   }: Props = $props();
 
-  let classDesc = descriptionListVariants({
+  let classDesc = $derived(descriptionListVariants({
     tag,
     class: className
-  });
+  }));
 </script>
 
 <svelte:element this={tag} {...attributes} class={classDesc}>

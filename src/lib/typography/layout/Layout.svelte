@@ -4,7 +4,7 @@
 
   let { children, class: className, ...attributes }: Props = $props();
 
-  let classDiv = twMerge(layoutVariants(), className);
+  let classDiv = $derived(layoutVariants({ className }));
 </script>
 
 <div {...attributes} class={classDiv}>

@@ -15,12 +15,12 @@
     ...attributes
   }: Props = $props();
 
-  let horizontalCls = hrVariants({ withChildren: !!children, class: hrClass });
-  let containerCls = hrContainerVariants({
+  let horizontalCls = $derived(hrVariants({ withChildren: !!children, class: hrClass }));
+  let containerCls = $derived(hrContainerVariants({
     withChildren: !!children,
     class: divClass
-  });
-  let innerDivCls = hrInnerDivVariants({ icon, class: innerDivClass });
+  }));
+  let innerDivCls = $derived(hrInnerDivVariants({ icon, class: innerDivClass }));
 </script>
 
 {#if children}

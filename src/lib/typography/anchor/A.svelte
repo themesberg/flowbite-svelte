@@ -1,12 +1,8 @@
 <script lang="ts">
   import { type AnchorProps as Props, anchorVariants } from './index';
-  // import { twMerge } from 'tailwind-merge';
 
   let { children, class: className, ...attributes }: Props = $props();
-
-  // const colorCls: string = 'text-primary-600 dark:text-primary-500';
-  // const aCls: string = 'inline-flex items-center hover:underline';
-  let linkClass = anchorVariants({ className });
+  let linkClass = $derived(anchorVariants({ className }));
 </script>
 
 <a {...attributes} class={linkClass}>

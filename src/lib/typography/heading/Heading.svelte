@@ -8,7 +8,7 @@
     ...attributes
   }: Props = $props();
 
-  let headingClass = headingVariants({ tag, className });
+  let headingClass = $derived(headingVariants({ tag, className }));
 </script>
 
 <svelte:element this={tag} {...attributes} class={headingClass}>
