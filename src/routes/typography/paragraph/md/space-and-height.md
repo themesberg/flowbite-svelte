@@ -1,8 +1,8 @@
-// style: 'normal'(default), 'italic'
-// firstUpper: boolean
+// space: 'tighter', 'tight', 'normal' (default), 'loose', 'wider', 'widest' 
+// height: 'none', 'tight', 'snug', 'normal'(default), 'relaxed', 'loose' , '3' - '10'
 <P 
-  style={pStyle}
-  firstUpper={pFirstupper}
+  space="loose"
+  height="relaxed"
   color="text-gray-500 dark:text-gray-400"
   >Deliver great service experiences fast - without the complexity of
   traditional ITSM solutions.Accelerate critical development work, eliminate

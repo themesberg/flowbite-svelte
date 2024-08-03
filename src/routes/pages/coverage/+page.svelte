@@ -241,7 +241,7 @@
     },
     list: {
       checked: true,
-      notes: 'Variants'
+      notes: 'Variants, reactive examples'
     },
     paragraph: {
       checked: true,

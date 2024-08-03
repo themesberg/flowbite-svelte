@@ -41,9 +41,20 @@ const paragraphVariants = tv({
       widest: 'tracking-widest'
     },
     height: {
+      none: 'leading-none',
+      tight: 'leading-tight',
+      snug: 'leading-snug',
       normal: 'leading-normal',
       relaxed: 'leading-relaxed',
-      loose: 'leading-loose'
+      loose: 'leading-loose',
+      '3': 'leading-3',
+      '4': 'leading-4',
+      '5': 'leading-5',
+      '6': 'leading-6',
+      '7': 'leading-7',
+      '8': 'leading-8',
+      '9': 'leading-9',
+      '10': 'leading-10'
     },
     align: {
       left: 'text-left',
@@ -60,7 +71,6 @@ const paragraphVariants = tv({
     style: {
       normal: 'normal',
       italic: 'italic',
-      oblique: 'oblique'
     },
     firstUpper: {
       true: 'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:me-3 first-letter:float-left',

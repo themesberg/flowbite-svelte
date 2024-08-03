@@ -25,8 +25,7 @@
     .map((element) => element + '/' + String(opacity))
     .join(' ');
 
-  let classP = twMerge(
-    paragraphVariants({
+  let classP = $derived(paragraphVariants({
       height,
       size,
       weight,
@@ -35,14 +34,13 @@
       justify,
       style,
       firstUpper,
-      whitespace
-    }),
-    (opacity && colorAndopacity) || (color && color),
-    className
-  );
+      whitespace,
+      className,
+    }));
+// (opacity && colorAndopacity) || (color && color),
 </script>
 
-<p {...attributes} class={classP}>
+<p {...attributes} class={twMerge(classP, (opacity && colorAndopacity) || (color && color))}>
   {@render children()}
 </p>
 
