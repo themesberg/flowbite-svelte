@@ -9,7 +9,8 @@
     Breadcrumb,
     BreadcrumbItem,
     Badge,
-    Secondary
+    Secondary,
+    Label, Radio
   } from '$lib';
   import {
     ArrowRightOutline,
@@ -25,6 +26,9 @@
     import: 'default',
     eager: true
   });
+
+  const tags = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+  let headingTag: Heading['tag'] = $state('h1');
 </script>
 
 <H1>Heading, Span & Mark</H1>
@@ -138,6 +142,8 @@
   >
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/heading-underline.md'] as string} />
+
 <H2>Breadcrumb context</H2>
 <CodeWrapper>
   <Breadcrumb class="mb-4">
@@ -148,12 +154,15 @@
   <Heading tag="h2" class="mb-4">Team management</Heading>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/breadcrumb-context.md'] as string} />
+
 <H2>Badge context</H2>
 <CodeWrapper>
   <Heading tag="h1" class="flex items-center text-5xl">
     Flowbite <Badge class="ms-2 text-2xl font-semibold">PRO</Badge>
   </Heading>
 </CodeWrapper>
+<HighlightCompo code={modules['./md/badge-context.md'] as string} />
 
 <H2>Secondary text</H2>
 <CodeWrapper>
@@ -161,34 +170,19 @@
     Flowbite <Secondary class="ms-2">This is secondary text</Secondary>
   </Heading>
 </CodeWrapper>
+<HighlightCompo code={modules['./md/secondary-text.md'] as string} />
 
 <H2>Sizes</H2>
-<H3>Heading one (H1)</H3>
 <CodeWrapper>
-  <Heading tag="h1">Heading 1</Heading>
+  <div class="h-20">
+    <Heading tag={headingTag}>Heading</Heading>
+  </div>
+  <div class="flex flex-wrap space-x-4">
+    <Label class="w-full mb-4 font-bold">Rounded: </Label>
+  {#each tags as tag}
+    <Radio labelClass="w-12 my-1" name="tag" bind:group={headingTag} value={tag}>{tag}</Radio>
+  {/each}
+  </div>
 </CodeWrapper>
 
-<H3>Heading two (H2)</H3>
-<CodeWrapper>
-  <Heading tag="h2">Heading 2</Heading>
-</CodeWrapper>
-
-<H3>Heading three (H3)</H3>
-<CodeWrapper>
-  <Heading tag="h3">Heading 3</Heading>
-</CodeWrapper>
-
-<H3>Heading four (H4)</H3>
-<CodeWrapper>
-  <Heading tag="h4">Heading 4</Heading>
-</CodeWrapper>
-
-<H3>Heading five (H5)</H3>
-<CodeWrapper>
-  <Heading tag="h5">Heading 5</Heading>
-</CodeWrapper>
-
-<H3>Heading six (H6)</H3>
-<CodeWrapper>
-  <Heading tag="h6">Heading 6</Heading>
-</CodeWrapper>
+<HighlightCompo code={modules['./md/sizes.md'] as string} />

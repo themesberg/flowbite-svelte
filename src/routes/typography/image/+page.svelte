@@ -171,7 +171,7 @@ description.</p>
 </p>
 
 <CodeWrapper class="overflow-scroll">
-  <div class="h-96">
+  <div class="h-[500px]">
     <Img src="/images/examples/image-1@2x.jpg" size={imgSize} alt="sample 1" />
   </div>
   <div class="flex flex-wrap space-x-4">
