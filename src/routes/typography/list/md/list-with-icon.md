@@ -4,7 +4,7 @@
 </script>
 
 <List
-tag="disc"
+tag="ul"
 class="mb-8 space-y-4 text-gray-500 dark:text-gray-400"
 >
 <Li icon class="gap-3">

@@ -4,7 +4,7 @@
 
   let {
     children,
-    tag = 'disc',
+    tag = 'ul',
     position = 'inside',
     ctxclass = '',
     class: className,

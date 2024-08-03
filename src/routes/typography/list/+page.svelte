@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { List, Li, Heading, Span, DescriptionList, A } from '$lib';
+  import { List, Li, Heading, Span, DescriptionList, A, Label, Radio } from '$lib';
   import {
     CheckCircleSolid,
     CloseCircleOutline,
@@ -15,26 +15,44 @@
     import: 'default',
     eager: true
   });
+
+  const tags = ['ul', 'ol', 'dl'];
+  let listTag: List['tag'] = $state('ul');
+  const positions = ['inside', 'outside'];
+  let listPosition: List['position'] = $state('inside');
 </script>
 
 <H1>List</H1>
-
 <H2>Setup</H2>
 
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
-<H2>Unordored list</H2>
+<H2>List position and tag</H2>
 <CodeWrapper>
   <Heading
     tag="h2"
-    class="mb-2 text-lg text-lg font-semibold font-semibold text-gray-900 dark:text-white"
+    class="mb-2 text-lg font-semibold text-gray-900 dark:text-white"
     >Password requirements</Heading
   >
-  <List class="space-y-1 text-gray-500 dark:text-gray-400">
+  <List tag={listTag} position={listPosition} class="space-y-1 text-gray-500 dark:text-gray-400">
     <Li>At least 10 characters (and up to 100 characters)</Li>
     <Li>At least one lowercase character</Li>
     <Li>Inclusion of at least one special character, e.g., ! @ # ?</Li>
   </List>
+
+  <div class="flex flex-wrap space-x-4 mt-4">
+    <Label class="w-full mb-4 font-bold">Tag:</Label>
+    {#each tags as tag}
+      <Radio labelClass="w-24 my-1" name="list_tag" bind:group={listTag} value={tag}>{tag}</Radio>
+    {/each}
+  </div>
+  <div class="flex flex-wrap space-x-4 mt-4">
+    <Label class="w-full mb-4 font-bold">Position:</Label>
+    {#each positions as position}
+      <Radio labelClass="w-24 my-1" name="list_position" bind:group={listPosition} value={position}>{position}</Radio>
+    {/each}
+  </div>
+  
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/unordered-list.md'] as string} />
@@ -43,7 +61,7 @@
 <CodeWrapper>
   <Heading
     tag="h2"
-    class="mb-2 text-lg text-lg font-semibold font-semibold text-gray-900 dark:text-white"
+    class="mb-2 text-lg font-semibold text-gray-900 dark:text-white"
     >Password requirements</Heading
   >
   <List class="space-y-1 text-gray-500 dark:text-gray-400">
@@ -73,7 +91,7 @@
   <List class="space-y-4 text-gray-500 dark:text-gray-400">
     <Li>
       List item one
-      <List tag="decimal" ctxclass="mt-2 space-y-1 ps-5">
+      <List tag="ol" ctxclass="mt-2 space-y-1 ps-5">
         <Li>You might feel like you are being really "organized" o</Li>
         <Li
           >Nested navigation in UIs is a bad idea too, keep things as flat as
@@ -85,7 +103,7 @@
     </Li>
     <Li>
       List item two
-      <List tag="decimal" ctxclass="mt-2 space-y-1 ps-5">
+      <List tag="ol" ctxclass="mt-2 space-y-1 ps-5">
         <Li>I'm not sure if we'll bother styling more than two levels deep.</Li>
         <Li>Two is already too much, three is guaranteed to be a bad idea.</Li>
         <Li>If you nest four levels deep you belong in prison.</Li>
@@ -93,7 +111,7 @@
     </Li>
     <Li>
       List item three
-      <List tag="decimal" ctxclass="mt-2 space-y-1 ps-5">
+      <List tag="ol" ctxclass="mt-2 space-y-1 ps-5">
         <Li>Again please don't nest lists if you want</Li>
         <Li>Nobody wants to look at this.</Li>
         <Li>I'm upset that we even have to bother styling this.</Li>
@@ -109,7 +127,7 @@
 <CodeWrapper>
   <Heading
     tag="h2"
-    class="mb-2 text-lg text-lg font-semibold font-semibold text-gray-900 dark:text-white"
+    class="mb-2 text-lg font-semibold text-gray-900 dark:text-white"
     >Password requirements</Heading
   >
   <List class="space-y-1 text-gray-500 dark:text-gray-400">
@@ -125,10 +143,10 @@
 <CodeWrapper>
   <Heading
     tag="h2"
-    class="mb-2 text-lg text-lg font-semibold font-semibold  text-gray-900 dark:text-white"
+    class="mb-2 text-lg font-semibold  text-gray-900 dark:text-white"
     >Top students:</Heading
   >
-  <List tag="decimal" class="space-y-1 text-gray-500 dark:text-gray-400">
+  <List tag="ol" class="space-y-1 text-gray-500 dark:text-gray-400">
     <Li><Span>Bonnie Green</Span> with <Span>70</Span> points</Li>
     <Li><Span>Jese Leos</Span> with <Span>63</Span> points</Li>
     <Li><Span>Leslie Livingston</Span> with <Span>57</Span> points</Li>
@@ -140,7 +158,7 @@
 <H2>Description list</H2>
 <CodeWrapper>
   <List
-    tag="none"
+    tag="dl"
     class="divide-y divide-gray-200 text-gray-900 dark:divide-gray-700  dark:text-white"
   >
     <div class="flex flex-col pb-3">
@@ -166,7 +184,7 @@
 
 <CodeWrapper>
   <List
-    tag="disc"
+    tag="ul"
     class="mb-8 space-y-4 text-gray-500 dark:text-gray-400"
   >
     <Li icon class="gap-3">
@@ -197,7 +215,7 @@
 <H2>Advanced layout</H2>
 <CodeWrapper>
   <List
-    tag="none"
+    tag="dl"
     class="max-w-md divide-y divide-gray-200 dark:divide-gray-700"
   >
     <Li class="pb-3 sm:pb-4">
@@ -328,7 +346,7 @@
 <H2>Horizontal list</H2>
 <CodeWrapper>
   <List
-    tag="disc"
+    tag="ul"
     class="mb-6 flex flex-wrap items-center justify-center"
   >
     <Li>

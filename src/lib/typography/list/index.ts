@@ -8,9 +8,9 @@ const listVariants = tv({
   base: '',
   variants: {
     tag: {
-      disc: 'list-disc',
-      none: 'list-none',
-      decimal: 'list-decimal'
+      ul: 'list-disc',
+      dl: 'list-none',
+      ol: 'list-decimal'
     },
     position: {
       inside: 'list-inside',
@@ -19,7 +19,7 @@ const listVariants = tv({
   },
   defaultVariants: {
     position: 'inside',
-    tag: 'disc'
+    tag: 'ul'
   }
   // tag: {
   //   ul: 'list-disc',

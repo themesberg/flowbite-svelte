@@ -1,5 +1,5 @@
 <List
-  tag="disc"
+  tag="ul"
   class="mb-6 flex flex-wrap items-center justify-center"
 >
   <Li>
