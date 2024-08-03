@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.8.1
+
+### Patch Changes
+
+- fix: nav/index.ts remove Nav ([`c1a15a78ef676e893305c4d4d00d476140c243da`](https://github.com/shinokada/svelte-5-ui-lib/commit/c1a15a78ef676e893305c4d4d00d476140c243da))
+
 ## 0.8.0
 
 ### Minor Changes
