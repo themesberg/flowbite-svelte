@@ -14,15 +14,17 @@
   }: Props = $props();
 
   let hasChildren = !!children;
-  const { base } = $derived(indicatorVariants({
-    color,
-    size,
-    rounded,
-    border,
-    placement,
-    offset,
-    hasChildren
-  }));
+  const { base } = $derived(
+    indicatorVariants({
+      color,
+      size,
+      rounded,
+      border,
+      placement,
+      offset,
+      hasChildren
+    })
+  );
 </script>
 
 <div class={base({ className })} {...attributes}>

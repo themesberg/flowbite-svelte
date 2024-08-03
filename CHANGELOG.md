@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.8.0
+
+### Minor Changes
+
+- feat: variants ([`a00d4f34dd05900e9ab84b93055073ba51171d7a`](https://github.com/shinokada/svelte-5-ui-lib/commit/a00d4f34dd05900e9ab84b93055073ba51171d7a))
+
 ## 0.7.2
 
 ### Patch Changes

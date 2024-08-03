@@ -1,7 +1,15 @@
 <script lang="ts">
   import { slide } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
-  import { Banner, Button, Skeleton, ImagePlaceholder, Label, Radio, type BannerProps } from '$lib';
+  import {
+    Banner,
+    Button,
+    Skeleton,
+    ImagePlaceholder,
+    Label,
+    Radio,
+    type BannerProps
+  } from '$lib';
   import {
     BullhornOutline,
     SalePercentSolid,
@@ -24,26 +32,39 @@
 
   // reactive example
   // position, bannerType, color, class:divClass
-  const colors = ['blue', 'gray', 'red', 'green', 'yellow', 'indigo', 'purple', 'pink']
+  const colors = [
+    'blue',
+    'gray',
+    'red',
+    'green',
+    'yellow',
+    'indigo',
+    'purple',
+    'pink'
+  ];
   let position: BannerProps['position'] = $state('sticky');
   const changePosition = () => {
     position = position === 'sticky' ? 'absolute' : 'sticky';
-    if ( position === 'sticky'){ bannerType = 'default' };
-  }
+    if (position === 'sticky') {
+      bannerType = 'default';
+    }
+  };
   let bannerType: BannerProps['bannerType'] = $state('default');
   const changeBannerType = () => {
     bannerType = bannerType === 'default' ? 'cta' : 'default';
-    if (bannerType === 'cta'){ position = 'absolute' };
-  }
+    if (bannerType === 'cta') {
+      position = 'absolute';
+    }
+  };
   let color: BannerProps['color'] = $state('gray');
-  let bannerClass: BannerProps['class'] = $state('')
+  let bannerClass: BannerProps['class'] = $state('');
   const changeClass = () => {
-    bannerClass = bannerClass === '' ? 'my-4' : ''
-  }
-  let bannerStatus = $state(true)
+    bannerClass = bannerClass === '' ? 'my-4' : '';
+  };
+  let bannerStatus = $state(true);
   const changeStatus = () => {
-    bannerStatus = true
-  }
+    bannerStatus = true;
+  };
 </script>
 
 <H1>Banner</H1>
@@ -84,44 +105,62 @@
 <H2>Reactive banner</H2>
 <CodeWrapper class="relative">
   <div class="h-[600px] md:h-[450px]">
-  <Skeleton class="py-4" />
-  <ImagePlaceholder class="py-4" />
+    <Skeleton class="py-4" />
+    <ImagePlaceholder class="py-4" />
 
-  <Banner id="sample-banner" {position} {bannerType} {color} class={bannerClass} bind:bannerStatus={bannerStatus}>
-    <p
-      class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400"
+    <Banner
+      id="sample-banner"
+      {position}
+      {bannerType}
+      {color}
+      class={bannerClass}
+      bind:bannerStatus
     >
-      <span
-        class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600"
+      <p
+        class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400"
       >
-        <BullhornOutline class="h-3 w-3 text-gray-500 dark:text-gray-400" />
-        <span class="sr-only">Light bulb</span>
-      </span>
-      <span>
-        New brand identity has been launched for the <a
-          href="https://flowbite.com"
-          class="decoration-600 dark:decoration-500 inline font-medium text-primary-600 underline decoration-solid underline-offset-2 hover:no-underline dark:text-primary-500"
+        <span
+          class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600"
         >
-          Flowbite Library
-        </a>
-      </span>
-    </p>
-  </Banner>
+          <BullhornOutline class="h-3 w-3 text-gray-500 dark:text-gray-400" />
+          <span class="sr-only">Light bulb</span>
+        </span>
+        <span>
+          New brand identity has been launched for the <a
+            href="https://flowbite.com"
+            class="decoration-600 dark:decoration-500 inline font-medium text-primary-600 underline decoration-solid underline-offset-2 hover:no-underline dark:text-primary-500"
+          >
+            Flowbite Library
+          </a>
+        </span>
+      </p>
+    </Banner>
   </div>
- <div class="mt-8 space-y-4">
-  <div class="flex flex-wrap space-x-4">
-    <Label class="w-full mb-4 font-bold">Change color {color}</Label>
-    {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="color" bind:group={color} value={colorOption}>{colorOption}</Radio>
-    {/each}
+  <div class="mt-8 space-y-4">
+    <div class="flex flex-wrap space-x-4">
+      <Label class="mb-4 w-full font-bold">Change color {color}</Label>
+      {#each colors as colorOption}
+        <Radio
+          labelClass="w-24 my-1"
+          name="color"
+          bind:group={color}
+          value={colorOption}>{colorOption}</Radio
+        >
+      {/each}
+    </div>
+    <Button class="w-48" onclick={changePosition}>Change position</Button>
+    <Button class="w-48" color="blue" onclick={changeBannerType}
+      >Change banner type</Button
+    >
+    <Button class="w-48" color="green" onclick={changeClass}
+      >{bannerClass ? 'Remove class' : 'Add class'}</Button
+    >
+    {#if !bannerStatus}
+      <Button class="w-48" color="light" onclick={changeStatus}
+        >Open banner</Button
+      >
+    {/if}
   </div>
-  <Button class="w-48" onclick={changePosition}>Change position</Button>
-  <Button class="w-48" color="blue" onclick={changeBannerType}>Change banner type</Button>
-  <Button class="w-48" color="green" onclick={changeClass}>{bannerClass? 'Remove class' : 'Add class'}</Button>
-  {#if !bannerStatus}
-    <Button class="w-48" color="light" onclick={changeStatus}>Open banner</Button>
-  {/if}
-</div>
 </CodeWrapper>
 
 <H2>Bottom banner position</H2>

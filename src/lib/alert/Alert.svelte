@@ -20,14 +20,16 @@
     ...attributes
   }: Props = $props();
 
-  let divCls = $derived(alertVariants({
-    color,
-    rounded,
-    border,
-    icon: !!icon,
-    dismissable,
-    className
-  }));
+  let divCls = $derived(
+    alertVariants({
+      color,
+      rounded,
+      border,
+      icon: !!icon,
+      dismissable,
+      className
+    })
+  );
   // $inspect('divCls: ', divCls);
 </script>
 

@@ -5,7 +5,8 @@
     Dropdown,
     DropdownItem,
     DropdownDivider,
-    uiHelpers, type AvatarProps
+    uiHelpers,
+    type AvatarProps
   } from '$lib';
 
   let dropdown = uiHelpers();
@@ -30,20 +31,19 @@
   let rounded: AvatarProps['rounded'] = $state(false);
   const changeRounded = () => {
     rounded = !rounded;
-  }
+  };
   let border: AvatarProps['border'] = $state(false);
   const changeBorder = () => {
-    border = !border
-  }
+    border = !border;
+  };
   let stacked: AvatarProps['stacked'] = $state(false);
   const changeStacked = () => {
-    stacked = !stacked
-  }
-  let avatarClass: AvatarProps['class'] = $state('')
+    stacked = !stacked;
+  };
+  let avatarClass: AvatarProps['class'] = $state('');
   const changeClass = () => {
-    avatarClass = avatarClass === '' ? 'mx-0.5' : ''
-  }
-
+    avatarClass = avatarClass === '' ? 'mx-0.5' : '';
+  };
 </script>
 
 <H1>Avatar</H1>
@@ -62,14 +62,40 @@
 <H2>Reactive avatars</H2>
 <CodeWrapper class="space-y-4">
   <div class="mb-5 flex justify-center">
-  <Avatar src="/images/profile-picture-1.webp" {rounded} {border} {stacked} class={avatarClass}/>
-  <Avatar src="/images/profile-picture-2.webp" {rounded} {border} {stacked} class={avatarClass}/>
-  <Avatar src="/images/profile-picture-3.webp" {rounded} {border} {stacked} class={avatarClass}/>
+    <Avatar
+      src="/images/profile-picture-1.webp"
+      {rounded}
+      {border}
+      {stacked}
+      class={avatarClass}
+    />
+    <Avatar
+      src="/images/profile-picture-2.webp"
+      {rounded}
+      {border}
+      {stacked}
+      class={avatarClass}
+    />
+    <Avatar
+      src="/images/profile-picture-3.webp"
+      {rounded}
+      {border}
+      {stacked}
+      class={avatarClass}
+    />
   </div>
-  <Button class="w-40" color='blue' onclick={changeRounded}>{rounded?'Add rounded' : 'Remove rounded'}</Button>
-  <Button class="w-40" color='red' onclick={changeBorder}>{border?'Remove border' : 'Add border'}</Button>
-  <Button class="w-40" color='green' onclick={changeStacked}>{stacked?'Remove stacked' : 'Add  stacked'}</Button>
-  <Button class="w-40" color='purple' onclick={changeClass}>{avatarClass?'Remove class' : 'Add class'}</Button>
+  <Button class="w-40" color="blue" onclick={changeRounded}
+    >{rounded ? 'Add rounded' : 'Remove rounded'}</Button
+  >
+  <Button class="w-40" color="red" onclick={changeBorder}
+    >{border ? 'Remove border' : 'Add border'}</Button
+  >
+  <Button class="w-40" color="green" onclick={changeStacked}
+    >{stacked ? 'Remove stacked' : 'Add  stacked'}</Button
+  >
+  <Button class="w-40" color="purple" onclick={changeClass}
+    >{avatarClass ? 'Remove class' : 'Add class'}</Button
+  >
 </CodeWrapper>
 
 <H2>Bordered</H2>

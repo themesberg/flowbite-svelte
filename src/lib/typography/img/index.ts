@@ -24,9 +24,11 @@ const imgVariants = tv({
       left: { base: '' }
     },
     effect: {
-      grayscale: { base: 'cursor-pointer rounded-lg grayscale filter transition-all duration-300 hover:grayscale-0' },
+      grayscale: {
+        base: 'cursor-pointer rounded-lg grayscale filter transition-all duration-300 hover:grayscale-0'
+      },
       blur: { base: 'blur-sm transition-all duration-300 hover:blur-none' },
-      invert: { 
+      invert: {
         base: 'invert filter transition-all duration-300 hover:invert-0'
       },
       sepia: {
@@ -40,7 +42,7 @@ const imgVariants = tv({
       },
       none: {
         base: 'transition-all duration-300'
-      },
+      }
     },
     shadow: {
       sm: { base: 'shadow-sm' },

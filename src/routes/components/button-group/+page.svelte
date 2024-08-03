@@ -1,5 +1,12 @@
 <script lang="ts">
-  import { ButtonGroup, Button, GradientButton, Label, Radio, type ButtonGroupProps } from '$lib';
+  import {
+    ButtonGroup,
+    Button,
+    GradientButton,
+    Label,
+    Radio,
+    type ButtonGroupProps
+  } from '$lib';
   import {
     UserCircleSolid,
     AdjustmentsVerticalSolid,
@@ -21,10 +28,10 @@
   // size, class
   const sizes = ['sm', 'md', 'lg'];
   let size: ButtonGroupProps['size'] = $state('md');
-  let buttonGroupClass: ButtonGroupProps['class'] = $state('')
+  let buttonGroupClass: ButtonGroupProps['class'] = $state('');
   const changeClass = () => {
-    buttonGroupClass = buttonGroupClass === '' ? 'my-4' : ''
-  }
+    buttonGroupClass = buttonGroupClass === '' ? 'my-4' : '';
+  };
 </script>
 
 <H1>Button group</H1>
@@ -46,47 +53,53 @@
 <H2>Reactive button group</H2>
 <CodeWrapper>
   <div class="h-16">
-  <ButtonGroup {size} class={buttonGroupClass}>
-    <Button>Profile</Button>
-    <Button>Settings</Button>
-    <Button>Messages</Button>
-  </ButtonGroup>
+    <ButtonGroup {size} class={buttonGroupClass}>
+      <Button>Profile</Button>
+      <Button>Settings</Button>
+      <Button>Messages</Button>
+    </ButtonGroup>
   </div>
-  
-  <div class="flex flex-wrap space-x-4 mb-4">
-    <Label class="w-full mb-4 font-bold">Current size: {size}</Label>
+
+  <div class="mb-4 flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Current size: {size}</Label>
     {#each sizes as sizeOption}
-      <Radio labelClass="w-24 my-1" name="size" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
+      <Radio
+        labelClass="w-24 my-1"
+        name="size"
+        bind:group={size}
+        value={sizeOption}>{sizeOption}</Radio
+      >
     {/each}
   </div>
-  <Button color="green" onclick={changeClass}>{buttonGroupClass? 'Remove class' : 'Add class'}</Button>
-
+  <Button color="green" onclick={changeClass}
+    >{buttonGroupClass ? 'Remove class' : 'Add class'}</Button
+  >
 </CodeWrapper>
 <HighlightCompo code={modules['./md/reactive-buttongroup.md'] as string} />
 
 <H2>Size</H2>
 <CodeWrapper class="flex justify-center">
   <div>
-  <div>Size: sm</div>
-  <ButtonGroup size="sm">
-    <Button>Profile</Button>
-    <Button>Settings</Button>
-    <Button>Messages</Button>
-  </ButtonGroup>
+    <div>Size: sm</div>
+    <ButtonGroup size="sm">
+      <Button>Profile</Button>
+      <Button>Settings</Button>
+      <Button>Messages</Button>
+    </ButtonGroup>
 
-  <div class="my-4">Size: md(default)</div>
-  <ButtonGroup>
-    <Button>Profile</Button>
-    <Button>Settings</Button>
-    <Button>Messages</Button>
-  </ButtonGroup>
+    <div class="my-4">Size: md(default)</div>
+    <ButtonGroup>
+      <Button>Profile</Button>
+      <Button>Settings</Button>
+      <Button>Messages</Button>
+    </ButtonGroup>
 
-  <div class="my-4">Size: lg</div>
-  <ButtonGroup size="lg">
-    <Button>Profile</Button>
-    <Button>Settings</Button>
-    <Button>Messages</Button>
-  </ButtonGroup>
+    <div class="my-4">Size: lg</div>
+    <ButtonGroup size="lg">
+      <Button>Profile</Button>
+      <Button>Settings</Button>
+      <Button>Messages</Button>
+    </ButtonGroup>
   </div>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/sizes.md'] as string} />

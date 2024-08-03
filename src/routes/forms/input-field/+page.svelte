@@ -287,8 +287,8 @@ input field.
 
 <H2>Icon click handler</H2>
 
-This example shows how to add `onclick` event handler to the icon in `Input`.
-By clicking an icon, it toggles icon and `type`:
+This example shows how to add `onclick` event handler to the icon in `Input`. By
+clicking an icon, it toggles icon and `type`:
 
 <div
   class="mx-auto mt-8 w-full space-y-6 border bg-white bg-gradient-to-r p-6 dark:bg-gray-900"

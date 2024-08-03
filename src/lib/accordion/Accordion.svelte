@@ -21,18 +21,22 @@
 
   const ctx: AccordionCtxType = {
     flush,
-    activeClass: twMerge('bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800', activeClass),
-    inactiveClass: twMerge('text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800', inactiveClass)
+    activeClass: twMerge(
+      'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800',
+      activeClass
+    ),
+    inactiveClass: twMerge(
+      'text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800',
+      inactiveClass
+    )
     // selected: multiple ? undefined : writable()
   };
 
   setContext<AccordionCtxType>('ctx', ctx);
 
-  let accordionClass = $derived(twMerge(
-    accordionVariants({ flush }),
-    defaultClass,
-    className
-  ));
+  let accordionClass = $derived(
+    twMerge(accordionVariants({ flush }), defaultClass, className)
+  );
 </script>
 
 <div {...attributes} class={accordionClass} color="none">
@@ -45,11 +49,9 @@
 ## Props
 @prop children
 @prop flush = false
-@prop activeClass = 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800'
-@prop inactiveClass = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800'
+@prop activeClass = ''
+@prop inactiveClass = ''
 @prop defaultClass = 'text-gray-500 dark:text-gray-400'
-@prop classActive
-@prop classInactive
 @prop class: className
 @prop transition = undefined
 @prop params

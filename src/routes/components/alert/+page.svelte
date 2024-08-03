@@ -18,7 +18,18 @@
     alertEventStatus = false;
   }
   // reactive  color, rounded, border, dismissable, class
-  const colors = ['primary', 'blue', 'gray', 'green', 'indigo', 'pink', 'purple', 'red', 'yellow', 'none']
+  const colors = [
+    'primary',
+    'blue',
+    'gray',
+    'green',
+    'indigo',
+    'pink',
+    'purple',
+    'red',
+    'yellow',
+    'none'
+  ];
   let color: AlertProps['color'] = $state('primary');
   let defaultColor: AlertProps['color'] = $state('primary');
   let iconColor: AlertProps['color'] = $state('primary');
@@ -31,23 +42,23 @@
   let rounded: AlertProps['rounded'] = $state(false);
   const changeRounded = () => {
     rounded = !rounded;
-  }
+  };
   let border: AlertProps['border'] = $state(false);
   const changeBorder = () => {
     border = !border;
-  }
+  };
   let dismissable: AlertProps['dismissable'] = $state(true);
   const changeDismissable = () => {
     dismissable = !dismissable;
-  }
-  let alertStatus2 = $state(true)
+  };
+  let alertStatus2 = $state(true);
   const changeStatus = () => {
-    alertStatus2 = true
-  }
-  let alertClass: AlertProps['class'] = $state('')
+    alertStatus2 = true;
+  };
+  let alertClass: AlertProps['class'] = $state('');
   const changeClass = () => {
-    alertClass = alertClass === '' ? 'p-8' : ''
-  }
+    alertClass = alertClass === '' ? 'p-8' : '';
+  };
 </script>
 
 <H1>Alert</H1>
@@ -64,13 +75,20 @@
   </div>
 
   <div class="flex flex-wrap space-x-4">
-    <Label class="w-full mb-4 font-bold">Change color</Label>
+    <Label class="mb-4 w-full font-bold">Change color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="default_alert_color" bind:group={defaultColor} value={colorOption}>{colorOption}</Radio>
+      <Radio
+        labelClass="w-24 my-1"
+        name="default_alert_color"
+        bind:group={defaultColor}
+        value={colorOption}>{colorOption}</Radio
+      >
     {/each}
   </div>
-  
-  <Button class="w-48" color="green" onclick={changeClass}>{alertClass? 'Remove class' : 'Add class'}</Button>
+
+  <Button class="w-48" color="green" onclick={changeClass}
+    >{alertClass ? 'Remove class' : 'Add class'}</Button
+  >
 </CodeWrapper>
 <HighlightCompo
   codeLang="ts"
@@ -90,9 +108,14 @@
   </div>
 
   <div class="flex flex-wrap space-x-4">
-    <Label class="w-full mb-4 font-bold">Change color</Label>
+    <Label class="mb-4 w-full font-bold">Change color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={iconColor} value={colorOption}>{colorOption}</Radio>
+      <Radio
+        labelClass="w-24 my-1"
+        name="icon_alert_color"
+        bind:group={iconColor}
+        value={colorOption}>{colorOption}</Radio
+      >
     {/each}
   </div>
 </CodeWrapper>
@@ -114,9 +137,14 @@
   </div>
 
   <div class="flex flex-wrap space-x-4">
-    <Label class="w-full mb-4 font-bold">Change color</Label>
+    <Label class="mb-4 w-full font-bold">Change color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="bordered_alert_color" bind:group={borderColor} value={colorOption}>{colorOption}</Radio>
+      <Radio
+        labelClass="w-24 my-1"
+        name="bordered_alert_color"
+        bind:group={borderColor}
+        value={colorOption}>{colorOption}</Radio
+      >
     {/each}
   </div>
 </CodeWrapper>
@@ -142,9 +170,14 @@
   </div>
 
   <div class="flex flex-wrap space-x-4">
-    <Label class="w-full mb-4 font-bold">Change color</Label>
+    <Label class="mb-4 w-full font-bold">Change color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="list_alert_color" bind:group={listColor} value={colorOption}>{colorOption}</Radio>
+      <Radio
+        labelClass="w-24 my-1"
+        name="list_alert_color"
+        bind:group={listColor}
+        value={colorOption}>{colorOption}</Radio
+      >
     {/each}
   </div>
 </CodeWrapper>
@@ -159,22 +192,33 @@
     {#if !alertStatus2}
       <Button color="light" onclick={changeStatus}>Open alert</Button>
     {/if}
-    <Alert color={dismissableColor} {dismissable} bind:alertStatus={alertStatus2}>
+    <Alert
+      color={dismissableColor}
+      {dismissable}
+      bind:alertStatus={alertStatus2}
+    >
       {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Default alert!</span>
-    Change a few things up and try submitting again.
+        <InfoCircleSolid class="h-5 w-5" />
+      {/snippet}
+      <span class="font-medium">Default alert!</span>
+      Change a few things up and try submitting again.
     </Alert>
   </div>
 
   <div class="flex flex-wrap space-x-4">
-    <Label class="w-full mb-4 font-bold">Change color</Label>
+    <Label class="mb-4 w-full font-bold">Change color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="dissmissible_alert_color" bind:group={dismissableColor} value={colorOption}>{colorOption}</Radio>
+      <Radio
+        labelClass="w-24 my-1"
+        name="dissmissible_alert_color"
+        bind:group={dismissableColor}
+        value={colorOption}>{colorOption}</Radio
+      >
     {/each}
   </div>
-  <Button class="w-48" color="yellow" onclick={changeDismissable}>{dismissable? 'Remove dismissable' : 'Add dismissable'}</Button>
+  <Button class="w-48" color="yellow" onclick={changeDismissable}
+    >{dismissable ? 'Remove dismissable' : 'Add dismissable'}</Button
+  >
 </CodeWrapper>
 <HighlightCompo
   codeLang="ts"
@@ -194,9 +238,14 @@
   </div>
 
   <div class="flex flex-wrap space-x-4">
-    <Label class="w-full mb-4 font-bold">Change color</Label>
+    <Label class="mb-4 w-full font-bold">Change color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="border_accent_alert_color" bind:group={borderAccessColor} value={colorOption}>{colorOption}</Radio>
+      <Radio
+        labelClass="w-24 my-1"
+        name="border_accent_alert_color"
+        bind:group={borderAccessColor}
+        value={colorOption}>{colorOption}</Radio
+      >
     {/each}
   </div>
 
@@ -236,9 +285,14 @@
   </div>
 
   <div class="flex flex-wrap space-x-4">
-    <Label class="w-full mb-4 font-bold">Change color</Label>
+    <Label class="mb-4 w-full font-bold">Change color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="additional_alert_color" bind:group={additionalColor} value={colorOption}>{colorOption}</Radio>
+      <Radio
+        labelClass="w-24 my-1"
+        name="additional_alert_color"
+        bind:group={additionalColor}
+        value={colorOption}>{colorOption}</Radio
+      >
     {/each}
   </div>
 </CodeWrapper>
@@ -247,28 +301,35 @@
   code={modules['./md/additional-content.md'] as string}
 />
 
-
 <H2>Rounded</H2>
 <CodeWrapper class="space-y-4">
-    <div class="h-20">
+  <div class="h-20">
     <Alert {color} {rounded}>
       <span class="font-medium">Default alert!</span>
     </Alert>
   </div>
 
   <div class="flex flex-wrap space-x-4">
-    <Label class="w-full mb-4 font-bold">Change color</Label>
+    <Label class="mb-4 w-full font-bold">Change color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="alert_reactive" bind:group={color} value={colorOption}>{colorOption}</Radio>
+      <Radio
+        labelClass="w-24 my-1"
+        name="alert_reactive"
+        bind:group={color}
+        value={colorOption}>{colorOption}</Radio
+      >
     {/each}
   </div>
-  <Button class="w-48" color="blue" onclick={changeRounded}>{rounded? 'Remove rounded' : 'Add rounded'}</Button>
+  <Button class="w-48" color="blue" onclick={changeRounded}
+    >{rounded ? 'Remove rounded' : 'Add rounded'}</Button
+  >
 </CodeWrapper>
-
 
 <H2>Custom color</H2>
 <CodeWrapper>
-  <Alert dismissable color="none" class="bg-sky-500 text-white">Your content</Alert>
+  <Alert dismissable color="none" class="bg-sky-500 text-white"
+    >Your content</Alert
+  >
 </CodeWrapper>
 <HighlightCompo
   codeLang="ts"
@@ -285,23 +346,43 @@
 
 <H2>Reactive alert</H2>
 <CodeWrapper class="space-y-4">
-    <div class="h-20">
+  <div class="h-20">
     {#if !alertStatus2}
       <Button color="light" onclick={changeStatus}>Open alert</Button>
     {/if}
-    <Alert {color} {rounded} {border} {dismissable} class={alertClass} bind:alertStatus={alertStatus2}>
+    <Alert
+      {color}
+      {rounded}
+      {border}
+      {dismissable}
+      class={alertClass}
+      bind:alertStatus={alertStatus2}
+    >
       <span class="font-medium">Default alert!</span>
     </Alert>
   </div>
 
   <div class="flex flex-wrap space-x-4">
-    <Label class="w-full mb-4 font-bold">Change color</Label>
+    <Label class="mb-4 w-full font-bold">Change color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="alert_reactive" bind:group={color} value={colorOption}>{colorOption}</Radio>
+      <Radio
+        labelClass="w-24 my-1"
+        name="alert_reactive"
+        bind:group={color}
+        value={colorOption}>{colorOption}</Radio
+      >
     {/each}
   </div>
-  <Button class="w-48" color="blue" onclick={changeRounded}>{rounded? 'Remove rounded' : 'Add rounded'}</Button>
-  <Button class="w-48" color="red" onclick={changeBorder}>{border? 'Remove border' : 'Add border'}</Button>
-  <Button class="w-48" color="yellow" onclick={changeDismissable}>{dismissable? 'Remove dismissable' : 'Add dismissable'}</Button>
-  <Button class="w-48" color="green" onclick={changeClass}>{alertClass? 'Remove class' : 'Add class'}</Button>
+  <Button class="w-48" color="blue" onclick={changeRounded}
+    >{rounded ? 'Remove rounded' : 'Add rounded'}</Button
+  >
+  <Button class="w-48" color="red" onclick={changeBorder}
+    >{border ? 'Remove border' : 'Add border'}</Button
+  >
+  <Button class="w-48" color="yellow" onclick={changeDismissable}
+    >{dismissable ? 'Remove dismissable' : 'Add dismissable'}</Button
+  >
+  <Button class="w-48" color="green" onclick={changeClass}
+    >{alertClass ? 'Remove class' : 'Add class'}</Button
+  >
 </CodeWrapper>

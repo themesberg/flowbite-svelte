@@ -14,14 +14,14 @@
     eager: true
   });
 
-  let navClass: Breadcrumb['class'] = $state('')
+  let navClass: Breadcrumb['class'] = $state('');
   const changeNavClass = () => {
-    navClass = navClass === '' ? 'border border-red-500 p-2' : ''
-  }
-  let olClass: Breadcrumb['olClass'] = $state('')
+    navClass = navClass === '' ? 'border border-red-500 p-2' : '';
+  };
+  let olClass: Breadcrumb['olClass'] = $state('');
   const changeOlClass = () => {
-    olClass = olClass === '' ? 'border border-blue-500 p-2' : ''
-  }
+    olClass = olClass === '' ? 'border border-blue-500 p-2' : '';
+  };
 </script>
 
 <H1>Breadcrumb</H1>
@@ -34,14 +34,18 @@
 
 <CodeWrapper class="overflow-x-scroll p-2 sm:p-6">
   <div class="h-20">
-  <Breadcrumb {navClass} {olClass} >
-    <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
-    <BreadcrumbItem href="/">Projects</BreadcrumbItem>
-    <BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
-  </Breadcrumb>
+    <Breadcrumb {navClass} {olClass}>
+      <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
+      <BreadcrumbItem href="/">Projects</BreadcrumbItem>
+      <BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
+    </Breadcrumb>
   </div>
-  <Button class="w-48" onclick={changeNavClass}>{navClass? 'Remove navClass' : 'Add navClass'}</Button>
-  <Button class="w-48" color="green" onclick={changeOlClass}>{olClass? 'Remove olClass' : 'Add olClass'}</Button>
+  <Button class="w-48" onclick={changeNavClass}
+    >{navClass ? 'Remove navClass' : 'Add navClass'}</Button
+  >
+  <Button class="w-48" color="green" onclick={changeOlClass}
+    >{olClass ? 'Remove olClass' : 'Add olClass'}</Button
+  >
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/defaultbreadcrumb.md'] as string} />

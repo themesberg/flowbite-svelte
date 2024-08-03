@@ -2,8 +2,8 @@
   // import type { Snippet } from 'svelte';
   // import { twMerge } from 'tailwind-merge';
   // import type { HTMLAttributes } from 'svelte/elements';
-  import { cardVariants, type CardProps as Props } from '.'
-  
+  import { cardVariants, type CardProps as Props } from '.';
+
   let {
     children,
     href,
@@ -18,17 +18,26 @@
     ...attributes
   }: Props = $props();
 
-  const {base, image, content} = $derived(cardVariants({
-    size,
-    shadow,
-    padding,
-    horizontal,
-    reverse,
-    href: !!href
-  }));
+  const { base, image, content } = $derived(
+    cardVariants({
+      size,
+      shadow,
+      padding,
+      horizontal,
+      reverse,
+      href: !!href
+    })
+  );
 </script>
 
-<svelte:element this={href ? 'a' : 'div'} {href} class={base()} role={href ? 'link' : 'presentation'} onclick={onclick} {...attributes}>
+<svelte:element
+  this={href ? 'a' : 'div'}
+  {href}
+  class={base()}
+  role={href ? 'link' : 'presentation'}
+  {onclick}
+  {...attributes}
+>
   {#if img}
     <img class={image()} src={img.src} alt={img.alt} />
     <div class={content()}>
@@ -48,7 +57,6 @@
 @prop children
 @prop href
 @prop horizontal = false
-@prop target
 @prop shadow = true
 @prop reverse = false
 @prop img

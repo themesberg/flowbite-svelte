@@ -10,7 +10,8 @@
     BreadcrumbItem,
     Badge,
     Secondary,
-    Label, Radio
+    Label,
+    Radio
   } from '$lib';
   import {
     ArrowRightOutline,
@@ -178,10 +179,15 @@
     <Heading tag={headingTag}>Heading</Heading>
   </div>
   <div class="flex flex-wrap space-x-4">
-    <Label class="w-full mb-4 font-bold">Rounded: </Label>
-  {#each tags as tag}
-    <Radio labelClass="w-12 my-1" name="tag" bind:group={headingTag} value={tag}>{tag}</Radio>
-  {/each}
+    <Label class="mb-4 w-full font-bold">Rounded:</Label>
+    {#each tags as tag}
+      <Radio
+        labelClass="w-12 my-1"
+        name="tag"
+        bind:group={headingTag}
+        value={tag}>{tag}</Radio
+      >
+    {/each}
   </div>
 </CodeWrapper>
 

@@ -1,5 +1,12 @@
 <script lang="ts">
-  import { Badge, Button, Indicator, Radio, Label, type BadgeProps } from '$lib';
+  import {
+    Badge,
+    Button,
+    Indicator,
+    Radio,
+    Label,
+    type BadgeProps
+  } from '$lib';
   import {
     ClockSolid,
     CloseCircleSolid,
@@ -40,33 +47,43 @@
   });
 
   // reactive example
-  const colors = ['primary', 'gray', 'blue', 'red', 'green', 'yellow', 'indigo', 'purple', 'pink', 'none']
-  let color: BadgeProps['color'] = $state('primary')
-  let badgeSize: BadgeProps['large'] = $state(false)
+  const colors = [
+    'primary',
+    'gray',
+    'blue',
+    'red',
+    'green',
+    'yellow',
+    'indigo',
+    'purple',
+    'pink',
+    'none'
+  ];
+  let color: BadgeProps['color'] = $state('primary');
+  let badgeSize: BadgeProps['large'] = $state(false);
   const changeSize = () => {
-    badgeSize = !badgeSize
-  }
-  let badgeDismissable: BadgeProps['dismissable'] = $state(false)
+    badgeSize = !badgeSize;
+  };
+  let badgeDismissable: BadgeProps['dismissable'] = $state(false);
   const changeDismissable = () => {
-    badgeDismissable = !badgeDismissable
-  }
-  let badgeClass: BadgeProps['class'] = $state('')
+    badgeDismissable = !badgeDismissable;
+  };
+  let badgeClass: BadgeProps['class'] = $state('');
   const changeClass = () => {
-    badgeClass = badgeClass === '' ? 'p-4' : ''
-  }
-  let badgeStatus2 = $state(true)
+    badgeClass = badgeClass === '' ? 'p-4' : '';
+  };
+  let badgeStatus2 = $state(true);
   const changeStatus = () => {
-    badgeStatus2 = true
-  }
-  let border: BadgeProps['border'] = $state(false)
+    badgeStatus2 = true;
+  };
+  let border: BadgeProps['border'] = $state(false);
   const changeBorder = () => {
-    border = !border
-  }
-  let rounded: BadgeProps['rounded'] = $state(false)
+    border = !border;
+  };
+  let rounded: BadgeProps['rounded'] = $state(false);
   const changeRounded = () => {
-    rounded = !rounded
-  }
-
+    rounded = !rounded;
+  };
 </script>
 
 <H1>Badge</H1>
@@ -92,23 +109,46 @@
 <H2>Reactive badge</H2>
 <CodeWrapper class="space-y-4">
   <div class="h-12">
-  {#if !badgeStatus2}
-    <Button color="light" onclick={changeStatus}>Open badge</Button>
-  {/if}
-  <Badge {color} large={badgeSize} dismissable={badgeDismissable} class={badgeClass} bind:badgeStatus={badgeStatus2} {border} {rounded} >Default</Badge>
-</div>
+    {#if !badgeStatus2}
+      <Button color="light" onclick={changeStatus}>Open badge</Button>
+    {/if}
+    <Badge
+      {color}
+      large={badgeSize}
+      dismissable={badgeDismissable}
+      class={badgeClass}
+      bind:badgeStatus={badgeStatus2}
+      {border}
+      {rounded}>Default</Badge
+    >
+  </div>
 
   <div class="flex flex-wrap space-x-4">
-    <Label class="w-full mb-4 font-bold">Change color</Label>
+    <Label class="mb-4 w-full font-bold">Change color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="color" bind:group={color} value={colorOption}>{colorOption}</Radio>
+      <Radio
+        labelClass="w-24 my-1"
+        name="color"
+        bind:group={color}
+        value={colorOption}>{colorOption}</Radio
+      >
     {/each}
   </div>
-  <Button class="w-40" color="blue" onclick={changeSize}>{badgeSize? 'Small' : 'Large'}</Button>
-  <Button class="w-40" color="green" onclick={changeDismissable}>{badgeDismissable? 'Not dismissable' : 'Dismissable'}</Button>
-  <Button class="w-40" color="purple" onclick={changeClass}>{badgeClass? 'Remove class' : 'Add class'}</Button>
-  <Button class="w-40" color="yellow" onclick={changeBorder}>{border? 'Remove border' : 'Add border'}</Button>
-  <Button class="w-40" color="dark" onclick={changeRounded}>{rounded? 'Remove rounded' : 'Add rounded'}</Button>
+  <Button class="w-40" color="blue" onclick={changeSize}
+    >{badgeSize ? 'Small' : 'Large'}</Button
+  >
+  <Button class="w-40" color="green" onclick={changeDismissable}
+    >{badgeDismissable ? 'Not dismissable' : 'Dismissable'}</Button
+  >
+  <Button class="w-40" color="purple" onclick={changeClass}
+    >{badgeClass ? 'Remove class' : 'Add class'}</Button
+  >
+  <Button class="w-40" color="yellow" onclick={changeBorder}
+    >{border ? 'Remove border' : 'Add border'}</Button
+  >
+  <Button class="w-40" color="dark" onclick={changeRounded}
+    >{rounded ? 'Remove rounded' : 'Add rounded'}</Button
+  >
 </CodeWrapper>
 
 <H2>Large badge</H2>
@@ -319,4 +359,3 @@
   codeLang="ts"
   code={modules['./md/opening-badge.md'] as string}
 />
-

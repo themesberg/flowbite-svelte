@@ -68,11 +68,12 @@
 ## Props
 @prop children
 @prop header
+@prop bannerStatus = $bindable(true)
 @prop position = 'sticky'
 @prop dismissable = true
 @prop color = 'gray'
 @prop bannerType = 'default'
-@prop divClass
+@prop class: className
 @prop innerClass
 @prop transition = fade
 @prop params

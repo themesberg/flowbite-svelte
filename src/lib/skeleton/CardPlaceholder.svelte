@@ -6,8 +6,9 @@
 
   let { size = 'sm', class: className, ...attributes }: Props = $props();
 
-  const { base, imageArea, imageIcon, line, footerArea } =
-    $derived(cardPlaceholderVariants({ size }));
+  const { base, imageArea, imageIcon, line, footerArea } = $derived(
+    cardPlaceholderVariants({ size })
+  );
 </script>
 
 <div role="status" class={base({ className })} {...attributes}>

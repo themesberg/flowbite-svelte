@@ -21,13 +21,15 @@
     ...attributes
   }: Props = $props();
 
-  let badgeClass = $derived(badgeVariants({
-    color,
-    size: large ? 'large' : 'small',
-    border,
-    rounded,
-    className
-  }));
+  let badgeClass = $derived(
+    badgeVariants({
+      color,
+      size: large ? 'large' : 'small',
+      border,
+      rounded,
+      className
+    })
+  );
   // $inspect('badgeStatus: ', badgeStatus);
 </script>
 

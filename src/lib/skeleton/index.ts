@@ -225,8 +225,7 @@ interface TextPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
 
 // VideoPlaceholder
 const videoPlaceholderVariants = tv({
-  base:
-    'flex justify-center items-center h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700',
+  base: 'flex justify-center items-center h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700',
   variants: {
     size: {
       sm: 'max-w-sm',

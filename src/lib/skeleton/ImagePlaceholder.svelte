@@ -6,10 +6,12 @@
 
   let { size, rounded, class: className, ...attributes }: Props = $props();
 
-  const { base, image, svg, content, line } = $derived(imagePlaceholderVariants({
-    size,
-    rounded
-  }));
+  const { base, image, svg, content, line } = $derived(
+    imagePlaceholderVariants({
+      size,
+      rounded
+    })
+  );
 </script>
 
 <div role="status" class={base({ className })} {...attributes}>

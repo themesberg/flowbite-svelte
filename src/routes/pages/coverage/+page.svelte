@@ -312,7 +312,7 @@
 <H1>Component and example checks</H1>
 
 <H2>Components</H2>
-<List class="space-y-1 text-gray-500 dark:text-gray-400" >
+<List class="space-y-1 text-gray-500 dark:text-gray-400">
   <Li># of pages: {componentsAnalysis.total}</Li>
   <Li># of components/pages checked: {componentsAnalysis.pageChecked}</Li>
   <Li
@@ -327,7 +327,7 @@
 </List>
 
 <H2>Forms</H2>
-<List class="space-y-1 text-gray-500 dark:text-gray-400" >
+<List class="space-y-1 text-gray-500 dark:text-gray-400">
   <Li># of pages: {formsAnalysis.total}</Li>
   <Li># of components/pages checked: {formsAnalysis.pageChecked}</Li>
   <Li># of components/pages to be completed: {formsAnalysis.pageUnchecked}</Li>
@@ -340,7 +340,7 @@
 </List>
 
 <H2>Typography</H2>
-<List class="space-y-1 text-gray-500 dark:text-gray-400" >
+<List class="space-y-1 text-gray-500 dark:text-gray-400">
   <Li># of pages: {typographyAnalysis.total}</Li>
   <Li># of components/pages checked: {typographyAnalysis.pageChecked}</Li>
   <Li
@@ -422,7 +422,7 @@
   class="mb-2 py-4 text-2xl font-semibold text-gray-900 dark:text-white"
   >Typography</Heading
 >
-<List class="space-y-1 text-gray-500 dark:text-gray-400" >
+<List class="space-y-1 text-gray-500 dark:text-gray-400">
   {#each Object.entries(typography) as [key, { checked, problems, notes }]}
     <Li icon>
       {#if checked && !problems}

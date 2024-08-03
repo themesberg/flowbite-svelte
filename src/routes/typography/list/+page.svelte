@@ -1,5 +1,14 @@
 <script lang="ts">
-  import { List, Li, Heading, Span, DescriptionList, A, Label, Radio } from '$lib';
+  import {
+    List,
+    Li,
+    Heading,
+    Span,
+    DescriptionList,
+    A,
+    Label,
+    Radio
+  } from '$lib';
   import {
     CheckCircleSolid,
     CloseCircleOutline,
@@ -34,25 +43,38 @@
     class="mb-2 text-lg font-semibold text-gray-900 dark:text-white"
     >Password requirements</Heading
   >
-  <List tag={listTag} position={listPosition} class="space-y-1 text-gray-500 dark:text-gray-400">
+  <List
+    tag={listTag}
+    position={listPosition}
+    class="space-y-1 text-gray-500 dark:text-gray-400"
+  >
     <Li>At least 10 characters (and up to 100 characters)</Li>
     <Li>At least one lowercase character</Li>
     <Li>Inclusion of at least one special character, e.g., ! @ # ?</Li>
   </List>
 
-  <div class="flex flex-wrap space-x-4 mt-4">
-    <Label class="w-full mb-4 font-bold">Tag:</Label>
+  <div class="mt-4 flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Tag:</Label>
     {#each tags as tag}
-      <Radio labelClass="w-24 my-1" name="list_tag" bind:group={listTag} value={tag}>{tag}</Radio>
+      <Radio
+        labelClass="w-24 my-1"
+        name="list_tag"
+        bind:group={listTag}
+        value={tag}>{tag}</Radio
+      >
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-4 mt-4">
-    <Label class="w-full mb-4 font-bold">Position:</Label>
+  <div class="mt-4 flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Position:</Label>
     {#each positions as position}
-      <Radio labelClass="w-24 my-1" name="list_position" bind:group={listPosition} value={position}>{position}</Radio>
+      <Radio
+        labelClass="w-24 my-1"
+        name="list_position"
+        bind:group={listPosition}
+        value={position}>{position}</Radio
+      >
     {/each}
   </div>
-  
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/unordered-list.md'] as string} />
@@ -183,10 +205,7 @@
 <H2>List with icon</H2>
 
 <CodeWrapper>
-  <List
-    tag="ul"
-    class="mb-8 space-y-4 text-gray-500 dark:text-gray-400"
-  >
+  <List tag="ul" class="mb-8 space-y-4 text-gray-500 dark:text-gray-400">
     <Li icon class="gap-3">
       <CheckOutline class="h-5 w-5 text-green-500 dark:text-green-400" />
       Individual configuration
@@ -214,10 +233,7 @@
 
 <H2>Advanced layout</H2>
 <CodeWrapper>
-  <List
-    tag="dl"
-    class="max-w-md divide-y divide-gray-200 dark:divide-gray-700"
-  >
+  <List tag="dl" class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
     <Li class="pb-3 sm:pb-4">
       <div class="flex items-center space-x-4 rtl:space-x-reverse">
         <div class="flex-shrink-0">
@@ -345,10 +361,7 @@
 
 <H2>Horizontal list</H2>
 <CodeWrapper>
-  <List
-    tag="ul"
-    class="mb-6 flex flex-wrap items-center justify-center"
-  >
+  <List tag="ul" class="mb-6 flex flex-wrap items-center justify-center">
     <Li>
       <A
         href="/"

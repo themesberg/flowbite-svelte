@@ -1,8 +1,5 @@
 <script lang="ts">
-  import {
-    type HrProps as Props,
-    hrVariants,
-  } from './index';
+  import { type HrProps as Props, hrVariants } from './index';
 
   let {
     children,
@@ -13,18 +10,20 @@
     ...attributes
   }: Props = $props();
 
-  let { base, container, content } = $derived(hrVariants({ withChildren: !!children }));
+  let { base, container, content } = $derived(
+    hrVariants({ withChildren: !!children })
+  );
 </script>
 
 {#if children}
-  <div {...attributes} class={container({ class: divClass})}>
+  <div {...attributes} class={container({ class: divClass })}>
     <hr class={base({ class: hrClass })} />
     <div class={content({ class: innerDivClass })}>
       {@render children()}
     </div>
   </div>
 {:else}
-  <hr class={base({ class: hrClass})} {...attributes} />
+  <hr class={base({ class: hrClass })} {...attributes} />
 {/if}
 
 <!--

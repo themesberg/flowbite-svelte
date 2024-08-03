@@ -23,6 +23,6 @@
 ## Props
 @prop children
 @prop size = 'md'
-@prop class: divClass
+@prop class: className
 @prop ...attributes
 -->

@@ -16,7 +16,7 @@
   const { image, div } = galleryVariants();
 </script>
 
-{#snippet figure(item:ImgType)}
+{#snippet figure(item: ImgType)}
   <div>
     <img
       src={item.src}

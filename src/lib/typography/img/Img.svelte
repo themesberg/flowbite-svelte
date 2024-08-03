@@ -1,9 +1,6 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
-  import {
-    type ImgProps as Props,
-    imgVariants,
-  } from './index';
+  import { type ImgProps as Props, imgVariants } from './index';
 
   let {
     size,
@@ -19,13 +16,17 @@
     ...attributes
   }: Props = $props();
 
-  let { base, figure, figureCaption } = $derived(imgVariants({ size, alignment, effect, shadow, rounded }));
+  let { base, figure, figureCaption } = $derived(
+    imgVariants({ size, alignment, effect, shadow, rounded })
+  );
 </script>
 
 {#if caption}
   <figure class={figure({ class: figClass })}>
     <img {...attributes} class={base({ class: className })} />
-    <figcaption class={figureCaption({ class: captionClass })}>{@html caption}</figcaption>
+    <figcaption class={figureCaption({ class: captionClass })}>
+      {@html caption}
+    </figcaption>
   </figure>
 {:else}
   <img {...attributes} class={base({ class: className })} />
@@ -35,6 +36,11 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
+@prop size
+@prop alignment
+@prop effect
+@prop shadow
+@prop rounded
 @prop caption
 @prop imgClass
 @prop figClass

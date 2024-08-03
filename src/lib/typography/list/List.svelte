@@ -26,9 +26,8 @@
 ## Props
 @prop children
 @prop tag = 'ul'
-@prop list
 @prop position = 'inside'
 @prop ctxclass = ''
-@prop class: classname
+@prop class: className
 @prop ...attributes
 -->

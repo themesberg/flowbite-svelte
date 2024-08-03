@@ -1,5 +1,13 @@
 <script lang="ts">
-  import { Indicator, Button, Avatar, Badge, Label, Radio, type IndicatorProps } from '$lib';
+  import {
+    Indicator,
+    Button,
+    Avatar,
+    Badge,
+    Label,
+    Radio,
+    type IndicatorProps
+  } from '$lib';
   import { EnvelopeSolid, CheckCircleSolid } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -12,15 +20,36 @@
     eager: true
   });
   // color, size, rounded, border, placement and offset
-  const sizes =[ 'xs', 'sm', 'md', 'lg', 'xl']
-  const colors = ['gray', 'dark', 'orange', 'blue', 'green', 'red', 'purple', 'indigo', 'yellow', 'teal']
-  const positions = ['top-left', 'top-center', 'top-right', 'center-left', 'center', 'center-right',  'bottom-left', 'bottom-center', 'bottom-right']
+  const sizes = ['xs', 'sm', 'md', 'lg', 'xl'];
+  const colors = [
+    'gray',
+    'dark',
+    'orange',
+    'blue',
+    'green',
+    'red',
+    'purple',
+    'indigo',
+    'yellow',
+    'teal'
+  ];
+  const positions = [
+    'top-left',
+    'top-center',
+    'top-right',
+    'center-left',
+    'center',
+    'center-right',
+    'bottom-left',
+    'bottom-center',
+    'bottom-right'
+  ];
   let color: IndicatorProps['color'] = $state('red');
   let size: IndicatorProps['size'] = $state('md');
   let border: IndicatorProps['border'] = $state(false);
   const changeBorder = () => {
-    border = !border
-  }
+    border = !border;
+  };
   let placement: IndicatorProps['placement'] = $state('top-left');
 </script>
 
@@ -49,28 +78,45 @@
   <div
     class="borer relative h-56 w-56 rounded-lg border-gray-300 bg-gray-200 dark:border-gray-700 dark:bg-gray-800"
   >
-    <Indicator {color} {size} {border} {placement}/>
+    <Indicator {color} {size} {border} {placement} />
   </div>
   <div class="mt-8 space-y-4">
-  <div class="flex flex-wrap space-x-2">
-    <Label class="w-full mb-4 font-bold">Change color</Label>
-    {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="color" bind:group={color} value={colorOption}>{colorOption}</Radio>
-    {/each}
-  </div>
-  <div class="flex flex-wrap space-x-4">
-    <Label class="w-full mb-4 font-bold">Change size</Label>
-    {#each sizes as sizeOption}
-      <Radio labelClass="w-24 my-1" name="size" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
-    {/each}
-  </div>
-  <div class="flex flex-wrap space-x-4" >
-    <Label class="w-full mb-4 font-bold">Change placement</Label>
-    {#each positions as positionOption}
-      <Radio labelClass="w-32 my-1" name="placement" bind:group={placement} value={positionOption}>{positionOption}</Radio>
-    {/each}
-  </div>
-  <Button onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
+    <div class="flex flex-wrap space-x-2">
+      <Label class="mb-4 w-full font-bold">Change color</Label>
+      {#each colors as colorOption}
+        <Radio
+          labelClass="w-24 my-1"
+          name="color"
+          bind:group={color}
+          value={colorOption}>{colorOption}</Radio
+        >
+      {/each}
+    </div>
+    <div class="flex flex-wrap space-x-4">
+      <Label class="mb-4 w-full font-bold">Change size</Label>
+      {#each sizes as sizeOption}
+        <Radio
+          labelClass="w-24 my-1"
+          name="size"
+          bind:group={size}
+          value={sizeOption}>{sizeOption}</Radio
+        >
+      {/each}
+    </div>
+    <div class="flex flex-wrap space-x-4">
+      <Label class="mb-4 w-full font-bold">Change placement</Label>
+      {#each positions as positionOption}
+        <Radio
+          labelClass="w-32 my-1"
+          name="placement"
+          bind:group={placement}
+          value={positionOption}>{positionOption}</Radio
+        >
+      {/each}
+    </div>
+    <Button onclick={changeBorder}
+      >{border ? 'Remove border' : 'Add border'}</Button
+    >
   </div>
 </CodeWrapper>
 
