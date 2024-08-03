@@ -2,8 +2,6 @@
   import {
     type HrProps as Props,
     hrVariants,
-    hrContainerVariants,
-    hrInnerDivVariants
   } from './index';
 
   let {
@@ -15,23 +13,18 @@
     ...attributes
   }: Props = $props();
 
-  let horizontalCls = $derived(hrVariants({ withChildren: !!children, class: hrClass }));
-  let containerCls = $derived(hrContainerVariants({
-    withChildren: !!children,
-    class: divClass
-  }));
-  let innerDivCls = $derived(hrInnerDivVariants({ icon, class: innerDivClass }));
+  let { base, container, content } = $derived(hrVariants({ withChildren: !!children }));
 </script>
 
 {#if children}
-  <div {...attributes} class={containerCls}>
-    <hr class={horizontalCls} />
-    <div class={innerDivCls}>
+  <div {...attributes} class={container({ class: divClass})}>
+    <hr class={base({ class: hrClass })} />
+    <div class={content({ class: innerDivClass })}>
       {@render children()}
     </div>
   </div>
 {:else}
-  <hr class={horizontalCls} {...attributes} />
+  <hr class={base({ class: hrClass})} {...attributes} />
 {/if}
 
 <!--

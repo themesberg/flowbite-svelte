@@ -4,47 +4,21 @@ import type { Snippet } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
 
 const hrVariants = tv({
-  base: 'h-px my-8 bg-gray-200 border-0 dark:bg-gray-700',
-  variants: {
-    withChildren: {
-      true: 'w-full',
-      false: ''
-    },
-    icon: {
-      true: '',
-      false: ''
-    }
+  slots: {
+    base: 'h-px my-8 bg-gray-200 border-0 dark:bg-gray-700',
+    container: 'inline-flex items-center justify-center w-full',
+    content: 'absolute px-4 -translate-x-1/2 rtl:translate-x-1/2 bg-white start-1/2 dark:bg-gray-900'
   },
-  defaultVariants: {
-    withChildren: false,
-    icon: false
-  }
-});
-
-const hrContainerVariants = tv({
-  base: 'inline-flex items-center justify-center w-full',
   variants: {
     withChildren: {
-      true: 'relative',
-      false: ''
+      true: {
+        base: 'w-full',
+        container: 'relative'
+      }
     }
   },
   defaultVariants: {
     withChildren: false
-  }
-});
-
-const hrInnerDivVariants = tv({
-  base: 'absolute px-4 -translate-x-1/2 rtl:translate-x-1/2 bg-white start-1/2 dark:bg-gray-900',
-  variants: {
-    icon: {
-      true: 'absolute start-1/2 px-4 bg-white -translate-x-1/2 rtl:translate-x-1/2',
-      false:
-        'absolute px-3 font-medium text-gray-900 -translate-x-1/2 rtl:translate-x-1/2 bg-white start-1/2 dark:text-white dark:bg-gray-900'
-    }
-  },
-  defaultVariants: {
-    icon: false
   }
 });
 
@@ -61,7 +35,5 @@ interface HrProps extends HTMLAttributes<HTMLElement> {
 export {
   Hr,
   hrVariants,
-  hrContainerVariants,
-  hrInnerDivVariants,
   type HrProps
 };

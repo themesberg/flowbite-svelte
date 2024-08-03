@@ -1,1 +1,1 @@
-<A href="/" aclass="font-medium hover:underline">Read more</A>
+<A href="/" class="font-medium hover:underline">Read more</A>

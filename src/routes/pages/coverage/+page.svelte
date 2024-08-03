@@ -218,7 +218,7 @@
   const typography: ListType = {
     blockquote: {
       checked: true,
-      notes: 'Variants'
+      notes: 'Variants checked'
     },
     heading: {
       checked: true,
@@ -227,16 +227,16 @@
     },
     hr: {
       checked: true,
-      notes: 'Variants'
+      notes: 'Variants checked'
       // problems: 'Icon HR - icon size,'
     },
     image: {
       checked: true,
-      notes: 'Variants'
+      notes: 'Variants, reactive examples'
     },
     link: {
       checked: true,
-      notes: 'Variants'
+      notes: 'Variants checked'
       // problems: 'Button, CTA link, Card link, Image link '
     },
     list: {

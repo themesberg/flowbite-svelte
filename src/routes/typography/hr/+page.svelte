@@ -13,9 +13,12 @@
 </script>
 
 <H1>Horizontal line (HR)</H1>
+<H2>Reactive Hr</H2>
+<CodeWrapper>
+  <Hr hrClass="my-8" />
+</CodeWrapper>
 
 <H2>Setup</H2>
-
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default HR</H2>

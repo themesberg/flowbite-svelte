@@ -3,11 +3,14 @@
   import {
     type ImgProps as Props,
     imgVariants,
-    figureVariants,
-    figcaptionVariants
   } from './index';
 
   let {
+    size,
+    alignment,
+    effect,
+    shadow,
+    rounded,
     caption,
     imgClass,
     figClass,
@@ -16,18 +19,16 @@
     ...attributes
   }: Props = $props();
 
-  let imgCls = twMerge(imgVariants(), imgClass, className);
-  let figCls = twMerge(figureVariants(), figClass);
-  let figcaptiongCls = twMerge(figcaptionVariants(), captionClass);
+  let { base, figure, figureCaption } = $derived(imgVariants({ size, alignment, effect, shadow, rounded }));
 </script>
 
 {#if caption}
-  <figure class={figCls}>
-    <img {...attributes} class={imgCls} />
-    <figcaption class={figcaptiongCls}>{@html caption}</figcaption>
+  <figure class={figure({ class: figClass })}>
+    <img {...attributes} class={base({ class: className })} />
+    <figcaption class={figureCaption({ class: captionClass })}>{@html caption}</figcaption>
   </figure>
 {:else}
-  <img {...attributes} class={imgCls} />
+  <img {...attributes} class={base({ class: className })} />
 {/if}
 
 <!--

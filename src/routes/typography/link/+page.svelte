@@ -31,6 +31,7 @@
 <CodeWrapper>
   <Button href="/">Read more</Button>
 </CodeWrapper>
+<HighlightCompo code={modules['./md/button-link.md'] as string} />
 
 <H2>Paragraph</H2>
 <CodeWrapper>
@@ -71,6 +72,7 @@
     <ArrowRightOutline class="ms-2 h-6 w-6" />
   </A>
 </CodeWrapper>
+<HighlightCompo code={modules['./md/cta-link.md'] as string} />
 
 <H2>Card link</H2>
 <CodeWrapper>
@@ -86,6 +88,7 @@
     </p>
   </Card>
 </CodeWrapper>
+<HighlightCompo code={modules['./md/card-link.md'] as string} />
 
 <H2>Card with image</H2>
 <CodeWrapper class="flex justify-center">
@@ -114,3 +117,4 @@
     >
   </div>
 </CodeWrapper>
+<HighlightCompo code={modules['./md/card-with-image.md'] as string} />

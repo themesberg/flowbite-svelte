@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Img, Badge } from '$lib';
+  import { Img, Badge, Radio, Label } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -10,6 +10,17 @@
     import: 'default',
     eager: true
   });
+
+  const sizes = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'full'];
+  let imgSize: Img['size'] = $state('md');
+  const alignments = ['left', 'center', 'right'];
+  let imgAlignment: Img['alignment'] = $state('center');
+  const effects = ['blur', 'grayscale', 'invert', 'sepia', 'saturate', 'hue-rotate', 'none'];
+  let imgEffect: Img['effect'] = $state('sepia');
+  const shadows = ['xs', 'sm', 'regular', 'md', 'lg', 'xl', 'xxl', 'inner', 'none'];
+  let imgShadow: Img['shadow'] = $state('xl');
+  const roundeds = ['none', 'sm', 'regular', 'md', 'lg', 'xl', 'xxl', 'xxxl', 'full'];
+  let imgRounded: Img['rounded'] = $state('full');
 </script>
 
 <H1>Image</H1>
@@ -22,9 +33,9 @@
 </p>
 
 <H2>Setup</H2>
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default image</H2>
-
 <p>
   Use this example to show the a responsive image that won’t grow beyond the
   maximum original width.
@@ -33,19 +44,15 @@
 <CodeWrapper class="flex justify-center">
   <Img src="/images/examples/image-1@2x.jpg" alt="sample 1" />
 </CodeWrapper>
+<HighlightCompo code={modules['./md/default-image.md'] as string} />
 
 <H2>Image caption</H2>
+<p>
+  This example can be used to add a caption for the image often used inside
+  articles.
+</p>
+  <Badge large class="mb-4">Warning: the caption is using @html.</Badge>
 
-<p>
-  This example can be used to add a caption for the image often used inside
-  articles.
-</p>
-<Badge large>Warning: the caption is using @html.</Badge>
-<p>
-  This example can be used to add a caption for the image often used inside
-  articles.
-</p>
-<Badge large>Warning: the caption is using @html.</Badge>
 
 <CodeWrapper class="flex justify-center">
   <Img
@@ -54,66 +61,50 @@
     caption="Image caption"
   />
 </CodeWrapper>
+<HighlightCompo code={modules['./md/image-caption.md'] as string} />
 
 <H2>Rounded corners</H2>
-
 <p>
-  Apply rounded corners to the image by using the specific utility classes from
+  Apply rounded corners to the image by using the rounded props or class from
   Tailwind CSS.
 </p>
-
-<H3>Border radius</H3>
-
-<p>
-  Use this example to apply rounded corners to the image by using the
-  rounded-size class where the size can be anything from small to extra large.
-</p>
-
-<CodeWrapper class="flex justify-center">
-  <Img
-    src="/images/examples/image-1@2x.jpg"
-    alt="sample 1"
-    class="max-w-lg rounded-lg"
-  />
+<CodeWrapper>
+  <div class="h-[500px]">
+    <Img src="/images/examples/image-4@2x.jpg" size="md" alignment="center"
+    rounded={imgRounded} alt="sample 1" />
+  </div>
+  <div class="flex flex-wrap space-x-4">
+    <Label class="w-full mb-4 font-bold">Rounded: </Label>
+  {#each roundeds as rounded}
+    <Radio labelClass="w-20 my-1" name="img_rounded" bind:group={imgRounded} value={rounded}>{rounded}</Radio>
+  {/each}
+  </div>
 </CodeWrapper>
-
-<H3>Full circle</H3>
-
-<p>
-  Use this example to mask the image inside a circle using the rounded-full
-  utility class from Tailwind CSS.
-</p>
-
-<CodeWrapper class="flex justify-center">
-  <Img
-    src="/images/examples/image-4@2x.jpg"
-    alt="sample 1"
-    imgClass="h-96"
-    class="w-96 rounded-full"
-  />
-</CodeWrapper>
+<HighlightCompo code={modules['./md/rounded.md'] as string} />
 
 <H2>Image shadow</H2>
-
 <p>
-  This example can be used to show a shadow effect for the image using the
-  shadow-size utility class.
+  Apply shadow to the image by using the `shadow` props or class from
+  Tailwind CSS.
 </p>
-
-<CodeWrapper class="flex justify-center">
-  <Img
-    src="/images/examples/image-2@2x.jpg"
-    alt="sample 1"
-    class="max-w-xl shadow-xl dark:shadow-gray-800"
-  />
+<CodeWrapper>
+  <div class="h-72">
+    <Img src="/images/examples/image-2@2x.jpg" size="md" alignment="center"
+    shadow={imgShadow} alt="sample 1" />
+  </div>
+  <div class="flex flex-wrap space-x-4">
+    <Label class="w-full mb-4 font-bold">Shadow: </Label>
+  {#each shadows as shadow}
+    <Radio labelClass="w-20 my-1" name="img_shadow" bind:group={imgShadow} value={shadow}>{shadow}</Radio>
+  {/each}
+  </div>
 </CodeWrapper>
+<HighlightCompo code={modules['./md/image-shadow.md'] as string} />
 
 <H2>Retina-ready</H2>
-
 <p>
   Use the srcset attribute to set Retina-ready images with double resolution.
 </p>
-
 <CodeWrapper class="flex justify-center">
   <Img
     srcset="/images/examples/image-1.jpg 1x, /images/examples/image-1@2x.jpg 2x"
@@ -121,12 +112,11 @@
     class="w-full max-w-xl rounded-lg"
   />
 </CodeWrapper>
+<HighlightCompo code={modules['./md/retina-ready.md'] as string} />
 
 <H2>Image card</H2>
-
-Use this example to make the image a card item with a link and a short text
-description.
-
+<p>Use this example to make the image a card item with a link and a short text
+description.</p>
 <CodeWrapper class="flex justify-center">
   <Img
     src="/images/examples/content-gallery-3.png"
@@ -137,113 +127,58 @@ description.
     caption="Do you want to get notified when a new component is added to Flowbite?"
   />
 </CodeWrapper>
+<HighlightCompo code={modules['./md/image-card.md'] as string} />
 
 <H2>Image effects</H2>
-
-Use image effects such as grayscale or blur to change the appearances of the
-image when being hovered.
-
-<H3>Grayscale</H3>
-
-Use the filter option and apply a grayscale to the image element using the
-grayscale class.
-
-<CodeWrapper class="flex justify-center">
-  <Img
-    src="/images/examples/content-gallery-3.png"
-    alt="My gallery"
-    class="max-w-lg cursor-pointer rounded-lg grayscale filter transition-all duration-300 hover:grayscale-0"
-  />
+<p>
+  Use image effects such as grayscale or blur to change the appearances of the
+  image when being hovered.
+</p>
+<CodeWrapper>
+  <div class="h-80">
+    <Img src="/images/examples/content-gallery-3.png" size="sm" alignment="center"
+    effect={imgEffect} alt="sample 1" />
+  </div>
+  <div class="flex flex-wrap space-x-4">
+    <Label class="w-full mb-4 font-bold">Alignment: </Label>
+  {#each effects as effect}
+    <Radio labelClass="w-24 my-1" name="img_effect" bind:group={imgEffect} value={effect}>{effect}</Radio>
+  {/each}
+  </div>
 </CodeWrapper>
-
-<H3>Blur</H3>
-
-Apply a blur by using the blur-size utility class from Tailwind CSS to an image
-component.
-
-<CodeWrapper class="flex justify-center">
-  <Img
-    src="/images/examples/content-gallery-3.png"
-    alt="My gallery"
-    class="max-w-lg rounded-lg blur-sm transition-all duration-300 hover:blur-none"
-  />
-</CodeWrapper>
+<HighlightCompo code={modules['./md/image-effects.md'] as string} />
 
 <H2>Alignment</H2>
-
-Align the image component to the left, center or right side of the document page
-using margin styles.
-
-<H3>Left</H3>
-
-By default, the image component will be aligned to the left side of the page.
-
+<p>
+  Align the image component to the left, center or right side of the document page using the `alignment` props.
+</p>
 <CodeWrapper>
-  <Img src="/images/examples/image-1@2x.jpg" class="max-w-lg" alt="sample 1" />
+  <div class="h-72">
+    <Img src="/images/examples/image-1@2x.jpg" size="md" alignment={imgAlignment} alt="sample 1" />
+  </div>
+  <div class="flex flex-wrap space-x-4">
+    <Label class="w-full mb-4 font-bold">Alignment: </Label>
+  {#each alignments as alignment}
+    <Radio labelClass="w-20 my-1" name="img_alignment" bind:group={imgAlignment} value={alignment}>{alignment}</Radio>
+  {/each}
+  </div>
 </CodeWrapper>
-
-<H3>Center</H3>
-
-Horizontally align the image to the center of the page using the `class` class.
-
-<CodeWrapper>
-  <Img
-    src="/images/examples/image-1@2x.jpg"
-    class="mx-auto max-w-lg"
-    alt="sample 1"
-  />
-</CodeWrapper>
-
-<H3>Right</H3>
-
-Use the `ms-auto` class to align the image to the right side of the page.
-
-<CodeWrapper>
-  <Img
-    src="/images/examples/image-1@2x.jpg"
-    class="ms-auto max-w-lg"
-    alt="sample 1"
-  />
-</CodeWrapper>
+<HighlightCompo code={modules['./md/alignment.md'] as string} />
 
 <H2>Sizes</H2>
+<p>
+  Set the size of the image using the `size` props or the `class`.
+</p>
 
-Set the size of the image using the w-size and h-size or max-w-size utility
-classes from Tailwind CSS to set the width and height of the element.
-
-<H3>Small</H3>
-
-Use the `max-w-xs` class to set a small size of the image.
-
-<CodeWrapper class="flex justify-center">
-  <Img src="/images/examples/image-1@2x.jpg" class="max-w-xs" alt="sample 1" />
+<CodeWrapper class="overflow-scroll">
+  <div class="h-96">
+    <Img src="/images/examples/image-1@2x.jpg" size={imgSize} alt="sample 1" />
+  </div>
+  <div class="flex flex-wrap space-x-4">
+    <Label class="w-full mb-4 font-bold">Size:</Label>
+  {#each sizes as size}
+    <Radio labelClass="w-12 my-1" name="img_size" bind:group={imgSize} value={size}>{size}</Radio>
+  {/each}
+  </div>
 </CodeWrapper>
-
-<H3>Medium</H3>
-
-Use the `max-w-md` class to set a medium size of the image.
-
-<CodeWrapper class="flex justify-center">
-  <Img src="/images/examples/image-1@2x.jpg" class="max-w-md" alt="sample 1" />
-</CodeWrapper>
-
-<H3>Large</H3>
-
-Use the max-w-xl class to set a large size of the image.
-
-<CodeWrapper class="flex justify-center">
-  <Img src="/images/examples/image-1@2x.jpg" class="max-w-xl" alt="sample 1" />
-</CodeWrapper>
-
-<H3>Full width</H3>
-
-Use the max-w-full class to set the full width of the image as long as it
-doesn’t become larger than the original source.
-
-<CodeWrapper class="flex justify-center">
-  <Img
-    src="/images/examples/image-1@2x.jpg"
-    class="max-w-full"
-    alt="sample 1"
-  />
-</CodeWrapper>
+<HighlightCompo code={modules['./md/size.md'] as string} />
