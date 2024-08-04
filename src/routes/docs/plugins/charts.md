@@ -1018,16 +1018,13 @@ To create a radial chart with multiple data entries you need to set the type: "r
   let intervalId: number;
   
   function toggleData() {
-    options = {
-      ...options,
-      series: [
-        {
-          ...options.series[0],
-          data: options.series[0].data === initialData ? alternateData : initialData
-        }
-      ]
-    };
-    chart.updateOptions(options);
+    const series = [
+      {
+        ...options.series[0],
+        data: options.series[0].data === initialData ? alternateData : initialData
+      }
+    ];
+    chart.updateSeries(series);
   }
   
   onMount(() => {
