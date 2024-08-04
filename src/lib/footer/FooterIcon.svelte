@@ -1,14 +1,5 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import { twMerge } from 'tailwind-merge';
-  import type { HTMLAnchorAttributes } from 'svelte/elements';
-
-  interface Props extends HTMLAnchorAttributes {
-    children: Snippet;
-    href?: string | undefined;
-    ariaLabel?: string | undefined;
-    class?: string | undefined;
-  }
+  import { type FooterIconProps as Props, iconVariants } from '.';
 
   let {
     children,
@@ -17,10 +8,8 @@
     class: aClass,
     ...attributes
   }: Props = $props();
-  const aCls: string = twMerge(
-    'text-gray-500 hover:text-gray-900 dark:hover:text-white',
-    aClass
-  );
+
+  const aCls = $derived(iconVariants({ class: aClass }));
 </script>
 
 {#if href}

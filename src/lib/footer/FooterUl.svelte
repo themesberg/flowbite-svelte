@@ -1,19 +1,12 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import { twMerge } from 'tailwind-merge';
-  import type { HTMLAttributes } from 'svelte/elements';
-
-  interface Props extends HTMLAttributes<HTMLUListElement> {
-    children: Snippet;
-    class?: string | undefined;
-  }
-
+  import { type FooterUlProps as Props, ulVariants } from './';
   let { class: ulClass, children, ...attributes }: Props = $props();
+  const base = $derived(ulVariants({ class: ulClass }));
 </script>
 
 <ul
   {...attributes}
-  class={twMerge('text-gray-600 dark:text-gray-400', ulClass)}
+  class={base}
 >
   {@render children()}
 </ul>

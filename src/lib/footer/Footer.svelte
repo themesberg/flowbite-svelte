@@ -2,29 +2,22 @@
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import type { HTMLAttributes } from 'svelte/elements';
+  import { type FooterProps as Props, footerVariants } from '.'
 
-  interface Props extends HTMLAttributes<HTMLElement> {
-    children: Snippet;
-    footerType?: 'sitemap' | 'default' | 'logo' | 'socialmedia' | undefined;
-    class?: string | undefined;
-  }
+  // interface Props extends HTMLAttributes<HTMLElement> {
+  //   children: Snippet;
+  //   footerType?: 'sitemap' | 'default' | 'logo' | 'socialmedia' | undefined;
+  //   class?: string | undefined;
+  // }
 
   let {
     children,
     footerType = 'default',
-    class: footerclass,
+    class: className,
     ...attributes
   }: Props = $props();
 
-  let footerCls = twMerge(
-    footerType === 'sitemap' && 'bg-gray-800',
-    footerType === 'socialmedia' && 'p-4 bg-white sm:p-6 dark:bg-gray-800',
-    footerType === 'logo' &&
-      'p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-800',
-    footerType === 'default' &&
-      'p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800',
-    footerclass
-  );
+  const footerCls = $derived(footerVariants({footerType, className}));
 </script>
 
 <footer {...attributes} class={footerCls}>

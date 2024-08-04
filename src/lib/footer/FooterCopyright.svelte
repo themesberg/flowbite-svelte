@@ -1,16 +1,6 @@
 <script lang="ts">
-  import type { HTMLAnchorAttributes } from 'svelte/elements';
+  import { type FooterCopyrightProps as Props, copyrightVariants } from '.';
 
-  interface Props extends HTMLAnchorAttributes {
-    spanClass?: string | undefined;
-    aClass?: string | undefined;
-    href?: string | undefined;
-    by?: string | undefined;
-    copyrightMessage?: string | undefined;
-    year?: number | undefined;
-  }
-
-  import { twMerge } from 'tailwind-merge';
   let {
     spanClass,
     aClass,
@@ -22,22 +12,18 @@
   }: Props = $props();
 
   if (!year) year = new Date().getFullYear();
-
-  let spanCls: string = twMerge(
-    'block text-sm text-gray-500 sm:text-center dark:text-gray-400',
-    spanClass
-  );
-  let aCls: string = twMerge('hover:underline', aClass);
+ 
+  const { base, link, bySpan } = $derived(copyrightVariants());
 </script>
 
-<span class={spanCls}>
+<span class={base({ class: spanClass })}>
   &copy; {year}
   {#if href}
-    <a {...attributes} {href} class={aCls}>
+    <a {...attributes} {href} class={link({ class: aClass })}>
       {by}
     </a>
   {:else}
-    <span class="ms-1">{by}</span>
+    <span class={bySpan()}>{by}</span>
   {/if}
   {copyrightMessage}
 </span>

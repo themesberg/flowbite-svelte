@@ -28,13 +28,10 @@
 </script>
 
 <H1>Footer</H1>
-
 <H2>Setup</H2>
-
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default footer</H2>
-
 <CodeWrapper>
   <Footer class="shadow-none" footerType="logo">
     <div class="sm:flex sm:items-center sm:justify-between">
@@ -135,22 +132,22 @@
       >
         <FooterIcon href="/">
           <FacebookSolid
-            class="h-4 w-4 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
+            class="h-5 w-5 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
           />
         </FooterIcon>
         <FooterIcon href="/">
           <DiscordSolid
-            class="h-4 w-4 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
+            class="h-5 w-5 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
           />
         </FooterIcon>
         <FooterIcon href="/">
           <TwitterSolid
-            class="h-4 w-4 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
+            class="h-5 w-5 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
           />
         </FooterIcon>
         <FooterIcon href="/">
           <GithubSolid
-            class="h-4 w-4 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
+            class="h-5 w-5 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
           />
         </FooterIcon>
       </div>
@@ -221,22 +218,22 @@
       >
         <FooterIcon href="/">
           <FacebookSolid
-            class="h-4 w-4 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
+            class="h-5 w-5 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
           />
         </FooterIcon>
         <FooterIcon href="/">
           <DiscordSolid
-            class="h-4 w-4 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
+            class="h-5 w-5 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
           />
         </FooterIcon>
         <FooterIcon href="/">
           <TwitterSolid
-            class="h-4 w-4 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
+            class="h-5 w-5 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
           />
         </FooterIcon>
         <FooterIcon href="/">
           <GithubSolid
-            class="h-4 w-4 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
+            class="h-5 w-5 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
           />
         </FooterIcon>
       </div>
@@ -248,14 +245,14 @@
 
 <H2>Sticky footer</H2>
 
-<CodeWrapper class="h-96">
+<CodeWrapper class="p-0">
   <div class="relative">
-    <div style="height:300px;" class="overflow-scroll pb-16">
+    <div style="height:300px;" class="overflow-scroll pb-16 p-6">
       <Skeleton class="my-8" />
       <ImagePlaceholder class="my-8" />
       <TextPlaceholder class="my-8" />
     </div>
-    <Footer class="absolute bottom-0 start-0 z-20 w-full">
+    <Footer footerType="sticky" class="absolute">
       <FooterCopyright href="/" by="Flowbite™" />
       <FooterUl
         class="mt-3 flex flex-wrap items-center text-sm text-gray-500 sm:mt-0 dark:text-gray-400"

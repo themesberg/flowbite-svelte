@@ -1,18 +1,6 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import { twMerge } from 'tailwind-merge';
-  import type { HTMLAnchorAttributes } from 'svelte/elements';
+  import { type FooterBrandProps as Props, footerBrandVariants } from '.';
 
-  interface Props extends HTMLAnchorAttributes {
-    children?: Snippet;
-    aClass?: string | undefined;
-    spanClass?: string | undefined;
-    imgClass?: string | undefined;
-    href?: string | undefined;
-    src?: string | undefined;
-    alt?: string | undefined;
-    name?: string | undefined;
-  }
   let {
     children,
     aClass,
@@ -25,28 +13,23 @@
     ...attributes
   }: Props = $props();
 
-  let aCls: string = twMerge('flex items-center', aClass);
-  let spanCls: string = twMerge(
-    'self-center text-2xl font-semibold whitespace-nowrap dark:text-white',
-    spanClass
-  );
-  let imgCls: string = twMerge('me-3 h-8', imgClass);
+  const { base, span, img } = $derived(footerBrandVariants());
 </script>
 
 {#if href}
-  <a {...attributes} {href} class={aCls}>
+  <a {...attributes} {href} class={base({ class: aClass })}>
     {#if src}
-      <img {src} class={imgCls} {alt} />
+      <img {src} class={img({ class: imgClass })} {alt} />
     {/if}
     {#if name}
-      <span class={spanCls}>{name}</span>
+      <span class={span({ class: spanClass })}>{name}</span>
     {/if}
     {#if children}
       {@render children()}
     {/if}
   </a>
 {:else}
-  <img {src} class={imgCls} {alt} />
+  <img {src} class={img({ class: imgClass })} {alt} />
 {/if}
 
 <!--
