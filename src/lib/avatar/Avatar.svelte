@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Indicator } from '$lib';
   import { twMerge } from 'tailwind-merge';
-  import { avatarVariants, type AvatarProps as Props } from './index';
+  import { avatarVariants, type AvatarProps as Props } from '.';
 
   let {
     children,

@@ -1,6 +1,6 @@
 <script lang="ts">
   // import { cn } from "../utils";
-  import { alertVariants, type AlertProps as Props } from './index';
+  import { alertVariants, type AlertProps as Props } from '.';
   import { CloseButton } from '$lib';
   import { fade } from 'svelte/transition';
 

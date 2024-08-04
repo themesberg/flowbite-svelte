@@ -1,33 +1,6 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import type {
-    drawerTransitionParamTypes,
-    drawerTransitionTypes
-  } from '../types';
-  import { twMerge } from 'tailwind-merge';
   import { fly, slide, blur, fade } from 'svelte/transition';
-  import type { HTMLAttributes } from 'svelte/elements';
-
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    children: Snippet;
-    drawerStatus: boolean;
-    toggleDrawer?: () => void;
-    closeDrawer?: () => void;
-    activateClickOutside?: boolean;
-    position?: 'fixed' | 'absolute';
-    leftOffset?: string | undefined;
-    rightOffset?: string | undefined;
-    topOffset?: string | undefined;
-    bottomOffset?: string | undefined;
-    width?: string | undefined | null;
-    backdrop?: boolean;
-    bgColor?: string | undefined;
-    bgOpacity?: string | undefined;
-    placement?: 'left' | 'right' | 'top' | 'bottom';
-    class?: string | undefined;
-    transitionParams: drawerTransitionParamTypes;
-    transitionType?: drawerTransitionTypes;
-  }
+  import { type DrawerProps as Props, drawerVariants, backdropVariants  } from '.';
 
   let {
     children,
@@ -35,17 +8,12 @@
     toggleDrawer,
     closeDrawer,
     activateClickOutside = true,
-    position = 'fixed',
-    leftOffset = 'inset-y-0 start-0',
-    rightOffset = 'inset-y-0 end-0',
-    topOffset = 'inset-x-0 top-0',
-    bottomOffset = 'inset-x-0 bottom-0',
-    width = 'w-80',
+    position,
+    width,
     backdrop = true,
-    bgColor = 'bg-gray-900',
-    bgOpacity = 'bg-opacity-75',
+    backdropClass,
     placement = 'left',
-    class: className = '',
+    class: divClass,
     transitionParams,
     transitionType = 'fly',
     ...attributes
@@ -64,36 +32,21 @@
     }
   }
 
-  const placements = {
-    left: leftOffset,
-    right: rightOffset,
-    top: topOffset,
-    bottom: bottomOffset
-  };
-
-  let backdropDivClass = twMerge(
-    'fixed top-0 start-0 z-50 w-full h-full',
-    backdrop && bgColor,
-    backdrop && bgOpacity
-  );
-  let divCls = twMerge(
-    'overflow-y-auto z-50 p-4 bg-white dark:bg-gray-800',
-    width,
-    position,
-    placements[placement],
-    className
-  );
+  const base = $derived(drawerVariants({
+    position, placement, width, class: divClass
+  }))
+  const backdropCls = $derived(backdropVariants({ backdrop, activateClickOutside, class: backdropClass }));
 </script>
 
 {#if drawerStatus}
   {#if backdrop && activateClickOutside}
     <div
       role="presentation"
-      class={backdropDivClass}
+      class={backdropCls}
       onclick={closeDrawer}
     ></div>
   {:else if backdrop && !activateClickOutside}
-    <div role="presentation" class={backdropDivClass}></div>
+    <div role="presentation" class={backdropCls}></div>
   {:else if !backdrop && activateClickOutside}
     <div
       role="presentation"
@@ -108,7 +61,7 @@
   {/if}
   <div
     {...attributes}
-    class={divCls}
+    class={base}
     transition:multiple={transitionParams}
     tabindex="-1"
   >

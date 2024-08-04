@@ -107,7 +107,7 @@
 </header>
 
 <Drawer
-  width="w-64"
+  class="w-72"
   drawerStatus={navDrawerStatus}
   closeDrawer={closeNavDrawer}
   {transitionParams}

@@ -77,7 +77,8 @@
     },
     drawer: {
       checked: true,
-      problems: 'Contact form, Form elements'
+      problems: 'Contact form, Form elements',
+      notes: 'Variants checked'
     },
     dropdown: {
       checked: true,

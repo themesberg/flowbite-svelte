@@ -22,7 +22,7 @@
     <Button onclick={drawerK.toggle}>Show drawer</Button>
 </div>
 
-<Drawer leftOffset="top-16 h-screen start-0" drawerStatus={drawerStatusK} closeDrawer={closeDrawerK}  {transitionParams}>
+<Drawer class="top-16 h-screen start-0" drawerStatus={drawerStatusK} closeDrawer={closeDrawerK}  {transitionParams}>
     <div class="flex items-center">
         <h5 id="drawer-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
           <InfoCircleSolid class="w-4 h-4 me-2.5" />Info

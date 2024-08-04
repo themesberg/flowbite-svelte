@@ -446,7 +446,7 @@
   <Drawer
     placement="top"
     transitionType="fly"
-    width="w-full"
+    width="full"
     drawerStatus={drawerStatusE}
     closeDrawer={closeDrawerE}
     transitionParams={transitionParamsTop}
@@ -512,7 +512,7 @@
   <Drawer
     placement="bottom"
     transitionType="fly"
-    width="w-full"
+    width="full"
     drawerStatus={drawerStatusF}
     closeDrawer={closeDrawerF}
     transitionParams={transitionParamsBottom}
@@ -709,7 +709,7 @@
   </div>
 
   <Drawer
-    leftOffset="top-16 h-screen start-0"
+    class="top-16 h-screen start-0"
     drawerStatus={drawerStatusK}
     closeDrawer={closeDrawerK}
     {transitionParams}
