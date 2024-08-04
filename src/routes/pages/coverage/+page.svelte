@@ -248,10 +248,10 @@
       problems: 'Paragraph popover',
       notes: 'Variants, reactive examples'
     },
-    text: {
+    span: {
       checked: true,
-      problems: 'Opacity',
-      notes: 'Variants'
+      // problems: 'Opacity',
+      notes: 'Variants, reactive examples'
     }
   };
 

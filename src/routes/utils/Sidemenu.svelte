@@ -112,7 +112,7 @@
       <SidebarItem label="Link" href="/typography/link" />
       <SidebarItem label="List" href="/typography/list" />
       <SidebarItem label="Paragraph" href="/typography/paragraph" />
-      <SidebarItem label="Text" href="/typography/text" />
+      <SidebarItem label="Span" href="/typography/span" />
     </SidebarDropdownWrapper>
     <SidebarDropdownWrapper label="Plugins" svgClass="me-4" btnClass="p-1">
       <SidebarItem label="Chart" href="/plugins/chart" />

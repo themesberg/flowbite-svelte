@@ -469,8 +469,8 @@
         />
         <SidebarItem
           onclick={closeNavDrawer}
-          label="Text"
-          href="/typography/text"
+          label="Span"
+          href="/typography/span"
         />
       </SidebarDropdownWrapper>
       <SidebarDropdownWrapper
