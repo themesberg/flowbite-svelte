@@ -1,20 +1,7 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
   import { setContext } from 'svelte';
-  import { twMerge } from 'tailwind-merge';
-  import type { ListGroupItemType } from '../types';
   import ListgroupItem from './ListgroupItem.svelte';
-
-  interface Props {
-    children?: Snippet;
-    items?: ListGroupItemType[] | string[];
-    active?: boolean;
-    onclick?: () => void;
-    rounded?: boolean;
-    border?: boolean;
-    defaultClass?: string | undefined | null;
-    class?: string | undefined | null;
-  }
+  import { type ListgroupProps as Props, listgroupVariants } from '.';
 
   let {
     children,
@@ -23,28 +10,15 @@
     onclick,
     rounded = true,
     border = true,
-    defaultClass = 'divide-y divide-gray-200 dark:divide-gray-600',
     class: className,
     ...attributes
   }: Props = $props();
-
-  const bgColor = 'bg-white dark:bg-gray-800';
-  const textColor = 'text-gray-500 dark:text-gray-400';
-  const borderColor =
-    'border-gray-200 dark:border-gray-700 divide-gray-200 dark:divide-gray-700';
-  const divClass = twMerge(
-    bgColor,
-    textColor,
-    rounded && 'rounded-lg',
-    border && 'border',
-    borderColor
-  );
-  const defaultCls: string = twMerge(defaultClass, divClass, className);
+  const base = $derived(listgroupVariants({ rounded, border, className}));
   let tag = active ? 'div' : 'ul';
   setContext('active', active);
 </script>
 
-<svelte:element this={tag} {...attributes} class={defaultCls}>
+<svelte:element this={tag} {...attributes} class={base}>
   {#if items}
     {#each items as item}
       {#if typeof item === 'string'}

@@ -1,28 +1,9 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
   import { getContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
-  import type { Component } from 'svelte';
-  import type { HTMLAnchorAttributes } from 'svelte/elements';
-
-  interface Props extends HTMLAnchorAttributes {
-    children: Snippet;
-    onclick?: () => void;
-    active?: boolean;
-    current?: boolean;
-    disabled?: boolean;
-    name?: string | undefined | null;
-    icon?: Component;
-    href?: string | undefined | null;
-    currentClass?: string | undefined | null;
-    normalClass?: string | undefined | null;
-    disabledClass?: string | undefined | null;
-    focusClass?: string | undefined | null;
-    hoverClass?: string | undefined | null;
-    liClass?: string | undefined | null;
-    class?: string | undefined | null;
-  }
-
+  import { type VariantProps, tv } from 'tailwind-variants';
+  import { type ListgroupItemProps as Props, listGroupItemVariants } from '.';
+  
   let {
     children,
     onclick,
@@ -44,26 +25,33 @@
 
   active = getContext('active');
 
-  const states = {
-    current: currentClass,
-    normal: normalClass,
-    disabled: disabledClass
-  };
-
-  let state: 'disabled' | 'current' | 'normal' = disabled
-    ? 'disabled'
-    : current
-      ? 'current'
-      : 'normal';
-
-  let itemClass: string = twMerge(
+  const itemClass = listGroupItemVariants({ 
+  state: disabled ? 'disabled' : current ? 'current' : 'normal',
+  active,
+  class: twMerge(
     liClass,
-    states[state],
-    active && state === 'disabled' && 'cursor-not-allowed',
-    active && state === 'normal' && hoverClass,
-    active && state === 'normal' && focusClass,
+    disabled ? disabledClass : current ? currentClass : normalClass,
     className
-  );
+  )
+});
+
+const buttonClass = tv({
+  base: 'flex items-center text-left',
+  extend: listGroupItemVariants,
+})({ 
+  state: disabled ? 'disabled' : current ? 'current' : 'normal',
+  active,
+  class: itemClass
+});
+
+const linkClass = tv({
+  base: 'block',
+  extend: listGroupItemVariants,
+})({ 
+  state: disabled ? 'disabled' : current ? 'current' : 'normal',
+  active,
+  class: itemClass
+});
 </script>
 
 {#if !active && children}
@@ -75,7 +63,7 @@
     {...attributes}
     {onclick}
     {href}
-    class="block {itemClass}"
+    class={linkClass}
     aria-current={current}
   >
     {name}
@@ -83,7 +71,7 @@
 {:else}
   <button
     {onclick}
-    class="flex items-center text-left {itemClass}"
+    class={buttonClass}
     {disabled}
     aria-current={current}
   >

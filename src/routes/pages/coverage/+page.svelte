@@ -87,7 +87,7 @@
     },
     footer: {
       checked: true,
-      notes: 'Updated: class names'
+      notes: 'Variants checked'
     },
     gallery: {
       checked: true,

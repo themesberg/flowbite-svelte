@@ -74,7 +74,7 @@
 <H2>Default list group</H2>
 
 <CodeWrapper class="flex justify-center">
-  <Listgroup items={simpleList} defaultClass="w-48" />
+  <Listgroup items={simpleList} class="w-48" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/default-list-group.md'] as string} />
@@ -82,21 +82,21 @@
 <H2>List group with links</H2>
 
 <CodeWrapper class="flex justify-center">
-  <Listgroup active items={links} defaultClass="w-48" />
+  <Listgroup active items={links} class="w-48" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/list-group-with-links.md'] as string} />
 
 <H2>List group with buttons</H2>
 <CodeWrapper class="flex justify-center">
-  <Listgroup active items={buttons} defaultClass="w-48" onclick={handleClick} />
+  <Listgroup active items={buttons} class="w-48" onclick={handleClick} />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/list-group-with-buttons.md'] as string} />
 
 <H2>List group with icons</H2>
 <CodeWrapper class="flex justify-center">
-  <Listgroup active items={icons} defaultClass="w-48" onclick={handleClick2} />
+  <Listgroup active items={icons} class="w-48" onclick={handleClick2} />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/list-group-with-icons.md'] as string} />
