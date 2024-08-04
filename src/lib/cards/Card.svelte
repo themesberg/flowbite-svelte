@@ -8,7 +8,7 @@
     children,
     href,
     horizontal = false,
-    shadow = true,
+    shadow = 'md',
     reverse = false,
     img,
     padding = 'lg',

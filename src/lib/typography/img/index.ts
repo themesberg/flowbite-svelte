@@ -15,7 +15,7 @@ const imgVariants = tv({
       md: { base: 'max-w-md' },
       lg: { base: 'max-w-lg' },
       xl: { base: 'max-w-xl' },
-      xxl: { base: 'max-w-2xl' },
+      '2xl': { base: 'max-w-2xl' },
       full: { base: 'max-w-full' }
     },
     alignment: {
@@ -50,7 +50,7 @@ const imgVariants = tv({
       md: { base: 'shadow-md' },
       lg: { base: 'shadow-lg' },
       xl: { base: 'shadow-xl' },
-      xxl: { base: 'shadow-2xl' },
+      '2xl': { base: 'shadow-2xl' },
       inner: { base: 'shadow-inner' },
       none: { base: 'shadow-none' }
     },
@@ -60,8 +60,8 @@ const imgVariants = tv({
       md: { base: 'rounded-md' },
       lg: { base: 'rounded-lg' },
       xl: { base: 'rounded-xl' },
-      xxl: { base: 'rounded-2xl' },
-      xxxl: { base: 'rounded-3xl' },
+      '2xl': { base: 'rounded-2xl' },
+      '3xl': { base: 'rounded-3xl' },
       full: { base: 'rounded-full' },
       none: { base: 'rounded-none' }
     }

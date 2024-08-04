@@ -22,7 +22,7 @@
     eager: true
   });
   // size
-  const skeletonSizes = ['sm', 'md', 'lg', 'xl', 'xxl'];
+  const skeletonSizes = ['sm', 'md', 'lg', 'xl', '2xl'];
   let skeletonSize: Skeleton['size'] = $state('sm');
   const imageSizes = ['sm', 'md', 'lg'];
   let imagePlaceholderSize: ImagePlaceholder['size'] = $state('md');

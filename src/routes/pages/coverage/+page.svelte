@@ -87,9 +87,6 @@
       checked: true,
       notes: 'Updated: class names'
     },
-    forms: {
-      checked: false
-    },
     gallery: {
       checked: true,
       notes: 'Variants checked'
@@ -160,9 +157,6 @@
       problems: 'Icons, Autohide example'
     },
     tooltip: {
-      checked: false
-    },
-    typography: {
       checked: false
     },
     video: {

@@ -18,15 +18,22 @@ const cardVariants = tv({
       xl: { base: 'max-w-screen-xl' }
     },
     shadow: {
-      true: { base: 'shadow-md' }
+      sm: { base: 'shadow-md' },
+      normal: { base: 'shadow' },
+      md: { base: 'shadow-md' },
+      lg: { base: 'shadow-lg' },
+      xl: { base: 'shadow-xl' },
+      '2xl': { base: 'shadow-2xl' },
+      inner: { base: 'shadow-inner' },
+      none: { base: 'shadow-none' }
     },
     padding: {
       none: { content: 'p-0' },
       xs: { content: 'p-2' },
-      sm: { content: 'p-4 sm:p-6 md:p-8' },
-      md: { content: 'p-4 sm:p-5' },
-      lg: { content: 'p-4 sm:p-6' },
-      xl: { content: 'p-4 sm:p-8' }
+      sm: { content: 'p-4 md:p-6' },
+      md: { content: 'p-4 sm:p-5 md:p-7' },
+      lg: { content: 'p-4 sm:p-6 md:p-8' },
+      xl: { content: 'p-4 sm:p-8 md:p-10' }
     },
     horizontal: {
       true: {
@@ -60,7 +67,7 @@ const cardVariants = tv({
   ],
   defaultVariants: {
     size: 'sm',
-    shadow: true,
+    shadow: 'normal',
     padding: 'lg',
     horizontal: false,
     reverse: false
@@ -70,6 +77,7 @@ const cardVariants = tv({
 // type CardSizeType = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 type CardSizeType = VariantProps<typeof cardVariants>['size'];
 type PaddingType = VariantProps<typeof cardVariants>['padding'];
+type ShadowType = VariantProps<typeof cardVariants>['shadow'];
 
 type ImgType = {
   src: string | undefined | null;
@@ -81,7 +89,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
   href?: string | undefined | null;
   horizontal?: boolean;
   target?: string | undefined | null;
-  shadow?: boolean;
+  shadow?: ShadowType;
   reverse?: boolean;
   img?: ImgType;
   padding?: PaddingType;

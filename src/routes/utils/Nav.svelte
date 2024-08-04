@@ -255,11 +255,6 @@
         />
         <SidebarItem
           onclick={closeNavDrawer}
-          label="Forms"
-          href="/components/forms"
-        />
-        <SidebarItem
-          onclick={closeNavDrawer}
           label="Gallery"
           href="/components/gallery"
         />
@@ -357,11 +352,6 @@
           onclick={closeNavDrawer}
           label="Tooltip"
           href="/components/tooltip"
-        />
-        <SidebarItem
-          onclick={closeNavDrawer}
-          label="Typography"
-          href="/components/typography"
         />
         <SidebarItem
           onclick={closeNavDrawer}

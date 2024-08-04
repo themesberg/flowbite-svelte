@@ -11,7 +11,7 @@
     eager: true
   });
 
-  const sizes = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'full'];
+  const sizes = ['xs', 'sm', 'md', 'lg', 'xl', '2xl', 'full'];
   let imgSize: Img['size'] = $state('md');
   const alignments = ['left', 'center', 'right'];
   let imgAlignment: Img['alignment'] = $state('center');
@@ -32,7 +32,7 @@
     'md',
     'lg',
     'xl',
-    'xxl',
+    '2xl',
     'inner',
     'none'
   ];
@@ -44,8 +44,8 @@
     'md',
     'lg',
     'xl',
-    'xxl',
-    'xxxl',
+    '2xl',
+    '3xl',
     'full'
   ];
   let imgRounded: Img['rounded'] = $state('full');

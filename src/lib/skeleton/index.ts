@@ -24,7 +24,7 @@ const cardPlaceholderVariants = tv({
       md: { base: 'max-w-md' },
       lg: { base: 'max-w-lg' },
       xl: { base: 'max-w-xl' },
-      xxl: { base: 'max-w-2xl' }
+      '2xl': { base: 'max-w-2xl' }
     }
   },
   defaultVariants: {
@@ -171,7 +171,7 @@ const skeletonVariants = tv({
       xl: {
         wrapper: 'max-w-xl'
       },
-      xxl: {
+      '2xl': {
         wrapper: 'max-w-2xl'
       }
     }
@@ -212,7 +212,7 @@ const textPlaceholderVariants = tv({
       md: { baseWrapper: 'max-w-md' },
       lg: { baseWrapper: 'max-w-lg' },
       xl: { baseWrapper: 'max-w-xl' },
-      xxl: { baseWrapper: 'max-w-2xl' }
+      '2xl': { baseWrapper: 'max-w-2xl' }
     }
   }
 });
@@ -232,7 +232,7 @@ const videoPlaceholderVariants = tv({
       md: 'max-w-md',
       lg: 'max-w-lg',
       xl: 'max-w-xl',
-      xxl: 'max-w-2xl'
+      '2xl': 'max-w-2xl'
     }
   }
 });

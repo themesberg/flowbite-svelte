@@ -52,7 +52,7 @@
 
 <H2>Size and weight</H2>
 <CodeWrapper>
-  <div class="h-[500px] overflow-scroll">
+  <div class="h-[300px] overflow-scroll">
   <P 
     weight={pWeight}
     size={pSize}
@@ -133,8 +133,7 @@
     color="text-gray-500 dark:text-gray-400"
     >Deliver great service experiences fast - without the complexity of
     traditional ITSM solutions.Accelerate critical development work, eliminate
-    toil, and deploy changes with ease, with a complete audit trail for every
-    change.
+    toil, and deploy changes with ease.
     </P>
   </div>
   <div class="flex flex-wrap space-x-4">
@@ -164,7 +163,7 @@
 
 <H2>Style and First letter</H2>
 <CodeWrapper>
-  <div class="h-[130px] overflow-scroll">
+  <div class="h-[200px] overflow-scroll">
     <P 
       style={pStyle}
       firstUpper={pFirstupper}
@@ -192,7 +191,7 @@
 
 <H2>Justify</H2>
 <CodeWrapper>
-  <div class="h-[100px] overflow-scroll">
+  <div class="h-[200px] overflow-scroll">
     <P 
       justify={pJustify}
       color="text-gray-500 dark:text-gray-400"

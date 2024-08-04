@@ -102,7 +102,7 @@
   >Track work across the enterprise through an open, collaborative platform.</Span
   >
 </P>
-<div class="flex flex-wrap space-x-4 mt-4">
+<div class="flex flex-wrap space-x-4 mt-8">
   <Label class="mb-4 w-full font-bold">Decoration:</Label>
   {#each decorations as decoration}
     <Radio

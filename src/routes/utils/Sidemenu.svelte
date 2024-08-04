@@ -58,7 +58,6 @@
       <SidebarItem label="Drawer" href="/components/drawer" />
       <SidebarItem label="Dropdown" href="/components/dropdown" />
       <SidebarItem label="Footer" href="/components/footer" />
-      <SidebarItem label="Forms" href="/components/forms" />
       <SidebarItem label="Gallery" href="/components/gallery" />
       <SidebarItem label="Indicators" href="/components/indicators" />
       <SidebarItem label="Kbd" href="/components/kbd" />
@@ -79,7 +78,6 @@
       <SidebarItem label="Timeline" href="/components/timeline" />
       <SidebarItem label="Toast" href="/components/toast" />
       <SidebarItem label="Tooltip" href="/components/tooltip" />
-      <SidebarItem label="Typography" href="/components/typography" />
       <SidebarItem label="Video" href="/components/video" />
     </SidebarDropdownWrapper>
     <SidebarDropdownWrapper
