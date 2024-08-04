@@ -60,7 +60,8 @@
       notes: 'Updated: class names'
     },
     card: {
-      checked: true
+      checked: true,
+      notes: 'Variants, reactive examples'
       // problems: 'Shadow,User profile card, Card with form inputs, E-commerce card, Card with list, Pricing card, Testimonial card.'
     },
     carousel: {

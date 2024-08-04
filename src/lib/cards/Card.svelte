@@ -13,7 +13,7 @@
     img,
     padding = 'lg',
     size = 'sm',
-    class: classname,
+    class: className,
     onclick,
     ...attributes
   }: Props = $props();
@@ -33,7 +33,7 @@
 <svelte:element
   this={href ? 'a' : 'div'}
   {href}
-  class={base()}
+  class={base({ className })}
   role={href ? 'link' : 'presentation'}
   {onclick}
   {...attributes}
