@@ -93,11 +93,8 @@ type StyleType = VariantProps<typeof paragraphVariants>['style'];
 
 interface ParagraphProps extends HTMLAttributes<HTMLParagraphElement> {
   children: Snippet;
-  color?: string | undefined;
   italic?: boolean;
   firstUpper?: boolean;
-  // upperClass?: string | undefined;
-  opacity?: number | undefined;
   whitespace?: WhitespaceType;
   size?: PsizeType;
   weight?: PweightType;

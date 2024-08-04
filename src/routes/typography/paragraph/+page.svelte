@@ -26,6 +26,7 @@
   const styles = [ 'normal', 'italic' ];
   let pStyle: P['style'] = $state('normal');
   let pFirstupper: P['firstUpper'] = $state(false)
+  let pJustify: P['justify'] = $state(false);
 </script>
 
 <H1>Paragraph</H1>
@@ -187,8 +188,23 @@
     </div>
     <Button class="mt-4" onclick={() => pFirstupper = !pFirstupper}>{pFirstupper ? 'Normal' : 'Upper'}</Button>
 </CodeWrapper>
-
 <HighlightCompo code={modules['./md/first-letter.md'] as string} />
+
+<H2>Justify</H2>
+<CodeWrapper>
+  <div class="h-[100px] overflow-scroll">
+    <P 
+      justify={pJustify}
+      color="text-gray-500 dark:text-gray-400"
+      >Deliver great service experiences fast - without the complexity of
+      traditional ITSM solutions.Accelerate critical development work, eliminate
+      toil, and deploy changes with ease, with a complete audit trail for every
+      change.
+      </P>
+    </div>
+    <Button class="mt-4" onclick={() => pJustify = !pJustify}>{pJustify ? 'Normal' : 'Justify'}</Button>
+</CodeWrapper>
+<HighlightCompo code={modules['./md/justify.md'] as string} />
 
 <H2>Paragraph link</H2>
 <CodeWrapper>
@@ -200,6 +216,7 @@
     incidents, and changes.
   </P>
 </CodeWrapper>
+<HighlightCompo code={modules['./md/paragraph-link.md'] as string} />
 
 <H2>Paragraph bold</H2>
 

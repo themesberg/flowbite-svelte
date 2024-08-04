@@ -246,7 +246,7 @@
     paragraph: {
       checked: true,
       problems: 'Paragraph popover',
-      notes: 'Variants'
+      notes: 'Variants, reactive examples'
     },
     text: {
       checked: true,
