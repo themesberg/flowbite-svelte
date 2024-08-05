@@ -26,7 +26,7 @@ Use the default sidebar navigation to show a list of menu items with dropdown it
   $: activeUrl = $page.url.pathname;
 </script>
 
-<Section name="tableheader" sectionClass="bg-gray-50 dark:bg-gray-900 flex h-full py-4">
+<Section name="tableheader" sectionClass="bg-gray-50 dark:bg-gray-900 flex py-4">
   <Sidebar>
     <SidebarWrapper class="bg-white">
       <SidebarGroup>
