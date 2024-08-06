@@ -68,12 +68,15 @@
 
   const hideHandler = (ev: Event) => {
     if (activeContent) {
+      // Add a delay before hiding the floating element to account for hoverable elements. 
+      // This ensures that the floating element does not hide immediately when the mouse 
+      // moves from the reference element to the floating element.
       setTimeout(() => {
         const elements = [referenceEl, floatingEl, ...triggerEls].filter(Boolean);
         if (ev.type === 'mouseleave' && elements.some(hasHover)) return;
         if (ev.type === 'focusout' && elements.some(hasFocus)) return;
         open = false;
-      }, 100);
+      }, hoverable ? 100 : 0);
     } else open = false;
   };
 
