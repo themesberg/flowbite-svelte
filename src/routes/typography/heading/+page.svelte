@@ -88,7 +88,7 @@
 
 <CodeWrapper>
   <Heading tag="h1" class="mb-4"
-    >Get back to growth with <Span highlight='blue'>the world's #1</Span> CRM.</Heading
+    >Get back to growth with <Span highlight="blue">the world's #1</Span> CRM.</Heading
   >
   <P
     >Here at Flowbite we focus on markets where technology, innovation, and
@@ -118,7 +118,7 @@
     tag="h1"
     class="mb-4 text-3xl font-extrabold  md:text-5xl lg:text-6xl"
   >
-    <Span gradient='amberToEmerald'>Better Data</Span> Scalable AI.
+    <Span gradient="amberToEmerald">Better Data</Span> Scalable AI.
   </Heading>
   <P
     >Here at Flowbite we focus on markets where technology, innovation, and

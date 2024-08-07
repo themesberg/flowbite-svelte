@@ -709,7 +709,7 @@
   </div>
 
   <Drawer
-    class="top-16 h-screen start-0"
+    class="start-0 top-16 h-screen"
     drawerStatus={drawerStatusK}
     closeDrawer={closeDrawerK}
     {transitionParams}

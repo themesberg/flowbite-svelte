@@ -28,8 +28,4 @@ interface DrawerProps extends HTMLAttributes<HTMLDivElement> {
   transitionType?: drawerTransitionTypes;
 }
 
-export {
-  Drawer,
-  drawer,
-  type DrawerProps
-};
+export { Drawer, drawer, type DrawerProps };

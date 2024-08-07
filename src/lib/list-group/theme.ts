@@ -5,23 +5,23 @@ export const listGroup = tv({
   variants: {
     rounded: {
       true: 'rounded-lg',
-      false: '',
+      false: ''
     },
     border: {
       true: 'border border-gray-200 dark:border-gray-700',
-      false: '',
-    },
+      false: ''
+    }
   },
   compoundVariants: [
     {
       border: true,
-      class: 'divide-gray-200 dark:divide-gray-700',
-    },
+      class: 'divide-gray-200 dark:divide-gray-700'
+    }
   ],
   defaultVariants: {
     rounded: true,
-    border: true,
-  },
+    border: true
+  }
 });
 
 export const listGroupItem = tv({
@@ -30,24 +30,24 @@ export const listGroupItem = tv({
     state: {
       normal: '',
       current: '',
-      disabled: '',
+      disabled: ''
     },
     active: {
       true: '',
-      false: '',
-    },
+      false: ''
+    }
   },
   compoundVariants: [
     {
       active: true,
       state: 'disabled',
-      class: 'cursor-not-allowed',
+      class: 'cursor-not-allowed'
     },
     {
       active: true,
       state: 'normal',
-      class: 'hover:bg-gray-100 hover:text-primary-700 dark:hover:bg-gray-600 dark:hover:text-white focus:z-40 focus:outline-none focus:ring-2 focus:ring-primary-700 focus:text-primary-700 dark:focus:ring-gray-500 dark:focus:text-white',
-    },
-  ],
+      class:
+        'hover:bg-gray-100 hover:text-primary-700 dark:hover:bg-gray-600 dark:hover:text-white focus:z-40 focus:outline-none focus:ring-2 focus:ring-primary-700 focus:text-primary-700 dark:focus:ring-gray-500 dark:focus:text-white'
+    }
+  ]
 });
-

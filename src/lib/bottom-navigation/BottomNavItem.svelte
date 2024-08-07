@@ -33,18 +33,21 @@
   $effect(() => {
     currentUrl = $page.url.pathname;
     active = href === currentUrl;
-  
   });
-  
-  let btnCls = $derived(twMerge(
-      base({ class: btnClass }),
-      active && (activeClass ?? context.activeClass),
-    ));
 
-  let spanCls = $derived(twMerge(
+  let btnCls = $derived(
+    twMerge(
+      base({ class: btnClass }),
+      active && (activeClass ?? context.activeClass)
+    )
+  );
+
+  let spanCls = $derived(
+    twMerge(
       span({ class: spanClass }),
       active && (activeClass ?? context.activeClass)
-    ));
+    )
+  );
 </script>
 
 <svelte:element

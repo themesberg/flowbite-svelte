@@ -2,7 +2,7 @@
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import type { HTMLAttributes } from 'svelte/elements';
-  import { kbd } from '.'
+  import { kbd } from '.';
 
   interface Props extends HTMLAttributes<HTMLElement> {
     children: Snippet;

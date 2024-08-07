@@ -12,7 +12,7 @@
   }: Props = $props();
 
   if (!year) year = new Date().getFullYear();
- 
+
   const { base, link, bySpan } = $derived(footerCopyright());
 </script>
 

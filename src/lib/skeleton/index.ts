@@ -8,15 +8,16 @@ import TestimonialPlaceholder from './TestimonialPlaceholder.svelte';
 import TextPlaceholder from './TextPlaceholder.svelte';
 import VideoPlaceholder from './VideoPlaceholder.svelte';
 import WidgetPlaceholder from './WidgetPlaceholder.svelte';
-import { cardPlaceholder,
+import {
+  cardPlaceholder,
   imagePlaceholder,
   listPlaceholder,
   skeleton,
   testimonialPlaceholder,
   textPlaceholder,
   videoPlaceholder,
-  widgetPlaceholder } from './theme';
-
+  widgetPlaceholder
+} from './theme';
 
 type CardSizeType = VariantProps<typeof cardPlaceholder>['size'];
 interface CardPlaceholderProps extends HTMLAttributes<HTMLDivElement> {

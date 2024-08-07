@@ -26,9 +26,19 @@
     duration: animate ? tweenDuration : 0,
     easing
   });
-  const  {base, labelInsideDiv, insideDiv, outsideDiv, oustsideSpan, outsideProgress } = $derived(progressbar({
-     color, labelInside
-  }))
+  const {
+    base,
+    labelInsideDiv,
+    insideDiv,
+    outsideDiv,
+    oustsideSpan,
+    outsideProgress
+  } = $derived(
+    progressbar({
+      color,
+      labelInside
+    })
+  );
 
   $effect(() => {
     _progress.set(Number(progress));
@@ -36,19 +46,16 @@
 </script>
 
 {#if labelOutside}
-  <div
-    {...attributes}
-    class={outsideDiv({ class: labeloutsidedivClass })}
-  >
-    <span class={oustsideSpan({ class: oustsideSpanClass})}
+  <div {...attributes} class={outsideDiv({ class: labeloutsidedivClass })}>
+    <span class={oustsideSpan({ class: oustsideSpanClass })}
       >{labelOutside}</span
     >
-    <span class={outsideProgress({ class: oustsideProgressClass})}
+    <span class={outsideProgress({ class: oustsideProgressClass })}
       >{progress}%</span
     >
   </div>
 {/if}
-<div class={twMerge(base({ class: divClass }),size)} {...attributes}>
+<div class={twMerge(base({ class: divClass }), size)} {...attributes}>
   {#if labelInside}
     <div
       class={twMerge(labelInsideDiv({ class: div2Class }), size)}
@@ -74,10 +81,12 @@
 @prop animate = false
 @prop size = 'h-2.5'
 @prop labelInside = false
-@prop labelOutside
+@prop labelOutside = ''
 @prop easing = cubicOut
 @prop color = 'primary'
 @prop div2Class
+@prop oustsideSpanClass
+@prop oustsideProgressClass
 @prop labeloutsidedivClass
 @prop divClass
 @prop ...attributes

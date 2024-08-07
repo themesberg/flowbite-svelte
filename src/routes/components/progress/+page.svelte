@@ -14,11 +14,19 @@
   let progress = $state('45');
   const sizes = ['h-1.5', 'h-2.5', 'h-4', 'h-6'];
   let progressSize = $state('h-2.5');
-  const colors = ['primary','blue', 'gray','red', 'green', 'yellow', 'purple','indigo']
+  const colors = [
+    'primary',
+    'blue',
+    'gray',
+    'red',
+    'green',
+    'yellow',
+    'purple',
+    'indigo'
+  ];
   let progressColor: Progressbar['color'] = $state('primary');
   let progressLabel = $state(false);
-  let {labelContent = $bindable('Svelte-5-Ui-Lib')} = $props()
-
+  let { labelContent = $bindable('Svelte-5-Ui-Lib') } = $props();
 </script>
 
 <H1>Progress bar</H1>
@@ -43,7 +51,7 @@
     <Progressbar progress="50" size={progressSize} />
   </div>
   <div class="flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Size: </Label>
+    <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as size}
       <Radio
         labelClass="w-24 my-1"

@@ -3,7 +3,7 @@ import type { Snippet } from 'svelte';
 import Alert from './Alert.svelte';
 import { type TransitionConfig } from 'svelte/transition';
 import type { HTMLAttributes } from 'svelte/elements';
-import { alert } from './theme'
+import { alert } from './theme';
 
 type alertColor = VariantProps<typeof alert>['color'];
 type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;

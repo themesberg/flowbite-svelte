@@ -11,21 +11,56 @@
     eager: true
   });
 
-  const sizes = [ 'xs', 'sm', 'base', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl' ];
+  const sizes = [
+    'xs',
+    'sm',
+    'base',
+    'lg',
+    'xl',
+    '2xl',
+    '3xl',
+    '4xl',
+    '5xl',
+    '6xl'
+  ];
   let pSize: P['size'] = $state('base');
-  const weights = [ 'thin', 'light', 'normal', 'medium', 'semibold', 'bold', 'extrabold', 'black' ];
+  const weights = [
+    'thin',
+    'light',
+    'normal',
+    'medium',
+    'semibold',
+    'bold',
+    'extrabold',
+    'black'
+  ];
   let pWeight: P['weight'] = $state('normal');
-  const spaces = [ 'tighter', 'tight', 'normal', 'loose', 'wider', 'widest' ];
+  const spaces = ['tighter', 'tight', 'normal', 'loose', 'wider', 'widest'];
   let pSpace: P['space'] = $state('normal');
-  const heights = [ 'none', 'tight', 'snug', 'normal', 'relaxed', 'loose' , '3', '4', '5', '6', '7', '8', '9', '10'];
+  const heights = [
+    'none',
+    'tight',
+    'snug',
+    'normal',
+    'relaxed',
+    'loose',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '10'
+  ];
   let pHeight: P['height'] = $state('normal');
-  const alignments = [ 'left', 'center', 'right' ];
+  const alignments = ['left', 'center', 'right'];
   let pAlign: P['align'] = $state('left');
-  const whitespaces = [ 'normal', 'nowrap', 'pre', 'preline', 'prewrap' ];
+  const whitespaces = ['normal', 'nowrap', 'pre', 'preline', 'prewrap'];
   let pWhitespace: P['whitespace'] = $state('normal');
-  const styles = [ 'normal', 'italic' ];
+  const styles = ['normal', 'italic'];
   let pStyle: P['style'] = $state('normal');
-  let pFirstupper: P['firstUpper'] = $state(false)
+  let pFirstupper: P['firstUpper'] = $state(false);
   let pJustify: P['justify'] = $state(false);
 </script>
 
@@ -53,11 +88,8 @@
 <H2>Size and weight</H2>
 <CodeWrapper>
   <div class="h-[300px] overflow-scroll">
-  <P 
-    weight={pWeight}
-    size={pSize}
-    color="text-gray-500 dark:text-gray-400"
-    >Track work across the enterprise through an open, collaborative platform.
+    <P weight={pWeight} size={pSize} color="text-gray-500 dark:text-gray-400"
+      >Track work across the enterprise through an open, collaborative platform.
     </P>
   </div>
   <div class="flex flex-wrap space-x-4">
@@ -71,7 +103,7 @@
       >
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-4 mt-4">
+  <div class="mt-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Weight:</Label>
     {#each weights as weight}
       <Radio
@@ -89,14 +121,11 @@
 <H2>Space and height</H2>
 <CodeWrapper>
   <div class="h-[200px] overflow-scroll">
-  <P 
-    space={pSpace}
-    height={pHeight}
-    color="text-gray-500 dark:text-gray-400"
-    >Deliver great service experiences fast - without the complexity of
-    traditional ITSM solutions.Accelerate critical development work, eliminate
-    toil, and deploy changes with ease, with a complete audit trail for every
-    change.
+    <P space={pSpace} height={pHeight} color="text-gray-500 dark:text-gray-400"
+      >Deliver great service experiences fast - without the complexity of
+      traditional ITSM solutions.Accelerate critical development work, eliminate
+      toil, and deploy changes with ease, with a complete audit trail for every
+      change.
     </P>
   </div>
   <div class="flex flex-wrap space-x-4">
@@ -110,7 +139,7 @@
       >
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-4 mt-4">
+  <div class="mt-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Height:</Label>
     {#each heights as height}
       <Radio
@@ -127,13 +156,13 @@
 <H2>Alignment and whitespace</H2>
 <CodeWrapper>
   <div class="h-[200px] overflow-scroll">
-  <P 
-    align={pAlign}
-    whitespace={pWhitespace}
-    color="text-gray-500 dark:text-gray-400"
-    >Deliver great service experiences fast - without the complexity of
-    traditional ITSM solutions.Accelerate critical development work, eliminate
-    toil, and deploy changes with ease.
+    <P
+      align={pAlign}
+      whitespace={pWhitespace}
+      color="text-gray-500 dark:text-gray-400"
+      >Deliver great service experiences fast - without the complexity of
+      traditional ITSM solutions.Accelerate critical development work, eliminate
+      toil, and deploy changes with ease.
     </P>
   </div>
   <div class="flex flex-wrap space-x-4">
@@ -147,7 +176,7 @@
       >
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-4 mt-4">
+  <div class="mt-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">whitespace:</Label>
     {#each whitespaces as whitespace}
       <Radio
@@ -164,7 +193,7 @@
 <H2>Style and First letter</H2>
 <CodeWrapper>
   <div class="h-[200px] overflow-scroll">
-    <P 
+    <P
       style={pStyle}
       firstUpper={pFirstupper}
       color="text-gray-500 dark:text-gray-400"
@@ -172,36 +201,38 @@
       traditional ITSM solutions.Accelerate critical development work, eliminate
       toil, and deploy changes with ease, with a complete audit trail for every
       change.
-      </P>
-    </div>
-    <div class="flex flex-wrap space-x-4">
-      <Label class="mb-4 w-full font-bold">Alignment:</Label>
-      {#each styles as style}
-        <Radio
-          labelClass="w-20 my-1"
-          name="p_style"
-          bind:group={pStyle}
-          value={style}>{style}</Radio
-        >
-      {/each}
-    </div>
-    <Button class="mt-4" onclick={() => pFirstupper = !pFirstupper}>{pFirstupper ? 'Normal' : 'Upper'}</Button>
+    </P>
+  </div>
+  <div class="flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Alignment:</Label>
+    {#each styles as style}
+      <Radio
+        labelClass="w-20 my-1"
+        name="p_style"
+        bind:group={pStyle}
+        value={style}>{style}</Radio
+      >
+    {/each}
+  </div>
+  <Button class="mt-4" onclick={() => (pFirstupper = !pFirstupper)}
+    >{pFirstupper ? 'Normal' : 'Upper'}</Button
+  >
 </CodeWrapper>
 <HighlightCompo code={modules['./md/first-letter.md'] as string} />
 
 <H2>Justify</H2>
 <CodeWrapper>
   <div class="h-[200px] overflow-scroll">
-    <P 
-      justify={pJustify}
-      color="text-gray-500 dark:text-gray-400"
+    <P justify={pJustify} color="text-gray-500 dark:text-gray-400"
       >Deliver great service experiences fast - without the complexity of
       traditional ITSM solutions.Accelerate critical development work, eliminate
       toil, and deploy changes with ease, with a complete audit trail for every
       change.
-      </P>
-    </div>
-    <Button class="mt-4" onclick={() => pJustify = !pJustify}>{pJustify ? 'Normal' : 'Justify'}</Button>
+    </P>
+  </div>
+  <Button class="mt-4" onclick={() => (pJustify = !pJustify)}
+    >{pJustify ? 'Normal' : 'Justify'}</Button
+  >
 </CodeWrapper>
 <HighlightCompo code={modules['./md/justify.md'] as string} />
 

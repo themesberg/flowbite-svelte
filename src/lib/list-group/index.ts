@@ -4,7 +4,7 @@ import type { Snippet } from 'svelte';
 import type { ListGroupItemType } from '../types';
 import type { HTMLAnchorAttributes } from 'svelte/elements';
 import type { Component } from 'svelte';
-import { listGroup, listGroupItem } from './theme'
+import { listGroup, listGroupItem } from './theme';
 
 interface ListgroupProps {
   children?: Snippet;
@@ -34,4 +34,11 @@ interface ListgroupItemProps extends HTMLAnchorAttributes {
   class?: string | undefined | null;
 }
 
-export { Listgroup, ListgroupItem, listGroup, listGroupItem, type ListgroupProps, type ListgroupItemProps };
+export {
+  Listgroup,
+  ListgroupItem,
+  listGroup,
+  listGroupItem,
+  type ListgroupProps,
+  type ListgroupItemProps
+};

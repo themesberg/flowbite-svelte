@@ -2,7 +2,7 @@
   import { CloseButton } from '$lib';
   import { fade } from 'svelte/transition';
   import { type BannerProps as Props, banner } from './index';
-  
+
   let {
     children,
     header,
@@ -23,9 +23,7 @@
     color
   });
 
-  let bannerClass = $derived(
-    base({ position, bannerType, color, className })
-  );
+  let bannerClass = $derived(base({ position, bannerType, color, className }));
 
   let innerCls = $derived(insideDiv({ bannerType, class: innerClass }));
 

@@ -35,7 +35,7 @@
     position,
     placement,
     width,
-    backdrop    
+    backdrop
   });
 </script>
 
@@ -43,11 +43,14 @@
   {#if backdrop && activateClickOutside}
     <div
       role="presentation"
-      class={backdropCls({class: backdropClass})}
+      class={backdropCls({ class: backdropClass })}
       onclick={closeDrawer}
     ></div>
   {:else if backdrop && !activateClickOutside}
-    <div role="presentation" class={backdropCls({class: backdropClass})}></div>
+    <div
+      role="presentation"
+      class={backdropCls({ class: backdropClass })}
+    ></div>
   {:else if !backdrop && activateClickOutside}
     <div
       role="presentation"
@@ -62,7 +65,7 @@
   {/if}
   <div
     {...attributes}
-    class={base({class: divClass})}
+    class={base({ class: divClass })}
     transition:multiple={transitionParams}
     tabindex="-1"
   >
@@ -79,17 +82,12 @@
 @prop toggleDrawer
 @prop closeDrawer
 @prop activateClickOutside = true
-@prop position = 'fixed'
-@prop leftOffset = 'inset-y-0 start-0'
-@prop rightOffset = 'inset-y-0 end-0'
-@prop topOffset = 'inset-x-0 top-0'
-@prop bottomOffset = 'inset-x-0 bottom-0'
-@prop width = 'w-80'
+@prop position
+@prop width
 @prop backdrop = true
-@prop bgColor = 'bg-gray-900'
-@prop bgOpacity = 'bg-opacity-75'
+@prop backdropClass
 @prop placement = 'left'
-@prop class: className = ''
+@prop class: divClass
 @prop transitionParams
 @prop transitionType = 'fly'
 @prop ...attributes

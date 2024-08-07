@@ -1,8 +1,5 @@
 <script lang="ts">
-  import {
-    textPlaceholder,
-    type TextPlaceholderProps as Props
-  } from './index';
+  import { textPlaceholder, type TextPlaceholderProps as Props } from './index';
 
   let { size = 'sm', class: className, ...attributes }: Props = $props();
   const { baseWrapper, divWrapper, lineA, lineB } = $derived(

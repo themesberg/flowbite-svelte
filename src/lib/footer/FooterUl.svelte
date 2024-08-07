@@ -5,10 +5,7 @@
   const base = $derived(footerUl({ class: ulClass }));
 </script>
 
-<ul
-  {...attributes}
-  class={base}
->
+<ul {...attributes} class={base}>
   {@render children()}
 </ul>
 

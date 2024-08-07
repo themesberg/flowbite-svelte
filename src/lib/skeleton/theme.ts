@@ -188,7 +188,6 @@ const widgetPlaceholder = tv({
   }
 });
 
-
 export {
   cardPlaceholder,
   imagePlaceholder,

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type FooterProps as Props, footer } from '.'
+  import { type FooterProps as Props, footer } from '.';
 
   let {
     children,
@@ -8,7 +8,7 @@
     ...attributes
   }: Props = $props();
 
-  const footerCls = $derived(footer({footerType, className}));
+  const footerCls = $derived(footer({ footerType, className }));
 </script>
 
 <footer {...attributes} class={footerCls}>
@@ -21,6 +21,6 @@
 ## Props
 @prop children
 @prop footerType = 'default'
-@prop class: footerclass
+@prop class: className
 @prop ...attributes
 -->

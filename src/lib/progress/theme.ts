@@ -2,13 +2,14 @@ import { tv } from 'tailwind-variants';
 
 const createColorVariant = (color: string) => ({
   labelInsideDiv: color,
-  insideDiv: color,
+  insideDiv: color
 });
 
 export const progressbar = tv({
   slots: {
     base: 'w-full bg-gray-200 rounded-full dark:bg-gray-700',
-    labelInsideDiv: 'text-primary-100 text-xs font-medium text-center leading-none rounded-full',
+    labelInsideDiv:
+      'text-primary-100 text-xs font-medium text-center leading-none rounded-full',
     insideDiv: 'rounded-full',
     outsideDiv: 'mb-1 flex justify-between',
     oustsideSpan: 'text-base font-medium text-blue-700 dark:text-white',
@@ -27,8 +28,8 @@ export const progressbar = tv({
     },
     labelInside: {
       true: '',
-      false: '',
-    },
+      false: ''
+    }
   },
   compoundVariants: [
     {
@@ -36,16 +37,15 @@ export const progressbar = tv({
       class: {
         base: 'text-primary-100 text-xs font-medium text-center leading-none rounded-full',
         labelInsideDiv: 'p-0.5'
-      },
+      }
     },
     {
       labelInside: false,
-      class: {base: 'rounded-full'},
-    },
+      class: { base: 'rounded-full' }
+    }
   ],
   defaultVariants: {
     color: 'primary',
-    labelInside: false,
-  },
+    labelInside: false
+  }
 });
-

@@ -54,12 +54,12 @@
 @prop children
 @prop href
 @prop horizontal = false
-@prop shadow = true
+@prop shadow = 'md'
 @prop reverse = false
 @prop img
 @prop padding = 'lg'
 @prop size = 'sm'
-@prop class: classname
+@prop class: className
 @prop onclick
 @prop ...attributes
 -->

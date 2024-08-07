@@ -3,7 +3,7 @@
   import { twMerge } from 'tailwind-merge';
   import { tv } from 'tailwind-variants';
   import { type ListgroupItemProps as Props, listGroupItem } from '.';
-  
+
   let {
     children,
     onclick,
@@ -25,33 +25,33 @@
 
   active = getContext('active');
 
-  const itemClass = listGroupItem({ 
-  state: disabled ? 'disabled' : current ? 'current' : 'normal',
-  active,
-  class: twMerge(
-    liClass,
-    disabled ? disabledClass : current ? currentClass : normalClass,
-    className
-  )
-});
+  const itemClass = listGroupItem({
+    state: disabled ? 'disabled' : current ? 'current' : 'normal',
+    active,
+    class: twMerge(
+      liClass,
+      disabled ? disabledClass : current ? currentClass : normalClass,
+      className
+    )
+  });
 
-const buttonClass = tv({
-  base: 'flex items-center text-left',
-  extend: listGroupItem,
-})({ 
-  state: disabled ? 'disabled' : current ? 'current' : 'normal',
-  active,
-  class: itemClass
-});
+  const buttonClass = tv({
+    base: 'flex items-center text-left',
+    extend: listGroupItem
+  })({
+    state: disabled ? 'disabled' : current ? 'current' : 'normal',
+    active,
+    class: itemClass
+  });
 
-const linkClass = tv({
-  base: 'block',
-  extend: listGroupItem,
-})({ 
-  state: disabled ? 'disabled' : current ? 'current' : 'normal',
-  active,
-  class: itemClass
-});
+  const linkClass = tv({
+    base: 'block',
+    extend: listGroupItem
+  })({
+    state: disabled ? 'disabled' : current ? 'current' : 'normal',
+    active,
+    class: itemClass
+  });
 </script>
 
 {#if !active && children}
@@ -59,22 +59,11 @@ const linkClass = tv({
     {@render children()}
   </li>
 {:else if href}
-  <a
-    {...attributes}
-    {onclick}
-    {href}
-    class={linkClass}
-    aria-current={current}
-  >
+  <a {...attributes} {onclick} {href} class={linkClass} aria-current={current}>
     {name}
   </a>
 {:else}
-  <button
-    {onclick}
-    class={buttonClass}
-    {disabled}
-    aria-current={current}
-  >
+  <button {onclick} class={buttonClass} {disabled} aria-current={current}>
     {#if icon}
       <svelte:component this={icon} class="me-2.5 h-5 w-5" />
     {/if}

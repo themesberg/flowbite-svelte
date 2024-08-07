@@ -5,8 +5,7 @@
   } from './index';
 
   let { class: className, ...attributes }: Props = $props();
-  const { wrapper, line1, line2, svg, subContent } =
-    testimonialPlaceholder();
+  const { wrapper, line1, line2, svg, subContent } = testimonialPlaceholder();
 </script>
 
 <div role="status" class={wrapper({ className })} {...attributes}>

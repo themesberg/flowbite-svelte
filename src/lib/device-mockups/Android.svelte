@@ -13,8 +13,7 @@
     ...attributes
   }: Props = $props();
 
-  const { div, slot, top, leftTop, leftMid, leftBot, right } =
-    android();
+  const { div, slot, top, leftTop, leftMid, leftBot, right } = android();
 </script>
 
 <div class={div({ class: divClass })} {...attributes}>

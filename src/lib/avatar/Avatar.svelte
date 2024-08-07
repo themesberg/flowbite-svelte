@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Indicator } from '$lib';
   import { type AvatarProps as Props, avatar } from '.';
-  
+
   let {
     children,
     src,

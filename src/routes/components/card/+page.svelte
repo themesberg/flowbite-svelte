@@ -27,7 +27,6 @@
   let cardPadding: Card['padding'] = $state('sm');
   const shadows = ['sm', 'normal', 'md', 'lg', 'xl', '2xl', 'inner', 'none'];
   let cardShadow: Card['shadow'] = $state('md');
-  
 </script>
 
 <H1>Cards</H1>
@@ -37,23 +36,23 @@
 
 <H2>Default card</H2>
 <p>
-  Use the `size` prop with <code>'xs' | 'sm' | 'md' | 'lg' | 'xl'</code> or <code>class</code> props to
-  change the card size.
+  Use the `size` prop with <code>'xs' | 'sm' | 'md' | 'lg' | 'xl'</code> or
+  <code>class</code> props to change the card size.
 </p>
 
 <CodeWrapper class="flex flex-col space-y-4">
   <div class="flex justify-center">
-  <Card size={cardSize}>
-    <h5
-      class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-    >
-      Noteworthy technology acquisitions
-    </h5>
-    <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">
-      Here are the biggest enterprise technology acquisitions of so far, in
-      reverse chronological order.
-    </p>
-  </Card>
+    <Card size={cardSize}>
+      <h5
+        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+      >
+        Noteworthy technology acquisitions
+      </h5>
+      <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">
+        Here are the biggest enterprise technology acquisitions of so far, in
+        reverse chronological order.
+      </p>
+    </Card>
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
@@ -68,34 +67,34 @@
   </div>
   <Label class="mb-4 w-full font-bold">custom size</Label>
   <div class="flex justify-center">
-  <Card class="max-w-[250px]">
-    <h5
-      class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-    >
-      Technology acquisitions
-    </h5>
-    <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">
-      Here are the biggest enterprise technology acquisitions.
-    </p>
-  </Card>
-</div>
+    <Card class="max-w-[250px]">
+      <h5
+        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+      >
+        Technology acquisitions
+      </h5>
+      <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">
+        Here are the biggest enterprise technology acquisitions.
+      </p>
+    </Card>
+  </div>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/default-card.md'] as string} />
 
 <H2>Padding</H2>
 <CodeWrapper class="flex flex-col space-y-4">
   <div class="flex justify-center">
-  <Card padding={cardPadding}>
-    <h5
-      class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-    >
-      Noteworthy technology acquisitions
-    </h5>
-    <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">
-      Here are the biggest enterprise technology acquisitions of so far, in
-      reverse chronological order.
-    </p>
-  </Card>
+    <Card padding={cardPadding}>
+      <h5
+        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+      >
+        Noteworthy technology acquisitions
+      </h5>
+      <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">
+        Here are the biggest enterprise technology acquisitions of so far, in
+        reverse chronological order.
+      </p>
+    </Card>
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
@@ -126,17 +125,17 @@
       </p>
     </Card>
   </div>
-    <div class="my-4 flex flex-wrap space-x-4">
-      <Label class="mb-4 w-full font-bold">Size:</Label>
-      {#each shadows as shadow}
-        <Radio
-          labelClass="w-16 my-1"
-          name="card_shadow"
-          bind:group={cardShadow}
-          value={shadow}>{shadow}</Radio
-        >
-      {/each}
-    </div>
+  <div class="my-4 flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Size:</Label>
+    {#each shadows as shadow}
+      <Radio
+        labelClass="w-16 my-1"
+        name="card_shadow"
+        bind:group={cardShadow}
+        value={shadow}>{shadow}</Radio
+      >
+    {/each}
+  </div>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/shadow.md'] as string} />
 

@@ -9,7 +9,9 @@ export const breadcrumb = tv({
   },
   variants: {
     solid: {
-      true: {base: 'px-5 py-3 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700'},
+      true: {
+        base: 'px-5 py-3 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700'
+      },
       false: ''
     },
     home: {
@@ -24,8 +26,7 @@ export const breadcrumb = tv({
   compoundVariants: [
     {
       home: true,
-      class:
-      {
+      class: {
         item: 'inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white',
         icon: 'me-2 h-4 w-4'
       }
@@ -33,13 +34,16 @@ export const breadcrumb = tv({
     {
       home: false,
       hasHref: true,
-      class:
-        {item: 'ms-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ms-2 dark:text-gray-400 dark:hover:text-white'}
+      class: {
+        item: 'ms-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ms-2 dark:text-gray-400 dark:hover:text-white'
+      }
     },
     {
       home: false,
       hasHref: false,
-      class: {item: 'ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400'}
+      class: {
+        item: 'ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400'
+      }
     }
   ],
   defaultVariants: {

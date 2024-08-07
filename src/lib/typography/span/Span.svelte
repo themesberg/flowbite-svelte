@@ -28,7 +28,8 @@
       decorationColor,
       decorationThickness,
       className
-    }));
+    })
+  );
 </script>
 
 <span {...attributes} class={classSpan}>
@@ -47,5 +48,8 @@
 @prop uppercase
 @prop gradient
 @prop highlight
+@prop decoration
+@prop decorationColor
+@prop decorationThickness
 @prop ...attributes
 -->

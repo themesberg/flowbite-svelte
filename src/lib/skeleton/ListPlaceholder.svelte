@@ -1,8 +1,5 @@
 <script lang="ts">
-  import {
-    listPlaceholder,
-    type ListPlaceholderProps as Props
-  } from './index';
+  import { listPlaceholder, type ListPlaceholderProps as Props } from './index';
 
   let {
     itemNumber = 5,

@@ -94,4 +94,4 @@ const alert = tv({
   }
 });
 
-export {  alert };
+export { alert };

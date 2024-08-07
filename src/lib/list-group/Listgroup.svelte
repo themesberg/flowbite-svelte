@@ -13,7 +13,7 @@
     class: className,
     ...attributes
   }: Props = $props();
-  const base = $derived(listGroup({ rounded, border, className}));
+  const base = $derived(listGroup({ rounded, border, className }));
   let tag = active ? 'div' : 'ul';
   setContext('active', active);
 </script>
@@ -42,7 +42,6 @@
 @prop onclick
 @prop rounded = true
 @prop border = true
-@prop defaultClass = 'divide-y divide-gray-200 dark:divide-gray-600'
 @prop class: className
 @prop ...attributes
 -->

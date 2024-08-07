@@ -8,7 +8,15 @@ import Smartwatch from './Smartwatch.svelte';
 import Tablet from './Tablet.svelte';
 import type { Snippet } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
-import { android, defaultMockup, desktop, ios, laptop, smartwatch, tablet } from './theme';
+import {
+  android,
+  defaultMockup,
+  desktop,
+  ios,
+  laptop,
+  smartwatch,
+  tablet
+} from './theme';
 
 interface MockupBaseProps extends HTMLAttributes<HTMLElement> {
   children?: Snippet;

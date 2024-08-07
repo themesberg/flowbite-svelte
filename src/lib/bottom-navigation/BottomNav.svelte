@@ -3,7 +3,8 @@
   import { twMerge } from 'tailwind-merge';
   import {
     type BottomNavProps as Props,
-    type BottomNavContextType, bottomNav
+    type BottomNavContextType,
+    bottomNav
   } from './index';
 
   let {
@@ -26,7 +27,7 @@
   setContext<BottomNavContextType>('bottomNavType', { activeClass: activeCls });
 
   $inspect('position: ', position);
-  const { outer, inner } = bottomNav({ position, navType })
+  const { outer, inner } = bottomNav({ position, navType });
   const outerCls = $derived(outer({ class: outerClass }));
   const innerCls = $derived(inner({ class: innerClass }));
 </script>

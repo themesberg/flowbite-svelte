@@ -247,7 +247,7 @@
 
 <CodeWrapper class="p-0">
   <div class="relative">
-    <div style="height:300px;" class="overflow-scroll pb-16 p-6">
+    <div style="height:300px;" class="overflow-scroll p-6 pb-16">
       <Skeleton class="my-8" />
       <ImagePlaceholder class="my-8" />
       <TextPlaceholder class="my-8" />

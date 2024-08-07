@@ -10,9 +10,7 @@
     ...attributes
   }: Props = $props();
 
-  let { base, container, content } = $derived(
-    hr({ withChildren: !!children })
-  );
+  let { base, container, content } = $derived(hr({ withChildren: !!children }));
 </script>
 
 {#if children}

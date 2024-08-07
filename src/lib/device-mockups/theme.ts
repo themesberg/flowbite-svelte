@@ -100,12 +100,4 @@ const tablet = tv({
   }
 });
 
-export {
-  android,
-  defaultMockup,
-  desktop,
-  ios,
-  laptop,
-  smartwatch,
-  tablet,
-};
+export { android, defaultMockup, desktop, ios, laptop, smartwatch, tablet };

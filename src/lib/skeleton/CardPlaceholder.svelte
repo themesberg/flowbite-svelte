@@ -1,8 +1,5 @@
 <script lang="ts">
-  import {
-    type CardPlaceholderProps as Props,
-    cardPlaceholder
-  } from './index';
+  import { type CardPlaceholderProps as Props, cardPlaceholder } from './index';
 
   let { size = 'sm', class: className, ...attributes }: Props = $props();
 

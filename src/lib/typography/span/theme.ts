@@ -15,18 +15,30 @@ export const span = tv({
       true: 'uppercase'
     },
     gradient: {
-      skyToEmerald: 'text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400',
-      purpleToBlue: 'text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500',
-      pinkToOrange: 'text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-orange-400',
-      tealToLime: 'text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-lime-300',
-      redToYellow: 'text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-yellow-500',
-      indigoToCyan: 'text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-400',
-      fuchsiaToRose: 'text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-rose-500',
-      amberToEmerald: 'text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-emerald-500',
-      violetToRed: 'text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-red-500',
-      blueToGreen: 'text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-500 to-green-400',
-      orangeToPurple: 'text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-pink-500 to-purple-500',
-      yellowToRed: 'text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-indigo-400 to-red-600',
+      skyToEmerald:
+        'text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400',
+      purpleToBlue:
+        'text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500',
+      pinkToOrange:
+        'text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-orange-400',
+      tealToLime:
+        'text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-lime-300',
+      redToYellow:
+        'text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-yellow-500',
+      indigoToCyan:
+        'text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-400',
+      fuchsiaToRose:
+        'text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-rose-500',
+      amberToEmerald:
+        'text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-emerald-500',
+      violetToRed:
+        'text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-red-500',
+      blueToGreen:
+        'text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-500 to-green-400',
+      orangeToPurple:
+        'text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-pink-500 to-purple-500',
+      yellowToRed:
+        'text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-indigo-400 to-red-600',
       normal: 'font-semibold text-gray-900 dark:text-white'
     },
     highlight: {

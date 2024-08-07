@@ -14,16 +14,16 @@
     ...attributes
   }: Props = $props();
 
-  const { item, icon: breacrumbIcon } = breadcrumb({ home, hasHref: !!href, class: className });
-
+  const { item, icon: breacrumbIcon } = breadcrumb({
+    home,
+    hasHref: !!href,
+    class: className
+  });
 </script>
 
 <li class={item()} {...attributes}>
   {#if home}
-    <a
-      class={item({home: true, class: homeClass})}
-      {href}
-    >
+    <a class={item({ home: true, class: homeClass })} {href}>
       {#if icon}
         {@render icon()}
       {:else}
@@ -61,21 +61,13 @@
 
     {#if href}
       <a
-        class={twMerge(
-          item({ home: false, hasHref: true }),
-          linkClass
-        )}
+        class={twMerge(item({ home: false, hasHref: true }), linkClass)}
         {href}
       >
         {@render children()}
       </a>
     {:else}
-      <span
-        class={twMerge(
-          item({ home: false, hasHref: false }),
-          spanClass
-        )}
-      >
+      <span class={twMerge(item({ home: false, hasHref: false }), spanClass)}>
         {@render children()}
       </span>
     {/if}

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.8.2
+
+### Patch Changes
+
+- feat: add themes ([`c42201ecb1c3f2f26e8d935324aafeeb277de09c`](https://github.com/shinokada/svelte-5-ui-lib/commit/c42201ecb1c3f2f26e8d935324aafeeb277de09c))
+
 ## 0.8.1
 
 ### Patch Changes

@@ -16,7 +16,8 @@
     ...attributes
   }: Props = $props();
 
-  let classP = $derived(paragraph({
+  let classP = $derived(
+    paragraph({
       height,
       size,
       weight,
@@ -26,8 +27,9 @@
       style,
       firstUpper,
       whitespace,
-      className,
-    }));
+      className
+    })
+  );
 </script>
 
 <p {...attributes} class={classP}>
@@ -39,7 +41,7 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
-@prop class: className
+@prop class: className = 'text-gray-900 dark:text-white'
 @prop height = 'normal'
 @prop align = 'left'
 @prop justify = false
