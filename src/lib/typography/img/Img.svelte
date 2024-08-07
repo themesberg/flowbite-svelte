@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
-  import { type ImgProps as Props, imgVariants } from './index';
+  import { type ImgProps as Props, img } from './index';
 
   let {
     size,
@@ -17,7 +16,7 @@
   }: Props = $props();
 
   let { base, figure, figureCaption } = $derived(
-    imgVariants({ size, alignment, effect, shadow, rounded })
+    img({ size, alignment, effect, shadow, rounded })
   );
 </script>
 

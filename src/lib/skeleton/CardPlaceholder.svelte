@@ -1,13 +1,13 @@
 <script lang="ts">
   import {
     type CardPlaceholderProps as Props,
-    cardPlaceholderVariants
+    cardPlaceholder
   } from './index';
 
   let { size = 'sm', class: className, ...attributes }: Props = $props();
 
   const { base, imageArea, imageIcon, line, footerArea } = $derived(
-    cardPlaceholderVariants({ size })
+    cardPlaceholder({ size })
   );
 </script>
 

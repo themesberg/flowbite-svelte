@@ -3,33 +3,10 @@ import Li from './Li.svelte';
 import { type VariantProps, tv } from 'tailwind-variants';
 import type { Snippet } from 'svelte';
 import type { HTMLLiAttributes } from 'svelte/elements';
+import { list } from './theme';
 
-const listVariants = tv({
-  base: '',
-  variants: {
-    tag: {
-      ul: 'list-disc',
-      dl: 'list-none',
-      ol: 'list-decimal'
-    },
-    position: {
-      inside: 'list-inside',
-      outside: 'list-outside'
-    }
-  },
-  defaultVariants: {
-    position: 'inside',
-    tag: 'ul'
-  }
-  // tag: {
-  //   ul: 'list-disc',
-  //   ol: 'list-decimal',
-  //   dl: 'list-none'
-  // }
-});
-
-type TagType = VariantProps<typeof listVariants>['tag'];
-type PositionType = VariantProps<typeof listVariants>['position'];
+type TagType = VariantProps<typeof list>['tag'];
+type PositionType = VariantProps<typeof list>['position'];
 
 interface ListProps {
   children: Snippet;
@@ -45,4 +22,4 @@ interface LiProps extends HTMLLiAttributes {
   class?: string | undefined;
 }
 
-export { List, Li, listVariants, type ListProps, type LiProps };
+export { List, Li, list, type ListProps, type LiProps };

@@ -1,8 +1,7 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
   import {
     type DescriptionListProps as Props,
-    descriptionListVariants
+    descriptionList
   } from './index';
 
   let {
@@ -15,7 +14,7 @@
   }: Props = $props();
 
   let classDesc = $derived(
-    descriptionListVariants({
+    descriptionList({
       tag,
       class: className
     })

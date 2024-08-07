@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Progressbar, Button, Label, Radio } from '$lib';
+  import { Progressbar, Button, Label, Radio, Input } from '$lib';
   import { sineOut } from 'svelte/easing';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -17,6 +17,7 @@
   const colors = ['primary','blue', 'gray','red', 'green', 'yellow', 'purple','indigo']
   let progressColor: Progressbar['color'] = $state('primary');
   let progressLabel = $state(false);
+  let {labelContent = $bindable('Svelte-5-Ui-Lib')} = $props()
 
 </script>
 
@@ -67,8 +68,9 @@
 
 <H2>With label outside</H2>
 
-<CodeWrapper>
-  <Progressbar progress="50" labelOutside="Flowbite-Svelte" />
+<CodeWrapper class="space-y-4">
+  <Progressbar progress="50" labelOutside={labelContent} />
+  <Input bind:value={labelContent} />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/labeloutside.md'] as string} />
@@ -98,12 +100,11 @@
 
 <H2>Custom style</H2>
 
-<CodeWrapper>
+<CodeWrapper class="space-y-4">
   <Progressbar
     progress="50"
     size="h-3"
     labelInside
-    color="green"
     div2Class="bg-blue-600 text-blue-100 text-xs font-medium text-center p-0 leading-none rounded-full"
     class="my-4"
     labelOutside="Size h-3"
@@ -113,18 +114,7 @@
     progress="50"
     size="h-10"
     labelInside
-    color="red"
-    div2Class="bg-blue-600 text-blue-100 text-2xl font-medium text-center p-2 leading-none rounded-full"
-    class="my-4"
-    labelOutside="Size h-10"
-  />
-
-  <Progressbar
-    progress="50"
-    size="h-10"
-    color="indigo"
-    div2Class="bg-blue-600 text-blue-100 text-2xl font-medium text-center p-2 leading-none rounded-full"
-    class="my-4"
+    div2Class="bg-cyan-600 text-cyan-100 text-2xl font-medium text-center p-2 leading-none rounded-full"
     labelOutside="Size h-10"
   />
 
@@ -132,8 +122,7 @@
     progress="50"
     size="h-6"
     labelInside
-    div2Class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
-    class="my-4"
+    div2Class="bg-teal-600 text-teal-100 text-base font-medium text-center p-1 leading-none rounded-full"
     labelOutside="Size h-6"
   />
 </CodeWrapper>
@@ -142,7 +131,7 @@
 
 <H2>Animation</H2>
 
-<CodeWrapper>
+<CodeWrapper class="space-y-4">
   <Progressbar
     {progress}
     animate
@@ -152,8 +141,8 @@
     tweenDuration={1500}
     easing={sineOut}
     size="h-6"
-    color="yellow"
-    div2Class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full mb-8"
+    color="red"
+    div2Class="text-base font-medium text-center p-1 leading-none rounded-full"
   />
   <Progressbar
     {progress}
@@ -161,7 +150,7 @@
     labelInside
     size="h-6"
     color="gray"
-    div2Class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
+    div2Class="text-base font-medium text-center p-1 leading-none rounded-full"
   />
   <Button
     onclick={() => (progress = `${Math.round(Math.random() * 100)}`)}

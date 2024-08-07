@@ -1,12 +1,12 @@
 <script lang="ts">
   import {
-    testimonialPlaceholderVariants,
+    testimonialPlaceholder,
     type TestimonialPlaceholderProps as Props
   } from './index';
 
   let { class: className, ...attributes }: Props = $props();
   const { wrapper, line1, line2, svg, subContent } =
-    testimonialPlaceholderVariants();
+    testimonialPlaceholder();
 </script>
 
 <div role="status" class={wrapper({ className })} {...attributes}>

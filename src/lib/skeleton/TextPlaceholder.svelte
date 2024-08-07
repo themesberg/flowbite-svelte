@@ -1,12 +1,12 @@
 <script lang="ts">
   import {
-    textPlaceholderVariants,
+    textPlaceholder,
     type TextPlaceholderProps as Props
   } from './index';
 
   let { size = 'sm', class: className, ...attributes }: Props = $props();
   const { baseWrapper, divWrapper, lineA, lineB } = $derived(
-    textPlaceholderVariants({
+    textPlaceholder({
       size
     })
   );

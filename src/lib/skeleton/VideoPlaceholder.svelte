@@ -1,11 +1,11 @@
 <script lang="ts">
   import {
     type VideoPlaceholderProps as Props,
-    videoPlaceholderVariants
+    videoPlaceholder
   } from './index';
 
   let { size = 'sm', class: className }: Props = $props();
-  const base = $derived(videoPlaceholderVariants({ size, className }));
+  const base = $derived(videoPlaceholder({ size, className }));
 </script>
 
 <div role="status" class={base}>

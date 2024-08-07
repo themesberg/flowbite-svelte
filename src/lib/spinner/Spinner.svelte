@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type SpinnerProps as Props, spinnerVariants } from './index';
+  import { type SpinnerProps as Props, spinner } from './index';
 
   let {
     color = 'primary',
@@ -11,7 +11,7 @@
     ...attributes
   }: Props = $props();
 
-  let spinnerClass = $derived(spinnerVariants({ color, size, className }));
+  let spinnerClass = $derived(spinner({ color, size, className }));
 </script>
 
 <svg

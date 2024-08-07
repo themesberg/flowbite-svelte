@@ -1,6 +1,6 @@
 <script lang="ts">
   import { setContext } from 'svelte';
-  import { type ListProps as Props, listVariants } from './index';
+  import { type ListProps as Props, list } from './index';
 
   let {
     children,
@@ -13,7 +13,7 @@
 
   setContext('ctxclass', ctxclass);
 
-  let classList = $derived(listVariants({ position, tag, className }));
+  let classList = $derived(list({ position, tag, className }));
 </script>
 
 <svelte:element this={tag} {...attributes} class={classList}>

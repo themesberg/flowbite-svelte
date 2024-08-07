@@ -1,13 +1,13 @@
 <script lang="ts">
   import {
-    imagePlaceholderVariants,
+    imagePlaceholder,
     type ImagePlaceholderProps as Props
   } from './index';
 
   let { size, rounded, class: className, ...attributes }: Props = $props();
 
   const { base, image, svg, content, line } = $derived(
-    imagePlaceholderVariants({
+    imagePlaceholder({
       size,
       rounded
     })

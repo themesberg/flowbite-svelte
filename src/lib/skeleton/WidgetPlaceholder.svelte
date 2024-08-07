@@ -1,11 +1,11 @@
 <script lang="ts">
   import {
-    widgetPlaceholderVariants,
+    widgetPlaceholder,
     type WidgetPlaceholderProps as Props
   } from './index';
 
   let { class: className }: Props = $props();
-  const { base, wrapper, vLine, hLine } = widgetPlaceholderVariants({});
+  const { base, wrapper, vLine, hLine } = widgetPlaceholder({});
 </script>
 
 <div role="status" class={base({ className })}>

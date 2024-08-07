@@ -1,11 +1,7 @@
 import Secondary from './Secondary.svelte';
-import { type VariantProps, tv } from 'tailwind-variants';
 import type { Snippet } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
-
-const secondaryVariants = tv({
-  base: 'text-gray-500 dark:text-gray-400 font-semibold'
-});
+import { secondary } from './theme';
 
 interface SecondaryProps extends HTMLAttributes<HTMLElement> {
   children: Snippet;
@@ -13,4 +9,4 @@ interface SecondaryProps extends HTMLAttributes<HTMLElement> {
   class?: string | undefined | null;
 }
 
-export { Secondary, secondaryVariants, type SecondaryProps };
+export { Secondary, secondary, type SecondaryProps };

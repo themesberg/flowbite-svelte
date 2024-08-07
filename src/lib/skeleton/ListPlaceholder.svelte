@@ -1,6 +1,6 @@
 <script lang="ts">
   import {
-    listPlaceholderVariants,
+    listPlaceholder,
     type ListPlaceholderProps as Props
   } from './index';
 
@@ -13,7 +13,7 @@
   }: Props = $props();
 
   const { base, item, itemContent, itemTitle, itemSubtitle, itemExtra } =
-    $derived(listPlaceholderVariants({ size, rounded }));
+    $derived(listPlaceholder({ size, rounded }));
 
   let items = $derived([...Array(itemNumber).keys()]);
 </script>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type HeadingProps as Props, headingVariants } from './index';
+  import { type HeadingProps as Props, heading } from './index';
 
   let {
     children,
@@ -8,7 +8,7 @@
     ...attributes
   }: Props = $props();
 
-  let headingClass = $derived(headingVariants({ tag, className }));
+  let headingClass = $derived(heading({ tag, className }));
 </script>
 
 <svelte:element this={tag} {...attributes} class={headingClass}>

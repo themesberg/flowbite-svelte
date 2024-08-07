@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { skeletonVariants, type SkeletonProps as Props } from './index';
+  import { skeleton, type SkeletonProps as Props } from './index';
   let { size = 'sm', class: className, ...attributes }: Props = $props();
-  const { wrapper, line } = $derived(skeletonVariants({ size }));
+  const { wrapper, line } = $derived(skeleton({ size }));
 </script>
 
 <div role="status" class={wrapper({ className })} {...attributes}>

@@ -1,10 +1,10 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
-  import { type LayoutProps as Props, layoutVariants } from './index';
+  import { type LayoutProps as Props, layout } from './index';
 
   let { children, class: className, ...attributes }: Props = $props();
 
-  let classDiv = $derived(layoutVariants({ className }));
+  let classDiv = $derived(layout({ className }));
 </script>
 
 <div {...attributes} class={classDiv}>

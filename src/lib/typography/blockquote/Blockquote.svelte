@@ -1,6 +1,6 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
-  import { type BlockquoteProps as Props, blockquoteVariants } from './index';
+  import { type BlockquoteProps as Props, blockquote } from './index';
 
   let {
     children,
@@ -17,7 +17,7 @@
   }: Props = $props();
 
   let blockquoteClass = $derived(
-    blockquoteVariants({
+    blockquote({
       border,
       italic,
       bg,

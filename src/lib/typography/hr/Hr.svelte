@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type HrProps as Props, hrVariants } from './index';
+  import { type HrProps as Props, hr } from './index';
 
   let {
     children,
@@ -11,7 +11,7 @@
   }: Props = $props();
 
   let { base, container, content } = $derived(
-    hrVariants({ withChildren: !!children })
+    hr({ withChildren: !!children })
   );
 </script>
 
