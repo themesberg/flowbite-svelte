@@ -1,9 +1,6 @@
 <script lang="ts">
-  import {
-    type BreadcrumbProps as Props,
-    breadcrumbVariants,
-    breadcrumbListVariants
-  } from './index';
+  import { type BreadcrumbProps as Props } from './index';
+  import { breadcrumb } from './theme'
 
   let {
     children,
@@ -14,9 +11,9 @@
     ariaLabel = 'Breadcrumb',
     ...attributes
   }: Props = $props();
-
-  let classNav = $derived(breadcrumbVariants({ solid, class: navClass }));
-  let classList = $derived(breadcrumbListVariants({ class: olClass }));
+  const { base, list } = breadcrumb({ solid });
+  let classNav = $derived(base({ class: navClass }));
+  let classList = $derived(list({ class: olClass }));
 </script>
 
 <nav aria-label={ariaLabel} {...attributes} class={classNav}>

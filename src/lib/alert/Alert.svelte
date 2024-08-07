@@ -1,6 +1,6 @@
 <script lang="ts">
-  // import { cn } from "../utils";
-  import { alertVariants, type AlertProps as Props } from '.';
+  import { type AlertProps as Props } from '.';
+  import { alert } from './theme';
   import { CloseButton } from '$lib';
   import { fade } from 'svelte/transition';
 
@@ -21,7 +21,7 @@
   }: Props = $props();
 
   let divCls = $derived(
-    alertVariants({
+    alert({
       color,
       rounded,
       border,

@@ -1,8 +1,7 @@
 <script lang="ts">
   import { Indicator } from '$lib';
-  import { twMerge } from 'tailwind-merge';
-  import { avatarVariants, type AvatarProps as Props } from '.';
-
+  import { type AvatarProps as Props } from '.';
+  import { avatar } from './theme';
   let {
     children,
     src,
@@ -21,7 +20,7 @@
   dot = dot && { placement: 'top-right', color: 'gray', size: 'lg', ...dot };
 
   let avatarClass = $derived(
-    avatarVariants({
+    avatar({
       rounded,
       border,
       stacked,

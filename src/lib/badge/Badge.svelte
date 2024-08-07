@@ -1,6 +1,7 @@
 <script lang="ts">
   // import { cn } from "../utils";
-  import { badgeVariants, type BadgeProps as Props } from './index';
+  import { type BadgeProps as Props } from './index';
+  import { badge } from './theme';
   import { CloseButton } from '$lib';
   import { fade } from 'svelte/transition';
 
@@ -22,7 +23,7 @@
   }: Props = $props();
 
   let badgeClass = $derived(
-    badgeVariants({
+    badge({
       color,
       size: large ? 'large' : 'small',
       border,

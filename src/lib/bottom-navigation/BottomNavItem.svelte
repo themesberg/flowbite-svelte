@@ -4,9 +4,8 @@
     type BottomNavItemProps as Props,
     type BottomNavContextType,
     type BottomNavVariantType,
-    bottomNavItemVariants,
-    bottomNavItemSpanVariants
   } from './index';
+  import { bottomNavItem } from './theme';
   import { twMerge } from 'tailwind-merge';
   import { page } from '$app/stores';
 
@@ -28,24 +27,24 @@
 
   let currentUrl = $state($page.url.pathname);
   let active: boolean = $state(false);
-  let btnCls: string = $state('');
-  let spanCls: string = $state('');
+  // let btnCls: string = $state('');
+  // let spanCls: string = $state('');
+  const { base, span } = bottomNavItem({ navType, appBtnPosition });
   $effect(() => {
     currentUrl = $page.url.pathname;
     active = href === currentUrl;
-
-    btnCls = twMerge(
-      bottomNavItemVariants({ navType, appBtnPosition, active }),
-      active && (activeClass ?? context.activeClass),
-      btnClass
-    );
-
-    spanCls = twMerge(
-      bottomNavItemSpanVariants({ navType, active }),
-      active && (activeClass ?? context.activeClass),
-      spanClass
-    );
+  
   });
+  
+  let btnCls = $derived(twMerge(
+      base({ class: btnClass }),
+      active && (activeClass ?? context.activeClass),
+    ));
+
+  let spanCls = $derived(twMerge(
+      span({ class: spanClass }),
+      active && (activeClass ?? context.activeClass)
+    ));
 </script>
 
 <svelte:element

@@ -1,10 +1,7 @@
 <script lang="ts">
-  import {
-    type BreadcrumbItemProps as Props,
-    breadcrumbIconVariants,
-    breadcrumbItemVariants
-  } from './index';
+  import { type BreadcrumbItemProps as Props } from './index';
   import { twMerge } from 'tailwind-merge';
+  import { breadcrumb } from './theme'
 
   let {
     children,
@@ -18,18 +15,14 @@
     ...attributes
   }: Props = $props();
 
-  let itemClass = breadcrumbItemVariants({
-    home,
-    hasHref: !!href,
-    class: className
-  });
-  let iconClass = breadcrumbIconVariants({ home });
+  const { item, icon: breacrumbIcon } = breadcrumb({ home, hasHref: !!href, class: className });
+
 </script>
 
-<li class={itemClass} {...attributes}>
+<li class={item()} {...attributes}>
   {#if home}
     <a
-      class={twMerge(breadcrumbItemVariants({ home: true }), homeClass)}
+      class={item({home: true, class: homeClass})}
       {href}
     >
       {#if icon}
@@ -54,7 +47,7 @@
       {@render icon()}
     {:else}
       <svg
-        class={iconClass}
+        class={breacrumbIcon()}
         fill="currentColor"
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +63,7 @@
     {#if href}
       <a
         class={twMerge(
-          breadcrumbItemVariants({ home: false, hasHref: true }),
+          item({ home: false, hasHref: true }),
           linkClass
         )}
         {href}
@@ -80,7 +73,7 @@
     {:else}
       <span
         class={twMerge(
-          breadcrumbItemVariants({ home: false, hasHref: false }),
+          item({ home: false, hasHref: false }),
           spanClass
         )}
       >

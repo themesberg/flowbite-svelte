@@ -1,12 +1,8 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
   import { CloseButton } from '$lib';
   import { fade } from 'svelte/transition';
-  import {
-    type BannerProps as Props,
-    bannerVariants,
-    insideDivVariants
-  } from './index';
+  import { type BannerProps as Props } from './index';
+  import { banner } from './theme';
 
   let {
     children,
@@ -23,11 +19,16 @@
     ...attributes
   }: Props = $props();
 
+  const { base, insideDiv } = banner({
+    bannerType,
+    color
+  });
+
   let bannerClass = $derived(
-    bannerVariants({ position, bannerType, color, className })
+    base({ position, bannerType, color, className })
   );
 
-  let innerCls = twMerge('flex', insideDivVariants({ bannerType }), innerClass);
+  let innerCls = $derived(insideDiv({ bannerType, class: innerClass }));
 
   const clickToDismiss = () => {
     bannerStatus = false;

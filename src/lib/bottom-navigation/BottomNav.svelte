@@ -2,11 +2,10 @@
   import { setContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import {
-    outerDivVariants,
-    innerDivVariants,
     type BottomNavProps as Props,
     type BottomNavContextType
   } from './index';
+  import { bottomNav } from './theme';
 
   let {
     children,
@@ -28,8 +27,9 @@
   setContext<BottomNavContextType>('bottomNavType', { activeClass: activeCls });
 
   $inspect('position: ', position);
-  const outerCls = twMerge(outerDivVariants({ position, navType }), outerClass);
-  const innerCls = twMerge(innerDivVariants({ navType }), innerClass);
+  const { outer, inner } = bottomNav({ position, navType })
+  const outerCls = $derived(outer({ class: outerClass }));
+  const innerCls = $derived(inner({ class: innerClass }));
 </script>
 
 <div {...attributes} class={outerCls}>
