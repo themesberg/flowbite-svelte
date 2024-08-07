@@ -1,8 +1,5 @@
 <script lang="ts">
-  // import type { Snippet } from 'svelte';
-  // import { twMerge } from 'tailwind-merge';
-  // import type { HTMLAttributes } from 'svelte/elements';
-  import { cardVariants, type CardProps as Props } from '.';
+  import { card, type CardProps as Props } from '.';
 
   let {
     children,
@@ -19,7 +16,7 @@
   }: Props = $props();
 
   const { base, image, content } = $derived(
-    cardVariants({
+    card({
       size,
       shadow,
       padding,

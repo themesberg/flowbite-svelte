@@ -1,7 +1,6 @@
 <script lang="ts">
   // import { cn } from "../utils";
-  import { type BadgeProps as Props } from './index';
-  import { badge } from './theme';
+  import { type BadgeProps as Props, badge } from './index';
   import { CloseButton } from '$lib';
   import { fade } from 'svelte/transition';
 

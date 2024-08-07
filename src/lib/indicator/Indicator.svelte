@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { indicatorVariants, type IndicatorProps as Props } from './index';
+  import { indicator, type IndicatorProps as Props } from './index';
 
   let {
     children,
@@ -15,7 +15,7 @@
 
   let hasChildren = !!children;
   const { base } = $derived(
-    indicatorVariants({
+    indicator({
       color,
       size,
       rounded,

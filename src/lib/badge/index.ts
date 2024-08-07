@@ -23,4 +23,4 @@ interface BadgeProps extends HTMLAttributes<HTMLDivElement> {
   onclick?: () => void;
 }
 
-export { Badge, type BadgeProps, type badgeColor };
+export { Badge, badge, type BadgeProps, type badgeColor };

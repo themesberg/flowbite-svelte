@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type FooterBrandProps as Props, footerBrandVariants } from '.';
+  import { type FooterBrandProps as Props, footerBrand } from '.';
 
   let {
     children,
@@ -13,7 +13,7 @@
     ...attributes
   }: Props = $props();
 
-  const { base, span, img } = $derived(footerBrandVariants());
+  const { base, span, img } = $derived(footerBrand());
 </script>
 
 {#if href}

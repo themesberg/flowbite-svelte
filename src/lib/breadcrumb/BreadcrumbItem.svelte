@@ -1,7 +1,6 @@
 <script lang="ts">
-  import { type BreadcrumbItemProps as Props } from './index';
+  import { type BreadcrumbItemProps as Props, breadcrumb } from './index';
   import { twMerge } from 'tailwind-merge';
-  import { breadcrumb } from './theme'
 
   let {
     children,

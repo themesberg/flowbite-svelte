@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { type AlertProps as Props } from '.';
-  import { alert } from './theme';
+  import { type AlertProps as Props, alert } from '.';
   import { CloseButton } from '$lib';
   import { fade } from 'svelte/transition';
 

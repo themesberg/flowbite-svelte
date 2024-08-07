@@ -1,20 +1,7 @@
-import { type VariantProps, tv } from 'tailwind-variants';
+import { type VariantProps } from 'tailwind-variants';
 import type { Snippet } from 'svelte';
 import ButtonGroup from './ButtonGroup.svelte';
-
-const buttonGroupVariants = tv({
-  base: 'inline-flex rounded-lg shadow-sm',
-  variants: {
-    size: {
-      sm: 'scale-90',
-      md: 'scale-100',
-      lg: 'scale-110'
-    }
-  },
-  defaultVariants: {
-    size: 'md'
-  }
-});
+import { buttonGroup } from './theme'
 
 interface ButtonGroupProps {
   children: Snippet;
@@ -22,6 +9,6 @@ interface ButtonGroupProps {
   class?: string | undefined;
 }
 
-type SizeType = VariantProps<typeof buttonGroupVariants>['size'];
+type SizeType = VariantProps<typeof buttonGroup>['size'];
 
-export { ButtonGroup, type ButtonGroupProps, buttonGroupVariants };
+export { ButtonGroup, buttonGroup, type ButtonGroupProps};

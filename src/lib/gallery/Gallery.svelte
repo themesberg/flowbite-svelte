@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { galleryVariants, type GalleryProps as Props, type ImgType } from '.';
+  import { type GalleryProps as Props, type ImgType, gallery } from '.';
 
   let {
     children,
@@ -13,7 +13,7 @@
     if (getComputedStyle(node).gap === 'normal') node.style.gap = 'inherit';
   }
 
-  const { image, div } = galleryVariants();
+  const { image, div } = gallery();
 </script>
 
 {#snippet figure(item: ImgType)}

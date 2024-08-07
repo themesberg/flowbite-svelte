@@ -22,4 +22,4 @@ interface AlertProps extends HTMLAttributes<HTMLDivElement> {
   onclick?: () => void;
 }
 
-export { type alertColor, type AlertProps, Alert };
+export { type alertColor, type AlertProps, Alert, alert };

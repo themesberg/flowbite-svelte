@@ -3,9 +3,8 @@
   import { twMerge } from 'tailwind-merge';
   import {
     type BottomNavProps as Props,
-    type BottomNavContextType
+    type BottomNavContextType, bottomNav
   } from './index';
-  import { bottomNav } from './theme';
 
   let {
     children,

@@ -1,9 +1,8 @@
 <script lang="ts">
   import { CloseButton } from '$lib';
   import { fade } from 'svelte/transition';
-  import { type BannerProps as Props } from './index';
-  import { banner } from './theme';
-
+  import { type BannerProps as Props, banner } from './index';
+  
   let {
     children,
     header,

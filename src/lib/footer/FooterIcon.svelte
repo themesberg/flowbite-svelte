@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type FooterIconProps as Props, iconVariants } from '.';
+  import { type FooterIconProps as Props, footerIcon } from '.';
 
   let {
     children,
@@ -9,7 +9,7 @@
     ...attributes
   }: Props = $props();
 
-  const aCls = $derived(iconVariants({ class: aClass }));
+  const aCls = $derived(footerIcon({ class: aClass }));
 </script>
 
 {#if href}

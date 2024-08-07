@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { type FooterUlProps as Props, ulVariants } from './';
+  import { type FooterUlProps as Props, footerUl } from './';
+
   let { class: ulClass, children, ...attributes }: Props = $props();
-  const base = $derived(ulVariants({ class: ulClass }));
+  const base = $derived(footerUl({ class: ulClass }));
 </script>
 
 <ul

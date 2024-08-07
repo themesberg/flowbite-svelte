@@ -1,14 +1,5 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import { twMerge } from 'tailwind-merge';
-  import type { HTMLAttributes } from 'svelte/elements';
-  import { type FooterProps as Props, footerVariants } from '.'
-
-  // interface Props extends HTMLAttributes<HTMLElement> {
-  //   children: Snippet;
-  //   footerType?: 'sitemap' | 'default' | 'logo' | 'socialmedia' | undefined;
-  //   class?: string | undefined;
-  // }
+  import { type FooterProps as Props, footer } from '.'
 
   let {
     children,
@@ -17,7 +8,7 @@
     ...attributes
   }: Props = $props();
 
-  const footerCls = $derived(footerVariants({footerType, className}));
+  const footerCls = $derived(footer({footerType, className}));
 </script>
 
 <footer {...attributes} class={footerCls}>

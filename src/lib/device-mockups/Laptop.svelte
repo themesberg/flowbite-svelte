@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { laptopVariants, type LaptopProps as Props } from '.';
+  import { type LaptopProps as Props, laptop } from '.';
 
   let {
     children,
@@ -9,7 +9,7 @@
     div4Class,
     ...attributes
   }: Props = $props();
-  const { div, inner, bot, botCen } = laptopVariants();
+  const { div, inner, bot, botCen } = laptop();
 </script>
 
 <div {...attributes}>

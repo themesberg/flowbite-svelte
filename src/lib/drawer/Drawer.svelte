@@ -1,6 +1,6 @@
 <script lang="ts">
   import { fly, slide, blur, fade } from 'svelte/transition';
-  import { type DrawerProps as Props, drawerVariants, backdropVariants  } from '.';
+  import { type DrawerProps as Props, drawer } from '.';
 
   let {
     children,
@@ -31,22 +31,23 @@
         return fly(node, params);
     }
   }
-
-  const base = $derived(drawerVariants({
-    position, placement, width, class: divClass
-  }))
-  const backdropCls = $derived(backdropVariants({ backdrop, activateClickOutside, class: backdropClass }));
+  const { base, backdrop: backdropCls } = drawer({
+    position,
+    placement,
+    width,
+    backdrop    
+  });
 </script>
 
 {#if drawerStatus}
   {#if backdrop && activateClickOutside}
     <div
       role="presentation"
-      class={backdropCls}
+      class={backdropCls({class: backdropClass})}
       onclick={closeDrawer}
     ></div>
   {:else if backdrop && !activateClickOutside}
-    <div role="presentation" class={backdropCls}></div>
+    <div role="presentation" class={backdropCls({class: backdropClass})}></div>
   {:else if !backdrop && activateClickOutside}
     <div
       role="presentation"
@@ -61,7 +62,7 @@
   {/if}
   <div
     {...attributes}
-    class={base}
+    class={base({class: divClass})}
     transition:multiple={transitionParams}
     tabindex="-1"
   >

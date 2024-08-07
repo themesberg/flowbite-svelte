@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type FooterCopyrightProps as Props, copyrightVariants } from '.';
+  import { type FooterCopyrightProps as Props, footerCopyright } from '.';
 
   let {
     spanClass,
@@ -13,7 +13,7 @@
 
   if (!year) year = new Date().getFullYear();
  
-  const { base, link, bySpan } = $derived(copyrightVariants());
+  const { base, link, bySpan } = $derived(footerCopyright());
 </script>
 
 <span class={base({ class: spanClass })}>

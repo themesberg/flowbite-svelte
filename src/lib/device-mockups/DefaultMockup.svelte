@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { defaultMockupVariants, type DefaultMockupProps as Props } from '.';
+  import { type DefaultMockupProps as Props, defaultMockup } from '.';
 
   let {
     children,
@@ -12,7 +12,7 @@
     ...attributes
   }: Props = $props();
 
-  const { div, slot, top, leftTop, leftBot, right } = defaultMockupVariants();
+  const { div, slot, top, leftTop, leftBot, right } = defaultMockup();
 </script>
 
 <div class={div({ class: divClass })} {...attributes}>

@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { type BreadcrumbProps as Props } from './index';
-  import { breadcrumb } from './theme'
+  import { type BreadcrumbProps as Props, breadcrumb } from './index';
 
   let {
     children,

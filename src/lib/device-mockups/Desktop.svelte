@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { desktopVariants, type DesktopProps as Props } from '.';
+  import { type DesktopProps as Props, desktop } from '.';
 
   let {
     children,
@@ -10,7 +10,7 @@
     ...attributes
   }: Props = $props();
 
-  const { div, inner, bot, botUnder } = desktopVariants();
+  const { div, inner, bot, botUnder } = desktop();
 </script>
 
 <div class={div({ class: divClass })} {...attributes}>

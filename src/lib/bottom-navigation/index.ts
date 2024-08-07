@@ -38,6 +38,7 @@ interface BottomNavItemProps {
 export {
   BottomNav,
   BottomNavItem,
+  bottomNav, bottomNavItem,
   type BottomNavProps,
   type BottomNavItemProps,
   type BottomNavContextType,

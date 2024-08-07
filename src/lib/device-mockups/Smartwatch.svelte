@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { smartwatchVariants, type SmartwatchProps as Props } from '.';
+  import { type SmartwatchProps as Props, smartwatch } from '.';
 
   let {
     children,
@@ -12,7 +12,7 @@
     ...attributes
   }: Props = $props();
 
-  const { div, top, rightTop, rightBot, bot, slot } = smartwatchVariants();
+  const { div, top, rightTop, rightBot, bot, slot } = smartwatch();
 </script>
 
 <div {...attributes}>

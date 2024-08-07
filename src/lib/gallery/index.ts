@@ -1,14 +1,7 @@
 import Gallery from './Gallery.svelte';
-import { type VariantProps, tv } from 'tailwind-variants';
 import type { Snippet } from 'svelte';
 import type { HTMLImgAttributes } from 'svelte/elements';
-
-const galleryVariants = tv({
-  slots: {
-    image: 'h-auto max-w-full rounded-lg',
-    div: 'grid'
-  }
-});
+import { gallery } from './theme';
 
 type ImgType = {
   src?: string | undefined | null;
@@ -22,4 +15,4 @@ interface GalleryProps {
   divClass?: string | undefined;
 }
 
-export { Gallery, galleryVariants, type GalleryProps, type ImgType };
+export { Gallery, gallery, type GalleryProps, type ImgType };

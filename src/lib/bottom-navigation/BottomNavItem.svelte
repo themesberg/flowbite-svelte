@@ -4,8 +4,8 @@
     type BottomNavItemProps as Props,
     type BottomNavContextType,
     type BottomNavVariantType,
+    bottomNavItem
   } from './index';
-  import { bottomNavItem } from './theme';
   import { twMerge } from 'tailwind-merge';
   import { page } from '$app/stores';
 

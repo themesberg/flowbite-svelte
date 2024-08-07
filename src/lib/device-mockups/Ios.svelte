@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { iosVariants, type IosProps as Props } from '.';
+  import { type IosProps as Props, ios } from '.';
 
   let {
     children,
@@ -12,7 +12,7 @@
     ...attributes
   }: Props = $props();
 
-  const { div, slot, top, leftTop, leftBot, right } = iosVariants();
+  const { div, slot, top, leftTop, leftBot, right } = ios();
 </script>
 
 <div class={div({ class: divClass })} {...attributes}>

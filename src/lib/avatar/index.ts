@@ -19,4 +19,4 @@ interface AvatarProps extends HTMLAttributes<HTMLDivElement>, AvatarVariants {
   onclick?: () => void;
 }
 
-export { Avatar, type AvatarProps };
+export { Avatar, avatar, type AvatarProps };

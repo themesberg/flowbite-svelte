@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { tabletVariants, type TabletProps as Props } from '.';
+  import { type TabletProps as Props, tablet } from '.';
 
   let {
     children,
@@ -12,7 +12,7 @@
     ...attributes
   }: Props = $props();
 
-  const { div, leftTop, leftMid, leftBot, right, slot } = tabletVariants();
+  const { div, leftTop, leftMid, leftBot, right, slot } = tablet();
 </script>
 
 <div class={div({ class: divClass })} {...attributes}>

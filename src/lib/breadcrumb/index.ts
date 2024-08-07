@@ -3,6 +3,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 import type { HTMLLiAttributes } from 'svelte/elements';
 import Breadcrumb from './Breadcrumb.svelte';
 import BreadcrumbItem from './BreadcrumbItem.svelte';
+import { breadcrumb } from './theme';
 
 interface BreadcrumbProps extends HTMLAttributes<HTMLElement> {
   children: Snippet;
@@ -28,6 +29,7 @@ interface BreadcrumbItemProps extends HTMLLiAttributes {
 export {
   Breadcrumb,
   BreadcrumbItem,
+  breadcrumb,
   type BreadcrumbProps,
   type BreadcrumbItemProps
 };

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { androidVariants, type AndroidProps as Props } from '.';
+  import { type AndroidProps as Props, android } from '.';
 
   let {
     children,
@@ -14,7 +14,7 @@
   }: Props = $props();
 
   const { div, slot, top, leftTop, leftMid, leftBot, right } =
-    androidVariants();
+    android();
 </script>
 
 <div class={div({ class: divClass })} {...attributes}>
