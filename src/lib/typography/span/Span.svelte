@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type SpanProps as Props, spanVariants } from './index';
+  import { type SpanProps as Props, span } from './index';
 
   let {
     children,
@@ -17,7 +17,7 @@
   }: Props = $props();
 
   let classSpan = $derived(
-    spanVariants({
+    span({
       italic,
       underline,
       linethrough,

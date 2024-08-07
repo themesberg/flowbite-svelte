@@ -1,7 +1,7 @@
 <script lang="ts">
   import { setContext } from 'svelte';
   import ListgroupItem from './ListgroupItem.svelte';
-  import { type ListgroupProps as Props, listgroupVariants } from '.';
+  import { type ListgroupProps as Props, listGroup } from '.';
 
   let {
     children,
@@ -13,7 +13,7 @@
     class: className,
     ...attributes
   }: Props = $props();
-  const base = $derived(listgroupVariants({ rounded, border, className}));
+  const base = $derived(listGroup({ rounded, border, className}));
   let tag = active ? 'div' : 'ul';
   setContext('active', active);
 </script>

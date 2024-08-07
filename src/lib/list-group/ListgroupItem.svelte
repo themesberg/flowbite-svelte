@@ -1,8 +1,8 @@
 <script lang="ts">
   import { getContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
-  import { type VariantProps, tv } from 'tailwind-variants';
-  import { type ListgroupItemProps as Props, listGroupItemVariants } from '.';
+  import { tv } from 'tailwind-variants';
+  import { type ListgroupItemProps as Props, listGroupItem } from '.';
   
   let {
     children,
@@ -25,7 +25,7 @@
 
   active = getContext('active');
 
-  const itemClass = listGroupItemVariants({ 
+  const itemClass = listGroupItem({ 
   state: disabled ? 'disabled' : current ? 'current' : 'normal',
   active,
   class: twMerge(
@@ -37,7 +37,7 @@
 
 const buttonClass = tv({
   base: 'flex items-center text-left',
-  extend: listGroupItemVariants,
+  extend: listGroupItem,
 })({ 
   state: disabled ? 'disabled' : current ? 'current' : 'normal',
   active,
@@ -46,7 +46,7 @@ const buttonClass = tv({
 
 const linkClass = tv({
   base: 'block',
-  extend: listGroupItemVariants,
+  extend: listGroupItem,
 })({ 
   state: disabled ? 'disabled' : current ? 'current' : 'normal',
   active,

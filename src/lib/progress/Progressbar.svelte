@@ -1,8 +1,8 @@
 <script lang="ts">
   import { cubicOut } from 'svelte/easing';
+  import { twMerge } from 'tailwind-merge';
   import { tweened } from 'svelte/motion';
-  import { cn } from '../utils'
-  import { type ProgressbarProps as Props, progressbarVariants } from '.';
+  import { type ProgressbarProps as Props, progressbar } from '.';
 
   let {
     progress = '45',
@@ -22,29 +22,13 @@
     ...attributes
   }: Props = $props();
 
-  // let labelInsideCls: string =
-    // 'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
-  // let divCls: string = 'w-full bg-gray-200 rounded-full dark:bg-gray-700';
-
   const _progress = tweened(0, {
     duration: animate ? tweenDuration : 0,
     easing
   });
-  const  {base, labelInsideDiv, insideDiv, outsideDiv, oustsideSpan, outsideProgress } = $derived(progressbarVariants({
+  const  {base, labelInsideDiv, insideDiv, outsideDiv, oustsideSpan, outsideProgress } = $derived(progressbar({
      color, labelInside
   }))
-
-  // let barColor: string | undefined | null;
-  // const barColors = {
-  //   primary: 'bg-primary-600',
-  //   blue: 'bg-blue-600',
-  //   gray: 'bg-gray-600 dark:bg-gray-300',
-  //   red: 'bg-red-600 dark:bg-red-500',
-  //   green: 'bg-green-600 dark:bg-green-500',
-  //   yellow: 'bg-yellow-400',
-  //   purple: 'bg-purple-600 dark:bg-purple-500',
-  //   indigo: 'bg-indigo-600 dark:bg-indigo-500'
-  // };
 
   $effect(() => {
     _progress.set(Number(progress));
@@ -64,17 +48,17 @@
     >
   </div>
 {/if}
-<div class={cn(base({ class: divClass }),size)} {...attributes}>
+<div class={twMerge(base({ class: divClass }),size)} {...attributes}>
   {#if labelInside}
     <div
-      class={cn(labelInsideDiv({ class: div2Class }), size)}
+      class={twMerge(labelInsideDiv({ class: div2Class }), size)}
       style="width: {$_progress}%"
     >
       {$_progress.toFixed(precision)}%
     </div>
   {:else}
     <div
-      class={cn(insideDiv({ class: div2Class }), size)}
+      class={twMerge(insideDiv({ class: div2Class }), size)}
       style="width: {$_progress}%"
     ></div>
   {/if}

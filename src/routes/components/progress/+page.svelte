@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Progressbar, Button } from '$lib';
+  import { Progressbar, Button, Label, Radio } from '$lib';
   import { sineOut } from 'svelte/easing';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -12,6 +12,12 @@
   });
 
   let progress = $state('45');
+  const sizes = ['h-1.5', 'h-2.5', 'h-4', 'h-6'];
+  let progressSize = $state('h-2.5');
+  const colors = ['primary','blue', 'gray','red', 'green', 'yellow', 'purple','indigo']
+  let progressColor: Progressbar['color'] = $state('primary');
+  let progressLabel = $state(false);
+
 </script>
 
 <H1>Progress bar</H1>
@@ -33,31 +39,28 @@
 <CodeWrapper>
   <div class="my-4">
     <div class="mb-1 text-base font-medium dark:text-white">Small</div>
-    <Progressbar progress="50" size="h-1.5" />
+    <Progressbar progress="50" size={progressSize} />
   </div>
-
-  <div class="my-4">
-    <div class="mb-1 text-base font-medium dark:text-white">Default</div>
-    <Progressbar progress="50" size="h-2.5" />
-  </div>
-
-  <div class="my-4">
-    <div class="mb-1 text-lg font-medium dark:text-white">Large</div>
-    <Progressbar progress="50" size="h-4" />
-  </div>
-
-  <div class="my-4">
-    <div class="mb-1 text-lg font-medium dark:text-white">Extra Large</div>
-    <Progressbar progress="50" size="h-6" />
+  <div class="flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Size: </Label>
+    {#each sizes as size}
+      <Radio
+        labelClass="w-24 my-1"
+        name="progress_size"
+        bind:group={progressSize}
+        value={size}>{size}</Radio
+      >
+    {/each}
   </div>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/sizes.md'] as string} />
 
-<H2>With label inside</H2>
+<H2>With progress inside</H2>
 
-<CodeWrapper>
-  <Progressbar progress="50" size="h-4" labelInside />
+<CodeWrapper class="space-y-4">
+  <Progressbar progress="50" size="h-4" labelInside={progressLabel} />
+  <Button onclick={() => (progressLabel = !progressLabel)}>Toggle</Button>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/labelinside.md'] as string} />
@@ -75,49 +78,19 @@
 <CodeWrapper>
   <div class="my-4">
     <div class="mb-1 text-base font-medium dark:text-white">Gray</div>
-    <Progressbar progress="50" color="gray" />
+    <Progressbar progress="50" color={progressColor} />
   </div>
 
-  <div class="my-4">
-    <div class="mb-1 text-base font-medium text-blue-700 dark:text-blue-500">
-      Blue
-    </div>
-    <Progressbar progress="50" color="blue" />
-  </div>
-
-  <div class="my-4">
-    <div class="mb-1 text-base font-medium text-red-700 dark:text-red-500">
-      Red
-    </div>
-    <Progressbar progress="50" color="red" />
-  </div>
-
-  <div class="my-4">
-    <div class="mb-1 text-base font-medium text-green-700 dark:text-green-500">
-      Green
-    </div>
-    <Progressbar progress="50" color="green" />
-  </div>
-
-  <div class="mb-1 text-base font-medium text-yellow-700 dark:text-yellow-500">
-    Yellow
-  </div>
-  <div class="my-4">
-    <Progressbar progress="50" color="yellow" />
-  </div>
-
-  <div class="mb-1 text-base font-medium text-indigo-700 dark:text-indigo-400">
-    Indigo
-  </div>
-  <div class="my-4">
-    <Progressbar progress="50" color="indigo" />
-  </div>
-
-  <div class="mb-1 text-base font-medium text-purple-700 dark:text-purple-400">
-    Purple
-  </div>
-  <div class="my-4">
-    <Progressbar progress="50" color="purple" />
+  <div class="flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Color</Label>
+    {#each colors as color}
+      <Radio
+        labelClass="w-24 my-1"
+        name="progress_size"
+        bind:group={progressColor}
+        value={color}>{color}</Radio
+      >
+    {/each}
   </div>
 </CodeWrapper>
 

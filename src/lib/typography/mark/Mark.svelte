@@ -1,11 +1,11 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
-  import { type MarkProps as Props, markVariants } from './index';
+  import { type MarkProps as Props, mark } from './index';
 
   let { children, class: className, ...attributes }: Props = $props();
 </script>
 
-<mark {...attributes} class={twMerge(markVariants(), className)}>
+<mark {...attributes} class={twMerge(mark(), className)}>
   {@render children()}
 </mark>
 

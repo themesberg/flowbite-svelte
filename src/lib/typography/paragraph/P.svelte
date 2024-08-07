@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type ParagraphProps as Props, paragraphVariants } from './index';
+  import { type ParagraphProps as Props, paragraph } from './index';
 
   let {
     children,
@@ -16,7 +16,7 @@
     ...attributes
   }: Props = $props();
 
-  let classP = $derived(paragraphVariants({
+  let classP = $derived(paragraph({
       height,
       size,
       weight,
