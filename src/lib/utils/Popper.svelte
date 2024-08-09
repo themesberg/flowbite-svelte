@@ -59,13 +59,7 @@
       if (open) return; // If the popper is already open after the reference element has changed
     }
 
-    if (clickable && ev.type === 'click') {
-      open = !open;
-    } else if (hoverable && ev.type === 'mouseenter') {
-      open = true;
-    } else if (focusable && ev.type === 'focusin') {
-      open = true;
-    }
+    open = ev.type === 'click' ? !open : true;
   };
 
   const hasHover = (el: Element) => el.matches(':hover');
