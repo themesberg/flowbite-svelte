@@ -4,33 +4,31 @@ const alert = tv({
   base: 'p-4 gap-3 text-sm',
   variants: {
     color: {
+      // primary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
       primary:
         'bg-primary-50 dark:bg-gray-800 text-primary-800 dark:text-primary-400',
-      info: "bg-cyan-100 text-cyan-500 hover:bg-cyan-200 focus:ring-cyan-400 dark:bg-cyan-200 dark:text-cyan-600 dark:hover:bg-cyan-300",
       gray: "bg-gray-100 text-gray-500 hover:bg-gray-200 focus:ring-gray-400 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white",
-      failure:
-        "bg-red-100 text-red-500 hover:bg-red-200 focus:ring-red-400 dark:bg-red-200 dark:text-red-600 dark:hover:bg-red-300",
-      success:
-        "bg-green-100 text-green-500 hover:bg-green-200 focus:ring-green-400 dark:bg-green-200 dark:text-green-600 dark:hover:bg-green-300",
-      warning:
-        "bg-yellow-100 text-yellow-500 hover:bg-yellow-200 focus:ring-yellow-400 dark:bg-yellow-200 dark:text-yellow-600 dark:hover:bg-yellow-300",
       red: "bg-red-100 text-red-500 hover:bg-red-200 focus:ring-red-400 dark:bg-red-200 dark:text-red-600 dark:hover:bg-red-300",
-      green:
-        "bg-green-100 text-green-500 hover:bg-green-200 focus:ring-green-400 dark:bg-green-200 dark:text-green-600 dark:hover:bg-green-300",
+      orange: "bg-orange-100 text-orange-500 hover:bg-orange-200 focus:ring-orange-400 dark:bg-orange-200 dark:text-orange-600 dark:hover:bg-orange-300",
+      amber: "bg-amber-100 text-amber-500 hover:bg-amber-200 focus:ring-amber-400 dark:bg-amber-200 dark:text-amber-600 dark:hover:bg-amber-300",
       yellow:
         "bg-yellow-100 text-yellow-500 hover:bg-yellow-200 focus:ring-yellow-400 dark:bg-yellow-200 dark:text-yellow-600 dark:hover:bg-yellow-300",
-      blue: "bg-blue-100 text-blue-500 hover:bg-blue-200 focus:ring-blue-400 dark:bg-blue-200 dark:text-blue-600 dark:hover:bg-blue-300",
-      cyan: "bg-cyan-100 text-cyan-500 hover:bg-cyan-200 focus:ring-cyan-400 dark:bg-cyan-200 dark:text-cyan-600 dark:hover:bg-cyan-300",
-      pink: "bg-pink-100 text-pink-500 hover:bg-pink-200 focus:ring-pink-400 dark:bg-pink-200 dark:text-pink-600 dark:hover:bg-pink-300",
       lime: "bg-lime-100 text-lime-500 hover:bg-lime-200 focus:ring-lime-400 dark:bg-lime-200 dark:text-lime-600 dark:hover:bg-lime-300",
-      dark: "bg-gray-100 text-gray-500 hover:bg-gray-200 focus:ring-gray-400 dark:bg-gray-200 dark:text-gray-600 dark:hover:bg-gray-300",
+      green:
+        "bg-green-100 text-green-500 hover:bg-green-200 focus:ring-green-400 dark:bg-green-200 dark:text-green-600 dark:hover:bg-green-300",
+      emerald: "bg-emerald-100 text-emerald-500 hover:bg-emerald-200 focus:ring-emerald-400 dark:bg-emerald-200 dark:text-emerald-600 dark:hover:bg-emerald-300",
+      teal: "bg-teal-100 text-teal-500 hover:bg-teal-200 focus:ring-teal-400 dark:bg-teal-200 dark:text-teal-600 dark:hover:bg-teal-300",
+      cyan: "bg-cyan-100 text-cyan-500 hover:bg-cyan-200 focus:ring-cyan-400 dark:bg-cyan-200 dark:text-cyan-600 dark:hover:bg-cyan-300",
+      sky: "bg-sky-100 text-sky-500 hover:bg-sky-200 focus:ring-sky-400 dark:bg-sky-200 dark:text-sky-600 dark:hover:bg-sky-300",
+      blue: "bg-blue-100 text-blue-500 hover:bg-blue-200 focus:ring-blue-400 dark:bg-blue-200 dark:text-blue-600 dark:hover:bg-blue-300",
       indigo:
         "bg-indigo-100 text-indigo-500 hover:bg-indigo-200 focus:ring-indigo-400 dark:bg-indigo-200 dark:text-indigo-600 dark:hover:bg-indigo-300",
+      violet: "bg-violet-100 text-violet-500 hover:bg-violet-200 focus:ring-violet-400 dark:bg-violet-200 dark:text-violet-600 dark:hover:bg-violet-300",
       purple:
         "bg-purple-100 text-purple-500 hover:bg-purple-200 focus:ring-purple-400 dark:bg-purple-200 dark:text-purple-600 dark:hover:bg-purple-300",
-      teal: "bg-teal-100 text-teal-500 hover:bg-teal-200 focus:ring-teal-400 dark:bg-teal-200 dark:text-teal-600 dark:hover:bg-teal-300",
-      light:
-        "bg-gray-50 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:bg-gray-600 dark:text-gray-200 dark:hover:bg-gray-700 dark:hover:text-white",
+      fuchsia: "bg-fuchsia-100 text-fuchsia-500 hover:bg-fuchsia-200 focus:ring-fuchsia-400 dark:bg-fuchsia-200 dark:text-fuchsia-600 dark:hover:bg-fuchsia-300",
+      pink: "bg-pink-100 text-pink-500 hover:bg-pink-200 focus:ring-pink-400 dark:bg-pink-200 dark:text-pink-600 dark:hover:bg-pink-300",
+      rose: "bg-rose-100 text-rose-500 hover:bg-rose-200 focus:ring-rose-400 dark:bg-rose-200 dark:text-rose-600 dark:hover:bg-rose-300"
     },
     rounded: {
       true: 'rounded-lg'

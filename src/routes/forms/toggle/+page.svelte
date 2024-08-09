@@ -13,9 +13,9 @@
     eager: true
   });
 
-  const colors = Object.keys(toggle.variants.color);
+  const colors = Object.keys(toggle.variants.color) as Toggle['color'][];
   let toggleColor: Toggle['color'] = $state('primary');
-  const sizes = Object.keys(toggle.variants.size);
+  const sizes = Object.keys(toggle.variants.size) as Toggle['size'][];
   let toggleSize: Toggle['size'] = $state('default');
 </script>
 
@@ -36,13 +36,14 @@
 <H2>Colors</H2>
 <CodeWrapper class="space-y-4">
   <Toggle color={toggleColor} checked>Toggle</Toggle>
-  <div class="flex flex-wrap space-x-4">
+  <div class="flex flex-wrap">
     <Label class="mb-4 w-full font-bold">Color:</Label>
     {#each colors as colorOption}
       <Radio
-        labelClass="w-32 m-2"
+        labelClass="w-24 m-2"
         name="toggle_color"
         bind:group={toggleColor}
+        color={colorOption}
         value={colorOption}>{colorOption}</Radio
       >
     {/each}
@@ -51,8 +52,10 @@
 <HighlightCompo code={modules['./md/colors.md'] as string} />
 
 <H2>Sizes</H2>
-<CodeWrapper class="flex flex-col space-y-4">
-  <Toggle toggleSize={toggleSize} checked>Toggle</Toggle>
+<CodeWrapper class="flex flex-col space-y-2">
+  <div class="h-10">
+    <Toggle toggleSize={toggleSize} checked>Toggle</Toggle>
+  </div>
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as size}

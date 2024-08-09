@@ -83,13 +83,6 @@
 <H2>Default badge</H2>
 <CodeWrapper>
   <Badge>Default</Badge>
-  <Badge color="gray">Gray</Badge>
-  <Badge color="red">Red</Badge>
-  <Badge color="green">Green</Badge>
-  <Badge color="yellow">Yellow</Badge>
-  <Badge color="indigo">Indigo</Badge>
-  <Badge color="purple">Purple</Badge>
-  <Badge color="pink">Pink</Badge>
 </CodeWrapper>
 <HighlightCompo
   codeLang="ts"
@@ -142,45 +135,15 @@
 </CodeWrapper>
 
 <H2>Large badge</H2>
-<CodeWrapper class="space-y-1">
-  <Badge large>Default</Badge>
-  <Badge large color="gray">Gray</Badge>
-  <Badge large color="red">Red</Badge>
-  <Badge large color="green">Green</Badge>
-  <Badge large color="yellow">Yellow</Badge>
-  <Badge large color="indigo">Indigo</Badge>
-  <Badge large color="purple">Purple</Badge>
-  <Badge large color="pink">Pink</Badge>
-</CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/large-badge.md'] as string} />
 
 <H2>Bordered badge</H2>
-<CodeWrapper>
-  <Badge border>Default</Badge>
-  <Badge border color="gray">Gray</Badge>
-  <Badge border color="red">Red</Badge>
-  <Badge border color="green">Green</Badge>
-  <Badge border color="yellow">Yellow</Badge>
-  <Badge border color="indigo">Indigo</Badge>
-  <Badge border color="purple">Purple</Badge>
-  <Badge border color="pink">Pink</Badge>
-</CodeWrapper>
 <HighlightCompo
   codeLang="ts"
   code={modules['./md/bordered-badge.md'] as string}
 />
 
 <H2>Pills badge</H2>
-<CodeWrapper>
-  <Badge rounded>Default</Badge>
-  <Badge rounded color="gray">Gray</Badge>
-  <Badge rounded color="red">Red</Badge>
-  <Badge rounded color="green">Green</Badge>
-  <Badge rounded color="yellow">Yellow</Badge>
-  <Badge rounded color="indigo">Indigo</Badge>
-  <Badge rounded color="purple">Purple</Badge>
-  <Badge rounded color="pink">Pink</Badge>
-</CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/pills-badge.md'] as string} />
 
 <H2>Badge as links</H2>
@@ -289,18 +252,11 @@
 />
 
 <H2>Dismissable badge</H2>
-<CodeWrapper class="min-h-20 space-y-1">
-  <Badge dismissable transition={slide} params={slideParams} large
+<CodeWrapper>
+  <Badge dismissable transition={slide} params={slideParams} large color="lime"
     >Slide transition</Badge
   >
-  <Badge dismissable large>Default</Badge>
-  <Badge dismissable large color="gray">Gray</Badge>
-  <Badge dismissable large color="red">Red</Badge>
-  <Badge dismissable large color="green">Green</Badge>
-  <Badge dismissable large color="yellow">Yellow</Badge>
-  <Badge dismissable large color="indigo">Indigo</Badge>
-  <Badge dismissable large color="purple">Purple</Badge>
-  <Badge dismissable large color="pink">Pink</Badge>
+  <Badge dismissable large color="violet">Default</Badge>
 </CodeWrapper>
 <HighlightCompo
   codeLang="ts"

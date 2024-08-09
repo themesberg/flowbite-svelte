@@ -77,7 +77,7 @@
         <CloseButton
           class="-my-1.5 -me-1.5 ms-auto dark:hover:bg-gray-700"
           {color}
-          ariaLabel="Remove badge"
+          ariaLabel="Remove alert"
           onclick={() => {
             alertStatus = false;
           }}

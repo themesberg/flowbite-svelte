@@ -11,5 +11,7 @@
   }
 </script>
 
-<Badge dismissable transition={slide} params={slideParams} large>Slide transition</Badge>
-<Badge dismissable large>Default</Badge>
+<Badge dismissable transition={slide} params={slideParams} large color="lime"
+  >Slide transition</Badge
+>
+<Badge dismissable large color="violet">Default</Badge>

@@ -11,8 +11,6 @@ export const checkbox = tv({
         {base: 'text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600'},
       secondary:
         {base: 'text-secondary-600 focus:ring-secondary-500 dark:focus:ring-secondary-600'},
-      gray: {base: "text-gray-900 focus:ring-gray-900 dark:ring-offset-gray-900 dark:focus:ring-gray-900"},
-      light: {base: "text-gray-900 focus:ring-gray-900 dark:ring-offset-gray-900 dark:focus:ring-gray-900"},
       purple: {base: "text-purple-600 focus:ring-purple-600 dark:ring-offset-purple-600 dark:focus:ring-purple-600"},
       blue: {base: "text-blue-700 focus:ring-blue-600 dark:ring-offset-blue-700 dark:focus:ring-blue-700"},
       cyan: {base: "text-cyan-600 focus:ring-cyan-600 dark:ring-offset-cyan-600 dark:focus:ring-cyan-600"},

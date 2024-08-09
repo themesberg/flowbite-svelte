@@ -1,10 +1,5 @@
 import { tv } from 'tailwind-variants';
 
-const createColorVariant = (color: string) => ({
-  labelInsideDiv: color,
-  insideDiv: color
-});
-
 export const progressbar = tv({
   slots: {
     base: 'w-full bg-gray-200 rounded-full dark:bg-gray-700',
@@ -17,14 +12,38 @@ export const progressbar = tv({
   },
   variants: {
     color: {
-      primary: createColorVariant('bg-primary-600'),
-      blue: createColorVariant('bg-blue-600'),
-      gray: createColorVariant('bg-gray-600 dark:bg-gray-300'),
-      red: createColorVariant('bg-red-600 dark:bg-red-500'),
-      green: createColorVariant('bg-green-600 dark:bg-green-500'),
-      yellow: createColorVariant('bg-yellow-400'),
-      purple: createColorVariant('bg-purple-600 dark:bg-purple-500'),
-      indigo: createColorVariant('bg-indigo-600 dark:bg-indigo-500')
+      primary: {
+        labelInsideDiv: 'bg-primary-600',
+        insideDiv: 'bg-primary-600'
+      },
+      blue: {
+        labelInsideDiv: 'bg-blue-600',
+        insideDiv: 'bg-blue-600'
+      },
+      gray: {
+        labelInsideDiv: 'bg-gray-600 dark:bg-gray-300',
+        insideDiv: 'bg-gray-600 dark:bg-gray-300',
+      },
+      red: {
+        labelInsideDiv: 'bg-red-600 dark:bg-red-500',
+        insideDiv: 'bg-red-600 dark:bg-red-500'
+      },
+      green: {
+        labelInsideDiv: 'bg-green-600 dark:bg-green-500',
+        insideDiv: 'bg-green-600 dark:bg-green-500'
+      },
+      yellow: {
+        labelInsideDiv: 'bg-yellow-400',
+        insideDiv: 'bg-yellow-400'
+      },
+      purple: {
+        labelInsideDiv: 'bg-purple-600 dark:bg-purple-500',
+        insideDiv: 'bg-purple-600 dark:bg-purple-500'
+      },
+      indigo: {
+        labelInsideDiv: 'bg-indigo-600 dark:bg-indigo-500',
+        insideDiv: 'bg-indigo-600 dark:bg-indigo-500'
+      }
     },
     labelInside: {
       true: '',

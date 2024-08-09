@@ -2,7 +2,7 @@
   import { type CloseButtonProps as Props, closeButtonVariants } from './index';
 
   let {
-    color = 'default',
+    color = 'primary',
     onclick,
     name = 'Close',
     ariaLabel,
@@ -12,7 +12,7 @@
     ...attributes
   }: Props = $props();
 
-  const { base, svg } = closeButtonVariants({ color, size });
+  const { base, svg } = $derived(closeButtonVariants({ color, size }));
 </script>
 
 {#if href}

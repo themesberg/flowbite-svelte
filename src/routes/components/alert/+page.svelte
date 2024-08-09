@@ -316,7 +316,7 @@
 
 <H2>Custom color</H2>
 <CodeWrapper>
-  <Alert dismissable color="none" class="bg-sky-500 text-white"
+  <Alert dismissable class="bg-sky-500 text-white"
     >Your content</Alert
   >
 </CodeWrapper>
