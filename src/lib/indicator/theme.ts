@@ -6,17 +6,26 @@ const indicator = tv({
   },
   variants: {
     color: {
+      // 'primary' | 'gray' | 'red' | 'orange' | 'amber' | 'yellow' | 'lime' | 'green' | 'emerald' | 'teal' | 'cyan' | 'sky' | 'blue' | 'indigo' | 'violet' | 'purple' | 'fuchsia' | 'pink' | 'rose'
+      primary: { base: 'bg-primary-500' },
       gray: { base: 'bg-gray-200' },
-      dark: { base: 'bg-gray-900 dark:bg-gray-700' },
-      blue: { base: 'bg-blue-600' },
-      orange: { base: 'bg-orange-600' },
-      green: { base: 'bg-green-500' },
       red: { base: 'bg-red-500' },
-      purple: { base: 'bg-purple-500' },
-      indigo: { base: 'bg-indigo-500' },
+      orange: { base: 'bg-orange-600' },
+      amber: { base: 'bg-amber-500' },
       yellow: { base: 'bg-yellow-300' },
+      lime: { base: 'bg-lime-500' },
+      green: { base: 'bg-green-500' },
+      emerald: { base: 'bg-emerald-500' },
       teal: { base: 'bg-teal-500' },
-      none: {}
+      cyan: { base: 'bg-cyan-500' },
+      sky: { base: 'bg-sky-500' },
+      blue: { base: 'bg-blue-500' },
+      indigo: { base: 'bg-indigo-500' },
+      violet: { base: 'bg-violet-500' },
+      purple: { base: 'bg-purple-500' },
+      fuchsia: { base: 'bg-fuchsia-500' },
+      pink: { base: 'bg-pink-500' },
+      rose: { base: 'bg-rose-500' },
     },
     size: {
       xs: { base: 'w-2 h-2' },

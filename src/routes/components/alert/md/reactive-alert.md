@@ -30,7 +30,7 @@
   <Button color="light" onclick={changeStatus}>Open alert</Button>
 {/if}
 <div class="flex space-x-4">
-  <Label>Change color</Label>
+  <Label>Color: </Label>
   <Radio name="color" bind:group={color} value="red">Red</Radio>
   <Radio name="color" bind:group={color} value="green">Green</Radio>
   <Radio name="color" bind:group={color} value="yellow">Yellow</Radio>

@@ -3,7 +3,7 @@
 
   let {
     children,
-    color = 'gray',
+    color = 'primary',
     rounded = false,
     size = 'md',
     border = false,

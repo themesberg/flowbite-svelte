@@ -102,7 +102,7 @@
     <Skeleton size={skeletonSize} class={classes.skeleton} />
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Change size</Label>
+    <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each skeletonSizes as size}
       <Radio
         labelClass="w-24 my-1"
@@ -128,7 +128,7 @@
     />
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Change size</Label>
+    <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each imageSizes as size}
       <Radio
         labelClass="w-24 my-1"
@@ -163,7 +163,7 @@
     <VideoPlaceholder size={videoPlaceholderSize} class={classes.video} />
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Change size</Label>
+    <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each videoSizes as size}
       <Radio
         labelClass="w-24 my-1"
@@ -185,7 +185,7 @@
 <CodeWrapper>
   <TextPlaceholder size={textPlaceholderSize} />
   <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Change size</Label>
+    <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each textSizes as size}
       <Radio
         labelClass="w-24 my-1"
@@ -204,7 +204,7 @@
 <CodeWrapper>
   <CardPlaceholder size={cardPlaceholderSize} />
   <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Change size</Label>
+    <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each cardSizes as size}
       <Radio
         labelClass="w-24 my-1"
@@ -236,7 +236,7 @@
     />
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Change size</Label>
+    <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each listSizes as size}
       <Radio
         labelClass="w-24 my-1"

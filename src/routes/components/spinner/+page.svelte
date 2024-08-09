@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Spinner, Button, Label, Radio } from '$lib';
+  import { Spinner, spinner, Button, Label, Radio } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -11,17 +11,7 @@
   });
 
   // color, size, class
-  const colors: Spinner['color'][] = [
-    'primary',
-    'blue',
-    'gray',
-    'green',
-    'red',
-    'yellow',
-    'pink',
-    'purple',
-    'white'
-  ];
+  const colors: Spinner['color'][] = Object.keys(spinner.variants.color);
   let spinnerColor: Spinner['color'] = $state('primary');
   const sizes: Spinner['size'][] = ['4', '5', '6', '8', '10', '12', '16'];
   let spinnerSize: Spinner['size'] = $state('8');
@@ -75,7 +65,7 @@
     <Spinner size={spinnerSize} />
   </div>
   <div class="mt-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Change size</Label>
+    <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as size}
       <Radio
         labelClass="w-24 my-1"

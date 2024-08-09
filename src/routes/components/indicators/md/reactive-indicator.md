@@ -16,7 +16,7 @@
 </div>
 <div class="mt-8 space-y-4">
 <div class="flex space-x-2">
-  <Label>Change color</Label>
+  <Label>Color: </Label>
   <Radio name="color" bind:group={color} value="gray">Gray</Radio>
   <Radio name="color" bind:group={color} value="dark">Dark</Radio>
   <Radio name="color" bind:group={color} value="orange">Orange</Radio>
@@ -29,7 +29,7 @@
   <Radio name="color" bind:group={color} value="teal">Teal</Radio>
 </div>
 <div class="flex space-x-4">
-  <Label>Change size</Label>
+  <Label>Size: </Label>
   <Radio name="size" bind:group={size} value="xs">xs</Radio>
   <Radio name="size" bind:group={size} value="sm">sm</Radio>
   <Radio name="size" bind:group={size} value="md">md</Radio>

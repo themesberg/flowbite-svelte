@@ -1,11 +1,11 @@
 <script context="module" lang="ts">
   import { writable, type Writable } from 'svelte/store';
 
-  export interface TabCtxType {
-    activeClasses: string | undefined | null;
-    inactiveClasses: string | undefined | null;
-    selected: Writable<HTMLElement>;
-  }
+  // // export interface TabCtxType {
+  // //   activeClasses: string | undefined | null;
+  // //   inactiveClasses: string | undefined | null;
+  // //   selected: Writable<HTMLElement>;
+  // // }
 </script>
 
 <script lang="ts">
@@ -13,17 +13,18 @@
   import { twMerge } from 'tailwind-merge';
   import { setContext } from 'svelte';
   import type { HTMLAttributes } from 'svelte/elements';
+  import { type TabsProps as Props, type TabCtxType } from '.'
 
-  interface Props extends HTMLAttributes<HTMLUListElement> {
-    children: Snippet;
-    style?: 'full' | 'pill' | 'underline' | 'none';
-    defaultClass?: string | undefined | null;
-    contentClass?: string | undefined | null;
-    divider?: boolean;
-    activeClasses?: string | undefined | null;
-    inactiveClasses?: string | undefined | null;
-    class?: string | undefined | null;
-  }
+  // interface Props extends HTMLAttributes<HTMLUListElement> {
+  //   children: Snippet;
+  //   style?: 'full' | 'pill' | 'underline' | 'none';
+  //   defaultClass?: string | undefined | null;
+  //   contentClass?: string | undefined | null;
+  //   divider?: boolean;
+  //   activeClasses?: string | undefined | null;
+  //   inactiveClasses?: string | undefined | null;
+  //   class?: string | undefined | null;
+  // }
   let {
     children,
     style = 'none',

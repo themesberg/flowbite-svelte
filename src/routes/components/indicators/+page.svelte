@@ -1,6 +1,6 @@
 <script lang="ts">
   import {
-    Indicator,
+    Indicator, indicator,
     Button,
     Avatar,
     Badge,
@@ -21,18 +21,7 @@
   });
   // color, size, rounded, border, placement and offset
   const sizes = ['xs', 'sm', 'md', 'lg', 'xl'];
-  const colors = [
-    'gray',
-    'dark',
-    'orange',
-    'blue',
-    'green',
-    'red',
-    'purple',
-    'indigo',
-    'yellow',
-    'teal'
-  ];
+  const colors: Indicator['color'][] = Object.keys(indicator.variants.color);
   const positions = [
     'top-left',
     'top-center',
@@ -60,8 +49,8 @@
 
 <H2>Default indicator</H2>
 <CodeWrapper class="flex justify-center gap-4">
+  <Indicator />
   <Indicator color="gray" />
-  <Indicator color="dark" />
   <Indicator color="orange" />
   <Indicator color="blue" />
   <Indicator color="green" />
@@ -93,7 +82,7 @@
       {/each}
     </div>
     <div class="flex flex-wrap space-x-4">
-      <Label class="mb-4 w-full font-bold">Change size</Label>
+      <Label class="mb-4 w-full font-bold">Size:</Label>
       {#each sizes as sizeOption}
         <Radio
           labelClass="w-24 my-1"
@@ -104,7 +93,7 @@
       {/each}
     </div>
     <div class="flex flex-wrap space-x-4">
-      <Label class="mb-4 w-full font-bold">Change placement</Label>
+      <Label class="mb-4 w-full font-bold">Placement:</Label>
       {#each positions as positionOption}
         <Radio
           labelClass="w-32 my-1"
@@ -119,6 +108,15 @@
     >
   </div>
 </CodeWrapper>
+
+<H2>Color</H2>
+<HighlightCompo code={modules['./md/color.md'] as string} />
+
+<H2>Size</H2>
+<HighlightCompo code={modules['./md/size.md'] as string} />
+
+<H2>Placement</H2>
+<HighlightCompo code={modules['./md/placement.md'] as string} />
 
 <H2>Legend indicator</H2>
 <CodeWrapper class="flex flex-wrap justify-start gap-4 md:justify-center ">
@@ -135,6 +133,7 @@
     ><Indicator size="sm" color="teal" class="me-1.5" />Revenue</span
   >
 </CodeWrapper>
+<HighlightCompo code={modules['./md/legend.md'] as string} />
 
 <H2>Indicator count</H2>
 
@@ -163,6 +162,7 @@
     dot={{ color: 'red', size: 'lg', placement: 'top-right' }}
   />
 </CodeWrapper>
+<HighlightCompo code={modules['./md/status.md'] as string} />
 
 <H2>Badge indicator</H2>
 <CodeWrapper class="flex gap-2">
@@ -207,6 +207,7 @@
     </li>
   </ul>
 </CodeWrapper>
+<HighlightCompo code={modules['./md/badge-indicator.md'] as string} />
 
 <H2>Stepper indicator</H2>
 <CodeWrapper class="space-y-8">
@@ -215,7 +216,6 @@
       <div class="flex items-center">
         <Indicator
           size="xl"
-          color="none"
           class="z-10 shrink-0 bg-primary-200 ring-0 ring-white sm:ring-8 dark:bg-primary-900 dark:ring-gray-900"
         >
           <CheckCircleSolid
@@ -232,7 +232,6 @@
       <div class="flex items-center">
         <Indicator
           size="xl"
-          color="none"
           class="z-10 shrink-0 bg-primary-200 ring-0 ring-white sm:ring-8 dark:bg-primary-900 dark:ring-gray-900"
         >
           <CheckCircleSolid
@@ -249,7 +248,6 @@
       <div class="flex items-center">
         <Indicator
           size="xl"
-          color="none"
           class="z-10 shrink-0 bg-primary-200 ring-0 ring-white sm:ring-8 dark:bg-primary-900 dark:ring-gray-900"
         >
           <CheckCircleSolid
@@ -266,7 +264,7 @@
       <div class="flex items-center">
         <Indicator
           size="xl"
-          color="gray"
+          color="blue"
           class="z-10 shrink-0 ring-0 ring-white sm:ring-8 dark:bg-gray-700 dark:ring-gray-900"
         >
           <CheckCircleSolid class="h-6 w-6 text-gray-800 dark:text-gray-300" />
@@ -282,7 +280,6 @@
       <div class="flex items-center">
         <Indicator
           size="xl"
-          color="none"
           class="z-10 shrink-0 bg-primary-200 ring-0 ring-white sm:ring-8 dark:bg-primary-900 dark:ring-gray-900"
         >
           <Indicator color="orange" />
@@ -297,7 +294,6 @@
       <div class="flex items-center">
         <Indicator
           size="xl"
-          color="none"
           class="z-10 shrink-0 bg-primary-200 ring-0 ring-white sm:ring-8 dark:bg-primary-900 dark:ring-gray-900"
         >
           <Indicator color="orange" />
@@ -312,7 +308,6 @@
       <div class="flex items-center">
         <Indicator
           size="xl"
-          color="none"
           class="z-10 shrink-0 bg-primary-200 ring-0 ring-white sm:ring-8 dark:bg-primary-900 dark:ring-gray-900"
         >
           <Indicator color="orange" />
@@ -327,10 +322,9 @@
       <div class="flex items-center">
         <Indicator
           size="xl"
-          color="gray"
           class="z-10 shrink-0 ring-0 ring-white sm:ring-8 dark:bg-gray-700 dark:ring-gray-900"
         >
-          <Indicator color="dark" class="dark:!bg-gray-300" />
+          <Indicator color="emerald" class="dark:!bg-gray-300" />
         </Indicator>
       </div>
       <div class="mt-3">
@@ -339,6 +333,7 @@
     </li>
   </ol>
 </CodeWrapper>
+<HighlightCompo code={modules['./md/stepper.md'] as string} />
 
 <H2>Indicator position</H2>
 
@@ -347,7 +342,7 @@
     class="borer relative h-56 w-56 rounded-lg border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-800"
   >
     <Indicator placement="top-left" color="gray" />
-    <Indicator placement="top-center" color="dark" />
+    <Indicator placement="top-center" color="lime" />
     <Indicator placement="top-right" color="orange" />
     <Indicator placement="center-left" color="green" />
     <Indicator placement="center" color="red" />

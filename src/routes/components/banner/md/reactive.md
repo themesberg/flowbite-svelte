@@ -47,7 +47,7 @@
   </Banner>
  <div class="mt-8 space-y-4">
   <div class="flex space-x-4">
-    <Label>Change color {color}</Label>
+    <Label>Color:  {color}</Label>
     <Radio name="color" bind:group={color} value="red">Red</Radio>
     <Radio name="color" bind:group={color} value="green">Green</Radio>
     <Radio name="color" bind:group={color} value="yellow">Yellow</Radio>

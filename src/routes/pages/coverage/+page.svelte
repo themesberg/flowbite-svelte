@@ -103,7 +103,8 @@
     },
     listGroup: {
       checked: true,
-      problems: 'Advanced'
+      problems: 'Advanced',
+      notes: 'Variants checked'
     },
     megaMenu: {
       checked: false
@@ -123,7 +124,8 @@
       checked: false
     },
     progress: {
-      checked: true
+      checked: true,
+      notes: 'Variants, reactive examples'
     },
     rating: {
       checked: true
@@ -156,7 +158,8 @@
     },
     toast: {
       checked: true,
-      problems: 'Icons, Autohide example'
+      problems: 'Icons, Autohide example',
+      notes: 'Variants, reactive examples'
     },
     tooltip: {
       checked: false
