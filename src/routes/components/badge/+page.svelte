@@ -1,6 +1,7 @@
 <script lang="ts">
   import {
     Badge,
+    badge,
     Button,
     Indicator,
     Radio,
@@ -47,18 +48,7 @@
   });
 
   // reactive example
-  const colors = [
-    'primary',
-    'gray',
-    'blue',
-    'red',
-    'green',
-    'yellow',
-    'indigo',
-    'purple',
-    'pink',
-    'none'
-  ];
+  const colors = Object.keys(badge.variants.color);
   let color: BadgeProps['color'] = $state('primary');
   let badgeSize: BadgeProps['large'] = $state(false);
   const changeSize = () => {

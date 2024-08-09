@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Alert, List, Li, Button, Label, Radio, type AlertProps } from '$lib';
+  import { Alert, alert as fsalert, List, Li, Button, Label, Radio, type AlertProps } from '$lib';
   import { InfoCircleSolid, EyeSolid } from 'flowbite-svelte-icons';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
@@ -18,18 +18,7 @@
     alertEventStatus = false;
   }
   // reactive  color, rounded, border, dismissable, class
-  const colors = [
-    'primary',
-    'blue',
-    'gray',
-    'green',
-    'indigo',
-    'pink',
-    'purple',
-    'red',
-    'yellow',
-    'none'
-  ];
+  const colors = Object.keys(fsalert.variants.color);
   let color: AlertProps['color'] = $state('primary');
   let defaultColor: AlertProps['color'] = $state('primary');
   let iconColor: AlertProps['color'] = $state('primary');

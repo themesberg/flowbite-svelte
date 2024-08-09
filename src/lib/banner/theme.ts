@@ -50,7 +50,6 @@ const banner = tv({
   defaultVariants: {
     position: 'sticky',
     bannerType: 'default',
-    color: 'gray'
   }
 });
 

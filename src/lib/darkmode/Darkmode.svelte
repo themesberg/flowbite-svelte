@@ -1,15 +1,5 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import { twMerge } from 'tailwind-merge';
-  import type { HTMLButtonAttributes } from 'svelte/elements';
-
-  interface Props extends HTMLButtonAttributes {
-    class?: string | undefined;
-    lightIcon?: Snippet;
-    darkIcon?: Snippet;
-    size?: 'sm' | 'md' | 'lg';
-    ariaLabel?: string | undefined;
-  }
+  import { type DarkmodeProps as Props, darkmode } from './';
 
   const THEME_PREFERENCE_KEY = 'color-theme';
 
@@ -21,11 +11,8 @@
     ariaLabel = 'Dark mode',
     ...attributes
   }: Props = $props();
-  let btnCls: string = twMerge(
-    'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none rounded-lg text-sm p-2.5',
-    className
-  );
-
+  
+  const btnCls = darkmode({ class: className})
   const sizes = {
     sm: 'w-4 h-4',
     md: 'w-5 h-5',

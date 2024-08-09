@@ -1,17 +1,13 @@
 <script lang="ts">
-  import type { HTMLAttributes } from 'svelte/elements';
+  import { type DropdownDividerProps as Props, dropdowndivider } from './';
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    class?: string | undefined;
-  }
-
-  import { twMerge } from 'tailwind-merge';
   let { class: divClass, ...attributes }: Props = $props();
+  const base = dropdowndivider({ class: divClass });
 </script>
 
 <div
   {...attributes}
-  class={twMerge('my-1 h-px bg-gray-100 dark:bg-gray-500', divClass)}
+  class={base}
 ></div>
 
 <!--

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Radio, Helper, RadioButton, ButtonGroup } from '$lib';
+  import { Radio, radio, Helper, RadioButton, ButtonGroup, Label, P } from '$lib';
   // let { group = $bindable() ,technology = $bindable('svelte'), radioGroup = $bindable('notes') } = $props();
-  let colors = 'text-purple-500';
+  // let colors = 'text-purple-500';
   let technology = $state('svelte');
   let inline1 = $state('second');
   import {
@@ -21,6 +21,11 @@
     import: 'default',
     eager: true
   });
+
+  const colors = Object.keys(radio.variants.color) as Radio['color'][];
+  let radioColor: Radio['color'] = $state('primary');
+
+  // let sizeEx = $state('default');
 </script>
 
 <H1>Radio, Helper, and RadioButton</H1>
@@ -35,6 +40,33 @@
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/radio-examples.md'] as string} />
+
+<H2>Colors</H2>
+<CodeWrapper class="flex flex-col gap-4">
+  <div class="flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Color:</Label>
+    {#each colors as colorOption}
+      <Radio
+        labelClass="w-32 m-2"
+        name="radio_color"
+        bind:group={radioColor}
+        inputClass="w-6 h-6"
+        color={colorOption}
+        value={colorOption}>{colorOption}</Radio
+      >
+    {/each}
+  </div>
+</CodeWrapper>
+<HighlightCompo code={modules['./md/colors.md'] as string} />
+
+<H2>Size</H2>
+<P>Use <code>inputClass</code>.</P>
+<CodeWrapper class="flex gap-4">
+  <Radio name="size-example">Default size</Radio>
+  <Radio name="size-example" inputClass="w-6 h-6">w-6 h-6</Radio>
+  <Radio name="size-example" inputClass="w-8 h-8">w-8 h-8</Radio>
+</CodeWrapper>
+<HighlightCompo code={modules['./md/size.md'] as string} />
 
 <H2>Disabled state</H2>
 <CodeWrapper class="flex flex-col gap-4">
@@ -163,7 +195,7 @@
     Choose technology:
   </p>
   <div class="grid w-full gap-6 md:grid-cols-2">
-    <Radio name="custom" custom>
+    <Radio name="custom">
       <div
         id="hosting-small"
         class="inline-flex w-full cursor-pointer items-center justify-between rounded-lg border border-gray-200 bg-white p-5 text-gray-500 hover:bg-gray-100 hover:text-gray-600 peer-checked:border-primary-600 peer-checked:text-primary-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:peer-checked:text-primary-500"
@@ -175,7 +207,7 @@
         <ArrowRightOutline class="ms-3 h-6 w-6" />
       </div>
     </Radio>
-    <Radio name="custom" custom>
+    <Radio name="custom">
       <div
         id="hosting-big"
         class="inline-flex w-full cursor-pointer items-center justify-between rounded-lg border border-gray-200 bg-white p-5 text-gray-500 hover:bg-gray-100 hover:text-gray-600 peer-checked:border-primary-600 peer-checked:text-primary-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:peer-checked:text-primary-500"

@@ -41,47 +41,32 @@
 </script>
 
 <script lang="ts">
-  import type { Snippet } from 'svelte';
   import { getContext } from 'svelte';
   import type { FormColorType } from '../../types';
   import Label from '../label/Label.svelte';
-  import type { HTMLInputAttributes } from 'svelte/elements';
-
-  interface Props extends HTMLInputAttributes {
-    children: Snippet;
-    aria_describedby?: string | undefined | null;
-    labelClass?: string | undefined;
-    color?: FormColorType;
-    custom?: boolean;
-    inline?: boolean;
-    group?: number | string | undefined;
-    inputClass?: string | undefined;
-  }
+  import { type RadioProps as Props, radio } from '.'
+  
   let {
     children,
     aria_describedby,
-    labelClass = '',
+    labelClass,
     color = 'primary',
-    custom = false,
-    inline = false,
     group = $bindable(),
     value,
-    inputClass = '',
+    inputClass,
     ...attributes
   }: Props = $props();
-
-  // tinted if put in component having its own background
-  let background: boolean = getContext('background');
+  const { input, label } = $derived(radio({ color, tinted: !!getContext('background') }));
 </script>
 
-<Label class={labelCls(inline, labelClass)}>
+<Label class={label({class:labelClass})}>
   <input
     type="radio"
     bind:group
     {value}
     aria-describedby={aria_describedby}
     {...attributes}
-    class={inputCls(custom, color, false, background, inputClass)}
+    class={input({ class: inputClass})}
   />
   {@render children()}
 </Label>

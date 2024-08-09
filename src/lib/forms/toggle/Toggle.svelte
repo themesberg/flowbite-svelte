@@ -1,8 +1,6 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
   import { Label } from '../label';
-  import { labelCls, inputCls } from '../radio/Radio.svelte';
-  import { type ToggleProps as Props, toggleSpanVariants } from './index';
+  import { type ToggleProps as Props, toggle } from './index';
 
   let {
     children,
@@ -11,49 +9,26 @@
     checked = $bindable(),
     class: className,
     color = 'primary',
-    inline = false,
-    labelClass = '',
     aria_describedby,
-    spacing = 'me-2',
-    custom = true,
-    inputClass = '',
+    labelClass,
+    inputClass,
+    spanClass,
     ...attributes
   }: Props = $props();
 
-  let spanCls: string = twMerge(
-    toggleSpanVariants({ color, size: toggleSize }),
-    className
-  );
+  const { input, label, span } = $derived(toggle({ color, size: toggleSize }));
 </script>
 
-<Label class={labelCls(inline, labelClass)}>
+<Label class={label({class: labelClass})}>
   <input
     type="checkbox"
     bind:checked
     {value}
     aria-describedby={aria_describedby}
     {...attributes}
-    class={twMerge(spacing, inputCls(custom, color, true, false, inputClass))}
+    class={input({ class: inputClass})}
   />
-  <span class={spanCls}></span>
+  <span class={span({class: spanClass})}></span>
   {@render children()}
 </Label>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@prop children
-@prop toggleSize = 'default'
-@prop value
-@prop checked = $bindable()
-@prop class: className
-@prop color = 'primary'
-@prop inline = false
-@prop labelClass = ''
-@prop aria_describedby
-@prop spacing = 'me-2'
-@prop custom = true
-@prop inputClass = ''
-@prop ...attributes
--->

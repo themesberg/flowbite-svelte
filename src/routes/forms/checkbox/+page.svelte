@@ -1,6 +1,6 @@
 <script lang="ts">
   import {
-    Checkbox,
+    Checkbox, checkbox,
     Helper,
     Label,
     Table,
@@ -8,7 +8,7 @@
     TableHeadCell,
     TableBody,
     TableBodyCell,
-    TableBodyRow
+    TableBodyRow, Radio
   } from '$lib';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
@@ -20,6 +20,10 @@
     import: 'default',
     eager: true
   });
+  
+
+  const colors = Object.keys(checkbox.variants.color);
+  let checkboxColor: Checkbox['color'] = $state('primary');
 </script>
 
 <H1>Checkbox</H1>
@@ -30,10 +34,26 @@
 <H2>Checkbox examples</H2>
 <CodeWrapper class="space-y-4">
   <Checkbox>Default checkbox</Checkbox>
-  <Checkbox checked>Checked state</Checkbox>
+  <Checkbox checked color='green'>Checked state</Checkbox>
   <Checkbox indeterminate>Indeterminate state</Checkbox>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/checkbox-examples.md'] as string} />
+
+<H2>Colors</H2>
+<CodeWrapper class="space-y-4">
+  <Checkbox color={checkboxColor} checked>Default checkbox</Checkbox>
+  <div class="flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Change color</Label>
+    {#each colors as colorOption}
+      <Radio
+        labelClass="w-24 my-1"
+        name="checkbox_color"
+        bind:group={checkboxColor}
+        value={colorOption}>{colorOption}</Radio
+      >
+    {/each}
+  </div>
+</CodeWrapper>
 
 <H2>Disabled state</H2>
 <CodeWrapper class="space-y-4">

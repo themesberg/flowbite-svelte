@@ -189,7 +189,8 @@
     },
     radio: {
       checked: true,
-      problems: 'Alternative syntax, Radio in dropdown, Colors, RadioButton'
+      problems: 'Alternative syntax, Radio in dropdown',
+      notes: 'Variants, reactive examples'
     },
     range: {
       checked: true,
@@ -207,7 +208,7 @@
     },
     toggle: {
       checked: true,
-      notes: 'Variants'
+      notes: 'Variants, reactive examples'
     }
   };
 

@@ -1,16 +1,6 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import { twMerge } from 'tailwind-merge';
   import { page } from '$app/stores';
-  import type { HTMLAnchorAttributes } from 'svelte/elements';
-
-  interface Props extends HTMLAnchorAttributes {
-    children: Snippet;
-    aClass?: string | undefined | null;
-    href?: string | undefined | null;
-    activeClass?: string | undefined | null;
-    liClass?: string | undefined | null;
-  }
+  import { type DropdownItemProps as Props, dropdownitem } from './';
 
   let { aClass, children, href, activeClass, liClass, ...attributes }: Props =
     $props();
@@ -19,19 +9,13 @@
   $effect(() => {
     currentUrl = $page.url.pathname;
   });
-  const aCls = twMerge(
-    'block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white',
-    aClass
-  );
-  const activeCls = twMerge(
-    'block px-4 py-2 text-primary-700 dark:text-primary-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white',
-    activeClass
-  );
+
+  const { anchor, activeAnchor } = $derived(dropdownitem());
 </script>
 
 <li class={liClass}>
   {#if href}
-    <a {href} class={currentUrl === href ? activeCls : aCls} {...attributes}>
+    <a {href} class={currentUrl === href ? activeAnchor({ class: activeClass }) : anchor({ class: aClass })} {...attributes}>
       {@render children()}
     </a>
   {:else}
