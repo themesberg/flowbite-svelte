@@ -4,8 +4,9 @@ export const spinner = tv({
   base: 'inline-block animate-spin text-gray-300',
   variants: {
     color: {
-      // primary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
+      // primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
       primary: 'fill-primary-600',
+      secondary: 'fill-secondary-600',
       gray: 'fill-gray-600 dark:fill-gray-300',
       red: 'fill-red-600',
       orange: 'fill-orange-500',
@@ -20,6 +21,7 @@ export const spinner = tv({
       blue: 'fill-blue-600',
       indigo: 'fill-indigo-600',
       violet: 'fill-violet-600',
+      purple: 'fill-purple-600',
       fuchsia: 'fill-fuchsia-600',
       pink: 'fill-pink-600',
       rose: 'fill-rose-600'

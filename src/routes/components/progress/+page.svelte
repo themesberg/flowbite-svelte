@@ -37,8 +37,8 @@
 <H2>Sizes</H2>
 
 <CodeWrapper>
-  <div class="my-4">
-    <div class="mb-1 text-base font-medium dark:text-white">Small</div>
+  <div class="my-4 h-16">
+    <div class="mb-1 text-base font-medium dark:text-white">Size</div>
     <Progressbar progress="50" size={progressSize} />
   </div>
   <div class="flex flex-wrap space-x-4">

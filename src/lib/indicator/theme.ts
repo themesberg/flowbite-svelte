@@ -6,8 +6,9 @@ const indicator = tv({
   },
   variants: {
     color: {
-      // 'primary' | 'gray' | 'red' | 'orange' | 'amber' | 'yellow' | 'lime' | 'green' | 'emerald' | 'teal' | 'cyan' | 'sky' | 'blue' | 'indigo' | 'violet' | 'purple' | 'fuchsia' | 'pink' | 'rose'
+      // 'primary' secondary 'gray' | 'red' | 'orange' | 'amber' | 'yellow' | 'lime' | 'green' | 'emerald' | 'teal' | 'cyan' | 'sky' | 'blue' | 'indigo' | 'violet' | 'purple' | 'fuchsia' | 'pink' | 'rose'
       primary: { base: 'bg-primary-500' },
+      secondary: { base: 'bg-secondary-500' },
       gray: { base: 'bg-gray-200' },
       red: { base: 'bg-red-500' },
       orange: { base: 'bg-orange-600' },
@@ -111,7 +112,7 @@ const indicator = tv({
     }
   ],
   defaultVariants: {
-    color: 'gray',
+    color: 'primary',
     size: 'md',
     rounded: false,
     border: false,

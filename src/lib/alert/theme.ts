@@ -4,9 +4,10 @@ const alert = tv({
   base: 'p-4 gap-3 text-sm',
   variants: {
     color: {
-      // primary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
+      // primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
       primary:
         'bg-primary-50 dark:bg-gray-800 text-primary-800 dark:text-primary-400',
+      secondary: 'bg-secondary-50 dark:bg-secondary-800 text-secondary-800 dark:text-secondary-400',
       gray: "bg-gray-100 text-gray-500 hover:bg-gray-200 focus:ring-gray-400 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white",
       red: "bg-red-100 text-red-500 hover:bg-red-200 focus:ring-red-400 dark:bg-red-200 dark:text-red-600 dark:hover:bg-red-300",
       orange: "bg-orange-100 text-orange-500 hover:bg-orange-200 focus:ring-orange-400 dark:bg-orange-200 dark:text-orange-600 dark:hover:bg-orange-300",
@@ -28,7 +29,11 @@ const alert = tv({
         "bg-purple-100 text-purple-500 hover:bg-purple-200 focus:ring-purple-400 dark:bg-purple-200 dark:text-purple-600 dark:hover:bg-purple-300",
       fuchsia: "bg-fuchsia-100 text-fuchsia-500 hover:bg-fuchsia-200 focus:ring-fuchsia-400 dark:bg-fuchsia-200 dark:text-fuchsia-600 dark:hover:bg-fuchsia-300",
       pink: "bg-pink-100 text-pink-500 hover:bg-pink-200 focus:ring-pink-400 dark:bg-pink-200 dark:text-pink-600 dark:hover:bg-pink-300",
-      rose: "bg-rose-100 text-rose-500 hover:bg-rose-200 focus:ring-rose-400 dark:bg-rose-200 dark:text-rose-600 dark:hover:bg-rose-300"
+      rose: "bg-rose-100 text-rose-500 hover:bg-rose-200 focus:ring-rose-400 dark:bg-rose-200 dark:text-rose-600 dark:hover:bg-rose-300",
+      info: "bg-info-100 text-info-500 hover:bg-info-200 focus:ring-info-400 dark:bg-info-200 dark:text-info-600 dark:hover:bg-info-300",
+      success: "bg-success-100 text-success-500 hover:bg-success-200 focus:ring-success-400 dark:bg-success-200 dark:text-success-600 dark:hover:bg-success-300",
+      warning: "bg-warning-100 text-warning-500 hover:bg-warning-200 focus:ring-warning-400 dark:bg-warning-200 dark:text-warning-600 dark:hover:bg-warning-300",
+      failure: "bg-failure-100 text-failure-500 hover:bg-failure-200 focus:ring-failure-400 dark:bg-failure-200 dark:text-failure-600 dark:hover:bg-failure-300"
     },
     rounded: {
       true: 'rounded-lg'
@@ -44,6 +49,19 @@ const alert = tv({
     }
   },
   compoundVariants: [
+    // primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
+    {
+      border: true,
+      color: 'primary',
+      class:
+        'border-primary-500 dark:border-primary-200 divide-primary-500 dark:divide-primary-200'
+    },
+    {
+      border: true,
+      color: 'secondary',
+      class:
+        'border-secondary-500 dark:border-secondary-200 divide-secondary-500 dark:divide-secondary-200'
+    },
     {
       border: true,
       color: 'gray',
@@ -58,9 +76,27 @@ const alert = tv({
     },
     {
       border: true,
+      color: 'orange',
+      class:
+        'border-orange-300 dark:border-orange-800 divide-orange-300 dark:divide-orange-800'
+    },
+    {
+      border: true,
+      color: 'amber',
+      class:
+        'border-amber-300 dark:border-amber-800 divide-amber-300 dark:divide-amber-800'
+    },
+    {
+      border: true,
       color: 'yellow',
       class:
         'border-yellow-300 dark:border-yellow-800 divide-yellow-300 dark:divide-yellow-800'
+    },
+    {
+      border: true,
+      color: 'lime',
+      class:
+        'border-lime-300 dark:border-lime-800 divide-lime-300 dark:divide-lime-800'
     },
     {
       border: true,
@@ -70,21 +106,27 @@ const alert = tv({
     },
     {
       border: true,
-      color: 'indigo',
+      color: 'emerald',
       class:
-        'border-indigo-300 dark:border-indigo-800 divide-indigo-300 dark:divide-indigo-800'
+        'border-emerald-300 dark:border-emerald-800 divide-emerald-300 dark:divide-emerald-800'
     },
     {
       border: true,
-      color: 'purple',
+      color: 'teal',
       class:
-        'border-purple-300 dark:border-purple-800 divide-purple-300 dark:divide-purple-800'
+        'border-teal-300 dark:border-teal-800 divide-teal-300 dark:divide-teal-800'
     },
     {
       border: true,
-      color: 'pink',
+      color: 'cyan',
       class:
-        'border-pink-300 dark:border-pink-800 divide-pink-300 dark:divide-pink-800'
+        'border-cyan-300 dark:border-cyan-800 divide-cyan-300 dark:divide-cyan-800'
+    },
+    {
+      border: true,
+      color: 'sky',
+      class:
+        'border-sky-300 dark:border-sky-800 divide-sky-300 dark:divide-sky-800'
     },
     {
       border: true,
@@ -94,9 +136,40 @@ const alert = tv({
     },
     {
       border: true,
-      color: 'primary',
+      color: 'indigo',
       class:
-        'border-primary-500 dark:border-primary-200 divide-primary-500 dark:divide-primary-200'
+        'border-indigo-300 dark:border-indigo-800 divide-indigo-300 dark:divide-indigo-800'
+    },
+    //  violet, purple, fuchsia, pink, rose
+    {
+      border: true,
+      color: 'violet',
+      class:
+        'border-violet-300 dark:border-violet-800 divide-violet-300 dark:divide-violet-800'
+    },  
+    {
+      border: true,
+      color: 'purple',
+      class:
+        'border-purple-300 dark:border-purple-800 divide-purple-300 dark:divide-purple-800'
+    },
+    {
+      border: true,
+      color: 'fuchsia',
+      class:
+        'border-fuchsia-300 dark:border-fuchsia-800 divide-fuchsia-300 dark:divide-fuchsia-800'
+    },
+    {
+      border: true,
+      color: 'pink',
+      class:
+        'border-pink-300 dark:border-pink-800 divide-pink-300 dark:divide-pink-800'
+    },
+    {
+      border: true,
+      color: 'rose',
+      class:
+        'border-rose-300 dark:border-rose-800 divide-rose-300 dark:divide-rose-800'
     }
   ],
   defaultVariants: {

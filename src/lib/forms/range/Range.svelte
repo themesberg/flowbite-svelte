@@ -23,6 +23,7 @@
   };
   let inputCls: string = twMerge(
     'w-full bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700',
+    // range accent-red-500
     sizes[rangeSize] ?? sizes.md,
     inputClass
   );

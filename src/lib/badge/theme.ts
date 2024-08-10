@@ -4,8 +4,10 @@ const badge = tv({
   base: 'font-medium inline-flex items-center justify-center px-2.5 py-0.5',
   variants: {
     color: {
+      // primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
       primary:
         'bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-300',
+      secondary: 'bg-secondary-100 text-secondary-800 dark:bg-secondary-900 dark:text-secondary-300',
       gray: "bg-gray-100 text-gray-800 group-hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:group-hover:bg-gray-600",
       red: "bg-red-100 text-red-800 group-hover:bg-red-200 dark:bg-red-200 dark:text-red-900 dark:group-hover:bg-red-300",
       orange: "bg-orange-100 text-orange-800 group-hover:bg-orange-200 dark:bg-orange-200 dark:text-orange-900 dark:group-hover:bg-orange-300",
@@ -38,12 +40,17 @@ const badge = tv({
     }
   },
   compoundVariants: [
-    // 'primary' | 'gray' | 'red' | 'orange' | 'amber' | 'yellow' | 'lime' | 'green' | 'emerald' | 'teal' | 'cyan' | 'sky' | 'blue' | 'indigo' | 'violet' | 'purple' | 'fuchsia' | 'pink' | 'rose'
     {
       border: true,
       color: 'primary',
       class:
         'bg-primary-100 text-primary-800 dark:bg-gray-700 dark:text-primary-400 border-primary-400 dark:border-primary-400'
+    },
+    {
+      border: true,
+      color: 'secondary',
+      class:
+        'bg-secondary-100 text-secondary-800 dark:bg-gray-700 dark:text-secondary-400 border-secondary-400 dark:border-secondary-400'
     },
     {
       border: true,
@@ -153,11 +160,15 @@ const badge = tv({
       class:
         'bg-rose-100 text-rose-800 dark:bg-gray-700 dark:text-rose-400 border-rose-400 dark:border-rose-400'
     },
-    // 'primary' | 'gray' | 'red' | 'orange' | 'amber' | 'yellow' | 'lime' | 'green' | 'emerald' | 'teal' | 'cyan' | 'sky' | 'blue' | 'indigo' | 'violet' | 'purple' | 'fuchsia' | 'pink' | 'rose'
     {
       href: true,
       color: 'primary',
       class: 'hover:bg-primary-200'
+    },
+    {
+      href: true,
+      color: 'secondary',
+      class: 'hover:bg-secondary-200'
     },
     {
       href: true,

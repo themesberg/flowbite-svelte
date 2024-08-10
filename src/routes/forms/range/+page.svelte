@@ -24,6 +24,20 @@
 <CodeWrapper>
   <Label>Default range</Label>
   <Range id="range1" />
+  <input class="range pr-6 accent-red-500" 
+    type="range" 
+    value="0" min="0" 
+    max="1000" 
+    />
+    <input type="range" 
+    class="appearance-none bg-transparent [&::-webkit-slider-runnable-track]:rounded-full 
+  [&::-webkit-slider-runnable-track]:bg-black/25 
+  [&::-webkit-slider-thumb]:appearance-none 
+  [&::-webkit-slider-thumb]:h-5 
+  [&::-webkit-slider-thumb]:w-5 
+  [&::-webkit-slider-thumb]:rounded-full 
+  [&::-webkit-slider-thumb]:bg-slate-50" 
+  />
 </CodeWrapper>
 <HighlightCompo code={modules['./md/range-slider-example.md'] as string} />
 

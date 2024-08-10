@@ -47,10 +47,9 @@
     <Label class="mb-4 w-full font-bold">Color:</Label>
     {#each colors as colorOption}
       <Radio
-        labelClass="w-32 m-2"
+        labelClass="w-24 m-2"
         name="radio_color"
         bind:group={radioColor}
-        inputClass="w-6 h-6"
         color={colorOption}
         value={colorOption}>{colorOption}</Radio
       >

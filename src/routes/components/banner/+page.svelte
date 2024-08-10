@@ -2,7 +2,7 @@
   import { slide } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
   import {
-    Banner,
+    Banner, banner, 
     Button,
     Skeleton,
     ImagePlaceholder,
@@ -32,16 +32,7 @@
 
   // reactive example
   // position, bannerType, color, class:divClass
-  const colors = [
-    'blue',
-    'gray',
-    'red',
-    'green',
-    'yellow',
-    'indigo',
-    'purple',
-    'pink'
-  ];
+  const colors = Object.keys(banner.variants.color);
   let position: BannerProps['position'] = $state('sticky');
   const changePosition = () => {
     position = position === 'sticky' ? 'absolute' : 'sticky';
