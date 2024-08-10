@@ -1,4 +1,6 @@
 <Checkbox>
   I agree with the
-  <a href="/" class="text-primary-600 dark:text-primary-500 hover:underline ms-1">terms and conditions</a>.
+  <a href="/" class="ms-1 text-primary-600 hover:underline dark:text-primary-500">
+    terms and conditions
+  </a>.
 </Checkbox>

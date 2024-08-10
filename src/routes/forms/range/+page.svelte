@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Range, Label } from '$lib';
+  import { Range, range, Label, Radio } from '$lib';
 
   let minmaxValue = $state(5);
   let stepValue = $state(2.5);
@@ -13,6 +13,11 @@
     import: 'default',
     eager: true
   });
+
+  const colors = Object.keys(range.variants.color);
+  // const colors2 = ['gray', 'red', 'blue', 'indigo', 'violet', 'purple', 'fuchsia', 'pink', 'rose'];
+  //  const colors = Object.keys(badge.variants.color);
+  let rangeColor = $state('blue');
 </script>
 
 <H1>Range</H1>
@@ -20,26 +25,44 @@
 <H2>Setup</H2>
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
+<H2>Reference</H2>
+<CodeWrapper>
+  <input class="range w-full accent-red-500" 
+    type="range" 
+    value="50" min="0" 
+    max="100" 
+    />
+    <input class="range w-full accent-yellow-500 bg-gray-50" 
+    type="range" 
+    value="50" min="0" 
+    max="100" 
+    />
+    <input type="range" class="w-full bg-gray-200 rounded-lg cursor-pointer dark:bg-gray-700 h-3 range-lg range accent-pink-500">
+    
+</CodeWrapper>
 <H2>Range slider example</H2>
 <CodeWrapper>
   <Label>Default range</Label>
-  <Range id="range1" />
-  <input class="range pr-6 accent-red-500" 
-    type="range" 
-    value="0" min="0" 
-    max="1000" 
-    />
-    <input type="range" 
-    class="appearance-none bg-transparent [&::-webkit-slider-runnable-track]:rounded-full 
-  [&::-webkit-slider-runnable-track]:bg-black/25 
-  [&::-webkit-slider-thumb]:appearance-none 
-  [&::-webkit-slider-thumb]:h-5 
-  [&::-webkit-slider-thumb]:w-5 
-  [&::-webkit-slider-thumb]:rounded-full 
-  [&::-webkit-slider-thumb]:bg-slate-50" 
-  />
+  <Range />
 </CodeWrapper>
 <HighlightCompo code={modules['./md/range-slider-example.md'] as string} />
+
+<H2>Color</H2>
+<CodeWrapper>
+  <Range color={rangeColor} appearance="auto"/>
+  <div class="flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Color</Label>
+    {#each colors as colorOption}
+      <Radio
+        labelClass="w-24 my-1"
+        name="default_alert_color"
+        bind:group={rangeColor}
+        value={colorOption}>{colorOption}</Radio
+      >
+    {/each}
+  </div>
+</CodeWrapper>
+<HighlightCompo code={modules['./md/color.md'] as string} />
 
 <H2>Disabled state</H2>
 <CodeWrapper>
@@ -65,6 +88,7 @@
 <HighlightCompo code={modules['./md/steps.md'] as string} />
 
 <H2>Sizes</H2>
+<p>Size props won't work with colors.</p>
 <CodeWrapper class="space-y-6">
   <Label>Small range</Label>
   <Range id="small-range" rangeSize="sm" />

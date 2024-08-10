@@ -197,7 +197,8 @@
     },
     range: {
       checked: true,
-      problems: 'Sizes - blob sizes'
+      problems: 'Sizes - blob sizes',
+      notes: 'Variants, reactive examples'
     },
     searchInput: {
       checked: false

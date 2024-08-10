@@ -42,8 +42,12 @@
 <H2>Colors</H2>
 <CodeWrapper class="space-y-4">
   <Checkbox color={checkboxColor} checked>Default checkbox</Checkbox>
+  <Label class="flex items-center">
+    <Checkbox checked class="text-sky-400 focus:ring-pink-500" />
+    Your custom color
+  </Label>
   <div class="flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Change color</Label>
+    <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
       <Radio
         labelClass="w-24 my-1"
@@ -54,6 +58,7 @@
     {/each}
   </div>
 </CodeWrapper>
+<HighlightCompo code={modules['./md/colors.md'] as string} />
 
 <H2>Disabled state</H2>
 <CodeWrapper class="space-y-4">

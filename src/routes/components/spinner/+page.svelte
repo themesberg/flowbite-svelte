@@ -44,7 +44,7 @@
 <CodeWrapper>
   <Spinner color={spinnerColor} />
   <div class="mt-8 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Change color</Label>
+    <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as color}
       <Radio
         labelClass="w-24 my-1"

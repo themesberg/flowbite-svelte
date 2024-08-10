@@ -107,7 +107,7 @@
   </div>
 
   <div class="flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Change color</Label>
+    <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
       <Radio
         labelClass="w-24 my-1"

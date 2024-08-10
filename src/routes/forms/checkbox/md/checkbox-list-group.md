@@ -1,7 +1,8 @@
-<p class="mb-4 font-semibold text-gray-900 dark:text-white">Technology</p>
-<ul class="w-48 bg-white rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-600 divide-y divide-gray-200 dark:divide-gray-600">
-  <li><Checkbox checked labelclass="p-3">svelte</Checkbox></li>
-  <li><Checkbox labelclass="p-3">Vue JS</Checkbox></li>
-  <li><Checkbox labelclass="p-3">React</Checkbox></li>
-  <li><Checkbox labelclass="p-3">Angular</Checkbox></li>
+<ul
+  class="w-48 divide-y divide-gray-200 rounded-lg border border-gray-200 bg-white dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800"
+>
+  <li><Checkbox checked groupLabelClass="p-3">svelte</Checkbox></li>
+  <li><Checkbox groupLabelClass="p-3">Vue JS</Checkbox></li>
+  <li><Checkbox groupLabelClass="p-3">React</Checkbox></li>
+  <li><Checkbox groupLabelClass="p-3">Angular</Checkbox></li>
 </ul>
