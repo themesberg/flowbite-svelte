@@ -1,0 +1,26 @@
+<script lang="ts">
+  import { paginationItem, type PaginationItemProps as Props } from '.';
+  import { getContext } from 'svelte';
+
+  let {
+    children,
+    size,
+    class: className,
+    href,
+    active,
+    activeClass,
+    normalClass,
+    ...attributes
+  }: Props = $props()
+
+const group = getContext<boolean>('group');
+const table = getContext<boolean>('table');
+const paginationClass = $derived(paginationItem({ size, active, group, table }));
+
+</script>
+
+<svelte:element this={href ? 'a' : 'button'} {href} class={paginationClass} role={href ? 'button' : undefined} {...attributes}>
+  {#if children}
+  {@render children()}
+  {/if}
+</svelte:element>

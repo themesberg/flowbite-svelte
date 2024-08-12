@@ -201,7 +201,7 @@
   <Button class="gap-2">
     Messages
     <Indicator
-      color="none"
+      color="cyan"
       class="bg-primary-200 text-xs font-semibold text-primary-800"
       size="lg">2</Indicator
     >
@@ -230,7 +230,7 @@
 <H2>Loader</H2>
 <CodeWrapper>
   <Button>
-    <Spinner class="me-3" size="4" color="white" />Loading ...
+    <Spinner class="me-3" size="4" color="teal" />Loading ...
   </Button>
   <Button color="alternative">
     <Spinner class="me-3" size="4" />Loading ...

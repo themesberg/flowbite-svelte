@@ -14,10 +14,10 @@
     eager: true
   });
 
-  const colors = Object.keys(range.variants.color);
+  const colors = Object.keys(range.variants.color) as Range['color'];
   // const colors2 = ['gray', 'red', 'blue', 'indigo', 'violet', 'purple', 'fuchsia', 'pink', 'rose'];
   //  const colors = Object.keys(badge.variants.color);
-  let rangeColor = $state('blue');
+  let rangeColor: Range['color'] = $state('blue');
 </script>
 
 <H1>Range</H1>

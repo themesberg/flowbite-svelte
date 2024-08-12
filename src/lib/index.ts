@@ -20,6 +20,7 @@ export * from './indicator';
 export * from './kbd';
 export * from './list-group';
 export * from './nav';
+export * from './pagination';
 export * from './progress';
 export * from './rating';
 export * from './sidebar';

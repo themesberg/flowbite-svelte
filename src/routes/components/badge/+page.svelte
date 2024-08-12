@@ -206,7 +206,7 @@
     <EnvelopeSolid class="text-white dark:text-white" />
     <span class="sr-only">Notifications</span>
     <Indicator
-      color="dark"
+      color="sky"
       border
       size="xl"
       placement="bottom-right"

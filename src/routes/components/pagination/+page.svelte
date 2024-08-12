@@ -1,5 +1,7 @@
 <script lang="ts">
-  import { Select, Label } from '$lib';
+  import { Select, Label, Pagination, PaginationItem } from '$lib';
+  import { ChevronLeftOutline, ChevronRightOutline, ArrowLeftOutline, ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { page } from '$app/stores';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -10,6 +12,101 @@
     import: 'default',
     eager: true
   });
+
+  let activeUrl = $state($page.url.searchParams.get('page'));
+  let pages = $state([
+    { name: "1", href: '/components/pagination?page=1', active: false },
+    { name: "2", href: '/components/pagination?page=2', active: false },
+    { name: "3", href: '/components/pagination?page=3', active: false },
+    { name: "4", href: '/components/pagination?page=4', active: false },
+    { name: "5", href: '/components/pagination?page=5', active: false }
+  ]);
+  let helper = { start: 1, end: 10, total: 100 };
+ 
+  $effect(()=>{
+    pages.forEach((page) => {
+      let splitUrl = page.href.split('?');
+      let queryString = splitUrl.slice(1).join('?');
+      const hrefParams = new URLSearchParams(queryString);
+      let hrefValue = hrefParams.get('page');
+      if (hrefValue === activeUrl) {
+        page.active = true;
+      } else {
+        page.active = false;
+      }
+    });
+    pages = pages;
+  })
+
+  const previous = () => {
+    alert('Previous btn clicked. Make a call to your server to fetch data.');
+  };
+  const next = () => {
+    alert('Next btn clicked. Make a call to your server to fetch data.');
+  };
 </script>
 
 <H1>Pagination</H1>
+
+<H2>Default pagination</H2>
+<CodeWrapper class="space-y-4 flex flex-col">
+  <Pagination {pages} {previous} {next} />
+  <Pagination {pages} size="large" {previous} {next} />
+</CodeWrapper>
+
+<H2>Pagination with icons</H2>
+<CodeWrapper>
+  <Pagination {pages} {previous} {next}>
+    {#snippet prevContent()}
+      <span class="sr-only">Previous</span>
+      <ChevronLeftOutline class="w-5 h-5" />
+    {/snippet}
+    {#snippet nextContent()}
+      <span class="sr-only">Next</span>
+      <ChevronRightOutline class="w-5 h-5" />
+    {/snippet}
+  </Pagination>
+</CodeWrapper>
+
+<H2>Previous and next</H2>
+<CodeWrapper>
+  <div class="flex space-x-3 rtl:space-x-reverse">
+    <PaginationItem onclick={previous}>Previous</PaginationItem>
+    <PaginationItem onclick={next}>Next</PaginationItem>
+  </div>
+</CodeWrapper>
+
+
+<H2>Previous and next with icons</H2>
+<CodeWrapper>
+  <div class="flex space-x-3 rtl:space-x-reverse">
+    <PaginationItem class="flex items-center" onclick={previous}>
+      <ArrowLeftOutline class="me-2 w-5 h-5" />
+      Previous
+    </PaginationItem>
+    <PaginationItem class="flex items-center" onclick={next}>
+      Next
+      <ArrowRightOutline class="ms-2 w-5 h-5" />
+    </PaginationItem>
+  </div>
+</CodeWrapper>
+
+<H2>Table data pagination</H2>
+<CodeWrapper>
+  <div class="flex flex-col items-center justify-center gap-2">
+    <div class="text-sm text-gray-700 dark:text-gray-400">
+      Showing <span class="font-semibold text-gray-900 dark:text-white">{helper.start}</span>
+      to
+      <span class="font-semibold text-gray-900 dark:text-white">{helper.end}</span>
+      of
+      <span class="font-semibold text-gray-900 dark:text-white">{helper.total}</span>
+      Entries
+    </div>
+  
+    <Pagination table>
+      {#snippet prevContent()}
+        Prev
+      {/snippet}
+    </Pagination>
+  </div>
+</CodeWrapper>

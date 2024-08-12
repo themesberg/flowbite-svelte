@@ -30,10 +30,6 @@ const alert = tv({
       fuchsia: "bg-fuchsia-100 text-fuchsia-500 hover:bg-fuchsia-200 focus:ring-fuchsia-400 dark:bg-fuchsia-200 dark:text-fuchsia-600 dark:hover:bg-fuchsia-300",
       pink: "bg-pink-100 text-pink-500 hover:bg-pink-200 focus:ring-pink-400 dark:bg-pink-200 dark:text-pink-600 dark:hover:bg-pink-300",
       rose: "bg-rose-100 text-rose-500 hover:bg-rose-200 focus:ring-rose-400 dark:bg-rose-200 dark:text-rose-600 dark:hover:bg-rose-300",
-      info: "bg-info-100 text-info-500 hover:bg-info-200 focus:ring-info-400 dark:bg-info-200 dark:text-info-600 dark:hover:bg-info-300",
-      success: "bg-success-100 text-success-500 hover:bg-success-200 focus:ring-success-400 dark:bg-success-200 dark:text-success-600 dark:hover:bg-success-300",
-      warning: "bg-warning-100 text-warning-500 hover:bg-warning-200 focus:ring-warning-400 dark:bg-warning-200 dark:text-warning-600 dark:hover:bg-warning-300",
-      failure: "bg-failure-100 text-failure-500 hover:bg-failure-200 focus:ring-failure-400 dark:bg-failure-200 dark:text-failure-600 dark:hover:bg-failure-300"
     },
     rounded: {
       true: 'rounded-lg'

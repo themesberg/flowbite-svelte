@@ -4,7 +4,7 @@
   let {
     value = $bindable(),
     appearance = 'none',
-    color = 'primary',
+    color = 'blue',
     rangeSize = 'md',
     inputClass,
     ...attributes

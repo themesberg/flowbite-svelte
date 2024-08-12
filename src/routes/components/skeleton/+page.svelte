@@ -102,7 +102,7 @@
     <Skeleton size={skeletonSize} class={classes.skeleton} />
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Size:</Label>
+    <Label class="mb-4 w-full font-bold">Size(width):</Label>
     {#each skeletonSizes as size}
       <Radio
         labelClass="w-24 my-1"
@@ -120,7 +120,7 @@
 
 <H2>Image placeholder</H2>
 <CodeWrapper>
-  <div class="h-96 md:h-64">
+  <div class="h-[460px] md:h-64">
     <ImagePlaceholder
       size={imagePlaceholderSize}
       rounded={imagePlaceholderRounded}
@@ -139,7 +139,7 @@
     {/each}
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Change rounded</Label>
+    <Label class="mb-4 w-full font-bold">Rounded:</Label>
     {#each imageRoundedSizes as size}
       <Radio
         labelClass="w-24 my-1"
@@ -163,7 +163,7 @@
     <VideoPlaceholder size={videoPlaceholderSize} class={classes.video} />
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Size:</Label>
+    <Label class="mb-4 w-full font-bold">Size(width):</Label>
     {#each videoSizes as size}
       <Radio
         labelClass="w-24 my-1"
@@ -185,7 +185,7 @@
 <CodeWrapper>
   <TextPlaceholder size={textPlaceholderSize} />
   <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Size:</Label>
+    <Label class="mb-4 w-full font-bold">Size(width):</Label>
     {#each textSizes as size}
       <Radio
         labelClass="w-24 my-1"
@@ -204,7 +204,7 @@
 <CodeWrapper>
   <CardPlaceholder size={cardPlaceholderSize} />
   <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Size:</Label>
+    <Label class="mb-4 w-full font-bold">Size(width):</Label>
     {#each cardSizes as size}
       <Radio
         labelClass="w-24 my-1"
@@ -247,7 +247,7 @@
     {/each}
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Change rounded</Label>
+    <Label class="mb-4 w-full font-bold">Rounded:</Label>
     {#each listRoundedSizes as size}
       <Radio
         labelClass="w-24 my-1"
@@ -258,7 +258,7 @@
     {/each}
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Change item number</Label>
+    <Label class="mb-4 w-full font-bold">Items:</Label>
     {#each listItemNumbers as itemNumber}
       <Radio
         labelClass="w-24 my-1"
@@ -276,7 +276,7 @@
 
 <CodeWrapper class="flex flex-col">
   <TestimonialPlaceholder />
-  <TestimonialPlaceholder class="mx-auto mt-8 w-[400px]" />
+  <TestimonialPlaceholder class="mx-auto mt-8 w-[200px] sm:w-[400px]" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/testimonialplaceholder.md'] as string} />
