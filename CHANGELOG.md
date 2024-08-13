@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.8.3
+
+### Patch Changes
+
+- fix: update variants in various components ([`9ee6411cb352d1dba2f83a78dde98745ea9db62e`](https://github.com/shinokada/svelte-5-ui-lib/commit/9ee6411cb352d1dba2f83a78dde98745ea9db62e))
+
 ## 0.8.2
 
 ### Patch Changes
