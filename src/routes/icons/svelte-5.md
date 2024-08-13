@@ -120,16 +120,6 @@ Since all icons have `{...restProps}` and extended <A href="https://github.com/s
 />
 ```
 
-## Using svelte:component
-
-```html
-<script>
-  import { AddressBookOutline } from 'flowbite-svelte-icons';
-</script>
-
-<svelte:component this="{AddressBookOutline}" />
-```
-
 ## Using onMount (Svelte 5 legacy mode)
 
 ```html
@@ -253,16 +243,21 @@ Create a Svelte component named `src/lib/MyIcon.svelte`:
 
 ```html
 <script lang="ts">
-  import type { ComponentType } from 'svelte';
-  const config = {
-    size: "xl",
-    color: '#FF5733'
+  import { IconOutline } from 'flowbite-svelte-icons';
+  import { type Component } from 'svelte';
+  const config: { size: IconOutline['Props']['size'], color: string, ariaLabel: string } = {
+    size: "md",
+    color: '#FF5733',
+    ariaLabel: "my youtube icon",
   };
-  import { IconSolid } from 'flowbite-svelte-icons';
-  export let icon: ComponentType;
-</script>
+  interface Props {
+    Icon: Component
+  }
 
-<IconSolid {...config} {icon} />
+  let { Icon }: Props = $props();
+</script>
+<IconOutline {...config} {Icon} />
+
 ```
 
 This component, `MyIcon.svelte`, accepts an `icon` prop which you can use to pass in the specific icon component you want to display. The default configuration is also applied to the icon.
@@ -272,12 +267,17 @@ This component, `MyIcon.svelte`, accepts an `icon` prop which you can use to pas
 To use your custom default icon in a Svelte page, do the following:
 
 ```html
-<script>
-  import MyIcon from '$lib/MyIcon.svelte';
-  import { AngleLeftSolid } from 'flowbite-svelte-icons';
+<script lang="ts">
+  import { AngleLeftOutline } from 'flowbite-svelte-icons';
+  import MyIcon from 'path/to/MyIcon.svelte'
+  const config: { size: IconOutline['Props']['size'], color: string, ariaLabel: string } = {
+    size: "xl",
+    color: '#FF5733',
+    ariaLabel: "my addressbook icon",
+  };
 </script>
 
-<MyIcon icon="{AngleLeftSolid}" />
+<MyIcon {...config} Icon={AngleLeftOutline} />
 ```
 
 Here, we import the `MyIcon` component and the `AngleLeftSolid` icon. By passing the `AngleLeftSolid` icon to the `icon` prop of MyIcon, you apply the default configuration to the icon.
