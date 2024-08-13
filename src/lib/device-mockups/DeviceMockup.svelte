@@ -30,11 +30,9 @@
   let component: Component = componets[device];
 </script>
 
-{#if component}
-  <svelte:component this={component}>
-    {@render children()}
-  </svelte:component>
-{/if}
+<component>
+  {@render children()}
+</component>
 
 <!--
 @component

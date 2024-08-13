@@ -6,7 +6,6 @@ import type { Snippet } from 'svelte';
 import type { TransitionParamTypes, TransitionTypes } from '../types';
 import type { HTMLAttributes, HTMLAnchorAttributes } from 'svelte/elements';
 
-
 interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   header?: Snippet;
@@ -36,5 +35,14 @@ interface DropdownItemProps extends HTMLAnchorAttributes {
   liClass?: string | undefined | null;
 }
 
-export { Dropdown, DropdownDivider, DropdownItem, dropdown, dropdowndivider, dropdownitem, type DropdownProps, type DropdownDividerProps, type DropdownItemProps };
-
+export {
+  Dropdown,
+  DropdownDivider,
+  DropdownItem,
+  dropdown,
+  dropdowndivider,
+  dropdownitem,
+  type DropdownProps,
+  type DropdownDividerProps,
+  type DropdownItemProps
+};

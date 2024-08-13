@@ -134,10 +134,9 @@
       {#each sidebarEx1 as { label, href, icon, subContent }}
         <SidebarItem {label} {href} {spanClass}>
           {#snippet iconSlot()}
-            <svelte:component
-              this={icon}
+            <icon
               class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-            />
+            ></icon>
           {/snippet}
           {#snippet subtext()}
             <span

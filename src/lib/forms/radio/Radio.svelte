@@ -44,8 +44,8 @@
   import { getContext } from 'svelte';
   import type { FormColorType } from '../../types';
   import Label from '../label/Label.svelte';
-  import { type RadioProps as Props, radio } from '.'
-  
+  import { type RadioProps as Props, radio } from '.';
+
   let {
     children,
     aria_describedby,
@@ -56,17 +56,19 @@
     inputClass,
     ...attributes
   }: Props = $props();
-  const { input, label } = $derived(radio({ color, tinted: !!getContext('background') }));
+  const { input, label } = $derived(
+    radio({ color, tinted: !!getContext('background') })
+  );
 </script>
 
-<Label class={label({class:labelClass})}>
+<Label class={label({ class: labelClass })}>
   <input
     type="radio"
     bind:group
     {value}
     aria-describedby={aria_describedby}
     {...attributes}
-    class={input({ class: inputClass})}
+    class={input({ class: inputClass })}
   />
   {@render children()}
 </Label>
@@ -77,12 +79,10 @@
 ## Props
 @prop children
 @prop aria_describedby
-@prop labelClass = ''
+@prop labelClass
 @prop color = 'primary'
-@prop custom = false
-@prop inline = false
 @prop group = $bindable()
 @prop value
-@prop inputClass = ''
+@prop inputClass
 @prop ...attributes
 -->

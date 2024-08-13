@@ -21,23 +21,24 @@
     ...attributes
   }: Props = $props();
 
-  const { base, label } = $derived(checkbox({ color, tinted, custom, rounded, inline }));
+  const { base, label } = $derived(
+    checkbox({ color, tinted, custom, rounded, inline })
+  );
 </script>
 
-<Label class={label({class: groupLabelClass})}>
+<Label class={label({ class: groupLabelClass })}>
   <input
     type="checkbox"
     bind:checked
     aria-describedby={aria_describedby}
     {indeterminate}
     {...attributes}
-    class={base({ class: className})}
+    class={base({ class: className })}
   />
   {#if children}
     {@render children()}
   {/if}
 </Label>
-
 
 <!--
 @component
@@ -46,14 +47,15 @@
 @prop children
 @prop aria_describedby
 @prop color = 'primary'
-@prop custom = false
-@prop inline = false
+@prop custom
+@prop inline
+@prop tinted
+@prop rounded
 @prop group = []
 @prop checked = $bindable(false)
-@prop spacing = 'me-2'
-@prop groupLabelClass = ''
-@prop groupInputClass = ''
-@prop indeterminate = false
+@prop spacing
+@prop groupLabelClass
+@prop indeterminate
 @prop class: className
 @prop ...attributes
 -->

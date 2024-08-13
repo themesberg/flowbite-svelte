@@ -1,5 +1,14 @@
 <script lang="ts">
-  import { Alert, alert as fsalert, List, Li, Button, Label, Radio, type AlertProps } from '$lib';
+  import {
+    Alert,
+    alert as fsalert,
+    List,
+    Li,
+    Button,
+    Label,
+    Radio,
+    type AlertProps
+  } from '$lib';
   import { InfoCircleSolid, EyeSolid } from 'flowbite-svelte-icons';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
@@ -316,9 +325,7 @@
 
 <H2>Custom color</H2>
 <CodeWrapper>
-  <Alert dismissable class="bg-sky-500 text-white"
-    >Your content</Alert
-  >
+  <Alert dismissable class="bg-sky-500 text-white">Your content</Alert>
 </CodeWrapper>
 <HighlightCompo
   codeLang="ts"

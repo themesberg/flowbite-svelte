@@ -38,7 +38,7 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
-@prop color = 'gray'
+@prop color = 'primary'
 @prop rounded = false
 @prop size = 'md'
 @prop border = false

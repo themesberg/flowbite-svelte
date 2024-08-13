@@ -19,16 +19,32 @@
   const { input, label, span } = $derived(toggle({ color, size: toggleSize }));
 </script>
 
-<Label class={label({class: labelClass})}>
+<Label class={label({ class: labelClass })}>
   <input
     type="checkbox"
     bind:checked
     {value}
     aria-describedby={aria_describedby}
     {...attributes}
-    class={input({ class: inputClass})}
+    class={input({ class: inputClass })}
   />
-  <span class={span({class: spanClass})}></span>
+  <span class={span({ class: spanClass })}></span>
   {@render children()}
 </Label>
 
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@prop children
+@prop toggleSize = 'default'
+@prop value
+@prop checked = $bindable()
+@prop class: className
+@prop color = 'primary'
+@prop aria_describedby
+@prop labelClass
+@prop inputClass
+@prop spanClass
+@prop ...attributes
+-->

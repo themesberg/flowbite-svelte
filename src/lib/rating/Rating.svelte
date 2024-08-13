@@ -42,23 +42,18 @@
 
 <div class={divClass}>
   {#if count && children}
-    <svelte:component this={icon} fillPercent={100} {size} />
+    <icon fillPercent={100} {size}></icon>
     <p class={pClass}>{rating}</p>
     {@render children()}
   {:else}
     {#each Array(fullStars) as star}
-      <svelte:component this={icon} {size} fillPercent={100} id={fullStarId} />
+      <icon {size} fillPercent={100} id={fullStarId}></icon>
     {/each}
     {#if percentRating}
-      <svelte:component
-        this={icon}
-        {size}
-        fillPercent={percentRating}
-        id={partialId}
-      />
+      <icon {size} fillPercent={percentRating} id={partialId}></icon>
     {/if}
     {#each Array(grayStars) as star}
-      <svelte:component this={icon} {size} fillPercent={0} id={grayStarId} />
+      <icon {size} fillPercent={0} id={grayStarId}></icon>
     {/each}
     {#if text}
       {@render text()}

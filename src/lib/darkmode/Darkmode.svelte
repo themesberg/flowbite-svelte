@@ -11,8 +11,8 @@
     ariaLabel = 'Dark mode',
     ...attributes
   }: Props = $props();
-  
-  const btnCls = darkmode({ class: className})
+
+  const btnCls = darkmode({ class: className });
   const sizes = {
     sm: 'w-4 h-4',
     md: 'w-5 h-5',

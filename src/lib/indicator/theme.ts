@@ -26,7 +26,7 @@ const indicator = tv({
       purple: { base: 'bg-purple-500' },
       fuchsia: { base: 'bg-fuchsia-500' },
       pink: { base: 'bg-pink-500' },
-      rose: { base: 'bg-rose-500' },
+      rose: { base: 'bg-rose-500' }
     },
     size: {
       xs: { base: 'w-2 h-2' },

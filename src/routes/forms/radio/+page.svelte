@@ -1,5 +1,13 @@
 <script lang="ts">
-  import { Radio, radio, Helper, RadioButton, ButtonGroup, Label, P } from '$lib';
+  import {
+    Radio,
+    radio,
+    Helper,
+    RadioButton,
+    ButtonGroup,
+    Label,
+    P
+  } from '$lib';
   // let { group = $bindable() ,technology = $bindable('svelte'), radioGroup = $bindable('notes') } = $props();
   // let colors = 'text-purple-500';
   let technology = $state('svelte');

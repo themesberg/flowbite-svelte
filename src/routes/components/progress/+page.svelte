@@ -14,7 +14,7 @@
   let progress = $state('45');
   const sizes = ['h-1.5', 'h-2.5', 'h-4', 'h-6'];
   let progressSize = $state('h-2.5');
-  const colors = Object.keys(progressbar.variants.color)
+  const colors = Object.keys(progressbar.variants.color);
   let progressColor: Progressbar['color'] = $state('primary');
   let progressLabel = $state(false);
   let { labelContent = $bindable('Svelte-5-Ui-Lib') } = $props();

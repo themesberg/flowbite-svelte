@@ -37,7 +37,11 @@
 
 <!-- Dropdown menu -->
 {#if dropdownStatus}
-  <div {...attributes} class={base({ class: divClass })} transition:multiple={transitionParams}>
+  <div
+    {...attributes}
+    class={base({ class: divClass })}
+    transition:multiple={transitionParams}
+  >
     {#if header}
       <div class={headerDiv({ class: headerClass })}>
         {@render header()}
@@ -77,6 +81,7 @@
 @prop footerClass
 @prop headerClass
 @prop ulClass
+@prop backdropClass
 @prop transitionParams
 @prop transitionType = 'fly'
 @prop ...attributes

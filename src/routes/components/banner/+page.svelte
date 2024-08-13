@@ -2,7 +2,8 @@
   import { slide } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
   import {
-    Banner, banner, 
+    Banner,
+    banner,
     Button,
     Skeleton,
     ImagePlaceholder,

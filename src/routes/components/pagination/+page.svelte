@@ -1,6 +1,11 @@
 <script lang="ts">
   import { Select, Label, Pagination, PaginationItem } from '$lib';
-  import { ChevronLeftOutline, ChevronRightOutline, ArrowLeftOutline, ArrowRightOutline } from 'flowbite-svelte-icons';
+  import {
+    ChevronLeftOutline,
+    ChevronRightOutline,
+    ArrowLeftOutline,
+    ArrowRightOutline
+  } from 'flowbite-svelte-icons';
   import { page } from '$app/stores';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -15,15 +20,15 @@
 
   let activeUrl = $state($page.url.searchParams.get('page'));
   let pages = $state([
-    { name: "1", href: '/components/pagination?page=1', active: false },
-    { name: "2", href: '/components/pagination?page=2', active: false },
-    { name: "3", href: '/components/pagination?page=3', active: false },
-    { name: "4", href: '/components/pagination?page=4', active: false },
-    { name: "5", href: '/components/pagination?page=5', active: false }
+    { name: '1', href: '/components/pagination?page=1', active: false },
+    { name: '2', href: '/components/pagination?page=2', active: false },
+    { name: '3', href: '/components/pagination?page=3', active: false },
+    { name: '4', href: '/components/pagination?page=4', active: false },
+    { name: '5', href: '/components/pagination?page=5', active: false }
   ]);
   let helper = { start: 1, end: 10, total: 100 };
- 
-  $effect(()=>{
+
+  $effect(() => {
     pages.forEach((page) => {
       let splitUrl = page.href.split('?');
       let queryString = splitUrl.slice(1).join('?');
@@ -36,7 +41,7 @@
       }
     });
     pages = pages;
-  })
+  });
 
   const previous = () => {
     alert('Previous btn clicked. Make a call to your server to fetch data.');
@@ -49,7 +54,7 @@
 <H1>Pagination</H1>
 
 <H2>Default pagination</H2>
-<CodeWrapper class="space-y-4 flex flex-col">
+<CodeWrapper class="flex flex-col space-y-4">
   <Pagination {pages} {previous} {next} />
   <Pagination {pages} size="large" {previous} {next} />
 </CodeWrapper>
@@ -59,11 +64,11 @@
   <Pagination {pages} {previous} {next}>
     {#snippet prevContent()}
       <span class="sr-only">Previous</span>
-      <ChevronLeftOutline class="w-5 h-5" />
+      <ChevronLeftOutline class="h-5 w-5" />
     {/snippet}
     {#snippet nextContent()}
       <span class="sr-only">Next</span>
-      <ChevronRightOutline class="w-5 h-5" />
+      <ChevronRightOutline class="h-5 w-5" />
     {/snippet}
   </Pagination>
 </CodeWrapper>
@@ -76,17 +81,16 @@
   </div>
 </CodeWrapper>
 
-
 <H2>Previous and next with icons</H2>
 <CodeWrapper>
   <div class="flex space-x-3 rtl:space-x-reverse">
     <PaginationItem class="flex items-center" onclick={previous}>
-      <ArrowLeftOutline class="me-2 w-5 h-5" />
+      <ArrowLeftOutline class="me-2 h-5 w-5" />
       Previous
     </PaginationItem>
     <PaginationItem class="flex items-center" onclick={next}>
       Next
-      <ArrowRightOutline class="ms-2 w-5 h-5" />
+      <ArrowRightOutline class="ms-2 h-5 w-5" />
     </PaginationItem>
   </div>
 </CodeWrapper>
@@ -95,18 +99,18 @@
 <CodeWrapper>
   <div class="flex flex-col items-center justify-center gap-2">
     <div class="text-sm text-gray-700 dark:text-gray-400">
-      Showing <span class="font-semibold text-gray-900 dark:text-white">{helper.start}</span>
+      Showing <span class="font-semibold text-gray-900 dark:text-white"
+        >{helper.start}</span
+      >
       to
-      <span class="font-semibold text-gray-900 dark:text-white">{helper.end}</span>
+      <span class="font-semibold text-gray-900 dark:text-white"
+        >{helper.end}</span
+      >
       of
-      <span class="font-semibold text-gray-900 dark:text-white">{helper.total}</span>
+      <span class="font-semibold text-gray-900 dark:text-white"
+        >{helper.total}</span
+      >
       Entries
     </div>
-  
-    <Pagination table>
-      {#snippet prevContent()}
-        Prev
-      {/snippet}
-    </Pagination>
   </div>
 </CodeWrapper>

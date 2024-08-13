@@ -11,16 +11,37 @@
     activeClass,
     normalClass,
     ...attributes
-  }: Props = $props()
+  }: Props = $props();
 
-const group = getContext<boolean>('group');
-const table = getContext<boolean>('table');
-const paginationClass = $derived(paginationItem({ size, active, group, table }));
-
+  const group = getContext<boolean>('group');
+  const table = getContext<boolean>('table');
+  const paginationClass = $derived(
+    paginationItem({ size, active, group, table })
+  );
 </script>
 
-<svelte:element this={href ? 'a' : 'button'} {href} class={paginationClass} role={href ? 'button' : undefined} {...attributes}>
+<svelte:element
+  this={href ? 'a' : 'button'}
+  {href}
+  class={paginationClass}
+  role={href ? 'button' : undefined}
+  {...attributes}
+>
   {#if children}
-  {@render children()}
+    {@render children()}
   {/if}
 </svelte:element>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@prop children
+@prop size
+@prop class: className
+@prop href
+@prop active
+@prop activeClass
+@prop normalClass
+@prop ...attributes
+-->

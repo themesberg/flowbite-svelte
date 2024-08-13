@@ -5,10 +5,7 @@
   const base = dropdowndivider({ class: divClass });
 </script>
 
-<div
-  {...attributes}
-  class={base}
-></div>
+<div {...attributes} class={base}></div>
 
 <!--
 @component

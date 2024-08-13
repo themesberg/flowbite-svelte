@@ -65,7 +65,7 @@
 {:else}
   <button {onclick} class={buttonClass} {disabled} aria-current={current}>
     {#if icon}
-      <svelte:component this={icon} class="me-2.5 h-5 w-5" />
+      <icon class="me-2.5 h-5 w-5"></icon>
     {/if}
     {name}
   </button>

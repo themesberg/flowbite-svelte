@@ -18,7 +18,7 @@ export const range = tv({
       purple: '',
       fuchsia: '',
       pink: '',
-      rose: '',
+      rose: ''
     },
     appearance: {
       auto: 'range accent-red-500',
@@ -72,4 +72,4 @@ export const range = tv({
       class: 'accent-rose-500'
     }
   ]
-})
+});

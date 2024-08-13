@@ -19,7 +19,7 @@ export const progressbar = tv({
       },
       gray: {
         labelInsideDiv: 'bg-gray-600 dark:bg-gray-300',
-        insideDiv: 'bg-gray-600 dark:bg-gray-300',
+        insideDiv: 'bg-gray-600 dark:bg-gray-300'
       },
       red: {
         labelInsideDiv: 'bg-red-600 dark:bg-red-500',
@@ -89,7 +89,6 @@ export const progressbar = tv({
         labelInsideDiv: 'bg-rose-600 dark:bg-rose-500',
         insideDiv: 'bg-rose-600 dark:bg-rose-500'
       }
-      
     },
     labelInside: {
       true: '',

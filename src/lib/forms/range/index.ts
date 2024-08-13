@@ -1,5 +1,5 @@
 import Range from './Range.svelte';
-import { range } from './theme'
+import { range } from './theme';
 import type { HTMLInputAttributes } from 'svelte/elements';
 import type { VariantProps } from 'tailwind-variants';
 

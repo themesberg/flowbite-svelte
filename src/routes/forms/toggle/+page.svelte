@@ -54,7 +54,7 @@
 <H2>Sizes</H2>
 <CodeWrapper class="flex flex-col space-y-2">
   <div class="h-10">
-    <Toggle toggleSize={toggleSize} checked>Toggle</Toggle>
+    <Toggle {toggleSize} checked>Toggle</Toggle>
   </div>
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>

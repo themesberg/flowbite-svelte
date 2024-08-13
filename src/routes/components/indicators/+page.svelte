@@ -1,6 +1,7 @@
 <script lang="ts">
   import {
-    Indicator, indicator,
+    Indicator,
+    indicator,
     Button,
     Avatar,
     Badge,

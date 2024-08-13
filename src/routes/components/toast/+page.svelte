@@ -49,9 +49,11 @@
 <CodeWrapper class="flex flex-col items-center space-y-2">
   <div class="h-16">
     {#if !toastStatus}
-      <Button color="light" onclick={() => (toastStatus = true)}>Open toast</Button>
+      <Button color="light" onclick={() => (toastStatus = true)}
+        >Open toast</Button
+      >
     {/if}
-    <Toast color={toastColor} bind:toastStatus={toastStatus}>
+    <Toast color={toastColor} bind:toastStatus>
       {#snippet icon()}
         <CheckCircleSolid class="h-5 w-5" />
         <span class="sr-only">Check icon</span>

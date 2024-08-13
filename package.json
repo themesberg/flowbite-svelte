@@ -44,34 +44,34 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.7",
-    "@playwright/test": "^1.45.3",
-    "@sveltejs/adapter-auto": "^3.2.2",
-    "@sveltejs/kit": "^2.5.20",
-    "@sveltejs/package": "^2.3.2",
+    "@playwright/test": "^1.46.0",
+    "@sveltejs/adapter-auto": "^3.2.4",
+    "@sveltejs/kit": "^2.5.22",
+    "@sveltejs/package": "^2.3.4",
     "@sveltejs/vite-plugin-svelte": "^3.1.1",
     "@svitejs/changesets-changelog-github-compact": "^1.1.0",
     "@types/eslint": "^9.6.0",
     "autoprefixer": "^10.4.20",
-    "eslint": "^9.8.0",
+    "eslint": "^9.9.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-svelte": "2.43.0",
-    "flowbite-svelte-icons": "2.0.0-next.10",
+    "flowbite-svelte-icons": "2.0.0-next.16",
     "highlight.js": "^11.10.0",
-    "postcss": "^8.4.40",
+    "postcss": "^8.4.41",
     "prettier": "^3.3.3",
     "prettier-plugin-svelte": "^3.2.6",
-    "prettier-plugin-tailwindcss": "^0.6.5",
+    "prettier-plugin-tailwindcss": "^0.6.6",
     "publint": "^0.2.9",
     "runatics": "^0.1.3",
     "runes-meta-tags": "^0.3.2",
-    "svelte": "5.0.0-next.208",
+    "svelte": "5.0.0-next.220",
     "svelte-check": "^3.8.5",
     "svelte-lib-helpers": "^0.4.7",
     "svelte-rune-highlight": "^0.5.9",
-    "tailwindcss": "^3.4.7",
+    "tailwindcss": "^3.4.9",
     "tslib": "^2.6.3",
     "typescript": "^5.5.4",
-    "vite": "^5.3.5"
+    "vite": "^5.4.0"
   },
   "peerDependencies": {
     "@sveltejs/kit": "^2.0.0",
@@ -88,10 +88,10 @@
   ],
   "type": "module",
   "dependencies": {
-    "@floating-ui/dom": "^1.6.8",
-    "apexcharts": "^3.51.0",
+    "@floating-ui/dom": "^1.6.10",
+    "apexcharts": "^3.52.0",
     "clsx": "^2.1.1",
-    "tailwind-merge": "^2.4.0",
+    "tailwind-merge": "^2.5.2",
     "tailwind-variants": "^0.2.1"
   },
   "exports": {
@@ -318,6 +318,14 @@
     "./Navbar.svelte": {
       "types": "./dist/nav/Navbar.svelte.d.ts",
       "svelte": "./dist/nav/Navbar.svelte"
+    },
+    "./Pagination.svelte": {
+      "types": "./dist/pagination/Pagination.svelte.d.ts",
+      "svelte": "./dist/pagination/Pagination.svelte"
+    },
+    "./PaginationItem.svelte": {
+      "types": "./dist/pagination/PaginationItem.svelte.d.ts",
+      "svelte": "./dist/pagination/PaginationItem.svelte"
     },
     "./Progressbar.svelte": {
       "types": "./dist/progress/Progressbar.svelte.d.ts",

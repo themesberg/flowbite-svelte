@@ -62,7 +62,7 @@ const banner = tv({
   },
   defaultVariants: {
     position: 'sticky',
-    bannerType: 'default',
+    bannerType: 'default'
   }
 });
 

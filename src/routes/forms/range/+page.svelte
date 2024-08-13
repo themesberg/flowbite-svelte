@@ -27,18 +27,24 @@
 
 <H2>Reference</H2>
 <CodeWrapper>
-  <input class="range w-full accent-red-500" 
-    type="range" 
-    value="50" min="0" 
-    max="100" 
-    />
-    <input class="range w-full accent-yellow-500 bg-gray-50" 
-    type="range" 
-    value="50" min="0" 
-    max="100" 
-    />
-    <input type="range" class="w-full bg-gray-200 rounded-lg cursor-pointer dark:bg-gray-700 h-3 range-lg range accent-pink-500">
-    
+  <input
+    class="range w-full accent-red-500"
+    type="range"
+    value="50"
+    min="0"
+    max="100"
+  />
+  <input
+    class="range w-full bg-gray-50 accent-yellow-500"
+    type="range"
+    value="50"
+    min="0"
+    max="100"
+  />
+  <input
+    type="range"
+    class="range-lg range h-3 w-full cursor-pointer rounded-lg bg-gray-200 accent-pink-500 dark:bg-gray-700"
+  />
 </CodeWrapper>
 <H2>Range slider example</H2>
 <CodeWrapper>
@@ -49,7 +55,7 @@
 
 <H2>Color</H2>
 <CodeWrapper>
-  <Range color={rangeColor} appearance="auto"/>
+  <Range color={rangeColor} appearance="auto" />
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}

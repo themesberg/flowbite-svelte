@@ -1,7 +1,7 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
   import { CloseButton } from '$lib';
-  import { toast, type ToastProps as Props } from '.'
+  import { toast, type ToastProps as Props } from '.';
 
   let {
     children,
@@ -19,23 +19,28 @@
     ...attributes
   }: Props = $props();
 
-  const { base, icon: iconVariants , content, close } = $derived(toast({ color, position, align }));
+  const {
+    base,
+    icon: iconVariants,
+    content,
+    close
+  } = $derived(toast({ color, position, align }));
 </script>
 
 {#if toastStatus}
   <div
     role="alert"
     {...attributes}
-    class={base({ class: baseClass})}
+    class={base({ class: baseClass })}
     transition:transition={params}
   >
     {#if icon}
-      <div class={iconVariants({ class: iconClass})}>
+      <div class={iconVariants({ class: iconClass })}>
         {@render icon()}
       </div>
     {/if}
 
-    <div class={content({ class: contentClass})}>
+    <div class={content({ class: contentClass })}>
       {@render children()}
     </div>
 
@@ -58,12 +63,13 @@
 ## Props
 @prop children
 @prop icon
+@prop toastStatus = $bindable(true)
 @prop dismissable = true
 @prop color = 'primary'
-@prop position = 'none'
-@prop divClass
-@prop div2Class
-@prop div3Class
+@prop position
+@prop baseClass
+@prop iconClass
+@prop contentClass
 @prop align = true
 @prop transition = fade
 @prop params
