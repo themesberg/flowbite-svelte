@@ -5,7 +5,7 @@ import { type VariantProps } from 'tailwind-variants';
 import PaginationItem from './PaginationItem.svelte';
 import type {
   HTMLAnchorAttributes,
-  HTMLButtonAttributes
+  HTMLButtonAttributes, HTMLLiAttributes
 } from 'svelte/elements';
 type PaginationItemProps = PaginationItemAttributes &
   (
@@ -25,7 +25,7 @@ interface PaginationItemAttributes {
   size?: PaginationItemType['size'];
 }
 
-interface PaginationProps {
+interface PaginationProps extends HTMLLiAttributes {
   prevContent?: Snippet;
   nextContent?: Snippet;
   pages?: PaginationItemProps[];

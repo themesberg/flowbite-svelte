@@ -16,7 +16,7 @@
   const group = getContext<boolean>('group');
   const table = getContext<boolean>('table');
   const paginationClass = $derived(
-    paginationItem({ size, active, group, table })
+    paginationItem({ size, active, group, table, className })
   );
 </script>
 

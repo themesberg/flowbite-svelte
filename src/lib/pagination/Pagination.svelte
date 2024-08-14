@@ -31,7 +31,7 @@
         <PaginationItem
           {size}
           onclick={() => previous()}
-          class={table ? 'rounded-l' : 'rounded-s-lg'}
+          class={table ? 'rounded-none rounded-l' : 'rounded-none  rounded-s-lg'}
         >
           {#if prevContent}
             {@render prevContent()}
@@ -53,7 +53,7 @@
         <PaginationItem
           {size}
           onclick={() => next()}
-          class={table ? 'rounded-r' : 'rounded-e-lg'}
+          class={table ? 'rounded-none rounded-r' : 'rounded-none rounded-e-lg'}
         >
           {#if nextContent}
             {@render nextContent()}

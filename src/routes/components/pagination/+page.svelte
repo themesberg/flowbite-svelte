@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Select, Label, Pagination, PaginationItem } from '$lib';
+  import { Select, Label, Button, Pagination, PaginationItem, type PaginationItemProps } from '$lib';
   import {
     ChevronLeftOutline,
     ChevronRightOutline,
@@ -42,25 +42,39 @@
     });
     pages = pages;
   });
-
+  let pagenationSize: PaginationItemProps['size'] = $state('default');
+  const changeSize = () => {
+    pagenationSize = pagenationSize === 'large' ? 'default' : 'large';
+  }
   const previous = () => {
     alert('Previous btn clicked. Make a call to your server to fetch data.');
   };
   const next = () => {
     alert('Next btn clicked. Make a call to your server to fetch data.');
   };
+  const handleClick = () => {
+    alert('Page clicked');
+  };
 </script>
 
 <H1>Pagination</H1>
 
 <H2>Default pagination</H2>
-<CodeWrapper class="flex flex-col space-y-4">
-  <Pagination {pages} {previous} {next} />
-  <Pagination {pages} size="large" {previous} {next} />
+<CodeWrapper class="flex flex-col justify-center items-center gap-3">
+  <div class="h-12">
+    <Pagination {pages} {previous} {next} size={pagenationSize}/>
+  </div>
+  <Button onclick={changeSize}>
+    {#if pagenationSize === 'default'}
+      Large
+    {:else}
+      Default
+    {/if}
+  </Button>
 </CodeWrapper>
 
 <H2>Pagination with icons</H2>
-<CodeWrapper>
+<CodeWrapper class="flex flex-col justify-center items-center gap-3">
   <Pagination {pages} {previous} {next}>
     {#snippet prevContent()}
       <span class="sr-only">Previous</span>
@@ -74,7 +88,7 @@
 </CodeWrapper>
 
 <H2>Previous and next</H2>
-<CodeWrapper>
+<CodeWrapper class="flex flex-col justify-center items-center gap-3">
   <div class="flex space-x-3 rtl:space-x-reverse">
     <PaginationItem onclick={previous}>Previous</PaginationItem>
     <PaginationItem onclick={next}>Next</PaginationItem>
@@ -82,7 +96,7 @@
 </CodeWrapper>
 
 <H2>Previous and next with icons</H2>
-<CodeWrapper>
+<CodeWrapper class="flex flex-col justify-center items-center gap-3">
   <div class="flex space-x-3 rtl:space-x-reverse">
     <PaginationItem class="flex items-center" onclick={previous}>
       <ArrowLeftOutline class="me-2 h-5 w-5" />
@@ -96,7 +110,7 @@
 </CodeWrapper>
 
 <H2>Table data pagination</H2>
-<CodeWrapper>
+<CodeWrapper class="flex flex-col justify-center items-center gap-3">
   <div class="flex flex-col items-center justify-center gap-2">
     <div class="text-sm text-gray-700 dark:text-gray-400">
       Showing <span class="font-semibold text-gray-900 dark:text-white"
@@ -112,5 +126,41 @@
       >
       Entries
     </div>
+    <Pagination table {previous} {next} />
+    <Pagination table size="large" {previous} {next} />
   </div>
+</CodeWrapper>
+
+<H2>Table data pagination with icons</H2>
+<CodeWrapper class="flex flex-col justify-center items-center gap-3">
+  <div class="flex flex-col items-center justify-center gap-2">
+    <div class="text-sm text-gray-700 dark:text-gray-400">
+      Showing <span class="font-semibold text-gray-900 dark:text-white">{helper.start}</span>
+      to
+      <span class="font-semibold text-gray-900 dark:text-white">{helper.end}</span>
+      of
+      <span class="font-semibold text-gray-900 dark:text-white">{helper.total}</span>
+      Entries
+    </div>
+  
+    <Pagination table {previous} {next} >
+      {#snippet prevContent()}
+      <div class="flex items-center gap-2 text-white bg-gray-800">
+        <ArrowLeftOutline class="w-5 h-5 me-2" />
+        Prev
+      </div>
+      {/snippet}
+      {#snippet nextContent()}
+      <div class="flex items-center gap-2 text-white bg-gray-800">
+        Next
+        <ArrowRightOutline class="w-5 h-5 ms-2" />
+      </div>
+      {/snippet}
+    </Pagination>
+  </div>
+</CodeWrapper>
+
+<H2>Event example</H2>
+<CodeWrapper class="flex flex-col justify-center items-center gap-3">
+  <Pagination {pages} {previous} {next} onclick={handleClick} />
 </CodeWrapper>
