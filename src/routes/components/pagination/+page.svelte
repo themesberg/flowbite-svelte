@@ -58,6 +58,9 @@
 </script>
 
 <H1>Pagination</H1>
+<H2>Setup</H2>
+
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default pagination</H2>
 <CodeWrapper class="flex flex-col justify-center items-center gap-3">
@@ -72,6 +75,7 @@
     {/if}
   </Button>
 </CodeWrapper>
+<HighlightCompo code={modules['./md/default-pagination.md'] as string} />
 
 <H2>Pagination with icons</H2>
 <CodeWrapper class="flex flex-col justify-center items-center gap-3">
@@ -86,6 +90,7 @@
     {/snippet}
   </Pagination>
 </CodeWrapper>
+<HighlightCompo code={modules['./md/pagination-with-icons.md'] as string} />
 
 <H2>Previous and next</H2>
 <CodeWrapper class="flex flex-col justify-center items-center gap-3">
@@ -94,6 +99,7 @@
     <PaginationItem onclick={next}>Next</PaginationItem>
   </div>
 </CodeWrapper>
+<HighlightCompo code={modules['./md/previous-and-next.md'] as string} />
 
 <H2>Previous and next with icons</H2>
 <CodeWrapper class="flex flex-col justify-center items-center gap-3">
@@ -108,6 +114,8 @@
     </PaginationItem>
   </div>
 </CodeWrapper>
+
+<HighlightCompo code={modules['./md/previous-and-next-with-icons.md'] as string} />
 
 <H2>Table data pagination</H2>
 <CodeWrapper class="flex flex-col justify-center items-center gap-3">
@@ -130,6 +138,8 @@
     <Pagination table size="large" {previous} {next} />
   </div>
 </CodeWrapper>
+
+<HighlightCompo code={modules['./md/table-data-pagination.md'] as string} />
 
 <H2>Table data pagination with icons</H2>
 <CodeWrapper class="flex flex-col justify-center items-center gap-3">
@@ -160,7 +170,11 @@
   </div>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/table-data-pagination-with-icons.md'] as string} />
+
 <H2>Event example</H2>
 <CodeWrapper class="flex flex-col justify-center items-center gap-3">
   <Pagination {pages} {previous} {next} onclick={handleClick} />
 </CodeWrapper>
+
+<HighlightCompo code={modules['./md/event-example.md'] as string} />
