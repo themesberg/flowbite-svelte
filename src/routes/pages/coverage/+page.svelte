@@ -152,7 +152,8 @@
     },
     tabs: {
       checked: true,
-      problems: 'Full width tabs, Components in tab contents'
+      // problems: 'Full width tabs, Components in tab contents'
+      notes: 'Variants checked'
     },
     timeline: {
       checked: true,

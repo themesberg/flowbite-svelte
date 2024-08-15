@@ -1,42 +1,22 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
   import { getContext } from 'svelte';
-  import type { TabCtxType } from './Tabs.svelte';
   import { writable } from 'svelte/store';
-  import { twMerge } from 'tailwind-merge';
-  import type { HTMLLiAttributes } from 'svelte/elements';
-
-  interface Props extends HTMLLiAttributes {
-    children?: Snippet;
-    titleSlot?: Snippet;
-    open?: boolean;
-    title?: string | undefined | null;
-    activeClasses?: string | undefined | null;
-    inactiveClasses?: string | undefined | null;
-    defaultClass?: string | undefined | null;
-    class?: string | undefined | null;
-    disabled?: boolean;
-  }
+  import { type TabitemProps as Props, type TabCtxType, tabItem } from '.';
 
   let {
     children,
     titleSlot,
     open = false,
     title = 'Tab title',
-    activeClasses,
-    inactiveClasses,
-    defaultClass,
+    activeClass,
+    inactiveClass,
     class: className,
     disabled,
     ...attributes
   }: Props = $props();
 
-  let defaultCls: string = twMerge(
-    'inline-block text-sm font-medium text-center disabled:cursor-not-allowed',
-    defaultClass
-  );
-
   const ctx = getContext<TabCtxType>('ctx') ?? {};
+  $inspect('ctx from item: ', ctx);
   const selected = ctx.selected ?? writable<HTMLElement>();
 
   function init(node: HTMLElement) {
@@ -50,25 +30,17 @@
 
     return { destroy };
   }
-  let buttonClass = $state('');
-  $effect(() => {
-    buttonClass = twMerge(
-      defaultCls,
-      open
-        ? (activeClasses ?? ctx.activeClasses)
-        : (inactiveClasses ?? ctx.inactiveClasses),
-      open && 'active'
-    );
-  });
+  
+  const { base, button, content } = $derived(tabItem({ open, disabled }));
 </script>
 
-<li class={twMerge('group', className)} role="presentation" {...attributes}>
+<li class={base({ class: className })} role="presentation" {...attributes}>
   <button
     type="button"
     onclick={() => (open = true)}
     role="tab"
     {disabled}
-    class={buttonClass}
+    class={button({ class: open ? activeClass ?? ctx.activeClass : inactiveClass ?? ctx.inactiveClass})}
   >
     {#if titleSlot}
       {@render titleSlot()}
@@ -78,7 +50,7 @@
   </button>
 
   {#if open && children}
-    <div class="tab_content_placeholder hidden">
+    <div class={content()}>
       <div use:init>
         {@render children()}
       </div>

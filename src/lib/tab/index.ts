@@ -3,15 +3,16 @@ import Tabs from './Tabs.svelte';
 import type { Snippet } from 'svelte';
 import type { HTMLAttributes, HTMLLiAttributes } from 'svelte/elements';
 import { writable, type Writable } from 'svelte/store';
+import { tabs, tabItem } from './theme'
 
 interface TabsProps extends HTMLAttributes<HTMLUListElement> {
   children: Snippet;
-  style?: 'full' | 'pill' | 'underline' | 'none';
-  defaultClass?: string | undefined | null;
+  tabStyle?: 'full' | 'pill' | 'underline' | 'none';
+  ulClass?: string | undefined | null;
   contentClass?: string | undefined | null;
   divider?: boolean;
-  activeClasses?: string | undefined | null;
-  inactiveClasses?: string | undefined | null;
+  activeClass?: string | undefined | null;
+  inactiveClass?: string | undefined | null;
   class?: string | undefined | null;
 }
 
@@ -20,17 +21,16 @@ interface TabitemProps extends HTMLLiAttributes {
   titleSlot?: Snippet;
   open?: boolean;
   title?: string | undefined | null;
-  activeClasses?: string | undefined | null;
-  inactiveClasses?: string | undefined | null;
-  defaultClass?: string | undefined | null;
+  activeClass?: string | undefined | null;
+  inactiveClass?: string | undefined | null;
   class?: string | undefined | null;
   disabled?: boolean;
 }
 
 interface TabCtxType {
-  activeClasses: string | undefined | null;
-  inactiveClasses: string | undefined | null;
+  activeClass: string | undefined | null;
+  inactiveClass: string | undefined | null;
   selected: Writable<HTMLElement>;
 }
 
-export { TabItem, Tabs, type TabsProps, type TabitemProps, type TabCtxType };
+export { TabItem, tabItem, Tabs, tabs, type TabsProps, type TabitemProps, type TabCtxType };
