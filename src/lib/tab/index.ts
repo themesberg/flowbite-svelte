@@ -3,7 +3,7 @@ import Tabs from './Tabs.svelte';
 import type { Snippet } from 'svelte';
 import type { HTMLAttributes, HTMLLiAttributes } from 'svelte/elements';
 import { writable, type Writable } from 'svelte/store';
-import { tabs, tabItem } from './theme'
+import { tabs, tabItem } from './theme';
 
 interface TabsProps extends HTMLAttributes<HTMLUListElement> {
   children: Snippet;
@@ -33,4 +33,12 @@ interface TabCtxType {
   selected: Writable<HTMLElement>;
 }
 
-export { TabItem, tabItem, Tabs, tabs, type TabsProps, type TabitemProps, type TabCtxType };
+export {
+  TabItem,
+  tabItem,
+  Tabs,
+  tabs,
+  type TabsProps,
+  type TabitemProps,
+  type TabCtxType
+};

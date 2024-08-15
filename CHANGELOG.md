@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.8.5
+
+### Patch Changes
+
+- feat: tab components ([`422a740cc67ad2fde7f4b9664afd22f8e0007e6e`](https://github.com/shinokada/svelte-5-ui-lib/commit/422a740cc67ad2fde7f4b9664afd22f8e0007e6e))
+
 ## 0.8.4
 
 ### Patch Changes

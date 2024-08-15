@@ -4,7 +4,8 @@
     UserCircleSolid,
     GridSolid,
     AdjustmentsVerticalSolid,
-    ClipboardSolid, ArrowRightOutline
+    ClipboardSolid,
+    ArrowRightOutline
   } from 'flowbite-svelte-icons';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
@@ -219,41 +220,50 @@
 
 <HighlightCompo codeLang="ts" code={modules['./md/pills-tabs.md'] as string} />
 
-
 <H2>Full width tabs</H2>
 <CodeWrapper>
-  <Tabs tabStyle="full" ulClass="flex flex-nowrap rounded-lg divide-x rtl:divide-x-reverse divide-gray-200 shadow dark:divide-gray-700 space-x-0">
+  <Tabs
+    tabStyle="full"
+    ulClass="flex flex-nowrap rounded-lg divide-x rtl:divide-x-reverse divide-gray-200 shadow dark:divide-gray-700 space-x-0"
+  >
     <TabItem class="w-full" open>
       {#snippet titleSlot()}Profile{/snippet}
       <p class="text-sm text-gray-500 dark:text-gray-400">
         <b>Profile:</b>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua.
       </p>
     </TabItem>
     <TabItem class="w-full">
       {#snippet titleSlot()}Dashboard{/snippet}
       <p class="text-sm text-gray-500 dark:text-gray-400">
         <b>Dashboard:</b>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua.
       </p>
     </TabItem>
     <TabItem class="w-full">
       {#snippet titleSlot()}Settings{/snippet}
       <p class="text-sm text-gray-500 dark:text-gray-400">
         <b>Settings:</b>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua.
       </p>
     </TabItem>
     <TabItem class="w-full">
       {#snippet titleSlot()}Users{/snippet}
       <p class="text-sm text-gray-500 dark:text-gray-400">
         <b>Users:</b>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua.
       </p>
     </TabItem>
   </Tabs>
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/full-width-tabs.md'] as string} />
+<HighlightCompo
+  codeLang="ts"
+  code={modules['./md/full-width-tabs.md'] as string}
+/>
 
 <H2>Components in tab contents</H2>
 <CodeWrapper>
@@ -261,18 +271,39 @@
     <TabItem open>
       {#snippet titleSlot()}Profile{/snippet}
       <Timeline>
-        <TimelineItem title="Application UI code in Tailwind CSS" date="February 2022">
-          <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
+        <TimelineItem
+          title="Application UI code in Tailwind CSS"
+          date="February 2022"
+        >
+          <p
+            class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400"
+          >
+            Get access to over 20+ pages including a dashboard layout, charts,
+            kanban board, calendar, and pre-order E-commerce & Marketing pages.
+          </p>
           <Button color="alternative">
             Learn more
-            <ArrowRightOutline class="ms-2 w-5 h-5" />
+            <ArrowRightOutline class="ms-2 h-5 w-5" />
           </Button>
         </TimelineItem>
-        <TimelineItem title="Application UI code in Tailwind CSS" date="March 2022">
-          <p class="text-base font-normal text-gray-500 dark:text-gray-400">All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.</p>
+        <TimelineItem
+          title="Application UI code in Tailwind CSS"
+          date="March 2022"
+        >
+          <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+            All of the pages and components are first designed in Figma and we
+            keep a parity between the two versions even as we update the
+            project.
+          </p>
         </TimelineItem>
-        <TimelineItem title="Application UI code in Tailwind CSS" date="April 2022">
-          <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements built on top of Tailwind CSS.</p>
+        <TimelineItem
+          title="Application UI code in Tailwind CSS"
+          date="April 2022"
+        >
+          <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+            Get started with dozens of web components and interactive elements
+            built on top of Tailwind CSS.
+          </p>
         </TimelineItem>
       </Timeline>
     </TabItem>
@@ -280,24 +311,30 @@
       {#snippet titleSlot()}Dashboard{/snippet}
       <p class="text-sm text-gray-500 dark:text-gray-400">
         <b>Dashboard:</b>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua.
       </p>
     </TabItem>
     <TabItem>
       {#snippet titleSlot()}Settings{/snippet}
       <p class="text-sm text-gray-500 dark:text-gray-400">
         <b>Settings:</b>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua.
       </p>
     </TabItem>
     <TabItem>
       {#snippet titleSlot()}Users{/snippet}
       <p class="text-sm text-gray-500 dark:text-gray-400">
         <b>Users:</b>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua.
       </p>
     </TabItem>
   </Tabs>
 </CodeWrapper>
 
-<HighlightCompo codeLang="ts" code={modules['./md/components-in-tab-contents.md'] as string} />
+<HighlightCompo
+  codeLang="ts"
+  code={modules['./md/components-in-tab-contents.md'] as string}
+/>

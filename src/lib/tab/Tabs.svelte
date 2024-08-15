@@ -1,7 +1,7 @@
 <script lang="ts">
   import { writable, type Writable } from 'svelte/store';
   import { setContext } from 'svelte';
-  import { type TabsProps as Props, type TabCtxType, tabs } from '.'
+  import { type TabsProps as Props, type TabCtxType, tabs } from '.';
 
   let {
     children,
@@ -15,7 +15,13 @@
     ...attributes
   }: Props = $props();
 
-  const {base, content, divider: dividerClass, active, inactive} = $derived(tabs({ tabStyle, hasDivider: divider }));
+  const {
+    base,
+    content,
+    divider: dividerClass,
+    active,
+    inactive
+  } = $derived(tabs({ tabStyle, hasDivider: divider }));
 
   const ctx: TabCtxType = $derived({
     activeClass: active(),
@@ -36,28 +42,32 @@
     });
     return { destroy };
   }
-  
 </script>
 
-<ul class={base({ class: ulClass})} {...attributes}>
+<ul class={base({ class: ulClass })} {...attributes}>
   {@render children()}
 </ul>
 {#if dividerBool}
   <div class={dividerClass()}></div>
 {/if}
-<div class={content({ class: contentClass })} role="tabpanel" aria-labelledby="id-tab" use:init></div>
+<div
+  class={content({ class: contentClass })}
+  role="tabpanel"
+  aria-labelledby="id-tab"
+  use:init
+></div>
 
 <!--
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
-@prop style = 'none'
-@prop defaultClass
+@prop tabStyle = 'none'
+@prop ulClass
 @prop contentClass
 @prop divider = true
-@prop activeClasses
-@prop inactiveClasses
+@prop activeClass
+@prop inactiveClass
 @prop class: classname
 @prop ...attributes
 -->

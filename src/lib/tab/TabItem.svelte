@@ -30,7 +30,7 @@
 
     return { destroy };
   }
-  
+
   const { base, button, content } = $derived(tabItem({ open, disabled }));
 </script>
 
@@ -40,7 +40,11 @@
     onclick={() => (open = true)}
     role="tab"
     {disabled}
-    class={button({ class: open ? activeClass ?? ctx.activeClass : inactiveClass ?? ctx.inactiveClass})}
+    class={button({
+      class: open
+        ? (activeClass ?? ctx.activeClass)
+        : (inactiveClass ?? ctx.inactiveClass)
+    })}
   >
     {#if titleSlot}
       {@render titleSlot()}
@@ -66,9 +70,8 @@
 @prop titleSlot
 @prop open = false
 @prop title = 'Tab title'
-@prop activeClasses
-@prop inactiveClasses
-@prop defaultClass
+@prop activeClass
+@prop inactiveClass
 @prop class: className
 @prop disabled
 @prop ...attributes
