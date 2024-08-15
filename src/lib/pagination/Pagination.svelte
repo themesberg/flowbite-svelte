@@ -43,7 +43,7 @@
     {/if}
     {#each pages as { name, href, active }}
       <li>
-        <PaginationItem {size} {active} {href} {...attributes}>
+        <PaginationItem {size} {active} {href} >
           {name}
         </PaginationItem>
       </li>

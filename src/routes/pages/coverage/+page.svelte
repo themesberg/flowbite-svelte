@@ -155,7 +155,8 @@
       problems: 'Full width tabs, Components in tab contents'
     },
     timeline: {
-      checked: false
+      checked: true,
+      notes: 'Variants checked'
     },
     toast: {
       checked: true,
