@@ -36,10 +36,11 @@
 
   let divClass: string;
 
-  $: divClass = twMerge(common, background ? 'dark:bg-gray-600 dark:border-gray-500' : 'dark:bg-gray-700 dark:border-gray-600', colors[($$restProps.color as FormColorType) ?? 'primary'], sizes[size], 'relative', $$props.classDiv);
+  $: divClass = twMerge(common, $$slots.offLabel ? "ms-3" : "", background ? 'dark:bg-gray-600 dark:border-gray-500' : 'dark:bg-gray-700 dark:border-gray-600', colors[($$restProps.color as FormColorType) ?? 'primary'], sizes[size], 'relative', $$props.classDiv);
 </script>
 
 <Checkbox custom {...$$restProps} class={$$props.class} {value} bind:checked bind:group on:click on:change>
+  <slot name="offLabel"></slot>
   <span class={divClass}></span>
   <slot></slot>
 </Checkbox>
