@@ -5,7 +5,8 @@ import { type VariantProps } from 'tailwind-variants';
 import PaginationItem from './PaginationItem.svelte';
 import type {
   HTMLAnchorAttributes,
-  HTMLButtonAttributes, HTMLLiAttributes
+  HTMLButtonAttributes,
+  HTMLLiAttributes
 } from 'svelte/elements';
 type PaginationItemProps = PaginationItemAttributes &
   (

@@ -28,7 +28,7 @@ export * from './skeleton';
 export * from './spinner';
 export * from './tab';
 export * from './table';
-export * from './timeline'
+export * from './timeline';
 export * from './toast';
 export * from './toolbar';
 export * from './utils';

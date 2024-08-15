@@ -1,10 +1,17 @@
-import Activity from "./Activity.svelte";
-import ActivityItem from "./ActivityItem.svelte";
-import Group from "./Group.svelte";
-import GroupItem from "./GroupItem.svelte";
-import Timeline from "./Timeline.svelte";
-import TimelineItem from "./TimelineItem.svelte";
-import { activity, activityitem, group, groupitem, timeline, timelineitem } from './theme';
+import Activity from './Activity.svelte';
+import ActivityItem from './ActivityItem.svelte';
+import Group from './Group.svelte';
+import GroupItem from './GroupItem.svelte';
+import Timeline from './Timeline.svelte';
+import TimelineItem from './TimelineItem.svelte';
+import {
+  activity,
+  activityitem,
+  group,
+  groupitem,
+  timeline,
+  timelineitem
+} from './theme';
 import type { HTMLOlAttributes, HTMLLiAttributes } from 'svelte/elements';
 import type { Snippet } from 'svelte';
 
@@ -25,11 +32,11 @@ interface GroupTimelineType {
   comment?: string | HTMLElement;
 }
 
-interface ActivityProps extends HTMLOlAttributes{
+interface ActivityProps extends HTMLOlAttributes {
   children: Snippet;
 }
 
-interface ActivityItemProps extends HTMLLiAttributes{
+interface ActivityItemProps extends HTMLLiAttributes {
   activities: ActivityType[];
   liClass?: string;
   spanClass?: string;
@@ -41,7 +48,7 @@ interface ActivityItemProps extends HTMLLiAttributes{
   textClass?: string;
 }
 
-interface GroupProps extends HTMLOlAttributes { 
+interface GroupProps extends HTMLOlAttributes {
   children: Snippet;
   divClass?: string;
   timeClass?: string;
@@ -49,7 +56,7 @@ interface GroupProps extends HTMLOlAttributes {
   olClass?: string;
 }
 
-interface GroupItemProps extends HTMLLiAttributes{ 
+interface GroupItemProps extends HTMLLiAttributes {
   timelines: GroupTimelineType[];
   aClass?: string;
   imgClass?: string;
@@ -58,12 +65,12 @@ interface GroupItemProps extends HTMLLiAttributes{
   spanClass?: string;
 }
 
-interface TimelineProps extends HTMLOlAttributes{
+interface TimelineProps extends HTMLOlAttributes {
   children: Snippet;
   order?: 'default' | 'vertical' | 'horizontal' | 'activity' | 'group';
- }
+}
 
-interface TimelineItemProps extends HTMLLiAttributes{
+interface TimelineItemProps extends HTMLLiAttributes {
   children: Snippet;
   orientationSlot?: Snippet;
   title: string;
@@ -73,7 +80,7 @@ interface TimelineItemProps extends HTMLLiAttributes{
   divClass?: string;
   timeClass?: string;
   h3Class?: string;
- }
+}
 
 export {
   Activity,
@@ -82,6 +89,18 @@ export {
   GroupItem,
   Timeline,
   TimelineItem,
-  activity, activityitem, group, groupitem, timeline, timelineitem,
-  type ActivityType, type ActivityProps, type ActivityItemProps, type GroupTimelineType, type GroupProps, type GroupItemProps, type TimelineProps, type TimelineItemProps
-}
+  activity,
+  activityitem,
+  group,
+  groupitem,
+  timeline,
+  timelineitem,
+  type ActivityType,
+  type ActivityProps,
+  type ActivityItemProps,
+  type GroupTimelineType,
+  type GroupProps,
+  type GroupItemProps,
+  type TimelineProps,
+  type TimelineItemProps
+};

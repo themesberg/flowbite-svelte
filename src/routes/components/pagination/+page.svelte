@@ -1,5 +1,12 @@
 <script lang="ts">
-  import { Select, Label, Button, Pagination, PaginationItem, type PaginationItemProps } from '$lib';
+  import {
+    Select,
+    Label,
+    Button,
+    Pagination,
+    PaginationItem,
+    type PaginationItemProps
+  } from '$lib';
   import {
     ChevronLeftOutline,
     ChevronRightOutline,
@@ -45,7 +52,7 @@
   let pagenationSize: PaginationItemProps['size'] = $state('default');
   const changeSize = () => {
     pagenationSize = pagenationSize === 'large' ? 'default' : 'large';
-  }
+  };
   const previous = () => {
     alert('Previous btn clicked. Make a call to your server to fetch data.');
   };
@@ -63,9 +70,9 @@
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default pagination</H2>
-<CodeWrapper class="flex flex-col justify-center items-center gap-3">
+<CodeWrapper class="flex flex-col items-center justify-center gap-3">
   <div class="h-12">
-    <Pagination {pages} {previous} {next} size={pagenationSize}/>
+    <Pagination {pages} {previous} {next} size={pagenationSize} />
   </div>
   <Button onclick={changeSize}>
     {#if pagenationSize === 'default'}
@@ -78,7 +85,7 @@
 <HighlightCompo code={modules['./md/default-pagination.md'] as string} />
 
 <H2>Pagination with icons</H2>
-<CodeWrapper class="flex flex-col justify-center items-center gap-3">
+<CodeWrapper class="flex flex-col items-center justify-center gap-3">
   <Pagination {pages} {previous} {next}>
     {#snippet prevContent()}
       <span class="sr-only">Previous</span>
@@ -93,7 +100,7 @@
 <HighlightCompo code={modules['./md/pagination-with-icons.md'] as string} />
 
 <H2>Previous and next</H2>
-<CodeWrapper class="flex flex-col justify-center items-center gap-3">
+<CodeWrapper class="flex flex-col items-center justify-center gap-3">
   <div class="flex space-x-3 rtl:space-x-reverse">
     <PaginationItem onclick={previous}>Previous</PaginationItem>
     <PaginationItem onclick={next}>Next</PaginationItem>
@@ -102,7 +109,7 @@
 <HighlightCompo code={modules['./md/previous-and-next.md'] as string} />
 
 <H2>Previous and next with icons</H2>
-<CodeWrapper class="flex flex-col justify-center items-center gap-3">
+<CodeWrapper class="flex flex-col items-center justify-center gap-3">
   <div class="flex space-x-3 rtl:space-x-reverse">
     <PaginationItem class="flex items-center" onclick={previous}>
       <ArrowLeftOutline class="me-2 h-5 w-5" />
@@ -115,10 +122,12 @@
   </div>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/previous-and-next-with-icons.md'] as string} />
+<HighlightCompo
+  code={modules['./md/previous-and-next-with-icons.md'] as string}
+/>
 
 <H2>Table data pagination</H2>
-<CodeWrapper class="flex flex-col justify-center items-center gap-3">
+<CodeWrapper class="flex flex-col items-center justify-center gap-3">
   <div class="flex flex-col items-center justify-center gap-2">
     <div class="text-sm text-gray-700 dark:text-gray-400">
       Showing <span class="font-semibold text-gray-900 dark:text-white"
@@ -142,38 +151,46 @@
 <HighlightCompo code={modules['./md/table-data-pagination.md'] as string} />
 
 <H2>Table data pagination with icons</H2>
-<CodeWrapper class="flex flex-col justify-center items-center gap-3">
+<CodeWrapper class="flex flex-col items-center justify-center gap-3">
   <div class="flex flex-col items-center justify-center gap-2">
     <div class="text-sm text-gray-700 dark:text-gray-400">
-      Showing <span class="font-semibold text-gray-900 dark:text-white">{helper.start}</span>
+      Showing <span class="font-semibold text-gray-900 dark:text-white"
+        >{helper.start}</span
+      >
       to
-      <span class="font-semibold text-gray-900 dark:text-white">{helper.end}</span>
+      <span class="font-semibold text-gray-900 dark:text-white"
+        >{helper.end}</span
+      >
       of
-      <span class="font-semibold text-gray-900 dark:text-white">{helper.total}</span>
+      <span class="font-semibold text-gray-900 dark:text-white"
+        >{helper.total}</span
+      >
       Entries
     </div>
-  
-    <Pagination table {previous} {next} >
+
+    <Pagination table {previous} {next}>
       {#snippet prevContent()}
-      <div class="flex items-center gap-2 text-white bg-gray-800">
-        <ArrowLeftOutline class="w-5 h-5 me-2" />
-        Prev
-      </div>
+        <div class="flex items-center gap-2 bg-gray-800 text-white">
+          <ArrowLeftOutline class="me-2 h-5 w-5" />
+          Prev
+        </div>
       {/snippet}
       {#snippet nextContent()}
-      <div class="flex items-center gap-2 text-white bg-gray-800">
-        Next
-        <ArrowRightOutline class="w-5 h-5 ms-2" />
-      </div>
+        <div class="flex items-center gap-2 bg-gray-800 text-white">
+          Next
+          <ArrowRightOutline class="ms-2 h-5 w-5" />
+        </div>
       {/snippet}
     </Pagination>
   </div>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/table-data-pagination-with-icons.md'] as string} />
+<HighlightCompo
+  code={modules['./md/table-data-pagination-with-icons.md'] as string}
+/>
 
 <H2>Event example</H2>
-<CodeWrapper class="flex flex-col justify-center items-center gap-3">
+<CodeWrapper class="flex flex-col items-center justify-center gap-3">
   <Pagination {pages} {previous} {next} onclick={handleClick} />
 </CodeWrapper>
 

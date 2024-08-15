@@ -31,7 +31,9 @@
         <PaginationItem
           {size}
           onclick={() => previous()}
-          class={table ? 'rounded-none rounded-l' : 'rounded-none  rounded-s-lg'}
+          class={table
+            ? 'rounded-none rounded-l'
+            : 'rounded-none  rounded-s-lg'}
         >
           {#if prevContent}
             {@render prevContent()}
@@ -43,7 +45,7 @@
     {/if}
     {#each pages as { name, href, active }}
       <li>
-        <PaginationItem {size} {active} {href} >
+        <PaginationItem {size} {active} {href}>
           {name}
         </PaginationItem>
       </li>

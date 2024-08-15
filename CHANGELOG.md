@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.8.4
+
+### Patch Changes
+
+- feat: timeline ([`548335ec8de440d0622144d762902f40f7af4c9c`](https://github.com/shinokada/svelte-5-ui-lib/commit/548335ec8de440d0622144d762902f40f7af4c9c))
+
 ## 0.8.3
 
 ### Patch Changes
