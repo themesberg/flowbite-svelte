@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
-  import { labelCls, inputCls } from '../radio/Radio.svelte';
   import Label from '../label/Label.svelte';
   import { type CheckboxProps as Props, checkbox } from '.';
 
@@ -12,7 +10,8 @@
     inline,
     tinted,
     rounded,
-    group = [],
+    group = $bindable([]),
+    choices = [],
     checked = $bindable(false),
     spacing,
     groupLabelClass,
@@ -25,7 +24,19 @@
     checkbox({ color, tinted, custom, rounded, inline })
   );
 </script>
-
+{#if choices.length > 0}
+  {#each choices as {value, checkboxLabel}, i}
+    <Label class={label({ class: groupLabelClass })} for={`checkbox-${i}`}>
+      { checkboxLabel }
+      <input id={`checkbox-${i}`} type="checkbox" value={ value } bind:group {...attributes} 
+      class={base({ class: className })}
+      />
+      {#if children}
+      {@render children()}
+      {/if}
+    </Label>
+  {/each}
+{:else}
 <Label class={label({ class: groupLabelClass })}>
   <input
     type="checkbox"
@@ -39,6 +50,7 @@
     {@render children()}
   {/if}
 </Label>
+{/if}
 
 <!--
 @component

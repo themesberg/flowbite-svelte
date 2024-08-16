@@ -36,6 +36,7 @@ export * from './video';
 
 // forms
 export * from './forms/checkbox';
+export * from './forms/checkbox-button';
 export * from './forms/floating-label-input';
 export * from './forms/helper';
 export * from './forms/input';
@@ -45,6 +46,7 @@ export * from './forms/select';
 export * from './forms/radio';
 export * from './forms/radio-button';
 export * from './forms/range';
+export * from './forms/search';
 export * from './forms/textarea';
 export * from './forms/toggle';
 

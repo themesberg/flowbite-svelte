@@ -5,6 +5,12 @@ import type { HTMLInputAttributes } from 'svelte/elements';
 import { checkbox } from './theme';
 import { type VariantProps } from 'tailwind-variants';
 
+type CheckboxItem = {
+  value: string;
+  checkboxLabel?: string; 
+  isChecked?: boolean; 
+};
+
 type ColorType = VariantProps<typeof checkbox>['color'];
 interface CheckboxProps extends HTMLInputAttributes {
   children?: Snippet;
@@ -15,6 +21,7 @@ interface CheckboxProps extends HTMLInputAttributes {
   tinted?: boolean;
   rounded?: boolean;
   group?: (string | number)[];
+  choices?: CheckboxItem[];
   checked?: boolean | undefined | null;
   spacing?: string | undefined | null;
   groupLabelClass?: string | undefined;
@@ -22,4 +29,4 @@ interface CheckboxProps extends HTMLInputAttributes {
   class?: string | undefined | null;
 }
 
-export { Checkbox, checkbox, type CheckboxProps };
+export { Checkbox, checkbox, type CheckboxProps, type CheckboxItem, type ColorType };

@@ -176,8 +176,7 @@
   const forms: ListType = {
     checkbox: {
       checked: true,
-      problems:
-        'Checkbox dropdown, Colors, CheckboxButton, Advanced layout, Group variable',
+      // problems: 'Group variable',
       notes: 'Updated: class names'
     },
     fileInput: {

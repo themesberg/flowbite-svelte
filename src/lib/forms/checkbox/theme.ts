@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const checkbox = tv({
   slots: {
-    base: 'w-4 h-4 bg-gray-100 border-gray-300 dark:ring-offset-gray-800 focus:ring-2 me-2',
+    base: 'w-4 h-4 bg-gray-100 border-gray-300 dark:ring-offset-gray-800 focus:ring-2 me-2 rounded',
     label: ''
   },
   variants: {
