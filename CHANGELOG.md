@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.0
+
+### Minor Changes
+
+- fix: change DropdownItem to DropdownUl and DropdownLi ([`f5a069d81a7aa70b057557e06d4528109622064e`](https://github.com/shinokada/svelte-5-ui-lib/commit/f5a069d81a7aa70b057557e06d4528109622064e))
+
 ## 0.8.9
 
 ### Patch Changes

@@ -381,7 +381,8 @@
       {/if}
       <a
         href="/components/{convertStringToKebabCase(key)}"
-        class="text-blue-800 dark:text-blue-300 underline hover:text-blue-500 hover:dark:text-blue-200">{key}</a
+        class="text-blue-800 underline hover:text-blue-500 dark:text-blue-300 hover:dark:text-blue-200"
+        >{key}</a
       >
       {#if problems}
         <span class="ml-4 text-red-500">( {problems})</span
@@ -411,7 +412,9 @@
           class="me-2 h-8 w-8 text-gray-500 dark:text-gray-400"
         />
       {/if}
-      <a href="/forms/{convertStringToKebabCase(key)}" class="text-blue-800 dark:text-blue-300 underline hover:text-blue-500 hover:dark:text-blue-200"
+      <a
+        href="/forms/{convertStringToKebabCase(key)}"
+        class="text-blue-800 underline hover:text-blue-500 dark:text-blue-300 hover:dark:text-blue-200"
         >{key}</a
       >
       {#if problems}
@@ -444,7 +447,8 @@
       {/if}
       <a
         href="/typography/{convertStringToKebabCase(key)}"
-        class="text-blue-800 dark:text-blue-300 underline hover:text-blue-500 hover:dark:text-blue-200">{key}</a
+        class="text-blue-800 underline hover:text-blue-500 dark:text-blue-300 hover:dark:text-blue-200"
+        >{key}</a
       >
       {#if problems}
         <span class="ml-4 text-red-500">( {problems})</span

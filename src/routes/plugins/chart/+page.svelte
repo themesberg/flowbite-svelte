@@ -355,13 +355,13 @@
             dropdownStatus={isOpen}
           >
             {#snippet children()}
-            <DropdownUl>
-              <DropdownLi href="/">Yesterday</DropdownLi>
-              <DropdownLi href="/">Today</DropdownLi>
-              <DropdownLi href="/">Last 7 days</DropdownLi>
-              <DropdownLi href="/">Last 30 days</DropdownLi>
-              <DropdownLi href="/">Last 90 days</DropdownLi>
-            </DropdownUl>
+              <DropdownUl>
+                <DropdownLi href="/">Yesterday</DropdownLi>
+                <DropdownLi href="/">Today</DropdownLi>
+                <DropdownLi href="/">Last 7 days</DropdownLi>
+                <DropdownLi href="/">Last 30 days</DropdownLi>
+                <DropdownLi href="/">Last 90 days</DropdownLi>
+              </DropdownUl>
             {/snippet}
           </Dropdown>
         </div>

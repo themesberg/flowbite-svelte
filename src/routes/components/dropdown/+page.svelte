@@ -8,7 +8,8 @@
     Button,
     Dropdown,
     DropdownDivider,
-    DropdownUl, DropdownLi,
+    DropdownUl,
+    DropdownLi,
     uiHelpers
   } from '$lib';
   import { ChevronDownOutline } from 'flowbite-svelte-icons';
@@ -114,13 +115,13 @@
       divClass="absolute top-[40px] -left-[150px]"
     >
       {#snippet children()}
-      <DropdownUl>
-        <DropdownLi href="/">Dashboard</DropdownLi>
-        <DropdownLi href="/components/dropdown">Dropdown</DropdownLi>
-        <DropdownLi href="/components/footer">Footer</DropdownLi>
-        <DropdownLi href="/dropdown">Dropdown</DropdownLi>
-      </DropdownUl>
-        {/snippet}
+        <DropdownUl>
+          <DropdownLi href="/">Dashboard</DropdownLi>
+          <DropdownLi href="/components/dropdown">Dropdown</DropdownLi>
+          <DropdownLi href="/components/footer">Footer</DropdownLi>
+          <DropdownLi href="/dropdown">Dropdown</DropdownLi>
+        </DropdownUl>
+      {/snippet}
     </Dropdown>
   </div>
 </CodeWrapper>
@@ -144,13 +145,13 @@
         <div class="truncate font-medium">name@flowbite.com</div>
       {/snippet}
       {#snippet children()}
-      <DropdownUl>
-        <DropdownLi href="/">Dashboard</DropdownLi>
-        <DropdownLi href="/components/dropdown">Dropdown</DropdownLi>
-        <DropdownLi href="/components/footer">Footer</DropdownLi>
-        <DropdownDivider />
-        <DropdownLi href="/dropdown">Dropdown</DropdownLi>
-      </DropdownUl>
+        <DropdownUl>
+          <DropdownLi href="/">Dashboard</DropdownLi>
+          <DropdownLi href="/components/dropdown">Dropdown</DropdownLi>
+          <DropdownLi href="/components/footer">Footer</DropdownLi>
+          <DropdownDivider />
+          <DropdownLi href="/dropdown">Dropdown</DropdownLi>
+        </DropdownUl>
       {/snippet}
       {#snippet footer()}
         <div class="py-2">
@@ -181,12 +182,12 @@
       divClass="absolute top-[40px] -left-[150px]"
     >
       {#snippet children()}
-      <DropdownUl>
-        <DropdownLi href="/">Dashboard</DropdownLi>
-        <DropdownLi href="/components/drawer">Drawer</DropdownLi>
-        <DropdownLi href="/components/footer">Footer</DropdownLi>
-        <DropdownLi href="/components">Alert</DropdownLi>
-      </DropdownUl>
+        <DropdownUl>
+          <DropdownLi href="/">Dashboard</DropdownLi>
+          <DropdownLi href="/components/drawer">Drawer</DropdownLi>
+          <DropdownLi href="/components/footer">Footer</DropdownLi>
+          <DropdownLi href="/components">Alert</DropdownLi>
+        </DropdownUl>
       {/snippet}
     </Dropdown>
   </div>
@@ -207,12 +208,12 @@
       divClass="absolute top-[40px] -left-[150px]"
     >
       {#snippet children()}
-      <DropdownUl>
-        <DropdownLi href="/">Dashboard</DropdownLi>
-        <DropdownLi href="/components/drawer">Drawer</DropdownLi>
-        <DropdownLi href="/components/footer">Footer</DropdownLi>
-        <DropdownLi href="/components">Alert</DropdownLi>
-      </DropdownUl>
+        <DropdownUl>
+          <DropdownLi href="/">Dashboard</DropdownLi>
+          <DropdownLi href="/components/drawer">Drawer</DropdownLi>
+          <DropdownLi href="/components/footer">Footer</DropdownLi>
+          <DropdownLi href="/components">Alert</DropdownLi>
+        </DropdownUl>
       {/snippet}
     </Dropdown>
   </div>

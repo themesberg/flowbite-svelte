@@ -1,5 +1,13 @@
 <script lang="ts">
-  import { Select, Label, Helper, Dropdown, DropdownUl, DropdownLi, uiHelpers } from '$lib';
+  import {
+    Select,
+    Label,
+    Helper,
+    Dropdown,
+    DropdownUl,
+    DropdownLi,
+    uiHelpers
+  } from '$lib';
   import { ChevronDownOutline } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -101,39 +109,48 @@
 <H2>Select with dropdown</H2>
 <CodeWrapper class="h-96">
   <div class="flex">
-    <button id="states-button" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-500 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600" type="button" onclick={dropdown.toggle}>
+    <button
+      id="states-button"
+      class="z-10 inline-flex flex-shrink-0 items-center rounded-s-lg border border-gray-300 bg-gray-100 px-4 py-2.5 text-center text-sm font-medium text-gray-500 hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+      type="button"
+      onclick={dropdown.toggle}
+    >
       <Usa />
       USA
-      <ChevronDownOutline class="w-6 h-6 ms-2" />
+      <ChevronDownOutline class="ms-2 h-6 w-6" />
     </button>
     <div class="relative">
-    <Dropdown 
-      {dropdownStatus}
-      {closeDropdown}
-      {transitionParams}
-      divClass="overflow-y-auto p-0 pb-3 text-sm w-32 absolute top-[50px] -left-[110px]"
-      ulClass="space-y-2"
+      <Dropdown
+        {dropdownStatus}
+        {closeDropdown}
+        {transitionParams}
+        divClass="overflow-y-auto p-0 pb-3 text-sm w-32 absolute top-[50px] -left-[110px]"
+        ulClass="space-y-2"
       >
-      <DropdownUl>
-        <DropdownLi liClass="flex items-center">
-          <Usa />
-          United States
-        </DropdownLi>
-        <DropdownLi liClass="flex items-center">
-          <Germany />
-          Germany
-        </DropdownLi>
-        <DropdownLi liClass="flex items-center">
-          <Italy />
-          Italy
-        </DropdownLi>
-        <DropdownLi liClass="flex items-center">
-          <China />
-          China
-        </DropdownLi>
-      </DropdownUl>
-    </Dropdown>
-  </div>
-    <Select items={states} placeholder="Choose the state" selectClass="!rounded-s-none" />
+        <DropdownUl>
+          <DropdownLi liClass="flex items-center">
+            <Usa />
+            United States
+          </DropdownLi>
+          <DropdownLi liClass="flex items-center">
+            <Germany />
+            Germany
+          </DropdownLi>
+          <DropdownLi liClass="flex items-center">
+            <Italy />
+            Italy
+          </DropdownLi>
+          <DropdownLi liClass="flex items-center">
+            <China />
+            China
+          </DropdownLi>
+        </DropdownUl>
+      </Dropdown>
+    </div>
+    <Select
+      items={states}
+      placeholder="Choose the state"
+      selectClass="!rounded-s-none"
+    />
   </div>
 </CodeWrapper>

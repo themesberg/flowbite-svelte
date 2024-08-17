@@ -6,7 +6,11 @@
     RadioButton,
     ButtonGroup,
     Label,
-    P, Dropdown, DropdownUl, Button, uiHelpers
+    P,
+    Dropdown,
+    DropdownUl,
+    Button,
+    uiHelpers
   } from '$lib';
   // let { group = $bindable() ,technology = $bindable('svelte'), radioGroup = $bindable('notes') } = $props();
   // let colors = 'text-purple-500';
@@ -16,7 +20,8 @@
     ArrowRightOutline,
     ListMusicSolid,
     OrderedListOutline,
-    ListOutline, ChevronDownOutline
+    ListOutline,
+    ChevronDownOutline
   } from 'flowbite-svelte-icons';
   let radioGroup = $state('notes');
 
@@ -43,7 +48,7 @@
   let dropdown = uiHelpers();
   let dropdownStatus = $state(false);
   let closeDropdown = dropdown.close;
-  let group3 = $state(2)
+  let group3 = $state(2);
   $effect(() => {
     // this can be done adding nav.navStatus directly to DOM element
     // without using effect
@@ -209,15 +214,21 @@
     >
       <DropdownUl>
         <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-          <Radio name="group3" bind:group={group3} value={1}>Enable notifications</Radio>
+          <Radio name="group3" bind:group={group3} value={1}
+            >Enable notifications</Radio
+          >
           <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
         </li>
         <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-          <Radio name="group3" bind:group={group3} value={2}>Enable 2FA auth</Radio>
+          <Radio name="group3" bind:group={group3} value={2}
+            >Enable 2FA auth</Radio
+          >
           <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
         </li>
         <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-          <Radio name="group3" bind:group={group3} value={3}>Subscribe newsletter</Radio>
+          <Radio name="group3" bind:group={group3} value={3}
+            >Subscribe newsletter</Radio
+          >
           <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
         </li>
       </DropdownUl>

@@ -209,13 +209,13 @@
         <div class="truncate font-medium">name@flowbite.com</div>
       {/snippet}
       {#snippet children()}
-       <DropdownUl>
-         <DropdownLi href="/">Dashboard</DropdownLi>
-         <DropdownLi href="/nav">Navbar</DropdownLi>
-         <DropdownLi href="/footer">Footer</DropdownLi>
-         <DropdownDivider />
-         <DropdownLi href="/dropdown">Dropdown</DropdownLi>
-      </DropdownUl>
+        <DropdownUl>
+          <DropdownLi href="/">Dashboard</DropdownLi>
+          <DropdownLi href="/nav">Navbar</DropdownLi>
+          <DropdownLi href="/footer">Footer</DropdownLi>
+          <DropdownDivider />
+          <DropdownLi href="/dropdown">Dropdown</DropdownLi>
+        </DropdownUl>
       {/snippet}
     </Dropdown>
   </div>

@@ -48,7 +48,7 @@
       </div>
     {/if}
 
-      {@render children()}
+    {@render children()}
 
     {#if footer}
       <div class={footerDiv({ class: footerClass })}>

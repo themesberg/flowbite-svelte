@@ -220,7 +220,7 @@
     >
       {#snippet header()}
         <div class="p-0">
-          <Search size="md" class="pl-8"/>
+          <Search size="md" class="pl-8" />
         </div>
       {/snippet}
       <DropdownUl>

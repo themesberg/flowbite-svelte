@@ -1,7 +1,7 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
   import { type SelectProps as Props, select as selectCls } from '.';
-  
+
   let {
     children,
     items,
@@ -37,14 +37,12 @@
   //     selectClass
   //   )
   // );
-  const selectStyle = $derived(selectCls({ underline, size, class: selectClass }));
+  const selectStyle = $derived(
+    selectCls({ underline, size, class: selectClass })
+  );
 </script>
 
-<select
-  {...restProps}
-  bind:value
-  class={selectStyle}
->
+<select {...restProps} bind:value class={selectStyle}>
   {#if placeholder}
     <option disabled selected value="">{placeholder}</option>
   {/if}
@@ -66,12 +64,9 @@
 @prop items
 @prop value = $bindable()
 @prop underline
-@prop selectSize = 'md'
+@prop size = 'md'
 @prop selectClass
 @prop underlineClass
-@prop onchange
-@prop oninput
-@prop oncontextmenu
 @prop placeholder = 'Choose option ...'
 @prop ...restProps
 -->
