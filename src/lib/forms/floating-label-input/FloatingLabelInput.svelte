@@ -9,7 +9,7 @@
     aria_describedby,
     style = 'standard',
     size = 'default',
-    color = 'gray',
+    color = 'default',
     divClass,
     inputClass,
     labelClass,

@@ -21,6 +21,7 @@
 
   const styles = ['filled', 'outlined', 'standard'];
   let style: FloatingLabelInput['style'] = $state('standard');
+  let style2: FloatingLabelInput['style'] = $state('standard');
 
   const sizes = ['small', 'default'];
   let floatingSize: FloatingLabelInput['size'] = $state('default');
@@ -30,7 +31,8 @@
   };
   // const colors = [ 'green', 'red']
   const colors = Object.keys(floatingLabelInput.variants.color);
-  let floatingColor: FloatingLabelInput['color'] = $state('primary');
+  let floatingColor: FloatingLabelInput['color'] = $state('default');
+  let helperColor: FloatingLabelInput['color'] = $state('default');
 </script>
 
 <H1>Floating label</H1>
@@ -49,7 +51,7 @@
     {#each styles as option}
       <Radio
         labelClass="w-24 my-1"
-        name="style"
+        name="style1"
         bind:group={style}
         value={option}>{option}</Radio
       >
@@ -61,7 +63,7 @@
 <H2>Disabled state</H2>
 <CodeWrapper>
   <div class="h-16">
-    <FloatingLabelInput disabled {style} id="floating_filled" type="text"
+    <FloatingLabelInput disabled style={style2} id="floating_filled" type="text"
       >Floating {style}</FloatingLabelInput
     >
   </div>
@@ -71,7 +73,7 @@
       <Radio
         labelClass="w-24 my-1"
         name="disabled_style"
-        bind:group={style}
+        bind:group={style2}
         value={option}>{option}</Radio
       >
     {/each}
@@ -160,17 +162,26 @@
 <CodeWrapper>
   <FloatingLabelInput
     style="filled"
+    color={helperColor}
     id="floating_helper"
     aria_describedby="floating_helper_text"
     type="text">Floating helper</FloatingLabelInput
   >
-  <Helper class="pt-2">
-    Remember, contributions to this topic should follow our <a
-      href="/"
-      class="text-primary-600 hover:underline dark:text-primary-500"
-    >
+  <Helper class="pt-2" color={helperColor}>
+    Remember, contributions to this topic should follow our <a href="/">
       Community Guidelines
     </a>.
   </Helper>
+  <div class="flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Color</Label>
+    {#each colors as colorOption}
+      <Radio
+        labelClass="w-24 my-1"
+        name="floating_color"
+        bind:group={helperColor}
+        value={colorOption}>{colorOption}</Radio
+      >
+    {/each}
+  </div>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/helper-text.md'] as string} />

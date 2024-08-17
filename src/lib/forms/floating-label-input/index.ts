@@ -10,7 +10,7 @@ interface FloatingLabelInputProps extends Omit<HTMLInputAttributes, 'size'> {
   aria_describedby?: string | undefined | null;
   style?: 'filled' | 'outlined' | 'standard';
   size?: 'small' | 'default';
-  color?: ColorName;
+  color?: ColorName | 'default';
   divClass?: string | undefined | null;
   inputClass?: string | undefined | null;
   labelClass?: string | undefined | null;

@@ -11,10 +11,7 @@
   const base = $derived(helper({ color, className }));
 </script>
 
-<p
-  {...attributes}
-  class={base}
->
+<p {...attributes} class={base}>
   {@render children()}
 </p>
 

@@ -102,7 +102,7 @@ export const input = tv({
       rose: {
         input:
           'border border-rose-500 dark:border-rose-400 focus:ring-rose-500 focus:border-rose-500 dark:focus:ring-rose-500 dark:focus:border-rose-500 bg-rose-50 text-rose-900 placeholder-rose-700 dark:text-rose-400 dark:placeholder-rose-500 dark:bg-gray-700'
-      },
+      }
     },
     group: {
       false: { input: 'rounded-lg' },

@@ -11,7 +11,8 @@
   });
 
   import {
-    Input, input,
+    Input,
+    input,
     Radio,
     Label,
     Helper,
@@ -181,7 +182,9 @@
 
 <CodeWrapper>
   <div class="mb-6">
-    <Label for="color-example" color={inputColor} class="mb-2 block">Your name</Label>
+    <Label for="color-example" color={inputColor} class="mb-2 block"
+      >Your name</Label
+    >
     <Input id="color-example" color={inputColor} placeholder="Input" />
     <Helper class="mt-2" color={inputColor}>
       <span class="font-medium">Well done!</span>
@@ -200,8 +203,6 @@
     {/each}
   </div>
 </CodeWrapper>
-
-
 
 <H2>Input with icon</H2>
 

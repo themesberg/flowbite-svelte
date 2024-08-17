@@ -27,4 +27,4 @@ export const label = tv({
       rose: 'text-rose-700 dark:text-rose-500'
     }
   }
-})
+});

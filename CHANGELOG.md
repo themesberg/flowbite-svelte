@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.8.8
+
+### Patch Changes
+
+- feat: variants to Label and Helper ([`e9a9d03d673c7611863f4cce0cfeb1391de3b550`](https://github.com/shinokada/svelte-5-ui-lib/commit/e9a9d03d673c7611863f4cce0cfeb1391de3b550))
+
 ## 0.8.7
 
 ### Patch Changes

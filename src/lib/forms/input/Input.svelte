@@ -76,9 +76,9 @@
 @prop right
 @prop value = $bindable()
 @prop size
-@prop defaultClass = 'block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right'
-@prop color = 'base'
-@prop floatClass = 'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400'
+@prop defaultClass
+@prop color = 'default'
+@prop floatClass
 @prop class: className
 @prop classLeft
 @prop classRight
