@@ -10,7 +10,7 @@
     active,
     activeClass,
     normalClass,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const group = getContext<boolean>('group');
@@ -25,7 +25,7 @@
   {href}
   class={paginationClass}
   role={href ? 'button' : undefined}
-  {...attributes}
+  {...restProps}
 >
   {#if children}
     {@render children()}
@@ -43,5 +43,5 @@
 @prop active
 @prop activeClass
 @prop normalClass
-@prop ...attributes
+@prop ...restProps
 -->

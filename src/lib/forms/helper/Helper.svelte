@@ -5,13 +5,13 @@
     children,
     class: className,
     color = 'gray',
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const base = $derived(helper({ color, className }));
 </script>
 
-<p {...attributes} class={base}>
+<p {...restProps} class={base}>
   {@render children()}
 </p>
 
@@ -22,5 +22,5 @@
 @prop children
 @prop class: className
 @prop color = 'gray'
-@prop ...attributes
+@prop ...restProps
 -->

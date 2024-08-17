@@ -6,12 +6,12 @@
     value = $bindable(),
     size = 'md',
     class: className,
-    ...attributes
+    ...restProps
   }: Props = $props();
   const base = $derived(fileupload({ size, class: className }));
 </script>
 
-<input type="file" bind:files {...attributes} class={base} />
+<input type="file" bind:files {...restProps} class={base} />
 
 <!--
 @component
@@ -21,5 +21,5 @@
 @prop value = $bindable()
 @prop size = 'md'
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

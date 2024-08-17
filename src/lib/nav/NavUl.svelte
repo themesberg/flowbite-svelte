@@ -9,7 +9,7 @@
     children: Snippet;
     class?: string | undefined;
   }
-  let { children, class: ulclass, ...attributes }: Props = $props();
+  let { children, class: ulclass, ...restProps }: Props = $props();
 
   let breakPoint: navbarType['breakPoint'];
   // let navStatus: navbarType['navStatus'];
@@ -32,7 +32,7 @@
   // $inspect('context.breakPoint: ',ulBreak[breakPoint])
 </script>
 
-<ul class={ulCls} {...attributes}>
+<ul class={ulCls} {...restProps}>
   {@render children()}
 </ul>
 
@@ -42,5 +42,5 @@
 ## Props
 @prop children
 @prop class: ulclass
-@prop ...attributes
+@prop ...restProps
 -->

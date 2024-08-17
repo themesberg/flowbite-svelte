@@ -18,7 +18,7 @@
     transition = fade,
     params,
     onclick,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   let badgeClass = $derived(
@@ -34,7 +34,7 @@
 </script>
 
 {#if badgeStatus}
-  <div {...attributes} transition:transition={params} class={badgeClass}>
+  <div {...restProps} transition:transition={params} class={badgeClass}>
     {#if href}
       <a {href}>
         {@render children()}
@@ -95,5 +95,5 @@
 @prop transition = fade
 @prop params
 @prop onclick
-@prop ...attributes
+@prop ...restProps
 -->

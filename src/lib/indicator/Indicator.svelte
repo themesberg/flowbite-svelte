@@ -10,7 +10,7 @@
     placement,
     offset = true,
     class: className,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   let hasChildren = !!children;
@@ -27,7 +27,7 @@
   );
 </script>
 
-<div class={base({ className })} {...attributes}>
+<div class={base({ className })} {...restProps}>
   {#if children}
     {@render children()}
   {/if}
@@ -45,5 +45,5 @@
 @prop placement
 @prop offset = true
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

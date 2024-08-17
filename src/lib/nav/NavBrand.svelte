@@ -19,7 +19,7 @@
     closeNav,
     aClass,
     spanClass,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const context = getContext<navbarType>('navbarContext');
@@ -32,7 +32,7 @@
   );
 </script>
 
-<a href="/" onclick={closeNav} class={aCls} {...attributes}>
+<a href="/" onclick={closeNav} class={aCls} {...restProps}>
   {#if children}
     {@render children()}
   {/if}
@@ -48,5 +48,5 @@
 @prop closeNav
 @prop aClass
 @prop spanClass
-@prop ...attributes
+@prop ...restProps
 -->

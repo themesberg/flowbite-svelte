@@ -14,11 +14,11 @@
     class: className = 'space-y-2',
     borderClass = 'pt-4 mt-4 border-t border-gray-200 dark:border-gray-700',
     border = false,
-    ...attributes
+    ...restProps
   }: Props = $props();
 </script>
 
-<ul {...attributes} class={border ? borderClass : className}>
+<ul {...restProps} class={border ? borderClass : className}>
   {@render children()}
 </ul>
 
@@ -30,5 +30,5 @@
 @prop class: className = 'space-y-2'
 @prop borderClass = 'pt-4 mt-4 border-t border-gray-200 dark:border-gray-700'
 @prop border = false
-@prop ...attributes
+@prop ...restProps
 -->

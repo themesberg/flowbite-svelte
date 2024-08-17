@@ -6,7 +6,7 @@
     items = [],
     imgClass,
     divClass,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   function init(node: HTMLElement) {
@@ -22,7 +22,7 @@
       src={item.src}
       alt={item.alt}
       class={image({ class: imgClass })}
-      {...attributes}
+      {...restProps}
     />
   </div>
 {/snippet}
@@ -45,5 +45,5 @@
 @prop items = []
 @prop imgClass
 @prop divClass
-@prop ...attributes
+@prop ...restProps
 -->

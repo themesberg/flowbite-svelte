@@ -12,7 +12,7 @@
     size?: 'sm' | 'md' | 'lg' | undefined;
   }
 
-  let { children, class: className, size, ...attributes }: Props = $props();
+  let { children, class: className, size, ...restProps }: Props = $props();
   // export let size: 'sm' | 'md' | 'lg' | undefined = undefined;
 
   // tinted if put in component having its own background
@@ -55,7 +55,7 @@
   );
 </script>
 
-<div {...attributes} class={divClass}>
+<div {...restProps} class={divClass}>
   {@render children()}
 </div>
 
@@ -66,5 +66,5 @@
 @prop children
 @prop class: className
 @prop size
-@prop ...attributes
+@prop ...restProps
 -->

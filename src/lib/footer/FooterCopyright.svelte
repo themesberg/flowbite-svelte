@@ -8,7 +8,7 @@
     by,
     copyrightMessage = 'All Rights Reserved.',
     year,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   if (!year) year = new Date().getFullYear();
@@ -19,7 +19,7 @@
 <span class={base({ class: spanClass })}>
   &copy; {year}
   {#if href}
-    <a {...attributes} {href} class={link({ class: aClass })}>
+    <a {...restProps} {href} class={link({ class: aClass })}>
       {by}
     </a>
   {:else}
@@ -38,5 +38,5 @@
 @prop by
 @prop copyrightMessage = 'All Rights Reserved.'
 @prop year
-@prop ...attributes
+@prop ...restProps
 -->

@@ -22,7 +22,7 @@
     classLeft,
     classRight,
     show = false,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   // tinted if put in component having its own background
@@ -48,7 +48,7 @@
       {@render left()}
     </div>
   {/if}
-  <input {...attributes} bind:value class={inputCls({ class: className })} />
+  <input {...restProps} bind:value class={inputCls({ class: className })} />
   {#if children}
     {@render children()}
   {/if}
@@ -83,5 +83,5 @@
 @prop classLeft
 @prop classRight
 @prop show = false
-@prop ...attributes
+@prop ...restProps
 -->

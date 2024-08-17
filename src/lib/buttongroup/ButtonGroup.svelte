@@ -6,14 +6,14 @@
     children,
     size = 'md',
     class: className,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   let groupClass = $derived(buttonGroup({ size, className }));
   setContext('group', size);
 </script>
 
-<div {...attributes} class={groupClass} role="group">
+<div {...restProps} class={groupClass} role="group">
   {@render children()}
 </div>
 
@@ -24,5 +24,5 @@
 @prop children
 @prop size = 'md'
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

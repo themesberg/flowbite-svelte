@@ -26,7 +26,7 @@
     nonActiveClass,
     aClass,
     class: className,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const context = getContext<SidebarType>('sidebarContext') ?? {};
@@ -45,7 +45,7 @@
 
 <li class={className}>
   <a
-    {...attributes}
+    {...restProps}
     {href}
     aria-current={currentUrl === href}
     class={twMerge(aCls, aClass)}
@@ -73,5 +73,5 @@
 @prop nonActiveClass
 @prop aClass
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

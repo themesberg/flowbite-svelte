@@ -39,7 +39,7 @@
     type,
     disabled,
     name,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const gradientClasses = {
@@ -114,7 +114,7 @@
       This has a limitation of no supporting transparency as
       is set to bg-white dark:bg-gray-900 -->
     <Button
-      {...attributes}
+      {...restProps}
       color="none"
       class={gradientOutlineClass}
       {onclick}
@@ -130,7 +130,7 @@
   </div>
 {:else}
   <Button
-    {...attributes}
+    {...restProps}
     color="none"
     class={divClass}
     {onclick}
@@ -162,5 +162,5 @@
 @prop type
 @prop disabled
 @prop name
-@prop ...attributes
+@prop ...restProps
 -->

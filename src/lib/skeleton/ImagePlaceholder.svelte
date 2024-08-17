@@ -4,7 +4,7 @@
     type ImagePlaceholderProps as Props
   } from './index';
 
-  let { size, rounded, class: className, ...attributes }: Props = $props();
+  let { size, rounded, class: className, ...restProps }: Props = $props();
 
   const { base, image, svg, content, line } = $derived(
     imagePlaceholder({
@@ -14,7 +14,7 @@
   );
 </script>
 
-<div role="status" class={base({ className })} {...attributes}>
+<div role="status" class={base({ className })} {...restProps}>
   <div class={image()}>
     <svg
       width="48"
@@ -49,5 +49,5 @@
 @prop size
 @prop rounded
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

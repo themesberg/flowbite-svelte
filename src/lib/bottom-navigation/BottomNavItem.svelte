@@ -19,7 +19,7 @@
     exact = true,
     btnClass,
     spanClass,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const navType: BottomNavVariantType = getContext('navType');
@@ -56,7 +56,7 @@
   {href}
   {target}
   role={href ? 'link' : 'button'}
-  {...attributes}
+  {...restProps}
   class={btnCls}
 >
   {@render children()}
@@ -76,5 +76,5 @@
 @prop exact = true
 @prop btnClass
 @prop spanClass
-@prop ...attributes
+@prop ...restProps
 -->

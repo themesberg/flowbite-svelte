@@ -6,7 +6,7 @@
     RadioButton,
     ButtonGroup,
     Label,
-    P
+    P, Dropdown, Button, uiHelpers
   } from '$lib';
   // let { group = $bindable() ,technology = $bindable('svelte'), radioGroup = $bindable('notes') } = $props();
   // let colors = 'text-purple-500';
@@ -16,7 +16,7 @@
     ArrowRightOutline,
     ListMusicSolid,
     OrderedListOutline,
-    ListOutline
+    ListOutline, ChevronDownOutline
   } from 'flowbite-svelte-icons';
   let radioGroup = $state('notes');
 
@@ -32,7 +32,23 @@
 
   const colors = Object.keys(radio.variants.color) as Radio['color'][];
   let radioColor: Radio['color'] = $state('primary');
+  import { sineIn } from 'svelte/easing';
 
+  let transitionParams = {
+    y: 0,
+    duration: 200,
+    easing: sineIn
+  };
+
+  let dropdown = uiHelpers();
+  let dropdownStatus = $state(false);
+  let closeDropdown = dropdown.close;
+  let group3 = $state(2)
+  $effect(() => {
+    // this can be done adding nav.navStatus directly to DOM element
+    // without using effect
+    dropdownStatus = dropdown.isOpen;
+  });
   // let sizeEx = $state('default');
 </script>
 
@@ -176,6 +192,36 @@
   </ul>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/horizontal-list-group.md'] as string} />
+
+<H2>Radio in dropdown</H2>
+<CodeWrapper class="relative flex h-96 items-start justify-center">
+  <Button onclick={dropdown.toggle}
+    >Dropdown radio<ChevronDownOutline
+      class="ms-2 h-6 w-6 text-white dark:text-white"
+    /></Button
+  >
+  <div class="relative">
+    <Dropdown
+      {dropdownStatus}
+      {closeDropdown}
+      {transitionParams}
+      divClass="overflow-y-auto p-0 pb-3 text-sm w-64 h-64 absolute top-[50px] -left-[210px]"
+    >
+    <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <Radio name="group3" bind:group={group3} value={1}>Enable notifications</Radio>
+      <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
+    </li>
+    <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <Radio name="group3" bind:group={group3} value={2}>Enable 2FA auth</Radio>
+      <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
+    </li>
+    <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <Radio name="group3" bind:group={group3} value={3}>Subscribe newsletter</Radio>
+      <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
+    </li>
+    </Dropdown>
+  </div>
+</CodeWrapper>
 
 <H2>Inline layout</H2>
 <CodeWrapper>

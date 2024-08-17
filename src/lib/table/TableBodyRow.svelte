@@ -11,7 +11,7 @@
     class?: string | undefined | null;
     color?: string | undefined | null;
   }
-  let { children, class: className, color, ...attributes }: Props = $props();
+  let { children, class: className, color, ...restProps }: Props = $props();
 
   const tableCtx: TableCtxType = getContext('tableCtx');
   let rowColor: string = $state(color ? color : tableCtx.color || 'default');
@@ -68,7 +68,7 @@
   ]);
 </script>
 
-<tr {...attributes} class={trClass}>
+<tr {...restProps} class={trClass}>
   {#if children}
     {@render children()}
   {/if}
@@ -81,5 +81,5 @@
 @prop children
 @prop class: className
 @prop color
-@prop ...attributes
+@prop ...restProps
 -->

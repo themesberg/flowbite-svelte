@@ -1,11 +1,11 @@
 <script lang="ts">
   import { type FooterUlProps as Props, footerUl } from './';
 
-  let { class: ulClass, children, ...attributes }: Props = $props();
+  let { class: ulClass, children, ...restProps }: Props = $props();
   const base = $derived(footerUl({ class: ulClass }));
 </script>
 
-<ul {...attributes} class={base}>
+<ul {...restProps} class={base}>
   {@render children()}
 </ul>
 
@@ -15,5 +15,5 @@
 ## Props
 @prop class: ulClass
 @prop children
-@prop ...attributes
+@prop ...restProps
 -->

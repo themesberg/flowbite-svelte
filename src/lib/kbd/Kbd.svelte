@@ -9,11 +9,11 @@
     class: string | undefined | null;
   }
 
-  let { children, class: kbdClass, ...attributes }: Props = $props();
+  let { children, class: kbdClass, ...restProps }: Props = $props();
   const kbdCls = kbd();
 </script>
 
-<kbd class={twMerge(kbdCls, kbdClass)} {...attributes}>
+<kbd class={twMerge(kbdCls, kbdClass)} {...restProps}>
   {@render children()}
 </kbd>
 
@@ -23,5 +23,5 @@
 ## Props
 @prop children
 @prop class: kbdClass
-@prop ...attributes
+@prop ...restProps
 -->

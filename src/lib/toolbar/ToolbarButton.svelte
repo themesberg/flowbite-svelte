@@ -24,7 +24,7 @@
     href,
     class: className,
     onclick,
-    ...attributes
+    ...restProps
   }: Props = $props();
   // export let color: ToolbarButtonType = 'default';
   // export let name: string | undefined = undefined;
@@ -76,7 +76,7 @@
 </script>
 
 {#if href}
-  <a {href} {...attributes} class={buttonClass} aria-label={ariaLabel ?? name}>
+  <a {href} {...restProps} class={buttonClass} aria-label={ariaLabel ?? name}>
     {#if name}<span class="sr-only">{name}</span>{/if}
     {@render children()}
   </a>
@@ -84,7 +84,7 @@
   <button
     {onclick}
     type="button"
-    {...attributes}
+    {...restProps}
     class={buttonClass}
     aria-label={ariaLabel ?? name}
   >
@@ -105,5 +105,5 @@
 @prop href
 @prop class: className
 @prop onclick
-@prop ...attributes
+@prop ...restProps
 -->

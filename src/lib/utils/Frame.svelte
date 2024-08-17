@@ -72,7 +72,7 @@
     transition,
     params,
     open,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   let frameColor = $state(color ?? 'default'); // for cases when undefined
@@ -147,7 +147,7 @@
     transition:transition={params}
     bind:this={node}
     {role}
-    {...attributes}
+    {...restProps}
     class={divClass}
   >
     {@render children()}
@@ -157,7 +157,7 @@
     this={tag}
     bind:this={node}
     {role}
-    {...attributes}
+    {...restProps}
     class={divClass}
   >
     {@render children()}
@@ -183,5 +183,5 @@
 @prop transition
 @prop params
 @prop open
-@prop ...attributes
+@prop ...restProps
 -->

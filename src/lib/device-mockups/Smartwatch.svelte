@@ -9,13 +9,13 @@
     div4Class,
     div5Class,
     div6Class,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const { div, top, rightTop, rightBot, bot, slot } = smartwatch();
 </script>
 
-<div {...attributes}>
+<div {...restProps}>
   <div class={div({ class: divClass })}></div>
   <div class={top({ class: div2Class })}>
     <div class={rightTop({ class: div3Class })}></div>
@@ -40,5 +40,5 @@
 @prop div4Class
 @prop div5Class
 @prop div6Class
-@prop ...attributes
+@prop ...restProps
 -->

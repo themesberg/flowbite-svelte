@@ -13,7 +13,7 @@
     labelClass,
     inputClass,
     spanClass,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const { input, label, span } = $derived(toggle({ color, size: toggleSize }));
@@ -25,7 +25,7 @@
     bind:checked
     {value}
     aria-describedby={aria_describedby}
-    {...attributes}
+    {...restProps}
     class={input({ class: inputClass })}
   />
   <span class={span({ class: spanClass })}></span>
@@ -46,5 +46,5 @@
 @prop labelClass
 @prop inputClass
 @prop spanClass
-@prop ...attributes
+@prop ...restProps
 -->

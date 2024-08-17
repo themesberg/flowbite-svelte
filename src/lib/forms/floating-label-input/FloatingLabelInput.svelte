@@ -13,7 +13,7 @@
     divClass,
     inputClass,
     labelClass,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const { base, input, label } = $derived(
@@ -92,7 +92,7 @@
   <input
     {id}
     placeholder=" "
-    {...attributes}
+    {...restProps}
     aria-describedby={aria_describedby}
     class={input({ class: inputClass })}
   />
@@ -115,5 +115,5 @@
 @prop divClass
 @prop inputClass
 @prop labelClass
-@prop ...attributes
+@prop ...restProps
 -->

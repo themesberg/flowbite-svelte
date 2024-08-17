@@ -6,7 +6,7 @@
     size,
     rounded,
     class: className,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const { base, item, itemContent, itemTitle, itemSubtitle, itemExtra } =
@@ -15,7 +15,7 @@
   let items = $derived([...Array(itemNumber).keys()]);
 </script>
 
-<div role="status" class={base({ className })} {...attributes}>
+<div role="status" class={base({ className })} {...restProps}>
   {#each items as _, i}
     <div class={item({ class: i > 0 ? 'pt-4' : '' })}>
       <div class={itemContent()}>
@@ -36,5 +36,5 @@
 @prop size
 @prop rounded
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

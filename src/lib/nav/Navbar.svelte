@@ -38,7 +38,7 @@
     div2Class,
     activeClass,
     nonActiveClass,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   setContext<navbarType>('navbarContext', {
@@ -92,7 +92,7 @@
   };
 </script>
 
-<nav class={navCls} use:clickOutside={closeNav} {...attributes}>
+<nav class={navCls} use:clickOutside={closeNav} {...restProps}>
   <div class={divCls}>
     {#if brand}
       {@render brand()}

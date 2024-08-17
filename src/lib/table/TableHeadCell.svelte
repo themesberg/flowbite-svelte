@@ -7,10 +7,10 @@
     children?: Snippet;
     class?: string | undefined | null;
   }
-  let { children, class: className, ...attributes }: Props = $props();
+  let { children, class: className, ...restProps }: Props = $props();
 </script>
 
-<th {...attributes} class={twMerge('px-6 py-3', className)}>
+<th {...restProps} class={twMerge('px-6 py-3', className)}>
   {#if children}
     {@render children()}
   {/if}
@@ -22,5 +22,5 @@
 ## Props
 @prop children
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

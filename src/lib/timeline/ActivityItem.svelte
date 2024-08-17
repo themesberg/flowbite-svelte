@@ -11,7 +11,7 @@
     timeClass,
     titleClass,
     textClass,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const { li, span, img, outerDiv, innerDiv, time, title, text } =
@@ -19,7 +19,7 @@
 </script>
 
 {#each activities as { name, date, src, alt, activity }}
-  <li class={li({ class: liClass })} {...attributes}>
+  <li class={li({ class: liClass })} {...restProps}>
     <span class={span({ class: spanClass })}>
       <img class={img({ class: imgClass })} {src} {alt} />
     </span>
@@ -52,5 +52,5 @@
 @prop timeClass
 @prop titleClass
 @prop textClass
-@prop ...attributes
+@prop ...restProps
 -->

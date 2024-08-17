@@ -5,13 +5,13 @@
     children,
     tag = 'h1',
     class: className,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   let headingClass = $derived(heading({ tag, className }));
 </script>
 
-<svelte:element this={tag} {...attributes} class={headingClass}>
+<svelte:element this={tag} {...restProps} class={headingClass}>
   {@render children()}
 </svelte:element>
 
@@ -22,5 +22,5 @@
 @prop children
 @prop tag = 'h1'
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

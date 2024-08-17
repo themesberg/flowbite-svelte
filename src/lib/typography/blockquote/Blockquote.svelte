@@ -13,7 +13,7 @@
     baseClass,
     alignment = 'left',
     size = 'lg',
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   let blockquoteClass = $derived(
@@ -28,7 +28,7 @@
   );
 </script>
 
-<blockquote {...attributes} class={blockquoteClass}>
+<blockquote {...restProps} class={blockquoteClass}>
   {@render children()}
 </blockquote>
 
@@ -46,5 +46,5 @@
 @prop baseClass
 @prop alignment = 'left'
 @prop size = 'lg'
-@prop ...attributes
+@prop ...restProps
 -->

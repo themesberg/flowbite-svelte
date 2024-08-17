@@ -13,7 +13,7 @@
     decoration,
     decorationColor,
     decorationThickness,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   let classSpan = $derived(
@@ -32,7 +32,7 @@
   );
 </script>
 
-<span {...attributes} class={classSpan}>
+<span {...restProps} class={classSpan}>
   {@render children()}
 </span>
 
@@ -51,5 +51,5 @@
 @prop decoration
 @prop decorationColor
 @prop decorationThickness
-@prop ...attributes
+@prop ...restProps
 -->

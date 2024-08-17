@@ -7,13 +7,13 @@
     div2Class,
     div3Class,
     div4Class,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const { div, inner, bot, botUnder } = desktop();
 </script>
 
-<div class={div({ class: divClass })} {...attributes}>
+<div class={div({ class: divClass })} {...restProps}>
   <div class={inner({ class: div2Class })}>
     {#if children}
       {@render children()}
@@ -32,5 +32,5 @@
 @prop div2Class
 @prop div3Class
 @prop div4Class
-@prop ...attributes
+@prop ...restProps
 -->

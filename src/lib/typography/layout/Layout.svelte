@@ -2,12 +2,12 @@
   import { twMerge } from 'tailwind-merge';
   import { type LayoutProps as Props, layout } from './index';
 
-  let { children, class: className, ...attributes }: Props = $props();
+  let { children, class: className, ...restProps }: Props = $props();
 
   let classDiv = $derived(layout({ className }));
 </script>
 
-<div {...attributes} class={classDiv}>
+<div {...restProps} class={classDiv}>
   {@render children()}
 </div>
 
@@ -17,5 +17,5 @@
 ## Props
 @prop children
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

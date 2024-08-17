@@ -7,7 +7,7 @@
     color = 'blue',
     rangeSize = 'md',
     inputClass,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const inputCls = $derived(
@@ -22,7 +22,7 @@
   // );
 </script>
 
-<input type="range" bind:value {...attributes} class={inputCls} />
+<input type="range" bind:value {...restProps} class={inputCls} />
 
 <!--
 @component
@@ -33,5 +33,5 @@
 @prop color = 'blue'
 @prop rangeSize = 'md'
 @prop inputClass
-@prop ...attributes
+@prop ...restProps
 -->

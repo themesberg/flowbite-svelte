@@ -28,7 +28,7 @@
     headerClass = '',
     footerClass = '',
     class: className = '',
-    ...attributes
+    ...restProps
   }: Props = $props();
   const background = getContext('background');
 
@@ -75,7 +75,7 @@
     </div>
   {/if}
   <div class={innerWrapperCls}>
-    <textarea bind:value {...attributes} class={textareaClass}></textarea>
+    <textarea bind:value {...restProps} class={textareaClass}></textarea>
   </div>
   {#if footer}
     <div class={headerCls(false)}>
@@ -98,5 +98,5 @@
 @prop headerClass = ''
 @prop footerClass = ''
 @prop class: className = ''
-@prop ...attributes
+@prop ...restProps
 -->

@@ -21,7 +21,7 @@
     aClass,
     activeClass,
     nonActiveClass,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   let breakPoint: navbarType['breakPoint'];
@@ -63,7 +63,7 @@
   <a
     {href}
     onclick={closeNav}
-    {...attributes}
+    {...restProps}
     aria-current={currentUrl === href}
     class={linkClass}
   >
@@ -81,5 +81,5 @@
 @prop aClass
 @prop activeClass
 @prop nonActiveClass
-@prop ...attributes
+@prop ...restProps
 -->

@@ -21,7 +21,7 @@
     nonActiveClass = '',
     activeClass = '',
     class: className,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const activeCls =
@@ -41,7 +41,7 @@
 </script>
 
 <aside
-  {...attributes}
+  {...restProps}
   class={twMerge('w-64', asideClass)}
   aria-label={ariaLabel}
 >
@@ -61,5 +61,5 @@
 @prop nonActiveClass = ''
 @prop activeClass = ''
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

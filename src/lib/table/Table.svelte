@@ -44,7 +44,7 @@
     shadow,
     color = 'default',
     customeColor,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const colors = {
@@ -71,7 +71,7 @@
 
 <div class={twJoin(divClass, shadow && 'shadow-md sm:rounded-lg')}>
   <table
-    {...attributes}
+    {...restProps}
     class={twMerge('w-full text-left text-sm', colors[color])}
   >
     {@render children()}
@@ -90,5 +90,5 @@
 @prop shadow
 @prop color = 'default'
 @prop customeColor
-@prop ...attributes
+@prop ...restProps
 -->

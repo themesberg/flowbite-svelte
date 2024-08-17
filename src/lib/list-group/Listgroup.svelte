@@ -11,14 +11,14 @@
     rounded = true,
     border = true,
     class: className,
-    ...attributes
+    ...restProps
   }: Props = $props();
   const base = $derived(listGroup({ rounded, border, className }));
   let tag = active ? 'div' : 'ul';
   setContext('active', active);
 </script>
 
-<svelte:element this={tag} {...attributes} class={base}>
+<svelte:element this={tag} {...restProps} class={base}>
   {#if items}
     {#each items as item}
       {#if typeof item === 'string'}
@@ -43,5 +43,5 @@
 @prop rounded = true
 @prop border = true
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

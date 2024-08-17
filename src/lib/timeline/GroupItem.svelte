@@ -8,7 +8,7 @@
     divClass,
     titleClass,
     spanClass,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const { a, img, div, title, span } = $derived(groupitem());
@@ -75,5 +75,5 @@
 @prop divClass
 @prop titleClass
 @prop spanClass
-@prop ...attributes
+@prop ...restProps
 -->

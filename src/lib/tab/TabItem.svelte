@@ -12,7 +12,7 @@
     inactiveClass,
     class: className,
     disabled,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const ctx = getContext<TabCtxType>('ctx') ?? {};
@@ -34,7 +34,7 @@
   const { base, button, content } = $derived(tabItem({ open, disabled }));
 </script>
 
-<li class={base({ class: className })} role="presentation" {...attributes}>
+<li class={base({ class: className })} role="presentation" {...restProps}>
   <button
     type="button"
     onclick={() => (open = true)}
@@ -74,5 +74,5 @@
 @prop inactiveClass
 @prop class: className
 @prop disabled
-@prop ...attributes
+@prop ...restProps
 -->

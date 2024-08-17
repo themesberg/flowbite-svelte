@@ -12,7 +12,7 @@
     figClass,
     captionClass,
     class: className,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   let { base, figure, figureCaption } = $derived(
@@ -22,13 +22,13 @@
 
 {#if caption}
   <figure class={figure({ class: figClass })}>
-    <img {...attributes} class={base({ class: className })} />
+    <img {...restProps} class={base({ class: className })} />
     <figcaption class={figureCaption({ class: captionClass })}>
       {@html caption}
     </figcaption>
   </figure>
 {:else}
-  <img {...attributes} class={base({ class: className })} />
+  <img {...restProps} class={base({ class: className })} />
 {/if}
 
 <!--
@@ -45,5 +45,5 @@
 @prop figClass
 @prop captionClass
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

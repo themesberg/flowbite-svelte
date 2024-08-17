@@ -1,39 +1,17 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
-  import type { HTMLSelectAttributes } from 'svelte/elements';
-
-  type SelectOptionType<T> = {
-    name: string | number;
-    value: T;
-  };
-  interface Props extends HTMLSelectAttributes {
-    children?: Snippet;
-    items: SelectOptionType<any>[];
-    value?: any;
-    underline?: boolean;
-    selectSize?: 'sm' | 'md' | 'lg';
-    selectClass?: string | undefined;
-    underlineClass?: string | undefined;
-    onchange?: () => void;
-    oninput?: () => void;
-    oncontextmenu?: () => void;
-    placeholder?: string | undefined | null;
-  }
-
+  import { type SelectProps as Props, select as selectCls } from '.';
+  
   let {
     children,
     items,
     value = $bindable(),
     underline,
-    selectSize = 'md',
+    size = 'md',
     selectClass,
     underlineClass,
-    onchange,
-    oninput,
-    oncontextmenu,
     placeholder = 'Choose option ...',
-    ...attributes
+    ...restProps
   }: Props = $props();
   let defaultCls: string =
     'text-gray-900 bg-gray-50 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500';
@@ -50,24 +28,22 @@
     lg: 'text-base py-3 px-4'
   };
 
-  let selectCls: string = $state(
-    twMerge(
-      common,
-      underline ? underlineCls : defaultCls,
-      sizes[selectSize],
-      underline && '!px-0',
-      selectClass
-    )
-  );
+  // let selectCls: string = $state(
+  //   twMerge(
+  //     common,
+  //     underline ? underlineCls : defaultCls,
+  //     sizes[selectSize],
+  //     underline && '!px-0',
+  //     selectClass
+  //   )
+  // );
+  const selectStyle = $derived(selectCls({ underline, size, class: selectClass }));
 </script>
 
 <select
-  {...attributes}
+  {...restProps}
   bind:value
-  class={selectCls}
-  {onchange}
-  {oncontextmenu}
-  {oninput}
+  class={selectStyle}
 >
   {#if placeholder}
     <option disabled selected value="">{placeholder}</option>
@@ -97,5 +73,5 @@
 @prop oninput
 @prop oncontextmenu
 @prop placeholder = 'Choose option ...'
-@prop ...attributes
+@prop ...restProps
 -->

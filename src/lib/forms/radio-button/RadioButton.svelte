@@ -28,7 +28,7 @@
     buttonSize,
     color,
     shadow,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   let buttonCls: string = twMerge(inline ? 'inline-flex' : 'flex', btnClass);
@@ -45,7 +45,7 @@
   {shadow}
   class={buttonCls}
 >
-  <input type="radio" bind:group {value} {...attributes} class="sr-only" />
+  <input type="radio" bind:group {value} {...restProps} class="sr-only" />
   {@render children()}
 </Button>
 
@@ -63,5 +63,5 @@
 @prop buttonSize
 @prop color
 @prop shadow
-@prop ...attributes
+@prop ...restProps
 -->

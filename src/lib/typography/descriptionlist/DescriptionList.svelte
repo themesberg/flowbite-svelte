@@ -7,7 +7,7 @@
     dtClass,
     ddClass,
     class: className,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   let classDesc = $derived(
@@ -18,7 +18,7 @@
   );
 </script>
 
-<svelte:element this={tag} {...attributes} class={classDesc}>
+<svelte:element this={tag} {...restProps} class={classDesc}>
   {@render children()}
 </svelte:element>
 
@@ -31,5 +31,5 @@
 @prop dtClass
 @prop ddClass
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

@@ -1,11 +1,11 @@
 <script lang="ts">
   import { type AnchorProps as Props, anchor } from './index';
 
-  let { children, class: className, ...attributes }: Props = $props();
+  let { children, class: className, ...restProps }: Props = $props();
   let linkClass = $derived(anchor({ className }));
 </script>
 
-<a {...attributes} class={linkClass}>
+<a {...restProps} class={linkClass}>
   {@render children()}
 </a>
 
@@ -15,5 +15,5 @@
 ## Props
 @prop children
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

@@ -9,13 +9,13 @@
     div4Class,
     div5Class,
     div6Class,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const { div, slot, top, leftTop, leftBot, right } = ios();
 </script>
 
-<div class={div({ class: divClass })} {...attributes}>
+<div class={div({ class: divClass })} {...restProps}>
   <div class={top({ class: div2Class })}></div>
   <div class={leftTop({ class: div3Class })}></div>
   <div class={leftBot({ class: div4Class })}></div>
@@ -38,5 +38,5 @@
 @prop div4Class
 @prop div5Class
 @prop div6Class
-@prop ...attributes
+@prop ...restProps
 -->

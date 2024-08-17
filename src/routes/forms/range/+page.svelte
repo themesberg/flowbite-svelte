@@ -25,27 +25,6 @@
 <H2>Setup</H2>
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
-<H2>Reference</H2>
-<CodeWrapper>
-  <input
-    class="range w-full accent-red-500"
-    type="range"
-    value="50"
-    min="0"
-    max="100"
-  />
-  <input
-    class="range w-full bg-gray-50 accent-yellow-500"
-    type="range"
-    value="50"
-    min="0"
-    max="100"
-  />
-  <input
-    type="range"
-    class="range-lg range h-3 w-full cursor-pointer rounded-lg bg-gray-200 accent-pink-500 dark:bg-gray-700"
-  />
-</CodeWrapper>
 <H2>Range slider example</H2>
 <CodeWrapper>
   <Label>Default range</Label>

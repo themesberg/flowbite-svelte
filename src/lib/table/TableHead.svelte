@@ -15,7 +15,7 @@
     children,
     class: className,
     defaultRow = true,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const tableCtx: TableCtxType = getContext('tableCtx');
@@ -59,7 +59,7 @@
   );
 </script>
 
-<thead {...attributes} class={theadCls}>
+<thead {...restProps} class={theadCls}>
   {#if children}
     {#if defaultRow}
       <tr>
@@ -78,5 +78,5 @@
 @prop children
 @prop class: className
 @prop defaultRow = true
-@prop ...attributes
+@prop ...restProps
 -->

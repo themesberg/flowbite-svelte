@@ -12,7 +12,7 @@
     activeClass,
     inactiveClass,
     class: classname,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const {
@@ -43,7 +43,7 @@
   }
 </script>
 
-<ul class={base({ class: ulClass })} {...attributes}>
+<ul class={base({ class: ulClass })} {...restProps}>
   {@render children()}
 </ul>
 {#if dividerBool}
@@ -68,5 +68,5 @@
 @prop activeClass
 @prop inactiveClass
 @prop class: classname
-@prop ...attributes
+@prop ...restProps
 -->

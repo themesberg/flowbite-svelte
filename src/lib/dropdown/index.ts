@@ -1,7 +1,9 @@
 import Dropdown from './Dropdown.svelte';
 import DropdownDivider from './DropdownDivider.svelte';
 import DropdownItem from './DropdownItem.svelte';
-import { dropdown, dropdowndivider, dropdownitem } from './theme';
+import DropdownUl from './DropdownUl.svelte';
+import DropdownLi from './DropdownLi.svelte';
+import { dropdown, dropdowndivider, dropdownli, dropdownul } from './theme';
 import type { Snippet } from 'svelte';
 import type { TransitionParamTypes, TransitionTypes } from '../types';
 import type { HTMLAttributes, HTMLAnchorAttributes } from 'svelte/elements';
@@ -35,14 +37,30 @@ interface DropdownItemProps extends HTMLAnchorAttributes {
   liClass?: string | undefined | null;
 }
 
+interface DropdownLiProps extends HTMLAnchorAttributes {
+  children: Snippet;
+  aClass?: string | undefined | null;
+  href?: string | undefined | null;
+  activeClass?: string | undefined | null;
+  liClass?: string | undefined | null;
+}
+
+interface DropdownUlProps extends HTMLAttributes<HTMLUListElement> {
+  children: Snippet;
+}
+
 export {
   Dropdown,
   DropdownDivider,
   DropdownItem,
+  DropdownUl,
+  DropdownLi,
   dropdown,
   dropdowndivider,
-  dropdownitem,
+  dropdownli, dropdownul,
   type DropdownProps,
   type DropdownDividerProps,
-  type DropdownItemProps
+  type DropdownItemProps,
+  type DropdownLiProps,
+  type DropdownUlProps
 };

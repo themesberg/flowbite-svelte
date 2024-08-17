@@ -15,14 +15,14 @@
     children,
     class: className,
     divClass = 'flex items-center space-x-1 rtl:space-x-reverse sm:pe-4 sm:ps-4 first:sm:ps-0 last:sm:pe-0',
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const options: Writable<boolean> = getContext('toolbar');
   if (options) $options = true;
 </script>
 
-<div class={twMerge(divClass, className)} {...attributes}>
+<div class={twMerge(divClass, className)} {...restProps}>
   {@render children()}
 </div>
 
@@ -33,5 +33,5 @@
 @prop children
 @prop class: className
 @prop divClass = 'flex items-center space-x-1 rtl:space-x-reverse sm:pe-4 sm:ps-4 first:sm:ps-0 last:sm:pe-0'
-@prop ...attributes
+@prop ...restProps
 -->

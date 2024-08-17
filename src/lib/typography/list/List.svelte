@@ -8,7 +8,7 @@
     position = 'inside',
     ctxclass = '',
     class: className,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   setContext('ctxclass', ctxclass);
@@ -16,7 +16,7 @@
   let classList = $derived(list({ position, tag, className }));
 </script>
 
-<svelte:element this={tag} {...attributes} class={classList}>
+<svelte:element this={tag} {...restProps} class={classList}>
   {@render children()}
 </svelte:element>
 
@@ -29,5 +29,5 @@
 @prop position = 'inside'
 @prop ctxclass = ''
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

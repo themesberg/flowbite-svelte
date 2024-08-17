@@ -1,7 +1,7 @@
 <script lang="ts">
   import { textPlaceholder, type TextPlaceholderProps as Props } from './index';
 
-  let { size = 'sm', class: className, ...attributes }: Props = $props();
+  let { size = 'sm', class: className, ...restProps }: Props = $props();
   const { baseWrapper, divWrapper, lineA, lineB } = $derived(
     textPlaceholder({
       size
@@ -9,7 +9,7 @@
   );
 </script>
 
-<div role="status" class={baseWrapper({ className })} {...attributes}>
+<div role="status" class={baseWrapper({ className })} {...restProps}>
   <div class={divWrapper({ class: 'w-full' })}>
     <div class={lineA({ class: 'h-2.5 w-32' })}></div>
     <div class={lineB({ class: 'h-2.5 w-24' })}></div>
@@ -49,5 +49,5 @@
 ## Props
 @prop size = 'sm'
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

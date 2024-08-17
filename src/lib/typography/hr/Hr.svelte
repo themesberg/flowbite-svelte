@@ -7,21 +7,21 @@
     divClass,
     hrClass,
     innerDivClass,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   let { base, container, content } = $derived(hr({ withChildren: !!children }));
 </script>
 
 {#if children}
-  <div {...attributes} class={container({ class: divClass })}>
+  <div {...restProps} class={container({ class: divClass })}>
     <hr class={base({ class: hrClass })} />
     <div class={content({ class: innerDivClass })}>
       {@render children()}
     </div>
   </div>
 {:else}
-  <hr class={base({ class: hrClass })} {...attributes} />
+  <hr class={base({ class: hrClass })} {...restProps} />
 {/if}
 
 <!--
@@ -33,5 +33,5 @@
 @prop divClass
 @prop hrClass
 @prop innerDivClass
-@prop ...attributes
+@prop ...restProps
 -->

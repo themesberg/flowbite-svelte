@@ -15,7 +15,7 @@
     innerClass,
     transition = fade,
     params,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const { base, insideDiv } = banner({
@@ -36,7 +36,7 @@
   <div
     tabindex="-1"
     class={bannerClass}
-    {...attributes}
+    {...restProps}
     transition:transition={params}
   >
     {#if header}
@@ -75,5 +75,5 @@
 @prop innerClass
 @prop transition = fade
 @prop params
-@prop ...attributes
+@prop ...restProps
 -->

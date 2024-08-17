@@ -17,7 +17,7 @@
     class: className,
     colspan,
     onclick,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const tableCtx: TableCtxType = getContext('tableCtx');
@@ -35,7 +35,7 @@
   );
 </script>
 
-<td {...attributes} class={tdCls} colspan={colspan ?? 1}>
+<td {...restProps} class={tdCls} colspan={colspan ?? 1}>
   {#if onclick}
     <button {onclick}>
       {#if children}
@@ -55,5 +55,5 @@
 @prop class: className
 @prop colspan
 @prop onclick
-@prop ...attributes
+@prop ...restProps
 -->

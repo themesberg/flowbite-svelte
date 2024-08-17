@@ -16,7 +16,7 @@
     class: divClass,
     transitionParams,
     transitionType = 'fly',
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   function multiple(node: HTMLElement, params: any) {
@@ -64,7 +64,7 @@
     ></div>
   {/if}
   <div
-    {...attributes}
+    {...restProps}
     class={base({ class: divClass })}
     transition:multiple={transitionParams}
     tabindex="-1"
@@ -90,5 +90,5 @@
 @prop class: divClass
 @prop transitionParams
 @prop transitionType = 'fly'
-@prop ...attributes
+@prop ...restProps
 -->

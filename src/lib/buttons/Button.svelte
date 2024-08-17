@@ -48,7 +48,7 @@
     name = undefined,
     class: btnclass,
     onclick,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const colorClasses = {
@@ -182,15 +182,15 @@
 </script>
 
 {#if href}
-  <a {href} {...attributes} class={buttonCls} {rel} {target} role="button">
+  <a {href} {...restProps} class={buttonCls} {rel} {target} role="button">
     {@render children()}
   </a>
 {:else if tag === 'button'}
-  <button {type} {...attributes} class={buttonCls} {disabled} {name} {onclick}>
+  <button {type} {...restProps} class={buttonCls} {disabled} {name} {onclick}>
     {@render children()}
   </button>
 {:else}
-  <svelte:element this={tag} {...attributes} class={buttonCls}>
+  <svelte:element this={tag} {...restProps} class={buttonCls}>
     {@render children()}
   </svelte:element>
 {/if}
@@ -215,5 +215,5 @@
 @prop name = undefined
 @prop class: btnclass
 @prop onclick
-@prop ...attributes
+@prop ...restProps
 -->

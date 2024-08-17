@@ -16,7 +16,7 @@
     align = true,
     transition = fade,
     params,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const {
@@ -30,7 +30,7 @@
 {#if toastStatus}
   <div
     role="alert"
-    {...attributes}
+    {...restProps}
     class={base({ class: baseClass })}
     transition:transition={params}
   >
@@ -73,5 +73,5 @@
 @prop align = true
 @prop transition = fade
 @prop params
-@prop ...attributes
+@prop ...restProps
 -->

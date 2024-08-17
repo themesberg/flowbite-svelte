@@ -14,7 +14,7 @@
     alt,
     size = 'md',
     onclick,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   dot = dot && { placement: 'top-right', color: 'gray', size: 'lg', ...dot };
@@ -36,7 +36,7 @@
     role={href ? 'link' : 'img'}
     {onclick}
     {href}
-    {...attributes}
+    {...restProps}
     class={avatarClass}
   >
     {#if src}
@@ -62,7 +62,7 @@
     {/if}
   </svelte:element>
 {:else}
-  <img {alt} {src} {...attributes} class={avatarClass} />
+  <img {alt} {src} {...restProps} class={avatarClass} />
 {/if}
 
 <!--
@@ -80,5 +80,5 @@
 @prop alt
 @prop size = 'md'
 @prop onclick
-@prop ...attributes
+@prop ...restProps
 -->

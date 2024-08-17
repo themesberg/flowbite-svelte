@@ -6,14 +6,14 @@
     href,
     ariaLabel,
     class: aClass,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const aCls = $derived(footerIcon({ class: aClass }));
 </script>
 
 {#if href}
-  <a {...attributes} {href} aria-label={ariaLabel} class={aCls}>
+  <a {...restProps} {href} aria-label={ariaLabel} class={aCls}>
     {@render children()}
   </a>
 {:else}
@@ -28,5 +28,5 @@
 @prop href
 @prop ariaLabel
 @prop class: aClass
-@prop ...attributes
+@prop ...restProps
 -->

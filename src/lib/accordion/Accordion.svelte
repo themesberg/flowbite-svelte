@@ -16,7 +16,7 @@
     class: className,
     transition = undefined,
     params,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const ctx: AccordionCtxType = {
@@ -39,7 +39,7 @@
   );
 </script>
 
-<div {...attributes} class={accordionClass} color="none">
+<div {...restProps} class={accordionClass} color="none">
   {@render children()}
 </div>
 
@@ -55,5 +55,5 @@
 @prop class: className
 @prop transition = undefined
 @prop params
-@prop ...attributes
+@prop ...restProps
 -->

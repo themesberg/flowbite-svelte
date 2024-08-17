@@ -14,7 +14,7 @@
     table,
     size,
     ariaLabel,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   setContext('group', true);
@@ -83,5 +83,5 @@
 @prop table
 @prop size
 @prop ariaLabel
-@prop ...attributes
+@prop ...restProps
 -->

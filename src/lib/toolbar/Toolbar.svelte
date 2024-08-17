@@ -19,7 +19,7 @@
     color = 'default',
     embedded,
     class: className,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const separators = writable(false);
@@ -38,7 +38,7 @@
   );
 </script>
 
-<Frame {...attributes} class={divClass} color={frameColor} rounded={!embedded}>
+<Frame {...restProps} class={divClass} color={frameColor} rounded={!embedded}>
   <Frame
     class="flex flex-wrap items-center {separatorsClass}"
     color={frameColor}
@@ -60,5 +60,5 @@
 @prop color = 'default'
 @prop embedded
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

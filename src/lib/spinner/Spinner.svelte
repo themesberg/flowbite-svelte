@@ -8,14 +8,14 @@
     class: className,
     currentFill = 'currentFill',
     currentColor = 'currentColor',
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   let spinnerClass = $derived(spinner({ color, size, className }));
 </script>
 
 <svg
-  {...attributes}
+  {...restProps}
   role="status"
   class={spinnerClass}
   viewBox="0 0 100 101"
@@ -42,5 +42,5 @@
 @prop class: className
 @prop currentFill = 'currentFill'
 @prop currentColor = 'currentColor'
-@prop ...attributes
+@prop ...restProps
 -->

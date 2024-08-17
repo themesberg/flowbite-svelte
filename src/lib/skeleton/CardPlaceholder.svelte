@@ -1,14 +1,14 @@
 <script lang="ts">
   import { type CardPlaceholderProps as Props, cardPlaceholder } from './index';
 
-  let { size = 'sm', class: className, ...attributes }: Props = $props();
+  let { size = 'sm', class: className, ...restProps }: Props = $props();
 
   const { base, imageArea, imageIcon, line, footerArea } = $derived(
     cardPlaceholder({ size })
   );
 </script>
 
-<div role="status" class={base({ className })} {...attributes}>
+<div role="status" class={base({ className })} {...restProps}>
   <div class={imageArea()}>
     <svg
       width="48"
@@ -54,5 +54,5 @@
 ## Props
 @prop size = 'sm'
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

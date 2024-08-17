@@ -49,7 +49,7 @@
     tableClass = 'w-full text-left text-sm',
     classDiv,
     class: className,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   let inputCls = twMerge(
@@ -110,7 +110,7 @@
       {@render header()}
     {/if}
   </div>
-  <table {...attributes} class={twMerge(tableClass, colors[color], className)}>
+  <table {...restProps} class={twMerge(tableClass, colors[color], className)}>
     {#if children}
       {@render children()}
     {/if}
@@ -142,5 +142,5 @@
 @prop tableClass = 'w-full text-left text-sm'
 @prop classDiv
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

@@ -17,7 +17,7 @@
     backdropClass,
     transitionParams,
     transitionType = 'fly',
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   function multiple(node: HTMLElement, params: any) {
@@ -32,13 +32,13 @@
         return fly(node, params);
     }
   }
-  const { base, ul, headerDiv, footerDiv, backdrop } = $derived(dropdown());
+  const { base, headerDiv, footerDiv, backdrop } = $derived(dropdown());
 </script>
 
 <!-- Dropdown menu -->
 {#if dropdownStatus}
   <div
-    {...attributes}
+    {...restProps}
     class={base({ class: divClass })}
     transition:multiple={transitionParams}
   >
@@ -48,9 +48,7 @@
       </div>
     {/if}
 
-    <ul class={ul({ class: ulClass })}>
       {@render children()}
-    </ul>
 
     {#if footer}
       <div class={footerDiv({ class: footerClass })}>
@@ -84,5 +82,5 @@
 @prop backdropClass
 @prop transitionParams
 @prop transitionType = 'fly'
-@prop ...attributes
+@prop ...restProps
 -->

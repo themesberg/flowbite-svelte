@@ -22,14 +22,14 @@
     id = idGenerator(),
     role = 'img',
     svgClass,
-    ...attributes
+    ...restProps
   }: Props = $props();
 </script>
 
 <svg
   width={size}
   height={size}
-  {...attributes}
+  {...restProps}
   class={svgClass}
   aria-label={ariaLabel}
   viewBox="0 0 24 24"
@@ -72,5 +72,5 @@
 @prop id = idGenerator()
 @prop role = 'img'
 @prop svgClass
-@prop ...attributes
+@prop ...restProps
 -->

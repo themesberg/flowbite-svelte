@@ -14,14 +14,14 @@
     color = 'gray',
     show = true,
     class: className,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const base = $derived(label({ color, className }));
 </script>
 
 {#if show}
-  <label {...attributes} class={base}>
+  <label {...restProps} class={base}>
     {@render children()}
   </label>
 {:else}
@@ -36,5 +36,5 @@
 @prop color = 'gray'
 @prop show = true
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

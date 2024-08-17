@@ -11,7 +11,7 @@
     spanClass,
     homeClass,
     class: className,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const { item, icon: breacrumbIcon } = breadcrumb({
@@ -21,7 +21,7 @@
   });
 </script>
 
-<li class={item()} {...attributes}>
+<li class={item()} {...restProps}>
   {#if home}
     <a class={item({ home: true, class: homeClass })} {href}>
       {#if icon}
@@ -86,5 +86,5 @@
 @prop spanClass
 @prop homeClass
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

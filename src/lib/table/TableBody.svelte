@@ -6,10 +6,10 @@
     children?: Snippet;
     class?: string | undefined;
   }
-  let { children, class: className, ...attributes }: Props = $props();
+  let { children, class: className, ...restProps }: Props = $props();
 </script>
 
-<tbody class={className} {...attributes}>
+<tbody class={className} {...restProps}>
   {#if children}
     {@render children()}
   {/if}
@@ -21,5 +21,5 @@
 ## Props
 @prop children
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

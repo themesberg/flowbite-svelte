@@ -177,7 +177,7 @@
     checkbox: {
       checked: true,
       // problems: 'Group variable',
-      notes: 'Updated: class names'
+      notes: 'Variants, reactive examples'
     },
     fileInput: {
       checked: true,
@@ -197,12 +197,12 @@
     },
     radio: {
       checked: true,
-      problems: 'Alternative syntax, Radio in dropdown',
+      // problems: 'Radio in dropdown',
       notes: 'Variants, reactive examples'
     },
     range: {
       checked: true,
-      problems: 'Sizes - blob sizes',
+      // problems: 'Sizes - blob sizes',
       notes: 'Variants, reactive examples'
     },
     searchInput: {
@@ -381,7 +381,7 @@
       {/if}
       <a
         href="/components/{convertStringToKebabCase(key)}"
-        class="text-blue-800 underline hover:text-blue-500">{key}</a
+        class="text-blue-800 dark:text-blue-300 underline hover:text-blue-500 hover:dark:text-blue-200">{key}</a
       >
       {#if problems}
         <span class="ml-4 text-red-500">( {problems})</span
@@ -411,7 +411,7 @@
           class="me-2 h-8 w-8 text-gray-500 dark:text-gray-400"
         />
       {/if}
-      <a href="/forms/{convertStringToKebabCase(key)}" class="hover:underline"
+      <a href="/forms/{convertStringToKebabCase(key)}" class="text-blue-800 dark:text-blue-300 underline hover:text-blue-500 hover:dark:text-blue-200"
         >{key}</a
       >
       {#if problems}
@@ -444,7 +444,7 @@
       {/if}
       <a
         href="/typography/{convertStringToKebabCase(key)}"
-        class="hover:underline">{key}</a
+        class="text-blue-800 dark:text-blue-300 underline hover:text-blue-500 hover:dark:text-blue-200">{key}</a
       >
       {#if problems}
         <span class="ml-4 text-red-500">( {problems})</span

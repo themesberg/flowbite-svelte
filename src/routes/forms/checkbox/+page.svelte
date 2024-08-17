@@ -220,27 +220,27 @@
     >
       {#snippet header()}
         <div class="p-0">
-          <Search size="md" />
+          <Search size="md" class="pl-8"/>
         </div>
       {/snippet}
-      <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox>Robert Gouth</Checkbox>
-      </li>
-      <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox>Jese Leos</Checkbox>
-      </li>
-      <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox checked>Bonnie Green</Checkbox>
-      </li>
-      <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox>Jese Leos</Checkbox>
-      </li>
-      <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox>Robert Gouth</Checkbox>
-      </li>
-      <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox>Bonnie Green</Checkbox>
-      </li>
+        <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+          <Checkbox>Robert Gouth</Checkbox>
+        </li>
+        <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+          <Checkbox>Jese Leos</Checkbox>
+        </li>
+        <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+          <Checkbox checked>Bonnie Green</Checkbox>
+        </li>
+        <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+          <Checkbox>Jese Leos</Checkbox>
+        </li>
+        <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+          <Checkbox>Robert Gouth</Checkbox>
+        </li>
+        <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+          <Checkbox>Bonnie Green</Checkbox>
+        </li>
       {#snippet footer()}
         <a
           href="/"

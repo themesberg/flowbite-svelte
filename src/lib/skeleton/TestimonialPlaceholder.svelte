@@ -4,11 +4,11 @@
     type TestimonialPlaceholderProps as Props
   } from './index';
 
-  let { class: className, ...attributes }: Props = $props();
+  let { class: className, ...restProps }: Props = $props();
   const { wrapper, line1, line2, svg, subContent } = testimonialPlaceholder();
 </script>
 
-<div role="status" class={wrapper({ className })} {...attributes}>
+<div role="status" class={wrapper({ className })} {...restProps}>
   <div class={line2({ class: 'mx-auto mb-2.5 h-2.5 max-w-[640px]' })}></div>
   <div class={line2({ class: 'mx-auto h-2.5 max-w-[540px]' })}></div>
   <div class={subContent()}>
@@ -36,5 +36,5 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

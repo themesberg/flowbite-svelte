@@ -7,12 +7,12 @@
     div2Class,
     div3Class,
     div4Class,
-    ...attributes
+    ...restProps
   }: Props = $props();
   const { div, inner, bot, botCen } = laptop();
 </script>
 
-<div {...attributes}>
+<div {...restProps}>
   <div class={div({ class: divClass })}>
     <div class={inner({ class: div2Class })}>
       {#if children}
@@ -35,5 +35,5 @@
 @prop div2Class
 @prop div3Class
 @prop div4Class
-@prop ...attributes
+@prop ...restProps
 -->

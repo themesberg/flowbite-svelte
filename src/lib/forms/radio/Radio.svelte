@@ -54,7 +54,7 @@
     group = $bindable(),
     value,
     inputClass,
-    ...attributes
+    ...restProps
   }: Props = $props();
   const { input, label } = $derived(
     radio({ color, tinted: !!getContext('background') })
@@ -67,7 +67,7 @@
     bind:group
     {value}
     aria-describedby={aria_describedby}
-    {...attributes}
+    {...restProps}
     class={input({ class: inputClass })}
   />
   {@render children()}
@@ -84,5 +84,5 @@
 @prop group = $bindable()
 @prop value
 @prop inputClass
-@prop ...attributes
+@prop ...restProps
 -->

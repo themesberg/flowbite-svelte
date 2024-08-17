@@ -17,7 +17,7 @@
     classLabel,
     indeterminate,
     class: className,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const { base, label } = $derived(
@@ -34,7 +34,7 @@
         type="checkbox"
         {value}
         bind:group
-        {...attributes}
+        {...restProps}
         class={base({ class: className })}
       />
       {#if children}
@@ -49,7 +49,7 @@
       bind:checked
       aria-describedby={aria_describedby}
       {indeterminate}
-      {...attributes}
+      {...restProps}
       class={base({ class: className })}
     />
     {#if children}
@@ -76,5 +76,5 @@
 @prop classLabel
 @prop indeterminate
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

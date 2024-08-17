@@ -9,11 +9,11 @@
     srclang = 'en',
     label = 'english_captions',
     class: classname,
-    ...attributes
+    ...restProps
   }: Props = $props();
 </script>
 
-<video {...attributes} class={classname}>
+<video {...restProps} class={classname}>
   <source {src} {type} />
   {#if children}
     {@render children()}
@@ -33,5 +33,5 @@
 @prop srclang = 'en'
 @prop label = 'english_captions'
 @prop class: classname
-@prop ...attributes
+@prop ...restProps
 -->

@@ -20,7 +20,7 @@
     hoverClass = 'hover:bg-gray-100 hover:text-primary-700 dark:hover:bg-gray-600 dark:hover:text-white',
     liClass = 'py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg',
     class: className,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   active = getContext('active');
@@ -59,7 +59,7 @@
     {@render children()}
   </li>
 {:else if href}
-  <a {...attributes} {onclick} {href} class={linkClass} aria-current={current}>
+  <a {...restProps} {onclick} {href} class={linkClass} aria-current={current}>
     {name}
   </a>
 {:else}
@@ -90,5 +90,5 @@
 @prop hoverClass = 'hover:bg-gray-100 hover:text-primary-700 dark:hover:bg-gray-600 dark:hover:text-white'
 @prop liClass = 'py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg'
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

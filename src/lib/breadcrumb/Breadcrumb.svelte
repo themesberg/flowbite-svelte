@@ -8,14 +8,14 @@
     solidClass,
     olClass,
     ariaLabel = 'Breadcrumb',
-    ...attributes
+    ...restProps
   }: Props = $props();
   const { base, list } = breadcrumb({ solid });
   let classNav = $derived(base({ class: navClass }));
   let classList = $derived(list({ class: olClass }));
 </script>
 
-<nav aria-label={ariaLabel} {...attributes} class={classNav}>
+<nav aria-label={ariaLabel} {...restProps} class={classNav}>
   <ol class={classList}>
     {@render children()}
   </ol>
@@ -31,5 +31,5 @@
 @prop solidClass
 @prop olClass
 @prop ariaLabel = 'Breadcrumb'
-@prop ...attributes
+@prop ...restProps
 -->

@@ -76,7 +76,7 @@
 <CodeWrapper class="flex h-96 items-start justify-center">
   <Button onclick={dropdownA.toggle}
     >Dropdown
-    <ChevronDownOutline class="ms-2 h-3 w-3 text-white dark:text-white" />
+    <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
   </Button>
   <div class="relative">
     <Dropdown
@@ -102,7 +102,7 @@
 <CodeWrapper class="flex h-96 items-start justify-center">
   <Button onclick={dropdownB.toggle}
     >Dropdown
-    <ChevronDownOutline class="ms-2 h-3 w-3 text-white dark:text-white" />
+    <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
   </Button>
   <div class="relative">
     <Dropdown
@@ -126,7 +126,7 @@
 <CodeWrapper class="flex h-96 items-start justify-center">
   <Button onclick={dropdownC.toggle}
     >Dropdown
-    <ChevronDownOutline class="ms-2 h-3 w-3 text-white dark:text-white" />
+    <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
   </Button>
   <div class="relative">
     <Dropdown
@@ -165,7 +165,7 @@
 <CodeWrapper class="flex h-96 items-start justify-center">
   <Button onclick={dropdownTransition1.toggle}
     >Dropdown
-    <ChevronDownOutline class="ms-2 h-3 w-3 text-white dark:text-white" />
+    <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
   </Button>
   <div class="relative">
     <Dropdown
@@ -188,7 +188,7 @@
 <CodeWrapper class="flex h-96 items-start justify-center">
   <Button onclick={dropdownTransition2.toggle}
     >Dropdown
-    <ChevronDownOutline class="ms-2 h-3 w-3 text-white dark:text-white" />
+    <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
   </Button>
   <div class="relative">
     <Dropdown

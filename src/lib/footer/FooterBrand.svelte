@@ -10,14 +10,14 @@
     src,
     alt,
     name,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const { base, span, img } = $derived(footerBrand());
 </script>
 
 {#if href}
-  <a {...attributes} {href} class={base({ class: aClass })}>
+  <a {...restProps} {href} class={base({ class: aClass })}>
     {#if src}
       <img {src} class={img({ class: imgClass })} {alt} />
     {/if}
@@ -44,5 +44,5 @@
 @prop src
 @prop alt
 @prop name
-@prop ...attributes
+@prop ...restProps
 -->

@@ -5,13 +5,13 @@
     children,
     footerType = 'default',
     class: className,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const footerCls = $derived(footer({ footerType, className }));
 </script>
 
-<footer {...attributes} class={footerCls}>
+<footer {...restProps} class={footerCls}>
   {@render children()}
 </footer>
 
@@ -22,5 +22,5 @@
 @prop children
 @prop footerType = 'default'
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

@@ -10,13 +10,13 @@
     div5Class,
     div6Class,
     div7Class,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const { div, slot, top, leftTop, leftMid, leftBot, right } = android();
 </script>
 
-<div class={div({ class: divClass })} {...attributes}>
+<div class={div({ class: divClass })} {...restProps}>
   <div class={top({ class: div2Class })}></div>
   <div class={leftTop({ class: div3Class })}></div>
   <div class={leftMid({ class: div4Class })}></div>
@@ -41,5 +41,5 @@
 @prop div5Class
 @prop div6Class
 @prop div7Class
-@prop ...attributes
+@prop ...restProps
 -->

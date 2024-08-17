@@ -13,7 +13,7 @@
     size = 'base',
     space,
     weight = 'normal',
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   let classP = $derived(
@@ -32,7 +32,7 @@
   );
 </script>
 
-<p {...attributes} class={classP}>
+<p {...restProps} class={classP}>
   {@render children()}
 </p>
 
@@ -51,5 +51,5 @@
 @prop size = 'base'
 @prop space
 @prop weight = 'normal'
-@prop ...attributes
+@prop ...restProps
 -->

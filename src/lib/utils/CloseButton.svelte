@@ -9,7 +9,7 @@
     size = 'md',
     href,
     class: className,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const { base, svg } = $derived(closeButtonVariants({ color, size }));
@@ -18,7 +18,7 @@
 {#if href}
   <a
     {href}
-    {...attributes}
+    {...restProps}
     {onclick}
     class={base({ class: className })}
     aria-label={ariaLabel ?? name}
@@ -40,7 +40,7 @@
 {:else}
   <button
     type="button"
-    {...attributes}
+    {...restProps}
     class={base({ class: className })}
     {onclick}
     aria-label={ariaLabel ?? name}
@@ -72,5 +72,5 @@
 @prop size = 'md'
 @prop href
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

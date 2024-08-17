@@ -35,7 +35,7 @@
     transitionParams,
     svgClass,
     class: className,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   let btnCls = twMerge(
@@ -81,7 +81,7 @@
 
 <li class={className}>
   <button
-    {...attributes}
+    {...restProps}
     onclick={() => handleDropdown()}
     type="button"
     class={btnCls}
@@ -155,5 +155,5 @@
 @prop transitionParams
 @prop svgClass
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

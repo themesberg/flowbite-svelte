@@ -6,14 +6,14 @@
     children,
     order = 'default',
     class: className,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   setContext('order', order);
   const olCls = $derived(timeline({ order, className }));
 </script>
 
-<ol class={olCls} {...attributes}>
+<ol class={olCls} {...restProps}>
   {@render children()}
 </ol>
 
@@ -24,5 +24,5 @@
 @prop children
 @prop order = 'default'
 @prop class: className
-@prop ...attributes
+@prop ...restProps
 -->

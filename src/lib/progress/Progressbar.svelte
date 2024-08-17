@@ -19,7 +19,7 @@
     oustsideProgressClass,
     labeloutsidedivClass,
     divClass,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const _progress = tweened(0, {
@@ -46,7 +46,7 @@
 </script>
 
 {#if labelOutside}
-  <div {...attributes} class={outsideDiv({ class: labeloutsidedivClass })}>
+  <div {...restProps} class={outsideDiv({ class: labeloutsidedivClass })}>
     <span class={oustsideSpan({ class: oustsideSpanClass })}
       >{labelOutside}</span
     >
@@ -55,7 +55,7 @@
     >
   </div>
 {/if}
-<div class={twMerge(base({ class: divClass }), size)} {...attributes}>
+<div class={twMerge(base({ class: divClass }), size)} {...restProps}>
   {#if labelInside}
     <div
       class={twMerge(labelInsideDiv({ class: div2Class }), size)}
@@ -89,5 +89,5 @@
 @prop oustsideProgressClass
 @prop labeloutsidedivClass
 @prop divClass
-@prop ...attributes
+@prop ...restProps
 -->

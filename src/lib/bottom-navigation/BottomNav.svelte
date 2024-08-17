@@ -15,7 +15,7 @@
     outerClass,
     innerClass,
     activeClass,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const activeCls = twMerge(
@@ -32,7 +32,7 @@
   const innerCls = $derived(inner({ class: innerClass }));
 </script>
 
-<div {...attributes} class={outerCls}>
+<div {...restProps} class={outerCls}>
   {#if header}
     {@render header()}
   {/if}
@@ -53,5 +53,5 @@
 @prop outerClass
 @prop innerClass
 @prop activeClass
-@prop ...attributes
+@prop ...restProps
 -->

@@ -12,7 +12,7 @@
     divClass,
     timeClass,
     h3Class,
-    ...attributes
+    ...restProps
   }: Props = $props();
   let order: 'default' | 'vertical' | 'horizontal' | 'activity' | 'group' =
     getContext('order');
@@ -20,7 +20,7 @@
   const { li, div, time, h3, svg } = $derived(timelineitem({ order }));
 </script>
 
-<li class={li({ class: liClass })} {...attributes}>
+<li class={li({ class: liClass })} {...restProps}>
   <div class={div({ class: divClass })}></div>
   {#if order !== 'default'}
     {#if orientationSlot && (order === 'vertical' || order === 'horizontal')}
@@ -72,5 +72,5 @@
 @prop divClass
 @prop timeClass
 @prop h3Class
-@prop ...attributes
+@prop ...restProps
 -->

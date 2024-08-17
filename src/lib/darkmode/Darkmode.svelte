@@ -9,7 +9,7 @@
     darkIcon,
     size = 'md',
     ariaLabel = 'Dark mode',
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const btnCls = darkmode({ class: className });
@@ -46,7 +46,7 @@
   onclick={toggleTheme}
   aria-label={ariaLabel}
   type="button"
-  {...attributes}
+  {...restProps}
   class={btnCls}
 >
   <span class="hidden dark:block">
@@ -99,5 +99,5 @@
 @prop darkIcon
 @prop size = 'md'
 @prop ariaLabel = 'Dark mode'
-@prop ...attributes
+@prop ...restProps
 -->

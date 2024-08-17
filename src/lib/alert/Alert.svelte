@@ -16,7 +16,7 @@
     transition = fade,
     params,
     onclick,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   let divCls = $derived(
@@ -35,7 +35,7 @@
 {#if alertStatus}
   <div
     role="alert"
-    {...attributes}
+    {...restProps}
     transition:transition={params}
     class={divCls}
   >
@@ -103,5 +103,5 @@
 @prop transition = fade
 @prop params
 @prop onclick
-@prop ...attributes
+@prop ...restProps
 -->

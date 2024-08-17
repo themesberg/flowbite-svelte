@@ -12,7 +12,7 @@
     size = 'sm',
     class: className,
     onclick,
-    ...attributes
+    ...restProps
   }: Props = $props();
 
   const { base, image, content } = $derived(
@@ -33,7 +33,7 @@
   class={base({ className })}
   role={href ? 'link' : 'presentation'}
   {onclick}
-  {...attributes}
+  {...restProps}
 >
   {#if img}
     <img class={image()} src={img.src} alt={img.alt} />
@@ -61,5 +61,5 @@
 @prop size = 'sm'
 @prop class: className
 @prop onclick
-@prop ...attributes
+@prop ...restProps
 -->
