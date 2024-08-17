@@ -111,7 +111,7 @@
 @prop aria_describedby
 @prop style = 'standard'
 @prop size = 'default'
-@prop color = 'gray'
+@prop color = 'default'
 @prop divClass
 @prop inputClass
 @prop labelClass

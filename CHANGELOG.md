@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.8.9
+
+### Patch Changes
+
+- fix: Helper update ([`4bcf3008f82148d8ba0595f8538c85e3589f56ed`](https://github.com/shinokada/svelte-5-ui-lib/commit/4bcf3008f82148d8ba0595f8538c85e3589f56ed))
+
 ## 0.8.8
 
 ### Patch Changes
