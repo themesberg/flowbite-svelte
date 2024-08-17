@@ -24,32 +24,38 @@
     checkbox({ color, tinted, custom, rounded, inline })
   );
 </script>
+
 {#if choices.length > 0}
-  {#each choices as {value, checkboxLabel}, i}
+  {#each choices as { value, checkboxLabel }, i}
     <Label class={label({ class: classLabel })} for={`checkbox-${i}`}>
-      { checkboxLabel }
-      <input id={`checkbox-${i}`} type="checkbox" value={ value } bind:group {...attributes} 
-      class={base({ class: className })}
+      {checkboxLabel}
+      <input
+        id={`checkbox-${i}`}
+        type="checkbox"
+        {value}
+        bind:group
+        {...attributes}
+        class={base({ class: className })}
       />
       {#if children}
-      {@render children()}
+        {@render children()}
       {/if}
     </Label>
   {/each}
 {:else}
-<Label class={label({ class: classLabel })}>
-  <input
-    type="checkbox"
-    bind:checked
-    aria-describedby={aria_describedby}
-    {indeterminate}
-    {...attributes}
-    class={base({ class: className })}
-  />
-  {#if children}
-    {@render children()}
-  {/if}
-</Label>
+  <Label class={label({ class: classLabel })}>
+    <input
+      type="checkbox"
+      bind:checked
+      aria-describedby={aria_describedby}
+      {indeterminate}
+      {...attributes}
+      class={base({ class: className })}
+    />
+    {#if children}
+      {@render children()}
+    {/if}
+  </Label>
 {/if}
 
 <!--
@@ -63,7 +69,8 @@
 @prop inline
 @prop tinted
 @prop rounded
-@prop group = []
+@prop group = $bindable([])
+@prop choices = []
 @prop checked = $bindable(false)
 @prop spacing
 @prop classLabel

@@ -62,7 +62,7 @@ export interface drawerTransitionParamTypes {
   y?: number;
 }
 
-export type FormSizeType =  'sm' | 'md' | 'lg';
+export type FormSizeType = 'sm' | 'md' | 'lg';
 
 export type drawerTransitionTypes =
   | 'fade'

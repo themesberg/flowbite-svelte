@@ -11,7 +11,8 @@
   });
 
   import {
-    Input, Radio,
+    Input,
+    Radio,
     Label,
     Helper,
     Button,
@@ -52,7 +53,7 @@
   });
 
   const sizes = ['sm', 'md', 'lg'];
-  let inputSize: Input['size'] = $state('md')
+  let inputSize: Input['size'] = $state('md');
   const sizeDisplay: Record<Input['size'], string> = {
     sm: 'Small',
     md: 'Default',
@@ -145,9 +146,9 @@
 >
 
 <CodeWrapper class="space-y-6">
-  <Label class="space-y-2 h-20">
+  <Label class="h-20 space-y-2">
     <span>{sizeDisplay[inputSize]} icon input</span>
-  <Input type="email" placeholder="Default input" size={inputSize} />
+    <Input type="email" placeholder="Default input" size={inputSize} />
   </Label>
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>

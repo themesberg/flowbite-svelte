@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.8.6
+
+### Patch Changes
+
+- fix: Input component ([`0443fbd838714b5a9830e7bb5e64064df33cbb02`](https://github.com/shinokada/svelte-5-ui-lib/commit/0443fbd838714b5a9830e7bb5e64064df33cbb02))
+
 ## 0.8.5
 
 ### Patch Changes

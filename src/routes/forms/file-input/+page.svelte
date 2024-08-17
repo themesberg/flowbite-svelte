@@ -1,5 +1,13 @@
 <script lang="ts">
-  import { Select, Label, Fileupload, Helper, Radio, Listgroup, ListgroupItem } from '$lib';
+  import {
+    Select,
+    Label,
+    Fileupload,
+    Helper,
+    Radio,
+    Listgroup,
+    ListgroupItem
+  } from '$lib';
   import { type ListGroupItemType } from '$lib/types';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -19,10 +27,9 @@
 
 <H1>File input</H1>
 
-
 <H2>File upload example</H2>
 <CodeWrapper>
-  <Label class="space-y-2 mb-2">
+  <Label class="mb-2 space-y-2">
     <span>Upload file</span>
     <Fileupload bind:files />
   </Label>
@@ -39,13 +46,13 @@
 <H2>Multiple files</H2>
 <CodeWrapper>
   <Label class="pb-2" for="multiple_files">Upload multiple files</Label>
-  <Fileupload id="multiple_files" multiple bind:files={files} /> 
+  <Fileupload id="multiple_files" multiple bind:files />
 </CodeWrapper>
 
 <H2>Size</H2>
 <CodeWrapper>
   <div class="h-16">
-  <Fileupload id="small_size" size={size} />
+    <Fileupload id="small_size" {size} />
   </div>
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
@@ -58,4 +65,4 @@
       >
     {/each}
   </div>
- </CodeWrapper>
+</CodeWrapper>

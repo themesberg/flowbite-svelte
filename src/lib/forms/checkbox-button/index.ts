@@ -1,6 +1,3 @@
-import CheckboxButton from "./CheckboxButton.svelte";
-
+import CheckboxButton from './CheckboxButton.svelte';
 
 export { CheckboxButton };
-
-

@@ -7,8 +7,8 @@ import { type VariantProps } from 'tailwind-variants';
 
 type CheckboxItem = {
   value: string;
-  checkboxLabel?: string; 
-  isChecked?: boolean; 
+  checkboxLabel?: string;
+  isChecked?: boolean;
 };
 
 type ColorType = VariantProps<typeof checkbox>['color'];
@@ -29,4 +29,10 @@ interface CheckboxProps extends HTMLInputAttributes {
   class?: string | undefined | null;
 }
 
-export { Checkbox, checkbox, type CheckboxProps, type CheckboxItem, type ColorType };
+export {
+  Checkbox,
+  checkbox,
+  type CheckboxProps,
+  type CheckboxItem,
+  type ColorType
+};

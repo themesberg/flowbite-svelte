@@ -8,7 +8,7 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
-  import { type InputProps as Props, input} from '.'
+  import { type InputProps as Props, input } from '.';
 
   let {
     children,
@@ -64,7 +64,13 @@
   let _size = $derived(size || clampSize(group?.size) || 'md');
   const _color = $derived(color === 'base' && background ? 'tinted' : color);
 
-  const { input:inputCls, left: leftCls, right: rightCls } = $derived(input({ size:_size, color:_color, group:isGroup, class: className }));
+  const {
+    input: inputCls,
+    left: leftCls,
+    right: rightCls
+  } = $derived(
+    input({ size: _size, color: _color, group: isGroup, class: className })
+  );
   // let inputClass = $derived(
   //   twMerge(
   //     defaultClass,
@@ -84,9 +90,7 @@
 
 {#snippet inputContent()}
   {#if left}
-    <div
-      class={leftCls({ class: classLeft})}
-    >
+    <div class={leftCls({ class: classLeft })}>
       {@render left()}
     </div>
   {/if}

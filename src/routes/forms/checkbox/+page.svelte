@@ -1,6 +1,8 @@
 <script lang="ts">
   import {
-    Checkbox, CheckboxButton, ButtonGroup,
+    Checkbox,
+    CheckboxButton,
+    ButtonGroup,
     checkbox,
     Helper,
     Label,
@@ -10,9 +12,22 @@
     TableBody,
     TableBodyCell,
     TableBodyRow,
-    Radio, Button, Dropdown, DropdownItem, Search, uiHelpers, type CheckboxItem
+    Radio,
+    Button,
+    Dropdown,
+    DropdownItem,
+    Search,
+    uiHelpers,
+    type CheckboxItem
   } from '$lib';
-  import { ChevronDownOutline, UserRemoveSolid, AppleSolid, FacebookSolid, DiscordSolid, DropboxSolid } from 'flowbite-svelte-icons';
+  import {
+    ChevronDownOutline,
+    UserRemoveSolid,
+    AppleSolid,
+    FacebookSolid,
+    DiscordSolid,
+    DropboxSolid
+  } from 'flowbite-svelte-icons';
   import React from '../../utils/icons/React.svelte';
   import Vue from '../../utils/icons/Vue.svelte';
   import Angular from '../../utils/icons/Angular.svelte';
@@ -47,10 +62,10 @@
     dropdownStatus = dropdown.isOpen;
   });
   let choices: CheckboxItem[] = [
-    { value: '1', checkboxLabel: 'One'},
-    { value: '2', checkboxLabel: 'Two'},
+    { value: '1', checkboxLabel: 'One' },
+    { value: '2', checkboxLabel: 'Two' },
     { value: '3', checkboxLabel: 'Three' }
-  ]
+  ];
   let group = $state(['2', '3']);
 </script>
 
@@ -190,43 +205,53 @@
 <HighlightCompo code={modules['./md/horizontal-list-group.md'] as string} />
 
 <H2>Checkbox dropdown</H2>
-<CodeWrapper class="relative flex justify-center items-start h-96">
-
-  <Button onclick={dropdown.toggle}>Project users<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
+<CodeWrapper class="relative flex h-96 items-start justify-center">
+  <Button onclick={dropdown.toggle}
+    >Project users<ChevronDownOutline
+      class="ms-2 h-6 w-6 text-white dark:text-white"
+    /></Button
+  >
   <div class="relative">
-  <Dropdown dropdownStatus={dropdownStatus} closeDropdown={closeDropdown} transitionParams={transitionParams}  divClass="overflow-y-auto p-0 pb-3 text-sm w-64 h-64 absolute top-[50px] -left-[210px]">
-    {#snippet header()}
-    <div class="p-0">
-      <Search size="md" />
-    </div>
-{/snippet}
-    <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox>Robert Gouth</Checkbox>
-    </li>
-    <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox>Jese Leos</Checkbox>
-    </li>
-    <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox checked>Bonnie Green</Checkbox>
-    </li>
-    <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox>Jese Leos</Checkbox>
-    </li>
-    <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox>Robert Gouth</Checkbox>
-    </li>
-    <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox>Bonnie Green</Checkbox>
-    </li>
-    {#snippet footer()}
-    <a href="/" class="flex items-center p-3 -mb-1 text-sm font-medium text-red-600 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
-      <UserRemoveSolid class="w-5 h-5 me-1" />Delete user
-    </a>
-    {/snippet}
-  </Dropdown>
-</div>
+    <Dropdown
+      {dropdownStatus}
+      {closeDropdown}
+      {transitionParams}
+      divClass="overflow-y-auto p-0 pb-3 text-sm w-64 h-64 absolute top-[50px] -left-[210px]"
+    >
+      {#snippet header()}
+        <div class="p-0">
+          <Search size="md" />
+        </div>
+      {/snippet}
+      <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox>Robert Gouth</Checkbox>
+      </li>
+      <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox>Jese Leos</Checkbox>
+      </li>
+      <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox checked>Bonnie Green</Checkbox>
+      </li>
+      <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox>Jese Leos</Checkbox>
+      </li>
+      <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox>Robert Gouth</Checkbox>
+      </li>
+      <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox>Bonnie Green</Checkbox>
+      </li>
+      {#snippet footer()}
+        <a
+          href="/"
+          class="-mb-1 flex items-center bg-gray-50 p-3 text-sm font-medium text-red-600 hover:bg-gray-100 hover:underline dark:bg-gray-700 dark:text-red-500 dark:hover:bg-gray-600"
+        >
+          <UserRemoveSolid class="me-1 h-5 w-5" />Delete user
+        </a>
+      {/snippet}
+    </Dropdown>
+  </div>
 </CodeWrapper>
-
 
 <H2>Inline layout</H2>
 <CodeWrapper>
@@ -242,53 +267,79 @@
 <H2>CheckboxButton</H2>
 <CodeWrapper class="space-y-4">
   <div>
-    <CheckboxButton><AppleSolid class="w-6 h-6 me-2"/>Apple</CheckboxButton>
-    <CheckboxButton><FacebookSolid class="w-6 h-6 me-2"/>Facebook</CheckboxButton>
-    <CheckboxButton><DiscordSolid class="w-6 h-6 me-2"/>Discord</CheckboxButton>
-    <CheckboxButton><DropboxSolid class="w-6 h-6 me-2"/>Dropbox</CheckboxButton>
+    <CheckboxButton><AppleSolid class="me-2 h-6 w-6" />Apple</CheckboxButton>
+    <CheckboxButton
+      ><FacebookSolid class="me-2 h-6 w-6" />Facebook</CheckboxButton
+    >
+    <CheckboxButton><DiscordSolid class="me-2 h-6 w-6" />Discord</CheckboxButton
+    >
+    <CheckboxButton><DropboxSolid class="me-2 h-6 w-6" />Dropbox</CheckboxButton
+    >
   </div>
 
   <ButtonGroup>
-    <CheckboxButton><AppleSolid class="w-6 h-6 me-2"/>Apple</CheckboxButton>
-    <CheckboxButton><FacebookSolid class="w-6 h-6 me-2"/>Facebook</CheckboxButton>
-    <CheckboxButton><DiscordSolid class="w-6 h-6 me-2"/>Discord</CheckboxButton>
-    <CheckboxButton><DropboxSolid class="w-6 h-6 me-2"/>Dropbox</CheckboxButton>
+    <CheckboxButton><AppleSolid class="me-2 h-6 w-6" />Apple</CheckboxButton>
+    <CheckboxButton
+      ><FacebookSolid class="me-2 h-6 w-6" />Facebook</CheckboxButton
+    >
+    <CheckboxButton><DiscordSolid class="me-2 h-6 w-6" />Discord</CheckboxButton
+    >
+    <CheckboxButton><DropboxSolid class="me-2 h-6 w-6" />Dropbox</CheckboxButton
+    >
   </ButtonGroup>
 </CodeWrapper>
 
 <H2>Advanced layout</H2>
 <CodeWrapper>
-<p class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Choose technology:</p>
-<div class="grid gap-6 w-full md:grid-cols-3">
-  <Checkbox custom>
-    <div class="font-normal p-5 w-full text-gray-500 bg-white rounded-lg border-2 border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-primary-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
-      <React />
-      <div class="w-full text-lg font-semibold">React Js</div>
-      <div class="w-full text-sm">A JavaScript library for building user interfaces.</div>
-    </div>
-  </Checkbox>
-  <Checkbox custom>
-    <div class="font-normal p-5 w-full text-gray-500 bg-white rounded-lg border-2 border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-primary-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
-      <Vue />
-      <div class="w-full text-lg font-semibold">Vue Js</div>
-      <div class="w-full text-sm">Vue.js is an model–view front end JavaScript framework.</div>
-    </div>
-  </Checkbox>
-  <Checkbox custom>
-    <div class="font-normal p-5 w-full text-gray-500 bg-white rounded-lg border-2 border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-primary-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
-      <Angular />
-      <div class="w-full text-lg font-semibold">Angular</div>
-      <div class="w-full text-sm">A TypeScript-based web application framework.</div>
-    </div>
-  </Checkbox>
-</div>
+  <p class="mb-5 text-lg font-medium text-gray-900 dark:text-white">
+    Choose technology:
+  </p>
+  <div class="grid w-full gap-6 md:grid-cols-3">
+    <Checkbox custom>
+      <div
+        class="w-full cursor-pointer rounded-lg border-2 border-gray-200 bg-white p-5 font-normal text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-primary-600 peer-checked:text-gray-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:peer-checked:text-gray-300"
+      >
+        <React />
+        <div class="w-full text-lg font-semibold">React Js</div>
+        <div class="w-full text-sm">
+          A JavaScript library for building user interfaces.
+        </div>
+      </div>
+    </Checkbox>
+    <Checkbox custom>
+      <div
+        class="w-full cursor-pointer rounded-lg border-2 border-gray-200 bg-white p-5 font-normal text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-primary-600 peer-checked:text-gray-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:peer-checked:text-gray-300"
+      >
+        <Vue />
+        <div class="w-full text-lg font-semibold">Vue Js</div>
+        <div class="w-full text-sm">
+          Vue.js is an model–view front end JavaScript framework.
+        </div>
+      </div>
+    </Checkbox>
+    <Checkbox custom>
+      <div
+        class="w-full cursor-pointer rounded-lg border-2 border-gray-200 bg-white p-5 font-normal text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-primary-600 peer-checked:text-gray-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:peer-checked:text-gray-300"
+      >
+        <Angular />
+        <div class="w-full text-lg font-semibold">Angular</div>
+        <div class="w-full text-sm">
+          A TypeScript-based web application framework.
+        </div>
+      </div>
+    </Checkbox>
+  </div>
 </CodeWrapper>
 
 <H2>Group variable</H2>
 <CodeWrapper>
-<div class="flex gap-2">
-  <Checkbox name="flavours" {choices} bind:group />
-</div>
-<div class="my-2 border border-gray-200 dark:border-gray-700 rounded-lg p-2 w-44 dark:text-gray-400">Group: {group}</div>
-<Button onclick={() => (group.length = 0)}>Clear</Button>
+  <div class="flex gap-2">
+    <Checkbox name="flavours" {choices} bind:group />
+  </div>
+  <div
+    class="my-2 w-44 rounded-lg border border-gray-200 p-2 dark:border-gray-700 dark:text-gray-400"
+  >
+    Group: {group}
+  </div>
+  <Button onclick={() => (group.length = 0)}>Clear</Button>
 </CodeWrapper>
