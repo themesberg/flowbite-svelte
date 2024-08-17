@@ -24,10 +24,11 @@
     InputAddon,
     ButtonGroup,
     Dropdown,
-    DropdownItem,
+    DropdownUl,
+    DropdownLi,
     uiHelpers
   } from '$lib';
-  // import { Dropdown, DropdownItem } from '$lib'
+  
   import {
     EyeOutline,
     EyeSlashOutline,
@@ -416,9 +417,11 @@
     </Button>
   </ButtonGroup>
   <Dropdown {dropdownStatus} {closeDropdown} {transitionParams}>
-    <DropdownItem>Shopping</DropdownItem>
-    <DropdownItem>Images</DropdownItem>
-    <DropdownItem>News</DropdownItem>
-    <DropdownItem>Finance</DropdownItem>
+    <DropdownUl>
+      <DropdownLi>Shopping</DropdownLi>
+      <DropdownLi>Images</DropdownLi>
+      <DropdownLi>News</DropdownLi>
+      <DropdownLi>Finance</DropdownLi>
+    </DropdownUl>
   </Dropdown>
 </CodeWrapper>

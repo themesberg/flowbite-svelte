@@ -1,6 +1,5 @@
 import Dropdown from './Dropdown.svelte';
 import DropdownDivider from './DropdownDivider.svelte';
-import DropdownItem from './DropdownItem.svelte';
 import DropdownUl from './DropdownUl.svelte';
 import DropdownLi from './DropdownLi.svelte';
 import { dropdown, dropdowndivider, dropdownli, dropdownul } from './theme';
@@ -52,7 +51,6 @@ interface DropdownUlProps extends HTMLAttributes<HTMLUListElement> {
 export {
   Dropdown,
   DropdownDivider,
-  DropdownItem,
   DropdownUl,
   DropdownLi,
   dropdown,
@@ -60,7 +58,6 @@ export {
   dropdownli, dropdownul,
   type DropdownProps,
   type DropdownDividerProps,
-  type DropdownItemProps,
   type DropdownLiProps,
   type DropdownUlProps
 };

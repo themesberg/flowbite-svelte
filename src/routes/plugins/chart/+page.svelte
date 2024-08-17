@@ -6,7 +6,8 @@
     A,
     Button,
     Dropdown,
-    DropdownItem,
+    DropdownLi,
+    DropdownUl,
     uiHelpers
   } from '$lib';
   import {
@@ -354,11 +355,13 @@
             dropdownStatus={isOpen}
           >
             {#snippet children()}
-              <DropdownItem href="/">Yesterday</DropdownItem>
-              <DropdownItem href="/">Today</DropdownItem>
-              <DropdownItem href="/">Last 7 days</DropdownItem>
-              <DropdownItem href="/">Last 30 days</DropdownItem>
-              <DropdownItem href="/">Last 90 days</DropdownItem>
+            <DropdownUl>
+              <DropdownLi href="/">Yesterday</DropdownLi>
+              <DropdownLi href="/">Today</DropdownLi>
+              <DropdownLi href="/">Last 7 days</DropdownLi>
+              <DropdownLi href="/">Last 30 days</DropdownLi>
+              <DropdownLi href="/">Last 90 days</DropdownLi>
+            </DropdownUl>
             {/snippet}
           </Dropdown>
         </div>
@@ -441,11 +444,11 @@
             dropdownStatus={isOpen2}
           >
             {#snippet children()}
-              <DropdownItem href="/">Yesterday</DropdownItem>
-              <DropdownItem href="/">Today</DropdownItem>
-              <DropdownItem href="/">Last 7 days</DropdownItem>
-              <DropdownItem href="/">Last 30 days</DropdownItem>
-              <DropdownItem href="/">Last 90 days</DropdownItem>
+              <DropdownLi href="/">Yesterday</DropdownLi>
+              <DropdownLi href="/">Today</DropdownLi>
+              <DropdownLi href="/">Last 7 days</DropdownLi>
+              <DropdownLi href="/">Last 30 days</DropdownLi>
+              <DropdownLi href="/">Last 90 days</DropdownLi>
             {/snippet}
           </Dropdown>
         </div>
@@ -527,11 +530,11 @@
             dropdownStatus={isOpen3}
           >
             {#snippet children()}
-              <DropdownItem href="/">Yesterday</DropdownItem>
-              <DropdownItem href="/">Today</DropdownItem>
-              <DropdownItem href="/">Last 7 days</DropdownItem>
-              <DropdownItem href="/">Last 30 days</DropdownItem>
-              <DropdownItem href="/">Last 90 days</DropdownItem>
+              <DropdownLi href="/">Yesterday</DropdownLi>
+              <DropdownLi href="/">Today</DropdownLi>
+              <DropdownLi href="/">Last 7 days</DropdownLi>
+              <DropdownLi href="/">Last 30 days</DropdownLi>
+              <DropdownLi href="/">Last 90 days</DropdownLi>
             {/snippet}
           </Dropdown>
         </div>

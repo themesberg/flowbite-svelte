@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import { type DropdownItemProps as Props, dropdownli } from './';
+  import { type DropdownLiProps as Props, dropdownli } from './';
 
   let { aClass, children, href, activeClass, liClass, ...restProps }: Props =
     $props();

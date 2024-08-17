@@ -6,7 +6,7 @@
     RadioButton,
     ButtonGroup,
     Label,
-    P, Dropdown, Button, uiHelpers
+    P, Dropdown, DropdownUl, Button, uiHelpers
   } from '$lib';
   // let { group = $bindable() ,technology = $bindable('svelte'), radioGroup = $bindable('notes') } = $props();
   // let colors = 'text-purple-500';
@@ -207,18 +207,20 @@
       {transitionParams}
       divClass="overflow-y-auto p-0 pb-3 text-sm w-64 h-64 absolute top-[50px] -left-[210px]"
     >
-    <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio name="group3" bind:group={group3} value={1}>Enable notifications</Radio>
-      <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
-    </li>
-    <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio name="group3" bind:group={group3} value={2}>Enable 2FA auth</Radio>
-      <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
-    </li>
-    <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio name="group3" bind:group={group3} value={3}>Subscribe newsletter</Radio>
-      <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
-    </li>
+      <DropdownUl>
+        <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+          <Radio name="group3" bind:group={group3} value={1}>Enable notifications</Radio>
+          <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
+        </li>
+        <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+          <Radio name="group3" bind:group={group3} value={2}>Enable 2FA auth</Radio>
+          <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
+        </li>
+        <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+          <Radio name="group3" bind:group={group3} value={3}>Subscribe newsletter</Radio>
+          <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
+        </li>
+      </DropdownUl>
     </Dropdown>
   </div>
 </CodeWrapper>

@@ -15,7 +15,7 @@
     Radio,
     Button,
     Dropdown,
-    DropdownItem,
+    DropdownUl,
     Search,
     uiHelpers,
     type CheckboxItem
@@ -223,6 +223,7 @@
           <Search size="md" class="pl-8"/>
         </div>
       {/snippet}
+      <DropdownUl>
         <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
           <Checkbox>Robert Gouth</Checkbox>
         </li>
@@ -241,6 +242,7 @@
         <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
           <Checkbox>Bonnie Green</Checkbox>
         </li>
+      </DropdownUl>
       {#snippet footer()}
         <a
           href="/"

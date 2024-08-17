@@ -3,7 +3,8 @@
     Avatar,
     Button,
     Dropdown,
-    DropdownItem,
+    DropdownLi,
+    DropdownUl,
     DropdownDivider,
     uiHelpers,
     type AvatarProps
@@ -208,11 +209,13 @@
         <div class="truncate font-medium">name@flowbite.com</div>
       {/snippet}
       {#snippet children()}
-        <DropdownItem href="/">Dashboard</DropdownItem>
-        <DropdownItem href="/nav">Navbar</DropdownItem>
-        <DropdownItem href="/footer">Footer</DropdownItem>
-        <DropdownDivider />
-        <DropdownItem href="/dropdown">Dropdown</DropdownItem>
+       <DropdownUl>
+         <DropdownLi href="/">Dashboard</DropdownLi>
+         <DropdownLi href="/nav">Navbar</DropdownLi>
+         <DropdownLi href="/footer">Footer</DropdownLi>
+         <DropdownDivider />
+         <DropdownLi href="/dropdown">Dropdown</DropdownLi>
+      </DropdownUl>
       {/snippet}
     </Dropdown>
   </div>

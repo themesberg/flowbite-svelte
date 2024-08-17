@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Select, Label, Helper, Dropdown, DropdownItem, uiHelpers } from '$lib';
+  import { Select, Label, Helper, Dropdown, DropdownUl, DropdownLi, uiHelpers } from '$lib';
   import { ChevronDownOutline } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -114,22 +114,24 @@
       divClass="overflow-y-auto p-0 pb-3 text-sm w-32 absolute top-[50px] -left-[110px]"
       ulClass="space-y-2"
       >
-      <DropdownItem liClass="flex items-center">
-        <Usa />
-        United States
-      </DropdownItem>
-      <DropdownItem liClass="flex items-center">
-        <Germany />
-        Germany
-      </DropdownItem>
-      <DropdownItem liClass="flex items-center">
-        <Italy />
-        Italy
-      </DropdownItem>
-      <DropdownItem liClass="flex items-center">
-        <China />
-        China
-      </DropdownItem>
+      <DropdownUl>
+        <DropdownLi liClass="flex items-center">
+          <Usa />
+          United States
+        </DropdownLi>
+        <DropdownLi liClass="flex items-center">
+          <Germany />
+          Germany
+        </DropdownLi>
+        <DropdownLi liClass="flex items-center">
+          <Italy />
+          Italy
+        </DropdownLi>
+        <DropdownLi liClass="flex items-center">
+          <China />
+          China
+        </DropdownLi>
+      </DropdownUl>
     </Dropdown>
   </div>
     <Select items={states} placeholder="Choose the state" selectClass="!rounded-s-none" />
