@@ -1,15 +1,13 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
-  import type { HTMLLabelAttributes } from 'svelte/elements';
-
-  interface Props extends HTMLLabelAttributes {
-    children: Snippet;
-    color?: 'gray' | 'green' | 'red' | 'disabled';
-    show?: boolean;
-    class?: string | undefined;
-    for?: string | undefined | null;
-  }
+  import { type LabelProps as Props, label } from '.';
+  // interface Props extends HTMLLabelAttributes {
+  //   children: Snippet;
+  //   color?: 'gray' | 'green' | 'red' | 'disabled';
+  //   show?: boolean;
+  //   class?: string | undefined;
+  //   for?: string | undefined | null;
+  // }
 
   let {
     children,
@@ -19,22 +17,11 @@
     ...attributes
   }: Props = $props();
 
-  const colorClasses = {
-    gray: 'text-gray-900 dark:text-gray-300',
-    green: 'text-green-700 dark:text-green-500',
-    red: 'text-red-700 dark:text-red-500',
-    disabled: 'text-gray-400 dark:text-gray-500'
-  };
-
-  let labelCls = twMerge(
-    'text-sm rtl:text-right font-medium block',
-    colorClasses[color],
-    className
-  );
+  const base = $derived(label({ color, className }));
 </script>
 
 {#if show}
-  <label {...attributes} class={labelCls}>
+  <label {...attributes} class={base}>
     {@render children()}
   </label>
 {:else}

@@ -11,7 +11,7 @@
   });
 
   import {
-    Input,
+    Input, input,
     Radio,
     Label,
     Helper,
@@ -59,6 +59,8 @@
     md: 'Default',
     lg: 'Large'
   };
+  const colors = Object.keys(input.variants.color);
+  let inputColor: Input['color'] = $state('base');
 </script>
 
 <H1>Input field</H1>
@@ -175,31 +177,31 @@
   <Input class="mb-6" disabled readonly value="Disabled readonly input" />
 </CodeWrapper>
 
-<H2>Validation</H2>
-
-<P
-  >Use the following example to apply validation styles for success and error
-  messages.</P
->
+<H2>Color</H2>
 
 <CodeWrapper>
   <div class="mb-6">
-    <Label for="success" color="green" class="mb-2 block">Your name</Label>
-    <Input id="success" color="green" placeholder="Success input" />
-    <Helper class="mt-2" color="green">
+    <Label for="color-example" color={inputColor} class="mb-2 block">Your name</Label>
+    <Input id="color-example" color={inputColor} placeholder="Input" />
+    <Helper class="mt-2" color={inputColor}>
       <span class="font-medium">Well done!</span>
       Some success message.
     </Helper>
   </div>
-  <div class="mb-6">
-    <Label for="error" color="red" class="mb-2 block">Your name</Label>
-    <Input id="error" color="red" placeholder="Error input" />
-    <Helper class="mt-2" color="red">
-      <span class="font-medium">Oh, snapp!</span>
-      Some error message.
-    </Helper>
+  <div class="flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Color</Label>
+    {#each colors as colorOption}
+      <Radio
+        labelClass="w-24 my-1"
+        name="floating_color"
+        bind:group={inputColor}
+        value={colorOption}>{colorOption}</Radio
+      >
+    {/each}
   </div>
 </CodeWrapper>
+
+
 
 <H2>Input with icon</H2>
 

@@ -6,7 +6,6 @@
 </script>
 
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
   import { type InputProps as Props, input } from '.';
 
@@ -16,9 +15,9 @@
     right,
     value = $bindable(),
     size,
-    defaultClass = 'block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right',
-    color = 'base',
-    floatClass = 'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400',
+    defaultClass,
+    color = 'default',
+    floatClass,
     class: className,
     classLeft,
     classRight,
@@ -32,7 +31,7 @@
   let group: { size: SizeType } = getContext('group');
   let isGroup = !!group;
   let _size = $derived(size || clampSize(group?.size) || 'md');
-  const _color = $derived(color === 'base' && background ? 'tinted' : color);
+  const _color = $derived(color === 'default' && background ? 'tinted' : color);
 
   const {
     input: inputCls,
