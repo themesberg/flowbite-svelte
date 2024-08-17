@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { FloatingLabelInput, Helper } from '$lib';
+  import { FloatingLabelInput, Helper, Label, Radio, Toggle, floatingLabelInput } from '$lib';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -11,163 +11,136 @@
     import: 'default',
     eager: true
   });
+
+  const styles = ['filled', 'outlined', 'standard'];
+  let style: FloatingLabelInput['style'] = $state('standard');
+
+  const sizes = ['small', 'default'];
+  let floatingSize: FloatingLabelInput['size'] = $state('default');
+  const sizeDisplay: Record<FloatingLabelInput['size'], string> = {
+    small: 'Small',
+    default: 'Default',
+  };
+  // const colors = [ 'green', 'red']
+  const colors = Object.keys(floatingLabelInput.variants.color);
+  let floatingColor: FloatingLabelInput['color'] = $state('primary');
 </script>
 
 <H1>Floating label</H1>
 <H2>Setup</H2>
 <HighlightCompo code={modules['./md/setup.md'] as string} />
+
 <H2>Floating label examples</H2>
 <CodeWrapper>
-  <div id="exampleWrapper" class="grid w-full items-end gap-6 md:grid-cols-3">
-    <FloatingLabelInput style="filled" id="floating_filled" type="text"
-      >Floating filled</FloatingLabelInput
+  <div class="h-16">
+  <FloatingLabelInput style={style} id="floating_filled" type="text"
+      >Floating {style}</FloatingLabelInput
     >
-    <FloatingLabelInput style="outlined" id="floating_outlined" type="text"
-      >Floating outlined</FloatingLabelInput
-    >
-    <FloatingLabelInput id="floating_standard" type="text"
-      >Floating standard</FloatingLabelInput
-    >
+  </div>
+  <div class="flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Style:</Label>
+    {#each styles as option}
+      <Radio
+        labelClass="w-24 my-1"
+        name="style"
+        bind:group={style}
+        value={option}>{option}</Radio
+      >
+    {/each}
   </div>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/floating-label-examples.md'] as string} />
+
 <H2>Disabled state</H2>
 <CodeWrapper>
-  <div id="exampleWrapper" class="grid w-full items-end gap-6 md:grid-cols-3">
-    <FloatingLabelInput style="filled" id="disabled_filled" type="text" disabled
-      >Disabled filled</FloatingLabelInput
-    >
-    <FloatingLabelInput
-      style="outlined"
-      id="disabled_outlined"
-      type="text"
-      disabled>Disabled outlined</FloatingLabelInput
-    >
-    <FloatingLabelInput id="disabled_standard" type="text" disabled
-      >Disabled standard</FloatingLabelInput
-    >
-  </div>
+  <div class="h-16">
+    <FloatingLabelInput disabled style={style} id="floating_filled" type="text"
+        >Floating {style}</FloatingLabelInput
+      >
+    </div>
+    <div class="flex flex-wrap space-x-4">
+      <Label class="mb-4 w-full font-bold">Style:</Label>
+      {#each styles as option}
+        <Radio
+          labelClass="w-24 my-1"
+          name="disabled_style"
+          bind:group={style}
+          value={option}>{option}</Radio
+        >
+      {/each}
+    </div>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/disabled-state.md'] as string} />
 
-<H2>Validation</H2>
+<H2>Colors</H2>
 <CodeWrapper>
-  <!-- Success messages -->
   <div class="mb-6 grid items-end gap-6 md:grid-cols-3">
     <div>
       <FloatingLabelInput
-        color="green"
+        color={floatingColor}
         style="filled"
         id="filled_success"
         aria_describedby="filled_success_help"
-        type="text">Filled success</FloatingLabelInput
+        type="text">Filled</FloatingLabelInput
       >
-      <Helper color="green">
-        <span class="font-medium">Well done!</span>
-        Some success message.
-      </Helper>
     </div>
     <div>
       <FloatingLabelInput
-        color="green"
+        color={floatingColor}
         style="outlined"
         id="outlined_success"
         aria_describedby="outlined_success_help"
-        type="text">Outlined success</FloatingLabelInput
+        type="text">Outlined</FloatingLabelInput
       >
-      <Helper color="green">
-        <span class="font-medium">Well done!</span>
-        Some success message.
-      </Helper>
     </div>
     <div>
       <FloatingLabelInput
-        color="green"
+        color={floatingColor}
         style="standard"
         id="standard_success"
         aria_describedby="standard_success_help"
-        type="text">Standard success</FloatingLabelInput
+        type="text">Standard</FloatingLabelInput
       >
-      <Helper color="green">
-        <span class="font-medium">Well done!</span>
-        Some success message.
-      </Helper>
     </div>
   </div>
-  <!-- Error messages -->
-  <div class="mb-6 grid items-end gap-6 md:grid-cols-3">
-    <div>
-      <FloatingLabelInput
-        color="red"
-        style="filled"
-        id="filled_error"
-        aria_describedby="filled_error_help"
-        type="text">Filled error</FloatingLabelInput
+  <div class="flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Color</Label>
+    {#each colors as colorOption}
+      <Radio
+        labelClass="w-24 my-1"
+        name="floating_color"
+        bind:group={floatingColor}
+        value={colorOption}>{colorOption}</Radio
       >
-      <Helper color="red">
-        <span class="font-medium">Oh, snapp!</span>
-        Some error message.
-      </Helper>
-    </div>
-    <div>
-      <FloatingLabelInput
-        color="red"
-        style="outlined"
-        id="outlined_error"
-        aria_describedby="outlined_error_help"
-        type="text">Outlined error</FloatingLabelInput
-      >
-      <Helper color="red">
-        <span class="font-medium">Oh, snapp!</span>
-        Some error message.
-      </Helper>
-    </div>
-    <div>
-      <FloatingLabelInput
-        color="red"
-        style="standard"
-        id="standard_error"
-        aria_describedby="standard_error_help"
-        type="text">Standard error</FloatingLabelInput
-      >
-      <Helper color="red">
-        <span class="font-medium">Oh, snapp!</span>
-        Some error message.
-      </Helper>
-    </div>
+    {/each}
   </div>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/validation.md'] as string} />
+<HighlightCompo code={modules['./md/color.md'] as string} />
 
-<H2>Sizes</H2>
+<H2>Size</H2>
 <CodeWrapper>
-  <div class="mb-6 grid items-end gap-6 md:grid-cols-3">
+  <div class="mb-6 grid items-end gap-4 md:grid-cols-3 h-48 md:h-16">
     <FloatingLabelInput
-      inputSize="small"
+      size={floatingSize}
       style="filled"
-      id="small_filled"
-      type="text">Small filled</FloatingLabelInput
+      id="size_example_filled"
+      type="text">{sizeDisplay[floatingSize]} filled</FloatingLabelInput
     >
     <FloatingLabelInput
-      inputSize="small"
+      size={floatingSize}
       style="outlined"
-      id="small_outlined"
-      type="text">Small outlined</FloatingLabelInput
+      id="size_example_outlined"
+      type="text">{sizeDisplay[floatingSize]}  outlined</FloatingLabelInput
     >
-    <FloatingLabelInput inputSize="small" id="small_standard" type="text"
-      >Small standard</FloatingLabelInput
+    <FloatingLabelInput size={floatingSize} id="size_example_standard" type="text"
+      >{sizeDisplay[floatingSize]}  standard</FloatingLabelInput
     >
   </div>
-  <div class="grid items-end gap-6 md:grid-cols-3">
-    <FloatingLabelInput style="filled" id="default_filled" type="text"
-      >Default filled</FloatingLabelInput
-    >
-    <FloatingLabelInput style="outlined" id="default_outlined" type="text"
-      >Default outlined</FloatingLabelInput
-    >
-    <FloatingLabelInput id="default_standard" type="text"
-      >Default standard</FloatingLabelInput
-    >
+  <div class="flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Size:</Label>
+    <Toggle onclick={() => {
+       floatingSize = floatingSize === 'default' ? 'small' : 'default';
+    }}>Toggle size</Toggle>
   </div>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/sizes.md'] as string} />

@@ -186,9 +186,9 @@
     },
     floatingLabel: {
       checked: true,
-      problems:
-        'Disabled state - disabled outlined, Validation -  Outlined, Sized - outlined',
-      notes: 'Updated: class names'
+      // problems:
+      //   'Disabled state - disabled outlined, Validation -  Outlined, Sized - outlined',
+      notes: 'Variants, reactive examples'
     },
     inputField: {
       checked: true,
