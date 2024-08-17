@@ -13,7 +13,7 @@
   const hasPath = (key: string) => currentUrl.includes(key);
   // console.log(hasPath('typography'))
   const activeClass =
-    'flex items-center p-2 text-base font-normal text-white bg-primary-600 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-500 dark:hover:bg-primary-500';
+    'flex items-center p-2 text-base font-normal text-white bg-primary-500 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-600 dark:hover:bg-primary-500';
 </script>
 
 <Sidebar
