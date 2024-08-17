@@ -1,5 +1,12 @@
 <script lang="ts">
-  import { FloatingLabelInput, Helper, Label, Radio, Toggle, floatingLabelInput } from '$lib';
+  import {
+    FloatingLabelInput,
+    Helper,
+    Label,
+    Radio,
+    Toggle,
+    floatingLabelInput
+  } from '$lib';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -19,7 +26,7 @@
   let floatingSize: FloatingLabelInput['size'] = $state('default');
   const sizeDisplay: Record<FloatingLabelInput['size'], string> = {
     small: 'Small',
-    default: 'Default',
+    default: 'Default'
   };
   // const colors = [ 'green', 'red']
   const colors = Object.keys(floatingLabelInput.variants.color);
@@ -33,7 +40,7 @@
 <H2>Floating label examples</H2>
 <CodeWrapper>
   <div class="h-16">
-  <FloatingLabelInput style={style} id="floating_filled" type="text"
+    <FloatingLabelInput {style} id="floating_filled" type="text"
       >Floating {style}</FloatingLabelInput
     >
   </div>
@@ -54,21 +61,21 @@
 <H2>Disabled state</H2>
 <CodeWrapper>
   <div class="h-16">
-    <FloatingLabelInput disabled style={style} id="floating_filled" type="text"
-        >Floating {style}</FloatingLabelInput
+    <FloatingLabelInput disabled {style} id="floating_filled" type="text"
+      >Floating {style}</FloatingLabelInput
+    >
+  </div>
+  <div class="flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Style:</Label>
+    {#each styles as option}
+      <Radio
+        labelClass="w-24 my-1"
+        name="disabled_style"
+        bind:group={style}
+        value={option}>{option}</Radio
       >
-    </div>
-    <div class="flex flex-wrap space-x-4">
-      <Label class="mb-4 w-full font-bold">Style:</Label>
-      {#each styles as option}
-        <Radio
-          labelClass="w-24 my-1"
-          name="disabled_style"
-          bind:group={style}
-          value={option}>{option}</Radio
-        >
-      {/each}
-    </div>
+    {/each}
+  </div>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/disabled-state.md'] as string} />
 
@@ -119,7 +126,7 @@
 
 <H2>Size</H2>
 <CodeWrapper>
-  <div class="mb-6 grid items-end gap-4 md:grid-cols-3 h-48 md:h-16">
+  <div class="mb-6 grid h-48 items-end gap-4 md:h-16 md:grid-cols-3">
     <FloatingLabelInput
       size={floatingSize}
       style="filled"
@@ -130,17 +137,21 @@
       size={floatingSize}
       style="outlined"
       id="size_example_outlined"
-      type="text">{sizeDisplay[floatingSize]}  outlined</FloatingLabelInput
+      type="text">{sizeDisplay[floatingSize]} outlined</FloatingLabelInput
     >
-    <FloatingLabelInput size={floatingSize} id="size_example_standard" type="text"
-      >{sizeDisplay[floatingSize]}  standard</FloatingLabelInput
+    <FloatingLabelInput
+      size={floatingSize}
+      id="size_example_standard"
+      type="text">{sizeDisplay[floatingSize]} standard</FloatingLabelInput
     >
   </div>
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
-    <Toggle onclick={() => {
-       floatingSize = floatingSize === 'default' ? 'small' : 'default';
-    }}>Toggle size</Toggle>
+    <Toggle
+      onclick={() => {
+        floatingSize = floatingSize === 'default' ? 'small' : 'default';
+      }}>Toggle size</Toggle
+    >
   </div>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/sizes.md'] as string} />

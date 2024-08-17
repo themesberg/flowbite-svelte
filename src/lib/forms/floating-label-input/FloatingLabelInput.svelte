@@ -2,7 +2,7 @@
   import { twMerge } from 'tailwind-merge';
   import { idGenerator } from '../../uiHelpers.svelte';
   import { type FloatingLabelInputProps as Props, floatingLabelInput } from '.';
-  
+
   let {
     children,
     id = idGenerator(),
@@ -16,7 +16,9 @@
     ...attributes
   }: Props = $props();
 
-  const { base, input, label } = $derived(floatingLabelInput({ style, size, color }));
+  const { base, input, label } = $derived(
+    floatingLabelInput({ style, size, color })
+  );
 
   // const divClasses = {
   //   filled: 'relative',
@@ -86,7 +88,7 @@
   // };
 </script>
 
-<div class={base({ class: divClass})}>
+<div class={base({ class: divClass })}>
   <input
     {id}
     placeholder=" "
@@ -95,10 +97,7 @@
     class={input({ class: inputClass })}
   />
 
-  <label
-    for={id}
-    class={label({ class: labelClass})}
-  >
+  <label for={id} class={label({ class: labelClass })}>
     {@render children()}
   </label>
 </div>
@@ -111,8 +110,8 @@
 @prop id = idGenerator()
 @prop aria_describedby
 @prop style = 'standard'
-@prop inputSize = 'default'
-@prop color = 'base'
+@prop size = 'default'
+@prop color = 'gray'
 @prop divClass
 @prop inputClass
 @prop labelClass

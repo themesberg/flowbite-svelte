@@ -41,7 +41,6 @@
   } = $derived(
     input({ size: _size, color: _color, group: isGroup, class: className })
   );
-  
 </script>
 
 {#snippet inputContent()}

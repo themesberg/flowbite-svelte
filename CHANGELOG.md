@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.8.7
+
+### Patch Changes
+
+- feat: add variants to floating input ([`c94e217e30082fe2a323ca5c161c28e7a02f83f6`](https://github.com/shinokada/svelte-5-ui-lib/commit/c94e217e30082fe2a323ca5c161c28e7a02f83f6))
+
 ## 0.8.6
 
 ### Patch Changes
