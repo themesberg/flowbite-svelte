@@ -195,6 +195,55 @@
     height: 1.5rem;
     width: 1.5rem;
   }
+  /* input file */
+  [type='file'] {
+    background: unset;
+    border-color: inherit;
+    border-width: 0;
+    border-radius: 0;
+    padding: 0;
+    font-size: unset;
+    line-height: inherit;
+  }
+  
+  [type='file']:focus {
+    outline: 1px auto inherit;
+  }
+  
+  input[type=file]::file-selector-button {
+    color: white;
+    background: #1F2937;
+    border: 0;
+    font-weight: 500;
+    font-size: 0.875rem;
+    cursor: pointer;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+    padding-left: 2rem;
+    padding-right: 1rem;
+    -webkit-margin-start: -1rem;
+            margin-inline-start: -1rem;
+    -webkit-margin-end: 1rem;
+            margin-inline-end: 1rem;
+  }
+  
+  input[type=file]::file-selector-button:hover {
+    background: #374151;
+  }
+  
+  :is([dir=rtl]) input[type=file]::file-selector-button {
+    padding-right: 2rem;
+    padding-left: 1rem;
+  }
+  
+  .dark input[type=file]::file-selector-button {
+    color: white;
+    background: #4B5563;
+  }
+  
+  .dark input[type=file]::file-selector-button:hover {
+    background: #6B7280;
+  }
 
 }
 

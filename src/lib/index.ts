@@ -37,6 +37,7 @@ export * from './video';
 // forms
 export * from './forms/checkbox';
 export * from './forms/checkbox-button';
+export * from './forms/fileupload';
 export * from './forms/floating-label-input';
 export * from './forms/helper';
 export * from './forms/input';

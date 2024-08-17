@@ -11,12 +11,13 @@
   });
 
   import {
-    Input,
+    Input, Radio,
     Label,
     Helper,
     Button,
     Checkbox,
     A,
+    P,
     CloseButton,
     InputAddon,
     ButtonGroup,
@@ -49,20 +50,27 @@
     // without using effect
     dropdownStatus = dropdown.isOpen;
   });
+
+  const sizes = ['sm', 'md', 'lg'];
+  let inputSize: Input['size'] = $state('md')
+  const sizeDisplay: Record<Input['size'], string> = {
+    sm: 'Small',
+    md: 'Default',
+    lg: 'Large'
+  };
 </script>
 
 <H1>Input field</H1>
-<H2>Input fields</H2>
 
 <H2>Input fields</H2>
 
-Use this example as a generic form element which includes multiple input fields
-types such as text, email, password, number, URL, and phone number and use the
-grid layout to add multiple columns and rows.
-
-<div
-  class="mx-auto mt-8 w-full border bg-white bg-gradient-to-r p-6 dark:bg-gray-900"
+<P>
+  Use this example as a generic form element which includes multiple input
+  fields types such as text, email, password, number, URL, and phone number and
+  use the grid layout to add multiple columns and rows.</P
 >
+
+<CodeWrapper>
   <form>
     <div class="mb-6 grid gap-6 md:grid-cols-2">
       <div>
@@ -118,7 +126,7 @@ grid layout to add multiple columns and rows.
         required
       />
     </div>
-    <Checkbox class="mb-6 space-x-1 rtl:space-x-reverse" required>
+    <Checkbox classLabel="mb-6 space-x-1 rtl:space-x-reverse" required>
       I agree with the <A
         href="/"
         class="text-primary-700 hover:underline dark:text-primary-600"
@@ -127,53 +135,53 @@ grid layout to add multiple columns and rows.
     </Checkbox>
     <Button type="submit">Submit</Button>
   </form>
-</div>
+</CodeWrapper>
 
 <H2>Input sizes</H2>
 
-Use the following examples to apply a small, default or large size for the input
-fields. User the size prop to change the input size. Choose one from
-'sm:text-md' | 'text-sm' | 'sm:text-xs'. The default size is text-sm.
-
-<div
-  class="mx-auto mt-8 w-full space-y-6 border bg-white bg-gradient-to-r p-6 dark:bg-gray-900"
+<P
+  >Use the following examples to apply a small, default or large size for the
+  input fields. User the size prop to change the input size.</P
 >
-  <Label class="space-y-2">
-    <span>Small icon input</span>
-    <Input type="email" placeholder="Small input" inputSize="sm" />
-  </Label>
 
-  <Label class="space-y-2">
-    <span>Default icon input</span>
-    <Input type="email" placeholder="Default input" inputSize="md" />
+<CodeWrapper class="space-y-6">
+  <Label class="space-y-2 h-20">
+    <span>{sizeDisplay[inputSize]} icon input</span>
+  <Input type="email" placeholder="Default input" size={inputSize} />
   </Label>
-
-  <Label class="space-y-2">
-    <span>Large icon input</span>
-    <Input type="email" placeholder="Large input" inputSize="lg" />
-  </Label>
-</div>
+  <div class="flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Size:</Label>
+    {#each sizes as option}
+      <Radio
+        labelClass="w-24 my-1"
+        name="default_alert_color"
+        bind:group={inputSize}
+        value={option}>{option}</Radio
+      >
+    {/each}
+  </div>
+</CodeWrapper>
 
 <H2>Disabled state</H2>
 
-Get started with this example if you want to apply the disabled state to an
-input field. Add the disabled to change the input to disabled.
-
-<div
-  class="mx-auto mt-8 w-full border bg-white bg-gradient-to-r p-6 dark:bg-gray-900"
+<P
+  >Get started with this example if you want to apply the disabled state to an
+  input field. Add the disabled to change the input to disabled.</P
 >
+
+<CodeWrapper>
   <Input class="mb-6" disabled value="Disabled input" />
   <Input class="mb-6" disabled readonly value="Disabled readonly input" />
-</div>
+</CodeWrapper>
 
 <H2>Validation</H2>
 
-Use the following example to apply validation styles for success and error
-messages.
-
-<div
-  class="mx-auto mt-8 w-full border bg-white bg-gradient-to-r p-6 dark:bg-gray-900"
+<P
+  >Use the following example to apply validation styles for success and error
+  messages.</P
 >
+
+<CodeWrapper>
   <div class="mb-6">
     <Label for="success" color="green" class="mb-2 block">Your name</Label>
     <Input id="success" color="green" placeholder="Success input" />
@@ -190,16 +198,14 @@ messages.
       Some error message.
     </Helper>
   </div>
-</div>
+</CodeWrapper>
 
 <H2>Input with icon</H2>
 
-<div
-  class="mx-auto mt-8 w-full border bg-white bg-gradient-to-r p-6 dark:bg-gray-900"
->
+<CodeWrapper class="space-y-6">
   <Label class="space-y-2">
     <span>Small input - left icon</span>
-    <Input type="email" placeholder="name@flowbite.com" inputSize="sm">
+    <Input type="email" placeholder="name@flowbite.com" size="sm" class="pl-8">
       {#snippet left()}
         <EnvelopeSolid class="h-4 w-4" />
       {/snippet}
@@ -208,7 +214,7 @@ messages.
 
   <Label class="space-y-2">
     <span>Default input - right icon</span>
-    <Input type="email" placeholder="name@flowbite.com" inputSize="md">
+    <Input type="email" placeholder="name@flowbite.com" size="md">
       {#snippet right()}
         <EnvelopeSolid class="h-5 w-5" />
       {/snippet}
@@ -217,7 +223,7 @@ messages.
 
   <Label class="space-y-2">
     <span>Large input - both icons</span>
-    <Input type="email" placeholder="name@flowbite.com" inputSize="lg">
+    <Input type="email" placeholder="name@flowbite.com" size="lg" class="pl-10">
       {#snippet left()}
         <EnvelopeSolid class="h-6 w-6" />
       {/snippet}
@@ -226,16 +232,16 @@ messages.
       {/snippet}
     </Input>
   </Label>
-</div>
+</CodeWrapper>
 
 <H2>Input group</H2>
 
-This example can be used to add a descriptive icon or additional text inside the
-input field.
-
-<div
-  class="mx-auto mt-8 w-full space-y-6 border bg-white bg-gradient-to-r p-6 dark:bg-gray-900"
+<P
+  >This example can be used to add a descriptive icon or additional text inside
+  the input field.</P
 >
+
+<CodeWrapper class="space-y-6">
   <div>
     <Label class="mb-2" for="input-addon-sm">Small additional text</Label>
     <ButtonGroup class="w-full" size="sm">
@@ -283,23 +289,24 @@ input field.
       <InputAddon>kg</InputAddon>
     </ButtonGroup>
   </div>
-</div>
+</CodeWrapper>
 
 <H2>Icon click handler</H2>
 
-This example shows how to add `onclick` event handler to the icon in `Input`. By
-clicking an icon, it toggles icon and `type`:
-
-<div
-  class="mx-auto mt-8 w-full space-y-6 border bg-white bg-gradient-to-r p-6 dark:bg-gray-900"
+<P
+  >This example shows how to add `onclick` event handler to the icon in `Input`.
+  By clicking an icon, it toggles icon and `type`:</P
 >
+
+<CodeWrapper class="space-y-6">
   <div>
     <Label for="show-password" class="mb-2">Your password</Label>
     <Input
       id="show-password"
       type={show ? 'text' : 'password'}
       placeholder="Your password here"
-      inputSize="lg"
+      size="lg"
+      class="pl-10"
     >
       {#snippet left()}
         <button onclick={() => (show = !show)} class="pointer-events-auto">
@@ -332,16 +339,16 @@ clicking an icon, it toggles icon and `type`:
       />
     </ButtonGroup>
   </div>
-</div>
+</CodeWrapper>
 
 <H2>Helper text</H2>
 
-Use the helper prop to add your helper text. You can use HTML in the helper
-text.
-
-<div
-  class="mx-auto mt-8 w-full border bg-white bg-gradient-to-r p-6 dark:bg-gray-900"
+<P
+  >Use the helper prop to add your helper text. You can use HTML in the helper
+  text.</P
 >
+
+<CodeWrapper class="space-y-6">
   <Label class="block space-y-2">
     <span>Your email</span>
     <Input id="email" type="email" required placeholder="name@flowbite.com" />
@@ -355,13 +362,11 @@ text.
       .
     </Helper>
   </Label>
-</div>
+</CodeWrapper>
 
 <H2>Number input</H2>
 
-<div
-  class="mx-auto mt-8 w-full border bg-white bg-gradient-to-r p-6 dark:bg-gray-900"
->
+<CodeWrapper>
   <Label class="mb-4 space-y-2">
     <span>Your lucky number</span>
     <Input type="number" bind:value />
@@ -369,16 +374,14 @@ text.
 
   <p>Value: {value}</p>
   <p>Type of value: {typeof value}</p>
-</div>
+</CodeWrapper>
 
 <H2>Search input</H2>
 
-<div
-  class="mx-auto mt-8 w-full border bg-white bg-gradient-to-r p-6 dark:bg-gray-900"
->
+<CodeWrapper>
   <form>
     <Label for="search" class="mb-2 block">Your Email</Label>
-    <Input id="search" placeholder="Search" inputSize="lg">
+    <Input id="search" placeholder="Search" size="lg" class="pl-10">
       {#snippet left()}
         <SearchOutline class="h-6 w-6 text-gray-500 dark:text-gray-400" />
       {/snippet}
@@ -387,15 +390,13 @@ text.
       {/snippet}
     </Input>
   </form>
-</div>
+</CodeWrapper>
 
 <H2>Dropdown</H2>
 
-Use this example to show a dropdown menu right next to the input field.
+<P>Use this example to show a dropdown menu right next to the input field.</P>
 
-<div
-  class="mx-auto mt-8 h-64 w-full border bg-white bg-gradient-to-r p-6 dark:bg-gray-900"
->
+<CodeWrapper class="h-52">
   <ButtonGroup class="w-full">
     <Button
       onclick={dropdown.toggle}
@@ -416,19 +417,4 @@ Use this example to show a dropdown menu right next to the input field.
     <DropdownItem>News</DropdownItem>
     <DropdownItem>Finance</DropdownItem>
   </Dropdown>
-</div>
-
-<H2>Advanced usage</H2>
-
-If you need a full control over `input` HTML element while still re-using the
-Flowbite formatting, you can put the `input` element as a default slot. The
-example below is in fact the implementation of the above mentioned
-`NumberInput`.
-
-<div
-  class="mx-auto mt-8 w-full space-y-4 border bg-white bg-gradient-to-r p-6 dark:bg-gray-900"
->
-  N/A
-</div>
-
-<div class="h-96 w-full"></div>
+</CodeWrapper>

@@ -151,10 +151,10 @@
 <H2>Bordered</H2>
 <CodeWrapper>
   <div class="rounded border border-gray-200 dark:border-gray-700">
-    <Checkbox groupLabelClass="w-full p-4">Default radio</Checkbox>
+    <Checkbox classLabel="w-full p-4">Default radio</Checkbox>
   </div>
   <div class="rounded border border-gray-200 dark:border-gray-700">
-    <Checkbox checked groupLabelClass="w-full p-4">Checked state</Checkbox>
+    <Checkbox checked classLabel="w-full p-4">Checked state</Checkbox>
   </div>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/bordered.md'] as string} />
@@ -165,10 +165,10 @@
   <ul
     class="w-48 divide-y divide-gray-200 rounded-lg border border-gray-200 bg-white dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800"
   >
-    <li><Checkbox checked groupLabelClass="p-3">svelte</Checkbox></li>
-    <li><Checkbox groupLabelClass="p-3">Vue JS</Checkbox></li>
-    <li><Checkbox groupLabelClass="p-3">React</Checkbox></li>
-    <li><Checkbox groupLabelClass="p-3">Angular</Checkbox></li>
+    <li><Checkbox checked classLabel="p-3">svelte</Checkbox></li>
+    <li><Checkbox classLabel="p-3">Vue JS</Checkbox></li>
+    <li><Checkbox classLabel="p-3">React</Checkbox></li>
+    <li><Checkbox classLabel="p-3">Angular</Checkbox></li>
   </ul>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/checkbox-list-group.md'] as string} />
@@ -180,11 +180,11 @@
     class="w-full items-center divide-x divide-gray-200 rounded-lg border border-gray-200 sm:flex rtl:divide-x-reverse dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800"
   >
     <li class="w-full">
-      <Checkbox checked groupLabelClass="p-3">Svelte</Checkbox>
+      <Checkbox checked classLabel="p-3">Svelte</Checkbox>
     </li>
-    <li class="w-full"><Checkbox groupLabelClass="p-3">Vue JS</Checkbox></li>
-    <li class="w-full"><Checkbox groupLabelClass="p-3">React</Checkbox></li>
-    <li class="w-full"><Checkbox groupLabelClass="p-3">Angular</Checkbox></li>
+    <li class="w-full"><Checkbox classLabel="p-3">Vue JS</Checkbox></li>
+    <li class="w-full"><Checkbox classLabel="p-3">React</Checkbox></li>
+    <li class="w-full"><Checkbox classLabel="p-3">Angular</Checkbox></li>
   </ul>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/horizontal-list-group.md'] as string} />

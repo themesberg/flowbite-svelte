@@ -29,11 +29,10 @@
     selected: writable<HTMLElement>()
   });
 
-  // $inspect('ctx: ', ctx);
   let dividerBool = $derived(
     ['full', 'pill'].includes(tabStyle) ? false : divider
   );
-
+  
   setContext('ctx', ctx);
 
   function init(node: HTMLElement) {

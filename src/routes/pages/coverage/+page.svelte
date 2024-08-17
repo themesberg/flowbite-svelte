@@ -180,7 +180,9 @@
       notes: 'Updated: class names'
     },
     fileInput: {
-      checked: false
+      checked: true,
+      problems: 'Dropzone',
+      notes: 'Variants, reactive examples'
     },
     floatingLabel: {
       checked: true,
@@ -190,7 +192,8 @@
     },
     inputField: {
       checked: true,
-      problems: 'Group examples add rounded radius'
+      // problems: 'Group examples add rounded radius'
+      notes: 'Variants, reactive examples'
     },
     radio: {
       checked: true,

@@ -14,7 +14,7 @@
     choices = [],
     checked = $bindable(false),
     spacing,
-    groupLabelClass,
+    classLabel,
     indeterminate,
     class: className,
     ...attributes
@@ -26,7 +26,7 @@
 </script>
 {#if choices.length > 0}
   {#each choices as {value, checkboxLabel}, i}
-    <Label class={label({ class: groupLabelClass })} for={`checkbox-${i}`}>
+    <Label class={label({ class: classLabel })} for={`checkbox-${i}`}>
       { checkboxLabel }
       <input id={`checkbox-${i}`} type="checkbox" value={ value } bind:group {...attributes} 
       class={base({ class: className })}
@@ -37,7 +37,7 @@
     </Label>
   {/each}
 {:else}
-<Label class={label({ class: groupLabelClass })}>
+<Label class={label({ class: classLabel })}>
   <input
     type="checkbox"
     bind:checked
@@ -66,7 +66,7 @@
 @prop group = []
 @prop checked = $bindable(false)
 @prop spacing
-@prop groupLabelClass
+@prop classLabel
 @prop indeterminate
 @prop class: className
 @prop ...attributes

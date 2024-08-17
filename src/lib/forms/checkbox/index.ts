@@ -24,7 +24,7 @@ interface CheckboxProps extends HTMLInputAttributes {
   choices?: CheckboxItem[];
   checked?: boolean | undefined | null;
   spacing?: string | undefined | null;
-  groupLabelClass?: string | undefined;
+  classLabel?: string | undefined;
   indeterminate?: boolean;
   class?: string | undefined | null;
 }

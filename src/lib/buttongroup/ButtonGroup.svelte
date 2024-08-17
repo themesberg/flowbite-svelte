@@ -10,7 +10,7 @@
   }: Props = $props();
 
   let groupClass = $derived(buttonGroup({ size, className }));
-  setContext('group', { size });
+  setContext('group', size);
 </script>
 
 <div {...attributes} class={groupClass} role="group">
