@@ -1,6 +1,6 @@
 import Select from './Select.svelte';
 import type { Snippet } from 'svelte';
-import type { HTMLSelectAttributes } from 'svelte/elements';
+import type { HTMLSelectAttributes, HTMLAttributes } from 'svelte/elements';
 import { select } from './theme';
 
 type SelectOptionType<T> = {
@@ -10,7 +10,7 @@ type SelectOptionType<T> = {
 
 interface SelectProps extends Omit<HTMLSelectAttributes, 'size'> {
   children?: Snippet;
-  items: SelectOptionType<any>[];
+  items?: SelectOptionType<any>[];
   value?: any;
   underline?: boolean;
   size?: 'sm' | 'md' | 'lg';
@@ -19,4 +19,14 @@ interface SelectProps extends Omit<HTMLSelectAttributes, 'size'> {
   placeholder?: string | undefined | null;
 }
 
-export { Select, select, type SelectProps, type SelectOptionType };
+interface MultiSelectProps<T> extends HTMLAttributes<HTMLDivElement> {
+  children?: Snippet;
+  items?: SelectOptionType<T>[];
+  value?: (string | number)[];
+  size?: 'sm' | 'md' | 'lg';
+  dropdownClass?: string | undefined;
+  placeholder?: string | undefined | null;
+  change?: (event: Event) => void;
+}
+
+export { Select, select, type SelectProps, type SelectOptionType, type MultiSelectProps };

@@ -1,7 +1,7 @@
 <script lang="ts">
   import {
     Select,
-    Label,
+    Label, Radio,
     Helper,
     Dropdown,
     DropdownUl,
@@ -56,6 +56,14 @@
     // without using effect
     dropdownStatus = dropdown.isOpen;
   });
+
+  const sizes = ['sm', 'md', 'lg'];
+  let selectSize: Select['size'] = $state('md');
+  const sizeDisplay: Record<Select['size'], string> = {
+    sm: 'Small',
+    md: 'Medium',
+    lg: 'Large'
+  };
 </script>
 
 <H1>Select</H1>
@@ -124,10 +132,9 @@
         {dropdownStatus}
         {closeDropdown}
         {transitionParams}
-        divClass="overflow-y-auto p-0 pb-3 text-sm w-32 absolute top-[50px] -left-[110px]"
-        ulClass="space-y-2"
+        class="absolute top-[40px] -left-[120px]"
       >
-        <DropdownUl>
+        <DropdownUl class="space-y-2 p-4">
           <DropdownLi liClass="flex items-center">
             <Usa />
             United States
@@ -153,4 +160,38 @@
       selectClass="!rounded-s-none"
     />
   </div>
+</CodeWrapper>
+
+<H2>Size</H2>
+
+<CodeWrapper>
+  <div class="h-64">
+    <Label for="select-sm" class="mb-4">{sizeDisplay[selectSize]} select</Label>
+    <Select id="select-sm" size={selectSize} items={countries} selectClass="mb-8" />
+    <Select id="select-sm" underline size={selectSize} items={countries} selectClass="mb-8" />
+  </div>
+  <div class="flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Size:</Label>
+    {#each sizes as option}
+      <Radio
+        labelClass="w-24 my-1"
+        name="input_size"
+        bind:group={selectSize}
+        value={option}>{option}</Radio
+      >
+    {/each}
+  </div>
+</CodeWrapper>
+
+<H2>Custom options</H2>
+
+<CodeWrapper>
+  <Label for="countries">Select an option</Label>
+  <Select id="countries" selectClass="mt-2" bind:value={selected} placeholder="">
+    <option selected value="all">All</option>
+
+    {#each countries as { value, name }}
+      <option {value}>{name}</option>
+    {/each}
+  </Select>
 </CodeWrapper>
