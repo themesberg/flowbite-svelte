@@ -27,9 +27,9 @@
 
   let selected: any = $state();
   let countries = [
-    { value: 'us', name: 'United States' },
-    { value: 'ca', name: 'Canada' },
-    { value: 'fr', name: 'France' }
+    { value: 'us', name: 'United States', href: '/' },
+    { value: 'ca', name: 'Canada', href: '/' },
+    { value: 'fr', name: 'France' , href: '/'}
   ];
 
   let states = [
@@ -134,20 +134,20 @@
         {transitionParams}
         class="absolute top-[40px] -left-[120px]"
       >
-        <DropdownUl class="space-y-2 p-4">
-          <DropdownLi liClass="flex items-center">
+        <DropdownUl class="flex flex-col">
+          <DropdownLi aClass="flex items-center" href="/">
             <Usa />
             United States
           </DropdownLi>
-          <DropdownLi liClass="flex items-center">
+          <DropdownLi aClass="flex items-center" href="/">
             <Germany />
             Germany
           </DropdownLi>
-          <DropdownLi liClass="flex items-center">
+          <DropdownLi aClass="flex items-center" href="/">
             <Italy />
             Italy
           </DropdownLi>
-          <DropdownLi liClass="flex items-center">
+          <DropdownLi aClass="flex items-center" href="/">
             <China />
             China
           </DropdownLi>
