@@ -206,11 +206,14 @@
       notes: 'Variants, reactive examples'
     },
     searchInput: {
-      checked: false
+      checked: true,
+      problems: 'Search with dropdown, Location search, Voice search, Event example',
+      notes: 'Variants checked'
     },
     select: {
       checked: true,
-      problems: 'Select with dropdown, Sizes, Custom options, MultiSelect'
+      problems: 'MultiSelect',
+      notes: 'Variants, reactive examples'
     },
     textarea: {
       checked: false
