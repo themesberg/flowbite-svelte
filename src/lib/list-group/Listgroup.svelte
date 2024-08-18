@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang="ts" generics="T extends ListGroupItemType | string">
   import { createEventDispatcher, setContext, type ComponentProps } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import type { ListGroupItemType } from '../types';
@@ -9,11 +9,15 @@
 
   // propagate props type from underlying Frame
   interface $$Props extends ComponentProps<Frame> {
-    items?: ListGroupItemType[] | string[];
+    items?: T[];
     active?: boolean;
   }
 
-  export let items: ListGroupItemType[] | string[] = [];
+  interface $$Slots {
+    default: { item: T; index: number };
+  }
+
+  export let items: T[] = [];
   export let active: boolean = false;
   export let defaultClass: string = 'divide-y divide-gray-200 dark:divide-gray-600';
 
