@@ -3,14 +3,20 @@ import { tv } from 'tailwind-variants';
 export const dropdown = tv({
   slots: {
     base: 'z-10 w-44 mt-2 divide-y divide-gray-300 dark:divide-gray-500 overflow-hidden rounded-lg bg-white shadow dark:bg-gray-700',
-    headerDiv: 'px-4 py-3 text-sm text-gray-900 dark:text-white',
-    footerDiv: 'overflow-hidden rounded-b-lg py-1',
     backdrop: 'fixed top-0 start-0 w-full h-full'
   }
 });
 
 export const dropdowndivider = tv({
   base: 'my-1 h-px bg-gray-100 dark:bg-gray-500'
+});
+
+export const dropdownHeader = tv({
+  base: 'px-4 py-3 text-sm text-gray-900 dark:text-white'
+});
+
+export const dropdownFooter = tv({
+  base: 'overflow-hidden rounded-b-lg py-1'
 });
 
 export const dropdownli = tv({

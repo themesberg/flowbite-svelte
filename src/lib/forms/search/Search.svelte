@@ -1,19 +1,6 @@
 <script lang="ts">
-  // import type { FormSizeType } from '$lib/types';
   import { Input } from '$lib';
-  import type { Action } from 'svelte/action';
-  import type { Snippet } from 'svelte';
-
-  interface Props {
-    children?: Snippet;
-    right?: Snippet;
-    size?: 'sm' | 'md' | 'lg';
-    placeholder?: string;
-    value?: any;
-    show?: boolean;
-    use?: Action<HTMLElement, any>;
-    class?: string | undefined | null;
-  }
+  import { type SearchProps as Props, search } from '.';
 
   let {
     children,
@@ -26,13 +13,8 @@
     class: className,
     ...restProps
   }: Props = $props();
-
-  // export let size: FormSizeType = 'lg';
-  // export let placeholder: string = 'Search';
-  // export let value: any = undefined;
-  // export let show: boolean = true;
-  // export let use: Action<HTMLElement, any> = () => {};
-
+  
+  const { base, content, icon} = $derived(search());
   const sizes = {
     sm: 'w-3.5 h-3.5',
     md: 'w-5 h-5',
@@ -41,7 +23,7 @@
 </script>
 
 {#if show}
-  <div class="relative w-full" use:use>
+  <div class={base()} use:use>
     <Input
       bind:value
       type="search"
@@ -52,7 +34,7 @@
     >
       {#snippet left()}
         <svg
-          class={sizes[size]}
+          class={icon()}
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +52,7 @@
     </Input>
     {#if children}
       <div
-        class="absolute inset-y-0 end-0 flex items-center text-gray-500 dark:text-gray-400"
+        class={content()}
       >
         {@render children()}
       </div>

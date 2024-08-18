@@ -10,10 +10,7 @@
     toggleDropdown,
     closeDropdown,
     activateClickOutside = true,
-    divClass,
-    footerClass,
-    headerClass,
-    ulClass,
+    class: className,
     backdropClass,
     transitionParams,
     transitionType = 'fly',
@@ -32,29 +29,17 @@
         return fly(node, params);
     }
   }
-  const { base, headerDiv, footerDiv, backdrop } = $derived(dropdown());
+  const { base, backdrop } = $derived(dropdown());
 </script>
 
 <!-- Dropdown menu -->
 {#if dropdownStatus}
   <div
     {...restProps}
-    class={base({ class: divClass })}
+    class={base({ class: className })}
     transition:multiple={transitionParams}
   >
-    {#if header}
-      <div class={headerDiv({ class: headerClass })}>
-        {@render header()}
-      </div>
-    {/if}
-
     {@render children()}
-
-    {#if footer}
-      <div class={footerDiv({ class: footerClass })}>
-        {@render footer()}
-      </div>
-    {/if}
   </div>
 
   <div

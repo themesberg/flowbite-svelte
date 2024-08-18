@@ -62,7 +62,7 @@
     lg: 'Large'
   };
   const colors = Object.keys(input.variants.color);
-  let inputColor: Input['color'] = $state('base');
+  let inputColor: Input['color'] = $state('default');
 </script>
 
 <H1>Input field</H1>
@@ -159,7 +159,7 @@
     {#each sizes as option}
       <Radio
         labelClass="w-24 my-1"
-        name="default_alert_color"
+        name="input_size"
         bind:group={inputSize}
         value={option}>{option}</Radio
       >
@@ -197,7 +197,7 @@
     {#each colors as colorOption}
       <Radio
         labelClass="w-24 my-1"
-        name="floating_color"
+        name="input_color"
         bind:group={inputColor}
         value={colorOption}>{colorOption}</Radio
       >

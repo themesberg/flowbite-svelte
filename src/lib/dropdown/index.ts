@@ -2,7 +2,9 @@ import Dropdown from './Dropdown.svelte';
 import DropdownDivider from './DropdownDivider.svelte';
 import DropdownUl from './DropdownUl.svelte';
 import DropdownLi from './DropdownLi.svelte';
-import { dropdown, dropdowndivider, dropdownli, dropdownul } from './theme';
+import DropdownHeader from './DropdownHeader.svelte';
+import DropdownFooter from './DropdownFooter.svelte';
+import { dropdown, dropdowndivider, dropdownli, dropdownul, dropdownHeader, dropdownFooter } from './theme';
 import type { Snippet } from 'svelte';
 import type { TransitionParamTypes, TransitionTypes } from '../types';
 import type { HTMLAttributes, HTMLAnchorAttributes } from 'svelte/elements';
@@ -28,12 +30,12 @@ interface DropdownDividerProps extends HTMLAttributes<HTMLDivElement> {
   class?: string | undefined;
 }
 
-interface DropdownItemProps extends HTMLAnchorAttributes {
+interface DropdownHeaderProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
-  aClass?: string | undefined | null;
-  href?: string | undefined | null;
-  activeClass?: string | undefined | null;
-  liClass?: string | undefined | null;
+}
+
+interface DropdownFooterProps extends HTMLAttributes<HTMLDivElement> {
+  children: Snippet;
 }
 
 interface DropdownLiProps extends HTMLAnchorAttributes {
@@ -53,12 +55,18 @@ export {
   DropdownDivider,
   DropdownUl,
   DropdownLi,
+  DropdownHeader,
+  DropdownFooter,
   dropdown,
   dropdowndivider,
   dropdownli,
   dropdownul,
+  dropdownHeader,
+  dropdownFooter,
   type DropdownProps,
   type DropdownDividerProps,
   type DropdownLiProps,
-  type DropdownUlProps
+  type DropdownUlProps,
+  type DropdownHeaderProps,
+  type DropdownFooterProps
 };
