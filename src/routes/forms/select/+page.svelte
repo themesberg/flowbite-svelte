@@ -134,7 +134,7 @@
         {transitionParams}
         class="absolute top-[40px] -left-[120px]"
       >
-        <DropdownUl class="flex flex-col">
+        <DropdownUl>
           <DropdownLi aClass="flex items-center" href="/">
             <Usa />
             United States

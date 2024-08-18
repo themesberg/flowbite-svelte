@@ -401,7 +401,7 @@
 
 <P>Use this example to show a dropdown menu right next to the input field.</P>
 
-<CodeWrapper class="h-52">
+<CodeWrapper class="h-64">
   <ButtonGroup class="w-full">
     <Button
       onclick={dropdown.toggle}
@@ -410,18 +410,23 @@
     >
       All categories<ChevronDownOutline class="ms-2 h-6 w-6" />
     </Button>
-
+    <div class="relative">
+      <Dropdown {dropdownStatus} {closeDropdown} 
+      {transitionParams}
+      class="absolute top-[40px] -left-[160px]"
+      >
+        <DropdownUl>
+          <DropdownLi href="/">Shopping</DropdownLi>
+          <DropdownLi href="/">Images</DropdownLi>
+          <DropdownLi href="/">News</DropdownLi>
+          <DropdownLi href="/">Finance</DropdownLi>
+        </DropdownUl>
+      </Dropdown>
+    </div>
     <Input placeholder="Search" />
     <Button color="primary" class="!p-2.5" type="submit">
       <SearchOutline class="h-5 w-5" />
     </Button>
   </ButtonGroup>
-  <Dropdown {dropdownStatus} {closeDropdown} {transitionParams}>
-    <DropdownUl>
-      <DropdownLi>Shopping</DropdownLi>
-      <DropdownLi>Images</DropdownLi>
-      <DropdownLi>News</DropdownLi>
-      <DropdownLi>Finance</DropdownLi>
-    </DropdownUl>
-  </Dropdown>
+
 </CodeWrapper>
