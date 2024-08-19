@@ -1,1 +1,1 @@
-{"name":"InputAddon","slots":[],"events":[],"props":[["size","'sm' | 'md' | 'lg' | undefined","undefined"]]}
+{ "name": "InputAddon", "slots": [], "events": [], "props": [["size", "'sm' | 'md' | 'lg' | undefined", "undefined"]] }

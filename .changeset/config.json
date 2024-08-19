@@ -1,9 +1,6 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@3.0.0/schema.json",
-  "changelog": [
-    "@svitejs/changesets-changelog-github-compact",
-    { "repo": "themesberg/flowbite-svelte" }
-  ],
+  "changelog": ["@svitejs/changesets-changelog-github-compact", { "repo": "themesberg/flowbite-svelte" }],
   "commit": false,
   "fixed": [],
   "linked": [],

@@ -1,1 +1,14 @@
-{"name":"Textarea","slots":["header","footer"],"events":["on:blur","on:change","on:click","on:contextmenu","on:focus","on:input","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover","on:paste","on:select"],"props":[["value","any","undefined"],["wrappedClass","string","'block w-full text-sm border-0 px-0 bg-inherit dark:bg-inherit focus:outline-none focus:ring-0 disabled:cursor-not-allowed disabled:opacity-50'"],["unWrappedClass","string","'p-2.5 text-sm focus:ring-primary-500 border-gray-300 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 disabled:cursor-not-allowed disabled:opacity-50'"],["innerWrappedClass","string","'py-2 px-4 bg-white dark:bg-gray-800'"],["headerClass","string","''"],["footerClass","string","''"],["footerClass","string","''"]]}
+{
+  "name": "Textarea",
+  "slots": ["header", "footer"],
+  "events": ["on:blur", "on:change", "on:click", "on:contextmenu", "on:focus", "on:input", "on:keydown", "on:keypress", "on:keyup", "on:mouseenter", "on:mouseleave", "on:mouseover", "on:paste", "on:select"],
+  "props": [
+    ["value", "any", "undefined"],
+    ["wrappedClass", "string", "'block w-full text-sm border-0 px-0 bg-inherit dark:bg-inherit focus:outline-none focus:ring-0 disabled:cursor-not-allowed disabled:opacity-50'"],
+    ["unWrappedClass", "string", "'p-2.5 text-sm focus:ring-primary-500 border-gray-300 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 disabled:cursor-not-allowed disabled:opacity-50'"],
+    ["innerWrappedClass", "string", "'py-2 px-4 bg-white dark:bg-gray-800'"],
+    ["headerClass", "string", "''"],
+    ["footerClass", "string", "''"],
+    ["footerClass", "string", "''"]
+  ]
+}

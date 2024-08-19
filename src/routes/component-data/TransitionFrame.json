@@ -1,1 +1,10 @@
-{"name":"TransitionFrame","slots":[],"events":["on:show"],"props":[["transition","TransitionFunc","fade"],["params","object","{}"],["open","boolean","true"]]}
+{
+  "name": "TransitionFrame",
+  "slots": [],
+  "events": ["on:show"],
+  "props": [
+    ["transition", "TransitionFunc", "fade"],
+    ["params", "object", "{}"],
+    ["open", "boolean", "true"]
+  ]
+}

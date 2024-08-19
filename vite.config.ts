@@ -25,8 +25,8 @@ const config = {
   },
   define: {
     __VERSION__: JSON.stringify(pkg.version),
-    __BLOCKS_VERSION__: JSON.stringify(blocksPackage.version),
-	},
+    __BLOCKS_VERSION__: JSON.stringify(blocksPackage.version)
+  }
 };
 
 export default config;
