@@ -12,7 +12,7 @@
     DropdownLi, DropdownHeader, DropdownFooter, Navbar, NavBrand,  NavUl, NavLi, Avatar,
     uiHelpers
   } from '$lib';
-  import { ChevronDownOutline, ChevronRightOutline, UserRemoveSolid, DotsHorizontalOutline, DotsVerticalOutline, BellSolid, EyeSolid } from 'flowbite-svelte-icons';
+  import { ChevronDownOutline, ChevronRightOutline, UserRemoveSolid,  DotsVerticalOutline, BellSolid, EyeSolid } from 'flowbite-svelte-icons';
   import { sineIn } from 'svelte/easing';
 
   let transitionParams = {
@@ -97,6 +97,14 @@
   let dropdownNotificationStatus = $state(false);
   let closeDropdownNotification = dropdownNotification.close;
 
+  let dropdownUser = uiHelpers();
+  let dropdownUserStatus = $state(false);
+  let closeDropdownUser = dropdownUser.close;
+
+  let dropdownAvatar = uiHelpers();
+  let dropdownAvatarStatus = $state(false);
+  let closeDropdownAvatar = dropdownAvatar.close;
+
   let dropdownTransition1 = uiHelpers();
   let dropdownTransition1Status = $state(false);
   let closeDropdownTransition1 = dropdownTransition1.close;
@@ -129,6 +137,8 @@
     dropdownSearchStatus = dropdownSearch.isOpen;
     dropdownIconStatus = dropdownIcon.isOpen;
     dropdownNotificationStatus = dropdownNotification.isOpen;
+    dropdownUserStatus = dropdownUser.isOpen;
+    dropdownAvatarStatus = dropdownAvatar.isOpen;
     dropdownTransition1Status = dropdownTransition1.isOpen;
     dropdownTransition2Status = dropdownTransition2.isOpen;
   });
@@ -717,3 +727,60 @@
 </CodeWrapper>
 
 <H2>User avatar</H2>
+<CodeWrapper class="flex h-96 items-start justify-center">
+  <Avatar onclick={dropdownUser.toggle} src="/images/profile-picture-3.webp" dot={{ color: 'green' }} />
+
+  <div class="relative">
+    <Dropdown
+      dropdownStatus={dropdownUserStatus}
+      closeDropdown={closeDropdownUser}
+      {transitionParams}
+      class="absolute top-[40px] -left-[100px]"
+    >
+      <DropdownHeader class="px-4 py-2">
+        <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
+    <span class="block truncate text-sm font-medium">name@flowbite.com</span>
+      </DropdownHeader>
+      <DropdownUl>
+        <DropdownLi href="/">Dashboard</DropdownLi>
+        <DropdownLi href="/components/drawer">Drawer</DropdownLi>
+        <DropdownLi href="/components/footer">Footer</DropdownLi>
+        <DropdownLi href="/components">Alert</DropdownLi>
+      </DropdownUl>
+      <DropdownFooter class="px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600">
+        Sign out
+      </DropdownFooter>
+    </Dropdown>
+  </div>
+</CodeWrapper>
+
+<H2>Avatar with name</H2>
+<CodeWrapper class="flex h-96 items-start justify-center">
+
+  <Button onclick={dropdownAvatar.toggle} pill color="light" class="!p-1">
+    <Avatar src="/images/profile-picture-3.webp" class="me-2" />
+    Bonnie Green
+  </Button>
+  <div class="relative">
+    <Dropdown
+      dropdownStatus={dropdownAvatarStatus}
+      closeDropdown={closeDropdownAvatar}
+      {transitionParams}
+      class="absolute top-[50px] -left-[160px]"
+    >
+      <DropdownHeader class="px-4 py-2">
+        <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
+    <span class="block truncate text-sm font-medium">name@flowbite.com</span>
+      </DropdownHeader>
+      <DropdownUl>
+        <DropdownLi href="/">Dashboard</DropdownLi>
+        <DropdownLi href="/components/drawer">Drawer</DropdownLi>
+        <DropdownLi href="/components/footer">Footer</DropdownLi>
+        <DropdownLi href="/components">Alert</DropdownLi>
+      </DropdownUl>
+      <DropdownFooter class="px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600">
+        Sign out
+      </DropdownFooter>
+    </Dropdown>
+  </div>
+</CodeWrapper>

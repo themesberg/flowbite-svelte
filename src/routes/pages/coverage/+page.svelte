@@ -82,8 +82,9 @@
     },
     dropdown: {
       checked: true,
-      problems:
-        'Dropdown with scrolling, Dropdown with search, Menu icon, Notification bell, User avatar, Avatar with name, Sizes, Placement, Double placement, Events, Adding links and active class'
+      // problems:
+      //   'Sizes, Placement, Double placement, Events'
+      notes: 'Variants checked'
     },
     footer: {
       checked: true,
