@@ -90,6 +90,7 @@
       <SidebarItem label="File input" href="/forms/file-input" />
       <SidebarItem label="Floating label" href="/forms/floating-label" />
       <SidebarItem label="Input field" href="/forms/input-field" />
+      <SidebarItem label="Label" href="/forms/label" />
       <SidebarItem label="Radio" href="/forms/radio" />
       <SidebarItem label="Range" href="/forms/range" />
       <SidebarItem label="Search input" href="/forms/search-input" />

@@ -162,6 +162,10 @@
 
 <H1>Dropdown</H1>
 
+<H2>Setup</H2>
+
+<HighlightCompo code={modules['./md/setup.md'] as string} />
+
 <H2>Default dropdown</H2>
 
 <CodeWrapper class="flex h-64 items-start justify-center">
@@ -212,6 +216,8 @@
   </div>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/active-link.md'] as string} />
+
 <H2>Dropdown divider</H2>
 <CodeWrapper class="flex h-64 items-start justify-center">
   <Button onclick={dropdownDivider.toggle}
@@ -235,6 +241,8 @@
   </Dropdown>
 </div>
 </CodeWrapper>
+
+<HighlightCompo code={modules['./md/dropdown-divider.md'] as string} />
 
 <H2>Dropdown header adn footer</H2>
 
@@ -273,6 +281,8 @@
   </div>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/dropdown-header-footer.md'] as string} />
+
 <H2>Transtions</H2>
 
 <H3>Slide in/out left</H3>
@@ -300,6 +310,8 @@
   </div>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/transition-slide.md'] as string} />
+
 <H3>Blur</H3>
 <CodeWrapper class="flex h-96 items-start justify-center">
   <Button onclick={dropdownTransition2.toggle}
@@ -325,6 +337,8 @@
     </Dropdown>
   </div>
 </CodeWrapper>
+
+<HighlightCompo code={modules['./md/transition-blur.md'] as string} />
 
 <H2>Multi-level dropdown</H2>
 <CodeWrapper class="flex h-96 items-start justify-center">
@@ -365,6 +379,8 @@
   </div>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/multi-level-dropdown.md'] as string} />
+
 <H2>Dropdown with checkbox</H2>
 
 <CodeWrapper class="relative flex h-96 items-start justify-center">
@@ -378,7 +394,7 @@
       dropdownStatus={dropdownCheckboxStatus}
       closeDropdown={closeDropdownCheckbox}
       {transitionParams}
-      class="overflow-y-auto p-2 pb-3 text-sm absolute top-[40px] -left-[200px]"
+      class="absolute top-[40px] -left-[200px]"
     >
       <DropdownUl>
         <DropdownLi liClass="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
@@ -400,22 +416,11 @@
           <Checkbox>Bonnie Green</Checkbox>
         </DropdownLi>
       </DropdownUl>
-      {#snippet header()}
-        <div class="p-0">
-          <Search size="md" class="pl-8" />
-        </div>
-      {/snippet}
-      {#snippet footer()}
-        <a
-          href="/"
-          class="-mb-1 flex items-center bg-gray-50 p-3 text-sm font-medium text-red-600 hover:bg-gray-100 hover:underline dark:bg-gray-700 dark:text-red-500 dark:hover:bg-gray-600"
-        >
-          <UserRemoveSolid class="me-1 h-5 w-5" />Delete user
-        </a>
-      {/snippet}
     </Dropdown>
   </div>
 </CodeWrapper>
+
+<HighlightCompo code={modules['./md/dropdown-checkbox.md'] as string} />
 
 <H2>Helper text</H2>
 
@@ -446,19 +451,6 @@
           <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
         </DropdownLi>
       </DropdownUl>
-      {#snippet header()}
-        <div class="p-0">
-          <Search size="md" class="pl-8" />
-        </div>
-      {/snippet}
-      {#snippet footer()}
-        <a
-          href="/"
-          class="-mb-1 flex items-center bg-gray-50 p-3 text-sm font-medium text-red-600 hover:bg-gray-100 hover:underline dark:bg-gray-700 dark:text-red-500 dark:hover:bg-gray-600"
-        >
-          <UserRemoveSolid class="me-1 h-5 w-5" />Delete user
-        </a>
-      {/snippet}
     </Dropdown>
   </div>
 </CodeWrapper>

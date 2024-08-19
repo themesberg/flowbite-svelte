@@ -387,6 +387,11 @@
         />
         <SidebarItem
           onclick={closeNavDrawer}
+          label="Label"
+          href="/forms/label"
+        />
+        <SidebarItem
+          onclick={closeNavDrawer}
           label="Radio"
           href="/forms/radio"
         />

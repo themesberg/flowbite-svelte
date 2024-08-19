@@ -1,13 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
   import { type LabelProps as Props, label } from '.';
-  // interface Props extends HTMLLabelAttributes {
-  //   children: Snippet;
-  //   color?: 'gray' | 'green' | 'red' | 'disabled';
-  //   show?: boolean;
-  //   class?: string | undefined;
-  //   for?: string | undefined | null;
-  // }
 
   let {
     children,
