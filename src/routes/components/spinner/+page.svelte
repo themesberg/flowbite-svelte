@@ -50,6 +50,7 @@
         labelClass="w-24 my-1"
         name="spinnercolor"
         bind:group={spinnerColor}
+        color={color as Spinner['color']}
         value={color}>{color}</Radio
       >
     {/each}

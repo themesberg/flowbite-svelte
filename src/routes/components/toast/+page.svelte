@@ -68,6 +68,7 @@
         labelClass="w-24 my-1"
         name="border_accent_alert_color"
         bind:group={toastColor}
+        color={colorOption as Toast['color']}
         value={colorOption}>{colorOption}</Radio
       >
     {/each}

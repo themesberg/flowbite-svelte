@@ -43,7 +43,7 @@
         labelClass="w-24 m-2"
         name="toggle_color"
         bind:group={toggleColor}
-        color={colorOption}
+        color={colorOption as Toggle['color']}
         value={colorOption}>{colorOption}</Radio
       >
     {/each}

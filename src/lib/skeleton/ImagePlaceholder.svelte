@@ -4,7 +4,7 @@
     type ImagePlaceholderProps as Props
   } from './index';
 
-  let { size, rounded, class: className, ...restProps }: Props = $props();
+  let { size = 'md', rounded, class: className, ...restProps }: Props = $props();
 
   const { base, image, svg, content, line } = $derived(
     imagePlaceholder({

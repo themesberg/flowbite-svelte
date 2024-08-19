@@ -3,7 +3,7 @@
 
   let {
     itemNumber = 5,
-    size,
+    size = 'md',
     rounded,
     class: className,
     ...restProps

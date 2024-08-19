@@ -119,6 +119,7 @@
         labelClass="w-24 my-1"
         name="floating_color"
         bind:group={floatingColor}
+        color={colorOption as FloatingLabelInput['color']}
         value={colorOption}>{colorOption}</Radio
       >
     {/each}
@@ -179,6 +180,7 @@
         labelClass="w-24 my-1"
         name="floating_color"
         bind:group={helperColor}
+        color={colorOption as FloatingLabelInput['color']}
         value={colorOption}>{colorOption}</Radio
       >
     {/each}

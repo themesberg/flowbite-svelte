@@ -96,6 +96,7 @@
         labelClass="w-24 my-1"
         name="checkbox_color"
         bind:group={checkboxColor}
+        color={colorOption as Checkbox['color']}
         value={colorOption}>{colorOption}</Radio
       >
     {/each}

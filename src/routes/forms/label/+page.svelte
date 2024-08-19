@@ -33,6 +33,7 @@
         labelClass="w-24 my-1"
         name="default_alert_color"
         bind:group={defaultColor}
+        color={colorOption as Label['color']}
         value={colorOption}>{colorOption}</Radio
       >
     {/each}

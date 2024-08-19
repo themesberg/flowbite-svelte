@@ -199,6 +199,7 @@
         labelClass="w-24 my-1"
         name="input_color"
         bind:group={inputColor}
+        color={colorOption as Input['color']}
         value={colorOption}>{colorOption}</Radio
       >
     {/each}

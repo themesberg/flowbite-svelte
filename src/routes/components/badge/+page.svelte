@@ -113,6 +113,7 @@
         labelClass="w-24 my-1"
         name="color"
         bind:group={color}
+        color={colorOption as BadgeProps['color']}
         value={colorOption}>{colorOption}</Radio
       >
     {/each}

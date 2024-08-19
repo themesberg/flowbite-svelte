@@ -89,6 +89,7 @@
         labelClass="w-24 my-1"
         name="progress_size"
         bind:group={progressColor}
+        color={color as Progressbar['color']}
         value={color}>{color}</Radio
       >
     {/each}

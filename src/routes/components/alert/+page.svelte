@@ -79,6 +79,7 @@
         labelClass="w-24 my-1"
         name="default_alert_color"
         bind:group={defaultColor}
+        color={colorOption as AlertProps['color']}
         value={colorOption}>{colorOption}</Radio
       >
     {/each}
@@ -112,6 +113,7 @@
         labelClass="w-24 my-1"
         name="icon_alert_color"
         bind:group={iconColor}
+        color={colorOption as AlertProps['color']}
         value={colorOption}>{colorOption}</Radio
       >
     {/each}
@@ -141,6 +143,7 @@
         labelClass="w-24 my-1"
         name="bordered_alert_color"
         bind:group={borderColor}
+        color={colorOption as AlertProps['color']}
         value={colorOption}>{colorOption}</Radio
       >
     {/each}
@@ -174,6 +177,7 @@
         labelClass="w-24 my-1"
         name="list_alert_color"
         bind:group={listColor}
+        color={colorOption as AlertProps['color']}
         value={colorOption}>{colorOption}</Radio
       >
     {/each}
@@ -210,6 +214,7 @@
         labelClass="w-24 my-1"
         name="dissmissible_alert_color"
         bind:group={dismissableColor}
+        color={colorOption as AlertProps['color']}
         value={colorOption}>{colorOption}</Radio
       >
     {/each}
@@ -242,6 +247,7 @@
         labelClass="w-24 my-1"
         name="border_accent_alert_color"
         bind:group={borderAccessColor}
+        color={colorOption as AlertProps['color']}
         value={colorOption}>{colorOption}</Radio
       >
     {/each}
@@ -289,6 +295,7 @@
         labelClass="w-24 my-1"
         name="additional_alert_color"
         bind:group={additionalColor}
+        color={colorOption as AlertProps['color']}
         value={colorOption}>{colorOption}</Radio
       >
     {/each}
@@ -312,8 +319,9 @@
     {#each colors as colorOption}
       <Radio
         labelClass="w-24 my-1"
-        name="alert_reactive"
+        name="alert_rounded"
         bind:group={color}
+        color={colorOption as AlertProps['color']}
         value={colorOption}>{colorOption}</Radio
       >
     {/each}
@@ -365,6 +373,7 @@
         labelClass="w-24 my-1"
         name="alert_reactive"
         bind:group={color}
+        color={colorOption as AlertProps['color']}
         value={colorOption}>{colorOption}</Radio
       >
     {/each}
