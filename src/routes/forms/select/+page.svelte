@@ -1,7 +1,8 @@
 <script lang="ts">
   import {
     Select,
-    Label, Radio,
+    Label,
+    Radio,
     Helper,
     Dropdown,
     DropdownUl,
@@ -29,7 +30,7 @@
   let countries = [
     { value: 'us', name: 'United States', href: '/' },
     { value: 'ca', name: 'Canada', href: '/' },
-    { value: 'fr', name: 'France' , href: '/'}
+    { value: 'fr', name: 'France', href: '/' }
   ];
 
   let states = [
@@ -132,7 +133,7 @@
         {dropdownStatus}
         {closeDropdown}
         {transitionParams}
-        class="absolute top-[40px] -left-[120px]"
+        class="absolute -left-[120px] top-[40px]"
       >
         <DropdownUl>
           <DropdownLi aClass="flex items-center" href="/">
@@ -167,8 +168,19 @@
 <CodeWrapper>
   <div class="h-64">
     <Label for="select-sm" class="mb-4">{sizeDisplay[selectSize]} select</Label>
-    <Select id="select-sm" size={selectSize} items={countries} selectClass="mb-8" />
-    <Select id="select-sm" underline size={selectSize} items={countries} selectClass="mb-8" />
+    <Select
+      id="select-sm"
+      size={selectSize}
+      items={countries}
+      selectClass="mb-8"
+    />
+    <Select
+      id="select-sm"
+      underline
+      size={selectSize}
+      items={countries}
+      selectClass="mb-8"
+    />
   </div>
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
@@ -187,7 +199,12 @@
 
 <CodeWrapper>
   <Label for="countries">Select an option</Label>
-  <Select id="countries" selectClass="mt-2" bind:value={selected} placeholder="">
+  <Select
+    id="countries"
+    selectClass="mt-2"
+    bind:value={selected}
+    placeholder=""
+  >
     <option selected value="all">All</option>
 
     {#each countries as { value, name }}

@@ -4,7 +4,14 @@ import DropdownUl from './DropdownUl.svelte';
 import DropdownLi from './DropdownLi.svelte';
 import DropdownHeader from './DropdownHeader.svelte';
 import DropdownFooter from './DropdownFooter.svelte';
-import { dropdown, dropdowndivider, dropdownli, dropdownul, dropdownHeader, dropdownFooter } from './theme';
+import {
+  dropdown,
+  dropdowndivider,
+  dropdownli,
+  dropdownul,
+  dropdownHeader,
+  dropdownFooter
+} from './theme';
 import type { Snippet } from 'svelte';
 import type { TransitionParamTypes, TransitionTypes } from '../types';
 import type { HTMLAttributes, HTMLAnchorAttributes } from 'svelte/elements';

@@ -411,9 +411,11 @@
       All categories<ChevronDownOutline class="ms-2 h-6 w-6" />
     </Button>
     <div class="relative">
-      <Dropdown {dropdownStatus} {closeDropdown} 
-      {transitionParams}
-      class="absolute top-[40px] -left-[160px]"
+      <Dropdown
+        {dropdownStatus}
+        {closeDropdown}
+        {transitionParams}
+        class="absolute -left-[160px] top-[40px]"
       >
         <DropdownUl>
           <DropdownLi href="/">Shopping</DropdownLi>
@@ -428,5 +430,4 @@
       <SearchOutline class="h-5 w-5" />
     </Button>
   </ButtonGroup>
-
 </CodeWrapper>

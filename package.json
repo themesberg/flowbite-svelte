@@ -207,6 +207,14 @@
       "types": "./dist/dropdown/DropdownDivider.svelte.d.ts",
       "svelte": "./dist/dropdown/DropdownDivider.svelte"
     },
+    "./DropdownFooter.svelte": {
+      "types": "./dist/dropdown/DropdownFooter.svelte.d.ts",
+      "svelte": "./dist/dropdown/DropdownFooter.svelte"
+    },
+    "./DropdownHeader.svelte": {
+      "types": "./dist/dropdown/DropdownHeader.svelte.d.ts",
+      "svelte": "./dist/dropdown/DropdownHeader.svelte"
+    },
     "./DropdownLi.svelte": {
       "types": "./dist/dropdown/DropdownLi.svelte.d.ts",
       "svelte": "./dist/dropdown/DropdownLi.svelte"

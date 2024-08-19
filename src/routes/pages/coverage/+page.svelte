@@ -83,7 +83,7 @@
     dropdown: {
       checked: true,
       problems:
-        'Multi-level dropdown, Programatic open/close, Dropdown with checkbox, Background hover, Helper text, Dropdown with radio, Dropdown with toggle switch, Dropdown navbar, Dropdown with scrolling, Dropdown with search, Menu icon, Notification bell, User avatar, Avatar with name, Sizes, Placement, Double placement, Events, Adding links and active class'
+        'Dropdown with scrolling, Dropdown with search, Menu icon, Notification bell, User avatar, Avatar with name, Sizes, Placement, Double placement, Events, Adding links and active class'
     },
     footer: {
       checked: true,
@@ -207,7 +207,8 @@
     },
     searchInput: {
       checked: true,
-      problems: 'Search with dropdown, Location search, Voice search, Event example',
+      problems:
+        'Search with dropdown, Location search, Voice search, Event example',
       notes: 'Variants checked'
     },
     select: {

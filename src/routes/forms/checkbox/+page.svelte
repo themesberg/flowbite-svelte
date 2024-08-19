@@ -216,33 +216,35 @@
       {dropdownStatus}
       {closeDropdown}
       {transitionParams}
-      divClass="overflow-y-auto p-0 pb-3 text-sm w-64 h-64 absolute top-[50px] -left-[210px]"
+      class="absolute -left-[170px] top-[40px] overflow-y-auto p-2 pb-3 text-sm"
     >
+      <div class="relative">
+        <DropdownUl>
+          <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+            <Checkbox>Robert Gouth</Checkbox>
+          </li>
+          <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+            <Checkbox>Jese Leos</Checkbox>
+          </li>
+          <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+            <Checkbox checked>Bonnie Green</Checkbox>
+          </li>
+          <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+            <Checkbox>Jese Leos</Checkbox>
+          </li>
+          <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+            <Checkbox>Robert Gouth</Checkbox>
+          </li>
+          <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+            <Checkbox>Bonnie Green</Checkbox>
+          </li>
+        </DropdownUl>
+      </div>
       {#snippet header()}
         <div class="p-0">
           <Search size="md" class="pl-8" />
         </div>
       {/snippet}
-      <DropdownUl>
-        <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-          <Checkbox>Robert Gouth</Checkbox>
-        </li>
-        <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-          <Checkbox>Jese Leos</Checkbox>
-        </li>
-        <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-          <Checkbox checked>Bonnie Green</Checkbox>
-        </li>
-        <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-          <Checkbox>Jese Leos</Checkbox>
-        </li>
-        <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-          <Checkbox>Robert Gouth</Checkbox>
-        </li>
-        <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-          <Checkbox>Bonnie Green</Checkbox>
-        </li>
-      </DropdownUl>
       {#snippet footer()}
         <a
           href="/"

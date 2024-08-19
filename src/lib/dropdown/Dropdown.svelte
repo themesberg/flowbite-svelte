@@ -60,10 +60,7 @@
 @prop toggleDropdown
 @prop closeDropdown
 @prop activateClickOutside = true
-@prop divClass
-@prop footerClass
-@prop headerClass
-@prop ulClass
+@prop class: className
 @prop backdropClass
 @prop transitionParams
 @prop transitionType = 'fly'

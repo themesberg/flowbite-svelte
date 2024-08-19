@@ -1,5 +1,14 @@
 <script lang="ts">
-  import { Select, Label, Search, Button, Dropdown, DropdownUl, DropdownLi, uiHelpers } from '$lib';
+  import {
+    Select,
+    Label,
+    Search,
+    Button,
+    Dropdown,
+    DropdownUl,
+    DropdownLi,
+    uiHelpers
+  } from '$lib';
   import { SearchOutline, ChevronDownOutline } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -15,11 +24,11 @@
 
   const items = [
     { label: 'All categories' },
-    { label: 'Mockups'},
-    { label: 'Templates'},
+    { label: 'Mockups' },
+    { label: 'Templates' },
     { label: 'Design' },
     { label: 'Logos' }
-  ]
+  ];
 
   let selectCategory = $state('All categories');
   let dropdown = uiHelpers();
@@ -30,16 +39,15 @@
     duration: 200,
     easing: sineIn
   };
-  const handleClick = (label: string) =>{
+  const handleClick = (label: string) => {
     selectCategory = label;
     console.log('selectCategory', selectCategory);
     dropdown.close();
-  }
+  };
   $effect(() => {
     // this can be done adding nav.navStatus directly to DOM element
     // without using effect
     dropdownStatus = dropdown.isOpen;
-    
   });
 </script>
 
@@ -55,9 +63,9 @@
 <H2>Simple search input</H2>
 <CodeWrapper>
   <form class="flex gap-2">
-    <Search size="md" class="pl-10"/>
+    <Search size="md" class="pl-10" />
     <Button class="!p-2.5">
-      <SearchOutline class="w-5 h-5" />
+      <SearchOutline class="h-5 w-5" />
     </Button>
   </form>
 </CodeWrapper>
@@ -65,32 +73,41 @@
 <H2>Search with dropdown</H2>
 <CodeWrapper class="h-64">
   <form class="flex">
-    <Button class="rounded-e-none whitespace-nowrap border border-e-0 border-primary-700" onclick={dropdown.toggle}>
+    <Button
+      class="whitespace-nowrap rounded-e-none border border-e-0 border-primary-700"
+      onclick={dropdown.toggle}
+    >
       {selectCategory}
-      <ChevronDownOutline class="w-2.5 h-2.5 ms-2.5" />
+      <ChevronDownOutline class="ms-2.5 h-2.5 w-2.5" />
     </Button>
     <div class="relative">
-      <Dropdown 
-      {dropdownStatus} {closeDropdown} 
-      {transitionParams}
-      class="absolute top-[40px] -left-[160px]"
+      <Dropdown
+        {dropdownStatus}
+        {closeDropdown}
+        {transitionParams}
+        class="absolute -left-[160px] top-[40px]"
       >
         <DropdownUl>
-        {#each items as { label }}
-          <DropdownLi
-            onclick={()=>handleClick(label)}
-            liClass="hover:cursor-pointer py-1 pl-4 {selectCategory === label ? 'underline' : ''}"
-            
-          >
-           {label}
-          </DropdownLi>
-        {/each}
+          {#each items as { label }}
+            <DropdownLi
+              onclick={() => handleClick(label)}
+              liClass="hover:cursor-pointer py-1 pl-4 {selectCategory === label
+                ? 'underline'
+                : ''}"
+            >
+              {label}
+            </DropdownLi>
+          {/each}
         </DropdownUl>
       </Dropdown>
     </div>
-    <Search size="md" class="rounded-none pl-8 py-2.5" placeholder="Searching {selectCategory}" />
-    <Button class="!p-2.5 rounded-s-none">
-      <SearchOutline class="w-6 h-6" />
+    <Search
+      size="md"
+      class="rounded-none py-2.5 pl-8"
+      placeholder="Searching {selectCategory}"
+    />
+    <Button class="rounded-s-none !p-2.5">
+      <SearchOutline class="h-6 w-6" />
     </Button>
   </form>
 </CodeWrapper>
