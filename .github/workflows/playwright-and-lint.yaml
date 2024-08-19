@@ -23,9 +23,10 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm i
+      - name: Run lint
+        run: pnpm lint
       - name: Run playwright tests
         env:
           NODE_OPTIONS: '--max_old_space_size=4096'
           FATHOM_ID: 'ABCDEFGF'
         run: pnpm test:integration
-
