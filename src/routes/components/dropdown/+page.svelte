@@ -12,7 +12,7 @@
     DropdownLi, DropdownHeader, DropdownFooter, Navbar, NavBrand,  NavUl, NavLi, Avatar,
     uiHelpers
   } from '$lib';
-  import { ChevronDownOutline, ChevronRightOutline, UserRemoveSolid,  DotsVerticalOutline, BellSolid, EyeSolid } from 'flowbite-svelte-icons';
+  import { ChevronDownOutline, ChevronRightOutline, UserRemoveSolid,  DotsVerticalOutline, BellSolid, EyeSolid, ChevronUpOutline, ChevronLeftOutline } from 'flowbite-svelte-icons';
   import { sineIn } from 'svelte/easing';
 
   let transitionParams = {
@@ -113,6 +113,22 @@
   let dropdownTransition2Status = $state(false);
   let closeDropdownTransition2 = dropdownTransition2.close;
 
+  let dropdownTop = uiHelpers();
+  let dropdownTopStatus = $state(false);
+  let closeDropdownTop = dropdownTop.close;
+
+  let dropdownRight = uiHelpers();
+  let dropdownRightStatus = $state(false);
+  let closeDropdownRight = dropdownRight.close;
+
+  let dropdownLeft = uiHelpers();
+  let dropdownLeftStatus = $state(false);
+  let closeDropdownLeft = dropdownLeft.close;
+
+  let dropdownBottom = uiHelpers();
+  let dropdownBottomStatus = $state(false);
+  let closeDropdownBottom = dropdownBottom.close;
+
   const closeAllMultilevel = () => {
     dropdownMultiLevel.close();
     dropdownMultiLevel2.close();
@@ -139,6 +155,10 @@
     dropdownNotificationStatus = dropdownNotification.isOpen;
     dropdownUserStatus = dropdownUser.isOpen;
     dropdownAvatarStatus = dropdownAvatar.isOpen;
+    dropdownTopStatus = dropdownTop.isOpen;
+    dropdownRightStatus = dropdownRight.isOpen;
+    dropdownLeftStatus = dropdownLeft.isOpen;
+    dropdownBottomStatus = dropdownBottom.isOpen;
     dropdownTransition1Status = dropdownTransition1.isOpen;
     dropdownTransition2Status = dropdownTransition2.isOpen;
   });
@@ -455,6 +475,8 @@
   </div>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/dropdown-helper-text.md'] as string} />
+
 <H2>Dropdown with radio</H2>
 <CodeWrapper class="relative flex h-96 items-start justify-center">
   <Button onclick={dropdownRadio.toggle}
@@ -496,6 +518,8 @@
     </Dropdown>
   </div>
 </CodeWrapper>
+
+<HighlightCompo code={modules['./md/dropdown-radio.md'] as string} />
 
 <H2>Dropdown with toggle switch</H2>
 <CodeWrapper class="relative flex h-96 items-start justify-center">
@@ -539,6 +563,8 @@
   </div>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/dropdown-toggle-switch.md'] as string} />
+
 <H2>Dropdown navbar</H2>
 <CodeWrapper class="h-96">
   <Navbar {toggleNav} {closeNav} {navStatus} breakPoint="md">
@@ -575,6 +601,8 @@
   </Navbar>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/dropdown-navbar.md'] as string} />
+
 <H2>Dropdown with scrolling</H2>
 <CodeWrapper class="flex h-80 items-start justify-center">
   <Button onclick={dropdownScroll.toggle}
@@ -606,6 +634,8 @@
   </div>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/dropdown-scroll.md'] as string} />
+
 <H2>Dropdown with search</H2>
 <CodeWrapper class="flex h-80 items-start justify-center">
   <Button onclick={dropdownSearch.toggle}
@@ -636,6 +666,8 @@
   </div>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/dropdown-search.md'] as string} />
+
 <H2>Menu icon</H2>
 <CodeWrapper class="flex h-64 items-start justify-center">
   <DotsVerticalOutline onclick={dropdownIcon.toggle} class="dots-menu dark:text-white" />
@@ -655,6 +687,8 @@
     </Dropdown>
   </div>
 </CodeWrapper>
+
+<HighlightCompo code={modules['./md/dropdown-icon.md'] as string} />
 
 <H2>Notification bell</H2>
 <CodeWrapper class="flex h-[450px] items-start justify-center">
@@ -718,6 +752,8 @@
   </div>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/dropdown-notification.md'] as string} />
+
 <H2>User avatar</H2>
 <CodeWrapper class="flex h-96 items-start justify-center">
   <Avatar onclick={dropdownUser.toggle} src="/images/profile-picture-3.webp" dot={{ color: 'green' }} />
@@ -746,9 +782,10 @@
   </div>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/user-avatar.md'] as string} />
+
 <H2>Avatar with name</H2>
 <CodeWrapper class="flex h-96 items-start justify-center">
-
   <Button onclick={dropdownAvatar.toggle} pill color="light" class="!p-1">
     <Avatar src="/images/profile-picture-3.webp" class="me-2" />
     Bonnie Green
@@ -776,3 +813,80 @@
     </Dropdown>
   </div>
 </CodeWrapper>
+
+<HighlightCompo code={modules['./md/avatar-with-name.md'] as string} />
+
+<H2>Placement</H2>
+<p>Change `Dropdown` class.</p>
+<CodeWrapper class="">
+  <div id="placements" class="flex flex-col justify-center items-center gap-2 h-[450px] my-8">
+    <Button onclick={dropdownTop.toggle}>Dropdown top<ChevronUpOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
+    <div class="relative">
+      <Dropdown
+        dropdownStatus={dropdownTopStatus}
+        closeDropdown={closeDropdownTop}
+        {transitionParams}
+        class="absolute -top-[230px] -left-[90px]"
+      >
+        <DropdownUl>
+          <DropdownLi href="/">Dashboard</DropdownLi>
+          <DropdownLi href="/components/drawer">Drawer</DropdownLi>
+          <DropdownLi href="/components/footer">Footer</DropdownLi>
+          <DropdownLi href="/components">Alert</DropdownLi>
+        </DropdownUl>
+      </Dropdown>
+    </div>
+    <div class="flex space-x-2 rtl:space-x-reverse">
+      <Button onclick={dropdownLeft.toggle}><ChevronLeftOutline class="w-6 h-6 me-2 text-white dark:text-white" />Dropdown left</Button>
+      <div class="relative">
+        <Dropdown
+          dropdownStatus={dropdownLeftStatus}
+          closeDropdown={closeDropdownLeft}
+          {transitionParams}
+          class="absolute -top-[60px] right-[180px]"
+        >
+          <DropdownUl>
+            <DropdownLi href="/">Dashboard</DropdownLi>
+            <DropdownLi href="/components/drawer">Drawer</DropdownLi>
+            <DropdownLi href="/components/footer">Footer</DropdownLi>
+            <DropdownLi href="/components">Alert</DropdownLi>
+          </DropdownUl>
+        </Dropdown>
+      </div>
+      <Button onclick={dropdownRight.toggle}>Dropdown right<ChevronRightOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
+      <div class="relative">
+        <Dropdown
+          dropdownStatus={dropdownRightStatus}
+          closeDropdown={closeDropdownRight}
+          {transitionParams}
+          class="absolute -top-[60px] left-[0px]"
+        >
+          <DropdownUl>
+            <DropdownLi href="/">Dashboard</DropdownLi>
+            <DropdownLi href="/components/drawer">Drawer</DropdownLi>
+            <DropdownLi href="/components/footer">Footer</DropdownLi>
+            <DropdownLi href="/components">Alert</DropdownLi>
+          </DropdownUl>
+        </Dropdown>
+      </div>
+    </div>
+    <Button onclick={dropdownBottom.toggle}>Dropdown bottom<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
+    <div class="relative">
+      <Dropdown
+        dropdownStatus={dropdownBottomStatus}
+        closeDropdown={closeDropdownBottom}
+        {transitionParams}
+        class="absolute top-[0px] -left-[90px]"
+      >
+        <DropdownUl>
+          <DropdownLi href="/">Dashboard</DropdownLi>
+          <DropdownLi href="/components/drawer">Drawer</DropdownLi>
+          <DropdownLi href="/components/footer">Footer</DropdownLi>
+          <DropdownLi href="/components">Alert</DropdownLi>
+        </DropdownUl>
+      </Dropdown>
+    </div>
+  </div>
+</CodeWrapper>
+
+<HighlightCompo code={modules['./md/placement.md'] as string} />
