@@ -2,6 +2,7 @@
   import { CloseButton } from '$lib';
   import { fade } from 'svelte/transition';
   import { type BannerProps as Props, banner } from './index';
+  import type { ParamsType } from '../types';
 
   let { children, header, bannerStatus = $bindable(true), position = 'sticky', dismissable = true, color = 'gray', bannerType = 'default', class: className, innerClass, transition = fade, params, ...restProps }: Props = $props();
 
@@ -17,10 +18,11 @@
   const clickToDismiss = () => {
     bannerStatus = false;
   };
+  // $inspect('transitionType', transitionType);
 </script>
 
 {#if bannerStatus}
-  <div tabindex="-1" class={bannerClass} {...restProps} transition:transition={params}>
+  <div tabindex="-1" class={bannerClass} {...restProps} transition:transition={params as ParamsType}>
     {#if header}
       {@render header()}
     {/if}

@@ -31,7 +31,7 @@
   import type { TransitionConfig } from 'svelte/transition';
   import type { ParamsType } from '../types';
 
-  const noop = () => {};
+  // const noop = () => {};
 
   type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 

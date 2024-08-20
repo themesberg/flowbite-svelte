@@ -6,6 +6,7 @@
   import H3 from '../../utils/H3.svelte';
   import { Button, Checkbox, Search, Helper, Radio, Toggle, Dropdown, DropdownDivider, DropdownUl, DropdownLi, DropdownHeader, DropdownFooter, Navbar, NavBrand, NavUl, NavLi, Avatar, uiHelpers } from '$lib';
   import { ChevronDownOutline, ChevronRightOutline, UserRemoveSolid, DotsVerticalOutline, BellSolid, EyeSolid, ChevronUpOutline, ChevronLeftOutline } from 'flowbite-svelte-icons';
+  import { blur } from 'svelte/transition';
   import { sineIn } from 'svelte/easing';
 
   let transitionParams = {
@@ -48,7 +49,7 @@
 
   let dropdownMultiLevel2 = uiHelpers();
   let dropdownMultiLevelStatus2 = $state(false);
-  let closeDropdownMultiLevel2 = dropdownMultiLevel2.close;
+  // let closeDropdownMultiLevel2 = dropdownMultiLevel2.close;
 
   let dropdownCheckbox = uiHelpers();
   let dropdownCheckboxStatus = $state(false);
@@ -186,7 +187,7 @@
     <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
   </Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownAStatus} closeDropdown={closeDropdownA} {transitionParams} class="absolute -left-[150px] top-[40px]">
+    <Dropdown dropdownStatus={dropdownAStatus} closeDropdown={closeDropdownA} params={transitionParams} class="absolute -left-[150px] top-[40px]">
       <DropdownUl>
         <DropdownLi href="/">Dashboard</DropdownLi>
         <DropdownLi href="/components/drawer">Drawer</DropdownLi>
@@ -207,7 +208,7 @@
     <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
   </Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownBStatus} closeDropdown={closeDropdownB} {transitionParams} class="absolute -left-[150px] top-[40px]">
+    <Dropdown dropdownStatus={dropdownBStatus} closeDropdown={closeDropdownB} params={transitionParams} class="absolute -left-[150px] top-[40px]">
       <DropdownUl>
         <DropdownLi href="/">Dashboard</DropdownLi>
         <DropdownLi href="/components/dropdown">Dropdown</DropdownLi>
@@ -227,7 +228,7 @@
     <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
   </Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownDividerStatus} closeDropdown={closeDropdownDivider} {transitionParams} class="absolute -left-[150px] top-[40px]">
+    <Dropdown dropdownStatus={dropdownDividerStatus} closeDropdown={closeDropdownDivider} params={transitionParams} class="absolute -left-[150px] top-[40px]">
       <DropdownUl>
         <DropdownLi href="/">Dashboard</DropdownLi>
         <DropdownDivider />
@@ -249,7 +250,7 @@
     <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
   </Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownCStatus} closeDropdown={closeDropdownC} {transitionParams} class="absolute -left-[150px] top-[40px]">
+    <Dropdown dropdownStatus={dropdownCStatus} closeDropdown={closeDropdownC} params={transitionParams} class="absolute -left-[150px] top-[40px]">
       <DropdownHeader>
         <div>Bonnie Green</div>
         <div class="truncate font-medium">name@flowbite.com</div>
@@ -280,7 +281,7 @@
     <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
   </Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownTransition1Status} closeDropdown={closeDropdownTransition1} transitionParams={transitionParams2} class="absolute -left-[150px] top-[40px]">
+    <Dropdown dropdownStatus={dropdownTransition1Status} closeDropdown={closeDropdownTransition1} params={transitionParams2} class="absolute -left-[150px] top-[40px]">
       {#snippet children()}
         <DropdownUl>
           <DropdownLi href="/">Dashboard</DropdownLi>
@@ -302,7 +303,7 @@
     <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
   </Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownTransition2Status} closeDropdown={closeDropdownTransition2} transitionParams={transitionParams3} transitionType="blur" class="absolute -left-[150px] top-[40px]">
+    <Dropdown dropdownStatus={dropdownTransition2Status} closeDropdown={closeDropdownTransition2} params={transitionParams3} transition={blur} class="absolute -left-[150px] top-[40px]">
       {#snippet children()}
         <DropdownUl>
           <DropdownLi href="/">Dashboard</DropdownLi>
@@ -324,12 +325,12 @@
     <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
   </Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownMultiLevelStatus} closeDropdown={closeDropdownMultiLevel} {transitionParams} class="absolute -left-[150px] top-[40px] overflow-visible">
+    <Dropdown dropdownStatus={dropdownMultiLevelStatus} closeDropdown={closeDropdownMultiLevel} params={transitionParams} class="absolute -left-[150px] top-[40px] overflow-visible">
       <DropdownUl>
         <DropdownLi href="/">Dashboard</DropdownLi>
         <button onclick={dropdownMultiLevel2.toggle} class="flex p-2 pl-4"> Dropdown<ChevronRightOutline class="ms-2 h-6 w-6 text-primary-700 dark:text-white" /></button>
         <div class="relative">
-          <Dropdown dropdownStatus={dropdownMultiLevelStatus2} closeDropdown={closeAllMultilevel} {transitionParams} class="absolute -top-[60px] left-[120px]">
+          <Dropdown dropdownStatus={dropdownMultiLevelStatus2} closeDropdown={closeAllMultilevel} params={transitionParams} class="absolute -top-[60px] left-[120px]">
             <DropdownUl class="z-100">
               <DropdownLi href="/">Home</DropdownLi>
               <DropdownLi href="/components/footer">Footer</DropdownLi>
@@ -352,7 +353,7 @@
 <CodeWrapper class="relative flex h-96 items-start justify-center">
   <Button onclick={dropdownCheckbox.toggle}>Dropdown checkbox<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownCheckboxStatus} closeDropdown={closeDropdownCheckbox} {transitionParams} class="absolute -left-[200px] top-[40px]">
+    <Dropdown dropdownStatus={dropdownCheckboxStatus} closeDropdown={closeDropdownCheckbox} params={transitionParams} class="absolute -left-[200px] top-[40px]">
       <DropdownUl>
         <DropdownLi liClass="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
           <Checkbox>Robert Gouth</Checkbox>
@@ -384,7 +385,7 @@
 <CodeWrapper class="relative flex h-96 items-start justify-center">
   <Button onclick={dropdownHelper.toggle}>Dropdown helper text<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownHelperStatus} closeDropdown={closeDropdownHelper} {transitionParams} class="absolute -left-[240px] top-[40px] w-64 overflow-y-auto p-2 pb-3 text-sm">
+    <Dropdown dropdownStatus={dropdownHelperStatus} closeDropdown={closeDropdownHelper} params={transitionParams} class="absolute -left-[240px] top-[40px] w-64 overflow-y-auto p-2 pb-3 text-sm">
       <DropdownUl>
         <DropdownLi liClass="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
           <Checkbox>Enable notifications</Checkbox>
@@ -409,7 +410,7 @@
 <CodeWrapper class="relative flex h-96 items-start justify-center">
   <Button onclick={dropdownRadio.toggle}>Dropdown radio<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownRadioStatus} closeDropdown={closeDropdownRadio} {transitionParams} class="absolute -left-[170px] top-[40px] overflow-y-auto p-2 pb-3 text-sm">
+    <Dropdown dropdownStatus={dropdownRadioStatus} closeDropdown={closeDropdownRadio} params={transitionParams} class="absolute -left-[170px] top-[40px] overflow-y-auto p-2 pb-3 text-sm">
       <DropdownUl>
         <DropdownHeader>
           <div class="p-0">
@@ -441,7 +442,7 @@
 <CodeWrapper class="relative flex h-96 items-start justify-center">
   <Button onclick={dropdownToggle.toggle}>Dropdown radio<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownToggleStatus} closeDropdown={closeDropdownToggle} {transitionParams} class="absolute -left-[180px] top-[40px] overflow-y-auto p-2 pb-3 text-sm">
+    <Dropdown dropdownStatus={dropdownToggleStatus} closeDropdown={closeDropdownToggle} params={transitionParams} class="absolute -left-[180px] top-[40px] overflow-y-auto p-2 pb-3 text-sm">
       <DropdownHeader>
         <div class="p-0">
           <Search size="md" class="pl-8" />
@@ -485,7 +486,7 @@
         <NavLi onclick={dropdownNav.toggle} class="cursor-pointer">
           Dropdown<ChevronDownOutline class="ms-2 inline h-6 w-6 text-primary-800 dark:text-white" />
         </NavLi>
-        <Dropdown dropdownStatus={dropdownNavStatus} closeDropdown={closeDropdownNav} {transitionParams} class="absolute -top-[20px] left-[120px] md:-left-[20px] md:top-[20px]">
+        <Dropdown dropdownStatus={dropdownNavStatus} closeDropdown={closeDropdownNav} params={transitionParams} class="absolute -top-[20px] left-[120px] md:-left-[20px] md:top-[20px]">
           <DropdownUl class="p-2">
             <DropdownLi href="/">Home</DropdownLi>
             <DropdownDivider />
@@ -509,7 +510,7 @@
     <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
   </Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownScrollStatus} closeDropdown={closeDropdownScroll} {transitionParams} class="absolute -left-[150px] top-[40px]">
+    <Dropdown dropdownStatus={dropdownScrollStatus} closeDropdown={closeDropdownScroll} params={transitionParams} class="absolute -left-[150px] top-[40px]">
       <DropdownUl class="h-40 w-52 overflow-y-auto py-1">
         <DropdownLi href="/" aClass="flex items-center text-base font-semibold gap-2"><Avatar src="/images/profile-picture-1.webp" size="xs" />Jese Leos</DropdownLi>
         <DropdownLi href="/" aClass="flex items-center text-base font-semibold gap-2"><Avatar src="/images/profile-picture-2.webp" size="xs" />Robert Gouth</DropdownLi>
@@ -537,7 +538,7 @@
     <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
   </Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownSearchStatus} closeDropdown={closeDropdownSearch} {transitionParams} class="absolute -left-[150px] top-[40px] w-52">
+    <Dropdown dropdownStatus={dropdownSearchStatus} closeDropdown={closeDropdownSearch} params={transitionParams} class="absolute -left-[150px] top-[40px] w-52">
       <DropdownHeader>
         <Search size="md" bind:value={searchTerm} class="pl-10" />
       </DropdownHeader>
@@ -561,7 +562,7 @@
 <CodeWrapper class="flex h-64 items-start justify-center">
   <DotsVerticalOutline onclick={dropdownIcon.toggle} class="dots-menu dark:text-white" />
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownIconStatus} closeDropdown={closeDropdownIcon} {transitionParams} class="absolute -left-[90px] top-[20px]">
+    <Dropdown dropdownStatus={dropdownIconStatus} closeDropdown={closeDropdownIcon} params={transitionParams} class="absolute -left-[90px] top-[20px]">
       <DropdownUl>
         <DropdownLi href="/">Dashboard</DropdownLi>
         <DropdownLi href="/components/drawer">Drawer</DropdownLi>
@@ -583,7 +584,7 @@
     </div>
   </div>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownNotificationStatus} closeDropdown={closeDropdownNotification} {transitionParams} class="absolute -left-[230px] top-[30px] w-96">
+    <Dropdown dropdownStatus={dropdownNotificationStatus} closeDropdown={closeDropdownNotification} params={transitionParams} class="absolute -left-[230px] top-[30px] w-96">
       <DropdownHeader class="py-2 text-center font-bold">Notifications</DropdownHeader>
       <DropdownUl class="max-w-sm space-y-2 divide-y divide-gray-100 rounded p-2 shadow dark:divide-gray-700 dark:bg-gray-800">
         <DropdownLi liClass="flex space-x-4 rtl:space-x-reverse p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
@@ -638,7 +639,7 @@
   <Avatar onclick={dropdownUser.toggle} src="/images/profile-picture-3.webp" dot={{ color: 'green' }} />
 
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownUserStatus} closeDropdown={closeDropdownUser} {transitionParams} class="absolute -left-[100px] top-[40px]">
+    <Dropdown dropdownStatus={dropdownUserStatus} closeDropdown={closeDropdownUser} params={transitionParams} class="absolute -left-[100px] top-[40px]">
       <DropdownHeader class="px-4 py-2">
         <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
         <span class="block truncate text-sm font-medium">name@flowbite.com</span>
@@ -663,7 +664,7 @@
     Bonnie Green
   </Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownAvatarStatus} closeDropdown={closeDropdownAvatar} {transitionParams} class="absolute -left-[160px] top-[50px]">
+    <Dropdown dropdownStatus={dropdownAvatarStatus} closeDropdown={closeDropdownAvatar} params={transitionParams} class="absolute -left-[160px] top-[50px]">
       <DropdownHeader class="px-4 py-2">
         <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
         <span class="block truncate text-sm font-medium">name@flowbite.com</span>
@@ -687,7 +688,7 @@
   <div id="placements" class="my-8 flex h-[450px] flex-col items-center justify-center gap-2">
     <Button onclick={dropdownTop.toggle}>Dropdown top<ChevronUpOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
     <div class="relative">
-      <Dropdown dropdownStatus={dropdownTopStatus} closeDropdown={closeDropdownTop} {transitionParams} class="absolute -left-[90px] -top-[230px]">
+      <Dropdown dropdownStatus={dropdownTopStatus} closeDropdown={closeDropdownTop} params={transitionParams} class="absolute -left-[90px] -top-[230px]">
         <DropdownUl>
           <DropdownLi href="/">Dashboard</DropdownLi>
           <DropdownLi href="/components/drawer">Drawer</DropdownLi>
@@ -699,7 +700,7 @@
     <div class="flex space-x-2 rtl:space-x-reverse">
       <Button onclick={dropdownLeft.toggle}><ChevronLeftOutline class="me-2 h-6 w-6 text-white dark:text-white" />Dropdown left</Button>
       <div class="relative">
-        <Dropdown dropdownStatus={dropdownLeftStatus} closeDropdown={closeDropdownLeft} {transitionParams} class="absolute -top-[60px] right-[180px]">
+        <Dropdown dropdownStatus={dropdownLeftStatus} closeDropdown={closeDropdownLeft} params={transitionParams} class="absolute -top-[60px] right-[180px]">
           <DropdownUl>
             <DropdownLi href="/">Dashboard</DropdownLi>
             <DropdownLi href="/components/drawer">Drawer</DropdownLi>
@@ -710,7 +711,7 @@
       </div>
       <Button onclick={dropdownRight.toggle}>Dropdown right<ChevronRightOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
       <div class="relative">
-        <Dropdown dropdownStatus={dropdownRightStatus} closeDropdown={closeDropdownRight} {transitionParams} class="absolute -top-[60px] left-[0px]">
+        <Dropdown dropdownStatus={dropdownRightStatus} closeDropdown={closeDropdownRight} params={transitionParams} class="absolute -top-[60px] left-[0px]">
           <DropdownUl>
             <DropdownLi href="/">Dashboard</DropdownLi>
             <DropdownLi href="/components/drawer">Drawer</DropdownLi>
@@ -722,7 +723,7 @@
     </div>
     <Button onclick={dropdownBottom.toggle}>Dropdown bottom<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
     <div class="relative">
-      <Dropdown dropdownStatus={dropdownBottomStatus} closeDropdown={closeDropdownBottom} {transitionParams} class="absolute -left-[90px] top-[0px]">
+      <Dropdown dropdownStatus={dropdownBottomStatus} closeDropdown={closeDropdownBottom} params={transitionParams} class="absolute -left-[90px] top-[0px]">
         <DropdownUl>
           <DropdownLi href="/">Dashboard</DropdownLi>
           <DropdownLi href="/components/drawer">Drawer</DropdownLi>

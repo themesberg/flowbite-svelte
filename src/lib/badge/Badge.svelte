@@ -3,6 +3,7 @@
   import { type BadgeProps as Props, badge } from './index';
   import { CloseButton } from '$lib';
   import { fade } from 'svelte/transition';
+  import type { ParamsType } from '$lib/types';
 
   let { children, icon, badgeStatus = $bindable(true), color = 'primary', large = false, dismissable = false, class: className, border, href, rounded, transition = fade, params, onclick, ...restProps }: Props = $props();
 
@@ -19,7 +20,7 @@
 </script>
 
 {#if badgeStatus}
-  <div {...restProps} transition:transition={params} class={badgeClass}>
+  <div {...restProps} transition:transition={params as ParamsType} class={badgeClass}>
     {#if href}
       <a {href}>
         {@render children()}

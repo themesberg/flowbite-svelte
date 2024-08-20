@@ -61,7 +61,7 @@
   </Navbar>
 </header>
 
-<Drawer class="w-72" drawerStatus={navDrawerStatus} closeDrawer={closeNavDrawer} {transitionParams}>
+<Drawer class="w-72" drawerStatus={navDrawerStatus} closeDrawer={closeNavDrawer} params={transitionParams}>
   <div class="flex items-center pb-4">
     <h5 id="drawer-label" class="inline-flex items-center text-lg font-semibold text-gray-500 dark:text-gray-400">Svelte 5 UI Lib</h5>
     <button type="button" onclick={closeNavDrawer} class="ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">

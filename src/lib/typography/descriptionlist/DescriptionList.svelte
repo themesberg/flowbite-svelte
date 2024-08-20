@@ -1,7 +1,7 @@
 <script lang="ts">
   import { type DescriptionListProps as Props, descriptionList } from './index';
 
-  let { children, tag, dtClass, ddClass, class: className, ...restProps }: Props = $props();
+  let { children, tag, class: className, ...restProps }: Props = $props();
 
   let classDesc = $derived(
     descriptionList({

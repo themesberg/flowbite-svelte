@@ -1,7 +1,3 @@
-import type { ParamsType } from './types';
-import type { FadeParams, BlurParams, FlyParams, SlideParams } from 'svelte/transition';
-import { fly, slide, blur, fade } from 'svelte/transition';
-
 export function uiHelpers() {
   let isOpen: boolean = $state(false);
 
@@ -65,15 +61,3 @@ export function idGenerator() {
   return (++n).toString(36);
 }
 
-export function applyTransition(node: HTMLElement, params: ParamsType, transitionType: string) {
-  switch (transitionType) {
-    case 'slide':
-      return slide(node, params as SlideParams);
-    case 'blur':
-      return blur(node, params as BlurParams);
-    case 'fade':
-      return fade(node, params as FadeParams);
-    default:
-      return fly(node, params as FlyParams);
-  }
-}

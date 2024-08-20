@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
   import { type LayoutProps as Props, layout } from './index';
 
   let { children, class: className, ...restProps }: Props = $props();

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Select, Label, Button, Pagination, PaginationItem, type PaginationItemProps } from '$lib';
+  import { Button, Pagination, PaginationItem, type PaginationItemProps } from '$lib';
   import { ChevronLeftOutline, ChevronRightOutline, ArrowLeftOutline, ArrowRightOutline } from 'flowbite-svelte-icons';
   import { page } from '$app/stores';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';

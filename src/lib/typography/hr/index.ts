@@ -6,7 +6,6 @@ import { hr } from './theme';
 
 interface HrProps extends HTMLAttributes<HTMLElement> {
   children?: Snippet;
-  icon?: boolean;
   divClass?: string | undefined;
   hrClass?: string | undefined;
   iconDivClass?: string | undefined;

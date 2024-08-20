@@ -45,12 +45,12 @@
 
   let buttonClass: string = twMerge('focus:outline-none whitespace-normal', sizing[size], colors[color], color === 'default' && (background ? 'dark:hover:bg-gray-600' : 'dark:hover:bg-gray-700'), className);
 
-  const svgSizes = {
-    xs: 'w-3 h-3',
-    sm: 'w-3.5 h-3.5',
-    md: 'w-5 h-5',
-    lg: 'w-5 h-5'
-  };
+  // const svgSizes = {
+  //   xs: 'w-3 h-3',
+  //   sm: 'w-3.5 h-3.5',
+  //   md: 'w-5 h-5',
+  //   lg: 'w-5 h-5'
+  // };
 </script>
 
 {#if href}

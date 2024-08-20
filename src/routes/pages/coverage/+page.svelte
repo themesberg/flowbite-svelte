@@ -16,12 +16,13 @@
     [key: string]: Component;
   }
 
-  const toDos: ListType = {
-    types: {
-      checked: false,
-      problems: 'TransitionParamTypes to FadeParams, BlurParams, FlyParams, SlideParams, ScaleParams, DrawParams, CrossfadeParams'
-    }
-  };
+  // const toDos: ListType = {
+  //   types: {
+  //     checked: false,
+  //     problems: 'TransitionParamTypes to FadeParams, BlurParams, FlyParams, SlideParams, ScaleParams, DrawParams, CrossfadeParams'
+  //   }
+  // };
+
   const components: ListType = {
     accordion: {
       checked: true,

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Select, Label, Search, Button, Dropdown, DropdownUl, DropdownLi, uiHelpers } from '$lib';
+  import { Search, Button, Dropdown, DropdownUl, DropdownLi, uiHelpers } from '$lib';
   import { SearchOutline, ChevronDownOutline } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -38,12 +38,18 @@
 
 <H1>Search Input</H1>
 
+<H2>Setup</H2>
+
+<HighlightCompo code={modules['./md/setup.md'] as string} />
+
 <H2>Default search input</H2>
 <CodeWrapper>
   <Search class="pl-10">
     <Button class="mr-1">Search</Button>
   </Search>
 </CodeWrapper>
+
+<HighlightCompo code={modules['./md/default.md'] as string} />
 
 <H2>Simple search input</H2>
 <CodeWrapper>
@@ -55,6 +61,8 @@
   </form>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/simple-search-input.md'] as string} />
+
 <H2>Search with dropdown</H2>
 <CodeWrapper class="h-64">
   <form class="flex">
@@ -63,7 +71,7 @@
       <ChevronDownOutline class="ms-2.5 h-2.5 w-2.5" />
     </Button>
     <div class="relative">
-      <Dropdown {dropdownStatus} {closeDropdown} {transitionParams} class="absolute -left-[160px] top-[40px]">
+      <Dropdown {dropdownStatus} {closeDropdown} params={transitionParams} class="absolute -left-[160px] top-[40px]">
         <DropdownUl>
           {#each items as { label }}
             <DropdownLi onclick={() => handleClick(label)} liClass="hover:cursor-pointer py-1 pl-4 {selectCategory === label ? 'underline' : ''}">
@@ -79,3 +87,5 @@
     </Button>
   </form>
 </CodeWrapper>
+
+<HighlightCompo code={modules['./md/search-with-dropdown.md'] as string} />

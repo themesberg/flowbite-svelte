@@ -3,8 +3,8 @@ import Accordion from './Accordion.svelte';
 // import type { AccordionCtxType } from "./Accordion.svelte";
 import { type Writable } from 'svelte/store';
 import type { Snippet } from 'svelte';
-import type { ParamsType } from '../types';
-import type { TransitionConfig } from 'svelte/transition';
+import type { ParamsType, TransitionFunc } from '../types';
+// import type { TransitionConfig } from 'svelte/transition';
 import type { HTMLAttributes } from 'svelte/elements';
 
 const accordionVariants = tv({
@@ -30,8 +30,6 @@ interface AccordionCtxType {
   classActive?: string | undefined | null;
   classInactive?: string | undefined | null;
 }
-
-type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 
 interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;

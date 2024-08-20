@@ -6,8 +6,6 @@ import { descriptionList } from './theme';
 interface DescriptionListProps extends HTMLAttributes<HTMLElement> {
   children: Snippet;
   tag: 'dt' | 'dd';
-  dtClass?: string | undefined;
-  ddClass?: string | undefined;
 }
 
 export { DescriptionList, descriptionList, type DescriptionListProps };

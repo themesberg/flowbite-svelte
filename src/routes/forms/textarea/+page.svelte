@@ -1,16 +1,16 @@
 <script lang="ts">
-  import { Textarea, Label, Toolbar, ToolbarGroup, ToolbarButton, Button } from '$lib';
-  import { PaperClipOutline, MapPinAltSolid, ImageOutline, CodeOutline, FaceGrinOutline, PaperPlaneOutline } from 'flowbite-svelte-icons';
+  import { Textarea, Label, Toolbar, Button } from '$lib';
+  // import { PaperClipOutline, MapPinAltSolid, ImageOutline, CodeOutline, FaceGrinOutline, PaperPlaneOutline } from 'flowbite-svelte-icons';
 
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  // import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  const modules = import.meta.glob('./md/*.md', {
-    query: '?raw',
-    import: 'default',
-    eager: true
-  });
+  // const modules = import.meta.glob('./md/*.md', {
+  //   query: '?raw',
+  //   import: 'default',
+  //   eager: true
+  // });
 </script>
 
 <H1>Textarea</H1>

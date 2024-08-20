@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { Select, Label, Fileupload, Helper, Radio, Listgroup, ListgroupItem } from '$lib';
-  import { type ListGroupItemType } from '$lib/types';
+  import { Label, Fileupload, Helper, Radio } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -19,6 +18,9 @@
 
 <H1>File input</H1>
 
+<H2>Setup</H2>
+<HighlightCompo code={modules['./md/setup.md'] as string} />
+
 <H2>File upload example</H2>
 <CodeWrapper>
   <Label class="mb-2 space-y-2">
@@ -28,6 +30,8 @@
   <Label>File: {files}</Label>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/file-upload-example.md'] as string} />
+
 <H2>Helper text</H2>
 <CodeWrapper>
   <Label for="with_helper" class="pb-2">Upload file</Label>
@@ -35,11 +39,15 @@
   <Helper>SVG, PNG, JPG or GIF (MAX. 800x400px).</Helper>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/helper-text.md'] as string} />
+
 <H2>Multiple files</H2>
 <CodeWrapper>
   <Label class="pb-2" for="multiple_files">Upload multiple files</Label>
   <Fileupload id="multiple_files" multiple bind:files />
 </CodeWrapper>
+
+<HighlightCompo code={modules['./md/multiple-files.md'] as string} />
 
 <H2>Size</H2>
 <CodeWrapper>
@@ -53,3 +61,5 @@
     {/each}
   </div>
 </CodeWrapper>
+
+<HighlightCompo code={modules['./md/size.md'] as string} />

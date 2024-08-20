@@ -2,7 +2,7 @@ import Drawer from './Drawer.svelte';
 import { type VariantProps } from 'tailwind-variants';
 import type { Snippet } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
-import type { drawerTransitionParamTypes, drawerTransitionTypes } from '../types';
+import type { TransitionFunc, ParamsType } from '../types';
 import { drawer } from './theme';
 
 type WidthType = VariantProps<typeof drawer>['width'];
@@ -20,8 +20,8 @@ interface DrawerProps extends HTMLAttributes<HTMLDivElement> {
   backdropClass?: string | undefined;
   placement?: PlacementType;
   class?: string | undefined;
-  transitionParams: drawerTransitionParamTypes;
-  transitionType?: drawerTransitionTypes;
+  params?: ParamsType;
+  transition?: TransitionFunc;
 }
 
 export { Drawer, drawer, type DrawerProps };

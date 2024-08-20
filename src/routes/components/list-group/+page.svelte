@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { Listgroup, ListgroupItem, Avatar } from '$lib';
+  import { Listgroup } from '$lib';
   import type { ListGroupItemType } from '$lib/types';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import H3 from '../../utils/H3.svelte';
+
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { type HrProps as Props, hr } from './index';
 
-  let { children, icon, divClass, hrClass, innerDivClass, ...restProps }: Props = $props();
+  let { children, divClass, hrClass, innerDivClass, ...restProps }: Props = $props();
 
   let { base, container, content } = $derived(hr({ withChildren: !!children }));
 </script>

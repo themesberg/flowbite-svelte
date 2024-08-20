@@ -1,5 +1,5 @@
 import Img from './Img.svelte';
-import { type VariantProps, tv } from 'tailwind-variants';
+import { type VariantProps } from 'tailwind-variants';
 import type { HTMLImgAttributes } from 'svelte/elements';
 import { img } from './theme';
 

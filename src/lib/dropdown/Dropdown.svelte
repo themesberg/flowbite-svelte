@@ -1,15 +1,16 @@
 <script lang="ts">
   import { type DropdownProps as Props, dropdown } from './';
-  import { applyTransition } from '$lib';
+  import { fly } from 'svelte/transition';
+  import type { ParamsType } from '$lib/types';
 
-  let { children, dropdownStatus, closeDropdown, class: className, backdropClass, transitionParams, transitionType = 'fly', ...restProps }: Props = $props();
+  let { children, dropdownStatus, closeDropdown, class: className, backdropClass, params, transition = fly, ...restProps }: Props = $props();
 
   const { base, backdrop } = $derived(dropdown());
 </script>
 
 <!-- Dropdown menu -->
 {#if dropdownStatus}
-  <div {...restProps} class={base({ class: className })} transition:applyTransition={transitionParams}>
+  <div {...restProps} class={base({ class: className })} transition:transition={params as ParamsType} >
     {@render children()}
   </div>
 

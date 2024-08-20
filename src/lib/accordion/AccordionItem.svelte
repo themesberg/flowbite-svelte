@@ -1,12 +1,13 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
+  import { slide } from 'svelte/transition';
   import { getContext } from 'svelte';
   import { writable } from 'svelte/store';
   import type { AccordionCtxType } from './accordion';
   import type { AccordionItemProps as Props } from './accordionItem';
-  import { applyTransition } from '$lib';
+  import type { ParamsType } from '../types';
 
-  let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass = undefined, inactiveClass = undefined, defaultClass = 'flex items-center justify-between w-full font-medium text-left group-first:rounded-t-xl border-gray-200 dark:border-gray-700', transitionType = 'slide', transitionParams, paddingFlush = 'py-5', paddingDefault = 'p-5', textFlushOpen = 'text-gray-900 dark:text-white', textFlushDefault = 'text-gray-500 dark:text-gray-400', borderClass = 'border-s border-e group-first:border-t', borderOpenClass = 'border-s border-e', borderBottomClass = 'border-b', borderSharedClass = 'border-gray-200 dark:border-gray-700', classActive = undefined, classInactive = undefined, class: className }: Props = $props();
+  let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass = undefined, inactiveClass = undefined, defaultClass = 'flex items-center justify-between w-full font-medium text-left group-first:rounded-t-xl border-gray-200 dark:border-gray-700', transition = slide, params, paddingFlush = 'py-5', paddingDefault = 'p-5', textFlushOpen = 'text-gray-900 dark:text-white', textFlushDefault = 'text-gray-500 dark:text-gray-400', borderClass = 'border-s border-e group-first:border-t', borderOpenClass = 'border-s border-e', borderBottomClass = 'border-b', borderSharedClass = 'border-gray-200 dark:border-gray-700', classActive = undefined, classInactive = undefined, class: className }: Props = $props();
 
   let activeCls = twMerge(activeClass, classActive);
   let inactiveCls = twMerge(inactiveClass, classInactive);
@@ -56,7 +57,7 @@
   </button>
 </h2>
 {#if open}
-  <div transition:applyTransition={transitionParams}>
+  <div transition:transition={params as ParamsType}>
     <div class={contentClass}>
       {@render children()}
     </div>

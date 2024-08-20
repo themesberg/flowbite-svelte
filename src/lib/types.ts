@@ -1,3 +1,5 @@
+import type { TransitionConfig, FadeParams, BlurParams, FlyParams, SlideParams, ScaleParams, DrawParams, CrossfadeParams } from 'svelte/transition';
+
 // primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
 export type ColorName = 'primary' | 'secondary' | 'gray' | 'red' | 'orange' | 'amber' | 'yellow' | 'lime' | 'green' | 'emerald' | 'teal' | 'cyan' | 'sky' | 'blue' | 'indigo' | 'violet' | 'purple' | 'fuchsia' | 'pink' | 'rose';
 
@@ -89,6 +91,7 @@ export type ToolbarButtonType = 'dark' | 'default' | 'gray' | 'red' | 'yellow' |
 export declare type SizeType = typeof xs | typeof sm | typeof md | typeof lg | typeof xl;
 
 export type TransitionTypes = 'fade' | 'fly' | 'slide' | 'blur' | 'in:fly' | 'out:fly' | 'in:slide' | 'out:slide' | 'in:fade' | 'out:fade' | 'in:blur' | 'out:blur';
+
 export interface TransitionParamTypes {
   delay?: number;
   duration?: number;
@@ -97,6 +100,6 @@ export interface TransitionParamTypes {
   tick?: (t: number, u: number) => void;
 }
 
-import type { FadeParams, BlurParams, FlyParams, SlideParams, ScaleParams, DrawParams, CrossfadeParams } from 'svelte/transition';
+export type ParamsType = FadeParams | BlurParams | FlyParams | SlideParams;
 
-export type ParamsType = FadeParams | BlurParams | FlyParams | SlideParams | ScaleParams | DrawParams | CrossfadeParams;
+export type TransitionFunc = (node: HTMLElement, params: ParamsType) => TransitionConfig;

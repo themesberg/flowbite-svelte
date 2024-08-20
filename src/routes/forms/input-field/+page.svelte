@@ -44,7 +44,7 @@
 
 <H1>Input field</H1>
 
-<H2>Input fields</H2>
+<H2>Examples</H2>
 
 <P>Use this example as a generic form element which includes multiple input fields types such as text, email, password, number, URL, and phone number and use the grid layout to add multiple columns and rows.</P>
 
@@ -95,6 +95,8 @@
   </form>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/example.md'] as string} />
+
 <H2>Input sizes</H2>
 
 <P>Use the following examples to apply a small, default or large size for the input fields. User the size prop to change the input size.</P>
@@ -112,6 +114,8 @@
   </div>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/sizes.md'] as string} />
+
 <H2>Disabled state</H2>
 
 <P>Get started with this example if you want to apply the disabled state to an input field. Add the disabled to change the input to disabled.</P>
@@ -120,6 +124,8 @@
   <Input class="mb-6" disabled value="Disabled input" />
   <Input class="mb-6" disabled readonly value="Disabled readonly input" />
 </CodeWrapper>
+
+<HighlightCompo code={modules['./md/disabled-state.md'] as string} />
 
 <H2>Color</H2>
 
@@ -139,6 +145,8 @@
     {/each}
   </div>
 </CodeWrapper>
+
+<HighlightCompo code={modules['./md/color.md'] as string} />
 
 <H2>Input with icon</H2>
 
@@ -173,6 +181,8 @@
     </Input>
   </Label>
 </CodeWrapper>
+
+<HighlightCompo code={modules['./md/input-with-icon.md'] as string} />
 
 <H2>Input group</H2>
 
@@ -228,6 +238,8 @@
   </div>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/input-group.md'] as string} />
+
 <H2>Icon click handler</H2>
 
 <P>This example shows how to add `onclick` event handler to the icon in `Input`. By clicking an icon, it toggles icon and `type`:</P>
@@ -265,6 +277,8 @@
   </div>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/icon-click-handler.md'] as string} />
+
 <H2>Helper text</H2>
 
 <P>Use the helper prop to add your helper text. You can use HTML in the helper text.</P>
@@ -280,6 +294,8 @@
   </Label>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/helper-text.md'] as string} />
+
 <H2>Number input</H2>
 
 <CodeWrapper>
@@ -291,6 +307,8 @@
   <p>Value: {value}</p>
   <p>Type of value: {typeof value}</p>
 </CodeWrapper>
+
+<HighlightCompo code={modules['./md/number-input.md'] as string} />
 
 <H2>Search input</H2>
 
@@ -308,6 +326,8 @@
   </form>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/search-input.md'] as string} />
+
 <H2>Dropdown</H2>
 
 <P>Use this example to show a dropdown menu right next to the input field.</P>
@@ -318,7 +338,7 @@
       All categories<ChevronDownOutline class="ms-2 h-6 w-6" />
     </Button>
     <div class="relative">
-      <Dropdown {dropdownStatus} {closeDropdown} {transitionParams} class="absolute -left-[160px] top-[40px]">
+      <Dropdown {dropdownStatus} {closeDropdown} params={transitionParams} class="absolute -left-[160px] top-[40px]">
         <DropdownUl>
           <DropdownLi href="/">Shopping</DropdownLi>
           <DropdownLi href="/">Images</DropdownLi>
@@ -333,3 +353,5 @@
     </Button>
   </ButtonGroup>
 </CodeWrapper>
+
+<HighlightCompo code={modules['./md/dropdown.md'] as string} />

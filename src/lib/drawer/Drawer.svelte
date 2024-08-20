@@ -1,8 +1,9 @@
 <script lang="ts">
+  import type { ParamsType } from '$lib/types';
   import { type DrawerProps as Props, drawer } from '.';
-  import { applyTransition } from '$lib';
+  import { fly } from 'svelte/transition';
 
-  let { children, drawerStatus, closeDrawer, activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = 'left', class: divClass, transitionParams, transitionType = 'fly', ...restProps }: Props = $props();
+  let { children, drawerStatus, closeDrawer, activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = 'left', class: divClass, params, transition = fly, ...restProps }: Props = $props();
 
   const { base, backdrop: backdropCls } = drawer({
     position,
@@ -22,7 +23,7 @@
   {:else if !backdrop && !activateClickOutside}
     <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full"></div>
   {/if}
-  <div {...restProps} class={base({ class: divClass })} transition:applyTransition={transitionParams} tabindex="-1">
+  <div {...restProps} class={base({ class: divClass })} transition:transition={params as ParamsType} tabindex="-1">
     {@render children()}
   </div>
 {/if}

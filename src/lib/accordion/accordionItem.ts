@@ -3,7 +3,7 @@ import { type VariantProps, tv } from 'tailwind-variants';
 import AccordionItem from './AccordionItem.svelte';
 import type { Snippet } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
-import type { TransitionTypes, TransitionParamTypes } from '../types';
+import type { TransitionTypes, TransitionParamTypes, TransitionFunc, ParamsType } from '../types';
 
 const accordionItemVariants = tv({
   base: 'group w-full',
@@ -43,8 +43,8 @@ interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
   activeClass?: string | undefined | null;
   inactiveClass?: string | undefined | null;
   defaultClass?: string | undefined | null;
-  transitionType?: TransitionTypes;
-  transitionParams?: TransitionParamTypes;
+  transition?: TransitionFunc;
+  params?: ParamsType;
   paddingFlush?: string | undefined | null;
   paddingDefault?: string | undefined | null;
   textFlushOpen?: string | undefined | null;

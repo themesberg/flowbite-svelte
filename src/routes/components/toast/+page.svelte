@@ -1,8 +1,8 @@
 <script lang="ts">
   import { Toast, toast, Avatar, Button, Label, Radio } from '$lib';
-  import { FireOutline, CheckCircleSolid, ExclamationCircleSolid, CloseOutline, PaperPlaneOutline, BellOutline, DownloadOutline, CameraPhotoOutline } from 'flowbite-svelte-icons';
-  import { slide, blur, fly } from 'svelte/transition';
+  import { FireOutline, CheckCircleSolid, PaperPlaneOutline, BellOutline, DownloadOutline, CameraPhotoOutline } from 'flowbite-svelte-icons';
   import { quintOut, elasticOut } from 'svelte/easing';
+  import { slide, blur, fly } from 'svelte/transition';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';

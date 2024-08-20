@@ -1,7 +1,6 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { Heading } from '$lib';
-  import P from '$lib/typography/paragraph/P.svelte';
   interface Props {
     children: Snippet;
   }

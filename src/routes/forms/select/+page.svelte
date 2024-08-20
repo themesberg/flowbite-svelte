@@ -103,7 +103,7 @@
       <ChevronDownOutline class="ms-2 h-6 w-6" />
     </button>
     <div class="relative">
-      <Dropdown {dropdownStatus} {closeDropdown} {transitionParams} class="absolute -left-[120px] top-[40px]">
+      <Dropdown {dropdownStatus} {closeDropdown} params={transitionParams} class="absolute -left-[120px] top-[40px]">
         <DropdownUl>
           <DropdownLi aClass="flex items-center" href="/">
             <Usa />

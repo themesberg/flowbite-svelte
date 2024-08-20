@@ -2,6 +2,7 @@
   import { type AlertProps as Props, alert } from '.';
   import { CloseButton } from '$lib';
   import { fade } from 'svelte/transition';
+  import type { ParamsType } from '$lib/types';
 
   let { children, icon, alertStatus = $bindable(true), closeIcon, color = 'primary', rounded = true, border, class: className, dismissable, transition = fade, params, onclick, ...restProps }: Props = $props();
 
@@ -19,7 +20,7 @@
 </script>
 
 {#if alertStatus}
-  <div role="alert" {...restProps} transition:transition={params} class={divCls}>
+  <div role="alert" {...restProps} transition:transition={params as ParamsType} class={divCls}>
     {#if icon}
       {@render icon()}
     {/if}

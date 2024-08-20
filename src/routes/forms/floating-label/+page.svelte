@@ -5,7 +5,6 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import H3 from '../../utils/H3.svelte';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -16,7 +15,6 @@
   let style: FloatingLabelInput['style'] = $state('standard');
   let style2: FloatingLabelInput['style'] = $state('standard');
 
-  const sizes = ['small', 'default'];
   let floatingSize: FloatingLabelInput['size'] = $state('default');
   const sizeDisplay: Record<FloatingLabelInput['size'], string> = {
     small: 'Small',
@@ -98,6 +96,7 @@
     >
   </div>
 </CodeWrapper>
+
 <HighlightCompo code={modules['./md/sizes.md'] as string} />
 
 <H2>Helper text</H2>

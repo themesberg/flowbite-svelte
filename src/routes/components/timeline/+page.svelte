@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Select, Label, Group, GroupItem, Activity, ActivityItem, Timeline, TimelineItem, Button } from '$lib';
+  import { Group, GroupItem, Activity, ActivityItem, Timeline, TimelineItem, Button } from '$lib';
   import { ArrowRightOutline, CalendarWeekSolid } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -56,6 +56,9 @@
 
 <H1>Timeline</H1>
 
+<H2>Setup</H2>
+<HighlightCompo code={modules['./md/setup.md'] as string} />
+
 <H2>Default timeline</H2>
 <CodeWrapper>
   <Timeline>
@@ -71,6 +74,8 @@
     </TimelineItem>
   </Timeline>
 </CodeWrapper>
+
+<HighlightCompo code={modules['./md/default-timeline.md'] as string} />
 
 <H2>Vertical timeline</H2>
 <CodeWrapper>
@@ -101,6 +106,8 @@
     </TimelineItem>
   </Timeline>
 </CodeWrapper>
+
+<HighlightCompo code={modules['./md/vertical-timeline.md'] as string} />
 
 <H2>Horizontal Timeline</H2>
 <CodeWrapper>
@@ -141,6 +148,8 @@
   </Timeline>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/horizontal-timeline.md'] as string} />
+
 <H2>Activity Log</H2>
 <CodeWrapper>
   <Activity>
@@ -148,9 +157,13 @@
   </Activity>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/activity-log.md'] as string} />
+
 <H2>Grouped timeline</H2>
 <CodeWrapper>
   <Group date="January 13th, 2022">
     <GroupItem timelines={groupTimelines} />
   </Group>
 </CodeWrapper>
+
+<HighlightCompo code={modules['./md/grouped-timeline.md'] as string} />

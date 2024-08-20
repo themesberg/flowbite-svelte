@@ -1,7 +1,8 @@
 <script lang="ts">
   import { AccordionItem, Accordion, Button } from '$lib';
   import { ChevronDoubleUpOutline, ChevronDoubleDownOutline, CartSolid, CogOutline } from 'flowbite-svelte-icons';
-
+  import { fade, fly, slide } from 'svelte/transition';
+  import { quintOut } from 'svelte/easing';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -212,23 +213,23 @@
 <HighlightCompo code={modules['./md/multiple-mode.md'] as string} />
 
 <H2>Custom transitions</H2>
-<CodeWrapper>
+<CodeWrapper class="h-[560px]">
   <Accordion>
-    <AccordionItem>
+    <AccordionItem params={{ duration: 2000 }}>
       {#snippet header()}
-        My Header 1
+        slide, duration: 2000
       {/snippet}
       <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     </AccordionItem>
-    <AccordionItem transitionParams={{ duration: 2000 }}>
+    <AccordionItem transition={fly} params={{ delay: 250, duration: 300, x: 100, y: 500, opacity: 0.5, easing: quintOut }}>
       {#snippet header()}
-        My Header 2
+        Fly, delay: 250, duration: 300, x: 100, y: 500, opacity: 0.5, easing: quintOut
       {/snippet}
       <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     </AccordionItem>
-    <AccordionItem transitionType="fade" transitionParams={{ duration: 1000 }}>
+    <AccordionItem transition={fade} params={{ duration: 1000 }}>
       {#snippet header()}
-        My Header 3
+        Fade, duration: 1000 
       {/snippet}
       <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     </AccordionItem>

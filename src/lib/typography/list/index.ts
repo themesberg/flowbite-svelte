@@ -1,6 +1,6 @@
 import List from './List.svelte';
 import Li from './Li.svelte';
-import { type VariantProps, tv } from 'tailwind-variants';
+import { type VariantProps } from 'tailwind-variants';
 import type { Snippet } from 'svelte';
 import type { HTMLLiAttributes } from 'svelte/elements';
 import { list } from './theme';

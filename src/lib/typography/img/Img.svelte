@@ -1,20 +1,20 @@
 <script lang="ts">
   import { type ImgProps as Props, img } from './index';
 
-  let { size, alignment, effect, shadow, rounded, caption, imgClass, figClass, captionClass, class: className, ...restProps }: Props = $props();
+  let { size, alignment, effect, shadow, rounded, caption, imgClass, figClass, captionClass, ...restProps }: Props = $props();
 
   let { base, figure, figureCaption } = $derived(img({ size, alignment, effect, shadow, rounded }));
 </script>
 
 {#if caption}
   <figure class={figure({ class: figClass })}>
-    <img {...restProps} class={base({ class: className })} />
+    <img {...restProps} class={base({ class: imgClass })} />
     <figcaption class={figureCaption({ class: captionClass })}>
       {@html caption}
     </figcaption>
   </figure>
 {:else}
-  <img {...restProps} class={base({ class: className })} />
+  <img {...restProps} class={base({ class: imgClass })} />
 {/if}
 
 <!--

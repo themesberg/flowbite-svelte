@@ -6,7 +6,7 @@ import DropdownHeader from './DropdownHeader.svelte';
 import DropdownFooter from './DropdownFooter.svelte';
 import { dropdown, dropdowndivider, dropdownli, dropdownul, dropdownHeader, dropdownFooter } from './theme';
 import type { Snippet } from 'svelte';
-import type { TransitionParamTypes, TransitionTypes } from '../types';
+import type { ParamsType, TransitionFunc } from '../types';
 import type { HTMLAttributes, HTMLAnchorAttributes } from 'svelte/elements';
 
 interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
@@ -18,8 +18,8 @@ interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
   headerClass?: string;
   ulClass?: string;
   backdropClass?: string;
-  transitionParams?: TransitionParamTypes;
-  transitionType?: TransitionTypes;
+  params?: ParamsType;
+  transition?: TransitionFunc;
 }
 
 interface DropdownDividerProps extends HTMLAttributes<HTMLDivElement> {

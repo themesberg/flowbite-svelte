@@ -158,7 +158,7 @@
 <CodeWrapper class="relative flex h-96 items-start justify-center">
   <Button onclick={dropdown.toggle}>Dropdown radio<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <div class="relative">
-    <Dropdown {dropdownStatus} {closeDropdown} {transitionParams} divClass="overflow-y-auto p-0 pb-3 text-sm w-64 h-64 absolute top-[50px] -left-[210px]">
+    <Dropdown {dropdownStatus} {closeDropdown} params={transitionParams} divClass="overflow-y-auto p-0 pb-3 text-sm w-64 h-64 absolute top-[50px] -left-[210px]">
       <DropdownUl>
         <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
           <Radio name="group3" bind:group={group3} value={1}>Enable notifications</Radio>

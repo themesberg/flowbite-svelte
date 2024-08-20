@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Alert, alert as fsalert, List, Li, Button, Label, Radio, type AlertProps } from '$lib';
+  import { Alert, alert as fsalert, Button, Label, Radio, type AlertProps } from '$lib';
   import { InfoCircleSolid, EyeSolid } from 'flowbite-svelte-icons';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';

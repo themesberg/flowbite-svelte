@@ -1,8 +1,9 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  import type { TransitionTypes, TransitionParamTypes } from '../types';
+  import type { ParamsType, TransitionFunc } from '../types';
   import { twMerge } from 'tailwind-merge';
-  import { uiHelpers, applyTransition } from '$lib';
+  import { slide } from 'svelte/transition';
+  import { uiHelpers } from '$lib';
   import type { HTMLButtonAttributes } from 'svelte/elements';
 
   interface Props extends HTMLButtonAttributes {
@@ -15,12 +16,12 @@
     label: string | undefined;
     spanClass?: string | undefined;
     ulClass?: string | undefined;
-    transitionType?: TransitionTypes;
-    transitionParams?: TransitionParamTypes;
+    params?: ParamsType;
+    transition?: TransitionFunc;
     svgClass?: string | undefined | null;
   }
 
-  let { children, arrowup, arrowdown, iconSlot, isOpen, btnClass, label, spanClass, ulClass, transitionType = 'slide', transitionParams, svgClass, class: className, ...restProps }: Props = $props();
+  let { children, arrowup, arrowdown, iconSlot, isOpen, btnClass, label, spanClass, ulClass, transition = slide, params, svgClass, class: className, ...restProps }: Props = $props();
 
   let btnCls = twMerge('flex items-center w-full text-base font-normal text-gray-900 rounded transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700', btnClass);
 
@@ -63,7 +64,7 @@
     {/if}
   </button>
   {#if isOpen}
-    <ul class={ulCls} transition:applyTransition={transitionParams}>
+    <ul class={ulCls} transition:transition={params as ParamsType}>
       {@render children()}
     </ul>
   {/if}

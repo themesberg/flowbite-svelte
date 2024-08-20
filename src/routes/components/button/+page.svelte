@@ -4,9 +4,7 @@
   const btn1 = () => {
     alert('You clicked btn1.');
   };
-  const btn2 = () => {
-    alert('You touched btn2.');
-  };
+
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
