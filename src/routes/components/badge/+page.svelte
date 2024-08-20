@@ -1,7 +1,8 @@
 <script lang="ts">
   import { Badge, badge, Button, Indicator, Radio, Label, type BadgeProps } from '$lib';
   import { ClockSolid, EnvelopeSolid, CheckOutline, CheckCircleOutline } from 'flowbite-svelte-icons';
-  import { blur, fly, slide } from 'svelte/transition';
+  import { blur, fly, slide, scale } from 'svelte/transition';
+  import { linear } from 'svelte/easing';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -60,6 +61,24 @@
   const changeRounded = () => {
     rounded = !rounded;
   };
+
+  let flyStatus: BadgeProps['badgeStatus'] = $state(true);
+  const changeFlyStatus = () => {
+    flyStatus = !flyStatus;
+  }
+  let blurStatus: BadgeProps['badgeStatus'] = $state(true);
+  const changeBlurStatus = () => {
+    blurStatus = !blurStatus;
+  }
+  let slideStatus: BadgeProps['badgeStatus'] = $state(true);
+  const changeSlideStatus = () => {
+    slideStatus = !slideStatus;
+  }
+  let scaleStatus: BadgeProps['badgeStatus'] = $state(true);
+  const changeScaleStatus = () => {
+    scaleStatus = !scaleStatus;
+  }
+
 </script>
 
 <H1>Badge</H1>
@@ -201,3 +220,42 @@
 </CodeWrapper>
 
 <HighlightCompo codeLang="ts" code={modules['./md/opening-badge.md'] as string} />
+
+
+<H2>Transition</H2>
+
+<CodeWrapper class="h-64">
+  <div class="h-10">
+  <Badge color="blue" dismissable bind:badgeStatus={flyStatus} transition={fly} params={{duration: 1000, easing: linear, x: 150}}>
+    <span class="font-medium">Fly transition</span>
+  </Badge>
+  </div>
+  <div class="h-10">
+  <Badge color="lime" dismissable bind:badgeStatus={blurStatus} transition={blur} params={{duration: 1000, easing: linear}}>
+    <span class="font-medium">Blur transition</span>
+  </Badge>
+  </div>
+  <div class="h-10">
+    <Badge color="violet" dismissable bind:badgeStatus={slideStatus} transition={slide} params={{duration: 1000, easing: linear,  x: -150}}>
+      <span class="font-medium">Slide transition</span>
+    </Badge>
+  </div>
+  <div class="h-10">
+    <Badge color="pink" dismissable bind:badgeStatus={scaleStatus} transition={scale} params={{duration: 1000, easing: linear}}>
+      <span class="font-medium">Scale transition</span>
+    </Badge>
+  </div>
+  {#if !flyStatus}
+  <Button class="w-36" color="green" onclick={changeFlyStatus}>{flyStatus ? '' : 'Open fly'}</Button>
+  {/if}
+  {#if !blurStatus}
+  <Button class="w-36" color="green" onclick={changeBlurStatus}>{blurStatus ? '' : 'Open blur'}</Button>
+  {/if}
+  {#if !slideStatus}
+  <Button class="w-36" color="green" onclick={changeSlideStatus}>{slideStatus ? '' : 'Open slide'}</Button>
+  {/if}
+  {#if !scaleStatus}
+  <Button class="w-36" color="green" onclick={changeScaleStatus}>{scaleStatus ? '' : 'Open scale'}</Button>
+  {/if}
+</CodeWrapper>
+
