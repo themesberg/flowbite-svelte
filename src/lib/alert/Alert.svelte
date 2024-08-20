@@ -3,21 +3,7 @@
   import { CloseButton } from '$lib';
   import { fade } from 'svelte/transition';
 
-  let {
-    children,
-    icon,
-    alertStatus = $bindable(true),
-    closeIcon,
-    color = 'primary',
-    rounded = true,
-    border,
-    class: className,
-    dismissable,
-    transition = fade,
-    params,
-    onclick,
-    ...restProps
-  }: Props = $props();
+  let { children, icon, alertStatus = $bindable(true), closeIcon, color = 'primary', rounded = true, border, class: className, dismissable, transition = fade, params, onclick, ...restProps }: Props = $props();
 
   let divCls = $derived(
     alert({
@@ -33,12 +19,7 @@
 </script>
 
 {#if alertStatus}
-  <div
-    role="alert"
-    {...restProps}
-    transition:transition={params}
-    class={divCls}
-  >
+  <div role="alert" {...restProps} transition:transition={params} class={divCls}>
     {#if icon}
       {@render icon()}
     {/if}
@@ -67,12 +48,7 @@
           {/if}
         </button>
       {:else if onclick}
-        <CloseButton
-          class="-my-1.5 -me-1.5 ms-auto dark:hover:bg-gray-700"
-          {color}
-          ariaLabel="Remove badge"
-          {onclick}
-        />
+        <CloseButton class="-my-1.5 -me-1.5 ms-auto dark:hover:bg-gray-700" {color} ariaLabel="Remove badge" {onclick} />
       {:else}
         <CloseButton
           class="-my-1.5 -me-1.5 ms-auto dark:hover:bg-gray-700"

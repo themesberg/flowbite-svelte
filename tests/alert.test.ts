@@ -31,10 +31,7 @@ test('alert page has expected meta og', async ({ page }) => {
   const metaOgUrl = page.locator('meta[property="og:url"]');
   await expect(metaOgUrl).toHaveAttribute('content', 'http://localhost:4173/components/alert');
   const metaOgImage = page.locator('meta[property="og:image"]');
-  await expect(metaOgImage).toHaveAttribute(
-    'content',
-    'https://open-graph-vercel.vercel.app/api/svelte-5-ui-lib?title=Alert'
-  );
+  await expect(metaOgImage).toHaveAttribute('content', 'https://open-graph-vercel.vercel.app/api/svelte-5-ui-lib?title=Alert');
 });
 
 test('alert page has expected meta twitter', async ({ page }) => {
@@ -43,8 +40,5 @@ test('alert page has expected meta twitter', async ({ page }) => {
   const metaTwitterDescription = page.locator('meta[name="twitter:description"]');
   await expect(metaTwitterDescription).toHaveAttribute('content', 'Alert component for Svelte 5 Runes.');
   const metaTwitterImage = page.locator('meta[name="twitter:image"]');
-  await expect(metaTwitterImage).toHaveAttribute(
-    'content',
-    'https://open-graph-vercel.vercel.app/api/svelte-5-ui-lib?title=Alert'
-  );
+  await expect(metaTwitterImage).toHaveAttribute('content', 'https://open-graph-vercel.vercel.app/api/svelte-5-ui-lib?title=Alert');
 });

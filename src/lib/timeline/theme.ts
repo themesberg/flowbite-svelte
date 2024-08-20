@@ -9,8 +9,7 @@ export const activityitem = tv({
     li: 'mb-10 ms-6',
     span: 'flex absolute -start-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900',
     img: 'rounded-full shadow-lg',
-    outerDiv:
-      'p-4 bg-white rounded-lg border border-gray-200 shadow-sm dark:bg-gray-700 dark:border-gray-600',
+    outerDiv: 'p-4 bg-white rounded-lg border border-gray-200 shadow-sm dark:bg-gray-700 dark:border-gray-600',
     innerDiv: 'justify-between items-center mb-3 sm:flex',
     time: 'mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0',
     title: 'text-sm font-normal text-gray-500 lex dark:text-gray-300',
@@ -39,8 +38,7 @@ export const groupitem = tv({
 export const timeline = tv({
   variants: {
     order: {
-      group:
-        'p-5 mb-4 bg-gray-50 rounded-lg border border-gray-100 dark:bg-gray-800 dark:border-gray-700',
+      group: 'p-5 mb-4 bg-gray-50 rounded-lg border border-gray-100 dark:bg-gray-800 dark:border-gray-700',
       horizontal: 'sm:flex',
       activity: 'relative border-s border-gray-200 dark:border-gray-700',
       vertical: 'relative border-s border-gray-200 dark:border-gray-700',

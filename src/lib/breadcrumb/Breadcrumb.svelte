@@ -1,15 +1,7 @@
 <script lang="ts">
   import { type BreadcrumbProps as Props, breadcrumb } from './index';
 
-  let {
-    children,
-    solid = false,
-    navClass,
-    solidClass,
-    olClass,
-    ariaLabel = 'Breadcrumb',
-    ...restProps
-  }: Props = $props();
+  let { children, solid = false, navClass, olClass, ariaLabel = 'Breadcrumb', ...restProps }: Props = $props();
   const { base, list } = breadcrumb({ solid });
   let classNav = $derived(base({ class: navClass }));
   let classList = $derived(list({ class: olClass }));

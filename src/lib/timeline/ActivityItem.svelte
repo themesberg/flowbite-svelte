@@ -1,21 +1,9 @@
 <script lang="ts">
   import { type ActivityItemProps as Props, activityitem } from './index';
 
-  let {
-    activities,
-    liClass,
-    spanClass,
-    imgClass,
-    outerDivClass,
-    innerDivClass,
-    timeClass,
-    titleClass,
-    textClass,
-    ...restProps
-  }: Props = $props();
+  let { activities, liClass, spanClass, imgClass, outerDivClass, innerDivClass, timeClass, titleClass, textClass, ...restProps }: Props = $props();
 
-  const { li, span, img, outerDiv, innerDiv, time, title, text } =
-    $derived(activityitem());
+  const { li, span, img, outerDiv, innerDiv, time, title, text } = $derived(activityitem());
 </script>
 
 {#each activities as { name, date, src, alt, activity }}

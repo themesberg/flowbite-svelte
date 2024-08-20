@@ -3,20 +3,7 @@
   import { fade } from 'svelte/transition';
   import { type BannerProps as Props, banner } from './index';
 
-  let {
-    children,
-    header,
-    bannerStatus = $bindable(true),
-    position = 'sticky',
-    dismissable = true,
-    color = 'gray',
-    bannerType = 'default',
-    class: className,
-    innerClass,
-    transition = fade,
-    params,
-    ...restProps
-  }: Props = $props();
+  let { children, header, bannerStatus = $bindable(true), position = 'sticky', dismissable = true, color = 'gray', bannerType = 'default', class: className, innerClass, transition = fade, params, ...restProps }: Props = $props();
 
   const { base, insideDiv } = banner({
     bannerType,
@@ -33,12 +20,7 @@
 </script>
 
 {#if bannerStatus}
-  <div
-    tabindex="-1"
-    class={bannerClass}
-    {...restProps}
-    transition:transition={params}
-  >
+  <div tabindex="-1" class={bannerClass} {...restProps} transition:transition={params}>
     {#if header}
       {@render header()}
     {/if}
@@ -49,12 +31,7 @@
 
     {#if dismissable}
       <div class="flex items-center">
-        <CloseButton
-          class="-mx-1.5 -my-1.5"
-          {color}
-          ariaLabel="Remove badge"
-          onclick={clickToDismiss}
-        />
+        <CloseButton class="-mx-1.5 -my-1.5" {color} ariaLabel="Remove badge" onclick={clickToDismiss} />
       </div>
     {/if}
   </div>

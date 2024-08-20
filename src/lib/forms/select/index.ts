@@ -29,10 +29,4 @@ interface MultiSelectProps<T> extends HTMLAttributes<HTMLDivElement> {
   change?: (event: Event) => void;
 }
 
-export {
-  Select,
-  select,
-  type SelectProps,
-  type SelectOptionType,
-  type MultiSelectProps
-};
+export { Select, select, type SelectProps, type SelectOptionType, type MultiSelectProps };

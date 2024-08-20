@@ -1,15 +1,7 @@
 <script lang="ts">
   import { type FooterCopyrightProps as Props, footerCopyright } from '.';
 
-  let {
-    spanClass,
-    aClass,
-    href,
-    by,
-    copyrightMessage = 'All Rights Reserved.',
-    year,
-    ...restProps
-  }: Props = $props();
+  let { spanClass, aClass, href, by, copyrightMessage = 'All Rights Reserved.', year, ...restProps }: Props = $props();
 
   if (!year) year = new Date().getFullYear();
 

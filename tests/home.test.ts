@@ -6,7 +6,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('index page has expected h1', async ({ page }) => {
-	await expect(page.getByRole('heading', { name: 'Svelte 5 Ui Lib', level: 1 })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Svelte 5 Ui Lib', level: 1 })).toBeVisible();
 });
 
 test('index page has expected meta title', async ({ page }) => {
@@ -31,10 +31,7 @@ test('index page has expected meta og', async ({ page }) => {
   const metaOgUrl = page.locator('meta[property="og:url"]');
   await expect(metaOgUrl).toHaveAttribute('content', 'http://localhost:4173/');
   const metaOgImage = page.locator('meta[property="og:image"]');
-  await expect(metaOgImage).toHaveAttribute(
-    'content',
-    'https://open-graph-vercel.vercel.app/api/svelte-5-ui-lib'
-  );
+  await expect(metaOgImage).toHaveAttribute('content', 'https://open-graph-vercel.vercel.app/api/svelte-5-ui-lib');
 });
 
 test('index page has expected meta twitter', async ({ page }) => {
@@ -43,8 +40,5 @@ test('index page has expected meta twitter', async ({ page }) => {
   const metaTwitterDescription = page.locator('meta[name="twitter:description"]');
   await expect(metaTwitterDescription).toHaveAttribute('content', 'A UI library for Svelte 5 Runes.');
   const metaTwitterImage = page.locator('meta[name="twitter:image"]');
-  await expect(metaTwitterImage).toHaveAttribute(
-    'content',
-    'https://open-graph-vercel.vercel.app/api/svelte-5-ui-lib'
-  );
+  await expect(metaTwitterImage).toHaveAttribute('content', 'https://open-graph-vercel.vercel.app/api/svelte-5-ui-lib');
 });

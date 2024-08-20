@@ -44,12 +44,7 @@
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as size}
-      <Radio
-        labelClass="w-24 my-1"
-        name="progress_size"
-        bind:group={progressSize}
-        value={size}>{size}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="progress_size" bind:group={progressSize} value={size}>{size}</Radio>
     {/each}
   </div>
 </CodeWrapper>
@@ -85,13 +80,7 @@
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as color}
-      <Radio
-        labelClass="w-24 my-1"
-        name="progress_size"
-        bind:group={progressColor}
-        color={color as Progressbar['color']}
-        value={color}>{color}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="progress_size" bind:group={progressColor} color={color as Progressbar['color']} value={color}>{color}</Radio>
     {/each}
   </div>
 </CodeWrapper>
@@ -101,30 +90,11 @@
 <H2>Custom style</H2>
 
 <CodeWrapper class="space-y-4">
-  <Progressbar
-    progress="50"
-    size="h-3"
-    labelInside
-    div2Class="bg-blue-600 text-blue-100 text-xs font-medium text-center p-0 leading-none rounded-full"
-    class="my-4"
-    labelOutside="Size h-3"
-  />
+  <Progressbar progress="50" size="h-3" labelInside div2Class="bg-blue-600 text-blue-100 text-xs font-medium text-center p-0 leading-none rounded-full" class="my-4" labelOutside="Size h-3" />
 
-  <Progressbar
-    progress="50"
-    size="h-10"
-    labelInside
-    div2Class="bg-cyan-600 text-cyan-100 text-2xl font-medium text-center p-2 leading-none rounded-full"
-    labelOutside="Size h-10"
-  />
+  <Progressbar progress="50" size="h-10" labelInside div2Class="bg-cyan-600 text-cyan-100 text-2xl font-medium text-center p-2 leading-none rounded-full" labelOutside="Size h-10" />
 
-  <Progressbar
-    progress="50"
-    size="h-6"
-    labelInside
-    div2Class="bg-teal-600 text-teal-100 text-base font-medium text-center p-1 leading-none rounded-full"
-    labelOutside="Size h-6"
-  />
+  <Progressbar progress="50" size="h-6" labelInside div2Class="bg-teal-600 text-teal-100 text-base font-medium text-center p-1 leading-none rounded-full" labelOutside="Size h-6" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/custom.md'] as string} />
@@ -132,30 +102,9 @@
 <H2>Animation</H2>
 
 <CodeWrapper class="space-y-4">
-  <Progressbar
-    {progress}
-    animate
-    precision={2}
-    labelOutside="With animation"
-    labelInside
-    tweenDuration={1500}
-    easing={sineOut}
-    size="h-6"
-    color="red"
-    div2Class="text-base font-medium text-center p-1 leading-none rounded-full"
-  />
-  <Progressbar
-    {progress}
-    labelOutside="Without animation"
-    labelInside
-    size="h-6"
-    color="gray"
-    div2Class="text-base font-medium text-center p-1 leading-none rounded-full"
-  />
-  <Button
-    onclick={() => (progress = `${Math.round(Math.random() * 100)}`)}
-    class="mt-8">Randomize</Button
-  >
+  <Progressbar {progress} animate precision={2} labelOutside="With animation" labelInside tweenDuration={1500} easing={sineOut} size="h-6" color="red" div2Class="text-base font-medium text-center p-1 leading-none rounded-full" />
+  <Progressbar {progress} labelOutside="Without animation" labelInside size="h-6" color="gray" div2Class="text-base font-medium text-center p-1 leading-none rounded-full" />
+  <Button onclick={() => (progress = `${Math.round(Math.random() * 100)}`)} class="mt-8">Randomize</Button>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/animation.md'] as string} />

@@ -14,15 +14,7 @@
     activeClass?: string;
     nonActiveClass?: string;
   }
-  let {
-    closeNav,
-    href,
-    children,
-    aClass,
-    activeClass,
-    nonActiveClass,
-    ...restProps
-  }: Props = $props();
+  let { closeNav, href, children, aClass, activeClass, nonActiveClass, ...restProps }: Props = $props();
 
   let breakPoint: navbarType['breakPoint'];
 
@@ -47,12 +39,7 @@
     xxl: '2xl:bg-transparent 2xl:text-primary-700 2xl:p-0 2xl:dark:text-primary-500'
   };
 
-  let aCls = $derived(
-    currentUrl === href
-      ? (activeClass ?? twMerge(context.activeClass, activeBreaks[breakPoint]))
-      : (nonActiveClass ??
-          twMerge(context.nonActiveClass, linkBreaks[breakPoint]))
-  );
+  let aCls = $derived(currentUrl === href ? (activeClass ?? twMerge(context.activeClass, activeBreaks[breakPoint])) : (nonActiveClass ?? twMerge(context.nonActiveClass, linkBreaks[breakPoint])));
 
   let linkClass = $derived(twMerge(aCls, aClass));
 
@@ -60,13 +47,7 @@
 </script>
 
 <li>
-  <a
-    {href}
-    onclick={closeNav}
-    {...restProps}
-    aria-current={currentUrl === href}
-    class={linkClass}
-  >
+  <a {href} onclick={closeNav} {...restProps} aria-current={currentUrl === href} class={linkClass}>
     {@render children()}
   </a>
 </li>

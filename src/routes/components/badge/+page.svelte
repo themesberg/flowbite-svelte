@@ -1,20 +1,6 @@
 <script lang="ts">
-  import {
-    Badge,
-    badge,
-    Button,
-    Indicator,
-    Radio,
-    Label,
-    type BadgeProps
-  } from '$lib';
-  import {
-    ClockSolid,
-    CloseCircleSolid,
-    EnvelopeSolid,
-    CheckOutline,
-    CheckCircleOutline
-  } from 'flowbite-svelte-icons';
+  import { Badge, badge, Button, Indicator, Radio, Label, type BadgeProps } from '$lib';
+  import { ClockSolid, CloseCircleSolid, EnvelopeSolid, CheckOutline, CheckCircleOutline } from 'flowbite-svelte-icons';
   import { slide } from 'svelte/transition';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
@@ -84,10 +70,7 @@
 <CodeWrapper>
   <Badge>Default</Badge>
 </CodeWrapper>
-<HighlightCompo
-  codeLang="ts"
-  code={modules['./md/default-badge.md'] as string}
-/>
+<HighlightCompo codeLang="ts" code={modules['./md/default-badge.md'] as string} />
 
 <H2>Reactive badge</H2>
 <CodeWrapper class="space-y-4">
@@ -95,54 +78,27 @@
     {#if !badgeStatus2}
       <Button color="light" onclick={changeStatus}>Open badge</Button>
     {/if}
-    <Badge
-      {color}
-      large={badgeSize}
-      dismissable={badgeDismissable}
-      class={badgeClass}
-      bind:badgeStatus={badgeStatus2}
-      {border}
-      {rounded}>Default</Badge
-    >
+    <Badge {color} large={badgeSize} dismissable={badgeDismissable} class={badgeClass} bind:badgeStatus={badgeStatus2} {border} {rounded}>Default</Badge>
   </div>
 
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio
-        labelClass="w-24 my-1"
-        name="color"
-        bind:group={color}
-        color={colorOption as BadgeProps['color']}
-        value={colorOption}>{colorOption}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="color" bind:group={color} color={colorOption as BadgeProps['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
-  <Button class="w-40" color="blue" onclick={changeSize}
-    >{badgeSize ? 'Small' : 'Large'}</Button
-  >
-  <Button class="w-40" color="green" onclick={changeDismissable}
-    >{badgeDismissable ? 'Not dismissable' : 'Dismissable'}</Button
-  >
-  <Button class="w-40" color="purple" onclick={changeClass}
-    >{badgeClass ? 'Remove class' : 'Add class'}</Button
-  >
-  <Button class="w-40" color="yellow" onclick={changeBorder}
-    >{border ? 'Remove border' : 'Add border'}</Button
-  >
-  <Button class="w-40" color="dark" onclick={changeRounded}
-    >{rounded ? 'Remove rounded' : 'Add rounded'}</Button
-  >
+  <Button class="w-40" color="blue" onclick={changeSize}>{badgeSize ? 'Small' : 'Large'}</Button>
+  <Button class="w-40" color="green" onclick={changeDismissable}>{badgeDismissable ? 'Not dismissable' : 'Dismissable'}</Button>
+  <Button class="w-40" color="purple" onclick={changeClass}>{badgeClass ? 'Remove class' : 'Add class'}</Button>
+  <Button class="w-40" color="yellow" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
+  <Button class="w-40" color="dark" onclick={changeRounded}>{rounded ? 'Remove rounded' : 'Add rounded'}</Button>
 </CodeWrapper>
 
 <H2>Large badge</H2>
 <HighlightCompo codeLang="ts" code={modules['./md/large-badge.md'] as string} />
 
 <H2>Bordered badge</H2>
-<HighlightCompo
-  codeLang="ts"
-  code={modules['./md/bordered-badge.md'] as string}
-/>
+<HighlightCompo codeLang="ts" code={modules['./md/bordered-badge.md'] as string} />
 
 <H2>Pills badge</H2>
 <HighlightCompo codeLang="ts" code={modules['./md/pills-badge.md'] as string} />
@@ -154,10 +110,7 @@
   <Badge href="/" color="green" border>Badge link</Badge>
   <Badge href="/" color="yellow" rounded>Badge link</Badge>
 </CodeWrapper>
-<HighlightCompo
-  codeLang="ts"
-  code={modules['./md/badge-as-links.md'] as string}
-/>
+<HighlightCompo codeLang="ts" code={modules['./md/badge-as-links.md'] as string} />
 
 <H2>Badge with icon</H2>
 <CodeWrapper>
@@ -166,75 +119,42 @@
     3 days ago
   </Badge>
   <Badge border>
-    <ClockSolid
-      class="me-1.5 h-2.5 w-2.5 text-primary-800 dark:text-primary-400"
-    />
+    <ClockSolid class="me-1.5 h-2.5 w-2.5 text-primary-800 dark:text-primary-400" />
     2 minutes ago
   </Badge>
 </CodeWrapper>
-<HighlightCompo
-  codeLang="ts"
-  code={modules['./md/badge-with-icon.md'] as string}
-/>
+<HighlightCompo codeLang="ts" code={modules['./md/badge-with-icon.md'] as string} />
 
 <H2>Notification badge</H2>
 <CodeWrapper class="space-x-4">
   <Button class="relative" size="sm">
     <EnvelopeSolid class="text-white dark:text-white" />
     <span class="sr-only">Notifications</span>
-    <Indicator
-      color="blue"
-      border
-      size="xl"
-      placement="top-right"
-      class="text-xs font-bold">18</Indicator
-    >
+    <Indicator color="blue" border size="xl" placement="top-right" class="text-xs font-bold">18</Indicator>
   </Button>
 
   <Button class="relative" size="sm">
     <EnvelopeSolid class="text-white dark:text-white" />
     <span class="sr-only">Notifications</span>
-    <Indicator
-      color="red"
-      border
-      size="xl"
-      placement="top-right"
-      class="text-xs font-bold">20</Indicator
-    >
+    <Indicator color="red" border size="xl" placement="top-right" class="text-xs font-bold">20</Indicator>
   </Button>
 
   <Button class="relative" size="sm">
     <EnvelopeSolid class="text-white dark:text-white" />
     <span class="sr-only">Notifications</span>
-    <Indicator
-      color="sky"
-      border
-      size="xl"
-      placement="bottom-right"
-      class="text-xs font-bold">20</Indicator
-    >
+    <Indicator color="sky" border size="xl" placement="bottom-right" class="text-xs font-bold">20</Indicator>
   </Button>
 </CodeWrapper>
-<HighlightCompo
-  codeLang="ts"
-  code={modules['./md/notification-badge.md'] as string}
-/>
+<HighlightCompo codeLang="ts" code={modules['./md/notification-badge.md'] as string} />
 
 <H2>Button with badge</H2>
 <CodeWrapper>
   <Button>
     Messages
-    <Badge
-      rounded
-      class="ms-2 h-4 w-4 bg-white p-0 font-semibold text-primary-800 dark:bg-white dark:text-primary-800"
-      >2</Badge
-    >
+    <Badge rounded class="ms-2 h-4 w-4 bg-white p-0 font-semibold text-primary-800 dark:bg-white dark:text-primary-800">2</Badge>
   </Button>
 </CodeWrapper>
-<HighlightCompo
-  codeLang="ts"
-  code={modules['./md/button-with-badge.md'] as string}
-/>
+<HighlightCompo codeLang="ts" code={modules['./md/button-with-badge.md'] as string} />
 
 <H2>Badge with icon only</H2>
 <CodeWrapper>
@@ -247,22 +167,14 @@
     <span class="sr-only">Icon description</span>
   </Badge>
 </CodeWrapper>
-<HighlightCompo
-  codeLang="ts"
-  code={modules['./md/badge-with-icon-only.md'] as string}
-/>
+<HighlightCompo codeLang="ts" code={modules['./md/badge-with-icon-only.md'] as string} />
 
 <H2>Dismissable badge</H2>
 <CodeWrapper>
-  <Badge dismissable transition={slide} params={slideParams} large color="lime"
-    >Slide transition</Badge
-  >
+  <Badge dismissable transition={slide} params={slideParams} large color="lime">Slide transition</Badge>
   <Badge dismissable large color="violet">Default</Badge>
 </CodeWrapper>
-<HighlightCompo
-  codeLang="ts"
-  code={modules['./md/dismissable-badge.md'] as string}
-/>
+<HighlightCompo codeLang="ts" code={modules['./md/dismissable-badge.md'] as string} />
 
 <H3>Dismissing with icon</H3>
 <CodeWrapper class="h-20">
@@ -274,35 +186,18 @@
   </Badge>
 </CodeWrapper>
 
-<HighlightCompo
-  codeLang="ts"
-  code={modules['./md/dismissable-badge-2.md'] as string}
-/>
+<HighlightCompo codeLang="ts" code={modules['./md/dismissable-badge-2.md'] as string} />
 <H3>Dismissing with events</H3>
 <CodeWrapper class="h-20">
-  <Badge dismissable large onclick={handleClose} bind:badgeStatus={eventStatus}
-    >Default</Badge
-  >
+  <Badge dismissable large onclick={handleClose} bind:badgeStatus={eventStatus}>Default</Badge>
 </CodeWrapper>
 
-<HighlightCompo
-  codeLang="ts"
-  code={modules['./md/dismissable-badge-3.md'] as string}
-/>
+<HighlightCompo codeLang="ts" code={modules['./md/dismissable-badge-3.md'] as string} />
 
 <H2>Opening badge</H2>
 <CodeWrapper class="h-20">
   <Button onclick={openBadge}>Open badge</Button>
-  <Badge
-    class="ml-4"
-    color="blue"
-    dismissable
-    large
-    bind:badgeStatus={openBadgeStatus}>Default</Badge
-  >
+  <Badge class="ml-4" color="blue" dismissable large bind:badgeStatus={openBadgeStatus}>Default</Badge>
 </CodeWrapper>
 
-<HighlightCompo
-  codeLang="ts"
-  code={modules['./md/opening-badge.md'] as string}
-/>
+<HighlightCompo codeLang="ts" code={modules['./md/opening-badge.md'] as string} />

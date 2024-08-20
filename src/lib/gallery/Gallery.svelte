@@ -1,13 +1,7 @@
 <script lang="ts">
   import { type GalleryProps as Props, type ImgType, gallery } from '.';
 
-  let {
-    children,
-    items = [],
-    imgClass,
-    divClass,
-    ...restProps
-  }: Props = $props();
+  let { children, items = [], imgClass, divClass, ...restProps }: Props = $props();
 
   function init(node: HTMLElement) {
     if (getComputedStyle(node).gap === 'normal') node.style.gap = 'inherit';
@@ -18,12 +12,7 @@
 
 {#snippet figure(item: ImgType)}
   <div>
-    <img
-      src={item.src}
-      alt={item.alt}
-      class={image({ class: imgClass })}
-      {...restProps}
-    />
+    <img src={item.src} alt={item.alt} class={image({ class: imgClass })} {...restProps} />
   </div>
 {/snippet}
 

@@ -1,14 +1,5 @@
 <script lang="ts">
-  import {
-    Avatar,
-    Button,
-    Dropdown,
-    DropdownLi,
-    DropdownUl,
-    DropdownDivider,
-    uiHelpers,
-    type AvatarProps
-  } from '$lib';
+  import { Avatar, Button, Dropdown, DropdownLi, DropdownUl, DropdownHeader, DropdownDivider, uiHelpers, type AvatarProps } from '$lib';
 
   let dropdown = uiHelpers();
   let dropdownStatus = $state(false);
@@ -63,50 +54,20 @@
 <H2>Reactive avatars</H2>
 <CodeWrapper class="space-y-4">
   <div class="mb-5 flex justify-center">
-    <Avatar
-      src="/images/profile-picture-1.webp"
-      {rounded}
-      {border}
-      {stacked}
-      class={avatarClass}
-    />
-    <Avatar
-      src="/images/profile-picture-2.webp"
-      {rounded}
-      {border}
-      {stacked}
-      class={avatarClass}
-    />
-    <Avatar
-      src="/images/profile-picture-3.webp"
-      {rounded}
-      {border}
-      {stacked}
-      class={avatarClass}
-    />
+    <Avatar src="/images/profile-picture-1.webp" {rounded} {border} {stacked} class={avatarClass} />
+    <Avatar src="/images/profile-picture-2.webp" {rounded} {border} {stacked} class={avatarClass} />
+    <Avatar src="/images/profile-picture-3.webp" {rounded} {border} {stacked} class={avatarClass} />
   </div>
-  <Button class="w-40" color="blue" onclick={changeRounded}
-    >{rounded ? 'Add rounded' : 'Remove rounded'}</Button
-  >
-  <Button class="w-40" color="red" onclick={changeBorder}
-    >{border ? 'Remove border' : 'Add border'}</Button
-  >
-  <Button class="w-40" color="green" onclick={changeStacked}
-    >{stacked ? 'Remove stacked' : 'Add  stacked'}</Button
-  >
-  <Button class="w-40" color="purple" onclick={changeClass}
-    >{avatarClass ? 'Remove class' : 'Add class'}</Button
-  >
+  <Button class="w-40" color="blue" onclick={changeRounded}>{rounded ? 'Add rounded' : 'Remove rounded'}</Button>
+  <Button class="w-40" color="red" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
+  <Button class="w-40" color="green" onclick={changeStacked}>{stacked ? 'Remove stacked' : 'Add  stacked'}</Button>
+  <Button class="w-40" color="purple" onclick={changeClass}>{avatarClass ? 'Remove class' : 'Add class'}</Button>
 </CodeWrapper>
 
 <H2>Bordered</H2>
 <CodeWrapper class="flex justify-center gap-4">
   <Avatar src="/images/profile-picture-2.webp" border />
-  <Avatar
-    src="/images/profile-picture-2.webp"
-    border
-    class="ring-red-400 dark:ring-red-300"
-  />
+  <Avatar src="/images/profile-picture-2.webp" border class="ring-red-400 dark:ring-red-300" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/bordered.md'] as string} />
@@ -134,20 +95,9 @@
 <H2>Dot indicator</H2>
 <CodeWrapper class="flex justify-center gap-4">
   <Avatar src="/images/profile-picture-3.webp" dot={{ color: 'red' }} />
-  <Avatar
-    src="/images/profile-picture-3.webp"
-    dot={{ placement: 'top-right', color: 'red' }}
-    rounded
-  />
-  <Avatar
-    src="/images/profile-picture-5.webp"
-    dot={{ placement: 'bottom-right', color: 'green' }}
-  />
-  <Avatar
-    src="/images/profile-picture-5.webp"
-    dot={{ placement: 'bottom-right' }}
-    rounded
-  />
+  <Avatar src="/images/profile-picture-3.webp" dot={{ placement: 'top-right', color: 'red' }} rounded />
+  <Avatar src="/images/profile-picture-5.webp" dot={{ placement: 'bottom-right', color: 'green' }} />
+  <Avatar src="/images/profile-picture-5.webp" dot={{ placement: 'bottom-right' }} rounded />
   <Avatar dot={{}} />
 </CodeWrapper>
 
@@ -165,11 +115,7 @@
     <Avatar src="/images/profile-picture-1.webp" stacked />
     <Avatar src="/images/profile-picture-2.webp" stacked />
     <Avatar src="/images/profile-picture-3.webp" stacked />
-    <Avatar
-      stacked
-      href="/"
-      class="bg-gray-700 text-sm text-white hover:bg-gray-600">+99</Avatar
-    >
+    <Avatar stacked href="/" class="bg-gray-700 text-sm text-white hover:bg-gray-600">+99</Avatar>
   </div>
 </CodeWrapper>
 
@@ -181,9 +127,7 @@
     <Avatar src="/images/profile-picture-1.webp" rounded />
     <div class="space-y-1 font-medium dark:text-white">
       <div>Jese Leos</div>
-      <div class="text-sm text-gray-500 dark:text-gray-400">
-        Joined in August 2014
-      </div>
+      <div class="text-sm text-gray-500 dark:text-gray-400">Joined in August 2014</div>
     </div>
   </div>
 </CodeWrapper>
@@ -192,31 +136,20 @@
 
 <H2>User dropdown</H2>
 <CodeWrapper class="flex h-96 items-start justify-center">
-  <Avatar
-    onclick={dropdown.toggle}
-    src="/images/profile-picture-3.webp"
-    class="cursor-pointer"
-    dot={{ color: 'green' }}
-  />
+  <Avatar onclick={dropdown.toggle} src="/images/profile-picture-3.webp" class="cursor-pointer" dot={{ color: 'green' }} />
   <div class="relative">
-    <Dropdown
-      {dropdownStatus}
-      {closeDropdown}
-      divClass="absolute top-[40px] -left-[100px]"
-    >
-      {#snippet header()}
+    <Dropdown {dropdownStatus} {closeDropdown} divClass="absolute top-[40px] -left-[100px]">
+      <DropdownHeader>
         <div>Bonnie Green</div>
         <div class="truncate font-medium">name@flowbite.com</div>
-      {/snippet}
-      {#snippet children()}
-        <DropdownUl>
-          <DropdownLi href="/">Dashboard</DropdownLi>
-          <DropdownLi href="/nav">Navbar</DropdownLi>
-          <DropdownLi href="/footer">Footer</DropdownLi>
-          <DropdownDivider />
-          <DropdownLi href="/dropdown">Dropdown</DropdownLi>
-        </DropdownUl>
-      {/snippet}
+      </DropdownHeader>
+      <DropdownUl>
+        <DropdownLi href="/">Dashboard</DropdownLi>
+        <DropdownLi href="/nav">Navbar</DropdownLi>
+        <DropdownLi href="/footer">Footer</DropdownLi>
+        <DropdownDivider />
+        <DropdownLi href="/dropdown">Dropdown</DropdownLi>
+      </DropdownUl>
     </Dropdown>
   </div>
 </CodeWrapper>
@@ -225,20 +158,13 @@
 
 <H2>Sizes</H2>
 <CodeWrapper class="flex flex-col gap-4">
-  <div
-    class="flex flex-col flex-wrap justify-center gap-4 sm:flex-row rtl:space-x-reverse"
-  >
+  <div class="flex flex-col flex-wrap justify-center gap-4 sm:flex-row rtl:space-x-reverse">
     <Avatar src="/images/profile-picture-3.webp" rounded size="xs" />
     <Avatar src="/images/profile-picture-3.webp" rounded size="sm" />
     <Avatar src="/images/profile-picture-3.webp" rounded size="md" />
     <Avatar src="/images/profile-picture-3.webp" rounded size="lg" />
     <Avatar src="/images/profile-picture-3.webp" rounded size="xl" />
-    <Avatar
-      src="/images/profile-picture-3.webp"
-      rounded
-      size="none"
-      class="h-28 w-28"
-    />
+    <Avatar src="/images/profile-picture-3.webp" rounded size="none" class="h-28 w-28" />
   </div>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/sizes.md'] as string} />

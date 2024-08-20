@@ -13,28 +13,10 @@
     svgClass?: string | undefined | null;
   }
 
-  let {
-    fillPercent = 100,
-    fillColor = '#F5CA14',
-    strokeColor = '#F5CA14',
-    size = 24,
-    ariaLabel = 'star',
-    id = idGenerator(),
-    role = 'img',
-    svgClass,
-    ...restProps
-  }: Props = $props();
+  let { fillPercent = 100, fillColor = '#F5CA14', strokeColor = '#F5CA14', size = 24, ariaLabel = 'star', id = idGenerator(), role = 'img', svgClass, ...restProps }: Props = $props();
 </script>
 
-<svg
-  width={size}
-  height={size}
-  {...restProps}
-  class={svgClass}
-  aria-label={ariaLabel}
-  viewBox="100 100 120 120"
-  {role}
->
+<svg width={size} height={size} {...restProps} class={svgClass} aria-label={ariaLabel} viewBox="100 100 120 120" {role}>
   <defs>
     <linearGradient {id}>
       {#if fillPercent !== 100}

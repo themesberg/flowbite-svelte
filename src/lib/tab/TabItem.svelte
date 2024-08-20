@@ -3,17 +3,7 @@
   import { writable } from 'svelte/store';
   import { type TabitemProps as Props, type TabCtxType, tabItem } from '.';
 
-  let {
-    children,
-    titleSlot,
-    open = false,
-    title = 'Tab title',
-    activeClass,
-    inactiveClass,
-    class: className,
-    disabled,
-    ...restProps
-  }: Props = $props();
+  let { children, titleSlot, open = false, title = 'Tab title', activeClass, inactiveClass, class: className, disabled, ...restProps }: Props = $props();
 
   const ctx = getContext<TabCtxType>('ctx') ?? {};
   $inspect('ctx from item: ', ctx);
@@ -41,9 +31,7 @@
     role="tab"
     {disabled}
     class={button({
-      class: open
-        ? (activeClass ?? ctx.activeClass)
-        : (inactiveClass ?? ctx.inactiveClass)
+      class: open ? (activeClass ?? ctx.activeClass) : (inactiveClass ?? ctx.inactiveClass)
     })}
   >
     {#if titleSlot}

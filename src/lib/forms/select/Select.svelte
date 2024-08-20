@@ -1,21 +1,9 @@
 <script lang="ts">
   import { type SelectProps as Props, select as selectCls } from '.';
 
-  let {
-    children,
-    items,
-    value = $bindable(),
-    underline,
-    size = 'md',
-    selectClass,
-    underlineClass,
-    placeholder = 'Choose option ...',
-    ...restProps
-  }: Props = $props();
+  let { children, items, value = $bindable(), underline, size = 'md', selectClass, underlineClass, placeholder = 'Choose option ...', ...restProps }: Props = $props();
 
-  const selectStyle = $derived(
-    selectCls({ underline, size, class: selectClass })
-  );
+  const selectStyle = $derived(selectCls({ underline, size, class: selectClass }));
 </script>
 
 <select {...restProps} bind:value class={selectStyle}>

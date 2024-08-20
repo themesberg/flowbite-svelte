@@ -1,7 +1,8 @@
 import { type VariantProps } from 'tailwind-variants';
 import type { Snippet } from 'svelte';
 import Alert from './Alert.svelte';
-import { type TransitionConfig } from 'svelte/transition';
+import type { ParamsType } from '../types';
+import type { TransitionConfig } from 'svelte/transition';
 import type { HTMLAttributes } from 'svelte/elements';
 import { alert } from './theme';
 
@@ -12,13 +13,13 @@ interface AlertProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   icon?: Snippet;
   alertStatus?: boolean;
-  closeIcon?: any;
+  closeIcon?: boolean;
   color?: alertColor;
   border?: boolean;
   rounded?: boolean;
   dismissable?: boolean;
   transition?: TransitionFunc;
-  params?: any;
+  params?: ParamsType;
   onclick?: () => void;
 }
 

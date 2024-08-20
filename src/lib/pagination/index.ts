@@ -3,16 +3,8 @@ import type { Snippet } from 'svelte';
 import Pagination from './Pagination.svelte';
 import { type VariantProps } from 'tailwind-variants';
 import PaginationItem from './PaginationItem.svelte';
-import type {
-  HTMLAnchorAttributes,
-  HTMLButtonAttributes,
-  HTMLLiAttributes
-} from 'svelte/elements';
-type PaginationItemProps = PaginationItemAttributes &
-  (
-    | (HTMLAnchorAttributes & { href: string })
-    | (HTMLButtonAttributes & { href?: never })
-  );
+import type { HTMLAnchorAttributes, HTMLButtonAttributes, HTMLLiAttributes } from 'svelte/elements';
+type PaginationItemProps = PaginationItemAttributes & ((HTMLAnchorAttributes & { href: string }) | (HTMLButtonAttributes & { href?: never }));
 
 type PaginationItemType = VariantProps<typeof paginationItem>;
 interface PaginationItemAttributes {
@@ -40,11 +32,4 @@ interface PaginationProps extends HTMLLiAttributes {
   ariaLabel?: string;
 }
 
-export {
-  Pagination,
-  PaginationItem,
-  paginationItem,
-  pagination,
-  type PaginationItemProps,
-  type PaginationProps
-};
+export { Pagination, PaginationItem, paginationItem, pagination, type PaginationItemProps, type PaginationProps };

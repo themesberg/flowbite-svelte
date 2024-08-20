@@ -1,18 +1,6 @@
 <script lang="ts">
-  import {
-    Select,
-    Label,
-    Button,
-    Pagination,
-    PaginationItem,
-    type PaginationItemProps
-  } from '$lib';
-  import {
-    ChevronLeftOutline,
-    ChevronRightOutline,
-    ArrowLeftOutline,
-    ArrowRightOutline
-  } from 'flowbite-svelte-icons';
+  import { Select, Label, Button, Pagination, PaginationItem, type PaginationItemProps } from '$lib';
+  import { ChevronLeftOutline, ChevronRightOutline, ArrowLeftOutline, ArrowRightOutline } from 'flowbite-svelte-icons';
   import { page } from '$app/stores';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -122,25 +110,17 @@
   </div>
 </CodeWrapper>
 
-<HighlightCompo
-  code={modules['./md/previous-and-next-with-icons.md'] as string}
-/>
+<HighlightCompo code={modules['./md/previous-and-next-with-icons.md'] as string} />
 
 <H2>Table data pagination</H2>
 <CodeWrapper class="flex flex-col items-center justify-center gap-3">
   <div class="flex flex-col items-center justify-center gap-2">
     <div class="text-sm text-gray-700 dark:text-gray-400">
-      Showing <span class="font-semibold text-gray-900 dark:text-white"
-        >{helper.start}</span
-      >
+      Showing <span class="font-semibold text-gray-900 dark:text-white">{helper.start}</span>
       to
-      <span class="font-semibold text-gray-900 dark:text-white"
-        >{helper.end}</span
-      >
+      <span class="font-semibold text-gray-900 dark:text-white">{helper.end}</span>
       of
-      <span class="font-semibold text-gray-900 dark:text-white"
-        >{helper.total}</span
-      >
+      <span class="font-semibold text-gray-900 dark:text-white">{helper.total}</span>
       Entries
     </div>
     <Pagination table {previous} {next} />
@@ -154,17 +134,11 @@
 <CodeWrapper class="flex flex-col items-center justify-center gap-3">
   <div class="flex flex-col items-center justify-center gap-2">
     <div class="text-sm text-gray-700 dark:text-gray-400">
-      Showing <span class="font-semibold text-gray-900 dark:text-white"
-        >{helper.start}</span
-      >
+      Showing <span class="font-semibold text-gray-900 dark:text-white">{helper.start}</span>
       to
-      <span class="font-semibold text-gray-900 dark:text-white"
-        >{helper.end}</span
-      >
+      <span class="font-semibold text-gray-900 dark:text-white">{helper.end}</span>
       of
-      <span class="font-semibold text-gray-900 dark:text-white"
-        >{helper.total}</span
-      >
+      <span class="font-semibold text-gray-900 dark:text-white">{helper.total}</span>
       Entries
     </div>
 
@@ -185,9 +159,7 @@
   </div>
 </CodeWrapper>
 
-<HighlightCompo
-  code={modules['./md/table-data-pagination-with-icons.md'] as string}
-/>
+<HighlightCompo code={modules['./md/table-data-pagination-with-icons.md'] as string} />
 
 <H2>Event example</H2>
 <CodeWrapper class="flex flex-col items-center justify-center gap-3">

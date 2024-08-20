@@ -1,8 +1,7 @@
 <script lang="ts">
   import { type GroupProps as Props, group } from '.';
 
-  let { children, divClass, timeClass, date, olClass, ...restProps }: Props =
-    $props();
+  let { children, divClass, timeClass, date, olClass, ...restProps }: Props = $props();
   const { div, time, ol } = $derived(group());
 </script>
 

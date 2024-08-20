@@ -1,12 +1,5 @@
 <script lang="ts">
-  import {
-    FloatingLabelInput,
-    Helper,
-    Label,
-    Radio,
-    Toggle,
-    floatingLabelInput
-  } from '$lib';
+  import { FloatingLabelInput, Helper, Label, Radio, Toggle, floatingLabelInput } from '$lib';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -42,19 +35,12 @@
 <H2>Floating label examples</H2>
 <CodeWrapper>
   <div class="h-16">
-    <FloatingLabelInput {style} id="floating_filled" type="text"
-      >Floating {style}</FloatingLabelInput
-    >
+    <FloatingLabelInput {style} id="floating_filled" type="text">Floating {style}</FloatingLabelInput>
   </div>
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Style:</Label>
     {#each styles as option}
-      <Radio
-        labelClass="w-24 my-1"
-        name="style1"
-        bind:group={style}
-        value={option}>{option}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="style1" bind:group={style} value={option}>{option}</Radio>
     {/each}
   </div>
 </CodeWrapper>
@@ -63,19 +49,12 @@
 <H2>Disabled state</H2>
 <CodeWrapper>
   <div class="h-16">
-    <FloatingLabelInput disabled style={style2} id="floating_filled" type="text"
-      >Floating {style}</FloatingLabelInput
-    >
+    <FloatingLabelInput disabled style={style2} id="floating_filled" type="text">Floating {style}</FloatingLabelInput>
   </div>
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Style:</Label>
     {#each styles as option}
-      <Radio
-        labelClass="w-24 my-1"
-        name="disabled_style"
-        bind:group={style2}
-        value={option}>{option}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="disabled_style" bind:group={style2} value={option}>{option}</Radio>
     {/each}
   </div>
 </CodeWrapper>
@@ -85,43 +64,19 @@
 <CodeWrapper>
   <div class="mb-6 grid items-end gap-6 md:grid-cols-3">
     <div>
-      <FloatingLabelInput
-        color={floatingColor}
-        style="filled"
-        id="filled_success"
-        aria_describedby="filled_success_help"
-        type="text">Filled</FloatingLabelInput
-      >
+      <FloatingLabelInput color={floatingColor} style="filled" id="filled_success" aria_describedby="filled_success_help" type="text">Filled</FloatingLabelInput>
     </div>
     <div>
-      <FloatingLabelInput
-        color={floatingColor}
-        style="outlined"
-        id="outlined_success"
-        aria_describedby="outlined_success_help"
-        type="text">Outlined</FloatingLabelInput
-      >
+      <FloatingLabelInput color={floatingColor} style="outlined" id="outlined_success" aria_describedby="outlined_success_help" type="text">Outlined</FloatingLabelInput>
     </div>
     <div>
-      <FloatingLabelInput
-        color={floatingColor}
-        style="standard"
-        id="standard_success"
-        aria_describedby="standard_success_help"
-        type="text">Standard</FloatingLabelInput
-      >
+      <FloatingLabelInput color={floatingColor} style="standard" id="standard_success" aria_describedby="standard_success_help" type="text">Standard</FloatingLabelInput>
     </div>
   </div>
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio
-        labelClass="w-24 my-1"
-        name="floating_color"
-        bind:group={floatingColor}
-        color={colorOption as FloatingLabelInput['color']}
-        value={colorOption}>{colorOption}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="floating_color" bind:group={floatingColor} color={colorOption as FloatingLabelInput['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
 </CodeWrapper>
@@ -130,23 +85,9 @@
 <H2>Size</H2>
 <CodeWrapper>
   <div class="mb-6 grid h-48 items-end gap-4 md:h-16 md:grid-cols-3">
-    <FloatingLabelInput
-      size={floatingSize}
-      style="filled"
-      id="size_example_filled"
-      type="text">{sizeDisplay[floatingSize]} filled</FloatingLabelInput
-    >
-    <FloatingLabelInput
-      size={floatingSize}
-      style="outlined"
-      id="size_example_outlined"
-      type="text">{sizeDisplay[floatingSize]} outlined</FloatingLabelInput
-    >
-    <FloatingLabelInput
-      size={floatingSize}
-      id="size_example_standard"
-      type="text">{sizeDisplay[floatingSize]} standard</FloatingLabelInput
-    >
+    <FloatingLabelInput size={floatingSize} style="filled" id="size_example_filled" type="text">{sizeDisplay[floatingSize]} filled</FloatingLabelInput>
+    <FloatingLabelInput size={floatingSize} style="outlined" id="size_example_outlined" type="text">{sizeDisplay[floatingSize]} outlined</FloatingLabelInput>
+    <FloatingLabelInput size={floatingSize} id="size_example_standard" type="text">{sizeDisplay[floatingSize]} standard</FloatingLabelInput>
   </div>
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
@@ -161,28 +102,14 @@
 
 <H2>Helper text</H2>
 <CodeWrapper>
-  <FloatingLabelInput
-    style="filled"
-    color={helperColor}
-    id="floating_helper"
-    aria_describedby="floating_helper_text"
-    type="text">Floating helper</FloatingLabelInput
-  >
+  <FloatingLabelInput style="filled" color={helperColor} id="floating_helper" aria_describedby="floating_helper_text" type="text">Floating helper</FloatingLabelInput>
   <Helper class="pt-2" color={helperColor}>
-    Remember, contributions to this topic should follow our <a href="/">
-      Community Guidelines
-    </a>.
+    Remember, contributions to this topic should follow our <a href="/"> Community Guidelines </a>.
   </Helper>
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio
-        labelClass="w-24 my-1"
-        name="floating_color"
-        bind:group={helperColor}
-        color={colorOption as FloatingLabelInput['color']}
-        value={colorOption}>{colorOption}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="floating_color" bind:group={helperColor} color={colorOption as FloatingLabelInput['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
 </CodeWrapper>

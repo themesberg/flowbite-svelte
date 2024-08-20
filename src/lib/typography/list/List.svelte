@@ -2,14 +2,7 @@
   import { setContext } from 'svelte';
   import { type ListProps as Props, list } from './index';
 
-  let {
-    children,
-    tag = 'ul',
-    position = 'inside',
-    ctxclass = '',
-    class: className,
-    ...restProps
-  }: Props = $props();
+  let { children, tag = 'ul', position = 'inside', ctxclass = '', class: className, ...restProps }: Props = $props();
 
   setContext('ctxclass', ctxclass);
 

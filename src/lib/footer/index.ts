@@ -7,14 +7,7 @@ import FooterUl from './FooterUl.svelte';
 import { type VariantProps } from 'tailwind-variants';
 import type { Snippet } from 'svelte';
 import type { HTMLAttributes, HTMLAnchorAttributes } from 'svelte/elements';
-import {
-  footer,
-  footerBrand,
-  footerCopyright,
-  footerIcon,
-  footerUl,
-  footerLi
-} from './theme';
+import { footer, footerBrand, footerCopyright, footerIcon, footerUl, footerLi } from './theme';
 
 type FooterType = VariantProps<typeof footer>['footerType'];
 interface FooterProps extends HTMLAttributes<HTMLElement> {
@@ -62,23 +55,4 @@ interface FooterLiProps extends HTMLAnchorAttributes {
   href?: string | undefined;
 }
 
-export {
-  Footer,
-  FooterBrand,
-  FooterCopyright,
-  FooterIcon,
-  FooterLi,
-  FooterUl,
-  footer,
-  footerBrand,
-  footerCopyright,
-  footerIcon,
-  footerUl,
-  footerLi,
-  type FooterProps,
-  type FooterBrandProps,
-  type FooterCopyrightProps,
-  type FooterIconProps,
-  type FooterUlProps,
-  type FooterLiProps
-};
+export { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLi, FooterUl, footer, footerBrand, footerCopyright, footerIcon, footerUl, footerLi, type FooterProps, type FooterBrandProps, type FooterCopyrightProps, type FooterIconProps, type FooterUlProps, type FooterLiProps };

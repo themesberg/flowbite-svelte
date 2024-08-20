@@ -1,19 +1,6 @@
 <script lang="ts">
-  import {
-    Kbd,
-    Table,
-    TableHead,
-    TableHeadCell,
-    TableBody,
-    TableBodyCell,
-    TableBodyRow
-  } from '$lib';
-  import {
-    CaretDownSolid,
-    CaretRightSolid,
-    CaretLeftSolid,
-    CaretUpSolid
-  } from 'flowbite-svelte-icons';
+  import { Kbd, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, TableBodyRow } from '$lib';
+  import { CaretDownSolid, CaretRightSolid, CaretLeftSolid, CaretUpSolid } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -49,9 +36,7 @@
 
 <CodeWrapper class="flex flex-wrap justify-center">
   <p class="text-gray-500 dark:text-gray-400">
-    Please press <Kbd class="px-2 py-1.5">Ctrl</Kbd> + <Kbd class="px-2 py-1.5"
-      >Shift</Kbd
-    > + <Kbd class="px-2 py-1.5">R</Kbd> to re-render an MDN page.
+    Please press <Kbd class="px-2 py-1.5">Ctrl</Kbd> + <Kbd class="px-2 py-1.5">Shift</Kbd> + <Kbd class="px-2 py-1.5">R</Kbd> to re-render an MDN page.
   </p>
 </CodeWrapper>
 
@@ -67,22 +52,15 @@
     <TableBody class="divide-y">
       <TableBodyRow>
         <TableBodyCell>
-          <Kbd class="px-2 py-1.5">Shift</Kbd> or <Kbd class="px-2 py-1.5"
-            >Tab</Kbd
-          >
+          <Kbd class="px-2 py-1.5">Shift</Kbd> or <Kbd class="px-2 py-1.5">Tab</Kbd>
         </TableBodyCell>
         <TableBodyCell>Navigate to interactive elements</TableBodyCell>
       </TableBodyRow>
       <TableBodyRow>
         <TableBodyCell>
-          <Kbd class="px-2 py-1.5">Enter</Kbd> or <Kbd class="px-4 py-1.5"
-            >Space bar</Kbd
-          >
+          <Kbd class="px-2 py-1.5">Enter</Kbd> or <Kbd class="px-4 py-1.5">Space bar</Kbd>
         </TableBodyCell>
-        <TableBodyCell
-          >Ensure elements with ARIA role="button" can be activated with both
-          key commands.</TableBodyCell
-        >
+        <TableBodyCell>Ensure elements with ARIA role="button" can be activated with both key commands.</TableBodyCell>
       </TableBodyRow>
       <TableBodyRow>
         <TableBodyCell>

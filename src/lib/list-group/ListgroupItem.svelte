@@ -4,35 +4,14 @@
   import { tv } from 'tailwind-variants';
   import { type ListgroupItemProps as Props, listGroupItem } from '.';
 
-  let {
-    children,
-    onclick,
-    active,
-    current,
-    disabled,
-    name,
-    icon,
-    href,
-    currentClass = 'text-white bg-primary-700 dark:text-white dark:bg-gray-800',
-    normalClass,
-    disabledClass = 'text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400',
-    focusClass = 'focus:z-40 focus:outline-none focus:ring-2 focus:ring-primary-700 focus:text-primary-700 dark:focus:ring-gray-500 dark:focus:text-white',
-    hoverClass = 'hover:bg-gray-100 hover:text-primary-700 dark:hover:bg-gray-600 dark:hover:text-white',
-    liClass = 'py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg',
-    class: className,
-    ...restProps
-  }: Props = $props();
+  let { children, onclick, active, current, disabled, name, icon, href, currentClass = 'text-white bg-primary-700 dark:text-white dark:bg-gray-800', normalClass, disabledClass = 'text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400', focusClass = 'focus:z-40 focus:outline-none focus:ring-2 focus:ring-primary-700 focus:text-primary-700 dark:focus:ring-gray-500 dark:focus:text-white', hoverClass = 'hover:bg-gray-100 hover:text-primary-700 dark:hover:bg-gray-600 dark:hover:text-white', liClass = 'py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg', class: className, ...restProps }: Props = $props();
 
   active = getContext('active');
 
   const itemClass = listGroupItem({
     state: disabled ? 'disabled' : current ? 'current' : 'normal',
     active,
-    class: twMerge(
-      liClass,
-      disabled ? disabledClass : current ? currentClass : normalClass,
-      className
-    )
+    class: twMerge(liClass, disabled ? disabledClass : current ? currentClass : normalClass, className)
   });
 
   const buttonClass = tv({

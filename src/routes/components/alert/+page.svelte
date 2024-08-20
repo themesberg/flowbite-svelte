@@ -1,14 +1,5 @@
 <script lang="ts">
-  import {
-    Alert,
-    alert as fsalert,
-    List,
-    Li,
-    Button,
-    Label,
-    Radio,
-    type AlertProps
-  } from '$lib';
+  import { Alert, alert as fsalert, List, Li, Button, Label, Radio, type AlertProps } from '$lib';
   import { InfoCircleSolid, EyeSolid } from 'flowbite-svelte-icons';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
@@ -75,24 +66,13 @@
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio
-        labelClass="w-24 my-1"
-        name="default_alert_color"
-        bind:group={defaultColor}
-        color={colorOption as AlertProps['color']}
-        value={colorOption}>{colorOption}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="default_alert_color" bind:group={defaultColor} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
 
-  <Button class="w-48" color="green" onclick={changeClass}
-    >{alertClass ? 'Remove class' : 'Add class'}</Button
-  >
+  <Button class="w-48" color="green" onclick={changeClass}>{alertClass ? 'Remove class' : 'Add class'}</Button>
 </CodeWrapper>
-<HighlightCompo
-  codeLang="ts"
-  code={modules['./md/default-alert.md'] as string}
-/>
+<HighlightCompo codeLang="ts" code={modules['./md/default-alert.md'] as string} />
 
 <H2>Alerts with icon</H2>
 <CodeWrapper class="space-y-4">
@@ -109,20 +89,11 @@
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio
-        labelClass="w-24 my-1"
-        name="icon_alert_color"
-        bind:group={iconColor}
-        color={colorOption as AlertProps['color']}
-        value={colorOption}>{colorOption}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={iconColor} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
 </CodeWrapper>
-<HighlightCompo
-  codeLang="ts"
-  code={modules['./md/alerts-with-icon.md'] as string}
-/>
+<HighlightCompo codeLang="ts" code={modules['./md/alerts-with-icon.md'] as string} />
 
 <H2>Bordered alerts</H2>
 <CodeWrapper class="space-y-4">
@@ -139,20 +110,11 @@
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio
-        labelClass="w-24 my-1"
-        name="bordered_alert_color"
-        bind:group={borderColor}
-        color={colorOption as AlertProps['color']}
-        value={colorOption}>{colorOption}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="bordered_alert_color" bind:group={borderColor} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
 </CodeWrapper>
-<HighlightCompo
-  codeLang="ts"
-  code={modules['./md/bordered-alerts.md'] as string}
-/>
+<HighlightCompo codeLang="ts" code={modules['./md/bordered-alerts.md'] as string} />
 
 <H2>Alerts with list</H2>
 <CodeWrapper class="space-y-4">
@@ -173,20 +135,11 @@
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio
-        labelClass="w-24 my-1"
-        name="list_alert_color"
-        bind:group={listColor}
-        color={colorOption as AlertProps['color']}
-        value={colorOption}>{colorOption}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="list_alert_color" bind:group={listColor} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
 </CodeWrapper>
-<HighlightCompo
-  codeLang="ts"
-  code={modules['./md/alerts-with-list.md'] as string}
-/>
+<HighlightCompo codeLang="ts" code={modules['./md/alerts-with-list.md'] as string} />
 
 <H2>Dismissable alerts</H2>
 <CodeWrapper class="space-y-4">
@@ -194,11 +147,7 @@
     {#if !alertStatus2}
       <Button color="light" onclick={changeStatus}>Open alert</Button>
     {/if}
-    <Alert
-      color={dismissableColor}
-      {dismissable}
-      bind:alertStatus={alertStatus2}
-    >
+    <Alert color={dismissableColor} {dismissable} bind:alertStatus={alertStatus2}>
       {#snippet icon()}
         <InfoCircleSolid class="h-5 w-5" />
       {/snippet}
@@ -210,23 +159,12 @@
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio
-        labelClass="w-24 my-1"
-        name="dissmissible_alert_color"
-        bind:group={dismissableColor}
-        color={colorOption as AlertProps['color']}
-        value={colorOption}>{colorOption}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="dissmissible_alert_color" bind:group={dismissableColor} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
-  <Button class="w-48" color="yellow" onclick={changeDismissable}
-    >{dismissable ? 'Remove dismissable' : 'Add dismissable'}</Button
-  >
+  <Button class="w-48" color="yellow" onclick={changeDismissable}>{dismissable ? 'Remove dismissable' : 'Add dismissable'}</Button>
 </CodeWrapper>
-<HighlightCompo
-  codeLang="ts"
-  code={modules['./md/dismissable-alerts.md'] as string}
-/>
+<HighlightCompo codeLang="ts" code={modules['./md/dismissable-alerts.md'] as string} />
 
 <H2>Border accent</H2>
 <CodeWrapper class="space-y-4">
@@ -243,13 +181,7 @@
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio
-        labelClass="w-24 my-1"
-        name="border_accent_alert_color"
-        bind:group={borderAccessColor}
-        color={colorOption as AlertProps['color']}
-        value={colorOption}>{colorOption}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="border_accent_alert_color" bind:group={borderAccessColor} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
 
@@ -261,10 +193,7 @@
     Change a few things up and try submitting again.
   </Alert>
 </CodeWrapper>
-<HighlightCompo
-  codeLang="ts"
-  code={modules['./md/border-accent.md'] as string}
-/>
+<HighlightCompo codeLang="ts" code={modules['./md/border-accent.md'] as string} />
 
 <H2>Additional content</H2>
 <CodeWrapper class="space-y-4">
@@ -276,11 +205,7 @@
         {/snippet}
         <span class="text-lg font-medium">This is a info alert</span>
       </div>
-      <p class="mb-4 mt-2 text-sm">
-        More info about this info alert goes here. This example text is going to
-        run a bit longer so that you can see how spacing within an alert works
-        with this kind of content.
-      </p>
+      <p class="mb-4 mt-2 text-sm">More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
       <div class="flex gap-2">
         <Button size="xs"><EyeSolid class="me-2 h-4 w-4" />View more</Button>
         <Button size="xs" outline>Go to Home</Button>
@@ -291,20 +216,11 @@
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio
-        labelClass="w-24 my-1"
-        name="additional_alert_color"
-        bind:group={additionalColor}
-        color={colorOption as AlertProps['color']}
-        value={colorOption}>{colorOption}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="additional_alert_color" bind:group={additionalColor} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
 </CodeWrapper>
-<HighlightCompo
-  codeLang="ts"
-  code={modules['./md/additional-content.md'] as string}
-/>
+<HighlightCompo codeLang="ts" code={modules['./md/additional-content.md'] as string} />
 
 <H2>Rounded</H2>
 <CodeWrapper class="space-y-4">
@@ -317,34 +233,21 @@
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio
-        labelClass="w-24 my-1"
-        name="alert_rounded"
-        bind:group={color}
-        color={colorOption as AlertProps['color']}
-        value={colorOption}>{colorOption}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="alert_rounded" bind:group={color} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
-  <Button class="w-48" color="blue" onclick={changeRounded}
-    >{rounded ? 'Remove rounded' : 'Add rounded'}</Button
-  >
+  <Button class="w-48" color="blue" onclick={changeRounded}>{rounded ? 'Remove rounded' : 'Add rounded'}</Button>
 </CodeWrapper>
 
 <H2>Custom color</H2>
 <CodeWrapper>
   <Alert dismissable class="bg-sky-500 text-white">Your content</Alert>
 </CodeWrapper>
-<HighlightCompo
-  codeLang="ts"
-  code={modules['./md/custom-color.md'] as string}
-/>
+<HighlightCompo codeLang="ts" code={modules['./md/custom-color.md'] as string} />
 
 <H2>Events</H2>
 <CodeWrapper class="h-24">
-  <Alert dismissable onclick={handleClose} bind:alertStatus={alertEventStatus}>
-    Close me
-  </Alert>
+  <Alert dismissable onclick={handleClose} bind:alertStatus={alertEventStatus}>Close me</Alert>
 </CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/events.md'] as string} />
 
@@ -354,14 +257,7 @@
     {#if !alertStatus2}
       <Button color="light" onclick={changeStatus}>Open alert</Button>
     {/if}
-    <Alert
-      {color}
-      {rounded}
-      {border}
-      {dismissable}
-      class={alertClass}
-      bind:alertStatus={alertStatus2}
-    >
+    <Alert {color} {rounded} {border} {dismissable} class={alertClass} bind:alertStatus={alertStatus2}>
       <span class="font-medium">Default alert!</span>
     </Alert>
   </div>
@@ -369,25 +265,11 @@
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio
-        labelClass="w-24 my-1"
-        name="alert_reactive"
-        bind:group={color}
-        color={colorOption as AlertProps['color']}
-        value={colorOption}>{colorOption}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="alert_reactive" bind:group={color} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
-  <Button class="w-48" color="blue" onclick={changeRounded}
-    >{rounded ? 'Remove rounded' : 'Add rounded'}</Button
-  >
-  <Button class="w-48" color="red" onclick={changeBorder}
-    >{border ? 'Remove border' : 'Add border'}</Button
-  >
-  <Button class="w-48" color="yellow" onclick={changeDismissable}
-    >{dismissable ? 'Remove dismissable' : 'Add dismissable'}</Button
-  >
-  <Button class="w-48" color="green" onclick={changeClass}
-    >{alertClass ? 'Remove class' : 'Add class'}</Button
-  >
+  <Button class="w-48" color="blue" onclick={changeRounded}>{rounded ? 'Remove rounded' : 'Add rounded'}</Button>
+  <Button class="w-48" color="red" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
+  <Button class="w-48" color="yellow" onclick={changeDismissable}>{dismissable ? 'Remove dismissable' : 'Add dismissable'}</Button>
+  <Button class="w-48" color="green" onclick={changeClass}>{alertClass ? 'Remove class' : 'Add class'}</Button>
 </CodeWrapper>

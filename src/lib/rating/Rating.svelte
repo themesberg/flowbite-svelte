@@ -18,18 +18,7 @@
     pClass?: string | undefined | null;
   }
 
-  let {
-    children,
-    text,
-    divClass = 'flex items-center',
-    size = 24,
-    total = 5,
-    rating = 4,
-    partialId = 'partialStar' + idGenerator(),
-    icon = Star,
-    count = false,
-    pClass = 'ms-2 text-sm font-bold text-gray-900 dark:text-white'
-  }: Props = $props();
+  let { children, text, divClass = 'flex items-center', size = 24, total = 5, rating = 4, partialId = 'partialStar' + idGenerator(), icon = Star, count = false, pClass = 'ms-2 text-sm font-bold text-gray-900 dark:text-white' }: Props = $props();
 
   // generate unique id for full star and gray star
   const fullStarId: string = idGenerator();

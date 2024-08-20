@@ -3,37 +3,13 @@
   import { CloseButton } from '$lib';
   import { toast, type ToastProps as Props } from '.';
 
-  let {
-    children,
-    icon,
-    toastStatus = $bindable(true),
-    dismissable = true,
-    color = 'primary',
-    position,
-    baseClass,
-    iconClass,
-    contentClass,
-    align = true,
-    transition = fade,
-    params,
-    ...restProps
-  }: Props = $props();
+  let { children, icon, toastStatus = $bindable(true), dismissable = true, color = 'primary', position, baseClass, iconClass, contentClass, align = true, transition = fade, params, ...restProps }: Props = $props();
 
-  const {
-    base,
-    icon: iconVariants,
-    content,
-    close
-  } = $derived(toast({ color, position, align }));
+  const { base, icon: iconVariants, content, close } = $derived(toast({ color, position, align }));
 </script>
 
 {#if toastStatus}
-  <div
-    role="alert"
-    {...restProps}
-    class={base({ class: baseClass })}
-    transition:transition={params}
-  >
+  <div role="alert" {...restProps} class={base({ class: baseClass })} transition:transition={params}>
     {#if icon}
       <div class={iconVariants({ class: iconClass })}>
         {@render icon()}

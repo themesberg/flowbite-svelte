@@ -2,8 +2,7 @@
   import { page } from '$app/stores';
   import { type DropdownLiProps as Props, dropdownli } from './';
 
-  let { aClass, children, href, activeClass, liClass, ...restProps }: Props =
-    $props();
+  let { aClass, children, href, activeClass, liClass, ...restProps }: Props = $props();
 
   let currentUrl = $state();
   $effect(() => {
@@ -15,13 +14,7 @@
 
 <li class={liClass}>
   {#if href}
-    <a
-      {href}
-      class={currentUrl === href
-        ? activeAnchor({ class: activeClass })
-        : anchor({ class: aClass })}
-      {...restProps}
-    >
+    <a {href} class={currentUrl === href ? activeAnchor({ class: activeClass }) : anchor({ class: aClass })} {...restProps}>
       {@render children()}
     </a>
   {:else}

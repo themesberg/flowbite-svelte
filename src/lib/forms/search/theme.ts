@@ -4,8 +4,7 @@ export const search = tv({
   slots: {
     base: 'relative w-full',
     icon: '',
-    content:
-      'absolute inset-y-0 end-0 flex items-center text-gray-500 dark:text-gray-400'
+    content: 'absolute inset-y-0 end-0 flex items-center text-gray-500 dark:text-gray-400'
   },
   variants: {
     size: {

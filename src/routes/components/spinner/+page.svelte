@@ -32,9 +32,7 @@
   <div class="h-20">
     <Spinner class={spinnerClass} />
   </div>
-  <Button class="w-48" onclick={changeClass}
-    >{spinnerClass ? 'Remove class' : 'Add class'}</Button
-  >
+  <Button class="w-48" onclick={changeClass}>{spinnerClass ? 'Remove class' : 'Add class'}</Button>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/defaultspinner.md'] as string} />
@@ -46,13 +44,7 @@
   <div class="mt-8 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as color}
-      <Radio
-        labelClass="w-24 my-1"
-        name="spinnercolor"
-        bind:group={spinnerColor}
-        color={color as Spinner['color']}
-        value={color}>{color}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="spinnercolor" bind:group={spinnerColor} color={color as Spinner['color']} value={color}>{color}</Radio>
     {/each}
   </div>
 </CodeWrapper>
@@ -68,12 +60,7 @@
   <div class="mt-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as size}
-      <Radio
-        labelClass="w-24 my-1"
-        name="spinnersize"
-        bind:group={spinnerSize}
-        value={size}>{size}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="spinnersize" bind:group={spinnerSize} value={size}>{size}</Radio>
     {/each}
   </div>
 </CodeWrapper>

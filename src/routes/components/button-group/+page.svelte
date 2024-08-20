@@ -1,17 +1,6 @@
 <script lang="ts">
-  import {
-    ButtonGroup,
-    Button,
-    GradientButton,
-    Label,
-    Radio,
-    type ButtonGroupProps
-  } from '$lib';
-  import {
-    UserCircleSolid,
-    AdjustmentsVerticalSolid,
-    DownloadSolid
-  } from 'flowbite-svelte-icons';
+  import { ButtonGroup, Button, GradientButton, Label, Radio, type ButtonGroupProps } from '$lib';
+  import { UserCircleSolid, AdjustmentsVerticalSolid, DownloadSolid } from 'flowbite-svelte-icons';
   const handleClick = () => {
     alert('Clicked');
   };
@@ -63,17 +52,10 @@
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Current size: {size}</Label>
     {#each sizes as sizeOption}
-      <Radio
-        labelClass="w-24 my-1"
-        name="size"
-        bind:group={size}
-        value={sizeOption}>{sizeOption}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="size" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
     {/each}
   </div>
-  <Button color="green" onclick={changeClass}
-    >{buttonGroupClass ? 'Remove class' : 'Add class'}</Button
-  >
+  <Button color="green" onclick={changeClass}>{buttonGroupClass ? 'Remove class' : 'Add class'}</Button>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/reactive-buttongroup.md'] as string} />
 

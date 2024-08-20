@@ -13,37 +13,20 @@
     class?: string | undefined | null;
   }
 
-  let {
-    children,
-    end,
-    color = 'default',
-    embedded,
-    class: className,
-    ...restProps
-  }: Props = $props();
+  let { children, end, color = 'default', embedded, class: className, ...restProps }: Props = $props();
 
   const separators = writable(false);
   setContext('toolbar', separators);
 
   let frameColor = embedded ? 'none' : color;
 
-  let separatorsClass: string = twJoin(
-    $separators && 'sm:divide-x rtl:divide-x-reverse'
-  );
+  let separatorsClass: string = twJoin($separators && 'sm:divide-x rtl:divide-x-reverse');
 
-  let divClass: string = twMerge(
-    'flex justify-between items-center',
-    !embedded && 'py-2 px-3',
-    className
-  );
+  let divClass: string = twMerge('flex justify-between items-center', !embedded && 'py-2 px-3', className);
 </script>
 
 <Frame {...restProps} class={divClass} color={frameColor} rounded={!embedded}>
-  <Frame
-    class="flex flex-wrap items-center {separatorsClass}"
-    color={frameColor}
-    rounded={!embedded}
-  >
+  <Frame class="flex flex-wrap items-center {separatorsClass}" color={frameColor} rounded={!embedded}>
     {@render children()}
   </Frame>
   {#if end}

@@ -3,10 +3,8 @@
   import { twMerge } from 'tailwind-merge';
 
   const colorClasses: Record<FormColorType, string> = {
-    primary:
-      'text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600',
-    secondary:
-      'text-secondary-600 focus:ring-secondary-500 dark:focus:ring-secondary-600',
+    primary: 'text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600',
+    secondary: 'text-secondary-600 focus:ring-secondary-500 dark:focus:ring-secondary-600',
     red: 'text-red-600 focus:ring-red-500 dark:focus:ring-red-600',
     green: 'text-green-600 focus:ring-green-500 dark:focus:ring-green-600',
     purple: 'text-purple-600 focus:ring-purple-500 dark:focus:ring-purple-600',
@@ -16,28 +14,10 @@
     blue: 'text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600'
   };
 
-  export const labelCls = (inline: boolean, extraClass: string) =>
-    twMerge(inline ? 'inline-flex' : 'flex', 'items-center', extraClass);
+  export const labelCls = (inline: boolean, extraClass: string) => twMerge(inline ? 'inline-flex' : 'flex', 'items-center', extraClass);
   export let spacing: string = 'me-2';
 
-  export const inputCls = (
-    custom: boolean,
-    color: FormColorType,
-    rounded: boolean,
-    tinted: boolean,
-    extraClass: string
-  ) =>
-    twMerge(
-      'w-4 h-4 bg-gray-100 border-gray-300 dark:ring-offset-gray-800 focus:ring-2',
-      spacing,
-      tinted
-        ? 'dark:bg-gray-600 dark:border-gray-500'
-        : 'dark:bg-gray-700 dark:border-gray-600',
-      custom && 'sr-only peer',
-      rounded && 'rounded',
-      colorClasses[color],
-      extraClass
-    );
+  export const inputCls = (custom: boolean, color: FormColorType, rounded: boolean, tinted: boolean, extraClass: string) => twMerge('w-4 h-4 bg-gray-100 border-gray-300 dark:ring-offset-gray-800 focus:ring-2', spacing, tinted ? 'dark:bg-gray-600 dark:border-gray-500' : 'dark:bg-gray-700 dark:border-gray-600', custom && 'sr-only peer', rounded && 'rounded', colorClasses[color], extraClass);
 </script>
 
 <script lang="ts">
@@ -46,30 +26,12 @@
   import Label from '../label/Label.svelte';
   import { type RadioProps as Props, radio } from '.';
 
-  let {
-    children,
-    aria_describedby,
-    labelClass,
-    color = 'primary',
-    group = $bindable(),
-    value,
-    inputClass,
-    ...restProps
-  }: Props = $props();
-  const { input, label } = $derived(
-    radio({ color, tinted: !!getContext('background') })
-  );
+  let { children, aria_describedby, labelClass, color = 'primary', group = $bindable(), value, inputClass, ...restProps }: Props = $props();
+  const { input, label } = $derived(radio({ color, tinted: !!getContext('background') }));
 </script>
 
 <Label class={label({ class: labelClass })}>
-  <input
-    type="radio"
-    bind:group
-    {value}
-    aria-describedby={aria_describedby}
-    {...restProps}
-    class={input({ class: inputClass })}
-  />
+  <input type="radio" bind:group {value} aria-describedby={aria_describedby} {...restProps} class={input({ class: inputClass })} />
   {@render children()}
 </Label>
 

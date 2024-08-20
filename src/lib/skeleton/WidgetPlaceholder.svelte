@@ -1,8 +1,5 @@
 <script lang="ts">
-  import {
-    widgetPlaceholder,
-    type WidgetPlaceholderProps as Props
-  } from './index';
+  import { widgetPlaceholder, type WidgetPlaceholderProps as Props } from './index';
 
   let { class: className }: Props = $props();
   const { base, wrapper, vLine, hLine } = widgetPlaceholder({});

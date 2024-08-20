@@ -4,14 +4,7 @@ import Group from './Group.svelte';
 import GroupItem from './GroupItem.svelte';
 import Timeline from './Timeline.svelte';
 import TimelineItem from './TimelineItem.svelte';
-import {
-  activity,
-  activityitem,
-  group,
-  groupitem,
-  timeline,
-  timelineitem
-} from './theme';
+import { activity, activityitem, group, groupitem, timeline, timelineitem } from './theme';
 import type { HTMLOlAttributes, HTMLLiAttributes } from 'svelte/elements';
 import type { Snippet } from 'svelte';
 
@@ -82,25 +75,4 @@ interface TimelineItemProps extends HTMLLiAttributes {
   h3Class?: string;
 }
 
-export {
-  Activity,
-  ActivityItem,
-  Group,
-  GroupItem,
-  Timeline,
-  TimelineItem,
-  activity,
-  activityitem,
-  group,
-  groupitem,
-  timeline,
-  timelineitem,
-  type ActivityType,
-  type ActivityProps,
-  type ActivityItemProps,
-  type GroupTimelineType,
-  type GroupProps,
-  type GroupItemProps,
-  type TimelineProps,
-  type TimelineItemProps
-};
+export { Activity, ActivityItem, Group, GroupItem, Timeline, TimelineItem, activity, activityitem, group, groupitem, timeline, timelineitem, type ActivityType, type ActivityProps, type ActivityItemProps, type GroupTimelineType, type GroupProps, type GroupItemProps, type TimelineProps, type TimelineItemProps };

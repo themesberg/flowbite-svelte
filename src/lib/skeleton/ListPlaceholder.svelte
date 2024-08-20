@@ -1,16 +1,9 @@
 <script lang="ts">
   import { listPlaceholder, type ListPlaceholderProps as Props } from './index';
 
-  let {
-    itemNumber = 5,
-    size = 'md',
-    rounded,
-    class: className,
-    ...restProps
-  }: Props = $props();
+  let { itemNumber = 5, size = 'md', rounded, class: className, ...restProps }: Props = $props();
 
-  const { base, item, itemContent, itemTitle, itemSubtitle, itemExtra } =
-    $derived(listPlaceholder({ size, rounded }));
+  const { base, item, itemContent, itemTitle, itemSubtitle, itemExtra } = $derived(listPlaceholder({ size, rounded }));
 
   let items = $derived([...Array(itemNumber).keys()]);
 </script>

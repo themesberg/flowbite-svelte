@@ -1,7 +1,6 @@
 <script lang="ts">
   import { Toggle, toggle, Radio, Label } from '$lib';
-  const customSize =
-    'w-16 h-10 after:top-1 after:left-[4px]  after:h-8 after:w-8';
+  const customSize = 'w-16 h-10 after:top-1 after:left-[4px]  after:h-8 after:w-8';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -39,13 +38,7 @@
   <div class="flex flex-wrap">
     <Label class="mb-4 w-full font-bold">Color:</Label>
     {#each colors as colorOption}
-      <Radio
-        labelClass="w-24 m-2"
-        name="toggle_color"
-        bind:group={toggleColor}
-        color={colorOption as Toggle['color']}
-        value={colorOption}>{colorOption}</Radio
-      >
+      <Radio labelClass="w-24 m-2" name="toggle_color" bind:group={toggleColor} color={colorOption as Toggle['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
 </CodeWrapper>
@@ -59,12 +52,7 @@
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as size}
-      <Radio
-        labelClass="w-32 m-2"
-        name="toggle_size"
-        bind:group={toggleSize}
-        value={size}>{size}</Radio
-      >
+      <Radio labelClass="w-32 m-2" name="toggle_size" bind:group={toggleSize} value={size}>{size}</Radio>
     {/each}
   </div>
   <Toggle spanClass={customSize}>Custom toggle</Toggle>

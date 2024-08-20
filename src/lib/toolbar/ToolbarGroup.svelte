@@ -11,12 +11,7 @@
     divClass?: string | undefined | null;
   }
 
-  let {
-    children,
-    class: className,
-    divClass = 'flex items-center space-x-1 rtl:space-x-reverse sm:pe-4 sm:ps-4 first:sm:ps-0 last:sm:pe-0',
-    ...restProps
-  }: Props = $props();
+  let { children, class: className, divClass = 'flex items-center space-x-1 rtl:space-x-reverse sm:pe-4 sm:ps-4 first:sm:ps-0 last:sm:pe-0', ...restProps }: Props = $props();
 
   const options: Writable<boolean> = getContext('toolbar');
   if (options) $options = true;

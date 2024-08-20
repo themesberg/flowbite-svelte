@@ -1,6 +1,7 @@
 import { type VariantProps } from 'tailwind-variants';
 import type { Snippet } from 'svelte';
-import { type TransitionConfig } from 'svelte/transition';
+import type { TransitionConfig } from 'svelte/transition';
+import type { ParamsType } from '../types';
 import type { HTMLAttributes } from 'svelte/elements';
 import Banner from './Banner.svelte';
 import { banner } from './theme';
@@ -21,7 +22,7 @@ interface BannerProps extends HTMLAttributes<HTMLDivElement> {
   divClass?: string | undefined;
   innerClass?: string | undefined;
   transition?: TransitionFunc;
-  params?: any;
+  params?: ParamsType;
 }
 
 export { Banner, banner, type BannerProps };

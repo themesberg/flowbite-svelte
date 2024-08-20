@@ -30,18 +30,8 @@ interface BottomNavItemProps {
   target?: string | undefined | null;
   activeClass?: string | undefined | null;
   href?: string | undefined | null;
-  exact?: boolean;
   btnClass?: string | undefined | null;
   spanClass?: string | undefined | null;
 }
 
-export {
-  BottomNav,
-  BottomNavItem,
-  bottomNav,
-  bottomNavItem,
-  type BottomNavProps,
-  type BottomNavItemProps,
-  type BottomNavContextType,
-  type BottomNavVariantType
-};
+export { BottomNav, BottomNavItem, bottomNav, bottomNavItem, type BottomNavProps, type BottomNavItemProps, type BottomNavContextType, type BottomNavVariantType };

@@ -6,12 +6,4 @@ import TableHeadCell from './TableHeadCell.svelte';
 import TableHead from './TableHead.svelte';
 import TableSearch from './TableSearch.svelte';
 
-export {
-  Table,
-  TableBody,
-  TableBodyCell,
-  TableBodyRow,
-  TableHeadCell,
-  TableHead,
-  TableSearch
-};
+export { Table, TableBody, TableBodyCell, TableBodyRow, TableHeadCell, TableHead, TableSearch };

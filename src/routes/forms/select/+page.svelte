@@ -1,14 +1,5 @@
 <script lang="ts">
-  import {
-    Select,
-    Label,
-    Radio,
-    Helper,
-    Dropdown,
-    DropdownUl,
-    DropdownLi,
-    uiHelpers
-  } from '$lib';
+  import { Select, Label, Radio, Helper, Dropdown, DropdownUl, DropdownLi, uiHelpers } from '$lib';
   import { ChevronDownOutline } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -88,15 +79,8 @@
 <H2>Disabled state</H2>
 
 <CodeWrapper class="h-48">
-  <Label for="select-disabled" color="disabled" class="mb-2"
-    >Disabled select</Label
-  >
-  <Select
-    id="select-disabled"
-    disabled
-    items={countries}
-    placeholder="You can't select anything..."
-  />
+  <Label for="select-disabled" color="disabled" class="mb-2">Disabled select</Label>
+  <Select id="select-disabled" disabled items={countries} placeholder="You can't select anything..." />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/disabled.md'] as string} />
@@ -105,12 +89,7 @@
 
 <CodeWrapper class="h-48">
   <Label for="select-underline" class="sr-only">Underline select</Label>
-  <Select
-    id="select-underline"
-    underline
-    selectClass="mt-2"
-    items={countries}
-  />
+  <Select id="select-underline" underline selectClass="mt-2" items={countries} />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/underline.md'] as string} />
@@ -118,23 +97,13 @@
 <H2>Select with dropdown</H2>
 <CodeWrapper class="h-96">
   <div class="flex">
-    <button
-      id="states-button"
-      class="z-10 inline-flex flex-shrink-0 items-center rounded-s-lg border border-gray-300 bg-gray-100 px-4 py-2.5 text-center text-sm font-medium text-gray-500 hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-700"
-      type="button"
-      onclick={dropdown.toggle}
-    >
+    <button id="states-button" class="z-10 inline-flex flex-shrink-0 items-center rounded-s-lg border border-gray-300 bg-gray-100 px-4 py-2.5 text-center text-sm font-medium text-gray-500 hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-700" type="button" onclick={dropdown.toggle}>
       <Usa />
       USA
       <ChevronDownOutline class="ms-2 h-6 w-6" />
     </button>
     <div class="relative">
-      <Dropdown
-        {dropdownStatus}
-        {closeDropdown}
-        {transitionParams}
-        class="absolute -left-[120px] top-[40px]"
-      >
+      <Dropdown {dropdownStatus} {closeDropdown} {transitionParams} class="absolute -left-[120px] top-[40px]">
         <DropdownUl>
           <DropdownLi aClass="flex items-center" href="/">
             <Usa />
@@ -155,11 +124,7 @@
         </DropdownUl>
       </Dropdown>
     </div>
-    <Select
-      items={states}
-      placeholder="Choose the state"
-      selectClass="!rounded-s-none"
-    />
+    <Select items={states} placeholder="Choose the state" selectClass="!rounded-s-none" />
   </div>
 </CodeWrapper>
 
@@ -168,29 +133,13 @@
 <CodeWrapper>
   <div class="h-64">
     <Label for="select-sm" class="mb-4">{sizeDisplay[selectSize]} select</Label>
-    <Select
-      id="select-sm"
-      size={selectSize}
-      items={countries}
-      selectClass="mb-8"
-    />
-    <Select
-      id="select-sm"
-      underline
-      size={selectSize}
-      items={countries}
-      selectClass="mb-8"
-    />
+    <Select id="select-sm" size={selectSize} items={countries} selectClass="mb-8" />
+    <Select id="select-sm" underline size={selectSize} items={countries} selectClass="mb-8" />
   </div>
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as option}
-      <Radio
-        labelClass="w-24 my-1"
-        name="input_size"
-        bind:group={selectSize}
-        value={option}>{option}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="input_size" bind:group={selectSize} value={option}>{option}</Radio>
     {/each}
   </div>
 </CodeWrapper>
@@ -199,12 +148,7 @@
 
 <CodeWrapper>
   <Label for="countries">Select an option</Label>
-  <Select
-    id="countries"
-    selectClass="mt-2"
-    bind:value={selected}
-    placeholder=""
-  >
+  <Select id="countries" selectClass="mt-2" bind:value={selected} placeholder="">
     <option selected value="all">All</option>
 
     {#each countries as { value, name }}

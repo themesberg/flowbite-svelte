@@ -1,20 +1,6 @@
 <script lang="ts">
-  import {
-    Textarea,
-    Label,
-    Toolbar,
-    ToolbarGroup,
-    ToolbarButton,
-    Button
-  } from '$lib';
-  import {
-    PaperClipOutline,
-    MapPinAltSolid,
-    ImageOutline,
-    CodeOutline,
-    FaceGrinOutline,
-    PaperPlaneOutline
-  } from 'flowbite-svelte-icons';
+  import { Textarea, Label, Toolbar, ToolbarGroup, ToolbarButton, Button } from '$lib';
+  import { PaperClipOutline, MapPinAltSolid, ImageOutline, CodeOutline, FaceGrinOutline, PaperPlaneOutline } from 'flowbite-svelte-icons';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -28,21 +14,12 @@
 </script>
 
 <H1>Textarea</H1>
-<p>
-  The textarea component is a multi-line text field input that can be used to
-  receive longer chunks of text from the user in the form of a comment box,
-  description field, and more.
-</p>
+<p>The textarea component is a multi-line text field input that can be used to receive longer chunks of text from the user in the form of a comment box, description field, and more.</p>
 <H2>Textarea example</H2>
 <p>Get started with the default example of a textarea component below.</p>
 <CodeWrapper>
   <Label for="textarea-id" class="mb-2">Your message</Label>
-  <Textarea
-    id="textarea-id"
-    placeholder="Your message"
-    rows={4}
-    name="message"
-  />
+  <Textarea id="textarea-id" placeholder="Your message" rows={4} name="message" />
 </CodeWrapper>
 
 <H2>WYSIWYG Editor</H2>

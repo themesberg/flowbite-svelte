@@ -4,26 +4,15 @@ import DropdownUl from './DropdownUl.svelte';
 import DropdownLi from './DropdownLi.svelte';
 import DropdownHeader from './DropdownHeader.svelte';
 import DropdownFooter from './DropdownFooter.svelte';
-import {
-  dropdown,
-  dropdowndivider,
-  dropdownli,
-  dropdownul,
-  dropdownHeader,
-  dropdownFooter
-} from './theme';
+import { dropdown, dropdowndivider, dropdownli, dropdownul, dropdownHeader, dropdownFooter } from './theme';
 import type { Snippet } from 'svelte';
 import type { TransitionParamTypes, TransitionTypes } from '../types';
 import type { HTMLAttributes, HTMLAnchorAttributes } from 'svelte/elements';
 
 interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
-  header?: Snippet;
-  footer?: Snippet;
   dropdownStatus: boolean;
-  toggleDropdown?: () => void;
   closeDropdown?: () => void;
-  activateClickOutside?: boolean;
   divClass?: string;
   footerClass?: string;
   headerClass?: string;
@@ -57,23 +46,4 @@ interface DropdownUlProps extends HTMLAttributes<HTMLUListElement> {
   children: Snippet;
 }
 
-export {
-  Dropdown,
-  DropdownDivider,
-  DropdownUl,
-  DropdownLi,
-  DropdownHeader,
-  DropdownFooter,
-  dropdown,
-  dropdowndivider,
-  dropdownli,
-  dropdownul,
-  dropdownHeader,
-  dropdownFooter,
-  type DropdownProps,
-  type DropdownDividerProps,
-  type DropdownLiProps,
-  type DropdownUlProps,
-  type DropdownHeaderProps,
-  type DropdownFooterProps
-};
+export { Dropdown, DropdownDivider, DropdownUl, DropdownLi, DropdownHeader, DropdownFooter, dropdown, dropdowndivider, dropdownli, dropdownul, dropdownHeader, dropdownFooter, type DropdownProps, type DropdownDividerProps, type DropdownLiProps, type DropdownUlProps, type DropdownHeaderProps, type DropdownFooterProps };

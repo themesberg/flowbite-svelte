@@ -1,20 +1,7 @@
 <script lang="ts">
   import { type ParagraphProps as Props, paragraph } from './index';
 
-  let {
-    children,
-    class: className = 'text-gray-900 dark:text-white',
-    height = 'normal',
-    align = 'left',
-    justify = false,
-    style,
-    firstUpper = false,
-    whitespace = 'normal',
-    size = 'base',
-    space,
-    weight = 'normal',
-    ...restProps
-  }: Props = $props();
+  let { children, class: className = 'text-gray-900 dark:text-white', height = 'normal', align = 'left', justify = false, style, firstUpper = false, whitespace = 'normal', size = 'base', space, weight = 'normal', ...restProps }: Props = $props();
 
   let classP = $derived(
     paragraph({

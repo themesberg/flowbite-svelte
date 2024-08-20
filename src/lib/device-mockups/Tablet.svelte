@@ -1,16 +1,7 @@
 <script lang="ts">
   import { type TabletProps as Props, tablet } from '.';
 
-  let {
-    children,
-    divClass,
-    div2Class,
-    div3Class,
-    div4Class,
-    div5Class,
-    div6Class,
-    ...restProps
-  }: Props = $props();
+  let { children, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: Props = $props();
 
   const { div, leftTop, leftMid, leftBot, right, slot } = tablet();
 </script>

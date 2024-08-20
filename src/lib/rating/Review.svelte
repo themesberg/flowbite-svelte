@@ -32,21 +32,7 @@
     liClass?: string | undefined | null;
   }
 
-  let {
-    children,
-    address,
-    item1,
-    item2,
-    item3,
-    review,
-    articleClass = 'md:grid md:grid-cols-3 md:gap-8',
-    divClass = 'mb-6 flex items-center space-x-4 rtl:space-x-reverse',
-    div2Class = 'space-y-1 font-medium dark:text-white',
-    div3Class = 'flex items-center text-sm text-gray-500 dark:text-gray-400',
-    imgClass = 'h-10 w-10 rounded-full',
-    ulClass = 'space-y-4 text-sm text-gray-500 dark:text-gray-400',
-    liClass = 'flex items-center'
-  }: Props = $props();
+  let { children, address, item1, item2, item3, review, articleClass = 'md:grid md:grid-cols-3 md:gap-8', divClass = 'mb-6 flex items-center space-x-4 rtl:space-x-reverse', div2Class = 'space-y-1 font-medium dark:text-white', div3Class = 'flex items-center text-sm text-gray-500 dark:text-gray-400', imgClass = 'h-10 w-10 rounded-full', ulClass = 'space-y-4 text-sm text-gray-500 dark:text-gray-400', liClass = 'flex items-center' }: Props = $props();
 </script>
 
 {#if review}
@@ -100,9 +86,7 @@
             {review.title}
           </h4>
         </div>
-        <p
-          class="inline-flex items-center rounded bg-primary-700 p-1.5 text-sm font-semibold text-white"
-        >
+        <p class="inline-flex items-center rounded bg-primary-700 p-1.5 text-sm font-semibold text-white">
           {review.rating}
         </p>
       </div>

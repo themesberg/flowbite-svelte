@@ -1,14 +1,5 @@
 <script lang="ts">
-  import {
-    Indicator,
-    indicator,
-    Button,
-    Avatar,
-    Badge,
-    Label,
-    Radio,
-    type IndicatorProps
-  } from '$lib';
+  import { Indicator, indicator, Button, Avatar, Badge, Label, Radio, type IndicatorProps } from '$lib';
   import { EnvelopeSolid, CheckCircleSolid } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -23,17 +14,7 @@
   // color, size, rounded, border, placement and offset
   const sizes = ['xs', 'sm', 'md', 'lg', 'xl'];
   const colors: Indicator['color'][] = Object.keys(indicator.variants.color);
-  const positions = [
-    'top-left',
-    'top-center',
-    'top-right',
-    'center-left',
-    'center',
-    'center-right',
-    'bottom-left',
-    'bottom-center',
-    'bottom-right'
-  ];
+  const positions = ['top-left', 'top-center', 'top-right', 'center-left', 'center', 'center-right', 'bottom-left', 'bottom-center', 'bottom-right'];
   let color: IndicatorProps['color'] = $state('red');
   let size: IndicatorProps['size'] = $state('md');
   let border: IndicatorProps['border'] = $state(false);
@@ -65,49 +46,29 @@
 
 <H2>Reactive indicator</H2>
 <CodeWrapper>
-  <div
-    class="borer relative h-56 w-56 rounded-lg border-gray-300 bg-gray-200 dark:border-gray-700 dark:bg-gray-800"
-  >
+  <div class="borer relative h-56 w-56 rounded-lg border-gray-300 bg-gray-200 dark:border-gray-700 dark:bg-gray-800">
     <Indicator {color} {size} {border} {placement} />
   </div>
   <div class="mt-8 space-y-4">
     <div class="flex flex-wrap space-x-2">
       <Label class="mb-4 w-full font-bold">Color</Label>
       {#each colors as colorOption}
-        <Radio
-          labelClass="w-24 my-1"
-          name="color"
-          bind:group={color}
-          color={colorOption as IndicatorProps['color']}
-          value={colorOption}>{colorOption}</Radio
-        >
+        <Radio labelClass="w-24 my-1" name="color" bind:group={color} color={colorOption as IndicatorProps['color']} value={colorOption}>{colorOption}</Radio>
       {/each}
     </div>
     <div class="flex flex-wrap space-x-4">
       <Label class="mb-4 w-full font-bold">Size:</Label>
       {#each sizes as sizeOption}
-        <Radio
-          labelClass="w-24 my-1"
-          name="size"
-          bind:group={size}
-          value={sizeOption}>{sizeOption}</Radio
-        >
+        <Radio labelClass="w-24 my-1" name="size" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
       {/each}
     </div>
     <div class="flex flex-wrap space-x-4">
       <Label class="mb-4 w-full font-bold">Placement:</Label>
       {#each positions as positionOption}
-        <Radio
-          labelClass="w-32 my-1"
-          name="placement"
-          bind:group={placement}
-          value={positionOption}>{positionOption}</Radio
-        >
+        <Radio labelClass="w-32 my-1" name="placement" bind:group={placement} value={positionOption}>{positionOption}</Radio>
       {/each}
     </div>
-    <Button onclick={changeBorder}
-      >{border ? 'Remove border' : 'Add border'}</Button
-    >
+    <Button onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
   </div>
 </CodeWrapper>
 
@@ -122,18 +83,10 @@
 
 <H2>Legend indicator</H2>
 <CodeWrapper class="flex flex-wrap justify-start gap-4 md:justify-center ">
-  <span class="flex items-center"
-    ><Indicator size="sm" color="orange" class="me-1.5" />Visitors</span
-  >
-  <span class="flex items-center"
-    ><Indicator size="sm" color="purple" class="me-1.5" />Sessions</span
-  >
-  <span class="flex items-center"
-    ><Indicator size="sm" color="indigo" class="me-1.5" />Customers</span
-  >
-  <span class="flex items-center"
-    ><Indicator size="sm" color="teal" class="me-1.5" />Revenue</span
-  >
+  <span class="flex items-center"><Indicator size="sm" color="orange" class="me-1.5" />Visitors</span>
+  <span class="flex items-center"><Indicator size="sm" color="purple" class="me-1.5" />Sessions</span>
+  <span class="flex items-center"><Indicator size="sm" color="indigo" class="me-1.5" />Customers</span>
+  <span class="flex items-center"><Indicator size="sm" color="teal" class="me-1.5" />Revenue</span>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/legend.md'] as string} />
 
@@ -155,14 +108,8 @@
 <H2>Status indicator</H2>
 
 <CodeWrapper class="flex justify-center">
-  <Avatar
-    src="/images/profile-picture-5.webp"
-    dot={{ color: 'green', size: 'lg', placement: 'top-right' }}
-  />
-  <Avatar
-    src="/images/profile-picture-5.webp"
-    dot={{ color: 'red', size: 'lg', placement: 'top-right' }}
-  />
+  <Avatar src="/images/profile-picture-5.webp" dot={{ color: 'green', size: 'lg', placement: 'top-right' }} />
+  <Avatar src="/images/profile-picture-5.webp" dot={{ color: 'red', size: 'lg', placement: 'top-right' }} />
 </CodeWrapper>
 <HighlightCompo code={modules['./md/status.md'] as string} />
 
@@ -173,14 +120,8 @@
       <div class="flex items-center space-x-3 rtl:space-x-reverse">
         <Avatar src="/images/profile-picture-5.webp" alt="Neil image" />
         <div class="min-w-0 flex-1">
-          <p
-            class="truncate text-sm font-semibold text-gray-900 dark:text-white"
-          >
-            Neil Sims
-          </p>
-          <p class="truncate text-sm text-gray-500 dark:text-gray-400">
-            email@flowbite.com
-          </p>
+          <p class="truncate text-sm font-semibold text-gray-900 dark:text-white">Neil Sims</p>
+          <p class="truncate text-sm text-gray-500 dark:text-gray-400">email@flowbite.com</p>
         </div>
         <Badge color="green" rounded class="px-2.5 py-0.5">
           <Indicator color="green" size="xs" class="me-1" />Available
@@ -193,14 +134,8 @@
           <Avatar src="/images/profile-picture-4.webp" alt="Bonnie image" />
         </div>
         <div class="min-w-0 flex-1">
-          <p
-            class="truncate text-sm font-semibold text-gray-900 dark:text-white"
-          >
-            Bonnie Green
-          </p>
-          <p class="truncate text-sm text-gray-500 dark:text-gray-400">
-            email@flowbite.com
-          </p>
+          <p class="truncate text-sm font-semibold text-gray-900 dark:text-white">Bonnie Green</p>
+          <p class="truncate text-sm text-gray-500 dark:text-gray-400">email@flowbite.com</p>
         </div>
         <Badge color="red" rounded class="px-2.5 py-0.5">
           <Indicator color="red" size="xs" class="me-1" />Unavailable
@@ -216,13 +151,8 @@
   <ol class="flex items-center">
     <li class="relative mb-6 w-full">
       <div class="flex items-center">
-        <Indicator
-          size="xl"
-          class="z-10 shrink-0 bg-primary-200 ring-0 ring-white sm:ring-8 dark:bg-primary-900 dark:ring-gray-900"
-        >
-          <CheckCircleSolid
-            class="h-6 w-6 text-primary-600 dark:text-primary-300"
-          />
+        <Indicator size="xl" class="z-10 shrink-0 bg-primary-200 ring-0 ring-white sm:ring-8 dark:bg-primary-900 dark:ring-gray-900">
+          <CheckCircleSolid class="h-6 w-6 text-primary-600 dark:text-primary-300" />
         </Indicator>
         <div class="flex h-0.5 w-full bg-gray-200 dark:bg-gray-700"></div>
       </div>
@@ -232,13 +162,8 @@
     </li>
     <li class="relative mb-6 w-full">
       <div class="flex items-center">
-        <Indicator
-          size="xl"
-          class="z-10 shrink-0 bg-primary-200 ring-0 ring-white sm:ring-8 dark:bg-primary-900 dark:ring-gray-900"
-        >
-          <CheckCircleSolid
-            class="h-6 w-6 text-primary-600 dark:text-primary-300"
-          />
+        <Indicator size="xl" class="z-10 shrink-0 bg-primary-200 ring-0 ring-white sm:ring-8 dark:bg-primary-900 dark:ring-gray-900">
+          <CheckCircleSolid class="h-6 w-6 text-primary-600 dark:text-primary-300" />
         </Indicator>
         <div class="flex h-0.5 w-full bg-gray-200 dark:bg-gray-700"></div>
       </div>
@@ -248,13 +173,8 @@
     </li>
     <li class="relative mb-6 w-full">
       <div class="flex items-center">
-        <Indicator
-          size="xl"
-          class="z-10 shrink-0 bg-primary-200 ring-0 ring-white sm:ring-8 dark:bg-primary-900 dark:ring-gray-900"
-        >
-          <CheckCircleSolid
-            class="h-6 w-6 text-primary-600 dark:text-primary-300"
-          />
+        <Indicator size="xl" class="z-10 shrink-0 bg-primary-200 ring-0 ring-white sm:ring-8 dark:bg-primary-900 dark:ring-gray-900">
+          <CheckCircleSolid class="h-6 w-6 text-primary-600 dark:text-primary-300" />
         </Indicator>
         <div class="flex h-0.5 w-full bg-gray-200 dark:bg-gray-700"></div>
       </div>
@@ -264,11 +184,7 @@
     </li>
     <li class="relative mb-6 w-full">
       <div class="flex items-center">
-        <Indicator
-          size="xl"
-          color="blue"
-          class="z-10 shrink-0 ring-0 ring-white sm:ring-8 dark:bg-gray-700 dark:ring-gray-900"
-        >
+        <Indicator size="xl" color="blue" class="z-10 shrink-0 ring-0 ring-white sm:ring-8 dark:bg-gray-700 dark:ring-gray-900">
           <CheckCircleSolid class="h-6 w-6 text-gray-800 dark:text-gray-300" />
         </Indicator>
       </div>
@@ -280,10 +196,7 @@
   <ol class="flex items-center">
     <li class="relative mb-6 w-full">
       <div class="flex items-center">
-        <Indicator
-          size="xl"
-          class="z-10 shrink-0 bg-primary-200 ring-0 ring-white sm:ring-8 dark:bg-primary-900 dark:ring-gray-900"
-        >
+        <Indicator size="xl" class="z-10 shrink-0 bg-primary-200 ring-0 ring-white sm:ring-8 dark:bg-primary-900 dark:ring-gray-900">
           <Indicator color="orange" />
         </Indicator>
         <div class="flex h-0.5 w-full bg-gray-200 dark:bg-gray-700"></div>
@@ -294,10 +207,7 @@
     </li>
     <li class="relative mb-6 w-full">
       <div class="flex items-center">
-        <Indicator
-          size="xl"
-          class="z-10 shrink-0 bg-primary-200 ring-0 ring-white sm:ring-8 dark:bg-primary-900 dark:ring-gray-900"
-        >
+        <Indicator size="xl" class="z-10 shrink-0 bg-primary-200 ring-0 ring-white sm:ring-8 dark:bg-primary-900 dark:ring-gray-900">
           <Indicator color="orange" />
         </Indicator>
         <div class="flex h-0.5 w-full bg-gray-200 dark:bg-gray-700"></div>
@@ -308,10 +218,7 @@
     </li>
     <li class="relative mb-6 w-full">
       <div class="flex items-center">
-        <Indicator
-          size="xl"
-          class="z-10 shrink-0 bg-primary-200 ring-0 ring-white sm:ring-8 dark:bg-primary-900 dark:ring-gray-900"
-        >
+        <Indicator size="xl" class="z-10 shrink-0 bg-primary-200 ring-0 ring-white sm:ring-8 dark:bg-primary-900 dark:ring-gray-900">
           <Indicator color="orange" />
         </Indicator>
         <div class="flex h-0.5 w-full bg-gray-200 dark:bg-gray-700"></div>
@@ -322,10 +229,7 @@
     </li>
     <li class="relative mb-6 w-full">
       <div class="flex items-center">
-        <Indicator
-          size="xl"
-          class="z-10 shrink-0 ring-0 ring-white sm:ring-8 dark:bg-gray-700 dark:ring-gray-900"
-        >
+        <Indicator size="xl" class="z-10 shrink-0 ring-0 ring-white sm:ring-8 dark:bg-gray-700 dark:ring-gray-900">
           <Indicator color="emerald" class="dark:!bg-gray-300" />
         </Indicator>
       </div>
@@ -340,9 +244,7 @@
 <H2>Indicator position</H2>
 
 <CodeWrapper class="flex justify-center">
-  <div
-    class="borer relative h-56 w-56 rounded-lg border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-800"
-  >
+  <div class="borer relative h-56 w-56 rounded-lg border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-800">
     <Indicator placement="top-left" color="gray" />
     <Indicator placement="top-center" color="lime" />
     <Indicator placement="top-right" color="orange" />

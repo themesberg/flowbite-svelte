@@ -34,11 +34,4 @@ interface ListgroupItemProps extends HTMLAnchorAttributes {
   class?: string | undefined | null;
 }
 
-export {
-  Listgroup,
-  ListgroupItem,
-  listGroup,
-  listGroupItem,
-  type ListgroupProps,
-  type ListgroupItemProps
-};
+export { Listgroup, ListgroupItem, listGroup, listGroupItem, type ListgroupProps, type ListgroupItemProps };

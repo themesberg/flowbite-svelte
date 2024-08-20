@@ -8,16 +8,7 @@ import TestimonialPlaceholder from './TestimonialPlaceholder.svelte';
 import TextPlaceholder from './TextPlaceholder.svelte';
 import VideoPlaceholder from './VideoPlaceholder.svelte';
 import WidgetPlaceholder from './WidgetPlaceholder.svelte';
-import {
-  cardPlaceholder,
-  imagePlaceholder,
-  listPlaceholder,
-  skeleton,
-  testimonialPlaceholder,
-  textPlaceholder,
-  videoPlaceholder,
-  widgetPlaceholder
-} from './theme';
+import { cardPlaceholder, imagePlaceholder, listPlaceholder, skeleton, testimonialPlaceholder, textPlaceholder, videoPlaceholder, widgetPlaceholder } from './theme';
 
 type CardSizeType = VariantProps<typeof cardPlaceholder>['size'];
 interface CardPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
@@ -67,30 +58,4 @@ interface VideoPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
 
 interface WidgetPlaceholderProps extends HTMLAttributes<HTMLDivElement> {}
 
-export {
-  CardPlaceholder,
-  ImagePlaceholder,
-  ListPlaceholder,
-  Skeleton,
-  TestimonialPlaceholder,
-  TextPlaceholder,
-  VideoPlaceholder,
-  WidgetPlaceholder,
-  cardPlaceholder,
-  imagePlaceholder,
-  listPlaceholder,
-  skeleton,
-  testimonialPlaceholder,
-  textPlaceholder,
-  videoPlaceholder,
-  widgetPlaceholder,
-  type CardPlaceholderProps,
-  type ImagePlaceholderProps,
-  type ListPlaceholderProps,
-  type SkeletonProps,
-  type TestimonialPlaceholderProps,
-  type TextPlaceholderProps,
-  type VideoPlaceholderProps,
-  type SizeVideoType,
-  type WidgetPlaceholderProps
-};
+export { CardPlaceholder, ImagePlaceholder, ListPlaceholder, Skeleton, TestimonialPlaceholder, TextPlaceholder, VideoPlaceholder, WidgetPlaceholder, cardPlaceholder, imagePlaceholder, listPlaceholder, skeleton, testimonialPlaceholder, textPlaceholder, videoPlaceholder, widgetPlaceholder, type CardPlaceholderProps, type ImagePlaceholderProps, type ListPlaceholderProps, type SkeletonProps, type TestimonialPlaceholderProps, type TextPlaceholderProps, type VideoPlaceholderProps, type SizeVideoType, type WidgetPlaceholderProps };

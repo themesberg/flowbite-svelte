@@ -1,9 +1,6 @@
 <script lang="ts">
   import { Breadcrumb, BreadcrumbItem, Button } from '$lib';
-  import {
-    HomeOutline,
-    ChevronDoubleRightOutline
-  } from 'flowbite-svelte-icons';
+  import { HomeOutline, ChevronDoubleRightOutline } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -40,12 +37,8 @@
       <BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
     </Breadcrumb>
   </div>
-  <Button class="w-48" onclick={changeNavClass}
-    >{navClass ? 'Remove navClass' : 'Add navClass'}</Button
-  >
-  <Button class="w-48" color="green" onclick={changeOlClass}
-    >{olClass ? 'Remove olClass' : 'Add olClass'}</Button
-  >
+  <Button class="w-48" onclick={changeNavClass}>{navClass ? 'Remove navClass' : 'Add navClass'}</Button>
+  <Button class="w-48" color="green" onclick={changeOlClass}>{olClass ? 'Remove olClass' : 'Add olClass'}</Button>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/defaultbreadcrumb.md'] as string} />

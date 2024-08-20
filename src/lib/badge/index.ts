@@ -1,6 +1,7 @@
 import { type VariantProps } from 'tailwind-variants';
 import type { Snippet } from 'svelte';
-import { type TransitionConfig } from 'svelte/transition';
+import type { ParamsType } from '../types';
+import type { TransitionConfig } from 'svelte/transition';
 import type { HTMLAttributes } from 'svelte/elements';
 import Badge from './Badge.svelte';
 import { badge } from './theme';
@@ -19,7 +20,7 @@ interface BadgeProps extends HTMLAttributes<HTMLDivElement> {
   href?: string | undefined | null;
   rounded?: boolean;
   transition?: TransitionFunc;
-  params?: any;
+  params?: ParamsType;
   onclick?: () => void;
 }
 

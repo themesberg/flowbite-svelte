@@ -1,10 +1,6 @@
 <script lang="ts">
   import { List, Li, Heading } from '$lib';
-  import {
-    CheckCircleSolid,
-    CloseCircleSolid,
-    QuestionCircleSolid
-  } from 'flowbite-svelte-icons';
+  import { CheckCircleSolid, CloseCircleSolid, QuestionCircleSolid } from 'flowbite-svelte-icons';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
   function convertStringToKebabCase(text: string) {
@@ -19,6 +15,13 @@
   interface ListType {
     [key: string]: Component;
   }
+
+  const toDos: ListType = {
+    types: {
+      checked: false,
+      problems: 'TransitionParamTypes to FadeParams, BlurParams, FlyParams, SlideParams, ScaleParams, DrawParams, CrossfadeParams'
+    }
+  };
   const components: ListType = {
     accordion: {
       checked: true,
@@ -43,8 +46,7 @@
     },
     bottomNavigation: {
       checked: true,
-      problems:
-        '(Tooltip) Application bar example, Example with pagination, Button group bottom bar, Card with bottom bar',
+      problems: '(Tooltip) Application bar example, Example with pagination, Button group bottom bar, Card with bottom bar',
       notes: 'Variants'
     },
     breadcrumb: {
@@ -115,8 +117,7 @@
     },
     navbar: {
       checked: true,
-      problems:
-        'Navbar container, Active class, Navbar with dropdown, Navbar with search, Navbar with CTA button, User menu dropdown, Solid background'
+      problems: 'Navbar container, Active class, Navbar with dropdown, Navbar with search, Navbar with CTA button, User menu dropdown, Solid background'
     },
     pagination: {
       checked: true,
@@ -208,8 +209,7 @@
     },
     searchInput: {
       checked: true,
-      problems:
-        'Search with dropdown, Location search, Voice search, Event example',
+      problems: 'Search with dropdown, Location search, Voice search, Event example',
       notes: 'Variants checked'
     },
     select: {
@@ -326,15 +326,9 @@
 <List class="space-y-1 text-gray-500 dark:text-gray-400">
   <Li># of pages: {componentsAnalysis.total}</Li>
   <Li># of components/pages checked: {componentsAnalysis.pageChecked}</Li>
-  <Li
-    ># of components/pages to be completed: {componentsAnalysis.pageUnchecked}</Li
-  >
-  <Li class="text-green-500"
-    ># of pages without problems: {componentsAnalysis.pageWithoutProblems}</Li
-  >
-  <Li class="text-red-500"
-    ># of examples to be completed: {componentsAnalysis.exampleProblems}</Li
-  >
+  <Li># of components/pages to be completed: {componentsAnalysis.pageUnchecked}</Li>
+  <Li class="text-green-500"># of pages without problems: {componentsAnalysis.pageWithoutProblems}</Li>
+  <Li class="text-red-500"># of examples to be completed: {componentsAnalysis.exampleProblems}</Li>
 </List>
 
 <H2>Forms</H2>
@@ -342,123 +336,71 @@
   <Li># of pages: {formsAnalysis.total}</Li>
   <Li># of components/pages checked: {formsAnalysis.pageChecked}</Li>
   <Li># of components/pages to be completed: {formsAnalysis.pageUnchecked}</Li>
-  <Li class="text-green-500"
-    ># of pages without problems: {formsAnalysis.pageWithoutProblems}</Li
-  >
-  <Li class="text-red-500"
-    ># of examples to be completed: {formsAnalysis.exampleProblems}</Li
-  >
+  <Li class="text-green-500"># of pages without problems: {formsAnalysis.pageWithoutProblems}</Li>
+  <Li class="text-red-500"># of examples to be completed: {formsAnalysis.exampleProblems}</Li>
 </List>
 
 <H2>Typography</H2>
 <List class="space-y-1 text-gray-500 dark:text-gray-400">
   <Li># of pages: {typographyAnalysis.total}</Li>
   <Li># of components/pages checked: {typographyAnalysis.pageChecked}</Li>
-  <Li
-    ># of components/pages to be completed: {typographyAnalysis.pageUnchecked}</Li
-  >
-  <Li class="text-green-500"
-    ># of pages without problems: {typographyAnalysis.pageWithoutProblems}</Li
-  >
-  <Li class="text-red-500"
-    ># of examples to be completed: {typographyAnalysis.exampleProblems}</Li
-  >
+  <Li># of components/pages to be completed: {typographyAnalysis.pageUnchecked}</Li>
+  <Li class="text-green-500"># of pages without problems: {typographyAnalysis.pageWithoutProblems}</Li>
+  <Li class="text-red-500"># of examples to be completed: {typographyAnalysis.exampleProblems}</Li>
 </List>
 
-<Heading
-  tag="h2"
-  class="mb-2 py-4 text-2xl font-semibold text-gray-900 dark:text-white"
-  >Components</Heading
->
+<Heading tag="h2" class="mb-2 py-4 text-2xl font-semibold text-gray-900 dark:text-white">Components</Heading>
 <List class="space-y-1 text-gray-500 dark:text-gray-400">
   {#each Object.entries(components) as [key, { checked, problems, notes }]}
     <Li icon>
       {#if checked && !problems}
-        <CheckCircleSolid
-          class="me-2 h-8 w-8 text-green-500 dark:text-green-400"
-        />
+        <CheckCircleSolid class="me-2 h-8 w-8 text-green-500 dark:text-green-400" />
       {:else if problems}
         <CloseCircleSolid class="me-2 h-8 w-8 text-red-500 dark:text-red-400" />
       {:else}
-        <QuestionCircleSolid
-          class="me-2 h-8 w-8 text-gray-500 dark:text-gray-400"
-        />
+        <QuestionCircleSolid class="me-2 h-8 w-8 text-gray-500 dark:text-gray-400" />
       {/if}
-      <a
-        href="/components/{convertStringToKebabCase(key)}"
-        class="text-blue-800 underline hover:text-blue-500 dark:text-blue-300 hover:dark:text-blue-200"
-        >{key}</a
-      >
+      <a href="/components/{convertStringToKebabCase(key)}" class="text-blue-800 underline hover:text-blue-500 dark:text-blue-300 hover:dark:text-blue-200">{key}</a>
       {#if problems}
-        <span class="ml-4 text-red-500">( {problems})</span
-        >{/if}{#if notes}<span class="ml-4 text-green-500">(DONE: {notes})</span
-        >
+        <span class="ml-4 text-red-500">( {problems})</span>{/if}{#if notes}<span class="ml-4 text-green-500">(DONE: {notes})</span>
       {/if}
     </Li>
   {/each}
 </List>
 
-<Heading
-  tag="h2"
-  class="mb-2 py-4 text-2xl font-semibold text-gray-900 dark:text-white"
-  >Forms</Heading
->
+<Heading tag="h2" class="mb-2 py-4 text-2xl font-semibold text-gray-900 dark:text-white">Forms</Heading>
 <List class="space-y-1 text-gray-500 dark:text-gray-400">
   {#each Object.entries(forms) as [key, { checked, problems, notes }]}
     <Li icon>
       {#if checked && !problems}
-        <CheckCircleSolid
-          class="me-2 h-8 w-8 text-green-500 dark:text-green-400"
-        />
+        <CheckCircleSolid class="me-2 h-8 w-8 text-green-500 dark:text-green-400" />
       {:else if problems}
         <CloseCircleSolid class="me-2 h-8 w-8 text-red-500 dark:text-red-400" />
       {:else}
-        <QuestionCircleSolid
-          class="me-2 h-8 w-8 text-gray-500 dark:text-gray-400"
-        />
+        <QuestionCircleSolid class="me-2 h-8 w-8 text-gray-500 dark:text-gray-400" />
       {/if}
-      <a
-        href="/forms/{convertStringToKebabCase(key)}"
-        class="text-blue-800 underline hover:text-blue-500 dark:text-blue-300 hover:dark:text-blue-200"
-        >{key}</a
-      >
+      <a href="/forms/{convertStringToKebabCase(key)}" class="text-blue-800 underline hover:text-blue-500 dark:text-blue-300 hover:dark:text-blue-200">{key}</a>
       {#if problems}
-        <span class="ml-4 text-red-500">( {problems})</span
-        >{/if}{#if notes}<span class="ml-4 text-green-500">(DONE: {notes})</span
-        >
+        <span class="ml-4 text-red-500">( {problems})</span>{/if}{#if notes}<span class="ml-4 text-green-500">(DONE: {notes})</span>
       {/if}
     </Li>
   {/each}
 </List>
 
-<Heading
-  tag="h2"
-  class="mb-2 py-4 text-2xl font-semibold text-gray-900 dark:text-white"
-  >Typography</Heading
->
+<Heading tag="h2" class="mb-2 py-4 text-2xl font-semibold text-gray-900 dark:text-white">Typography</Heading>
 <List class="space-y-1 text-gray-500 dark:text-gray-400">
   {#each Object.entries(typography) as [key, { checked, problems, notes }]}
     <Li icon>
       {#if checked && !problems}
-        <CheckCircleSolid
-          class="me-2 h-8 w-8 text-green-500 dark:text-green-400"
-        />
+        <CheckCircleSolid class="me-2 h-8 w-8 text-green-500 dark:text-green-400" />
       {:else if problems}
         <CloseCircleSolid class="me-2 h-8 w-8 text-red-500 dark:text-red-400" />
       {:else}
-        <QuestionCircleSolid
-          class="me-2 h-8 w-8 text-gray-500 dark:text-gray-400"
-        />
+        <QuestionCircleSolid class="me-2 h-8 w-8 text-gray-500 dark:text-gray-400" />
       {/if}
-      <a
-        href="/typography/{convertStringToKebabCase(key)}"
-        class="text-blue-800 underline hover:text-blue-500 dark:text-blue-300 hover:dark:text-blue-200"
-        >{key}</a
-      >
+      <a href="/typography/{convertStringToKebabCase(key)}" class="text-blue-800 underline hover:text-blue-500 dark:text-blue-300 hover:dark:text-blue-200">{key}</a>
       {#if problems}
-        <span class="ml-4 text-red-500">( {problems})</span
-        >{/if}{#if notes}<span class="ml-4 text-green-500">(DONE: {notes})</span
-        >
+        <span class="ml-4 text-red-500">( {problems})</span>{/if}{#if notes}<span class="ml-4 text-green-500">(DONE: {notes})</span>
       {/if}
     </Li>
   {/each}

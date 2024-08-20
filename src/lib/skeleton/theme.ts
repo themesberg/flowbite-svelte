@@ -4,8 +4,7 @@ import { tv } from 'tailwind-variants';
 const cardPlaceholder = tv({
   slots: {
     base: 'p-4 rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700',
-    imageArea:
-      'mb-4 flex h-48 items-center justify-center rounded bg-gray-300 dark:bg-gray-700',
+    imageArea: 'mb-4 flex h-48 items-center justify-center rounded bg-gray-300 dark:bg-gray-700',
     imageIcon: 'text-gray-200 dark:text-gray-600',
     line: 'rounded-full bg-gray-200 dark:bg-gray-700',
     footerArea: 'mt-4 flex items-center space-x-3 rtl:space-x-reverse'
@@ -25,8 +24,7 @@ const cardPlaceholder = tv({
 const imagePlaceholder = tv({
   slots: {
     base: 'space-y-8 animate-pulse md:space-y-0 md:space-x-8 rtl:space-x-reverse md:flex md:items-center',
-    image:
-      'flex w-full items-center justify-center rounded bg-gray-300 sm:w-96 dark:bg-gray-700',
+    image: 'flex w-full items-center justify-center rounded bg-gray-300 sm:w-96 dark:bg-gray-700',
     svg: 'text-gray-200',
     content: 'w-full',
     line: 'rounded-full bg-gray-200 dark:bg-gray-700'
@@ -188,13 +186,4 @@ const widgetPlaceholder = tv({
   }
 });
 
-export {
-  cardPlaceholder,
-  imagePlaceholder,
-  listPlaceholder,
-  skeleton,
-  testimonialPlaceholder,
-  textPlaceholder,
-  videoPlaceholder,
-  widgetPlaceholder
-};
+export { cardPlaceholder, imagePlaceholder, listPlaceholder, skeleton, testimonialPlaceholder, textPlaceholder, videoPlaceholder, widgetPlaceholder };

@@ -25,9 +25,7 @@ const accordionItemVariants = tv({
   }
 });
 
-type AccordionItemVariant = VariantProps<
-  typeof accordionItemVariants
->['variant'];
+type AccordionItemVariant = VariantProps<typeof accordionItemVariants>['variant'];
 type AccordionItemSize = VariantProps<typeof accordionItemVariants>['size'];
 
 interface AccordionItemVariantsProps {
@@ -60,9 +58,4 @@ interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
   class?: string | undefined | null;
 }
 
-export {
-  AccordionItem,
-  accordionItemVariants,
-  type AccordionItemProps,
-  type AccordionItemVariantsProps
-};
+export { AccordionItem, accordionItemVariants, type AccordionItemProps, type AccordionItemVariantsProps };

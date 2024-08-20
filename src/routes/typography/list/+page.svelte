@@ -1,19 +1,6 @@
 <script lang="ts">
-  import {
-    List,
-    Li,
-    Heading,
-    Span,
-    DescriptionList,
-    A,
-    Label,
-    Radio
-  } from '$lib';
-  import {
-    CheckCircleSolid,
-    CloseCircleOutline,
-    CheckOutline
-  } from 'flowbite-svelte-icons';
+  import { List, Li, Heading, Span, DescriptionList, A, Label, Radio } from '$lib';
+  import { CheckCircleSolid, CheckOutline } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -38,16 +25,8 @@
 
 <H2>List position and tag</H2>
 <CodeWrapper>
-  <Heading
-    tag="h2"
-    class="mb-2 text-lg font-semibold text-gray-900 dark:text-white"
-    >Password requirements</Heading
-  >
-  <List
-    tag={listTag}
-    position={listPosition}
-    class="space-y-1 text-gray-500 dark:text-gray-400"
-  >
+  <Heading tag="h2" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
+  <List tag={listTag} position={listPosition} class="space-y-1 text-gray-500 dark:text-gray-400">
     <Li>At least 10 characters (and up to 100 characters)</Li>
     <Li>At least one lowercase character</Li>
     <Li>Inclusion of at least one special character, e.g., ! @ # ?</Li>
@@ -56,23 +35,13 @@
   <div class="mt-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Tag:</Label>
     {#each tags as tag}
-      <Radio
-        labelClass="w-24 my-1"
-        name="list_tag"
-        bind:group={listTag}
-        value={tag}>{tag}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="list_tag" bind:group={listTag} value={tag}>{tag}</Radio>
     {/each}
   </div>
   <div class="mt-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Position:</Label>
     {#each positions as position}
-      <Radio
-        labelClass="w-24 my-1"
-        name="list_position"
-        bind:group={listPosition}
-        value={position}>{position}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="list_position" bind:group={listPosition} value={position}>{position}</Radio>
     {/each}
   </div>
 </CodeWrapper>
@@ -81,22 +50,14 @@
 
 <H3>Icon</H3>
 <CodeWrapper>
-  <Heading
-    tag="h2"
-    class="mb-2 text-lg font-semibold text-gray-900 dark:text-white"
-    >Password requirements</Heading
-  >
+  <Heading tag="h2" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
   <List class="space-y-1 text-gray-500 dark:text-gray-400">
     <Li icon>
-      <CheckCircleSolid
-        class="me-2 h-5 w-5 text-green-500 dark:text-green-400"
-      />
+      <CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />
       At least 10 characters (and up to 100 characters)
     </Li>
     <Li icon>
-      <CheckCircleSolid
-        class="me-2 h-5 w-5 text-green-500 dark:text-green-400"
-      />
+      <CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />
       At least one lowercase character
     </Li>
     <Li icon>
@@ -115,12 +76,8 @@
       List item one
       <List tag="ol" ctxclass="mt-2 space-y-1 ps-5">
         <Li>You might feel like you are being really "organized" o</Li>
-        <Li
-          >Nested navigation in UIs is a bad idea too, keep things as flat as
-          possible.</Li
-        >
-        <Li>Nesting tons of folders in your source code is also not helpful.</Li
-        >
+        <Li>Nested navigation in UIs is a bad idea too, keep things as flat as possible.</Li>
+        <Li>Nesting tons of folders in your source code is also not helpful.</Li>
       </List>
     </Li>
     <Li>
@@ -147,11 +104,7 @@
 <H3>Unstyled</H3>
 
 <CodeWrapper>
-  <Heading
-    tag="h2"
-    class="mb-2 text-lg font-semibold text-gray-900 dark:text-white"
-    >Password requirements</Heading
-  >
+  <Heading tag="h2" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
   <List class="space-y-1 text-gray-500 dark:text-gray-400">
     <Li>At least 10 characters (and up to 100 characters)</Li>
     <Li>At least one lowercase character</Li>
@@ -163,11 +116,7 @@
 
 <H2>Ordered list</H2>
 <CodeWrapper>
-  <Heading
-    tag="h2"
-    class="mb-2 text-lg font-semibold  text-gray-900 dark:text-white"
-    >Top students:</Heading
-  >
+  <Heading tag="h2" class="mb-2 text-lg font-semibold  text-gray-900 dark:text-white">Top students:</Heading>
   <List tag="ol" class="space-y-1 text-gray-500 dark:text-gray-400">
     <Li><Span>Bonnie Green</Span> with <Span>70</Span> points</Li>
     <Li><Span>Jese Leos</Span> with <Span>63</Span> points</Li>
@@ -179,19 +128,14 @@
 
 <H2>Description list</H2>
 <CodeWrapper>
-  <List
-    tag="dl"
-    class="divide-y divide-gray-200 text-gray-900 dark:divide-gray-700  dark:text-white"
-  >
+  <List tag="dl" class="divide-y divide-gray-200 text-gray-900 dark:divide-gray-700  dark:text-white">
     <div class="flex flex-col pb-3">
       <DescriptionList tag="dt" dtClass="mb-1">Email address</DescriptionList>
       <DescriptionList tag="dd">yourname@flowbite.com</DescriptionList>
     </div>
     <div class="flex flex-col pb-3">
       <DescriptionList tag="dt" dtClass="mb-1">Home address</DescriptionList>
-      <DescriptionList tag="dd"
-        >92 Miles Drive, Newark, NJ 07103, California, USA</DescriptionList
-      >
+      <DescriptionList tag="dd">92 Miles Drive, Newark, NJ 07103, California, USA</DescriptionList>
     </div>
     <div class="flex flex-col pb-3">
       <DescriptionList tag="dt" dtClass="mb-1">Phone number</DescriptionList>
@@ -237,121 +181,61 @@
     <Li class="pb-3 sm:pb-4">
       <div class="flex items-center space-x-4 rtl:space-x-reverse">
         <div class="flex-shrink-0">
-          <img
-            class="h-8 w-8 rounded-full"
-            src="/images/profile-picture-1.webp"
-            alt="Neil profile"
-          />
+          <img class="h-8 w-8 rounded-full" src="/images/profile-picture-1.webp" alt="Neil profile" />
         </div>
         <div class="min-w-0 flex-1">
-          <p class="truncate text-sm font-medium text-gray-900 dark:text-white">
-            Neil Sims
-          </p>
-          <p class="truncate text-sm text-gray-500 dark:text-gray-400">
-            email@flowbite.com
-          </p>
+          <p class="truncate text-sm font-medium text-gray-900 dark:text-white">Neil Sims</p>
+          <p class="truncate text-sm text-gray-500 dark:text-gray-400">email@flowbite.com</p>
         </div>
-        <div
-          class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white"
-        >
-          $320
-        </div>
+        <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">$320</div>
       </div>
     </Li>
     <Li class="py-3 sm:py-4">
       <div class="flex items-center space-x-4 rtl:space-x-reverse">
         <div class="flex-shrink-0">
-          <img
-            class="h-8 w-8 rounded-full"
-            src="/images/profile-picture-2.webp"
-            alt="Bonnie profile"
-          />
+          <img class="h-8 w-8 rounded-full" src="/images/profile-picture-2.webp" alt="Bonnie profile" />
         </div>
         <div class="min-w-0 flex-1">
-          <p class="truncate text-sm font-medium text-gray-900 dark:text-white">
-            Bonnie Green
-          </p>
-          <p class="truncate text-sm text-gray-500 dark:text-gray-400">
-            email@flowbite.com
-          </p>
+          <p class="truncate text-sm font-medium text-gray-900 dark:text-white">Bonnie Green</p>
+          <p class="truncate text-sm text-gray-500 dark:text-gray-400">email@flowbite.com</p>
         </div>
-        <div
-          class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white"
-        >
-          $3467
-        </div>
+        <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">$3467</div>
       </div>
     </Li>
     <Li class="py-3 sm:py-4">
       <div class="flex items-center space-x-4 rtl:space-x-reverse">
         <div class="flex-shrink-0">
-          <img
-            class="h-8 w-8 rounded-full"
-            src="/images/profile-picture-3.webp"
-            alt="Michael profile"
-          />
+          <img class="h-8 w-8 rounded-full" src="/images/profile-picture-3.webp" alt="Michael profile" />
         </div>
         <div class="min-w-0 flex-1">
-          <p class="truncate text-sm font-medium text-gray-900 dark:text-white">
-            Michael Gough
-          </p>
-          <p class="truncate text-sm text-gray-500 dark:text-gray-400">
-            email@flowbite.com
-          </p>
+          <p class="truncate text-sm font-medium text-gray-900 dark:text-white">Michael Gough</p>
+          <p class="truncate text-sm text-gray-500 dark:text-gray-400">email@flowbite.com</p>
         </div>
-        <div
-          class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white"
-        >
-          $67
-        </div>
+        <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">$67</div>
       </div>
     </Li>
     <Li class="py-3 sm:py-4">
       <div class="flex items-center space-x-4 rtl:space-x-reverse">
         <div class="flex-shrink-0">
-          <img
-            class="h-8 w-8 rounded-full"
-            src="/images/profile-picture-4.webp"
-            alt="Thomas profile"
-          />
+          <img class="h-8 w-8 rounded-full" src="/images/profile-picture-4.webp" alt="Thomas profile" />
         </div>
         <div class="min-w-0 flex-1">
-          <p class="truncate text-sm font-medium text-gray-900 dark:text-white">
-            Thomas Lean
-          </p>
-          <p class="truncate text-sm text-gray-500 dark:text-gray-400">
-            email@flowbite.com
-          </p>
+          <p class="truncate text-sm font-medium text-gray-900 dark:text-white">Thomas Lean</p>
+          <p class="truncate text-sm text-gray-500 dark:text-gray-400">email@flowbite.com</p>
         </div>
-        <div
-          class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white"
-        >
-          $2367
-        </div>
+        <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">$2367</div>
       </div>
     </Li>
     <Li class="py-3 sm:py-4">
       <div class="flex items-center space-x-4 rtl:space-x-reverse">
         <div class="flex-shrink-0">
-          <img
-            class="h-8 w-8 rounded-full"
-            src="/images/profile-picture-5.webp"
-            alt="Lana profile"
-          />
+          <img class="h-8 w-8 rounded-full" src="/images/profile-picture-5.webp" alt="Lana profile" />
         </div>
         <div class="min-w-0 flex-1">
-          <p class="truncate text-sm font-medium text-gray-900 dark:text-white">
-            Lana Byrd
-          </p>
-          <p class="truncate text-sm text-gray-500 dark:text-gray-400">
-            email@flowbite.com
-          </p>
+          <p class="truncate text-sm font-medium text-gray-900 dark:text-white">Lana Byrd</p>
+          <p class="truncate text-sm text-gray-500 dark:text-gray-400">email@flowbite.com</p>
         </div>
-        <div
-          class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white"
-        >
-          $367
-        </div>
+        <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">$367</div>
       </div>
     </Li>
   </List>
@@ -363,46 +247,22 @@
 <CodeWrapper>
   <List tag="ul" class="mb-6 flex flex-wrap items-center justify-center">
     <Li>
-      <A
-        href="/"
-        class="me-4 text-red-700 hover:underline md:me-6 dark:text-red-200"
-        >About</A
-      >
+      <A href="/" class="me-4 text-red-700 hover:underline md:me-6 dark:text-red-200">About</A>
     </Li>
     <Li>
-      <A
-        href="/"
-        class="me-4 text-blue-700 hover:underline md:me-6 dark:text-blue-200"
-        >Premium</A
-      >
+      <A href="/" class="me-4 text-blue-700 hover:underline md:me-6 dark:text-blue-200">Premium</A>
     </Li>
     <Li>
-      <A
-        href="/"
-        class="me-4 text-green-700 hover:underline md:me-6 dark:text-green-200"
-        >Campaigns</A
-      >
+      <A href="/" class="me-4 text-green-700 hover:underline md:me-6 dark:text-green-200">Campaigns</A>
     </Li>
     <Li>
-      <A
-        href="/"
-        class="me-4 text-yellow-700 hover:underline md:me-6 dark:text-yellow-200"
-        >Blog</A
-      >
+      <A href="/" class="me-4 text-yellow-700 hover:underline md:me-6 dark:text-yellow-200">Blog</A>
     </Li>
     <Li>
-      <A
-        href="/"
-        class="me-4 text-gray-700 hover:underline md:me-6 dark:text-gray-200"
-        >Affiliate Program</A
-      >
+      <A href="/" class="me-4 text-gray-700 hover:underline md:me-6 dark:text-gray-200">Affiliate Program</A>
     </Li>
     <Li>
-      <A
-        href="/"
-        class="me-4 text-pink-700 hover:underline md:me-6 dark:text-pink-200"
-        >FAQs</A
-      >
+      <A href="/" class="me-4 text-pink-700 hover:underline md:me-6 dark:text-pink-200">FAQs</A>
     </Li>
   </List>
 </CodeWrapper>

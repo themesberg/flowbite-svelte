@@ -9,21 +9,7 @@
   import { getContext } from 'svelte';
   import { type InputProps as Props, input } from '.';
 
-  let {
-    children,
-    left,
-    right,
-    value = $bindable(),
-    size,
-    defaultClass,
-    color = 'default',
-    floatClass,
-    class: className,
-    classLeft,
-    classRight,
-    show = false,
-    ...restProps
-  }: Props = $props();
+  let { children, left, right, value = $bindable(), size, defaultClass, color = 'default', floatClass, class: className, classLeft, classRight, show = false, ...restProps }: Props = $props();
 
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
@@ -33,13 +19,7 @@
   let _size = $derived(size || clampSize(group?.size) || 'md');
   const _color = $derived(color === 'default' && background ? 'tinted' : color);
 
-  const {
-    input: inputCls,
-    left: leftCls,
-    right: rightCls
-  } = $derived(
-    input({ size: _size, color: _color, group: isGroup, class: className })
-  );
+  const { input: inputCls, left: leftCls, right: rightCls } = $derived(input({ size: _size, color: _color, group: isGroup, class: className }));
 
   // $inspect('input', inputCls());
 </script>

@@ -9,7 +9,6 @@ interface BreadcrumbProps extends HTMLAttributes<HTMLElement> {
   children: Snippet;
   solid?: boolean;
   navClass?: string | undefined | null;
-  solidClass?: string | undefined | null;
   olClass?: string | undefined | null;
   ariaLabel?: string | undefined | null;
   class?: string | undefined | null;
@@ -26,10 +25,4 @@ interface BreadcrumbItemProps extends HTMLLiAttributes {
   class?: string | undefined;
 }
 
-export {
-  Breadcrumb,
-  BreadcrumbItem,
-  breadcrumb,
-  type BreadcrumbProps,
-  type BreadcrumbItemProps
-};
+export { Breadcrumb, BreadcrumbItem, breadcrumb, type BreadcrumbProps, type BreadcrumbItemProps };

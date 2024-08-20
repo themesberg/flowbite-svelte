@@ -24,11 +24,7 @@
     xxl: '2xl:mt-0 2xl:flex-row 2xl:space-x-8 2xl:border-0 2xl:p-0 2xl:dark:bg-gray-900'
   };
 
-  let ulCls = twMerge(
-    'font-medium flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-transparent rtl:space-x-reverse dark:bg-gray-800 dark:border-gray-700',
-    ulBreaks[breakPoint],
-    ulclass
-  );
+  let ulCls = twMerge('font-medium flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-transparent rtl:space-x-reverse dark:bg-gray-800 dark:border-gray-700', ulBreaks[breakPoint], ulclass);
   // $inspect('context.breakPoint: ',ulBreak[breakPoint])
 </script>
 

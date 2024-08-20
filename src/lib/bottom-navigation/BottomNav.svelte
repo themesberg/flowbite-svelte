@@ -1,27 +1,11 @@
 <script lang="ts">
   import { setContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
-  import {
-    type BottomNavProps as Props,
-    type BottomNavContextType,
-    bottomNav
-  } from './index';
+  import { type BottomNavProps as Props, type BottomNavContextType, bottomNav } from './index';
 
-  let {
-    children,
-    header,
-    position = 'fixed',
-    navType = 'default',
-    outerClass,
-    innerClass,
-    activeClass,
-    ...restProps
-  }: Props = $props();
+  let { children, header, position = 'fixed', navType = 'default', outerClass, innerClass, activeClass, ...restProps }: Props = $props();
 
-  const activeCls = twMerge(
-    'text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900',
-    activeClass
-  );
+  const activeCls = twMerge('text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900', activeClass);
 
   setContext('navType', navType);
   setContext<BottomNavContextType>('bottomNavType', { activeClass: activeCls });

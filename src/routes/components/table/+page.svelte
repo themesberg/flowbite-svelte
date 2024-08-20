@@ -1,15 +1,5 @@
 <script lang="ts">
-  import {
-    Table,
-    TableBody,
-    TableBodyCell,
-    TableBodyRow,
-    TableHead,
-    TableHeadCell,
-    Checkbox,
-    TableSearch,
-    ImagePlaceholder
-  } from '$lib';
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox, TableSearch, ImagePlaceholder } from '$lib';
 
   let searchTerm = $state('');
   let items = [
@@ -19,12 +9,7 @@
     { id: 4, maker: 'Saab', type: 'IJK', make: 2020 }
   ];
 
-  let filteredItems = $derived(
-    items.filter(
-      (item) =>
-        item.maker.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
-    )
-  );
+  let filteredItems = $derived(items.filter((item) => item.maker.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1));
 
   import { slide } from 'svelte/transition';
 
@@ -127,11 +112,7 @@
         <TableBodyCell>Laptop</TableBodyCell>
         <TableBodyCell>$2999</TableBodyCell>
         <TableBodyCell>
-          <a
-            href="/tables"
-            class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-            >Edit</a
-          >
+          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
         </TableBodyCell>
       </TableBodyRow>
       <TableBodyRow>
@@ -140,11 +121,7 @@
         <TableBodyCell>Laptop PC</TableBodyCell>
         <TableBodyCell>$1999</TableBodyCell>
         <TableBodyCell>
-          <a
-            href="/tables"
-            class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-            >Edit</a
-          >
+          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
         </TableBodyCell>
       </TableBodyRow>
       <TableBodyRow>
@@ -153,11 +130,7 @@
         <TableBodyCell>Accessories</TableBodyCell>
         <TableBodyCell>$99</TableBodyCell>
         <TableBodyCell>
-          <a
-            href="/tables"
-            class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-            >Edit</a
-          >
+          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
         </TableBodyCell>
       </TableBodyRow>
       <TableBodyRow>
@@ -166,11 +139,7 @@
         <TableBodyCell>Phone</TableBodyCell>
         <TableBodyCell>$799</TableBodyCell>
         <TableBodyCell>
-          <a
-            href="/tables"
-            class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-            >Edit</a
-          >
+          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
         </TableBodyCell>
       </TableBodyRow>
       <TableBodyRow>
@@ -179,11 +148,7 @@
         <TableBodyCell>Wearables</TableBodyCell>
         <TableBodyCell>$999</TableBodyCell>
         <TableBodyCell>
-          <a
-            href="/tables"
-            class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-            >Edit</a
-          >
+          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
         </TableBodyCell>
       </TableBodyRow>
     </TableBody>
@@ -211,11 +176,7 @@
         <TableBodyCell>Laptop</TableBodyCell>
         <TableBodyCell>$2999</TableBodyCell>
         <TableBodyCell>
-          <a
-            href="/tables"
-            class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-            >Edit</a
-          >
+          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
         </TableBodyCell>
       </TableBodyRow>
       <TableBodyRow>
@@ -224,11 +185,7 @@
         <TableBodyCell>Laptop PC</TableBodyCell>
         <TableBodyCell>$1999</TableBodyCell>
         <TableBodyCell>
-          <a
-            href="/tables"
-            class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-            >Edit</a
-          >
+          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
         </TableBodyCell>
       </TableBodyRow>
       <TableBodyRow>
@@ -237,11 +194,7 @@
         <TableBodyCell>Accessories</TableBodyCell>
         <TableBodyCell>$99</TableBodyCell>
         <TableBodyCell>
-          <a
-            href="/tables"
-            class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-            >Edit</a
-          >
+          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
         </TableBodyCell>
       </TableBodyRow>
     </TableBody>
@@ -274,11 +227,7 @@
         <TableBodyCell>Laptop</TableBodyCell>
         <TableBodyCell>$2999</TableBodyCell>
         <TableBodyCell>
-          <a
-            href="/components/table"
-            class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-            >Edit</a
-          >
+          <a href="/components/table" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
         </TableBodyCell>
       </TableBodyRow>
       <TableBodyRow>
@@ -290,11 +239,7 @@
         <TableBodyCell>Laptop PC</TableBodyCell>
         <TableBodyCell>$1999</TableBodyCell>
         <TableBodyCell>
-          <a
-            href="/components/table"
-            class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-            >Edit</a
-          >
+          <a href="/components/table" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
         </TableBodyCell>
       </TableBodyRow>
       <TableBodyRow>
@@ -306,11 +251,7 @@
         <TableBodyCell>Accessories</TableBodyCell>
         <TableBodyCell>$99</TableBodyCell>
         <TableBodyCell>
-          <a
-            href="/components/table"
-            class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-            >Edit</a
-          >
+          <a href="/components/table" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
         </TableBodyCell>
       </TableBodyRow>
     </TableBody>
@@ -320,11 +261,7 @@
 
 <H2>Search input</H2>
 <CodeWrapper>
-  <TableSearch
-    placeholder="Search by maker name"
-    hoverable={true}
-    bind:inputValue={searchTerm}
-  >
+  <TableSearch placeholder="Search by maker name" hoverable={true} bind:inputValue={searchTerm}>
     <TableHead>
       <TableHeadCell>ID</TableHeadCell>
       <TableHeadCell>Maker</TableHeadCell>
@@ -391,9 +328,7 @@
 <H2>Table foot</H2>
 <CodeWrapper>
   <Table noborder={true}>
-    <TableHead
-      class="bg-gray-100 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400"
-    >
+    <TableHead class="bg-gray-100 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
       <TableHeadCell>Product name</TableHeadCell>
       <TableHeadCell>Qty</TableHeadCell>
       <TableHeadCell>Price</TableHeadCell>
@@ -429,15 +364,9 @@
 <H2>Table caption</H2>
 <CodeWrapper>
   <Table>
-    <caption
-      class="bg-white p-5 text-left text-lg font-semibold text-gray-900 dark:bg-gray-800 dark:text-white"
-    >
+    <caption class="bg-white p-5 text-left text-lg font-semibold text-gray-900 dark:bg-gray-800 dark:text-white">
       Our products
-      <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-        Browse a list of Flowbite products designed to help you work and play,
-        stay organized, get answers, keep in touch, grow your business, and
-        more.
-      </p>
+      <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Browse a list of Flowbite products designed to help you work and play, stay organized, get answers, keep in touch, grow your business, and more.</p>
     </caption>
     <TableHead>
       <TableHeadCell>Product name</TableHeadCell>
@@ -455,11 +384,7 @@
         <TableBodyCell>Laptop</TableBodyCell>
         <TableBodyCell>$2999</TableBodyCell>
         <TableBodyCell>
-          <a
-            href="/tables"
-            class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-            >Edit</a
-          >
+          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
         </TableBodyCell>
       </TableBodyRow>
       <TableBodyRow>
@@ -468,11 +393,7 @@
         <TableBodyCell>Laptop PC</TableBodyCell>
         <TableBodyCell>$1999</TableBodyCell>
         <TableBodyCell>
-          <a
-            href="/tables"
-            class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-            >Edit</a
-          >
+          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
         </TableBodyCell>
       </TableBodyRow>
       <TableBodyRow>
@@ -481,11 +402,7 @@
         <TableBodyCell>Accessories</TableBodyCell>
         <TableBodyCell>$99</TableBodyCell>
         <TableBodyCell>
-          <a
-            href="/tables"
-            class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-            >Edit</a
-          >
+          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
         </TableBodyCell>
       </TableBodyRow>
     </TableBody>
@@ -588,16 +505,8 @@
         <TableBodyCell>$2999</TableBodyCell>
         <TableBodyCell>3.0 lb.</TableBodyCell>
         <TableBodyCell>
-          <a
-            href="/tables"
-            class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-            >Edit</a
-          >
-          <a
-            href="/tables"
-            class="font-medium text-red-600 hover:underline dark:text-red-500"
-            >Remove</a
-          >
+          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+          <a href="/tables" class="font-medium text-red-600 hover:underline dark:text-red-500">Remove</a>
         </TableBodyCell>
       </TableBodyRow>
       <TableBodyRow>
@@ -612,16 +521,8 @@
         <TableBodyCell>$1999</TableBodyCell>
         <TableBodyCell>1.0 lb.</TableBodyCell>
         <TableBodyCell>
-          <a
-            href="/tables"
-            class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-            >Edit</a
-          >
-          <a
-            href="/tables"
-            class="font-medium text-red-600 hover:underline dark:text-red-500"
-            >Remove</a
-          >
+          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+          <a href="/tables" class="font-medium text-red-600 hover:underline dark:text-red-500">Remove</a>
         </TableBodyCell>
       </TableBodyRow>
       <TableBodyRow>
@@ -636,16 +537,8 @@
         <TableBodyCell>$99</TableBodyCell>
         <TableBodyCell>0.2 lb.</TableBodyCell>
         <TableBodyCell>
-          <a
-            href="/tables"
-            class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-            >Edit</a
-          >
-          <a
-            href="/tables"
-            class="font-medium text-red-600 hover:underline dark:text-red-500"
-            >Remove</a
-          >
+          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+          <a href="/tables" class="font-medium text-red-600 hover:underline dark:text-red-500">Remove</a>
         </TableBodyCell>
       </TableBodyRow>
     </TableBody>
@@ -705,11 +598,7 @@
         <TableBodyCell>Laptop</TableBodyCell>
         <TableBodyCell>$2999</TableBodyCell>
         <TableBodyCell>
-          <a
-            href="/tables"
-            class="font-medium text-white hover:underline dark:text-white"
-            >Edit</a
-          >
+          <a href="/tables" class="font-medium text-white hover:underline dark:text-white">Edit</a>
         </TableBodyCell>
       </TableBodyRow>
       <TableBodyRow>
@@ -718,11 +607,7 @@
         <TableBodyCell>Laptop PC</TableBodyCell>
         <TableBodyCell>$1999</TableBodyCell>
         <TableBodyCell>
-          <a
-            href="/tables"
-            class="font-medium text-white hover:underline dark:text-white"
-            >Edit</a
-          >
+          <a href="/tables" class="font-medium text-white hover:underline dark:text-white">Edit</a>
         </TableBodyCell>
       </TableBodyRow>
       <TableBodyRow>
@@ -731,11 +616,7 @@
         <TableBodyCell>Accessories</TableBodyCell>
         <TableBodyCell>$99</TableBodyCell>
         <TableBodyCell>
-          <a
-            href="/tables"
-            class="font-medium text-white hover:underline dark:text-white"
-            >Edit</a
-          >
+          <a href="/tables" class="font-medium text-white hover:underline dark:text-white">Edit</a>
         </TableBodyCell>
       </TableBodyRow>
       <TableBodyRow>
@@ -744,11 +625,7 @@
         <TableBodyCell>Phone</TableBodyCell>
         <TableBodyCell>$799</TableBodyCell>
         <TableBodyCell>
-          <a
-            href="/tables"
-            class="font-medium text-white hover:underline dark:text-white"
-            >Edit</a
-          >
+          <a href="/tables" class="font-medium text-white hover:underline dark:text-white">Edit</a>
         </TableBodyCell>
       </TableBodyRow>
       <TableBodyRow>
@@ -757,11 +634,7 @@
         <TableBodyCell>Wearables</TableBodyCell>
         <TableBodyCell>$999</TableBodyCell>
         <TableBodyCell>
-          <a
-            href="/tables"
-            class="font-medium text-white hover:underline dark:text-white"
-            >Edit</a
-          >
+          <a href="/tables" class="font-medium text-white hover:underline dark:text-white">Edit</a>
         </TableBodyCell>
       </TableBodyRow>
     </TableBody>
@@ -789,10 +662,7 @@
         {#if openRow === i}
           <TableBodyRow ondblclick={() => (details = item)}>
             <TableBodyCell colspan={4} class="p-0">
-              <div
-                class="px-2 py-3"
-                transition:slide={{ duration: 300, axis: 'y' }}
-              >
+              <div class="px-2 py-3" transition:slide={{ duration: 300, axis: 'y' }}>
                 <ImagePlaceholder />
               </div>
             </TableBodyCell>

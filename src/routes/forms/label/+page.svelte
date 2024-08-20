@@ -1,7 +1,5 @@
 <script lang="ts">
-  import {
-    Label, label, Radio
-  } from '$lib';
+  import { Label, label, Radio } from '$lib';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -29,13 +27,7 @@
   <div class="flex flex-wrap space-x-4">
     <Label class="m-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio
-        labelClass="w-24 my-1"
-        name="default_alert_color"
-        bind:group={defaultColor}
-        color={colorOption as Label['color']}
-        value={colorOption}>{colorOption}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="default_alert_color" bind:group={defaultColor} color={colorOption as Label['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
 </CodeWrapper>

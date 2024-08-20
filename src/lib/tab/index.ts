@@ -33,12 +33,4 @@ interface TabCtxType {
   selected: Writable<HTMLElement>;
 }
 
-export {
-  TabItem,
-  tabItem,
-  Tabs,
-  tabs,
-  type TabsProps,
-  type TabitemProps,
-  type TabCtxType
-};
+export { TabItem, tabItem, Tabs, tabs, type TabsProps, type TabitemProps, type TabCtxType };

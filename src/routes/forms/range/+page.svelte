@@ -38,13 +38,7 @@
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio
-        labelClass="w-24 my-1"
-        name="default_alert_color"
-        bind:group={rangeColor}
-        color={colorOption as Range['color']}
-        value={colorOption}>{colorOption}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="default_alert_color" bind:group={rangeColor} color={colorOption as Range['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
 </CodeWrapper>

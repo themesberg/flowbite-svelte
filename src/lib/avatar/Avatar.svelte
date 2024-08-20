@@ -2,20 +2,7 @@
   import { Indicator } from '$lib';
   import { type AvatarProps as Props, avatar } from '.';
 
-  let {
-    children,
-    src,
-    href,
-    rounded,
-    border,
-    stacked,
-    dot,
-    class: className,
-    alt,
-    size = 'md',
-    onclick,
-    ...restProps
-  }: Props = $props();
+  let { children, src, href, rounded, border, stacked, dot, class: className, alt, size = 'md', onclick, ...restProps }: Props = $props();
 
   dot = dot && { placement: 'top-right', color: 'gray', size: 'lg', ...dot };
 
@@ -31,30 +18,14 @@
 </script>
 
 {#if !src || !!href || children || dot}
-  <svelte:element
-    this={href ? 'a' : 'div'}
-    role={href ? 'link' : 'img'}
-    {onclick}
-    {href}
-    {...restProps}
-    class={avatarClass}
-  >
+  <svelte:element this={href ? 'a' : 'div'} role={href ? 'link' : 'img'} {onclick} {href} {...restProps} class={avatarClass}>
     {#if src}
       <img {alt} {src} class={rounded ? 'rounded' : 'rounded-full'} />
     {:else if children}
       {@render children()}
     {:else}
-      <svg
-        class="h-full w-full {rounded ? 'rounded' : 'rounded-full'}"
-        fill="currentColor"
-        viewBox="0 0 16 16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M8 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-          clip-rule="evenodd"
-        ></path>
+      <svg class="h-full w-full {rounded ? 'rounded' : 'rounded-full'}" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
       </svg>
     {/if}
     {#if dot}

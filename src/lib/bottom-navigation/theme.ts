@@ -17,26 +17,21 @@ const bottomNav = tv({
       default: { outer: 'bottom-0 start-0 h-16 bg-white border-t' },
       border: { outer: 'bottom-0 start-0 h-16 bg-white border-t' },
       application: {
-        outer:
-          'h-16 max-w-lg -translate-x-1/2 rtl:translate-x-1/2 bg-white border rounded-full bottom-4 start-1/2'
+        outer: 'h-16 max-w-lg -translate-x-1/2 rtl:translate-x-1/2 bg-white border rounded-full bottom-4 start-1/2'
       },
       pagination: {
-        outer:
-          'bottom-0 h-16 -translate-x-1/2 rtl:translate-x-1/2 bg-white border-t start-1/2'
+        outer: 'bottom-0 h-16 -translate-x-1/2 rtl:translate-x-1/2 bg-white border-t start-1/2'
       },
       group: {
-        outer:
-          'bottom-0 -translate-x-1/2 rtl:translate-x-1/2 bg-white border-t start-1/2'
+        outer: 'bottom-0 -translate-x-1/2 rtl:translate-x-1/2 bg-white border-t start-1/2'
       },
       card: { outer: 'bottom-0 start-0 h-16 bg-white border-t' },
       meeting: {
-        outer:
-          'bottom-0 start-0 grid h-16 grid-cols-1 px-8 bg-white border-t md:grid-cols-3',
+        outer: 'bottom-0 start-0 grid h-16 grid-cols-1 px-8 bg-white border-t md:grid-cols-3',
         inner: 'flex items-center justify-center mx-auto'
       },
       video: {
-        outer:
-          'bottom-0 start-0 grid h-24 grid-cols-1 px-8 bg-white border-t md:grid-cols-3',
+        outer: 'bottom-0 start-0 grid h-24 grid-cols-1 px-8 bg-white border-t md:grid-cols-3',
         inner: 'flex items-center w-full'
       }
     }

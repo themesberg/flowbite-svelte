@@ -7,13 +7,4 @@ import ScoreRating from './ScoreRating.svelte';
 import Star from './Star.svelte';
 import Thumbup from './Thumbup.svelte';
 
-export {
-  AdvancedRating,
-  Heart,
-  Rating,
-  RatingComment,
-  Review,
-  ScoreRating,
-  Star,
-  Thumbup
-};
+export { AdvancedRating, Heart, Rating, RatingComment, Review, ScoreRating, Star, Thumbup };

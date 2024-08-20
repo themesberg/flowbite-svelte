@@ -2,19 +2,7 @@
   import { twMerge } from 'tailwind-merge';
   import { type BlockquoteProps as Props, blockquote } from './index';
 
-  let {
-    children,
-    class: classname,
-    border,
-    italic = true,
-    borderClass,
-    bgClass,
-    bg,
-    baseClass,
-    alignment = 'left',
-    size = 'lg',
-    ...restProps
-  }: Props = $props();
+  let { children, class: classname, border, italic = true, borderClass, bgClass, bg, baseClass, alignment = 'left', size = 'lg', ...restProps }: Props = $props();
 
   let blockquoteClass = $derived(
     blockquote({

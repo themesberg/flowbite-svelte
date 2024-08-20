@@ -1,14 +1,7 @@
 <script lang="ts">
   import { type DesktopProps as Props, desktop } from '.';
 
-  let {
-    children,
-    divClass,
-    div2Class,
-    div3Class,
-    div4Class,
-    ...restProps
-  }: Props = $props();
+  let { children, divClass, div2Class, div3Class, div4Class, ...restProps }: Props = $props();
 
   const { div, inner, bot, botUnder } = desktop();
 </script>

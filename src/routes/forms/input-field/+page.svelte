@@ -10,32 +10,9 @@
     eager: true
   });
 
-  import {
-    Input,
-    input,
-    Radio,
-    Label,
-    Helper,
-    Button,
-    Checkbox,
-    A,
-    P,
-    CloseButton,
-    InputAddon,
-    ButtonGroup,
-    Dropdown,
-    DropdownUl,
-    DropdownLi,
-    uiHelpers
-  } from '$lib';
+  import { Input, input, Radio, Label, Helper, Button, Checkbox, A, P, CloseButton, InputAddon, ButtonGroup, Dropdown, DropdownUl, DropdownLi, uiHelpers } from '$lib';
 
-  import {
-    EyeOutline,
-    EyeSlashOutline,
-    EnvelopeSolid,
-    ChevronDownOutline,
-    SearchOutline
-  } from 'flowbite-svelte-icons';
+  import { EyeOutline, EyeSlashOutline, EnvelopeSolid, ChevronDownOutline, SearchOutline } from 'flowbite-svelte-icons';
   import { sineIn } from 'svelte/easing';
   let show = $state(false);
   let show1 = $state(false);
@@ -69,11 +46,7 @@
 
 <H2>Input fields</H2>
 
-<P>
-  Use this example as a generic form element which includes multiple input
-  fields types such as text, email, password, number, URL, and phone number and
-  use the grid layout to add multiple columns and rows.</P
->
+<P>Use this example as a generic form element which includes multiple input fields types such as text, email, password, number, URL, and phone number and use the grid layout to add multiple columns and rows.</P>
 
 <CodeWrapper>
   <form>
@@ -92,13 +65,7 @@
       </div>
       <div>
         <Label for="phone" class="mb-2">Phone number</Label>
-        <Input
-          type="tel"
-          id="phone"
-          placeholder="123-45-678"
-          pattern={'[0-9]{3}-[0-9]{2}-[0-9]{3}'}
-          required
-        />
+        <Input type="tel" id="phone" placeholder="123-45-678" pattern={'[0-9]{3}-[0-9]{2}-[0-9]{3}'} required />
       </div>
       <div>
         <Label for="website" class="mb-2">Website URL</Label>
@@ -111,12 +78,7 @@
     </div>
     <div class="mb-6">
       <Label for="email" class="mb-2">Email address</Label>
-      <Input
-        type="email"
-        id="email"
-        placeholder="john.doe@company.com"
-        required
-      />
+      <Input type="email" id="email" placeholder="john.doe@company.com" required />
     </div>
     <div class="mb-6">
       <Label for="password" class="mb-2">Password</Label>
@@ -124,19 +86,10 @@
     </div>
     <div class="mb-6">
       <Label for="confirm_password" class="mb-2">Confirm password</Label>
-      <Input
-        type="password"
-        id="confirm_password"
-        placeholder="•••••••••"
-        required
-      />
+      <Input type="password" id="confirm_password" placeholder="•••••••••" required />
     </div>
     <Checkbox classLabel="mb-6 space-x-1 rtl:space-x-reverse" required>
-      I agree with the <A
-        href="/"
-        class="text-primary-700 hover:underline dark:text-primary-600"
-        >terms and conditions</A
-      >.
+      I agree with the <A href="/" class="text-primary-700 hover:underline dark:text-primary-600">terms and conditions</A>.
     </Checkbox>
     <Button type="submit">Submit</Button>
   </form>
@@ -144,10 +97,7 @@
 
 <H2>Input sizes</H2>
 
-<P
-  >Use the following examples to apply a small, default or large size for the
-  input fields. User the size prop to change the input size.</P
->
+<P>Use the following examples to apply a small, default or large size for the input fields. User the size prop to change the input size.</P>
 
 <CodeWrapper class="space-y-6">
   <Label class="h-20 space-y-2">
@@ -157,22 +107,14 @@
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as option}
-      <Radio
-        labelClass="w-24 my-1"
-        name="input_size"
-        bind:group={inputSize}
-        value={option}>{option}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="input_size" bind:group={inputSize} value={option}>{option}</Radio>
     {/each}
   </div>
 </CodeWrapper>
 
 <H2>Disabled state</H2>
 
-<P
-  >Get started with this example if you want to apply the disabled state to an
-  input field. Add the disabled to change the input to disabled.</P
->
+<P>Get started with this example if you want to apply the disabled state to an input field. Add the disabled to change the input to disabled.</P>
 
 <CodeWrapper>
   <Input class="mb-6" disabled value="Disabled input" />
@@ -183,9 +125,7 @@
 
 <CodeWrapper>
   <div class="mb-6">
-    <Label for="color-example" color={inputColor} class="mb-2 block"
-      >Your name</Label
-    >
+    <Label for="color-example" color={inputColor} class="mb-2 block">Your name</Label>
     <Input id="color-example" color={inputColor} placeholder="Input" />
     <Helper class="mt-2" color={inputColor}>
       <span class="font-medium">Well done!</span>
@@ -195,13 +135,7 @@
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio
-        labelClass="w-24 my-1"
-        name="input_color"
-        bind:group={inputColor}
-        color={colorOption as Input['color']}
-        value={colorOption}>{colorOption}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="input_color" bind:group={inputColor} color={colorOption as Input['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
 </CodeWrapper>
@@ -242,10 +176,7 @@
 
 <H2>Input group</H2>
 
-<P
-  >This example can be used to add a descriptive icon or additional text inside
-  the input field.</P
->
+<P>This example can be used to add a descriptive icon or additional text inside the input field.</P>
 
 <CodeWrapper class="space-y-6">
   <div>
@@ -299,21 +230,12 @@
 
 <H2>Icon click handler</H2>
 
-<P
-  >This example shows how to add `onclick` event handler to the icon in `Input`.
-  By clicking an icon, it toggles icon and `type`:</P
->
+<P>This example shows how to add `onclick` event handler to the icon in `Input`. By clicking an icon, it toggles icon and `type`:</P>
 
 <CodeWrapper class="space-y-6">
   <div>
     <Label for="show-password" class="mb-2">Your password</Label>
-    <Input
-      id="show-password"
-      type={show ? 'text' : 'password'}
-      placeholder="Your password here"
-      size="lg"
-      class="pl-10"
-    >
+    <Input id="show-password" type={show ? 'text' : 'password'} placeholder="Your password here" size="lg" class="pl-10">
       {#snippet left()}
         <button onclick={() => (show = !show)} class="pointer-events-auto">
           {#if show}
@@ -338,33 +260,21 @@
           {/if}
         </button>
       </InputAddon>
-      <Input
-        id="show-password1"
-        type={show1 ? 'text' : 'password'}
-        placeholder="Your password here"
-      />
+      <Input id="show-password1" type={show1 ? 'text' : 'password'} placeholder="Your password here" />
     </ButtonGroup>
   </div>
 </CodeWrapper>
 
 <H2>Helper text</H2>
 
-<P
-  >Use the helper prop to add your helper text. You can use HTML in the helper
-  text.</P
->
+<P>Use the helper prop to add your helper text. You can use HTML in the helper text.</P>
 
 <CodeWrapper class="space-y-6">
   <Label class="block space-y-2">
     <span>Your email</span>
     <Input id="email" type="email" required placeholder="name@flowbite.com" />
     <Helper class="text-sm">
-      We’ll never share your details. Read our <a
-        href="/"
-        class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-      >
-        Privacy Policy
-      </a>
+      We’ll never share your details. Read our <a href="/" class="font-medium text-primary-600 hover:underline dark:text-primary-500"> Privacy Policy </a>
       .
     </Helper>
   </Label>
@@ -404,20 +314,11 @@
 
 <CodeWrapper class="h-64">
   <ButtonGroup class="w-full">
-    <Button
-      onclick={dropdown.toggle}
-      color="none"
-      class="flex-shrink-0 border border-gray-300 bg-gray-100 text-gray-900 hover:bg-gray-200 focus:ring-gray-300 dark:border-gray-700 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-    >
+    <Button onclick={dropdown.toggle} color="none" class="flex-shrink-0 border border-gray-300 bg-gray-100 text-gray-900 hover:bg-gray-200 focus:ring-gray-300 dark:border-gray-700 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800">
       All categories<ChevronDownOutline class="ms-2 h-6 w-6" />
     </Button>
     <div class="relative">
-      <Dropdown
-        {dropdownStatus}
-        {closeDropdown}
-        {transitionParams}
-        class="absolute -left-[160px] top-[40px]"
-      >
+      <Dropdown {dropdownStatus} {closeDropdown} {transitionParams} class="absolute -left-[160px] top-[40px]">
         <DropdownUl>
           <DropdownLi href="/">Shopping</DropdownLi>
           <DropdownLi href="/">Images</DropdownLi>

@@ -1,7 +1,7 @@
 import Card from './Card.svelte';
-import { type VariantProps, tv } from 'tailwind-variants';
+import { type VariantProps } from 'tailwind-variants';
 import type { Snippet } from 'svelte';
-import type { HTMLAttributes, HTMLAnchorAttributes } from 'svelte/elements';
+import type { HTMLAttributes } from 'svelte/elements';
 import { card } from './theme';
 
 // type CardSizeType = 'xs' | 'sm' | 'md' | 'lg' | 'xl';

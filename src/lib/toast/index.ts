@@ -1,7 +1,8 @@
 import Toast from './Toast.svelte';
 import { toast } from './theme';
 import type { Snippet } from 'svelte';
-import { type TransitionConfig } from 'svelte/transition';
+import type { TransitionConfig } from 'svelte/transition';
+import type { ParamsType } from '../types';
 import type { HTMLAttributes } from 'svelte/elements';
 import { type VariantProps } from 'tailwind-variants';
 
@@ -21,7 +22,7 @@ interface ToastProps extends HTMLAttributes<HTMLDivElement> {
   contentClass?: string | undefined | null;
   align?: boolean;
   transition?: TransitionFunc;
-  params?: object;
+  params?: ParamsType;
 }
 
 export { Toast, toast, type ToastProps };

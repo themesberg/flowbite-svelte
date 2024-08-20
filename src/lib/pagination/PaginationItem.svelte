@@ -2,31 +2,14 @@
   import { paginationItem, type PaginationItemProps as Props } from '.';
   import { getContext } from 'svelte';
 
-  let {
-    children,
-    size,
-    class: className,
-    href,
-    active,
-    activeClass,
-    normalClass,
-    ...restProps
-  }: Props = $props();
+  let { children, size, class: className, href, active, activeClass, normalClass, ...restProps }: Props = $props();
 
   const group = getContext<boolean>('group');
   const table = getContext<boolean>('table');
-  const paginationClass = $derived(
-    paginationItem({ size, active, group, table, className })
-  );
+  const paginationClass = $derived(paginationItem({ size, active, group, table, className }));
 </script>
 
-<svelte:element
-  this={href ? 'a' : 'button'}
-  {href}
-  class={paginationClass}
-  role={href ? 'button' : undefined}
-  {...restProps}
->
+<svelte:element this={href ? 'a' : 'button'} {href} class={paginationClass} role={href ? 'button' : undefined} {...restProps}>
   {#if children}
     {@render children()}
   {/if}

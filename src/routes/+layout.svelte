@@ -12,16 +12,10 @@
 
   const analyticsId = data.ANALYTICS_ID_RUNES_LIB;
   // meta tags
-  let metaTags = $state(
-    $page.data.pageMetaTags
-      ? deepMerge($page.data.layoutMetaTags, $page.data.pageMetaTags)
-      : data.layoutMetaTags
-  );
+  let metaTags = $state($page.data.pageMetaTags ? deepMerge($page.data.layoutMetaTags, $page.data.pageMetaTags) : data.layoutMetaTags);
 
   $effect(() => {
-    metaTags = $page.data.pageMetaTags
-      ? deepMerge($page.data.layoutMetaTags, $page.data.pageMetaTags)
-      : data.layoutMetaTags;
+    metaTags = $page.data.pageMetaTags ? deepMerge($page.data.layoutMetaTags, $page.data.pageMetaTags) : data.layoutMetaTags;
   });
 </script>
 
@@ -31,9 +25,7 @@
 <Nav />
 <div class="lg:flex">
   <Sidemenu />
-  <main
-    class="mx-auto min-w-0 max-w-5xl flex-auto px-8 pb-20 lg:static lg:max-h-full lg:overflow-visible"
-  >
+  <main class="mx-auto min-w-0 max-w-5xl flex-auto px-8 pb-20 lg:static lg:max-h-full lg:overflow-visible">
     <div id="mainContent">
       {@render children()}
     </div>

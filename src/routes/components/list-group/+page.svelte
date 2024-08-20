@@ -29,13 +29,7 @@
       attrs: { type: 'submit' }
     }
   ];
-  import {
-    AdjustmentsHorizontalSolid,
-    DownloadSolid,
-    MessagesSolid,
-    UserCircleSolid,
-    TrashBinSolid
-  } from 'flowbite-svelte-icons';
+  import { AdjustmentsHorizontalSolid, DownloadSolid, MessagesSolid, UserCircleSolid, TrashBinSolid } from 'flowbite-svelte-icons';
   let icons = [
     { name: 'Profile', icon: UserCircleSolid, mycustomfield: 'data1' },
     {
@@ -48,10 +42,7 @@
   ];
   const handleClick = (e?: MouseEvent) => {
     if (e?.target instanceof HTMLElement) {
-      alert(
-        'mycustomfield: ' +
-          e.target.attributes.getNamedItem('mycustomfield')?.value
-      );
+      alert('mycustomfield: ' + e.target.attributes.getNamedItem('mycustomfield')?.value);
     } else {
       console.warn('Unexpected event target type. Cannot access attributes.');
     }

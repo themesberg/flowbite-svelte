@@ -4,22 +4,7 @@
   import { CloseButton } from '$lib';
   import { fade } from 'svelte/transition';
 
-  let {
-    children,
-    icon,
-    badgeStatus = $bindable(true),
-    color = 'primary',
-    large = false,
-    dismissable = false,
-    class: className,
-    border,
-    href,
-    rounded,
-    transition = fade,
-    params,
-    onclick,
-    ...restProps
-  }: Props = $props();
+  let { children, icon, badgeStatus = $bindable(true), color = 'primary', large = false, dismissable = false, class: className, border, href, rounded, transition = fade, params, onclick, ...restProps }: Props = $props();
 
   let badgeClass = $derived(
     badge({
@@ -56,13 +41,7 @@
           {@render icon()}
         </button>
       {:else if onclick}
-        <CloseButton
-          class="-me-1.5 ms-1.5"
-          {color}
-          size={large ? 'sm' : 'xs'}
-          ariaLabel="Remove badge"
-          {onclick}
-        />
+        <CloseButton class="-me-1.5 ms-1.5" {color} size={large ? 'sm' : 'xs'} ariaLabel="Remove badge" {onclick} />
       {:else}
         <CloseButton
           class="-me-1.5 ms-1.5"

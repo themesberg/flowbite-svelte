@@ -11,19 +11,13 @@
     class?: string | undefined | null;
   }
 
-  let {
-    children,
-    class: className,
-    defaultRow = true,
-    ...restProps
-  }: Props = $props();
+  let { children, class: className, defaultRow = true, ...restProps }: Props = $props();
 
   const tableCtx: TableCtxType = getContext('tableCtx');
   const color = tableCtx.color;
   const noborder: boolean = tableCtx.noborder;
   const striped: boolean = tableCtx.striped;
-  const defaultBgColor =
-    noborder || striped ? '' : 'bg-gray-50 dark:bg-gray-700';
+  const defaultBgColor = noborder || striped ? '' : 'bg-gray-50 dark:bg-gray-700';
   const bgColors: { [key: string]: string } = {
     default: defaultBgColor,
     blue: 'bg-blue-600',
@@ -36,27 +30,10 @@
     custom: ''
   };
 
-  let textColor =
-    color === 'default'
-      ? 'text-gray-700 dark:text-gray-400'
-      : color === 'custom'
-        ? ''
-        : 'text-white  dark:text-white';
-  let borderColors = striped
-    ? ''
-    : color === 'default'
-      ? 'border-gray-700'
-      : color === 'custom'
-        ? ''
-        : `border-${color}-400`;
+  let textColor = color === 'default' ? 'text-gray-700 dark:text-gray-400' : color === 'custom' ? '' : 'text-white  dark:text-white';
+  let borderColors = striped ? '' : color === 'default' ? 'border-gray-700' : color === 'custom' ? '' : `border-${color}-400`;
 
-  let theadCls = twMerge(
-    'text-xs uppercase',
-    textColor,
-    striped && borderColors,
-    bgColors[color],
-    className
-  );
+  let theadCls = twMerge('text-xs uppercase', textColor, striped && borderColors, bgColors[color], className);
 </script>
 
 <thead {...restProps} class={theadCls}>

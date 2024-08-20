@@ -1,13 +1,5 @@
 <script lang="ts">
-  import {
-    Select,
-    Label,
-    Fileupload,
-    Helper,
-    Radio,
-    Listgroup,
-    ListgroupItem
-  } from '$lib';
+  import { Select, Label, Fileupload, Helper, Radio, Listgroup, ListgroupItem } from '$lib';
   import { type ListGroupItemType } from '$lib/types';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -57,12 +49,7 @@
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as sizeOption}
-      <Radio
-        labelClass="w-24 my-1"
-        name="default_alert_color"
-        bind:group={size}
-        value={sizeOption}>{sizeOption}</Radio
-      >
+      <Radio labelClass="w-24 my-1" name="default_alert_color" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
     {/each}
   </div>
 </CodeWrapper>

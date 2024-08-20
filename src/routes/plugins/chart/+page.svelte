@@ -1,21 +1,7 @@
 <script lang="ts">
   import type { ApexOptions } from 'apexcharts';
-  import {
-    Chart,
-    Card,
-    A,
-    Button,
-    Dropdown,
-    DropdownLi,
-    DropdownUl,
-    uiHelpers
-  } from '$lib';
-  import {
-    UsersGroupSolid,
-    ArrowUpOutline,
-    ChevronRightOutline,
-    ChevronDownOutline
-  } from 'flowbite-svelte-icons';
+  import { Chart, Card, A, Button, Dropdown, DropdownLi, DropdownUl, uiHelpers } from '$lib';
+  import { UsersGroupSolid, ArrowUpOutline, ChevronRightOutline, ChevronDownOutline } from 'flowbite-svelte-icons';
   let dropdown = uiHelpers();
   let isOpen = $state(false);
   let toggle = dropdown.toggle;
@@ -85,15 +71,7 @@
       }
     ],
     xaxis: {
-      categories: [
-        '01 February',
-        '02 February',
-        '03 February',
-        '04 February',
-        '05 February',
-        '06 February',
-        '07 February'
-      ],
+      categories: ['01 February', '02 February', '03 February', '04 February', '05 February', '06 February', '07 February'],
       labels: {
         show: false
       },
@@ -323,37 +301,20 @@
   <Card>
     <div class="flex justify-between">
       <div>
-        <h5
-          class="pb-2 text-3xl font-bold leading-none text-gray-900 dark:text-white"
-        >
-          32.4k
-        </h5>
-        <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-          Users this week
-        </p>
+        <h5 class="pb-2 text-3xl font-bold leading-none text-gray-900 dark:text-white">32.4k</h5>
+        <p class="text-base font-normal text-gray-500 dark:text-gray-400">Users this week</p>
       </div>
-      <div
-        class="flex items-center px-2.5 py-0.5 text-center text-base font-semibold text-green-500 dark:text-green-500"
-      >
+      <div class="flex items-center px-2.5 py-0.5 text-center text-base font-semibold text-green-500 dark:text-green-500">
         12%
         <ChevronRightOutline class="ms-1 h-3 w-3" />
       </div>
     </div>
     <Chart {options} />
-    <div
-      class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700"
-    >
+    <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
       <div class="flex items-center justify-between pt-5">
-        <Button
-          onclick={toggle}
-          class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent"
-          >Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button
-        >
+        <Button onclick={toggle} class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent">Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button>
         <div class="relative">
-          <Dropdown
-            divClass="absolute top-[5px] -left-[180px]"
-            dropdownStatus={isOpen}
-          >
+          <Dropdown divClass="absolute top-[5px] -left-[180px]" dropdownStatus={isOpen}>
             {#snippet children()}
               <DropdownUl>
                 <DropdownLi href="/">Yesterday</DropdownLi>
@@ -365,10 +326,7 @@
             {/snippet}
           </Dropdown>
         </div>
-        <A
-          href="/"
-          class="rounded-lg px-3 py-2 text-sm font-semibold uppercase hover:bg-gray-100 hover:text-primary-700 hover:no-underline dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-primary-500 dark:focus:ring-gray-700"
-        >
+        <A href="/" class="rounded-lg px-3 py-2 text-sm font-semibold uppercase hover:bg-gray-100 hover:text-primary-700 hover:no-underline dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-primary-500 dark:focus:ring-gray-700">
           Users Report
           <ChevronRightOutline class="ms-1.5 h-2.5 w-2.5" />
         </A>
@@ -381,30 +339,18 @@
 <H2>Column chart</H2>
 <CodeWrapper class="flex items-start justify-center">
   <Card>
-    <div
-      class="mb-4 flex justify-between border-b border-gray-200 pb-4 dark:border-gray-700"
-    >
+    <div class="mb-4 flex justify-between border-b border-gray-200 pb-4 dark:border-gray-700">
       <div class="flex items-center">
-        <div
-          class="me-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700"
-        >
+        <div class="me-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700">
           <UsersGroupSolid class="h-6 w-6 text-gray-500 dark:text-gray-400" />
         </div>
         <div>
-          <h5
-            class="pb-1 text-2xl font-bold leading-none text-gray-900 dark:text-white"
-          >
-            3.4k
-          </h5>
-          <p class="text-sm font-normal text-gray-500 dark:text-gray-400">
-            Leads generated per week
-          </p>
+          <h5 class="pb-1 text-2xl font-bold leading-none text-gray-900 dark:text-white">3.4k</h5>
+          <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Leads generated per week</p>
         </div>
       </div>
       <div>
-        <span
-          class="inline-flex items-center rounded-md bg-green-100 px-2.5 py-1 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300"
-        >
+        <span class="inline-flex items-center rounded-md bg-green-100 px-2.5 py-1 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300">
           <ArrowUpOutline class="me-1.5 h-2.5 w-2.5" />
           42.5%
         </span>
@@ -412,37 +358,20 @@
     </div>
     <div class="grid grid-cols-2">
       <dl class="flex items-center">
-        <dt class="me-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-          Money spent:
-        </dt>
-        <dd class="text-sm font-semibold text-gray-900 dark:text-white">
-          $3,232
-        </dd>
+        <dt class="me-1 text-sm font-normal text-gray-500 dark:text-gray-400">Money spent:</dt>
+        <dd class="text-sm font-semibold text-gray-900 dark:text-white">$3,232</dd>
       </dl>
       <dl class="flex items-center justify-end">
-        <dt class="me-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-          Conversion rate:
-        </dt>
-        <dd class="text-sm font-semibold text-gray-900 dark:text-white">
-          1.2%
-        </dd>
+        <dt class="me-1 text-sm font-normal text-gray-500 dark:text-gray-400">Conversion rate:</dt>
+        <dd class="text-sm font-semibold text-gray-900 dark:text-white">1.2%</dd>
       </dl>
     </div>
     <Chart options={optionCol} />
-    <div
-      class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700"
-    >
+    <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
       <div class="flex items-center justify-between pt-5">
-        <Button
-          onclick={toggle2}
-          class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent"
-          >Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button
-        >
+        <Button onclick={toggle2} class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent">Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button>
         <div class="relative">
-          <Dropdown
-            divClass="absolute top-[5px] -left-[180px]"
-            dropdownStatus={isOpen2}
-          >
+          <Dropdown divClass="absolute top-[5px] -left-[180px]" dropdownStatus={isOpen2}>
             {#snippet children()}
               <DropdownLi href="/">Yesterday</DropdownLi>
               <DropdownLi href="/">Today</DropdownLi>
@@ -452,10 +381,7 @@
             {/snippet}
           </Dropdown>
         </div>
-        <A
-          href="/"
-          class="rounded-lg px-3 py-2 text-sm font-semibold uppercase hover:bg-gray-100 hover:text-primary-700 hover:no-underline dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-primary-500 dark:focus:ring-gray-700"
-        >
+        <A href="/" class="rounded-lg px-3 py-2 text-sm font-semibold uppercase hover:bg-gray-100 hover:text-primary-700 hover:no-underline dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-primary-500 dark:focus:ring-gray-700">
           Leads Report
           <ChevronRightOutline class="ms-1.5 h-2.5 w-2.5" />
         </A>
@@ -468,23 +394,13 @@
 <H2>Bar chart</H2>
 <CodeWrapper class="flex items-start justify-center">
   <Card>
-    <div
-      class="flex justify-between border-b border-gray-200 pb-3 dark:border-gray-700"
-    >
+    <div class="flex justify-between border-b border-gray-200 pb-3 dark:border-gray-700">
       <dl>
-        <dt class="pb-1 text-base font-normal text-gray-500 dark:text-gray-400">
-          Profit
-        </dt>
-        <dd
-          class="text-3xl font-bold leading-none text-gray-900 dark:text-white"
-        >
-          $5,405
-        </dd>
+        <dt class="pb-1 text-base font-normal text-gray-500 dark:text-gray-400">Profit</dt>
+        <dd class="text-3xl font-bold leading-none text-gray-900 dark:text-white">$5,405</dd>
       </dl>
       <div>
-        <span
-          class="inline-flex items-center rounded-md bg-green-100 px-2.5 py-1 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300"
-        >
+        <span class="inline-flex items-center rounded-md bg-green-100 px-2.5 py-1 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300">
           <ArrowUpOutline class="me-1.5 h-2.5 w-2.5" />
           Profit rate 23.5%
         </span>
@@ -493,42 +409,21 @@
 
     <div class="grid grid-cols-2 py-3">
       <dl>
-        <dt class="pb-1 text-base font-normal text-gray-500 dark:text-gray-400">
-          Income
-        </dt>
-        <dd
-          class="text-xl font-bold leading-none text-green-500 dark:text-green-400"
-        >
-          $23,635
-        </dd>
+        <dt class="pb-1 text-base font-normal text-gray-500 dark:text-gray-400">Income</dt>
+        <dd class="text-xl font-bold leading-none text-green-500 dark:text-green-400">$23,635</dd>
       </dl>
       <dl>
-        <dt class="pb-1 text-base font-normal text-gray-500 dark:text-gray-400">
-          Expense
-        </dt>
-        <dd
-          class="text-xl font-bold leading-none text-red-600 dark:text-red-500"
-        >
-          -$18,230
-        </dd>
+        <dt class="pb-1 text-base font-normal text-gray-500 dark:text-gray-400">Expense</dt>
+        <dd class="text-xl font-bold leading-none text-red-600 dark:text-red-500">-$18,230</dd>
       </dl>
     </div>
 
     <Chart options={optionBar} />
-    <div
-      class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700"
-    >
+    <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
       <div class="flex items-center justify-between pt-5">
-        <Button
-          onclick={toggle3}
-          class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent"
-          >Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button
-        >
+        <Button onclick={toggle3} class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent">Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button>
         <div class="relative">
-          <Dropdown
-            divClass="absolute top-[5px] -left-[180px]"
-            dropdownStatus={isOpen3}
-          >
+          <Dropdown divClass="absolute top-[5px] -left-[180px]" dropdownStatus={isOpen3}>
             {#snippet children()}
               <DropdownLi href="/">Yesterday</DropdownLi>
               <DropdownLi href="/">Today</DropdownLi>
@@ -538,10 +433,7 @@
             {/snippet}
           </Dropdown>
         </div>
-        <A
-          href="/"
-          class="rounded-lg px-3 py-2 text-sm font-semibold uppercase hover:bg-gray-100 hover:text-primary-700 hover:no-underline dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-primary-500 dark:focus:ring-gray-700"
-        >
+        <A href="/" class="rounded-lg px-3 py-2 text-sm font-semibold uppercase hover:bg-gray-100 hover:text-primary-700 hover:no-underline dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-primary-500 dark:focus:ring-gray-700">
           Leads Report
           <ChevronRightOutline class="ms-1.5 h-2.5 w-2.5" />
         </A>

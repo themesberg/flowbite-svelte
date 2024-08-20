@@ -1,16 +1,7 @@
 <script lang="ts">
   import { type IosProps as Props, ios } from '.';
 
-  let {
-    children,
-    divClass,
-    div2Class,
-    div3Class,
-    div4Class,
-    div5Class,
-    div6Class,
-    ...restProps
-  }: Props = $props();
+  let { children, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: Props = $props();
 
   const { div, slot, top, leftTop, leftBot, right } = ios();
 </script>

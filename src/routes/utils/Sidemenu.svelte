@@ -1,53 +1,28 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import {
-    Sidebar,
-    SidebarGroup,
-    SidebarItem,
-    SidebarDropdownWrapper
-  } from '$lib';
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper } from '$lib';
   let currentUrl = $page.url.pathname;
   $effect(() => {
     currentUrl = $page.url.pathname;
   });
   const hasPath = (key: string) => currentUrl.includes(key);
   // console.log(hasPath('typography'))
-  const activeClass =
-    'flex items-center p-2 text-base font-normal text-white bg-primary-500 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-600 dark:hover:bg-primary-500';
+  const activeClass = 'flex items-center p-2 text-base font-normal text-white bg-primary-500 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-600 dark:hover:bg-primary-500';
 </script>
 
-<Sidebar
-  {activeClass}
-  nonActiveClass="hover:bg-gray-200"
-  asideClass="fixed inset-0 z-30 flex-none h-full w-64 lg:static lg:h-auto border-e border-gray-200 dark:border-gray-600 lg:overflow-y-visible bg-gray-100 dark:bg-gray-900 lg:pt-0 lg:block hidden"
-  divClass="dark:bg-gray-900 bg-transparent"
-  class="p-1 pl-4"
->
+<Sidebar {activeClass} nonActiveClass="hover:bg-gray-200" asideClass="fixed inset-0 z-30 flex-none h-full w-64 lg:static lg:h-auto border-e border-gray-200 dark:border-gray-600 lg:overflow-y-visible bg-gray-100 dark:bg-gray-900 lg:pt-0 lg:block hidden" divClass="dark:bg-gray-900 bg-transparent" class="p-1 pl-4">
   <SidebarGroup>
-    <SidebarDropdownWrapper
-      label="GETTING STARTED"
-      isOpen={hasPath('pages')}
-      svgClass="me-4"
-      btnClass="p-1"
-    >
+    <SidebarDropdownWrapper label="GETTING STARTED" isOpen={hasPath('pages')} svgClass="me-4" btnClass="p-1">
       <SidebarItem label="About" href="/pages/about" />
       <SidebarItem label="Coverage" href="/pages/coverage" />
     </SidebarDropdownWrapper>
-    <SidebarDropdownWrapper
-      label="Components"
-      isOpen={hasPath('components')}
-      svgClass="me-4"
-      btnClass="p-1"
-    >
+    <SidebarDropdownWrapper label="Components" isOpen={hasPath('components')} svgClass="me-4" btnClass="p-1">
       <SidebarItem label="Accordion" href="/components/accordion" />
       <SidebarItem label="Alert" href="/components/alert" />
       <SidebarItem label="Avatar" href="/components/avatar" />
       <SidebarItem label="Badge" href="/components/badge" />
       <SidebarItem label="Banner" href="/components/banner" />
-      <SidebarItem
-        label="Bottom navigation"
-        href="/components/bottom-navigation"
-      />
+      <SidebarItem label="Bottom navigation" href="/components/bottom-navigation" />
       <SidebarItem label="Breadcrumb" href="/components/breadcrumb" />
       <SidebarItem label="Button" href="/components/button" />
       <SidebarItem label="Button group" href="/components/button-group" />
@@ -80,12 +55,7 @@
       <SidebarItem label="Tooltip" href="/components/tooltip" />
       <SidebarItem label="Video" href="/components/video" />
     </SidebarDropdownWrapper>
-    <SidebarDropdownWrapper
-      label="Forms"
-      isOpen={hasPath('forms')}
-      svgClass="me-4"
-      btnClass="p-1"
-    >
+    <SidebarDropdownWrapper label="Forms" isOpen={hasPath('forms')} svgClass="me-4" btnClass="p-1">
       <SidebarItem label="Checkbox" href="/forms/checkbox" />
       <SidebarItem label="File input" href="/forms/file-input" />
       <SidebarItem label="Floating label" href="/forms/floating-label" />
@@ -98,12 +68,7 @@
       <SidebarItem label="Textarea" href="/forms/textarea" />
       <SidebarItem label="Toggle" href="/forms/toggle" />
     </SidebarDropdownWrapper>
-    <SidebarDropdownWrapper
-      label="Typography"
-      isOpen={hasPath('typography')}
-      svgClass="me-4"
-      btnClass="p-1"
-    >
+    <SidebarDropdownWrapper label="Typography" isOpen={hasPath('typography')} svgClass="me-4" btnClass="p-1">
       <SidebarItem label="Blockquote" href="/typography/blockquote" />
       <SidebarItem label="Heading/Span/Mark" href="/typography/heading" />
       <SidebarItem label="HR" href="/typography/hr" />

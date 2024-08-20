@@ -3,35 +3,17 @@
   import { setContext } from 'svelte';
   import { type TabsProps as Props, type TabCtxType, tabs } from '.';
 
-  let {
-    children,
-    tabStyle = 'none',
-    ulClass,
-    contentClass,
-    divider = true,
-    activeClass,
-    inactiveClass,
-    class: classname,
-    ...restProps
-  }: Props = $props();
+  let { children, tabStyle = 'none', ulClass, contentClass, divider = true, activeClass, inactiveClass, class: classname, ...restProps }: Props = $props();
 
-  const {
-    base,
-    content,
-    divider: dividerClass,
-    active,
-    inactive
-  } = $derived(tabs({ tabStyle, hasDivider: divider }));
+  const { base, content, divider: dividerClass, active, inactive } = $derived(tabs({ tabStyle, hasDivider: divider }));
 
-  const ctx: TabCtxType = $derived({
+  const ctx: TabCtxType = {
     activeClass: active(),
     inactiveClass: inactive(),
     selected: writable<HTMLElement>()
-  });
+  };
 
-  let dividerBool = $derived(
-    ['full', 'pill'].includes(tabStyle) ? false : divider
-  );
+  let dividerBool = $derived(['full', 'pill'].includes(tabStyle) ? false : divider);
 
   setContext('ctx', ctx);
 
@@ -49,12 +31,7 @@
 {#if dividerBool}
   <div class={dividerClass()}></div>
 {/if}
-<div
-  class={content({ class: contentClass })}
-  role="tabpanel"
-  aria-labelledby="id-tab"
-  use:init
-></div>
+<div class={content({ class: contentClass })} role="tabpanel" aria-labelledby="id-tab" use:init></div>
 
 <!--
 @component

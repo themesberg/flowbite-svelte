@@ -8,16 +8,7 @@
     color?: TableColrType;
   };
 
-  type TableColrType =
-    | 'blue'
-    | 'green'
-    | 'red'
-    | 'yellow'
-    | 'purple'
-    | 'default'
-    | 'indigo'
-    | 'pink'
-    | 'custom';
+  type TableColrType = 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'indigo' | 'pink' | 'custom';
 </script>
 
 <script lang="ts">
@@ -35,17 +26,7 @@
     color?: TableColrType;
     customeColor?: string | undefined | null;
   }
-  let {
-    children,
-    divClass = 'relative overflow-x-auto',
-    striped,
-    hoverable,
-    noborder,
-    shadow,
-    color = 'default',
-    customeColor,
-    ...restProps
-  }: Props = $props();
+  let { children, divClass = 'relative overflow-x-auto', striped, hoverable, noborder, shadow, color = 'default', customeColor, ...restProps }: Props = $props();
 
   const colors = {
     default: 'text-gray-500 dark:text-gray-400',
@@ -70,10 +51,7 @@
 </script>
 
 <div class={twJoin(divClass, shadow && 'shadow-md sm:rounded-lg')}>
-  <table
-    {...restProps}
-    class={twMerge('w-full text-left text-sm', colors[color])}
-  >
+  <table {...restProps} class={twMerge('w-full text-left text-sm', colors[color])}>
     {@render children()}
   </table>
 </div>
