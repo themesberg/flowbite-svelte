@@ -30,6 +30,12 @@ importers:
       '@docsearch/js':
         specifier: ^3.6.1
         version: 3.6.1(@algolia/client-search@4.24.0)(search-insights@2.14.0)
+      '@eslint/eslintrc':
+        specifier: ^3.1.0
+        version: 3.1.0
+      '@eslint/js':
+        specifier: ^9.9.0
+        version: 9.9.0
       '@playwright/test':
         specifier: ^1.46.0
         version: 1.46.0
@@ -78,6 +84,9 @@ importers:
       flowbite-svelte-icons:
         specifier: ^1.6.1
         version: 1.6.1(svelte@4.2.18)(tailwind-merge@2.5.2)(tailwindcss@3.4.9)
+      globals:
+        specifier: ^15.9.0
+        version: 15.9.0
       mdsvex:
         specifier: ^0.11.2
         version: 0.11.2(svelte@4.2.18)
@@ -1396,6 +1405,10 @@ packages:
 
   globals@14.0.0:
     resolution: {integrity: sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==}
+    engines: {node: '>=18'}
+
+  globals@15.9.0:
+    resolution: {integrity: sha512-SmSKyLLKFbSr6rptvP8izbyxJL4ILwqO9Jg23UA0sDlGlu58V59D1//I3vlc0KJphVdUR7vMjHIplYnzBxorQA==}
     engines: {node: '>=18'}
 
   globalyzer@0.1.0:
@@ -4159,6 +4172,8 @@ snapshots:
       once: 1.4.0
 
   globals@14.0.0: {}
+
+  globals@15.9.0: {}
 
   globalyzer@0.1.0: {}
 
