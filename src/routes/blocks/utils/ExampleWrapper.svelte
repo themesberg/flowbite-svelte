@@ -3,12 +3,7 @@
   import { Button, Tooltip } from 'flowbite-svelte';
   import ExampleDarkMode from './ExampleDarkMode.svelte';
   import { GithubSolid } from 'flowbite-svelte-icons';
-  import { page } from '$app/stores';
-  import type { PageData } from '../$types';
   export let divClass = 'w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-2 sm:p-6';
-
-  // the source of the example, if you want it
-  export let src: any = undefined;
 
   // all meta tags of the code block
   export let meta: any = undefined;
@@ -16,22 +11,17 @@
   let browserSupport: boolean = false;
   let code: HTMLElement;
 
-  let data: PageData = $page.data;
-
   // change this later
   const gitHub = new URL('https://github.com/themesberg/flowbite-svelte-blocks/blob/main/src/routes/');
   // const gitHub = new URL('https://github.com/shinokada/flowbite-svelte-blocks/blob/example-block/src/routes/');
 
   let path: URL;
 
-  // suppress vite-plugin-svelte warning about unused props
-  $: src, meta;
-
   let showExpandButton: boolean = false;
   let expand: boolean = false;
   let dark: boolean = false;
 
-  function init(node: HTMLElement) {
+  function init(_node: HTMLElement) {
     browserSupport = !!window?.navigator?.clipboard;
   }
 

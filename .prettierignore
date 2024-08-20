@@ -15,4 +15,4 @@ yarn.lock
 playwright-report
 .vercel
 
-/src/routes/**/*.md
+**/*.md

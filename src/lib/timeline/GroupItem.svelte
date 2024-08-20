@@ -22,6 +22,7 @@
       <img class={imgCls} {src} {alt} />
       <div class={divCls}>
         <div class={titleCls}>
+          <!-- eslint-disable-next-line svelte/no-at-html-tags -->
           {@html title}
         </div>
         {#if comment}

@@ -4,7 +4,7 @@
   // import { createEventDispatcher } from 'svelte';
   import { fade, type TransitionConfig } from 'svelte/transition';
 
-  type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
+  type TransitionFunc = (node: HTMLElement, params: unknown) => TransitionConfig;
 
   export let position: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky' = 'sticky';
   export let dismissable: boolean = true;
@@ -12,7 +12,7 @@
   export let divClass: string = 'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600';
   export let innerClass: string = 'flex';
   export let bannerStatus: boolean = true;
-  export let transition: TransitionFunc = fade;
+  export let transition: TransitionFunc = fade as TransitionFunc;
   export let params = {};
 
   // let open = true;
@@ -45,8 +45,7 @@
 </script>
 
 {#if bannerStatus}
-  <div tabindex="-1" class={divClass} {...$$restProps}
-  transition:transition={params}>
+  <div tabindex="-1" class={divClass} {...$$restProps} transition:transition={params}>
     <slot name="header" />
     <div class={div2Class}>
       <slot />

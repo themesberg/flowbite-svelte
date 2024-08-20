@@ -59,7 +59,7 @@ const pages: string[] = [
 ];
 
 /** @type {import('./$types').RequestHandler} */
-export async function GET({ url }) {
+export async function GET() {
   const body = sitemap(pages);
   const response = new Response(body);
   response.headers.set('Cache-Control', 'max-age=0, s-maxage=3600');

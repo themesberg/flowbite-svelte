@@ -11,7 +11,7 @@
   let btnClass: string = 'ms-3 md:hidden';
 
   let hiddenStore = getContext<Writable<boolean>>('navHidden') ?? writable(true);
-  const toggle = (ev: MouseEvent) => hiddenStore.update((h) => !h);
+  const toggle = (_ev: MouseEvent) => hiddenStore.update((h) => !h);
 </script>
 
 <ToolbarButton name="Open main menu" on:click={onClick || toggle} {...$$restProps} class={twMerge(btnClass, $$props.class)}>

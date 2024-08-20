@@ -12,12 +12,9 @@
   export let /** @type {string} */ breadcrumb_title;
   export let /** @type {string} */ dir;
   export let /** @type {string} */ description;
-  export let /** @type {string} */ layout = '';
   export let /** @type {boolean} */ category;
 
   let divClass = category ? '' : 'mx-auto max-w-8xl lg:px-20 px-8 md:px-auto py-8';
-  // calm down `unused export property` warrning
-  layout;
 </script>
 
 <MetaTag {breadcrumb_title} {title} {dir} {description} />

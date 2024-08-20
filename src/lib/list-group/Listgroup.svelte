@@ -1,17 +1,11 @@
 <script lang="ts">
-  import { createEventDispatcher, setContext, type ComponentProps } from 'svelte';
+  import { createEventDispatcher, setContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import type { ListGroupItemType } from '../types';
   import Frame from '../utils/Frame.svelte';
   import ListgroupItem from './ListgroupItem.svelte';
 
   const dispatch = createEventDispatcher();
-
-  // propagate props type from underlying Frame
-  interface $$Props extends ComponentProps<Frame> {
-    items?: ListGroupItemType[] | string[];
-    active?: boolean;
-  }
 
   export let items: ListGroupItemType[] | string[] = [];
   export let active: boolean = false;

@@ -4,29 +4,8 @@
   import { createEventDispatcher, type ComponentProps } from 'svelte';
   import CloseButton from '../utils/CloseButton.svelte';
   import focusTrap from '../utils/focusTrap';
-  import type { Dismissable, SizeType } from '$lib/types';
+  import type { SizeType } from '$lib/types';
   import type { ModalPlacementType } from '../types';
-
-  // propagate props type from underlying Frame
-  interface $$Props extends ComponentProps<Frame>, Dismissable {
-    open?: boolean;
-    title?: string;
-    size?: SizeType;
-    placement?: ModalPlacementType;
-    autoclose?: boolean;
-    outsideclose?: boolean;
-    backdropClass?: string;
-    classBackdrop?: string;
-    dialogClass?: string;
-    classDialog?: string;
-    defaultClass?: string;
-    headerClass?: string;
-    classHeader?: string;
-    bodyClass?: string;
-    classBody?: string;
-    footerClass?: string;
-    classFooter?: string;
-  }
 
   export let open: boolean = false;
   export let title: string = '';

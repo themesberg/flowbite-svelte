@@ -7,10 +7,16 @@
   import Tooltip from '$lib/tooltip/Tooltip.svelte';
   import { DesktopPcOutline, TabletOutline, MobilePhoneOutline } from 'flowbite-svelte-icons';
   import { onMount } from 'svelte';
+
+  enum NotificationDirection {
+    ltr = 'rtl',
+    rtl = 'ltr'
+  }
+
   export let divClass = 'w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-6';
 
   // the source of the example, if you want it
-  export let src: any = undefined;
+  export const src: any = undefined;
 
   // all meta tags of the code block
   export let meta: any = undefined;
@@ -25,9 +31,6 @@
   const gitHub = new URL('https://github.com/themesberg/flowbite-svelte/blob/main/src/routes/');
 
   let path: URL;
-
-  // suppress vite-plugin-svelte warning about unused props
-  $: src, meta;
 
   let showExpandButton: boolean = false;
   let expand: boolean = false;
@@ -154,7 +157,11 @@
   $: {
     if (iframe) {
       // toggle dark mode class in the iframe
-      dark ? iframe?.contentDocument?.documentElement.classList.add('dark') : iframe?.contentDocument?.documentElement.classList.remove('dark');
+      if (dark) {
+        iframe?.contentDocument?.documentElement.classList.add('dark');
+      } else {
+        iframe?.contentDocument?.documentElement.classList.remove('dark');
+      }
     }
   }
 
@@ -169,7 +176,7 @@
 <div class="mt-8 code-example" bind:this={node} use:init>
   {#if !meta.hideOutput}
     <div class="w-full p-4 border border-gray-200 bg-gray-50 rounded-t-xl dark:border-gray-600 dark:bg-gray-700">
-      <div class="grid {!!meta.hideResponsiveButtons ? 'grid-cols-2' : 'grid-cols-2 sm:grid-cols-3'}">
+      <div class="grid {meta.hideResponsiveButtons ? 'grid-cols-2' : 'grid-cols-2 sm:grid-cols-3'}">
         {#if path}
           <Button size="xs" color="alternative" class="dark:!bg-gray-900 w-fit hover:text-primary-600 gap-2" href={'' + path} target="_blank" rel="noreferrer">
             <GitHub size="sm" />Edit on GitHub

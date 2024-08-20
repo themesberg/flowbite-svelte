@@ -9,7 +9,7 @@
   export let data: PageData;
 
   let name: string;
-  function on_show(e: CustomEvent<any>) {
+  function on_show(e: CustomEvent<unknown>) {
     if (e?.target instanceof HTMLElement) {
       name = e?.target?.dataset.name ?? '';
     }

@@ -14,17 +14,7 @@
 <script lang="ts">
   import Frame from '$lib/utils/Frame.svelte';
   import { twMerge } from 'tailwind-merge';
-  import { setContext, type ComponentProps } from 'svelte';
-
-  interface $$Props extends ComponentProps<Frame> {
-    multiple?: boolean;
-    flush?: boolean;
-    activeClass?: string;
-    inactiveClass?: string;
-    defaultClass?: string;
-    classActive?: string;
-    classInactive?: string;
-  }
+  import { setContext } from 'svelte';
 
   export let multiple: boolean = false;
   export let flush: boolean = false;

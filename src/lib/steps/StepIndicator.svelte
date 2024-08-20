@@ -43,7 +43,7 @@
     <h3 class="text-base font-semibold">{steps[currentStep - 1]}</h3>
   {/if}
   <div class={twJoin('flex justify-between gap-2 w-full', size)}>
-    {#each steps as step, i}
+    {#each steps as _, i}
       {#if i === currentStep - 1}
         <div class="relative w-full h-full">
           <div class={twJoin('relative w-full h-full rounded-sm', currentStepColors[color])}></div>

@@ -8,21 +8,18 @@
   import YoutubeHome from './utils/icons/YoutubeHome.svelte';
   import ToolbarLink from './utils/ToolbarLink.svelte';
 
+  // eslint-disable-next-line no-undef
   let version = __BLOCKS_VERSION__;
 
   // to fix scrolling problem
-  afterNavigate((navigation) => {
+  afterNavigate(() => {
     document.getElementById('svelte')?.scrollTo({ top: 0 });
   });
 
   let activeUrl: string;
-  let activeCategory: boolean;
 
   $: {
     activeUrl = $page.url.pathname;
-    const keywords = ['marketing', 'application', 'publisher'];
-    const isActive = keywords.some((keyword) => activeUrl.includes(keyword));
-    activeCategory = isActive ? true : false;
     // console.log(isActive); // Output: true or false
   }
 

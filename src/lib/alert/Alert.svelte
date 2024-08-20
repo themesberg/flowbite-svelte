@@ -1,12 +1,7 @@
 <script lang="ts">
   import TransitionFrame from '$lib/utils/TransitionFrame.svelte';
-  import type { ComponentProps } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import CloseButton from '../utils/CloseButton.svelte';
-
-  interface $$Props extends ComponentProps<TransitionFrame> {
-    defaultClass?: string;
-  }
 
   export let dismissable: boolean = false;
   export let defaultClass: string = 'p-4 gap-3 text-sm';

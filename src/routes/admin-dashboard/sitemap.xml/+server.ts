@@ -2,6 +2,7 @@ const site = 'https://flowbite-svelte-admin-dashboard.vercel.app/';
 const pages: string[] = ['', 'dashboard', 'layouts/stacked', 'layouts/sidebar', 'crud/products', 'crud/users', 'settings', 'pages/pricing', 'errors/400', 'errors/404', 'errors/500', 'authentication/sign-in', 'authentication/sign-up', 'authentication/forgot-password', 'authentication/reset-password', 'authentication/profile-lock', 'playground/stacked', 'playground/sidebar'];
 
 /** @type {import('./$types').RequestHandler} */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function GET({ url }) {
   const body = sitemap(pages);
   const response = new Response(body);

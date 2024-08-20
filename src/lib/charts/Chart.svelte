@@ -1,8 +1,8 @@
 <script lang="ts">
   import type { ApexOptions } from 'apexcharts';
 
-  export let options: ApexOptions;  
-  export let chart: ApexCharts;
+  export let options: ApexOptions;
+  export let chart: any;
 
   function initChart(node: HTMLElement, options: ApexOptions) {
     async function asyncInitChart() {
@@ -15,10 +15,14 @@
 
     return {
       update(options: ApexOptions) {
-        chart && chart.updateOptions(options);
+        if (chart) {
+          chart.updateOptions(options);
+        }
       },
       destroy() {
-        chart && chart.destroy();
+        if (chart) {
+          chart.destroy();
+        }
       }
     };
   }

@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { Section, Quotes, Testimonial, TestimonialCard, TestimonialCardItem } from 'flowbite-svelte-blocks';
-  import { QuoteSolid } from 'flowbite-svelte-icons';
+  import { Section, Quotes, Testimonial } from 'flowbite-svelte-blocks';
 </script>
 
 <Section name="testimonial">

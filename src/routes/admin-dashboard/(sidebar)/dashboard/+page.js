@@ -1,4 +1,5 @@
 /** @type {import('./$types').PageLoad} */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function load({ params }) {
   return {
     series: [

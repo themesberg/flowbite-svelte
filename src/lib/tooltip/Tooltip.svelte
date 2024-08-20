@@ -1,13 +1,6 @@
 <script lang="ts">
-  import type { ComponentProps } from 'svelte';
   import Popper from '../utils/Popper.svelte';
   import { twMerge } from 'tailwind-merge';
-
-  // propagate props type from underlying Frame
-  interface $$Props extends ComponentProps<Popper> {
-    type?: 'dark' | 'light' | 'auto' | 'custom';
-    defaultClass?: string;
-  }
 
   export let type: 'dark' | 'light' | 'auto' | 'custom' = 'dark';
   export let defaultClass: string = 'py-2 px-3 text-sm font-medium';

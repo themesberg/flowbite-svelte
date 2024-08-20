@@ -31,11 +31,13 @@
       <div class={innerDivCls}>
         <time class={timeCls}>{date}</time>
         <div class={titleCls}>
+          <!-- eslint-disable-next-line svelte/no-at-html-tags -->
           {@html title}
         </div>
       </div>
       {#if text}
         <div class={textCls}>
+          <!-- eslint-disable-next-line svelte/no-at-html-tags -->
           {@html text}
         </div>
       {/if}

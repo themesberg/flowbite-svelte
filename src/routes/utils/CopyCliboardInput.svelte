@@ -17,7 +17,7 @@
     open = copied || undefined;
   }
 
-  const copyToClipboard = async (e: MouseEvent) => {
+  const copyToClipboard = async () => {
     if (tooltip_text === text_copied) return;
 
     const REG_HEX = /&#x([a-fA-F0-9]+);/g;

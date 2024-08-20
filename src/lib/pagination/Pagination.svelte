@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge, twJoin } from 'tailwind-merge';
+  import { twMerge } from 'tailwind-merge';
   import { createEventDispatcher, setContext } from 'svelte';
   import type { LinkType } from '../types';
   import PaginationItem from './PaginationItem.svelte';

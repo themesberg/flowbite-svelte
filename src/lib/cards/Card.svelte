@@ -1,7 +1,6 @@
 <script lang="ts">
   import type { SizeType } from '$lib/types';
   import { twMerge } from 'tailwind-merge';
-  import type { ComponentProps } from 'svelte';
   import Frame from '../utils/Frame.svelte';
 
   export let href: string | null | undefined = undefined;
@@ -11,15 +10,6 @@
   export let padding: SizeType | 'none' = 'lg';
   export let size: SizeType | 'none' = 'sm';
   export let imgClass: string = '';
-
-  // propagate props type from underlying Frame
-  interface $$Props extends ComponentProps<Frame> {
-    horizontal?: boolean;
-    reverse?: boolean;
-    img?: string;
-    padding?: SizeType | 'none';
-    size?: SizeType | 'none';
-  }
 
   const paddings: Record<SizeType | 'none', string> = {
     none: '',

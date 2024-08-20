@@ -26,7 +26,6 @@ export default function focusTrap(node) {
     if (index === -1 && e.shiftKey) index = 0;
     index += tabbable.length + (e.shiftKey ? -1 : 1);
     index %= tabbable.length;
-    /** @ts-ignore */
     tabbable[index].focus();
 
     e.preventDefault();

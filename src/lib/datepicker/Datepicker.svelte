@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
   declare module 'svelte/elements' {
-    interface HTMLAttributes<T> {
+    interface HTMLAttributes<_T> {
       [x: `data-${string}`]: any;
       'date-rangepicker'?: boolean;
       datepicker?: boolean;

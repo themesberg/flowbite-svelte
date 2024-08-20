@@ -14,6 +14,7 @@
 
   let isHomePage: boolean;
   $: isHomePage = $page.route.id === '/';
+  // eslint-disable-next-line no-undef
   const version = __VERSION__;
   $: activeUrl = $page.url.pathname;
   let logo = '/images/flowbite-svelte-icon-logo.svg';

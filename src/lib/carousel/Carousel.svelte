@@ -19,7 +19,7 @@
   import Slide from './Slide.svelte';
   import { canChangeSlide } from './CarouselSlide';
 
-  type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
+  type TransitionFunc = (node: HTMLElement, params: unknown) => TransitionConfig;
   const SLIDE_DURATION_RATIO = 0.25; // TODO: Expose one day?
 
   export let images: HTMLImgAttributes[];
@@ -78,7 +78,7 @@
     carouselDiv = node; // used by DragStart
 
     // loop timer
-    let intervalId: any;
+    let intervalId: ReturnType<typeof setInterval>;
 
     if (duration > 0) intervalId = setInterval(nextSlide, duration);
 
@@ -118,7 +118,9 @@
     if (disableSwipe) return;
 
     touchEvent = evt;
-    evt.cancelable && evt.preventDefault();
+    if (evt.cancelable) {
+      evt.preventDefault();
+    }
     const start = getPositionFromEvent(evt);
     const width = carouselDiv.getBoundingClientRect().width;
     if (start === undefined || width === undefined) return;
@@ -144,7 +146,7 @@
   $: onDragStop =
     activeDragGesture === undefined
       ? undefined
-      : (evt: MouseEvent | TouchEvent) => {
+      : () => {
           // These might be exposed one day, keep them safely tucked away as constants.
           const SWIPE_MAX_DURATION = 250;
           const SWIPE_MIN_DISTANCE = 30;

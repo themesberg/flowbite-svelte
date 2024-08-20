@@ -25,6 +25,13 @@ export default [
       '@typescript-eslint': typescriptEslint
     },
 
+    rules: {
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+
+      // TODO: Enable this rule
+      '@typescript-eslint/no-explicit-any': 'off'
+    },
+
     languageOptions: {
       globals: {
         ...globals.browser,

@@ -8,7 +8,7 @@
 
   const state = getContext<Writable<State>>('state');
 
-  type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
+  type TransitionFunc = (node: HTMLElement, params: unknown) => TransitionConfig;
 
   export let image: HTMLImgAttributes;
   export let transition: TransitionFunc | null = null; // Optional transition function, overrides default slide transition

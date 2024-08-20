@@ -1,23 +1,9 @@
 <script lang="ts">
   import type { ComputePositionReturn, Middleware, Placement, Side } from '@floating-ui/dom';
   import * as dom from '@floating-ui/dom';
-  import { onMount, type ComponentProps, createEventDispatcher } from 'svelte';
+  import { onMount, createEventDispatcher } from 'svelte';
   import { twJoin } from 'tailwind-merge';
   import Frame from './Frame.svelte';
-
-  // propagate props type from underlying Frame
-  interface $$Props extends ComponentProps<Frame> {
-    activeContent?: boolean;
-    arrow?: boolean;
-    offset?: number;
-    placement?: Placement;
-    trigger?: 'hover' | 'click' | 'focus';
-    triggeredBy?: string;
-    reference?: string;
-    strategy?: 'absolute' | 'fixed';
-    open?: boolean;
-    yOnly?: boolean;
-  }
 
   export let activeContent: boolean = false;
   export let arrow: boolean = true;
@@ -41,7 +27,9 @@
   $: hoverable = trigger === 'hover';
 
   $: dispatch('show', open);
-  $: placement && (referenceEl = referenceEl);
+  $: if (placement) {
+    referenceEl = referenceEl;
+  }
 
   let referenceEl: Element;
   let floatingEl: HTMLElement;

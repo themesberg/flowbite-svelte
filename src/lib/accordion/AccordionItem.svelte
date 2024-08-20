@@ -2,7 +2,7 @@
   import { twMerge } from 'tailwind-merge';
   import { getContext, onMount } from 'svelte';
   import { writable } from 'svelte/store';
-  import { fade, blur, fly, slide } from 'svelte/transition';
+  import { fade, blur, fly, slide, type BlurParams, type FlyParams, type FadeParams, type SlideParams } from 'svelte/transition';
   import type { TransitionTypes, TransitionParamTypes } from '../types';
   import type { AccordionCtxType } from './Accordion.svelte';
 
@@ -29,16 +29,16 @@
   let inactiveCls = twMerge(inactiveClass, classInactive);
 
   // make a custom transition function that returns the desired transition
-  const multiple = (node: HTMLElement, params: any) => {
+  const multiple = (node: HTMLElement, params: unknown) => {
     switch (transitionType) {
       case 'blur':
-        return blur(node, params);
+        return blur(node, params as BlurParams);
       case 'fly':
-        return fly(node, params);
+        return fly(node, params as FlyParams);
       case 'fade':
-        return fade(node, params);
+        return fade(node, params as FadeParams);
       default:
-        return slide(node, params);
+        return slide(node, params as SlideParams);
     }
   };
 
@@ -58,7 +58,7 @@
     return selected.subscribe((x) => (open = x === self));
   });
 
-  const handleToggle = (_: Event) => selected.set(open ? {} : self);
+  const handleToggle = () => selected.set(open ? {} : self);
 
   let buttonClass: string;
   $: buttonClass = twMerge([defaultClass, ctx.flush || borderClass, borderBottomClass, borderSharedClass, ctx.flush ? paddingFlush : paddingDefault, open && (ctx.flush ? textFlushOpen : activeCls || ctx.activeClass), !open && (ctx.flush ? textFlushDefault : inactiveCls || ctx.inactiveClass), $$props.class]);

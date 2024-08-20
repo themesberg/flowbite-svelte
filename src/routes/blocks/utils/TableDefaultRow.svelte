@@ -4,9 +4,9 @@
   export let items: Array<Array<string>>;
   export let html: boolean = false;
   export let rowState: 'striped' | 'hover' | undefined = undefined;
-  
+
   const category = getContext('category');
-// console.log('category: ', category)
+  // console.log('category: ', category)
   let trClass: string;
   let trLastClass: string;
   if (rowState === 'striped') {
@@ -20,60 +20,65 @@
     trLastClass = 'bg-white dark:bg-gray-800';
   }
 </script>
+
 {#if category === 'props'}
-{#each items as item, i}
-  {#if i === items.length - 1}
-    <tr class={trLastClass}>
-      {#each item as cell, j}
-        {#if j === 0}
-          <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-            {#if html}
-              {@html cell}
-            {:else}
-              {cell}
-            {/if}
-          </th>
-        {:else}
-          <td class="px-6 py-4">
-            {#if html}
-              {@html cell}
-            {:else}
-              {cell}
-            {/if}
-          </td>
-        {/if}
-      {/each}
-    </tr>
-  {:else}
-    <tr class={trClass}>
-      {#each item as cell, j}
-        {#if j === 0}
-          <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-            {#if html}
-              {@html cell}
-            {:else}
-              {cell}
-            {/if}
-          </th>
-        {:else}
-          <td class="px-6 py-4">
-            {#if html}
-              {@html cell}
-            {:else}
-              {cell}
-            {/if}
-          </td>
-        {/if}
-      {/each}
-    </tr>
-  {/if}
-{/each}
+  {#each items as item, i}
+    {#if i === items.length - 1}
+      <tr class={trLastClass}>
+        {#each item as cell, j}
+          {#if j === 0}
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+              {#if html}
+                <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+                {@html cell}
+              {:else}
+                {cell}
+              {/if}
+            </th>
+          {:else}
+            <td class="px-6 py-4">
+              {#if html}
+                <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+                {@html cell}
+              {:else}
+                {cell}
+              {/if}
+            </td>
+          {/if}
+        {/each}
+      </tr>
+    {:else}
+      <tr class={trClass}>
+        {#each item as cell, j}
+          {#if j === 0}
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+              {#if html}
+                <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+                {@html cell}
+              {:else}
+                {cell}
+              {/if}
+            </th>
+          {:else}
+            <td class="px-6 py-4">
+              {#if html}
+                <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+                {@html cell}
+              {:else}
+                {cell}
+              {/if}
+            </td>
+          {/if}
+        {/each}
+      </tr>
+    {/if}
+  {/each}
 {:else}
-{#each items as tagName}
-<tr class={trClass}>
-  <td class="px-6 py-4">
-      {tagName}
-  </td>
-</tr>
-{/each}
+  {#each items as tagName}
+    <tr class={trClass}>
+      <td class="px-6 py-4">
+        {tagName}
+      </td>
+    </tr>
+  {/each}
 {/if}

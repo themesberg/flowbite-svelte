@@ -16,7 +16,7 @@
     outside: 'list-outside'
   };
 
-  let classList = twMerge(lists[list ?? (tag === 'ul' ? 'disc' : 'ol' ? 'decimal' : 'none')], positions[position], $$props.class);
+  let classList = twMerge(lists[list ?? (tag === 'ul' ? 'disc' : tag === 'ol' ? 'decimal' : 'none')], positions[position], $$props.class);
 </script>
 
 <svelte:element this={tag} {...$$restProps} class={classList}>

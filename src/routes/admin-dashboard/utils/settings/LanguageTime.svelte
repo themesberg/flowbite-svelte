@@ -1,5 +1,5 @@
 <script>
-	import { Button, Heading, Label, Select } from 'flowbite-svelte';
+	import { Button, Label, Select } from 'flowbite-svelte';
 	import Card from '../widgets/Card.svelte';
 	const languages = [
 		{ name: 'English (US)', value: 'en' },

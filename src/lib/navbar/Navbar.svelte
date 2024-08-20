@@ -1,14 +1,9 @@
 <script lang="ts">
-  import { setContext, type ComponentProps } from 'svelte';
+  import { setContext } from 'svelte';
   import Frame from '../utils/Frame.svelte';
   import { twMerge } from 'tailwind-merge';
   import NavContainer from './NavContainer.svelte';
   import { writable } from 'svelte/store';
-
-  // propagate props type from underlying Frame
-  interface $$Props extends ComponentProps<Frame> {
-    fluid?: boolean;
-  }
 
   export let fluid: boolean = false;
 

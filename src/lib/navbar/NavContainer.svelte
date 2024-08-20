@@ -1,10 +1,5 @@
 <script lang="ts">
-  import type { HTMLAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
-
-  interface $$Props extends HTMLAttributes<HTMLDivElement> {
-    fluid?: boolean;
-  }
 
   export let fluid: boolean = false;
 </script>

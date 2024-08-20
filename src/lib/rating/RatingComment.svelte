@@ -1,8 +1,6 @@
 <script lang="ts">
   import Button from '../buttons/Button.svelte';
   import Rating from './Rating.svelte';
-  // default is floor
-  export let ceil: boolean = false;
   export let helpfullink: string = '';
   export let abuselink: string = '';
   export let comment: {
@@ -21,9 +19,6 @@
     address: string;
     datetime: string;
   };
-
-  let roundedRating: number = ceil ? Math.ceil(comment.rating) : Math.floor(comment.rating);
-  let grayStars: number = comment.total - roundedRating;
 </script>
 
 <article>

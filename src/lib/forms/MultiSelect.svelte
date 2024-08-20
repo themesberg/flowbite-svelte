@@ -33,7 +33,7 @@
   const itemsSelectClass: string = 'bg-gray-100 text-black font-semibold hover:text-black dark:text-white dark:bg-gray-600 dark:hover:text-white';
   // Active item
   let activeIndex: number | null = null;
-  $: activeItem = activeIndex !== null? items[((activeIndex % items.length) + items.length) % items.length] : null;
+  $: activeItem = activeIndex !== null ? items[((activeIndex % items.length) + items.length) % items.length] : null;
 
   const activeItemClass: string = 'bg-primary-100 text-primary-500 dark:bg-primary-500 dark:text-primary-100 hover:bg-primary-100 dark:hover:bg-primary-500 hover:text-primary-600 dark:hover:text-primary-100';
 
@@ -69,8 +69,7 @@
     if (!show) {
       show = true;
       activeIndex = 0;
-    }
-    else {
+    } else {
       if (activeItem !== null) selectOption(activeItem);
     }
   }
@@ -78,12 +77,10 @@
     if (!show) {
       show = true;
       activeIndex = 0;
-    }
-    else {
+    } else {
       if (activeIndex !== null) {
         activeIndex += offset;
-      }
-      else {
+      } else {
         activeIndex = 0;
       }
     }
@@ -109,7 +106,6 @@
     event.stopPropagation();
     event.preventDefault();
   }
-
 </script>
 
 <!-- Hidden select for form submission -->
@@ -118,7 +114,6 @@
     <option {value}>{name}</option>
   {/each}
 </select>
-<!-- svelte-ignore a11y-click-events-have-key-events -->
 <div on:click={() => (show = !show)} on:focusout={() => (show = false)} on:keydown={handleKeyDown} tabindex="0" role="listbox" class={twMerge(multiSelectClass, sizes[size], $$props.class)}>
   {#if !selectItems.length}
     <span class="text-gray-400">{placeholder}</span>
@@ -147,7 +142,6 @@
   {#if show}
     <div on:click|stopPropagation role="presentation" class={multiSelectDropdown}>
       {#each items as item (item.name)}
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
         <div on:click={() => selectOption(item)} role="presentation" class={twMerge(itemsClass, selectItems.includes(item) && itemsSelectClass, activeItem === item && activeItemClass)}>
           {item.name}
         </div>

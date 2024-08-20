@@ -1,5 +1,4 @@
 <script lang="ts">
-  import type { HTMLImgAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
 
   export let selected: boolean = false;

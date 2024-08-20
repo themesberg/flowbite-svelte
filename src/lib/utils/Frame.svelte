@@ -27,29 +27,11 @@
   import { twMerge } from 'tailwind-merge';
 
   import type { Action } from 'svelte/action';
-  import type { HTMLAnchorAttributes } from 'svelte/elements';
   import { type TransitionConfig } from 'svelte/transition';
 
   const noop = () => {};
 
-  
-  type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
-
-  interface $$Props extends HTMLAnchorAttributes {
-    tag?: string;
-    color?: FrameColor;
-    rounded?: boolean;
-    border?: boolean;
-    shadow?: boolean;
-    node?: HTMLElement | undefined;
-    use?: Action<HTMLElement, any>;
-    options?: object;
-    class?: string;
-    role?: string;
-    open?: boolean;
-    transition?: TransitionFunc;
-    params?: any;
-  }
+  type TransitionFunc = (node: HTMLElement, params: unknown) => TransitionConfig;
 
   setContext('background', true);
 
@@ -62,7 +44,7 @@
   // For components development
   export let node: HTMLElement | undefined = undefined;
   // Action function and its params
-  export let use: Action<HTMLElement, any> = noop;
+  export let use: Action<HTMLElement, unknown> = noop;
   export let options = {};
 
   export let role: string | undefined = undefined;
@@ -82,7 +64,6 @@
   $: setContext('color', color);
 
   // your script goes here
-  
 
   const textColors = {
     gray: 'text-gray-800 dark:text-gray-300',

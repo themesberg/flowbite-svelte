@@ -16,14 +16,20 @@ export let placement: string;
 
 export const init = (node: HTMLElement, _open: boolean) => {
   getPlacementClasses().map((c) => node.classList.add(c));
-  _open && createBackdrop(node);
+  if (_open) {
+    createBackdrop(node);
+  }
 
   return {
     update(_open: boolean) {
       allPlacementClasses.map((c) => node.classList.remove(c));
       getPlacementClasses().map((c) => node.classList.add(c));
 
-      _open ? createBackdrop(node) : destroyBackdrop(node);
+      if (_open) {
+        createBackdrop(node);
+      } else {
+        destroyBackdrop(node);
+      }
     },
 
     destroy() {

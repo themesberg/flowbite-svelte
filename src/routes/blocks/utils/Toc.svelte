@@ -13,7 +13,8 @@
 
   let headings: LinkType[] = [];
 
-  function init(_: any) {
+   
+  function init(_: unknown) {
     const observer: MutationObserver = new MutationObserver(toc);
     observer.observe(document.body, { childList: true, subtree: true });
 

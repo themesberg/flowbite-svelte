@@ -16,6 +16,7 @@
 {#if caption}
   <figure class={figClass}>
     <img class={twMerge(imgClass, size, alignment, effect, $$props.class)} {src} {srcset} {alt} />
+    <!-- eslint-disable-next-line svelte/no-at-html-tags -->
     <figcaption class={captionClass}>{@html caption}</figcaption>
   </figure>
 {:else}

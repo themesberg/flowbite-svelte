@@ -24,5 +24,6 @@
 </script>
 
 <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} class={$$props.class} {...$$restProps} aria-label={ariaLabel} fill="none" {viewBox} stroke-width={strokeWidth} role="img">
+  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
   {@html svgpath}
 </svg>
