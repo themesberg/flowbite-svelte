@@ -1,9 +1,8 @@
 <script lang="ts">
   import { Alert, alert as fsalert, Button, Label, Radio, type AlertProps } from '$lib';
   import { InfoCircleSolid, EyeSolid } from 'flowbite-svelte-icons';
-  import { blur, fly, slide, fade, scale } from 'svelte/transition';
-  import { backInOut, linear } from 'svelte/easing';
-  import { quintOut } from 'svelte/easing';
+  import { blur, fly, slide, scale } from 'svelte/transition';
+  import { linear } from 'svelte/easing';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
