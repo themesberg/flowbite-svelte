@@ -1,11 +1,14 @@
 <script lang="ts">
   import { Alert, alert as fsalert, Button, Label, Radio, type AlertProps } from '$lib';
   import { InfoCircleSolid, EyeSolid } from 'flowbite-svelte-icons';
-
+  import { blur, fly, slide, fade, scale } from 'svelte/transition';
+  import { backInOut, linear } from 'svelte/easing';
+  import { quintOut } from 'svelte/easing';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import H3 from '../../utils/H3.svelte';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -48,6 +51,23 @@
   const changeClass = () => {
     alertClass = alertClass === '' ? 'p-8' : '';
   };
+  let flyStatus: AlertProps['alertStatus'] = $state(true);
+  const changeFlyStatus = () => {
+    flyStatus = !flyStatus;
+  }
+  let blurStatus: AlertProps['alertStatus'] = $state(true);
+  const changeBlurStatus = () => {
+    blurStatus = !blurStatus;
+  }
+  let slideStatus: AlertProps['alertStatus'] = $state(true);
+  const changeSlideStatus = () => {
+    slideStatus = !slideStatus;
+  }
+  let scaleStatus: AlertProps['alertStatus'] = $state(true);
+  const changeScaleStatus = () => {
+    scaleStatus = !scaleStatus;
+  }
+
 </script>
 
 <H1>Alert</H1>
@@ -143,10 +163,7 @@
 
 <H2>Dismissable alerts</H2>
 <CodeWrapper class="space-y-4">
-  <div class="h-20">
-    {#if !alertStatus2}
-      <Button color="light" onclick={changeStatus}>Open alert</Button>
-    {/if}
+  <div class="h-12">
     <Alert color={dismissableColor} {dismissable} bind:alertStatus={alertStatus2}>
       {#snippet icon()}
         <InfoCircleSolid class="h-5 w-5" />
@@ -154,6 +171,11 @@
       <span class="font-medium">Default alert!</span>
       Change a few things up and try submitting again.
     </Alert>
+  </div>
+  <div class="h-12">
+    {#if !alertStatus2}
+      <Button color="light" onclick={changeStatus}>Open alert</Button>
+    {/if}
   </div>
 
   <div class="flex flex-wrap space-x-4">
@@ -254,12 +276,14 @@
 <H2>Reactive alert</H2>
 <CodeWrapper class="space-y-4">
   <div class="h-20">
-    {#if !alertStatus2}
-      <Button color="light" onclick={changeStatus}>Open alert</Button>
-    {/if}
     <Alert {color} {rounded} {border} {dismissable} class={alertClass} bind:alertStatus={alertStatus2}>
       <span class="font-medium">Default alert!</span>
     </Alert>
+  </div>
+  <div class="h-12">
+    {#if !alertStatus2}
+    <Button color="light" onclick={changeStatus}>Open alert</Button>
+  {/if}
   </div>
 
   <div class="flex flex-wrap space-x-4">
@@ -272,4 +296,41 @@
   <Button class="w-48" color="red" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
   <Button class="w-48" color="yellow" onclick={changeDismissable}>{dismissable ? 'Remove dismissable' : 'Add dismissable'}</Button>
   <Button class="w-48" color="green" onclick={changeClass}>{alertClass ? 'Remove class' : 'Add class'}</Button>
+</CodeWrapper>
+
+<H2>Transition</H2>
+
+<CodeWrapper class="h-[360px]">
+  <div class="h-16">
+  <Alert color="blue" dismissable bind:alertStatus={flyStatus} transition={fly} params={{duration: 1000, easing: linear, x: 150}}>
+    <span class="font-medium">Fly transition</span>
+  </Alert>
+  </div>
+  <div class="h-16">
+  <Alert color="lime" dismissable bind:alertStatus={blurStatus} transition={blur} params={{duration: 1000, easing: linear}}>
+    <span class="font-medium">Blur transition</span>
+  </Alert>
+  </div>
+  <div class="h-16">
+    <Alert color="violet" dismissable bind:alertStatus={slideStatus} transition={slide} params={{duration: 1000, easing: linear,  x: -150}}>
+      <span class="font-medium">Slide transition</span>
+    </Alert>
+  </div>
+  <div class="h-16">
+    <Alert color="pink" dismissable bind:alertStatus={scaleStatus} transition={scale} params={{duration: 1000, easing: linear}}>
+      <span class="font-medium">Scale transition</span>
+    </Alert>
+  </div>
+  {#if !flyStatus}
+  <Button class="w-36" color="green" onclick={changeFlyStatus}>{flyStatus ? '' : 'Open fly'}</Button>
+  {/if}
+  {#if !blurStatus}
+  <Button class="w-36" color="green" onclick={changeBlurStatus}>{blurStatus ? '' : 'Open blur'}</Button>
+  {/if}
+  {#if !slideStatus}
+  <Button class="w-36" color="green" onclick={changeSlideStatus}>{slideStatus ? '' : 'Open slide'}</Button>
+  {/if}
+  {#if !scaleStatus}
+  <Button class="w-36" color="green" onclick={changeScaleStatus}>{scaleStatus ? '' : 'Open scale'}</Button>
+  {/if}
 </CodeWrapper>

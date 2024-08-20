@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Badge, badge, Button, Indicator, Radio, Label, type BadgeProps } from '$lib';
   import { ClockSolid, EnvelopeSolid, CheckOutline, CheckCircleOutline } from 'flowbite-svelte-icons';
-  import { slide } from 'svelte/transition';
+  import { blur, fly, slide } from 'svelte/transition';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';

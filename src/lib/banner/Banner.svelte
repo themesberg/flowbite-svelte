@@ -14,11 +14,6 @@
   let bannerClass = $derived(base({ position, bannerType, color, className }));
 
   let innerCls = $derived(insideDiv({ bannerType, class: innerClass }));
-
-  const clickToDismiss = () => {
-    bannerStatus = false;
-  };
-  // $inspect('transitionType', transitionType);
 </script>
 
 {#if bannerStatus}
@@ -33,7 +28,9 @@
 
     {#if dismissable}
       <div class="flex items-center">
-        <CloseButton class="-mx-1.5 -my-1.5" {color} ariaLabel="Remove badge" onclick={clickToDismiss} />
+        <CloseButton class="-mx-1.5 -my-1.5" {color} ariaLabel="Remove badge" onclick={() => {
+          bannerStatus = false;
+        }} />
       </div>
     {/if}
   </div>

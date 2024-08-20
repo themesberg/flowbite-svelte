@@ -16,7 +16,7 @@
       className
     })
   );
-  // $inspect('divCls: ', divCls);
+  // $inspect('transition: ', transition);
 </script>
 
 {#if alertStatus}
