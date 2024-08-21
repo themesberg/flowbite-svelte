@@ -1,14 +1,15 @@
 <script lang="ts">
   import { Toast, toast, Avatar, Button, Label, Radio } from '$lib';
   import { FireOutline, CheckCircleSolid, PaperPlaneOutline, BellOutline, DownloadOutline, CameraPhotoOutline } from 'flowbite-svelte-icons';
-  import { quintOut, elasticOut } from 'svelte/easing';
-  import { slide, blur, fly } from 'svelte/transition';
-
+  import { quintOut, elasticOut, linear } from 'svelte/easing';
+  import { blur, fly, slide, scale } from 'svelte/transition';
+  import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
   import H3 from '../../utils/H3.svelte';
+  import { capitalizeFirstLetter } from '../../utils/helpers';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -17,6 +18,30 @@
   const colors = Object.keys(toast.variants.color) as Toast['color'][];
   let toastColor: Toast['color'] = $state('primary');
   let toastStatus: boolean = $state(true);
+
+
+  // transition example
+  type TransitionOption = {
+    name: string;
+    transition: typeof fly | typeof blur | typeof slide | typeof scale;
+    params: FlyParams | BlurParams | SlideParams | ScaleParams;
+    color: Toast['color'];
+  };
+
+  const transitions: TransitionOption[] = [
+    { name: 'fly', transition: fly, params: { duration: 1000, easing: linear, x: 150 }, color: 'blue' },
+    { name: 'blur', transition: blur, params: { duration: 1000, easing: linear }, color: 'lime' },
+    { name: 'slide', transition: slide, params: { duration: 1000, easing: linear, x: -150 }, color: 'violet' },
+    { name: 'scale', transition: scale, params: { duration: 1000, easing: linear }, color: 'pink' }
+  ];
+
+  let selectedTransition = $state('fly');
+  let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
+
+  let transionStatus = $state(true);
+  const changeTransitionStatus = () => {
+    transionStatus = !transionStatus;
+  };
 </script>
 
 <H1>Toast</H1>
@@ -67,66 +92,30 @@
 <HighlightCompo code={modules['./md/simple-toast.md'] as string} />
 
 <H2>Transitions</H2>
-<H3>Slide</H3>
-<CodeWrapper class="flex h-[350px] flex-col items-center space-y-2">
-  <Toast transition={slide}>
-    {#snippet icon()}
-      <CheckCircleSolid class="h-5 w-5" />
-    {/snippet}
-    Transition type: slide
-  </Toast>
 
-  <Toast transition={slide} params={{ delay: 250, duration: 300, easing: quintOut }}>
-    {#snippet icon()}
-      <CheckCircleSolid class="h-5 w-5" />
-    {/snippet}
-    Transition type: slide, delay: 250, duration: 300, easing: quintOut
-  </Toast>
-
-  <Toast transition={slide} params={{ delay: 250, duration: 2000, easing: elasticOut }}>
-    {#snippet icon()}
-      <CheckCircleSolid class="h-5 w-5" />
-    {/snippet}
-    Transition type: slide, delay: 250, duration: 2000, easing: elasticOut
-  </Toast>
+<CodeWrapper class="h-64">
+  <div class="h-24">
+    <Toast color={currentTransition.color as Toast['color']} dismissable bind:toastStatus={transionStatus} transition={currentTransition.transition} params={currentTransition.params}>
+      {#snippet icon()}
+        <CheckCircleSolid class="h-5 w-5" />
+        <span class="sr-only">Check icon</span>
+      {/snippet}
+      {capitalizeFirstLetter(selectedTransition)} transition
+    </Toast>
+  </div>
+  <div class="mb-4 flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Transition</Label>
+    {#each transitions as transition}
+      <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={selectedTransition} value={transition.name}>{capitalizeFirstLetter(transition.name)}</Radio>
+    {/each}
+  </div>
+  {#if !transionStatus}
+    <Button class="w-36" color="green" onclick={changeTransitionStatus}>{transionStatus ? '' : 'Open'}</Button>
+  {/if}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/slide.md'] as string} />
 
-<H3>Blur</H3>
-<CodeWrapper class="flex h-[200px] flex-col items-center space-y-2">
-  <Toast transition={blur} color="purple" params={{ amount: 10 }}>
-    {#snippet icon()}
-      <BellOutline class="h-5 w-5" />
-    {/snippet}
-    Transition type: blur, amount: 10
-  </Toast>
+<HighlightCompo codeLang="ts" code={modules['./md/transition.md'] as string} />
 
-  <Toast transition={blur} color="purple" params={{ amount: 50, delay: 1000 }}>
-    {#snippet icon()}
-      <BellOutline class="h-5 w-5" />
-    {/snippet}
-    Transition type: blur, amount: 50, delay 1000
-  </Toast>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/blur.md'] as string} />
-
-<H3>Fly</H3>
-<CodeWrapper class="flex h-[200px] flex-col items-center space-y-2">
-  <Toast transition={fly} params={{ x: 200 }} color="green">
-    {#snippet icon()}
-      <DownloadOutline class="h-5 w-5" />
-    {/snippet}
-    Transition type: fly right
-  </Toast>
-
-  <Toast transition={fly} params={{ y: 200 }} color="green">
-    {#snippet icon()}
-      <DownloadOutline class="h-5 w-5" />
-    {/snippet}
-    Transition type: fly down
-  </Toast>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/fly.md'] as string} />
 
 <H2>Undo button</H2>
 <CodeWrapper class="flex h-[104px] flex-col items-center">

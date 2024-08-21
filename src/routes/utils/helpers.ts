@@ -21,3 +21,13 @@ export function splitAndCapitalize(text: string) {
   // Get the last element of the array and capitalize it
   return parts[parts.length - 1].charAt(0).toUpperCase() + parts[parts.length - 1].slice(1);
 }
+
+/**
+ * Capitalizes the first letter of a given string.
+ *
+ * @param {string} str - The input string.
+ * @return {string} The input string with the first letter capitalized.
+ */
+export const capitalizeFirstLetter = (str:string)=>{
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}

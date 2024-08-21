@@ -8,6 +8,7 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { capitalizeFirstLetter } from '../../utils/helpers';
 
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
@@ -194,6 +195,30 @@
 </CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/dismissable-alerts.md'] as string} />
 
+<H2>Transitions</H2>
+
+<CodeWrapper class="h-56">
+  <div class="h-16">
+    <Alert color={currentTransition.color as Alert['color']} dismissable bind:alertStatus={transionStatus} transition={currentTransition.transition} params={currentTransition.params}>
+      {#snippet icon()}
+        <InfoCircleSolid class="h-5 w-5" />
+      {/snippet}
+      <span class="font-medium">{capitalizeFirstLetter(selectedTransition)} transition</span>
+    </Alert>
+  </div>
+  <div class="mb-4 flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Transition</Label>
+    {#each transitions as transition}
+      <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={selectedTransition} value={transition.name}>{capitalizeFirstLetter(transition.name)}</Radio>
+    {/each}
+  </div>
+  {#if !transionStatus}
+    <Button class="w-36" color="green" onclick={changeTransitionStatus}>{transionStatus ? '' : 'Open'}</Button>
+  {/if}
+</CodeWrapper>
+
+<HighlightCompo codeLang="ts" code={modules['./md/transition.md'] as string} />
+
 <H2>Border accent</H2>
 <CodeWrapper class="space-y-4">
   <div class="h-20">
@@ -304,23 +329,3 @@
   <Button class="w-48" color="green" onclick={changeClass}>{alertClass ? 'Remove class' : 'Add class'}</Button>
 </CodeWrapper>
 
-<H2>Other transitions</H2>
-
-<CodeWrapper class="h-56">
-  <div class="h-16">
-    <Alert color={currentTransition.color as AlertProps['color']} dismissable bind:alertStatus={transionStatus} transition={currentTransition.transition} params={currentTransition.params}>
-      <span class="font-medium">{selectedTransition} transition</span>
-    </Alert>
-  </div>
-  <div class="mb-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Transition</Label>
-    {#each transitions as transition}
-      <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
-    {/each}
-  </div>
-  {#if !transionStatus}
-    <Button class="w-36" color="green" onclick={changeTransitionStatus}>{transionStatus ? '' : 'Open'}</Button>
-  {/if}
-</CodeWrapper>
-
-<HighlightCompo codeLang="ts" code={modules['./md/transition.md'] as string} />

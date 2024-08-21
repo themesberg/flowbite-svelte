@@ -100,6 +100,6 @@ export interface TransitionParamTypes {
   tick?: (t: number, u: number) => void;
 }
 
-export type ParamsType = FadeParams | BlurParams | FlyParams | SlideParams;
+export type ParamsType = FadeParams | BlurParams | FlyParams | SlideParams | ScaleParams;
 
 export type TransitionFunc = (node: HTMLElement, params: ParamsType) => TransitionConfig;

@@ -9,6 +9,7 @@
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
   import H3 from '../../utils/H3.svelte';
+  import { capitalizeFirstLetter } from '../../utils/helpers';
   import { quintOut } from 'svelte/easing';
   const slideParams = {
     delay: 250,
@@ -62,6 +63,7 @@
     rounded = !rounded;
   };
 
+  // transition example
   type TransitionOption = {
     name: string;
     transition: typeof fly | typeof blur | typeof slide | typeof scale;
@@ -125,6 +127,52 @@
 
 <H2>Pills badge</H2>
 <HighlightCompo codeLang="ts" code={modules['./md/pills-badge.md'] as string} />
+
+<H2>Dismissable badge</H2>
+<CodeWrapper class="h-20">
+  <Badge dismissable large color="violet">Default</Badge>
+</CodeWrapper>
+<HighlightCompo codeLang="ts" code={modules['./md/dismissable-badge.md'] as string} />
+
+<H3>Transitions</H3>
+<CodeWrapper class="h-56">
+  <div class="h-16">
+    <Badge color={currentTransition.color as Badge['color']} dismissable bind:badgeStatus={transionStatus} transition={currentTransition.transition} params={currentTransition.params}>
+      <span class="font-medium">{capitalizeFirstLetter(selectedTransition)} transition</span>
+    </Badge>
+  </div>
+  <div class="mb-4 flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Transition</Label>
+    {#each transitions as transition}
+      <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={selectedTransition} value={transition.name}>{capitalizeFirstLetter(transition.name)}</Radio>
+    {/each}
+  </div>
+  {#if !transionStatus}
+    <Button class="w-36" color="green" onclick={changeTransitionStatus}>{transionStatus ? '' : 'Open'}</Button>
+  {/if}
+</CodeWrapper>
+
+<HighlightCompo codeLang="ts" code={modules['./md/transition.md'] as string} />
+
+<H3>Dismissing with icon</H3>
+<CodeWrapper class="h-20">
+  <Badge dismissable>
+    Default
+    {#snippet icon()}
+      <CheckCircleOutline class="h-5 w-5" />
+    {/snippet}
+  </Badge>
+</CodeWrapper>
+
+<HighlightCompo codeLang="ts" code={modules['./md/dismissable-badge-2.md'] as string} />
+
+<H3>Dismissing with events</H3>
+<CodeWrapper class="h-20">
+  <Badge dismissable large onclick={handleClose} bind:badgeStatus={eventStatus}>Default</Badge>
+</CodeWrapper>
+
+<HighlightCompo codeLang="ts" code={modules['./md/dismissable-badge-3.md'] as string} />
+
 
 <H2>Badge as links</H2>
 <CodeWrapper>
@@ -192,31 +240,6 @@
 </CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/badge-with-icon-only.md'] as string} />
 
-<H2>Dismissable badge</H2>
-<CodeWrapper>
-  <Badge dismissable transition={slide} params={slideParams} large color="lime">Slide transition</Badge>
-  <Badge dismissable large color="violet">Default</Badge>
-</CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/dismissable-badge.md'] as string} />
-
-<H3>Dismissing with icon</H3>
-<CodeWrapper class="h-20">
-  <Badge dismissable>
-    Default
-    {#snippet icon()}
-      <CheckCircleOutline class="h-5 w-5" />
-    {/snippet}
-  </Badge>
-</CodeWrapper>
-
-<HighlightCompo codeLang="ts" code={modules['./md/dismissable-badge-2.md'] as string} />
-<H3>Dismissing with events</H3>
-<CodeWrapper class="h-20">
-  <Badge dismissable large onclick={handleClose} bind:badgeStatus={eventStatus}>Default</Badge>
-</CodeWrapper>
-
-<HighlightCompo codeLang="ts" code={modules['./md/dismissable-badge-3.md'] as string} />
-
 <H2>Opening badge</H2>
 <CodeWrapper class="h-20">
   <Button onclick={openBadge}>Open badge</Button>
@@ -225,23 +248,3 @@
 
 <HighlightCompo codeLang="ts" code={modules['./md/opening-badge.md'] as string} />
 
-<H2>Other transitions</H2>
-
-<CodeWrapper class="h-56">
-  <div class="h-16">
-    <Badge color={currentTransition.color as Badge['color']} dismissable bind:badgeStatus={transionStatus} transition={currentTransition.transition} params={currentTransition.params}>
-      <span class="font-medium">{selectedTransition} transition</span>
-    </Badge>
-  </div>
-  <div class="mb-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Transition</Label>
-    {#each transitions as transition}
-      <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
-    {/each}
-  </div>
-  {#if !transionStatus}
-    <Button class="w-36" color="green" onclick={changeTransitionStatus}>{transionStatus ? '' : 'Open'}</Button>
-  {/if}
-</CodeWrapper>
-
-<HighlightCompo codeLang="ts" code={modules['./md/transition.md'] as string} />
