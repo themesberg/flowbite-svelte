@@ -27,12 +27,12 @@
     desktop: Desktop
   };
 
-  let component: Component = componets[device];
+  let DeviceComponent: Component = componets[device];
 </script>
 
-<component>
+<DeviceComponent>
   {@render children()}
-</component>
+</DeviceComponent>
 
 <!--
 @component

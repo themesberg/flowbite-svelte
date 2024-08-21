@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Listgroup } from '$lib';
+  import { AdjustmentsHorizontalSolid, DownloadSolid, MessagesSolid, UserCircleSolid } from 'flowbite-svelte-icons';
   import type { ListGroupItemType } from '$lib/types';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -29,7 +30,7 @@
       attrs: { type: 'submit' }
     }
   ];
-  import { AdjustmentsHorizontalSolid, DownloadSolid, MessagesSolid, UserCircleSolid, TrashBinSolid } from 'flowbite-svelte-icons';
+
   let icons = [
     { name: 'Profile', icon: UserCircleSolid, mycustomfield: 'data1' },
     {

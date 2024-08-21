@@ -1,7 +1,7 @@
 <script lang="ts">
   import { type SpinnerProps as Props, spinner } from './index';
 
-  let { color = 'primary', bg = 'text-gray-300', size = '8', class: className, currentFill = 'currentFill', currentColor = 'currentColor', ...restProps }: Props = $props();
+  let { color = 'primary', size = '8', class: className, currentFill = 'currentFill', currentColor = 'currentColor', ...restProps }: Props = $props();
 
   let spinnerClass = $derived(spinner({ color, size, className }));
 </script>

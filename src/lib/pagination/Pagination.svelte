@@ -2,7 +2,7 @@
   import { setContext } from 'svelte';
   import { type PaginationProps as Props, pagination, PaginationItem } from '.';
 
-  let { pages = [], previous, next, prevContent, nextContent, activeClass, normalClass, ulClass, table, size, ariaLabel, ...restProps }: Props = $props();
+  let { pages = [], previous, next, prevContent, nextContent, table, size, ariaLabel, ...restProps }: Props = $props();
 
   setContext('group', true);
   setContext('table', table);
@@ -14,7 +14,7 @@
 <nav aria-label={ariaLabel}>
   <ul class={paginationClass}>
     {#if typeof previous === 'function'}
-      <li>
+      <li {...restProps}>
         <PaginationItem {size} onclick={() => previous()} class={table ? 'rounded-none rounded-l' : 'rounded-none  rounded-s-lg'}>
           {#if prevContent}
             {@render prevContent()}

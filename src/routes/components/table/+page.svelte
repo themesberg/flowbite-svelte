@@ -35,7 +35,6 @@
   ];
 
   let openRow = $state();
-  let details;
 
   const toggleRow = (i: number) => {
     openRow = openRow === i ? null : i;

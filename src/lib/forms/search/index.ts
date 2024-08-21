@@ -8,7 +8,7 @@ interface SearchProps {
   right?: Snippet;
   size?: 'sm' | 'md' | 'lg';
   placeholder?: string;
-  value?: any;
+  value?: string;
   show?: boolean;
   use?: Action<HTMLElement, any>;
   class?: string | undefined | null;

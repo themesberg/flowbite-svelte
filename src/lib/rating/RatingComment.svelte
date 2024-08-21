@@ -5,7 +5,6 @@
   interface Props {
     children: Snippet;
     evaluation?: Snippet;
-    ceil?: boolean;
     helpfullink?: string | undefined | null;
     abuselink?: string | undefined | null;
     comment: {
@@ -26,9 +25,7 @@
     };
   }
 
-  let { children, evaluation, ceil, helpfullink, abuselink, comment }: Props = $props();
-
-  let roundedRating: number = ceil ? Math.ceil(comment.rating) : Math.floor(comment.rating);
+  let { children, evaluation, helpfullink, abuselink, comment }: Props = $props();
 </script>
 
 <article>

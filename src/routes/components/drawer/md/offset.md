@@ -2,19 +2,19 @@
     import { Drawer, Button } from 'svelte-5-ui-lib'
     import { sineIn } from 'svelte/easing';
 
-	let transitionParams = {
-		x: -320,
-		duration: 200,
-		easing: sineIn
-	};
+  let transitionParams = {
+    x: -320,
+    duration: 200,
+    easing: sineIn
+  };
     
   const drawerK = uiHelpers();
-	let drawerStatusK = $state(false);
-	const closeDrawerK = drawerK.close;
+  let drawerStatusK = $state(false);
+  const closeDrawerK = drawerK.close;
 
   $effect(() => {
-		drawerStatusK = drawerK.isOpen;
-	});
+    drawerStatusK = drawerK.isOpen;
+  });
 
 </script>
 

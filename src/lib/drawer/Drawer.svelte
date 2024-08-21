@@ -5,12 +5,14 @@
 
   let { children, drawerStatus, closeDrawer, activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = 'left', class: divClass, params, transition = fly, ...restProps }: Props = $props();
 
-  const { base, backdrop: backdropCls } = drawer({
-    position,
-    placement,
-    width,
-    backdrop
-  });
+  const { base, backdrop: backdropCls } = $derived(
+    drawer({
+      position,
+      placement,
+      width,
+      backdrop
+    })
+  );
 </script>
 
 {#if drawerStatus}

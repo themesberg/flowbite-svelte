@@ -28,6 +28,6 @@ export function splitAndCapitalize(text: string) {
  * @param {string} str - The input string.
  * @return {string} The input string with the first letter capitalized.
  */
-export const capitalizeFirstLetter = (str:string)=>{
+export const capitalizeFirstLetter = (str: string) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
-}
+};

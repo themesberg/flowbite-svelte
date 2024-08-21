@@ -3,7 +3,7 @@ import { type VariantProps, tv } from 'tailwind-variants';
 import AccordionItem from './AccordionItem.svelte';
 import type { Snippet } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
-import type { TransitionTypes, TransitionParamTypes, TransitionFunc, ParamsType } from '../types';
+import type { TransitionFunc, ParamsType } from '../types';
 
 const accordionItemVariants = tv({
   base: 'group w-full',

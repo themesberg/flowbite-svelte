@@ -1,8 +1,10 @@
 <script lang="ts">
-  import { Drawer, Button, uiHelpers, Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper } from '$lib';
+  import { Drawer, Button, uiHelpers, Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper, Label, Radio } from '$lib';
   import { InfoCircleSolid, ArrowRightOutline, ChartOutline, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditSolid, ShoppingBagSolid } from 'flowbite-svelte-icons';
-  import { sineIn, quintOut, backInOut } from 'svelte/easing';
-  import { slide, fade, blur } from 'svelte/transition';
+  import { sineIn } from 'svelte/easing';
+  import { blur, fly, slide, scale, fade } from 'svelte/transition';
+  import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
+  import { linear } from 'svelte/easing';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -21,24 +23,6 @@
     easing: sineIn
   };
 
-  let transitionParamsRight = {
-    x: 320,
-    duration: 200,
-    easing: sineIn
-  };
-
-  let transitionParamsTop = {
-    y: -320,
-    duration: 200,
-    easing: sineIn
-  };
-
-  let transitionParamsBottom = {
-    y: 320,
-    duration: 200,
-    easing: sineIn
-  };
-
   const drawerA = uiHelpers();
   let drawerStatusA = $state(false);
   const closeDrawerA = drawerA.close;
@@ -46,22 +30,6 @@
   const drawerB = uiHelpers();
   let drawerStatusB = $state(false);
   const closeDrawerB = drawerB.close;
-
-  const drawerC = uiHelpers();
-  let drawerStatusC = $state(false);
-  const closeDrawerC = drawerC.close;
-
-  const drawerD = uiHelpers();
-  let drawerStatusD = $state(false);
-  const closeDrawerD = drawerD.close;
-
-  const drawerE = uiHelpers();
-  let drawerStatusE = $state(false);
-  const closeDrawerE = drawerE.close;
-
-  const drawerF = uiHelpers();
-  let drawerStatusF = $state(false);
-  const closeDrawerF = drawerF.close;
 
   const drawerG = uiHelpers();
   let drawerStatusG = $state(false);
@@ -83,45 +51,63 @@
   let drawerStatusK = $state(false);
   const closeDrawerK = drawerK.close;
 
-  const drawerFade = uiHelpers();
-  let drawerStatusFade = $state(false);
-  const closeDrawerFade = drawerFade.close;
+  const drawerPlacement = uiHelpers();
+  let drawerStatusPlacement = $state(false);
+  const closeDrawerPlacement = drawerPlacement.close;
 
-  const drawerSlide = uiHelpers();
-  let drawerStatusSlide = $state(false);
-  const closeDrawerSlide = drawerSlide.close;
-
-  const drawerBlur = uiHelpers();
-  let drawerStatusBlur = $state(false);
-  const closeDrawerBlur = drawerBlur.close;
+  const drawerTransition = uiHelpers();
+  let drawerStatusTransition = $state(false);
+  const closeDrawerTransition = drawerTransition.close;
 
   $effect(() => {
     drawerStatusA = drawerA.isOpen;
     drawerStatusB = drawerB.isOpen;
-    drawerStatusC = drawerC.isOpen;
-    drawerStatusD = drawerD.isOpen;
-    drawerStatusE = drawerE.isOpen;
-    drawerStatusF = drawerF.isOpen;
     drawerStatusG = drawerG.isOpen;
     drawerStatusH = drawerH.isOpen;
     drawerStatusI = drawerI.isOpen;
     drawerStatusJ = drawerJ.isOpen;
     drawerStatusK = drawerK.isOpen;
-    drawerStatusFade = drawerFade.isOpen;
-    drawerStatusSlide = drawerSlide.isOpen;
-    drawerStatusBlur = drawerBlur.isOpen;
+    drawerStatusTransition = drawerTransition.isOpen;
+    drawerStatusPlacement = drawerPlacement.isOpen;
   });
   let spanClass = 'flex-1 ms-3 whitespace-nowrap';
+
+  // transition
+  type TransitionOption = {
+    name: string;
+    transition: typeof fly | typeof blur | typeof slide | typeof scale;
+    params: FlyParams | BlurParams | SlideParams | ScaleParams;
+    color: Drawer['color'];
+  };
+
+  const transitions: TransitionOption[] = [
+    { name: 'Fly', transition: fly, params: { duration: 500, easing: linear, x: 150 }, color: 'blue' },
+    { name: 'Blur', transition: blur, params: { duration: 500, easing: linear }, color: 'lime' },
+    { name: 'Slide', transition: slide, params: { duration: 500, easing: linear, x: -150 }, color: 'violet' },
+    { name: 'Scale', transition: scale, params: { duration: 500, easing: linear }, color: 'pink' },
+    { name: 'Fade', transition: fade, params: { duration: 500, easing: linear }, color: 'orange' }
+  ];
+
+  let selectedTransition = $state('Fly');
+  let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
+
+  const placements = [
+    { name: 'Top', placement: 'top', params: { y: -320, duration: 200, easing: sineIn }, width: 'full' },
+    { name: 'Right', placement: 'right', params: { x: 320, duration: 200, easing: sineIn }, width: 'default' },
+    { name: 'Bottom', placement: 'bottom', params: { y: 320, duration: 200, easing: sineIn }, width: 'full' },
+    { name: 'Left', placement: 'left', params: { x: -320, duration: 200, easing: sineIn }, width: 'default' }
+  ];
+
+  let selectedPlacement = $state('Top');
+  let currentPlacement = $derived(placements.find((p) => p.name === selectedPlacement) || placements[0]);
 </script>
 
 <H1>Drawer</H1>
 
 <H2>Setup</H2>
-
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default drawer</H2>
-
 <CodeWrapper>
   <div class="text-center">
     <Button onclick={drawerA.toggle}>Show drawer</Button>
@@ -151,6 +137,68 @@
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/defaultdrawer.md'] as string} />
+
+<H2>Transitions</H2>
+<CodeWrapper>
+  <div class="text-center">
+    <Button onclick={drawerTransition.toggle}>Drawer</Button>
+  </div>
+  <Drawer drawerStatus={drawerStatusTransition} closeDrawer={closeDrawerTransition} transition={currentTransition.transition} params={currentTransition.params}>
+    <div class="flex items-center">
+      <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
+        <InfoCircleSolid class="me-2.5 h-4 w-4" />{selectedTransition} Drawer
+      </h5>
+      <button type="button" onclick={closeDrawerTransition} class="ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
+        <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+        </svg>
+        <span class="sr-only">Close modal</span>
+      </button>
+    </div>
+  </Drawer>
+  <div class="mb-4 flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Transition</Label>
+    {#each transitions as transition}
+      <Radio labelClass="w-24 my-1" name="drawer_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+    {/each}
+  </div>
+</CodeWrapper>
+
+<H2>Placement</H2>
+<CodeWrapper>
+  <div class="text-center">
+    <Button onclick={drawerPlacement.toggle}>Drawer</Button>
+  </div>
+  <Drawer placement={currentPlacement.placement as Drawer['placement']} width={currentPlacement.width as Drawer['width']} drawerStatus={drawerStatusPlacement} closeDrawer={closeDrawerPlacement} transition={fly} params={currentPlacement.params}>
+    <div class="flex items-center">
+      <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
+        <InfoCircleSolid class="me-2.5 h-4 w-4" />{selectedPlacement} Drawer
+      </h5>
+      <button type="button" onclick={closeDrawerPlacement} class="ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
+        <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+        </svg>
+        <span class="sr-only">Close modal</span>
+      </button>
+    </div>
+    <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
+      Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline hover:no-underline dark:text-primary-500"> limited-time sale </a>
+      for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
+    </p>
+    <div class="grid grid-cols-2 gap-4">
+      <Button color="light" href="/">Learn more</Button>
+      <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
+    </div>
+  </Drawer>
+  <div class="mb-4 flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Placement</Label>
+    {#each placements as placement}
+      <Radio labelClass="w-24 my-1" name="drawer_transition" bind:group={selectedPlacement} value={placement.name}>{placement.name}</Radio>
+    {/each}
+  </div>
+</CodeWrapper>
+
+<HighlightCompo codeLang="ts" code={modules['./md/placement.md'] as string} />
 
 <H2>Drawer navigation</H2>
 
@@ -223,132 +271,6 @@
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/navigation.md'] as string} />
-
-<H2>Placement</H2>
-
-<H3>Left drawer</H3>
-
-<CodeWrapper>
-  <div class="text-center">
-    <Button onclick={drawerC.toggle}>Show drawer</Button>
-  </div>
-  <Drawer placement="left" drawerStatus={drawerStatusC} closeDrawer={closeDrawerC} params={transitionParams}>
-    <div class="flex items-center">
-      <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-        <InfoCircleSolid class="me-2.5 h-4 w-4" />Info
-      </h5>
-      <button type="button" onclick={closeDrawerC} class="ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
-        <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-        </svg>
-        <span class="sr-only">Close modal</span>
-      </button>
-    </div>
-    <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
-      Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline hover:no-underline dark:text-primary-500"> limited-time sale </a>
-      for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
-    </p>
-    <div class="grid grid-cols-2 gap-4">
-      <Button color="light" href="/">Learn more</Button>
-      <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
-    </div>
-  </Drawer>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/leftdrawer.md'] as string} />
-
-<H3>Right drawer</H3>
-
-<CodeWrapper>
-  <div class="text-center">
-    <Button onclick={drawerD.toggle}>Show drawer</Button>
-  </div>
-  <Drawer placement="right" drawerStatus={drawerStatusD} closeDrawer={closeDrawerD} params={transitionParamsRight}>
-    <div class="flex items-center">
-      <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-        <InfoCircleSolid class="me-2.5 h-4 w-4" />Info
-      </h5>
-      <button type="button" onclick={closeDrawerD} class="ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
-        <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-        </svg>
-        <span class="sr-only">Close modal</span>
-      </button>
-    </div>
-    <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
-      Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline hover:no-underline dark:text-primary-500"> limited-time sale </a>
-      for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
-    </p>
-    <div class="grid grid-cols-2 gap-4">
-      <Button color="light" href="/">Learn more</Button>
-      <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
-    </div>
-  </Drawer>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/rightdrawer.md'] as string} />
-
-<H3>Top drawer</H3>
-
-<CodeWrapper>
-  <div class="text-center">
-    <Button onclick={drawerE.toggle}>Show drawer</Button>
-  </div>
-  <Drawer placement="top" width="full" drawerStatus={drawerStatusE} closeDrawer={closeDrawerE} params={transitionParamsTop}>
-    <div class="flex items-center">
-      <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-        <InfoCircleSolid class="me-2.5 h-4 w-4" />Info
-      </h5>
-      <button type="button" onclick={closeDrawerE} class="ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
-        <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-        </svg>
-        <span class="sr-only">Close modal</span>
-      </button>
-    </div>
-    <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
-      Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline hover:no-underline dark:text-primary-500"> limited-time sale </a>
-      for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
-    </p>
-    <div class="grid grid-cols-2 gap-4">
-      <Button color="light" href="/">Learn more</Button>
-      <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
-    </div>
-  </Drawer>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/topdrawer.md'] as string} />
-
-<H3>Bottom drawer</H3>
-
-<CodeWrapper>
-  <div class="text-center">
-    <Button onclick={drawerF.toggle}>Show drawer</Button>
-  </div>
-  <Drawer placement="bottom" width="full" drawerStatus={drawerStatusF} closeDrawer={closeDrawerF} params={transitionParamsBottom}>
-    <div class="flex items-center">
-      <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-        <InfoCircleSolid class="me-2.5 h-4 w-4" />Info
-      </h5>
-      <button type="button" onclick={closeDrawerF} class="ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
-        <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-        </svg>
-        <span class="sr-only">Close modal</span>
-      </button>
-    </div>
-    <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
-      Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline hover:no-underline dark:text-primary-500"> limited-time sale </a>
-      for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
-    </p>
-    <div class="grid grid-cols-2 gap-4">
-      <Button color="light" href="/">Learn more</Button>
-      <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
-    </div>
-  </Drawer>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/bottomdrawer.md'] as string} />
 
 <H2>Backdrop</H2>
 
@@ -511,92 +433,3 @@
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/disabling-outside-click.md'] as string} />
-
-<H2>Transition</H2>
-
-<H3>Fade</H3>
-<CodeWrapper>
-  <div class="text-center">
-    <Button onclick={drawerFade.toggle}>Fade drawer</Button>
-  </div>
-
-  <Drawer drawerStatus={drawerStatusFade} closeDrawer={closeDrawerFade} transition={fade} params={{ duration: 1000, delay: 500 }}>
-    <div class="flex items-center">
-      <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-        <InfoCircleSolid class="me-2.5 h-4 w-4" />Info
-      </h5>
-      <button type="button" onclick={closeDrawerFade} class="ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
-        <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-        </svg>
-        <span class="sr-only">Close modal</span>
-      </button>
-    </div>
-    <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
-      Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline hover:no-underline dark:text-primary-500"> limited-time sale </a>
-      for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
-    </p>
-    <div class="grid grid-cols-2 gap-4">
-      <Button color="light" href="/">Learn more</Button>
-      <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
-    </div>
-  </Drawer>
-</CodeWrapper>
-
-<H3>Slide</H3>
-<CodeWrapper>
-  <div class="text-center">
-    <Button onclick={drawerSlide.toggle}>Slide drawer</Button>
-  </div>
-
-  <Drawer drawerStatus={drawerStatusSlide} closeDrawer={closeDrawerSlide} transition={slide} params={{ duration: 1000, easing: backInOut, x: -150 }}>
-    <div class="flex items-center">
-      <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-        <InfoCircleSolid class="me-2.5 h-4 w-4" />Info
-      </h5>
-      <button type="button" onclick={closeDrawerSlide} class="ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
-        <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-        </svg>
-        <span class="sr-only">Close modal</span>
-      </button>
-    </div>
-    <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
-      Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline hover:no-underline dark:text-primary-500"> limited-time sale </a>
-      for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
-    </p>
-    <div class="grid grid-cols-2 gap-4">
-      <Button color="light" href="/">Learn more</Button>
-      <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
-    </div>
-  </Drawer>
-</CodeWrapper>
-
-<H3>Blur</H3>
-<CodeWrapper>
-  <div class="text-center">
-    <Button onclick={drawerBlur.toggle}>Blur drawer</Button>
-  </div>
-
-  <Drawer drawerStatus={drawerStatusBlur} closeDrawer={closeDrawerBlur} transition={blur} params={{ delay: 250, duration: 300, easing: quintOut, opacity: 0.5 }}>
-    <div class="flex items-center">
-      <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-        <InfoCircleSolid class="me-2.5 h-4 w-4" />Info
-      </h5>
-      <button type="button" onclick={closeDrawerBlur} class="ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
-        <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-        </svg>
-        <span class="sr-only">Close modal</span>
-      </button>
-    </div>
-    <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
-      Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline hover:no-underline dark:text-primary-500"> limited-time sale </a>
-      for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
-    </p>
-    <div class="grid grid-cols-2 gap-4">
-      <Button color="light" href="/">Learn more</Button>
-      <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
-    </div>
-  </Drawer>
-</CodeWrapper>

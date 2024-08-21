@@ -16,15 +16,25 @@
     import: 'default',
     eager: true
   });
+  interface Country {
+    value: string;
+    name: string;
+    href?: string;
+  }
+  interface State {
+    value: string;
+    name: string;
+  }
+  let countrySelected: Country | undefined = $state();
+  let customSelected: State | undefined = $state();
 
-  let selected: any = $state();
-  let countries = [
+  let countries: Country[] = [
     { value: 'us', name: 'United States', href: '/' },
     { value: 'ca', name: 'Canada', href: '/' },
     { value: 'fr', name: 'France', href: '/' }
   ];
 
-  let states = [
+  let states: State[] = [
     { value: 'CA', name: 'California' },
     { value: 'TX', name: 'Texas' },
     { value: 'WH', name: 'Washinghton' },
@@ -69,9 +79,9 @@
 <CodeWrapper class="h-48">
   <Label>
     Select an option
-    <Select selectClass="mt-2" items={countries} bind:value={selected} />
+    <Select selectClass="mt-2" items={countries} bind:value={countrySelected} />
   </Label>
-  <Helper class="mt-2">Your selected value is: {selected}</Helper>
+  <Helper class="mt-2">Your selected value is: {countrySelected}</Helper>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/defaultselect.md'] as string} />
@@ -148,7 +158,7 @@
 
 <CodeWrapper>
   <Label for="countries">Select an option</Label>
-  <Select id="countries" selectClass="mt-2" bind:value={selected} placeholder="">
+  <Select id="countries" selectClass="mt-2" bind:value={customSelected} placeholder="">
     <option selected value="all">All</option>
 
     {#each countries as { value, name }}

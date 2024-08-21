@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Toast, toast, Avatar, Button, Label, Radio } from '$lib';
-  import { FireOutline, CheckCircleSolid, PaperPlaneOutline, BellOutline, DownloadOutline, CameraPhotoOutline } from 'flowbite-svelte-icons';
-  import { quintOut, elasticOut, linear } from 'svelte/easing';
+  import { FireOutline, CheckCircleSolid, PaperPlaneOutline, CameraPhotoOutline } from 'flowbite-svelte-icons';
+  import { linear } from 'svelte/easing';
   import { blur, fly, slide, scale } from 'svelte/transition';
   import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
@@ -19,7 +19,6 @@
   let toastColor: Toast['color'] = $state('primary');
   let toastStatus: boolean = $state(true);
 
-
   // transition example
   type TransitionOption = {
     name: string;
@@ -29,13 +28,13 @@
   };
 
   const transitions: TransitionOption[] = [
-    { name: 'fly', transition: fly, params: { duration: 1000, easing: linear, x: 150 }, color: 'blue' },
-    { name: 'blur', transition: blur, params: { duration: 1000, easing: linear }, color: 'lime' },
-    { name: 'slide', transition: slide, params: { duration: 1000, easing: linear, x: -150 }, color: 'violet' },
-    { name: 'scale', transition: scale, params: { duration: 1000, easing: linear }, color: 'pink' }
+    { name: 'Fly', transition: fly, params: { duration: 500, easing: linear, x: 150 }, color: 'blue' },
+    { name: 'Blur', transition: blur, params: { duration: 500, easing: linear }, color: 'lime' },
+    { name: 'Slide', transition: slide, params: { duration: 500, easing: linear, x: -150 }, color: 'violet' },
+    { name: 'Scale', transition: scale, params: { duration: 500, easing: linear }, color: 'pink' }
   ];
 
-  let selectedTransition = $state('fly');
+  let selectedTransition = $state('Fly');
   let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
 
   let transionStatus = $state(true);
@@ -106,7 +105,7 @@
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Transition</Label>
     {#each transitions as transition}
-      <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={selectedTransition} value={transition.name}>{capitalizeFirstLetter(transition.name)}</Radio>
+      <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
     {/each}
   </div>
   {#if !transionStatus}
@@ -115,7 +114,6 @@
 </CodeWrapper>
 
 <HighlightCompo codeLang="ts" code={modules['./md/transition.md'] as string} />
-
 
 <H2>Undo button</H2>
 <CodeWrapper class="flex h-[104px] flex-col items-center">

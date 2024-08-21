@@ -5,11 +5,6 @@
   let { children, right, size = 'lg', placeholder = 'Search', value = $bindable(), show = true, use = () => {}, class: className, ...restProps }: Props = $props();
 
   const { base, content, icon } = $derived(search());
-  const sizes = {
-    sm: 'w-3.5 h-3.5',
-    md: 'w-5 h-5',
-    lg: 'w-6 h-6'
-  };
 </script>
 
 {#if show}

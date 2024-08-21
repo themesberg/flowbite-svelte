@@ -10,13 +10,7 @@
   import H2 from '../../utils/H2.svelte';
   import H3 from '../../utils/H3.svelte';
   import { capitalizeFirstLetter } from '../../utils/helpers';
-  import { quintOut } from 'svelte/easing';
-  const slideParams = {
-    delay: 250,
-    duration: 500,
-    easing: quintOut,
-    axis: 'y'
-  };
+
   let eventStatus = $state(true);
   function handleClose() {
     console.log('Badge dismissed');
@@ -72,13 +66,13 @@
   };
 
   const transitions: TransitionOption[] = [
-    { name: 'fly', transition: fly, params: { duration: 1000, easing: linear, x: 150 }, color: 'blue' },
-    { name: 'blur', transition: blur, params: { duration: 1000, easing: linear }, color: 'lime' },
-    { name: 'slide', transition: slide, params: { duration: 1000, easing: linear, x: -150 }, color: 'violet' },
-    { name: 'scale', transition: scale, params: { duration: 1000, easing: linear }, color: 'pink' }
+    { name: 'Fly', transition: fly, params: { duration: 500, easing: linear, x: 150 }, color: 'blue' },
+    { name: 'Blur', transition: blur, params: { duration: 500, easing: linear }, color: 'lime' },
+    { name: 'Slide', transition: slide, params: { duration: 500, easing: linear, x: -150 }, color: 'violet' },
+    { name: 'Scale', transition: scale, params: { duration: 500, easing: linear }, color: 'pink' }
   ];
 
-  let selectedTransition = $state('fly');
+  let selectedTransition = $state('Fly');
   let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
 
   let transionStatus = $state(true);
@@ -137,14 +131,14 @@
 <H3>Transitions</H3>
 <CodeWrapper class="h-56">
   <div class="h-16">
-    <Badge color={currentTransition.color as Badge['color']} dismissable bind:badgeStatus={transionStatus} transition={currentTransition.transition} params={currentTransition.params}>
+    <Badge large color={currentTransition.color as Badge['color']} dismissable bind:badgeStatus={transionStatus} transition={currentTransition.transition} params={currentTransition.params}>
       <span class="font-medium">{capitalizeFirstLetter(selectedTransition)} transition</span>
     </Badge>
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Transition</Label>
     {#each transitions as transition}
-      <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={selectedTransition} value={transition.name}>{capitalizeFirstLetter(transition.name)}</Radio>
+      <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
     {/each}
   </div>
   {#if !transionStatus}
@@ -172,7 +166,6 @@
 </CodeWrapper>
 
 <HighlightCompo codeLang="ts" code={modules['./md/dismissable-badge-3.md'] as string} />
-
 
 <H2>Badge as links</H2>
 <CodeWrapper>
@@ -247,4 +240,3 @@
 </CodeWrapper>
 
 <HighlightCompo codeLang="ts" code={modules['./md/opening-badge.md'] as string} />
-

@@ -1,7 +1,6 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import Star from './Star.svelte';
-  import { twMerge } from 'tailwind-merge';
   import { idGenerator } from '$lib/uiHelpers.svelte';
   import type { Component } from 'svelte';
 

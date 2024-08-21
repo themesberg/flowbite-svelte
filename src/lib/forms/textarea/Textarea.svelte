@@ -5,7 +5,6 @@
   import type { HTMLTextareaAttributes } from 'svelte/elements';
   // import Wrapper from '../utils/Wrapper.svelte';
   interface Props extends HTMLTextareaAttributes {
-    children?: Snippet;
     header?: Snippet;
     footer?: Snippet;
     value?: string | string[] | number | undefined | null;
@@ -17,7 +16,7 @@
     class?: string | undefined | null;
   }
 
-  let { children, header, footer, value, wrappedClass = 'block w-full text-sm border-0 px-0 bg-inherit dark:bg-inherit focus:outline-none focus:ring-0 disabled:cursor-not-allowed disabled:opacity-50', unWrappedClass = 'p-2.5 text-sm focus:ring-primary-500 border-gray-300 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 disabled:cursor-not-allowed disabled:opacity-50', innerWrappedClass = 'py-2 px-4 bg-white dark:bg-gray-800', headerClass = '', footerClass = '', class: className = '', ...restProps }: Props = $props();
+  let { header, footer, value, wrappedClass = 'block w-full text-sm border-0 px-0 bg-inherit dark:bg-inherit focus:outline-none focus:ring-0 disabled:cursor-not-allowed disabled:opacity-50', unWrappedClass = 'p-2.5 text-sm focus:ring-primary-500 border-gray-300 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 disabled:cursor-not-allowed disabled:opacity-50', innerWrappedClass = 'py-2 px-4 bg-white dark:bg-gray-800', headerClass = '', footerClass = '', class: className = '', ...restProps }: Props = $props();
   const background = getContext('background');
 
   let wrapped: boolean = $state(false);

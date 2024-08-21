@@ -267,13 +267,6 @@
     }
   };
 
-  const othercomponents: ListType = {
-    helper: {
-      checked: true,
-      notes: 'Updated: class names'
-    }
-  };
-
   function analyzeComponents(components: ListType) {
     let total = 0;
     let pageChecked = 0;

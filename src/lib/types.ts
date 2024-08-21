@@ -1,4 +1,4 @@
-import type { TransitionConfig, FadeParams, BlurParams, FlyParams, SlideParams, ScaleParams, DrawParams, CrossfadeParams } from 'svelte/transition';
+import type { TransitionConfig, FadeParams, BlurParams, FlyParams, SlideParams, ScaleParams } from 'svelte/transition';
 
 // primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
 export type ColorName = 'primary' | 'secondary' | 'gray' | 'red' | 'orange' | 'amber' | 'yellow' | 'lime' | 'green' | 'emerald' | 'teal' | 'cyan' | 'sky' | 'blue' | 'indigo' | 'violet' | 'purple' | 'fuchsia' | 'pink' | 'rose';

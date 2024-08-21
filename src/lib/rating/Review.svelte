@@ -18,10 +18,10 @@
 
   interface Props extends HTMLAttributes<HTMLElement> {
     children: Snippet;
-    address?: any;
-    item1?: any;
-    item2?: any;
-    item3?: any;
+    address?: Snippet;
+    item1?: Snippet;
+    item2?: Snippet;
+    item3?: Snippet;
     review?: ReviewType;
     articleClass?: string | undefined | null;
     divClass?: string | undefined | null;
@@ -55,17 +55,23 @@
         <ul class={ulClass}>
           {#if review.item1}
             <li class={twMerge(liClass)}>
-              {@render item1()}
+              {#if item1}
+                {@render item1()}
+              {/if}
             </li>
           {/if}
           {#if review.item2}
             <li class={liClass}>
-              {@render item2()}
+              {#if item2}
+                {@render item2()}
+              {/if}
             </li>
           {/if}
           {#if review.item3}
             <li class={twMerge(liClass)}>
-              {@render item3()}
+              {#if item3}
+                {@render item3()}
+              {/if}
             </li>
           {/if}
         </ul>

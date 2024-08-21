@@ -2,7 +2,7 @@
   import { Label } from '../label';
   import { type ToggleProps as Props, toggle } from './index';
 
-  let { children, toggleSize = 'default', value, checked = $bindable(), class: className, color = 'primary', aria_describedby, labelClass, inputClass, spanClass, ...restProps }: Props = $props();
+  let { children, toggleSize = 'default', value, checked = $bindable(), color = 'primary', aria_describedby, labelClass, inputClass, spanClass, ...restProps }: Props = $props();
 
   const { input, label, span } = $derived(toggle({ color, size: toggleSize }));
 </script>

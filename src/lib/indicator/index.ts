@@ -1,7 +1,7 @@
 import Indicator from './Indicator.svelte';
 import type { Snippet } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
-import { type VariantProps, tv } from 'tailwind-variants';
+import { type VariantProps } from 'tailwind-variants';
 import { indicator } from './theme';
 
 type ColorType = VariantProps<typeof indicator>['color'];

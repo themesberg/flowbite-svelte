@@ -11,7 +11,6 @@
   };
   interface Props extends HTMLTableAttributes {
     children?: Snippet;
-    svgSearch?: any;
     header?: Snippet;
     footer?: Snippet;
     divClass?: string | undefined | null;
@@ -26,11 +25,10 @@
     svgDivClass?: string | undefined | null;
     svgClass?: string | undefined | null;
     tableClass?: string | undefined | null;
-    classDiv?: string | undefined | null;
     class?: string | undefined | null;
   }
 
-  let { children, svgSearch, header, footer, divClass = 'relative overflow-x-auto shadow-md sm:rounded-lg', inputValue = $bindable(), striped, hoverable, customColor = '', color = 'default', innerDivClass = 'p-4', inputClass, searchClass = 'relative mt-1', svgDivClass, svgClass = 'w-5 h-5 text-gray-500 dark:text-gray-400', tableClass = 'w-full text-left text-sm', classDiv, class: className, ...restProps }: Props = $props();
+  let { children, header, footer, divClass = 'relative overflow-x-auto shadow-md sm:rounded-lg', inputValue = $bindable(), striped, hoverable, customColor = '', color = 'default', innerDivClass = 'p-4', inputClass, searchClass = 'relative mt-1', svgDivClass, svgClass = 'w-5 h-5 text-gray-500 dark:text-gray-400', tableClass = 'w-full text-left text-sm', class: className, ...restProps }: Props = $props();
 
   let inputCls = twMerge('bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 p-2.5 ps-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500', inputClass);
   let svgDivCls = twMerge('absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none', svgDivClass);

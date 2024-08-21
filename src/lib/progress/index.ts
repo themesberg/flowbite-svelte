@@ -1,5 +1,4 @@
 import Progressbar from './Progressbar.svelte';
-import { type VariantProps, tv } from 'tailwind-variants';
 import type { ProgressBarColorType } from '$lib/types';
 import type { HTMLAttributes } from 'svelte/elements';
 import type { EasingFunction } from 'svelte/transition';

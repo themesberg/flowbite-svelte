@@ -7,7 +7,7 @@
 </script>
 
 {#each timelines as { name, src, alt, isPrivate, href, comment }}
-  <li>
+  <li {...restProps}>
     <a {href} class={a({ class: aClass })}>
       <img class={img({ class: imgClass })} {src} {alt} />
       <div class={div({ class: divClass })}>

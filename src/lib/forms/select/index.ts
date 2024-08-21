@@ -15,7 +15,6 @@ interface SelectProps extends Omit<HTMLSelectAttributes, 'size'> {
   underline?: boolean;
   size?: 'sm' | 'md' | 'lg';
   selectClass?: string | undefined;
-  underlineClass?: string | undefined;
   placeholder?: string | undefined | null;
 }
 

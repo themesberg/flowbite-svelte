@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { quintOut } from 'svelte/easing';
   import { Banner, banner, Button, Skeleton, ImagePlaceholder, Label, Radio, type BannerProps } from '$lib';
   import { BullhornOutline, SalePercentSolid, ArrowRightOutline, BookOpenSolid } from 'flowbite-svelte-icons';
   import { blur, fly, slide, scale } from 'svelte/transition';
@@ -9,6 +8,7 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { capitalizeFirstLetter } from '../../utils/helpers';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -51,13 +51,13 @@
   };
 
   const transitions: TransitionOption[] = [
-    { name: 'fly', transition: fly, params: { duration: 1000, easing: linear, x: 150 }, color: 'blue' },
-    { name: 'blur', transition: blur, params: { duration: 1000, easing: linear }, color: 'lime' },
-    { name: 'slide', transition: slide, params: { duration: 1000, easing: linear, x: -150 }, color: 'violet' },
-    { name: 'scale', transition: scale, params: { duration: 1000, easing: linear }, color: 'pink' }
+    { name: 'Fly', transition: fly, params: { duration: 500, easing: linear, x: 150 }, color: 'blue' },
+    { name: 'Blur', transition: blur, params: { duration: 500, easing: linear }, color: 'lime' },
+    { name: 'Slide', transition: slide, params: { duration: 500, easing: linear, x: -150 }, color: 'violet' },
+    { name: 'Scale', transition: scale, params: { duration: 500, easing: linear }, color: 'pink' }
   ];
 
-  let selectedTransition = $state('fly');
+  let selectedTransition = $state('Fly');
   let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
 
   let transionStatus = $state(true);
@@ -125,6 +125,32 @@
     {/if}
   </div>
 </CodeWrapper>
+
+<H2>Transitions</H2>
+<p>The `transition` and `params` props allow you to apply transition effects to components when they enter or leave the view. Svelte provides built-in transitions like `fly`, `slide`, `blur`, `fade`, and `scale`.</p>
+
+<CodeWrapper class="relative flex flex-col">
+  <div class="h-[470px]">
+    <Skeleton class="py-4" />
+    <ImagePlaceholder class="py-4" />
+    <Banner color={currentTransition.color as Banner['color']} dismissable bind:bannerStatus={transionStatus} transition={currentTransition.transition} params={currentTransition.params}>
+      <span class="font-medium">{capitalizeFirstLetter(selectedTransition)} transition</span>
+    </Banner>
+  </div>
+  <div class="h-28">
+    <div class="mb-4 flex flex-wrap space-x-4">
+      <Label class="mb-4 w-full font-bold">Transition</Label>
+      {#each transitions as transition}
+        <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+      {/each}
+    </div>
+    {#if !transionStatus}
+      <Button class="w-36" color="green" onclick={changeTransitionStatus}>{transionStatus ? '' : 'Open'}</Button>
+    {/if}
+  </div>
+</CodeWrapper>
+
+<HighlightCompo codeLang="ts" code={modules['./md/transition.md'] as string} />
 
 <H2>Bottom banner position</H2>
 
@@ -206,30 +232,3 @@
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/informational.md'] as string} />
-
-<H2>Other transitions</H2>
-
-<p>The `transition` and `params` props allow you to apply transition effects to components when they enter or leave the view. Svelte provides built-in transitions like `fly`, `slide`, `blur`, `fade`, and `scale`.</p>
-
-<CodeWrapper class="relative flex flex-col">
-  <div class="h-[470px]">
-    <Skeleton class="py-4" />
-    <ImagePlaceholder class="py-4" />
-    <Banner color={currentTransition.color as Banner['color']} dismissable bind:bannerStatus={transionStatus} transition={currentTransition.transition} params={currentTransition.params}>
-      <span class="font-medium">{selectedTransition} transition</span>
-    </Banner>
-  </div>
-  <div class="h-28">
-    <div class="mb-4 flex flex-wrap space-x-4">
-      <Label class="mb-4 w-full font-bold">Transition</Label>
-      {#each transitions as transition}
-        <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
-      {/each}
-    </div>
-    {#if !transionStatus}
-      <Button class="w-36" color="green" onclick={changeTransitionStatus}>{transionStatus ? '' : 'Open'}</Button>
-    {/if}
-  </div>
-</CodeWrapper>
-
-<HighlightCompo codeLang="ts" code={modules['./md/transition.md'] as string} />

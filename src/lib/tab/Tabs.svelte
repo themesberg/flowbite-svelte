@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { writable, type Writable } from 'svelte/store';
+  import { writable } from 'svelte/store';
   import { setContext } from 'svelte';
   import { type TabsProps as Props, type TabCtxType, tabs } from '.';
 
-  let { children, tabStyle = 'none', ulClass, contentClass, divider = true, activeClass, inactiveClass, class: classname, ...restProps }: Props = $props();
+  let { children, tabStyle = 'none', ulClass, contentClass, divider = true, ...restProps }: Props = $props();
 
   const { base, content, divider: dividerClass, active, inactive } = $derived(tabs({ tabStyle, hasDivider: divider }));
 

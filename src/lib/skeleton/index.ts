@@ -1,5 +1,5 @@
 import type { HTMLAttributes } from 'svelte/elements';
-import { type VariantProps, tv } from 'tailwind-variants';
+import { type VariantProps } from 'tailwind-variants';
 import CardPlaceholder from './CardPlaceholder.svelte';
 import ImagePlaceholder from './ImagePlaceholder.svelte';
 import ListPlaceholder from './ListPlaceholder.svelte';

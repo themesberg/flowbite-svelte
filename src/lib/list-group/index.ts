@@ -28,8 +28,6 @@ interface ListgroupItemProps extends HTMLAnchorAttributes {
   currentClass?: string | undefined | null;
   normalClass?: string | undefined | null;
   disabledClass?: string | undefined | null;
-  focusClass?: string | undefined | null;
-  hoverClass?: string | undefined | null;
   liClass?: string | undefined | null;
   class?: string | undefined | null;
 }

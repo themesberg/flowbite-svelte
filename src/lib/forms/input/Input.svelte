@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-  import type { SizeType, FormSizeType } from '$lib/types';
+  import type { SizeType } from '$lib/types';
   export function clampSize(s: SizeType) {
     return s && s === 'xs' ? 'sm' : s === 'xl' ? 'lg' : s;
   }
@@ -9,7 +9,7 @@
   import { getContext } from 'svelte';
   import { type InputProps as Props, input } from '.';
 
-  let { children, left, right, value = $bindable(), size, defaultClass, color = 'default', floatClass, class: className, classLeft, classRight, show = false, ...restProps }: Props = $props();
+  let { children, left, right, value = $bindable(), size, color = 'default', class: className, classLeft, classRight, ...restProps }: Props = $props();
 
   // tinted if put in component having its own background
   let background: boolean = getContext('background');

@@ -2,7 +2,7 @@ import TabItem from './TabItem.svelte';
 import Tabs from './Tabs.svelte';
 import type { Snippet } from 'svelte';
 import type { HTMLAttributes, HTMLLiAttributes } from 'svelte/elements';
-import { writable, type Writable } from 'svelte/store';
+import { type Writable } from 'svelte/store';
 import { tabs, tabItem } from './theme';
 
 interface TabsProps extends HTMLAttributes<HTMLUListElement> {
@@ -11,8 +11,6 @@ interface TabsProps extends HTMLAttributes<HTMLUListElement> {
   ulClass?: string | undefined | null;
   contentClass?: string | undefined | null;
   divider?: boolean;
-  activeClass?: string | undefined | null;
-  inactiveClass?: string | undefined | null;
   class?: string | undefined | null;
 }
 
