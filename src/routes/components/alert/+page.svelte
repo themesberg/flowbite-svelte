@@ -2,6 +2,7 @@
   import { Alert, alert as fsalert, Button, Label, Radio, type AlertProps } from '$lib';
   import { InfoCircleSolid, EyeSolid } from 'flowbite-svelte-icons';
   import { blur, fly, slide, scale } from 'svelte/transition';
+  import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
   import { linear } from 'svelte/easing';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -65,6 +66,27 @@
   let scaleStatus: AlertProps['alertStatus'] = $state(true);
   const changeScaleStatus = () => {
     scaleStatus = !scaleStatus;
+  }
+
+  const transitions = [
+    { name: 'fly', transition: fly, params: { duration: 1000, easing: linear, x: 150 }, color: 'blue' },
+    { name: 'blur', transition: blur , params: { duration: 1000, easing: linear }, color: 'lime' },
+    { name: 'slide', transition: slide, params: { duration: 1000, easing: linear, x: -150 }, color: 'violet' },
+    { name: 'scale', transition: scale, params: { duration: 1000, easing: linear }, color: 'pink' }
+  ];
+  
+  type TransitionOption = {
+    name: string;
+    transition: typeof fly | typeof blur | typeof slide | typeof scale;
+    params: FlyParams | BlurParams | SlideParams | ScaleParams;
+  };
+  
+  let selectedTransition = $state('fly');
+  let currentTransition = $derived(transitions.find(t => t.name === selectedTransition) || transitions[0]);
+
+  let transionStatus = $state(true);
+  const changeTransitionStatus = () => {
+    transionStatus = !transionStatus;
   }
 
 </script>
@@ -299,37 +321,21 @@
 
 <H2>Transition</H2>
 
-<CodeWrapper class="h-[360px]">
+<CodeWrapper class="h-56">
   <div class="h-16">
-  <Alert color="blue" dismissable bind:alertStatus={flyStatus} transition={fly} params={{duration: 1000, easing: linear, x: 150}}>
-    <span class="font-medium">Fly transition</span>
-  </Alert>
-  </div>
-  <div class="h-16">
-  <Alert color="lime" dismissable bind:alertStatus={blurStatus} transition={blur} params={{duration: 1000, easing: linear}}>
-    <span class="font-medium">Blur transition</span>
-  </Alert>
-  </div>
-  <div class="h-16">
-    <Alert color="violet" dismissable bind:alertStatus={slideStatus} transition={slide} params={{duration: 1000, easing: linear,  x: -150}}>
-      <span class="font-medium">Slide transition</span>
+    <Alert color={currentTransition.color as AlertProps['color']} dismissable bind:alertStatus={transionStatus} transition={currentTransition.transition} params={currentTransition.params}>
+      <span class="font-medium">{selectedTransition} transition</span>
     </Alert>
-  </div>
-  <div class="h-16">
-    <Alert color="pink" dismissable bind:alertStatus={scaleStatus} transition={scale} params={{duration: 1000, easing: linear}}>
-      <span class="font-medium">Scale transition</span>
-    </Alert>
-  </div>
-  {#if !flyStatus}
-  <Button class="w-36" color="green" onclick={changeFlyStatus}>{flyStatus ? '' : 'Open fly'}</Button>
-  {/if}
-  {#if !blurStatus}
-  <Button class="w-36" color="green" onclick={changeBlurStatus}>{blurStatus ? '' : 'Open blur'}</Button>
-  {/if}
-  {#if !slideStatus}
-  <Button class="w-36" color="green" onclick={changeSlideStatus}>{slideStatus ? '' : 'Open slide'}</Button>
-  {/if}
-  {#if !scaleStatus}
-  <Button class="w-36" color="green" onclick={changeScaleStatus}>{scaleStatus ? '' : 'Open scale'}</Button>
-  {/if}
+    </div>
+    <div class="flex flex-wrap space-x-4 mb-4">
+      <Label class="mb-4 w-full font-bold">Transition</Label>
+      {#each transitions as transition}
+        <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+      {/each}
+    </div>
+    {#if !transionStatus}
+    <Button class="w-36" color="green" onclick={changeTransitionStatus}>{transionStatus ? '' : 'Open'}</Button>
+    {/if}
 </CodeWrapper>
+
+<HighlightCompo codeLang="ts" code={modules['./md/transition.md'] as string} />
