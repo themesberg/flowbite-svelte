@@ -10,7 +10,7 @@
 
 <!-- Dropdown menu -->
 {#if dropdownStatus}
-  <div {...restProps} class={base({ class: className })} transition:transition={params as ParamsType} >
+  <div {...restProps} class={base({ class: className })} transition:transition={params as ParamsType}>
     {@render children()}
   </div>
 

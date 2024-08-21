@@ -1,11 +1,10 @@
 <script lang="ts">
-  import { slide } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
   import { Banner, banner, Button, Skeleton, ImagePlaceholder, Label, Radio, type BannerProps } from '$lib';
-  import { BullhornOutline, SalePercentSolid, ArrowRightOutline, BookOpenSolid, BullhornSolid } from 'flowbite-svelte-icons';
-
-  const params = { delay: 250, duration: 500, easing: quintOut };
-
+  import { BullhornOutline, SalePercentSolid, ArrowRightOutline, BookOpenSolid } from 'flowbite-svelte-icons';
+  import { blur, fly, slide, scale } from 'svelte/transition';
+  import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
+  import { linear } from 'svelte/easing';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -41,6 +40,29 @@
   let bannerStatus = $state(true);
   const changeStatus = () => {
     bannerStatus = true;
+  };
+
+  // transition
+  type TransitionOption = {
+    name: string;
+    transition: typeof fly | typeof blur | typeof slide | typeof scale;
+    params: FlyParams | BlurParams | SlideParams | ScaleParams;
+    color: Banner['color'];
+  };
+
+  const transitions: TransitionOption[] = [
+    { name: 'fly', transition: fly, params: { duration: 1000, easing: linear, x: 150 }, color: 'blue' },
+    { name: 'blur', transition: blur, params: { duration: 1000, easing: linear }, color: 'lime' },
+    { name: 'slide', transition: slide, params: { duration: 1000, easing: linear, x: -150 }, color: 'violet' },
+    { name: 'scale', transition: scale, params: { duration: 1000, easing: linear }, color: 'pink' }
+  ];
+
+  let selectedTransition = $state('fly');
+  let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
+
+  let transionStatus = $state(true);
+  const changeTransitionStatus = () => {
+    transionStatus = !transionStatus;
   };
 </script>
 
@@ -185,23 +207,29 @@
 
 <HighlightCompo code={modules['./md/informational.md'] as string} />
 
-<H2>Transition</H2>
+<H2>Other transitions</H2>
 
 <p>The `transition` and `params` props allow you to apply transition effects to components when they enter or leave the view. Svelte provides built-in transitions like `fly`, `slide`, `blur`, `fade`, and `scale`.</p>
 
 <CodeWrapper class="relative flex flex-col">
-  <Skeleton class="py-4" />
-  <ImagePlaceholder class="py-4" />
-
-  <Banner id="default-banner" position="absolute" transition={slide} {params}>
-    <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
-      <span class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600">
-        <BullhornSolid class="h-3 w-3 text-gray-500 dark:text-gray-400" />
-        <span class="sr-only">Light bulb</span>
-      </span>
-      <span>
-        New brand identity has been launched for the <a href="https://flowbite.com" class="decoration-600 dark:decoration-500 inline font-medium text-primary-600 underline decoration-solid underline-offset-2 hover:no-underline dark:text-primary-500"> Flowbite Library </a>
-      </span>
-    </p>
-  </Banner>
+  <div class="h-[470px]">
+    <Skeleton class="py-4" />
+    <ImagePlaceholder class="py-4" />
+    <Banner color={currentTransition.color as Banner['color']} dismissable bind:bannerStatus={transionStatus} transition={currentTransition.transition} params={currentTransition.params}>
+      <span class="font-medium">{selectedTransition} transition</span>
+    </Banner>
+  </div>
+  <div class="h-28">
+    <div class="mb-4 flex flex-wrap space-x-4">
+      <Label class="mb-4 w-full font-bold">Transition</Label>
+      {#each transitions as transition}
+        <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+      {/each}
+    </div>
+    {#if !transionStatus}
+      <Button class="w-36" color="green" onclick={changeTransitionStatus}>{transionStatus ? '' : 'Open'}</Button>
+    {/if}
+  </div>
 </CodeWrapper>
+
+<HighlightCompo codeLang="ts" code={modules['./md/transition.md'] as string} />

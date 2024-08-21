@@ -8,7 +8,7 @@
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
   import H3 from '../../utils/H3.svelte';
-  
+
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -549,7 +549,7 @@
     <Button onclick={drawerSlide.toggle}>Slide drawer</Button>
   </div>
 
-  <Drawer drawerStatus={drawerStatusSlide} closeDrawer={closeDrawerSlide} transition={slide} params={{duration: 1000, easing: backInOut, x: -150}}>
+  <Drawer drawerStatus={drawerStatusSlide} closeDrawer={closeDrawerSlide} transition={slide} params={{ duration: 1000, easing: backInOut, x: -150 }}>
     <div class="flex items-center">
       <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
         <InfoCircleSolid class="me-2.5 h-4 w-4" />Info

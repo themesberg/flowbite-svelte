@@ -1,7 +1,7 @@
 <script lang="ts">
   import { AccordionItem, Accordion, Button } from '$lib';
   import { ChevronDoubleUpOutline, ChevronDoubleDownOutline, CartSolid, CogOutline } from 'flowbite-svelte-icons';
-  import { fade, fly, slide } from 'svelte/transition';
+  import { fade, fly } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -229,7 +229,7 @@
     </AccordionItem>
     <AccordionItem transition={fade} params={{ duration: 1000 }}>
       {#snippet header()}
-        Fade, duration: 1000 
+        Fade, duration: 1000
       {/snippet}
       <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     </AccordionItem>

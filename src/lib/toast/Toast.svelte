@@ -10,9 +10,7 @@
 </script>
 
 {#if toastStatus}
-  <div role="alert" transition:transition={params as ParamsType} {...restProps} class={base({ class: baseClass })} 
-  
-  >
+  <div role="alert" transition:transition={params as ParamsType} {...restProps} class={base({ class: baseClass })}>
     {#if icon}
       <div class={iconVariants({ class: iconClass })}>
         {@render icon()}

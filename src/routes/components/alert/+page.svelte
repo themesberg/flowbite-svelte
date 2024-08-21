@@ -8,7 +8,7 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import H3 from '../../utils/H3.svelte';
+
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -51,44 +51,29 @@
   const changeClass = () => {
     alertClass = alertClass === '' ? 'p-8' : '';
   };
-  let flyStatus: AlertProps['alertStatus'] = $state(true);
-  const changeFlyStatus = () => {
-    flyStatus = !flyStatus;
-  }
-  let blurStatus: AlertProps['alertStatus'] = $state(true);
-  const changeBlurStatus = () => {
-    blurStatus = !blurStatus;
-  }
-  let slideStatus: AlertProps['alertStatus'] = $state(true);
-  const changeSlideStatus = () => {
-    slideStatus = !slideStatus;
-  }
-  let scaleStatus: AlertProps['alertStatus'] = $state(true);
-  const changeScaleStatus = () => {
-    scaleStatus = !scaleStatus;
-  }
 
-  const transitions = [
-    { name: 'fly', transition: fly, params: { duration: 1000, easing: linear, x: 150 }, color: 'blue' },
-    { name: 'blur', transition: blur , params: { duration: 1000, easing: linear }, color: 'lime' },
-    { name: 'slide', transition: slide, params: { duration: 1000, easing: linear, x: -150 }, color: 'violet' },
-    { name: 'scale', transition: scale, params: { duration: 1000, easing: linear }, color: 'pink' }
-  ];
-  
+  // transition
   type TransitionOption = {
     name: string;
     transition: typeof fly | typeof blur | typeof slide | typeof scale;
     params: FlyParams | BlurParams | SlideParams | ScaleParams;
+    color: Alert['color'];
   };
-  
+
+  const transitions: TransitionOption[] = [
+    { name: 'fly', transition: fly, params: { duration: 1000, easing: linear, x: 150 }, color: 'blue' },
+    { name: 'blur', transition: blur, params: { duration: 1000, easing: linear }, color: 'lime' },
+    { name: 'slide', transition: slide, params: { duration: 1000, easing: linear, x: -150 }, color: 'violet' },
+    { name: 'scale', transition: scale, params: { duration: 1000, easing: linear }, color: 'pink' }
+  ];
+
   let selectedTransition = $state('fly');
-  let currentTransition = $derived(transitions.find(t => t.name === selectedTransition) || transitions[0]);
+  let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
 
   let transionStatus = $state(true);
   const changeTransitionStatus = () => {
     transionStatus = !transionStatus;
-  }
-
+  };
 </script>
 
 <H1>Alert</H1>
@@ -303,8 +288,8 @@
   </div>
   <div class="h-12">
     {#if !alertStatus2}
-    <Button color="light" onclick={changeStatus}>Open alert</Button>
-  {/if}
+      <Button color="light" onclick={changeStatus}>Open alert</Button>
+    {/if}
   </div>
 
   <div class="flex flex-wrap space-x-4">
@@ -319,23 +304,23 @@
   <Button class="w-48" color="green" onclick={changeClass}>{alertClass ? 'Remove class' : 'Add class'}</Button>
 </CodeWrapper>
 
-<H2>Transition</H2>
+<H2>Other transitions</H2>
 
 <CodeWrapper class="h-56">
   <div class="h-16">
     <Alert color={currentTransition.color as AlertProps['color']} dismissable bind:alertStatus={transionStatus} transition={currentTransition.transition} params={currentTransition.params}>
       <span class="font-medium">{selectedTransition} transition</span>
     </Alert>
-    </div>
-    <div class="flex flex-wrap space-x-4 mb-4">
-      <Label class="mb-4 w-full font-bold">Transition</Label>
-      {#each transitions as transition}
-        <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
-      {/each}
-    </div>
-    {#if !transionStatus}
+  </div>
+  <div class="mb-4 flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Transition</Label>
+    {#each transitions as transition}
+      <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+    {/each}
+  </div>
+  {#if !transionStatus}
     <Button class="w-36" color="green" onclick={changeTransitionStatus}>{transionStatus ? '' : 'Open'}</Button>
-    {/if}
+  {/if}
 </CodeWrapper>
 
 <HighlightCompo codeLang="ts" code={modules['./md/transition.md'] as string} />
