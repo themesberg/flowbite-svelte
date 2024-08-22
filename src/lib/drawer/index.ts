@@ -1,9 +1,10 @@
 import Drawer from './Drawer.svelte';
+import Drawerhead from './Drawerhead.svelte';
 import { type VariantProps } from 'tailwind-variants';
 import type { Snippet } from 'svelte';
-import type { HTMLAttributes } from 'svelte/elements';
+import type { HTMLAttributes, HTMLButtonAttributes } from 'svelte/elements';
 import type { TransitionFunc, ParamsType } from '../types';
-import { drawer } from './theme';
+import { drawer, drawerhead } from './theme';
 
 type WidthType = VariantProps<typeof drawer>['width'];
 type PlacementType = VariantProps<typeof drawer>['placement'];
@@ -24,4 +25,13 @@ interface DrawerProps extends HTMLAttributes<HTMLDivElement> {
   transition?: TransitionFunc;
 }
 
-export { Drawer, drawer, type DrawerProps };
+interface DrawerheadProps extends HTMLButtonAttributes {
+  closeIcon?: Snippet;
+  children?: Snippet;
+  tag?: string;
+  headClass?: string | undefined;
+  buttonClass?: string | undefined;
+  svgClass?: string | undefined;
+}
+
+export { Drawer, drawer, Drawerhead, drawerhead, type DrawerProps, type DrawerheadProps };

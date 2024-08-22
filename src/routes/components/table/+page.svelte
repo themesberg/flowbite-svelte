@@ -49,6 +49,8 @@
     import: 'default',
     eager: true
   });
+
+  let details;
 </script>
 
 <H1>Table</H1>

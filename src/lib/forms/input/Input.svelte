@@ -1,13 +1,7 @@
-<script context="module" lang="ts">
-  import type { SizeType } from '$lib/types';
-  export function clampSize(s: SizeType) {
-    return s && s === 'xs' ? 'sm' : s === 'xl' ? 'lg' : s;
-  }
-</script>
-
 <script lang="ts">
+  import type { SizeType } from '$lib/types';
   import { getContext } from 'svelte';
-  import { type InputProps as Props, input } from '.';
+  import { type InputProps as Props, input, clampSize } from '.';
 
   let { children, left, right, value = $bindable(), size, color = 'default', class: className, classLeft, classRight, ...restProps }: Props = $props();
 

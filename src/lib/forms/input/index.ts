@@ -1,9 +1,8 @@
 import Input from './Input.svelte';
 import type { HTMLInputAttributes } from 'svelte/elements';
-import type { FormSizeType } from '$lib/types';
+import type { FormSizeType, ColorName, SizeType } from '$lib/types';
 import type { Snippet } from 'svelte';
 import { input } from './theme';
-import { type ColorName } from '$lib/types';
 
 interface InputProps extends Omit<HTMLInputAttributes, 'size'> {
   children?: Snippet;
@@ -17,4 +16,8 @@ interface InputProps extends Omit<HTMLInputAttributes, 'size'> {
   class?: string | undefined | null;
 }
 
-export { Input, input, type InputProps };
+function clampSize(s: SizeType) {
+  return s && s === 'xs' ? 'sm' : s === 'xl' ? 'lg' : s;
+}
+
+export { Input, input, type InputProps, clampSize };

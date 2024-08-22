@@ -1,20 +1,9 @@
-<script context="module" lang="ts">
-  import type { HTMLTableAttributes } from 'svelte/elements';
-
-  type TableCtxType = {
-    striped?: boolean;
-    hoverable?: boolean;
-    noborder?: boolean;
-    color?: TableColrType;
-  };
-
-  type TableColrType = 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'indigo' | 'pink' | 'custom';
-</script>
-
 <script lang="ts">
+  import type { HTMLTableAttributes } from 'svelte/elements';
   import type { Snippet } from 'svelte';
   import { twMerge, twJoin } from 'tailwind-merge';
   import { setContext } from 'svelte';
+  import { type TableColrType, type TableCtxType } from '.';
 
   interface Props extends HTMLTableAttributes {
     children: Snippet;

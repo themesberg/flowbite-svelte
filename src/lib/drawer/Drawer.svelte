@@ -2,8 +2,9 @@
   import type { ParamsType } from '$lib/types';
   import { type DrawerProps as Props, drawer } from '.';
   import { fly } from 'svelte/transition';
+  import { sineIn } from 'svelte/easing';
 
-  let { children, drawerStatus, closeDrawer, activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = 'left', class: divClass, params, transition = fly, ...restProps }: Props = $props();
+  let { children, drawerStatus, closeDrawer, activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = 'left', class: divClass, params = { x: -320, duration: 200, easing: sineIn }, transition = fly, ...restProps }: Props = $props();
 
   const { base, backdrop: backdropCls } = $derived(
     drawer({
