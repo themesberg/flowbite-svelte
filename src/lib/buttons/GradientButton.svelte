@@ -1,25 +1,9 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import Button from './Button.svelte';
   import { getContext } from 'svelte';
-  import type { HTMLButtonAttributes, HTMLAnchorAttributes } from 'svelte/elements';
-
-  interface Props {
-    children: Snippet;
-    color?: keyof typeof gradientClasses;
-    shadow?: boolean;
-    outline?: boolean;
-    pill?: boolean;
-    class?: string | undefined | null;
-    onclick?: () => void;
-    href?: HTMLAnchorAttributes['href'];
-    target?: HTMLAnchorAttributes['target'];
-    rel?: HTMLAnchorAttributes['rel'];
-    type?: HTMLButtonAttributes['type'];
-    disabled?: HTMLButtonAttributes['disabled'];
-    name?: HTMLButtonAttributes['name'];
-  }
+  import { type GradientButtonProps as Props } from '.';
+  
   const group = getContext('group');
 
   let { children, outline, pill, color = 'blue', shadow, class: className, onclick, href, target, rel, type, disabled, name, ...restProps }: Props = $props();
@@ -73,9 +57,6 @@
 
 {#if outline}
   <div class={divClass}>
-    <!-- Trick to prentend outline without using border
-      This has a limitation of no supporting transparency as
-      is set to bg-white dark:bg-gray-900 -->
     <Button {...restProps} color="none" class={gradientOutlineClass} {onclick} {disabled} {name} {type} {href} {target} {rel}>
       {@render children()}
     </Button>

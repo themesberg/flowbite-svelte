@@ -138,7 +138,7 @@
 <CodeWrapper class="flex h-96 items-start justify-center">
   <Avatar onclick={dropdown.toggle} src="/images/profile-picture-3.webp" class="cursor-pointer" dot={{ color: 'green' }} />
   <div class="relative">
-    <Dropdown {dropdownStatus} {closeDropdown} divClass="absolute top-[40px] -left-[100px]">
+    <Dropdown {dropdownStatus} {closeDropdown} class="absolute top-[40px] -left-[100px]">
       <DropdownHeader>
         <div>Bonnie Green</div>
         <div class="truncate font-medium">name@flowbite.com</div>

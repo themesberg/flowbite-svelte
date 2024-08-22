@@ -177,8 +177,8 @@
 <HighlightCompo codeLang="ts" code={modules['./md/placement.md'] as string} />
 
 <H2>Backdrop and outside click</H2>
-<CodeWrapper>
-  <div class="text-center">
+<CodeWrapper class="space-y-4">
+  <div class="text-center mb-4">
     <Button onclick={drawerBackdrop.toggle}>Show drawer</Button>
   </div>
 
@@ -194,7 +194,7 @@
       Offset: {offsetClass ? offsetClass : 'none'}
     </p>
   </Drawer>
-  <div  class="mt-8">
+  <div class="flex gap-2">
     <Button color="primary" onclick={changeBackdropStatus}>{backdropStatus ? 'Hide backdrop' : 'Show backdrop'}</Button>
     <Button color="purple" onclick={changeOutsideclickStatus}>{outsideclickStatus ? 'Disable outsideclick' : 'Enable outsideclick'}</Button>
     <Button color="green" onclick={changeClass}>{offsetClass ? 'Remove offset' : 'Add offset'}</Button>

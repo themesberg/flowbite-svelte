@@ -168,7 +168,7 @@
 <HighlightCompo codeLang="ts" code={modules['./md/dismissable-badge-3.md'] as string} />
 
 <H2>Badge as links</H2>
-<CodeWrapper>
+<CodeWrapper class="flex gap-2">
   <Badge href="/">Badge link</Badge>
   <Badge href="/" color="blue" large>Badge link</Badge>
   <Badge href="/" color="green" border>Badge link</Badge>

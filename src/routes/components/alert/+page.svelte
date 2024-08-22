@@ -84,7 +84,7 @@
 
 <H2>Default alert</H2>
 <CodeWrapper class="space-y-4">
-  <div class="h-20">
+  <div class="h-20 mb-4">
     <Alert color={defaultColor} class={alertClass}>
       <span class="font-medium">Default alert!</span>
     </Alert>
@@ -103,7 +103,7 @@
 
 <H2>Alerts with icon</H2>
 <CodeWrapper class="space-y-4">
-  <div class="h-20">
+  <div class="mb-4">
     <Alert color={iconColor}>
       {#snippet icon()}
         <InfoCircleSolid class="h-5 w-5" />
@@ -124,7 +124,7 @@
 
 <H2>Bordered alerts</H2>
 <CodeWrapper class="space-y-4">
-  <div class="h-20">
+  <div class="mb-4">
     <Alert border color={borderColor}>
       {#snippet icon()}
         <InfoCircleSolid class="h-5 w-5" />
@@ -145,7 +145,7 @@
 
 <H2>Alerts with list</H2>
 <CodeWrapper class="space-y-4">
-  <div class="h-48 sm:h-32">
+  <div class="mb-4">
     <Alert color={listColor} class="!items-start">
       {#snippet icon()}
         <InfoCircleSolid class="h-5 w-5" />
@@ -170,7 +170,7 @@
 
 <H2>Dismissable alerts</H2>
 <CodeWrapper class="space-y-4">
-  <div class="h-12">
+  <div class="h-20 mb-4">
     <Alert color={dismissableColor} {dismissable} bind:alertStatus={alertStatus2}>
       {#snippet icon()}
         <InfoCircleSolid class="h-5 w-5" />
@@ -179,7 +179,7 @@
       Change a few things up and try submitting again.
     </Alert>
   </div>
-  <div class="h-12">
+  <div class="h-12 mb-4">
     {#if !alertStatus2}
       <Button color="light" onclick={changeStatus}>Open alert</Button>
     {/if}
@@ -197,8 +197,8 @@
 
 <H2>Transitions</H2>
 
-<CodeWrapper class="h-56">
-  <div class="h-16">
+<CodeWrapper class="h-72">
+  <div class="h-20 mb-4">
     <Alert color={currentTransition.color as Alert['color']} dismissable bind:alertStatus={transionStatus} transition={currentTransition.transition} params={currentTransition.params}>
       {#snippet icon()}
         <InfoCircleSolid class="h-5 w-5" />
@@ -221,7 +221,7 @@
 
 <H2>Border accent</H2>
 <CodeWrapper class="space-y-4">
-  <div class="h-20">
+  <div class="mb-4">
     <Alert rounded={false} color={borderAccessColor} class="border-t-4">
       {#snippet icon()}
         <InfoCircleSolid class="h-5 w-5" />
@@ -237,20 +237,12 @@
       <Radio labelClass="w-24 my-1" name="border_accent_alert_color" bind:group={borderAccessColor} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
-
-  <Alert color="pink" rounded={false} class="flex-row-reverse border-t-4">
-    {#snippet icon()}
-      <InfoCircleSolid class="h-5 w-5" />
-    {/snippet}
-    <span class="font-medium">Dark alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
 </CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/border-accent.md'] as string} />
 
 <H2>Additional content</H2>
 <CodeWrapper class="space-y-4">
-  <div class="h-52">
+  <div class="mb-4">
     <Alert color={additionalColor}>
       <div class="flex items-center gap-3">
         {#snippet icon()}
@@ -277,7 +269,7 @@
 
 <H2>Rounded</H2>
 <CodeWrapper class="space-y-4">
-  <div class="h-20">
+  <div class="mb-4">
     <Alert {color} {rounded}>
       <span class="font-medium">Default alert!</span>
     </Alert>
@@ -293,25 +285,25 @@
 </CodeWrapper>
 
 <H2>Custom color</H2>
-<CodeWrapper>
+<CodeWrapper class="p-4">
   <Alert dismissable class="bg-sky-500 text-white">Your content</Alert>
 </CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/custom-color.md'] as string} />
 
 <H2>Events</H2>
-<CodeWrapper class="h-24">
+<CodeWrapper class="p-4">
   <Alert dismissable onclick={handleClose} bind:alertStatus={alertEventStatus}>Close me</Alert>
 </CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/events.md'] as string} />
 
 <H2>Reactive alert</H2>
 <CodeWrapper class="space-y-4">
-  <div class="h-20">
+  <div class="h-20 mb-4">
     <Alert {color} {rounded} {border} {dismissable} class={alertClass} bind:alertStatus={alertStatus2}>
       <span class="font-medium">Default alert!</span>
     </Alert>
   </div>
-  <div class="h-12">
+  <div class="h-12 mb-4">
     {#if !alertStatus2}
       <Button color="light" onclick={changeStatus}>Open alert</Button>
     {/if}
