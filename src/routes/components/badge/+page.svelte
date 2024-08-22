@@ -129,7 +129,7 @@
 <HighlightCompo codeLang="ts" code={modules['./md/dismissable-badge.md'] as string} />
 
 <H3>Transitions</H3>
-<CodeWrapper class="h-56">
+<CodeWrapper class="h-64 sm:h-56">
   <div class="h-16">
     <Badge large color={currentTransition.color as Badge['color']} dismissable bind:badgeStatus={transionStatus} transition={currentTransition.transition} params={currentTransition.params}>
       <span class="font-medium">{capitalizeFirstLetter(selectedTransition)} transition</span>
@@ -168,16 +168,16 @@
 <HighlightCompo codeLang="ts" code={modules['./md/dismissable-badge-3.md'] as string} />
 
 <H2>Badge as links</H2>
-<CodeWrapper class="flex gap-2">
-  <Badge href="/">Badge link</Badge>
-  <Badge href="/" color="blue" large>Badge link</Badge>
-  <Badge href="/" color="green" border>Badge link</Badge>
-  <Badge href="/" color="yellow" rounded>Badge link</Badge>
+<CodeWrapper class="flex justify-center gap-2">
+  <Badge href="/">Link</Badge>
+  <Badge href="/" color="blue" large>Link</Badge>
+  <Badge href="/" color="green" border>Link</Badge>
+  <Badge href="/" color="yellow" rounded>Link</Badge>
 </CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/badge-as-links.md'] as string} />
 
 <H2>Badge with icon</H2>
-<CodeWrapper>
+<CodeWrapper class="flex justify-center gap-2">
   <Badge color="gray" border>
     <ClockSolid class="me-1.5 h-2.5 w-2.5" />
     3 days ago
@@ -190,7 +190,7 @@
 <HighlightCompo codeLang="ts" code={modules['./md/badge-with-icon.md'] as string} />
 
 <H2>Notification badge</H2>
-<CodeWrapper class="space-x-4">
+<CodeWrapper class="flex justify-center gap-4">
   <Button class="relative" size="sm">
     <EnvelopeSolid class="text-white dark:text-white" />
     <span class="sr-only">Notifications</span>
@@ -212,7 +212,7 @@
 <HighlightCompo codeLang="ts" code={modules['./md/notification-badge.md'] as string} />
 
 <H2>Button with badge</H2>
-<CodeWrapper>
+<CodeWrapper class="flex justify-center">
   <Button>
     Messages
     <Badge rounded class="ms-2 h-4 w-4 bg-white p-0 font-semibold text-primary-800 dark:bg-white dark:text-primary-800">2</Badge>
@@ -221,7 +221,7 @@
 <HighlightCompo codeLang="ts" code={modules['./md/button-with-badge.md'] as string} />
 
 <H2>Badge with icon only</H2>
-<CodeWrapper>
+<CodeWrapper class="flex justify-center gap-2">
   <Badge color="gray" rounded large class="!p-1 !font-semibold">
     <CheckOutline class="h-3 w-3" />
     <span class="sr-only">Icon description</span>
