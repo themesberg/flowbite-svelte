@@ -2,6 +2,10 @@
   ...
   import { blur, fly, slide, scale, fade } from 'svelte/transition';
   const params = { duration: 500, easing: linear }
+  const drawerTransition = uiHelpers();
+  let drawerStatusTransition = $state(false);
+  const closeDrawerTransition = drawerTransition.close;
+  $effect(() => { drawerStatusTransition = drawerTransition.isOpen; });
 </script>
 
 <div class="text-center">
