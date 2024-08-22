@@ -17,7 +17,6 @@
   });
   const colors = Object.keys(toast.variants.color) as Toast['color'][];
   let toastColor: Toast['color'] = $state('primary');
-  let toastStatus: boolean = $state(true);
 
   // transition example
   type TransitionOption = {
@@ -36,11 +35,18 @@
 
   let selectedTransition = $state('Fly');
   let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
-
+  let defaultToastStatus: boolean = $state(true);
+  let toastStatus: boolean = $state(true);
+  
   let transionStatus = $state(true);
   const changeTransitionStatus = () => {
     transionStatus = !transionStatus;
   };
+
+  let toastUndoStatus: boolean = $state(true);
+  const changeUndoStatus = () => {
+    toastUndoStatus = !toastUndoStatus;
+  }
 </script>
 
 <H1>Toast</H1>
@@ -48,22 +54,24 @@
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default toast</H2>
-<CodeWrapper class="flex h-28 flex-col items-center">
-  <Toast>
+<CodeWrapper class="flex h-48 flex-col items-center">
+  <div class="h-36 mb-4">
+  <Toast bind:toastStatus={defaultToastStatus}>
     {#snippet icon()}
       <FireOutline class="h-5 w-5 bg-primary-100 text-primary-500 dark:bg-primary-800 dark:text-primary-200" />
     {/snippet}
     Set yourself free.
   </Toast>
+  </div>
+  <div class="mb-4">
+  <Button disabled={defaultToastStatus ? true : false} onclick={() => (defaultToastStatus = true)}>Open toast</Button>
+  </div>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/default-toast.md'] as string} />
 
 <H2>Color</H2>
 <CodeWrapper class="flex flex-col items-center space-y-2">
-  <div class="h-16">
-    {#if !toastStatus}
-      <Button color="light" onclick={() => (toastStatus = true)}>Open toast</Button>
-    {/if}
+  <div class="h-20">
     <Toast color={toastColor} bind:toastStatus>
       {#snippet icon()}
         <CheckCircleSolid class="h-5 w-5" />
@@ -71,6 +79,9 @@
       {/snippet}
       Toast content
     </Toast>
+  </div>
+  <div class="mb-4">
+    <Button disabled={toastStatus ? true : false} onclick={() => (toastStatus = true)}>Open toast</Button>
   </div>
   <div class="flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color:</Label>
@@ -80,15 +91,6 @@
   </div>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/colors.md'] as string} />
-
-<H2>Simple toast</H2>
-<CodeWrapper class="flex h-28 flex-col items-center">
-  <Toast dismissable={false} contentClass="flex space-x-4 rtl:space-x-reverse divide-x rtl:divide-x-reverse divide-gray-200 dark:divide-gray-700">
-    <PaperPlaneOutline class="h-5 w-5 rotate-45 text-primary-600 dark:text-primary-500" />
-    <div class="ps-4 text-sm font-normal">Message sent successfully.</div>
-  </Toast>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/simple-toast.md'] as string} />
 
 <H2>Transitions</H2>
 
@@ -102,25 +104,38 @@
       {capitalizeFirstLetter(selectedTransition)} transition
     </Toast>
   </div>
+  <div class="mb-4">
+    <Button class="w-36" disabled={transionStatus ? true : false} onclick={changeTransitionStatus}>Open toast</Button>
+  </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Transition</Label>
     {#each transitions as transition}
       <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
     {/each}
   </div>
-  {#if !transionStatus}
-    <Button class="w-36" color="green" onclick={changeTransitionStatus}>{transionStatus ? '' : 'Open'}</Button>
-  {/if}
+
 </CodeWrapper>
 
 <HighlightCompo codeLang="ts" code={modules['./md/transition.md'] as string} />
 
+<H2>Simple toast</H2>
+<CodeWrapper class="flex h-28 flex-col items-center">
+  <Toast dismissable={false} contentClass="flex space-x-4 rtl:space-x-reverse divide-x rtl:divide-x-reverse divide-gray-200 dark:divide-gray-700">
+    <PaperPlaneOutline class="h-5 w-5 rotate-45 text-primary-600 dark:text-primary-500" />
+    <div class="ps-4 text-sm font-normal">Message sent successfully.</div>
+  </Toast>
+</CodeWrapper>
+<HighlightCompo code={modules['./md/simple-toast.md'] as string} />
+
 <H2>Undo button</H2>
-<CodeWrapper class="flex h-[104px] flex-col items-center">
-  <Toast iconClass="w-full text-sm font-normal flex items-center justify-between">
+<CodeWrapper class="flex flex-col items-center">
+  <div class="h-16 mb-4">
+  <Toast bind:toastStatus={toastUndoStatus} iconClass="w-full text-sm font-normal flex items-center justify-between">
     Conversation archived.
     <a class="ms-auto rounded-lg p-1.5 font-medium text-primary-600 hover:bg-primary-100 dark:text-primary-500 dark:hover:bg-gray-700" href="/"> Undo </a>
   </Toast>
+  </div>
+    <Button class="w-36" disabled={toastUndoStatus ? true : false} onclick={changeUndoStatus}>Open toast</Button>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/undo-button.md'] as string} />
 

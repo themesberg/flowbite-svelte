@@ -94,7 +94,7 @@
 
 <H2>Reactive banner</H2>
 <CodeWrapper class="relative">
-  <div class="mb-4">
+  <div class="h-[630px] md:h-[440px] mb-4">
     <Skeleton class="py-4" />
     <ImagePlaceholder class="py-4" />
 
@@ -110,7 +110,10 @@
       </p>
     </Banner>
   </div>
-  <div class="mt-8 space-y-4">
+  <div class="h-12 mb-4">
+    <Button class="w-48" disabled={bannerStatus ? true : false} onclick={changeStatus}>Open banner</Button>
+  </div>
+  <div class="space-y-4">
     <div class="flex flex-wrap space-x-4">
       <Label class="mb-4 w-full font-bold">Change color {color}</Label>
       {#each colors as colorOption}
@@ -120,9 +123,6 @@
     <Button class="w-48" onclick={changePosition}>Change position</Button>
     <Button class="w-48" color="blue" onclick={changeBannerType}>Change banner type</Button>
     <Button class="w-48" color="green" onclick={changeClass}>{bannerClass ? 'Remove class' : 'Add class'}</Button>
-    {#if !bannerStatus}
-      <Button class="w-48" color="light" onclick={changeStatus}>Open banner</Button>
-    {/if}
   </div>
 </CodeWrapper>
 
@@ -130,12 +130,15 @@
 <p>The `transition` and `params` props allow you to apply transition effects to components when they enter or leave the view. Svelte provides built-in transitions like `fly`, `slide`, `blur`, `fade`, and `scale`.</p>
 
 <CodeWrapper class="relative flex flex-col">
-  <div class="mb-4">
+  <div class="h-[630px] md:h-[440px] mb-4">
     <Skeleton class="py-4" />
     <ImagePlaceholder class="py-4" />
     <Banner color={currentTransition.color as Banner['color']} dismissable bind:bannerStatus={transionStatus} transition={currentTransition.transition} params={currentTransition.params}>
       <span class="font-medium">{capitalizeFirstLetter(selectedTransition)} transition</span>
     </Banner>
+  </div>
+  <div class="h-12 mb-4">
+    <Button class="w-36" disabled={transionStatus ? true : false} onclick={changeTransitionStatus}>Open banner</Button>
   </div>
   <div class="h-28">
     <div class="mb-4 flex flex-wrap space-x-4">
@@ -144,9 +147,6 @@
         <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
       {/each}
     </div>
-    {#if !transionStatus}
-      <Button class="w-36" color="green" onclick={changeTransitionStatus}>{transionStatus ? '' : 'Open'}</Button>
-    {/if}
   </div>
 </CodeWrapper>
 

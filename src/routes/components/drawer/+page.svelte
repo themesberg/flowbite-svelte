@@ -194,7 +194,7 @@
       Offset: {offsetClass ? offsetClass : 'none'}
     </p>
   </Drawer>
-  <div class="flex gap-2">
+  <div class="flex justify-center gap-2">
     <Button color="primary" onclick={changeBackdropStatus}>{backdropStatus ? 'Hide backdrop' : 'Show backdrop'}</Button>
     <Button color="purple" onclick={changeOutsideclickStatus}>{outsideclickStatus ? 'Disable outsideclick' : 'Enable outsideclick'}</Button>
     <Button color="green" onclick={changeClass}>{offsetClass ? 'Remove offset' : 'Add offset'}</Button>

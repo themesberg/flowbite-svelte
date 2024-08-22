@@ -48,6 +48,10 @@
   const changeStatus = () => {
     alertStatus2 = true;
   };
+  let alertStatusReactive = $state(true);
+  const changeStatusReactive = () => {
+    alertStatusReactive = true;
+  };
   let alertClass: AlertProps['class'] = $state('');
   const changeClass = () => {
     alertClass = alertClass === '' ? 'p-8' : '';
@@ -179,11 +183,8 @@
     </Alert>
   </div>
   <div class="h-12 mb-4">
-    {#if !alertStatus2}
-      <Button color="light" onclick={changeStatus}>Open alert</Button>
-    {/if}
+    <Button disabled={alertStatus2 ? true : false} onclick={changeStatus}>Open alert</Button>
   </div>
-
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
@@ -206,9 +207,7 @@
     </Alert>
   </div>
   <div class="h-12 mb-4">
-    {#if !transionStatus}
-      <Button class="w-36" color="green" onclick={changeTransitionStatus}>{transionStatus ? '' : 'Open'}</Button>
-    {/if}
+    <Button class="w-36" disabled={transionStatus ? true : false} onclick={changeTransitionStatus}>Open alert</Button>
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Transition</Label>
@@ -286,13 +285,13 @@
 </CodeWrapper>
 
 <H2>Custom color</H2>
-<CodeWrapper class="p-4">
+<CodeWrapper class="h-20 p-4">
   <Alert dismissable class="bg-sky-500 text-white">Your content</Alert>
 </CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/custom-color.md'] as string} />
 
 <H2>Events</H2>
-<CodeWrapper class="p-4">
+<CodeWrapper class="h-20 p-4">
   <Alert dismissable onclick={handleClose} bind:alertStatus={alertEventStatus}>Close me</Alert>
 </CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/events.md'] as string} />
@@ -300,16 +299,13 @@
 <H2>Reactive alert</H2>
 <CodeWrapper class="space-y-4">
   <div class="h-20 mb-4">
-    <Alert {color} {rounded} {border} {dismissable} class={alertClass} bind:alertStatus={alertStatus2}>
+    <Alert {color} {rounded} {border} {dismissable} class={alertClass} bind:alertStatus={alertStatusReactive}>
       <span class="font-medium">Default alert!</span>
     </Alert>
   </div>
   <div class="h-12 mb-4">
-    {#if !alertStatus2}
-      <Button color="light" onclick={changeStatus}>Open alert</Button>
-    {/if}
+    <Button disabled={alertStatusReactive ? true : false} onclick={changeStatusReactive}>Open alert</Button>
   </div>
-
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
