@@ -170,13 +170,12 @@
 
 <H2>Dismissable alerts</H2>
 <CodeWrapper class="space-y-4">
-  <div class="h-20 mb-4">
+  <div class="h-16 mb-4">
     <Alert color={dismissableColor} {dismissable} bind:alertStatus={alertStatus2}>
       {#snippet icon()}
         <InfoCircleSolid class="h-5 w-5" />
       {/snippet}
-      <span class="font-medium">Default alert!</span>
-      Change a few things up and try submitting again.
+      <span class="font-medium">Dismissable alerts!</span>
     </Alert>
   </div>
   <div class="h-12 mb-4">
@@ -198,7 +197,7 @@
 <H2>Transitions</H2>
 
 <CodeWrapper class="h-72">
-  <div class="h-20 mb-4">
+  <div class="h-16 mb-4">
     <Alert color={currentTransition.color as Alert['color']} dismissable bind:alertStatus={transionStatus} transition={currentTransition.transition} params={currentTransition.params}>
       {#snippet icon()}
         <InfoCircleSolid class="h-5 w-5" />
@@ -206,15 +205,17 @@
       <span class="font-medium">{capitalizeFirstLetter(selectedTransition)} transition</span>
     </Alert>
   </div>
+  <div class="h-12 mb-4">
+    {#if !transionStatus}
+      <Button class="w-36" color="green" onclick={changeTransitionStatus}>{transionStatus ? '' : 'Open'}</Button>
+    {/if}
+  </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Transition</Label>
     {#each transitions as transition}
       <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
     {/each}
   </div>
-  {#if !transionStatus}
-    <Button class="w-36" color="green" onclick={changeTransitionStatus}>{transionStatus ? '' : 'Open'}</Button>
-  {/if}
 </CodeWrapper>
 
 <HighlightCompo codeLang="ts" code={modules['./md/transition.md'] as string} />
