@@ -87,7 +87,6 @@
 ## Props
 @prop children
 @prop evaluation
-@prop ceil
 @prop helpfullink
 @prop abuselink
 @prop comment

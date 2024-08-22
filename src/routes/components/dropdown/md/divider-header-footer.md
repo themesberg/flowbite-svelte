@@ -15,6 +15,7 @@
     </DropdownHeader>
     <DropdownUl>
       <DropdownLi href="/">Dashboard</DropdownLi>
+      <DropdownDivider />
       <DropdownLi href="/components/dropdown">Dropdown</DropdownLi>
       <DropdownLi href="/components/footer">Footer</DropdownLi>
       <DropdownLi href="/dropdown">Dropdown</DropdownLi>

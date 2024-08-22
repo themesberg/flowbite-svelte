@@ -21,8 +21,6 @@
 ## Props
 @prop children
 @prop tag
-@prop dtClass
-@prop ddClass
 @prop class: className
 @prop ...restProps
 -->

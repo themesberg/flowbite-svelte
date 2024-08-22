@@ -26,7 +26,7 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop itemNumber = 5
-@prop size
+@prop size = 'md'
 @prop rounded
 @prop class: className
 @prop ...restProps

@@ -42,8 +42,5 @@
 @prop ulClass
 @prop contentClass
 @prop divider = true
-@prop activeClass
-@prop inactiveClass
-@prop class: classname
 @prop ...restProps
 -->

@@ -94,7 +94,7 @@
 
 <H2>Reactive banner</H2>
 <CodeWrapper class="relative">
-  <div class="h-[630px] md:h-[440px] mb-4">
+  <div class="mb-4 h-[630px] md:h-[440px]">
     <Skeleton class="py-4" />
     <ImagePlaceholder class="py-4" />
 
@@ -110,7 +110,7 @@
       </p>
     </Banner>
   </div>
-  <div class="h-12 mb-4">
+  <div class="mb-4 h-12">
     <Button class="w-48" disabled={bannerStatus ? true : false} onclick={changeStatus}>Open banner</Button>
   </div>
   <div class="space-y-4">
@@ -130,14 +130,14 @@
 <p>The `transition` and `params` props allow you to apply transition effects to components when they enter or leave the view. Svelte provides built-in transitions like `fly`, `slide`, `blur`, `fade`, and `scale`.</p>
 
 <CodeWrapper class="relative flex flex-col">
-  <div class="h-[630px] md:h-[440px] mb-4">
+  <div class="mb-4 h-[630px] md:h-[440px]">
     <Skeleton class="py-4" />
     <ImagePlaceholder class="py-4" />
     <Banner color={currentTransition.color as Banner['color']} dismissable bind:bannerStatus={transionStatus} transition={currentTransition.transition} params={currentTransition.params}>
       <span class="font-medium">{capitalizeFirstLetter(selectedTransition)} transition</span>
     </Banner>
   </div>
-  <div class="h-12 mb-4">
+  <div class="mb-4 h-12">
     <Button class="w-36" disabled={transionStatus ? true : false} onclick={changeTransitionStatus}>Open banner</Button>
   </div>
   <div class="h-28">

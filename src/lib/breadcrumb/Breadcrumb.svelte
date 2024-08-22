@@ -20,7 +20,6 @@
 @prop children
 @prop solid = false
 @prop navClass
-@prop solidClass
 @prop olClass
 @prop ariaLabel = 'Breadcrumb'
 @prop ...restProps

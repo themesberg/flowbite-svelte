@@ -40,7 +40,6 @@
 @prop group = $bindable([])
 @prop choices = []
 @prop checked = $bindable(false)
-@prop spacing
 @prop classLabel
 @prop indeterminate
 @prop class: className

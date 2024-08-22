@@ -54,9 +54,6 @@
 @prop next
 @prop prevContent
 @prop nextContent
-@prop activeClass
-@prop normalClass
-@prop ulClass
 @prop table
 @prop size
 @prop ariaLabel

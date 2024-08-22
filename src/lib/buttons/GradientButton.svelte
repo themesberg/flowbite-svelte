@@ -3,7 +3,7 @@
   import Button from './Button.svelte';
   import { getContext } from 'svelte';
   import { type GradientButtonProps as Props } from '.';
-  
+
   const group = getContext('group');
 
   let { children, outline, pill, color = 'blue', shadow, class: className, onclick, href, target, rel, type, disabled, name, ...restProps }: Props = $props();

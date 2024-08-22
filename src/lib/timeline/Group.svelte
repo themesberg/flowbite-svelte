@@ -11,3 +11,15 @@
     {@render children()}
   </ol>
 </div>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@prop children
+@prop divClass
+@prop timeClass
+@prop date
+@prop olClass
+@prop ...restProps
+-->

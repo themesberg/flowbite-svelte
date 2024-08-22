@@ -76,8 +76,8 @@
 @prop activeClass = undefined
 @prop inactiveClass = undefined
 @prop defaultClass = 'flex items-center justify-between w-full font-medium text-left group-first:rounded-t-xl border-gray-200 dark:border-gray-700'
-@prop transitionType = 'slide'
-@prop transitionParams
+@prop transition = slide
+@prop params
 @prop paddingFlush = 'py-5'
 @prop paddingDefault = 'p-5'
 @prop textFlushOpen = 'text-gray-900 dark:text-white'

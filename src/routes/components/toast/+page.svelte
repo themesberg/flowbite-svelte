@@ -37,7 +37,7 @@
   let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
   let defaultToastStatus: boolean = $state(true);
   let toastStatus: boolean = $state(true);
-  
+
   let transionStatus = $state(true);
   const changeTransitionStatus = () => {
     transionStatus = !transionStatus;
@@ -46,7 +46,7 @@
   let toastUndoStatus: boolean = $state(true);
   const changeUndoStatus = () => {
     toastUndoStatus = !toastUndoStatus;
-  }
+  };
 </script>
 
 <H1>Toast</H1>
@@ -55,16 +55,16 @@
 
 <H2>Default toast</H2>
 <CodeWrapper class="flex h-48 flex-col items-center">
-  <div class="h-36 mb-4">
-  <Toast bind:toastStatus={defaultToastStatus}>
-    {#snippet icon()}
-      <FireOutline class="h-5 w-5 bg-primary-100 text-primary-500 dark:bg-primary-800 dark:text-primary-200" />
-    {/snippet}
-    Set yourself free.
-  </Toast>
+  <div class="mb-4 h-36">
+    <Toast bind:toastStatus={defaultToastStatus}>
+      {#snippet icon()}
+        <FireOutline class="h-5 w-5 bg-primary-100 text-primary-500 dark:bg-primary-800 dark:text-primary-200" />
+      {/snippet}
+      Set yourself free.
+    </Toast>
   </div>
   <div class="mb-4">
-  <Button disabled={defaultToastStatus ? true : false} onclick={() => (defaultToastStatus = true)}>Open toast</Button>
+    <Button disabled={defaultToastStatus ? true : false} onclick={() => (defaultToastStatus = true)}>Open toast</Button>
   </div>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/default-toast.md'] as string} />
@@ -113,7 +113,6 @@
       <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
     {/each}
   </div>
-
 </CodeWrapper>
 
 <HighlightCompo codeLang="ts" code={modules['./md/transition.md'] as string} />
@@ -129,13 +128,13 @@
 
 <H2>Undo button</H2>
 <CodeWrapper class="flex flex-col items-center">
-  <div class="h-16 mb-4">
-  <Toast bind:toastStatus={toastUndoStatus} iconClass="w-full text-sm font-normal flex items-center justify-between">
-    Conversation archived.
-    <a class="ms-auto rounded-lg p-1.5 font-medium text-primary-600 hover:bg-primary-100 dark:text-primary-500 dark:hover:bg-gray-700" href="/"> Undo </a>
-  </Toast>
+  <div class="mb-4 h-16">
+    <Toast bind:toastStatus={toastUndoStatus} iconClass="w-full text-sm font-normal flex items-center justify-between">
+      Conversation archived.
+      <a class="ms-auto rounded-lg p-1.5 font-medium text-primary-600 hover:bg-primary-100 dark:text-primary-500 dark:hover:bg-gray-700" href="/"> Undo </a>
+    </Toast>
   </div>
-    <Button class="w-36" disabled={toastUndoStatus ? true : false} onclick={changeUndoStatus}>Open toast</Button>
+  <Button class="w-36" disabled={toastUndoStatus ? true : false} onclick={changeUndoStatus}>Open toast</Button>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/undo-button.md'] as string} />
 

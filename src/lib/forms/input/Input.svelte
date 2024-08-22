@@ -52,12 +52,9 @@
 @prop right
 @prop value = $bindable()
 @prop size
-@prop defaultClass
 @prop color = 'default'
-@prop floatClass
 @prop class: className
 @prop classLeft
 @prop classRight
-@prop show = false
 @prop ...restProps
 -->

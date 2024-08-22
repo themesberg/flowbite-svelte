@@ -32,7 +32,6 @@
 @prop underline
 @prop size = 'md'
 @prop selectClass
-@prop underlineClass
 @prop placeholder = 'Choose option ...'
 @prop ...restProps
 -->

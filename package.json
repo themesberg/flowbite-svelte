@@ -201,6 +201,10 @@
       "types": "./dist/drawer/Drawer.svelte.d.ts",
       "svelte": "./dist/drawer/Drawer.svelte"
     },
+    "./Drawerhead.svelte": {
+      "types": "./dist/drawer/Drawerhead.svelte.d.ts",
+      "svelte": "./dist/drawer/Drawerhead.svelte"
+    },
     "./Dropdown.svelte": {
       "types": "./dist/dropdown/Dropdown.svelte.d.ts",
       "svelte": "./dist/dropdown/Dropdown.svelte"

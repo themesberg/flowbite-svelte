@@ -24,7 +24,5 @@
 @prop class: className
 @prop href
 @prop active
-@prop activeClass
-@prop normalClass
 @prop ...restProps
 -->

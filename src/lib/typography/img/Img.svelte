@@ -30,6 +30,5 @@
 @prop imgClass
 @prop figClass
 @prop captionClass
-@prop class: className
 @prop ...restProps
 -->

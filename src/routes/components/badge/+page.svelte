@@ -135,7 +135,7 @@
       <span class="font-medium">{capitalizeFirstLetter(selectedTransition)} transition</span>
     </Badge>
   </div>
-  <div class="h-12 mb-4">
+  <div class="mb-4 h-12">
     <Button class="w-36" disabled={transionStatus ? true : false} onclick={changeTransitionStatus}>Open badge</Button>
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">

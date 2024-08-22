@@ -88,7 +88,7 @@
 
 <H2>Default alert</H2>
 <CodeWrapper class="space-y-4">
-  <div class="h-20 mb-4">
+  <div class="mb-4 h-20">
     <Alert color={defaultColor} class={alertClass}>
       <span class="font-medium">Default alert!</span>
     </Alert>
@@ -174,7 +174,7 @@
 
 <H2>Dismissable alerts</H2>
 <CodeWrapper class="space-y-4">
-  <div class="h-16 mb-4">
+  <div class="mb-4 h-16">
     <Alert color={dismissableColor} {dismissable} bind:alertStatus={alertStatus2}>
       {#snippet icon()}
         <InfoCircleSolid class="h-5 w-5" />
@@ -182,7 +182,7 @@
       <span class="font-medium">Dismissable alerts!</span>
     </Alert>
   </div>
-  <div class="h-12 mb-4">
+  <div class="mb-4 h-12">
     <Button disabled={alertStatus2 ? true : false} onclick={changeStatus}>Open alert</Button>
   </div>
   <div class="flex flex-wrap space-x-4">
@@ -198,7 +198,7 @@
 <H2>Transitions</H2>
 
 <CodeWrapper class="h-72">
-  <div class="h-16 mb-4">
+  <div class="mb-4 h-16">
     <Alert color={currentTransition.color as Alert['color']} dismissable bind:alertStatus={transionStatus} transition={currentTransition.transition} params={currentTransition.params}>
       {#snippet icon()}
         <InfoCircleSolid class="h-5 w-5" />
@@ -206,7 +206,7 @@
       <span class="font-medium">{capitalizeFirstLetter(selectedTransition)} transition</span>
     </Alert>
   </div>
-  <div class="h-12 mb-4">
+  <div class="mb-4 h-12">
     <Button class="w-36" disabled={transionStatus ? true : false} onclick={changeTransitionStatus}>Open alert</Button>
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
@@ -298,12 +298,12 @@
 
 <H2>Reactive alert</H2>
 <CodeWrapper class="space-y-4">
-  <div class="h-20 mb-4">
+  <div class="mb-4 h-20">
     <Alert {color} {rounded} {border} {dismissable} class={alertClass} bind:alertStatus={alertStatusReactive}>
       <span class="font-medium">Default alert!</span>
     </Alert>
   </div>
-  <div class="h-12 mb-4">
+  <div class="mb-4 h-12">
     <Button disabled={alertStatusReactive ? true : false} onclick={changeStatusReactive}>Open alert</Button>
   </div>
   <div class="flex flex-wrap space-x-4">

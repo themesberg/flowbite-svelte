@@ -39,7 +39,6 @@
 @prop target
 @prop activeClass
 @prop href = ''
-@prop exact = true
 @prop btnClass
 @prop spanClass
 @prop ...restProps

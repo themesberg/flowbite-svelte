@@ -16,7 +16,6 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop color = 'primary'
-@prop bg = 'text-gray-300'
 @prop size = '8'
 @prop class: className
 @prop currentFill = 'currentFill'

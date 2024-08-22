@@ -178,7 +178,7 @@
 
 <H2>Backdrop and outside click</H2>
 <CodeWrapper class="space-y-4">
-  <div class="text-center mb-4">
+  <div class="mb-4 text-center">
     <Button onclick={drawerBackdrop.toggle}>Show drawer</Button>
   </div>
 

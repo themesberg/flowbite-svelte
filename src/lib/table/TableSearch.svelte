@@ -83,7 +83,6 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
-@prop svgSearch
 @prop header
 @prop footer
 @prop divClass = 'relative overflow-x-auto shadow-md sm:rounded-lg'
@@ -98,7 +97,6 @@
 @prop svgDivClass
 @prop svgClass = 'w-5 h-5 text-gray-500 dark:text-gray-400'
 @prop tableClass = 'w-full text-left text-sm'
-@prop classDiv
 @prop class: className
 @prop ...restProps
 -->

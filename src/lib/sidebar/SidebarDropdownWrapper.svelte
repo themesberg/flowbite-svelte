@@ -83,8 +83,8 @@
 @prop label
 @prop spanClass
 @prop ulClass
-@prop transitionType = 'slide'
-@prop transitionParams
+@prop transition = slide
+@prop params
 @prop svgClass
 @prop class: className
 @prop ...restProps

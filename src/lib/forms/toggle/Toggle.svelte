@@ -21,7 +21,6 @@
 @prop toggleSize = 'default'
 @prop value
 @prop checked = $bindable()
-@prop class: className
 @prop color = 'primary'
 @prop aria_describedby
 @prop labelClass

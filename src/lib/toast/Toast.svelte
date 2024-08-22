@@ -48,7 +48,7 @@
 @prop iconClass
 @prop contentClass
 @prop align = true
-@prop transition = fade
 @prop params
+@prop transition = fly
 @prop ...restProps
 -->

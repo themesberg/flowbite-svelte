@@ -4,10 +4,11 @@
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
   import H3 from '../../utils/H3.svelte';
-  import { Button, Checkbox, Search, Helper, Radio, Toggle, Dropdown, DropdownDivider, DropdownUl, DropdownLi, DropdownHeader, DropdownFooter, Navbar, NavBrand, NavUl, NavLi, Avatar, uiHelpers } from '$lib';
+  import { Button, Checkbox, Search, Helper, Radio, Toggle, Dropdown, DropdownDivider, DropdownUl, DropdownLi, DropdownHeader, DropdownFooter, Navbar, NavBrand, NavUl, NavLi, Avatar, uiHelpers, Label } from '$lib';
   import { ChevronDownOutline, ChevronRightOutline, UserRemoveSolid, DotsVerticalOutline, BellSolid, EyeSolid, ChevronUpOutline, ChevronLeftOutline } from 'flowbite-svelte-icons';
-  import { blur } from 'svelte/transition';
-  import { sineIn } from 'svelte/easing';
+  import { blur, fly, slide, scale } from 'svelte/transition';
+  import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
+  import { sineIn, linear } from 'svelte/easing';
 
   let transitionParams = {
     y: 0,
@@ -34,14 +35,6 @@
   let dropdownB = uiHelpers();
   let dropdownBStatus = $state(false);
   let closeDropdownB = dropdownB.close;
-
-  let dropdownC = uiHelpers();
-  let dropdownCStatus = $state(false);
-  let closeDropdownC = dropdownC.close;
-
-  let dropdownDivider = uiHelpers();
-  let dropdownDividerStatus = $state(false);
-  let closeDropdownDivider = dropdownDivider.close;
 
   let dropdownMultiLevel = uiHelpers();
   let dropdownMultiLevelStatus = $state(false);
@@ -128,13 +121,15 @@
     dropdownMultiLevel2.close();
   };
 
+  let dropdownDividerHeaderFooter = uiHelpers();
+  let dropdownDividerHeaderFooterStatus = $state(false);
+  let closeDropdownDividerHeaderFooter = dropdownDividerHeaderFooter.close;
+
   $effect(() => {
     // this can be done adding nav.navStatus directly to DOM element
     // without using effect
     dropdownAStatus = dropdownA.isOpen;
     dropdownBStatus = dropdownB.isOpen;
-    dropdownCStatus = dropdownC.isOpen;
-    dropdownDividerStatus = dropdownDivider.isOpen;
     dropdownMultiLevelStatus2 = dropdownMultiLevel2.isOpen;
     dropdownMultiLevelStatus = dropdownMultiLevel.isOpen;
     dropdownCheckboxStatus = dropdownCheckbox.isOpen;
@@ -155,6 +150,7 @@
     dropdownBottomStatus = dropdownBottom.isOpen;
     dropdownTransition1Status = dropdownTransition1.isOpen;
     dropdownTransition2Status = dropdownTransition2.isOpen;
+    dropdownDividerHeaderFooterStatus = dropdownDividerHeaderFooter.isOpen;
   });
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
@@ -171,6 +167,40 @@
     { name: 'Bonnie Green', checked: true }
   ];
   let filteredItems = $derived(people.filter((person) => person.name.toLowerCase().indexOf(searchTerm?.toLowerCase()) !== -1));
+
+  let dividerStatus = $state(false);
+  const changeDividerStatus = () => {
+    dividerStatus = !dividerStatus;
+  }
+  let headerStatus = $state(false);
+  const changeHeaderStatus = () => {
+    headerStatus = !headerStatus;
+  }
+  let footerStatus = $state(false);
+  const changeFooterStatus = () => {
+    footerStatus = !footerStatus;
+  }
+
+  // transition
+  type TransitionOption = {
+    name: string;
+    transition: typeof fly | typeof blur | typeof slide | typeof scale;
+    params: FlyParams | BlurParams | SlideParams | ScaleParams;
+  };
+
+  const transitions: TransitionOption[] = [
+    { name: 'Fly', transition: fly, params: { duration: 500, easing: linear, x: 150 }},
+    { name: 'Blur', transition: blur, params: { y: 0, duration: 600, easing: sineIn }},
+    { name: 'Slide', transition: slide, params: { x: -100, duration: 400, easing: sineIn }},
+    { name: 'Scale', transition: scale, params: { duration: 500, easing: linear }}
+  ];
+  let selectedTransition = $state('Fly');
+  let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
+
+  let transionStatus = $state(true);
+  const changeTransitionStatus = () => {
+    transionStatus = !transionStatus;
+  };
 </script>
 
 <H1>Dropdown</H1>
@@ -180,7 +210,6 @@
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default dropdown</H2>
-
 <CodeWrapper class="flex h-64 items-start justify-center">
   <Button onclick={dropdownA.toggle}
     >Dropdown
@@ -199,6 +228,77 @@
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/dropdown1.md'] as string} />
+
+<H2>Divider, header, and footer</H2>
+<CodeWrapper>
+  <div class="flex items-start justify-center">
+  <Button onclick={dropdownDividerHeaderFooter.toggle}
+    >Dropdown
+    <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
+  </Button>
+  <div class="relative h-96">
+    <Dropdown dropdownStatus={dropdownDividerHeaderFooterStatus} closeDropdown={closeDropdownDividerHeaderFooter} params={transitionParams} class="absolute -left-[150px] top-[40px]">
+      {#if headerStatus}
+      <DropdownHeader>
+        <div>Bonnie Green</div>
+        <div class="truncate font-medium">name@flowbite.com</div>
+      </DropdownHeader>
+      {/if}
+      <DropdownUl>
+        <DropdownLi href="/">Dashboard</DropdownLi>
+        {#if dividerStatus}
+        <DropdownDivider />
+        {/if}
+        <DropdownLi href="/components/drawer">Drawer</DropdownLi>
+        <DropdownLi href="/components/footer">Footer</DropdownLi>
+        <DropdownLi href="/components">Alert</DropdownLi>
+      </DropdownUl>
+      {#if footerStatus}
+      <DropdownFooter>
+        <div class="py-2">
+          <a href="/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
+        </div>
+      </DropdownFooter>
+      {/if}
+    </Dropdown>
+  </div>
+</div>
+  <div class="flex justify-center gap-4">
+    <Button onclick={changeDividerStatus}>Divider {#if dividerStatus}off{:else}on{/if}</Button>
+    <Button onclick={changeHeaderStatus}>Header {#if headerStatus}off{:else}on{/if}</Button>
+    <Button onclick={changeFooterStatus}>Footer {#if footerStatus}off{:else}on{/if}</Button>
+  </div>
+</CodeWrapper>
+
+<HighlightCompo code={modules['./md/divider-header-footer.md'] as string} />
+<H2>Transition</H2>
+<CodeWrapper>
+  <div class="flex items-start justify-center">
+  <Button onclick={dropdownTransition2.toggle}
+    >Dropdown
+    <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
+  </Button>
+  
+  <div class="relative h-48">
+    <Dropdown bind:dropdownStatus={dropdownTransition2Status} closeDropdown={closeDropdownTransition2} transition={currentTransition.transition} params={currentTransition.params} class="absolute -left-[155px] top-[40px]">
+      {#snippet children()}
+        <DropdownUl>
+          <DropdownLi href="/">Dashboard</DropdownLi>
+          <DropdownLi href="/components/drawer">Drawer</DropdownLi>
+          <DropdownLi href="/components/footer">Footer</DropdownLi>
+          <DropdownLi href="/components">Alert</DropdownLi>
+        </DropdownUl>
+      {/snippet}
+    </Dropdown>
+  </div>
+</div>
+  <div class="mb-4 flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Transition</Label>
+    {#each transitions as transition}
+      <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+    {/each}
+  </div>
+</CodeWrapper>
 
 <H2>Active link</H2>
 
@@ -221,105 +321,8 @@
 
 <HighlightCompo code={modules['./md/active-link.md'] as string} />
 
-<H2>Dropdown divider</H2>
-<CodeWrapper class="flex h-64 items-start justify-center">
-  <Button onclick={dropdownDivider.toggle}
-    >Dropdown
-    <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
-  </Button>
-  <div class="relative">
-    <Dropdown dropdownStatus={dropdownDividerStatus} closeDropdown={closeDropdownDivider} params={transitionParams} class="absolute -left-[150px] top-[40px]">
-      <DropdownUl>
-        <DropdownLi href="/">Dashboard</DropdownLi>
-        <DropdownDivider />
-        <DropdownLi href="/components/drawer">Drawer</DropdownLi>
-        <DropdownLi href="/components/footer">Footer</DropdownLi>
-        <DropdownLi href="/components">Alert</DropdownLi>
-      </DropdownUl>
-    </Dropdown>
-  </div>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/dropdown-divider.md'] as string} />
-
-<H2>Dropdown header adn footer</H2>
-
-<CodeWrapper class="flex h-96 items-start justify-center">
-  <Button onclick={dropdownC.toggle}
-    >Dropdown
-    <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
-  </Button>
-  <div class="relative">
-    <Dropdown dropdownStatus={dropdownCStatus} closeDropdown={closeDropdownC} params={transitionParams} class="absolute -left-[150px] top-[40px]">
-      <DropdownHeader>
-        <div>Bonnie Green</div>
-        <div class="truncate font-medium">name@flowbite.com</div>
-      </DropdownHeader>
-      <DropdownUl>
-        <DropdownLi href="/">Dashboard</DropdownLi>
-        <DropdownLi href="/components/dropdown">Dropdown</DropdownLi>
-        <DropdownLi href="/components/footer">Footer</DropdownLi>
-        <DropdownLi href="/dropdown">Dropdown</DropdownLi>
-      </DropdownUl>
-      <DropdownFooter>
-        <div class="py-2">
-          <a href="/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
-        </div>
-      </DropdownFooter>
-    </Dropdown>
-  </div>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/dropdown-header-footer.md'] as string} />
-
-<H2>Transtions</H2>
-
-<H3>Slide in/out left</H3>
-<CodeWrapper class="flex h-96 items-start justify-center">
-  <Button onclick={dropdownTransition1.toggle}
-    >Dropdown
-    <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
-  </Button>
-  <div class="relative">
-    <Dropdown dropdownStatus={dropdownTransition1Status} closeDropdown={closeDropdownTransition1} params={transitionParams2} class="absolute -left-[150px] top-[40px]">
-      {#snippet children()}
-        <DropdownUl>
-          <DropdownLi href="/">Dashboard</DropdownLi>
-          <DropdownLi href="/components/drawer">Drawer</DropdownLi>
-          <DropdownLi href="/components/footer">Footer</DropdownLi>
-          <DropdownLi href="/components">Alert</DropdownLi>
-        </DropdownUl>
-      {/snippet}
-    </Dropdown>
-  </div>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/transition-slide.md'] as string} />
-
-<H3>Blur</H3>
-<CodeWrapper class="flex h-96 items-start justify-center">
-  <Button onclick={dropdownTransition2.toggle}
-    >Dropdown
-    <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
-  </Button>
-  <div class="relative">
-    <Dropdown dropdownStatus={dropdownTransition2Status} closeDropdown={closeDropdownTransition2} params={transitionParams3} transition={blur} class="absolute -left-[150px] top-[40px]">
-      {#snippet children()}
-        <DropdownUl>
-          <DropdownLi href="/">Dashboard</DropdownLi>
-          <DropdownLi href="/components/drawer">Drawer</DropdownLi>
-          <DropdownLi href="/components/footer">Footer</DropdownLi>
-          <DropdownLi href="/components">Alert</DropdownLi>
-        </DropdownUl>
-      {/snippet}
-    </Dropdown>
-  </div>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/transition-blur.md'] as string} />
-
 <H2>Multi-level dropdown</H2>
-<CodeWrapper class="flex h-96 items-start justify-center">
+<CodeWrapper class="flex h-80 items-start justify-center">
   <Button onclick={dropdownMultiLevel.toggle}
     >Dropdown
     <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
@@ -350,10 +353,10 @@
 
 <H2>Dropdown with checkbox</H2>
 
-<CodeWrapper class="relative flex h-96 items-start justify-center">
+<CodeWrapper class="flex h-96 items-start justify-center">
   <Button onclick={dropdownCheckbox.toggle}>Dropdown checkbox<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownCheckboxStatus} closeDropdown={closeDropdownCheckbox} params={transitionParams} class="absolute -left-[200px] top-[40px]">
+    <Dropdown dropdownStatus={dropdownCheckboxStatus} closeDropdown={closeDropdownCheckbox} params={transitionParams} class="absolute -left-[195px] top-[45px]">
       <DropdownUl>
         <DropdownLi liClass="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
           <Checkbox>Robert Gouth</Checkbox>
@@ -385,7 +388,7 @@
 <CodeWrapper class="relative flex h-96 items-start justify-center">
   <Button onclick={dropdownHelper.toggle}>Dropdown helper text<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownHelperStatus} closeDropdown={closeDropdownHelper} params={transitionParams} class="absolute -left-[240px] top-[40px] w-64 overflow-y-auto p-2 pb-3 text-sm">
+    <Dropdown dropdownStatus={dropdownHelperStatus} closeDropdown={closeDropdownHelper} params={transitionParams} class="absolute -left-[240px] top-[45px] w-64 overflow-y-auto p-2 pb-3 text-sm">
       <DropdownUl>
         <DropdownLi liClass="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
           <Checkbox>Enable notifications</Checkbox>
@@ -410,11 +413,11 @@
 <CodeWrapper class="relative flex h-96 items-start justify-center">
   <Button onclick={dropdownRadio.toggle}>Dropdown radio<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownRadioStatus} closeDropdown={closeDropdownRadio} params={transitionParams} class="absolute -left-[170px] top-[40px] overflow-y-auto p-2 pb-3 text-sm">
+    <Dropdown dropdownStatus={dropdownRadioStatus} closeDropdown={closeDropdownRadio} params={transitionParams} class="absolute -left-[185px] top-[45px] overflow-y-auto pb-3 text-sm w-48">
       <DropdownUl>
-        <DropdownHeader>
+        <DropdownHeader class="px-2 py-1">
           <div class="p-0">
-            <Search size="md" class="pl-8" />
+            <Search size="md" class="pl-10" />
           </div>
         </DropdownHeader>
         <DropdownLi liClass="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
@@ -442,8 +445,8 @@
 <CodeWrapper class="relative flex h-96 items-start justify-center">
   <Button onclick={dropdownToggle.toggle}>Dropdown radio<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownToggleStatus} closeDropdown={closeDropdownToggle} params={transitionParams} class="absolute -left-[180px] top-[40px] overflow-y-auto p-2 pb-3 text-sm">
-      <DropdownHeader>
+    <Dropdown dropdownStatus={dropdownToggleStatus} closeDropdown={closeDropdownToggle} params={transitionParams} class="absolute -left-[185px] top-[45px] overflow-y-auto pb-3 text-sm w-48">
+      <DropdownHeader class="px-2 py-2">
         <div class="p-0">
           <Search size="md" class="pl-8" />
         </div>
@@ -510,7 +513,7 @@
     <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
   </Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownScrollStatus} closeDropdown={closeDropdownScroll} params={transitionParams} class="absolute -left-[150px] top-[40px]">
+    <Dropdown dropdownStatus={dropdownScrollStatus} closeDropdown={closeDropdownScroll} params={transitionParams} class="absolute -left-[160px] top-[40px] w-48">
       <DropdownUl class="h-40 w-52 overflow-y-auto py-1">
         <DropdownLi href="/" aClass="flex items-center text-base font-semibold gap-2"><Avatar src="/images/profile-picture-1.webp" size="xs" />Jese Leos</DropdownLi>
         <DropdownLi href="/" aClass="flex items-center text-base font-semibold gap-2"><Avatar src="/images/profile-picture-2.webp" size="xs" />Robert Gouth</DropdownLi>
@@ -538,7 +541,7 @@
     <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
   </Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownSearchStatus} closeDropdown={closeDropdownSearch} params={transitionParams} class="absolute -left-[150px] top-[40px] w-52">
+    <Dropdown dropdownStatus={dropdownSearchStatus} closeDropdown={closeDropdownSearch} params={transitionParams} class="absolute -left-[175px] top-[40px] w-52">
       <DropdownHeader>
         <Search size="md" bind:value={searchTerm} class="pl-10" />
       </DropdownHeader>
@@ -639,7 +642,7 @@
   <Avatar onclick={dropdownUser.toggle} src="/images/profile-picture-3.webp" dot={{ color: 'green' }} />
 
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownUserStatus} closeDropdown={closeDropdownUser} params={transitionParams} class="absolute -left-[100px] top-[40px]">
+    <Dropdown dropdownStatus={dropdownUserStatus} closeDropdown={closeDropdownUser} params={transitionParams} class="absolute -left-[110px] top-[40px]">
       <DropdownHeader class="px-4 py-2">
         <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
         <span class="block truncate text-sm font-medium">name@flowbite.com</span>
@@ -723,7 +726,7 @@
     </div>
     <Button onclick={dropdownBottom.toggle}>Dropdown bottom<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
     <div class="relative">
-      <Dropdown dropdownStatus={dropdownBottomStatus} closeDropdown={closeDropdownBottom} params={transitionParams} class="absolute -left-[90px] top-[0px]">
+      <Dropdown dropdownStatus={dropdownBottomStatus} closeDropdown={closeDropdownBottom} params={transitionParams} class="absolute -left-[90px] -top-[10px]">
         <DropdownUl>
           <DropdownLi href="/">Dashboard</DropdownLi>
           <DropdownLi href="/components/drawer">Drawer</DropdownLi>

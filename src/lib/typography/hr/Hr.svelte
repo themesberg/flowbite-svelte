@@ -22,7 +22,6 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
-@prop icon
 @prop divClass
 @prop hrClass
 @prop innerDivClass
