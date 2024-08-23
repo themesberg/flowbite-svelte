@@ -11,3 +11,17 @@
   <input type="radio" bind:group {value} aria-describedby={aria_describedby} {...restProps} class={input({ class: inputClass })} />
   {@render children()}
 </Label>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@prop children
+@prop aria_describedby
+@prop labelClass
+@prop color = 'primary'
+@prop group = $bindable()
+@prop value
+@prop inputClass
+@prop ...restProps
+-->
