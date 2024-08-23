@@ -38,7 +38,6 @@
 
 <H1>Buttons</H1>
 
-
 <H2>Setup</H2>
 <HighlightCompo codeLang="ts" code={modules['./md/setup.md'] as string} />
 
@@ -86,9 +85,9 @@
 
 <CodeWrapper>
   <div class="h-16">
-  <GradientButton outline={gradientOutline} shadow={gradientShadow} pill={graidentPill} class={gradientClass} color={gradientColor as GradientButton['color']}>{capitalizeFirstLetter(gradientColor)}</GradientButton>
+    <GradientButton outline={gradientOutline} shadow={gradientShadow} pill={graidentPill} class={gradientClass} color={gradientColor as GradientButton['color']}>{capitalizeFirstLetter(gradientColor)}</GradientButton>
   </div>
-  <div class="space-y-4 mt-4">
+  <div class="mt-4 space-y-4">
     <div class="flex flex-wrap space-x-10">
       <Label class="mb-4 w-full font-bold">Color</Label>
       {#each colors as colorOption}
@@ -96,10 +95,10 @@
       {/each}
     </div>
   </div>
-  <Button class="w-36 mt-4" onclick={changeClass}>{gradientClass === 'w-40' ? 'Add class' : 'Remove class'}</Button>
-  <Button class="w-36 mt-4" color="blue" onclick={changeOutline}>{gradientOutline === false ? 'Add outline' : 'Remove outline'}</Button>
-  <Button class="w-40 mt-4" color="green" onclick={changeShadow}>{gradientShadow === false ? 'Add shadow' : 'Remove shadow'}</Button>
-  <Button class="w-40 mt-4" color="yellow" onclick={changePill}>{graidentPill === false ? 'Add pill' : 'Remove pill'}</Button>
+  <Button class="mt-4 w-36" onclick={changeClass}>{gradientClass === 'w-40' ? 'Add class' : 'Remove class'}</Button>
+  <Button class="mt-4 w-36" color="blue" onclick={changeOutline}>{gradientOutline === false ? 'Add outline' : 'Remove outline'}</Button>
+  <Button class="mt-4 w-40" color="green" onclick={changeShadow}>{gradientShadow === false ? 'Add shadow' : 'Remove shadow'}</Button>
+  <Button class="mt-4 w-40" color="yellow" onclick={changePill}>{graidentPill === false ? 'Add pill' : 'Remove pill'}</Button>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/gradient.md'] as string} />

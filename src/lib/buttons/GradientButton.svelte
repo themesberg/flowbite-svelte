@@ -5,7 +5,7 @@
 
   // const group = getContext('group');
 
-  let { children, outline, pill, color = 'blue', shadow, class: className,  href, target, rel, type, disabled, name, ...restProps }: Props = $props();
+  let { children, outline, pill, color = 'blue', shadow, class: className, href, target, rel, type, disabled, name, ...restProps }: Props = $props();
 
   const disabledValue = disabled !== null ? disabled : undefined;
 
@@ -34,7 +34,6 @@
 @prop color = 'blue'
 @prop shadow
 @prop class: className
-@prop onclick
 @prop href
 @prop target
 @prop rel

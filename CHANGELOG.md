@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.1
+
+### Patch Changes
+
+- feat: variants to gradientbutton ([`6e7c3363c99ea2fbaff44c578b5793acf79c019b`](https://github.com/shinokada/svelte-5-ui-lib/commit/6e7c3363c99ea2fbaff44c578b5793acf79c019b))
+
 ## 0.9.0
 
 ### Minor Changes
