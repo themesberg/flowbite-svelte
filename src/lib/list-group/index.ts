@@ -23,7 +23,7 @@ interface ListgroupItemProps extends HTMLAnchorAttributes {
   current?: boolean;
   disabled?: boolean;
   name?: string | undefined | null;
-  icon?: Component;
+  Icon?: Component;
   href?: string | undefined | null;
   currentClass?: string | undefined | null;
   normalClass?: string | undefined | null;

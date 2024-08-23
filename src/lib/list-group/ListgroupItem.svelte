@@ -4,7 +4,7 @@
   import { tv } from 'tailwind-variants';
   import { type ListgroupItemProps as Props, listGroupItem } from '.';
 
-  let { children, onclick, active, current, disabled, name, icon, href, currentClass = 'text-white bg-primary-700 dark:text-white dark:bg-gray-800', normalClass, disabledClass = 'text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400', liClass = 'py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg', class: className, ...restProps }: Props = $props();
+  let { children, onclick, active, current, disabled, name, Icon, href, currentClass = 'text-white bg-primary-700 dark:text-white dark:bg-gray-800', normalClass, disabledClass = 'text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400', liClass = 'py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg', class: className, ...restProps }: Props = $props();
 
   active = getContext('active');
 
@@ -43,8 +43,8 @@
   </a>
 {:else}
   <button {onclick} class={buttonClass} {disabled} aria-current={current}>
-    {#if icon}
-      <icon class="me-2.5 h-5 w-5"></icon>
+    {#if Icon}
+      <Icon class="me-2.5 h-5 w-5" />
     {/if}
     {name}
   </button>
@@ -60,7 +60,7 @@
 @prop current
 @prop disabled
 @prop name
-@prop icon
+@prop Icon
 @prop href
 @prop currentClass = 'text-white bg-primary-700 dark:text-white dark:bg-gray-800'
 @prop normalClass

@@ -31,15 +31,15 @@
     }
   ];
 
-  let icons = [
-    { name: 'Profile', icon: UserCircleSolid, mycustomfield: 'data1' },
+  let iconList = [
+    { name: 'Profile', Icon: UserCircleSolid, mycustomfield: 'data1' },
     {
       name: 'Settings',
-      icon: AdjustmentsHorizontalSolid,
+      Icon: AdjustmentsHorizontalSolid,
       mycustomfield: 'data2'
     },
-    { name: 'Messages', icon: MessagesSolid, mycustomfield: 'data3' },
-    { name: 'Download', icon: DownloadSolid, mycustomfield: 'data4' }
+    { name: 'Messages', Icon: MessagesSolid, mycustomfield: 'data3' },
+    { name: 'Download', Icon: DownloadSolid, mycustomfield: 'data4' }
   ];
   const handleClick = (e?: MouseEvent) => {
     if (e?.target instanceof HTMLElement) {
@@ -88,7 +88,7 @@
 
 <H2>List group with icons</H2>
 <CodeWrapper class="flex justify-center">
-  <Listgroup active items={icons} class="w-48" onclick={handleClick2} />
+  <Listgroup active items={iconList} class="w-48" onclick={handleClick2} />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/list-group-with-icons.md'] as string} />
