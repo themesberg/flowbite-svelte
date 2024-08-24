@@ -60,7 +60,7 @@
     },
     buttons: {
       checked: true,
-      notes: 'Updated: class names'
+      notes: 'Variants, reactive examples'
     },
     card: {
       checked: true,
