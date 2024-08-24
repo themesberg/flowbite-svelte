@@ -1,8 +1,8 @@
 <script lang="ts">
   import { type AnchorProps as Props, anchor } from './index';
 
-  let { children, class: className, ...restProps }: Props = $props();
-  let linkClass = $derived(anchor({ className }));
+  let { children, color = "primary", class: className, ...restProps }: Props = $props();
+  let linkClass = $derived(anchor({ color, className }));
 </script>
 
 <a {...restProps} class={linkClass}>

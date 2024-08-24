@@ -120,7 +120,7 @@
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={iconColor} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="alert_with_icon_color" bind:group={iconColor} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
 </CodeWrapper>
@@ -162,7 +162,6 @@
       </ul>
     </Alert>
   </div>
-
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
@@ -212,7 +211,7 @@
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Transition</Label>
     {#each transitions as transition}
-      <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+      <Radio labelClass="w-24 my-1" name="transition_color" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
     {/each}
   </div>
 </CodeWrapper>
@@ -230,7 +229,6 @@
       Change a few things up and try submitting again.
     </Alert>
   </div>
-
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}

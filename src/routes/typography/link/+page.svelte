@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { A, P, Button, Card, Toggle } from '$lib';
+  import { A, P, Button, Card, Toggle, anchor, Label, Radio } from '$lib';
   import { ArrowRightOutline } from 'flowbite-svelte-icons';
   import Figma from '../../utils/icons/Figma.svelte';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
@@ -13,6 +13,8 @@
   });
 
   let vCard = $state(false);
+  const colors = Object.keys(anchor.variants.color);
+  let anchorColor: A['color'] = $state('primary');
 </script>
 
 <H1>Links</H1>
@@ -21,9 +23,15 @@
 
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
-<H2>Default link</H2>
+<H2>Color</H2>
 <CodeWrapper>
-  <A href="/" class="font-medium hover:underline">Read more</A>
+  <A href="/" color={anchorColor} class="font-medium hover:underline">Read more</A>
+  <div class="flex flex-wrap space-x-4 mt-4">
+    <Label class="mb-4 w-full font-bold">Color</Label>
+    {#each colors as colorOption}
+      <Radio labelClass="w-24 my-1" name="anchor_color" bind:group={anchorColor} color={colorOption as A['color']} value={colorOption}>{colorOption}</Radio>
+    {/each}
+  </div>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/default-link.md'] as string} />
 

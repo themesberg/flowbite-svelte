@@ -108,7 +108,7 @@
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="floating_color" bind:group={helperColor} color={colorOption as FloatingLabelInput['color']} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="helper_color" bind:group={helperColor} color={colorOption as FloatingLabelInput['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
 </CodeWrapper>

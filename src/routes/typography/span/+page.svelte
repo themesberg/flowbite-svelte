@@ -17,7 +17,7 @@
   let spanUppercase: Span['uppercase'] = $state(false);
   const gradients = ['skyToEmerald', 'purpleToBlue', 'tealToLime', 'redToYellow', 'indigoToCyan', 'fuchsiaToRose', 'amberToEmerald', 'violetToRed', 'blueToGreen', 'orangeToPurple', 'yellowToRed', 'normal'];
   let spanGradient: Span['gradient'] = $state('normal');
-  let spanHighlight: Span['highlight'] = $state();
+  let spanHighlight: Span['highlight'] = $state('blue');
   const highlights = ['blue', 'red', 'green', 'yellow', 'purple', 'pink', 'indigo', 'teal', 'orange', 'cyan', 'fuchsia', 'amber', 'lime'];
   let spanDecoration: Span['decoration'] = $state('solid');
   const decorations = ['solid', 'double', 'dotted', 'dashed', 'wavy', 'none'];
@@ -62,7 +62,8 @@
   <div class="mt-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Highlight:</Label>
     {#each highlights as highlight}
-      <Radio labelClass="w-32 my-1" name="span_highlight" bind:group={spanHighlight} value={highlight}>{highlight}</Radio>
+      <Radio labelClass="w-32 my-1" name="span_highlight" bind:group={spanHighlight} color={highlight as Span['color']} value={highlight}>{highlight}</Radio>
+     
     {/each}
   </div>
 </CodeWrapper>
@@ -80,7 +81,7 @@
   <div class="mt-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Decoration color:</Label>
     {#each decorationColors as color}
-      <Radio labelClass="w-32 my-1" name="p_decoration_color" bind:group={spanDecorationColor} value={color}>{color}</Radio>
+      <Radio labelClass="w-32 my-1" name="p_decoration_color" bind:group={spanDecorationColor} color={color as Span['decorationColor']} value={color}>{color}</Radio>
     {/each}
   </div>
   <div class="mt-4 flex flex-wrap space-x-4">

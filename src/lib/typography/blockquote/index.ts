@@ -5,6 +5,7 @@ import type { HTMLBlockquoteAttributes } from 'svelte/elements';
 import { blockquote } from './theme';
 
 type SizeType = VariantProps<typeof blockquote>['size'];
+type AlignmentType = VariantProps<typeof blockquote>['alignment'];
 
 interface BlockquoteProps extends HTMLBlockquoteAttributes {
   children: Snippet;
@@ -14,7 +15,7 @@ interface BlockquoteProps extends HTMLBlockquoteAttributes {
   bgClass?: string | undefined;
   bg?: boolean;
   baseClass?: string | undefined;
-  alignment?: 'left' | 'center' | 'right';
+  alignment?: AlignmentType;
   size?: SizeType;
   class?: string | undefined;
 }

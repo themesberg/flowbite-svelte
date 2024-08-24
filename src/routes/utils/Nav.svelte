@@ -131,7 +131,7 @@
       </SidebarDropdownWrapper>
       <SidebarDropdownWrapper isOpen={hasPath('typography')} label="Typography" svgClass="me-4" btnClass="p-1">
         <SidebarItem onclick={closeNavDrawer} label="Blockquote" href="/typography/blockquote" />
-        <SidebarItem onclick={closeNavDrawer} label="Heading/Span/Mark" href="/typography/heading" />
+        <SidebarItem onclick={closeNavDrawer} label="Heading/Mark" href="/typography/heading" />
         <SidebarItem onclick={closeNavDrawer} label="HR" href="/typography/hr" />
         <SidebarItem onclick={closeNavDrawer} label="Image" href="/typography/image" />
         <SidebarItem onclick={closeNavDrawer} label="Link" href="/typography/link" />

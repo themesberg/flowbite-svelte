@@ -80,7 +80,7 @@
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as color}
-      <Radio labelClass="w-24 my-1" name="progress_size" bind:group={progressColor} color={color as Progressbar['color']} value={color}>{color}</Radio>
+      <Radio labelClass="w-24 my-1" name="progress_color" bind:group={progressColor} color={color as Progressbar['color']} value={color}>{color}</Radio>
     {/each}
   </div>
 </CodeWrapper>

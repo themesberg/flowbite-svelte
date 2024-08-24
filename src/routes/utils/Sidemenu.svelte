@@ -70,7 +70,7 @@
     </SidebarDropdownWrapper>
     <SidebarDropdownWrapper label="Typography" isOpen={hasPath('typography')} svgClass="me-4" btnClass="p-1">
       <SidebarItem label="Blockquote" href="/typography/blockquote" />
-      <SidebarItem label="Heading/Span/Mark" href="/typography/heading" />
+      <SidebarItem label="Heading/Mark" href="/typography/heading" />
       <SidebarItem label="HR" href="/typography/hr" />
       <SidebarItem label="Image" href="/typography/image" />
       <SidebarItem label="Link" href="/typography/link" />

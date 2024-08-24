@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Button, Indicator, GradientButton, Spinner, gradientButton, button, Radio, Label } from '$lib';
-  import { EnvelopeSolid, ArrowRightOutline, ShoppingBagSolid, ThumbsUpSolid } from 'flowbite-svelte-icons';
+  import { ArrowRightOutline, ShoppingBagSolid, ThumbsUpSolid } from 'flowbite-svelte-icons';
   const btn1 = () => {
     alert('You clicked btn1.');
   };
@@ -120,7 +120,7 @@
     <div class="flex flex-wrap space-x-10">
       <Label class="mb-4 w-full font-bold">Size</Label>
       {#each gradientSizes as sizeOption}
-        <Radio labelClass="w-24 my-1" name="btn_size" bind:group={gradientSize as Button['size']} color={sizeOption as Button['size']} value={sizeOption}>{sizeOption}</Radio>
+        <Radio labelClass="w-24 my-1" name="gradient_size" bind:group={gradientSize as Button['size']} color={sizeOption as Button['size']} value={sizeOption}>{sizeOption}</Radio>
       {/each}
     </div>
   </div>
