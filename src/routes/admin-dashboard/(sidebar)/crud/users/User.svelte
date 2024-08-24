@@ -12,7 +12,6 @@
 			if (el) el.value = data[key];
 		}
 	}
-	1;
 </script>
 
 <Modal
