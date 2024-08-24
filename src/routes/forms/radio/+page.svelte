@@ -64,7 +64,10 @@
 <HighlightCompo code={modules['./md/colors.md'] as string} />
 
 <H2>Size</H2>
-<P>Use <code>inputClass</code>.</P>
+<P>
+  Use <code>inputClass</code>
+  .
+</P>
 <CodeWrapper class="flex gap-4">
   <Radio name="size-example">Default size</Radio>
   <Radio name="size-example" inputClass="w-6 h-6">w-6 h-6</Radio>
@@ -83,7 +86,8 @@
 <H2>Radio with a link</H2>
 <CodeWrapper>
   <Radio name="with-link">
-    I agree with the <a href="/" class="ms-1 text-primary-600 hover:underline dark:text-primary-500"> terms and conditions </a>.
+    I agree with the <a href="/" class="ms-1 text-primary-600 hover:underline dark:text-primary-500">terms and conditions</a>
+    .
   </Radio>
 </CodeWrapper>
 

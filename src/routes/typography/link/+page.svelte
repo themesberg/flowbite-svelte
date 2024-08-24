@@ -26,7 +26,7 @@
 <H2>Color</H2>
 <CodeWrapper>
   <A href="/" color={anchorColor} class="font-medium hover:underline">Read more</A>
-  <div class="flex flex-wrap space-x-4 mt-4">
+  <div class="mt-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
       <Radio labelClass="w-24 my-1" name="anchor_color" bind:group={anchorColor} color={colorOption as A['color']} value={colorOption}>{colorOption}</Radio>

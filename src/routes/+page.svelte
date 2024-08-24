@@ -42,7 +42,8 @@ Install flowbite-svelte-icons@next:
 <HighlightCompo codeLang="sh" code={modules['./md/flowbite-svelte-icons.md'] as string} />
 
 Check if it has the latest version at
-<a class="hover:underline dark:text-primary-500" href="https://github.com/themesberg/flowbite-svelte-icons/releases">Releases page</a>.
+<a class="hover:underline dark:text-primary-500" href="https://github.com/themesberg/flowbite-svelte-icons/releases">Releases page</a>
+.
 
 <H3>Tailwind</H3>
 Install tailwindcss:

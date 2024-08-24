@@ -63,7 +63,6 @@
     <Label class="mb-4 w-full font-bold">Highlight:</Label>
     {#each highlights as highlight}
       <Radio labelClass="w-32 my-1" name="span_highlight" bind:group={spanHighlight} color={highlight as Span['color']} value={highlight}>{highlight}</Radio>
-     
     {/each}
   </div>
 </CodeWrapper>

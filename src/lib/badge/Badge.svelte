@@ -38,7 +38,8 @@
           onclick={() => {
             badgeStatus = false;
           }}
-          ><span class="sr-only">Remove badge</span>
+        >
+          <span class="sr-only">Remove badge</span>
           {@render icon()}
         </button>
       {:else if onclick}

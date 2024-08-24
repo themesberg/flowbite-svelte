@@ -4,6 +4,7 @@
   "singleQuote": true,
   "trailingComma": "none",
   "printWidth": 1000,
+  "htmlWhitespaceSensitivity": "ignore",
   "plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"],
   "overrides": [
     {

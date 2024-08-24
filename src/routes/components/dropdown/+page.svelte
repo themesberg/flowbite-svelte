@@ -211,8 +211,8 @@
 
 <H2>Default dropdown</H2>
 <CodeWrapper class="flex h-64 items-start justify-center">
-  <Button onclick={dropdownA.toggle}
-    >Dropdown
+  <Button onclick={dropdownA.toggle}>
+    Dropdown
     <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
   </Button>
   <div class="relative">
@@ -232,8 +232,8 @@
 <H2>Divider, header, and footer</H2>
 <CodeWrapper>
   <div class="flex items-start justify-center">
-    <Button onclick={dropdownDividerHeaderFooter.toggle}
-      >Dropdown
+    <Button onclick={dropdownDividerHeaderFooter.toggle}>
+      Dropdown
       <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
     </Button>
     <div class="relative h-96">
@@ -264,15 +264,15 @@
     </div>
   </div>
   <div class="flex justify-center gap-4">
-    <Button onclick={changeDividerStatus}
-      >Divider {#if dividerStatus}off{:else}on{/if}</Button
-    >
-    <Button onclick={changeHeaderStatus}
-      >Header {#if headerStatus}off{:else}on{/if}</Button
-    >
-    <Button onclick={changeFooterStatus}
-      >Footer {#if footerStatus}off{:else}on{/if}</Button
-    >
+    <Button onclick={changeDividerStatus}>
+      Divider {#if dividerStatus}off{:else}on{/if}
+    </Button>
+    <Button onclick={changeHeaderStatus}>
+      Header {#if headerStatus}off{:else}on{/if}
+    </Button>
+    <Button onclick={changeFooterStatus}>
+      Footer {#if footerStatus}off{:else}on{/if}
+    </Button>
   </div>
 </CodeWrapper>
 
@@ -280,8 +280,8 @@
 <H2>Transition</H2>
 <CodeWrapper>
   <div class="flex items-start justify-center">
-    <Button onclick={dropdownTransition2.toggle}
-      >Dropdown
+    <Button onclick={dropdownTransition2.toggle}>
+      Dropdown
       <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
     </Button>
 
@@ -309,8 +309,8 @@
 <H2>Active link</H2>
 
 <CodeWrapper class="flex h-64 items-start justify-center">
-  <Button onclick={dropdownB.toggle}
-    >Dropdown
+  <Button onclick={dropdownB.toggle}>
+    Dropdown
     <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
   </Button>
   <div class="relative">
@@ -329,15 +329,15 @@
 
 <H2>Multi-level dropdown</H2>
 <CodeWrapper class="flex h-80 items-start justify-center">
-  <Button onclick={dropdownMultiLevel.toggle}
-    >Dropdown
+  <Button onclick={dropdownMultiLevel.toggle}>
+    Dropdown
     <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
   </Button>
   <div class="relative">
     <Dropdown dropdownStatus={dropdownMultiLevelStatus} closeDropdown={closeDropdownMultiLevel} params={transitionParams} class="absolute -left-[150px] top-[40px] overflow-visible">
       <DropdownUl>
         <DropdownLi href="/">Dashboard</DropdownLi>
-        <button onclick={dropdownMultiLevel2.toggle} class="flex p-2 pl-4"> Dropdown<ChevronRightOutline class="ms-2 h-6 w-6 text-primary-700 dark:text-white" /></button>
+        <button onclick={dropdownMultiLevel2.toggle} class="flex p-2 pl-4">Dropdown<ChevronRightOutline class="ms-2 h-6 w-6 text-primary-700 dark:text-white" /></button>
         <div class="relative">
           <Dropdown dropdownStatus={dropdownMultiLevelStatus2} closeDropdown={closeAllMultilevel} params={transitionParams} class="absolute -top-[60px] left-[120px]">
             <DropdownUl class="z-100">
@@ -514,8 +514,8 @@
 
 <H2>Dropdown with scrolling</H2>
 <CodeWrapper class="flex h-80 items-start justify-center">
-  <Button onclick={dropdownScroll.toggle}
-    >Dropdown
+  <Button onclick={dropdownScroll.toggle}>
+    Dropdown
     <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
   </Button>
   <div class="relative">
@@ -542,8 +542,8 @@
 
 <H2>Dropdown with search</H2>
 <CodeWrapper class="flex h-80 items-start justify-center">
-  <Button onclick={dropdownSearch.toggle}
-    >Dropdown
+  <Button onclick={dropdownSearch.toggle}>
+    Dropdown
     <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
   </Button>
   <div class="relative">

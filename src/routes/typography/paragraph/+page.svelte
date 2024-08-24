@@ -66,7 +66,7 @@
 
 <H2>Space and height</H2>
 <CodeWrapper>
-  <div class="h-[200px] md:[120px] overflow-scroll">
+  <div class="md:[120px] h-[200px] overflow-scroll">
     <P space={pSpace} height={pHeight} color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
   </div>
   <div class="flex flex-wrap space-x-4">
@@ -86,7 +86,7 @@
 
 <H2>Alignment and whitespace</H2>
 <CodeWrapper>
-  <div class="h-[100px] sm:h-[80px] overflow-scroll mb-4">
+  <div class="mb-4 h-[100px] overflow-scroll sm:h-[80px]">
     <P align={pAlign} whitespace={pWhitespace} color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease.</P>
   </div>
   <div class="flex flex-wrap space-x-4">
@@ -106,7 +106,7 @@
 
 <H2>Style and First letter</H2>
 <CodeWrapper>
-  <div class="h-[120px] sm:h-[100px] overflow-scroll mb-4">
+  <div class="mb-4 h-[120px] overflow-scroll sm:h-[100px]">
     <P style={pStyle} firstUpper={pFirstupper} color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
   </div>
   <div class="flex flex-wrap space-x-4">
@@ -121,7 +121,7 @@
 
 <H2>Justify</H2>
 <CodeWrapper>
-  <div class="h-[120px] sm:h-[100px] overflow-scroll mb-4">
+  <div class="mb-4 h-[120px] overflow-scroll sm:h-[100px]">
     <P justify={pJustify} color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
   </div>
   <Button class="mt-4" onclick={() => (pJustify = !pJustify)}>{pJustify ? 'Normal' : 'Justify'}</Button>
@@ -140,7 +140,7 @@
 
 <CodeWrapper>
   <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
-    Track work across the enterprise through an open, collaborative platform. <strong class="font-semibold text-gray-900 dark:text-white"> Link issues across Jira </strong>
+    Track work across the enterprise through an open, collaborative platform. <strong class="font-semibold text-gray-900 dark:text-white">Link issues across Jira</strong>
     and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.
   </P>
 </CodeWrapper>
@@ -151,7 +151,7 @@
 
 <CodeWrapper>
   <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
-    Track work across the enterprise through an open, collaborative platform. <u class="underline"> Link issues across Jira </u>
+    Track work across the enterprise through an open, collaborative platform. <u class="underline">Link issues across Jira</u>
     and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.
   </P>
 </CodeWrapper>

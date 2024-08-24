@@ -92,8 +92,10 @@
     <Toggle
       onclick={() => {
         floatingSize = floatingSize === 'default' ? 'small' : 'default';
-      }}>Toggle size</Toggle
+      }}
     >
+      Toggle size
+    </Toggle>
   </div>
 </CodeWrapper>
 
@@ -103,7 +105,8 @@
 <CodeWrapper>
   <FloatingLabelInput style="filled" color={helperColor} id="floating_helper" aria_describedby="floating_helper_text" type="text">Floating helper</FloatingLabelInput>
   <Helper class="pt-2" color={helperColor}>
-    Remember, contributions to this topic should follow our <a href="/"> Community Guidelines </a>.
+    Remember, contributions to this topic should follow our <a href="/">Community Guidelines</a>
+    .
   </Helper>
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>

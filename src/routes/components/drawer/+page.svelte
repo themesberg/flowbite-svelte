@@ -110,7 +110,7 @@
       </h5>
     </Drawerhead>
     <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
-      Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline hover:no-underline dark:text-primary-500"> limited-time sale </a>
+      Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline hover:no-underline dark:text-primary-500">limited-time sale</a>
       for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
     </p>
     <div class="grid grid-cols-2 gap-4">
@@ -158,7 +158,7 @@
       </h5>
     </Drawerhead>
     <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
-      Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline hover:no-underline dark:text-primary-500"> limited-time sale </a>
+      Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline hover:no-underline dark:text-primary-500">limited-time sale</a>
       for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
     </p>
     <div class="grid grid-cols-2 gap-4">
@@ -189,8 +189,10 @@
       </h5>
     </Drawerhead>
     <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
-      Backdrop: {backdropStatus ? 'true' : 'false'}<br />
-      Outsideclick: {outsideclickStatus ? 'true' : 'false'}<br />
+      Backdrop: {backdropStatus ? 'true' : 'false'}
+      <br />
+      Outsideclick: {outsideclickStatus ? 'true' : 'false'}
+      <br />
       Offset: {offsetClass ? offsetClass : 'none'}
     </p>
   </Drawer>
@@ -237,7 +239,7 @@
             <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
           {/snippet}
           {#snippet subtext()}
-            <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300"> Pro </span>
+            <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
           {/snippet}
         </SidebarItem>
         <SidebarItem label="Inbox" {spanClass}>
@@ -245,7 +247,7 @@
             <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
           {/snippet}
           {#snippet subtext()}
-            <span class="ms-3 inline-flex h-3 w-3 items-center justify-center rounded-full bg-primary-200 p-3 text-sm font-medium text-primary-600 dark:bg-primary-900 dark:text-primary-200"> 3 </span>
+            <span class="ms-3 inline-flex h-3 w-3 items-center justify-center rounded-full bg-primary-200 p-3 text-sm font-medium text-primary-600 dark:bg-primary-900 dark:text-primary-200">3</span>
           {/snippet}
         </SidebarItem>
         <SidebarItem label="Users">

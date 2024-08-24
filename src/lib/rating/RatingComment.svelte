@@ -74,7 +74,7 @@
           <Button size="xs" href="/" color="dark">Helpful</Button>
         {/if}
         {#if abuselink}
-          <a href={abuselink} class="ps-4 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"> Report abuse </a>
+          <a href={abuselink} class="ps-4 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Report abuse</a>
         {/if}
       </div>
     {/if}
