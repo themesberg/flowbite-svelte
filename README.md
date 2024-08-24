@@ -26,10 +26,10 @@ const config = {
 export default config;
 ```
 
-Install `svelte-5-ui-lib:
+Install `svelte-5-ui-lib`, update dependencies and install the latest:
 
 ```
-pnpm i -D svelte-5-ui-lib
+pnpm i -D svelte-5-ui-lib && pnpm update && pnpm i -D flowbite-svelte-icons@next
 ```
 
 Install tailwindcss:

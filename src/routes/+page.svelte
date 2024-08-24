@@ -31,13 +31,13 @@ After installing Svelte-5, update `svelte.config.js` to enable `runes`:
 <HighlightCompo codeLang="js" code={modules['./md/runes.md'] as string} />
 
 <H3>Svelte-5-Ui-Lib</H3>
-Install `svelte-5-ui-lib:
+Install `svelte-5-ui-lib` and update dependencies:
 
 <HighlightCompo codeLang="sh" code={modules['./md/svelte-5-ui-lib.md'] as string} />
 
 <H3>Flowbite-Svelte-Icons@next</H3>
 
-Install flowbite-svelte-icons@2.0.0-next.1:
+Install flowbite-svelte-icons@next:
 
 <HighlightCompo codeLang="sh" code={modules['./md/flowbite-svelte-icons.md'] as string} />
 
