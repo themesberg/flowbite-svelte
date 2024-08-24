@@ -1,22 +1,8 @@
 <script lang="ts">
   import Button from '$lib/buttons/Button.svelte';
-  import type { ButtonColorType, SizeType } from '$lib/types';
   import { twMerge } from 'tailwind-merge';
-  import type { Snippet } from 'svelte';
-
-  interface Props {
-    children: Snippet;
-    class?: string | undefined;
-    group?: (string | number)[];
-    value?: string | number;
-    checked?: boolean | undefined;
-    inline?: boolean;
-    pill?: boolean;
-    outline?: boolean;
-    size?: SizeType;
-    color?: ButtonColorType;
-    shadow?: boolean;
-  }
+  import { type CheckboxButtonProps as Props } from '.';
+  
   let { children, class: className, group = [], value = 'on', checked, inline = true, pill, outline, size, color, shadow, ...restProps }: Props = $props();
 
   // react on external group changes

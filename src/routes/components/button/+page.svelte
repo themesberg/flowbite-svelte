@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Indicator, GradientButton, Spinner, gradientButton, Radio, Label } from '$lib';
+  import { Button, Indicator, GradientButton, Spinner, gradientButton, button, Radio, Label } from '$lib';
   import { EnvelopeSolid, ArrowRightOutline, ShoppingBagSolid, ThumbsUpSolid } from 'flowbite-svelte-icons';
   const btn1 = () => {
     alert('You clicked btn1.');
@@ -15,9 +15,41 @@
     import: 'default',
     eager: true
   });
+  // color, size, group, outline, shadow, disabled, pill
+  const btnColors = Object.keys(button.variants.color);
+  let btnColor = $state(btnColors[0]);
+  let btnClass: GradientButton['class'] = $state('w-40');
+  const changeBtnClass = () => {
+    btnClass = btnClass === 'w-40' ? 'w-48' : 'w-40';
+  };
 
-  const colors = Object.keys(gradientButton.variants.color);
-  let gradientColor = $state(colors[0]);
+  let btnOutline = $state(false);
+  const changeBtnOutline = () => {
+    btnOutline = !btnOutline;
+  };
+  let btnShadow = $state(false);
+  const changeBtnShadow = () =>{
+    btnShadow = !btnShadow;
+  }
+  let btnPill = $state(false);
+  const changeBtnPill = () => {
+    btnPill = !btnPill;
+  }
+  let btnDisabled = $state(false);
+  const changeBtnDisabled = () => {
+    btnDisabled = !btnDisabled;
+  }
+  const btnSizes = Object.keys(button.variants.size);
+  let btnSize = $state(btnSizes[0]);
+
+
+
+  const gradientColors = Object.keys(gradientButton.variants.color);
+  let gradientColor = $state(gradientColors[0]);
+
+  const gradientSizes = Object.keys(button.variants.size);
+  let gradientSize = $state(gradientSizes[0]);
+
   let gradientClass: GradientButton['class'] = $state('w-40');
   const changeClass = () => {
     gradientClass = gradientClass === 'w-40' ? 'w-48' : 'w-40';
@@ -34,6 +66,10 @@
   const changePill = () => {
     graidentPill = !graidentPill;
   };
+  let gradientDisabled = $state(false);
+  const changeDisabled = () => {
+    gradientDisabled = !gradientDisabled;
+  };
 </script>
 
 <H1>Buttons</H1>
@@ -44,18 +80,60 @@
 <H2>Default buttons</H2>
 
 <CodeWrapper class="flex flex-wrap gap-2">
-  <Button>Default</Button>
-  <Button color="alternative">Alternative</Button>
-  <Button color="dark">Dark</Button>
-  <Button color="light">Light</Button>
-  <Button color="blue">Blue</Button>
-  <Button color="green">Green</Button>
-  <Button color="red">Red</Button>
-  <Button color="yellow">Yellow</Button>
-  <Button color="purple">Purple</Button>
+  <div class="h-16">
+  <Button color={btnColor as Button['color']} class={btnClass} outline={btnOutline} shadow={btnShadow} pill={btnPill} disabled={btnDisabled}  size={btnSize as Button['size']}>Button</Button>
+  </div>
+  <div class="mt-4 space-y-4">
+    <div class="flex flex-wrap space-x-10">
+      <Label class="mb-4 w-full font-bold">Color</Label>
+      {#each btnColors as colorOption}
+        <Radio labelClass="w-24 my-1" name="btn_color" bind:group={btnColor as Button['color']} color={colorOption as Button['color']} value={colorOption}>{colorOption}</Radio>
+      {/each}
+    </div>
+    <div class="flex flex-wrap space-x-10">
+      <Label class="mb-4 w-full font-bold">Size</Label>
+      {#each btnSizes as sizeOption}
+        <Radio labelClass="w-24 my-1" name="btn_size" bind:group={btnSize as Button['size']} color={sizeOption as Button['size']} value={sizeOption}>{sizeOption}</Radio>
+      {/each}
+    </div>
+  </div>
+  <Button class="mt-4 w-36" onclick={changeBtnClass}>{btnClass === 'w-40' ? 'Add class' : 'Remove class'}</Button>
+  <Button class="mt-4 w-36" color="blue" onclick={changeBtnOutline}>{btnOutline === false ? 'Add outline' : 'Remove outline'}</Button>
+  <Button class="mt-4 w-40" color="green" onclick={changeBtnShadow}>{btnShadow === false ? 'Add shadow' : 'Remove shadow'}</Button>
+  <Button class="mt-4 w-40" color="yellow" onclick={changeBtnPill}>{btnPill === false ? 'Add pill' : 'Remove pill'}</Button>
+  <Button class="mt-4 w-40" color="red" onclick={changeBtnDisabled}>{btnDisabled === false ? 'Add disabled' : 'Remove disabled'}</Button>
 </CodeWrapper>
 
 <HighlightCompo codeLang="js" code={modules['./md/default-buttons.md'] as string} />
+
+<H2>Gradient button</H2>
+
+<CodeWrapper>
+  <div class="h-16">
+    <GradientButton outline={gradientOutline} shadow={gradientShadow} pill={graidentPill} class={gradientClass} disabled={gradientDisabled} color={gradientColor as GradientButton['color']} size={gradientSize as Button['size']}>{capitalizeFirstLetter(gradientColor)}</GradientButton>
+  </div>
+  <div class="mt-4 space-y-4">
+    <div class="flex flex-wrap space-x-10">
+      <Label class="mb-4 w-full font-bold">Color</Label>
+      {#each gradientColors as colorOption}
+        <Radio labelClass="w-24 my-1" name="gradient_color" bind:group={gradientColor} color={colorOption as GradientButton['color']} value={colorOption}>{colorOption}</Radio>
+      {/each}
+    </div>
+    <div class="flex flex-wrap space-x-10">
+      <Label class="mb-4 w-full font-bold">Size</Label>
+      {#each gradientSizes as sizeOption}
+        <Radio labelClass="w-24 my-1" name="btn_size" bind:group={gradientSize as Button['size']} color={sizeOption as Button['size']} value={sizeOption}>{sizeOption}</Radio>
+      {/each}
+    </div>
+  </div>
+  <Button class="mt-4 w-36" onclick={changeClass}>{gradientClass === 'w-40' ? 'Add class' : 'Remove class'}</Button>
+  <Button class="mt-4 w-36" color="blue" onclick={changeOutline}>{gradientOutline === false ? 'Add outline' : 'Remove outline'}</Button>
+  <Button class="mt-4 w-40" color="green" onclick={changeShadow}>{gradientShadow === false ? 'Add shadow' : 'Remove shadow'}</Button>
+  <Button class="mt-4 w-40" color="yellow" onclick={changePill}>{graidentPill === false ? 'Add pill' : 'Remove pill'}</Button>
+  <Button class="mt-4 w-40" color="red" onclick={changeDisabled}>{gradientDisabled === false ? 'Add disabled' : 'Remove disabled'}</Button>
+</CodeWrapper>
+
+<HighlightCompo code={modules['./md/gradient.md'] as string} />
 
 <H2>Button with link</H2>
 
@@ -64,69 +142,6 @@
 </CodeWrapper>
 
 <HighlightCompo codeLang="plain" code={modules['./md/button-with-link.md'] as string} />
-
-<H2>Button pills</H2>
-
-<CodeWrapper class="flex flex-wrap gap-2">
-  <Button pill>Default</Button>
-  <Button color="alternative" pill>Alternative</Button>
-  <Button color="dark" pill>Dark</Button>
-  <Button color="light" pill>Light</Button>
-  <Button color="blue" pill>Blue</Button>
-  <Button color="green" pill>Green</Button>
-  <Button color="red" pill>Red</Button>
-  <Button color="yellow" pill>Yellow</Button>
-  <Button color="purple" pill>Purple</Button>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/button-pills.md'] as string} />
-
-<H2>Gradient button</H2>
-
-<CodeWrapper>
-  <div class="h-16">
-    <GradientButton outline={gradientOutline} shadow={gradientShadow} pill={graidentPill} class={gradientClass} color={gradientColor as GradientButton['color']}>{capitalizeFirstLetter(gradientColor)}</GradientButton>
-  </div>
-  <div class="mt-4 space-y-4">
-    <div class="flex flex-wrap space-x-10">
-      <Label class="mb-4 w-full font-bold">Color</Label>
-      {#each colors as colorOption}
-        <Radio labelClass="w-24 my-1" name="color" bind:group={gradientColor} color={colorOption as GradientButton['color']} value={colorOption}>{colorOption}</Radio>
-      {/each}
-    </div>
-  </div>
-  <Button class="mt-4 w-36" onclick={changeClass}>{gradientClass === 'w-40' ? 'Add class' : 'Remove class'}</Button>
-  <Button class="mt-4 w-36" color="blue" onclick={changeOutline}>{gradientOutline === false ? 'Add outline' : 'Remove outline'}</Button>
-  <Button class="mt-4 w-40" color="green" onclick={changeShadow}>{gradientShadow === false ? 'Add shadow' : 'Remove shadow'}</Button>
-  <Button class="mt-4 w-40" color="yellow" onclick={changePill}>{graidentPill === false ? 'Add pill' : 'Remove pill'}</Button>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/gradient.md'] as string} />
-
-<H2>Outline buttons</H2>
-
-<CodeWrapper class="flex flex-wrap gap-2">
-  <Button outline>Default</Button>
-  <Button outline color="dark">Dark</Button>
-  <Button outline color="green">Green</Button>
-  <Button outline color="red">Red</Button>
-  <Button outline color="yellow">Yellow</Button>
-  <Button outline color="purple">Purple</Button>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/outline-buttons.md'] as string} />
-
-<H2>Button sizes with icons</H2>
-
-<CodeWrapper>
-  <Button size="xs"><EnvelopeSolid class="me-2 h-3 w-3" />Extra small</Button>
-  <Button size="sm"><EnvelopeSolid class="me-2 h-3 w-3" />Small</Button>
-  <Button size="md"><EnvelopeSolid class="me-2 h-3.5 w-3.5" />Base</Button>
-  <Button size="lg"><EnvelopeSolid class="me-2 h-4 w-4" />Large</Button>
-  <Button size="xl"><EnvelopeSolid class="me-2 h-4 w-4" />Extra large</Button>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/button-sizes-with-icons.md'] as string} />
 
 <H2>Button with icon</H2>
 <CodeWrapper class="flex flex-wrap gap-2">
@@ -172,12 +187,6 @@
   </Button>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/loader.md'] as string} />
-
-<H2>Disabled</H2>
-<CodeWrapper>
-  <Button disabled>Disabled</Button>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/disabled.md'] as string} />
 
 <H2>Events</H2>
 <CodeWrapper>

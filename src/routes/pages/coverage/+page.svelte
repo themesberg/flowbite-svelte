@@ -15,12 +15,12 @@
   interface ListType {
     [key: string]: Component;
   }
-
   // const toDos: ListType = {
   //   types: {
   //     checked: false,
   //     problems: 'TransitionParamTypes to FadeParams, BlurParams, FlyParams, SlideParams, ScaleParams, DrawParams, CrossfadeParams'
   //   }
+  //   // Button add checked variant for RadioButton
   // };
 
   const components: ListType = {

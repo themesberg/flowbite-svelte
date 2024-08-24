@@ -5,21 +5,19 @@
 
   // const group = getContext('group');
 
-  let { children, outline, pill, color = 'blue', shadow, class: className, href, target, rel, type, disabled, name, ...restProps }: Props = $props();
+  let { children, outline, pill, color = 'blue', shadow, class: className, href, target, rel, type, disabled, size, name, ...restProps }: Props = $props();
 
-  const disabledValue = disabled !== null ? disabled : undefined;
-
-  const { base, outlineWrapper } = $derived(gradientButton({ color, outline, pill, shadow, disabled: disabledValue }));
+  const { base, outlineWrapper } = $derived(gradientButton({ color, outline, pill, shadow, disabled }));
 </script>
 
 {#if outline}
   <div class={base({ className })}>
-    <Button {...restProps} color="none" class={outlineWrapper()} {disabled} {name} {type} {href} {target} {rel}>
+    <Button {...restProps} class={outlineWrapper()} {disabled} {name} {type} {href} {target} {rel} {size}>
       {@render children()}
     </Button>
   </div>
 {:else}
-  <Button {...restProps} color="none" class={base({ className })} {disabled} {name} {type} {href} {target} {rel}>
+  <Button {...restProps} class={base({ className })} {disabled} {name} {type} {href} {target} {rel} {size}>
     {@render children()}
   </Button>
 {/if}

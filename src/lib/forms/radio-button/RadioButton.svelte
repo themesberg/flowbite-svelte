@@ -1,29 +1,16 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
   import Button from '$lib/buttons/Button.svelte';
-  import type { ButtonColorType, SizeType } from '$lib/types';
-  import { twMerge } from 'tailwind-merge';
-  import type { HTMLInputAttributes } from 'svelte/elements';
+  import { type RadioButtonProps as Props, radioButton } from '.'
+  
+  let { children, group = $bindable(), value, inline = true, pill, outline, buttonSize, color, shadow, class: className, ...restProps }: Props = $props();
 
-  interface Props extends HTMLInputAttributes {
-    children: Snippet;
-    group?: string | number;
-    value?: string | number;
-    inline?: boolean;
-    btnClass?: string | undefined | null;
-    pill?: boolean;
-    outline?: boolean;
-    buttonSize?: SizeType | undefined;
-    color?: ButtonColorType | undefined;
-    shadow?: boolean;
-  }
-  let { children, group = $bindable(), value, inline = true, btnClass, pill, outline, buttonSize, color, shadow, ...restProps }: Props = $props();
+  const base = $derived(radioButton({ inline, className}));
 
-  let buttonCls: string = twMerge(inline ? 'inline-flex' : 'flex', btnClass);
+  // let buttonCls: string = twMerge(inline ? 'inline-flex' : 'flex', btnClass);
   // $inspect('group: ', group, value, value === group)
 </script>
 
-<Button tag="label" checked={value === group} {pill} {outline} size={buttonSize} {color} {shadow} class={buttonCls}>
+<Button tag="label" checked={value === group} {pill} {outline} size={buttonSize} {color} {shadow} class={base}>
   <input type="radio" bind:group {value} {...restProps} class="sr-only" />
   {@render children()}
 </Button>

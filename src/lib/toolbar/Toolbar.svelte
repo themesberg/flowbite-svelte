@@ -1,6 +1,4 @@
 <script lang="ts">
-  import Frame from '$lib/utils/Frame.svelte';
-  import type { FrameColor } from '$lib/utils/Frame.svelte';
   import { setContext, type Snippet } from 'svelte';
   import { writable } from 'svelte/store';
   import { twJoin, twMerge } from 'tailwind-merge';
@@ -9,7 +7,7 @@
     children: Snippet;
     end?: Snippet;
     embedded?: boolean;
-    color?: FrameColor;
+    color?: string;
     class?: string | undefined | null;
   }
 
@@ -25,14 +23,14 @@
   let divClass: string = twMerge('flex justify-between items-center', !embedded && 'py-2 px-3', className);
 </script>
 
-<Frame {...restProps} class={divClass} color={frameColor} rounded={!embedded}>
-  <Frame class="flex flex-wrap items-center {separatorsClass}" color={frameColor} rounded={!embedded}>
+<div {...restProps} class={divClass} color={frameColor} >
+  <div class="flex flex-wrap items-center {separatorsClass}" color={frameColor}>
     {@render children()}
-  </Frame>
+  </div>
   {#if end}
     {@render end()}
   {/if}
-</Frame>
+</div>
 
 <!--
 @component
