@@ -30,9 +30,12 @@
   export let group: number | string | undefined = undefined;
   export let value: number | string = '';
   export let spacing: string = $$slots.default ? 'me-2' : '';
-
+  export let checked: boolean = false;
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
+  $: if (checked && group === undefined) {
+    group = value;
+  }
 </script>
 
 <Label class={labelClass(inline, $$props.class)} show={$$slots.default}>
