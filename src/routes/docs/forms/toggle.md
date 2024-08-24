@@ -70,6 +70,19 @@ Get started with the default toggle component example as a checkbox element to r
 <Toggle size="custom" {customSize}>Custom toggle</Toggle>
 ```
 
+## Label for off state
+
+```svelte example class="flex flex-col gap-2"
+<script>
+  import { Toggle } from 'flowbite-svelte';
+</script>
+
+<Toggle>
+  <svelte:fragment slot="offLabel">dark mode</svelte:fragment>
+  light mode
+</Toggle>
+```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
@@ -77,7 +90,7 @@ The component has the following props, type, and default values. See [types page
 ### Toggle styling
 
 - Use the `class` prop to overwrite the `Checkbox` component.
-- Use the 'classDiv`prop to overwrite the`divClass`.
+- Use the `classDiv` prop to overwrite the `divClass`.
 
 <CompoAttributesViewer {components}/>
 
