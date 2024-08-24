@@ -2,7 +2,7 @@
   import Button from '$lib/buttons/Button.svelte';
   import { twMerge } from 'tailwind-merge';
   import { type CheckboxButtonProps as Props } from '.';
-  
+
   let { children, class: className, group = [], value = 'on', checked, inline = true, pill, outline, size, color, shadow, ...restProps }: Props = $props();
 
   // react on external group changes

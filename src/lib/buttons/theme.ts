@@ -22,7 +22,7 @@ export const button = tv({
       sky: 'text-white bg-sky-700 hover:bg-sky-800 dark:bg-sky-600 dark:hover:bg-sky-700 focus-within:ring-sky-300 dark:focus-within:ring-sky-800',
       blue: 'text-white bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 focus-within:ring-blue-300 dark:focus-within:ring-blue-800',
       indigo: 'text-white bg-indigo-700 hover:bg-indigo-800 dark:bg-indigo-600 dark:hover:bg-indigo-700 focus-within:ring-indigo-300 dark:focus-within:ring-indigo-800',
-      violet: 'text-white bg-violet-700 hover:bg-violet-800 dark:bg-violet-600 dark:hover:bg-violet-700 focus-within:ring-violet-300 dark:focus-within:ring-violet-800', 
+      violet: 'text-white bg-violet-700 hover:bg-violet-800 dark:bg-violet-600 dark:hover:bg-violet-700 focus-within:ring-violet-300 dark:focus-within:ring-violet-800',
       purple: 'text-white bg-purple-700 hover:bg-purple-800 dark:bg-purple-600 dark:hover:bg-purple-700',
       fuchsia: 'text-white bg-fuchsia-700 hover:bg-fuchsia-800 dark:bg-fuchsia-600 dark:hover:bg-fuchsia-700',
       pink: 'text-white bg-pink-700 hover:bg-pink-800 dark:bg-pink-600 dark:hover:bg-pink-700',
@@ -40,7 +40,7 @@ export const button = tv({
       false: 'focus-within:ring-4 focus-within:outline-none'
     },
     outline: {
-      true: 'border border-gray-900 dark:border-gray-300',
+      true: 'border border-gray-900 dark:border-gray-300'
     },
     shadow: {
       true: 'shadow-lg'
@@ -49,7 +49,7 @@ export const button = tv({
       true: 'cursor-not-allowed opacity-50'
     },
     pill: {
-      true: 'rounded-full',
+      true: 'rounded-full'
     },
     checked: {
       true: '',
@@ -236,7 +236,7 @@ export const button = tv({
       class: 'rounded-lg'
     }
   ]
-})
+});
 
 export const gradientButton = tv({
   slots: {

@@ -37,6 +37,7 @@
 @prop rel
 @prop type
 @prop disabled
+@prop size
 @prop name
 @prop ...restProps
 -->

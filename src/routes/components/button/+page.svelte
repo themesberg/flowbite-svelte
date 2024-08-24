@@ -28,21 +28,19 @@
     btnOutline = !btnOutline;
   };
   let btnShadow = $state(false);
-  const changeBtnShadow = () =>{
+  const changeBtnShadow = () => {
     btnShadow = !btnShadow;
-  }
+  };
   let btnPill = $state(false);
   const changeBtnPill = () => {
     btnPill = !btnPill;
-  }
+  };
   let btnDisabled = $state(false);
   const changeBtnDisabled = () => {
     btnDisabled = !btnDisabled;
-  }
+  };
   const btnSizes = Object.keys(button.variants.size);
   let btnSize = $state(btnSizes[0]);
-
-
 
   const gradientColors = Object.keys(gradientButton.variants.color);
   let gradientColor = $state(gradientColors[0]);
@@ -81,7 +79,7 @@
 
 <CodeWrapper class="flex flex-wrap gap-2">
   <div class="h-16">
-  <Button color={btnColor as Button['color']} class={btnClass} outline={btnOutline} shadow={btnShadow} pill={btnPill} disabled={btnDisabled}  size={btnSize as Button['size']}>Button</Button>
+    <Button color={btnColor as Button['color']} class={btnClass} outline={btnOutline} shadow={btnShadow} pill={btnPill} disabled={btnDisabled} size={btnSize as Button['size']}>Button</Button>
   </div>
   <div class="mt-4 space-y-4">
     <div class="flex flex-wrap space-x-10">

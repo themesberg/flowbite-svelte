@@ -23,7 +23,7 @@
   let divClass: string = twMerge('flex justify-between items-center', !embedded && 'py-2 px-3', className);
 </script>
 
-<div {...restProps} class={divClass} color={frameColor} >
+<div {...restProps} class={divClass} color={frameColor}>
   <div class="flex flex-wrap items-center {separatorsClass}" color={frameColor}>
     {@render children()}
   </div>

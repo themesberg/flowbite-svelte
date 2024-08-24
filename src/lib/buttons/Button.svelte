@@ -43,10 +43,9 @@
 @prop color = group ? (outline ? 'dark' : 'alternative') : 'primary'
 @prop shadow = false
 @prop tag = 'button'
-@prop checked = undefined
-@prop disabled = false
+@prop disabled
 @prop name = undefined
-@prop class: btnclass
+@prop class: className
 @prop onclick
 @prop ...restProps
 -->

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.2
+
+### Patch Changes
+
+- fix: remove Frame and add variants to Radio ([`7e461d5814638fb244769e4da2ecbf05eabc1c8b`](https://github.com/shinokada/svelte-5-ui-lib/commit/7e461d5814638fb244769e4da2ecbf05eabc1c8b))
+
 ## 0.9.1
 
 ### Patch Changes

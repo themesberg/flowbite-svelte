@@ -1,10 +1,10 @@
 <script lang="ts">
   import Button from '$lib/buttons/Button.svelte';
-  import { type RadioButtonProps as Props, radioButton } from '.'
-  
+  import { type RadioButtonProps as Props, radioButton } from '.';
+
   let { children, group = $bindable(), value, inline = true, pill, outline, buttonSize, color, shadow, class: className, ...restProps }: Props = $props();
 
-  const base = $derived(radioButton({ inline, className}));
+  const base = $derived(radioButton({ inline, className }));
 
   // let buttonCls: string = twMerge(inline ? 'inline-flex' : 'flex', btnClass);
   // $inspect('group: ', group, value, value === group)
@@ -23,11 +23,11 @@
 @prop group = $bindable()
 @prop value
 @prop inline = true
-@prop btnClass
 @prop pill
 @prop outline
 @prop buttonSize
 @prop color
 @prop shadow
+@prop class: className
 @prop ...restProps
 -->
