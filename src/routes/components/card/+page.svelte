@@ -35,7 +35,7 @@
   Use the `size` prop with <code>'xs' | 'sm' | 'md' | 'lg' | 'xl'</code>
   or
   <code>class</code>
-   props to change the card size.
+  props to change the card size.
 </p>
 
 <CodeWrapper class="flex flex-col space-y-4">
@@ -113,7 +113,7 @@
 
 <p>
   To create a linkable card, use the <code>href</code>
-   prop. However, avoid including an additional link inside the card itself, since you are adding a-tag within a-tag.
+  prop. However, avoid including an additional link inside the card itself, since you are adding a-tag within a-tag.
 </p>
 
 <CodeWrapper class="flex justify-center">
