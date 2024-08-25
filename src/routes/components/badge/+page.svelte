@@ -79,6 +79,25 @@
   const changeTransitionStatus = () => {
     transionStatus = !transionStatus;
   };
+
+  let generatedCode = $derived((() => {
+    let props = [];
+    if (color !== 'primary') props.push(`color="${color}"`);
+    if (badgeSize) props.push('large');
+    if (badgeDismissable) props.push('dismissable');
+    if (badgeClass) props.push(`class="${badgeClass}"`);
+    if (!badgeStatus2) props.push('badgeStatus={false}');
+    if (border) props.push('border');
+    if (rounded) props.push('rounded');
+    
+    return `<Badge ${props.join(' ')}>Default</Badge>`;
+  })());
+  let alertStatus = $state(false);
+  function copyToClipboard() {
+    navigator.clipboard.writeText(generatedCode)
+      .then(() => alertStatus = true)
+      .catch(err => console.error('Failed to copy: ', err));
+  }
 </script>
 
 <H1>Badge</H1>
@@ -91,7 +110,7 @@
 </CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/default-badge.md'] as string} />
 
-<H2>Reactive badge</H2>
+<H2>Create your badge</H2>
 <CodeWrapper class="space-y-4">
   <div class="h-12">
     {#if !badgeStatus2}
@@ -111,6 +130,21 @@
   <Button class="w-40" color="purple" onclick={changeClass}>{badgeClass ? 'Remove class' : 'Add class'}</Button>
   <Button class="w-40" color="yellow" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
   <Button class="w-40" color="dark" onclick={changeRounded}>{rounded ? 'Remove rounded' : 'Add rounded'}</Button>
+  <h3 class="text-lg font-semibold">Generated Code:</h3>
+  <div class="relative">
+    {#if alertStatus}
+      <Badge class="absolute -top-8 right-0" color="green" dismissable>Copied to clipboard</Badge>
+    {/if}
+    <pre class="bg-gray-100 px-4 pt-4 pr-20 rounded-lg whitespace-pre-wrap word-break-break-word">
+      <code class="text-sm font-mono text-gray-800">{generatedCode}</code>
+    </pre>
+  <button
+      class="absolute top-4 right-2 bg-blue-500 text-white px-2 py-1 rounded"
+      onclick={copyToClipboard}
+    >
+      Copy
+    </button>
+  </div>
 </CodeWrapper>
 
 <H2>Large badge</H2>

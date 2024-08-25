@@ -10,7 +10,7 @@
   setContext('navType', navType);
   setContext<BottomNavContextType>('bottomNavType', { activeClass: activeCls });
 
-  $inspect('position: ', position);
+  // $inspect('position: ', position);
   const { outer, inner } = bottomNav({ position, navType });
   const outerCls = $derived(outer({ class: outerClass }));
   const innerCls = $derived(inner({ class: innerClass }));

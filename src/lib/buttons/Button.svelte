@@ -11,7 +11,7 @@
   const isGroup = !!group;
   const base = $derived(button({ color, size, pill, group: isGroup, outline, shadow, disabled, className }));
 
-  $inspect('group: ', group, 'isGroup: ', isGroup);
+  // $inspect('group: ', group, 'isGroup: ', isGroup);
 </script>
 
 {#if href}

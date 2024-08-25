@@ -15,6 +15,7 @@
     navStatus?: boolean | undefined;
     fluid?: boolean;
     brand?: Snippet;
+    hamburgerMenu?: boolean;
     breakPoint?: navbarType['breakPoint'];
     navClass?: string | undefined | null;
     divClass?: string | undefined | null;
@@ -24,7 +25,7 @@
     activeClass?: string | undefined | null;
   }
 
-  let { children, toggleNav, closeNav = () => {}, navStatus, fluid, brand, breakPoint = 'md', navClass, divClass, btnClass, div2Class, activeClass, nonActiveClass, ...restProps }: Props = $props();
+  let { children, toggleNav, closeNav = () => {}, navStatus, fluid, brand, hamburgerMenu = true, breakPoint = 'md', navClass, divClass, btnClass, div2Class, activeClass, nonActiveClass, ...restProps }: Props = $props();
 
   setContext<navbarType>('navbarContext', {
     navStatus,
@@ -64,12 +65,14 @@
     {#if brand}
       {@render brand()}
     {/if}
+    {#if hamburgerMenu}
     <button onclick={toggleNav} type="button" class={btnCls} aria-controls="navbar-default">
       <span class="sr-only">Open main menu</span>
       <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
       </svg>
     </button>
+    {/if}
     {#if navStatus}
       <div class="block {divChildrenCls}" transition:slide={slideParams} role="button" tabindex="0">
         {@render children()}

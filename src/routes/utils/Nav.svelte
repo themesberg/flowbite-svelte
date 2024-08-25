@@ -29,10 +29,11 @@
 
   const hasPath = (key: string) => currentUrl.includes(key);
   const activeClass = 'flex items-center p-2 text-base font-normal text-white bg-primary-500 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-600 dark:hover:bg-gray-500';
+  let navClass = 'w-full divide-gray-200 border-gray-200 bg-gray-50 dark_bg_theme text-gray-500 dark:divide-gray-700 dark:border-gray-700 dark:transparent dark:text-gray-400 sm:px-4';
 </script>
 
 <header class="sticky top-0 z-50 mx-auto w-full flex-none border-b border-gray-200 bg-white lg:pl-4 dark:border-gray-600 dark:bg-gray-950">
-  <Navbar {toggleNav} {closeNav} {navStatus} fluid div2Class="ml-auto w-full">
+  <Navbar {navClass} {toggleNav} {closeNav} {navStatus} fluid div2Class="ml-auto w-full">
     {#snippet brand()}
       <button onclick={navDrawer.toggle} type="button" class="z-50 mr-4 mt-1 lg:hidden" aria-controls="navbar-default">
         <span class="sr-only">Open drawer menu</span>
