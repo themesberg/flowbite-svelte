@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.3
+
+### Patch Changes
+
+- fix: add hamburgerMenu to Navbar ([`aa8ce1176141a767b0d7432986806fc17103f1b1`](https://github.com/shinokada/svelte-5-ui-lib/commit/aa8ce1176141a767b0d7432986806fc17103f1b1))
+
 ## 0.9.2
 
 ### Patch Changes

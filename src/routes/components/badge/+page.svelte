@@ -80,23 +80,26 @@
     transionStatus = !transionStatus;
   };
 
-  let generatedCode = $derived((() => {
-    let props = [];
-    if (color !== 'primary') props.push(`color="${color}"`);
-    if (badgeSize) props.push('large');
-    if (badgeDismissable) props.push('dismissable');
-    if (badgeClass) props.push(`class="${badgeClass}"`);
-    if (!badgeStatus2) props.push('badgeStatus={false}');
-    if (border) props.push('border');
-    if (rounded) props.push('rounded');
-    
-    return `<Badge ${props.join(' ')}>Default</Badge>`;
-  })());
+  let generatedCode = $derived(
+    (() => {
+      let props = [];
+      if (color !== 'primary') props.push(`color="${color}"`);
+      if (badgeSize) props.push('large');
+      if (badgeDismissable) props.push('dismissable');
+      if (badgeClass) props.push(`class="${badgeClass}"`);
+      if (!badgeStatus2) props.push('badgeStatus={false}');
+      if (border) props.push('border');
+      if (rounded) props.push('rounded');
+
+      return `<Badge ${props.join(' ')}>Default</Badge>`;
+    })()
+  );
   let alertStatus = $state(false);
   function copyToClipboard() {
-    navigator.clipboard.writeText(generatedCode)
-      .then(() => alertStatus = true)
-      .catch(err => console.error('Failed to copy: ', err));
+    navigator.clipboard
+      .writeText(generatedCode)
+      .then(() => (alertStatus = true))
+      .catch((err) => console.error('Failed to copy: ', err));
   }
 </script>
 
@@ -135,15 +138,10 @@
     {#if alertStatus}
       <Badge class="absolute -top-8 right-0" color="green" dismissable>Copied to clipboard</Badge>
     {/if}
-    <pre class="bg-gray-100 px-4 pt-4 pr-20 rounded-lg whitespace-pre-wrap word-break-break-word">
-      <code class="text-sm font-mono text-gray-800">{generatedCode}</code>
+    <pre class="word-break-break-word whitespace-pre-wrap rounded-lg bg-gray-100 px-4 pr-20 pt-4">
+      <code class="font-mono text-sm text-gray-800">{generatedCode}</code>
     </pre>
-  <button
-      class="absolute top-4 right-2 bg-blue-500 text-white px-2 py-1 rounded"
-      onclick={copyToClipboard}
-    >
-      Copy
-    </button>
+    <button class="absolute right-2 top-4 rounded bg-blue-500 px-2 py-1 text-white" onclick={copyToClipboard}>Copy</button>
   </div>
 </CodeWrapper>
 
