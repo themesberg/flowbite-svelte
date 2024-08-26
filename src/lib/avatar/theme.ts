@@ -3,9 +3,9 @@ import { tv } from 'tailwind-variants';
 const avatar = tv({
   base: 'relative flex items-center justify-center bg-gray-100 dark:bg-gray-600 text-gray-600 dark:text-gray-300',
   variants: {
-    rounded: {
-      true: 'rounded',
-      false: 'rounded-full'
+    cornerStyle: {
+      rounded: 'rounded',
+      circular: 'rounded-full'
     },
     border: {
       true: 'p-1 ring-2 ring-gray-300 dark:ring-gray-500',
@@ -21,11 +21,10 @@ const avatar = tv({
       md: 'w-10 h-10',
       lg: 'w-20 h-20',
       xl: 'w-36 h-36',
-      none: ''
     }
   },
   defaultVariants: {
-    rounded: false,
+    cornerStyle: 'circular',
     border: false,
     stacked: false,
     size: 'md'

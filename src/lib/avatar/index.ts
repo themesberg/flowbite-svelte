@@ -10,12 +10,11 @@ interface AvatarProps extends HTMLAttributes<HTMLDivElement>, AvatarVariants {
   children?: Snippet;
   href?: string | undefined | null;
   src?: string | undefined | null;
-  rounded?: boolean;
-  border?: boolean;
+  cornerStyle?: 'rounded' | 'circular';
   stacked?: boolean;
   dot?: object | undefined;
   alt?: string | undefined | null;
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none';
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   onclick?: () => void;
 }
 

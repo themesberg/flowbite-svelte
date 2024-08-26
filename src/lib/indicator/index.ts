@@ -11,7 +11,7 @@ type PlacementType = VariantProps<typeof indicator>['placement'];
 interface IndicatorProps extends HTMLAttributes<HTMLDivElement> {
   children?: Snippet;
   color?: ColorType;
-  rounded?: boolean;
+  cornerStyle?: 'rounded' | 'circular';
   size?: SizeType;
   border?: boolean;
   placement?: PlacementType | undefined;

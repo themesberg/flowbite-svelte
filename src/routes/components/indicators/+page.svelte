@@ -21,6 +21,10 @@
   const changeBorder = () => {
     border = !border;
   };
+  let cornerStyle: IndicatorProps['cornerStyle'] = $state('circular');
+  const changeCornerStyle = () => {
+    cornerStyle = cornerStyle === 'circular' ? 'rounded' : 'circular';
+  }
   let placement: IndicatorProps['placement'] = $state('top-left');
 </script>
 
@@ -47,7 +51,7 @@
 <H2>Reactive indicator</H2>
 <CodeWrapper>
   <div class="borer relative h-56 w-56 rounded-lg border-gray-300 bg-gray-200 dark:border-gray-700 dark:bg-gray-800">
-    <Indicator {color} {size} {border} {placement} />
+    <Indicator {color} {size} {border} {placement} {cornerStyle} />
   </div>
   <div class="mt-8 space-y-4">
     <div class="flex flex-wrap space-x-2">
@@ -69,6 +73,7 @@
       {/each}
     </div>
     <Button onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
+    <Button onclick={changeCornerStyle}>{cornerStyle === 'circular' ? 'Rounded' : 'Circular'}</Button>
   </div>
 </CodeWrapper>
 

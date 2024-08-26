@@ -35,12 +35,12 @@ const indicator = tv({
       lg: { base: 'w-3.5 h-3.5' },
       xl: { base: 'w-6 h-6' }
     },
-    rounded: {
-      true: { base: 'rounded' },
-      false: { base: 'rounded-full' }
+    cornerStyle: {
+      rounded: { base: 'rounded' },
+      circular: { base: 'rounded-full' }
     },
     border: {
-      true: { base: 'border-2 border-white dark:border-gray-800' },
+      true: { base: 'border border-gray-300 dark:border-gray-300' },
       false: {}
     },
     hasChildren: {
@@ -114,7 +114,7 @@ const indicator = tv({
   defaultVariants: {
     color: 'primary',
     size: 'md',
-    rounded: false,
+    cornerStyle: 'circular',
     border: false,
     offset: true,
     hasChildren: false

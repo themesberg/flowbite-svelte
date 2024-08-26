@@ -8,7 +8,6 @@
   let { componentStatus, generatedCode, handleCopyClick }: Props = $props()
 </script>
 
-
 <h3 class="text-lg font-semibold">Generated Code:</h3>
 <div class="relative">
   {#if componentStatus}

@@ -140,7 +140,6 @@
   <Button class="w-48" color="red" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
   <Button class="w-48" color="yellow" onclick={changeDismissable}>{dismissable ? 'Remove dismissable' : 'Add dismissable'}</Button>
   <Button class="w-48" color="green" onclick={changeClass}>{alertClass ? 'Remove class' : 'Add class'}</Button>
-  <h3 class="text-lg font-semibold">Generated Code:</h3>
   <GeneratedCode 
     componentStatus={alertStatus}
     {generatedCode}

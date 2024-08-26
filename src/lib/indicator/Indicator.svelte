@@ -1,14 +1,14 @@
 <script lang="ts">
   import { indicator, type IndicatorProps as Props } from './index';
 
-  let { children, color = 'primary', rounded = false, size = 'md', border = false, placement, offset = true, class: className, ...restProps }: Props = $props();
+  let { children, color = 'primary', cornerStyle = 'circular', size = 'md', border = false, placement, offset = true, class: className, ...restProps }: Props = $props();
 
   let hasChildren = !!children;
   const { base } = $derived(
     indicator({
       color,
       size,
-      rounded,
+      cornerStyle,
       border,
       placement,
       offset,

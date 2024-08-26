@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Avatar, Button, Dropdown, DropdownLi, DropdownUl, DropdownHeader, DropdownDivider, uiHelpers, type AvatarProps } from '$lib';
+  import { Avatar, avatar, Label, Radio, Button, Dropdown, DropdownLi, DropdownUl, DropdownHeader, DropdownDivider, uiHelpers, type AvatarProps } from '$lib';
 
   let dropdown = uiHelpers();
   let dropdownStatus = $state(false);
@@ -14,15 +14,20 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { copyToClipboard } from '../../utils/helpers';
+  import GeneratedCode from '../../utils/GeneratedCode.svelte';
+
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
     eager: true
   });
   // reactive example, rounded, border, stacked, size, className
-  let rounded: AvatarProps['rounded'] = $state(false);
-  const changeRounded = () => {
-    rounded = !rounded;
+  const sizes = Object.keys(avatar.variants.size);
+  let avatarSize: Avatar['size'] = $state('md');
+  let isRounded = $state(false);
+  const toggleCornerStyle = () => {
+    isRounded = !isRounded;
   };
   let border: AvatarProps['border'] = $state(false);
   const changeBorder = () => {
@@ -36,6 +41,34 @@
   const changeClass = () => {
     avatarClass = avatarClass === '' ? 'mx-0.5' : '';
   };
+
+  // code generator
+  let generatedCode = $derived(
+    (() => {
+      let props = [];
+      if (isRounded) props.push('cornerStyle="rounded"');
+      if (avatarSize !== 'md') props.push(`size="${avatarSize}"`);
+      if (border) props.push('border');
+      if (stacked) props.push('stacked');
+      if (avatarClass) props.push(`class="${avatarClass}"`);
+      return `<Avatar ${props.join(' ')}>Default</Avatar>`;
+    })()
+  );
+  let alertStatus = $state(false);
+
+  function handleCopyClick() {
+  copyToClipboard(generatedCode)
+    .then(() => {
+      alertStatus = true;
+      setTimeout(() => {
+        alertStatus = false;
+      }, 1000);
+    })
+    .catch((err) => {
+      console.error('Error in copying:', err);
+      // Handle the error as needed
+    });
+  }
 </script>
 
 <H1>Avatar</H1>
@@ -47,37 +80,40 @@
 <H2>Default avatar</H2>
 <CodeWrapper class="flex justify-center gap-4 rtl:space-x-reverse">
   <Avatar src="/images/profile-picture-2.webp" />
-  <Avatar src="/images/profile-picture-2.webp" rounded />
+  <Avatar src="/images/profile-picture-2.webp" cornerStyle="rounded" />
 </CodeWrapper>
 <HighlightCompo code={modules['./md/default-avatar.md'] as string} />
 
-<H2>Reactive avatars</H2>
+<H2>Avatar code generator</H2>
 <CodeWrapper class="space-y-4">
-  <div class="mb-5 flex justify-center">
-    <Avatar src="/images/profile-picture-1.webp" {rounded} {border} {stacked} class={avatarClass} />
-    <Avatar src="/images/profile-picture-2.webp" {rounded} {border} {stacked} class={avatarClass} />
-    <Avatar src="/images/profile-picture-3.webp" {rounded} {border} {stacked} class={avatarClass} />
+  <div class="mb-5 flex justify-center h-36">
+    <Avatar src="/images/profile-picture-1.webp" cornerStyle={isRounded ? 'rounded' : undefined} {border} {stacked} class={avatarClass} size={avatarSize}/>
+    <Avatar src="/images/profile-picture-2.webp" cornerStyle={isRounded ? 'rounded' : undefined} {border} {stacked} class={avatarClass} size={avatarSize}/>
+    <Avatar src="/images/profile-picture-3.webp" cornerStyle={isRounded ? 'rounded' : undefined} {border} {stacked} class={avatarClass} size={avatarSize} />
   </div>
-  <Button class="w-40" color="blue" onclick={changeRounded}>{rounded ? 'Add rounded' : 'Remove rounded'}</Button>
+  <div class="mt-4 flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Size:</Label>
+    {#each sizes as size}
+      <Radio labelClass="w-24 my-1" name="spinnersize" bind:group={avatarSize} value={size}>{size}</Radio>
+    {/each}
+  </div>
+  <Button class="w-40" color="blue" onclick={toggleCornerStyle}>{isRounded ? 'Default: circular' : 'Rounded'}</Button>
   <Button class="w-40" color="red" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
   <Button class="w-40" color="green" onclick={changeStacked}>{stacked ? 'Remove stacked' : 'Add  stacked'}</Button>
   <Button class="w-40" color="purple" onclick={changeClass}>{avatarClass ? 'Remove class' : 'Add class'}</Button>
+  <GeneratedCode 
+    componentStatus={alertStatus}
+    {generatedCode}
+    {handleCopyClick}
+  />
 </CodeWrapper>
-
-<H2>Bordered</H2>
-<CodeWrapper class="flex justify-center gap-4">
-  <Avatar src="/images/profile-picture-2.webp" border />
-  <Avatar src="/images/profile-picture-2.webp" border class="ring-red-400 dark:ring-red-300" />
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/bordered.md'] as string} />
 
 <H2>Placeholder</H2>
 <CodeWrapper class="flex justify-center gap-4">
   <Avatar />
-  <Avatar rounded />
+  <Avatar cornerStyle="rounded" />
   <Avatar border />
-  <Avatar rounded border />
+  <Avatar cornerStyle="rounded" border />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/placeholder.md'] as string} />
@@ -95,9 +131,9 @@
 <H2>Dot indicator</H2>
 <CodeWrapper class="flex justify-center gap-4">
   <Avatar src="/images/profile-picture-3.webp" dot={{ color: 'red' }} />
-  <Avatar src="/images/profile-picture-3.webp" dot={{ placement: 'top-right', color: 'red' }} rounded />
+  <Avatar src="/images/profile-picture-3.webp" dot={{ placement: 'top-right', color: 'red' }} cornerStyle="rounded" />
   <Avatar src="/images/profile-picture-5.webp" dot={{ placement: 'bottom-right', color: 'green' }} />
-  <Avatar src="/images/profile-picture-5.webp" dot={{ placement: 'bottom-right' }} rounded />
+  <Avatar src="/images/profile-picture-5.webp" dot={{ placement: 'bottom-right' }} cornerStyle="rounded" />
   <Avatar dot={{}} />
 </CodeWrapper>
 
@@ -124,7 +160,7 @@
 <H2>Avatar text</H2>
 <CodeWrapper class="flex justify-center">
   <div class="flex items-center space-x-4 rtl:space-x-reverse">
-    <Avatar src="/images/profile-picture-1.webp" rounded />
+    <Avatar src="/images/profile-picture-1.webp" cornerStyle="rounded" />
     <div class="space-y-1 font-medium dark:text-white">
       <div>Jese Leos</div>
       <div class="text-sm text-gray-500 dark:text-gray-400">Joined in August 2014</div>
@@ -155,16 +191,3 @@
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/user-dropdown.md'] as string} />
-
-<H2>Sizes</H2>
-<CodeWrapper class="flex flex-col gap-4">
-  <div class="flex flex-col flex-wrap justify-center gap-4 sm:flex-row rtl:space-x-reverse">
-    <Avatar src="/images/profile-picture-3.webp" rounded size="xs" />
-    <Avatar src="/images/profile-picture-3.webp" rounded size="sm" />
-    <Avatar src="/images/profile-picture-3.webp" rounded size="md" />
-    <Avatar src="/images/profile-picture-3.webp" rounded size="lg" />
-    <Avatar src="/images/profile-picture-3.webp" rounded size="xl" />
-    <Avatar src="/images/profile-picture-3.webp" rounded size="none" class="h-28 w-28" />
-  </div>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/sizes.md'] as string} />
