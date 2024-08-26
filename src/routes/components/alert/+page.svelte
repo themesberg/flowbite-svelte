@@ -119,6 +119,15 @@
 <H2>Setup</H2>
 <HighlightCompo codeLang="ts" code={modules['./md/setup.md'] as string} />
 
+
+<H2>Default alert</H2>
+<CodeWrapper class="space-y-4">
+  <Alert>
+    <span class="font-medium">Default alert!</span>
+  </Alert>
+</CodeWrapper>
+<HighlightCompo codeLang="ts" code={modules['./md/default-alert.md'] as string} />
+
 <H2>Alert code generator</H2>
 <CodeWrapper class="space-y-4">
   <div class="mb-4 h-20">
@@ -147,25 +156,6 @@
   />
 </CodeWrapper>
 
-<H2>Default alert</H2>
-<CodeWrapper class="space-y-4">
-  <div class="mb-4 h-20">
-    <Alert color={defaultColor} class={alertClass}>
-      <span class="font-medium">Default alert!</span>
-    </Alert>
-  </div>
-
-  <div class="flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Color</Label>
-    {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="default_alert_color" bind:group={defaultColor} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
-    {/each}
-  </div>
-
-  <Button class="w-48" color="green" onclick={changeClass}>{alertClass ? 'Remove class' : 'Add class'}</Button>
-</CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/default-alert.md'] as string} />
-
 <H2>Alerts with icon</H2>
 <CodeWrapper class="space-y-4">
   <div class="mb-4">
@@ -187,26 +177,30 @@
 </CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/alerts-with-icon.md'] as string} />
 
-<H2>Bordered alerts</H2>
-<CodeWrapper class="space-y-4">
-  <div class="mb-4">
-    <Alert border color={borderColor}>
+
+<H2>Transitions</H2>
+
+<CodeWrapper class="h-72">
+  <div class="mb-4 h-16">
+    <Alert color={currentTransition.color as Alert['color']} dismissable bind:alertStatus={transionStatus} transition={currentTransition.transition} params={currentTransition.params}>
       {#snippet icon()}
         <InfoCircleSolid class="h-5 w-5" />
       {/snippet}
-      <span class="font-medium">Default alert!</span>
-      Change a few things up and try submitting again.
+      <span class="font-medium">{capitalizeFirstLetter(selectedTransition)} transition</span>
     </Alert>
   </div>
-
-  <div class="flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Color</Label>
-    {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="bordered_alert_color" bind:group={borderColor} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
+  <div class="mb-4 h-12">
+    <Button class="w-36" disabled={transionStatus ? true : false} onclick={changeTransitionStatus}>Open alert</Button>
+  </div>
+  <div class="mb-4 flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Transition</Label>
+    {#each transitions as transition}
+      <Radio labelClass="w-24 my-1" name="transition_color" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
     {/each}
   </div>
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/bordered-alerts.md'] as string} />
+
+<HighlightCompo codeLang="ts" code={modules['./md/transition.md'] as string} />
 
 <H2>Alerts with list</H2>
 <CodeWrapper class="space-y-4">
@@ -232,52 +226,6 @@
 </CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/alerts-with-list.md'] as string} />
 
-<H2>Dismissable alerts</H2>
-<CodeWrapper class="space-y-4">
-  <div class="mb-4 h-16">
-    <Alert color={dismissableColor} {dismissable} bind:alertStatus={alertStatus2}>
-      {#snippet icon()}
-        <InfoCircleSolid class="h-5 w-5" />
-      {/snippet}
-      <span class="font-medium">Dismissable alerts!</span>
-    </Alert>
-  </div>
-  <div class="mb-4 h-12">
-    <Button disabled={alertStatus2 ? true : false} onclick={changeStatus}>Open alert</Button>
-  </div>
-  <div class="flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Color</Label>
-    {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="dissmissible_alert_color" bind:group={dismissableColor} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
-    {/each}
-  </div>
-  <Button class="w-48" color="yellow" onclick={changeDismissable}>{dismissable ? 'Remove dismissable' : 'Add dismissable'}</Button>
-</CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/dismissable-alerts.md'] as string} />
-
-<H2>Transitions</H2>
-
-<CodeWrapper class="h-72">
-  <div class="mb-4 h-16">
-    <Alert color={currentTransition.color as Alert['color']} dismissable bind:alertStatus={transionStatus} transition={currentTransition.transition} params={currentTransition.params}>
-      {#snippet icon()}
-        <InfoCircleSolid class="h-5 w-5" />
-      {/snippet}
-      <span class="font-medium">{capitalizeFirstLetter(selectedTransition)} transition</span>
-    </Alert>
-  </div>
-  <div class="mb-4 h-12">
-    <Button class="w-36" disabled={transionStatus ? true : false} onclick={changeTransitionStatus}>Open alert</Button>
-  </div>
-  <div class="mb-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Transition</Label>
-    {#each transitions as transition}
-      <Radio labelClass="w-24 my-1" name="transition_color" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
-    {/each}
-  </div>
-</CodeWrapper>
-
-<HighlightCompo codeLang="ts" code={modules['./md/transition.md'] as string} />
 
 <H2>Border accent</H2>
 <CodeWrapper class="space-y-4">
@@ -325,23 +273,6 @@
   </div>
 </CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/additional-content.md'] as string} />
-
-<H2>Rounded</H2>
-<CodeWrapper class="space-y-4">
-  <div class="mb-4">
-    <Alert {color} {rounded}>
-      <span class="font-medium">Default alert!</span>
-    </Alert>
-  </div>
-
-  <div class="flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Color</Label>
-    {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="alert_rounded" bind:group={color} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
-    {/each}
-  </div>
-  <Button class="w-48" color="blue" onclick={changeRounded}>{rounded ? 'Remove rounded' : 'Add rounded'}</Button>
-</CodeWrapper>
 
 <H2>Custom color</H2>
 <CodeWrapper class="h-20 p-4">
