@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Alert, Badge, alert as fsalert, Button, Label, Radio, type AlertProps } from '$lib';
+  import { Alert, alert as fsalert, Button, Label, Radio, type AlertProps } from '$lib';
   import { InfoCircleSolid, EyeSolid } from 'flowbite-svelte-icons';
   import { blur, fly, slide, scale } from 'svelte/transition';
   import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
@@ -25,11 +25,8 @@
   // reactive  color, rounded, border, dismissable, class
   const colors = Object.keys(fsalert.variants.color);
   let color: AlertProps['color'] = $state('primary');
-  let defaultColor: AlertProps['color'] = $state('primary');
   let iconColor: AlertProps['color'] = $state('primary');
-  let borderColor: AlertProps['color'] = $state('primary');
   let listColor: AlertProps['color'] = $state('primary');
-  let dismissableColor: AlertProps['color'] = $state('primary');
   let borderAccessColor: AlertProps['color'] = $state('primary');
   let additionalColor: AlertProps['color'] = $state('primary');
 
@@ -45,10 +42,7 @@
   const changeDismissable = () => {
     dismissable = !dismissable;
   };
-  let alertStatus2 = $state(true);
-  const changeStatus = () => {
-    alertStatus2 = true;
-  };
+  
   let alertStatusReactive = $state(true);
   const changeStatusReactive = () => {
     alertStatusReactive = true;
@@ -84,14 +78,12 @@
   // code generator
   let generatedCode = $derived(
     (() => {
-      // {color} {rounded} {border} {dismissable} class={alertClass} 
       let props = [];
       if (color !== 'primary') props.push(`color="${color}"`);
       if (rounded) props.push('rounded');
       if (border) props.push('border');
       if (dismissable) props.push('dismissable');
       if (alertClass) props.push(`class="${alertClass}"`);
-// alertStatus={alertStatusReactive}
       if (!alertStatusReactive) props.push('alertStatus={false}');
 
       return `<Alert ${props.join(' ')}>Default</Alert>`;
