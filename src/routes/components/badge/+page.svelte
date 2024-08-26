@@ -113,7 +113,7 @@
 </CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/default-badge.md'] as string} />
 
-<H2>Create your badge</H2>
+<H2>Badge code generator</H2>
 <CodeWrapper class="space-y-4">
   <div class="h-12">
     {#if !badgeStatus2}
@@ -141,26 +141,11 @@
     <pre class="word-break-break-word whitespace-pre-wrap rounded-lg bg-gray-100 px-4 pr-20 pt-4">
       <code class="font-mono text-sm text-gray-800">{generatedCode}</code>
     </pre>
-    <button class="absolute right-2 top-4 rounded bg-blue-500 px-2 py-1 text-white" onclick={copyToClipboard}>Copy</button>
+    <Button class="absolute right-2 top-4 rounded px-2 py-1 text-white" onclick={copyToClipboard}>Copy</Button>
   </div>
 </CodeWrapper>
 
-<H2>Large badge</H2>
-<HighlightCompo codeLang="ts" code={modules['./md/large-badge.md'] as string} />
-
-<H2>Bordered badge</H2>
-<HighlightCompo codeLang="ts" code={modules['./md/bordered-badge.md'] as string} />
-
-<H2>Pills badge</H2>
-<HighlightCompo codeLang="ts" code={modules['./md/pills-badge.md'] as string} />
-
-<H2>Dismissable badge</H2>
-<CodeWrapper class="h-20">
-  <Badge dismissable large color="violet">Default</Badge>
-</CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/dismissable-badge.md'] as string} />
-
-<H3>Transitions</H3>
+<H2>Transitions</H2>
 <CodeWrapper class="h-64 sm:h-56">
   <div class="h-16">
     <Badge large color={currentTransition.color as Badge['color']} dismissable bind:badgeStatus={transionStatus} transition={currentTransition.transition} params={currentTransition.params}>
@@ -180,7 +165,7 @@
 
 <HighlightCompo codeLang="ts" code={modules['./md/transition.md'] as string} />
 
-<H3>Dismissing with icon</H3>
+<H2>Dismissing with custom icon</H2>
 <CodeWrapper class="h-20">
   <Badge dismissable>
     Default
@@ -192,7 +177,7 @@
 
 <HighlightCompo codeLang="ts" code={modules['./md/dismissable-badge-2.md'] as string} />
 
-<H3>Dismissing with events</H3>
+<H2>Dismissing with events</H2>
 <CodeWrapper class="h-20">
   <Badge dismissable large onclick={handleClose} bind:badgeStatus={eventStatus}>Default</Badge>
 </CodeWrapper>

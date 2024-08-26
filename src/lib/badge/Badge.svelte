@@ -1,5 +1,4 @@
 <script lang="ts">
-  // import { cn } from "../utils";
   import { type BadgeProps as Props, badge } from './index';
   import { CloseButton } from '$lib';
   import { fade } from 'svelte/transition';
@@ -8,14 +7,7 @@
   let { children, icon, badgeStatus = $bindable(true), color = 'primary', large = false, dismissable = false, class: className, border, href, rounded, transition = fade, params, onclick, ...restProps }: Props = $props();
 
   let badgeClass = $derived(
-    badge({
-      color,
-      size: large ? 'large' : 'small',
-      border,
-      rounded,
-      className
-    })
-  );
+    badge({ color, size: large ? 'large' : 'small', border, rounded, className }));
   // $inspect('badgeStatus: ', badgeStatus);
 </script>
 

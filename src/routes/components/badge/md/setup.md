@@ -1,4 +1,3 @@
 <script>
-  import { Badge, Button, Indicator } from 'svelte-5-ui-lib';
-	import { ClockSolid, EnvelopeSolid, CheckOutline, CheckCircleOutline } from 'flowbite-svelte-icons';
+  import { Badge } from 'svelte-5-ui-lib';
 </script>
