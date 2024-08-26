@@ -8,8 +8,9 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import H3 from '../../utils/H3.svelte';
-  import { capitalizeFirstLetter } from '../../utils/helpers';
+  // import H3 from '../../utils/H3.svelte';
+  import { capitalizeFirstLetter, copyToClipboard } from '../../utils/helpers';
+  import GeneratedCode from '../../utils/GeneratedCode.svelte';
 
   let eventStatus = $state(true);
   function handleClose() {
@@ -95,12 +96,21 @@
     })()
   );
   let alertStatus = $state(false);
-  function copyToClipboard() {
-    navigator.clipboard
-      .writeText(generatedCode)
-      .then(() => (alertStatus = true))
-      .catch((err) => console.error('Failed to copy: ', err));
+
+  function handleCopyClick() {
+  copyToClipboard(generatedCode)
+    .then(() => {
+      alertStatus = true;
+      setTimeout(() => {
+        alertStatus = false;
+      }, 1000);
+    })
+    .catch((err) => {
+      console.error('Error in copying:', err);
+      // Handle the error as needed
+    });
   }
+
 </script>
 
 <H1>Badge</H1>
@@ -133,16 +143,11 @@
   <Button class="w-40" color="purple" onclick={changeClass}>{badgeClass ? 'Remove class' : 'Add class'}</Button>
   <Button class="w-40" color="yellow" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
   <Button class="w-40" color="dark" onclick={changeRounded}>{rounded ? 'Remove rounded' : 'Add rounded'}</Button>
-  <h3 class="text-lg font-semibold">Generated Code:</h3>
-  <div class="relative">
-    {#if alertStatus}
-      <Badge class="absolute -top-8 right-0" color="green" dismissable>Copied to clipboard</Badge>
-    {/if}
-    <pre class="word-break-break-word whitespace-pre-wrap rounded-lg bg-gray-100 px-4 pr-20 pt-4">
-      <code class="font-mono text-sm text-gray-800">{generatedCode}</code>
-    </pre>
-    <Button class="absolute right-2 top-4 rounded px-2 py-1 text-white" onclick={copyToClipboard}>Copy</Button>
-  </div>
+  <GeneratedCode 
+    componentStatus={alertStatus}
+    {generatedCode}
+    {handleCopyClick}
+    />
 </CodeWrapper>
 
 <H2>Transitions</H2>

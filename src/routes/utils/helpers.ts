@@ -31,3 +31,14 @@ export function splitAndCapitalize(text: string) {
 export const capitalizeFirstLetter = (str: string) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
+
+export function copyToClipboard(text: string): Promise<void> {
+  return navigator.clipboard.writeText(text)
+    .then(() => {
+      console.log('Text copied to clipboard');
+    })
+    .catch((err) => {
+      console.error('Failed to copy: ', err);
+      throw err; // Re-throw the error so the caller can handle it if needed
+    });
+}

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Alert, alert as fsalert, Button, Label, Radio, type AlertProps } from '$lib';
+  import { Alert, Badge, alert as fsalert, Button, Label, Radio, type AlertProps } from '$lib';
   import { InfoCircleSolid, EyeSolid } from 'flowbite-svelte-icons';
   import { blur, fly, slide, scale } from 'svelte/transition';
   import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
@@ -8,7 +8,8 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import { capitalizeFirstLetter } from '../../utils/helpers';
+  import { capitalizeFirstLetter, copyToClipboard } from '../../utils/helpers';
+  import GeneratedCode from '../../utils/GeneratedCode.svelte';
 
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
@@ -79,12 +80,72 @@
   const changeTransitionStatus = () => {
     transionStatus = !transionStatus;
   };
+
+  // code generator
+  let generatedCode = $derived(
+    (() => {
+      // {color} {rounded} {border} {dismissable} class={alertClass} 
+      let props = [];
+      if (color !== 'primary') props.push(`color="${color}"`);
+      if (rounded) props.push('rounded');
+      if (border) props.push('border');
+      if (dismissable) props.push('dismissable');
+      if (alertClass) props.push(`class="${alertClass}"`);
+// alertStatus={alertStatusReactive}
+      if (!alertStatusReactive) props.push('alertStatus={false}');
+
+      return `<Alert ${props.join(' ')}>Default</Alert>`;
+    })()
+  );
+  let alertStatus = $state(false);
+
+  function handleCopyClick() {
+  copyToClipboard(generatedCode)
+    .then(() => {
+      alertStatus = true;
+      setTimeout(() => {
+        alertStatus = false;
+      }, 1000);
+    })
+    .catch((err) => {
+      console.error('Error in copying:', err);
+      // Handle the error as needed
+    });
+  }
 </script>
 
 <H1>Alert</H1>
 
 <H2>Setup</H2>
 <HighlightCompo codeLang="ts" code={modules['./md/setup.md'] as string} />
+
+<H2>Alert code generator</H2>
+<CodeWrapper class="space-y-4">
+  <div class="mb-4 h-20">
+    <Alert {color} {rounded} {border} {dismissable} class={alertClass} bind:alertStatus={alertStatusReactive}>
+      <span class="font-medium">Default alert!</span>
+    </Alert>
+  </div>
+  <div class="mb-4 h-12">
+    <Button disabled={alertStatusReactive ? true : false} onclick={changeStatusReactive}>Open alert</Button>
+  </div>
+  <div class="flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Color</Label>
+    {#each colors as colorOption}
+      <Radio labelClass="w-24 my-1" name="alert_reactive" bind:group={color} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
+    {/each}
+  </div>
+  <Button class="w-48" color="blue" onclick={changeRounded}>{rounded ? 'Remove rounded' : 'Add rounded'}</Button>
+  <Button class="w-48" color="red" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
+  <Button class="w-48" color="yellow" onclick={changeDismissable}>{dismissable ? 'Remove dismissable' : 'Add dismissable'}</Button>
+  <Button class="w-48" color="green" onclick={changeClass}>{alertClass ? 'Remove class' : 'Add class'}</Button>
+  <h3 class="text-lg font-semibold">Generated Code:</h3>
+  <GeneratedCode 
+    componentStatus={alertStatus}
+    {generatedCode}
+    {handleCopyClick}
+  />
+</CodeWrapper>
 
 <H2>Default alert</H2>
 <CodeWrapper class="space-y-4">
@@ -294,24 +355,4 @@
 </CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/events.md'] as string} />
 
-<H2>Reactive alert</H2>
-<CodeWrapper class="space-y-4">
-  <div class="mb-4 h-20">
-    <Alert {color} {rounded} {border} {dismissable} class={alertClass} bind:alertStatus={alertStatusReactive}>
-      <span class="font-medium">Default alert!</span>
-    </Alert>
-  </div>
-  <div class="mb-4 h-12">
-    <Button disabled={alertStatusReactive ? true : false} onclick={changeStatusReactive}>Open alert</Button>
-  </div>
-  <div class="flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Color</Label>
-    {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="alert_reactive" bind:group={color} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
-    {/each}
-  </div>
-  <Button class="w-48" color="blue" onclick={changeRounded}>{rounded ? 'Remove rounded' : 'Add rounded'}</Button>
-  <Button class="w-48" color="red" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
-  <Button class="w-48" color="yellow" onclick={changeDismissable}>{dismissable ? 'Remove dismissable' : 'Add dismissable'}</Button>
-  <Button class="w-48" color="green" onclick={changeClass}>{alertClass ? 'Remove class' : 'Add class'}</Button>
-</CodeWrapper>
+
