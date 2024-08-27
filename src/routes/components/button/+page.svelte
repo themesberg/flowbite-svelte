@@ -210,14 +210,6 @@
   />
 </CodeWrapper>
 
-<H2>Button with link</H2>
-
-<CodeWrapper>
-  <Button href="/">Home</Button>
-</CodeWrapper>
-
-<HighlightCompo codeLang="plain" code={modules['./md/button-with-link.md'] as string} />
-
 <H2>Button with icon</H2>
 <CodeWrapper class="flex flex-wrap gap-2">
   <Button><ShoppingBagSolid class="me-2 h-4 w-4" />Buy Now</Button>
