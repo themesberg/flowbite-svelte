@@ -9,7 +9,9 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import { capitalizeFirstLetter } from '../../utils/helpers';
+  import { capitalizeFirstLetter, copyToClipboard } from '../../utils/helpers';
+  import GeneratedCode from '../../utils/GeneratedCode.svelte';
+
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -17,11 +19,16 @@
   });
   // color, size, group, outline, shadow, disabled, pill
   const btnColors = Object.keys(button.variants.color);
-  let btnColor = $state(btnColors[0]);
-  let btnClass: GradientButton['class'] = $state('w-40');
+  let btnColor = $state('primary');
+  let btnClass: GradientButton['class'] = $state('');
   const changeBtnClass = () => {
-    btnClass = btnClass === 'w-40' ? 'w-48' : 'w-40';
+    btnClass = btnClass === '' ? 'w-48' : '';
   };
+
+  let btnLink = $state('');
+  const changeBtnLink = () => {
+    btnLink = btnLink === '' ? '/' : '';
+  }
 
   let btnOutline = $state(false);
   const changeBtnOutline = () => {
@@ -40,34 +47,88 @@
     btnDisabled = !btnDisabled;
   };
   const btnSizes = Object.keys(button.variants.size);
-  let btnSize = $state(btnSizes[0]);
+  let btnSize = $state('md');
 
   const gradientColors = Object.keys(gradientButton.variants.color);
-  let gradientColor = $state(gradientColors[0]);
+  let gradientColor = $state('blue');
 
   const gradientSizes = Object.keys(button.variants.size);
-  let gradientSize = $state(gradientSizes[0]);
+  let gradientSize = $state('md');
 
-  let gradientClass: GradientButton['class'] = $state('w-40');
-  const changeClass = () => {
-    gradientClass = gradientClass === 'w-40' ? 'w-48' : 'w-40';
+  let gradientClass: GradientButton['class'] = $state('');
+  const changeGradientClass = () => {
+    gradientClass = gradientClass === '' ? 'w-48' : '';
   };
   let gradientOutline = $state(false);
-  const changeOutline = () => {
+  const changeGradientOutline = () => {
     gradientOutline = !gradientOutline;
   };
   let gradientShadow = $state(false);
-  const changeShadow = () => {
+  const changeGradientShadow = () => {
     gradientShadow = !gradientShadow;
   };
   let graidentPill = $state(false);
-  const changePill = () => {
+  const changeGradientPill = () => {
     graidentPill = !graidentPill;
   };
   let gradientDisabled = $state(false);
-  const changeDisabled = () => {
+  const changeGradientDisabled = () => {
     gradientDisabled = !gradientDisabled;
   };
+
+  let gradientLink = $state('');
+  const changeGradientLink = () => {
+    gradientLink = gradientLink === '' ? '/' : '';
+  }
+
+  // code generator
+  let generatedCode = $derived(
+    (() => {
+      let props = [];
+      // color={btnColor as Button['color']} class={btnClass} outline={btnOutline} shadow={btnShadow} pill={btnPill} disabled={btnDisabled} size={btnSize as Button['size']}
+      if (btnColor !== 'primary') props.push(` color="${btnColor}"`);
+      if (btnShadow) props.push(' shadow');
+      if (btnOutline) props.push(' outline');
+      if (btnPill) props.push(' pill');
+      if (btnClass) props.push(` class="${btnClass}"`);
+      if (btnLink) props.push(` href="${btnLink}"`);
+      if (btnDisabled) props.push(' disabled');
+      if (btnSize !== 'md') props.push(` size="${btnSize}"`);
+      return `<Button${props.join('')}>My Button</Button>`;
+    })()
+  );
+
+  let gradientGeneratedCode = $derived(
+    (() => {
+      let props = [];
+      // outline={gradientOutline} shadow={gradientShadow} pill={graidentPill} class={gradientClass} disabled={gradientDisabled} color={gradientColor as GradientButton['color']} size={gradientSize as Button['size']}
+      if (gradientColor !== 'blue') props.push(` color="${gradientColor}"`);
+      if (gradientShadow) props.push(' shadow');
+      if (gradientOutline) props.push(' outline');
+      if (graidentPill) props.push(' pill');
+      if (gradientClass) props.push(` class="${gradientClass}"`);
+      if (gradientLink) props.push(` href="${gradientLink}"`);
+      if (gradientDisabled) props.push(' disabled');
+      if (gradientSize !== 'md') props.push(` size="${gradientSize}"`);
+      return `<GradientButton${props.join('')}>My Gradient Button</GradientButton>`;
+    })()
+  );
+
+  let copiedStatus = $state(false);
+
+  function handleCopyClick(codeBlock: string) {
+  copyToClipboard(codeBlock)
+    .then(() => {
+      copiedStatus = true;
+      setTimeout(() => {
+        copiedStatus = false;
+      }, 1000);
+    })
+    .catch((err) => {
+      console.error('Error in copying:', err);
+      // Handle the error as needed
+    });
+  }
 </script>
 
 <H1>Buttons</H1>
@@ -75,11 +136,11 @@
 <H2>Setup</H2>
 <HighlightCompo codeLang="ts" code={modules['./md/setup.md'] as string} />
 
-<H2>Default buttons</H2>
+<H2>Interactive Button Bilder</H2>
 
 <CodeWrapper class="flex flex-wrap gap-2">
   <div class="h-16">
-    <Button color={btnColor as Button['color']} class={btnClass} outline={btnOutline} shadow={btnShadow} pill={btnPill} disabled={btnDisabled} size={btnSize as Button['size']}>Button</Button>
+    <Button color={btnColor as Button['color']} class={btnClass} outline={btnOutline} shadow={btnShadow} pill={btnPill} disabled={btnDisabled} size={btnSize as Button['size']} href={btnLink ? btnLink : ''}>Button</Button>
   </div>
   <div class="mt-4 space-y-4">
     <div class="flex flex-wrap space-x-10">
@@ -88,21 +149,30 @@
         <Radio labelClass="w-24 my-1" name="btn_color" bind:group={btnColor as Button['color']} color={colorOption as Button['color']} value={colorOption}>{colorOption}</Radio>
       {/each}
     </div>
-    <div class="flex flex-wrap space-x-10">
+    <div class="flex flex-wrap space-x-8">
       <Label class="mb-4 w-full font-bold">Size</Label>
       {#each btnSizes as sizeOption}
         <Radio labelClass="w-24 my-1" name="btn_size" bind:group={btnSize as Button['size']} color={sizeOption as Button['size']} value={sizeOption}>{sizeOption}</Radio>
       {/each}
     </div>
   </div>
-  <Button class="mt-4 w-36" onclick={changeBtnClass}>{btnClass === 'w-40' ? 'Add class' : 'Remove class'}</Button>
-  <Button class="mt-4 w-36" color="blue" onclick={changeBtnOutline}>{btnOutline === false ? 'Add outline' : 'Remove outline'}</Button>
-  <Button class="mt-4 w-40" color="green" onclick={changeBtnShadow}>{btnShadow === false ? 'Add shadow' : 'Remove shadow'}</Button>
-  <Button class="mt-4 w-40" color="yellow" onclick={changeBtnPill}>{btnPill === false ? 'Add pill' : 'Remove pill'}</Button>
-  <Button class="mt-4 w-40" color="red" onclick={changeBtnDisabled}>{btnDisabled === false ? 'Add disabled' : 'Remove disabled'}</Button>
+  <div class="mt-4 flex flex-wrap gap-2">
+  <Button class="w-40" color="blue" onclick={changeBtnOutline}>{btnOutline === false ? 'Add outline' : 'Remove outline'}</Button>
+  <Button class="w-40" color="green" onclick={changeBtnShadow}>{btnShadow === false ? 'Add shadow' : 'Remove shadow'}</Button>
+  <Button class="w-40" color="yellow" onclick={changeBtnPill}>{btnPill === false ? 'Add pill' : 'Remove pill'}</Button>
+  <Button class="w-40" color="red" onclick={changeBtnDisabled}>{btnDisabled === false ? 'Add disabled' : 'Remove disabled'}</Button>
+  <Button class="w-40" onclick={changeBtnClass}> {btnClass === '' ? 'Add class' : 'Remove class'}</Button>
+  <Button class="w-40" color="sky" onclick={changeBtnLink}> {btnLink === '' ? 'Add link' : 'Remove link'}</Button>
+  </div>
+  <div class="w-full">
+  <GeneratedCode
+    class="mt-8"
+    componentStatus={copiedStatus}
+    {generatedCode}
+    handleCopyClick={()=>handleCopyClick(generatedCode)}
+  />
+</div>
 </CodeWrapper>
-
-<HighlightCompo codeLang="js" code={modules['./md/default-buttons.md'] as string} />
 
 <H2>Gradient button</H2>
 
@@ -124,14 +194,21 @@
       {/each}
     </div>
   </div>
-  <Button class="mt-4 w-36" onclick={changeClass}>{gradientClass === 'w-40' ? 'Add class' : 'Remove class'}</Button>
-  <Button class="mt-4 w-36" color="blue" onclick={changeOutline}>{gradientOutline === false ? 'Add outline' : 'Remove outline'}</Button>
-  <Button class="mt-4 w-40" color="green" onclick={changeShadow}>{gradientShadow === false ? 'Add shadow' : 'Remove shadow'}</Button>
-  <Button class="mt-4 w-40" color="yellow" onclick={changePill}>{graidentPill === false ? 'Add pill' : 'Remove pill'}</Button>
-  <Button class="mt-4 w-40" color="red" onclick={changeDisabled}>{gradientDisabled === false ? 'Add disabled' : 'Remove disabled'}</Button>
+  <div class="mt-4 flex flex-wrap gap-2">
+  <Button class="w-40" color="blue" onclick={changeGradientOutline}>{gradientOutline === false ? 'Add outline' : 'Remove outline'}</Button>
+  <Button class="w-40" color="green" onclick={changeGradientShadow}>{gradientShadow === false ? 'Add shadow' : 'Remove shadow'}</Button>
+  <Button class="w-40" color="yellow" onclick={changeGradientPill}>{graidentPill === false ? 'Add pill' : 'Remove pill'}</Button>
+  <Button class="w-40" color="red" onclick={changeGradientDisabled}>{gradientDisabled === false ? 'Add disabled' : 'Remove disabled'}</Button>
+  <Button class="w-40" onclick={changeGradientClass}>{gradientClass === '' ? 'Add class' : 'Remove class'}</Button>
+  <Button class="w-40" color="sky" onclick={changeGradientLink}> {btnLink === '' ? 'Add link' : 'Remove link'}</Button>
+  </div>
+  <GeneratedCode 
+    class="mt-8"
+    componentStatus={copiedStatus}
+    generatedCode={gradientGeneratedCode}
+    handleCopyClick={()=>handleCopyClick(gradientGeneratedCode)}
+  />
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/gradient.md'] as string} />
 
 <H2>Button with link</H2>
 

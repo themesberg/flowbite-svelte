@@ -9,7 +9,7 @@
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
   // import H3 from '../../utils/H3.svelte';
-  import { capitalizeFirstLetter, copyToClipboard } from '../../utils/helpers';
+  import { copyToClipboard } from '../../utils/helpers';
   import GeneratedCode from '../../utils/GeneratedCode.svelte';
 
   let eventStatus = $state(true);
@@ -76,11 +76,6 @@
   let selectedTransition = $state('Fly');
   let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
 
-  let transionStatus = $state(true);
-  const changeTransitionStatus = () => {
-    transionStatus = !transionStatus;
-  };
-
   let generatedCode = $derived(
     (() => {
       let props = [];
@@ -93,7 +88,6 @@
       if (rounded) props.push(' rounded');
       if (currentTransition !== transitions[0] && badgeDismissable) {
         props.push(` transition={${currentTransition.transition.name}}`);
-      
       // Generate params string without quotes and handle functions
       const paramsString = Object.entries(currentTransition.params)
         .map(([key, value]) => {
@@ -125,7 +119,6 @@
       // Handle the error as needed
     });
   }
-
 </script>
 
 <H1>Badge</H1>

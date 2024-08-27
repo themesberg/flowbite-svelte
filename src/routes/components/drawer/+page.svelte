@@ -66,10 +66,10 @@
   let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
 
   const placements = [
-    { name: 'Top', placement: 'top', params: { y: -320, duration: 200, easing: sineIn }, width: 'full' },
-    { name: 'Right', placement: 'right', params: { x: 320, duration: 200, easing: sineIn }, width: 'default' },
-    { name: 'Bottom', placement: 'bottom', params: { y: 320, duration: 200, easing: sineIn }, width: 'full' },
-    { name: 'Left', placement: 'left', params: { x: -320, duration: 200, easing: sineIn }, width: 'default' }
+    { name: 'Top', placement: 'top', params: { y: -320, duration: 500, easing: sineIn }, width: 'full' },
+    { name: 'Right', placement: 'right', params: { x: 320, duration: 500, easing: sineIn }, width: 'default' },
+    { name: 'Bottom', placement: 'bottom', params: { y: 320, duration: 500, easing: sineIn }, width: 'full' },
+    { name: 'Left', placement: 'left', params: { x: -320, duration: 500, easing: sineIn }, width: 'default' }
   ];
 
   let selectedPlacement = $state('Top');
@@ -122,12 +122,14 @@
 
 <HighlightCompo code={modules['./md/defaultdrawer.md'] as string} />
 
-<H2>Transitions</H2>
+<H2>Interactive Drawer Builder</H2>
 <CodeWrapper>
   <div class="text-center">
     <Button onclick={drawerTransition.toggle}>Drawer</Button>
   </div>
-  <Drawer drawerStatus={drawerStatusTransition} closeDrawer={closeDrawerTransition} transition={currentTransition.transition} params={currentTransition.params}>
+  <Drawer drawerStatus={drawerStatusTransition} closeDrawer={closeDrawerTransition} transition={currentTransition.transition}  placement={currentPlacement.placement as Drawer['placement']} width={currentPlacement.width as Drawer['width']}
+  params={currentPlacement.placement === 'left' ? currentTransition.params : currentPlacement.params}
+  >
     <Drawerhead onclick={closeDrawerTransition}>
       <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
         <InfoCircleSolid class="me-2.5 h-4 w-4" />{selectedTransition} drawer
@@ -138,7 +140,13 @@
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Transition</Label>
     {#each transitions as transition}
-      <Radio labelClass="w-24 my-1" name="drawer_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+      <Radio labelClass="w-24 my-1" name="interactive_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+    {/each}
+  </div>
+  <div class="mb-4 flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Placement</Label>
+    {#each placements as placement}
+      <Radio labelClass="w-24 my-1" name="interactive_placement" bind:group={selectedPlacement} value={placement.name}>{placement.name}</Radio>
     {/each}
   </div>
 </CodeWrapper>

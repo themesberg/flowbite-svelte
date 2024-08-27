@@ -8,7 +8,7 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import { capitalizeFirstLetter, copyToClipboard } from '../../utils/helpers';
+  import { copyToClipboard } from '../../utils/helpers';
   import GeneratedCode from '../../utils/GeneratedCode.svelte';
 
   const modules = import.meta.glob('./md/*.md', {
@@ -68,11 +68,6 @@
 
   let selectedTransition = $state('Fly');
   let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
-
-  let transionStatus = $state(true);
-  const changeTransitionStatus = () => {
-    transionStatus = !transionStatus;
-  };
 
   // code generator
   let generatedCode = $derived(
