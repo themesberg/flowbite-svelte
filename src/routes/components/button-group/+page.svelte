@@ -39,7 +39,7 @@
 
 <HighlightCompo code={modules['./md/default-buttongroup.md'] as string} />
 
-<H2>Reactive button group</H2>
+<H2>Interactive button group</H2>
 <CodeWrapper>
   <div class="h-16">
     <ButtonGroup {size} class={buttonGroupClass}>

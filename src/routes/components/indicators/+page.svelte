@@ -48,7 +48,7 @@
 </CodeWrapper>
 <HighlightCompo code={modules['./md/defaultindicator.md'] as string} />
 
-<H2>Reactive indicator</H2>
+<H2>Interactive indicator</H2>
 <CodeWrapper>
   <div class="borer relative h-56 w-56 rounded-lg border-gray-300 bg-gray-200 dark:border-gray-700 dark:bg-gray-800">
     <Indicator {color} {size} {border} {placement} {cornerStyle} />

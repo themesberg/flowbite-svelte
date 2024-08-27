@@ -7,11 +7,11 @@
 
   const { base, content, divider: dividerClass, active, inactive } = $derived(tabs({ tabStyle, hasDivider: divider }));
 
-  const ctx: TabCtxType = {
+  const ctx: TabCtxType = $derived({
     activeClass: active(),
     inactiveClass: inactive(),
     selected: writable<HTMLElement>()
-  };
+  });
 
   let dividerBool = $derived(['full', 'pill'].includes(tabStyle) ? false : divider);
 

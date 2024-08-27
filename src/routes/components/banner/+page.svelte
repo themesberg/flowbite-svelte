@@ -8,14 +8,16 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import { capitalizeFirstLetter } from '../../utils/helpers';
+  import { capitalizeFirstLetter, copyToClipboard } from '../../utils/helpers';
+  import GeneratedCode from '../../utils/GeneratedCode.svelte';
+
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
     eager: true
   });
 
-  // reactive example
+  // interactive example
   // position, bannerType, color, class:divClass
   const colors = Object.keys(banner.variants.color);
   let position: BannerProps['position'] = $state('sticky');
@@ -32,7 +34,7 @@
       position = 'absolute';
     }
   };
-  let color: BannerProps['color'] = $state('gray');
+  let color: BannerProps['color'] = $state('primary');
   let bannerClass: BannerProps['class'] = $state('');
   const changeClass = () => {
     bannerClass = bannerClass === '' ? 'my-4' : '';
@@ -64,6 +66,35 @@
   const changeTransitionStatus = () => {
     transionStatus = !transionStatus;
   };
+
+  // code generator
+  let generatedCode = $derived(
+    (() => {
+      // position, bannerType color, class
+      let props = [];
+      if (color !== 'primary') props.push(`color="${color}"`);
+      if (bannerType !== 'default') props.push(`bannerType="${bannerType}"`);
+      if (position !== 'sticky') props.push(`position="${position}"`);
+      if (bannerClass) props.push(`class="${bannerClass}"`);
+      if (!bannerStatus) props.push('bannerStatus={false}');
+      return `<Banner ${props.join(' ')}>My Banner</Banner>`;
+    })()
+  );
+  let copiedStatus = $state(false);
+
+  function handleCopyClick() {
+  copyToClipboard(generatedCode)
+    .then(() => {
+      copiedStatus = true;
+      setTimeout(() => {
+        copiedStatus = false;
+      }, 1000);
+    })
+    .catch((err) => {
+      console.error('Error in copying:', err);
+      // Handle the error as needed
+    });
+  }
 </script>
 
 <H1>Banner</H1>
@@ -71,34 +102,13 @@
 
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
-<H2>Default sticky banner</H2>
-
-<CodeWrapper class="relative">
-  <Skeleton class="py-4" />
-  <ImagePlaceholder class="py-4" />
-
-  <Banner id="default-banner" position="absolute">
-    <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
-      <span class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600">
-        <BullhornOutline class="h-3 w-3 text-gray-500 dark:text-gray-400" />
-        <span class="sr-only">Light bulb</span>
-      </span>
-      <span>
-        New brand identity has been launched for the <a href="https://flowbite.com" class="decoration-600 dark:decoration-500 inline font-medium text-primary-600 underline decoration-solid underline-offset-2 hover:no-underline dark:text-primary-500">Flowbite Library</a>
-      </span>
-    </p>
-  </Banner>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/defaultsticky.md'] as string} />
-
-<H2>Reactive banner</H2>
+<H2>Interactive Banner Builder</H2>
 <CodeWrapper class="relative">
   <div class="mb-4 h-[630px] md:h-[440px]">
     <Skeleton class="py-4" />
     <ImagePlaceholder class="py-4" />
 
-    <Banner id="sample-banner" {position} {bannerType} {color} class={bannerClass} bind:bannerStatus>
+    <Banner id="sample-banner" {position} {bannerType} {color} class={bannerClass} bind:bannerStatus={bannerStatus}>
       <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
         <span class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600">
           <BullhornOutline class="h-3 w-3 text-gray-500 dark:text-gray-400" />
@@ -123,8 +133,36 @@
     <Button class="w-48" onclick={changePosition}>Change position</Button>
     <Button class="w-48" color="blue" onclick={changeBannerType}>Change banner type</Button>
     <Button class="w-48" color="green" onclick={changeClass}>{bannerClass ? 'Remove class' : 'Add class'}</Button>
+    <GeneratedCode 
+      componentStatus={copiedStatus}
+      {generatedCode}
+      {handleCopyClick}
+    />
   </div>
 </CodeWrapper>
+
+<H2>Default sticky banner</H2>
+
+<CodeWrapper class="relative">
+  <Skeleton class="py-4" />
+  <ImagePlaceholder class="py-4" />
+
+  <Banner id="default-banner" position="absolute">
+    <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
+      <span class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600">
+        <BullhornOutline class="h-3 w-3 text-gray-500 dark:text-gray-400" />
+        <span class="sr-only">Light bulb</span>
+      </span>
+      <span>
+        New brand identity has been launched for the <a href="https://flowbite.com" class="decoration-600 dark:decoration-500 inline font-medium text-primary-600 underline decoration-solid underline-offset-2 hover:no-underline dark:text-primary-500">Flowbite Library</a>
+      </span>
+    </p>
+  </Banner>
+</CodeWrapper>
+
+<HighlightCompo code={modules['./md/defaultsticky.md'] as string} />
+
+
 
 <H2>Transitions</H2>
 <p>The `transition` and `params` props allow you to apply transition effects to components when they enter or leave the view. Svelte provides built-in transitions like `fly`, `slide`, `blur`, `fade`, and `scale`.</p>

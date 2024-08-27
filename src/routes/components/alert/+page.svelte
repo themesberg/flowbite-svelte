@@ -22,7 +22,7 @@
     alert('Alert dismissed');
     alertEventStatus = false;
   }
-  // reactive  color, rounded, border, dismissable, class
+  // interactive  color, rounded, border, dismissable, class
   const colors = Object.keys(fsalert.variants.color);
   let color: AlertProps['color'] = $state('primary');
   let iconColor: AlertProps['color'] = $state('primary');
@@ -43,13 +43,13 @@
     dismissable = !dismissable;
   };
   
-  let alertStatusReactive = $state(true);
-  const changeStatusReactive = () => {
-    alertStatusReactive = true;
+  let alertStatusInteractive = $state(true);
+  const changeStatusInteractive = () => {
+    alertStatusInteractive = true;
   };
   let alertClass: AlertProps['class'] = $state('');
   const changeClass = () => {
-    alertClass = alertClass === '' ? 'p-8' : '';
+    alertClass = alertClass === '' ? 'pl-10' : '';
   };
 
   // transition
@@ -57,14 +57,13 @@
     name: string;
     transition: typeof fly | typeof blur | typeof slide | typeof scale;
     params: FlyParams | BlurParams | SlideParams | ScaleParams;
-    color: Alert['color'];
   };
 
   const transitions: TransitionOption[] = [
-    { name: 'Fly', transition: fly, params: { duration: 500, easing: linear, x: 150 }, color: 'blue' },
-    { name: 'Blur', transition: blur, params: { duration: 500, easing: linear }, color: 'lime' },
-    { name: 'Slide', transition: slide, params: { duration: 500, easing: linear, x: -150 }, color: 'violet' },
-    { name: 'Scale', transition: scale, params: { duration: 500, easing: linear }, color: 'pink' }
+    { name: 'Fly', transition: fly, params: { duration: 500, easing: linear, x: 150 } },
+    { name: 'Blur', transition: blur, params: { duration: 500, easing: linear } },
+    { name: 'Slide', transition: slide, params: { duration: 500, easing: linear, x: -150 } },
+    { name: 'Scale', transition: scale, params: { duration: 500, easing: linear } }
   ];
 
   let selectedTransition = $state('Fly');
@@ -84,19 +83,32 @@
       if (border) props.push('border');
       if (dismissable) props.push('dismissable');
       if (alertClass) props.push(`class="${alertClass}"`);
-      if (!alertStatusReactive) props.push('alertStatus={false}');
-
-      return `<Alert ${props.join(' ')}>Default</Alert>`;
+      if (!alertStatusInteractive) props.push('alertStatus={false}');
+      if (currentTransition !== transitions[0]) {
+        props.push(`transition={${currentTransition.transition.name}}`);
+      
+      // Generate params string without quotes and handle functions
+      const paramsString = Object.entries(currentTransition.params)
+        .map(([key, value]) => {
+          if (typeof value === 'function') {
+            return `${key}:${value.name}`;
+          }
+          return `${key}:${value}`;
+        })
+        .join(',');
+        props.push(`params={{${paramsString}}}`);
+      }
+      return `<Alert ${props.join(' ')}>My Alert</Alert>`;
     })()
   );
-  let alertStatus = $state(false);
+  let copiedStatus = $state(false);
 
   function handleCopyClick() {
   copyToClipboard(generatedCode)
     .then(() => {
-      alertStatus = true;
+      copiedStatus = true;
       setTimeout(() => {
-        alertStatus = false;
+        copiedStatus = false;
       }, 1000);
     })
     .catch((err) => {
@@ -111,7 +123,6 @@
 <H2>Setup</H2>
 <HighlightCompo codeLang="ts" code={modules['./md/setup.md'] as string} />
 
-
 <H2>Default alert</H2>
 <CodeWrapper class="space-y-4">
   <Alert>
@@ -120,15 +131,15 @@
 </CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/default-alert.md'] as string} />
 
-<H2>Alert code generator</H2>
+<H2>Interactive Alert Bilder</H2>
 <CodeWrapper class="space-y-4">
-  <div class="mb-4 h-20">
-    <Alert {color} {rounded} {border} {dismissable} class={alertClass} bind:alertStatus={alertStatusReactive}>
+  <div class="mb-4 h-12">
+    <Alert {color} {rounded} {border} {dismissable} class={alertClass} bind:alertStatus={alertStatusInteractive} transition={currentTransition.transition} params={currentTransition.params}>
       <span class="font-medium">Default alert!</span>
     </Alert>
   </div>
   <div class="mb-4 h-12">
-    <Button disabled={alertStatusReactive ? true : false} onclick={changeStatusReactive}>Open alert</Button>
+    <Button disabled={alertStatusInteractive ? true : false} onclick={changeStatusInteractive}>Open alert</Button>
   </div>
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
@@ -136,12 +147,18 @@
       <Radio labelClass="w-24 my-1" name="alert_reactive" bind:group={color} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
+  <div class="mb-4 flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Transition</Label>
+    {#each transitions as transition}
+      <Radio disabled={dismissable ? false : true} labelClass="w-24 my-1 {dismissable ? '' : 'opacity-30 cursor-not-allowed'}" name="transition_interactive" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+    {/each}
+  </div>
   <Button class="w-48" color="blue" onclick={changeRounded}>{rounded ? 'Remove rounded' : 'Add rounded'}</Button>
   <Button class="w-48" color="red" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
   <Button class="w-48" color="yellow" onclick={changeDismissable}>{dismissable ? 'Remove dismissable' : 'Add dismissable'}</Button>
   <Button class="w-48" color="green" onclick={changeClass}>{alertClass ? 'Remove class' : 'Add class'}</Button>
   <GeneratedCode 
-    componentStatus={alertStatus}
+    componentStatus={copiedStatus}
     {generatedCode}
     {handleCopyClick}
   />
@@ -167,31 +184,6 @@
   </div>
 </CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/alerts-with-icon.md'] as string} />
-
-
-<H2>Transitions</H2>
-
-<CodeWrapper class="h-72">
-  <div class="mb-4 h-16">
-    <Alert color={currentTransition.color as Alert['color']} dismissable bind:alertStatus={transionStatus} transition={currentTransition.transition} params={currentTransition.params}>
-      {#snippet icon()}
-        <InfoCircleSolid class="h-5 w-5" />
-      {/snippet}
-      <span class="font-medium">{capitalizeFirstLetter(selectedTransition)} transition</span>
-    </Alert>
-  </div>
-  <div class="mb-4 h-12">
-    <Button class="w-36" disabled={transionStatus ? true : false} onclick={changeTransitionStatus}>Open alert</Button>
-  </div>
-  <div class="mb-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Transition</Label>
-    {#each transitions as transition}
-      <Radio labelClass="w-24 my-1" name="transition_color" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
-    {/each}
-  </div>
-</CodeWrapper>
-
-<HighlightCompo codeLang="ts" code={modules['./md/transition.md'] as string} />
 
 <H2>Alerts with list</H2>
 <CodeWrapper class="space-y-4">

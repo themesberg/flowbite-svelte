@@ -30,7 +30,7 @@
     eager: true
   });
 
-  // reactive example
+  // interactive example
   const colors = Object.keys(badge.variants.color);
   let color: BadgeProps['color'] = $state('primary');
   let badgeSize: BadgeProps['large'] = $state(false);
@@ -43,7 +43,7 @@
   };
   let badgeClass: BadgeProps['class'] = $state('');
   const changeClass = () => {
-    badgeClass = badgeClass === '' ? 'p-4' : '';
+    badgeClass = badgeClass === '' ? 'w-40 p-2' : '';
   };
   let badgeStatus2 = $state(true);
   const changeStatus = () => {
@@ -91,18 +91,33 @@
       if (!badgeStatus2) props.push('badgeStatus={false}');
       if (border) props.push('border');
       if (rounded) props.push('rounded');
+      if (currentTransition !== transitions[0]) {
+        props.push(`transition={${currentTransition.transition.name}}`);
+      
+      // Generate params string without quotes and handle functions
+      const paramsString = Object.entries(currentTransition.params)
+        .map(([key, value]) => {
+          if (typeof value === 'function') {
+            return `${key}:${value.name}`;
+          }
+          return `${key}:${value}`;
+        })
+        .join(',');
+      
+      props.push(`params={{${paramsString}}}`);
+    }
 
-      return `<Badge ${props.join(' ')}>Default</Badge>`;
+      return `<Badge ${props.join(' ')}>My Badge</Badge>`;
     })()
   );
-  let alertStatus = $state(false);
+  let copiedStatus = $state(false);
 
   function handleCopyClick() {
   copyToClipboard(generatedCode)
     .then(() => {
-      alertStatus = true;
+      copiedStatus = true;
       setTimeout(() => {
-        alertStatus = false;
+        copiedStatus = false;
       }, 1000);
     })
     .catch((err) => {
@@ -123,19 +138,24 @@
 </CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/default-badge.md'] as string} />
 
-<H2>Badge code generator</H2>
+<H2>Interactive Badge Bilder</H2>
 <CodeWrapper class="space-y-4">
-  <div class="h-12">
-    {#if !badgeStatus2}
-      <Button color="light" onclick={changeStatus}>Open badge</Button>
-    {/if}
-    <Badge {color} large={badgeSize} dismissable={badgeDismissable} class={badgeClass} bind:badgeStatus={badgeStatus2} {border} {rounded}>Default</Badge>
+  <div class="mb-4 h-8">
+    <Badge {color} large={badgeSize} dismissable={badgeDismissable} class={badgeClass} bind:badgeStatus={badgeStatus2} {border} {rounded}  transition={currentTransition.transition} params={currentTransition.params}>Default</Badge>
   </div>
-
+  <div class="mb-4 h-12">
+      <Button disabled={badgeStatus2 ? true : false} onclick={changeStatus}>Open badge</Button>
+  </div>
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
       <Radio labelClass="w-24 my-1" name="color" bind:group={color} color={colorOption as BadgeProps['color']} value={colorOption}>{colorOption}</Radio>
+    {/each}
+  </div>
+  <div class="mb-4 flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Transition</Label>
+    {#each transitions as transition}
+      <Radio disabled={badgeDismissable ? false : true } labelClass="w-24 my-1 {badgeDismissable ? '' : 'opacity-30 cursor-not-allowed'}" name="transition_interactive" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
     {/each}
   </div>
   <Button class="w-40" color="blue" onclick={changeSize}>{badgeSize ? 'Small' : 'Large'}</Button>
@@ -144,31 +164,11 @@
   <Button class="w-40" color="yellow" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
   <Button class="w-40" color="dark" onclick={changeRounded}>{rounded ? 'Remove rounded' : 'Add rounded'}</Button>
   <GeneratedCode 
-    componentStatus={alertStatus}
+    componentStatus={copiedStatus}
     {generatedCode}
     {handleCopyClick}
     />
 </CodeWrapper>
-
-<H2>Transitions</H2>
-<CodeWrapper class="h-64 sm:h-56">
-  <div class="h-16">
-    <Badge large color={currentTransition.color as Badge['color']} dismissable bind:badgeStatus={transionStatus} transition={currentTransition.transition} params={currentTransition.params}>
-      <span class="font-medium">{capitalizeFirstLetter(selectedTransition)} transition</span>
-    </Badge>
-  </div>
-  <div class="mb-4 h-12">
-    <Button class="w-36" disabled={transionStatus ? true : false} onclick={changeTransitionStatus}>Open badge</Button>
-  </div>
-  <div class="mb-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Transition</Label>
-    {#each transitions as transition}
-      <Radio labelClass="w-24 my-1" name="badge_transition_color" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
-    {/each}
-  </div>
-</CodeWrapper>
-
-<HighlightCompo codeLang="ts" code={modules['./md/transition.md'] as string} />
 
 <H2>Dismissing with custom icon</H2>
 <CodeWrapper class="h-20">

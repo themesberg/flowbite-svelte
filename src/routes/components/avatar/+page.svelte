@@ -51,17 +51,17 @@
       if (border) props.push('border');
       if (stacked) props.push('stacked');
       if (avatarClass) props.push(`class="${avatarClass}"`);
-      return `<Avatar ${props.join(' ')}>Default</Avatar>`;
+      return `<Avatar ${props.join(' ')}>My Avatar</Avatar>`;
     })()
   );
-  let alertStatus = $state(false);
+  let copiedStatus = $state(false);
 
   function handleCopyClick() {
   copyToClipboard(generatedCode)
     .then(() => {
-      alertStatus = true;
+      copiedStatus = true;
       setTimeout(() => {
-        alertStatus = false;
+        copiedStatus = false;
       }, 1000);
     })
     .catch((err) => {
@@ -84,7 +84,7 @@
 </CodeWrapper>
 <HighlightCompo code={modules['./md/default-avatar.md'] as string} />
 
-<H2>Avatar code generator</H2>
+<H2>Interactive Avatar Bilder</H2>
 <CodeWrapper class="space-y-4">
   <div class="mb-5 flex justify-center h-36">
     <Avatar src="/images/profile-picture-1.webp" cornerStyle={isRounded ? 'rounded' : undefined} {border} {stacked} class={avatarClass} size={avatarSize}/>
@@ -102,7 +102,7 @@
   <Button class="w-40" color="green" onclick={changeStacked}>{stacked ? 'Remove stacked' : 'Add  stacked'}</Button>
   <Button class="w-40" color="purple" onclick={changeClass}>{avatarClass ? 'Remove class' : 'Add class'}</Button>
   <GeneratedCode 
-    componentStatus={alertStatus}
+    componentStatus={copiedStatus}
     {generatedCode}
     {handleCopyClick}
   />
