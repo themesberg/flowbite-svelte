@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Card, Button, Toggle, Label, Radio } from '$lib';
-
+  import { Card, card, Button, Toggle, Label, Radio } from '$lib';
+  let reverse = $state(false);
   let vCard = $state(false);
   let hCard = $state(false);
   // $inspect('vCard: ', vCard, 'hCard: ', hCard);
@@ -9,7 +9,9 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import { ArrowRightOutline, GiftBoxSolid, ArrowUpRightFromSquareOutline } from 'flowbite-svelte-icons';
+  import { copyToClipboard } from '../../utils/helpers';
+  import GeneratedCode from '../../utils/GeneratedCode.svelte';
+  import { ArrowRightOutline } from 'flowbite-svelte-icons';
 
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
@@ -17,12 +19,70 @@
     eager: true
   });
 
-  const sizes = ['xs', 'sm', 'md', 'lg', 'xl'];
+  const sizes = Object.keys(card.variants.size);
   let cardSize: Card['size'] = $state('sm');
-  const paddings = ['none', 'xs', 'sm', 'md', 'lg', 'xl'];
-  let cardPadding: Card['padding'] = $state('sm');
-  const shadows = ['sm', 'normal', 'md', 'lg', 'xl', '2xl', 'inner', 'none'];
+  const colors = Object.keys(card.variants.color);
+  let color: Card['color'] = $state('gray');
+  const paddings = Object.keys(card.variants.padding);
+  let cardPadding: Card['padding'] = $state('lg');
+  const shadows = Object.keys(card.variants.shadow);
   let cardShadow: Card['shadow'] = $state('md');
+  let horizontal = $state(false);
+  const changeImgLayout = () => {
+    horizontal = !horizontal;
+  };
+  let link = $state('');
+  const changeLink = () => {
+    link = link === '' ? '/' : '';
+  }
+  let cardClass: Card['class'] = $state('');
+  const changeClass = () => {
+    cardClass = cardClass === '' ? 'pl-10' : '';
+  };
+  let cardImage: Card['img'] = $state({});
+  const changeImage = () => {
+    cardImage = Object.keys(cardImage).length === 0 
+      ? { src: '/images/image-1.webp', alt: 'my image' } 
+      : {};
+  };
+
+  // code generator
+  let generatedCode = $derived(
+    (() => {
+      let props = [];
+      if (cardSize !== 'sm') props.push(` size="${cardSize}"`);
+      if (color !== 'gray') props.push(` color="${color}"`);
+      if (cardShadow !== 'md') props.push(` shadow="${cardShadow}"`);
+      if (cardClass) props.push(` class="${cardClass}"`);
+      if (cardPadding !== 'lg') props.push(` padding="${cardPadding}"`);
+      if (link) props.push(` href="${link}"`);
+      if (horizontal) props.push(` horizontal`);
+      if (reverse) props.push(` reverse`);
+      if (Object.keys(cardImage).length > 0) {
+        const imgString = Object.entries(cardImage)
+          .map(([key, value]) => `${key}:"${value}"`)
+          .join(',');
+        props.push(` img={{${imgString}}}`);
+      }
+      return `<Card${props.join('')}>My Card</Card>`;
+    })()
+  );
+
+  let copiedStatus = $state(false);
+
+  function handleCopyClick() {
+    copyToClipboard(generatedCode)
+      .then(() => {
+        copiedStatus = true;
+        setTimeout(() => {
+          copiedStatus = false;
+        }, 1000);
+      })
+      .catch((err) => {
+        console.error('Error in copying:', err);
+        // Handle the error as needed
+      });
+  }
 </script>
 
 <H1>Cards</H1>
@@ -30,70 +90,63 @@
 <H2>Setup</H2>
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
-<H2>Default card</H2>
-<p>
-  Use the `size` prop with <code>'xs' | 'sm' | 'md' | 'lg' | 'xl'</code>
-  or
-  <code>class</code>
-  props to change the card size.
-</p>
-
+<H2>Interactive Card Builder</H2>
 <CodeWrapper class="flex flex-col space-y-4">
-  <div class="flex justify-center">
-    <Card size={cardSize}>
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
-      <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
-    </Card>
-  </div>
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as size}
-      <Radio labelClass="w-16 my-1" name="card_size" bind:group={cardSize} value={size}>{size}</Radio>
+      <Radio labelClass="w-16 my-1" name="interactive_card_size" bind:group={cardSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <Label class="mb-4 w-full font-bold">custom size</Label>
-  <div class="flex justify-center">
-    <Card class="max-w-[250px]">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Technology acquisitions</h5>
-      <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions.</p>
-    </Card>
-  </div>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/default-card.md'] as string} />
-
-<H2>Padding</H2>
-<CodeWrapper class="flex flex-col space-y-4">
-  <div class="flex justify-center">
-    <Card padding={cardPadding}>
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
-      <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
-    </Card>
-  </div>
-  <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Size:</Label>
-    {#each paddings as padding}
-      <Radio labelClass="w-16 my-1" name="card_padding" bind:group={cardPadding} value={padding}>{padding}</Radio>
+  <div class="flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Color</Label>
+    {#each colors as colorOption}
+      <Radio labelClass="w-24 my-1" name="alert_reactive" bind:group={color} color={colorOption as Card['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/padding.md'] as string} />
-
-<H2>Shadow</H2>
-<CodeWrapper class="flex flex-col space-y-4">
-  <div class="flex justify-center">
-    <Card shadow={cardShadow}>
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
-      <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
-    </Card>
+  <div class="my-4 flex flex-wrap space-x-4">
+  <Label class="mb-4 w-full font-bold">Padding:</Label>
+  {#each paddings as padding}
+    <Radio labelClass="w-16 my-1" name="interactive_card_padding" bind:group={cardPadding} value={padding}>{padding}</Radio>
+  {/each}
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Size:</Label>
+    <Label class="mb-4 w-full font-bold">Shadow:</Label>
     {#each shadows as shadow}
-      <Radio labelClass="w-16 my-1" name="card_shadow" bind:group={cardShadow} value={shadow}>{shadow}</Radio>
+      <Radio labelClass="w-16 my-1" name="interactive_card_shadow" bind:group={cardShadow} value={shadow}>{shadow}</Radio>
     {/each}
   </div>
+  <div class="mt-4 flex flex-wrap gap-2">
+  <Button class="w-40" color="sky" onclick={changeLink}> {link === '' ? 'Add link' : 'Remove link'}</Button>
+  <Button class="w-40" color="green" onclick={changeClass}>{cardClass ? 'Remove class' : 'Add class'}</Button>
+  <Button class="w-40" color="blue" onclick={changeImage}>{Object.keys(cardImage).length === 0 ? 'Add image' : 'Remove image'}</Button>
+  <Button disabled={Object.keys(cardImage).length === 0} class="w-40" color="violet" onclick={changeImgLayout}>{horizontal  ? 'Vertical' : 'Horizontal'}</Button>
+  <Toggle bind:checked={reverse} labelClass="italic dark:text-gray-500 {Object.keys(cardImage).length === 0 ? 'opacity-50 cursor-not-allowed' : ''}" disabled={Object.keys(cardImage).length === 0}>Reverse: {reverse} </Toggle>
+  </div>
+  <GeneratedCode 
+    componentStatus={copiedStatus}
+    {generatedCode}
+    {handleCopyClick}
+  />
+  <div class="h-[700px]">
+    <div class="flex justify-center">
+      <Card size={cardSize} {color} padding={cardPadding} shadow={cardShadow} href={link ? link : ''} class={cardClass} img={cardImage} {horizontal} {reverse}>
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
+        <p class="font-normal leading-tight text-gray-700 dark:text-gray-300">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
+      </Card>
+    </div>
+  </div>
+  
 </CodeWrapper>
-<HighlightCompo code={modules['./md/shadow.md'] as string} />
+
+<H2>Custom size</H2>
+<CodeWrapper class="flex justify-center">
+  <Card class="max-w-[250px]">
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Technology acquisitions</h5>
+    <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions.</p>
+  </Card>
+</CodeWrapper>
+<HighlightCompo code={modules['./md/custom-size.md'] as string} />
 
 <H2>Card with action button</H2>
 
@@ -108,58 +161,6 @@
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/card-with-action-button.md'] as string} />
-
-<H2>Card with link</H2>
-
-<p>
-  To create a linkable card, use the <code>href</code>
-  prop. However, avoid including an additional link inside the card itself, since you are adding a-tag within a-tag.
-</p>
-
-<CodeWrapper class="flex justify-center">
-  <Card href="/">
-    <GiftBoxSolid class="mb-3 h-7 w-7 text-gray-500 dark:text-gray-400" />
-    <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Need a help in Claim?</h5>
-    <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
-    <span class="inline-flex items-center text-primary-600 hover:underline">
-      See our guideline
-      <ArrowUpRightFromSquareOutline class="ms-2.5 h-3 w-3" />
-    </span>
-  </Card>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/card-with-link.md'] as string} />
-
-<H2>Card with image</H2>
-
-<CodeWrapper class="flex justify-center">
-  <div class="flex flex-col space-y-4">
-    <Card img={{ src: '/images/image-1.webp', alt: 'my image' }} reverse={vCard}>
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
-      <p class="mb-3 font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
-      <Button>
-        Read more <ArrowRightOutline class="ms-2 h-3.5 w-3.5 text-white" />
-      </Button>
-    </Card>
-    <Toggle bind:checked={vCard} spanClass="italic dark:text-gray-500">Reverse: {vCard}</Toggle>
-  </div>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/card-with-image.md'] as string} />
-
-<H2>Horizontal card</H2>
-
-<CodeWrapper class="flex justify-center">
-  <div class="flex flex-col space-y-4">
-    <Card img={{ src: '/images/image-1.webp', alt: 'my image' }} href="/" reverse={hCard} horizontal size="md">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
-      <p class="mb-3 font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
-    </Card>
-    <Toggle bind:checked={hCard} spanClass="italic dark:text-gray-500">Reverse: {hCard}</Toggle>
-  </div>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/horizontal-card.md'] as string} />
 
 <H2>Call to action card</H2>
 <CodeWrapper class="flex justify-center">

@@ -8,6 +8,7 @@ import { card } from './theme';
 type CardSizeType = VariantProps<typeof card>['size'];
 type PaddingType = VariantProps<typeof card>['padding'];
 type ShadowType = VariantProps<typeof card>['shadow'];
+type ColorType = VariantProps<typeof card>['color'];
 
 type ImgType = {
   src: string | undefined | null;
@@ -18,6 +19,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   href?: string | undefined | null;
   horizontal?: boolean;
+  color?: ColorType;
   target?: string | undefined | null;
   shadow?: ShadowType;
   reverse?: boolean;

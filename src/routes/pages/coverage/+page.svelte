@@ -56,7 +56,8 @@
     },
     buttonGroup: {
       checked: true,
-      notes: 'Variants, reactive examples'
+      notes: 'Variants, reactive examples',
+      problems: 'More examples'
     },
     buttons: {
       checked: true,

@@ -1,11 +1,12 @@
 <script lang="ts">
   import { card, type CardProps as Props } from '.';
 
-  let { children, href, horizontal = false, shadow = 'md', reverse = false, img, padding = 'lg', size = 'sm', class: className, onclick, ...restProps }: Props = $props();
+  let { children, href, color = "gray", horizontal = false, shadow = 'md', reverse = false, img, padding = 'lg', size = 'sm', class: className, onclick, ...restProps }: Props = $props();
 
   const { base, image, content } = $derived(
     card({
       size,
+      color,
       shadow,
       padding,
       horizontal,
