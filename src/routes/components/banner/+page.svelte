@@ -37,7 +37,7 @@
   let color: BannerProps['color'] = $state('primary');
   let bannerClass: BannerProps['class'] = $state('');
   const changeClass = () => {
-    bannerClass = bannerClass === '' ? 'my-4' : '';
+    bannerClass = bannerClass === '' ? 'mt-4' : '';
   };
   let bannerStatus = $state(true);
   const changeStatus = () => {
@@ -72,12 +72,26 @@
     (() => {
       // position, bannerType color, class
       let props = [];
-      if (color !== 'primary') props.push(`color="${color}"`);
-      if (bannerType !== 'default') props.push(`bannerType="${bannerType}"`);
-      if (position !== 'sticky') props.push(`position="${position}"`);
-      if (bannerClass) props.push(`class="${bannerClass}"`);
-      if (!bannerStatus) props.push('bannerStatus={false}');
-      return `<Banner ${props.join(' ')}>My Banner</Banner>`;
+      if (color !== 'primary') props.push(` color="${color}"`);
+      if (bannerType !== 'default') props.push(` bannerType="${bannerType}"`);
+      if (position !== 'sticky') props.push(` position="${position}"`);
+      if (bannerClass) props.push(` class="${bannerClass}"`);
+      if (!bannerStatus) props.push(' bannerStatus={false}');
+      if (currentTransition !== transitions[0]) {
+        props.push(` transition={${currentTransition.transition.name}}`);
+      
+      // Generate params string without quotes and handle functions
+      const paramsString = Object.entries(currentTransition.params)
+        .map(([key, value]) => {
+          if (typeof value === 'function') {
+            return `${key}:${value.name}`;
+          }
+          return `${key}:${value}`;
+        })
+        .join(',');
+        props.push(` params={{${paramsString}}}`);
+      }
+      return `<div class="relative h-40"><Banner${props.join('')}>My Banner</Banner></div>`;
     })()
   );
   let copiedStatus = $state(false);
@@ -107,8 +121,7 @@
   <div class="mb-4 h-[630px] md:h-[440px]">
     <Skeleton class="py-4" />
     <ImagePlaceholder class="py-4" />
-
-    <Banner id="sample-banner" {position} {bannerType} {color} class={bannerClass} bind:bannerStatus={bannerStatus}>
+    <Banner id="sample-banner" {position} {bannerType} {color} class={bannerClass} bind:bannerStatus={bannerStatus} transition={currentTransition.transition} params={currentTransition.params}>
       <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
         <span class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600">
           <BullhornOutline class="h-3 w-3 text-gray-500 dark:text-gray-400" />
@@ -130,6 +143,12 @@
         <Radio labelClass="w-24 my-1" name="color" bind:group={color} color={colorOption as BannerProps['color']} value={colorOption}>{colorOption}</Radio>
       {/each}
     </div>
+    <div class="mb-4 flex flex-wrap space-x-4">
+        <Label class="mb-4 w-full font-bold">Transition</Label>
+        {#each transitions as transition}
+          <Radio labelClass="w-24 my-1" name="interactive_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+        {/each}
+    </div>
     <Button class="w-48" onclick={changePosition}>Change position</Button>
     <Button class="w-48" color="blue" onclick={changeBannerType}>Change banner type</Button>
     <Button class="w-48" color="green" onclick={changeClass}>{bannerClass ? 'Remove class' : 'Add class'}</Button>
@@ -140,29 +159,6 @@
     />
   </div>
 </CodeWrapper>
-
-<H2>Default sticky banner</H2>
-
-<CodeWrapper class="relative">
-  <Skeleton class="py-4" />
-  <ImagePlaceholder class="py-4" />
-
-  <Banner id="default-banner" position="absolute">
-    <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
-      <span class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600">
-        <BullhornOutline class="h-3 w-3 text-gray-500 dark:text-gray-400" />
-        <span class="sr-only">Light bulb</span>
-      </span>
-      <span>
-        New brand identity has been launched for the <a href="https://flowbite.com" class="decoration-600 dark:decoration-500 inline font-medium text-primary-600 underline decoration-solid underline-offset-2 hover:no-underline dark:text-primary-500">Flowbite Library</a>
-      </span>
-    </p>
-  </Banner>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/defaultsticky.md'] as string} />
-
-
 
 <H2>Transitions</H2>
 <p>The `transition` and `params` props allow you to apply transition effects to components when they enter or leave the view. Svelte provides built-in transitions like `fly`, `slide`, `blur`, `fade`, and `scale`.</p>
@@ -189,6 +185,28 @@
 </CodeWrapper>
 
 <HighlightCompo codeLang="ts" code={modules['./md/transition.md'] as string} />
+
+<H2>Default sticky banner</H2>
+
+<CodeWrapper class="relative">
+  <Skeleton class="py-4" />
+  <ImagePlaceholder class="py-4" />
+
+  <Banner id="default-banner" position="absolute">
+    <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
+      <span class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600">
+        <BullhornOutline class="h-3 w-3 text-gray-500 dark:text-gray-400" />
+        <span class="sr-only">Light bulb</span>
+      </span>
+      <span>
+        New brand identity has been launched for the <a href="https://flowbite.com" class="decoration-600 dark:decoration-500 inline font-medium text-primary-600 underline decoration-solid underline-offset-2 hover:no-underline dark:text-primary-500">Flowbite Library</a>
+      </span>
+    </p>
+  </Banner>
+</CodeWrapper>
+
+<HighlightCompo code={modules['./md/defaultsticky.md'] as string} />
+
 
 <H2>Bottom banner position</H2>
 

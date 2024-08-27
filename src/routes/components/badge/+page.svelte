@@ -84,15 +84,15 @@
   let generatedCode = $derived(
     (() => {
       let props = [];
-      if (color !== 'primary') props.push(`color="${color}"`);
-      if (badgeSize) props.push('large');
-      if (badgeDismissable) props.push('dismissable');
-      if (badgeClass) props.push(`class="${badgeClass}"`);
-      if (!badgeStatus2) props.push('badgeStatus={false}');
-      if (border) props.push('border');
-      if (rounded) props.push('rounded');
-      if (currentTransition !== transitions[0]) {
-        props.push(`transition={${currentTransition.transition.name}}`);
+      if (color !== 'primary') props.push(` color="${color}"`);
+      if (badgeSize) props.push(' large');
+      if (badgeDismissable) props.push(' dismissable');
+      if (badgeClass) props.push(` class="${badgeClass}"`);
+      if (!badgeStatus2) props.push(' badgeStatus={false}');
+      if (border) props.push(' border');
+      if (rounded) props.push(' rounded');
+      if (currentTransition !== transitions[0] && badgeDismissable) {
+        props.push(` transition={${currentTransition.transition.name}}`);
       
       // Generate params string without quotes and handle functions
       const paramsString = Object.entries(currentTransition.params)
@@ -104,10 +104,10 @@
         })
         .join(',');
       
-      props.push(`params={{${paramsString}}}`);
+      props.push(` params={{${paramsString}}}`);
     }
 
-      return `<Badge ${props.join(' ')}>My Badge</Badge>`;
+      return `<Badge${props.join('')}>My Badge</Badge>`;
     })()
   );
   let copiedStatus = $state(false);

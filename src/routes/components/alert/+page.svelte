@@ -78,14 +78,14 @@
   let generatedCode = $derived(
     (() => {
       let props = [];
-      if (color !== 'primary') props.push(`color="${color}"`);
-      if (rounded) props.push('rounded');
-      if (border) props.push('border');
-      if (dismissable) props.push('dismissable');
-      if (alertClass) props.push(`class="${alertClass}"`);
-      if (!alertStatusInteractive) props.push('alertStatus={false}');
-      if (currentTransition !== transitions[0]) {
-        props.push(`transition={${currentTransition.transition.name}}`);
+      if (color !== 'primary') props.push(` color="${color}"`);
+      if (rounded) props.push(' rounded');
+      if (border) props.push(' border');
+      if (dismissable) props.push(' dismissable');
+      if (alertClass) props.push(` class="${alertClass}"`);
+      if (!alertStatusInteractive) props.push(' alertStatus={false}');
+      if (currentTransition !== transitions[0] && dismissable ) {
+        props.push(` transition={${currentTransition.transition.name}}`);
       
       // Generate params string without quotes and handle functions
       const paramsString = Object.entries(currentTransition.params)
@@ -96,9 +96,9 @@
           return `${key}:${value}`;
         })
         .join(',');
-        props.push(`params={{${paramsString}}}`);
+        props.push(` params={{${paramsString}}}`);
       }
-      return `<Alert ${props.join(' ')}>My Alert</Alert>`;
+      return `<Alert${props.join('')}>My Alert</Alert>`;
     })()
   );
   let copiedStatus = $state(false);
