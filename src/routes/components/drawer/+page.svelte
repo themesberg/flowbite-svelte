@@ -215,8 +215,6 @@
   />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/transitions.md'] as string} />
-
 <H2>Offset</H2>
 <CodeWrapper class="space-y-4">
   <div class="mb-4 text-center">
@@ -240,8 +238,7 @@
 
 <HighlightCompo codeLang="ts" code={modules['./md/offset-new.md'] as string} />
 
-<H2>Other examples</H2>
-<H3>Drawer navigation</H3>
+<H2>Drawer navigation</H2>
 
 <CodeWrapper>
   <div class="text-center">
