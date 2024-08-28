@@ -1,7 +1,8 @@
 <script lang="ts">
   import { Button, Dropdown, DropdownDivider, DropdownHeader, DropdownFooter, DropdownUl, DropdownLi, uiHelpers } from 'svelte-5-ui-lib';
   import { ChevronDownOutline } from 'flowbite-svelte-icons';
-  import { sineIn } from 'svelte/easing';
+  import { blur, fly, slide, scale } from 'svelte/transition';
+  import { sineIn, linear } from 'svelte/easing';
 
   let transitionParams = {
     y: 0,
@@ -9,13 +10,11 @@
     easing: sineIn
   };
 
-  let dropdown = uiHelpers();
-  let dropdownStatus = $state(false);
-  let closeDropdown = dropdown.close;
+  let dropdownA = uiHelpers();
+  let dropdownAStatus = $state(false);
+  let closeDropdownA = dropdownA.close;
 
   $effect(() => {
-    // this can be done adding nav.navStatus directly to DOM element
-    // without using effect
-    dropdownStatus = dropdown.isOpen;
+    dropdownAStatus = dropdownA.isOpen;
   });
 </script>
