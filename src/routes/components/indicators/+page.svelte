@@ -5,6 +5,8 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { copyToClipboard } from '../../utils/helpers';
+  import GeneratedCode from '../../utils/GeneratedCode.svelte';
 
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
@@ -12,10 +14,10 @@
     eager: true
   });
   // color, size, rounded, border, placement and offset
-  const sizes = ['xs', 'sm', 'md', 'lg', 'xl'];
+  const sizes: Indicator['size'][] = Object.keys(indicator.variants.size);
   const colors: Indicator['color'][] = Object.keys(indicator.variants.color);
-  const positions = ['top-left', 'top-center', 'top-right', 'center-left', 'center', 'center-right', 'bottom-left', 'bottom-center', 'bottom-right'];
-  let color: IndicatorProps['color'] = $state('red');
+  const placements: Indicator['placement'][] = Object.keys(indicator.variants.placement);
+  let color: IndicatorProps['color'] = $state('primary');
   let size: IndicatorProps['size'] = $state('md');
   let border: IndicatorProps['border'] = $state(false);
   const changeBorder = () => {
@@ -25,7 +27,41 @@
   const changeCornerStyle = () => {
     cornerStyle = cornerStyle === 'circular' ? 'rounded' : 'circular';
   }
-  let placement: IndicatorProps['placement'] = $state('top-left');
+  let placement: IndicatorProps['placement'] = $state('default');
+
+  // code generator
+  let generatedCode = $derived(
+    (() => {
+      let props = [];
+      // {color} {size} {border} {placement} {cornerStyle}
+      // color = 'primary', cornerStyle = 'circular', size = 'md', border = false, placement, offset = true,
+      // if (color) props.push(` color="${color}"`);
+      if (color !== 'primary') props.push(` color="${color}"`);
+      if (size !== 'md') props.push(` size="${size}"`);
+      if (border) props.push(' border');
+      if (placement !== 'default') props.push(` placement="${placement}"`);
+      if (cornerStyle !== 'circular') props.push(` cornerStyle="${cornerStyle}"`);
+      
+      return `<div class="borer relative h-56 w-56 rounded-lg border-gray-300 m-8">
+  <Indicator${props.join('')} />
+</div>`;
+    })()
+  );
+  let copiedStatus = $state(false);
+
+  function handleCopyClick() {
+  copyToClipboard(generatedCode)
+    .then(() => {
+      copiedStatus = true;
+      setTimeout(() => {
+        copiedStatus = false;
+      }, 1000);
+    })
+    .catch((err) => {
+      console.error('Error in copying:', err);
+      // Handle the error as needed
+    });
+  }
 </script>
 
 <H1>Indicator</H1>
@@ -68,23 +104,19 @@
     </div>
     <div class="flex flex-wrap space-x-4">
       <Label class="mb-4 w-full font-bold">Placement:</Label>
-      {#each positions as positionOption}
+      {#each placements as positionOption}
         <Radio labelClass="w-32 my-1" name="placement" bind:group={placement} value={positionOption}>{positionOption}</Radio>
       {/each}
     </div>
     <Button onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
     <Button onclick={changeCornerStyle}>{cornerStyle === 'circular' ? 'Rounded' : 'Circular'}</Button>
   </div>
+  <GeneratedCode 
+    componentStatus={copiedStatus}
+    {generatedCode}
+    {handleCopyClick}
+  />
 </CodeWrapper>
-
-<H2>Color</H2>
-<HighlightCompo code={modules['./md/color.md'] as string} />
-
-<H2>Size</H2>
-<HighlightCompo code={modules['./md/size.md'] as string} />
-
-<H2>Placement</H2>
-<HighlightCompo code={modules['./md/placement.md'] as string} />
 
 <H2>Legend indicator</H2>
 <CodeWrapper class="flex flex-wrap justify-start gap-4 md:justify-center ">

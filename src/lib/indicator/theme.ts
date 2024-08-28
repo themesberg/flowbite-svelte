@@ -48,6 +48,7 @@ const indicator = tv({
       false: {}
     },
     placement: {
+      'default' : { base: ''},
       'top-left': { base: 'absolute top-0 start-0' },
       'top-center': {
         base: 'absolute top-0 start-1/2 -translate-x-1/2 rtl:translate-x-1/2'

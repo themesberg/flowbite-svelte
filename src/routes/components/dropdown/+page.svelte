@@ -18,18 +18,6 @@
     easing: sineIn
   };
 
-  // let transitionParams2 = {
-  //   x: -100,
-  //   duration: 400,
-  //   easing: sineIn
-  // };
-
-  // let transitionParams3 = {
-  //   y: 0,
-  //   duration: 600,
-  //   easing: sineIn
-  // };
-
   let dropdownA = uiHelpers();
   let dropdownAStatus = $state(false);
   let closeDropdownA = dropdownA.close;
@@ -94,10 +82,6 @@
   let dropdownAvatarStatus = $state(false);
   let closeDropdownAvatar = dropdownAvatar.close;
 
-  let dropdownTransition2 = uiHelpers();
-  let dropdownTransition2Status = $state(false);
-  let closeDropdownTransition2 = dropdownTransition2.close;
-
   let dropdownTop = uiHelpers();
   let dropdownTopStatus = $state(false);
   let closeDropdownTop = dropdownTop.close;
@@ -146,7 +130,6 @@
     dropdownRightStatus = dropdownRight.isOpen;
     dropdownLeftStatus = dropdownLeft.isOpen;
     dropdownBottomStatus = dropdownBottom.isOpen;
-    dropdownTransition2Status = dropdownTransition2.isOpen;
     dropdownDividerHeaderFooterStatus = dropdownDividerHeaderFooter.isOpen;
   });
   const modules = import.meta.glob('./md/*.md', {
