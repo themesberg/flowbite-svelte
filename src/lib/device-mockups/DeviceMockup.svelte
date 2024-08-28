@@ -27,7 +27,7 @@
     desktop: Desktop
   };
 
-  let DeviceComponent: Component = componets[device];
+  let DeviceComponent: Component = $derived(componets[device]);
 </script>
 
 <DeviceComponent>

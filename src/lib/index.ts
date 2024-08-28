@@ -66,3 +66,4 @@ export * from './typography/secondary';
 export * from './typography/span';
 export * from './video';
 export * from './utils';
+export * from './types'

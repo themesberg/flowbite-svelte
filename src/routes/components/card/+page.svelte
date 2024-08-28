@@ -90,6 +90,17 @@
 <H2>Setup</H2>
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
+<H2>Default card</H2>
+<CodeWrapper class="flex flex-col space-y-4">
+  <div class="flex justify-center">
+    <Card>
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
+      <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
+    </Card>
+  </div>
+</CodeWrapper>
+<HighlightCompo code={modules['./md/default-card.md'] as string} />
+
 <H2>Interactive Card Builder</H2>
 <CodeWrapper class="flex flex-col space-y-4">
   <div class="my-4 flex flex-wrap space-x-4">
@@ -136,7 +147,6 @@
       </Card>
     </div>
   </div>
-  
 </CodeWrapper>
 
 <H2>Custom size</H2>
