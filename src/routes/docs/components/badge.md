@@ -253,6 +253,25 @@ A `close` event will be dispatched during the dismissal, listen to it if needed.
 <Badge dismissable large on:close={handleClose}>Default</Badge>
 ```
 
+## Dynamic color
+
+The color can be changed dynamically.
+
+```svelte example class="flex flex-wrap gap-4" hideResponsiveButtons
+<script>
+  import { Badge } from 'flowbite-svelte';
+
+  setInterval(handleHover, 500);
+
+  let color = 'primary';
+  function handleHover() {
+    color = color === 'primary' ? 'dark' : 'primary';
+  }
+</script>
+
+<Badge large {color}>Blinking badge</Badge>
+```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
