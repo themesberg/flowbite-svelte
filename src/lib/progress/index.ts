@@ -1,10 +1,11 @@
 import Progressbar from './Progressbar.svelte';
-import type { ProgressBarColorType } from '$lib/types';
 import type { HTMLAttributes } from 'svelte/elements';
 import type { EasingFunction } from 'svelte/transition';
 import { progressbar } from './theme';
+import type { VariantProps } from 'tailwind-variants';
 
 // type SizeType = VariantProps<typeof progressbarVariants>['size'];
+type ColorType = VariantProps<typeof progressbar>['color'];
 
 interface ProgressbarProps extends HTMLAttributes<HTMLDivElement> {
   progress?: string | number;
@@ -15,7 +16,7 @@ interface ProgressbarProps extends HTMLAttributes<HTMLDivElement> {
   labelInside?: boolean;
   labelOutside?: string | undefined;
   easing?: EasingFunction;
-  color?: ProgressBarColorType;
+  color?: ColorType;
   div2Class?: string | undefined;
   oustsideSpanClass?: string | undefined;
   oustsideProgressClass?: string | undefined;

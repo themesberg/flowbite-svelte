@@ -5,6 +5,8 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { copyToClipboard } from '../../utils/helpers';
+  import GeneratedCode from '../../utils/GeneratedCode.svelte';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -12,12 +14,89 @@
   });
 
   let progress = $state('45');
-  const sizes = ['h-1.5', 'h-2.5', 'h-4', 'h-6'];
-  let progressSize = $state('h-2.5');
+  const progressSizes = [
+    {size : 'h-4', class: ''},
+    {size : 'h-6', class: 'p-2'},
+    {size : 'h-8', class: 'p-3'},
+    {size : 'h-10', class: 'p-4'}
+  ]
+
+  function updateProgressSize(selectedSize: string): void {
+    const newSize = progressSizes.find(size => size.size === selectedSize);
+    if (newSize) {
+      progressSize = newSize;
+    }
+  }
+
+  let progressSize = $state(progressSizes[0]);
+ 
+  // const sizes = [ 'h-4 ', 'h-6', 'h-8', 'h-10'];
+  // let progressSize = $state('h-4');
   const colors = Object.keys(progressbar.variants.color);
   let progressColor: Progressbar['color'] = $state('primary');
-  let progressLabel = $state(false);
+  let labelInside = $state(false);
+  const changeLabelInside = () => {
+    labelInside = !labelInside;
+  }
   let { labelContent = $bindable('Svelte-5-Ui-Lib') } = $props();
+  const changeLabelContent = () => {
+    labelContent = labelContent === 'Svelte-5-Ui-Lib' ? '' : 'Svelte-5-Ui-Lib'; 
+  }
+  let animation = $state(false);
+  let tweenDuration: number | undefined = $state();
+  let easing: typeof sineOut | undefined = $state();
+  const changeAnimation = () => {
+    animation = !animation;
+    if (animation) {
+      tweenDuration = 1500;
+      easing = sineOut;
+    } else {
+      tweenDuration = undefined;
+      easing = undefined;
+    }
+  }
+  $inspect('tweenDuration', tweenDuration, 'animation', animation);
+  // const randomize = () => {
+  //   progress = `${Math.round(Math.random() * 100)}`
+  // }
+  
+  // code generator
+  let generatedCode = $derived(
+    (() => {
+      let props = [];
+      if (progressColor !== 'primary') props.push(` color="${progressColor}"`);
+      if (labelInside) props.push(' labelInside');
+      if ( labelContent !== '') props.push(` labelOutside="${labelContent}"`);
+      if (progressSize.size !== 'h-4') props.push(` size="${progressSize.size}"`);
+      // Add div2Class prop if not empty
+      if (progressSize.class !== '') {
+        props.push(` div2Class="${progressSize.class}"`);
+      }
+      if (animation) {
+        props.push(' animate');
+        props.push(' precision={0}');
+        props.push(' tweenDuration={1500}');
+        props.push(' easing={sineOut}');
+      }
+
+      return `<Progressbar${props.join('')} />`;
+    })()
+  );
+  let copiedStatus = $state(false);
+
+  function handleCopyClick() {
+  copyToClipboard(generatedCode)
+    .then(() => {
+      copiedStatus = true;
+      setTimeout(() => {
+        copiedStatus = false;
+      }, 1000);
+    })
+    .catch((err) => {
+      console.error('Error in copying:', err);
+      // Handle the error as needed
+    });
+  }
 </script>
 
 <H1>Progress bar</H1>
@@ -34,77 +113,40 @@
 
 <HighlightCompo code={modules['./md/defaultprogressbar.md'] as string} />
 
-<H2>Sizes</H2>
+<H2>Interactive Progressbar Builder</H2>
 
 <CodeWrapper>
   <div class="my-4 h-16">
-    <div class="mb-1 text-base font-medium dark:text-white">Size</div>
-    <Progressbar progress="50" size={progressSize} />
+    {#if animation}
+    <Progressbar {progress} size={progressSize.size} color={progressColor} labelOutside={labelContent} {labelInside} div2Class={progressSize.class} animate
+    tweenDuration={tweenDuration}
+    easing={easing} />
+    {:else}
+    <Progressbar {progress} size={progressSize.size} color={progressColor} labelOutside={labelContent} {labelInside} div2Class={progressSize.class} />
+    {/if}
   </div>
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
-    {#each sizes as size}
-      <Radio labelClass="w-24 my-1" name="progress_size" bind:group={progressSize} value={size}>{size}</Radio>
+    {#each progressSizes as size}
+      <Radio labelClass="w-24 my-1" name="progress_size" bind:group={progressSize.size} value={size.size}
+      onchange={() => updateProgressSize(size.size)}>{size.size}</Radio>
     {/each}
   </div>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/sizes.md'] as string} />
-
-<H2>With progress inside</H2>
-
-<CodeWrapper class="space-y-4">
-  <Progressbar progress="50" size="h-4" labelInside={progressLabel} />
-  <Button onclick={() => (progressLabel = !progressLabel)}>Toggle</Button>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/labelinside.md'] as string} />
-
-<H2>With label outside</H2>
-
-<CodeWrapper class="space-y-4">
-  <Progressbar progress="50" labelOutside={labelContent} />
-  <Input bind:value={labelContent} />
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/labeloutside.md'] as string} />
-
-<H2>Colors</H2>
-
-<CodeWrapper>
-  <div class="my-4">
-    <div class="mb-1 text-base font-medium dark:text-white">Gray</div>
-    <Progressbar progress="50" color={progressColor} />
-  </div>
-
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as color}
-      <Radio labelClass="w-24 my-1" name="progress_color" bind:group={progressColor} color={color as Progressbar['color']} value={color}>{color}</Radio>
+      <Radio labelClass="w-24 my-1" name="interactive_progress_color" bind:group={progressColor} color={color as Progressbar['color']} value={color}>{color}</Radio>
     {/each}
   </div>
+  <div class="mt-4 flex flex-wrap gap-2">
+  <Button class="w-48" onclick={changeLabelContent}>{labelContent ? 'Remove outlise label' : 'Add outside label'}</Button>
+  <Button class="w-48" color="purple" onclick={changeLabelInside}>{labelInside ? 'Remove inside label' : 'Add inside label'}</Button>
+  <Button class="w-48" color="red" onclick={changeAnimation}>{animation ? 'No animation' : 'Animation'}</Button>
+  <Button class="w-48" color="emerald" onclick={() => (progress = `${Math.round(Math.random() * 100)}`)}>Randomize</Button>
+  </div>
+  <GeneratedCode 
+    componentStatus={copiedStatus}
+    {generatedCode}
+    {handleCopyClick}
+  />
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/colors.md'] as string} />
-
-<H2>Custom style</H2>
-
-<CodeWrapper class="space-y-4">
-  <Progressbar progress="50" size="h-3" labelInside div2Class="bg-blue-600 text-blue-100 text-xs font-medium text-center p-0 leading-none rounded-full" class="my-4" labelOutside="Size h-3" />
-
-  <Progressbar progress="50" size="h-10" labelInside div2Class="bg-cyan-600 text-cyan-100 text-2xl font-medium text-center p-2 leading-none rounded-full" labelOutside="Size h-10" />
-
-  <Progressbar progress="50" size="h-6" labelInside div2Class="bg-teal-600 text-teal-100 text-base font-medium text-center p-1 leading-none rounded-full" labelOutside="Size h-6" />
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/custom.md'] as string} />
-
-<H2>Animation</H2>
-
-<CodeWrapper class="space-y-4">
-  <Progressbar {progress} animate precision={2} labelOutside="With animation" labelInside tweenDuration={1500} easing={sineOut} size="h-6" color="red" div2Class="text-base font-medium text-center p-1 leading-none rounded-full" />
-  <Progressbar {progress} labelOutside="Without animation" labelInside size="h-6" color="gray" div2Class="text-base font-medium text-center p-1 leading-none rounded-full" />
-  <Button onclick={() => (progress = `${Math.round(Math.random() * 100)}`)} class="mt-8">Randomize</Button>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/animation.md'] as string} />
