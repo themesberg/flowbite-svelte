@@ -1,15 +1,73 @@
 <script lang="ts">
-  import { Video } from '$lib';
+  import { Video, Button, Label, Radio } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
   import H3 from '../../utils/H3.svelte';
+  import { copyToClipboard } from '../../utils/helpers';
+  import GeneratedCode from '../../utils/GeneratedCode.svelte';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
     eager: true
   });
+
+  let controls = $state(true);
+  const changeControls = () => {
+    controls = !controls;
+  };
+
+  let autoplay = $state(false);
+  const changeAutoplay = () => {
+    autoplay = !autoplay;
+  };
+  let muted = $state(false);
+  const changeMuted = () => {
+    muted = !muted;
+  };
+  const videoClasses = [
+    { name: 'default', class: 'w-full'},
+    { name: 'width', class: 'w-96'},
+    { name: 'height', class: 'h-80'},
+    { name: 'responsive', class: 'w-full max-w-full h-auto'},
+    { name: 'customStyle', class: 'w-full max-w-full h-auto rounded-3xl border border-gray-200 dark:border-gray-700'}
+  ]
+  let selectedClass= $state('default');
+  // let selectedTransition = $state('Fly');
+  let currentClass = $derived(videoClasses.find((t) => t.name === selectedClass) || videoClasses[0]);
+
+  // code generator
+  let generatedCode = $derived(
+    (() => {
+      let props = [];
+      // control
+      if (controls) props.push(' controls');
+      // autoplay
+      if (autoplay) props.push(' autoplay');
+      if (muted) props.push(' muted');
+      // class
+      if (currentClass.name !== 'default') props.push(` class="${currentClass.class}"`);
+      // if (rounded) props.push(' rounded');
+      // if (border) props.push(' border');
+      return `<Video src="/videos/flowbite.mp4"${props.join('')} trackSrc="flowbite.mp4" />`;
+    })()
+  );
+  let copiedStatus = $state(false);
+
+  function handleCopyClick() {
+  copyToClipboard(generatedCode)
+    .then(() => {
+      copiedStatus = true;
+      setTimeout(() => {
+        copiedStatus = false;
+      }, 1000);
+    })
+    .catch((err) => {
+      console.error('Error in copying:', err);
+      // Handle the error as needed
+    });
+  }
 </script>
 
 <H1>Video</H1>
@@ -20,51 +78,23 @@
 
 <H2>Video player</H2>
 <CodeWrapper>
-  <Video src="/videos/flowbite.mp4" controls trackSrc="flowbite.mp4" />
+  <div class="h-[520px]">
+  <Video src="/videos/flowbite.mp4" {controls} {autoplay} {muted} trackSrc="flowbite.mp4" class={currentClass.class}/>
+  </div>
+  <div class="flex flex-wrap space-x-6">
+    <Label class="mb-4 w-full font-bold">Style:</Label>
+    {#each videoClasses as option}
+      <Radio labelClass="w-24 my-1" name="interactive_toast_color" bind:group={selectedClass} value={option.name}>{option.name}</Radio>
+    {/each}
+  </div>
+  <div class="mt-4 flex flex-wrap gap-2">
+    <Button class="w-48" color="emerald" onclick={changeControls}>{controls ? 'Remove controls' : 'Add controls'}</Button>
+    <Button class="w-48" color="blue" onclick={changeAutoplay}>{autoplay ? 'Remove autoplay' : 'Add autoplay'}</Button>
+    <Button class="w-48" color="pink" onclick={changeMuted}>{muted ? 'Remove muted' : 'Add muted'}</Button>
+  </div>
+  <GeneratedCode 
+    componentStatus={copiedStatus}
+    {generatedCode}
+    {handleCopyClick}
+  />
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/video-player.md'] as string} />
-
-<H2>Autoplay</H2>
-
-<CodeWrapper>
-  <Video src="/videos/flowbite.mp4" autoplay controls trackSrc="flowbite.mp4" />
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/autoplay.md'] as string} />
-
-<H2>Muted</H2>
-<CodeWrapper>
-  <Video src="/videos/flowbite.mp4" autoplay muted controls trackSrc="flowbite.mp4" />
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/muted.md'] as string} />
-
-<H2>Sizes</H2>
-<H3>Width</H3>
-<CodeWrapper>
-  <Video src="/videos/flowbite.mp4" controls class="w-96" trackSrc="flowbite.mp4" />
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/width.md'] as string} />
-
-<H3>Height</H3>
-<CodeWrapper>
-  <Video src="/videos/flowbite.mp4" controls class="h-80" trackSrc="flowbite.mp4" />
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/height.md'] as string} />
-
-<H3>Responsive</H3>
-<CodeWrapper>
-  <Video src="/videos/flowbite.mp4" controls class="h-auto w-full max-w-full" trackSrc="flowbite.mp4" />
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/responsive.md'] as string} />
-
-<H2>Custom styles</H2>
-<CodeWrapper>
-  <Video src="/videos/flowbite.mp4" controls class="h-auto w-full max-w-full rounded-3xl border border-gray-200 dark:border-gray-700" trackSrc="flowbite.mp4" />
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/custom-style.md'] as string} />
