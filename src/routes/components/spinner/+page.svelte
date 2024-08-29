@@ -4,6 +4,8 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { copyToClipboard } from '../../utils/helpers';
+  import GeneratedCode from '../../utils/GeneratedCode.svelte';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -17,8 +19,47 @@
   let spinnerSize: Spinner['size'] = $state('8');
   let spinnerClass: Spinner['class'] = $state('');
   const changeClass = () => {
-    spinnerClass = spinnerClass === '' ? 'm-4' : '';
+    spinnerClass = spinnerClass === '' ? 'ml-4' : '';
   };
+  const alignments = [
+    { name: 'left', class: 'text-left' },
+    { name: 'center', class: 'text-center' },
+    { name: 'right', class: 'text-right' }
+  ]
+  
+  let selectedAlignment= $state('left');
+  let currentSpinner = $derived(alignments.find((t) => t.name === selectedAlignment) || alignments[0]);
+
+  // code generator
+  let generatedCode = $derived(
+    (() => {
+      let props = [];
+      if ( spinnerSize !== '8' ) props.push(` size="${spinnerSize}"`);
+      if ( spinnerColor !== 'primary' ) props.push(` color="${spinnerColor}"`);
+      if ( spinnerClass !== '' ) props.push(` class="${spinnerClass}"`);
+      // alignment needs div wrapper
+      if ( selectedAlignment !== 'left' ) {
+        return `<div class="${currentSpinner.class}"><Spinner${props.join('')} /></div>`;
+      } else {
+        return `<Spinner${props.join('')} />`;
+      }
+    })()
+  );
+  let copiedStatus = $state(false);
+
+  function handleCopyClick() {
+  copyToClipboard(generatedCode)
+    .then(() => {
+      copiedStatus = true;
+      setTimeout(() => {
+        copiedStatus = false;
+      }, 1000);
+    })
+    .catch((err) => {
+      console.error('Error in copying:', err);
+      // Handle the error as needed
+    });
+  }
 </script>
 
 <H1>Spinner</H1>
@@ -29,53 +70,44 @@
 <H2>Default spinner</H2>
 
 <CodeWrapper>
-  <div class="h-20">
-    <Spinner class={spinnerClass} />
-  </div>
-  <Button class="w-48" onclick={changeClass}>{spinnerClass ? 'Remove class' : 'Add class'}</Button>
+  <Spinner />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/defaultspinner.md'] as string} />
 
-<H2>Colors</H2>
+<H2>Interactive Spinner Builder</H2>
 
 <CodeWrapper>
-  <Spinner color={spinnerColor} />
-  <div class="mt-8 flex flex-wrap space-x-4">
+  <div class="h-20">
+    <div class={currentSpinner.class}>
+      <Spinner color={spinnerColor} size={spinnerSize} class={spinnerClass}/>
+    </div>
+  </div>
+  <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as color}
       <Radio labelClass="w-24 my-1" name="spinnercolor" bind:group={spinnerColor} color={color as Spinner['color']} value={color}>{color}</Radio>
     {/each}
   </div>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/colors.md'] as string} />
-
-<H2>Sizes</H2>
-
-<CodeWrapper>
-  <div class="h-20">
-    <Spinner size={spinnerSize} />
-  </div>
-  <div class="mt-4 flex flex-wrap space-x-4">
+  <div class="flex flex-wrap space-x-4 mb-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as size}
       <Radio labelClass="w-24 my-1" name="spinnersize" bind:group={spinnerSize} value={size}>{size}</Radio>
     {/each}
   </div>
+  <div class="mt-4 flex flex-wrap space-x-4 mb-4">
+    <Label class="mb-4 w-full font-bold">Alignment:</Label>
+    {#each alignments as option}
+      <Radio labelClass="w-24 my-1" name="alignment" bind:group={selectedAlignment} value={option.name}>{option.name}</Radio>
+    {/each}
+  </div>
+  <Button class="w-48" onclick={changeClass}>{spinnerClass ? 'Remove class' : 'Add class'}</Button>
+  <GeneratedCode 
+    componentStatus={copiedStatus}
+    {generatedCode}
+    {handleCopyClick}
+  />
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/sizes.md'] as string} />
-
-<H2>Alignment</H2>
-
-<CodeWrapper>
-  <div class="text-left"><Spinner /></div>
-  <div class="text-center"><Spinner /></div>
-  <div class="text-right"><Spinner /></div>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/alignment.md'] as string} />
 
 <H2>Button</H2>
 

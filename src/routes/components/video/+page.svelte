@@ -4,7 +4,7 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import H3 from '../../utils/H3.svelte';
+  // import H3 from '../../utils/H3.svelte';
   import { copyToClipboard } from '../../utils/helpers';
   import GeneratedCode from '../../utils/GeneratedCode.svelte';
   const modules = import.meta.glob('./md/*.md', {
@@ -41,15 +41,10 @@
   let generatedCode = $derived(
     (() => {
       let props = [];
-      // control
       if (controls) props.push(' controls');
-      // autoplay
       if (autoplay) props.push(' autoplay');
       if (muted) props.push(' muted');
-      // class
       if (currentClass.name !== 'default') props.push(` class="${currentClass.class}"`);
-      // if (rounded) props.push(' rounded');
-      // if (border) props.push(' border');
       return `<Video src="/videos/flowbite.mp4"${props.join('')} trackSrc="flowbite.mp4" />`;
     })()
   );
