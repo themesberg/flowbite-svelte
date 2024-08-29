@@ -76,8 +76,8 @@
   );
   let copiedStatus = $state(false);
 
-  function handleCopyClick() {
-  copyToClipboard(generatedCode)
+  function handleCopyClick(codeBlock: string) {
+  copyToClipboard(codeBlock)
     .then(() => {
       copiedStatus = true;
       setTimeout(() => {
@@ -93,7 +93,11 @@
 
 <H1>Toast</H1>
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<GeneratedCode 
+  componentStatus={copiedStatus}
+  generatedCode={modules['./md/setup.md'] as string}
+  handleCopyClick={()=>handleCopyClick(modules['./md/setup.md'] as string)}
+/>
 
 <H2>Default toast</H2>
 <CodeWrapper class="flex h-48 flex-col items-center">
@@ -144,10 +148,11 @@
     {/each}
   </div>
   <Button onclick={changeDismissable}>{dismissable ? 'Disable' : 'Enable'} dismissable</Button> 
+  <h3 class="text-xl font-semibold my-4">Generated Code:</h3>
   <GeneratedCode 
     componentStatus={copiedStatus}
     {generatedCode}
-    {handleCopyClick}
+    handleCopyClick={()=>handleCopyClick(generatedCode)}
   />
 </CodeWrapper>
 

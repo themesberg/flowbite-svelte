@@ -130,8 +130,8 @@
   );
   let copiedStatus = $state(false);
 
-  function handleCopyClick() {
-  copyToClipboard(generatedCode)
+  function handleCopyClick(codeBlock: string) {
+  copyToClipboard(codeBlock)
     .then(() => {
       copiedStatus = true;
       setTimeout(() => {
@@ -148,7 +148,11 @@
 <H1>Device mockup</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<GeneratedCode 
+  componentStatus={copiedStatus}
+  generatedCode={modules['./md/setup.md'] as string}
+  handleCopyClick={()=>handleCopyClick(modules['./md/setup.md'] as string)}
+/>
 
 <H2>Interactive Device Mockup Builder</H2>
 
@@ -159,11 +163,12 @@
       <Radio labelClass="w-24 my-1" name="alert_reactive" bind:group={selectedDevice} value={device}>{device}</Radio>
     {/each}
   </div>
+  <h3 class="text-xl font-semibold my-4">Generated Code:</h3>
   <GeneratedCode 
     class="mb-8"
     componentStatus={copiedStatus}
     {generatedCode}
-    {handleCopyClick}
+    handleCopyClick={()=>handleCopyClick(generatedCode)}
   />
   <DeviceMockup device={currentDevice.device as DeviceVariantType}>
     <img src={currentDevice.lightimage.src} class={currentDevice.lightimage.class} alt={currentDevice.lightimage.alt} />

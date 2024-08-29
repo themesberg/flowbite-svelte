@@ -134,7 +134,11 @@
 <H1>Buttons</H1>
 
 <H2>Setup</H2>
-<HighlightCompo codeLang="ts" code={modules['./md/setup.md'] as string} />
+<GeneratedCode 
+  componentStatus={copiedStatus}
+  generatedCode={modules['./md/setup.md'] as string}
+  handleCopyClick={()=>handleCopyClick(modules['./md/setup.md'] as string)}
+/>
 
 <H2>Interactive Button Bilder</H2>
 
@@ -202,6 +206,7 @@
   <Button class="w-40" onclick={changeGradientClass}>{gradientClass === '' ? 'Add class' : 'Remove class'}</Button>
   <Button class="w-40" color="sky" onclick={changeGradientLink}> {btnLink === '' ? 'Add link' : 'Remove link'}</Button>
   </div>
+  <h3 class="text-xl font-semibold my-4">Generated Code:</h3>
   <GeneratedCode 
     class="mt-8"
     componentStatus={copiedStatus}

@@ -86,8 +86,8 @@
   );
   let copiedStatus = $state(false);
 
-  function handleCopyClick() {
-  copyToClipboard(generatedCode)
+  function handleCopyClick(codeBlock: string) {
+  copyToClipboard(codeBlock)
     .then(() => {
       copiedStatus = true;
       setTimeout(() => {
@@ -105,7 +105,11 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<GeneratedCode 
+  componentStatus={copiedStatus}
+  generatedCode={modules['./md/setup.md'] as string}
+  handleCopyClick={()=>handleCopyClick(modules['./md/setup.md'] as string)}
+/>
 
 <H2>Default progress bar</H2>
 
@@ -146,9 +150,10 @@
   <Button class="w-48" color="red" onclick={changeAnimation}>{animation ? 'No animation' : 'Animation'}</Button>
   <Button class="w-48" color="emerald" onclick={() => (progress = `${Math.round(Math.random() * 100)}`)}>Randomize</Button>
   </div>
+  <h3 class="text-xl font-semibold my-4">Generated Code:</h3>
   <GeneratedCode 
     componentStatus={copiedStatus}
     {generatedCode}
-    {handleCopyClick}
+    handleCopyClick={()=>handleCopyClick(generatedCode)}
   />
 </CodeWrapper>

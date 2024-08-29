@@ -56,8 +56,8 @@
   );
   let copiedStatus = $state(false);
 
-  function handleCopyClick() {
-  copyToClipboard(generatedCode)
+  function handleCopyClick(codeBlock: string) {
+  copyToClipboard(codeBlock)
     .then(() => {
       copiedStatus = true;
       setTimeout(() => {
@@ -75,14 +75,11 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md'] as string} />
-
-<H2>Default avatar</H2>
-<CodeWrapper class="flex justify-center gap-4 rtl:space-x-reverse">
-  <Avatar src="/images/profile-picture-2.webp" />
-  <Avatar src="/images/profile-picture-2.webp" cornerStyle="rounded" />
-</CodeWrapper>
-<HighlightCompo code={modules['./md/default-avatar.md'] as string} />
+<GeneratedCode 
+  componentStatus={copiedStatus}
+  generatedCode={modules['./md/setup.md'] as string}
+  handleCopyClick={()=>handleCopyClick(modules['./md/setup.md'] as string)}
+/>
 
 <H2>Interactive Avatar Bilder</H2>
 <CodeWrapper class="space-y-4">
@@ -104,7 +101,7 @@
   <GeneratedCode 
     componentStatus={copiedStatus}
     {generatedCode}
-    {handleCopyClick}
+    handleCopyClick={()=>handleCopyClick(generatedCode)}
   />
 </CodeWrapper>
 

@@ -1,23 +1,25 @@
 <script lang="ts">
-  import { Skeleton, CardPlaceholder, ImagePlaceholder, VideoPlaceholder, TextPlaceholder, ListPlaceholder, TestimonialPlaceholder, Label, Radio, WidgetPlaceholder, Button } from '$lib';
+  import { Skeleton, skeleton, CardPlaceholder, ImagePlaceholder, imagePlaceholder, VideoPlaceholder, TextPlaceholder, ListPlaceholder, TestimonialPlaceholder, Label, Radio, WidgetPlaceholder, Button } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { copyToClipboard } from '../../utils/helpers';
+  import GeneratedCode from '../../utils/GeneratedCode.svelte';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
     eager: true
   });
   // size
-  const skeletonSizes = ['sm', 'md', 'lg', 'xl', '2xl'];
+  const skeletonSizes = Object.keys(skeleton.variants.size) as Skeleton['size'][];
   let skeletonSize: Skeleton['size'] = $state('sm');
-  const imageSizes = ['sm', 'md', 'lg'];
+  const imageSizes = Object.keys(imagePlaceholder.variants.size) as ImagePlaceholder['size'][];
   let imagePlaceholderSize: ImagePlaceholder['size'] = $state('md');
   let imagePlaceholderRounded: ImagePlaceholder['rounded'] = $state('none');
   const videoSizes = skeletonSizes;
   let videoPlaceholderSize: VideoPlaceholder['size'] = $state('md');
-  const imageRoundedSizes = ['none', 'sm', 'md', 'lg', 'full'];
+  const imageRoundedSizes = Object.keys(imagePlaceholder.variants.rounded) as ImagePlaceholder['rounded'][];
   const textSizes = skeletonSizes;
   let textPlaceholderSize: TextPlaceholder['size'] = $state('md');
   const cardSizes = skeletonSizes;
@@ -28,59 +30,66 @@
   let listPlaceholderSize: ListPlaceholder['size'] = $state('md');
   let listPlaceholderRounded: ListPlaceholder['rounded'] = $state('none');
   let listPlaceholderItemNumber: ListPlaceholder['itemNumber'] = $state(3);
-  // let skeletonClass: Skeleton['class'] = $state('')
-  // let imageClass: Skeleton['class'] = $state('')
-  // let videoClass: Skeleton['class'] = $state('')
-  // let textClass: Skeleton['class'] = $state('')
-  // let cardClass: Skeleton['class'] = $state('')
-  // let listClass: Skeleton['class'] = $state('')
-  // let testimonialClass: Skeleton['class'] = $state('')
-  // const changeSkeletonClass = () => {
-  //   skeletonClass = skeletonClass === '' ? 'pt-8' : '';
-  // }
-  // const changeImageClass = () => {
-  //   imageClass = imageClass === '' ? 'm-4' : '';
-  // }
-  // const changeVideoClass = () => {
-  //   videoClass = videoClass === '' ? 'm-4' : '';
-  // }
-  // const changeTextClass = () => {
-  //   textClass = textClass === '' ? 'm-4' : '';
-  // }
-  // const changeCardClass = () => {
-  //   cardClass = cardClass === '' ? 'm-4' : '';
-  // }
-  // const changeListClass = () => {
-  //   listClass = listClass === '' ? 'm-4' : '';
-  // }
-  // const changeTestimonialClass = () => {
-  //   testimonialClass = testimonialClass === '' ? 'm-4' : '';
-  // }
-  type SkeletonType = 'skeleton' | 'image' | 'video' | 'text' | 'card' | 'list' | 'testimonial';
+  // class
+  let skeletonClass: Skeleton['class'] = $state('');
+  let imagePlaceholderClass: ImagePlaceholder['class'] = $state('');
+  let videoPlaceholderClass: VideoPlaceholder['class'] = $state('');
+  let textPlaceholderClass: TextPlaceholder['class'] = $state('');
+  let cardPlaceholderClass: CardPlaceholder['class'] = $state('');
+  let widgetPlaceholderClass: WidgetPlaceholder['class'] = $state('');
+  let listPlaceholderClass: ListPlaceholder['class'] = $state('');
+  let TestimonialPlaceholderClass: TestimonialPlaceholder['class'] = $state('');
 
-  let classes: Record<SkeletonType, Skeleton['class']> = $state({
-    skeleton: '',
-    image: '',
-    video: '',
-    text: '',
-    card: '',
-    list: '',
-    testimonial: ''
-  });
+  // code generator
+  const generatePlaceholderCode = (componentName: string, size: string, classes: string): string => {
+    let props = [];
+    if (size !== 'md') props.push(` size="${size}"`);
+    if (classes !== '') props.push(` class="${classes}"`);
+    if (componentName === 'ImagePlaceholder' && imagePlaceholderRounded !== 'none' ) props.push(` rounded="${imagePlaceholderRounded}"`);
+    if ( componentName === 'ListPlaceholder' && listPlaceholderItemNumber !== 3 ) props.push(` itemNumber={${listPlaceholderItemNumber}}`);
+    if ( componentName === 'ListPlaceholder' && listPlaceholderRounded !== 'none' ) props.push(` rounded="${listPlaceholderRounded}"`);
 
-  const changeClass = (type: SkeletonType) => {
-    classes[type] = classes[type] === '' ? 'ml-4' : '';
-  };
+    return `<${componentName}${props.join('')} />`;
+  }
+  let generatedCodeSkeleton = $derived(generatePlaceholderCode('Skeleton', skeletonSize, skeletonClass));
+  let generatedCodeVideo = $derived(generatePlaceholderCode('VideoPlaceholder', videoPlaceholderSize, videoPlaceholderClass));
+  let generatedCodeText = $derived(generatePlaceholderCode('TextPlaceholder', textPlaceholderSize, textPlaceholderClass));
+  let generatedCodeCard = $derived(generatePlaceholderCode('CardPlaceholder', cardPlaceholderSize, cardPlaceholderClass));
+  let generatedCodeImage = $derived(generatePlaceholderCode('ImagePlaceholder', imagePlaceholderSize, imagePlaceholderClass));
+  let generatedCodeWidget = $derived(generatePlaceholderCode('WidgetPlaceholder', 'md', widgetPlaceholderClass));
+  let generatedCodeList = $derived(generatePlaceholderCode('ListPlaceholder', listPlaceholderSize, listPlaceholderClass));
+  let generatedCodeTestimonial = $derived(generatePlaceholderCode('TestimonialPlaceholder', 'md', TestimonialPlaceholderClass));
+
+  
+  let copiedStatus = $state(false);
+
+  function handleCopyClick(codeBlock: string) {
+  copyToClipboard(codeBlock)
+    .then(() => {
+      copiedStatus = true;
+      setTimeout(() => {
+        copiedStatus = false;
+      }, 1000);
+    })
+    .catch((err) => {
+      console.error('Error in copying:', err);
+      // Handle the error as needed
+    });
+  }
 </script>
 
 <H1>Skeleton</H1>
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<GeneratedCode 
+  componentStatus={copiedStatus}
+  generatedCode={modules['./md/setup.md'] as string}
+  handleCopyClick={()=>handleCopyClick(modules['./md/setup.md'] as string)}
+/>
 
 <H2>Default skeleton</H2>
 <CodeWrapper>
   <div class="h-40">
-    <Skeleton size={skeletonSize} class={classes.skeleton} />
+    <Skeleton size={skeletonSize} class={skeletonClass} />
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size(width):</Label>
@@ -88,14 +97,18 @@
       <Radio labelClass="w-24 my-1" name="skeletonsize" bind:group={skeletonSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <Button class="w-48" onclick={() => changeClass('skeleton')}>{classes.skeleton ? 'Remove class' : 'Add class'}</Button>
+  <Button class="w-40 mt-4" onclick={()=> skeletonClass === '' ? skeletonClass = 'ml-4' : skeletonClass = ''}>{skeletonClass ? 'Remove class' : 'Add class'}</Button>
+  <GeneratedCode 
+    componentStatus={copiedStatus}
+    generatedCode={generatedCodeSkeleton}
+    handleCopyClick={()=>handleCopyClick(generatedCodeSkeleton)}
+  />
 </CodeWrapper>
-<HighlightCompo code={modules['./md/skeleton.md'] as string} />
 
 <H2>Image placeholder</H2>
 <CodeWrapper>
   <div class="h-[460px] md:h-64">
-    <ImagePlaceholder size={imagePlaceholderSize} rounded={imagePlaceholderRounded} class={classes.image} />
+    <ImagePlaceholder size={imagePlaceholderSize} rounded={imagePlaceholderRounded} class={imagePlaceholderClass} />
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
@@ -109,16 +122,19 @@
       <Radio labelClass="w-24 my-1" name="imageRoundedSize" bind:group={imagePlaceholderRounded} value={size}>{size}</Radio>
     {/each}
   </div>
-  <Button class="w-48" onclick={() => changeClass('image')}>{classes.image ? 'Remove class' : 'Add class'}</Button>
+  <Button class="w-40 mt-4" onclick={()=> imagePlaceholderClass === '' ? imagePlaceholderClass = 'ml-4' : imagePlaceholderClass = ''}>{imagePlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <GeneratedCode 
+    componentStatus={copiedStatus}
+    generatedCode={generatedCodeImage}
+    handleCopyClick={()=>handleCopyClick(generatedCodeImage)}
+  />
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/imageplaceholder.md'] as string} />
 
 <H2>Video placeholder</H2>
 
 <CodeWrapper>
   <div class="h-64">
-    <VideoPlaceholder size={videoPlaceholderSize} class={classes.video} />
+    <VideoPlaceholder size={videoPlaceholderSize} class={videoPlaceholderClass} />
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size(width):</Label>
@@ -126,51 +142,67 @@
       <Radio labelClass="w-24 my-1" name="videoSize" bind:group={videoPlaceholderSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <Button class="w-48" onclick={() => changeClass('video')}>{classes.video ? 'Remove class' : 'Add class'}</Button>
+  <Button class="w-40 mt-4" onclick={()=> videoPlaceholderClass === '' ? videoPlaceholderClass = 'ml-4' : videoPlaceholderClass = ''}>{videoPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <GeneratedCode 
+    componentStatus={copiedStatus}
+    generatedCode={generatedCodeVideo}
+    handleCopyClick={()=>handleCopyClick(generatedCodeVideo)}
+  />
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/videoplaceholder.md'] as string} />
 
 <H2>Text placeholder</H2>
 
 <CodeWrapper>
-  <TextPlaceholder size={textPlaceholderSize} />
+  <TextPlaceholder size={textPlaceholderSize} class={textPlaceholderClass}/>
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size(width):</Label>
     {#each textSizes as size}
       <Radio labelClass="w-24 my-1" name="textSize" bind:group={textPlaceholderSize} value={size}>{size}</Radio>
     {/each}
   </div>
+  <Button class="w-40 mt-4" onclick={()=> textPlaceholderClass === '' ? textPlaceholderClass = 'ml-4' : textPlaceholderClass = ''}>{textPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <GeneratedCode 
+    componentStatus={copiedStatus}
+    generatedCode={generatedCodeText}
+    handleCopyClick={()=>handleCopyClick(generatedCodeText)}
+  />
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/textplaceholder.md'] as string} />
 
 <H2>Card placeholder</H2>
 
 <CodeWrapper>
-  <CardPlaceholder size={cardPlaceholderSize} />
+  <CardPlaceholder size={cardPlaceholderSize} class={cardPlaceholderClass}/>
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size(width):</Label>
     {#each cardSizes as size}
       <Radio labelClass="w-24 my-1" name="cardSize" bind:group={cardPlaceholderSize} value={size}>{size}</Radio>
     {/each}
   </div>
+  <Button class="w-40 mt-4" onclick={()=> cardPlaceholderClass === '' ? cardPlaceholderClass = 'ml-4' : cardPlaceholderClass = ''}>{cardPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <GeneratedCode 
+    componentStatus={copiedStatus}
+    generatedCode={generatedCodeCard}
+    handleCopyClick={()=>handleCopyClick(generatedCodeCard)}
+  />
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/cardplaceholder.md'] as string} />
 
 <H2>Widget placeholder</H2>
 
 <CodeWrapper>
-  <WidgetPlaceholder />
+  <WidgetPlaceholder class={widgetPlaceholderClass}/>
+  <Button class="w-40 mt-4" onclick={()=> widgetPlaceholderClass === '' ? widgetPlaceholderClass = 'ml-4' : widgetPlaceholderClass = ''}>{widgetPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <GeneratedCode 
+    componentStatus={copiedStatus}
+    generatedCode={generatedCodeWidget}
+    handleCopyClick={()=>handleCopyClick(generatedCodeWidget)}
+  />
 </CodeWrapper>
-<HighlightCompo code={modules['./md/widgetplaceholder.md'] as string} />
 
 <H2>List placeholder</H2>
 
 <CodeWrapper>
   <div class="h-80 md:h-96">
-    <ListPlaceholder itemNumber={listPlaceholderItemNumber} size={listPlaceholderSize} rounded={listPlaceholderRounded} />
+    <ListPlaceholder itemNumber={listPlaceholderItemNumber} size={listPlaceholderSize} rounded={listPlaceholderRounded} class={listPlaceholderClass}/>
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
@@ -190,15 +222,22 @@
       <Radio labelClass="w-24 my-1" name="itemNumber" bind:group={listPlaceholderItemNumber} value={itemNumber}>{itemNumber}</Radio>
     {/each}
   </div>
+  <Button class="w-40 mt-4" onclick={()=> listPlaceholderClass === '' ? listPlaceholderClass = 'ml-4' : listPlaceholderClass = ''}>{listPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <GeneratedCode 
+    componentStatus={copiedStatus}
+    generatedCode={generatedCodeList}
+    handleCopyClick={()=>handleCopyClick(generatedCodeList)}
+  />
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/listplaceholder.md'] as string} />
 
 <H2>Testimonial placeholder</H2>
 
 <CodeWrapper class="flex flex-col">
-  <TestimonialPlaceholder />
-  <TestimonialPlaceholder class="mx-auto mt-8 w-[200px] sm:w-[400px]" />
+  <TestimonialPlaceholder class={TestimonialPlaceholderClass}/>
+  <Button class="w-40 mt-4" onclick={()=> TestimonialPlaceholderClass === '' ? TestimonialPlaceholderClass = 'mx-auto w-[200px] sm:w-[400px]' : TestimonialPlaceholderClass = ''}>{TestimonialPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <GeneratedCode 
+    componentStatus={copiedStatus}
+    generatedCode={generatedCodeTestimonial}
+    handleCopyClick={()=>handleCopyClick(generatedCodeTestimonial)}
+  />
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/testimonialplaceholder.md'] as string} />

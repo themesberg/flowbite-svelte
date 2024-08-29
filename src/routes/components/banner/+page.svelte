@@ -91,8 +91,8 @@
   );
   let copiedStatus = $state(false);
 
-  function handleCopyClick() {
-  copyToClipboard(generatedCode)
+  function handleCopyClick(codeBlock: string) {
+  copyToClipboard(codeBlock)
     .then(() => {
       copiedStatus = true;
       setTimeout(() => {
@@ -109,7 +109,11 @@
 <H1>Banner</H1>
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<GeneratedCode 
+  componentStatus={copiedStatus}
+  generatedCode={modules['./md/setup.md'] as string}
+  handleCopyClick={()=>handleCopyClick(modules['./md/setup.md'] as string)}
+/>
 
 <H2>Interactive Banner Builder</H2>
 <CodeWrapper class="relative">
@@ -144,18 +148,16 @@
           <Radio labelClass="w-24 my-1" name="interactive_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
         {/each}
     </div>
-    <Button class="w-48" onclick={changePosition}>Change position</Button>
-    <Button class="w-48" color="blue" onclick={changeBannerType}>Change banner type</Button>
+    <Button class="w-48" onclick={changePosition}>Position: { position === 'sticky' ? 'absolute' : 'sticky'}</Button>
+    <Button class="w-48" color="blue" onclick={changeBannerType}>Type: { bannerType === 'default' ? 'cta' : 'default'}</Button>
     <Button class="w-48" color="green" onclick={changeClass}>{bannerClass ? 'Remove class' : 'Add class'}</Button>
     <GeneratedCode 
       componentStatus={copiedStatus}
       {generatedCode}
-      {handleCopyClick}
+      handleCopyClick={()=>handleCopyClick(generatedCode)}
     />
   </div>
 </CodeWrapper>
-
-<HighlightCompo codeLang="ts" code={modules['./md/transition.md'] as string} />
 
 <H2>Default sticky banner</H2>
 

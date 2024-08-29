@@ -106,8 +106,8 @@
   );
   let copiedStatus = $state(false);
 
-  function handleCopyClick() {
-  copyToClipboard(generatedCode)
+  function handleCopyClick(codeBlock: string) {
+  copyToClipboard(codeBlock)
     .then(() => {
       copiedStatus = true;
       setTimeout(() => {
@@ -123,13 +123,11 @@
 
 <H1>Badge</H1>
 <H2>Setup</H2>
-<HighlightCompo codeLang="ts" code={modules['./md/setup.md'] as string} />
-
-<H2>Default badge</H2>
-<CodeWrapper>
-  <Badge>Default</Badge>
-</CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/default-badge.md'] as string} />
+<GeneratedCode 
+  componentStatus={copiedStatus}
+  generatedCode={modules['./md/setup.md'] as string}
+  handleCopyClick={()=>handleCopyClick(modules['./md/setup.md'] as string)}
+/>
 
 <H2>Interactive Badge Bilder</H2>
 <CodeWrapper class="space-y-4">
@@ -159,7 +157,7 @@
   <GeneratedCode 
     componentStatus={copiedStatus}
     {generatedCode}
-    {handleCopyClick}
+    handleCopyClick={()=>handleCopyClick(generatedCode)}
     />
 </CodeWrapper>
 

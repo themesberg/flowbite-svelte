@@ -70,8 +70,8 @@
 
   let copiedStatus = $state(false);
 
-  function handleCopyClick() {
-    copyToClipboard(generatedCode)
+  function handleCopyClick(codeBlock: string) {
+  copyToClipboard(codeBlock)
       .then(() => {
         copiedStatus = true;
         setTimeout(() => {
@@ -88,7 +88,11 @@
 <H1>Cards</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<GeneratedCode 
+  componentStatus={copiedStatus}
+  generatedCode={modules['./md/setup.md'] as string}
+  handleCopyClick={()=>handleCopyClick(modules['./md/setup.md'] as string)}
+/>
 
 <H2>Default card</H2>
 <CodeWrapper class="flex flex-col space-y-4">
@@ -134,10 +138,11 @@
   <Button disabled={Object.keys(cardImage).length === 0} class="w-40" color="violet" onclick={changeImgLayout}>{horizontal  ? 'Vertical' : 'Horizontal'}</Button>
   <Toggle bind:checked={reverse} labelClass="italic dark:text-gray-500 {Object.keys(cardImage).length === 0 ? 'opacity-50 cursor-not-allowed' : ''}" disabled={Object.keys(cardImage).length === 0}>Reverse: {reverse} </Toggle>
   </div>
+  <h3 class="text-xl font-semibold my-4">Generated Code:</h3>
   <GeneratedCode 
     componentStatus={copiedStatus}
     {generatedCode}
-    {handleCopyClick}
+    handleCopyClick={()=>handleCopyClick(generatedCode)}
   />
   <div class="h-[700px]">
     <div class="flex justify-center">

@@ -7,6 +7,8 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { copyToClipboard } from '../../utils/helpers';
+  import GeneratedCode from '../../utils/GeneratedCode.svelte';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -31,12 +33,30 @@
   let nestingOpenStatus: boolean = $state(true);
   // const open_all = () => items.forEach((_, i) => (items[i] = true));
   // const close_all = () => items.forEach((_, i) => (items[i] = false));
+  let copiedStatus = $state(false);
+
+  function handleCopyClick(codeBlock: string) {
+  copyToClipboard(codeBlock)
+    .then(() => {
+      copiedStatus = true;
+      setTimeout(() => {
+        copiedStatus = false;
+      }, 1000);
+    })
+    .catch((err) => {
+      console.error('Error in copying:', err);
+      // Handle the error as needed
+    });
+  }
 </script>
 
 <H1>Accordion</H1>
 <H2>Setup</H2>
-
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<GeneratedCode 
+  componentStatus={copiedStatus}
+  generatedCode={modules['./md/setup.md'] as string}
+  handleCopyClick={()=>handleCopyClick(modules['./md/setup.md'] as string)}
+/>
 
 <H2>Default accordion</H2>
 <CodeWrapper class="h-[340px]">
