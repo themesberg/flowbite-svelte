@@ -239,7 +239,7 @@ Use the `close-button` slot to add your desired button. Don't forget to use the 
 </Badge>
 ```
 
-A `dismiss` event will be dispatched during the dismissal, listen to it if needed.
+A `close` event will be dispatched during the dismissal, listen to it if needed.
 
 ```svelte example class="gap-4"
 <script>
