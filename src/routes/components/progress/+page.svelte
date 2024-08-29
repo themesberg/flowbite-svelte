@@ -64,6 +64,8 @@
   let generatedCode = $derived(
     (() => {
       let props = [];
+      // progress
+      props.push(` progress="${progress}"`);
       if (progressColor !== 'primary') props.push(` color="${progressColor}"`);
       if (labelInside) props.push(' labelInside');
       if ( labelContent !== '') props.push(` labelOutside="${labelContent}"`);
