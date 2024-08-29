@@ -1,15 +1,16 @@
 <script lang="ts">
   import { Toast, toast, Avatar, Button, Label, Radio } from '$lib';
-  import { FireOutline, CheckCircleSolid, PaperPlaneOutline, CameraPhotoOutline } from 'flowbite-svelte-icons';
+  import { FireOutline, CheckCircleSolid, CameraPhotoOutline } from 'flowbite-svelte-icons';
   import { linear } from 'svelte/easing';
-  import { blur, fly, slide, scale } from 'svelte/transition';
+  import { blur, fly, slide, scale, fade } from 'svelte/transition';
   import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
   import H3 from '../../utils/H3.svelte';
-  import { capitalizeFirstLetter } from '../../utils/helpers';
+  import { copyToClipboard } from '../../utils/helpers';
+  import GeneratedCode from '../../utils/GeneratedCode.svelte';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -17,36 +18,77 @@
   });
   const colors = Object.keys(toast.variants.color) as Toast['color'][];
   let toastColor: Toast['color'] = $state('primary');
-
+  let dismissable = $state(true);
+  const changeDismissable = () => {
+    dismissable = !dismissable;
+  }
+  const positions = Object.keys(toast.variants.position) as Toast['position'][];
+  let toastPosition: Toast['position'] = $state('top-left');
+  // console.log('positions', positions);
   // transition example
   type TransitionOption = {
     name: string;
     transition: typeof fly | typeof blur | typeof slide | typeof scale;
     params: FlyParams | BlurParams | SlideParams | ScaleParams;
-    color: Toast['color'];
   };
 
-  const transitions: TransitionOption[] = [
-    { name: 'Fly', transition: fly, params: { duration: 500, easing: linear, x: 150 }, color: 'blue' },
-    { name: 'Blur', transition: blur, params: { duration: 500, easing: linear }, color: 'lime' },
-    { name: 'Slide', transition: slide, params: { duration: 500, easing: linear, x: -150 }, color: 'violet' },
-    { name: 'Scale', transition: scale, params: { duration: 500, easing: linear }, color: 'pink' }
+  const transitions: TransitionOption[]  = [
+    { name: 'Default', transition: fly, params:{ duration: 400}},
+    { name: 'Fly', transition: fly, params: { duration: 300, easing: linear, x: 150 } },
+    { name: 'Blur', transition: blur, params: { duration: 400, easing: linear } },
+    { name: 'Slide', transition: slide, params: { duration: 500, easing: linear, x: -150 } },
+    { name: 'Scale', transition: scale, params: { duration: 400, easing: linear } },
+    { name: 'Fade', transition: fade, params: { duration: 500, easing: linear } }
   ];
 
-  let selectedTransition = $state('Fly');
+  let selectedTransition = $state('Default');
   let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
   let defaultToastStatus: boolean = $state(true);
   let toastStatus: boolean = $state(true);
-
-  let transionStatus = $state(true);
-  const changeTransitionStatus = () => {
-    transionStatus = !transionStatus;
-  };
-
   let toastUndoStatus: boolean = $state(true);
   const changeUndoStatus = () => {
     toastUndoStatus = !toastUndoStatus;
   };
+
+  // code generator
+  let generatedCode = $derived(
+    (() => {
+      let props = [];
+      if (toastColor !== 'primary') props.push(` color="${toastColor}"`);
+      if (dismissable !== true) props.push(' dismissable={false}');
+      if (toastPosition !== 'top-left') props.push(` position="${toastPosition}"`);
+      if ( currentTransition !== transitions[0] && dismissable) {
+        props.push(` transition={${currentTransition.transition.name}}`);
+        const paramsString = Object.entries(currentTransition.params)
+        .map(([key, value]) => {
+          if (typeof value === 'function') {
+            return `${key}:${value.name}`;
+          }
+          return `${key}:${value}`;
+        })
+        .join(',');
+        props.push(` params={{${paramsString}}}`);
+      }
+      return `<div class="relative h-56">
+  <Toast${props.join('')}>My Toast</Toast>
+</div>`;
+    })()
+  );
+  let copiedStatus = $state(false);
+
+  function handleCopyClick() {
+  copyToClipboard(generatedCode)
+    .then(() => {
+      copiedStatus = true;
+      setTimeout(() => {
+        copiedStatus = false;
+      }, 1000);
+    })
+    .catch((err) => {
+      console.error('Error in copying:', err);
+      // Handle the error as needed
+    });
+  }
 </script>
 
 <H1>Toast</H1>
@@ -69,10 +111,10 @@
 </CodeWrapper>
 <HighlightCompo code={modules['./md/default-toast.md'] as string} />
 
-<H2>Color</H2>
-<CodeWrapper class="flex flex-col items-center space-y-2">
-  <div class="h-20">
-    <Toast color={toastColor} bind:toastStatus>
+<H2>Interactive Toast Builder</H2>
+<CodeWrapper class="space-y-2">
+  <div class="relative h-56">
+    <Toast color={toastColor} bind:toastStatus {dismissable} transition={currentTransition.transition} params={currentTransition.params} position={toastPosition}>
       {#snippet icon()}
         <CheckCircleSolid class="h-5 w-5" />
         <span class="sr-only">Check icon</span>
@@ -86,45 +128,28 @@
   <div class="flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color:</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="border_accent_alert_color" bind:group={toastColor} color={colorOption as Toast['color']} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="interactive_toast_color" bind:group={toastColor} color={colorOption as Toast['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
-  </div>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/colors.md'] as string} />
-
-<H2>Transitions</H2>
-
-<CodeWrapper class="h-64">
-  <div class="h-24">
-    <Toast color={currentTransition.color as Toast['color']} dismissable bind:toastStatus={transionStatus} transition={currentTransition.transition} params={currentTransition.params}>
-      {#snippet icon()}
-        <CheckCircleSolid class="h-5 w-5" />
-        <span class="sr-only">Check icon</span>
-      {/snippet}
-      {capitalizeFirstLetter(selectedTransition)} transition
-    </Toast>
-  </div>
-  <div class="mb-4">
-    <Button class="w-36" disabled={transionStatus ? true : false} onclick={changeTransitionStatus}>Open toast</Button>
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Transition</Label>
     {#each transitions as transition}
-      <Radio labelClass="w-24 my-1" name="icon_alert_color" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+      <Radio labelClass="w-24 my-1" name="interactive_toast_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
     {/each}
   </div>
+  <div class="flex flex-wrap space-x-2">
+    <Label class="mb-4 w-full font-bold">Position:</Label>
+    {#each positions as option}
+      <Radio labelClass="w-32 my-1" name="interactive_toast_position" bind:group={toastPosition} value={option}>{option}</Radio>
+    {/each}
+  </div>
+  <Button onclick={changeDismissable}>{dismissable ? 'Disable' : 'Enable'} dismissable</Button> 
+  <GeneratedCode 
+    componentStatus={copiedStatus}
+    {generatedCode}
+    {handleCopyClick}
+  />
 </CodeWrapper>
-
-<HighlightCompo codeLang="ts" code={modules['./md/transition.md'] as string} />
-
-<H2>Simple toast</H2>
-<CodeWrapper class="flex h-28 flex-col items-center">
-  <Toast dismissable={false} contentClass="flex space-x-4 rtl:space-x-reverse divide-x rtl:divide-x-reverse divide-gray-200 dark:divide-gray-700">
-    <PaperPlaneOutline class="h-5 w-5 rotate-45 text-primary-600 dark:text-primary-500" />
-    <div class="ps-4 text-sm font-normal">Message sent successfully.</div>
-  </Toast>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/simple-toast.md'] as string} />
 
 <H2>Undo button</H2>
 <CodeWrapper class="flex flex-col items-center">
@@ -138,7 +163,7 @@
 </CodeWrapper>
 <HighlightCompo code={modules['./md/undo-button.md'] as string} />
 
-<H2>Advanced examples</H2>
+<H2>Other examples</H2>
 <H3>Toast message</H3>
 <CodeWrapper class="flex h-[204px] flex-col items-center">
   <Toast align={false} iconClass="w-10 h-10 rounded-full">
@@ -186,14 +211,3 @@
   </Toast>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/interactive-toast.md'] as string} />
-
-<H2>Positioning</H2>
-<CodeWrapper>
-  <div class="relative h-56">
-    <Toast dismissable={false} position="top-left" baseClass="text-white dark:text-white bg-red-600 dark:bg-red-500 w-20 h-20 sm:w-48 sm:h-16">Top-left</Toast>
-    <Toast dismissable={false} position="top-right" baseClass="text-white dark:text-white bg-green-600 dark:bg-green-500 w-20 h-20 sm:w-48 sm:h-16">Top-right</Toast>
-    <Toast dismissable={false} position="bottom-left" baseClass="text-white dark:text-white bg-blue-600 dark:bg-blue-500 w-20 h-20 sm:w-48 sm:h-16">Bottom-left</Toast>
-    <Toast dismissable={false} position="bottom-right" baseClass="text-white dark:text-white bg-purple-600 dark:bg-purple-500 w-20 h-20 sm:w-48 sm:h-16">Bottom-right</Toast>
-  </div>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/positioning.md'] as string} />
