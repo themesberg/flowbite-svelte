@@ -76,7 +76,7 @@
 
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
-<H2>Video player</H2>
+<H2>Interactive Video Player Builder</H2>
 <CodeWrapper>
   <div class="h-[520px]">
   <Video src="/videos/flowbite.mp4" {controls} {autoplay} {muted} trackSrc="flowbite.mp4" class={currentClass.class}/>
