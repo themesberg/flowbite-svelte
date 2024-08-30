@@ -62,6 +62,7 @@
   };
   // | 'gray'| 'red'| 'yellow'| 'green'| 'indigo'| 'purple'| 'pink'| 'blue'| 'primary'| 'none';
 
+  let iconClass: string;
   $: iconClass = twMerge(
     'inline-flex items-center justify-center shrink-0 rounded-lg',
     colors[color],
