@@ -54,14 +54,12 @@
         <Darkmode />
       </div>
     {/snippet}
-
     <NavUl>
       <NavLi href="/">Home</NavLi>
-      <NavLi href="https://flowbite-svelte.com/">Flowbite Svelte</NavLi>
+      <NavLi href="/pages/coverage">Coverage</NavLi>
       <NavLi href="/pages/about">About</NavLi>
     </NavUl>
   </Navbar>
-  
 </header>
 
 <Drawer class="w-72" drawerStatus={navDrawerStatus} closeDrawer={closeNavDrawer} params={transitionParams}>
