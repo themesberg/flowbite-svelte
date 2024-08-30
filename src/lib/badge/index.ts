@@ -20,6 +20,7 @@ interface BadgeProps extends HTMLAttributes<HTMLDivElement> {
   transition?: TransitionFunc;
   params?: ParamsType;
   onclick?: () => void;
+  aClass?: string;
 }
 
 export { Badge, badge, type BadgeProps, type badgeColor };

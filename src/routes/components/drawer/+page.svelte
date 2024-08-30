@@ -8,9 +8,7 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import H3 from '../../utils/H3.svelte';
-  import { copyToClipboard } from '../../utils/helpers';
-  import GeneratedCode from '../../utils/GeneratedCode.svelte';
+  // import H3 from '../../utils/H3.svelte';
 
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
@@ -118,8 +116,13 @@
       if (currentPlacement !== placements[0]) {
         props.push(` placement="${currentPlacement.placement}"`);
       }
+
+      const propsString = props.length > 0 
+      ? props.map(prop => `\n  ${prop}`).join('') + '\n'
+      : ' ';
+
       return `<Button onclick={drawerA.toggle}>Drawer</Button>
-<Drawer drawerStatus={drawerStatusA} closeDrawer={closeDrawerA}${props.join('')}>
+<Drawer drawerStatus={drawerStatusA} closeDrawer={closeDrawerA}${propsString}>
   <Drawerhead onclick={closeDrawerA}>
     Head content
   </Drawerhead>
@@ -127,31 +130,12 @@
 </Drawer>`;
     })()
   );
-  let copiedStatus = $state(false);
-
-  function handleCopyClick(codeBlock: string) {
-  copyToClipboard(codeBlock)
-    .then(() => {
-      copiedStatus = true;
-      setTimeout(() => {
-        copiedStatus = false;
-      }, 1000);
-    })
-    .catch((err) => {
-      console.error('Error in copying:', err);
-      // Handle the error as needed
-    });
-  }
 </script>
 
 <H1>Drawer</H1>
 
 <H2>Setup</H2>
-<GeneratedCode 
-  componentStatus={copiedStatus}
-  generatedCode={modules['./md/setup.md'] as string}
-  handleCopyClick={()=>handleCopyClick(modules['./md/setup.md'] as string)}
-/>
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default drawer</H2>
 <CodeWrapper>
@@ -174,9 +158,9 @@
       <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
     </div>
   </Drawer>
+  <HighlightCompo code={modules['./md/defaultdrawer.md'] as string} />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/defaultdrawer.md'] as string} />
 
 <H2>Interactive Drawer Builder</H2>
 <CodeWrapper>
@@ -212,11 +196,7 @@
   </div>
   <Button color="primary" onclick={changeBackdropStatus}>{backdropStatus ? 'Hide backdrop' : 'Show backdrop'}</Button>
     <Button color="purple" onclick={changeOutsideclickStatus}>{outsideclickStatus ? 'Disable outsideclick' : 'Enable outsideclick'}</Button>
-  <GeneratedCode 
-    componentStatus={copiedStatus}
-    {generatedCode}
-    handleCopyClick={()=>handleCopyClick(generatedCode)}
-  />
+  <HighlightCompo code={generatedCode} />
 </CodeWrapper>
 
 <H2>Offset</H2>
@@ -238,17 +218,14 @@
   <div class="flex justify-center gap-2">
     <Button color="green" onclick={changeClass}>{offsetClass ? 'Remove offset' : 'Add offset'}</Button>
   </div>
+  <HighlightCompo codeLang="ts" code={modules['./md/offset-new.md'] as string} />
 </CodeWrapper>
 
-<HighlightCompo codeLang="ts" code={modules['./md/offset-new.md'] as string} />
-
 <H2>Drawer navigation</H2>
-
 <CodeWrapper>
   <div class="text-center">
     <Button onclick={drawerB.toggle}>Show navigation</Button>
   </div>
-
   <Drawer drawerStatus={drawerStatusB} closeDrawer={closeDrawerB}>
     <Drawerhead onclick={closeDrawerB}>
       <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
@@ -304,6 +281,6 @@
       </SidebarGroup>
     </Sidebar>
   </Drawer>
+  <HighlightCompo code={modules['./md/navigation.md'] as string} />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/navigation.md'] as string} />

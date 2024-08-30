@@ -5,7 +5,6 @@
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
   import { copyToClipboard } from '../../utils/helpers';
-  import GeneratedCode from '../../utils/GeneratedCode.svelte';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -37,11 +36,16 @@
       if ( spinnerSize !== '8' ) props.push(` size="${spinnerSize}"`);
       if ( spinnerColor !== 'primary' ) props.push(` color="${spinnerColor}"`);
       if ( spinnerClass !== '' ) props.push(` class="${spinnerClass}"`);
+      
+      const propsString = props.length > 0 
+      ? props.map(prop => `\n  ${prop}`).join('') + '\n'
+      : ' ';
+      
       // alignment needs div wrapper
-      if ( selectedAlignment !== 'left' ) {
-        return `<div class="${currentSpinner.class}"><Spinner${props.join('')} /></div>`;
+      if (selectedAlignment !== 'left') {
+        return `<div class="${currentSpinner.class}">\n  <Spinner${propsString}/>\n</div>`;
       } else {
-        return `<Spinner${props.join('')} />`;
+        return `<Spinner${propsString}/>`;
       }
     })()
   );
@@ -65,19 +69,7 @@
 <H1>Spinner</H1>
 
 <H2>Setup</H2>
-<GeneratedCode 
-  componentStatus={copiedStatus}
-  generatedCode={modules['./md/setup.md'] as string}
-  handleCopyClick={()=>handleCopyClick(modules['./md/setup.md'] as string)}
-/>
-
-<H2>Default spinner</H2>
-
-<CodeWrapper>
-  <Spinner />
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/defaultspinner.md'] as string} />
+<HighlightCompo code={modules['./md/setup.md'] as string}/>
 
 <H2>Interactive Spinner Builder</H2>
 
@@ -106,11 +98,7 @@
     {/each}
   </div>
   <Button class="w-48" onclick={changeClass}>{spinnerClass ? 'Remove class' : 'Add class'}</Button>
-  <GeneratedCode 
-    componentStatus={copiedStatus}
-    {generatedCode}
-    handleCopyClick={()=>handleCopyClick(generatedCode)}
-  />
+  <HighlightCompo code={generatedCode} />
 </CodeWrapper>
 
 <H2>Button</H2>

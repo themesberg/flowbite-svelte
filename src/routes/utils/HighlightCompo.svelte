@@ -1,22 +1,56 @@
 <script lang="ts">
   import { HighlightSvelte, Highlight } from 'svelte-rune-highlight';
-  // check colorscheme at https://highlightjs.org/demo
   import githubDark from 'svelte-rune-highlight/styles/github-dark';
   import markdown from 'svelte-rune-highlight/languages/markdown';
-  // import classicdark from 'svelte-highlight/styles/classic-dark';
-  let { code, codeLang }: { code: string; codeLang?: string } = $props();
+  import { Button, Badge } from '$lib';
+  import { copyToClipboard } from './helpers';
+  import { highlightcompo } from './theme'
+ 
+  interface Props {
+    // componentStatus: boolean;
+    code: string;
+    badgeClass?: string;
+    buttonClass?: string;
+    codeLang?: string;
+    class?: string;
+  }
+  
+  let { code, codeLang, badgeClass, buttonClass, class: className }: Props = $props()
+  const {base, badge, button} = $derived(highlightcompo())
+  let copiedStatus = $state(false);
+
+  function handleCopyClick() {
+  copyToClipboard(code)
+    .then(() => {
+      copiedStatus = true;
+      setTimeout(() => {
+        copiedStatus = false;
+      }, 1000);
+    })
+    .catch((err) => {
+      console.error('Error in copying:', err);
+      // Handle the error as needed
+    });
+  }
+  
 </script>
 
 <svelte:head>
   {@html githubDark}
 </svelte:head>
 
-<div class="mx-auto my-8 max-w-4xl rounded-md border border-gray-200 bg-gray-50 p-0.5 dark:border-gray-600 dark:bg-gray-700">
-  {#if codeLang === 'md'}
-    <Highlight language={markdown} {code} />
-  {:else if code}
-    <HighlightSvelte {code} />
-  {:else}
-    no code is provided
-  {/if}
+<div class={base({ className })}>
+  <div class="relative">
+    {#if copiedStatus}
+      <Badge class={badge({ class: badgeClass})} color="green">Copied to clipboard</Badge>
+    {/if}
+    {#if codeLang === 'md'}
+      <Highlight language={markdown} {code} />
+    {:else if code}
+      <HighlightSvelte {code} />
+    {:else}
+      no code is provided
+    {/if}
+    <Button class={button({ class: buttonClass})} onclick={handleCopyClick}>Copy</Button>
+  </div>
 </div>

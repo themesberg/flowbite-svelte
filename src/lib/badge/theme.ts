@@ -1,30 +1,33 @@
 import { tv } from 'tailwind-variants';
 
 const badge = tv({
-  base: 'font-medium inline-flex items-center justify-center px-2.5 py-0.5',
+  slots: {
+    hrefClass: 'flex align-middle',
+    base: 'font-medium inline-flex items-center justify-center px-2.5 py-0.5',
+  },
   variants: {
     color: {
       // primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
-      primary: 'bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-300',
-      secondary: 'bg-secondary-100 text-secondary-800 dark:bg-secondary-900 dark:text-secondary-300',
-      gray: 'bg-gray-100 text-gray-800 group-hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:group-hover:bg-gray-600',
-      red: 'bg-red-100 text-red-800 group-hover:bg-red-200 dark:bg-red-200 dark:text-red-900 dark:group-hover:bg-red-300',
-      orange: 'bg-orange-100 text-orange-800 group-hover:bg-orange-200 dark:bg-orange-200 dark:text-orange-900 dark:group-hover:bg-orange-300',
-      amber: 'bg-amber-100 text-amber-800 group-hover:bg-amber-200 dark:bg-amber-200 dark:text-amber-900 dark:group-hover:bg-amber-300',
-      yellow: 'bg-yellow-100 text-yellow-800 group-hover:bg-yellow-200 dark:bg-yellow-200 dark:text-yellow-900 dark:group-hover:bg-yellow-300',
-      lime: 'bg-lime-100 text-lime-800 group-hover:bg-lime-200 dark:bg-lime-200 dark:text-lime-900 dark:group-hover:bg-lime-300',
-      green: 'bg-green-100 text-green-800 group-hover:bg-green-200 dark:bg-green-200 dark:text-green-900 dark:group-hover:bg-green-300',
-      emerald: 'bg-emerald-100 text-emerald-800 group-hover:bg-emerald-200 dark:bg-emerald-200 dark:text-emerald-900 dark:group-hover:bg-emerald-300',
-      teal: 'bg-teal-100 text-teal-800 group-hover:bg-teal-200 dark:bg-teal-200 dark:text-teal-900 dark:group-hover:bg-teal-300',
-      cyan: 'bg-cyan-100 text-cyan-800 group-hover:bg-cyan-200 dark:bg-cyan-200 dark:text-cyan-900 dark:group-hover:bg-cyan-300',
-      sky: 'bg-sky-100 text-sky-800 group-hover:bg-sky-200 dark:bg-sky-200 dark:text-sky-900 dark:group-hover:bg-sky-300',
-      blue: 'bg-blue-100 text-blue-800 group-hover:bg-blue-200 dark:bg-blue-200 dark:text-blue-900 dark:group-hover:bg-blue-300',
-      indigo: 'bg-indigo-100 text-indigo-800 group-hover:bg-indigo-200 dark:bg-indigo-200 dark:text-indigo-900 dark:group-hover:bg-indigo-300',
-      violet: 'bg-violet-100 text-violet-800 group-hover:bg-violet-200 dark:bg-violet-200 dark:text-violet-900 dark:group-hover:bg-violet-300',
-      fuchsia: 'bg-fuchsia-100 text-fuchsia-800 group-hover:bg-fuchsia-200 dark:bg-fuchsia-200 dark:text-fuchsia-900 dark:group-hover:bg-fuchsia-300',
-      purple: 'bg-purple-100 text-purple-800 group-hover:bg-purple-200 dark:bg-purple-200 dark:text-purple-900 dark:group-hover:bg-purple-300',
-      pink: 'bg-pink-100 text-pink-800 group-hover:bg-pink-200 dark:bg-pink-200 dark:text-pink-900 dark:group-hover:bg-pink-300',
-      rose: 'bg-rose-100 text-rose-800 group-hover:bg-rose-200 dark:bg-rose-200 dark:text-rose-900 dark:group-hover:bg-rose-300'
+      primary: {base: 'bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-300'},
+      secondary: {base: 'bg-secondary-100 text-secondary-800 dark:bg-secondary-900 dark:text-secondary-300'},
+      gray: {base: 'bg-gray-100 text-gray-800 group-hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:group-hover:bg-gray-600' },
+      red: {base: 'bg-red-100 text-red-800 group-hover:bg-red-200 dark:bg-red-200 dark:text-red-900 dark:group-hover:bg-red-300' },
+      orange: {base: 'bg-orange-100 text-orange-800 group-hover:bg-orange-200 dark:bg-orange-200 dark:text-orange-900 dark:group-hover:bg-orange-300' },
+      amber: {base: 'bg-amber-100 text-amber-800 group-hover:bg-amber-200 dark:bg-amber-200 dark:text-amber-900 dark:group-hover:bg-amber-300' },
+      yellow: {base: 'bg-yellow-100 text-yellow-800 group-hover:bg-yellow-200 dark:bg-yellow-200 dark:text-yellow-900 dark:group-hover:bg-yellow-300' },
+      lime: {base: 'bg-lime-100 text-lime-800 group-hover:bg-lime-200 dark:bg-lime-200 dark:text-lime-900 dark:group-hover:bg-lime-300' },
+      green: {base: 'bg-green-100 text-green-800 group-hover:bg-green-200 dark:bg-green-200 dark:text-green-900 dark:group-hover:bg-green-300' },
+      emerald: {base: 'bg-emerald-100 text-emerald-800 group-hover:bg-emerald-200 dark:bg-emerald-200 dark:text-emerald-900 dark:group-hover:bg-emerald-300' },
+      teal: {base: 'bg-teal-100 text-teal-800 group-hover:bg-teal-200 dark:bg-teal-200 dark:text-teal-900 dark:group-hover:bg-teal-300' },
+      cyan: {base: 'bg-cyan-100 text-cyan-800 group-hover:bg-cyan-200 dark:bg-cyan-200 dark:text-cyan-900 dark:group-hover:bg-cyan-300' },
+      sky: {base: 'bg-sky-100 text-sky-800 group-hover:bg-sky-200 dark:bg-sky-200 dark:text-sky-900 dark:group-hover:bg-sky-300' },
+      blue: {base: 'bg-blue-100 text-blue-800 group-hover:bg-blue-200 dark:bg-blue-200 dark:text-blue-900 dark:group-hover:bg-blue-300' },
+      indigo: {base: 'bg-indigo-100 text-indigo-800 group-hover:bg-indigo-200 dark:bg-indigo-200 dark:text-indigo-900 dark:group-hover:bg-indigo-300' },
+      violet: {base: 'bg-violet-100 text-violet-800 group-hover:bg-violet-200 dark:bg-violet-200 dark:text-violet-900 dark:group-hover:bg-violet-300' },
+      fuchsia: {base: 'bg-fuchsia-100 text-fuchsia-800 group-hover:bg-fuchsia-200 dark:bg-fuchsia-200 dark:text-fuchsia-900 dark:group-hover:bg-fuchsia-300' },
+      purple:{base:  'bg-purple-100 text-purple-800 group-hover:bg-purple-200 dark:bg-purple-200 dark:text-purple-900 dark:group-hover:bg-purple-300' },
+      pink: {base: 'bg-pink-100 text-pink-800 group-hover:bg-pink-200 dark:bg-pink-200 dark:text-pink-900 dark:group-hover:bg-pink-300' },
+        rose: { base: 'bg-rose-100 text-rose-800 group-hover:bg-rose-200 dark:bg-rose-200 dark:text-rose-900 dark:group-hover:bg-rose-300' }
     },
     size: {
       small: 'text-xs',

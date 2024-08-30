@@ -7,8 +7,7 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import { copyToClipboard } from '../../utils/helpers';
-  import GeneratedCode from '../../utils/GeneratedCode.svelte';
+
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -31,35 +30,15 @@
     item2 = false;
   };
   let nestingOpenStatus: boolean = $state(true);
-  // const open_all = () => items.forEach((_, i) => (items[i] = true));
-  // const close_all = () => items.forEach((_, i) => (items[i] = false));
-  let copiedStatus = $state(false);
-
-  function handleCopyClick(codeBlock: string) {
-  copyToClipboard(codeBlock)
-    .then(() => {
-      copiedStatus = true;
-      setTimeout(() => {
-        copiedStatus = false;
-      }, 1000);
-    })
-    .catch((err) => {
-      console.error('Error in copying:', err);
-      // Handle the error as needed
-    });
-  }
 </script>
 
 <H1>Accordion</H1>
 <H2>Setup</H2>
-<GeneratedCode 
-  componentStatus={copiedStatus}
-  generatedCode={modules['./md/setup.md'] as string}
-  handleCopyClick={()=>handleCopyClick(modules['./md/setup.md'] as string)}
-/>
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default accordion</H2>
-<CodeWrapper class="h-[340px]">
+<CodeWrapper>
+  <div class="h-[300px]">
   <Accordion>
     <AccordionItem bind:open={alwaysOpenStatus}>
       {#snippet header()}
@@ -74,12 +53,14 @@
       <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     </AccordionItem>
   </Accordion>
+  </div>
+  <HighlightCompo code={modules['./md/default-accordion.md'] as string} />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/default-accordion.md'] as string} />
 
 <H2>Open item</H2>
-<CodeWrapper class="h-[340px]">
+<CodeWrapper>
+  <div class="h-[300px]">
   <Accordion>
     <AccordionItem bind:open={alwaysOpenStatus}>
       {#snippet header()}
@@ -94,11 +75,14 @@
       <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     </AccordionItem>
   </Accordion>
+  </div>
+  <HighlightCompo code={modules['./md/open-item.md'] as string} />
 </CodeWrapper>
-<HighlightCompo code={modules['./md/open-item.md'] as string} />
+
 
 <H2>Color option</H2>
-<CodeWrapper class="h-[340px]">
+<CodeWrapper>
+  <div  class="h-[300px]">
   <Accordion activeClass="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800" inactiveClass="text-gray-500 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800">
     <AccordionItem class="">
       {#snippet header()}
@@ -113,12 +97,13 @@
       <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     </AccordionItem>
   </Accordion>
+  </div>
+  <HighlightCompo code={modules['./md/color-option.md'] as string} />
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/color-option.md'] as string} />
 
 <H2>Flush accordion</H2>
 <CodeWrapper>
+  <div class="h-[300px]">
   <Accordion flush>
     <AccordionItem>
       {#snippet header()}
@@ -133,12 +118,14 @@
       <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     </AccordionItem>
   </Accordion>
+  </div>
+  <HighlightCompo code={modules['./md/flush-accordion.md'] as string} />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/flush-accordion.md'] as string} />
 
 <H2>Arrow style</H2>
 <CodeWrapper>
+  <div class="h-[300px]">
   <Accordion>
     <AccordionItem>
       {#snippet header()}
@@ -165,12 +152,13 @@
       <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     </AccordionItem>
   </Accordion>
+  </div>
+  <HighlightCompo code={modules['./md/arrow-style.md'] as string} />
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/arrow-style.md'] as string} />
 
 <H2>Icon Accordion</H2>
 <CodeWrapper>
+  <div class="h-[300px]">
   <Accordion>
     <AccordionItem>
       {#snippet header()}
@@ -180,10 +168,7 @@
         </span>
       {/snippet}
       <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo...</p>
-      <p class="text-gray-500 dark:text-gray-400">
-        Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 hover:underline dark:text-blue-500">get started</a>
-        and start websites even faster with components on top of Tailwind CSS.
-      </p>
+     
     </AccordionItem>
     <AccordionItem>
       {#snippet header()}
@@ -195,32 +180,29 @@
       <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sintexplicabo...</p>
     </AccordionItem>
   </Accordion>
+  </div>
+  <HighlightCompo code={modules['./md/icon-accordion.md'] as string} />
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/icon-accordion.md'] as string} />
 
 <H2>Multiple mode</H2>
 <CodeWrapper>
   <Button onclick={open_all}>Open all</Button>
   <Button onclick={close_all}>Close all</Button>
+  <div class="h-[400px]">
   <Accordion class="mt-4">
     <AccordionItem bind:open={item0}>
       {#snippet header()}
         My Header 1
       {/snippet}
       <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-      <p class="text-gray-500 dark:text-gray-400">
-        Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 hover:underline dark:text-blue-500">get started</a>
-        and start developing websites even faster with components on top of Tailwind CSS.
-      </p>
+      
     </AccordionItem>
     <AccordionItem bind:open={item1}>
       {#snippet header()}
         My Header 2
       {/snippet}
       <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-      <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-      <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
+      
     </AccordionItem>
     <AccordionItem bind:open={item2}>
       {#snippet header()}
@@ -229,11 +211,13 @@
       <p>Something more</p>
     </AccordionItem>
   </Accordion>
+  </div>
+  <HighlightCompo code={modules['./md/multiple-mode.md'] as string} />
 </CodeWrapper>
-<HighlightCompo code={modules['./md/multiple-mode.md'] as string} />
 
 <H2>Custom transitions</H2>
-<CodeWrapper class="h-[560px]">
+<CodeWrapper>
+  <div class="h-[420px]">
   <Accordion>
     <AccordionItem params={{ duration: 2000 }}>
       {#snippet header()}
@@ -254,11 +238,13 @@
       <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     </AccordionItem>
   </Accordion>
+  </div>
+  <HighlightCompo code={modules['./md/custom-transitions.md'] as string} />
 </CodeWrapper>
-<HighlightCompo code={modules['./md/custom-transitions.md'] as string} />
 
 <H2>Nesting accordions</H2>
 <CodeWrapper>
+  <div class="h-[600px]">
   <Accordion>
     <AccordionItem bind:open={nestingOpenStatus}>
       {#snippet header()}
@@ -269,19 +255,13 @@
           {#snippet header()}
             My Header 1
           {/snippet}
-          <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-          <p class="text-gray-500 dark:text-gray-400">
-            Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 hover:underline dark:text-blue-500">get started</a>
-            and start developing websites even faster with components on top of Tailwind CSS.
-          </p>
+          <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet ...</p>
         </AccordionItem>
         <AccordionItem>
           {#snippet header()}
             My Header 2
           {/snippet}
-          <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-          <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-          <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
+          <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet...</p>
           <ul class="list-disc ps-5 text-gray-500 dark:text-gray-400">
             <li>
               <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 hover:underline dark:text-blue-500">Lorem ipsum</a>
@@ -297,18 +277,9 @@
       {#snippet header()}
         My Header 2
       {/snippet}
-      <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-      <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-      <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-      <ul class="list-disc ps-5 text-gray-500 dark:text-gray-400">
-        <li>
-          <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 hover:underline dark:text-blue-500">Lorem ipsum</a>
-        </li>
-        <li>
-          <a href="https://tailwindui.com/" rel="noreferrer" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Tailwind UI</a>
-        </li>
-      </ul>
+      <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur ...</p>
     </AccordionItem>
   </Accordion>
+  </div>
+  <HighlightCompo code={modules['./md/nesting-accordions.md'] as string} />
 </CodeWrapper>
-<HighlightCompo code={modules['./md/nesting-accordions.md'] as string} />

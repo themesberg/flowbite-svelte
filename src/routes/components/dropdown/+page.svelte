@@ -9,8 +9,6 @@
   import { blur, fly, slide, scale } from 'svelte/transition';
   import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
   import { sineIn, linear } from 'svelte/easing';
-  import { copyToClipboard } from '../../utils/helpers';
-  import GeneratedCode from '../../utils/GeneratedCode.svelte';
 
   let transitionParams = {
     y: 0,
@@ -208,12 +206,17 @@
         .join(',');
         props.push(` params={{${paramsString}}}`);
       }
+
+      const propsString = props.length > 0 
+      ? props.map(prop => `\n  ${prop}`).join('') + '\n'
+      : ' ';
+
       return `<div class="flex items-start justify-center">
   <Button onclick={dropdownA.toggle}>Dropdown
     <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
   </Button>
   <div class="relative h-96">
-    <Dropdown${props.join('')} dropdownStatus={dropdownAStatus} closeDropdown={closeDropdownA} class="absolute -left-[150px] top-[40px]">${headerContent}
+    <Dropdown${propsString} dropdownStatus={dropdownAStatus} closeDropdown={closeDropdownA} class="absolute -left-[150px] top-[40px]">${headerContent}
       <DropdownUl>
         <DropdownLi href="/">Dashboard</DropdownLi>${dividerContent}
         <DropdownLi href="/components/dropdown">Dropdown</DropdownLi>
@@ -223,32 +226,13 @@
 </div>`;
     })()
   );
-  let copiedStatus = $state(false);
-
-  function handleCopyClick(codeBlock: string) {
-  copyToClipboard(codeBlock)
-    .then(() => {
-      copiedStatus = true;
-      setTimeout(() => {
-        copiedStatus = false;
-      }, 1000);
-    })
-    .catch((err) => {
-      console.error('Error in copying:', err);
-      // Handle the error as needed
-    });
-  }
 </script>
 
 <H1>Dropdown</H1>
 
 <H2>Setup</H2>
 
-<GeneratedCode 
-  componentStatus={copiedStatus}
-  generatedCode={modules['./md/setup.md'] as string}
-  handleCopyClick={()=>handleCopyClick(modules['./md/setup.md'] as string)}
-/>
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default dropdown</H2>
 <CodeWrapper class="flex h-64 items-start justify-center">
@@ -322,17 +306,12 @@
     {/each}
   </div>
   <h3 class="text-xl font-semibold my-4">Generated Code:</h3>
-  <GeneratedCode 
-    componentStatus={copiedStatus}
-    {generatedCode}
-    handleCopyClick={()=>handleCopyClick(generatedCode)}
-  />
+  <HighlightCompo code={generatedCode} />
 </CodeWrapper>
-
 
 <H2>Placement</H2>
 <p>Change `Dropdown` class.</p>
-<CodeWrapper class="">
+<CodeWrapper>
   <div id="placements" class="my-8 flex h-[450px] flex-col items-center justify-center gap-2">
     <Button onclick={dropdownTop.toggle}>Dropdown top<ChevronUpOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
     <div class="relative">
@@ -381,13 +360,13 @@
       </Dropdown>
     </div>
   </div>
+  <HighlightCompo code={modules['./md/placement.md'] as string} />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/placement.md'] as string} />
 
 <H2>Active link</H2>
-
-<CodeWrapper class="flex h-64 items-start justify-center">
+<CodeWrapper>
+  <div class="flex h-64 items-start justify-center">
   <Button onclick={dropdownB.toggle}>
     Dropdown
     <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
@@ -402,12 +381,13 @@
       </DropdownUl>
     </Dropdown>
   </div>
+  </div>
+  <HighlightCompo code={modules['./md/active-link.md'] as string} />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/active-link.md'] as string} />
-
 <H2>Multi-level dropdown</H2>
-<CodeWrapper class="flex h-80 items-start justify-center">
+<CodeWrapper>
+  <div class="flex h-72 items-start justify-center">
   <Button onclick={dropdownMultiLevel.toggle}>
     Dropdown
     <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
@@ -432,13 +412,14 @@
       </DropdownUl>
     </Dropdown>
   </div>
+  </div>
+  <HighlightCompo code={modules['./md/multi-level-dropdown.md'] as string} />
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/multi-level-dropdown.md'] as string} />
 
 <H2>Dropdown with checkbox</H2>
 
-<CodeWrapper class="flex h-96 items-start justify-center">
+<CodeWrapper>
+  <div class="flex h-80 items-start justify-center">
   <Button onclick={dropdownCheckbox.toggle}>Dropdown checkbox<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <div class="relative">
     <Dropdown dropdownStatus={dropdownCheckboxStatus} closeDropdown={closeDropdownCheckbox} params={transitionParams} class="absolute -left-[195px] top-[45px]">
@@ -464,13 +445,14 @@
       </DropdownUl>
     </Dropdown>
   </div>
+  </div>
+  <HighlightCompo code={modules['./md/dropdown-checkbox.md'] as string} />
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/dropdown-checkbox.md'] as string} />
 
 <H2>Helper text</H2>
 
-<CodeWrapper class="relative flex h-96 items-start justify-center">
+<CodeWrapper>
+  <div class="relative flex h-80 items-start justify-center">
   <Button onclick={dropdownHelper.toggle}>Dropdown helper text<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <div class="relative">
     <Dropdown dropdownStatus={dropdownHelperStatus} closeDropdown={closeDropdownHelper} params={transitionParams} class="absolute -left-[240px] top-[45px] w-64 overflow-y-auto p-2 pb-3 text-sm">
@@ -490,12 +472,13 @@
       </DropdownUl>
     </Dropdown>
   </div>
+  </div>
+  <HighlightCompo code={modules['./md/dropdown-helper-text.md'] as string} />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/dropdown-helper-text.md'] as string} />
-
 <H2>Dropdown with radio</H2>
-<CodeWrapper class="relative flex h-96 items-start justify-center">
+<CodeWrapper>
+  <div class="relative flex h-80 items-start justify-center">
   <Button onclick={dropdownRadio.toggle}>Dropdown radio<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <div class="relative">
     <Dropdown dropdownStatus={dropdownRadioStatus} closeDropdown={closeDropdownRadio} params={transitionParams} class="absolute -left-[185px] top-[45px] w-48 overflow-y-auto pb-3 text-sm">
@@ -522,12 +505,13 @@
       </DropdownFooter>
     </Dropdown>
   </div>
+  </div>
+  <HighlightCompo code={modules['./md/dropdown-radio.md'] as string} />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/dropdown-radio.md'] as string} />
-
 <H2>Dropdown with toggle switch</H2>
-<CodeWrapper class="relative flex h-96 items-start justify-center">
+<CodeWrapper>
+  <div class="relative flex h-80 items-start justify-center">
   <Button onclick={dropdownToggle.toggle}>Dropdown radio<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <div class="relative">
     <Dropdown dropdownStatus={dropdownToggleStatus} closeDropdown={closeDropdownToggle} params={transitionParams} class="absolute -left-[185px] top-[45px] w-48 overflow-y-auto pb-3 text-sm">
@@ -554,9 +538,11 @@
       </DropdownFooter>
     </Dropdown>
   </div>
+  </div>
+  <HighlightCompo code={modules['./md/dropdown-toggle-switch.md'] as string} />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/dropdown-toggle-switch.md'] as string} />
+
 
 <H2>Dropdown navbar</H2>
 <CodeWrapper class="h-96">

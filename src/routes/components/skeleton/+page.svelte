@@ -4,8 +4,7 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import { copyToClipboard } from '../../utils/helpers';
-  import GeneratedCode from '../../utils/GeneratedCode.svelte';
+  
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -59,32 +58,11 @@
   let generatedCodeWidget = $derived(generatePlaceholderCode('WidgetPlaceholder', 'md', widgetPlaceholderClass));
   let generatedCodeList = $derived(generatePlaceholderCode('ListPlaceholder', listPlaceholderSize, listPlaceholderClass));
   let generatedCodeTestimonial = $derived(generatePlaceholderCode('TestimonialPlaceholder', 'md', TestimonialPlaceholderClass));
-
-  
-  let copiedStatus = $state(false);
-
-  function handleCopyClick(codeBlock: string) {
-  copyToClipboard(codeBlock)
-    .then(() => {
-      copiedStatus = true;
-      setTimeout(() => {
-        copiedStatus = false;
-      }, 1000);
-    })
-    .catch((err) => {
-      console.error('Error in copying:', err);
-      // Handle the error as needed
-    });
-  }
 </script>
 
 <H1>Skeleton</H1>
 <H2>Setup</H2>
-<GeneratedCode 
-  componentStatus={copiedStatus}
-  generatedCode={modules['./md/setup.md'] as string}
-  handleCopyClick={()=>handleCopyClick(modules['./md/setup.md'] as string)}
-/>
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default skeleton</H2>
 <CodeWrapper>
@@ -98,11 +76,7 @@
     {/each}
   </div>
   <Button class="w-40 mt-4" onclick={()=> skeletonClass === '' ? skeletonClass = 'ml-4' : skeletonClass = ''}>{skeletonClass ? 'Remove class' : 'Add class'}</Button>
-  <GeneratedCode 
-    componentStatus={copiedStatus}
-    generatedCode={generatedCodeSkeleton}
-    handleCopyClick={()=>handleCopyClick(generatedCodeSkeleton)}
-  />
+  <HighlightCompo code={generatedCodeSkeleton}/>
 </CodeWrapper>
 
 <H2>Image placeholder</H2>
@@ -123,11 +97,7 @@
     {/each}
   </div>
   <Button class="w-40 mt-4" onclick={()=> imagePlaceholderClass === '' ? imagePlaceholderClass = 'ml-4' : imagePlaceholderClass = ''}>{imagePlaceholderClass ? 'Remove class' : 'Add class'}</Button>
-  <GeneratedCode 
-    componentStatus={copiedStatus}
-    generatedCode={generatedCodeImage}
-    handleCopyClick={()=>handleCopyClick(generatedCodeImage)}
-  />
+  <HighlightCompo code={generatedCodeImage}/>
 </CodeWrapper>
 
 <H2>Video placeholder</H2>
@@ -143,11 +113,7 @@
     {/each}
   </div>
   <Button class="w-40 mt-4" onclick={()=> videoPlaceholderClass === '' ? videoPlaceholderClass = 'ml-4' : videoPlaceholderClass = ''}>{videoPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
-  <GeneratedCode 
-    componentStatus={copiedStatus}
-    generatedCode={generatedCodeVideo}
-    handleCopyClick={()=>handleCopyClick(generatedCodeVideo)}
-  />
+  <HighlightCompo code={generatedCodeVideo}/>
 </CodeWrapper>
 
 <H2>Text placeholder</H2>
@@ -161,11 +127,7 @@
     {/each}
   </div>
   <Button class="w-40 mt-4" onclick={()=> textPlaceholderClass === '' ? textPlaceholderClass = 'ml-4' : textPlaceholderClass = ''}>{textPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
-  <GeneratedCode 
-    componentStatus={copiedStatus}
-    generatedCode={generatedCodeText}
-    handleCopyClick={()=>handleCopyClick(generatedCodeText)}
-  />
+  <HighlightCompo code={generatedCodeText} />
 </CodeWrapper>
 
 <H2>Card placeholder</H2>
@@ -179,11 +141,7 @@
     {/each}
   </div>
   <Button class="w-40 mt-4" onclick={()=> cardPlaceholderClass === '' ? cardPlaceholderClass = 'ml-4' : cardPlaceholderClass = ''}>{cardPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
-  <GeneratedCode 
-    componentStatus={copiedStatus}
-    generatedCode={generatedCodeCard}
-    handleCopyClick={()=>handleCopyClick(generatedCodeCard)}
-  />
+  <HighlightCompo code={generatedCodeCard} />
 </CodeWrapper>
 
 <H2>Widget placeholder</H2>
@@ -191,11 +149,7 @@
 <CodeWrapper>
   <WidgetPlaceholder class={widgetPlaceholderClass}/>
   <Button class="w-40 mt-4" onclick={()=> widgetPlaceholderClass === '' ? widgetPlaceholderClass = 'ml-4' : widgetPlaceholderClass = ''}>{widgetPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
-  <GeneratedCode 
-    componentStatus={copiedStatus}
-    generatedCode={generatedCodeWidget}
-    handleCopyClick={()=>handleCopyClick(generatedCodeWidget)}
-  />
+  <HighlightCompo code={generatedCodeWidget} />
 </CodeWrapper>
 
 <H2>List placeholder</H2>
@@ -223,21 +177,13 @@
     {/each}
   </div>
   <Button class="w-40 mt-4" onclick={()=> listPlaceholderClass === '' ? listPlaceholderClass = 'ml-4' : listPlaceholderClass = ''}>{listPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
-  <GeneratedCode 
-    componentStatus={copiedStatus}
-    generatedCode={generatedCodeList}
-    handleCopyClick={()=>handleCopyClick(generatedCodeList)}
-  />
+  <HighlightCompo code={generatedCodeList}/>
 </CodeWrapper>
 
 <H2>Testimonial placeholder</H2>
 
-<CodeWrapper class="flex flex-col">
+<CodeWrapper>
   <TestimonialPlaceholder class={TestimonialPlaceholderClass}/>
   <Button class="w-40 mt-4" onclick={()=> TestimonialPlaceholderClass === '' ? TestimonialPlaceholderClass = 'mx-auto w-[200px] sm:w-[400px]' : TestimonialPlaceholderClass = ''}>{TestimonialPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
-  <GeneratedCode 
-    componentStatus={copiedStatus}
-    generatedCode={generatedCodeTestimonial}
-    handleCopyClick={()=>handleCopyClick(generatedCodeTestimonial)}
-  />
+  <HighlightCompo code={generatedCodeTestimonial}/>
 </CodeWrapper>

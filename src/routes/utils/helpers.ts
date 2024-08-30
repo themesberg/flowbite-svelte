@@ -42,3 +42,8 @@ export function copyToClipboard(text: string): Promise<void> {
       throw err; // Re-throw the error so the caller can handle it if needed
     });
 }
+
+export function toUpperSnakeCase(text: string): string {
+  // replace spaces and - to _ and convert to uppercase
+  return text.replace(/[\s-]/g, '_').toUpperCase();
+}

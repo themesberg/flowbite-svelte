@@ -5,8 +5,7 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import { copyToClipboard } from '../../utils/helpers';
-  import GeneratedCode from '../../utils/GeneratedCode.svelte';
+
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -128,31 +127,12 @@
 </DeviceMockup>`;
     })()
   );
-  let copiedStatus = $state(false);
-
-  function handleCopyClick(codeBlock: string) {
-  copyToClipboard(codeBlock)
-    .then(() => {
-      copiedStatus = true;
-      setTimeout(() => {
-        copiedStatus = false;
-      }, 1000);
-    })
-    .catch((err) => {
-      console.error('Error in copying:', err);
-      // Handle the error as needed
-    });
-  }
 </script>
 
 <H1>Device mockup</H1>
 
 <H2>Setup</H2>
-<GeneratedCode 
-  componentStatus={copiedStatus}
-  generatedCode={modules['./md/setup.md'] as string}
-  handleCopyClick={()=>handleCopyClick(modules['./md/setup.md'] as string)}
-/>
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Interactive Device Mockup Builder</H2>
 
@@ -164,12 +144,7 @@
     {/each}
   </div>
   <h3 class="text-xl font-semibold my-4">Generated Code:</h3>
-  <GeneratedCode 
-    class="mb-8"
-    componentStatus={copiedStatus}
-    {generatedCode}
-    handleCopyClick={()=>handleCopyClick(generatedCode)}
-  />
+  <HighlightCompo code={generatedCode} class="mb-4"/>
   <DeviceMockup device={currentDevice.device as DeviceVariantType}>
     <img src={currentDevice.lightimage.src} class={currentDevice.lightimage.class} alt={currentDevice.lightimage.alt} />
     <img src={currentDevice.darkimage.src} class={currentDevice.darkimage.class} alt={currentDevice.darkimage.alt} />

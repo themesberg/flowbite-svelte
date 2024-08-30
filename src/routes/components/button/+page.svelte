@@ -9,8 +9,7 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import { capitalizeFirstLetter, copyToClipboard } from '../../utils/helpers';
-  import GeneratedCode from '../../utils/GeneratedCode.svelte';
+  import { capitalizeFirstLetter } from '../../utils/helpers';
 
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
@@ -85,7 +84,6 @@
   let generatedCode = $derived(
     (() => {
       let props = [];
-      // color={btnColor as Button['color']} class={btnClass} outline={btnOutline} shadow={btnShadow} pill={btnPill} disabled={btnDisabled} size={btnSize as Button['size']}
       if (btnColor !== 'primary') props.push(` color="${btnColor}"`);
       if (btnShadow) props.push(' shadow');
       if (btnOutline) props.push(' outline');
@@ -94,14 +92,18 @@
       if (btnLink) props.push(` href="${btnLink}"`);
       if (btnDisabled) props.push(' disabled');
       if (btnSize !== 'md') props.push(` size="${btnSize}"`);
-      return `<Button${props.join('')}>My Button</Button>`;
+
+      const propsString = props.length > 0 
+      ? props.map(prop => `\n  ${prop}`).join('') + '\n'
+      : ' ';
+
+      return `<Button${propsString}>My Button</Button>`;
     })()
   );
 
   let gradientGeneratedCode = $derived(
     (() => {
       let props = [];
-      // outline={gradientOutline} shadow={gradientShadow} pill={graidentPill} class={gradientClass} disabled={gradientDisabled} color={gradientColor as GradientButton['color']} size={gradientSize as Button['size']}
       if (gradientColor !== 'blue') props.push(` color="${gradientColor}"`);
       if (gradientShadow) props.push(' shadow');
       if (gradientOutline) props.push(' outline');
@@ -110,35 +112,20 @@
       if (gradientLink) props.push(` href="${gradientLink}"`);
       if (gradientDisabled) props.push(' disabled');
       if (gradientSize !== 'md') props.push(` size="${gradientSize}"`);
-      return `<GradientButton${props.join('')}>My Gradient Button</GradientButton>`;
+
+      const propsString = props.length > 0 
+      ? props.map(prop => `\n  ${prop}`).join('') + '\n'
+      : ' ';
+
+      return `<GradientButton${propsString}>My Gradient Button</GradientButton>`;
     })()
   );
-
-  let copiedStatus = $state(false);
-
-  function handleCopyClick(codeBlock: string) {
-  copyToClipboard(codeBlock)
-    .then(() => {
-      copiedStatus = true;
-      setTimeout(() => {
-        copiedStatus = false;
-      }, 1000);
-    })
-    .catch((err) => {
-      console.error('Error in copying:', err);
-      // Handle the error as needed
-    });
-  }
 </script>
 
 <H1>Buttons</H1>
 
 <H2>Setup</H2>
-<GeneratedCode 
-  componentStatus={copiedStatus}
-  generatedCode={modules['./md/setup.md'] as string}
-  handleCopyClick={()=>handleCopyClick(modules['./md/setup.md'] as string)}
-/>
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Interactive Button Bilder</H2>
 
@@ -169,12 +156,7 @@
   <Button class="w-40" color="sky" onclick={changeBtnLink}> {btnLink === '' ? 'Add link' : 'Remove link'}</Button>
   </div>
   <div class="w-full">
-  <GeneratedCode
-    class="mt-8"
-    componentStatus={copiedStatus}
-    {generatedCode}
-    handleCopyClick={()=>handleCopyClick(generatedCode)}
-  />
+  <HighlightCompo code={generatedCode} />
 </div>
 </CodeWrapper>
 
@@ -207,21 +189,18 @@
   <Button class="w-40" color="sky" onclick={changeGradientLink}> {btnLink === '' ? 'Add link' : 'Remove link'}</Button>
   </div>
   <h3 class="text-xl font-semibold my-4">Generated Code:</h3>
-  <GeneratedCode 
-    class="mt-8"
-    componentStatus={copiedStatus}
-    generatedCode={gradientGeneratedCode}
-    handleCopyClick={()=>handleCopyClick(gradientGeneratedCode)}
-  />
+  <HighlightCompo code={gradientGeneratedCode} />
 </CodeWrapper>
 
 <H2>Button with icon</H2>
-<CodeWrapper class="flex flex-wrap gap-2">
-  <Button><ShoppingBagSolid class="me-2 h-4 w-4" />Buy Now</Button>
-  <Button>Choose Plan<ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
+<CodeWrapper>
+  <div class="flex flex-wrap gap-2">
+    <Button><ShoppingBagSolid class="me-2 h-4 w-4" />Buy Now</Button>
+    <Button>Choose Plan<ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
+  </div>
+  <HighlightCompo code={modules['./md/button-with-icon.md'] as string} />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/button-with-icon.md'] as string} />
 
 <H2>Button with label</H2>
 
@@ -230,9 +209,9 @@
     Messages
     <Indicator color="cyan" class="bg-primary-200 text-xs font-semibold text-primary-800" size="lg">2</Indicator>
   </Button>
+  <HighlightCompo code={modules['./md/button-with-label.md'] as string} />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/button-with-label.md'] as string} />
 
 <H2>Icon buttons</H2>
 <CodeWrapper>
@@ -246,8 +225,8 @@
       <ThumbsUpSolid class="h-5 w-5" />
     </Button>
   </div>
+  <HighlightCompo code={modules['./md/icon-buttons.md'] as string} />
 </CodeWrapper>
-<HighlightCompo code={modules['./md/icon-buttons.md'] as string} />
 
 <H2>Loader</H2>
 <CodeWrapper>
@@ -257,11 +236,11 @@
   <Button color="alternative">
     <Spinner class="me-3" size="4" />Loading ...
   </Button>
+  <HighlightCompo code={modules['./md/loader.md'] as string} />
 </CodeWrapper>
-<HighlightCompo code={modules['./md/loader.md'] as string} />
 
 <H2>Events</H2>
 <CodeWrapper>
   <Button onclick={btn1}>Button 1</Button>
+  <HighlightCompo code={modules['./md/events.md'] as string} />
 </CodeWrapper>
-<HighlightCompo code={modules['./md/events.md'] as string} />

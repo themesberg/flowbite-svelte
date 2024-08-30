@@ -8,8 +8,6 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import { copyToClipboard } from '../../utils/helpers';
-  import GeneratedCode from '../../utils/GeneratedCode.svelte';
 
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
@@ -102,6 +100,11 @@
         .join(',');
         props.push(` params={{${paramsString}}}`);
       }
+
+      const propsString = props.length > 0 
+      ? props.map(prop => `\n  ${prop}`).join('') + '\n'
+      : ' ';
+
       let iconCode = '';
       if (iconSlot){
         iconCode = `
@@ -109,39 +112,20 @@
     <InfoCircleSolid class="h-5 w-5" />
   {/snippet}`
       }
-      return `<Alert${props.join('')}>${iconCode}
+      return `<Alert${propsString}>${iconCode}
   My Alert
 </Alert>`;
     })()
   );
-  let copiedStatus = $state(false);
-
-  function handleCopyClick(codeBlock: string) {
-  copyToClipboard(codeBlock)
-    .then(() => {
-      copiedStatus = true;
-      setTimeout(() => {
-        copiedStatus = false;
-      }, 1000);
-    })
-    .catch((err) => {
-      console.error('Error in copying:', err);
-      // Handle the error as needed
-    });
-  }
 </script>
 
 <H1>Alert</H1>
 
 <H2>Setup</H2>
-<GeneratedCode 
-  componentStatus={copiedStatus}
-  generatedCode={modules['./md/setup.md'] as string}
-  handleCopyClick={()=>handleCopyClick(modules['./md/setup.md'] as string)}
-/>
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Interactive Alert Bilder</H2>
-{iconSlot}
+
 <CodeWrapper class="space-y-4">
   <div class="mb-4 h-16">
     <Alert {color} {rounded} {border} {dismissable} class={alertClass} bind:alertStatus={alertStatusInteractive} transition={currentTransition.transition} params={currentTransition.params}>
@@ -177,15 +161,11 @@
   <Button class="w-48" color="rose" onclick={changeBorderAccent}>{borderAccent ? 'Remove accent' : 'Add accent'}</Button>
   </div>
   <h3 class="text-xl font-semibold my-4">Generated Code:</h3>
-  <GeneratedCode 
-    componentStatus={copiedStatus}
-    {generatedCode}
-    handleCopyClick={()=>handleCopyClick(generatedCode)}
-  />
+  <HighlightCompo code={generatedCode} />
 </CodeWrapper>
 
 <H2>Alerts with list</H2>
-<CodeWrapper class="space-y-4">
+<CodeWrapper>
   <div class="mb-4">
     <Alert color={listColor} class="!items-start">
       {#snippet icon()}
@@ -205,16 +185,11 @@
       <Radio labelClass="w-24 my-1" name="list_alert_color" bind:group={listColor} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
-  <GeneratedCode 
-    class="mt-4"
-    componentStatus={copiedStatus}
-    generatedCode={modules['./md/alerts-with-list.md'] as string}
-    handleCopyClick={()=>handleCopyClick(modules['./md/alerts-with-list.md'] as string)}
-  />
+  <HighlightCompo code={modules['./md/alerts-with-list.md'] as string} />
 </CodeWrapper>
 
 <H2>Additional content</H2>
-<CodeWrapper class="space-y-4">
+<CodeWrapper>
   <div class="mb-4">
     <Alert color={additionalColor}>
       <div class="flex items-center gap-3">
@@ -230,41 +205,25 @@
       </div>
     </Alert>
   </div>
-
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
       <Radio labelClass="w-24 my-1" name="additional_alert_color" bind:group={additionalColor} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
-  <GeneratedCode 
-    class="mt-4"
-    componentStatus={copiedStatus}
-    generatedCode={modules['./md/additional-content.md'] as string}
-    handleCopyClick={()=>handleCopyClick(modules['./md/additional-content.md'] as string)}
-  />
+  <HighlightCompo code={modules['./md/additional-content.md'] as string}/>
 </CodeWrapper>
 
 <H2>Custom color</H2>
 <CodeWrapper class="p-4">
   <Alert dismissable class="bg-sky-500 dark:bg-lime-500 text-white dark:text-white">Your content</Alert>
-  <GeneratedCode 
-    class="mt-4"
-    componentStatus={copiedStatus}
-    generatedCode={modules['./md/custom-color.md'] as string}
-    handleCopyClick={()=>handleCopyClick(modules['./md/custom-color.md'] as string)}
-  />
+  <HighlightCompo code={modules['./md/custom-color.md'] as string} />
 </CodeWrapper>
 
 <H2>Events</H2>
 <CodeWrapper class="p-4">
   <Alert dismissable onclick={handleClose} bind:alertStatus={alertEventStatus}>Close me</Alert>
-  <GeneratedCode 
-    class="mt-4"
-    componentStatus={copiedStatus}
-    generatedCode={modules['./md/events.md'] as string}
-    handleCopyClick={()=>handleCopyClick(modules['./md/events.md'] as string)}
-  />
+  <HighlightCompo code={modules['./md/events.md'] as string} />
 </CodeWrapper>
 
 

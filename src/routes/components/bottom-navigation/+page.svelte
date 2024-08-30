@@ -27,7 +27,8 @@
 <HighlightCompo codeLang="ts" code={modules['./md/setup.md'] as string} />
 
 <H2>Default bottom navigation</H2>
-<CodeWrapper class="relative flex flex-col">
+<CodeWrapper>
+  <div class="relative flex flex-col">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
@@ -45,11 +46,14 @@
       <UserCircleSolid class="mb-1 h-5 w-5 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
     </BottomNavItem>
   </BottomNav>
+  </div>
+  <HighlightCompo codeLang="ts" code={modules['./md/default-bottom-navigation.md'] as string} />
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/default-bottom-navigation.md'] as string} />
+
 
 <H2>Links, target and active class</H2>
-<CodeWrapper class="relative flex flex-col">
+<CodeWrapper>
+  <div class="relative flex flex-col">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
@@ -67,11 +71,13 @@
       <UserCircleSolid />
     </BottomNavItem>
   </BottomNav>
+  </div>
+  <HighlightCompo codeLang="ts" code={modules['./md/links-and-active-class.md'] as string} />
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/links-and-active-class.md'] as string} />
 
 <H2>Overwriting activeClass</H2>
-<CodeWrapper class="relative flex flex-col">
+<CodeWrapper>
+  <div class="relative flex flex-col">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
@@ -89,11 +95,13 @@
       <UserCircleSolid />
     </BottomNavItem>
   </BottomNav>
+  </div>
+  <HighlightCompo codeLang="ts" code={modules['./md/overwriting-activeclass.md'] as string} />
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/overwriting-activeclass.md'] as string} />
 
 <H2>Icon color</H2>
-<CodeWrapper class="relative flex flex-col">
+<CodeWrapper>
+  <div class="relative flex flex-col">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
@@ -111,11 +119,14 @@
       <UserCircleSolid class={activeUrl === '/docs/components/accordion' ? svgActiveClass : svgClass} />
     </BottomNavItem>
   </BottomNav>
+  </div>
+  <HighlightCompo codeLang="ts" code={modules['./md/icon-color.md'] as string} />
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/icon-color.md'] as string} />
+
 
 <H2>Menu items with border</H2>
-<CodeWrapper class="relative flex flex-col">
+<CodeWrapper>
+  <div class="relative flex flex-col">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
@@ -133,9 +144,9 @@
       <UserCircleSolid />
     </BottomNavItem>
   </BottomNav>
+  </div>
+  <HighlightCompo codeLang="ts" code={modules['./md/menu-items-with-border.md'] as string} />
 </CodeWrapper>
-
-<HighlightCompo codeLang="ts" code={modules['./md/menu-items-with-border.md'] as string} />
 
 <H2>Application bar example</H2>
 <CodeWrapper>TBD</CodeWrapper>

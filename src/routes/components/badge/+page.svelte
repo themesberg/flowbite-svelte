@@ -9,8 +9,6 @@
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
   // import H3 from '../../utils/H3.svelte';
-  import { copyToClipboard } from '../../utils/helpers';
-  import GeneratedCode from '../../utils/GeneratedCode.svelte';
 
   let eventStatus = $state(true);
   function handleClose() {
@@ -57,6 +55,14 @@
   const changeRounded = () => {
     rounded = !rounded;
   };
+  let link = $state('');
+  const changeLink = () => {
+    link = link === '' ? '/' : '';
+  };
+  let iconSlot = $state(false);
+  const changeIconSlot = () => {
+    iconSlot = !iconSlot;
+  };
 
   // transition example
   type TransitionOption = {
@@ -85,6 +91,7 @@
       if (badgeClass) props.push(` class="${badgeClass}"`);
       if (!badgeStatus2) props.push(' badgeStatus={false}');
       if (border) props.push(' border');
+      if (link) props.push(` href="${link}"`);
       if (rounded) props.push(' rounded');
       if (currentTransition !== transitions[0] && badgeDismissable) {
         props.push(` transition={${currentTransition.transition.name}}`);
@@ -101,38 +108,35 @@
       props.push(` params={{${paramsString}}}`);
     }
 
-      return `<Badge${props.join('')}>My Badge</Badge>`;
+    const propsString = props.length > 0 
+      ? props.map(prop => `\n  ${prop}`).join('') + '\n'
+      : ' ';
+
+      if (iconSlot){
+        return `<Badge${propsString}>
+  <ClockSolid class="me-1.5 h-3 w-3" />
+  My Badge
+</Badge>`;
+      } else {
+        return `<Badge${propsString}>My Badge</Badge>`;
+      }
     })()
   );
-  let copiedStatus = $state(false);
-
-  function handleCopyClick(codeBlock: string) {
-  copyToClipboard(codeBlock)
-    .then(() => {
-      copiedStatus = true;
-      setTimeout(() => {
-        copiedStatus = false;
-      }, 1000);
-    })
-    .catch((err) => {
-      console.error('Error in copying:', err);
-      // Handle the error as needed
-    });
-  }
 </script>
 
 <H1>Badge</H1>
 <H2>Setup</H2>
-<GeneratedCode 
-  componentStatus={copiedStatus}
-  generatedCode={modules['./md/setup.md'] as string}
-  handleCopyClick={()=>handleCopyClick(modules['./md/setup.md'] as string)}
-/>
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Interactive Badge Bilder</H2>
-<CodeWrapper class="space-y-4">
-  <div class="mb-4 h-8">
-    <Badge {color} large={badgeSize} dismissable={badgeDismissable} class={badgeClass} bind:badgeStatus={badgeStatus2} {border} {rounded}  transition={currentTransition.transition} params={currentTransition.params}>Default</Badge>
+<CodeWrapper>
+  <div class="mb-4 h-10">
+    <Badge {color} large={badgeSize} dismissable={badgeDismissable} class={badgeClass} bind:badgeStatus={badgeStatus2} {border} {rounded}  transition={currentTransition.transition} params={currentTransition.params} href={link}>
+    {#if iconSlot}
+    <ClockSolid class="my-1 me-1.5 h-2.5 w-2.5" />
+    {/if}  
+      My Badge
+    </Badge>
   </div>
   <div class="mb-4 h-12">
       <Button disabled={badgeStatus2 ? true : false} onclick={changeStatus}>Open badge</Button>
@@ -149,61 +153,44 @@
       <Radio disabled={badgeDismissable ? false : true } labelClass="w-24 my-1 {badgeDismissable ? '' : 'opacity-30 cursor-not-allowed'}" name="transition_interactive" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
     {/each}
   </div>
+  <div class="flex flex-wrap gap-4 mb-4">
   <Button class="w-40" color="blue" onclick={changeSize}>{badgeSize ? 'Small' : 'Large'}</Button>
   <Button class="w-40" color="green" onclick={changeDismissable}>{badgeDismissable ? 'Not dismissable' : 'Dismissable'}</Button>
   <Button class="w-40" color="purple" onclick={changeClass}>{badgeClass ? 'Remove class' : 'Add class'}</Button>
   <Button class="w-40" color="yellow" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
   <Button class="w-40" color="dark" onclick={changeRounded}>{rounded ? 'Remove rounded' : 'Add rounded'}</Button>
-  <GeneratedCode 
-    componentStatus={copiedStatus}
-    {generatedCode}
-    handleCopyClick={()=>handleCopyClick(generatedCode)}
-    />
+  <Button class="w-40" color="pink" onclick={changeLink}>{link ? 'Remove href' : 'Add href'}</Button>
+  <Button class="w-40" color="teal" onclick={changeIconSlot}>{iconSlot ? 'Remove icon' : 'Add icon'}</Button>
+  </div>
+  <HighlightCompo code={generatedCode} />
 </CodeWrapper>
 
 <H2>Dismissing with custom icon</H2>
-<CodeWrapper class="h-20">
+<CodeWrapper>
+  <div class="flex justify-center h-8">
   <Badge dismissable>
     Default
     {#snippet icon()}
       <CheckCircleOutline class="h-5 w-5" />
     {/snippet}
   </Badge>
+  </div>
+  <HighlightCompo code={modules['./md/dismissable-badge-2.md'] as string} />
 </CodeWrapper>
 
-<HighlightCompo codeLang="ts" code={modules['./md/dismissable-badge-2.md'] as string} />
+
 
 <H2>Dismissing with events</H2>
-<CodeWrapper class="h-20">
+<CodeWrapper>
+  <div class="flex justify-center h-8">
   <Badge dismissable large onclick={handleClose} bind:badgeStatus={eventStatus}>Default</Badge>
+  </div>
+  <HighlightCompo code={modules['./md/dismissable-badge-3.md'] as string} />
 </CodeWrapper>
-
-<HighlightCompo codeLang="ts" code={modules['./md/dismissable-badge-3.md'] as string} />
-
-<H2>Badge as links</H2>
-<CodeWrapper class="flex justify-center gap-2">
-  <Badge href="/">Link</Badge>
-  <Badge href="/" color="blue" large>Link</Badge>
-  <Badge href="/" color="green" border>Link</Badge>
-  <Badge href="/" color="yellow" rounded>Link</Badge>
-</CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/badge-as-links.md'] as string} />
-
-<H2>Badge with icon</H2>
-<CodeWrapper class="flex justify-center gap-2">
-  <Badge color="gray" border>
-    <ClockSolid class="me-1.5 h-2.5 w-2.5" />
-    3 days ago
-  </Badge>
-  <Badge border>
-    <ClockSolid class="me-1.5 h-2.5 w-2.5 text-primary-800 dark:text-primary-400" />
-    2 minutes ago
-  </Badge>
-</CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/badge-with-icon.md'] as string} />
 
 <H2>Notification badge</H2>
-<CodeWrapper class="flex justify-center gap-4">
+<CodeWrapper>
+  <div class="flex justify-center gap-4">
   <Button class="relative" size="sm">
     <EnvelopeSolid class="text-white dark:text-white" />
     <span class="sr-only">Notifications</span>
@@ -221,20 +208,24 @@
     <span class="sr-only">Notifications</span>
     <Indicator color="sky" border size="xl" placement="bottom-right" class="text-xs font-bold">20</Indicator>
   </Button>
+  </div>
+  <HighlightCompo code={modules['./md/notification-badge.md'] as string} />
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/notification-badge.md'] as string} />
 
 <H2>Button with badge</H2>
-<CodeWrapper class="flex justify-center">
+<CodeWrapper>
+  <div class="flex justify-center">
   <Button>
     Messages
     <Badge rounded class="ms-2 h-4 w-4 bg-white p-0 font-semibold text-primary-800 dark:bg-white dark:text-primary-800">2</Badge>
   </Button>
+  </div>
+  <HighlightCompo code={modules['./md/button-with-badge.md'] as string} />
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/button-with-badge.md'] as string} />
 
 <H2>Badge with icon only</H2>
-<CodeWrapper class="flex justify-center gap-2">
+<CodeWrapper>
+  <div class="flex justify-center gap-2">
   <Badge color="gray" rounded large class="!p-1 !font-semibold">
     <CheckOutline class="h-3 w-3" />
     <span class="sr-only">Icon description</span>
@@ -243,8 +234,9 @@
     <CheckOutline class="h-3 w-3 text-primary-800 dark:text-primary-400" />
     <span class="sr-only">Icon description</span>
   </Badge>
+  </div>
+  <HighlightCompo code={modules['./md/badge-with-icon-only.md'] as string} />
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/badge-with-icon-only.md'] as string} />
 
 <H2>Opening badge</H2>
 <CodeWrapper class="h-20">
@@ -252,4 +244,4 @@
   <Badge class="ml-4" color="blue" dismissable large bind:badgeStatus={openBadgeStatus}>Default</Badge>
 </CodeWrapper>
 
-<HighlightCompo codeLang="ts" code={modules['./md/opening-badge.md'] as string} />
+<HighlightCompo code={modules['./md/opening-badge.md'] as string} />

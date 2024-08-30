@@ -9,8 +9,7 @@
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
   import H3 from '../../utils/H3.svelte';
-  import { copyToClipboard } from '../../utils/helpers';
-  import GeneratedCode from '../../utils/GeneratedCode.svelte';
+
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -69,54 +68,24 @@
         .join(',');
         props.push(` params={{${paramsString}}}`);
       }
+
+      const propsString = props.length > 0 
+      ? props.map(prop => `\n  ${prop}`).join('') + '\n'
+      : ' ';
+
       return `<div class="relative h-56">
-  <Toast${props.join('')}>My Toast</Toast>
+  <Toast${propsString}>My Toast</Toast>
 </div>`;
     })()
   );
-  let copiedStatus = $state(false);
-
-  function handleCopyClick(codeBlock: string) {
-  copyToClipboard(codeBlock)
-    .then(() => {
-      copiedStatus = true;
-      setTimeout(() => {
-        copiedStatus = false;
-      }, 1000);
-    })
-    .catch((err) => {
-      console.error('Error in copying:', err);
-      // Handle the error as needed
-    });
-  }
 </script>
 
 <H1>Toast</H1>
 <H2>Setup</H2>
-<GeneratedCode 
-  componentStatus={copiedStatus}
-  generatedCode={modules['./md/setup.md'] as string}
-  handleCopyClick={()=>handleCopyClick(modules['./md/setup.md'] as string)}
-/>
-
-<H2>Default toast</H2>
-<CodeWrapper class="flex h-48 flex-col items-center">
-  <div class="mb-4 h-36">
-    <Toast bind:toastStatus={defaultToastStatus}>
-      {#snippet icon()}
-        <FireOutline class="h-5 w-5 bg-primary-100 text-primary-500 dark:bg-primary-800 dark:text-primary-200" />
-      {/snippet}
-      Set yourself free.
-    </Toast>
-  </div>
-  <div class="mb-4">
-    <Button disabled={defaultToastStatus ? true : false} onclick={() => (defaultToastStatus = true)}>Open toast</Button>
-  </div>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/default-toast.md'] as string} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Interactive Toast Builder</H2>
-<CodeWrapper class="space-y-2">
+<CodeWrapper>
   <div class="relative h-56">
     <Toast color={toastColor} bind:toastStatus {dismissable} transition={currentTransition.transition} params={currentTransition.params} position={toastPosition}>
       {#snippet icon()}
@@ -147,17 +116,16 @@
       <Radio labelClass="w-32 my-1" name="interactive_toast_position" bind:group={toastPosition} value={option}>{option}</Radio>
     {/each}
   </div>
+  <div class="mt-4 flex flex-wrap gap-2">
   <Button onclick={changeDismissable}>{dismissable ? 'Disable' : 'Enable'} dismissable</Button> 
+  </div>
   <h3 class="text-xl font-semibold my-4">Generated Code:</h3>
-  <GeneratedCode 
-    componentStatus={copiedStatus}
-    {generatedCode}
-    handleCopyClick={()=>handleCopyClick(generatedCode)}
-  />
+  <HighlightCompo code={generatedCode} />
 </CodeWrapper>
 
 <H2>Undo button</H2>
-<CodeWrapper class="flex flex-col items-center">
+<CodeWrapper>
+  <div class="flex flex-col items-center">
   <div class="mb-4 h-16">
     <Toast bind:toastStatus={toastUndoStatus} iconClass="w-full text-sm font-normal flex items-center justify-between">
       Conversation archived.
@@ -165,12 +133,14 @@
     </Toast>
   </div>
   <Button class="w-36" disabled={toastUndoStatus ? true : false} onclick={changeUndoStatus}>Open toast</Button>
+  </div>
+  <HighlightCompo code={modules['./md/undo-button.md'] as string} />
 </CodeWrapper>
-<HighlightCompo code={modules['./md/undo-button.md'] as string} />
 
 <H2>Other examples</H2>
 <H3>Toast message</H3>
-<CodeWrapper class="flex h-[204px] flex-col items-center">
+<CodeWrapper>
+  <div class="flex h-[180px] flex-col items-center">
   <Toast align={false} iconClass="w-10 h-10 rounded-full">
     {#snippet icon()}
       <Avatar src="/images/profile-picture-1.webp" />
@@ -181,11 +151,14 @@
       <Button size="xs">Reply</Button>
     </div>
   </Toast>
+  </div>
+  <HighlightCompo code={modules['./md/toast-message.md'] as string} />
 </CodeWrapper>
-<HighlightCompo code={modules['./md/toast-message.md'] as string} />
+
 
 <H3>Push notification</H3>
-<CodeWrapper class="flex h-44 flex-col items-center">
+<CodeWrapper>
+  <div class="flex h-[140px] flex-col items-center">
   <Toast align={false}>
     <span class="font-semibold text-gray-900 dark:text-white">New notification</span>
     <div class="mt-3 flex items-center">
@@ -197,11 +170,14 @@
       </div>
     </div>
   </Toast>
+  </div>
+  <HighlightCompo code={modules['./md/push-notification.md'] as string} />
 </CodeWrapper>
-<HighlightCompo code={modules['./md/push-notification.md'] as string} />
+
 
 <H3>Interactive toast</H3>
-<CodeWrapper class="flex h-48 flex-col items-center">
+<CodeWrapper>
+  <div class="flex h-48 flex-col items-center">
   <Toast align={false}>
     {#snippet icon()}
       <CameraPhotoOutline class="h-5 w-5" />
@@ -214,5 +190,7 @@
       </div>
     </div>
   </Toast>
+  </div>
+  <HighlightCompo code={modules['./md/interactive-toast.md'] as string} />
 </CodeWrapper>
-<HighlightCompo code={modules['./md/interactive-toast.md'] as string} />
+

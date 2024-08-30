@@ -29,7 +29,8 @@
 
 <H2>Default Breadcrumb</H2>
 
-<CodeWrapper class="overflow-x-scroll p-2 sm:p-6">
+<CodeWrapper>
+  <div class="overflow-x-scroll p-2 sm:p-6">
   <div class="h-20">
     <Breadcrumb {navClass} {olClass}>
       <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
@@ -37,27 +38,33 @@
       <BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
     </Breadcrumb>
   </div>
-  <Button class="w-48" onclick={changeNavClass}>{navClass ? 'Remove navClass' : 'Add navClass'}</Button>
-  <Button class="w-48" color="green" onclick={changeOlClass}>{olClass ? 'Remove olClass' : 'Add olClass'}</Button>
+  <div class="flex flex-wrap gap-4 mb-4">
+    <Button class="w-48" onclick={changeNavClass}>{navClass ? 'Remove navClass' : 'Add navClass'}</Button>
+    <Button class="w-48" color="green" onclick={changeOlClass}>{olClass ? 'Remove olClass' : 'Add olClass'}</Button>
+    </div>
+  </div>
+  <HighlightCompo code={modules['./md/defaultbreadcrumb.md'] as string} />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/defaultbreadcrumb.md'] as string} />
 
 <H2>Solid Breadcrumb</H2>
 
-<CodeWrapper class="overflow-x-scroll p-2 sm:p-6">
+<CodeWrapper>
+  <div class="overflow-x-scroll p-2 sm:p-6">
   <Breadcrumb solid class="overflow-x-scroll">
     <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
     <BreadcrumbItem href="/">Projects</BreadcrumbItem>
     <BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
   </Breadcrumb>
+  </div>
+  <HighlightCompo code={modules['./md/solidbreadcrumb.md'] as string} />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/solidbreadcrumb.md'] as string} />
 
 <H2>Icons</H2>
 
-<CodeWrapper class="overflow-x-scroll p-2 sm:p-6">
+<CodeWrapper>
+  <div class="overflow-x-scroll p-2 sm:p-6">
   <Breadcrumb class="overflow-x-scroll bg-gray-50 px-5 py-3 dark:bg-gray-900">
     <BreadcrumbItem href="/" home>
       {#snippet icon()}
@@ -77,6 +84,7 @@
       Flowbite Svelte
     </BreadcrumbItem>
   </Breadcrumb>
+  </div>
+  <HighlightCompo code={modules['./md/icons.md'] as string} />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/icons.md'] as string} />

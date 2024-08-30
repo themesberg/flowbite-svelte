@@ -9,8 +9,6 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import { copyToClipboard } from '../../utils/helpers';
-  import GeneratedCode from '../../utils/GeneratedCode.svelte';
   import { ArrowRightOutline } from 'flowbite-svelte-icons';
 
   const modules = import.meta.glob('./md/*.md', {
@@ -64,49 +62,23 @@
           .join(',');
         props.push(` img={{${imgString}}}`);
       }
-      return `<Card${props.join('')}>My Card</Card>`;
+
+      const propsString = props.length > 0 
+      ? props.map(prop => `\n  ${prop}`).join('') + '\n'
+      : ' ';
+
+      return `<Card${propsString}>My Card</Card>`;
     })()
   );
-
-  let copiedStatus = $state(false);
-
-  function handleCopyClick(codeBlock: string) {
-  copyToClipboard(codeBlock)
-      .then(() => {
-        copiedStatus = true;
-        setTimeout(() => {
-          copiedStatus = false;
-        }, 1000);
-      })
-      .catch((err) => {
-        console.error('Error in copying:', err);
-        // Handle the error as needed
-      });
-  }
 </script>
 
 <H1>Cards</H1>
 
 <H2>Setup</H2>
-<GeneratedCode 
-  componentStatus={copiedStatus}
-  generatedCode={modules['./md/setup.md'] as string}
-  handleCopyClick={()=>handleCopyClick(modules['./md/setup.md'] as string)}
-/>
-
-<H2>Default card</H2>
-<CodeWrapper class="flex flex-col space-y-4">
-  <div class="flex justify-center">
-    <Card>
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
-      <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
-    </Card>
-  </div>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/default-card.md'] as string} />
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Interactive Card Builder</H2>
-<CodeWrapper class="flex flex-col space-y-4">
+<CodeWrapper>
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as size}
@@ -139,11 +111,7 @@
   <Toggle bind:checked={reverse} labelClass="italic dark:text-gray-500 {Object.keys(cardImage).length === 0 ? 'opacity-50 cursor-not-allowed' : ''}" disabled={Object.keys(cardImage).length === 0}>Reverse: {reverse} </Toggle>
   </div>
   <h3 class="text-xl font-semibold my-4">Generated Code:</h3>
-  <GeneratedCode 
-    componentStatus={copiedStatus}
-    {generatedCode}
-    handleCopyClick={()=>handleCopyClick(generatedCode)}
-  />
+  <HighlightCompo code={generatedCode} class="mb-8" />
   <div class="h-[700px]">
     <div class="flex justify-center">
       <Card size={cardSize} {color} padding={cardPadding} shadow={cardShadow} href={link ? link : ''} class={cardClass} img={cardImage} {horizontal} {reverse}>
@@ -155,17 +123,20 @@
 </CodeWrapper>
 
 <H2>Custom size</H2>
-<CodeWrapper class="flex justify-center">
+<CodeWrapper>
+  <div class="flex justify-center">
   <Card class="max-w-[250px]">
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Technology acquisitions</h5>
     <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions.</p>
   </Card>
+  </div>
+  <HighlightCompo code={modules['./md/custom-size.md'] as string} />
 </CodeWrapper>
-<HighlightCompo code={modules['./md/custom-size.md'] as string} />
 
 <H2>Card with action button</H2>
 
-<CodeWrapper class="flex justify-center">
+<CodeWrapper>
+  <div class="flex justify-center">
   <Card>
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
     <p class="mb-3 font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
@@ -173,12 +144,13 @@
       Read more <ArrowRightOutline class="ms-2 h-3.5 w-3.5 text-white" />
     </Button>
   </Card>
+  </div>
+  <HighlightCompo code={modules['./md/card-with-action-button.md'] as string} />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/card-with-action-button.md'] as string} />
-
 <H2>Call to action card</H2>
-<CodeWrapper class="flex justify-center">
+<CodeWrapper>
+  <div class="flex justify-center">
   <Card class="text-center" size="lg" padding="xl">
     <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Work fast from anywhere</h5>
     <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">Stay up to date and move work forward with Flowbite on iOS & Android. Download the app today.</p>
@@ -187,6 +159,6 @@
       <Button>Get it on</Button>
     </div>
   </Card>
+  </div>
+  <HighlightCompo code={modules['./md/call-to-action-card.md'] as string} />
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/call-to-action-card.md'] as string} />

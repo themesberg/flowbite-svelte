@@ -8,8 +8,6 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import { copyToClipboard } from '../../utils/helpers';
-  import GeneratedCode from '../../utils/GeneratedCode.svelte';
 
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
@@ -86,34 +84,24 @@
         .join(',');
         props.push(` params={{${paramsString}}}`);
       }
-      return `<div class="relative h-40"><Banner${props.join('')}>My Banner</Banner></div>`;
+      
+      const propsString = props.length > 0 
+      ? props.map(prop => `\n  ${prop}`).join('') + '\n'
+      : ' ';
+
+      return `<div class="relative h-40">
+  <Banner${propsString}>
+    My Banner
+  </Banner>
+</div>`;
     })()
   );
-  let copiedStatus = $state(false);
-
-  function handleCopyClick(codeBlock: string) {
-  copyToClipboard(codeBlock)
-    .then(() => {
-      copiedStatus = true;
-      setTimeout(() => {
-        copiedStatus = false;
-      }, 1000);
-    })
-    .catch((err) => {
-      console.error('Error in copying:', err);
-      // Handle the error as needed
-    });
-  }
 </script>
 
 <H1>Banner</H1>
 <H2>Setup</H2>
 
-<GeneratedCode 
-  componentStatus={copiedStatus}
-  generatedCode={modules['./md/setup.md'] as string}
-  handleCopyClick={()=>handleCopyClick(modules['./md/setup.md'] as string)}
-/>
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Interactive Banner Builder</H2>
 <CodeWrapper class="relative">
@@ -135,95 +123,31 @@
   <div class="mb-4 h-12">
     <Button class="w-48" disabled={bannerStatus ? true : false} onclick={changeStatus}>Open banner</Button>
   </div>
-  <div class="space-y-4">
-    <div class="flex flex-wrap space-x-4">
-      <Label class="mb-4 w-full font-bold">Change color {color}</Label>
-      {#each colors as colorOption}
-        <Radio labelClass="w-24 my-1" name="color" bind:group={color} color={colorOption as BannerProps['color']} value={colorOption}>{colorOption}</Radio>
+  <div class="flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Change color {color}</Label>
+    {#each colors as colorOption}
+      <Radio labelClass="w-24 my-1" name="color" bind:group={color} color={colorOption as BannerProps['color']} value={colorOption}>{colorOption}</Radio>
+    {/each}
+  </div>
+  <div class="mb-4 flex flex-wrap space-x-4">
+      <Label class="mb-4 w-full font-bold">Transition</Label>
+      {#each transitions as transition}
+        <Radio labelClass="w-24 my-1" name="interactive_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
       {/each}
-    </div>
-    <div class="mb-4 flex flex-wrap space-x-4">
-        <Label class="mb-4 w-full font-bold">Transition</Label>
-        {#each transitions as transition}
-          <Radio labelClass="w-24 my-1" name="interactive_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
-        {/each}
-    </div>
+  </div>
+  <div class="flex flex-wrap gap-4 mb-4">
     <Button class="w-48" onclick={changePosition}>Position: { position === 'sticky' ? 'absolute' : 'sticky'}</Button>
     <Button class="w-48" color="blue" onclick={changeBannerType}>Type: { bannerType === 'default' ? 'cta' : 'default'}</Button>
     <Button class="w-48" color="green" onclick={changeClass}>{bannerClass ? 'Remove class' : 'Add class'}</Button>
-    <GeneratedCode 
-      componentStatus={copiedStatus}
-      {generatedCode}
-      handleCopyClick={()=>handleCopyClick(generatedCode)}
-    />
   </div>
+  <HighlightCompo code={generatedCode} />
 </CodeWrapper>
 
-<H2>Default sticky banner</H2>
-
-<CodeWrapper class="relative">
-  <Skeleton class="py-4" />
-  <ImagePlaceholder class="py-4" />
-
-  <Banner id="default-banner" position="absolute">
-    <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
-      <span class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600">
-        <BullhornOutline class="h-3 w-3 text-gray-500 dark:text-gray-400" />
-        <span class="sr-only">Light bulb</span>
-      </span>
-      <span>
-        New brand identity has been launched for the <a href="https://flowbite.com" class="decoration-600 dark:decoration-500 inline font-medium text-primary-600 underline decoration-solid underline-offset-2 hover:no-underline dark:text-primary-500">Flowbite Library</a>
-      </span>
-    </p>
-  </Banner>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/defaultsticky.md'] as string} />
-
-
-<H2>Bottom banner position</H2>
-
-<CodeWrapper class="relative">
-  <Skeleton class="py-4" />
-  <ImagePlaceholder class="py-4" />
-
-  <Banner id="bottom-banner" position="absolute" bannerType="bottom">
-    <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
-      <span class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600">
-        <SalePercentSolid class="h-4 w-4 text-gray-500 dark:text-gray-400" />
-        <span class="sr-only">Discount coupon</span>
-      </span>
-      <span>
-        Get 5% commission per sale <a href="https://flowbite.com" class="ms-0 flex items-center text-sm font-medium text-primary-600 hover:underline md:ms-1 md:inline-flex dark:text-primary-500">
-          Become a partner <ArrowRightOutline class="ms-2 h-3 w-3" />
-        </a>
-      </span>
-    </p>
-  </Banner>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/bottombanner.md'] as string} />
-
-<H2>Marketing CTA banner</H2>
-
-<CodeWrapper class="relative">
-  <Skeleton class="py-4" />
-  <ImagePlaceholder class="py-4" />
-
-  <Banner id="cta-banner" position="absolute" bannerType="cta">
-    <a href="https://flowbite-svelte.com/" class="mb-2 flex items-center border-gray-200 md:mb-0 md:me-4 md:border-e md:pe-4 dark:border-gray-600">
-      <img src="https://flowbite-svelte.com/images/flowbite-svelte-icon-logo.svg" class="me-2 h-6" alt="Flowbite Logo" />
-      <span class="self-center whitespace-nowrap text-lg font-semibold dark:text-white">Flowbite</span>
-    </a>
-    <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">Build websites even faster with components on top of Tailwind CSS</p>
-  </Banner>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/marketing.md'] as string} />
 
 <H2>Newsletter sign-up banner</H2>
 
-<CodeWrapper class="relative">
+<CodeWrapper >
+  <div class="relative">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="py-4" />
 
@@ -234,13 +158,15 @@
       <button type="submit" class="w-full rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 sm:w-auto dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Subscribe</button>
     </form>
   </Banner>
+  </div>
+  <HighlightCompo code={modules['./md/newsletter.md'] as string} />
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/newsletter.md'] as string} />
 
 <H2>Informational banner</H2>
 
-<CodeWrapper class="relative">
+<CodeWrapper>
+  <div class="relative">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="py-4" />
   <Banner id="info-banner" position="absolute" bannerType="info">
@@ -258,6 +184,6 @@
       Get started <ArrowRightOutline class="ms-2 h-3 w-3" />
     </a>
   </Banner>
+  </div>
+  <HighlightCompo code={modules['./md/informational.md'] as string} />
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/informational.md'] as string} />

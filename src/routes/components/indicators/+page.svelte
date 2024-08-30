@@ -5,8 +5,6 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import { copyToClipboard } from '../../utils/helpers';
-  import GeneratedCode from '../../utils/GeneratedCode.svelte';
 
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
@@ -41,37 +39,22 @@
       if (border) props.push(' border');
       if (placement !== 'default') props.push(` placement="${placement}"`);
       if (cornerStyle !== 'circular') props.push(` cornerStyle="${cornerStyle}"`);
+
+      const propsString = props.length > 0 
+      ? props.map(prop => `\n  ${prop}`).join('') + '\n'
+      : ' ';
       
       return `<div class="borer relative h-56 w-56 rounded-lg border-gray-300 m-8">
-  <Indicator${props.join('')} />
+  <Indicator${propsString} />
 </div>`;
     })()
   );
-  let copiedStatus = $state(false);
-
-  function handleCopyClick(codeBlock: string) {
-  copyToClipboard(codeBlock)
-    .then(() => {
-      copiedStatus = true;
-      setTimeout(() => {
-        copiedStatus = false;
-      }, 1000);
-    })
-    .catch((err) => {
-      console.error('Error in copying:', err);
-      // Handle the error as needed
-    });
-  }
 </script>
 
 <H1>Indicator</H1>
 
 <H2>Setup</H2>
-<GeneratedCode 
-  componentStatus={copiedStatus}
-  generatedCode={modules['./md/setup.md'] as string}
-  handleCopyClick={()=>handleCopyClick(modules['./md/setup.md'] as string)}
-/>
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default indicator</H2>
 <CodeWrapper class="flex justify-center gap-4">
@@ -116,25 +99,24 @@
     <Button onclick={changeCornerStyle}>{cornerStyle === 'circular' ? 'Rounded' : 'Circular'}</Button>
   </div>
   <h3 class="text-xl font-semibold my-4">Generated Code:</h3>
-  <GeneratedCode 
-    componentStatus={copiedStatus}
-    {generatedCode}
-    handleCopyClick={()=>handleCopyClick(generatedCode)}
-  />
+  <HighlightCompo code={generatedCode}/>
 </CodeWrapper>
 
 <H2>Legend indicator</H2>
-<CodeWrapper class="flex flex-wrap justify-start gap-4 md:justify-center ">
+<CodeWrapper>
+  <div class="flex flex-wrap justify-start gap-4 md:justify-center">
   <span class="flex items-center"><Indicator size="sm" color="orange" class="me-1.5" />Visitors</span>
   <span class="flex items-center"><Indicator size="sm" color="purple" class="me-1.5" />Sessions</span>
   <span class="flex items-center"><Indicator size="sm" color="indigo" class="me-1.5" />Customers</span>
   <span class="flex items-center"><Indicator size="sm" color="teal" class="me-1.5" />Revenue</span>
+  </div>
+  <HighlightCompo code={modules['./md/legend.md'] as string} />
 </CodeWrapper>
-<HighlightCompo code={modules['./md/legend.md'] as string} />
 
 <H2>Indicator count</H2>
 
-<CodeWrapper class="flex justify-center">
+<CodeWrapper>
+  <div class="flex justify-center">
   <Button size="lg" class="relative">
     <EnvelopeSolid class="me-2 h-4 w-4 text-white dark:text-white" />
     <span class="sr-only">Notifications</span>
@@ -143,20 +125,22 @@
       <span class="text-xs font-bold text-white">8</span>
     </Indicator>
   </Button>
+  </div>
+  <HighlightCompo code={modules['./md/indicator-count.md'] as string} />
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/indicator-count.md'] as string} />
 
 <H2>Status indicator</H2>
-
-<CodeWrapper class="flex justify-center">
+<CodeWrapper>
+  <div class="flex justify-center">
   <Avatar src="/images/profile-picture-5.webp" dot={{ color: 'green', size: 'lg', placement: 'top-right' }} />
   <Avatar src="/images/profile-picture-5.webp" dot={{ color: 'red', size: 'lg', placement: 'top-right' }} />
+  </div>
+  <HighlightCompo code={modules['./md/status.md'] as string} />
 </CodeWrapper>
-<HighlightCompo code={modules['./md/status.md'] as string} />
 
 <H2>Badge indicator</H2>
-<CodeWrapper class="flex gap-2">
+<CodeWrapper>
+  <div class="flex gap-2">
   <ul class="w-full max-w-sm divide-y divide-gray-200 dark:divide-gray-700">
     <li class="py-3 sm:py-4">
       <div class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -185,11 +169,12 @@
       </div>
     </li>
   </ul>
+  </div>
+  <HighlightCompo code={modules['./md/badge-indicator.md'] as string} />
 </CodeWrapper>
-<HighlightCompo code={modules['./md/badge-indicator.md'] as string} />
 
 <H2>Stepper indicator</H2>
-<CodeWrapper class="space-y-8">
+<CodeWrapper>
   <ol class="flex items-center">
     <li class="relative mb-6 w-full">
       <div class="flex items-center">
@@ -280,23 +265,5 @@
       </div>
     </li>
   </ol>
+  <HighlightCompo code={modules['./md/stepper.md'] as string} />
 </CodeWrapper>
-<HighlightCompo code={modules['./md/stepper.md'] as string} />
-
-<H2>Indicator position</H2>
-
-<CodeWrapper class="flex justify-center">
-  <div class="borer relative h-56 w-56 rounded-lg border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-800">
-    <Indicator placement="top-left" color="gray" />
-    <Indicator placement="top-center" color="lime" />
-    <Indicator placement="top-right" color="orange" />
-    <Indicator placement="center-left" color="green" />
-    <Indicator placement="center" color="red" />
-    <Indicator placement="center-right" color="purple" />
-    <Indicator placement="bottom-left" color="indigo" />
-    <Indicator placement="bottom-center" color="yellow" />
-    <Indicator placement="bottom-right" color="teal" />
-  </div>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/position.md'] as string} />

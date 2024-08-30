@@ -5,8 +5,7 @@
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
   // import H3 from '../../utils/H3.svelte';
-  import { copyToClipboard } from '../../utils/helpers';
-  import GeneratedCode from '../../utils/GeneratedCode.svelte';
+
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -45,39 +44,25 @@
       if (autoplay) props.push(' autoplay');
       if (muted) props.push(' muted');
       if (currentClass.name !== 'default') props.push(` class="${currentClass.class}"`);
-      return `<Video src="/videos/flowbite.mp4"${props.join('')} trackSrc="flowbite.mp4" />`;
+
+      const propsString = props.length > 0 
+      ? props.map(prop => `\n  ${prop}`).join('') + '\n'
+      : ' ';
+
+      return `<Video src="/videos/flowbite.mp4"${propsString} trackSrc="flowbite.mp4" />`;
     })()
   );
-  let copiedStatus = $state(false);
-
-  function handleCopyClick(codeBlock: string) {
-  copyToClipboard(codeBlock)
-    .then(() => {
-      copiedStatus = true;
-      setTimeout(() => {
-        copiedStatus = false;
-      }, 1000);
-    })
-    .catch((err) => {
-      console.error('Error in copying:', err);
-      // Handle the error as needed
-    });
-  }
 </script>
 
 <H1>Video</H1>
 
 <H2>Setup</H2>
 
-<GeneratedCode 
-  componentStatus={copiedStatus}
-  generatedCode={modules['./md/setup.md'] as string}
-  handleCopyClick={()=>handleCopyClick(modules['./md/setup.md'] as string)}
-/>
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Interactive Video Player Builder</H2>
 <CodeWrapper>
-  <div class="h-[520px]">
+  <div class="h-[500px]">
   <Video src="/videos/flowbite.mp4" {controls} {autoplay} {muted} trackSrc="flowbite.mp4" class={currentClass.class}/>
   </div>
   <div class="flex flex-wrap space-x-6">
@@ -92,9 +77,5 @@
     <Button class="w-48" color="pink" onclick={changeMuted}>{muted ? 'Remove muted' : 'Add muted'}</Button>
   </div>
   <h3 class="text-xl font-semibold my-4">Generated Code:</h3>
-  <GeneratedCode 
-    componentStatus={copiedStatus}
-    {generatedCode}
-    handleCopyClick={()=>handleCopyClick(generatedCode)}
-  />
+  <HighlightCompo code={generatedCode}/>
 </CodeWrapper>

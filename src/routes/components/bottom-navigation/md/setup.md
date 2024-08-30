@@ -1,5 +1,4 @@
 <script>
-  // You don't need all of these
   import { page } from '$app/stores';
   import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder, Card, Listgroup, Avatar } from 'svelte-5-ui-lib';
   import { HomeSolid, WalletSolid, AdjustmentsVerticalSolid, UserCircleSolid } from 'flowbite-svelte-icons';
