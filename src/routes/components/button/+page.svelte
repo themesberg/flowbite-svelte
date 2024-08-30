@@ -155,9 +155,9 @@
   <Button class="w-40" onclick={changeBtnClass}> {btnClass === '' ? 'Add class' : 'Remove class'}</Button>
   <Button class="w-40" color="sky" onclick={changeBtnLink}> {btnLink === '' ? 'Add link' : 'Remove link'}</Button>
   </div>
-  <div class="w-full">
-  <HighlightCompo code={generatedCode} />
-</div>
+  {#snippet codeblock()}
+  <HighlightCompo code={generatedCode} class="w-full"/>
+  {/snippet}
 </CodeWrapper>
 
 <H2>Gradient button</H2>
@@ -188,8 +188,9 @@
   <Button class="w-40" onclick={changeGradientClass}>{gradientClass === '' ? 'Add class' : 'Remove class'}</Button>
   <Button class="w-40" color="sky" onclick={changeGradientLink}> {btnLink === '' ? 'Add link' : 'Remove link'}</Button>
   </div>
-  <h3 class="text-xl font-semibold my-4">Generated Code:</h3>
+  {#snippet codeblock()}
   <HighlightCompo code={gradientGeneratedCode} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Button with icon</H2>
@@ -198,7 +199,9 @@
     <Button><ShoppingBagSolid class="me-2 h-4 w-4" />Buy Now</Button>
     <Button>Choose Plan<ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/button-with-icon.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 
@@ -209,7 +212,9 @@
     Messages
     <Indicator color="cyan" class="bg-primary-200 text-xs font-semibold text-primary-800" size="lg">2</Indicator>
   </Button>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/button-with-label.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 
@@ -225,7 +230,9 @@
       <ThumbsUpSolid class="h-5 w-5" />
     </Button>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/icon-buttons.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Loader</H2>
@@ -236,11 +243,15 @@
   <Button color="alternative">
     <Spinner class="me-3" size="4" />Loading ...
   </Button>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/loader.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Events</H2>
 <CodeWrapper>
   <Button onclick={btn1}>Button 1</Button>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/events.md'] as string} />
+  {/snippet}
 </CodeWrapper>

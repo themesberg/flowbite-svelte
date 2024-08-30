@@ -8,6 +8,7 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import H3 from '../../utils/heading/H3.svelte';
 
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
@@ -126,8 +127,8 @@
 
 <H2>Interactive Alert Bilder</H2>
 
-<CodeWrapper class="space-y-4">
-  <div class="mb-4 h-16">
+<CodeWrapper>
+  <div class="mb-4 h-20">
     <Alert {color} {rounded} {border} {dismissable} class={alertClass} bind:alertStatus={alertStatusInteractive} transition={currentTransition.transition} params={currentTransition.params}>
         {#snippet icon()}
         {#if iconSlot}
@@ -140,7 +141,7 @@
   <div class="mb-4 h-12">
     <Button disabled={alertStatusInteractive ? true : false} onclick={changeStatusInteractive}>Open alert</Button>
   </div>
-  <div class="flex flex-wrap space-x-4">
+  <div class="flex flex-wrap space-x-4 mb-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
       <Radio labelClass="w-24 my-1" name="alert_reactive" bind:group={color} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
@@ -160,8 +161,9 @@
   <Button class="w-48" color="sky" onclick={changeIconSlot}>{iconSlot ? 'Remove icon' : 'Add icon'}</Button>
   <Button class="w-48" color="rose" onclick={changeBorderAccent}>{borderAccent ? 'Remove accent' : 'Add accent'}</Button>
   </div>
-  <h3 class="text-xl font-semibold my-4">Generated Code:</h3>
+  {#snippet codeblock()}
   <HighlightCompo code={generatedCode} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Alerts with list</H2>
@@ -185,7 +187,9 @@
       <Radio labelClass="w-24 my-1" name="list_alert_color" bind:group={listColor} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/alerts-with-list.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Additional content</H2>
@@ -211,19 +215,25 @@
       <Radio labelClass="w-24 my-1" name="additional_alert_color" bind:group={additionalColor} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/additional-content.md'] as string}/>
+  {/snippet}
 </CodeWrapper>
 
 <H2>Custom color</H2>
 <CodeWrapper class="p-4">
   <Alert dismissable class="bg-sky-500 dark:bg-lime-500 text-white dark:text-white">Your content</Alert>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/custom-color.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Events</H2>
 <CodeWrapper class="p-4">
   <Alert dismissable onclick={handleClose} bind:alertStatus={alertEventStatus}>Close me</Alert>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/events.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 

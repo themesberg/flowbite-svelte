@@ -110,7 +110,7 @@
   <Button disabled={Object.keys(cardImage).length === 0} class="w-40" color="violet" onclick={changeImgLayout}>{horizontal  ? 'Vertical' : 'Horizontal'}</Button>
   <Toggle bind:checked={reverse} labelClass="italic dark:text-gray-500 {Object.keys(cardImage).length === 0 ? 'opacity-50 cursor-not-allowed' : ''}" disabled={Object.keys(cardImage).length === 0}>Reverse: {reverse} </Toggle>
   </div>
-  <h3 class="text-xl font-semibold my-4">Generated Code:</h3>
+  
   <HighlightCompo code={generatedCode} class="mb-8" />
   <div class="h-[700px]">
     <div class="flex justify-center">

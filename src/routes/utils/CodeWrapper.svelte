@@ -4,13 +4,20 @@
   import { codewrapper } from './theme';
   interface Props extends HTMLAttributes<HTMLDivElement> {
     children?: Snippet;
+    codeblock?: Snippet;
+    innderClass?: string;
   }
-  let { children, class: classname }: Props = $props();
-  const base = $derived(codewrapper({class: classname}));
+  let { children, codeblock, innderClass, class: classname }: Props = $props();
+  const {base, inner} = $derived(codewrapper());
 </script>
 
-<div class={base}>
+<div class={base({class: classname})}>
   {#if children}
-    {@render children()}
+    <div class={inner({ class: innderClass})}>
+      {@render children()}
+    </div>
+  {/if}
+  {#if codeblock}
+    {@render codeblock()}
   {/if}
 </div>

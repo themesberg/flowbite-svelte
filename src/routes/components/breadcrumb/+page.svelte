@@ -43,7 +43,9 @@
     <Button class="w-48" color="green" onclick={changeOlClass}>{olClass ? 'Remove olClass' : 'Add olClass'}</Button>
     </div>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/defaultbreadcrumb.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 
@@ -57,7 +59,9 @@
     <BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
   </Breadcrumb>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/solidbreadcrumb.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 
@@ -85,6 +89,8 @@
     </BreadcrumbItem>
   </Breadcrumb>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/icons.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 

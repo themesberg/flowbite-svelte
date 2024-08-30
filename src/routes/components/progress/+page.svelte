@@ -126,6 +126,6 @@
   <Button class="w-48" color="red" onclick={changeAnimation}>{animation ? 'No animation' : 'Animation'}</Button>
   <Button class="w-48" color="emerald" onclick={() => (progress = `${Math.round(Math.random() * 100)}`)}>Randomize</Button>
   </div>
-  <h3 class="text-xl font-semibold my-4">Generated Code:</h3>
+  
   <HighlightCompo code={generatedCode}/>
 </CodeWrapper>

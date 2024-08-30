@@ -76,6 +76,6 @@
     <Button class="w-48" color="blue" onclick={changeAutoplay}>{autoplay ? 'Remove autoplay' : 'Add autoplay'}</Button>
     <Button class="w-48" color="pink" onclick={changeMuted}>{muted ? 'Remove muted' : 'Add muted'}</Button>
   </div>
-  <h3 class="text-xl font-semibold my-4">Generated Code:</h3>
+  
   <HighlightCompo code={generatedCode}/>
 </CodeWrapper>

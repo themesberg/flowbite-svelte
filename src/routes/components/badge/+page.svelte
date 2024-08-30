@@ -162,7 +162,9 @@
   <Button class="w-40" color="pink" onclick={changeLink}>{link ? 'Remove href' : 'Add href'}</Button>
   <Button class="w-40" color="teal" onclick={changeIconSlot}>{iconSlot ? 'Remove icon' : 'Add icon'}</Button>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={generatedCode} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Dismissing with custom icon</H2>
@@ -175,7 +177,9 @@
     {/snippet}
   </Badge>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/dismissable-badge-2.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 
@@ -185,7 +189,9 @@
   <div class="flex justify-center h-8">
   <Badge dismissable large onclick={handleClose} bind:badgeStatus={eventStatus}>Default</Badge>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/dismissable-badge-3.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Notification badge</H2>
@@ -209,7 +215,9 @@
     <Indicator color="sky" border size="xl" placement="bottom-right" class="text-xs font-bold">20</Indicator>
   </Button>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/notification-badge.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Button with badge</H2>
@@ -220,7 +228,9 @@
     <Badge rounded class="ms-2 h-4 w-4 bg-white p-0 font-semibold text-primary-800 dark:bg-white dark:text-primary-800">2</Badge>
   </Button>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/button-with-badge.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Badge with icon only</H2>
@@ -235,13 +245,16 @@
     <span class="sr-only">Icon description</span>
   </Badge>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/badge-with-icon-only.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Opening badge</H2>
-<CodeWrapper class="h-20">
+<CodeWrapper>
   <Button onclick={openBadge}>Open badge</Button>
   <Badge class="ml-4" color="blue" dismissable large bind:badgeStatus={openBadgeStatus}>Default</Badge>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/opening-badge.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/opening-badge.md'] as string} />

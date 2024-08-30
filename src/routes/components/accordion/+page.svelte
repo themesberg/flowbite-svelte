@@ -54,9 +54,10 @@
     </AccordionItem>
   </Accordion>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/default-accordion.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
 
 <H2>Open item</H2>
 <CodeWrapper>
@@ -76,13 +77,14 @@
     </AccordionItem>
   </Accordion>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/open-item.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
 
 <H2>Color option</H2>
 <CodeWrapper>
-  <div  class="h-[300px]">
+  <div class="h-[300px]">
   <Accordion activeClass="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800" inactiveClass="text-gray-500 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800">
     <AccordionItem class="">
       {#snippet header()}
@@ -98,7 +100,9 @@
     </AccordionItem>
   </Accordion>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/color-option.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Flush accordion</H2>
@@ -119,9 +123,10 @@
     </AccordionItem>
   </Accordion>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/flush-accordion.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
 
 <H2>Arrow style</H2>
 <CodeWrapper>
@@ -153,7 +158,9 @@
     </AccordionItem>
   </Accordion>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/arrow-style.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Icon Accordion</H2>
@@ -181,7 +188,9 @@
     </AccordionItem>
   </Accordion>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/icon-accordion.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Multiple mode</H2>
@@ -212,12 +221,14 @@
     </AccordionItem>
   </Accordion>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/multiple-mode.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Custom transitions</H2>
 <CodeWrapper>
-  <div class="h-[420px]">
+  <div class="h-[400px]">
   <Accordion>
     <AccordionItem params={{ duration: 2000 }}>
       {#snippet header()}
@@ -239,12 +250,14 @@
     </AccordionItem>
   </Accordion>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/custom-transitions.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Nesting accordions</H2>
 <CodeWrapper>
-  <div class="h-[600px]">
+  <div class="h-[550px]">
   <Accordion>
     <AccordionItem bind:open={nestingOpenStatus}>
       {#snippet header()}
@@ -281,5 +294,7 @@
     </AccordionItem>
   </Accordion>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/nesting-accordions.md'] as string} />
+  {/snippet}
 </CodeWrapper>

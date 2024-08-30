@@ -84,7 +84,9 @@
   <Button class="w-40" color="green" onclick={changeStacked}>{stacked ? 'Remove stacked' : 'Add  stacked'}</Button>
   <Button class="w-40" color="purple" onclick={changeClass}>{avatarClass ? 'Remove class' : 'Add class'}</Button>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={generatedCode} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Placeholder</H2>
@@ -95,19 +97,20 @@
   <Avatar border />
   <Avatar cornerStyle="rounded" border />
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/placeholder.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
 
 <H2>Placeholder initials</H2>
 <CodeWrapper>
   <div class="flex justify-center h-10">
   <Avatar>JL</Avatar>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/placeholder-initials.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-
 
 <H2>Avatar tooltip</H2>
 <CodeWrapper class="flex justify-center gap-4">NOT COMPLETED</CodeWrapper>
@@ -121,9 +124,10 @@
   <Avatar src="/images/profile-picture-5.webp" dot={{ placement: 'bottom-right' }} cornerStyle="rounded" />
   <Avatar dot={{}} />
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/dot-indicator.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
 
 <H2>Stacked</H2>
 <CodeWrapper>
@@ -141,9 +145,10 @@
     <Avatar stacked href="/" class="bg-gray-700 text-sm text-white hover:bg-gray-600">+99</Avatar>
   </div>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/stacked.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
 
 <H2>Avatar text</H2>
 <CodeWrapper>
@@ -154,7 +159,9 @@
       <div class="text-sm text-gray-500 dark:text-gray-400">Joined in August 2014</div>
     </div>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/avatar-text.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 
@@ -178,6 +185,8 @@
     </Dropdown>
   </div>
   </div>
-<HighlightCompo code={modules['./md/user-dropdown.md'] as string} />
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/user-dropdown.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 

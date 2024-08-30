@@ -119,7 +119,7 @@
   <div class="mt-4 flex flex-wrap gap-2">
   <Button onclick={changeDismissable}>{dismissable ? 'Disable' : 'Enable'} dismissable</Button> 
   </div>
-  <h3 class="text-xl font-semibold my-4">Generated Code:</h3>
+  
   <HighlightCompo code={generatedCode} />
 </CodeWrapper>
 

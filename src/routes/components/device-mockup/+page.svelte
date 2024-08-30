@@ -143,7 +143,7 @@
       <Radio labelClass="w-24 my-1" name="alert_reactive" bind:group={selectedDevice} value={device}>{device}</Radio>
     {/each}
   </div>
-  <h3 class="text-xl font-semibold my-4">Generated Code:</h3>
+  
   <HighlightCompo code={generatedCode} class="mb-4"/>
   <DeviceMockup device={currentDevice.device as DeviceVariantType}>
     <img src={currentDevice.lightimage.src} class={currentDevice.lightimage.class} alt={currentDevice.lightimage.alt} />

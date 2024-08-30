@@ -5,6 +5,7 @@
   import { Button, Badge } from '$lib';
   import { copyToClipboard } from './helpers';
   import { highlightcompo } from './theme'
+  import type { Snippet } from 'svelte';
  
   interface Props {
     // componentStatus: boolean;
@@ -13,9 +14,19 @@
     buttonClass?: string;
     codeLang?: string;
     class?: string;
+    expanded?: boolean;
   }
   
   let { code, codeLang, badgeClass, buttonClass, class: className }: Props = $props()
+
+  let showExpandButton: boolean = $state(false);
+  let expand: boolean = $state(false);
+  function checkOverflow(el: HTMLElement) {
+    const isOverflowingY = el.clientHeight < el.scrollHeight;
+    showExpandButton = isOverflowingY;
+    // el.firstElementChild?.classList.add('mb-8');
+  }
+
   const {base, badge, button} = $derived(highlightcompo())
   let copiedStatus = $state(false);
 
@@ -41,6 +52,8 @@
 
 <div class={base({ className })}>
   <div class="relative">
+    <div class="overflow-hidden {showExpandButton ? 'pb-8': ''}" class:max-h-72={!expand} tabindex="-1" use:checkOverflow>
+
     {#if copiedStatus}
       <Badge class={badge({ class: badgeClass})} color="green">Copied to clipboard</Badge>
     {/if}
@@ -51,6 +64,10 @@
     {:else}
       no code is provided
     {/if}
+    </div>
     <Button class={button({ class: buttonClass})} onclick={handleCopyClick}>Copy</Button>
+    {#if showExpandButton}
+      <button onclick={() => (expand = !expand)} data-expand-code="" type="button" class="absolute  bottom-0 start-0 py-2.5 px-5 w-full text-sm font-medium text-gray-900 bg-gray-100 border-t border-gray-200 hover:bg-gray-100 hover:text-primary-700 dark:bg-gray-700 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">{expand ? 'Collapse code' : 'Expand code'}</button>
+    {/if}
   </div>
 </div>

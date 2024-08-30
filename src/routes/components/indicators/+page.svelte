@@ -98,7 +98,7 @@
     <Button onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
     <Button onclick={changeCornerStyle}>{cornerStyle === 'circular' ? 'Rounded' : 'Circular'}</Button>
   </div>
-  <h3 class="text-xl font-semibold my-4">Generated Code:</h3>
+  
   <HighlightCompo code={generatedCode}/>
 </CodeWrapper>
 

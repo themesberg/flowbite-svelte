@@ -27,8 +27,8 @@
 <HighlightCompo codeLang="ts" code={modules['./md/setup.md'] as string} />
 
 <H2>Default bottom navigation</H2>
-<CodeWrapper>
-  <div class="relative flex flex-col">
+<CodeWrapper innderClass="p-0">
+  <div class="relative flex flex-col p-6">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
@@ -47,13 +47,15 @@
     </BottomNavItem>
   </BottomNav>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo codeLang="ts" code={modules['./md/default-bottom-navigation.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 
 <H2>Links, target and active class</H2>
-<CodeWrapper>
-  <div class="relative flex flex-col">
+<CodeWrapper innderClass="p-0">
+  <div class="relative flex flex-col p-6">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
@@ -72,12 +74,14 @@
     </BottomNavItem>
   </BottomNav>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo codeLang="ts" code={modules['./md/links-and-active-class.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Overwriting activeClass</H2>
-<CodeWrapper>
-  <div class="relative flex flex-col">
+<CodeWrapper innderClass="p-0">
+  <div class="relative flex flex-col p-6">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
@@ -96,12 +100,14 @@
     </BottomNavItem>
   </BottomNav>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo codeLang="ts" code={modules['./md/overwriting-activeclass.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Icon color</H2>
-<CodeWrapper>
-  <div class="relative flex flex-col">
+<CodeWrapper innderClass="p-0">
+  <div class="relative flex flex-col p-6">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
@@ -120,13 +126,15 @@
     </BottomNavItem>
   </BottomNav>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo codeLang="ts" code={modules['./md/icon-color.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 
 <H2>Menu items with border</H2>
-<CodeWrapper>
-  <div class="relative flex flex-col">
+<CodeWrapper innderClass="p-0">
+  <div class="relative flex flex-col p-6">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
@@ -145,7 +153,9 @@
     </BottomNavItem>
   </BottomNav>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo codeLang="ts" code={modules['./md/menu-items-with-border.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Application bar example</H2>

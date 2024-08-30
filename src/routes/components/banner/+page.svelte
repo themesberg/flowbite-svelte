@@ -104,10 +104,12 @@
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Interactive Banner Builder</H2>
-<CodeWrapper class="relative">
-  <div class="mb-4 h-[630px] md:h-[440px]">
+<CodeWrapper class="relative" innderClass="p-0">
+  <div class="mb-4 h-[670px] md:h-[480px]">
+    <div class="p-6">
     <Skeleton class="py-4" />
     <ImagePlaceholder class="py-4" />
+    </div>
     <Banner id="sample-banner" {position} {bannerType} {color} class={bannerClass} bind:bannerStatus={bannerStatus} transition={currentTransition.transition} params={currentTransition.params}>
       <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
         <span class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600">
@@ -140,17 +142,20 @@
     <Button class="w-48" color="blue" onclick={changeBannerType}>Type: { bannerType === 'default' ? 'cta' : 'default'}</Button>
     <Button class="w-48" color="green" onclick={changeClass}>{bannerClass ? 'Remove class' : 'Add class'}</Button>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={generatedCode} />
+  {/snippet}
 </CodeWrapper>
 
 
 <H2>Newsletter sign-up banner</H2>
 
-<CodeWrapper >
+<CodeWrapper innderClass="p-0">
   <div class="relative">
-  <Skeleton class="py-4" />
-  <ImagePlaceholder class="py-4" />
-
+    <div class="p-6">
+      <Skeleton class="py-4" />
+      <ImagePlaceholder class="py-4" />
+    </div>
   <Banner id="signup-banner" position="absolute" bannerType="signup">
     <form action="/" class="flex w-full flex-col items-center md:flex-row">
       <label for="email" class="mb-2 me-auto flex-shrink-0 text-sm font-medium text-gray-500 md:m-0 md:mb-0 md:me-4 dark:text-gray-400">Sign up for our newsletter</label>
@@ -159,16 +164,20 @@
     </form>
   </Banner>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/newsletter.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 
 <H2>Informational banner</H2>
 
-<CodeWrapper>
+<CodeWrapper innderClass="p-0">
   <div class="relative">
-  <Skeleton class="py-4" />
-  <ImagePlaceholder class="py-4" />
+    <div class="p-6">
+    <Skeleton class="py-4" />
+    <ImagePlaceholder class="py-4" />
+    </div>
   <Banner id="info-banner" position="absolute" bannerType="info">
     {#snippet header()}
       <div class="mb-4 md:mb-0 md:me-4">
@@ -185,5 +194,7 @@
     </a>
   </Banner>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/informational.md'] as string} />
+  {/snippet}
 </CodeWrapper>
