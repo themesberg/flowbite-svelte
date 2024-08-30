@@ -31,66 +31,63 @@
 
 <CodeWrapper>
   <div class="overflow-x-scroll p-2 sm:p-6">
-  <div class="h-20">
-    <Breadcrumb {navClass} {olClass}>
-      <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
-      <BreadcrumbItem href="/">Projects</BreadcrumbItem>
-      <BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
-    </Breadcrumb>
-  </div>
-  <div class="flex flex-wrap gap-4 mb-4">
-    <Button class="w-48" onclick={changeNavClass}>{navClass ? 'Remove navClass' : 'Add navClass'}</Button>
-    <Button class="w-48" color="green" onclick={changeOlClass}>{olClass ? 'Remove olClass' : 'Add olClass'}</Button>
+    <div class="h-20">
+      <Breadcrumb {navClass} {olClass}>
+        <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
+        <BreadcrumbItem href="/">Projects</BreadcrumbItem>
+        <BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
+      </Breadcrumb>
+    </div>
+    <div class="mb-4 flex flex-wrap gap-4">
+      <Button class="w-48" onclick={changeNavClass}>{navClass ? 'Remove navClass' : 'Add navClass'}</Button>
+      <Button class="w-48" color="green" onclick={changeOlClass}>{olClass ? 'Remove olClass' : 'Add olClass'}</Button>
     </div>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/defaultbreadcrumb.md'] as string} />
+    <HighlightCompo code={modules['./md/defaultbreadcrumb.md'] as string} />
   {/snippet}
 </CodeWrapper>
-
 
 <H2>Solid Breadcrumb</H2>
 
 <CodeWrapper>
   <div class="overflow-x-scroll p-2 sm:p-6">
-  <Breadcrumb solid class="overflow-x-scroll">
-    <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
-    <BreadcrumbItem href="/">Projects</BreadcrumbItem>
-    <BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
-  </Breadcrumb>
+    <Breadcrumb solid class="overflow-x-scroll">
+      <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
+      <BreadcrumbItem href="/">Projects</BreadcrumbItem>
+      <BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
+    </Breadcrumb>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/solidbreadcrumb.md'] as string} />
+    <HighlightCompo code={modules['./md/solidbreadcrumb.md'] as string} />
   {/snippet}
 </CodeWrapper>
-
 
 <H2>Icons</H2>
 
 <CodeWrapper>
   <div class="overflow-x-scroll p-2 sm:p-6">
-  <Breadcrumb class="overflow-x-scroll bg-gray-50 px-5 py-3 dark:bg-gray-900">
-    <BreadcrumbItem href="/" home>
-      {#snippet icon()}
-        <HomeOutline class="me-2 h-4 w-4" />
-      {/snippet}Home
-    </BreadcrumbItem>
-    <BreadcrumbItem href="/">
-      {#snippet icon()}
-        <ChevronDoubleRightOutline class="mx-2 h-5 w-5 dark:text-white" />
-      {/snippet}
-      Projects
-    </BreadcrumbItem>
-    <BreadcrumbItem>
-      {#snippet icon()}
-        <ChevronDoubleRightOutline class="mx-2 h-5 w-5 dark:text-white" />
-      {/snippet}
-      Flowbite Svelte
-    </BreadcrumbItem>
-  </Breadcrumb>
+    <Breadcrumb class="overflow-x-scroll bg-gray-50 px-5 py-3 dark:bg-gray-900">
+      <BreadcrumbItem href="/" home>
+        {#snippet icon()}
+          <HomeOutline class="me-2 h-4 w-4" />
+        {/snippet}Home
+      </BreadcrumbItem>
+      <BreadcrumbItem href="/">
+        {#snippet icon()}
+          <ChevronDoubleRightOutline class="mx-2 h-5 w-5 dark:text-white" />
+        {/snippet}
+        Projects
+      </BreadcrumbItem>
+      <BreadcrumbItem>
+        {#snippet icon()}
+          <ChevronDoubleRightOutline class="mx-2 h-5 w-5 dark:text-white" />
+        {/snippet}
+        Flowbite Svelte
+      </BreadcrumbItem>
+    </Breadcrumb>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/icons.md'] as string} />
+    <HighlightCompo code={modules['./md/icons.md'] as string} />
   {/snippet}
 </CodeWrapper>
-

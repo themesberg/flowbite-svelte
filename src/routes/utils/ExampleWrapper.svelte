@@ -8,7 +8,7 @@
   // import Tooltip from '$lib/tooltip/Tooltip.svelte';
   import { DesktopPcOutline, TabletOutline, MobilePhoneOutline } from 'flowbite-svelte-icons';
   // import { onMount } from 'svelte';
-  let {divClass = 'w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-6', src, meta}:{divClass?: string, src: any, meta: any} = $props();
+  let { divClass = 'w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-6', src, meta }: { divClass?: string; src: any; meta: any } = $props();
 
   // the source of the example, if you want it
   // export let src: any = undefined;
@@ -18,7 +18,7 @@
 
   let browserSupport: boolean = $state(false);
   let code: HTMLElement;
-  let iframe: HTMLIFrameElement | undefined =$state();
+  let iframe: HTMLIFrameElement | undefined = $state();
   let iframeLoad: boolean = $state(false);
   let codeResponsiveContent: HTMLDivElement | undefined = $state();
 
@@ -63,7 +63,6 @@
   }
 
   let node: HTMLElement;
-  
 
   const copyToClipboard = async (e: MouseEvent) => {
     const REG_HEX = /&#x([a-fA-F0-9]+);/g;
@@ -129,8 +128,8 @@
   };
 
   // onMount(() => {
-    // workaround for svelte issue https://github.com/sveltejs/svelte/issues/6967
-    
+  // workaround for svelte issue https://github.com/sveltejs/svelte/issues/6967
+
   // });
 
   // $: {
@@ -146,15 +145,14 @@
   //     iframe.contentDocument.documentElement.dir = rtl ?? '';
   //   }
   // }
-  $effect(
-    () => {
-      setTimeout(() => {
+  $effect(() => {
+    setTimeout(() => {
       if (iframe && !iframeLoad) {
         iframe.dispatchEvent(new Event('load'));
       }
-      }, 500);
-      
-      if (node) {
+    }, 500);
+
+    if (node) {
       // find closes previous section anchor
       const section = [...document.querySelectorAll('#mainContent > :where(h2, h3) > [id]')]
         .map((x: Element) => ({ id: x.id, top: x.parentElement?.offsetTop ?? Infinity }))
@@ -168,30 +166,29 @@
         path.hash = section.id.replaceAll('_', '-').replaceAll('/', '').toLowerCase();
       }
     }
- 
-    if (iframe) {
-        // toggle dark mode class in the iframe
-        dark ? iframe?.contentDocument?.documentElement.classList.add('dark') : iframe?.contentDocument?.documentElement.classList.remove('dark');
-      }
 
-      if (iframe && iframe.contentDocument) {
-        // toggle dir value in the iframe
-        iframe.contentDocument.documentElement.dir = rtl ?? '';
-      }
+    if (iframe) {
+      // toggle dark mode class in the iframe
+      dark ? iframe?.contentDocument?.documentElement.classList.add('dark') : iframe?.contentDocument?.documentElement.classList.remove('dark');
     }
-  ) 
+
+    if (iframe && iframe.contentDocument) {
+      // toggle dir value in the iframe
+      iframe.contentDocument.documentElement.dir = rtl ?? '';
+    }
+  });
 </script>
 
-<div class="mt-8 code-example" bind:this={node} use:init>
+<div class="code-example mt-8" bind:this={node} use:init>
   {#if !meta.hideOutput}
-    <div class="w-full p-4 border border-gray-200 bg-gray-50 rounded-t-xl dark:border-gray-600 dark:bg-gray-700">
+    <div class="w-full rounded-t-xl border border-gray-200 bg-gray-50 p-4 dark:border-gray-600 dark:bg-gray-700">
       <div class="grid {!!meta.hideResponsiveButtons ? 'grid-cols-2' : 'grid-cols-2 sm:grid-cols-3'}">
         {#if path}
-          <Button size="xs" color="alternative" class="dark:!bg-gray-900 w-fit hover:text-primary-600 gap-2" href={'' + path} target="_blank" rel="noreferrer">
+          <Button size="xs" color="alternative" class="w-fit gap-2 hover:text-primary-600 dark:!bg-gray-900" href={'' + path} target="_blank" rel="noreferrer">
             <GitHub size="sm" />Edit on GitHub
           </Button>
           {#if !meta.hideResponsiveButtons}
-            <div class="justify-center gap-x-2 hidden sm:flex">
+            <div class="hidden justify-center gap-x-2 sm:flex">
               <Button size="xs" color="alternative" onclick={() => (responsiveDevice = 'desktop')}>
                 <DesktopPcOutline size="sm" />
               </Button>
@@ -212,13 +209,12 @@
     </div>
 
     <div class="code-preview-wrapper">
-      <div class="flex p-0 bg-white border-gray-200 bg-gradient-to-r code-preview dark:bg-gray-900 border-x dark:border-gray-600" class:dark dir={rtl}>
-        <div class="w-full code-responsive-wrapper">
+      <div class="code-preview flex border-x border-gray-200 bg-white bg-gradient-to-r p-0 dark:border-gray-600 dark:bg-gray-900" class:dark dir={rtl}>
+        <div class="code-responsive-wrapper w-full">
           <div class="code-responive-content {twJoin(!meta.hideResponsiveButtons && 'mx-auto', responsiveSize[responsiveDevice])}" bind:this={codeResponsiveContent}>
             {#if !meta.hideResponsiveButtons}
-              <iframe bind:this={iframe} class="w-full h-full" title="iframe-code-content" onload={injectContent}>
+              <iframe bind:this={iframe} class="h-full w-full" title="iframe-code-content" onload={injectContent}>
                 <div class={twMerge(divClass, meta.class)}>
-                  
                   {code}
                 </div>
               </iframe>
@@ -234,17 +230,17 @@
   {/if}
 
   <div class="code-syntax-wrapper">
-    <div class="relative border-gray-200 border-y border-x code-syntax dark:border-gray-600">
-      <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md dark:bg-gray-700 dark:border-gray-600">
-        <ul class="flex text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+    <div class="code-syntax relative border-x border-y border-gray-200 dark:border-gray-600">
+      <div class="grid w-full grid-cols-2 rounded-t-md border-b border-gray-200 bg-gray-50 dark:border-gray-600 dark:bg-gray-700">
+        <ul class="flex text-center text-sm font-medium text-gray-500 dark:text-gray-400">
           <li>
-            <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-e border-gray-200 dark:text-white dark:bg-gray-800 dark:border-gray-600"> Svelte </span>
+            <span class="inline-block w-full border-e border-gray-200 bg-gray-100 p-2 px-3 text-gray-800 dark:border-gray-600 dark:bg-gray-800 dark:text-white">Svelte</span>
           </li>
         </ul>
         <div class="flex justify-end">
           {#if browserSupport}
-            <button onclick={(e) => copyToClipboard(e)} type="button" class="flex items-center px-3 py-2 text-xs font-medium text-gray-600 bg-gray-100 border-s border-gray-200 dark:border-gray-600 dark:text-gray-400 dark:bg-gray-800 hover:text-primary-700 dark:hover:text-white copy-to-clipboard-button">
-              <svg class="w-4 h-4 me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <button onclick={(e) => copyToClipboard(e)} type="button" class="copy-to-clipboard-button flex items-center border-s border-gray-200 bg-gray-100 px-3 py-2 text-xs font-medium text-gray-600 hover:text-primary-700 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-white">
+              <svg class="me-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
               </svg>
               {copy_text}
@@ -262,7 +258,7 @@
           </div>
         </div>
         {#if showExpandButton && !expand}
-          <button onclick={() => (expand = !expand)} data-expand-code="" type="button" class="absolute bottom-0 start-0 py-2.5 px-5 w-full text-sm font-medium text-gray-900 bg-gray-100 border-t border-gray-200 hover:bg-gray-100 hover:text-primary-700 dark:bg-gray-700 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"> Expand code </button>
+          <button onclick={() => (expand = !expand)} data-expand-code="" type="button" class="absolute bottom-0 start-0 w-full border-t border-gray-200 bg-gray-100 px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Expand code</button>
         {/if}
       </div>
     </div>

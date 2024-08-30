@@ -43,7 +43,7 @@
 @prop children
 @prop src
 @prop href
-@prop rounded
+@prop cornerStyle = 'circular'
 @prop border
 @prop stacked
 @prop dot

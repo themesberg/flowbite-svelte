@@ -46,9 +46,9 @@
         <img width="30" src="/images/svelte-icon.png" alt="svelte icon" />
       </NavBrand>
 
-      <div class="ml-auto flex items-center md:order-1 space-x-1">
+      <div class="ml-auto flex items-center space-x-1 md:order-1">
         <DynamicCodeBlockStyle />
-        <a class="whitespace-normal rounded-lg p-1 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-0 focus:ring-gray-400 inline-block dark:hover:bg-gray-600 dark:hover:text-white" href="https://github.com/shinokada/svelte-5-ui-lib">
+        <a class="inline-block whitespace-normal rounded-lg p-1 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-0 focus:ring-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" href="https://github.com/shinokada/svelte-5-ui-lib">
           <GitHub />
         </a>
         <Darkmode />

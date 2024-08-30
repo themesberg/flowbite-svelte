@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { HighlightSvelte, Highlight } from 'svelte-rune-highlight';
+  import { HighlightSvelte, Highlight } from 'svelte-rune-highlight';
   import { browser } from '$app/environment';
   import { toUpperSnakeCase } from './helpers';
   const stylesImport = import.meta.glob('./highlight/styles/*.css');
@@ -34,10 +34,7 @@
   });
 </script>
 
-<select
-  class="w-32 border border-gray-200 p-1 text-gray-800 md:w-36 dark:text-gray-800"
-  bind:value={selected}
->
+<select class="w-32 border border-gray-200 p-1 text-gray-800 md:w-36 dark:text-gray-800" bind:value={selected}>
   {#each styles as theme}
     <option value={theme.value}>{theme.value}</option>
   {/each}

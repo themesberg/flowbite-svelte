@@ -8,15 +8,15 @@ export const highlightcompo = tv({
   },
   variants: {
     expanded: {
-      true: {base: 'min-h-full'},
-      false: { base: ''}
+      true: { base: 'min-h-full' },
+      false: { base: '' }
     }
   }
-})
+});
 
 export const codewrapper = tv({
   slots: {
     base: 'max-w-4xl rounded-md border border-gray-200 bg-white bg-gradient-to-r dark:border-gray-600 dark:bg-gray-800',
     inner: 'p-6'
   }
-})
+});

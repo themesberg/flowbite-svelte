@@ -27,134 +27,132 @@
 <HighlightCompo codeLang="ts" code={modules['./md/setup.md'] as string} />
 
 <H2>Default bottom navigation</H2>
-<CodeWrapper innderClass="p-0">
+<CodeWrapper innerClass="p-0">
   <div class="relative flex flex-col p-6">
-  <Skeleton class="py-4" />
-  <ImagePlaceholder class="pb-20" />
+    <Skeleton class="py-4" />
+    <ImagePlaceholder class="pb-20" />
 
-  <BottomNav position="absolute" innerClass="grid-cols-4">
-    <BottomNavItem btnName="Home">
-      <HomeSolid class="mb-1 h-5 w-5 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
-    </BottomNavItem>
-    <BottomNavItem btnName="Wallet">
-      <WalletSolid class="mb-1 h-5 w-5 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
-    </BottomNavItem>
-    <BottomNavItem btnName="Settings">
-      <AdjustmentsVerticalSolid class="mb-1 h-5 w-5 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
-    </BottomNavItem>
-    <BottomNavItem btnName="Profile">
-      <UserCircleSolid class="mb-1 h-5 w-5 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
-    </BottomNavItem>
-  </BottomNav>
+    <BottomNav position="absolute" innerClass="grid-cols-4">
+      <BottomNavItem btnName="Home">
+        <HomeSolid class="mb-1 h-5 w-5 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
+      </BottomNavItem>
+      <BottomNavItem btnName="Wallet">
+        <WalletSolid class="mb-1 h-5 w-5 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
+      </BottomNavItem>
+      <BottomNavItem btnName="Settings">
+        <AdjustmentsVerticalSolid class="mb-1 h-5 w-5 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
+      </BottomNavItem>
+      <BottomNavItem btnName="Profile">
+        <UserCircleSolid class="mb-1 h-5 w-5 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
+      </BottomNavItem>
+    </BottomNav>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo codeLang="ts" code={modules['./md/default-bottom-navigation.md'] as string} />
+    <HighlightCompo codeLang="ts" code={modules['./md/default-bottom-navigation.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
-
 <H2>Links, target and active class</H2>
-<CodeWrapper innderClass="p-0">
+<CodeWrapper innerClass="p-0">
   <div class="relative flex flex-col p-6">
-  <Skeleton class="py-4" />
-  <ImagePlaceholder class="pb-20" />
+    <Skeleton class="py-4" />
+    <ImagePlaceholder class="pb-20" />
 
-  <BottomNav position="absolute" innerClass="grid-cols-4">
-    <BottomNavItem btnName="Home" href="/">
-      <HomeSolid />
-    </BottomNavItem>
-    <BottomNavItem btnName="Quickstart" href="/pages/about" target="_blank">
-      <WalletSolid />
-    </BottomNavItem>
-    <BottomNavItem btnName="BottomNav" href="/components/bottom-navigation">
-      <AdjustmentsVerticalSolid />
-    </BottomNavItem>
-    <BottomNavItem btnName="Accordion" href="/components/accordion">
-      <UserCircleSolid />
-    </BottomNavItem>
-  </BottomNav>
+    <BottomNav position="absolute" innerClass="grid-cols-4">
+      <BottomNavItem btnName="Home" href="/">
+        <HomeSolid />
+      </BottomNavItem>
+      <BottomNavItem btnName="Quickstart" href="/pages/about" target="_blank">
+        <WalletSolid />
+      </BottomNavItem>
+      <BottomNavItem btnName="BottomNav" href="/components/bottom-navigation">
+        <AdjustmentsVerticalSolid />
+      </BottomNavItem>
+      <BottomNavItem btnName="Accordion" href="/components/accordion">
+        <UserCircleSolid />
+      </BottomNavItem>
+    </BottomNav>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo codeLang="ts" code={modules['./md/links-and-active-class.md'] as string} />
+    <HighlightCompo codeLang="ts" code={modules['./md/links-and-active-class.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Overwriting activeClass</H2>
-<CodeWrapper innderClass="p-0">
+<CodeWrapper innerClass="p-0">
   <div class="relative flex flex-col p-6">
-  <Skeleton class="py-4" />
-  <ImagePlaceholder class="pb-20" />
+    <Skeleton class="py-4" />
+    <ImagePlaceholder class="pb-20" />
 
-  <BottomNav position="absolute" innerClass="grid-cols-4" activeClass="font-bold text-green-500 hover:text-green-900 dark:hover:text-green-700 dark:text-green-300">
-    <BottomNavItem btnName="Home" href="/">
-      <HomeSolid />
-    </BottomNavItem>
-    <BottomNavItem btnName="Quickstart" href="/pages/quickstart">
-      <WalletSolid />
-    </BottomNavItem>
-    <BottomNavItem btnName="BottomNav" href="/components/bottom-navigation">
-      <AdjustmentsVerticalSolid />
-    </BottomNavItem>
-    <BottomNavItem btnName="Accordion" href="/components/accordion">
-      <UserCircleSolid />
-    </BottomNavItem>
-  </BottomNav>
+    <BottomNav position="absolute" innerClass="grid-cols-4" activeClass="font-bold text-green-500 hover:text-green-900 dark:hover:text-green-700 dark:text-green-300">
+      <BottomNavItem btnName="Home" href="/">
+        <HomeSolid />
+      </BottomNavItem>
+      <BottomNavItem btnName="Quickstart" href="/pages/quickstart">
+        <WalletSolid />
+      </BottomNavItem>
+      <BottomNavItem btnName="BottomNav" href="/components/bottom-navigation">
+        <AdjustmentsVerticalSolid />
+      </BottomNavItem>
+      <BottomNavItem btnName="Accordion" href="/components/accordion">
+        <UserCircleSolid />
+      </BottomNavItem>
+    </BottomNav>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo codeLang="ts" code={modules['./md/overwriting-activeclass.md'] as string} />
+    <HighlightCompo codeLang="ts" code={modules['./md/overwriting-activeclass.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Icon color</H2>
-<CodeWrapper innderClass="p-0">
+<CodeWrapper innerClass="p-0">
   <div class="relative flex flex-col p-6">
-  <Skeleton class="py-4" />
-  <ImagePlaceholder class="pb-20" />
+    <Skeleton class="py-4" />
+    <ImagePlaceholder class="pb-20" />
 
-  <BottomNav position="absolute" innerClass="grid-cols-4">
-    <BottomNavItem btnName="Home" href="/">
-      <HomeSolid class={activeUrl === '/' ? svgActiveClass : svgClass} />
-    </BottomNavItem>
-    <BottomNavItem btnName="Quickstart" href="/docs/pages/quickstart">
-      <WalletSolid class={activeUrl === '/docs/pages/quickstart' ? svgActiveClass : svgClass} />
-    </BottomNavItem>
-    <BottomNavItem btnName="BottomNav" href="/docs/components/bottom-navigation">
-      <AdjustmentsVerticalSolid class={activeUrl === '/docs/components/bottom-navigation' ? svgActiveClass : svgClass} />
-    </BottomNavItem>
-    <BottomNavItem btnName="Accordion" href="/docs/components/accordion">
-      <UserCircleSolid class={activeUrl === '/docs/components/accordion' ? svgActiveClass : svgClass} />
-    </BottomNavItem>
-  </BottomNav>
+    <BottomNav position="absolute" innerClass="grid-cols-4">
+      <BottomNavItem btnName="Home" href="/">
+        <HomeSolid class={activeUrl === '/' ? svgActiveClass : svgClass} />
+      </BottomNavItem>
+      <BottomNavItem btnName="Quickstart" href="/docs/pages/quickstart">
+        <WalletSolid class={activeUrl === '/docs/pages/quickstart' ? svgActiveClass : svgClass} />
+      </BottomNavItem>
+      <BottomNavItem btnName="BottomNav" href="/docs/components/bottom-navigation">
+        <AdjustmentsVerticalSolid class={activeUrl === '/docs/components/bottom-navigation' ? svgActiveClass : svgClass} />
+      </BottomNavItem>
+      <BottomNavItem btnName="Accordion" href="/docs/components/accordion">
+        <UserCircleSolid class={activeUrl === '/docs/components/accordion' ? svgActiveClass : svgClass} />
+      </BottomNavItem>
+    </BottomNav>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo codeLang="ts" code={modules['./md/icon-color.md'] as string} />
+    <HighlightCompo codeLang="ts" code={modules['./md/icon-color.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
-
 <H2>Menu items with border</H2>
-<CodeWrapper innderClass="p-0">
+<CodeWrapper innerClass="p-0">
   <div class="relative flex flex-col p-6">
-  <Skeleton class="py-4" />
-  <ImagePlaceholder class="pb-20" />
+    <Skeleton class="py-4" />
+    <ImagePlaceholder class="pb-20" />
 
-  <BottomNav position="absolute" navType="border" innerClass="grid-cols-4">
-    <BottomNavItem btnName="Home">
-      <HomeSolid />
-    </BottomNavItem>
-    <BottomNavItem btnName="Wallet">
-      <WalletSolid />
-    </BottomNavItem>
-    <BottomNavItem btnName="Settings">
-      <AdjustmentsVerticalSolid />
-    </BottomNavItem>
-    <BottomNavItem btnName="Profile">
-      <UserCircleSolid />
-    </BottomNavItem>
-  </BottomNav>
+    <BottomNav position="absolute" navType="border" innerClass="grid-cols-4">
+      <BottomNavItem btnName="Home">
+        <HomeSolid />
+      </BottomNavItem>
+      <BottomNavItem btnName="Wallet">
+        <WalletSolid />
+      </BottomNavItem>
+      <BottomNavItem btnName="Settings">
+        <AdjustmentsVerticalSolid />
+      </BottomNavItem>
+      <BottomNavItem btnName="Profile">
+        <UserCircleSolid />
+      </BottomNavItem>
+    </BottomNav>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo codeLang="ts" code={modules['./md/menu-items-with-border.md'] as string} />
+    <HighlightCompo codeLang="ts" code={modules['./md/menu-items-with-border.md'] as string} />
   {/snippet}
 </CodeWrapper>
 

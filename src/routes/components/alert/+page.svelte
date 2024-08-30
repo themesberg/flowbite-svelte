@@ -44,7 +44,7 @@
   const changeDismissable = () => {
     dismissable = !dismissable;
   };
-  
+
   let alertStatusInteractive = $state(true);
   const changeStatusInteractive = () => {
     alertStatusInteractive = true;
@@ -87,31 +87,29 @@
       if (dismissable) props.push(' dismissable');
       if (alertClass) props.push(` class="${alertClass}"`);
       if (!alertStatusInteractive) props.push(' alertStatus={false}');
-      if (currentTransition !== transitions[0] && dismissable ) {
+      if (currentTransition !== transitions[0] && dismissable) {
         props.push(` transition={${currentTransition.transition.name}}`);
-      
-      // Generate params string without quotes and handle functions
-      const paramsString = Object.entries(currentTransition.params)
-        .map(([key, value]) => {
-          if (typeof value === 'function') {
-            return `${key}:${value.name}`;
-          }
-          return `${key}:${value}`;
-        })
-        .join(',');
+
+        // Generate params string without quotes and handle functions
+        const paramsString = Object.entries(currentTransition.params)
+          .map(([key, value]) => {
+            if (typeof value === 'function') {
+              return `${key}:${value.name}`;
+            }
+            return `${key}:${value}`;
+          })
+          .join(',');
         props.push(` params={{${paramsString}}}`);
       }
 
-      const propsString = props.length > 0 
-      ? props.map(prop => `\n  ${prop}`).join('') + '\n'
-      : ' ';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
 
       let iconCode = '';
-      if (iconSlot){
+      if (iconSlot) {
         iconCode = `
   {#snippet icon()}
     <InfoCircleSolid class="h-5 w-5" />
-  {/snippet}`
+  {/snippet}`;
       }
       return `<Alert${propsString}>${iconCode}
   My Alert
@@ -130,18 +128,18 @@
 <CodeWrapper>
   <div class="mb-4 h-20">
     <Alert {color} {rounded} {border} {dismissable} class={alertClass} bind:alertStatus={alertStatusInteractive} transition={currentTransition.transition} params={currentTransition.params}>
-        {#snippet icon()}
+      {#snippet icon()}
         {#if iconSlot}
           <InfoCircleSolid class="h-5 w-5" />
         {/if}
-        {/snippet}
+      {/snippet}
       <span class="font-medium">My Alert!</span>
     </Alert>
   </div>
   <div class="mb-4 h-12">
     <Button disabled={alertStatusInteractive ? true : false} onclick={changeStatusInteractive}>Open alert</Button>
   </div>
-  <div class="flex flex-wrap space-x-4 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
       <Radio labelClass="w-24 my-1" name="alert_reactive" bind:group={color} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
@@ -154,15 +152,15 @@
     {/each}
   </div>
   <div class="mt-4 flex flex-wrap gap-2">
-  <Button class="w-48" color="blue" onclick={changeRounded}>{rounded ? 'Remove rounded' : 'Add rounded'}</Button>
-  <Button class="w-48" color="red" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
-  <Button class="w-48" color="yellow" onclick={changeDismissable}>{dismissable ? 'Remove dismissable' : 'Add dismissable'}</Button>
-  <Button class="w-48" color="green" onclick={changeClass}>{alertClass ? 'Remove class' : 'Add class'}</Button>
-  <Button class="w-48" color="sky" onclick={changeIconSlot}>{iconSlot ? 'Remove icon' : 'Add icon'}</Button>
-  <Button class="w-48" color="rose" onclick={changeBorderAccent}>{borderAccent ? 'Remove accent' : 'Add accent'}</Button>
+    <Button class="w-48" color="blue" onclick={changeRounded}>{rounded ? 'Remove rounded' : 'Add rounded'}</Button>
+    <Button class="w-48" color="red" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
+    <Button class="w-48" color="yellow" onclick={changeDismissable}>{dismissable ? 'Remove dismissable' : 'Add dismissable'}</Button>
+    <Button class="w-48" color="green" onclick={changeClass}>{alertClass ? 'Remove class' : 'Add class'}</Button>
+    <Button class="w-48" color="sky" onclick={changeIconSlot}>{iconSlot ? 'Remove icon' : 'Add icon'}</Button>
+    <Button class="w-48" color="rose" onclick={changeBorderAccent}>{borderAccent ? 'Remove accent' : 'Add accent'}</Button>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={generatedCode} />
+    <HighlightCompo code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 
@@ -188,7 +186,7 @@
     {/each}
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/alerts-with-list.md'] as string} />
+    <HighlightCompo code={modules['./md/alerts-with-list.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -216,15 +214,15 @@
     {/each}
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/additional-content.md'] as string}/>
+    <HighlightCompo code={modules['./md/additional-content.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Custom color</H2>
 <CodeWrapper class="p-4">
-  <Alert dismissable class="bg-sky-500 dark:bg-lime-500 text-white dark:text-white">Your content</Alert>
+  <Alert dismissable class="bg-sky-500 text-white dark:bg-lime-500 dark:text-white">Your content</Alert>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/custom-color.md'] as string} />
+    <HighlightCompo code={modules['./md/custom-color.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -232,8 +230,6 @@
 <CodeWrapper class="p-4">
   <Alert dismissable onclick={handleClose} bind:alertStatus={alertEventStatus}>Close me</Alert>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/events.md'] as string} />
+    <HighlightCompo code={modules['./md/events.md'] as string} />
   {/snippet}
 </CodeWrapper>
-
-

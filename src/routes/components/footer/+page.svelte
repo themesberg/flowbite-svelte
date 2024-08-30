@@ -29,9 +29,10 @@
       </FooterUl>
     </div>
   </Footer>
+  {#snippet codeblock()}
+    <HighlightCompo code={modules['./md/default-footer.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/default-footer.md'] as string} />
 
 <H2>Footer with logo</H2>
 <CodeWrapper>
@@ -48,12 +49,13 @@
     <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8 dark:border-gray-700" />
     <FooterCopyright href="/" by="Flowbite™" />
   </Footer>
+  {#snippet codeblock()}
+    <HighlightCompo code={modules['./md/footer-with-logo.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/footer-with-logo.md'] as string} />
-
 <H2>Social media icons</H2>
-<CodeWrapper class="p-2">
+<CodeWrapper>
   <Footer footerType="socialmedia">
     <div class="md:flex md:justify-between">
       <div class="mb-6 md:mb-0">
@@ -102,9 +104,10 @@
       </div>
     </div>
   </Footer>
+  {#snippet codeblock()}
+    <HighlightCompo code={modules['./md/social-media-icons.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/social-media-icons.md'] as string} />
 
 <H2>Sitemap links</H2>
 <CodeWrapper>
@@ -170,9 +173,9 @@
 
 <H2>Sticky footer</H2>
 
-<CodeWrapper class="p-0">
-  <div class="relative">
-    <div style="height:300px;" class="overflow-scroll p-6 pb-16">
+<CodeWrapper innerClass="p-0">
+  <div class="relative p-6">
+    <div style="height:300px;" class="overflow-scroll">
       <Skeleton class="my-8" />
       <ImagePlaceholder class="my-8" />
       <TextPlaceholder class="my-8" />
@@ -187,6 +190,7 @@
       </FooterUl>
     </Footer>
   </div>
+  {#snippet codeblock()}
+    <HighlightCompo code={modules['./md/sticky-footer.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/sticky-footer.md'] as string} />

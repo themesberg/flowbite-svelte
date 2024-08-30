@@ -65,7 +65,7 @@ export const card = tv({
     },
     href: {
       true: '',
-      false:''
+      false: ''
     },
     hasImage: {
       true: '',

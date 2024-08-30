@@ -4,7 +4,7 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  
+
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -44,12 +44,12 @@
     let props = [];
     if (size !== 'md') props.push(` size="${size}"`);
     if (classes !== '') props.push(` class="${classes}"`);
-    if (componentName === 'ImagePlaceholder' && imagePlaceholderRounded !== 'none' ) props.push(` rounded="${imagePlaceholderRounded}"`);
-    if ( componentName === 'ListPlaceholder' && listPlaceholderItemNumber !== 3 ) props.push(` itemNumber={${listPlaceholderItemNumber}}`);
-    if ( componentName === 'ListPlaceholder' && listPlaceholderRounded !== 'none' ) props.push(` rounded="${listPlaceholderRounded}"`);
+    if (componentName === 'ImagePlaceholder' && imagePlaceholderRounded !== 'none') props.push(` rounded="${imagePlaceholderRounded}"`);
+    if (componentName === 'ListPlaceholder' && listPlaceholderItemNumber !== 3) props.push(` itemNumber={${listPlaceholderItemNumber}}`);
+    if (componentName === 'ListPlaceholder' && listPlaceholderRounded !== 'none') props.push(` rounded="${listPlaceholderRounded}"`);
 
     return `<${componentName}${props.join('')} />`;
-  }
+  };
   let generatedCodeSkeleton = $derived(generatePlaceholderCode('Skeleton', skeletonSize, skeletonClass));
   let generatedCodeVideo = $derived(generatePlaceholderCode('VideoPlaceholder', videoPlaceholderSize, videoPlaceholderClass));
   let generatedCodeText = $derived(generatePlaceholderCode('TextPlaceholder', textPlaceholderSize, textPlaceholderClass));
@@ -75,8 +75,8 @@
       <Radio labelClass="w-24 my-1" name="skeletonsize" bind:group={skeletonSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <Button class="w-40 mt-4" onclick={()=> skeletonClass === '' ? skeletonClass = 'ml-4' : skeletonClass = ''}>{skeletonClass ? 'Remove class' : 'Add class'}</Button>
-  <HighlightCompo code={generatedCodeSkeleton}/>
+  <Button class="mt-4 w-40" onclick={() => (skeletonClass === '' ? (skeletonClass = 'ml-4') : (skeletonClass = ''))}>{skeletonClass ? 'Remove class' : 'Add class'}</Button>
+  <HighlightCompo code={generatedCodeSkeleton} />
 </CodeWrapper>
 
 <H2>Image placeholder</H2>
@@ -96,8 +96,8 @@
       <Radio labelClass="w-24 my-1" name="imageRoundedSize" bind:group={imagePlaceholderRounded} value={size}>{size}</Radio>
     {/each}
   </div>
-  <Button class="w-40 mt-4" onclick={()=> imagePlaceholderClass === '' ? imagePlaceholderClass = 'ml-4' : imagePlaceholderClass = ''}>{imagePlaceholderClass ? 'Remove class' : 'Add class'}</Button>
-  <HighlightCompo code={generatedCodeImage}/>
+  <Button class="mt-4 w-40" onclick={() => (imagePlaceholderClass === '' ? (imagePlaceholderClass = 'ml-4') : (imagePlaceholderClass = ''))}>{imagePlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <HighlightCompo code={generatedCodeImage} />
 </CodeWrapper>
 
 <H2>Video placeholder</H2>
@@ -112,43 +112,43 @@
       <Radio labelClass="w-24 my-1" name="videoSize" bind:group={videoPlaceholderSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <Button class="w-40 mt-4" onclick={()=> videoPlaceholderClass === '' ? videoPlaceholderClass = 'ml-4' : videoPlaceholderClass = ''}>{videoPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
-  <HighlightCompo code={generatedCodeVideo}/>
+  <Button class="mt-4 w-40" onclick={() => (videoPlaceholderClass === '' ? (videoPlaceholderClass = 'ml-4') : (videoPlaceholderClass = ''))}>{videoPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <HighlightCompo code={generatedCodeVideo} />
 </CodeWrapper>
 
 <H2>Text placeholder</H2>
 
 <CodeWrapper>
-  <TextPlaceholder size={textPlaceholderSize} class={textPlaceholderClass}/>
+  <TextPlaceholder size={textPlaceholderSize} class={textPlaceholderClass} />
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size(width):</Label>
     {#each textSizes as size}
       <Radio labelClass="w-24 my-1" name="textSize" bind:group={textPlaceholderSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <Button class="w-40 mt-4" onclick={()=> textPlaceholderClass === '' ? textPlaceholderClass = 'ml-4' : textPlaceholderClass = ''}>{textPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <Button class="mt-4 w-40" onclick={() => (textPlaceholderClass === '' ? (textPlaceholderClass = 'ml-4') : (textPlaceholderClass = ''))}>{textPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
   <HighlightCompo code={generatedCodeText} />
 </CodeWrapper>
 
 <H2>Card placeholder</H2>
 
 <CodeWrapper>
-  <CardPlaceholder size={cardPlaceholderSize} class={cardPlaceholderClass}/>
+  <CardPlaceholder size={cardPlaceholderSize} class={cardPlaceholderClass} />
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size(width):</Label>
     {#each cardSizes as size}
       <Radio labelClass="w-24 my-1" name="cardSize" bind:group={cardPlaceholderSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <Button class="w-40 mt-4" onclick={()=> cardPlaceholderClass === '' ? cardPlaceholderClass = 'ml-4' : cardPlaceholderClass = ''}>{cardPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <Button class="mt-4 w-40" onclick={() => (cardPlaceholderClass === '' ? (cardPlaceholderClass = 'ml-4') : (cardPlaceholderClass = ''))}>{cardPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
   <HighlightCompo code={generatedCodeCard} />
 </CodeWrapper>
 
 <H2>Widget placeholder</H2>
 
 <CodeWrapper>
-  <WidgetPlaceholder class={widgetPlaceholderClass}/>
-  <Button class="w-40 mt-4" onclick={()=> widgetPlaceholderClass === '' ? widgetPlaceholderClass = 'ml-4' : widgetPlaceholderClass = ''}>{widgetPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <WidgetPlaceholder class={widgetPlaceholderClass} />
+  <Button class="mt-4 w-40" onclick={() => (widgetPlaceholderClass === '' ? (widgetPlaceholderClass = 'ml-4') : (widgetPlaceholderClass = ''))}>{widgetPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
   <HighlightCompo code={generatedCodeWidget} />
 </CodeWrapper>
 
@@ -156,7 +156,7 @@
 
 <CodeWrapper>
   <div class="h-80 md:h-96">
-    <ListPlaceholder itemNumber={listPlaceholderItemNumber} size={listPlaceholderSize} rounded={listPlaceholderRounded} class={listPlaceholderClass}/>
+    <ListPlaceholder itemNumber={listPlaceholderItemNumber} size={listPlaceholderSize} rounded={listPlaceholderRounded} class={listPlaceholderClass} />
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
@@ -176,14 +176,14 @@
       <Radio labelClass="w-24 my-1" name="itemNumber" bind:group={listPlaceholderItemNumber} value={itemNumber}>{itemNumber}</Radio>
     {/each}
   </div>
-  <Button class="w-40 mt-4" onclick={()=> listPlaceholderClass === '' ? listPlaceholderClass = 'ml-4' : listPlaceholderClass = ''}>{listPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
-  <HighlightCompo code={generatedCodeList}/>
+  <Button class="mt-4 w-40" onclick={() => (listPlaceholderClass === '' ? (listPlaceholderClass = 'ml-4') : (listPlaceholderClass = ''))}>{listPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <HighlightCompo code={generatedCodeList} />
 </CodeWrapper>
 
 <H2>Testimonial placeholder</H2>
 
 <CodeWrapper>
-  <TestimonialPlaceholder class={TestimonialPlaceholderClass}/>
-  <Button class="w-40 mt-4" onclick={()=> TestimonialPlaceholderClass === '' ? TestimonialPlaceholderClass = 'mx-auto w-[200px] sm:w-[400px]' : TestimonialPlaceholderClass = ''}>{TestimonialPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
-  <HighlightCompo code={generatedCodeTestimonial}/>
+  <TestimonialPlaceholder class={TestimonialPlaceholderClass} />
+  <Button class="mt-4 w-40" onclick={() => (TestimonialPlaceholderClass === '' ? (TestimonialPlaceholderClass = 'mx-auto w-[200px] sm:w-[400px]') : (TestimonialPlaceholderClass = ''))}>{TestimonialPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <HighlightCompo code={generatedCodeTestimonial} />
 </CodeWrapper>

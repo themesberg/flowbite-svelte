@@ -99,17 +99,17 @@
       if (currentPlacement.width !== 'default') props.push(` width="${currentPlacement.width}"`);
       if (currentTransition !== transitions[0]) {
         props.push(` transition={${currentTransition.transition.name}}`);
-      
-      // Generate params string without quotes and handle functions
-      let paramValues = currentPlacement.placement === 'left' ? currentTransition.params : currentPlacement.params
-      const paramsString = Object.entries(paramValues)
-        .map(([key, value]) => {
-          if (typeof value === 'function') {
-            return `${key}:${value.name}`;
-          }
-          return `${key}:${value}`;
-        })
-        .join(',');
+
+        // Generate params string without quotes and handle functions
+        let paramValues = currentPlacement.placement === 'left' ? currentTransition.params : currentPlacement.params;
+        const paramsString = Object.entries(paramValues)
+          .map(([key, value]) => {
+            if (typeof value === 'function') {
+              return `${key}:${value.name}`;
+            }
+            return `${key}:${value}`;
+          })
+          .join(',');
         props.push(` params={{${paramsString}}}`);
       }
       // placement
@@ -117,9 +117,7 @@
         props.push(` placement="${currentPlacement.placement}"`);
       }
 
-      const propsString = props.length > 0 
-      ? props.map(prop => `\n  ${prop}`).join('') + '\n'
-      : ' ';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
 
       return `<Button onclick={drawerA.toggle}>Drawer</Button>
 <Drawer drawerStatus={drawerStatusA} closeDrawer={closeDrawerA}${propsString}>
@@ -158,18 +156,17 @@
       <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
     </div>
   </Drawer>
-  <HighlightCompo code={modules['./md/defaultdrawer.md'] as string} />
+  {#snippet codeblock()}
+    <HighlightCompo code={modules['./md/defaultdrawer.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
 
 <H2>Interactive Drawer Builder</H2>
 <CodeWrapper>
   <div class="text-center">
     <Button onclick={drawerTransition.toggle}>Drawer</Button>
   </div>
-  <Drawer drawerStatus={drawerStatusTransition} closeDrawer={closeDrawerTransition} transition={currentTransition.transition}  placement={currentPlacement.placement as Drawer['placement']} width={currentPlacement.width as Drawer['width']}
-  params={currentPlacement.placement === 'left' ? currentTransition.params : currentPlacement.params} backdrop={backdropStatus} activateClickOutside={outsideclickStatus}
-  >
+  <Drawer drawerStatus={drawerStatusTransition} closeDrawer={closeDrawerTransition} transition={currentTransition.transition} placement={currentPlacement.placement as Drawer['placement']} width={currentPlacement.width as Drawer['width']} params={currentPlacement.placement === 'left' ? currentTransition.params : currentPlacement.params} backdrop={backdropStatus} activateClickOutside={outsideclickStatus}>
     <Drawerhead onclick={closeDrawerTransition}>
       <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
         <InfoCircleSolid class="me-2.5 h-4 w-4" />{selectedTransition} drawer
@@ -194,9 +191,13 @@
       <Radio labelClass="w-24 my-1" name="interactive_placement" bind:group={selectedPlacement} value={placement.name}>{placement.name}</Radio>
     {/each}
   </div>
-  <Button color="primary" onclick={changeBackdropStatus}>{backdropStatus ? 'Hide backdrop' : 'Show backdrop'}</Button>
+  <div class="mt-4 flex flex-wrap gap-2">
+    <Button color="primary" onclick={changeBackdropStatus}>{backdropStatus ? 'Hide backdrop' : 'Show backdrop'}</Button>
     <Button color="purple" onclick={changeOutsideclickStatus}>{outsideclickStatus ? 'Disable outsideclick' : 'Enable outsideclick'}</Button>
-  <HighlightCompo code={generatedCode} />
+  </div>
+  {#snippet codeblock()}
+    <HighlightCompo code={generatedCode} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Offset</H2>
@@ -218,7 +219,9 @@
   <div class="flex justify-center gap-2">
     <Button color="green" onclick={changeClass}>{offsetClass ? 'Remove offset' : 'Add offset'}</Button>
   </div>
-  <HighlightCompo codeLang="ts" code={modules['./md/offset-new.md'] as string} />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={modules['./md/offset-new.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Drawer navigation</H2>
@@ -281,6 +284,7 @@
       </SidebarGroup>
     </Sidebar>
   </Drawer>
-  <HighlightCompo code={modules['./md/navigation.md'] as string} />
+  {#snippet codeblock()}
+    <HighlightCompo code={modules['./md/navigation.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-

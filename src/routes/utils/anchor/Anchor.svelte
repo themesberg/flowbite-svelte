@@ -2,14 +2,7 @@
   import { twMerge } from 'tailwind-merge';
   import { type AnchorProps as Props, anchor } from '.';
 
-  let {
-    children,
-    spanClass,
-    aClass,
-    class: className,
-    tag,
-    ...restProps
-  }: Props = $props();
+  let { children, spanClass, aClass, class: className, tag, ...restProps }: Props = $props();
 
   const { base, span, anchor: anchorCls } = $derived(anchor());
 
@@ -25,9 +18,7 @@
 <svelte:element this={tag} {...restProps} class={base({ className })} use:init>
   {@render children()}
   <span id={slug} class={span({ class: spanClass })}></span>
-  <a class={anchorCls({ class: aClass })} href="#{slug}" aria-label="Link to this section: {content}">
-    #
-  </a>
+  <a class={anchorCls({ class: aClass })} href="#{slug}" aria-label="Link to this section: {content}">#</a>
 </svelte:element>
 
 <!--

@@ -33,7 +33,8 @@ export const capitalizeFirstLetter = (str: string) => {
 };
 
 export function copyToClipboard(text: string): Promise<void> {
-  return navigator.clipboard.writeText(text)
+  return navigator.clipboard
+    .writeText(text)
     .then(() => {
       console.log('Text copied to clipboard');
     })

@@ -72,22 +72,20 @@
       if (!bannerStatus) props.push(' bannerStatus={false}');
       if (currentTransition !== transitions[0]) {
         props.push(` transition={${currentTransition.transition.name}}`);
-      
-      // Generate params string without quotes and handle functions
-      const paramsString = Object.entries(currentTransition.params)
-        .map(([key, value]) => {
-          if (typeof value === 'function') {
-            return `${key}:${value.name}`;
-          }
-          return `${key}:${value}`;
-        })
-        .join(',');
+
+        // Generate params string without quotes and handle functions
+        const paramsString = Object.entries(currentTransition.params)
+          .map(([key, value]) => {
+            if (typeof value === 'function') {
+              return `${key}:${value.name}`;
+            }
+            return `${key}:${value}`;
+          })
+          .join(',');
         props.push(` params={{${paramsString}}}`);
       }
-      
-      const propsString = props.length > 0 
-      ? props.map(prop => `\n  ${prop}`).join('') + '\n'
-      : ' ';
+
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
 
       return `<div class="relative h-40">
   <Banner${propsString}>
@@ -104,13 +102,13 @@
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Interactive Banner Builder</H2>
-<CodeWrapper class="relative" innderClass="p-0">
+<CodeWrapper class="relative" innerClass="p-0">
   <div class="mb-4 h-[670px] md:h-[480px]">
     <div class="p-6">
-    <Skeleton class="py-4" />
-    <ImagePlaceholder class="py-4" />
+      <Skeleton class="py-4" />
+      <ImagePlaceholder class="py-4" />
     </div>
-    <Banner id="sample-banner" {position} {bannerType} {color} class={bannerClass} bind:bannerStatus={bannerStatus} transition={currentTransition.transition} params={currentTransition.params}>
+    <Banner id="sample-banner" {position} {bannerType} {color} class={bannerClass} bind:bannerStatus transition={currentTransition.transition} params={currentTransition.params}>
       <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
         <span class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600">
           <BullhornOutline class="h-3 w-3 text-gray-500 dark:text-gray-400" />
@@ -132,69 +130,67 @@
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
-      <Label class="mb-4 w-full font-bold">Transition</Label>
-      {#each transitions as transition}
-        <Radio labelClass="w-24 my-1" name="interactive_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
-      {/each}
+    <Label class="mb-4 w-full font-bold">Transition</Label>
+    {#each transitions as transition}
+      <Radio labelClass="w-24 my-1" name="interactive_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+    {/each}
   </div>
-  <div class="flex flex-wrap gap-4 mb-4">
-    <Button class="w-48" onclick={changePosition}>Position: { position === 'sticky' ? 'absolute' : 'sticky'}</Button>
-    <Button class="w-48" color="blue" onclick={changeBannerType}>Type: { bannerType === 'default' ? 'cta' : 'default'}</Button>
+  <div class="mb-4 flex flex-wrap gap-4">
+    <Button class="w-48" onclick={changePosition}>Position: {position === 'sticky' ? 'absolute' : 'sticky'}</Button>
+    <Button class="w-48" color="blue" onclick={changeBannerType}>Type: {bannerType === 'default' ? 'cta' : 'default'}</Button>
     <Button class="w-48" color="green" onclick={changeClass}>{bannerClass ? 'Remove class' : 'Add class'}</Button>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={generatedCode} />
+    <HighlightCompo code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 
-
 <H2>Newsletter sign-up banner</H2>
 
-<CodeWrapper innderClass="p-0">
+<CodeWrapper innerClass="p-0">
   <div class="relative">
     <div class="p-6">
       <Skeleton class="py-4" />
       <ImagePlaceholder class="py-4" />
     </div>
-  <Banner id="signup-banner" position="absolute" bannerType="signup">
-    <form action="/" class="flex w-full flex-col items-center md:flex-row">
-      <label for="email" class="mb-2 me-auto flex-shrink-0 text-sm font-medium text-gray-500 md:m-0 md:mb-0 md:me-4 dark:text-gray-400">Sign up for our newsletter</label>
-      <input type="email" id="email" placeholder="Enter your email" class="mb-2 block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 md:mb-0 md:me-4 md:w-64 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500" required />
-      <button type="submit" class="w-full rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 sm:w-auto dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Subscribe</button>
-    </form>
-  </Banner>
+    <Banner id="signup-banner" position="absolute" bannerType="signup">
+      <form action="/" class="flex w-full flex-col items-center md:flex-row">
+        <label for="email" class="mb-2 me-auto flex-shrink-0 text-sm font-medium text-gray-500 md:m-0 md:mb-0 md:me-4 dark:text-gray-400">Sign up for our newsletter</label>
+        <input type="email" id="email" placeholder="Enter your email" class="mb-2 block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 md:mb-0 md:me-4 md:w-64 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500" required />
+        <button type="submit" class="w-full rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 sm:w-auto dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Subscribe</button>
+      </form>
+    </Banner>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/newsletter.md'] as string} />
+    <HighlightCompo code={modules['./md/newsletter.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
-
 <H2>Informational banner</H2>
 
-<CodeWrapper innderClass="p-0">
+<CodeWrapper innerClass="p-0">
   <div class="relative">
     <div class="p-6">
-    <Skeleton class="py-4" />
-    <ImagePlaceholder class="py-4" />
+      <Skeleton class="py-4" />
+      <ImagePlaceholder class="py-4" />
     </div>
-  <Banner id="info-banner" position="absolute" bannerType="info">
-    {#snippet header()}
-      <div class="mb-4 md:mb-0 md:me-4">
-        <h2 class="mb-1 text-base font-semibold text-gray-900 dark:text-white">Integration is the key</h2>
-        <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">You can integrate Flowbite with many tools.</p>
-      </div>
-    {/snippet}
-    <a href="/" class="me-3 inline-flex items-center rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700">
-      <BookOpenSolid class="me-2 h-3 w-3" />
-      Learn more
-    </a>
-    <a href="/" class="me-2 inline-flex rounded-lg bg-primary-700 px-3 py-2 text-xs font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-      Get started <ArrowRightOutline class="ms-2 h-3 w-3" />
-    </a>
-  </Banner>
+    <Banner id="info-banner" position="absolute" bannerType="info">
+      {#snippet header()}
+        <div class="mb-4 md:mb-0 md:me-4">
+          <h2 class="mb-1 text-base font-semibold text-gray-900 dark:text-white">Integration is the key</h2>
+          <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">You can integrate Flowbite with many tools.</p>
+        </div>
+      {/snippet}
+      <a href="/" class="me-3 inline-flex items-center rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700">
+        <BookOpenSolid class="me-2 h-3 w-3" />
+        Learn more
+      </a>
+      <a href="/" class="me-2 inline-flex rounded-lg bg-primary-700 px-3 py-2 text-xs font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+        Get started <ArrowRightOutline class="ms-2 h-3 w-3" />
+      </a>
+    </Banner>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/informational.md'] as string} />
+    <HighlightCompo code={modules['./md/informational.md'] as string} />
   {/snippet}
 </CodeWrapper>

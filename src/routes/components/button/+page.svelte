@@ -27,7 +27,7 @@
   let btnLink = $state('');
   const changeBtnLink = () => {
     btnLink = btnLink === '' ? '/' : '';
-  }
+  };
 
   let btnOutline = $state(false);
   const changeBtnOutline = () => {
@@ -78,7 +78,7 @@
   let gradientLink = $state('');
   const changeGradientLink = () => {
     gradientLink = gradientLink === '' ? '/' : '';
-  }
+  };
 
   // code generator
   let generatedCode = $derived(
@@ -93,9 +93,7 @@
       if (btnDisabled) props.push(' disabled');
       if (btnSize !== 'md') props.push(` size="${btnSize}"`);
 
-      const propsString = props.length > 0 
-      ? props.map(prop => `\n  ${prop}`).join('') + '\n'
-      : ' ';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
 
       return `<Button${propsString}>My Button</Button>`;
     })()
@@ -113,9 +111,7 @@
       if (gradientDisabled) props.push(' disabled');
       if (gradientSize !== 'md') props.push(` size="${gradientSize}"`);
 
-      const propsString = props.length > 0 
-      ? props.map(prop => `\n  ${prop}`).join('') + '\n'
-      : ' ';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
 
       return `<GradientButton${propsString}>My Gradient Button</GradientButton>`;
     })()
@@ -148,15 +144,15 @@
     </div>
   </div>
   <div class="mt-4 flex flex-wrap gap-2">
-  <Button class="w-40" color="blue" onclick={changeBtnOutline}>{btnOutline === false ? 'Add outline' : 'Remove outline'}</Button>
-  <Button class="w-40" color="green" onclick={changeBtnShadow}>{btnShadow === false ? 'Add shadow' : 'Remove shadow'}</Button>
-  <Button class="w-40" color="yellow" onclick={changeBtnPill}>{btnPill === false ? 'Add pill' : 'Remove pill'}</Button>
-  <Button class="w-40" color="red" onclick={changeBtnDisabled}>{btnDisabled === false ? 'Add disabled' : 'Remove disabled'}</Button>
-  <Button class="w-40" onclick={changeBtnClass}> {btnClass === '' ? 'Add class' : 'Remove class'}</Button>
-  <Button class="w-40" color="sky" onclick={changeBtnLink}> {btnLink === '' ? 'Add link' : 'Remove link'}</Button>
+    <Button class="w-40" color="blue" onclick={changeBtnOutline}>{btnOutline === false ? 'Add outline' : 'Remove outline'}</Button>
+    <Button class="w-40" color="green" onclick={changeBtnShadow}>{btnShadow === false ? 'Add shadow' : 'Remove shadow'}</Button>
+    <Button class="w-40" color="yellow" onclick={changeBtnPill}>{btnPill === false ? 'Add pill' : 'Remove pill'}</Button>
+    <Button class="w-40" color="red" onclick={changeBtnDisabled}>{btnDisabled === false ? 'Add disabled' : 'Remove disabled'}</Button>
+    <Button class="w-40" onclick={changeBtnClass}>{btnClass === '' ? 'Add class' : 'Remove class'}</Button>
+    <Button class="w-40" color="sky" onclick={changeBtnLink}>{btnLink === '' ? 'Add link' : 'Remove link'}</Button>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={generatedCode} class="w-full"/>
+    <HighlightCompo code={generatedCode} class="w-full" />
   {/snippet}
 </CodeWrapper>
 
@@ -181,15 +177,15 @@
     </div>
   </div>
   <div class="mt-4 flex flex-wrap gap-2">
-  <Button class="w-40" color="blue" onclick={changeGradientOutline}>{gradientOutline === false ? 'Add outline' : 'Remove outline'}</Button>
-  <Button class="w-40" color="green" onclick={changeGradientShadow}>{gradientShadow === false ? 'Add shadow' : 'Remove shadow'}</Button>
-  <Button class="w-40" color="yellow" onclick={changeGradientPill}>{graidentPill === false ? 'Add pill' : 'Remove pill'}</Button>
-  <Button class="w-40" color="red" onclick={changeGradientDisabled}>{gradientDisabled === false ? 'Add disabled' : 'Remove disabled'}</Button>
-  <Button class="w-40" onclick={changeGradientClass}>{gradientClass === '' ? 'Add class' : 'Remove class'}</Button>
-  <Button class="w-40" color="sky" onclick={changeGradientLink}> {btnLink === '' ? 'Add link' : 'Remove link'}</Button>
+    <Button class="w-40" color="blue" onclick={changeGradientOutline}>{gradientOutline === false ? 'Add outline' : 'Remove outline'}</Button>
+    <Button class="w-40" color="green" onclick={changeGradientShadow}>{gradientShadow === false ? 'Add shadow' : 'Remove shadow'}</Button>
+    <Button class="w-40" color="yellow" onclick={changeGradientPill}>{graidentPill === false ? 'Add pill' : 'Remove pill'}</Button>
+    <Button class="w-40" color="red" onclick={changeGradientDisabled}>{gradientDisabled === false ? 'Add disabled' : 'Remove disabled'}</Button>
+    <Button class="w-40" onclick={changeGradientClass}>{gradientClass === '' ? 'Add class' : 'Remove class'}</Button>
+    <Button class="w-40" color="sky" onclick={changeGradientLink}>{btnLink === '' ? 'Add link' : 'Remove link'}</Button>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={gradientGeneratedCode} />
+    <HighlightCompo code={gradientGeneratedCode} />
   {/snippet}
 </CodeWrapper>
 
@@ -200,10 +196,9 @@
     <Button>Choose Plan<ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/button-with-icon.md'] as string} />
+    <HighlightCompo code={modules['./md/button-with-icon.md'] as string} />
   {/snippet}
 </CodeWrapper>
-
 
 <H2>Button with label</H2>
 
@@ -213,10 +208,9 @@
     <Indicator color="cyan" class="bg-primary-200 text-xs font-semibold text-primary-800" size="lg">2</Indicator>
   </Button>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/button-with-label.md'] as string} />
+    <HighlightCompo code={modules['./md/button-with-label.md'] as string} />
   {/snippet}
 </CodeWrapper>
-
 
 <H2>Icon buttons</H2>
 <CodeWrapper>
@@ -231,7 +225,7 @@
     </Button>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/icon-buttons.md'] as string} />
+    <HighlightCompo code={modules['./md/icon-buttons.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -244,7 +238,7 @@
     <Spinner class="me-3" size="4" />Loading ...
   </Button>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/loader.md'] as string} />
+    <HighlightCompo code={modules['./md/loader.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -252,6 +246,6 @@
 <CodeWrapper>
   <Button onclick={btn1}>Button 1</Button>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/events.md'] as string} />
+    <HighlightCompo code={modules['./md/events.md'] as string} />
   {/snippet}
 </CodeWrapper>

@@ -22,7 +22,8 @@
 
 <H2>Default KBD</H2>
 
-<CodeWrapper class="flex flex-wrap justify-center gap-1">
+<CodeWrapper>
+  <div class="flex flex-wrap justify-center gap-1">
   <Kbd class="px-2 py-1.5">Shift</Kbd>
   <Kbd class="px-2 py-1.5">Ctrl</Kbd>
   <Kbd class="px-2 py-1.5">Tab</Kbd>
@@ -30,27 +31,36 @@
   <Kbd class="px-2 py-1.5">Esc</Kbd>
   <Kbd class="px-4 py-1.5">Spacebar</Kbd>
   <Kbd class="px-2 py-1.5">Enter</Kbd>
+  </div>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/defaultkbd.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/defaultkbd.md'] as string} />
 
 <H2>Letter keys</H2>
-<CodeWrapper class="space-y-4">
+<CodeWrapper>
+  <div class="space-y-4">
   <Kbd class="px-2 py-1.5">{letter === '' ? 'Type a letter' : letter}</Kbd>
   <Input bind:value={letter} placeholder="Type a letter" />
+  </div>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/letter.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/letter.md'] as string} />
-
 <H2>KBD inside text</H2>
-
-<CodeWrapper class="flex flex-wrap justify-center">
+<CodeWrapper>
+  <div class="flex flex-wrap justify-center">
   <p class="text-gray-500 dark:text-gray-400">
     Please press <Kbd class="px-2 py-1.5">Ctrl</Kbd> + <Kbd class="px-2 py-1.5">Shift</Kbd> + <Kbd class="px-2 py-1.5">R</Kbd> to re-render an MDN page.
   </p>
+  </div>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/insidetext.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/insidetext.md'] as string} />
 
 <H2>KBD inside table</H2>
 <CodeWrapper>
@@ -95,11 +105,14 @@
       </TableBodyRow>
     </TableBody>
   </Table>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/table.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Arrow keys</H2>
-
-<CodeWrapper class="flex flex-wrap justify-center">
+<CodeWrapper>
+  <div class="flex flex-wrap justify-center">
   <Kbd class="me-1 inline-flex items-center px-2 py-1.5">
     <CaretUpSolid size="xs" />
     <span class="sr-only">Arrow key up</span>
@@ -116,6 +129,8 @@
     <CaretRightSolid size="xs" />
     <span class="sr-only">Arrow key right</span>
   </Kbd>
+  </div>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/arrow.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/arrow.md'] as string} />

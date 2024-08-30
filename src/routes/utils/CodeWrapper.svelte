@@ -5,15 +5,15 @@
   interface Props extends HTMLAttributes<HTMLDivElement> {
     children?: Snippet;
     codeblock?: Snippet;
-    innderClass?: string;
+    innerClass?: string;
   }
-  let { children, codeblock, innderClass, class: classname }: Props = $props();
-  const {base, inner} = $derived(codewrapper());
+  let { children, codeblock, innerClass, class: classname }: Props = $props();
+  const { base, inner } = $derived(codewrapper());
 </script>
 
-<div class={base({class: classname})}>
+<div class={base({ class: classname })}>
   {#if children}
-    <div class={inner({ class: innderClass})}>
+    <div class={inner({ class: innerClass })}>
       {@render children()}
     </div>
   {/if}

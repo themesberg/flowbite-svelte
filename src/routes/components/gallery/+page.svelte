@@ -244,12 +244,12 @@
 <H2>Default gallery</H2>
 <CodeWrapper>
   <Gallery items={images} divClass="gap-4 grid-cols-2 md:grid-cols-3" />
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/default-gallery.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/default-gallery.md'] as string} />
-
 <H2>Mansory grid</H2>
-
 <CodeWrapper>
   <Gallery divClass="gap-4 grid-cols-2 md:grid-cols-4">
     <!-- Safari needs gap -->
@@ -258,9 +258,11 @@
     <Gallery items={images3} />
     <Gallery items={images4} />
   </Gallery>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/mansory-grid.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/mansory-grid.md'] as string} />
 
 <H2>Featured image</H2>
 <CodeWrapper>
@@ -269,16 +271,19 @@
     <!-- Safari needs gap -->
     <Gallery divClass="grid-cols-5 gap-4" items={images6} />
   </Gallery>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/featured-image.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/featured-image.md'] as string} />
 
 <H2>Quad gallery</H2>
 <CodeWrapper>
   <Gallery divClass="gap-2 grid-cols-2" items={images7} />
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/quad-gallery.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/quad-gallery.md'] as string} />
 
 <H2>Gallery with tag filters</H2>
 <CodeWrapper>
@@ -291,9 +296,10 @@
   </div>
 
   <Gallery items={images8} divClass="gap-4 grid-cols-2 md:grid-cols-3" />
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/gallery-with-tag-filters.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/gallery-with-tag-filters.md'] as string} />
 
 <H2>Heterogeneous gallery</H2>
 <CodeWrapper>
@@ -303,9 +309,10 @@
     <div class="max-w- flex h-auto items-center justify-center rounded-lg bg-blue-300 text-6xl font-extrabold">Sale</div>
     <img alt="plants" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" class="max-w- h-auto rounded-lg" />
   </Gallery>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/heterogenuous-gallery.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/heterogenuous-gallery.md'] as string} />
 
 <H2>Custom image rendering</H2>
 {#snippet figure(item: ImgType)}
@@ -319,6 +326,7 @@
       {@render figure(item)}
     {/each}
   </Gallery>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/custom-image-rendering.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/custom-image-rendering.md'] as string} />

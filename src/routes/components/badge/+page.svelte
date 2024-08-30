@@ -95,24 +95,22 @@
       if (rounded) props.push(' rounded');
       if (currentTransition !== transitions[0] && badgeDismissable) {
         props.push(` transition={${currentTransition.transition.name}}`);
-      // Generate params string without quotes and handle functions
-      const paramsString = Object.entries(currentTransition.params)
-        .map(([key, value]) => {
-          if (typeof value === 'function') {
-            return `${key}:${value.name}`;
-          }
-          return `${key}:${value}`;
-        })
-        .join(',');
-      
-      props.push(` params={{${paramsString}}}`);
-    }
+        // Generate params string without quotes and handle functions
+        const paramsString = Object.entries(currentTransition.params)
+          .map(([key, value]) => {
+            if (typeof value === 'function') {
+              return `${key}:${value.name}`;
+            }
+            return `${key}:${value}`;
+          })
+          .join(',');
 
-    const propsString = props.length > 0 
-      ? props.map(prop => `\n  ${prop}`).join('') + '\n'
-      : ' ';
+        props.push(` params={{${paramsString}}}`);
+      }
 
-      if (iconSlot){
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
+
+      if (iconSlot) {
         return `<Badge${propsString}>
   <ClockSolid class="me-1.5 h-3 w-3" />
   My Badge
@@ -131,15 +129,15 @@
 <H2>Interactive Badge Bilder</H2>
 <CodeWrapper>
   <div class="mb-4 h-10">
-    <Badge {color} large={badgeSize} dismissable={badgeDismissable} class={badgeClass} bind:badgeStatus={badgeStatus2} {border} {rounded}  transition={currentTransition.transition} params={currentTransition.params} href={link}>
-    {#if iconSlot}
-    <ClockSolid class="my-1 me-1.5 h-2.5 w-2.5" />
-    {/if}  
+    <Badge {color} large={badgeSize} dismissable={badgeDismissable} class={badgeClass} bind:badgeStatus={badgeStatus2} {border} {rounded} transition={currentTransition.transition} params={currentTransition.params} href={link}>
+      {#if iconSlot}
+        <ClockSolid class="my-1 me-1.5 h-2.5 w-2.5" />
+      {/if}
       My Badge
     </Badge>
   </div>
   <div class="mb-4 h-12">
-      <Button disabled={badgeStatus2 ? true : false} onclick={changeStatus}>Open badge</Button>
+    <Button disabled={badgeStatus2 ? true : false} onclick={changeStatus}>Open badge</Button>
   </div>
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
@@ -150,103 +148,101 @@
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Transition</Label>
     {#each transitions as transition}
-      <Radio disabled={badgeDismissable ? false : true } labelClass="w-24 my-1 {badgeDismissable ? '' : 'opacity-30 cursor-not-allowed'}" name="transition_interactive" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+      <Radio disabled={badgeDismissable ? false : true} labelClass="w-24 my-1 {badgeDismissable ? '' : 'opacity-30 cursor-not-allowed'}" name="transition_interactive" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap gap-4 mb-4">
-  <Button class="w-40" color="blue" onclick={changeSize}>{badgeSize ? 'Small' : 'Large'}</Button>
-  <Button class="w-40" color="green" onclick={changeDismissable}>{badgeDismissable ? 'Not dismissable' : 'Dismissable'}</Button>
-  <Button class="w-40" color="purple" onclick={changeClass}>{badgeClass ? 'Remove class' : 'Add class'}</Button>
-  <Button class="w-40" color="yellow" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
-  <Button class="w-40" color="dark" onclick={changeRounded}>{rounded ? 'Remove rounded' : 'Add rounded'}</Button>
-  <Button class="w-40" color="pink" onclick={changeLink}>{link ? 'Remove href' : 'Add href'}</Button>
-  <Button class="w-40" color="teal" onclick={changeIconSlot}>{iconSlot ? 'Remove icon' : 'Add icon'}</Button>
+  <div class="mb-4 flex flex-wrap gap-4">
+    <Button class="w-40" color="blue" onclick={changeSize}>{badgeSize ? 'Small' : 'Large'}</Button>
+    <Button class="w-40" color="green" onclick={changeDismissable}>{badgeDismissable ? 'Not dismissable' : 'Dismissable'}</Button>
+    <Button class="w-40" color="purple" onclick={changeClass}>{badgeClass ? 'Remove class' : 'Add class'}</Button>
+    <Button class="w-40" color="yellow" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
+    <Button class="w-40" color="dark" onclick={changeRounded}>{rounded ? 'Remove rounded' : 'Add rounded'}</Button>
+    <Button class="w-40" color="pink" onclick={changeLink}>{link ? 'Remove href' : 'Add href'}</Button>
+    <Button class="w-40" color="teal" onclick={changeIconSlot}>{iconSlot ? 'Remove icon' : 'Add icon'}</Button>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={generatedCode} />
+    <HighlightCompo code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Dismissing with custom icon</H2>
 <CodeWrapper>
-  <div class="flex justify-center h-8">
-  <Badge dismissable>
-    Default
-    {#snippet icon()}
-      <CheckCircleOutline class="h-5 w-5" />
-    {/snippet}
-  </Badge>
+  <div class="flex h-8 justify-center">
+    <Badge dismissable>
+      Default
+      {#snippet icon()}
+        <CheckCircleOutline class="h-5 w-5" />
+      {/snippet}
+    </Badge>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/dismissable-badge-2.md'] as string} />
+    <HighlightCompo code={modules['./md/dismissable-badge-2.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
-
-
 <H2>Dismissing with events</H2>
 <CodeWrapper>
-  <div class="flex justify-center h-8">
-  <Badge dismissable large onclick={handleClose} bind:badgeStatus={eventStatus}>Default</Badge>
+  <div class="flex h-8 justify-center">
+    <Badge dismissable large onclick={handleClose} bind:badgeStatus={eventStatus}>Default</Badge>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/dismissable-badge-3.md'] as string} />
+    <HighlightCompo code={modules['./md/dismissable-badge-3.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Notification badge</H2>
 <CodeWrapper>
   <div class="flex justify-center gap-4">
-  <Button class="relative" size="sm">
-    <EnvelopeSolid class="text-white dark:text-white" />
-    <span class="sr-only">Notifications</span>
-    <Indicator color="blue" border size="xl" placement="top-right" class="text-xs font-bold">18</Indicator>
-  </Button>
+    <Button class="relative" size="sm">
+      <EnvelopeSolid class="text-white dark:text-white" />
+      <span class="sr-only">Notifications</span>
+      <Indicator color="blue" border size="xl" placement="top-right" class="text-xs font-bold">18</Indicator>
+    </Button>
 
-  <Button class="relative" size="sm">
-    <EnvelopeSolid class="text-white dark:text-white" />
-    <span class="sr-only">Notifications</span>
-    <Indicator color="red" border size="xl" placement="top-right" class="text-xs font-bold">20</Indicator>
-  </Button>
+    <Button class="relative" size="sm">
+      <EnvelopeSolid class="text-white dark:text-white" />
+      <span class="sr-only">Notifications</span>
+      <Indicator color="red" border size="xl" placement="top-right" class="text-xs font-bold">20</Indicator>
+    </Button>
 
-  <Button class="relative" size="sm">
-    <EnvelopeSolid class="text-white dark:text-white" />
-    <span class="sr-only">Notifications</span>
-    <Indicator color="sky" border size="xl" placement="bottom-right" class="text-xs font-bold">20</Indicator>
-  </Button>
+    <Button class="relative" size="sm">
+      <EnvelopeSolid class="text-white dark:text-white" />
+      <span class="sr-only">Notifications</span>
+      <Indicator color="sky" border size="xl" placement="bottom-right" class="text-xs font-bold">20</Indicator>
+    </Button>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/notification-badge.md'] as string} />
+    <HighlightCompo code={modules['./md/notification-badge.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Button with badge</H2>
 <CodeWrapper>
   <div class="flex justify-center">
-  <Button>
-    Messages
-    <Badge rounded class="ms-2 h-4 w-4 bg-white p-0 font-semibold text-primary-800 dark:bg-white dark:text-primary-800">2</Badge>
-  </Button>
+    <Button>
+      Messages
+      <Badge rounded class="ms-2 h-4 w-4 bg-white p-0 font-semibold text-primary-800 dark:bg-white dark:text-primary-800">2</Badge>
+    </Button>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/button-with-badge.md'] as string} />
+    <HighlightCompo code={modules['./md/button-with-badge.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Badge with icon only</H2>
 <CodeWrapper>
   <div class="flex justify-center gap-2">
-  <Badge color="gray" rounded large class="!p-1 !font-semibold">
-    <CheckOutline class="h-3 w-3" />
-    <span class="sr-only">Icon description</span>
-  </Badge>
-  <Badge rounded large class="!p-1 !font-semibold">
-    <CheckOutline class="h-3 w-3 text-primary-800 dark:text-primary-400" />
-    <span class="sr-only">Icon description</span>
-  </Badge>
+    <Badge color="gray" rounded large class="!p-1 !font-semibold">
+      <CheckOutline class="h-3 w-3" />
+      <span class="sr-only">Icon description</span>
+    </Badge>
+    <Badge rounded large class="!p-1 !font-semibold">
+      <CheckOutline class="h-3 w-3 text-primary-800 dark:text-primary-400" />
+      <span class="sr-only">Icon description</span>
+    </Badge>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/badge-with-icon-only.md'] as string} />
+    <HighlightCompo code={modules['./md/badge-with-icon-only.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -255,6 +251,6 @@
   <Button onclick={openBadge}>Open badge</Button>
   <Badge class="ml-4" color="blue" dismissable large bind:badgeStatus={openBadgeStatus}>Default</Badge>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/opening-badge.md'] as string} />
+    <HighlightCompo code={modules['./md/opening-badge.md'] as string} />
   {/snippet}
 </CodeWrapper>

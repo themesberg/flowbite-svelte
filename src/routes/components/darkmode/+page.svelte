@@ -22,9 +22,10 @@
 
 <CodeWrapper>
   <Darkmode />
+  {#snippet codeblock()}
+    <HighlightCompo code={modules['./md/darkmode.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/darkmode.md'] as string} />
 
 <H2>Initial theme</H2>
 
@@ -49,6 +50,7 @@ Use the lightIcon and darkIcon slots to change icons:
       <ThumbsDownSolid color="green" />
     {/snippet}
   </Darkmode>
+  {#snippet codeblock()}
+    <HighlightCompo code={modules['./md/modeicon.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/modeicon.md'] as string} />

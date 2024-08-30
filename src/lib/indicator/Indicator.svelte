@@ -29,7 +29,7 @@
 ## Props
 @prop children
 @prop color = 'primary'
-@prop rounded = false
+@prop cornerStyle = 'circular'
 @prop size = 'md'
 @prop border = false
 @prop placement

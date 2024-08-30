@@ -20,7 +20,7 @@
   let dismissable = $state(true);
   const changeDismissable = () => {
     dismissable = !dismissable;
-  }
+  };
   const positions = Object.keys(toast.variants.position) as Toast['position'][];
   let toastPosition: Toast['position'] = $state('top-left');
   // console.log('positions', positions);
@@ -31,8 +31,8 @@
     params: FlyParams | BlurParams | SlideParams | ScaleParams;
   };
 
-  const transitions: TransitionOption[]  = [
-    { name: 'Default', transition: fly, params:{ duration: 400}},
+  const transitions: TransitionOption[] = [
+    { name: 'Default', transition: fly, params: { duration: 400 } },
     { name: 'Fly', transition: fly, params: { duration: 300, easing: linear, x: 150 } },
     { name: 'Blur', transition: blur, params: { duration: 400, easing: linear } },
     { name: 'Slide', transition: slide, params: { duration: 500, easing: linear, x: -150 } },
@@ -56,22 +56,20 @@
       if (toastColor !== 'primary') props.push(` color="${toastColor}"`);
       if (dismissable !== true) props.push(' dismissable={false}');
       if (toastPosition !== 'top-left') props.push(` position="${toastPosition}"`);
-      if ( currentTransition !== transitions[0] && dismissable) {
+      if (currentTransition !== transitions[0] && dismissable) {
         props.push(` transition={${currentTransition.transition.name}}`);
         const paramsString = Object.entries(currentTransition.params)
-        .map(([key, value]) => {
-          if (typeof value === 'function') {
-            return `${key}:${value.name}`;
-          }
-          return `${key}:${value}`;
-        })
-        .join(',');
+          .map(([key, value]) => {
+            if (typeof value === 'function') {
+              return `${key}:${value.name}`;
+            }
+            return `${key}:${value}`;
+          })
+          .join(',');
         props.push(` params={{${paramsString}}}`);
       }
 
-      const propsString = props.length > 0 
-      ? props.map(prop => `\n  ${prop}`).join('') + '\n'
-      : ' ';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
 
       return `<div class="relative h-56">
   <Toast${propsString}>My Toast</Toast>
@@ -117,22 +115,22 @@
     {/each}
   </div>
   <div class="mt-4 flex flex-wrap gap-2">
-  <Button onclick={changeDismissable}>{dismissable ? 'Disable' : 'Enable'} dismissable</Button> 
+    <Button onclick={changeDismissable}>{dismissable ? 'Disable' : 'Enable'} dismissable</Button>
   </div>
-  
+
   <HighlightCompo code={generatedCode} />
 </CodeWrapper>
 
 <H2>Undo button</H2>
 <CodeWrapper>
   <div class="flex flex-col items-center">
-  <div class="mb-4 h-16">
-    <Toast bind:toastStatus={toastUndoStatus} iconClass="w-full text-sm font-normal flex items-center justify-between">
-      Conversation archived.
-      <a class="ms-auto rounded-lg p-1.5 font-medium text-primary-600 hover:bg-primary-100 dark:text-primary-500 dark:hover:bg-gray-700" href="/">Undo</a>
-    </Toast>
-  </div>
-  <Button class="w-36" disabled={toastUndoStatus ? true : false} onclick={changeUndoStatus}>Open toast</Button>
+    <div class="mb-4 h-16">
+      <Toast bind:toastStatus={toastUndoStatus} iconClass="w-full text-sm font-normal flex items-center justify-between">
+        Conversation archived.
+        <a class="ms-auto rounded-lg p-1.5 font-medium text-primary-600 hover:bg-primary-100 dark:text-primary-500 dark:hover:bg-gray-700" href="/">Undo</a>
+      </Toast>
+    </div>
+    <Button class="w-36" disabled={toastUndoStatus ? true : false} onclick={changeUndoStatus}>Open toast</Button>
   </div>
   <HighlightCompo code={modules['./md/undo-button.md'] as string} />
 </CodeWrapper>
@@ -141,56 +139,53 @@
 <H3>Toast message</H3>
 <CodeWrapper>
   <div class="flex h-[180px] flex-col items-center">
-  <Toast align={false} iconClass="w-10 h-10 rounded-full">
-    {#snippet icon()}
-      <Avatar src="/images/profile-picture-1.webp" />
-    {/snippet}
-    <div class="ms-3 text-sm font-normal">
-      <span class="mb-1 text-sm font-semibold text-gray-900 dark:text-white">Jese Leos</span>
-      <div class="mb-2 text-sm font-normal">Hi Neil, thanks for sharing your thoughts regarding Flowbite.</div>
-      <Button size="xs">Reply</Button>
-    </div>
-  </Toast>
+    <Toast align={false} iconClass="w-10 h-10 rounded-full">
+      {#snippet icon()}
+        <Avatar src="/images/profile-picture-1.webp" />
+      {/snippet}
+      <div class="ms-3 text-sm font-normal">
+        <span class="mb-1 text-sm font-semibold text-gray-900 dark:text-white">Jese Leos</span>
+        <div class="mb-2 text-sm font-normal">Hi Neil, thanks for sharing your thoughts regarding Flowbite.</div>
+        <Button size="xs">Reply</Button>
+      </div>
+    </Toast>
   </div>
   <HighlightCompo code={modules['./md/toast-message.md'] as string} />
 </CodeWrapper>
 
-
 <H3>Push notification</H3>
 <CodeWrapper>
   <div class="flex h-[140px] flex-col items-center">
-  <Toast align={false}>
-    <span class="font-semibold text-gray-900 dark:text-white">New notification</span>
-    <div class="mt-3 flex items-center">
-      <Avatar src="/images/profile-picture-3.webp" />
-      <div class="ms-3">
-        <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Bonnie Green</h4>
-        <div class="text-sm font-normal">commented on your photo</div>
-        <span class="text-xs font-medium text-primary-600 dark:text-primary-500">a few seconds ago</span>
+    <Toast align={false}>
+      <span class="font-semibold text-gray-900 dark:text-white">New notification</span>
+      <div class="mt-3 flex items-center">
+        <Avatar src="/images/profile-picture-3.webp" />
+        <div class="ms-3">
+          <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Bonnie Green</h4>
+          <div class="text-sm font-normal">commented on your photo</div>
+          <span class="text-xs font-medium text-primary-600 dark:text-primary-500">a few seconds ago</span>
+        </div>
       </div>
-    </div>
-  </Toast>
+    </Toast>
   </div>
   <HighlightCompo code={modules['./md/push-notification.md'] as string} />
 </CodeWrapper>
 
-
 <H3>Interactive toast</H3>
 <CodeWrapper>
   <div class="flex h-48 flex-col items-center">
-  <Toast align={false}>
-    {#snippet icon()}
-      <CameraPhotoOutline class="h-5 w-5" />
-    {/snippet}
-    <span class="font-semibold text-gray-900 dark:text-white">Update available</span>
-    <div class="mt-3">
-      <div class="mb-2 text-sm font-normal">A new software version is available for download.</div>
-      <div class="grid grid-cols-2 gap-2">
-        <Button size="xs" class="w-full">Update</Button>
+    <Toast align={false}>
+      {#snippet icon()}
+        <CameraPhotoOutline class="h-5 w-5" />
+      {/snippet}
+      <span class="font-semibold text-gray-900 dark:text-white">Update available</span>
+      <div class="mt-3">
+        <div class="mb-2 text-sm font-normal">A new software version is available for download.</div>
+        <div class="grid grid-cols-2 gap-2">
+          <Button size="xs" class="w-full">Update</Button>
+        </div>
       </div>
-    </div>
-  </Toast>
+    </Toast>
   </div>
   <HighlightCompo code={modules['./md/interactive-toast.md'] as string} />
 </CodeWrapper>
-

@@ -50,9 +50,7 @@
       if (stacked) props.push('stacked');
       if (avatarClass) props.push(`class="${avatarClass}"`);
 
-      const propsString = props.length > 0 
-      ? props.map(prop => `\n  ${prop}`).join('') + '\n'
-      : ' ';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
 
       return `<Avatar${propsString} />`;
     })()
@@ -67,48 +65,48 @@
 
 <H2>Interactive Avatar Bilder</H2>
 <CodeWrapper>
-  <div class="mb-4 flex justify-center h-36">
-    <Avatar src="/images/profile-picture-1.webp" cornerStyle={isRounded ? 'rounded' : undefined} {border} {stacked} class={avatarClass} size={avatarSize}/>
-    <Avatar src="/images/profile-picture-2.webp" cornerStyle={isRounded ? 'rounded' : undefined} {border} {stacked} class={avatarClass} size={avatarSize}/>
+  <div class="mb-4 flex h-36 justify-center">
+    <Avatar src="/images/profile-picture-1.webp" cornerStyle={isRounded ? 'rounded' : undefined} {border} {stacked} class={avatarClass} size={avatarSize} />
+    <Avatar src="/images/profile-picture-2.webp" cornerStyle={isRounded ? 'rounded' : undefined} {border} {stacked} class={avatarClass} size={avatarSize} />
     <Avatar src="/images/profile-picture-3.webp" cornerStyle={isRounded ? 'rounded' : undefined} {border} {stacked} class={avatarClass} size={avatarSize} />
   </div>
-  <div class="flex flex-wrap space-x-4 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as size}
       <Radio labelClass="w-24 my-1" name="spinnersize" bind:group={avatarSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap gap-4 mb-4">
-  <Button class="w-40" color="blue" onclick={toggleCornerStyle}>{isRounded ? 'Default: circular' : 'Rounded'}</Button>
-  <Button class="w-40" color="red" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
-  <Button class="w-40" color="green" onclick={changeStacked}>{stacked ? 'Remove stacked' : 'Add  stacked'}</Button>
-  <Button class="w-40" color="purple" onclick={changeClass}>{avatarClass ? 'Remove class' : 'Add class'}</Button>
+  <div class="mb-4 flex flex-wrap gap-4">
+    <Button class="w-40" color="blue" onclick={toggleCornerStyle}>{isRounded ? 'Default: circular' : 'Rounded'}</Button>
+    <Button class="w-40" color="red" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
+    <Button class="w-40" color="green" onclick={changeStacked}>{stacked ? 'Remove stacked' : 'Add  stacked'}</Button>
+    <Button class="w-40" color="purple" onclick={changeClass}>{avatarClass ? 'Remove class' : 'Add class'}</Button>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={generatedCode} />
+    <HighlightCompo code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Placeholder</H2>
 <CodeWrapper>
-  <div  class="flex justify-center gap-4">
-  <Avatar />
-  <Avatar cornerStyle="rounded" />
-  <Avatar border />
-  <Avatar cornerStyle="rounded" border />
+  <div class="flex justify-center gap-4">
+    <Avatar />
+    <Avatar cornerStyle="rounded" />
+    <Avatar border />
+    <Avatar cornerStyle="rounded" border />
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/placeholder.md'] as string} />
+    <HighlightCompo code={modules['./md/placeholder.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Placeholder initials</H2>
 <CodeWrapper>
-  <div class="flex justify-center h-10">
-  <Avatar>JL</Avatar>
+  <div class="flex h-10 justify-center">
+    <Avatar>JL</Avatar>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/placeholder-initials.md'] as string} />
+    <HighlightCompo code={modules['./md/placeholder-initials.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -118,35 +116,35 @@
 <H2>Dot indicator</H2>
 <CodeWrapper>
   <div class="flex justify-center gap-4">
-  <Avatar src="/images/profile-picture-3.webp" dot={{ color: 'red' }} />
-  <Avatar src="/images/profile-picture-3.webp" dot={{ placement: 'top-right', color: 'red' }} cornerStyle="rounded" />
-  <Avatar src="/images/profile-picture-5.webp" dot={{ placement: 'bottom-right', color: 'green' }} />
-  <Avatar src="/images/profile-picture-5.webp" dot={{ placement: 'bottom-right' }} cornerStyle="rounded" />
-  <Avatar dot={{}} />
+    <Avatar src="/images/profile-picture-3.webp" dot={{ color: 'red' }} />
+    <Avatar src="/images/profile-picture-3.webp" dot={{ placement: 'top-right', color: 'red' }} cornerStyle="rounded" />
+    <Avatar src="/images/profile-picture-5.webp" dot={{ placement: 'bottom-right', color: 'green' }} />
+    <Avatar src="/images/profile-picture-5.webp" dot={{ placement: 'bottom-right' }} cornerStyle="rounded" />
+    <Avatar dot={{}} />
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/dot-indicator.md'] as string} />
+    <HighlightCompo code={modules['./md/dot-indicator.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Stacked</H2>
 <CodeWrapper>
   <div class="flex flex-col justify-center gap-4 px-4">
-  <div class="mb-5 flex">
-    <Avatar src="/images/profile-picture-1.webp" stacked />
-    <Avatar src="/images/profile-picture-2.webp" stacked />
-    <Avatar src="/images/profile-picture-3.webp" stacked />
-    <Avatar stacked />
-  </div>
-  <div class="flex">
-    <Avatar src="/images/profile-picture-1.webp" stacked />
-    <Avatar src="/images/profile-picture-2.webp" stacked />
-    <Avatar src="/images/profile-picture-3.webp" stacked />
-    <Avatar stacked href="/" class="bg-gray-700 text-sm text-white hover:bg-gray-600">+99</Avatar>
-  </div>
+    <div class="mb-5 flex">
+      <Avatar src="/images/profile-picture-1.webp" stacked />
+      <Avatar src="/images/profile-picture-2.webp" stacked />
+      <Avatar src="/images/profile-picture-3.webp" stacked />
+      <Avatar stacked />
+    </div>
+    <div class="flex">
+      <Avatar src="/images/profile-picture-1.webp" stacked />
+      <Avatar src="/images/profile-picture-2.webp" stacked />
+      <Avatar src="/images/profile-picture-3.webp" stacked />
+      <Avatar stacked href="/" class="bg-gray-700 text-sm text-white hover:bg-gray-600">+99</Avatar>
+    </div>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/stacked.md'] as string} />
+    <HighlightCompo code={modules['./md/stacked.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -160,33 +158,31 @@
     </div>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/avatar-text.md'] as string} />
+    <HighlightCompo code={modules['./md/avatar-text.md'] as string} />
   {/snippet}
 </CodeWrapper>
-
 
 <H2>User dropdown</H2>
 <CodeWrapper>
   <div class="flex h-72 items-start justify-center">
-  <Avatar onclick={dropdown.toggle} src="/images/profile-picture-3.webp" class="cursor-pointer" dot={{ color: 'green' }} />
-  <div class="relative">
-    <Dropdown {dropdownStatus} {closeDropdown} class="absolute -left-[100px] top-[40px]">
-      <DropdownHeader>
-        <div>Bonnie Green</div>
-        <div class="truncate font-medium">name@flowbite.com</div>
-      </DropdownHeader>
-      <DropdownUl>
-        <DropdownLi href="/">Dashboard</DropdownLi>
-        <DropdownLi href="/nav">Navbar</DropdownLi>
-        <DropdownLi href="/footer">Footer</DropdownLi>
-        <DropdownDivider />
-        <DropdownLi href="/dropdown">Dropdown</DropdownLi>
-      </DropdownUl>
-    </Dropdown>
-  </div>
+    <Avatar onclick={dropdown.toggle} src="/images/profile-picture-3.webp" class="cursor-pointer" dot={{ color: 'green' }} />
+    <div class="relative">
+      <Dropdown {dropdownStatus} {closeDropdown} class="absolute -left-[100px] top-[40px]">
+        <DropdownHeader>
+          <div>Bonnie Green</div>
+          <div class="truncate font-medium">name@flowbite.com</div>
+        </DropdownHeader>
+        <DropdownUl>
+          <DropdownLi href="/">Dashboard</DropdownLi>
+          <DropdownLi href="/nav">Navbar</DropdownLi>
+          <DropdownLi href="/footer">Footer</DropdownLi>
+          <DropdownDivider />
+          <DropdownLi href="/dropdown">Dropdown</DropdownLi>
+        </DropdownUl>
+      </Dropdown>
+    </div>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/user-dropdown.md'] as string} />
+    <HighlightCompo code={modules['./md/user-dropdown.md'] as string} />
   {/snippet}
 </CodeWrapper>
-

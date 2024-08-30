@@ -24,23 +24,21 @@
     { name: 'left', class: 'text-left' },
     { name: 'center', class: 'text-center' },
     { name: 'right', class: 'text-right' }
-  ]
-  
-  let selectedAlignment= $state('left');
+  ];
+
+  let selectedAlignment = $state('left');
   let currentSpinner = $derived(alignments.find((t) => t.name === selectedAlignment) || alignments[0]);
 
   // code generator
   let generatedCode = $derived(
     (() => {
       let props = [];
-      if ( spinnerSize !== '8' ) props.push(` size="${spinnerSize}"`);
-      if ( spinnerColor !== 'primary' ) props.push(` color="${spinnerColor}"`);
-      if ( spinnerClass !== '' ) props.push(` class="${spinnerClass}"`);
-      
-      const propsString = props.length > 0 
-      ? props.map(prop => `\n  ${prop}`).join('') + '\n'
-      : ' ';
-      
+      if (spinnerSize !== '8') props.push(` size="${spinnerSize}"`);
+      if (spinnerColor !== 'primary') props.push(` color="${spinnerColor}"`);
+      if (spinnerClass !== '') props.push(` class="${spinnerClass}"`);
+
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
+
       // alignment needs div wrapper
       if (selectedAlignment !== 'left') {
         return `<div class="${currentSpinner.class}">\n  <Spinner${propsString}/>\n</div>`;
@@ -52,31 +50,31 @@
   let copiedStatus = $state(false);
 
   function handleCopyClick(codeBlock: string) {
-  copyToClipboard(codeBlock)
-    .then(() => {
-      copiedStatus = true;
-      setTimeout(() => {
-        copiedStatus = false;
-      }, 1000);
-    })
-    .catch((err) => {
-      console.error('Error in copying:', err);
-      // Handle the error as needed
-    });
+    copyToClipboard(codeBlock)
+      .then(() => {
+        copiedStatus = true;
+        setTimeout(() => {
+          copiedStatus = false;
+        }, 1000);
+      })
+      .catch((err) => {
+        console.error('Error in copying:', err);
+        // Handle the error as needed
+      });
   }
 </script>
 
 <H1>Spinner</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md'] as string}/>
+<HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Interactive Spinner Builder</H2>
 
 <CodeWrapper>
   <div class="h-20">
     <div class={currentSpinner.class}>
-      <Spinner color={spinnerColor} size={spinnerSize} class={spinnerClass}/>
+      <Spinner color={spinnerColor} size={spinnerSize} class={spinnerClass} />
     </div>
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
@@ -85,13 +83,13 @@
       <Radio labelClass="w-24 my-1" name="spinnercolor" bind:group={spinnerColor} color={color as Spinner['color']} value={color}>{color}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-4 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as size}
       <Radio labelClass="w-24 my-1" name="spinnersize" bind:group={spinnerSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <div class="mt-4 flex flex-wrap space-x-4 mb-4">
+  <div class="mb-4 mt-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Alignment:</Label>
     {#each alignments as option}
       <Radio labelClass="w-24 my-1" name="alignment" bind:group={selectedAlignment} value={option.name}>{option.name}</Radio>

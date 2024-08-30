@@ -31,17 +31,16 @@
 <H2>Default buttongroup</H2>
 <CodeWrapper>
   <div class="flex justify-center">
-  <ButtonGroup>
-    <Button>Profile</Button>
-    <Button>Settings</Button>
-    <Button>Messages</Button>
-  </ButtonGroup>
+    <ButtonGroup>
+      <Button>Profile</Button>
+      <Button>Settings</Button>
+      <Button>Messages</Button>
+    </ButtonGroup>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/default-buttongroup.md'] as string} />
+    <HighlightCompo code={modules['./md/default-buttongroup.md'] as string} />
   {/snippet}
 </CodeWrapper>
-
 
 <H2>Interactive button group</H2>
 <CodeWrapper>
@@ -61,10 +60,9 @@
   </div>
   <Button color="green" onclick={changeClass}>{buttonGroupClass ? 'Remove class' : 'Add class'}</Button>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/reactive-buttongroup.md'] as string} />
+    <HighlightCompo code={modules['./md/reactive-buttongroup.md'] as string} />
   {/snippet}
 </CodeWrapper>
-
 
 <H2>Size</H2>
 <CodeWrapper>
@@ -93,7 +91,7 @@
     </div>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/sizes.md'] as string} />
+    <HighlightCompo code={modules['./md/sizes.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -135,21 +133,21 @@
     </div>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/more-examples.md'] as string} />
+    <HighlightCompo code={modules['./md/more-examples.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Button group as links</H2>
 <CodeWrapper>
   <div class="flex justify-center">
-  <ButtonGroup>
-    <Button href="/">Profile</Button>
-    <Button href="/">Settings</Button>
-    <Button href="/">Messages</Button>
-  </ButtonGroup>
+    <ButtonGroup>
+      <Button href="/">Profile</Button>
+      <Button href="/">Settings</Button>
+      <Button href="/">Messages</Button>
+    </ButtonGroup>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/button-group-as-links.md'] as string} />
+    <HighlightCompo code={modules['./md/button-group-as-links.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -172,7 +170,7 @@
     </ButtonGroup>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/group-button-with-icons.md'] as string} />
+    <HighlightCompo code={modules['./md/group-button-with-icons.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -186,7 +184,7 @@
     </ButtonGroup>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/outline.md'] as string} />
+    <HighlightCompo code={modules['./md/outline.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -209,7 +207,7 @@
     </ButtonGroup>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/outline-with-icon.md'] as string} />
+    <HighlightCompo code={modules['./md/outline-with-icon.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -223,6 +221,6 @@
     </ButtonGroup>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/events.md'] as string} />
+    <HighlightCompo code={modules['./md/events.md'] as string} />
   {/snippet}
 </CodeWrapper>

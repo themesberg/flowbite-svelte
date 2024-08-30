@@ -24,7 +24,7 @@
   let cornerStyle: IndicatorProps['cornerStyle'] = $state('circular');
   const changeCornerStyle = () => {
     cornerStyle = cornerStyle === 'circular' ? 'rounded' : 'circular';
-  }
+  };
   let placement: IndicatorProps['placement'] = $state('default');
 
   // code generator
@@ -40,10 +40,8 @@
       if (placement !== 'default') props.push(` placement="${placement}"`);
       if (cornerStyle !== 'circular') props.push(` cornerStyle="${cornerStyle}"`);
 
-      const propsString = props.length > 0 
-      ? props.map(prop => `\n  ${prop}`).join('') + '\n'
-      : ' ';
-      
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
+
       return `<div class="borer relative h-56 w-56 rounded-lg border-gray-300 m-8">
   <Indicator${propsString} />
 </div>`;
@@ -55,21 +53,6 @@
 
 <H2>Setup</H2>
 <HighlightCompo code={modules['./md/setup.md'] as string} />
-
-<H2>Default indicator</H2>
-<CodeWrapper class="flex justify-center gap-4">
-  <Indicator />
-  <Indicator color="gray" />
-  <Indicator color="orange" />
-  <Indicator color="blue" />
-  <Indicator color="green" />
-  <Indicator color="red" />
-  <Indicator color="purple" />
-  <Indicator color="indigo" />
-  <Indicator color="yellow" />
-  <Indicator color="teal" />
-</CodeWrapper>
-<HighlightCompo code={modules['./md/defaultindicator.md'] as string} />
 
 <H2>Interactive indicator</H2>
 <CodeWrapper>
@@ -98,79 +81,88 @@
     <Button onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
     <Button onclick={changeCornerStyle}>{cornerStyle === 'circular' ? 'Rounded' : 'Circular'}</Button>
   </div>
-  
-  <HighlightCompo code={generatedCode}/>
+  {#snippet codeblock()}
+  <HighlightCompo code={generatedCode} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Legend indicator</H2>
 <CodeWrapper>
   <div class="flex flex-wrap justify-start gap-4 md:justify-center">
-  <span class="flex items-center"><Indicator size="sm" color="orange" class="me-1.5" />Visitors</span>
-  <span class="flex items-center"><Indicator size="sm" color="purple" class="me-1.5" />Sessions</span>
-  <span class="flex items-center"><Indicator size="sm" color="indigo" class="me-1.5" />Customers</span>
-  <span class="flex items-center"><Indicator size="sm" color="teal" class="me-1.5" />Revenue</span>
+    <span class="flex items-center"><Indicator size="sm" color="orange" class="me-1.5" />Visitors</span>
+    <span class="flex items-center"><Indicator size="sm" color="purple" class="me-1.5" />Sessions</span>
+    <span class="flex items-center"><Indicator size="sm" color="indigo" class="me-1.5" />Customers</span>
+    <span class="flex items-center"><Indicator size="sm" color="teal" class="me-1.5" />Revenue</span>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/legend.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Indicator count</H2>
 
 <CodeWrapper>
   <div class="flex justify-center">
-  <Button size="lg" class="relative">
-    <EnvelopeSolid class="me-2 h-4 w-4 text-white dark:text-white" />
-    <span class="sr-only">Notifications</span>
-    Messages
-    <Indicator color="red" border size="xl" placement="top-right">
-      <span class="text-xs font-bold text-white">8</span>
-    </Indicator>
-  </Button>
+    <Button size="lg" class="relative">
+      <EnvelopeSolid class="me-2 h-4 w-4 text-white dark:text-white" />
+      <span class="sr-only">Notifications</span>
+      Messages
+      <Indicator color="red" border size="xl" placement="top-right">
+        <span class="text-xs font-bold text-white">8</span>
+      </Indicator>
+    </Button>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/indicator-count.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Status indicator</H2>
 <CodeWrapper>
   <div class="flex justify-center">
-  <Avatar src="/images/profile-picture-5.webp" dot={{ color: 'green', size: 'lg', placement: 'top-right' }} />
-  <Avatar src="/images/profile-picture-5.webp" dot={{ color: 'red', size: 'lg', placement: 'top-right' }} />
+    <Avatar src="/images/profile-picture-5.webp" dot={{ color: 'green', size: 'lg', placement: 'top-right' }} />
+    <Avatar src="/images/profile-picture-5.webp" dot={{ color: 'red', size: 'lg', placement: 'top-right' }} />
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/status.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Badge indicator</H2>
 <CodeWrapper>
   <div class="flex gap-2">
-  <ul class="w-full max-w-sm divide-y divide-gray-200 dark:divide-gray-700">
-    <li class="py-3 sm:py-4">
-      <div class="flex items-center space-x-3 rtl:space-x-reverse">
-        <Avatar src="/images/profile-picture-5.webp" alt="Neil image" />
-        <div class="min-w-0 flex-1">
-          <p class="truncate text-sm font-semibold text-gray-900 dark:text-white">Neil Sims</p>
-          <p class="truncate text-sm text-gray-500 dark:text-gray-400">email@flowbite.com</p>
+    <ul class="w-full max-w-sm divide-y divide-gray-200 dark:divide-gray-700">
+      <li class="py-3 sm:py-4">
+        <div class="flex items-center space-x-3 rtl:space-x-reverse">
+          <Avatar src="/images/profile-picture-5.webp" alt="Neil image" />
+          <div class="min-w-0 flex-1">
+            <p class="truncate text-sm font-semibold text-gray-900 dark:text-white">Neil Sims</p>
+            <p class="truncate text-sm text-gray-500 dark:text-gray-400">email@flowbite.com</p>
+          </div>
+          <Badge color="green" rounded class="px-2.5 py-0.5">
+            <Indicator color="green" size="xs" class="me-1" />Available
+          </Badge>
         </div>
-        <Badge color="green" rounded class="px-2.5 py-0.5">
-          <Indicator color="green" size="xs" class="me-1" />Available
-        </Badge>
-      </div>
-    </li>
-    <li class="py-3 sm:py-4">
-      <div class="flex items-center space-x-3 rtl:space-x-reverse">
-        <div class="flex-shrink-0">
-          <Avatar src="/images/profile-picture-4.webp" alt="Bonnie image" />
+      </li>
+      <li class="py-3 sm:py-4">
+        <div class="flex items-center space-x-3 rtl:space-x-reverse">
+          <div class="flex-shrink-0">
+            <Avatar src="/images/profile-picture-4.webp" alt="Bonnie image" />
+          </div>
+          <div class="min-w-0 flex-1">
+            <p class="truncate text-sm font-semibold text-gray-900 dark:text-white">Bonnie Green</p>
+            <p class="truncate text-sm text-gray-500 dark:text-gray-400">email@flowbite.com</p>
+          </div>
+          <Badge color="red" rounded class="px-2.5 py-0.5">
+            <Indicator color="red" size="xs" class="me-1" />Unavailable
+          </Badge>
         </div>
-        <div class="min-w-0 flex-1">
-          <p class="truncate text-sm font-semibold text-gray-900 dark:text-white">Bonnie Green</p>
-          <p class="truncate text-sm text-gray-500 dark:text-gray-400">email@flowbite.com</p>
-        </div>
-        <Badge color="red" rounded class="px-2.5 py-0.5">
-          <Indicator color="red" size="xs" class="me-1" />Unavailable
-        </Badge>
-      </div>
-    </li>
-  </ul>
+      </li>
+    </ul>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/badge-indicator.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Stepper indicator</H2>
@@ -265,5 +257,7 @@
       </div>
     </li>
   </ol>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/stepper.md'] as string} />
+  {/snippet}
 </CodeWrapper>
