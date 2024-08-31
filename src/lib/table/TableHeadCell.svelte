@@ -20,7 +20,7 @@
     sorting.update(({ items, direction, sorter }) => {
       if(!sort) return { items, direction, sorter };
       if(sorter === sortId) {
-        direction = -direction;
+        direction = -direction as -1 | 1;
       } else {
         direction = defaultDirection === 'asc' ? 1 : -1;
       }
