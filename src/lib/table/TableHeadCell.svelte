@@ -34,8 +34,8 @@
 </script>
 
 {#if sort && sorting}
-<th {...$$restProps} class={twMerge($$props.class, direction)} on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover aria-sort={direction ? `${direction}ending` : undefined}>
-  <button class={twMerge('w-full text-left', padding)} on:click={sortItems}>
+<th {...$$restProps} class={$$props.class} on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover aria-sort={direction ? `${direction}ending` : undefined}>
+  <button class={twMerge('w-full text-left', 'after:absolute after:pl-3', direction === 'asc' && 'after:content-["▲"]', direction === 'desc' && 'after:content-["▼"]', padding)} on:click={sortItems}>
     <slot />
   </button>
 </th>
