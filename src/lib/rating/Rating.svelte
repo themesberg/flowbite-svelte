@@ -12,12 +12,12 @@
     total?: number;
     rating?: number;
     partialId?: string | undefined | null;
-    icon?: Component;
+    Icon?: Component;
     count?: boolean;
     pClass?: string | undefined | null;
   }
 
-  let { children, text, divClass = 'flex items-center', size = 24, total = 5, rating = 4, partialId = 'partialStar' + idGenerator(), icon = Star, count = false, pClass = 'ms-2 text-sm font-bold text-gray-900 dark:text-white' }: Props = $props();
+  let { children, text, divClass = 'flex items-center', size = 24, total = 5, rating = 4, partialId = 'partialStar' + idGenerator(), Icon = Star, count = false, pClass = 'ms-2 text-sm font-bold text-gray-900 dark:text-white' }: Props = $props();
 
   // generate unique id for full star and gray star
   const fullStarId: string = idGenerator();
@@ -30,18 +30,18 @@
 
 <div class={divClass}>
   {#if count && children}
-    <icon fillPercent={100} {size}></icon>
+    <Icon fillPercent={100} {size} />
     <p class={pClass}>{rating}</p>
     {@render children()}
   {:else}
     {#each Array(fullStars) as star}
-      <icon {size} fillPercent={100} id={fullStarId}></icon>
+      <Icon {size} fillPercent={100} id={fullStarId} />
     {/each}
     {#if percentRating}
-      <icon {size} fillPercent={percentRating} id={partialId}></icon>
+      <Icon {size} fillPercent={percentRating} id={partialId} />
     {/if}
     {#each Array(grayStars) as star}
-      <icon {size} fillPercent={0} id={grayStarId}></icon>
+      <Icon {size} fillPercent={0} id={grayStarId} />
     {/each}
     {#if text}
       {@render text()}
@@ -60,7 +60,7 @@
 @prop total = 5
 @prop rating = 4
 @prop partialId = 'partialStar' + idGenerator()
-@prop icon = Star
+@prop Icon = Star
 @prop count = false
 @prop pClass = 'ms-2 text-sm font-bold text-gray-900 dark:text-white'
 -->

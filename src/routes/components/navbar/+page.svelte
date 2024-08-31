@@ -52,9 +52,10 @@
       <NavLi href="/components/footer">Footer</NavLi>
     </NavUl>
   </Navbar>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/default-nav.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/default-nav.md'] as string} />
 
 <H2>Breakpoint</H2>
 <P>Use the `breakPoint` prop to change the breakpoint. There are 4 breakpoints: `md`, `lg`, `xl`, `xxl`.</P>
@@ -72,11 +73,13 @@
       <NavLi href="/components/footer">Footer</NavLi>
     </NavUl>
   </Navbar>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/breakpoint.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/breakpoint.md'] as string} />
 
 <H2>Sticky navbar</H2>
-<CodeWrapper class="p-2">
+<CodeWrapper innerClass="p-0">
   <div class="relative">
     <Navbar toggleNav={toggleNav2} closeNav={closeNav2} navStatus={navStatus2} breakPoint="md" navClass="absolute w-full z-20 top-0 start-0 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
       {#snippet brand()}
@@ -97,6 +100,8 @@
       <TextPlaceholder class="my-8" />
     </div>
   </div>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/sticky-navbar.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/sticky-navbar.md'] as string} />

@@ -28,26 +28,29 @@
     <Fileupload bind:files />
   </Label>
   <Label>File: {files}</Label>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/file-upload-example.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/file-upload-example.md'] as string} />
 
 <H2>Helper text</H2>
 <CodeWrapper>
   <Label for="with_helper" class="pb-2">Upload file</Label>
   <Fileupload id="with_helper" class="mb-2" />
   <Helper>SVG, PNG, JPG or GIF (MAX. 800x400px).</Helper>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/helper-text.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/helper-text.md'] as string} />
 
 <H2>Multiple files</H2>
 <CodeWrapper>
   <Label class="pb-2" for="multiple_files">Upload multiple files</Label>
   <Fileupload id="multiple_files" multiple bind:files />
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/multiple-files.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/multiple-files.md'] as string} />
 
 <H2>Size</H2>
 <CodeWrapper>
@@ -60,6 +63,8 @@
       <Radio labelClass="w-24 my-1" name="default_alert_color" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
     {/each}
   </div>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/size.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/size.md'] as string} />

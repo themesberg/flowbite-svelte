@@ -47,7 +47,7 @@
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default Sidebar</H2>
-<CodeWrapper class="relative">
+<CodeWrapper innerClass="relative">
   <Sidebar class="p-2" asideClass="absolute top-6 left-6 z-40">
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
@@ -87,9 +87,10 @@
       <PlusPlaceholder colnum={2} rownum={2} />
     </div>
   </div>
+  {#snippet codeblock()}
+    <HighlightCompo code={modules['./md/default-sidebar.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/default-sidebar.md'] as string} />
 
 <H2>Using object</H2>
 <CodeWrapper class="relative">
@@ -118,12 +119,12 @@
       <PlusPlaceholder colnum={2} rownum={2} />
     </div>
   </div>
+  {#snippet codeblock()}
+    <HighlightCompo code={modules['./md/using-object.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/using-object.md'] as string} />
-
 <H2>Adding active class</H2>
-
 <CodeWrapper class="relative">
   <Sidebar {activeClass} {nonActiveClass} class="p-2" asideClass="absolute top-6 left-6 z-40">
     <SidebarGroup>
@@ -164,11 +165,12 @@
       <PlusPlaceholder colnum={2} rownum={2} />
     </div>
   </div>
+  {#snippet codeblock()}
+    <HighlightCompo code={modules['./md/adding-active-class.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/adding-active-class.md'] as string} />
 
 <H2>Multi-level dropdown</H2>
-
 <CodeWrapper class="relative">
   <Sidebar class="p-2" asideClass="absolute top-6 left-6 z-40">
     <SidebarGroup>
@@ -228,12 +230,12 @@
       <PlusPlaceholder colnum={2} rownum={2} />
     </div>
   </div>
+  {#snippet codeblock()}
+    <HighlightCompo code={modules['./md/multi-level-dropdown.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/multi-level-dropdown.md'] as string} />
-
 <H2>Content separator</H2>
-
 <CodeWrapper>
   <Sidebar class="p-2">
     <SidebarGroup>
@@ -282,6 +284,7 @@
       </SidebarItem>
     </SidebarGroup>
   </Sidebar>
+  {#snippet codeblock()}
+    <HighlightCompo code={modules['./md/content-separator.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/content-separator.md'] as string} />

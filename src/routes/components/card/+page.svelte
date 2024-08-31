@@ -119,13 +119,11 @@
 </CodeWrapper>
 
 <H2>Custom size</H2>
-<CodeWrapper>
-  <div class="flex justify-center">
-    <Card class="max-w-[250px]">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Technology acquisitions</h5>
-      <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions.</p>
-    </Card>
-  </div>
+<CodeWrapper innerClass="flex justify-center">
+  <Card class="max-w-[250px]">
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Technology acquisitions</h5>
+    <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions.</p>
+  </Card>
   {#snippet codeblock()}
     <HighlightCompo code={modules['./md/custom-size.md'] as string} />
   {/snippet}
@@ -133,33 +131,29 @@
 
 <H2>Card with action button</H2>
 
-<CodeWrapper>
-  <div class="flex justify-center">
-    <Card>
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
-      <p class="mb-3 font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
-      <Button class="w-fit">
-        Read more <ArrowRightOutline class="ms-2 h-3.5 w-3.5 text-white" />
-      </Button>
-    </Card>
-  </div>
+<CodeWrapper innerClass="flex justify-center">
+  <Card>
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
+    <p class="mb-3 font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
+    <Button class="w-fit">
+      Read more <ArrowRightOutline class="ms-2 h-3.5 w-3.5 text-white" />
+    </Button>
+  </Card>
   {#snippet codeblock()}
     <HighlightCompo code={modules['./md/card-with-action-button.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Call to action card</H2>
-<CodeWrapper>
-  <div class="flex justify-center">
-    <Card class="text-center" size="lg" padding="xl">
-      <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Work fast from anywhere</h5>
-      <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">Stay up to date and move work forward with Flowbite on iOS & Android. Download the app today.</p>
-      <div class="items-center justify-center space-y-4 sm:flex sm:space-x-4 sm:space-y-0 rtl:space-x-reverse">
-        <Button>Download it</Button>
-        <Button>Get it on</Button>
-      </div>
-    </Card>
-  </div>
+<CodeWrapper innerClass="flex justify-center">
+  <Card class="text-center" size="lg" padding="xl">
+    <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Work fast from anywhere</h5>
+    <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">Stay up to date and move work forward with Flowbite on iOS & Android. Download the app today.</p>
+    <div class="items-center justify-center space-y-4 sm:flex sm:space-x-4 sm:space-y-0 rtl:space-x-reverse">
+      <Button>Download it</Button>
+      <Button>Get it on</Button>
+    </div>
+  </Card>
   {#snippet codeblock()}
     <HighlightCompo code={modules['./md/call-to-action-card.md'] as string} />
   {/snippet}

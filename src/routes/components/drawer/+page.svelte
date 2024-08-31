@@ -205,7 +205,6 @@
   <div class="mb-4 text-center">
     <Button onclick={drawerBackdrop.toggle}>Show drawer</Button>
   </div>
-
   <Drawer class={offsetClass} drawerStatus={drawerStatusBackdrop} closeDrawer={closeDrawerBackdrop}>
     <Drawerhead onclick={closeDrawerBackdrop}>
       <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">

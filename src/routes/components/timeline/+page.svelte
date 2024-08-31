@@ -73,9 +73,10 @@
       <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements built on top of Tailwind CSS.</p>
     </TimelineItem>
   </Timeline>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/default-timeline.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/default-timeline.md'] as string} />
 
 <H2>Vertical timeline</H2>
 <CodeWrapper>
@@ -105,9 +106,10 @@
       <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements built on top of Tailwind CSS.</p>
     </TimelineItem>
   </Timeline>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/vertical-timeline.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/vertical-timeline.md'] as string} />
 
 <H2>Horizontal Timeline</H2>
 <CodeWrapper>
@@ -146,24 +148,27 @@
       <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements.</p>
     </TimelineItem>
   </Timeline>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/horizontal-timeline.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/horizontal-timeline.md'] as string} />
 
 <H2>Activity Log</H2>
 <CodeWrapper>
   <Activity>
     <ActivityItem {activities} />
   </Activity>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/activity-log.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/activity-log.md'] as string} />
 
 <H2>Grouped timeline</H2>
 <CodeWrapper>
   <Group date="January 13th, 2022">
     <GroupItem timelines={groupTimelines} />
   </Group>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/grouped-timeline.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/grouped-timeline.md'] as string} />

@@ -55,21 +55,20 @@
 <H1>Rating</H1>
 
 <H2>Setup</H2>
-
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default rating</H2>
-
 <CodeWrapper>
   <Rating total={5} size={30} rating={1.4} />
   <Rating total={5} size={30} rating={4.66} />
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/default-rating.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/default-rating.md'] as string} />
 
 <H2>Star</H2>
-
-<CodeWrapper class="flex gap-2">
+<CodeWrapper innerClass="flex gap-2">
   <Star size={30} id="0" fillPercent={0} />
   <Star size={30} id="10" fillPercent={10} />
   <Star size={30} id="20" fillPercent={20} />
@@ -81,9 +80,10 @@
   <Star size={30} id="80" fillPercent={80} />
   <Star size={30} id="90" fillPercent={90} />
   <Star size={30} id="100" fillPercent={100} />
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/star.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/star.md'] as string} />
 
 <H2>Rating with text</H2>
 <CodeWrapper>
@@ -92,9 +92,10 @@
       <p class="ms-2 pt-4 text-sm font-medium text-gray-500 dark:text-gray-400">3.4 out of 5</p>
     {/snippet}
   </Rating>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/rating-with-text.md'] as string} />
+  {/snippet}  
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/rating-with-text.md'] as string} />
 
 <H2>Rating count</H2>
 <CodeWrapper>
@@ -102,22 +103,22 @@
     <span class="mx-1.5 h-1 w-1 rounded-full bg-gray-500 dark:bg-gray-400"></span>
     <a href="/" class="text-sm font-medium text-gray-900 underline hover:no-underline dark:text-white">73 reviews</a>
   </Rating>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/rating-count.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/rating-count.md'] as string} />
 
 <H2>Icon size and color</H2>
-
 <H3>Size and color</H3>
 <CodeWrapper>
-  <Rating total={5} rating={3.3} icon={Heart} />
-  <Rating total={10} rating={7.6} icon={Heart} />
-
-  <Rating total={5} rating={4.7} icon={Thumbup} />
-  <Rating total={10} rating={8.2} icon={Thumbup} />
+  <Rating total={5} rating={3.3} Icon={Heart} />
+  <Rating total={10} rating={7.6} Icon={Heart} />
+  <Rating total={5} rating={4.7} Icon={Thumbup} />
+  <Rating total={10} rating={8.2} Icon={Thumbup} />
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/size-and-color.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/size-and-color.md'] as string} />
 
 <H2>AdvancedRating component</H2>
 <CodeWrapper>
@@ -141,12 +142,12 @@
       <p class="mt-2 text-sm font-medium text-gray-500 dark:text-gray-400">1,745 global ratings</p>
     {/snippet}
   </AdvancedRating>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/advancedrating-component.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/advancedrating-component.md'] as string} />
-
 <H2>Different icon</H2>
-
 <CodeWrapper>
   <AdvancedRating
     ratings={[
@@ -158,7 +159,7 @@
     ]}
   >
     {#snippet rating()}
-      <Rating total={5} rating={3.8} icon={Thumbup}>
+      <Rating total={5} rating={3.8} Icon={Thumbup}>
         {#snippet text()}
           <p class="ms-2 pt-4 text-sm font-medium text-gray-500 dark:text-gray-400">3.8 out of 5</p>
         {/snippet}
@@ -168,9 +169,10 @@
       <p class="mt-2 text-sm font-medium text-gray-500 dark:text-gray-400">1,745 global ratings</p>
     {/snippet}
   </AdvancedRating>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/different-icon.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/different-icon.md'] as string} />
 
 <H2>Score rating</H2>
 <CodeWrapper>
@@ -188,9 +190,10 @@
       { label: 'Location', rating: 8.0 }
     ]}
   />
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/score-rating.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/score-rating.md'] as string} />
 
 <H2>Rating comment</H2>
 <CodeWrapper>
@@ -202,9 +205,10 @@
       19 people found this helpful
     {/snippet}
   </RatingComment>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/rating-comment.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/rating-comment.md'] as string} />
 
 <H2>Review content</H2>
 <CodeWrapper>
@@ -240,6 +244,7 @@
       </a>
     </aside>
   </Review>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/review-content.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/review-content.md'] as string} />

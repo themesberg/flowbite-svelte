@@ -88,23 +88,19 @@
 </CodeWrapper>
 
 <H2>Placeholder</H2>
-<CodeWrapper>
-  <div class="flex justify-center gap-4">
+<CodeWrapper innerClass="flex justify-center gap-4">
     <Avatar />
     <Avatar cornerStyle="rounded" />
     <Avatar border />
     <Avatar cornerStyle="rounded" border />
-  </div>
   {#snippet codeblock()}
     <HighlightCompo code={modules['./md/placeholder.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Placeholder initials</H2>
-<CodeWrapper>
-  <div class="flex h-10 justify-center">
+<CodeWrapper innerClass="flex h-10 justify-center">
     <Avatar>JL</Avatar>
-  </div>
   {#snippet codeblock()}
     <HighlightCompo code={modules['./md/placeholder-initials.md'] as string} />
   {/snippet}
@@ -114,14 +110,12 @@
 <CodeWrapper class="flex justify-center gap-4">NOT COMPLETED</CodeWrapper>
 
 <H2>Dot indicator</H2>
-<CodeWrapper>
-  <div class="flex justify-center gap-4">
+<CodeWrapper innerClass="flex justify-center gap-4">
     <Avatar src="/images/profile-picture-3.webp" dot={{ color: 'red' }} />
     <Avatar src="/images/profile-picture-3.webp" dot={{ placement: 'top-right', color: 'red' }} cornerStyle="rounded" />
     <Avatar src="/images/profile-picture-5.webp" dot={{ placement: 'bottom-right', color: 'green' }} />
     <Avatar src="/images/profile-picture-5.webp" dot={{ placement: 'bottom-right' }} cornerStyle="rounded" />
     <Avatar dot={{}} />
-  </div>
   {#snippet codeblock()}
     <HighlightCompo code={modules['./md/dot-indicator.md'] as string} />
   {/snippet}
@@ -149,13 +143,11 @@
 </CodeWrapper>
 
 <H2>Avatar text</H2>
-<CodeWrapper>
-  <div class="flex items-center space-x-4 rtl:space-x-reverse">
-    <Avatar src="/images/profile-picture-1.webp" cornerStyle="rounded" />
-    <div class="space-y-1 font-medium dark:text-white">
-      <div>Jese Leos</div>
-      <div class="text-sm text-gray-500 dark:text-gray-400">Joined in August 2014</div>
-    </div>
+<CodeWrapper innerClass="flex items-center space-x-4 rtl:space-x-reverse">
+  <Avatar src="/images/profile-picture-1.webp" cornerStyle="rounded" />
+  <div class="space-y-1 font-medium dark:text-white">
+    <div>Jese Leos</div>
+    <div class="text-sm text-gray-500 dark:text-gray-400">Joined in August 2014</div>
   </div>
   {#snippet codeblock()}
     <HighlightCompo code={modules['./md/avatar-text.md'] as string} />
@@ -163,8 +155,7 @@
 </CodeWrapper>
 
 <H2>User dropdown</H2>
-<CodeWrapper>
-  <div class="flex h-72 items-start justify-center">
+<CodeWrapper innerClass="flex h-80 items-start justify-center">
     <Avatar onclick={dropdown.toggle} src="/images/profile-picture-3.webp" class="cursor-pointer" dot={{ color: 'green' }} />
     <div class="relative">
       <Dropdown {dropdownStatus} {closeDropdown} class="absolute -left-[100px] top-[40px]">
@@ -181,7 +172,6 @@
         </DropdownUl>
       </Dropdown>
     </div>
-  </div>
   {#snippet codeblock()}
     <HighlightCompo code={modules['./md/user-dropdown.md'] as string} />
   {/snippet}

@@ -56,11 +56,9 @@
 <H1>Table</H1>
 
 <H2>Setup</H2>
-
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default table</H2>
-
 <CodeWrapper>
   <Table>
     <TableHead>
@@ -90,11 +88,12 @@
       </TableBodyRow>
     </TableBody>
   </Table>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/default-table.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/default-table.md'] as string} />
 
 <H2>Striped rows</H2>
-
 <CodeWrapper>
   <Table striped={true}>
     <TableHead>
@@ -154,8 +153,10 @@
       </TableBodyRow>
     </TableBody>
   </Table>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/striped-rows.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/striped-rows.md'] as string} />
 
 <H2>Hover state</H2>
 
@@ -200,8 +201,10 @@
       </TableBodyRow>
     </TableBody>
   </Table>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/hover-state.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/hover-state.md'] as string} />
 
 <H2>Checkbox</H2>
 <CodeWrapper>
@@ -257,8 +260,10 @@
       </TableBodyRow>
     </TableBody>
   </Table>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/checkbox.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/checkbox.md'] as string} />
 
 <H2>Search input</H2>
 <CodeWrapper>
@@ -280,8 +285,10 @@
       {/each}
     </TableBody>
   </TableSearch>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/search-input.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/search-input.md'] as string} />
 
 <H2>Table head</H2>
 <CodeWrapper>
@@ -323,8 +330,10 @@
       </TableBodyRow>
     </TableBody>
   </Table>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/table-head.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/table-head.md'] as string} />
 
 <H2>Table foot</H2>
 <CodeWrapper>
@@ -359,8 +368,10 @@
       </tr>
     </tfoot>
   </Table>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/table-foot.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/table-foot.md'] as string} />
 
 <H2>Table caption</H2>
 <CodeWrapper>
@@ -408,8 +419,10 @@
       </TableBodyRow>
     </TableBody>
   </Table>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/table-caption.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/table-caption.md'] as string} />
 
 <H2>Without border</H2>
 <CodeWrapper>
@@ -441,8 +454,10 @@
       </TableBodyRow>
     </TableBody>
   </Table>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/without-border.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/without-border.md'] as string} />
 
 <H2>Table with shadow</H2>
 <CodeWrapper>
@@ -474,8 +489,10 @@
       </TableBodyRow>
     </TableBody>
   </Table>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/table-with-shadow.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/table-with-shadow.md'] as string} />
 
 <H2>Overflow scrolling</H2>
 <CodeWrapper>
@@ -544,8 +561,10 @@
       </TableBodyRow>
     </TableBody>
   </Table>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/overflow-scrolling.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/overflow-scrolling.md'] as string} />
 
 <H2>Table colors</H2>
 <CodeWrapper>
@@ -577,8 +596,10 @@
       </TableBodyRow>
     </TableBody>
   </Table>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/table-colors.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/table-color.md'] as string} />
 
 <H2>Striped rows color</H2>
 <CodeWrapper>
@@ -640,8 +661,10 @@
       </TableBodyRow>
     </TableBody>
   </Table>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/striped-rows-color.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/striped-rows-color.md'] as string} />
 
 <H2>Click and double-click on row</H2>
 <CodeWrapper>
@@ -672,4 +695,7 @@
       {/each}
     </TableBody>
   </Table>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/click-and-double-click-on-row.md'] as string} />
+  {/snippet}
 </CodeWrapper>

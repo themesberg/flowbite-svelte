@@ -51,8 +51,10 @@
       </p>
     </TabItem>
   </Tabs>
+  {#snippet codeblock()}
+  <HighlightCompo codeLang="ts" code={modules['./md/default-tabs.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/default-tabs.md'] as string} />
 
 <H2>Tabs with underline</H2>
 <CodeWrapper>
@@ -91,9 +93,10 @@
       </p>
     </TabItem>
   </Tabs>
+  {#snippet codeblock()}
+  <HighlightCompo codeLang="ts" code={modules['./md/tabs-with-underline.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo codeLang="ts" code={modules['./md/tabs-with-underline.md'] as string} />
 
 <H2>Tabs with icons</H2>
 <CodeWrapper>
@@ -147,9 +150,10 @@
       </p>
     </TabItem>
   </Tabs>
+  {#snippet codeblock()}
+  <HighlightCompo codeLang="ts" code={modules['./md/tabs-with-icons.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo codeLang="ts" code={modules['./md/tabs-with-icons.md'] as string} />
 
 <H2>Pills tabs</H2>
 <CodeWrapper>
@@ -183,9 +187,10 @@
       </p>
     </TabItem>
   </Tabs>
+  {#snippet codeblock()}
+  <HighlightCompo codeLang="ts" code={modules['./md/pills-tabs.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo codeLang="ts" code={modules['./md/pills-tabs.md'] as string} />
 
 <H2>Full width tabs</H2>
 <CodeWrapper>
@@ -219,8 +224,10 @@
       </p>
     </TabItem>
   </Tabs>
+  {#snippet codeblock()}
+  <HighlightCompo codeLang="ts" code={modules['./md/full-width-tabs.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo codeLang="ts" code={modules['./md/full-width-tabs.md'] as string} />
 
 <H2>Components in tab contents</H2>
 <CodeWrapper>
@@ -265,6 +272,7 @@
       </p>
     </TabItem>
   </Tabs>
+  {#snippet codeblock()}
+  <HighlightCompo codeLang="ts" code={modules['./md/components-in-tab-contents.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo codeLang="ts" code={modules['./md/components-in-tab-contents.md'] as string} />

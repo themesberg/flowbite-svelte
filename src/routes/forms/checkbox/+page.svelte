@@ -39,6 +39,9 @@
     { value: '3', checkboxLabel: 'Three' }
   ];
   let group = $state(['2', '3']);
+  const clearGroup = () => {
+    group = [];
+  }
 </script>
 
 <H1>Checkbox</H1>
@@ -47,15 +50,17 @@
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Checkbox examples</H2>
-<CodeWrapper class="space-y-4">
+<CodeWrapper innerClass="space-y-4">
   <Checkbox>Default checkbox</Checkbox>
   <Checkbox checked color="green">Checked state</Checkbox>
   <Checkbox indeterminate>Indeterminate state</Checkbox>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/checkbox-examples.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/checkbox-examples.md'] as string} />
 
 <H2>Colors</H2>
-<CodeWrapper class="space-y-4">
+<CodeWrapper innerClass="space-y-4">
   <Checkbox color={checkboxColor} checked>Default checkbox</Checkbox>
   <Label class="flex items-center">
     <Checkbox checked class="text-sky-400 focus:ring-pink-500" />
@@ -67,19 +72,23 @@
       <Radio labelClass="w-24 my-1" name="checkbox_color" bind:group={checkboxColor} color={colorOption as Checkbox['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/colors.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/colors.md'] as string} />
 
 <H2>Disabled state</H2>
-<CodeWrapper class="space-y-4">
+<CodeWrapper innerClass="space-y-4">
   <Checkbox disabled>Disabled checkbox</Checkbox>
   <Checkbox disabled checked>Disabled checked</Checkbox>
   <Checkbox disabled indeterminate>Disabled indeterminate</Checkbox>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/disabled-state.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/disabled-state.md'] as string} />
 
 <H2>Alternative syntax</H2>
-<CodeWrapper class="flex flex-col gap-4">
+<CodeWrapper innerClass="flex flex-col gap-4">
   <Table>
     <TableHead>
       <TableHeadCell>Left column</TableHeadCell>
@@ -100,6 +109,9 @@
   <Label color="red" class="mt-4 flex items-center font-bold italic">
     Label on the other side <Checkbox class="ms-2" />
   </Label>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/alternative-syntax.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Checkbox with a link</H2>
@@ -109,15 +121,19 @@
     <a href="/" class="ms-1 text-primary-600 hover:underline dark:text-primary-500">terms and conditions</a>
     .
   </Checkbox>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/checkbox-with-a-link.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/checkbox-with-a-link.md'] as string} />
 
 <H2>Helper text</H2>
 <CodeWrapper class="space-y-1">
   <Checkbox aria_describedby="helper-checkbox-text">Free shipping via Flowbite</Checkbox>
   <Helper id="helper-checkbox-text" class="ps-6">For orders shipped from $25 in books or $29 in other categories</Helper>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/helper-text.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/helper-text.md'] as string} />
 
 <H2>Bordered</H2>
 <CodeWrapper>
@@ -127,8 +143,10 @@
   <div class="rounded border border-gray-200 dark:border-gray-700">
     <Checkbox checked classLabel="w-full p-4">Checked state</Checkbox>
   </div>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/bordered.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/bordered.md'] as string} />
 
 <H2>Checkbox list group</H2>
 <CodeWrapper>
@@ -139,8 +157,10 @@
     <li><Checkbox classLabel="p-3">React</Checkbox></li>
     <li><Checkbox classLabel="p-3">Angular</Checkbox></li>
   </ul>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/checkbox-list-group.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/checkbox-list-group.md'] as string} />
 
 <H2>Horizontal list group</H2>
 <CodeWrapper>
@@ -153,14 +173,16 @@
     <li class="w-full"><Checkbox classLabel="p-3">React</Checkbox></li>
     <li class="w-full"><Checkbox classLabel="p-3">Angular</Checkbox></li>
   </ul>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/horizontal-list-group.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/horizontal-list-group.md'] as string} />
 
 <H2>Checkbox dropdown</H2>
-<CodeWrapper class="relative flex h-96 items-start justify-center">
+<CodeWrapper innerClass="relative flex h-[460px] items-start justify-center">
   <Button onclick={dropdown.toggle}>Project users<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <div class="relative">
-    <Dropdown {dropdownStatus} {closeDropdown} params={transitionParams} class="absolute -left-[170px] top-[40px] overflow-y-auto p-2 pb-3 text-sm">
+    <Dropdown {dropdownStatus} {closeDropdown} params={transitionParams} class="absolute -left-[190px] top-[45px] overflow-y-auto p-2 w-52 pb-3 text-sm">
       <div class="relative">
         <DropdownHeader>
           <div class="p-0">
@@ -195,6 +217,9 @@
       </DropdownFooter>
     </Dropdown>
   </div>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/checkbox-dropdown.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Inline layout</H2>
@@ -205,12 +230,14 @@
     <Checkbox checked>Inline checked</Checkbox>
     <Checkbox disabled>Inline disabled</Checkbox>
   </div>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/inline-layout.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/inline-layout.md'] as string} />
 
 <H2>CheckboxButton</H2>
-<CodeWrapper class="space-y-4">
-  <div>
+<CodeWrapper>
+  <div class="mb-4">
     <CheckboxButton><AppleSolid class="me-2 h-6 w-6" />Apple</CheckboxButton>
     <CheckboxButton><FacebookSolid class="me-2 h-6 w-6" />Facebook</CheckboxButton>
     <CheckboxButton><DiscordSolid class="me-2 h-6 w-6" />Discord</CheckboxButton>
@@ -223,6 +250,9 @@
     <CheckboxButton><DiscordSolid class="me-2 h-6 w-6" />Discord</CheckboxButton>
     <CheckboxButton><DropboxSolid class="me-2 h-6 w-6" />Dropbox</CheckboxButton>
   </ButtonGroup>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/checkbox-button.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Advanced layout</H2>
@@ -251,6 +281,9 @@
       </div>
     </Checkbox>
   </div>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/advanced-layout.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Group variable</H2>
@@ -261,5 +294,8 @@
   <div class="my-2 w-44 rounded-lg border border-gray-200 p-2 dark:border-gray-700 dark:text-gray-400">
     Group: {group}
   </div>
-  <Button onclick={() => (group.length = 0)}>Clear</Button>
+  <Button onclick={clearGroup}>Clear</Button>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/group-variable.md'] as string} />
+  {/snippet}
 </CodeWrapper>

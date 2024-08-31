@@ -96,13 +96,13 @@
     {/each}
   </div>
   <Button class="w-48" onclick={changeClass}>{spinnerClass ? 'Remove class' : 'Add class'}</Button>
+  {#snippet codeblock()}
   <HighlightCompo code={generatedCode} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Button</H2>
-
-<CodeWrapper>
-  <div class="flex flex-wrap items-center gap-2">
+<CodeWrapper innerClass="flex flex-wrap items-center gap-2">
     <Button>
       <Spinner class="me-3" size="4" color="violet" />
       Loading ...
@@ -111,7 +111,7 @@
       <Spinner class="me-3" size="4" />
       Loading ...
     </Button>
-  </div>
+{#snippet codeblock()}
+    <HighlightCompo code={modules['./md/button.md'] as string} />
+{/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/button.md'] as string} />

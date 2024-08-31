@@ -90,11 +90,9 @@
 <H1>Progress bar</H1>
 
 <H2>Setup</H2>
-
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Interactive Progressbar Builder</H2>
-
 <CodeWrapper>
   <div class="my-4 h-16">
     {#if animation}
@@ -121,6 +119,7 @@
     <Button class="w-48" color="red" onclick={changeAnimation}>{animation ? 'No animation' : 'Animation'}</Button>
     <Button class="w-48" color="emerald" onclick={() => (progress = `${Math.round(Math.random() * 100)}`)}>Randomize</Button>
   </div>
-
+  {#snippet codeblock()}
   <HighlightCompo code={generatedCode} />
+  {/snippet}
 </CodeWrapper>

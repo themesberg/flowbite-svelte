@@ -41,8 +41,10 @@
       <Radio labelClass="w-24 my-1" name="style1" bind:group={style} value={option}>{option}</Radio>
     {/each}
   </div>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/floating-label-examples.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/floating-label-examples.md'] as string} />
 
 <H2>Disabled state</H2>
 <CodeWrapper>
@@ -55,8 +57,10 @@
       <Radio labelClass="w-24 my-1" name="disabled_style" bind:group={style2} value={option}>{option}</Radio>
     {/each}
   </div>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/disabled-state.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/disabled-state.md'] as string} />
 
 <H2>Colors</H2>
 <CodeWrapper>
@@ -77,8 +81,10 @@
       <Radio labelClass="w-24 my-1" name="floating_color" bind:group={floatingColor} color={colorOption as FloatingLabelInput['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/color.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/color.md'] as string} />
 
 <H2>Size</H2>
 <CodeWrapper>
@@ -97,9 +103,11 @@
       Toggle size
     </Toggle>
   </div>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/sizes.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/sizes.md'] as string} />
 
 <H2>Helper text</H2>
 <CodeWrapper>
@@ -114,5 +122,7 @@
       <Radio labelClass="w-24 my-1" name="helper_color" bind:group={helperColor} color={colorOption as FloatingLabelInput['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/helper-text.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/helper-text.md'] as string} />

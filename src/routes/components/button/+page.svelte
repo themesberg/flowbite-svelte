@@ -190,18 +190,15 @@
 </CodeWrapper>
 
 <H2>Button with icon</H2>
-<CodeWrapper>
-  <div class="flex flex-wrap gap-2">
-    <Button><ShoppingBagSolid class="me-2 h-4 w-4" />Buy Now</Button>
-    <Button>Choose Plan<ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
-  </div>
+<CodeWrapper innerClass="flex flex-wrap gap-2">
+  <Button><ShoppingBagSolid class="me-2 h-4 w-4" />Buy Now</Button>
+  <Button>Choose Plan<ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
   {#snippet codeblock()}
     <HighlightCompo code={modules['./md/button-with-icon.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Button with label</H2>
-
 <CodeWrapper>
   <Button class="gap-2">
     Messages
@@ -213,17 +210,15 @@
 </CodeWrapper>
 
 <H2>Icon buttons</H2>
-<CodeWrapper>
-  <div class="flex flex-wrap items-center gap-2">
-    <Button class="!p-2"><ArrowRightOutline class="h-7 w-7" /></Button>
-    <Button pill={true} class="!p-2"><ArrowRightOutline class="h-5 w-5" /></Button>
-    <Button outline={true} class="!p-2" size="lg">
-      <ThumbsUpSolid class="h-7 w-7" />
-    </Button>
-    <Button pill={true} outline={true} class="!p-2" size="xl">
-      <ThumbsUpSolid class="h-5 w-5" />
-    </Button>
-  </div>
+<CodeWrapper innerClass="flex flex-wrap items-center gap-2">
+  <Button class="!p-2"><ArrowRightOutline class="h-7 w-7" /></Button>
+  <Button pill={true} class="!p-2"><ArrowRightOutline class="h-5 w-5" /></Button>
+  <Button outline={true} class="!p-2" size="lg">
+    <ThumbsUpSolid class="h-7 w-7" />
+  </Button>
+  <Button pill={true} outline={true} class="!p-2" size="xl">
+    <ThumbsUpSolid class="h-5 w-5" />
+  </Button>
   {#snippet codeblock()}
     <HighlightCompo code={modules['./md/icon-buttons.md'] as string} />
   {/snippet}

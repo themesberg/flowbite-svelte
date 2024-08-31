@@ -29,14 +29,12 @@
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default buttongroup</H2>
-<CodeWrapper>
-  <div class="flex justify-center">
-    <ButtonGroup>
-      <Button>Profile</Button>
-      <Button>Settings</Button>
-      <Button>Messages</Button>
-    </ButtonGroup>
-  </div>
+<CodeWrapper innerClass="flex justify-center">
+  <ButtonGroup>
+    <Button>Profile</Button>
+    <Button>Settings</Button>
+    <Button>Messages</Button>
+  </ButtonGroup>
   {#snippet codeblock()}
     <HighlightCompo code={modules['./md/default-buttongroup.md'] as string} />
   {/snippet}
@@ -51,7 +49,6 @@
       <Button>Messages</Button>
     </ButtonGroup>
   </div>
-
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Current size: {size}</Label>
     {#each sizes as sizeOption}
@@ -65,30 +62,28 @@
 </CodeWrapper>
 
 <H2>Size</H2>
-<CodeWrapper>
-  <div class="flex justify-center">
-    <div>
-      <div>Size: sm</div>
-      <ButtonGroup size="sm">
-        <Button>Profile</Button>
-        <Button>Settings</Button>
-        <Button>Messages</Button>
-      </ButtonGroup>
+<CodeWrapper innerClass="flex justify-center">
+  <div>
+    <div>Size: sm</div>
+    <ButtonGroup size="sm">
+      <Button>Profile</Button>
+      <Button>Settings</Button>
+      <Button>Messages</Button>
+    </ButtonGroup>
 
-      <div class="my-4">Size: md(default)</div>
-      <ButtonGroup>
-        <Button>Profile</Button>
-        <Button>Settings</Button>
-        <Button>Messages</Button>
-      </ButtonGroup>
+    <div class="my-4">Size: md(default)</div>
+    <ButtonGroup>
+      <Button>Profile</Button>
+      <Button>Settings</Button>
+      <Button>Messages</Button>
+    </ButtonGroup>
 
-      <div class="my-4">Size: lg</div>
-      <ButtonGroup size="lg">
-        <Button>Profile</Button>
-        <Button>Settings</Button>
-        <Button>Messages</Button>
-      </ButtonGroup>
-    </div>
+    <div class="my-4">Size: lg</div>
+    <ButtonGroup size="lg">
+      <Button>Profile</Button>
+      <Button>Settings</Button>
+      <Button>Messages</Button>
+    </ButtonGroup>
   </div>
   {#snippet codeblock()}
     <HighlightCompo code={modules['./md/sizes.md'] as string} />
@@ -96,41 +91,38 @@
 </CodeWrapper>
 
 <H2>More examples</H2>
-
-<CodeWrapper>
-  <div class="flex justify-center">
-    <div class="text-gray-900 dark:text-gray-100">
-      <div class="py-4">Pills</div>
-      <ButtonGroup class="space-x-px">
-        <Button pill color="purple">Profile</Button>
-        <Button pill color="purple">Settings</Button>
-        <Button pill color="purple">Messages</Button>
-      </ButtonGroup>
-      <div class="py-4">Standard buttons</div>
-      <ButtonGroup>
-        <Button color="red">Profile</Button>
-        <Button color="green">Settings</Button>
-        <Button color="yellow">Messages</Button>
-      </ButtonGroup>
-      <div class="py-4">Outline</div>
-      <ButtonGroup>
-        <Button outline color="red">Profile</Button>
-        <Button outline color="green">Settings</Button>
-        <Button outline color="yellow">Messages</Button>
-      </ButtonGroup>
-      <div class="py-4">Gradient with shadows</div>
-      <ButtonGroup>
-        <GradientButton shadow color="green">Profile</GradientButton>
-        <GradientButton shadow color="pink">Settings</GradientButton>
-        <GradientButton shadow color="teal">Messages</GradientButton>
-      </ButtonGroup>
-      <div class="py-4">Dualtone gradient</div>
-      <ButtonGroup class="space-x-px">
-        <GradientButton color="purpleToBlue">Profile</GradientButton>
-        <GradientButton color="cyanToBlue">Settings</GradientButton>
-        <GradientButton color="greenToBlue">Messages</GradientButton>
-      </ButtonGroup>
-    </div>
+<CodeWrapper innerClass="flex justify-center">
+  <div class="text-gray-900 dark:text-gray-100">
+    <div class="py-4">Pills</div>
+    <ButtonGroup class="space-x-px">
+      <Button pill color="purple">Profile</Button>
+      <Button pill color="purple">Settings</Button>
+      <Button pill color="purple">Messages</Button>
+    </ButtonGroup>
+    <div class="py-4">Standard buttons</div>
+    <ButtonGroup>
+      <Button color="red">Profile</Button>
+      <Button color="green">Settings</Button>
+      <Button color="yellow">Messages</Button>
+    </ButtonGroup>
+    <div class="py-4">Outline</div>
+    <ButtonGroup>
+      <Button outline color="red">Profile</Button>
+      <Button outline color="green">Settings</Button>
+      <Button outline color="yellow">Messages</Button>
+    </ButtonGroup>
+    <div class="py-4">Gradient with shadows</div>
+    <ButtonGroup>
+      <GradientButton shadow color="green">Profile</GradientButton>
+      <GradientButton shadow color="pink">Settings</GradientButton>
+      <GradientButton shadow color="teal">Messages</GradientButton>
+    </ButtonGroup>
+    <div class="py-4">Dualtone gradient</div>
+    <ButtonGroup class="space-x-px">
+      <GradientButton color="purpleToBlue">Profile</GradientButton>
+      <GradientButton color="cyanToBlue">Settings</GradientButton>
+      <GradientButton color="greenToBlue">Messages</GradientButton>
+    </ButtonGroup>
   </div>
   {#snippet codeblock()}
     <HighlightCompo code={modules['./md/more-examples.md'] as string} />
@@ -138,88 +130,78 @@
 </CodeWrapper>
 
 <H2>Button group as links</H2>
-<CodeWrapper>
-  <div class="flex justify-center">
-    <ButtonGroup>
-      <Button href="/">Profile</Button>
-      <Button href="/">Settings</Button>
-      <Button href="/">Messages</Button>
-    </ButtonGroup>
-  </div>
+<CodeWrapper innerClass="flex justify-center">
+  <ButtonGroup>
+    <Button href="/">Profile</Button>
+    <Button href="/">Settings</Button>
+    <Button href="/">Messages</Button>
+  </ButtonGroup>
   {#snippet codeblock()}
     <HighlightCompo code={modules['./md/button-group-as-links.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Group button with icons</H2>
-<CodeWrapper>
-  <div class="flex justify-center">
-    <ButtonGroup>
-      <Button>
-        <UserCircleSolid class="me-2 h-3 w-3" />
-        Profile
-      </Button>
-      <Button>
-        <AdjustmentsVerticalSolid class="me-2 h-3 w-3" />
-        Settings
-      </Button>
-      <Button>
-        <DownloadSolid class="me-2 h-3 w-3" />
-        Download
-      </Button>
-    </ButtonGroup>
-  </div>
+<CodeWrapper innerClass="flex justify-center">
+  <ButtonGroup>
+    <Button>
+      <UserCircleSolid class="me-2 h-3 w-3" />
+      Profile
+    </Button>
+    <Button>
+      <AdjustmentsVerticalSolid class="me-2 h-3 w-3" />
+      Settings
+    </Button>
+    <Button>
+      <DownloadSolid class="me-2 h-3 w-3" />
+      Download
+    </Button>
+  </ButtonGroup>
   {#snippet codeblock()}
     <HighlightCompo code={modules['./md/group-button-with-icons.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Outline</H2>
-<CodeWrapper>
-  <div class="flex justify-center">
-    <ButtonGroup>
-      <Button outline color="dark">Profile</Button>
-      <Button outline color="dark">Settings</Button>
-      <Button outline color="dark">Messages</Button>
-    </ButtonGroup>
-  </div>
+<CodeWrapper innerClass="flex justify-center">
+  <ButtonGroup>
+    <Button outline color="dark">Profile</Button>
+    <Button outline color="dark">Settings</Button>
+    <Button outline color="dark">Messages</Button>
+  </ButtonGroup>
   {#snippet codeblock()}
     <HighlightCompo code={modules['./md/outline.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Outline with icon</H2>
-<CodeWrapper>
-  <div class="flex justify-center">
-    <ButtonGroup>
-      <Button outline color="dark">
-        <UserCircleSolid class="me-2 h-3 w-3" />
-        Profile
-      </Button>
-      <Button outline color="dark">
-        <AdjustmentsVerticalSolid class="me-2 h-3 w-3" />
-        Settings
-      </Button>
-      <Button outline color="dark">
-        <DownloadSolid class="me-2 h-3 w-3" />
-        Download
-      </Button>
-    </ButtonGroup>
-  </div>
+<CodeWrapper innerClass="flex justify-center">
+  <ButtonGroup>
+    <Button outline color="dark">
+      <UserCircleSolid class="me-2 h-3 w-3" />
+      Profile
+    </Button>
+    <Button outline color="dark">
+      <AdjustmentsVerticalSolid class="me-2 h-3 w-3" />
+      Settings
+    </Button>
+    <Button outline color="dark">
+      <DownloadSolid class="me-2 h-3 w-3" />
+      Download
+    </Button>
+  </ButtonGroup>
   {#snippet codeblock()}
     <HighlightCompo code={modules['./md/outline-with-icon.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Events</H2>
-<CodeWrapper>
-  <div class="flex justify-center">
-    <ButtonGroup>
-      <Button onclick={handleClick}>Click me</Button>
-      <Button>Settings</Button>
-      <Button>Messages</Button>
-    </ButtonGroup>
-  </div>
+<CodeWrapper innerClass="flex justify-center">
+  <ButtonGroup>
+    <Button onclick={handleClick}>Click me</Button>
+    <Button>Settings</Button>
+    <Button>Messages</Button>
+  </ButtonGroup>
   {#snippet codeblock()}
     <HighlightCompo code={modules['./md/events.md'] as string} />
   {/snippet}

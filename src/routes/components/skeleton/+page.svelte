@@ -76,7 +76,9 @@
     {/each}
   </div>
   <Button class="mt-4 w-40" onclick={() => (skeletonClass === '' ? (skeletonClass = 'ml-4') : (skeletonClass = ''))}>{skeletonClass ? 'Remove class' : 'Add class'}</Button>
+  {#snippet codeblock()}
   <HighlightCompo code={generatedCodeSkeleton} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Image placeholder</H2>
@@ -97,11 +99,12 @@
     {/each}
   </div>
   <Button class="mt-4 w-40" onclick={() => (imagePlaceholderClass === '' ? (imagePlaceholderClass = 'ml-4') : (imagePlaceholderClass = ''))}>{imagePlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  {#snippet codeblock()}
   <HighlightCompo code={generatedCodeImage} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Video placeholder</H2>
-
 <CodeWrapper>
   <div class="h-64">
     <VideoPlaceholder size={videoPlaceholderSize} class={videoPlaceholderClass} />
@@ -113,11 +116,12 @@
     {/each}
   </div>
   <Button class="mt-4 w-40" onclick={() => (videoPlaceholderClass === '' ? (videoPlaceholderClass = 'ml-4') : (videoPlaceholderClass = ''))}>{videoPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  {#snippet codeblock()}
   <HighlightCompo code={generatedCodeVideo} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Text placeholder</H2>
-
 <CodeWrapper>
   <TextPlaceholder size={textPlaceholderSize} class={textPlaceholderClass} />
   <div class="my-4 flex flex-wrap space-x-4">
@@ -127,11 +131,12 @@
     {/each}
   </div>
   <Button class="mt-4 w-40" onclick={() => (textPlaceholderClass === '' ? (textPlaceholderClass = 'ml-4') : (textPlaceholderClass = ''))}>{textPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  {#snippet codeblock()}
   <HighlightCompo code={generatedCodeText} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Card placeholder</H2>
-
 <CodeWrapper>
   <CardPlaceholder size={cardPlaceholderSize} class={cardPlaceholderClass} />
   <div class="my-4 flex flex-wrap space-x-4">
@@ -141,19 +146,21 @@
     {/each}
   </div>
   <Button class="mt-4 w-40" onclick={() => (cardPlaceholderClass === '' ? (cardPlaceholderClass = 'ml-4') : (cardPlaceholderClass = ''))}>{cardPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  {#snippet codeblock()}
   <HighlightCompo code={generatedCodeCard} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Widget placeholder</H2>
-
 <CodeWrapper>
   <WidgetPlaceholder class={widgetPlaceholderClass} />
   <Button class="mt-4 w-40" onclick={() => (widgetPlaceholderClass === '' ? (widgetPlaceholderClass = 'ml-4') : (widgetPlaceholderClass = ''))}>{widgetPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  {#snippet codeblock()}
   <HighlightCompo code={generatedCodeWidget} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>List placeholder</H2>
-
 <CodeWrapper>
   <div class="h-80 md:h-96">
     <ListPlaceholder itemNumber={listPlaceholderItemNumber} size={listPlaceholderSize} rounded={listPlaceholderRounded} class={listPlaceholderClass} />
@@ -177,13 +184,16 @@
     {/each}
   </div>
   <Button class="mt-4 w-40" onclick={() => (listPlaceholderClass === '' ? (listPlaceholderClass = 'ml-4') : (listPlaceholderClass = ''))}>{listPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  {#snippet codeblock()}
   <HighlightCompo code={generatedCodeList} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Testimonial placeholder</H2>
-
 <CodeWrapper>
   <TestimonialPlaceholder class={TestimonialPlaceholderClass} />
   <Button class="mt-4 w-40" onclick={() => (TestimonialPlaceholderClass === '' ? (TestimonialPlaceholderClass = 'mx-auto w-[200px] sm:w-[400px]') : (TestimonialPlaceholderClass = ''))}>{TestimonialPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  {#snippet codeblock()}
   <HighlightCompo code={generatedCodeTestimonial} />
+  {/snippet}
 </CodeWrapper>

@@ -117,8 +117,9 @@
   <div class="mt-4 flex flex-wrap gap-2">
     <Button onclick={changeDismissable}>{dismissable ? 'Disable' : 'Enable'} dismissable</Button>
   </div>
-
+  {#snippet codeblock()}
   <HighlightCompo code={generatedCode} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Undo button</H2>
@@ -132,7 +133,9 @@
     </div>
     <Button class="w-36" disabled={toastUndoStatus ? true : false} onclick={changeUndoStatus}>Open toast</Button>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/undo-button.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Other examples</H2>
@@ -150,7 +153,9 @@
       </div>
     </Toast>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/toast-message.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H3>Push notification</H3>
@@ -168,7 +173,9 @@
       </div>
     </Toast>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/push-notification.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H3>Interactive toast</H3>
@@ -187,5 +194,7 @@
       </div>
     </Toast>
   </div>
+  {#snippet codeblock()}
   <HighlightCompo code={modules['./md/interactive-toast.md'] as string} />
+  {/snippet}
 </CodeWrapper>
