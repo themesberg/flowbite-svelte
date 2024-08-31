@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Blockquote, P, Rating, Label, Radio } from '$lib';
+  import { Blockquote, blockquote, P, Rating, Label, Radio, Button } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -15,12 +15,46 @@
   const styles = ['default', 'solid', 'icon', 'context', 'testimonial', 'review'];
   let selectedStyle = $state('default');
 
-  const sizes = ['xs', 'sm', 'md', 'lg', 'xl', '2xl'];
+  const sizes = Object.keys(blockquote.variants.size);
   let selectedSize: Blockquote['size'] = $state('md');
 
-  const alignments = ['left', 'center', 'right'] as const;
-  type Alignment = (typeof alignments)[number];
-  let selectedAlignment: Alignment = $state('left');
+  const alignments = Object.keys(blockquote.variants.alignment);
+  let selectedAlignment: Blockquote['alignment'] = $state('left');
+  let border = $state(false);
+  const changeBorder = () => {
+    border = !border;
+  }
+  let italic = $state(false);
+  const changeItalic = () => {
+    italic = !italic;
+  }
+  let bg = $state(false)
+  const changeBg = () => {
+    bg = !bg;
+  }
+  let blockClass: Blockquote['class'] = $state('p-4');
+  const changeClass = () => {
+    blockClass = blockClass === 'p-4' ? 'p-2' : 'p-4';
+  };
+  
+  // code generator
+  let generatedCode = $derived(
+    (() => {
+      let props = [];
+      if (bg) props.push(' bg');
+      if (border) props.push(' border');
+      if (italic) props.push(' italic');
+      if (selectedAlignment !== 'left') props.push(` alignment="${selectedAlignment}"`);
+      // blockClass
+      if (blockClass) props.push(` class="${blockClass}"`);
+      if (selectedSize !== 'md') props.push(` size="${selectedSize}"`);
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
+
+      return `<Blockquote${propsString}>
+  My Blockquote
+</Blockquote>`;
+    })()
+  );
 </script>
 
 <H1>Blockquote</H1>
@@ -28,6 +62,34 @@
 <H2>Setup</H2>
 
 <HighlightCompo code={modules['./md/setup.md'] as string} />
+
+<H2>Interactive Blockquote Bilder</H2>
+<CodeWrapper>
+  <div class="mb-4 h-[300px] md:h-[250px] overflow-y-auto">
+    <Blockquote {border} {italic} size={selectedSize} {bg} alignment={selectedAlignment} class={blockClass}>"I heard this rumor where the humans are our owners, pfft, what do they know?! poop in the plant pot. Pee on walls it smells like breakfast it's 3am, time to create some chaos but meow all night ..."</Blockquote>
+  </div>
+  <div class="mb-4 flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Size:</Label>
+    {#each sizes as size}
+      <Radio labelClass="w-16 my-1" name="block_size" bind:group={selectedSize} value={size}>{size}</Radio>
+    {/each}
+  </div>
+  <div class="flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Alignment:</Label>
+    {#each alignments as alignment}
+      <Radio labelClass="w-16 my-1" name="block_alignment" bind:group={selectedAlignment} value={alignment}>{alignment}</Radio>
+    {/each}
+  </div>
+  <div class="mt-4 flex flex-wrap gap-2">
+    <Button class="w-40" color="blue" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
+    <Button class="w-40" color="rose" onclick={changeItalic}>{italic ? 'Remove italic' : 'Add italic'}</Button>
+    <Button class="w-40" color="indigo" onclick={changeBg}>{bg ? 'Remove bg' : 'Add bg'}</Button>
+    <Button class="w-40" color="sky" onclick={changeClass}>{ blockClass === 'p-4' ? 'class: p-4' : 'class: p-2'}</Button>
+  </div>
+  {#snippet codeblock()}
+    <HighlightCompo code={generatedCode} />
+  {/snippet}
+</CodeWrapper>
 
 <H2>Styles</H2>
 <CodeWrapper>
@@ -107,24 +169,3 @@
 <H3>User Review</H3>
 
 <HighlightCompo code={modules['./md/user-review.md'] as string} />
-
-<H2>Size and alignment</H2>
-<CodeWrapper>
-  <div class="mb-4 h-[200px] md:h-[150px]">
-    <Blockquote size={selectedSize} alignment={selectedAlignment}>"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</Blockquote>
-  </div>
-  <div class="mb-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Size:</Label>
-    {#each sizes as size}
-      <Radio labelClass="w-16 my-1" name="block_size" bind:group={selectedSize} value={size}>{size}</Radio>
-    {/each}
-  </div>
-  <div class="flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Alignment:</Label>
-    {#each alignments as alignment}
-      <Radio labelClass="w-16 my-1" name="block_alignment" bind:group={selectedAlignment} value={alignment}>{alignment}</Radio>
-    {/each}
-  </div>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/size-alignment.md'] as string} />

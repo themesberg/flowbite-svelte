@@ -11,13 +11,9 @@ interface BlockquoteProps extends HTMLBlockquoteAttributes {
   children: Snippet;
   border?: boolean;
   italic?: boolean;
-  borderClass?: string | undefined;
-  bgClass?: string | undefined;
   bg?: boolean;
-  baseClass?: string | undefined;
   alignment?: AlignmentType;
   size?: SizeType;
-  class?: string | undefined;
 }
 
 export { Blockquote, blockquote, type BlockquoteProps };
