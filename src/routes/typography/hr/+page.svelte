@@ -13,6 +13,33 @@
 
   const types = ['default', 'trimmed', 'icon', 'text', 'shape'];
   let selectedStyle = $state('default');
+
+  // code generator
+  let generatedCode = $derived(
+    (() => {
+    let hr;
+    if (selectedStyle === 'default') {
+      hr = `<Hr hrClass="my-8" />`;
+    }
+    if (selectedStyle === 'trimmed') {
+      hr = `<Hr hrClass="w-48 h-1 mx-auto my-4 rounded md:my-10" />`;
+    }
+    if (selectedStyle === 'icon') {
+      hr = `<Hr hrClass="my-8 w-64 h-1" icon>
+  <QuoteSolid class="w-4 h-4 text-gray-700 dark:text-gray-300" />
+</Hr>`;
+    }
+    if (selectedStyle === 'text') {
+      hr = `<Hr hrClass="my-8 w-64">or</Hr>`;
+    }
+    if (selectedStyle === 'shape') {
+      hr = `<Hr hrClass="my-8 mx-auto w-8 h-8" />`;
+    }
+      return `<p>Lorem ipsum dolor sit amet.</p> 
+   ${hr} 
+<p>Fusce eu vitae pretium libero imperdiet.</p>`;
+    })()
+  );
 </script>
 
 <H1>Horizontal line (HR)</H1>
@@ -23,8 +50,8 @@
 <H2>Default HR</H2>
 
 <CodeWrapper>
-  <div class="mb-4 h-[360px] sm:h-[320px] md:h-[250px]">
-    <P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
+  <div class="mb-4 h-[350px] sm:h-[250px] md:h-[200px]">
+    <P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools.</P>
     {#if selectedStyle === 'trimmed'}
       <Hr hrClass="w-48 h-1 mx-auto my-4 rounded md:my-10" />
     {:else if selectedStyle === 'icon'}
@@ -38,7 +65,7 @@
     {:else}
       <Hr hrClass="my-8" />
     {/if}
-    <P>Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
+    <P>Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil.</P>
   </div>
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
@@ -46,6 +73,8 @@
       <Radio labelClass="w-24 my-1" name="hr_style" bind:group={selectedStyle} value={type}>{type}</Radio>
     {/each}
   </div>
+  {#snippet codeblock()}
+  <HighlightCompo code={generatedCode} />
+  {/snippet}
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/hr.md'] as string} />

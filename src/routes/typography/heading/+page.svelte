@@ -33,12 +33,12 @@
       <ArrowRightOutline class="ms-2 h-3.5 w-3.5" />
     </Button>
   </div>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/default-heading.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/default-heading.md'] as string} />
-
 <H2>Second-level heading</H2>
-
 <CodeWrapper>
   <Heading tag="h2" class="text-4xl font-extrabold ">Payments tool for companies</Heading>
   <P class="my-4 text-gray-500">Start developing with an open-source library of over 450+ UI components, sections, and pages built with the utility classes from Tailwind CSS and designed in Figma.</P>
@@ -47,27 +47,28 @@
     Read more
     <ChevronRightOutline class="ms-2 h-3.5 w-3.5" />
   </A>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/second-level-heading.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/second-level-heading.md'] as string} />
-
 <H2>Highlighted heading</H2>
-
 <CodeWrapper>
   <Heading tag="h1" class="mb-4">Get back to growth with <Span highlight="blue">the world's #1</Span> CRM.</Heading>
   <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/highlighted-heading.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/highlighted-heading.md'] as string} />
-
 <H2>Heading mark</H2>
-
 <CodeWrapper>
   <Heading tag="h1" class="mb-4">Regain <Mark>control</Mark> over your days</Heading>
   <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/heading-mark.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/heading-mark.md'] as string} />
 
 <H2>Heading gradient</H2>
 <CodeWrapper>
@@ -75,9 +76,10 @@
     <Span gradient="amberToEmerald">Better Data</Span> Scalable AI.
   </Heading>
   <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/heading-gradient.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/heading-gradient.md'] as string} />
 
 <H2>Heading underline</H2>
 <CodeWrapper>
@@ -85,9 +87,10 @@
     We invest in the <Span underline class="decoration-blue-400 decoration-8 dark:decoration-blue-600">world’s potential</Span>
   </Heading>
   <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/heading-underline.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/heading-underline.md'] as string} />
 
 <H2>Breadcrumb context</H2>
 <CodeWrapper>
@@ -97,25 +100,30 @@
     <BreadcrumbItem>Team</BreadcrumbItem>
   </Breadcrumb>
   <Heading tag="h2" class="mb-4">Team management</Heading>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/breadcrumb-context.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/breadcrumb-context.md'] as string} />
 
 <H2>Badge context</H2>
 <CodeWrapper>
   <Heading tag="h1" class="flex items-center text-5xl">
     Flowbite <Badge class="ms-2 text-2xl font-semibold">PRO</Badge>
   </Heading>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/badge-context.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/badge-context.md'] as string} />
 
 <H2>Secondary text</H2>
 <CodeWrapper>
   <Heading tag="h1" class="text-5xl font-extrabold">
     Flowbite <Secondary class="ms-2">This is secondary text</Secondary>
   </Heading>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/secondary-text.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/secondary-text.md'] as string} />
 
 <H2>Sizes</H2>
 <CodeWrapper>
@@ -128,6 +136,8 @@
       <Radio labelClass="w-12 my-1" name="tag" bind:group={headingTag} value={tag}>{tag}</Radio>
     {/each}
   </div>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/sizes.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/sizes.md'] as string} />

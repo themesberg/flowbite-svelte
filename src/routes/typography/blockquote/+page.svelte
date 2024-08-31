@@ -16,7 +16,7 @@
   let selectedStyle = $state('default');
 
   const sizes = Object.keys(blockquote.variants.size);
-  let selectedSize: Blockquote['size'] = $state('md');
+  let selectedSize: Blockquote['size'] = $state('lg');
 
   const alignments = Object.keys(blockquote.variants.alignment);
   let selectedAlignment: Blockquote['alignment'] = $state('left');
@@ -47,7 +47,7 @@
       if (selectedAlignment !== 'left') props.push(` alignment="${selectedAlignment}"`);
       // blockClass
       if (blockClass) props.push(` class="${blockClass}"`);
-      if (selectedSize !== 'md') props.push(` size="${selectedSize}"`);
+      if (selectedSize !== 'lg') props.push(` size="${selectedSize}"`);
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
 
       return `<Blockquote${propsString}>
