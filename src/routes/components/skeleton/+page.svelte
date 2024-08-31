@@ -17,18 +17,18 @@
   let imagePlaceholderSize: ImagePlaceholder['size'] = $state('md');
   let imagePlaceholderRounded: ImagePlaceholder['rounded'] = $state('none');
   const videoSizes = skeletonSizes;
-  let videoPlaceholderSize: VideoPlaceholder['size'] = $state('md');
+  let videoPlaceholderSize: VideoPlaceholder['size'] = $state('sm');
   const imageRoundedSizes = Object.keys(imagePlaceholder.variants.rounded) as ImagePlaceholder['rounded'][];
   const textSizes = skeletonSizes;
-  let textPlaceholderSize: TextPlaceholder['size'] = $state('md');
+  let textPlaceholderSize: TextPlaceholder['size'] = $state('sm');
   const cardSizes = skeletonSizes;
-  let cardPlaceholderSize: CardPlaceholder['size'] = $state('md');
+  let cardPlaceholderSize: CardPlaceholder['size'] = $state('sm');
   const listSizes = imageSizes;
   const listRoundedSizes = imageRoundedSizes;
-  const listItemNumbers = [1, 2, 3, 4];
+  const listItemNumbers = [1, 2, 3, 4, 5];
   let listPlaceholderSize: ListPlaceholder['size'] = $state('md');
   let listPlaceholderRounded: ListPlaceholder['rounded'] = $state('none');
-  let listPlaceholderItemNumber: ListPlaceholder['itemNumber'] = $state(3);
+  let listPlaceholderItemNumber: ListPlaceholder['itemNumber'] = $state(5);
   // class
   let skeletonClass: Skeleton['class'] = $state('');
   let imagePlaceholderClass: ImagePlaceholder['class'] = $state('');
@@ -42,10 +42,16 @@
   // code generator
   const generatePlaceholderCode = (componentName: string, size: string, classes: string): string => {
     let props = [];
-    if (size !== 'md') props.push(` size="${size}"`);
+    if (componentName === 'Skeleton' && size !== 'sm') props.push(` size="${size}"`);
+    if (componentName === 'ImagePlaceholder' && size !== 'md') props.push(` size="${size}"`);
+    if (componentName === 'VideoPlaceholder' && size !== 'sm') props.push(` size="${size}"`);
+    if (componentName === 'TextPlaceholder' && size !== 'sm') props.push(` size="${size}"`);
+    if (componentName === 'CardPlaceholder' && size !== 'sm') props.push(` size="${size}"`);
+    if (componentName === 'ListPlaceholder' && size !== 'md') props.push(` size="${size}"`);
+
     if (classes !== '') props.push(` class="${classes}"`);
     if (componentName === 'ImagePlaceholder' && imagePlaceholderRounded !== 'none') props.push(` rounded="${imagePlaceholderRounded}"`);
-    if (componentName === 'ListPlaceholder' && listPlaceholderItemNumber !== 3) props.push(` itemNumber={${listPlaceholderItemNumber}}`);
+    if (componentName === 'ListPlaceholder' && listPlaceholderItemNumber !== 5) props.push(` itemNumber={${listPlaceholderItemNumber}}`);
     if (componentName === 'ListPlaceholder' && listPlaceholderRounded !== 'none') props.push(` rounded="${listPlaceholderRounded}"`);
 
     return `<${componentName}${props.join('')} />`;
@@ -162,7 +168,7 @@
 
 <H2>List placeholder</H2>
 <CodeWrapper>
-  <div class="h-80 md:h-96">
+  <div class="h-80 md:h-[500px]">
     <ListPlaceholder itemNumber={listPlaceholderItemNumber} size={listPlaceholderSize} rounded={listPlaceholderRounded} class={listPlaceholderClass} />
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
