@@ -29,7 +29,10 @@
   $: setContext('hoverable', hoverable);
   $: setContext('noborder', noborder);
   $: setContext('color', color);
-  $: setContext('sorting', writable({ items, direction: 1, sorter: '' }));
+  
+  const sorting = writable({ items, direction: 1, sorter: '' });
+  setContext('sorting', sorting);
+  $: sorting.update(({direction, sorter}) => ({ items, direction, sorter }));
 </script>
 
 <div class={twJoin(divClass, shadow && 'shadow-md sm:rounded-lg')}>
