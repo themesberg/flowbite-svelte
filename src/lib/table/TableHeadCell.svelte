@@ -46,4 +46,8 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let padding: string = 'px-6 py-3';
+@prop export let sort: ((a: T, b: T) => number) | null = null;
+@prop export let defaultDirection: 'asc' | 'desc' = 'asc';
+@prop export let defaultSort: boolean = false;
+@prop export let direction: 'asc' | 'desc' | null = defaultSort ? defaultDirection : null;
 -->

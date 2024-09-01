@@ -85,4 +85,12 @@
 @prop export let shadow: boolean = false;
 @prop export let color: TableColorType = 'default';
 @prop export let customeColor: string = '';
+@prop export let items: T[] = [];
+@prop export let filter: ((t: T, term: string) => boolean) | null = null;
+@prop export let placeholder: string = 'Search';
+@prop export let innerDivClass: string = 'p-4';
+@prop export let searchClass: string = 'relative mt-1';
+@prop export let svgDivClass: string = 'absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none';
+@prop export let svgClass: string = 'w-5 h-5 text-gray-500 dark:text-gray-400';
+@prop export let inputClass: string = 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 p-2.5 ps-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500';
 -->
