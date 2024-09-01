@@ -103,9 +103,9 @@
       <Radio labelClass="w-20 my-1" name="p_style" bind:group={pStyle} value={style}>{style}</Radio>
     {/each}
   </div>
-  <div class="mb-4 flex flex-wrap gap-4">
-    <Button class="mt-4" onclick={() => (pFirstupper = !pFirstupper)}>{pFirstupper ? 'Normal' : 'Upper'}</Button>
-    <Button class="mt-4" onclick={() => (pJustify = !pJustify)}>{pJustify ? 'Normal' : 'Justify'}</Button>
+  <div class="flex flex-wrap gap-4">
+    <Button onclick={() => (pFirstupper = !pFirstupper)}>{pFirstupper ? 'Normal' : 'Upper'}</Button>
+    <Button onclick={() => (pJustify = !pJustify)}>{pJustify ? 'Normal' : 'Justify'}</Button>
   </div>
   {#snippet codeblock()}
   <HighlightCompo code={generatedCode} />
