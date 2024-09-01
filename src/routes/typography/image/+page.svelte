@@ -66,31 +66,31 @@
     href={imgHref}
     />
   </div>
-  <div class="mb-4 flex flex-wrap space-x-4">
+  <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as option}
       <Radio labelClass="w-24 my-1" name="img_size" bind:group={imgSize} value={option}>{option}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-4 mb-4">
+  <div class="flex flex-wrap space-x-2 mb-4">
     <Label class="mb-4 w-full font-bold">Alignment:</Label>
     {#each alignments as alignment}
       <Radio labelClass="w-20 my-1" name="img_alignment" bind:group={imgAlignment} value={alignment}>{alignment}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-4 mb-4">
+  <div class="flex flex-wrap space-x-2 mb-4">
     <Label class="mb-4 w-full font-bold">Shadow:</Label>
     {#each shadows as shadow}
       <Radio labelClass="w-20 my-1" name="img_shadow" bind:group={imgShadow} value={shadow}>{shadow}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-4 mb-4">
+  <div class="flex flex-wrap space-x-2 mb-4">
     <Label class="mb-4 w-full font-bold">Rounded:</Label>
     {#each roundeds as rounded}
       <Radio labelClass="w-20 my-1" name="img_rounded" bind:group={imgRounded} value={rounded}>{rounded}</Radio>
     {/each}
   </div>
-  <div class="mb-4 flex flex-wrap space-x-4">
+  <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Effect:</Label>
     {#each effects as effect}
       <Radio labelClass="w-24 my-1" name="img_effect" bind:group={imgEffect} value={effect}>{effect}</Radio>
