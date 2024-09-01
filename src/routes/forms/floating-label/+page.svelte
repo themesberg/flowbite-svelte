@@ -42,7 +42,7 @@
     {/each}
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/floating-label-examples.md'] as string} />
+    <HighlightCompo code={modules['./md/floating-label-examples.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -58,7 +58,7 @@
     {/each}
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/disabled-state.md'] as string} />
+    <HighlightCompo code={modules['./md/disabled-state.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -82,7 +82,7 @@
     {/each}
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/color.md'] as string} />
+    <HighlightCompo code={modules['./md/color.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -104,10 +104,9 @@
     </Toggle>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/sizes.md'] as string} />
+    <HighlightCompo code={modules['./md/sizes.md'] as string} />
   {/snippet}
 </CodeWrapper>
-
 
 <H2>Helper text</H2>
 <CodeWrapper>
@@ -123,6 +122,6 @@
     {/each}
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/helper-text.md'] as string} />
+    <HighlightCompo code={modules['./md/helper-text.md'] as string} />
   {/snippet}
 </CodeWrapper>

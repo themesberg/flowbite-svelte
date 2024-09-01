@@ -83,7 +83,7 @@
   </div>
   <Button class="mt-4 w-40" onclick={() => (skeletonClass === '' ? (skeletonClass = 'ml-4') : (skeletonClass = ''))}>{skeletonClass ? 'Remove class' : 'Add class'}</Button>
   {#snippet codeblock()}
-  <HighlightCompo code={generatedCodeSkeleton} />
+    <HighlightCompo code={generatedCodeSkeleton} />
   {/snippet}
 </CodeWrapper>
 
@@ -106,7 +106,7 @@
   </div>
   <Button class="mt-4 w-40" onclick={() => (imagePlaceholderClass === '' ? (imagePlaceholderClass = 'ml-4') : (imagePlaceholderClass = ''))}>{imagePlaceholderClass ? 'Remove class' : 'Add class'}</Button>
   {#snippet codeblock()}
-  <HighlightCompo code={generatedCodeImage} />
+    <HighlightCompo code={generatedCodeImage} />
   {/snippet}
 </CodeWrapper>
 
@@ -123,7 +123,7 @@
   </div>
   <Button class="mt-4 w-40" onclick={() => (videoPlaceholderClass === '' ? (videoPlaceholderClass = 'ml-4') : (videoPlaceholderClass = ''))}>{videoPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
   {#snippet codeblock()}
-  <HighlightCompo code={generatedCodeVideo} />
+    <HighlightCompo code={generatedCodeVideo} />
   {/snippet}
 </CodeWrapper>
 
@@ -138,7 +138,7 @@
   </div>
   <Button class="mt-4 w-40" onclick={() => (textPlaceholderClass === '' ? (textPlaceholderClass = 'ml-4') : (textPlaceholderClass = ''))}>{textPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
   {#snippet codeblock()}
-  <HighlightCompo code={generatedCodeText} />
+    <HighlightCompo code={generatedCodeText} />
   {/snippet}
 </CodeWrapper>
 
@@ -153,7 +153,7 @@
   </div>
   <Button class="mt-4 w-40" onclick={() => (cardPlaceholderClass === '' ? (cardPlaceholderClass = 'ml-4') : (cardPlaceholderClass = ''))}>{cardPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
   {#snippet codeblock()}
-  <HighlightCompo code={generatedCodeCard} />
+    <HighlightCompo code={generatedCodeCard} />
   {/snippet}
 </CodeWrapper>
 
@@ -162,7 +162,7 @@
   <WidgetPlaceholder class={widgetPlaceholderClass} />
   <Button class="mt-4 w-40" onclick={() => (widgetPlaceholderClass === '' ? (widgetPlaceholderClass = 'ml-4') : (widgetPlaceholderClass = ''))}>{widgetPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
   {#snippet codeblock()}
-  <HighlightCompo code={generatedCodeWidget} />
+    <HighlightCompo code={generatedCodeWidget} />
   {/snippet}
 </CodeWrapper>
 
@@ -191,7 +191,7 @@
   </div>
   <Button class="mt-4 w-40" onclick={() => (listPlaceholderClass === '' ? (listPlaceholderClass = 'ml-4') : (listPlaceholderClass = ''))}>{listPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
   {#snippet codeblock()}
-  <HighlightCompo code={generatedCodeList} />
+    <HighlightCompo code={generatedCodeList} />
   {/snippet}
 </CodeWrapper>
 
@@ -200,6 +200,6 @@
   <TestimonialPlaceholder class={TestimonialPlaceholderClass} />
   <Button class="mt-4 w-40" onclick={() => (TestimonialPlaceholderClass === '' ? (TestimonialPlaceholderClass = 'mx-auto w-[200px] sm:w-[400px]') : (TestimonialPlaceholderClass = ''))}>{TestimonialPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
   {#snippet codeblock()}
-  <HighlightCompo code={generatedCodeTestimonial} />
+    <HighlightCompo code={generatedCodeTestimonial} />
   {/snippet}
 </CodeWrapper>

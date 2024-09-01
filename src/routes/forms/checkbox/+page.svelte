@@ -41,7 +41,7 @@
   let group = $state(['2', '3']);
   const clearGroup = () => {
     group = [];
-  }
+  };
 </script>
 
 <H1>Checkbox</H1>
@@ -55,7 +55,7 @@
   <Checkbox checked color="green">Checked state</Checkbox>
   <Checkbox indeterminate>Indeterminate state</Checkbox>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/checkbox-examples.md'] as string} />
+    <HighlightCompo code={modules['./md/checkbox-examples.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -73,7 +73,7 @@
     {/each}
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/colors.md'] as string} />
+    <HighlightCompo code={modules['./md/colors.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -83,7 +83,7 @@
   <Checkbox disabled checked>Disabled checked</Checkbox>
   <Checkbox disabled indeterminate>Disabled indeterminate</Checkbox>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/disabled-state.md'] as string} />
+    <HighlightCompo code={modules['./md/disabled-state.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -110,7 +110,7 @@
     Label on the other side <Checkbox class="ms-2" />
   </Label>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/alternative-syntax.md'] as string} />
+    <HighlightCompo code={modules['./md/alternative-syntax.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -122,7 +122,7 @@
     .
   </Checkbox>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/checkbox-with-a-link.md'] as string} />
+    <HighlightCompo code={modules['./md/checkbox-with-a-link.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -131,7 +131,7 @@
   <Checkbox aria_describedby="helper-checkbox-text">Free shipping via Flowbite</Checkbox>
   <Helper id="helper-checkbox-text" class="ps-6">For orders shipped from $25 in books or $29 in other categories</Helper>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/helper-text.md'] as string} />
+    <HighlightCompo code={modules['./md/helper-text.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -144,7 +144,7 @@
     <Checkbox checked classLabel="w-full p-4">Checked state</Checkbox>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/bordered.md'] as string} />
+    <HighlightCompo code={modules['./md/bordered.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -158,7 +158,7 @@
     <li><Checkbox classLabel="p-3">Angular</Checkbox></li>
   </ul>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/checkbox-list-group.md'] as string} />
+    <HighlightCompo code={modules['./md/checkbox-list-group.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -174,7 +174,7 @@
     <li class="w-full"><Checkbox classLabel="p-3">Angular</Checkbox></li>
   </ul>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/horizontal-list-group.md'] as string} />
+    <HighlightCompo code={modules['./md/horizontal-list-group.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -182,7 +182,7 @@
 <CodeWrapper innerClass="relative flex h-[460px] items-start justify-center">
   <Button onclick={dropdown.toggle}>Project users<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <div class="relative">
-    <Dropdown {dropdownStatus} {closeDropdown} params={transitionParams} class="absolute -left-[190px] top-[45px] overflow-y-auto p-2 w-52 pb-3 text-sm">
+    <Dropdown {dropdownStatus} {closeDropdown} params={transitionParams} class="absolute -left-[190px] top-[45px] w-52 overflow-y-auto p-2 pb-3 text-sm">
       <div class="relative">
         <DropdownHeader>
           <div class="p-0">
@@ -218,7 +218,7 @@
     </Dropdown>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/checkbox-dropdown.md'] as string} />
+    <HighlightCompo code={modules['./md/checkbox-dropdown.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -231,7 +231,7 @@
     <Checkbox disabled>Inline disabled</Checkbox>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/inline-layout.md'] as string} />
+    <HighlightCompo code={modules['./md/inline-layout.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -251,7 +251,7 @@
     <CheckboxButton><DropboxSolid class="me-2 h-6 w-6" />Dropbox</CheckboxButton>
   </ButtonGroup>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/checkbox-button.md'] as string} />
+    <HighlightCompo code={modules['./md/checkbox-button.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -282,7 +282,7 @@
     </Checkbox>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/advanced-layout.md'] as string} />
+    <HighlightCompo code={modules['./md/advanced-layout.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -296,6 +296,6 @@
   </div>
   <Button onclick={clearGroup}>Clear</Button>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/group-variable.md'] as string} />
+    <HighlightCompo code={modules['./md/group-variable.md'] as string} />
   {/snippet}
 </CodeWrapper>

@@ -89,7 +89,7 @@
     </TableBody>
   </Table>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/default-table.md'] as string} />
+    <HighlightCompo code={modules['./md/default-table.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -154,7 +154,7 @@
     </TableBody>
   </Table>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/striped-rows.md'] as string} />
+    <HighlightCompo code={modules['./md/striped-rows.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -202,7 +202,7 @@
     </TableBody>
   </Table>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/hover-state.md'] as string} />
+    <HighlightCompo code={modules['./md/hover-state.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -261,7 +261,7 @@
     </TableBody>
   </Table>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/checkbox.md'] as string} />
+    <HighlightCompo code={modules['./md/checkbox.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -286,7 +286,7 @@
     </TableBody>
   </TableSearch>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/search-input.md'] as string} />
+    <HighlightCompo code={modules['./md/search-input.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -331,7 +331,7 @@
     </TableBody>
   </Table>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/table-head.md'] as string} />
+    <HighlightCompo code={modules['./md/table-head.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -369,7 +369,7 @@
     </tfoot>
   </Table>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/table-foot.md'] as string} />
+    <HighlightCompo code={modules['./md/table-foot.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -420,7 +420,7 @@
     </TableBody>
   </Table>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/table-caption.md'] as string} />
+    <HighlightCompo code={modules['./md/table-caption.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -455,7 +455,7 @@
     </TableBody>
   </Table>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/without-border.md'] as string} />
+    <HighlightCompo code={modules['./md/without-border.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -490,7 +490,7 @@
     </TableBody>
   </Table>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/table-with-shadow.md'] as string} />
+    <HighlightCompo code={modules['./md/table-with-shadow.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -562,7 +562,7 @@
     </TableBody>
   </Table>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/overflow-scrolling.md'] as string} />
+    <HighlightCompo code={modules['./md/overflow-scrolling.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -597,7 +597,7 @@
     </TableBody>
   </Table>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/table-colors.md'] as string} />
+    <HighlightCompo code={modules['./md/table-colors.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -662,7 +662,7 @@
     </TableBody>
   </Table>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/striped-rows-color.md'] as string} />
+    <HighlightCompo code={modules['./md/striped-rows-color.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -696,6 +696,6 @@
     </TableBody>
   </Table>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/click-and-double-click-on-row.md'] as string} />
+    <HighlightCompo code={modules['./md/click-and-double-click-on-row.md'] as string} />
   {/snippet}
 </CodeWrapper>

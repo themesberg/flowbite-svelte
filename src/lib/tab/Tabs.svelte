@@ -15,7 +15,7 @@
   };
 
   let dividerBool = $derived(['full', 'pill'].includes(tabStyle) ? false : divider);
-//  setContext('ctxClass', () => contextClass);
+  //  setContext('ctxClass', () => contextClass);
   setContext('ctx', ctx);
 
   function init(node: HTMLElement) {
@@ -41,6 +41,8 @@
 @prop children
 @prop tabStyle = 'none'
 @prop ulClass
+@prop ctxActive
+@prop ctxInactive
 @prop contentClass
 @prop divider = true
 @prop ...restProps

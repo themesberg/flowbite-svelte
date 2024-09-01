@@ -3,7 +3,7 @@
   import { type ListProps as Props, list } from './index';
 
   let { children, tag = 'ul', position = 'inside', ctxClass, class: className, ...restProps }: Props = $props();
-  
+
   let contextClass = $state(ctxClass || '');
 
   setContext('ctxClass', () => contextClass);
@@ -26,7 +26,7 @@
 @prop children
 @prop tag = 'ul'
 @prop position = 'inside'
-@prop ctxclass = ''
+@prop ctxClass
 @prop class: className
 @prop ...restProps
 -->

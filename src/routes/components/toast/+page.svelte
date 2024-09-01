@@ -118,7 +118,7 @@
     <Button onclick={changeDismissable}>{dismissable ? 'Disable' : 'Enable'} dismissable</Button>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={generatedCode} />
+    <HighlightCompo code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 
@@ -134,7 +134,7 @@
     <Button class="w-36" disabled={toastUndoStatus ? true : false} onclick={changeUndoStatus}>Open toast</Button>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/undo-button.md'] as string} />
+    <HighlightCompo code={modules['./md/undo-button.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -154,7 +154,7 @@
     </Toast>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/toast-message.md'] as string} />
+    <HighlightCompo code={modules['./md/toast-message.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -174,7 +174,7 @@
     </Toast>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/push-notification.md'] as string} />
+    <HighlightCompo code={modules['./md/push-notification.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -195,6 +195,6 @@
     </Toast>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/interactive-toast.md'] as string} />
+    <HighlightCompo code={modules['./md/interactive-toast.md'] as string} />
   {/snippet}
 </CodeWrapper>

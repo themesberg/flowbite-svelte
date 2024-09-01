@@ -14,7 +14,7 @@
   let spanItalic: Span['italic'] = $state(false);
   const changeItalic = () => {
     spanItalic = !spanItalic;
-  }
+  };
   let spanUnderline: Span['underline'] = $state(false);
   const changeUnderline = () => {
     spanUnderline = !spanUnderline;
@@ -22,7 +22,7 @@
     spanDecorationThickness = '0';
     spanDecoration = 'none';
     spanLinethrough = false;
-  }
+  };
   let spanLinethrough: Span['linethrough'] = $state(false);
   const changeLinethrough = () => {
     spanLinethrough = !spanLinethrough;
@@ -31,11 +31,11 @@
     spanDecorationThickness = '0';
     spanDecoration = 'none';
     spanGradient = 'none';
-  }
+  };
   let spanUppercase: Span['uppercase'] = $state(false);
   const changeUppercase = () => {
     spanUppercase = !spanUppercase;
-  }
+  };
   const gradients = Object.keys(span.variants.gradient);
   let spanGradient: Span['gradient'] = $state('none');
   let spanHighlight: Span['highlight'] = $state('none');
@@ -52,17 +52,16 @@
     (() => {
       let props = [];
       // italic, underline, linethrough, uppercase, gradient, highlight, decoration, decorationColor, decorationThickness, className
-      if ( spanItalic ) props.push(` italic`);
-      if ( spanUnderline ) props.push(` underline`);
-      if ( spanLinethrough ) props.push(` linethrough`);
-      if ( spanUppercase ) props.push(` uppercase`);
-      if ( spanGradient !== 'none' ) props.push(` gradient="${spanGradient}"`);
-      if ( spanHighlight !== 'none' ) props.push(` highlight="${spanHighlight}"`);
-      if ( spanDecoration !== 'none' ) props.push(` decoration="${spanDecoration}"`);
-      if ( spanDecorationColor !== 'none' ) props.push(` decorationColor="${spanDecorationColor}"`);
-      if ( spanDecorationThickness !== '0' ) props.push(` decorationThickness="${spanDecorationThickness}"`);
+      if (spanItalic) props.push(` italic`);
+      if (spanUnderline) props.push(` underline`);
+      if (spanLinethrough) props.push(` linethrough`);
+      if (spanUppercase) props.push(` uppercase`);
+      if (spanGradient !== 'none') props.push(` gradient="${spanGradient}"`);
+      if (spanHighlight !== 'none') props.push(` highlight="${spanHighlight}"`);
+      if (spanDecoration !== 'none') props.push(` decoration="${spanDecoration}"`);
+      if (spanDecorationColor !== 'none') props.push(` decorationColor="${spanDecorationColor}"`);
+      if (spanDecorationThickness !== '0') props.push(` decorationThickness="${spanDecorationThickness}"`);
 
-      
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
       return `<P>Lorem ipsum dolor sit amet. 
@@ -78,45 +77,79 @@
 
 <H2>Interactive Span Builder</H2>
 <CodeWrapper>
-  <P size="xl" weight="bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. <Span italic={spanItalic} underline={spanUnderline} linethrough={spanLinethrough} uppercase={spanUppercase} gradient={spanGradient} decoration={spanDecoration} decorationColor={spanDecorationColor} decorationThickness={spanDecorationThickness} highlight={spanHighlight} >Eligendi, nam ea eum provident.</Span> Fugiat vitae possimus ipsum a unde, at laboriosam.</P>
-  <div class="flex flex-wrap space-x-4 mb-4 mt-4">
+  <P size="xl" weight="bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. <Span italic={spanItalic} underline={spanUnderline} linethrough={spanLinethrough} uppercase={spanUppercase} gradient={spanGradient} decoration={spanDecoration} decorationColor={spanDecorationColor} decorationThickness={spanDecorationThickness} highlight={spanHighlight}>Eligendi, nam ea eum provident.</Span> Fugiat vitae possimus ipsum a unde, at laboriosam.</P>
+  <div class="mb-4 mt-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Highlight:</Label>
     {#each highlights as highlight}
-      <Radio labelClass="w-32 my-1" name="span_highlight" bind:group={spanHighlight} onchange={()=> spanGradient = 'none'} color={highlight as Span['color']} value={highlight}>{highlight}</Radio>
+      <Radio labelClass="w-32 my-1" name="span_highlight" bind:group={spanHighlight} onchange={() => (spanGradient = 'none')} color={highlight as Span['color']} value={highlight}>{highlight}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-4 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Decoration color:</Label>
     {#each decorationColors as color}
-      <Radio labelClass="w-32 my-1" name="p_decoration_color" bind:group={spanDecorationColor} onchange={()=> {spanUnderline = false; spanLinethrough = false}} color={color as Span['decorationColor']} value={color}>{color}</Radio>
+      <Radio
+        labelClass="w-32 my-1"
+        name="p_decoration_color"
+        bind:group={spanDecorationColor}
+        onchange={() => {
+          spanUnderline = false;
+          spanLinethrough = false;
+        }}
+        color={color as Span['decorationColor']}
+        value={color}
+      >
+        {color}
+      </Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-4 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Decoration:</Label>
     {#each decorations as decoration}
-      <Radio labelClass="w-32 my-1" name="span_decoration" bind:group={spanDecoration} onchange={()=> {spanUnderline = false; spanLinethrough = false}} value={decoration}>{decoration}</Radio>
+      <Radio
+        labelClass="w-32 my-1"
+        name="span_decoration"
+        bind:group={spanDecoration}
+        onchange={() => {
+          spanUnderline = false;
+          spanLinethrough = false;
+        }}
+        value={decoration}
+      >
+        {decoration}
+      </Radio>
     {/each}
   </div>
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Decoration thickness:</Label>
     {#each docrationThickness as thickness}
-      <Radio labelClass="w-32 my-1" name="span_decoration_thickness" bind:group={spanDecorationThickness} onchange={()=> {spanUnderline = false; spanLinethrough = false}} value={thickness}>{thickness}</Radio>
+      <Radio
+        labelClass="w-32 my-1"
+        name="span_decoration_thickness"
+        bind:group={spanDecorationThickness}
+        onchange={() => {
+          spanUnderline = false;
+          spanLinethrough = false;
+        }}
+        value={thickness}
+      >
+        {thickness}
+      </Radio>
     {/each}
   </div>
   <div class="mt-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Gradient:</Label>
     {#each gradients as gradient}
-      <Radio labelClass="w-32 my-1" name="span_gradient" bind:group={spanGradient} onchange={()=>spanHighlight = 'none'} value={gradient}>{gradient}</Radio>
+      <Radio labelClass="w-32 my-1" name="span_gradient" bind:group={spanGradient} onchange={() => (spanHighlight = 'none')} value={gradient}>{gradient}</Radio>
     {/each}
   </div>
   <div class="mt-4 flex flex-wrap items-center gap-2 rtl:space-x-reverse">
     <Button class="w-32" onclick={changeItalic}>{spanItalic ? 'No italic' : 'Italic'}</Button>
-    <Button class="w-32" color="amber" onclick={changeUnderline}>{ spanUnderline ? 'No underline' : 'Underline'}</Button>
+    <Button class="w-32" color="amber" onclick={changeUnderline}>{spanUnderline ? 'No underline' : 'Underline'}</Button>
     <Button class="w-40" color="violet" onclick={changeLinethrough}>{spanLinethrough ? 'No linethrough' : 'Linethrough '}</Button>
     <Button class="w-40" color="blue" onclick={changeUppercase}>{spanUppercase ? 'No uppercase' : 'Uppercase'}</Button>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={generatedCode} />
+    <HighlightCompo code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 
@@ -129,6 +162,6 @@
   <P size="xl"><Span class="text-blue-600/50 dark:text-blue-500/50">Flowbite app will help you</Span> improve yourself by analysing your everyday life.</P>
   <P size="xl"><Span class="text-blue-600/25 dark:text-blue-500/25">Flowbite app will help you</Span> improve yourself by analysing your everyday life.</P>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/opacity.md'] as string} />
+    <HighlightCompo code={modules['./md/opacity.md'] as string} />
   {/snippet}
 </CodeWrapper>

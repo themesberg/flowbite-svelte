@@ -4,7 +4,7 @@ export const img = tv({
   slots: {
     base: 'max-w-full h-auto',
     figure: '',
-    figureCaption: 'mt-2 text-sm text-center text-gray-500 dark:text-gray-400',
+    figureCaption: 'mt-2 text-sm text-center text-gray-500 dark:text-gray-400'
   },
   variants: {
     size: {
@@ -15,13 +15,12 @@ export const img = tv({
       xl: { base: 'max-w-xl', figure: 'max-w-xl' },
       '2xl': { base: 'max-w-2xl', figure: 'max-w-2xl' },
       full: { base: 'max-w-full', figure: 'max-w-full' },
-      'none': { base: '', figure: '' }
+      none: { base: '', figure: '' }
     },
     alignment: {
-      left: { },
+      left: {},
       center: { base: 'mx-auto', figure: 'mx-auto' },
-      right: { base: 'ms-auto', figure: 'ms-auto' },
-      
+      right: { base: 'ms-auto', figure: 'ms-auto' }
     },
     effect: {
       grayscale: {

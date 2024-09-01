@@ -3,9 +3,7 @@
 
   let { children, class: className = 'text-gray-900 dark:text-white', height = 'normal', align = 'left', justify = false, style, firstUpper = false, whitespace = 'normal', size = 'base', space = 'normal', weight = 'normal', ...restProps }: Props = $props();
 
-  let classP = $derived(
-    paragraph({ height, size,  weight, space,  align, justify, style, firstUpper, whitespace, className})
-  );
+  let classP = $derived(paragraph({ height, size, weight, space, align, justify, style, firstUpper, whitespace, className }));
 </script>
 
 <p {...restProps} class={classP}>
@@ -25,7 +23,7 @@
 @prop firstUpper = false
 @prop whitespace = 'normal'
 @prop size = 'base'
-@prop space
+@prop space = 'normal'
 @prop weight = 'normal'
 @prop ...restProps
 -->

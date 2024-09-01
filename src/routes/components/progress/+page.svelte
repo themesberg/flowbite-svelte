@@ -120,6 +120,6 @@
     <Button class="w-48" color="emerald" onclick={() => (progress = `${Math.round(Math.random() * 100)}`)}>Randomize</Button>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={generatedCode} />
+    <HighlightCompo code={generatedCode} />
   {/snippet}
 </CodeWrapper>

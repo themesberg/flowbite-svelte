@@ -293,7 +293,7 @@
   <div class="text-center">
     <Button onmouseenter={drawerMouseEnter.toggle}>Show drawer</Button>
   </div>
-  
+
   <Drawer drawerStatus={drawerStatusMouseEnter} closeDrawer={closeDrawerMouseEnter}>
     <Drawerhead onclick={closeDrawerMouseEnter}>
       <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
@@ -301,7 +301,7 @@
       </h5>
     </Drawerhead>
     <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
-      Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline hover:no-underline dark:text-primary-500"> limited-time sale </a>
+      Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline hover:no-underline dark:text-primary-500">limited-time sale</a>
       for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
     </p>
     <div class="grid grid-cols-2 gap-4">

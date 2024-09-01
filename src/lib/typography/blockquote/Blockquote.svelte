@@ -24,13 +24,10 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
-@prop class: classname
+@prop class: className
 @prop border
 @prop italic = true
-@prop borderClass
-@prop bgClass
 @prop bg
-@prop baseClass
 @prop alignment = 'left'
 @prop size = 'lg'
 @prop ...restProps

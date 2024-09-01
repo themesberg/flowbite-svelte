@@ -74,7 +74,7 @@
     </TimelineItem>
   </Timeline>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/default-timeline.md'] as string} />
+    <HighlightCompo code={modules['./md/default-timeline.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -107,7 +107,7 @@
     </TimelineItem>
   </Timeline>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/vertical-timeline.md'] as string} />
+    <HighlightCompo code={modules['./md/vertical-timeline.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -149,7 +149,7 @@
     </TimelineItem>
   </Timeline>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/horizontal-timeline.md'] as string} />
+    <HighlightCompo code={modules['./md/horizontal-timeline.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -159,7 +159,7 @@
     <ActivityItem {activities} />
   </Activity>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/activity-log.md'] as string} />
+    <HighlightCompo code={modules['./md/activity-log.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -169,6 +169,6 @@
     <GroupItem timelines={groupTimelines} />
   </Group>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/grouped-timeline.md'] as string} />
+    <HighlightCompo code={modules['./md/grouped-timeline.md'] as string} />
   {/snippet}
 </CodeWrapper>

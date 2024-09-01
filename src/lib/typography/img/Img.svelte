@@ -7,39 +7,39 @@
 </script>
 
 {#snippet imageSlot()}
-{#if caption}
-  <figure class={figure({ class: figClass })}>
+  {#if caption}
+    <figure class={figure({ class: figClass })}>
+      <img {...restProps} class={base({ class: imgClass })} />
+      <figcaption class={figureCaption({ class: captionClass })}>
+        {@html caption}
+      </figcaption>
+    </figure>
+  {:else}
     <img {...restProps} class={base({ class: imgClass })} />
-    <figcaption class={figureCaption({ class: captionClass })}>
-      {@html caption}
-    </figcaption>
-  </figure>
-{:else}
-  <img {...restProps} class={base({ class: imgClass })} />
-{/if}
+  {/if}
 {/snippet}
 
 {#if href}
   <a {href}>
-  {@render imageSlot()}
+    {@render imageSlot()}
   </a>
 {:else}
   {@render imageSlot()}
 {/if}
 
-
 <!--
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop size
-@prop alignment
-@prop effect
-@prop shadow
-@prop rounded
+@prop size = 'none'
+@prop alignment = 'left'
+@prop effect = 'none'
+@prop shadow = 'none'
+@prop rounded = 'none'
 @prop caption
 @prop imgClass
 @prop figClass
 @prop captionClass
+@prop href
 @prop ...restProps
 -->

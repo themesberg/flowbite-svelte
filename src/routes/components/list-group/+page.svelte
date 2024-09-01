@@ -68,16 +68,16 @@
 <CodeWrapper innerClass="flex justify-center">
   <Listgroup items={simpleList} class="w-48" />
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/default-list-group.md'] as string} />
+    <HighlightCompo code={modules['./md/default-list-group.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
 <H2>List group with links</H2>
 
 <CodeWrapper innerClass="flex justify-center">
-    <Listgroup active items={links} class="w-48" />
+  <Listgroup active items={links} class="w-48" />
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/list-group-with-links.md'] as string} />
+    <HighlightCompo code={modules['./md/list-group-with-links.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -85,7 +85,7 @@
 <CodeWrapper innerClass="flex justify-center">
   <Listgroup active items={buttons} class="w-48" onclick={handleClick} />
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/list-group-with-buttons.md'] as string} />
+    <HighlightCompo code={modules['./md/list-group-with-buttons.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -93,8 +93,6 @@
 <CodeWrapper innerClass="flex justify-center">
   <Listgroup active items={iconList} class="w-48" onclick={handleClick2} />
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/list-group-with-icons.md'] as string} />
+    <HighlightCompo code={modules['./md/list-group-with-icons.md'] as string} />
   {/snippet}
 </CodeWrapper>
-
-

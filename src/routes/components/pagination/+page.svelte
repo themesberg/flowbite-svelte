@@ -70,7 +70,7 @@
     {/if}
   </Button>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/default-pagination.md'] as string} />
+    <HighlightCompo code={modules['./md/default-pagination.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -87,7 +87,7 @@
     {/snippet}
   </Pagination>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/pagination-with-icons.md'] as string} /> 
+    <HighlightCompo code={modules['./md/pagination-with-icons.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -98,7 +98,7 @@
     <PaginationItem onclick={next}>Next</PaginationItem>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/previous-and-next.md'] as string} />
+    <HighlightCompo code={modules['./md/previous-and-next.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -115,7 +115,7 @@
     </PaginationItem>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/previous-and-next-with-icons.md'] as string} />
+    <HighlightCompo code={modules['./md/previous-and-next-with-icons.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -134,7 +134,7 @@
     <Pagination table size="large" {previous} {next} />
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/table-data-pagination.md'] as string} />
+    <HighlightCompo code={modules['./md/table-data-pagination.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -166,16 +166,14 @@
     </Pagination>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/table-data-pagination-with-icons.md'] as string} />
+    <HighlightCompo code={modules['./md/table-data-pagination-with-icons.md'] as string} />
   {/snippet}
 </CodeWrapper>
-
 
 <H2>Event example</H2>
 <CodeWrapper innerClass="flex flex-col items-center justify-center gap-3">
   <Pagination {pages} {previous} {next} onclick={handleClick} />
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/event-example.md'] as string} />
+    <HighlightCompo code={modules['./md/event-example.md'] as string} />
   {/snippet}
 </CodeWrapper>
-

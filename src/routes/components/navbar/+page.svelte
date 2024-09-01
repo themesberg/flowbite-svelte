@@ -53,7 +53,7 @@
     </NavUl>
   </Navbar>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/default-nav.md'] as string} />
+    <HighlightCompo code={modules['./md/default-nav.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -74,7 +74,7 @@
     </NavUl>
   </Navbar>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/breakpoint.md'] as string} />
+    <HighlightCompo code={modules['./md/breakpoint.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -101,7 +101,6 @@
     </div>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/sticky-navbar.md'] as string} />
+    <HighlightCompo code={modules['./md/sticky-navbar.md'] as string} />
   {/snippet}
 </CodeWrapper>
-

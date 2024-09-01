@@ -23,20 +23,20 @@
   let border = $state(false);
   const changeBorder = () => {
     border = !border;
-  }
+  };
   let italic = $state(false);
   const changeItalic = () => {
     italic = !italic;
-  }
-  let bg = $state(false)
+  };
+  let bg = $state(false);
   const changeBg = () => {
     bg = !bg;
-  }
+  };
   let blockClass: Blockquote['class'] = $state('p-4');
   const changeClass = () => {
     blockClass = blockClass === 'p-4' ? 'p-2' : 'p-4';
   };
-  
+
   // code generator
   let generatedCode = $derived(
     (() => {
@@ -65,7 +65,7 @@
 
 <H2>Interactive Blockquote Bilder</H2>
 <CodeWrapper>
-  <div class="mb-4 h-[300px] md:h-[250px] overflow-y-auto">
+  <div class="mb-4 h-[300px] overflow-y-auto md:h-[250px]">
     <Blockquote {border} {italic} size={selectedSize} {bg} alignment={selectedAlignment} class={blockClass}>"I heard this rumor where the humans are our owners, pfft, what do they know?! poop in the plant pot. Pee on walls it smells like breakfast it's 3am, time to create some chaos but meow all night ..."</Blockquote>
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
@@ -84,7 +84,7 @@
     <Button class="w-40" color="blue" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
     <Button class="w-40" color="rose" onclick={changeItalic}>{italic ? 'Remove italic' : 'Add italic'}</Button>
     <Button class="w-40" color="indigo" onclick={changeBg}>{bg ? 'Remove bg' : 'Add bg'}</Button>
-    <Button class="w-40" color="sky" onclick={changeClass}>{ blockClass === 'p-4' ? 'class: p-4' : 'class: p-2'}</Button>
+    <Button class="w-40" color="sky" onclick={changeClass}>{blockClass === 'p-4' ? 'class: p-4' : 'class: p-2'}</Button>
   </div>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCode} />

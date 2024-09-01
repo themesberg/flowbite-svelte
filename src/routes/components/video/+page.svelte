@@ -75,6 +75,6 @@
     <Button class="w-48" color="pink" onclick={changeMuted}>{muted ? 'Remove muted' : 'Add muted'}</Button>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={generatedCode} />
+    <HighlightCompo code={generatedCode} />
   {/snippet}
 </CodeWrapper>

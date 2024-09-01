@@ -61,43 +61,43 @@
   <div class="h-[150px] overflow-scroll">
     <P weight={pWeight} size={pSize} space={pSpace} height={pHeight} align={pAlign} whitespace={pWhitespace} style={pStyle} firstUpper={pFirstupper} justify={pJustify} color="text-gray-500  dark:text-gray-400">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla eius debitis cupiditate tempora necessitatibus perspiciatis pariatur aspernatur, atque corporis aut deserunt temporibus eligendi inventore id doloribus veritatis quos nesciunt adipisci.</P>
   </div>
-  <div class="flex flex-wrap space-x-4 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as size}
       <Radio labelClass="w-12 my-1" name="p_size" bind:group={pSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-4 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Weight:</Label>
     {#each weights as weight}
       <Radio labelClass="w-20 my-1" name="p_weight" bind:group={pWeight} value={weight}>{weight}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-2 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Space:</Label>
     {#each spaces as space}
       <Radio labelClass="w-20 my-1" name="p_space" bind:group={pSpace} value={space}>{space}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-4 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Height:</Label>
     {#each heights as height}
       <Radio labelClass="w-16 my-1" name="p_height" bind:group={pHeight} value={height}>{height}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-4 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Alignment:</Label>
     {#each alignments as align}
       <Radio labelClass="w-20 my-1" name="p_align" bind:group={pAlign} value={align}>{align}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-4 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">whitespace:</Label>
     {#each whitespaces as whitespace}
       <Radio labelClass="w-16 my-1" name="p_whitespace" bind:group={pWhitespace} value={whitespace}>{whitespace}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-4 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Style:</Label>
     {#each styles as style}
       <Radio labelClass="w-20 my-1" name="p_style" bind:group={pStyle} value={style}>{style}</Radio>
@@ -108,6 +108,6 @@
     <Button onclick={() => (pJustify = !pJustify)}>{pJustify ? 'Normal' : 'Justify'}</Button>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={generatedCode} />
+    <HighlightCompo code={generatedCode} />
   {/snippet}
 </CodeWrapper>

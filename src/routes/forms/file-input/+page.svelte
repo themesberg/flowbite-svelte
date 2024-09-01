@@ -29,7 +29,7 @@
   </Label>
   <Label>File: {files}</Label>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/file-upload-example.md'] as string} />
+    <HighlightCompo code={modules['./md/file-upload-example.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -39,7 +39,7 @@
   <Fileupload id="with_helper" class="mb-2" />
   <Helper>SVG, PNG, JPG or GIF (MAX. 800x400px).</Helper>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/helper-text.md'] as string} />
+    <HighlightCompo code={modules['./md/helper-text.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -48,7 +48,7 @@
   <Label class="pb-2" for="multiple_files">Upload multiple files</Label>
   <Fileupload id="multiple_files" multiple bind:files />
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/multiple-files.md'] as string} />
+    <HighlightCompo code={modules['./md/multiple-files.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -64,7 +64,6 @@
     {/each}
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/size.md'] as string} />
+    <HighlightCompo code={modules['./md/size.md'] as string} />
   {/snippet}
 </CodeWrapper>
-

@@ -245,7 +245,7 @@
 <CodeWrapper>
   <Gallery items={images} divClass="gap-4 grid-cols-2 md:grid-cols-3" />
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/default-gallery.md'] as string} />
+    <HighlightCompo code={modules['./md/default-gallery.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -259,10 +259,9 @@
     <Gallery items={images4} />
   </Gallery>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/mansory-grid.md'] as string} />
+    <HighlightCompo code={modules['./md/mansory-grid.md'] as string} />
   {/snippet}
 </CodeWrapper>
-
 
 <H2>Featured image</H2>
 <CodeWrapper>
@@ -272,16 +271,15 @@
     <Gallery divClass="grid-cols-5 gap-4" items={images6} />
   </Gallery>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/featured-image.md'] as string} />
+    <HighlightCompo code={modules['./md/featured-image.md'] as string} />
   {/snippet}
 </CodeWrapper>
-
 
 <H2>Quad gallery</H2>
 <CodeWrapper>
   <Gallery divClass="gap-2 grid-cols-2" items={images7} />
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/quad-gallery.md'] as string} />
+    <HighlightCompo code={modules['./md/quad-gallery.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -297,7 +295,7 @@
 
   <Gallery items={images8} divClass="gap-4 grid-cols-2 md:grid-cols-3" />
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/gallery-with-tag-filters.md'] as string} />
+    <HighlightCompo code={modules['./md/gallery-with-tag-filters.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -310,7 +308,7 @@
     <img alt="plants" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" class="max-w- h-auto rounded-lg" />
   </Gallery>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/heterogenuous-gallery.md'] as string} />
+    <HighlightCompo code={modules['./md/heterogenuous-gallery.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -327,6 +325,6 @@
     {/each}
   </Gallery>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/custom-image-rendering.md'] as string} />
+    <HighlightCompo code={modules['./md/custom-image-rendering.md'] as string} />
   {/snippet}
 </CodeWrapper>

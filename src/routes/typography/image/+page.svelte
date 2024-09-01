@@ -24,12 +24,12 @@
   let imgCaption = $state(false);
   const changeImgCaption = () => {
     imgCaption = !imgCaption;
-  }
+  };
   let imgHref = $state('');
   const changeImgHrf = () => {
     imgHref = imgHref === '' ? '/' : '';
-  }
-  
+  };
+
   // code generator
   let generatedCode = $derived(
     (() => {
@@ -59,12 +59,8 @@
 
 <H2>Interactive Image Builder</H2>
 <CodeWrapper>
-  <div class="overflow-y-auto h-[540px]">
-    <Img src={imgEffect !== 'none' ? '/images/examples/content-gallery-3.png' :( imgRounded === 'full' ? "/images/examples/image-4@2x.jpg": "/images/examples/image-1@2x.jpg")} size={imgSize} shadow={imgShadow} alignment={imgAlignment} rounded={imgRounded} alt="sample 1" 
-    effect={imgEffect}
-    figClass={ imgEffect !== 'none' && imgCaption ? "relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0" : ""} captionClass={ imgEffect !== 'none'  && imgCaption ? "absolute bottom-6 px-4 text-lg text-white" : ""} caption={ imgEffect !== 'none' ? "Do you want to get notified when a new component is added to Flowbite?" : "" || imgCaption ? 'Image caption' : '' }
-    href={imgHref}
-    />
+  <div class="h-[540px] overflow-y-auto">
+    <Img src={imgEffect !== 'none' ? '/images/examples/content-gallery-3.png' : imgRounded === 'full' ? '/images/examples/image-4@2x.jpg' : '/images/examples/image-1@2x.jpg'} size={imgSize} shadow={imgShadow} alignment={imgAlignment} rounded={imgRounded} alt="sample 1" effect={imgEffect} figClass={imgEffect !== 'none' && imgCaption ? 'relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0' : ''} captionClass={imgEffect !== 'none' && imgCaption ? 'absolute bottom-6 px-4 text-lg text-white' : ''} caption={imgEffect !== 'none' ? 'Do you want to get notified when a new component is added to Flowbite?' : '' || imgCaption ? 'Image caption' : ''} href={imgHref} />
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Size:</Label>
@@ -72,19 +68,19 @@
       <Radio labelClass="w-24 my-1" name="img_size" bind:group={imgSize} value={option}>{option}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-2 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Alignment:</Label>
     {#each alignments as alignment}
       <Radio labelClass="w-20 my-1" name="img_alignment" bind:group={imgAlignment} value={alignment}>{alignment}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-2 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Shadow:</Label>
     {#each shadows as shadow}
       <Radio labelClass="w-20 my-1" name="img_shadow" bind:group={imgShadow} value={shadow}>{shadow}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-2 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Rounded:</Label>
     {#each roundeds as rounded}
       <Radio labelClass="w-20 my-1" name="img_rounded" bind:group={imgRounded} value={rounded}>{rounded}</Radio>
@@ -101,7 +97,7 @@
     <Button class="w-48" color="lime" onclick={changeImgHrf}>{imgHref === '' ? 'Add href' : 'Remove href'}</Button>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={generatedCode} />
+    <HighlightCompo code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 

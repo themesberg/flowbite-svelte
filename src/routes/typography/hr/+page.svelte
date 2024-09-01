@@ -17,24 +17,24 @@
   // code generator
   let generatedCode = $derived(
     (() => {
-    let hr;
-    if (selectedStyle === 'default') {
-      hr = `<Hr hrClass="my-8" />`;
-    }
-    if (selectedStyle === 'trimmed') {
-      hr = `<Hr hrClass="w-48 h-1 mx-auto my-4 rounded md:my-10" />`;
-    }
-    if (selectedStyle === 'icon') {
-      hr = `<Hr hrClass="my-8 w-64 h-1" icon>
+      let hr;
+      if (selectedStyle === 'default') {
+        hr = `<Hr hrClass="my-8" />`;
+      }
+      if (selectedStyle === 'trimmed') {
+        hr = `<Hr hrClass="w-48 h-1 mx-auto my-4 rounded md:my-10" />`;
+      }
+      if (selectedStyle === 'icon') {
+        hr = `<Hr hrClass="my-8 w-64 h-1" icon>
   <QuoteSolid class="w-4 h-4 text-gray-700 dark:text-gray-300" />
 </Hr>`;
-    }
-    if (selectedStyle === 'text') {
-      hr = `<Hr hrClass="my-8 w-64">or</Hr>`;
-    }
-    if (selectedStyle === 'shape') {
-      hr = `<Hr hrClass="my-8 mx-auto w-8 h-8" />`;
-    }
+      }
+      if (selectedStyle === 'text') {
+        hr = `<Hr hrClass="my-8 w-64">or</Hr>`;
+      }
+      if (selectedStyle === 'shape') {
+        hr = `<Hr hrClass="my-8 mx-auto w-8 h-8" />`;
+      }
       return `<p>Lorem ipsum dolor sit amet.</p> 
    ${hr} 
 <p>Fusce eu vitae pretium libero imperdiet.</p>`;
@@ -74,7 +74,6 @@
     {/each}
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={generatedCode} />
+    <HighlightCompo code={generatedCode} />
   {/snippet}
 </CodeWrapper>
-

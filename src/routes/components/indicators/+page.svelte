@@ -82,7 +82,7 @@
     <Button onclick={changeCornerStyle}>{cornerStyle === 'circular' ? 'Rounded' : 'Circular'}</Button>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={generatedCode} />
+    <HighlightCompo code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 
@@ -93,7 +93,7 @@
   <span class="flex items-center"><Indicator size="sm" color="indigo" class="me-1.5" />Customers</span>
   <span class="flex items-center"><Indicator size="sm" color="teal" class="me-1.5" />Revenue</span>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/legend.md'] as string} />
+    <HighlightCompo code={modules['./md/legend.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -108,7 +108,7 @@
     </Indicator>
   </Button>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/indicator-count.md'] as string} />
+    <HighlightCompo code={modules['./md/indicator-count.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -117,7 +117,7 @@
   <Avatar src="/images/profile-picture-5.webp" dot={{ color: 'green', size: 'lg', placement: 'top-right' }} />
   <Avatar src="/images/profile-picture-5.webp" dot={{ color: 'red', size: 'lg', placement: 'top-right' }} />
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/status.md'] as string} />
+    <HighlightCompo code={modules['./md/status.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -152,7 +152,7 @@
     </li>
   </ul>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/badge-indicator.md'] as string} />
+    <HighlightCompo code={modules['./md/badge-indicator.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -249,6 +249,6 @@
     </li>
   </ol>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/stepper.md'] as string} />
+    <HighlightCompo code={modules['./md/stepper.md'] as string} />
   {/snippet}
 </CodeWrapper>

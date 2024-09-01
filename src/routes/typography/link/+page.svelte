@@ -32,7 +32,7 @@
       props.push(` href="/"`);
       if (anchorColor !== 'primary') props.push(` color="${anchorColor}"`);
       if (linkClass) props.push(` class="${linkClass}"`);
-      iconSlot = linkIcon ? `<ArrowRightOutline class="ms-2 h-6 w-6" />` :'';
+      iconSlot = linkIcon ? `<ArrowRightOutline class="ms-2 h-6 w-6" />` : '';
       // if (imgAlignment !== 'left') props.push(` alignment="${imgAlignment}"`);
 
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
@@ -52,8 +52,9 @@
 
 <H2>Interactive Link Builder</H2>
 <CodeWrapper>
-  <A href="/" color={anchorColor} class={linkClass}>Read more
-  {#if linkIcon}<ArrowRightOutline class="ms-2 h-6 w-6" />{/if}
+  <A href="/" color={anchorColor} class={linkClass}>
+    Read more
+    {#if linkIcon}<ArrowRightOutline class="ms-2 h-6 w-6" />{/if}
   </A>
   <div class="mt-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
@@ -62,11 +63,11 @@
     {/each}
   </div>
   <div class="mt-12 flex flex-wrap gap-2">
-    <Button class="w-48" color="blue" onclick={changeLinkClass}>{linkClass ==='font-medium hover:underline' ? 'Change class' : 'Remove class'}</Button>
+    <Button class="w-48" color="blue" onclick={changeLinkClass}>{linkClass === 'font-medium hover:underline' ? 'Change class' : 'Remove class'}</Button>
     <Button class="w-48" color="pink" onclick={changeIcon}>{linkIcon ? 'Remove icon' : 'Add icon'}</Button>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={generatedCode} />
+    <HighlightCompo code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 
@@ -74,7 +75,7 @@
 <CodeWrapper>
   <Button href="/">Read more</Button>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/button-link.md'] as string} />
+    <HighlightCompo code={modules['./md/button-link.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -86,7 +87,7 @@
     <ArrowRightOutline class="ms-2 h-6 w-6" />
   </A>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/cta-link.md'] as string} />
+    <HighlightCompo code={modules['./md/cta-link.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -97,7 +98,7 @@
     <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
   </Card>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/card-link.md'] as string} />
+    <HighlightCompo code={modules['./md/card-link.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -114,6 +115,6 @@
     <Toggle bind:checked={vCard} spanClass="italic dark:text-gray-500">Reverse: {vCard}</Toggle>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/card-with-image.md'] as string} />
+    <HighlightCompo code={modules['./md/card-with-image.md'] as string} />
   {/snippet}
 </CodeWrapper>

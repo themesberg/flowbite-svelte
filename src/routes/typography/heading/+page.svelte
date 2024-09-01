@@ -34,7 +34,7 @@
     </Button>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/default-heading.md'] as string} />
+    <HighlightCompo code={modules['./md/default-heading.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -48,7 +48,7 @@
     <ChevronRightOutline class="ms-2 h-3.5 w-3.5" />
   </A>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/second-level-heading.md'] as string} />
+    <HighlightCompo code={modules['./md/second-level-heading.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -57,7 +57,7 @@
   <Heading tag="h1" class="mb-4">Get back to growth with <Span highlight="blue">the world's #1</Span> CRM.</Heading>
   <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/highlighted-heading.md'] as string} />
+    <HighlightCompo code={modules['./md/highlighted-heading.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -66,7 +66,7 @@
   <Heading tag="h1" class="mb-4">Regain <Mark>control</Mark> over your days</Heading>
   <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/heading-mark.md'] as string} />
+    <HighlightCompo code={modules['./md/heading-mark.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -77,7 +77,7 @@
   </Heading>
   <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/heading-gradient.md'] as string} />
+    <HighlightCompo code={modules['./md/heading-gradient.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -88,7 +88,7 @@
   </Heading>
   <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/heading-underline.md'] as string} />
+    <HighlightCompo code={modules['./md/heading-underline.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -101,7 +101,7 @@
   </Breadcrumb>
   <Heading tag="h2" class="mb-4">Team management</Heading>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/breadcrumb-context.md'] as string} />
+    <HighlightCompo code={modules['./md/breadcrumb-context.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -111,7 +111,7 @@
     Flowbite <Badge class="ms-2 text-2xl font-semibold">PRO</Badge>
   </Heading>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/badge-context.md'] as string} />
+    <HighlightCompo code={modules['./md/badge-context.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -121,7 +121,7 @@
     Flowbite <Secondary class="ms-2">This is secondary text</Secondary>
   </Heading>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/secondary-text.md'] as string} />
+    <HighlightCompo code={modules['./md/secondary-text.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -137,7 +137,6 @@
     {/each}
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/sizes.md'] as string} />
+    <HighlightCompo code={modules['./md/sizes.md'] as string} />
   {/snippet}
 </CodeWrapper>
-

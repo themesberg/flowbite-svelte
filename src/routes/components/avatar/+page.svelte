@@ -89,10 +89,10 @@
 
 <H2>Placeholder</H2>
 <CodeWrapper innerClass="flex justify-center gap-4">
-    <Avatar />
-    <Avatar cornerStyle="rounded" />
-    <Avatar border />
-    <Avatar cornerStyle="rounded" border />
+  <Avatar />
+  <Avatar cornerStyle="rounded" />
+  <Avatar border />
+  <Avatar cornerStyle="rounded" border />
   {#snippet codeblock()}
     <HighlightCompo code={modules['./md/placeholder.md'] as string} />
   {/snippet}
@@ -100,7 +100,7 @@
 
 <H2>Placeholder initials</H2>
 <CodeWrapper innerClass="flex h-10 justify-center">
-    <Avatar>JL</Avatar>
+  <Avatar>JL</Avatar>
   {#snippet codeblock()}
     <HighlightCompo code={modules['./md/placeholder-initials.md'] as string} />
   {/snippet}
@@ -111,11 +111,11 @@
 
 <H2>Dot indicator</H2>
 <CodeWrapper innerClass="flex justify-center gap-4">
-    <Avatar src="/images/profile-picture-3.webp" dot={{ color: 'red' }} />
-    <Avatar src="/images/profile-picture-3.webp" dot={{ placement: 'top-right', color: 'red' }} cornerStyle="rounded" />
-    <Avatar src="/images/profile-picture-5.webp" dot={{ placement: 'bottom-right', color: 'green' }} />
-    <Avatar src="/images/profile-picture-5.webp" dot={{ placement: 'bottom-right' }} cornerStyle="rounded" />
-    <Avatar dot={{}} />
+  <Avatar src="/images/profile-picture-3.webp" dot={{ color: 'red' }} />
+  <Avatar src="/images/profile-picture-3.webp" dot={{ placement: 'top-right', color: 'red' }} cornerStyle="rounded" />
+  <Avatar src="/images/profile-picture-5.webp" dot={{ placement: 'bottom-right', color: 'green' }} />
+  <Avatar src="/images/profile-picture-5.webp" dot={{ placement: 'bottom-right' }} cornerStyle="rounded" />
+  <Avatar dot={{}} />
   {#snippet codeblock()}
     <HighlightCompo code={modules['./md/dot-indicator.md'] as string} />
   {/snippet}
@@ -156,22 +156,22 @@
 
 <H2>User dropdown</H2>
 <CodeWrapper innerClass="flex h-80 items-start justify-center">
-    <Avatar onclick={dropdown.toggle} src="/images/profile-picture-3.webp" class="cursor-pointer" dot={{ color: 'green' }} />
-    <div class="relative">
-      <Dropdown {dropdownStatus} {closeDropdown} class="absolute -left-[100px] top-[40px]">
-        <DropdownHeader>
-          <div>Bonnie Green</div>
-          <div class="truncate font-medium">name@flowbite.com</div>
-        </DropdownHeader>
-        <DropdownUl>
-          <DropdownLi href="/">Dashboard</DropdownLi>
-          <DropdownLi href="/nav">Navbar</DropdownLi>
-          <DropdownLi href="/footer">Footer</DropdownLi>
-          <DropdownDivider />
-          <DropdownLi href="/dropdown">Dropdown</DropdownLi>
-        </DropdownUl>
-      </Dropdown>
-    </div>
+  <Avatar onclick={dropdown.toggle} src="/images/profile-picture-3.webp" class="cursor-pointer" dot={{ color: 'green' }} />
+  <div class="relative">
+    <Dropdown {dropdownStatus} {closeDropdown} class="absolute -left-[100px] top-[40px]">
+      <DropdownHeader>
+        <div>Bonnie Green</div>
+        <div class="truncate font-medium">name@flowbite.com</div>
+      </DropdownHeader>
+      <DropdownUl>
+        <DropdownLi href="/">Dashboard</DropdownLi>
+        <DropdownLi href="/nav">Navbar</DropdownLi>
+        <DropdownLi href="/footer">Footer</DropdownLi>
+        <DropdownDivider />
+        <DropdownLi href="/dropdown">Dropdown</DropdownLi>
+      </DropdownUl>
+    </Dropdown>
+  </div>
   {#snippet codeblock()}
     <HighlightCompo code={modules['./md/user-dropdown.md'] as string} />
   {/snippet}
