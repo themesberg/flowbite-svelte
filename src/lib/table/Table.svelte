@@ -1,4 +1,5 @@
-<script lang="ts">
+<script lang="ts" generics="T">
+  import { writable } from 'svelte/store';
   import { twMerge, twJoin } from 'tailwind-merge';
   import { setContext } from 'svelte';
   import type { TableColorType } from '../types';
@@ -10,6 +11,18 @@
   export let shadow: boolean = false;
   export let color: TableColorType = 'default';
   export let customeColor: string = '';
+  export let items: T[] = [];
+  export let filter: ((t: T, term: string) => boolean) | null = null;
+  export let placeholder: string = 'Search';
+  export let innerDivClass: string = 'p-4';
+  export let searchClass: string = 'relative mt-1';
+  export let svgDivClass: string = 'absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none';
+  export let svgClass: string = 'w-5 h-5 text-gray-500 dark:text-gray-400';
+  export let inputClass: string = 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 p-2.5 ps-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500';
+
+  let searchTerm = '';
+  let inputCls = twMerge(inputClass, $$props.classInput);
+  let svgDivCls = twMerge(svgDivClass, $$props.classSvgDiv);
 
   const colors = {
     default: 'text-gray-500 dark:text-gray-400',
@@ -27,9 +40,35 @@
   $: setContext('hoverable', hoverable);
   $: setContext('noborder', noborder);
   $: setContext('color', color);
+  $: setContext('items', items);
+  const searchTermStore = writable(searchTerm);
+  const filterStore = writable(filter);
+  setContext('searchTerm', searchTermStore);
+  setContext('filter', filterStore);
+  $: searchTermStore.set(searchTerm);
+  $: filterStore.set(filter);
+  setContext('sorter', writable(null));
 </script>
 
 <div class={twJoin(divClass, shadow && 'shadow-md sm:rounded-lg')}>
+  {#if filter}
+    <slot name="search">
+      <div class={innerDivClass}>
+        <label for="table-search" class="sr-only">Search</label>
+        <div class={searchClass}>
+          <div class={svgDivCls}>
+            <slot name="svgSearch">
+              <svg class={svgClass} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+              </svg>
+            </slot>
+          </div>
+          <input bind:value={searchTerm} type="text" id="table-search" class={inputCls} {placeholder} />
+        </div>
+        <slot name="header" />
+      </div>
+    </slot>
+  {/if}
   <table {...$$restProps} class={twMerge('w-full text-left text-sm', colors[color], $$props.class)}>
     <slot />
   </table>
