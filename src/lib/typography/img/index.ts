@@ -20,6 +20,7 @@ interface ImgProps extends HTMLImgAttributes {
   figClass?: string | undefined | null;
   captionClass?: string | undefined | null;
   class?: string | undefined | null;
+  href?: string;
 }
 
 export { Img, img, type ImgProps };

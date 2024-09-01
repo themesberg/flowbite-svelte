@@ -3,23 +3,25 @@ import { tv } from 'tailwind-variants';
 export const img = tv({
   slots: {
     base: 'max-w-full h-auto',
-    figure: 'max-w-lg',
-    figureCaption: 'mt-2 text-sm text-center text-gray-500 dark:text-gray-400'
+    figure: '',
+    figureCaption: 'mt-2 text-sm text-center text-gray-500 dark:text-gray-400',
   },
   variants: {
     size: {
-      xs: { base: 'max-w-xs' },
-      sm: { base: 'max-w-sm' },
-      md: { base: 'max-w-md' },
-      lg: { base: 'max-w-lg' },
-      xl: { base: 'max-w-xl' },
-      '2xl': { base: 'max-w-2xl' },
-      full: { base: 'max-w-full' }
+      xs: { base: 'max-w-xs', figure: 'max-w-xs' },
+      sm: { base: 'max-w-sm', figure: 'max-w-sm' },
+      md: { base: 'max-w-md', figure: 'max-w-md' },
+      lg: { base: 'max-w-lg', figure: 'max-w-lg' },
+      xl: { base: 'max-w-xl', figure: 'max-w-xl' },
+      '2xl': { base: 'max-w-2xl', figure: 'max-w-2xl' },
+      full: { base: 'max-w-full', figure: 'max-w-full' },
+      'none': { base: '', figure: '' }
     },
     alignment: {
-      center: { base: 'mx-auto' },
-      right: { base: 'ms-auto' },
-      left: { base: '' }
+      left: { },
+      center: { base: 'mx-auto', figure: 'mx-auto' },
+      right: { base: 'ms-auto', figure: 'ms-auto' },
+      
     },
     effect: {
       grayscale: {

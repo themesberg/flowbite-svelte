@@ -1,11 +1,12 @@
 <script lang="ts">
   import { type ImgProps as Props, img } from './index';
 
-  let { size, alignment, effect, shadow, rounded, caption, imgClass, figClass, captionClass, ...restProps }: Props = $props();
+  let { size = 'none', alignment = 'left', effect = 'none', shadow = 'none', rounded = 'none', caption, imgClass, figClass, captionClass, href, ...restProps }: Props = $props();
 
   let { base, figure, figureCaption } = $derived(img({ size, alignment, effect, shadow, rounded }));
 </script>
 
+{#snippet imageSlot()}
 {#if caption}
   <figure class={figure({ class: figClass })}>
     <img {...restProps} class={base({ class: imgClass })} />
@@ -16,6 +17,16 @@
 {:else}
   <img {...restProps} class={base({ class: imgClass })} />
 {/if}
+{/snippet}
+
+{#if href}
+  <a {href}>
+  {@render imageSlot()}
+  </a>
+{:else}
+  {@render imageSlot()}
+{/if}
+
 
 <!--
 @component
