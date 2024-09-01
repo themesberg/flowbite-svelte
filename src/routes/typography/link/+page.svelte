@@ -15,6 +15,33 @@
   let vCard = $state(false);
   const colors = Object.keys(anchor.variants.color);
   let anchorColor: A['color'] = $state('primary');
+  let linkClass = $state('font-medium hover:underline');
+  const changeLinkClass = () => {
+    linkClass = linkClass === 'font-medium hover:underline' ? 'underline hover:no-underline' : 'font-medium hover:underline';
+  };
+  let linkIcon = $state(false);
+  const changeIcon = () => {
+    linkIcon = !linkIcon;
+  };
+
+  // code generator
+  let generatedCode = $derived(
+    (() => {
+      let props = [];
+      let iconSlot;
+      props.push(` href="/"`);
+      if (anchorColor !== 'primary') props.push(` color="${anchorColor}"`);
+      if (linkClass) props.push(` class="${linkClass}"`);
+      iconSlot = linkIcon ? `<ArrowRightOutline class="ms-2 h-6 w-6" />` :'';
+      // if (imgAlignment !== 'left') props.push(` alignment="${imgAlignment}"`);
+
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+
+      return `<A${propsString}>
+  Read more ${iconSlot}
+</A>`;
+    })()
+  );
 </script>
 
 <H1>Links</H1>
@@ -23,17 +50,23 @@
 
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
-<H2>Color</H2>
+<H2>Interactive Link Builder</H2>
 <CodeWrapper>
-  <A href="/" color={anchorColor} class="font-medium hover:underline">Read more</A>
+  <A href="/" color={anchorColor} class={linkClass}>Read more
+  {#if linkIcon}<ArrowRightOutline class="ms-2 h-6 w-6" />{/if}
+  </A>
   <div class="mt-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
       <Radio labelClass="w-24 my-1" name="anchor_color" bind:group={anchorColor} color={colorOption as A['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
+  <div class="mt-12 flex flex-wrap gap-2">
+    <Button class="w-48" color="blue" onclick={changeLinkClass}>{linkClass ==='font-medium hover:underline' ? 'Change class' : 'Remove class'}</Button>
+    <Button class="w-48" color="pink" onclick={changeIcon}>{linkIcon ? 'Remove icon' : 'Add icon'}</Button>
+  </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/default-link.md'] as string} />
+  <HighlightCompo code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 
@@ -42,30 +75,6 @@
   <Button href="/">Read more</Button>
   {#snippet codeblock()}
   <HighlightCompo code={modules['./md/button-link.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Paragraph</H2>
-<CodeWrapper>
-  <P>
-    The free updates that will be provided is based on the <A href="/" class="underline hover:no-underline">roadmap</A> that we have laid out for this project. It is also possible that we will provide extra updates outside of the roadmap as well.
-  </P>
-  {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/paragraph.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Icon link</H2>
-<CodeWrapper>
-  <P>
-    500,000 people have made over a million apps with Glide.
-    <A href="/" class="inline-flex items-center font-medium text-primary-600 hover:underline dark:text-primary-500">
-      Read their stories
-      <ArrowRightOutline class="ms-2 h-6 w-6" />
-    </A>
-  </P>
-  {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/icon-link.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -82,7 +91,7 @@
 </CodeWrapper>
 
 <H2>Card link</H2>
-<CodeWrapper>
+<CodeWrapper innerClass="flex justify-center">
   <Card href="/">
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
     <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
@@ -93,7 +102,7 @@
 </CodeWrapper>
 
 <H2>Card with image</H2>
-<CodeWrapper class="flex justify-center">
+<CodeWrapper innerClass="flex justify-center">
   <div class="flex flex-col space-y-4">
     <Card img={{ src: '/images/image-1.webp', alt: 'my image' }} reverse={vCard}>
       <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
