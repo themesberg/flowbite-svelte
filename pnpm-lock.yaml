@@ -90,9 +90,6 @@ importers:
       runes-meta-tags:
         specifier: ^0.3.2
         version: 0.3.2(svelte@5.0.0-next.242)
-      runes-webkit:
-        specifier: ^0.9.18
-        version: 0.9.18(@sveltejs/kit@2.5.25(@sveltejs/vite-plugin-svelte@3.1.2(svelte@5.0.0-next.242)(vite@5.4.2))(svelte@5.0.0-next.242)(vite@5.4.2))(svelte@5.0.0-next.242)
       svelte:
         specifier: 5.0.0-next.242
         version: 5.0.0-next.242
@@ -1715,13 +1712,6 @@ packages:
     resolution: {integrity: sha512-6uL9R7nFcX+ZUzzYR3CdeAZ+fUqnMK3Y/vkUkCPWUUPWVftvm5+BytT3MYU9arON8VJBI7lzb3Qg6lahAqXTOA==}
     peerDependencies:
       svelte: ^5.0.0
-
-  runes-webkit@0.9.18:
-    resolution: {integrity: sha512-pawvx7DZ/TS9plMoFrBt5Nz0DzQssfxFuye/YFW0OLX384CFsOumHQegjAaP8D8z1/QeqQ6TvLhJTPX9iHXsZQ==}
-    engines: {node: '>=18.0.0', npm: '>=7.0.0'}
-    peerDependencies:
-      '@sveltejs/kit': ^2.5.5
-      svelte: ^5.0.0-next.95
 
   sade@1.8.1:
     resolution: {integrity: sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==}
@@ -3703,11 +3693,6 @@ snapshots:
 
   runes-meta-tags@0.3.2(svelte@5.0.0-next.242):
     dependencies:
-      svelte: 5.0.0-next.242
-
-  runes-webkit@0.9.18(@sveltejs/kit@2.5.25(@sveltejs/vite-plugin-svelte@3.1.2(svelte@5.0.0-next.242)(vite@5.4.2))(svelte@5.0.0-next.242)(vite@5.4.2))(svelte@5.0.0-next.242):
-    dependencies:
-      '@sveltejs/kit': 2.5.25(@sveltejs/vite-plugin-svelte@3.1.2(svelte@5.0.0-next.242)(vite@5.4.2))(svelte@5.0.0-next.242)(vite@5.4.2)
       svelte: 5.0.0-next.242
 
   sade@1.8.1:

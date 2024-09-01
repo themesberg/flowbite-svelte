@@ -3,15 +3,16 @@
   import { setContext } from 'svelte';
   import { type TabsProps as Props, type TabCtxType, tabs } from '.';
 
-  let { children, tabStyle = 'none', ulClass, contentClass, divider = true, ...restProps }: Props = $props();
+  let { children, tabStyle = 'none', ulClass, ctxActive, ctxInactive, contentClass, divider = true, ...restProps }: Props = $props();
 
-  const { base, content, divider: dividerClass, active, inactive } = $derived(tabs({ tabStyle, hasDivider: divider }));
-
-  const ctx: TabCtxType = $derived({
-    activeClass: active(),
-    inactiveClass: inactive(),
+  // using $derived() shows State referenced in its own scope will never update. Did you mean to reference it inside a closure?
+  const { base, content, divider: dividerClass, active, inactive } = $state(tabs({ tabStyle, hasDivider: divider }));
+  // $inspect('typeof',typeof(active))
+  const ctx: TabCtxType = {
+    activeClass: active() || ctxActive,
+    inactiveClass: inactive() || ctxInactive,
     selected: writable<HTMLElement>()
-  });
+  };
 
   let dividerBool = $derived(['full', 'pill'].includes(tabStyle) ? false : divider);
 

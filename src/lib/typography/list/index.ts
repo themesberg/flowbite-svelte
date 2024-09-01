@@ -12,14 +12,13 @@ interface ListProps {
   children: Snippet;
   tag?: TagType;
   position?: PositionType;
-  ctxclass?: string | undefined | null;
+  ctxClass?: string | undefined | null;
   class?: string | undefined;
 }
 
 interface LiProps extends HTMLLiAttributes {
   children: Snippet;
   icon?: boolean;
-  class?: string | undefined;
 }
 
 export { List, Li, list, type ListProps, type LiProps };

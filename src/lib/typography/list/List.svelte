@@ -2,9 +2,15 @@
   import { setContext } from 'svelte';
   import { type ListProps as Props, list } from './index';
 
-  let { children, tag = 'ul', position = 'inside', ctxclass = '', class: className, ...restProps }: Props = $props();
+  let { children, tag = 'ul', position = 'inside', ctxClass, class: className, ...restProps }: Props = $props();
+  
+  let contextClass = $state(ctxClass || '');
 
-  setContext('ctxclass', ctxclass);
+  setContext('ctxClass', () => contextClass);
+
+  $effect(() => {
+    contextClass = ctxClass || '';
+  });
 
   let classList = $derived(list({ position, tag, className }));
 </script>

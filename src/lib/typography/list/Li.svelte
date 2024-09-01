@@ -4,8 +4,10 @@
   import { type LiProps as Props } from './index';
 
   let { children, icon, class: className, ...restProps }: Props = $props();
-  const ctxclass: string = getContext('ctxclass');
-  let liCls = twMerge(ctxclass, icon && 'flex items-center', className);
+
+  const getCtxClass = getContext<() => string>('ctxClass');
+
+  let liCls = $derived(twMerge(getCtxClass(), icon && 'flex items-center', className));
 </script>
 
 <li {...restProps} class={liCls}>

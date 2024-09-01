@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { List, Li, Heading, Span, DescriptionList, A, Label, Radio } from '$lib';
+  import { List, Li, Heading, Span, DescriptionList, A, Label, Radio, Button } from '$lib';
   import { CheckCircleSolid, CheckOutline } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -16,6 +16,55 @@
   let listTag: List['tag'] = $state('ul');
   const positions = ['inside', 'outside'];
   let listPosition: List['position'] = $state('inside');
+  let listIcon = $state(false);
+  const changeListIcon = () => {
+    listIcon = !listIcon;
+    if (listIcon) {
+      nested = false;
+    }
+  }
+  let ctxClass = $state('');
+  const changeCtxClass = () => {
+    ctxClass = ctxClass === '' ? 'pl-8' : '';
+  }
+  let nested = $state(false);
+  const changeNested = () => {
+    nested = !nested;
+    if (nested) {
+      listIcon = false;
+    }
+  }
+
+  // code generator
+  let generatedCode = $derived(
+    (() => {
+      let props = [];
+      let iconSlot;
+      let liIcon;
+      let nestedContent;
+
+      if (listTag !== 'ul') props.push(` tag="${listTag}"`);
+      if (listPosition !== 'inside') props.push(` position="${listPosition}"`);
+      // if (linkClass) props.push(` class="${linkClass}"`);
+      iconSlot = listIcon ? `<CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />` :'';
+      if (ctxClass) props.push(` ctxClass="${ctxClass}"`);
+      liIcon = listIcon ? ` icon`: '';
+      nestedContent = nested ? `<List tag="ol" ctxClass="mt-2 space-y-1 ps-5">
+      <Li>item 1-1</Li>
+      <Li>item 1-2</Li>
+      <Li>item 1-3</Li>
+    </List>
+      ` : '';
+
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+
+      return `<List${propsString}>
+  <Li${liIcon}>${iconSlot}Item 1${nestedContent}</Li>
+  <Li${liIcon}>${iconSlot}Item 2</Li>
+  <Li${liIcon}>${iconSlot}Item 3</Li>
+</List>`;
+    })()
+  );
 </script>
 
 <H1>List</H1>
@@ -23,13 +72,21 @@
 
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
-<H2>List position and tag</H2>
+<H2>Interactive List Builder</H2>
 <CodeWrapper>
-  <Heading tag="h2" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
-  <List tag={listTag} position={listPosition} class="space-y-1 text-gray-500 dark:text-gray-400">
-    <Li>At least 10 characters (and up to 100 characters)</Li>
-    <Li>At least one lowercase character</Li>
-    <Li>Inclusion of at least one special character, e.g., ! @ # ?</Li>
+  <Heading tag="h2" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">List title</Heading>
+  <List tag={listTag} position={listPosition} class="space-y-1 text-gray-500 dark:text-gray-400" ctxClass={ctxClass}>
+    <Li icon={listIcon}>{#if listIcon}<CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />{/if}At least 10 characters (and up to 100 characters)
+    {#if nested}
+    <List tag="ol" ctxClass="mt-2 space-y-1 ps-5">
+      <Li>item 1-1</Li>
+      <Li>item 1-2</Li>
+      <Li>item 1-3</Li>
+    </List>
+    {/if}
+    </Li>
+    <Li icon={listIcon}>{#if listIcon}<CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />{/if}At least one lowercase character</Li>
+    <Li icon={listIcon}>{#if listIcon}<CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />{/if}Inclusion of at least one special character, e.g., ! @ # ?</Li>
   </List>
 
   <div class="mt-4 flex flex-wrap space-x-4">
@@ -44,87 +101,15 @@
       <Radio labelClass="w-24 my-1" name="list_position" bind:group={listPosition} value={position}>{position}</Radio>
     {/each}
   </div>
+  <div class="mt-12 flex flex-wrap gap-2">
+    <Button class="w-48" color="blue" onclick={changeListIcon}>{listIcon ? 'Remove icon' : 'Add icon'}</Button>
+    <Button class="w-48" color="rose" onclick={changeCtxClass}>{ctxClass !== '' ? 'Remove ctxClass' : 'Add ctxClass'}</Button>
+    <Button class="w-48" color="teal" onclick={changeNested}>{nested ? 'Remove nested' : 'Add nested'}</Button>
+  </div>
+  {#snippet codeblock()}
+  <HighlightCompo code={generatedCode} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/unordered-list.md'] as string} />
-
-<H3>Icon</H3>
-<CodeWrapper>
-  <Heading tag="h2" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
-  <List class="space-y-1 text-gray-500 dark:text-gray-400">
-    <Li icon>
-      <CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />
-      At least 10 characters (and up to 100 characters)
-    </Li>
-    <Li icon>
-      <CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />
-      At least one lowercase character
-    </Li>
-    <Li icon>
-      <CheckCircleSolid class="me-2 h-5 w-5 text-gray-500 dark:text-gray-400" />
-      Inclusion of at least one special character, e.g., ! @ # ?
-    </Li>
-  </List>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/icon.md'] as string} />
-
-<H3>Nested</H3>
-<CodeWrapper>
-  <List class="space-y-4 text-gray-500 dark:text-gray-400">
-    <Li>
-      List item one
-      <List tag="ol" ctxclass="mt-2 space-y-1 ps-5">
-        <Li>You might feel like you are being really "organized" o</Li>
-        <Li>Nested navigation in UIs is a bad idea too, keep things as flat as possible.</Li>
-        <Li>Nesting tons of folders in your source code is also not helpful.</Li>
-      </List>
-    </Li>
-    <Li>
-      List item two
-      <List tag="ol" ctxclass="mt-2 space-y-1 ps-5">
-        <Li>I'm not sure if we'll bother styling more than two levels deep.</Li>
-        <Li>Two is already too much, three is guaranteed to be a bad idea.</Li>
-        <Li>If you nest four levels deep you belong in prison.</Li>
-      </List>
-    </Li>
-    <Li>
-      List item three
-      <List tag="ol" ctxclass="mt-2 space-y-1 ps-5">
-        <Li>Again please don't nest lists if you want</Li>
-        <Li>Nobody wants to look at this.</Li>
-        <Li>I'm upset that we even have to bother styling this.</Li>
-      </List>
-    </Li>
-  </List>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/nested.md'] as string} />
-
-<H3>Unstyled</H3>
-
-<CodeWrapper>
-  <Heading tag="h2" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
-  <List class="space-y-1 text-gray-500 dark:text-gray-400">
-    <Li>At least 10 characters (and up to 100 characters)</Li>
-    <Li>At least one lowercase character</Li>
-    <Li>Inclusion of at least one special character, e.g., ! @ # ?</Li>
-  </List>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/unstyled.md'] as string} />
-
-<H2>Ordered list</H2>
-<CodeWrapper>
-  <Heading tag="h2" class="mb-2 text-lg font-semibold  text-gray-900 dark:text-white">Top students:</Heading>
-  <List tag="ol" class="space-y-1 text-gray-500 dark:text-gray-400">
-    <Li><Span>Bonnie Green</Span> with <Span>70</Span> points</Li>
-    <Li><Span>Jese Leos</Span> with <Span>63</Span> points</Li>
-    <Li><Span>Leslie Livingston</Span> with <Span>57</Span> points</Li>
-  </List>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/ordered-list.md'] as string} />
 
 <H2>Description list</H2>
 <CodeWrapper>
@@ -145,35 +130,6 @@
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/description-list.md'] as string} />
-
-<H2>List with icon</H2>
-
-<CodeWrapper>
-  <List tag="ul" class="mb-8 space-y-4 text-gray-500 dark:text-gray-400">
-    <Li icon class="gap-3">
-      <CheckOutline class="h-5 w-5 text-green-500 dark:text-green-400" />
-      Individual configuration
-    </Li>
-    <Li icon class="gap-3">
-      <CheckOutline class="h-5 w-5 text-green-500 dark:text-green-400" />
-      No setup, or hidden fees
-    </Li>
-    <Li icon class="gap-3">
-      <CheckOutline class="h-5 w-5 text-green-500 dark:text-green-400" />
-      <span>Team size: <Span>1 developer</Span></span>
-    </Li>
-    <Li icon class="gap-3">
-      <CheckOutline class="h-5 w-5 text-green-500 dark:text-green-400" />
-      <span>Premium support: <Span>6 months</Span></span>
-    </Li>
-    <Li icon class="gap-3">
-      <CheckOutline class="h-5 w-5 text-green-500 dark:text-green-400" />
-      <span>Free updates: <Span>6 months</Span></span>
-    </Li>
-  </List>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/list-with-icon.md'] as string} />
 
 <H2>Advanced layout</H2>
 <CodeWrapper>
@@ -268,15 +224,3 @@
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/horizontal-list.md'] as string} />
-
-<H2>ctxclass</H2>
-<CodeWrapper>
-  <List ctxclass="my-4">
-    <Li>Example 1</Li>
-    <Li>Example 2</Li>
-    <Li>Example 3</Li>
-    <Li>Example 4</Li>
-  </List>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/ctxclass.md'] as string} />

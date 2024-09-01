@@ -12,6 +12,8 @@ interface TabsProps extends HTMLAttributes<HTMLUListElement> {
   contentClass?: string | undefined | null;
   divider?: boolean;
   class?: string | undefined | null;
+  ctxActive?: string | undefined | null;
+  ctxInactive?: string | undefined | null;
 }
 
 interface TabitemProps extends HTMLLiAttributes {
