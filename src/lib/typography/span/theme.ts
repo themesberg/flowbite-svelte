@@ -27,7 +27,7 @@ export const span = tv({
       blueToGreen: 'text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-500 to-green-400',
       orangeToPurple: 'text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-pink-500 to-purple-500',
       yellowToRed: 'text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-indigo-400 to-red-600',
-      normal: 'font-semibold text-gray-900 dark:text-white'
+      none: ''
     },
     highlight: {
       blue: 'text-blue-600 dark:text-blue-500',
@@ -42,7 +42,8 @@ export const span = tv({
       cyan: 'text-cyan-600 dark:text-cyan-500',
       fuchsia: 'text-fuchsia-600 dark:text-fuchsia-500',
       amber: 'text-amber-600 dark:text-amber-500',
-      lime: 'text-lime-600 dark:text-lime-500'
+      lime: 'text-lime-600 dark:text-lime-500',
+      none: ''
     },
     decoration: {
       solid: 'underline decoratio-solid',
@@ -65,7 +66,8 @@ export const span = tv({
       cyan: 'underline decoration-cyan-400 dark:decoration-cyan-600',
       fuchsia: 'underline decoration-fuchsia-400 dark:decoration-fuchsia-600',
       amber: 'underline decoration-amber-400 dark:decoration-amber-600',
-      lime: 'underline decoration-lime-400 dark:decoration-lime-600'
+      lime: 'underline decoration-lime-400 dark:decoration-lime-600',
+      none: 'decoration-none'
     },
     decorationThickness: {
       '1': 'underline decoration-1',
