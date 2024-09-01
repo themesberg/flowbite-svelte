@@ -135,6 +135,7 @@
         <SidebarItem onclick={closeNavDrawer} label="Heading/Mark" href="/typography/heading" />
         <SidebarItem onclick={closeNavDrawer} label="HR" href="/typography/hr" />
         <SidebarItem onclick={closeNavDrawer} label="Image" href="/typography/image" />
+        <SidebarItem onclick={closeNavDrawer} label="Layout" href="/typography/layout" />
         <SidebarItem onclick={closeNavDrawer} label="Link" href="/typography/link" />
         <SidebarItem onclick={closeNavDrawer} label="List" href="/typography/list" />
         <SidebarItem onclick={closeNavDrawer} label="Paragraph" href="/typography/paragraph" />

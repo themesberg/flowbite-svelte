@@ -6,7 +6,7 @@
   let { children, titleSlot, open = false, title = 'Tab title', activeClass, inactiveClass, class: className, disabled, ...restProps }: Props = $props();
 
   const ctx = getContext<TabCtxType>('ctx') ?? {};
-  $inspect('ctx from item: ', ctx);
+  // $inspect('ctx from item: ', ctx);
   const selected = ctx.selected ?? writable<HTMLElement>();
 
   function init(node: HTMLElement) {

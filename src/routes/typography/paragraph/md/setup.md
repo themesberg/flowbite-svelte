@@ -1,3 +1,3 @@
 <script>
-	import { P, Layout } from 'svelte-5-ui-lib';
+	import { P } from 'svelte-5-ui-lib';
 </script>

@@ -6,7 +6,7 @@
   let { children, tabStyle = 'none', ulClass, ctxActive, ctxInactive, contentClass, divider = true, ...restProps }: Props = $props();
 
   // using $derived() shows State referenced in its own scope will never update. Did you mean to reference it inside a closure?
-  const { base, content, divider: dividerClass, active, inactive } = $state(tabs({ tabStyle, hasDivider: divider }));
+  const { base, content, divider: dividerClass, active, inactive } = $derived(tabs({ tabStyle, hasDivider: divider }));
   // $inspect('typeof',typeof(active))
   const ctx: TabCtxType = {
     activeClass: active() || ctxActive,
@@ -15,7 +15,7 @@
   };
 
   let dividerBool = $derived(['full', 'pill'].includes(tabStyle) ? false : divider);
-
+//  setContext('ctxClass', () => contextClass);
   setContext('ctx', ctx);
 
   function init(node: HTMLElement) {

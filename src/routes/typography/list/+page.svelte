@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { List, Li, Heading, Span, DescriptionList, A, Label, Radio, Button } from '$lib';
-  import { CheckCircleSolid, CheckOutline } from 'flowbite-svelte-icons';
+  import { List, Li, Heading, DescriptionList, A, Label, Radio, Button } from '$lib';
+  import { CheckCircleSolid } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import H3 from '../../utils/H3.svelte';
+  // import H3 from '../../utils/H3.svelte';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -127,9 +127,11 @@
       <DescriptionList tag="dd">+00 123 456 789 / +12 345 678</DescriptionList>
     </div>
   </List>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/description-list.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/description-list.md'] as string} />
 
 <H2>Advanced layout</H2>
 <CodeWrapper>
@@ -195,13 +197,14 @@
       </div>
     </Li>
   </List>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/advanced-layout.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<HighlightCompo code={modules['./md/advanced-layout.md'] as string} />
 
 <H2>Horizontal list</H2>
 <CodeWrapper>
-  <List tag="ul" class="mb-6 flex flex-wrap items-center justify-center">
+  <List tag="ul" class="flex flex-wrap items-center justify-center">
     <Li>
       <A href="/" class="me-4 text-red-700 hover:underline md:me-6 dark:text-red-200">About</A>
     </Li>
@@ -221,6 +224,8 @@
       <A href="/" class="me-4 text-pink-700 hover:underline md:me-6 dark:text-pink-200">FAQs</A>
     </Li>
   </List>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/horizontal-list.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/horizontal-list.md'] as string} />
