@@ -1,12 +1,15 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
   import { Heading } from '$lib';
-  interface Props {
+  import { h2Cls } from './theme' 
+  interface Props extends HTMLAttributes<HTMLHeadingElement> {
     children: Snippet;
   }
-  let { children }: Props = $props();
+  let { children, class: className }: Props = $props();
+  const base = $derived(h2Cls({ className }));
 </script>
 
-<Heading tag="h2" class="my-6 text-2xl">
+<Heading tag="h2" class={base}>
   {@render children()}
 </Heading>

@@ -46,7 +46,7 @@
 ${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ''}`
     })()
   );
-  $inspect('files', files);
+  // $inspect('files', files);
 </script>
 
 <H1>File input</H1>

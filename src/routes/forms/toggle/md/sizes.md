@@ -1,4 +1,1 @@
-<Toggle toggleSize="small">Small toggle</Toggle>
-<Toggle toggleSize="default" checked>Default toggle</Toggle>
-<Toggle toggleSize="large" checked>Large toggle</Toggle>
-<Toggle spanClass={customSize}>Custom toggle</Toggle>
+<Toggle spanClass='w-16 h-10 after:top-1 after:left-[4px]  after:h-8 after:w-8'>Custom toggle</Toggle>

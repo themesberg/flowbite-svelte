@@ -20,3 +20,7 @@ export const codewrapper = tv({
     inner: 'p-6'
   }
 });
+
+export const h2Cls = tv({
+  base:'my-6 text-2xl'
+})

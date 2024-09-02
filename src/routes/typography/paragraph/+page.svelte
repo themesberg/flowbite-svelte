@@ -74,13 +74,13 @@
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Space:</Label>
+    <Label class="mb-4 w-full font-bold">Space(Tracking):</Label>
     {#each spaces as space}
       <Radio labelClass="w-20 my-1" name="p_space" bind:group={pSpace} value={space}>{space}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Height:</Label>
+    <Label class="mb-4 w-full font-bold">Height(Leading):</Label>
     {#each heights as height}
       <Radio labelClass="w-16 my-1" name="p_height" bind:group={pHeight} value={height}>{height}</Radio>
     {/each}

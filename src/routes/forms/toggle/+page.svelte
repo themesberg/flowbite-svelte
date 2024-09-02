@@ -1,7 +1,5 @@
 <script lang="ts">
-  import { Toggle, toggle, Radio, Label } from '$lib';
-  const customSize = 'w-16 h-10 after:top-1 after:left-[4px]  after:h-8 after:w-8';
-
+  import { Toggle, toggle, Radio, Label, Button } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -17,49 +15,84 @@
   const sizes = Object.keys(toggle.variants.size) as Toggle['size'][];
   let toggleSize: Toggle['size'] = $state('default');
   let checked: boolean = $state(false);
+  const changeChecked = () => {
+    checked = !checked;
+  }
+  let disabled = $state(false);
+  const changeDisabled = () => {
+    disabled = !disabled;
+  }
+  let leftSlot = $state(false);
+  const changeLeftLabel = () => {
+    leftSlot = !leftSlot;
+    checked = false;
+  }
+
+  // code generator
+  let generatedCode = $derived(
+    (() => {
+      let props = [];
+      // let fileSlot = '';
+      if (toggleSize !== 'default') props.push(` size="${toggleSize}"`);
+      if (toggleColor !== 'primary') props.push(` color="${toggleColor}"`);
+      if (checked) props.push(' checked');
+      if (disabled) props.push(' disabled');
+      if (leftSlot) props.push(' bind:checked');
+
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+
+      return `<Toggle${propsString}>${leftSlot ? `\n {#snippet leftLabel()}\n  <div class="me-4 {!checked ? 'text-red-600 font-semibold' : ''}">Off</div>\n {/snippet}\n <div class={checked ? 'text-green-600 font-semibold' : ''}>On</div>\n` : 'Toggle me'}</Toggle>`
+    })()
+  );
 </script>
 
 <H1>Toggle</H1>
 
 <H2>Setup</H2>
 <HighlightCompo code={modules['./md/setup.md'] as string} />
-<H2>Default toggle</H2>
 
-<CodeWrapper innerClass="flex flex-col space-y-2">
-  <Toggle>Toggle me</Toggle>
-  <Toggle bind:checked>
-    {#snippet leftLabel()}
-    <div class="me-4 {!checked ? 'text-red-600 font-semibold' : ''}">Off</div>
-    {/snippet}
-    <div class={checked ? 'text-green-600 font-semibold' : ''}>Checked toggle</div></Toggle>
-  <Toggle disabled>Disabled toggle</Toggle>
-  <Toggle checked disabled>Disabled checked</Toggle>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/default-toggle.md'] as string} />
-
-<H2>Colors</H2>
-<CodeWrapper class="space-y-4">
-  <Toggle color={toggleColor} checked>Toggle</Toggle>
-  <div class="flex flex-wrap">
+<H2>Interactive Toggle Builder</H2>
+<CodeWrapper>
+  <div class="h-12">
+    <Toggle color={toggleColor} {toggleSize} bind:checked={checked} {disabled}>
+      {#snippet leftLabel()}
+        {#if leftSlot}
+        <div class="me-4 {!checked ? 'text-red-600 font-semibold' : ''}">Off</div>
+        {/if}
+      {/snippet}
+      {#if !leftSlot}
+        {#if disabled}Disabled {/if} {#if checked}Checked {/if} Toggle
+      {:else}
+        <div class={checked ? 'text-green-600 font-semibold' : ''}>On</div>
+      {/if}
+    </Toggle>
+  </div>
+  <div class="flex flex-wrap mb-4">
     <Label class="mb-4 w-full font-bold">Color:</Label>
     {#each colors as colorOption}
       <Radio labelClass="w-24 m-2" name="toggle_color" bind:group={toggleColor} color={colorOption as Toggle['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/colors.md'] as string} />
-
-<H2>Sizes</H2>
-<CodeWrapper class="flex flex-col space-y-2">
-  <div class="h-10">
-    <Toggle {toggleSize} checked>Toggle</Toggle>
-  </div>
-  <div class="flex flex-wrap space-x-4">
+  <div class="flex flex-wrap space-x-4 mb-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as size}
       <Radio labelClass="w-32 m-2" name="toggle_size" bind:group={toggleSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <Toggle spanClass={customSize}>Custom toggle</Toggle>
+  <div class="flex flex-wrap gap-2">
+    <Button class="w-40" onclick={changeChecked}>{checked ? 'Remove checked' : 'Add checked'}</Button>
+    <Button class="w-40" color="secondary" onclick={changeDisabled}>{disabled ? 'Remove disabled' : 'Add disabled'}</Button>
+    <Button class="w-40" color="emerald" onclick={changeLeftLabel}>{leftSlot ? 'Remove left slot' : 'Add left slot'}</Button>
+  </div>
+  {#snippet codeblock()}
+  <HighlightCompo code={generatedCode} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/sizes.md'] as string} />
+
+<H2 class="mt-64">Custom size</H2>
+<CodeWrapper class="flex flex-col space-y-2">
+  <Toggle spanClass='w-16 h-10 after:top-1 after:left-[4px]  after:h-8 after:w-8'>Custom toggle</Toggle>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/sizes.md'] as string} />
+  {/snippet}
+</CodeWrapper>
