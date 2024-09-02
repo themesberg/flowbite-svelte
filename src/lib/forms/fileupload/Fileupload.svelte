@@ -5,7 +5,7 @@
   const base = $derived(fileupload({ size, class: className }));
 </script>
 
-<input type="file" bind:files {...restProps} class={base} />
+<input type="file" bind:files bind:value {...restProps} class={base} />
 
 <!--
 @component
