@@ -16,6 +16,7 @@
   let toggleColor: Toggle['color'] = $state('primary');
   const sizes = Object.keys(toggle.variants.size) as Toggle['size'][];
   let toggleSize: Toggle['size'] = $state('default');
+  let checked: boolean = $state(false);
 </script>
 
 <H1>Toggle</H1>
@@ -24,9 +25,13 @@
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 <H2>Default toggle</H2>
 
-<CodeWrapper class="flex flex-col space-y-4">
+<CodeWrapper innerClass="flex flex-col space-y-2">
   <Toggle>Toggle me</Toggle>
-  <Toggle checked>Checked toggle</Toggle>
+  <Toggle bind:checked>
+    {#snippet leftLabel()}
+    <div class="me-4 {!checked ? 'text-red-600 font-semibold' : ''}">Off</div>
+    {/snippet}
+    <div class={checked ? 'text-green-600 font-semibold' : ''}>Checked toggle</div></Toggle>
   <Toggle disabled>Disabled toggle</Toggle>
   <Toggle checked disabled>Disabled checked</Toggle>
 </CodeWrapper>

@@ -9,6 +9,7 @@ type SizeType = VariantProps<typeof toggle>['size'];
 
 interface ToggleProps extends HTMLInputAttributes {
   children: Snippet;
+  leftLabel?: Snippet;
   toggleSize?: SizeType;
   value?: string | number;
   checked?: boolean | undefined;
