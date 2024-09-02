@@ -46,6 +46,12 @@
   const decorationColors = Object.keys(span.variants.decorationColor);
   let spanDecorationThickness: Span['decorationThickness'] = $state('0');
   const docrationThickness = Object.keys(span.variants.decorationThickness);
+  let opacityClass = $state('')
+  const changeOpacity = () => {
+    opacityClass = opacityClass === '' ? 'text-primary-600/50 dark:text-primary-500/50':'';
+    spanHighlight = 'none';
+    spanGradient = 'none';
+  }
 
   // code generator
   let generatedCode = $derived(
@@ -77,7 +83,7 @@
 
 <H2>Interactive Span Builder</H2>
 <CodeWrapper>
-  <P size="xl" weight="bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. <Span italic={spanItalic} underline={spanUnderline} linethrough={spanLinethrough} uppercase={spanUppercase} gradient={spanGradient} decoration={spanDecoration} decorationColor={spanDecorationColor} decorationThickness={spanDecorationThickness} highlight={spanHighlight}>Eligendi, nam ea eum provident.</Span> Fugiat vitae possimus ipsum a unde, at laboriosam.</P>
+  <P size="xl" weight="bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. <Span italic={spanItalic} underline={spanUnderline} linethrough={spanLinethrough} uppercase={spanUppercase} gradient={spanGradient} decoration={spanDecoration} decorationColor={spanDecorationColor} decorationThickness={spanDecorationThickness} highlight={spanHighlight} class={opacityClass}>Eligendi, nam ea eum provident.</Span> Fugiat vitae possimus ipsum a unde, at laboriosam.</P>
   <div class="mb-4 mt-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Highlight:</Label>
     {#each highlights as highlight}
@@ -147,21 +153,9 @@
     <Button class="w-32" color="amber" onclick={changeUnderline}>{spanUnderline ? 'No underline' : 'Underline'}</Button>
     <Button class="w-40" color="violet" onclick={changeLinethrough}>{spanLinethrough ? 'No linethrough' : 'Linethrough '}</Button>
     <Button class="w-40" color="blue" onclick={changeUppercase}>{spanUppercase ? 'No uppercase' : 'Uppercase'}</Button>
+    <Button class="w-32" color="teal" onclick={changeOpacity}>{opacityClass ? 'No opacity' : 'Add opacity'}</Button>
   </div>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCode} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Opacity</H2>
-<p>Use the `class` prop to set the opacity of inline text elements.</p>
-
-<CodeWrapper>
-  <P size="xl"><Span class="text-blue-600 dark:text-blue-500">Flowbite app will help you</Span> improve yourself by analysing your everyday life.</P>
-  <P size="xl"><Span class="text-blue-600/75 dark:text-blue-500/75">Flowbite app will help you</Span> improve yourself by analysing your everyday life.</P>
-  <P size="xl"><Span class="text-blue-600/50 dark:text-blue-500/50">Flowbite app will help you</Span> improve yourself by analysing your everyday life.</P>
-  <P size="xl"><Span class="text-blue-600/25 dark:text-blue-500/25">Flowbite app will help you</Span> improve yourself by analysing your everyday life.</P>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/opacity.md'] as string} />
   {/snippet}
 </CodeWrapper>
