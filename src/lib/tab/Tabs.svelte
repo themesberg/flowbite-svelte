@@ -8,6 +8,10 @@
   // using $derived() shows State referenced in its own scope will never update. Did you mean to reference it inside a closure?
   const { base, content, divider: dividerClass, active, inactive } = $derived(tabs({ tabStyle, hasDivider: divider }));
   // $inspect('typeof',typeof(active))
+  // const activeCls = ()=>active() || ctxActive;
+  // $inspect('activeCls: ', activeCls);
+  // const inactiveCls = ()=>inactive() || ctxInactive;
+
   const ctx: TabCtxType = {
     activeClass: active() || ctxActive,
     inactiveClass: inactive() || ctxInactive,

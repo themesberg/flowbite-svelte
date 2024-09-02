@@ -28,8 +28,8 @@ interface TabitemProps extends HTMLLiAttributes {
 }
 
 interface TabCtxType {
-  activeClass: string | undefined | null;
-  inactiveClass: string | undefined | null;
+  activeClass?: string | undefined | null;
+  inactiveClass?: string | undefined | null;
   selected: Writable<HTMLElement>;
 }
 

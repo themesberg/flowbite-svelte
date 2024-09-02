@@ -1,15 +1,11 @@
 <script lang="ts">
   import type { ApexOptions } from 'apexcharts';
   import './chart.css';
-
-  let {
-    options,
-    class: classname = ''
-  }: {
+  interface Props {
     options: ApexOptions;
     class?: string | undefined | null;
-  } = $props();
-  // export let options: ApexOptions;
+  }
+  let { options, class: classname }: Props = $props();
 
   function initChart(node: HTMLElement, options: ApexOptions) {
     let chart: ApexCharts;

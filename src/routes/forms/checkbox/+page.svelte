@@ -42,6 +42,40 @@
   const clearGroup = () => {
     group = [];
   };
+  // const checkedStates = [ 'false', 'true', 'indeterminate' ];
+  let checkedState = $state(false);
+  const changeCheckedState = () => {
+    checkedState = !checkedState;
+    indeterminateState = false;
+  }
+  let indeterminateState = $state(false);
+  const changeIntermidiateState = () => {
+    indeterminateState = !indeterminateState;
+    checkedState = false;
+  }
+  let disabledState = $state(false);
+  const changeDisabledState = () => {
+    disabledState = !disabledState;
+  }
+  let helperState = $state(false);
+  const changeHelperState = () => {
+    helperState = !helperState;
+  }
+
+  // code generator
+  let generatedCode = $derived(
+    (() => {
+      let props = [];
+      if (checkedState) props.push(' checked');
+      if (indeterminateState) props.push(' indeterminate');
+      if (disabledState) props.push(' disabled');
+
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
+
+      return `<Checkbox${propsString}>My Checkbox</Checkbox>
+${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`
+    })()
+  );
 </script>
 
 <H1>Checkbox</H1>
@@ -49,45 +83,34 @@
 <H2>Setup</H2>
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
-<H2>Checkbox examples</H2>
-<CodeWrapper innerClass="space-y-4">
-  <Checkbox>Default checkbox</Checkbox>
-  <Checkbox checked color="green">Checked state</Checkbox>
-  <Checkbox indeterminate>Indeterminate state</Checkbox>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/checkbox-examples.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Colors</H2>
-<CodeWrapper innerClass="space-y-4">
-  <Checkbox color={checkboxColor} checked>Default checkbox</Checkbox>
-  <Label class="flex items-center">
-    <Checkbox checked class="text-sky-400 focus:ring-pink-500" />
-    Your custom color
-  </Label>
-  <div class="flex flex-wrap space-x-4">
+<H2>Interactive Checkbox Builder</H2>
+<CodeWrapper>
+  <div class="h-8">
+  <Checkbox checked={checkedState} indeterminate={indeterminateState} color={checkboxColor} disabled={disabledState}>{#if disabledState}This is disabled{:else}Default checkbox{/if}</Checkbox>
+  {#if helperState}
+  <Helper id="helper-checkbox-text" class="ps-6">
+    For orders shipped from $25 in books or $29 in other categories
+  </Helper>
+  {/if}
+  </div>
+  <div class="flex flex-wrap space-x-4 mt-4 mb-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="checkbox_color" bind:group={checkboxColor} color={colorOption as Checkbox['color']} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="checkbox_color" bind:group={checkboxColor} color={colorOption as Checkbox['color']} onchange={()=>checkedState = true} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
+  <div class="flex flex-wrap gap-2">
+    <Button class="w-48" color="primary" onclick={changeCheckedState}>{checkedState ? 'Remove checked' : 'Add checked'}</Button>
+    <Button class="w-48" color="secondary" onclick={changeIntermidiateState}>{indeterminateState ? 'Remove indeterminate' : 'Add indeterminate'}</Button>
+    <Button class="w-48" color="pink" onclick={changeDisabledState}>{disabledState ? 'Remove disabled' : 'Add disabled'}</Button>
+    <Button class="w-48" color="lime" onclick={changeHelperState}>{helperState ? 'Remove helper' : 'Add helper'}</Button>
+  </div>
   {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/colors.md'] as string} />
+    <HighlightCompo code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 
-<H2>Disabled state</H2>
-<CodeWrapper innerClass="space-y-4">
-  <Checkbox disabled>Disabled checkbox</Checkbox>
-  <Checkbox disabled checked>Disabled checked</Checkbox>
-  <Checkbox disabled indeterminate>Disabled indeterminate</Checkbox>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/disabled-state.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Alternative syntax</H2>
+<H2>Checkbox in a table</H2>
 <CodeWrapper innerClass="flex flex-col gap-4">
   <Table>
     <TableHead>
@@ -126,14 +149,6 @@
   {/snippet}
 </CodeWrapper>
 
-<H2>Helper text</H2>
-<CodeWrapper class="space-y-1">
-  <Checkbox aria_describedby="helper-checkbox-text">Free shipping via Flowbite</Checkbox>
-  <Helper id="helper-checkbox-text" class="ps-6">For orders shipped from $25 in books or $29 in other categories</Helper>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/helper-text.md'] as string} />
-  {/snippet}
-</CodeWrapper>
 
 <H2>Bordered</H2>
 <CodeWrapper>

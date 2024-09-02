@@ -8,7 +8,7 @@ import { button, gradientButton } from './theme';
 type ButtonColorType = VariantProps<typeof button>['color'];
 type ButtonSizeType = VariantProps<typeof button>['size'];
 
-interface ButtonProps extends HTMLButtonAttributes {
+interface ButtonProps {
   children: Snippet;
   pill?: boolean;
   outline?: boolean;
@@ -25,6 +25,7 @@ interface ButtonProps extends HTMLButtonAttributes {
   checked?: boolean | undefined;
   class?: string | undefined;
   onclick?: () => void;
+  onmouseenter?: () => void;
 }
 
 type GradientButtonColorType = VariantProps<typeof gradientButton>['color'];

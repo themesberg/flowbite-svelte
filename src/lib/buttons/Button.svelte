@@ -5,7 +5,7 @@
 
   const group: SizeType = getContext('group');
 
-  let { children, pill = false, outline = false, size = group ? 'sm' : 'md', href = undefined, target = undefined, rel = undefined, type = 'button', color = group ? (outline ? 'dark' : 'alternative') : 'primary', shadow = false, tag = 'button', disabled, name = undefined, class: className, onclick, ...restProps }: Props = $props();
+  let { children, pill = false, outline = false, size = group ? 'sm' : 'md', href = undefined, target = undefined, rel = undefined, type = 'button', color = group ? (outline ? 'dark' : 'alternative') : 'primary', shadow = false, tag = 'button', disabled, name = undefined, class: className, onclick, onmouseenter, ...restProps }: Props = $props();
 
   const disabledValue = disabled !== null ? disabled : undefined;
   const isGroup = !!group;

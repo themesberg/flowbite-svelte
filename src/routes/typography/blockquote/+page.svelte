@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Blockquote, blockquote, P, Rating, Label, Radio, Button } from '$lib';
+  import { Blockquote, blockquote, P, Rating, Label, Radio, Button, Input, CloseButton } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -11,6 +11,7 @@
     eager: true
   });
   import { QuoteSolid } from 'flowbite-svelte-icons';
+  let { text = $bindable('Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quas commodi accusamus dignissimos qui totam iste rem necessitatibus? Cumque minus et animi nostrum deserunt provident excepturi laboriosam ipsum minima nisi!') } = $props();
 
   const styles = ['default', 'solid', 'icon', 'context', 'testimonial', 'review'];
   let selectedStyle = $state('default');
@@ -32,9 +33,9 @@
   const changeBg = () => {
     bg = !bg;
   };
-  let blockClass: Blockquote['class'] = $state('p-4');
+  let blockClass: Blockquote['class'] = $state('p-8');
   const changeClass = () => {
-    blockClass = blockClass === 'p-4' ? 'p-2' : 'p-4';
+    blockClass = blockClass === 'p-8' ? 'p-4' : 'p-8';
   };
 
   // code generator
@@ -65,8 +66,13 @@
 
 <H2>Interactive Blockquote Bilder</H2>
 <CodeWrapper>
+  <Input type="text" bind:value={text} placeholder="Write your blockquote text" class='pr-12 mb-8'>{#snippet right()}
+    <CloseButton onclick={() => (text = '')} />
+  {/snippet}</Input>
   <div class="mb-4 h-[300px] overflow-y-auto md:h-[250px]">
-    <Blockquote {border} {italic} size={selectedSize} {bg} alignment={selectedAlignment} class={blockClass}>"I heard this rumor where the humans are our owners, pfft, what do they know?! poop in the plant pot. Pee on walls it smells like breakfast it's 3am, time to create some chaos but meow all night ..."</Blockquote>
+    
+
+    <Blockquote {border} {italic} size={selectedSize} {bg} alignment={selectedAlignment} class={blockClass}>{text}</Blockquote>
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
@@ -84,7 +90,7 @@
     <Button class="w-40" color="blue" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
     <Button class="w-40" color="rose" onclick={changeItalic}>{italic ? 'Remove italic' : 'Add italic'}</Button>
     <Button class="w-40" color="indigo" onclick={changeBg}>{bg ? 'Remove bg' : 'Add bg'}</Button>
-    <Button class="w-40" color="sky" onclick={changeClass}>{blockClass === 'p-4' ? 'class: p-4' : 'class: p-2'}</Button>
+    <Button class="w-40" color="sky" onclick={changeClass}>{blockClass === 'p-8' ? 'class: p-4' : 'class: p-8'}</Button>
   </div>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCode} />
