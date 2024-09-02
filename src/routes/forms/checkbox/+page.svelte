@@ -70,7 +70,7 @@
       if (indeterminateState) props.push(' indeterminate');
       if (disabledState) props.push(' disabled');
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
       return `<Checkbox${propsString}>My Checkbox</Checkbox>
 ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`

@@ -1,40 +1,107 @@
 <script lang="ts">
-  import { Textarea, Label, Toolbar, Button } from '$lib';
-  // import { PaperClipOutline, MapPinAltSolid, ImageOutline, CodeOutline, FaceGrinOutline, PaperPlaneOutline } from 'flowbite-svelte-icons';
+  import { Textarea, Label, Toolbar, ToolbarButton, ToolbarGroup, Button, Helper } from '$lib';
+  import { PaperClipOutline, MapPinAltSolid, ImageOutline, CodeOutline, FaceGrinOutline, PaperPlaneOutline } from 'flowbite-svelte-icons';
 
-  // import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  // const modules = import.meta.glob('./md/*.md', {
-  //   query: '?raw',
-  //   import: 'default',
-  //   eager: true
-  // });
+  const modules = import.meta.glob('./md/*.md', {
+    query: '?raw',
+    import: 'default',
+    eager: true
+  });
 </script>
 
 <H1>Textarea</H1>
-<p>The textarea component is a multi-line text field input that can be used to receive longer chunks of text from the user in the form of a comment box, description field, and more.</p>
-<H2>Textarea example</H2>
-<p>Get started with the default example of a textarea component below.</p>
+<H2>Setup</H2>
+
+<HighlightCompo code={modules['./md/setup.md'] as string} />
+
+<H2>Default textarea</H2>
+
 <CodeWrapper>
   <Label for="textarea-id" class="mb-2">Your message</Label>
   <Textarea id="textarea-id" placeholder="Your message" rows={4} name="message" />
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/default.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>WYSIWYG Editor</H2>
 <CodeWrapper>
   <form>
-    <label for="editor" class="sr-only">Publish post</label>
+    <Label for="editor" class="sr-only">Publish post</Label>
     <Textarea id="editor" rows={8} class="mb-4" placeholder="Write a comment">
       {#snippet header()}
-        <Toolbar embedded>hekko</Toolbar>
+        <Toolbar embedded>
+          <ToolbarGroup>
+            <ToolbarButton name="Attach file"><PaperClipOutline class="w-6 h-6 rotate-45" /></ToolbarButton>
+            <ToolbarButton name="Embed map"><MapPinAltSolid class="w-6 h-6" /></ToolbarButton>
+            <ToolbarButton name="Upload image"><ImageOutline class="w-6 h-6" /></ToolbarButton>
+          </ToolbarGroup>
+          <ToolbarGroup>
+            <ToolbarButton name="Format code"><CodeOutline class="w-6 h-6" /></ToolbarButton>
+            <ToolbarButton name="Add emoji"><FaceGrinOutline class="w-6 h-6" /></ToolbarButton>
+          </ToolbarGroup>
+          {#snippet end()}
+          <ToolbarButton name="Send"><PaperPlaneOutline class="w-6 h-6 rotate-45" /></ToolbarButton>
+          {/snippet}
+        </Toolbar>
       {/snippet}
     </Textarea>
-    <Button>Publish post</Button>
+    <Button class="mt-4">Publish post</Button>
   </form>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/wysiwyg-editor.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
+<H2>Comment box</H2>
 <CodeWrapper>
-  <Toolbar>hello</Toolbar>
+  <form>
+    <Textarea class="mb-4" placeholder="Write a comment">
+      {#snippet footer()}
+      <div class="flex items-center justify-between">
+        <Button type="submit">Post comment</Button>
+        <Toolbar embedded>
+          <ToolbarButton name="Attach file"><PaperClipOutline class="w-6 h-6" /></ToolbarButton>
+          <ToolbarButton name="Set location"><MapPinAltSolid class="w-6 h-6" /></ToolbarButton>
+          <ToolbarButton name="Upload image"><ImageOutline class="w-6 h-6" /></ToolbarButton>
+        </Toolbar>
+      </div>
+      {/snippet}
+    </Textarea>
+  </form>
+  <Helper class="mt-4">
+    Remember, contributions to this topic should follow our <a href="/" class="text-primary-600 dark:text-primary-500 hover:underline"> Community Guidelines </a>.
+  </Helper>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/comment-box.md'] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Chatroom input</H2>
+<CodeWrapper>
+  <form>
+    <label for="chat" class="sr-only">Your message</label>
+    <div class="flex items-center px-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-700">
+      <ToolbarButton color="dark" class="text-gray-500 dark:text-gray-400">
+        <ImageOutline class="w-6 h-6" />
+        <span class="sr-only">Upload image</span>
+      </ToolbarButton>
+      <ToolbarButton color="dark" class="text-gray-500 dark:text-gray-400">
+        <FaceGrinOutline class="w-6 h-6" />
+        <span class="sr-only">Add emoji</span>
+      </ToolbarButton>
+      <Textarea id="chat" class="mx-4 bg-white dark:bg-gray-800" rows="1" placeholder="Your message..." />
+      <ToolbarButton color="blue" class="rounded-full text-primary-600 dark:text-primary-500">
+        <PaperPlaneOutline class="w-6 h-6 rotate-45" />
+        <span class="sr-only">Send message</span>
+      </ToolbarButton>
+    </div>
+  </form>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/chatroom-input.md'] as string} />
+  {/snippet}
 </CodeWrapper>

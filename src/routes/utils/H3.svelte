@@ -1,12 +1,15 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
   import { Heading } from '$lib';
-  interface Props {
+  import { h3Cls } from './theme' 
+  interface Props extends HTMLAttributes<HTMLHeadingElement> {
     children: Snippet;
   }
-  let { children }: Props = $props();
+  let { children, class: className }: Props = $props();
+  const base = $derived(h3Cls({ className }));
 </script>
 
-<Heading tag="h3" class="my-4 text-xl">
+<Heading tag="h3" class={base}>
   {@render children()}
 </Heading>

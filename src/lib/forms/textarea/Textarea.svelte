@@ -1,24 +1,10 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import { twMerge } from 'tailwind-merge';
-  import { getContext } from 'svelte';
-  import type { HTMLTextareaAttributes } from 'svelte/elements';
-  // import Wrapper from '../utils/Wrapper.svelte';
-  interface Props extends HTMLTextareaAttributes {
-    header?: Snippet;
-    footer?: Snippet;
-    value?: string | string[] | number | undefined | null;
-    wrappedClass?: string | undefined | null;
-    unWrappedClass?: string | undefined | null;
-    innerWrappedClass?: string | undefined | null;
-    headerClass?: string | undefined | null;
-    footerClass?: string | undefined | null;
-    class?: string | undefined | null;
-  }
+  import { type TextareaProps as Props, textarea } from '.';
 
-  let { header, footer, value, wrappedClass = 'block w-full text-sm border-0 px-0 bg-inherit dark:bg-inherit focus:outline-none focus:ring-0 disabled:cursor-not-allowed disabled:opacity-50', unWrappedClass = 'p-2.5 text-sm focus:ring-primary-500 border-gray-300 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 disabled:cursor-not-allowed disabled:opacity-50', innerWrappedClass = 'py-2 px-4 bg-white dark:bg-gray-800', headerClass = '', footerClass = '', class: className = '', ...restProps }: Props = $props();
-  const background = getContext('background');
-
+  let { header, footer, value, divClass, innerClass, headerClass, footerClass, disabled, class: className, ...restProps }: Props = $props();
+  
+  let hasHeader = !!header;
+  let hasFooter = !!footer;
   let wrapped: boolean = $state(false);
   if (header || footer) {
     wrapped = true;
@@ -26,31 +12,26 @@
     wrapped = false;
   }
 
-  // let wrapperClass: string | undefined | null;
-  let wrapperClass = twMerge('w-full rounded-lg bg-gray-50', background ? 'dark:bg-gray-600' : 'dark:bg-gray-700', 'text-gray-900 dark:placeholder-gray-400 dark:text-white', 'border border-gray-200', background ? 'dark:border-gray-500' : 'dark:border-gray-600', className);
-
-  let textareaClass: string | undefined | null = $derived(wrapped ? wrappedClass : twMerge(wrapperClass, unWrappedClass));
-
-  const headerCls = (isheader: boolean) => twMerge(isheader ? 'border-b' : 'border-t', 'py-2 px-3 border-gray-200', background ? 'dark:border-gray-500' : 'dark:border-gray-600', isheader ? headerClass : footerClass);
-
-  let innerWrapperCls: string = twMerge(innerWrappedClass, footer ? '' : 'rounded-b-lg', header ? '' : 'rounded-t-lg');
+  const { base, wrapper, innerWrapper, headerCls, footerCls } = $derived(textarea({  wrapped, hasHeader, hasFooter}));
+  $inspect('wrapped: ', wrapped);
 </script>
 
-<div class={wrapperClass}>
+<div class={wrapper({ class: divClass })}>
   {#if header}
-    <div class={headerCls(true)}>
+    <div class={headerCls({ class: headerClass})}>
       {@render header()}
     </div>
   {/if}
-  <div class={innerWrapperCls}>
-    <textarea bind:value {...restProps} class={textareaClass}></textarea>
+  <div class={innerWrapper({ class: innerClass })}>
+    <textarea bind:value {...restProps} class={base({ className })}></textarea>
   </div>
   {#if footer}
-    <div class={headerCls(false)}>
+    <div class={footerCls({ class: footerClass})}>
       {@render footer()}
     </div>
   {/if}
 </div>
+
 
 <!--
 @component

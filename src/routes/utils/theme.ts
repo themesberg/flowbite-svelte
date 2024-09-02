@@ -21,6 +21,14 @@ export const codewrapper = tv({
   }
 });
 
+export const h1Cls = tv({
+  base:'my-8 text-3xl'
+})
+
 export const h2Cls = tv({
   base:'my-6 text-2xl'
+})
+
+export const h3Cls = tv({
+  base:'my-4 text-xl'
 })

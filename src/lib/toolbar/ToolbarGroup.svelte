@@ -1,23 +1,19 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
-  import type { Snippet } from 'svelte';
+  // import { twMerge } from 'tailwind-merge';
   import type { Writable } from 'svelte/store';
   import { getContext } from 'svelte';
-  import type { HTMLAttributes } from 'svelte/elements';
+  import { type ToolbarGroupProps as Props, toolbarGroup } from './';
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    children: Snippet;
-    class?: string | undefined | null;
-    divClass?: string | undefined | null;
-  }
 
-  let { children, class: className, divClass = 'flex items-center space-x-1 rtl:space-x-reverse sm:pe-4 sm:ps-4 first:sm:ps-0 last:sm:pe-0', ...restProps }: Props = $props();
+  let { children, spacing = 'default', padding = 'default', position = 'middle', class: className, divClass = 'flex items-center space-x-1 rtl:space-x-reverse sm:pe-4 sm:ps-4 first:sm:ps-0 last:sm:pe-0', ...restProps }: Props = $props();
+
+  const groupClass = $derived(toolbarGroup({ spacing, padding, position,class: className }));
 
   const options: Writable<boolean> = getContext('toolbar');
   if (options) $options = true;
 </script>
 
-<div class={twMerge(divClass, className)} {...restProps}>
+<div class={groupClass} {...restProps}>
   {@render children()}
 </div>
 

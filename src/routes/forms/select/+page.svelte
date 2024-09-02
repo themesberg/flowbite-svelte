@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Select, Label, Radio, Helper, Dropdown, DropdownUl, DropdownLi, uiHelpers } from '$lib';
+  import { Select, Label, Radio, Helper, Dropdown, DropdownUl, DropdownLi, uiHelpers, ButtonGroup, Button } from '$lib';
   import { ChevronDownOutline } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -25,7 +25,7 @@
     value: string;
     name: string;
   }
-  let countrySelected: Country | undefined = $state();
+
   let customSelected: State | undefined = $state();
 
   let countries: Country[] = [
@@ -66,85 +66,50 @@
     md: 'Medium',
     lg: 'Large'
   };
+  let underline = $state(false);
+  const changeUnderline = () => {
+    underline = !underline;
+  }
+  let disabled = $state(false);
+  const changeDiabled = () => {
+    disabled = !disabled;
+  }
+  let selected = $state('');
+  let bindValue = $state(false);
+  const changeBindValue = () => {
+    bindValue = !bindValue;
+  }
+
+  // code generator
+  let generatedCode = $derived(
+    (() => {
+      let props = [];
+      // let fileSlot = '';
+      if (selectSize !== 'md') props.push(` size="${selectSize}"`);
+      if (underline) props.push(' underline');
+      if (disabled) props.push(' disabled');
+      if (bindValue) props.push(' bind:value={selected}');
+    
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+
+      return `<Select${propsString} />${bindValue ? '\nSelected value: {selected}' : ''}` 
+    })()
+  );
 </script>
 
 <H1>Select</H1>
 
 <H2>Setup</H2>
-
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
-<H2>Select input example</H2>
-
-<CodeWrapper class="h-48">
-  <Label>
-    Select an option
-    <Select selectClass="mt-2" items={countries} bind:value={countrySelected} />
-  </Label>
-  <Helper class="mt-2">Your selected value is: {countrySelected}</Helper>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/defaultselect.md'] as string} />
-
-<H2>Disabled state</H2>
-
-<CodeWrapper class="h-48">
-  <Label for="select-disabled" color="disabled" class="mb-2">Disabled select</Label>
-  <Select id="select-disabled" disabled items={countries} placeholder="You can't select anything..." />
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/disabled.md'] as string} />
-
-<H2>Underline select</H2>
-
-<CodeWrapper class="h-48">
-  <Label for="select-underline" class="sr-only">Underline select</Label>
-  <Select id="select-underline" underline selectClass="mt-2" items={countries} />
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/underline.md'] as string} />
-
-<H2>Select with dropdown</H2>
-<CodeWrapper class="h-96">
-  <div class="flex">
-    <button id="states-button" class="z-10 inline-flex flex-shrink-0 items-center rounded-s-lg border border-gray-300 bg-gray-100 px-4 py-2.5 text-center text-sm font-medium text-gray-500 hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-700" type="button" onclick={dropdown.toggle}>
-      <Usa />
-      USA
-      <ChevronDownOutline class="ms-2 h-6 w-6" />
-    </button>
-    <div class="relative">
-      <Dropdown {dropdownStatus} {closeDropdown} params={transitionParams} class="absolute -left-[120px] top-[40px]">
-        <DropdownUl>
-          <DropdownLi aClass="flex items-center" href="/">
-            <Usa />
-            United States
-          </DropdownLi>
-          <DropdownLi aClass="flex items-center" href="/">
-            <Germany />
-            Germany
-          </DropdownLi>
-          <DropdownLi aClass="flex items-center" href="/">
-            <Italy />
-            Italy
-          </DropdownLi>
-          <DropdownLi aClass="flex items-center" href="/">
-            <China />
-            China
-          </DropdownLi>
-        </DropdownUl>
-      </Dropdown>
-    </div>
-    <Select items={states} placeholder="Choose the state" selectClass="!rounded-s-none" />
-  </div>
-</CodeWrapper>
-
-<H2>Size</H2>
-
+<H2>Interactive Select Builder</H2>
 <CodeWrapper>
-  <div class="h-64">
-    <Label for="select-sm" class="mb-4">{sizeDisplay[selectSize]} select</Label>
-    <Select id="select-sm" size={selectSize} items={countries} selectClass="mb-8" />
-    <Select id="select-sm" underline size={selectSize} items={countries} selectClass="mb-8" />
+  <div class="h-32">
+    <Label for="select-sm" class="mb-4">{#if disabled}Disabled{/if} {sizeDisplay[selectSize]} select</Label>
+    <Select id="select-sm" size={selectSize} items={countries} {underline} {disabled} bind:value={selected} class="mb-2"/>
+    {#if bindValue}
+    <Helper class="text-base">Selected value: {selected}</Helper>
+    {/if}
   </div>
   <div class="flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
@@ -152,17 +117,65 @@
       <Radio labelClass="w-24 my-1" name="input_size" bind:group={selectSize} value={option}>{option}</Radio>
     {/each}
   </div>
+  <div class="mt-4 flex flex-wrap gap-2">
+    <Button class="w-40" onclick={changeUnderline}>{underline ? 'Default' : 'Underline'}</Button>
+    <Button class="w-40" color="secondary" onclick={changeDiabled}>{disabled ? 'Enabled' : 'Disabled'}</Button>
+    <Button class="w-40" color="rose" onclick={changeBindValue}>{bindValue ? 'Unbind' : 'Bind value'}</Button>
+  </div>
+  {#snippet codeblock()}
+  <HighlightCompo code={generatedCode} />
+  {/snippet}
 </CodeWrapper>
 
-<H2>Custom options</H2>
+<H2>Select with dropdown</H2>
+<CodeWrapper innerClass="h-64">
+  <ButtonGroup class="w-full">
+  <Button onclick={dropdown.toggle}>
+    <Usa />
+    USA
+    <ChevronDownOutline class="ms-2 h-6 w-6" />
+  </Button>
+  <div class="relative">
+    <Dropdown {dropdownStatus} {closeDropdown} params={transitionParams} class="absolute -left-[120px] top-[40px]">
+      <DropdownUl>
+        <DropdownLi aClass="flex items-center" href="/">
+          <Usa />
+          United States
+        </DropdownLi>
+        <DropdownLi aClass="flex items-center" href="/">
+          <Germany />
+          Germany
+        </DropdownLi>
+        <DropdownLi aClass="flex items-center" href="/">
+          <Italy />
+          Italy
+        </DropdownLi>
+        <DropdownLi aClass="flex items-center" href="/">
+          <China />
+          China
+        </DropdownLi>
+      </DropdownUl>
+    </Dropdown>
+  </div>
+  <Select items={states} placeholder="Choose the state" class="!rounded-s-none" />
+  </ButtonGroup>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/select-with-dropdown.md'] as string} />
+  {/snippet}
+</CodeWrapper>
 
+
+<H2>Custom options</H2>
 <CodeWrapper>
   <Label for="countries">Select an option</Label>
-  <Select id="countries" selectClass="mt-2" bind:value={customSelected} placeholder="">
+  <Select id="countries" class="mt-2" bind:value={customSelected} placeholder="">
     <option selected value="all">All</option>
-
     {#each countries as { value, name }}
       <option {value}>{name}</option>
     {/each}
   </Select>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/custom-options.md'] as string} />
+  {/snippet}
 </CodeWrapper>
+
