@@ -94,7 +94,7 @@
         <FaceGrinOutline class="w-6 h-6" />
         <span class="sr-only">Add emoji</span>
       </ToolbarButton>
-      <Textarea id="chat" class="mx-4 bg-white dark:bg-gray-800" rows="1" placeholder="Your message..." />
+      <Textarea id="chat" class="mx-4 bg-white dark:bg-gray-800" rows={1} placeholder="Your message..." />
       <ToolbarButton color="blue" class="rounded-full text-primary-600 dark:text-primary-500">
         <PaperPlaneOutline class="w-6 h-6 rotate-45" />
         <span class="sr-only">Send message</span>

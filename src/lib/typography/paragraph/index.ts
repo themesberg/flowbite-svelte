@@ -10,7 +10,6 @@ type SpaceType = VariantProps<typeof paragraph>['space'];
 type HeightType = VariantProps<typeof paragraph>['height'];
 type AlignType = VariantProps<typeof paragraph>['align'];
 type WhitespaceType = VariantProps<typeof paragraph>['whitespace'];
-type StyleType = VariantProps<typeof paragraph>['style'];
 
 interface ParagraphProps extends HTMLAttributes<HTMLParagraphElement> {
   children: Snippet;
@@ -22,7 +21,6 @@ interface ParagraphProps extends HTMLAttributes<HTMLParagraphElement> {
   space?: SpaceType;
   height?: HeightType;
   align?: AlignType;
-  style?: StyleType;
   justify?: boolean;
 }
 

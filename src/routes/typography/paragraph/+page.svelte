@@ -23,10 +23,12 @@
   let pAlign: P['align'] = $state('left');
   const whitespaces = Object.keys(paragraph.variants.whitespace);
   let pWhitespace: P['whitespace'] = $state('normal');
-  const styles = Object.keys(paragraph.variants.style);
-  let pStyle: P['style'] = $state('normal');
   let pFirstupper: P['firstUpper'] = $state(false);
   let pJustify: P['justify'] = $state(false);
+  let italic = $state(false);
+  const changeItalic = () => {
+    italic = !italic;
+  };
 
   // code generator
   let generatedCode = $derived(
@@ -38,7 +40,7 @@
       if (pHeight !== 'normal') props.push(` height="${pHeight}"`);
       if (pAlign !== 'left') props.push(` align="${pAlign}"`);
       if (pWhitespace !== 'normal') props.push(` whitespace="${pWhitespace}"`);
-      if (pStyle !== 'normal') props.push(` style="${pStyle}"`);
+      if (italic) props.push(` italic`);
       if (pFirstupper) props.push(` firstUpper`);
       if (pJustify) props.push(` justify`);
 
@@ -58,8 +60,9 @@
 
 <H2>Interactive Paragraph Builder</H2>
 <CodeWrapper>
-  <div class="h-[150px] overflow-scroll">
-    <P weight={pWeight} size={pSize} space={pSpace} height={pHeight} align={pAlign} whitespace={pWhitespace} style={pStyle} firstUpper={pFirstupper} justify={pJustify} color="text-gray-500  dark:text-gray-400">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla eius debitis cupiditate tempora necessitatibus perspiciatis pariatur aspernatur, atque corporis aut deserunt temporibus eligendi inventore id doloribus veritatis quos nesciunt adipisci.</P>
+  <div class="h-[200px] overflow-scroll">
+    <Label class="text-xl mb-4">Click and add plain texts to edit the content</Label>
+    <P contenteditable weight={pWeight} size={pSize} space={pSpace} height={pHeight} align={pAlign} whitespace={pWhitespace} {italic} firstUpper={pFirstupper} justify={pJustify} class="border p-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla eius debitis cupiditate tempora necessitatibus perspiciatis pariatur aspernatur, atque corporis aut deserunt temporibus eligendi inventore id doloribus veritatis quos nesciunt adipisci.</P>
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
@@ -88,7 +91,7 @@
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Alignment:</Label>
     {#each alignments as align}
-      <Radio labelClass="w-20 my-1" name="p_align" bind:group={pAlign} value={align}>{align}</Radio>
+      <Radio labelClass="w-20 my-1" name="p_align" bind:group={pAlign} onchange={() => (pJustify = false)} value={align}>{align}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
@@ -97,15 +100,10 @@
       <Radio labelClass="w-16 my-1" name="p_whitespace" bind:group={pWhitespace} value={whitespace}>{whitespace}</Radio>
     {/each}
   </div>
-  <div class="mb-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Style:</Label>
-    {#each styles as style}
-      <Radio labelClass="w-20 my-1" name="p_style" bind:group={pStyle} value={style}>{style}</Radio>
-    {/each}
-  </div>
   <div class="flex flex-wrap gap-4">
-    <Button onclick={() => (pFirstupper = !pFirstupper)}>{pFirstupper ? 'Normal' : 'Upper'}</Button>
-    <Button onclick={() => (pJustify = !pJustify)}>{pJustify ? 'Normal' : 'Justify'}</Button>
+    <Button class="w-40" onclick={() => (pFirstupper = !pFirstupper)}>{pFirstupper ? 'Remove upper' : 'First upper'}</Button>
+    <Button class="w-40" color="secondary" onclick={() => {pJustify = !pJustify; pAlign = 'left';}}>{pJustify ? 'Remove justify' : 'Justify'}</Button>
+    <Button class="w-40" color="emerald" onclick={changeItalic}>{italic ? 'Remove italic' : 'Italic'}</Button>
   </div>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCode} />
