@@ -8,8 +8,8 @@
   }
   interface Component {
     checked: boolean;
-    problems?: string | undefined | null;
-    notes?: string | undefined | null;
+    problems?: string;
+    notes?: string;
   }
 
   interface ListType {

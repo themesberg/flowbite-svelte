@@ -15,7 +15,7 @@ interface IndicatorProps extends HTMLAttributes<HTMLDivElement> {
   size?: SizeType;
   border?: boolean;
   placement?: PlacementType | undefined;
-  class?: string | undefined;
+  class?: string;
   offset?: boolean;
 }
 

@@ -4,7 +4,7 @@
 
   interface Props {
     children: Snippet;
-    class?: string | undefined | null;
+    class?: string;
   }
   let { children, class: className = 'group relative' }: Props = $props();
 </script>

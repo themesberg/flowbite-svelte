@@ -12,13 +12,13 @@
     arrowdown?: Snippet;
     iconSlot?: Snippet;
     isOpen?: boolean | undefined;
-    btnClass?: string | undefined;
+    btnClass?: string;
     label: string | undefined;
-    spanClass?: string | undefined;
-    ulClass?: string | undefined;
+    spanClass?: string;
+    ulClass?: string;
     params?: ParamsType;
     transition?: TransitionFunc;
-    svgClass?: string | undefined | null;
+    svgClass?: string;
   }
 
   let { children, arrowup, arrowdown, iconSlot, isOpen, btnClass, label, spanClass, ulClass, transition = slide, params, svgClass, class: className, ...restProps }: Props = $props();

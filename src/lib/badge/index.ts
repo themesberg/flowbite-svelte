@@ -15,7 +15,7 @@ interface BadgeProps extends HTMLAttributes<HTMLDivElement> {
   large?: boolean;
   dismissable?: boolean;
   border?: boolean;
-  href?: string | undefined | null;
+  href?: string;
   rounded?: boolean;
   transition?: TransitionFunc;
   params?: ParamsType;

@@ -5,23 +5,23 @@
   interface Props {
     children: Snippet;
     evaluation?: Snippet;
-    helpfullink?: string | undefined | null;
-    abuselink?: string | undefined | null;
+    helpfullink?: string;
+    abuselink?: string;
     comment: {
-      id?: string | undefined | null;
+      id?: string;
       user: {
-        name?: string | undefined | null;
+        name?: string;
         img: {
           src: string | undefined | null;
-          alt?: string | undefined | null;
+          alt?: string;
         };
-        joined?: string | undefined | null;
+        joined?: string;
       };
       total?: number;
       rating: number;
-      heading?: string | undefined | null;
-      address?: string | undefined | null;
-      datetime?: string | undefined | null;
+      heading?: string;
+      address?: string;
+      datetime?: string;
     };
   }
 

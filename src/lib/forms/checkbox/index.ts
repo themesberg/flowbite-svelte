@@ -14,7 +14,7 @@ type CheckboxItem = {
 type ColorType = VariantProps<typeof checkbox>['color'];
 interface CheckboxProps extends HTMLInputAttributes {
   children?: Snippet;
-  aria_describedby?: string | undefined | null;
+  aria_describedby?: string;
   color?: ColorType;
   custom?: boolean;
   inline?: boolean;
@@ -22,10 +22,10 @@ interface CheckboxProps extends HTMLInputAttributes {
   rounded?: boolean;
   group?: (string | number)[];
   choices?: CheckboxItem[];
-  checked?: boolean | undefined | null;
-  classLabel?: string | undefined;
+  checked?: boolean;
+  classLabel?: string;
   indeterminate?: boolean;
-  class?: string | undefined | null;
+  class?: string;
 }
 
 export { Checkbox, checkbox, type CheckboxProps, type CheckboxItem, type ColorType };

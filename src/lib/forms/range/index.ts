@@ -12,6 +12,6 @@ interface RangeProps extends HTMLInputAttributes {
   appearance?: AppearanceType;
   color?: ColorType;
   rangeSize?: RangeType;
-  inputClass?: string | undefined | null;
+  inputClass?: string;
 }
 export { Range, range, type RangeProps };

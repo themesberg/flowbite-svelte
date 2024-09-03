@@ -8,10 +8,10 @@ interface SearchProps {
   right?: Snippet;
   size?: 'sm' | 'md' | 'lg';
   placeholder?: string;
-  value?: string;
+  value?: string | number | readonly string[] | undefined;
   show?: boolean;
   use?: Action<HTMLElement, any>;
-  class?: string | undefined | null;
+  class?: string;
 }
 
 export { Search, search, type SearchProps };

@@ -8,12 +8,12 @@ type AvatarVariants = VariantProps<typeof avatar>;
 
 interface AvatarProps extends HTMLAttributes<HTMLDivElement>, AvatarVariants {
   children?: Snippet;
-  href?: string | undefined | null;
-  src?: string | undefined | null;
+  href?: string;
+  src?: string;
   cornerStyle?: 'rounded' | 'circular';
   stacked?: boolean;
   dot?: object | undefined;
-  alt?: string | undefined | null;
+  alt?: string;
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   onclick?: () => void;
 }

@@ -8,21 +8,21 @@ import { breadcrumb } from './theme';
 interface BreadcrumbProps extends HTMLAttributes<HTMLElement> {
   children: Snippet;
   solid?: boolean;
-  navClass?: string | undefined | null;
-  olClass?: string | undefined | null;
-  ariaLabel?: string | undefined | null;
-  class?: string | undefined | null;
+  navClass?: string;
+  olClass?: string;
+  ariaLabel?: string;
+  class?: string;
 }
 
 interface BreadcrumbItemProps extends HTMLLiAttributes {
   children: Snippet;
   icon?: Snippet;
   home?: boolean;
-  href?: string | undefined;
-  linkClass?: string | undefined | null;
-  spanClass?: string | undefined;
-  homeClass?: string | undefined;
-  class?: string | undefined;
+  href?: string;
+  linkClass?: string;
+  spanClass?: string;
+  homeClass?: string;
+  class?: string;
 }
 
 export { Breadcrumb, BreadcrumbItem, breadcrumb, type BreadcrumbProps, type BreadcrumbItemProps };

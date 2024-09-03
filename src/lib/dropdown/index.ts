@@ -23,7 +23,7 @@ interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 interface DropdownDividerProps extends HTMLAttributes<HTMLDivElement> {
-  class?: string | undefined;
+  class?: string;
 }
 
 interface DropdownHeaderProps extends HTMLAttributes<HTMLDivElement> {
@@ -36,10 +36,10 @@ interface DropdownFooterProps extends HTMLAttributes<HTMLDivElement> {
 
 interface DropdownLiProps extends HTMLAnchorAttributes {
   children: Snippet;
-  aClass?: string | undefined | null;
-  href?: string | undefined | null;
-  activeClass?: string | undefined | null;
-  liClass?: string | undefined | null;
+  aClass?: string;
+  href?: string;
+  activeClass?: string;
+  liClass?: string;
 }
 
 interface DropdownUlProps extends HTMLAttributes<HTMLUListElement> {

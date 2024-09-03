@@ -18,7 +18,7 @@
 
 <div class={div({ class: divClass })} use:init>
   {#each items as item}
-    {@render figure(item)}
+    {@render figure(item as ImgType)}
   {:else}
     {#if children}
       {@render children()}

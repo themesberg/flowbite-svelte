@@ -18,9 +18,9 @@ interface DrawerProps extends HTMLAttributes<HTMLDivElement> {
   position?: PosisionType;
   width?: WidthType;
   backdrop?: boolean;
-  backdropClass?: string | undefined;
+  backdropClass?: string;
   placement?: PlacementType;
-  class?: string | undefined;
+  class?: string;
   params?: ParamsType;
   transition?: TransitionFunc;
 }
@@ -29,9 +29,9 @@ interface DrawerheadProps extends HTMLButtonAttributes {
   closeIcon?: Snippet;
   children?: Snippet;
   tag?: string;
-  headClass?: string | undefined;
-  buttonClass?: string | undefined;
-  svgClass?: string | undefined;
+  headClass?: string;
+  buttonClass?: string;
+  svgClass?: string;
 }
 
 export { Drawer, drawer, Drawerhead, drawerhead, type DrawerProps, type DrawerheadProps };

@@ -5,7 +5,6 @@ import { fileupload } from './theme';
 
 interface FileuploadProps extends Omit<HTMLInputAttributes, 'size'> {
   files?: FileList;
-  value?: any;
   size?: InputProps['size'];
   color?: InputProps['color'];
 }

@@ -4,16 +4,16 @@
   import type { HTMLAttributes } from 'svelte/elements';
 
   type ReviewType = {
-    name?: string | undefined | null;
-    imgSrc?: string | undefined | null;
-    imgAlt?: string | undefined | null;
-    address?: string | undefined;
-    reviewDate?: string | undefined;
-    title?: string | undefined | null;
+    name?: string;
+    imgSrc?: string;
+    imgAlt?: string;
+    address?: string;
+    reviewDate?: string;
+    title?: string;
     rating?: number;
-    item1?: string | undefined;
-    item2?: string | undefined;
-    item3?: string | undefined;
+    item1?: string;
+    item2?: string;
+    item3?: string;
   };
 
   interface Props extends HTMLAttributes<HTMLElement> {
@@ -23,13 +23,13 @@
     item2?: Snippet;
     item3?: Snippet;
     review?: ReviewType;
-    articleClass?: string | undefined | null;
-    divClass?: string | undefined | null;
-    div2Class?: string | undefined | null;
-    div3Class?: string | undefined | null;
-    imgClass?: string | undefined | null;
-    ulClass?: string | undefined | null;
-    liClass?: string | undefined | null;
+    articleClass?: string;
+    divClass?: string;
+    div2Class?: string;
+    div3Class?: string;
+    imgClass?: string;
+    ulClass?: string;
+    liClass?: string;
   }
 
   let { children, address, item1, item2, item3, review, articleClass = 'md:grid md:grid-cols-3 md:gap-8', divClass = 'mb-6 flex items-center space-x-4 rtl:space-x-reverse', div2Class = 'space-y-1 font-medium dark:text-white', div3Class = 'flex items-center text-sm text-gray-500 dark:text-gray-400', imgClass = 'h-10 w-10 rounded-full', ulClass = 'space-y-4 text-sm text-gray-500 dark:text-gray-400', liClass = 'flex items-center' }: Props = $props();

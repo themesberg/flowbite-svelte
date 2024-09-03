@@ -4,7 +4,7 @@ import type { Snippet } from 'svelte';
 
 interface CheckboxButtonProps {
   children: Snippet;
-  class?: string | undefined;
+  class?: string;
   group?: (string | number)[];
   value?: string | number;
   checked?: boolean | undefined;

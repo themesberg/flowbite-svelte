@@ -8,8 +8,8 @@ interface LabelProps extends HTMLLabelAttributes {
   children: Snippet;
   color?: ColorName | 'disabled';
   show?: boolean;
-  class?: string | undefined;
-  for?: string | undefined | null;
+  class?: string;
+  for?: string;
 }
 
 export { Label, label, type LabelProps };

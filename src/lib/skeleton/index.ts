@@ -13,7 +13,7 @@ import { cardPlaceholder, imagePlaceholder, listPlaceholder, skeleton, testimoni
 type CardSizeType = VariantProps<typeof cardPlaceholder>['size'];
 interface CardPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
   size?: CardSizeType;
-  class?: string | undefined;
+  class?: string;
 }
 
 type SizeImageType = VariantProps<typeof imagePlaceholder>['size'];
@@ -39,7 +39,7 @@ type SizeSkeletonType = VariantProps<typeof skeleton>['size'];
 
 interface SkeletonProps extends HTMLAttributes<HTMLDivElement> {
   size?: SizeSkeletonType;
-  class?: string | undefined;
+  class?: string;
 }
 
 interface TestimonialPlaceholderProps extends HTMLAttributes<HTMLDivElement> {}

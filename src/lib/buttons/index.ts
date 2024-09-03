@@ -21,9 +21,9 @@ interface ButtonProps {
   name?: HTMLButtonAttributes['name'];
   color?: ButtonColorType;
   shadow?: boolean;
-  tag?: string | undefined | null;
+  tag?: string;
   checked?: boolean | undefined;
-  class?: string | undefined;
+  class?: string;
   onclick?: () => void;
   onmouseenter?: () => void;
 }
@@ -37,7 +37,7 @@ interface GradientButtonProps {
   outline?: boolean;
   pill?: boolean;
   size?: ButtonSizeType;
-  class?: string | undefined | null;
+  class?: string;
   href?: HTMLAnchorAttributes['href'];
   target?: HTMLAnchorAttributes['target'];
   rel?: HTMLAnchorAttributes['rel'];

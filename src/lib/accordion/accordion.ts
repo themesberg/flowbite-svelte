@@ -27,18 +27,18 @@ interface AccordionCtxType {
   activeClass: string | undefined | null;
   inactiveClass: string | undefined | null;
   selected?: Writable<object>;
-  classActive?: string | undefined | null;
-  classInactive?: string | undefined | null;
+  classActive?: string;
+  classInactive?: string;
 }
 
 interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   flush?: boolean;
-  activeClass?: string | undefined | null;
-  inactiveClass?: string | undefined | null;
-  defaultClass?: string | undefined | null;
-  classActive?: string | undefined | null;
-  classInactive?: string | undefined | null;
+  activeClass?: string;
+  inactiveClass?: string;
+  defaultClass?: string;
+  classActive?: string;
+  classInactive?: string;
   transition?: TransitionFunc;
   params?: ParamsType;
 }

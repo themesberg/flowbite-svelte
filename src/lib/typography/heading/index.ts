@@ -9,7 +9,7 @@ type TagType = VariantProps<typeof heading>['tag'];
 interface HeadingProps extends HTMLAttributes<HTMLElement> {
   children: Snippet;
   tag?: TagType;
-  class?: string | undefined;
+  class?: string;
 }
 
 export { Heading, heading, type HeadingProps };

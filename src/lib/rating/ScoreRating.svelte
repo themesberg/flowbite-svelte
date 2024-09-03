@@ -3,9 +3,9 @@
     ratings?: { label: string | undefined | null; rating: number }[];
     ratings2?: { label: string | undefined | null; rating: number }[];
     headerLabel?: {
-      desc1?: string | undefined | null;
-      desc2?: string | undefined | null;
-      desc3?: string | undefined | null;
+      desc1?: string;
+      desc2?: string;
+      desc3?: string;
       link?: { label: string | undefined | null; url: string };
     };
   }

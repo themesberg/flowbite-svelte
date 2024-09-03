@@ -3,7 +3,7 @@
   import './chart.css';
   interface Props {
     options: ApexOptions;
-    class?: string | undefined | null;
+    class?: string;
   }
   let { options, class: classname }: Props = $props();
 

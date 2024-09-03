@@ -7,25 +7,25 @@
   type TableSearchType = {
     striped?: boolean;
     hoverable?: boolean;
-    color?: string | undefined | null;
+    color?: string;
   };
   interface Props extends HTMLTableAttributes {
     children?: Snippet;
     header?: Snippet;
     footer?: Snippet;
-    divClass?: string | undefined | null;
-    inputValue?: string | undefined | null;
+    divClass?: string;
+    inputValue?: string;
     striped?: boolean;
     hoverable?: boolean;
-    customColor?: string | undefined;
-    color?: string | undefined;
-    innerDivClass?: string | undefined | null;
-    inputClass?: string | undefined | null;
-    searchClass?: string | undefined | null;
-    svgDivClass?: string | undefined | null;
-    svgClass?: string | undefined | null;
-    tableClass?: string | undefined | null;
-    class?: string | undefined | null;
+    customColor?: string;
+    color?: string;
+    innerDivClass?: string;
+    inputClass?: string;
+    searchClass?: string;
+    svgDivClass?: string;
+    svgClass?: string;
+    tableClass?: string;
+    class?: string;
   }
 
   let { children, header, footer, divClass = 'relative overflow-x-auto shadow-md sm:rounded-lg', inputValue = $bindable(), striped, hoverable, customColor = '', color = 'default', innerDivClass = 'p-4', inputClass, searchClass = 'relative mt-1', svgDivClass, svgClass = 'w-5 h-5 text-gray-500 dark:text-gray-400', tableClass = 'w-full text-left text-sm', class: className, ...restProps }: Props = $props();

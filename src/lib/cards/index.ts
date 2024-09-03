@@ -17,16 +17,16 @@ type ImgType = {
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
-  href?: string | undefined | null;
+  href?: string;
   horizontal?: boolean;
   color?: ColorType;
-  target?: string | undefined | null;
+  target?: string;
   shadow?: ShadowType;
   reverse?: boolean;
   img?: ImgType;
   padding?: PaddingType;
   size?: CardSizeType;
-  class?: string | undefined;
+  class?: string;
   onclick?: () => void;
 }
 

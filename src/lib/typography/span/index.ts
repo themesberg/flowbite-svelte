@@ -18,7 +18,7 @@ interface SpanProps extends HTMLAttributes<HTMLSpanElement> {
   uppercase?: boolean;
   gradient?: GradientType;
   highlight?: HighlightType;
-  class?: string | undefined;
+  class?: string;
   decoration?: DecorationType;
   decorationThickness?: DecorationThicknessType;
   decorationColor?: DecorationColorType;

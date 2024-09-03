@@ -13,7 +13,7 @@
     spanClass?: string;
     activeClass?: string;
     nonActiveClass?: string;
-    aClass?: string | undefined | null;
+    aClass?: string;
   }
 
   let { iconSlot, subtext, href, label, spanClass = 'ms-3', activeClass, nonActiveClass, aClass, class: className, ...restProps }: Props = $props();

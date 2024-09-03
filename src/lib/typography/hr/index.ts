@@ -5,11 +5,11 @@ import { hr } from './theme';
 
 interface HrProps extends HTMLAttributes<HTMLElement> {
   children?: Snippet;
-  divClass?: string | undefined;
-  hrClass?: string | undefined;
-  iconDivClass?: string | undefined;
-  textSpanClass?: string | undefined;
-  innerDivClass?: string | undefined;
+  divClass?: string;
+  hrClass?: string;
+  iconDivClass?: string;
+  textSpanClass?: string;
+  innerDivClass?: string;
 }
 
 export { Hr, hr, type HrProps };

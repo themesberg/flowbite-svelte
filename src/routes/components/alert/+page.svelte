@@ -8,7 +8,7 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import H3 from '../../utils/heading/H3.svelte';
+  // import H3 from '../../utils/heading/H3.svelte';
 
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
@@ -24,9 +24,9 @@
   // interactive  color, rounded, border, dismissable, class
   const colors = Object.keys(fsalert.variants.color);
   let color: AlertProps['color'] = $state('primary');
-  let iconColor: AlertProps['color'] = $state('primary');
+  // let iconColor: AlertProps['color'] = $state('primary');
   let listColor: AlertProps['color'] = $state('primary');
-  let borderAccessColor: AlertProps['color'] = $state('primary');
+  // let borderAccessColor: AlertProps['color'] = $state('primary');
   let additionalColor: AlertProps['color'] = $state('primary');
   let iconSlot = $state(false);
   const changeIconSlot = () => {

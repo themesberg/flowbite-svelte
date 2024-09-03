@@ -7,14 +7,14 @@
   interface Props {
     children?: Snippet;
     text?: Snippet;
-    divClass?: string | undefined | null;
+    divClass?: string;
     size?: number;
     total?: number;
     rating?: number;
-    partialId?: string | undefined | null;
+    partialId?: string;
     Icon?: Component;
     count?: boolean;
-    pClass?: string | undefined | null;
+    pClass?: string;
   }
 
   let { children, text, divClass = 'flex items-center', size = 24, total = 5, rating = 4, partialId = 'partialStar' + idGenerator(), Icon = Star, count = false, pClass = 'ms-2 text-sm font-bold text-gray-900 dark:text-white' }: Props = $props();

@@ -20,8 +20,8 @@ type PaddingType = VariantProps<typeof toolbarGroup>['padding'];
 type PositionType = VariantProps<typeof toolbarGroup>['position'];
 interface ToolbarGroupProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
-  class?: string | undefined | null;
-  divClass?: string | undefined | null;
+  class?: string;
+  divClass?: string;
   spacing?: SpacingType;
   padding?: PaddingType;
   position?: PositionType;
@@ -31,11 +31,11 @@ type ToolbarButtonType = VariantProps<typeof toolbarButton>['color'];
 interface ToolbarButtonProps {
   children: Snippet;
   color?: ToolbarButtonType;
-  name?: string | undefined | null;
-  ariaLabel?: string | undefined | null;
+  name?: string;
+  ariaLabel?: string;
   size?: 'xs' | 'sm' | 'md' | 'lg';
-  href?: string | undefined | null;
-  class?: string | undefined | null;
+  href?: string;
+  class?: string;
   onclick?: () => void;
 }
 

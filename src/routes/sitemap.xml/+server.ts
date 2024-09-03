@@ -1,8 +1,8 @@
 interface Page {
   loc: string | undefined | null;
-  changefreq?: string | undefined | null;
-  priority?: string | undefined | null;
-  lastmod?: string | undefined | null;
+  changefreq?: string;
+  priority?: string;
+  lastmod?: string;
 }
 
 const site = 'https://svelte-5-ui-lib.codewithshin.com';

@@ -4,11 +4,11 @@ import type { Snippet } from 'svelte';
 import type { HTMLButtonAttributes } from 'svelte/elements';
 
 interface DarkmodeProps extends HTMLButtonAttributes {
-  class?: string | undefined;
+  class?: string;
   lightIcon?: Snippet;
   darkIcon?: Snippet;
   size?: 'sm' | 'md' | 'lg';
-  ariaLabel?: string | undefined;
+  ariaLabel?: string;
 }
 
 export { Darkmode, darkmode, type DarkmodeProps };

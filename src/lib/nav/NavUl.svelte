@@ -7,7 +7,7 @@
 
   interface Props extends HTMLAttributes<HTMLUListElement> {
     children: Snippet;
-    class?: string | undefined;
+    class?: string;
   }
   let { children, class: ulclass, ...restProps }: Props = $props();
 

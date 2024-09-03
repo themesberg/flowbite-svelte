@@ -8,28 +8,28 @@ import { tabs, tabItem } from './theme';
 interface TabsProps extends HTMLAttributes<HTMLUListElement> {
   children: Snippet;
   tabStyle?: 'full' | 'pill' | 'underline' | 'none';
-  ulClass?: string | undefined | null;
-  contentClass?: string | undefined | null;
+  ulClass?: string;
+  contentClass?: string;
   divider?: boolean;
-  class?: string | undefined | null;
-  ctxActive?: string | undefined | null;
-  ctxInactive?: string | undefined | null;
+  class?: string;
+  ctxActive?: string;
+  ctxInactive?: string;
 }
 
 interface TabitemProps extends HTMLLiAttributes {
   children?: Snippet;
   titleSlot?: Snippet;
   open?: boolean;
-  title?: string | undefined | null;
-  activeClass?: string | undefined | null;
-  inactiveClass?: string | undefined | null;
-  class?: string | undefined | null;
+  title?: string;
+  activeClass?: string;
+  inactiveClass?: string;
+  class?: string;
   disabled?: boolean;
 }
 
 interface TabCtxType {
-  activeClass?: string | undefined | null;
-  inactiveClass?: string | undefined | null;
+  activeClass?: string;
+  inactiveClass?: string;
   selected: Writable<HTMLElement>;
 }
 

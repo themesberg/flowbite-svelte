@@ -6,7 +6,7 @@ import { buttonGroup } from './theme';
 interface ButtonGroupProps {
   children: Snippet;
   size?: SizeType;
-  class?: string | undefined;
+  class?: string;
 }
 
 type SizeType = VariantProps<typeof buttonGroup>['size'];

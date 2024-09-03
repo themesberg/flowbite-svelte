@@ -7,7 +7,7 @@
 
   interface Props extends HTMLTdAttributes {
     children?: Snippet;
-    class?: string | undefined | null;
+    class?: string;
     colspan?: number;
     onclick?: () => void;
   }

@@ -14,7 +14,7 @@ interface SelectProps extends Omit<HTMLSelectAttributes, 'size'> {
   value?: any;
   underline?: boolean;
   size?: 'sm' | 'md' | 'lg';
-  placeholder?: string | undefined | null;
+  placeholder?: string;
 }
 
 interface MultiSelectProps<T> extends HTMLAttributes<HTMLDivElement> {
@@ -22,8 +22,8 @@ interface MultiSelectProps<T> extends HTMLAttributes<HTMLDivElement> {
   items?: SelectOptionType<T>[];
   value?: (string | number)[];
   size?: 'sm' | 'md' | 'lg';
-  dropdownClass?: string | undefined;
-  placeholder?: string | undefined | null;
+  dropdownClass?: string;
+  placeholder?: string;
   change?: (event: Event) => void;
 }
 

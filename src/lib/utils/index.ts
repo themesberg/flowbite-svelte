@@ -75,11 +75,11 @@ type SizeType = VariantProps<typeof closeButtonVariants>['size'];
 interface CloseButtonProps {
   color?: ColorType;
   onclick?: () => void;
-  name?: string | undefined | null;
-  ariaLabel?: string | undefined | null;
+  name?: string;
+  ariaLabel?: string;
   size?: SizeType;
-  href?: string | undefined | null;
-  class?: string | undefined | null;
+  href?: string;
+  class?: string;
 }
 
 export { CloseButton, closeButtonVariants, type CloseButtonProps };

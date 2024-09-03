@@ -7,13 +7,13 @@
 
   interface Props extends HTMLTableAttributes {
     children: Snippet;
-    divClass?: string | undefined | null;
+    divClass?: string;
     striped?: boolean;
     hoverable?: boolean;
     noborder?: boolean;
     shadow?: boolean;
     color?: TableColrType;
-    customeColor?: string | undefined | null;
+    customeColor?: string;
   }
   let { children, divClass = 'relative overflow-x-auto', striped, hoverable, noborder, shadow, color = 'default', customeColor, ...restProps }: Props = $props();
 

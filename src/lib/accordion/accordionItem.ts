@@ -40,22 +40,22 @@ interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
   arrowup?: Snippet;
   arrowdown?: Snippet;
   open?: boolean;
-  activeClass?: string | undefined | null;
-  inactiveClass?: string | undefined | null;
-  defaultClass?: string | undefined | null;
+  activeClass?: string;
+  inactiveClass?: string;
+  defaultClass?: string;
   transition?: TransitionFunc;
   params?: ParamsType;
-  paddingFlush?: string | undefined | null;
-  paddingDefault?: string | undefined | null;
-  textFlushOpen?: string | undefined | null;
-  textFlushDefault?: string | undefined | null;
-  borderClass?: string | undefined | null;
-  borderOpenClass?: string | undefined | null;
-  borderBottomClass?: string | undefined | null;
-  borderSharedClass?: string | undefined | null;
-  classActive?: string | undefined | null;
-  classInactive?: string | undefined | null;
-  class?: string | undefined | null;
+  paddingFlush?: string;
+  paddingDefault?: string;
+  textFlushOpen?: string;
+  textFlushDefault?: string;
+  borderClass?: string;
+  borderOpenClass?: string;
+  borderBottomClass?: string;
+  borderSharedClass?: string;
+  classActive?: string;
+  classInactive?: string;
+  class?: string;
 }
 
 export { AccordionItem, accordionItemVariants, type AccordionItemProps, type AccordionItemVariantsProps };

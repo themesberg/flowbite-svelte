@@ -10,8 +10,8 @@ type PaginationItemProps = PaginationItemAttributes & ((HTMLAnchorAttributes & {
 type PaginationItemType = VariantProps<typeof paginationItem>;
 interface PaginationItemAttributes {
   children?: Snippet;
-  name?: string | undefined;
-  href?: string | undefined;
+  name?: string;
+  href?: string;
   active?: boolean;
   rel?: string;
   size?: PaginationItemType['size'];

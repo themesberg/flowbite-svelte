@@ -9,8 +9,8 @@ type SizeType = VariantProps<typeof spinner>['size'];
 interface SpinnerProps extends SVGAttributes<SVGSVGElement> {
   color?: ColorType;
   size?: SizeType;
-  currentFill?: string | undefined | null;
-  currentColor?: string | undefined | null;
+  currentFill?: string;
+  currentColor?: string;
 }
 
 export { Spinner, spinner, type SpinnerProps };

@@ -7,11 +7,12 @@ import { radio } from './theme';
 type ColorType = VariantProps<typeof radio>['color'];
 interface RadioProps extends HTMLInputAttributes {
   children: Snippet;
-  aria_describedby?: string | undefined | null;
+  aria_describedby?: string;
   color?: ColorType;
   group?: number | string | undefined;
-  inputClass?: string | undefined;
-  labelClass?: string | undefined;
+  inputClass?: string;
+  labelClass?: string;
+  checked?: boolean;
 }
 
 export { Radio, radio, type RadioProps };

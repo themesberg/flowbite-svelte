@@ -6,7 +6,7 @@ import { textarea } from './theme';
 interface TextareaProps extends HTMLTextareaAttributes {
   header?: Snippet;
   footer?: Snippet;
-  value?: string | string[] | number | undefined | null;
+  value?: string;
   wrapped?: boolean;
   divClass?: string;
   innerClass? : string;

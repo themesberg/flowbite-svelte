@@ -15,11 +15,11 @@ interface ImgProps extends HTMLImgAttributes {
   effect?: EffectType;
   shadow?: ShadowType;
   rounded?: RoundedType;
-  caption?: string | undefined | null;
-  imgClass?: string | undefined | null;
-  figClass?: string | undefined | null;
-  captionClass?: string | undefined | null;
-  class?: string | undefined | null;
+  caption?: string;
+  imgClass?: string;
+  figClass?: string;
+  captionClass?: string;
+  class?: string;
   href?: string;
 }
 

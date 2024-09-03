@@ -5,8 +5,8 @@ import { secondary } from './theme';
 
 interface SecondaryProps extends HTMLAttributes<HTMLElement> {
   children: Snippet;
-  secondaryClass?: string | undefined | null;
-  class?: string | undefined | null;
+  secondaryClass?: string;
+  class?: string;
 }
 
 export { Secondary, secondary, type SecondaryProps };

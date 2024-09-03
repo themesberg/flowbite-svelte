@@ -9,11 +9,11 @@ interface InputProps extends Omit<HTMLInputAttributes, 'size'> {
   left?: Snippet;
   right?: Snippet;
   size?: FormSizeType;
-  value?: any;
+  value?: string | number | readonly string[] | undefined;
   color?: ColorName | 'default' | 'tinted';
-  classLeft?: string | undefined | null;
-  classRight?: string | undefined | null;
-  class?: string | undefined | null;
+  classLeft?: string;
+  classRight?: string;
+  class?: string;
 }
 
 function clampSize(s: SizeType) {

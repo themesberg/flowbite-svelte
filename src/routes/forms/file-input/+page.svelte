@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Label, Fileupload, Helper, Radio, Button } from '$lib';
+  import { Label, Fileupload, fileupload, Helper, Radio, Button } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -12,13 +12,13 @@
   });
 
   let files: FileList | undefined = $state();
-  const sizes = ['sm', 'md', 'lg'];
+  const sizes = Object.keys(fileupload.variants.size);
   let size: Fileupload['size'] = $state('md');
   let helperState = $state(false);
   const changeHelperState = () => {
     helperState = !helperState;
   }
-  let fileNames = $state(false);
+  let fileNames = $state(true);
   const changeBindFile = () => {
     fileNames = !fileNames;
   }
@@ -57,7 +57,7 @@ ${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ''}`
 <H2>Interactive Fileupload Builder</H2>
 <CodeWrapper>
   <div class="h-32">
-    <Fileupload id="small_size" {size} class="mb-2" multiple bind:files/>
+    <Fileupload id="small_size" {size} class="mb-2" {multiple} bind:files/>
     {#if helperState}
     <Helper>SVG, PNG, JPG or GIF (MAX. 800x400px).</Helper>
     {/if}
@@ -72,7 +72,7 @@ ${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ''}`
   <div class="mt-4 flex flex-wrap space-x-4 mb-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as sizeOption}
-      <Radio labelClass="w-24 my-1" name="default_alert_color" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="file_input_size" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap gap-2">

@@ -8,8 +8,8 @@
   // import type TableColrType from './Table.svelte';
   interface Props extends HTMLAttributes<HTMLTableRowElement> {
     children?: Snippet;
-    class?: string | undefined | null;
-    color?: string | undefined | null;
+    class?: string;
+    color?: string;
   }
   let { children, class: className, color, ...restProps }: Props = $props();
 

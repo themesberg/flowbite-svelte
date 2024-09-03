@@ -9,8 +9,8 @@
     children?: Snippet;
     siteName: string | undefined | null;
     closeNav?: () => void;
-    aClass?: string | undefined;
-    spanClass?: string | undefined;
+    aClass?: string;
+    spanClass?: string;
   }
 
   let { children, siteName, closeNav, aClass, spanClass, ...restProps }: Props = $props();

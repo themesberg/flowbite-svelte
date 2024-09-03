@@ -17,8 +17,8 @@ interface BannerProps extends HTMLAttributes<HTMLDivElement> {
   dismissable?: boolean;
   color?: ColorVariants;
   bannerType?: TypeVariants;
-  divClass?: string | undefined;
-  innerClass?: string | undefined;
+  divClass?: string;
+  innerClass?: string;
   transition?: TransitionFunc;
   params?: object;
 }

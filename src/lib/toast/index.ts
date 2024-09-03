@@ -15,9 +15,9 @@ interface ToastProps extends HTMLAttributes<HTMLDivElement> {
   dismissable?: boolean;
   color?: ColorType;
   position?: PositionType;
-  baseClass?: string | undefined | null;
-  iconClass?: string | undefined | null;
-  contentClass?: string | undefined | null;
+  baseClass?: string;
+  iconClass?: string;
+  contentClass?: string;
   align?: boolean;
   params?: ParamsType;
   transition?: TransitionFunc;

@@ -4,15 +4,15 @@ import type { HTMLImgAttributes } from 'svelte/elements';
 import { gallery } from './theme';
 
 type ImgType = {
-  src?: string | undefined | null;
-  alt?: string | undefined | null;
+  src?: string;
+  alt?: string;
 };
 
 interface GalleryProps {
   children?: Snippet;
   items?: HTMLImgAttributes[];
-  imgClass?: string | undefined;
-  divClass?: string | undefined;
+  imgClass?: string;
+  divClass?: string;
 }
 
 export { Gallery, gallery, type GalleryProps, type ImgType };

@@ -6,7 +6,7 @@ import { type ColorName } from '$lib/types';
 
 interface HelperProps extends HTMLAttributes<HTMLParagraphElement> {
   children: Snippet;
-  class?: string | undefined | null;
+  class?: string;
   color?: ColorName | 'disabled';
 }
 

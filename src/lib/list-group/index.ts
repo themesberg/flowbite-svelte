@@ -13,7 +13,7 @@ interface ListgroupProps {
   onclick?: () => void;
   rounded?: boolean;
   border?: boolean;
-  class?: string | undefined | null;
+  class?: string;
 }
 
 interface ListgroupItemProps extends HTMLAnchorAttributes {
@@ -22,14 +22,14 @@ interface ListgroupItemProps extends HTMLAnchorAttributes {
   active?: boolean;
   current?: boolean;
   disabled?: boolean;
-  name?: string | undefined | null;
+  name?: string;
   Icon?: Component;
-  href?: string | undefined | null;
-  currentClass?: string | undefined | null;
-  normalClass?: string | undefined | null;
-  disabledClass?: string | undefined | null;
-  liClass?: string | undefined | null;
-  class?: string | undefined | null;
+  href?: string;
+  currentClass?: string;
+  normalClass?: string;
+  disabledClass?: string;
+  liClass?: string;
+  class?: string;
 }
 
 export { Listgroup, ListgroupItem, listGroup, listGroupItem, type ListgroupProps, type ListgroupItemProps };

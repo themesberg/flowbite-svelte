@@ -13,46 +13,46 @@ type FooterType = VariantProps<typeof footer>['footerType'];
 interface FooterProps extends HTMLAttributes<HTMLElement> {
   children: Snippet;
   footerType?: FooterType;
-  class?: string | undefined;
+  class?: string;
 }
 
 interface FooterBrandProps extends HTMLAnchorAttributes {
   children?: Snippet;
-  aClass?: string | undefined;
-  spanClass?: string | undefined;
-  imgClass?: string | undefined;
-  href?: string | undefined;
-  src?: string | undefined;
-  alt?: string | undefined;
-  name?: string | undefined;
+  aClass?: string;
+  spanClass?: string;
+  imgClass?: string;
+  href?: string;
+  src?: string;
+  alt?: string;
+  name?: string;
 }
 
 interface FooterCopyrightProps extends HTMLAnchorAttributes {
-  spanClass?: string | undefined;
-  aClass?: string | undefined;
-  href?: string | undefined;
-  by?: string | undefined;
-  copyrightMessage?: string | undefined;
+  spanClass?: string;
+  aClass?: string;
+  href?: string;
+  by?: string;
+  copyrightMessage?: string;
   year?: number | undefined;
 }
 
 interface FooterIconProps extends HTMLAnchorAttributes {
   children: Snippet;
-  href?: string | undefined;
-  ariaLabel?: string | undefined;
-  class?: string | undefined;
+  href?: string;
+  ariaLabel?: string;
+  class?: string;
 }
 
 interface FooterUlProps extends HTMLAttributes<HTMLUListElement> {
   children: Snippet;
-  class?: string | undefined;
+  class?: string;
 }
 
 interface FooterLiProps extends HTMLAnchorAttributes {
   children: Snippet;
-  liClass?: string | undefined;
-  aClass?: string | undefined;
-  href?: string | undefined;
+  liClass?: string;
+  aClass?: string;
+  href?: string;
 }
 
 export { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLi, FooterUl, footer, footerBrand, footerCopyright, footerIcon, footerUl, footerLi, type FooterProps, type FooterBrandProps, type FooterCopyrightProps, type FooterIconProps, type FooterUlProps, type FooterLiProps };

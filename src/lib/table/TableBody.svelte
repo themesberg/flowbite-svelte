@@ -4,7 +4,7 @@
 
   interface Props extends HTMLAttributes<HTMLTableSectionElement> {
     children?: Snippet;
-    class?: string | undefined;
+    class?: string;
   }
   let { children, class: className, ...restProps }: Props = $props();
 </script>

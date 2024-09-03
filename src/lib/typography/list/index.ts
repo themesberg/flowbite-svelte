@@ -12,8 +12,9 @@ interface ListProps {
   children: Snippet;
   tag?: TagType;
   position?: PositionType;
-  ctxClass?: string | undefined | null;
-  class?: string | undefined;
+  ctxClass?: string;
+  class?: string;
+  isContenteditable? : boolean
 }
 
 interface LiProps extends HTMLLiAttributes {

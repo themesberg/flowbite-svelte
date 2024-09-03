@@ -39,7 +39,7 @@ export interface ListGroupItemType {
   index?: number;
   current?: boolean;
   disabled?: boolean;
-  href?: string | undefined | null;
+  href?: string;
   attrs?: HTMLAnchorAttributes | HTMLButtonAttributes;
   [propName: string]: any;
 }
@@ -53,15 +53,15 @@ export type SidebarType = {
 };
 
 export interface ButtonClassesTypes {
-  default?: string | undefined | null;
-  border?: string | undefined | null;
-  application?: string | undefined | null;
-  pagination?: string | undefined | null;
-  group?: string | undefined | null;
-  card?: string | undefined | null;
-  meeting?: string | undefined | null;
-  video?: string | undefined | null;
-  custom?: string | undefined | null;
+  default?: string;
+  border?: string;
+  application?: string;
+  pagination?: string;
+  group?: string;
+  card?: string;
+  meeting?: string;
+  video?: string;
+  custom?: string;
 }
 
 export type navbarType = {

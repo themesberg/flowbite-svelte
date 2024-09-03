@@ -12,40 +12,40 @@ import { android, defaultMockup, desktop, ios, laptop, smartwatch, tablet } from
 
 interface MockupBaseProps extends HTMLAttributes<HTMLElement> {
   children?: Snippet;
-  divClass?: string | undefined | null;
-  div2Class?: string | undefined | null;
-  div3Class?: string | undefined | null;
-  div4Class?: string | undefined | null;
+  divClass?: string;
+  div2Class?: string;
+  div3Class?: string;
+  div4Class?: string;
 }
 
 interface AndroidProps extends MockupBaseProps {
-  div5Class?: string | undefined | null;
-  div6Class?: string | undefined | null;
-  div7Class?: string | undefined | null;
+  div5Class?: string;
+  div6Class?: string;
+  div7Class?: string;
 }
 
 interface DefaultMockupProps extends MockupBaseProps {
-  div5Class?: string | undefined | null;
-  div6Class?: string | undefined | null;
+  div5Class?: string;
+  div6Class?: string;
 }
 
 interface DesktopProps extends MockupBaseProps {}
 
 interface IosProps extends MockupBaseProps {
-  div5Class?: string | undefined | null;
-  div6Class?: string | undefined | null;
+  div5Class?: string;
+  div6Class?: string;
 }
 
 interface LaptopProps extends MockupBaseProps {}
 
 interface SmartwatchProps extends MockupBaseProps {
-  div5Class?: string | undefined | null;
-  div6Class?: string | undefined | null;
+  div5Class?: string;
+  div6Class?: string;
 }
 
 interface TabletProps extends MockupBaseProps {
-  div5Class?: string | undefined | null;
-  div6Class?: string | undefined | null;
+  div5Class?: string;
+  div6Class?: string;
 }
 
 export { Android, DefaultMockup, Desktop, DeviceMockup, Ios, Laptop, Smartwatch, Tablet, android, defaultMockup, desktop, ios, laptop, smartwatch, tablet, type AndroidProps, type DefaultMockupProps, type DesktopProps, type IosProps, type LaptopProps, type SmartwatchProps, type TabletProps };

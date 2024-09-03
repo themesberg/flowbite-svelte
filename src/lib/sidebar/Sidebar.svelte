@@ -7,11 +7,11 @@
 
   interface Props extends HTMLAttributes<HTMLElement> {
     children: Snippet;
-    asideClass?: string | undefined;
-    ariaLabel?: string | undefined;
-    divClass?: string | undefined;
-    nonActiveClass?: string | undefined;
-    activeClass?: string | undefined;
+    asideClass?: string;
+    ariaLabel?: string;
+    divClass?: string;
+    nonActiveClass?: string;
+    activeClass?: string;
   }
   let { children, divClass, asideClass, ariaLabel, nonActiveClass = '', activeClass = '', class: className, ...restProps }: Props = $props();
 

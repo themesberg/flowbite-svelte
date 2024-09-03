@@ -8,7 +8,7 @@
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     children: Snippet;
-    class?: string | undefined | null;
+    class?: string;
     size?: 'sm' | 'md' | 'lg' | undefined;
   }
 

@@ -8,7 +8,7 @@
   interface Props extends HTMLAttributes<HTMLTableSectionElement> {
     children?: Snippet;
     defaultRow?: boolean;
-    class?: string | undefined | null;
+    class?: string;
   }
 
   let { children, class: className, defaultRow = true, ...restProps }: Props = $props();

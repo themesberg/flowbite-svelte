@@ -5,8 +5,8 @@ import { mark } from './theme';
 
 interface MarkProps extends HTMLAttributes<HTMLElement> {
   children: Snippet;
-  markClass?: string | undefined;
-  class?: string | undefined;
+  markClass?: string;
+  class?: string;
 }
 
 export { Mark, mark, type MarkProps };

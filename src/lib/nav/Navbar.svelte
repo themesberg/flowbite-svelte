@@ -17,12 +17,12 @@
     brand?: Snippet;
     hamburgerMenu?: boolean;
     breakPoint?: navbarType['breakPoint'];
-    navClass?: string | undefined | null;
-    divClass?: string | undefined | null;
-    btnClass?: string | undefined | null;
-    div2Class?: string | undefined | null;
-    nonActiveClass?: string | undefined | null;
-    activeClass?: string | undefined | null;
+    navClass?: string;
+    divClass?: string;
+    btnClass?: string;
+    div2Class?: string;
+    nonActiveClass?: string;
+    activeClass?: string;
   }
 
   let { children, toggleNav, closeNav = () => {}, navStatus, fluid, brand, hamburgerMenu = true, breakPoint = 'md', navClass, divClass, btnClass, div2Class, activeClass, nonActiveClass, ...restProps }: Props = $props();
@@ -97,10 +97,10 @@
 @props:fluid?: boolean;
 @props:brand?: Snippet;
 @props:breakPoint?: navbarType['breakPoint'];
-@props:navClass?: string | undefined | null;
-@props:divClass?: string | undefined | null;
-@props:btnClass?: string | undefined | null;
-@props:div2Class?: string | undefined | null;
-@props:nonActiveClass?: string | undefined | null;
-@props:activeClass?: string | undefined | null;
+@props:navClass?: string;
+@props:divClass?: string;
+@props:btnClass?: string;
+@props:div2Class?: string;
+@props:nonActiveClass?: string;
+@props:activeClass?: string;
 -->

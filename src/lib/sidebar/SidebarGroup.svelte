@@ -4,7 +4,7 @@
 
   interface Props extends HTMLAttributes<HTMLUListElement> {
     children: Snippet;
-    borderClass?: string | undefined;
+    borderClass?: string;
     border?: boolean;
   }
 

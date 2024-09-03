@@ -5,7 +5,7 @@
 
   interface Props extends HTMLThAttributes {
     children?: Snippet;
-    class?: string | undefined | null;
+    class?: string;
   }
   let { children, class: className, ...restProps }: Props = $props();
 </script>

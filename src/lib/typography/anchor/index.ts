@@ -9,7 +9,7 @@ type ColorType = VariantProps<typeof anchor>['color'];
 interface AnchorProps extends HTMLAnchorAttributes {
   children: Snippet;
   color?: ColorType;
-  class?: string | undefined | null;
+  class?: string;
 }
 
 export { A, anchor, type AnchorProps };

@@ -4,13 +4,13 @@
 
   interface Props extends SVGAttributes<SVGSVGElement> {
     fillPercent?: number;
-    fillColor?: string | undefined | null;
-    strokeColor?: string | undefined | null;
+    fillColor?: string;
+    strokeColor?: string;
     size?: number;
-    ariaLabel?: string | undefined | null;
-    id?: string | undefined | null;
-    role?: string | undefined | null;
-    svgClass?: string | undefined | null;
+    ariaLabel?: string;
+    id?: string;
+    role?: string;
+    svgClass?: string;
   }
 
   let { fillPercent = 100, fillColor = '#00b500', strokeColor = '#00b500', size = 24, ariaLabel = 'thumbup', id = idGenerator(), role = 'img', svgClass, ...restProps }: Props = $props();

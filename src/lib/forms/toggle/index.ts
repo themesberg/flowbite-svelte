@@ -13,11 +13,11 @@ interface ToggleProps extends HTMLInputAttributes {
   toggleSize?: SizeType;
   value?: string | number;
   checked?: boolean | undefined;
-  spanClass?: string | undefined | null;
+  spanClass?: string;
   color?: FormColorType;
-  labelClass?: string | undefined;
-  aria_describedby?: string | undefined | null;
-  inputClass?: string | undefined;
+  labelClass?: string;
+  aria_describedby?: string;
+  inputClass?: string;
 }
 
 export { Toggle, toggle, type ToggleProps };

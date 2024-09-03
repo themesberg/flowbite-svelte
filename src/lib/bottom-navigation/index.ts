@@ -15,23 +15,23 @@ type AppBtnPositionType = VariantProps<typeof bottomNavItem>['appBtnPosition'];
 interface BottomNavProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   header?: Snippet;
-  activeUrl?: string | undefined | null;
+  activeUrl?: string;
   position?: PositionType;
   navType?: BottomNavVariantType;
-  outerClass?: string | undefined | null;
-  innerClass?: string | undefined | null;
-  activeClass?: string | undefined | null;
+  outerClass?: string;
+  innerClass?: string;
+  activeClass?: string;
 }
 
 interface BottomNavItemProps {
   children: Snippet;
-  btnName?: string | undefined | null;
+  btnName?: string;
   appBtnPosition?: AppBtnPositionType;
-  target?: string | undefined | null;
-  activeClass?: string | undefined | null;
-  href?: string | undefined | null;
-  btnClass?: string | undefined | null;
-  spanClass?: string | undefined | null;
+  target?: string;
+  activeClass?: string;
+  href?: string;
+  btnClass?: string;
+  spanClass?: string;
 }
 
 export { BottomNav, BottomNavItem, bottomNav, bottomNavItem, type BottomNavProps, type BottomNavItemProps, type BottomNavContextType, type BottomNavVariantType };

@@ -12,16 +12,16 @@ interface ProgressbarProps extends HTMLAttributes<HTMLDivElement> {
   precision?: number;
   tweenDuration?: number;
   animate?: boolean;
-  size?: string | undefined;
+  size?: string;
   labelInside?: boolean;
-  labelOutside?: string | undefined;
+  labelOutside?: string;
   easing?: EasingFunction;
   color?: ColorType;
-  div2Class?: string | undefined;
-  oustsideSpanClass?: string | undefined;
-  oustsideProgressClass?: string | undefined;
-  labeloutsidedivClass?: string | undefined;
-  divClass?: string | undefined;
+  div2Class?: string;
+  oustsideSpanClass?: string;
+  oustsideProgressClass?: string;
+  labeloutsidedivClass?: string;
+  divClass?: string;
 }
 
 export { Progressbar, progressbar, type ProgressbarProps };
