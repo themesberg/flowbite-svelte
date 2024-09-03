@@ -61,7 +61,7 @@
 <H2>Interactive Paragraph Builder</H2>
 <CodeWrapper>
   <div class="h-[200px] overflow-scroll">
-    <Label class="text-xl mb-4">Click and add plain texts to edit the content</Label>
+    <Label class="text-xl mb-4">Click anywhere within the box below to start editing the content. Use plain texts.</Label>
     <P contenteditable weight={pWeight} size={pSize} space={pSpace} height={pHeight} align={pAlign} whitespace={pWhitespace} {italic} firstUpper={pFirstupper} justify={pJustify} class="border p-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla eius debitis cupiditate tempora necessitatibus perspiciatis pariatur aspernatur, atque corporis aut deserunt temporibus eligendi inventore id doloribus veritatis quos nesciunt adipisci.</P>
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
