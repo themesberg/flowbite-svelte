@@ -59,7 +59,7 @@
 
 <H2>Interactive Image Builder</H2>
 <CodeWrapper>
-  <div class="h-[540px] overflow-y-auto">
+  <div class="h-[470px] overflow-y-auto">
     <Img src={imgEffect !== 'none' ? '/images/examples/content-gallery-3.png' : imgRounded === 'full' ? '/images/examples/image-4@2x.jpg' : '/images/examples/image-1@2x.jpg'} size={imgSize} shadow={imgShadow} alignment={imgAlignment} rounded={imgRounded} alt="sample 1" effect={imgEffect} figClass={imgEffect !== 'none' && imgCaption ? 'relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0' : ''} captionClass={imgEffect !== 'none' && imgCaption ? 'absolute bottom-6 px-4 text-lg text-white' : ''} caption={imgEffect !== 'none' ? 'Do you want to get notified when a new component is added to Flowbite?' : '' || imgCaption ? 'Image caption' : ''} href={imgHref} />
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
@@ -101,7 +101,7 @@
   {/snippet}
 </CodeWrapper>
 
-<Badge large class="mb-4">Warning: the caption is using @html.</Badge>
+<Badge large class="my-4">Warning: the caption is using @html.</Badge>
 
 <H2>Retina-ready</H2>
 <p>Use the srcset attribute to set Retina-ready images with double resolution.</p>
