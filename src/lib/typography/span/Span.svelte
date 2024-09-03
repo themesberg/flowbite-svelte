@@ -20,7 +20,9 @@
 </script>
 
 <span {...restProps} class={classSpan}>
+  {#if children}
   {@render children()}
+  {/if}
 </span>
 
 <!--

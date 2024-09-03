@@ -173,7 +173,7 @@
     },
     video: {
       checked: true,
-      notes: 'Variants checked'
+      notes: 'Variants, reactive examples'
     }
   };
 
@@ -220,7 +220,8 @@
       notes: 'Variants, reactive examples'
     },
     textarea: {
-      checked: false
+      checked: true,
+      notes: 'Variants checked'
     },
     toggle: {
       checked: true,
@@ -231,7 +232,7 @@
   const typography: ListType = {
     blockquote: {
       checked: true,
-      notes: 'Variants checked'
+      notes: 'Variants, reactive examples'
     },
     heading: {
       checked: true,
@@ -240,7 +241,7 @@
     },
     hr: {
       checked: true,
-      notes: 'Variants checked'
+      notes: 'Variants, reactive examples'
       // problems: 'Icon HR - icon size,'
     },
     image: {
@@ -249,7 +250,7 @@
     },
     link: {
       checked: true,
-      notes: 'Variants checked'
+      notes: 'Variants, reactive examples'
       // problems: 'Button, CTA link, Card link, Image link '
     },
     list: {

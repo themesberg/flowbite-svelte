@@ -37,7 +37,6 @@
 </script>
 
 <H1>Search Input</H1>
-
 <H2>Setup</H2>
 
 <HighlightCompo code={modules['./md/setup.md'] as string} />
@@ -47,9 +46,11 @@
   <Search class="pl-10">
     <Button class="mr-1">Search</Button>
   </Search>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/default.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/default.md'] as string} />
 
 <H2>Simple search input</H2>
 <CodeWrapper>
@@ -59,12 +60,13 @@
       <SearchOutline class="h-5 w-5" />
     </Button>
   </form>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/simple-search-input.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/simple-search-input.md'] as string} />
-
 <H2>Search with dropdown</H2>
-<CodeWrapper class="h-64">
+<CodeWrapper>
   <form class="flex">
     <Button class="whitespace-nowrap rounded-e-none border border-e-0 border-primary-700" onclick={dropdown.toggle}>
       {selectCategory}
@@ -86,6 +88,8 @@
       <SearchOutline class="h-6 w-6" />
     </Button>
   </form>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/search-with-dropdown.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/search-with-dropdown.md'] as string} />

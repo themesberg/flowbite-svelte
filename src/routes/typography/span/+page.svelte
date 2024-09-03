@@ -11,6 +11,8 @@
     eager: true
   });
 
+  let { editableContent = $bindable('span content') } = $props();
+
   let spanItalic: Span['italic'] = $state(false);
   const changeItalic = () => {
     spanItalic = !spanItalic;
@@ -52,12 +54,12 @@
     spanHighlight = 'none';
     spanGradient = 'none';
   }
+  // let editableContent = $state('Click to edit content.')
 
   // code generator
   let generatedCode = $derived(
     (() => {
       let props = [];
-      // italic, underline, linethrough, uppercase, gradient, highlight, decoration, decorationColor, decorationThickness, className
       if (spanItalic) props.push(` italic`);
       if (spanUnderline) props.push(` underline`);
       if (spanLinethrough) props.push(` linethrough`);
@@ -70,10 +72,7 @@
 
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
-      return `<P>Lorem ipsum dolor sit amet. 
-  <Span${propsString}>Eligendi, nam ea eum provident.</Span>
-      Fugiat vitae possimus ipsum a unde, at laboriosam.
-</P>`;
+      return `<P size="xl" weight="bold">Lorem ipsum <Span${propsString}>${editableContent}</Span> consectetur elit.</P>`;
     })()
   );
 </script>
@@ -83,7 +82,14 @@
 
 <H2>Interactive Span Builder</H2>
 <CodeWrapper>
-  <P size="xl" weight="bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. <Span italic={spanItalic} underline={spanUnderline} linethrough={spanLinethrough} uppercase={spanUppercase} gradient={spanGradient} decoration={spanDecoration} decorationColor={spanDecorationColor} decorationThickness={spanDecorationThickness} highlight={spanHighlight} class={opacityClass}>Eligendi, nam ea eum provident.</Span> Fugiat vitae possimus ipsum a unde, at laboriosam.</P>
+  <div class="h-24">
+    <div class="flex mb-4">
+      <Label class="text-lg font-bold mr-4">Click to edit span content: </Label>
+      <p class="text-lg" contenteditable bind:innerText={editableContent}></p>
+    </div>
+  <P size="xl" weight="bold">Lorem ipsum <Span italic={spanItalic} underline={spanUnderline} linethrough={spanLinethrough} uppercase={spanUppercase} gradient={spanGradient} decoration={spanDecoration} decorationColor={spanDecorationColor} decorationThickness={spanDecorationThickness} highlight={spanHighlight} class={opacityClass}>{editableContent}</Span> consectetur elit.</P>
+  
+  </div>
   <div class="mb-4 mt-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Highlight:</Label>
     {#each highlights as highlight}

@@ -11,7 +11,7 @@ type DecorationColorType = VariantProps<typeof span>['decorationColor'];
 type DecorationThicknessType = VariantProps<typeof span>['decorationThickness'];
 
 interface SpanProps extends HTMLAttributes<HTMLSpanElement> {
-  children: Snippet;
+  children?: Snippet;
   italic?: boolean;
   underline?: boolean;
   linethrough?: boolean;

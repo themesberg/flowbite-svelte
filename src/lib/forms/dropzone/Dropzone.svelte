@@ -1,0 +1,27 @@
+<script lang="ts">
+  import { type DropzoneProps as Props, dropzone } from '.';
+
+  let { children, value, files, class: className, ...restProps }: Props = $props();
+
+  const base = $derived(dropzone({ className }));
+  let input: HTMLInputElement;
+
+  function keydown(ev: KeyboardEvent) {
+    if ([' ', 'Enter'].includes(ev.key)) {
+      ev.preventDefault();
+      input.click();
+    }
+  }
+
+  function onClick(event: MouseEvent) {
+    event.preventDefault();
+    input.click();
+  }
+</script>
+
+<button class={base} onkeydown={keydown} onclick={onClick} type="button">
+  {@render children()}
+</button>
+<label class="hidden">
+  <input {...restProps} bind:value bind:files bind:this={input} type="file" />
+</label>

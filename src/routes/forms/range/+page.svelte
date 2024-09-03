@@ -29,8 +29,10 @@
 <CodeWrapper>
   <Label>Default range</Label>
   <Range />
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/range-slider-example.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/range-slider-example.md'] as string} />
 
 <H2>Color</H2>
 <CodeWrapper>
@@ -41,31 +43,39 @@
       <Radio labelClass="w-24 my-1" name="default_alert_color" bind:group={rangeColor} color={colorOption as Range['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/color.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/color.md'] as string} />
 
 <H2>Disabled state</H2>
 <CodeWrapper>
   <Label>Default range</Label>
   <Range id="range-disabled" disabled />
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/disabled-state.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/disabled-state.md'] as string} />
 
 <H2>Min and max</H2>
 <CodeWrapper>
   <Label>Min-max range</Label>
   <Range id="range-minmax" min="0" max="10" bind:value={minmaxValue} />
   <p>Value: {minmaxValue}</p>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/min-and-max.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/min-and-max.md'] as string} />
 
 <H2>Steps</H2>
 <CodeWrapper>
   <Label>Range steps</Label>
   <Range id="range-steps" min="0" max="5" bind:value={stepValue} step="0.5" />
   <p>Value: {stepValue}</p>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/steps.md'] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/steps.md'] as string} />
 
 <H2>Sizes</H2>
 <p>Size props won't work with colors.</p>
@@ -76,6 +86,8 @@
   <Range id="default-range" rangeSize="md" />
   <Label>Large range</Label>
   <Range id="large-range" rangeSize="lg" />
+  {#snippet codeblock()}
+  <HighlightCompo code={modules['./md/sizes.md'] as string} />
+  {/snippet}
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/sizes.md'] as string} />
