@@ -59,7 +59,7 @@
   );
 </script>
 
-<H1>Heading, Span & Mark</H1>
+<H1>Heading & Mark</H1>
 
 <H2>Setup</H2>
 
@@ -90,7 +90,7 @@
   {/snippet}
 </CodeWrapper>
 
-<H2>Example headings</H2>
+<H2>Heading examples</H2>
 
 <CodeWrapper>
   <div class="h-80 grid place-items-center">

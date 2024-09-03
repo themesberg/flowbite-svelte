@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { A, P, Button, Card, Toggle, anchor, Label, Radio } from '$lib';
+  import { A, P, Button, Card, Toggle, anchor, Label, Radio, Input, CloseButton } from '$lib';
   import { ArrowRightOutline } from 'flowbite-svelte-icons';
   import Figma from '../../utils/icons/Figma.svelte';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
@@ -17,7 +17,7 @@
   let anchorColor: A['color'] = $state('primary');
   let linkClass = $state('font-medium hover:underline');
   const changeLinkClass = () => {
-    linkClass = linkClass === 'font-medium hover:underline' ? 'underline hover:no-underline' : 'font-medium hover:underline';
+    linkClass = linkClass === 'font-medium hover:underline' ? 'underline hover:no-underline italic font-semibold' : 'font-medium hover:underline';
   };
   let linkIcon = $state(false);
   const changeIcon = () => {
@@ -42,6 +42,8 @@
 </A>`;
     })()
   );
+
+  let { text = $bindable('Read more') } = $props();
 </script>
 
 <H1>Links</H1>
@@ -52,10 +54,18 @@
 
 <H2>Interactive Link Builder</H2>
 <CodeWrapper>
+  <Label class="text-md mb-2">Edit link</Label>
+  <Input type="text" bind:value={text} placeholder="Write your blockquote text" class="mb-4 pr-12">
+    {#snippet right()}
+      <CloseButton onclick={() => (text = '')} />
+    {/snippet}
+  </Input>
+  <div class="h-10">
   <A href="/" color={anchorColor} class={linkClass}>
-    Read more
+    {text}
     {#if linkIcon}<ArrowRightOutline class="ms-2 h-6 w-6" />{/if}
   </A>
+  </div>
   <div class="mt-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
