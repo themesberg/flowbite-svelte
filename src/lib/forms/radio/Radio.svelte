@@ -8,7 +8,7 @@
 </script>
 
 <Label class={label({ class: labelClass })}>
-  <input type="radio" bind:group bind:value {checked} aria-describedby={aria_describedby} {...restProps} class={input({ class: inputClass })} />
+  <input type="radio" bind:group {value} {checked} aria-describedby={aria_describedby} {...restProps} class={input({ class: inputClass })} />
   {@render children()}
 </Label>
 
