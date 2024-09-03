@@ -50,9 +50,10 @@
   const docrationThickness = Object.keys(span.variants.decorationThickness);
   let opacityClass = $state('')
   const changeOpacity = () => {
-    opacityClass = opacityClass === '' ? 'text-primary-600/50 dark:text-primary-500/50':'';
+    opacityClass = opacityClass === '' ? 'text-gray-600/50 dark:text-gray-500/50':'';
     spanHighlight = 'none';
     spanGradient = 'none';
+ 
   }
   // let editableContent = $state('Click to edit content.')
 
@@ -72,7 +73,11 @@
 
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
-      return `<P size="xl" weight="bold">Lorem ipsum <Span${propsString}>${editableContent}</Span> consectetur elit.</P>`;
+      return `<P size="xl" weight="bold">
+  Lorem ipsum 
+  <Span${propsString}>${editableContent}</Span>
+  consectetur elit.
+</P>`;
     })()
   );
 </script>
@@ -82,10 +87,10 @@
 
 <H2>Interactive Span Builder</H2>
 <CodeWrapper>
-  <div class="h-24">
-    <div class="flex mb-4">
+  <div class="h-40">
+    <div class=" mb-4">
       <Label class="text-lg font-bold mr-4">Click to edit span content: </Label>
-      <p class="text-lg" contenteditable bind:innerText={editableContent}></p>
+      <p class="text-lg border p-2 w-full" contenteditable bind:innerText={editableContent}></p>
     </div>
   <P size="xl" weight="bold">Lorem ipsum <Span italic={spanItalic} underline={spanUnderline} linethrough={spanLinethrough} uppercase={spanUppercase} gradient={spanGradient} decoration={spanDecoration} decorationColor={spanDecorationColor} decorationThickness={spanDecorationThickness} highlight={spanHighlight} class={opacityClass}>{editableContent}</Span> consectetur elit.</P>
   
@@ -93,7 +98,7 @@
   <div class="mb-4 mt-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Highlight:</Label>
     {#each highlights as highlight}
-      <Radio labelClass="w-32 my-1" name="span_highlight" bind:group={spanHighlight} onchange={() => (spanGradient = 'none')} color={highlight as Span['color']} value={highlight}>{highlight}</Radio>
+      <Radio labelClass="w-32 my-1" name="span_highlight" bind:group={spanHighlight} onchange={() => {spanGradient = 'none'; opacityClass = ''}} color={highlight as Span['color']} value={highlight}>{highlight}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
