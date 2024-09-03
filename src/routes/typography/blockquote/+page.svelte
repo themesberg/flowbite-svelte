@@ -4,7 +4,7 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import H3 from '../../utils/H3.svelte';
+  // import H3 from '../../utils/H3.svelte';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -57,9 +57,7 @@
     })()
   );
   let markdown = $derived.by(()=>{
-    if (selectedStyle === 'default') {
-      return 'default-blockquote.md'}
-    else if (selectedStyle === 'solid') {
+    if (selectedStyle === 'solid') {
       return 'solid-background.md'
     } else if (selectedStyle === 'icon') {
       return 'blockquote-icon.md'
@@ -69,6 +67,8 @@
       return 'user-testimonial.md'
     } else if (selectedStyle === 'review') {
       return 'user-review.md'
+    } else {
+      return 'default-blockquote.md'
     }
   })
   
