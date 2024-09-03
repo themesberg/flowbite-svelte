@@ -52,10 +52,26 @@
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
 
       return `<Blockquote${propsString}>
-  My Blockquote
+  ${text}
 </Blockquote>`;
     })()
   );
+  let markdown = $derived.by(()=>{
+    if (selectedStyle === 'default') {
+      return 'default-blockquote.md'}
+    else if (selectedStyle === 'solid') {
+      return 'solid-background.md'
+    } else if (selectedStyle === 'icon') {
+      return 'blockquote-icon.md'
+    } else if (selectedStyle === 'context') {
+      return 'paragraph-context.md'
+    } else if (selectedStyle === 'testimonial') {
+      return 'user-testimonial.md'
+    } else if (selectedStyle === 'review') {
+      return 'user-review.md'
+    }
+  })
+  
 </script>
 
 <H1>Blockquote</H1>
@@ -154,24 +170,7 @@
       <Radio labelClass="w-16 my-1" name="block_style" bind:group={selectedStyle} value={style}>{style}</Radio>
     {/each}
   </div>
+  {#snippet codeblock()}
+  <HighlightCompo code={modules[`./md/${markdown}`] as string} />
+  {/snippet}
 </CodeWrapper>
-
-<H3>Solid background</H3>
-
-<HighlightCompo code={modules['./md/solid-background.md'] as string} />
-
-<H3>Blockquote icon</H3>
-
-<HighlightCompo code={modules['./md/blockquote-icon.md'] as string} />
-
-<H3>Paragraph context</H3>
-
-<HighlightCompo code={modules['./md/paragraph-context.md'] as string} />
-
-<H3>User testimonial</H3>
-
-<HighlightCompo code={modules['./md/user-testimonial.md'] as string} />
-
-<H3>User Review</H3>
-
-<HighlightCompo code={modules['./md/user-review.md'] as string} />
