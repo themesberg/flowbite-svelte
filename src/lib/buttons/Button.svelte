@@ -47,5 +47,6 @@
 @prop name = undefined
 @prop class: className
 @prop onclick
+@prop onmouseenter
 @prop ...restProps
 -->

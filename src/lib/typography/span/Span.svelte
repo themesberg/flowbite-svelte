@@ -21,7 +21,7 @@
 
 <span {...restProps} class={classSpan}>
   {#if children}
-  {@render children()}
+    {@render children()}
   {/if}
 </span>
 

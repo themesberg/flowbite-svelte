@@ -17,15 +17,15 @@
   let helperState = $state(false);
   const changeHelperState = () => {
     helperState = !helperState;
-  }
+  };
   let fileNames = $state(true);
   const changeBindFile = () => {
     fileNames = !fileNames;
-  }
+  };
   let multiple = $state(false);
   const changeMultiple = () => {
     multiple = !multiple;
-  }
+  };
 
   // code generator
   let generatedCode = $derived(
@@ -35,15 +35,15 @@
       if (size !== 'md') props.push(` size="${size}"`);
       if (multiple) props.push(' multiple');
       if (fileNames) props.push(' bind:files');
-      if (fileNames){
+      if (fileNames) {
         fileSlot = `{#each files as file}
         <p>{file.name}</p>
-      {/each}`
+      {/each}`;
       }
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
       return `<Fileupload${propsString} />${helperState ? `\n<Helper>Helper text</Helper>` : ''}
-${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ''}`
+${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ''}`;
     })()
   );
   // $inspect('files', files);
@@ -57,19 +57,19 @@ ${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ''}`
 <H2>Interactive Fileupload Builder</H2>
 <CodeWrapper>
   <div class="h-32">
-    <Fileupload id="small_size" {size} class="mb-2" {multiple} bind:files/>
+    <Fileupload id="small_size" {size} class="mb-2" {multiple} bind:files />
     {#if helperState}
-    <Helper>SVG, PNG, JPG or GIF (MAX. 800x400px).</Helper>
+      <Helper>SVG, PNG, JPG or GIF (MAX. 800x400px).</Helper>
     {/if}
     {#if fileNames && files}
       <div class="h-16 overflow-y-scroll">
-      {#each files as file}
-        <p>{file.name}</p>
-      {/each}
+        {#each files as file}
+          <p>{file.name}</p>
+        {/each}
       </div>
     {/if}
   </div>
-  <div class="mt-4 flex flex-wrap space-x-4 mb-4">
+  <div class="mb-4 mt-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as sizeOption}
       <Radio labelClass="w-24 my-1" name="file_input_size" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
@@ -78,7 +78,7 @@ ${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ''}`
   <div class="flex flex-wrap gap-2">
     <Button class="w-40" onclick={changeHelperState}>{helperState ? 'Remove helper' : 'Add helper'}</Button>
     <Button class="w-40" color="emerald" onclick={changeBindFile}>{fileNames ? 'Hide file names' : 'Show file names'}</Button>
-    <Button class="w-40" color="sky" onclick={changeMultiple}>{ multiple ? 'Remove multiple' : 'Add multiple'}</Button>
+    <Button class="w-40" color="sky" onclick={changeMultiple}>{multiple ? 'Remove multiple' : 'Add multiple'}</Button>
   </div>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCode} />

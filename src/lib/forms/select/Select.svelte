@@ -31,7 +31,7 @@
 @prop value = $bindable()
 @prop underline
 @prop size = 'md'
-@prop selectClass
+@prop class: className
 @prop placeholder = 'Choose option ...'
 @prop ...restProps
 -->

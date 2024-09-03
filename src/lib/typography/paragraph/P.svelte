@@ -19,7 +19,7 @@
 @prop height = 'normal'
 @prop align = 'left'
 @prop justify = false
-@prop style
+@prop italic
 @prop firstUpper = false
 @prop whitespace = 'normal'
 @prop size = 'base'

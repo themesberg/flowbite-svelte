@@ -12,7 +12,6 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop files = $bindable()
-@prop value = $bindable()
 @prop size = 'md'
 @prop class: className
 @prop ...restProps

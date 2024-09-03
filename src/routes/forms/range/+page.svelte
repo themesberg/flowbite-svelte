@@ -30,7 +30,7 @@
   <Label>Default range</Label>
   <Range />
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/range-slider-example.md'] as string} />
+    <HighlightCompo code={modules['./md/range-slider-example.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -44,7 +44,7 @@
     {/each}
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/color.md'] as string} />
+    <HighlightCompo code={modules['./md/color.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -53,7 +53,7 @@
   <Label>Default range</Label>
   <Range id="range-disabled" disabled />
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/disabled-state.md'] as string} />
+    <HighlightCompo code={modules['./md/disabled-state.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -63,7 +63,7 @@
   <Range id="range-minmax" min="0" max="10" bind:value={minmaxValue} />
   <p>Value: {minmaxValue}</p>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/min-and-max.md'] as string} />
+    <HighlightCompo code={modules['./md/min-and-max.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -73,7 +73,7 @@
   <Range id="range-steps" min="0" max="5" bind:value={stepValue} step="0.5" />
   <p>Value: {stepValue}</p>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/steps.md'] as string} />
+    <HighlightCompo code={modules['./md/steps.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
@@ -87,7 +87,6 @@
   <Label>Large range</Label>
   <Range id="large-range" rangeSize="lg" />
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/sizes.md'] as string} />
+    <HighlightCompo code={modules['./md/sizes.md'] as string} />
   {/snippet}
 </CodeWrapper>
-

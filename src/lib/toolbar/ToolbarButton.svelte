@@ -6,12 +6,14 @@
   const background = getContext('background');
   let { children, color = 'default', name, ariaLabel, size = 'md', href, class: className, onclick, ...restProps }: Props = $props();
 
-  const buttonClass = $derived(toolbarButton({ 
-    color, 
-    size, 
-    background: !!background, 
-    class: className 
-  }));
+  const buttonClass = $derived(
+    toolbarButton({
+      color,
+      size,
+      background: !!background,
+      class: className
+    })
+  );
 
   // const colors = {
   //   dark: 'text-gray-500 hover:text-gray-900 hover:bg-gray-200 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600',

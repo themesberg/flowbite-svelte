@@ -2,7 +2,7 @@
   import { idGenerator } from '../../uiHelpers.svelte';
   import { type FloatingLabelInputProps as Props, floatingLabelInput } from '.';
 
-  let { children, id = idGenerator(), value=$bindable(), aria_describedby, style = 'standard', size = 'default', color = 'default', divClass, inputClass, labelClass, ...restProps }: Props = $props();
+  let { children, id = idGenerator(), value = $bindable(), aria_describedby, style = 'standard', size = 'default', color = 'default', divClass, inputClass, labelClass, ...restProps }: Props = $props();
 
   const { base, input, label } = $derived(floatingLabelInput({ style, size, color }));
 </script>
@@ -21,6 +21,7 @@
 ## Props
 @prop children
 @prop id = idGenerator()
+@prop value = $bindable()
 @prop aria_describedby
 @prop style = 'standard'
 @prop size = 'default'

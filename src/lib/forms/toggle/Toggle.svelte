@@ -29,5 +29,6 @@
 @prop labelClass
 @prop inputClass
 @prop spanClass
+@prop leftLabel
 @prop ...restProps
 -->

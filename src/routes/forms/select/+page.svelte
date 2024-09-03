@@ -69,16 +69,16 @@
   let underline = $state(false);
   const changeUnderline = () => {
     underline = !underline;
-  }
+  };
   let disabled = $state(false);
   const changeDiabled = () => {
     disabled = !disabled;
-  }
+  };
   let selected = $state('');
   let bindValue = $state(false);
   const changeBindValue = () => {
     bindValue = !bindValue;
-  }
+  };
 
   // code generator
   let generatedCode = $derived(
@@ -89,10 +89,10 @@
       if (underline) props.push(' underline');
       if (disabled) props.push(' disabled');
       if (bindValue) props.push(' bind:value={selected}');
-    
+
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
-      return `<Select${propsString} />${bindValue ? '\nSelected value: {selected}' : ''}` 
+      return `<Select${propsString} />${bindValue ? '\nSelected value: {selected}' : ''}`;
     })()
   );
 </script>
@@ -105,10 +105,13 @@
 <H2>Interactive Select Builder</H2>
 <CodeWrapper>
   <div class="h-32">
-    <Label for="select-sm" class="mb-4">{#if disabled}Disabled{/if} {sizeDisplay[selectSize]} select</Label>
-    <Select id="select-sm" size={selectSize} items={countries} {underline} {disabled} bind:value={selected} class="mb-2"/>
+    <Label for="select-sm" class="mb-4">
+      {#if disabled}Disabled{/if}
+      {sizeDisplay[selectSize]} select
+    </Label>
+    <Select id="select-sm" size={selectSize} items={countries} {underline} {disabled} bind:value={selected} class="mb-2" />
     {#if bindValue}
-    <Helper class="text-base">Selected value: {selected}</Helper>
+      <Helper class="text-base">Selected value: {selected}</Helper>
     {/if}
   </div>
   <div class="flex flex-wrap space-x-4">
@@ -123,47 +126,46 @@
     <Button class="w-40" color="rose" onclick={changeBindValue}>{bindValue ? 'Unbind' : 'Bind value'}</Button>
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={generatedCode} />
+    <HighlightCompo code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Select with dropdown</H2>
 <CodeWrapper innerClass="h-64">
   <ButtonGroup class="w-full">
-  <Button onclick={dropdown.toggle}>
-    <Usa />
-    USA
-    <ChevronDownOutline class="ms-2 h-6 w-6" />
-  </Button>
-  <div class="relative">
-    <Dropdown {dropdownStatus} {closeDropdown} params={transitionParams} class="absolute -left-[120px] top-[40px]">
-      <DropdownUl>
-        <DropdownLi aClass="flex items-center" href="/">
-          <Usa />
-          United States
-        </DropdownLi>
-        <DropdownLi aClass="flex items-center" href="/">
-          <Germany />
-          Germany
-        </DropdownLi>
-        <DropdownLi aClass="flex items-center" href="/">
-          <Italy />
-          Italy
-        </DropdownLi>
-        <DropdownLi aClass="flex items-center" href="/">
-          <China />
-          China
-        </DropdownLi>
-      </DropdownUl>
-    </Dropdown>
-  </div>
-  <Select items={states} placeholder="Choose the state" class="!rounded-s-none" />
+    <Button onclick={dropdown.toggle}>
+      <Usa />
+      USA
+      <ChevronDownOutline class="ms-2 h-6 w-6" />
+    </Button>
+    <div class="relative">
+      <Dropdown {dropdownStatus} {closeDropdown} params={transitionParams} class="absolute -left-[120px] top-[40px]">
+        <DropdownUl>
+          <DropdownLi aClass="flex items-center" href="/">
+            <Usa />
+            United States
+          </DropdownLi>
+          <DropdownLi aClass="flex items-center" href="/">
+            <Germany />
+            Germany
+          </DropdownLi>
+          <DropdownLi aClass="flex items-center" href="/">
+            <Italy />
+            Italy
+          </DropdownLi>
+          <DropdownLi aClass="flex items-center" href="/">
+            <China />
+            China
+          </DropdownLi>
+        </DropdownUl>
+      </Dropdown>
+    </div>
+    <Select items={states} placeholder="Choose the state" class="!rounded-s-none" />
   </ButtonGroup>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/select-with-dropdown.md'] as string} />
+    <HighlightCompo code={modules['./md/select-with-dropdown.md'] as string} />
   {/snippet}
 </CodeWrapper>
-
 
 <H2>Custom options</H2>
 <CodeWrapper>
@@ -175,7 +177,6 @@
     {/each}
   </Select>
   {#snippet codeblock()}
-  <HighlightCompo code={modules['./md/custom-options.md'] as string} />
+    <HighlightCompo code={modules['./md/custom-options.md'] as string} />
   {/snippet}
 </CodeWrapper>
-

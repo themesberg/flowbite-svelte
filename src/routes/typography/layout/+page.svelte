@@ -11,14 +11,10 @@
     eager: true
   });
 
-  let { 
-    content1 = $bindable('Track work across the enterprise through an open, collaborative platform.') ,
-    content2 = $bindable('Deliver great service experiences fast - without the complexity of traditional ITSM solutions.')
-  } = $props();
+  let { content1 = $bindable('Track work across the enterprise through an open, collaborative platform.'), content2 = $bindable('Deliver great service experiences fast - without the complexity of traditional ITSM solutions.') } = $props();
   // code generator
   let generatedCode1 = $derived(
     (() => {
-
       return `<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400" contenteditable>${content1}</P><P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400" contenteditable>${content2}</P>`;
     })()
   );

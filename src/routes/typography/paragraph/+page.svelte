@@ -61,7 +61,7 @@
 <H2>Interactive Paragraph Builder</H2>
 <CodeWrapper>
   <div class="h-[200px] overflow-scroll">
-    <Label class="text-xl mb-4">Click anywhere within the box below to start editing the content. Use plain texts.</Label>
+    <Label class="mb-4 text-xl">Click anywhere within the box below to start editing the content. Use plain texts.</Label>
     <P contenteditable weight={pWeight} size={pSize} space={pSpace} height={pHeight} align={pAlign} whitespace={pWhitespace} {italic} firstUpper={pFirstupper} justify={pJustify} class="border p-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla eius debitis cupiditate tempora necessitatibus perspiciatis pariatur aspernatur, atque corporis aut deserunt temporibus eligendi inventore id doloribus veritatis quos nesciunt adipisci.</P>
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
@@ -102,7 +102,16 @@
   </div>
   <div class="flex flex-wrap gap-4">
     <Button class="w-40" onclick={() => (pFirstupper = !pFirstupper)}>{pFirstupper ? 'Remove upper' : 'First upper'}</Button>
-    <Button class="w-40" color="secondary" onclick={() => {pJustify = !pJustify; pAlign = 'left';}}>{pJustify ? 'Remove justify' : 'Justify'}</Button>
+    <Button
+      class="w-40"
+      color="secondary"
+      onclick={() => {
+        pJustify = !pJustify;
+        pAlign = 'left';
+      }}
+    >
+      {pJustify ? 'Remove justify' : 'Justify'}
+    </Button>
     <Button class="w-40" color="emerald" onclick={changeItalic}>{italic ? 'Remove italic' : 'Italic'}</Button>
   </div>
   {#snippet codeblock()}

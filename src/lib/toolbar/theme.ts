@@ -3,40 +3,40 @@ import { tv } from 'tailwind-variants';
 export const toolbar = tv({
   slots: {
     base: 'flex justify-between items-center',
-    content: 'flex flex-wrap items-center',
+    content: 'flex flex-wrap items-center'
   },
   variants: {
     embedded: {
       true: {},
       false: {
-        base: 'py-2 px-3',
-      },
+        base: 'py-2 px-3'
+      }
     },
     color: {
       default: {},
       primary: {
-        base: 'bg-primary-100 text-primary-800',
+        base: 'bg-primary-100 text-primary-800'
       },
       secondary: {
-        base: 'bg-secondary-100 text-secondary-800',
-      },
+        base: 'bg-secondary-100 text-secondary-800'
+      }
       // Add more color variants as needed
     },
     separators: {
       true: {
-        content: 'sm:divide-x rtl:divide-x-reverse',
-      },
-    },
+        content: 'sm:divide-x rtl:divide-x-reverse'
+      }
+    }
   },
   compoundVariants: [
     {
       embedded: true,
       color: 'default',
       class: {
-        base: 'bg-transparent',
-      },
-    },
-  ],
+        base: 'bg-transparent'
+      }
+    }
+  ]
 });
 
 export const toolbarGroup = tv({
@@ -45,24 +45,24 @@ export const toolbarGroup = tv({
     spacing: {
       default: 'space-x-1 rtl:space-x-reverse',
       tight: 'space-x-0.5 rtl:space-x-reverse',
-      loose: 'space-x-2 rtl:space-x-reverse',
+      loose: 'space-x-2 rtl:space-x-reverse'
     },
     padding: {
       default: 'sm:pe-4 sm:ps-4',
-      none: '',
+      none: ''
     },
     position: {
       middle: '',
       first: 'sm:ps-0',
-      last: 'sm:pe-0',
-    },
+      last: 'sm:pe-0'
+    }
   },
   compoundVariants: [
     {
       position: ['first', 'last'],
-      class: 'sm:px-0',
-    },
-  ],
+      class: 'sm:px-0'
+    }
+  ]
 });
 
 export const toolbarButton = tv({
@@ -79,29 +79,29 @@ export const toolbarButton = tv({
       pink: 'text-pink-500 focus:ring-pink-400 hover:bg-pink-200 dark:hover:bg-pink-800 dark:hover:text-pink-300',
       blue: 'text-blue-500 focus:ring-blue-400 hover:bg-blue-200 dark:hover:bg-blue-800 dark:hover:text-blue-300',
       primary: 'text-primary-500 focus:ring-primary-400 hover:bg-primary-200 dark:hover:bg-primary-800 dark:hover:text-primary-300',
-      default: 'focus:ring-gray-400 hover:bg-gray-100',
+      default: 'focus:ring-gray-400 hover:bg-gray-100'
     },
     size: {
       xs: 'm-0.5 rounded-sm focus:ring-1 p-0.5',
       sm: 'm-0.5 rounded focus:ring-1 p-0.5',
       md: 'm-0.5 rounded-lg focus:ring-2 p-1.5',
-      lg: 'm-0.5 rounded-lg focus:ring-2 p-2.5',
+      lg: 'm-0.5 rounded-lg focus:ring-2 p-2.5'
     },
     background: {
       true: '',
-      false: '',
-    },
+      false: ''
+    }
   },
   compoundVariants: [
     {
       color: 'default',
       background: true,
-      class: 'dark:hover:bg-gray-600',
+      class: 'dark:hover:bg-gray-600'
     },
     {
       color: 'default',
       background: false,
-      class: 'dark:hover:bg-gray-700',
-    },
-  ],
+      class: 'dark:hover:bg-gray-700'
+    }
+  ]
 });

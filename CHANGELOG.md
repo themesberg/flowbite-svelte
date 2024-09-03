@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.5
+
+### Patch Changes
+
+- fix: type updates ([`30555a7982f82f92cdf03e26ea1812f57d357171`](https://github.com/shinokada/svelte-5-ui-lib/commit/30555a7982f82f92cdf03e26ea1812f57d357171))
+
 ## 0.9.4
 
 ### Patch Changes

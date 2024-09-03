@@ -48,13 +48,12 @@
   const decorationColors = Object.keys(span.variants.decorationColor);
   let spanDecorationThickness: Span['decorationThickness'] = $state('0');
   const docrationThickness = Object.keys(span.variants.decorationThickness);
-  let opacityClass = $state('')
+  let opacityClass = $state('');
   const changeOpacity = () => {
-    opacityClass = opacityClass === '' ? 'text-gray-600/50 dark:text-gray-500/50':'';
+    opacityClass = opacityClass === '' ? 'text-gray-600/50 dark:text-gray-500/50' : '';
     spanHighlight = 'none';
     spanGradient = 'none';
- 
-  }
+  };
   // let editableContent = $state('Click to edit content.')
 
   // code generator
@@ -89,16 +88,27 @@
 <CodeWrapper>
   <div class="h-40">
     <div class=" mb-4">
-      <Label class="text-lg font-bold mr-4">Click to edit span content: </Label>
-      <p class="text-lg border p-2 w-full" contenteditable bind:innerText={editableContent}></p>
+      <Label class="mr-4 text-lg font-bold">Click to edit span content:</Label>
+      <p class="w-full border p-2 text-lg" contenteditable bind:innerText={editableContent}></p>
     </div>
-  <P size="xl" weight="bold">Lorem ipsum <Span italic={spanItalic} underline={spanUnderline} linethrough={spanLinethrough} uppercase={spanUppercase} gradient={spanGradient} decoration={spanDecoration} decorationColor={spanDecorationColor} decorationThickness={spanDecorationThickness} highlight={spanHighlight} class={opacityClass}>{editableContent}</Span> consectetur elit.</P>
-  
+    <P size="xl" weight="bold">Lorem ipsum <Span italic={spanItalic} underline={spanUnderline} linethrough={spanLinethrough} uppercase={spanUppercase} gradient={spanGradient} decoration={spanDecoration} decorationColor={spanDecorationColor} decorationThickness={spanDecorationThickness} highlight={spanHighlight} class={opacityClass}>{editableContent}</Span> consectetur elit.</P>
   </div>
   <div class="mb-4 mt-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Highlight:</Label>
     {#each highlights as highlight}
-      <Radio labelClass="w-32 my-1" name="span_highlight" bind:group={spanHighlight} onchange={() => {spanGradient = 'none'; opacityClass = ''}} color={highlight as Span['color']} value={highlight}>{highlight}</Radio>
+      <Radio
+        labelClass="w-32 my-1"
+        name="span_highlight"
+        bind:group={spanHighlight}
+        onchange={() => {
+          spanGradient = 'none';
+          opacityClass = '';
+        }}
+        color={highlight as Span['color']}
+        value={highlight}
+      >
+        {highlight}
+      </Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">

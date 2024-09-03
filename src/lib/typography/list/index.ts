@@ -14,7 +14,7 @@ interface ListProps {
   position?: PositionType;
   ctxClass?: string;
   class?: string;
-  isContenteditable? : boolean
+  isContenteditable?: boolean;
 }
 
 interface LiProps extends HTMLLiAttributes {

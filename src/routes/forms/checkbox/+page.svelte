@@ -47,20 +47,20 @@
   const changeCheckedState = () => {
     checkedState = !checkedState;
     indeterminateState = false;
-  }
+  };
   let indeterminateState = $state(false);
   const changeIntermidiateState = () => {
     indeterminateState = !indeterminateState;
     checkedState = false;
-  }
+  };
   let disabledState = $state(false);
   const changeDisabledState = () => {
     disabledState = !disabledState;
-  }
+  };
   let helperState = $state(false);
   const changeHelperState = () => {
     helperState = !helperState;
-  }
+  };
 
   // code generator
   let generatedCode = $derived(
@@ -73,7 +73,7 @@
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
       return `<Checkbox${propsString}>My Checkbox</Checkbox>
-${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`
+${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`;
     })()
   );
 </script>
@@ -86,17 +86,17 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`
 <H2>Interactive Checkbox Builder</H2>
 <CodeWrapper>
   <div class="h-8">
-  <Checkbox checked={checkedState} indeterminate={indeterminateState} color={checkboxColor} disabled={disabledState}>{#if disabledState}This is disabled{:else}Default checkbox{/if}</Checkbox>
-  {#if helperState}
-  <Helper id="helper-checkbox-text" class="ps-6">
-    For orders shipped from $25 in books or $29 in other categories
-  </Helper>
-  {/if}
+    <Checkbox checked={checkedState} indeterminate={indeterminateState} color={checkboxColor} disabled={disabledState}>
+      {#if disabledState}This is disabled{:else}Default checkbox{/if}
+    </Checkbox>
+    {#if helperState}
+      <Helper id="helper-checkbox-text" class="ps-6">For orders shipped from $25 in books or $29 in other categories</Helper>
+    {/if}
   </div>
-  <div class="flex flex-wrap space-x-4 mt-4 mb-4">
+  <div class="mb-4 mt-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="checkbox_color" bind:group={checkboxColor} color={colorOption as Checkbox['color']} onchange={()=>checkedState = true} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="checkbox_color" bind:group={checkboxColor} color={colorOption as Checkbox['color']} onchange={() => (checkedState = true)} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap gap-2">
@@ -148,7 +148,6 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`
     <HighlightCompo code={modules['./md/checkbox-with-a-link.md'] as string} />
   {/snippet}
 </CodeWrapper>
-
 
 <H2>Bordered</H2>
 <CodeWrapper>

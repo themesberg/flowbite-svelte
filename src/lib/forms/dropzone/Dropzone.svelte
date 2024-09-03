@@ -25,3 +25,14 @@
 <label class="hidden">
   <input {...restProps} bind:value bind:files bind:this={input} type="file" />
 </label>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@prop children
+@prop value
+@prop files
+@prop class: className
+@prop ...restProps
+-->

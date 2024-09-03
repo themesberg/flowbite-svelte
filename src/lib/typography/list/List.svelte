@@ -25,6 +25,7 @@
 ## Props
 @prop children
 @prop tag = 'ul'
+@prop isContenteditable = false
 @prop position = 'inside'
 @prop ctxClass
 @prop class: className

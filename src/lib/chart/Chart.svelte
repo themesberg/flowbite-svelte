@@ -35,5 +35,6 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: 
+@prop options
+@prop class: classname
 -->

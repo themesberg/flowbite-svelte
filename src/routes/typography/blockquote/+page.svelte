@@ -66,12 +66,12 @@
 
 <H2>Interactive Blockquote Bilder</H2>
 <CodeWrapper>
-  <Input type="text" bind:value={text} placeholder="Write your blockquote text" class='pr-12 mb-8'>{#snippet right()}
-    <CloseButton onclick={() => (text = '')} />
-  {/snippet}</Input>
+  <Input type="text" bind:value={text} placeholder="Write your blockquote text" class="mb-8 pr-12">
+    {#snippet right()}
+      <CloseButton onclick={() => (text = '')} />
+    {/snippet}
+  </Input>
   <div class="mb-4 h-[300px] overflow-y-auto md:h-[250px]">
-    
-
     <Blockquote {border} {italic} size={selectedSize} {bg} alignment={selectedAlignment} class={blockClass}>{text}</Blockquote>
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">

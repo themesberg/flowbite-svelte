@@ -2,8 +2,7 @@
   import { setContext } from 'svelte';
   import { writable } from 'svelte/store';
   // import { twMerge } from 'tailwind-merge';
-  import { type ToolbarProps as Props, toolbar } from './'
- 
+  import { type ToolbarProps as Props, toolbar } from './';
 
   let { children, end, color = 'default', embedded, separatorClass, class: className, ...restProps }: Props = $props();
 
@@ -12,11 +11,13 @@
 
   let frameColor = $derived(embedded ? 'default' : color);
 
-  let { base, content } = $derived(toolbar({
-    color: frameColor,
-    embedded,
-    separators: $separators,
-  }));
+  let { base, content } = $derived(
+    toolbar({
+      color: frameColor,
+      embedded,
+      separators: $separators
+    })
+  );
 
   // let separatorsClass: string = twMerge($separators && 'sm:divide-x rtl:divide-x-reverse');
 
@@ -40,6 +41,7 @@
 @prop end
 @prop color = 'default'
 @prop embedded
+@prop separatorClass
 @prop class: className
 @prop ...restProps
 -->
