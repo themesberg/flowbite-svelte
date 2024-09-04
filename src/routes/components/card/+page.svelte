@@ -61,7 +61,7 @@
         props.push(` img={{${imgString}}}`);
       }
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
       return `<Card${propsString}>My Card</Card>`;
     })()

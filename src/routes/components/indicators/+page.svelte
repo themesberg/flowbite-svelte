@@ -40,7 +40,7 @@
       if (placement !== 'default') props.push(` placement="${placement}"`);
       if (cornerStyle !== 'circular') props.push(` cornerStyle="${cornerStyle}"`);
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
       return `<div class="borer relative h-56 w-56 rounded-lg border-gray-300 m-8">
   <Indicator${propsString} />

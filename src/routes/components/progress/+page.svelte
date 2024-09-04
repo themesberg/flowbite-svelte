@@ -80,7 +80,7 @@
         props.push(' easing={sineOut}');
       }
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
       return `<Progressbar${propsString} />`;
     })()

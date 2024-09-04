@@ -117,7 +117,7 @@
         props.push(` placement="${currentPlacement.placement}"`);
       }
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
       return `<Button onclick={drawerA.toggle}>Drawer</Button>
 <Drawer drawerStatus={drawerStatusA} closeDrawer={closeDrawerA}${propsString}>

@@ -69,7 +69,7 @@
         props.push(` params={{${paramsString}}}`);
       }
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
       return `<div class="relative h-56">
   <Toast${propsString}>My Toast</Toast>

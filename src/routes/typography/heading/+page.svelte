@@ -50,7 +50,7 @@
       let props = [];
       if (headingTag) props.push(` tag="${headingTag}"`);
       if (headingCls) props.push(` class="${headingCls}"`);
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
       return `<Heading${propsString}>
   ${text}

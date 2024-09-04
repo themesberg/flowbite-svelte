@@ -93,7 +93,7 @@
       if (btnDisabled) props.push(' disabled');
       if (btnSize !== 'md') props.push(` size="${btnSize}"`);
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
       return `<Button${propsString}>My Button</Button>`;
     })()
@@ -111,7 +111,7 @@
       if (gradientDisabled) props.push(' disabled');
       if (gradientSize !== 'md') props.push(` size="${gradientSize}"`);
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
       return `<GradientButton${propsString}>My Gradient Button</GradientButton>`;
     })()

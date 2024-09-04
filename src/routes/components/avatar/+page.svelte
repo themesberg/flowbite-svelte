@@ -50,7 +50,7 @@
       if (stacked) props.push('stacked');
       if (avatarClass) props.push(`class="${avatarClass}"`);
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
       return `<Avatar${propsString} />`;
     })()

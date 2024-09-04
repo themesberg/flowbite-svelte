@@ -45,7 +45,7 @@
       if (muted) props.push(' muted');
       if (currentClass.name !== 'default') props.push(` class="${currentClass.class}"`);
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
       return `<Video src="/videos/flowbite.mp4"${propsString} trackSrc="flowbite.mp4" />`;
     })()

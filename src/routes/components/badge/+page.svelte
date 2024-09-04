@@ -108,7 +108,7 @@
         props.push(` params={{${paramsString}}}`);
       }
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
       if (iconSlot) {
         return `<Badge${propsString}>

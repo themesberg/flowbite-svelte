@@ -49,7 +49,7 @@
       // blockClass
       if (blockClass) props.push(` class="${blockClass}"`);
       if (selectedSize !== 'lg') props.push(` size="${selectedSize}"`);
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
       return `<Blockquote${propsString}>
   ${text}

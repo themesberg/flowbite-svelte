@@ -45,7 +45,7 @@
       if (imgCaption) props.push(` caption="Image caption"`);
       if (imgHref) props.push(` href="/"`);
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
       return `<Img${propsString}src='/images/examples/content-gallery-1.png'/>`;
     })()

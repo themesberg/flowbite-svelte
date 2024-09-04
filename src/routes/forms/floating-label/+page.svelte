@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { FloatingLabelInput, Helper, Label, Radio, Toggle, floatingLabelInput } from '$lib';
+  import { FloatingLabelInput, Helper, Label, Radio, Toggle, floatingLabelInput, Button } from '$lib';
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -11,118 +11,102 @@
     eager: true
   });
 
-  const styles = ['filled', 'outlined', 'standard'];
+  const styles = ['standard', 'filled', 'outlined'];
   let style: FloatingLabelInput['style'] = $state('standard');
-  let style2: FloatingLabelInput['style'] = $state('standard');
-
   let floatingSize: FloatingLabelInput['size'] = $state('default');
-  const sizeDisplay: Record<FloatingLabelInput['size'], string> = {
-    small: 'Small',
-    default: 'Default'
-  };
-  // const colors = [ 'green', 'red']
   const colors = Object.keys(floatingLabelInput.variants.color);
   let floatingColor: FloatingLabelInput['color'] = $state('default');
   let helperColor: FloatingLabelInput['color'] = $state('default');
+  let disabled = $state(false);
+  const changeDisabled = () => {
+    disabled = !disabled;
+  }
+  let helperSlot = $state(false);
+  const changeHelperSlot = () => {
+    helperSlot = !helperSlot;
+    helperColor = 'default';
+  };
+
+  // code generator
+  let generatedCode = $derived(
+    (() => {
+      let props = [];
+      if (floatingColor !== 'default') props.push(` color="${floatingColor}"`);
+      if (disabled) props.push(' disabled');
+      if (style !== 'standard') props.push(` style="${style}"`);
+      if (floatingSize !== 'default') props.push(` size="${floatingSize}"`);
+
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+
+      let helperCode = '';
+      if (helperSlot) {
+        helperCode = `
+<Helper class="pt-2" color="${helperColor}">
+  Helper text
+</Helper>`;
+      }
+      return `<FloatingLabelInput ${propsString}>
+  Floating label
+</FloatingLabelInput>${helperCode}`;
+    })()
+  );
 </script>
 
 <H1>Floating label</H1>
-<input id="floating_filled" name="floating_filled" type="text" placeholder=" " class="block rounded-t-lg w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 appearance-none dark:text-white focus:outline-none focus:ring-0 peer border-gray-300 dark:border-gray-600 dark:focus:border-primary-500 focus:border-primary-600 px-2.5 pb-2.5 pt-5">
+
 <H2>Setup</H2>
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Floating label examples</H2>
 <CodeWrapper>
-  <div class="h-16">
-    <FloatingLabelInput {style} id="floating_filled" type="text">Floating {style}</FloatingLabelInput>
+  <div class="h-20">
+    <FloatingLabelInput {style} {disabled} size={floatingSize} color={floatingColor} id="floating_filled" type="text">Floating {style}</FloatingLabelInput>
+    {#if helperSlot}
+    <Helper class="pt-2" color={helperColor}>
+      Remember, contributions to this topic should follow our <a href="/">Community Guidelines</a>.
+    </Helper>
+    {/if}
   </div>
-  <div class="flex flex-wrap space-x-4">
+  <div class="flex flex-wrap space-x-4 mb-4">
     <Label class="mb-4 w-full font-bold">Style:</Label>
     {#each styles as option}
       <Radio labelClass="w-24 my-1" name="style1" bind:group={style} value={option}>{option}</Radio>
     {/each}
   </div>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/floating-label-examples.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Disabled state</H2>
-<CodeWrapper>
-  <div class="h-16">
-    <FloatingLabelInput disabled style={style2} id="floating_filled" type="text">Floating {style}</FloatingLabelInput>
-  </div>
-  <div class="flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Style:</Label>
-    {#each styles as option}
-      <Radio labelClass="w-24 my-1" name="disabled_style" bind:group={style2} value={option}>{option}</Radio>
-    {/each}
-  </div>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/disabled-state.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Colors</H2>
-<CodeWrapper>
-  <div class="mb-6 grid items-end gap-6 md:grid-cols-3">
-    <div>
-      <FloatingLabelInput color={floatingColor} style="filled" id="filled_success" aria_describedby="filled_success_help" type="text">Filled</FloatingLabelInput>
-    </div>
-    <div>
-      <FloatingLabelInput color={floatingColor} style="outlined" id="outlined_success" aria_describedby="outlined_success_help" type="text">Outlined</FloatingLabelInput>
-    </div>
-    <div>
-      <FloatingLabelInput color={floatingColor} style="standard" id="standard_success" aria_describedby="standard_success_help" type="text">Standard</FloatingLabelInput>
-    </div>
-  </div>
-  <div class="flex flex-wrap space-x-4">
+  <div class="flex flex-wrap space-x-4 mb-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
       <Radio labelClass="w-24 my-1" name="floating_color" bind:group={floatingColor} color={colorOption as FloatingLabelInput['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/color.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Size</H2>
-<CodeWrapper>
-  <div class="mb-6 grid h-48 items-end gap-4 md:h-16 md:grid-cols-3">
-    <FloatingLabelInput size={floatingSize} style="filled" id="size_example_filled" type="text">{sizeDisplay[floatingSize]} filled</FloatingLabelInput>
-    <FloatingLabelInput size={floatingSize} style="outlined" id="size_example_outlined" type="text">{sizeDisplay[floatingSize]} outlined</FloatingLabelInput>
-    <FloatingLabelInput size={floatingSize} id="size_example_standard" type="text">{sizeDisplay[floatingSize]} standard</FloatingLabelInput>
-  </div>
   <div class="flex flex-wrap space-x-4">
+    <Button class="w-48 mb-4" color="secondary" onclick={changeHelperSlot}>{helperSlot ? 'Remove helper slot' : 'Add helper slot'}</Button>
+    <Label class="mb-4 w-full font-bold">Helper Color</Label>
+    {#each colors as colorOption}
+      <Radio labelClass="w-24 my-1 {helperSlot ? '' : 'opacity-30 cursor-not-allowed'}" disabled={helperSlot ? false : true} name="helper_color" bind:group={helperColor} color={colorOption as FloatingLabelInput['color']} value={colorOption} >{colorOption}</Radio>
+    {/each}
+  </div>
+  <div class="flex flex-wrap space-x-4 mb-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     <Toggle
       onclick={() => {
         floatingSize = floatingSize === 'default' ? 'small' : 'default';
       }}
-    >
-      Toggle size
+    > 
+    {#snippet leftLabel()}
+    <div class="me-4">Default</div>
+   {/snippet}
+      Small
     </Toggle>
   </div>
+  <div class="flex flex-wrap gap-2">
+    <Button class="w-48" onclick={changeDisabled}>{disabled ? 'Remove disabled' : 'Add disabled'}</Button>
+    
+  </div>
+ 
   {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/sizes.md'] as string} />
+    <HighlightCompo code={generatedCode} />
+    <HighlightCompo code={modules['./md/floating-label-examples.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
-<H2>Helper text</H2>
-<CodeWrapper>
-  <FloatingLabelInput style="filled" color={helperColor} id="floating_helper" aria_describedby="floating_helper_text" type="text">Floating helper</FloatingLabelInput>
-  <Helper class="pt-2" color={helperColor}>
-    Remember, contributions to this topic should follow our <a href="/">Community Guidelines</a>
-    .
-  </Helper>
-  <div class="flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Color</Label>
-    {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="helper_color" bind:group={helperColor} color={colorOption as FloatingLabelInput['color']} value={colorOption}>{colorOption}</Radio>
-    {/each}
-  </div>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/helper-text.md'] as string} />
-  {/snippet}
-</CodeWrapper>

@@ -30,5 +30,5 @@ export const textareaVariants = tv({
         innerWrapper: 'rounded-b-lg'
       }
     }
-  }
+  },
 });

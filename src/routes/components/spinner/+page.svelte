@@ -37,7 +37,7 @@
       if (spinnerColor !== 'primary') props.push(` color="${spinnerColor}"`);
       if (spinnerClass !== '') props.push(` class="${spinnerClass}"`);
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : ' ';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
       // alignment needs div wrapper
       if (selectedAlignment !== 'left') {
