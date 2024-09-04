@@ -9,6 +9,7 @@
   export let activeClasses: string | undefined = undefined;
   export let inactiveClasses: string | undefined = undefined;
   export let defaultClass: string = 'inline-block text-sm font-medium text-center disabled:cursor-not-allowed';
+  export let divClass: string = '';
 
   const ctx = getContext<TabCtxType>('ctx') ?? {};
   // single selection
@@ -42,7 +43,7 @@
 
   {#if open}
     <div class="hidden tab_content_placeholder">
-      <div use:init>
+      <div use:init class={divClass}>
         <slot />
       </div>
     </div>
