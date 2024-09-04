@@ -189,7 +189,7 @@
 </svelte:head>
 
 <!-- The move listeners go here, so things keep working if the touch strays out of the element. -->
-<svelte:document on:mousemove={onDragMove} on:mouseup={onDragStop} on:touchmove={onDragMove} on:touchend={onDragStop} />
+<svelte:window on:mousemove={onDragMove} on:mouseup={onDragStop} on:touchmove={onDragMove} on:touchend={onDragStop} />
 <div bind:this={carouselDiv} class="relative" on:mousedown|nonpassive={onDragStart} on:touchstart|nonpassive={onDragStart} on:mousemove={onDragMove} on:mouseup={onDragStop} on:touchmove={onDragMove} on:touchend={onDragStop} role="button" aria-label={ariaLabel} tabindex="0">
   <div {...$$restProps} class={twMerge(divClass, activeDragGesture === undefined ? 'transition-transform' : '', $$props.class)} use:loop={duration}>
     <slot name="slide" {Slide} {index}>
