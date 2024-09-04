@@ -59,4 +59,5 @@
 @prop export let activeClasses: string | undefined = undefined;
 @prop export let inactiveClasses: string | undefined = undefined;
 @prop export let defaultClass: string = 'inline-block text-sm font-medium text-center disabled:cursor-not-allowed';
+@prop export let divClass: string = '';
 -->

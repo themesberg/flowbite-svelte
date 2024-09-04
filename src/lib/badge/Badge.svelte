@@ -94,14 +94,12 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let color: ColorVariant = 'primary'
-  export let large: boolean = false
-  export let dismissable: boolean = false
-  export let border: boolean = false
-  export let href: string = ''
-  export let rounded: boolean = false
-  export let transition = fade
-  export let params = {}
-
-  let badgeStatus: boolean = true;
+@prop export let color: ColorVariant = 'primary';
+@prop export let large: boolean = false;
+@prop export let dismissable: boolean = false;
+@prop export let border: boolean = false;
+@prop export let href: string = '';
+@prop export let rounded: boolean = false;
+@prop export let transition = fade;
+@prop export let params = {};
 -->
