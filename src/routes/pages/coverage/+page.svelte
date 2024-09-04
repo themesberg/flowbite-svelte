@@ -34,7 +34,7 @@
     },
     avatar: {
       checked: true,
-      problems: 'Avatar tooltip',
+      // problems: 'Avatar tooltip',
       notes: 'Variants, reactive examples'
     },
     badge: {
@@ -126,7 +126,8 @@
       notes: 'Variants, reactive examples'
     },
     popover: {
-      checked: false
+      checked: false,
+      problems: 'Paragraph popover'
     },
     progress: {
       checked: true,
@@ -169,7 +170,8 @@
       notes: 'Variants, reactive examples'
     },
     tooltip: {
-      checked: false
+      checked: false,
+      problems: 'Avatar tooltip'
     },
     video: {
       checked: true,
@@ -211,7 +213,7 @@
     },
     searchInput: {
       checked: true,
-      problems: 'Search with dropdown, Location search, Voice search, Event example',
+      problems: 'Location search, Voice search, Event example',
       notes: 'Variants checked'
     },
     select: {
@@ -259,7 +261,7 @@
     },
     paragraph: {
       checked: true,
-      problems: 'Paragraph popover',
+      // problems: 'Paragraph popover',
       notes: 'Variants, reactive examples'
     },
     span: {
@@ -324,7 +326,9 @@
   <Li># of components/pages checked: {componentsAnalysis.pageChecked}</Li>
   <Li># of components/pages to be completed: {componentsAnalysis.pageUnchecked}</Li>
   <Li class="text-green-500"># of pages without problems: {componentsAnalysis.pageWithoutProblems}</Li>
+  {#if componentsAnalysis.exampleProblems > 0}
   <Li class="text-red-500"># of examples to be completed: {componentsAnalysis.exampleProblems}</Li>
+  {/if}
 </List>
 
 <H2>Forms</H2>
@@ -333,7 +337,9 @@
   <Li># of components/pages checked: {formsAnalysis.pageChecked}</Li>
   <Li># of components/pages to be completed: {formsAnalysis.pageUnchecked}</Li>
   <Li class="text-green-500"># of pages without problems: {formsAnalysis.pageWithoutProblems}</Li>
+  {#if formsAnalysis.exampleProblems > 0}
   <Li class="text-red-500"># of examples to be completed: {formsAnalysis.exampleProblems}</Li>
+  {/if}
 </List>
 
 <H2>Typography</H2>
@@ -342,7 +348,9 @@
   <Li># of components/pages checked: {typographyAnalysis.pageChecked}</Li>
   <Li># of components/pages to be completed: {typographyAnalysis.pageUnchecked}</Li>
   <Li class="text-green-500"># of pages without problems: {typographyAnalysis.pageWithoutProblems}</Li>
+  {#if typographyAnalysis.exampleProblems > 0}
   <Li class="text-red-500"># of examples to be completed: {typographyAnalysis.exampleProblems}</Li>
+  {/if}
 </List>
 
 <Heading tag="h2" class="mb-2 py-4 text-2xl font-semibold text-gray-900 dark:text-white">Components</Heading>

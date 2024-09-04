@@ -30,8 +30,6 @@
 
 <H1>Layout</H1>
 
-<H2>One column</H2>
-
 <CodeWrapper>
   <div class="h-[400px] overflow-y-scroll">
   {#if selectedStyle === 'two-columns-even'}

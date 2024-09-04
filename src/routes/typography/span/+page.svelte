@@ -82,6 +82,7 @@
 </script>
 
 <H1>Span</H1>
+<H2>Setup</H2>
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Interactive Span Builder</H2>

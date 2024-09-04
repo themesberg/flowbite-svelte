@@ -65,7 +65,7 @@
 </CodeWrapper>
 
 <H2>Search with dropdown</H2>
-<CodeWrapper>
+<CodeWrapper innerClass="h-64">
   <form class="flex">
     <Button class="whitespace-nowrap rounded-e-none border border-e-0 border-primary-700" onclick={dropdown.toggle}>
       {selectCategory}

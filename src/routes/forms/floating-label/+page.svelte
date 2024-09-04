@@ -27,6 +27,7 @@
 </script>
 
 <H1>Floating label</H1>
+<input id="floating_filled" name="floating_filled" type="text" placeholder=" " class="block rounded-t-lg w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 appearance-none dark:text-white focus:outline-none focus:ring-0 peer border-gray-300 dark:border-gray-600 dark:focus:border-primary-500 focus:border-primary-600 px-2.5 pb-2.5 pt-5">
 <H2>Setup</H2>
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
