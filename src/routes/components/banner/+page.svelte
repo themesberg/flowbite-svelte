@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Banner, banner, Button, Skeleton, ImagePlaceholder, Label, Radio, type BannerProps } from '$lib';
-  import { BullhornOutline, SalePercentSolid, ArrowRightOutline, BookOpenSolid } from 'flowbite-svelte-icons';
+  import { BullhornOutline, ArrowRightOutline, BookOpenSolid } from 'flowbite-svelte-icons';
   import { blur, fly, slide, scale } from 'svelte/transition';
   import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
   import { linear } from 'svelte/easing';
@@ -8,7 +8,10 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-
+  // for Props table
+  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
+  const dirName = 'banner';
+  
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -194,3 +197,6 @@
     <HighlightCompo code={modules['./md/informational.md'] as string} />
   {/snippet}
 </CodeWrapper>
+
+<H2>Component data</H2>
+<CompoAttributesViewer {dirName}/>

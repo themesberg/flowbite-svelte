@@ -3,7 +3,9 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  // import H3 from '../../utils/H3.svelte';
+  // for Props table
+  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
+  const dirName = 'dropdown';
   import { Button, Checkbox, Search, Helper, Radio, Toggle, Dropdown, DropdownDivider, DropdownUl, DropdownLi, DropdownHeader, DropdownFooter, Navbar, NavBrand, NavUl, NavLi, Avatar, uiHelpers, Label, footer } from '$lib';
   import { ChevronDownOutline, ChevronRightOutline, UserRemoveSolid, DotsVerticalOutline, BellSolid, EyeSolid, ChevronUpOutline, ChevronLeftOutline } from 'flowbite-svelte-icons';
   import { blur, fly, slide, scale } from 'svelte/transition';
@@ -766,3 +768,6 @@
     <HighlightCompo code={modules['./md/avatar-with-name.md'] as string} />
   {/snippet}
 </CodeWrapper>
+
+<H2>Component data</H2>
+<CompoAttributesViewer {dirName}/>

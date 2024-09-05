@@ -1,7 +1,7 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
   import { setContext } from 'svelte';
-  import { accordionVariants, type AccordionCtxType, type AccordionProps as Props } from './accordion';
+  import { accordionVariants, type AccordionCtxType, type AccordionProps as Props } from './';
 
   let { children, flush = false, activeClass = '', inactiveClass = '', defaultClass = 'text-gray-500 dark:text-gray-400', class: className, transition = undefined, params, ...restProps }: Props = $props();
 

@@ -1,0 +1,1 @@
+{"name":"Rating","props":[["children",""],["text",""],["divClass","flex items-center"],["size","24"],["total","5"],["rating","4"],["partialId","partialStar + idGenerator()"],["Icon","Star"],["count","false"],["pClass","ms-2 text-sm font-bold text-gray-900 dark:text-white"]]}

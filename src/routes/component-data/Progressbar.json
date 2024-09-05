@@ -1,0 +1,1 @@
+{"name":"Progressbar","props":[["progress","45"],["precision","0"],["tweenDuration","400"],["animate","false"],["size","h-2.5"],["labelInside","false"],["labelOutside",""],["easing","cubicOut"],["color","primary"],["div2Class",""],["oustsideSpanClass",""],["oustsideProgressClass",""],["labeloutsidedivClass",""],["divClass",""],["...restProps",""]]}

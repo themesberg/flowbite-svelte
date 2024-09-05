@@ -1,0 +1,1 @@
+{"name":"Dropdown","props":[["children",""],["dropdownStatus","$bindable()"],["closeDropdown",""],["class: className",""],["backdropClass",""],["params",""],["transition","fly"],["...restProps",""]]}

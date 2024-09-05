@@ -14,6 +14,9 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  // Props table
+  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
+  const dirName = 'avatar'
 
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
@@ -176,3 +179,6 @@
     <HighlightCompo code={modules['./md/user-dropdown.md'] as string} />
   {/snippet}
 </CodeWrapper>
+
+<H2>Component data</H2>
+<CompoAttributesViewer {dirName}/>

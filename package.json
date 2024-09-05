@@ -38,6 +38,7 @@
     "gen:exports": "svelte-lib-helpers exports",
     "copy:packagejson": "svelte-lib-helpers package",
     "gen:docs5": "svelte-lib-helpers docs5",
+    "gen:runes-data": "svelte-lib-helpers runes-data",
     "lib-helpers": "npm run format && npm run gen:docs5 && npm run package && npm run gen:exports && npm run copy:packagejson",
     "generate-file-list": "tsx scripts/generateFileList.ts",
     "prebuild": "npm run generate-file-list",
@@ -45,10 +46,10 @@
     "changeset:publish": "changeset publish"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.7",
+    "@changesets/cli": "^2.27.8",
     "@playwright/test": "^1.46.1",
     "@sveltejs/adapter-auto": "^3.2.4",
-    "@sveltejs/kit": "^2.5.25",
+    "@sveltejs/kit": "^2.5.26",
     "@sveltejs/package": "^2.3.4",
     "@sveltejs/vite-plugin-svelte": "4.0.0-next.6",
     "@svitejs/changesets-changelog-github-compact": "^1.1.0",
@@ -61,7 +62,7 @@
     "flowbite-svelte-icons": "2.0.0-next.16",
     "globals": "^15.9.0",
     "highlight.js": "^11.10.0",
-    "postcss": "^8.4.44",
+    "postcss": "^8.4.45",
     "prettier": "^3.3.3",
     "prettier-plugin-svelte": "^3.2.6",
     "prettier-plugin-tailwindcss": "^0.6.6",
@@ -71,14 +72,14 @@
     "svelte": "5.0.0-next.243",
     "svelte-5-ui-lib": "^0.9.5",
     "svelte-check": "^3.8.6",
-    "svelte-lib-helpers": "^0.4.7",
+    "svelte-lib-helpers": "^0.4.8",
     "svelte-rune-highlight": "^0.5.10",
     "tailwindcss": "^3.4.10",
     "tslib": "^2.7.0",
     "tsx": "^4.19.0",
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.4.0",
-    "vite": "^5.4.2"
+    "vite": "^5.4.3"
   },
   "peerDependencies": {
     "@sveltejs/kit": "^2.0.0",

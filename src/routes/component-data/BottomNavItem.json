@@ -1,0 +1,1 @@
+{"name":"BottomNavItem","props":[["children",""],["btnName",""],["appBtnPosition","middle"],["target",""],["activeClass",""],["href",""],["btnClass",""],["spanClass",""],["...restProps",""]]}

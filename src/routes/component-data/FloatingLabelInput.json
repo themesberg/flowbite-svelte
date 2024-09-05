@@ -1,0 +1,1 @@
+{"name":"FloatingLabelInput","props":[["children",""],["id","idGenerator()"],["value","$bindable()"],["aria_describedby",""],["style","standard"],["size","default"],["color","default"],["divClass",""],["inputClass",""],["labelClass",""],["...restProps",""]]}

@@ -5,6 +5,9 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  // for Props table
+  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
+  const dirName = 'forms/select';
   import { sineIn } from 'svelte/easing';
   import Usa from '../../utils/icons/Usa.svelte';
   import Germany from '../../utils/icons/Germany.svelte';
@@ -180,3 +183,6 @@
     <HighlightCompo code={modules['./md/custom-options.md'] as string} />
   {/snippet}
 </CodeWrapper>
+
+<H2>Component data</H2>
+<CompoAttributesViewer {dirName}/>

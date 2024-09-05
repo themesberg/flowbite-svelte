@@ -1,0 +1,1 @@
+{"name":"Input","props":[["children",""],["left",""],["right",""],["value","$bindable()"],["size",""],["color","default"],["class: className",""],["classLeft",""],["classRight",""],["...restProps",""]]}

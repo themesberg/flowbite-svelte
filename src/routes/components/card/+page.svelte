@@ -1,14 +1,16 @@
 <script lang="ts">
   import { Card, card, Button, Toggle, Label, Radio } from '$lib';
   let reverse = $state(false);
-  let vCard = $state(false);
-  let hCard = $state(false);
   // $inspect('vCard: ', vCard, 'hCard: ', hCard);
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  // for Props table
+  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
+  const dirName = 'card';
+
   import { ArrowRightOutline } from 'flowbite-svelte-icons';
 
   const modules = import.meta.glob('./md/*.md', {
@@ -158,3 +160,6 @@
     <HighlightCompo code={modules['./md/call-to-action-card.md'] as string} />
   {/snippet}
 </CodeWrapper>
+
+<H2>Component data</H2>
+<CompoAttributesViewer {dirName}/>

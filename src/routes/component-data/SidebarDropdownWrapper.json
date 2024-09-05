@@ -1,0 +1,1 @@
+{"name":"SidebarDropdownWrapper","props":[["children",""],["arrowup",""],["arrowdown",""],["iconSlot",""],["isOpen",""],["btnClass",""],["label",""],["spanClass",""],["ulClass",""],["transition","slide"],["params",""],["svgClass",""],["class: className",""],["...restProps",""]]}
