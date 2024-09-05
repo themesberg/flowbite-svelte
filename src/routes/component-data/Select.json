@@ -1,0 +1,1 @@
+{"name":"Select","props":[["children",""],["items",""],["value","$bindable()"],["underline",""],["size","md"],["class: className",""],["placeholder","Choose option ..."],["...restProps",""]]}

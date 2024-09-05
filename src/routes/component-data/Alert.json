@@ -1,0 +1,1 @@
+{"name":"Alert","props":[["children",""],["icon",""],["alertStatus","$bindable(true)"],["closeIcon",""],["color","primary"],["rounded","true"],["border",""],["class: className",""],["dismissable",""],["transition","fade"],["params",""],["onclick",""],["...restProps",""]]}

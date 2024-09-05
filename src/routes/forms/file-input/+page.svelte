@@ -4,7 +4,9 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-
+  // for Props table
+  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
+  const dirName = 'forms/fileupload';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -84,3 +86,6 @@ ${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ''}`;
     <HighlightCompo code={generatedCode} />
   {/snippet}
 </CodeWrapper>
+
+<H2>Component data</H2>
+<CompoAttributesViewer {dirName}/>

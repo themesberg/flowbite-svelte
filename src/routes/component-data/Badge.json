@@ -1,0 +1,1 @@
+{"name":"Badge","props":[["children",""],["icon",""],["badgeStatus","$bindable(true)"],["color","primary"],["large","false"],["dismissable","false"],["class: className",""],["border",""],["href",""],["rounded",""],["transition","fade"],["params",""],["aClass",""],["onclick",""],["...restProps",""]]}

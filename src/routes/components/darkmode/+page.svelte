@@ -4,6 +4,9 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  // for Props table
+  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
+  const dirName = 'darkmode';
   import { ThumbsUpSolid, ThumbsDownSolid } from 'flowbite-svelte-icons';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
@@ -54,3 +57,6 @@ Use the lightIcon and darkIcon slots to change icons:
     <HighlightCompo code={modules['./md/modeicon.md'] as string} />
   {/snippet}
 </CodeWrapper>
+
+<H2>Component data</H2>
+<CompoAttributesViewer {dirName}/>

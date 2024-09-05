@@ -14,6 +14,10 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  // for Props table
+  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
+  const dirName = 'bottom-navigation';
+
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -167,3 +171,6 @@
 
 <H2>Card with bottom bar</H2>
 <CodeWrapper>TBD</CodeWrapper>
+
+<H2>Component data</H2>
+<CompoAttributesViewer {dirName}/>

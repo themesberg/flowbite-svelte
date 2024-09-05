@@ -1,0 +1,1 @@
+{"name":"Checkbox","props":[["children",""],["aria_describedby",""],["color","primary"],["custom",""],["inline",""],["tinted",""],["rounded",""],["group","$bindable([])"],["choices","[]"],["checked","$bindable(false)"],["classLabel",""],["indeterminate",""],["class: className",""],["...restProps",""]]}

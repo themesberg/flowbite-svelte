@@ -4,7 +4,9 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  // import H3 from '../../utils/H3.svelte';
+  // for Props table
+  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
+  const dirName = 'typography/img';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -109,3 +111,6 @@
   <Img srcset="/images/examples/image-1.jpg 1x, /images/examples/image-1@2x.jpg 2x" alt="sample 1" class="w-full max-w-xl rounded-lg" />
 </CodeWrapper>
 <HighlightCompo code={modules['./md/retina-ready.md'] as string} />
+
+<H2>Component data</H2>
+<CompoAttributesViewer {dirName}/>

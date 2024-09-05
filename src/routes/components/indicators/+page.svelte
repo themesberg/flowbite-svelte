@@ -5,7 +5,9 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-
+  // for Props table
+  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
+  const dirName = 'indicator';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -252,3 +254,6 @@
     <HighlightCompo code={modules['./md/stepper.md'] as string} />
   {/snippet}
 </CodeWrapper>
+
+<H2>Component data</H2>
+<CompoAttributesViewer {dirName}/>

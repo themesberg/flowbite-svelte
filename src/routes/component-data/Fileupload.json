@@ -1,0 +1,1 @@
+{"name":"Fileupload","props":[["files","$bindable()"],["size","md"],["class: className",""],["...restProps",""]]}

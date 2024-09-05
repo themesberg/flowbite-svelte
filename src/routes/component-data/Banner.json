@@ -1,0 +1,1 @@
+{"name":"Banner","props":[["children",""],["header",""],["bannerStatus","$bindable(true)"],["position","sticky"],["dismissable","true"],["color","gray"],["bannerType","default"],["class: className",""],["innerClass",""],["transition","fade"],["params",""],["...restProps",""]]}

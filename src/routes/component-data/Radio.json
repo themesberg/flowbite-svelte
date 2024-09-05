@@ -1,0 +1,1 @@
+{"name":"Radio","props":[["children",""],["aria_describedby",""],["labelClass",""],["color","primary"],["group","$bindable()"],["value","$bindable()"],["checked",""],["inputClass",""],["...restProps",""]]}

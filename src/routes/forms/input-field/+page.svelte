@@ -4,6 +4,9 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  // for Props table
+  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
+  const dirName = 'forms/input';
   import { isOverflow } from '../../utils/helpers';
 
   const modules = import.meta.glob('./md/*.md', {
@@ -375,3 +378,6 @@ ${closeBtnStatus ? `</Input>`: ''}${helperSlot ? `<Helper class="ps-6" color="${
   <DynamicCodeBlockHighlight {handleExpandClick} {expand} {showExpandButton} code={modules[`./md/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
+
+<H2>Component data</H2>
+<CompoAttributesViewer {dirName}/>
