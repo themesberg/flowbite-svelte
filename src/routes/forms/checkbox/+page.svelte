@@ -5,9 +5,11 @@
   import Vue from '../../utils/icons/Vue.svelte';
   import Angular from '../../utils/icons/Angular.svelte';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { isOverflow } from '../../utils/helpers';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -102,6 +104,18 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`;
       return 'table.md'
     }
   })
+  // for DynamicCodeBlock setup
+  let codeBlock = uiHelpers();
+  let expand = $state(false);
+  let showExpandButton = $derived(isOverflow(markdown, modules));
+  const handleExpandClick = () => {
+    expand = !expand;
+  }
+  $effect(() => {
+    isOverflow(markdown, modules)
+    expand = codeBlock.isOpen;
+  });
+  // end of DynamicCodeBlock setup
 </script>
 
 <H1>Checkbox</H1>
@@ -267,6 +281,6 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`;
     {/each}
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules[`./md/${markdown}`] as string} />
+  <DynamicCodeBlockHighlight {handleExpandClick} {expand} {showExpandButton} code={modules[`./md/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>

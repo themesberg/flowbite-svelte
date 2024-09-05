@@ -59,7 +59,7 @@
 </Headin>`;
     })()
   );
-  // for HighlightCompo setup
+  // for DynamicCodeBlock setup
   let codeBlock = uiHelpers();
   let expand = $state(false);
   let showExpandButton = $derived(isOverflow(markdown, modules));
@@ -70,7 +70,7 @@
     isOverflow(markdown, modules)
     expand = codeBlock.isOpen;
   });
-  // end of HiglightCompo setup
+  // end of DynamicCodeBlock setup
 
 </script>
 
@@ -168,8 +168,6 @@
     {/each}
   </div>
   {#snippet codeblock()}
-  <DynamicCodeBlockHighlight
-handleExpandClick={handleExpandClick}
-{expand} {showExpandButton} code={modules[`./md/${markdown}`] as string} />
+  <DynamicCodeBlockHighlight {handleExpandClick} {expand} {showExpandButton} code={modules[`./md/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>

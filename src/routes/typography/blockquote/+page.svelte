@@ -1,9 +1,11 @@
 <script lang="ts">
-  import { Blockquote, blockquote, P, Rating, Label, Radio, Button, Input, CloseButton } from '$lib';
+  import { Blockquote, blockquote, P, Rating, Label, Radio, Button, Input, CloseButton, uiHelpers } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { isOverflow } from '../../utils/helpers';
   // import H3 from '../../utils/H3.svelte';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
@@ -71,7 +73,18 @@
       return 'default-blockquote.md'
     }
   })
-  
+  // for DynamicCodeBlock setup
+  let codeBlock = uiHelpers();
+  let expand = $state(false);
+  let showExpandButton = $derived(isOverflow(markdown, modules));
+  const handleExpandClick = () => {
+    expand = !expand;
+  }
+  $effect(() => {
+    isOverflow(markdown, modules)
+    expand = codeBlock.isOpen;
+  });
+  // end of DynamicCodeBlock setup
 </script>
 
 <H1>Blockquote</H1>
@@ -171,6 +184,6 @@
     {/each}
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules[`./md/${markdown}`] as string} />
+  <DynamicCodeBlockHighlight {handleExpandClick} {expand} {showExpandButton} code={modules[`./md/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>

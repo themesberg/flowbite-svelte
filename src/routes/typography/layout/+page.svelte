@@ -1,9 +1,11 @@
 <script lang="ts">
-  import { P, Layout, Label, Radio } from '$lib';
+  import { P, Layout, Label, Radio, uiHelpers } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
+  import { isOverflow } from '../../utils/helpers';
+  // import H2 from '../../utils/H2.svelte';
   // import H3 from '../../utils/H3.svelte';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
@@ -26,6 +28,18 @@
       return 'one-column.md'
     }
   })
+  // for DynamicCodeBlock setup
+  let codeBlock = uiHelpers();
+  let expand = $state(false);
+  let showExpandButton = $derived(isOverflow(markdown, modules));
+  const handleExpandClick = () => {
+    expand = !expand;
+  }
+  $effect(() => {
+    isOverflow(markdown, modules)
+    expand = codeBlock.isOpen;
+  });
+  // end of DynamicCodeBlock setup
 </script>
 
 <H1>Layout</H1>
@@ -69,6 +83,6 @@
   {/each}
 </div>
 {#snippet codeblock()}
-<HighlightCompo code={modules[`./md/${markdown}`] as string} />
+<DynamicCodeBlockHighlight {handleExpandClick} {expand} {showExpandButton}  code={modules[`./md/${markdown}`] as string} />
 {/snippet}
 </CodeWrapper>
