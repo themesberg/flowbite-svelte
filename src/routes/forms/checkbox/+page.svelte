@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Checkbox, CheckboxButton, ButtonGroup, checkbox, Helper, Label, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, TableBodyRow, Radio, Button, Dropdown, DropdownUl, DropdownHeader, DropdownFooter, Search, uiHelpers, type CheckboxItem } from '$lib';
-  import { ChevronDownOutline, UserRemoveSolid, AppleSolid, FacebookSolid, DiscordSolid, DropboxSolid } from 'flowbite-svelte-icons';
+  import { Checkbox, CheckboxButton, ButtonGroup, checkbox, Helper, Label, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, TableBodyRow, Radio, Button, Dropdown, DropdownUl, DropdownHeader, Search, uiHelpers, type CheckboxItem } from '$lib';
+  import { ChevronDownOutline, AppleSolid, FacebookSolid, DiscordSolid, DropboxSolid } from 'flowbite-svelte-icons';
   import React from '../../utils/icons/React.svelte';
   import Vue from '../../utils/icons/Vue.svelte';
   import Angular from '../../utils/icons/Angular.svelte';
@@ -76,6 +76,32 @@
 ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`;
     })()
   );
+
+  const styles = ['Table', 'Link', 'Bordered', 'List group', 'Horizontal list', 'Dropdown', 'Inline layout', 'Button', 'Advanced', 'Group-variable'];
+  let selectedStyle = $state('Table');
+  let markdown = $derived.by(()=>{
+    if (selectedStyle === 'Link') {
+      return 'link.md'
+    } else if (selectedStyle === 'Bordered') {
+      return 'bordered.md'
+    } else if (selectedStyle === 'List group') {
+      return 'list-group.md'
+    } else if (selectedStyle === 'Horizontal list') {
+      return 'horizontal-list.md'
+    } else if (selectedStyle === 'Dropdown') {
+      return 'dropdown.md'
+    } else if (selectedStyle === 'Inline layout') {
+      return 'inline-layout.md'
+    } else if (selectedStyle === 'Button') {
+      return 'button.md'
+    } else if (selectedStyle === 'Advanced') {
+      return 'advanced.md'
+    } else if (selectedStyle === 'Group-variable') {
+      return 'group-variable.md'
+    } else {
+      return 'table.md'
+    }
+  })
 </script>
 
 <H1>Checkbox</H1>
@@ -110,60 +136,22 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`;
   {/snippet}
 </CodeWrapper>
 
-<H2>Checkbox in a table</H2>
-<CodeWrapper innerClass="flex flex-col gap-4">
-  <Table>
-    <TableHead>
-      <TableHeadCell>Left column</TableHeadCell>
-      <TableHeadCell>Right column</TableHeadCell>
-    </TableHead>
-    <TableBody class="divide-y dark:divide-gray-700">
-      <TableBodyRow class="divide-x rtl:divide-x-reverse dark:divide-gray-700">
-        <TableBodyCell><Label for="checkbox1">Default checkbox</Label></TableBodyCell>
-        <TableBodyCell><Label for="checkbox2">Disabled checkbox</Label></TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow class="divide-x rtl:divide-x-reverse dark:divide-gray-700">
-        <TableBodyCell><Checkbox id="checkbox1" checked /></TableBodyCell>
-        <TableBodyCell><Checkbox id="checkbox2" disabled /></TableBodyCell>
-      </TableBodyRow>
-    </TableBody>
-  </Table>
+<H2>Checkbox examples</H2>
 
-  <Label color="red" class="mt-4 flex items-center font-bold italic">
-    Label on the other side <Checkbox class="ms-2" />
-  </Label>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/alternative-syntax.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Checkbox with a link</H2>
 <CodeWrapper>
+  <div class="h-[230px]">
+  {#if selectedStyle === 'Link'}
   <Checkbox>
-    I agree with the
-    <a href="/" class="ms-1 text-primary-600 hover:underline dark:text-primary-500">terms and conditions</a>
-    .
+    I agree with the<a href="/" class="ms-1 text-primary-600 hover:underline dark:text-primary-500">terms and conditions</a>.
   </Checkbox>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/checkbox-with-a-link.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Bordered</H2>
-<CodeWrapper>
+  {:else if selectedStyle === 'Bordered'}
   <div class="rounded border border-gray-200 dark:border-gray-700">
     <Checkbox classLabel="w-full p-4">Default radio</Checkbox>
   </div>
   <div class="rounded border border-gray-200 dark:border-gray-700">
     <Checkbox checked classLabel="w-full p-4">Checked state</Checkbox>
   </div>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/bordered.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Checkbox list group</H2>
-<CodeWrapper>
+  {:else if selectedStyle === 'List group'}
   <p class="mb-4 font-semibold text-gray-900 dark:text-white">Technology</p>
   <ul class="w-48 divide-y divide-gray-200 rounded-lg border border-gray-200 bg-white dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800">
     <li><Checkbox checked classLabel="p-3">svelte</Checkbox></li>
@@ -171,13 +159,7 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`;
     <li><Checkbox classLabel="p-3">React</Checkbox></li>
     <li><Checkbox classLabel="p-3">Angular</Checkbox></li>
   </ul>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/checkbox-list-group.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Horizontal list group</H2>
-<CodeWrapper>
+  {:else if selectedStyle === 'Horizontal list'}
   <p class="mb-4 font-semibold text-gray-900 dark:text-white">Identification</p>
   <ul class="w-full items-center divide-x divide-gray-200 rounded-lg border border-gray-200 sm:flex rtl:divide-x-reverse dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800">
     <li class="w-full">
@@ -187,13 +169,8 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`;
     <li class="w-full"><Checkbox classLabel="p-3">React</Checkbox></li>
     <li class="w-full"><Checkbox classLabel="p-3">Angular</Checkbox></li>
   </ul>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/horizontal-list-group.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Checkbox dropdown</H2>
-<CodeWrapper innerClass="relative flex h-[460px] items-start justify-center">
+  {:else if selectedStyle === 'Dropdown'}
+  <div class="flex justify-center">
   <Button onclick={dropdown.toggle}>Project users<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <div class="relative">
     <Dropdown {dropdownStatus} {closeDropdown} params={transitionParams} class="absolute -left-[190px] top-[45px] w-52 overflow-y-auto p-2 pb-3 text-sm">
@@ -208,69 +185,30 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`;
             <Checkbox>Robert Gouth</Checkbox>
           </li>
           <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-            <Checkbox>Jese Leos</Checkbox>
-          </li>
-          <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-            <Checkbox checked>Bonnie Green</Checkbox>
-          </li>
-          <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-            <Checkbox>Jese Leos</Checkbox>
-          </li>
-          <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-            <Checkbox>Robert Gouth</Checkbox>
-          </li>
-          <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
             <Checkbox>Bonnie Green</Checkbox>
           </li>
         </DropdownUl>
       </div>
-      <DropdownFooter>
-        <a href="/" class="-mb-1 flex items-center bg-gray-50 p-3 text-sm font-medium text-red-600 hover:bg-gray-100 hover:underline dark:bg-gray-700 dark:text-red-500 dark:hover:bg-gray-600">
-          <UserRemoveSolid class="me-1 h-5 w-5" />Delete user
-        </a>
-      </DropdownFooter>
     </Dropdown>
   </div>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/checkbox-dropdown.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Inline layout</H2>
-<CodeWrapper>
-  <div class="flex gap-3">
-    <Checkbox>Inline 1</Checkbox>
-    <Checkbox>Inline 2</Checkbox>
-    <Checkbox checked>Inline checked</Checkbox>
-    <Checkbox disabled>Inline disabled</Checkbox>
   </div>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/inline-layout.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>CheckboxButton</H2>
-<CodeWrapper>
+  {:else if selectedStyle === 'Inline layout'}
+  {@html modules[`./md/${markdown}`]}
+  {:else if selectedStyle === 'Button'}
   <div class="mb-4">
     <CheckboxButton><AppleSolid class="me-2 h-6 w-6" />Apple</CheckboxButton>
     <CheckboxButton><FacebookSolid class="me-2 h-6 w-6" />Facebook</CheckboxButton>
     <CheckboxButton><DiscordSolid class="me-2 h-6 w-6" />Discord</CheckboxButton>
     <CheckboxButton><DropboxSolid class="me-2 h-6 w-6" />Dropbox</CheckboxButton>
   </div>
-
+  
   <ButtonGroup>
     <CheckboxButton><AppleSolid class="me-2 h-6 w-6" />Apple</CheckboxButton>
     <CheckboxButton><FacebookSolid class="me-2 h-6 w-6" />Facebook</CheckboxButton>
     <CheckboxButton><DiscordSolid class="me-2 h-6 w-6" />Discord</CheckboxButton>
     <CheckboxButton><DropboxSolid class="me-2 h-6 w-6" />Dropbox</CheckboxButton>
   </ButtonGroup>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/checkbox-button.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Advanced layout</H2>
-<CodeWrapper>
+  {:else if selectedStyle === 'Advanced'}
   <p class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Choose technology:</p>
   <div class="grid w-full gap-6 md:grid-cols-3">
     <Checkbox custom>
@@ -295,13 +233,7 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`;
       </div>
     </Checkbox>
   </div>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/advanced-layout.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Group variable</H2>
-<CodeWrapper>
+  {:else if selectedStyle === 'Group-variable'}
   <div class="flex gap-2">
     <Checkbox name="flavours" {choices} bind:group />
   </div>
@@ -309,7 +241,32 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`;
     Group: {group}
   </div>
   <Button onclick={clearGroup}>Clear</Button>
+  {:else}
+  <Table>
+    <TableHead>
+      <TableHeadCell>Left column</TableHeadCell>
+      <TableHeadCell>Right column</TableHeadCell>
+    </TableHead>
+    <TableBody class="divide-y dark:divide-gray-700">
+      <TableBodyRow class="divide-x rtl:divide-x-reverse dark:divide-gray-700">
+        <TableBodyCell><Label for="checkbox1">Default checkbox</Label></TableBodyCell>
+        <TableBodyCell><Label for="checkbox2">Disabled checkbox</Label></TableBodyCell>
+      </TableBodyRow>
+      <TableBodyRow class="divide-x rtl:divide-x-reverse dark:divide-gray-700">
+        <TableBodyCell><Checkbox id="checkbox1" checked /></TableBodyCell>
+        <TableBodyCell><Checkbox id="checkbox2" disabled /></TableBodyCell>
+      </TableBodyRow>
+    </TableBody>
+  </Table>
+  {/if}
+  </div>
+  <div class="mt-4 flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Style:</Label>
+    {#each styles as style}
+      <Radio labelClass="w-40 my-1" name="block_style" bind:group={selectedStyle} value={style}>{style}</Radio>
+    {/each}
+  </div>
   {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/group-variable.md'] as string} />
+  <HighlightCompo code={modules[`./md/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>

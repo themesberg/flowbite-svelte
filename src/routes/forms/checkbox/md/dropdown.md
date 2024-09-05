@@ -1,6 +1,6 @@
 <Button onclick={dropdown.toggle}>Project users<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
 <div class="relative">
-  <Dropdown {dropdownStatus} {closeDropdown} params={transitionParams} class="absolute -left-[170px] top-[40px] overflow-y-auto p-2 pb-3 text-sm">
+  <Dropdown {dropdownStatus} {closeDropdown} params={transitionParams} class="absolute -left-[190px] top-[45px] w-52 overflow-y-auto p-2 pb-3 text-sm">
     <div class="relative">
       <DropdownHeader>
         <div class="p-0">

@@ -1,11 +1,9 @@
 <script lang="ts">
   import { HighlightSvelte, Highlight } from 'svelte-rune-highlight';
-  import githubDark from 'svelte-rune-highlight/styles/github-dark';
   import markdown from 'svelte-rune-highlight/languages/markdown';
   import { Button, Badge } from '$lib';
   import { copyToClipboard } from './helpers';
   import { highlightcompo } from './theme';
-  import type { Snippet } from 'svelte';
 
   interface Props {
     // componentStatus: boolean;
@@ -21,14 +19,17 @@
 
   let showExpandButton: boolean = $state(false);
   let expand: boolean = $state(false);
-  function checkOverflow(el: HTMLElement) {
+  const checkOverflow = (el: HTMLElement)=> {
     const isOverflowingY = el.clientHeight < el.scrollHeight;
     showExpandButton = isOverflowingY;
-    // el.firstElementChild?.classList.add('mb-8');
   }
 
   const { base, badge, button } = $derived(highlightcompo());
   let copiedStatus = $state(false);
+  
+  const handleExpandClick = () => {
+    expand = !expand;
+  }
 
   function handleCopyClick() {
     copyToClipboard(code)
@@ -44,10 +45,6 @@
       });
   }
 </script>
-
-<svelte:head>
-  {@html githubDark}
-</svelte:head>
 
 <div class={base({ className })}>
   <div class="relative">
@@ -65,7 +62,7 @@
     </div>
     <Button class={button({ class: buttonClass })} onclick={handleCopyClick}>Copy</Button>
     {#if showExpandButton}
-      <button onclick={() => (expand = !expand)} data-expand-code="" type="button" class="absolute bottom-0 start-0 w-full border-t border-gray-200 bg-gray-100 px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">{expand ? 'Collapse code' : 'Expand code'}</button>
+      <button onclick={handleExpandClick} type="button" class="absolute bottom-0 start-0 w-full border-t border-gray-200 bg-gray-100 px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">{expand ? 'Collapse code' : 'Expand code'}</button>
     {/if}
   </div>
 </div>

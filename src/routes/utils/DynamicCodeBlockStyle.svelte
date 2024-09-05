@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { HighlightSvelte, Highlight } from 'svelte-rune-highlight';
   import { browser } from '$app/environment';
   import { toUpperSnakeCase } from './helpers';
   const stylesImport = import.meta.glob('./highlight/styles/*.css');
