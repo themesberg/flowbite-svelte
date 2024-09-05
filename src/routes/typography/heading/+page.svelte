@@ -2,7 +2,7 @@
   import { Heading, Button, P, A, Span, Mark, Breadcrumb, BreadcrumbItem, Badge, Secondary, Label, Radio, Input, CloseButton, uiHelpers } from '$lib';
   import { ArrowRightOutline, ChevronRightOutline } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import HighlightCompo2 from '../../utils/HighlightCompo2.svelte';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
@@ -59,34 +59,18 @@
 </Headin>`;
     })()
   );
-
+  // for HighlightCompo setup
   let codeBlock = uiHelpers();
   let expand = $state(false);
-
-  // modules: ModuleObject, markdown: string
-  // const countMarkdownLines = (markdown: string) => {
-  //   // get the content from the file name
-  //   const markdownLines = modules[`./md/${markdown}`] as string
-  //   const lines = markdownLines.split('\n');
-  //   return lines.length;
-  // }
-  
-  // const isOverflow = (markdown: string) => {
-  //   const markdownLines = modules[`./md/${markdown}`] as string
-  //   const lines = markdownLines.split('\n');
-  //   return lines.length > 7;
-  // }
-  // if isOverflow is true, showshowExpandButton is true
   let showExpandButton = $derived(isOverflow(markdown, modules));
-
   const handleExpandClick = () => {
     expand = !expand;
   }
-
   $effect(() => {
     isOverflow(markdown, modules)
     expand = codeBlock.isOpen;
   });
+  // end of HiglightCompo setup
 
 </script>
 
@@ -184,8 +168,7 @@
     {/each}
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={modules[`./md/${markdown}`] as string} />
-  <HighlightCompo2
+  <DynamicCodeBlockHighlight
 handleExpandClick={handleExpandClick}
 {expand} {showExpandButton} code={modules[`./md/${markdown}`] as string} />
   {/snippet}
