@@ -7,7 +7,7 @@ test('blockquote page has expected h1', async ({ page }) => {
 
 test('heading/mark page has expected h1', async ({ page }) => {
   await page.goto('/typography/heading');
-  expect(await page.textContent('h1')).toBe('Heading, Span & Mark');
+  expect(await page.textContent('h1')).toBe('Heading & Mark');
 });
 
 test('hr page has expected h1', async ({ page }) => {
