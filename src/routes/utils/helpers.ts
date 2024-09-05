@@ -55,8 +55,17 @@ export const isOverflow = (markdown: string, modules: Record<string, any>): bool
   return lines.length > 7;
 };
 
-// const isOverflow = (markdown: string) => {
-//   const markdownLines = modules[`./md/${markdown}`] as string
-//   const lines = markdownLines.split('\n');
-//   return lines.length > 7;
-// }
+import { fileList } from '../../generatedFileList';
+
+export function getFilteredFileNames(dirName: string): string[] {
+  const filteredPaths = fileList.filter((path) => path.includes(dirName));
+  const fileNames = filteredPaths.map((path) => {
+    const parts = path.split('/');
+    const fileNameWithExtension = parts[parts.length - 1];
+    const fileNameWithoutExtension = fileNameWithExtension.substring(0, fileNameWithExtension.lastIndexOf('.'));
+
+    return fileNameWithoutExtension;
+  });
+
+  return fileNames;
+}
