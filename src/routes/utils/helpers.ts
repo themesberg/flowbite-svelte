@@ -48,3 +48,15 @@ export function toUpperSnakeCase(text: string): string {
   // replace spaces and - to _ and convert to uppercase
   return text.replace(/[\s-]/g, '_').toUpperCase();
 }
+
+export const isOverflow = (markdown: string, modules: Record<string, any>): boolean => {
+  const markdownLines = modules[`./md/${markdown}`];
+  const lines = markdownLines.split('\n');
+  return lines.length > 7;
+};
+
+// const isOverflow = (markdown: string) => {
+//   const markdownLines = modules[`./md/${markdown}`] as string
+//   const lines = markdownLines.split('\n');
+//   return lines.length > 7;
+// }

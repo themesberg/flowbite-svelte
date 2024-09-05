@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type TextareaProps as Props, textareaVariants } from '.';
+  import { type TextareaProps as Props, textarea } from '.';
 
   let { header, footer, value = $bindable(), divClass, innerClass, headerClass, footerClass, disabled, class: className, ...restProps }: Props = $props();
 
@@ -12,7 +12,7 @@
     wrapped = false;
   }
 
-  const { base, wrapper, innerWrapper, headerCls, footerCls } = $derived(textareaVariants({ wrapped, hasHeader, hasFooter }));
+  const { base, wrapper, innerWrapper, headerCls, footerCls } = $derived(textarea({ wrapped, hasHeader, hasFooter }));
   $inspect('wrapped: ', wrapped);
 </script>
 

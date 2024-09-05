@@ -1,6 +1,6 @@
 import { tv } from 'tailwind-variants';
 
-export const textareaVariants = tv({
+export const textarea = tv({
   slots: {
     base: 'block w-full text-sm border-0 px-0 bg-inherit dark:bg-inherit focus:outline-none focus:ring-0 disabled:cursor-not-allowed disabled:opacity-50',
     wrapper: 'w-full rounded-lg bg-gray-50 dark:bg-gray-600 text-gray-900 dark:placeholder-gray-400 dark:text-white border border-gray-200 dark:border-gray-500',
@@ -32,3 +32,4 @@ export const textareaVariants = tv({
     }
   },
 });
+

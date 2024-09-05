@@ -8,5 +8,5 @@
 <P pclass="mb-4">Deliver great service experiences fast - without the complexity of traditional ITSM solutions. Accelerate critical development work, eliminate toil, and deploy changes with ease.</P>
 <A href='/'>
   Read more
-  <ChevronRightOutline class="w-3.5 h-3.5 ms-2" />
+  <ChevronRightOutline class="w-5 h-5 ms-2" />
 </A>

@@ -1,10 +1,12 @@
 <script lang="ts">
-  import { Heading, Button, P, A, Span, Mark, Breadcrumb, BreadcrumbItem, Badge, Secondary, Label, Radio, Input, CloseButton } from '$lib';
+  import { Heading, Button, P, A, Span, Mark, Breadcrumb, BreadcrumbItem, Badge, Secondary, Label, Radio, Input, CloseButton, uiHelpers } from '$lib';
   import { ArrowRightOutline, ChevronRightOutline } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import HighlightCompo2 from '../../utils/HighlightCompo2.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { isOverflow } from '../../utils/helpers';
   // import H3 from '../../utils/H3.svelte';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
@@ -57,6 +59,35 @@
 </Headin>`;
     })()
   );
+
+  let codeBlock = uiHelpers();
+  let expand = $state(false);
+
+  // modules: ModuleObject, markdown: string
+  // const countMarkdownLines = (markdown: string) => {
+  //   // get the content from the file name
+  //   const markdownLines = modules[`./md/${markdown}`] as string
+  //   const lines = markdownLines.split('\n');
+  //   return lines.length;
+  // }
+  
+  // const isOverflow = (markdown: string) => {
+  //   const markdownLines = modules[`./md/${markdown}`] as string
+  //   const lines = markdownLines.split('\n');
+  //   return lines.length > 7;
+  // }
+  // if isOverflow is true, showshowExpandButton is true
+  let showExpandButton = $derived(isOverflow(markdown, modules));
+
+  const handleExpandClick = () => {
+    expand = !expand;
+  }
+
+  $effect(() => {
+    isOverflow(markdown, modules)
+    expand = codeBlock.isOpen;
+  });
+
 </script>
 
 <H1>Heading & Mark</H1>
@@ -101,7 +132,7 @@
     <P class="mb-4">Deliver great service experiences fast - without the complexity of traditional ITSM solutions. Accelerate critical development work, eliminate toil, and deploy changes with ease.</P>
     <A href="/">
       Read more
-      <ChevronRightOutline class="ms-2 h-3.5 w-3.5" />
+      <ChevronRightOutline class="ms-2 h-5 w-5" />
     </A>
   {:else if selectedStyle === 'highlighted'}
     <Heading tag="h1" class="mb-4">Get back to growth with <Span highlight="blue">the world's #1</Span> CRM.</Heading>
@@ -140,7 +171,7 @@
     <P class="mb-6 text-lg sm:px-16 lg:text-xl xl:px-48 dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
     <Button href="/">
       Learn more
-      <ArrowRightOutline class="ms-2 h-3.5 w-3.5" />
+      <ArrowRightOutline class="ms-2 h-5 w-5" />
     </Button>
   </div>
   {/if}
@@ -154,5 +185,8 @@
   </div>
   {#snippet codeblock()}
   <HighlightCompo code={modules[`./md/${markdown}`] as string} />
+  <HighlightCompo2
+handleExpandClick={handleExpandClick}
+{expand} {showExpandButton} code={modules[`./md/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
