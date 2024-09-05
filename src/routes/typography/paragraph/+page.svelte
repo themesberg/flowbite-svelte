@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { P, paragraph, Label, Radio, Button } from '$lib';
+  import { P, paragraph, Label, Radio, Button, Input, CloseButton } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -30,6 +30,9 @@
     italic = !italic;
   };
 
+  let { text = $bindable('') } = $props();
+   text = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla eius debitis cupiditate tempora necessitatibus perspiciatis pariatur aspernatur.';
+
   // code generator
   let generatedCode = $derived(
     (() => {
@@ -47,7 +50,7 @@
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
       return `<P${propsString}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  ${text}
 </P>`;
     })()
   );
@@ -60,9 +63,14 @@
 
 <H2>Interactive Paragraph Builder</H2>
 <CodeWrapper>
+  <Label class="text-md mb-2">Edit paragraph</Label>
+  <Input type="text" bind:value={text} placeholder="Write your blockquote text" class="mb-8 pr-12">
+    {#snippet right()}
+      <CloseButton onclick={() => (text = '')} />
+    {/snippet}
+  </Input>
   <div class="h-[200px] overflow-scroll">
-    <Label class="mb-4 text-xl">Click anywhere within the box below to start editing the content. Use plain texts.</Label>
-    <P contenteditable weight={pWeight} size={pSize} space={pSpace} height={pHeight} align={pAlign} whitespace={pWhitespace} {italic} firstUpper={pFirstupper} justify={pJustify} class="border p-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla eius debitis cupiditate tempora necessitatibus perspiciatis pariatur aspernatur, atque corporis aut deserunt temporibus eligendi inventore id doloribus veritatis quos nesciunt adipisci.</P>
+    <P contenteditable weight={pWeight} size={pSize} space={pSpace} height={pHeight} align={pAlign} whitespace={pWhitespace} {italic} firstUpper={pFirstupper} justify={pJustify}>{text}</P>
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>

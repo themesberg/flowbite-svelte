@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { P, Span, span, Button, Label, Radio } from '$lib';
+  import { P, Span, span, Button, Label, Radio, Input, CloseButton } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -89,8 +89,12 @@
 <CodeWrapper>
   <div class="h-40">
     <div class=" mb-4">
-      <Label class="mr-4 text-lg font-bold">Click to edit span content:</Label>
-      <p class="w-full border p-2 text-lg" contenteditable bind:innerText={editableContent}></p>
+      <Label class="mr-4 text-lg font-bold">Edit span content:</Label>
+      <Input type="text" bind:value={editableContent} placeholder="Write your blockquote text" class="mb-8 pr-12">
+        {#snippet right()}
+          <CloseButton onclick={() => (editableContent = '')} />
+        {/snippet}
+      </Input>
     </div>
     <P size="xl" weight="bold">Lorem ipsum <Span italic={spanItalic} underline={spanUnderline} linethrough={spanLinethrough} uppercase={spanUppercase} gradient={spanGradient} decoration={spanDecoration} decorationColor={spanDecorationColor} decorationThickness={spanDecorationThickness} highlight={spanHighlight} class={opacityClass}>{editableContent}</Span> consectetur elit.</P>
   </div>
