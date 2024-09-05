@@ -57,18 +57,23 @@ export const isOverflow = (markdown: string, modules: Record<string, any>): bool
 
 
 export function getFilteredFileNames(dirName: string) {
-  const modules = import.meta.glob('$lib/**/*.svelte');
-  const pathsArray = Object.keys(modules);
-  const filteredPaths = pathsArray.filter((path) => path.includes(dirName));
-  const fileNames = filteredPaths.map((path) => {
-    const parts = path.split('/');
-    const fileNameWithExtension = parts[parts.length - 1];
-    const fileNameWithoutExtension = fileNameWithExtension.substring(0, fileNameWithExtension.lastIndexOf('.'));
+  if (import.meta.env.DEV) {
+    const modules = import.meta.glob('$lib/**/*.svelte');
+    const pathsArray = Object.keys(modules);
+    const filteredPaths = pathsArray.filter((path) => path.includes(dirName));
+    const fileNames = filteredPaths.map((path) => {
+      const parts = path.split('/');
+      const fileNameWithExtension = parts[parts.length - 1];
+      const fileNameWithoutExtension = fileNameWithExtension.substring(0, fileNameWithExtension.lastIndexOf('.'));
 
-    return fileNameWithoutExtension;
-  });
+      return fileNameWithoutExtension;
+    });
 
-  return fileNames;
+    return fileNames;
+  } else {
+    // Return an empty array or some default value for production builds
+    return [];
+  }
 }
 
 export function toKebabCase(inputString: string) {
