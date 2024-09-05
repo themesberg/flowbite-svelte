@@ -101,12 +101,9 @@
   </div>
   <div class="flex flex-wrap gap-2">
     <Button class="w-48" onclick={changeDisabled}>{disabled ? 'Remove disabled' : 'Add disabled'}</Button>
-    
   </div>
- 
   {#snippet codeblock()}
     <HighlightCompo code={generatedCode} />
-    <HighlightCompo code={modules['./md/floating-label-examples.md'] as string} />
   {/snippet}
 </CodeWrapper>
 
