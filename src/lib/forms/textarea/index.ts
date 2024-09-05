@@ -1,7 +1,7 @@
 import Textarea from './Textarea.svelte';
 import type { Snippet } from 'svelte';
 import type { HTMLTextareaAttributes } from 'svelte/elements';
-import { textarea } from './theme';
+import { textarea } from './themeTextarea';
 
 interface TextareaProps extends HTMLTextareaAttributes {
   header?: Snippet;
