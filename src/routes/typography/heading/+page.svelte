@@ -1,7 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Heading, Button, P, A, Span, Mark, Breadcrumb, BreadcrumbItem, Badge, Secondary, Label, Radio, Input, CloseButton, uiHelpers } from '$lib';
-  import { ArrowRightOutline, ChevronRightOutline } from 'flowbite-svelte-icons';
+  import { Heading, Button, Label, Radio, Input, CloseButton, uiHelpers } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -11,11 +10,6 @@
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'typography/heading';
-  const modules = import.meta.glob('./md/*.md', {
-    query: '?raw',
-    import: 'default',
-    eager: true
-  });
 
   // for examples section that dynamically changes the svelte component and markdown content
   import * as ExampleComponents from './examples'; 
@@ -53,30 +47,6 @@
     headingCls = headingCls === 'text-primary-700 dark:text-primary-500' ? 'text-blue-500 dark:text-blue-400 uppercase italic underline text-center font-semibold bg-gray-50 dark:bg-gray-700 p-4' : 'text-primary-700 dark:text-primary-500';
   }
 
-  // const styles = ['default', 'second-level', 'highlighted', 'mark', 'gradient', 'underline', 'breadcrumb', 'badge', 'secondary'];
-  // let selectedStyle = $state('default');
-  // let markdown = $derived.by(()=>{
-  //   if (selectedStyle === 'second-level') {
-  //     return 'second-level-heading.md'
-  //   } else if (selectedStyle === 'highlighted') {
-  //     return 'highlighted-heading.md'
-  //   } else if (selectedStyle === 'mark') {
-  //     return 'heading-mark.md'
-  //   } else if (selectedStyle === 'gradient') {
-  //     return 'heading-gradient.md'
-  //   } else if (selectedStyle === 'underline') {
-  //     return 'heading-underline.md'
-  //   } else if (selectedStyle === 'breadcrumb') {
-  //     return 'breadcrumb-context.md'
-  //   } else if (selectedStyle === 'badge') {
-  //     return 'badge-context.md'
-  //   } else if (selectedStyle === 'secondary') {
-  //     return 'secondary-text.md'
-  //   } else {
-  //     return 'default-heading.md'
-  //   }
-  // })
-
   let { text = $bindable('My heading') } = $props();
   // code generator
   let generatedCode = $derived(
@@ -108,8 +78,7 @@
 <H1>Heading & Mark</H1>
 
 <H2>Setup</H2>
-
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Sizes</H2>
 <CodeWrapper>
