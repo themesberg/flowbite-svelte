@@ -4,7 +4,7 @@
 </script>
 
 <div class="mb-4">
-  <Alert color="lime">
+  <Alert color="blue">
     <div class="flex items-center gap-3">
       {#snippet icon()}
         <InfoCircleSolid class="h-5 w-5" />

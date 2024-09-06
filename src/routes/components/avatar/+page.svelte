@@ -19,11 +19,6 @@
     dropdownStatus = dropdown.isOpen;
   });
   
-  const modules = import.meta.glob('./md/*.md', {
-    query: '?raw',
-    import: 'default',
-    eager: true
-  });
   // for examples section that dynamically changes the svelte component and markdown content
   import * as ExampleComponents from './examples'; 
   const exampleModules = import.meta.glob('./examples/*.svelte', {
@@ -32,7 +27,6 @@
     eager: true
   });
   
-  const examples = ['Avatar text', 'Dot indicator', 'Placeholder', 'Placeholder initial', 'Stacked', 'User dropdown'];
   const exampleArr = [
     { name: 'Avatar text', component: ExampleComponents.AvatarText },
     { name: 'Dot indicator', component: ExampleComponents.DotIndicator },
@@ -42,7 +36,7 @@
     { name: 'User dropdown', component: ExampleComponents.UserDropdown }
   ]
   let selectedExample = $state(exampleArr[0].name);
-  let markdown = $derived(getExampleFileName(selectedExample, examples));
+  let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
 
   function findObject (arr: { name: string; component: Component }[], name: string) {
     const matchingObject = arr.find(obj => obj.name === name);

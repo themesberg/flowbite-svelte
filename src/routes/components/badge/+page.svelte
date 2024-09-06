@@ -1,13 +1,16 @@
 <script lang="ts">
-  import { Badge, badge, Button, Indicator, Radio, Label, type BadgeProps } from '$lib';
-  import { ClockSolid, EnvelopeSolid, CheckOutline, CheckCircleOutline } from 'flowbite-svelte-icons';
+  import { type Component } from 'svelte';
+  import { Badge, badge, Button, Radio, Label, type BadgeProps, uiHelpers } from '$lib';
+  import { ClockSolid } from 'flowbite-svelte-icons';
   import { blur, fly, slide, scale } from 'svelte/transition';
   import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
   import { linear } from 'svelte/easing';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'badge';
@@ -18,16 +21,31 @@
     eventStatus = false;
   }
 
-  let openBadgeStatus = $state(false);
-  function openBadge() {
-    openBadgeStatus = true;
-  }
-
-  const modules = import.meta.glob('./md/*.md', {
+  // for examples section that dynamically changes the svelte component and markdown content
+  import * as ExampleComponents from './examples'; 
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
     query: '?raw',
     import: 'default',
     eager: true
   });
+  
+  const exampleArr = [
+    { name: 'Dismissing with custom icon', component: ExampleComponents.DismissingWithCustomIcon },
+    { name: 'Dismissing with events', component: ExampleComponents.DismissingWithEvents },
+    { name: 'Notification badge', component: ExampleComponents.NotificationBadge },
+    { name: 'Button with badge', component: ExampleComponents.ButtonWithBadge },
+    { name: 'Badge with icon only', component: ExampleComponents.BadgeWithIconOnly },
+    { name: 'Opening badge', component: ExampleComponents.OpeningBadge }
+  ]
+  let selectedExample = $state(exampleArr[0].name);
+  let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
+
+  function findObject (arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find(obj => obj.name === name);
+    return matchingObject ? matchingObject.component : null; 
+  }
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample)); 
+  // end of dynamic svelte component
 
   // interactive example
   const colors = Object.keys(badge.variants.color);
@@ -121,11 +139,23 @@
       }
     })()
   );
+  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
+  let codeBlock = uiHelpers();
+  let expand = $state(false);
+  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+
+  const handleExpandClick = () => {
+    expand = !expand;
+  }
+  $effect(() => {
+    expand = codeBlock.isOpen;
+  });
+  // end of DynamicCodeBlock setup
 </script>
 
 <H1>Badge</H1>
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Interactive Badge Bilder</H2>
 <CodeWrapper>
@@ -166,93 +196,21 @@
   {/snippet}
 </CodeWrapper>
 
-<H2>Dismissing with custom icon</H2>
+
+<H2>Examples</H2>
+
 <CodeWrapper>
-  <div class="flex h-8 justify-center">
-    <Badge dismissable>
-      Default
-      {#snippet icon()}
-        <CheckCircleOutline class="h-5 w-5" />
-      {/snippet}
-    </Badge>
+  <div class="mb-8 flex flex-wrap">
+    <Label class="mb-4 w-full font-bold">Example:</Label>
+    {#each exampleArr as style}
+      <Radio labelClass="w-[230px] my-1" onclick={()=> expand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+    {/each}
+  </div>
+  <div class="h-12">
+    <SelectedComponent />
   </div>
   {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/dismissable-badge-2.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Dismissing with events</H2>
-<CodeWrapper>
-  <div class="flex h-8 justify-center">
-    <Badge dismissable large onclick={handleClose} bind:badgeStatus={eventStatus}>Default</Badge>
-  </div>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/dismissable-badge-3.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Notification badge</H2>
-<CodeWrapper>
-  <div class="flex justify-center gap-4">
-    <Button class="relative" size="sm">
-      <EnvelopeSolid class="text-white dark:text-white" />
-      <span class="sr-only">Notifications</span>
-      <Indicator color="blue" border size="xl" placement="top-right" class="text-xs font-bold">18</Indicator>
-    </Button>
-
-    <Button class="relative" size="sm">
-      <EnvelopeSolid class="text-white dark:text-white" />
-      <span class="sr-only">Notifications</span>
-      <Indicator color="red" border size="xl" placement="top-right" class="text-xs font-bold">20</Indicator>
-    </Button>
-
-    <Button class="relative" size="sm">
-      <EnvelopeSolid class="text-white dark:text-white" />
-      <span class="sr-only">Notifications</span>
-      <Indicator color="sky" border size="xl" placement="bottom-right" class="text-xs font-bold">20</Indicator>
-    </Button>
-  </div>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/notification-badge.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Button with badge</H2>
-<CodeWrapper>
-  <div class="flex justify-center">
-    <Button>
-      Messages
-      <Badge rounded class="ms-2 h-4 w-4 bg-white p-0 font-semibold text-primary-800 dark:bg-white dark:text-primary-800">2</Badge>
-    </Button>
-  </div>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/button-with-badge.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Badge with icon only</H2>
-<CodeWrapper>
-  <div class="flex justify-center gap-2">
-    <Badge color="gray" rounded large class="!p-1 !font-semibold">
-      <CheckOutline class="h-3 w-3" />
-      <span class="sr-only">Icon description</span>
-    </Badge>
-    <Badge rounded large class="!p-1 !font-semibold">
-      <CheckOutline class="h-3 w-3 text-primary-800 dark:text-primary-400" />
-      <span class="sr-only">Icon description</span>
-    </Badge>
-  </div>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/badge-with-icon-only.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Opening badge</H2>
-<CodeWrapper>
-  <Button onclick={openBadge}>Open badge</Button>
-  <Badge class="ml-4" color="blue" dismissable large bind:badgeStatus={openBadgeStatus}>Default</Badge>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/opening-badge.md'] as string} />
+  <DynamicCodeBlockHighlight {handleExpandClick} {expand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 

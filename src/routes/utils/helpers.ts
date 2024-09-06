@@ -107,10 +107,12 @@ export function replaceLibImport(componentString: string): string {
   return componentString.replace(/from '\$lib'/g, "from 'svelte-5-ui-lib'");
 }
 
-export function getExampleFileName(selectedExample: string, examples: string[]): string {
-  if (!examples.includes(selectedExample)) {
+export function getExampleFileName(selectedExample: string, exampleArr: { name: string }[]): string {
+  const foundExample = exampleArr.find(example => example.name === selectedExample);
+
+  if (!foundExample) {
     // If the selectedExample is not in the array, default to the first example
-    selectedExample = examples[0] || '';
+    selectedExample = exampleArr[0].name || '';
   }
 
   // Convert the selected example to PascalCase

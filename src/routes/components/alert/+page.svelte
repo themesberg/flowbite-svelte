@@ -24,7 +24,6 @@
     eager: true
   });
   
-  const examples = ['Alert with list', 'Additional content', 'Custom color', 'Event'];
   const exampleArr = [
     { name: 'Alert with list', component: ExampleComponents.AlertWithList },
     { name: 'Additional content', component: ExampleComponents.AdditionalContent },
@@ -32,7 +31,7 @@
     { name: 'Event', component: ExampleComponents.Event }
   ]
   let selectedExample = $state(exampleArr[0].name);
-  let markdown = $derived(getExampleFileName(selectedExample, examples));
+  let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
 
   function findObject (arr: { name: string; component: Component }[], name: string) {
     const matchingObject = arr.find(obj => obj.name === name);
@@ -133,7 +132,7 @@
     })()
   );
   // end of code generator
-  
+
   // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
   let codeBlock = uiHelpers();
   let expand = $state(false);
