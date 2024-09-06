@@ -1,28 +1,56 @@
 <script lang="ts">
-  import { Avatar, avatar, Label, Radio, Button, Dropdown, DropdownLi, DropdownUl, DropdownHeader, DropdownDivider, uiHelpers, type AvatarProps } from '$lib';
-
+  import { type Component } from 'svelte';
+  import { Avatar, avatar, Label, Radio, Button, uiHelpers, type AvatarProps } from '$lib';
+  import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
+  import CodeWrapper from '../../utils/CodeWrapper.svelte';
+  import H1 from '../../utils/H1.svelte';
+  import H2 from '../../utils/H2.svelte';
+  import { isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  // Props table
+  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
+  const dirName = 'avatar'
   let dropdown = uiHelpers();
   let dropdownStatus = $state(false);
-  let closeDropdown = dropdown.close;
 
   $effect(() => {
     // this can be done adding nav.navStatus directly to DOM element
     // without using effect
     dropdownStatus = dropdown.isOpen;
   });
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  // Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'avatar'
-
+  
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
     eager: true
   });
+  // for examples section that dynamically changes the svelte component and markdown content
+  import * as ExampleComponents from './examples'; 
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
+    query: '?raw',
+    import: 'default',
+    eager: true
+  });
+  
+  const examples = ['Avatar text', 'Dot indicator', 'Placeholder', 'Placeholder initial', 'Stacked', 'User dropdown'];
+  const exampleArr = [
+    { name: 'Avatar text', component: ExampleComponents.AvatarText },
+    { name: 'Dot indicator', component: ExampleComponents.DotIndicator },
+    { name: 'Placeholder', component: ExampleComponents.Placeholder },
+    { name: 'Placeholder initial', component: ExampleComponents.PlaceholderInitial },
+    { name: 'Stacked', component: ExampleComponents.Stacked },
+    { name: 'User dropdown', component: ExampleComponents.UserDropdown }
+  ]
+  let selectedExample = $state(exampleArr[0].name);
+  let markdown = $derived(getExampleFileName(selectedExample, examples));
+
+  function findObject (arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find(obj => obj.name === name);
+    return matchingObject ? matchingObject.component : null; 
+  }
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample)); 
+  // end of dynamic svelte component
+
   // reactive example, rounded, border, stacked, size, className
   const sizes = Object.keys(avatar.variants.size);
   let avatarSize: Avatar['size'] = $state('md');
@@ -58,13 +86,24 @@
       return `<Avatar${propsString} />`;
     })()
   );
+  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
+  let codeBlock = uiHelpers();
+  let expand = $state(false);
+  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+
+  const handleExpandClick = () => {
+    expand = !expand;
+  }
+  $effect(() => {
+    expand = codeBlock.isOpen;
+  });
+  // end of DynamicCodeBlock setup
 </script>
 
 <H1>Avatar</H1>
 
 <H2>Setup</H2>
-
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Interactive Avatar Bilder</H2>
 <CodeWrapper>
@@ -90,93 +129,20 @@
   {/snippet}
 </CodeWrapper>
 
-<H2>Placeholder</H2>
-<CodeWrapper innerClass="flex justify-center gap-4">
-  <Avatar />
-  <Avatar cornerStyle="rounded" />
-  <Avatar border />
-  <Avatar cornerStyle="rounded" border />
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/placeholder.md'] as string} />
-  {/snippet}
-</CodeWrapper>
+<H2>Examples</H2>
 
-<H2>Placeholder initials</H2>
-<CodeWrapper innerClass="flex h-10 justify-center">
-  <Avatar>JL</Avatar>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/placeholder-initials.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Avatar tooltip</H2>
-<CodeWrapper class="flex justify-center gap-4">NOT COMPLETED</CodeWrapper>
-
-<H2>Dot indicator</H2>
-<CodeWrapper innerClass="flex justify-center gap-4">
-  <Avatar src="/images/profile-picture-3.webp" dot={{ color: 'red' }} />
-  <Avatar src="/images/profile-picture-3.webp" dot={{ placement: 'top-right', color: 'red' }} cornerStyle="rounded" />
-  <Avatar src="/images/profile-picture-5.webp" dot={{ placement: 'bottom-right', color: 'green' }} />
-  <Avatar src="/images/profile-picture-5.webp" dot={{ placement: 'bottom-right' }} cornerStyle="rounded" />
-  <Avatar dot={{}} />
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/dot-indicator.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Stacked</H2>
 <CodeWrapper>
-  <div class="flex flex-col justify-center gap-4 px-4">
-    <div class="mb-5 flex">
-      <Avatar src="/images/profile-picture-1.webp" stacked />
-      <Avatar src="/images/profile-picture-2.webp" stacked />
-      <Avatar src="/images/profile-picture-3.webp" stacked />
-      <Avatar stacked />
-    </div>
-    <div class="flex">
-      <Avatar src="/images/profile-picture-1.webp" stacked />
-      <Avatar src="/images/profile-picture-2.webp" stacked />
-      <Avatar src="/images/profile-picture-3.webp" stacked />
-      <Avatar stacked href="/" class="bg-gray-700 text-sm text-white hover:bg-gray-600">+99</Avatar>
-    </div>
+  <div class="mb-8 flex flex-wrap">
+    <Label class="mb-4 w-full font-bold">Example:</Label>
+    {#each exampleArr as style}
+      <Radio labelClass="w-40 my-1" onclick={()=> expand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+    {/each}
+  </div>
+  <div class="h-72">
+    <SelectedComponent />
   </div>
   {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/stacked.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Avatar text</H2>
-<CodeWrapper innerClass="flex items-center space-x-4 rtl:space-x-reverse">
-  <Avatar src="/images/profile-picture-1.webp" cornerStyle="rounded" />
-  <div class="space-y-1 font-medium dark:text-white">
-    <div>Jese Leos</div>
-    <div class="text-sm text-gray-500 dark:text-gray-400">Joined in August 2014</div>
-  </div>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/avatar-text.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>User dropdown</H2>
-<CodeWrapper innerClass="flex h-80 items-start justify-center">
-  <Avatar onclick={dropdown.toggle} src="/images/profile-picture-3.webp" class="cursor-pointer" dot={{ color: 'green' }} />
-  <div class="relative">
-    <Dropdown {dropdownStatus} {closeDropdown} class="absolute -left-[100px] top-[40px]">
-      <DropdownHeader>
-        <div>Bonnie Green</div>
-        <div class="truncate font-medium">name@flowbite.com</div>
-      </DropdownHeader>
-      <DropdownUl>
-        <DropdownLi href="/">Dashboard</DropdownLi>
-        <DropdownLi href="/nav">Navbar</DropdownLi>
-        <DropdownLi href="/footer">Footer</DropdownLi>
-        <DropdownDivider />
-        <DropdownLi href="/dropdown">Dropdown</DropdownLi>
-      </DropdownUl>
-    </Dropdown>
-  </div>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/user-dropdown.md'] as string} />
+  <DynamicCodeBlockHighlight {handleExpandClick} {expand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 

@@ -1,3 +1,5 @@
+import { type Component } from 'svelte'
+
 export function removeHyphensAndCapitalize(str: string) {
   // Handle empty string or strings without '-'
   if (!str || !str.includes('-')) {
@@ -104,3 +106,27 @@ export function getFilteredFileNames(dirName: string): string[] {
 export function replaceLibImport(componentString: string): string {
   return componentString.replace(/from '\$lib'/g, "from 'svelte-5-ui-lib'");
 }
+
+export function getExampleFileName(selectedExample: string, examples: string[]): string {
+  if (!examples.includes(selectedExample)) {
+    // If the selectedExample is not in the array, default to the first example
+    selectedExample = examples[0] || '';
+  }
+
+  // Convert the selected example to PascalCase
+  const result = selectedExample
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join('');
+
+  return `${result}.svelte`;
+}
+
+// export const renderExampleComponent = (selectedExample: string, ExampleComponents: any) => {
+//   const pascalCaseExample = selectedExample
+//     .split(' ')
+//     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+//     .join('');
+
+//   return ExampleComponents[pascalCaseExample];
+// };

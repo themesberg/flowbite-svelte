@@ -1,1 +1,0 @@
-<Alert dismissable class="bg-sky-500 text-white">Your content</Alert>

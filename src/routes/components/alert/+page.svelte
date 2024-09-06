@@ -1,6 +1,7 @@
 <script lang="ts">
+  import { type Component } from 'svelte';
   import { Alert, alert as fsalert, Button, Label, Radio, type AlertProps, uiHelpers } from '$lib';
-  import { InfoCircleSolid, EyeSolid } from 'flowbite-svelte-icons';
+  import { InfoCircleSolid } from 'flowbite-svelte-icons';
   import { blur, fly, slide, scale } from 'svelte/transition';
   import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
   import { linear } from 'svelte/easing';
@@ -9,52 +10,40 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import { isSvelteOverflow } from '../../utils/helpers';
-    // Props table
+  import { isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  // Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'alert'
-
-  const modules = import.meta.glob('./md/*.md', {
-    query: '?raw',
-    import: 'default',
-    eager: true
-  });
-
-  import * as ExampleComponents from './examples'; // for component examples
-  // for docs
+  // end of props table
+  
+  // for examples section that dynamically changes the svelte component and markdown content
+  import * as ExampleComponents from './examples'; 
   const exampleModules = import.meta.glob('./examples/*.svelte', {
     query: '?raw',
     import: 'default',
     eager: true
   });
-  // for examples
+  
   const examples = ['Alert with list', 'Additional content', 'Custom color', 'Event'];
-  let selectedExample = $state('Alert with list');
-  let markdown = $derived.by(()=>{
-    if (selectedExample === 'Additional content') {
-      return 'AdditionalContent.svelte'
-    } else if (selectedExample === 'Custom color') {
-      return 'CustomColor.svelte'
-    } else if (selectedExample === 'Event') {
-      return 'Event.svelte'
-    } else {
-      return 'AlertWithList.svelte'
-    }
-  })
+  const exampleArr = [
+    { name: 'Alert with list', component: ExampleComponents.AlertWithList },
+    { name: 'Additional content', component: ExampleComponents.AdditionalContent },
+    { name: 'Custom color', component: ExampleComponents.CustomColor },
+    { name: 'Event', component: ExampleComponents.Event }
+  ]
+  let selectedExample = $state(exampleArr[0].name);
+  let markdown = $derived(getExampleFileName(selectedExample, examples));
 
-  let alertEventStatus = $state(true);
-  function handleClose() {
-    console.log('Alert dismissed');
-    alert('Alert dismissed');
-    alertEventStatus = false;
+  function findObject (arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find(obj => obj.name === name);
+    return matchingObject ? matchingObject.component : null; 
   }
-  // interactive  color, rounded, border, dismissable, class
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample)); 
+  // end of dynamic svelte component
+  
+  // for interactive code builder
   const colors = Object.keys(fsalert.variants.color);
   let color: AlertProps['color'] = $state('primary');
-  // let iconColor: AlertProps['color'] = $state('primary');
-  let listColor: AlertProps['color'] = $state('primary');
-  // let borderAccessColor: AlertProps['color'] = $state('primary');
-  let additionalColor: AlertProps['color'] = $state('primary');
   let iconSlot = $state(false);
   const changeIconSlot = () => {
     iconSlot = !iconSlot;
@@ -86,7 +75,7 @@
     alertClass = borderAccent ? 'border-t-4' : '';
     rounded = false;
   };
-
+  // end of interactive code builder
   // transition
   type TransitionOption = {
     name: string;
@@ -143,18 +132,17 @@
 </Alert>`;
     })()
   );
-  // for DynamicCodeBlock setup
+  // end of code generator
+  
+  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
   let codeBlock = uiHelpers();
   let expand = $state(false);
   let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
-//   const isFileOverflow = $derived(isContentOverflow(markdown, exampleModules, {
-//   basePath: './examples/'
-// }));
+
   const handleExpandClick = () => {
     expand = !expand;
   }
   $effect(() => {
-    isSvelteOverflow(markdown, modules)
     expand = codeBlock.isOpen;
   });
   // end of DynamicCodeBlock setup
@@ -163,7 +151,7 @@
 <H1>Alert</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Interactive Alert Bilder</H2>
 
@@ -207,22 +195,17 @@
 </CodeWrapper>
 
 <H2>Examples</H2>
+
 <CodeWrapper>
-  <div class="mb-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Style:</Label>
-    {#each examples as style}
-      <Radio labelClass="w-40 my-1" onclick={()=> expand = false} name="block_style" bind:group={selectedExample} value={style}>{style}</Radio>
+  <div class="mb-4 flex flex-wrap">
+    <Label class="mb-4 w-full font-bold">Example:</Label>
+    {#each exampleArr as style}
+      <Radio labelClass="w-40 my-1" onclick={()=> expand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
-    {#if selectedExample === 'Alert with list'}
-    <ExampleComponents.AlertWithList />
-    {:else if selectedExample === 'Custom color'}
-    <ExampleComponents.CustomColor />
-    {:else if selectedExample === 'Event'}
-    <ExampleComponents.Event />
-    {:else}
-    <ExampleComponents.AdditionalContent />
-    {/if}
+  <div class="h-40">
+    <SelectedComponent />
+  </div>
   {#snippet codeblock()}
   <DynamicCodeBlockHighlight {handleExpandClick} {expand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
