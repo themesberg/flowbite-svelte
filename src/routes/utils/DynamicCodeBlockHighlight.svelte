@@ -2,7 +2,7 @@
   import { HighlightSvelte, Highlight } from 'svelte-rune-highlight';
   import markdown from 'svelte-rune-highlight/languages/markdown';
   import { Button, Badge } from '$lib';
-  import { copyToClipboard } from './helpers';
+  import { copyToClipboard, replaceLibImport } from './helpers';
   import { highlightcompo } from './theme';
 
   interface Props {
@@ -16,9 +16,14 @@
     codeLang?: string;
     class?: string;
     expanded?: boolean;
+    replaceLib?: boolean;
   }
 
-  let { code, handleExpandClick, showExpandButton,  expand, codeLang, badgeClass, buttonClass, class: className }: Props = $props();
+  let { code, handleExpandClick, showExpandButton, expand, codeLang, badgeClass, buttonClass, replaceLib, class: className }: Props = $props();
+
+  if (replaceLib){
+    code = replaceLibImport(code);
+  }
 
   const { base, badge, button } = $derived(highlightcompo());
   let copiedStatus = $state(false);

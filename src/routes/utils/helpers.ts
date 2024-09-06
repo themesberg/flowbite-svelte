@@ -55,6 +55,37 @@ export const isOverflow = (markdown: string, modules: Record<string, any>): bool
   return lines.length > 7;
 };
 
+export const isSvelteOverflow = (markdown: string, exampleModules: Record<string, any>): boolean => {
+  const markdownLines = exampleModules[`./examples/${markdown}`];
+  const lines = markdownLines.split('\n');
+  return lines.length > 7;
+};
+
+export const isContentOverflow = (
+  filename: string,
+  modules: Record<string, any>,
+  options: {
+    lineLimit?: number,
+    basePath?: string
+  } = {}
+): boolean => {
+  const {
+    lineLimit = 7,
+    basePath = './md/'
+  } = options;
+
+  const fullPath = `${basePath}${filename}`;
+  const content = modules[fullPath];
+
+  if (!content) {
+    console.warn(`File not found: ${fullPath}`);
+    return false;
+  }
+
+  const lines = content.split('\n');
+  return lines.length > lineLimit;
+};
+
 import { fileList } from '../../generatedFileList';
 
 export function getFilteredFileNames(dirName: string): string[] {
@@ -68,4 +99,8 @@ export function getFilteredFileNames(dirName: string): string[] {
   });
 
   return fileNames;
+}
+
+export function replaceLibImport(componentString: string): string {
+  return componentString.replace(/from '\$lib'/g, "from 'svelte-5-ui-lib'");
 }

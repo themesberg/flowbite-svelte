@@ -1,13 +1,15 @@
 <script lang="ts">
-  import { Alert, alert as fsalert, Button, Label, Radio, type AlertProps } from '$lib';
+  import { Alert, alert as fsalert, Button, Label, Radio, type AlertProps, uiHelpers } from '$lib';
   import { InfoCircleSolid, EyeSolid } from 'flowbite-svelte-icons';
   import { blur, fly, slide, scale } from 'svelte/transition';
   import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
   import { linear } from 'svelte/easing';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { isSvelteOverflow } from '../../utils/helpers';
     // Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'alert'
@@ -17,6 +19,29 @@
     import: 'default',
     eager: true
   });
+
+  import * as ExampleComponents from './examples'; // for component examples
+  // for docs
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
+    query: '?raw',
+    import: 'default',
+    eager: true
+  });
+  // for examples
+  const examples = ['Alert with list', 'Additional content', 'Custom color', 'Event'];
+  let selectedExample = $state('Alert with list');
+  let markdown = $derived.by(()=>{
+    if (selectedExample === 'Additional content') {
+      return 'AdditionalContent.svelte'
+    } else if (selectedExample === 'Custom color') {
+      return 'CustomColor.svelte'
+    } else if (selectedExample === 'Event') {
+      return 'Event.svelte'
+    } else {
+      return 'AlertWithList.svelte'
+    }
+  })
+
   let alertEventStatus = $state(true);
   function handleClose() {
     console.log('Alert dismissed');
@@ -118,6 +143,21 @@
 </Alert>`;
     })()
   );
+  // for DynamicCodeBlock setup
+  let codeBlock = uiHelpers();
+  let expand = $state(false);
+  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+//   const isFileOverflow = $derived(isContentOverflow(markdown, exampleModules, {
+//   basePath: './examples/'
+// }));
+  const handleExpandClick = () => {
+    expand = !expand;
+  }
+  $effect(() => {
+    isSvelteOverflow(markdown, modules)
+    expand = codeBlock.isOpen;
+  });
+  // end of DynamicCodeBlock setup
 </script>
 
 <H1>Alert</H1>
@@ -166,73 +206,25 @@
   {/snippet}
 </CodeWrapper>
 
-<H2>Alerts with list</H2>
+<H2>Examples</H2>
 <CodeWrapper>
-  <div class="mb-4">
-    <Alert color={listColor} class="!items-start">
-      {#snippet icon()}
-        <InfoCircleSolid class="h-5 w-5" />
-      {/snippet}
-      <p class="font-medium">Ensure that these requirements are met:</p>
-      <ul class="ms-4 mt-1.5 list-inside list-disc">
-        <li>At least 10 characters (and up to 100 characters)</li>
-        <li>At least one lowercase character</li>
-        <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
-      </ul>
-    </Alert>
-  </div>
-  <div class="flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Color</Label>
-    {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="list_alert_color" bind:group={listColor} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
+  <div class="mb-4 flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Style:</Label>
+    {#each examples as style}
+      <Radio labelClass="w-40 my-1" onclick={()=> expand = false} name="block_style" bind:group={selectedExample} value={style}>{style}</Radio>
     {/each}
   </div>
+    {#if selectedExample === 'Alert with list'}
+    <ExampleComponents.AlertWithList />
+    {:else if selectedExample === 'Custom color'}
+    <ExampleComponents.CustomColor />
+    {:else if selectedExample === 'Event'}
+    <ExampleComponents.Event />
+    {:else}
+    <ExampleComponents.AdditionalContent />
+    {/if}
   {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/alerts-with-list.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Additional content</H2>
-<CodeWrapper>
-  <div class="mb-4">
-    <Alert color={additionalColor}>
-      <div class="flex items-center gap-3">
-        {#snippet icon()}
-          <InfoCircleSolid class="h-5 w-5" />
-        {/snippet}
-        <span class="text-lg font-medium">This is a info alert</span>
-      </div>
-      <p class="mb-4 mt-2 text-sm">More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
-      <div class="flex gap-2">
-        <Button size="xs"><EyeSolid class="me-2 h-4 w-4" />View more</Button>
-        <Button size="xs" outline>Go to Home</Button>
-      </div>
-    </Alert>
-  </div>
-  <div class="flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Color</Label>
-    {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="additional_alert_color" bind:group={additionalColor} color={colorOption as AlertProps['color']} value={colorOption}>{colorOption}</Radio>
-    {/each}
-  </div>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/additional-content.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Custom color</H2>
-<CodeWrapper class="p-4">
-  <Alert dismissable class="bg-sky-500 text-white dark:bg-lime-500 dark:text-white">Your content</Alert>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/custom-color.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Events</H2>
-<CodeWrapper class="p-4">
-  <Alert dismissable onclick={handleClose} bind:alertStatus={alertEventStatus}>Close me</Alert>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/events.md'] as string} />
+  <DynamicCodeBlockHighlight {handleExpandClick} {expand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 
