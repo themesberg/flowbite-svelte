@@ -39,9 +39,6 @@
 
   let { text = $bindable('Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quas commodi accusamus dignissimos qui totam iste rem necessitatibus? Cumque minus et animi nostrum deserunt provident excepturi laboriosam ipsum minima nisi!') } = $props();
 
-  const styles = ['default', 'solid', 'icon', 'context', 'testimonial', 'review'];
-  let selectedStyle = $state('default');
-
   const sizes = Object.keys(blockquote.variants.size);
   let selectedSize: Blockquote['size'] = $state('lg');
 
@@ -148,7 +145,7 @@
     <SelectedComponent />
   </div>
   {#snippet codeblock()}
-  <DynamicCodeBlockHighlight {handleExpandClick} {expand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
+  <DynamicCodeBlockHighlight replaceLib {handleExpandClick} {expand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { type Component } from 'svelte';
   import { Heading, Button, P, A, Span, Mark, Breadcrumb, BreadcrumbItem, Badge, Secondary, Label, Radio, Input, CloseButton, uiHelpers } from '$lib';
   import { ArrowRightOutline, ChevronRightOutline } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
@@ -6,7 +7,7 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import { isOverflow } from '../../utils/helpers';
+  import { isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'typography/heading';
@@ -16,6 +17,35 @@
     eager: true
   });
 
+  // for examples section that dynamically changes the svelte component and markdown content
+  import * as ExampleComponents from './examples'; 
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
+    query: '?raw',
+    import: 'default',
+    eager: true
+  });
+  
+  const exampleArr = [
+    { name: 'Default', component: ExampleComponents.Default },
+    { name: 'Badge', component: ExampleComponents.Badge },
+    { name: 'Breadcrumb', component: ExampleComponents.Breadcrumb },
+    { name: 'Gradient', component: ExampleComponents.Gradient },
+    { name: 'Highlighted', component: ExampleComponents.Highlighted },
+    { name: 'Mark', component: ExampleComponents.Mark },
+    { name: 'Secondary', component: ExampleComponents.Secondary },
+    { name: 'Second level', component: ExampleComponents.SecondLevel },
+    { name: 'Underline', component: ExampleComponents.Underline }
+  ]
+  let selectedExample = $state(exampleArr[0].name);
+  let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
+
+  function findObject (arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find(obj => obj.name === name);
+    return matchingObject ? matchingObject.component : null; 
+  }
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample)); 
+  // end of dynamic svelte component
+
   const tags = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
   let headingTag: Heading['tag'] = $state('h1');
   let headingCls = $state('text-primary-700 dark:text-primary-500');
@@ -23,29 +53,29 @@
     headingCls = headingCls === 'text-primary-700 dark:text-primary-500' ? 'text-blue-500 dark:text-blue-400 uppercase italic underline text-center font-semibold bg-gray-50 dark:bg-gray-700 p-4' : 'text-primary-700 dark:text-primary-500';
   }
 
-  const styles = ['default', 'second-level', 'highlighted', 'mark', 'gradient', 'underline', 'breadcrumb', 'badge', 'secondary'];
-  let selectedStyle = $state('default');
-  let markdown = $derived.by(()=>{
-    if (selectedStyle === 'second-level') {
-      return 'second-level-heading.md'
-    } else if (selectedStyle === 'highlighted') {
-      return 'highlighted-heading.md'
-    } else if (selectedStyle === 'mark') {
-      return 'heading-mark.md'
-    } else if (selectedStyle === 'gradient') {
-      return 'heading-gradient.md'
-    } else if (selectedStyle === 'underline') {
-      return 'heading-underline.md'
-    } else if (selectedStyle === 'breadcrumb') {
-      return 'breadcrumb-context.md'
-    } else if (selectedStyle === 'badge') {
-      return 'badge-context.md'
-    } else if (selectedStyle === 'secondary') {
-      return 'secondary-text.md'
-    } else {
-      return 'default-heading.md'
-    }
-  })
+  // const styles = ['default', 'second-level', 'highlighted', 'mark', 'gradient', 'underline', 'breadcrumb', 'badge', 'secondary'];
+  // let selectedStyle = $state('default');
+  // let markdown = $derived.by(()=>{
+  //   if (selectedStyle === 'second-level') {
+  //     return 'second-level-heading.md'
+  //   } else if (selectedStyle === 'highlighted') {
+  //     return 'highlighted-heading.md'
+  //   } else if (selectedStyle === 'mark') {
+  //     return 'heading-mark.md'
+  //   } else if (selectedStyle === 'gradient') {
+  //     return 'heading-gradient.md'
+  //   } else if (selectedStyle === 'underline') {
+  //     return 'heading-underline.md'
+  //   } else if (selectedStyle === 'breadcrumb') {
+  //     return 'breadcrumb-context.md'
+  //   } else if (selectedStyle === 'badge') {
+  //     return 'badge-context.md'
+  //   } else if (selectedStyle === 'secondary') {
+  //     return 'secondary-text.md'
+  //   } else {
+  //     return 'default-heading.md'
+  //   }
+  // })
 
   let { text = $bindable('My heading') } = $props();
   // code generator
@@ -61,19 +91,18 @@
 </Headin>`;
     })()
   );
-  // for DynamicCodeBlock setup
+  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
   let codeBlock = uiHelpers();
   let expand = $state(false);
-  let showExpandButton = $derived(isOverflow(markdown, modules));
+  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+
   const handleExpandClick = () => {
     expand = !expand;
   }
   $effect(() => {
-    isOverflow(markdown, modules)
     expand = codeBlock.isOpen;
   });
   // end of DynamicCodeBlock setup
-
 </script>
 
 <H1>Heading & Mark</H1>
@@ -107,70 +136,20 @@
   {/snippet}
 </CodeWrapper>
 
-<H2>Heading examples</H2>
+<H2>Examples</H2>
 
 <CodeWrapper>
-  <div class="h-80 grid place-items-center">
-    <div class="p-2">
-  {#if selectedStyle === 'second-level'}
-    <Heading tag="h2" class="text-4xl font-extrabold ">Payments tool for companies</Heading>
-    <P class="my-4 text-gray-500">Start developing with an open-source library of over 450+ UI components, sections, and pages built with the utility classes from Tailwind CSS and designed in Figma.</P>
-    <P class="mb-4">Deliver great service experiences fast - without the complexity of traditional ITSM solutions. Accelerate critical development work, eliminate toil, and deploy changes with ease.</P>
-    <A href="/">
-      Read more
-      <ChevronRightOutline class="ms-2 h-5 w-5" />
-    </A>
-  {:else if selectedStyle === 'highlighted'}
-    <Heading tag="h1" class="mb-4">Get back to growth with <Span highlight="blue">the world's #1</Span> CRM.</Heading>
-    <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
-  {:else if selectedStyle === 'mark'}
-    <Heading tag="h1" class="mb-4">Regain <Mark>control</Mark> over your days</Heading>
-    <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
-  {:else if selectedStyle === 'gradient'}
-    <Heading tag="h1" class="mb-4 text-3xl font-extrabold  md:text-5xl lg:text-6xl">
-      <Span gradient="amberToEmerald">Better Data</Span> Scalable AI.
-    </Heading>
-    <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
-  {:else if selectedStyle === 'underline'}
-    <Heading tag="h1" class="mb-4">
-      We invest in the <Span underline class="decoration-blue-400 decoration-8 dark:decoration-blue-600">world’s potential</Span>
-    </Heading>
-    <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
-  {:else if selectedStyle === 'breadcrumb'}
-    <Breadcrumb class="mb-4">
-      <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
-      <BreadcrumbItem href="/">Settings</BreadcrumbItem>
-      <BreadcrumbItem>Team</BreadcrumbItem>
-    </Breadcrumb>
-    <Heading tag="h2" class="mb-4">Team management</Heading>
-  {:else if selectedStyle === 'badge'}
-    <Heading tag="h1" class="flex items-center text-5xl">
-      Flowbite <Badge class="ms-2 text-2xl font-semibold">PRO</Badge>
-    </Heading>
-  {:else if selectedStyle === 'secondary'}
-    <Heading tag="h1" class="text-5xl font-extrabold">
-      Flowbite <Secondary class="ms-2">This is secondary text</Secondary>
-    </Heading>
-  {:else}
-  <div class="text-center">
-    <Heading tag="h1" class="mb-4 text-4xl font-extrabold  md:text-5xl lg:text-6xl">We invest in the world’s potential</Heading>
-    <P class="mb-6 text-lg sm:px-16 lg:text-xl xl:px-48 dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
-    <Button href="/">
-      Learn more
-      <ArrowRightOutline class="ms-2 h-5 w-5" />
-    </Button>
-  </div>
-  {/if}
-  </div>
-  </div>
-  <div class="mb-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Style:</Label>
-    {#each styles as style}
-      <Radio labelClass="w-28 my-1" name="block_style" bind:group={selectedStyle} value={style}>{style}</Radio>
+  <div class="mb-8 flex flex-wrap">
+    <Label class="mb-4 w-full font-bold">Example:</Label>
+    {#each exampleArr as style}
+      <Radio labelClass="w-[230px] my-1" onclick={()=> expand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
+  <div class="h-72">
+    <SelectedComponent />
+  </div>
   {#snippet codeblock()}
-  <DynamicCodeBlockHighlight {handleExpandClick} {expand} {showExpandButton} code={modules[`./md/${markdown}`] as string} />
+  <DynamicCodeBlockHighlight replaceLib {handleExpandClick} {expand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 
