@@ -40,9 +40,9 @@
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Default accordion</H2>
-<CodeWrapper innerClass="h-[320px]">
+<CodeWrapper innerClass="h-[350px]">
   <Accordion>
-    <AccordionItem bind:open={alwaysOpenStatus}>
+    <AccordionItem>
       {#snippet header()}
         Header 1-1
       {/snippet}
@@ -60,29 +60,8 @@
   {/snippet}
 </CodeWrapper>
 
-<H2>Open item</H2>
-<CodeWrapper innerClass="h-[320px]">
-  <Accordion>
-    <AccordionItem bind:open={alwaysOpenStatus}>
-      {#snippet header()}
-        Header 2-1
-      {/snippet}
-      <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-    </AccordionItem>
-    <AccordionItem>
-      {#snippet header()}
-        Header 2-2
-      {/snippet}
-      <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-    </AccordionItem>
-  </Accordion>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/open-item.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
 <H2>Color option</H2>
-<CodeWrapper innerClass="h-[320px]">
+<CodeWrapper innerClass="h-[350px]">
   <Accordion activeClass="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800" inactiveClass="text-gray-500 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800">
     <AccordionItem class="">
       {#snippet header()}
@@ -103,7 +82,7 @@
 </CodeWrapper>
 
 <H2>Flush accordion</H2>
-<CodeWrapper innerClass="h-[320px]">
+<CodeWrapper innerClass="h-[350px]">
   <Accordion flush>
     <AccordionItem>
       {#snippet header()}
@@ -124,7 +103,7 @@
 </CodeWrapper>
 
 <H2>Arrow style</H2>
-<CodeWrapper innerClass="h-[320px]">
+<CodeWrapper innerClass="h-[350px]">
   <Accordion>
     <AccordionItem>
       {#snippet header()}
@@ -157,7 +136,7 @@
 </CodeWrapper>
 
 <H2>Icon Accordion</H2>
-<CodeWrapper innerClass="h-[320px]">
+<CodeWrapper innerClass="h-[350px]">
   <Accordion>
     <AccordionItem>
       {#snippet header()}
@@ -184,7 +163,7 @@
 </CodeWrapper>
 
 <H2>Multiple mode</H2>
-<CodeWrapper innerClass="h-[480px]">
+<CodeWrapper innerClass="h-[500px]">
   <Button onclick={open_all}>Open all</Button>
   <Button onclick={close_all}>Close all</Button>
   <Accordion class="mt-4">
@@ -192,13 +171,13 @@
       {#snippet header()}
         My Header 1
       {/snippet}
-      <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+      <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet ...</p>
     </AccordionItem>
     <AccordionItem bind:open={item1}>
       {#snippet header()}
         My Header 2
       {/snippet}
-      <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+      <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet...</p>
     </AccordionItem>
     <AccordionItem bind:open={item2}>
       {#snippet header()}

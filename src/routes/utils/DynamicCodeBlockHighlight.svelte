@@ -25,6 +25,12 @@
     code = replaceLibImport(code);
   }
 
+  $effect(() => {
+    if (replaceLib){
+    code = replaceLibImport(code);
+  }
+  })
+
   const { base, badge, button } = $derived(highlightcompo());
   let copiedStatus = $state(false);
   

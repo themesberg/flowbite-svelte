@@ -136,7 +136,7 @@
     <SelectedComponent />
   </div>
   {#snippet codeblock()}
-  <DynamicCodeBlockHighlight {handleExpandClick} {expand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
+  <DynamicCodeBlockHighlight replaceLib {handleExpandClick} {expand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 
