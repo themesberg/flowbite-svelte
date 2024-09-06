@@ -49,6 +49,7 @@
 </script>
 
 <H1>Layout</H1>
+<H2>Examples</H2>
 
 <CodeWrapper>
   <div class="mb-8 flex flex-wrap">
