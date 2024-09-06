@@ -10,11 +10,6 @@
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'typography/blockquote';
-  const modules = import.meta.glob('./md/*.md', {
-    query: '?raw',
-    import: 'default',
-    eager: true
-  });
 
   // for examples section that dynamically changes the svelte component and markdown content
   import * as ExampleComponents from './examples'; 
@@ -105,8 +100,7 @@
 <H1>Blockquote</H1>
 
 <H2>Setup</H2>
-
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Interactive Blockquote Bilder</H2>
 <CodeWrapper>
