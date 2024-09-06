@@ -1,13 +1,16 @@
 <script lang="ts">
-  import { Banner, banner, Button, Skeleton, ImagePlaceholder, Label, Radio, type BannerProps } from '$lib';
+  import { type Component } from 'svelte';
+  import { Banner, banner, Button, Skeleton, ImagePlaceholder, Label, Radio, type BannerProps, uiHelpers } from '$lib';
   import { BullhornOutline, ArrowRightOutline, BookOpenSolid } from 'flowbite-svelte-icons';
   import { blur, fly, slide, scale } from 'svelte/transition';
   import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
   import { linear } from 'svelte/easing';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'banner';
@@ -17,6 +20,28 @@
     import: 'default',
     eager: true
   });
+
+  // for examples section that dynamically changes the svelte component and markdown content
+  import * as ExampleComponents from './examples'; 
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
+    query: '?raw',
+    import: 'default',
+    eager: true
+  });
+  
+  const exampleArr = [
+    { name: 'Newsletter signup banner', component: ExampleComponents.NewsletterSignupBanner },
+    { name: 'Information banner', component: ExampleComponents.InformationBanner }
+  ]
+  let selectedExample = $state(exampleArr[0].name);
+  let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
+
+  function findObject (arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find(obj => obj.name === name);
+    return matchingObject ? matchingObject.component : null; 
+  }
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample)); 
+  // end of dynamic svelte component
 
   // interactive example
   // position, bannerType, color, class:divClass
@@ -97,11 +122,22 @@
 </div>`;
     })()
   );
+  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
+  let codeBlock = uiHelpers();
+  let expand = $state(false);
+  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+
+  const handleExpandClick = () => {
+    expand = !expand;
+  }
+  $effect(() => {
+    expand = codeBlock.isOpen;
+  });
+  // end of DynamicCodeBlock setup
 </script>
 
 <H1>Banner</H1>
 <H2>Setup</H2>
-
 <HighlightCompo code={modules['./md/setup.md'] as string} />
 
 <H2>Interactive Banner Builder</H2>
@@ -148,53 +184,20 @@
   {/snippet}
 </CodeWrapper>
 
-<H2>Newsletter sign-up banner</H2>
+<H2>Examples</H2>
 
 <CodeWrapper innerClass="p-0">
-  <div class="relative">
-    <div class="p-6">
-      <Skeleton class="py-4" />
-      <ImagePlaceholder class="py-4" />
-    </div>
-    <Banner id="signup-banner" position="absolute" bannerType="signup">
-      <form action="/" class="flex w-full flex-col items-center md:flex-row">
-        <label for="email" class="mb-2 me-auto flex-shrink-0 text-sm font-medium text-gray-500 md:m-0 md:mb-0 md:me-4 dark:text-gray-400">Sign up for our newsletter</label>
-        <input type="email" id="email" placeholder="Enter your email" class="mb-2 block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 md:mb-0 md:me-4 md:w-64 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500" required />
-        <button type="submit" class="w-full rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 sm:w-auto dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Subscribe</button>
-      </form>
-    </Banner>
+  <div class="mb-2 flex flex-wrap p-6">
+    <Label class="mb-4 w-full font-bold">Example:</Label>
+    {#each exampleArr as style}
+      <Radio labelClass="w-[230px] my-1" onclick={()=> expand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+    {/each}
+  </div>
+  <div>
+    <SelectedComponent />
   </div>
   {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/newsletter.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Informational banner</H2>
-
-<CodeWrapper innerClass="p-0">
-  <div class="relative">
-    <div class="p-6">
-      <Skeleton class="py-4" />
-      <ImagePlaceholder class="py-4" />
-    </div>
-    <Banner id="info-banner" position="absolute" bannerType="info">
-      {#snippet header()}
-        <div class="mb-4 md:mb-0 md:me-4">
-          <h2 class="mb-1 text-base font-semibold text-gray-900 dark:text-white">Integration is the key</h2>
-          <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">You can integrate Flowbite with many tools.</p>
-        </div>
-      {/snippet}
-      <a href="/" class="me-3 inline-flex items-center rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700">
-        <BookOpenSolid class="me-2 h-3 w-3" />
-        Learn more
-      </a>
-      <a href="/" class="me-2 inline-flex rounded-lg bg-primary-700 px-3 py-2 text-xs font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-        Get started <ArrowRightOutline class="ms-2 h-3 w-3" />
-      </a>
-    </Banner>
-  </div>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/informational.md'] as string} />
+  <DynamicCodeBlockHighlight {handleExpandClick} {expand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 
