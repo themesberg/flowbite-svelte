@@ -1,14 +1,15 @@
 <script lang="ts">
-  import { FloatingLabelInput, Helper, Label, Radio, Toggle, floatingLabelInput, Button } from '$lib';
-
+  import { FloatingLabelInput, Helper, Label, Radio, Toggle, floatingLabelInput, Button, uiHelpers } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { isGeneratedCodeOverflow } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'forms/floating-label-input';
-  const modules = import.meta.glob('./md/*.md', {
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
     query: '?raw',
     import: 'default',
     eager: true
@@ -53,16 +54,23 @@
 </FloatingLabelInput>${helperCode}`;
     })()
   );
+   // for interactive builder
+   let builder = uiHelpers();
+  let builderExpand = $state(false);
+  let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
+  const handleBuilderExpandClick = () => {
+    builderExpand = !builderExpand;
+  }
 </script>
 
 <H1>Floating label</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Floating label examples</H2>
 <CodeWrapper>
-  <div class="h-20">
+  <div class="md:h-20 mb-4">
     <FloatingLabelInput {style} {disabled} size={floatingSize} color={floatingColor} id="floating_filled" type="text">Floating {style}</FloatingLabelInput>
     {#if helperSlot}
     <Helper class="pt-2" color={helperColor}>
@@ -70,19 +78,19 @@
     </Helper>
     {/if}
   </div>
-  <div class="flex flex-wrap space-x-4 mb-4">
+  <div class="flex flex-wrap space-x-2 mb-4">
     <Label class="mb-4 w-full font-bold">Style:</Label>
     {#each styles as option}
       <Radio labelClass="w-24 my-1" name="style1" bind:group={style} value={option}>{option}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-4 mb-4">
+  <div class="flex flex-wrap space-x-2 mb-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
       <Radio labelClass="w-24 my-1" name="floating_color" bind:group={floatingColor} color={colorOption as FloatingLabelInput['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-4">
+  <div class="flex flex-wrap space-x-2 mb-4">
     <Button class="w-48 mb-4" color="secondary" onclick={changeHelperSlot}>{helperSlot ? 'Remove helper slot' : 'Add helper slot'}</Button>
     <Label class="mb-4 w-full font-bold">Helper Color</Label>
     {#each colors as colorOption}
@@ -97,8 +105,8 @@
       }}
     > 
     {#snippet leftLabel()}
-    <div class="me-4">Default</div>
-   {/snippet}
+      <div class="me-4">Default</div>
+    {/snippet}
       Small
     </Toggle>
   </div>
@@ -106,7 +114,7 @@
     <Button class="w-48" onclick={changeDisabled}>{disabled ? 'Remove disabled' : 'Add disabled'}</Button>
   </div>
   {#snippet codeblock()}
-    <HighlightCompo code={generatedCode} />
+    <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 
