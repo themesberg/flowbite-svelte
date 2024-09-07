@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { type Component } from 'svelte';
   import { Checkbox, CheckboxButton, ButtonGroup, checkbox, Helper, Label, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, TableBodyRow, Radio, Button, Dropdown, DropdownUl, DropdownHeader, Search, uiHelpers, type CheckboxItem } from '$lib';
   import { ChevronDownOutline, AppleSolid, FacebookSolid, DiscordSolid, DropboxSolid } from 'flowbite-svelte-icons';
   import React from '../../utils/icons/React.svelte';
@@ -9,6 +10,7 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'forms/checkbox';
@@ -18,11 +20,41 @@
     import: 'default',
     eager: true
   });
+  // for examples section that dynamically changes the svelte component and markdown content
+  import * as ExampleComponents from './examples'; 
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
+    query: '?raw',
+    import: 'default',
+    eager: true
+  });
+  
+  const exampleArr = [
+    { name: 'Advanced', component: ExampleComponents.Advanced },
+    { name: 'Bordered', component: ExampleComponents.Bordered },
+    { name: 'Button', component: ExampleComponents.Button },
+    { name: 'Dropdown', component: ExampleComponents.Dropdown },
+    { name: 'Group variable', component: ExampleComponents.GroupVariable },
+    { name: 'Horizontal list', component: ExampleComponents.HorizontalList },
+    { name: 'Inline layout', component: ExampleComponents.InlineLayout },
+    { name: 'Link', component: ExampleComponents.Link },
+    { name: 'List group', component: ExampleComponents.ListGroup },
+    { name: 'Table', component: ExampleComponents.Table },
+  ]
+  let selectedExample = $state(exampleArr[0].name);
+  let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
+
+  function findObject (arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find(obj => obj.name === name);
+    return matchingObject ? matchingObject.component : null; 
+  }
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample)); 
+  // end of dynamic svelte component
 
   const colors = Object.keys(checkbox.variants.color);
   let checkboxColor: Checkbox['color'] = $state('primary');
 
   import { sineIn } from 'svelte/easing';
+  import GroupVariable from './examples/GroupVariable.svelte';
   let transitionParams = {
     y: 0,
     duration: 200,
@@ -84,51 +116,39 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`;
 
   const styles = ['Table', 'Link', 'Bordered', 'List group', 'Horizontal list', 'Dropdown', 'Inline layout', 'Button', 'Advanced', 'Group-variable'];
   let selectedStyle = $state('Table');
-  let markdown = $derived.by(()=>{
-    if (selectedStyle === 'Link') {
-      return 'link.md'
-    } else if (selectedStyle === 'Bordered') {
-      return 'bordered.md'
-    } else if (selectedStyle === 'List group') {
-      return 'list-group.md'
-    } else if (selectedStyle === 'Horizontal list') {
-      return 'horizontal-list.md'
-    } else if (selectedStyle === 'Dropdown') {
-      return 'dropdown.md'
-    } else if (selectedStyle === 'Inline layout') {
-      return 'inline-layout.md'
-    } else if (selectedStyle === 'Button') {
-      return 'button.md'
-    } else if (selectedStyle === 'Advanced') {
-      return 'advanced.md'
-    } else if (selectedStyle === 'Group-variable') {
-      return 'group-variable.md'
-    } else {
-      return 'table.md'
-    }
-  })
-  // for DynamicCodeBlock setup
-  let codeBlock = uiHelpers();
-  let expand = $state(false);
-  let showExpandButton = $derived(isOverflow(markdown, modules));
-  const handleExpandClick = () => {
-    expand = !expand;
+  
+  
+  // for interactive builder
+  let builder = uiHelpers();
+  let builderExpand = $state(false);
+  let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
+  const handleBuilderExpandClick = () => {
+    builderExpand = !builderExpand;
   }
-  $effect(() => {
-    isOverflow(markdown, modules)
-    expand = codeBlock.isOpen;
-  });
+  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
+  
+  // for examples DynamicCodeBlockHighlight
+  let codeBlock = uiHelpers();
+  let exampleExpand = $state(false);
+  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+  const handleExpandClick = () => {
+    exampleExpand = !exampleExpand;
+  }
   // end of DynamicCodeBlock setup
+  $effect(() => {
+    exampleExpand = codeBlock.isOpen;
+    builderExpand = builder.isOpen;
+  });
 </script>
 
 <H1>Checkbox</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Interactive Checkbox Builder</H2>
 <CodeWrapper>
-  <div class="h-8">
+  <div class="md:h-8">
     <Checkbox checked={checkedState} indeterminate={indeterminateState} color={checkboxColor} disabled={disabledState}>
       {#if disabledState}This is disabled{:else}Default checkbox{/if}
     </Checkbox>
@@ -149,147 +169,24 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`;
     <Button class="w-48" color="lime" onclick={changeHelperState}>{helperState ? 'Remove helper' : 'Add helper'}</Button>
   </div>
   {#snippet codeblock()}
-    <HighlightCompo code={generatedCode} />
+  <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 
-<H2>Checkbox examples</H2>
+<H2>Examples</H2>
 
 <CodeWrapper>
-  <div class="md:h-[230px]">
-  {#if selectedStyle === 'Link'}
-  <Checkbox>
-    I agree with the<a href="/" class="ms-1 text-primary-600 hover:underline dark:text-primary-500">terms and conditions</a>.
-  </Checkbox>
-  {:else if selectedStyle === 'Bordered'}
-  <div class="rounded border border-gray-200 dark:border-gray-700">
-    <Checkbox classLabel="w-full p-4">Default radio</Checkbox>
-  </div>
-  <div class="rounded border border-gray-200 dark:border-gray-700">
-    <Checkbox checked classLabel="w-full p-4">Checked state</Checkbox>
-  </div>
-  {:else if selectedStyle === 'List group'}
-  <p class="mb-4 font-semibold text-gray-900 dark:text-white">Technology</p>
-  <ul class="w-48 divide-y divide-gray-200 rounded-lg border border-gray-200 bg-white dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800">
-    <li><Checkbox checked classLabel="p-3">svelte</Checkbox></li>
-    <li><Checkbox classLabel="p-3">Vue JS</Checkbox></li>
-    <li><Checkbox classLabel="p-3">React</Checkbox></li>
-    <li><Checkbox classLabel="p-3">Angular</Checkbox></li>
-  </ul>
-  {:else if selectedStyle === 'Horizontal list'}
-  <p class="mb-4 font-semibold text-gray-900 dark:text-white">Identification</p>
-  <ul class="w-full items-center divide-x divide-gray-200 rounded-lg border border-gray-200 sm:flex rtl:divide-x-reverse dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800">
-    <li class="w-full">
-      <Checkbox checked classLabel="p-3">Svelte</Checkbox>
-    </li>
-    <li class="w-full"><Checkbox classLabel="p-3">Vue JS</Checkbox></li>
-    <li class="w-full"><Checkbox classLabel="p-3">React</Checkbox></li>
-    <li class="w-full"><Checkbox classLabel="p-3">Angular</Checkbox></li>
-  </ul>
-  {:else if selectedStyle === 'Dropdown'}
-  <div class="flex justify-center">
-  <Button onclick={dropdown.toggle}>Project users<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
-  <div class="relative">
-    <Dropdown {dropdownStatus} {closeDropdown} params={transitionParams} class="absolute -left-[190px] top-[45px] w-52 overflow-y-auto p-2 pb-3 text-sm">
-      <div class="relative">
-        <DropdownHeader>
-          <div class="p-0">
-            <Search size="md" class="pl-8" />
-          </div>
-        </DropdownHeader>
-        <DropdownUl>
-          <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-            <Checkbox>Robert Gouth</Checkbox>
-          </li>
-          <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-            <Checkbox>Bonnie Green</Checkbox>
-          </li>
-        </DropdownUl>
-      </div>
-    </Dropdown>
-  </div>
-  </div>
-  {:else if selectedStyle === 'Inline layout'}
-  <div class="flex gap-3">
-    <Checkbox>Inline 1</Checkbox>
-    <Checkbox>Inline 2</Checkbox>
-    <Checkbox checked>Inline checked</Checkbox>
-    <Checkbox disabled>Inline disabled</Checkbox>
-  </div>
-  {:else if selectedStyle === 'Button'}
-  <div class="mb-4">
-    <CheckboxButton><AppleSolid class="me-2 h-6 w-6" />Apple</CheckboxButton>
-    <CheckboxButton><FacebookSolid class="me-2 h-6 w-6" />Facebook</CheckboxButton>
-    <CheckboxButton><DiscordSolid class="me-2 h-6 w-6" />Discord</CheckboxButton>
-    <CheckboxButton><DropboxSolid class="me-2 h-6 w-6" />Dropbox</CheckboxButton>
-  </div>
-  
-  <ButtonGroup>
-    <CheckboxButton><AppleSolid class="me-2 h-6 w-6" />Apple</CheckboxButton>
-    <CheckboxButton><FacebookSolid class="me-2 h-6 w-6" />Facebook</CheckboxButton>
-    <CheckboxButton><DiscordSolid class="me-2 h-6 w-6" />Discord</CheckboxButton>
-    <CheckboxButton><DropboxSolid class="me-2 h-6 w-6" />Dropbox</CheckboxButton>
-  </ButtonGroup>
-  {:else if selectedStyle === 'Advanced'}
-  <p class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Choose technology:</p>
-  <div class="grid w-full gap-6 md:grid-cols-3">
-    <Checkbox custom>
-      <div class="w-full cursor-pointer rounded-lg border-2 border-gray-200 bg-white p-5 font-normal text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-primary-600 peer-checked:text-gray-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:peer-checked:text-gray-300">
-        <React />
-        <div class="w-full text-lg font-semibold">React Js</div>
-        <div class="w-full text-sm">A JavaScript library for building user interfaces.</div>
-      </div>
-    </Checkbox>
-    <Checkbox custom>
-      <div class="w-full cursor-pointer rounded-lg border-2 border-gray-200 bg-white p-5 font-normal text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-primary-600 peer-checked:text-gray-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:peer-checked:text-gray-300">
-        <Vue />
-        <div class="w-full text-lg font-semibold">Vue Js</div>
-        <div class="w-full text-sm">Vue.js is an model–view front end JavaScript framework.</div>
-      </div>
-    </Checkbox>
-    <Checkbox custom>
-      <div class="w-full cursor-pointer rounded-lg border-2 border-gray-200 bg-white p-5 font-normal text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-primary-600 peer-checked:text-gray-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:peer-checked:text-gray-300">
-        <Angular />
-        <div class="w-full text-lg font-semibold">Angular</div>
-        <div class="w-full text-sm">A TypeScript-based web application framework.</div>
-      </div>
-    </Checkbox>
-  </div>
-  {:else if selectedStyle === 'Group-variable'}
-  <div class="flex gap-2">
-    <Checkbox name="flavours" {choices} bind:group />
-  </div>
-  <div class="my-2 w-44 rounded-lg border border-gray-200 p-2 dark:border-gray-700 dark:text-gray-400">
-    Group: {group}
-  </div>
-  <Button onclick={clearGroup}>Clear</Button>
-  {:else}
-  <Table>
-    <TableHead>
-      <TableHeadCell>Left column</TableHeadCell>
-      <TableHeadCell>Right column</TableHeadCell>
-    </TableHead>
-    <TableBody class="divide-y dark:divide-gray-700">
-      <TableBodyRow class="divide-x rtl:divide-x-reverse dark:divide-gray-700">
-        <TableBodyCell><Label for="checkbox1">Default checkbox</Label></TableBodyCell>
-        <TableBodyCell><Label for="checkbox2">Disabled checkbox</Label></TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow class="divide-x rtl:divide-x-reverse dark:divide-gray-700">
-        <TableBodyCell><Checkbox id="checkbox1" checked /></TableBodyCell>
-        <TableBodyCell><Checkbox id="checkbox2" disabled /></TableBodyCell>
-      </TableBodyRow>
-    </TableBody>
-  </Table>
-  {/if}
-  </div>
-  <div class="mt-4 flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Style:</Label>
-    {#each styles as style}
-      <Radio labelClass="w-32 my-1" name="block_style" bind:group={selectedStyle} value={style}>{style}</Radio>
+  <div class="mb-8 flex flex-wrap">
+    <Label class="mb-4 w-full font-bold">Example:</Label>
+    {#each exampleArr as style}
+      <Radio labelClass="w-36 my-1" onclick={()=> exampleExpand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
+  <div class="md:h-[350px]">
+    <SelectedComponent />
+  </div>
   {#snippet codeblock()}
-  <DynamicCodeBlockHighlight {handleExpandClick} {expand} {showExpandButton} code={modules[`./md/${markdown}`] as string} />
+  <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 
