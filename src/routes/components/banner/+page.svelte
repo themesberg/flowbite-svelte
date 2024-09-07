@@ -116,7 +116,6 @@
     })()
   );
   
-   
   // for interactive builder
   let builder = uiHelpers();
   let builderExpand = $state(false);
@@ -193,14 +192,14 @@
 
 <H2>Examples</H2>
 
-<CodeWrapper>
-  <div class="mb-4 flex flex-wrap">
+<CodeWrapper innerClass="p-0">
+  <div class="mb-4 flex flex-wrap p-6">
     <Label class="mb-4 w-full font-bold">Example:</Label>
     {#each exampleArr as style}
-      <Radio labelClass="w-40 my-1" onclick={()=> exampleExpand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+      <Radio labelClass="w-64 my-1" onclick={()=> exampleExpand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
-  <div class="h-40">
+  <div class="h-[420px]">
     <SelectedComponent />
   </div>
   {#snippet codeblock()}
