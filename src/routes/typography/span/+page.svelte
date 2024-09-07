@@ -153,7 +153,7 @@
       </Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-2">
+  <div class="flex flex-wrap space-x-2 mb-4">
     <Label class="mb-4 w-full font-bold">Decoration thickness:</Label>
     {#each docrationThickness as thickness}
       <Radio
@@ -170,17 +170,17 @@
       </Radio>
     {/each}
   </div>
-  <div class="mt-4 flex flex-wrap space-x-2">
+  <div class="flex flex-wrap space-x-2 mb-4">
     <Label class="mb-4 w-full font-bold">Gradient:</Label>
     {#each gradients as gradient}
       <Radio labelClass="w-32 my-1" name="span_gradient" bind:group={spanGradient} onchange={() => (spanHighlight = 'none')} value={gradient}>{gradient}</Radio>
     {/each}
   </div>
-  <div class="mt-4 flex flex-wrap items-center gap-2 rtl:space-x-reverse">
-    <Button class="w-32" onclick={changeItalic}>{spanItalic ? 'No italic' : 'Italic'}</Button>
-    <Button class="w-32" color="amber" onclick={changeUnderline}>{spanUnderline ? 'No underline' : 'Underline'}</Button>
-    <Button class="w-40" color="violet" onclick={changeLinethrough}>{spanLinethrough ? 'No linethrough' : 'Linethrough '}</Button>
-    <Button class="w-40" color="blue" onclick={changeUppercase}>{spanUppercase ? 'No uppercase' : 'Uppercase'}</Button>
+  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+    <Button class="w-36" color="violet" onclick={changeLinethrough}>{spanLinethrough ? 'No linethrough' : 'Linethrough '}</Button>
+    <Button class="w-36" color="blue" onclick={changeUppercase}>{spanUppercase ? 'No uppercase' : 'Uppercase'}</Button>
+    <Button class="w-24" onclick={changeItalic}>{spanItalic ? 'No italic' : 'Italic'}</Button>
+    <Button class="w-28" color="amber" onclick={changeUnderline}>{spanUnderline ? 'No underline' : 'Underline'}</Button>
     <Button class="w-32" color="teal" onclick={changeOpacity}>{opacityClass ? 'No opacity' : 'Add opacity'}</Button>
   </div>
   {#snippet codeblock()}

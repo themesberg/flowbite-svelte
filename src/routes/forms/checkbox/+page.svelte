@@ -156,7 +156,7 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`;
 <H2>Checkbox examples</H2>
 
 <CodeWrapper>
-  <div class="h-[230px]">
+  <div class="md:h-[230px]">
   {#if selectedStyle === 'Link'}
   <Checkbox>
     I agree with the<a href="/" class="ms-1 text-primary-600 hover:underline dark:text-primary-500">terms and conditions</a>.
@@ -210,7 +210,12 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`;
   </div>
   </div>
   {:else if selectedStyle === 'Inline layout'}
-  {@html modules[`./md/${markdown}`]}
+  <div class="flex gap-3">
+    <Checkbox>Inline 1</Checkbox>
+    <Checkbox>Inline 2</Checkbox>
+    <Checkbox checked>Inline checked</Checkbox>
+    <Checkbox disabled>Inline disabled</Checkbox>
+  </div>
   {:else if selectedStyle === 'Button'}
   <div class="mb-4">
     <CheckboxButton><AppleSolid class="me-2 h-6 w-6" />Apple</CheckboxButton>
@@ -277,10 +282,10 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`;
   </Table>
   {/if}
   </div>
-  <div class="mt-4 flex flex-wrap space-x-4">
+  <div class="mt-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Style:</Label>
     {#each styles as style}
-      <Radio labelClass="w-40 my-1" name="block_style" bind:group={selectedStyle} value={style}>{style}</Radio>
+      <Radio labelClass="w-32 my-1" name="block_style" bind:group={selectedStyle} value={style}>{style}</Radio>
     {/each}
   </div>
   {#snippet codeblock()}
