@@ -1,3 +1,8 @@
+<script lang="ts">
+  import { Input, Label, Button } from '$lib';
+  import { SearchOutline } from 'flowbite-svelte-icons';
+</script>
+
 <form>
   <Label for="search" class="mb-2 block">Your Email</Label>
   <Input id="search" placeholder="Search" size="lg" class="pl-10">

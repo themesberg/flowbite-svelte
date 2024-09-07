@@ -1,3 +1,7 @@
+<script lang="ts">
+  import { Input, Label, Checkbox, Button, A } from '$lib';
+</script>
+
 <form>
   <div class="mb-6 grid gap-6 md:grid-cols-2">
     <div>
