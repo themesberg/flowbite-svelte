@@ -167,7 +167,7 @@
   <div class="mb-4 h-12">
     <Button class="w-48" disabled={bannerStatus ? true : false} onclick={changeStatus}>Open banner</Button>
   </div>
-  <div class="flex flex-wrap space-x-4">
+  <div class="flex flex-wrap space-x-4 mb-4">
     <Label class="mb-4 w-full font-bold">Change color {color}</Label>
     {#each colors as colorOption}
       <Radio labelClass="w-24 my-1" name="color" bind:group={color} color={colorOption as BannerProps['color']} value={colorOption}>{colorOption}</Radio>
@@ -179,7 +179,7 @@
       <Radio labelClass="w-24 my-1" name="interactive_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
     {/each}
   </div>
-  <div class="mb-4 flex flex-wrap gap-4">
+  <div class="flex flex-wrap gap-4">
     <Button class="w-48" onclick={changePosition}>Position: {position === 'sticky' ? 'absolute' : 'sticky'}</Button>
     <Button class="w-48" color="blue" onclick={changeBannerType}>Type: {bannerType === 'default' ? 'cta' : 'default'}</Button>
     <Button class="w-48" color="green" onclick={changeClass}>{bannerClass ? 'Remove class' : 'Add class'}</Button>
