@@ -95,7 +95,7 @@
   {/snippet}
 </CodeWrapper>
 
-<H2 class="mt-64">Custom size</H2>
+<H2>Custom size</H2>
 <CodeWrapper class="flex flex-col space-y-2">
   <Toggle spanClass="w-16 h-10 after:top-1 after:left-[4px]  after:h-8 after:w-8">Custom toggle</Toggle>
   {#snippet codeblock()}

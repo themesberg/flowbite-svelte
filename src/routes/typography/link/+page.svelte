@@ -2,7 +2,6 @@
   import { type Component } from 'svelte';
   import { A, Button, anchor, Label, Radio, Input, CloseButton, uiHelpers } from '$lib';
   import { ArrowRightOutline } from 'flowbite-svelte-icons';
-  import ExamplesBlock from '../../utils/ExamplesBlock.svelte';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
