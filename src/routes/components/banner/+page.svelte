@@ -140,7 +140,7 @@
 </script>
 
 <H1>Banner</H1>
-<H2>Setup</H2>
+
 <H2>Setup</H2>
 <HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
