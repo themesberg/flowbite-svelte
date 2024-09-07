@@ -2,13 +2,12 @@
   import { type Component } from 'svelte';
   import { A, Button, anchor, Label, Radio, Input, CloseButton, uiHelpers } from '$lib';
   import { ArrowRightOutline } from 'flowbite-svelte-icons';
-  import Figma from '../../utils/icons/Figma.svelte';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import { isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'typography/anchor';
@@ -36,20 +35,6 @@
   const SelectedComponent = $derived(findObject(exampleArr, selectedExample)); 
   // end of dynamic svelte component
 
-  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
-  let codeBlock = uiHelpers();
-  let expand = $state(false);
-  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
-
-  const handleExpandClick = () => {
-    expand = !expand;
-  }
-  $effect(() => {
-    expand = codeBlock.isOpen;
-  });
-  // end of DynamicCodeBlock setup
-
-  let vCard = $state(false);
   const colors = Object.keys(anchor.variants.color);
   let anchorColor: A['color'] = $state('primary');
   let linkClass = $state('font-medium hover:underline');
@@ -69,18 +54,39 @@
       props.push(` href="/"`);
       if (anchorColor !== 'primary') props.push(` color="${anchorColor}"`);
       if (linkClass) props.push(` class="${linkClass}"`);
-      iconSlot = linkIcon ? `<ArrowRightOutline class="ms-2 h-6 w-6" />` : '';
+      iconSlot = linkIcon ? `\n  <ArrowRightOutline class="ms-2 h-6 w-6" />` : '';
       // if (imgAlignment !== 'left') props.push(` alignment="${imgAlignment}"`);
 
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
       return `<A${propsString}>
-  Read more ${iconSlot}
+  ${text} ${iconSlot}
 </A>`;
     })()
   );
 
   let { text = $bindable('Read more') } = $props();
+  // for interactive builder
+  let builder = uiHelpers();
+  let builderExpand = $state(false);
+  let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
+  const handleBuilderExpandClick = () => {
+    builderExpand = !builderExpand;
+  }
+  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
+  
+  // for examples DynamicCodeBlockHighlight
+  let codeBlock = uiHelpers();
+  let exampleExpand = $state(false);
+  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+  const handleExpandClick = () => {
+    exampleExpand = !exampleExpand;
+  }
+  // end of DynamicCodeBlock setup
+  $effect(() => {
+    exampleExpand = codeBlock.isOpen;
+    builderExpand = builder.isOpen;
+  });
 </script>
 
 <H1>Links</H1>
@@ -113,7 +119,7 @@
     <Button class="w-48" color="pink" onclick={changeIcon}>{linkIcon ? 'Remove icon' : 'Add icon'}</Button>
   </div>
   {#snippet codeblock()}
-    <HighlightCompo code={generatedCode} />
+  <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 
@@ -123,14 +129,14 @@
   <div class="mb-8 flex flex-wrap">
     <Label class="mb-4 w-full font-bold">Example:</Label>
     {#each exampleArr as style}
-      <Radio labelClass="w-[170px] my-1" onclick={()=> expand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+      <Radio labelClass="w-[170px] my-1" onclick={()=> exampleExpand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
   <div>
     <SelectedComponent />
   </div>
   {#snippet codeblock()}
-  <DynamicCodeBlockHighlight replaceLib {handleExpandClick} {expand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
+  <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 

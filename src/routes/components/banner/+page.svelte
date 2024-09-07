@@ -10,16 +10,10 @@
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import { isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'banner';
-  
-  const modules = import.meta.glob('./md/*.md', {
-    query: '?raw',
-    import: 'default',
-    eager: true
-  });
 
   // for examples section that dynamically changes the svelte component and markdown content
   import * as ExampleComponents from './examples'; 
@@ -75,14 +69,13 @@
     name: string;
     transition: typeof fly | typeof blur | typeof slide | typeof scale;
     params: FlyParams | BlurParams | SlideParams | ScaleParams;
-    color: Banner['color'];
   };
 
   const transitions: TransitionOption[] = [
-    { name: 'Fly', transition: fly, params: { duration: 500, easing: linear, x: 150 }, color: 'blue' },
-    { name: 'Blur', transition: blur, params: { duration: 500, easing: linear }, color: 'lime' },
-    { name: 'Slide', transition: slide, params: { duration: 500, easing: linear, x: -150 }, color: 'violet' },
-    { name: 'Scale', transition: scale, params: { duration: 500, easing: linear }, color: 'pink' }
+    { name: 'Fly', transition: fly, params: { duration: 500, easing: linear, x: 150 } },
+    { name: 'Blur', transition: blur, params: { duration: 500, easing: linear } },
+    { name: 'Slide', transition: slide, params: { duration: 500, easing: linear, x: -150 } },
+    { name: 'Scale', transition: scale, params: { duration: 500, easing: linear } }
   ];
 
   let selectedTransition = $state('Fly');
@@ -122,23 +115,35 @@
 </div>`;
     })()
   );
-  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
-  let codeBlock = uiHelpers();
-  let expand = $state(false);
-  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
-
-  const handleExpandClick = () => {
-    expand = !expand;
+  
+   
+  // for interactive builder
+  let builder = uiHelpers();
+  let builderExpand = $state(false);
+  let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
+  const handleBuilderExpandClick = () => {
+    builderExpand = !builderExpand;
   }
-  $effect(() => {
-    expand = codeBlock.isOpen;
-  });
+  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
+  
+  // for examples DynamicCodeBlockHighlight
+  let codeBlock = uiHelpers();
+  let exampleExpand = $state(false);
+  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+  const handleExpandClick = () => {
+    exampleExpand = !exampleExpand;
+  }
   // end of DynamicCodeBlock setup
+  $effect(() => {
+    exampleExpand = codeBlock.isOpen;
+    builderExpand = builder.isOpen;
+  });
 </script>
 
 <H1>Banner</H1>
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<H2>Setup</H2>
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Interactive Banner Builder</H2>
 <CodeWrapper class="relative" innerClass="p-0">
@@ -159,6 +164,7 @@
       </p>
     </Banner>
   </div>
+<div class="p-6">
   <div class="mb-4 h-12">
     <Button class="w-48" disabled={bannerStatus ? true : false} onclick={changeStatus}>Open banner</Button>
   </div>
@@ -179,25 +185,26 @@
     <Button class="w-48" color="blue" onclick={changeBannerType}>Type: {bannerType === 'default' ? 'cta' : 'default'}</Button>
     <Button class="w-48" color="green" onclick={changeClass}>{bannerClass ? 'Remove class' : 'Add class'}</Button>
   </div>
+</div>
   {#snippet codeblock()}
-    <HighlightCompo code={generatedCode} />
+    <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Examples</H2>
 
-<CodeWrapper innerClass="p-0">
-  <div class="mb-2 flex flex-wrap p-6">
+<CodeWrapper>
+  <div class="mb-4 flex flex-wrap">
     <Label class="mb-4 w-full font-bold">Example:</Label>
     {#each exampleArr as style}
-      <Radio labelClass="w-[230px] my-1" onclick={()=> expand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+      <Radio labelClass="w-40 my-1" onclick={()=> exampleExpand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
-  <div>
+  <div class="h-40">
     <SelectedComponent />
   </div>
   {#snippet codeblock()}
-  <DynamicCodeBlockHighlight replaceLib {handleExpandClick} {expand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
+  <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 

@@ -57,6 +57,11 @@ export const isOverflow = (markdown: string, modules: Record<string, any>): bool
   return lines.length > 7;
 };
 
+export const isGeneratedCodeOverflow = (code: string): boolean => { 
+  const lines = code.split('\n');
+  return lines.length > 7;
+}
+
 export const isSvelteOverflow = (markdown: string, exampleModules: Record<string, any>): boolean => {
   const markdownLines = exampleModules[`./examples/${markdown}`];
   const lines = markdownLines.split('\n');
