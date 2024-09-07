@@ -1,10 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Checkbox, CheckboxButton, ButtonGroup, checkbox, Helper, Label, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, TableBodyRow, Radio, Button, Dropdown, DropdownUl, DropdownHeader, Search, uiHelpers, type CheckboxItem } from '$lib';
-  import { ChevronDownOutline, AppleSolid, FacebookSolid, DiscordSolid, DropboxSolid } from 'flowbite-svelte-icons';
-  import React from '../../utils/icons/React.svelte';
-  import Vue from '../../utils/icons/Vue.svelte';
-  import Angular from '../../utils/icons/Angular.svelte';
+  import { Checkbox, checkbox, Helper, Label, Radio, Button, uiHelpers } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -14,12 +10,7 @@
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'forms/checkbox';
-  import { isOverflow } from '../../utils/helpers';
-  const modules = import.meta.glob('./md/*.md', {
-    query: '?raw',
-    import: 'default',
-    eager: true
-  });
+
   // for examples section that dynamically changes the svelte component and markdown content
   import * as ExampleComponents from './examples'; 
   const exampleModules = import.meta.glob('./examples/*.svelte', {
@@ -53,32 +44,6 @@
   const colors = Object.keys(checkbox.variants.color);
   let checkboxColor: Checkbox['color'] = $state('primary');
 
-  import { sineIn } from 'svelte/easing';
-  import GroupVariable from './examples/GroupVariable.svelte';
-  let transitionParams = {
-    y: 0,
-    duration: 200,
-    easing: sineIn
-  };
-
-  let dropdown = uiHelpers();
-  let dropdownStatus = $state(false);
-  let closeDropdown = dropdown.close;
-
-  $effect(() => {
-    // this can be done adding nav.navStatus directly to DOM element
-    // without using effect
-    dropdownStatus = dropdown.isOpen;
-  });
-  let choices: CheckboxItem[] = [
-    { value: '1', checkboxLabel: 'One' },
-    { value: '2', checkboxLabel: 'Two' },
-    { value: '3', checkboxLabel: 'Three' }
-  ];
-  let group = $state(['2', '3']);
-  const clearGroup = () => {
-    group = [];
-  };
   // const checkedStates = [ 'false', 'true', 'indeterminate' ];
   let checkedState = $state(false);
   const changeCheckedState = () => {
@@ -113,10 +78,6 @@
 ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`;
     })()
   );
-
-  const styles = ['Table', 'Link', 'Bordered', 'List group', 'Horizontal list', 'Dropdown', 'Inline layout', 'Button', 'Advanced', 'Group-variable'];
-  let selectedStyle = $state('Table');
-  
   
   // for interactive builder
   let builder = uiHelpers();
