@@ -7,7 +7,7 @@
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'forms/fileupload';
-  const modules = import.meta.glob('./md/*.md', {
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
     query: '?raw',
     import: 'default',
     eager: true
@@ -54,11 +54,11 @@ ${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ''}`;
 <H1>File input</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Interactive Fileupload Builder</H2>
 <CodeWrapper>
-  <div class="h-32">
+  <div class="md:h-32">
     <Fileupload id="small_size" {size} class="mb-2" {multiple} bind:files />
     {#if helperState}
       <Helper>SVG, PNG, JPG or GIF (MAX. 800x400px).</Helper>
@@ -71,10 +71,10 @@ ${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ''}`;
       </div>
     {/if}
   </div>
-  <div class="mb-4 mt-4 flex flex-wrap space-x-4">
+  <div class="mb-4 mt-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as sizeOption}
-      <Radio labelClass="w-24 my-1" name="file_input_size" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
+      <Radio labelClass="w-16 my-1" name="file_input_size" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap gap-2 justify-center md:justify-start">
