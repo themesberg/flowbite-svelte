@@ -1,19 +1,53 @@
 <script lang="ts">
-  import { A, P, Button, Card, Toggle, anchor, Label, Radio, Input, CloseButton } from '$lib';
+  import { type Component } from 'svelte';
+  import { A, Button, anchor, Label, Radio, Input, CloseButton, uiHelpers } from '$lib';
   import { ArrowRightOutline } from 'flowbite-svelte-icons';
   import Figma from '../../utils/icons/Figma.svelte';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'typography/anchor';
-  const modules = import.meta.glob('./md/*.md', {
+  // for examples section that dynamically changes the svelte component and markdown content
+  import * as ExampleComponents from './examples'; 
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
     query: '?raw',
     import: 'default',
     eager: true
   });
+  
+  const exampleArr = [
+    { name: 'Button link', component: ExampleComponents.ButtonLink },
+    { name: 'Cta link', component: ExampleComponents.CtaLink },
+    { name: 'Card link', component: ExampleComponents.CardLink },
+    { name: 'Card with image', component: ExampleComponents.CardWithImage },
+  ]
+  let selectedExample = $state(exampleArr[0].name);
+  let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
+
+  function findObject (arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find(obj => obj.name === name);
+    return matchingObject ? matchingObject.component : null; 
+  }
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample)); 
+  // end of dynamic svelte component
+
+  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
+  let codeBlock = uiHelpers();
+  let expand = $state(false);
+  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+
+  const handleExpandClick = () => {
+    expand = !expand;
+  }
+  $effect(() => {
+    expand = codeBlock.isOpen;
+  });
+  // end of DynamicCodeBlock setup
 
   let vCard = $state(false);
   const colors = Object.keys(anchor.variants.color);
@@ -52,8 +86,7 @@
 <H1>Links</H1>
 
 <H2>Setup</H2>
-
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Interactive Link Builder</H2>
 <CodeWrapper>
@@ -84,51 +117,20 @@
   {/snippet}
 </CodeWrapper>
 
-<H2>Button</H2>
+<H2>Examples</H2>
+
 <CodeWrapper>
-  <Button href="/">Read more</Button>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/button-link.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>CTA link</H2>
-<CodeWrapper>
-  <A href="/" class="inline-flex items-center justify-center rounded-lg bg-gray-50 p-5 text-base font-medium hover:bg-gray-100 hover:text-gray-900 hover:no-underline dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white">
-    <Figma />
-    <span class="ms-3 w-full">Get started with our Figma Design System</span>
-    <ArrowRightOutline class="ms-2 h-6 w-6" />
-  </A>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/cta-link.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Card link</H2>
-<CodeWrapper innerClass="flex justify-center">
-  <Card href="/">
-    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-    <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-  </Card>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/card-link.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Card with image</H2>
-<CodeWrapper innerClass="flex justify-center">
-  <div class="flex flex-col space-y-4">
-    <Card img={{ src: '/images/image-1.webp', alt: 'my image' }} reverse={vCard}>
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
-      <p class="mb-3 font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
-      <Button>
-        Read more <ArrowRightOutline class="ms-2 h-3.5 w-3.5 text-white" />
-      </Button>
-    </Card>
-    <Toggle bind:checked={vCard} spanClass="italic dark:text-gray-500">Reverse: {vCard}</Toggle>
+  <div class="mb-8 flex flex-wrap">
+    <Label class="mb-4 w-full font-bold">Example:</Label>
+    {#each exampleArr as style}
+      <Radio labelClass="w-[170px] my-1" onclick={()=> expand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+    {/each}
+  </div>
+  <div>
+    <SelectedComponent />
   </div>
   {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/card-with-image.md'] as string} />
+  <DynamicCodeBlockHighlight replaceLib {handleExpandClick} {expand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 
