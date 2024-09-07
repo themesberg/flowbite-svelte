@@ -117,13 +117,13 @@
       <Helper class="text-base">Selected value: {selected}</Helper>
     {/if}
   </div>
-  <div class="flex flex-wrap space-x-4">
+  <div class="flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as option}
       <Radio labelClass="w-24 my-1" name="input_size" bind:group={selectSize} value={option}>{option}</Radio>
     {/each}
   </div>
-  <div class="mt-4 flex flex-wrap gap-2">
+  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
     <Button class="w-40" onclick={changeUnderline}>{underline ? 'Default' : 'Underline'}</Button>
     <Button class="w-40" color="secondary" onclick={changeDiabled}>{disabled ? 'Enabled' : 'Disabled'}</Button>
     <Button class="w-40" color="rose" onclick={changeBindValue}>{bindValue ? 'Unbind' : 'Bind value'}</Button>

@@ -13,8 +13,9 @@
     aClass?: string;
     activeClass?: string;
     nonActiveClass?: string;
+    class?: string;
   }
-  let { closeNav, href, children, aClass, activeClass, nonActiveClass, ...restProps }: Props = $props();
+  let { closeNav, href, children, aClass, activeClass, nonActiveClass, class:className, ...restProps }: Props = $props();
 
   let breakPoint: navbarType['breakPoint'];
 
@@ -46,7 +47,7 @@
   // $inspect('context.activeClass', linkBreaks[breakPoint]);
 </script>
 
-<li>
+<li class={className}>
   <a {href} onclick={closeNav} {...restProps} aria-current={currentUrl === href} class={linkClass}>
     {@render children()}
   </a>

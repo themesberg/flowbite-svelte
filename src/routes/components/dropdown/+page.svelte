@@ -308,7 +308,7 @@
       Divider {#if dividerStatus}off{:else}on{/if}
     </Button>
   </div>
-  <div class="flex flex-wrap space-x-4">
+  <div class="flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Transition</Label>
     {#each transitions as transition}
       <Radio labelClass="w-24 my-1" name="dropdown_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>

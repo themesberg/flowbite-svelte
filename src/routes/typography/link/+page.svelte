@@ -103,19 +103,19 @@
       <CloseButton onclick={() => (text = '')} />
     {/snippet}
   </Input>
-  <div class="h-10">
+  <div class="md:h-10 mb-4">
   <A href="/" color={anchorColor} class={linkClass}>
     {text}
     {#if linkIcon}<ArrowRightOutline class="ms-2 h-6 w-6" />{/if}
   </A>
   </div>
-  <div class="mt-4 flex flex-wrap space-x-4">
+  <div class="flex flex-wrap space-x-2 mb-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
       <Radio labelClass="w-24 my-1" name="anchor_color" bind:group={anchorColor} color={colorOption as A['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
-  <div class="mt-12 flex flex-wrap gap-2">
+  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
     <Button class="w-48" color="blue" onclick={changeLinkClass}>{linkClass === 'font-medium hover:underline' ? 'Change class' : 'Remove class'}</Button>
     <Button class="w-48" color="pink" onclick={changeIcon}>{linkIcon ? 'Remove icon' : 'Add icon'}</Button>
   </div>
@@ -130,7 +130,7 @@
   <div class="mb-8 flex flex-wrap">
     <Label class="mb-4 w-full font-bold">Example:</Label>
     {#each exampleArr as style}
-      <Radio labelClass="w-[170px] my-1" onclick={()=> exampleExpand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+      <Radio labelClass="w-36 my-1" onclick={()=> exampleExpand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
   <div>

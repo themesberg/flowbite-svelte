@@ -132,21 +132,19 @@
   <div class="h-16">
     <Button color={btnColor as Button['color']} class={btnClass} outline={btnOutline} shadow={btnShadow} pill={btnPill} disabled={btnDisabled} size={btnSize as Button['size']} href={btnLink ? btnLink : ''}>Button</Button>
   </div>
-  <div class="mt-4 space-y-4">
-    <div class="flex flex-wrap space-x-10">
-      <Label class="mb-4 w-full font-bold">Color</Label>
-      {#each btnColors as colorOption}
-        <Radio labelClass="w-24 my-1" name="btn_color" bind:group={btnColor as Button['color']} color={colorOption as Button['color']} value={colorOption}>{colorOption}</Radio>
-      {/each}
-    </div>
-    <div class="flex flex-wrap space-x-8">
-      <Label class="mb-4 w-full font-bold">Size</Label>
-      {#each btnSizes as sizeOption}
-        <Radio labelClass="w-24 my-1" name="btn_size" bind:group={btnSize as Button['size']} color={sizeOption as Button['size']} value={sizeOption}>{sizeOption}</Radio>
-      {/each}
-    </div>
+  <div class="flex flex-wrap space-x-2 mb-4">
+    <Label class="mb-4 w-full font-bold">Color</Label>
+    {#each btnColors as colorOption}
+      <Radio labelClass="w-24 my-1" name="btn_color" bind:group={btnColor as Button['color']} color={colorOption as Button['color']} value={colorOption}>{colorOption}</Radio>
+    {/each}
   </div>
-  <div class="mt-4 flex flex-wrap gap-2">
+  <div class="flex flex-wrap space-x-2 mb-4">
+    <Label class="mb-4 w-full font-bold">Size</Label>
+    {#each btnSizes as sizeOption}
+      <Radio labelClass="w-24 my-1" name="btn_size" bind:group={btnSize as Button['size']} color={sizeOption as Button['size']} value={sizeOption}>{sizeOption}</Radio>
+    {/each}
+  </div>
+  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
     <Button class="w-40" color="blue" onclick={changeBtnOutline}>{btnOutline === false ? 'Add outline' : 'Remove outline'}</Button>
     <Button class="w-40" color="green" onclick={changeBtnShadow}>{btnShadow === false ? 'Add shadow' : 'Remove shadow'}</Button>
     <Button class="w-40" color="yellow" onclick={changeBtnPill}>{btnPill === false ? 'Add pill' : 'Remove pill'}</Button>
@@ -165,21 +163,19 @@
   <div class="h-16">
     <GradientButton outline={gradientOutline} shadow={gradientShadow} pill={graidentPill} class={gradientClass} disabled={gradientDisabled} color={gradientColor as GradientButton['color']} size={gradientSize as Button['size']}>{capitalizeFirstLetter(gradientColor)}</GradientButton>
   </div>
-  <div class="mt-4 space-y-4">
-    <div class="flex flex-wrap space-x-10">
-      <Label class="mb-4 w-full font-bold">Color</Label>
-      {#each gradientColors as colorOption}
-        <Radio labelClass="w-24 my-1" name="gradient_color" bind:group={gradientColor} color={colorOption as GradientButton['color']} value={colorOption}>{colorOption}</Radio>
-      {/each}
-    </div>
-    <div class="flex flex-wrap space-x-10">
-      <Label class="mb-4 w-full font-bold">Size</Label>
-      {#each gradientSizes as sizeOption}
-        <Radio labelClass="w-24 my-1" name="gradient_size" bind:group={gradientSize as Button['size']} color={sizeOption as Button['size']} value={sizeOption}>{sizeOption}</Radio>
-      {/each}
-    </div>
+  <div class="flex flex-wrap space-x-2 mb-4">
+    <Label class="mb-4 w-full font-bold">Color</Label>
+    {#each gradientColors as colorOption}
+      <Radio labelClass="w-24 my-1" name="gradient_color" bind:group={gradientColor} color={colorOption as GradientButton['color']} value={colorOption}>{colorOption}</Radio>
+    {/each}
   </div>
-  <div class="mt-4 flex flex-wrap gap-2">
+  <div class="flex flex-wrap space-x-2 mb-4">
+    <Label class="mb-4 w-full font-bold">Size</Label>
+    {#each gradientSizes as sizeOption}
+      <Radio labelClass="w-24 my-1" name="gradient_size" bind:group={gradientSize as Button['size']} color={sizeOption as Button['size']} value={sizeOption}>{sizeOption}</Radio>
+    {/each}
+  </div>
+  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
     <Button class="w-40" color="blue" onclick={changeGradientOutline}>{gradientOutline === false ? 'Add outline' : 'Remove outline'}</Button>
     <Button class="w-40" color="green" onclick={changeGradientShadow}>{gradientShadow === false ? 'Add shadow' : 'Remove shadow'}</Button>
     <Button class="w-40" color="yellow" onclick={changeGradientPill}>{graidentPill === false ? 'Add pill' : 'Remove pill'}</Button>

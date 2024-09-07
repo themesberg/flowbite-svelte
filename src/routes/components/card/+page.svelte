@@ -89,7 +89,7 @@
       <Radio labelClass="w-16 my-1" name="interactive_card_size" bind:group={cardSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-4">
+  <div class="flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
       <Radio labelClass="w-24 my-1" name="alert_reactive" bind:group={color} color={colorOption as Card['color']} value={colorOption}>{colorOption}</Radio>
@@ -107,7 +107,7 @@
       <Radio labelClass="w-16 my-1" name="interactive_card_shadow" bind:group={cardShadow} value={shadow}>{shadow}</Radio>
     {/each}
   </div>
-  <div class="mt-4 flex flex-wrap gap-2">
+  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
     <Button class="w-40" color="sky" onclick={changeLink}>{link === '' ? 'Add link' : 'Remove link'}</Button>
     <Button class="w-40" color="green" onclick={changeClass}>{cardClass ? 'Remove class' : 'Add class'}</Button>
     <Button class="w-40" color="blue" onclick={changeImage}>{Object.keys(cardImage).length === 0 ? 'Add image' : 'Remove image'}</Button>

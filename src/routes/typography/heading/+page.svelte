@@ -91,13 +91,13 @@
   <div class="h-24">
     <Heading tag={headingTag} class={headingCls}>{text}</Heading>
   </div>
-  <div class="flex flex-wrap space-x-4">
+  <div class="flex flex-wrap space-x-2 mb-4">
     <Label class="mb-4 w-full font-bold">Rounded:</Label>
     {#each tags as tag}
       <Radio labelClass="w-12 my-1" name="tag" bind:group={headingTag} value={tag}>{tag}</Radio>
     {/each}
   </div>
-  <div class="mt-4 flex flex-wrap gap-2">
+  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
     <Button class="w-40" color="blue" onclick={changeHeadingCls}>{headingCls !== 'text-primary-700 dark:text-primary-500' ? 'Original class' : 'Change class'}</Button>
   </div>
   {#snippet codeblock()}
@@ -111,10 +111,10 @@
   <div class="mb-8 flex flex-wrap">
     <Label class="mb-4 w-full font-bold">Example:</Label>
     {#each exampleArr as style}
-      <Radio labelClass="w-[230px] my-1" onclick={()=> expand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+      <Radio labelClass="w-28 my-1" onclick={()=> expand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
-  <div class="h-72">
+  <div class="md:h-72">
     <SelectedComponent />
   </div>
   {#snippet codeblock()}

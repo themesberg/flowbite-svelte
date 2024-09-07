@@ -157,7 +157,7 @@ ${closeBtnStatus ? `</Input>`: ''}${helperSlot ? `<Helper class="ps-6" color="${
       <Radio labelClass="w-24 my-1 {helperSlot ? '' : 'opacity-30 cursor-not-allowed'}" disabled={helperSlot ? false : true} name="helper_color" bind:group={helperColor} color={colorOption as Input['color']} value={colorOption} >{colorOption}</Radio>
     {/each}
   </div>
-  <div class="mt-4 flex flex-wrap gap-2">
+  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
     <Button class="w-48" onclick={changeDisabled}>{disabled ? 'Remove disabled' : 'Add disabled'}</Button>
     <Button class="w-48" color="secondary" onclick={changeCloseBtnStatus}>{closeBtnStatus ? 'Remove close button' : 'Add close button'}</Button>
   </div>

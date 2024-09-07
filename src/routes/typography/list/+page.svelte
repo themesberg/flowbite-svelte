@@ -138,19 +138,19 @@
       {#if listIcon}<CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />{/if}Inclusion of at least one special character, e.g., ! @ # ?
     </Li>
   </List>
-  <div class="mb-4 mt-4 flex flex-wrap space-x-4">
+  <div class="mt-4 flex flex-wrap space-x-2 mb-4">
     <Label class="mb-4 w-full font-bold">Tag:</Label>
     {#each tags as tag}
-      <Radio labelClass="w-24 my-1" name="list_tag" bind:group={listTag} value={tag}>{tag}</Radio>
+      <Radio labelClass="w-20 my-1" name="list_tag" bind:group={listTag} value={tag}>{tag}</Radio>
     {/each}
   </div>
-  <div class="mb-4 flex flex-wrap space-x-4">
+  <div class="flex flex-wrap space-x-2 mb-4">
     <Label class="mb-4 w-full font-bold">Position:</Label>
     {#each positions as position}
-      <Radio labelClass="w-24 my-1" name="list_position" bind:group={listPosition} value={position}>{position}</Radio>
+      <Radio labelClass="w-20 my-1" name="list_position" bind:group={listPosition} value={position}>{position}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap gap-2">
+  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
     <Button class="w-48" color="blue" onclick={changeListIcon}>{listIcon ? 'Remove icon' : 'Add icon'}</Button>
     <Button class="w-48" color="rose" onclick={changeCtxClass}>{ctxClass !== '' ? 'Remove ctxClass' : 'Add ctxClass'}</Button>
     <Button class="w-48" color="teal" onclick={changeNested}>{nested ? 'Remove nested' : 'Add nested'}</Button>
@@ -166,10 +166,10 @@
   <div class="mb-8 flex flex-wrap">
     <Label class="mb-4 w-full font-bold">Example:</Label>
     {#each exampleArr as style}
-      <Radio labelClass="w-40 my-1" onclick={()=> exampleExpand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+      <Radio labelClass="w-36 my-1" onclick={()=> exampleExpand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
-  <div class="h-[350px]">
+  <div class="md:h-[350px]">
     <SelectedComponent />
   </div>
   {#snippet codeblock()}

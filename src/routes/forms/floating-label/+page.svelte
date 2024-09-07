@@ -102,7 +102,7 @@
       Small
     </Toggle>
   </div>
-  <div class="flex flex-wrap gap-2">
+  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
     <Button class="w-48" onclick={changeDisabled}>{disabled ? 'Remove disabled' : 'Add disabled'}</Button>
   </div>
   {#snippet codeblock()}

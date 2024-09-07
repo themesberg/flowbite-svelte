@@ -179,7 +179,7 @@
       <Radio labelClass="w-24 my-1" name="interactive_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap gap-4">
+  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
     <Button class="w-48" onclick={changePosition}>Position: {position === 'sticky' ? 'absolute' : 'sticky'}</Button>
     <Button class="w-48" color="blue" onclick={changeBannerType}>Type: {bannerType === 'default' ? 'cta' : 'default'}</Button>
     <Button class="w-48" color="green" onclick={changeClass}>{bannerClass ? 'Remove class' : 'Add class'}</Button>
@@ -199,7 +199,7 @@
       <Radio labelClass="w-64 my-1" onclick={()=> exampleExpand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
-  <div class="h-[420px]">
+  <div class="md:h-[420px]">
     <SelectedComponent />
   </div>
   {#snippet codeblock()}

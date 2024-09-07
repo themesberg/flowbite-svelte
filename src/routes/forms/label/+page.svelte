@@ -41,7 +41,7 @@
 <H2>Color</H2>
 <CodeWrapper>
   <Label class="text-lg font-bold" color={labelColor}>{capitalizeFirstLetter(labelColor)}</Label>
-  <div class="flex flex-wrap space-x-4">
+  <div class="flex flex-wrap space-x-2">
     <Label class="m-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
       <Radio labelClass="w-24 my-1" name="default_alert_color" bind:group={labelColor} color={colorOption as Label['color']} value={colorOption}>{colorOption}</Radio>

@@ -61,13 +61,13 @@
 
 <H2>Interactive Image Builder</H2>
 <CodeWrapper>
-  <div class="h-[470px] overflow-y-auto">
+  <div class="md:h-[470px] overflow-y-auto mb-4">
     <Img src={imgEffect !== 'none' ? '/images/examples/content-gallery-3.png' : imgRounded === 'full' ? '/images/examples/image-4@2x.jpg' : '/images/examples/image-1@2x.jpg'} size={imgSize} shadow={imgShadow} alignment={imgAlignment} rounded={imgRounded} alt="sample 1" effect={imgEffect} figClass={imgEffect !== 'none' && imgCaption ? 'relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0' : ''} captionClass={imgEffect !== 'none' && imgCaption ? 'absolute bottom-6 px-4 text-lg text-white' : ''} caption={imgEffect !== 'none' ? 'Do you want to get notified when a new component is added to Flowbite?' : '' || imgCaption ? 'Image caption' : ''} href={imgHref} />
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as option}
-      <Radio labelClass="w-24 my-1" name="img_size" bind:group={imgSize} value={option}>{option}</Radio>
+      <Radio labelClass="w-16 my-1" name="img_size" bind:group={imgSize} value={option}>{option}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
@@ -94,7 +94,7 @@
       <Radio labelClass="w-24 my-1" name="img_effect" bind:group={imgEffect} value={effect}>{effect}</Radio>
     {/each}
   </div>
-  <div class="mt-12 flex flex-wrap gap-2">
+  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
     <Button class="w-48" color="blue" onclick={changeImgCaption}>{imgCaption ? 'Remove caption' : 'Add caption'}</Button>
     <Button class="w-48" color="lime" onclick={changeImgHrf}>{imgHref === '' ? 'Add href' : 'Remove href'}</Button>
   </div>

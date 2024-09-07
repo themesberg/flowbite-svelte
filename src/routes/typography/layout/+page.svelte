@@ -58,7 +58,7 @@
       <Radio labelClass="w-[170px] my-1" onclick={()=> expand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
-  <div class="h-[460px]">
+  <div class="md:h-[460px]">
     <SelectedComponent />
   </div>
   {#snippet codeblock()}

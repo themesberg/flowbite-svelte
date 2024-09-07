@@ -77,7 +77,7 @@ ${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ''}`;
       <Radio labelClass="w-24 my-1" name="file_input_size" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap gap-2">
+  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
     <Button class="w-40" onclick={changeHelperState}>{helperState ? 'Remove helper' : 'Add helper'}</Button>
     <Button class="w-40" color="emerald" onclick={changeBindFile}>{fileNames ? 'Hide file names' : 'Show file names'}</Button>
     <Button class="w-40" color="sky" onclick={changeMultiple}>{multiple ? 'Remove multiple' : 'Add multiple'}</Button>

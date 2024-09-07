@@ -179,7 +179,7 @@
   <div class="mb-4 h-12">
     <Button disabled={badgeStatus2 ? true : false} onclick={changeStatus}>Open badge</Button>
   </div>
-  <div class="flex flex-wrap space-x-4">
+  <div class="flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
       <Radio labelClass="w-24 my-1" name="color" bind:group={color} color={colorOption as BadgeProps['color']} value={colorOption}>{colorOption}</Radio>
@@ -191,7 +191,7 @@
       <Radio disabled={badgeDismissable ? false : true} labelClass="w-24 my-1 {badgeDismissable ? '' : 'opacity-30 cursor-not-allowed'}" name="transition_interactive" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
     {/each}
   </div>
-  <div class="mb-4 flex flex-wrap gap-4">
+  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
     <Button class="w-40" color="blue" onclick={changeSize}>{badgeSize ? 'Small' : 'Large'}</Button>
     <Button class="w-40" color="green" onclick={changeDismissable}>{badgeDismissable ? 'Not dismissable' : 'Dismissable'}</Button>
     <Button class="w-40" color="purple" onclick={changeClass}>{badgeClass ? 'Remove class' : 'Add class'}</Button>

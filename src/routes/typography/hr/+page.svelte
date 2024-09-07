@@ -52,7 +52,7 @@
 <H2>Default HR</H2>
 
 <CodeWrapper>
-  <div class="mb-4 h-[350px] sm:h-[250px] md:h-[200px]">
+  <div class="mb-4 sm:h-[250px] md:h-[200px]">
     <P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools.</P>
     {#if selectedStyle === 'trimmed'}
       <Hr hrClass="w-48 h-1 mx-auto my-4 rounded md:my-10" />
@@ -69,10 +69,10 @@
     {/if}
     <P>Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil.</P>
   </div>
-  <div class="flex flex-wrap space-x-4">
+  <div class="flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each types as type}
-      <Radio labelClass="w-24 my-1" name="hr_style" bind:group={selectedStyle} value={type}>{type}</Radio>
+      <Radio labelClass="w-20 my-1" name="hr_style" bind:group={selectedStyle} value={type}>{type}</Radio>
     {/each}
   </div>
   {#snippet codeblock()}

@@ -40,7 +40,7 @@
       <BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
     </Breadcrumb>
   </div>
-  <div class="mb-4 flex flex-wrap gap-4">
+  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
     <Button class="w-48" onclick={changeNavClass}>{navClass ? 'Remove navClass' : 'Add navClass'}</Button>
     <Button class="w-48" color="green" onclick={changeOlClass}>{olClass ? 'Remove olClass' : 'Add olClass'}</Button>
   </div>

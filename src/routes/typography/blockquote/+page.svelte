@@ -109,19 +109,19 @@
   <div class="mb-4 h-[300px] overflow-y-auto md:h-[250px]">
     <Blockquote {border} {italic} size={selectedSize} {bg} alignment={selectedAlignment} class={blockClass}>{text}</Blockquote>
   </div>
-  <div class="mb-4 flex flex-wrap space-x-4">
+  <div class="flex flex-wrap space-x-2 mb-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as size}
       <Radio labelClass="w-16 my-1" name="block_size" bind:group={selectedSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-4">
+  <div class="flex flex-wrap space-x-2 mb-4">
     <Label class="mb-4 w-full font-bold">Alignment:</Label>
     {#each alignments as alignment}
       <Radio labelClass="w-16 my-1" name="block_alignment" bind:group={selectedAlignment} value={alignment}>{alignment}</Radio>
     {/each}
   </div>
-  <div class="mt-4 flex flex-wrap gap-2">
+  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
     <Button class="w-40" color="blue" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
     <Button class="w-40" color="rose" onclick={changeItalic}>{italic ? 'Remove italic' : 'Add italic'}</Button>
     <Button class="w-40" color="indigo" onclick={changeBg}>{bg ? 'Remove bg' : 'Add bg'}</Button>
@@ -135,13 +135,13 @@
 <H2>Examples</H2>
 
 <CodeWrapper>
-  <div class="mb-8 flex flex-wrap">
+  <div class="flex flex-wrap mb-4">
     <Label class="mb-4 w-full font-bold">Example:</Label>
     {#each exampleArr as style}
-      <Radio labelClass="w-[230px] my-1" onclick={()=> expand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+      <Radio labelClass="w-24 my-1" onclick={()=> expand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
-  <div class="h-96">
+  <div class="md:h-96">
     <SelectedComponent />
   </div>
   {#snippet codeblock()}

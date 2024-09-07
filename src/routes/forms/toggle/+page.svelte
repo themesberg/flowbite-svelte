@@ -85,7 +85,7 @@
       <Radio labelClass="w-32 m-2" name="toggle_size" bind:group={toggleSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap gap-2">
+  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
     <Button class="w-40" onclick={changeChecked}>{checked ? 'Remove checked' : 'Add checked'}</Button>
     <Button class="w-40" color="secondary" onclick={changeDisabled}>{disabled ? 'Remove disabled' : 'Add disabled'}</Button>
     <Button class="w-40" color="emerald" onclick={changeLeftLabel}>{leftSlot ? 'Remove left slot' : 'Add left slot'}</Button>

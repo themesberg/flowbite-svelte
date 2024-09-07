@@ -103,19 +103,19 @@
       <Progressbar {progress} size={progressSize.size} color={progressColor} labelOutside={labelContent} {labelInside} div2Class={progressSize.class} />
     {/if}
   </div>
-  <div class="flex flex-wrap space-x-4">
+  <div class="flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each progressSizes as size}
       <Radio labelClass="w-24 my-1" name="progress_size" bind:group={progressSize.size} value={size.size} onchange={() => updateProgressSize(size.size)}>{size.size}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-4">
+  <div class="flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as color}
       <Radio labelClass="w-24 my-1" name="interactive_progress_color" bind:group={progressColor} color={color as Progressbar['color']} value={color}>{color}</Radio>
     {/each}
   </div>
-  <div class="mt-4 flex flex-wrap gap-2">
+  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
     <Button class="w-48" onclick={changeLabelContent}>{labelContent ? 'Remove outlise label' : 'Add outside label'}</Button>
     <Button class="w-48" color="purple" onclick={changeLabelInside}>{labelInside ? 'Remove inside label' : 'Add inside label'}</Button>
     <Button class="w-48" color="red" onclick={changeAnimation}>{animation ? 'No animation' : 'Animation'}</Button>

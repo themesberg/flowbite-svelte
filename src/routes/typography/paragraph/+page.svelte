@@ -71,7 +71,7 @@
       <CloseButton onclick={() => (text = '')} />
     {/snippet}
   </Input>
-  <div class="h-[200px] overflow-scroll">
+  <div class="md:h-[200px] overflow-scroll mb-4">
     <P contenteditable weight={pWeight} size={pSize} space={pSpace} height={pHeight} align={pAlign} whitespace={pWhitespace} {italic} firstUpper={pFirstupper} justify={pJustify}>{text}</P>
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
@@ -110,7 +110,7 @@
       <Radio labelClass="w-16 my-1" name="p_whitespace" bind:group={pWhitespace} value={whitespace}>{whitespace}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap gap-4">
+  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
     <Button class="w-40" onclick={() => (pFirstupper = !pFirstupper)}>{pFirstupper ? 'Remove upper' : 'First upper'}</Button>
     <Button
       class="w-40"

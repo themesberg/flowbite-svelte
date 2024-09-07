@@ -57,7 +57,7 @@
 
 <H2>Colors</H2>
 <CodeWrapper class="flex flex-col gap-4">
-  <div class="flex flex-wrap space-x-4">
+  <div class="flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color:</Label>
     {#each colors as colorOption}
       <Radio labelClass="w-24 m-2" name="radio_color" bind:group={radioColor} color={colorOption as Radio['color']} value={colorOption}>{colorOption}</Radio>

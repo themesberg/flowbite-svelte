@@ -142,7 +142,7 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`;
       <Radio labelClass="w-24 my-1" name="checkbox_color" bind:group={checkboxColor} color={colorOption as Checkbox['color']} onchange={() => (checkedState = true)} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap gap-2">
+  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
     <Button class="w-48" color="primary" onclick={changeCheckedState}>{checkedState ? 'Remove checked' : 'Add checked'}</Button>
     <Button class="w-48" color="secondary" onclick={changeIntermidiateState}>{indeterminateState ? 'Remove indeterminate' : 'Add indeterminate'}</Button>
     <Button class="w-48" color="pink" onclick={changeDisabledState}>{disabledState ? 'Remove disabled' : 'Add disabled'}</Button>

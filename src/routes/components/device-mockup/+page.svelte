@@ -138,7 +138,7 @@
 
 <H2>Interactive Device Mockup Builder</H2>
 
-<CodeWrapper>
+<CodeWrapper innerClass="overflow-scroll">
   <div class="mb-8 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Device</Label>
     {#each deviceNames as device}

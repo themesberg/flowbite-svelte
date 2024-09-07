@@ -39,7 +39,7 @@
 <H2>Color</H2>
 <CodeWrapper>
   <Range color={rangeColor} appearance="auto" />
-  <div class="flex flex-wrap space-x-4">
+  <div class="flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
       <Radio labelClass="w-24 my-1" name="default_alert_color" bind:group={rangeColor} color={colorOption as Range['color']} value={colorOption}>{colorOption}</Radio>

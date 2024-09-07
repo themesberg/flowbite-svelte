@@ -122,7 +122,7 @@
       <Radio labelClass="w-24 my-1" name="spinnersize" bind:group={avatarSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <div class="mb-4 flex flex-wrap gap-4">
+  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
     <Button class="w-40" color="blue" onclick={toggleCornerStyle}>{isRounded ? 'Default: circular' : 'Rounded'}</Button>
     <Button class="w-40" color="red" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
     <Button class="w-40" color="green" onclick={changeStacked}>{stacked ? 'Remove stacked' : 'Add  stacked'}</Button>
@@ -142,7 +142,7 @@
       <Radio labelClass="w-40 my-1" onclick={()=> exampleExpand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
-  <div class="h-40">
+  <div class="md:h-40">
     <SelectedComponent />
   </div>
   {#snippet codeblock()}

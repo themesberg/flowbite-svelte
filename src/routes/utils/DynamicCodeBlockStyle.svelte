@@ -1,6 +1,12 @@
 <script lang="ts">
   import { browser } from '$app/environment';
   import { toUpperSnakeCase } from './helpers';
+
+  interface Props {
+    class?: string;
+  }
+
+  let { class: className }: Props = $props();
   const stylesImport = import.meta.glob('./highlight/styles/*.css');
   const localStorageName = toUpperSnakeCase(__NAME__) + '_CODE_BLOCK_STYLE';
 
@@ -33,7 +39,7 @@
   });
 </script>
 
-<select class="w-32 border border-gray-200 p-1 text-gray-800 md:w-36 dark:text-gray-800" bind:value={selected}>
+<select class="w-32 border border-gray-200 p-1 text-gray-800 md:w-36 dark:text-gray-800 {className}" bind:value={selected}>
   {#each styles as theme}
     <option value={theme.value}>{theme.value}</option>
   {/each}

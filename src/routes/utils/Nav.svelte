@@ -42,22 +42,24 @@
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
         </svg>
       </button>
-      <NavBrand siteName="Svelte 5 UI lib">
-        <img width="30" src="/images/svelte-icon.png" alt="svelte icon" />
+      <NavBrand siteName="Svelte 5 UI lib" spanClass="text-xl sm:text-3xl">
+        <img width="30" src="/images/svelte-icon.png" class="h-6 w-5 sm:h-10 sm:w-8" alt="svelte icon" />
       </NavBrand>
 
       <div class="ml-auto flex items-center space-x-1 md:order-1">
-        <DynamicCodeBlockStyle />
+        <DynamicCodeBlockStyle class="hidden sm:block"/>
         <a class="inline-block whitespace-normal rounded-lg p-1 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-0 focus:ring-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" href="https://github.com/shinokada/svelte-5-ui-lib">
-          <GitHub />
+          <GitHub class="hidden sm:block"/>
         </a>
-        <Darkmode />
+        <Darkmode class="hidden sm:block" />
       </div>
     {/snippet}
-    <NavUl>
+    <NavUl class="md:space-x-2 lg:space-x-8">
       <NavLi href="/">Home</NavLi>
       <NavLi href="/pages/coverage">Coverage</NavLi>
       <NavLi href="/pages/about">About</NavLi>
+      <NavLi class="sm:hidden" href="https://github.com/shinokada/svelte-5-ui-lib">Repo</NavLi>
+      <div class="flex sm:hidden mt-4 space-x-4 justify-end"><DynamicCodeBlockStyle /> <Darkmode class="sm:hidden" /></div>
     </NavUl>
   </Navbar>
 </header>

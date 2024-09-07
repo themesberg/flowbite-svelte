@@ -153,7 +153,7 @@
       Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline hover:no-underline dark:text-primary-500">limited-time sale</a>
       for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
     </p>
-    <div class="grid grid-cols-2 gap-4">
+    <div class="grid grid-cols-2 gap-2">
       <Button color="light" href="/">Learn more</Button>
       <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
     </div>
@@ -181,21 +181,21 @@
       Outsideclick: {outsideclickStatus ? 'true' : 'false'}
     </p>
   </Drawer>
-  <div class="mb-4 flex flex-wrap space-x-4">
+  <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Transition</Label>
     {#each transitions as transition}
-      <Radio labelClass="w-24 my-1" name="interactive_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+      <Radio labelClass="w-16 my-1" name="interactive_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
     {/each}
   </div>
-  <div class="mb-4 flex flex-wrap space-x-4">
+  <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Placement</Label>
     {#each placements as placement}
-      <Radio labelClass="w-24 my-1" name="interactive_placement" bind:group={selectedPlacement} value={placement.name}>{placement.name}</Radio>
+      <Radio labelClass="w-16 my-1" name="interactive_placement" bind:group={selectedPlacement} value={placement.name}>{placement.name}</Radio>
     {/each}
   </div>
-  <div class="mt-4 flex flex-wrap gap-2">
-    <Button color="primary" onclick={changeBackdropStatus}>{backdropStatus ? 'Hide backdrop' : 'Show backdrop'}</Button>
-    <Button color="purple" onclick={changeOutsideclickStatus}>{outsideclickStatus ? 'Disable outsideclick' : 'Enable outsideclick'}</Button>
+  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+    <Button class="w-48" color="primary" onclick={changeBackdropStatus}>{backdropStatus ? 'Hide backdrop' : 'Show backdrop'}</Button>
+    <Button class="w-48" color="secondary" onclick={changeOutsideclickStatus}>{outsideclickStatus ? 'Disable outsideclick' : 'Enable outsideclick'}</Button>
   </div>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCode} />
