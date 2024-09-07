@@ -1,7 +1,7 @@
 <script lang="ts">
   import { type Component } from 'svelte';
   import { Banner, banner, Button, Skeleton, ImagePlaceholder, Label, Radio, type BannerProps, uiHelpers } from '$lib';
-  import { BullhornOutline, ArrowRightOutline, BookOpenSolid } from 'flowbite-svelte-icons';
+  import { BullhornOutline } from 'flowbite-svelte-icons';
   import { blur, fly, slide, scale } from 'svelte/transition';
   import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
   import { linear } from 'svelte/easing';

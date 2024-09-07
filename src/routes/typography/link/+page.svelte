@@ -10,6 +10,7 @@
   import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
+  let { text = $bindable('Read more') } = $props();
   const dirName = 'typography/anchor';
   // for examples section that dynamically changes the svelte component and markdown content
   import * as ExampleComponents from './examples'; 
@@ -65,7 +66,7 @@
     })()
   );
 
-  let { text = $bindable('Read more') } = $props();
+  
   // for interactive builder
   let builder = uiHelpers();
   let builderExpand = $state(false);
