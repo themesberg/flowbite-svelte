@@ -1,28 +1,86 @@
 <script lang="ts">
+  import { type Component } from 'svelte';
+  import { sineIn } from 'svelte/easing';
   import { Radio, radio, Helper, RadioButton, ButtonGroup, Label, P, Dropdown, DropdownUl, Button, uiHelpers } from '$lib';
-  // let { group = $bindable() ,technology = $bindable('svelte'), radioGroup = $bindable('notes') } = $props();
-  // let colors = 'text-purple-500';
-  let technology = $state('svelte');
-  let inline1 = $state('second');
   import { ArrowRightOutline, ListMusicSolid, OrderedListOutline, ListOutline, ChevronDownOutline } from 'flowbite-svelte-icons';
   let radioGroup = $state('notes');
-
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
+
+  let technology = $state('svelte');
+  let inline1 = $state('second');
   const dirName = 'forms/radio';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
     eager: true
   });
+  // for examples section that dynamically changes the svelte component and markdown content
+  import * as ExampleComponents from './examples'; 
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
+    query: '?raw',
+    import: 'default',
+    eager: true
+  });
+  
+  const exampleArr = [
+    { name: 'Radio with a link', component: ExampleComponents.RadioWithALink },
+    { name: 'Bordered', component: ExampleComponents.Bordered },
+    { name: 'Advanced layout', component: ExampleComponents.AdvancedLayout },
+    { name: 'Horizontal list group', component: ExampleComponents.HorizontalListGroup },
+    { name: 'Inline layout', component: ExampleComponents.InlineLayout },
+    { name: 'Radio button', component: ExampleComponents.RadioButton },
+    { name: 'Radio in dropdown', component: ExampleComponents.RadioInDropdown },
+    { name: 'Radio list group', component: ExampleComponents.RadioListGroup },
+  ]
+  let selectedExample = $state(exampleArr[0].name);
+  let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
+
+  function findObject (arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find(obj => obj.name === name);
+    return matchingObject ? matchingObject.component : null; 
+  }
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample)); 
+  // end of dynamic svelte component
 
   const colors = Object.keys(radio.variants.color) as Radio['color'][];
   let radioColor: Radio['color'] = $state('primary');
-  import { sineIn } from 'svelte/easing';
+  // hack for demo purposes
+  let demoRadioColor: Radio['color'] = $state('primary');
+  let isChecked = $state(true);
+  const handleOnchange = (colorOption: Radio['color']) => {
+    demoRadioColor = colorOption
+    isChecked = false;
+    isChecked = true;
+  }
+  // end of hack
+  let helperState = $state(false);
+  const inputClasses = ['', 'w-6 h-6' ]
+  let inputClass = $state(inputClasses[0]);
+  const changeInputClass = () => {
+    inputClass = inputClass === inputClasses[0] ? inputClasses[1] : inputClasses[0];
+  };
+  const labelClasses = [ 'w-24 m-2', '']
+  let labelClass = $state(labelClasses[0]);
+  const changeLabelClass = () => {  
+    labelClass = labelClass === labelClasses[0] ? labelClasses[1] : labelClasses[0];
+  };
+  let disabled = $state(false);
+  const changeDisabled = () => {
+    disabled = !disabled;
+  };
+  let helperColor: Radio['color'] = $state('primary');
+  let helperSlot = $state(false);
+  const changeHelperSlot = () => {
+    helperSlot = !helperSlot;
+    // helperColor = 'gray';
+  };
 
   let transitionParams = {
     y: 0,
@@ -39,205 +97,101 @@
     // without using effect
     dropdownStatus = dropdown.isOpen;
   });
-  // let sizeEx = $state('default');
+
+  // code generator
+  let generatedCode = $derived(
+    (() => {
+      let props = [];
+      if (radioColor !== 'primary') props.push(`color="${radioColor}"`);
+      if (labelClass !== '') props.push(`labelClass="${labelClass}"`);
+      if (inputClass !== '') props.push(`inputClass="${inputClass}"`);
+      if (disabled) props.push('disabled');
+      // if (indeterminateState) props.push(' indeterminate');
+      // if (disabledState) props.push(' disabled');
+
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+
+      return `<Radio
+  name="my_radio"${propsString}>Item 1</Radio>
+${helperSlot ? `<Helper class="ps-6" color="${helperColor}">Helper text</Helper>` : ''}`;
+    })()
+  );
+ 
+  // for interactive builder
+  let builder = uiHelpers();
+  let builderExpand = $state(false);
+  let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
+  const handleBuilderExpandClick = () => {
+    builderExpand = !builderExpand;
+  }
+  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
+  
+  // for examples DynamicCodeBlockHighlight
+  let codeBlock = uiHelpers();
+  let exampleExpand = $state(false);
+  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+  const handleExpandClick = () => {
+    exampleExpand = !exampleExpand;
+  }
+  // end of DynamicCodeBlock setup
+  $effect(() => {
+    exampleExpand = codeBlock.isOpen;
+    builderExpand = builder.isOpen;
+  });
 </script>
 
 <H1>Radio, Helper, and RadioButton</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
-<H2>Radio examples</H2>
-<CodeWrapper class="flex flex-col gap-4">
-  <Radio name="example">Default radio</Radio>
-  <Radio name="example" checked>Checked state</Radio>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/radio-examples.md'] as string} />
-
-<H2>Colors</H2>
-<CodeWrapper class="flex flex-col gap-4">
-  <div class="flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Color:</Label>
+<H2>Interactive Radio Builder</H2>
+<CodeWrapper>
+  <div class="mb-4">
+    <Radio {inputClass} {labelClass} name="radio_interactive"  {disabled} color={demoRadioColor} checked={isChecked} >Radio</Radio>
+    {#if helperSlot}
+    <Helper id="helper-radio-text" color={helperColor} class="ps-6">For orders shipped from $25 in books or $29 in other categories</Helper>
+    {/if}
+  </div>
+  <div class="flex flex-wrap space-x-2 mb-4">
+    <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 m-2" name="radio_color" bind:group={radioColor} color={colorOption as Radio['color']} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="radio_color" bind:group={radioColor} onchange={()=>handleOnchange(colorOption)} color={colorOption as Radio['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/colors.md'] as string} />
-
-<H2>Size</H2>
-<P>
-  Use <code>inputClass</code>
-  .
-</P>
-<CodeWrapper class="flex gap-4">
-  <Radio name="size-example">Default size</Radio>
-  <Radio name="size-example" inputClass="w-6 h-6">w-6 h-6</Radio>
-  <Radio name="size-example" inputClass="w-8 h-8">w-8 h-8</Radio>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/size.md'] as string} />
-
-<H2>Disabled state</H2>
-<CodeWrapper class="flex flex-col gap-4">
-  <Radio name="disabled-state" disabled>Disabled radio</Radio>
-  <Radio name="disabled-state" disabled checked>Disabled checked</Radio>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/disabled-state.md'] as string} />
-
-<H2>Radio with a link</H2>
-<CodeWrapper>
-  <Radio name="with-link">
-    I agree with the <a href="/" class="ms-1 text-primary-600 hover:underline dark:text-primary-500">terms and conditions</a>
-    .
-  </Radio>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/radio-with-a-link.md'] as string} />
-
-<H2>Helper text</H2>
-<CodeWrapper>
-  <Radio aria_describedby="helper-checkbox-text">Free shipping via Flowbite</Radio>
-  <Helper id="helper-checkbox-text" class="ps-6">For orders shipped from $25 in books or $29 in other categories</Helper>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/helper-text.md'] as string} />
-
-<H2>Bordered</H2>
-<CodeWrapper>
-  <div class="grid grid-cols-2 gap-6">
-    <div class="rounded border border-gray-200 dark:border-gray-700">
-      <Radio name="bordered" labelClass="p-4">Default radio</Radio>
-    </div>
-    <div class="rounded border border-gray-200 dark:border-gray-700">
-      <Radio name="bordered" checked labelClass="p-4">Checked state</Radio>
-    </div>
+  <div class="flex flex-wrap space-x-2 mb-4">
+    <Button class="w-40 mb-4" color="secondary" onclick={changeHelperSlot}>{helperSlot ? 'Remove helper' : 'Add helper'}</Button>
+    <Label class="mb-4 w-full font-bold">Helper Color</Label>
+    {#each colors as colorOption}
+      <Radio labelClass="w-24 my-1 {helperSlot ? '' : 'opacity-30 cursor-not-allowed'}" disabled={helperSlot ? false : true} name="helper_color" bind:group={helperColor} color={colorOption as Radio['color']} value={colorOption} >{colorOption}</Radio>
+    {/each}
   </div>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/bordered.md'] as string} />
-
-<H2>Radio list group</H2>
-<CodeWrapper>
-  <p class="mb-4 font-semibold text-gray-900 dark:text-white">
-    Technology <span class="capitalize">{technology}</span>
-  </p>
-  <ul class="w-48 divide-y divide-gray-200 rounded-lg border border-gray-200 bg-white dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800">
-    <li>
-      <Radio labelClass="p-3" bind:group={technology} value="svelte">Svelte</Radio>
-    </li>
-    <li>
-      <Radio labelClass="p-3" bind:group={technology} value="vue js">Vue JS</Radio>
-    </li>
-    <li>
-      <Radio labelClass="p-3" bind:group={technology} value="react">React</Radio>
-    </li>
-    <li>
-      <Radio labelClass="p-3" bind:group={technology} value="angular">Angular</Radio>
-    </li>
-  </ul>
-</CodeWrapper>
-
-<HighlightCompo code={modules['./md/radio-list-group.md'] as string} />
-
-<H2>Horizontal list group</H2>
-<CodeWrapper>
-  <p class="mb-4 font-semibold text-gray-900 dark:text-white">Identification</p>
-  <ul class="w-full items-center divide-x divide-gray-200 rounded-lg border border-gray-200 sm:flex rtl:divide-x-reverse dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800">
-    <li class="w-full">
-      <Radio name="hor-list" labelClass="p-3">Svelte</Radio>
-    </li>
-    <li class="w-full">
-      <Radio name="hor-list" labelClass="p-3">Vue JS</Radio>
-    </li>
-    <li class="w-full">
-      <Radio name="hor-list" labelClass="p-3">React</Radio>
-    </li>
-    <li class="w-full">
-      <Radio name="hor-list" labelClass="p-3">Angular</Radio>
-    </li>
-  </ul>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/horizontal-list-group.md'] as string} />
-
-<H2>Radio in dropdown</H2>
-<CodeWrapper class="relative flex h-96 items-start justify-center">
-  <Button onclick={dropdown.toggle}>Dropdown radio<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
-  <div class="relative">
-    <Dropdown {dropdownStatus} {closeDropdown} params={transitionParams} divClass="overflow-y-auto p-0 pb-3 text-sm w-64 h-64 absolute top-[50px] -left-[210px]">
-      <DropdownUl>
-        <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-          <Radio name="group3" bind:group={group3} value={1}>Enable notifications</Radio>
-          <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
-        </li>
-        <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-          <Radio name="group3" bind:group={group3} value={2}>Enable 2FA auth</Radio>
-          <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
-        </li>
-        <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-          <Radio name="group3" bind:group={group3} value={3}>Subscribe newsletter</Radio>
-          <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
-        </li>
-      </DropdownUl>
-    </Dropdown>
+  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+    <Button class="w-32" color="primary" onclick={changeInputClass}>{inputClass === inputClasses[0] ? 'inputClass=w-6 h-6' : 'Default size' }</Button>
+    <Button class="w-32" color="secondary" onclick={changeLabelClass}>{labelClass === labelClasses[0] ? 'Default labelClass' : 'labelClass=w-24 m-2' }</Button>
+    <Button class="w-32" color="lime" onclick={changeDisabled}>{disabled ? 'Enabled' : 'Disabled' }</Button>
   </div>
+  {#snippet codeblock()}
+  <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
+  {/snippet}
 </CodeWrapper>
 
-<H2>Inline layout</H2>
+<H2>Examples</H2>
+
 <CodeWrapper>
-  <div class="flex gap-3">
-    <Radio bind:group={inline1} name="inline-layout" value="first">Inline 1</Radio>
-    <Radio bind:group={inline1} name="inline-layout" value="second">Inline 2 checked</Radio>
-    <Radio bind:group={inline1} name="inline-layout" value="third">Inline 3</Radio>
-    <Radio bind:group={inline1} name="inline-layout" value="fourth" disabled>Inline disabled</Radio>
+  <div class="mb-8 flex flex-wrap">
+    <Label class="mb-4 w-full font-bold">Example:</Label>
+    {#each exampleArr as style}
+      <Radio labelClass="w-44 my-1" onclick={()=> exampleExpand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+    {/each}
   </div>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/inline-layout.md'] as string} />
-
-<H2>Advanced layout</H2>
-<CodeWrapper>
-  <p class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Choose technology:</p>
-  <div class="grid w-full gap-6 md:grid-cols-2">
-    <Radio name="custom">
-      <div id="hosting-small" class="inline-flex w-full cursor-pointer items-center justify-between rounded-lg border border-gray-200 bg-white p-5 text-gray-500 hover:bg-gray-100 hover:text-gray-600 peer-checked:border-primary-600 peer-checked:text-primary-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:peer-checked:text-primary-500">
-        <div>
-          <div class="w-full text-lg font-semibold">0-50 MB</div>
-          <div class="w-full">Good for small websites</div>
-        </div>
-        <ArrowRightOutline class="ms-3 h-6 w-6" />
-      </div>
-    </Radio>
-    <Radio name="custom">
-      <div id="hosting-big" class="inline-flex w-full cursor-pointer items-center justify-between rounded-lg border border-gray-200 bg-white p-5 text-gray-500 hover:bg-gray-100 hover:text-gray-600 peer-checked:border-primary-600 peer-checked:text-primary-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:peer-checked:text-primary-500">
-        <div class="block">
-          <div class="w-full text-lg font-semibold">500-1000 MB</div>
-          <div class="w-full">Good for large websites</div>
-        </div>
-        <ArrowRightOutline class="ms-3 h-6 w-6" />
-      </div>
-    </Radio>
+  <div class="md:h-[350px] overflow-auto">
+    <SelectedComponent />
   </div>
+  {#snippet codeblock()}
+  <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/advanced-layout.md'] as string} />
-
-<H2>Radio button</H2>
-<CodeWrapper class="space-y-4">
-  <div>
-    <RadioButton value="notes" bind:group={radioGroup}><ListMusicSolid /></RadioButton>
-    <RadioButton value="numbers" bind:group={radioGroup}><OrderedListOutline /></RadioButton>
-    <RadioButton value="bullets" bind:group={radioGroup}><ListOutline /></RadioButton>
-  </div>
-
-  <ButtonGroup>
-    <RadioButton value="notes" bind:group={radioGroup}><ListMusicSolid /></RadioButton>
-    <RadioButton value="numbers" bind:group={radioGroup}><OrderedListOutline /></RadioButton>
-    <RadioButton value="bullets" bind:group={radioGroup}><ListOutline /></RadioButton>
-  </ButtonGroup>
-
-  <p>List style: {radioGroup}</p>
-</CodeWrapper>
-<HighlightCompo code={modules['./md/radio-button.md'] as string} />
 
 <H2>Component data</H2>
 <CompoAttributesViewer {dirName}/>

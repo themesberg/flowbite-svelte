@@ -58,7 +58,7 @@ ${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ''}`;
 
 <H2>Interactive Fileupload Builder</H2>
 <CodeWrapper>
-  <div class="md:h-32">
+  <div class="md:h-24">
     <Fileupload id="small_size" {size} class="mb-2" {multiple} bind:files />
     {#if helperState}
       <Helper>SVG, PNG, JPG or GIF (MAX. 800x400px).</Helper>

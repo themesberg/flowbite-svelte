@@ -1,1 +1,0 @@
-<Label class="text-lg font-bold" color="blue">Blue</Label>

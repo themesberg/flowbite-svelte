@@ -1,6 +1,5 @@
 <script lang="ts">
   import { Label, label, Radio } from '$lib';
-
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -9,12 +8,12 @@
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'forms/label';
   import { capitalizeFirstLetter } from '../../utils/helpers';
-  const modules = import.meta.glob('./md/*.md', {
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
     query: '?raw',
     import: 'default',
     eager: true
   });
-
+  
   const colors = Object.keys(label.variants.color);
   let labelColor: Label['color'] = $state('gray');
   // code generator
@@ -22,9 +21,7 @@
     (() => {
       let props = [];
       if ( labelColor !== 'gray') props.push(` color="${labelColor}"`);
-      // if (disabled) props.push(' disabled');
-      // if (inputSize !== 'md') props.push(` size="${inputSize}"`);
-
+     
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
       return `<Label${propsString}>Label</Label>`;
@@ -35,8 +32,7 @@
 <H1>Label</H1>
 
 <H2>Setup</H2>
-
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Color</H2>
 <CodeWrapper>

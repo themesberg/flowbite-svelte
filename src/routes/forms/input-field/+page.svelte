@@ -119,14 +119,14 @@ ${closeBtnStatus ? `</Input>`: ''}${helperSlot ? `<Helper class="ps-6" color="${
     {#if helperSlot}
     <Helper class="mt-2" color={helperColor}>
       <span class="font-medium">Well done!</span>
-      Some success message.
+      Some helper message.
     </Helper>
     {/if}
   </div>
   <div class="flex flex-wrap space-x-2 mb-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="input_color" bind:group={inputColor} color={colorOption as Input['color']} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-20 my-1" name="input_color" bind:group={inputColor} color={colorOption as Input['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap space-x-2 mb-4">
@@ -135,16 +135,16 @@ ${closeBtnStatus ? `</Input>`: ''}${helperSlot ? `<Helper class="ps-6" color="${
       <Radio labelClass="w-20 my-1" name="input_size" bind:group={inputSize} value={option}>{option}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap gap-2 justify-center md:justify-start mb-4">
-    <Button class="w-40" color="secondary" onclick={changeHelperSlot}>{helperSlot ? 'Remove helper' : 'Add helper'}</Button>
+  <div class="flex flex-wrap space-x-2 mb-4">
+    <Button class="w-40 mb-4" color="secondary" onclick={changeHelperSlot}>{helperSlot ? 'Remove helper' : 'Add helper'}</Button>
     <Label class="mb-4 w-full font-bold">Helper Color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1 {helperSlot ? '' : 'opacity-30 cursor-not-allowed'}" disabled={helperSlot ? false : true} name="helper_color" bind:group={helperColor} color={colorOption as Input['color']} value={colorOption} >{colorOption}</Radio>
+      <Radio labelClass="w-20 my-1 {helperSlot ? '' : 'opacity-30 cursor-not-allowed'}" disabled={helperSlot ? false : true} name="helper_color" bind:group={helperColor} color={colorOption as Input['color']} value={colorOption} >{colorOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap gap-2 justify-center md:justify-start">
-    <Button class="w-48" onclick={changeDisabled}>{disabled ? 'Remove disabled' : 'Add disabled'}</Button>
-    <Button class="w-48" color="secondary" onclick={changeCloseBtnStatus}>{closeBtnStatus ? 'Remove close button' : 'Add close button'}</Button>
+    <Button class="w-44" onclick={changeDisabled}>{disabled ? 'Remove disabled' : 'Add disabled'}</Button>
+    <Button class="w-44" color="secondary" onclick={changeCloseBtnStatus}>{closeBtnStatus ? 'Remove close button' : 'Add close button'}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
@@ -160,7 +160,7 @@ ${closeBtnStatus ? `</Input>`: ''}${helperSlot ? `<Helper class="ps-6" color="${
       <Radio labelClass="w-32 my-1" onclick={()=> exampleExpand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
-  <div class="md:h-[350px]">
+  <div class="md:h-[350px] overflow-auto">
     <SelectedComponent />
   </div>
   {#snippet codeblock()}

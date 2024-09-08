@@ -12,7 +12,6 @@ interface RadioProps extends HTMLInputAttributes {
   group?: number | string | undefined;
   inputClass?: string;
   labelClass?: string;
-  checked?: boolean;
 }
 
 export { Radio, radio, type RadioProps };
