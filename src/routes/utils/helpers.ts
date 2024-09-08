@@ -1,4 +1,4 @@
-import { type Component } from 'svelte'
+import { type Component } from 'svelte';
 
 export function removeHyphensAndCapitalize(str: string) {
   // Handle empty string or strings without '-'
@@ -57,10 +57,10 @@ export const isOverflow = (markdown: string, modules: Record<string, any>): bool
   return lines.length > 7;
 };
 
-export const isGeneratedCodeOverflow = (code: string): boolean => { 
+export const isGeneratedCodeOverflow = (code: string): boolean => {
   const lines = code.split('\n');
   return lines.length > 7;
-}
+};
 
 export const isSvelteOverflow = (markdown: string, exampleModules: Record<string, any>): boolean => {
   const markdownLines = exampleModules[`./examples/${markdown}`];
@@ -72,14 +72,11 @@ export const isContentOverflow = (
   filename: string,
   modules: Record<string, any>,
   options: {
-    lineLimit?: number,
-    basePath?: string
+    lineLimit?: number;
+    basePath?: string;
   } = {}
 ): boolean => {
-  const {
-    lineLimit = 7,
-    basePath = './md/'
-  } = options;
+  const { lineLimit = 7, basePath = './md/' } = options;
 
   const fullPath = `${basePath}${filename}`;
   const content = modules[fullPath];
@@ -113,7 +110,7 @@ export function replaceLibImport(componentString: string): string {
 }
 
 export function getExampleFileName(selectedExample: string, exampleArr: { name: string }[]): string {
-  const foundExample = exampleArr.find(example => example.name === selectedExample);
+  const foundExample = exampleArr.find((example) => example.name === selectedExample);
 
   if (!foundExample) {
     // If the selectedExample is not in the array, default to the first example
@@ -123,7 +120,7 @@ export function getExampleFileName(selectedExample: string, exampleArr: { name: 
   // Convert the selected example to PascalCase
   const result = selectedExample
     .split(' ')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
     .join('');
 
   return `${result}.svelte`;

@@ -17,6 +17,7 @@
     dropdownStatus = dropdown.isOpen;
   });
 </script>
+
 <div class="h-56">
   <div class="flex justify-center">
     <Button onclick={dropdown.toggle}>Project users<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>

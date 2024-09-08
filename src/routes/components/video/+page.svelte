@@ -71,7 +71,7 @@
       <Radio labelClass="w-24 my-1" name="interactive_toast_color" bind:group={selectedClass} value={option.name}>{option.name}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+  <div class="flex flex-wrap justify-center gap-2 md:justify-start">
     <Button class="w-48" color="emerald" onclick={changeControls}>{controls ? 'Remove controls' : 'Add controls'}</Button>
     <Button class="w-48" color="blue" onclick={changeAutoplay}>{autoplay ? 'Remove autoplay' : 'Add autoplay'}</Button>
     <Button class="w-48" color="pink" onclick={changeMuted}>{muted ? 'Remove muted' : 'Add muted'}</Button>
@@ -82,4 +82,4 @@
 </CodeWrapper>
 
 <H2>Component data</H2>
-<CompoAttributesViewer {dirName}/>
+<CompoAttributesViewer {dirName} />

@@ -18,23 +18,23 @@
 
   let { code, codeLang, badgeClass, buttonClass, replaceLib, class: className }: Props = $props();
 
-  if (replaceLib){
+  if (replaceLib) {
     code = replaceLibImport(code);
   }
 
   let showExpandButton: boolean = $state(false);
   let expand: boolean = $state(false);
-  const checkOverflow = (el: HTMLElement)=> {
+  const checkOverflow = (el: HTMLElement) => {
     const isOverflowingY = el.clientHeight < el.scrollHeight;
     showExpandButton = isOverflowingY;
-  }
+  };
 
   const { base, badge, button } = $derived(highlightcompo());
   let copiedStatus = $state(false);
-  
+
   const handleExpandClick = () => {
     expand = !expand;
-  }
+  };
 
   function handleCopyClick() {
     copyToClipboard(code)

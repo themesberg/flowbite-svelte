@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Heading, P, A } from '$lib'
-  import { ChevronRightOutline } from 'flowbite-svelte-icons'
+  import { Heading, P, A } from '$lib';
+  import { ChevronRightOutline } from 'flowbite-svelte-icons';
 </script>
 
 <Heading tag="h2" class="text-4xl font-extrabold ">Payments tool for companies</Heading>

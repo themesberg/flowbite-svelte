@@ -15,7 +15,7 @@
     nonActiveClass?: string;
     class?: string;
   }
-  let { closeNav, href, children, aClass, activeClass, nonActiveClass, class:className, ...restProps }: Props = $props();
+  let { closeNav, href, children, aClass, activeClass, nonActiveClass, class: className, ...restProps }: Props = $props();
 
   let breakPoint: navbarType['breakPoint'];
 
@@ -63,5 +63,6 @@
 @prop aClass
 @prop activeClass
 @prop nonActiveClass
+@prop class: className
 @prop ...restProps
 -->

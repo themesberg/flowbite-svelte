@@ -40,7 +40,7 @@
       <BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
     </Breadcrumb>
   </div>
-  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+  <div class="flex flex-wrap justify-center gap-2 md:justify-start">
     <Button class="w-48" onclick={changeNavClass}>{navClass ? 'Remove navClass' : 'Add navClass'}</Button>
     <Button class="w-48" color="green" onclick={changeOlClass}>{olClass ? 'Remove olClass' : 'Add olClass'}</Button>
   </div>
@@ -90,4 +90,4 @@
 </CodeWrapper>
 
 <H2>Component data</H2>
-<CompoAttributesViewer {dirName}/>
+<CompoAttributesViewer {dirName} />

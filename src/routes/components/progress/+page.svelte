@@ -115,7 +115,7 @@
       <Radio labelClass="w-24 my-1" name="interactive_progress_color" bind:group={progressColor} color={color as Progressbar['color']} value={color}>{color}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+  <div class="flex flex-wrap justify-center gap-2 md:justify-start">
     <Button class="w-48" onclick={changeLabelContent}>{labelContent ? 'Remove outlise label' : 'Add outside label'}</Button>
     <Button class="w-48" color="purple" onclick={changeLabelInside}>{labelInside ? 'Remove inside label' : 'Add inside label'}</Button>
     <Button class="w-48" color="red" onclick={changeAnimation}>{animation ? 'No animation' : 'Animation'}</Button>
@@ -127,4 +127,4 @@
 </CodeWrapper>
 
 <H2>Component data</H2>
-<CompoAttributesViewer {dirName}/>
+<CompoAttributesViewer {dirName} />

@@ -1,4 +1,4 @@
-import Accordion from './Accordion.svelte'
+import Accordion from './Accordion.svelte';
 import AccordionItem from './AccordionItem.svelte';
 import { type VariantProps, tv } from 'tailwind-variants';
 // import type { AccordionCtxType } from "./Accordion.svelte";
@@ -43,7 +43,6 @@ interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
   transition?: TransitionFunc;
   params?: ParamsType;
 }
-
 
 const accordionItemVariants = tv({
   base: 'group w-full',
@@ -98,4 +97,4 @@ interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
   class?: string;
 }
 
-export { AccordionItem, accordionItemVariants, type AccordionItemProps, type AccordionItemVariantsProps , Accordion, accordionVariants, type AccordionCtxType, type AccordionProps };
+export { AccordionItem, accordionItemVariants, type AccordionItemProps, type AccordionItemVariantsProps, Accordion, accordionVariants, type AccordionCtxType, type AccordionProps };

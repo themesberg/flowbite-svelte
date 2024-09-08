@@ -22,7 +22,6 @@
 @prop color = 'primary'
 @prop group = $bindable()
 @prop value = $bindable()
-@prop checked
 @prop inputClass
 @prop ...restProps
 -->

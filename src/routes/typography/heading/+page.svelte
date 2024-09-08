@@ -12,13 +12,13 @@
   const dirName = 'typography/heading';
 
   // for examples section that dynamically changes the svelte component and markdown content
-  import * as ExampleComponents from './examples'; 
+  import * as ExampleComponents from './examples';
   const exampleModules = import.meta.glob('./examples/*.svelte', {
     query: '?raw',
     import: 'default',
     eager: true
   });
-  
+
   const exampleArr = [
     { name: 'Default', component: ExampleComponents.Default },
     { name: 'Badge', component: ExampleComponents.Badge },
@@ -29,15 +29,15 @@
     { name: 'Secondary', component: ExampleComponents.Secondary },
     { name: 'Second level', component: ExampleComponents.SecondLevel },
     { name: 'Underline', component: ExampleComponents.Underline }
-  ]
+  ];
   let selectedExample = $state(exampleArr[0].name);
   let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
 
-  function findObject (arr: { name: string; component: Component }[], name: string) {
-    const matchingObject = arr.find(obj => obj.name === name);
-    return matchingObject ? matchingObject.component : null; 
+  function findObject(arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find((obj) => obj.name === name);
+    return matchingObject ? matchingObject.component : null;
   }
-  const SelectedComponent = $derived(findObject(exampleArr, selectedExample)); 
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
 
   const tags = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
@@ -45,7 +45,7 @@
   let headingCls = $state('text-primary-700 dark:text-primary-500');
   const changeHeadingCls = () => {
     headingCls = headingCls === 'text-primary-700 dark:text-primary-500' ? 'text-blue-500 dark:text-blue-400 uppercase italic underline text-center font-semibold bg-gray-50 dark:bg-gray-700 p-4' : 'text-primary-700 dark:text-primary-500';
-  }
+  };
 
   let { text = $bindable('My heading') } = $props();
   // code generator
@@ -68,7 +68,7 @@
 
   const handleExpandClick = () => {
     expand = !expand;
-  }
+  };
   $effect(() => {
     expand = codeBlock.isOpen;
   });
@@ -91,13 +91,13 @@
   <div class="h-24">
     <Heading tag={headingTag} class={headingCls}>{text}</Heading>
   </div>
-  <div class="flex flex-wrap space-x-2 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Rounded:</Label>
     {#each tags as tag}
       <Radio labelClass="w-12 my-1" name="tag" bind:group={headingTag} value={tag}>{tag}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+  <div class="flex flex-wrap justify-center gap-2 md:justify-start">
     <Button class="w-40" color="blue" onclick={changeHeadingCls}>{headingCls !== 'text-primary-700 dark:text-primary-500' ? 'Original class' : 'Change class'}</Button>
   </div>
   {#snippet codeblock()}
@@ -111,16 +111,16 @@
   <div class="mb-8 flex flex-wrap">
     <Label class="mb-4 w-full font-bold">Example:</Label>
     {#each exampleArr as style}
-      <Radio labelClass="w-28 my-1" onclick={()=> expand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+      <Radio labelClass="w-28 my-1" onclick={() => (expand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
   <div class="md:h-72">
     <SelectedComponent />
   </div>
   {#snippet codeblock()}
-  <DynamicCodeBlockHighlight replaceLib {handleExpandClick} {expand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
+    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} {expand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Component data</H2>
-<CompoAttributesViewer {dirName}/>
+<CompoAttributesViewer {dirName} />

@@ -5,21 +5,21 @@
 
   const group: SizeType = getContext('group');
 
-  let { children, pill = false, outline = false, size = group ? 'sm' : 'md', href = undefined, target = undefined, rel = undefined, type = 'button', color = group ? (outline ? 'dark' : 'alternative') : 'primary', shadow = false, tag = 'button', disabled, name = undefined, class: className, onclick, onmouseenter, ...restProps }: Props = $props();
+  let { children, pill = false, outline = false, size = group ? 'sm' : 'md', href, type = 'button', color = group ? (outline ? 'dark' : 'alternative') : 'primary', shadow = false, tag = 'button', disabled, class: className, ...restProps }: Props = $props();
 
-  const disabledValue = disabled !== null ? disabled : undefined;
+  // const disabledValue = disabled !== null ? disabled : undefined;
   const isGroup = !!group;
-  const base = $derived(button({ color, size, pill, group: isGroup, outline, shadow, disabled, className }));
+  const base = $derived(button({ color, size, disabled, pill, group: isGroup, outline, shadow, className }));
 
   // $inspect('group: ', group, 'isGroup: ', isGroup);
 </script>
 
 {#if href}
-  <a {href} {...restProps} class={base} {rel} {target} role="button">
+  <a {href} {...restProps} class={base} role="button">
     {@render children()}
   </a>
 {:else if tag === 'button'}
-  <button {type} {...restProps} class={base} {disabled} {name} {onclick}>
+  <button {type} {...restProps} class={base} {disabled}>
     {@render children()}
   </button>
 {:else}

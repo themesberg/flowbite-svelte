@@ -21,19 +21,19 @@
 
   let { code, handleExpandClick, showExpandButton, expand, codeLang, badgeClass, buttonClass, replaceLib, class: className }: Props = $props();
 
-  if (replaceLib){
+  if (replaceLib) {
     code = replaceLibImport(code);
   }
 
   $effect(() => {
-    if (replaceLib){
-    code = replaceLibImport(code);
-  }
-  })
+    if (replaceLib) {
+      code = replaceLibImport(code);
+    }
+  });
 
   const { base, badge, button } = $derived(highlightcompo());
   let copiedStatus = $state(false);
-  
+
   function handleCopyClick() {
     copyToClipboard(code)
       .then(() => {
@@ -65,7 +65,7 @@
     </div>
     <Button class={button({ class: buttonClass })} onclick={handleCopyClick}>Copy</Button>
     {#if showExpandButton}
-      <button onclick={()=>handleExpandClick()} type="button" class="absolute bottom-0 start-0 w-full border-t border-gray-200 bg-gray-100 px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">{expand ? 'Collapse code' : 'Expand code'}</button>
+      <button onclick={() => handleExpandClick()} type="button" class="absolute bottom-0 start-0 w-full border-t border-gray-200 bg-gray-100 px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">{expand ? 'Collapse code' : 'Expand code'}</button>
     {/if}
   </div>
 </div>

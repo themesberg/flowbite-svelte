@@ -13,15 +13,15 @@
     import: 'default',
     eager: true
   });
-  
+
   const colors = Object.keys(label.variants.color);
   let labelColor: Label['color'] = $state('gray');
   // code generator
   let generatedCode = $derived(
     (() => {
       let props = [];
-      if ( labelColor !== 'gray') props.push(` color="${labelColor}"`);
-     
+      if (labelColor !== 'gray') props.push(` color="${labelColor}"`);
+
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
       return `<Label${propsString}>Label</Label>`;
@@ -32,7 +32,7 @@
 <H1>Label</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
+<HighlightCompo replaceLib code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Color</H2>
 <CodeWrapper>
@@ -44,9 +44,9 @@
     {/each}
   </div>
   {#snippet codeblock()}
-  <HighlightCompo code={generatedCode} />
+    <HighlightCompo code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Component data</H2>
-<CompoAttributesViewer {dirName}/>
+<CompoAttributesViewer {dirName} />

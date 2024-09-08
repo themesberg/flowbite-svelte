@@ -12,13 +12,13 @@
   const dirName = 'typography/blockquote';
 
   // for examples section that dynamically changes the svelte component and markdown content
-  import * as ExampleComponents from './examples'; 
+  import * as ExampleComponents from './examples';
   const exampleModules = import.meta.glob('./examples/*.svelte', {
     query: '?raw',
     import: 'default',
     eager: true
   });
-  
+
   const exampleArr = [
     { name: 'Default', component: ExampleComponents.Default },
     { name: 'Context', component: ExampleComponents.Context },
@@ -26,15 +26,15 @@
     { name: 'Review', component: ExampleComponents.Review },
     { name: 'Solid', component: ExampleComponents.Solid },
     { name: 'Testimonial', component: ExampleComponents.Testimonial }
-  ]
+  ];
   let selectedExample = $state(exampleArr[0].name);
   let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
 
-  function findObject (arr: { name: string; component: Component }[], name: string) {
-    const matchingObject = arr.find(obj => obj.name === name);
-    return matchingObject ? matchingObject.component : null; 
+  function findObject(arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find((obj) => obj.name === name);
+    return matchingObject ? matchingObject.component : null;
   }
-  const SelectedComponent = $derived(findObject(exampleArr, selectedExample)); 
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
 
   let { text = $bindable('Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quas commodi accusamus dignissimos qui totam iste rem necessitatibus? Cumque minus et animi nostrum deserunt provident excepturi laboriosam ipsum minima nisi!') } = $props();
@@ -87,7 +87,7 @@
 
   const handleExpandClick = () => {
     expand = !expand;
-  }
+  };
   $effect(() => {
     expand = codeBlock.isOpen;
   });
@@ -109,19 +109,19 @@
   <div class="mb-4 h-[300px] overflow-y-auto md:h-[250px]">
     <Blockquote {border} {italic} size={selectedSize} {bg} alignment={selectedAlignment} class={blockClass}>{text}</Blockquote>
   </div>
-  <div class="flex flex-wrap space-x-2 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as size}
       <Radio labelClass="w-16 my-1" name="block_size" bind:group={selectedSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-2 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Alignment:</Label>
     {#each alignments as alignment}
       <Radio labelClass="w-16 my-1" name="block_alignment" bind:group={selectedAlignment} value={alignment}>{alignment}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+  <div class="flex flex-wrap justify-center gap-2 md:justify-start">
     <Button class="w-40" color="blue" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
     <Button class="w-40" color="rose" onclick={changeItalic}>{italic ? 'Remove italic' : 'Add italic'}</Button>
     <Button class="w-40" color="indigo" onclick={changeBg}>{bg ? 'Remove bg' : 'Add bg'}</Button>
@@ -135,19 +135,19 @@
 <H2>Examples</H2>
 
 <CodeWrapper>
-  <div class="flex flex-wrap mb-4">
+  <div class="mb-4 flex flex-wrap">
     <Label class="mb-4 w-full font-bold">Example:</Label>
     {#each exampleArr as style}
-      <Radio labelClass="w-24 my-1" onclick={()=> expand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+      <Radio labelClass="w-24 my-1" onclick={() => (expand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
   <div class="md:h-96">
     <SelectedComponent />
   </div>
   {#snippet codeblock()}
-  <DynamicCodeBlockHighlight replaceLib {handleExpandClick} {expand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
+    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} {expand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Component data</H2>
-<CompoAttributesViewer {dirName}/>
+<CompoAttributesViewer {dirName} />

@@ -10,8 +10,7 @@ export const textarea = tv({
   },
   variants: {
     wrapped: {
-      false: { base: 'p-2.5 text-sm focus:ring-primary-500 border-gray-300 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 disabled:cursor-not-allowed disabled:opacity-50'
-      }
+      false: { base: 'p-2.5 text-sm focus:ring-primary-500 border-gray-300 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 disabled:cursor-not-allowed disabled:opacity-50' }
     },
     hasHeader: {
       true: {
@@ -29,6 +28,6 @@ export const textarea = tv({
         innerWrapper: 'rounded-b-lg'
       }
     }
-  },
+  }
 });
 

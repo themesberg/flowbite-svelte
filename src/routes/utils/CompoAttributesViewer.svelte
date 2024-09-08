@@ -35,9 +35,9 @@
     // Split the components into an array
     const componentArray = components.split(', ');
   }
-  
+
   let importPromises: Promise<any>[] = [];
-  
+
   async function processComponents() {
     if (componentArray.length > 0) {
       importPromises = componentArray.map(async (component) => {
@@ -60,34 +60,33 @@
   }
 
   $effect(() => {
-    processComponents()
-      .catch(error => {
-        console.error('Error outside of processComponents:', error);
-      });
+    processComponents().catch((error) => {
+      console.error('Error outside of processComponents:', error);
+    });
   });
 </script>
 
 {#if compoData}
-<div id="compoData">
-  {#each compoData as compo}
-  <h3 class="text-xl my-4">{compo.data.default.name}</h3>
-    <Tabs style="underline" class="list-none" contentClass="p-0 bg-white">
-      {#if compo.data.default.props.length > 0}
-      <TabItem open>
-        {#snippet titleSlot()}
-        <div class="flex items-center gap-2">
-          <ClipboardSolid size="sm" />
-          Props
-        </div>
-        {/snippet}
-        <ul class="w-full">
-          <TableProp>
-          <TableDefaultRow items={compo.data.default.props} rowState='hover' />
-          </TableProp>
-        </ul>
-      </TabItem>
-      {/if}
-    </Tabs>
-  {/each}
-</div>
+  <div id="compoData">
+    {#each compoData as compo}
+      <h3 class="my-4 text-xl">{compo.data.default.name}</h3>
+      <Tabs style="underline" class="list-none" contentClass="p-0 bg-white">
+        {#if compo.data.default.props.length > 0}
+          <TabItem open>
+            {#snippet titleSlot()}
+              <div class="flex items-center gap-2">
+                <ClipboardSolid size="sm" />
+                Props
+              </div>
+            {/snippet}
+            <ul class="w-full">
+              <TableProp>
+                <TableDefaultRow items={compo.data.default.props} rowState="hover" />
+              </TableProp>
+            </ul>
+          </TabItem>
+        {/if}
+      </Tabs>
+    {/each}
+  </div>
 {/if}

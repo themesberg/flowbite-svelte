@@ -68,44 +68,44 @@
     })()
   );
   // for examples section that dynamically changes the svelte component and markdown content
-  import * as ExampleComponents from './examples'; 
+  import * as ExampleComponents from './examples';
   const exampleModules = import.meta.glob('./examples/*.svelte', {
     query: '?raw',
     import: 'default',
     eager: true
   });
-  
+
   const exampleArr = [
     { name: 'Description list', component: ExampleComponents.DescriptionList },
     { name: 'Horizontal list', component: ExampleComponents.HorizontalList },
-    { name: 'Advanced layout', component: ExampleComponents.AdvancedLayout },
-  ]
+    { name: 'Advanced layout', component: ExampleComponents.AdvancedLayout }
+  ];
   let selectedExample = $state(exampleArr[0].name);
   let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
 
-  function findObject (arr: { name: string; component: Component }[], name: string) {
-    const matchingObject = arr.find(obj => obj.name === name);
-    return matchingObject ? matchingObject.component : null; 
+  function findObject(arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find((obj) => obj.name === name);
+    return matchingObject ? matchingObject.component : null;
   }
-  const SelectedComponent = $derived(findObject(exampleArr, selectedExample)); 
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
-  
+
   // for interactive builder
   let builder = uiHelpers();
   let builderExpand = $state(false);
   let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
   const handleBuilderExpandClick = () => {
     builderExpand = !builderExpand;
-  }
+  };
   // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
-  
+
   // for examples DynamicCodeBlockHighlight
   let codeBlock = uiHelpers();
   let exampleExpand = $state(false);
   let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
   const handleExpandClick = () => {
     exampleExpand = !exampleExpand;
-  }
+  };
   // end of DynamicCodeBlock setup
   $effect(() => {
     exampleExpand = codeBlock.isOpen;
@@ -138,19 +138,19 @@
       {#if listIcon}<CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />{/if}Inclusion of at least one special character, e.g., ! @ # ?
     </Li>
   </List>
-  <div class="mt-4 flex flex-wrap space-x-2 mb-4">
+  <div class="mb-4 mt-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Tag:</Label>
     {#each tags as tag}
       <Radio labelClass="w-20 my-1" name="list_tag" bind:group={listTag} value={tag}>{tag}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-2 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Position:</Label>
     {#each positions as position}
       <Radio labelClass="w-20 my-1" name="list_position" bind:group={listPosition} value={position}>{position}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+  <div class="flex flex-wrap justify-center gap-2 md:justify-start">
     <Button class="w-48" color="blue" onclick={changeListIcon}>{listIcon ? 'Remove icon' : 'Add icon'}</Button>
     <Button class="w-48" color="rose" onclick={changeCtxClass}>{ctxClass !== '' ? 'Remove ctxClass' : 'Add ctxClass'}</Button>
     <Button class="w-48" color="teal" onclick={changeNested}>{nested ? 'Remove nested' : 'Add nested'}</Button>
@@ -166,16 +166,16 @@
   <div class="mb-8 flex flex-wrap">
     <Label class="mb-4 w-full font-bold">Example:</Label>
     {#each exampleArr as style}
-      <Radio labelClass="w-36 my-1" onclick={()=> exampleExpand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+      <Radio labelClass="w-36 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
   <div class="md:h-[350px]">
     <SelectedComponent />
   </div>
   {#snippet codeblock()}
-  <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
+    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Component data</H2>
-<CompoAttributesViewer {dirName}/>
+<CompoAttributesViewer {dirName} />

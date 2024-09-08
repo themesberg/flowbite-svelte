@@ -33,7 +33,7 @@
   };
 
   let { text = $bindable('') } = $props();
-   text = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla eius debitis cupiditate tempora necessitatibus perspiciatis pariatur aspernatur.';
+  text = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla eius debitis cupiditate tempora necessitatibus perspiciatis pariatur aspernatur.';
 
   // code generator
   let generatedCode = $derived(
@@ -71,7 +71,7 @@
       <CloseButton onclick={() => (text = '')} />
     {/snippet}
   </Input>
-  <div class="md:h-[200px] overflow-scroll mb-4">
+  <div class="mb-4 overflow-scroll md:h-[200px]">
     <P contenteditable weight={pWeight} size={pSize} space={pSpace} height={pHeight} align={pAlign} whitespace={pWhitespace} {italic} firstUpper={pFirstupper} justify={pJustify}>{text}</P>
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
@@ -110,7 +110,7 @@
       <Radio labelClass="w-16 my-1" name="p_whitespace" bind:group={pWhitespace} value={whitespace}>{whitespace}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+  <div class="flex flex-wrap justify-center gap-2 md:justify-start">
     <Button class="w-40" onclick={() => (pFirstupper = !pFirstupper)}>{pFirstupper ? 'Remove upper' : 'First upper'}</Button>
     <Button
       class="w-40"
@@ -130,4 +130,4 @@
 </CodeWrapper>
 
 <H2>Component data</H2>
-<CompoAttributesViewer {dirName}/>
+<CompoAttributesViewer {dirName} />

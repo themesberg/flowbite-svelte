@@ -12,12 +12,12 @@
 
 {#if outline}
   <div class={base({ className })}>
-    <Button {...restProps} class={outlineWrapper()} {disabled} {name} {type} {href} {target} {rel} {size}>
+    <Button {...restProps} class={outlineWrapper()} {disabled} {href} {size}>
       {@render children()}
     </Button>
   </div>
 {:else}
-  <Button {...restProps} class={base({ className })} {disabled} {name} {type} {href} {target} {rel} {size}>
+  <Button {...restProps} class={base({ className })} {disabled} {href} {size}>
     {@render children()}
   </Button>
 {/if}

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Avatar, Dropdown, DropdownHeader, DropdownUl, DropdownLi, DropdownDivider, uiHelpers} from "$lib";
+  import { Avatar, Dropdown, DropdownHeader, DropdownUl, DropdownLi, DropdownDivider, uiHelpers } from '$lib';
   let dropdown = uiHelpers();
   let dropdownStatus = $state(false);
   let closeDropdown = dropdown.close;

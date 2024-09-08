@@ -1,3 +1,3 @@
 <script>
-  import { Range } from 'svelte-5-ui-lib';
+  import { Range } from '$lib';
 </script>

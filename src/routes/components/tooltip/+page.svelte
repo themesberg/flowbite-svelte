@@ -1,5 +1,5 @@
 <script lang="ts">
-  // import { Select, Label } from '$lib';
+  // import { Tooltip } from '$lib';
   // import HighlightCompo from '../../utils/HighlightCompo.svelte';
   // import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';

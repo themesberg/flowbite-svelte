@@ -85,7 +85,7 @@
       <Radio labelClass="w-32 m-2" name="toggle_size" bind:group={toggleSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+  <div class="flex flex-wrap justify-center gap-2 md:justify-start">
     <Button class="w-40" onclick={changeChecked}>{checked ? 'Remove checked' : 'Add checked'}</Button>
     <Button class="w-40" color="secondary" onclick={changeDisabled}>{disabled ? 'Remove disabled' : 'Add disabled'}</Button>
     <Button class="w-40" color="emerald" onclick={changeLeftLabel}>{leftSlot ? 'Remove left slot' : 'Add left slot'}</Button>
@@ -104,4 +104,4 @@
 </CodeWrapper>
 
 <H2>Component data</H2>
-<CompoAttributesViewer {dirName}/>
+<CompoAttributesViewer {dirName} />

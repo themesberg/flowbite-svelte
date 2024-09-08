@@ -105,6 +105,7 @@ export const fileList = [
   "src/lib/toolbar/Toolbar.svelte",
   "src/lib/toolbar/ToolbarButton.svelte",
   "src/lib/toolbar/ToolbarGroup.svelte",
+  "src/lib/tooltip/Tooltip.svelte",
   "src/lib/typography/anchor/A.svelte",
   "src/lib/typography/blockquote/Blockquote.svelte",
   "src/lib/typography/descriptionlist/DescriptionList.svelte",

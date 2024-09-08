@@ -7,14 +7,10 @@
     rowState?: 'striped' | 'hover' | undefined;
   }
 
-  let {
-    items,
-    html,
-    rowState
-  }: Props = $props();
-  
+  let { items, html, rowState }: Props = $props();
+
   const category = getContext('category');
-// console.log('category: ', category)
+  // console.log('category: ', category)
   let trClass = $state('');
   let trLastClass = $state('');
   if (rowState === 'striped') {
@@ -35,7 +31,7 @@
       <tr class={trLastClass}>
         {#each item as cell, j}
           {#if j === 0}
-            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+            <th scope="row" class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white">
               {#if html}
                 {@html cell}
               {:else}
@@ -57,7 +53,7 @@
       <tr class={trClass}>
         {#each item as cell, j}
           {#if j === 0}
-            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+            <th scope="row" class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white">
               {#if html}
                 {@html cell}
               {:else}
@@ -79,10 +75,10 @@
   {/each}
 {:else}
   {#each items as tagName}
-  <tr class={trClass}>
-    <td class="px-6 py-4">
-      {tagName}
-    </td>
-  </tr>
+    <tr class={trClass}>
+      <td class="px-6 py-4">
+        {tagName}
+      </td>
+    </tr>
   {/each}
 {/if}

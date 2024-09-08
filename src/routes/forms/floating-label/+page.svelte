@@ -24,7 +24,7 @@
   let disabled = $state(false);
   const changeDisabled = () => {
     disabled = !disabled;
-  }
+  };
   let helperSlot = $state(false);
   const changeHelperSlot = () => {
     helperSlot = !helperSlot;
@@ -54,63 +54,64 @@
 </FloatingLabelInput>${helperCode}`;
     })()
   );
-   // for interactive builder
-   let builder = uiHelpers();
+  // for interactive builder
+  let builder = uiHelpers();
   let builderExpand = $state(false);
   let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
   const handleBuilderExpandClick = () => {
     builderExpand = !builderExpand;
-  }
+  };
 </script>
 
 <H1>Floating label</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
+<HighlightCompo replaceLib code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Floating label examples</H2>
 <CodeWrapper>
-  <div class="md:h-20 mb-4">
+  <div class="mb-4 md:h-20">
     <FloatingLabelInput {style} {disabled} size={floatingSize} color={floatingColor} id="floating_filled" type="text">Floating {style}</FloatingLabelInput>
     {#if helperSlot}
-    <Helper class="pt-2" color={helperColor}>
-      Remember, contributions to this topic should follow our <a href="/">Community Guidelines</a>.
-    </Helper>
+      <Helper class="pt-2" color={helperColor}>
+        Remember, contributions to this topic should follow our <a href="/">Community Guidelines</a>
+        .
+      </Helper>
     {/if}
   </div>
-  <div class="flex flex-wrap space-x-2 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Style:</Label>
     {#each styles as option}
       <Radio labelClass="w-24 my-1" name="style1" bind:group={style} value={option}>{option}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-2 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
       <Radio labelClass="w-24 my-1" name="floating_color" bind:group={floatingColor} color={colorOption as FloatingLabelInput['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-2 mb-4">
-    <Button class="w-48 mb-4" color="secondary" onclick={changeHelperSlot}>{helperSlot ? 'Remove helper slot' : 'Add helper slot'}</Button>
+  <div class="mb-4 flex flex-wrap space-x-2">
+    <Button class="mb-4 w-48" color="secondary" onclick={changeHelperSlot}>{helperSlot ? 'Remove helper slot' : 'Add helper slot'}</Button>
     <Label class="mb-4 w-full font-bold">Helper Color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1 {helperSlot ? '' : 'opacity-30 cursor-not-allowed'}" disabled={helperSlot ? false : true} name="helper_color" bind:group={helperColor} color={colorOption as FloatingLabelInput['color']} value={colorOption} >{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1 {helperSlot ? '' : 'opacity-30 cursor-not-allowed'}" disabled={helperSlot ? false : true} name="helper_color" bind:group={helperColor} color={colorOption as FloatingLabelInput['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-4 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     <Toggle
       onclick={() => {
         floatingSize = floatingSize === 'default' ? 'small' : 'default';
       }}
-    > 
-    {#snippet leftLabel()}
-      <div class="me-4">Default</div>
-    {/snippet}
+    >
+      {#snippet leftLabel()}
+        <div class="me-4">Default</div>
+      {/snippet}
       Small
     </Toggle>
   </div>
-  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+  <div class="flex flex-wrap justify-center gap-2 md:justify-start">
     <Button class="w-48" onclick={changeDisabled}>{disabled ? 'Remove disabled' : 'Add disabled'}</Button>
   </div>
   {#snippet codeblock()}
@@ -119,4 +120,4 @@
 </CodeWrapper>
 
 <H2>Component data</H2>
-<CompoAttributesViewer {dirName}/>
+<CompoAttributesViewer {dirName} />

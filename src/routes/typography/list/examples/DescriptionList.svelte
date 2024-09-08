@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { List, DescriptionList } from '$lib'
+  import { List, DescriptionList } from '$lib';
 </script>
 
 <List tag="dl" class="divide-y divide-gray-200 text-gray-900 dark:divide-gray-700  dark:text-white">

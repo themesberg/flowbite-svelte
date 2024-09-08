@@ -1,3 +1,3 @@
 <script>
-  import { Radio, Helper } from 'svelte-5-ui-lib';
+  import { Radio, Helper } from '$lib';
 </script>

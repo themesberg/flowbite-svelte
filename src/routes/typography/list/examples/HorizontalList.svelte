@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { List, Li, A } from '$lib'
+  import { List, Li, A } from '$lib';
 </script>
 
 <List tag="ul" class="flex flex-wrap items-center justify-center">

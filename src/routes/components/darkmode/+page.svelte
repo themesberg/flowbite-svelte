@@ -59,4 +59,4 @@ Use the lightIcon and darkIcon slots to change icons:
 </CodeWrapper>
 
 <H2>Component data</H2>
-<CompoAttributesViewer {dirName}/>
+<CompoAttributesViewer {dirName} />

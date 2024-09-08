@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { CheckboxButton, ButtonGroup } from "$lib";
+  import { CheckboxButton, ButtonGroup } from '$lib';
   import { ChevronDownOutline, AppleSolid, FacebookSolid, DiscordSolid, DropboxSolid } from 'flowbite-svelte-icons';
 </script>
 
@@ -14,5 +14,5 @@
   <CheckboxButton><AppleSolid class="me-2 h-6 w-6" />Apple</CheckboxButton>
   <CheckboxButton><FacebookSolid class="me-2 h-6 w-6" />Facebook</CheckboxButton>
   <CheckboxButton><DiscordSolid class="me-2 h-6 w-6" />Discord</CheckboxButton>
-  <CheckboxButton class='hidden sm:inline-flex'><DropboxSolid class="me-2 h-6 w-6" />Dropbox</CheckboxButton>
+  <CheckboxButton class="hidden sm:inline-flex"><DropboxSolid class="me-2 h-6 w-6" />Dropbox</CheckboxButton>
 </ButtonGroup>

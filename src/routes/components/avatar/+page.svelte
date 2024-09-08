@@ -9,7 +9,7 @@
   import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   // Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'avatar'
+  const dirName = 'avatar';
   let dropdown = uiHelpers();
   let dropdownStatus = $state(false);
 
@@ -18,15 +18,15 @@
     // without using effect
     dropdownStatus = dropdown.isOpen;
   });
-  
+
   // for examples section that dynamically changes the svelte component and markdown content
-  import * as ExampleComponents from './examples'; 
+  import * as ExampleComponents from './examples';
   const exampleModules = import.meta.glob('./examples/*.svelte', {
     query: '?raw',
     import: 'default',
     eager: true
   });
-  
+
   const exampleArr = [
     { name: 'Avatar text', component: ExampleComponents.AvatarText },
     { name: 'Dot indicator', component: ExampleComponents.DotIndicator },
@@ -34,15 +34,15 @@
     { name: 'Placeholder initial', component: ExampleComponents.PlaceholderInitial },
     { name: 'Stacked', component: ExampleComponents.Stacked },
     { name: 'User dropdown', component: ExampleComponents.UserDropdown }
-  ]
+  ];
   let selectedExample = $state(exampleArr[0].name);
   let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
 
-  function findObject (arr: { name: string; component: Component }[], name: string) {
-    const matchingObject = arr.find(obj => obj.name === name);
-    return matchingObject ? matchingObject.component : null; 
+  function findObject(arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find((obj) => obj.name === name);
+    return matchingObject ? matchingObject.component : null;
   }
-  const SelectedComponent = $derived(findObject(exampleArr, selectedExample)); 
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
 
   // reactive example, rounded, border, stacked, size, className
@@ -80,23 +80,23 @@
       return `<Avatar${propsString} />`;
     })()
   );
-  
+
   // for interactive builder
   let builder = uiHelpers();
   let builderExpand = $state(false);
   let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
   const handleBuilderExpandClick = () => {
     builderExpand = !builderExpand;
-  }
+  };
   // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
-  
+
   // for examples DynamicCodeBlockHighlight
   let codeBlock = uiHelpers();
   let exampleExpand = $state(false);
   let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
   const handleExpandClick = () => {
     exampleExpand = !exampleExpand;
-  }
+  };
   // end of DynamicCodeBlock setup
   $effect(() => {
     exampleExpand = codeBlock.isOpen;
@@ -122,7 +122,7 @@
       <Radio labelClass="w-24 my-1" name="spinnersize" bind:group={avatarSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+  <div class="flex flex-wrap justify-center gap-2 md:justify-start">
     <Button class="w-40" color="blue" onclick={toggleCornerStyle}>{isRounded ? 'Default: circular' : 'Rounded'}</Button>
     <Button class="w-40" color="red" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
     <Button class="w-40" color="green" onclick={changeStacked}>{stacked ? 'Remove stacked' : 'Add  stacked'}</Button>
@@ -139,16 +139,16 @@
   <div class="mb-4 flex flex-wrap">
     <Label class="mb-4 w-full font-bold">Example:</Label>
     {#each exampleArr as style}
-      <Radio labelClass="w-40 my-1" onclick={()=> exampleExpand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+      <Radio labelClass="w-40 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
   <div class="md:h-40">
     <SelectedComponent />
   </div>
   {#snippet codeblock()}
-  <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
+    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Component data</H2>
-<CompoAttributesViewer {dirName}/>
+<CompoAttributesViewer {dirName} />

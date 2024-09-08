@@ -328,7 +328,7 @@
   <Li># of components/pages to be completed: {componentsAnalysis.pageUnchecked}</Li>
   <Li class="text-green-500"># of pages without problems: {componentsAnalysis.pageWithoutProblems}</Li>
   {#if componentsAnalysis.exampleProblems > 0}
-  <Li class="text-red-500"># of examples to be completed: {componentsAnalysis.exampleProblems}</Li>
+    <Li class="text-red-500"># of examples to be completed: {componentsAnalysis.exampleProblems}</Li>
   {/if}
 </List>
 
@@ -339,7 +339,7 @@
   <Li># of components/pages to be completed: {formsAnalysis.pageUnchecked}</Li>
   <Li class="text-green-500"># of pages without problems: {formsAnalysis.pageWithoutProblems}</Li>
   {#if formsAnalysis.exampleProblems > 0}
-  <Li class="text-red-500"># of examples to be completed: {formsAnalysis.exampleProblems}</Li>
+    <Li class="text-red-500"># of examples to be completed: {formsAnalysis.exampleProblems}</Li>
   {/if}
 </List>
 
@@ -350,7 +350,7 @@
   <Li># of components/pages to be completed: {typographyAnalysis.pageUnchecked}</Li>
   <Li class="text-green-500"># of pages without problems: {typographyAnalysis.pageWithoutProblems}</Li>
   {#if typographyAnalysis.exampleProblems > 0}
-  <Li class="text-red-500"># of examples to be completed: {typographyAnalysis.exampleProblems}</Li>
+    <Li class="text-red-500"># of examples to be completed: {typographyAnalysis.exampleProblems}</Li>
   {/if}
 </List>
 

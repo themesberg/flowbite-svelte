@@ -11,23 +11,15 @@
     divClass?: string;
   }
 
-  let { 
-    children,
-    category = 'props',
-    tableClass = 'w-full text-sm text-left text-gray-500 dark:text-gray-400',
-    theadClass = 'text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400',
-    thClass = 'px-6 py-3',
-    divClass = 'w-full relative overflow-x-auto shadow-md sm:rounded-lg'
-  }: Props = $props()
+  let { children, category = 'props', tableClass = 'w-full text-sm text-left text-gray-500 dark:text-gray-400', theadClass = 'text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400', thClass = 'px-6 py-3', divClass = 'w-full relative overflow-x-auto shadow-md sm:rounded-lg' }: Props = $props();
 
   setContext('category', category);
 
   const headerNames = {
     props: ['Name', 'Default'],
-    events: ['Names'],
-  }
-  let header = headerNames[category]
-
+    events: ['Names']
+  };
+  let header = headerNames[category];
 </script>
 
 <div class={divClass}>
@@ -41,9 +33,9 @@
             </th>
           {/each}
         {:else}
-        <th scope="col" class={thClass}>
-          {header}
-        </th>
+          <th scope="col" class={thClass}>
+            {header}
+          </th>
         {/if}
       </tr>
     </thead>

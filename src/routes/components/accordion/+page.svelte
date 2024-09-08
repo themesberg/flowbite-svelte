@@ -9,7 +9,7 @@
   import H2 from '../../utils/H2.svelte';
   // Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'accordion'
+  const dirName = 'accordion';
 
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
@@ -261,4 +261,4 @@
 </CodeWrapper>
 
 <H2>Component data</H2>
-<CompoAttributesViewer {dirName}/>
+<CompoAttributesViewer {dirName} />

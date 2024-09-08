@@ -3,7 +3,7 @@
   import { EnvelopeSolid } from 'flowbite-svelte-icons';
 </script>
 
-<Label class="space-y-2 mb-4">
+<Label class="mb-4 space-y-2">
   <span>Small input - left icon</span>
   <Input type="email" placeholder="name@flowbite.com" size="sm" class="pl-8">
     {#snippet left()}
@@ -12,7 +12,7 @@
   </Input>
 </Label>
 
-<Label class="space-y-2 mb-4">
+<Label class="mb-4 space-y-2">
   <span>Default input - right icon</span>
   <Input type="email" placeholder="name@flowbite.com" size="md">
     {#snippet right()}

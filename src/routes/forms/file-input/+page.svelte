@@ -54,7 +54,7 @@ ${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ''}`;
 <H1>File input</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
+<HighlightCompo replaceLib code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Interactive Fileupload Builder</H2>
 <CodeWrapper>
@@ -77,7 +77,7 @@ ${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ''}`;
       <Radio labelClass="w-16 my-1" name="file_input_size" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+  <div class="flex flex-wrap justify-center gap-2 md:justify-start">
     <Button class="w-40" onclick={changeHelperState}>{helperState ? 'Remove helper' : 'Add helper'}</Button>
     <Button class="w-40" color="emerald" onclick={changeBindFile}>{fileNames ? 'Hide file names' : 'Show file names'}</Button>
     <Button class="w-40" color="sky" onclick={changeMultiple}>{multiple ? 'Remove multiple' : 'Add multiple'}</Button>
@@ -88,4 +88,4 @@ ${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ''}`;
 </CodeWrapper>
 
 <H2>Component data</H2>
-<CompoAttributesViewer {dirName}/>
+<CompoAttributesViewer {dirName} />

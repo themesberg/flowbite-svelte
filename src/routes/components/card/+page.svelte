@@ -107,7 +107,7 @@
       <Radio labelClass="w-16 my-1" name="interactive_card_shadow" bind:group={cardShadow} value={shadow}>{shadow}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+  <div class="flex flex-wrap justify-center gap-2 md:justify-start">
     <Button class="w-40" color="sky" onclick={changeLink}>{link === '' ? 'Add link' : 'Remove link'}</Button>
     <Button class="w-40" color="green" onclick={changeClass}>{cardClass ? 'Remove class' : 'Add class'}</Button>
     <Button class="w-40" color="blue" onclick={changeImage}>{Object.keys(cardImage).length === 0 ? 'Add image' : 'Remove image'}</Button>
@@ -162,4 +162,4 @@
 </CodeWrapper>
 
 <H2>Component data</H2>
-<CompoAttributesViewer {dirName}/>
+<CompoAttributesViewer {dirName} />

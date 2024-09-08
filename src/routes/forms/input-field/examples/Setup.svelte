@@ -1,4 +1,4 @@
 <script lang="ts">
-  import { Input } from 'svelte-5-ui-lib'
+  import { Input } from '$lib';
   let { text = $bindable('') } = $props();
 </script>

@@ -1,10 +1,10 @@
 <script lang="ts">
-import { Radio } from '$lib';
-import { ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Radio } from '$lib';
+  import { ArrowRightOutline } from 'flowbite-svelte-icons';
 </script>
 
 <p class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Choose technology:</p>
-<div class="grid w-full gap-6 md:grid-cols-2 p-4">
+<div class="grid w-full gap-6 p-4 md:grid-cols-2">
   <Radio name="custom">
     <div id="hosting-small" class="inline-flex w-full cursor-pointer items-center justify-between rounded-lg border border-gray-200 bg-white p-5 text-gray-500 hover:bg-gray-100 hover:text-gray-600 peer-checked:border-primary-600 peer-checked:text-primary-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:peer-checked:text-primary-500">
       <div>

@@ -16,25 +16,25 @@
   const dirName = 'banner';
 
   // for examples section that dynamically changes the svelte component and markdown content
-  import * as ExampleComponents from './examples'; 
+  import * as ExampleComponents from './examples';
   const exampleModules = import.meta.glob('./examples/*.svelte', {
     query: '?raw',
     import: 'default',
     eager: true
   });
-  
+
   const exampleArr = [
     { name: 'Newsletter signup banner', component: ExampleComponents.NewsletterSignupBanner },
     { name: 'Information banner', component: ExampleComponents.InformationBanner }
-  ]
+  ];
   let selectedExample = $state(exampleArr[0].name);
   let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
 
-  function findObject (arr: { name: string; component: Component }[], name: string) {
-    const matchingObject = arr.find(obj => obj.name === name);
-    return matchingObject ? matchingObject.component : null; 
+  function findObject(arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find((obj) => obj.name === name);
+    return matchingObject ? matchingObject.component : null;
   }
-  const SelectedComponent = $derived(findObject(exampleArr, selectedExample)); 
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
 
   // interactive example
@@ -115,23 +115,23 @@
 </div>`;
     })()
   );
-  
+
   // for interactive builder
   let builder = uiHelpers();
   let builderExpand = $state(false);
   let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
   const handleBuilderExpandClick = () => {
     builderExpand = !builderExpand;
-  }
+  };
   // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
-  
+
   // for examples DynamicCodeBlockHighlight
   let codeBlock = uiHelpers();
   let exampleExpand = $state(false);
   let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
   const handleExpandClick = () => {
     exampleExpand = !exampleExpand;
-  }
+  };
   // end of DynamicCodeBlock setup
   $effect(() => {
     exampleExpand = codeBlock.isOpen;
@@ -163,28 +163,28 @@
       </p>
     </Banner>
   </div>
-<div class="p-6">
-  <div class="mb-4 h-12">
-    <Button class="w-48" disabled={bannerStatus ? true : false} onclick={changeStatus}>Open banner</Button>
+  <div class="p-6">
+    <div class="mb-4 h-12">
+      <Button class="w-48" disabled={bannerStatus ? true : false} onclick={changeStatus}>Open banner</Button>
+    </div>
+    <div class="mb-4 flex flex-wrap space-x-4">
+      <Label class="mb-4 w-full font-bold">Change color {color}</Label>
+      {#each colors as colorOption}
+        <Radio labelClass="w-24 my-1" name="color" bind:group={color} color={colorOption as BannerProps['color']} value={colorOption}>{colorOption}</Radio>
+      {/each}
+    </div>
+    <div class="mb-4 flex flex-wrap space-x-4">
+      <Label class="mb-4 w-full font-bold">Transition</Label>
+      {#each transitions as transition}
+        <Radio labelClass="w-24 my-1" name="interactive_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+      {/each}
+    </div>
+    <div class="flex flex-wrap justify-center gap-2 md:justify-start">
+      <Button class="w-48" onclick={changePosition}>Position: {position === 'sticky' ? 'absolute' : 'sticky'}</Button>
+      <Button class="w-48" color="blue" onclick={changeBannerType}>Type: {bannerType === 'default' ? 'cta' : 'default'}</Button>
+      <Button class="w-48" color="green" onclick={changeClass}>{bannerClass ? 'Remove class' : 'Add class'}</Button>
+    </div>
   </div>
-  <div class="flex flex-wrap space-x-4 mb-4">
-    <Label class="mb-4 w-full font-bold">Change color {color}</Label>
-    {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="color" bind:group={color} color={colorOption as BannerProps['color']} value={colorOption}>{colorOption}</Radio>
-    {/each}
-  </div>
-  <div class="mb-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Transition</Label>
-    {#each transitions as transition}
-      <Radio labelClass="w-24 my-1" name="interactive_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
-    {/each}
-  </div>
-  <div class="flex flex-wrap gap-2 justify-center md:justify-start">
-    <Button class="w-48" onclick={changePosition}>Position: {position === 'sticky' ? 'absolute' : 'sticky'}</Button>
-    <Button class="w-48" color="blue" onclick={changeBannerType}>Type: {bannerType === 'default' ? 'cta' : 'default'}</Button>
-    <Button class="w-48" color="green" onclick={changeClass}>{bannerClass ? 'Remove class' : 'Add class'}</Button>
-  </div>
-</div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
   {/snippet}
@@ -196,16 +196,16 @@
   <div class="mb-4 flex flex-wrap p-6">
     <Label class="mb-4 w-full font-bold">Example:</Label>
     {#each exampleArr as style}
-      <Radio labelClass="w-64 my-1" onclick={()=> exampleExpand = false} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+      <Radio labelClass="w-64 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
   <div class="md:h-[420px]">
     <SelectedComponent />
   </div>
   {#snippet codeblock()}
-  <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
+    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Component data</H2>
-<CompoAttributesViewer {dirName}/>
+<CompoAttributesViewer {dirName} />

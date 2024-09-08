@@ -1,1 +1,0 @@
-<Range color="blue" appearance="auto"/>

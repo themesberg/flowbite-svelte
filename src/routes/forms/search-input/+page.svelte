@@ -1,99 +1,72 @@
 <script lang="ts">
-  import { Search, Button, Dropdown, DropdownUl, DropdownLi, uiHelpers } from '$lib';
-  import { SearchOutline, ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { type Component } from 'svelte';
+  import { uiHelpers, Label, Radio } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'forms/search';
-  import { sineIn } from 'svelte/easing';
 
-  const modules = import.meta.glob('./md/*.md', {
+  // for examples section that dynamically changes the svelte component and markdown content
+  import * as ExampleComponents from './examples';
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
     query: '?raw',
     import: 'default',
     eager: true
   });
 
-  const items = [{ label: 'All categories' }, { label: 'Mockups' }, { label: 'Templates' }, { label: 'Design' }, { label: 'Logos' }];
+  const exampleArr = [
+    { name: 'Default search', component: ExampleComponents.DefaultSearch },
+    { name: 'Simple search', component: ExampleComponents.SimpleSearch },
+    { name: 'Search with dropdown', component: ExampleComponents.SearchWithDropdown }
+  ];
+  let selectedExample = $state(exampleArr[0].name);
+  let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
 
-  let selectCategory = $state('All categories');
-  let dropdown = uiHelpers();
-  let dropdownStatus = $state(false);
-  let closeDropdown = dropdown.close;
-  let transitionParams = {
-    y: 0,
-    duration: 200,
-    easing: sineIn
+  function findObject(arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find((obj) => obj.name === name);
+    return matchingObject ? matchingObject.component : null;
+  }
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
+  // end of dynamic svelte component
+
+  // for examples DynamicCodeBlockHighlight
+  let codeBlock = uiHelpers();
+  let exampleExpand = $state(false);
+  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+  const handleExpandClick = () => {
+    exampleExpand = !exampleExpand;
   };
-  const handleClick = (label: string) => {
-    selectCategory = label;
-    console.log('selectCategory', selectCategory);
-    dropdown.close();
-  };
+  // end of DynamicCodeBlock setup
   $effect(() => {
-    // this can be done adding nav.navStatus directly to DOM element
-    // without using effect
-    dropdownStatus = dropdown.isOpen;
+    exampleExpand = codeBlock.isOpen;
   });
 </script>
 
 <H1>Search Input</H1>
 <H2>Setup</H2>
+<HighlightCompo replaceLib code={exampleModules[`./examples/Setup.svelte`] as string} />
 
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<H2>Examples</H2>
 
-<H2>Default search input</H2>
 <CodeWrapper>
-  <Search class="pl-10">
-    <Button class="mr-1">Search</Button>
-  </Search>
+  <div class="mb-8 flex flex-wrap">
+    <Label class="mb-4 w-full font-bold">Example:</Label>
+    {#each exampleArr as style}
+      <Radio labelClass="w-44 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+    {/each}
+  </div>
+  <div class="h-48 overflow-auto">
+    <SelectedComponent />
+  </div>
   {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/default.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Simple search input</H2>
-<CodeWrapper>
-  <form class="flex gap-2">
-    <Search size="md" class="pl-10" />
-    <Button class="!p-2.5">
-      <SearchOutline class="h-5 w-5" />
-    </Button>
-  </form>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/simple-search-input.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Search with dropdown</H2>
-<CodeWrapper innerClass="h-64">
-  <form class="flex">
-    <Button class="whitespace-nowrap rounded-e-none border border-e-0 border-primary-700" onclick={dropdown.toggle}>
-      {selectCategory}
-      <ChevronDownOutline class="ms-2.5 h-2.5 w-2.5" />
-    </Button>
-    <div class="relative">
-      <Dropdown {dropdownStatus} {closeDropdown} params={transitionParams} class="absolute -left-[160px] top-[40px]">
-        <DropdownUl>
-          {#each items as { label }}
-            <DropdownLi onclick={() => handleClick(label)} liClass="hover:cursor-pointer py-1 pl-4 {selectCategory === label ? 'underline' : ''}">
-              {label}
-            </DropdownLi>
-          {/each}
-        </DropdownUl>
-      </Dropdown>
-    </div>
-    <Search size="md" class="rounded-none py-2.5 pl-8" placeholder="Searching {selectCategory}" />
-    <Button class="rounded-s-none !p-2.5">
-      <SearchOutline class="h-6 w-6" />
-    </Button>
-  </form>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/search-with-dropdown.md'] as string} />
+    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 
 <H2>Component data</H2>
-<CompoAttributesViewer {dirName}/>
+<CompoAttributesViewer {dirName} />

@@ -8,13 +8,12 @@
   import H2 from '../../utils/H2.svelte';
   // Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'tab'
+  const dirName = 'tab';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
     eager: true
   });
-  
 </script>
 
 <H1>Tabs</H1>
@@ -282,4 +281,4 @@
 </CodeWrapper>
 
 <H2>Component data</H2>
-<CompoAttributesViewer {dirName}/>
+<CompoAttributesViewer {dirName} />
