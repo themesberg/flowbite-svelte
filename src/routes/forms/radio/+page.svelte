@@ -1,9 +1,7 @@
 <script lang="ts">
   import { type Component } from 'svelte';
   import { sineIn } from 'svelte/easing';
-  import { Radio, radio, Helper, RadioButton, ButtonGroup, Label, P, Dropdown, DropdownUl, Button, uiHelpers } from '$lib';
-  import { ArrowRightOutline, ListMusicSolid, OrderedListOutline, ListOutline, ChevronDownOutline } from 'flowbite-svelte-icons';
-  let radioGroup = $state('notes');
+  import { Radio, radio, Helper, Label, Button, uiHelpers } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -12,15 +10,7 @@
   import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-
-  let technology = $state('svelte');
-  let inline1 = $state('second');
   const dirName = 'forms/radio';
-  const modules = import.meta.glob('./md/*.md', {
-    query: '?raw',
-    import: 'default',
-    eager: true
-  });
   // for examples section that dynamically changes the svelte component and markdown content
   import * as ExampleComponents from './examples'; 
   const exampleModules = import.meta.glob('./examples/*.svelte', {
@@ -81,22 +71,6 @@
     helperSlot = !helperSlot;
     // helperColor = 'gray';
   };
-
-  let transitionParams = {
-    y: 0,
-    duration: 200,
-    easing: sineIn
-  };
-
-  let dropdown = uiHelpers();
-  let dropdownStatus = $state(false);
-  let closeDropdown = dropdown.close;
-  let group3 = $state(2);
-  $effect(() => {
-    // this can be done adding nav.navStatus directly to DOM element
-    // without using effect
-    dropdownStatus = dropdown.isOpen;
-  });
 
   // code generator
   let generatedCode = $derived(
