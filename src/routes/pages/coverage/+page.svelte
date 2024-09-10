@@ -3,7 +3,6 @@
   import { CheckCircleSolid, CloseCircleSolid, QuestionCircleSolid } from 'flowbite-svelte-icons';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import { label } from '../../../../dist';
   function convertStringToKebabCase(text: string) {
     return text.replace(/[A-Z]/g, (match) => '-' + match.toLowerCase());
   }
