@@ -117,7 +117,7 @@
       <Helper class="text-base">Selected value: {selected}</Helper>
     {/if}
   </div>
-  <div class="flex flex-wrap space-x-2">
+  <div class="flex flex-wrap space-x-2 mb-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as option}
       <Radio labelClass="w-24 my-1" name="input_size" bind:group={selectSize} value={option}>{option}</Radio>

@@ -3,6 +3,7 @@
   import { CheckCircleSolid, CloseCircleSolid, QuestionCircleSolid } from 'flowbite-svelte-icons';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { label } from '../../../../dist';
   function convertStringToKebabCase(text: string) {
     return text.replace(/[A-Z]/g, (match) => '-' + match.toLowerCase());
   }
@@ -27,24 +28,24 @@
     accordion: {
       checked: true,
       // notes: 'Variants'
-      problems: 'Open'
+      problems: 'AlwaysOpen'
     },
     alert: {
       checked: true,
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
     },
     avatar: {
       checked: true,
       // problems: 'Avatar tooltip',
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
     },
     badge: {
       checked: true,
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
     },
     banner: {
       checked: true,
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
     },
     bottomNavigation: {
       checked: true,
@@ -171,8 +172,8 @@
       notes: 'Variants, reactive examples'
     },
     tooltip: {
-      checked: false,
-      problems: 'Avatar tooltip'
+      checked: true,
+      // problems: 'Avatar tooltip'
     },
     video: {
       checked: true,
@@ -184,33 +185,36 @@
     checkbox: {
       checked: true,
       // problems: 'Group variable',
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
     },
     fileInput: {
       checked: true,
       problems: 'Dropzone',
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
     },
     floatingLabel: {
       checked: true,
       // problems:
       //   'Disabled state - disabled outlined, Validation -  Outlined, Sized - outlined',
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
     },
     inputField: {
       checked: true,
       // problems: 'Group examples add rounded radius'
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
+    },
+    label: {
+      checked: true,
     },
     radio: {
       checked: true,
       // problems: 'Radio in dropdown',
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
     },
     range: {
       checked: true,
       // problems: 'Sizes - blob sizes',
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
     },
     searchInput: {
       checked: true,
@@ -224,51 +228,54 @@
     },
     textarea: {
       checked: true,
-      notes: 'Variants checked'
+      // notes: 'Variants checked'
     },
     toggle: {
       checked: true,
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
     }
   };
 
   const typography: ListType = {
     blockquote: {
       checked: true,
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
     },
     heading: {
       checked: true,
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
       // problems: 'Highlighted heading, Heading underline, Breadcrumb context, Badge context, Secondary text, Sizes'
     },
     hr: {
       checked: true,
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
       // problems: 'Icon HR - icon size,'
     },
     image: {
       checked: true,
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
+    },
+    layout: {
+      checked: true,
     },
     link: {
       checked: true,
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
       // problems: 'Button, CTA link, Card link, Image link '
     },
     list: {
       checked: true,
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
     },
     paragraph: {
       checked: true,
       // problems: 'Paragraph popover',
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
     },
     span: {
       checked: true,
       // problems: 'Opacity',
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
     }
   };
 

@@ -159,7 +159,7 @@ ${helperSlot ? `<Helper class="ps-6" color="${helperColor}">Helper text</Helper>
       <Radio labelClass="w-44 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
-  <div class="overflow-auto md:h-[350px]">
+  <div class="overflow-auto md:h-[270px]">
     <SelectedComponent />
   </div>
   {#snippet codeblock()}
