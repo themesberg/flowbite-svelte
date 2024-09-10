@@ -1,6 +1,6 @@
 {
   "name": "svelte-5-ui-lib",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "description": "A UI library for Svelte 5.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -39,7 +39,7 @@
     "copy:packagejson": "svelte-lib-helpers package",
     "gen:docs5": "svelte-lib-helpers docs5",
     "gen:runes-data": "svelte-lib-helpers runes-data",
-    "lib-helpers": "npm run format && gen:runes-data && npm run gen:docs5 && npm run package && npm run gen:exports && npm run copy:packagejson",
+    "lib-helpers": "npm run format && npm run gen:runes-data && npm run gen:docs5 && npm run package && npm run gen:exports && npm run copy:packagejson",
     "generate-file-list": "tsx scripts/generateFileList.ts",
     "prebuild": "npm run generate-file-list",
     "changeset:version": "changeset version",
@@ -534,10 +534,6 @@
     "./Tooltip.svelte": {
       "types": "./dist/tooltip/Tooltip.svelte.d.ts",
       "svelte": "./dist/tooltip/Tooltip.svelte"
-    },
-    "./TooltipScroll.svelte": {
-      "types": "./dist/tooltip/TooltipScroll.svelte.d.ts",
-      "svelte": "./dist/tooltip/TooltipScroll.svelte"
     },
     "./A.svelte": {
       "types": "./dist/typography/anchor/A.svelte.d.ts",

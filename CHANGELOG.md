@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.6
+
+### Patch Changes
+
+- feat: Tooltip component ([`46fb3bc837df0ccdc434a60374804e1d4180706a`](https://github.com/shinokada/svelte-5-ui-lib/commit/46fb3bc837df0ccdc434a60374804e1d4180706a))
+
 ## 0.9.5
 
 ### Patch Changes
