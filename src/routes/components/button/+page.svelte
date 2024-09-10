@@ -1,24 +1,42 @@
 <script lang="ts">
-  import { Button, Indicator, GradientButton, Spinner, gradientButton, button, Radio, Label } from '$lib';
-  import { ArrowRightOutline, ShoppingBagSolid, ThumbsUpSolid } from 'flowbite-svelte-icons';
-  const btn1 = () => {
-    alert('You clicked btn1.');
-  };
-
+  import { type Component } from 'svelte';
+  import { Button, GradientButton, gradientButton, button, Radio, Label, uiHelpers } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'button';
   import { capitalizeFirstLetter } from '../../utils/helpers';
 
-  const modules = import.meta.glob('./md/*.md', {
+  // for examples section that dynamically changes the svelte component and markdown content
+  import * as ExampleComponents from './examples';
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
     query: '?raw',
     import: 'default',
     eager: true
   });
+
+  const exampleArr = [
+    { name: 'Button with Icon', component: ExampleComponents.ButtonWithIcon },
+    { name: 'Button with label', component: ExampleComponents.ButtonWithLabel },
+    { name: 'Events', component: ExampleComponents.Events },
+    { name: 'Icon buttons', component: ExampleComponents.IconButtons },
+    { name: 'Loader', component: ExampleComponents.Loader },
+  ];
+  let selectedExample = $state(exampleArr[0].name);
+  let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
+
+  function findObject(arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find((obj) => obj.name === name);
+    return matchingObject ? matchingObject.component : null;
+  }
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
+  // end of dynamic svelte component
+
   // color, size, group, outline, shadow, disabled, pill
   const btnColors = Object.keys(button.variants.color);
   let btnColor = $state('primary');
@@ -119,12 +137,33 @@
       return `<GradientButton${propsString}>My Gradient Button</GradientButton>`;
     })()
   );
+  // for interactive builder
+  let builder = uiHelpers();
+  let builderExpand = $state(false);
+  let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
+  const handleBuilderExpandClick = () => {
+    builderExpand = !builderExpand;
+  };
+  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
+
+  // for examples DynamicCodeBlockHighlight
+  let codeBlock = uiHelpers();
+  let exampleExpand = $state(false);
+  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+  const handleExpandClick = () => {
+    exampleExpand = !exampleExpand;
+  };
+  // end of DynamicCodeBlock setup
+  $effect(() => {
+    exampleExpand = codeBlock.isOpen;
+    builderExpand = builder.isOpen;
+  });
 </script>
 
 <H1>Buttons</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Interactive Button Bilder</H2>
 
@@ -153,11 +192,11 @@
     <Button class="w-40" color="sky" onclick={changeBtnLink}>{btnLink === '' ? 'Add link' : 'Remove link'}</Button>
   </div>
   {#snippet codeblock()}
-    <HighlightCompo code={generatedCode} class="w-full" />
+  <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 
-<H2>Gradient button</H2>
+<H2>Interactive Gradient Button Builder</H2>
 
 <CodeWrapper>
   <div class="h-16">
@@ -188,59 +227,21 @@
   {/snippet}
 </CodeWrapper>
 
-<H2>Button with icon</H2>
-<CodeWrapper innerClass="flex flex-wrap gap-2">
-  <Button><ShoppingBagSolid class="me-2 h-4 w-4" />Buy Now</Button>
-  <Button>Choose Plan<ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/button-with-icon.md'] as string} />
-  {/snippet}
-</CodeWrapper>
 
-<H2>Button with label</H2>
+<H2>Examples</H2>
+
 <CodeWrapper>
-  <Button class="gap-2">
-    Messages
-    <Indicator color="cyan" class="bg-primary-200 text-xs font-semibold text-primary-800" size="lg">2</Indicator>
-  </Button>
+  <div class="mb-4 flex flex-wrap">
+    <Label class="mb-4 w-full font-bold">Example:</Label>
+    {#each exampleArr as style}
+      <Radio labelClass="w-40 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+    {/each}
+  </div>
+  <div class="md:h-40">
+    <SelectedComponent />
+  </div>
   {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/button-with-label.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Icon buttons</H2>
-<CodeWrapper innerClass="flex flex-wrap items-center gap-2">
-  <Button class="!p-2"><ArrowRightOutline class="h-7 w-7" /></Button>
-  <Button pill={true} class="!p-2"><ArrowRightOutline class="h-5 w-5" /></Button>
-  <Button outline={true} class="!p-2" size="lg">
-    <ThumbsUpSolid class="h-7 w-7" />
-  </Button>
-  <Button pill={true} outline={true} class="!p-2" size="xl">
-    <ThumbsUpSolid class="h-5 w-5" />
-  </Button>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/icon-buttons.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Loader</H2>
-<CodeWrapper>
-  <Button>
-    <Spinner class="me-3" size="4" color="teal" />Loading ...
-  </Button>
-  <Button color="alternative">
-    <Spinner class="me-3" size="4" />Loading ...
-  </Button>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/loader.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Events</H2>
-<CodeWrapper>
-  <Button onclick={btn1}>Button 1</Button>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/events.md'] as string} />
+    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 

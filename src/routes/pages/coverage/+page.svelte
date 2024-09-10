@@ -62,7 +62,7 @@
     },
     buttons: {
       checked: true,
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
     },
     card: {
       checked: true,
