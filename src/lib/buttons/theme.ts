@@ -40,7 +40,7 @@ export const button = tv({
       false: 'focus-within:ring-4 focus-within:outline-none'
     },
     outline: {
-      true: 'border border-gray-900 dark:border-gray-300'
+      true: 'border border-gray-300 dark:border-gray-400'
     },
     shadow: {
       true: 'shadow-lg'

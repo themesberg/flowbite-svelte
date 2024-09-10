@@ -1,13 +1,16 @@
 <script lang="ts">
-  import { ButtonGroup, Button, GradientButton, Label, Radio, type ButtonGroupProps } from '$lib';
+  import { type Component } from 'svelte';
+  import { ButtonGroup, buttonGroup, Button, button, GradientButton, Label, Radio, type ButtonGroupProps, uiHelpers } from '$lib';
   import { UserCircleSolid, AdjustmentsVerticalSolid, DownloadSolid } from 'flowbite-svelte-icons';
   const handleClick = () => {
     alert('Clicked');
   };
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'buttongroup';
@@ -17,202 +20,153 @@
     eager: true
   });
 
+  // for examples section that dynamically changes the svelte component and markdown content
+  import * as ExampleComponents from './examples';
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
+    query: '?raw',
+    import: 'default',
+    eager: true
+  });
+
+  const exampleArr = [
+    { name: 'Dualtone gradient', component: ExampleComponents.DualtoneGradient },
+    { name: 'Dualtone gradient pill', component: ExampleComponents.DualtoneGradientPill },
+    { name: 'Events', component: ExampleComponents.Events },
+    { name: 'Gradient shadow', component: ExampleComponents.GradientShadow },
+    { name: 'Outline buttons', component: ExampleComponents.OutlineButtons },
+    { name: 'Pill buttons', component: ExampleComponents.PillButtons },
+    { name: 'Standard buttons', component: ExampleComponents.StandardButtons },
+  ];
+  let selectedExample = $state(exampleArr[0].name);
+  let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
+
+  function findObject(arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find((obj) => obj.name === name);
+    return matchingObject ? matchingObject.component : null;
+  }
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
+  // end of dynamic svelte component
+
   // size, class
-  const sizes = ['sm', 'md', 'lg'];
+  const sizes = Object.keys(buttonGroup.variants.size);
   let size: ButtonGroupProps['size'] = $state('md');
+  // button colors
+  const colors = Object.keys(button.variants.color);
+  let color: Button['color'] = $state('primary');
+  let link: Button['href'] = $state('');
+  const changeLink = () => {
+    link = link === '' ? '/' : '';
+  }
+  let icon = $state(false);
+  const changeIcon = () => {
+    icon = !icon;
+  };
+  let outline = $state(false);
+  const changeOutline = () => {
+    outline = !outline;
+  };
+
   let buttonGroupClass: ButtonGroupProps['class'] = $state('');
   const changeClass = () => {
-    buttonGroupClass = buttonGroupClass === '' ? 'my-4' : '';
+    buttonGroupClass = buttonGroupClass === '' ? 'ml-4' : '';
   };
+  let generatedCode = $derived(
+    (() => {
+      let props = [];
+      let btnProps = [];
+      let icon1 = icon ? '<UserCircleSolid class="me-2 h-4 w-4" />' : '';
+      let icon2 = icon ? '<AdjustmentsVerticalSolid class="me-2 h-4 w-4" />' : '';
+      let icon3 = icon ? '<DownloadSolid class="me-2 h-4 w-4" />' : '';
+      if (size !== 'md') props.push(` size="${size}"`);
+      if (buttonGroupClass !== '') props.push(` class="${buttonGroupClass}"`);
+ 
+      if (link) btnProps.push(` href="${link}"`);
+      if (color !== 'primary') btnProps.push(` color="${color}"`);
+      if (outline) btnProps.push(' outline');
+
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+
+      return `<ButtonGroup${propsString}>
+  <Button${btnProps}>${icon1}Profile</Button>
+  <Button${btnProps}>${icon2}Settings</Button>
+  <Button${btnProps}>${icon3}Messages</Button>
+</ButtonGroup>`;
+    })()
+  );
+  // for interactive builder
+  let builder = uiHelpers();
+  let builderExpand = $state(false);
+  let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
+  const handleBuilderExpandClick = () => {
+    builderExpand = !builderExpand;
+  };
+  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
+
+  // for examples DynamicCodeBlockHighlight
+  let codeBlock = uiHelpers();
+  let exampleExpand = $state(false);
+  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+  const handleExpandClick = () => {
+    exampleExpand = !exampleExpand;
+  };
+  // end of DynamicCodeBlock setup
+  $effect(() => {
+    exampleExpand = codeBlock.isOpen;
+    builderExpand = builder.isOpen;
+  });
 </script>
 
 <H1>Button group</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<HighlightCompo replaceLib code={exampleModules[`./examples/Setup.svelte`] as string} />
 
-<H2>Default buttongroup</H2>
-<CodeWrapper innerClass="flex justify-center">
-  <ButtonGroup>
-    <Button>Profile</Button>
-    <Button>Settings</Button>
-    <Button>Messages</Button>
-  </ButtonGroup>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/default-buttongroup.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Interactive button group</H2>
+<H2>Interactive Button-group Builder</H2>
 <CodeWrapper>
-  <div class="h-16">
+  <div class="h-16 flex items-center justify-center">
     <ButtonGroup {size} class={buttonGroupClass}>
-      <Button>Profile</Button>
-      <Button>Settings</Button>
-      <Button>Messages</Button>
+      <Button {color} href={link} {outline}>{#if icon}<UserCircleSolid class="me-2 h-4 w-4" />{/if}Profile</Button>
+      <Button {color} href={link} {outline}>{#if icon}<AdjustmentsVerticalSolid class="me-2 h-4 w-4" />{/if}Settings</Button>
+      <Button {color} href={link} {outline}>{#if icon}<DownloadSolid class="me-2 h-4 w-4" />{/if}Messages</Button>
     </ButtonGroup>
   </div>
-  <div class="mb-4 flex flex-wrap space-x-4">
+  <div class="flex flex-wrap space-x-4 mb-4">
     <Label class="mb-4 w-full font-bold">Current size: {size}</Label>
     {#each sizes as sizeOption}
       <Radio labelClass="w-24 my-1" name="size" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
     {/each}
   </div>
-  <Button color="green" onclick={changeClass}>{buttonGroupClass ? 'Remove class' : 'Add class'}</Button>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/reactive-buttongroup.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Size</H2>
-<CodeWrapper innerClass="flex justify-center">
-  <div>
-    <div>Size: sm</div>
-    <ButtonGroup size="sm">
-      <Button>Profile</Button>
-      <Button>Settings</Button>
-      <Button>Messages</Button>
-    </ButtonGroup>
-
-    <div class="my-4">Size: md(default)</div>
-    <ButtonGroup>
-      <Button>Profile</Button>
-      <Button>Settings</Button>
-      <Button>Messages</Button>
-    </ButtonGroup>
-
-    <div class="my-4">Size: lg</div>
-    <ButtonGroup size="lg">
-      <Button>Profile</Button>
-      <Button>Settings</Button>
-      <Button>Messages</Button>
-    </ButtonGroup>
+  <div class="flex flex-wrap space-x-2 mb-4">
+    <Label class="mb-4 w-full font-bold">Color</Label>
+    {#each colors as colorOption}
+      <Radio labelClass="w-24 my-1" name="color" bind:group={color} color={colorOption as Button['color']} value={colorOption}>{colorOption}</Radio>
+    {/each}
+  </div>
+  <div class="flex flex-wrap justify-center gap-2 md:justify-start">
+  <Button class="w-40" onclick={changeClass}>{buttonGroupClass ? 'Remove class' : 'Add class'}</Button>
+  <Button class="w-40" color="secondary" onclick={changeLink}>{link === '' ? 'Add link' : 'Remove link'}</Button>
+  <Button class="w-40" color="red" onclick={changeIcon}>{icon  ? 'Remove icon' : 'Add icon'}</Button>
+  <Button class="w-40" color="violet" onclick={changeOutline}>{outline ? 'Remove outline' : 'Add outline'}</Button>
   </div>
   {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/sizes.md'] as string} />
-  {/snippet}
+  <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
+{/snippet}
 </CodeWrapper>
 
-<H2>More examples</H2>
-<CodeWrapper innerClass="flex justify-center">
-  <div class="text-gray-900 dark:text-gray-100">
-    <div class="py-4">Pills</div>
-    <ButtonGroup class="space-x-px">
-      <Button pill color="purple">Profile</Button>
-      <Button pill color="purple">Settings</Button>
-      <Button pill color="purple">Messages</Button>
-    </ButtonGroup>
-    <div class="py-4">Standard buttons</div>
-    <ButtonGroup>
-      <Button color="red">Profile</Button>
-      <Button color="green">Settings</Button>
-      <Button color="yellow">Messages</Button>
-    </ButtonGroup>
-    <div class="py-4">Outline</div>
-    <ButtonGroup>
-      <Button outline color="red">Profile</Button>
-      <Button outline color="green">Settings</Button>
-      <Button outline color="yellow">Messages</Button>
-    </ButtonGroup>
-    <div class="py-4">Gradient with shadows</div>
-    <ButtonGroup>
-      <GradientButton shadow color="green">Profile</GradientButton>
-      <GradientButton shadow color="pink">Settings</GradientButton>
-      <GradientButton shadow color="teal">Messages</GradientButton>
-    </ButtonGroup>
-    <div class="py-4">Dualtone gradient</div>
-    <ButtonGroup class="space-x-px">
-      <GradientButton color="purpleToBlue">Profile</GradientButton>
-      <GradientButton color="cyanToBlue">Settings</GradientButton>
-      <GradientButton color="greenToBlue">Messages</GradientButton>
-    </ButtonGroup>
-    <div class="py-4">Dualtone gradient pill</div>
-    <ButtonGroup class="space-x-px">
-      <GradientButton pill color="purpleToBlue">Profile</GradientButton>
-      <GradientButton pill color="cyanToBlue">Settings</GradientButton>
-      <GradientButton pill color="greenToBlue">Messages</GradientButton>
-    </ButtonGroup>
+<H2>Examples</H2>
+
+<CodeWrapper>
+  <div class="mb-8 flex flex-wrap">
+    <Label class="mb-4 w-full font-bold">Example:</Label>
+    {#each exampleArr as style}
+      <Radio labelClass="w-[230px] my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+    {/each}
+  </div>
+  <div class="h-12">
+    <SelectedComponent />
   </div>
   {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/more-examples.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Button group as links</H2>
-<CodeWrapper innerClass="flex justify-center">
-  <ButtonGroup>
-    <Button href="/">Profile</Button>
-    <Button href="/">Settings</Button>
-    <Button href="/">Messages</Button>
-  </ButtonGroup>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/button-group-as-links.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Group button with icons</H2>
-<CodeWrapper innerClass="flex justify-center">
-  <ButtonGroup>
-    <Button>
-      <UserCircleSolid class="me-2 h-3 w-3" />
-      Profile
-    </Button>
-    <Button>
-      <AdjustmentsVerticalSolid class="me-2 h-3 w-3" />
-      Settings
-    </Button>
-    <Button>
-      <DownloadSolid class="me-2 h-3 w-3" />
-      Download
-    </Button>
-  </ButtonGroup>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/group-button-with-icons.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Outline</H2>
-<CodeWrapper innerClass="flex justify-center">
-  <ButtonGroup>
-    <Button outline color="dark">Profile</Button>
-    <Button outline color="dark">Settings</Button>
-    <Button outline color="dark">Messages</Button>
-  </ButtonGroup>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/outline.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Outline with icon</H2>
-<CodeWrapper innerClass="flex justify-center">
-  <ButtonGroup>
-    <Button outline color="dark">
-      <UserCircleSolid class="me-2 h-3 w-3" />
-      Profile
-    </Button>
-    <Button outline color="dark">
-      <AdjustmentsVerticalSolid class="me-2 h-3 w-3" />
-      Settings
-    </Button>
-    <Button outline color="dark">
-      <DownloadSolid class="me-2 h-3 w-3" />
-      Download
-    </Button>
-  </ButtonGroup>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/outline-with-icon.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Events</H2>
-<CodeWrapper innerClass="flex justify-center">
-  <ButtonGroup>
-    <Button onclick={handleClick}>Click me</Button>
-    <Button>Settings</Button>
-    <Button>Messages</Button>
-  </ButtonGroup>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/events.md'] as string} />
+    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 
