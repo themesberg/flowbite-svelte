@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { Card, card, Button, Toggle, Label, Radio } from '$lib';
-  let reverse = $state(false);
-  // $inspect('vCard: ', vCard, 'hCard: ', hCard);
-
+  import { type Component } from 'svelte';
+  import { Card, card, Button, Toggle, Label, Radio, uiHelpers } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'card';
@@ -18,6 +18,30 @@
     import: 'default',
     eager: true
   });
+
+  let reverse = $state(false);
+  // for examples section that dynamically changes the svelte component and markdown content
+  import * as ExampleComponents from './examples';
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
+    query: '?raw',
+    import: 'default',
+    eager: true
+  });
+
+  const exampleArr = [
+    { name: 'Custom size', component: ExampleComponents.CustomSize },
+    { name: 'Call to action card', component: ExampleComponents.CallToActionCard },
+    { name: 'Card with action button', component: ExampleComponents.CardWithActionButton },
+  ];
+  let selectedExample = $state(exampleArr[0].name);
+  let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
+
+  function findObject(arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find((obj) => obj.name === name);
+    return matchingObject ? matchingObject.component : null;
+  }
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
+  // end of dynamic svelte component
 
   const sizes = Object.keys(card.variants.size);
   let cardSize: Card['size'] = $state('sm');
@@ -68,12 +92,33 @@
       return `<Card${propsString}>My Card</Card>`;
     })()
   );
+  // for interactive builder
+  let builder = uiHelpers();
+  let builderExpand = $state(false);
+  let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
+  const handleBuilderExpandClick = () => {
+    builderExpand = !builderExpand;
+  };
+  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
+
+  // for examples DynamicCodeBlockHighlight
+  let codeBlock = uiHelpers();
+  let exampleExpand = $state(false);
+  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+  const handleExpandClick = () => {
+    exampleExpand = !exampleExpand;
+  };
+  // end of DynamicCodeBlock setup
+  $effect(() => {
+    exampleExpand = codeBlock.isOpen;
+    builderExpand = builder.isOpen;
+  });
 </script>
 
 <H1>Cards</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Interactive Card Builder</H2>
 <CodeWrapper>
@@ -114,50 +159,26 @@
     <Button disabled={Object.keys(cardImage).length === 0} class="w-40" color="violet" onclick={changeImgLayout}>{horizontal ? 'Vertical' : 'Horizontal'}</Button>
     <Toggle bind:checked={reverse} labelClass="italic dark:text-gray-500 {Object.keys(cardImage).length === 0 ? 'opacity-50 cursor-not-allowed' : ''}" disabled={Object.keys(cardImage).length === 0}>Reverse: {reverse}</Toggle>
   </div>
-
   {#snippet codeblock()}
-    <HighlightCompo code={generatedCode} />
+    <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 
-<H2>Custom size</H2>
-<CodeWrapper innerClass="flex justify-center">
-  <Card class="max-w-[250px]">
-    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Technology acquisitions</h5>
-    <p class="font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions.</p>
-  </Card>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/custom-size.md'] as string} />
-  {/snippet}
-</CodeWrapper>
 
-<H2>Card with action button</H2>
+<H2>Examples</H2>
 
-<CodeWrapper innerClass="flex justify-center">
-  <Card>
-    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
-    <p class="mb-3 font-normal leading-tight text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
-    <Button class="w-fit">
-      Read more <ArrowRightOutline class="ms-2 h-3.5 w-3.5 text-white" />
-    </Button>
-  </Card>
+<CodeWrapper>
+  <div class="mb-4 flex flex-wrap">
+    <Label class="mb-4 w-full font-bold">Example:</Label>
+    {#each exampleArr as style}
+      <Radio labelClass="w-48 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+    {/each}
+  </div>
+  <div class="md:h-40">
+    <SelectedComponent />
+  </div>
   {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/card-with-action-button.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Call to action card</H2>
-<CodeWrapper innerClass="flex justify-center">
-  <Card class="text-center" size="lg" padding="xl">
-    <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Work fast from anywhere</h5>
-    <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">Stay up to date and move work forward with Flowbite on iOS & Android. Download the app today.</p>
-    <div class="items-center justify-center space-y-4 sm:flex sm:space-x-4 sm:space-y-0 rtl:space-x-reverse">
-      <Button>Download it</Button>
-      <Button>Get it on</Button>
-    </div>
-  </Card>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/call-to-action-card.md'] as string} />
+    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 
