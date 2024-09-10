@@ -160,7 +160,7 @@
 <H2>Setup</H2>
 <HighlightCompo replaceLib code={exampleModules[`./examples/Setup.svelte`] as string} />
 
-<H2>Interactive Badge Bilder</H2>
+<H2>Interactive Badge Builder</H2>
 <CodeWrapper>
   <div class="mb-4 h-10">
     <Badge {color} large={badgeSize} dismissable={badgeDismissable} class={badgeClass} bind:badgeStatus={badgeStatus2} {border} {rounded} transition={currentTransition.transition} params={currentTransition.params} href={link}>
