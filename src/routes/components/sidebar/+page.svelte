@@ -96,7 +96,7 @@
 </CodeWrapper>
 
 <H2>Using object</H2>
-<CodeWrapper class="relative">
+<CodeWrapper innerClass="relative">
   <Sidebar class="p-2" asideClass="absolute top-6 left-6 z-40">
     <SidebarGroup>
       {#each sidebarEx1 as { label, href, icon, subContent }}
@@ -128,7 +128,7 @@
 </CodeWrapper>
 
 <H2>Adding active class</H2>
-<CodeWrapper class="relative">
+<CodeWrapper innerClass="relative">
   <Sidebar {activeClass} {nonActiveClass} class="p-2" asideClass="absolute top-6 left-6 z-40">
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
@@ -174,7 +174,7 @@
 </CodeWrapper>
 
 <H2>Override active element</H2>
-<CodeWrapper class="relative">
+<CodeWrapper innerClass="relative">
   <Sidebar {activeClass} {nonActiveClass} class="p-2" asideClass="absolute top-6 left-6 z-40">
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/" active>
@@ -220,7 +220,7 @@
 </CodeWrapper>
 
 <H2>Multi-level dropdown</H2>
-<CodeWrapper class="relative">
+<CodeWrapper innerClass="relative">
   <Sidebar class="p-2" asideClass="absolute top-6 left-6 z-40">
     <SidebarGroup>
       <SidebarItem label="Dashboard">

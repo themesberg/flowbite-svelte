@@ -107,7 +107,7 @@
 
 <H2>Retina-ready</H2>
 <p>Use the srcset attribute to set Retina-ready images with double resolution.</p>
-<CodeWrapper class="flex justify-center">
+<CodeWrapper innerClass="flex justify-center">
   <Img srcset="/images/examples/image-1.jpg 1x, /images/examples/image-1@2x.jpg 2x" alt="sample 1" class="w-full max-w-xl rounded-lg" />
 </CodeWrapper>
 <HighlightCompo code={modules['./md/retina-ready.md'] as string} />

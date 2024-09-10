@@ -7,7 +7,7 @@
   });
   const hasPath = (key: string) => currentUrl.includes(key);
   // console.log(hasPath('typography'))
-  const activeClass = 'flex items-center p-2 text-base font-normal text-white bg-primary-500 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-600 dark:hover:bg-primary-500';
+  const activeClass = 'flex items-center p-2 text-base font-normal text-white dark:hover:text-white hover:text-gray-900 bg-primary-700 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700';
 </script>
 
 <Sidebar {activeClass} nonActiveClass="hover:bg-gray-200" asideClass="fixed inset-0 z-30 flex-none h-full w-64 lg:static lg:h-auto border-e border-gray-200 dark:border-gray-600 lg:overflow-y-visible bg-gray-100 dark:bg-gray-900 lg:pt-0 lg:block hidden" divClass="dark:bg-gray-900 bg-transparent" class="p-1 pl-4">

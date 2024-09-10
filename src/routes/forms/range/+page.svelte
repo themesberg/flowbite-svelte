@@ -116,7 +116,7 @@ ${
 
 <H2>Sizes</H2>
 <p class="text-red-600">Size props won't work with colors.</p>
-<CodeWrapper class="space-y-6">
+<CodeWrapper>
   <Label>Size: {rangeSize}</Label>
   <Range id="small-range" {rangeSize} />
   <div class="mt-4 flex flex-wrap space-x-2">

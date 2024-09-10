@@ -1,13 +1,14 @@
 <script lang="ts">
   import Button from './Button.svelte';
-  // import { getContext } from 'svelte';
+  import { getContext } from 'svelte';
   import { type GradientButtonProps as Props, gradientButton } from '.';
+  import type { SizeType } from '$lib/types';
 
-  // const group = getContext('group');
+  const group: SizeType = getContext('group');
 
   let { children, outline, pill, color = 'blue', shadow, class: className, href, target, rel, type, disabled, size, name, ...restProps }: Props = $props();
 
-  const { base, outlineWrapper } = $derived(gradientButton({ color, outline, pill, shadow, disabled }));
+const { base, outlineWrapper } = $derived(gradientButton({ color, outline, pill, shadow, disabled, group:!!group }));
 </script>
 
 {#if outline}

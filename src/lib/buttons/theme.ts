@@ -218,12 +218,12 @@ export const button = tv({
     {
       group: true,
       pill: true,
-      class: 'first:rounded-s-full last:rounded-e-full'
+      class: 'rounded-none first:rounded-s-full last:rounded-e-full'
     },
     {
       group: true,
       pill: false,
-      class: 'first:rounded-s-lg last:rounded-e-lg'
+      class: 'rounded-none first:rounded-s-lg last:rounded-e-lg'
     },
     {
       group: false,
@@ -286,9 +286,10 @@ export const gradientButton = tv({
         base: 'shadow-lg'
       }
     },
-    // group: {
-    //   true: {},
-    // },
+    group: {
+      true: '',
+      false: ''
+    },
     disabled: {
       true: { base: 'opacity-50 cursor-not-allowed' }
     }
@@ -368,6 +369,16 @@ export const gradientButton = tv({
       shadow: true,
       color: 'redToYellow',
       class: { base: 'shadow-red-500/50 dark:shadow-red-800/80' }
+    },
+    {
+      group: true,
+      pill: true,
+      class: 'rounded-none first:rounded-s-full last:rounded-e-full'
+    },
+    {
+      group: true,
+      pill: false,
+      class: 'rounded-none first:rounded-s-lg last:rounded-e-lg'
     }
   ]
 });

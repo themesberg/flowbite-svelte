@@ -167,7 +167,7 @@
 
 <H2>Interactive Button Bilder</H2>
 
-<CodeWrapper class="flex flex-wrap gap-2">
+<CodeWrapper innerClass="flex flex-wrap gap-2">
   <div class="h-16">
     <Button color={btnColor as Button['color']} class={btnClass} outline={btnOutline} shadow={btnShadow} pill={btnPill} disabled={btnDisabled} size={btnSize as Button['size']} href={btnLink ? btnLink : ''}>Button</Button>
   </div>

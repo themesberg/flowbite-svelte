@@ -96,7 +96,7 @@
 </CodeWrapper>
 
 <H2>Custom size</H2>
-<CodeWrapper class="flex flex-col space-y-2">
+<CodeWrapper>
   <Toggle spanClass="w-16 h-10 after:top-1 after:left-[4px]  after:h-8 after:w-8">Custom toggle</Toggle>
   {#snippet codeblock()}
     <HighlightCompo code={modules['./md/sizes.md'] as string} />
