@@ -1,10 +1,13 @@
 <script lang="ts">
-  import { Group, GroupItem, Activity, ActivityItem, Timeline, TimelineItem, Button } from '$lib';
+  import { type Component } from 'svelte';
+  import { Group, GroupItem, Activity, ActivityItem, Timeline, TimelineItem, Button, Label, Radio, uiHelpers } from '$lib';
   import { ArrowRightOutline, CalendarWeekSolid } from 'flowbite-svelte-icons';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'timeline';
@@ -13,6 +16,31 @@
     import: 'default',
     eager: true
   });
+
+  // for examples section that dynamically changes the svelte component and markdown content
+  import * as ExampleComponents from './examples';
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
+    query: '?raw',
+    import: 'default',
+    eager: true
+  });
+
+  const exampleArr = [
+    { name: 'Default timeline', component: ExampleComponents.DefaultTimeline },
+    { name: 'Vertical timeline', component: ExampleComponents.VerticalTimeline },
+    { name: 'Horizontal timeline', component: ExampleComponents.HorizontalTimeline },
+    { name: 'Activity log', component: ExampleComponents.ActivityLog },
+    { name: 'Grouped timeline', component: ExampleComponents.GroupedTimeline }
+  ];
+  let selectedExample = $state(exampleArr[0].name);
+  let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
+
+  function findObject(arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find((obj) => obj.name === name);
+    return matchingObject ? matchingObject.component : null;
+  }
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
+  // end of dynamic svelte component
 
   let activities = [
     {
@@ -54,124 +82,33 @@
       comment: '"I wanted to share a webinar zeroheight."'
     }
   ];
+   // for examples DynamicCodeBlockHighlight
+   let codeBlock = uiHelpers();
+  let exampleExpand = $state(false);
+  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+  const handleExpandClick = () => {
+    exampleExpand = !exampleExpand;
+  };
+  // end of DynamicCodeBlock setup
+  $effect(() => {
+    exampleExpand = codeBlock.isOpen;
+  });
 </script>
 
 <H1>Timeline</H1>
 
-<H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<H2>Examples</H2>
 
-<H2>Default timeline</H2>
 <CodeWrapper>
-  <Timeline>
-    <TimelineItem title="Application UI code in Tailwind CSS" date="February 2022">
-      <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
-      <Button color="alternative">Learn more<ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
-    </TimelineItem>
-    <TimelineItem title="Application UI code in Tailwind CSS" date="March 2022">
-      <p class="text-base font-normal text-gray-500 dark:text-gray-400">All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.</p>
-    </TimelineItem>
-    <TimelineItem title="Application UI code in Tailwind CSS" date="April 2022">
-      <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements built on top of Tailwind CSS.</p>
-    </TimelineItem>
-  </Timeline>
+  <div class="mb-8 flex flex-wrap">
+    <Label class="mb-4 w-full font-bold">Example:</Label>
+    {#each exampleArr as style}
+      <Radio labelClass="w-40 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+    {/each}
+  </div>
+    <SelectedComponent />
   {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/default-timeline.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Vertical timeline</H2>
-<CodeWrapper>
-  <Timeline order="vertical">
-    <TimelineItem title="Flowbite Application UI v2.0.0" date="Released on January 13th, 2022">
-      {#snippet orientationSlot()}
-        <span class="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-primary-200 ring-8 ring-white dark:bg-primary-900 dark:ring-gray-900">
-          <CalendarWeekSolid class="h-4 w-4 text-primary-600 dark:text-primary-400" />
-        </span>
-      {/snippet}
-      <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
-    </TimelineItem>
-    <TimelineItem title="Flowbite Figma v1.3.0" date="Released on December 7th, 2021">
-      {#snippet orientationSlot()}
-        <span class="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-primary-200 ring-8 ring-white dark:bg-primary-900 dark:ring-gray-900">
-          <CalendarWeekSolid class="h-4 w-4 text-primary-600 dark:text-primary-400" />
-        </span>
-      {/snippet}
-      <p class="text-base font-normal text-gray-500 dark:text-gray-400">All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.</p>
-    </TimelineItem>
-    <TimelineItem title="Flowbite Library v1.2.2" date="Released on December 2nd, 2021">
-      {#snippet orientationSlot()}
-        <span class="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-primary-200 ring-8 ring-white dark:bg-primary-900 dark:ring-gray-900">
-          <CalendarWeekSolid class="h-4 w-4 text-primary-600 dark:text-primary-400" />
-        </span>
-      {/snippet}
-      <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements built on top of Tailwind CSS.</p>
-    </TimelineItem>
-  </Timeline>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/vertical-timeline.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Horizontal Timeline</H2>
-<CodeWrapper>
-  <Timeline order="horizontal">
-    <TimelineItem title="Flowbite Library v1.0.0" date="Released on December 2nd, 2021">
-      {#snippet orientationSlot()}
-        <div class="flex items-center">
-          <div class="z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-200 ring-0 ring-white sm:ring-8 dark:bg-primary-900 dark:ring-gray-900">
-            <CalendarWeekSolid class="h-4 w-4 text-primary-600 dark:text-primary-400" />
-          </div>
-          <div class="hidden h-0.5 w-full bg-gray-200 sm:flex dark:bg-gray-700"></div>
-        </div>
-      {/snippet}
-      <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements.</p>
-    </TimelineItem>
-    <TimelineItem title="Flowbite Library v1.2.0" date="Released on December 23th, 2021">
-      {#snippet orientationSlot()}
-        <div class="flex items-center">
-          <div class="z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-200 ring-0 ring-white sm:ring-8 dark:bg-primary-900 dark:ring-gray-900">
-            <CalendarWeekSolid class="h-4 w-4 text-primary-600 dark:text-primary-400" />
-          </div>
-          <div class="hidden h-0.5 w-full bg-gray-200 sm:flex dark:bg-gray-700"></div>
-        </div>
-      {/snippet}
-      <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements.</p>
-    </TimelineItem>
-    <TimelineItem title="Flowbite Library v1.3.0" date="Released on January 5th, 2021">
-      {#snippet orientationSlot()}
-        <div class="flex items-center">
-          <div class="z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-200 ring-0 ring-white sm:ring-8 dark:bg-primary-900 dark:ring-gray-900">
-            <CalendarWeekSolid class="h-4 w-4 text-primary-600 dark:text-primary-400" />
-          </div>
-          <div class="hidden h-0.5 w-full bg-gray-200 sm:flex dark:bg-gray-700"></div>
-        </div>
-      {/snippet}
-      <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements.</p>
-    </TimelineItem>
-  </Timeline>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/horizontal-timeline.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Activity Log</H2>
-<CodeWrapper>
-  <Activity>
-    <ActivityItem {activities} />
-  </Activity>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/activity-log.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Grouped timeline</H2>
-<CodeWrapper>
-  <Group date="January 13th, 2022">
-    <GroupItem timelines={groupTimelines} />
-  </Group>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/grouped-timeline.md'] as string} />
+    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 

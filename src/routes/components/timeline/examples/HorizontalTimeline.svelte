@@ -1,3 +1,8 @@
+<script lang="ts">
+  import { Timeline, TimelineItem } from '$lib';
+  import { CalendarWeekSolid } from 'flowbite-svelte-icons';
+</script>
+
 <Timeline order="horizontal">
   <TimelineItem title="Flowbite Library v1.0.0" date="Released on December 2nd, 2021">
     {#snippet orientationSlot()}

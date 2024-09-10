@@ -1,6 +1,6 @@
 <script lang="ts">
-  ...
-  let activities = [
+  import { Activity, ActivityItem } from '$lib';
+  const activities = [
     {
       name: 'Bonnie moved <a href="/" class="font-semibold text-primary-600 dark:text-primary-500 hover:underline">Jese Leos</a> to <span class="bg-gray-100 text-gray-800 text-xs font-normal me-2 px-2.5 py-0.5 rounded dark:bg-gray-600 dark:text-gray-300">Funny Group</span>',
       date: 'just now',

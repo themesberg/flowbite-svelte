@@ -1,6 +1,6 @@
 <script lang="ts">
-  ...
-  let groupTimelines = [
+  import { Group, GroupItem } from '$lib';
+  const groupTimelines = [
     {
       name: '<span class="font-medium text-gray-900 dark:text-white">Jese Leos</span> likes <span class="font-medium text-gray-900 dark:text-white">Bonnie Green\'s</span> post in <span class="font-medium text-gray-900 dark:text-white"> How to start with Flowbite library</span>',
       src: '/images/profile-picture-1.webp',

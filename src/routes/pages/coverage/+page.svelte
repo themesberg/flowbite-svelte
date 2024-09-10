@@ -163,12 +163,12 @@
     },
     timeline: {
       checked: true,
-      notes: 'Variants checked'
+      // notes: 'Variants checked'
     },
     toast: {
       checked: true,
       problems: 'Icons, Autohide example',
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
     },
     tooltip: {
       checked: true,
