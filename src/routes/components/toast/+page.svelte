@@ -1,14 +1,17 @@
 <script lang="ts">
-  import { Toast, toast, Avatar, Button, Label, Radio } from '$lib';
+  import { type Component } from 'svelte';
+  import { Toast, toast, Avatar, Button, Label, Radio, uiHelpers } from '$lib';
   import { FireOutline, CheckCircleSolid, CameraPhotoOutline } from 'flowbite-svelte-icons';
   import { linear } from 'svelte/easing';
   import { blur, fly, slide, scale, fade } from 'svelte/transition';
   import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
   import H3 from '../../utils/H3.svelte';
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'toast';
@@ -17,6 +20,30 @@
     import: 'default',
     eager: true
   });
+
+  // for examples section that dynamically changes the svelte component and markdown content
+  import * as ExampleComponents from './examples';
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
+    query: '?raw',
+    import: 'default',
+    eager: true
+  });
+
+  const exampleArr = [
+    { name: 'Push notification', component: ExampleComponents.PushNotification },
+    { name: 'Toast message', component: ExampleComponents.ToastMessage },
+    { name: 'Undo button', component: ExampleComponents.UndoButton }
+  ];
+  let selectedExample = $state(exampleArr[0].name);
+  let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
+
+  function findObject(arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find((obj) => obj.name === name);
+    return matchingObject ? matchingObject.component : null;
+  }
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
+  // end of dynamic svelte component
+
   const colors = Object.keys(toast.variants.color) as Toast['color'][];
   let toastColor: Toast['color'] = $state('primary');
   let dismissable = $state(true);
@@ -78,11 +105,33 @@
 </div>`;
     })()
   );
+  // for interactive builder
+  let builder = uiHelpers();
+  let builderExpand = $state(false);
+  let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
+  const handleBuilderExpandClick = () => {
+    builderExpand = !builderExpand;
+  };
+  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
+
+  // for examples DynamicCodeBlockHighlight
+  let codeBlock = uiHelpers();
+  let exampleExpand = $state(false);
+  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+  const handleExpandClick = () => {
+    exampleExpand = !exampleExpand;
+  };
+  // end of DynamicCodeBlock setup
+  $effect(() => {
+    exampleExpand = codeBlock.isOpen;
+    builderExpand = builder.isOpen;
+  });
 </script>
 
 <H1>Toast</H1>
+
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<HighlightCompo replaceLib code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Interactive Toast Builder</H2>
 <CodeWrapper>
@@ -120,84 +169,24 @@
     <Button onclick={changeDismissable}>{dismissable ? 'Disable' : 'Enable'} dismissable</Button>
   </div>
   {#snippet codeblock()}
-    <HighlightCompo code={generatedCode} />
+    <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 
-<H2>Undo button</H2>
-<CodeWrapper>
-  <div class="flex flex-col items-center">
-    <div class="mb-4 h-16">
-      <Toast bind:toastStatus={toastUndoStatus} iconClass="w-full text-sm font-normal flex items-center justify-between">
-        Conversation archived.
-        <a class="ms-auto rounded-lg p-1.5 font-medium text-primary-600 hover:bg-primary-100 dark:text-primary-500 dark:hover:bg-gray-700" href="/">Undo</a>
-      </Toast>
-    </div>
-    <Button class="w-36" disabled={toastUndoStatus ? true : false} onclick={changeUndoStatus}>Open toast</Button>
-  </div>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/undo-button.md'] as string} />
-  {/snippet}
-</CodeWrapper>
+<H2>Examples</H2>
 
-<H2>Other examples</H2>
-<H3>Toast message</H3>
 <CodeWrapper>
-  <div class="flex h-[180px] flex-col items-center">
-    <Toast align={false} iconClass="w-10 h-10 rounded-full">
-      {#snippet icon()}
-        <Avatar src="/images/profile-picture-1.webp" />
-      {/snippet}
-      <div class="ms-3 text-sm font-normal">
-        <span class="mb-1 text-sm font-semibold text-gray-900 dark:text-white">Jese Leos</span>
-        <div class="mb-2 text-sm font-normal">Hi Neil, thanks for sharing your thoughts regarding Flowbite.</div>
-        <Button size="xs">Reply</Button>
-      </div>
-    </Toast>
+  <div class="mb-4 flex flex-wrap">
+    <Label class="mb-4 w-full font-bold">Example:</Label>
+    {#each exampleArr as style}
+      <Radio labelClass="w-40 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+    {/each}
+  </div>
+  <div class="md:h-40">
+    <SelectedComponent />
   </div>
   {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/toast-message.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H3>Push notification</H3>
-<CodeWrapper>
-  <div class="flex h-[140px] flex-col items-center">
-    <Toast align={false}>
-      <span class="font-semibold text-gray-900 dark:text-white">New notification</span>
-      <div class="mt-3 flex items-center">
-        <Avatar src="/images/profile-picture-3.webp" />
-        <div class="ms-3">
-          <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Bonnie Green</h4>
-          <div class="text-sm font-normal">commented on your photo</div>
-          <span class="text-xs font-medium text-primary-600 dark:text-primary-500">a few seconds ago</span>
-        </div>
-      </div>
-    </Toast>
-  </div>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/push-notification.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H3>Interactive toast</H3>
-<CodeWrapper>
-  <div class="flex h-48 flex-col items-center">
-    <Toast align={false}>
-      {#snippet icon()}
-        <CameraPhotoOutline class="h-5 w-5" />
-      {/snippet}
-      <span class="font-semibold text-gray-900 dark:text-white">Update available</span>
-      <div class="mt-3">
-        <div class="mb-2 text-sm font-normal">A new software version is available for download.</div>
-        <div class="grid grid-cols-2 gap-2">
-          <Button size="xs" class="w-full">Update</Button>
-        </div>
-      </div>
-    </Toast>
-  </div>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/interactive-toast.md'] as string} />
+    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 

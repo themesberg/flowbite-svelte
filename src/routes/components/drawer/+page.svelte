@@ -1,12 +1,12 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Drawer, Drawerhead, Button, uiHelpers, Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper, Label, Radio } from '$lib';
-  import { InfoCircleSolid, ArrowRightOutline, ChartOutline, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditSolid, ShoppingBagSolid } from 'flowbite-svelte-icons';
+  import { Drawer, Drawerhead, Button, uiHelpers, Label, Radio } from '$lib';
+  import { InfoCircleSolid } from 'flowbite-svelte-icons';
   import { blur, fly, slide, scale, fade } from 'svelte/transition';
   import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
   import { linear, sineIn } from 'svelte/easing';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
+  import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
@@ -14,12 +14,6 @@
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'drawer';
-
-  const modules = import.meta.glob('./md/*.md', {
-    query: '?raw',
-    import: 'default',
-    eager: true
-  });
 
   // for examples section that dynamically changes the svelte component and markdown content
   import * as ExampleComponents from './examples';
@@ -44,34 +38,13 @@
   const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
 
-  const drawerA = uiHelpers();
-  let drawerStatusA = $state(false);
-  const closeDrawerA = drawerA.close;
-
-  const drawerB = uiHelpers();
-  let drawerStatusB = $state(false);
-  const closeDrawerB = drawerB.close;
-
-  const drawerMouseEnter = uiHelpers();
-  let drawerStatusMouseEnter = $state(false);
-  const closeDrawerMouseEnter = drawerMouseEnter.close;
-
   const drawerTransition = uiHelpers();
   let drawerStatusTransition = $state(false);
   const closeDrawerTransition = drawerTransition.close;
 
-  const drawerBackdrop = uiHelpers();
-  let drawerStatusBackdrop = $state(false);
-  const closeDrawerBackdrop = drawerBackdrop.close;
-
   $effect(() => {
-    drawerStatusA = drawerA.isOpen;
-    drawerStatusB = drawerB.isOpen;
     drawerStatusTransition = drawerTransition.isOpen;
-    drawerStatusMouseEnter = drawerMouseEnter.isOpen;
-    drawerStatusBackdrop = drawerBackdrop.isOpen;
   });
-  let spanClass = 'flex-1 ms-3 whitespace-nowrap';
 
   // transition
   type TransitionOption = {
@@ -111,11 +84,6 @@
   let outsideclickStatus = $state(true);
   const changeOutsideclickStatus = () => {
     outsideclickStatus = !outsideclickStatus;
-  };
-
-  let offsetClass = $state('');
-  const changeClass = () => {
-    offsetClass = offsetClass === '' ? 'top-16 h-screen start-0' : '';
   };
 
   // code generator

@@ -163,7 +163,7 @@
 <H1>Buttons</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
+<HighlightCompo replaceLib code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Interactive Button Bilder</H2>
 
