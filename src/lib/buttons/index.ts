@@ -21,8 +21,8 @@ type ButtonSpecificProps = {
   disabled?: boolean;
 };
 
-type ButtonProps = ButtonSpecificProps & 
-  Omit<HTMLButtonAttributes, keyof ButtonSpecificProps> & 
+type ButtonProps = ButtonSpecificProps &
+  Omit<HTMLButtonAttributes, keyof ButtonSpecificProps> &
   Omit<HTMLAnchorAttributes, keyof ButtonSpecificProps> & {
     href?: string;
   };
@@ -78,10 +78,10 @@ type GradientButtonSpecificProps = {
 //   name?: HTMLButtonAttributes['name'];
 // }
 
-type GradientButtonProps = GradientButtonSpecificProps & 
-  Omit<HTMLButtonAttributes, keyof ButtonSpecificProps> & 
+type GradientButtonProps = GradientButtonSpecificProps &
+  Omit<HTMLButtonAttributes, keyof ButtonSpecificProps> &
   Omit<HTMLAnchorAttributes, keyof ButtonSpecificProps> & {
     href?: string;
-};
-  
+  };
+
 export { Button, GradientButton, gradientButton, button, type ButtonProps, type GradientButtonProps };

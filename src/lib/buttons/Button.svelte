@@ -36,17 +36,12 @@
 @prop pill = false
 @prop outline = false
 @prop size = group ? 'sm' : 'md'
-@prop href = undefined
-@prop target = undefined
-@prop rel = undefined
+@prop href
 @prop type = 'button'
 @prop color = group ? (outline ? 'dark' : 'alternative') : 'primary'
 @prop shadow = false
 @prop tag = 'button'
 @prop disabled
-@prop name = undefined
 @prop class: className
-@prop onclick
-@prop onmouseenter
 @prop ...restProps
 -->

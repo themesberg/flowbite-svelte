@@ -14,12 +14,6 @@
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'badge';
-  let eventStatus = $state(true);
-  function handleClose() {
-    console.log('Badge dismissed');
-    alert('Badge dismissed');
-    eventStatus = false;
-  }
 
   // for examples section that dynamically changes the svelte component and markdown content
   import * as ExampleComponents from './examples';

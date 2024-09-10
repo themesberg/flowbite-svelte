@@ -39,7 +39,7 @@
     "copy:packagejson": "svelte-lib-helpers package",
     "gen:docs5": "svelte-lib-helpers docs5",
     "gen:runes-data": "svelte-lib-helpers runes-data",
-    "lib-helpers": "npm run format && npm run gen:docs5 && npm run package && npm run gen:exports && npm run copy:packagejson",
+    "lib-helpers": "npm run format && gen:runes-data && npm run gen:docs5 && npm run package && npm run gen:exports && npm run copy:packagejson",
     "generate-file-list": "tsx scripts/generateFileList.ts",
     "prebuild": "npm run generate-file-list",
     "changeset:version": "changeset version",
@@ -48,6 +48,7 @@
   "devDependencies": {
     "@changesets/cli": "^2.27.8",
     "@playwright/test": "^1.47.0",
+    "@popperjs/core": "^2.11.8",
     "@sveltejs/adapter-auto": "^3.2.4",
     "@sveltejs/kit": "^2.5.26",
     "@sveltejs/package": "^2.3.4",
@@ -529,6 +530,14 @@
     "./ToolbarGroup.svelte": {
       "types": "./dist/toolbar/ToolbarGroup.svelte.d.ts",
       "svelte": "./dist/toolbar/ToolbarGroup.svelte"
+    },
+    "./Tooltip.svelte": {
+      "types": "./dist/tooltip/Tooltip.svelte.d.ts",
+      "svelte": "./dist/tooltip/Tooltip.svelte"
+    },
+    "./TooltipScroll.svelte": {
+      "types": "./dist/tooltip/TooltipScroll.svelte.d.ts",
+      "svelte": "./dist/tooltip/TooltipScroll.svelte"
     },
     "./A.svelte": {
       "types": "./dist/typography/anchor/A.svelte.d.ts",
