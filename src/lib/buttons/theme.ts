@@ -287,7 +287,7 @@ export const gradientButton = tv({
       }
     },
     group: {
-      true: '',
+      true: 'rounded-none',
       false: ''
     },
     disabled: {
@@ -373,12 +373,12 @@ export const gradientButton = tv({
     {
       group: true,
       pill: true,
-      class: 'rounded-none first:rounded-s-full last:rounded-e-full'
+      class: 'first:rounded-s-full last:rounded-e-full'
     },
     {
       group: true,
       pill: false,
-      class: 'rounded-none first:rounded-s-lg last:rounded-e-lg'
+      class: 'first:rounded-s-lg last:rounded-e-lg'
     }
   ]
 });

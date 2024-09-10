@@ -126,6 +126,12 @@
       <GradientButton color="cyanToBlue">Settings</GradientButton>
       <GradientButton color="greenToBlue">Messages</GradientButton>
     </ButtonGroup>
+    <div class="py-4">Dualtone gradient pill</div>
+    <ButtonGroup class="space-x-px">
+      <GradientButton pill color="purpleToBlue">Profile</GradientButton>
+      <GradientButton pill color="cyanToBlue">Settings</GradientButton>
+      <GradientButton pill color="greenToBlue">Messages</GradientButton>
+    </ButtonGroup>
   </div>
   {#snippet codeblock()}
     <HighlightCompo code={modules['./md/more-examples.md'] as string} />
