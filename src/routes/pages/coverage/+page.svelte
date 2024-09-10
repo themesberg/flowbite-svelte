@@ -66,7 +66,7 @@
     },
     card: {
       checked: true,
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
       // problems: 'Shadow,User profile card, Card with form inputs, E-commerce card, Card with list, Pricing card, Testimonial card.'
     },
     carousel: {
@@ -78,7 +78,7 @@
     },
     deviceMockups: {
       checked: true,
-      notes: 'Variants checked'
+      // notes: 'Variants checked'
     },
     drawer: {
       checked: true,

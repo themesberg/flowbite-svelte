@@ -1,13 +1,16 @@
 <script lang="ts">
+  import { type Component } from 'svelte';
   import { Drawer, Drawerhead, Button, uiHelpers, Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper, Label, Radio } from '$lib';
   import { InfoCircleSolid, ArrowRightOutline, ChartOutline, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditSolid, ShoppingBagSolid } from 'flowbite-svelte-icons';
   import { blur, fly, slide, scale, fade } from 'svelte/transition';
   import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
   import { linear, sineIn } from 'svelte/easing';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'drawer';
@@ -17,6 +20,29 @@
     import: 'default',
     eager: true
   });
+
+  // for examples section that dynamically changes the svelte component and markdown content
+  import * as ExampleComponents from './examples';
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
+    query: '?raw',
+    import: 'default',
+    eager: true
+  });
+
+  const exampleArr = [
+    { name: 'Drawer navigation', component: ExampleComponents.DrawerNavigation },
+    { name: 'Offset', component: ExampleComponents.Offset },
+    { name: 'Onmouseenter', component: ExampleComponents.Onmouseenter }
+  ];
+  let selectedExample = $state(exampleArr[0].name);
+  let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
+
+  function findObject(arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find((obj) => obj.name === name);
+    return matchingObject ? matchingObject.component : null;
+  }
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
+  // end of dynamic svelte component
 
   const drawerA = uiHelpers();
   let drawerStatusA = $state(false);
@@ -130,38 +156,33 @@
 </Drawer>`;
     })()
   );
+  // for interactive builder
+  let builder = uiHelpers();
+  let builderExpand = $state(false);
+  let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
+  const handleBuilderExpandClick = () => {
+    builderExpand = !builderExpand;
+  };
+  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
+
+  // for examples DynamicCodeBlockHighlight
+  let codeBlock = uiHelpers();
+  let exampleExpand = $state(false);
+  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+  const handleExpandClick = () => {
+    exampleExpand = !exampleExpand;
+  };
+  // end of DynamicCodeBlock setup
+  $effect(() => {
+    exampleExpand = codeBlock.isOpen;
+    builderExpand = builder.isOpen;
+  });
 </script>
 
 <H1>Drawer</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md'] as string} />
-
-<H2>Default drawer</H2>
-<CodeWrapper>
-  <div class="text-center">
-    <Button onclick={drawerA.toggle}>Show drawer</Button>
-  </div>
-
-  <Drawer drawerStatus={drawerStatusA} closeDrawer={closeDrawerA}>
-    <Drawerhead onclick={closeDrawerA}>
-      <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-        <InfoCircleSolid class="me-2.5 h-4 w-4" />Info
-      </h5>
-    </Drawerhead>
-    <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
-      Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline hover:no-underline dark:text-primary-500">limited-time sale</a>
-      for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
-    </p>
-    <div class="grid grid-cols-2 gap-2">
-      <Button color="light" href="/">Learn more</Button>
-      <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
-    </div>
-  </Drawer>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/defaultdrawer.md'] as string} />
-  {/snippet}
-</CodeWrapper>
+<HighlightCompo replaceLib code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Interactive Drawer Builder</H2>
 <CodeWrapper>
@@ -198,121 +219,25 @@
     <Button class="w-48" color="secondary" onclick={changeOutsideclickStatus}>{outsideclickStatus ? 'Disable outsideclick' : 'Enable outsideclick'}</Button>
   </div>
   {#snippet codeblock()}
-    <HighlightCompo code={generatedCode} />
+    <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 
-<H2>Offset</H2>
-<CodeWrapper class="space-y-4">
-  <div class="mb-4 text-center">
-    <Button onclick={drawerBackdrop.toggle}>Show drawer</Button>
-  </div>
-  <Drawer class={offsetClass} drawerStatus={drawerStatusBackdrop} closeDrawer={closeDrawerBackdrop}>
-    <Drawerhead onclick={closeDrawerBackdrop}>
-      <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-        <InfoCircleSolid class="me-2.5 h-4 w-4" />Drawer
-      </h5>
-    </Drawerhead>
-    <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
-      Offset: {offsetClass ? offsetClass : 'none'}
-    </p>
-  </Drawer>
-  <div class="flex justify-center gap-2">
-    <Button color="green" onclick={changeClass}>{offsetClass ? 'Remove offset' : 'Add offset'}</Button>
-  </div>
-  {#snippet codeblock()}
-    <HighlightCompo codeLang="ts" code={modules['./md/offset-new.md'] as string} />
-  {/snippet}
-</CodeWrapper>
 
-<H2>Drawer navigation</H2>
+<H2>Examples</H2>
+
 <CodeWrapper>
-  <div class="text-center">
-    <Button onclick={drawerB.toggle}>Show navigation</Button>
+  <div class="mb-4 flex flex-wrap">
+    <Label class="mb-4 w-full font-bold">Example:</Label>
+    {#each exampleArr as style}
+      <Radio labelClass="w-40 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+    {/each}
   </div>
-  <Drawer drawerStatus={drawerStatusB} closeDrawer={closeDrawerB}>
-    <Drawerhead onclick={closeDrawerB}>
-      <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-        <InfoCircleSolid class="me-2.5 h-4 w-4" />Menu
-      </h5>
-    </Drawerhead>
-    <Sidebar class="p-2">
-      <SidebarGroup>
-        <SidebarItem label="Dashboard">
-          {#snippet iconSlot()}
-            <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
-          {/snippet}
-        </SidebarItem>
-        <SidebarDropdownWrapper label="E-commerce" btnClass="p-2">
-          {#snippet iconSlot()}
-            <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
-          {/snippet}
-          <SidebarItem label="Products" />
-          <SidebarItem label="Billing" />
-          <SidebarItem label="Invoice" />
-        </SidebarDropdownWrapper>
-        <SidebarItem label="Drawer" href="/components/drawer" {spanClass}>
-          {#snippet iconSlot()}
-            <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
-          {/snippet}
-          {#snippet subtext()}
-            <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
-          {/snippet}
-        </SidebarItem>
-        <SidebarItem label="Inbox" {spanClass}>
-          {#snippet iconSlot()}
-            <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
-          {/snippet}
-          {#snippet subtext()}
-            <span class="ms-3 inline-flex h-3 w-3 items-center justify-center rounded-full bg-primary-200 p-3 text-sm font-medium text-primary-600 dark:bg-primary-900 dark:text-primary-200">3</span>
-          {/snippet}
-        </SidebarItem>
-        <SidebarItem label="Users">
-          {#snippet iconSlot()}
-            <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
-          {/snippet}
-        </SidebarItem>
-        <SidebarItem label="Sign In">
-          {#snippet iconSlot()}
-            <ArrowRightToBracketOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
-          {/snippet}
-        </SidebarItem>
-        <SidebarItem label="Sign Up">
-          {#snippet iconSlot()}
-            <EditSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
-          {/snippet}
-        </SidebarItem>
-      </SidebarGroup>
-    </Sidebar>
-  </Drawer>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/navigation.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>onmouseenter</H2>
-<CodeWrapper>
-  <div class="text-center">
-    <Button onmouseenter={drawerMouseEnter.toggle}>Show drawer</Button>
+  <div class="md:h-40">
+    <SelectedComponent />
   </div>
-
-  <Drawer drawerStatus={drawerStatusMouseEnter} closeDrawer={closeDrawerMouseEnter}>
-    <Drawerhead onclick={closeDrawerMouseEnter}>
-      <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-        <InfoCircleSolid class="me-2.5 h-4 w-4" />Info
-      </h5>
-    </Drawerhead>
-    <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
-      Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline hover:no-underline dark:text-primary-500">limited-time sale</a>
-      for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
-    </p>
-    <div class="grid grid-cols-2 gap-4">
-      <Button color="light" href="/">Learn more</Button>
-      <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
-    </div>
-  </Drawer>
   {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/onmouseenter.md'] as string} />
+    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 

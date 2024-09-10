@@ -1,1 +1,0 @@
-<Button onmouseenter={drawerMouseEnter.toggle}>Show drawer</Button>

@@ -1,5 +1,5 @@
 <script>
-  import { Drawer, Drawerhead, Button, uiHelpers } from 'svelte-5-ui-lib'
+  import { Drawer, Drawerhead, Button, uiHelpers } from '$lib'
   const drawerA = uiHelpers();
   let drawerStatusA = $state(false);
   const closeDrawerA = drawerA.close;

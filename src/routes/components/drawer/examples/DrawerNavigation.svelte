@@ -1,7 +1,19 @@
+<script lang="ts">
+  import { Button, Drawer, Drawerhead, uiHelpers, Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper, Label, Radio } from '$lib';
+  import { InfoCircleSolid, ArrowRightOutline, ChartOutline, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditSolid, ShoppingBagSolid } from 'flowbite-svelte-icons';
+  const drawerB = uiHelpers();
+  let drawerStatusB = $state(false);
+  const closeDrawerB = drawerB.close;
+  $effect(() => {
+    drawerStatusB = drawerB.isOpen;
+  });
+  let spanClass = 'flex-1 ms-3 whitespace-nowrap';
+</script>
+
+
 <div class="text-center">
   <Button onclick={drawerB.toggle}>Show navigation</Button>
 </div>
-
 <Drawer drawerStatus={drawerStatusB} closeDrawer={closeDrawerB}>
   <Drawerhead onclick={closeDrawerB}>
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
