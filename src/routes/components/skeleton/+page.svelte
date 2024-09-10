@@ -74,16 +74,16 @@
 
 <H2>Default skeleton</H2>
 <CodeWrapper>
-  <div class="h-40">
+  <div class="md:h-40">
     <Skeleton size={skeletonSize} class={skeletonClass} />
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size(width):</Label>
     {#each skeletonSizes as size}
-      <Radio labelClass="w-24 my-1" name="skeletonsize" bind:group={skeletonSize} value={size}>{size}</Radio>
+      <Radio labelClass="w-12 my-1" name="skeletonsize" bind:group={skeletonSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <Button class="mt-4 w-40" onclick={() => (skeletonClass === '' ? (skeletonClass = 'ml-4') : (skeletonClass = ''))}>{skeletonClass ? 'Remove class' : 'Add class'}</Button>
+  <Button class="w-36" onclick={() => (skeletonClass === '' ? (skeletonClass = 'ml-4') : (skeletonClass = ''))}>{skeletonClass ? 'Remove class' : 'Add class'}</Button>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCodeSkeleton} />
   {/snippet}
@@ -91,22 +91,22 @@
 
 <H2>Image placeholder</H2>
 <CodeWrapper>
-  <div class="h-[460px] md:h-64">
+  <div class="md:h-64">
     <ImagePlaceholder size={imagePlaceholderSize} rounded={imagePlaceholderRounded} class={imagePlaceholderClass} />
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each imageSizes as size}
-      <Radio labelClass="w-24 my-1" name="imageSize" bind:group={imagePlaceholderSize} value={size}>{size}</Radio>
+      <Radio labelClass="w-12 my-1" name="imageSize" bind:group={imagePlaceholderSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <div class="my-4 flex flex-wrap space-x-4">
+  <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Rounded:</Label>
     {#each imageRoundedSizes as size}
-      <Radio labelClass="w-24 my-1" name="imageRoundedSize" bind:group={imagePlaceholderRounded} value={size}>{size}</Radio>
+      <Radio labelClass="w-12 my-1" name="imageRoundedSize" bind:group={imagePlaceholderRounded} value={size}>{size}</Radio>
     {/each}
   </div>
-  <Button class="mt-4 w-40" onclick={() => (imagePlaceholderClass === '' ? (imagePlaceholderClass = 'ml-4') : (imagePlaceholderClass = ''))}>{imagePlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <Button class="w-36" onclick={() => (imagePlaceholderClass === '' ? (imagePlaceholderClass = 'ml-4') : (imagePlaceholderClass = ''))}>{imagePlaceholderClass ? 'Remove class' : 'Add class'}</Button>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCodeImage} />
   {/snippet}
@@ -114,16 +114,16 @@
 
 <H2>Video placeholder</H2>
 <CodeWrapper>
-  <div class="h-64">
+  <div class="md:h-64">
     <VideoPlaceholder size={videoPlaceholderSize} class={videoPlaceholderClass} />
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size(width):</Label>
     {#each videoSizes as size}
-      <Radio labelClass="w-24 my-1" name="videoSize" bind:group={videoPlaceholderSize} value={size}>{size}</Radio>
+      <Radio labelClass="w-12 my-1" name="videoSize" bind:group={videoPlaceholderSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <Button class="mt-4 w-40" onclick={() => (videoPlaceholderClass === '' ? (videoPlaceholderClass = 'ml-4') : (videoPlaceholderClass = ''))}>{videoPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <Button class="w-36" onclick={() => (videoPlaceholderClass === '' ? (videoPlaceholderClass = 'ml-4') : (videoPlaceholderClass = ''))}>{videoPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCodeVideo} />
   {/snippet}
@@ -135,10 +135,10 @@
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size(width):</Label>
     {#each textSizes as size}
-      <Radio labelClass="w-24 my-1" name="textSize" bind:group={textPlaceholderSize} value={size}>{size}</Radio>
+      <Radio labelClass="w-12 my-1" name="textSize" bind:group={textPlaceholderSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <Button class="mt-4 w-40" onclick={() => (textPlaceholderClass === '' ? (textPlaceholderClass = 'ml-4') : (textPlaceholderClass = ''))}>{textPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <Button class="w-36" onclick={() => (textPlaceholderClass === '' ? (textPlaceholderClass = 'ml-4') : (textPlaceholderClass = ''))}>{textPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCodeText} />
   {/snippet}
@@ -150,10 +150,10 @@
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size(width):</Label>
     {#each cardSizes as size}
-      <Radio labelClass="w-24 my-1" name="cardSize" bind:group={cardPlaceholderSize} value={size}>{size}</Radio>
+      <Radio labelClass="w-12 my-1" name="cardSize" bind:group={cardPlaceholderSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <Button class="mt-4 w-40" onclick={() => (cardPlaceholderClass === '' ? (cardPlaceholderClass = 'ml-4') : (cardPlaceholderClass = ''))}>{cardPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <Button class="w-36" onclick={() => (cardPlaceholderClass === '' ? (cardPlaceholderClass = 'ml-4') : (cardPlaceholderClass = ''))}>{cardPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCodeCard} />
   {/snippet}
@@ -162,7 +162,7 @@
 <H2>Widget placeholder</H2>
 <CodeWrapper>
   <WidgetPlaceholder class={widgetPlaceholderClass} />
-  <Button class="mt-4 w-40" onclick={() => (widgetPlaceholderClass === '' ? (widgetPlaceholderClass = 'ml-4') : (widgetPlaceholderClass = ''))}>{widgetPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <Button class="mt-4 w-36" onclick={() => (widgetPlaceholderClass === '' ? (widgetPlaceholderClass = 'ml-4') : (widgetPlaceholderClass = ''))}>{widgetPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCodeWidget} />
   {/snippet}
@@ -170,28 +170,28 @@
 
 <H2>List placeholder</H2>
 <CodeWrapper>
-  <div class="h-80 md:h-[500px]">
+  <div class="md:h-[500px]">
     <ListPlaceholder itemNumber={listPlaceholderItemNumber} size={listPlaceholderSize} rounded={listPlaceholderRounded} class={listPlaceholderClass} />
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each listSizes as size}
-      <Radio labelClass="w-24 my-1" name="size" bind:group={listPlaceholderSize} value={size}>{size}</Radio>
+      <Radio labelClass="w-12 my-1" name="size" bind:group={listPlaceholderSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <div class="my-4 flex flex-wrap space-x-4">
+  <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Rounded:</Label>
     {#each listRoundedSizes as size}
-      <Radio labelClass="w-24 my-1" name="roundedSize" bind:group={listPlaceholderRounded} value={size}>{size}</Radio>
+      <Radio labelClass="w-12 my-1" name="roundedSize" bind:group={listPlaceholderRounded} value={size}>{size}</Radio>
     {/each}
   </div>
-  <div class="my-4 flex flex-wrap space-x-4">
+  <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Items:</Label>
     {#each listItemNumbers as itemNumber}
-      <Radio labelClass="w-24 my-1" name="itemNumber" bind:group={listPlaceholderItemNumber} value={itemNumber}>{itemNumber}</Radio>
+      <Radio labelClass="w-10 my-1" name="itemNumber" bind:group={listPlaceholderItemNumber} value={itemNumber}>{itemNumber}</Radio>
     {/each}
   </div>
-  <Button class="mt-4 w-40" onclick={() => (listPlaceholderClass === '' ? (listPlaceholderClass = 'ml-4') : (listPlaceholderClass = ''))}>{listPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <Button class="w-36" onclick={() => (listPlaceholderClass === '' ? (listPlaceholderClass = 'ml-4') : (listPlaceholderClass = ''))}>{listPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCodeList} />
   {/snippet}
@@ -200,7 +200,7 @@
 <H2>Testimonial placeholder</H2>
 <CodeWrapper>
   <TestimonialPlaceholder class={TestimonialPlaceholderClass} />
-  <Button class="mt-4 w-40" onclick={() => (TestimonialPlaceholderClass === '' ? (TestimonialPlaceholderClass = 'mx-auto w-[200px] sm:w-[400px]') : (TestimonialPlaceholderClass = ''))}>{TestimonialPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <Button class="mt-4 w-36" onclick={() => (TestimonialPlaceholderClass === '' ? (TestimonialPlaceholderClass = 'mx-auto w-[200px] sm:w-[400px]') : (TestimonialPlaceholderClass = ''))}>{TestimonialPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCodeTestimonial} />
   {/snippet}

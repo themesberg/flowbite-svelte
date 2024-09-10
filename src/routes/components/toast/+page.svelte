@@ -135,7 +135,7 @@
 
 <H2>Interactive Toast Builder</H2>
 <CodeWrapper>
-  <div class="relative h-56">
+  <div class="relative h-28 md:h-56">
     <Toast color={toastColor} bind:toastStatus {dismissable} transition={currentTransition.transition} params={currentTransition.params} position={toastPosition}>
       {#snippet icon()}
         <CheckCircleSolid class="h-5 w-5" />
@@ -147,7 +147,7 @@
   <div class="mb-4">
     <Button disabled={toastStatus ? true : false} onclick={() => (toastStatus = true)}>Open toast</Button>
   </div>
-  <div class="flex flex-wrap space-x-2">
+  <div class="flex flex-wrap space-x-2 mb-4">
     <Label class="mb-4 w-full font-bold">Color:</Label>
     {#each colors as colorOption}
       <Radio labelClass="w-24 my-1" name="interactive_toast_color" bind:group={toastColor} color={colorOption as Toast['color']} value={colorOption}>{colorOption}</Radio>
@@ -156,16 +156,16 @@
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Transition</Label>
     {#each transitions as transition}
-      <Radio labelClass="w-24 my-1" name="interactive_toast_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+      <Radio labelClass="w-16 my-1" name="interactive_toast_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-2">
+  <div class="flex flex-wrap space-x-2 mb-4">
     <Label class="mb-4 w-full font-bold">Position:</Label>
     {#each positions as option}
       <Radio labelClass="w-32 my-1" name="interactive_toast_position" bind:group={toastPosition} value={option}>{option}</Radio>
     {/each}
   </div>
-  <div class="mt-4 flex flex-wrap gap-2">
+  <div class="flex flex-wrap gap-2">
     <Button onclick={changeDismissable}>{dismissable ? 'Disable' : 'Enable'} dismissable</Button>
   </div>
   {#snippet codeblock()}

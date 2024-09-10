@@ -176,13 +176,13 @@
     <div class="mb-4 flex flex-wrap space-x-4">
       <Label class="mb-4 w-full font-bold">Transition</Label>
       {#each transitions as transition}
-        <Radio labelClass="w-24 my-1" name="interactive_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+        <Radio labelClass="w-16 my-1" name="interactive_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
       {/each}
     </div>
     <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-      <Button class="w-48" onclick={changePosition}>Position: {position === 'sticky' ? 'absolute' : 'sticky'}</Button>
-      <Button class="w-48" color="blue" onclick={changeBannerType}>Type: {bannerType === 'default' ? 'cta' : 'default'}</Button>
-      <Button class="w-48" color="green" onclick={changeClass}>{bannerClass ? 'Remove class' : 'Add class'}</Button>
+      <Button class="w-40" onclick={changePosition}>Position: {position === 'sticky' ? 'absolute' : 'sticky'}</Button>
+      <Button class="w-40" color="blue" onclick={changeBannerType}>Type: {bannerType === 'default' ? 'cta' : 'default'}</Button>
+      <Button class="w-40" color="green" onclick={changeClass}>{bannerClass ? 'Remove class' : 'Add class'}</Button>
     </div>
   </div>
   {#snippet codeblock()}

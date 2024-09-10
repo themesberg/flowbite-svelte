@@ -62,7 +62,7 @@
 
 <H2>Interactive Video Player Builder</H2>
 <CodeWrapper>
-  <div class="h-[500px]">
+  <div class="md:h-[500px] mb-4">
     <Video src="/videos/flowbite.mp4" {controls} {autoplay} {muted} trackSrc="flowbite.mp4" class={currentClass.class} />
   </div>
   <div class="mb-4 flex flex-wrap space-x-6">
@@ -72,9 +72,9 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-48" color="emerald" onclick={changeControls}>{controls ? 'Remove controls' : 'Add controls'}</Button>
-    <Button class="w-48" color="blue" onclick={changeAutoplay}>{autoplay ? 'Remove autoplay' : 'Add autoplay'}</Button>
-    <Button class="w-48" color="pink" onclick={changeMuted}>{muted ? 'Remove muted' : 'Add muted'}</Button>
+    <Button class="w-40" color="emerald" onclick={changeControls}>{controls ? 'Remove controls' : 'Add controls'}</Button>
+    <Button class="w-40" color="blue" onclick={changeAutoplay}>{autoplay ? 'Remove autoplay' : 'Add autoplay'}</Button>
+    <Button class="w-40" color="pink" onclick={changeMuted}>{muted ? 'Remove muted' : 'Add muted'}</Button>
   </div>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCode} />

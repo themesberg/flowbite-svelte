@@ -10,6 +10,6 @@
   <Button id="ref-top">Top</Button>
   <Button id="ref-right">Right</Button>
 </div>
-<Tooltip reference="#ext-ref" color="emerald" triggeredBy="#ref-left" position="left" class="w-64 p-2 text-sm font-light">And here's some amazing content. It's very engaging. Right?</Tooltip>
-<Tooltip reference="#ext-ref" color="cyan" triggeredBy="#ref-top" position="top" class="w-64 p-2 text-sm font-light">And here's some amazing content. It's very engaging. Right?</Tooltip>
-<Tooltip reference="#ext-ref" color="pink" triggeredBy="#ref-right" position="right" class="w-64 p-2 text-sm font-light">And here's some amazing content. It's very engaging. Right?</Tooltip>
+<Tooltip reference="#ext-ref" color="emerald" triggeredBy="#ref-left" position="left" class="w-20 text-sm font-light">Tooltip content.</Tooltip>
+<Tooltip reference="#ext-ref" color="cyan" triggeredBy="#ref-top" position="top" class="w-20 text-sm font-light">Tooltip content.</Tooltip>
+<Tooltip reference="#ext-ref" color="pink" triggeredBy="#ref-right" position="right" class="w-20 text-sm font-light">Tooltip content.</Tooltip>

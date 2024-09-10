@@ -110,13 +110,13 @@
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Position:</Label>
     {#each positions as option}
-      <Radio labelClass="w-32 my-1" name="interactive_toast_position" bind:group={position} value={option}>{option}</Radio>
+      <Radio labelClass="w-20 my-1" name="interactive_toast_position" bind:group={position} value={option}>{option}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-40" onclick={changeClass}>{tooltipClass ? 'Remove class' : 'Add class'}</Button>
-    <Button class="w-40" color="secondary" onclick={changeArrow}>{arrow ? 'Remove arrow' : 'Add arrow'}</Button>
-    <Button class="w-40" color="rose" onclick={changeOffset}>{offset ? 'Remove offset' : 'Add offset'}</Button>
+    <Button class="w-36" onclick={changeClass}>{tooltipClass ? 'Remove class' : 'Add class'}</Button>
+    <Button class="w-36" color="secondary" onclick={changeArrow}>{arrow ? 'Remove arrow' : 'Add arrow'}</Button>
+    <Button class="w-36" color="rose" onclick={changeOffset}>{offset ? 'Remove offset' : 'Add offset'}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

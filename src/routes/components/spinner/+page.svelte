@@ -1,18 +1,36 @@
 <script lang="ts">
-  import { Spinner, spinner, Button, Label, Radio } from '$lib';
+  import { type Component } from 'svelte';
+  import { Spinner, spinner, Button, Label, Radio, uiHelpers } from '$lib';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'spinner';
-  import { copyToClipboard } from '../../utils/helpers';
-  const modules = import.meta.glob('./md/*.md', {
+  
+  // for examples section that dynamically changes the svelte component and markdown content
+  import * as ExampleComponents from './examples';
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
     query: '?raw',
     import: 'default',
     eager: true
   });
+
+  const exampleArr = [
+    { name: 'Button', component: ExampleComponents.Button },
+  ];
+  let selectedExample = $state(exampleArr[0].name);
+  let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
+
+  function findObject(arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find((obj) => obj.name === name);
+    return matchingObject ? matchingObject.component : null;
+  }
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
+  // end of dynamic svelte component
 
   // color, size, class
   const colors: Spinner['color'][] = Object.keys(spinner.variants.color);
@@ -50,27 +68,34 @@
       }
     })()
   );
-  let copiedStatus = $state(false);
+  
+  // for interactive builder
+  let builder = uiHelpers();
+  let builderExpand = $state(false);
+  let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
+  const handleBuilderExpandClick = () => {
+    builderExpand = !builderExpand;
+  };
+  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
 
-  function handleCopyClick(codeBlock: string) {
-    copyToClipboard(codeBlock)
-      .then(() => {
-        copiedStatus = true;
-        setTimeout(() => {
-          copiedStatus = false;
-        }, 1000);
-      })
-      .catch((err) => {
-        console.error('Error in copying:', err);
-        // Handle the error as needed
-      });
-  }
+  // for examples DynamicCodeBlockHighlight
+  let codeBlock = uiHelpers();
+  let exampleExpand = $state(false);
+  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+  const handleExpandClick = () => {
+    exampleExpand = !exampleExpand;
+  };
+  // end of DynamicCodeBlock setup
+  $effect(() => {
+    exampleExpand = codeBlock.isOpen;
+    builderExpand = builder.isOpen;
+  });
 </script>
 
 <H1>Spinner</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<HighlightCompo replaceLib code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Interactive Spinner Builder</H2>
 
@@ -89,33 +114,36 @@
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size:</Label>
     {#each sizes as size}
-      <Radio labelClass="w-24 my-1" name="spinnersize" bind:group={spinnerSize} value={size}>{size}</Radio>
+      <Radio labelClass="w-12 my-1" name="spinnersize" bind:group={spinnerSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <div class="mb-4 mt-4 flex flex-wrap space-x-4">
+  <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Alignment:</Label>
     {#each alignments as option}
-      <Radio labelClass="w-24 my-1" name="alignment" bind:group={selectedAlignment} value={option.name}>{option.name}</Radio>
+      <Radio labelClass="w-16 my-1" name="alignment" bind:group={selectedAlignment} value={option.name}>{option.name}</Radio>
     {/each}
   </div>
-  <Button class="w-48" onclick={changeClass}>{spinnerClass ? 'Remove class' : 'Add class'}</Button>
+  <Button class="w-36" onclick={changeClass}>{spinnerClass ? 'Remove class' : 'Add class'}</Button>
   {#snippet codeblock()}
-    <HighlightCompo code={generatedCode} />
+    <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 
-<H2>Button</H2>
-<CodeWrapper innerClass="flex flex-wrap items-center gap-2">
-  <Button>
-    <Spinner class="me-3" size="4" color="violet" />
-    Loading ...
-  </Button>
-  <Button outline color="dark">
-    <Spinner class="me-3" size="4" />
-    Loading ...
-  </Button>
+
+<H2>Examples</H2>
+
+<CodeWrapper>
+  <div class="mb-4 flex flex-wrap">
+    <Label class="mb-4 w-full font-bold">Example:</Label>
+    {#each exampleArr as style}
+      <Radio labelClass="w-40 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+    {/each}
+  </div>
+  <div class="md:h-40">
+    <SelectedComponent />
+  </div>
   {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/button.md'] as string} />
+    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 
