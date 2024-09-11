@@ -3,8 +3,8 @@
   import type { ButtonColorType, SizeType } from '$lib/types';
   import { twMerge } from 'tailwind-merge';
 
-  export let group: string | number = '';
-  export let value: string | number = '';
+  export let group: string | number | boolean = '';
+  export let value: string | number | boolean = '';
   export let inline: boolean = true;
 
   // Button properties forwarding
@@ -43,8 +43,8 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let group: string | number = '';
-@prop export let value: string | number = '';
+@prop export let group: string | number | boolean = '';
+@prop export let value: string | number | boolean = '';
 @prop export let inline: boolean = true;
 @prop export let pill: boolean = false;
 @prop export let outline: boolean = false;
