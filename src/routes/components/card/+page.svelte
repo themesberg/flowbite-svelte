@@ -11,14 +11,6 @@
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'card';
 
-  import { ArrowRightOutline } from 'flowbite-svelte-icons';
-
-  const modules = import.meta.glob('./md/*.md', {
-    query: '?raw',
-    import: 'default',
-    eager: true
-  });
-
   let reverse = $state(false);
   // for examples section that dynamically changes the svelte component and markdown content
   import * as ExampleComponents from './examples';
@@ -163,7 +155,6 @@
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
   {/snippet}
 </CodeWrapper>
-
 
 <H2>Examples</H2>
 
