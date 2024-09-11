@@ -132,7 +132,7 @@
     },
     progress: {
       checked: true,
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
     },
     rating: {
       checked: true
@@ -143,11 +143,11 @@
     },
     skeleton: {
       checked: true,
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
     },
     spinner: {
       checked: true,
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
     },
     speedDial: {
       checked: false

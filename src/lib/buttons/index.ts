@@ -27,26 +27,6 @@ type ButtonProps = ButtonSpecificProps &
     href?: string;
   };
 
-// interface ButtonProps {
-//   children: Snippet;
-//   pill?: boolean;
-//   outline?: boolean;
-//   size?: ButtonSizeType;
-//   href?: HTMLAnchorAttributes['href'];
-//   target?: HTMLAnchorAttributes['target'];
-//   rel?: HTMLAnchorAttributes['rel'];
-//   type?: HTMLButtonAttributes['type'];
-//   disabled?: boolean;
-//   name?: HTMLButtonAttributes['name'];
-//   color?: ButtonColorType;
-//   shadow?: boolean;
-//   tag?: string;
-//   checked?: boolean | undefined;
-//   class?: string;
-//   onclick?: () => void;
-//   onmouseenter?: () => void;
-// }
-
 type GradientButtonColorType = VariantProps<typeof gradientButton>['color'];
 
 type GradientButtonSpecificProps = {
@@ -61,22 +41,6 @@ type GradientButtonSpecificProps = {
   class?: string;
   disabled?: boolean;
 };
-
-// interface GradientButtonProps {
-//   children: Snippet;
-//   color?: GradientButtonColorType;
-//   shadow?: boolean;
-//   outline?: boolean;
-//   pill?: boolean;
-//   size?: ButtonSizeType;
-//   class?: string;
-//   href?: HTMLAnchorAttributes['href'];
-//   target?: HTMLAnchorAttributes['target'];
-//   rel?: HTMLAnchorAttributes['rel'];
-//   type?: HTMLButtonAttributes['type'];
-//   disabled?: boolean;
-//   name?: HTMLButtonAttributes['name'];
-// }
 
 type GradientButtonProps = GradientButtonSpecificProps &
   Omit<HTMLButtonAttributes, keyof ButtonSpecificProps> &

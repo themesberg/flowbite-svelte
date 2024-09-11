@@ -9,11 +9,20 @@
   const paginationClass = $derived(paginationItem({ size, active, group, table, className }));
 </script>
 
-<svelte:element this={href ? 'a' : 'button'} {href} class={paginationClass} role={href ? 'button' : undefined} {...restProps}>
-  {#if children}
-    {@render children()}
-  {/if}
-</svelte:element>
+{#if href}
+  <a {href} class={paginationClass} {...restProps}>
+    {#if children}
+      {@render children()}
+    {/if}
+  </a>
+{:else}
+  <button class={paginationClass} {...restProps}>
+    {#if children}
+      {@render children()}
+    {/if}
+  </button>
+{/if}
+
 
 <!--
 @component

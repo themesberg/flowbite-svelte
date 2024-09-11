@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { page } from '$app/stores';
   import { setContext } from 'svelte';
   import { type PaginationProps as Props, pagination, PaginationItem } from '.';
 
@@ -24,15 +25,15 @@
         </PaginationItem>
       </li>
     {/if}
-    {#each pages as { name, href, active }}
-      <li>
+    {#each pages as { name, href, active, size }}
+      <li {...restProps}>
         <PaginationItem {size} {active} {href}>
           {name}
         </PaginationItem>
       </li>
     {/each}
     {#if typeof next === 'function'}
-      <li>
+      <li {...restProps}>
         <PaginationItem {size} onclick={() => next()} class={table ? 'rounded-none rounded-r' : 'rounded-none rounded-e-lg'}>
           {#if nextContent}
             {@render nextContent()}

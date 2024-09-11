@@ -5,10 +5,19 @@ import { type VariantProps } from 'tailwind-variants';
 import PaginationItem from './PaginationItem.svelte';
 import type { HTMLAnchorAttributes, HTMLButtonAttributes, HTMLLiAttributes } from 'svelte/elements';
 
-type PaginationItemProps = PaginationItemAttributes & ((HTMLAnchorAttributes & { href: string }) | (HTMLButtonAttributes & { href?: never }));
+// type PaginationItemProps = PaginationItemAttributes & ((HTMLAnchorAttributes & { href: string, disabled?: never }) | (HTMLButtonAttributes & { href?: never }));
 
 type PaginationItemType = VariantProps<typeof paginationItem>;
-interface PaginationItemAttributes {
+// interface PaginationItemAttributes {
+//   children?: Snippet;
+//   name?: string;
+//   href?: string;
+//   active?: boolean;
+//   rel?: string;
+//   size?: PaginationItemType['size'];
+// }
+
+interface PaginationItemSpecificProps {
   children?: Snippet;
   name?: string;
   href?: string;
@@ -16,6 +25,12 @@ interface PaginationItemAttributes {
   rel?: string;
   size?: PaginationItemType['size'];
 }
+
+type PaginationItemProps = PaginationItemSpecificProps &
+  Omit<HTMLButtonAttributes, keyof PaginationItemSpecificProps> &
+  Omit<HTMLAnchorAttributes, keyof PaginationItemSpecificProps> & {
+    href?: string;
+  };
 
 interface PaginationProps extends HTMLLiAttributes {
   prevContent?: Snippet;
@@ -28,4 +43,4 @@ interface PaginationProps extends HTMLLiAttributes {
   ariaLabel?: string;
 }
 
-export { Pagination, PaginationItem, paginationItem, pagination, type PaginationItemProps, type PaginationProps };
+export { Pagination, PaginationItem, paginationItem, pagination, type PaginationItemProps, type PaginationProps, type PaginationItemSpecificProps };
