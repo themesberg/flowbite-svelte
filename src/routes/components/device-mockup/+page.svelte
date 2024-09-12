@@ -8,7 +8,7 @@
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'device-mockup';
-  const modules = import.meta.glob('./md/*.md', {
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
     query: '?raw',
     import: 'default',
     eager: true
@@ -62,12 +62,12 @@
       device: 'tablet',
       lightimage: {
         src: 'https://flowbite.s3.amazonaws.com/docs/device-mockups/tablet-mockup-image.png',
-        class: 'dark:hidden w-[426px] h-[654px]',
+        class: 'dark:hidden h-[426px] md:h-[654px]',
         alt: 'tablet example 1'
       },
       darkimage: {
         src: 'https://flowbite.s3.amazonaws.com/docs/device-mockups/tablet-mockup-image-dark.png',
-        class: 'hidden dark:block w-[426px] h-[654px]',
+        class: 'hidden dark:block h-[426px] md:h-[654px]',
         alt: 'tablet example 2'
       }
     },
@@ -134,7 +134,7 @@
 <H1>Device mockup</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<HighlightCompo replaceLib code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Interactive Device Mockup Builder</H2>
 
