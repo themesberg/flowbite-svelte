@@ -1,1 +1,0 @@
-<Progressbar progress="50" color="red" />
