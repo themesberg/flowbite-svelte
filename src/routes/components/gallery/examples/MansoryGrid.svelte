@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Gallery } from "$lib"
+  import { Gallery } from '$lib';
   const images1 = [
     {
       alt: 'erbology',

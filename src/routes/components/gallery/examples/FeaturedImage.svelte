@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Gallery } from "$lib"
-  
+  import { Gallery } from '$lib';
+
   const image5 = {
     alt: 'erbology',
     src: 'https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg'
@@ -27,7 +27,6 @@
       src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg'
     }
   ];
-  
 </script>
 
 <Gallery divClass="gap-4">

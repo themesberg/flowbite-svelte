@@ -25,7 +25,7 @@
     { name: 'Quad', component: ExampleComponents.Quad },
     { name: 'Gallery with tag', component: ExampleComponents.GalleryWithTag },
     { name: 'Heterogeneous', component: ExampleComponents.Heterogeneous },
-    { name: 'Custom image rendering', component: ExampleComponents.CustomImageRendering },
+    { name: 'Custom image rendering', component: ExampleComponents.CustomImageRendering }
   ];
   let selectedExample = $state(exampleArr[0].name);
   let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -52,7 +52,6 @@
 
 <H1>Gallery</H1>
 
-
 <H2>Examples</H2>
 
 <CodeWrapper>
@@ -62,7 +61,7 @@
       <Radio labelClass="w-48 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
-    <SelectedComponent />
+  <SelectedComponent />
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}

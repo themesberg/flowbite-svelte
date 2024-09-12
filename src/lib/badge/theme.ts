@@ -28,8 +28,6 @@ const badge = tv({
       purple: { base: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300' },
       pink: { base: 'bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-300' },
       rose: { base: 'bg-rose-100 text-rose-800 dark:bg-rose-900 dark:text-rose-300' }
-
-
     },
     size: {
       small: 'text-xs',

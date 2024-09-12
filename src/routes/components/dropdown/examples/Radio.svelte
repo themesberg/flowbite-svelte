@@ -9,7 +9,7 @@
   let closeDropdownRadio = dropdownRadio.close;
   $effect(() => {
     dropdownRadioStatus = dropdownRadio.isOpen;
-  })
+  });
 </script>
 
 <div class="flex h-64 items-start justify-center">

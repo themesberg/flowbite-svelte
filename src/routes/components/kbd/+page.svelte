@@ -23,7 +23,7 @@
     { name: 'Letter keys', component: ExampleComponents.LetterKeys },
     { name: 'Inside text', component: ExampleComponents.InsideText },
     { name: 'Inside table', component: ExampleComponents.InsideTable },
-    { name: 'Arrow keys', component: ExampleComponents.ArrowKeys },
+    { name: 'Arrow keys', component: ExampleComponents.ArrowKeys }
   ];
   let selectedExample = $state(exampleArr[0].name);
   let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -59,7 +59,7 @@
       <Radio labelClass="w-48 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
-    <SelectedComponent />
+  <SelectedComponent />
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}

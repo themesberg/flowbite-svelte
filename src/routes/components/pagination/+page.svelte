@@ -25,7 +25,7 @@
     { name: 'Previous and next', component: ExampleComponents.PreviousAndNext },
     { name: 'Previous and next with icons', component: ExampleComponents.PreviousAndNextWithIcons },
     { name: 'Table data pagination', component: ExampleComponents.TableDataPagination },
-    { name: 'Table data pagination with icons', component: ExampleComponents.TableDataPaginationWithIcons },
+    { name: 'Table data pagination with icons', component: ExampleComponents.TableDataPaginationWithIcons }
   ];
   let selectedExample = $state(exampleArr[0].name);
   let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -36,7 +36,7 @@
   }
   const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
-  
+
   // for examples DynamicCodeBlockHighlight
   let codeBlock = uiHelpers();
   let exampleExpand = $state(false);
@@ -61,7 +61,7 @@
       <Radio labelClass="w-60 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
-    <SelectedComponent />
+  <SelectedComponent />
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}

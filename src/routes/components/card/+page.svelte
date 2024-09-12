@@ -23,7 +23,7 @@
   const exampleArr = [
     { name: 'Custom size', component: ExampleComponents.CustomSize },
     { name: 'Call to action card', component: ExampleComponents.CallToActionCard },
-    { name: 'Card with action button', component: ExampleComponents.CardWithActionButton },
+    { name: 'Card with action button', component: ExampleComponents.CardWithActionButton }
   ];
   let selectedExample = $state(exampleArr[0].name);
   let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -165,7 +165,7 @@
       <Radio labelClass="w-48 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
-    <SelectedComponent />
+  <SelectedComponent />
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}

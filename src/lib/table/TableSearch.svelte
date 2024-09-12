@@ -99,5 +99,6 @@
 @prop svgClass = 'w-5 h-5 text-gray-500 dark:text-gray-400'
 @prop tableClass = 'w-full text-left text-sm'
 @prop class: className
+@prop placeholder = 'Search'
 @prop ...restProps
 -->

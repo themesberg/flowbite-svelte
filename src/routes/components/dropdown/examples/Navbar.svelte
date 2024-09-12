@@ -12,7 +12,7 @@
   $effect(() => {
     dropdownNavStatus = dropdownNav.isOpen;
     navStatus = nav.isOpen;
-  })
+  });
 </script>
 
 <div class="h-72">

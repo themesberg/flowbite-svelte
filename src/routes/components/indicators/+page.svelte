@@ -24,7 +24,7 @@
     { name: 'Count', component: ExampleComponents.Count },
     { name: 'Status', component: ExampleComponents.Status },
     { name: 'Badge', component: ExampleComponents.Badge },
-    { name: 'Stepper', component: ExampleComponents.Stepper },
+    { name: 'Stepper', component: ExampleComponents.Stepper }
   ];
   let selectedExample = $state(exampleArr[0].name);
   let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -141,7 +141,7 @@
       <Radio labelClass="w-48 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
-    <SelectedComponent />
+  <SelectedComponent />
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}

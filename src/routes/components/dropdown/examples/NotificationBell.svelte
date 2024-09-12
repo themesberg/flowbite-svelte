@@ -7,7 +7,7 @@
   let closeDropdownNotification = dropdownNotification.close;
   $effect(() => {
     dropdownNotificationStatus = dropdownNotification.isOpen;
-  })
+  });
 </script>
 
 <div class="flex h-[360px] items-start justify-center">

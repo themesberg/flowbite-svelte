@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Gallery, Button } from "$lib"
-  
+  import { Gallery, Button } from '$lib';
+
   const images8 = [
     {
       alt: 'erbology',
@@ -51,7 +51,6 @@
       src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg'
     }
   ];
-  
 </script>
 
 <div class="mx-auto mb-3 flex flex-wrap items-center justify-center gap-3 py-4 md:py-8">

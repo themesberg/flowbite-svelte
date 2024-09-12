@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Gallery, type ImgType } from "$lib"
-  
+  import { Gallery, type ImgType } from '$lib';
+
   const images9 = [
     {
       alt: 'shoes',

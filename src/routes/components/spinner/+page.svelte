@@ -10,7 +10,7 @@
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'spinner';
-  
+
   // for examples section that dynamically changes the svelte component and markdown content
   import * as ExampleComponents from './examples';
   const exampleModules = import.meta.glob('./examples/*.svelte', {
@@ -19,9 +19,7 @@
     eager: true
   });
 
-  const exampleArr = [
-    { name: 'Button', component: ExampleComponents.Button },
-  ];
+  const exampleArr = [{ name: 'Button', component: ExampleComponents.Button }];
   let selectedExample = $state(exampleArr[0].name);
   let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
 
@@ -68,7 +66,7 @@
       }
     })()
   );
-  
+
   // for interactive builder
   let builder = uiHelpers();
   let builderExpand = $state(false);
@@ -128,7 +126,6 @@
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
   {/snippet}
 </CodeWrapper>
-
 
 <H2>Examples</H2>
 

@@ -7,7 +7,7 @@
   let closeDropdownRight = dropdownRight.close;
   $effect(() => {
     dropdownRightStatus = dropdownRight.isOpen;
-  })
+  });
 </script>
 
 <div class="flex h-[160px] items-center justify-center">

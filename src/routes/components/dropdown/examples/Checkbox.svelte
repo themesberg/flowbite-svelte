@@ -7,7 +7,7 @@
   let closeDropdownCheckbox = dropdownCheckbox.close;
   $effect(() => {
     dropdownCheckboxStatus = dropdownCheckbox.isOpen;
-  })
+  });
 </script>
 
 <div class="flex h-72 items-start justify-center">

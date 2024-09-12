@@ -30,20 +30,20 @@
       problems: 'AlwaysOpen'
     },
     alert: {
-      checked: true,
+      checked: true
       // notes: 'Variants, reactive examples'
     },
     avatar: {
-      checked: true,
+      checked: true
       // problems: 'Avatar tooltip',
       // notes: 'Variants, reactive examples'
     },
     badge: {
-      checked: true,
+      checked: true
       // notes: 'Variants, reactive examples'
     },
     banner: {
-      checked: true,
+      checked: true
       // notes: 'Variants, reactive examples'
     },
     bottomNavigation: {
@@ -56,16 +56,16 @@
       notes: 'Variants, reactive examples'
     },
     buttonGroup: {
-      checked: true,
+      checked: true
       // notes: 'Variants, reactive examples',
       // problems: 'More examples'
     },
     buttons: {
-      checked: true,
+      checked: true
       // notes: 'Variants, reactive examples'
     },
     card: {
-      checked: true,
+      checked: true
       // notes: 'Variants, reactive examples'
       // problems: 'Shadow,User profile card, Card with form inputs, E-commerce card, Card with list, Pricing card, Testimonial card.'
     },
@@ -77,12 +77,12 @@
       problems: 'Switcher style'
     },
     deviceMockups: {
-      checked: true,
+      checked: true
       // notes: 'Variants checked'
     },
     drawer: {
       checked: true,
-      problems: 'Contact form, Form elements',
+      problems: 'Contact form, Form elements'
       // notes: 'Variants checked'
     },
     dropdown: {
@@ -131,7 +131,7 @@
       problems: 'Paragraph popover'
     },
     progress: {
-      checked: true,
+      checked: true
       // notes: 'Variants, reactive examples'
     },
     rating: {
@@ -142,11 +142,11 @@
       problems: 'CTA button, Logo branding, Transition'
     },
     skeleton: {
-      checked: true,
+      checked: true
       // notes: 'Variants, reactive examples'
     },
     spinner: {
-      checked: true,
+      checked: true
       // notes: 'Variants, reactive examples'
     },
     speedDial: {
@@ -162,56 +162,56 @@
       notes: 'Variants checked'
     },
     timeline: {
-      checked: true,
+      checked: true
       // notes: 'Variants checked'
     },
     toast: {
       checked: true,
-      problems: 'Icons, Autohide example',
+      problems: 'Icons, Autohide example'
       // notes: 'Variants, reactive examples'
     },
     tooltip: {
-      checked: true,
+      checked: true
       // problems: 'Avatar tooltip'
     },
     video: {
-      checked: true,
+      checked: true
       // notes: 'Variants, reactive examples'
     }
   };
 
   const forms: ListType = {
     checkbox: {
-      checked: true,
+      checked: true
       // problems: 'Group variable',
       // notes: 'Variants, reactive examples'
     },
     fileInput: {
       checked: true,
-      problems: 'Dropzone',
+      problems: 'Dropzone'
       // notes: 'Variants, reactive examples'
     },
     floatingLabel: {
-      checked: true,
+      checked: true
       // problems:
       //   'Disabled state - disabled outlined, Validation -  Outlined, Sized - outlined',
       // notes: 'Variants, reactive examples'
     },
     inputField: {
-      checked: true,
+      checked: true
       // problems: 'Group examples add rounded radius'
       // notes: 'Variants, reactive examples'
     },
     label: {
-      checked: true,
+      checked: true
     },
     radio: {
-      checked: true,
+      checked: true
       // problems: 'Radio in dropdown',
       // notes: 'Variants, reactive examples'
     },
     range: {
-      checked: true,
+      checked: true
       // problems: 'Sizes - blob sizes',
       // notes: 'Variants, reactive examples'
     },
@@ -226,53 +226,53 @@
       notes: 'Variants, reactive examples'
     },
     textarea: {
-      checked: true,
+      checked: true
       // notes: 'Variants checked'
     },
     toggle: {
-      checked: true,
+      checked: true
       // notes: 'Variants, reactive examples'
     }
   };
 
   const typography: ListType = {
     blockquote: {
-      checked: true,
+      checked: true
       // notes: 'Variants, reactive examples'
     },
     heading: {
-      checked: true,
+      checked: true
       // notes: 'Variants, reactive examples'
       // problems: 'Highlighted heading, Heading underline, Breadcrumb context, Badge context, Secondary text, Sizes'
     },
     hr: {
-      checked: true,
+      checked: true
       // notes: 'Variants, reactive examples'
       // problems: 'Icon HR - icon size,'
     },
     image: {
-      checked: true,
+      checked: true
       // notes: 'Variants, reactive examples'
     },
     layout: {
-      checked: true,
+      checked: true
     },
     link: {
-      checked: true,
+      checked: true
       // notes: 'Variants, reactive examples'
       // problems: 'Button, CTA link, Card link, Image link '
     },
     list: {
-      checked: true,
+      checked: true
       // notes: 'Variants, reactive examples'
     },
     paragraph: {
-      checked: true,
+      checked: true
       // problems: 'Paragraph popover',
       // notes: 'Variants, reactive examples'
     },
     span: {
-      checked: true,
+      checked: true
       // problems: 'Opacity',
       // notes: 'Variants, reactive examples'
     }

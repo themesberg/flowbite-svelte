@@ -147,7 +147,7 @@
   <div class="mb-4">
     <Button disabled={toastStatus ? true : false} onclick={() => (toastStatus = true)}>Open toast</Button>
   </div>
-  <div class="flex flex-wrap space-x-2 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color:</Label>
     {#each colors as colorOption}
       <Radio labelClass="w-24 my-1" name="interactive_toast_color" bind:group={toastColor} color={colorOption as Toast['color']} value={colorOption}>{colorOption}</Radio>
@@ -159,7 +159,7 @@
       <Radio labelClass="w-16 my-1" name="interactive_toast_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-2 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Position:</Label>
     {#each positions as option}
       <Radio labelClass="w-32 my-1" name="interactive_toast_position" bind:group={toastPosition} value={option}>{option}</Radio>

@@ -6,7 +6,7 @@
   let closeDropdownUser = dropdownUser.close;
   $effect(() => {
     dropdownUserStatus = dropdownUser.isOpen;
-  })
+  });
 </script>
 
 <div class="flex h-72 items-start justify-center">

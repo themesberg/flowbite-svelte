@@ -14,7 +14,7 @@
   $effect(() => {
     dropdownMultiLevelStatus = dropdownMultiLevel.isOpen;
     dropdownMultiLevelStatus2 = dropdownMultiLevel2.isOpen;
-  })
+  });
 </script>
 
 <div class="flex h-60 items-start justify-center">

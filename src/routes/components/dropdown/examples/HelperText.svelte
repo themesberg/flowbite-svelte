@@ -7,7 +7,7 @@
   let closeDropdownHelper = dropdownHelper.close;
   $effect(() => {
     dropdownHelperStatus = dropdownHelper.isOpen;
-  })
+  });
 </script>
 
 <div class="relative flex h-72 items-start justify-center">

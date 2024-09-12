@@ -7,7 +7,7 @@
   let closeDropdownIcon = dropdownIcon.close;
   $effect(() => {
     dropdownIconStatus = dropdownIcon.isOpen;
-  })
+  });
 </script>
 
 <div class="flex h-40 items-start justify-center">

@@ -2,7 +2,7 @@
   import { sineIn } from 'svelte/easing';
   import { Button, Dropdown, DropdownUl, DropdownLi, DropdownHeader, DropdownFooter, Search, Checkbox, uiHelpers } from '$lib';
   import { ChevronDownOutline, UserRemoveSolid } from 'flowbite-svelte-icons';
-  
+
   let searchTerm = $state('');
   const people = [
     { name: 'Robert Gouth', checked: false },
@@ -16,7 +16,7 @@
   let closeDropdownSearch = dropdownSearch.close;
   $effect(() => {
     dropdownSearchStatus = dropdownSearch.isOpen;
-  })
+  });
 </script>
 
 <div class="flex h-60 items-start justify-center">

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { Pagination, Button, type PaginationItemProps } from '$lib';
-  
+
   let activeUrl = $state($page.url.searchParams.get('page'));
   let pages = $state([
     { name: '1', href: '/components/pagination?page=1', active: false },
@@ -33,12 +33,13 @@
         page.active = false;
       }
     });
-  }
-  changeActivePage()
+  };
+  changeActivePage();
   $effect(() => {
-    changeActivePage()
+    changeActivePage();
   });
 </script>
+
 {activeUrl}
 <div class="flex flex-col items-center justify-center gap-3">
   <div class="h-12">

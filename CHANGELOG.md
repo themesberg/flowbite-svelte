@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.7
+
+### Patch Changes
+
+- fix: badge colors ([`d83cb150a0504db8880664899f85944d669c4ad6`](https://github.com/shinokada/svelte-5-ui-lib/commit/d83cb150a0504db8880664899f85944d669c4ad6))
+
 ## 0.9.6
 
 ### Patch Changes

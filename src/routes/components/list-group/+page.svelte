@@ -49,7 +49,6 @@
 
 <H1>List group</H1>
 
-
 <H2>Examples</H2>
 
 <CodeWrapper>
@@ -59,7 +58,7 @@
       <Radio labelClass="w-32 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
-    <SelectedComponent />
+  <SelectedComponent />
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}

@@ -7,7 +7,7 @@
   let closeDropdownToggle = dropdownToggle.close;
   $effect(() => {
     dropdownToggleStatus = dropdownToggle.isOpen;
-  })
+  });
 </script>
 
 <div class="flex h-72 items-start justify-center">

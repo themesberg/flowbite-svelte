@@ -10,7 +10,6 @@
   let spanClass = 'flex-1 ms-3 whitespace-nowrap';
 </script>
 
-
 <div class="text-center">
   <Button onclick={drawerB.toggle}>Show navigation</Button>
 </div>

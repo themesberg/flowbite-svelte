@@ -8,7 +8,7 @@
 
   let { children, outline, pill, color = 'blue', shadow, class: className, href, target, rel, type, disabled, size, name, ...restProps }: Props = $props();
 
-const { base, outlineWrapper } = $derived(gradientButton({ color, outline, pill, shadow, disabled, group:!!group }));
+  const { base, outlineWrapper } = $derived(gradientButton({ color, outline, pill, shadow, disabled, group: !!group }));
 </script>
 
 {#if outline}

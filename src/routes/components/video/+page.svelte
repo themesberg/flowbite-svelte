@@ -60,7 +60,7 @@
 
 <H2>Interactive Video Player Builder</H2>
 <CodeWrapper>
-  <div class="md:h-[500px] mb-4">
+  <div class="mb-4 md:h-[500px]">
     <Video src="/videos/flowbite.mp4" {controls} {autoplay} {muted} trackSrc="flowbite.mp4" class={currentClass.class} />
   </div>
   <div class="mb-4 flex flex-wrap space-x-6">

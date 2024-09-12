@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Gallery } from "$lib"
+  import { Gallery } from '$lib';
 </script>
 
 <Gallery divClass="gap-4 grid-cols-2">

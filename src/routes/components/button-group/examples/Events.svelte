@@ -2,7 +2,7 @@
   import { ButtonGroup, Button } from '$lib';
   const handleClick = () => {
     alert('Clicked');
-  }
+  };
 </script>
 
 <ButtonGroup>

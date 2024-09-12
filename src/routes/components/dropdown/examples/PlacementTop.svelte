@@ -7,7 +7,7 @@
   let closeDropdownTop = dropdownTop.close;
   $effect(() => {
     dropdownTopStatus = dropdownTop.isOpen;
-  })
+  });
 </script>
 
 <div class="flex h-[200px] items-end justify-center">

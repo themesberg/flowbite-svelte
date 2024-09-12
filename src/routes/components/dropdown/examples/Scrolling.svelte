@@ -7,7 +7,7 @@
   let closeDropdownScroll = dropdownScroll.close;
   $effect(() => {
     dropdownScrollStatus = dropdownScroll.isOpen;
-  })
+  });
 </script>
 
 <div class="flex h-60 items-start justify-center">

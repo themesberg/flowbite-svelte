@@ -25,7 +25,7 @@
     { name: 'Button with label', component: ExampleComponents.ButtonWithLabel },
     { name: 'Events', component: ExampleComponents.Events },
     { name: 'Icon buttons', component: ExampleComponents.IconButtons },
-    { name: 'Loader', component: ExampleComponents.Loader },
+    { name: 'Loader', component: ExampleComponents.Loader }
   ];
   let selectedExample = $state(exampleArr[0].name);
   let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -192,7 +192,7 @@
     <Button class="w-40" color="sky" onclick={changeBtnLink}>{btnLink === '' ? 'Add link' : 'Remove link'}</Button>
   </div>
   {#snippet codeblock()}
-  <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
+    <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 
@@ -226,7 +226,6 @@
     <HighlightCompo code={gradientGeneratedCode} />
   {/snippet}
 </CodeWrapper>
-
 
 <H2>Examples</H2>
 

@@ -35,7 +35,7 @@
     { name: 'Gradient shadow', component: ExampleComponents.GradientShadow },
     { name: 'Outline buttons', component: ExampleComponents.OutlineButtons },
     { name: 'Pill buttons', component: ExampleComponents.PillButtons },
-    { name: 'Standard buttons', component: ExampleComponents.StandardButtons },
+    { name: 'Standard buttons', component: ExampleComponents.StandardButtons }
   ];
   let selectedExample = $state(exampleArr[0].name);
   let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -56,7 +56,7 @@
   let link: Button['href'] = $state('');
   const changeLink = () => {
     link = link === '' ? '/' : '';
-  }
+  };
   let icon = $state(false);
   const changeIcon = () => {
     icon = !icon;
@@ -79,7 +79,7 @@
       let icon3 = icon ? '<DownloadSolid class="me-2 h-4 w-4" />' : '';
       if (size !== 'md') props.push(` size="${size}"`);
       if (buttonGroupClass !== '') props.push(` class="${buttonGroupClass}"`);
- 
+
       if (link) btnProps.push(` href="${link}"`);
       if (color !== 'primary') btnProps.push(` color="${color}"`);
       if (outline) btnProps.push(' outline');
@@ -123,34 +123,40 @@
 
 <H2>Interactive Button-group Builder</H2>
 <CodeWrapper>
-  <div class="h-16 flex items-center justify-center">
+  <div class="flex h-16 items-center justify-center">
     <ButtonGroup {size} class={buttonGroupClass}>
-      <Button {color} href={link} {outline}>{#if icon}<UserCircleSolid class="me-2 h-4 w-4" />{/if}Profile</Button>
-      <Button {color} href={link} {outline}>{#if icon}<AdjustmentsVerticalSolid class="me-2 h-4 w-4" />{/if}Settings</Button>
-      <Button {color} href={link} {outline}>{#if icon}<DownloadSolid class="me-2 h-4 w-4" />{/if}Messages</Button>
+      <Button {color} href={link} {outline}>
+        {#if icon}<UserCircleSolid class="me-2 h-4 w-4" />{/if}Profile
+      </Button>
+      <Button {color} href={link} {outline}>
+        {#if icon}<AdjustmentsVerticalSolid class="me-2 h-4 w-4" />{/if}Settings
+      </Button>
+      <Button {color} href={link} {outline}>
+        {#if icon}<DownloadSolid class="me-2 h-4 w-4" />{/if}Messages
+      </Button>
     </ButtonGroup>
   </div>
-  <div class="flex flex-wrap space-x-4 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Current size: {size}</Label>
     {#each sizes as sizeOption}
       <Radio labelClass="w-24 my-1" name="size" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-2 mb-4">
+  <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
       <Radio labelClass="w-24 my-1" name="color" bind:group={color} color={colorOption as Button['color']} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-  <Button class="w-40" onclick={changeClass}>{buttonGroupClass ? 'Remove class' : 'Add class'}</Button>
-  <Button class="w-40" color="secondary" onclick={changeLink}>{link === '' ? 'Add link' : 'Remove link'}</Button>
-  <Button class="w-40" color="red" onclick={changeIcon}>{icon  ? 'Remove icon' : 'Add icon'}</Button>
-  <Button class="w-40" color="violet" onclick={changeOutline}>{outline ? 'Remove outline' : 'Add outline'}</Button>
+    <Button class="w-40" onclick={changeClass}>{buttonGroupClass ? 'Remove class' : 'Add class'}</Button>
+    <Button class="w-40" color="secondary" onclick={changeLink}>{link === '' ? 'Add link' : 'Remove link'}</Button>
+    <Button class="w-40" color="red" onclick={changeIcon}>{icon ? 'Remove icon' : 'Add icon'}</Button>
+    <Button class="w-40" color="violet" onclick={changeOutline}>{outline ? 'Remove outline' : 'Add outline'}</Button>
   </div>
   {#snippet codeblock()}
-  <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
-{/snippet}
+    <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Examples</H2>

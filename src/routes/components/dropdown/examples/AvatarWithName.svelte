@@ -6,7 +6,7 @@
   let closeDropdownAvatar = dropdownAvatar.close;
   $effect(() => {
     dropdownAvatarStatus = dropdownAvatar.isOpen;
-  })
+  });
 </script>
 
 <div class="flex h-80 items-start justify-center">

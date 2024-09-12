@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Gallery } from "$lib"
-  
+  import { Gallery } from '$lib';
+
   const images7 = [
     {
       alt: 'shoes',
@@ -19,7 +19,6 @@
       src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg'
     }
   ];
- 
 </script>
 
 <Gallery divClass="gap-2 grid-cols-2" items={images7} />
