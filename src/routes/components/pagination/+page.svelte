@@ -25,7 +25,7 @@
     { name: 'Previous and next', component: ExampleComponents.PreviousAndNext },
     { name: 'Previous and next with icons', component: ExampleComponents.PreviousAndNextWithIcons },
     { name: 'Table data pagination', component: ExampleComponents.TableDataPagination },
-    { name: 'Table data pagination with icons', component: ExampleComponents.TableDataPaginationWithIcons }
+    { name: 'Table data with icons', component: ExampleComponents.TableDataWithIcons }
   ];
   let selectedExample = $state(exampleArr[0].name);
   let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -58,7 +58,7 @@
   <div class="mb-12 flex flex-wrap">
     <Label class="mb-4 w-full font-bold">Example:</Label>
     {#each exampleArr as style}
-      <Radio labelClass="w-60 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+      <Radio labelClass="w-52 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
   <SelectedComponent />

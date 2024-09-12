@@ -4,4 +4,4 @@ export { default as Icons } from './Icons.svelte';
 export { default as PreviousAndNext } from './PreviousAndNext.svelte';
 export { default as PreviousAndNextWithIcons } from './PreviousAndNextWithIcons.svelte';
 export { default as TableDataPagination } from './TableDataPagination.svelte';
-export { default as TableDataPaginationWithIcons } from './TableDataPaginationWithIcons.svelte';
+export { default as TableDataWithIcons } from './TableDataWithIcons.svelte';
