@@ -32,7 +32,7 @@
 <H1>Label</H1>
 
 <H2>Setup</H2>
-<HighlightCompo replaceLib code={exampleModules[`./examples/Setup.svelte`] as string} />
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Color</H2>
 <CodeWrapper>

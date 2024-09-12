@@ -54,7 +54,7 @@ ${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ''}`;
 <H1>File input</H1>
 
 <H2>Setup</H2>
-<HighlightCompo replaceLib code={exampleModules[`./examples/Setup.svelte`] as string} />
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Interactive Fileupload Builder</H2>
 <CodeWrapper>

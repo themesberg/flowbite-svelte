@@ -142,7 +142,7 @@
 <H1>Banner</H1>
 
 <H2>Setup</H2>
-<HighlightCompo replaceLib code={exampleModules[`./examples/Setup.svelte`] as string} />
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Interactive Banner Builder</H2>
 <CodeWrapper class="relative" innerClass="p-0">

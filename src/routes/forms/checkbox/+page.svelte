@@ -105,7 +105,7 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`;
 <H1>Checkbox</H1>
 
 <H2>Setup</H2>
-<HighlightCompo replaceLib code={exampleModules[`./examples/Setup.svelte`] as string} />
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Interactive Checkbox Builder</H2>
 <CodeWrapper>

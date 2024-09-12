@@ -49,7 +49,7 @@
 
 <H1>Search Input</H1>
 <H2>Setup</H2>
-<HighlightCompo replaceLib code={exampleModules[`./examples/Setup.svelte`] as string} />
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Examples</H2>
 

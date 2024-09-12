@@ -1,1 +1,0 @@
-<Indicator placement="top-right" />

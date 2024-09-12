@@ -48,7 +48,7 @@
 <H1>Horizontal line (HR)</H1>
 
 <H2>Setup</H2>
-<HighlightCompo replaceLib code={exampleModules[`./examples/Setup.svelte`] as string} />
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 <H2>Default HR</H2>
 
 <CodeWrapper>

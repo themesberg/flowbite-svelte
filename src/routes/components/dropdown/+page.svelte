@@ -172,7 +172,7 @@
 <H1>Dropdown</H1>
 
 <H2>Setup</H2>
-<HighlightCompo replaceLib code={exampleModules[`./examples/Setup.svelte`] as string} />
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Interactive Dropdown Builder</H2>
 <CodeWrapper>
@@ -230,11 +230,10 @@
   {/snippet}
 </CodeWrapper>
 
-
 <H2>Examples</H2>
 
 <CodeWrapper>
-  <div class="mb-4 flex flex-wrap">
+  <div class="mb-12 flex flex-wrap">
     <Label class="mb-4 w-full font-bold">Example:</Label>
     {#each exampleArr as style}
       <Radio labelClass="w-48 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>

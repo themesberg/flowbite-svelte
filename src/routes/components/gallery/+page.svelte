@@ -1,334 +1,70 @@
 <script lang="ts">
-  import { Gallery, Button, type ImgType } from '$lib';
-  const images = [
-    {
-      alt: 'erbology',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg'
-    },
-    {
-      alt: 'shoes',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg'
-    },
-    {
-      alt: 'small bag',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg'
-    },
-    {
-      alt: 'plants',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg'
-    },
-    {
-      alt: 'watch',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg'
-    },
-    {
-      alt: 'shoe',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg'
-    },
-    {
-      alt: 'cream',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg'
-    },
-    {
-      alt: 'small bag',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-7.jpg'
-    },
-    {
-      alt: 'lamp',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-8.jpg'
-    },
-    {
-      alt: 'toiletbag',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-9.jpg'
-    },
-    {
-      alt: 'playstation',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg'
-    },
-    {
-      alt: 'bag',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg'
-    }
-  ];
-
-  const images1 = [
-    {
-      alt: 'erbology',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg'
-    },
-    {
-      alt: 'shoes',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg'
-    },
-    {
-      alt: 'small bag',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg'
-    }
-  ];
-  const images2 = [
-    {
-      alt: 'plants',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg'
-    },
-    {
-      alt: 'watch',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg'
-    },
-    {
-      alt: 'shoe',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg'
-    }
-  ];
-  const images3 = [
-    {
-      alt: 'cream',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg'
-    },
-    {
-      alt: 'small bag',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg'
-    },
-    {
-      alt: 'lamp',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg'
-    }
-  ];
-  const images4 = [
-    {
-      alt: 'toiletbag',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg'
-    },
-    {
-      alt: 'playstation',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg'
-    },
-    {
-      alt: 'bag',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg'
-    }
-  ];
-  const image5 = {
-    alt: 'erbology',
-    src: 'https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg'
-  };
-  const images6 = [
-    {
-      alt: 'shoes',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg'
-    },
-    {
-      alt: 'small bag',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg'
-    },
-    {
-      alt: 'plants',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg'
-    },
-    {
-      alt: 'watch',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg'
-    },
-    {
-      alt: 'shoe',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg'
-    }
-  ];
-  const images7 = [
-    {
-      alt: 'shoes',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg'
-    },
-    {
-      alt: 'small bag',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg'
-    },
-    {
-      alt: 'plants',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg'
-    },
-    {
-      alt: 'watch',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg'
-    }
-  ];
-  const images8 = [
-    {
-      alt: 'erbology',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg'
-    },
-    {
-      alt: 'shoes',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg'
-    },
-    {
-      alt: 'small bag',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg'
-    },
-    {
-      alt: 'plants',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg'
-    },
-    {
-      alt: 'watch',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg'
-    },
-    {
-      alt: 'shoe',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg'
-    },
-    {
-      alt: 'cream',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg'
-    },
-    {
-      alt: 'small bag',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-7.jpg'
-    },
-    {
-      alt: 'lamp',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-8.jpg'
-    },
-    {
-      alt: 'toiletbag',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-9.jpg'
-    },
-    {
-      alt: 'playstation',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg'
-    },
-    {
-      alt: 'bag',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg'
-    }
-  ];
-  const images9 = [
-    {
-      alt: 'shoes',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg'
-    },
-    {
-      alt: 'small bag',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg'
-    },
-    {
-      alt: 'plants',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg'
-    },
-    {
-      alt: 'watch',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg'
-    },
-    {
-      alt: 'shoe',
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg'
-    }
-  ];
-
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import { type Component } from 'svelte';
+  import { Label, Radio, uiHelpers } from '$lib';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
+  import { isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'gallery';
-  const modules = import.meta.glob('./md/*.md', {
+
+  // for examples section that dynamically changes the svelte component and markdown content
+  import * as ExampleComponents from './examples';
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
     query: '?raw',
     import: 'default',
     eager: true
+  });
+
+  const exampleArr = [
+    { name: 'Default', component: ExampleComponents.Default },
+    { name: 'Mansory grid', component: ExampleComponents.MansoryGrid },
+    { name: 'Featured image', component: ExampleComponents.FeaturedImage },
+    { name: 'Quad', component: ExampleComponents.Quad },
+    { name: 'Gallery with tag', component: ExampleComponents.GalleryWithTag },
+    { name: 'Heterogeneous', component: ExampleComponents.Heterogeneous },
+    { name: 'Custom image rendering', component: ExampleComponents.CustomImageRendering },
+  ];
+  let selectedExample = $state(exampleArr[0].name);
+  let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
+
+  function findObject(arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find((obj) => obj.name === name);
+    return matchingObject ? matchingObject.component : null;
+  }
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
+  // end of dynamic svelte component
+
+  // for examples DynamicCodeBlockHighlight
+  let codeBlock = uiHelpers();
+  let exampleExpand = $state(false);
+  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+  const handleExpandClick = () => {
+    exampleExpand = !exampleExpand;
+  };
+  // end of DynamicCodeBlock setup
+  $effect(() => {
+    exampleExpand = codeBlock.isOpen;
   });
 </script>
 
 <H1>Gallery</H1>
 
-<H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<H2>Examples</H2>
 
-<H2>Default gallery</H2>
 <CodeWrapper>
-  <Gallery items={images} divClass="gap-4 grid-cols-2 md:grid-cols-3" />
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/default-gallery.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Mansory grid</H2>
-<CodeWrapper>
-  <Gallery divClass="gap-4 grid-cols-2 md:grid-cols-4">
-    <!-- Safari needs gap -->
-    <Gallery items={images1} divClass="gap-4" />
-    <Gallery items={images2} />
-    <Gallery items={images3} />
-    <Gallery items={images4} />
-  </Gallery>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/mansory-grid.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Featured image</H2>
-<CodeWrapper>
-  <Gallery divClass="gap-4">
-    <img src={image5.src} alt={image5.alt} class="h-auto max-w-full rounded-lg" />
-    <!-- Safari needs gap -->
-    <Gallery divClass="grid-cols-5 gap-4" items={images6} />
-  </Gallery>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/featured-image.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Quad gallery</H2>
-<CodeWrapper>
-  <Gallery divClass="gap-2 grid-cols-2" items={images7} />
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/quad-gallery.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Gallery with tag filters</H2>
-<CodeWrapper>
-  <div class="mx-auto mb-3 flex flex-wrap items-center justify-center gap-3 py-4 md:py-8">
-    <Button pill size="xl" outline>All categories</Button>
-    <Button pill size="xl" color="alternative">Shoes</Button>
-    <Button pill size="xl" color="alternative">Bags</Button>
-    <Button pill size="xl" color="alternative">Electronics</Button>
-    <Button pill size="xl" color="alternative">Gaming</Button>
-  </div>
-
-  <Gallery items={images8} divClass="gap-4 grid-cols-2 md:grid-cols-3" />
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/gallery-with-tag-filters.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Heterogeneous gallery</H2>
-<CodeWrapper>
-  <Gallery divClass="gap-4 grid-cols-2">
-    <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="shoas" class="max-w- h-auto rounded-lg" />
-    <div class="max-w- flex h-auto items-center justify-center rounded-lg bg-red-300 text-6xl font-extrabold">Sale</div>
-    <div class="max-w- flex h-auto items-center justify-center rounded-lg bg-blue-300 text-6xl font-extrabold">Sale</div>
-    <img alt="plants" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" class="max-w- h-auto rounded-lg" />
-  </Gallery>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/heterogenuous-gallery.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Custom image rendering</H2>
-{#snippet figure(item: ImgType)}
-  <div class="p-1 ring-4 ring-red-600 dark:ring-red-400">
-    <img src={item.src} alt={item.alt} class="h-auto max-w-full" />
-  </div>
-{/snippet}
-<CodeWrapper>
-  <Gallery divClass="gap-4 grid-cols-3">
-    {#each images9 as item}
-      {@render figure(item)}
+  <div class="mb-8 flex flex-wrap">
+    <Label class="mb-4 w-full font-bold">Example:</Label>
+    {#each exampleArr as style}
+      <Radio labelClass="w-48 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
-  </Gallery>
+  </div>
+    <SelectedComponent />
   {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/custom-image-rendering.md'] as string} />
+    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 

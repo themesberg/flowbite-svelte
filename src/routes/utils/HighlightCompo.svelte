@@ -16,7 +16,7 @@
     replaceLib?: boolean;
   }
 
-  let { code, codeLang, badgeClass, buttonClass, replaceLib, class: className }: Props = $props();
+  let { code, codeLang, badgeClass, buttonClass, replaceLib = true, class: className }: Props = $props();
 
   if (replaceLib) {
     code = replaceLibImport(code);
