@@ -119,7 +119,7 @@
   {/each}
 </select>
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div on:click={() => (show = !show)} on:focusout={() => (show = false)} on:keydown={handleKeyDown} tabindex="0" role="listbox" class={twMerge(multiSelectClass, sizes[size], $$props.class)}>
+<div on:click|self={() => (show = !show)} on:focusout={() => (show = false)} on:keydown={handleKeyDown} tabindex="0" role="listbox" class={twMerge(multiSelectClass, sizes[size], $$props.class)}>
   {#if !selectItems.length}
     <span class="text-gray-400">{placeholder}</span>
   {/if}
@@ -139,7 +139,7 @@
       <CloseButton {size} on:click={clearAll} color="none" class="p-0 focus:ring-gray-400 dark:text-white" />
     {/if}
     <div class="w-[1px] bg-gray-300 dark:bg-gray-600"></div>
-    <svg class="cursor-pointer h-3 w-3 ms-1 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+    <svg on:click|self={() => (show = !show)} class="cursor-pointer h-3 w-3 ms-1 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={show ? 'm1 5 4-4 4 4' : 'm9 1-4 4-4-4'} />
     </svg>
   </div>
