@@ -1,101 +1,67 @@
 <script lang="ts">
-  import { Listgroup } from '$lib';
-  import { AdjustmentsHorizontalSolid, DownloadSolid, MessagesSolid, UserCircleSolid } from 'flowbite-svelte-icons';
-  import type { ListGroupItemType } from '$lib/types';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import { type Component } from 'svelte';
+  import { Label, Radio, uiHelpers } from '$lib';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'list-group';
-  const modules = import.meta.glob('./md/*.md', {
+
+  // for examples section that dynamically changes the svelte component and markdown content
+  import * as ExampleComponents from './examples';
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
     query: '?raw',
     import: 'default',
     eager: true
   });
-  let simpleList = ['Profile', 'Settings', 'Messages', 'Download'];
-  let links: ListGroupItemType[] = [
-    { name: 'Avatar', href: '/components/avatar' },
-    { name: 'List group', href: '/components/list-group', current: true },
-    { name: 'Banner', href: '/components/banner' },
-    { name: 'Breadcrumbs', href: '/components/breadcrumb', target: '_blank' }
-  ];
-  let buttons = [
-    { name: 'Profile', mycustomfield: 'data1', current: true },
-    { name: 'Settings', mycustomfield: 'data2' },
-    { name: 'Messages', mycustomfield: 'data3' },
-    {
-      name: 'Download',
-      mycustomfield: 'data4',
-      disabled: true,
-      attrs: { type: 'submit' }
-    }
-  ];
 
-  let iconList = [
-    { name: 'Profile', Icon: UserCircleSolid, mycustomfield: 'data1' },
-    {
-      name: 'Settings',
-      Icon: AdjustmentsHorizontalSolid,
-      mycustomfield: 'data2'
-    },
-    { name: 'Messages', Icon: MessagesSolid, mycustomfield: 'data3' },
-    { name: 'Download', Icon: DownloadSolid, mycustomfield: 'data4' }
+  const exampleArr = [
+    { name: 'Default', component: ExampleComponents.Default },
+    { name: 'With links', component: ExampleComponents.WithLinks },
+    { name: 'With buttons', component: ExampleComponents.WithButtons },
+    { name: 'With icons', component: ExampleComponents.WithIcons }
   ];
-  const handleClick = (e?: MouseEvent) => {
-    if (e?.target instanceof HTMLElement) {
-      alert('mycustomfield: ' + e.target.attributes.getNamedItem('mycustomfield')?.value);
-    } else {
-      console.warn('Unexpected event target type. Cannot access attributes.');
-    }
+  let selectedExample = $state(exampleArr[0].name);
+  let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
+
+  function findObject(arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find((obj) => obj.name === name);
+    return matchingObject ? matchingObject.component : null;
+  }
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
+  // end of dynamic svelte component
+
+  // for examples DynamicCodeBlockHighlight
+  let codeBlock = uiHelpers();
+  let exampleExpand = $state(false);
+  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+  const handleExpandClick = () => {
+    exampleExpand = !exampleExpand;
   };
-  const handleClick2 = (e?: MouseEvent) => {
-    if (e?.target instanceof HTMLElement) {
-      console.log(e.target.attributes.getNamedItem('mycustomfield')?.value);
-    } else {
-      console.warn('Unexpected event target type. Cannot access attributes.');
-    }
-  };
+  // end of DynamicCodeBlock setup
+  $effect(() => {
+    exampleExpand = codeBlock.isOpen;
+  });
 </script>
 
 <H1>List group</H1>
 
-<H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<H2>Examples</H2>
 
-<H2>Default list group</H2>
-
-<CodeWrapper innerClass="flex justify-center">
-  <Listgroup items={simpleList} class="w-48" />
+<CodeWrapper>
+  <div class="mb-12 flex flex-wrap">
+    <Label class="mb-4 w-full font-bold">Example:</Label>
+    {#each exampleArr as style}
+      <Radio labelClass="w-32 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+    {/each}
+  </div>
+    <SelectedComponent />
   {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/default-list-group.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>List group with links</H2>
-
-<CodeWrapper innerClass="flex justify-center">
-  <Listgroup active items={links} class="w-48" />
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/list-group-with-links.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>List group with buttons</H2>
-<CodeWrapper innerClass="flex justify-center">
-  <Listgroup active items={buttons} class="w-48" onclick={handleClick} />
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/list-group-with-buttons.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>List group with icons</H2>
-<CodeWrapper innerClass="flex justify-center">
-  <Listgroup active items={iconList} class="w-48" onclick={handleClick2} />
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/list-group-with-icons.md'] as string} />
+    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 
