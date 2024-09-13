@@ -1,3 +1,3 @@
 <script>
-  import { Progressbar, Button } from 'svelte-5-ui-lib';
+  import { Progressbar } from 'svelte-5-ui-lib';
 </script>

@@ -1,17 +1,8 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
+  import  { type NavBrandProps as Props } from '.';
   import { getContext } from 'svelte';
   import type { navbarType } from '$lib/types';
   import { twMerge } from 'tailwind-merge';
-  import type { HTMLAnchorAttributes } from 'svelte/elements';
-
-  interface Props extends HTMLAnchorAttributes {
-    children?: Snippet;
-    siteName: string | undefined | null;
-    closeNav?: () => void;
-    aClass?: string;
-    spanClass?: string;
-  }
 
   let { children, siteName, closeNav, aClass, spanClass, ...restProps }: Props = $props();
 

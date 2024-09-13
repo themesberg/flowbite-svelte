@@ -1,36 +1,18 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
   import { setContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import { clickOutside } from '../uiHelpers.svelte';
   import { slide, type SlideParams } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
   import type { navbarType } from '$lib/types';
-  import type { HTMLAttributes } from 'svelte/elements';
-
-  interface Props extends HTMLAttributes<HTMLElement> {
-    children: Snippet;
-    toggleNav?: () => void;
-    closeNav?: () => void;
-    navStatus?: boolean | undefined;
-    fluid?: boolean;
-    brand?: Snippet;
-    hamburgerMenu?: boolean;
-    breakPoint?: navbarType['breakPoint'];
-    navClass?: string;
-    divClass?: string;
-    btnClass?: string;
-    div2Class?: string;
-    nonActiveClass?: string;
-    activeClass?: string;
-  }
+  import { type NavbarProps as Props } from './'
 
   let { children, toggleNav, closeNav = () => {}, navStatus, fluid, brand, hamburgerMenu = true, breakPoint = 'md', navClass, divClass, btnClass, div2Class, activeClass, nonActiveClass, ...restProps }: Props = $props();
 
   setContext<navbarType>('navbarContext', {
     navStatus,
     breakPoint,
-    activeClass: twMerge('block py-2 px-3 text-white bg-primary-700 rounded   dark:text-white', activeClass),
+    activeClass: twMerge('block py-2 px-3 text-white bg-primary-700 rounded dark:text-white', activeClass),
     nonActiveClass: twMerge('block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white', nonActiveClass),
     closeNav: closeNav
   });

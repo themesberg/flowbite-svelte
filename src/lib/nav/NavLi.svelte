@@ -1,20 +1,10 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
   import { getContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import { page } from '$app/stores';
   import type { navbarType } from '$lib/types';
-  import type { HTMLAnchorAttributes } from 'svelte/elements';
+  import { type NavLiProps as Props } from '.';
 
-  interface Props extends HTMLAnchorAttributes {
-    children: Snippet;
-    closeNav?: () => void;
-    href?: string;
-    aClass?: string;
-    activeClass?: string;
-    nonActiveClass?: string;
-    class?: string;
-  }
   let { closeNav, href, children, aClass, activeClass, nonActiveClass, class: className, ...restProps }: Props = $props();
 
   let breakPoint: navbarType['breakPoint'];
@@ -43,8 +33,6 @@
   let aCls = $derived(currentUrl === href ? (activeClass ?? twMerge(context.activeClass, activeBreaks[breakPoint])) : (nonActiveClass ?? twMerge(context.nonActiveClass, linkBreaks[breakPoint])));
 
   let linkClass = $derived(twMerge(aCls, aClass));
-
-  // $inspect('context.activeClass', linkBreaks[breakPoint]);
 </script>
 
 <li class={className}>
