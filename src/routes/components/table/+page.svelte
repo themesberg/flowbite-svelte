@@ -73,7 +73,7 @@
     { name: 'Google Pixel Phone', color: 'Gray', type: 'Phone', price: '$799' },
     { name: 'Apple Watch 5', color: 'Red', type: 'Wearables', price: '$999' }
   ];
-  
+
   // code generator
   let generatedCode = $derived(
     (() => {
@@ -117,7 +117,7 @@
 <H2>Setup</H2>
 <HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
-<H2>Interactive</H2>
+<H2>Interactive Table Builder</H2>
 <CodeWrapper>
   <Table {tableItems} {hoverable} {color} {striped} {noborder} {shadow} />
   <div class="my-4 flex flex-wrap space-x-4">
