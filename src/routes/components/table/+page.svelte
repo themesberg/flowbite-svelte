@@ -32,7 +32,7 @@
     { name: 'Header slot', component: ExampleComponents.HeaderSlot },
     { name: 'Footer slot', component: ExampleComponents.FooterSlot },
     { name: 'Table caption', component: ExampleComponents.TableCaption },
-    { name: 'Overflow', component: ExampleComponents.Overflow },
+    { name: 'Overflow', component: ExampleComponents.Overflow }
   ];
 
   let selectedExample = $state(exampleArr[0].name);
@@ -50,28 +50,28 @@
   let striped = $state(false);
   const changeStriped = () => {
     striped = !striped;
-  }
+  };
   let hoverable = $state(false);
   const changeHoverable = () => {
     hoverable = !hoverable;
-  }
+  };
   // noborder, shadow,
   let noborder = $state(false);
   const changeNoborder = () => {
     noborder = !noborder;
-  }
+  };
   let shadow = $state(false);
   const changeShadow = () => {
     shadow = !shadow;
-  }
+  };
 
   const tableItems = [
-    {name: 'Apple MacBook Pro 17"',color: 'Sliver', type: 'Laptop', price: '$2999'},
-    {name: 'Microsoft Surface Pro',color: 'White', type: 'Laptop PC', price: '$1999'},
-    {name: 'Magic Mouse 2',color: 'Black', type: 'Accessories', price: '$99'},
-    {name: 'Google Pixel Phone',color: 'Gray', type: 'Phone', price: '$799'},
-    {name: 'Apple Watch 5',color: 'Red', type: 'Wearables', price: '$999'},
-  ]
+    { name: 'Apple MacBook Pro 17"', color: 'Sliver', type: 'Laptop', price: '$2999' },
+    { name: 'Microsoft Surface Pro', color: 'White', type: 'Laptop PC', price: '$1999' },
+    { name: 'Magic Mouse 2', color: 'Black', type: 'Accessories', price: '$99' },
+    { name: 'Google Pixel Phone', color: 'Gray', type: 'Phone', price: '$799' },
+    { name: 'Apple Watch 5', color: 'Red', type: 'Wearables', price: '$999' }
+  ];
 
   import { slide } from 'svelte/transition';
 
@@ -102,13 +102,12 @@
     openRow = openRow === i ? null : i;
   };
 
-
   let details;
   // code generator
   let generatedCode = $derived(
     (() => {
       let props = [];
-      if ( color ) props.push(` color="${color}"`);
+      if (color) props.push(` color="${color}"`);
 
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
@@ -143,10 +142,9 @@
 <H2>Setup</H2>
 <HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
-
 <H2>Interactive</H2>
 <CodeWrapper>
-  <Table {tableItems} {hoverable} {color} {striped} {noborder} {shadow}/>
+  <Table {tableItems} {hoverable} {color} {striped} {noborder} {shadow} />
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
@@ -175,7 +173,6 @@
     <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
-
 
 <H2>Click and double-click on row</H2>
 <CodeWrapper>

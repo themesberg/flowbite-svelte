@@ -5,7 +5,7 @@ import NavUl from './NavUl.svelte';
 import type { HTMLAttributes, HTMLAnchorAttributes } from 'svelte/elements';
 import type { Snippet } from 'svelte';
 import type { navbarType } from '$lib/types';
-import { navUl } from './theme'
+import { navUl } from './theme';
 
 interface NavbarProps extends HTMLAttributes<HTMLElement> {
   children: Snippet;
@@ -36,7 +36,6 @@ interface NavUlProps extends HTMLAttributes<HTMLUListElement> {
   children: Snippet;
   class?: string;
 }
-
 
 interface NavLiProps extends HTMLAnchorAttributes {
   children: Snippet;

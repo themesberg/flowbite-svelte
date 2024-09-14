@@ -12,7 +12,7 @@
 </script>
 
 <TableSearch placeholder="Search by maker name" hoverable={true} bind:inputValue={searchTerm}>
-  <TableHead {headItems}/>
+  <TableHead {headItems} />
   <TableBody>
     {#each filteredItems as item}
       <TableBodyRow>

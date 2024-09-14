@@ -1,8 +1,6 @@
 import { tv } from 'tailwind-variants';
 
-const navbar = tv({
-
-}); 
+const navbar = tv({});
 
 export const navUl = tv({
   base: 'font-medium flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-transparent rtl:space-x-reverse dark:bg-gray-800 dark:border-gray-700',

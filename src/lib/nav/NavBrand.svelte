@@ -1,5 +1,5 @@
 <script lang="ts">
-  import  { type NavBrandProps as Props } from '.';
+  import { type NavBrandProps as Props } from '.';
   import { getContext } from 'svelte';
   import type { navbarType } from '$lib/types';
   import { twMerge } from 'tailwind-merge';

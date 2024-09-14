@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.8
+
+### Patch Changes
+
+- feat: update Table components ([`353f6b4c10649a40adc4a72ec16dc88be5599481`](https://github.com/shinokada/svelte-5-ui-lib/commit/353f6b4c10649a40adc4a72ec16dc88be5599481))
+
 ## 0.9.7
 
 ### Patch Changes

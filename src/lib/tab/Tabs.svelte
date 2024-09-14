@@ -11,13 +11,15 @@
   // let tableCtx: TableCtxType = {
   //   get striped() { return striped; },
   //   get hoverable() { return hoverable; },
-  //   get noborder() { return noborder; }, 
+  //   get noborder() { return noborder; },
   //   get color() { return color; },
   // };
   const ctx: TabCtxType = {
     // get active() { return active || ctxActive},
     // get inactive() { return inactive || ctxInactive},
-    get tabStyle() { return tabStyle },
+    get tabStyle() {
+      return tabStyle;
+    },
     selected: writable<HTMLElement>()
   };
 

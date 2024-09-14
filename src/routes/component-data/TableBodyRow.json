@@ -1,1 +1,1 @@
-{"name":"TableBodyRow","props":[["children",""],["class: className",""],["color",""],["...restProps",""]]}
+{"name":"TableBodyRow","props":[["children",""],["class: className",""],["color",""],["striped",""],["hoverable",""],["noborder",""],["...restProps",""]]}

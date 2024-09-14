@@ -17,14 +17,12 @@
     {#each bodyItems as items}
       <TableBodyRow>
         {#each items as item}
-        <TableBodyCell>{item}</TableBodyCell>
+          <TableBodyCell>{item}</TableBodyCell>
         {/each}
       </TableBodyRow>
     {/each}
-    {:else}
-    {#if children}
-      {@render children()}
-    {/if}
+  {:else if children}
+    {@render children()}
   {/if}
 </tbody>
 
@@ -33,6 +31,7 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
+@prop bodyItems
 @prop class: className
 @prop ...restProps
 -->

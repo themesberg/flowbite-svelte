@@ -11,7 +11,7 @@
   // let compoHoverable = $derived(hoverable ? hoverable : tableCtx.hoverable || false);
   // let compoStriped = $derived(striped ? striped : tableCtx.striped || false);
   // let compoNoborder = $derived( noborder ? noborder : tableCtx.noborder || false);
-  const base = $derived(tablebodycell({ className }))
+  const base = $derived(tablebodycell({ className }));
 </script>
 
 <td {...restProps} class={base} colspan={colspan ?? 1}>
@@ -31,6 +31,7 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
+@prop color
 @prop class: className
 @prop colspan
 @prop onclick

@@ -5,7 +5,7 @@
   import { slide, type SlideParams } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
   import type { navbarType } from '$lib/types';
-  import { type NavbarProps as Props } from './'
+  import { type NavbarProps as Props } from './';
 
   let { children, toggleNav, closeNav = () => {}, navStatus, fluid, brand, hamburgerMenu = true, breakPoint = 'md', navClass, divClass, btnClass, div2Class, activeClass, nonActiveClass, ...restProps }: Props = $props();
 

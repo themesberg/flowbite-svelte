@@ -1,1 +1,1 @@
-{"name":"TableHead","props":[["children",""],["class: className",""],["defaultRow","true"],["...restProps",""]]}
+{"name":"TableHead","props":[["children",""],["headerSlot",""],["color",""],["striped",""],["hoverable",""],["noborder",""],["class: className",""],["headItems",""],["defaultRow","true"],["...restProps",""]]}

@@ -8,7 +8,7 @@
   let breakPoint: navbarType['breakPoint'];
   const context = getContext<navbarType>('navbarContext');
   breakPoint = context.breakPoint ?? 'md';
-  
+
   const base = $derived(navUl({ breakPoint, className }));
 </script>
 
@@ -21,6 +21,6 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
-@prop class: ulclass
+@prop class: className
 @prop ...restProps
 -->

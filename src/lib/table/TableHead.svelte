@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getContext } from 'svelte';
   import type TableCtxType from './Table.svelte';
-  import { TableHeadCell, type TableHeadProps as Props, tablehead} from '.'
+  import { TableHeadCell, type TableHeadProps as Props, tablehead } from '.';
 
   let { children, headerSlot, color, striped, hoverable, noborder, class: className, headItems, defaultRow = true, ...restProps }: Props = $props();
 
@@ -10,9 +10,9 @@
   let compoColor = $derived(color ? color : tableCtx.color || 'default');
   // let compoHoverable = $derived(hoverable ? hoverable : tableCtx.hoverable || false);
   let compoStriped = $derived(striped ? striped : tableCtx.striped || false);
-  let compoNoborder = $derived( noborder ? noborder : tableCtx.noborder || false);
+  let compoNoborder = $derived(noborder ? noborder : tableCtx.noborder || false);
 
-  const base = $derived(tablehead({ color: compoColor, noborder: compoNoborder, striped: compoStriped,  className }));
+  const base = $derived(tablehead({ color: compoColor, noborder: compoNoborder, striped: compoStriped, className }));
 </script>
 
 <thead {...restProps} class={base}>
@@ -23,15 +23,13 @@
     {#each headItems as item}
       <TableHeadCell>{item}</TableHeadCell>
     {/each}
-  {:else}
-    {#if children}
-      {#if defaultRow}
-        <tr>
-          {@render children()}
-        </tr>
-      {:else}
+  {:else if children}
+    {#if defaultRow}
+      <tr>
         {@render children()}
-      {/if}
+      </tr>
+    {:else}
+      {@render children()}
     {/if}
   {/if}
 </thead>
@@ -41,7 +39,13 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
+@prop headerSlot
+@prop color
+@prop striped
+@prop hoverable
+@prop noborder
 @prop class: className
+@prop headItems
 @prop defaultRow = true
 @prop ...restProps
 -->

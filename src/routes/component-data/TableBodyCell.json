@@ -1,1 +1,1 @@
-{"name":"TableBodyCell","props":[["children",""],["class: className",""],["colspan",""],["onclick",""],["...restProps",""]]}
+{"name":"TableBodyCell","props":[["children",""],["color",""],["class: className",""],["colspan",""],["onclick",""],["...restProps",""]]}

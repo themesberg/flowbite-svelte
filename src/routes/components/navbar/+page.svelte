@@ -13,7 +13,7 @@
     eager: true
   });
 
-  let breakPoint: Navbar['breakpoint'] = $state('md')
+  let breakPoint: Navbar['breakpoint'] = $state('md');
   let nav = uiHelpers();
   let navStatus = $state(false);
   let toggleNav = nav.toggle;

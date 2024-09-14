@@ -8,33 +8,33 @@ export const table = tv({
   variants: {
     color: {
       // default, primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
-    default: { table:'text-gray-500 dark:text-gray-400' },
-    primary: { table:'text-primary-100 dark:text-primary-100' },
-    secondary: { table:'text-secondary-100 dark:text-secondary-100' },
-    gray: { table:'text-gray-100 dark:text-gray-100' },
-    red: { table:'text-red-100 dark:text-red-100' },
-    orange: { table:'text-orange-100 dark:text-orange-100' },
-    amber: { table:'text-amber-100 dark:text-amber-100' },
-    yellow: { table:'text-yellow-100 dark:text-yellow-100' },
-    lime: { table:'text-lime-100 dark:text-lime-100' },
-    green: { table:'text-green-100 dark:text-green-100' },
-    emerald: { table:'text-emerald-100 dark:text-emerald-100' },
-    teal: { table:'text-teal-100 dark:text-teal-100' },
-    cyan: { table:'text-cyan-100 dark:text-cyan-100' },
-    sky: { table:'text-sky-100 dark:text-sky-100' },
-    blue: { table:'text-blue-100 dark:text-blue-100' },
-    indigo: { table:'text-indigo-100 dark:text-indigo-100' },
-    violet: { table:'text-violet-100 dark:text-violet-100' },
-    purple: { table:'text-purple-100 dark:text-purple-100' },
-    fuchsia: { table:'text-fuchsia-100 dark:text-fuchsia-100' },
-    pink: { table:'text-pink-100 dark:text-pink-100' },
+      default: { table: 'text-gray-500 dark:text-gray-400' },
+      primary: { table: 'text-primary-100 dark:text-primary-100' },
+      secondary: { table: 'text-secondary-100 dark:text-secondary-100' },
+      gray: { table: 'text-gray-100 dark:text-gray-100' },
+      red: { table: 'text-red-100 dark:text-red-100' },
+      orange: { table: 'text-orange-100 dark:text-orange-100' },
+      amber: { table: 'text-amber-100 dark:text-amber-100' },
+      yellow: { table: 'text-yellow-100 dark:text-yellow-100' },
+      lime: { table: 'text-lime-100 dark:text-lime-100' },
+      green: { table: 'text-green-100 dark:text-green-100' },
+      emerald: { table: 'text-emerald-100 dark:text-emerald-100' },
+      teal: { table: 'text-teal-100 dark:text-teal-100' },
+      cyan: { table: 'text-cyan-100 dark:text-cyan-100' },
+      sky: { table: 'text-sky-100 dark:text-sky-100' },
+      blue: { table: 'text-blue-100 dark:text-blue-100' },
+      indigo: { table: 'text-indigo-100 dark:text-indigo-100' },
+      violet: { table: 'text-violet-100 dark:text-violet-100' },
+      purple: { table: 'text-purple-100 dark:text-purple-100' },
+      fuchsia: { table: 'text-fuchsia-100 dark:text-fuchsia-100' },
+      pink: { table: 'text-pink-100 dark:text-pink-100' },
       rose: { table: 'text-rose-100 dark:text-rose-100' }
     },
     shadow: {
-      true: { base: 'shadow-md sm:rounded-lg'}
+      true: { base: 'shadow-md sm:rounded-lg' }
     }
   }
-})
+});
 
 export const tablebodyrow = tv({
   base: '',
@@ -63,10 +63,10 @@ export const tablebodyrow = tv({
       rose: 'bg-rose-500 border-rose-400'
     },
     hoverable: {
-      true:''
+      true: ''
     },
     striped: {
-      true:''
+      true: ''
     },
     border: {
       true: 'border-b last:border-b-0'
@@ -201,7 +201,7 @@ export const tablebodyrow = tv({
     // default, primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
     {
       striped: true,
-      color:'red',
+      color: 'red',
       class: 'odd:bg-red-500 even:bg-red-600 odd:dark:bg-red-500 even:dark:bg-red-600'
     },
     {
@@ -285,7 +285,7 @@ export const tablebodyrow = tv({
       class: 'odd:bg-rose-500 even:bg-rose-600 odd:dark:bg-rose-500 even:dark:bg-rose-600'
     }
   ]
-})
+});
 
 export const tablehead = tv({
   base: 'text-xs uppercase',
@@ -313,91 +313,91 @@ export const tablehead = tv({
       purple: 'text-white dark:text-white bg-purple-700 dark:bg-purple-700',
       fuchsia: 'text-white dark:text-white bg-fuchsia-700 dark:bg-fuchsia-700',
       pink: 'text-white dark:text-white bg-pink-700 dark:bg-pink-700',
-      rose: 'text-white dark:text-white bg-rose-700 dark:bg-rose-700',
+      rose: 'text-white dark:text-white bg-rose-700 dark:bg-rose-700'
     },
     noborder: {
       true: '',
-      false: '',
+      false: ''
     },
     striped: {
       true: '',
-      false: '',
-    },
+      false: ''
+    }
   },
   compoundVariants: [
     {
       color: 'default',
       noborder: true,
-      class: 'bg-transparent dark:bg-transparent',
+      class: 'bg-transparent dark:bg-transparent'
     },
     {
       color: 'default',
       striped: true,
-      class: 'bg-transparent dark:bg-transparent border-gray-700',
+      class: 'bg-transparent dark:bg-transparent border-gray-700'
     },
     {
       striped: true,
       color: 'blue',
-      class: 'border-blue-400',
+      class: 'border-blue-400'
     },
     {
       striped: true,
       color: 'green',
-      class: 'border-green-400',
+      class: 'border-green-400'
     },
     {
       striped: true,
       color: 'red',
-      class: 'border-red-400',
+      class: 'border-red-400'
     },
     {
       striped: true,
       color: 'yellow',
-      class: 'border-yellow-400',
+      class: 'border-yellow-400'
     },
     {
       striped: true,
       color: 'purple',
-      class: 'border-purple-400',
+      class: 'border-purple-400'
     },
     {
       striped: true,
       color: 'indigo',
-      class: 'border-indigo-400',
+      class: 'border-indigo-400'
     },
     {
       striped: true,
       color: 'pink',
-      class: 'border-pink-400',
-    },
-  ],
+      class: 'border-pink-400'
+    }
+  ]
 });
 
 export const tablebodycell = tv({
-  base: 'px-6 py-4 whitespace-nowrap font-medium',
+  base: 'px-6 py-4 whitespace-nowrap font-medium'
   // variants: {
   //   color: {
-      // default: 'text-gray-900 dark:text-white',
-      // primary: 'bg-white dark:text-white',
-      // secondary: 'bg-white dark:text-white',
-      // gray: 'bg-white dark:text-white',
-      // red: 'bg-white dark:text-white',
-      // orange: 'bg-white dark:text-white',
-      // amber: 'bg-white dark:text-white',
-      // yellow: 'bg-white dark:text-white',
-      // lime: 'bg-white dark:text-white',
-      // green: 'bg-white dark:text-white',
-      // emerald: 'bg-white dark:text-white',
-      // teal: 'bg-white dark:text-white',
-      // cyan: 'bg-white dark:text-white',
-      // sky: 'bg-white dark:text-white',
-      // blue: 'text-white dark:text-white',
-      // indigo: 'bg-white dark:text-white',
-      // violet: 'bg-white dark:text-white',
-      // purple: 'bg-white dark:text-white',
-      // fuchsia: 'bg-white dark:text-white',
-      // pink: 'bg-white dark:text-white',
-      // rose: 'bg-white dark:text-white',
+  // default: 'text-gray-900 dark:text-white',
+  // primary: 'bg-white dark:text-white',
+  // secondary: 'bg-white dark:text-white',
+  // gray: 'bg-white dark:text-white',
+  // red: 'bg-white dark:text-white',
+  // orange: 'bg-white dark:text-white',
+  // amber: 'bg-white dark:text-white',
+  // yellow: 'bg-white dark:text-white',
+  // lime: 'bg-white dark:text-white',
+  // green: 'bg-white dark:text-white',
+  // emerald: 'bg-white dark:text-white',
+  // teal: 'bg-white dark:text-white',
+  // cyan: 'bg-white dark:text-white',
+  // sky: 'bg-white dark:text-white',
+  // blue: 'text-white dark:text-white',
+  // indigo: 'bg-white dark:text-white',
+  // violet: 'bg-white dark:text-white',
+  // purple: 'bg-white dark:text-white',
+  // fuchsia: 'bg-white dark:text-white',
+  // pink: 'bg-white dark:text-white',
+  // rose: 'bg-white dark:text-white',
   //   }
   // }
-})
+});

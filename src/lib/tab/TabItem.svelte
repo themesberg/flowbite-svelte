@@ -11,7 +11,7 @@
   const { active, inactive } = $derived(tabs({ tabStyle: compoTabStyle, hasDivider: true }));
   // const tableCtx: TableCtxType = getContext('tableCtx');
   // let compoColor = $derived(color ? color : tableCtx.color || 'default');
-  
+
   // $inspect('ctx from item: ', ctx);
   let selected = ctx.selected ?? writable<HTMLElement>();
 
@@ -68,5 +68,6 @@
 @prop inactiveClass
 @prop class: className
 @prop disabled
+@prop tabStyle
 @prop ...restProps
 -->

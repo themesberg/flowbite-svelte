@@ -1,1 +1,1 @@
-{"name":"NavUl","props":[["children",""],["class: ulclass",""],["...restProps",""]]}
+{"name":"NavUl","props":[["children",""],["class: className",""],["...restProps",""]]}
