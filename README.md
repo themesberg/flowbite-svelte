@@ -8,7 +8,7 @@ UI library for Svelte 5
 
 After installing Svelte-5, update `svelte.config.js` to enable `runes`:
 
-```
+```js
 import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
@@ -28,20 +28,20 @@ export default config;
 
 Install `svelte-5-ui-lib`, update dependencies and install the latest:
 
-```
+```sh
 pnpm i -D svelte-5-ui-lib && pnpm update && pnpm i -D flowbite-svelte-icons@next
 ```
 
 Install tailwindcss:
 
-```
+```sh
 npx svelte-add@latest tailwindcss
 pnpm i
 ```
 
 Add the following to tailwind.config.js:
 
-```
+```js
 import type { Config } from 'tailwindcss';
 
 export default {
