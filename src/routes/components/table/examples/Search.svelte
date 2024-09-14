@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { TableSearch, TableHead, TableHeadCell, TableBody, TableBodyRow, TableBodyCell } from '$lib';
+  import { TableSearch, TableHead, TableBody, TableBodyRow, TableBodyCell } from '$lib';
   const headItems = ['ID', 'Maker', 'Type', 'Make'];
   let searchTerm = $state('');
   let items = [

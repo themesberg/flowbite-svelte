@@ -1,16 +1,11 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import { twMerge } from 'tailwind-merge';
-  import type { HTMLThAttributes } from 'svelte/elements';
-
-  interface Props extends HTMLThAttributes {
-    children?: Snippet;
-    class?: string;
-  }
+  import { type TableHeadCellProps as Props, tableheadcell} from './';
+  
   let { children, class: className, ...restProps }: Props = $props();
+  const base = $derived(tableheadcell({ className }));
 </script>
 
-<th {...restProps} class={twMerge('px-6 py-3', className)}>
+<th {...restProps} class={base}>
   {#if children}
     {@render children()}
   {/if}

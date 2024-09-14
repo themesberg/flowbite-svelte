@@ -1,33 +1,7 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import { setContext } from 'svelte';
-  import type { HTMLTableAttributes } from 'svelte/elements';
-
-  type TableSearchType = {
-    striped?: boolean;
-    hoverable?: boolean;
-    color?: string;
-  };
-  interface Props extends HTMLTableAttributes {
-    children?: Snippet;
-    header?: Snippet;
-    footer?: Snippet;
-    divClass?: string;
-    inputValue?: string;
-    striped?: boolean;
-    hoverable?: boolean;
-    customColor?: string;
-    color?: string;
-    innerDivClass?: string;
-    inputClass?: string;
-    searchClass?: string;
-    svgDivClass?: string;
-    svgClass?: string;
-    tableClass?: string;
-    class?: string;
-    placeholder?: string;
-  }
+  import { type TableSearchProps as Props, type TableSearchType } from '.';
 
   let { children, header, footer, divClass = 'relative overflow-x-auto shadow-md sm:rounded-lg', inputValue = $bindable(), striped, hoverable, customColor = '', color = 'default', innerDivClass = 'p-4', inputClass, searchClass = 'relative mt-1', svgDivClass, svgClass = 'w-5 h-5 text-gray-500 dark:text-gray-400', tableClass = 'w-full text-left text-sm', class: className, placeholder = 'Search', ...restProps }: Props = $props();
 
@@ -45,6 +19,7 @@
     pink: 'text-pink-100 dark:text-pink-100',
     custom: customColor
   };
+
   const tableSearchCtx: TableSearchType = {
     striped,
     hoverable,

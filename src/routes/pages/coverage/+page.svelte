@@ -154,7 +154,7 @@
     },
     table: {
       checked: true,
-      problems: 'Sorting by column'
+      problems: 'Sorting by column, Click and double-click on row'
     },
     tabs: {
       checked: true,

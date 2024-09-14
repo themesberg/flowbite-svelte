@@ -1,3 +1,34 @@
+<script lang="ts">
+  import { slide } from 'svelte/transition';
+  import { Table, TableHead, TableHeadCell, TableBody, TableBodyRow, TableBodyCell, ImagePlaceholder } from '$lib';
+  const items2 = [
+    {
+      name: 'Apple MacBook Pro 17"',
+      color: 'Sliver',
+      type: 'Laptop',
+      price: '$2999'
+    },
+    {
+      name: 'Microsoft Surface Pro',
+      color: 'White',
+      type: 'Laptop PC',
+      price: '$1999'
+    },
+    {
+      name: 'Magic Mouse 2',
+      color: 'Black',
+      type: 'Accessories',
+      price: '$99'
+    }
+  ];
+
+  let openRow = $state();
+  const toggleRow = (i: number) => {
+    openRow = openRow === i ? null : i;
+  };
+  let details;
+</script>
+
 <Table>
   <TableHead>
     <TableHeadCell>Product name</TableHeadCell>

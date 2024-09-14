@@ -1,13 +1,5 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import type { HTMLAttributes } from 'svelte/elements';
-  import { TableBodyRow, TableBodyCell } from '.';
-
-  interface Props extends HTMLAttributes<HTMLTableSectionElement> {
-    children?: Snippet;
-    class?: string;
-    bodyItems?: any[];
-  }
+  import { TableBodyRow, TableBodyCell, type TableBodyProps as Props } from '.';
 
   let { children, bodyItems, class: className, ...restProps }: Props = $props();
 </script>

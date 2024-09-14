@@ -8,7 +8,6 @@
   const tableCtx: TableCtxType = getContext('tableCtx');
   // for reactivity with svelte context
   let compoColor = $derived(color ? color : tableCtx.color || 'default');
-  // let compoHoverable = $derived(hoverable ? hoverable : tableCtx.hoverable || false);
   let compoStriped = $derived(striped ? striped : tableCtx.striped || false);
   let compoNoborder = $derived(noborder ? noborder : tableCtx.noborder || false);
 

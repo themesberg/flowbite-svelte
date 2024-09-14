@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Table, table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox, TableSearch, ImagePlaceholder, uiHelpers, Label, Radio, Button } from '$lib';
+  import { Table, table, uiHelpers, Label, Radio, Button } from '$lib';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -32,7 +32,8 @@
     { name: 'Header slot', component: ExampleComponents.HeaderSlot },
     { name: 'Footer slot', component: ExampleComponents.FooterSlot },
     { name: 'Table caption', component: ExampleComponents.TableCaption },
-    { name: 'Overflow', component: ExampleComponents.Overflow }
+    { name: 'Overflow', component: ExampleComponents.Overflow },
+    { name: 'Click double click', component: ExampleComponents.ClickDoubleClick }
   ];
 
   let selectedExample = $state(exampleArr[0].name);
@@ -72,46 +73,20 @@
     { name: 'Google Pixel Phone', color: 'Gray', type: 'Phone', price: '$799' },
     { name: 'Apple Watch 5', color: 'Red', type: 'Wearables', price: '$999' }
   ];
-
-  import { slide } from 'svelte/transition';
-
-  const items2 = [
-    {
-      name: 'Apple MacBook Pro 17"',
-      color: 'Sliver',
-      type: 'Laptop',
-      price: '$2999'
-    },
-    {
-      name: 'Microsoft Surface Pro',
-      color: 'White',
-      type: 'Laptop PC',
-      price: '$1999'
-    },
-    {
-      name: 'Magic Mouse 2',
-      color: 'Black',
-      type: 'Accessories',
-      price: '$99'
-    }
-  ];
-
-  let openRow = $state();
-
-  const toggleRow = (i: number) => {
-    openRow = openRow === i ? null : i;
-  };
-
-  let details;
+  
   // code generator
   let generatedCode = $derived(
     (() => {
       let props = [];
-      if (color) props.push(` color="${color}"`);
+      if (color !== 'default') props.push(` color="${color}"`);
+      if (striped) props.push(' striped');
+      if (hoverable) props.push(' hoverable');
+      if (noborder) props.push(' noborder');
+      if (shadow) props.push(' shadow');
 
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
-      return `<Table${propsString}>My Table</Table>`;
+      return `<<Table {tableItems}${propsString} />`;
     })()
   );
   // for interactive builder
@@ -157,6 +132,9 @@
     <Button class="w-40" color="indigo" onclick={changeNoborder}>{noborder ? 'Borderless' : 'Border'}</Button>
     <Button class="w-40" color="rose" onclick={changeShadow}>{shadow ? 'No Shadow' : 'Shadow'}</Button>
   </div>
+  {#snippet codeblock()}
+    <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Examples</H2>
@@ -171,40 +149,6 @@
   <SelectedComponent />
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Click and double-click on row</H2>
-<CodeWrapper>
-  <Table>
-    <TableHead>
-      <TableHeadCell>Product name</TableHeadCell>
-      <TableHeadCell>Color</TableHeadCell>
-      <TableHeadCell>Category</TableHeadCell>
-      <TableHeadCell>Price</TableHeadCell>
-    </TableHead>
-    <TableBody class="divide-y">
-      {#each items2 as item, i}
-        <TableBodyRow onclick={() => toggleRow(i)}>
-          <TableBodyCell>{item.name}</TableBodyCell>
-          <TableBodyCell>{item.color}</TableBodyCell>
-          <TableBodyCell>{item.type}</TableBodyCell>
-          <TableBodyCell>{item.price}</TableBodyCell>
-        </TableBodyRow>
-        {#if openRow === i}
-          <TableBodyRow ondblclick={() => (details = item)}>
-            <TableBodyCell colspan={4} class="p-0">
-              <div class="px-2 py-3" transition:slide={{ duration: 300, axis: 'y' }}>
-                <ImagePlaceholder />
-              </div>
-            </TableBodyCell>
-          </TableBodyRow>
-        {/if}
-      {/each}
-    </TableBody>
-  </Table>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/click-and-double-click-on-row.md'] as string} />
   {/snippet}
 </CodeWrapper>
 

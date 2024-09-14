@@ -375,29 +375,8 @@ export const tablehead = tv({
 
 export const tablebodycell = tv({
   base: 'px-6 py-4 whitespace-nowrap font-medium'
-  // variants: {
-  //   color: {
-  // default: 'text-gray-900 dark:text-white',
-  // primary: 'bg-white dark:text-white',
-  // secondary: 'bg-white dark:text-white',
-  // gray: 'bg-white dark:text-white',
-  // red: 'bg-white dark:text-white',
-  // orange: 'bg-white dark:text-white',
-  // amber: 'bg-white dark:text-white',
-  // yellow: 'bg-white dark:text-white',
-  // lime: 'bg-white dark:text-white',
-  // green: 'bg-white dark:text-white',
-  // emerald: 'bg-white dark:text-white',
-  // teal: 'bg-white dark:text-white',
-  // cyan: 'bg-white dark:text-white',
-  // sky: 'bg-white dark:text-white',
-  // blue: 'text-white dark:text-white',
-  // indigo: 'bg-white dark:text-white',
-  // violet: 'bg-white dark:text-white',
-  // purple: 'bg-white dark:text-white',
-  // fuchsia: 'bg-white dark:text-white',
-  // pink: 'bg-white dark:text-white',
-  // rose: 'bg-white dark:text-white',
-  //   }
-  // }
 });
+
+export const tableheadcell = tv({
+  base: 'px-6 py-3'
+})

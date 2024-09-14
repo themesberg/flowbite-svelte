@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Table, TableHead, TableHeadCell, TableBody, TableBodyRow, TableBodyCell } from '$lib';
+  import { Table, TableHead, TableBody } from '$lib';
   const headItems = ['Brand', 'Name', 'Color', 'Type', 'Price'];
   const bodyItems = [
     ['Apple', 'MacBook Pro 17"', 'Sliver', 'Laptop', '$2999'],

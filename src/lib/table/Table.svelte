@@ -1,7 +1,6 @@
 <script lang="ts">
-  import { twMerge, twJoin } from 'tailwind-merge';
   import { setContext } from 'svelte';
-  import { type TableProps as Props, table as tableCls, type TableColrType, type TableCtxType, TableHead, TableBody } from '.';
+  import { type TableProps as Props, table as tableCls, type TableCtxType, TableHead, TableBody } from '.';
 
   let { children, footerSlot, captionSlot, tableItems, divClass = 'relative overflow-x-auto', striped, hoverable, noborder, shadow, color = 'default', customeColor, class: className, ...restProps }: Props = $props();
 
@@ -29,13 +28,6 @@
     headItems = Object.keys(tableItems[0]).map((key) => key.charAt(0).toUpperCase() + key.slice(1));
     bodyItems = tableItems.map((item) => Object.values(item));
   }
-  // $effect(() => {
-  //   tableCtx.color = color;
-  //   tableCtx.hoverable = hoverable;
-  //   tableCtx.striped = striped;
-  //   tableCtx.noborder = noborder;
-  // })
-  // $inspect('hoverable', hoverable);
 </script>
 
 <div class={base({ class: divClass })}>

@@ -11,3 +11,4 @@ export { default as TableCaption } from './TableCaption.svelte';
 export { default as NoBorder } from './NoBorder.svelte';
 export { default as Shadow } from './Shadow.svelte';
 export { default as Overflow } from './Overflow.svelte';
+export { default as ClickDoubleClick } from './ClickDoubleClick.svelte';

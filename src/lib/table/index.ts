@@ -5,8 +5,8 @@ import TableBodyRow from './TableBodyRow.svelte';
 import TableHeadCell from './TableHeadCell.svelte';
 import TableHead from './TableHead.svelte';
 import TableSearch from './TableSearch.svelte';
-import { table, tablebodyrow, tablehead, tablebodycell } from './theme';
-import type { HTMLTableAttributes, HTMLAttributes, HTMLTdAttributes } from 'svelte/elements';
+import { table, tablebodyrow, tablehead, tablebodycell, tableheadcell } from './theme';
+import type { HTMLTableAttributes, HTMLAttributes, HTMLTdAttributes, HTMLThAttributes } from 'svelte/elements';
 import type { Snippet } from 'svelte';
 import { type VariantProps } from 'tailwind-variants';
 
@@ -61,4 +61,40 @@ interface TableBodyCellProps extends HTMLTdAttributes {
   onclick?: () => void;
 }
 
-export { Table, table, TableBody, TableBodyCell, tablebodycell, TableBodyRow, tablebodyrow, TableHeadCell, TableHead, tablehead, TableSearch, type TableProps, type TableCtxType, type TableHeadProps, type TableColrType, type TableBodyRowProps, type TableBodyCellProps };
+interface TableBodyProps extends HTMLAttributes<HTMLTableSectionElement> {
+  children?: Snippet;
+  class?: string;
+  bodyItems?: any[];
+}
+
+interface TableHeadCellProps extends HTMLThAttributes {
+  children?: Snippet;
+  class?: string;
+}
+
+type TableSearchType = {
+  striped?: boolean;
+  hoverable?: boolean;
+  color?: string;
+};
+interface TableSearchProps extends HTMLTableAttributes {
+  children?: Snippet;
+  header?: Snippet;
+  footer?: Snippet;
+  divClass?: string;
+  inputValue?: string;
+  striped?: boolean;
+  hoverable?: boolean;
+  customColor?: string;
+  color?: string;
+  innerDivClass?: string;
+  inputClass?: string;
+  searchClass?: string;
+  svgDivClass?: string;
+  svgClass?: string;
+  tableClass?: string;
+  class?: string;
+  placeholder?: string;
+}
+
+export { Table, table, TableBody, TableBodyCell, tablebodycell, TableBodyRow, tablebodyrow, TableHeadCell, tableheadcell, TableHead, tablehead, TableSearch, type TableProps, type TableCtxType, type TableHeadProps, type TableColrType, type TableBodyRowProps, type TableBodyCellProps, type TableBodyProps, type TableHeadCellProps, type TableSearchProps, type TableSearchType };
