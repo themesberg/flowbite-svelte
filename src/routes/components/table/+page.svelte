@@ -10,11 +10,7 @@
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'table';
-  const modules = import.meta.glob('./md/*.md', {
-    query: '?raw',
-    import: 'default',
-    eager: true
-  });
+
   // for examples section that dynamically changes the svelte component and markdown content
   import * as ExampleComponents from './examples';
   const exampleModules = import.meta.glob('./examples/*.svelte', {

@@ -20,15 +20,11 @@
     components?: string;
   }
   let { dirName, components }: Props = $props();
-  // export let dirName: string = '';
-  // export let components: string;
-
   let compoData: TCompoData[] = $state([]);
   // default is find fileName using dirName
   const fileNames = getFilteredFileNames(dirName);
 
-  // if components are given (e.g. checkbox, etc in forms, typography, utils)
-  // use the components string
+  // if components are given (e.g. checkbox, etc in forms, typography, utils) use the components string
   let componentArray = components ? components.split(', ') : [];
 
   if (components) {

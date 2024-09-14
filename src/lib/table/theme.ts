@@ -379,4 +379,4 @@ export const tablebodycell = tv({
 
 export const tableheadcell = tv({
   base: 'px-6 py-3'
-})
+});

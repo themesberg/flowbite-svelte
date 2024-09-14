@@ -455,14 +455,6 @@
       "types": "./dist/spinner/Spinner.svelte.d.ts",
       "svelte": "./dist/spinner/Spinner.svelte"
     },
-    "./TabItem.svelte": {
-      "types": "./dist/tab/TabItem.svelte.d.ts",
-      "svelte": "./dist/tab/TabItem.svelte"
-    },
-    "./Tabs.svelte": {
-      "types": "./dist/tab/Tabs.svelte.d.ts",
-      "svelte": "./dist/tab/Tabs.svelte"
-    },
     "./Table.svelte": {
       "types": "./dist/table/Table.svelte.d.ts",
       "svelte": "./dist/table/Table.svelte"
@@ -490,6 +482,14 @@
     "./TableSearch.svelte": {
       "types": "./dist/table/TableSearch.svelte.d.ts",
       "svelte": "./dist/table/TableSearch.svelte"
+    },
+    "./TabItem.svelte": {
+      "types": "./dist/tabs/TabItem.svelte.d.ts",
+      "svelte": "./dist/tabs/TabItem.svelte"
+    },
+    "./Tabs.svelte": {
+      "types": "./dist/tabs/Tabs.svelte.d.ts",
+      "svelte": "./dist/tabs/Tabs.svelte"
     },
     "./Activity.svelte": {
       "types": "./dist/timeline/Activity.svelte.d.ts",
