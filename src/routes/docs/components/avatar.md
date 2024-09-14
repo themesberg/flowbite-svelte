@@ -211,7 +211,7 @@ Preset values are equivalents of:
 
 ## Customizable Placeholder
 
-This new feature allows you to customize the placeholder avatar by providing a custom `fallbackSrc` image. This is useful when you want a specific placeholder image to show when the main avatar image fails to load.
+This feature allows you to customize the placeholder avatar by providing a custom `fallbackSrc` image. This is useful when you want a specific placeholder image to show when the main avatar image fails to load.
 
 ```svelte example class="flex justify-center gap-4" hideScript hideResponsiveButtons
 <script>
