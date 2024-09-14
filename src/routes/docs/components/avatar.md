@@ -5,14 +5,14 @@ breadcrumb_title: Svelte Avatar
 component_title: Avatar
 dir: Components
 description: Use the avatar component to show a visual representation of a user profile using an image element or SVG object based on multiple styles and sizes
-thumnailSize: w-64
+thumbnailSize: w-64
 ---
 
 <script>
-  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
-  import { P, A } from '$lib'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils';
+  import { P, A } from '$lib';
   let name;
-  const dirName = toKebabCase(component_title)
+  const dirName = toKebabCase(component_title);
 </script>
 
 The avatar component can be used as a visual identifier for a user profile on your website and you can use the examples from Flowbite to modify the styles and sizes of these components using the utility classes from Tailwind CSS.
@@ -44,9 +44,7 @@ Use this example to create a circle and rounded avatar on an image element.
 
 ## Bordered
 
-You can apply a border around the avatar component.
-
-If you can use the `ring-&#123;color&#125;` class from Tailwind CSS to modify ring color.
+You can apply a border around the avatar component. Use the `ring-&#123;color&#125;` class from Tailwind CSS to modify ring color.
 
 ```svelte example class="flex justify-center gap-4" hideScript hideResponsiveButtons
 <script>
@@ -103,7 +101,7 @@ Use this example to show a tooltip when hovering over the avatar.
 
 ## Dot indicator
 
-Use a dot element relative to the avatar component as an indicator for the user (eg. online or offline status).
+Use a dot element relative to the avatar component as an indicator for the user (e.g., online or offline status).
 
 ```svelte example class="flex justify-center gap-4" hideResponsiveButtons
 <script>
@@ -184,7 +182,7 @@ Use this example if you want to show a dropdown menu when clicking on the avatar
 
 ## Sizes
 
-You can set `size` property to preset values of `xs | sm | md | lg | xl`. Custom size can be achieved by setting size to `none` and adding any of the Tailwind Css size classes like `w-[x] h-[x]`.
+You can set the `size` property to preset values of `xs | sm | md | lg | xl`. Custom size can be achieved by setting size to `none` and adding any of the Tailwind CSS size classes like `w-[x] h-[x]`.
 
 Preset values are equivalents of:
 
@@ -201,7 +199,7 @@ Preset values are equivalents of:
   import { Avatar } from 'flowbite-svelte';
 </script>
 
-<div class=" flex flex-wrap justify-center space-x-4 rtl:space-x-reverse">
+<div class="flex flex-wrap justify-center space-x-4 rtl:space-x-reverse">
   <Avatar src="/images/profile-picture-3.webp" rounded size="xs" />
   <Avatar src="/images/profile-picture-3.webp" rounded size="sm" />
   <Avatar src="/images/profile-picture-3.webp" rounded size="md" />
@@ -209,6 +207,19 @@ Preset values are equivalents of:
   <Avatar src="/images/profile-picture-3.webp" rounded size="xl" />
   <Avatar src="/images/profile-picture-3.webp" rounded size="none" class="w-28 h-28" />
 </div>
+```
+
+## Customizable Placeholder
+
+This new feature allows you to customize the placeholder avatar by providing a custom `fallbackSrc` image. This is useful when you want a specific placeholder image to show when the main avatar image fails to load.
+
+```svelte example class="flex justify-center gap-4" hideScript hideResponsiveButtons
+<script>
+  import { Avatar } from 'flowbite-svelte';
+</script>
+
+<Avatar src="/images/profile-picture-3.webp" fallbackSrc="/images/fallback-picture.webp" />
+<Avatar fallbackSrc="/images/fallback-picture.webp" />
 ```
 
 ## Component data
