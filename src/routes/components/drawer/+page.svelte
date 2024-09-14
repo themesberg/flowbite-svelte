@@ -24,6 +24,8 @@
   });
 
   const exampleArr = [
+    { name: 'Form elements', component: ExampleComponents.FormElements },
+    { name: 'Contact form', component: ExampleComponents.ContactForm },
     { name: 'Drawer navigation', component: ExampleComponents.DrawerNavigation },
     { name: 'Offset', component: ExampleComponents.Offset },
     { name: 'Onmouseenter', component: ExampleComponents.Onmouseenter }
@@ -115,10 +117,12 @@
 
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
-      return `<Button onclick={drawerA.toggle}>Drawer</Button>
-<Drawer drawerStatus={drawerStatusA} closeDrawer={closeDrawerA}${propsString}>
-  <Drawerhead onclick={closeDrawerA}>
-    Head content
+      return `<Button onclick={drawer.toggle}>Drawer</Button>
+<Drawer drawerStatus={drawerStatus} closeDrawer={closeDrawer}${propsString}>
+  <Drawerhead onclick={closeDrawer} class="mb-4>
+    <h5 id="drawer-label" class="inline-flex items-center text-xl font-semibold text-gray-500 dark:text-gray-400">
+        <InfoCircleSolid class="me-2.5 h-5 w-5" />${selectedTransition} drawer
+      </h5>
   </Drawerhead>
     My Drawer
 </Drawer>`;
@@ -158,9 +162,9 @@
     <Button onclick={drawerTransition.toggle}>Drawer</Button>
   </div>
   <Drawer drawerStatus={drawerStatusTransition} closeDrawer={closeDrawerTransition} transition={currentTransition.transition} placement={currentPlacement.placement as Drawer['placement']} width={currentPlacement.width as Drawer['width']} params={currentPlacement.placement === 'left' ? currentTransition.params : currentPlacement.params} backdrop={backdropStatus} activateClickOutside={outsideclickStatus}>
-    <Drawerhead onclick={closeDrawerTransition}>
-      <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-        <InfoCircleSolid class="me-2.5 h-4 w-4" />{selectedTransition} drawer
+    <Drawerhead onclick={closeDrawerTransition} class="mb-4">
+      <h5 id="drawer-label" class="inline-flex items-center text-xl font-semibold text-gray-500 dark:text-gray-400">
+        <InfoCircleSolid class="me-2.5 h-5 w-5" />{selectedTransition} drawer
       </h5>
     </Drawerhead>
     <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">Content</p>

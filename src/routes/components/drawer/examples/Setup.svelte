@@ -1,9 +1,10 @@
 <script>
   import { Drawer, Drawerhead, Button, uiHelpers } from '$lib';
-  const drawerA = uiHelpers();
-  let drawerStatusA = $state(false);
-  const closeDrawerA = drawerA.close;
+  import { InfoCircleSolid } from 'flowbite-svelte-icons';
+  const drawer = uiHelpers();
+  let drawerStatus = $state(false);
+  const closeDrawer = drawer.close;
   $effect(() => {
-    drawerStatusA = drawerA.isOpen;
+    drawerStatus = drawer.isOpen;
   });
 </script>

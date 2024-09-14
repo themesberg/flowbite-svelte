@@ -82,35 +82,35 @@
     },
     drawer: {
       checked: true,
-      problems: 'Contact form, Form elements'
+      // problems: 'Contact form, Form elements'
       // notes: 'Variants checked'
     },
     dropdown: {
       checked: true,
       // problems:
       //   'Sizes, Placement, Double placement, Events'
-      notes: 'Variants checked'
+      // notes: 'Variants checked'
     },
     footer: {
       checked: true,
-      notes: 'Variants checked'
+      // notes: 'Variants checked'
     },
     gallery: {
       checked: true,
-      notes: 'Variants checked'
+      // notes: 'Variants checked'
     },
     indicators: {
       checked: true,
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
     },
     kbd: {
       checked: true,
-      notes: 'Varants checked'
+      // notes: 'Varants checked'
     },
     listGroup: {
       checked: true,
-      problems: 'Advanced',
-      notes: 'Variants checked'
+      // problems: 'Advanced',
+      // notes: 'Variants checked'
     },
     megaMenu: {
       checked: false
@@ -124,7 +124,7 @@
     },
     pagination: {
       checked: true,
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
     },
     popover: {
       checked: false,
@@ -159,7 +159,7 @@
     tabs: {
       checked: true,
       // problems: 'Full width tabs, Components in tab contents'
-      notes: 'Variants checked'
+      // notes: 'Variants checked'
     },
     timeline: {
       checked: true

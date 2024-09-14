@@ -1,6 +1,7 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Label, Radio, uiHelpers } from '$lib';
+  import { Label, Radio, uiHelpers, Listgroup, ListgroupItem, Avatar } from '$lib';
+  import { TrashBinSolid } from 'flowbite-svelte-icons';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -22,7 +23,8 @@
     { name: 'Default', component: ExampleComponents.Default },
     { name: 'With links', component: ExampleComponents.WithLinks },
     { name: 'With buttons', component: ExampleComponents.WithButtons },
-    { name: 'With icons', component: ExampleComponents.WithIcons }
+    { name: 'With icons', component: ExampleComponents.WithIcons },
+    { name: 'Advanced', component: ExampleComponents.Advanced }
   ];
   let selectedExample = $state(exampleArr[0].name);
   let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -63,6 +65,7 @@
     <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
+
 
 <H2>Component data</H2>
 <CompoAttributesViewer {dirName} />

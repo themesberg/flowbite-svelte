@@ -1,25 +1,25 @@
 <script lang="ts">
-  import { Button, Drawer, Drawerhead, uiHelpers, Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper, Label, Radio } from '$lib';
-  import { InfoCircleSolid, ArrowRightOutline, ChartOutline, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditSolid, ShoppingBagSolid } from 'flowbite-svelte-icons';
-  const drawerB = uiHelpers();
-  let drawerStatusB = $state(false);
-  const closeDrawerB = drawerB.close;
+  import { Button, Drawer, Drawerhead, uiHelpers, Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper} from '$lib';
+  import { InfoCircleSolid, ChartOutline, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditSolid, ShoppingBagSolid } from 'flowbite-svelte-icons';
+  const drawer = uiHelpers();
+  let drawerStatus = $state(false);
+  const closeDrawer = drawer.close;
   $effect(() => {
-    drawerStatusB = drawerB.isOpen;
+    drawerStatus = drawer.isOpen;
   });
   let spanClass = 'flex-1 ms-3 whitespace-nowrap';
 </script>
 
 <div class="text-center">
-  <Button onclick={drawerB.toggle}>Show navigation</Button>
+  <Button onclick={drawer.toggle}>Show navigation</Button>
 </div>
-<Drawer drawerStatus={drawerStatusB} closeDrawer={closeDrawerB}>
-  <Drawerhead onclick={closeDrawerB}>
-    <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-      <InfoCircleSolid class="me-2.5 h-4 w-4" />Menu
+<Drawer drawerStatus={drawerStatus} closeDrawer={closeDrawer} class="bg-gray-50">
+  <Drawerhead onclick={closeDrawer} class="mb-4">
+    <h5 id="drawer-label" class="inline-flex items-center text-xl font-semibold text-gray-500 dark:text-gray-400">
+      <InfoCircleSolid class="me-2.5 h-5 w-5" />Menu
     </h5>
   </Drawerhead>
-  <Sidebar class="p-2">
+  <Sidebar class="p-2" divClass="p-0 m-0">
     <SidebarGroup>
       <SidebarItem label="Dashboard">
         {#snippet iconSlot()}

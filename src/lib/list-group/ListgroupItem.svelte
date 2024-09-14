@@ -46,7 +46,11 @@
     {#if Icon}
       <Icon class="me-2.5 h-5 w-5" />
     {/if}
+    {#if name}
     {name}
+    {:else}
+      {@render children()}
+    {/if}
   </button>
 {/if}
 
