@@ -25,11 +25,13 @@ interface TabitemProps extends HTMLLiAttributes {
   inactiveClass?: string;
   class?: string;
   disabled?: boolean;
+  tabStyle?: 'full' | 'pill' | 'underline' | 'none';
 }
 
 interface TabCtxType {
   activeClass?: string;
   inactiveClass?: string;
+  tabStyle?: 'full' | 'pill' | 'underline' | 'none';
   selected: Writable<HTMLElement>;
 }
 

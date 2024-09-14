@@ -81,102 +81,102 @@ export const tablebodyrow = tv({
     {
       hoverable: true,
       color: 'primary',
-      class: 'hover:bg-primary-500 dark:hover:bg-primary-600'
+      class: 'hover:bg-primary-400 dark:hover:bg-primary-400'
     },
     {
       hoverable: true,
       color: 'secondary',
-      class: 'hover:bg-secondary-500 dark:hover:bg-secondary-600'
+      class: 'hover:bg-secondary-400 dark:hover:bg-secondary-400'
     },
     {
       hoverable: true,
       color: 'gray',
-      class: 'hover:bg-gray-500 dark:hover:bg-gray-600'
+      class: 'hover:bg-gray-400 dark:hover:bg-gray-400'
     },
     {
       hoverable: true,
       color: 'red',
-      class: 'hover:bg-red-500 dark:hover:bg-red-600'
+      class: 'hover:bg-red-400 dark:hover:bg-red-400'
     },
     {
       hoverable: true,
       color: 'orange',
-      class: 'hover:bg-orange-500 dark:hover:bg-orange-600'
+      class: 'hover:bg-orange-400 dark:hover:bg-orange-400'
     },
     {
       hoverable: true,
       color: 'amber',
-      class: 'hover:bg-amber-500 dark:hover:bg-amber-600'
+      class: 'hover:bg-amber-400 dark:hover:bg-amber-400'
     },
     {
       hoverable: true,
       color: 'yellow',
-      class: 'hover:bg-yellow-500 dark:hover:bg-yellow-600'
+      class: 'hover:bg-yellow-400 dark:hover:bg-yellow-400'
     },
     {
       hoverable: true,
       color: 'lime',
-      class: 'hover:bg-lime-500 dark:hover:bg-lime-600'
+      class: 'hover:bg-lime-400 dark:hover:bg-lime-400'
     },
     {
       hoverable: true,
       color: 'green',
-      class: 'hover:bg-green-500 dark:hover:bg-green-600'
+      class: 'hover:bg-green-400 dark:hover:bg-green-400'
     },
     {
       hoverable: true,
       color: 'emerald',
-      class: 'hover:bg-emerald-500 dark:hover:bg-emerald-600'
+      class: 'hover:bg-emerald-400 dark:hover:bg-emerald-400'
     },
     {
       hoverable: true,
       color: 'teal',
-      class: 'hover:bg-teal-500 dark:hover:bg-teal-600'
+      class: 'hover:bg-teal-400 dark:hover:bg-teal-400'
     },
     {
       hoverable: true,
       color: 'cyan',
-      class: 'hover:bg-cyan-500 dark:hover:bg-cyan-600'
+      class: 'hover:bg-cyan-400 dark:hover:bg-cyan-400'
     },
     {
       hoverable: true,
       color: 'sky',
-      class: 'hover:bg-sky-400'
+      class: 'hover:bg-sky-400 dark:hover:bg-sky-400'
     },
     {
       hoverable: true,
       color: 'blue',
-      class: 'hover:bg-blue-400'
+      class: 'hover:bg-blue-400 dark:hover:bg-blue-400'
     },
     {
       hoverable: true,
       color: 'indigo',
-      class: 'hover:bg-indigo-500 dark:hover:bg-indigo-600'
+      class: 'hover:bg-indigo-400 dark:hover:bg-indigo-400'
     },
     {
       hoverable: true,
       color: 'violet',
-      class: 'hover:bg-violet-500 dark:hover:bg-violet-600'
+      class: 'hover:bg-violet-400 dark:hover:bg-violet-400'
     },
     {
       hoverable: true,
       color: 'purple',
-      class: 'hover:bg-purple-500 dark:hover:bg-purple-600'
+      class: 'hover:bg-purple-400 dark:hover:bg-purple-400'
     },
     {
       hoverable: true,
       color: 'fuchsia',
-      class: 'hover:bg-fuchsia-500 dark:hover:bg-fuchsia-600'
+      class: 'hover:bg-fuchsia-400 dark:hover:bg-fuchsia-400'
     },
     {
       hoverable: true,
       color: 'pink',
-      class: 'hover:bg-pink-500 dark:hover:bg-pink-600'
+      class: 'hover:bg-pink-400 dark:hover:bg-pink-400'
     },
     {
       hoverable: true,
       color: 'rose',
-      class: 'hover:bg-rose-500 dark:hover:bg-rose-600'
+      class: 'hover:bg-rose-400 dark:hover:bg-rose-400'
     },
     {
       striped: true,
@@ -186,103 +186,103 @@ export const tablebodyrow = tv({
     {
       striped: true,
       color: 'primary',
-      class: 'odd:bg-primary-800 even:bg-primary-700 odd:dark:bg-primary-800 even:dark:bg-primary-700'
+      class: 'odd:bg-primary-500 even:bg-primary-600 odd:dark:bg-primary-500 even:dark:bg-primary-600'
     },
     {
       striped: true,
       color: 'secondary',
-      class: 'odd:bg-secondary-800 even:bg-secondary-700 odd:dark:bg-secondary-800 even:dark:bg-secondary-700'
+      class: 'odd:bg-secondary-500 even:bg-secondary-600 odd:dark:bg-secondary-500 even:dark:bg-secondary-600'
     },
     {
       striped: true,
       color: 'gray',
-      class: 'odd:bg-gray-800 even:bg-gray-700 odd:dark:bg-gray-800 even:dark:bg-gray-700'
+      class: 'odd:bg-gray-500 even:bg-gray-600 odd:dark:bg-gray-500 even:dark:bg-gray-600'
     },
     // default, primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
     {
       striped: true,
       color:'red',
-      class: 'odd:bg-red-800 even:bg-red-700 odd:dark:bg-red-800 even:dark:bg-red-700'
+      class: 'odd:bg-red-500 even:bg-red-600 odd:dark:bg-red-500 even:dark:bg-red-600'
     },
     {
       striped: true,
       color: 'orange',
-      class: 'odd:bg-orange-800 even:bg-orange-700 odd:dark:bg-orange-800 even:dark:bg-orange-700'
+      class: 'odd:bg-orange-500 even:bg-orange-600 odd:dark:bg-orange-500 even:dark:bg-orange-600'
     },
     {
       striped: true,
       color: 'amber',
-      class: 'odd:bg-amber-800 even:bg-amber-700 odd:dark:bg-amber-800 even:dark:bg-amber-700'
+      class: 'odd:bg-amber-500 even:bg-amber-600 odd:dark:bg-amber-500 even:dark:bg-amber-600'
     },
     {
       striped: true,
       color: 'yellow',
-      class: 'odd:bg-yellow-800 even:bg-yellow-700 odd:dark:bg-yellow-800 even:dark:bg-yellow-700'
+      class: 'odd:bg-yellow-500 even:bg-yellow-600 odd:dark:bg-yellow-500 even:dark:bg-yellow-600'
     },
     {
       striped: true,
       color: 'lime',
-      class: 'odd:bg-lime-800 even:bg-lime-700 odd:dark:bg-lime-800 even:dark:bg-lime-700'
+      class: 'odd:bg-lime-500 even:bg-lime-600 odd:dark:bg-lime-500 even:dark:bg-lime-600'
     },
     {
       striped: true,
       color: 'green',
-      class: 'odd:bg-green-800 even:bg-green-700 odd:dark:bg-green-800 even:dark:bg-green-700'
+      class: 'odd:bg-green-500 even:bg-green-600 odd:dark:bg-green-500 even:dark:bg-green-600'
     },
     {
       striped: true,
       color: 'emerald',
-      class: 'odd:bg-emerald-800 even:bg-emerald-700 odd:dark:bg-emerald-800 even:dark:bg-emerald-700'
+      class: 'odd:bg-emerald-500 even:bg-emerald-600 odd:dark:bg-emerald-500 even:dark:bg-emerald-600'
     },
     {
       striped: true,
       color: 'teal',
-      class: 'odd:bg-teal-800 even:bg-teal-700 odd:dark:bg-teal-800 even:dark:bg-teal-700'
+      class: 'odd:bg-teal-500 even:bg-teal-600 odd:dark:bg-teal-500 even:dark:bg-teal-600'
     },
     {
       striped: true,
       color: 'cyan',
-      class: 'odd:bg-cyan-800 even:bg-cyan-700 odd:dark:bg-cyan-800 even:dark:bg-cyan-700'
+      class: 'odd:bg-cyan-500 even:bg-cyan-600 odd:dark:bg-cyan-500 even:dark:bg-cyan-600'
     },
     {
       striped: true,
       color: 'sky',
-      class: 'odd:bg-sky-800 even:bg-sky-700 odd:dark:bg-sky-800 even:dark:bg-sky-700'
+      class: 'odd:bg-sky-500 even:bg-sky-600 odd:dark:bg-sky-500 even:dark:bg-sky-600'
     },
     {
       striped: true,
       color: 'blue',
-      class: 'odd:bg-blue-800 even:bg-blue-700 odd:dark:bg-blue-800 even:dark:bg-blue-700'
+      class: 'odd:bg-blue-500 even:bg-blue-600 odd:dark:bg-blue-500 even:dark:bg-blue-600'
     },
     {
       striped: true,
       color: 'indigo',
-      class: 'odd:bg-indigo-800 even:bg-indigo-700 odd:dark:bg-indigo-800 even:dark:bg-indigo-700'
+      class: 'odd:bg-indigo-500 even:bg-indigo-600 odd:dark:bg-indigo-500 even:dark:bg-indigo-600'
     },
     {
       striped: true,
       color: 'violet',
-      class: 'odd:bg-violet-800 even:bg-violet-700 odd:dark:bg-violet-800 even:dark:bg-violet-700'
+      class: 'odd:bg-violet-500 even:bg-violet-600 odd:dark:bg-violet-500 even:dark:bg-violet-600'
     },
     {
       striped: true,
       color: 'purple',
-      class: 'odd:bg-purple-800 even:bg-purple-700 odd:dark:bg-purple-800 even:dark:bg-purple-700'
+      class: 'odd:bg-purple-500 even:bg-purple-600 odd:dark:bg-purple-500 even:dark:bg-purple-600'
     },
     {
       striped: true,
       color: 'fuchsia',
-      class: 'odd:bg-fuchsia-800 even:bg-fuchsia-700 odd:dark:bg-fuchsia-800 even:dark:bg-fuchsia-700'
+      class: 'odd:bg-fuchsia-500 even:bg-fuchsia-600 odd:dark:bg-fuchsia-500 even:dark:bg-fuchsia-600'
     },
     {
       striped: true,
       color: 'pink',
-      class: 'odd:bg-pink-800 even:bg-pink-700 odd:dark:bg-pink-800 even:dark:bg-pink-700'
+      class: 'odd:bg-pink-500 even:bg-pink-600 odd:dark:bg-pink-500 even:dark:bg-pink-600'
     },
     {
       striped: true,
       color: 'rose',
-      class: 'odd:bg-rose-800 even:bg-rose-700 odd:dark:bg-rose-800 even:dark:bg-rose-700'
+      class: 'odd:bg-rose-500 even:bg-rose-600 odd:dark:bg-rose-500 even:dark:bg-rose-600'
     }
   ]
 })
@@ -291,34 +291,113 @@ export const tablehead = tv({
   base: 'text-xs uppercase',
   variants: {
     color: {
-      default: 'text-gray-700 dark:text-gray-400 border-gray-700',
-      primary: 'text-white bg-primary-600 border-primary-400',
-      secondary: 'text-white bg-secondary-600 border-secondary-400',
-      gray: 'text-white bg-gray-600 border-gray-400',
-      red: 'text-white bg-red-600 border-red-400',
-      orange: 'text-white bg-orange-600 border-orange-400',
-      amber: 'text-white bg-amber-600 border-amber-400',
-      yellow: 'text-white bg-yellow-600 border-yellow-400',
-      lime: 'text-white bg-lime-600 border-lime-400',
-      green: 'text-white bg-green-600 border-green-400',
-      emerald: 'text-white bg-emerald-600 border-emerald-400',
-      teal: 'text-white bg-teal-600 border-teal-400',
-      cyan: 'text-white bg-cyan-600 border-cyan-400',
-      sky: 'text-white bg-sky-600 border-sky-400',
-      blue: 'text-white bg-blue-600 border-blue-400',
-      indigo: 'text-white bg-indigo-600 border-indigo-400',
-      violet: 'text-white bg-violet-600 border-violet-400',
-      purple: 'text-white bg-purple-600 border-purple-400',
-      fuchsia: 'text-white bg-fuchsia-600 border-fuchsia-400',
-      pink: 'text-white bg-pink-600 border-pink-400',
-      rose: 'text-white bg-rose-600 border-rose-400'
+      // default, primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
+
+      default: 'text-gray-700 dark:text-gray-400 bg-gray-50 dark:bg-gray-700',
+      primary: 'text-white dark:text-white bg-primary-700 dark:bg-primary-700',
+      secondary: 'text-white dark:text-white bg-secondary-700 dark:bg-secondary-700',
+      gray: 'text-white dark:text-white bg-gray-700 dark:bg-gray-700',
+      red: 'text-white dark:text-white bg-red-700 dark:bg-red-700',
+      orange: 'text-white dark:text-white bg-orange-700 dark:bg-orange-700',
+      amber: 'text-white dark:text-white bg-amber-700 dark:bg-amber-700',
+      yellow: 'text-white dark:text-white bg-yellow-700 dark:bg-yellow-700',
+      lime: 'text-white dark:text-white bg-lime-700 dark:bg-lime-700',
+      green: 'text-white dark:text-white bg-green-700 dark:bg-green-700',
+      emerald: 'text-white dark:text-white bg-emerald-700 dark:bg-emerald-700',
+      teal: 'text-white dark:text-white bg-teal-700 dark:bg-teal-700',
+      cyan: 'text-white dark:text-white bg-cyan-700 dark:bg-cyan-700',
+      sky: 'text-white dark:text-white bg-sky-700 dark:bg-sky-700',
+      blue: 'text-white dark:text-white bg-blue-700 dark:bg-blue-700',
+      indigo: 'text-white dark:text-white bg-indigo-700 dark:bg-indigo-700',
+      violet: 'text-white dark:text-white bg-violet-700 dark:bg-violet-700',
+      purple: 'text-white dark:text-white bg-purple-700 dark:bg-purple-700',
+      fuchsia: 'text-white dark:text-white bg-fuchsia-700 dark:bg-fuchsia-700',
+      pink: 'text-white dark:text-white bg-pink-700 dark:bg-pink-700',
+      rose: 'text-white dark:text-white bg-rose-700 dark:bg-rose-700',
     },
     noborder: {
-      false: 'bg-gray-50 dark:bg-gray-700 border-gray-700'
+      true: '',
+      false: '',
     },
     striped: {
-      false: 'bg-gray-50 dark:bg-gray-700'
-    }
-  }
-
+      true: '',
+      false: '',
+    },
+  },
+  compoundVariants: [
+    {
+      color: 'default',
+      noborder: true,
+      class: 'bg-transparent dark:bg-transparent',
+    },
+    {
+      color: 'default',
+      striped: true,
+      class: 'bg-transparent dark:bg-transparent border-gray-700',
+    },
+    {
+      striped: true,
+      color: 'blue',
+      class: 'border-blue-400',
+    },
+    {
+      striped: true,
+      color: 'green',
+      class: 'border-green-400',
+    },
+    {
+      striped: true,
+      color: 'red',
+      class: 'border-red-400',
+    },
+    {
+      striped: true,
+      color: 'yellow',
+      class: 'border-yellow-400',
+    },
+    {
+      striped: true,
+      color: 'purple',
+      class: 'border-purple-400',
+    },
+    {
+      striped: true,
+      color: 'indigo',
+      class: 'border-indigo-400',
+    },
+    {
+      striped: true,
+      color: 'pink',
+      class: 'border-pink-400',
+    },
+  ],
 });
+
+export const tablebodycell = tv({
+  base: 'px-6 py-4 whitespace-nowrap font-medium',
+  // variants: {
+  //   color: {
+      // default: 'text-gray-900 dark:text-white',
+      // primary: 'bg-white dark:text-white',
+      // secondary: 'bg-white dark:text-white',
+      // gray: 'bg-white dark:text-white',
+      // red: 'bg-white dark:text-white',
+      // orange: 'bg-white dark:text-white',
+      // amber: 'bg-white dark:text-white',
+      // yellow: 'bg-white dark:text-white',
+      // lime: 'bg-white dark:text-white',
+      // green: 'bg-white dark:text-white',
+      // emerald: 'bg-white dark:text-white',
+      // teal: 'bg-white dark:text-white',
+      // cyan: 'bg-white dark:text-white',
+      // sky: 'bg-white dark:text-white',
+      // blue: 'text-white dark:text-white',
+      // indigo: 'bg-white dark:text-white',
+      // violet: 'bg-white dark:text-white',
+      // purple: 'bg-white dark:text-white',
+      // fuchsia: 'bg-white dark:text-white',
+      // pink: 'bg-white dark:text-white',
+      // rose: 'bg-white dark:text-white',
+  //   }
+  // }
+})

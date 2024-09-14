@@ -25,8 +25,6 @@
 
   const exampleArr = [
     { name: 'Table items', component: ExampleComponents.TableItems },
-    { name: 'Striped', component: ExampleComponents.Striped },
-    { name: 'Hover', component: ExampleComponents.Hover },
     { name: 'Head body items', component: ExampleComponents.HeadBodyItems },
     { name: 'Cells', component: ExampleComponents.Cells },
     { name: 'Checkbox', component: ExampleComponents.Checkbox },
@@ -34,8 +32,6 @@
     { name: 'Header slot', component: ExampleComponents.HeaderSlot },
     { name: 'Footer slot', component: ExampleComponents.FooterSlot },
     { name: 'Table caption', component: ExampleComponents.TableCaption },
-    { name: 'No border', component: ExampleComponents.NoBorder },
-    { name: 'Shadow', component: ExampleComponents.Shadow },
     { name: 'Overflow', component: ExampleComponents.Overflow },
   ];
 
@@ -49,17 +45,32 @@
   const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
 
-  let color: Table['color'] = $state('blue');
+  let color: Table['color'] = $state('default');
   const colors = Object.keys(table.variants.color);
   let striped = $state(false);
   const changeStriped = () => {
     striped = !striped;
   }
+  let hoverable = $state(false);
+  const changeHoverable = () => {
+    hoverable = !hoverable;
+  }
+  // noborder, shadow,
+  let noborder = $state(false);
+  const changeNoborder = () => {
+    noborder = !noborder;
+  }
+  let shadow = $state(false);
+  const changeShadow = () => {
+    shadow = !shadow;
+  }
 
   const tableItems = [
     {name: 'Apple MacBook Pro 17"',color: 'Sliver', type: 'Laptop', price: '$2999'},
     {name: 'Microsoft Surface Pro',color: 'White', type: 'Laptop PC', price: '$1999'},
-    {name: 'Magic Mouse 2',color: 'Black', type: 'Accessories', price: '$99'}
+    {name: 'Magic Mouse 2',color: 'Black', type: 'Accessories', price: '$99'},
+    {name: 'Google Pixel Phone',color: 'Gray', type: 'Phone', price: '$799'},
+    {name: 'Apple Watch 5',color: 'Red', type: 'Wearables', price: '$999'},
   ]
 
   import { slide } from 'svelte/transition';
@@ -132,6 +143,24 @@
 <H2>Setup</H2>
 <HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
+
+<H2>Interactive</H2>
+<CodeWrapper>
+  <Table {tableItems} {hoverable} {color} {striped} {noborder} {shadow}/>
+  <div class="my-4 flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Color</Label>
+    {#each colors as colorOption}
+      <Radio labelClass="w-24 my-1" name="table_color" bind:group={color} color={colorOption as Table['color']} value={colorOption}>{colorOption}</Radio>
+    {/each}
+  </div>
+  <div class="mb-4 flex gap-4">
+    <Button class="w-40" onclick={changeStriped}>{striped ? 'Unstriped' : 'Striped'}</Button>
+    <Button class="w-40" color="secondary" onclick={changeHoverable}>{hoverable ? 'Unhoverable' : 'Hoverable'}</Button>
+    <Button class="w-40" color="indigo" onclick={changeNoborder}>{noborder ? 'Borderless' : 'Border'}</Button>
+    <Button class="w-40" color="rose" onclick={changeShadow}>{shadow ? 'No Shadow' : 'Shadow'}</Button>
+  </div>
+</CodeWrapper>
+
 <H2>Examples</H2>
 
 <CodeWrapper>
@@ -147,86 +176,6 @@
   {/snippet}
 </CodeWrapper>
 
-<H2>Colors</H2>
-<CodeWrapper>
-  <Table {tableItems} hoverable {color} {striped}/>
-  <div class="mb-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Color</Label>
-    {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="table_color" bind:group={color} color={colorOption as Table['color']} value={colorOption}>{colorOption}</Radio>
-    {/each}
-  </div>
-  <div class="mb-4 flex gap-4">
-    <Button onclick={changeStriped}>
-      {striped ? 'Unstriped' : 'Striped'}
-    </Button>
-  </div>
-</CodeWrapper>
-
-<H2>Striped rows color</H2>
-<CodeWrapper>
-  <Table striped={true} color="green">
-    <TableHead>
-      <TableHeadCell>Product name</TableHeadCell>
-      <TableHeadCell>Color</TableHeadCell>
-      <TableHeadCell>Category</TableHeadCell>
-      <TableHeadCell>Price</TableHeadCell>
-      <TableHeadCell>
-        <span class="sr-only">Edit</span>
-      </TableHeadCell>
-    </TableHead>
-    <TableBody class="divide-y">
-      <TableBodyRow>
-        <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-        <TableBodyCell>Sliver</TableBodyCell>
-        <TableBodyCell>Laptop</TableBodyCell>
-        <TableBodyCell>$2999</TableBodyCell>
-        <TableBodyCell>
-          <a href="/tables" class="font-medium text-white hover:underline dark:text-white">Edit</a>
-        </TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell>Microsoft Surface Pro</TableBodyCell>
-        <TableBodyCell>White</TableBodyCell>
-        <TableBodyCell>Laptop PC</TableBodyCell>
-        <TableBodyCell>$1999</TableBodyCell>
-        <TableBodyCell>
-          <a href="/tables" class="font-medium text-white hover:underline dark:text-white">Edit</a>
-        </TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell>Magic Mouse 2</TableBodyCell>
-        <TableBodyCell>Black</TableBodyCell>
-        <TableBodyCell>Accessories</TableBodyCell>
-        <TableBodyCell>$99</TableBodyCell>
-        <TableBodyCell>
-          <a href="/tables" class="font-medium text-white hover:underline dark:text-white">Edit</a>
-        </TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell>Google Pixel Phone</TableBodyCell>
-        <TableBodyCell>Gray</TableBodyCell>
-        <TableBodyCell>Phone</TableBodyCell>
-        <TableBodyCell>$799</TableBodyCell>
-        <TableBodyCell>
-          <a href="/tables" class="font-medium text-white hover:underline dark:text-white">Edit</a>
-        </TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell>Apple Watch 5</TableBodyCell>
-        <TableBodyCell>Red</TableBodyCell>
-        <TableBodyCell>Wearables</TableBodyCell>
-        <TableBodyCell>$999</TableBodyCell>
-        <TableBodyCell>
-          <a href="/tables" class="font-medium text-white hover:underline dark:text-white">Edit</a>
-        </TableBodyCell>
-      </TableBodyRow>
-    </TableBody>
-  </Table>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/striped-rows-color.md'] as string} />
-  {/snippet}
-</CodeWrapper>
 
 <H2>Click and double-click on row</H2>
 <CodeWrapper>

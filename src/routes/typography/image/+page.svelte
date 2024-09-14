@@ -62,7 +62,7 @@
 <H2>Interactive Image Builder</H2>
 <CodeWrapper>
   <div class="mb-4 overflow-y-auto md:h-[470px]">
-    <Img src={imgEffect !== 'none' ? '/images/examples/content-gallery-3.png' : imgRounded === 'full' ? '/images/examples/image-4@2x.jpg' : '/images/examples/image-1@2x.jpg'} size={imgSize} shadow={imgShadow} alignment={imgAlignment} rounded={imgRounded} alt="sample 1" effect={imgEffect} figClass={imgEffect !== 'none' && imgCaption ? 'relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0' : ''} captionClass={imgEffect !== 'none' && imgCaption ? 'absolute bottom-6 px-4 text-lg text-white' : ''} caption={imgEffect !== 'none' ? 'Do you want to get notified when a new component is added to Flowbite?' : '' || imgCaption ? 'Image caption' : ''} href={imgHref} />
+    <Img src={imgEffect !== 'none' ? '/images/examples/content-gallery-3.png' : imgRounded === 'full' ? '/images/examples/image-4@2x.jpg' : '/images/examples/image-1@2x.jpg'} size={imgSize} shadow={imgShadow} alignment={imgAlignment} rounded={imgRounded} alt="sample 1" effect={imgEffect} figClass={imgEffect !== 'none' && imgCaption ? 'relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0' : ''} captionClass={imgEffect !== 'none' && imgCaption ? 'absolute bottom-6 px-4 text-lg text-white' : ''} caption={imgEffect !== 'none' ? 'Do you want to get notified when a new component is added to Flowbite?' : imgCaption ? 'Image caption' : ''} href={imgHref} />
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Size:</Label>

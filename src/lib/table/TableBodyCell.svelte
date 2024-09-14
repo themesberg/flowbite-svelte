@@ -1,27 +1,20 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
   import type TableCtxType from './Table.svelte';
-  import type { HTMLTdAttributes } from 'svelte/elements';
+  import { type TableBodyCellProps as Props, tablebodycell } from './';
 
-  interface Props extends HTMLTdAttributes {
-    children?: Snippet;
-    class?: string;
-    colspan?: number;
-    onclick?: () => void;
-  }
+  let { children, color, class: className, colspan, onclick, ...restProps }: Props = $props();
 
-  let { children, class: className, colspan, onclick, ...restProps }: Props = $props();
-
-  const tableCtx: TableCtxType = getContext('tableCtx');
+  // const tableCtx: TableCtxType = getContext('tableCtx');
   // $inspect('tableCtx in TableBodyCell', tableCtx);
-  let color = tableCtx.color ? tableCtx.color : 'default';
-  
-  let tdCls: string = twMerge('px-6 py-4 whitespace-nowrap font-medium', color === 'default' ? 'text-gray-900 dark:text-white' : 'text-blue-50 whitespace-nowrap dark:text-blue-100', className);
+  // let compoColor = $derived(color ? color : tableCtx.color || 'default');
+  // let compoHoverable = $derived(hoverable ? hoverable : tableCtx.hoverable || false);
+  // let compoStriped = $derived(striped ? striped : tableCtx.striped || false);
+  // let compoNoborder = $derived( noborder ? noborder : tableCtx.noborder || false);
+  const base = $derived(tablebodycell({ className }))
 </script>
 
-<td {...restProps} class={tdCls} colspan={colspan ?? 1}>
+<td {...restProps} class={base} colspan={colspan ?? 1}>
   {#if onclick}
     <button {onclick}>
       {#if children}

@@ -3,34 +3,16 @@
   import type TableCtxType from './Table.svelte';
   import { TableHeadCell, type TableHeadProps as Props, tablehead} from '.'
 
-  let { children, headerSlot, class: className, headItems, defaultRow = true, ...restProps }: Props = $props();
+  let { children, headerSlot, color, striped, hoverable, noborder, class: className, headItems, defaultRow = true, ...restProps }: Props = $props();
 
   const tableCtx: TableCtxType = getContext('tableCtx');
-  const color = tableCtx.color;
-  // const headColor = $derived(color ? color : tableCtx.color || 'default');
-  $inspect('color in TableHead', color);
-  const noborder: boolean = tableCtx.noborder;
-  const striped: boolean = tableCtx.striped;
+  // for reactivity with svelte context
+  let compoColor = $derived(color ? color : tableCtx.color || 'default');
+  // let compoHoverable = $derived(hoverable ? hoverable : tableCtx.hoverable || false);
+  let compoStriped = $derived(striped ? striped : tableCtx.striped || false);
+  let compoNoborder = $derived( noborder ? noborder : tableCtx.noborder || false);
 
-  const base = $derived(tablehead({ color, noborder, striped, className }));
-
-  // const defaultBgColor = noborder || striped ? '' : 'bg-gray-50 dark:bg-gray-700';
-  // const bgColors: { [key: string]: string } = {
-  //   default: defaultBgColor,
-  //   blue: 'bg-blue-600',
-  //   green: 'bg-green-600',
-  //   red: 'bg-red-600',
-  //   yellow: 'bg-yellow-600',
-  //   purple: 'bg-purple-600',
-  //   indigo: 'bg-indigo-600',
-  //   pink: 'bg-pink-600',
-  //   custom: ''
-  // };
-
-  // let textColor = color === 'default' ? 'text-gray-700 dark:text-gray-400' : color === 'custom' ? '' : 'text-white  dark:text-white';
-  // let borderColors = striped ? '' : color === 'default' ? 'border-gray-700' : color === 'custom' ? '' : `border-${color}-400`;
-
-  // let theadCls = twMerge('text-xs uppercase', textColor, striped && borderColors, bgColors[color], className);
+  const base = $derived(tablehead({ color: compoColor, noborder: compoNoborder, striped: compoStriped,  className }));
 </script>
 
 <thead {...restProps} class={base}>

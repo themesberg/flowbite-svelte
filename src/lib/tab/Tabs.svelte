@@ -8,9 +8,16 @@
   // using $derived() shows State referenced in its own scope will never update. Did you mean to reference it inside a closure?
   const { base, content, divider: dividerClass, active, inactive } = $derived(tabs({ tabStyle, hasDivider: divider }));
 
+  // let tableCtx: TableCtxType = {
+  //   get striped() { return striped; },
+  //   get hoverable() { return hoverable; },
+  //   get noborder() { return noborder; }, 
+  //   get color() { return color; },
+  // };
   const ctx: TabCtxType = {
-    activeClass: active() || ctxActive,
-    inactiveClass: inactive() || ctxInactive,
+    // get active() { return active || ctxActive},
+    // get inactive() { return inactive || ctxInactive},
+    get tabStyle() { return tabStyle },
     selected: writable<HTMLElement>()
   };
 

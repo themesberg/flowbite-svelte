@@ -4,33 +4,9 @@
   import { type TableProps as Props, table as tableCls, type TableColrType, type TableCtxType, TableHead, TableBody } from '.';
 
   
-  let { children, footerSlot, captionSlot, tableItems, divClass = 'relative overflow-x-auto', striped = $bindable(), hoverable= $bindable(), noborder= $bindable(), shadow, color = 'default', customeColor, class: className, ...restProps }: Props = $props();
+  let { children, footerSlot, captionSlot, tableItems, divClass = 'relative overflow-x-auto', striped, hoverable, noborder, shadow, color = 'default', customeColor, class: className, ...restProps }: Props = $props();
 
   const { base, table} = $derived(tableCls({ color, shadow }))
-  // primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
-  // const colors = {
-  //   default: 'text-gray-500 dark:text-gray-400',
-  //   primary: 'text-primary-100 dark:text-primary-100',
-  //   secondary: 'text-secondary-100 dark:text-secondary-100',
-  //   gray: 'text-gray-100 dark:text-gray-100',
-  //   red: 'text-red-100 dark:text-red-100',
-  //   orange: 'text-orange-100 dark:text-orange-100',
-  //   amber: 'text-amber-100 dark:text-amber-100',
-  //   yellow: 'text-yellow-100 dark:text-yellow-100',
-  //   lime: 'text-lime-100 dark:text-lime-100',
-  //   green: 'text-green-100 dark:text-green-100',
-  //   emerald: 'text-emerald-100 dark:text-emerald-100',
-  //   teal: 'text-teal-100 dark:text-teal-100',
-  //   cyan: 'text-cyan-100 dark:text-cyan-100',
-  //   sky: 'text-sky-100 dark:text-sky-100',
-  //   blue: 'text-blue-100 dark:text-blue-100',
-  //   indigo: 'text-indigo-100 dark:text-indigo-100',
-  //   violet: 'text-violet-100 dark:text-violet-100',
-  //   purple: 'text-purple-100 dark:text-purple-100',
-  //   fuchsia: 'text-fuchsia-100 dark:text-fuchsia-100',
-  //   pink: 'text-pink-100 dark:text-pink-100',
-  //   rose: 'text-rose-100 dark:text-rose-100'
-  // };
 
   let tableCtx: TableCtxType = {
     get striped() { return striped; },

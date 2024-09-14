@@ -1,13 +1,19 @@
 <script lang="ts">
   import { getContext } from 'svelte';
   import { writable } from 'svelte/store';
-  import { type TabitemProps as Props, type TabCtxType, tabItem } from '.';
+  import { type TabitemProps as Props, type TabCtxType, tabItem, tabs } from '.';
 
-  let { children, titleSlot, open = false, title = 'Tab title', activeClass, inactiveClass, class: className, disabled, ...restProps }: Props = $props();
+  let { children, titleSlot, open = false, title = 'Tab title', activeClass, inactiveClass, class: className, disabled, tabStyle, ...restProps }: Props = $props();
 
-  const ctx = getContext<TabCtxType>('ctx') ?? {};
+  const ctx: TabCtxType = getContext('ctx');
+  let compoTabStyle = $derived(tabStyle ? tabStyle : ctx.tabStyle || 'full');
+  // console.log('tabStyle in TabItem', ctx);
+  const { active, inactive } = $derived(tabs({ tabStyle: compoTabStyle, hasDivider: true }));
+  // const tableCtx: TableCtxType = getContext('tableCtx');
+  // let compoColor = $derived(color ? color : tableCtx.color || 'default');
+  
   // $inspect('ctx from item: ', ctx);
-  const selected = ctx.selected ?? writable<HTMLElement>();
+  let selected = ctx.selected ?? writable<HTMLElement>();
 
   function init(node: HTMLElement) {
     selected.set(node);
@@ -31,7 +37,7 @@
     role="tab"
     {disabled}
     class={button({
-      class: open ? (activeClass ?? ctx.activeClass) : (inactiveClass ?? ctx.inactiveClass)
+      class: open ? (activeClass ?? active()) : (inactiveClass ?? inactive())
     })}
   >
     {#if titleSlot}

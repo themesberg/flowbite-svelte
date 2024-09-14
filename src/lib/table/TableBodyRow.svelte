@@ -1,18 +1,18 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
   import type TableCtxType from './Table.svelte';
   import { type TableBodyRowProps as Props, tablebodyrow } from './'
 
-  let { children, class: className, color, ...restProps }: Props = $props();
+  let { children, class: className, color, striped, hoverable, noborder, ...restProps }: Props = $props();
 
   const tableCtx: TableCtxType = getContext('tableCtx');
-  let rowColor = $derived(color ? color : tableCtx.color || 'default');
-  // $inspect('rowColor in TableBodyRow', rowColor);
-  const hoverable = tableCtx.hoverable;
-  let striped = tableCtx.striped;
+  // for reactivity with svelte context
+  let compoColor = $derived(color ? color : tableCtx.color || 'default');
+  let compoHoverable = $derived(hoverable ? hoverable : tableCtx.hoverable || false);
+  let compoStriped = $derived(striped ? striped : tableCtx.striped || false);
+  let compoNoborder = $derived( noborder ? noborder : tableCtx.noborder || false);
 
-  const base = $derived(tablebodyrow({ color: rowColor, hoverable:!!hoverable, striped, border: !tableCtx.noborder, className }));
+  const base = $derived(tablebodyrow({ color: compoColor, hoverable: compoHoverable, striped: compoStriped, border: compoNoborder, className }));
 </script>
 
 <tr {...restProps} class={base}>
