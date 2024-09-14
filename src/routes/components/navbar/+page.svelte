@@ -12,10 +12,12 @@
     import: 'default',
     eager: true
   });
-  let nav1 = uiHelpers();
-  let navStatus1 = $state(false);
-  let toggleNav1 = nav1.toggle;
-  let closeNav1 = nav1.close;
+
+  let breakPoint: Navbar['breakpoint'] = $state('md')
+  let nav = uiHelpers();
+  let navStatus = $state(false);
+  let toggleNav = nav.toggle;
+  let closeNav = nav.close;
 
   let nav2 = uiHelpers();
   let navStatus2 = $state(false);
@@ -30,7 +32,7 @@
   $effect(() => {
     // this can be done adding nav.navStatus directly to DOM element
     // without using effect
-    navStatus1 = nav1.isOpen;
+    navStatus = nav.isOpen;
     navStatus2 = nav2.isOpen;
     navStatusLg = navLg.isOpen;
   });
@@ -41,7 +43,7 @@
 <H2>Default Nav</H2>
 
 <CodeWrapper>
-  <Navbar toggleNav={toggleNav1} closeNav={closeNav1} navStatus={navStatus1} breakPoint="md">
+  <Navbar {toggleNav} {closeNav} {navStatus} {breakPoint}>
     {#snippet brand()}
       <NavBrand siteName="Svelte 5">
         <img width="30" src="/images/svelte-icon.png" alt="svelte icon" />

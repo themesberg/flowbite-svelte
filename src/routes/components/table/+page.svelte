@@ -1,15 +1,66 @@
 <script lang="ts">
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox, TableSearch, ImagePlaceholder } from '$lib';
+  import { type Component } from 'svelte';
+  import { Table, table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox, TableSearch, ImagePlaceholder, uiHelpers, Label, Radio, Button } from '$lib';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
+  import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import CodeWrapper from '../../utils/CodeWrapper.svelte';
+  import H1 from '../../utils/H1.svelte';
+  import H2 from '../../utils/H2.svelte';
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  // for Props table
+  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
+  const dirName = 'table';
+  const modules = import.meta.glob('./md/*.md', {
+    query: '?raw',
+    import: 'default',
+    eager: true
+  });
+  // for examples section that dynamically changes the svelte component and markdown content
+  import * as ExampleComponents from './examples';
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
+    query: '?raw',
+    import: 'default',
+    eager: true
+  });
 
-  let searchTerm = $state('');
-  let items = [
-    { id: 1, maker: 'Toyota', type: 'ABC', make: 2017 },
-    { id: 2, maker: 'Ford', type: 'CDE', make: 2018 },
-    { id: 3, maker: 'Volvo', type: 'FGH', make: 2019 },
-    { id: 4, maker: 'Saab', type: 'IJK', make: 2020 }
+  const exampleArr = [
+    { name: 'Table items', component: ExampleComponents.TableItems },
+    { name: 'Striped', component: ExampleComponents.Striped },
+    { name: 'Hover', component: ExampleComponents.Hover },
+    { name: 'Head body items', component: ExampleComponents.HeadBodyItems },
+    { name: 'Cells', component: ExampleComponents.Cells },
+    { name: 'Checkbox', component: ExampleComponents.Checkbox },
+    { name: 'Search', component: ExampleComponents.Search },
+    { name: 'Header slot', component: ExampleComponents.HeaderSlot },
+    { name: 'Footer slot', component: ExampleComponents.FooterSlot },
+    { name: 'Table caption', component: ExampleComponents.TableCaption },
+    { name: 'No border', component: ExampleComponents.NoBorder },
+    { name: 'Shadow', component: ExampleComponents.Shadow },
+    { name: 'Overflow', component: ExampleComponents.Overflow },
   ];
 
-  let filteredItems = $derived(items.filter((item) => item.maker.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1));
+  let selectedExample = $state(exampleArr[0].name);
+  let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
+
+  function findObject(arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find((obj) => obj.name === name);
+    return matchingObject ? matchingObject.component : null;
+  }
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
+  // end of dynamic svelte component
+
+  let color: Table['color'] = $state('blue');
+  const colors = Object.keys(table.variants.color);
+  let striped = $state(false);
+  const changeStriped = () => {
+    striped = !striped;
+  }
+
+  const tableItems = [
+    {name: 'Apple MacBook Pro 17"',color: 'Sliver', type: 'Laptop', price: '$2999'},
+    {name: 'Microsoft Surface Pro',color: 'White', type: 'Laptop PC', price: '$1999'},
+    {name: 'Magic Mouse 2',color: 'Black', type: 'Accessories', price: '$99'}
+  ]
 
   import { slide } from 'svelte/transition';
 
@@ -40,568 +91,76 @@
     openRow = openRow === i ? null : i;
   };
 
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'table';
-  const modules = import.meta.glob('./md/*.md', {
-    query: '?raw',
-    import: 'default',
-    eager: true
-  });
 
   let details;
+  // code generator
+  let generatedCode = $derived(
+    (() => {
+      let props = [];
+      if ( color ) props.push(` color="${color}"`);
+
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+
+      return `<Table${propsString}>My Table</Table>`;
+    })()
+  );
+  // for interactive builder
+  let builder = uiHelpers();
+  let builderExpand = $state(false);
+  let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
+  const handleBuilderExpandClick = () => {
+    builderExpand = !builderExpand;
+  };
+  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
+
+  // for examples DynamicCodeBlockHighlight
+  let codeBlock = uiHelpers();
+  let exampleExpand = $state(false);
+  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+  const handleExpandClick = () => {
+    exampleExpand = !exampleExpand;
+  };
+  // end of DynamicCodeBlock setup
+  $effect(() => {
+    exampleExpand = codeBlock.isOpen;
+    builderExpand = builder.isOpen;
+  });
 </script>
 
 <H1>Table</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
-<H2>Default table</H2>
+<H2>Examples</H2>
+
 <CodeWrapper>
-  <Table>
-    <TableHead>
-      <TableHeadCell>Product name</TableHeadCell>
-      <TableHeadCell>Color</TableHeadCell>
-      <TableHeadCell>Category</TableHeadCell>
-      <TableHeadCell>Price</TableHeadCell>
-    </TableHead>
-    <TableBody class="divide-y">
-      <TableBodyRow>
-        <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-        <TableBodyCell>Sliver</TableBodyCell>
-        <TableBodyCell>Laptop</TableBodyCell>
-        <TableBodyCell>$2999</TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell>Microsoft Surface Pro</TableBodyCell>
-        <TableBodyCell>White</TableBodyCell>
-        <TableBodyCell>Laptop PC</TableBodyCell>
-        <TableBodyCell>$1999</TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell>Magic Mouse 2</TableBodyCell>
-        <TableBodyCell>Black</TableBodyCell>
-        <TableBodyCell>Accessories</TableBodyCell>
-        <TableBodyCell>$99</TableBodyCell>
-      </TableBodyRow>
-    </TableBody>
-  </Table>
+  <div class="mb-12 flex flex-wrap">
+    <Label class="mb-4 w-full font-bold">Example:</Label>
+    {#each exampleArr as style}
+      <Radio labelClass="w-40 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+    {/each}
+  </div>
+  <SelectedComponent />
   {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/default-table.md'] as string} />
+    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 
-<H2>Striped rows</H2>
+<H2>Colors</H2>
 <CodeWrapper>
-  <Table striped={true}>
-    <TableHead>
-      <TableHeadCell>Product name</TableHeadCell>
-      <TableHeadCell>Color</TableHeadCell>
-      <TableHeadCell>Category</TableHeadCell>
-      <TableHeadCell>Price</TableHeadCell>
-      <TableHeadCell>
-        <span class="sr-only">Edit</span>
-      </TableHeadCell>
-    </TableHead>
-    <TableBody class="divide-y">
-      <TableBodyRow>
-        <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-        <TableBodyCell>Sliver</TableBodyCell>
-        <TableBodyCell>Laptop</TableBodyCell>
-        <TableBodyCell>$2999</TableBodyCell>
-        <TableBodyCell>
-          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
-        </TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell>Microsoft Surface Pro</TableBodyCell>
-        <TableBodyCell>White</TableBodyCell>
-        <TableBodyCell>Laptop PC</TableBodyCell>
-        <TableBodyCell>$1999</TableBodyCell>
-        <TableBodyCell>
-          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
-        </TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell>Magic Mouse 2</TableBodyCell>
-        <TableBodyCell>Black</TableBodyCell>
-        <TableBodyCell>Accessories</TableBodyCell>
-        <TableBodyCell>$99</TableBodyCell>
-        <TableBodyCell>
-          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
-        </TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell>Google Pixel Phone</TableBodyCell>
-        <TableBodyCell>Gray</TableBodyCell>
-        <TableBodyCell>Phone</TableBodyCell>
-        <TableBodyCell>$799</TableBodyCell>
-        <TableBodyCell>
-          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
-        </TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell>Apple Watch 5</TableBodyCell>
-        <TableBodyCell>Red</TableBodyCell>
-        <TableBodyCell>Wearables</TableBodyCell>
-        <TableBodyCell>$999</TableBodyCell>
-        <TableBodyCell>
-          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
-        </TableBodyCell>
-      </TableBodyRow>
-    </TableBody>
-  </Table>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/striped-rows.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Hover state</H2>
-
-<CodeWrapper>
-  <Table hoverable={true}>
-    <TableHead>
-      <TableHeadCell>Product name</TableHeadCell>
-      <TableHeadCell>Color</TableHeadCell>
-      <TableHeadCell>Category</TableHeadCell>
-      <TableHeadCell>Price</TableHeadCell>
-      <TableHeadCell>
-        <span class="sr-only">Edit</span>
-      </TableHeadCell>
-    </TableHead>
-    <TableBody class="divide-y">
-      <TableBodyRow>
-        <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-        <TableBodyCell>Sliver</TableBodyCell>
-        <TableBodyCell>Laptop</TableBodyCell>
-        <TableBodyCell>$2999</TableBodyCell>
-        <TableBodyCell>
-          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
-        </TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell>Microsoft Surface Pro</TableBodyCell>
-        <TableBodyCell>White</TableBodyCell>
-        <TableBodyCell>Laptop PC</TableBodyCell>
-        <TableBodyCell>$1999</TableBodyCell>
-        <TableBodyCell>
-          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
-        </TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell>Magic Mouse 2</TableBodyCell>
-        <TableBodyCell>Black</TableBodyCell>
-        <TableBodyCell>Accessories</TableBodyCell>
-        <TableBodyCell>$99</TableBodyCell>
-        <TableBodyCell>
-          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
-        </TableBodyCell>
-      </TableBodyRow>
-    </TableBody>
-  </Table>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/hover-state.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Checkbox</H2>
-<CodeWrapper>
-  <Table hoverable={true}>
-    <TableHead>
-      <TableHeadCell class="!p-4">
-        <Checkbox />
-      </TableHeadCell>
-      <TableHeadCell>Product name</TableHeadCell>
-      <TableHeadCell>Color</TableHeadCell>
-      <TableHeadCell>Category</TableHeadCell>
-      <TableHeadCell>Price</TableHeadCell>
-      <TableHeadCell>
-        <span class="sr-only">Edit</span>
-      </TableHeadCell>
-    </TableHead>
-    <TableBody class="divide-y">
-      <TableBodyRow>
-        <TableBodyCell class="!p-4">
-          <Checkbox />
-        </TableBodyCell>
-        <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-        <TableBodyCell>Sliver</TableBodyCell>
-        <TableBodyCell>Laptop</TableBodyCell>
-        <TableBodyCell>$2999</TableBodyCell>
-        <TableBodyCell>
-          <a href="/components/table" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
-        </TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell class="!p-4">
-          <Checkbox />
-        </TableBodyCell>
-        <TableBodyCell>Microsoft Surface Pro</TableBodyCell>
-        <TableBodyCell>White</TableBodyCell>
-        <TableBodyCell>Laptop PC</TableBodyCell>
-        <TableBodyCell>$1999</TableBodyCell>
-        <TableBodyCell>
-          <a href="/components/table" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
-        </TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell class="!p-4">
-          <Checkbox />
-        </TableBodyCell>
-        <TableBodyCell>Magic Mouse 2</TableBodyCell>
-        <TableBodyCell>Black</TableBodyCell>
-        <TableBodyCell>Accessories</TableBodyCell>
-        <TableBodyCell>$99</TableBodyCell>
-        <TableBodyCell>
-          <a href="/components/table" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
-        </TableBodyCell>
-      </TableBodyRow>
-    </TableBody>
-  </Table>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/checkbox.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Search input</H2>
-<CodeWrapper>
-  <TableSearch placeholder="Search by maker name" hoverable={true} bind:inputValue={searchTerm}>
-    <TableHead>
-      <TableHeadCell>ID</TableHeadCell>
-      <TableHeadCell>Maker</TableHeadCell>
-      <TableHeadCell>Type</TableHeadCell>
-      <TableHeadCell>Make</TableHeadCell>
-    </TableHead>
-    <TableBody class="divide-y">
-      {#each filteredItems as item}
-        <TableBodyRow>
-          <TableBodyCell>{item.id}</TableBodyCell>
-          <TableBodyCell>{item.maker}</TableBodyCell>
-          <TableBodyCell>{item.type}</TableBodyCell>
-          <TableBodyCell>{item.make}</TableBodyCell>
-        </TableBodyRow>
-      {/each}
-    </TableBody>
-  </TableSearch>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/search-input.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Table head</H2>
-<CodeWrapper>
-  <Table>
-    <TableHead defaultRow={false}>
-      <tr>
-        <TableHeadCell colspan={2}>Product</TableHeadCell>
-        <TableHeadCell colspan={3}>Info</TableHeadCell>
-      </tr>
-      <tr>
-        <TableHeadCell>Brand</TableHeadCell>
-        <TableHeadCell>Product name</TableHeadCell>
-        <TableHeadCell>Color</TableHeadCell>
-        <TableHeadCell>Category</TableHeadCell>
-        <TableHeadCell>Price</TableHeadCell>
-      </tr>
-    </TableHead>
-    <TableBody class="divide-y">
-      <TableBodyRow>
-        <TableBodyCell>Apple</TableBodyCell>
-        <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-        <TableBodyCell>Sliver</TableBodyCell>
-        <TableBodyCell>Laptop</TableBodyCell>
-        <TableBodyCell>$2999</TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell>Microsoft</TableBodyCell>
-        <TableBodyCell>Microsoft Surface Pro</TableBodyCell>
-        <TableBodyCell>White</TableBodyCell>
-        <TableBodyCell>Laptop PC</TableBodyCell>
-        <TableBodyCell>$1999</TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell>Apple</TableBodyCell>
-        <TableBodyCell>Magic Mouse 2</TableBodyCell>
-        <TableBodyCell>Black</TableBodyCell>
-        <TableBodyCell>Accessories</TableBodyCell>
-        <TableBodyCell>$99</TableBodyCell>
-      </TableBodyRow>
-    </TableBody>
-  </Table>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/table-head.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Table foot</H2>
-<CodeWrapper>
-  <Table noborder={true}>
-    <TableHead class="bg-gray-100 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
-      <TableHeadCell>Product name</TableHeadCell>
-      <TableHeadCell>Qty</TableHeadCell>
-      <TableHeadCell>Price</TableHeadCell>
-    </TableHead>
-    <TableBody>
-      <TableBodyRow>
-        <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-        <TableBodyCell>1</TableBodyCell>
-        <TableBodyCell>$2999</TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell>Microsoft Surface Pro</TableBodyCell>
-        <TableBodyCell>1</TableBodyCell>
-        <TableBodyCell>$1999</TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell>Magic Mouse 2</TableBodyCell>
-        <TableBodyCell>1</TableBodyCell>
-        <TableBodyCell>$99</TableBodyCell>
-      </TableBodyRow>
-    </TableBody>
-    <tfoot>
-      <tr class="font-semibold text-gray-900 dark:text-white">
-        <th scope="row" class="px-6 py-3 text-base">Total</th>
-        <td class="px-6 py-3">3</td>
-        <td class="px-6 py-3">21,000</td>
-      </tr>
-    </tfoot>
-  </Table>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/table-foot.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Table caption</H2>
-<CodeWrapper>
-  <Table>
-    <caption class="bg-white p-5 text-left text-lg font-semibold text-gray-900 dark:bg-gray-800 dark:text-white">
-      Our products
-      <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Browse a list of Flowbite products designed to help you work and play, stay organized, get answers, keep in touch, grow your business, and more.</p>
-    </caption>
-    <TableHead>
-      <TableHeadCell>Product name</TableHeadCell>
-      <TableHeadCell>Color</TableHeadCell>
-      <TableHeadCell>Category</TableHeadCell>
-      <TableHeadCell>Price</TableHeadCell>
-      <TableHeadCell>
-        <span class="sr-only">Edit</span>
-      </TableHeadCell>
-    </TableHead>
-    <TableBody class="divide-y">
-      <TableBodyRow>
-        <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-        <TableBodyCell>Sliver</TableBodyCell>
-        <TableBodyCell>Laptop</TableBodyCell>
-        <TableBodyCell>$2999</TableBodyCell>
-        <TableBodyCell>
-          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
-        </TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell>Microsoft Surface Pro</TableBodyCell>
-        <TableBodyCell>White</TableBodyCell>
-        <TableBodyCell>Laptop PC</TableBodyCell>
-        <TableBodyCell>$1999</TableBodyCell>
-        <TableBodyCell>
-          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
-        </TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell>Magic Mouse 2</TableBodyCell>
-        <TableBodyCell>Black</TableBodyCell>
-        <TableBodyCell>Accessories</TableBodyCell>
-        <TableBodyCell>$99</TableBodyCell>
-        <TableBodyCell>
-          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
-        </TableBodyCell>
-      </TableBodyRow>
-    </TableBody>
-  </Table>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/table-caption.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Without border</H2>
-<CodeWrapper>
-  <Table noborder={true}>
-    <TableHead>
-      <TableHeadCell>Product name</TableHeadCell>
-      <TableHeadCell>Color</TableHeadCell>
-      <TableHeadCell>Category</TableHeadCell>
-      <TableHeadCell>Price</TableHeadCell>
-    </TableHead>
-    <TableBody>
-      <TableBodyRow>
-        <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-        <TableBodyCell>Sliver</TableBodyCell>
-        <TableBodyCell>Laptop</TableBodyCell>
-        <TableBodyCell>$2999</TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell>Microsoft Surface Pro</TableBodyCell>
-        <TableBodyCell>White</TableBodyCell>
-        <TableBodyCell>Laptop PC</TableBodyCell>
-        <TableBodyCell>$1999</TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell>Magic Mouse 2</TableBodyCell>
-        <TableBodyCell>Black</TableBodyCell>
-        <TableBodyCell>Accessories</TableBodyCell>
-        <TableBodyCell>$99</TableBodyCell>
-      </TableBodyRow>
-    </TableBody>
-  </Table>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/without-border.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Table with shadow</H2>
-<CodeWrapper>
-  <Table shadow>
-    <TableHead>
-      <TableHeadCell>Product name</TableHeadCell>
-      <TableHeadCell>Color</TableHeadCell>
-      <TableHeadCell>Category</TableHeadCell>
-      <TableHeadCell>Price</TableHeadCell>
-    </TableHead>
-    <TableBody class="divide-y">
-      <TableBodyRow>
-        <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-        <TableBodyCell>Sliver</TableBodyCell>
-        <TableBodyCell>Laptop</TableBodyCell>
-        <TableBodyCell>$2999</TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell>Microsoft Surface Pro</TableBodyCell>
-        <TableBodyCell>White</TableBodyCell>
-        <TableBodyCell>Laptop PC</TableBodyCell>
-        <TableBodyCell>$1999</TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell>Magic Mouse 2</TableBodyCell>
-        <TableBodyCell>Black</TableBodyCell>
-        <TableBodyCell>Accessories</TableBodyCell>
-        <TableBodyCell>$99</TableBodyCell>
-      </TableBodyRow>
-    </TableBody>
-  </Table>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/table-with-shadow.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Overflow scrolling</H2>
-<CodeWrapper>
-  <Table>
-    <TableHead>
-      <TableHeadCell class="!p-4">
-        <Checkbox />
-      </TableHeadCell>
-      <TableHeadCell>Product name</TableHeadCell>
-      <TableHeadCell>Color</TableHeadCell>
-      <TableHeadCell>Category</TableHeadCell>
-      <TableHeadCell>ACCESSORIES</TableHeadCell>
-      <TableHeadCell>AVAILABLE</TableHeadCell>
-      <TableHeadCell>Price</TableHeadCell>
-      <TableHeadCell>WEIGHT</TableHeadCell>
-      <TableHeadCell>ACTION</TableHeadCell>
-    </TableHead>
-    <TableBody class="divide-y">
-      <TableBodyRow>
-        <TableBodyCell class="!p-4">
-          <Checkbox />
-        </TableBodyCell>
-        <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-        <TableBodyCell>Sliver</TableBodyCell>
-        <TableBodyCell>Laptop</TableBodyCell>
-        <TableBodyCell>Yes</TableBodyCell>
-        <TableBodyCell>Yes</TableBodyCell>
-        <TableBodyCell>$2999</TableBodyCell>
-        <TableBodyCell>3.0 lb.</TableBodyCell>
-        <TableBodyCell>
-          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
-          <a href="/tables" class="font-medium text-red-600 hover:underline dark:text-red-500">Remove</a>
-        </TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell class="!p-4">
-          <Checkbox />
-        </TableBodyCell>
-        <TableBodyCell>Microsoft Surface Pro</TableBodyCell>
-        <TableBodyCell>White</TableBodyCell>
-        <TableBodyCell>Laptop PC</TableBodyCell>
-        <TableBodyCell>No</TableBodyCell>
-        <TableBodyCell>Yes</TableBodyCell>
-        <TableBodyCell>$1999</TableBodyCell>
-        <TableBodyCell>1.0 lb.</TableBodyCell>
-        <TableBodyCell>
-          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
-          <a href="/tables" class="font-medium text-red-600 hover:underline dark:text-red-500">Remove</a>
-        </TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell class="!p-4">
-          <Checkbox />
-        </TableBodyCell>
-        <TableBodyCell>Magic Mouse 2</TableBodyCell>
-        <TableBodyCell>Black</TableBodyCell>
-        <TableBodyCell>Accessories</TableBodyCell>
-        <TableBodyCell>Yes</TableBodyCell>
-        <TableBodyCell>No</TableBodyCell>
-        <TableBodyCell>$99</TableBodyCell>
-        <TableBodyCell>0.2 lb.</TableBodyCell>
-        <TableBodyCell>
-          <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
-          <a href="/tables" class="font-medium text-red-600 hover:underline dark:text-red-500">Remove</a>
-        </TableBodyCell>
-      </TableBodyRow>
-    </TableBody>
-  </Table>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/overflow-scrolling.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Table colors</H2>
-<CodeWrapper>
-  <Table color="blue" hoverable={true}>
-    <TableHead>
-      <TableHeadCell>Product name</TableHeadCell>
-      <TableHeadCell>Color</TableHeadCell>
-      <TableHeadCell>Category</TableHeadCell>
-      <TableHeadCell>Price</TableHeadCell>
-    </TableHead>
-    <TableBody class="divide-y">
-      <TableBodyRow>
-        <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-        <TableBodyCell>Sliver</TableBodyCell>
-        <TableBodyCell>Laptop</TableBodyCell>
-        <TableBodyCell>$2999</TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell>Microsoft Surface Pro</TableBodyCell>
-        <TableBodyCell>White</TableBodyCell>
-        <TableBodyCell>Laptop PC</TableBodyCell>
-        <TableBodyCell>$1999</TableBodyCell>
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell>Magic Mouse 2</TableBodyCell>
-        <TableBodyCell>Black</TableBodyCell>
-        <TableBodyCell>Accessories</TableBodyCell>
-        <TableBodyCell>$99</TableBodyCell>
-      </TableBodyRow>
-    </TableBody>
-  </Table>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/table-colors.md'] as string} />
-  {/snippet}
+  <Table {tableItems} hoverable {color} {striped}/>
+  <div class="mb-4 flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Color</Label>
+    {#each colors as colorOption}
+      <Radio labelClass="w-24 my-1" name="table_color" bind:group={color} color={colorOption as Table['color']} value={colorOption}>{colorOption}</Radio>
+    {/each}
+  </div>
+  <div class="mb-4 flex gap-4">
+    <Button onclick={changeStriped}>
+      {striped ? 'Unstriped' : 'Striped'}
+    </Button>
+  </div>
 </CodeWrapper>
 
 <H2>Striped rows color</H2>

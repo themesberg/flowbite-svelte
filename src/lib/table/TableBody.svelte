@@ -1,17 +1,30 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import type { HTMLAttributes } from 'svelte/elements';
+  import { TableBodyRow, TableBodyCell } from '.';
 
   interface Props extends HTMLAttributes<HTMLTableSectionElement> {
     children?: Snippet;
     class?: string;
+    bodyItems?: any[];
   }
-  let { children, class: className, ...restProps }: Props = $props();
+
+  let { children, bodyItems, class: className, ...restProps }: Props = $props();
 </script>
 
 <tbody class={className} {...restProps}>
-  {#if children}
-    {@render children()}
+  {#if bodyItems}
+    {#each bodyItems as items}
+      <TableBodyRow>
+        {#each items as item}
+        <TableBodyCell>{item}</TableBodyCell>
+        {/each}
+      </TableBodyRow>
+    {/each}
+    {:else}
+    {#if children}
+      {@render children()}
+    {/if}
   {/if}
 </tbody>
 

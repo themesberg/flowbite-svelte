@@ -226,7 +226,7 @@
     {/each}
   </div>
   {#snippet codeblock()}
-    <HighlightCompo code={generatedCode} />
+    <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 

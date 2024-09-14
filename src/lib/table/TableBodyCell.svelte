@@ -15,10 +15,10 @@
   let { children, class: className, colspan, onclick, ...restProps }: Props = $props();
 
   const tableCtx: TableCtxType = getContext('tableCtx');
-
-  let color = $state(tableCtx.color ? tableCtx.color : 'default');
-
-  let tdCls: string = $state(twMerge('px-6 py-4 whitespace-nowrap font-medium', color === 'default' ? 'text-gray-900 dark:text-white' : 'text-blue-50 whitespace-nowrap dark:text-blue-100', className));
+  // $inspect('tableCtx in TableBodyCell', tableCtx);
+  let color = tableCtx.color ? tableCtx.color : 'default';
+  
+  let tdCls: string = twMerge('px-6 py-4 whitespace-nowrap font-medium', color === 'default' ? 'text-gray-900 dark:text-white' : 'text-blue-50 whitespace-nowrap dark:text-blue-100', className);
 </script>
 
 <td {...restProps} class={tdCls} colspan={colspan ?? 1}>
