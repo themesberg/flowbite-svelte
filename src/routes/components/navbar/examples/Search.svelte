@@ -17,15 +17,15 @@
     </NavBrand>
   {/snippet}
   {#snippet navSlotBlock()}
-  <div class="hidden md:flex relative">
-    <Search size="md" class="pl-10" />
-  </div>
-  <div class="block md:hidden order-1">
-    <SearchOutline class="w-5 h-5" />
-  </div>
+    <div class="relative hidden md:flex">
+      <Search size="md" class="pl-10" />
+    </div>
+    <div class="order-1 block md:hidden">
+      <SearchOutline class="h-5 w-5" />
+    </div>
   {/snippet}
   {#snippet navSlotHiddenTop()}
-  <Search class="pl-10 mt-4" />
+    <Search class="mt-4 pl-10" />
   {/snippet}
   <NavUl>
     <NavLi href="/">Home</NavLi>

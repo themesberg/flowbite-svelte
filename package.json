@@ -367,6 +367,10 @@
       "types": "./dist/pagination/PaginationItem.svelte.d.ts",
       "svelte": "./dist/pagination/PaginationItem.svelte"
     },
+    "./Popover.svelte": {
+      "types": "./dist/popover/Popover.svelte.d.ts",
+      "svelte": "./dist/popover/Popover.svelte"
+    },
     "./Progressbar.svelte": {
       "types": "./dist/progress/Progressbar.svelte.d.ts",
       "svelte": "./dist/progress/Progressbar.svelte"

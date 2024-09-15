@@ -64,6 +64,7 @@ export const fileList = [
   "src/lib/nav/Navbar.svelte",
   "src/lib/pagination/Pagination.svelte",
   "src/lib/pagination/PaginationItem.svelte",
+  "src/lib/popover/Popover.svelte",
   "src/lib/progress/Progressbar.svelte",
   "src/lib/rating/AdvancedRating.svelte",
   "src/lib/rating/Heart.svelte",

@@ -66,6 +66,5 @@
   {/snippet}
 </CodeWrapper>
 
-
 <H2>Component data</H2>
 <CompoAttributesViewer {dirName} />

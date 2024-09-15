@@ -52,7 +52,7 @@
       notes: 'Variants'
     },
     breadcrumb: {
-      checked: true,
+      checked: true
       // notes: 'Variants, reactive examples'
     },
     buttonGroup: {
@@ -81,34 +81,34 @@
       // notes: 'Variants checked'
     },
     drawer: {
-      checked: true,
+      checked: true
       // problems: 'Contact form, Form elements'
       // notes: 'Variants checked'
     },
     dropdown: {
-      checked: true,
+      checked: true
       // problems:
       //   'Sizes, Placement, Double placement, Events'
       // notes: 'Variants checked'
     },
     footer: {
-      checked: true,
+      checked: true
       // notes: 'Variants checked'
     },
     gallery: {
-      checked: true,
+      checked: true
       // notes: 'Variants checked'
     },
     indicators: {
-      checked: true,
+      checked: true
       // notes: 'Variants, reactive examples'
     },
     kbd: {
-      checked: true,
+      checked: true
       // notes: 'Varants checked'
     },
     listGroup: {
-      checked: true,
+      checked: true
       // problems: 'Advanced',
       // notes: 'Variants checked'
     },
@@ -123,12 +123,12 @@
       problems: 'Navbar with search, Navbar with CTA button, User menu dropdown, Solid background'
     },
     pagination: {
-      checked: true,
+      checked: true
       // notes: 'Variants, reactive examples'
     },
     popover: {
-      checked: false,
-      problems: 'Paragraph popover'
+      checked: true,
+      // problems: 'Paragraph popover'
     },
     progress: {
       checked: true
@@ -157,7 +157,7 @@
       problems: 'Sorting by column, Click and double-click on row'
     },
     tabs: {
-      checked: true,
+      checked: true
       // problems: 'Full width tabs, Components in tab contents'
       // notes: 'Variants checked'
     },

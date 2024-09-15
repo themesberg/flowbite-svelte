@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Drawer, Drawerhead, uiHelpers, Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper} from '$lib';
+  import { Button, Drawer, Drawerhead, uiHelpers, Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper } from '$lib';
   import { InfoCircleSolid, ChartOutline, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditSolid, ShoppingBagSolid } from 'flowbite-svelte-icons';
   const drawer = uiHelpers();
   let drawerStatus = $state(false);
@@ -13,7 +13,7 @@
 <div class="text-center">
   <Button onclick={drawer.toggle}>Show navigation</Button>
 </div>
-<Drawer drawerStatus={drawerStatus} closeDrawer={closeDrawer} class="bg-gray-50">
+<Drawer {drawerStatus} {closeDrawer} class="bg-gray-50">
   <Drawerhead onclick={closeDrawer} class="mb-4">
     <h5 id="drawer-label" class="inline-flex items-center text-xl font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Menu

@@ -112,7 +112,7 @@
 </script>
 
 {#if visible}
-  <div bind:this={tooltipElement} class={`${base({ className })} ${positioned ? 'visible opacity-100' : 'invisible opacity-0'} transition-opacity duration-200`} {...restProps}>
+  <div role="tooltip" bind:this={tooltipElement} class={`${base({ className })} ${positioned ? 'visible opacity-100' : 'invisible opacity-0'} transition-opacity duration-200`} {...restProps}>
     {@render children()}
     {#if arrow}<div bind:this={arrowEl} class={arrowBase({ arrow, position })}></div>{/if}
   </div>

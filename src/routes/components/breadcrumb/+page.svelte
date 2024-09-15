@@ -29,7 +29,7 @@
   const exampleArr = [
     { name: 'Default', component: ExampleComponents.Default },
     { name: 'Solid', component: ExampleComponents.Solid },
-    { name: 'Icon', component: ExampleComponents.Icon },
+    { name: 'Icon', component: ExampleComponents.Icon }
   ];
   let selectedExample = $state(exampleArr[0].name);
   let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -41,8 +41,8 @@
   const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
 
-// // for examples DynamicCodeBlockHighlight
-// let codeBlock = uiHelpers();
+  // for examples DynamicCodeBlockHighlight
+  let codeBlock = uiHelpers();
   let exampleExpand = $state(false);
   let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
   const handleExpandClick = () => {

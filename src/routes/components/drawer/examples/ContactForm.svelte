@@ -13,7 +13,7 @@
 <div class="text-center">
   <Button onclick={drawer.toggle}>Show navigation</Button>
 </div>
-<Drawer drawerStatus={drawerStatus} closeDrawer={closeDrawer}>
+<Drawer {drawerStatus} {closeDrawer}>
   <Drawerhead onclick={closeDrawer} class="mb-4">
     <h5 id="drawer-label" class="inline-flex items-center text-lg font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Contact us
@@ -21,11 +21,11 @@
   </Drawerhead>
   <form action="#" class="mb-6">
     <div class="mb-6">
-      <Label for="email" class="block mb-2">Your email</Label>
+      <Label for="email" class="mb-2 block">Your email</Label>
       <Input id="email" name="email" required placeholder="name@company.com" />
     </div>
     <div class="mb-6">
-      <Label for="subject" class="block mb-2">Subject</Label>
+      <Label for="subject" class="mb-2 block">Subject</Label>
       <Input id="subject" name="subject" required placeholder="Let us know how we can help you" />
     </div>
     <div class="mb-6">

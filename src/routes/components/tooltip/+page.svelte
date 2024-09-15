@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Button, Tooltip, tooltip, P, Span, Radio, Label, uiHelpers } from '$lib';
+  import { Button, Tooltip, tooltip, Radio, Label, uiHelpers } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -32,13 +32,14 @@
   const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
 
+  // for interactive code builder
   const positions = Object.keys(tooltip.variants.position);
   let position: Tooltip['position'] = $state(positions[0]);
   const colors = Object.keys(tooltip.variants.color) as Tooltip['color'][];
   let color: Tooltip['color'] = $state('default');
   let tooltipClass: Tooltip['class'] = $state('');
   const changeClass = () => {
-    tooltipClass = tooltipClass === '' ? 'w-64 p-4' : '';
+    tooltipClass = tooltipClass === '' ? 'p-4' : '';
   };
   let arrow = $state(true);
   const changeArrow = () => {

@@ -156,7 +156,7 @@
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each tabStyles as option}
       {#if option !== 'full'}
-      <Radio labelClass="w-24 my-1" name="table_color" bind:group={tabStyle} value={option}>{option}</Radio>
+        <Radio labelClass="w-24 my-1" name="table_color" bind:group={tabStyle} value={option}>{option}</Radio>
       {/if}
     {/each}
   </div>
