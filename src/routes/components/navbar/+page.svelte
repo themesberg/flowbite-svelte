@@ -1,9 +1,12 @@
 <script lang="ts">
-  import { Navbar, NavLi, NavBrand, NavUl, uiHelpers, ImagePlaceholder, Skeleton, TextPlaceholder, P } from '$lib';
+  import { type Component } from 'svelte';
+  import { Navbar, NavLi, NavBrand, NavUl, uiHelpers, ImagePlaceholder, Skeleton, TextPlaceholder, P, Label, Radio } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'nav';
@@ -36,76 +39,59 @@
     navStatus2 = nav2.isOpen;
     navStatusLg = navLg.isOpen;
   });
+
+  // for examples section that dynamically changes the svelte component and markdown content
+  import * as ExampleComponents from './examples';
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
+    query: '?raw',
+    import: 'default',
+    eager: true
+  });
+
+  const exampleArr = [
+    // { name: 'Search', component: ExampleComponents.Search },
+    { name: 'Default', component: ExampleComponents.Default },
+    { name: 'Breakpoint', component: ExampleComponents.Breakpoint },
+    { name: 'Sticky', component: ExampleComponents.Sticky },
+    { name: 'Dropdown', component: ExampleComponents.Dropdown },
+  ];
+  let selectedExample = $state(exampleArr[0].name);
+  let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
+
+  function findObject(arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find((obj) => obj.name === name);
+    return matchingObject ? matchingObject.component : null;
+  }
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
+  // end of dynamic svelte component
+
+  // for examples DynamicCodeBlockHighlight
+  let codeBlock = uiHelpers();
+  let exampleExpand = $state(false);
+  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+  const handleExpandClick = () => {
+    exampleExpand = !exampleExpand;
+  };
+  // end of DynamicCodeBlock setup
+  $effect(() => {
+    exampleExpand = codeBlock.isOpen;
+  });
 </script>
 
 <H1>Navbar</H1>
 
-<H2>Default Nav</H2>
+<H2>Examples</H2>
 
 <CodeWrapper>
-  <Navbar {toggleNav} {closeNav} {navStatus} {breakPoint}>
-    {#snippet brand()}
-      <NavBrand siteName="Svelte 5">
-        <img width="30" src="/images/svelte-icon.png" alt="svelte icon" />
-      </NavBrand>
-    {/snippet}
-
-    <NavUl>
-      <NavLi href="/">Home</NavLi>
-      <NavLi href="/components/navbar">Navbar</NavLi>
-      <NavLi href="/components/footer">Footer</NavLi>
-    </NavUl>
-  </Navbar>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/default-nav.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Breakpoint</H2>
-<P>Use the `breakPoint` prop to change the breakpoint. There are 4 breakpoints: `md`, `lg`, `xl`, `xxl`.</P>
-<CodeWrapper>
-  <Navbar toggleNav={toggleNavLg} closeNav={closeNavLg} navStatus={navStatusLg} breakPoint="lg">
-    {#snippet brand()}
-      <NavBrand siteName="Svelte 5">
-        <img width="30" src="/images/svelte-icon.png" alt="svelte icon" />
-      </NavBrand>
-    {/snippet}
-
-    <NavUl>
-      <NavLi href="/">Home</NavLi>
-      <NavLi href="/components/navbar">Navbar</NavLi>
-      <NavLi href="/components/footer">Footer</NavLi>
-    </NavUl>
-  </Navbar>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/breakpoint.md'] as string} />
-  {/snippet}
-</CodeWrapper>
-
-<H2>Sticky navbar</H2>
-<CodeWrapper innerClass="p-0">
-  <div class="relative">
-    <Navbar toggleNav={toggleNav2} closeNav={closeNav2} navStatus={navStatus2} breakPoint="md" navClass="absolute w-full z-20 top-0 start-0 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
-      {#snippet brand()}
-        <NavBrand siteName="Svelte 5">
-          <img width="30" src="/images/svelte-icon.png" alt="svelte icon" />
-        </NavBrand>
-      {/snippet}
-
-      <NavUl>
-        <NavLi href="/">Home</NavLi>
-        <NavLi href="/components/navbar">Navbar</NavLi>
-        <NavLi href="/components/footer">Footer</NavLi>
-      </NavUl>
-    </Navbar>
-    <div style="height:300px;" class="overflow-scroll px-8 py-24">
-      <Skeleton class="mb-8 mt-16" />
-      <ImagePlaceholder class="my-8" />
-      <TextPlaceholder class="my-8" />
-    </div>
+  <div class="mb-12 flex flex-wrap">
+    <Label class="mb-4 w-full font-bold">Example:</Label>
+    {#each exampleArr as style}
+      <Radio labelClass="w-40 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+    {/each}
   </div>
+  <SelectedComponent />
   {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/sticky-navbar.md'] as string} />
+    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 

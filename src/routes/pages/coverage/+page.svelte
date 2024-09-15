@@ -53,7 +53,7 @@
     },
     breadcrumb: {
       checked: true,
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
     },
     buttonGroup: {
       checked: true
@@ -120,7 +120,7 @@
     },
     navbar: {
       checked: true,
-      problems: 'Navbar container, Active class, Navbar with dropdown, Navbar with search, Navbar with CTA button, User menu dropdown, Solid background'
+      problems: 'Navbar with search, Navbar with CTA button, User menu dropdown, Solid background'
     },
     pagination: {
       checked: true,

@@ -9,6 +9,9 @@ import { navUl } from './theme';
 
 interface NavbarProps extends HTMLAttributes<HTMLElement> {
   children: Snippet;
+  navSlotBlock?: Snippet;
+  navSlotHiddenTop?: Snippet;
+  navSlotHiddenBottom?: Snippet;
   toggleNav?: () => void;
   closeNav?: () => void;
   navStatus?: boolean | undefined;
