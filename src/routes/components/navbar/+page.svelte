@@ -53,6 +53,7 @@
     { name: 'Default', component: ExampleComponents.Default },
     { name: 'Breakpoint', component: ExampleComponents.Breakpoint },
     { name: 'Sticky', component: ExampleComponents.Sticky },
+    // need to fix this for extra space for div relative
     { name: 'Dropdown', component: ExampleComponents.Dropdown },
   ];
   let selectedExample = $state(exampleArr[0].name);

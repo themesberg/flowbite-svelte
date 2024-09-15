@@ -15,8 +15,8 @@
     dropdownStatus = dropdown.isOpen;
   });
 </script>
-
-<Navbar {toggleNav} {closeNav} {navStatus} breakPoint="lg">
+<div class="h-64">
+<Navbar {toggleNav} {closeNav} {navStatus} breakPoint="md">
   {#snippet brand()}
     <NavBrand siteName="Svelte 5">
       <img width="30" src="/images/svelte-icon.png" alt="svelte icon" />
@@ -30,7 +30,7 @@
       Dropdown<ChevronDownOutline class="w-6 h-6 ms-2 text-primary-800 dark:text-white inline" />
     </NavLi>
     <div class="relative">
-      <Dropdown {dropdownStatus} {closeDropdown} class="absolute left-[100px] -top-[20px]">
+      <Dropdown {dropdownStatus} {closeDropdown} class="absolute left-[100px] -top-[20px] md:-left-[170px] md:top-[20px]">
         <DropdownUl>
           <DropdownLi href="/components/alert">Alert</DropdownLi>
           <DropdownLi href="/components/button">Button</DropdownLi>
@@ -41,3 +41,4 @@
     <NavLi href="/components/footer">Footer</NavLi>
   </NavUl>
 </Navbar>
+</div>
