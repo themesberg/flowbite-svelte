@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.9
+
+### Patch Changes
+
+- feat: Popover compoents and page ([`7610cab277c49414ea7a8524d6b2deeb50e4d4f5`](https://github.com/shinokada/svelte-5-ui-lib/commit/7610cab277c49414ea7a8524d6b2deeb50e4d4f5))
+
 ## 0.9.8
 
 ### Patch Changes

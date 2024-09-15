@@ -127,7 +127,7 @@
       // notes: 'Variants, reactive examples'
     },
     popover: {
-      checked: true,
+      checked: true
       // problems: 'Paragraph popover'
     },
     progress: {

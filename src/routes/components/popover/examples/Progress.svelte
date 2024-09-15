@@ -17,7 +17,7 @@
         of block storage remaining.
       </p>
       <div class="mb-4 h-2.5 w-full rounded-full bg-gray-200 dark:bg-gray-700">
-        <div class="h-2.5 rounded-full bg-red-600" style="width: 85%" />
+        <div class="h-2.5 rounded-full bg-red-600" style="width: 85%"></div>
       </div>
       <a href="/" class="flex items-center font-medium text-primary-600 hover:text-primary-700 dark:text-primary-500 dark:hover:text-primary-600">
         Upgrade now <ChevronRightOutline class="ms-1.5 h-4 w-4 text-primary-600 dark:text-primary-500" />

@@ -1,26 +1,9 @@
 <script lang="ts">
   import { Popover, Label, Input, Checkbox, Button } from '$lib';
   import { CheckOutline, CloseOutline } from 'flowbite-svelte-icons';
-  interface EventHandler<T = Event> {
-    (event: T): void;
-  }
-
-  interface ClickEvent extends Event {
-    preventDefault(): void;
-  }
-
-  function preventDefault<T extends EventHandler>(fn: T): EventHandler<ClickEvent> {
-    return function (event: ClickEvent) {
-      event.preventDefault();
-      fn.call(this, event);
-    };
-  }
-  let handler: EventHandler<ClickEvent> = (event) => {
-    console.log('Clicked!', event);
-  };
 </script>
 
-<form onsubmit={preventDefault(handler)} class="mb-8">
+<form class="mb-8">
   <div class="mb-6">
     <Label for="email" class="mb-2">Your email</Label>
     <Input type="email" id="email" placeholder="name@flowbite.com" required />
