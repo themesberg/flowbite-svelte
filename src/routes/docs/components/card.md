@@ -85,7 +85,7 @@ This example can be used to show a CTA as a link instead of a button inside the 
 
 ## Card with image
 
-User <code>reverse={true}</code> to reverse the position of an image.
+Use <code>reverse={true}</code> to reverse the position of an image.
 
 You can use the following example of a card element with an image for blog posts, user cards, and many more.
 
