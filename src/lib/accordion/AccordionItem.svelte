@@ -12,23 +12,23 @@
   let inactiveCls = twMerge(inactiveClass, classInactive);
 
   const ctx = getContext<AccordionCtxType>('ctx') ?? {};
+  if (!ctx.selected){
+    ctx.selected = writable();
+  }
 
   // single selection
   const self = {};
-  const selected = ctx.selected ?? writable();
+  const selected = ctx.selected;
 
-  let _open: boolean = $state(open);
+  if (open) {
+    selected.set(self)
+  }
 
-  $effect(() => {
-    if (_open) $selected = self;
+  selected.subscribe((x) => (open = x === self));
 
-    // this will trigger unsubscribe on destroy
-    return selected.subscribe((x) => (open = x === self));
-  });
+  const handleToggle = (_: Event) =>  selected.set(open ? {} : self);
 
-  const handleToggle = (_: Event) => selected.set(open ? {} : self);
-
-  let buttonClass: string = twMerge(defaultClass, ctx.flush ? '' : borderClass, borderBottomClass, borderSharedClass, ctx.flush ? paddingFlush : paddingDefault, open && (ctx.flush ? textFlushOpen : activeCls || ctx.activeClass), !open && (ctx.flush ? textFlushDefault : inactiveCls || ctx.inactiveClass), className);
+  let buttonClass: string = $derived(twMerge(defaultClass, ctx.flush ? '' : borderClass, borderBottomClass, borderSharedClass, ctx.flush ? paddingFlush : paddingDefault, open && (ctx.flush ? textFlushOpen : activeCls || ctx.activeClass), !open && (ctx.flush ? textFlushDefault : inactiveCls || ctx.inactiveClass), className));
 
   let contentClass = twMerge([ctx.flush ? paddingFlush : paddingDefault, ctx.flush ? '' : borderOpenClass, borderBottomClass, borderSharedClass]);
 </script>
