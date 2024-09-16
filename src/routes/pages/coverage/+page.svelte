@@ -27,7 +27,7 @@
     accordion: {
       checked: true,
       // notes: 'Variants'
-      problems: 'AlwaysOpen'
+      // problems: 'AlwaysOpen'
     },
     alert: {
       checked: true
