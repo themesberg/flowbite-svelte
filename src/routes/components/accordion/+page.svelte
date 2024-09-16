@@ -22,7 +22,7 @@
     { name: 'Default', component: ExampleComponents.Default },
     { name: 'Color', component: ExampleComponents.Color },
     { name: 'Flush', component: ExampleComponents.Flush },
-    { name: 'ArrowStyle', component: ExampleComponents.ArrowStyle },
+    { name: 'Arrow style', component: ExampleComponents.ArrowStyle },
     { name: 'Icon', component: ExampleComponents.Icon },
     { name: 'Multiple mode', component: ExampleComponents.MultipleMode },
     { name: 'Transitions', component: ExampleComponents.Transitions },
