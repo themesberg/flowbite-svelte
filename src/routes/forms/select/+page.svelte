@@ -21,6 +21,7 @@
 
   const exampleArr = [
     { name: 'Dropdown Select', component: ExampleComponents.DropdownSelect },
+    { name: 'Custom Options', component: ExampleComponents.CustomOptions },
     // { name: 'My options', component: ExampleComponents.MyOptions },
   ];
   let selectedExample = $state(exampleArr[0].name);
