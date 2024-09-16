@@ -50,8 +50,6 @@
 
 <H1>KBD (Keyboard)</H1>
 
-<H2>Examples</H2>
-
 <CodeWrapper>
   <div class="mb-12 flex flex-wrap">
     <Label class="mb-4 w-full font-bold">Example:</Label>

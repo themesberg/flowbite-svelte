@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { AccordionItem, Accordion } from 'svelte-5-ui-lib';
+  import { Accordion, AccordionItem } from '$lib';
   let nestingOpenStatus: boolean = $state(true);
 </script>
 
