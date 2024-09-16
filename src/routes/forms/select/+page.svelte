@@ -1,24 +1,38 @@
 <script lang="ts">
-  import { Select, Label, Radio, Helper, Dropdown, DropdownUl, DropdownLi, uiHelpers, ButtonGroup, Button } from '$lib';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { type Component } from 'svelte';
+  import { Select, Label, Radio, Helper, uiHelpers, Button } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'forms/select';
-  import { sineIn } from 'svelte/easing';
-  import Usa from '../../utils/icons/Usa.svelte';
-  import Germany from '../../utils/icons/Germany.svelte';
-  import Italy from '../../utils/icons/Italy.svelte';
-  import China from '../../utils/icons/China.svelte';
 
-  const modules = import.meta.glob('./md/*.md', {
+  // for examples section that dynamically changes the svelte component and markdown content
+  import * as ExampleComponents from './examples';
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
     query: '?raw',
     import: 'default',
     eager: true
   });
+
+  const exampleArr = [
+    { name: 'Dropdown Select', component: ExampleComponents.DropdownSelect },
+    // { name: 'My options', component: ExampleComponents.MyOptions },
+  ];
+  let selectedExample = $state(exampleArr[0].name);
+  let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
+
+  function findObject(arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find((obj) => obj.name === name);
+    return matchingObject ? matchingObject.component : null;
+  }
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
+  // end of dynamic svelte component
+
   interface Country {
     value: string;
     name: string;
@@ -29,29 +43,12 @@
     name: string;
   }
 
-  let customSelected: State | undefined = $state();
-
   let countries: Country[] = [
     { value: 'us', name: 'United States', href: '/' },
     { value: 'ca', name: 'Canada', href: '/' },
     { value: 'fr', name: 'France', href: '/' }
   ];
 
-  let states: State[] = [
-    { value: 'CA', name: 'California' },
-    { value: 'TX', name: 'Texas' },
-    { value: 'WH', name: 'Washinghton' },
-    { value: 'FL', name: 'Florida' },
-    { value: 'VG', name: 'Virginia' },
-    { value: 'GE', name: 'Georgia' },
-    { value: 'MI', name: 'Michigan' }
-  ];
-
-  let transitionParams = {
-    y: 0,
-    duration: 100,
-    easing: sineIn
-  };
 
   let dropdown = uiHelpers();
   let dropdownStatus = $state(false);
@@ -98,12 +95,33 @@
       return `<Select${propsString} />${bindValue ? '\nSelected value: {selected}' : ''}`;
     })()
   );
+  // for interactive builder
+  let builder = uiHelpers();
+  let builderExpand = $state(false);
+  let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
+  const handleBuilderExpandClick = () => {
+    builderExpand = !builderExpand;
+  };
+  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
+
+  // for examples DynamicCodeBlockHighlight
+  let codeBlock = uiHelpers();
+  let exampleExpand = $state(false);
+  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+  const handleExpandClick = () => {
+    exampleExpand = !exampleExpand;
+  };
+  // end of DynamicCodeBlock setup
+  $effect(() => {
+    exampleExpand = codeBlock.isOpen;
+    builderExpand = builder.isOpen;
+  });
 </script>
 
 <H1>Select</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Interactive Select Builder</H2>
 <CodeWrapper>
@@ -129,58 +147,22 @@
     <Button class="w-40" color="rose" onclick={changeBindValue}>{bindValue ? 'Unbind' : 'Bind value'}</Button>
   </div>
   {#snippet codeblock()}
-    <HighlightCompo code={generatedCode} />
+    <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 
-<H2>Select with dropdown</H2>
-<CodeWrapper innerClass="h-64">
-  <ButtonGroup class="w-full">
-    <Button onclick={dropdown.toggle}>
-      <Usa />
-      USA
-      <ChevronDownOutline class="ms-2 h-6 w-6" />
-    </Button>
-    <div class="relative">
-      <Dropdown {dropdownStatus} {closeDropdown} params={transitionParams} class="absolute -left-[120px] top-[40px]">
-        <DropdownUl>
-          <DropdownLi aClass="flex items-center" href="/">
-            <Usa />
-            United States
-          </DropdownLi>
-          <DropdownLi aClass="flex items-center" href="/">
-            <Germany />
-            Germany
-          </DropdownLi>
-          <DropdownLi aClass="flex items-center" href="/">
-            <Italy />
-            Italy
-          </DropdownLi>
-          <DropdownLi aClass="flex items-center" href="/">
-            <China />
-            China
-          </DropdownLi>
-        </DropdownUl>
-      </Dropdown>
-    </div>
-    <Select items={states} placeholder="Choose the state" class="!rounded-s-none" />
-  </ButtonGroup>
-  {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/select-with-dropdown.md'] as string} />
-  {/snippet}
-</CodeWrapper>
+<H2>Examples</H2>
 
-<H2>Custom options</H2>
 <CodeWrapper>
-  <Label for="countries">Select an option</Label>
-  <Select id="countries" class="mt-2" bind:value={customSelected} placeholder="">
-    <option selected value="all">All</option>
-    {#each countries as { value, name }}
-      <option {value}>{name}</option>
+  <div class="mb-12 flex flex-wrap">
+    <Label class="mb-4 w-full font-bold">Example:</Label>
+    {#each exampleArr as style}
+      <Radio labelClass="w-40 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
-  </Select>
+  </div>
+  <SelectedComponent />
   {#snippet codeblock()}
-    <HighlightCompo code={modules['./md/custom-options.md'] as string} />
+    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
   {/snippet}
 </CodeWrapper>
 
