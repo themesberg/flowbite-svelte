@@ -1,13 +1,16 @@
 <script lang="ts">
-  import { P, paragraph, Label, Radio, Button, Input, CloseButton } from '$lib';
+  import { P, paragraph, Label, Radio, Button, Input, CloseButton, uiHelpers } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { isGeneratedCodeOverflow } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'typography/paragraph';
-  const modules = import.meta.glob('./md/*.md', {
+
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
     query: '?raw',
     import: 'default',
     eager: true
@@ -56,12 +59,23 @@
 </P>`;
     })()
   );
+
+  // for interactive builder
+  let builder = uiHelpers();
+  let builderExpand = $state(false);
+  let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
+  const handleBuilderExpandClick = () => {
+    builderExpand = !builderExpand;
+  };
+  $effect(() => {
+    builderExpand = builder.isOpen;
+  });
 </script>
 
 <H1>Paragraph</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Interactive Paragraph Builder</H2>
 <CodeWrapper>
@@ -125,7 +139,7 @@
     <Button class="w-40" color="emerald" onclick={changeItalic}>{italic ? 'Remove italic' : 'Italic'}</Button>
   </div>
   {#snippet codeblock()}
-    <HighlightCompo code={generatedCode} />
+    <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 

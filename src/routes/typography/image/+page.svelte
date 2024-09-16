@@ -1,17 +1,37 @@
 <script lang="ts">
-  import { Img, img, Badge, Radio, Label, Button } from '$lib';
+  import { type Component } from 'svelte';
+  import { Img, img, Badge, Radio, Label, Button, uiHelpers } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'typography/img';
-  const modules = import.meta.glob('./md/*.md', {
+
+  // for examples section that dynamically changes the svelte component and markdown content
+  import * as ExampleComponents from './examples';
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
     query: '?raw',
     import: 'default',
     eager: true
   });
+
+  const exampleArr = [
+    { name: 'Retina ready', component: ExampleComponents.RetinaReady },
+
+  ];
+  let selectedExample = $state(exampleArr[0].name);
+  let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
+
+  function findObject(arr: { name: string; component: Component }[], name: string) {
+    const matchingObject = arr.find((obj) => obj.name === name);
+    return matchingObject ? matchingObject.component : null;
+  }
+  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
+  // end of dynamic svelte component
 
   const sizes = Object.keys(img.variants.size);
   let imgSize: Img['size'] = $state('none');
@@ -52,12 +72,33 @@
       return `<Img${propsString}src='/images/examples/content-gallery-1.png'/>`;
     })()
   );
+  // for interactive builder
+  let builder = uiHelpers();
+  let builderExpand = $state(false);
+  let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
+  const handleBuilderExpandClick = () => {
+    builderExpand = !builderExpand;
+  };
+  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
+
+  // for examples DynamicCodeBlockHighlight
+  let codeBlock = uiHelpers();
+  let exampleExpand = $state(false);
+  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+  const handleExpandClick = () => {
+    exampleExpand = !exampleExpand;
+  };
+  // end of DynamicCodeBlock setup
+  $effect(() => {
+    exampleExpand = codeBlock.isOpen;
+    builderExpand = builder.isOpen;
+  });
 </script>
 
 <H1>Image</H1>
 
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Interactive Image Builder</H2>
 <CodeWrapper>
@@ -99,18 +140,26 @@
     <Button class="w-48" color="lime" onclick={changeImgHrf}>{imgHref === '' ? 'Add href' : 'Remove href'}</Button>
   </div>
   {#snippet codeblock()}
-    <HighlightCompo code={generatedCode} />
+    <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
   {/snippet}
 </CodeWrapper>
 
 <Badge large class="my-4">Warning: the caption is using @html.</Badge>
 
-<H2>Retina-ready</H2>
-<p>Use the srcset attribute to set Retina-ready images with double resolution.</p>
-<CodeWrapper innerClass="flex justify-center">
-  <Img srcset="/images/examples/image-1.jpg 1x, /images/examples/image-1@2x.jpg 2x" alt="sample 1" class="w-full max-w-xl rounded-lg" />
+<H2>Examples</H2>
+
+<CodeWrapper>
+  <div class="mb-12 flex flex-wrap">
+    <Label class="mb-4 w-full font-bold">Example:</Label>
+    {#each exampleArr as style}
+      <Radio labelClass="w-40 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+    {/each}
+  </div>
+  <SelectedComponent />
+  {#snippet codeblock()}
+    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
+  {/snippet}
 </CodeWrapper>
-<HighlightCompo code={modules['./md/retina-ready.md'] as string} />
 
 <H2>Component data</H2>
 <CompoAttributesViewer {dirName} />
