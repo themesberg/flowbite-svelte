@@ -1,30 +1,8 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
   import Button from '../buttons/Button.svelte';
   import Rating from './Rating.svelte';
-  interface Props {
-    children: Snippet;
-    evaluation?: Snippet;
-    helpfullink?: string;
-    abuselink?: string;
-    comment: {
-      id?: string;
-      user: {
-        name?: string;
-        img: {
-          src: string | undefined | null;
-          alt?: string;
-        };
-        joined?: string;
-      };
-      total?: number;
-      rating: number;
-      heading?: string;
-      address?: string;
-      datetime?: string;
-    };
-  }
-
+  import { type RatingCommentProps as Props } from '.'
+  
   let { children, evaluation, helpfullink, abuselink, comment }: Props = $props();
 </script>
 
@@ -43,7 +21,7 @@
   <div class="mb-1 flex items-center">
     <Rating total={comment.total} rating={comment.rating}>
       {#snippet text()}
-        <p class="ms-2 pt-4 text-sm font-medium text-gray-500 dark:text-gray-400">
+        <p class="ms-2 pt-1 text-sm font-medium text-gray-500 dark:text-gray-400">
           {comment.rating} out of {comment.total}
         </p>
       {/snippet}

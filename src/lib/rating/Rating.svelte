@@ -1,23 +1,11 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
   import Star from './Star.svelte';
   import { idGenerator } from '$lib/uiHelpers.svelte';
-  import type { Component } from 'svelte';
+  import { type RatingProps as Props, rating as ratingVariants } from '.'
 
-  interface Props {
-    children?: Snippet;
-    text?: Snippet;
-    divClass?: string;
-    size?: number;
-    total?: number;
-    rating?: number;
-    partialId?: string;
-    Icon?: Component;
-    count?: boolean;
-    pClass?: string;
-  }
+  let { children, text, divClass, size = 24, total = 5, rating = 4, partialId = 'partialStar' + idGenerator(), Icon = Star, count = false, pClass }: Props = $props();
 
-  let { children, text, divClass = 'flex items-center', size = 24, total = 5, rating = 4, partialId = 'partialStar' + idGenerator(), Icon = Star, count = false, pClass = 'ms-2 text-sm font-bold text-gray-900 dark:text-white' }: Props = $props();
+  const { base, p } = $derived(ratingVariants());
 
   // generate unique id for full star and gray star
   const fullStarId: string = idGenerator();
@@ -28,10 +16,10 @@
   let grayStars: number = total - (fullStars + Math.ceil(rateDiffence));
 </script>
 
-<div class={divClass}>
+<div class={base({ class: divClass })}>
   {#if count && children}
     <Icon fillPercent={100} {size} />
-    <p class={pClass}>{rating}</p>
+    <p class={p({ class: pClass })}>{rating}</p>
     {@render children()}
   {:else}
     {#each Array(fullStars) as star}

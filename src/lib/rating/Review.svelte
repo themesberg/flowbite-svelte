@@ -1,50 +1,22 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
-  import type { HTMLAttributes } from 'svelte/elements';
+  import { type ReviewProps as Props, review as reviewVariants } from '.'
 
-  type ReviewType = {
-    name?: string;
-    imgSrc?: string;
-    imgAlt?: string;
-    address?: string;
-    reviewDate?: string;
-    title?: string;
-    rating?: number;
-    item1?: string;
-    item2?: string;
-    item3?: string;
-  };
+  let { children, address, item1, item2, item3, review, articleClass, divClass, div2Class, div3Class, imgClass, ulClass, liClass }: Props = $props();
 
-  interface Props extends HTMLAttributes<HTMLElement> {
-    children: Snippet;
-    address?: Snippet;
-    item1?: Snippet;
-    item2?: Snippet;
-    item3?: Snippet;
-    review?: ReviewType;
-    articleClass?: string;
-    divClass?: string;
-    div2Class?: string;
-    div3Class?: string;
-    imgClass?: string;
-    ulClass?: string;
-    liClass?: string;
-  }
-
-  let { children, address, item1, item2, item3, review, articleClass = 'md:grid md:grid-cols-3 md:gap-8', divClass = 'mb-6 flex items-center space-x-4 rtl:space-x-reverse', div2Class = 'space-y-1 font-medium dark:text-white', div3Class = 'flex items-center text-sm text-gray-500 dark:text-gray-400', imgClass = 'h-10 w-10 rounded-full', ulClass = 'space-y-4 text-sm text-gray-500 dark:text-gray-400', liClass = 'flex items-center' }: Props = $props();
+  const { article, div, div2, div3, img, ul, li } = $derived(reviewVariants());
 </script>
 
 {#if review}
-  <article class={articleClass}>
+  <article class={article({ class: articleClass})}>
     <div>
-      <div class={divClass}>
-        <img class={imgClass} src={review.imgSrc} alt={review.imgAlt} />
-        <div class={div2Class}>
+      <div class={div({ class: divClass})}>
+        <img class={img({ class: imgClass})} src={review.imgSrc} alt={review.imgAlt} />
+        <div class={div2({ class: div2Class})}>
           <p>{review.name}</p>
           {#if review.address}
             {#if address}
-              <div class={div3Class}>
+              <div class={div3({ class: div3Class})}>
                 {@render address()}
               </div>
             {/if}
@@ -52,9 +24,9 @@
         </div>
       </div>
       {#if review.item1 || review.item2 || review.item3}
-        <ul class={ulClass}>
+        <ul class={ul({ class: ulClass})}>
           {#if review.item1}
-            <li class={twMerge(liClass)}>
+            <li class={twMerge(li({ class: liClass}))}>
               {#if item1}
                 {@render item1()}
               {/if}

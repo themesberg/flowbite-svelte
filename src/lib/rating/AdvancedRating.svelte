@@ -1,19 +1,9 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
+  import { type AdvancedRatingProps as Props, advancedrating } from '.'
 
-  interface Props {
-    rating?: Snippet;
-    globalText?: Snippet;
-    ratings: { label: string | undefined | null; rating: number }[];
-    divClass?: string;
-    spanClass?: string;
-    div2Class?: string;
-    div3Class?: string;
-    span2Class?: string;
-    unit?: string;
-  }
+  let { rating, globalText, ratings, divClass, spanClass, div2Class, div3Class, span2Class, unit }: Props = $props();
 
-  let { rating, globalText, ratings, divClass = 'flex items-center mt-4', spanClass = 'text-sm font-medium text-gray-600 dark:text-gray-500', div2Class = 'mx-4 w-2/4 h-5 bg-gray-200 rounded dark:bg-gray-700', div3Class = 'h-5 bg-yellow-400 rounded', span2Class = 'text-sm font-medium text-gray-600 dark:text-gray-500', unit }: Props = $props();
+  const { base, span, div2, div3, span2 } = $derived(advancedrating());
 </script>
 
 {#if rating}
@@ -23,12 +13,12 @@
   {@render globalText()}
 {/if}
 {#each ratings as { label, rating }}
-  <div class={divClass}>
-    <span class={spanClass}>{label}</span>
-    <div class={div2Class}>
-      <div class={div3Class} style="width: {rating}%"></div>
+  <div class={base({ class: divClass})}>
+    <span class={span({ class: spanClass})}>{label}</span>
+    <div class={div2({ class: div2Class})}>
+      <div class={div3({ class: div3Class})} style="width: {rating}%"></div>
     </div>
-    <span class={span2Class}>{rating}{unit}</span>
+    <span class={span2({ class: span2Class})}>{rating}{unit}</span>
   </div>
 {/each}
 

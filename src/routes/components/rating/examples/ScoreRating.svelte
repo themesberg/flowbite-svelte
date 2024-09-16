@@ -1,5 +1,5 @@
-<script>
-  import { ScoreRating } from 'svelte-5-ui-lib'
+<script lang="ts">
+  import { ScoreRating } from '$lib';
   const headerLabel = {
     desc1: '8.7',
     desc2: 'Excellent',

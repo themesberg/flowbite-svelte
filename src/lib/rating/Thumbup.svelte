@@ -1,17 +1,6 @@
 <script lang="ts">
   import { idGenerator } from '$lib/uiHelpers.svelte';
-  import type { SVGAttributes } from 'svelte/elements';
-
-  interface Props extends SVGAttributes<SVGSVGElement> {
-    fillPercent?: number;
-    fillColor?: string;
-    strokeColor?: string;
-    size?: number;
-    ariaLabel?: string;
-    id?: string;
-    role?: string;
-    svgClass?: string;
-  }
+  import { type ThumbupProps as Props } from '.';
 
   let { fillPercent = 100, fillColor = '#00b500', strokeColor = '#00b500', size = 24, ariaLabel = 'thumbup', id = idGenerator(), role = 'img', svgClass, ...restProps }: Props = $props();
 </script>
