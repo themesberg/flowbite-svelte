@@ -4,3 +4,4 @@ export { default as Placeholder } from './Placeholder.svelte';
 export { default as PlaceholderInitial } from './PlaceholderInitial.svelte';
 export { default as Stacked } from './Stacked.svelte';
 export { default as UserDropdown } from './UserDropdown.svelte';
+export { default as AvatarWithTooltip } from './AvatarWithTooltip.svelte';
