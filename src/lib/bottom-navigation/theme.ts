@@ -1,6 +1,6 @@
 import { tv } from 'tailwind-variants';
 
-const bottomNav = tv({
+export const bottomNav = tv({
   slots: {
     outer: 'w-full z-30 border-gray-200 dark:bg-gray-700 dark:border-gray-600',
     inner: 'grid h-full max-w-lg mx-auto'
@@ -42,7 +42,7 @@ const bottomNav = tv({
   }
 });
 
-const bottomNavItem = tv({
+export const bottomNavItem = tv({
   slots: {
     base: 'inline-flex flex-col items-center justify-center',
     span: 'text-sm'
@@ -99,4 +99,19 @@ const bottomNavItem = tv({
   }
 });
 
-export { bottomNav, bottomNavItem };
+export const bottomnavheader = tv({
+  slots: {
+    innerDiv: 'grid max-w-xs grid-cols-3 gap-1 p-1 mx-auto my-2 bg-gray-100 rounded-lg dark:bg-gray-600',
+    outerDiv: 'w-full'
+  }
+})
+
+export const bottomnavheaderitem = tv({
+  base: 'px-5 py-1.5 text-xs font-medium rounded-lg',
+  variants: {
+    active: {
+      true: 'text-white bg-gray-900 dark:bg-gray-300 dark:text-gray-900',
+      false: 'text-gray-900 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700'
+    }
+  }
+})

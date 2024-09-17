@@ -28,6 +28,8 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
   size?: CardSizeType;
   class?: string;
   onclick?: () => void;
+  imgClass?: string;
+  contentClass?: string;
 }
 
 export { Card, card, type CardProps };

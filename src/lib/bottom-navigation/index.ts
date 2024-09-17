@@ -1,9 +1,11 @@
 import { type VariantProps } from 'tailwind-variants';
 import type { Snippet } from 'svelte';
-import type { HTMLAttributes } from 'svelte/elements';
+import type { HTMLAttributes, HTMLButtonAttributes } from 'svelte/elements';
 import BottomNav from './BottomNav.svelte';
 import BottomNavItem from './BottomNavItem.svelte';
-import { bottomNav, bottomNavItem } from './theme';
+import BottomNavHeaderItem from './BottomNavHeaderItem.svelte';
+import BottomNavHeader from './BottomNavHeader.svelte';
+import { bottomNav, bottomNavItem, bottomnavheader, bottomnavheaderitem } from './theme';
 
 type BottomNavVariantType = VariantProps<typeof bottomNav>['navType'];
 type PositionType = VariantProps<typeof bottomNav>['position'];
@@ -34,4 +36,15 @@ interface BottomNavItemProps {
   spanClass?: string;
 }
 
-export { BottomNav, BottomNavItem, bottomNav, bottomNavItem, type BottomNavProps, type BottomNavItemProps, type BottomNavContextType, type BottomNavVariantType };
+interface BottomNavHeaderProps {
+  children: Snippet;
+  outerClass?: string;
+  innerClass?: string;
+}
+
+interface BottomNavHeaderItemProps extends HTMLButtonAttributes{
+  itemName: string;
+  active?: boolean;
+}
+
+export { BottomNav, BottomNavItem, bottomNav, bottomNavItem, BottomNavHeader, bottomnavheader, BottomNavHeaderItem, bottomnavheaderitem, type BottomNavProps, type BottomNavItemProps, type BottomNavContextType, type BottomNavVariantType, type BottomNavHeaderProps, type BottomNavHeaderItemProps };

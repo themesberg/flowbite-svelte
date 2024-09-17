@@ -24,6 +24,10 @@
     { name: 'Overwriting active class', component: ExampleComponents.OverwritingActiveClass },
     { name: 'Icon color', component: ExampleComponents.IconColor },
     { name: 'Border', component: ExampleComponents.Border },
+    { name: 'Application bar', component: ExampleComponents.ApplicationBar },
+    { name: 'Pagination', component: ExampleComponents.Pagination },
+    { name: 'Button group', component: ExampleComponents.ButtonGroup },
+    { name: 'Card', component: ExampleComponents.Card }
   ];
   let selectedExample = $state(exampleArr[0].name);
   let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
