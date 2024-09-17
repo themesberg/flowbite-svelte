@@ -10,7 +10,7 @@
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'typography/layout';
-  // for examples section that dynamically changes the svelte component and markdown content
+  // for examples section that dynamically changes the svelte component and svelteCode content
   import * as ExampleComponents from './examples';
   const exampleModules = import.meta.glob('./examples/*.svelte', {
     query: '?raw',
@@ -25,7 +25,7 @@
     { name: 'Three columns even', component: ExampleComponents.ThreeColumnsEven }
   ];
   let selectedExample = $state(exampleArr[0].name);
-  let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
+  let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 
   function findObject(arr: { name: string; component: Component }[], name: string) {
     const matchingObject = arr.find((obj) => obj.name === name);
@@ -34,10 +34,10 @@
   const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
 
-  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the markdown content.
+  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the svelteCode content.
   let codeBlock = uiHelpers();
   let expand = $state(false);
-  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+  let showExpandButton = $derived(isSvelteOverflow(svelteCode, exampleModules));
 
   const handleExpandClick = () => {
     expand = !expand;
@@ -62,7 +62,7 @@
     <SelectedComponent />
   </div>
   {#snippet codeblock()}
-    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} {expand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
+    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} {expand} {showExpandButton} code={exampleModules[`./examples/${svelteCode}`] as string} />
   {/snippet}
 </CodeWrapper>
 

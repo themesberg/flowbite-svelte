@@ -10,7 +10,7 @@
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'sidebar';
 
-  // for examples section that dynamically changes the svelte component and markdown content
+  // for examples section that dynamically changes the svelte component and svelteCode content
   import * as ExampleComponents from './examples';
   const exampleModules = import.meta.glob('./examples/*.svelte', {
     query: '?raw',
@@ -26,7 +26,7 @@
     { name: 'Content separator', component: ExampleComponents.ContentSeparator },
   ];
   let selectedExample = $state(exampleArr[0].name);
-  let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
+  let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 
   function findObject(arr: { name: string; component: Component }[], name: string) {
     const matchingObject = arr.find((obj) => obj.name === name);
@@ -37,7 +37,7 @@
   // for examples DynamicCodeBlockHighlight
   let codeBlock = uiHelpers();
   let exampleExpand = $state(false);
-  let showExpandButton = $derived(isSvelteOverflow(markdown, exampleModules));
+  let showExpandButton = $derived(isSvelteOverflow(svelteCode, exampleModules));
   const handleExpandClick = () => {
     exampleExpand = !exampleExpand;
   };
@@ -58,7 +58,7 @@
   </div>
   <SelectedComponent />
   {#snippet codeblock()}
-    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${markdown}`] as string} />
+    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${svelteCode}`] as string} />
   {/snippet}
 </CodeWrapper>
 

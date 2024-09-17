@@ -6,6 +6,8 @@ export const fileList = [
   "src/lib/badge/Badge.svelte",
   "src/lib/banner/Banner.svelte",
   "src/lib/bottom-navigation/BottomNav.svelte",
+  "src/lib/bottom-navigation/BottomNavHeader.svelte",
+  "src/lib/bottom-navigation/BottomNavHeaderItem.svelte",
   "src/lib/bottom-navigation/BottomNavItem.svelte",
   "src/lib/breadcrumb/Breadcrumb.svelte",
   "src/lib/breadcrumb/BreadcrumbItem.svelte",
