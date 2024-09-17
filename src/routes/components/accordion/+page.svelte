@@ -20,6 +20,7 @@
 
   const exampleArr = [
     { name: 'Default', component: ExampleComponents.Default },
+    { name: 'Open', component: ExampleComponents.Open },
     { name: 'Color', component: ExampleComponents.Color },
     { name: 'Flush', component: ExampleComponents.Flush },
     { name: 'Arrow style', component: ExampleComponents.ArrowStyle },
