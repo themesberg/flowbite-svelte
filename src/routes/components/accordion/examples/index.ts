@@ -6,3 +6,4 @@ export { default as Icon } from './Icon.svelte';
 export { default as MultipleMode } from './MultipleMode.svelte';
 export { default as Transitions } from './Transitions.svelte';
 export { default as Nesting } from './Nesting.svelte';
+export { default as Open } from './Open.svelte';
