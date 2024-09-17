@@ -29,7 +29,8 @@
     { name: 'Notification badge', component: ExampleComponents.NotificationBadge },
     { name: 'Button with badge', component: ExampleComponents.ButtonWithBadge },
     { name: 'Badge with icon only', component: ExampleComponents.BadgeWithIconOnly },
-    { name: 'Opening badge', component: ExampleComponents.OpeningBadge }
+    { name: 'Opening badge', component: ExampleComponents.OpeningBadge },
+    { name: 'Dynamic color', component: ExampleComponents.DynamicColor },
   ];
   let selectedExample = $state(exampleArr[0].name);
   let markdown = $derived(getExampleFileName(selectedExample, exampleArr));
