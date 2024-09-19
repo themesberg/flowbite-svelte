@@ -34,7 +34,7 @@
     { name: 'Placeholder initial', component: ExampleComponents.PlaceholderInitial },
     { name: 'Stacked', component: ExampleComponents.Stacked },
     { name: 'User dropdown', component: ExampleComponents.UserDropdown },
-    { name: 'Avatar with tooltip', component: ExampleComponents.AvatarWithTooltip },
+    { name: 'Avatar with tooltip', component: ExampleComponents.AvatarWithTooltip }
   ];
   let selectedExample = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));

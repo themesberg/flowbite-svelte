@@ -1,8 +1,8 @@
 <script lang="ts">
   import Button from '../buttons/Button.svelte';
   import Rating from './Rating.svelte';
-  import { type RatingCommentProps as Props } from '.'
-  
+  import { type RatingCommentProps as Props } from '.';
+
   let { children, evaluation, helpfullink, abuselink, comment }: Props = $props();
 </script>
 

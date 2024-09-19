@@ -37,7 +37,7 @@
 
 <SidebarButton onclick={demoSidebarUi.toggle} />
 <div class="relative">
-  <Sidebar backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }}  position="absolute" class="p-2 h-full z-20">
+  <Sidebar backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" class="z-20 h-full p-2">
     <SidebarGroup>
       {#each sidebarEx1 as { label, href, icon, subContent }}
         <SidebarItem {label} {href} {spanClass}>

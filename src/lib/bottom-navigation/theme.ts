@@ -104,7 +104,7 @@ export const bottomnavheader = tv({
     innerDiv: 'grid max-w-xs grid-cols-3 gap-1 p-1 mx-auto my-2 bg-gray-100 rounded-lg dark:bg-gray-600',
     outerDiv: 'w-full'
   }
-})
+});
 
 export const bottomnavheaderitem = tv({
   base: 'px-5 py-1.5 text-xs font-medium rounded-lg',
@@ -114,4 +114,4 @@ export const bottomnavheaderitem = tv({
       false: 'text-gray-900 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700'
     }
   }
-})
+});

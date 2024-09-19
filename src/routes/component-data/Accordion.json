@@ -1,1 +1,1 @@
-{"name":"Accordion","props":[["children",""],["flush","false"],["activeClass",""],["inactiveClass",""],["defaultClass","text-gray-500 dark:text-gray-400"],["class: className",""],["transition","undefined"],["params",""],["...restProps",""]]}
+{"name":"Accordion","props":[["children",""],["flush",""],["activeClass",""],["inactiveClass",""],["class: className",""],["transition",""],["params",""],["...restProps",""]]}

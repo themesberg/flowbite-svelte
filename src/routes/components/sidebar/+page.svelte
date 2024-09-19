@@ -23,7 +23,7 @@
     { name: 'Active class', component: ExampleComponents.ActiveClass },
     { name: 'Overriding active element', component: ExampleComponents.OverridingActiveElement },
     { name: 'Multilevel', component: ExampleComponents.Multilevel },
-    { name: 'Content separator', component: ExampleComponents.ContentSeparator },
+    { name: 'Content separator', component: ExampleComponents.ContentSeparator }
   ];
   let selectedExample = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));

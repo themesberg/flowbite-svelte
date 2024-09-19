@@ -1,3 +1,3 @@
 <script>
-  import { Rating, Star, Heart, Thumbup, AdvancedRating, ScoreRating, RatingComment, Review } from '$lib'
+  import { Rating, Star, Heart, Thumbup, AdvancedRating, ScoreRating, RatingComment, Review } from '$lib';
 </script>

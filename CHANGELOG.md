@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.10
+
+### Patch Changes
+
+- feat: add transition, backdrop, and activateClickOutsie to Sidebar component ([`5781b3e62a25c95094edb1261cfa9b839c84db36`](https://github.com/shinokada/svelte-5-ui-lib/commit/5781b3e62a25c95094edb1261cfa9b839c84db36))
+
 ## 0.9.9
 
 ### Patch Changes

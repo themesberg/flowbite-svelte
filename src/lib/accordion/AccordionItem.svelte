@@ -9,7 +9,7 @@
   let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transition = slide, params, class: className }: Props = $props();
 
   const ctx: AccordionCtxType = getContext('ctx') ?? {};
-  if (!ctx.selected){
+  if (!ctx.selected) {
     ctx.selected = writable();
   }
 
@@ -18,21 +18,16 @@
   const selected = ctx.selected;
 
   if (open) {
-    selected.set(self)
+    selected.set(self);
   }
 
   selected.subscribe((x) => (open = x === self));
 
-  const handleToggle = (_: Event) =>  selected.set(open ? {} : self);
+  const handleToggle = (_: Event) => selected.set(open ? {} : self);
 
   const { base, button, content, active, inactive } = accordionitem({ flush: ctx.flush, open });
 
-  let buttonClass = $derived(twMerge(
-    button(),
-    open && !ctx.flush && (activeClass || ctx.activeClass || active()),
-    !open && !ctx.flush && (inactiveClass || ctx.inactiveClass || inactive()),
-    className
-  ));
+  let buttonClass = $derived(twMerge(button(), open && !ctx.flush && (activeClass || ctx.activeClass || active()), !open && !ctx.flush && (inactiveClass || ctx.inactiveClass || inactive()), className));
 </script>
 
 <h2 class={base()}>
@@ -64,3 +59,19 @@
     </div>
   </div>
 {/if}
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@prop children
+@prop header
+@prop arrowup
+@prop arrowdown
+@prop open = $bindable(false)
+@prop activeClass
+@prop inactiveClass
+@prop transition = slide
+@prop params
+@prop class: className
+-->

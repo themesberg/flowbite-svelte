@@ -11,17 +11,15 @@
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'forms/toggle';
 
-   // for examples section that dynamically changes the svelte component and svelteCode content
-   import * as ExampleComponents from './examples';
+  // for examples section that dynamically changes the svelte component and svelteCode content
+  import * as ExampleComponents from './examples';
   const exampleModules = import.meta.glob('./examples/*.svelte', {
     query: '?raw',
     import: 'default',
     eager: true
   });
 
-  const exampleArr = [
-    { name: 'Custom size', component: ExampleComponents.CustomSize },
-  ];
+  const exampleArr = [{ name: 'Custom size', component: ExampleComponents.CustomSize }];
   let selectedExample = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 
@@ -66,8 +64,8 @@
       return `<Toggle${propsString}>${leftSlot ? `\n {#snippet leftLabel()}\n  <div class="me-4 {!checked ? 'text-red-600 font-semibold' : ''}">Off</div>\n {/snippet}\n <div class={checked ? 'text-green-600 font-semibold' : ''}>On</div>\n` : 'Toggle me'}</Toggle>`;
     })()
   );
-    // for interactive builder
-    let builder = uiHelpers();
+  // for interactive builder
+  let builder = uiHelpers();
   let builderExpand = $state(false);
   let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
   const handleBuilderExpandClick = () => {
@@ -131,23 +129,23 @@
     <Button class="w-40" color="emerald" onclick={changeLeftLabel}>{leftSlot ? 'Remove left slot' : 'Add left slot'}</Button>
   </div>
   {#snippet codeblock()}
-  <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
-{/snippet}
+    <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Examples</H2>
 
 <CodeWrapper>
-<div class="mb-12 flex flex-wrap">
-  <Label class="mb-4 w-full font-bold">Example:</Label>
-  {#each exampleArr as style}
-    <Radio labelClass="w-40 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
-  {/each}
-</div>
-<SelectedComponent />
-{#snippet codeblock()}
-  <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${svelteCode}`] as string} />
-{/snippet}
+  <div class="mb-12 flex flex-wrap">
+    <Label class="mb-4 w-full font-bold">Example:</Label>
+    {#each exampleArr as style}
+      <Radio labelClass="w-40 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+    {/each}
+  </div>
+  <SelectedComponent />
+  {#snippet codeblock()}
+    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${svelteCode}`] as string} />
+  {/snippet}
 </CodeWrapper>
 
 <H2>Component data</H2>

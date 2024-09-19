@@ -8,7 +8,7 @@ export const accordion = tv({
       false: 'border border-gray-200 dark:border-gray-700 rounded-t-xl'
     }
   }
-})
+});
 
 export const accordionitem = tv({
   slots: {
@@ -22,36 +22,36 @@ export const accordionitem = tv({
     flush: {
       true: {
         button: 'py-5',
-        content: 'py-5',
+        content: 'py-5'
       },
       false: {
         button: 'p-5 border-s border-e group-first:border-t',
-        content: 'p-5 border-s border-e',
-      },
+        content: 'p-5 border-s border-e'
+      }
     },
     open: {
       true: {},
-      false: {},
-    },
+      false: {}
+    }
   },
   compoundVariants: [
     {
       flush: true,
       open: true,
       class: {
-        button: 'text-gray-900 dark:text-white',
-      },
+        button: 'text-gray-900 dark:text-white'
+      }
     },
     {
       flush: true,
       open: false,
       class: {
-        button: 'text-gray-500 dark:text-gray-400',
-      },
-    },
+        button: 'text-gray-500 dark:text-gray-400'
+      }
+    }
   ],
   defaultVariants: {
     flush: false,
-    open: false,
-  },
+    open: false
+  }
 });

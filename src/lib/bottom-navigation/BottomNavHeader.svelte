@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type BottomNavHeaderProps as Props, bottomnavheader } from '.'
+  import { type BottomNavHeaderProps as Props, bottomnavheader } from '.';
 
   let { children, outerClass, innerClass, ...restProps }: Props = $props();
   const { innerDiv, outerDiv } = $derived(bottomnavheader());
@@ -10,3 +10,13 @@
     {@render children()}
   </div>
 </div>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@prop children
+@prop outerClass
+@prop innerClass
+@prop ...restProps
+-->

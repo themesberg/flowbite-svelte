@@ -1,1 +1,1 @@
-export { default as RetinaReady } from './RetinaReady.svelte'
+export { default as RetinaReady } from './RetinaReady.svelte';

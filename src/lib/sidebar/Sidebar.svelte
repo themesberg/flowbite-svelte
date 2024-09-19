@@ -5,12 +5,12 @@
   import { type SidebarProps as Props, sidebar, type SidebarCtxType } from '.';
 
   let { children, isOpen = false, closeSidebar, breakpoint = 'md', position = 'fixed', activateClickOutside = true, backdrop = true, backdropClass, transition = fly, params, divClass, asideClass, ariaLabel, nonActiveClass, activeClass, class: className, ...restProps }: Props = $props();
-  
+
   const breakpointValues = {
-    'sm': 640,
-    'md': 768,
-    'lg': 1024,
-    'xl': 1280,
+    sm: 640,
+    md: 768,
+    lg: 1024,
+    xl: 1280,
     '2xl': 1536
   };
 
@@ -20,14 +20,14 @@
     isLargeScreen = window.innerWidth >= breakpointValues[breakpoint];
   }
 
-  const { base, active, nonactive, div, backdrop: backdropCls } = $derived(sidebar({ isOpen, breakpoint, position, backdrop }))
+  const { base, active, nonactive, div, backdrop: backdropCls } = $derived(sidebar({ isOpen, breakpoint, position, backdrop }));
 
   let sidebarCtx: SidebarCtxType = {
     get closeSidebar() {
       return closeSidebar;
     },
     get activeClass() {
-      return active({  class: activeClass });
+      return active({ class: activeClass });
     },
     get nonActiveClass() {
       return nonactive({ class: nonActiveClass });
@@ -63,17 +63,25 @@
   </aside>
 {/if}
 
-
 <!--
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
+@prop isOpen = false
+@prop closeSidebar
+@prop breakpoint = 'md'
+@prop position = 'fixed'
+@prop activateClickOutside = true
+@prop backdrop = true
+@prop backdropClass
+@prop transition = fly
+@prop params
 @prop divClass
 @prop asideClass
 @prop ariaLabel
-@prop nonActiveClass = ''
-@prop activeClass = ''
+@prop nonActiveClass
+@prop activeClass
 @prop class: className
 @prop ...restProps
 -->

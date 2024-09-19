@@ -34,8 +34,8 @@
   const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
 
-// for examples DynamicCodeBlockHighlight
-let codeBlock = uiHelpers();
+  // for examples DynamicCodeBlockHighlight
+  let codeBlock = uiHelpers();
   let exampleExpand = $state(false);
   let showExpandButton = $derived(isSvelteOverflow(svelteCode, exampleModules));
   const handleExpandClick = () => {

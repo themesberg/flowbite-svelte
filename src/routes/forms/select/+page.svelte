@@ -21,7 +21,7 @@
 
   const exampleArr = [
     { name: 'Dropdown Select', component: ExampleComponents.DropdownSelect },
-    { name: 'Custom Options', component: ExampleComponents.CustomOptions },
+    { name: 'Custom Options', component: ExampleComponents.CustomOptions }
     // { name: 'My options', component: ExampleComponents.MyOptions },
   ];
   let selectedExample = $state(exampleArr[0].name);
@@ -49,7 +49,6 @@
     { value: 'ca', name: 'Canada', href: '/' },
     { value: 'fr', name: 'France', href: '/' }
   ];
-
 
   let dropdown = uiHelpers();
   let dropdownStatus = $state(false);

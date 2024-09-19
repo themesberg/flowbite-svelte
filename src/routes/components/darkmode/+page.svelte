@@ -26,7 +26,7 @@
   const exampleArr = [
     { name: 'Default', component: ExampleComponents.Default },
     { name: 'Icon', component: ExampleComponents.Icon },
-    { name: 'Style', component: ExampleComponents.Style },
+    { name: 'Style', component: ExampleComponents.Style }
   ];
   let selectedExample = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -79,7 +79,6 @@ Add the following to `app.html`:
     <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${svelteCode}`] as string} />
   {/snippet}
 </CodeWrapper>
-
 
 <H2>Component data</H2>
 <CompoAttributesViewer {dirName} />

@@ -11,10 +11,9 @@
   });
 </script>
 
-
 <SidebarButton onclick={demoSidebarUi.toggle} />
 <div class="relative">
-  <Sidebar backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="p-2 h-full z-20" position="absolute" >
+  <Sidebar backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-20 h-full p-2" position="absolute">
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
         {#snippet iconSlot()}

@@ -1,7 +1,7 @@
 <script lang="ts">
   import Star from './Star.svelte';
   import { idGenerator } from '$lib/uiHelpers.svelte';
-  import { type RatingProps as Props, rating as ratingVariants } from '.'
+  import { type RatingProps as Props, rating as ratingVariants } from '.';
 
   let { children, text, divClass, size = 24, total = 5, rating = 4, partialId = 'partialStar' + idGenerator(), Icon = Star, count = false, pClass }: Props = $props();
 
@@ -43,12 +43,12 @@
 ## Props
 @prop children
 @prop text
-@prop divClass = 'flex items-center'
+@prop divClass
 @prop size = 24
 @prop total = 5
 @prop rating = 4
 @prop partialId = 'partialStar' + idGenerator()
 @prop Icon = Star
 @prop count = false
-@prop pClass = 'ms-2 text-sm font-bold text-gray-900 dark:text-white'
+@prop pClass
 -->

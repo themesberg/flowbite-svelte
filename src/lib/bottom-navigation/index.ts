@@ -42,7 +42,7 @@ interface BottomNavHeaderProps {
   innerClass?: string;
 }
 
-interface BottomNavHeaderItemProps extends HTMLButtonAttributes{
+interface BottomNavHeaderItemProps extends HTMLButtonAttributes {
   itemName: string;
   active?: boolean;
 }

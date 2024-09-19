@@ -1,6 +1,6 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
-  import { type ReviewProps as Props, review as reviewVariants } from '.'
+  import { type ReviewProps as Props, review as reviewVariants } from '.';
 
   let { children, address, item1, item2, item3, review, articleClass, divClass, div2Class, div3Class, imgClass, ulClass, liClass }: Props = $props();
 
@@ -8,15 +8,15 @@
 </script>
 
 {#if review}
-  <article class={article({ class: articleClass})}>
+  <article class={article({ class: articleClass })}>
     <div>
-      <div class={div({ class: divClass})}>
-        <img class={img({ class: imgClass})} src={review.imgSrc} alt={review.imgAlt} />
-        <div class={div2({ class: div2Class})}>
+      <div class={div({ class: divClass })}>
+        <img class={img({ class: imgClass })} src={review.imgSrc} alt={review.imgAlt} />
+        <div class={div2({ class: div2Class })}>
           <p>{review.name}</p>
           {#if review.address}
             {#if address}
-              <div class={div3({ class: div3Class})}>
+              <div class={div3({ class: div3Class })}>
                 {@render address()}
               </div>
             {/if}
@@ -24,9 +24,9 @@
         </div>
       </div>
       {#if review.item1 || review.item2 || review.item3}
-        <ul class={ul({ class: ulClass})}>
+        <ul class={ul({ class: ulClass })}>
           {#if review.item1}
-            <li class={twMerge(li({ class: liClass}))}>
+            <li class={twMerge(li({ class: liClass }))}>
               {#if item1}
                 {@render item1()}
               {/if}
@@ -83,11 +83,11 @@
 @prop item2
 @prop item3
 @prop review
-@prop articleClass = 'md:grid md:grid-cols-3 md:gap-8'
-@prop divClass = 'mb-6 flex items-center space-x-4 rtl:space-x-reverse'
-@prop div2Class = 'space-y-1 font-medium dark:text-white'
-@prop div3Class = 'flex items-center text-sm text-gray-500 dark:text-gray-400'
-@prop imgClass = 'h-10 w-10 rounded-full'
-@prop ulClass = 'space-y-4 text-sm text-gray-500 dark:text-gray-400'
-@prop liClass = 'flex items-center'
+@prop articleClass
+@prop divClass
+@prop div2Class
+@prop div3Class
+@prop imgClass
+@prop ulClass
+@prop liClass
 -->

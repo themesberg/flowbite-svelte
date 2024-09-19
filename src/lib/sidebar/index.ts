@@ -13,7 +13,7 @@ type SidebarCtxType = {
   closeSidebar?: () => void;
   activeClass?: string;
   nonActiveClass?: string;
-}
+};
 type BreakpointType = VariantProps<typeof sidebar>['breakpoint'];
 type PosisionType = VariantProps<typeof sidebar>['position'];
 

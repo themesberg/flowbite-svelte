@@ -43,6 +43,8 @@
 @prop padding = 'lg'
 @prop size = 'sm'
 @prop class: className
+@prop imgClass
+@prop contentClass
 @prop onclick
 @prop ...restProps
 -->

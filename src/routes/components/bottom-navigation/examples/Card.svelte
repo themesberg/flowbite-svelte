@@ -36,29 +36,29 @@
 </script>
 
 <div class="flex justify-center">
-  <Card class="relative overflow-y-scroll bg-white border border-gray-100 rounded-lg dark:bg-gray-700 dark:border-gray-600 h-96" contentClass="p-0 sm:p-0 md:p-0">
-    <Listgroup  class="border-0 dark:!bg-transparent">
+  <Card class="relative h-96 overflow-y-scroll rounded-lg border border-gray-100 bg-white dark:border-gray-600 dark:bg-gray-700" contentClass="p-0 sm:p-0 md:p-0">
+    <Listgroup class="border-0 dark:!bg-transparent">
       {#snippet children()}
-      {#each list as item}
-          <a href="/" class="flex items-center justify-center w-full px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">
-            <Avatar src={item.img.src} alt={item.img.alt} class="flex-shrink-0 me-3" />
+        {#each list as item}
+          <a href="/" class="flex w-full items-center justify-center px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">
+            <Avatar src={item.img.src} alt={item.img.alt} class="me-3 flex-shrink-0" />
             <div>
               <p class="text-sm text-gray-500 dark:text-gray-400">{@html item.comment}</p>
               <span class="text-xs text-primary-600 dark:text-primary-500">{@html item.message}</span>
             </div>
           </a>
-      {/each}
+        {/each}
       {/snippet}
     </Listgroup>
     <BottomNav position="sticky" navType="card" innerClass="grid-cols-3 pt-2 pb-4">
       <BottomNavItem btnName="Latest">
-        <ClockSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+        <ClockSolid class="mb-1 h-6 w-6 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
       </BottomNavItem>
       <BottomNavItem btnName="Following">
-        <UsersGroupOutline class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+        <UsersGroupOutline class="mb-1 h-6 w-6 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
       </BottomNavItem>
       <BottomNavItem btnName="Favorites">
-        <StarSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+        <StarSolid class="mb-1 h-6 w-6 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
       </BottomNavItem>
     </BottomNav>
   </Card>

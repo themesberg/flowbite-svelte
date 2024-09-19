@@ -40,4 +40,4 @@ interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
   class?: string;
 }
 
-export { AccordionItem, accordionitem, type AccordionItemProps,  Accordion, accordion, type AccordionCtxType, type AccordionProps };
+export { AccordionItem, accordionitem, type AccordionItemProps, Accordion, accordion, type AccordionCtxType, type AccordionProps };

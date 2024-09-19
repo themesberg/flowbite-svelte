@@ -25,7 +25,7 @@
 
   const components: ListType = {
     accordion: {
-      checked: true,
+      checked: true
       // notes: 'Variants'
       // problems: 'AlwaysOpen'
     },

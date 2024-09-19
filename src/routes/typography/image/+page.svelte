@@ -19,10 +19,7 @@
     eager: true
   });
 
-  const exampleArr = [
-    { name: 'Retina ready', component: ExampleComponents.RetinaReady },
-
-  ];
+  const exampleArr = [{ name: 'Retina ready', component: ExampleComponents.RetinaReady }];
   let selectedExample = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 

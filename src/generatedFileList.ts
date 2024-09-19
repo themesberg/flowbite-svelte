@@ -77,6 +77,7 @@ export const fileList = [
   "src/lib/rating/Star.svelte",
   "src/lib/rating/Thumbup.svelte",
   "src/lib/sidebar/Sidebar.svelte",
+  "src/lib/sidebar/SidebarButton.svelte",
   "src/lib/sidebar/SidebarDropdownWrapper.svelte",
   "src/lib/sidebar/SidebarGroup.svelte",
   "src/lib/sidebar/SidebarItem.svelte",

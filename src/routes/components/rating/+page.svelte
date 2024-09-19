@@ -29,7 +29,7 @@
     { name: 'Advanced rating and icon', component: ExampleComponents.AdvancedRatingAndIcon },
     { name: 'Score rating', component: ExampleComponents.ScoreRating },
     { name: 'Rating comment', component: ExampleComponents.RatingComment },
-    { name: 'Review content', component: ExampleComponents.ReviewContent },
+    { name: 'Review content', component: ExampleComponents.ReviewContent }
   ];
   let selectedExample = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -40,7 +40,7 @@
   }
   const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
-// for examples DynamicCodeBlockHighlight
+  // for examples DynamicCodeBlockHighlight
   let codeBlock = uiHelpers();
   let exampleExpand = $state(false);
   let showExpandButton = $derived(isSvelteOverflow(svelteCode, exampleModules));

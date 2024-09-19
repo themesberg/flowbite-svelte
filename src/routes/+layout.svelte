@@ -3,32 +3,18 @@
   import { Runatics } from 'runatics';
   import { page } from '$app/stores';
   import '../app.pcss';
-
-  import Nav from './utils/Nav.svelte';
   import Footer from './utils/Footer.svelte';
-  import Sidemenu from './utils/Sidemenu.svelte';
-
-  import { Navbar, NavLi, NavBrand, NavUl, uiHelpers, Darkmode, Drawer, Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper } from '$lib';
+  import { Navbar, NavLi, NavBrand, NavUl, uiHelpers, Darkmode, Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper } from '$lib';
   import GitHub from './utils/GitHub.svelte';
-  import { sineIn } from 'svelte/easing';
   import DynamicCodeBlockStyle from './utils/DynamicCodeBlockStyle.svelte';
 
   const sidebarUi = uiHelpers();
   let isOpen = $state(false);
   const closeSidebar = sidebarUi.close;
-  // $inspect('sidebar isOpen: ', isOpen);
-  let transitionParams = {
-    x: -320,
-    duration: 200,
-    easing: sineIn
-  };
 
   const navDrawer = uiHelpers();
   let navDrawerStatus = $state(false);
-  const closeNavDrawer = navDrawer.close;
-
   let nav = uiHelpers();
-
   let navStatus = $state(false);
   let toggleNav = nav.toggle;
   let closeNav = nav.close;
@@ -72,7 +58,7 @@
       </NavBrand>
 
       <div class="ml-auto flex items-center space-x-2 md:order-1">
-        <DynamicCodeBlockStyle class="hidden sm:block mr-4" />
+        <DynamicCodeBlockStyle class="mr-4 hidden sm:block" />
         <a class="inline-block whitespace-normal rounded-lg p-1 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-0 focus:ring-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" href="https://github.com/shinokada/svelte-5-ui-lib">
           <GitHub class="hidden sm:block" />
         </a>
@@ -89,7 +75,7 @@
   </Navbar>
 </header>
 <div class="lg:flex">
-  <Sidebar {isOpen} {closeSidebar} breakpoint="lg" activeClass="flex items-center p-2 text-base font-normal text-white dark:hover:text-white hover:text-gray-900 bg-primary-700 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" nonActiveClass="p-2 hover:bg-gray-200" asideClass="fixed inset-0 z-30 flex-none h-full w-72 lg:static lg:h-auto border-e border-gray-200 dark:border-gray-600 lg:overflow-y-visible bg-gray-100 dark:bg-gray-900 lg:pt-0 lg:block hidden" divClass="dark:bg-gray-900 bg-gray-50" class="h-screen top-[74px] pt-4 dark:bg-gray-900">
+  <Sidebar {isOpen} {closeSidebar} breakpoint="lg" activeClass="flex items-center p-2 text-base font-normal text-white dark:hover:text-white hover:text-gray-900 bg-primary-700 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" nonActiveClass="p-2 hover:bg-gray-200" asideClass="fixed inset-0 z-30 flex-none h-full w-72 lg:static lg:h-auto border-e border-gray-200 dark:border-gray-600 lg:overflow-y-visible bg-gray-100 dark:bg-gray-900 lg:pt-0 lg:block hidden" divClass="dark:bg-gray-900 bg-gray-50" class="top-[74px] h-screen pt-4 dark:bg-gray-900">
     <SidebarGroup>
       <SidebarDropdownWrapper label="GETTING STARTED" isOpen={hasPath('pages')} svgClass="me-4" btnClass="p-1">
         <SidebarItem label="About" href="/pages/about" />
@@ -163,7 +149,7 @@
       </SidebarDropdownWrapper>
     </SidebarGroup>
   </Sidebar>
-  <main class="mx-auto min-w-0 max-w-5xl flex-auto lg:pl-64 px-8 pb-20 lg:static lg:max-h-full lg:overflow-visible">
+  <main class="mx-auto min-w-0 max-w-5xl flex-auto px-8 pb-20 lg:static lg:max-h-full lg:overflow-visible lg:pl-64">
     <div id="mainContent">
       {@render children()}
     </div>

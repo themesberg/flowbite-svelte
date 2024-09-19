@@ -1,6 +1,6 @@
 <script lang="ts">
   import { idGenerator } from '$lib/uiHelpers.svelte';
-  import { type HeartProps as Props } from '.'
+  import { type HeartProps as Props } from '.';
 
   let { fillPercent = 100, fillColor = '#ff0000', strokeColor = '#ff0000', size = 24, ariaLabel = 'heart', id = idGenerator(), role = 'img', svgClass, ...restProps }: Props = $props();
 </script>

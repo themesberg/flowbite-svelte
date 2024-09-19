@@ -18,27 +18,27 @@ export const sidebar = tv({
       false: 'hidden'
     },
     breakpoint: {
-      sm: {base: 'sm:block' },
-      md: {base: 'md:block' },
-      lg: {base: 'lg:block' },
-      xl: {base: 'xl:block' },
-      '2xl': {base: '2xl:block' }
+      sm: { base: 'sm:block' },
+      md: { base: 'md:block' },
+      lg: { base: 'lg:block' },
+      xl: { base: 'xl:block' },
+      '2xl': { base: '2xl:block' }
     },
     backdrop: {
       true: { backdrop: 'bg-gray-900 bg-opacity-75' }
     }
   }
-})
+});
 
 export const sidebarbutton = tv({
   base: 'inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600',
   variants: {
     breakpoint: {
-      sm: 'sm:hidden' ,
-      md: 'md:hidden' ,
-      lg: 'lg:hidden' ,
-      xl: 'xl:hidden' ,
-      '2xl': '2xl:hidden' 
+      sm: 'sm:hidden',
+      md: 'md:hidden',
+      lg: 'lg:hidden',
+      xl: 'xl:hidden',
+      '2xl': '2xl:hidden'
     }
   }
-})
+});

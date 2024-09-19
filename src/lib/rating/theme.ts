@@ -16,7 +16,7 @@ export const rating = tv({
     base: 'flex items-center',
     p: 'ms-2 text-sm font-bold text-gray-900 dark:text-white'
   }
-})
+});
 
 export const review = tv({
   slots: {
@@ -28,7 +28,7 @@ export const review = tv({
     ul: 'space-y-4 text-sm text-gray-500 dark:text-gray-400',
     li: 'flex items-center'
   }
-})
+});
 
 export const scorerating = tv({
   slots: {
@@ -40,4 +40,4 @@ export const scorerating = tv({
     link: 'ms-auto w-32 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500',
     bar: 'bg-primary-600 h-2.5 rounded dark:bg-primary-500'
   }
-})
+});
