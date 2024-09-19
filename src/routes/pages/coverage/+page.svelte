@@ -139,7 +139,7 @@
     },
     sidebar: {
       checked: true,
-      problems: 'CTA button, Logo branding, Transition'
+      // problems: ''
     },
     skeleton: {
       checked: true

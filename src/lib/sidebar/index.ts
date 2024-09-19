@@ -3,9 +3,11 @@ import SidebarDropdownWrapper from './SidebarDropdownWrapper.svelte';
 import SidebarGroup from './SidebarGroup.svelte';
 import SidebarItem from './SidebarItem.svelte';
 import SidebarButton from './SidebarButton.svelte';
-import { sidebar, sidebarbutton } from './theme';
+import SidebarCta from './SidebarCta.svelte';
+import SidebarBrand from './SidebarBrand.svelte';
+import { sidebar, sidebarbutton, sidebarcta, sitebarbrand } from './theme';
 import type { Snippet } from 'svelte';
-import type { HTMLAttributes, HTMLButtonAttributes } from 'svelte/elements';
+import type { HTMLAttributes, HTMLButtonAttributes, HTMLAnchorAttributes } from 'svelte/elements';
 import type { VariantProps } from 'tailwind-variants';
 import type { TransitionFunc, ParamsType } from '../types';
 
@@ -24,7 +26,6 @@ interface SidebarProps extends HTMLAttributes<HTMLElement> {
   activateClickOutside?: boolean;
   breakpoint?: BreakpointType;
   position?: PosisionType;
-  asideClass?: string;
   ariaLabel?: string;
   divClass?: string;
   nonActiveClass?: string;
@@ -39,4 +40,23 @@ interface SidebarButtonProps extends HTMLButtonAttributes {
   breakpoint?: BreakpointType;
 }
 
-export { Sidebar, sidebar, type SidebarProps, SidebarDropdownWrapper, SidebarGroup, SidebarItem, type SidebarCtxType, SidebarButton, sidebarbutton, type SidebarButtonProps };
+interface SidebarCtaProps extends HTMLAttributes<HTMLDivElement> {
+  children: Snippet;
+  icon?: Snippet;
+  divClass?: string;
+  spanClass?: string;
+  label: string;
+}
+
+interface SiteType {
+  name: string;
+  href: string;
+  img?: string;
+}
+interface SidebarBrandProps extends HTMLAnchorAttributes {
+  site: SiteType;
+  imgClass?: string;
+  spanClass?: string;
+}
+
+export { Sidebar, sidebar, type SidebarProps, SidebarDropdownWrapper, SidebarGroup, SidebarItem, type SidebarCtxType, SidebarButton, sidebarbutton, type SidebarButtonProps, SidebarCta, sidebarcta, type SidebarCtaProps, SidebarBrand, sitebarbrand, type SidebarBrandProps };

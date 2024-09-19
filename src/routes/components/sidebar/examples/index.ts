@@ -4,3 +4,7 @@ export { default as ActiveClass } from './ActiveClass.svelte';
 export { default as OverridingActiveElement } from './OverridingActiveElement.svelte';
 export { default as Multilevel } from './Multilevel.svelte';
 export { default as ContentSeparator } from './ContentSeparator.svelte';
+export { default as Icon } from './Icon.svelte';
+export { default as Cta } from './Cta.svelte'
+export { default as LogoBranding } from './LogoBranding.svelte'
+export { default as DropdownTransition } from './DropdownTransition.svelte'

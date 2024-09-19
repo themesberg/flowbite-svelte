@@ -1,22 +1,26 @@
 <script lang="ts">
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarButton, uiHelpers } from '$lib';
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarButton, SidebarBrand, uiHelpers } from '$lib';
   import { ChartOutline, GridSolid, MailBoxSolid, UserSolid } from 'flowbite-svelte-icons';
   import PlusPlaceholder from '../../../utils/PlusPlaceholder.svelte';
+  const spanClass = 'flex-1 ms-3 whitespace-nowrap';
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
   $effect(() => {
     isDemoOpen = demoSidebarUi.isOpen;
   });
-  const spanClass = 'flex-1 ms-3 whitespace-nowrap';
-  const activeClass = 'flex items-center p-2 text-base font-normal text-white bg-primary-600 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-800 dark:hover:bg-primary-800';
-  const nonActiveClass = 'flex items-center p-2 text-base font-normal text-green-900 rounded-lg dark:text-white hover:bg-green-100 dark:hover:bg-green-700';
+  const site = {
+    name: 'Flowbite-Svelte',
+    href: '/',
+    img: '/images/flowbite-svelte-icon-logo.svg'
+  };
 </script>
 
 <SidebarButton onclick={demoSidebarUi.toggle} />
 <div class="relative">
-  <Sidebar backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} {activeClass} {nonActiveClass} position="absolute" class="z-20 h-full">
+  <Sidebar backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-20 h-full" position="absolute" activeClass='p-2' nonActiveClass='p-2' >
     <SidebarGroup>
+      <SidebarBrand {site} />
       <SidebarItem label="Dashboard" href="/">
         {#snippet iconSlot()}
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
@@ -40,7 +44,7 @@
       </SidebarItem>
       <SidebarItem label="Sidebar" href="/components/sidebar">
         {#snippet iconSlot()}
-          <UserSolid class="h-5 w-5 text-primary-500 transition duration-75 " />
+          <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
     </SidebarGroup>
