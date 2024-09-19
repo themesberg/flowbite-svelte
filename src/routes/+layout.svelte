@@ -89,7 +89,7 @@
   </Navbar>
 </header>
 <div class="lg:flex">
-  <Sidebar {isOpen} {closeSidebar} breakpoint="lg" activeClass="flex items-center p-2 text-base font-normal text-white dark:hover:text-white hover:text-gray-900 bg-primary-700 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" nonActiveClass="p-2 hover:bg-gray-200" asideClass="fixed inset-0 z-30 flex-none h-full w-72 lg:static lg:h-auto border-e border-gray-200 dark:border-gray-600 lg:overflow-y-visible bg-gray-100 dark:bg-gray-900 lg:pt-0 lg:block hidden" divClass="dark:bg-gray-900 bg-gray-50" class="h-screen top-14 pt-4">
+  <Sidebar {isOpen} {closeSidebar} breakpoint="lg" activeClass="flex items-center p-2 text-base font-normal text-white dark:hover:text-white hover:text-gray-900 bg-primary-700 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" nonActiveClass="p-2 hover:bg-gray-200" asideClass="fixed inset-0 z-30 flex-none h-full w-72 lg:static lg:h-auto border-e border-gray-200 dark:border-gray-600 lg:overflow-y-visible bg-gray-100 dark:bg-gray-900 lg:pt-0 lg:block hidden" divClass="dark:bg-gray-900 bg-gray-50" class="h-screen top-[74px] pt-4 dark:bg-gray-900">
     <SidebarGroup>
       <SidebarDropdownWrapper label="GETTING STARTED" isOpen={hasPath('pages')} svgClass="me-4" btnClass="p-1">
         <SidebarItem label="About" href="/pages/about" />

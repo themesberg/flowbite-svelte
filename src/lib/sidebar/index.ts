@@ -21,6 +21,7 @@ interface SidebarProps extends HTMLAttributes<HTMLElement> {
   children: Snippet;
   isOpen?: boolean;
   closeSidebar?: () => void;
+  activateClickOutside?: boolean;
   breakpoint?: BreakpointType;
   position?: PosisionType;
   asideClass?: string;
@@ -30,6 +31,8 @@ interface SidebarProps extends HTMLAttributes<HTMLElement> {
   activeClass?: string;
   params?: ParamsType;
   transition?: TransitionFunc;
+  backdrop?: boolean;
+  backdropClass?: string;
 }
 
 interface SidebarButtonProps extends HTMLButtonAttributes {
