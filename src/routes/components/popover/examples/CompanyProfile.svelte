@@ -8,7 +8,7 @@
   <Popover triggeredBy="#demo" class="w-80 text-sm">
     <div class="flex p-3">
       <div class="me-3 shrink-0">
-        <a href="/" aria-label='popover-example' class="block rounded-lg bg-gray-100 p-2 dark:bg-gray-700">
+        <a href="/" aria-label="popover-example" class="block rounded-lg bg-gray-100 p-2 dark:bg-gray-700">
           <img class="h-8 w-8 rounded-full" src="/images/flowbite-svelte-icon-logo.svg" alt="Flowbite logo" />
         </a>
       </div>

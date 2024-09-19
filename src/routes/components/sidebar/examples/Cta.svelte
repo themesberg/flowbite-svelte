@@ -13,7 +13,7 @@
 
 <SidebarButton onclick={demoSidebarUi.toggle} />
 <div class="relative">
-  <Sidebar backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-20 h-full" position="absolute" activeClass='p-2' nonActiveClass='p-2' >
+  <Sidebar backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-20 h-full" position="absolute" activeClass="p-2" nonActiveClass="p-2">
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
         {#snippet iconSlot()}
@@ -43,13 +43,13 @@
       </SidebarItem>
       <SidebarCta label="Beta">
         {#snippet icon()}
-          <button type="button" class="ms-auto -mx-1.5 -my-1.5 bg-primary-50 text-primary-900 rounded-lg focus:ring-2 focus:ring-primary-400 p-1 hover:bg-primary-200 inline-flex h-6 w-6 dark:bg-primary-900 dark:text-primary-400 dark:hover:bg-primary-800" data-collapse-toggle="dropdown-cta" aria-label="Close">
+          <button type="button" class="-mx-1.5 -my-1.5 ms-auto inline-flex h-6 w-6 rounded-lg bg-primary-50 p-1 text-primary-900 hover:bg-primary-200 focus:ring-2 focus:ring-primary-400 dark:bg-primary-900 dark:text-primary-400 dark:hover:bg-primary-800" data-collapse-toggle="dropdown-cta" aria-label="Close">
             <span class="sr-only">Close</span>
-            <CloseOutline class="w-4 h-4" />
+            <CloseOutline class="h-4 w-4" />
           </button>
         {/snippet}
         <p class="mb-3 text-sm text-primary-900 dark:text-primary-400">Preview the new Flowbite dashboard navigation! You can turn the new navigation off for a limited time in your profile.</p>
-        <a class="text-sm text-primary-900 underline hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300" href="/"> Turn new navigation off </a>
+        <a class="text-sm text-primary-900 underline hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300" href="/">Turn new navigation off</a>
       </SidebarCta>
     </SidebarGroup>
   </Sidebar>

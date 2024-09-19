@@ -1,6 +1,6 @@
 {
   "name": "svelte-5-ui-lib",
-  "version": "0.9.10",
+  "version": "0.9.11",
   "description": "A UI library for Svelte 5.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -419,9 +419,17 @@
       "types": "./dist/sidebar/Sidebar.svelte.d.ts",
       "svelte": "./dist/sidebar/Sidebar.svelte"
     },
+    "./SidebarBrand.svelte": {
+      "types": "./dist/sidebar/SidebarBrand.svelte.d.ts",
+      "svelte": "./dist/sidebar/SidebarBrand.svelte"
+    },
     "./SidebarButton.svelte": {
       "types": "./dist/sidebar/SidebarButton.svelte.d.ts",
       "svelte": "./dist/sidebar/SidebarButton.svelte"
+    },
+    "./SidebarCta.svelte": {
+      "types": "./dist/sidebar/SidebarCta.svelte.d.ts",
+      "svelte": "./dist/sidebar/SidebarCta.svelte"
     },
     "./SidebarDropdownWrapper.svelte": {
       "types": "./dist/sidebar/SidebarDropdownWrapper.svelte.d.ts",

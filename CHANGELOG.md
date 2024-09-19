@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.11
+
+### Patch Changes
+
+- feat: SidebarBrand, SidebarButton, SidebarCta components ([`b340a330f29ea787ff3928d95689c45196d5130a`](https://github.com/shinokada/svelte-5-ui-lib/commit/b340a330f29ea787ff3928d95689c45196d5130a))
+
 ## 0.9.10
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper, SidebarButton, uiHelpers } from '$lib';
-  import { ChartOutline, ChevronDoubleUpOutline, ChevronDoubleDownOutline,  ShoppingBagSolid } from 'flowbite-svelte-icons';
+  import { ChartOutline, ChevronDoubleUpOutline, ChevronDoubleDownOutline, ShoppingBagSolid } from 'flowbite-svelte-icons';
   import PlusPlaceholder from '../../../utils/PlusPlaceholder.svelte';
   const spanClass = 'flex-1 ms-3 whitespace-nowrap';
   const demoSidebarUi = uiHelpers();
@@ -13,7 +13,7 @@
 
 <SidebarButton onclick={demoSidebarUi.toggle} />
 <div class="relative">
-  <Sidebar backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" class="z-20 h-full" activeClass='p-2' nonActiveClass='p-2'>
+  <Sidebar backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" class="z-20 h-full" activeClass="p-2" nonActiveClass="p-2">
     <SidebarGroup>
       <SidebarItem label="Dashboard">
         {#snippet iconSlot()}
@@ -25,10 +25,10 @@
           <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet arrowup()}
-          <ChevronDoubleUpOutline class="w-6 h-6" />
+          <ChevronDoubleUpOutline class="h-6 w-6" />
         {/snippet}
         {#snippet arrowdown()}
-          <ChevronDoubleDownOutline class="w-6 h-6" />
+          <ChevronDoubleDownOutline class="h-6 w-6" />
         {/snippet}
         <SidebarItem label="Sidebar" href="/components/sidebar" />
         <SidebarItem label="Billing" />

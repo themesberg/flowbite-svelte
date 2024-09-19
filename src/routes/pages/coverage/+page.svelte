@@ -138,7 +138,7 @@
       checked: true
     },
     sidebar: {
-      checked: true,
+      checked: true
       // problems: ''
     },
     skeleton: {
@@ -171,8 +171,8 @@
       // notes: 'Variants, reactive examples'
     },
     tooltip: {
-      checked: true
-      // problems: 'Avatar tooltip'
+      checked: true,
+      problems: 'apply floating-ui'
     },
     video: {
       checked: true

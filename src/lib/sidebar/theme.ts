@@ -47,9 +47,9 @@ export const sidebarcta = tv({
   slots: {
     base: 'p-4 mt-6 bg-primary-50 rounded-lg dark:bg-primary-900',
     div: 'flex items-center mb-3',
-    span: 'bg-primary-100 text-primary-800 text-sm font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-900',
+    span: 'bg-primary-100 text-primary-800 text-sm font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-900'
   }
-})
+});
 
 export const sitebarbrand = tv({
   slots: {
@@ -57,4 +57,4 @@ export const sitebarbrand = tv({
     img: 'h-6 me-3 sm:h-7',
     span: 'self-center text-xl font-semibold whitespace-nowrap dark:text-white'
   }
-})
+});

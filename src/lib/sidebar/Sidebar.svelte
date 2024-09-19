@@ -78,7 +78,6 @@
 @prop transition = fly
 @prop params
 @prop divClass
-@prop asideClass
 @prop ariaLabel
 @prop nonActiveClass
 @prop activeClass
