@@ -5,6 +5,9 @@
   import { sineIn } from 'svelte/easing';
   import DynamicCodeBlockStyle from './DynamicCodeBlockStyle.svelte';
 
+  const sidebarUi = uiHelpers();
+  let isOpen = $state(false);
+
   let transitionParams = {
     x: -320,
     duration: 200,
@@ -26,6 +29,7 @@
     navDrawerStatus = navDrawer.isOpen;
     navStatus = nav.isOpen;
     currentUrl = $page.url.pathname;
+    isOpen = sidebarUi.isOpen;
   });
 
   const hasPath = (key: string) => currentUrl.includes(key);
@@ -64,88 +68,78 @@
   </Navbar>
 </header>
 
-<Drawer class="w-72" drawerStatus={navDrawerStatus} closeDrawer={closeNavDrawer} params={transitionParams}>
-  <div class="flex items-center pb-4">
-    <h5 id="drawer-label" class="inline-flex items-center text-lg font-semibold text-gray-500 dark:text-gray-400">Svelte 5 UI Lib</h5>
-    <button type="button" onclick={closeNavDrawer} class="ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
-      <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-      </svg>
-      <span class="sr-only">Close drawer</span>
-    </button>
-  </div>
-  <Sidebar {activeClass} asideClass="w-full p-0" divClass="bg-transparent p-0" class="p-1 pl-4">
-    <SidebarGroup>
-      <SidebarDropdownWrapper isOpen={hasPath('pages')} label="GETTING STARTED" svgClass="me-4" btnClass="p-1">
-        <SidebarItem onclick={closeNavDrawer} label="About" href="/pages/about" />
-        <SidebarItem onclick={closeNavDrawer} label="Coverage" href="/pages/coverage" />
-      </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper isOpen={hasPath('components')} label="Components" svgClass="me-4" btnClass="p-1">
-        <SidebarItem onclick={closeNavDrawer} label="Accordion" href="/components/accordion" />
-        <SidebarItem onclick={closeNavDrawer} label="Alert" href="/components/alert" />
-        <SidebarItem onclick={closeNavDrawer} label="Avatar" href="/components/avatar" />
-        <SidebarItem onclick={closeNavDrawer} label="Badge" href="/components/badge" />
-        <SidebarItem onclick={closeNavDrawer} label="Banner" href="/components/banner" />
-        <SidebarItem onclick={closeNavDrawer} label="Bottom navigation" href="/components/bottom-navigation" />
-        <SidebarItem onclick={closeNavDrawer} label="Breadcrumb" href="/components/breadcrumb" />
-        <SidebarItem onclick={closeNavDrawer} label="Button" href="/components/button" />
-        <SidebarItem onclick={closeNavDrawer} label="Button group" href="/components/button-group" />
-        <SidebarItem onclick={closeNavDrawer} label="Card" href="/components/card" />
-        <SidebarItem onclick={closeNavDrawer} label="Carousel" href="/components/carousel" />
-        <SidebarItem onclick={closeNavDrawer} label="Darkmode" href="/components/darkmode" />
-        <SidebarItem onclick={closeNavDrawer} label="Device mockup" href="/components/device-mockup" />
-        <SidebarItem onclick={closeNavDrawer} label="Drawer" href="/components/drawer" />
-        <SidebarItem onclick={closeNavDrawer} label="Dropdown" href="/components/dropdown" />
-        <SidebarItem onclick={closeNavDrawer} label="Footer" href="/components/footer" />
-        <SidebarItem onclick={closeNavDrawer} label="Gallery" href="/components/gallery" />
-        <SidebarItem onclick={closeNavDrawer} label="Indicators" href="/components/indicators" />
-        <SidebarItem onclick={closeNavDrawer} label="Kbd" href="/components/kbd" />
-        <SidebarItem onclick={closeNavDrawer} label="List group" href="/components/list-group" />
-        <SidebarItem onclick={closeNavDrawer} label="Mega menu" href="/components/mega-menu" />
-        <SidebarItem onclick={closeNavDrawer} label="Modal" href="/components/modal" />
-        <SidebarItem onclick={closeNavDrawer} label="Navbar" href="/components/navbar" />
-        <SidebarItem onclick={closeNavDrawer} label="Pagination" href="/components/pagination" />
-        <SidebarItem onclick={closeNavDrawer} label="Popover" href="/components/popover" />
-        <SidebarItem onclick={closeNavDrawer} label="Progress" href="/components/progress" />
-        <SidebarItem onclick={closeNavDrawer} label="Rating" href="/components/rating" />
-        <SidebarItem onclick={closeNavDrawer} label="Sidebar" href="/components/sidebar" />
-        <SidebarItem onclick={closeNavDrawer} label="Skeleton" href="/components/skeleton" />
-        <SidebarItem onclick={closeNavDrawer} label="Speed dial" href="/components/speed-dial" />
-        <SidebarItem onclick={closeNavDrawer} label="Spinner" href="/components/spinner" />
-        <SidebarItem onclick={closeNavDrawer} label="Tab" href="/components/tabs" />
-        <SidebarItem onclick={closeNavDrawer} label="Table" href="/components/table" />
-        <SidebarItem onclick={closeNavDrawer} label="Timeline" href="/components/timeline" />
-        <SidebarItem onclick={closeNavDrawer} label="Toast" href="/components/toast" />
-        <SidebarItem onclick={closeNavDrawer} label="Tooltip" href="/components/tooltip" />
-        <SidebarItem onclick={closeNavDrawer} label="Video" href="/components/video" />
-      </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper isOpen={hasPath('forms')} label="Forms" svgClass="me-4" btnClass="p-1">
-        <SidebarItem onclick={closeNavDrawer} label="Checkbox" href="/forms/checkbox" />
-        <SidebarItem onclick={closeNavDrawer} label="File input" href="/forms/file-input" />
-        <SidebarItem onclick={closeNavDrawer} label="Floating label" href="/forms/floating-label" />
-        <SidebarItem onclick={closeNavDrawer} label="Input Field" href="/forms/input-field" />
-        <SidebarItem onclick={closeNavDrawer} label="Label" href="/forms/label" />
-        <SidebarItem onclick={closeNavDrawer} label="Radio" href="/forms/radio" />
-        <SidebarItem onclick={closeNavDrawer} label="Range" href="/forms/range" />
-        <SidebarItem onclick={closeNavDrawer} label="Search input" href="/forms/search-input" />
-        <SidebarItem onclick={closeNavDrawer} label="Select" href="/forms/select" />
-        <SidebarItem onclick={closeNavDrawer} label="Textarea" href="/forms/textarea" />
-        <SidebarItem onclick={closeNavDrawer} label="Toggle" href="/forms/toggle" />
-      </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper isOpen={hasPath('typography')} label="Typography" svgClass="me-4" btnClass="p-1">
-        <SidebarItem onclick={closeNavDrawer} label="Blockquote" href="/typography/blockquote" />
-        <SidebarItem onclick={closeNavDrawer} label="Heading/Mark" href="/typography/heading" />
-        <SidebarItem onclick={closeNavDrawer} label="HR" href="/typography/hr" />
-        <SidebarItem onclick={closeNavDrawer} label="Image" href="/typography/image" />
-        <SidebarItem onclick={closeNavDrawer} label="Layout" href="/typography/layout" />
-        <SidebarItem onclick={closeNavDrawer} label="Link" href="/typography/link" />
-        <SidebarItem onclick={closeNavDrawer} label="List" href="/typography/list" />
-        <SidebarItem onclick={closeNavDrawer} label="Paragraph" href="/typography/paragraph" />
-        <SidebarItem onclick={closeNavDrawer} label="Span" href="/typography/span" />
-      </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper isOpen={hasPath('plugins')} label="Plugins" svgClass="me-4" btnClass="p-1">
-        <SidebarItem onclick={closeNavDrawer} label="Chart" href="/plugins/chart" />
-      </SidebarDropdownWrapper>
-    </SidebarGroup>
-  </Sidebar>
-</Drawer>
+
+<Sidebar {isOpen} breakpoint="lg" {activeClass} nonActiveClass="hover:bg-gray-200" asideClass="fixed inset-0 z-30 flex-none h-full w-64 lg:static lg:h-auto border-e border-gray-200 dark:border-gray-600 lg:overflow-y-visible bg-gray-100 dark:bg-gray-900 lg:pt-0 lg:block hidden" divClass="dark:bg-gray-900 bg-transparent" class="p-1 pl-4 w-72">
+  <SidebarGroup>
+    <SidebarDropdownWrapper label="GETTING STARTED" isOpen={hasPath('pages')} svgClass="me-4" btnClass="p-1">
+      <SidebarItem label="About" href="/pages/about" />
+      <SidebarItem label="Coverage" href="/pages/coverage" />
+    </SidebarDropdownWrapper>
+    <SidebarDropdownWrapper label="Components" isOpen={hasPath('components')} svgClass="me-4" btnClass="p-1">
+      <SidebarItem label="Accordion" href="/components/accordion" />
+      <SidebarItem label="Alert" href="/components/alert" />
+      <SidebarItem label="Avatar" href="/components/avatar" />
+      <SidebarItem label="Badge" href="/components/badge" />
+      <SidebarItem label="Banner" href="/components/banner" />
+      <SidebarItem label="Bottom navigation" href="/components/bottom-navigation" />
+      <SidebarItem label="Breadcrumb" href="/components/breadcrumb" />
+      <SidebarItem label="Button" href="/components/button" />
+      <SidebarItem label="Button group" href="/components/button-group" />
+      <SidebarItem label="Card" href="/components/card" />
+      <SidebarItem label="Carousel" href="/components/carousel" />
+      <SidebarItem label="Darkmode" href="/components/darkmode" />
+      <SidebarItem label="Device mockup" href="/components/device-mockup" />
+      <SidebarItem label="Drawer" href="/components/drawer" />
+      <SidebarItem label="Dropdown" href="/components/dropdown" />
+      <SidebarItem label="Footer" href="/components/footer" />
+      <SidebarItem label="Gallery" href="/components/gallery" />
+      <SidebarItem label="Indicators" href="/components/indicators" />
+      <SidebarItem label="Kbd" href="/components/kbd" />
+      <SidebarItem label="List group" href="/components/list-group" />
+      <SidebarItem label="Mega menu" href="/components/mega-menu" />
+      <SidebarItem label="Modal" href="/components/modal" />
+      <SidebarItem label="Navbar" href="/components/navbar" />
+      <SidebarItem label="Pagination" href="/components/pagination" />
+      <SidebarItem label="Popover" href="/components/popover" />
+      <SidebarItem label="Progress" href="/components/progress" />
+      <SidebarItem label="Rating" href="/components/rating" />
+      <SidebarItem label="Sidebar" href="/components/sidebar" />
+      <SidebarItem label="Skeleton" href="/components/skeleton" />
+      <SidebarItem label="Speed dial" href="/components/speed-dial" />
+      <SidebarItem label="Spinner" href="/components/spinner" />
+      <SidebarItem label="Tab" href="/components/tabs" />
+      <SidebarItem label="Table" href="/components/table" />
+      <SidebarItem label="Timeline" href="/components/timeline" />
+      <SidebarItem label="Toast" href="/components/toast" />
+      <SidebarItem label="Tooltip" href="/components/tooltip" />
+      <SidebarItem label="Video" href="/components/video" />
+    </SidebarDropdownWrapper>
+    <SidebarDropdownWrapper label="Forms" isOpen={hasPath('forms')} svgClass="me-4" btnClass="p-1">
+      <SidebarItem label="Checkbox" href="/forms/checkbox" />
+      <SidebarItem label="File input" href="/forms/file-input" />
+      <SidebarItem label="Floating label" href="/forms/floating-label" />
+      <SidebarItem label="Input field" href="/forms/input-field" />
+      <SidebarItem label="Label" href="/forms/label" />
+      <SidebarItem label="Radio" href="/forms/radio" />
+      <SidebarItem label="Range" href="/forms/range" />
+      <SidebarItem label="Search input" href="/forms/search-input" />
+      <SidebarItem label="Select" href="/forms/select" />
+      <SidebarItem label="Textarea" href="/forms/textarea" />
+      <SidebarItem label="Toggle" href="/forms/toggle" />
+    </SidebarDropdownWrapper>
+    <SidebarDropdownWrapper label="Typography" isOpen={hasPath('typography')} svgClass="me-4" btnClass="p-1">
+      <SidebarItem label="Blockquote" href="/typography/blockquote" />
+      <SidebarItem label="Heading/Mark" href="/typography/heading" />
+      <SidebarItem label="HR" href="/typography/hr" />
+      <SidebarItem label="Image" href="/typography/image" />
+      <SidebarItem label="Layout" href="/typography/layout" />
+      <SidebarItem label="Link" href="/typography/link" />
+      <SidebarItem label="List" href="/typography/list" />
+      <SidebarItem label="Paragraph" href="/typography/paragraph" />
+      <SidebarItem label="Span" href="/typography/span" />
+    </SidebarDropdownWrapper>
+    <SidebarDropdownWrapper label="Plugins" svgClass="me-4" btnClass="p-1">
+      <SidebarItem label="Chart" href="/plugins/chart" />
+    </SidebarDropdownWrapper>
+  </SidebarGroup>
+</Sidebar>

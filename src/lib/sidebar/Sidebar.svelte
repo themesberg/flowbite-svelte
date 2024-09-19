@@ -1,36 +1,57 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
   import { setContext } from 'svelte';
-  import type { SidebarType } from '$lib/types';
-  import { twMerge } from 'tailwind-merge';
-  import type { HTMLAttributes } from 'svelte/elements';
+  import { fly } from 'svelte/transition';
+  import { sineIn } from 'svelte/easing';
+  import { type SidebarProps as Props, sidebar, type SidebarCtxType } from '.';
 
-  interface Props extends HTMLAttributes<HTMLElement> {
-    children: Snippet;
-    asideClass?: string;
-    ariaLabel?: string;
-    divClass?: string;
-    nonActiveClass?: string;
-    activeClass?: string;
+  let { children, isOpen = false, closeSidebar, breakpoint = 'md', position = 'fixed', transition = fly, params, divClass, asideClass, ariaLabel, nonActiveClass, activeClass, class: className, ...restProps }: Props = $props();
+  
+  const breakpointValues = {
+    'sm': 640,
+    'md': 768,
+    'lg': 1024,
+    'xl': 1280,
+    '2xl': 1536
+  };
+  
+  let isLargeScreen = $state(false);
+
+  function checkScreenSize() {
+    isLargeScreen = window.innerWidth >= breakpointValues[breakpoint];
   }
-  let { children, divClass, asideClass, ariaLabel, nonActiveClass = '', activeClass = '', class: className, ...restProps }: Props = $props();
 
-  const activeCls = 'flex items-center text-base font-normal text-gray-900 bg-gray-200 dark:bg-gray-700 rounded dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700';
-  const nonActiveCls = 'flex items-center text-base font-normal text-gray-900 rounded dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700';
-  let divCls = twMerge('overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800', divClass);
+  const { base, active, nonactive, div } = $derived(sidebar({ isOpen, breakpoint, position }))
 
-  setContext<SidebarType>('sidebarContext', {
-    activeClass: twMerge(activeCls, activeClass, className),
-    nonActiveClass: twMerge(nonActiveCls, nonActiveClass, className)
+  let sidebarCtx: SidebarCtxType = {
+    get closeSidebar() {
+      return closeSidebar;
+    },
+    get activeClass() {
+      return active({  class: activeClass });
+    },
+    get nonActiveClass() {
+      return nonactive({ class: nonActiveClass });
+    }
+  };
+
+  let transitionParams = params ? params : { x: -320, duration: 200, easing: sineIn };
+
+  setContext('sidebarContext', sidebarCtx);
+  $effect(() => {
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
   });
-  // $inspect('activeClass: ', activeClass)
 </script>
 
-<aside {...restProps} class={twMerge('w-64', asideClass)} aria-label={ariaLabel}>
-  <div class={twMerge(divCls)}>
-    {@render children()}
-  </div>
-</aside>
+{#if isOpen || isLargeScreen}
+  <aside transition:transition={transitionParams} {...restProps} class={base({ className })} aria-label={ariaLabel}>
+    <div class={div({ class: divClass })}>
+      {@render children()}
+    </div>
+  </aside>
+{/if}
+
 
 <!--
 @component

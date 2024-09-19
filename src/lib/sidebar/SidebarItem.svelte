@@ -5,6 +5,7 @@
   import { page } from '$app/stores';
   import { twMerge } from 'tailwind-merge';
   import type { HTMLAnchorAttributes } from 'svelte/elements';
+  import { type SidebarCtxType } from './'
 
   interface Props extends HTMLAnchorAttributes {
     iconSlot?: Snippet;
@@ -19,7 +20,7 @@
 
   let { iconSlot, subtext, href, label, spanClass = 'ms-3', activeClass, nonActiveClass, aClass, active, class: className, ...restProps }: Props = $props();
 
-  const context = getContext<SidebarType>('sidebarContext') ?? {};
+  const context = getContext<SidebarCtxType>('sidebarContext') ?? {};
   let currentUrl = $state();
 
   $effect(() => {
@@ -29,8 +30,8 @@
   let aCls = $derived((active ?? currentUrl === href) ? (activeClass ?? context.activeClass) : (nonActiveClass ?? context.nonActiveClass));
 </script>
 
-<li class={className}>
-  <a {...restProps} {href} aria-current={active ?? currentUrl === href} class={twMerge(aCls, aClass)}>
+<li class={className} >
+  <a onclick={context.closeSidebar} {...restProps} {href} aria-current={active ?? currentUrl === href} class={twMerge(aCls, aClass)}>
     {#if iconSlot}
       {@render iconSlot()}
     {/if}

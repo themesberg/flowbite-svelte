@@ -1,12 +1,19 @@
 <script lang="ts">
-  import { Sidebar, SidebarGroup, SidebarItem } from '$lib';
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarButton, uiHelpers } from '$lib';
   import { ChartOutline, GridSolid, MailBoxSolid, UserSolid } from 'flowbite-svelte-icons';
   import PlusPlaceholder from '../../../utils/PlusPlaceholder.svelte';
   const spanClass = 'flex-1 ms-3 whitespace-nowrap';
+  const demoSidebarUi = uiHelpers();
+  let isDemoOpen = $state(false);
+  const closeDemoSidebar = demoSidebarUi.close;
+  $effect(() => {
+    isDemoOpen = demoSidebarUi.isOpen;
+  });
 </script>  
 
+<SidebarButton onclick={demoSidebarUi.toggle} />
 <div class="relative">
-  <Sidebar class="p-2" asideClass="absolute z-40">
+  <Sidebar isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="p-2 h-full" position="absolute">
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
         {#snippet iconSlot()}
@@ -36,7 +43,7 @@
       </SidebarItem>
     </SidebarGroup>
   </Sidebar>
-  <div class="h-96 overflow-scroll px-4 sm:ml-64">
+  <div class="h-96 overflow-scroll px-4 md:ml-64">
     <div class="rounded-lg border-2 border-dashed border-gray-200 p-4 dark:border-gray-700">
       <PlusPlaceholder colnum={3} rownum={1} />
       <PlusPlaceholder />

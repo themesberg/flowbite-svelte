@@ -1,14 +1,21 @@
 <script lang="ts">
-  import { Sidebar, SidebarGroup, SidebarItem } from '$lib';
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarButton, uiHelpers } from '$lib';
   import { ChartOutline, GridSolid, MailBoxSolid, UserSolid } from 'flowbite-svelte-icons';
   import PlusPlaceholder from '../../../utils/PlusPlaceholder.svelte';
+  const demoSidebarUi = uiHelpers();
+  let isDemoOpen = $state(false);
+  const closeDemoSidebar = demoSidebarUi.close;
+  $effect(() => {
+    isDemoOpen = demoSidebarUi.isOpen;
+  });
   const spanClass = 'flex-1 ms-3 whitespace-nowrap';
   const activeClass = 'flex items-center p-2 text-base font-normal text-white bg-primary-600 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-800 dark:hover:bg-primary-800';
   const nonActiveClass = 'flex items-center p-2 text-base font-normal text-green-900 rounded-lg dark:text-white hover:bg-green-100 dark:hover:bg-green-700';
 </script>
 
+<SidebarButton onclick={demoSidebarUi.toggle} />
 <div class="relative">
-  <Sidebar {activeClass} {nonActiveClass} class="p-2" asideClass="absolute z-40">
+  <Sidebar isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} {activeClass} {nonActiveClass} position="absolute"  class="p-2 h-full">
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
         {#snippet iconSlot()}
@@ -38,7 +45,7 @@
       </SidebarItem>
     </SidebarGroup>
   </Sidebar>
-  <div class="h-96 overflow-scroll px-4 sm:ml-64">
+  <div class="h-96 overflow-scroll px-4 md:ml-64">
     <div class="rounded-lg border-2 border-dashed border-gray-200 p-4 dark:border-gray-700">
       <PlusPlaceholder colnum={3} rownum={1} />
       <PlusPlaceholder />
