@@ -15,7 +15,7 @@
 
 <SidebarButton onclick={demoSidebarUi.toggle} class='mb-2'/>
 <div class="relative">
-  <Sidebar backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" {activeClass} {nonActiveClass} class="z-20 h-full">
+  <Sidebar backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" {activeClass} {nonActiveClass} class="z-50 h-full">
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/" active>
         {#snippet iconSlot()}

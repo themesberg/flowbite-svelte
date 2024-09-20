@@ -13,7 +13,7 @@
 
 <SidebarButton onclick={demoSidebarUi.toggle} class='mb-2'/>
 <div class="relative">
-  <Sidebar backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-20 h-full" position="absolute" activeClass="p-2" nonActiveClass="p-2">
+  <Sidebar backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" activeClass="p-2" nonActiveClass="p-2">
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
         {#snippet iconSlot()}
@@ -36,24 +36,24 @@
           <span class="ms-3 inline-flex h-3 w-3 items-center justify-center rounded-full bg-primary-200 p-3 text-sm font-medium text-primary-600 dark:bg-primary-900 dark:text-primary-200">3</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Sidebar" href="/sidebar">
+      <SidebarItem label="Sidebar" href="/components/sidebar">
         {#snippet iconSlot()}
           <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
     </SidebarGroup>
     <SidebarGroup border>
-      <SidebarItem label="Upgrade to Pro">
+      <SidebarItem label="Upgrade to Pro" href="/">
         {#snippet iconSlot()}
           <FireSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Documentation">
+      <SidebarItem label="Documentation" href="/">
         {#snippet iconSlot()}
           <BookSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Components">
+      <SidebarItem label="Components" href="/">
         {#snippet iconSlot()}
           <RestoreWindowOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}

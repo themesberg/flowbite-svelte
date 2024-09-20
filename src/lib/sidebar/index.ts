@@ -49,12 +49,13 @@ interface SidebarCtaProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 interface SiteType {
-  name: string;
-  href: string;
+  name?: string;
+  href?: string;
   img?: string;
 }
 interface SidebarBrandProps extends HTMLAnchorAttributes {
-  site: SiteType;
+  children?: Snippet;
+  site?: SiteType;
   imgClass?: string;
   spanClass?: string;
 }

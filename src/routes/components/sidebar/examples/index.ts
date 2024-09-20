@@ -7,5 +7,6 @@ export { default as ContentSeparator } from './ContentSeparator.svelte';
 export { default as Icon } from './Icon.svelte';
 export { default as Cta } from './Cta.svelte';
 export { default as LogoBranding } from './LogoBranding.svelte';
+export { default as LogoBrandingWithChildren } from './LogoBrandingWithChildren.svelte';
 export { default as DropdownTransition } from './DropdownTransition.svelte';
 export { default as CloseButton } from './CloseButton.svelte';
