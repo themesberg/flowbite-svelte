@@ -13,7 +13,7 @@
   const nonActiveClass = 'flex items-center p-2 text-base font-normal text-green-900 rounded-lg dark:text-white hover:bg-green-100 dark:hover:bg-green-700';
 </script>
 
-<SidebarButton onclick={demoSidebarUi.toggle} />
+<SidebarButton onclick={demoSidebarUi.toggle} class='mb-2'/>
 <div class="relative">
   <Sidebar backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} {activeClass} {nonActiveClass} position="absolute" class="z-20 h-full">
     <SidebarGroup>

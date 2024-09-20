@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const sidebar = tv({
   slots: {
-    base: 'top-0 left-0 z-50 w-64 transition-transform -translate-x-full sm:translate-x-0 bg-gray-50 dark:bg-gray-800',
+    base: 'top-0 left-0 z-50 w-64 transition-transform bg-gray-50 dark:bg-gray-800',
     active: 'flex items-center text-base font-normal text-gray-900 bg-gray-200 dark:bg-gray-700 rounded dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700',
     nonactive: 'flex items-center text-base font-normal text-gray-900 rounded dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700',
     div: 'overflow-y-auto h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800',
