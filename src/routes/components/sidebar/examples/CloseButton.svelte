@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarButton, SidebarBrand, uiHelpers } from '$lib';
+  import { CloseButton, Sidebar, SidebarGroup, SidebarItem, SidebarButton, uiHelpers } from '$lib';
   import { ChartOutline, GridSolid, MailBoxSolid, UserSolid } from 'flowbite-svelte-icons';
   import PlusPlaceholder from '../../../utils/PlusPlaceholder.svelte';
   const spanClass = 'flex-1 ms-3 whitespace-nowrap';
@@ -9,18 +9,13 @@
   $effect(() => {
     isDemoOpen = demoSidebarUi.isOpen;
   });
-  const site = {
-    name: 'Flowbite-Svelte',
-    href: '/',
-    img: '/images/flowbite-svelte-icon-logo.svg'
-  };
 </script>
 
 <SidebarButton onclick={demoSidebarUi.toggle} class='mb-2'/>
 <div class="relative">
-  <Sidebar backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-20 h-full" position="absolute" activeClass="p-2" nonActiveClass="p-2">
+  <Sidebar backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full pt-6" position="absolute" activeClass="p-2" nonActiveClass="p-2">
+    <CloseButton onclick={closeDemoSidebar} color="gray" class="absolute top-2 right-2 p-2"/>
     <SidebarGroup>
-      <SidebarBrand {site} />
       <SidebarItem label="Dashboard" href="/">
         {#snippet iconSlot()}
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
