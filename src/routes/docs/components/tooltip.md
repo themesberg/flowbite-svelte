@@ -104,12 +104,14 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 ```svelte example class="flex items-end gap-2 h-32" hideResponsiveButtons
 <script>
   import { Tooltip, Button } from 'flowbite-svelte';
+  let actions = "";
 </script>
 
-<Button id="hover">Tooltip hover</Button>
-<Button id="click">Tooltip click</Button>
+<Button id="hover" on:click={() => (actions = "Clicked Hover-Tooltip Button\n" + actions)}>Tooltip hover</Button>
+<Button id="click" on:click={() => (actions = "Clicked Click-Tooltip Button\n" + actions)}>Tooltip click</Button>
 <Tooltip triggeredBy="#hover">Hover tooltip content</Tooltip>
 <Tooltip trigger="click" triggeredBy="#click">Click tooltip content</Tooltip>
+<pre style="height: 4rem; overflow:hidden;">{actions}</pre>
 ```
 
 ## Disable arrow
