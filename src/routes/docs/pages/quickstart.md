@@ -76,15 +76,14 @@ Update the `tailwind.config.cjs` file from your root project folder to let the T
 In the provided code below, you can customize the primary color by modifying the appropriate color values. To change the primary color, simply uncomment the desired color object and modify the corresponding color values as needed.
 
 ```js
+import type { Config } from 'tailwindcss';
 import flowbitePlugin from 'flowbite/plugin'
 
-import type { Config } from 'tailwindcss';
-
 export default {
-	content: ['./src/**/*.{html,js,svelte,ts}', './node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'],
+  content: ['./src/**/*.{html,js,svelte,ts}', './node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'],
   darkMode: 'selector',
-	theme: {
-		extend: {
+  theme: {
+    extend: {
       colors: {
         // flowbite-svelte
         primary: {
@@ -101,9 +100,8 @@ export default {
         }
       }
     }
-	},
-
-	plugins: [flowbitePlugin]
+  },
+  plugins: [flowbitePlugin]
 } as Config;
 ```
 
