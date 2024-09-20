@@ -5,7 +5,7 @@
     { value: '2', checkboxLabel: 'Two' },
     { value: '3', checkboxLabel: 'Three' }
   ];
-  let group = $state(['2', '3']);
+  let group: (string | number)[] = $state(['2', '3']);
   const clearGroup = () => {
     group = [];
   };

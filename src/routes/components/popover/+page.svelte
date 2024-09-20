@@ -33,7 +33,7 @@
     { name: 'Password', component: ExampleComponents.Password },
     { name: 'External reference', component: ExampleComponents.ExternalReference }
   ];
-  let selectedExample = $state(exampleArr[0].name);
+  let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 
   function findObject(arr: { name: string; component: Component }[], name: string) {
@@ -76,7 +76,7 @@
     { name: 'Blur', transition: blur, params: { duration: 800, easing: sineIn } }
   ];
 
-  let selectedTransition = $state('Fade');
+  let selectedTransition: string | number = $state('Fade');
   let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
 
   // code generator

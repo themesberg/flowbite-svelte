@@ -29,7 +29,7 @@
     { name: 'Logo branding', component: ExampleComponents.LogoBranding },
     { name: 'Dropdown transition', component: ExampleComponents.DropdownTransition }
   ];
-  let selectedExample = $state(exampleArr[0].name);
+  let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 
   function findObject(arr: { name: string; component: Component }[], name: string) {

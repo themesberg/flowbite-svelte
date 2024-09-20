@@ -31,7 +31,7 @@
     { name: 'Solid', component: ExampleComponents.Solid },
     { name: 'Icon', component: ExampleComponents.Icon }
   ];
-  let selectedExample = $state(exampleArr[0].name);
+  let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 
   function findObject(arr: { name: string; component: Component }[], name: string) {

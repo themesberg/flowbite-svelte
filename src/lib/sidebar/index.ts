@@ -59,4 +59,4 @@ interface SidebarBrandProps extends HTMLAnchorAttributes {
   spanClass?: string;
 }
 
-export { Sidebar, sidebar, type SidebarProps, SidebarDropdownWrapper, SidebarGroup, SidebarItem, type SidebarCtxType, SidebarButton, sidebarbutton, type SidebarButtonProps, SidebarCta, sidebarcta, type SidebarCtaProps, SidebarBrand, sitebarbrand, type SidebarBrandProps };
+export { Sidebar, sidebar, type SidebarProps, SidebarDropdownWrapper, SidebarGroup, SidebarItem, type SidebarCtxType, SidebarButton, sidebarbutton, type SidebarButtonProps, SidebarCta, sidebarcta, type SidebarCtaProps, SidebarBrand, sitebarbrand, type SidebarBrandProps, type BreakpointType, type PosisionType };

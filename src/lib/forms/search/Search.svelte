@@ -2,7 +2,7 @@
   import { Input } from '$lib';
   import { type SearchProps as Props, search } from '.';
 
-  let { children, right, size = 'lg', placeholder = 'Search', value = $bindable(), show = true, use = () => {}, class: className, ...restProps }: Props = $props();
+  let { children, right, size = 'lg', placeholder = 'Search', value = $bindable(), show = true, use = () => {}, class: className, ...restProps }: Props<unknown> = $props();
 
   const { base, content, icon } = $derived(search());
 </script>

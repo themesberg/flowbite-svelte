@@ -27,7 +27,7 @@
     { name: 'Table data pagination', component: ExampleComponents.TableDataPagination },
     { name: 'Table data with icons', component: ExampleComponents.TableDataWithIcons }
   ];
-  let selectedExample = $state(exampleArr[0].name);
+  let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 
   function findObject(arr: { name: string; component: Component }[], name: string) {

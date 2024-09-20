@@ -20,7 +20,7 @@
   });
 
   const exampleArr = [{ name: 'Button', component: ExampleComponents.Button }];
-  let selectedExample = $state(exampleArr[0].name);
+  let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 
   function findObject(arr: { name: string; component: Component }[], name: string) {
@@ -45,7 +45,7 @@
     { name: 'right', class: 'text-right' }
   ];
 
-  let selectedAlignment = $state('left');
+  let selectedAlignment: string | number = $state('left');
   let currentSpinner = $derived(alignments.find((t) => t.name === selectedAlignment) || alignments[0]);
 
   // code generator

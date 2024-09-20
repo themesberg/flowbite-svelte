@@ -27,7 +27,7 @@
     { name: 'Newsletter signup banner', component: ExampleComponents.NewsletterSignupBanner },
     { name: 'Information banner', component: ExampleComponents.InformationBanner }
   ];
-  let selectedExample = $state(exampleArr[0].name);
+  let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 
   function findObject(arr: { name: string; component: Component }[], name: string) {

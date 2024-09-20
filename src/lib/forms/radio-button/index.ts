@@ -4,10 +4,10 @@ import type { SizeType, ColorName } from '$lib/types';
 import type { HTMLInputAttributes } from 'svelte/elements';
 import { radioButton } from './theme';
 
-interface RadioButtonProps extends HTMLInputAttributes {
+interface RadioButtonProps<T> extends HTMLInputAttributes {
   children: Snippet;
-  group?: string | number;
-  value?: string | number;
+  group?: T;
+  value?: T;
   inline?: boolean;
   pill?: boolean;
   outline?: boolean;

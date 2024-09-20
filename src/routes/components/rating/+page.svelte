@@ -31,7 +31,7 @@
     { name: 'Rating comment', component: ExampleComponents.RatingComment },
     { name: 'Review content', component: ExampleComponents.ReviewContent }
   ];
-  let selectedExample = $state(exampleArr[0].name);
+  let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 
   function findObject(arr: { name: string; component: Component }[], name: string) {

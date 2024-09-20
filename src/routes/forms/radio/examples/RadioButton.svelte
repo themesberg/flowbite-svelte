@@ -1,7 +1,7 @@
 <script lang="ts">
   import { RadioButton, ButtonGroup } from '$lib';
   import { ListMusicSolid, OrderedListOutline, ListOutline } from 'flowbite-svelte-icons';
-  let radioGroup = $state('notes');
+  let radioGroup: string = $state('notes');
 </script>
 
 <div class="p-2">

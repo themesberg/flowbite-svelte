@@ -24,7 +24,7 @@
     { name: 'Comment box', component: ExampleComponents.CommentBox },
     { name: 'Chatroom input', component: ExampleComponents.ChatroomInput }
   ];
-  let selectedExample = $state(exampleArr[0].name);
+  let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 
   function findObject(arr: { name: string; component: Component }[], name: string) {

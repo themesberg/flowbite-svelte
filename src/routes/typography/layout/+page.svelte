@@ -24,7 +24,7 @@
     { name: 'Two columns uneven', component: ExampleComponents.TwoColumnsUneven },
     { name: 'Three columns even', component: ExampleComponents.ThreeColumnsEven }
   ];
-  let selectedExample = $state(exampleArr[0].name);
+  let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 
   function findObject(arr: { name: string; component: Component }[], name: string) {

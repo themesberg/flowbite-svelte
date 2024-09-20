@@ -15,7 +15,7 @@
   });
 
   const types = ['default', 'trimmed', 'icon', 'text', 'shape'];
-  let selectedStyle = $state('default');
+  let selectedStyle: string | number = $state('default');
 
   // code generator
   let generatedCode = $derived(

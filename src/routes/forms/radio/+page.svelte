@@ -29,7 +29,7 @@
     { name: 'Radio in dropdown', component: ExampleComponents.RadioInDropdown },
     { name: 'Radio list group', component: ExampleComponents.RadioListGroup }
   ];
-  let selectedExample = $state(exampleArr[0].name);
+  let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 
   function findObject(arr: { name: string; component: Component }[], name: string) {

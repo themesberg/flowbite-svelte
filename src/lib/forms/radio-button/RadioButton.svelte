@@ -2,7 +2,7 @@
   import Button from '$lib/buttons/Button.svelte';
   import { type RadioButtonProps as Props, radioButton } from '.';
 
-  let { children, group = $bindable(), value, inline = true, pill, outline, buttonSize, color, shadow, class: className, ...restProps }: Props = $props();
+  let { children, group = $bindable<unknown>(), value, inline = true, pill, outline, buttonSize, color, shadow, class: className, ...restProps }: Props<unknown> = $props();
 
   const base = $derived(radioButton({ inline, className }));
 

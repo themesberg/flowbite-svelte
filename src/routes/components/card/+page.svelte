@@ -25,7 +25,7 @@
     { name: 'Call to action card', component: ExampleComponents.CallToActionCard },
     { name: 'Card with action button', component: ExampleComponents.CardWithActionButton }
   ];
-  let selectedExample = $state(exampleArr[0].name);
+  let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 
   function findObject(arr: { name: string; component: Component }[], name: string) {

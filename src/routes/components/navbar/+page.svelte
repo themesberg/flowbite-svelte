@@ -26,7 +26,7 @@
     // need to fix this for extra space for div relative
     { name: 'Dropdown', component: ExampleComponents.Dropdown }
   ];
-  let selectedExample = $state(exampleArr[0].name);
+  let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 
   function findObject(arr: { name: string; component: Component }[], name: string) {

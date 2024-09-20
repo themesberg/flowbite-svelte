@@ -20,7 +20,7 @@
   });
 
   const exampleArr = [{ name: 'Custom size', component: ExampleComponents.CustomSize }];
-  let selectedExample = $state(exampleArr[0].name);
+  let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 
   function findObject(arr: { name: string; component: Component }[], name: string) {

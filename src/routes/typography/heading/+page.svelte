@@ -30,7 +30,7 @@
     { name: 'Second level', component: ExampleComponents.SecondLevel },
     { name: 'Underline', component: ExampleComponents.Underline }
   ];
-  let selectedExample = $state(exampleArr[0].name);
+  let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 
   function findObject(arr: { name: string; component: Component }[], name: string) {

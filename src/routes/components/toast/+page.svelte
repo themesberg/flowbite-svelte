@@ -34,7 +34,7 @@
     { name: 'Toast message', component: ExampleComponents.ToastMessage },
     { name: 'Undo button', component: ExampleComponents.UndoButton }
   ];
-  let selectedExample = $state(exampleArr[0].name);
+  let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 
   function findObject(arr: { name: string; component: Component }[], name: string) {
@@ -69,7 +69,7 @@
     { name: 'Fade', transition: fade, params: { duration: 500, easing: linear } }
   ];
 
-  let selectedTransition = $state('Default');
+  let selectedTransition: string | number = $state('Default');
   let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
   let defaultToastStatus: boolean = $state(true);
   let toastStatus: boolean = $state(true);

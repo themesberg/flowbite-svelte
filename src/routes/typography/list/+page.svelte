@@ -80,7 +80,7 @@
     { name: 'Horizontal list', component: ExampleComponents.HorizontalList },
     { name: 'Advanced layout', component: ExampleComponents.AdvancedLayout }
   ];
-  let selectedExample = $state(exampleArr[0].name);
+  let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 
   function findObject(arr: { name: string; component: Component }[], name: string) {

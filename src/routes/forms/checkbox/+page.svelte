@@ -31,7 +31,7 @@
     { name: 'List group', component: ExampleComponents.ListGroup },
     { name: 'Table', component: ExampleComponents.Table }
   ];
-  let selectedExample = $state(exampleArr[0].name);
+  let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 
   function findObject(arr: { name: string; component: Component }[], name: string) {

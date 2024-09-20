@@ -33,7 +33,7 @@
     { name: 'responsive', class: 'w-full max-w-full h-auto' },
     { name: 'customStyle', class: 'w-full max-w-full h-auto rounded-3xl border border-gray-200 dark:border-gray-700' }
   ];
-  let selectedClass = $state('default');
+  let selectedClass: string | number = $state('default');
   // let selectedTransition = $state('Fly');
   let currentClass = $derived(videoClasses.find((t) => t.name === selectedClass) || videoClasses[0]);
 

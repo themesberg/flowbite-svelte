@@ -3,10 +3,10 @@ import type { HTMLInputAttributes } from 'svelte/elements';
 import type { InputProps } from '$lib';
 import { fileupload } from './theme';
 
-interface FileuploadProps extends Omit<HTMLInputAttributes, 'size'> {
+interface FileuploadProps<T> extends Omit<HTMLInputAttributes, 'size'> {
   files?: FileList;
-  size?: InputProps['size'];
-  color?: InputProps['color'];
+  size?: InputProps<never>['size'];
+  color?: InputProps<never>['color'];
 }
 
 export { Fileupload, fileupload, type FileuploadProps };

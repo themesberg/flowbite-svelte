@@ -3,7 +3,8 @@
   import Label from '../label/Label.svelte';
   import { type RadioProps as Props, radio } from '.';
 
-  let { children, aria_describedby, labelClass, color = 'primary', group = $bindable(), value = $bindable(), inputClass, ...restProps }: Props = $props();
+  let { children, aria_describedby, labelClass, color = 'primary', group = $bindable<unknown>(), value = $bindable<unknown>(), inputClass, ...restProps }: Props<unknown> = $props();
+
   const { input, label } = $derived(radio({ color, tinted: !!getContext('background') }));
 </script>
 

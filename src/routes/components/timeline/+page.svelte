@@ -32,7 +32,7 @@
     { name: 'Activity log', component: ExampleComponents.ActivityLog },
     { name: 'Grouped timeline', component: ExampleComponents.GroupedTimeline }
   ];
-  let selectedExample = $state(exampleArr[0].name);
+  let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 
   function findObject(arr: { name: string; component: Component }[], name: string) {
