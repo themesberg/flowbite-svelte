@@ -15,7 +15,7 @@
       {#if typeof item === 'string'}
         <ListgroupItem {active} {onclick}>{item}</ListgroupItem>
       {:else}
-        <ListgroupItem {active} {...item} {onclick}>{item}</ListgroupItem>
+        <ListgroupItem {active} {...item} onclick={item.onclick ? item.onclick : onclick}>{item}</ListgroupItem>
       {/if}
     {/each}
   {:else if children}
