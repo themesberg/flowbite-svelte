@@ -198,8 +198,8 @@
       // notes: 'Variants, reactive examples'
     },
     inputField: {
-      checked: true
-      // problems: 'Group examples add rounded radius'
+      checked: true,
+      problems: 'Advanced usage'
       // notes: 'Variants, reactive examples'
     },
     label: {
