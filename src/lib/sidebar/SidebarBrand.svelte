@@ -8,8 +8,8 @@
 
 <a {...restProps} href={site?.href ? site.href : '/'} class={base({ className })}>
   {#if site}
-  <img src={site.img} class={img({ class: imgClass })} alt={site.name} />
-  <span class={span({ class: spanClass })}>{site.name}</span>
+    <img src={site.img} class={img({ class: imgClass })} alt={site.name} />
+    <span class={span({ class: spanClass })}>{site.name}</span>
   {:else if children}
     {@render children()}
   {/if}
@@ -19,6 +19,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
+@prop children
 @prop site
 @prop imgClass
 @prop spanClass

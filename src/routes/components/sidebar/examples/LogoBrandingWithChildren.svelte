@@ -16,14 +16,14 @@
   };
 </script>
 
-<SidebarButton onclick={demoSidebarUi.toggle} class='mb-2'/>
+<SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
 <div class="relative">
   <Sidebar backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" activeClass="p-2" nonActiveClass="p-2">
-    <CloseButton onclick={closeDemoSidebar} color="gray" class="md:hidden absolute top-3 right-1 p-2"/>
+    <CloseButton onclick={closeDemoSidebar} color="gray" class="absolute right-1 top-3 p-2 md:hidden" />
     <SidebarGroup>
       <SidebarBrand>
-        <img src='/images/flowbite-svelte-icon-logo.svg' alt='Svelte 5 UI Lib' class="h-6 w-6" />
-        <span class='self-center text-xl font-semibold whitespace-nowrap dark:text-white ml-2'>Svelte 5 UI Lib</span>
+        <img src="/images/flowbite-svelte-icon-logo.svg" alt="Svelte 5 UI Lib" class="h-6 w-6" />
+        <span class="ml-2 self-center whitespace-nowrap text-xl font-semibold dark:text-white">Svelte 5 UI Lib</span>
       </SidebarBrand>
       <SidebarItem label="Dashboard" href="/">
         {#snippet iconSlot()}

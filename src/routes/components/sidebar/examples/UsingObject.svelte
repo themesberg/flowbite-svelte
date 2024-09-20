@@ -35,7 +35,7 @@
   });
 </script>
 
-<SidebarButton onclick={demoSidebarUi.toggle} class='mb-2'/>
+<SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
 <div class="relative">
   <Sidebar backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" class="z-50 h-full">
     <SidebarGroup>

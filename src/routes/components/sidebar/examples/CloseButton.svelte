@@ -11,10 +11,10 @@
   });
 </script>
 
-<SidebarButton onclick={demoSidebarUi.toggle} class='mb-2'/>
+<SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
 <div class="relative">
   <Sidebar backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full pt-6" position="absolute" activeClass="p-2" nonActiveClass="p-2">
-    <CloseButton onclick={closeDemoSidebar} color="gray" class="md:hidden absolute top-2 right-2 p-2"/>
+    <CloseButton onclick={closeDemoSidebar} color="gray" class="absolute right-2 top-2 p-2 md:hidden" />
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
         {#snippet iconSlot()}

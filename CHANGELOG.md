@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.13
+
+### Patch Changes
+
+- fix: add children to SidebarBrand ([`cf691edbeadb1435daaecceb9d1a407e699c2878`](https://github.com/shinokada/svelte-5-ui-lib/commit/cf691edbeadb1435daaecceb9d1a407e699c2878))
+
 ## 0.9.12
 
 ### Patch Changes
