@@ -68,4 +68,5 @@
 @prop export let color: 'primary' | 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo' = 'primary';
 @prop export let labelInsideClass: string = 'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
 @prop export let divClass: string = 'w-full bg-gray-200 rounded-full dark:bg-gray-700';
+@prop export let progressClass: string;
 -->

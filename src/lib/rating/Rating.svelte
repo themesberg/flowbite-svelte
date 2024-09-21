@@ -62,11 +62,13 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let divClass: string = 'flex items-center';
-@prop export let size: number = 24;
-@prop export let total: number = 5;
-@prop export let rating: number = 4;
-@prop export let partialId: string = 'partialStar' + generateId();
-@prop export let icon: ComponentType = Star;
-@prop export let count: boolean = false;
+@prop export let divClass: $$Props['divClass'] = 'flex items-center';
+@prop export let size: $$Props['size'] = 24;
+@prop export let total: NonNullable<$$Props['total']> = 5;
+@prop export let rating: $$Props['rating'] = 4;
+@prop export let partialId: $$Props['partialId'] = 'partialStar' + generateId();
+@prop export let icon: $$Props['icon'] = Star;
+@prop export let count: $$Props['count'] = false;
+@prop export let iconFillColor: $$Props['iconFillColor'];
+@prop export let iconStrokeColor: $$Props['iconStrokeColor'];
 -->

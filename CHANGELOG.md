@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.46.17
+
+### Patch Changes
+
+- fix: update for PRs ([`3566cbe3dcc4a7d8f67456b07fe046cdab421a02`](https://github.com/themesberg/flowbite-svelte/commit/3566cbe3dcc4a7d8f67456b07fe046cdab421a02))
+
 ## 0.46.16
 
 ### Patch Changes

@@ -59,4 +59,5 @@
 @prop export let divClass: string = 'text-gray-600 dark:text-gray-400';
 @prop export let titleClass: string = 'text-base font-normal';
 @prop export let spanClass: string = 'inline-flex items-center text-xs font-normal text-gray-500 dark:text-gray-400';
+@prop export let isPrivacy: boolean = true;
 -->
