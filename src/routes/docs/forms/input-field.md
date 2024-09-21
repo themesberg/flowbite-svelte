@@ -122,6 +122,19 @@ Get started with this example if you want to apply the disabled state to an inpu
 <Input class="mb-6" disabled readonly value="Disabled readonly input" />
 ```
 
+## Clearable
+
+This example shows how to create an input field where the user can remove the
+text with one click.
+
+```svelte example hideScript
+<script>
+  import { Input } from 'flowbite-svelte';
+</script>
+
+<Input clearable value="Clearable input" />
+```
+
 ## Validation
 
 Use the following example to apply validation styles for success and error messages.
