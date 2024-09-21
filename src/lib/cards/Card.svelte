@@ -19,6 +19,7 @@
     img?: string;
     padding?: SizeType | 'none';
     size?: SizeType | 'none';
+    imgClass?: string;
   }
 
   const paddings: Record<SizeType | 'none', string> = {
