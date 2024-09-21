@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Input, Helper } from '$lib';
   let value = $state();
 </script>
