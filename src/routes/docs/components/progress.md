@@ -189,6 +189,22 @@ By default progress bar has animation disabled, you can activate with `animate`,
 </Button>
 ```
 
+## Custom color
+
+Use the `progressClass` prop to change the color of the progress bar.
+
+```svelte example
+<script>
+  import { Progressbar } from 'flowbite-svelte';
+</script>
+
+<div class="space-y-4">
+  <Progressbar progress="40" progressClass="bg-sky-600 dark:bg-sky-400" />
+  <Progressbar progress="40" progressClass="bg-lime-600 dark:bg-lime-400" />
+  <Progressbar progress="40" progressClass="bg-pink-600 dark:bg-pink-400" />
+</div>
+```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

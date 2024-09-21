@@ -1,3 +1,9 @@
+/**
+ * Returns an array of file names from a specified directory in the `$lib` directory.
+ *
+ * @param {string} dirName - The name of the directory to filter by.
+ * @return {string[]} An array of file names without the extension.
+ */
 export function getFilteredFileNames(dirName: string) {
   const modules = import.meta.glob('$lib/**/*.svelte');
   const pathsArray = Object.keys(modules);
