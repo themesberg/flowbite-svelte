@@ -1,4 +1,5 @@
-<script lang="ts">
+<script lang="ts" generics="T">
+  import { writable } from 'svelte/store';
   import { twMerge, twJoin } from 'tailwind-merge';
   import { setContext } from 'svelte';
   import type { TableColorType } from '../types';
@@ -10,6 +11,7 @@
   export let shadow: boolean = false;
   export let color: TableColorType = 'default';
   export let customeColor: string = '';
+  export let items: T[] = [];
 
   const colors = {
     default: 'text-gray-500 dark:text-gray-400',
@@ -27,6 +29,10 @@
   $: setContext('hoverable', hoverable);
   $: setContext('noborder', noborder);
   $: setContext('color', color);
+  
+  const sorting = writable({ items, direction: 1, sorter: '' });
+  setContext('sorting', sorting);
+  $: sorting.update(({direction, sorter}) => ({ items, direction, sorter }));
 </script>
 
 <div class={twJoin(divClass, shadow && 'shadow-md sm:rounded-lg')}>
@@ -46,4 +52,5 @@
 @prop export let shadow: boolean = false;
 @prop export let color: TableColorType = 'default';
 @prop export let customeColor: string = '';
+@prop export let items: T[] = [];
 -->
