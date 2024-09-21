@@ -252,18 +252,16 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
 
 ```svelte example
 <script>
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, TableSearch } from 'flowbite-svelte';
-  let searchTerm = '';
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from 'flowbite-svelte';
   let items = [
     { id: 1, maker: 'Toyota', type: 'ABC', make: 2017 },
     { id: 2, maker: 'Ford', type: 'CDE', make: 2018 },
     { id: 3, maker: 'Volvo', type: 'FGH', make: 2019 },
     { id: 4, maker: 'Saab', type: 'IJK', make: 2020 }
   ];
-  $: filteredItems = items.filter((item) => item.maker.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
 </script>
 
-<TableSearch placeholder="Search by maker name" hoverable={true} bind:inputValue={searchTerm}>
+<Table {items} placeholder="Search by maker name" hoverable={true} filter={(item, searchTerm) => item.maker.toLowerCase().includes(searchTerm.toLowerCase())}>
   <TableHead>
     <TableHeadCell>ID</TableHeadCell>
     <TableHeadCell>Maker</TableHeadCell>
@@ -271,16 +269,14 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
     <TableHeadCell>Make</TableHeadCell>
   </TableHead>
   <TableBody tableBodyClass="divide-y">
-    {#each filteredItems as item}
-      <TableBodyRow>
-        <TableBodyCell>{item.id}</TableBodyCell>
-        <TableBodyCell>{item.maker}</TableBodyCell>
-        <TableBodyCell>{item.type}</TableBodyCell>
-        <TableBodyCell>{item.make}</TableBodyCell>
-      </TableBodyRow>
-    {/each}
+    <TableBodyRow slot="row" let:item>
+      <TableBodyCell>{item.id}</TableBodyCell>
+      <TableBodyCell>{item.maker}</TableBodyCell>
+      <TableBodyCell>{item.type}</TableBodyCell>
+      <TableBodyCell>{item.make}</TableBodyCell>
+    </TableBodyRow>
   </TableBody>
-</TableSearch>
+</Table>
 ```
 
 ## Sorting by column
@@ -288,8 +284,6 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
 ```svelte example
 <script>
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from 'flowbite-svelte';
-  import { writable } from 'svelte/store';
-
   let items = [
     { id: 1, maker: 'Toyota', type: 'ABC', make: 2017 },
     { id: 2, maker: 'Ford', type: 'CDE', make: 2018 },
@@ -305,7 +299,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
     <TableHeadCell sort={(a, b) => a.type.localeCompare(b.type)}>Type</TableHeadCell>
     <TableHeadCell sort={(a, b) => a.make - b.make} defaultDirection="desc">Make</TableHeadCell>
     <TableHeadCell>
-      <span class="sr-only">Edit</span>
+      <span class="sr-only">Buy</span>
     </TableHeadCell>
   </TableHead>
   <TableBody tableBodyClass="divide-y">
@@ -315,7 +309,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
       <TableBodyCell>{item.type}</TableBodyCell>
       <TableBodyCell>{item.make}</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Buy</a>
       </TableBodyCell>
     </TableBodyRow>
   </TableBody>

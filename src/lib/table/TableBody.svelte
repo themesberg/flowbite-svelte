@@ -4,13 +4,18 @@
 
   export let tableBodyClass: string | undefined = undefined;
 
-  let sorting = getContext('sorting') as Writable<{ items: T[]; direction: -1 | 1; sorter: string }>;
+  $: items = getContext('items') as T[] || [];
+  let filter = getContext('filter') as Writable<((t: T, term: string) => boolean) | null>;
+  let searchTerm = getContext('searchTerm') as Writable<string>;
+  $: filtered = $filter ? items.filter(item => $filter(item, $searchTerm)) : items;
+  let sorter = getContext('sorter') as Writable<{id: string, sort: (a: T, b: T) => number, sortDirection: -1 | 1} | null>;
+  $: sorted = $sorter ? filtered.toSorted((a, b) => $sorter.sortDirection * $sorter.sort(a, b)) : filtered;
 </script>
 
 <tbody class={tableBodyClass}>
   <slot />
-  {#each $sorting?.items || [] as item}
-  <slot name="row" {item} />
+  {#each sorted as item}
+    <slot name="row" {item} />
   {/each}
 </tbody>
 
