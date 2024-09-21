@@ -8,6 +8,7 @@
   export let divClass: string = 'text-gray-600 dark:text-gray-400';
   export let titleClass: string = 'text-base font-normal';
   export let spanClass: string = 'inline-flex items-center text-xs font-normal text-gray-500 dark:text-gray-400';
+  export let isPrivacy: boolean = true;
 
   let aCls: string = twMerge(aClass, $$props.classA);
   let imgCls: string = twMerge(imgClass, $$props.classImg);
@@ -27,6 +28,7 @@
         {#if comment}
           <div class="text-sm font-normal">{comment}</div>
         {/if}
+        {#if isPrivacy}
         <span class={spanCls}>
           {#if isPrivate}
             <svg class="me-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -41,6 +43,7 @@
             Public
           {/if}
         </span>
+        {/if}
       </div>
     </a>
   </li>

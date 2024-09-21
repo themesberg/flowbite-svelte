@@ -26,6 +26,8 @@ The timeline component can be used to show series of data in a chronological ord
 
 ## Default timeline
 
+The default has no icon slot. If you prefer to have icons, use `order='vertical'` or `order='horizontal'`.
+
 ```svelte example
 <script>
   import { Timeline, TimelineItem, Button } from 'flowbite-svelte';

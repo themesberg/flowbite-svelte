@@ -39,13 +39,14 @@ The default rating icon is a star. Set the total and rating props. The `id` prop
 
 <Rating id="example-1" total={5} size={50} rating={1.4} />
 <Rating id="example-1b" total={5} size={50} rating={4.66} />
+<Rating id="example-1b" iconFillColor='#008800' iconStrokeColor='#008800' total={5} size={50} rating={4.66} />
 ```
 
 ## Stars
 
 You can use the Star component with the `id` and `fillPercent` props.
 
-```svelte example
+```svelte example class="flex"
 <script>
   import { Star } from 'flowbite-svelte';
 </script>
@@ -74,6 +75,9 @@ If you also want to show a text near the stars you can use the `text` slot to ad
 
 <Rating id="example-3" total={5} rating={3.4}>
   <p slot="text" class="ms-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.4 out of 5</p>
+</Rating>
+<Rating id="example-3" total={5} rating={2.8} iconFillColor='#008800' iconStrokeColor='#008800'>
+  <p slot="text" class="ms-2 text-sm font-medium text-gray-500 dark:text-gray-400">2.8 out of 5</p>
 </Rating>
 ```
 
@@ -105,6 +109,7 @@ The default icon size is `24`. Import your icon and set it in a icon props.
 
 <Rating total={5} rating={3.3} id="example-5" icon={Heart} />
 <Rating total={10} rating={7.6} id="example-5b" icon={Heart} />
+<Rating total={10} rating={7.6} id="example-5b" icon={Heart} iconFillColor='#3752d6' iconStrokeColor='#3752d6'/>
 ```
 
 ```svelte example
@@ -114,6 +119,7 @@ The default icon size is `24`. Import your icon and set it in a icon props.
 
 <Rating total={5} rating={4.7} id="example-5c" icon={Thumbup} />
 <Rating total={10} rating={8.2} id="example-5d" icon={Thumbup} />
+<Rating total={10} rating={8.2} id="example-5d" icon={Thumbup} iconFillColor='#ff3f00' iconStrokeColor='#ff3f00'/>
 ```
 
 ## AdvancedRating component

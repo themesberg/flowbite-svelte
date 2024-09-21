@@ -53,4 +53,5 @@
 @prop export let group: number | string | undefined = undefined;
 @prop export let value: number | string = '';
 @prop export let spacing: string = $$slots.default ? 'me-2' : '';
+@prop export let checked: boolean = false;
 -->

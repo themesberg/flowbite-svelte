@@ -2,7 +2,7 @@
   import { cubicOut } from 'svelte/easing';
   import { tweened } from 'svelte/motion';
   import type { EasingFunction } from 'svelte/transition';
-  import { twMerge, twJoin } from 'tailwind-merge';
+  import { twMerge } from 'tailwind-merge';
 
   export let progress: string | number = '45';
   export let precision: number = 0
@@ -15,6 +15,7 @@
   export let color: 'primary' | 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo' = 'primary';
   export let labelInsideClass: string = 'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
   export let divClass: string = 'w-full bg-gray-200 rounded-full dark:bg-gray-700';
+  export let progressClass: string;
 
   const _progress = tweened(0, {
     duration: animate ? tweenDuration : 0,
@@ -44,11 +45,11 @@
 {/if}
 <div class={twMerge(divClass, size, $$props.class)}>
   {#if labelInside}
-    <div class={twJoin(labelInsideClass, barColors[color])} style="width: {$_progress}%">
+    <div class={twMerge(barColors[color], labelInsideClass)} style="width: {$_progress}%">
       {$_progress.toFixed(precision)}%
     </div>
   {:else}
-    <div class={twJoin(barColors[color], size, 'rounded-full')} style="width: {$_progress}%"></div>
+    <div class={twMerge(barColors[color], size, 'rounded-full', progressClass)} style="width: {$_progress}%"></div>
   {/if}
 </div>
 
