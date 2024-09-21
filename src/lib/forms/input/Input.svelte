@@ -24,9 +24,10 @@
       {@render left()}
     </div>
   {/if}
-  <input {...restProps} bind:value class={inputCls({ class: className })} />
   {#if children}
-    {@render children()}
+    {@render children({ ...restProps, class:inputCls() })}
+  {:else}
+    <input {...restProps} bind:value class={inputCls({ class: className })} />
   {/if}
   {#if right}
     <div class={rightCls({ class: classRight })}>

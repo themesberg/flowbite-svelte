@@ -27,7 +27,8 @@
     { name: 'Group', component: ExampleComponents.Group },
     { name: 'Icon', component: ExampleComponents.Icon },
     { name: 'Number', component: ExampleComponents.Number },
-    { name: 'Search', component: ExampleComponents.Search }
+    { name: 'Search', component: ExampleComponents.Search },
+    { name: 'Advanced usage', component: ExampleComponents.AdvancedUsage }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -161,7 +162,7 @@ ${closeBtnStatus ? `</Input>` : ''}${helperSlot ? `<Helper class="ps-6" color="$
   <div class="mb-8 flex flex-wrap">
     <Label class="mb-4 w-full font-bold">Example:</Label>
     {#each exampleArr as style}
-      <Radio labelClass="w-32 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+      <Radio labelClass="w-40 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
   <div class="overflow-auto md:h-[350px]">

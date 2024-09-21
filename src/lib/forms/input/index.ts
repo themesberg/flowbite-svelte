@@ -4,8 +4,8 @@ import type { FormSizeType, ColorName, SizeType } from '$lib/types';
 import type { Snippet } from 'svelte';
 import { input } from './theme';
 
-interface InputProps<T = string> extends Omit<HTMLInputAttributes, 'size'> {
-  children?: Snippet;
+interface InputProps<T = string> extends Omit<HTMLInputAttributes, 'size' | 'children'> {
+  children?: Snippet<[]> | Snippet<[any]>;
   left?: Snippet;
   right?: Snippet;
   size?: FormSizeType;
