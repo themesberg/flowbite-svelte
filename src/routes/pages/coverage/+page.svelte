@@ -116,7 +116,7 @@
       checked: false
     },
     modal: {
-      checked: false
+      checked: true
     },
     navbar: {
       checked: true,

@@ -1,5 +1,10 @@
 import { expect, test } from '@playwright/test';
 
+test('accordion page has expected h1', async ({ page }) => {
+  await page.goto('/components/accordion');
+  expect(await page.textContent('h1')).toContain('Accordion');
+});
+
 test('alet page has expected h1', async ({ page }) => {
   await page.goto('/components/alert');
   expect(await page.textContent('h1')).toContain('Alert');
@@ -43,6 +48,11 @@ test('button group page has expected h1', async ({ page }) => {
 test('cards page has expected h1', async ({ page }) => {
   await page.goto('/components/card');
   expect(await page.textContent('h1')).toBe('Cards');
+});
+
+test('carousel page has expected h1', async ({ page }) => {
+  await page.goto('/components/carousel');
+  expect(await page.textContent('h1')).toContain('Carousel');
 });
 
 test('darkmode page has expected h1', async ({ page }) => {
@@ -90,9 +100,24 @@ test('list-group page has expected h1', async ({ page }) => {
   expect(await page.textContent('h1')).toBe('List group');
 });
 
+test('modal page has expected h1', async ({ page }) => {
+  await page.goto('/components/modal');
+  expect(await page.textContent('h1')).toBe('Modal');
+});
+
 test('navbar page has expected h1', async ({ page }) => {
   await page.goto('/components/navbar');
   expect(await page.textContent('h1')).toBe('Navbar');
+});
+
+test('pagination page has expected h1', async ({ page }) => {
+  await page.goto('/components/pagination');
+  expect(await page.textContent('h1')).toContain('Pagination');
+});
+
+test('popover page has expected h1', async ({ page }) => {
+  await page.goto('/components/popover');
+  expect(await page.textContent('h1')).toContain('Popover');
 });
 
 test('progress page has expected h1', async ({ page }) => {
@@ -120,6 +145,11 @@ test('spinner page has expected h1', async ({ page }) => {
   expect(await page.textContent('h1')).toBe('Spinner');
 });
 
+test('speeddial page has expected h1', async ({ page }) => {
+  await page.goto('/components/speed-dial');
+  expect(await page.textContent('h1')).toContain('Speed dial');
+});
+
 test('tab page has expected h1', async ({ page }) => {
   await page.goto('/components/tabs');
   expect(await page.textContent('h1')).toBe('Tabs');
@@ -130,9 +160,19 @@ test('table page has expected h1', async ({ page }) => {
   expect(await page.textContent('h1')).toBe('Table');
 });
 
+test('timeline page has expected h1', async ({ page }) => {
+  await page.goto('/components/timeline');
+  expect(await page.textContent('h1')).toBe('Timeline');
+});
+
 test('toast page has expected h1', async ({ page }) => {
   await page.goto('/components/toast');
   expect(await page.textContent('h1')).toBe('Toast');
+});
+
+test('tooltip page has expected h1', async ({ page }) => {
+  await page.goto('/components/tooltip');
+  expect(await page.textContent('h1')).toBe('Tooltip');
 });
 
 test('video page has expected h1', async ({ page }) => {

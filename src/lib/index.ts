@@ -19,6 +19,7 @@ export * from './gallery';
 export * from './indicator';
 export * from './kbd';
 export * from './list-group';
+export * from './modal';
 export * from './nav';
 export * from './pagination';
 export * from './popover';

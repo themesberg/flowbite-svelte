@@ -47,7 +47,7 @@
   });
 </script>
 
-<H1>Search Input</H1>
+<H1>Search input</H1>
 <H2>Setup</H2>
 <HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
@@ -60,7 +60,7 @@
       <Radio labelClass="w-44 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
-  <div class="h-48 overflow-auto">
+  <div class="h-24">
     <SelectedComponent />
   </div>
   {#snippet codeblock()}
