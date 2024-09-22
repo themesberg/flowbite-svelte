@@ -12,17 +12,17 @@ export const search = tv({
     size: {
       sm: {
         input: 'text-xs p-2 ps-9 pe-9 ',
-        icon: 'w-3 h-3',
+        icon: 'w-3 h-3'
         // leftDiv: 'ps-2.5',
       },
       md: {
         input: 'text-sm p-2.5 ps-10 pe-10',
-        icon: 'w-4 h-4',
+        icon: 'w-4 h-4'
         // leftDiv: 'ps-10',
       },
       lg: {
         input: 'sm:text-base p-3 ps-11 pe-11',
-        icon: 'w-6 h-6',
+        icon: 'w-6 h-6'
         // leftDiv: 'ps-11',
       }
     }

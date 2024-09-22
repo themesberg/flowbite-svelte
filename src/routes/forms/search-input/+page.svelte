@@ -20,7 +20,8 @@
   });
 
   const exampleArr = [
-    { name: 'Size large', component: ExampleComponents.SizeLarge },{ name: 'Simple search', component: ExampleComponents.SimpleSearch },
+    { name: 'Size large', component: ExampleComponents.SizeLarge },
+    { name: 'Simple search', component: ExampleComponents.SimpleSearch },
     { name: 'Search with dropdown', component: ExampleComponents.SearchWithDropdown }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);

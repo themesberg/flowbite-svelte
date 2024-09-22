@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.15
+
+### Patch Changes
+
+- fix: Search component ([`aee5a4f00e8d32481255fb24bc7bd05bd1ad24e8`](https://github.com/shinokada/svelte-5-ui-lib/commit/aee5a4f00e8d32481255fb24bc7bd05bd1ad24e8))
+
 ## 0.9.14
 
 ### Patch Changes
