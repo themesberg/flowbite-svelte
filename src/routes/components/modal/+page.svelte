@@ -141,7 +141,7 @@ Modal content
 
 <H1>Modal</H1>
 
-<H2>Interactive Alert Bilder</H2>
+<H2>Interactive Modal Bilder</H2>
 
 <CodeWrapper>
   <div class="mb-4 h-20">
