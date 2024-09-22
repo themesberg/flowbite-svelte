@@ -20,8 +20,7 @@
   });
 
   const exampleArr = [
-    { name: 'Default search', component: ExampleComponents.DefaultSearch },
-    { name: 'Simple search', component: ExampleComponents.SimpleSearch },
+    { name: 'Size large', component: ExampleComponents.SizeLarge },{ name: 'Simple search', component: ExampleComponents.SimpleSearch },
     { name: 'Search with dropdown', component: ExampleComponents.SearchWithDropdown }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
@@ -60,9 +59,7 @@
       <Radio labelClass="w-44 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
-  <div class="h-24">
-    <SelectedComponent />
-  </div>
+  <SelectedComponent />
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${svelteCode}`] as string} />
   {/snippet}

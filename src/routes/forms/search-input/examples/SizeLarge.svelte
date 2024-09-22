@@ -2,6 +2,6 @@
   import { Search, Button } from '$lib';
 </script>
 
-<Search class="pl-10">
-  <Button class="mr-1">Search</Button>
+<Search size="lg">
+  <Button class="mr-2">Search</Button>
 </Search>

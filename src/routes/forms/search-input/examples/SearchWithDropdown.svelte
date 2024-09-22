@@ -22,6 +22,7 @@
   });
 </script>
 
+<div class="h-48">
 <form class="flex">
   <Button class="whitespace-nowrap rounded-e-none border border-e-0 border-primary-700" onclick={dropdown.toggle}>
     {selectCategory}
@@ -38,8 +39,9 @@
       </DropdownUl>
     </Dropdown>
   </div>
-  <Search size="md" class="rounded-none py-2.5 pl-8" placeholder="Searching {selectCategory}" />
+  <Search inputClass="rounded-none py-3 pl-8" placeholder="Searching {selectCategory}" />
   <Button class="rounded-s-none !p-2.5">
     <SearchOutline class="h-6 w-6" />
   </Button>
 </form>
+</div>

@@ -1,30 +1,21 @@
 <script lang="ts">
-  import { Input } from '$lib';
   import { type SearchProps as Props, search } from '.';
 
-  let { children, right, size = 'lg', placeholder = 'Search', value = $bindable(), show = true, use = () => {}, class: className, ...restProps }: Props<unknown> = $props();
+  let { children, right, inputClass, size = 'md', placeholder = 'Search', value = $bindable(), show = true, use = () => {}, class: className, ...restProps }: Props<unknown> = $props();
 
-  const { base, content, icon } = $derived(search());
+  const { base, content, icon, input: inputCls, leftDiv } = $derived(search({ size }));
 </script>
 
-{#if show}
-  <div class={base()} use:use>
-    <Input bind:value type="search" {placeholder} {size} {...restProps} class={className}>
-      {#snippet left()}
-        <svg class={icon()} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
-        </svg>
-      {/snippet}
-      {#if right}
-        {@render right()}
-      {/if}
-    </Input>
-    {#if children}
-      <div class={content()}>
-        {@render children()}
-      </div>
-    {/if}
+<div class={base()}>
+  <div class={leftDiv()}>
+      <svg class={icon()} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+      </svg>
   </div>
-{:else if children}
-  {@render children()}
-{/if}
+  <input type="search" class={inputCls({ class: inputClass})} {placeholder} required {...restProps}/>
+  {#if children}
+    <div class={content()}>
+      {@render children()}
+    </div>
+  {/if}
+</div>
