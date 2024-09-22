@@ -14,7 +14,7 @@
 
 <Modal {modalStatus} {closeModal}>
   {#snippet header()}
-    <h2 class="text-xl weight-bold text-pink-700">Terms of Service</h2>
+    <h2 class="weight-bold text-xl text-pink-700">Terms of Service</h2>
   {/snippet}
   <!-- Modal body -->
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>

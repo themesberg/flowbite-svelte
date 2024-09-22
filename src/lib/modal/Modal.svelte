@@ -7,7 +7,17 @@
 
   let { children, header, footer, title, modalStatus, dismissable = true, closeModal, divClass, contentClass, closeBtnClass, h3Class, headerClass, bodyClass, footerClass, outsideClose = true, size = 'md', backdrop = true, backdropClass, position = 'center', class: className, params = { duration: 100, easing: sineIn }, transition = fade, rounded = true, shadow = true, ...restProps }: Props = $props();
 
-  const { base, div, content, backdrop: backdropCls, header: headerCls, footer: footerCls, body, closeBtn, h3 } = $derived(
+  const {
+    base,
+    div,
+    content,
+    backdrop: backdropCls,
+    header: headerCls,
+    footer: footerCls,
+    body,
+    closeBtn,
+    h3
+  } = $derived(
     modal({
       position,
       size,
@@ -15,7 +25,6 @@
       rounded
     })
   );
-  
 </script>
 
 {#if modalStatus}
@@ -41,13 +50,13 @@
               {@render header()}
             {/if}
             {#if dismissable}
-              <CloseButton onclick={closeModal} class={closeBtn({ class: closeBtnClass })}/>
+              <CloseButton onclick={closeModal} class={closeBtn({ class: closeBtnClass })} />
             {/if}
           </div>
         {/if}
         <div class={body({ class: bodyClass })}>
           {#if dismissable && !title && !header}
-            <CloseButton onclick={closeModal} class={closeBtn({ class: closeBtnClass })}/>
+            <CloseButton onclick={closeModal} class={closeBtn({ class: closeBtnClass })} />
           {/if}
           {@render children()}
         </div>

@@ -25,7 +25,7 @@
     </div>
   {/if}
   {#if children}
-    {@render children({ ...restProps, class:inputCls() })}
+    {@render children({ ...restProps, class: inputCls() })}
   {:else}
     <input {...restProps} bind:value class={inputCls({ class: className })} />
   {/if}

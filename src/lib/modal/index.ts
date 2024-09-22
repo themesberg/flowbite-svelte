@@ -10,9 +10,9 @@ type WidthType = VariantProps<typeof modal>['size'];
 type PosisionType = VariantProps<typeof modal>['position'];
 interface ModalProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
-  header?: Snippet,
-  footer?: Snippet,
-  title?: string,
+  header?: Snippet;
+  footer?: Snippet;
+  title?: string;
   modalStatus: boolean;
   dismissable?: boolean;
   closeModal?: () => void;
@@ -37,4 +37,3 @@ interface ModalProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export { Modal, modal, type ModalProps };
-

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.14
+
+### Patch Changes
+
+- feat: modal component and page ([`47c51b8ddbbda5209099f2b88636a05e0218d398`](https://github.com/shinokada/svelte-5-ui-lib/commit/47c51b8ddbbda5209099f2b88636a05e0218d398))
+
 ## 0.9.13
 
 ### Patch Changes

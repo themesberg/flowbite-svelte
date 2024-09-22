@@ -10,7 +10,7 @@ export const modal = tv({
     footer: 'flex items-center p-4 md:p-5 space-x-3 rtl:space-x-reverse rounded-b-lg',
     body: 'p-4 md:p-5 space-y-4 flex-1 overflow-y-auto overscroll-contain',
     closeBtn: 'absolute top-3 end-2.5',
-    h3:'text-xl font-semibold text-gray-900 dark:text-white p-0'
+    h3: 'text-xl font-semibold text-gray-900 dark:text-white p-0'
   },
   variants: {
     // position: {
@@ -18,32 +18,32 @@ export const modal = tv({
     //   absolute: { base: 'absolute' }
     // },
     position: {
-      'top-left': { base: 'justify-start items-start'},
-      'top-center': { base: 'justify-center items-start'},
-      'top-right': { base: 'justify-end items-start'},
-      'center-left': { base: 'justify-start items-center'},
-      'center': { base: 'justify-center items-center'},
-      'center-right': { base: 'justify-end items-center'},
-      'bottom-left': { base: 'justify-start items-end'},
-      'bottom-center': { base: 'justify-center items-end'},
-      'bottom-right': { base: 'justify-end items-end'},
-      'default': { base: 'justify-center items-center'}
+      'top-left': { base: 'justify-start items-start' },
+      'top-center': { base: 'justify-center items-start' },
+      'top-right': { base: 'justify-end items-start' },
+      'center-left': { base: 'justify-start items-center' },
+      center: { base: 'justify-center items-center' },
+      'center-right': { base: 'justify-end items-center' },
+      'bottom-left': { base: 'justify-start items-end' },
+      'bottom-center': { base: 'justify-center items-end' },
+      'bottom-right': { base: 'justify-end items-end' },
+      default: { base: 'justify-center items-center' }
     },
     size: {
       xs: { div: 'max-w-md' },
       sm: { div: 'max-w-lg' },
       md: { div: 'max-w-2xl' },
       lg: { div: 'max-w-4xl' },
-      xl: { div: 'max-w-7xl' },
+      xl: { div: 'max-w-7xl' }
     },
     backdrop: {
       true: { backdrop: 'bg-gray-900 bg-opacity-75' }
     },
     rounded: {
-      true: { content: 'rounded' },
+      true: { content: 'rounded' }
     },
     shadow: {
       true: { content: 'shadow-md' }
     }
-  },
-})
+  }
+});

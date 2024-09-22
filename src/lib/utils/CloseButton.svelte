@@ -26,7 +26,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop color = 'primary'
+@prop color = 'gray'
 @prop onclick
 @prop name = 'Close'
 @prop ariaLabel

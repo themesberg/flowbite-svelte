@@ -14,8 +14,8 @@
 
 <Modal title="Terms of Service" {modalStatus} {closeModal} outsideClose={false}>
   {#snippet footer()}
-  <Button on:click={() => alert('Handle "success"')}>I accept</Button>
-  <Button color="alternative" onclick={closeModal}>Decline</Button>
+    <Button on:click={() => alert('Handle "success"')}>I accept</Button>
+    <Button color="alternative" onclick={closeModal}>Decline</Button>
   {/snippet}
   <!-- Modal body -->
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>

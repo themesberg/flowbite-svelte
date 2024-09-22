@@ -19,44 +19,44 @@
   <Button onclick={modalExample.toggle}>Pop-up modal</Button>
 </div>
 
-<Modal title="Connect wallet"   {modalStatus} {closeModal}  size="xs">
+<Modal title="Connect wallet" {modalStatus} {closeModal} size="xs">
   <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Connect with one of our available wallet providers or create a new one.</p>
   <ul class="my-4 space-y-3">
     <li>
-      <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+      <a href="/" class="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500">
         <MetaMask />
-        <span class="flex-1 ms-3 whitespace-nowrap">MetaMask</span>
-        <span class="inline-flex items-center justify-center px-2 py-0.5 ms-3 text-xs font-medium text-gray-500 bg-gray-200 rounded dark:bg-gray-700 dark:text-gray-400"> Popular </span>
+        <span class="ms-3 flex-1 whitespace-nowrap">MetaMask</span>
+        <span class="ms-3 inline-flex items-center justify-center rounded bg-gray-200 px-2 py-0.5 text-xs font-medium text-gray-500 dark:bg-gray-700 dark:text-gray-400">Popular</span>
       </a>
     </li>
     <li>
-      <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+      <a href="/" class="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500">
         <CoinbaseWallet />
-        <span class="flex-1 ms-3 whitespace-nowrap">Coinbase Wallet</span>
+        <span class="ms-3 flex-1 whitespace-nowrap">Coinbase Wallet</span>
       </a>
     </li>
     <li>
-      <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+      <a href="/" class="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500">
         <OperaWallet />
-        <span class="flex-1 ms-3 whitespace-nowrap">Opera Wallet</span>
+        <span class="ms-3 flex-1 whitespace-nowrap">Opera Wallet</span>
       </a>
     </li>
     <li>
-      <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+      <a href="/" class="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500">
         <WalletConnect />
-        <span class="flex-1 ms-3 whitespace-nowrap">WalletConnect</span>
+        <span class="ms-3 flex-1 whitespace-nowrap">WalletConnect</span>
       </a>
     </li>
     <li>
-      <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+      <a href="/" class="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500">
         <Fortmatic />
-        <span class="flex-1 ms-3 whitespace-nowrap">Fortmatic</span>
+        <span class="ms-3 flex-1 whitespace-nowrap">Fortmatic</span>
       </a>
     </li>
   </ul>
   <div>
     <a href="/" class="inline-flex items-center text-xs font-normal text-gray-500 hover:underline dark:text-gray-400">
-      <QuestionCircleOutline class="w-3 h-3 me-2" /> Why do I need to connect with my wallet?
+      <QuestionCircleOutline class="me-2 h-3 w-3" /> Why do I need to connect with my wallet?
     </a>
   </div>
 </Modal>

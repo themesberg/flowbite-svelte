@@ -28,7 +28,7 @@
     { name: 'Disable outsideclose', component: ExampleComponents.DisableOutsideclose },
     { name: 'Crypto wallet', component: ExampleComponents.CryptoWallet },
     { name: 'Header snippet', component: ExampleComponents.HeaderSnippet },
-    { name: 'Footer snippet', component: ExampleComponents.FooterSnippet },
+    { name: 'Footer snippet', component: ExampleComponents.FooterSnippet }
   ];
   let selectedExample = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -55,15 +55,15 @@
   let backdrop = $state(true);
   const changeBackdrop = () => {
     backdrop = !backdrop;
-  }
+  };
   let outsideClose = $state(true);
   const changeOutsideClose = () => {
     outsideClose = !outsideClose;
-  }
+  };
   let rounded = $state(true);
   const changeRounded = () => {
     rounded = !rounded;
-  }
+  };
 
   // transition
   // let transitionStatus = $state(false);
@@ -89,7 +89,7 @@
       if (modalSize !== 'md') props.push(`size="${modalSize}"`);
       if (!backdrop) props.push('backdrop={false}');
       if (!outsideClose) props.push('outsideClose={false}');
-      if (!rounded) props.push('rounded={false}'); 
+      if (!rounded) props.push('rounded={false}');
       if (modalPosition !== 'default') props.push(`position="${modalPosition}"`);
 
       if (currentTransition !== transitions[0]) {
@@ -148,10 +148,8 @@ Modal content
     <div class="flex justify-center">
       <Button onclick={interactiveModalExample.toggle}>Default modal</Button>
     </div>
-      
-    <Modal title="Terms of Service" size={modalSize} {backdrop} 
-    {outsideClose} {rounded} position={modalPosition} transition={currentTransition.transition} params={currentTransition.params}
-    modalStatus={interactiveModalStatus} closeModal={closeInteractiveModal}>
+
+    <Modal title="Terms of Service" size={modalSize} {backdrop} {outsideClose} {rounded} position={modalPosition} transition={currentTransition.transition} params={currentTransition.params} modalStatus={interactiveModalStatus} closeModal={closeInteractiveModal}>
       <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident odit quis fugit beatae, veritatis minus cupiditate ea numquam facere iusto vitae sequi, ipsum ducimus quo eaque illum. Eveniet, dolorem autem.</p>
     </Modal>
   </div>
