@@ -199,7 +199,7 @@
     },
     inputField: {
       checked: true,
-      problems: 'Advanced usage'
+      // problems: 'Advanced usage'
       // notes: 'Variants, reactive examples'
     },
     label: {
