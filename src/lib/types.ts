@@ -105,3 +105,10 @@ export type ParamsType = FadeParams | BlurParams | FlyParams | SlideParams | Sca
 export type TransitionFunc = (node: HTMLElement, params: ParamsType) => TransitionConfig;
 
 export type ModalPlacementType = 'top-left' | 'top-center' | 'top-right' | 'center-left' | 'center' | 'center-right' | 'bottom-left' | 'bottom-center' | 'bottom-right';
+
+export interface LinkType {
+  name: string;
+  href?: string;
+  rel?: string;
+  active?: boolean;
+}
