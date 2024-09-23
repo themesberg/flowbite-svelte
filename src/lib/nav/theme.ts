@@ -83,7 +83,7 @@ export const navLi = tv({
   variants: {
     active: {
       true: {
-        link: 'bg-primary-700 text-white dark:bg-primary-600',
+        link: 'bg-primary-700 text-white dark:bg-primary-700',
       },
     },
     breakPoint: {
@@ -106,28 +106,28 @@ export const navLi = tv({
       active: true,
       breakPoint: 'md',
       class: {
-        link: 'md:bg-transparent md:text-primary-700 md:p-0 md:dark:text-primary-500',
+        link: 'md:bg-transparent md:text-primary-700 md:p-0 md:dark:text-white',
       },
     },
     {
       active: true,
       breakPoint: 'lg',
       class: {
-        link: 'lg:bg-transparent lg:text-primary-700 lg:p-0 lg:dark:text-primary-500',
+        link: 'lg:bg-transparent lg:text-primary-700 lg:p-0 lg:dark:text-white',
       },
     },
     {
       active: true,
       breakPoint: 'xl',
       class: {
-        link: 'xl:bg-transparent xl:text-primary-700 xl:p-0 xl:dark:text-primary-500',
+        link: 'xl:bg-transparent xl:text-primary-700 xl:p-0 xl:dark:text-white',
       },
     },
     {
       active: true,
       breakPoint: 'xxl',
       class: {
-        link: '2xl:bg-transparent 2xl:text-primary-700 2xl:p-0 2xl:dark:text-primary-500',
+        link: '2xl:bg-transparent 2xl:text-primary-700 2xl:p-0 2xl:dark:text-white',
       },
     },
   ],
