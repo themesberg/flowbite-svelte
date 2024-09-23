@@ -4,7 +4,7 @@
   import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
   import { linear } from 'svelte/easing';
   import { Radio, Label, Modal, modal, Button, uiHelpers } from '$lib';
-  // import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -109,8 +109,8 @@
 
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
-      return `<Modal${propsString}>
-Modal content
+      return `<Modal title="Terms of Service" {modalStatus} {closeModal}${propsString}>
+  Modal content
 </Modal>`;
     })()
   );
@@ -140,6 +140,10 @@ Modal content
 </script>
 
 <H1>Modal</H1>
+
+<H2>Setup</H2>
+
+<HighlightCompo code={exampleModules[`./examples/Setup.svelte`] as string} />
 
 <H2>Interactive Modal Bilder</H2>
 
