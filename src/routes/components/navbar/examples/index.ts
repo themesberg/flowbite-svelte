@@ -5,3 +5,4 @@ export { default as Dropdown } from './Dropdown.svelte';
 export { default as SearchNavbar } from './SearchNavbar.svelte';
 export { default as CtaButton } from './CtaButton.svelte';
 export { default as BackgroundColor } from './BackgroundColor.svelte'
+export { default as UserDropdown } from './UserDropdown.svelte'

@@ -6,7 +6,6 @@
   $effect(() => {
     navStatus = nav.isOpen;
   });
-  // $inspect('navStatus:', navStatus);
 </script>
 
 <Navbar {navStatus} breakPoint="md" hamburgerMenu={false}>

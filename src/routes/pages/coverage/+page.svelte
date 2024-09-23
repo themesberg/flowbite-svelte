@@ -120,7 +120,7 @@
     },
     navbar: {
       checked: true,
-      problems: 'User menu dropdown'
+      // problems: 'User menu dropdown'
     },
     pagination: {
       checked: true
