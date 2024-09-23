@@ -10,3 +10,4 @@ export { default as LogoBranding } from './LogoBranding.svelte';
 export { default as LogoBrandingWithChildren } from './LogoBrandingWithChildren.svelte';
 export { default as DropdownTransition } from './DropdownTransition.svelte';
 export { default as CloseButton } from './CloseButton.svelte';
+export { default as StaticPositioning } from './StaticPositioning.svelte';
