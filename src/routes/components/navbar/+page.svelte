@@ -19,7 +19,7 @@
   });
 
   const exampleArr = [
-    // { name: 'Search', component: ExampleComponents.Search },
+    { name: 'Cta button', component: ExampleComponents.CtaButton },
     { name: 'Default', component: ExampleComponents.Default },
     { name: 'Breakpoint', component: ExampleComponents.Breakpoint },
     { name: 'Sticky', component: ExampleComponents.Sticky },

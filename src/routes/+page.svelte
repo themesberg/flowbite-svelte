@@ -25,8 +25,8 @@
 
 <H2>Installation</H2>
 
-<H3>Svelte-5 Runes</H3>
-After installing Svelte-5, update `svelte.config.js` to enable `runes`:
+<H3>Svelte 5 Runes</H3>
+Installing Svelte 5:
 
 <HighlightCompo codeLang="js" code={modules['./md/runes.md'] as string} />
 

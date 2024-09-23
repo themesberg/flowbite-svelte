@@ -62,6 +62,7 @@ export const fileList = [
   "src/lib/list-group/ListgroupItem.svelte",
   "src/lib/modal/Modal.svelte",
   "src/lib/nav/NavBrand.svelte",
+  "src/lib/nav/NavHamburger.svelte",
   "src/lib/nav/NavLi.svelte",
   "src/lib/nav/NavUl.svelte",
   "src/lib/nav/Navbar.svelte",

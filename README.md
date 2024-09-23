@@ -6,26 +6,6 @@ UI library for Svelte 5
 
 ## Installation
 
-After installing Svelte-5, update `svelte.config.js` to enable `runes`:
-
-```js
-import adapter from '@sveltejs/adapter-auto';
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-
-/** @type {import('@sveltejs/kit').Config} */
-const config = {
-  preprocess: [vitePreprocess({})],
-  compilerOptions: {
-    runes: true
-  },
-  kit: {
-    adapter: adapter()
-  }
-};
-
-export default config;
-```
-
 Install `svelte-5-ui-lib`, update dependencies and install the latest:
 
 ```sh
