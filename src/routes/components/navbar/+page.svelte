@@ -26,7 +26,8 @@
     { name: 'Sticky', component: ExampleComponents.Sticky },
     { name: 'Search navbar', component: ExampleComponents.SearchNavbar },
     // need to fix this for extra space for div relative
-    { name: 'Dropdown', component: ExampleComponents.Dropdown }
+    { name: 'Dropdown', component: ExampleComponents.Dropdown },
+    { name: 'Background color', component: ExampleComponents.BackgroundColor },
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));

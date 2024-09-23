@@ -120,7 +120,7 @@
     },
     navbar: {
       checked: true,
-      problems: 'Navbar with search, Navbar with CTA button, User menu dropdown, Solid background'
+      problems: 'User menu dropdown'
     },
     pagination: {
       checked: true
