@@ -22,13 +22,13 @@
     { name: 'Default', component: ExampleComponents.Default },
     { name: 'Close button', component: ExampleComponents.CloseButton },
     { name: 'Active class', component: ExampleComponents.ActiveClass },
-    { name: 'Overriding active element', component: ExampleComponents.OverridingActiveElement },
+    { name: 'Overriding active', component: ExampleComponents.OverridingActive },
     { name: 'Multilevel', component: ExampleComponents.Multilevel },
     { name: 'Content separator', component: ExampleComponents.ContentSeparator },
     { name: 'Icon', component: ExampleComponents.Icon },
     { name: 'Cta', component: ExampleComponents.Cta },
     { name: 'Logo branding', component: ExampleComponents.LogoBranding },
-    { name: 'Logo branding with children', component: ExampleComponents.LogoBrandingWithChildren },
+    { name: 'Branding with children', component: ExampleComponents.BrandingWithChildren },
     { name: 'Dropdown transition', component: ExampleComponents.DropdownTransition },
     { name: 'Static positioning', component: ExampleComponents.StaticPositioning }
   ];
@@ -60,7 +60,7 @@
   <div class="mb-12 flex flex-wrap">
     <Label class="mb-4 w-full font-bold">Example:</Label>
     {#each exampleArr as style}
-      <Radio labelClass="w-40 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
+      <Radio labelClass="w-48 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
   <SelectedComponent />
