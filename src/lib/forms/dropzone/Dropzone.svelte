@@ -1,7 +1,7 @@
 <script lang="ts">
   import { type DropzoneProps as Props, dropzone } from '.';
 
-  let { children, value, files, class: className, ...restProps }: Props = $props();
+  let { children, value = $bindable<string | undefined>(), files = $bindable<FileList | null>(), class: className, ...restProps }: Props = $props();
 
   const base = $derived(dropzone({ className }));
   let input: HTMLInputElement;
