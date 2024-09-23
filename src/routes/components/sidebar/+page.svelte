@@ -29,7 +29,8 @@
     { name: 'Cta', component: ExampleComponents.Cta },
     { name: 'Logo branding', component: ExampleComponents.LogoBranding },
     { name: 'Logo branding with children', component: ExampleComponents.LogoBrandingWithChildren },
-    { name: 'Dropdown transition', component: ExampleComponents.DropdownTransition }
+    { name: 'Dropdown transition', component: ExampleComponents.DropdownTransition },
+    { name: 'Static positioning', component: ExampleComponents.StaticPositioning }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
