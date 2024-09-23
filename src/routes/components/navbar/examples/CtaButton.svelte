@@ -3,12 +3,10 @@
   let nav = uiHelpers();
   let navStatus = $state(false);
   let toggleNav = nav.toggle;
-  let closeNav = nav.close;
-  // let openNav = nav.open;
   $effect(() => {
     navStatus = nav.isOpen;
   });
-  $inspect('navStatus:', navStatus);
+  // $inspect('navStatus:', navStatus);
 </script>
 
 <Navbar {navStatus} breakPoint="md" hamburgerMenu={false}>
@@ -23,12 +21,9 @@
     <NavHamburger {toggleNav}/>
   </div>
   {/snippet}
-  
   <NavUl class="order-1">
     <NavLi href="/">Home</NavLi>
     <NavLi href="/components/navbar">Navbar</NavLi>
     <NavLi href="/components/footer">Footer</NavLi>
   </NavUl>
-  
-  
 </Navbar>

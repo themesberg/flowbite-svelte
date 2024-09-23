@@ -19,10 +19,12 @@
   });
 
   const exampleArr = [
-    { name: 'Cta button', component: ExampleComponents.CtaButton },
+    
     { name: 'Default', component: ExampleComponents.Default },
     { name: 'Breakpoint', component: ExampleComponents.Breakpoint },
+    { name: 'Cta button', component: ExampleComponents.CtaButton },
     { name: 'Sticky', component: ExampleComponents.Sticky },
+    { name: 'Search navbar', component: ExampleComponents.SearchNavbar },
     // need to fix this for extra space for div relative
     { name: 'Dropdown', component: ExampleComponents.Dropdown }
   ];
