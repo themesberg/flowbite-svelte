@@ -83,7 +83,7 @@ export const navLi = tv({
   variants: {
     active: {
       true: {
-        link: 'bg-primary-700 text-white dark:bg-primary-700',
+        link: 'bg-primary-700 text-white dark:bg-primary-600',
       },
     },
     breakPoint: {
