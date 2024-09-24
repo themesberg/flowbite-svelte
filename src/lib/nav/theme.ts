@@ -88,16 +88,16 @@ export const navLi = tv({
     },
     breakPoint: {
       md: {
-        link: 'md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 md:dark:hover:text-primary-500 md:dark:hover:bg-transparent',
+        link: 'md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:dark:hover:text-primary-500 md:dark:hover:bg-transparent',
       },
       lg: {
-        link: 'lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 lg:dark:hover:text-primary-500 lg:dark:hover:bg-transparent',
+        link: 'lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:dark:hover:text-primary-500 lg:dark:hover:bg-transparent',
       },
       xl: {
-        link: 'xl:hover:bg-transparent xl:border-0 xl:hover:text-primary-700 xl:p-0 xl:dark:hover:text-primary-500 xl:dark:hover:bg-transparent',
+        link: 'xl:hover:bg-transparent xl:border-0 xl:hover:text-primary-700 xl:dark:hover:text-primary-500 xl:dark:hover:bg-transparent',
       },
       xxl: {
-        link: '2xl:hover:bg-transparent 2xl:border-0 2xl:hover:text-primary-700 2xl:p-0 2xl:dark:hover:text-primary-500 2xl:dark:hover:bg-transparent',
+        link: '2xl:hover:bg-transparent 2xl:border-0 2xl:hover:text-primary-700 2xl:dark:hover:text-primary-500 2xl:dark:hover:bg-transparent',
       },
     },
   },
@@ -106,28 +106,28 @@ export const navLi = tv({
       active: true,
       breakPoint: 'md',
       class: {
-        link: 'md:bg-transparent md:text-primary-700 md:p-0 md:dark:text-white',
+        link: 'md:bg-transparent md:text-primary-700 md:dark:text-white',
       },
     },
     {
       active: true,
       breakPoint: 'lg',
       class: {
-        link: 'lg:bg-transparent lg:text-primary-700 lg:p-0 lg:dark:text-white',
+        link: 'lg:bg-transparent lg:text-primary-700 lg:dark:text-white',
       },
     },
     {
       active: true,
       breakPoint: 'xl',
       class: {
-        link: 'xl:bg-transparent xl:text-primary-700 xl:p-0 xl:dark:text-white',
+        link: 'xl:bg-transparent xl:text-primary-700 xl:dark:text-white',
       },
     },
     {
       active: true,
       breakPoint: 'xxl',
       class: {
-        link: '2xl:bg-transparent 2xl:text-primary-700 2xl:p-0 2xl:dark:text-white',
+        link: '2xl:bg-transparent 2xl:text-primary-700 2xl:dark:text-white',
       },
     },
   ],
