@@ -15,13 +15,6 @@
   interface ListType {
     [key: string]: Component;
   }
-  // const toDos: ListType = {
-  //   types: {
-  //     checked: false,
-  //     problems: 'TransitionParamTypes to FadeParams, BlurParams, FlyParams, SlideParams, ScaleParams, DrawParams, CrossfadeParams'
-  //   }
-  //   // Button add checked variant for RadioButton
-  // };
 
   const components: ListType = {
     accordion: {
@@ -48,7 +41,7 @@
     },
     bottomNavigation: {
       checked: true,
-      problems: '(Tooltip: current tooltip position does not work within relative div) Application bar example, Example with pagination, Button group bottom bar, Card with bottom bar',
+      problems: 'Tooltip',
       // notes: 'Variants'
     },
     breadcrumb: {
@@ -74,7 +67,7 @@
     },
     darkmode: {
       checked: true,
-      problems: 'Switcher style'
+      // problems: 'Switcher style'
     },
     deviceMockups: {
       checked: true
