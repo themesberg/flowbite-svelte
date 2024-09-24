@@ -91,6 +91,7 @@
 
   let selectedTransition = $state('Fly');
   let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
+  $inspect('currentTransition name', currentTransition.name);
 
   // code generator
   let generatedCode = $derived(
@@ -103,7 +104,7 @@
       if (alertClass) props.push(` class="${alertClass}"`);
       if (!alertStatusInteractive) props.push(' alertStatus={false}');
       if (currentTransition !== transitions[0] && dismissable) {
-        props.push(` transition={${currentTransition.transition.name}}`);
+        props.push(` transition={${(currentTransition.name).toLowerCase()}}`);
 
         // Generate params string without quotes and handle functions
         const paramsString = Object.entries(currentTransition.params)
