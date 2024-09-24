@@ -5,7 +5,7 @@ import type { Snippet } from 'svelte';
 import { input } from './theme';
 
 interface InputProps<T = string> extends Omit<HTMLInputAttributes, 'size' | 'children'> {
-  children?: Snippet<[]> | Snippet<[any]>;
+  children?: Snippet<[{ class: string } & Record<string, unknown>]>;
   left?: Snippet;
   right?: Snippet;
   size?: FormSizeType;

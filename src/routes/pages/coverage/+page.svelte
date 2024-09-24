@@ -79,8 +79,8 @@
       // notes: 'Variants checked'
     },
     dropdown: {
-      checked: true
-      // problems:
+      checked: true,
+      problems: 'apply floating-ui'
       //   'Sizes, Placement, Double placement, Events'
       // notes: 'Variants checked'
     },
@@ -106,7 +106,8 @@
       // notes: 'Variants checked'
     },
     megaMenu: {
-      checked: false
+      checked: true,
+      problems: 'apply floating-ui'
     },
     modal: {
       checked: true
@@ -120,8 +121,8 @@
       // notes: 'Variants, reactive examples'
     },
     popover: {
-      checked: true
-      // problems: 'Paragraph popover'
+      checked: true,
+      problems: 'apply floating-ui'
     },
     progress: {
       checked: true
@@ -143,7 +144,8 @@
       // notes: 'Variants, reactive examples'
     },
     speedDial: {
-      checked: false
+      checked: false,
+      problems: 'apply floating-ui'
     },
     table: {
       checked: true,

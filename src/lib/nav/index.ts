@@ -30,7 +30,7 @@ interface NavbarProps extends HTMLAttributes<HTMLElement> {
 
 interface NavBrandProps extends HTMLAnchorAttributes {
   children?: Snippet;
-  siteName: string | undefined | null;
+  siteName?: string | undefined | null;
   closeNav?: () => void;
   aClass?: string;
   spanClass?: string;

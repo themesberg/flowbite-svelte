@@ -15,7 +15,9 @@
   {#if children}
     {@render children()}
   {/if}
-  <span class={span({class: spanClass})}>{siteName}</span>
+  {#if siteName}
+    <span class={span({class: spanClass})}>{siteName}</span>
+  {/if}
 </a>
 
 <!--

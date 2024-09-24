@@ -16,6 +16,7 @@
   const { input: inputCls, left: leftCls, right: rightCls } = $derived(input({ size: _size, color: _color, group: isGroup, class: className }));
 
   // $inspect('input', inputCls());
+  // let 
 </script>
 
 {#snippet inputContent()}
