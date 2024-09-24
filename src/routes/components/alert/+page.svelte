@@ -104,13 +104,13 @@
       if (alertClass) props.push(` class="${alertClass}"`);
       if (!alertStatusInteractive) props.push(' alertStatus={false}');
       if (currentTransition !== transitions[0] && dismissable) {
-        props.push(` transition={${(currentTransition.name).toLowerCase()}}`);
+        props.push(` transition={${currentTransition.transition.name.toString()}}`);
 
         // Generate params string without quotes and handle functions
         const paramsString = Object.entries(currentTransition.params)
           .map(([key, value]) => {
             if (typeof value === 'function') {
-              return `${key}:${value.name}`;
+              return `${key}:${value.name.toString()}`;
             }
             return `${key}:${value}`;
           })
