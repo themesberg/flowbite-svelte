@@ -1,1 +1,10 @@
-{"name":"RatingComment","slots":["evaluation"],"events":[],"props":[["ceil","boolean","false"],["helpfullink","string","''"],["abuselink","string","''"]]}
+{
+  "name": "RatingComment",
+  "slots": ["evaluation"],
+  "events": [],
+  "props": [
+    ["ceil", "boolean", "false"],
+    ["helpfullink", "string", "''"],
+    ["abuselink", "string", "''"]
+  ]
+}

@@ -9,21 +9,11 @@ export type ButtonColorType = 'alternative' | 'blue' | 'dark' | 'green' | 'light
 
 export type CheckboxItem = {
   value: string;
-  label?: string; 
-  isChecked?: boolean; 
+  label?: string;
+  isChecked?: boolean;
 };
 
-export type ColorVariant =
-  | 'dark'
-  | 'red'
-  | 'yellow'
-  | 'green'
-  | 'indigo'
-  | 'purple'
-  | 'pink'
-  | 'blue'
-  | 'primary'
-  | 'none';
+export type ColorVariant = 'dark' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'primary' | 'none';
 
 export type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink' | 'white' | 'custom' | 'primary' | 'secondary';
 
@@ -163,9 +153,4 @@ export interface ButtonClassesTypes {
   custom?: string;
 }
 
-export type ToastPositionType =
-  | 'top-left'
-  | 'top-right'
-  | 'bottom-left'
-  | 'bottom-right'
-  | 'none';
+export type ToastPositionType = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none';

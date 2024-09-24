@@ -1,1 +1,9 @@
-{"name":"CardPlaceholder","slots":[],"events":[],"props":[["divClass","string","'p-4 rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700'"],["size","keyof Sizes","'sm'"]]}
+{
+  "name": "CardPlaceholder",
+  "slots": [],
+  "events": [],
+  "props": [
+    ["divClass", "string", "'p-4 rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700'"],
+    ["size", "keyof Sizes", "'sm'"]
+  ]
+}
