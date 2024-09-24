@@ -188,7 +188,7 @@
     },
     fileInput: {
       checked: true,
-      problems: 'Dropzone'
+      // problems: 'Dropzone'
       // notes: 'Variants, reactive examples'
     },
     floatingLabel: {
@@ -217,8 +217,8 @@
     },
     searchInput: {
       checked: true,
-      problems: 'Location search, Voice search, Event example',
-      notes: 'Variants checked'
+      // problems: 'Event example',
+      // notes: 'Variants checked'
     },
     select: {
       checked: true,

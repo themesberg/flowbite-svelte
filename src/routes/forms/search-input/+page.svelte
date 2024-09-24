@@ -22,7 +22,10 @@
   const exampleArr = [
     { name: 'Size large', component: ExampleComponents.SizeLarge },
     { name: 'Simple search', component: ExampleComponents.SimpleSearch },
-    { name: 'Search with dropdown', component: ExampleComponents.SearchWithDropdown }
+    { name: 'Dropdown', component: ExampleComponents.Dropdown },
+    { name: 'Location', component: ExampleComponents.Location },
+    { name: 'Voice', component: ExampleComponents.Voice },
+    { name: 'Value binding', component: ExampleComponents.ValueBinding },
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
