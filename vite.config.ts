@@ -8,6 +8,9 @@ import tailwindcssPackage from './node_modules/tailwindcss/package.json' with { 
 
 export default defineConfig({
   plugins: [sveltekit()],
+  build: {
+    minify: false
+  },
   define: {
     __NAME__: JSON.stringify(pkg.name),
     __VERSION__: JSON.stringify(pkg.version),

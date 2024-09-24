@@ -25,8 +25,12 @@
 
 <H2>Installation</H2>
 
-<H3>Svelte-5 Runes</H3>
-After installing Svelte-5, update `svelte.config.js` to enable `runes`:
+<H3>Svelte 5 Runes</H3>
+<p>Installing Svelte 5:</p>
+
+<HighlightCompo codeLang="js" code={modules['./md/install-svelte.md'] as string} />
+
+<p>After installing Svelte-5, you can <a href="https://svelte-5-preview.vercel.app/docs/runes#how-to-opt-in">opt-in to runes mode</a> by updating `svelte.config.js` to enable `runes`:</p>
 
 <HighlightCompo codeLang="js" code={modules['./md/runes.md'] as string} />
 

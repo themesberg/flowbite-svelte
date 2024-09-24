@@ -11,7 +11,8 @@ export const sidebar = tv({
   variants: {
     position: {
       fixed: { base: 'fixed' },
-      absolute: { base: 'absolute' }
+      absolute: { base: 'absolute' },
+      static: { base: 'static' }
     },
     isOpen: {
       true: 'block',

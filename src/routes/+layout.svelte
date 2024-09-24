@@ -65,8 +65,7 @@
         <Darkmode class="hidden sm:block" />
       </div>
     {/snippet}
-    <NavUl class="md:space-x-2 lg:space-x-8">
-      <NavLi href="/">Home</NavLi>
+    <NavUl class="md:space-x-6 lg:space-x-8">
       <NavLi href="/pages/coverage">Coverage</NavLi>
       <NavLi href="/pages/about">About</NavLi>
       <NavLi class="sm:hidden" href="https://github.com/shinokada/svelte-5-ui-lib">Repo</NavLi>
@@ -75,7 +74,7 @@
   </Navbar>
 </header>
 <div class="lg:flex">
-  <Sidebar {isOpen} {closeSidebar} breakpoint="lg" activeClass="flex items-center p-1 text-base font-normal text-white dark:hover:text-white hover:text-gray-900 bg-primary-700 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" nonActiveClass="p-1 hover:bg-gray-200" divClass="dark:bg-gray-900 bg-gray-50" class="top-[74px] h-screen pt-4 dark:bg-gray-900">
+  <Sidebar {isOpen} {closeSidebar} breakpoint="lg" activeClass="flex items-center p-1 text-base font-normal text-white dark:hover:text-white hover:text-gray-900 bg-primary-700 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" nonActiveClass="p-1 hover:bg-gray-200" divClass="dark:bg-gray-900 bg-gray-50" class="top-[62px] h-screen pt-4 dark:bg-gray-900">
     <SidebarGroup>
       <SidebarDropdownWrapper label="GETTING STARTED" isOpen={hasPath('pages')} svgClass="me-4" btnClass="p-1">
         <SidebarItem label="About" href="/pages/about" />

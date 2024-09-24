@@ -2,10 +2,11 @@ import Navbar from './Navbar.svelte';
 import NavBrand from './NavBrand.svelte';
 import NavLi from './NavLi.svelte';
 import NavUl from './NavUl.svelte';
+import NavHamburger from './NavHamburger.svelte';
 import type { HTMLAttributes, HTMLAnchorAttributes } from 'svelte/elements';
 import type { Snippet } from 'svelte';
 import type { navbarType } from '$lib/types';
-import { navUl } from './theme';
+import { navbar, navUl, navbrand, navLi, navcontainer, navhamburger } from './theme';
 
 interface NavbarProps extends HTMLAttributes<HTMLElement> {
   children: Snippet;
@@ -50,4 +51,8 @@ interface NavLiProps extends HTMLAnchorAttributes {
   class?: string;
 }
 
-export { Navbar, NavBrand, NavLi, NavUl, navUl, type NavbarProps, type NavBrandProps, type NavUlProps, type NavLiProps };
+interface NavHamburgerProps extends HTMLAttributes<HTMLButtonElement> {
+  toggleNav: () => void;
+}
+
+export { Navbar, navbar, type NavbarProps, NavBrand, navbrand, type NavBrandProps, NavLi, navLi, type NavLiProps,  NavUl, navUl, type NavUlProps, NavHamburger, navhamburger, type NavHamburgerProps };
