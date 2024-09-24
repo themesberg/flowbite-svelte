@@ -15,14 +15,6 @@
 
   <P>Svelte 5 UI Lib – a UI library for Svelte 5 and built upon Flowbite/Flowbite-Svelte.</P>
 
-  <H2>Other Flowbite-Svelte</H2>
-  <List>
-    <Li><A href="https://flowbite-svelte.com/">Flowbite-Svelte</A></Li>
-    <Li><A href="https://flowbite-svelte-icons.codewithshin.com/">Flowbite-Svelte-Icons</A></Li>
-    <Li><A href="https://flowbite-svelte-blocks.codewithshin.com/">Flowbite-Svelte-Blocks</A></Li>
-    <Li><A href="https://flowbite-svelte-admin-dashboard.codewithshin.com/">Flowbite-Svelte-Dashboard</A></Li>
-  </List>
-
   <H2>Techinical info</H2>
   <List>
     <Li><A href="https://svelte-5-ui-lib.codewithshin.com/">{removeHyphensAndCapitalize(name)}: {svelte5uilibVersion}</A></Li>
@@ -36,4 +28,13 @@
     <Li><A href="https://github.com/shinokada/svelte-5-ui-lib">GitHub</A></Li>
     <Li><A href="https://codewithshin.com">codewithshin</A></Li>
   </List>
+
+  <H2>Other Flowbite-Svelte</H2>
+  <List>
+    <Li><A href="https://flowbite-svelte.com/">Flowbite-Svelte</A></Li>
+    <Li><A href="https://flowbite-svelte-icons.codewithshin.com/">Flowbite-Svelte-Icons</A></Li>
+    <Li><A href="https://flowbite-svelte-blocks.codewithshin.com/">Flowbite-Svelte-Blocks</A></Li>
+    <Li><A href="https://flowbite-svelte-admin-dashboard.codewithshin.com/">Flowbite-Svelte-Dashboard</A></Li>
+  </List>
+
 </div>

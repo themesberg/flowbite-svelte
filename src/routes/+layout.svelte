@@ -65,8 +65,7 @@
         <Darkmode class="hidden sm:block" />
       </div>
     {/snippet}
-    <NavUl class="md:space-x-2 lg:space-x-8">
-      <NavLi href="/">Home</NavLi>
+    <NavUl class="md:space-x-6 lg:space-x-8">
       <NavLi href="/pages/coverage">Coverage</NavLi>
       <NavLi href="/pages/about">About</NavLi>
       <NavLi class="sm:hidden" href="https://github.com/shinokada/svelte-5-ui-lib">Repo</NavLi>

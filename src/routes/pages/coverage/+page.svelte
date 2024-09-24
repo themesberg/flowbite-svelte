@@ -49,7 +49,7 @@
     bottomNavigation: {
       checked: true,
       problems: '(Tooltip: current tooltip position does not work within relative div) Application bar example, Example with pagination, Button group bottom bar, Card with bottom bar',
-      notes: 'Variants'
+      // notes: 'Variants'
     },
     breadcrumb: {
       checked: true
@@ -223,7 +223,7 @@
     select: {
       checked: true,
       problems: 'MultiSelect',
-      notes: 'Variants, reactive examples'
+      // notes: 'Variants, reactive examples'
     },
     textarea: {
       checked: true
