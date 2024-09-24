@@ -1,1 +1,12 @@
-{"name":"MultiSelect","slots":[],"events":["on:input"],"props":[["items","SelectOptionType<any>[]","[]"],["value","(string | number)[]","[]"],["size","FormSizeType","'md'"],["dropdownClass","string","''"],["placeholder","string","''"]]}
+{
+  "name": "MultiSelect",
+  "slots": [],
+  "events": ["on:input"],
+  "props": [
+    ["items", "SelectOptionType<any>[]", "[]"],
+    ["value", "(string | number)[]", "[]"],
+    ["size", "FormSizeType", "'md'"],
+    ["dropdownClass", "string", "''"],
+    ["placeholder", "string", "''"]
+  ]
+}

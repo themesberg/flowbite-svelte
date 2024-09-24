@@ -468,7 +468,6 @@ Please read [how to contribute](https://github.com/themesberg/flowbite-svelte/bl
 
 View the full [changelog](https://github.com/themesberg/flowbite-svelte/blob/main/CHANGELOG.md) on this page.
 
-
 ## License
 
 Flowbite Svelte is open-source under the [MIT License](https://flowbite-svelte.com/docs/pages/license).
