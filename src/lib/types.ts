@@ -69,6 +69,7 @@ export type ReviewType = {
 export type SelectOptionType<T> = {
   name: string | number;
   value: T;
+  disabled?: boolean;
 };
 
 export type TransitionTypes = 'fade' | 'fly' | 'slide' | 'blur' | 'in:fly' | 'out:fly' | 'in:slide' | 'out:slide' | 'in:fade' | 'out:fade' | 'in:blur' | 'out:blur';
