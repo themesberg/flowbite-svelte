@@ -115,6 +115,6 @@
 @prop export let border: boolean = false;
 @prop export let href: string = '';
 @prop export let rounded: boolean = false;
-@prop export let transition = fade;
-@prop export let params = {};
+@prop export let transition: TransitionFunc = fade;
+@prop export let params: object = {};
 -->

@@ -20,8 +20,8 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let selected: $$Props['selected'] = false;
-@prop export let alt: $$Props['alt'] = '';
-@prop export let activeClass: $$Props['activeClass'] = 'opacity-100';
-@prop export let inactiveClass: $$Props['inactiveClass'] = 'opacity-60';
+@prop export let selected: boolean = false;
+@prop export let alt: string | undefined | null = '';
+@prop export let activeClass: string = 'opacity-100';
+@prop export let inactiveClass: string = 'opacity-60';
 -->

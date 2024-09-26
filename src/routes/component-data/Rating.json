@@ -10,7 +10,7 @@
     ["partialId", "$$Props['partialId']", "'partialStar' + generateId()"],
     ["icon", "$$Props['icon']", "Star"],
     ["count", "$$Props['count']", "false"],
-    ["iconFillColor", "$$Props['iconFillColor']", ""],
-    ["iconStrokeColor", "$$Props['iconStrokeColor']", "@prop export let divClass: $$Props['divClass'] = 'flex items-center'"]
+    ["iconFillColor", "$$Props['iconFillColor']", "''"],
+    ["iconStrokeColor", "$$Props['iconStrokeColor']", "''"]
   ]
 }

@@ -9,7 +9,7 @@
     ["border", "boolean", "false"],
     ["href", "string", "''"],
     ["rounded", "boolean", "false"],
-    ["transition", "string", "fade"],
-    ["params", "string", "{}"]
+    ["transition", "TransitionFunc", "fade"],
+    ["params", "object", "{}"]
   ]
 }

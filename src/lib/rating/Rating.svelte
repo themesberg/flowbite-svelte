@@ -69,6 +69,6 @@
 @prop export let partialId: $$Props['partialId'] = 'partialStar' + generateId();
 @prop export let icon: $$Props['icon'] = Star;
 @prop export let count: $$Props['count'] = false;
-@prop export let iconFillColor: $$Props['iconFillColor'];
-@prop export let iconStrokeColor: $$Props['iconStrokeColor'];
+@prop export let iconFillColor: $$Props['iconFillColor'] = '';
+@prop export let iconStrokeColor: $$Props['iconStrokeColor'] = '';
 -->
