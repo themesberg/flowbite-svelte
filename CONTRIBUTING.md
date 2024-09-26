@@ -23,10 +23,10 @@ Please add a type to `export`ed variables. When we generate props files, it will
 Please run the following to update prop files.
 
 ```sh
-npm run gen:props
+pnpm gen:docs && pnpm gen:compo-data
 ```
 
-This script will update/generate files in `src/routes/props`.
+This script will update component document and update/generate files in `src/routes/component-data`.
 
 Again avoid type inference for `export`ed variables.
 
@@ -62,5 +62,5 @@ git commit -a "feat: change btnClass name to bClass" -m "BREAKING CHANGE: change
 <p>Before submitting a PR, please run a test:</p>
 
 ```sh
-npm run test
+pnpm test:integration
 ```
