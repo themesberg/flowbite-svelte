@@ -1,14 +1,1 @@
-{
-  "name": "Android",
-  "slots": [],
-  "events": [],
-  "props": [
-    ["div", "string", "'relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-xl h-[600px] w-[300px] shadow-xl'"],
-    ["slot", "string", "'rounded-xl overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-800'"],
-    ["top", "string", "'w-[148px] h-[18px] bg-gray-800 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute'"],
-    ["leftTop", "string", "'h-[32px] w-[3px] bg-gray-800 absolute -left-[17px] top-[72px] rounded-l-lg'"],
-    ["leftMid", "string", "'h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[124px] rounded-l-lg'"],
-    ["leftBot", "string", "'h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg'"],
-    ["right", "string", "'h-[64px] w-[3px] bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg'"]
-  ]
-}
+{"name":"Android","slots":[],"events":[],"props":[["div","string","'relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-xl h-[600px] w-[300px] shadow-xl'"],["slot","string","'rounded-xl overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-800'"],["top","string","'w-[148px] h-[18px] bg-gray-800 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute'"],["leftTop","string","'h-[32px] w-[3px] bg-gray-800 absolute -left-[17px] top-[72px] rounded-l-lg'"],["leftMid","string","'h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[124px] rounded-l-lg'"],["leftBot","string","'h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg'"],["right","string","'h-[64px] w-[3px] bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg'"]]}

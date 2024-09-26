@@ -1,11 +1,1 @@
-{
-  "name": "SidebarCta",
-  "slots": ["icon"],
-  "events": [],
-  "props": [
-    ["divWrapperClass", "string", "'p-4 mt-6 bg-primary-50 rounded-lg dark:bg-primary-900'"],
-    ["divClass", "string", "'flex items-center mb-3'"],
-    ["spanClass", "string", "'bg-primary-100 text-primary-800 text-sm font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-900'"],
-    ["label", "string", "''"]
-  ]
-}
+{"name":"SidebarCta","slots":["icon"],"events":[],"props":[["divWrapperClass","string","'p-4 mt-6 bg-primary-50 rounded-lg dark:bg-primary-900'"],["divClass","string","'flex items-center mb-3'"],["spanClass","string","'bg-primary-100 text-primary-800 text-sm font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-900'"],["label","string","''"]]}

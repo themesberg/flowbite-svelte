@@ -43,6 +43,8 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
+@prop export let action: Action<HTMLElement, any> = () => {};
+@prop export let params: any = {};
 @prop export let href: string = '';
 @prop export let label: string = '';
 @prop export let spanClass: string = 'ms-3';

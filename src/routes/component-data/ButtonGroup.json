@@ -1,9 +1,1 @@
-{
-  "name": "ButtonGroup",
-  "slots": [],
-  "events": [],
-  "props": [
-    ["size", "SizeType", "'md'"],
-    ["divClass", "string", "'inline-flex rounded-lg shadow-sm'"]
-  ]
-}
+{"name":"ButtonGroup","slots":[],"events":[],"props":[["size","SizeType","'md'"],["divClass","string","'inline-flex rounded-lg shadow-sm'"]]}

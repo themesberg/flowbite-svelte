@@ -1,13 +1,1 @@
-{
-  "name": "AdvancedRating",
-  "slots": ["rating", "globalText"],
-  "events": [],
-  "props": [
-    ["divClass", "string", "'flex items-center mt-4'"],
-    ["labelClass", "string", "'text-sm font-medium text-gray-600 dark:text-gray-500'"],
-    ["ratingDivClass", "string", "'mx-4 w-2/4 h-5 bg-gray-200 rounded dark:bg-gray-700'"],
-    ["ratingClass", "string", "'h-5 bg-yellow-400 rounded'"],
-    ["rightLabelClass", "string", "'text-sm font-medium text-gray-600 dark:text-gray-500'"],
-    ["unit", "string", "'%'"]
-  ]
-}
+{"name":"AdvancedRating","slots":["rating","globalText"],"events":[],"props":[["divClass","string","'flex items-center mt-4'"],["labelClass","string","'text-sm font-medium text-gray-600 dark:text-gray-500'"],["ratingDivClass","string","'mx-4 w-2/4 h-5 bg-gray-200 rounded dark:bg-gray-700'"],["ratingClass","string","'h-5 bg-yellow-400 rounded'"],["rightLabelClass","string","'text-sm font-medium text-gray-600 dark:text-gray-500'"],["unit","string","'%'"]]}

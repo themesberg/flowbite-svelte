@@ -1,10 +1,1 @@
-{
-  "name": "Marquee",
-  "slots": [],
-  "events": [],
-  "props": [
-    ["speed", "number", "1"],
-    ["hoverSpeed", "number", "1"],
-    ["shadow", "boolean", "false"]
-  ]
-}
+{"name":"Marquee","slots":[],"events":[],"props":[["speed","number","1"],["hoverSpeed","number","1"],["shadow","boolean","false"]]}

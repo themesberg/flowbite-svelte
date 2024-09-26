@@ -1,12 +1,1 @@
-{
-  "name": "Accordion",
-  "slots": [],
-  "events": [],
-  "props": [
-    ["multiple", "boolean", "false"],
-    ["flush", "boolean", "false"],
-    ["activeClass", "string", "'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800'"],
-    ["inactiveClass", "string", "'text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800'"],
-    ["defaultClass", "string", "'text-gray-500 dark:text-gray-400'"]
-  ]
-}
+{"name":"Accordion","slots":[],"events":[],"props":[["multiple","boolean","false"],["flush","boolean","false"],["activeClass","string","'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800'"],["inactiveClass","string","'text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800'"],["defaultClass","string","'text-gray-500 dark:text-gray-400'"]]}

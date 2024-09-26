@@ -1,13 +1,1 @@
-{
-  "name": "ScoreRating",
-  "slots": [],
-  "events": [],
-  "props": [
-    ["desc1Class", "string", "'bg-primary-100 w-8 text-primary-800 text-sm font-semibold inline-flex items-center p-1.5 rounded dark:bg-primary-200 dark:text-primary-800'"],
-    ["desc2Class", "string", "'ms-2 w-24 font-medium text-gray-900 dark:text-white'"],
-    ["desc3spanClass", "string", "'mx-2 w-1 h-1 bg-gray-900 rounded-full dark:bg-gray-500'"],
-    ["desc3pClass", "string", "'text-sm  w-24 font-medium text-gray-500 dark:text-gray-400'"],
-    ["linkClass", "string", "'ms-auto w-32 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500'"],
-    ["barColor", "string", "'bg-primary-600 h-2.5 rounded dark:bg-primary-500'"]
-  ]
-}
+{"name":"ScoreRating","slots":[],"events":[],"props":[["desc1Class","string","'bg-primary-100 w-8 text-primary-800 text-sm font-semibold inline-flex items-center p-1.5 rounded dark:bg-primary-200 dark:text-primary-800'"],["desc2Class","string","'ms-2 w-24 font-medium text-gray-900 dark:text-white'"],["desc3spanClass","string","'mx-2 w-1 h-1 bg-gray-900 rounded-full dark:bg-gray-500'"],["desc3pClass","string","'text-sm  w-24 font-medium text-gray-500 dark:text-gray-400'"],["linkClass","string","'ms-auto w-32 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500'"],["barColor","string","'bg-primary-600 h-2.5 rounded dark:bg-primary-500'"]]}

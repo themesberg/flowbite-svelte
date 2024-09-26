@@ -1,15 +1,1 @@
-{
-  "name": "RadioButton",
-  "slots": [],
-  "events": ["on:keyup", "on:keydown", "on:keypress", "on:focus", "on:blur", "on:click", "on:mouseover", "on:mouseenter", "on:mouseleave", "on:paste", "on:change"],
-  "props": [
-    ["group", "string | number", "''"],
-    ["value", "string | number", "''"],
-    ["inline", "boolean", "true"],
-    ["pill", "boolean", "false"],
-    ["outline", "boolean", "false"],
-    ["size", "SizeType | undefined", "undefined"],
-    ["color", "ButtonColorType | undefined", "undefined"],
-    ["shadow", "boolean", "false"]
-  ]
-}
+{"name":"RadioButton","slots":[],"events":["on:keyup","on:keydown","on:keypress","on:focus","on:blur","on:click","on:mouseover","on:mouseenter","on:mouseleave","on:paste","on:change"],"props":[["group","string | number","''"],["value","string | number","''"],["inline","boolean","true"],["pill","boolean","false"],["outline","boolean","false"],["size","SizeType | undefined","undefined"],["color","ButtonColorType | undefined","undefined"],["shadow","boolean","false"]]}

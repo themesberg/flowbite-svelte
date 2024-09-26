@@ -1,9 +1,1 @@
-{
-  "name": "DropdownHeader",
-  "slots": [],
-  "events": [],
-  "props": [
-    ["divClass", "string", "'py-2 px-4 text-gray-700 dark:text-white'"],
-    ["divider", "boolean", "true"]
-  ]
-}
+{"name":"DropdownHeader","slots":[],"events":[],"props":[["divClass","string","'py-2 px-4 text-gray-700 dark:text-white'"],["divider","boolean","true"]]}

@@ -1,13 +1,1 @@
-{
-  "name": "Review",
-  "slots": ["address", "item1", "item2", "item3"],
-  "events": [],
-  "props": [
-    ["review", "ReviewType", ""],
-    ["articleClass", "string", "'md:gap-8 md:grid md:grid-cols-3'"],
-    ["divClass", "string", "'flex items-center mb-6 space-x-4 rtl:space-x-reverse'"],
-    ["imgClass", "string", "'w-10 h-10 rounded-full'"],
-    ["ulClass", "string", "'space-y-4 text-sm text-gray-500 dark:text-gray-400'"],
-    ["liClass", "string", "'flex items-center'"]
-  ]
-}
+{"name":"Review","slots":["address","item1","item2","item3"],"events":[],"props":[["review","ReviewType",""],["articleClass","string","'md:gap-8 md:grid md:grid-cols-3'"],["divClass","string","'flex items-center mb-6 space-x-4 rtl:space-x-reverse'"],["imgClass","string","'w-10 h-10 rounded-full'"],["ulClass","string","'space-y-4 text-sm text-gray-500 dark:text-gray-400'"],["liClass","string","'flex items-center'"]]}

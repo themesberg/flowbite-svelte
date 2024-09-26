@@ -181,4 +181,5 @@
 @prop export let size: FormSizeType = 'md';
 @prop export let dropdownClass: string = '';
 @prop export let placeholder: string = '';
+@prop export let disabled: boolean = false;
 -->

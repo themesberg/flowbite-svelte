@@ -1,9 +1,1 @@
-{
-  "name": "GradientButton",
-  "slots": [],
-  "events": ["on:click", "on:change", "on:keydown", "on:keyup", "on:mouseenter", "on:mouseleave", "on:click", "on:change", "on:keydown", "on:keyup", "on:touchstart", "on:touchend", "on:touchcancel", "on:mouseenter", "on:mouseleave"],
-  "props": [
-    ["color", "keyof typeof gradientClasses", "'blue'"],
-    ["shadow", "boolean", "false"]
-  ]
-}
+{"name":"GradientButton","slots":[],"events":["on:click","on:change","on:keydown","on:keyup","on:mouseenter","on:mouseleave","on:click","on:change","on:keydown","on:keyup","on:touchstart","on:touchend","on:touchcancel","on:mouseenter","on:mouseleave"],"props":[["color","keyof typeof gradientClasses","'blue'"],["shadow","boolean","false"]]}

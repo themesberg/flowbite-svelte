@@ -1,16 +1,1 @@
-{
-  "name": "Rating",
-  "slots": ["text"],
-  "events": [],
-  "props": [
-    ["divClass", "$$Props['divClass']", "'flex items-center'"],
-    ["size", "$$Props['size']", "24"],
-    ["total", "NonNullable<$$Props['total']>", "5"],
-    ["rating", "$$Props['rating']", "4"],
-    ["partialId", "$$Props['partialId']", "'partialStar' + generateId()"],
-    ["icon", "$$Props['icon']", "Star"],
-    ["count", "$$Props['count']", "false"],
-    ["iconFillColor", "$$Props['iconFillColor']", ""],
-    ["iconStrokeColor", "$$Props['iconStrokeColor']", "@prop export let divClass: $$Props['divClass'] = 'flex items-center'"]
-  ]
-}
+{"name":"Rating","slots":["text"],"events":[],"props":[["divClass","$$Props['divClass']","'flex items-center'"],["size","$$Props['size']","24"],["total","NonNullable<$$Props['total']>","5"],["rating","$$Props['rating']","4"],["partialId","$$Props['partialId']","'partialStar' + generateId()"],["icon","$$Props['icon']","Star"],["count","$$Props['count']","false"],["iconFillColor","$$Props['iconFillColor']",""],["iconStrokeColor","$$Props['iconStrokeColor']","@prop export let divClass: $$Props['divClass'] = 'flex items-center'"]]}

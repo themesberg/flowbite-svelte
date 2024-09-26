@@ -1,16 +1,1 @@
-{
-  "name": "CheckboxButton",
-  "slots": [],
-  "events": ["on:keyup", "on:keydown", "on:keypress", "on:focus", "on:blur", "on:click", "on:mouseover", "on:mouseenter", "on:mouseleave", "on:paste", "on:change"],
-  "props": [
-    ["group", "(string | number)[]", "[]"],
-    ["value", "string | number", "'on'"],
-    ["checked", "boolean | undefined", "undefined"],
-    ["inline", "boolean", "true"],
-    ["pill", "boolean", "false"],
-    ["outline", "boolean", "false"],
-    ["size", "SizeType | undefined", "undefined"],
-    ["color", "ButtonColorType | undefined", "undefined"],
-    ["shadow", "boolean", "false"]
-  ]
-}
+{"name":"CheckboxButton","slots":[],"events":["on:keyup","on:keydown","on:keypress","on:focus","on:blur","on:click","on:mouseover","on:mouseenter","on:mouseleave","on:paste","on:change"],"props":[["group","(string | number)[]","[]"],["value","string | number","'on'"],["checked","boolean | undefined","undefined"],["inline","boolean","true"],["pill","boolean","false"],["outline","boolean","false"],["size","SizeType | undefined","undefined"],["color","ButtonColorType | undefined","undefined"],["shadow","boolean","false"]]}

@@ -1,14 +1,1 @@
-{
-  "name": "SpeedDialButton",
-  "slots": [],
-  "events": ["on:click"],
-  "props": [
-    ["btnDefaultClass", "string", "'w-[52px] h-[52px] shadow-sm !p-2'"],
-    ["name", "string", "''"],
-    ["tooltip", "Placement | 'none'", "context.tooltip"],
-    ["pill", "boolean", "context.pill"],
-    ["textOutside", "boolean", "context.textOutside"],
-    ["textOutsideClass", "string", "'block absolute -start-14 top-1/2 mb-px text-sm font-medium -translate-y-1/2'"],
-    ["textDefaultClass", "string", "'block mb-px text-xs font-medium'"]
-  ]
-}
+{"name":"SpeedDialButton","slots":[],"events":["on:click"],"props":[["btnDefaultClass","string","'w-[52px] h-[52px] shadow-sm !p-2'"],["name","string","''"],["tooltip","Placement | 'none'","context.tooltip"],["pill","boolean","context.pill"],["textOutside","boolean","context.textOutside"],["textOutsideClass","string","'block absolute -start-14 top-1/2 mb-px text-sm font-medium -translate-y-1/2'"],["textDefaultClass","string","'block mb-px text-xs font-medium'"]]}

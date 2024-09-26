@@ -1,9 +1,1 @@
-{
-  "name": "Alert",
-  "slots": ["icon", "close-button"],
-  "events": ["on:close", "on:click", "on:change", "on:keydown", "on:keyup", "on:focus", "on:blur", "on:mouseenter", "on:mouseleave"],
-  "props": [
-    ["dismissable", "boolean", "false"],
-    ["defaultClass", "string", "'p-4 gap-3 text-sm'"]
-  ]
-}
+{"name":"Alert","slots":["icon","close-button"],"events":["on:close","on:click","on:change","on:keydown","on:keyup","on:focus","on:blur","on:mouseenter","on:mouseleave"],"props":[["dismissable","boolean","false"],["defaultClass","string","'p-4 gap-3 text-sm'"]]}

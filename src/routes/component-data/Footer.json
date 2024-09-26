@@ -1,1 +1,1 @@
-{ "name": "Footer", "slots": [], "events": [], "props": [["footerType", "'sitemap' | 'default' | 'logo' | 'socialmedia' | undefined", "undefined"]] }
+{"name":"Footer","slots":[],"events":[],"props":[["footerType","'sitemap' | 'default' | 'logo' | 'socialmedia' | undefined","undefined"]]}

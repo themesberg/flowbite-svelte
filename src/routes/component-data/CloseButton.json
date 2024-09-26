@@ -1,1 +1,1 @@
-{ "name": "CloseButton", "slots": [], "events": ["on:click"], "props": [["name", "string", "'Close'"]] }
+{"name":"CloseButton","slots":[],"events":["on:click"],"props":[["name","string","'Close'"]]}

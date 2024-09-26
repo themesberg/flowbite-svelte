@@ -1,11 +1,1 @@
-{
-  "name": "Thumbnail",
-  "slots": [],
-  "events": [],
-  "props": [
-    ["selected", "$$Props['selected']", "false"],
-    ["alt", "$$Props['alt']", "''"],
-    ["activeClass", "$$Props['activeClass']", "'opacity-100'"],
-    ["inactiveClass", "$$Props['inactiveClass']", "'opacity-60'"]
-  ]
-}
+{"name":"Thumbnail","slots":[],"events":[],"props":[["selected","$$Props['selected']","false"],["alt","$$Props['alt']","''"],["activeClass","$$Props['activeClass']","'opacity-100'"],["inactiveClass","$$Props['inactiveClass']","'opacity-60'"]]}
