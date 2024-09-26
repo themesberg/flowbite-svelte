@@ -1,1 +1,9 @@
-{"name":"Gallery","slots":[],"events":[],"props":[["items","ImgType[]","[]"],["imgClass","string","'h-auto max-w-full rounded-lg'"]]}
+{
+  "name": "Gallery",
+  "slots": [],
+  "events": [],
+  "props": [
+    ["items", "ImgType[]", "[]"],
+    ["imgClass", "string", "'h-auto max-w-full rounded-lg'"]
+  ]
+}
