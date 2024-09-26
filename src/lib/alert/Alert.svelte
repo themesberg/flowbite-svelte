@@ -5,6 +5,7 @@
   import CloseButton from '../utils/CloseButton.svelte';
 
   interface $$Props extends ComponentProps<TransitionFrame> {
+    dismissable?: boolean;
     defaultClass?: string;
   }
 
