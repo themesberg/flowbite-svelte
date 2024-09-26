@@ -132,8 +132,8 @@
       checked: true
     },
     sidebar: {
-      checked: true
-      // problems: ''
+      checked: true,
+      problems: 'add auto props to SidebarGroup to control SidebarDropdownWrapper open/close like accordion'
     },
     skeleton: {
       checked: true
