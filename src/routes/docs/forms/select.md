@@ -34,7 +34,8 @@ Get started with the default example of a select input component to get a single
   let countries = [
     { value: 'us', name: 'United States' },
     { value: 'ca', name: 'Canada' },
-    { value: 'fr', name: 'France' }
+    { value: 'de', name: 'Germany' },
+    { value: 'fr', name: 'France', disabled: true },
   ];
 </script>
 

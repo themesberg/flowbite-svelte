@@ -28,8 +28,8 @@
     <option disabled selected={(value === undefined) ? true : undefined} value="">{placeholder}</option>
   {/if}
 
-  {#each items as { value: itemValue, name }}
-    <option value={itemValue} selected={(itemValue === value) ? true : undefined}>{name}</option>
+  {#each items as { value: itemValue, name, disabled }}
+    <option disabled={disabled} value={itemValue} selected={(itemValue === value) ? true : undefined}>{name}</option>
   {:else}
     <slot />
   {/each}
