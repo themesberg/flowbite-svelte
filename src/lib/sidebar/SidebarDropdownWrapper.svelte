@@ -1,70 +1,50 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import type { ParamsType, TransitionFunc } from '../types';
-  import { twMerge } from 'tailwind-merge';
+  import type { ParamsType } from '../types';
   import { slide } from 'svelte/transition';
   import { uiHelpers } from '$lib';
-  import type { HTMLButtonAttributes } from 'svelte/elements';
+  import { type SidebarDropdownWrapperProps as Props, sidebardropdownwrapper } from '.';
+  
+  let { children, arrowup, arrowdown, iconSlot, isOpen, btnClass, label, spanClass, ulClass, transition = slide, params, svgClass, class: className, onclick, ...restProps }: Props = $props();
 
-  interface Props extends HTMLButtonAttributes {
-    children: Snippet;
-    arrowup?: Snippet;
-    arrowdown?: Snippet;
-    iconSlot?: Snippet;
-    isOpen?: boolean | undefined;
-    btnClass?: string;
-    label: string | undefined;
-    spanClass?: string;
-    ulClass?: string;
-    params?: ParamsType;
-    transition?: TransitionFunc;
-    svgClass?: string;
-  }
-
-  let { children, arrowup, arrowdown, iconSlot, isOpen, btnClass, label, spanClass, ulClass, transition = slide, params, svgClass, class: className, ...restProps }: Props = $props();
-
-  let btnCls = twMerge('flex items-center w-full text-base font-normal text-gray-900 rounded transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700', btnClass);
-
-  let spanCls: string = twMerge('flex-1 ms-3 text-left whitespace-nowrap', spanClass);
-  let ulCls: string = twMerge('py-2 space-y-2', ulClass);
-  let svgCls: string = twMerge('h-3 w-3 text-gray-800 dark:text-white', svgClass);
+  const { base, btn, span, svg, ul } = $derived(sidebardropdownwrapper());
 
   let sidebarDropdown = uiHelpers();
   sidebarDropdown.isOpen = isOpen ? isOpen : false;
   let handleDropdown = sidebarDropdown.toggle;
 
   $effect(() => {
-    // this can be done adding nav.navStatus directly to DOM element
-    // without using effect
     isOpen = sidebarDropdown.isOpen;
-    // $inspect('dropdown isOpen: ', isOpen)
+    // $inspect('isOpen: ', isOpen);
   });
 </script>
 
-<li class={className}>
-  <button {...restProps} onclick={() => handleDropdown()} type="button" class={btnCls} aria-controls="sidebar-dropdown">
+<li class={base({ className })}>
+  <button {...restProps} onclick={() => {
+    if (onclick) onclick();
+    handleDropdown();
+    }} type="button" class={btn({ class: btnClass})} aria-controls="sidebar-dropdown">
     {#if iconSlot}
       {@render iconSlot()}
     {/if}
-    <span class={spanCls}>{label}</span>
+    <span class={span({ class: spanClass})}>{label}</span>
     {#if isOpen}
       {#if arrowup}
         {@render arrowup()}
       {:else}
-        <svg class={svgCls} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+        <svg class={svg({ class: svgClass })} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5" />
         </svg>
       {/if}
     {:else if arrowdown}
       {@render arrowdown()}
     {:else}
-      <svg class={svgCls} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+      <svg class={svg({ class: svgClass })} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
       </svg>
     {/if}
   </button>
   {#if isOpen}
-    <ul class={ulCls} transition:transition={params as ParamsType}>
+    <ul class={ul({ class: ulClass })} transition:transition={params as ParamsType}>
       {@render children()}
     </ul>
   {/if}

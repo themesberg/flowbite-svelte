@@ -59,3 +59,13 @@ export const sitebarbrand = tv({
     span: 'self-center text-xl font-semibold whitespace-nowrap dark:text-white'
   }
 });
+
+export const sidebardropdownwrapper = tv({
+  slots: {
+    base: '',
+    btn: 'flex items-center w-full text-base font-normal text-gray-900 rounded transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700',
+    span: 'flex-1 ms-3 text-left whitespace-nowrap',
+    svg: 'h-3 w-3 text-gray-800 dark:text-white',
+    ul: 'py-2 space-y-2'
+  }
+})

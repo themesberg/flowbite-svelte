@@ -60,6 +60,7 @@ export const fileList = [
   "src/lib/kbd/Kbd.svelte",
   "src/lib/list-group/Listgroup.svelte",
   "src/lib/list-group/ListgroupItem.svelte",
+  "src/lib/mega-menu/MegaMenu.svelte",
   "src/lib/modal/Modal.svelte",
   "src/lib/nav/NavBrand.svelte",
   "src/lib/nav/NavHamburger.svelte",

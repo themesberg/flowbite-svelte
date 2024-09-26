@@ -51,7 +51,7 @@
   const decorations = Object.keys(span.variants.decoration);
   let spanDecorationColor: Span['decorationColor'] = $state('none');
   const decorationColors = Object.keys(span.variants.decorationColor);
-  let spanDecorationThickness: Span['decorationThickness'] = $state('0');
+  let spanDecorationThickness: Span['decorationThickness'] = $state('1');
   const docrationThickness = Object.keys(span.variants.decorationThickness);
   let opacityClass = $state('');
   const changeOpacity = () => {
@@ -134,6 +134,29 @@
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
+    <Label class="mb-4 w-full font-bold">Gradient:</Label>
+    {#each gradients as gradient}
+      <Radio labelClass="w-32 my-1" name="span_gradient" bind:group={spanGradient} onchange={() => (spanHighlight = 'none')} value={gradient}>{gradient}</Radio>
+    {/each}
+  </div>
+  <div class="mb-4 flex flex-wrap space-x-2">
+    <Label class="mb-4 w-full font-bold">Decoration thickness:</Label>
+    {#each docrationThickness as thickness}
+      <Radio
+        labelClass="w-12 my-1"
+        name="span_decoration_thickness"
+        bind:group={spanDecorationThickness}
+        onchange={() => {
+          spanUnderline = false;
+          spanLinethrough = false;
+        }}
+        value={thickness}
+      >
+        {thickness}
+      </Radio>
+    {/each}
+  </div>
+  <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Decoration color:</Label>
     {#each decorationColors as color}
       <Radio
@@ -166,29 +189,6 @@
       >
         {decoration}
       </Radio>
-    {/each}
-  </div>
-  <div class="mb-4 flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Decoration thickness:</Label>
-    {#each docrationThickness as thickness}
-      <Radio
-        labelClass="w-12 my-1"
-        name="span_decoration_thickness"
-        bind:group={spanDecorationThickness}
-        onchange={() => {
-          spanUnderline = false;
-          spanLinethrough = false;
-        }}
-        value={thickness}
-      >
-        {thickness}
-      </Radio>
-    {/each}
-  </div>
-  <div class="mb-4 flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Gradient:</Label>
-    {#each gradients as gradient}
-      <Radio labelClass="w-32 my-1" name="span_gradient" bind:group={spanGradient} onchange={() => (spanHighlight = 'none')} value={gradient}>{gradient}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
