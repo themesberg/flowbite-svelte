@@ -1,5 +1,14 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
+  import type { HTMLInputAttributes } from 'svelte/elements';
+
+  interface DropzoneProps {
+    value?: string;
+    files?: FileList | undefined;
+    defaultClass?: string;
+  }
+
+  type $$Props = DropzoneProps & HTMLInputAttributes;
 
   export let value: string = '';
   export let files: FileList | undefined = undefined;
