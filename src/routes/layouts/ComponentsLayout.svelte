@@ -5,11 +5,9 @@
   import SidebarDropdownWrapper from '$lib/sidebar/SidebarDropdownWrapper.svelte';
   import { getContext } from 'svelte';
   import type { Writable } from 'svelte/store';
-  import type { PageData } from '../$types';
   import { ChevronDownOutline, ChevronUpOutline } from 'flowbite-svelte-icons';
 
   export let data;
-  // console.log('posts: ', data);
 
   const posts: Record<string, any[]> = data.posts || {};
   const drawerHidden: Writable<boolean> = getContext('drawer');
@@ -63,7 +61,8 @@
             {/each}
           </SidebarDropdownWrapper>
         {/each}
-        <SidebarItem label='Admin Dashboard' href='/admin-dashboard' spanClass='w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-900 dark:text-white' {activeClass} active={activeMainSidebar === '/admin-dashboard'} />
+        <SidebarItem label='Blocks' href='https://flowbite-svelte-blocks.vercel.app/' spanClass='w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-900 dark:text-white mb-4' {activeClass} />
+        <SidebarItem label='Admin Dashboard' href='https://flowbite-svelte-admin-dashboard.vercel.app/' spanClass='w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-900 dark:text-white' {activeClass} />
       </SidebarGroup>
     </nav>
   </SidebarWrapper>

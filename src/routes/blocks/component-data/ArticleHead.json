@@ -1,1 +1,0 @@
-{ "name": "ArticleHead", "slots": [], "events": [], "props": [["divClass", "string", "'flex justify-between items-center mb-5 text-gray-500'"]] }

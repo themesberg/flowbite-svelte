@@ -1,1 +1,0 @@
-{ "name": "BlogTemplate", "slots": [], "events": [], "props": [["blog", "Blog", "@prop export let blog: Blog"]] }

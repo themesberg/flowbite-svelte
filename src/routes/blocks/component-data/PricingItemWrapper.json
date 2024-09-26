@@ -1,1 +1,0 @@
-{ "name": "PricingItemWrapper", "slots": ["btn"], "events": [], "props": [["ulClass", "string", "'mb-8 space-y-4 text-left'"]] }

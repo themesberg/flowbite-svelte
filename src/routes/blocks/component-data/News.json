@@ -1,9 +1,0 @@
-{
-  "name": "News",
-  "slots": [],
-  "events": [],
-  "props": [
-    ["href", "string", "'/'"],
-    ["classA", "string", "''"]
-  ]
-}

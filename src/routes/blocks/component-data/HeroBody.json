@@ -1,1 +1,0 @@
-{ "name": "HeroBody", "slots": ["head"], "events": [], "props": [["hero", "'default' | 'visual'", "'default'"]] }

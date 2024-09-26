@@ -1,1 +1,0 @@
-{ "name": "ArticleBody", "slots": ["h2", "paragraph"], "events": [], "props": [["h2Class", "string", "'mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'"]] }

@@ -1,9 +1,0 @@
-{
-  "name": "TestimonialCard",
-  "slots": ["header"],
-  "events": [],
-  "props": [
-    ["headerClass", "string", "'mx-auto max-w-screen-sm'"],
-    ["divClass", "string", "'grid mb-8 lg:mb-12 lg:grid-cols-2'"]
-  ]
-}

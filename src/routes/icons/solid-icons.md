@@ -15,7 +15,7 @@ description: Solid icons
     filterIconsByKeyword,
     random_tailwind_color,
     random_hex_color_code
-  } from './utils/utils.js';
+  } from './utils/utils';
   import * as Icons from 'flowbite-svelte-icons';
   const keywordsToInclude = 'Solid';
   const keyIcons = filterIconsByKeyword(Icons, keywordsToInclude);

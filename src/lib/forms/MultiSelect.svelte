@@ -143,7 +143,7 @@
     {#if selectItems.length}
       {#each selectItems as item (item.name)}
         <slot {item} clear={() => clearThisOption(item)}>
-          <Badge color="dark" large={size === 'lg'} dismissable params={{ duration: 100 }} on:close={() => clearThisOption(item)} class={disabled && "pointer-events-none"} >
+          <Badge color="dark" large={size === 'lg'} dismissable params={{ duration: 100 }} on:close={() => clearThisOption(item)} class={disabled ? "pointer-events-none" : undefined} >
             {item.name}
           </Badge>
         </slot>

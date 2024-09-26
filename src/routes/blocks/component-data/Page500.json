@@ -1,9 +1,0 @@
-{
-  "name": "Page500",
-  "slots": ["h1", "paragraph"],
-  "events": [],
-  "props": [
-    ["divClass", "string", "'mx-auto max-w-screen-sm text-center'"],
-    ["h1Class", "string", "'mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-primary-600 dark:text-primary-500'"]
-  ]
-}

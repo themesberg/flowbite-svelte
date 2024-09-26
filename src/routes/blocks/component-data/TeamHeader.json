@@ -1,1 +1,0 @@
-{ "name": "TeamHeader", "slots": ["label"], "events": [], "props": [["divClass", "string", "'mx-auto max-w-screen-sm text-center mb-8 lg:mb-16'"]] }

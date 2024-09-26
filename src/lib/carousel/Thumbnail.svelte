@@ -3,15 +3,15 @@
   import { twMerge } from 'tailwind-merge';
   interface $$Props extends HTMLImgAttributes {
     selected?: boolean;
-    alt?: string;
+    alt?: string | undefined | null;
     activeClass?: string;
     inactiveClass?: string;
   }
 
-  export let selected: $$Props['selected'] = false;
-  export let alt: $$Props['alt'] = '';
-  export let activeClass: $$Props['activeClass'] = 'opacity-100';
-  export let inactiveClass: $$Props['inactiveClass'] = 'opacity-60';
+  export let selected: boolean = false;
+  export let alt: string | undefined | null = '';
+  export let activeClass: string = 'opacity-100';
+  export let inactiveClass: string = 'opacity-60';
 </script>
 
 <img {...$$restProps} {alt} class={twMerge(selected ? activeClass : inactiveClass, $$props.class)} />
