@@ -524,6 +524,50 @@ You can add own transition by setting `transitionType` and `transitionParams`.
 </Sidebar>
 ```
 
+## use:action
+
+Svelte Actions are essentially element-level lifecycle functions. They're useful for things like:
+
+- interfacing with third-party libraries
+- lazy-loaded images
+- tooltips
+- adding custom event handlers
+
+The `SidebarItem` component has `use:action` directive you can use:
+
+```svelte example
+<script>
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from 'flowbite-svelte';
+  const routes = [
+    {
+      label: 'Home',
+      href: '/'
+    },
+    {
+      label: 'Contact',
+      href: '/contact'
+    },
+    {
+      label: 'Profile',
+      href: '/profile'
+    }
+  ];
+  const myaction = (label) => {
+    console.log('Hello ', label);
+  };
+</script>
+
+<Sidebar >
+  <SidebarWrapper>
+    <SidebarGroup>
+      {#each routes as {label, href}}
+      <SidebarItem {label} {href} action={myaction(label)}/>
+      {/each}
+    </SidebarGroup>
+  </SidebarWrapper>
+</Sidebar>
+```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

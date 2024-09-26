@@ -136,6 +136,21 @@ This example can be used to set a hyperlink on an image inside a card component.
 </Card>
 ```
 
+## use:action
+
+```svelte example
+<script>
+  import { A } from 'flowbite-svelte';
+
+  const myaction = () => {
+    console.log('Action triggered');
+  };
+</script>
+
+<A href="/" action={myaction}>Read more</A>
+
+```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
