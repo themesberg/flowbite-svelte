@@ -3,8 +3,23 @@
   import { twMerge } from 'tailwind-merge';
   import { CloseButton } from '$lib';
   import type { ColorVariant } from '../types';
-  import { fade } from 'svelte/transition';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { fade, type TransitionConfig } from 'svelte/transition';
+
+  type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
+
   const dispatcher = createEventDispatcher();
+
+  interface $$Props extends HTMLAttributes<HTMLDivElement> {
+    color?: ColorVariant;
+    large?: boolean;
+    dismissable?: boolean;
+    border?: boolean;
+    href?: string;
+    rounded?: boolean;
+    transition?: TransitionFunc;
+    params?: object;
+  }
 
   export let color: ColorVariant = 'primary';
   export let large: boolean = false;
@@ -12,8 +27,8 @@
   export let border: boolean = false;
   export let href: string = '';
   export let rounded: boolean = false;
-  export let transition = fade;
-  export let params = {};
+  export let transition: TransitionFunc = fade;
+  export let params: object = {};
 
   let badgeStatus: boolean = true;
 

@@ -1,10 +1,21 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
   import CloseButton from '../utils/CloseButton.svelte';
-  // import { createEventDispatcher } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
   import { fade, type TransitionConfig } from 'svelte/transition';
 
   type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
+
+  interface $$Props extends HTMLAttributes<HTMLDivElement> {
+    position?: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky';
+    dismissable?: boolean;
+    bannerType?: 'default' | 'bottom' | 'cta' | 'signup' | 'info';
+    divClass?: string;
+    innerClass?: string;
+    bannerStatus?: boolean;
+    transition?: TransitionFunc;
+    params?: object;
+  }
 
   export let position: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky' = 'sticky';
   export let dismissable: boolean = true;

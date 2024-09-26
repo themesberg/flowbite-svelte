@@ -1,5 +1,14 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
+  import type { HTMLButtonAttributes } from 'svelte/elements';
+
+  interface $$Props extends HTMLButtonAttributes {
+    itemName: string;
+    active: boolean;
+    defaultClass: string;
+    activeClass: string;
+  }
+
   export let itemName: string = '';
   export let active: boolean = false;
   export let defaultClass: string = 'px-5 py-1.5 text-xs font-medium text-gray-900 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700 rounded-lg';

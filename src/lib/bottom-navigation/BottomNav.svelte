@@ -8,6 +8,16 @@
   import { setContext } from 'svelte';
   import { writable } from 'svelte/store';
   import { twMerge } from 'tailwind-merge';
+  import type { HTMLAttributes } from 'svelte/elements';
+
+  interface $$Props extends HTMLAttributes<HTMLDivElement> {
+    activeUrl: string;
+    position?: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky';
+    navType?: 'default' | 'border' | 'application' | 'pagination' | 'group' | 'card' | 'meeting' | 'video';
+    outerClass?: string;
+    innerClass?: string;
+    activeClass?: string;
+  }
 
   export let activeUrl: string = '';
   export let position: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky' = 'fixed';

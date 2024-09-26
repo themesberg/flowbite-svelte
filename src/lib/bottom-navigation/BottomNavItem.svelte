@@ -3,6 +3,20 @@
   import type { ButtonClassesTypes } from '../types';
   import type { BottomNavType } from './BottomNav.svelte';
   import { twMerge } from 'tailwind-merge';
+  import type { HTMLAttributes } from 'svelte/elements';
+
+  type ElementType = 'a' | 'button';
+
+  type DynamicElementProps<T extends ElementType> = HTMLAttributes<HTMLElementTagNameMap[T]> 
+
+  interface $$Props extends DynamicElementProps<ElementType> {
+    btnName?: string;
+    appBtnPosition?: 'left' | 'middle' | 'right';
+    activeClass?: string;
+    href?: string;
+    exact?: boolean;
+    spanClass?: string;
+  }
 
   export let btnName: string = '';
   export let appBtnPosition: 'left' | 'middle' | 'right' = 'middle';

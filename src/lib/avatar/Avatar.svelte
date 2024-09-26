@@ -2,6 +2,23 @@
   import Indicator from '$lib/indicators/Indicator.svelte';
   import { twMerge } from 'tailwind-merge';
 
+  import type { HTMLAttributes } from 'svelte/elements';
+
+  type ElementType = 'a' | 'div';
+
+  type DynamicElementProps<T extends ElementType> = HTMLAttributes<HTMLElementTagNameMap[T]> 
+
+  interface $$Props extends DynamicElementProps<ElementType> {
+    href?: string;
+    src?: string;
+    rounded?: boolean;
+    border?: boolean;
+    stacked?: boolean;
+    dot?: object | undefined;
+    alt?: string;
+    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none';
+  }
+
   export let src: string = '';
   export let href: string | undefined = undefined;
   export let rounded: boolean = false;
