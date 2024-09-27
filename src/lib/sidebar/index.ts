@@ -28,7 +28,7 @@ interface SidebarProps extends HTMLAttributes<HTMLElement> {
   isOpen?: boolean;
   closeSidebar?: () => void;
   activateClickOutside?: boolean;
-  isSingleSelection?: boolean;
+  isSingle?: boolean;
   breakpoint?: BreakpointType;
   position?: PosisionType;
   ariaLabel?: string;
@@ -79,6 +79,7 @@ interface SidebarDropdownWrapperProps extends HTMLButtonAttributes {
   transition?: TransitionFunc;
   svgClass?: string;
   onclick?: () => void;
+  isSingle?: boolean;
 }
 
 export { Sidebar, sidebar, type SidebarProps, SidebarDropdownWrapper, sidebardropdownwrapper, type SidebarDropdownWrapperProps, SidebarGroup, SidebarItem, type SidebarCtxType, SidebarButton, sidebarbutton, type SidebarButtonProps, SidebarCta, sidebarcta, type SidebarCtaProps, SidebarBrand, sitebarbrand, type SidebarBrandProps, type BreakpointType, type PosisionType };

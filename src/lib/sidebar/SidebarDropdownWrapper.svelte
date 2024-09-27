@@ -1,28 +1,60 @@
 <script lang="ts">
+  import { getContext } from 'svelte';
+  import { writable, type Writable } from 'svelte/store';
   import type { ParamsType } from '../types';
   import { slide } from 'svelte/transition';
   import { uiHelpers } from '$lib';
-  import { type SidebarDropdownWrapperProps as Props, sidebardropdownwrapper } from '.';
+  import { type SidebarDropdownWrapperProps as Props, sidebardropdownwrapper, type SidebarCtxType } from '.';
   
-  let { children, arrowup, arrowdown, iconSlot, isOpen, btnClass, label, spanClass, ulClass, transition = slide, params, svgClass, class: className, onclick, ...restProps }: Props = $props();
+  type SidebarContext = {
+    selected?: Writable<object | null>;
+    isSingle: boolean;
+  };
+
+  let { children, arrowup, arrowdown, iconSlot, isOpen = false, btnClass, label, spanClass, ulClass, transition = slide, params, svgClass, class: className, onclick, ...restProps }: Props = $props();
 
   const { base, btn, span, svg, ul } = $derived(sidebardropdownwrapper());
-
+  
   let sidebarDropdown = uiHelpers();
-  sidebarDropdown.isOpen = isOpen ? isOpen : false;
-  let handleDropdown = sidebarDropdown.toggle;
+  sidebarDropdown.isOpen = isOpen;
+  let ctx = getContext<SidebarContext>('sidebarContext') || { isSingle: false };
+  let self = {};
+
+  // Create a new Writable store for tracking the selected dropdown if it doesn't exist in the context
+  if (ctx.isSingle && !ctx.selected) {
+    ctx.selected = writable<object | null>(null);
+  }
+  
+  // Use the shared selected store if in single mode, otherwise use the local isOpen state
+  let selected: Writable<object | null> = ctx.isSingle ? ctx.selected! : writable(self);
 
   $effect(() => {
-    isOpen = sidebarDropdown.isOpen;
-    // $inspect('isOpen: ', isOpen);
+    if (ctx.isSingle) {
+      isOpen = $selected === self;
+    } else {
+      isOpen = sidebarDropdown.isOpen;
+    }
   });
+
+  function handleDropdown() {
+    if (ctx.isSingle) {
+      selected.update(current => current === self ? null : self);
+    } else {
+      sidebarDropdown.toggle();
+    }
+    
+    if (onclick) onclick();
+  }
 </script>
 
 <li class={base({ className })}>
-  <button {...restProps} onclick={() => {
-    if (onclick) onclick();
-    handleDropdown();
-    }} type="button" class={btn({ class: btnClass})} aria-controls="sidebar-dropdown">
+  <button 
+    {...restProps} 
+    onclick={handleDropdown}
+    type="button" 
+    class={btn({ class: btnClass})} 
+    aria-controls="sidebar-dropdown"
+  >
     {#if iconSlot}
       {@render iconSlot()}
     {/if}
@@ -49,23 +81,3 @@
     </ul>
   {/if}
 </li>
-
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@prop children
-@prop arrowup
-@prop arrowdown
-@prop iconSlot
-@prop isOpen
-@prop btnClass
-@prop label
-@prop spanClass
-@prop ulClass
-@prop transition = slide
-@prop params
-@prop svgClass
-@prop class: className
-@prop ...restProps
--->

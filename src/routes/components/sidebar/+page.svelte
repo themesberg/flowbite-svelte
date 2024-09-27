@@ -19,12 +19,14 @@
   });
 
   const exampleArr = [
-    { name: 'Single selection', component: ExampleComponents.SingleSelection },
+    
     { name: 'Default', component: ExampleComponents.Default },
     { name: 'Close button', component: ExampleComponents.CloseButton },
     { name: 'Active class', component: ExampleComponents.ActiveClass },
     { name: 'Overriding active', component: ExampleComponents.OverridingActive },
     { name: 'Multilevel', component: ExampleComponents.Multilevel },
+    { name: 'Single selection', component: ExampleComponents.SingleSelection },
+    { name: 'All open', component: ExampleComponents.AllOpen },
     { name: 'Content separator', component: ExampleComponents.ContentSeparator },
     { name: 'Icon', component: ExampleComponents.Icon },
     { name: 'Cta', component: ExampleComponents.Cta },
