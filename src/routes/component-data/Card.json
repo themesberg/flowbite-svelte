@@ -3,12 +3,12 @@
   "slots": [],
   "events": ["on:click", "on:focusin", "on:focusout", "on:mouseenter", "on:mouseleave"],
   "props": [
-    ["href", "string | null | undefined", "undefined"],
-    ["horizontal", "boolean", "false"],
-    ["reverse", "boolean", "false"],
-    ["img", "string | undefined", "undefined"],
-    ["padding", "SizeType | 'none'", "'lg'"],
-    ["size", "SizeType | 'none'", "'sm'"],
-    ["imgClass", "string", "''"]
+    ["href", "$$Props['href']", "undefined"],
+    ["horizontal", "$$Props['horizontal']", "false"],
+    ["reverse", "$$Props['reverse']", "false"],
+    ["img", "$$Props['img']", "undefined"],
+    ["padding", "NonNullable<$$Props['padding']>", "'lg'"],
+    ["size", "NonNullable<$$Props['size']>", "'sm'"],
+    ["imgClass", "$$Props['imgClass']", "''"]
   ]
 }

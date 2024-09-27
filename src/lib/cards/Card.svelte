@@ -75,11 +75,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let href: string | null | undefined = undefined;
-@prop export let horizontal: boolean = false;
-@prop export let reverse: boolean = false;
-@prop export let img: string | undefined = undefined;
-@prop export let padding: SizeType | 'none' = 'lg';
-@prop export let size: SizeType | 'none' = 'sm';
-@prop export let imgClass: string = '';
+@prop export let href: $$Props['href'] = undefined;
+@prop export let horizontal: $$Props['horizontal'] = false;
+@prop export let reverse: $$Props['reverse'] = false;
+@prop export let img: $$Props['img'] = undefined;
+@prop export let padding: NonNullable<$$Props['padding']> = 'lg';
+@prop export let size: NonNullable<$$Props['size']> = 'sm';
+@prop export let imgClass: $$Props['imgClass'] = '';
 -->

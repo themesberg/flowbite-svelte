@@ -81,6 +81,6 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let color: keyof typeof gradientClasses = 'blue';
-@prop export let shadow: boolean = false;
+@prop export let color: NonNullable<$$Props['color']> = 'blue';
+@prop export let shadow: $$Props['shadow'] = false;
 -->

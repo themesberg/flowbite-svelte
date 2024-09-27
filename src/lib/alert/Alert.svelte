@@ -38,6 +38,6 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let dismissable: boolean = false;
-@prop export let defaultClass: string = 'p-4 gap-3 text-sm';
+@prop export let dismissable: $$Props['dismissable'] = false;
+@prop export let defaultClass: $$Props['defaultClass'] = 'p-4 gap-3 text-sm';
 -->

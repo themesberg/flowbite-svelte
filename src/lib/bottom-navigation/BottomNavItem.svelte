@@ -83,10 +83,10 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let btnName: string = '';
-@prop export let appBtnPosition: 'left' | 'middle' | 'right' = 'middle';
-@prop export let activeClass: string | undefined = undefined;
-@prop export let href: string = '';
-@prop export let exact: boolean = true;
-@prop export let spanClass: string = '';
+@prop export let btnName: $$Props['btnName'] = '';
+@prop export let appBtnPosition: NonNullable<$$Props['appBtnPosition']> = 'middle';
+@prop export let activeClass: $$Props['activeClass'] = undefined;
+@prop export let href: NonNullable<$$Props['href']> = '';
+@prop export let exact: $$Props['exact'] = true;
+@prop export let spanClass: $$Props['spanClass'] = '';
 -->

@@ -154,14 +154,14 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let pill: boolean = false;
-@prop export let outline: boolean = false;
-@prop export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = group ? 'sm' : 'md';
-@prop export let href: string | undefined = undefined;
-@prop export let type: HTMLButtonAttributes['type'] = 'button';
-@prop export let color: ButtonColor = group ? (outline ? 'dark' : 'alternative') : 'primary';
-@prop export let shadow: boolean = false;
-@prop export let tag: string = 'button';
-@prop export let checked: boolean | undefined = undefined;
-@prop export let disabled: boolean = false;
+@prop export let pill: $$Props['pill'] = false;
+@prop export let outline: $$Props['outline'] = false;
+@prop export let size: NonNullable<$$Props['size']> = group ? 'sm' : 'md';
+@prop export let href: $$Props['href'] = undefined;
+@prop export let type: $$Props['type'] = 'button';
+@prop export let color: NonNullable<$$Props['color']> = group ? (outline ? 'dark' : 'alternative') : 'primary';
+@prop export let shadow: $$Props['shadow'] = false;
+@prop export let tag: $$Props['tag'] = 'button';
+@prop export let checked: $$Props['checked'] = undefined;
+@prop export let disabled: $$Props['disabled'] = false;
 -->

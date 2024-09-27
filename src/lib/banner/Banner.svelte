@@ -70,12 +70,12 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let position: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky' = 'sticky';
-@prop export let dismissable: boolean = true;
-@prop export let bannerType: 'default' | 'bottom' | 'cta' | 'signup' | 'info' = 'default';
-@prop export let divClass: string = 'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600';
-@prop export let innerClass: string = 'flex';
-@prop export let bannerStatus: boolean = true;
-@prop export let transition: TransitionFunc = fade;
-@prop export let params = {};
+@prop export let position: $$Props['position'] = 'sticky';
+@prop export let dismissable: $$Props['dismissable'] = true;
+@prop export let bannerType: NonNullable<$$Props['bannerType']> = 'default';
+@prop export let divClass: $$Props['divClass'] = 'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600';
+@prop export let innerClass: $$Props['innerClass'] = 'flex';
+@prop export let bannerStatus: $$Props['bannerStatus'] = true;
+@prop export let transition: NonNullable<$$Props['transition']> = fade;
+@prop export let params: $$Props['params'] = {};
 -->

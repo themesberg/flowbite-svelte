@@ -53,9 +53,9 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let multiple: boolean = false;
-@prop export let flush: boolean = false;
-@prop export let activeClass: string = 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800';
-@prop export let inactiveClass: string = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800';
-@prop export let defaultClass: string = 'text-gray-500 dark:text-gray-400';
+@prop export let multiple: $$Props['multiple'] = false;
+@prop export let flush: $$Props['flush'] = false;
+@prop export let activeClass: $$Props['activeClass'] = 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800';
+@prop export let inactiveClass: $$Props['inactiveClass'] = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800';
+@prop export let defaultClass: $$Props['defaultClass'] = 'text-gray-500 dark:text-gray-400';
 -->

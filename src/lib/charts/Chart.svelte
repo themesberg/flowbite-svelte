@@ -38,5 +38,5 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let options: ApexOptions;
-@prop export let chart: ApexCharts;
+@prop export let chart: ApexCharts | undefined;
 -->

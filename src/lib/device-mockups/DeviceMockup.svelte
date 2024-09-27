@@ -38,5 +38,5 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let device: 'default' | 'ios' | 'android' | 'tablet' | 'laptop' | 'desktop' | 'smartwatch' = 'default';
+@prop export let device: NonNullable<$$Props['device']> = 'default';
 -->

@@ -3,13 +3,13 @@
   "slots": ["close-button"],
   "events": ["on:close"],
   "props": [
-    ["color", "ColorVariant", "'primary'"],
-    ["large", "boolean", "false"],
-    ["dismissable", "boolean", "false"],
-    ["border", "boolean", "false"],
-    ["href", "string", "''"],
-    ["rounded", "boolean", "false"],
-    ["transition", "TransitionFunc", "fade"],
-    ["params", "object", "{}"]
+    ["color", "NonNullable<$$Props['color']>", "'primary'"],
+    ["large", "$$Props['large']", "false"],
+    ["dismissable", "$$Props['dismissable']", "false"],
+    ["border", "$$Props['border']", "false"],
+    ["href", "$$Props['href']", "''"],
+    ["rounded", "$$Props['rounded']", "false"],
+    ["transition", "NonNullable<$$Props['transition']>", "fade"],
+    ["params", "$$Props['params']", "{}"]
   ]
 }

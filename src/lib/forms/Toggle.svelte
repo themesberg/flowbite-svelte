@@ -58,9 +58,9 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let size: 'small' | 'default' | 'large' | 'custom' = 'default';
-@prop export let group: (string | number)[] = [];
-@prop export let value: string | number = '';
-@prop export let checked: boolean | undefined = undefined;
-@prop export let customSize: string = '';
+@prop export let size: NonNullable<$$Props['size']> = 'default';
+@prop export let group: $$Props['group'] = [];
+@prop export let value: $$Props['value'] = '';
+@prop export let checked: $$Props['checked'] = undefined;
+@prop export let customSize: $$Props['customSize'] = '';
 -->

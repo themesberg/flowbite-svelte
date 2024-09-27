@@ -67,12 +67,12 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let src: string = '';
-@prop export let href: string | undefined = undefined;
-@prop export let rounded: boolean = false;
-@prop export let border: boolean = false;
-@prop export let stacked: boolean = false;
-@prop export let dot: object | undefined = undefined;
-@prop export let alt: string = '';
-@prop export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none' = 'md';
+@prop export let src: $$Props['src'] = '';
+@prop export let href: $$Props['href'] = undefined;
+@prop export let rounded: $$Props['rounded'] = false;
+@prop export let border: $$Props['border'] = false;
+@prop export let stacked: $$Props['stacked'] = false;
+@prop export let dot: $$Props['dot'] = undefined;
+@prop export let alt: $$Props['alt'] = '';
+@prop export let size: NonNullable<$$Props['size']> = 'md';
 -->

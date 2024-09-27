@@ -3,13 +3,13 @@
   "slots": [],
   "events": [],
   "props": [
-    ["src", "string", "''"],
-    ["href", "string | undefined", "undefined"],
-    ["rounded", "boolean", "false"],
-    ["border", "boolean", "false"],
-    ["stacked", "boolean", "false"],
-    ["dot", "object | undefined", "undefined"],
-    ["alt", "string", "''"],
-    ["size", "'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none'", "'md'"]
+    ["src", "$$Props['src']", "''"],
+    ["href", "$$Props['href']", "undefined"],
+    ["rounded", "$$Props['rounded']", "false"],
+    ["border", "$$Props['border']", "false"],
+    ["stacked", "$$Props['stacked']", "false"],
+    ["dot", "$$Props['dot']", "undefined"],
+    ["alt", "$$Props['alt']", "''"],
+    ["size", "NonNullable<$$Props['size']>", "'md'"]
   ]
 }

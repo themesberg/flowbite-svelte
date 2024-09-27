@@ -3,11 +3,11 @@
   "slots": [],
   "events": ["on:click", "on:change", "on:keydown", "on:keyup", "on:focus", "on:blur", "on:mouseenter", "on:mouseleave"],
   "props": [
-    ["btnName", "string", "''"],
-    ["appBtnPosition", "'left' | 'middle' | 'right'", "'middle'"],
-    ["activeClass", "string | undefined", "undefined"],
-    ["href", "string", "''"],
-    ["exact", "boolean", "true"],
-    ["spanClass", "string", "''"]
+    ["btnName", "$$Props['btnName']", "''"],
+    ["appBtnPosition", "NonNullable<$$Props['appBtnPosition']>", "'middle'"],
+    ["activeClass", "$$Props['activeClass']", "undefined"],
+    ["href", "NonNullable<$$Props['href']>", "''"],
+    ["exact", "$$Props['exact']", "true"],
+    ["spanClass", "$$Props['spanClass']", "''"]
   ]
 }

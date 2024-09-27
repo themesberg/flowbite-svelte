@@ -4,6 +4,6 @@
   "events": [],
   "props": [
     ["options", "ApexOptions", ""],
-    ["chart", "ApexCharts", "@prop export let options: ApexOptions"]
+    ["chart", "ApexCharts | undefined", "@prop export let options: ApexOptions"]
   ]
 }

@@ -23,6 +23,6 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let size: SizeType = 'md';
-@prop export let divClass: string = 'inline-flex rounded-lg shadow-sm';
+@prop export let size: $$Props['size'] = 'md';
+@prop export let divClass: $$Props['divClass'] = 'inline-flex rounded-lg shadow-sm';
 -->

@@ -57,15 +57,15 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let name: string | undefined = undefined;
-@prop export let color: FormColorType = 'primary';
-@prop export let custom: boolean = false;
-@prop export let inline: boolean = false;
-@prop export let group: string[] = [];
-@prop export let choices: CheckboxItem[] = [];
-@prop export let value: string | number = 'on';
-@prop export let checked: boolean | undefined = undefined;
-@prop export let spacing: string = $$slots.default ? 'me-2' : '';
-@prop export let groupLabelClass: string = '';
-@prop export let groupInputClass: string = '';
+@prop export let name: $$Props['name'] = undefined;
+@prop export let color: NonNullable<$$Props['color']> = 'primary';
+@prop export let custom: NonNullable<$$Props['custom']> = false;
+@prop export let inline: NonNullable<$$Props['inline']> = false;
+@prop export let group: $$Props['group'] = [];
+@prop export let choices: NonNullable<$$Props['choices']> = [];
+@prop export let value: $$Props['value'] = 'on';
+@prop export let checked: $$Props['checked'] = undefined;
+@prop export let spacing: NonNullable<$$Props['spacing']> = $$slots.default ? 'me-2' : '';
+@prop export let groupLabelClass: NonNullable<$$Props['groupLabelClass']> = '';
+@prop export let groupInputClass: NonNullable<$$Props['groupInputClass']> = '';
 -->
