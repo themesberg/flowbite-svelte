@@ -133,7 +133,7 @@
     },
     sidebar: {
       checked: true,
-      problems: 'add auto props to SidebarGroup to control SidebarDropdownWrapper open/close like accordion'
+      // problems: 'add auto props to SidebarGroup to control SidebarDropdownWrapper open/close like accordion'
     },
     skeleton: {
       checked: true
