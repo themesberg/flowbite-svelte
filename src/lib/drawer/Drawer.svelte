@@ -3,23 +3,42 @@
   import type { drawerTransitionParamTypes, drawerTransitionTypes } from '../types';
   import { fly, slide, blur, fade } from 'svelte/transition';
   import { clickOutside } from '../utils/clickOutside';
+  import type { HTMLAttributes } from 'svelte/elements';
 
-  export let activateClickOutside: boolean = true;
-  export let hidden: boolean = true;
-  export let position: 'fixed' | 'absolute' = 'fixed';
-  export let leftOffset: string = 'inset-y-0 start-0';
-  export let rightOffset: string = 'inset-y-0 end-0';
-  export let topOffset: string = 'inset-x-0 top-0';
-  export let bottomOffset: string = 'inset-x-0 bottom-0';
-  export let width: string = 'w-80';
-  export let backdrop: boolean = true;
-  export let bgColor: string = 'bg-gray-900';
-  export let bgOpacity: string = 'bg-opacity-75';
-  export let placement: 'left' | 'right' | 'top' | 'bottom' = 'left';
-  export let id: string = 'drawer-example';
-  export let divClass: string = 'overflow-y-auto z-50 p-4 bg-white dark:bg-gray-800';
-  export let transitionParams: drawerTransitionParamTypes = {};
-  export let transitionType: drawerTransitionTypes = 'fly';
+  interface $$Props extends HTMLAttributes<HTMLElement> {
+    activateClickOutside?: boolean;
+    hidden?: boolean;
+    position?: 'fixed' | 'absolute';
+    leftOffset?: string;
+    rightOffset?: string;
+    topOffset?: string;
+    bottomOffset?: string;
+    width?: string;
+    backdrop?: boolean;
+    bgColor?: string;
+    bgOpacity?: string;
+    placement?: 'left' | 'right' | 'top' | 'bottom';
+    id?: string;
+    divClass?: string;
+    transitionParams?: drawerTransitionParamTypes;
+    transitionType?: drawerTransitionTypes;
+  }
+  export let activateClickOutside: $$Props['activateClickOutside'] = true;
+  export let hidden: $$Props['hidden'] = true;
+  export let position: $$Props['position'] = 'fixed';
+  export let leftOffset: $$Props['leftOffset'] = 'inset-y-0 start-0';
+  export let rightOffset: $$Props['rightOffset'] = 'inset-y-0 end-0';
+  export let topOffset: $$Props['topOffset'] = 'inset-x-0 top-0';
+  export let bottomOffset: $$Props['bottomOffset'] = 'inset-x-0 bottom-0';
+  export let width: $$Props['width'] = 'w-80';
+  export let backdrop: $$Props['backdrop'] = true;
+  export let bgColor: $$Props['bgColor'] = 'bg-gray-900';
+  export let bgOpacity: $$Props['bgOpacity'] = 'bg-opacity-75';
+  export let placement: NonNullable<$$Props['placement']> = 'left';
+  export let id: $$Props['id'] = 'drawer-example';
+  export let divClass: $$Props['divClass'] = 'overflow-y-auto z-50 p-4 bg-white dark:bg-gray-800';
+  export let transitionParams: $$Props['transitionParams'] = {};
+  export let transitionType: $$Props['transitionType'] = 'fly';
 
   function multiple(node: HTMLElement, params: any) {
     switch (transitionType) {

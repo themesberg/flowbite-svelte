@@ -1,12 +1,20 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
 
-  export let div: string = 'relative mx-auto bg-gray-800 dark:bg-gray-700 rounded-t-[2.5rem] h-[63px] max-w-[133px]';
-  export let slot: string = 'rounded-[2rem] overflow-hidden h-[193px] w-[188px]';
-  export let rightTop: string = 'h-[41px] w-[6px] bg-gray-800 dark:bg-gray-800 absolute -right-[16px] top-[40px] rounded-r-lg';
-  export let rightBot: string = 'h-[32px] w-[6px] bg-gray-800 dark:bg-gray-800 absolute -right-[16px] top-[88px] rounded-r-lg';
-  export let top: string = 'relative mx-auto border-gray-900 dark:bg-gray-800 dark:border-gray-800 border-[10px] rounded-[2.5rem] h-[213px] w-[208px]';
-  export let bot: string = 'relative mx-auto bg-gray-800 dark:bg-gray-700 rounded-b-[2.5rem] h-[63px] max-w-[133px]';
+  interface $$Props {
+    div?: string;
+    slot?: string;
+    rightTop?: string;
+    rightBot?: string;
+    top?: string;
+    bot?: string;
+  }
+  export let div: $$Props['div'] = 'relative mx-auto bg-gray-800 dark:bg-gray-700 rounded-t-[2.5rem] h-[63px] max-w-[133px]';
+  export let slot: $$Props['slot'] = 'rounded-[2rem] overflow-hidden h-[193px] w-[188px]';
+  export let rightTop: $$Props['rightTop'] = 'h-[41px] w-[6px] bg-gray-800 dark:bg-gray-800 absolute -right-[16px] top-[40px] rounded-r-lg';
+  export let rightBot: $$Props['rightBot'] = 'h-[32px] w-[6px] bg-gray-800 dark:bg-gray-800 absolute -right-[16px] top-[88px] rounded-r-lg';
+  export let top: $$Props['top'] = 'relative mx-auto border-gray-900 dark:bg-gray-800 dark:border-gray-800 border-[10px] rounded-[2.5rem] h-[213px] w-[208px]';
+  export let bot: $$Props['bot'] = 'relative mx-auto bg-gray-800 dark:bg-gray-700 rounded-b-[2.5rem] h-[63px] max-w-[133px]';
 </script>
 
 <div class={twMerge(div, $$props.class)}></div>

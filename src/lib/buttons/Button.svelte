@@ -2,22 +2,40 @@
   import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
   import type { SizeType } from '$lib/types';
-  import type { HTMLButtonAttributes } from 'svelte/elements';
+  import type { HTMLButtonAttributes, HTMLAttributes } from 'svelte/elements';
 
+  type ElementType = 'a' | 'button';
   type ButtonColor = keyof typeof colorClasses;
+  type DynamicElementProps<T extends ElementType> = HTMLAttributes<HTMLElementTagNameMap[T]> 
+
+  interface $$Props extends DynamicElementProps<ElementType> {
+    pill?: boolean;
+    outline?: boolean;
+    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+    href?: string;
+    type?: HTMLButtonAttributes['type'];
+    color?: ButtonColor;
+    shadow?: boolean;
+    tag?: string;
+    checked?: boolean;
+    disabled?: boolean;
+    target?: string;
+    rel?: string;
+    name?: string;
+  }
 
   const group: SizeType = getContext('group');
 
-  export let pill: boolean = false;
-  export let outline: boolean = false;
-  export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = group ? 'sm' : 'md';
-  export let href: string | undefined = undefined;
-  export let type: HTMLButtonAttributes['type'] = 'button';
-  export let color: ButtonColor = group ? (outline ? 'dark' : 'alternative') : 'primary';
-  export let shadow: boolean = false;
-  export let tag: string = 'button';
-  export let checked: boolean | undefined = undefined;
-  export let disabled: boolean = false;
+  export let pill: $$Props['pill'] = false;
+  export let outline: $$Props['outline'] = false;
+  export let size: NonNullable<$$Props['size']> = group ? 'sm' : 'md';
+  export let href: $$Props['href'] = undefined;
+  export let type: $$Props['type'] = 'button';
+  export let color: NonNullable<$$Props['color']> = group ? (outline ? 'dark' : 'alternative') : 'primary';
+  export let shadow: $$Props['shadow'] = false;
+  export let tag: $$Props['tag'] = 'button';
+  export let checked: $$Props['checked'] = undefined;
+  export let disabled: $$Props['disabled'] = false;
 
   const colorClasses = {
     alternative: 'text-gray-900 bg-white border border-gray-200 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-400 hover:text-primary-700 focus-within:text-primary-700 dark:focus-within:text-white dark:hover:text-white dark:hover:bg-gray-700',

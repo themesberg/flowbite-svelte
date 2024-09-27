@@ -5,18 +5,34 @@
   import Label from './Label.svelte';
   import type { CheckboxItem } from '../types';
 
+  interface $$Props {
+    name?: string;
+    color?: FormColorType;
+    custom?: boolean;
+    inline?: boolean;
+    group?: string[];
+    choices?: CheckboxItem[];
+    value?: string | number;
+    checked?: boolean;
+    spacing?: string;
+    groupLabelClass?: string;
+    groupInputClass?: string;
+    class?: string;
+    required?: boolean;
+  }
+
   // properties forwarding
-  export let name: string | undefined = undefined;
-  export let color: FormColorType = 'primary';
-  export let custom: boolean = false;
-  export let inline: boolean = false;
-  export let group: string[] = [];
-  export let choices: CheckboxItem[] = [];
-  export let value: string | number = 'on';
-  export let checked: boolean | undefined = undefined;
-  export let spacing: string = $$slots.default ? 'me-2' : '';
-  export let groupLabelClass: string = '';
-  export let groupInputClass: string = '';
+  export let name: $$Props['name'] = undefined;
+  export let color: NonNullable<$$Props['color']> = 'primary';
+  export let custom: NonNullable<$$Props['custom']> = false;
+  export let inline: NonNullable<$$Props['inline']> = false;
+  export let group: $$Props['group'] = [];
+  export let choices: NonNullable<$$Props['choices']> = [];
+  export let value: $$Props['value'] = 'on';
+  export let checked: $$Props['checked'] = undefined;
+  export let spacing: NonNullable<$$Props['spacing']> = $$slots.default ? 'me-2' : '';
+  export let groupLabelClass: NonNullable<$$Props['groupLabelClass']> = '';
+  export let groupInputClass: NonNullable<$$Props['groupInputClass']> = '';
   
 
   // tinted if put in component having its own background

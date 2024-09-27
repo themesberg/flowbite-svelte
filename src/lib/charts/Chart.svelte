@@ -2,22 +2,29 @@
   import type { ApexOptions } from 'apexcharts';
 
   export let options: ApexOptions;  
-  export let chart: ApexCharts;
+  export let chart: ApexCharts | undefined;
 
-  function initChart(node: HTMLElement, options: ApexOptions) {
-    async function asyncInitChart() {
+  interface ChartAction {
+    update: (options: ApexOptions) => void;
+    destroy: () => void;
+  }
+  
+  function initChart(node: HTMLElement, options: ApexOptions): ChartAction {
+    async function asyncInitChart(): Promise<void> {
+      const ApexChartsModule = await import('apexcharts');
       const ApexCharts = (await import('apexcharts')).default;
       chart = new ApexCharts(node, options);
       chart.render();
+      await chart.render();
     }
 
     asyncInitChart();
 
     return {
-      update(options: ApexOptions) {
+      update(options: ApexOptions): void {
         chart && chart.updateOptions(options);
       },
-      destroy() {
+      destroy(): void {
         chart && chart.destroy();
       }
     };

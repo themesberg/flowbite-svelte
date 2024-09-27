@@ -7,8 +7,8 @@
     innerClass?: string;
   }
 
-  export let outerClass: string = 'w-full';
-  export let innerClass: string = 'grid max-w-xs grid-cols-3 gap-1 p-1 mx-auto my-2 bg-gray-100 rounded-lg dark:bg-gray-600';
+  export let outerClass: $$Props['outerClass'] = 'w-full';
+  export let innerClass: $$Props['innerClass'] = 'grid max-w-xs grid-cols-3 gap-1 p-1 mx-auto my-2 bg-gray-100 rounded-lg dark:bg-gray-600';
 </script>
 
 <div class={twMerge(outerClass, $$props.classOuter)} {...$$restProps}>

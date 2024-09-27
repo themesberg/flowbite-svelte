@@ -19,14 +19,14 @@
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none';
   }
 
-  export let src: string = '';
-  export let href: string | undefined = undefined;
-  export let rounded: boolean = false;
-  export let border: boolean = false;
-  export let stacked: boolean = false;
-  export let dot: object | undefined = undefined;
-  export let alt: string = '';
-  export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none' = 'md';
+  export let src: $$Props['src'] = '';
+  export let href: $$Props['href'] = undefined;
+  export let rounded: $$Props['rounded'] = false;
+  export let border: $$Props['border'] = false;
+  export let stacked: $$Props['stacked'] = false;
+  export let dot: $$Props['dot'] = undefined;
+  export let alt: $$Props['alt'] = '';
+  export let size: NonNullable<$$Props['size']> = 'md';
 
   $: dot = dot && { placement: 'top-right', color: 'gray', size: 'lg', ...dot };
 

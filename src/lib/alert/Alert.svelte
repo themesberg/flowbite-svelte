@@ -9,8 +9,8 @@
     defaultClass?: string;
   }
 
-  export let dismissable: boolean = false;
-  export let defaultClass: string = 'p-4 gap-3 text-sm';
+  export let dismissable: $$Props['dismissable'] = false;
+  export let defaultClass: $$Props['defaultClass'] = 'p-4 gap-3 text-sm';
 
   let divClass: string;
   $: divClass = twMerge(defaultClass, ($$slots.icon || dismissable) && 'flex items-center', $$props.class);

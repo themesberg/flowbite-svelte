@@ -18,12 +18,12 @@
     spanClass?: string;
   }
 
-  export let btnName: string = '';
-  export let appBtnPosition: 'left' | 'middle' | 'right' = 'middle';
-  export let activeClass: string | undefined = undefined;
-  export let href: string = '';
-  export let exact: boolean = true;
-  export let spanClass: string = '';
+  export let btnName: $$Props['btnName'] = '';
+  export let appBtnPosition: NonNullable<$$Props['appBtnPosition']> = 'middle';
+  export let activeClass: $$Props['activeClass'] = undefined;
+  export let href: NonNullable<$$Props['href']> = '';
+  export let exact: $$Props['exact'] = true;
+  export let spanClass: $$Props['spanClass'] = '';
 
   const navType: 'default' | 'border' | 'application' | 'pagination' | 'group' | 'card' | 'meeting' | 'video' = getContext('navType');
 

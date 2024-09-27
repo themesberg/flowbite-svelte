@@ -8,7 +8,11 @@
   import Smartwatch from './Smartwatch.svelte';
   import Tablet from './Tablet.svelte';
 
-  export let device: 'default' | 'ios' | 'android' | 'tablet' | 'laptop' | 'desktop' | 'smartwatch' = 'default';
+  interface $$Props {
+    device?: 'default' | 'ios' | 'android' | 'tablet' | 'laptop' | 'desktop' | 'smartwatch';
+  }
+
+  export let device: NonNullable<$$Props['device']> = 'default';
 
   const componets = {
     android: Android,

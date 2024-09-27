@@ -21,14 +21,14 @@
     params?: object;
   }
 
-  export let color: ColorVariant = 'primary';
-  export let large: boolean = false;
-  export let dismissable: boolean = false;
-  export let border: boolean = false;
-  export let href: string = '';
-  export let rounded: boolean = false;
-  export let transition: TransitionFunc = fade;
-  export let params: object = {};
+  export let color: NonNullable<$$Props['color']> = 'primary';
+  export let large: $$Props['large'] = false;
+  export let dismissable: $$Props['dismissable'] = false;
+  export let border: $$Props['border'] = false;
+  export let href: $$Props['href'] = '';
+  export let rounded: $$Props['rounded'] = false;
+  export let transition: NonNullable<$$Props['transition']> = fade;
+  export let params: $$Props['params'] = {};
 
   let badgeStatus: boolean = true;
 

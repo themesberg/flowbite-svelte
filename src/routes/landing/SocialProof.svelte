@@ -9,7 +9,7 @@
   import { page } from '$app/stores';
   import type { PageData } from '../$types';
 
-  let data: PageData = $page.data;
+  let data: PageData = $page.data as PageData;
 
   let github = data.github?.['stargazers_count'] ?? 0;
   let npm = data.npm?.['downloads'] ?? 0;

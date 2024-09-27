@@ -1,12 +1,19 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
   import Button from './Button.svelte';
+  import type { ComponentProps } from 'svelte';
   import { getContext } from 'svelte';
+
+  type ButtonProps = ComponentProps<Button>;
+  interface $$Props extends Omit<ButtonProps, 'color'>{
+    color?: keyof typeof gradientClasses;
+    shadow?: boolean;
+  } 
 
   const group = getContext('group');
 
-  export let color: keyof typeof gradientClasses = 'blue';
-  export let shadow: boolean = false;
+  export let color: NonNullable<$$Props['color']> = 'blue';
+  export let shadow: $$Props['shadow'] = false;
 
   const gradientClasses = {
     blue: 'text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-blue-300 dark:focus:ring-blue-800 ',

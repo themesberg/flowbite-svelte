@@ -4,13 +4,23 @@
   import type { ComponentProps } from 'svelte';
   import Frame from '../utils/Frame.svelte';
 
-  export let href: string | null | undefined = undefined;
-  export let horizontal: boolean = false;
-  export let reverse: boolean = false;
-  export let img: string | undefined = undefined;
-  export let padding: SizeType | 'none' = 'lg';
-  export let size: SizeType | 'none' = 'sm';
-  export let imgClass: string = '';
+  interface $$Props extends ComponentProps<Frame> {
+    href?: string;
+    horizontal?: boolean;
+    reverse?: boolean;
+    img?: string;
+    padding?: SizeType | 'none';
+    size?: SizeType | 'none';
+    imgClass?: string;
+  }
+
+  export let href: $$Props['href'] = undefined;
+  export let horizontal: $$Props['horizontal'] = false;
+  export let reverse: $$Props['reverse'] = false;
+  export let img: $$Props['img'] = undefined;
+  export let padding: NonNullable<$$Props['padding']> = 'lg';
+  export let size: NonNullable<$$Props['size']> = 'sm';
+  export let imgClass: $$Props['imgClass'] = '';
 
   // propagate props type from underlying Frame
   interface $$Props extends ComponentProps<Frame> {
