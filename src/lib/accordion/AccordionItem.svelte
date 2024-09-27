@@ -9,6 +9,7 @@
   let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transition = slide, params, class: className }: Props = $props();
 
   const ctx: AccordionCtxType = getContext('ctx') ?? {};
+  // selected type is writable in AccordionCtxType
   if (!ctx.selected) {
     ctx.selected = writable();
   }
@@ -17,9 +18,7 @@
   const self = {};
   const selected = ctx.selected;
 
-  if (open) {
-    selected.set(self);
-  }
+  open && selected.set(self);
 
   selected.subscribe((x) => (open = x === self));
 

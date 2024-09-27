@@ -8,7 +8,7 @@
 
   const navType: BottomNavVariantType = getContext('navType');
   const context = getContext<BottomNavContextType>('bottomNavType') ?? {};
-
+  console.log('context', context);
   let currentUrl = $state($page.url.pathname);
   let active: boolean = $state(false);
   // let btnCls: string = $state('');
