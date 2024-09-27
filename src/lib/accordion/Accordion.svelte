@@ -2,12 +2,13 @@
   import { setContext } from 'svelte';
   import { type AccordionProps as Props, accordion } from './';
 
-  let { children, flush, activeClass, inactiveClass, class: className, transition, params, ...restProps }: Props = $props();
+  let { children, flush, activeClass, inactiveClass, isSingle = true, class: className, transition, params, ...restProps }: Props = $props();
 
   const ctx = {
     flush,
     activeClass,
-    inactiveClass
+    inactiveClass,
+    isSingle
   };
 
   setContext('ctx', ctx);

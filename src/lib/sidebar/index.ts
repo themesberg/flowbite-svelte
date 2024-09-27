@@ -6,6 +6,7 @@ import SidebarButton from './SidebarButton.svelte';
 import SidebarCta from './SidebarCta.svelte';
 import SidebarBrand from './SidebarBrand.svelte';
 import { sidebar, sidebarbutton, sidebarcta, sitebarbrand, sidebardropdownwrapper } from './theme';
+import { type Writable } from 'svelte/store';
 import type { Snippet } from 'svelte';
 import type { HTMLAttributes, HTMLButtonAttributes, HTMLAnchorAttributes } from 'svelte/elements';
 import type { VariantProps } from 'tailwind-variants';
@@ -15,7 +16,10 @@ type SidebarCtxType = {
   closeSidebar?: () => void;
   activeClass?: string;
   nonActiveClass?: string;
+  isSingle?: boolean;
+  selected?: Writable<object>;
 };
+
 type BreakpointType = VariantProps<typeof sidebar>['breakpoint'];
 type PosisionType = VariantProps<typeof sidebar>['position'];
 
@@ -24,6 +28,7 @@ interface SidebarProps extends HTMLAttributes<HTMLElement> {
   isOpen?: boolean;
   closeSidebar?: () => void;
   activateClickOutside?: boolean;
+  isSingleSelection?: boolean;
   breakpoint?: BreakpointType;
   position?: PosisionType;
   ariaLabel?: string;

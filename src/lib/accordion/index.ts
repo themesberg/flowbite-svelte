@@ -13,11 +13,13 @@ interface AccordionCtxType {
   selected?: Writable<object>;
   classActive?: string;
   classInactive?: string;
+  isSingle?: boolean;
 }
 
 interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   flush?: boolean;
+  isSingle?: boolean;
   activeClass?: string;
   inactiveClass?: string;
   defaultClass?: string;

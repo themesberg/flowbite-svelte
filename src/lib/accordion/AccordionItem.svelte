@@ -16,7 +16,7 @@
 
   // single selection
   const self = {};
-  const selected = ctx.selected;
+  const selected = ctx.isSingle ? ctx.selected : writable();
 
   open && selected.set(self);
 

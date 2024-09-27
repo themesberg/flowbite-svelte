@@ -1,7 +1,6 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { getContext } from 'svelte';
-  import type { SidebarType } from '$lib/types';
   import { page } from '$app/stores';
   import { twMerge } from 'tailwind-merge';
   import type { HTMLAnchorAttributes } from 'svelte/elements';

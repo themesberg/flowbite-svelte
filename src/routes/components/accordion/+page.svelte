@@ -19,6 +19,7 @@
   });
 
   const exampleArr = [
+    
     { name: 'Default', component: ExampleComponents.Default },
     { name: 'Open', component: ExampleComponents.Open },
     { name: 'Color', component: ExampleComponents.Color },
@@ -27,7 +28,8 @@
     { name: 'Icon', component: ExampleComponents.Icon },
     { name: 'Multiple mode', component: ExampleComponents.MultipleMode },
     { name: 'Transitions', component: ExampleComponents.Transitions },
-    { name: 'Nesting', component: ExampleComponents.Nesting }
+    { name: 'Nesting', component: ExampleComponents.Nesting },
+    { name: 'Open multiple', component: ExampleComponents.OpenMultiple },
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));

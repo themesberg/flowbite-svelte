@@ -7,3 +7,4 @@ export { default as MultipleMode } from './MultipleMode.svelte';
 export { default as Transitions } from './Transitions.svelte';
 export { default as Nesting } from './Nesting.svelte';
 export { default as Open } from './Open.svelte';
+export { default as OpenMultiple } from './OpenMultiple.svelte';

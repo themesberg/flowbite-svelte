@@ -11,3 +11,4 @@ export { default as BrandingWithChildren } from './BrandingWithChildren.svelte';
 export { default as DropdownTransition } from './DropdownTransition.svelte';
 export { default as CloseButton } from './CloseButton.svelte';
 export { default as StaticPositioning } from './StaticPositioning.svelte';
+export { default as SingleSelection } from './SingleSelection.svelte';
