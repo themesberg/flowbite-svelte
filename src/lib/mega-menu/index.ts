@@ -8,7 +8,6 @@ interface LinkTypeLike extends LinkType {
   [propName: string]: any;
 }
 
-
 interface MegaMenuProps extends Omit<HTMLAttributes<HTMLDivElement>, 'children'> {
   children: Snippet<[{ item: LinkTypeLike; index: number }]>;
   footer?: Snippet;
@@ -24,4 +23,4 @@ interface MegaMenuProps extends Omit<HTMLAttributes<HTMLDivElement>, 'children'>
   transition?: TransitionFunc;
 }
 
-export { MegaMenu, type MegaMenuProps, megamenu }
+export { MegaMenu, type MegaMenuProps, megamenu };

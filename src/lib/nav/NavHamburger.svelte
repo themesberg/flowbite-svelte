@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getContext } from 'svelte';
   import type { navbarType } from '$lib/types';
-  import { navhamburger, type NavHamburgerProps as Props } from '.'
+  import { navhamburger, type NavHamburgerProps as Props } from '.';
 
   let { toggleNav, class: className, ...restProps }: Props = $props();
 
@@ -21,3 +21,12 @@
     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
   </svg>
 </button>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@prop toggleNav
+@prop class: className
+@prop ...restProps
+-->

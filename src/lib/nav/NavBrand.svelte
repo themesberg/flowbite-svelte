@@ -11,12 +11,12 @@
   const { base, span } = $derived(navbrand());
 </script>
 
-<a href="/" onclick={closeNav} class={base({class: aClass})} {...restProps}>
+<a href="/" onclick={closeNav} class={base({ class: aClass })} {...restProps}>
   {#if children}
     {@render children()}
   {/if}
   {#if siteName}
-    <span class={span({class: spanClass})}>{siteName}</span>
+    <span class={span({ class: spanClass })}>{siteName}</span>
   {/if}
 </a>
 

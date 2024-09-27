@@ -19,7 +19,6 @@
   });
 
   const exampleArr = [
-    
     { name: 'Default', component: ExampleComponents.Default },
     { name: 'Close button', component: ExampleComponents.CloseButton },
     { name: 'Active class', component: ExampleComponents.ActiveClass },

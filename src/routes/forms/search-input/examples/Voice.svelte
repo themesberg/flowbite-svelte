@@ -7,13 +7,13 @@
 </script>
 
 <form class="flex gap-2">
-  <Search size="md" class="flex gap-2 items-center" placeholder="Search Mockups, Logos, Design Templates...">
+  <Search size="md" class="flex items-center gap-2" placeholder="Search Mockups, Logos, Design Templates...">
     <button type="button" onclick={handleVoiceBtn} class="outline-none">
-      <MicrophoneSolid class="w-5 h-5 me-2" />
+      <MicrophoneSolid class="me-2 h-5 w-5" />
     </button>
   </Search>
   <Button size="sm">
-    <SearchOutline class="w-6 h-6 me-2 -ms-1" />
+    <SearchOutline class="-ms-1 me-2 h-6 w-6" />
     Search
   </Button>
 </form>

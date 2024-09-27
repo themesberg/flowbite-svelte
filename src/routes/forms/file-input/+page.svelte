@@ -19,9 +19,7 @@
     eager: true
   });
 
-  const exampleArr = [
-    { name: 'Dropzone example', component: ExampleComponents.DropzoneExample },
-  ];
+  const exampleArr = [{ name: 'Dropzone example', component: ExampleComponents.DropzoneExample }];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 
@@ -77,7 +75,6 @@ ${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ''}`;
   // end of DynamicCodeBlock setup
   $effect(() => {
     exampleExpand = codeBlock.isOpen;
-
   });
 </script>
 
@@ -116,7 +113,6 @@ ${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ''}`;
     <HighlightCompo code={generatedCode} />
   {/snippet}
 </CodeWrapper>
-
 
 <H2>Examples</H2>
 

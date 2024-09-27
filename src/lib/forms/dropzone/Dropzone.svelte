@@ -31,8 +31,8 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @prop children
-@prop value
-@prop files
+@prop value = $bindable<string | undefined>()
+@prop files = $bindable<FileList | null>()
 @prop class: className
 @prop ...restProps
 -->

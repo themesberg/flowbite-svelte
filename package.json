@@ -1,6 +1,6 @@
 {
   "name": "svelte-5-ui-lib",
-  "version": "0.9.15",
+  "version": "0.9.16",
   "description": "A UI library for Svelte 5.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -351,6 +351,10 @@
       "types": "./dist/list-group/ListgroupItem.svelte.d.ts",
       "svelte": "./dist/list-group/ListgroupItem.svelte"
     },
+    "./MegaMenu.svelte": {
+      "types": "./dist/mega-menu/MegaMenu.svelte.d.ts",
+      "svelte": "./dist/mega-menu/MegaMenu.svelte"
+    },
     "./Modal.svelte": {
       "types": "./dist/modal/Modal.svelte.d.ts",
       "svelte": "./dist/modal/Modal.svelte"
@@ -358,6 +362,10 @@
     "./NavBrand.svelte": {
       "types": "./dist/nav/NavBrand.svelte.d.ts",
       "svelte": "./dist/nav/NavBrand.svelte"
+    },
+    "./NavHamburger.svelte": {
+      "types": "./dist/nav/NavHamburger.svelte.d.ts",
+      "svelte": "./dist/nav/NavHamburger.svelte"
     },
     "./NavLi.svelte": {
       "types": "./dist/nav/NavLi.svelte.d.ts",

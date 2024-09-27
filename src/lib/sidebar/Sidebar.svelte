@@ -71,6 +71,7 @@
 @prop children
 @prop isOpen = false
 @prop closeSidebar
+@prop isSingle = true
 @prop breakpoint = 'md'
 @prop position = 'fixed'
 @prop activateClickOutside = true

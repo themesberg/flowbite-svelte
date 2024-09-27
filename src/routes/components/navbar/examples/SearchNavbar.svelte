@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Navbar, NavBrand, NavUl, NavLi, uiHelpers, Button, NavHamburger, Input } from '$lib';
-  import SearchOutline from 'flowbite-svelte-icons/SearchOutline.svelte'
+  import SearchOutline from 'flowbite-svelte-icons/SearchOutline.svelte';
 
   let nav = uiHelpers();
   let navStatus = $state(false);
@@ -17,18 +17,18 @@
     </NavBrand>
   {/snippet}
   {#snippet navSlotBlock()}
-  <div class="flex items-center md:order-2 space-x-1">
-    <Button class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1 bg-white">
-      <SearchOutline class="w-5 h-5" />
-    </Button>
-    <div class="hidden relative md:block">
-      <div class="flex absolute inset-y-0 start-0 items-center ps-3 pointer-events-none">
-        <SearchOutline class="w-4 h-4" />
+    <div class="flex items-center space-x-1 md:order-2">
+      <Button class="me-1 rounded-lg bg-white p-2.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 md:hidden dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700">
+        <SearchOutline class="h-5 w-5" />
+      </Button>
+      <div class="relative hidden md:block">
+        <div class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
+          <SearchOutline class="h-4 w-4" />
+        </div>
+        <Input id="search-navbar" class="bg-transparent ps-10" placeholder="Search..." />
       </div>
-      <Input id="search-navbar" class="ps-10 bg-transparent" placeholder="Search..." />
+      <NavHamburger {toggleNav} />
     </div>
-    <NavHamburger {toggleNav}/>
-  </div>
   {/snippet}
   <NavUl class="order-1">
     <NavLi href="/">Home</NavLi>

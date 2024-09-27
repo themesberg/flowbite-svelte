@@ -17,11 +17,11 @@
     currentUrl = $page.url.pathname;
   });
 
-  const { base, link } = $derived(navLi({ active: isActive, breakPoint}));
+  const { base, link } = $derived(navLi({ active: isActive, breakPoint }));
 </script>
 
-<li class={base({class: className})}>
-  <a {href} onclick={closeNav} {...restProps} aria-current={currentUrl === href} class={link({class: aClass})}>
+<li class={base({ class: className })}>
+  <a {href} onclick={closeNav} {...restProps} aria-current={currentUrl === href} class={link({ class: aClass })}>
     {@render children()}
   </a>
 </li>

@@ -36,5 +36,4 @@
     <Li><A href="https://flowbite-svelte-blocks.codewithshin.com/">Flowbite-Svelte-Blocks</A></Li>
     <Li><A href="https://flowbite-svelte-admin-dashboard.codewithshin.com/">Flowbite-Svelte-Dashboard</A></Li>
   </List>
-
 </div>

@@ -41,7 +41,7 @@
     },
     bottomNavigation: {
       checked: true,
-      problems: 'Tooltip',
+      problems: 'Tooltip'
       // notes: 'Variants'
     },
     breadcrumb: {
@@ -66,7 +66,7 @@
       checked: false
     },
     darkmode: {
-      checked: true,
+      checked: true
       // problems: 'Switcher style'
     },
     deviceMockups: {
@@ -113,7 +113,7 @@
       checked: true
     },
     navbar: {
-      checked: true,
+      checked: true
       // problems: 'User menu dropdown'
     },
     pagination: {
@@ -132,7 +132,7 @@
       checked: true
     },
     sidebar: {
-      checked: true,
+      checked: true
       // problems: 'add auto props to SidebarGroup to control SidebarDropdownWrapper open/close like accordion'
     },
     skeleton: {
@@ -182,7 +182,7 @@
       // notes: 'Variants, reactive examples'
     },
     fileInput: {
-      checked: true,
+      checked: true
       // problems: 'Dropzone'
       // notes: 'Variants, reactive examples'
     },
@@ -193,7 +193,7 @@
       // notes: 'Variants, reactive examples'
     },
     inputField: {
-      checked: true,
+      checked: true
       // problems: 'Advanced usage'
       // notes: 'Variants, reactive examples'
     },
@@ -211,13 +211,13 @@
       // notes: 'Variants, reactive examples'
     },
     searchInput: {
-      checked: true,
+      checked: true
       // problems: 'Event example',
       // notes: 'Variants checked'
     },
     select: {
       checked: true,
-      problems: 'MultiSelect',
+      problems: 'MultiSelect'
       // notes: 'Variants, reactive examples'
     },
     textarea: {

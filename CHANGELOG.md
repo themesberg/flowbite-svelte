@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.16
+
+### Patch Changes
+
+- feat: isSingle prop to AccordionItem and SidebarDropdownWrapper components ([`9c623ed80be37a0beb042a3cba040174106ba5fd`](https://github.com/shinokada/svelte-5-ui-lib/commit/9c623ed80be37a0beb042a3cba040174106ba5fd))
+
 ## 0.9.15
 
 ### Patch Changes

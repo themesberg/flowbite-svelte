@@ -8,7 +8,7 @@
 </script>
 
 <form class="flex gap-2" onsubmit={submitted}>
-  <Search bind:value/>
+  <Search bind:value />
   <Button class="p-2.5" type="submit">
     <SearchOutline class="h-5 w-5" />
   </Button>

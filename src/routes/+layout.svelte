@@ -28,7 +28,7 @@
   });
 
   const hasPath = (key: string) => currentUrl.includes(key);
- 
+
   let navClass = 'w-full divide-gray-200 border-gray-200 bg-gray-50 dark_bg_theme text-gray-500 dark:divide-gray-700 dark:border-gray-700 dark:transparent dark:text-gray-400 sm:px-4';
   let { children, data } = $props();
 
@@ -76,8 +76,7 @@
 <div class="lg:flex">
   <Sidebar isSingle={false} {isOpen} {closeSidebar} breakpoint="lg" activeClass="flex items-center p-1 text-base font-normal text-white dark:hover:text-white hover:text-gray-900 bg-primary-700 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" nonActiveClass="p-1 hover:bg-gray-200" divClass="dark:bg-gray-900 bg-gray-50" class="top-[62px] h-screen dark:bg-gray-900">
     <SidebarGroup>
-      <SidebarDropdownWrapper label="GETTING STARTED" 
-      isOpen={hasPath('pages')} svgClass="me-4" btnClass="p-1">
+      <SidebarDropdownWrapper label="GETTING STARTED" isOpen={hasPath('pages')} svgClass="me-4" btnClass="p-1">
         <SidebarItem label="About" href="/pages/about" />
         <SidebarItem label="Coverage" href="/pages/coverage" />
       </SidebarDropdownWrapper>

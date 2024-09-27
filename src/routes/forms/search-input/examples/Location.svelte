@@ -24,9 +24,9 @@
       labelSelected: 'CH',
       icon: '/images/forms/search-input/ch-flag.svg'
     }
-  ]
+  ];
   let selectCountry = $state('USA');
-  let buttonLabel = $derived(countries.find(({ labelSelected }) => labelSelected ===  selectCountry))
+  let buttonLabel = $derived(countries.find(({ labelSelected }) => labelSelected === selectCountry));
   let selectCategory = $state('All categories');
   let dropdown = uiHelpers();
   let dropdownStatus = $state(false);
@@ -43,23 +43,22 @@
   };
   $effect(() => {
     dropdownStatus = dropdown.isOpen;
-    
   });
 </script>
 
 <div class="h-48">
   <form class="flex">
     <Button class="whitespace-nowrap rounded-e-none border border-e-0 border-primary-700" onclick={dropdown.toggle}>
-      <img class="h-3.5 w-3.5 rounded-full me-2" src={buttonLabel?.icon} alt={buttonLabel?.label}>
+      <img class="me-2 h-3.5 w-3.5 rounded-full" src={buttonLabel?.icon} alt={buttonLabel?.label} />
       {buttonLabel?.labelSelected}
-      <ChevronDownOutline class="w-2.5 h-2.5 ms-2.5" />
+      <ChevronDownOutline class="ms-2.5 h-2.5 w-2.5" />
     </Button>
     <div class="relative">
       <Dropdown {dropdownStatus} {closeDropdown} params={transitionParams} class="absolute -left-[110px] top-[45px]">
         <DropdownUl>
           {#each countries as country}
-            <DropdownLi onclick={() => selectCountry = country.labelSelected} liClass="font-medium py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 w-full text-left inline-flex items-center {selectCountry === country.labelSelected ? 'underline' : ''}">
-              <img class="h-3.5 w-3.5 rounded-full me-2" src={country.icon} alt={country.label}>
+            <DropdownLi onclick={() => (selectCountry = country.labelSelected)} liClass="font-medium py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 w-full text-left inline-flex items-center {selectCountry === country.labelSelected ? 'underline' : ''}">
+              <img class="me-2 h-3.5 w-3.5 rounded-full" src={country.icon} alt={country.label} />
               {country.label}
             </DropdownLi>
           {/each}

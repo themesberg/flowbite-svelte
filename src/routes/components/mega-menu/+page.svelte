@@ -18,7 +18,7 @@
 
   const exampleArr = [
     { name: 'Default', component: ExampleComponents.Default },
-    { name: 'Icon', component: ExampleComponents.Icon },
+    { name: 'Icon', component: ExampleComponents.Icon }
     // { name: 'Card with action button', component: ExampleComponents.CardWithActionButton }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
@@ -46,7 +46,6 @@
 </script>
 
 <H1>Mega menu</H1>
-
 
 <CodeWrapper>
   <div class="mb-12 flex flex-wrap">

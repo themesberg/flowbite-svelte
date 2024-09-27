@@ -38,18 +38,19 @@
     <NavUl>
       <NavLi href="/">Home</NavLi>
       <NavLi class="cursor-pointer" onclick={toggleMega}>
-        Mega menu<ChevronDownOutline class="w-6 h-6 ms-2 text-primary-800 dark:text-white inline" />
+        Mega menu<ChevronDownOutline class="ms-2 inline h-6 w-6 text-primary-800 dark:text-white" />
       </NavLi>
       <NavLi href="/services">Services</NavLi>
       <NavLi href="/services">Products</NavLi>
     </NavUl>
   </Navbar>
   <div class="relative">
-    <MegaMenu items={menu} dropdownStatus={megaStatus} class="absolute -top-[20px] w-[450px] left-[300px]">
+    <MegaMenu items={menu} dropdownStatus={megaStatus} class="absolute -top-[20px] left-[300px] w-[450px]">
       {#snippet children(prop)}
-      <a href={prop.item.href} class="flex items-center hover:text-primary-600 dark:hover:text-primary-500">
-        <prop.item.Icon class="w-4 h-4 me-2" />
-        {prop.item.name}</a>
+        <a href={prop.item.href} class="flex items-center hover:text-primary-600 dark:hover:text-primary-500">
+          <prop.item.Icon class="me-2 h-4 w-4" />
+          {prop.item.name}
+        </a>
       {/snippet}
     </MegaMenu>
   </div>

@@ -15,10 +15,10 @@
     </NavBrand>
   {/snippet}
   {#snippet navSlotBlock()}
-  <div class="flex items-center md:order-2 space-x-1">
-    <Button size="sm" >Get started</Button>
-    <NavHamburger {toggleNav}/>
-  </div>
+    <div class="flex items-center space-x-1 md:order-2">
+      <Button size="sm">Get started</Button>
+      <NavHamburger {toggleNav} />
+    </div>
   {/snippet}
   <NavUl class="order-1">
     <NavLi href="/">Home</NavLi>

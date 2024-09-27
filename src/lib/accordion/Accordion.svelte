@@ -28,6 +28,7 @@
 @prop flush
 @prop activeClass
 @prop inactiveClass
+@prop isSingle = true
 @prop class: className
 @prop transition
 @prop params

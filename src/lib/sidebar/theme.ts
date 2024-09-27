@@ -68,4 +68,4 @@ export const sidebardropdownwrapper = tv({
     svg: 'h-3 w-3 text-gray-800 dark:text-white',
     ul: 'py-2 space-y-2'
   }
-})
+});

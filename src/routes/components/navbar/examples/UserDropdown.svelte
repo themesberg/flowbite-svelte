@@ -22,10 +22,10 @@
       </NavBrand>
     {/snippet}
     {#snippet navSlotBlock()}
-      <div class="flex items-center md:order-2 space-x-1">
+      <div class="flex items-center space-x-1 md:order-2">
         <Avatar onclick={dropdownUser.toggle} src="/images/profile-picture-3.webp" dot={{ color: 'green' }} />
         <div class="relative">
-          <Dropdown dropdownStatus={dropdownUserStatus} closeDropdown={closeDropdownUser} params={{ y: 0, duration: 200, easing: sineIn }} class="absolute -left-[110px] md:-left-[160px] top-[14px] ">
+          <Dropdown dropdownStatus={dropdownUserStatus} closeDropdown={closeDropdownUser} params={{ y: 0, duration: 200, easing: sineIn }} class="absolute -left-[110px] top-[14px] md:-left-[160px] ">
             <DropdownHeader class="px-4 py-2">
               <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
               <span class="block truncate text-sm font-medium">name@flowbite.com</span>
@@ -39,8 +39,8 @@
             <DropdownFooter class="px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600">Sign out</DropdownFooter>
           </Dropdown>
         </div>
-        <NavHamburger {toggleNav}/>
-      </div>  
+        <NavHamburger {toggleNav} />
+      </div>
     {/snippet}
     <NavUl class="order-1">
       <NavLi href="/">Home</NavLi>

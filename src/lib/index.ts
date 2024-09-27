@@ -41,7 +41,7 @@ export * from './video';
 // forms
 export * from './forms/checkbox';
 export * from './forms/checkbox-button';
-export * from './forms/dropzone'
+export * from './forms/dropzone';
 export * from './forms/fileupload';
 export * from './forms/floating-label-input';
 export * from './forms/helper';
