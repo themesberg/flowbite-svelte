@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.46.20
+
+### Patch Changes
+
+- types: add $Props ([`46a29798f77a63482a0951720eb761e474d11287`](https://github.com/themesberg/flowbite-svelte/commit/46a29798f77a63482a0951720eb761e474d11287))
+
 ## 0.46.19
 
 ### Patch Changes
