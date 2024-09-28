@@ -1,10 +1,11 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import PaginationItem from '$lib/pagination/PaginationItem.svelte';
-  import { identity } from 'svelte/internal';
   import ArrowLeft from './icons/ArrowLeft.svelte';
   import ArrowRight from './icons/ArrowRight.svelte';
 
+  const identity = x => x;
+  
   const {
     data,
     url,
