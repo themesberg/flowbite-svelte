@@ -3,12 +3,12 @@
   "slots": [],
   "events": [],
   "props": [
-    ["spanClass", "string", "'block text-sm text-gray-500 sm:text-center dark:text-gray-400'"],
-    ["aClass", "string", "'hover:underline'"],
-    ["year", "number", "new Date().getFullYear()"],
-    ["href", "string", "''"],
-    ["by", "string", "''"],
-    ["target", "string | undefined", "undefined"],
-    ["copyrightMessage", "string", "'All Rights Reserved.'"]
+    ["spanClass", "$$Props['classSpan']", "'block text-sm text-gray-500 sm:text-center dark:text-gray-400'"],
+    ["aClass", "$$Props['aClass']", "'hover:underline'"],
+    ["year", "$$Props['year']", "new Date().getFullYear()"],
+    ["href", "$$Props['href']", "''"],
+    ["by", "$$Props['by']", "''"],
+    ["target", "$$Props['target']", "undefined"],
+    ["copyrightMessage", "$$Props['copyrightMessage']", "'All Rights Reserved.'"]
   ]
 }

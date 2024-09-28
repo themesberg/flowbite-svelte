@@ -3,11 +3,11 @@
   "slots": [],
   "events": ["on:input"],
   "props": [
-    ["items", "SelectOptionType<any>[]", "[]"],
-    ["value", "(string | number)[]", "[]"],
-    ["size", "FormSizeType", "'md'"],
-    ["dropdownClass", "string", "''"],
-    ["placeholder", "string", "''"],
-    ["disabled", "boolean", "false"]
+    ["items", "NonNullable<$$Props['items']>", "[]"],
+    ["value", "NonNullable<$$Props['value']>", "[]"],
+    ["size", "NonNullable<$$Props['size']>", "'md'"],
+    ["dropdownClass", "$$Props['dropdownClass']", "''"],
+    ["placeholder", "$$Props['placeholder']", "''"],
+    ["disabled", "$$Props['disabled']", "false"]
   ]
 }

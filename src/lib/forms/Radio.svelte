@@ -20,17 +20,29 @@
 </script>
 
 <script lang="ts">
+  import type { HTMLInputAttributes } from 'svelte/elements';
   import { getContext } from 'svelte';
   import type { FormColorType } from '../types';
   import Label from './Label.svelte';
 
-  export let color: FormColorType = 'primary';
-  export let custom: boolean = false;
-  export let inline: boolean = false;
-  export let group: number | string | undefined = undefined;
-  export let value: number | string = '';
-  export let spacing: string = $$slots.default ? 'me-2' : '';
-  export let checked: boolean = false;
+  interface $$Props extends HTMLInputAttributes {
+    color?: FormColorType;
+    custom?: boolean;
+    inline?: boolean;
+    group?: number | string | undefined;
+    value?: number | string;
+    spacing?: string;
+    checked?: boolean;
+  }
+
+  export let color: NonNullable<$$Props['color']> = 'primary';
+  export let custom: NonNullable<$$Props['custom']> = false;
+  export let inline: NonNullable<$$Props['inline']> = false;
+  export let group: $$Props['group'] = undefined;
+  export let value: $$Props['value'] = '';
+  export let spacing: NonNullable<$$Props['spacing']> = $$slots.default ? 'me-2' : '';
+  export let checked: $$Props['checked'] = false;
+
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
   $: if (checked && group === undefined) {
@@ -47,11 +59,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let color: FormColorType = 'primary';
-@prop export let custom: boolean = false;
-@prop export let inline: boolean = false;
-@prop export let group: number | string | undefined = undefined;
-@prop export let value: number | string = '';
-@prop export let spacing: string = $$slots.default ? 'me-2' : '';
-@prop export let checked: boolean = false;
+@prop export let color: NonNullable<$$Props['color']> = 'primary';
+@prop export let custom: NonNullable<$$Props['custom']> = false;
+@prop export let inline: NonNullable<$$Props['inline']> = false;
+@prop export let group: $$Props['group'] = undefined;
+@prop export let value: $$Props['value'] = '';
+@prop export let spacing: NonNullable<$$Props['spacing']> = $$slots.default ? 'me-2' : '';
+@prop export let checked: $$Props['checked'] = false;
 -->

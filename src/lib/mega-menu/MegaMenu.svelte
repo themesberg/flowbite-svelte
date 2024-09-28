@@ -5,15 +5,16 @@
   import type { ComponentProps } from 'svelte';
 
   interface $$Props extends ComponentProps<Popper> {
-    items?: LinkTypeLike[];
+    items: LinkTypeLike[];
     full?: boolean;
+    open?: boolean;
     ulClass?: string;
   }
 
-  export let items: LinkTypeLike[] = [];
-  export let full: boolean = false;
-  export let open: boolean = false;
-  export let ulClass: string = 'grid grid-flow-row gap-y-4 md:gap-x-0 auto-col-max auto-row-max';
+  export let items: $$Props['items'] = [];
+  export let full: $$Props['full'] = false;
+  export let open: $$Props['open'] = false;
+  export let ulClass: $$Props['ulClass'] = 'grid grid-flow-row gap-y-4 md:gap-x-0 auto-col-max auto-row-max';
 
   interface LinkTypeLike extends LinkType {
     [propName: string]: any;
@@ -45,8 +46,8 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let items: LinkTypeLike[] = [];
-@prop export let full: boolean = false;
-@prop export let open: boolean = false;
-@prop export let ulClass: string = 'grid grid-flow-row gap-y-4 md:gap-x-0 auto-col-max auto-row-max';
+@prop export let items: $$Props['items'] = [];
+@prop export let full: $$Props['full'] = false;
+@prop export let open: $$Props['open'] = false;
+@prop export let ulClass: $$Props['ulClass'] = 'grid grid-flow-row gap-y-4 md:gap-x-0 auto-col-max auto-row-max';
 -->

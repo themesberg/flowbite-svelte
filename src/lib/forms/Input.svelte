@@ -6,21 +6,32 @@
 </script>
 
 <script lang="ts">
+  import type { HTMLInputAttributes } from 'svelte/elements';
   import Wrapper from '$lib/utils/Wrapper.svelte';
   import { twMerge } from 'tailwind-merge';
   import { createEventDispatcher, getContext } from 'svelte';
   import type { InputType } from '../types';
   import CloseButton from '$lib/utils/CloseButton.svelte';
 
-  const dispatcher = createEventDispatcher();
-  export let type: InputType = 'text';
-  export let value: any = undefined;
-  export let size: FormSizeType | undefined = undefined;
-  export let clearable = false;
-  export let defaultClass: string = 'block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right';
-  export let color: 'base' | 'green' | 'red' = 'base';
-  export let floatClass: string = 'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400';
+  interface $$Props extends Omit<HTMLInputAttributes,'size'> {
+    type?: InputType;
+    value?: any;
+    size?: FormSizeType;
+    clearable?: boolean;
+    defaultClass?: string;
+    color?: 'base' | 'green' | 'red';
+    floatClass?: string;
+  }
+  
+  export let type: $$Props['type'] = 'text';
+  export let value: $$Props['value'] = undefined;
+  export let size: $$Props['size'] = undefined;
+  export let clearable: $$Props['clearable'] = false;
+  export let defaultClass: $$Props['defaultClass'] = 'block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right';
+  export let color: NonNullable<$$Props['color']> = 'base';
+  export let floatClass: $$Props['floatClass'] = 'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400';
 
+  const dispatcher = createEventDispatcher();
   const borderClasses = {
     base: 'border border-gray-300 dark:border-gray-600',
     tinted: 'border border-gray-300 dark:border-gray-500',
@@ -88,11 +99,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let type: InputType = 'text';
-@prop export let value: any = undefined;
-@prop export let size: FormSizeType | undefined = undefined;
-@prop export let clearable = false;
-@prop export let defaultClass: string = 'block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right';
-@prop export let color: 'base' | 'green' | 'red' = 'base';
-@prop export let floatClass: string = 'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400';
+@prop export let type: $$Props['type'] = 'text';
+@prop export let value: $$Props['value'] = undefined;
+@prop export let size: $$Props['size'] = undefined;
+@prop export let clearable: $$Props['clearable'] = false;
+@prop export let defaultClass: $$Props['defaultClass'] = 'block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right';
+@prop export let color: NonNullable<$$Props['color']> = 'base';
+@prop export let floatClass: $$Props['floatClass'] = 'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400';
 -->

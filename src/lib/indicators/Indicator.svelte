@@ -1,13 +1,23 @@
 <script lang="ts">
+  import type { HTMLAttributes } from 'svelte/elements';
   import type { IndicatorPlacementType } from '$lib/types';
   import { twMerge } from 'tailwind-merge';
 
-  export let color: IndicatorColorType = 'gray';
-  export let rounded: boolean = false;
-  export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
-  export let border: boolean = false;
-  export let placement: IndicatorPlacementType | undefined = undefined;
-  export let offset: boolean = true;
+  interface $$Props extends HTMLAttributes<HTMLDivElement> {
+    color?: IndicatorColorType;
+    rounded?: boolean;
+    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+    border?: boolean;
+    placement?: IndicatorPlacementType;
+    offset?: boolean;
+  }
+
+  export let color: NonNullable<$$Props['color']> = 'gray';
+  export let rounded: $$Props['rounded'] = false;
+  export let size: NonNullable<$$Props['size']> = 'md';
+  export let border: $$Props['border'] = false;
+  export let placement: $$Props['placement'] = undefined;
+  export let offset: $$Props['offset'] = true;
 
   const colors = {
     gray: 'bg-gray-200',
@@ -71,16 +81,16 @@
   $: dotClass = twMerge('flex-shrink-0', rounded ? 'rounded' : 'rounded-full', border && 'border-2 border-white dark:border-gray-800', sizes[size], colors[color], $$slots.default && 'inline-flex items-center justify-center', placement && 'absolute ' + placements[placement], placement && offset && offsets[placement], $$props.class);
 </script>
 
-<div class={dotClass}><slot /></div>
+<div class={dotClass} {...$$restProps}><slot /></div>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let color: IndicatorColorType = 'gray';
-@prop export let rounded: boolean = false;
-@prop export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
-@prop export let border: boolean = false;
-@prop export let placement: IndicatorPlacementType | undefined = undefined;
-@prop export let offset: boolean = true;
+@prop export let color: NonNullable<$$Props['color']> = 'gray';
+@prop export let rounded: $$Props['rounded'] = false;
+@prop export let size: NonNullable<$$Props['size']> = 'md';
+@prop export let border: $$Props['border'] = false;
+@prop export let placement: $$Props['placement'] = undefined;
+@prop export let offset: $$Props['offset'] = true;
 -->

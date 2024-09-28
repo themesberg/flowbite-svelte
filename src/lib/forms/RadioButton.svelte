@@ -1,18 +1,28 @@
 <script lang="ts">
+  import type { HTMLInputAttributes } from 'svelte/elements';
   import Button from '$lib/buttons/Button.svelte';
   import type { ButtonColorType, SizeType } from '$lib/types';
   import { twMerge } from 'tailwind-merge';
 
-  export let group: string | number = '';
-  export let value: string | number = '';
-  export let inline: boolean = true;
+  interface $$Props extends Omit<HTMLInputAttributes, 'size'> {
+    group: string | number;
+    value: string | number;
+    inline?: boolean;
+    pill?: boolean;
+    outline?: boolean;
+    size?: SizeType | undefined;
+    color?: ButtonColorType | undefined;
+    shadow?: boolean;
+  }
 
-  // Button properties forwarding
-  export let pill: boolean = false;
-  export let outline: boolean = false;
-  export let size: SizeType | undefined = undefined;
-  export let color: ButtonColorType | undefined = undefined;
-  export let shadow: boolean = false;
+  export let group: $$Props['group'] = '';
+  export let value: $$Props['value'] = '';
+  export let inline: $$Props['inline'] = true;
+  export let pill: $$Props['pill'] = false;
+  export let outline: $$Props['outline'] = false;
+  export let size: $$Props['size'] = undefined;
+  export let color: $$Props['color'] = undefined;
+  export let shadow: $$Props['shadow'] = false;
 
   let buttonClass: string;
   $: buttonClass = twMerge(inline ? 'inline-flex' : 'flex', $$props.class);
@@ -43,12 +53,12 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let group: string | number = '';
-@prop export let value: string | number = '';
-@prop export let inline: boolean = true;
-@prop export let pill: boolean = false;
-@prop export let outline: boolean = false;
-@prop export let size: SizeType | undefined = undefined;
-@prop export let color: ButtonColorType | undefined = undefined;
-@prop export let shadow: boolean = false;
+@prop export let group: $$Props['group'] = '';
+@prop export let value: $$Props['value'] = '';
+@prop export let inline: $$Props['inline'] = true;
+@prop export let pill: $$Props['pill'] = false;
+@prop export let outline: $$Props['outline'] = false;
+@prop export let size: $$Props['size'] = undefined;
+@prop export let color: $$Props['color'] = undefined;
+@prop export let shadow: $$Props['shadow'] = false;
 -->

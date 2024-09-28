@@ -1,11 +1,18 @@
 <script lang="ts">
+  import type { ComponentProps } from 'svelte';
   import type { FormSizeType } from '$lib/types';
   import Wrapper from '$lib/utils/Wrapper.svelte';
   import Input from './Input.svelte';
 
-  export let size: FormSizeType = 'lg';
-  export let placeholder: string = 'Search';
-  export let value: any = undefined;
+  interface $$Props extends ComponentProps<Input> {
+    size?: FormSizeType;
+    placeholder?: string;
+    value?: any;
+  }
+
+  export let size: NonNullable<$$Props['size']> = 'lg';
+  export let placeholder: $$Props['placeholder'] = 'Search';
+  export let value: $$Props['value'] = undefined;
 
   const sizes = {
     sm: 'w-3.5 h-3.5',
@@ -38,7 +45,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let size: FormSizeType = 'lg';
-@prop export let placeholder: string = 'Search';
-@prop export let value: any = undefined;
+@prop export let size: NonNullable<$$Props['size']> = 'lg';
+@prop export let placeholder: $$Props['placeholder'] = 'Search';
+@prop export let value: $$Props['value'] = undefined;
 -->

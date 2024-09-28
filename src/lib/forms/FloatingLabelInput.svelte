@@ -1,14 +1,24 @@
 <script lang="ts">
+  import type { HTMLInputAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
   import generateId from '../utils/generateId.js';
   import type { InputType } from '../types';
 
-  export let id: string = generateId();
-  export let style: 'filled' | 'outlined' | 'standard' = 'standard';
-  export let type: InputType = 'text';
-  export let size: 'small' | 'default' = 'default';
-  export let color: 'base' | 'green' | 'red' = 'base';
-  export let value: any = undefined;
+  interface $$Props extends Omit<HTMLInputAttributes, 'size'> {
+    id?: string;
+    style?: 'filled' | 'outlined' | 'standard';
+    type?: InputType;
+    size?: 'small' | 'default';
+    color?: 'base' | 'green' | 'red';
+    value?: any;
+  }
+
+  export let id: $$Props['id'] = generateId();
+  export let style: NonNullable<$$Props['style']> = 'standard';
+  export let type: NonNullable<$$Props['type']> = 'text';
+  export let size: NonNullable<$$Props['size']> = 'default';
+  export let color: NonNullable<$$Props['color']> = 'base';
+  export let value: $$Props['value'] = undefined;
 
   const divClasses = {
     filled: 'relative',
@@ -83,10 +93,10 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let id: string = generateId();
-@prop export let style: 'filled' | 'outlined' | 'standard' = 'standard';
-@prop export let type: InputType = 'text';
-@prop export let size: 'small' | 'default' = 'default';
-@prop export let color: 'base' | 'green' | 'red' = 'base';
-@prop export let value: any = undefined;
+@prop export let id: $$Props['id'] = generateId();
+@prop export let style: NonNullable<$$Props['style']> = 'standard';
+@prop export let type: NonNullable<$$Props['type']> = 'text';
+@prop export let size: NonNullable<$$Props['size']> = 'default';
+@prop export let color: NonNullable<$$Props['color']> = 'base';
+@prop export let value: $$Props['value'] = undefined;
 -->

@@ -1,6 +1,12 @@
 <script lang="ts">
+  import type { SVGAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
-  export let svgClass: string = 'w-4 h-4';
+
+  interface $$Props extends SVGAttributes<SVGSVGElement> {
+    svgClass?: string;
+  }
+
+  export let svgClass: $$Props['svgClass'] = 'w-4 h-4';
 </script>
 
 <svg {...$$restProps} class={twMerge(svgClass, $$props.class)} aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
@@ -11,5 +17,5 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let svgClass: string = 'w-4 h-4';
+@prop export let svgClass: $$Props['svgClass'] = 'w-4 h-4';
 -->

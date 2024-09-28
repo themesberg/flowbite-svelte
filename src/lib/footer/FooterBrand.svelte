@@ -1,13 +1,25 @@
 <script lang="ts">
+  import type { HTMLAnchorAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
-  export let aClass: string = 'flex items-center';
-  export let spanClass: string = 'self-center text-2xl font-semibold whitespace-nowrap dark:text-white';
-  export let imgClass: string = 'me-3 h-8';
-  export let href: string = '';
-  export let src: string = '';
-  export let alt: string = '';
-  export let name: string = '';
-  export let target: string | undefined = undefined;
+
+  interface $$Props extends HTMLAnchorAttributes {
+    aClass?: string;
+    spanClass?: string;
+    imgClass?: string;
+    href?: string;
+    src?: string;
+    alt?: string;
+    name?: string;
+    target?: string;
+  }
+  export let aClass: $$Props['aClass'] = 'flex items-center';
+  export let spanClass: $$Props['spanClass'] = 'self-center text-2xl font-semibold whitespace-nowrap dark:text-white';
+  export let imgClass: $$Props['imgClass'] = 'me-3 h-8';
+  export let href: $$Props['href'] = '';
+  export let src: $$Props['src'] = '';
+  export let alt: $$Props['alt'] = '';
+  export let name: $$Props['name'] = '';
+  export let target: $$Props['target'] = '';
 
   let aCls: string = twMerge(aClass, $$props.classA);
   let spanCls: string = twMerge(spanClass, $$props.classSpan);
@@ -28,12 +40,12 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let aClass: string = 'flex items-center';
-@prop export let spanClass: string = 'self-center text-2xl font-semibold whitespace-nowrap dark:text-white';
-@prop export let imgClass: string = 'me-3 h-8';
-@prop export let href: string = '';
-@prop export let src: string = '';
-@prop export let alt: string = '';
-@prop export let name: string = '';
-@prop export let target: string | undefined = undefined;
+@prop export let aClass: $$Props['aClass'] = 'flex items-center';
+@prop export let spanClass: $$Props['spanClass'] = 'self-center text-2xl font-semibold whitespace-nowrap dark:text-white';
+@prop export let imgClass: $$Props['imgClass'] = 'me-3 h-8';
+@prop export let href: $$Props['href'] = '';
+@prop export let src: $$Props['src'] = '';
+@prop export let alt: $$Props['alt'] = '';
+@prop export let name: $$Props['name'] = '';
+@prop export let target: $$Props['target'] = '';
 -->

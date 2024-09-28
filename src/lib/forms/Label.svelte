@@ -1,9 +1,16 @@
 <script lang="ts">
+  import type { HTMLLabelAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
 
-  export let color: 'gray' | 'green' | 'red' | 'disabled' = 'gray';
-  export let defaultClass: string = 'text-sm rtl:text-right font-medium block';
-  export let show: boolean = true;
+  interface $$Props extends HTMLLabelAttributes {
+    color?: 'gray' | 'green' | 'red' | 'disabled';
+    defaultClass?: string;
+    show?: boolean;
+  }
+
+  export let color: NonNullable<$$Props['color']> = 'gray';
+  export let defaultClass: $$Props['defaultClass'] = 'text-sm rtl:text-right font-medium block';
+  export let show: $$Props['show'] = true;
 
   let node: HTMLLabelElement;
 
@@ -34,7 +41,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let color: 'gray' | 'green' | 'red' | 'disabled' = 'gray';
-@prop export let defaultClass: string = 'text-sm rtl:text-right font-medium block';
-@prop export let show: boolean = true;
+@prop export let color: NonNullable<$$Props['color']> = 'gray';
+@prop export let defaultClass: $$Props['defaultClass'] = 'text-sm rtl:text-right font-medium block';
+@prop export let show: $$Props['show'] = true;
 -->

@@ -3,8 +3,8 @@
   "slots": [],
   "events": [],
   "props": [
-    ["items", "T[]", "[]"],
-    ["active", "boolean", "false"],
-    ["defaultClass", "string", "'divide-y divide-gray-200 dark:divide-gray-600'"]
+    ["items", "NonNullable<$$Props['items']>", "[]"],
+    ["active", "$$Props['active']", "false"],
+    ["defaultClass", "$$Props['defaultClass']", "'divide-y divide-gray-200 dark:divide-gray-600'"]
   ]
 }

@@ -1,10 +1,14 @@
 <script lang="ts">
+  import type { HTMLAttributes } from 'svelte/elements';
   import type { SizeType } from '$lib/types';
   import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
   import { clampSize } from '$lib/forms/Input.svelte';
 
-  export let size: 'sm' | 'md' | 'lg' | undefined = undefined;
+  interface $$Props extends HTMLAttributes<HTMLDivElement> {
+    size?: 'sm' | 'md' | 'lg';
+  }
+  export let size: $$Props['size'] = undefined;
 
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
@@ -43,5 +47,5 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let size: 'sm' | 'md' | 'lg' | undefined = undefined;
+@prop export let size: $$Props['size'] = undefined;
 -->

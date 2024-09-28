@@ -3,11 +3,11 @@
   "slots": [],
   "events": [],
   "props": [
-    ["color", "IndicatorColorType", "'gray'"],
-    ["rounded", "boolean", "false"],
-    ["size", "'xs' | 'sm' | 'md' | 'lg' | 'xl'", "'md'"],
-    ["border", "boolean", "false"],
-    ["placement", "IndicatorPlacementType | undefined", "undefined"],
-    ["offset", "boolean", "true"]
+    ["color", "NonNullable<$$Props['color']>", "'gray'"],
+    ["rounded", "$$Props['rounded']", "false"],
+    ["size", "NonNullable<$$Props['size']>", "'md'"],
+    ["border", "$$Props['border']", "false"],
+    ["placement", "$$Props['placement']", "undefined"],
+    ["offset", "$$Props['offset']", "true"]
   ]
 }

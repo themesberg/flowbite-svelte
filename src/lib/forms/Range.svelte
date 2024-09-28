@@ -1,8 +1,14 @@
 <script lang="ts">
+  import type { HTMLInputAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
+  
+  interface $$Props extends Omit<HTMLInputAttributes, 'size'> {
+    value?: number;
+    size?: 'sm' | 'md' | 'lg';
+  }
 
-  export let value: number;
-  export let size: 'sm' | 'md' | 'lg' = 'md';
+  export let value: $$Props['value'] = 0;
+  export let size: NonNullable<$$Props['size']> = 'md';
 
   const sizes = {
     sm: 'h-1 range-sm',
@@ -19,6 +25,6 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let value: number;
-@prop export let size: 'sm' | 'md' | 'lg' = 'md';
+@prop export let value: $$Props['value'] = 0;
+@prop export let size: NonNullable<$$Props['size']> = 'md';
 -->

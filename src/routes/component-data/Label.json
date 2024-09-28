@@ -3,8 +3,8 @@
   "slots": [],
   "events": [],
   "props": [
-    ["color", "'gray' | 'green' | 'red' | 'disabled'", "'gray'"],
-    ["defaultClass", "string", "'text-sm rtl:text-right font-medium block'"],
-    ["show", "boolean", "true"]
+    ["color", "NonNullable<$$Props['color']>", "'gray'"],
+    ["defaultClass", "$$Props['defaultClass']", "'text-sm rtl:text-right font-medium block'"],
+    ["show", "$$Props['show']", "true"]
   ]
 }

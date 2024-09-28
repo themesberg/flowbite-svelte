@@ -3,7 +3,7 @@
   "slots": [],
   "events": ["on:change", "on:click", "on:keydown", "on:keypress", "on:keyup"],
   "props": [
-    ["value", "number", ""],
-    ["size", "'sm' | 'md' | 'lg'", "'md'"]
+    ["value", "$$Props['value']", "0"],
+    ["size", "NonNullable<$$Props['size']>", "'md'"]
   ]
 }

@@ -1,7 +1,12 @@
 <script lang="ts">
+  import type { ComponentProps } from 'svelte';
   import Input from './Input.svelte';
 
-  export let value: number = 0;
+  interface $$Props extends ComponentProps<Input> {
+    value?: number;
+  }
+
+  export let value: $$Props['value'] = 0;
 </script>
 
 <Input let:props {...$$restProps}>
@@ -12,5 +17,5 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let value: number = 0;
+@prop export let value: $$Props['value'] = 0;
 -->

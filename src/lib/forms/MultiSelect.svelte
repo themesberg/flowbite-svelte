@@ -1,17 +1,28 @@
 <script lang="ts">
+  import type { HTMLSelectAttributes } from 'svelte/elements';
   import Badge from '$lib/badge/Badge.svelte';
   import CloseButton from '$lib/utils/CloseButton.svelte';
   import { twMerge } from 'tailwind-merge';
   import type { FormSizeType, SelectOptionType } from '../types';
   import { createEventDispatcher } from 'svelte';
 
+  interface $$Props extends Omit<HTMLSelectAttributes,'size'> {
+    items?: SelectOptionType<any>[];
+    value?: (string | number)[];
+    size?: FormSizeType;
+    dropdownClass?: string;
+    placeholder?: string;
+    disabled?: boolean;
+  }
+  
+  export let items: NonNullable<$$Props['items']> = [];
+  export let value: NonNullable<$$Props['value']> = [];
+  export let size: NonNullable<$$Props['size']> = 'md';
+  export let dropdownClass: $$Props['dropdownClass'] = '';
+  export let placeholder: $$Props['placeholder'] = '';
+  export let disabled: $$Props['disabled'] = false;
+
   const dispatcher = createEventDispatcher();
-  export let items: SelectOptionType<any>[] = [];
-  export let value: (string | number)[] = [];
-  export let size: FormSizeType = 'md';
-  export let dropdownClass: string = '';
-  export let placeholder: string = '';
-  export let disabled: boolean = false;
   $: selectItems = items.filter((x) => value.includes(x.value));
   let show: boolean = false;
 
@@ -176,10 +187,10 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let items: SelectOptionType<any>[] = [];
-@prop export let value: (string | number)[] = [];
-@prop export let size: FormSizeType = 'md';
-@prop export let dropdownClass: string = '';
-@prop export let placeholder: string = '';
-@prop export let disabled: boolean = false;
+@prop export let items: NonNullable<$$Props['items']> = [];
+@prop export let value: NonNullable<$$Props['value']> = [];
+@prop export let size: NonNullable<$$Props['size']> = 'md';
+@prop export let dropdownClass: $$Props['dropdownClass'] = '';
+@prop export let placeholder: $$Props['placeholder'] = '';
+@prop export let disabled: $$Props['disabled'] = false;
 -->

@@ -44,3 +44,10 @@
 </script>
 
 <div use:initChart={options} class={$$props.class}></div>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let options: ApexOptions;
+-->

@@ -1,9 +1,15 @@
 <script lang="ts">
+  import type { HTMLAttributes } from 'svelte/elements';
   import type { ImgType } from '$lib/types';
   import { twMerge } from 'tailwind-merge';
 
-  export let items: ImgType[] = [];
-  export let imgClass: string = 'h-auto max-w-full rounded-lg';
+  interface $$Props extends HTMLAttributes<HTMLDivElement> {
+    items: ImgType[];
+    imgClass?: string;
+  }
+
+  export let items: $$Props['items'] = [];
+  export let imgClass: $$Props['imgClass'] = 'h-auto max-w-full rounded-lg';
 
   $: divClass = twMerge('grid', $$props.class);
 
@@ -26,6 +32,6 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let items: ImgType[] = [];
-@prop export let imgClass: string = 'h-auto max-w-full rounded-lg';
+@prop export let items: $$Props['items'] = [];
+@prop export let imgClass: $$Props['imgClass'] = 'h-auto max-w-full rounded-lg';
 -->

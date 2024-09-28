@@ -3,12 +3,12 @@
   "slots": ["left", "right"],
   "events": ["on:blur", "on:change", "on:click", "on:contextmenu", "on:focus", "on:keydown", "on:keypress", "on:keyup", "on:mouseover", "on:mouseenter", "on:mouseleave", "on:paste", "on:input"],
   "props": [
-    ["type", "InputType", "'text'"],
-    ["value", "any", "undefined"],
-    ["size", "FormSizeType | undefined", "undefined"],
-    ["clearable", "string", "false"],
-    ["defaultClass", "string", "'block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right'"],
-    ["color", "'base' | 'green' | 'red'", "'base'"],
-    ["floatClass", "string", "'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400'"]
+    ["type", "$$Props['type']", "'text'"],
+    ["value", "$$Props['value']", "undefined"],
+    ["size", "$$Props['size']", "undefined"],
+    ["clearable", "$$Props['clearable']", "false"],
+    ["defaultClass", "$$Props['defaultClass']", "'block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right'"],
+    ["color", "NonNullable<$$Props['color']>", "'base'"],
+    ["floatClass", "$$Props['floatClass']", "'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400'"]
   ]
 }

@@ -1,12 +1,23 @@
 <script lang="ts">
+  import type { HTMLAnchorAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
-  export let spanClass: string = 'block text-sm text-gray-500 sm:text-center dark:text-gray-400';
-  export let aClass: string = 'hover:underline';
-  export let year: number = new Date().getFullYear();
-  export let href: string = '';
-  export let by: string = '';
-  export let target: string | undefined = undefined;
-  export let copyrightMessage: string = 'All Rights Reserved.';
+
+  interface $$Props extends HTMLAnchorAttributes {
+    classSpan?: string;
+    aClass?: string;
+    year?: number;
+    by?: string;
+    href?: string;
+    target?: string;
+    copyrightMessage?: string;
+  }
+  export let spanClass: $$Props['classSpan'] = 'block text-sm text-gray-500 sm:text-center dark:text-gray-400';
+  export let aClass: $$Props['aClass'] = 'hover:underline';
+  export let year: $$Props['year'] = new Date().getFullYear();
+  export let href: $$Props['href'] = '';
+  export let by: $$Props['by'] = '';
+  export let target: $$Props['target'] = undefined;
+  export let copyrightMessage: $$Props['copyrightMessage'] = 'All Rights Reserved.';
 
   let spanCls: string = twMerge(spanClass, $$props.classSpan);
   let aCls: string = twMerge(aClass, $$props.classA);
@@ -28,11 +39,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let spanClass: string = 'block text-sm text-gray-500 sm:text-center dark:text-gray-400';
-@prop export let aClass: string = 'hover:underline';
-@prop export let year: number = new Date().getFullYear();
-@prop export let href: string = '';
-@prop export let by: string = '';
-@prop export let target: string | undefined = undefined;
-@prop export let copyrightMessage: string = 'All Rights Reserved.';
+@prop export let spanClass: $$Props['classSpan'] = 'block text-sm text-gray-500 sm:text-center dark:text-gray-400';
+@prop export let aClass: $$Props['aClass'] = 'hover:underline';
+@prop export let year: $$Props['year'] = new Date().getFullYear();
+@prop export let href: $$Props['href'] = '';
+@prop export let by: $$Props['by'] = '';
+@prop export let target: $$Props['target'] = undefined;
+@prop export let copyrightMessage: $$Props['copyrightMessage'] = 'All Rights Reserved.';
 -->
