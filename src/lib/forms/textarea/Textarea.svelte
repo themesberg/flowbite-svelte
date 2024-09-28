@@ -1,7 +1,7 @@
 <script lang="ts">
   import { type TextareaProps as Props, textarea } from '.';
 
-  let { header, footer, value = $bindable(), divClass, innerClass, headerClass, footerClass, disabled, class: className, ...restProps }: Props = $props();
+  let { header, footer, value = $bindable(), divClass, innerClass, headerClass, footerClass, disabled, class: className, cols, ...restProps }: Props = $props();
 
   let hasHeader = !!header;
   let hasFooter = !!footer;
@@ -12,8 +12,8 @@
     wrapped = false;
   }
 
-  const { base, wrapper, innerWrapper, headerCls, footerCls } = $derived(textarea({ wrapped, hasHeader, hasFooter }));
-  $inspect('wrapped: ', wrapped);
+  const { base, wrapper, innerWrapper, headerCls, footerCls } = $derived(textarea({ wrapped, hasHeader, hasFooter, cols:!!cols }));
+  // $inspect('wrapped: ', wrapped);
 </script>
 
 <div class={wrapper({ class: divClass })}>
@@ -23,7 +23,7 @@
     </div>
   {/if}
   <div class={innerWrapper({ class: innerClass })}>
-    <textarea bind:value {...restProps} class={base({ className })}></textarea>
+    <textarea bind:value {disabled} {...restProps} class={base({ className })}></textarea>
   </div>
   {#if footer}
     <div class={footerCls({ class: footerClass })}>

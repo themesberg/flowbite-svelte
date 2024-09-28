@@ -7,6 +7,9 @@ export const toggle = tv({
     input: 'w-4 h-4 bg-gray-100 border-gray-300 dark:ring-offset-gray-800 focus:ring-2 rounded dark:bg-gray-700 dark:border-gray-600 sr-only peer'
   },
   variants: {
+    disabled: {
+      true: {label: 'cursor-not-allowed opacity-50'}
+    },
     checked: {
       true: '',
       false: ''

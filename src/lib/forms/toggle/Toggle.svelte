@@ -2,16 +2,16 @@
   import { Label } from '../label';
   import { type ToggleProps as Props, toggle } from './index';
 
-  let { children, toggleSize = 'default', value, checked = $bindable(), color = 'primary', aria_describedby, labelClass, inputClass, spanClass, leftLabel, ...restProps }: Props = $props();
+  let { children, toggleSize = 'default', value, checked = $bindable(), disabled, color = 'primary', aria_describedby, labelClass, inputClass, spanClass, leftLabel, ...restProps }: Props = $props();
 
-  const { input, label, span } = $derived(toggle({ color, checked, size: toggleSize }));
+  const { input, label, span } = $derived(toggle({ color, checked, size: toggleSize, disabled }));
 </script>
 
 <Label class={label({ class: labelClass })}>
   {#if leftLabel}
     {@render leftLabel()}
   {/if}
-  <input type="checkbox" bind:checked {value} aria-describedby={aria_describedby} {...restProps} class={input({ class: inputClass })} />
+  <input type="checkbox" bind:checked {value} aria-describedby={aria_describedby} {...restProps} {disabled} class={input({ class: inputClass })} />
   <span class={span({ class: spanClass })}></span>
   {@render children()}
 </Label>
