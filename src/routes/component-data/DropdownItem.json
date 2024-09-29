@@ -1,10 +1,31 @@
 {
   "name": "DropdownItem",
   "slots": [],
-  "events": ["on:click", "on:change", "on:keydown", "on:keyup", "on:focus", "on:blur", "on:mouseenter", "on:mouseleave"],
+  "events": [
+    "click",
+    "change",
+    "keydown",
+    "keyup",
+    "focus",
+    "blur",
+    "mouseenter",
+    "mouseleave"
+  ],
   "props": [
-    ["defaultClass", "$$Props['defaultClass']", "'font-medium py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600'"],
-    ["href", "$$Props['href']", "undefined"],
-    ["activeClass", "$$Props['activeClass']", "undefined"]
+    [
+      "defaultClass?",
+      "string",
+      "'font-medium py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600'"
+    ],
+    [
+      "href?",
+      "string",
+      "undefined"
+    ],
+    [
+      "activeClass?",
+      "string",
+      "undefined"
+    ]
   ]
 }

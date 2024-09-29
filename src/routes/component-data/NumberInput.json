@@ -1,1 +1,26 @@
-{ "name": "NumberInput", "slots": [], "events": ["on:blur", "on:change", "on:click", "on:contextmenu", "on:focus", "on:keydown", "on:keypress", "on:keyup", "on:mouseover", "on:mouseenter", "on:mouseleave", "on:paste", "on:input"], "props": [["value", "$$Props['value']", "0"]] }
+{
+  "name": "NumberInput",
+  "slots": [],
+  "events": [
+    "blur",
+    "change",
+    "click",
+    "contextmenu",
+    "focus",
+    "keydown",
+    "keypress",
+    "keyup",
+    "mouseover",
+    "mouseenter",
+    "mouseleave",
+    "paste",
+    "input"
+  ],
+  "props": [
+    [
+      "value?",
+      "number",
+      "0"
+    ]
+  ]
+}

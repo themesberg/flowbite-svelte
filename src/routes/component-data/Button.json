@@ -1,17 +1,89 @@
 {
   "name": "Button",
   "slots": [],
-  "events": ["on:click", "on:change", "on:keydown", "on:keyup", "on:touchend", "on:touchcancel", "on:mouseenter", "on:mouseleave", "on:click", "on:change", "on:keydown", "on:keyup", "on:touchend", "on:touchcancel", "on:mouseenter", "on:mouseleave"],
+  "events": [
+    "click",
+    "change",
+    "keydown",
+    "keyup",
+    "touchend",
+    "touchcancel",
+    "mouseenter",
+    "mouseleave",
+    "click",
+    "change",
+    "keydown",
+    "keyup",
+    "touchend",
+    "touchcancel",
+    "mouseenter",
+    "mouseleave"
+  ],
   "props": [
-    ["pill", "$$Props['pill']", "false"],
-    ["outline", "$$Props['outline']", "false"],
-    ["size", "NonNullable<$$Props['size']>", "group ? 'sm' : 'md'"],
-    ["href", "$$Props['href']", "undefined"],
-    ["type", "$$Props['type']", "'button'"],
-    ["color", "NonNullable<$$Props['color']>", "group ? (outline ? 'dark' : 'alternative') : 'primary'"],
-    ["shadow", "$$Props['shadow']", "false"],
-    ["tag", "$$Props['tag']", "'button'"],
-    ["checked", "$$Props['checked']", "undefined"],
-    ["disabled", "$$Props['disabled']", "false"]
+    [
+      "pill?",
+      "boolean",
+      "false"
+    ],
+    [
+      "outline?",
+      "boolean",
+      "false"
+    ],
+    [
+      "size?",
+      "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      ""
+    ],
+    [
+      "href?",
+      "string",
+      "undefined"
+    ],
+    [
+      "type?",
+      "HTMLButtonAttributes['type']",
+      "'button'"
+    ],
+    [
+      "color?",
+      "ButtonColor",
+      ""
+    ],
+    [
+      "shadow?",
+      "boolean",
+      "false"
+    ],
+    [
+      "tag?",
+      "string",
+      "'button'"
+    ],
+    [
+      "checked?",
+      "boolean",
+      "undefined"
+    ],
+    [
+      "disabled?",
+      "boolean",
+      "false"
+    ],
+    [
+      "target?",
+      "string",
+      ""
+    ],
+    [
+      "rel?",
+      "string",
+      ""
+    ],
+    [
+      "name?",
+      "string",
+      ""
+    ]
   ]
 }

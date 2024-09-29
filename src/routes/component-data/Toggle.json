@@ -1,12 +1,37 @@
 {
   "name": "Toggle",
-  "slots": ["offLabel"],
-  "events": ["on:click", "on:change"],
+  "slots": [
+    "offLabel"
+  ],
+  "events": [
+    "click",
+    "change"
+  ],
   "props": [
-    ["size", "NonNullable<$$Props['size']>", "'default'"],
-    ["group", "$$Props['group']", "[]"],
-    ["value", "$$Props['value']", "''"],
-    ["checked", "$$Props['checked']", "undefined"],
-    ["customSize", "$$Props['customSize']", "''"]
+    [
+      "size?",
+      "'small' | 'default' | 'large' | 'custom'",
+      ""
+    ],
+    [
+      "group?",
+      "string[]",
+      "[]"
+    ],
+    [
+      "value?",
+      "string | number",
+      "''"
+    ],
+    [
+      "checked?",
+      "boolean",
+      "undefined"
+    ],
+    [
+      "customSize?",
+      "string",
+      "''"
+    ]
   ]
 }

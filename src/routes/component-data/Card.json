@@ -1,14 +1,48 @@
 {
   "name": "Card",
   "slots": [],
-  "events": ["on:click", "on:focusin", "on:focusout", "on:mouseenter", "on:mouseleave"],
+  "events": [
+    "click",
+    "focusin",
+    "focusout",
+    "mouseenter",
+    "mouseleave"
+  ],
   "props": [
-    ["href", "$$Props['href']", "undefined"],
-    ["horizontal", "$$Props['horizontal']", "false"],
-    ["reverse", "$$Props['reverse']", "false"],
-    ["img", "$$Props['img']", "undefined"],
-    ["padding", "NonNullable<$$Props['padding']>", "'lg'"],
-    ["size", "NonNullable<$$Props['size']>", "'sm'"],
-    ["imgClass", "$$Props['imgClass']", "''"]
+    [
+      "href?",
+      "string",
+      "undefined"
+    ],
+    [
+      "horizontal?",
+      "boolean",
+      "false"
+    ],
+    [
+      "reverse?",
+      "boolean",
+      "false"
+    ],
+    [
+      "img?",
+      "string",
+      "undefined"
+    ],
+    [
+      "padding?",
+      "SizeType | 'none'",
+      ""
+    ],
+    [
+      "size?",
+      "SizeType | 'none'",
+      ""
+    ],
+    [
+      "imgClass?",
+      "string",
+      "''"
+    ]
   ]
 }

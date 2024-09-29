@@ -3,21 +3,85 @@
   "slots": [],
   "events": [],
   "props": [
-    ["activateClickOutside", "$$Props['activateClickOutside']", "true"],
-    ["hidden", "$$Props['hidden']", "true"],
-    ["position", "$$Props['position']", "'fixed'"],
-    ["leftOffset", "$$Props['leftOffset']", "'inset-y-0 start-0'"],
-    ["rightOffset", "$$Props['rightOffset']", "'inset-y-0 end-0'"],
-    ["topOffset", "$$Props['topOffset']", "'inset-x-0 top-0'"],
-    ["bottomOffset", "$$Props['bottomOffset']", "'inset-x-0 bottom-0'"],
-    ["width", "$$Props['width']", "'w-80'"],
-    ["backdrop", "$$Props['backdrop']", "true"],
-    ["bgColor", "$$Props['bgColor']", "'bg-gray-900'"],
-    ["bgOpacity", "$$Props['bgOpacity']", "'bg-opacity-75'"],
-    ["placement", "NonNullable<$$Props['placement']>", "'left'"],
-    ["id", "$$Props['id']", "'drawer-example'"],
-    ["divClass", "$$Props['divClass']", "'overflow-y-auto z-50 p-4 bg-white dark:bg-gray-800'"],
-    ["transitionParams", "$$Props['transitionParams']", "{}"],
-    ["transitionType", "$$Props['transitionType']", "'fly'"]
+    [
+      "activateClickOutside?",
+      "boolean",
+      "true"
+    ],
+    [
+      "hidden?",
+      "boolean",
+      "true"
+    ],
+    [
+      "position?",
+      "'fixed' | 'absolute'",
+      "'fixed'"
+    ],
+    [
+      "leftOffset?",
+      "string",
+      "'inset-y-0 start-0'"
+    ],
+    [
+      "rightOffset?",
+      "string",
+      "'inset-y-0 end-0'"
+    ],
+    [
+      "topOffset?",
+      "string",
+      "'inset-x-0 top-0'"
+    ],
+    [
+      "bottomOffset?",
+      "string",
+      "'inset-x-0 bottom-0'"
+    ],
+    [
+      "width?",
+      "string",
+      "'w-80'"
+    ],
+    [
+      "backdrop?",
+      "boolean",
+      "true"
+    ],
+    [
+      "bgColor?",
+      "string",
+      "'bg-gray-900'"
+    ],
+    [
+      "bgOpacity?",
+      "string",
+      "'bg-opacity-75'"
+    ],
+    [
+      "placement?",
+      "'left' | 'right' | 'top' | 'bottom'",
+      ""
+    ],
+    [
+      "id?",
+      "string",
+      "'drawer-example'"
+    ],
+    [
+      "divClass?",
+      "string",
+      "'overflow-y-auto z-50 p-4 bg-white dark:bg-gray-800'"
+    ],
+    [
+      "transitionParams?",
+      "drawerTransitionParamTypes",
+      "{}"
+    ],
+    [
+      "transitionType?",
+      "drawerTransitionTypes",
+      "'fly'"
+    ]
   ]
 }

@@ -1,9 +1,19 @@
 {
   "name": "Tooltip",
   "slots": [],
-  "events": ["on:show"],
+  "events": [
+    "show"
+  ],
   "props": [
-    ["type", "'dark' | 'light' | 'auto' | 'custom'", "'dark'"],
-    ["defaultClass", "string", "'py-2 px-3 text-sm font-medium'"]
+    [
+      "type?",
+      "'dark' | 'light' | 'auto' | 'custom'",
+      ""
+    ],
+    [
+      "defaultClass?",
+      "string",
+      ""
+    ]
   ]
 }

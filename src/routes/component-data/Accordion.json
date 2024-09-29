@@ -3,10 +3,40 @@
   "slots": [],
   "events": [],
   "props": [
-    ["multiple", "$$Props['multiple']", "false"],
-    ["flush", "$$Props['flush']", "false"],
-    ["activeClass", "$$Props['activeClass']", "'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800'"],
-    ["inactiveClass", "$$Props['inactiveClass']", "'text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800'"],
-    ["defaultClass", "$$Props['defaultClass']", "'text-gray-500 dark:text-gray-400'"]
+    [
+      "multiple?",
+      "boolean",
+      "false"
+    ],
+    [
+      "flush?",
+      "boolean",
+      "false"
+    ],
+    [
+      "activeClass?",
+      "string",
+      "'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800'"
+    ],
+    [
+      "inactiveClass?",
+      "string",
+      "'text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800'"
+    ],
+    [
+      "defaultClass?",
+      "string",
+      "'text-gray-500 dark:text-gray-400'"
+    ],
+    [
+      "classActive?",
+      "string",
+      ""
+    ],
+    [
+      "classInactive?",
+      "string",
+      ""
+    ]
   ]
 }

@@ -1,9 +1,23 @@
 {
   "name": "Range",
   "slots": [],
-  "events": ["on:change", "on:click", "on:keydown", "on:keypress", "on:keyup"],
+  "events": [
+    "change",
+    "click",
+    "keydown",
+    "keypress",
+    "keyup"
+  ],
   "props": [
-    ["value", "$$Props['value']", "0"],
-    ["size", "NonNullable<$$Props['size']>", "'md'"]
+    [
+      "value?",
+      "number",
+      "0"
+    ],
+    [
+      "size?",
+      "'sm' | 'md' | 'lg'",
+      ""
+    ]
   ]
 }

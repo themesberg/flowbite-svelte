@@ -3,13 +3,45 @@
   "slots": [],
   "events": [],
   "props": [
-    ["aClass", "$$Props['aClass']", "'flex items-center'"],
-    ["spanClass", "$$Props['spanClass']", "'self-center text-2xl font-semibold whitespace-nowrap dark:text-white'"],
-    ["imgClass", "$$Props['imgClass']", "'me-3 h-8'"],
-    ["href", "$$Props['href']", "''"],
-    ["src", "$$Props['src']", "''"],
-    ["alt", "$$Props['alt']", "''"],
-    ["name", "$$Props['name']", "''"],
-    ["target", "$$Props['target']", "''"]
+    [
+      "aClass?",
+      "string",
+      "'flex items-center'"
+    ],
+    [
+      "spanClass?",
+      "string",
+      "'self-center text-2xl font-semibold whitespace-nowrap dark:text-white'"
+    ],
+    [
+      "imgClass?",
+      "string",
+      "'me-3 h-8'"
+    ],
+    [
+      "href?",
+      "string",
+      "''"
+    ],
+    [
+      "src?",
+      "string",
+      "''"
+    ],
+    [
+      "alt?",
+      "string",
+      "''"
+    ],
+    [
+      "name?",
+      "string",
+      "''"
+    ],
+    [
+      "target?",
+      "string",
+      "''"
+    ]
   ]
 }

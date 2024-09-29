@@ -1,15 +1,51 @@
 {
   "name": "Badge",
-  "slots": ["close-button"],
-  "events": ["on:close"],
+  "slots": [
+    "close-button"
+  ],
+  "events": [
+    "close"
+  ],
   "props": [
-    ["color", "NonNullable<$$Props['color']>", "'primary'"],
-    ["large", "$$Props['large']", "false"],
-    ["dismissable", "$$Props['dismissable']", "false"],
-    ["border", "$$Props['border']", "false"],
-    ["href", "$$Props['href']", "''"],
-    ["rounded", "$$Props['rounded']", "false"],
-    ["transition", "NonNullable<$$Props['transition']>", "fade"],
-    ["params", "$$Props['params']", "{}"]
+    [
+      "color?",
+      "ColorVariant",
+      ""
+    ],
+    [
+      "large?",
+      "boolean",
+      "false"
+    ],
+    [
+      "dismissable?",
+      "boolean",
+      "false"
+    ],
+    [
+      "border?",
+      "boolean",
+      "false"
+    ],
+    [
+      "href?",
+      "string",
+      "''"
+    ],
+    [
+      "rounded?",
+      "boolean",
+      "false"
+    ],
+    [
+      "transition?",
+      "TransitionFunc",
+      ""
+    ],
+    [
+      "params?",
+      "object",
+      "{}"
+    ]
   ]
 }

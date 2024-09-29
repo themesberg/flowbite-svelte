@@ -1,10 +1,34 @@
 {
   "name": "Fileupload",
   "slots": [],
-  "events": ["on:change", "on:keyup", "on:keydown", "on:keypress", "on:focus", "on:blur", "on:click", "on:mouseover", "on:mouseenter", "on:mouseleave", "on:paste"],
+  "events": [
+    "change",
+    "keyup",
+    "keydown",
+    "keypress",
+    "focus",
+    "blur",
+    "click",
+    "mouseover",
+    "mouseenter",
+    "mouseleave",
+    "paste"
+  ],
   "props": [
-    ["value", "$$Props['value']", "''"],
-    ["files", "$$Props['files']", "undefined"],
-    ["inputClass", "$$Props['inputClass']", "'border !p-0 dark:text-gray-400'"]
+    [
+      "value",
+      "string",
+      "''"
+    ],
+    [
+      "files",
+      "FileList | undefined",
+      "undefined"
+    ],
+    [
+      "inputClass?",
+      "string",
+      "'border !p-0 dark:text-gray-400'"
+    ]
   ]
 }

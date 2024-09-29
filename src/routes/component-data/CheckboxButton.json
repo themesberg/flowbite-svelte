@@ -1,16 +1,64 @@
 {
   "name": "CheckboxButton",
   "slots": [],
-  "events": ["on:keyup", "on:keydown", "on:keypress", "on:focus", "on:blur", "on:click", "on:mouseover", "on:mouseenter", "on:mouseleave", "on:paste", "on:change"],
+  "events": [
+    "keyup",
+    "keydown",
+    "keypress",
+    "focus",
+    "blur",
+    "click",
+    "mouseover",
+    "mouseenter",
+    "mouseleave",
+    "paste",
+    "change"
+  ],
   "props": [
-    ["group", "$$Props['group']", "[]"],
-    ["value", "$$Props['value']", "'on'"],
-    ["checked", "$$Props['checked']", "undefined"],
-    ["inline", "$$Props['inline']", "true"],
-    ["pill", "$$Props['pill']", "false"],
-    ["outline", "$$Props['outline']", "false"],
-    ["size", "$$Props['size']", "undefined"],
-    ["color", "$$Props['color']", "undefined"],
-    ["shadow", "$$Props['shadow']", "false"]
+    [
+      "group",
+      "(string | number)[]",
+      "[]"
+    ],
+    [
+      "value",
+      "string | number",
+      "'on'"
+    ],
+    [
+      "checked?",
+      "boolean",
+      "undefined"
+    ],
+    [
+      "inline?",
+      "boolean",
+      "true"
+    ],
+    [
+      "pill?",
+      "boolean",
+      "false"
+    ],
+    [
+      "outline?",
+      "boolean",
+      "false"
+    ],
+    [
+      "size?",
+      "SizeType | undefined",
+      "undefined"
+    ],
+    [
+      "color?",
+      "ButtonColorType | undefined",
+      "undefined"
+    ],
+    [
+      "shadow?",
+      "boolean",
+      "false"
+    ]
   ]
 }

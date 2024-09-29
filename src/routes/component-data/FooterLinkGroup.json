@@ -1,1 +1,12 @@
-{ "name": "FooterLinkGroup", "slots": [], "events": [], "props": [["ulClass", "$$Props['ulClass']", "'text-gray-600 dark:text-gray-400'"]] }
+{
+  "name": "FooterLinkGroup",
+  "slots": [],
+  "events": [],
+  "props": [
+    [
+      "ulClass?",
+      "string",
+      "'text-gray-600 dark:text-gray-400'"
+    ]
+  ]
+}

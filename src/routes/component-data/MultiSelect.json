@@ -1,13 +1,39 @@
 {
   "name": "MultiSelect",
   "slots": [],
-  "events": ["on:input"],
+  "events": [
+    "input"
+  ],
   "props": [
-    ["items", "NonNullable<$$Props['items']>", "[]"],
-    ["value", "NonNullable<$$Props['value']>", "[]"],
-    ["size", "NonNullable<$$Props['size']>", "'md'"],
-    ["dropdownClass", "$$Props['dropdownClass']", "''"],
-    ["placeholder", "$$Props['placeholder']", "''"],
-    ["disabled", "$$Props['disabled']", "false"]
+    [
+      "items?",
+      "SelectOptionType<any>[]",
+      ""
+    ],
+    [
+      "value?",
+      "(string | number)[]",
+      ""
+    ],
+    [
+      "size?",
+      "FormSizeType",
+      ""
+    ],
+    [
+      "dropdownClass?",
+      "string",
+      "''"
+    ],
+    [
+      "placeholder?",
+      "string",
+      "''"
+    ],
+    [
+      "disabled?",
+      "boolean",
+      "false"
+    ]
   ]
 }

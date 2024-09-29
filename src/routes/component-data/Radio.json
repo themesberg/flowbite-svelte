@@ -1,14 +1,54 @@
 {
   "name": "Radio",
   "slots": [],
-  "events": ["on:blur", "on:change", "on:click", "on:focus", "on:keydown", "on:keypress", "on:keyup", "on:mouseenter", "on:mouseleave", "on:mouseover", "on:paste"],
+  "events": [
+    "blur",
+    "change",
+    "click",
+    "focus",
+    "keydown",
+    "keypress",
+    "keyup",
+    "mouseenter",
+    "mouseleave",
+    "mouseover",
+    "paste"
+  ],
   "props": [
-    ["color", "NonNullable<$$Props['color']>", "'primary'"],
-    ["custom", "NonNullable<$$Props['custom']>", "false"],
-    ["inline", "NonNullable<$$Props['inline']>", "false"],
-    ["group", "$$Props['group']", "undefined"],
-    ["value", "$$Props['value']", "''"],
-    ["spacing", "NonNullable<$$Props['spacing']>", "$$slots.default ? 'me-2' : ''"],
-    ["checked", "$$Props['checked']", "false"]
+    [
+      "color?",
+      "FormColorType",
+      ""
+    ],
+    [
+      "custom?",
+      "boolean",
+      ""
+    ],
+    [
+      "inline?",
+      "boolean",
+      ""
+    ],
+    [
+      "group?",
+      "number | string | undefined",
+      "undefined"
+    ],
+    [
+      "value?",
+      "number | string",
+      "''"
+    ],
+    [
+      "spacing?",
+      "string",
+      ""
+    ],
+    [
+      "checked?",
+      "boolean",
+      "false"
+    ]
   ]
 }

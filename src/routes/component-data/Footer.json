@@ -1,1 +1,12 @@
-{ "name": "Footer", "slots": [], "events": [], "props": [["footerType", "$$Props['footerType']", "undefined"]] }
+{
+  "name": "Footer",
+  "slots": [],
+  "events": [],
+  "props": [
+    [
+      "footerType?",
+      "'sitemap' | 'default' | 'logo' | 'socialmedia'",
+      "undefined"
+    ]
+  ]
+}

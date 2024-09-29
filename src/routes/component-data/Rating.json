@@ -1,16 +1,54 @@
 {
   "name": "Rating",
-  "slots": ["text"],
+  "slots": [
+    "text"
+  ],
   "events": [],
   "props": [
-    ["divClass", "$$Props['divClass']", "'flex items-center'"],
-    ["size", "$$Props['size']", "24"],
-    ["total", "NonNullable<$$Props['total']>", "5"],
-    ["rating", "$$Props['rating']", "4"],
-    ["partialId", "$$Props['partialId']", "'partialStar' + generateId()"],
-    ["icon", "$$Props['icon']", "Star"],
-    ["count", "$$Props['count']", "false"],
-    ["iconFillColor", "$$Props['iconFillColor']", "''"],
-    ["iconStrokeColor", "$$Props['iconStrokeColor']", "''"]
+    [
+      "divClass?",
+      "string",
+      "'flex items-center'"
+    ],
+    [
+      "size?",
+      "number",
+      "24"
+    ],
+    [
+      "total?",
+      "number",
+      ""
+    ],
+    [
+      "rating",
+      "number",
+      "4"
+    ],
+    [
+      "partialId?",
+      "string",
+      "'partialStar' + generateId()"
+    ],
+    [
+      "icon?",
+      "ComponentType",
+      "Star"
+    ],
+    [
+      "count?",
+      "boolean",
+      "false"
+    ],
+    [
+      "iconFillColor?",
+      "string | undefined",
+      "''"
+    ],
+    [
+      "iconStrokeColor?",
+      "string | undefined",
+      "''"
+    ]
   ]
 }

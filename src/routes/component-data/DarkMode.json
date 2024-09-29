@@ -1,10 +1,25 @@
 {
   "name": "DarkMode",
-  "slots": ["lightIcon", "darkIcon"],
+  "slots": [
+    "lightIcon",
+    "darkIcon"
+  ],
   "events": [],
   "props": [
-    ["btnClass", "$$Props['btnClass']", "'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none rounded-lg text-sm p-2.5'"],
-    ["size", "NonNullable<$$Props['size']>", "'md'"],
-    ["ariaLabel", "$$Props['ariaLabel']", "'Dark mode'"]
+    [
+      "btnClass?",
+      "string",
+      "'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none rounded-lg text-sm p-2.5'"
+    ],
+    [
+      "size?",
+      "'sm' | 'md' | 'lg'",
+      ""
+    ],
+    [
+      "ariaLabel?",
+      "string",
+      "'Dark mode'"
+    ]
   ]
 }

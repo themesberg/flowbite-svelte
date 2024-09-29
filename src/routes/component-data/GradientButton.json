@@ -1,9 +1,33 @@
 {
   "name": "GradientButton",
   "slots": [],
-  "events": ["on:click", "on:change", "on:keydown", "on:keyup", "on:mouseenter", "on:mouseleave", "on:click", "on:change", "on:keydown", "on:keyup", "on:touchstart", "on:touchend", "on:touchcancel", "on:mouseenter", "on:mouseleave"],
+  "events": [
+    "click",
+    "change",
+    "keydown",
+    "keyup",
+    "mouseenter",
+    "mouseleave",
+    "click",
+    "change",
+    "keydown",
+    "keyup",
+    "touchstart",
+    "touchend",
+    "touchcancel",
+    "mouseenter",
+    "mouseleave"
+  ],
   "props": [
-    ["color", "NonNullable<$$Props['color']>", "'blue'"],
-    ["shadow", "$$Props['shadow']", "false"]
+    [
+      "color?",
+      "keyof typeof gradientClasses",
+      ""
+    ],
+    [
+      "shadow?",
+      "boolean",
+      "false"
+    ]
   ]
 }

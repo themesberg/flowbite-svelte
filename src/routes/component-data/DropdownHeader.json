@@ -3,7 +3,15 @@
   "slots": [],
   "events": [],
   "props": [
-    ["divClass", "$$Props['divClass']", "'py-2 px-4 text-gray-700 dark:text-white'"],
-    ["divider", "$$Props['divider']", "true"]
+    [
+      "divClass?",
+      "string",
+      "'py-2 px-4 text-gray-700 dark:text-white'"
+    ],
+    [
+      "divider?",
+      "boolean",
+      "true"
+    ]
   ]
 }

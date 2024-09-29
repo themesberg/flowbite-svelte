@@ -1,9 +1,30 @@
 {
   "name": "Alert",
-  "slots": ["icon", "close-button"],
-  "events": ["on:close", "on:click", "on:change", "on:keydown", "on:keyup", "on:focus", "on:blur", "on:mouseenter", "on:mouseleave"],
+  "slots": [
+    "icon",
+    "close-button"
+  ],
+  "events": [
+    "close",
+    "click",
+    "change",
+    "keydown",
+    "keyup",
+    "focus",
+    "blur",
+    "mouseenter",
+    "mouseleave"
+  ],
   "props": [
-    ["dismissable", "$$Props['dismissable']", "false"],
-    ["defaultClass", "$$Props['defaultClass']", "'p-4 gap-3 text-sm'"]
+    [
+      "dismissable?",
+      "boolean",
+      "false"
+    ],
+    [
+      "defaultClass?",
+      "string",
+      "'p-4 gap-3 text-sm'"
+    ]
   ]
 }

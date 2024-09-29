@@ -1,13 +1,46 @@
 {
   "name": "BottomNavItem",
   "slots": [],
-  "events": ["on:click", "on:change", "on:keydown", "on:keyup", "on:focus", "on:blur", "on:mouseenter", "on:mouseleave"],
+  "events": [
+    "click",
+    "change",
+    "keydown",
+    "keyup",
+    "focus",
+    "blur",
+    "mouseenter",
+    "mouseleave"
+  ],
   "props": [
-    ["btnName", "$$Props['btnName']", "''"],
-    ["appBtnPosition", "NonNullable<$$Props['appBtnPosition']>", "'middle'"],
-    ["activeClass", "$$Props['activeClass']", "undefined"],
-    ["href", "NonNullable<$$Props['href']>", "''"],
-    ["exact", "$$Props['exact']", "true"],
-    ["spanClass", "$$Props['spanClass']", "''"]
+    [
+      "btnName?",
+      "string",
+      "''"
+    ],
+    [
+      "appBtnPosition?",
+      "'left' | 'middle' | 'right'",
+      ""
+    ],
+    [
+      "activeClass?",
+      "string",
+      "undefined"
+    ],
+    [
+      "href?",
+      "string",
+      ""
+    ],
+    [
+      "exact?",
+      "boolean",
+      "true"
+    ],
+    [
+      "spanClass?",
+      "string",
+      "''"
+    ]
   ]
 }

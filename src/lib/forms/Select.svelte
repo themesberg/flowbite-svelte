@@ -5,7 +5,7 @@
 
   interface $$Props extends Omit<HTMLSelectAttributes, 'size'> {
     items: SelectOptionType<any>[];
-    value: any;
+    value?: any;
     placeholder?: string;
     underline?: boolean;
     size?: 'sm' | 'md' | 'lg';
