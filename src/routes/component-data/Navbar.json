@@ -2,11 +2,5 @@
   "name": "Navbar",
   "slots": [],
   "events": [],
-  "props": [
-    [
-      "fluid?",
-      "boolean",
-      ""
-    ]
-  ]
+  "props": [["fluid?", "boolean", ""]]
 }

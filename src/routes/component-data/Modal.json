@@ -1,95 +1,24 @@
 {
   "name": "Modal",
-  "slots": [
-    "header",
-    "footer"
-  ],
+  "slots": ["header", "footer"],
   "events": [],
   "props": [
-    [
-      "open?",
-      "boolean",
-      ""
-    ],
-    [
-      "title?",
-      "string",
-      ""
-    ],
-    [
-      "size?",
-      "SizeType",
-      ""
-    ],
-    [
-      "placement?",
-      "ModalPlacementType",
-      ""
-    ],
-    [
-      "autoclose?",
-      "boolean",
-      ""
-    ],
-    [
-      "outsideclose?",
-      "boolean",
-      ""
-    ],
-    [
-      "backdropClass?",
-      "string",
-      ""
-    ],
-    [
-      "classBackdrop?",
-      "string",
-      ""
-    ],
-    [
-      "dialogClass?",
-      "string",
-      ""
-    ],
-    [
-      "classDialog?",
-      "string",
-      ""
-    ],
-    [
-      "defaultClass?",
-      "string",
-      ""
-    ],
-    [
-      "headerClass?",
-      "string",
-      ""
-    ],
-    [
-      "classHeader?",
-      "string",
-      ""
-    ],
-    [
-      "bodyClass?",
-      "string",
-      ""
-    ],
-    [
-      "classBody?",
-      "string",
-      ""
-    ],
-    [
-      "footerClass?",
-      "string",
-      ""
-    ],
-    [
-      "classFooter?",
-      "string",
-      ""
-    ]
+    ["open?", "boolean", ""],
+    ["title?", "string", ""],
+    ["size?", "SizeType", ""],
+    ["placement?", "ModalPlacementType", ""],
+    ["autoclose?", "boolean", ""],
+    ["outsideclose?", "boolean", ""],
+    ["backdropClass?", "string", ""],
+    ["classBackdrop?", "string", ""],
+    ["dialogClass?", "string", ""],
+    ["classDialog?", "string", ""],
+    ["defaultClass?", "string", ""],
+    ["headerClass?", "string", ""],
+    ["classHeader?", "string", ""],
+    ["bodyClass?", "string", ""],
+    ["classBody?", "string", ""],
+    ["footerClass?", "string", ""],
+    ["classFooter?", "string", ""]
   ]
 }

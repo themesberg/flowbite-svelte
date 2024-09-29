@@ -1,46 +1,13 @@
 {
   "name": "BottomNavItem",
   "slots": [],
-  "events": [
-    "click",
-    "change",
-    "keydown",
-    "keyup",
-    "focus",
-    "blur",
-    "mouseenter",
-    "mouseleave"
-  ],
+  "events": ["click", "change", "keydown", "keyup", "focus", "blur", "mouseenter", "mouseleave"],
   "props": [
-    [
-      "btnName?",
-      "string",
-      "''"
-    ],
-    [
-      "appBtnPosition?",
-      "'left' | 'middle' | 'right'",
-      ""
-    ],
-    [
-      "activeClass?",
-      "string",
-      "undefined"
-    ],
-    [
-      "href?",
-      "string",
-      ""
-    ],
-    [
-      "exact?",
-      "boolean",
-      "true"
-    ],
-    [
-      "spanClass?",
-      "string",
-      "''"
-    ]
+    ["btnName?", "string", "''"],
+    ["appBtnPosition?", "'left' | 'middle' | 'right'", ""],
+    ["activeClass?", "string", "undefined"],
+    ["href?", "string", ""],
+    ["exact?", "boolean", "true"],
+    ["spanClass?", "string", "''"]
   ]
 }
