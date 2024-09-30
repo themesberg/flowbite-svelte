@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.46.21
+
+### Patch Changes
+
+- types: add $Props ([`458b98eea93e1b9c82374d1727e057bf97d85930`](https://github.com/themesberg/flowbite-svelte/commit/458b98eea93e1b9c82374d1727e057bf97d85930))
+
+- types: component type updates types: Button and ToolbarButton update for using anchor and button, HTMLAnchorAttributes, HTMLButtonAttributes types: GradientButton uses import ButtonProps from "./Button.svelte" instead of using ComponentProps that does not work. ([`a1ba5af532261772bfd8b0b2c8267f65e814f997`](https://github.com/themesberg/flowbite-svelte/commit/a1ba5af532261772bfd8b0b2c8267f65e814f997))
+
+- fix: #1454 extends HTMLInputAttributes for Checkbox component ([`4ce2ced37a28885614ac1d863386e396f190a65e`](https://github.com/themesberg/flowbite-svelte/commit/4ce2ced37a28885614ac1d863386e396f190a65e))
+
 ## 0.46.20
 
 ### Patch Changes
