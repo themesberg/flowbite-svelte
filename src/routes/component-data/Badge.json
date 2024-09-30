@@ -1,51 +1,15 @@
 {
   "name": "Badge",
-  "slots": [
-    "close-button"
-  ],
-  "events": [
-    "close"
-  ],
+  "slots": ["close-button"],
+  "events": ["close"],
   "props": [
-    [
-      "color?",
-      "ColorVariant",
-      ""
-    ],
-    [
-      "large?",
-      "boolean",
-      "false"
-    ],
-    [
-      "dismissable?",
-      "boolean",
-      "false"
-    ],
-    [
-      "border?",
-      "boolean",
-      "false"
-    ],
-    [
-      "href?",
-      "string",
-      "''"
-    ],
-    [
-      "rounded?",
-      "boolean",
-      "false"
-    ],
-    [
-      "transition?",
-      "TransitionFunc",
-      ""
-    ],
-    [
-      "params?",
-      "object",
-      "{}"
-    ]
+    ["color?", "ColorVariant", ""],
+    ["large?", "boolean", "false"],
+    ["dismissable?", "boolean", "false"],
+    ["border?", "boolean", "false"],
+    ["href?", "string", "''"],
+    ["rounded?", "boolean", "false"],
+    ["transition?", "TransitionFunc", ""],
+    ["params?", "object", "{}"]
   ]
 }

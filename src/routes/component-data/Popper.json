@@ -3,55 +3,15 @@
   "slots": [],
   "events": [],
   "props": [
-    [
-      "activeContent?",
-      "boolean",
-      ""
-    ],
-    [
-      "arrow?",
-      "boolean",
-      ""
-    ],
-    [
-      "offset?",
-      "number",
-      ""
-    ],
-    [
-      "placement?",
-      "Placement",
-      ""
-    ],
-    [
-      "trigger?",
-      "'hover' | 'click' | 'focus'",
-      ""
-    ],
-    [
-      "triggeredBy?",
-      "string",
-      ""
-    ],
-    [
-      "reference?",
-      "string",
-      ""
-    ],
-    [
-      "strategy?",
-      "'absolute' | 'fixed'",
-      ""
-    ],
-    [
-      "open?",
-      "boolean",
-      ""
-    ],
-    [
-      "yOnly?",
-      "boolean",
-      ""
-    ]
+    ["activeContent?", "boolean", ""],
+    ["arrow?", "boolean", ""],
+    ["offset?", "number", ""],
+    ["placement?", "Placement", ""],
+    ["trigger?", "'hover' | 'click' | 'focus'", ""],
+    ["triggeredBy?", "string", ""],
+    ["reference?", "string", ""],
+    ["strategy?", "'absolute' | 'fixed'", ""],
+    ["open?", "boolean", ""],
+    ["yOnly?", "boolean", ""]
   ]
 }

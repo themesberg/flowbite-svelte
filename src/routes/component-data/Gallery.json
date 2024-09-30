@@ -3,15 +3,7 @@
   "slots": [],
   "events": [],
   "props": [
-    [
-      "items",
-      "ImgType[]",
-      "[]"
-    ],
-    [
-      "imgClass?",
-      "string",
-      "'h-auto max-w-full rounded-lg'"
-    ]
+    ["items", "ImgType[]", "[]"],
+    ["imgClass?", "string", "'h-auto max-w-full rounded-lg'"]
   ]
 }

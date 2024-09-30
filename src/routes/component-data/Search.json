@@ -1,35 +1,10 @@
 {
   "name": "Search",
   "slots": [],
-  "events": [
-    "blur",
-    "change",
-    "input",
-    "click",
-    "focus",
-    "keydown",
-    "keypress",
-    "keyup",
-    "mouseenter",
-    "mouseleave",
-    "mouseover",
-    "paste"
-  ],
+  "events": ["blur", "change", "input", "click", "focus", "keydown", "keypress", "keyup", "mouseenter", "mouseleave", "mouseover", "paste"],
   "props": [
-    [
-      "size?",
-      "FormSizeType",
-      ""
-    ],
-    [
-      "placeholder?",
-      "string",
-      "'Search'"
-    ],
-    [
-      "value?",
-      "any",
-      "undefined"
-    ]
+    ["size?", "FormSizeType", ""],
+    ["placeholder?", "string", "'Search'"],
+    ["value?", "any", "undefined"]
   ]
 }

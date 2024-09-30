@@ -3,15 +3,7 @@
   "slots": [],
   "events": [],
   "props": [
-    [
-      "icon?",
-      "boolean",
-      "false"
-    ],
-    [
-      "liClass?",
-      "string",
-      "''"
-    ]
+    ["icon?", "boolean", "false"],
+    ["liClass?", "string", "''"]
   ]
 }

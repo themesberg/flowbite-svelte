@@ -1,49 +1,12 @@
 {
   "name": "TableHeadCell",
   "slots": [],
-  "events": [
-    "click",
-    "focus",
-    "keydown",
-    "keypress",
-    "keyup",
-    "mouseenter",
-    "mouseleave",
-    "mouseover",
-    "click",
-    "focus",
-    "keydown",
-    "keypress",
-    "keyup",
-    "mouseenter",
-    "mouseleave",
-    "mouseover"
-  ],
+  "events": ["click", "focus", "keydown", "keypress", "keyup", "mouseenter", "mouseleave", "mouseover", "click", "focus", "keydown", "keypress", "keyup", "mouseenter", "mouseleave", "mouseover"],
   "props": [
-    [
-      "padding?",
-      "string",
-      "'px-6 py-3'"
-    ],
-    [
-      "sort?",
-      "((a",
-      "null"
-    ],
-    [
-      "defaultDirection?",
-      "'asc' | 'desc'",
-      "'asc'"
-    ],
-    [
-      "defaultSort?",
-      "boolean",
-      "false"
-    ],
-    [
-      "direction?",
-      "'asc' | 'desc' | null",
-      "defaultSort ? defaultDirection : null"
-    ]
+    ["padding?", "string", "'px-6 py-3'"],
+    ["sort?", "((a", "null"],
+    ["defaultDirection?", "'asc' | 'desc'", "'asc'"],
+    ["defaultSort?", "boolean", "false"],
+    ["direction?", "'asc' | 'desc' | null", "defaultSort ? defaultDirection : null"]
   ]
 }
