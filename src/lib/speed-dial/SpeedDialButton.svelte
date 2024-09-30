@@ -1,4 +1,5 @@
 <script lang="ts">
+  import type { ComponentProps } from'svelte';
   import Button from '$lib/buttons/Button.svelte';
   import Tooltip from '$lib/tooltip/Tooltip.svelte';
   import type { Placement } from '@floating-ui/dom';
@@ -6,16 +7,26 @@
   import { getContext } from 'svelte';
   import type { SpeedCtxType } from './SpeedDial.svelte';
 
+  type $$Props = ComponentProps<Button> & {
+    defaultClass?: string;
+    name?: string;
+    tooltip?: Placement | 'none';
+    pill?: boolean;
+    textOutside?: boolean;
+    textOutsideClass?: string;
+    textDefaultClass?: string;
+  }
+
   const context = getContext<SpeedCtxType>('speed-dial');
 
-  export let btnDefaultClass: string = 'w-[52px] h-[52px] shadow-sm !p-2';
-  export let name: string = '';
-  export let tooltip: Placement | 'none' = context.tooltip;
-  export let pill: boolean = context.pill;
-  export let textOutside: boolean = context.textOutside;
-  export let textOutsideClass: string = 'block absolute -start-14 top-1/2 mb-px text-sm font-medium -translate-y-1/2';
-  export let textDefaultClass: string = 'block mb-px text-xs font-medium';
-
+  export let btnDefaultClass: $$Props['defaultClass'] = 'w-[52px] h-[52px] shadow-sm !p-2';
+  export let name: $$Props['name'] = '';
+  export let tooltip: $$Props['tooltip'] = context.tooltip;
+  export let pill: $$Props['pill'] = context.pill;
+  export let textOutside: $$Props['textOutside'] = context.textOutside;
+  export let textOutsideClass: $$Props['textOutsideClass'] = 'block absolute -start-14 top-1/2 mb-px text-sm font-medium -translate-y-1/2';
+  export let textDefaultClass: $$Props['textDefaultClass'] = 'block mb-px text-xs font-medium';
+  
   let btnClass: string;
   $: btnClass = twMerge(btnDefaultClass, tooltip === 'none' && 'flex-col', textOutside && 'relative', $$props.class);
 </script>

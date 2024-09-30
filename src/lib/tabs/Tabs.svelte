@@ -9,15 +9,25 @@
 </script>
 
 <script lang="ts">
+  import type { HTMLAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
   import { setContext } from 'svelte';
 
-  export let tabStyle: 'full' | 'pill' | 'underline' | 'none' = 'none';
-  export let defaultClass: string = 'flex flex-wrap space-x-2 rtl:space-x-reverse';
-  export let contentClass: string = 'p-4 bg-gray-50 rounded-lg dark:bg-gray-800 mt-4';
-  export let divider: boolean = true;
-  export let activeClasses: string = 'p-4 text-primary-600 bg-gray-100 rounded-t-lg dark:bg-gray-800 dark:text-primary-500';
-  export let inactiveClasses: string = 'p-4 text-gray-500 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-300';
+  interface $$Props extends HTMLAttributes<HTMLUListElement> {
+    tabStyle?: 'full' | 'pill' | 'underline' | 'none';
+    defaultClass?: string;
+    contentClass?: string;
+    divider?: boolean;
+    activeClasses?: string;
+    inactiveClasses?: string;
+  }
+
+  export let tabStyle: NonNullable<$$Props['tabStyle']> = 'none';
+  export let defaultClass: $$Props['defaultClass'] = 'flex flex-wrap space-x-2 rtl:space-x-reverse';
+  export let contentClass: $$Props['contentClass'] = 'p-4 bg-gray-50 rounded-lg dark:bg-gray-800 mt-4';
+  export let divider: $$Props['divider'] = true;
+  export let activeClasses: NonNullable<$$Props['activeClasses']> = 'p-4 text-primary-600 bg-gray-100 rounded-t-lg dark:bg-gray-800 dark:text-primary-500';
+  export let inactiveClasses: NonNullable<$$Props['inactiveClasses']> = 'p-4 text-gray-500 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-300';
 
   // styles
   const styledActiveClasses = {
@@ -55,7 +65,7 @@
   $: ulClass = twMerge(defaultClass, tabStyle === 'underline' && '-mb-px', $$props.class);
 </script>
 
-<ul class={ulClass}>
+<ul class={ulClass} {...$$restProps}>
   <slot {tabStyle}></slot>
 </ul>
 {#if divider}

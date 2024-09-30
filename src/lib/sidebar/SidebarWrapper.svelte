@@ -1,7 +1,12 @@
 <script lang="ts">
+  import type { HTMLAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
+  
+  interface $$Props extends HTMLAttributes<HTMLDivElement> {
+    divClass?: string;
+  }
 
-  export let divClass: string = 'overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800';
+  export let divClass: $$Props['divClass'] = 'overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800';
 </script>
 
 <div {...$$restProps} class={twMerge(divClass, $$props.class)}>

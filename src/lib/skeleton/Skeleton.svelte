@@ -13,8 +13,13 @@
     xxl: 'max-w-2xl'
   };
 
-  export let divClass: string = 'animate-pulse';
-  export let size: keyof Sizes = 'sm';
+  interface $$Props {
+    divClass?: string;
+    size?: keyof Sizes;
+  }
+
+  export let divClass: $$Props['divClass'] = 'animate-pulse';
+  export let size: NonNullable<$$Props['size']> = 'sm';
   $: outDivclass = twMerge(sizes[size], divClass, $$props.class);
 </script>
 

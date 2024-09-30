@@ -1,6 +1,11 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
-  export let divClass: string = 'animate-pulse';
+
+  interface $$Props {
+    divClass?: string;
+  }
+
+  export let divClass: $$Props['divClass'] = 'animate-pulse';
 </script>
 
 <div role="status" class={twMerge(divClass, $$props.class)}>

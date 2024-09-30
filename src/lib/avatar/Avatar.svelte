@@ -1,12 +1,11 @@
 <script lang="ts">
   import Indicator from '$lib/indicators/Indicator.svelte';
   import { twMerge } from 'tailwind-merge';
-
   import type { HTMLAttributes } from 'svelte/elements';
 
   type ElementType = 'a' | 'div';
 
-  type DynamicElementProps<T extends ElementType> = HTMLAttributes<HTMLElementTagNameMap[T]> 
+  type DynamicElementProps<T extends ElementType> = HTMLAttributes<HTMLElementTagNameMap[T]>;
 
   interface $$Props extends DynamicElementProps<ElementType> {
     href?: string;

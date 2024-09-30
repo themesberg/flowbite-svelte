@@ -1,11 +1,19 @@
 <script lang="ts">
+  import type { HTMLAnchorAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
   import type { SiteType } from '../types';
 
-  export let site: SiteType;
-  export let aClass: string = 'flex items-center ps-2.5 mb-5';
-  export let imgClass: string = 'h-6 me-3 sm:h-7';
-  export let spanClass: string = 'self-center text-xl font-semibold whitespace-nowrap dark:text-white';
+  interface $$Props extends HTMLAnchorAttributes {
+    site: SiteType;
+    aClass?: string;
+    imgClass?: string;
+    spanClass?: string;
+  }
+
+  export let site: $$Props['site'];
+  export let aClass: $$Props['aClass'] = 'flex items-center ps-2.5 mb-5';
+  export let imgClass: $$Props['imgClass'] = 'h-6 me-3 sm:h-7';
+  export let spanClass: $$Props['spanClass'] = 'self-center text-xl font-semibold whitespace-nowrap dark:text-white';
 </script>
 
 <a {...$$restProps} href={site.href} class={twMerge(aClass, $$props.class)}>

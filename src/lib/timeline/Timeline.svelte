@@ -1,7 +1,13 @@
 <script lang="ts">
+  import type { HTMLOlAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
   import { setContext } from 'svelte';
-  export let order: 'default' | 'vertical' | 'horizontal' | 'activity' | 'group' = 'default';
+
+  interface $$Props extends HTMLOlAttributes {
+    order?: 'default' | 'vertical' | 'horizontal' | 'activity' | 'group';
+  }
+
+  export let order: NonNullable<$$Props['order']> = 'default';
 
   setContext('order', order);
   let olClasses = {
@@ -13,7 +19,7 @@
   };
 </script>
 
-<ol class={twMerge(olClasses[order], $$props.class)}>
+<ol class={twMerge(olClasses[order], $$props.class)} {...$$restProps}>
   <slot />
 </ol>
 

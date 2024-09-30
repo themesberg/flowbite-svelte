@@ -1,19 +1,35 @@
 <script lang="ts">
+  import type { HTMLTableAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
   import { setContext } from 'svelte';
 
-  export let divClass: string = 'relative overflow-x-auto shadow-md sm:rounded-lg';
-  export let inputValue: string = '';
-  export let striped: boolean = false;
-  export let hoverable: boolean = false;
-  export let placeholder: string = 'Search';
-  export let customColor: string = '';
-  export let color: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom' = 'default';
-  export let innerDivClass: string = 'p-4';
-  export let searchClass: string = 'relative mt-1';
-  export let svgDivClass: string = 'absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none';
-  export let svgClass: string = 'w-5 h-5 text-gray-500 dark:text-gray-400';
-  export let inputClass: string = 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 p-2.5 ps-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500';
+  interface $$Props extends HTMLTableAttributes {
+    divClass?: string;
+    inputValue?: string;
+    striped?: boolean;
+    hoverable?: boolean;
+    placeholder?: string;
+    customColor?: string;
+    color?: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom';
+    innerDivClass?: string;
+    searchClass?: string;
+    svgDivClass?: string;
+    svgClass?: string;
+    inputClass?: string;
+  }
+
+  export let divClass: $$Props['divClass'] = 'relative overflow-x-auto shadow-md sm:rounded-lg';
+  export let inputValue: $$Props['inputValue'] = '';
+  export let striped: $$Props['striped'] = false;
+  export let hoverable: $$Props['hoverable'] = false;
+  export let placeholder: $$Props['placeholder'] = 'Search';
+  export let customColor: $$Props['customColor'] = '';
+  export let color: NonNullable<$$Props['color']> = 'default';
+  export let innerDivClass: $$Props['innerDivClass'] = 'p-4';
+  export let searchClass: $$Props['searchClass'] = 'relative mt-1';
+  export let svgDivClass: $$Props['svgDivClass'] = 'absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none';
+  export let svgClass: $$Props['svgClass'] = 'w-5 h-5 text-gray-500 dark:text-gray-400';
+  export let inputClass: $$Props['inputClass'] = 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 p-2.5 ps-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500';
 
   let inputCls = twMerge(inputClass, $$props.classInput);
   let svgDivCls = twMerge(svgDivClass, $$props.classSvgDiv);

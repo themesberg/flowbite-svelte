@@ -1,6 +1,12 @@
 <script lang="ts">
+  import type { HTMLAreaAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
-  export let href: string = '';
+  
+  interface $$Props extends HTMLAreaAttributes{
+    href?: string;
+  }
+
+  export let href: $$Props['href'] = '';
 </script>
 
 <a {href} {...$$restProps} class={twMerge('flex items-center', $$props.class)}>

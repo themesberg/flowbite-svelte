@@ -1,13 +1,22 @@
 <script lang="ts">
   import type { ReviewType } from '../types';
   import { twMerge } from 'tailwind-merge';
+  
+  interface $$Props {
+    review: ReviewType;
+    articleClass?: string;
+    divClass?: string;
+    imgClass?: string;
+    ulClass?: string;
+    liClass?: string;
+  }
 
-  export let review: ReviewType;
-  export let articleClass: string = 'md:gap-8 md:grid md:grid-cols-3';
-  export let divClass: string = 'flex items-center mb-6 space-x-4 rtl:space-x-reverse';
-  export let imgClass: string = 'w-10 h-10 rounded-full';
-  export let ulClass: string = 'space-y-4 text-sm text-gray-500 dark:text-gray-400';
-  export let liClass: string = 'flex items-center';
+  export let review: $$Props['review'];
+  export let articleClass: $$Props['articleClass'] = 'md:gap-8 md:grid md:grid-cols-3';
+  export let divClass: $$Props['divClass'] = 'flex items-center mb-6 space-x-4 rtl:space-x-reverse';
+  export let imgClass: $$Props['imgClass'] = 'w-10 h-10 rounded-full';
+  export let ulClass: $$Props['ulClass'] = 'space-y-4 text-sm text-gray-500 dark:text-gray-400';
+  export let liClass: $$Props['liClass'] = 'flex items-center';
 </script>
 
 <article class={twMerge(articleClass, $$props.classArticle)}>

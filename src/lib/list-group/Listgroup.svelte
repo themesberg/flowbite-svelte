@@ -7,7 +7,6 @@
 
   const dispatch = createEventDispatcher();
 
-  // propagate props type from underlying Frame
   interface $$Props extends ComponentProps<Frame> {
     items?: T[];
     active?: boolean;

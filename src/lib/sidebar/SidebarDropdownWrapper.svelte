@@ -1,14 +1,26 @@
 <script lang="ts">
+  import type { HTMLButtonAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
   import { fade, blur, fly, slide } from 'svelte/transition';
   import type { TransitionTypes, TransitionParamTypes } from '../types';
 
-  export let btnClass: string = 'flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700';
-  export let label: string = '';
-  export let spanClass: string = 'flex-1 ms-3 text-left whitespace-nowrap';
-  export let ulClass: string = 'py-2 space-y-2';
-  export let transitionType: TransitionTypes = 'slide';
-  export let transitionParams: TransitionParamTypes = {};
+  interface $$Props extends HTMLButtonAttributes {
+    btnClass?: string;
+    label?: string;
+    spanClass?: string;
+    ulClass?: string;
+    transitionType?: TransitionTypes;
+    transitionParams?: TransitionParamTypes;
+    isOpen?: boolean;
+  }
+
+  export let btnClass: $$Props['btnClass'] = 'flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700';
+  export let label: $$Props['label'] = '';
+  export let spanClass: $$Props['spanClass'] = 'flex-1 ms-3 text-left whitespace-nowrap';
+  export let ulClass: $$Props['ulClass'] = 'py-2 space-y-2';
+  export let transitionType: $$Props['transitionType'] = 'slide';
+  export let transitionParams: $$Props['transitionParams'] = {};
+  export let isOpen: $$Props['isOpen'] = false;
 
   // make a custom transition function that returns the desired transition
   const multiple = (node: HTMLElement, params: any) => {
@@ -24,7 +36,7 @@
     }
   };
 
-  export let isOpen = false;
+  
   const handleDropdown = () => {
     isOpen = !isOpen;
   };

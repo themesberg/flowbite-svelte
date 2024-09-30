@@ -1,9 +1,15 @@
 <script lang="ts">
+  import type { HTMLAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
 
-  export let theadClass: string = 'text-xs uppercase';
-  export let defaultRow: boolean = true;
+  interface $$Props extends HTMLAttributes<HTMLTableSectionElement> {
+    theadClass?: string;
+    defaultRow?: boolean;
+  }
+
+  export let theadClass: $$Props['theadClass'] = 'text-xs uppercase';
+  export let defaultRow: $$Props['defaultRow'] = true;
 
   let color: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom';
   color = getContext('color');

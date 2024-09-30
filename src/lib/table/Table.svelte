@@ -1,24 +1,43 @@
 <script lang="ts" generics="T">
+  import type { HTMLTableAttributes } from 'svelte/elements';
   import { writable } from 'svelte/store';
   import { twMerge, twJoin } from 'tailwind-merge';
   import { setContext } from 'svelte';
   import type { TableColorType } from '../types';
 
-  export let divClass: string = 'relative overflow-x-auto';
-  export let striped: boolean = false;
-  export let hoverable: boolean = false;
-  export let noborder: boolean = false;
-  export let shadow: boolean = false;
-  export let color: TableColorType = 'default';
-  export let customeColor: string = '';
-  export let items: T[] = [];
-  export let filter: ((t: T, term: string) => boolean) | null = null;
-  export let placeholder: string = 'Search';
-  export let innerDivClass: string = 'p-4';
-  export let searchClass: string = 'relative mt-1';
-  export let svgDivClass: string = 'absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none';
-  export let svgClass: string = 'w-5 h-5 text-gray-500 dark:text-gray-400';
-  export let inputClass: string = 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 p-2.5 ps-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500';
+  interface $$Props extends HTMLTableAttributes {
+    divClass?: string;
+    striped?: boolean;
+    hoverable?: boolean;
+    noborder?: boolean;
+    shadow?: boolean;
+    color?: TableColorType;
+    customeColor?: string;
+    items?: T[];
+    filter?:  ((t: T, term: string) => boolean) | null;
+    placeholder?: string;
+    innerDivClass?: string;
+    searchClass?: string;
+    svgDivClass?: string;
+    svgClass?: string;
+    inputClass?: string;
+  }
+
+  export let divClass: $$Props['divClass'] = 'relative overflow-x-auto';
+  export let striped: $$Props['striped'] = false;
+  export let hoverable: $$Props['hoverable'] = false;
+  export let noborder: $$Props['noborder'] = false;
+  export let shadow: $$Props['shadow'] = false;
+  export let color: NonNullable<$$Props['color']> = 'default';
+  export let customeColor: $$Props['customeColor'] = '';
+  export let items: $$Props['items'] = [];
+  export let filter: $$Props['filter'] = null;
+  export let placeholder: $$Props['placeholder'] = 'Search';
+  export let innerDivClass: $$Props['innerDivClass'] = 'p-4';
+  export let searchClass: $$Props['searchClass'] = 'relative mt-1';
+  export let svgDivClass: $$Props['svgDivClass'] = 'absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none';
+  export let svgClass: $$Props['svgClass'] = 'w-5 h-5 text-gray-500 dark:text-gray-400';
+  export let inputClass: $$Props['inputClass'] = 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 p-2.5 ps-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500';
 
   let searchTerm = '';
   let inputCls = twMerge(inputClass, $$props.classInput);
@@ -46,7 +65,9 @@
   setContext('searchTerm', searchTermStore);
   setContext('filter', filterStore);
   $: searchTermStore.set(searchTerm);
-  $: filterStore.set(filter);
+  $: {
+    if(filter) filterStore.set(filter)
+  }
   setContext('sorter', writable(null));
 </script>
 

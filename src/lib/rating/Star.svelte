@@ -1,13 +1,24 @@
 <script lang="ts">
+  import type { SVGAttributes } from 'svelte/elements';
   import generateId from '$lib/utils/generateId';
 
-  export let fillPercent: number = 100;
-  export let fillColor: string = '#F5CA14';
-  export let strokeColor: string = '#F5CA14';
-  export let size: number = 24;
-  export let ariaLabel: string = 'star';
-  export let id: string = generateId();
-  export let role = 'img';
+  interface $$Props extends SVGAttributes<SVGSVGElement> {
+    fillPercent?: number;
+    fillColor?: string;
+    strokeColor?: string;
+    size?: number;
+    ariaLabel?: string;
+    id?: string;
+    role?: string;
+  }
+
+  export let fillPercent: $$Props['fillPercent'] = 100;
+  export let fillColor: $$Props['fillColor'] = '#F5CA14';
+  export let strokeColor: $$Props['strokeColor'] = '#F5CA14';
+  export let size: $$Props['size'] = 24;
+  export let ariaLabel: $$Props['ariaLabel'] = 'star';
+  export let id: $$Props['id'] = generateId();
+  export let role: $$Props['role'] = 'img';
 </script>
 
 <svg width={size} height={size} {...$$restProps} class={$$props.class} aria-label={ariaLabel} viewBox="100 100 120 120" {role} on:click>

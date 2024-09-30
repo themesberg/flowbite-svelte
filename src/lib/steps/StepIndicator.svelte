@@ -1,14 +1,26 @@
 <script lang="ts">
+  import type { HTMLAttributes } from 'svelte/elements';
   import { twMerge, twJoin } from 'tailwind-merge';
 
-  export let steps: string[] = ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'];
-  export let currentStep = 1;
-  export let size: string = 'h-2.5';
-  export let color: 'primary' | 'secondary' | 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'custom' = 'primary';
-  export let glow: boolean = false;
-  export let hideLabel: boolean = false;
-  export let completedCustom: string = '';
-  export let currentCustom: string = '';
+  interface $$Props extends HTMLAttributes<HTMLElement> {
+    steps: string[];
+    currentStep: number;
+    size: string;
+    color: 'primary' | 'secondary' | 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'custom';
+    glow: boolean;
+    hideLabel: boolean;
+    completedCustom: string;
+    currentCustom: string;
+  }
+
+  export let steps: $$Props['steps'] = ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'];
+  export let currentStep: $$Props['currentStep'] = 1;
+  export let size: $$Props['size'] = 'h-2.5';
+  export let color: $$Props['color'] = 'primary';
+  export let glow: $$Props['glow'] = false;
+  export let hideLabel: $$Props['hideLabel'] = false;
+  export let completedCustom: $$Props['completedCustom'] = '';
+  export let currentCustom: $$Props['currentCustom'] = '';
 
   const completedStepColors = {
     primary: 'bg-primary-500 dark:bg-primary-900',

@@ -1,8 +1,13 @@
 <script lang="ts" generics="T">
+  import type { HTMLAttributes } from 'svelte/elements';
   import { getContext } from 'svelte';
   import type { Writable } from 'svelte/store';
 
-  export let tableBodyClass: string | undefined = undefined;
+  interface $$Props extends HTMLAttributes<HTMLTableSectionElement> {
+    tableBodyClass?: string;
+  }
+  
+  export let tableBodyClass: $$Props['tableBodyClass'] = undefined;
 
   $: items = getContext('items') as T[] || [];
   let filter = getContext('filter') as Writable<((t: T, term: string) => boolean) | null>;
@@ -12,7 +17,7 @@
   $: sorted = $sorter ? filtered.toSorted((a, b) => $sorter.sortDirection * $sorter.sort(a, b)) : filtered;
 </script>
 
-<tbody class={tableBodyClass}>
+<tbody class={tableBodyClass} {...$$restProps}>
   <slot />
   {#each sorted as item}
     <slot name="row" {item} />

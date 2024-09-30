@@ -1,8 +1,15 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
-  export let divClass: string = 'space-y-8 animate-pulse md:space-y-0 md:space-x-8 rtl:space-x-reverse md:flex md:items-center';
-  export let imgHeight: string = '48';
-  export let imgOnly: boolean = false;
+
+  interface $$Props {
+    divClass?: string;
+    imgHeight?: string;
+    imgOnly?: boolean;
+  }
+
+  export let divClass: $$Props['divClass'] = 'space-y-8 animate-pulse md:space-y-0 md:space-x-8 rtl:space-x-reverse md:flex md:items-center';
+  export let imgHeight: $$Props['imgHeight'] = '48';
+  export let imgOnly: $$Props['imgOnly'] = false;
 
   $: imgOnlyClass = imgOnly ? 'max-w-60' : '';
 </script>

@@ -1,16 +1,34 @@
 <script lang="ts">
-  import type { ToolbarButtonType } from '../types';
+  // import type { ToolbarButtonType } from '../types';
   import { getContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
+  import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
 
-  const background = getContext('background');
+  type ColorType = 'dark' | 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'primary' | 'default';
+  type SizeType = 'xs' | 'sm' | 'md' | 'lg';
 
-  export let color: ToolbarButtonType = 'default';
-  export let name: string | undefined = undefined;
-  export let ariaLabel: string | undefined = undefined;
-  export let size: 'xs' | 'sm' | 'md' | 'lg' = 'md';
+  type CommonProps = {
+    color?: ColorType;
+    name?: string;
+    ariaLabel?: string;
+    size?: SizeType;
+  };
+
+  type AnchorProps = CommonProps & HTMLAnchorAttributes & {
+    href: string;
+  };
+
+  type ButtonProps = CommonProps & HTMLButtonAttributes;
+
+  type $$Props = AnchorProps | ButtonProps;
+
+  export let color: NonNullable<$$Props['color']> = 'default';
+  export let name: $$Props['name'] = undefined;
+  export let ariaLabel: $$Props['ariaLabel'] = undefined;
+  export let size: SizeType = 'md';
   export let href: string | undefined = undefined;
 
+  const background = getContext('background');
   const colors = {
     dark: 'text-gray-500 hover:text-gray-900 hover:bg-gray-200 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600',
     gray: 'text-gray-500 focus:ring-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800 dark:hover:text-gray-300',

@@ -1,8 +1,16 @@
 <script lang="ts">
-  export let size = '24';
-  export let color = 'currentColor';
-  export let variation: 'solid' | 'outline' = 'outline';
-  export let ariaLabel = 'bars 3';
+  import type { SVGAttributes } from 'svelte/elements';
+  interface $$Props extends SVGAttributes<SVGSVGElement>{
+    size?: string;
+    color?: string;
+    variation?: 'solid' | 'outline';
+    ariaLabel?: string;
+  }
+  
+  export let size: $$Props['size'] = '24';
+  export let color: $$Props['color'] = 'currentColor';
+  export let variation: $$Props['variation'] = 'outline';
+  export let ariaLabel: $$Props['ariaLabel'] = 'bars 3';
 
   let viewBox: string;
   let svgpath: string;

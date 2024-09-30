@@ -2,40 +2,42 @@
   import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
   import type { SizeType } from '$lib/types';
-  import type { HTMLButtonAttributes, HTMLAttributes } from 'svelte/elements';
+  import type { HTMLButtonAttributes, HTMLAnchorAttributes } from 'svelte/elements';
 
-  type ElementType = 'a' | 'button';
   type ButtonColor = keyof typeof colorClasses;
-  type DynamicElementProps<T extends ElementType> = HTMLAttributes<HTMLElementTagNameMap[T]> 
-
-  interface $$Props extends DynamicElementProps<ElementType> {
+  type CommonProps = {
     pill?: boolean;
     outline?: boolean;
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-    href?: string;
-    type?: HTMLButtonAttributes['type'];
     color?: ButtonColor;
     shadow?: boolean;
-    tag?: string;
+    tag?: 'a' | 'button';
     checked?: boolean;
-    disabled?: boolean;
-    target?: string;
-    rel?: string;
-    name?: string;
   }
 
+  type AnchorProps = CommonProps & Omit<HTMLAnchorAttributes, 'type'> & {
+    href?: string | undefined;
+  };
+
+  type ButtonProps = CommonProps & HTMLButtonAttributes & {
+    disabled?: HTMLButtonAttributes['disabled'];
+    type?: HTMLButtonAttributes['type'];
+  };
+
+  type $$Props = AnchorProps | ButtonProps;
+  
   const group: SizeType = getContext('group');
 
   export let pill: $$Props['pill'] = false;
   export let outline: $$Props['outline'] = false;
   export let size: NonNullable<$$Props['size']> = group ? 'sm' : 'md';
-  export let href: $$Props['href'] = undefined;
-  export let type: $$Props['type'] = 'button';
+  export let href: string | undefined = undefined;
+  export let type: HTMLButtonAttributes['type'] = 'button';
   export let color: NonNullable<$$Props['color']> = group ? (outline ? 'dark' : 'alternative') : 'primary';
   export let shadow: $$Props['shadow'] = false;
   export let tag: $$Props['tag'] = 'button';
   export let checked: $$Props['checked'] = undefined;
-  export let disabled: $$Props['disabled'] = false;
+  export let disabled: HTMLButtonAttributes['disabled'] = false;
 
   const colorClasses = {
     alternative: 'text-gray-900 bg-white border border-gray-200 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-400 hover:text-primary-700 focus-within:text-primary-700 dark:focus-within:text-white dark:hover:text-white dark:hover:bg-gray-700',

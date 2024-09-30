@@ -1,17 +1,27 @@
 <script lang="ts">
+  import type { HTMLAnchorAttributes } from 'svelte/elements';
   import type { Action } from 'svelte/action';
   import { getContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import type { SidebarType } from './Sidebar.svelte';
 
-  export let action: Action<HTMLElement, any> = () => {};
-  export let params: any = {};
-  export let href: string = '';
-  export let label: string = '';
-  export let spanClass: string = 'ms-3';
-  export let activeClass: string | undefined = undefined;
-  export let nonActiveClass: string | undefined = undefined;
-  // export let active: boolean = false;
+  interface $$Props extends HTMLAnchorAttributes {
+    action?: Action<HTMLElement, any>;
+    params?: any;
+    href?: string;
+    label?: string;
+    spanClass?: string;
+    activeClass?: string;
+    nonActiveClass?: string;
+  }
+
+  export let action: NonNullable<$$Props['action']> = () => {};
+  export let params: $$Props['params'] = {};
+  export let href: $$Props['href'] = '';
+  export let label: $$Props['label'] = '';
+  export let spanClass: $$Props['spanClass'] = 'ms-3';
+  export let activeClass: $$Props['activeClass'] = undefined;
+  export let nonActiveClass: $$Props['nonActiveClass'] = undefined;
 
   const context = getContext<SidebarType>('sidebarContext') ?? {};
   const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };

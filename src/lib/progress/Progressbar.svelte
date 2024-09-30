@@ -1,21 +1,37 @@
 <script lang="ts">
+  import type { HTMLAttributes } from 'svelte/elements';
   import { cubicOut } from 'svelte/easing';
   import { tweened } from 'svelte/motion';
   import type { EasingFunction } from 'svelte/transition';
   import { twMerge } from 'tailwind-merge';
 
-  export let progress: string | number = '45';
-  export let precision: number = 0
-  export let tweenDuration: number = 400;
-  export let animate: boolean = false;
-  export let size: string = 'h-2.5';
-  export let labelInside: boolean = false;
-  export let labelOutside: string = '';
-  export let easing: EasingFunction = cubicOut;
-  export let color: 'primary' | 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo' = 'primary';
-  export let labelInsideClass: string = 'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
-  export let divClass: string = 'w-full bg-gray-200 rounded-full dark:bg-gray-700';
-  export let progressClass: string;
+  interface $$Props extends HTMLAttributes<HTMLDivElement> {
+    progress: string | number;
+    precision?: number;
+    tweenDuration?: number;
+    animate?: boolean;
+    size?: string;
+    labelInside?: boolean;
+    labelOutside?: string;
+    easing?: EasingFunction;
+    color?: 'primary' | 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo';
+    labelInsideClass?: string;
+    divClass?: string;
+    progressClass?: string;
+  }
+
+  export let progress: $$Props['progress'] = '45';
+  export let precision: $$Props['precision'] = 0
+  export let tweenDuration: $$Props['tweenDuration'] = 400;
+  export let animate: $$Props['animate'] = false;
+  export let size: $$Props['size'] = 'h-2.5';
+  export let labelInside: $$Props['labelInside'] = false;
+  export let labelOutside: $$Props['labelOutside'] = '';
+  export let easing: $$Props['easing'] = cubicOut;
+  export let color: NonNullable<$$Props['color']> = 'primary';
+  export let labelInsideClass: $$Props['labelInsideClass'] = 'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
+  export let divClass: $$Props['divClass'] = 'w-full bg-gray-200 rounded-full dark:bg-gray-700';
+  export let progressClass: $$Props['progressClass'] = '';
 
   const _progress = tweened(0, {
     duration: animate ? tweenDuration : 0,

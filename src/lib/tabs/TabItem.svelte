@@ -1,15 +1,25 @@
 <script lang="ts">
+  import type { HTMLButtonAttributes } from 'svelte/elements';
   import { getContext } from 'svelte';
   import type { TabCtxType } from './Tabs.svelte';
   import { writable } from 'svelte/store';
   import { twMerge } from 'tailwind-merge';
 
-  export let open: boolean = false;
-  export let title: string = 'Tab title';
-  export let activeClasses: string | undefined = undefined;
-  export let inactiveClasses: string | undefined = undefined;
-  export let defaultClass: string = 'inline-block text-sm font-medium text-center disabled:cursor-not-allowed';
-  export let divClass: string = '';
+  interface $$Props extends HTMLButtonAttributes {
+    open?: boolean;
+    title?: string;
+    activeClasses?: string;
+    inactiveClasses?: string;
+    defaultClass?: string;
+    divClass?: string;
+  }
+
+  export let open: $$Props['open'] = false;
+  export let title: $$Props['title'] = 'Tab title';
+  export let activeClasses: $$Props['activeClasses'] = undefined;
+  export let inactiveClasses: $$Props['inactiveClasses'] = undefined;
+  export let defaultClass: $$Props['defaultClass'] = 'inline-block text-sm font-medium text-center disabled:cursor-not-allowed';
+  export let divClass: $$Props['divClass'] = '';
 
   const ctx = getContext<TabCtxType>('ctx') ?? {};
   // single selection

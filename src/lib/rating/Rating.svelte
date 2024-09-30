@@ -24,8 +24,8 @@
   export let partialId: $$Props['partialId'] = 'partialStar' + generateId();
   export let icon: $$Props['icon'] = Star;
   export let count: $$Props['count'] = false;
-  export let iconFillColor: $$Props['iconFillColor'] = '';
-  export let iconStrokeColor: $$Props['iconStrokeColor'] = '';
+  export let iconFillColor: $$Props['iconFillColor'] = '#F5CA14';
+  export let iconStrokeColor: $$Props['iconStrokeColor'] = '#F5CA14';
 
   // generate unique id for full star and gray star
   const fullStarId: string = generateId();

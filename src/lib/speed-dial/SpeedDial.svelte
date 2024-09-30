@@ -9,6 +9,7 @@
 </script>
 
 <script lang="ts">
+  import type { ComponentProps } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import Button from '$lib/buttons/Button.svelte';
   import Popper from '$lib/utils/Popper.svelte';
@@ -16,17 +17,31 @@
   import generateId from '$lib/utils/generateId';
   import GradientButton from '$lib/buttons/GradientButton.svelte';
 
-  export let defaultClass: string = 'fixed end-6 bottom-6';
-  export let popperDefaultClass: string = 'flex items-center mb-4 gap-2';
-  export let placement: Placement = 'top';
-  export let pill: boolean = true;
-  export let tooltip: Placement | 'none' = 'left';
-  export let trigger: 'hover' | 'click' | 'focus' = 'hover';
-  export let textOutside: boolean = false;
-  export let id: string = generateId();
-  export let name: string = 'Open actions menu';
-  export let gradient: boolean = false;
-  export let open: boolean = false;
+  type $$Props = ComponentProps<Button> & {
+    defaultClass?: string;
+    popperDefaultClass?: string;
+    placement?: Placement;
+    pill?: boolean;
+    tooltip?: Placement | 'none';
+    trigger?: 'hover' | 'click' | 'focus';
+    textOutside?: boolean;
+    id?: string;
+    name?: string;
+    gradient?: boolean;
+    open?: boolean;
+  }
+  
+  export let defaultClass: $$Props['defaultClass'] = 'fixed end-6 bottom-6';
+  export let popperDefaultClass: $$Props['popperDefaultClass'] = 'flex items-center mb-4 gap-2';
+  export let placement: NonNullable<$$Props['placement']> = 'top';
+  export let pill: NonNullable<$$Props['pill']> = true;
+  export let tooltip: NonNullable<$$Props['tooltip']> = 'left';
+  export let trigger: $$Props['trigger'] = 'hover';
+  export let textOutside: NonNullable<$$Props['textOutside']> = false;
+  export let id: $$Props['id'] = generateId();
+  export let name: $$Props['name'] = 'Open actions menu';
+  export let gradient: $$Props['gradient'] = false;
+  export let open: $$Props['open'] = false;
 
   setContext<SpeedCtxType>('speed-dial', { pill, tooltip, textOutside });
 
@@ -35,6 +50,8 @@
 
   let poperClass: string;
   $: poperClass = twMerge(popperDefaultClass, ['top', 'bottom'].includes(placement.split('-')[0]) && 'flex-col');
+
+  $: console.log(typeof $$restProps, Object.keys($$restProps));
 </script>
 
 <div class={divClass}>

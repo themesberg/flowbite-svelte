@@ -4,7 +4,7 @@
   import type { ButtonColorType, SizeType } from '$lib/types';
   import { twMerge } from 'tailwind-merge';
 
-  interface $$Props extends ComponentProps<Button> {
+  type $$Props = ComponentProps<Button> & {
     group: (string | number)[];
     value: string | number;
     checked?: boolean;
@@ -63,7 +63,7 @@
   $: buttonClass = twMerge(inline ? 'inline-flex' : 'flex', $$props.class);
 </script>
 
-<Button tag="label" {checked} {pill} {outline} {size} {color} {shadow} class={buttonClass}>
+<Button {checked} {pill} {outline} {size} {color} {shadow} class={buttonClass}>
   <input
     use:init={group}
     type="checkbox"

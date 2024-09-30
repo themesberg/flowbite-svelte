@@ -1,8 +1,13 @@
 <script lang="ts">
+  import type { HTMLAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
 
-  export let color: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom' = getContext('color');
+  interface $$Props extends HTMLAttributes<HTMLTableRowElement> {
+    color?: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom';
+  }
+
+  export let color: NonNullable<$$Props['color']> = getContext('color');
 
   const colors = {
     default: 'bg-white dark:bg-gray-800 dark:border-gray-700',

@@ -1,6 +1,8 @@
 <script lang="ts" context="module">
   export type BottomNavType = {
     activeClass: string;
+    btnClass?: string;
+    spanClass?: string; 
   };
 </script>
 

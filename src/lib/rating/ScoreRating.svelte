@@ -1,18 +1,30 @@
 <script lang="ts">
-  export let ratings: { label: string; rating: number }[] = [];
-  export let ratings2: { label: string; rating: number }[] = [];
-  export let headerLabel: {
-    desc1: string;
-    desc2: string;
-    desc3: string;
-    link: { label: string; url: string };
-  };
-  export let desc1Class: string = 'bg-primary-100 w-8 text-primary-800 text-sm font-semibold inline-flex items-center p-1.5 rounded dark:bg-primary-200 dark:text-primary-800';
-  export let desc2Class: string = 'ms-2 w-24 font-medium text-gray-900 dark:text-white';
-  export let desc3spanClass: string = 'mx-2 w-1 h-1 bg-gray-900 rounded-full dark:bg-gray-500';
-  export let desc3pClass: string = 'text-sm  w-24 font-medium text-gray-500 dark:text-gray-400';
-  export let linkClass: string = 'ms-auto w-32 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500';
-  export let barColor: string = 'bg-primary-600 h-2.5 rounded dark:bg-primary-500';
+  interface $$Props {
+    ratings: { label: string; rating: number }[];
+    ratings2: { label: string; rating: number }[];
+    headerLabel: {
+      desc1?: string;
+      desc2?: string;
+      desc3?: string;
+      link?: { label: string; url: string };
+    };
+    desc1Class?: string;
+    desc2Class?: string;
+    desc3spanClass?: string;
+    desc3pClass?: string;
+    linkClass?: string;
+    barColor?: string;
+  }
+
+  export let ratings: $$Props['ratings'] = [];
+  export let ratings2: $$Props['ratings2'] = [];
+  export let headerLabel: $$Props['headerLabel'];
+  export let desc1Class: $$Props['desc1Class'] = 'bg-primary-100 w-8 text-primary-800 text-sm font-semibold inline-flex items-center p-1.5 rounded dark:bg-primary-200 dark:text-primary-800';
+  export let desc2Class: $$Props['desc2Class'] = 'ms-2 w-24 font-medium text-gray-900 dark:text-white';
+  export let desc3spanClass: $$Props['desc3spanClass'] = 'mx-2 w-1 h-1 bg-gray-900 rounded-full dark:bg-gray-500';
+  export let desc3pClass: $$Props['desc3pClass'] = 'text-sm  w-24 font-medium text-gray-500 dark:text-gray-400';
+  export let linkClass: $$Props['linkClass'] = 'ms-auto w-32 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500';
+  export let barColor: $$Props['barColor'] = 'bg-primary-600 h-2.5 rounded dark:bg-primary-500';
 </script>
 
 <div class="flex items-center mb-5">

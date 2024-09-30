@@ -1,13 +1,22 @@
 <script lang="ts" generics="T">
+  import type { HTMLThAttributes } from 'svelte/elements';
   import { getContext } from 'svelte';
   import type { Writable } from 'svelte/store';
   import { twMerge } from 'tailwind-merge';
 
-  export let padding: string = 'px-6 py-3';
-  export let sort: ((a: T, b: T) => number) | null = null;
-  export let defaultDirection: 'asc' | 'desc' = 'asc';
-  export let defaultSort: boolean = false;
-  export let direction: 'asc' | 'desc' | null = defaultSort ? defaultDirection : null;
+  interface $$Props extends HTMLThAttributes {
+    padding?: string;
+    sort?: ((a: T, b: T) => number) | null;
+    defaultDirection?: 'asc' | 'desc';
+    defaultSort?: boolean;
+    direction?: 'asc' | 'desc' | null;
+  }
+
+  export let padding: $$Props['padding'] = 'px-6 py-3';
+  export let sort: $$Props['sort'] = null;
+  export let defaultDirection: $$Props['defaultDirection'] = 'asc';
+  export let defaultSort: $$Props['defaultSort'] = false;
+  export let direction: $$Props['direction'] = defaultSort ? defaultDirection : null;
   
   let sorter = getContext('sorter') as Writable<{id: string, sort: (a: T, b: T) => number, sortDirection: -1 | 1} | null>;
   let sortId = Math.random().toString(36).substring(2);

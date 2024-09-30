@@ -10,7 +10,7 @@
     fluid?: boolean;
   }
 
-  export let fluid: boolean = false;
+  export let fluid: $$Props['fluid'] = false;
 
   let hidden = writable(true);
   setContext('navHidden', hidden);

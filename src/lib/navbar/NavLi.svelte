@@ -2,10 +2,21 @@
   import { getContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import type { NavbarLiType } from './NavUl.svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
 
-  export let href: string = '';
-  export let activeClass: string | undefined = undefined;
-  export let nonActiveClass: string | undefined = undefined;
+  type ElementType = 'a' | 'div';
+
+  type DynamicElementProps<T extends ElementType> = HTMLAttributes<HTMLElementTagNameMap[T]>;
+
+  interface $$Props extends DynamicElementProps<ElementType> {
+    href?: string;
+    activeClass?: string;
+    nonActiveClass?: string;
+  }
+
+  export let href: $$Props['href'] = '';
+  export let activeClass: $$Props['activeClass'] = undefined;
+  export let nonActiveClass: $$Props['nonActiveClass'] = undefined;
 
   const context = getContext<NavbarLiType>('navbarContext') ?? {};
   const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
