@@ -5,7 +5,7 @@
   import Checkbox from './Checkbox.svelte';
   import type { FormColorType } from '../types';
 
-  interface $$Props extends ComponentProps<Checkbox> {
+  interface $$Props extends Omit<ComponentProps<Checkbox>, 'size'> {
     size?: 'small' | 'default' | 'large' | 'custom';
     group?:  string[];
     value?: string | number;

@@ -4,7 +4,7 @@
   import type { SelectOptionType } from '../types';
 
   interface $$Props extends Omit<HTMLSelectAttributes, 'size'> {
-    items: SelectOptionType<any>[];
+    items?: SelectOptionType<any>[];
     value?: any;
     placeholder?: string;
     underline?: boolean;
@@ -36,12 +36,13 @@
   {#if placeholder}
     <option disabled selected={(value === undefined) ? true : undefined} value="">{placeholder}</option>
   {/if}
-
-  {#each items as { value: itemValue, name, disabled }}
-    <option disabled={disabled} value={itemValue} selected={(itemValue === value) ? true : undefined}>{name}</option>
+  {#if items && items.length > 0}
+    {#each items as { value: itemValue, name, disabled }}
+      <option disabled={disabled} value={itemValue} selected={(itemValue === value) ? true : undefined}>{name}</option>
+    {/each}
   {:else}
     <slot />
-  {/each}
+  {/if}
 </select>
 
 <!--

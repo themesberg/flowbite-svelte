@@ -7,7 +7,6 @@
   import type { CheckboxItem } from '../types';
 
   interface $$Props extends HTMLInputAttributes {
-    // name?: string;
     color?: FormColorType;
     custom?: boolean;
     inline?: boolean;
@@ -22,8 +21,6 @@
     required?: boolean;
   }
 
-  // properties forwarding
-  // export let name: $$Props['name'] = undefined;
   export let color: NonNullable<$$Props['color']> = 'primary';
   export let custom: NonNullable<$$Props['custom']> = false;
   export let inline: NonNullable<$$Props['inline']> = false;
