@@ -25,5 +25,5 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let divClass: string = 'animate-pulse';
+@prop export let divClass: $$Props['divClass'] = 'animate-pulse';
 -->

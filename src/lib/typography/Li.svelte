@@ -1,8 +1,14 @@
 <script lang="ts">
+  import type { HTMLLiAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
 
-  export let icon: boolean = false;
-  export let liClass: string = '';
+  interface $$Props extends HTMLLiAttributes {
+    icon?: boolean;
+    liClass?: string;
+  }
+
+  export let icon: $$Props['icon'] = false;
+  export let liClass: $$Props['liClass'] = '';
   let classLi: string = twMerge(liClass, icon && 'flex items-center', $$props.class);
 </script>
 
@@ -14,6 +20,6 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let icon: boolean = false;
-@prop export let liClass: string = '';
+@prop export let icon: $$Props['icon'] = false;
+@prop export let liClass: $$Props['liClass'] = '';
 -->

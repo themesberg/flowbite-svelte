@@ -38,7 +38,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let divClass: string = 'space-y-8 animate-pulse md:space-y-0 md:space-x-8 rtl:space-x-reverse md:flex md:items-center';
-@prop export let imgHeight: string = '48';
-@prop export let imgOnly: boolean = false;
+@prop export let divClass: $$Props['divClass'] = 'space-y-8 animate-pulse md:space-y-0 md:space-x-8 rtl:space-x-reverse md:flex md:items-center';
+@prop export let imgHeight: $$Props['imgHeight'] = '48';
+@prop export let imgOnly: $$Props['imgOnly'] = false;
 -->

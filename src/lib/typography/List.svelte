@@ -1,9 +1,23 @@
 <script lang="ts">
+  import type { HTMLAttributes, HTMLOlAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
 
-  export let tag: 'ul' | 'ol' | 'dl' = 'ul';
-  export let list: 'disc' | 'none' | 'decimal' | undefined = undefined;
-  export let position: 'inside' | 'outside' = 'inside';
+  type ListProps = {
+    tag?: 'ul' | 'ol' | 'dl';
+    list?: 'disc' | 'none' | 'decimal' | undefined;
+    position?: 'inside' | 'outside';
+  };
+
+  type ListAttributes<T extends EventTarget> = HTMLAttributes<T> & ListProps;
+
+  type $$Props =
+  | ListAttributes<HTMLUListElement>
+  | (HTMLOlAttributes & ListProps)
+  | ListAttributes<HTMLDListElement>;
+
+  export let tag: $$Props['tag'] = 'ul';
+  export let list: $$Props['list'] = undefined;
+  export let position: NonNullable<$$Props['position']> = 'inside';
 
   let lists = {
     disc: 'list-disc',
@@ -27,7 +41,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let tag: 'ul' | 'ol' | 'dl' = 'ul';
-@prop export let list: 'disc' | 'none' | 'decimal' | undefined = undefined;
-@prop export let position: 'inside' | 'outside' = 'inside';
+@prop export let tag: $$Props['tag'] = 'ul';
+@prop export let list: $$Props['list'] = undefined;
+@prop export let position: NonNullable<$$Props['position']> = 'inside';
 -->

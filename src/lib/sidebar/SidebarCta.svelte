@@ -29,8 +29,8 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let divWrapperClass: string = 'p-4 mt-6 bg-primary-50 rounded-lg dark:bg-primary-900';
-@prop export let divClass: string = 'flex items-center mb-3';
-@prop export let spanClass: string = 'bg-primary-100 text-primary-800 text-sm font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-900';
-@prop export let label: string = '';
+@prop export let divWrapperClass: $$Props['divWrapperClass'] = 'p-4 mt-6 bg-primary-50 rounded-lg dark:bg-primary-900';
+@prop export let divClass: $$Props['divClass'] = 'flex items-center mb-3';
+@prop export let spanClass: $$Props['spanClass'] = 'bg-primary-100 text-primary-800 text-sm font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-900';
+@prop export let label: $$Props['label'] = '';
 -->

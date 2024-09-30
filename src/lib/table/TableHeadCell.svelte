@@ -54,9 +54,9 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let padding: string = 'px-6 py-3';
-@prop export let sort: ((a: T, b: T) => number) | null = null;
-@prop export let defaultDirection: 'asc' | 'desc' = 'asc';
-@prop export let defaultSort: boolean = false;
-@prop export let direction: 'asc' | 'desc' | null = defaultSort ? defaultDirection : null;
+@prop export let padding: $$Props['padding'] = 'px-6 py-3';
+@prop export let sort: $$Props['sort'] = null;
+@prop export let defaultDirection: $$Props['defaultDirection'] = 'asc';
+@prop export let defaultSort: $$Props['defaultSort'] = false;
+@prop export let direction: $$Props['direction'] = defaultSort ? defaultDirection : null;
 -->

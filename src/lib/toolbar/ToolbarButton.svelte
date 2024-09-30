@@ -77,9 +77,9 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let color: ToolbarButtonType = 'default';
-@prop export let name: string | undefined = undefined;
-@prop export let ariaLabel: string | undefined = undefined;
-@prop export let size: 'xs' | 'sm' | 'md' | 'lg' = 'md';
+@prop export let color: NonNullable<$$Props['color']> = 'default';
+@prop export let name: $$Props['name'] = undefined;
+@prop export let ariaLabel: $$Props['ariaLabel'] = undefined;
+@prop export let size: SizeType = 'md';
 @prop export let href: string | undefined = undefined;
 -->

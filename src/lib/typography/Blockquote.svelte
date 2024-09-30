@@ -1,15 +1,27 @@
 <script lang="ts">
+  import type { HTMLBlockquoteAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
   import type { BlockQuoteType } from '../types';
 
-  export let border: boolean = false;
-  export let italic: boolean = true;
-  export let borderClass: string = 'border-s-4 border-gray-300 dark:border-gray-500';
-  export let bgClass: string = 'bg-gray-50 dark:bg-gray-800';
-  export let bg: boolean = false;
-  export let baseClass: string = 'font-semibold text-gray-900 dark:text-white';
-  export let alignment: 'left' | 'center' | 'right' = 'left';
-  export let size: BlockQuoteType = 'lg';
+  interface $$Props extends HTMLBlockquoteAttributes {
+    border?: boolean;
+    italic?: boolean;
+    borderClass?: string;
+    bgClass?: string;
+    bg?: boolean;
+    baseClass?: string;
+    alignment?: 'left' | 'center' | 'right';
+    size?: BlockQuoteType;
+  }
+
+  export let border: $$Props['border'] = false;
+  export let italic: $$Props['italic'] = true;
+  export let borderClass: $$Props['borderClass'] = 'border-s-4 border-gray-300 dark:border-gray-500';
+  export let bgClass: $$Props['bgClass'] = 'bg-gray-50 dark:bg-gray-800';
+  export let bg: $$Props['bg'] = false;
+  export let baseClass: $$Props['baseClass'] = 'font-semibold text-gray-900 dark:text-white';
+  export let alignment: NonNullable<$$Props['alignment']> = 'left';
+  export let size: NonNullable<$$Props['size']> = 'lg';
   let alignmentClasses = {
     left: 'text-left',
     center: 'text-center',
@@ -40,12 +52,12 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let border: boolean = false;
-@prop export let italic: boolean = true;
-@prop export let borderClass: string = 'border-s-4 border-gray-300 dark:border-gray-500';
-@prop export let bgClass: string = 'bg-gray-50 dark:bg-gray-800';
-@prop export let bg: boolean = false;
-@prop export let baseClass: string = 'font-semibold text-gray-900 dark:text-white';
-@prop export let alignment: 'left' | 'center' | 'right' = 'left';
-@prop export let size: BlockQuoteType = 'lg';
+@prop export let border: $$Props['border'] = false;
+@prop export let italic: $$Props['italic'] = true;
+@prop export let borderClass: $$Props['borderClass'] = 'border-s-4 border-gray-300 dark:border-gray-500';
+@prop export let bgClass: $$Props['bgClass'] = 'bg-gray-50 dark:bg-gray-800';
+@prop export let bg: $$Props['bg'] = false;
+@prop export let baseClass: $$Props['baseClass'] = 'font-semibold text-gray-900 dark:text-white';
+@prop export let alignment: NonNullable<$$Props['alignment']> = 'left';
+@prop export let size: NonNullable<$$Props['size']> = 'lg';
 -->

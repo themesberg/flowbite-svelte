@@ -1,16 +1,54 @@
 {
   "name": "Rating",
-  "slots": ["text"],
+  "slots": [
+    "text"
+  ],
   "events": [],
   "props": [
-    ["divClass?", "string", "'flex items-center'"],
-    ["size?", "number", "24"],
-    ["total?", "number", ""],
-    ["rating", "number", "4"],
-    ["partialId?", "string", "'partialStar' + generateId()"],
-    ["icon?", "ComponentType", "Star"],
-    ["count?", "boolean", "false"],
-    ["iconFillColor?", "string | undefined", "''"],
-    ["iconStrokeColor?", "string | undefined", "''"]
+    [
+      "divClass?",
+      "string",
+      "'flex items-center'"
+    ],
+    [
+      "size?",
+      "number",
+      "24"
+    ],
+    [
+      "total?",
+      "number",
+      ""
+    ],
+    [
+      "rating",
+      "number",
+      "4"
+    ],
+    [
+      "partialId?",
+      "string",
+      "'partialStar' + generateId()"
+    ],
+    [
+      "icon?",
+      "ComponentType",
+      "Star"
+    ],
+    [
+      "count?",
+      "boolean",
+      "false"
+    ],
+    [
+      "iconFillColor?",
+      "string | undefined",
+      "'#F5CA14'"
+    ],
+    [
+      "iconStrokeColor?",
+      "string | undefined",
+      "'#F5CA14'"
+    ]
   ]
 }

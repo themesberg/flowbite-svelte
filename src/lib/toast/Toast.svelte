@@ -112,16 +112,14 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let dismissable: boolean = true;
-@prop export let color: ColorVariant = 'primary';
-@prop export let position: ToastPositionType = 'none';
-@prop export let divClass: string = 'w-full max-w-xs p-4 text-gray-500 bg-white shadow dark:text-gray-400 dark:bg-gray-800 gap-3';
-@prop export let defaultIconClass: string = 'w-8 h-8';
-@prop export let contentClass: string = 'w-full text-sm font-normal';
-@prop export let div2class: string = '';
-@prop export let div3class: string = '';
-@prop export let align: boolean = true;
-@prop export let transition: TransitionFunc = fade;
-@prop export let params = {};
-@prop export let toastStatus: boolean = true;
+@prop export let dismissable: $$Props['dismissable'] = true;
+@prop export let color: NonNullable<$$Props['color']> = 'primary';
+@prop export let position: NonNullable<$$Props['position']> = 'none';
+@prop export let divClass: $$Props['divClass'] = 'w-full max-w-xs p-4 text-gray-500 bg-white shadow dark:text-gray-400 dark:bg-gray-800 gap-3';
+@prop export let defaultIconClass: $$Props['defaultIconClass'] = 'w-8 h-8';
+@prop export let contentClass: $$Props['contentClass'] = 'w-full text-sm font-normal';
+@prop export let align: $$Props['align'] = true;
+@prop export let transition: NonNullable<$$Props['transition']> = fade;
+@prop export let params: $$Props['params'] = {};
+@prop export let toastStatus: $$Props['toastStatus'] = true;
 -->

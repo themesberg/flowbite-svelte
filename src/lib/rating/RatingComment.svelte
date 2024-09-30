@@ -80,9 +80,8 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let ceil: boolean = false;
-@prop export let helpfullink: string = '';
-@prop export let abuselink: string = '';
-@prop export let comment: {
-    id: string;
+@prop export let ceil: $$Props['ceil'] = false;
+@prop export let helpfullink: $$Props['helpfullink'] = '';
+@prop export let abuselink: $$Props['abuselink'] = '';
+@prop export let comment: $$Props['comment'];
 -->

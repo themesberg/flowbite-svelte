@@ -25,8 +25,8 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let site: SiteType;
-@prop export let aClass: string = 'flex items-center ps-2.5 mb-5';
-@prop export let imgClass: string = 'h-6 me-3 sm:h-7';
-@prop export let spanClass: string = 'self-center text-xl font-semibold whitespace-nowrap dark:text-white';
+@prop export let site: $$Props['site'];
+@prop export let aClass: $$Props['aClass'] = 'flex items-center ps-2.5 mb-5';
+@prop export let imgClass: $$Props['imgClass'] = 'h-6 me-3 sm:h-7';
+@prop export let spanClass: $$Props['spanClass'] = 'self-center text-xl font-semibold whitespace-nowrap dark:text-white';
 -->

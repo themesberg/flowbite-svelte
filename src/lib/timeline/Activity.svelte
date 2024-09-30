@@ -19,5 +19,5 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let olClass: string = 'relative border-s border-gray-200 dark:border-gray-700';
+@prop export let olClass: $$Props['olClass'] = 'relative border-s border-gray-200 dark:border-gray-700';
 -->

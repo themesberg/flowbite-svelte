@@ -1,6 +1,14 @@
 {
   "name": "Toolbar",
-  "slots": ["end"],
+  "slots": [
+    "end"
+  ],
   "events": [],
-  "props": [["embedded?", "boolean", ""]]
+  "props": [
+    [
+      "embedded?",
+      "boolean",
+      ""
+    ]
+  ]
 }

@@ -76,12 +76,12 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let steps: string[] = ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'];
-@prop export let currentStep = 1;
-@prop export let size: string = 'h-2.5';
-@prop export let color: 'primary' | 'secondary' | 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'custom' = 'primary';
-@prop export let glow: boolean = false;
-@prop export let hideLabel: boolean = false;
-@prop export let completedCustom: string = '';
-@prop export let currentCustom: string = '';
+@prop export let steps: $$Props['steps'] = ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'];
+@prop export let currentStep: $$Props['currentStep'] = 1;
+@prop export let size: $$Props['size'] = 'h-2.5';
+@prop export let color: $$Props['color'] = 'primary';
+@prop export let glow: $$Props['glow'] = false;
+@prop export let hideLabel: $$Props['hideLabel'] = false;
+@prop export let completedCustom: $$Props['completedCustom'] = '';
+@prop export let currentCustom: $$Props['currentCustom'] = '';
 -->

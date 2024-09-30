@@ -42,7 +42,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let href: string = '';
-@prop export let activeClass: string | undefined = undefined;
-@prop export let nonActiveClass: string | undefined = undefined;
+@prop export let href: $$Props['href'] = '';
+@prop export let activeClass: $$Props['activeClass'] = undefined;
+@prop export let nonActiveClass: $$Props['nonActiveClass'] = undefined;
 -->

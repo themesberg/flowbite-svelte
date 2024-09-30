@@ -1,12 +1,8 @@
 {
   "name": "ToolbarButton",
   "slots": [],
-  "events": ["on:click"],
-  "props": [
-    ["color", "ToolbarButtonType", "'default'"],
-    ["name", "string | undefined", "undefined"],
-    ["ariaLabel", "string | undefined", "undefined"],
-    ["size", "'xs' | 'sm' | 'md' | 'lg'", "'md'"],
-    ["href", "string | undefined", "undefined"]
-  ]
+  "events": [
+    "click"
+  ],
+  "props": []
 }

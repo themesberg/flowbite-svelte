@@ -64,10 +64,10 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let open: boolean = false;
-@prop export let title: string = 'Tab title';
-@prop export let activeClasses: string | undefined = undefined;
-@prop export let inactiveClasses: string | undefined = undefined;
-@prop export let defaultClass: string = 'inline-block text-sm font-medium text-center disabled:cursor-not-allowed';
-@prop export let divClass: string = '';
+@prop export let open: $$Props['open'] = false;
+@prop export let title: $$Props['title'] = 'Tab title';
+@prop export let activeClasses: $$Props['activeClasses'] = undefined;
+@prop export let inactiveClasses: $$Props['inactiveClasses'] = undefined;
+@prop export let defaultClass: $$Props['defaultClass'] = 'inline-block text-sm font-medium text-center disabled:cursor-not-allowed';
+@prop export let divClass: $$Props['divClass'] = '';
 -->

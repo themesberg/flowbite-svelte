@@ -27,5 +27,5 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let order: 'default' | 'vertical' | 'horizontal' | 'activity' | 'group' = 'default';
+@prop export let order: NonNullable<$$Props['order']> = 'default';
 -->

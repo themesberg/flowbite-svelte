@@ -85,15 +85,15 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let defaultClass: string = 'fixed end-6 bottom-6';
-@prop export let popperDefaultClass: string = 'flex items-center mb-4 gap-2';
-@prop export let placement: Placement = 'top';
-@prop export let pill: boolean = true;
-@prop export let tooltip: Placement | 'none' = 'left';
-@prop export let trigger: 'hover' | 'click' | 'focus' = 'hover';
-@prop export let textOutside: boolean = false;
-@prop export let id: string = generateId();
-@prop export let name: string = 'Open actions menu';
-@prop export let gradient: boolean = false;
-@prop export let open: boolean = false;
+@prop export let defaultClass: $$Props['defaultClass'] = 'fixed end-6 bottom-6';
+@prop export let popperDefaultClass: $$Props['popperDefaultClass'] = 'flex items-center mb-4 gap-2';
+@prop export let placement: NonNullable<$$Props['placement']> = 'top';
+@prop export let pill: NonNullable<$$Props['pill']> = true;
+@prop export let tooltip: NonNullable<$$Props['tooltip']> = 'left';
+@prop export let trigger: $$Props['trigger'] = 'hover';
+@prop export let textOutside: NonNullable<$$Props['textOutside']> = false;
+@prop export let id: $$Props['id'] = generateId();
+@prop export let name: $$Props['name'] = 'Open actions menu';
+@prop export let gradient: $$Props['gradient'] = false;
+@prop export let open: $$Props['open'] = false;
 -->

@@ -53,12 +53,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let action: Action<HTMLElement, any> = () => {};
-@prop export let params: any = {};
-@prop export let href: string = '';
-@prop export let label: string = '';
-@prop export let spanClass: string = 'ms-3';
-@prop export let activeClass: string | undefined = undefined;
-@prop export let nonActiveClass: string | undefined = undefined;
-@prop export let active: boolean = false;
+@prop export let action: NonNullable<$$Props['action']> = () => {};
+@prop export let params: $$Props['params'] = {};
+@prop export let href: $$Props['href'] = '';
+@prop export let label: $$Props['label'] = '';
+@prop export let spanClass: $$Props['spanClass'] = 'ms-3';
+@prop export let activeClass: $$Props['activeClass'] = undefined;
+@prop export let nonActiveClass: $$Props['nonActiveClass'] = undefined;
 -->

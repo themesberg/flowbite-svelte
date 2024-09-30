@@ -27,9 +27,9 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let aClass: string = 'flex items-center p-2 ps-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700';
-@prop export let href: string = '';
-@prop export let label: string = '';
-@prop export let activeClass: string = 'flex items-center p-2 ps-11 text-base font-normal text-gray-900 bg-gray-200 dark:bg-gray-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700';
-@prop export let active: boolean = false;
+@prop export let aClass: $$Props['aClass'] = 'flex items-center p-2 ps-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700';
+@prop export let href: $$Props['href'] = '';
+@prop export let label: $$Props['label'] = '';
+@prop export let activeClass: $$Props['activeClass'] = 'flex items-center p-2 ps-11 text-base font-normal text-gray-900 bg-gray-200 dark:bg-gray-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700';
+@prop export let active: $$Props['active'] = false;
 -->

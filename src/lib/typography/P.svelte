@@ -1,19 +1,35 @@
 <script lang="ts">
+  import type { HTMLAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
   import type { PsizeType, PweightType } from '../types';
 
-  export let color: string = 'text-gray-900 dark:text-white';
-  export let height: 'normal' | 'relaxed' | 'loose' = 'normal';
-  export let align: 'left' | 'center' | 'right' = 'left';
-  export let justify: boolean = false;
-  export let italic: boolean = false;
-  export let firstupper: boolean = false;
-  export let upperClass: string = 'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:me-3 first-letter:float-left';
-  export let opacity: number | undefined = undefined;
-  export let whitespace: 'normal' | 'nowrap' | 'pre' | 'preline' | 'prewrap' = 'normal';
-  export let size: PsizeType = 'base';
-  export let space: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest' | undefined = undefined;
-  export let weight: PweightType = 'normal';
+  interface $$Props extends HTMLAttributes<HTMLParagraphElement> {
+    color?: string;
+    height?: 'normal' | 'relaxed' | 'loose';
+    align?: 'left' | 'center' | 'right';
+    justify?: boolean;
+    italic?: boolean;
+    firstupper?: boolean;
+    upperClass?: string;
+    opacity?: number;
+    whitespace?: 'normal' | 'nowrap' | 'pre' | 'preline' | 'prewrap';
+    size?: PsizeType;
+    space?: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest';
+    weight?: PweightType;
+  }
+
+  export let color: NonNullable<$$Props['color']> = 'text-gray-900 dark:text-white';
+  export let height: $$Props['height'] = 'normal';
+  export let align: $$Props['align'] = 'left';
+  export let justify: $$Props['justify'] = false;
+  export let italic: $$Props['italic'] = false;
+  export let firstupper: $$Props['firstupper'] = false;
+  export let upperClass: $$Props['upperClass'] = 'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:me-3 first-letter:float-left';
+  export let opacity: $$Props['opacity'] = undefined;
+  export let whitespace: $$Props['whitespace'] = 'normal';
+  export let size: $$Props['size'] = 'base';
+  export let space: $$Props['space'] = undefined;
+  export let weight: $$Props['weight'] = 'normal';
 
   const sizes = {
     xs: 'text-xs',
@@ -87,16 +103,16 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let color: string = 'text-gray-900 dark:text-white';
-@prop export let height: 'normal' | 'relaxed' | 'loose' = 'normal';
-@prop export let align: 'left' | 'center' | 'right' = 'left';
-@prop export let justify: boolean = false;
-@prop export let italic: boolean = false;
-@prop export let firstupper: boolean = false;
-@prop export let upperClass: string = 'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:me-3 first-letter:float-left';
-@prop export let opacity: number | undefined = undefined;
-@prop export let whitespace: 'normal' | 'nowrap' | 'pre' | 'preline' | 'prewrap' = 'normal';
-@prop export let size: PsizeType = 'base';
-@prop export let space: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest' | undefined = undefined;
-@prop export let weight: PweightType = 'normal';
+@prop export let color: NonNullable<$$Props['color']> = 'text-gray-900 dark:text-white';
+@prop export let height: $$Props['height'] = 'normal';
+@prop export let align: $$Props['align'] = 'left';
+@prop export let justify: $$Props['justify'] = false;
+@prop export let italic: $$Props['italic'] = false;
+@prop export let firstupper: $$Props['firstupper'] = false;
+@prop export let upperClass: $$Props['upperClass'] = 'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:me-3 first-letter:float-left';
+@prop export let opacity: $$Props['opacity'] = undefined;
+@prop export let whitespace: $$Props['whitespace'] = 'normal';
+@prop export let size: $$Props['size'] = 'base';
+@prop export let space: $$Props['space'] = undefined;
+@prop export let weight: $$Props['weight'] = 'normal';
 -->

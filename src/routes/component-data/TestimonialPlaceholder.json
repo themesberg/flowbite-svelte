@@ -1,1 +1,12 @@
-{ "name": "TestimonialPlaceholder", "slots": [], "events": [], "props": [["divClass", "string", "'animate-pulse'"]] }
+{
+  "name": "TestimonialPlaceholder",
+  "slots": [],
+  "events": [],
+  "props": [
+    [
+      "divClass?",
+      "string",
+      "'animate-pulse'"
+    ]
+  ]
+}

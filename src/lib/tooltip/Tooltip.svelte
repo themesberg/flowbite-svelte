@@ -3,7 +3,6 @@
   import Popper from '../utils/Popper.svelte';
   import { twMerge } from 'tailwind-merge';
 
-  // propagate props type from underlying Frame
   interface $$Props extends ComponentProps<Popper> {
     type?: 'dark' | 'light' | 'auto' | 'custom';
     defaultClass?: string;

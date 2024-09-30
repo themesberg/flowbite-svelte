@@ -46,6 +46,6 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let theadClass: string = 'text-xs uppercase';
-@prop export let defaultRow: boolean = true;
+@prop export let theadClass: $$Props['theadClass'] = 'text-xs uppercase';
+@prop export let defaultRow: $$Props['defaultRow'] = true;
 -->

@@ -1,20 +1,23 @@
 {
   "name": "Button",
   "slots": [],
-  "events": ["click", "change", "keydown", "keyup", "touchend", "touchcancel", "mouseenter", "mouseleave", "click", "change", "keydown", "keyup", "touchend", "touchcancel", "mouseenter", "mouseleave"],
-  "props": [
-    ["pill?", "boolean", "false"],
-    ["outline?", "boolean", "false"],
-    ["size?", "'xs' | 'sm' | 'md' | 'lg' | 'xl'", ""],
-    ["href?", "string", "undefined"],
-    ["type?", "HTMLButtonAttributes['type']", "'button'"],
-    ["color?", "ButtonColor", ""],
-    ["shadow?", "boolean", "false"],
-    ["tag?", "string", "'button'"],
-    ["checked?", "boolean", "undefined"],
-    ["disabled?", "boolean", "false"],
-    ["target?", "string", ""],
-    ["rel?", "string", ""],
-    ["name?", "string", ""]
-  ]
+  "events": [
+    "click",
+    "change",
+    "keydown",
+    "keyup",
+    "touchend",
+    "touchcancel",
+    "mouseenter",
+    "mouseleave",
+    "click",
+    "change",
+    "keydown",
+    "keyup",
+    "touchend",
+    "touchcancel",
+    "mouseenter",
+    "mouseleave"
+  ],
+  "props": []
 }

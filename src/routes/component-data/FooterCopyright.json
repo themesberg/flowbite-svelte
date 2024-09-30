@@ -3,12 +3,40 @@
   "slots": [],
   "events": [],
   "props": [
-    ["classSpan?", "string", ""],
-    ["aClass?", "string", "'hover:underline'"],
-    ["year?", "number", "new Date().getFullYear()"],
-    ["by?", "string", "''"],
-    ["href?", "string", "''"],
-    ["target?", "string", "undefined"],
-    ["copyrightMessage?", "string", "'All Rights Reserved.'"]
+    [
+      "classSpan?",
+      "string",
+      ""
+    ],
+    [
+      "aClass?",
+      "string",
+      "'hover:underline'"
+    ],
+    [
+      "year?",
+      "number",
+      "new Date().getFullYear()"
+    ],
+    [
+      "by?",
+      "string",
+      "''"
+    ],
+    [
+      "href?",
+      "string",
+      "''"
+    ],
+    [
+      "target?",
+      "string",
+      "undefined"
+    ],
+    [
+      "copyrightMessage?",
+      "string",
+      "'All Rights Reserved.'"
+    ]
   ]
 }

@@ -26,7 +26,7 @@
     </div>
 
     <div class="flex flex-col items-start pt-8 self-stretch">
-      <List tag="ul" class="mb-6 lg:mb-8 space-y-4 font-medium text-gray-900 dark:text-white" list="none" ulClass="">
+      <List tag="ul" class="mb-6 lg:mb-8 space-y-4 font-medium text-gray-900 dark:text-white" list="none">
         {#each features as feature}
           <Li icon class="gap-2">
             <Check class="w-5 h-5 p-1 rounded-full bg-primary-100 dark:bg-gray-700 text-primary-700" />
@@ -64,7 +64,7 @@
       </p>
       <p class="text-lg text-gray-500 dark:text-gray-400">Enabling dark mode will allow users to either select the preferred method (light or dark) or automatically switch based on the operating system settings.</p>
     </div>
-    <List tag="ul" ulClass="" class="space-y-4 self-stretch font-medium text-gray-900 dark:text-white border-t dark:border-gray-700 pt-8" list="none">
+    <List tag="ul" class="space-y-4 self-stretch font-medium text-gray-900 dark:text-white border-t dark:border-gray-700 pt-8" list="none">
       <Li icon class="gap-2">
         <Check class="w-5 h-5 p-1 rounded-full bg-primary-100 dark:bg-gray-700 text-primary-700" />
         Increased accessibility based on room brightness

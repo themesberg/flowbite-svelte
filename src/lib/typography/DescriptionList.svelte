@@ -1,9 +1,16 @@
 <script lang="ts">
+  import type { HTMLAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
 
-  export let tag: 'dt' | 'dd';
-  export let dtClass: string = 'text-gray-500 md:text-lg dark:text-gray-400';
-  export let ddClass: string = 'text-lg font-semibold';
+  interface $$Props extends HTMLAttributes<HTMLElement> {
+    tag?: 'dt' | 'dd';
+    dtClass?: string;
+    ddClass?: string;
+  }
+
+  export let tag: $$Props['tag'] = 'dt';
+  export let dtClass: $$Props['dtClass'] = 'text-gray-500 md:text-lg dark:text-gray-400';
+  export let ddClass: $$Props['ddClass'] = 'text-lg font-semibold';
 
   let classDesc = twMerge(tag === 'dt' ? dtClass : ddClass, $$props.class);
 </script>
@@ -16,7 +23,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let tag: 'dt' | 'dd';
-@prop export let dtClass: string = 'text-gray-500 md:text-lg dark:text-gray-400';
-@prop export let ddClass: string = 'text-lg font-semibold';
+@prop export let tag: $$Props['tag'] = 'dt';
+@prop export let dtClass: $$Props['dtClass'] = 'text-gray-500 md:text-lg dark:text-gray-400';
+@prop export let ddClass: $$Props['ddClass'] = 'text-lg font-semibold';
 -->

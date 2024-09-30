@@ -39,8 +39,8 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let size = '24';
-@prop export let color = 'currentColor';
-@prop export let variation: 'solid' | 'outline' = 'outline';
-@prop export let ariaLabel = 'bars 3';
+@prop export let size: $$Props['size'] = '24';
+@prop export let color: $$Props['color'] = 'currentColor';
+@prop export let variation: $$Props['variation'] = 'outline';
+@prop export let ariaLabel: $$Props['ariaLabel'] = 'bars 3';
 -->

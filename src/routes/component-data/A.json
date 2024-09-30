@@ -1,12 +1,34 @@
 {
   "name": "A",
   "slots": [],
-  "events": ["on:click"],
+  "events": [
+    "click"
+  ],
   "props": [
-    ["action", "Action<HTMLElement, any> = () => {};", ""],
-    ["params", "any", "{}"],
-    ["href", "string", "'#'"],
-    ["color", "string", "'text-primary-600 dark:text-primary-500'"],
-    ["aClass", "string", "'inline-flex items-center hover:underline'"]
+    [
+      "action?",
+      "Action<HTMLElement, any>",
+      ""
+    ],
+    [
+      "params?",
+      "any",
+      "{}"
+    ],
+    [
+      "href?",
+      "string",
+      "'#'"
+    ],
+    [
+      "color?",
+      "string",
+      "'text-primary-600 dark:text-primary-500'"
+    ],
+    [
+      "aClass?",
+      "string",
+      "'inline-flex items-center hover:underline'"
+    ]
   ]
 }

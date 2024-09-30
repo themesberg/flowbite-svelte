@@ -28,6 +28,6 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let menuClass: string = 'h-6 w-6 shrink-0';
-@prop export let onClick: (() => void) | undefined = undefined;
+@prop export let menuClass: $$Props['menuClass'] = 'h-6 w-6 shrink-0';
+@prop export let onClick: $$Props['onClick'] = undefined;
 -->

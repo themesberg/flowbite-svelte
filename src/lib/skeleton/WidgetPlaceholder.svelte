@@ -27,5 +27,5 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let divClass: string = 'p-4 max-w-sm rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700';
+@prop export let divClass: $$Props['divClass'] = 'p-4 max-w-sm rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700';
 -->

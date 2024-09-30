@@ -50,11 +50,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let btnDefaultClass: string = 'w-[52px] h-[52px] shadow-sm !p-2';
-@prop export let name: string = '';
-@prop export let tooltip: Placement | 'none' = context.tooltip;
-@prop export let pill: boolean = context.pill;
-@prop export let textOutside: boolean = context.textOutside;
-@prop export let textOutsideClass: string = 'block absolute -start-14 top-1/2 mb-px text-sm font-medium -translate-y-1/2';
-@prop export let textDefaultClass: string = 'block mb-px text-xs font-medium';
+@prop export let btnDefaultClass: $$Props['defaultClass'] = 'w-[52px] h-[52px] shadow-sm !p-2';
+@prop export let name: $$Props['name'] = '';
+@prop export let tooltip: $$Props['tooltip'] = context.tooltip;
+@prop export let pill: $$Props['pill'] = context.pill;
+@prop export let textOutside: $$Props['textOutside'] = context.textOutside;
+@prop export let textOutsideClass: $$Props['textOutsideClass'] = 'block absolute -start-14 top-1/2 mb-px text-sm font-medium -translate-y-1/2';
+@prop export let textDefaultClass: $$Props['textDefaultClass'] = 'block mb-px text-xs font-medium';
 -->

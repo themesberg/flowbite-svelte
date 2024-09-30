@@ -50,10 +50,10 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let color: 'primary' | 'blue' | 'gray' | 'green' | 'red' | 'yellow' | 'pink' | 'purple' | 'white' | 'custom' | undefined = 'primary';
-@prop export let bg: string = 'text-gray-300';
-@prop export let customColor: string = '';
-@prop export let size: string | number = '8';
-@prop export let currentFill: string = 'currentFill';
-@prop export let currentColor: string = 'currentColor';
+@prop export let color: $$Props['color'] = 'primary';
+@prop export let bg: $$Props['bg'] = 'text-gray-300';
+@prop export let customColor: $$Props['customColor'] = '';
+@prop export let size: $$Props['size'] = '8';
+@prop export let currentFill: $$Props['currentFill'] = 'currentFill';
+@prop export let currentColor: $$Props['currentColor'] = 'currentColor';
 -->

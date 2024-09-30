@@ -73,11 +73,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let btnClass: string = 'flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700';
-@prop export let label: string = '';
-@prop export let spanClass: string = 'flex-1 ms-3 text-left whitespace-nowrap';
-@prop export let ulClass: string = 'py-2 space-y-2';
-@prop export let transitionType: TransitionTypes = 'slide';
-@prop export let transitionParams: TransitionParamTypes = {};
-@prop export let isOpen = false;
+@prop export let btnClass: $$Props['btnClass'] = 'flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700';
+@prop export let label: $$Props['label'] = '';
+@prop export let spanClass: $$Props['spanClass'] = 'flex-1 ms-3 text-left whitespace-nowrap';
+@prop export let ulClass: $$Props['ulClass'] = 'py-2 space-y-2';
+@prop export let transitionType: $$Props['transitionType'] = 'slide';
+@prop export let transitionParams: $$Props['transitionParams'] = {};
+@prop export let isOpen: $$Props['isOpen'] = false;
 -->

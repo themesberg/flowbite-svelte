@@ -1,10 +1,33 @@
 {
   "name": "NavLi",
   "slots": [],
-  "events": ["on:blur", "on:change", "on:click", "on:focus", "on:keydown", "on:keypress", "on:keyup", "on:mouseenter", "on:mouseleave", "on:mouseover"],
+  "events": [
+    "blur",
+    "change",
+    "click",
+    "focus",
+    "keydown",
+    "keypress",
+    "keyup",
+    "mouseenter",
+    "mouseleave",
+    "mouseover"
+  ],
   "props": [
-    ["href", "string", "''"],
-    ["activeClass", "string | undefined", "undefined"],
-    ["nonActiveClass", "string | undefined", "undefined"]
+    [
+      "href?",
+      "string",
+      "''"
+    ],
+    [
+      "activeClass?",
+      "string",
+      "undefined"
+    ],
+    [
+      "nonActiveClass?",
+      "string",
+      "undefined"
+    ]
   ]
 }

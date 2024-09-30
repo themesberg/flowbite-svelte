@@ -78,10 +78,10 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let review: ReviewType;
-@prop export let articleClass: string = 'md:gap-8 md:grid md:grid-cols-3';
-@prop export let divClass: string = 'flex items-center mb-6 space-x-4 rtl:space-x-reverse';
-@prop export let imgClass: string = 'w-10 h-10 rounded-full';
-@prop export let ulClass: string = 'space-y-4 text-sm text-gray-500 dark:text-gray-400';
-@prop export let liClass: string = 'flex items-center';
+@prop export let review: $$Props['review'];
+@prop export let articleClass: $$Props['articleClass'] = 'md:gap-8 md:grid md:grid-cols-3';
+@prop export let divClass: $$Props['divClass'] = 'flex items-center mb-6 space-x-4 rtl:space-x-reverse';
+@prop export let imgClass: $$Props['imgClass'] = 'w-10 h-10 rounded-full';
+@prop export let ulClass: $$Props['ulClass'] = 'space-y-4 text-sm text-gray-500 dark:text-gray-400';
+@prop export let liClass: $$Props['liClass'] = 'flex items-center';
 -->

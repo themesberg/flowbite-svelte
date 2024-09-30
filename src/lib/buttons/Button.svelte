@@ -159,11 +159,11 @@
 @prop export let pill: $$Props['pill'] = false;
 @prop export let outline: $$Props['outline'] = false;
 @prop export let size: NonNullable<$$Props['size']> = group ? 'sm' : 'md';
-@prop export let href: $$Props['href'] = undefined;
-@prop export let type: $$Props['type'] = 'button';
+@prop export let href: string | undefined = undefined;
+@prop export let type: HTMLButtonAttributes['type'] = 'button';
 @prop export let color: NonNullable<$$Props['color']> = group ? (outline ? 'dark' : 'alternative') : 'primary';
 @prop export let shadow: $$Props['shadow'] = false;
 @prop export let tag: $$Props['tag'] = 'button';
 @prop export let checked: $$Props['checked'] = undefined;
-@prop export let disabled: $$Props['disabled'] = false;
+@prop export let disabled: HTMLButtonAttributes['disabled'] = false;
 -->

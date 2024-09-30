@@ -1,12 +1,13 @@
 <script lang="ts">
+  import type { HTMLInputAttributes } from 'svelte/elements';
   import { getContext } from 'svelte';
   import type { FormColorType } from '../types';
   import { labelClass, inputClass } from './Radio.svelte';
   import Label from './Label.svelte';
   import type { CheckboxItem } from '../types';
 
-  interface $$Props {
-    name?: string;
+  interface $$Props extends HTMLInputAttributes {
+    // name?: string;
     color?: FormColorType;
     custom?: boolean;
     inline?: boolean;
@@ -22,7 +23,7 @@
   }
 
   // properties forwarding
-  export let name: $$Props['name'] = undefined;
+  // export let name: $$Props['name'] = undefined;
   export let color: NonNullable<$$Props['color']> = 'primary';
   export let custom: NonNullable<$$Props['custom']> = false;
   export let inline: NonNullable<$$Props['inline']> = false;
@@ -34,7 +35,6 @@
   export let groupLabelClass: NonNullable<$$Props['groupLabelClass']> = '';
   export let groupInputClass: NonNullable<$$Props['groupInputClass']> = '';
   
-
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
   // group example is from https://svelte.dev/repl/faabda4cabd544bd858a8a8abd0095f5?version=3.12.1
@@ -42,13 +42,13 @@
 {#if choices.length > 0}
   {#each choices as {value, label}, i}
     <Label class={labelClass(inline, groupLabelClass)} show={$$slots.default} for={`checkbox-${i}`}>{ label }
-      <input {name} id={`checkbox-${i}`} type="checkbox" value={ value } bind:group {...$$restProps}  class={inputClass(custom, color, true, background, spacing, groupInputClass)} />
+      <input id={`checkbox-${i}`} type="checkbox" value={ value } bind:group {...$$restProps}  class={inputClass(custom, color, true, background, spacing, groupInputClass)} />
       <slot />
     </Label>
   {/each}
 {:else}
 <Label class={labelClass(inline, $$props.class)} show={$$slots.default}>
-  <input {name} type="checkbox" bind:checked on:keyup on:keydown on:keypress on:focus on:blur on:click on:mouseover on:mouseenter on:mouseleave on:paste on:change {value} {...$$restProps} class={inputClass(custom, color, true, background, spacing, $$slots.default || $$props.class)} />
+  <input type="checkbox" bind:checked on:keyup on:keydown on:keypress on:focus on:blur on:click on:mouseover on:mouseenter on:mouseleave on:paste on:change {value} {...$$restProps} class={inputClass(custom, color, true, background, spacing, $$slots.default || $$props.class)} />
   <slot />
 </Label>
 {/if}

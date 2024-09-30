@@ -2,5 +2,11 @@
   "name": "ArrowKeyRight",
   "slots": [],
   "events": [],
-  "props": [["svgClass?", "string", "'w-4 h-4'"]]
+  "props": [
+    [
+      "svgClass?",
+      "string",
+      "'w-4 h-4'"
+    ]
+  ]
 }

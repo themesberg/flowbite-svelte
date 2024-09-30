@@ -3,7 +3,15 @@
   "slots": [],
   "events": [],
   "props": [
-    ["color", "string", "'text-gray-500 dark:text-gray-400'"],
-    ["secondaryClass", "string", "'font-semibold'"]
+    [
+      "color?",
+      "string",
+      "'text-gray-500 dark:text-gray-400'"
+    ],
+    [
+      "secondaryClass?",
+      "string",
+      "'font-semibold'"
+    ]
   ]
 }

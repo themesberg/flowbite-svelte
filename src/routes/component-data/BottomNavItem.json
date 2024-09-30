@@ -1,13 +1,15 @@
 {
   "name": "BottomNavItem",
   "slots": [],
-  "events": ["click", "change", "keydown", "keyup", "focus", "blur", "mouseenter", "mouseleave"],
-  "props": [
-    ["btnName?", "string", "''"],
-    ["appBtnPosition?", "'left' | 'middle' | 'right'", ""],
-    ["activeClass?", "string", "undefined"],
-    ["href?", "string", ""],
-    ["exact?", "boolean", "true"],
-    ["spanClass?", "string", "''"]
-  ]
+  "events": [
+    "click",
+    "change",
+    "keydown",
+    "keyup",
+    "focus",
+    "blur",
+    "mouseenter",
+    "mouseleave"
+  ],
+  "props": []
 }

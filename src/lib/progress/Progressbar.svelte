@@ -73,16 +73,16 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let progress: string | number = '45';
-@prop export let precision: number = 0
-  export let tweenDuration: number = 400;
-@prop export let animate: boolean = false;
-@prop export let size: string = 'h-2.5';
-@prop export let labelInside: boolean = false;
-@prop export let labelOutside: string = '';
-@prop export let easing: EasingFunction = cubicOut;
-@prop export let color: 'primary' | 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo' = 'primary';
-@prop export let labelInsideClass: string = 'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
-@prop export let divClass: string = 'w-full bg-gray-200 rounded-full dark:bg-gray-700';
-@prop export let progressClass: string;
+@prop export let progress: $$Props['progress'] = '45';
+@prop export let precision: $$Props['precision'] = 0
+  export let tweenDuration: $$Props['tweenDuration'] = 400;
+@prop export let animate: $$Props['animate'] = false;
+@prop export let size: $$Props['size'] = 'h-2.5';
+@prop export let labelInside: $$Props['labelInside'] = false;
+@prop export let labelOutside: $$Props['labelOutside'] = '';
+@prop export let easing: $$Props['easing'] = cubicOut;
+@prop export let color: NonNullable<$$Props['color']> = 'primary';
+@prop export let labelInsideClass: $$Props['labelInsideClass'] = 'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
+@prop export let divClass: $$Props['divClass'] = 'w-full bg-gray-200 rounded-full dark:bg-gray-700';
+@prop export let progressClass: $$Props['progressClass'] = '';
 -->

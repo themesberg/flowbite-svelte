@@ -41,11 +41,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let fillPercent: number = 100;
-@prop export let fillColor: string = '#ff0000';
-@prop export let strokeColor: string = '#ff0000';
-@prop export let size: number = 24;
-@prop export let ariaLabel: string = 'heart';
-@prop export let id: string = 'heart';
-@prop export let role = 'img';
+@prop export let fillPercent: $$Props['fillPercent'] = 100;
+@prop export let fillColor: $$Props['fillColor'] = '#ff0000';
+@prop export let strokeColor: $$Props['strokeColor'] = '#ff0000';
+@prop export let size: $$Props['size'] = 24;
+@prop export let ariaLabel: $$Props['ariaLabel'] = 'heart';
+@prop export let id: $$Props['id'] = 'heart';
+@prop export let role: $$Props['role'] = 'img';
 -->
