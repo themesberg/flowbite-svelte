@@ -34,7 +34,7 @@ By default navbar content width is controled by Tailwind class `container`. If y
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
 </script>
 
-<Navbar  >
+<Navbar>
   <NavBrand href="/">
     <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
     <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
@@ -49,33 +49,6 @@ By default navbar content width is controled by Tailwind class `container`. If y
   </NavUl>
 </Navbar>
 
-```
-
-## Navbar container
-
-If you need more control on navbar content use underlying `NavContainer` component and style it with `class` property.
-
-```svelte example hideScript
-<script>
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
-</script>
-
-<Navbar let:NavContainer color="primary">
-  <NavContainer class="border px-5 py-2 rounded-lg bg-white dark:bg-gray-600">
-    <NavBrand href="/">
-      <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
-      <span class="self-center whitespace-nowrap text-xl font-semibold">Flowbite</span>
-    </NavBrand>
-    <NavHamburger />
-    <NavUl>
-      <NavLi href="/">Home</NavLi>
-      <NavLi href="/about">About</NavLi>
-      <NavLi href="/docs/components/navbar">Navbar</NavLi>
-      <NavLi href="/pricing">Pricing</NavLi>
-      <NavLi href="/contact">Contact</NavLi>
-    </NavUl>
-  </NavContainer>
-</Navbar>
 ```
 
 ## Active class

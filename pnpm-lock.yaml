@@ -69,12 +69,6 @@ importers:
       eslint-plugin-svelte:
         specifier: ^2.44.1
         version: 2.44.1(eslint@9.11.1(jiti@1.21.6))(svelte@4.2.19)
-      flowbite-svelte:
-        specifier: ^0.46.20
-        version: 0.46.20(rollup@4.22.5)(svelte@4.2.19)
-      flowbite-svelte-blocks:
-        specifier: ^1.1.3
-        version: 1.1.3(rollup@4.22.5)(svelte@4.2.19)
       flowbite-svelte-icons:
         specifier: ^1.6.1
         version: 1.6.1(svelte@4.2.19)(tailwind-merge@2.5.2)(tailwindcss@3.4.13)
@@ -1431,24 +1425,12 @@ packages:
   flowbite-datepicker@1.3.0:
     resolution: {integrity: sha512-CLVqzuoE2vkUvWYK/lJ6GzT0be5dlTbH3uuhVwyB67+PjqJWABm2wv68xhBf5BqjpBxvTSQ3mrmLHpPJ2tvrSQ==}
 
-  flowbite-svelte-blocks@1.1.3:
-    resolution: {integrity: sha512-FTIyg3pLnxkiXp86h6ijvPXIHhDeeuISpNL3mmxzAMVGZouSbapcb1c33sc7NqrDEx6L1tNRaGdj41KnMlOT+A==}
-    engines: {node: '>=16.0.0', npm: '>=7.0.0'}
-    peerDependencies:
-      svelte: ^4.0.0 || ^5.0.0
-
   flowbite-svelte-icons@1.6.1:
     resolution: {integrity: sha512-Kw/7BzA6fqlFq7tBNudwX0KVU4cbyyXcMcgHTraMwGBtvBQan0RKMbvWwqm4JZNvLGAvRv1BM2EF7rzo/oam1Q==}
     peerDependencies:
       svelte: ^3.54.0 || ^4.0.0 || ^5.0.0
       tailwind-merge: ^2.0.0
       tailwindcss: ^3.3.2
-
-  flowbite-svelte@0.46.20:
-    resolution: {integrity: sha512-UZcuHPtmYAJOYBaXWtG5uvMv+B2UDyfIa1zGbuvpG5uzRCvSvHUImejd9PWj95dApWrSxWDc92heg6ZkoAtlbw==}
-    engines: {node: '>=18.0.0', pnpm: '>=8.0.0'}
-    peerDependencies:
-      svelte: ^3.55.1 || ^4.0.0 || ^5.0.0
 
   flowbite@2.5.2:
     resolution: {integrity: sha512-kwFD3n8/YW4EG8GlY3Od9IoKND97kitO+/ejISHSqpn3vw2i5K/+ZI8Jm2V+KC4fGdnfi0XZ+TzYqQb4Q1LshA==}
@@ -4159,30 +4141,11 @@ snapshots:
     transitivePeerDependencies:
       - rollup
 
-  flowbite-svelte-blocks@1.1.3(rollup@4.22.5)(svelte@4.2.19):
-    dependencies:
-      flowbite: 2.5.2(rollup@4.22.5)
-      flowbite-svelte: 0.46.20(rollup@4.22.5)(svelte@4.2.19)
-      svelte: 4.2.19
-      tailwind-merge: 2.5.2
-    transitivePeerDependencies:
-      - rollup
-
   flowbite-svelte-icons@1.6.1(svelte@4.2.19)(tailwind-merge@2.5.2)(tailwindcss@3.4.13):
     dependencies:
       svelte: 4.2.19
       tailwind-merge: 2.5.2
       tailwindcss: 3.4.13
-
-  flowbite-svelte@0.46.20(rollup@4.22.5)(svelte@4.2.19):
-    dependencies:
-      '@floating-ui/dom': 1.6.11
-      apexcharts: 3.54.0
-      flowbite: 2.5.2(rollup@4.22.5)
-      svelte: 4.2.19
-      tailwind-merge: 2.5.2
-    transitivePeerDependencies:
-      - rollup
 
   flowbite@2.5.2(rollup@4.22.5):
     dependencies:
