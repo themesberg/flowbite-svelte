@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.46.22
+
+### Patch Changes
+
+- fix: omit size from Toggle ([`cbdc23136d7cbd57338fee3ae57fd0b347fcedd6`](https://github.com/themesberg/flowbite-svelte/commit/cbdc23136d7cbd57338fee3ae57fd0b347fcedd6))
+
 ## 0.46.21
 
 ### Patch Changes

@@ -3,7 +3,7 @@
   "slots": [],
   "events": ["change", "contextmenu", "input"],
   "props": [
-    ["items", "SelectOptionType<any>[]", "[]"],
+    ["items?", "SelectOptionType<any>[]", "[]"],
     ["value?", "any", "''"],
     ["placeholder?", "string", "'Choose option ...'"],
     ["underline?", "boolean", "false"],

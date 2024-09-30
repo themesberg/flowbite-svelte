@@ -3,7 +3,6 @@
   "slots": [],
   "events": ["keyup", "keydown", "keypress", "focus", "blur", "click", "mouseover", "mouseenter", "mouseleave", "paste", "change"],
   "props": [
-    ["// name?", "string", ""],
     ["color?", "FormColorType", ""],
     ["custom?", "boolean", ""],
     ["inline?", "boolean", ""],

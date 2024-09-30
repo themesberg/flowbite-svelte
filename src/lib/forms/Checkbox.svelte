@@ -54,7 +54,6 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let name: $$Props['name'] = undefined;
 @prop export let color: NonNullable<$$Props['color']> = 'primary';
 @prop export let custom: NonNullable<$$Props['custom']> = false;
 @prop export let inline: NonNullable<$$Props['inline']> = false;
