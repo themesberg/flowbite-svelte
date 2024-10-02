@@ -29,14 +29,10 @@ interface DefaultMockupProps extends MockupBaseProps {
   div6Class?: string;
 }
 
-interface DesktopProps extends MockupBaseProps {}
-
 interface IosProps extends MockupBaseProps {
   div5Class?: string;
   div6Class?: string;
 }
-
-interface LaptopProps extends MockupBaseProps {}
 
 interface SmartwatchProps extends MockupBaseProps {
   div5Class?: string;
@@ -48,4 +44,4 @@ interface TabletProps extends MockupBaseProps {
   div6Class?: string;
 }
 
-export { Android, DefaultMockup, Desktop, DeviceMockup, Ios, Laptop, Smartwatch, Tablet, android, defaultMockup, desktop, ios, laptop, smartwatch, tablet, type AndroidProps, type DefaultMockupProps, type DesktopProps, type IosProps, type LaptopProps, type SmartwatchProps, type TabletProps };
+export { Android, DefaultMockup, Desktop, DeviceMockup, Ios, Laptop, Smartwatch, Tablet, android, defaultMockup, desktop, ios, laptop, smartwatch, tablet, type AndroidProps, type DefaultMockupProps, type IosProps, type SmartwatchProps, type TabletProps, type MockupBaseProps };

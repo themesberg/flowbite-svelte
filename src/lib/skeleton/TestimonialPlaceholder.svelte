@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { testimonialPlaceholder, type TestimonialPlaceholderProps as Props } from './index';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { testimonialPlaceholder } from './index';
 
-  let { class: className, ...restProps }: Props = $props();
+  let { class: className, ...restProps }: HTMLAttributes<HTMLDivElement> = $props();
   const { wrapper, line1, line2, svg, subContent } = testimonialPlaceholder();
 </script>
 

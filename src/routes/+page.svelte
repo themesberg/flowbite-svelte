@@ -10,12 +10,13 @@
   });
 
   import { removeHyphensAndCapitalize } from './utils/helpers';
+  /*eslint no-undef: "off"*/
   const name = __NAME__;
   const version = __VERSION__;
   const githuburl = __GITHUBURL__;
   const svelteVersion = __SVELTEVERSION__;
   const svelteKitVersion = __SVELTEKITVERSION__;
-  const viteVersion = __VITEVERSION__;
+  // const viteVersion = __VITEVERSION__;
   const tailwindcssVersion = __TAILWINDCSSVERSION__;
 </script>
 

@@ -10,7 +10,7 @@ type AppearanceType = VariantProps<typeof range>['appearance'];
 type RangeType = 'sm' | 'md' | 'lg';
 
 interface RangeProps extends HTMLInputAttributes {
-  value?: any;
+  value?: unknown;
   appearance?: AppearanceType;
   color?: RangeColorType;
   rangeSize?: RangeType;

@@ -18,7 +18,8 @@
   const self = {};
   const selected = ctx.isSingle ? ctx.selected : writable();
 
-  open && selected.set(self);
+  // open && selected.set(self);
+  if (open) selected.set(self);
 
   selected.subscribe((x) => (open = x === self));
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type LaptopProps as Props, laptop } from '.';
+  import { type MockupBaseProps as Props, laptop } from '.';
 
   let { children, divClass, div2Class, div3Class, div4Class, ...restProps }: Props = $props();
   const { div, inner, bot, botCen } = laptop();

@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { Skeleton, skeleton, CardPlaceholder, ImagePlaceholder, imagePlaceholder, VideoPlaceholder, TextPlaceholder, ListPlaceholder, TestimonialPlaceholder, Label, Radio, WidgetPlaceholder, Button, type SkeletonProps, type CardPlaceholderProps, type TestimonialPlaceholderProps, type ListPlaceholderProps, type TextPlaceholderProps, type ImagePlaceholderProps, type VideoPlaceholderProps, type WidgetPlaceholderProps } from '$lib';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { Skeleton, skeleton, CardPlaceholder, ImagePlaceholder, imagePlaceholder, VideoPlaceholder, TextPlaceholder, ListPlaceholder, TestimonialPlaceholder, Label, Radio, WidgetPlaceholder, Button, type SkeletonProps, type CardPlaceholderProps, type ListPlaceholderProps, type TextPlaceholderProps, type ImagePlaceholderProps, type VideoPlaceholderProps } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -37,9 +38,9 @@
   let videoPlaceholderClass: VideoPlaceholderProps['class'] = $state('');
   let textPlaceholderClass: TextPlaceholderProps['class'] = $state('');
   let cardPlaceholderClass: CardPlaceholderProps['class'] = $state('');
-  let widgetPlaceholderClass: WidgetPlaceholderProps['class'] = $state('');
+  let widgetPlaceholderClass: HTMLAttributes<HTMLDivElement>['class'] = $state('');
   let listPlaceholderClass: ListPlaceholderProps['class'] = $state('');
-  let TestimonialPlaceholderClass: TestimonialPlaceholderProps['class'] = $state('');
+  let TestimonialPlaceholderClass: HTMLAttributes<HTMLDivElement>['class'] = $state('');
 
   // code generator
   const generatePlaceholderCode = (componentName: string, size: string, classes: string): string => {

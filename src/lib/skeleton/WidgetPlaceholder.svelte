@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { widgetPlaceholder, type WidgetPlaceholderProps as Props } from './index';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { widgetPlaceholder } from './index';
 
-  let { class: className }: Props = $props();
+  let { class: className }: HTMLAttributes<HTMLDivElement> = $props();
   const { base, wrapper, vLine, hLine } = widgetPlaceholder({});
 </script>
 

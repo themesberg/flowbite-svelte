@@ -42,8 +42,6 @@ interface SkeletonProps extends HTMLAttributes<HTMLDivElement> {
   class?: string;
 }
 
-interface TestimonialPlaceholderProps extends HTMLAttributes<HTMLDivElement> {}
-
 type SizeTextType = VariantProps<typeof textPlaceholder>['size'];
 
 interface TextPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
@@ -56,6 +54,4 @@ interface VideoPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
   size?: SizeVideoType;
 }
 
-interface WidgetPlaceholderProps extends HTMLAttributes<HTMLDivElement> {}
-
-export { CardPlaceholder, ImagePlaceholder, ListPlaceholder, Skeleton, TestimonialPlaceholder, TextPlaceholder, VideoPlaceholder, WidgetPlaceholder, cardPlaceholder, imagePlaceholder, listPlaceholder, skeleton, testimonialPlaceholder, textPlaceholder, videoPlaceholder, widgetPlaceholder, type CardPlaceholderProps, type ImagePlaceholderProps, type ListPlaceholderProps, type SkeletonProps, type TestimonialPlaceholderProps, type TextPlaceholderProps, type VideoPlaceholderProps, type SizeVideoType, type WidgetPlaceholderProps };
+export { CardPlaceholder, ImagePlaceholder, ListPlaceholder, Skeleton, TestimonialPlaceholder, TextPlaceholder, VideoPlaceholder, WidgetPlaceholder, cardPlaceholder, imagePlaceholder, listPlaceholder, skeleton, testimonialPlaceholder, textPlaceholder, videoPlaceholder, widgetPlaceholder, type CardPlaceholderProps, type ImagePlaceholderProps, type ListPlaceholderProps, type SkeletonProps, type TextPlaceholderProps, type VideoPlaceholderProps, type SizeVideoType };

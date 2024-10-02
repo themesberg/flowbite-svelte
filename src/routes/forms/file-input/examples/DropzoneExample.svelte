@@ -4,7 +4,7 @@
   let value = $state<string[]>([]);
 
   function preventDefault<E extends Event>(fn: (event: E) => void): (event: E) => void {
-    return function (this: any, event: E): void {
+    return function (this: unknown, event: E): void {
       event.preventDefault();
       fn.call(this, event);
     };

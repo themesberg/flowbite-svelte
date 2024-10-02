@@ -8,6 +8,7 @@
 
   let { class: className }: Props = $props();
   const stylesImport = import.meta.glob('./highlight/styles/*.css');
+  /*eslint no-undef: "off"*/
   const localStorageName = toUpperSnakeCase(__NAME__) + '_CODE_BLOCK_STYLE';
 
   // @ts-ignore
