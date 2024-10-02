@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { List, list, Li, Heading, Label, Radio, Button, uiHelpers } from '$lib';
+  import { List, list, Li, Heading, Label, Radio, Button, uiHelpers, type ListProps } from '$lib';
   import { CheckCircleSolid } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
@@ -13,9 +13,9 @@
   const dirName = 'typography/list';
 
   const tags = Object.keys(list.variants.tag);
-  let listTag: List['tag'] = $state('ul');
+  let listTag: ListProps['tag'] = $state('ul');
   const positions = Object.keys(list.variants.position);
-  let listPosition: List['position'] = $state('inside');
+  let listPosition: ListProps['position'] = $state('inside');
   let listIcon = $state(false);
   const changeListIcon = () => {
     listIcon = !listIcon;

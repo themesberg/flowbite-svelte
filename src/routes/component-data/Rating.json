@@ -1,1 +1,15 @@
-{"name":"Rating","props":[["children",""],["text",""],["divClass",""],["size","24"],["total","5"],["rating","4"],["partialId","partialStar + idGenerator()"],["Icon","Star"],["count","false"],["pClass",""]]}
+{
+  "name": "Rating",
+  "props": [
+    ["children", ""],
+    ["text", ""],
+    ["divClass", ""],
+    ["size", "24"],
+    ["total", "5"],
+    ["rating", "4"],
+    ["partialId", "partialStar + idGenerator()"],
+    ["Icon", "Star"],
+    ["count", "false"],
+    ["pClass", ""]
+  ]
+}

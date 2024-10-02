@@ -83,7 +83,7 @@
     name: string;
     transition: typeof fly | typeof blur | typeof slide | typeof scale;
     params: FlyParams | BlurParams | SlideParams | ScaleParams;
-    color: Badge['color'];
+    color: BadgeProps['color'];
   };
 
   const transitions: TransitionOption[] = [

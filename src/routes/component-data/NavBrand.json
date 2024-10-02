@@ -1,1 +1,11 @@
-{"name":"NavBrand","props":[["children",""],["siteName",""],["closeNav",""],["aClass",""],["spanClass",""],["...restProps",""]]}
+{
+  "name": "NavBrand",
+  "props": [
+    ["children", ""],
+    ["siteName", ""],
+    ["closeNav", ""],
+    ["aClass", ""],
+    ["spanClass", ""],
+    ["...restProps", ""]
+  ]
+}

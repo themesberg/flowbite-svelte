@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Toggle, toggle, Radio, Label, Button, uiHelpers } from '$lib';
+  import { Toggle, toggle, Radio, Label, Button, uiHelpers, type ToggleProps, type ToggleColor } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -30,10 +30,10 @@
   const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
 
-  const colors = Object.keys(toggle.variants.color) as Toggle['color'][];
-  let toggleColor: Toggle['color'] = $state('primary');
-  const sizes = Object.keys(toggle.variants.size) as Toggle['size'][];
-  let toggleSize: Toggle['size'] = $state('default');
+  const colors = Object.keys(toggle.variants.color) as ToggleProps['color'][];
+  let toggleColor: ToggleProps['color'] = $state('primary');
+  const sizes = Object.keys(toggle.variants.size) as ToggleProps['toggleSize'][];
+  let toggleSize: ToggleProps['toggleSize'] = $state('default');
   let checked: boolean = $state(false);
   const changeChecked = () => {
     checked = !checked;
@@ -114,7 +114,7 @@
   <div class="mb-4 flex flex-wrap">
     <Label class="mb-4 w-full font-bold">Color:</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 m-2" name="toggle_color" bind:group={toggleColor} color={colorOption as Toggle['color']} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 m-2" name="toggle_color" bind:group={toggleColor} color={colorOption as ToggleColor} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">

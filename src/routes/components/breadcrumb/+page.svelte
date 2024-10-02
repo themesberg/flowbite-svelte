@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Breadcrumb, BreadcrumbItem, Button, Label, Radio, uiHelpers } from '$lib';
+  import { Breadcrumb, BreadcrumbItem, Button, Label, Radio, uiHelpers, type BreadcrumbProps } from '$lib';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -10,11 +10,11 @@
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'breadcrumb';
 
-  let navClass: Breadcrumb['class'] = $state('');
+  let navClass: BreadcrumbProps['class'] = $state('');
   const changeNavClass = () => {
     navClass = navClass === '' ? 'border border-red-500 p-2' : '';
   };
-  let olClass: Breadcrumb['olClass'] = $state('');
+  let olClass: BreadcrumbProps['olClass'] = $state('');
   const changeOlClass = () => {
     olClass = olClass === '' ? 'border border-blue-500 p-2' : '';
   };

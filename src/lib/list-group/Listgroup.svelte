@@ -27,12 +27,11 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop items
-@prop active
-@prop onclick
-@prop rounded = true
-@prop border = true
-@prop class: className
-@prop ...restProps
+@props: children: any;
+@props:items: any;
+@props:active: any;
+@props:onclick: any;
+@props:rounded: any = true;
+@props:border: any = true;
+@props:class: any;
 -->

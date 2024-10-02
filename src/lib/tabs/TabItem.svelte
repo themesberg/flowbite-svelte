@@ -60,14 +60,13 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop titleSlot
-@prop open = false
-@prop title = 'Tab title'
-@prop activeClass
-@prop inactiveClass
-@prop class: className
-@prop disabled
-@prop tabStyle
-@prop ...restProps
+@props: children: any;
+@props:titleSlot: any;
+@props:open: any = false;
+@props:title: any = 'Tab title';
+@props:activeClass: any;
+@props:inactiveClass: any;
+@props:class: any;
+@props:disabled: any;
+@props:tabStyle: any;
 -->

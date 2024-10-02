@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Drawer, Drawerhead, Button, uiHelpers, Label, Radio } from '$lib';
+  import { Drawer, Drawerhead, Button, uiHelpers, Label, Radio, type DrawerProps } from '$lib';
   import { InfoCircleSolid } from 'flowbite-svelte-icons';
   import { blur, fly, slide, scale, fade } from 'svelte/transition';
   import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
@@ -161,7 +161,7 @@
   <div class="text-center">
     <Button onclick={drawerTransition.toggle}>Drawer</Button>
   </div>
-  <Drawer drawerStatus={drawerStatusTransition} closeDrawer={closeDrawerTransition} transition={currentTransition.transition} placement={currentPlacement.placement as Drawer['placement']} width={currentPlacement.width as Drawer['width']} params={currentPlacement.placement === 'left' ? currentTransition.params : currentPlacement.params} backdrop={backdropStatus} activateClickOutside={outsideclickStatus}>
+  <Drawer drawerStatus={drawerStatusTransition} closeDrawer={closeDrawerTransition} transition={currentTransition.transition} placement={currentPlacement.placement as DrawerProps['placement']} width={currentPlacement.width as DrawerProps['width']} params={currentPlacement.placement === 'left' ? currentTransition.params : currentPlacement.params} backdrop={backdropStatus} activateClickOutside={outsideclickStatus}>
     <Drawerhead onclick={closeDrawerTransition} class="mb-4">
       <h5 id="drawer-label" class="inline-flex items-center text-xl font-semibold text-gray-500 dark:text-gray-400">
         <InfoCircleSolid class="me-2.5 h-5 w-5" />{selectedTransition} drawer

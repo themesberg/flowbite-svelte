@@ -1,12 +1,12 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Label, Fileupload, fileupload, Helper, Radio, Button, uiHelpers } from '$lib';
+  import { Label, Fileupload, fileupload, Helper, Radio, Button, uiHelpers, type FileuploadProps } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
   const dirName = 'forms/fileupload';
@@ -29,10 +29,10 @@
   }
   const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
-
+  type StringType = string;
   let files: FileList | undefined = $state();
   const sizes = Object.keys(fileupload.variants.size);
-  let size: Fileupload['size'] = $state('md');
+  let size: FileuploadProps<StringType>['size'] = $state('md');
   let helperState = $state(false);
   const changeHelperState = () => {
     helperState = !helperState;

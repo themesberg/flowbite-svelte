@@ -27,18 +27,17 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop outline
-@prop pill
-@prop color = 'blue'
-@prop shadow
-@prop class: className
-@prop href
-@prop target
-@prop rel
-@prop type
-@prop disabled
-@prop size
-@prop name
-@prop ...restProps
+@props: children: any;
+@props:outline: any;
+@props:pill: any;
+@props:color: any = 'blue';
+@props:shadow: any;
+@props:class: any;
+@props:href: any;
+@props:target: any;
+@props:rel: any;
+@props:type: any;
+@props:disabled: any;
+@props:size: any;
+@props:name: any;
 -->

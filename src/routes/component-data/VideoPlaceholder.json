@@ -1,1 +1,7 @@
-{"name":"VideoPlaceholder","props":[["size","sm"],["class: className",""]]}
+{
+  "name": "VideoPlaceholder",
+  "props": [
+    ["size", "sm"],
+    ["class: className", ""]
+  ]
+}

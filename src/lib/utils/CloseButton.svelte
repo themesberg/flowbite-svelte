@@ -26,12 +26,11 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop color = 'gray'
-@prop onclick
-@prop name = 'Close'
-@prop ariaLabel
-@prop size = 'md'
-@prop href
-@prop class: className
-@prop ...restProps
+@props: color: any = 'gray';
+@props:onclick: any;
+@props:name: any = 'Close';
+@props:ariaLabel: any;
+@props:size: any = 'md';
+@props:href: any;
+@props:class: any;
 -->

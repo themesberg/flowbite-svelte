@@ -1,1 +1,9 @@
-{"name":"TableBody","props":[["children",""],["bodyItems",""],["class: className",""],["...restProps",""]]}
+{
+  "name": "TableBody",
+  "props": [
+    ["children", ""],
+    ["bodyItems", ""],
+    ["class: className", ""],
+    ["...restProps", ""]
+  ]
+}

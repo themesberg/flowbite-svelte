@@ -19,10 +19,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop site
-@prop imgClass
-@prop spanClass
-@prop class: className
-@prop ...restProps
+@props: children: any;
+@props:site: any;
+@props:imgClass: any;
+@props:spanClass: any;
+@props:class: any;
 -->

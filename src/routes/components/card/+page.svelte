@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Card, card, Button, Toggle, Label, Radio, uiHelpers } from '$lib';
+  import { Card, card, Button, Toggle, Label, Radio, uiHelpers, type RadioColorType, type CardProps } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -36,13 +36,13 @@
   // end of dynamic svelte component
 
   const sizes = Object.keys(card.variants.size);
-  let cardSize: Card['size'] = $state('sm');
+  let cardSize: CardProps['size'] = $state('sm');
   const colors = Object.keys(card.variants.color);
-  let color: Card['color'] = $state('gray');
+  let color: CardProps['color'] = $state('gray');
   const paddings = Object.keys(card.variants.padding);
-  let cardPadding: Card['padding'] = $state('lg');
+  let cardPadding: CardProps['padding'] = $state('lg');
   const shadows = Object.keys(card.variants.shadow);
-  let cardShadow: Card['shadow'] = $state('md');
+  let cardShadow: CardProps['shadow'] = $state('md');
   let horizontal = $state(false);
   const changeImgLayout = () => {
     horizontal = !horizontal;
@@ -51,11 +51,11 @@
   const changeLink = () => {
     link = link === '' ? '/' : '';
   };
-  let cardClass: Card['class'] = $state('');
+  let cardClass: CardProps['class'] = $state('');
   const changeClass = () => {
     cardClass = cardClass === '' ? 'pl-10' : '';
   };
-  let cardImage: Card['img'] = $state({});
+  let cardImage = $state({});
   const changeImage = () => {
     cardImage = Object.keys(cardImage).length === 0 ? { src: '/images/image-1.webp', alt: 'my image' } : {};
   };
@@ -115,7 +115,7 @@
 <H2>Interactive Card Builder</H2>
 <CodeWrapper>
   <div class="flex justify-center">
-    <Card size={cardSize} {color} padding={cardPadding} shadow={cardShadow} href={link ? link : ''} class={cardClass} img={cardImage} {horizontal} {reverse}>
+    <Card size={cardSize} {color} padding={cardPadding} shadow={cardShadow} href={link ? link : ''} class={cardClass} img={cardImage as CardProps['img']} {horizontal} {reverse}>
       <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
       <p class="font-normal leading-tight text-gray-700 dark:text-gray-300">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
     </Card>
@@ -129,7 +129,7 @@
   <div class="flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="alert_reactive" bind:group={color} color={colorOption as Card['color']} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="alert_reactive" bind:group={color} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="my-4 flex flex-wrap space-x-4">

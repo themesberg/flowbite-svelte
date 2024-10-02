@@ -1,1 +1,8 @@
-{"name":"Skeleton","props":[["size","sm"],["class: className",""],["...restProps",""]]}
+{
+  "name": "Skeleton",
+  "props": [
+    ["size", "sm"],
+    ["class: className", ""],
+    ["...restProps", ""]
+  ]
+}

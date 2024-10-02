@@ -67,18 +67,5 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:toggleNav?: () => void;
-@props:closeNav?: () => void;
-@props:openMainMenu?: boolean;
-@props:navStatus?: boolean;
-@props:fluid?: boolean;
-@props:brand?: Snippet;
-@props:breakPoint?: navbarType['breakPoint'];
-@props:navClass?: string;
-@props:divClass?: string;
-@props:btnClass?: string;
-@props:div2Class?: string;
-@props:nonActiveClass?: string;
-@props:activeClass?: string;
+@props: 
 -->

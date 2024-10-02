@@ -35,18 +35,5 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop drawerStatus
-@prop toggleDrawer
-@prop closeDrawer
-@prop activateClickOutside = true
-@prop position
-@prop width
-@prop backdrop = true
-@prop backdropClass
-@prop placement = 'left'
-@prop class: divClass
-@prop transitionParams
-@prop transitionType = 'fly'
-@prop ...restProps
+@props: 
 -->

@@ -1,1 +1,12 @@
-{"name":"GroupItem","props":[["timelines",""],["aClass",""],["imgClass",""],["divClass",""],["titleClass",""],["spanClass",""],["...restProps",""]]}
+{
+  "name": "GroupItem",
+  "props": [
+    ["timelines", ""],
+    ["aClass", ""],
+    ["imgClass", ""],
+    ["divClass", ""],
+    ["titleClass", ""],
+    ["spanClass", ""],
+    ["...restProps", ""]
+  ]
+}

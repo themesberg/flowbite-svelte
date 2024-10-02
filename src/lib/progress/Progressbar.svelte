@@ -42,19 +42,18 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop progress = '45'
-@prop precision = 0
-@prop tweenDuration = 400
-@prop animate = false
-@prop size = 'h-2.5'
-@prop labelInside = false
-@prop labelOutside = ''
-@prop easing = cubicOut
-@prop color = 'primary'
-@prop div2Class
-@prop oustsideSpanClass
-@prop oustsideProgressClass
-@prop labeloutsidedivClass
-@prop divClass
-@prop ...restProps
+@props: progress: any = '45';
+@props:precision: any = 0;
+@props:tweenDuration: any = 400;
+@props:animate: any = false;
+@props:size: any = 'h-2.5';
+@props:labelInside: any = false;
+@props:labelOutside: any = '';
+@props:easing: any = cubicOut;
+@props:color: any = 'primary';
+@props:div2Class: any;
+@props:oustsideSpanClass: any;
+@props:oustsideProgressClass: any;
+@props:labeloutsidedivClass: any;
+@props:divClass: any;
 -->

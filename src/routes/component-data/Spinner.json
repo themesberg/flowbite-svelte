@@ -1,1 +1,11 @@
-{"name":"Spinner","props":[["color","primary"],["size","8"],["class: className",""],["currentFill","currentFill"],["currentColor","currentColor"],["...restProps",""]]}
+{
+  "name": "Spinner",
+  "props": [
+    ["color", "primary"],
+    ["size", "8"],
+    ["class: className", ""],
+    ["currentFill", "currentFill"],
+    ["currentColor", "currentColor"],
+    ["...restProps", ""]
+  ]
+}

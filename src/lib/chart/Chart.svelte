@@ -35,6 +35,6 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop options
-@prop class: classname
+@props: options: ApexOptions;
+@props:class: string;
 -->

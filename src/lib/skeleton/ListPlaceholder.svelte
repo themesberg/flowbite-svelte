@@ -25,9 +25,8 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop itemNumber = 5
-@prop size = 'md'
-@prop rounded
-@prop class: className
-@prop ...restProps
+@props: itemNumber: any = 5;
+@props:size: any = 'md';
+@props:rounded: any;
+@props:class: any;
 -->

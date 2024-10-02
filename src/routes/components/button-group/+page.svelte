@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { ButtonGroup, buttonGroup, Button, button, GradientButton, Label, Radio, type ButtonGroupProps, uiHelpers } from '$lib';
+  import { ButtonGroup, buttonGroup, Button, button, Label, Radio, type ButtonGroupProps, uiHelpers, type RadioColorType, type ButtonProps } from '$lib';
   import { UserCircleSolid, AdjustmentsVerticalSolid, DownloadSolid } from 'flowbite-svelte-icons';
   const handleClick = () => {
     alert('Clicked');
@@ -52,8 +52,8 @@
   let size: ButtonGroupProps['size'] = $state('md');
   // button colors
   const colors = Object.keys(button.variants.color);
-  let color: Button['color'] = $state('primary');
-  let link: Button['href'] = $state('');
+  let color: ButtonProps['color'] = $state('primary');
+  let link: ButtonProps['href'] = $state('');
   const changeLink = () => {
     link = link === '' ? '/' : '';
   };
@@ -145,7 +145,7 @@
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="color" bind:group={color} color={colorOption as Button['color']} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="color" bind:group={color} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

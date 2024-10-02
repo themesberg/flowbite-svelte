@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Label, label, Radio } from '$lib';
+  import { Label, label, Radio, type ColorName } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -15,7 +15,7 @@
   });
 
   const colors = Object.keys(label.variants.color);
-  let labelColor: Label['color'] = $state('gray');
+  let labelColor: ColorName = $state('gray');
   // code generator
   let generatedCode = $derived(
     (() => {
@@ -40,7 +40,7 @@
   <div class="flex flex-wrap space-x-2">
     <Label class="m-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="default_alert_color" bind:group={labelColor} color={colorOption as Label['color']} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="default_alert_color" bind:group={labelColor} color={colorOption as ColorName} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   {#snippet codeblock()}

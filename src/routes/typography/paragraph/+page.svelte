@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { P, paragraph, Label, Radio, Button, Input, CloseButton, uiHelpers } from '$lib';
+  import { P, paragraph, Label, Radio, Button, Input, CloseButton, uiHelpers, type ParagraphProps } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -17,19 +17,19 @@
   });
 
   const sizes = Object.keys(paragraph.variants.size);
-  let pSize: P['size'] = $state('base');
+  let pSize: ParagraphProps['size'] = $state('base');
   const weights = Object.keys(paragraph.variants.weight);
-  let pWeight: P['weight'] = $state('normal');
+  let pWeight: ParagraphProps['weight'] = $state('normal');
   const spaces = Object.keys(paragraph.variants.space);
-  let pSpace: P['space'] = $state('normal');
+  let pSpace: ParagraphProps['space'] = $state('normal');
   const heights = Object.keys(paragraph.variants.height);
-  let pHeight: P['height'] = $state('normal');
+  let pHeight: ParagraphProps['height'] = $state('normal');
   const alignments = Object.keys(paragraph.variants.align);
-  let pAlign: P['align'] = $state('left');
+  let pAlign: ParagraphProps['align'] = $state('left');
   const whitespaces = Object.keys(paragraph.variants.whitespace);
-  let pWhitespace: P['whitespace'] = $state('normal');
-  let pFirstupper: P['firstUpper'] = $state(false);
-  let pJustify: P['justify'] = $state(false);
+  let pWhitespace: ParagraphProps['whitespace'] = $state('normal');
+  let pFirstupper: ParagraphProps['firstUpper'] = $state(false);
+  let pJustify: ParagraphProps['justify'] = $state(false);
   let italic = $state(false);
   const changeItalic = () => {
     italic = !italic;

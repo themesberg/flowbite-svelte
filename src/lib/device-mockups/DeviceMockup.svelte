@@ -38,6 +38,6 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop device = 'default'
+@props: children: Snippet;
+@props:device: DeviceVariantType = 'default';
 -->

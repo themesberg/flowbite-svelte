@@ -14,7 +14,7 @@
 
 <Modal title="Terms of Service" {modalStatus} {closeModal}>
   {#snippet footer()}
-    <Button on:click={() => alert('Handle "success"')}>I accept</Button>
+    <Button onclick={() => alert('Handle "success"')}>I accept</Button>
     <Button color="alternative" onclick={closeModal}>Decline</Button>
   {/snippet}
   <!-- Modal body -->

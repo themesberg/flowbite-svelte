@@ -18,9 +18,8 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop href
-@prop ariaLabel
-@prop class: aClass
-@prop ...restProps
+@props: children: any;
+@props:href: any;
+@props:ariaLabel: any;
+@props:class: any;
 -->

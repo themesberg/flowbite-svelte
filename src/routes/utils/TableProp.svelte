@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
   import { setContext, type Snippet } from 'svelte';
 
   interface Props {

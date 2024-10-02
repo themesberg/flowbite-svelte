@@ -3,7 +3,7 @@
   import { fade, blur, fly, slide, scale } from 'svelte/transition';
   import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
   import { linear } from 'svelte/easing';
-  import { Radio, Label, Modal, modal, Button, uiHelpers } from '$lib';
+  import { Radio, Label, Modal, modal, Button, uiHelpers, type ModalProps } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -48,10 +48,10 @@
   });
 
   const positions = Object.keys(modal.variants.position);
-  let modalPosition: Modal['position'] = $state('default');
+  let modalPosition: ModalProps['position'] = $state('default');
   const sizes = Object.keys(modal.variants.size);
   console.log('sizes', sizes);
-  let modalSize: Modal['size'] = $state('md');
+  let modalSize: ModalProps['size'] = $state('md');
   let backdrop = $state(true);
   const changeBackdrop = () => {
     backdrop = !backdrop;

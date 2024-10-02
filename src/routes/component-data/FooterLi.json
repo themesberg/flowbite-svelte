@@ -1,1 +1,10 @@
-{"name":"FooterLi","props":[["children",""],["liClass",""],["aClass",""],["href",""],["...restProps",""]]}
+{
+  "name": "FooterLi",
+  "props": [
+    ["children", ""],
+    ["liClass", ""],
+    ["aClass", ""],
+    ["href", ""],
+    ["...restProps", ""]
+  ]
+}

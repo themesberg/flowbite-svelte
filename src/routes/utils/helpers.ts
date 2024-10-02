@@ -1,5 +1,3 @@
-import { type Component } from 'svelte';
-
 export function removeHyphensAndCapitalize(str: string) {
   // Handle empty string or strings without '-'
   if (!str || !str.includes('-')) {

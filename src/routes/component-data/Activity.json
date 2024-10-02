@@ -1,1 +1,8 @@
-{"name":"Activity","props":[["children",""],["class: className",""],["...restProps",""]]}
+{
+  "name": "Activity",
+  "props": [
+    ["children", ""],
+    ["class: className", ""],
+    ["...restProps", ""]
+  ]
+}

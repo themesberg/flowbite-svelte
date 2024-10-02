@@ -1,1 +1,11 @@
-{"name":"SidebarBrand","props":[["children",""],["site",""],["imgClass",""],["spanClass",""],["class: className",""],["...restProps",""]]}
+{
+  "name": "SidebarBrand",
+  "props": [
+    ["children", ""],
+    ["site", ""],
+    ["imgClass", ""],
+    ["spanClass", ""],
+    ["class: className", ""],
+    ["...restProps", ""]
+  ]
+}

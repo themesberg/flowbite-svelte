@@ -29,16 +29,15 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop class: className
-@prop italic
-@prop underline
-@prop linethrough
-@prop uppercase
-@prop gradient
-@prop highlight
-@prop decoration
-@prop decorationColor
-@prop decorationThickness
-@prop ...restProps
+@props: children: any;
+@props:class: any;
+@props:italic: any;
+@props:underline: any;
+@props:linethrough: any;
+@props:uppercase: any;
+@props:gradient: any;
+@props:highlight: any;
+@props:decoration: any;
+@props:decorationColor: any;
+@props:decorationThickness: any;
 -->

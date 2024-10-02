@@ -8,7 +8,7 @@ interface TextareaProps extends HTMLTextareaAttributes {
   footer?: Snippet;
   value?: string;
   wrapped?: boolean;
-  divClass?: string;
+  divClass?: string | null;
   innerClass?: string;
   headerClass?: string;
   footerClass?: string;

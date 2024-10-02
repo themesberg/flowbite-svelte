@@ -1,1 +1,14 @@
-{"name":"Accordion","props":[["children",""],["flush",""],["activeClass",""],["inactiveClass",""],["isSingle","true"],["class: className",""],["transition",""],["params",""],["...restProps",""]]}
+{
+  "name": "Accordion",
+  "props": [
+    ["children", ""],
+    ["flush", ""],
+    ["activeClass", ""],
+    ["inactiveClass", ""],
+    ["isSingle", "true"],
+    ["class: className", ""],
+    ["transition", ""],
+    ["params", ""],
+    ["...restProps", ""]
+  ]
+}

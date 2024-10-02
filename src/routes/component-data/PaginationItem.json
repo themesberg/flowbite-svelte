@@ -1,1 +1,11 @@
-{"name":"PaginationItem","props":[["children",""],["size",""],["class: className",""],["href",""],["active",""],["...restProps",""]]}
+{
+  "name": "PaginationItem",
+  "props": [
+    ["children", ""],
+    ["size", ""],
+    ["class: className", ""],
+    ["href", ""],
+    ["active", ""],
+    ["...restProps", ""]
+  ]
+}

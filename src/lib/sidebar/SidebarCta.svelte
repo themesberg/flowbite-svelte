@@ -18,11 +18,10 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop icon
-@prop divClass
-@prop spanClass
-@prop label
-@prop class: className
-@prop ...restProps
+@props: children: any;
+@props:icon: any;
+@props:divClass: any;
+@props:spanClass: any;
+@props:label: any;
+@props:class: any;
 -->

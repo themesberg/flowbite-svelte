@@ -1,1 +1,10 @@
-{"name":"Hr","props":[["children",""],["divClass",""],["hrClass",""],["innerDivClass",""],["...restProps",""]]}
+{
+  "name": "Hr",
+  "props": [
+    ["children", ""],
+    ["divClass", ""],
+    ["hrClass", ""],
+    ["innerDivClass", ""],
+    ["...restProps", ""]
+  ]
+}

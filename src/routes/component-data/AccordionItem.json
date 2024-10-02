@@ -1,1 +1,15 @@
-{"name":"AccordionItem","props":[["children",""],["header",""],["arrowup",""],["arrowdown",""],["open","$bindable(false)"],["activeClass",""],["inactiveClass",""],["transition","slide"],["params",""],["class: className",""]]}
+{
+  "name": "AccordionItem",
+  "props": [
+    ["children", ""],
+    ["header", ""],
+    ["arrowup", ""],
+    ["arrowdown", ""],
+    ["open", "$bindable(false)"],
+    ["activeClass", ""],
+    ["inactiveClass", ""],
+    ["transition", "slide"],
+    ["params", ""],
+    ["class: className", ""]
+  ]
+}

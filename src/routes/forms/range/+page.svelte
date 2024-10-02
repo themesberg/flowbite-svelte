@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Range, range, Label, Button, Radio, uiHelpers } from '$lib';
+  import { Range, range, Label, Button, Radio, uiHelpers, type RangeProps, type RangeColorType } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -20,8 +20,8 @@
   const changeStepValue = () => {
     stepValue = stepValue === 0.5 ? 1 : 0.5;
   };
-  const colors = Object.keys(range.variants.color) as Range['color'];
-  let rangeColor: Range['color'] = $state('blue');
+  const colors = Object.keys(range.variants.color);
+  let rangeColor: RangeProps['color'] = $state('blue');
   let disabled = $state(false);
   const changeDisabled = () => {
     disabled = !disabled;
@@ -43,12 +43,12 @@
     labelStatus = !labelStatus;
   };
   const rangeSizes = Object.keys(range.variants.size);
-  let rangeSize: Range['size'] = $state('md');
+  let rangeSize: RangeProps['rangeSize'] = $state('md' as RangeProps['rangeSize']);
   // code generator
   let generatedCode = $derived(
     (() => {
       let props = [];
-      if (rangeColor !== 'primary') props.push(`color="${rangeColor}"`);
+      if (rangeColor) props.push(`color="${rangeColor}"`);
       if (minmax.max !== 10) props.push(`min="${minmax.min}" max="${minmax.max}"`);
       if (stepValue !== 1) props.push(`step="${stepValue}"`);
       if (disabled) props.push('disabled');
@@ -100,7 +100,7 @@ ${
   <div class="mb-4 mt-12 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="default_alert_color" bind:group={rangeColor} color={colorOption as Range['color']} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="default_alert_color" bind:group={rangeColor} color={colorOption as RangeColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

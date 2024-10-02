@@ -1,1 +1,13 @@
-{"name":"CloseButton","props":[["color","gray"],["onclick",""],["name","Close"],["ariaLabel",""],["size","md"],["href",""],["class: className",""],["...restProps",""]]}
+{
+  "name": "CloseButton",
+  "props": [
+    ["color", "gray"],
+    ["onclick", ""],
+    ["name", "Close"],
+    ["ariaLabel", ""],
+    ["size", "md"],
+    ["href", ""],
+    ["class: className", ""],
+    ["...restProps", ""]
+  ]
+}

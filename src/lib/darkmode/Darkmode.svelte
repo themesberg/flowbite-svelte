@@ -60,10 +60,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop class: className
-@prop lightIcon
-@prop darkIcon
-@prop size = 'md'
-@prop ariaLabel = 'Dark mode'
-@prop ...restProps
+@props: class: any;
+@props:lightIcon: any;
+@props:darkIcon: any;
+@props:size: any = 'md';
+@props:ariaLabel: any = 'Dark mode';
 -->

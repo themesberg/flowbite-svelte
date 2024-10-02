@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Label, uiHelpers, Radio, Textarea, Button, Helper } from '$lib';
+  import { Label, uiHelpers, Radio, Textarea, Button, Helper, type TextareaProps } from '$lib';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -34,35 +34,34 @@
   const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
 
-
   // props
   let value = $state('');
   const changeValue = () => {
     value = value !== '' ? '' : 'Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
-  }
-  let disabled: Textarea['disabled'] = $state(false);
+  };
+  let disabled: TextareaProps['disabled'] = $state(false);
   const changeDisabled = () => {
     disabled = !disabled;
-  }
-  let required: Textarea['required'] = $state(false);
+  };
+  let required: TextareaProps['required'] = $state(false);
   const changeRequired = () => {
     required = !required;
-  }
-  let placeholder: Textarea['placeholder'] = $state('');
+  };
+  let placeholder: TextareaProps['placeholder'] = $state('');
   const changePlaceholder = () => {
     placeholder = placeholder !== '' ? '' : 'Your message';
     value = placeholder !== '' ? '' : 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
-  }
-  let rows: Textarea['rows'] = $state();
+  };
+  let rows: TextareaProps['rows'] = $state();
   const changeRows = () => {
     rows = rows !== undefined ? undefined : 5;
-  }
-  let maxlength: Textarea['maxlength'] = $state();
+  };
+  let maxlength: TextareaProps['maxlength'] = $state();
   const changeMaxlength = () => {
     maxlength = maxlength !== undefined ? undefined : 20;
     value = maxlength === 20 ? '' : 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
-  }
-  let textAreaClass: Textarea['class'] = $state('');
+  };
+  let textAreaClass: TextareaProps['class'] = $state('');
   const changeClass = () => {
     textAreaClass = textAreaClass === '' ? 'w-48' : '';
   };
@@ -114,13 +113,12 @@
 
 <CodeWrapper>
   <div class="mb-4 h-64">
-    <Label for="textarea-id" class="mb-2">Your message {#if required}
-      <Helper color="red" class='inline'>* Required</Helper>
-    {/if}</Label>
-  <Textarea id="textarea-id"name="message" {value}
-  {required} rows={rows} maxlength={maxlength}
-  {placeholder} divClass={textAreaClass} {disabled}
-  />  
+    <Label for="textarea-id" class="mb-2">
+      Your message {#if required}
+        <Helper color="red" class="inline">* Required</Helper>
+      {/if}
+    </Label>
+    <Textarea id="textarea-id" name="message" {value} {required} {rows} {maxlength} {placeholder} divClass={textAreaClass} {disabled} />
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
     <Button class="w-48" color="blue" onclick={changeRequired}>{required ? 'Remove required' : 'Add required'}</Button>

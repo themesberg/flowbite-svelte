@@ -1,1 +1,8 @@
-{"name":"FooterUl","props":[["class: ulClass",""],["children",""],["...restProps",""]]}
+{
+  "name": "FooterUl",
+  "props": [
+    ["class: ulClass", ""],
+    ["children", ""],
+    ["...restProps", ""]
+  ]
+}

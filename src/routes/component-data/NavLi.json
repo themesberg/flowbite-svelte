@@ -1,1 +1,13 @@
-{"name":"NavLi","props":[["closeNav",""],["href",""],["children",""],["aClass",""],["activeClass",""],["nonActiveClass",""],["class: className",""],["...restProps",""]]}
+{
+  "name": "NavLi",
+  "props": [
+    ["closeNav", ""],
+    ["href", ""],
+    ["children", ""],
+    ["aClass", ""],
+    ["activeClass", ""],
+    ["nonActiveClass", ""],
+    ["class: className", ""],
+    ["...restProps", ""]
+  ]
+}

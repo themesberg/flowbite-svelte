@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Indicator, indicator, Button, Label, Radio, type IndicatorProps, uiHelpers } from '$lib';
+  import { Indicator, indicator, Button, Label, Radio, uiHelpers, type IndicatorProps } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -37,9 +37,9 @@
   // end of dynamic svelte component
 
   // color, size, rounded, border, placement and offset
-  const sizes: Indicator['size'][] = Object.keys(indicator.variants.size);
-  const colors: Indicator['color'][] = Object.keys(indicator.variants.color);
-  const placements: Indicator['placement'][] = Object.keys(indicator.variants.placement);
+  const sizes = Object.keys(indicator.variants.size) as IndicatorProps['size'][];
+  const colors = Object.keys(indicator.variants.color) as IndicatorProps['color'][];
+  const placements = Object.keys(indicator.variants.placement) as IndicatorProps['placement'][];
   let color: IndicatorProps['color'] = $state('primary');
   let size: IndicatorProps['size'] = $state('md');
   let border: IndicatorProps['border'] = $state(false);

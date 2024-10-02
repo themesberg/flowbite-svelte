@@ -68,17 +68,16 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop icon
-@prop alertStatus = $bindable(true)
-@prop closeIcon
-@prop color = 'primary'
-@prop rounded = true
-@prop border
-@prop class: className
-@prop dismissable
-@prop transition = fade
-@prop params
-@prop onclick
-@prop ...restProps
+@props: children: any;
+@props:icon: any;
+@props:alertStatus: any = $bindable(true);
+@props:closeIcon: any;
+@props:color: any = 'primary';
+@props:rounded: any = true;
+@props:border: any;
+@props:class: any;
+@props:dismissable: any;
+@props:transition: any = fade;
+@props:params: any;
+@props:onclick: any;
 -->

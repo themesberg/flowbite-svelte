@@ -1,1 +1,18 @@
-{"name":"Table","props":[["children",""],["footerSlot",""],["captionSlot",""],["tableItems",""],["divClass","relative overflow-x-auto"],["striped",""],["hoverable",""],["noborder",""],["shadow",""],["color","default"],["customeColor",""],["class: className",""],["...restProps",""]]}
+{
+  "name": "Table",
+  "props": [
+    ["children", ""],
+    ["footerSlot", ""],
+    ["captionSlot", ""],
+    ["tableItems", ""],
+    ["divClass", "relative overflow-x-auto"],
+    ["striped", ""],
+    ["hoverable", ""],
+    ["noborder", ""],
+    ["shadow", ""],
+    ["color", "default"],
+    ["customeColor", ""],
+    ["class: className", ""],
+    ["...restProps", ""]
+  ]
+}

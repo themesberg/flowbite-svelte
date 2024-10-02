@@ -1,1 +1,10 @@
-{"name":"Dropzone","props":[["children",""],["value","$bindable<string | undefined>()"],["files","$bindable<FileList | null>()"],["class: className",""],["...restProps",""]]}
+{
+  "name": "Dropzone",
+  "props": [
+    ["children", ""],
+    ["value", "$bindable<string | undefined>()"],
+    ["files", "$bindable<FileList | null>()"],
+    ["class: className", ""],
+    ["...restProps", ""]
+  ]
+}

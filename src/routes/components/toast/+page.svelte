@@ -1,7 +1,7 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Toast, toast, Avatar, Button, Label, Radio, uiHelpers } from '$lib';
-  import { FireOutline, CheckCircleSolid, CameraPhotoOutline } from 'flowbite-svelte-icons';
+  import { Toast, toast, Button, Label, Radio, uiHelpers, type RadioColorType, type ToastProps } from '$lib';
+  import { CheckCircleSolid } from 'flowbite-svelte-icons';
   import { linear } from 'svelte/easing';
   import { blur, fly, slide, scale, fade } from 'svelte/transition';
   import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
@@ -44,14 +44,14 @@
   const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
 
-  const colors = Object.keys(toast.variants.color) as Toast['color'][];
-  let toastColor: Toast['color'] = $state('primary');
+  const colors = Object.keys(toast.variants.color) as ToastProps['color'][];
+  let toastColor: ToastProps['color'] = $state('primary');
   let dismissable = $state(true);
   const changeDismissable = () => {
     dismissable = !dismissable;
   };
-  const positions = Object.keys(toast.variants.position) as Toast['position'][];
-  let toastPosition: Toast['position'] = $state('top-left');
+  const positions = Object.keys(toast.variants.position) as ToastProps['position'][];
+  let toastPosition: ToastProps['position'] = $state('top-left');
   // console.log('positions', positions);
   // transition example
   type TransitionOption = {
@@ -150,7 +150,7 @@
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color:</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="interactive_toast_color" bind:group={toastColor} color={colorOption as Toast['color']} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="interactive_toast_color" bind:group={toastColor} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">

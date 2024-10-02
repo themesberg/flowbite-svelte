@@ -33,18 +33,17 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop href
-@prop color = 'gray'
-@prop horizontal = false
-@prop shadow = 'md'
-@prop reverse = false
-@prop img
-@prop padding = 'lg'
-@prop size = 'sm'
-@prop class: className
-@prop imgClass
-@prop contentClass
-@prop onclick
-@prop ...restProps
+@props: children: any;
+@props:href: any;
+@props:color: any = 'gray';
+@props:horizontal: any = false;
+@props:shadow: any = 'md';
+@props:reverse: any = false;
+@props:img: any;
+@props:padding: any = 'lg';
+@props:size: any = 'sm';
+@props:class: any;
+@props:imgClass: any;
+@props:contentClass: any;
+@props:onclick: any;
 -->

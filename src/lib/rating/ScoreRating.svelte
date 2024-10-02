@@ -64,7 +64,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop ratings
-@prop ratings2
-@prop headerLabel
+@props: ratings: any;
+@props:ratings2: any;
+@props:headerLabel: any;
 -->

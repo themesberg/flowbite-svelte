@@ -17,12 +17,5 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop aria_describedby
-@prop labelClass
-@prop color = 'primary'
-@prop group = $bindable()
-@prop value = $bindable()
-@prop inputClass
-@prop ...restProps
+@props: 
 -->

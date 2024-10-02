@@ -22,10 +22,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop color
-@prop class: className
-@prop colspan
-@prop onclick
-@prop ...restProps
+@props: children: any;
+@props:color: any;
+@props:class: any;
+@props:colspan: any;
+@props:onclick: any;
 -->

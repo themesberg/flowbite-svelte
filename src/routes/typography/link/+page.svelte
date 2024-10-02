@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { A, Button, anchor, Label, Radio, Input, CloseButton, uiHelpers } from '$lib';
+  import { A, Button, anchor, Label, Radio, Input, CloseButton, uiHelpers, type AnchorProps, type AnchorColorType } from '$lib';
   import { ArrowRightOutline } from 'flowbite-svelte-icons';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
@@ -37,7 +37,7 @@
   // end of dynamic svelte component
 
   const colors = Object.keys(anchor.variants.color);
-  let anchorColor: A['color'] = $state('primary');
+  let anchorColor: AnchorProps['color'] = $state('primary');
   let linkClass = $state('font-medium hover:underline');
   const changeLinkClass = () => {
     linkClass = linkClass === 'font-medium hover:underline' ? 'underline hover:no-underline italic font-semibold' : 'font-medium hover:underline';
@@ -111,7 +111,7 @@
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="anchor_color" bind:group={anchorColor} color={colorOption as A['color']} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="anchor_color" bind:group={anchorColor} color={colorOption as AnchorColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

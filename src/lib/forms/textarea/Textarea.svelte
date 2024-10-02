@@ -12,7 +12,7 @@
     wrapped = false;
   }
 
-  const { base, wrapper, innerWrapper, headerCls, footerCls } = $derived(textarea({ wrapped, hasHeader, hasFooter, cols:!!cols }));
+  const { base, wrapper, innerWrapper, headerCls, footerCls } = $derived(textarea({ wrapped, hasHeader, hasFooter, cols: !!cols }));
   // $inspect('wrapped: ', wrapped);
 </script>
 
@@ -36,14 +36,14 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop header
-@prop footer
-@prop value = $bindable()
-@prop divClass
-@prop innerClass
-@prop headerClass
-@prop footerClass
-@prop disabled
-@prop class: className
-@prop ...restProps
+@props: header: any;
+@props:footer: any;
+@props:value: any = $bindable();
+@props:divClass: any;
+@props:innerClass: any;
+@props:headerClass: any;
+@props:footerClass: any;
+@props:disabled: any;
+@props:class: any;
+@props:cols: any;
 -->

@@ -45,15 +45,14 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop iconSlot
-@prop subtext
-@prop href
-@prop label
-@prop spanClass = 'ms-3'
-@prop activeClass
-@prop nonActiveClass
-@prop aClass
-@prop active
-@prop class: className
-@prop ...restProps
+@props: iconSlot: Snippet;
+@props:subtext: Snippet;
+@props:href: any;
+@props:label: string;
+@props:spanClass: string = 'ms-3';
+@props:activeClass: string;
+@props:nonActiveClass: string;
+@props:aClass: string;
+@props:active: boolean;
+@props:class: any;
 -->

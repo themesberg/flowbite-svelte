@@ -46,14 +46,5 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop left
-@prop right
-@prop value = $bindable()
-@prop size
-@prop color = 'default'
-@prop class: className
-@prop classLeft
-@prop classRight
-@prop ...restProps
+@props: 
 -->

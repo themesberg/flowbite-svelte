@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
   import { type AnchorProps as Props, anchor } from '.';
 
   let { children, spanClass, aClass, class: className, tag, ...restProps }: Props = $props();

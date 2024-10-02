@@ -18,9 +18,8 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop color = 'gray'
-@prop show = true
-@prop class: className
-@prop ...restProps
+@props: children: any;
+@props:color: any = 'gray';
+@props:show: any = true;
+@props:class: any;
 -->

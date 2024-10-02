@@ -1,1 +1,8 @@
-{"name":"CardPlaceholder","props":[["size","sm"],["class: className",""],["...restProps",""]]}
+{
+  "name": "CardPlaceholder",
+  "props": [
+    ["size", "sm"],
+    ["class: className", ""],
+    ["...restProps", ""]
+  ]
+}

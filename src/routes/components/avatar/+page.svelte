@@ -48,7 +48,7 @@
 
   // reactive example, rounded, border, stacked, size, className
   const sizes = Object.keys(avatar.variants.size);
-  let avatarSize: Avatar['size'] = $state('md');
+  let avatarSize: AvatarProps['size'] = $state('md');
   let isRounded = $state(false);
   const toggleCornerStyle = () => {
     isRounded = !isRounded;

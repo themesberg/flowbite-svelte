@@ -55,13 +55,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop color = 'default'
-@prop name
-@prop ariaLabel
-@prop size = 'md'
-@prop href
-@prop class: className
-@prop onclick
-@prop ...restProps
+@props: children: any;
+@props:color: any = 'default';
+@props:name: any;
+@props:ariaLabel: any;
+@props:size: any = 'md';
+@props:href: any;
+@props:class: any;
+@props:onclick: any;
 -->

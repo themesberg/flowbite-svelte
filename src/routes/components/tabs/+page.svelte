@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Tabs, tabs, TabItem, uiHelpers, Label, Radio } from '$lib';
+  import { Tabs, tabs, TabItem, uiHelpers, Label, Radio, type TabsProps } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -35,7 +35,7 @@
   const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
 
-  let tabStyle: Tabs['style'] = $state('none');
+  let tabStyle: TabsProps['tabStyle'] = $state('none') as NonNullable<TabsProps['tabStyle']>;
   const tabStyles = Object.keys(tabs.variants.tabStyle);
 
   // code generator

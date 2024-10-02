@@ -22,7 +22,7 @@
 {/snippet}
 
 <div class="mb-4 grid {colclass} gap-4">
-  {#each Array(calculateGridItems()) as _, i}
+  {#each Array(calculateGridItems()) as _}
     {@render figure()}
   {/each}
 </div>

@@ -1,1 +1,8 @@
-{"name":"NavHamburger","props":[["toggleNav",""],["class: className",""],["...restProps",""]]}
+{
+  "name": "NavHamburger",
+  "props": [
+    ["toggleNav", ""],
+    ["class: className", ""],
+    ["...restProps", ""]
+  ]
+}

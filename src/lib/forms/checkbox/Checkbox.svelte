@@ -30,18 +30,17 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop aria_describedby
-@prop color = 'primary'
-@prop custom
-@prop inline
-@prop tinted
-@prop rounded
-@prop group = $bindable([])
-@prop choices = []
-@prop checked = $bindable(false)
-@prop classLabel
-@prop indeterminate
-@prop class: className
-@prop ...restProps
+@props: children: Snippet;
+@props:aria_describedby: string;
+@props:color: ColorType = 'primary';
+@props:custom: boolean;
+@props:inline: boolean;
+@props:tinted: boolean;
+@props:rounded: boolean;
+@props:group: (string | number)[] = $bindable([]);
+@props:choices: CheckboxItem[] = [];
+@props:checked: boolean = $bindable(false);
+@props:classLabel: string;
+@props:indeterminate: boolean;
+@props:class: string;
 -->

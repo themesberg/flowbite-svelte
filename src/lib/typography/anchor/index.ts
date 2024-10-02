@@ -4,12 +4,12 @@ import type { HTMLAnchorAttributes } from 'svelte/elements';
 import { anchor } from './theme';
 import { type VariantProps } from 'tailwind-variants';
 
-type ColorType = VariantProps<typeof anchor>['color'];
+type AnchorColorType = VariantProps<typeof anchor>['color'];
 
 interface AnchorProps extends HTMLAnchorAttributes {
   children: Snippet;
-  color?: ColorType;
+  color?: AnchorColorType;
   class?: string;
 }
 
-export { A, anchor, type AnchorProps };
+export { A, anchor, type AnchorProps, type AnchorColorType };

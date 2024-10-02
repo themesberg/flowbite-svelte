@@ -12,8 +12,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop itemName
-@prop active
-@prop class: className
-@prop ...restProps
+@props: itemName: any;
+@props:active: any;
+@props:class: any;
 -->

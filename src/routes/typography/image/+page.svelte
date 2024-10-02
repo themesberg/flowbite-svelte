@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Img, img, Badge, Radio, Label, Button, uiHelpers } from '$lib';
+  import { Img, img, Badge, Radio, Label, Button, uiHelpers, type ImgProps } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -31,15 +31,15 @@
   // end of dynamic svelte component
 
   const sizes = Object.keys(img.variants.size);
-  let imgSize: Img['size'] = $state('none');
+  let imgSize: ImgProps['size'] = $state('none');
   const alignments = Object.keys(img.variants.alignment);
-  let imgAlignment: Img['alignment'] = $state('left');
+  let imgAlignment: ImgProps['alignment'] = $state('left');
   const effects = Object.keys(img.variants.effect);
-  let imgEffect: Img['effect'] = $state('none');
+  let imgEffect: ImgProps['effect'] = $state('none');
   const shadows = Object.keys(img.variants.shadow);
-  let imgShadow: Img['shadow'] = $state('none');
+  let imgShadow: ImgProps['shadow'] = $state('none');
   const roundeds = Object.keys(img.variants.rounded);
-  let imgRounded: Img['rounded'] = $state('none');
+  let imgRounded: ImgProps['rounded'] = $state('none');
   let imgCaption = $state(false);
   const changeImgCaption = () => {
     imgCaption = !imgCaption;

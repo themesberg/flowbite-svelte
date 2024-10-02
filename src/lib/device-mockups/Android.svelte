@@ -23,13 +23,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop divClass
-@prop div2Class
-@prop div3Class
-@prop div4Class
-@prop div5Class
-@prop div6Class
-@prop div7Class
-@prop ...restProps
+@props: children: any;
+@props:divClass: any;
+@props:div2Class: any;
+@props:div3Class: any;
+@props:div4Class: any;
+@props:div5Class: any;
+@props:div6Class: any;
+@props:div7Class: any;
 -->

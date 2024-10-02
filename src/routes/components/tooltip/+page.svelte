@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Button, Tooltip, tooltip, Radio, Label, uiHelpers } from '$lib';
+  import { Button, Tooltip, tooltip, Radio, Label, uiHelpers, type RadioColorType, type TooltipProps } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -34,10 +34,10 @@
 
   // for interactive code builder
   const positions = Object.keys(tooltip.variants.position);
-  let position: Tooltip['position'] = $state(positions[0]);
-  const colors = Object.keys(tooltip.variants.color) as Tooltip['color'][];
-  let color: Tooltip['color'] = $state('default');
-  let tooltipClass: Tooltip['class'] = $state('');
+  let position: TooltipProps['position'] = $state(positions[0] as TooltipProps['position']);
+  const colors = Object.keys(tooltip.variants.color) as TooltipProps['color'][];
+  let color: TooltipProps['color'] = $state('default');
+  let tooltipClass: TooltipProps['class'] = $state('');
   const changeClass = () => {
     tooltipClass = tooltipClass === '' ? 'p-4' : '';
   };
@@ -105,7 +105,7 @@
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="color" bind:group={color} color={colorOption as Tooltip['color']} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="color" bind:group={color} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">

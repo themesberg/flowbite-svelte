@@ -1,1 +1,10 @@
-{"name":"RatingComment","props":[["children",""],["evaluation",""],["helpfullink",""],["abuselink",""],["comment",""]]}
+{
+  "name": "RatingComment",
+  "props": [
+    ["children", ""],
+    ["evaluation", ""],
+    ["helpfullink", ""],
+    ["abuselink", ""],
+    ["comment", ""]
+  ]
+}

@@ -1,1 +1,9 @@
-{"name":"ImagePlaceholder","props":[["size","md"],["rounded",""],["class: className",""],["...restProps",""]]}
+{
+  "name": "ImagePlaceholder",
+  "props": [
+    ["size", "md"],
+    ["rounded", ""],
+    ["class: className", ""],
+    ["...restProps", ""]
+  ]
+}

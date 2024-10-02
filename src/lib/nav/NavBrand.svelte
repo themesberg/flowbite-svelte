@@ -24,10 +24,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop siteName
-@prop closeNav
-@prop aClass
-@prop spanClass
-@prop ...restProps
+@props: children: any;
+@props:siteName: any;
+@props:closeNav: any;
+@props:aClass: any;
+@props:spanClass: any;
 -->

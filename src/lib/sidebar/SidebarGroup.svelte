@@ -19,9 +19,8 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop class: className = 'space-y-2'
-@prop borderClass = 'pt-4 mt-4 border-t border-gray-200 dark:border-gray-700'
-@prop border = false
-@prop ...restProps
+@props: children: Snippet;
+@props:class: any = 'space-y-2';
+@props:borderClass: string = 'pt-4 mt-4 border-t border-gray-200 dark:border-gray-700';
+@props:border: boolean = false;
 -->

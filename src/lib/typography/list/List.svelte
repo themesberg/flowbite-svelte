@@ -23,11 +23,10 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop tag = 'ul'
-@prop isContenteditable = false
-@prop position = 'inside'
-@prop ctxClass
-@prop class: className
-@prop ...restProps
+@props: children: any;
+@props:tag: any = 'ul';
+@props:isContenteditable: any = false;
+@props:position: any = 'inside';
+@props:ctxClass: any;
+@props:class: any;
 -->

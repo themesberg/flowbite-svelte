@@ -1,1 +1,9 @@
-{"name":"DescriptionList","props":[["children",""],["tag",""],["class: className",""],["...restProps",""]]}
+{
+  "name": "DescriptionList",
+  "props": [
+    ["children", ""],
+    ["tag", ""],
+    ["class: className", ""],
+    ["...restProps", ""]
+  ]
+}

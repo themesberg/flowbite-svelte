@@ -54,19 +54,28 @@ export const span = tv({
       none: 'decoration-none'
     },
     decorationColor: {
-      blue: 'underline decoration-blue-400 dark:decoration-blue-600',
-      green: 'underline decoration-green-400 dark:decoration-green-600',
+      // blue, green, red, yellow, purple, pink, indigo, teal, orange, cyan, fuchsia, amber, lime, none
+      // radio
+      // primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
+      primary: 'underline decoration-primary-400 dark:decoration-primary-600',
+      secondary: 'underline decoration-secondary-400 dark:decoration-secondary-600',
+      gray: 'underline decoration-gray-400 dark:decoration-gray-600',
+      orange: 'underline decoration-orange-400 dark:decoration-orange-600',
       red: 'underline decoration-red-400 dark:decoration-red-600',
       yellow: 'underline decoration-yellow-400 dark:decoration-yellow-600',
-      purple: 'underline decoration-purple-400 dark:decoration-purple-600',
-      pink: 'underline decoration-pink-400 dark:decoration-pink-600',
-      indigo: 'underline decoration-indigo-400 dark:decoration-indigo-600',
-      teal: 'underline decoration-teal-400 dark:decoration-teal-600',
-      orange: 'underline decoration-orange-400 dark:decoration-orange-600',
-      cyan: 'underline decoration-cyan-400 dark:decoration-cyan-600',
-      fuchsia: 'underline decoration-fuchsia-400 dark:decoration-fuchsia-600',
-      amber: 'underline decoration-amber-400 dark:decoration-amber-600',
       lime: 'underline decoration-lime-400 dark:decoration-lime-600',
+      green: 'underline decoration-green-400 dark:decoration-green-600',
+      emerald: 'underline decoration-emerald-400 dark:decoration-emerald-600',
+      teal: 'underline decoration-teal-400 dark:decoration-teal-600',
+      cyan: 'underline decoration-cyan-400 dark:decoration-cyan-600',
+      sky: 'underline decoration-sky-400 dark:decoration-sky-600',
+      blue: 'underline decoration-blue-400 dark:decoration-blue-600',
+      indigo: 'underline decoration-indigo-400 dark:decoration-indigo-600',
+      violet: 'underline decoration-violet-400 dark:decoration-violet-600',
+      purple: 'underline decoration-purple-400 dark:decoration-purple-600',
+      fuchsia: 'underline decoration-fuchsia-400 dark:decoration-fuchsia-600',
+      pink: 'underline decoration-pink-400 dark:decoration-pink-600',
+      rose: 'underline decoration-rose-400 dark:decoration-rose-600',
       none: 'decoration-none'
     },
     decorationThickness: {

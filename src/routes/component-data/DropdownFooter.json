@@ -1,1 +1,8 @@
-{"name":"DropdownFooter","props":[["children",""],["class: className",""],["...restProps",""]]}
+{
+  "name": "DropdownFooter",
+  "props": [
+    ["children", ""],
+    ["class: className", ""],
+    ["...restProps", ""]
+  ]
+}

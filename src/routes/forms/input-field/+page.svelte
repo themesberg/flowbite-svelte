@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Input, input, Radio, Label, Helper, Button, CloseButton, uiHelpers } from '$lib';
+  import { Input, input, Radio, Label, Helper, Button, CloseButton, uiHelpers, type InputProps, type RadioColorType, type HelperProps, type LabelProps } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -41,15 +41,15 @@
   // end of dynamic svelte component
 
   const sizes = ['sm', 'md', 'lg'];
-  let inputSize: Input['size'] = $state('md');
+  let inputSize: InputProps['size'] = $state('md');
 
   const colors = Object.keys(input.variants.color);
-  let inputColor: Input['color'] = $state('default');
+  let inputColor: InputProps['color'] = $state('default');
   let disabled = $state(false);
   const changeDisabled = () => {
     disabled = !disabled;
   };
-  let helperColor: Input['color'] = $state('default');
+  let helperColor: InputProps['color'] = $state('default');
   let helperSlot = $state(false);
   const changeHelperSlot = () => {
     helperSlot = !helperSlot;
@@ -113,7 +113,7 @@ ${closeBtnStatus ? `</Input>` : ''}${helperSlot ? `<Helper class="ps-6" color="$
 
 <CodeWrapper>
   <div class="mb-4 md:h-24">
-    <Label for="color-example" color={inputColor} class="mb-2 block">Your name</Label>
+    <Label for="color-example" color={inputColor as LabelProps['color']} class="mb-2 block">Your name</Label>
     <Input id="color-example" bind:value={text} {disabled} color={inputColor} size={inputSize} placeholder={disabled ? 'Disabled ' : 'Placeholder'}>
       {#snippet right()}
         {#if closeBtnStatus}
@@ -122,7 +122,7 @@ ${closeBtnStatus ? `</Input>` : ''}${helperSlot ? `<Helper class="ps-6" color="$
       {/snippet}
     </Input>
     {#if helperSlot}
-      <Helper class="mt-2" color={helperColor}>
+      <Helper class="mt-2" color={helperColor as HelperProps['color']}>
         <span class="font-medium">Well done!</span>
         Some helper message.
       </Helper>
@@ -131,7 +131,7 @@ ${closeBtnStatus ? `</Input>` : ''}${helperSlot ? `<Helper class="ps-6" color="$
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-20 my-1" name="input_color" bind:group={inputColor} color={colorOption as Input['color']} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-20 my-1" name="input_color" bind:group={inputColor} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
@@ -144,7 +144,7 @@ ${closeBtnStatus ? `</Input>` : ''}${helperSlot ? `<Helper class="ps-6" color="$
     <Button class="mb-4 w-40" color="secondary" onclick={changeHelperSlot}>{helperSlot ? 'Remove helper' : 'Add helper'}</Button>
     <Label class="mb-4 w-full font-bold">Helper Color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-20 my-1 {helperSlot ? '' : 'opacity-30 cursor-not-allowed'}" disabled={helperSlot ? false : true} name="helper_color" bind:group={helperColor} color={colorOption as Input['color']} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-20 my-1 {helperSlot ? '' : 'opacity-30 cursor-not-allowed'}" disabled={helperSlot ? false : true} name="helper_color" bind:group={helperColor} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

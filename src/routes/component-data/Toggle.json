@@ -1,1 +1,16 @@
-{"name":"Toggle","props":[["children",""],["toggleSize","default"],["value",""],["checked","$bindable()"],["color","primary"],["aria_describedby",""],["labelClass",""],["inputClass",""],["spanClass",""],["leftLabel",""],["...restProps",""]]}
+{
+  "name": "Toggle",
+  "props": [
+    ["children", ""],
+    ["toggleSize", "default"],
+    ["value", ""],
+    ["checked", "$bindable()"],
+    ["color", "primary"],
+    ["aria_describedby", ""],
+    ["labelClass", ""],
+    ["inputClass", ""],
+    ["spanClass", ""],
+    ["leftLabel", ""],
+    ["...restProps", ""]
+  ]
+}

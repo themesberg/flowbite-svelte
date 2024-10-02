@@ -26,17 +26,12 @@ async function walkDir(dir: string): Promise<string[]> {
 async function generateFileList() {
   const rootDir = path.resolve(__dirname, '../src/lib');
   const fileList = await walkDir(rootDir);
-  
-  const relativePaths = fileList.map(file => 
-    path.relative(path.resolve(__dirname, '..'), file).replace(/\\/g, '/')
-  );
+
+  const relativePaths = fileList.map((file) => path.relative(path.resolve(__dirname, '..'), file).replace(/\\/g, '/'));
 
   const output = `export const fileList = ${JSON.stringify(relativePaths, null, 2)} as const;`;
 
-  await fs.writeFile(
-    path.resolve(__dirname, '../src/generatedFileList.ts'),
-    output
-  );
+  await fs.writeFile(path.resolve(__dirname, '../src/generatedFileList.ts'), output);
 
   console.log('File list generated successfully.');
 }

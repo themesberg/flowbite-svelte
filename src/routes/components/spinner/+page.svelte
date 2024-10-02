@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Spinner, spinner, Button, Label, Radio, uiHelpers } from '$lib';
+  import { Spinner, spinner, Button, Label, Radio, uiHelpers, type RadioColorType, type SpinnerProps } from '$lib';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -31,11 +31,11 @@
   // end of dynamic svelte component
 
   // color, size, class
-  const colors: Spinner['color'][] = Object.keys(spinner.variants.color);
-  let spinnerColor: Spinner['color'] = $state('primary');
-  const sizes: Spinner['size'][] = ['4', '5', '6', '8', '10', '12', '16'];
-  let spinnerSize: Spinner['size'] = $state('8');
-  let spinnerClass: Spinner['class'] = $state('');
+  const colors: SpinnerProps['color'][] = Object.keys(spinner.variants.color) as SpinnerProps['color'][];
+  let spinnerColor: SpinnerProps['color'] = $state('primary');
+  const sizes: SpinnerProps['size'][] = ['4', '5', '6', '8', '10', '12', '16'];
+  let spinnerSize: SpinnerProps['size'] = $state('8');
+  let spinnerClass: SpinnerProps['class'] = $state('');
   const changeClass = () => {
     spinnerClass = spinnerClass === '' ? 'ml-4' : '';
   };
@@ -106,7 +106,7 @@
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as color}
-      <Radio labelClass="w-24 my-1" name="spinnercolor" bind:group={spinnerColor} color={color as Spinner['color']} value={color}>{color}</Radio>
+      <Radio labelClass="w-24 my-1" name="spinnercolor" bind:group={spinnerColor} color={color as RadioColorType} value={color}>{color}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">

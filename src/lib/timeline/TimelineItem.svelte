@@ -41,14 +41,13 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop orientationSlot
-@prop title
-@prop date
-@prop svgClass
-@prop liClass
-@prop divClass
-@prop timeClass
-@prop h3Class
-@prop ...restProps
+@props: children: any;
+@props:orientationSlot: any;
+@props:title: any;
+@props:date: any;
+@props:svgClass: any;
+@props:liClass: any;
+@props:divClass: any;
+@props:timeClass: any;
+@props:h3Class: any;
 -->

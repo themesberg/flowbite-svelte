@@ -24,13 +24,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop flush
-@prop activeClass
-@prop inactiveClass
-@prop isSingle = true
-@prop class: className
-@prop transition
-@prop params
-@prop ...restProps
+@props: children: any;
+@props:flush: any;
+@props:activeClass: any;
+@props:inactiveClass: any;
+@props:isSingle: any = true;
+@props:class: any;
+@props:transition: any;
+@props:params: any;
 -->

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Heading, Button, Label, Radio, Input, CloseButton, uiHelpers } from '$lib';
+  import { Heading, Button, Label, Radio, Input, CloseButton, uiHelpers, type HeadingProps } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -41,7 +41,7 @@
   // end of dynamic svelte component
 
   const tags = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
-  let headingTag: Heading['tag'] = $state('h1');
+  let headingTag: HeadingProps['tag'] = $state('h1');
   let headingCls = $state('text-primary-700 dark:text-primary-500');
   const changeHeadingCls = () => {
     headingCls = headingCls === 'text-primary-700 dark:text-primary-500' ? 'text-blue-500 dark:text-blue-400 uppercase italic underline text-center font-semibold bg-gray-50 dark:bg-gray-700 p-4' : 'text-primary-700 dark:text-primary-500';

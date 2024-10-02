@@ -19,15 +19,5 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop group = $bindable()
-@prop value
-@prop inline = true
-@prop pill
-@prop outline
-@prop buttonSize
-@prop color
-@prop shadow
-@prop class: className
-@prop ...restProps
+@props: 
 -->

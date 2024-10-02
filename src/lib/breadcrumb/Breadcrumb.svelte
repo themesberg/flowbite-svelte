@@ -17,10 +17,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop solid = false
-@prop navClass
-@prop olClass
-@prop ariaLabel = 'Breadcrumb'
-@prop ...restProps
+@props: children: any;
+@props:solid: any = false;
+@props:navClass: any;
+@props:olClass: any;
+@props:ariaLabel: any = 'Breadcrumb';
 -->

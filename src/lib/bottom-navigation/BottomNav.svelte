@@ -30,12 +30,11 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop header
-@prop position = 'fixed'
-@prop navType = 'default'
-@prop outerClass
-@prop innerClass
-@prop activeClass
-@prop ...restProps
+@props: children: any;
+@props:header: any;
+@props:position: any = 'fixed';
+@props:navType: any = 'default';
+@props:outerClass: any;
+@props:innerClass: any;
+@props:activeClass: any;
 -->

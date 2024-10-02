@@ -1,1 +1,15 @@
-{"name":"Textarea","props":[["header",""],["footer",""],["value","$bindable()"],["divClass",""],["innerClass",""],["headerClass",""],["footerClass",""],["disabled",""],["class: className",""],["...restProps",""]]}
+{
+  "name": "Textarea",
+  "props": [
+    ["header", ""],
+    ["footer", ""],
+    ["value", "$bindable()"],
+    ["divClass", ""],
+    ["innerClass", ""],
+    ["headerClass", ""],
+    ["footerClass", ""],
+    ["disabled", ""],
+    ["class: className", ""],
+    ["...restProps", ""]
+  ]
+}

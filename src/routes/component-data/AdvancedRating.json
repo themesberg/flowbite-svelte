@@ -1,1 +1,14 @@
-{"name":"AdvancedRating","props":[["rating",""],["globalText",""],["ratings",""],["divClass",""],["spanClass",""],["div2Class",""],["div3Class",""],["span2Class",""],["unit",""]]}
+{
+  "name": "AdvancedRating",
+  "props": [
+    ["rating", ""],
+    ["globalText", ""],
+    ["ratings", ""],
+    ["divClass", ""],
+    ["spanClass", ""],
+    ["div2Class", ""],
+    ["div3Class", ""],
+    ["span2Class", ""],
+    ["unit", ""]
+  ]
+}

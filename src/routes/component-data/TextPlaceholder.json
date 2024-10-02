@@ -1,1 +1,8 @@
-{"name":"TextPlaceholder","props":[["size","sm"],["class: className",""],["...restProps",""]]}
+{
+  "name": "TextPlaceholder",
+  "props": [
+    ["size", "sm"],
+    ["class: className", ""],
+    ["...restProps", ""]
+  ]
+}

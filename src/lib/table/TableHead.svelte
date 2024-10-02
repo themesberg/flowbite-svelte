@@ -1,11 +1,10 @@
 <script lang="ts">
   import { getContext } from 'svelte';
-  import type TableCtxType from './Table.svelte';
-  import { TableHeadCell, type TableHeadProps as Props, tablehead } from '.';
+  import { TableHeadCell, type TableHeadProps as Props, tablehead, type TableCtxType } from '.';
 
   let { children, headerSlot, color, striped, hoverable, noborder, class: className, headItems, defaultRow = true, ...restProps }: Props = $props();
 
-  const tableCtx: TableCtxType = getContext('tableCtx');
+  const tableCtx = getContext<TableCtxType>('tableCtx');
   // for reactivity with svelte context
   let compoColor = $derived(color ? color : tableCtx.color || 'default');
   let compoStriped = $derived(striped ? striped : tableCtx.striped || false);
@@ -37,14 +36,13 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop headerSlot
-@prop color
-@prop striped
-@prop hoverable
-@prop noborder
-@prop class: className
-@prop headItems
-@prop defaultRow = true
-@prop ...restProps
+@props: children: any;
+@props:headerSlot: any;
+@props:color: any;
+@props:striped: any;
+@props:hoverable: any;
+@props:noborder: any;
+@props:class: any;
+@props:headItems: any;
+@props:defaultRow: any = true;
 -->

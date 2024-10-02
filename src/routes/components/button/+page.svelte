@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Button, GradientButton, gradientButton, button, Radio, Label, uiHelpers } from '$lib';
+  import { Button, GradientButton, gradientButton, button, Radio, Label, uiHelpers, type ButtonProps, type GradientButtonProps, type RadioColorType } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -40,7 +40,7 @@
   // color, size, group, outline, shadow, disabled, pill
   const btnColors = Object.keys(button.variants.color);
   let btnColor = $state('primary');
-  let btnClass: GradientButton['class'] = $state('');
+  let btnClass: GradientButtonProps['class'] = $state('');
   const changeBtnClass = () => {
     btnClass = btnClass === '' ? 'w-48' : '';
   };
@@ -69,13 +69,13 @@
   const btnSizes = Object.keys(button.variants.size);
   let btnSize = $state('md');
 
-  const gradientColors = Object.keys(gradientButton.variants.color);
+  const gradientColors = Object.keys(gradientButton.variants.color) as GradientButtonProps['color'][];
   let gradientColor = $state('blue');
 
   const gradientSizes = Object.keys(button.variants.size);
   let gradientSize = $state('md');
 
-  let gradientClass: GradientButton['class'] = $state('');
+  let gradientClass: GradientButtonProps['class'] = $state('');
   const changeGradientClass = () => {
     gradientClass = gradientClass === '' ? 'w-48' : '';
   };
@@ -169,18 +169,18 @@
 
 <CodeWrapper innerClass="flex flex-wrap gap-2">
   <div class="h-16">
-    <Button color={btnColor as Button['color']} class={btnClass} outline={btnOutline} shadow={btnShadow} pill={btnPill} disabled={btnDisabled} size={btnSize as Button['size']} href={btnLink ? btnLink : ''}>Button</Button>
+    <Button color={btnColor as ButtonProps['color']} class={btnClass} outline={btnOutline} shadow={btnShadow} pill={btnPill} disabled={btnDisabled} size={btnSize as ButtonProps['size']} href={btnLink ? btnLink : ''}>Button</Button>
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each btnColors as colorOption}
-      <Radio labelClass="w-24 my-1" name="btn_color" bind:group={btnColor as Button['color']} color={colorOption as Button['color']} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="btn_color" bind:group={btnColor as ButtonProps['color']} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Size</Label>
     {#each btnSizes as sizeOption}
-      <Radio labelClass="w-24 my-1" name="btn_size" bind:group={btnSize as Button['size']} color={sizeOption as Button['size']} value={sizeOption}>{sizeOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="btn_size" bind:group={btnSize as ButtonProps['size']} value={sizeOption}>{sizeOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
@@ -200,18 +200,18 @@
 
 <CodeWrapper>
   <div class="h-16">
-    <GradientButton outline={gradientOutline} shadow={gradientShadow} pill={graidentPill} class={gradientClass} disabled={gradientDisabled} color={gradientColor as GradientButton['color']} size={gradientSize as Button['size']}>{capitalizeFirstLetter(gradientColor)}</GradientButton>
+    <GradientButton outline={gradientOutline} shadow={gradientShadow} pill={graidentPill} class={gradientClass} disabled={gradientDisabled} color={gradientColor as GradientButtonProps['color']} size={gradientSize as GradientButtonProps['size']}>{capitalizeFirstLetter(gradientColor)}</GradientButton>
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each gradientColors as colorOption}
-      <Radio labelClass="w-32 my-1" name="gradient_color" bind:group={gradientColor} color={colorOption as GradientButton['color']} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-32 my-1" name="gradient_color" bind:group={gradientColor} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Size</Label>
     {#each gradientSizes as sizeOption}
-      <Radio labelClass="w-24 my-1" name="gradient_size" bind:group={gradientSize as Button['size']} color={sizeOption as Button['size']} value={sizeOption}>{sizeOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="gradient_size" bind:group={gradientSize as GradientButtonProps['size']} value={sizeOption}>{sizeOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

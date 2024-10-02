@@ -16,6 +16,6 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop size = 'sm'
-@prop class: className
+@props: size: any = 'sm';
+@props:class: any;
 -->

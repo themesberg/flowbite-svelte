@@ -15,10 +15,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop color = 'primary'
-@prop size = '8'
-@prop class: className
-@prop currentFill = 'currentFill'
-@prop currentColor = 'currentColor'
-@prop ...restProps
+@props: color: any = 'primary';
+@props:size: any = '8';
+@props:class: any;
+@props:currentFill: any = 'currentFill';
+@props:currentColor: any = 'currentColor';
 -->

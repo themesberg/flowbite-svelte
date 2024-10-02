@@ -1,1 +1,10 @@
-{"name":"Gallery","props":[["children",""],["items","[]"],["imgClass",""],["divClass",""],["...restProps",""]]}
+{
+  "name": "Gallery",
+  "props": [
+    ["children", ""],
+    ["items", "[]"],
+    ["imgClass", ""],
+    ["divClass", ""],
+    ["...restProps", ""]
+  ]
+}

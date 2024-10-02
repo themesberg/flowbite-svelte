@@ -14,16 +14,15 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop class: className = 'text-gray-900 dark:text-white'
-@prop height = 'normal'
-@prop align = 'left'
-@prop justify = false
-@prop italic
-@prop firstUpper = false
-@prop whitespace = 'normal'
-@prop size = 'base'
-@prop space = 'normal'
-@prop weight = 'normal'
-@prop ...restProps
+@props: children: any;
+@props:class: any = 'text-gray-900 dark:text-white';
+@props:height: any = 'normal';
+@props:align: any = 'left';
+@props:justify: any = false;
+@props:italic: any;
+@props:firstUpper: any = false;
+@props:whitespace: any = 'normal';
+@props:size: any = 'base';
+@props:space: any = 'normal';
+@props:weight: any = 'normal';
 -->

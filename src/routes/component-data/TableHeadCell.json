@@ -1,1 +1,8 @@
-{"name":"TableHeadCell","props":[["children",""],["class: className",""],["...restProps",""]]}
+{
+  "name": "TableHeadCell",
+  "props": [
+    ["children", ""],
+    ["class: className", ""],
+    ["...restProps", ""]
+  ]
+}

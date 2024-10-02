@@ -19,10 +19,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop value = $bindable()
-@prop appearance = 'none'
-@prop color = 'blue'
-@prop rangeSize = 'md'
-@prop inputClass
-@prop ...restProps
+@props: value: any = $bindable();
+@props:appearance: any = 'none';
+@props:color: any = 'blue';
+@props:rangeSize: any = 'md';
+@props:inputClass: any;
 -->

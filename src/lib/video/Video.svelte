@@ -17,12 +17,11 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop type = 'video/mp4'
-@prop trackSrc
-@prop src
-@prop srclang = 'en'
-@prop label = 'english_captions'
-@prop class: classname
-@prop ...restProps
+@props: children: any;
+@props:type: any = 'video/mp4';
+@props:trackSrc: any;
+@props:src: any;
+@props:srclang: any = 'en';
+@props:label: any = 'english_captions';
+@props:class: any;
 -->

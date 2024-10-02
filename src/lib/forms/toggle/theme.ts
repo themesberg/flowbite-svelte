@@ -8,7 +8,7 @@ export const toggle = tv({
   },
   variants: {
     disabled: {
-      true: {label: 'cursor-not-allowed opacity-50'}
+      true: { label: 'cursor-not-allowed opacity-50' }
     },
     checked: {
       true: '',
@@ -67,7 +67,7 @@ export const toggle = tv({
       purple: {
         span: 'peer-focus:ring-purple-300 dark:peer-focus:ring-purple-800 peer-checked:bg-purple-600'
       },
-      fichsia: {
+      fuchsia: {
         span: 'peer-focus:ring-fuchsia-300 dark:peer-focus:ring-fuchsia-800 peer-checked:bg-fuchsia-600'
       },
       pink: {

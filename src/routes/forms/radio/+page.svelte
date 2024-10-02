@@ -1,7 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { sineIn } from 'svelte/easing';
-  import { Radio, radio, Helper, Label, Button, uiHelpers } from '$lib';
+  import { Radio, radio, Helper, Label, Button, uiHelpers, type RadioProps, type RadioColorType } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -38,13 +37,13 @@
   }
   const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
-
-  const colors = Object.keys(radio.variants.color) as Radio['color'][];
-  let radioColor: Radio['color'] = $state('primary');
+  type GroupType = string;
+  const colors = Object.keys(radio.variants.color) as RadioProps<GroupType>['color'][];
+  let radioColor: RadioProps<GroupType>['color'] = $state('primary');
   // hack for demo purposes
-  let demoRadioColor: Radio['color'] = $state('primary');
+  let demoRadioColor: RadioProps<GroupType>['color'] = $state('primary');
   let isChecked = $state(true);
-  const handleOnchange = (colorOption: Radio['color']) => {
+  const handleOnchange = (colorOption: RadioProps<GroupType>['color']) => {
     demoRadioColor = colorOption;
     isChecked = false;
     isChecked = true;
@@ -65,7 +64,7 @@
   const changeDisabled = () => {
     disabled = !disabled;
   };
-  let helperColor: Radio['color'] = $state('primary');
+  let helperColor: RadioProps<GroupType>['color'] = $state('primary');
   let helperSlot = $state(false);
   const changeHelperSlot = () => {
     helperSlot = !helperSlot;
@@ -130,14 +129,14 @@ ${helperSlot ? `<Helper class="ps-6" color="${helperColor}">Helper text</Helper>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="radio_color" bind:group={radioColor} onchange={() => handleOnchange(colorOption)} color={colorOption as Radio['color']} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="radio_color" bind:group={radioColor} onchange={() => handleOnchange(colorOption)} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Button class="mb-4 w-40" color="secondary" onclick={changeHelperSlot}>{helperSlot ? 'Remove helper' : 'Add helper'}</Button>
     <Label class="mb-4 w-full font-bold">Helper Color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1 {helperSlot ? '' : 'opacity-30 cursor-not-allowed'}" disabled={helperSlot ? false : true} name="helper_color" bind:group={helperColor} color={colorOption as Radio['color']} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1 {helperSlot ? '' : 'opacity-30 cursor-not-allowed'}" disabled={helperSlot ? false : true} name="helper_color" bind:group={helperColor} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

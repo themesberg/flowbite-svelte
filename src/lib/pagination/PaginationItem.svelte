@@ -27,10 +27,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop size
-@prop class: className
-@prop href
-@prop active
-@prop ...restProps
+@props: children: any;
+@props:size: any;
+@props:class: any;
+@props:href: any;
+@props:active: any;
 -->

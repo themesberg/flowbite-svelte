@@ -26,7 +26,6 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop toggleNav
-@prop class: className
-@prop ...restProps
+@props: toggleNav: any;
+@props:class: any;
 -->

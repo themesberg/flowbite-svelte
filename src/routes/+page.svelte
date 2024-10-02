@@ -32,7 +32,7 @@
 
 <p>
   After installing Svelte-5, you can <a href="https://svelte-5-preview.vercel.app/docs/runes#how-to-opt-in">opt-in to runes mode</a>
-   by updating `svelte.config.js` to enable `runes`:
+  by updating `svelte.config.js` to enable `runes`:
 </p>
 
 <HighlightCompo codeLang="js" code={modules['./md/runes.md'] as string} />

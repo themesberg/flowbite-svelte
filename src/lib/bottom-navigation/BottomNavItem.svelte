@@ -33,13 +33,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop btnName
-@prop appBtnPosition = 'middle'
-@prop target
-@prop activeClass
-@prop href = ''
-@prop btnClass
-@prop spanClass
-@prop ...restProps
+@props: children: any;
+@props:btnName: any;
+@props:appBtnPosition: any = 'middle';
+@props:target: any;
+@props:activeClass: any;
+@props:href: any = '';
+@props:btnClass: any;
+@props:spanClass: any;
 -->

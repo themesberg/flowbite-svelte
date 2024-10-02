@@ -1,1 +1,15 @@
-{"name":"ActivityItem","props":[["activities",""],["liClass",""],["spanClass",""],["imgClass",""],["outerDivClass",""],["innerDivClass",""],["timeClass",""],["titleClass",""],["textClass",""],["...restProps",""]]}
+{
+  "name": "ActivityItem",
+  "props": [
+    ["activities", ""],
+    ["liClass", ""],
+    ["spanClass", ""],
+    ["imgClass", ""],
+    ["outerDivClass", ""],
+    ["innerDivClass", ""],
+    ["timeClass", ""],
+    ["titleClass", ""],
+    ["textClass", ""],
+    ["...restProps", ""]
+  ]
+}

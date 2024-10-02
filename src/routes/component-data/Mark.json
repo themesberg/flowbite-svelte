@@ -1,1 +1,8 @@
-{"name":"Mark","props":[["children",""],["class: className",""],["...restProps",""]]}
+{
+  "name": "Mark",
+  "props": [
+    ["children", ""],
+    ["class: className", ""],
+    ["...restProps", ""]
+  ]
+}

@@ -1,1 +1,9 @@
-{"name":"BottomNavHeader","props":[["children",""],["outerClass",""],["innerClass",""],["...restProps",""]]}
+{
+  "name": "BottomNavHeader",
+  "props": [
+    ["children", ""],
+    ["outerClass", ""],
+    ["innerClass", ""],
+    ["...restProps", ""]
+  ]
+}

@@ -44,4 +44,3 @@ test('span page has expected h1', async ({ page }) => {
   await page.goto('/typography/span');
   expect(await page.textContent('h1')).toBe('Span');
 });
-

@@ -40,16 +40,15 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop src
-@prop href
-@prop cornerStyle = 'circular'
-@prop border
-@prop stacked
-@prop dot
-@prop class: className
-@prop alt
-@prop size = 'md'
-@prop onclick
-@prop ...restProps
+@props: children: any;
+@props:src: any;
+@props:href: any;
+@props:cornerStyle: any = 'circular';
+@props:border: any;
+@props:stacked: any;
+@props:dot: any;
+@props:class: any;
+@props:alt: any;
+@props:size: any = 'md';
+@props:onclick: any;
 -->

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { FloatingLabelInput, Helper, Label, Radio, Toggle, floatingLabelInput, Button, uiHelpers } from '$lib';
+  import { FloatingLabelInput, Helper, Label, Radio, Toggle, floatingLabelInput, Button, uiHelpers, type RadioColorType, type FloatingLabelInputProps, type HelperProps } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -16,11 +16,11 @@
   });
 
   const styles = ['standard', 'filled', 'outlined'];
-  let style: FloatingLabelInput['style'] = $state('standard');
-  let floatingSize: FloatingLabelInput['size'] = $state('default');
+  let style: FloatingLabelInputProps['style'] = $state('standard');
+  let floatingSize: FloatingLabelInputProps['size'] = $state('default');
   const colors = Object.keys(floatingLabelInput.variants.color);
-  let floatingColor: FloatingLabelInput['color'] = $state('default');
-  let helperColor: FloatingLabelInput['color'] = $state('default');
+  let floatingColor: FloatingLabelInputProps['color'] = $state('default');
+  let helperColor: FloatingLabelInputProps['color'] = $state('default');
   let disabled = $state(false);
   const changeDisabled = () => {
     disabled = !disabled;
@@ -73,7 +73,7 @@
   <div class="mb-4 md:h-20">
     <FloatingLabelInput {style} {disabled} size={floatingSize} color={floatingColor} id="floating_filled" type="text">Floating {style}</FloatingLabelInput>
     {#if helperSlot}
-      <Helper class="pt-2" color={helperColor}>
+      <Helper class="pt-2" color={helperColor as HelperProps['color']}>
         Remember, contributions to this topic should follow our <a href="/">Community Guidelines</a>
         .
       </Helper>
@@ -88,14 +88,14 @@
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="floating_color" bind:group={floatingColor} color={colorOption as FloatingLabelInput['color']} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="floating_color" bind:group={floatingColor} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Button class="mb-4 w-48" color="secondary" onclick={changeHelperSlot}>{helperSlot ? 'Remove helper slot' : 'Add helper slot'}</Button>
     <Label class="mb-4 w-full font-bold">Helper Color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1 {helperSlot ? '' : 'opacity-30 cursor-not-allowed'}" disabled={helperSlot ? false : true} name="helper_color" bind:group={helperColor} color={colorOption as FloatingLabelInput['color']} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1 {helperSlot ? '' : 'opacity-30 cursor-not-allowed'}" disabled={helperSlot ? false : true} name="helper_color" bind:group={helperColor} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">

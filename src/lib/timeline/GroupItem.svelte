@@ -41,11 +41,10 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop timelines
-@prop aClass
-@prop imgClass
-@prop divClass
-@prop titleClass
-@prop spanClass
-@prop ...restProps
+@props: timelines: any;
+@props:aClass: any;
+@props:imgClass: any;
+@props:divClass: any;
+@props:titleClass: any;
+@props:spanClass: any;
 -->

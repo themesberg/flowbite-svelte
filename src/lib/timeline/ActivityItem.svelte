@@ -31,14 +31,13 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop activities
-@prop liClass
-@prop spanClass
-@prop imgClass
-@prop outerDivClass
-@prop innerDivClass
-@prop timeClass
-@prop titleClass
-@prop textClass
-@prop ...restProps
+@props: activities: any;
+@props:liClass: any;
+@props:spanClass: any;
+@props:imgClass: any;
+@props:outerDivClass: any;
+@props:innerDivClass: any;
+@props:timeClass: any;
+@props:titleClass: any;
+@props:textClass: any;
 -->

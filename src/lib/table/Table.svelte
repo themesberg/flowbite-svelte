@@ -51,17 +51,16 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop footerSlot
-@prop captionSlot
-@prop tableItems
-@prop divClass = 'relative overflow-x-auto'
-@prop striped
-@prop hoverable
-@prop noborder
-@prop shadow
-@prop color = 'default'
-@prop customeColor
-@prop class: className
-@prop ...restProps
+@props: children: any;
+@props:footerSlot: any;
+@props:captionSlot: any;
+@props:tableItems: any;
+@props:divClass: any = 'relative overflow-x-auto';
+@props:striped: any;
+@props:hoverable: any;
+@props:noborder: any;
+@props:shadow: any;
+@props:color: any = 'default';
+@props:customeColor: any;
+@props:class: any;
 -->

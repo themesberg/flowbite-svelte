@@ -1,1 +1,13 @@
-{"name":"Tabs","props":[["children",""],["tabStyle","none"],["ulClass",""],["ctxActive",""],["ctxInactive",""],["contentClass",""],["divider","true"],["...restProps",""]]}
+{
+  "name": "Tabs",
+  "props": [
+    ["children", ""],
+    ["tabStyle", "none"],
+    ["ulClass", ""],
+    ["ctxActive", ""],
+    ["ctxInactive", ""],
+    ["contentClass", ""],
+    ["divider", "true"],
+    ["...restProps", ""]
+  ]
+}

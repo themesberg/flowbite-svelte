@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Table, table, uiHelpers, Label, Radio, Button } from '$lib';
+  import { Table, table, uiHelpers, Label, Radio, Button, type RadioColorType, type TableProps } from '$lib';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -42,7 +42,7 @@
   const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
 
-  let color: Table['color'] = $state('default');
+  let color: TableProps['color'] = $state('default');
   const colors = Object.keys(table.variants.color);
   let striped = $state(false);
   const changeStriped = () => {
@@ -119,7 +119,7 @@
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="table_color" bind:group={color} color={colorOption as Table['color']} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="table_color" bind:group={color} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex gap-4">

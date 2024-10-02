@@ -45,16 +45,15 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop header
-@prop bannerStatus = $bindable(true)
-@prop position = 'sticky'
-@prop dismissable = true
-@prop color = 'gray'
-@prop bannerType = 'default'
-@prop class: className
-@prop innerClass
-@prop transition = fade
-@prop params
-@prop ...restProps
+@props: children: any;
+@props:header: any;
+@props:bannerStatus: any = $bindable(true);
+@props:position: any = 'sticky';
+@props:dismissable: any = true;
+@props:color: any = 'gray';
+@props:bannerType: any = 'default';
+@props:class: any;
+@props:innerClass: any;
+@props:transition: any = fade;
+@props:params: any;
 -->

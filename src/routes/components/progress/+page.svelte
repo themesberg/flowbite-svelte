@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Progressbar, progressbar, Button, Label, Radio, Input } from '$lib';
+  import { Progressbar, progressbar, Button, Label, Radio, type RadioColorType, type ProgressbarProps } from '$lib';
   import { sineOut } from 'svelte/easing';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -34,7 +34,7 @@
   // const sizes = [ 'h-4 ', 'h-6', 'h-8', 'h-10'];
   // let progressSize = $state('h-4');
   const colors = Object.keys(progressbar.variants.color);
-  let progressColor: Progressbar['color'] = $state('primary');
+  let progressColor: ProgressbarProps['color'] = $state('primary');
   let labelInside = $state(false);
   const changeLabelInside = () => {
     labelInside = !labelInside;
@@ -112,7 +112,7 @@
   <div class="flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as color}
-      <Radio labelClass="w-24 my-1" name="interactive_progress_color" bind:group={progressColor} color={color as Progressbar['color']} value={color}>{color}</Radio>
+      <Radio labelClass="w-24 my-1" name="interactive_progress_color" bind:group={progressColor} color={color as RadioColorType} value={color}>{color}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

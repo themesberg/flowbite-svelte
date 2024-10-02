@@ -1,1 +1,14 @@
-{"name":"Indicator","props":[["children",""],["color","primary"],["cornerStyle","circular"],["size","md"],["border","false"],["placement",""],["offset","true"],["class: className",""],["...restProps",""]]}
+{
+  "name": "Indicator",
+  "props": [
+    ["children", ""],
+    ["color", "primary"],
+    ["cornerStyle", "circular"],
+    ["size", "md"],
+    ["border", "false"],
+    ["placement", ""],
+    ["offset", "true"],
+    ["class: className", ""],
+    ["...restProps", ""]
+  ]
+}

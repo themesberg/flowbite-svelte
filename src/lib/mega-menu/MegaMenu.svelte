@@ -34,14 +34,13 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop footer
-@prop items = []
-@prop full
-@prop dropdownStatus = $bindable()
-@prop class: className
-@prop backdropClass
-@prop params
-@prop transition = fly
-@prop ...restProps
+@props: children: any;
+@props:footer: any;
+@props:items: any = [];
+@props:full: any;
+@props:dropdownStatus: any = $bindable();
+@props:class: any;
+@props:backdropClass: any;
+@props:params: any;
+@props:transition: any = fly;
 -->

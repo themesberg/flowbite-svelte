@@ -1,1 +1,8 @@
-{"name":"Kbd","props":[["children",""],["class: kbdClass",""],["...restProps",""]]}
+{
+  "name": "Kbd",
+  "props": [
+    ["children", ""],
+    ["class: kbdClass", ""],
+    ["...restProps", ""]
+  ]
+}

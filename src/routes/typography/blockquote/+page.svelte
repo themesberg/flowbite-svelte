@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Blockquote, blockquote, Label, Radio, Button, Input, CloseButton, uiHelpers } from '$lib';
+  import { Blockquote, blockquote, Label, Radio, Button, Input, CloseButton, uiHelpers, type BlockquoteProps } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -40,10 +40,10 @@
   let { text = $bindable('Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quas commodi accusamus dignissimos qui totam iste rem necessitatibus? Cumque minus et animi nostrum deserunt provident excepturi laboriosam ipsum minima nisi!') } = $props();
 
   const sizes = Object.keys(blockquote.variants.size);
-  let selectedSize: Blockquote['size'] = $state('lg');
+  let selectedSize: BlockquoteProps['size'] = $state('lg');
 
   const alignments = Object.keys(blockquote.variants.alignment);
-  let selectedAlignment: Blockquote['alignment'] = $state('left');
+  let selectedAlignment: BlockquoteProps['alignment'] = $state('left');
   let border = $state(false);
   const changeBorder = () => {
     border = !border;
@@ -56,7 +56,7 @@
   const changeBg = () => {
     bg = !bg;
   };
-  let blockClass: Blockquote['class'] = $state('p-8');
+  let blockClass: BlockquoteProps['class'] = $state('p-8');
   const changeClass = () => {
     blockClass = blockClass === 'p-8' ? 'p-4' : 'p-8';
   };

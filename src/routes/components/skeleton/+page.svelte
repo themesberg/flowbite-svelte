@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Skeleton, skeleton, CardPlaceholder, ImagePlaceholder, imagePlaceholder, VideoPlaceholder, TextPlaceholder, ListPlaceholder, TestimonialPlaceholder, Label, Radio, WidgetPlaceholder, Button } from '$lib';
+  import { Skeleton, skeleton, CardPlaceholder, ImagePlaceholder, imagePlaceholder, VideoPlaceholder, TextPlaceholder, ListPlaceholder, TestimonialPlaceholder, Label, Radio, WidgetPlaceholder, Button, type SkeletonProps, type CardPlaceholderProps, type TestimonialPlaceholderProps, type ListPlaceholderProps, type TextPlaceholderProps, type ImagePlaceholderProps, type VideoPlaceholderProps, type WidgetPlaceholderProps } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
   import H1 from '../../utils/H1.svelte';
@@ -13,33 +13,33 @@
     eager: true
   });
   // size
-  const skeletonSizes = Object.keys(skeleton.variants.size) as Skeleton['size'][];
-  let skeletonSize: Skeleton['size'] = $state('sm');
-  const imageSizes = Object.keys(imagePlaceholder.variants.size) as ImagePlaceholder['size'][];
-  let imagePlaceholderSize: ImagePlaceholder['size'] = $state('md');
-  let imagePlaceholderRounded: ImagePlaceholder['rounded'] = $state('none');
+  const skeletonSizes = Object.keys(skeleton.variants.size) as SkeletonProps['size'][];
+  let skeletonSize: SkeletonProps['size'] = $state('sm');
+  const imageSizes = Object.keys(imagePlaceholder.variants.size) as ImagePlaceholderProps['size'][];
+  let imagePlaceholderSize: ImagePlaceholderProps['size'] = $state('md');
+  let imagePlaceholderRounded: ImagePlaceholderProps['rounded'] = $state('none');
   const videoSizes = skeletonSizes;
-  let videoPlaceholderSize: VideoPlaceholder['size'] = $state('sm');
-  const imageRoundedSizes = Object.keys(imagePlaceholder.variants.rounded) as ImagePlaceholder['rounded'][];
+  let videoPlaceholderSize: VideoPlaceholderProps['size'] = $state('sm');
+  const imageRoundedSizes = Object.keys(imagePlaceholder.variants.rounded) as ImagePlaceholderProps['rounded'][];
   const textSizes = skeletonSizes;
-  let textPlaceholderSize: TextPlaceholder['size'] = $state('sm');
+  let textPlaceholderSize: TextPlaceholderProps['size'] = $state('sm');
   const cardSizes = skeletonSizes;
-  let cardPlaceholderSize: CardPlaceholder['size'] = $state('sm');
+  let cardPlaceholderSize: CardPlaceholderProps['size'] = $state('sm');
   const listSizes = imageSizes;
   const listRoundedSizes = imageRoundedSizes;
   const listItemNumbers = [1, 2, 3, 4, 5];
-  let listPlaceholderSize: ListPlaceholder['size'] = $state('md');
-  let listPlaceholderRounded: ListPlaceholder['rounded'] = $state('none');
-  let listPlaceholderItemNumber: ListPlaceholder['itemNumber'] = $state(5);
+  let listPlaceholderSize: ListPlaceholderProps['size'] = $state('md');
+  let listPlaceholderRounded: ListPlaceholderProps['rounded'] = $state('none');
+  let listPlaceholderItemNumber: ListPlaceholderProps['itemNumber'] = $state(5);
   // class
-  let skeletonClass: Skeleton['class'] = $state('');
-  let imagePlaceholderClass: ImagePlaceholder['class'] = $state('');
-  let videoPlaceholderClass: VideoPlaceholder['class'] = $state('');
-  let textPlaceholderClass: TextPlaceholder['class'] = $state('');
-  let cardPlaceholderClass: CardPlaceholder['class'] = $state('');
-  let widgetPlaceholderClass: WidgetPlaceholder['class'] = $state('');
-  let listPlaceholderClass: ListPlaceholder['class'] = $state('');
-  let TestimonialPlaceholderClass: TestimonialPlaceholder['class'] = $state('');
+  let skeletonClass: SkeletonProps['class'] = $state('');
+  let imagePlaceholderClass: ImagePlaceholderProps['class'] = $state('');
+  let videoPlaceholderClass: VideoPlaceholderProps['class'] = $state('');
+  let textPlaceholderClass: TextPlaceholderProps['class'] = $state('');
+  let cardPlaceholderClass: CardPlaceholderProps['class'] = $state('');
+  let widgetPlaceholderClass: WidgetPlaceholderProps['class'] = $state('');
+  let listPlaceholderClass: ListPlaceholderProps['class'] = $state('');
+  let TestimonialPlaceholderClass: TestimonialPlaceholderProps['class'] = $state('');
 
   // code generator
   const generatePlaceholderCode = (componentName: string, size: string, classes: string): string => {

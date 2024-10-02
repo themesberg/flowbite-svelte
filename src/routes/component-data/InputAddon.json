@@ -1,1 +1,9 @@
-{"name":"InputAddon","props":[["children",""],["class: className",""],["size",""],["...restProps",""]]}
+{
+  "name": "InputAddon",
+  "props": [
+    ["children", ""],
+    ["class: className", ""],
+    ["size", ""],
+    ["...restProps", ""]
+  ]
+}

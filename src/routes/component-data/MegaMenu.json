@@ -1,1 +1,15 @@
-{"name":"MegaMenu","props":[["children",""],["footer",""],["items","[]"],["full",""],["dropdownStatus","$bindable()"],["class: className",""],["backdropClass",""],["params",""],["transition","fly"],["...restProps",""]]}
+{
+  "name": "MegaMenu",
+  "props": [
+    ["children", ""],
+    ["footer", ""],
+    ["items", "[]"],
+    ["full", ""],
+    ["dropdownStatus", "$bindable()"],
+    ["class: className", ""],
+    ["backdropClass", ""],
+    ["params", ""],
+    ["transition", "fly"],
+    ["...restProps", ""]
+  ]
+}

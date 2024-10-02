@@ -15,9 +15,8 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop liClass
-@prop aClass
-@prop href
-@prop ...restProps
+@props: children: any;
+@props:liClass: any;
+@props:aClass: any;
+@props:href: any;
 -->

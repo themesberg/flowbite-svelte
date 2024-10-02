@@ -1,11 +1,11 @@
 import Toggle from './Toggle.svelte';
 import type { Snippet } from 'svelte';
-import type { FormColorType } from '../../types';
 import type { HTMLInputAttributes } from 'svelte/elements';
 import { toggle } from './theme';
 import { type VariantProps } from 'tailwind-variants';
 
 type SizeType = VariantProps<typeof toggle>['size'];
+type ToggleColor = VariantProps<typeof toggle>['color'];
 
 interface ToggleProps extends HTMLInputAttributes {
   children: Snippet;
@@ -15,10 +15,10 @@ interface ToggleProps extends HTMLInputAttributes {
   checked?: boolean | undefined;
   disabled?: boolean;
   spanClass?: string;
-  color?: FormColorType;
+  color?: ToggleColor;
   labelClass?: string;
   aria_describedby?: string;
   inputClass?: string;
 }
 
-export { Toggle, toggle, type ToggleProps };
+export { Toggle, toggle, type ToggleProps, type ToggleColor };

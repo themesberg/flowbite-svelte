@@ -23,12 +23,11 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop class: className
-@prop border
-@prop italic = true
-@prop bg
-@prop alignment = 'left'
-@prop size = 'lg'
-@prop ...restProps
+@props: children: any;
+@props:class: any;
+@props:border: any;
+@props:italic: any = true;
+@props:bg: any;
+@props:alignment: any = 'left';
+@props:size: any = 'lg';
 -->

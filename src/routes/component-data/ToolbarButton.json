@@ -1,1 +1,14 @@
-{"name":"ToolbarButton","props":[["children",""],["color","default"],["name",""],["ariaLabel",""],["size","md"],["href",""],["class: className",""],["onclick",""],["...restProps",""]]}
+{
+  "name": "ToolbarButton",
+  "props": [
+    ["children", ""],
+    ["color", "default"],
+    ["name", ""],
+    ["ariaLabel", ""],
+    ["size", "md"],
+    ["href", ""],
+    ["class: className", ""],
+    ["onclick", ""],
+    ["...restProps", ""]
+  ]
+}

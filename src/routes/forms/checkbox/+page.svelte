@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Checkbox, checkbox, Helper, Label, Radio, Button, uiHelpers } from '$lib';
+  import { Checkbox, checkbox, Helper, Label, Radio, Button, uiHelpers, type RadioColorType, type CheckboxProps } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -42,7 +42,7 @@
   // end of dynamic svelte component
 
   const colors = Object.keys(checkbox.variants.color);
-  let checkboxColor: Checkbox['color'] = $state('primary');
+  let checkboxColor: CheckboxProps['color'] = $state('primary');
 
   // const checkedStates = [ 'false', 'true', 'indeterminate' ];
   let checkedState = $state(false);
@@ -120,7 +120,7 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`;
   <div class="mb-4 mt-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="checkbox_color" bind:group={checkboxColor} color={colorOption as Checkbox['color']} onchange={() => (checkedState = true)} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="checkbox_color" bind:group={checkboxColor} color={colorOption as RadioColorType} onchange={() => (checkedState = true)} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

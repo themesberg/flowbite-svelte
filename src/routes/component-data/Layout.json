@@ -1,1 +1,8 @@
-{"name":"Layout","props":[["children",""],["class: className",""],["...restProps",""]]}
+{
+  "name": "Layout",
+  "props": [
+    ["children", ""],
+    ["class: className", ""],
+    ["...restProps", ""]
+  ]
+}

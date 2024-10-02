@@ -1,1 +1,8 @@
-{"name":"SidebarButton","props":[["breakpoint","md"],["class: className",""],["...restProps",""]]}
+{
+  "name": "SidebarButton",
+  "props": [
+    ["breakpoint", "md"],
+    ["class: className", ""],
+    ["...restProps", ""]
+  ]
+}

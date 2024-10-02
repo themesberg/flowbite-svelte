@@ -3,7 +3,7 @@
   import { blur, fly, slide, scale, fade } from 'svelte/transition';
   import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
   import { sineIn, linear } from 'svelte/easing';
-  import { Popover, popover, Button, Label, Radio, uiHelpers } from '$lib';
+  import { Popover, popover, Button, Label, Radio, uiHelpers, type RadioColorType, type PopoverProps } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -44,10 +44,10 @@
   // end of dynamic svelte component
 
   const positions = Object.keys(popover.variants.position);
-  let position: Popover['position'] = $state(positions[0]);
+  let position: PopoverProps['position'] = $state(positions[0]) as PopoverProps['position'];
   const colors = Object.keys(popover.variants.color);
-  let color: Popover['color'] = $state('default');
-  let popoverClass: Popover['class'] = $state('w-64 text-sm font-light');
+  let color: PopoverProps['color'] = $state('default');
+  let popoverClass: PopoverProps['class'] = $state('w-64 text-sm font-light');
   const changeClass = () => {
     popoverClass = popoverClass === 'w-64 text-sm font-light' ? 'w-64 text-sm font-light p-2' : 'w-64 text-sm font-light';
   };
@@ -152,7 +152,7 @@
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="alert_reactive" bind:group={color} color={colorOption as Popover['color']} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="alert_reactive" bind:group={color} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">

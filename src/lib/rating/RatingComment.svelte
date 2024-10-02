@@ -63,9 +63,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop evaluation
-@prop helpfullink
-@prop abuselink
-@prop comment
+@props: children: any;
+@props:evaluation: any;
+@props:helpfullink: any;
+@props:abuselink: any;
+@props:comment: any;
 -->

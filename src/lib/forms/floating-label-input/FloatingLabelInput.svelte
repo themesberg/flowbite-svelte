@@ -19,15 +19,14 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop id = idGenerator()
-@prop value = $bindable()
-@prop aria_describedby
-@prop style = 'standard'
-@prop size = 'default'
-@prop color = 'default'
-@prop divClass
-@prop inputClass
-@prop labelClass
-@prop ...restProps
+@props: children: any;
+@props:id: any = idGenerator();
+@props:value: any = $bindable();
+@props:aria_describedby: any;
+@props:style: any = 'standard';
+@props:size: any = 'default';
+@props:color: any = 'default';
+@props:divClass: any;
+@props:inputClass: any;
+@props:labelClass: any;
 -->

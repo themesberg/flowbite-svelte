@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Select, Label, Radio, Helper, uiHelpers, Button } from '$lib';
+  import { Select, Label, Radio, Helper, uiHelpers, Button, type SelectProps } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -52,16 +52,18 @@
 
   let dropdown = uiHelpers();
   let dropdownStatus = $state(false);
-  let closeDropdown = dropdown.close;
+
   $effect(() => {
     // this can be done adding nav.navStatus directly to DOM element
     // without using effect
     dropdownStatus = dropdown.isOpen;
   });
 
-  const sizes = ['sm', 'md', 'lg'];
-  let selectSize: Select['size'] = $state('md');
-  const sizeDisplay: Record<Select['size'], string> = {
+  const sizes: SelectProps['size'][] = ['sm', 'md', 'lg'];
+  // let selectSize: NonNullable<SelectProps['size']> = $state('md');
+  let selectSize: SelectProps['size'] = $state('md');
+
+  const sizeDisplay = {
     sm: 'Small',
     md: 'Medium',
     lg: 'Large'
@@ -128,7 +130,9 @@
   <div class="h-32">
     <Label for="select-sm" class="mb-4">
       {#if disabled}Disabled{/if}
-      {sizeDisplay[selectSize]} select
+      {#if selectSize}
+        {sizeDisplay[selectSize]} select
+      {/if}
     </Label>
     <Select id="select-sm" size={selectSize} items={countries} {underline} {disabled} bind:value={selected} class="mb-2" />
     {#if bindValue}

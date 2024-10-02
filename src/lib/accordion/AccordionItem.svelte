@@ -63,14 +63,14 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@prop children
-@prop header
-@prop arrowup
-@prop arrowdown
-@prop open = $bindable(false)
-@prop activeClass
-@prop inactiveClass
-@prop transition = slide
-@prop params
-@prop class: className
+@props: children: any;
+@props:header: any;
+@props:arrowup: any;
+@props:arrowdown: any;
+@props:open: any = $bindable(false);
+@props:activeClass: any;
+@props:inactiveClass: any;
+@props:transition: any = slide;
+@props:params: any;
+@props:class: any;
 -->

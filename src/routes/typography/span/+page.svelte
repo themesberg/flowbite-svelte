@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { P, Span, span, Button, Label, Radio, Input, CloseButton, uiHelpers } from '$lib';
+  import { P, Span, span, Button, Label, Radio, Input, CloseButton, uiHelpers, type SpanProps, type RadioColorType } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -18,11 +18,11 @@
 
   let { editableContent = $bindable('span content') } = $props();
 
-  let spanItalic: Span['italic'] = $state(false);
+  let spanItalic: SpanProps['italic'] = $state(false);
   const changeItalic = () => {
     spanItalic = !spanItalic;
   };
-  let spanUnderline: Span['underline'] = $state(false);
+  let spanUnderline: SpanProps['underline'] = $state(false);
   const changeUnderline = () => {
     spanUnderline = !spanUnderline;
     spanDecorationColor = 'none';
@@ -30,7 +30,7 @@
     spanDecoration = 'none';
     spanLinethrough = false;
   };
-  let spanLinethrough: Span['linethrough'] = $state(false);
+  let spanLinethrough: SpanProps['linethrough'] = $state(false);
   const changeLinethrough = () => {
     spanLinethrough = !spanLinethrough;
     spanUnderline = false;
@@ -39,19 +39,19 @@
     spanDecoration = 'none';
     spanGradient = 'none';
   };
-  let spanUppercase: Span['uppercase'] = $state(false);
+  let spanUppercase: SpanProps['uppercase'] = $state(false);
   const changeUppercase = () => {
     spanUppercase = !spanUppercase;
   };
   const gradients = Object.keys(span.variants.gradient);
-  let spanGradient: Span['gradient'] = $state('none');
-  let spanHighlight: Span['highlight'] = $state('none');
+  let spanGradient: SpanProps['gradient'] = $state('none');
+  let spanHighlight: SpanProps['highlight'] = $state('none');
   const highlights = Object.keys(span.variants.highlight);
-  let spanDecoration: Span['decoration'] = $state('none');
+  let spanDecoration: SpanProps['decoration'] = $state('none');
   const decorations = Object.keys(span.variants.decoration);
-  let spanDecorationColor: Span['decorationColor'] = $state('none');
+  let spanDecorationColor: SpanProps['decorationColor'] = $state('none');
   const decorationColors = Object.keys(span.variants.decorationColor);
-  let spanDecorationThickness: Span['decorationThickness'] = $state('1');
+  let spanDecorationThickness: SpanProps['decorationThickness'] = $state('0');
   const docrationThickness = Object.keys(span.variants.decorationThickness);
   let opacityClass = $state('');
   const changeOpacity = () => {
@@ -126,7 +126,7 @@
           spanGradient = 'none';
           opacityClass = '';
         }}
-        color={highlight as Span['color']}
+        color={highlight as RadioColorType}
         value={highlight}
       >
         {highlight}
@@ -167,7 +167,7 @@
           spanUnderline = false;
           spanLinethrough = false;
         }}
-        color={color as Span['decorationColor']}
+        color={color as RadioColorType}
         value={color}
       >
         {color}
