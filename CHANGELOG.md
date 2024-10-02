@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.9.17
+
+### Patch Changes
+
+- types: update after adding eslint.config.js and pnpm check ([`4c84a8baa6d6a7f9421501d1630ec4dedf4c3c88`](https://github.com/shinokada/svelte-5-ui-lib/commit/4c84a8baa6d6a7f9421501d1630ec4dedf4c3c88))
+  docs: lib-helpers update and create compoent doc and component data
+
 ## 0.9.16
 
 ### Patch Changes
