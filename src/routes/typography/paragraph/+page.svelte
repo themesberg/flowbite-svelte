@@ -14,7 +14,7 @@
     query: '?raw',
     import: 'default',
     eager: true
-  });
+  }) as Record<string, string>;
 
   const sizes = Object.keys(paragraph.variants.size);
   let pSize: ParagraphProps['size'] = $state('base');

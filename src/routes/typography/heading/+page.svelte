@@ -17,7 +17,7 @@
     query: '?raw',
     import: 'default',
     eager: true
-  });
+  }) as Record<string, string>;
 
   const exampleArr = [
     { name: 'Default', component: ExampleComponents.Default },
@@ -114,9 +114,7 @@
       <Radio labelClass="w-28 my-1" onclick={() => (expand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
-  <div class="md:h-72">
-    <SelectedComponent />
-  </div>
+  <SelectedComponent />
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight replaceLib {handleExpandClick} {expand} {showExpandButton} code={exampleModules[`./examples/${svelteCode}`] as string} />
   {/snippet}

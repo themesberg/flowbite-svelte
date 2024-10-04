@@ -73,7 +73,9 @@
     query: '?raw',
     import: 'default',
     eager: true
-  });
+  }) as Record<string, string>;
+
+  console.log('typeof exampleModules', exampleModules);
 
   const exampleArr = [
     { name: 'Description list', component: ExampleComponents.DescriptionList },
@@ -169,9 +171,7 @@
       <Radio labelClass="w-36 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}
   </div>
-  <div class="md:h-[350px]">
-    <SelectedComponent />
-  </div>
+  <SelectedComponent />
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${svelteCode}`] as string} />
   {/snippet}

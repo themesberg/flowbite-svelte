@@ -25,7 +25,7 @@
     query: '?raw',
     import: 'default',
     eager: true
-  });
+  }) as Record<string, string>;
 
   const exampleArr = [
     { name: 'Avatar text', component: ExampleComponents.AvatarText },

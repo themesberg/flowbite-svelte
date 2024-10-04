@@ -17,7 +17,7 @@
     query: '?raw',
     import: 'default',
     eager: true
-  });
+  }) as Record<string, string>;
 
   const exampleArr = [
     { name: 'Legend', component: ExampleComponents.Legend },

@@ -14,7 +14,7 @@
     query: '?raw',
     import: 'default',
     eager: true
-  });
+  }) as Record<string, string>;
 
   let { editableContent = $bindable('span content') } = $props();
 

@@ -18,7 +18,7 @@
     query: '?raw',
     import: 'default',
     eager: true
-  });
+  }) as Record<string, string>;
 
   const exampleArr = [
     { name: 'Button with Icon', component: ExampleComponents.ButtonWithIcon },

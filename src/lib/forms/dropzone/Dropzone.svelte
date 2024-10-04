@@ -4,8 +4,12 @@
 
   type HTMLInputElementWithFiles = HTMLInputElement & { files: FileList | null };
 
-
-  let { children, files = $bindable<FileList | null>(), class: className, ...restProps }: Props & {
+  let {
+    children,
+    files = $bindable<FileList | null>(),
+    class: className,
+    ...restProps
+  }: Props & {
     ondrop?: DragEventHandler<HTMLButtonElement>;
     ondragover?: DragEventHandler<HTMLButtonElement>;
     onchange?: ChangeEventHandler<HTMLInputElementWithFiles>;
@@ -26,21 +30,21 @@
     input.click();
   }
 
-  const onDrop: DragEventHandler<HTMLButtonElement> = function(this: Window, event) {
+  const onDrop: DragEventHandler<HTMLButtonElement> = function (this: Window, event) {
     event.preventDefault();
     if (ondrop) {
       ondrop.call(this, event);
     }
   };
 
-  const onDragOver: DragEventHandler<HTMLButtonElement> = function(this: Window, event) {
+  const onDragOver: DragEventHandler<HTMLButtonElement> = function (this: Window, event) {
     event.preventDefault();
     if (ondragover) {
       ondragover.call(this, event);
     }
   };
 
-  const onChange: ChangeEventHandler<HTMLInputElementWithFiles> = function(this: Window, event) {
+  const onChange: ChangeEventHandler<HTMLInputElementWithFiles> = function (this: Window, event) {
     if (onchange) {
       onchange.call(this, event);
     }

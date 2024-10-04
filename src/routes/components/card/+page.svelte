@@ -18,7 +18,7 @@
     query: '?raw',
     import: 'default',
     eager: true
-  });
+  }) as Record<string, string>;
 
   const exampleArr = [
     { name: 'Custom size', component: ExampleComponents.CustomSize },

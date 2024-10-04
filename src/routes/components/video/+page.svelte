@@ -11,7 +11,7 @@
     query: '?raw',
     import: 'default',
     eager: true
-  });
+  }) as Record<string, string>;
 
   let controls = $state(true);
   const changeControls = () => {

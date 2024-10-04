@@ -31,7 +31,7 @@
     query: '?raw',
     import: 'default',
     eager: true
-  });
+  }) as Record<string, string>;
 
   const exampleArr = [
     { name: 'Active link', component: ExampleComponents.ActiveLink },

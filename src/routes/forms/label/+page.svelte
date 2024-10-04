@@ -12,7 +12,7 @@
     query: '?raw',
     import: 'default',
     eager: true
-  });
+  }) as Record<string, string>;
 
   const colors = Object.keys(label.variants.color);
   let labelColor: ColorName = $state('gray');

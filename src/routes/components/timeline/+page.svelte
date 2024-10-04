@@ -23,7 +23,7 @@
     query: '?raw',
     import: 'default',
     eager: true
-  });
+  }) as Record<string, string>;
 
   const exampleArr = [
     { name: 'Default timeline', component: ExampleComponents.DefaultTimeline },

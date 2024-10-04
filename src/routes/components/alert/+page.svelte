@@ -22,7 +22,7 @@
     query: '?raw',
     import: 'default',
     eager: true
-  });
+  }) as Record<string, string>;
 
   const exampleArr = [
     { name: 'Alert with list', component: ExampleComponents.AlertWithList },

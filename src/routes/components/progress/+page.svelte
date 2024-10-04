@@ -12,7 +12,7 @@
     query: '?raw',
     import: 'default',
     eager: true
-  });
+  }) as Record<string, string>;
 
   let progress = $state('45');
   const progressSizes = [

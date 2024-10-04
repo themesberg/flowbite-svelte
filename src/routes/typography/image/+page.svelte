@@ -17,7 +17,7 @@
     query: '?raw',
     import: 'default',
     eager: true
-  });
+  }) as Record<string, string>;
 
   const exampleArr = [{ name: 'Retina ready', component: ExampleComponents.RetinaReady }];
   let selectedExample: string | number = $state(exampleArr[0].name);

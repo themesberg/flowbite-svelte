@@ -12,7 +12,7 @@
     query: '?raw',
     import: 'default',
     eager: true
-  });
+  }) as Record<string, string>;
   // size
   const skeletonSizes = Object.keys(skeleton.variants.size) as SkeletonProps['size'][];
   let skeletonSize: SkeletonProps['size'] = $state('sm');

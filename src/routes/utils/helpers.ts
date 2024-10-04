@@ -49,43 +49,28 @@ export function toUpperSnakeCase(text: string): string {
   return text.replace(/[\s-]/g, '_').toUpperCase();
 }
 
-export const isOverflow = (markdown: string, modules: Record<string, any>): boolean => {
-  const markdownLines = modules[`./md/${markdown}`];
-  const lines = markdownLines.split('\n');
-  return lines.length > 7;
-};
+// export const isOverflow = (markdown: string, modules: Record<string, any>): boolean => {
+//   const markdownLines = modules[`./md/${markdown}`];
+//   const lines = markdownLines.split('\n');
+//   return lines.length > 7;
+// };
 
 export const isGeneratedCodeOverflow = (code: string): boolean => {
   const lines = code.split('\n');
   return lines.length > 7;
 };
 
-export const isSvelteOverflow = (markdown: string, exampleModules: Record<string, any>): boolean => {
-  const markdownLines = exampleModules[`./examples/${markdown}`];
-  const lines = markdownLines.split('\n');
-  return lines.length > 7;
-};
+export const isSvelteOverflow = (sveltefile: string, exampleModules: Record<string, string>): boolean => {
+  const filePath = `./examples/${sveltefile}`;
+  const fileContent = exampleModules[filePath];
 
-export const isContentOverflow = (
-  filename: string,
-  modules: Record<string, any>,
-  options: {
-    lineLimit?: number;
-    basePath?: string;
-  } = {}
-): boolean => {
-  const { lineLimit = 7, basePath = './md/' } = options;
-
-  const fullPath = `${basePath}${filename}`;
-  const content = modules[fullPath];
-
-  if (!content) {
-    console.warn(`File not found: ${fullPath}`);
+  if (typeof fileContent !== 'string') {
+    console.warn(`File content for ${filePath} is not found or not a string`);
     return false;
   }
 
-  const lines = content.split('\n');
-  return lines.length > lineLimit;
+  const lines = fileContent.split('\n');
+  return lines.length > 7;
 };
 
 import { fileList } from '../../generatedFileList';
@@ -123,12 +108,3 @@ export function getExampleFileName(selectedExample: string, exampleArr: { name: 
 
   return `${result}.svelte`;
 }
-
-// export const renderExampleComponent = (selectedExample: string, ExampleComponents: any) => {
-//   const pascalCaseExample = selectedExample
-//     .split(' ')
-//     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-//     .join('');
-
-//   return ExampleComponents[pascalCaseExample];
-// };

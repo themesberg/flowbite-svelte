@@ -13,7 +13,7 @@
     query: '?raw',
     import: 'default',
     eager: true
-  });
+  }) as Record<string, string>;
 
   let interactiveValue = $state(5);
   let stepValue = $state(1);

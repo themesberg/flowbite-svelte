@@ -13,7 +13,7 @@
     query: '?raw',
     import: 'default',
     eager: true
-  });
+  }) as Record<string, string>;
 
   const styles = ['standard', 'filled', 'outlined'];
   let style: FloatingLabelInputProps['style'] = $state('standard');

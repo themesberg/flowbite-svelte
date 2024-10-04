@@ -12,7 +12,7 @@
     query: '?raw',
     import: 'default',
     eager: true
-  });
+  }) as Record<string, string>;
 
   const types = ['default', 'trimmed', 'icon', 'text', 'shape'];
   let selectedStyle: string | number = $state('default');
