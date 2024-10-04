@@ -69,7 +69,7 @@
 <div id="compoData">
   {#each compoData as compo}
   <h4 class="text-lg">{compo.data.default.name}</h4>
-    <Tabs style="underline" class="list-none">
+    <Tabs style="underline" class="list-none flex">
       {#if compo.data.default.props.length > 0}
       <TabItem open>
         <div slot="title" class="flex items-center gap-2">
