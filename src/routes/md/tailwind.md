@@ -1,2 +1,1 @@
-npx svelte-add@latest tailwindcss
-pnpm i
+npx svelte-add@latest tailwindcss pnpm i

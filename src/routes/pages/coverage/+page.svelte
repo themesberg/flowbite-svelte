@@ -182,8 +182,8 @@
       // notes: 'Variants, reactive examples'
     },
     fileInput: {
-      checked: true
-      // problems: 'Dropzone'
+      checked: true,
+      problems: 'Dropzone example'
       // notes: 'Variants, reactive examples'
     },
     floatingLabel: {

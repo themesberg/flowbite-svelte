@@ -5,7 +5,6 @@ import type { HTMLInputAttributes } from 'svelte/elements';
 
 interface DropzoneProps extends HTMLInputAttributes {
   children: Snippet;
-  value?: string;
   files?: FileList | null;
 }
 

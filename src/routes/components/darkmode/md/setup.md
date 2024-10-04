@@ -1,8 +1,4 @@
-// tailwind.config.cjs
-const config = {
-darkMode: 'class'
-// ...
-};
+// tailwind.config.cjs const config = { darkMode: 'class' // ... };
 
 // src/app.html
 

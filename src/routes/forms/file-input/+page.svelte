@@ -32,7 +32,7 @@
   type StringType = string;
   let files: FileList | undefined = $state();
   const sizes = Object.keys(fileupload.variants.size);
-  let size: FileuploadProps<StringType>['size'] = $state('md');
+  let size: FileuploadProps['size'] = $state('md');
   let helperState = $state(false);
   const changeHelperState = () => {
     helperState = !helperState;

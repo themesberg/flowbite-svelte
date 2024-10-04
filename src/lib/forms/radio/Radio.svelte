@@ -1,9 +1,9 @@
-<script lang="ts">
+<script lang="ts" generics="T">
   import { getContext } from 'svelte';
   import Label from '../label/Label.svelte';
   import { type RadioProps as Props, radio } from '.';
-
-  let { children, aria_describedby, labelClass, color = 'primary', group = $bindable<unknown>(), value = $bindable<unknown>(), inputClass, ...restProps }: Props<unknown> = $props();
+    
+  let { children, aria_describedby, labelClass, color = 'primary', group = $bindable<T>(), value = $bindable<T>(), inputClass, ...restProps }: Props<T> = $props();
 
   const { input, label } = $derived(radio({ color, tinted: !!getContext('background') }));
 </script>

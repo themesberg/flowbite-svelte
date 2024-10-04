@@ -1,9 +1,9 @@
 <script lang="ts">
   import type { SizeType } from '$lib/types';
   import { getContext } from 'svelte';
-  import { type InputProps as Props, input, clampSize } from '.';
+  import { type InputProps as Props, input, clampSize, type InputValue } from '.';
 
-  let { children, left, right, value = $bindable<unknown>(), size, color = 'default', class: className, classLeft, classRight, ...restProps }: Props<unknown> = $props();
+  let { children, left, right, value = $bindable<InputValue>(), size, color = 'default', class: className, classLeft, classRight, ...restProps }: Props<InputValue> = $props();
 
   // tinted if put in component having its own background
   let background: boolean = getContext('background');

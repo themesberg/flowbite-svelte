@@ -4,8 +4,7 @@
 
 ### Patch Changes
 
-- types: update after adding eslint.config.js and pnpm check ([`4c84a8baa6d6a7f9421501d1630ec4dedf4c3c88`](https://github.com/shinokada/svelte-5-ui-lib/commit/4c84a8baa6d6a7f9421501d1630ec4dedf4c3c88))
-  docs: lib-helpers update and create compoent doc and component data
+- types: update after adding eslint.config.js and pnpm check ([`4c84a8baa6d6a7f9421501d1630ec4dedf4c3c88`](https://github.com/shinokada/svelte-5-ui-lib/commit/4c84a8baa6d6a7f9421501d1630ec4dedf4c3c88)) docs: lib-helpers update and create compoent doc and component data
 
 ## 0.9.16
 
@@ -271,16 +270,13 @@
 
 ### Patch Changes
 
-- fix: add </div> for closing tag for svelte@5.0.0-next.108 ([`6b8a82f0b22f7767eb2f07ff4ccaba8fe584189b`](https://github.com/shinokada/svelte-5-ui-lib/commit/6b8a82f0b22f7767eb2f07ff4ccaba8fe584189b))
-  tests: add components.test.ts and home.test.ts
-  fix: update meta tags
+- fix: add </div> for closing tag for svelte@5.0.0-next.108 ([`6b8a82f0b22f7767eb2f07ff4ccaba8fe584189b`](https://github.com/shinokada/svelte-5-ui-lib/commit/6b8a82f0b22f7767eb2f07ff4ccaba8fe584189b)) tests: add components.test.ts and home.test.ts fix: update meta tags
 
 ## 0.4.9
 
 ### Patch Changes
 
-- feat: dropdown components update ([`b3d65dd9b7ff0de0bc62ac7bdc7a9480449c936f`](https://github.com/shinokada/svelte-5-ui-lib/commit/b3d65dd9b7ff0de0bc62ac7bdc7a9480449c936f))
-  docs: dropdown page update
+- feat: dropdown components update ([`b3d65dd9b7ff0de0bc62ac7bdc7a9480449c936f`](https://github.com/shinokada/svelte-5-ui-lib/commit/b3d65dd9b7ff0de0bc62ac7bdc7a9480449c936f)) docs: dropdown page update
 
 ## 0.4.8
 
@@ -346,18 +342,13 @@
 
 ### Patch Changes
 
-- fix: add default values to component docs ([`273e64b520543375ccd10761a5103ea4e81cae26`](https://github.com/shinokada/svelte-5-ui-lib/commit/273e64b520543375ccd10761a5103ea4e81cae26))
-  update: svelte next-80
-  fix: remove option(?) from some children
-  docs: sidebar menu in Nav.svelte to keep open when $page.url.pathname has the directory
-  fix: add if to Video.svelte since it is optional
+- fix: add default values to component docs ([`273e64b520543375ccd10761a5103ea4e81cae26`](https://github.com/shinokada/svelte-5-ui-lib/commit/273e64b520543375ccd10761a5103ea4e81cae26)) update: svelte next-80 fix: remove option(?) from some children docs: sidebar menu in Nav.svelte to keep open when $page.url.pathname has the directory fix: add if to Video.svelte since it is optional
 
 ## 0.3.6
 
 ### Patch Changes
 
-- fix: add svelte type Snippet to children and other snippets ([`4624147a35d8bcde511a57f31666390cce18d084`](https://github.com/shinokada/svelte-5-ui-lib/commit/4624147a35d8bcde511a57f31666390cce18d084))
-  fix: add if-statement for children
+- fix: add svelte type Snippet to children and other snippets ([`4624147a35d8bcde511a57f31666390cce18d084`](https://github.com/shinokada/svelte-5-ui-lib/commit/4624147a35d8bcde511a57f31666390cce18d084)) fix: add if-statement for children
 
 ## 0.3.5
 
@@ -375,15 +366,13 @@
 
 ### Patch Changes
 
-- fix: Card component fix href prop ([`b4dc6bd0b3801b8857c81734d77b38bbdae3623c`](https://github.com/shinokada/svelte-5-ui-lib/commit/b4dc6bd0b3801b8857c81734d77b38bbdae3623c))
-  fix: Card component add customSize prop
+- fix: Card component fix href prop ([`b4dc6bd0b3801b8857c81734d77b38bbdae3623c`](https://github.com/shinokada/svelte-5-ui-lib/commit/b4dc6bd0b3801b8857c81734d77b38bbdae3623c)) fix: Card component add customSize prop
 
 ## 0.3.2
 
 ### Patch Changes
 
-- fix: add lang="ts" to context="module" ([`3081cb37fc5d78d5f8bbcb6cea7beb1aacf23ada`](https://github.com/shinokada/svelte-5-ui-lib/commit/3081cb37fc5d78d5f8bbcb6cea7beb1aacf23ada))
-  fix: add $state() to let variables
+- fix: add lang="ts" to context="module" ([`3081cb37fc5d78d5f8bbcb6cea7beb1aacf23ada`](https://github.com/shinokada/svelte-5-ui-lib/commit/3081cb37fc5d78d5f8bbcb6cea7beb1aacf23ada)) fix: add $state() to let variables
 
 ## 0.3.1
 
@@ -424,8 +413,7 @@
 
 - fix: update icon names ([`ee34fc70dc928c5fec9b2d892f49d930a54a1ab0`](https://github.com/shinokada/svelte-5-ui-lib/commit/ee34fc70dc928c5fec9b2d892f49d930a54a1ab0))
 
-- add runes: true to svelte.config.js ([`ad4dfa7c918613819617f3e75ddf85a3fceaa312`](https://github.com/shinokada/svelte-5-ui-lib/commit/ad4dfa7c918613819617f3e75ddf85a3fceaa312))
-  update flowbite-svelte-icons@2.0.0-next.1
+- add runes: true to svelte.config.js ([`ad4dfa7c918613819617f3e75ddf85a3fceaa312`](https://github.com/shinokada/svelte-5-ui-lib/commit/ad4dfa7c918613819617f3e75ddf85a3fceaa312)) update flowbite-svelte-icons@2.0.0-next.1
 
 ## 0.2.45
 
@@ -437,8 +425,7 @@
 
 ### Patch Changes
 
-- fix: add type option ? to closeNav in NavBrand
-  docs: remove closeNav from NavLi and NavBrand in md files
+- fix: add type option ? to closeNav in NavBrand docs: remove closeNav from NavLi and NavBrand in md files
 
 ## 0.2.43
 
@@ -450,8 +437,7 @@
 
 ### Patch Changes
 
-- fix: NavLi color updates
-  chore: lib-helpers and format
+- fix: NavLi color updates chore: lib-helpers and format
 
 ## 0.2.41
 
@@ -459,17 +445,13 @@
 
 - docs: add GitHub icon, add About page, update vite.config.ts and app.d.ts to get dependencies version ([`8c8d016bff19752808fef7fd9feeade57e0a5021`](https://github.com/shinokada/svelte-5-ui-lib/commit/8c8d016bff19752808fef7fd9feeade57e0a5021))
 
-- fix: BottomNav z-index to 30 ([`9a49998b8ada7fe45b969a4d8e2b3a127dbebac5`](https://github.com/shinokada/svelte-5-ui-lib/commit/9a49998b8ada7fe45b969a4d8e2b3a127dbebac5))
-  docs: header in Nav z-index to max 50
+- fix: BottomNav z-index to 30 ([`9a49998b8ada7fe45b969a4d8e2b3a127dbebac5`](https://github.com/shinokada/svelte-5-ui-lib/commit/9a49998b8ada7fe45b969a4d8e2b3a127dbebac5)) docs: header in Nav z-index to max 50
 
 ## 0.2.40
 
 ### Patch Changes
 
-- fix: change tab indentation to spaces
-  docs: update sidebar page
-  fix: add 128 so that h-128 works to tailwind.config.cjs
-  fix: add utils/PlusPlaceholder compo for sidebar page
+- fix: change tab indentation to spaces docs: update sidebar page fix: add 128 so that h-128 works to tailwind.config.cjs fix: add utils/PlusPlaceholder compo for sidebar page
 
 ## 0.2.39
 

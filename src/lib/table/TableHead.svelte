@@ -1,6 +1,6 @@
 <script lang="ts">
   import { getContext } from 'svelte';
-  import { TableHeadCell, type TableHeadProps as Props, tablehead, type TableCtxType } from '.';
+  import { TableHeadCell, type TableHeadProps as Props, tablehead, type TableCtxType, type HeadItemType } from '.';
 
   let { children, headerSlot, color, striped, hoverable, noborder, class: className, headItems, defaultRow = true, ...restProps }: Props = $props();
 
@@ -11,6 +11,13 @@
   let compoNoborder = $derived(noborder ? noborder : tableCtx.noborder || false);
 
   const base = $derived(tablehead({ color: compoColor, noborder: compoNoborder, striped: compoStriped, className }));
+
+  function getItemText(item: HeadItemType): string {
+    if (typeof item === 'object' && 'text' in item) {
+      return item.text;
+    }
+    return String(item);
+  }
 </script>
 
 <thead {...restProps} class={base}>
@@ -19,7 +26,9 @@
       {@render headerSlot()}
     {/if}
     {#each headItems as item}
-      <TableHeadCell>{item}</TableHeadCell>
+      <TableHeadCell>
+        {getItemText(item)}
+      </TableHeadCell>
     {/each}
   {:else if children}
     {#if defaultRow}

@@ -1,7 +1,15 @@
 <script lang="ts">
+  import type { DragEventHandler, ChangeEventHandler } from 'svelte/elements';
   import { type DropzoneProps as Props, dropzone } from '.';
 
-  let { children, value = $bindable<string | undefined>(), files = $bindable<FileList | null>(), class: className, ...restProps }: Props = $props();
+  type HTMLInputElementWithFiles = HTMLInputElement & { files: FileList | null };
+
+
+  let { children, files = $bindable<FileList | null>(), class: className, ...restProps }: Props & {
+    ondrop?: DragEventHandler<HTMLButtonElement>;
+    ondragover?: DragEventHandler<HTMLButtonElement>;
+    onchange?: ChangeEventHandler<HTMLInputElementWithFiles>;
+  } = $props();
 
   const base = $derived(dropzone({ className }));
   let input: HTMLInputElement;
@@ -17,13 +25,33 @@
     event.preventDefault();
     input.click();
   }
+
+  const onDrop: DragEventHandler<HTMLButtonElement> = function(this: Window, event) {
+    event.preventDefault();
+    if (ondrop) {
+      ondrop.call(this, event);
+    }
+  };
+
+  const onDragOver: DragEventHandler<HTMLButtonElement> = function(this: Window, event) {
+    event.preventDefault();
+    if (ondragover) {
+      ondragover.call(this, event);
+    }
+  };
+
+  const onChange: ChangeEventHandler<HTMLInputElementWithFiles> = function(this: Window, event) {
+    if (onchange) {
+      onchange.call(this, event);
+    }
+  };
 </script>
 
-<button class={base} onkeydown={keydown} onclick={onClick} type="button">
+<button class={base} onkeydown={keydown} onclick={onClick} ondrop={onDrop} ondragover={onDragOver} type="button">
   {@render children()}
 </button>
 <label class="hidden">
-  <input {...restProps} bind:value bind:files bind:this={input} type="file" />
+  <input {...restProps} bind:files bind:this={input} onchange={onChange} type="file" />
 </label>
 
 <!--

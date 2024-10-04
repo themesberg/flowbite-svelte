@@ -17,11 +17,17 @@ type TableCtxType = {
   color?: TableColrType;
 };
 
+// prettier-ignore
+type HeadItemType = string | number | {
+  text: string;
+  [key: string]: string | number | boolean;
+};
+
 interface TableHeadProps extends HTMLAttributes<HTMLTableSectionElement> {
   children?: Snippet;
   headerSlot?: Snippet;
   defaultRow?: boolean;
-  headItems?: any[];
+  headItems?: HeadItemType[];
   class?: string;
   striped?: boolean;
   hoverable?: boolean;
@@ -30,6 +36,8 @@ interface TableHeadProps extends HTMLAttributes<HTMLTableSectionElement> {
 }
 
 type TableColrType = VariantProps<typeof table>['color'];
+type TableItemType = Record<string, string | number | boolean>;
+
 interface TableProps extends HTMLTableAttributes {
   children?: Snippet;
   footerSlot?: Snippet;
@@ -41,7 +49,7 @@ interface TableProps extends HTMLTableAttributes {
   shadow?: boolean;
   color?: TableColrType;
   customeColor?: string;
-  tableItems?: any[];
+  tableItems?: TableItemType[];
 }
 
 interface TableBodyRowProps extends HTMLAttributes<HTMLTableRowElement> {
@@ -61,10 +69,12 @@ interface TableBodyCellProps extends HTMLTdAttributes {
   onclick?: () => void;
 }
 
+type CellValue = string | number | boolean | null | undefined;
+type BodyRow = CellValue[] | Record<string, CellValue>;
 interface TableBodyProps extends HTMLAttributes<HTMLTableSectionElement> {
   children?: Snippet;
   class?: string;
-  bodyItems?: any[];
+  bodyItems?: BodyRow[];
 }
 
 interface TableHeadCellProps extends HTMLThAttributes {
@@ -97,4 +107,4 @@ interface TableSearchProps extends HTMLTableAttributes {
   placeholder?: string;
 }
 
-export { Table, table, TableBody, TableBodyCell, tablebodycell, TableBodyRow, tablebodyrow, TableHeadCell, tableheadcell, TableHead, tablehead, TableSearch, type TableProps, type TableCtxType, type TableHeadProps, type TableColrType, type TableBodyRowProps, type TableBodyCellProps, type TableBodyProps, type TableHeadCellProps, type TableSearchProps, type TableSearchType };
+export { Table, table, TableBody, TableBodyCell, tablebodycell, TableBodyRow, tablebodyrow, TableHeadCell, tableheadcell, TableHead, tablehead, TableSearch, type TableProps, type TableCtxType, type TableHeadProps, type HeadItemType, type TableColrType, type TableBodyRowProps, type TableBodyCellProps, type BodyRow, type CellValue, type TableBodyProps, type TableHeadCellProps, type TableSearchProps, type TableSearchType, type TableItemType };

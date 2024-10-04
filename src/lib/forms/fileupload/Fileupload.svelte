@@ -1,7 +1,7 @@
 <script lang="ts">
   import { type FileuploadProps as Props, fileupload } from '.';
 
-  let { files = $bindable<FileList | undefined>(), size = 'md', class: className, ...restProps }: Props<unknown> = $props();
+  let { files = $bindable<FileList | undefined>(), size = 'md', class: className, ...restProps }: Props = $props();
   const base = $derived(fileupload({ size, class: className }));
 </script>
 
