@@ -4,8 +4,8 @@
   import Input from './Input.svelte';
   
   interface $$Props extends ComponentProps<Input> {
-    value: string;
-    files: FileList | undefined;
+    value?: string;
+    files?: FileList | undefined;
     inputClass?: string;
   }
   export let value: $$Props['value'] = '';
