@@ -44,8 +44,6 @@
       let props = [];
       if (tabStyle !== 'none') props.push(` style="${tabStyle}"`);
 
-      // const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
-
       return `<Tab${props}>
   <TabItem open title="Profile">
       <p class="text-sm text-gray-500 dark:text-gray-400">
@@ -153,7 +151,7 @@
     </TabItem>
   </Tabs>
   <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Color</Label>
+    <Label class="mb-4 w-full font-bold">Style</Label>
     {#each tabStyles as option}
       {#if option !== 'full'}
         <Radio labelClass="w-24 my-1" name="table_color" bind:group={tabStyle} value={option}>{option}</Radio>

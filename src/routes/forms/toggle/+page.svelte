@@ -19,7 +19,10 @@
     eager: true
   }) as Record<string, string>;
 
-  const exampleArr = [{ name: 'Custom size', component: ExampleComponents.CustomSize }];
+  const exampleArr = [
+    { name: 'Custom size', component: ExampleComponents.CustomSize },
+    { name: 'Loading', component: ExampleComponents.Loading },
+  ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 

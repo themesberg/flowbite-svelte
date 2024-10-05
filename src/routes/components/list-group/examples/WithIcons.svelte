@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Listgroup } from '$lib';
+  import { Listgroup, type ListGroupItemType } from '$lib';
   import { AdjustmentsHorizontalSolid, DownloadSolid, MessagesSolid, UserCircleSolid } from 'flowbite-svelte-icons';
-  let iconList = [
+  let iconList: ListGroupItemType = [
     { name: 'Profile', Icon: UserCircleSolid, mycustomfield: 'data1' },
     {
       name: 'Settings',

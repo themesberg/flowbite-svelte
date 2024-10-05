@@ -33,12 +33,15 @@ export type PweightType = 'thin' | 'extralight' | 'light' | 'normal' | 'medium' 
 
 export type BlockQuoteType = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | '8xl' | '9xl';
 
+import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
+
 export interface ListGroupItemType {
   index?: number;
   current?: boolean;
   disabled?: boolean;
   href?: string;
-  [key: string]: string | number | boolean | undefined | (() => void);
+  attrs?: HTMLAnchorAttributes | HTMLButtonAttributes;
+  [propName: string]: any;
 }
 
 export type FormColorType = 'blue' | 'red' | 'green' | 'purple' | 'teal' | 'yellow' | 'orange' | 'primary' | 'secondary';
