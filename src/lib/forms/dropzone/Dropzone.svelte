@@ -62,8 +62,5 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:value: any = $bindable<string | undefined>();
-@props:files: any = $bindable<FileList | null>();
-@props:class: any;
+@props: 
 -->

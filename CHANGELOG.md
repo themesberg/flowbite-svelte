@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.18
+
+### Patch Changes
+
+- types: update due to lint errors ([`226d17b08bbc019355ea7a6771551065458bb0f5`](https://github.com/shinokada/svelte-5-ui-lib/commit/226d17b08bbc019355ea7a6771551065458bb0f5))
+
 ## 0.9.17
 
 ### Patch Changes

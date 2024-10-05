@@ -26,11 +26,5 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:items: any;
-@props:value: any = $bindable();
-@props:underline: any;
-@props:size: any = 'md';
-@props:class: any;
-@props:placeholder: any = 'Choose option ...';
+@props: 
 -->
