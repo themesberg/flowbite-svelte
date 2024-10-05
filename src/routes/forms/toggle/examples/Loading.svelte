@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { Toggle } from "$lib";
+  import { Toggle } from '$lib';
   let isLoading = $state(true);
-	setTimeout(() => {
-      isLoading = false;
+  setTimeout(() => {
+    isLoading = false;
   }, 3000);
 </script>
 

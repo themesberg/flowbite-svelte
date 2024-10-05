@@ -3,28 +3,30 @@ import type { Snippet } from 'svelte';
 import type { HTMLSelectAttributes, HTMLAttributes } from 'svelte/elements';
 import { select } from './theme';
 
+type SelectSize = 'sm' | 'md' | 'lg';
+
 type SelectOptionType<T> = {
   name: string | number;
   value: T;
 };
 
-interface SelectProps extends Omit<HTMLSelectAttributes, 'size'> {
+interface SelectProps<T> extends Omit<HTMLSelectAttributes, 'size'> {
   children?: Snippet;
-  items?: SelectOptionType<any>[];
-  value?: any;
+  items?: SelectOptionType<T>[];
+  value?: T;
   underline?: boolean;
-  size?: 'sm' | 'md' | 'lg';
+  size?: SelectSize;
   placeholder?: string;
 }
 
 interface MultiSelectProps<T> extends HTMLAttributes<HTMLDivElement> {
   children?: Snippet;
   items?: SelectOptionType<T>[];
-  value?: (string | number)[];
-  size?: 'sm' | 'md' | 'lg';
+  value?: T[];
+  size?: SelectSize;
   dropdownClass?: string;
   placeholder?: string;
   change?: (event: Event) => void;
 }
 
-export { Select, select, type SelectProps, type SelectOptionType, type MultiSelectProps };
+export { Select, select, type SelectProps, type SelectOptionType, type MultiSelectProps, type SelectSize };

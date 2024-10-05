@@ -25,44 +25,34 @@ export interface drawerTransitionParamTypes {
 
 export type FormSizeType = 'sm' | 'md' | 'lg';
 
-export type drawerTransitionTypes = 'fade' | 'fly' | 'slide' | 'blur' | 'in:fly' | 'out:fly' | 'in:slide' | 'out:slide' | 'in:fade' | 'out:fade' | 'in:blur' | 'out:blur' | undefined;
+// export type drawerTransitionTypes = 'fade' | 'fly' | 'slide' | 'blur' | 'in:fly' | 'out:fly' | 'in:slide' | 'out:slide' | 'in:fade' | 'out:fade' | 'in:blur' | 'out:blur' | undefined;
 
-export type PsizeType = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | '8xl' | '9xl';
+// export type PsizeType = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | '8xl' | '9xl';
 
-export type PweightType = 'thin' | 'extralight' | 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'extrabold' | 'black';
+// export type PweightType = 'thin' | 'extralight' | 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'extrabold' | 'black';
 
-export type BlockQuoteType = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | '8xl' | '9xl';
+// export type BlockQuoteType = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | '8xl' | '9xl';
 
-import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
+// export type FormColorType = 'blue' | 'red' | 'green' | 'purple' | 'teal' | 'yellow' | 'orange' | 'primary' | 'secondary';
 
-export interface ListGroupItemType {
-  index?: number;
-  current?: boolean;
-  disabled?: boolean;
-  href?: string;
-  attrs?: HTMLAnchorAttributes | HTMLButtonAttributes;
-  [propName: string]: any;
-}
+// export type ButtonColorType = 'alternative' | 'blue' | 'dark' | 'green' | 'light' | 'primary' | 'purple' | 'red' | 'yellow' | 'none';
 
-export type FormColorType = 'blue' | 'red' | 'green' | 'purple' | 'teal' | 'yellow' | 'orange' | 'primary' | 'secondary';
-export type ButtonColorType = 'alternative' | 'blue' | 'dark' | 'green' | 'light' | 'primary' | 'purple' | 'red' | 'yellow' | 'none';
+// export type SidebarType = {
+//   activeClass: string | undefined | null;
+//   nonActiveClass: string | undefined | null;
+// };
 
-export type SidebarType = {
-  activeClass: string | undefined | null;
-  nonActiveClass: string | undefined | null;
-};
-
-export interface ButtonClassesTypes {
-  default?: string;
-  border?: string;
-  application?: string;
-  pagination?: string;
-  group?: string;
-  card?: string;
-  meeting?: string;
-  video?: string;
-  custom?: string;
-}
+// export interface ButtonClassesTypes {
+//   default?: string;
+//   border?: string;
+//   application?: string;
+//   pagination?: string;
+//   group?: string;
+//   card?: string;
+//   meeting?: string;
+//   video?: string;
+//   custom?: string;
+// }
 
 export type navbarType = {
   navStatus: boolean | undefined;
@@ -78,15 +68,15 @@ export type ColorVariant = 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'pur
 
 export type DeviceVariantType = 'default' | 'ios' | 'android' | 'tablet' | 'laptop' | 'desktop' | 'smartwatch';
 
-export type ProgressBarColorType = 'primary' | 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo';
+// export type ProgressBarColorType = 'primary' | 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo';
 
-export type SpinnerColorType = 'primary' | 'blue' | 'gray' | 'green' | 'red' | 'yellow' | 'pink' | 'purple' | 'white' | 'custom';
+// export type SpinnerColorType = 'primary' | 'blue' | 'gray' | 'green' | 'red' | 'yellow' | 'pink' | 'purple' | 'white' | 'custom';
 
-export type ToastPositionType = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none';
+// export type ToastPositionType = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none';
 
-export type SpaceType = 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest' | undefined;
+// export type SpaceType = 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest' | undefined;
 
-export type ToolbarButtonType = 'dark' | 'default' | 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue';
+// export type ToolbarButtonType = 'dark' | 'default' | 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue';
 
 export declare type SizeType = typeof xs | typeof sm | typeof md | typeof lg | typeof xl;
 
@@ -106,9 +96,11 @@ export type TransitionFunc = (node: HTMLElement, params: ParamsType) => Transiti
 
 export type ModalPlacementType = 'top-left' | 'top-center' | 'top-right' | 'center-left' | 'center' | 'center-right' | 'bottom-left' | 'bottom-center' | 'bottom-right';
 
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 export interface LinkType {
   name: string;
   href?: string;
   rel?: string;
   active?: boolean;
+  [propName: string]: any;
 }

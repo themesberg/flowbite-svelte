@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { ApexOptions } from 'apexcharts';
+  import type ApexCharts from 'apexcharts';
   import './chart.css';
   interface Props {
     options: ApexOptions;
@@ -20,10 +21,14 @@
 
     return {
       update(options: ApexOptions) {
-        chart && chart.updateOptions(options);
+        if (chart) {
+          chart.updateOptions(options);
+        }
       },
       destroy() {
-        chart && chart.destroy();
+        if (chart) {
+          chart.destroy();
+        }
       }
     };
   }

@@ -1,6 +1,5 @@
 import Checkbox from './Checkbox.svelte';
 import type { Snippet } from 'svelte';
-// import type { FormColorType } from '../../types';
 import type { HTMLInputAttributes } from 'svelte/elements';
 import { checkbox } from './theme';
 import { type VariantProps } from 'tailwind-variants';

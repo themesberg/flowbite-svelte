@@ -12,7 +12,6 @@ interface SearchProps<T> extends Omit<HTMLInputAttributes, 'size'> {
   placeholder?: string;
   value?: T;
   show?: boolean;
-  use?: Action<HTMLElement, any>;
   class?: string;
 }
 

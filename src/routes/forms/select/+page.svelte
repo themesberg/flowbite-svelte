@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Component } from 'svelte';
-  import { Select, Label, Radio, Helper, uiHelpers, Button, type SelectProps } from '$lib';
+  import { Select, Label, Radio, Helper, uiHelpers, Button, type SelectProps, type SelectOptionType, type SelectSize } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -59,9 +59,8 @@
     dropdownStatus = dropdown.isOpen;
   });
 
-  const sizes: SelectProps['size'][] = ['sm', 'md', 'lg'];
-  // let selectSize: NonNullable<SelectProps['size']> = $state('md');
-  let selectSize: SelectProps['size'] = $state('md');
+  const sizes: SelectSize[] = ['sm', 'md', 'lg'];
+  let selectSize: SelectSize = $state('md');
 
   const sizeDisplay = {
     sm: 'Small',

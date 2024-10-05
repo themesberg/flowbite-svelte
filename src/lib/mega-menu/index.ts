@@ -2,16 +2,12 @@ import type { Snippet } from 'svelte';
 import MegaMenu from './MegaMenu.svelte';
 import { megamenu } from './theme';
 import type { ParamsType, TransitionFunc, LinkType } from '../types';
-import type { HTMLAttributes, HTMLAnchorAttributes } from 'svelte/elements';
-
-interface LinkTypeLike extends LinkType {
-  [propName: string]: any;
-}
+import type { HTMLAttributes } from 'svelte/elements';
 
 interface MegaMenuProps extends Omit<HTMLAttributes<HTMLDivElement>, 'children'> {
-  children: Snippet<[{ item: LinkTypeLike; index: number }]>;
+  children: Snippet<[{ item: LinkType; index: number }]>;
   footer?: Snippet;
-  items?: LinkTypeLike[];
+  items?: LinkType[];
   full?: boolean;
   ulClass?: string;
   dropdownStatus: boolean;

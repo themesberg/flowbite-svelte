@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { Listgroup } from '$lib';
-  import type { ListGroupItemType } from '$lib/types';
+  import { Listgroup, type ListGroupItemType } from '$lib';
   let links: ListGroupItemType[] = [
     { name: 'Avatar', href: '/components/avatar' },
     { name: 'List group', href: '/components/list-group', current: true },

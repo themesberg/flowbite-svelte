@@ -42,7 +42,7 @@
     {name}
   </a>
 {:else}
-  <button {onclick} class={buttonClass} {disabled} aria-current={current}>
+  <button type="button" {onclick} class={buttonClass} {disabled} aria-current={current}>
     {#if Icon}
       <Icon class="me-2.5 h-5 w-5" />
     {/if}

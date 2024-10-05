@@ -21,7 +21,7 @@
 
   const exampleArr = [
     { name: 'Custom size', component: ExampleComponents.CustomSize },
-    { name: 'Loading', component: ExampleComponents.Loading },
+    { name: 'Loading', component: ExampleComponents.Loading }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));

@@ -10,7 +10,7 @@ type PositionType = VariantProps<typeof toast>['position'];
 
 interface ToastProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
-  icon?: any;
+  icon?: Snippet;
   toastStatus?: boolean;
   dismissable?: boolean;
   color?: ColorType;

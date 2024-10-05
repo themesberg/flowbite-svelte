@@ -20,11 +20,11 @@
     isOpen3 = dropdown3.isOpen;
   });
 
-  let options = {
+  const options = {
     chart: {
       height: '400px',
       maxWidth: '100%',
-      type: 'area' as 'area',
+      type: 'area' as const,
       fontFamily: 'Inter, sans-serif',
       dropShadow: {
         enabled: false
@@ -118,7 +118,7 @@
       }
     ],
     chart: {
-      type: 'bar' as 'bar',
+      type: 'bar' as const,
       height: '320px',
       fontFamily: 'Inter, sans-serif',
       toolbar: {
@@ -129,7 +129,7 @@
       bar: {
         horizontal: false,
         columnWidth: '70%',
-        borderRadiusApplication: 'end' as 'end',
+        borderRadiusApplication: 'end' as const,
         borderRadius: 8
       }
     },
@@ -208,7 +208,7 @@
       sparkline: {
         enabled: false
       },
-      type: 'bar' as 'bar',
+      type: 'bar' as const,
       width: '100%',
       height: 400,
       toolbar: {
@@ -222,7 +222,7 @@
       bar: {
         horizontal: true,
         columnWidth: '100%',
-        borderRadiusApplication: 'end' as 'end',
+        borderRadiusApplication: 'end' as const,
         borderRadius: 6,
         dataLabels: {
           position: 'top'
@@ -231,7 +231,7 @@
     },
     legend: {
       show: true,
-      position: 'bottom' as 'bottom'
+      position: 'bottom' as const
     },
     dataLabels: {
       enabled: false
