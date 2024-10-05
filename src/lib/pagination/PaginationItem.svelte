@@ -29,7 +29,7 @@
 ## Props
 @props: children: any;
 @props:size: any;
-@props:class: any;
+@props:class: string;
 @props:href: any;
 @props:active: any;
 -->

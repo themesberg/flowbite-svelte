@@ -58,17 +58,17 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:onclick: any;
-@props:active: any;
-@props:current: any;
-@props:disabled: any;
-@props:name: any;
-@props:Icon: any;
-@props:href: any;
-@props:currentClass: any = 'text-white bg-primary-700 dark:text-white dark:bg-gray-800';
-@props:normalClass: any;
-@props:disabledClass: any = 'text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400';
-@props:liClass: any = 'py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg';
-@props:class: any;
+@props: children: Snippet;
+@props:onclick: (event?;
+@props:active: boolean;
+@props:current: boolean;
+@props:disabled: boolean;
+@props:name: string;
+@props:Icon: Component;
+@props:href: string;
+@props:currentClass: string = 'text-white bg-primary-700 dark:text-white dark:bg-gray-800';
+@props:normalClass: string;
+@props:disabledClass: string = 'text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400';
+@props:liClass: string = 'py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg';
+@props:class: string;
 -->

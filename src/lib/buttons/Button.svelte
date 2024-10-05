@@ -41,5 +41,5 @@
 @props:shadow: any = false;
 @props:tag: any = 'button';
 @props:disabled: any;
-@props:class: any;
+@props:class: string;
 -->

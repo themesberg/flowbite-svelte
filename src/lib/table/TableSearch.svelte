@@ -58,21 +58,21 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:header: any;
-@props:footer: any;
-@props:divClass: any = 'relative overflow-x-auto shadow-md sm:rounded-lg';
-@props:inputValue: any = $bindable();
-@props:striped: any;
-@props:hoverable: any;
-@props:customColor: any = '';
-@props:color: any = 'default';
-@props:innerDivClass: any = 'p-4';
-@props:inputClass: any;
-@props:searchClass: any = 'relative mt-1';
-@props:svgDivClass: any;
-@props:svgClass: any = 'w-5 h-5 text-gray-500 dark:text-gray-400';
-@props:tableClass: any = 'w-full text-left text-sm';
-@props:class: any;
-@props:placeholder: any = 'Search';
+@props: children: Snippet;
+@props:header: Snippet;
+@props:footer: Snippet;
+@props:divClass: string = 'relative overflow-x-auto shadow-md sm:rounded-lg';
+@props:inputValue: string = $bindable();
+@props:striped: boolean;
+@props:hoverable: boolean;
+@props:customColor: string = '';
+@props:color: string = 'default';
+@props:innerDivClass: string = 'p-4';
+@props:inputClass: string;
+@props:searchClass: string = 'relative mt-1';
+@props:svgDivClass: string;
+@props:svgClass: string = 'w-5 h-5 text-gray-500 dark:text-gray-400';
+@props:tableClass: string = 'w-full text-left text-sm';
+@props:class: string;
+@props:placeholder: string = 'Search';
 -->

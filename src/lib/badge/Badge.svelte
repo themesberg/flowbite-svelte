@@ -54,18 +54,18 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:icon: any;
-@props:badgeStatus: any = $bindable(true);
-@props:color: any = 'primary';
-@props:large: any = false;
-@props:dismissable: any = false;
-@props:class: any;
-@props:border: any;
-@props:href: any;
-@props:rounded: any;
-@props:transition: any = fade;
-@props:params: any;
-@props:aClass: any;
-@props:onclick: any;
+@props: children: Snippet;
+@props:icon: Snippet;
+@props:badgeStatus: boolean = $bindable(true);
+@props:color: VariantProps<typeof badge>['color'] = 'primary';
+@props:large: boolean = false;
+@props:dismissable: boolean = false;
+@props:class: string;
+@props:border: boolean;
+@props:href: string;
+@props:rounded: boolean;
+@props:transition: TransitionFunc = fade;
+@props:params: ParamsType;
+@props:aClass: string;
+@props:onclick: () => void;
 -->

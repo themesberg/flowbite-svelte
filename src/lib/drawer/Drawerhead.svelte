@@ -26,5 +26,11 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: 
+@props: closeIcon: Snippet;
+@props:children: Snippet;
+@props:tag: string = 'h5';
+@props:headClass: string;
+@props:buttonClass: string;
+@props:svgClass: string;
+@props:class: string;
 -->

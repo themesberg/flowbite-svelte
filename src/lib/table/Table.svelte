@@ -51,16 +51,16 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:footerSlot: any;
-@props:captionSlot: any;
-@props:tableItems: any;
-@props:divClass: any = 'relative overflow-x-auto';
-@props:striped: any;
-@props:hoverable: any;
-@props:noborder: any;
-@props:shadow: any;
-@props:color: any = 'default';
-@props:customeColor: any;
-@props:class: any;
+@props: children: Snippet;
+@props:footerSlot: Snippet;
+@props:captionSlot: Snippet;
+@props:tableItems: Record<string, string | number | boolean>[];
+@props:divClass: string = 'relative overflow-x-auto';
+@props:striped: boolean;
+@props:hoverable: boolean;
+@props:noborder: boolean;
+@props:shadow: boolean;
+@props:color: VariantProps<typeof table>['color'] = 'default';
+@props:customeColor: string;
+@props:class: string;
 -->

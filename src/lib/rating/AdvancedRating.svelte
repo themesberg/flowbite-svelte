@@ -26,9 +26,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: rating: any;
-@props:globalText: any;
-@props:ratings: any;
+@props: rating: Snippet;
+@props:globalText: Snippet;
+@props:ratings: { label;
 @props:divClass: any;
 @props:spanClass: any;
 @props:div2Class: any;

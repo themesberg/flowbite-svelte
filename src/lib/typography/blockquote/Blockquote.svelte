@@ -23,11 +23,11 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:class: any;
-@props:border: any;
-@props:italic: any = true;
-@props:bg: any;
-@props:alignment: any = 'left';
-@props:size: any = 'lg';
+@props: children: Snippet;
+@props:class: string;
+@props:border: boolean;
+@props:italic: boolean = true;
+@props:bg: boolean;
+@props:alignment: VariantProps<typeof blockquote>['alignment'] = 'left';
+@props:size: VariantProps<typeof blockquote>['size'] = 'lg';
 -->

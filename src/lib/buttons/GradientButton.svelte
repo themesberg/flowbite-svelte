@@ -32,7 +32,7 @@
 @props:pill: any;
 @props:color: any = 'blue';
 @props:shadow: any;
-@props:class: any;
+@props:class: string;
 @props:href: any;
 @props:target: any;
 @props:rel: any;

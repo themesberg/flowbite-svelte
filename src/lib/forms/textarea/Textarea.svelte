@@ -36,14 +36,14 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: header: any;
-@props:footer: any;
-@props:value: any = $bindable();
-@props:divClass: any;
-@props:innerClass: any;
-@props:headerClass: any;
-@props:footerClass: any;
+@props: header: Snippet;
+@props:footer: Snippet;
+@props:value: string = $bindable();
+@props:divClass: string | null;
+@props:innerClass: string;
+@props:headerClass: string;
+@props:footerClass: string;
 @props:disabled: any;
-@props:class: any;
-@props:cols: any;
+@props:class: string;
+@props:cols: number;
 -->

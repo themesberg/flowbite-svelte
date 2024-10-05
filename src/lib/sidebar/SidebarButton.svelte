@@ -16,6 +16,6 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: breakpoint: any = 'md';
-@props:class: any;
+@props: breakpoint: VariantProps<typeof sidebar>['breakpoint'] = 'md';
+@props:class: string;
 -->

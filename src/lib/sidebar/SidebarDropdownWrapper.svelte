@@ -80,18 +80,18 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:arrowup: any;
-@props:arrowdown: any;
-@props:iconSlot: any;
-@props:isOpen: any = false;
-@props:btnClass: any;
-@props:label: any;
-@props:spanClass: any;
-@props:ulClass: any;
-@props:transition: any = slide;
-@props:params: any;
-@props:svgClass: any;
-@props:class: any;
-@props:onclick: any;
+@props: children: Snippet;
+@props:arrowup: Snippet;
+@props:arrowdown: Snippet;
+@props:iconSlot: Snippet;
+@props:isOpen: boolean | undefined = false;
+@props:btnClass: string;
+@props:label: string | undefined;
+@props:spanClass: string;
+@props:ulClass: string;
+@props:transition: TransitionFunc = slide;
+@props:params: ParamsType;
+@props:svgClass: string;
+@props:class: string;
+@props:onclick: () => void;
 -->

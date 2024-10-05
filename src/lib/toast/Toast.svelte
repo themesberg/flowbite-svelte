@@ -38,16 +38,16 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:icon: any;
-@props:toastStatus: any = $bindable(true);
-@props:dismissable: any = true;
-@props:color: any = 'primary';
-@props:position: any;
-@props:baseClass: any;
-@props:iconClass: any;
-@props:contentClass: any;
-@props:align: any = true;
-@props:params: any;
-@props:transition: any = fly;
+@props: children: Snippet;
+@props:icon: Snippet;
+@props:toastStatus: boolean = $bindable(true);
+@props:dismissable: boolean = true;
+@props:color: ColorType = 'primary';
+@props:position: PositionType;
+@props:baseClass: string;
+@props:iconClass: string;
+@props:contentClass: string;
+@props:align: boolean = true;
+@props:params: ParamsType;
+@props:transition: TransitionFunc = fly;
 -->

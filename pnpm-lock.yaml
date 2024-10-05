@@ -103,8 +103,8 @@ importers:
         specifier: ^4.0.4
         version: 4.0.4(svelte@5.0.0-next.262)(typescript@5.6.2)
       svelte-lib-helpers:
-        specifier: ^0.4.10
-        version: 0.4.10
+        specifier: ^0.4.11
+        version: 0.4.11
       svelte-rune-highlight:
         specifier: ^0.5.11
         version: 0.5.11(svelte@5.0.0-next.262)
@@ -1562,8 +1562,8 @@ packages:
   package-json-from-dist@1.0.1:
     resolution: {integrity: sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==}
 
-  package-manager-detector@0.2.0:
-    resolution: {integrity: sha512-E385OSk9qDcXhcM9LNSe4sdhx8a9mAPrZ4sMLW+tmxl5ZuGtPUcdFu+MPP2jbgiWAZ6Pfe5soGFMd+0Db5Vrog==}
+  package-manager-detector@0.2.1:
+    resolution: {integrity: sha512-/hVW2fZvAdEas+wyKh0SnlZ2mx0NIa1+j11YaQkogEJkcMErbwchHCuo8z7lEtajZJQZ6rgZNVTWMVVd71Bjng==}
 
   parent-module@1.0.1:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==}
@@ -1944,8 +1944,8 @@ packages:
       svelte:
         optional: true
 
-  svelte-lib-helpers@0.4.10:
-    resolution: {integrity: sha512-K9TAc6ZxlxUBoHjyJFJSJ+vdT/blPrg4lHb5PsTbMvOqHSQVuob1EaZXEUUNwgmaXsf9wyRxL68+YTLUXfWKrg==}
+  svelte-lib-helpers@0.4.11:
+    resolution: {integrity: sha512-V89Z5WlP3OzEawTugWZ8NXqg3kCc71F1wbyICJXsnz/TryOfFJLwhiYlf6QbNn/IbapS1Tl/qMGxwGi8FqQMLQ==}
     hasBin: true
 
   svelte-rune-highlight@0.5.11:
@@ -2261,7 +2261,7 @@ snapshots:
       fs-extra: 7.0.1
       mri: 1.2.0
       p-limit: 2.3.0
-      package-manager-detector: 0.2.0
+      package-manager-detector: 0.2.1
       picocolors: 1.1.0
       resolve-from: 5.0.0
       semver: 7.6.3
@@ -3604,7 +3604,7 @@ snapshots:
 
   package-json-from-dist@1.0.1: {}
 
-  package-manager-detector@0.2.0: {}
+  package-manager-detector@0.2.1: {}
 
   parent-module@1.0.1:
     dependencies:
@@ -3901,7 +3901,7 @@ snapshots:
     optionalDependencies:
       svelte: 5.0.0-next.262
 
-  svelte-lib-helpers@0.4.10:
+  svelte-lib-helpers@0.4.11:
     dependencies:
       yargs: 17.7.2
 

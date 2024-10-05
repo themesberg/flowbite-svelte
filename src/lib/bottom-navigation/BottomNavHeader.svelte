@@ -15,7 +15,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:outerClass: any;
-@props:innerClass: any;
+@props: children: Snippet;
+@props:outerClass: string;
+@props:innerClass: string;
 -->

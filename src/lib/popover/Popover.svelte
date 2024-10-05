@@ -233,15 +233,15 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:titleSlot: any;
-@props:color: any = 'default';
-@props:arrow: any = true;
-@props:offset: any = 0;
-@props:triggeredBy: any;
-@props:position: any = 'top';
-@props:class: any;
-@props:reference: any;
-@props:transition: any = fade;
-@props:params: any;
+@props: children: Snippet;
+@props:titleSlot: Snippet | string;
+@props:color: PopoverColorType = 'default';
+@props:arrow: boolean = true;
+@props:offset: number = 0;
+@props:triggeredBy: string;
+@props:position: 'top' | 'bottom' | 'left' | 'right' | 'right-start' | 'right-end' | 'left-start' | 'left-end' | 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end' = 'top';
+@props:class: string;
+@props:reference: string;
+@props:transition: TransitionFunc = fade;
+@props:params: ParamsType | undefined;
 -->

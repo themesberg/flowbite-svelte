@@ -24,9 +24,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:siteName: any;
-@props:closeNav: any;
-@props:aClass: any;
-@props:spanClass: any;
+@props: children: Snippet;
+@props:siteName: string | undefined | null;
+@props:closeNav: () => void;
+@props:aClass: string;
+@props:spanClass: string;
 -->

@@ -33,17 +33,18 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:href: any;
-@props:color: any = 'gray';
-@props:horizontal: any = false;
-@props:shadow: any = 'md';
-@props:reverse: any = false;
-@props:img: any;
-@props:padding: any = 'lg';
-@props:size: any = 'sm';
-@props:class: any;
-@props:imgClass: any;
-@props:contentClass: any;
-@props:onclick: any;
+@props: children: Snippet;
+@props:href: string;
+@props:color: VariantProps<typeof card>['color'] = 'gray';
+@props:horizontal: boolean = false;
+@props:shadow: VariantProps<typeof card>['shadow'] = 'md';
+@props:reverse: boolean = false;
+@props:img: {
+  src: string | undefined | null;
+@props:padding: VariantProps<typeof card>['padding'] = 'lg';
+@props:size: VariantProps<typeof card>['size'] = 'sm';
+@props:class: string;
+@props:imgClass: string;
+@props:contentClass: string;
+@props:onclick: () => void;
 -->

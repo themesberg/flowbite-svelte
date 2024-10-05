@@ -28,7 +28,7 @@
 @props:div2Class: any;
 @props:div3Class: any;
 @props:div4Class: any;
-@props:div5Class: any;
-@props:div6Class: any;
-@props:div7Class: any;
+@props:div5Class: string;
+@props:div6Class: string;
+@props:div7Class: string;
 -->

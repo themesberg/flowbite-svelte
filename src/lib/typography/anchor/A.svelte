@@ -15,5 +15,5 @@
 ## Props
 @props: children: any;
 @props:color: any = 'primary';
-@props:class: any;
+@props:class: string;
 -->

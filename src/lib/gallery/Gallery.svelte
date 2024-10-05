@@ -30,8 +30,8 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:items: any = [];
-@props:imgClass: any;
-@props:divClass: any;
+@props: children: Snippet;
+@props:items: HTMLImgAttributes[] = [];
+@props:imgClass: string;
+@props:divClass: string;
 -->

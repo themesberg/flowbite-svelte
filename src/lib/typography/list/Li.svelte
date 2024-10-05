@@ -18,7 +18,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:icon: any;
-@props:class: any;
+@props: children: Snippet;
+@props:icon: boolean;
+@props:class: string;
 -->

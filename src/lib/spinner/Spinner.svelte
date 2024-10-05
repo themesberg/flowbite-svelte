@@ -15,9 +15,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: color: any = 'primary';
-@props:size: any = '8';
-@props:class: any;
-@props:currentFill: any = 'currentFill';
-@props:currentColor: any = 'currentColor';
+@props: color: VariantProps<typeof spinner>['color'] = 'primary';
+@props:size: VariantProps<typeof spinner>['size'] = '8';
+@props:class: string;
+@props:currentFill: string = 'currentFill';
+@props:currentColor: string = 'currentColor';
 -->

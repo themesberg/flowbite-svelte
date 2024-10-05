@@ -13,6 +13,6 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: class: any;
-@props:children: any;
+@props: class: string;
+@props:children: Snippet;
 -->

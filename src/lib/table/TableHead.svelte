@@ -45,13 +45,14 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:headerSlot: any;
-@props:color: any;
-@props:striped: any;
-@props:hoverable: any;
-@props:noborder: any;
-@props:class: any;
-@props:headItems: any;
-@props:defaultRow: any = true;
+@props: children: Snippet;
+@props:headerSlot: Snippet;
+@props:color: VariantProps<typeof table>['color'];
+@props:striped: boolean;
+@props:hoverable: boolean;
+@props:noborder: boolean;
+@props:class: string;
+@props:headItems: string | number | {
+  text: string[];
+@props:defaultRow: boolean = true;
 -->

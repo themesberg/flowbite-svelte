@@ -40,15 +40,15 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:src: any;
-@props:href: any;
-@props:cornerStyle: any = 'circular';
+@props: children: Snippet;
+@props:src: string;
+@props:href: string;
+@props:cornerStyle: 'rounded' | 'circular' = 'circular';
 @props:border: any;
-@props:stacked: any;
-@props:dot: any;
-@props:class: any;
-@props:alt: any;
-@props:size: any = 'md';
-@props:onclick: any;
+@props:stacked: boolean;
+@props:dot: object | undefined;
+@props:class: string;
+@props:alt: string;
+@props:size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
+@props:onclick: () => void;
 -->

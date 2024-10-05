@@ -33,12 +33,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:btnName: any;
-@props:appBtnPosition: any = 'middle';
-@props:target: any;
-@props:activeClass: any;
-@props:href: any = '';
-@props:btnClass: any;
-@props:spanClass: any;
+@props: children: Snippet;
+@props:btnName: string;
+@props:appBtnPosition: AppBtnVariantProps<typeof bottomNav>['position'] = 'middle';
+@props:target: string;
+@props:activeClass: string;
+@props:href: string = '';
+@props:btnClass: string;
+@props:spanClass: string;
 -->

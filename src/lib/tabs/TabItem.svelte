@@ -66,7 +66,7 @@
 @props:title: any = 'Tab title';
 @props:activeClass: any;
 @props:inactiveClass: any;
-@props:class: any;
+@props:class: string;
 @props:disabled: any;
 @props:tabStyle: any;
 -->

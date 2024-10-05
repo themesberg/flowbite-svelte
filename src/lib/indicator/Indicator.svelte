@@ -27,12 +27,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:color: any = 'primary';
-@props:cornerStyle: any = 'circular';
-@props:size: any = 'md';
-@props:border: any = false;
-@props:placement: any;
-@props:offset: any = true;
-@props:class: any;
+@props: children: Snippet;
+@props:color: VariantProps<typeof indicator>['color'] = 'primary';
+@props:cornerStyle: 'rounded' | 'circular' = 'circular';
+@props:size: VariantProps<typeof indicator>['size'] = 'md';
+@props:border: boolean = false;
+@props:placement: VariantProps<typeof indicator>['placement'] | undefined;
+@props:offset: boolean = true;
+@props:class: string;
 -->

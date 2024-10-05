@@ -41,14 +41,14 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:text: any;
-@props:divClass: any;
-@props:size: any = 24;
-@props:total: any = 5;
-@props:rating: any = 4;
-@props:partialId: any = 'partialStar' + idGenerator();
-@props:Icon: any = Star;
-@props:count: any = false;
-@props:pClass: any;
+@props: children: Snippet;
+@props:text: Snippet;
+@props:divClass: string;
+@props:size: number = 24;
+@props:total: number = 5;
+@props:rating: number = 4;
+@props:partialId: string = 'partialStar' + idGenerator();
+@props:Icon: Component = Star;
+@props:count: boolean = false;
+@props:pClass: string;
 -->

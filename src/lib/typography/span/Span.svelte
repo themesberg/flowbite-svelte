@@ -29,15 +29,15 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:class: any;
-@props:italic: any;
-@props:underline: any;
-@props:linethrough: any;
-@props:uppercase: any;
-@props:gradient: any;
-@props:highlight: any;
-@props:decoration: any;
-@props:decorationColor: any;
-@props:decorationThickness: any;
+@props: children: Snippet;
+@props:class: string;
+@props:italic: boolean;
+@props:underline: boolean;
+@props:linethrough: boolean;
+@props:uppercase: boolean;
+@props:gradient: VariantProps<typeof span>['gradient'];
+@props:highlight: VariantProps<typeof span>['highlight'];
+@props:decoration: VariantProps<typeof span>['decoration'];
+@props:decorationColor: VariantProps<typeof span>['decorationColor'];
+@props:decorationThickness: VariantProps<typeof span>['decorationThickness'];
 -->

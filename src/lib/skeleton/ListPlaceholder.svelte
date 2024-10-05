@@ -25,8 +25,8 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: itemNumber: any = 5;
-@props:size: any = 'md';
-@props:rounded: any;
-@props:class: any;
+@props: itemNumber: number = 5;
+@props:size: VariantProps<typeof imagePlaceholder>['size'] = 'md';
+@props:rounded: VariantProps<typeof imagePlaceholder>['rounded'];
+@props:class: string;
 -->

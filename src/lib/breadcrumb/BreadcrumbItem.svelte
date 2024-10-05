@@ -49,12 +49,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:icon: any;
-@props:home: any = false;
-@props:href: any;
-@props:linkClass: any;
-@props:spanClass: any;
-@props:homeClass: any;
-@props:class: any;
+@props: children: Snippet;
+@props:icon: Snippet;
+@props:home: boolean = false;
+@props:href: string;
+@props:linkClass: string;
+@props:spanClass: string;
+@props:homeClass: string;
+@props:class: string;
 -->

@@ -16,9 +16,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:divClass: any;
-@props:timeClass: any;
-@props:date: any;
-@props:olClass: any;
+@props: children: Snippet;
+@props:divClass: string;
+@props:timeClass: string;
+@props:date: Date | string;
+@props:olClass: string;
 -->

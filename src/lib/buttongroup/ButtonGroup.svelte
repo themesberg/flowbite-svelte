@@ -16,7 +16,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:size: any = 'md';
-@props:class: any;
+@props: children: Snippet;
+@props:size: VariantProps<typeof buttonGroup>['size'] = 'md';
+@props:class: string;
 -->

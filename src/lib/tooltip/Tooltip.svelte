@@ -122,12 +122,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:color: any = 'default';
-@props:arrow: any = true;
-@props:offset: any = 0;
-@props:triggeredBy: any;
-@props:position: any = 'top';
-@props:class: any;
-@props:reference: any;
+@props: children: Snippet;
+@props:color: TooltipColorType = 'default';
+@props:arrow: boolean = true;
+@props:offset: number = 0;
+@props:triggeredBy: string;
+@props:position: 'top' | 'bottom' | 'left' | 'right' = 'top';
+@props:class: string;
+@props:reference: string;
 -->

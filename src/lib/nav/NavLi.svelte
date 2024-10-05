@@ -30,11 +30,11 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: closeNav: any;
-@props:href: any;
-@props:children: any;
-@props:aClass: any;
-@props:activeClass: any;
-@props:nonActiveClass: any;
-@props:class: any;
+@props: closeNav: () => void;
+@props:href: string;
+@props:children: Snippet;
+@props:aClass: string;
+@props:activeClass: string;
+@props:nonActiveClass: string;
+@props:class: string;
 -->

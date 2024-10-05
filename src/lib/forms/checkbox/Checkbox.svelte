@@ -32,7 +32,7 @@
 ## Props
 @props: children: Snippet;
 @props:aria_describedby: string;
-@props:color: ColorType = 'primary';
+@props:color: VariantProps<typeof checkbox>['color'] = 'primary';
 @props:custom: boolean;
 @props:inline: boolean;
 @props:tinted: boolean;

@@ -22,9 +22,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:color: any;
-@props:class: any;
-@props:colspan: any;
-@props:onclick: any;
+@props: children: Snippet;
+@props:color: VariantProps<typeof table>['color'];
+@props:class: string;
+@props:colspan: number;
+@props:onclick: () => void;
 -->

@@ -21,11 +21,11 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:dropdownStatus: any = $bindable();
-@props:closeDropdown: any;
-@props:class: any;
-@props:backdropClass: any;
-@props:params: any;
-@props:transition: any = fly;
+@props: children: Snippet;
+@props:dropdownStatus: boolean = $bindable();
+@props:closeDropdown: () => void;
+@props:class: string;
+@props:backdropClass: string;
+@props:params: ParamsType;
+@props:transition: TransitionFunc = fly;
 -->

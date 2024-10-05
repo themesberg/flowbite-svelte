@@ -19,6 +19,6 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: size: any = 'sm';
-@props:class: any;
+@props: size: VariantProps<typeof skeleton>['size'] = 'sm';
+@props:class: string;
 -->

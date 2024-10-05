@@ -20,15 +20,15 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:toggleSize: any = 'default';
-@props:value: any;
-@props:checked: any = $bindable();
-@props:disabled: any;
-@props:color: any = 'primary';
-@props:aria_describedby: any;
-@props:labelClass: any;
-@props:inputClass: any;
-@props:spanClass: any;
-@props:leftLabel: any;
+@props: children: Snippet;
+@props:toggleSize: SizeType = 'default';
+@props:value: string | number;
+@props:checked: boolean | undefined = $bindable();
+@props:disabled: boolean;
+@props:color: ToggleColor = 'primary';
+@props:aria_describedby: string;
+@props:labelClass: string;
+@props:inputClass: string;
+@props:spanClass: string;
+@props:leftLabel: Snippet;
 -->
