@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.19
+
+### Patch Changes
+
+- fix: update svelte-lib-helpers for component docs ([`b52d04c278fc9fb87d14ca2ae7653c7bcd1c6efd`](https://github.com/shinokada/svelte-5-ui-lib/commit/b52d04c278fc9fb87d14ca2ae7653c7bcd1c6efd))
+
 ## 0.9.18
 
 ### Patch Changes
