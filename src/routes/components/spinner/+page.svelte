@@ -110,13 +110,13 @@
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Size:</Label>
+    <Label class="mb-4 w-full font-bold">Size</Label>
     {#each sizes as size}
       <Radio labelClass="w-12 my-1" name="spinnersize" bind:group={spinnerSize} value={size}>{size}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Alignment:</Label>
+    <Label class="mb-4 w-full font-bold">Alignment</Label>
     {#each alignments as option}
       <Radio labelClass="w-16 my-1" name="alignment" bind:group={selectedAlignment} value={option.name}>{option.name}</Radio>
     {/each}
@@ -131,7 +131,7 @@
 
 <CodeWrapper>
   <div class="mb-12 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Example:</Label>
+    <Label class="mb-4 w-full font-bold">Example</Label>
     {#each exampleArr as style}
       <Radio labelClass="w-40 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}

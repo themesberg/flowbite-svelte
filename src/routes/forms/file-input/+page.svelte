@@ -99,7 +99,7 @@ ${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ''}`;
     {/if}
   </div>
   <div class="mb-4 mt-4 flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Size:</Label>
+    <Label class="mb-4 w-full font-bold">Size</Label>
     {#each sizes as sizeOption}
       <Radio labelClass="w-16 my-1" name="file_input_size" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
     {/each}
@@ -118,7 +118,7 @@ ${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ''}`;
 
 <CodeWrapper>
   <div class="mb-12 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Example:</Label>
+    <Label class="mb-4 w-full font-bold">Example</Label>
     {#each exampleArr as style}
       <Radio labelClass="w-40 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}

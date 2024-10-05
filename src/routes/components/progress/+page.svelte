@@ -103,8 +103,8 @@
       <Progressbar {progress} size={progressSize.size} color={progressColor} labelOutside={labelContent} {labelInside} div2Class={progressSize.class} />
     {/if}
   </div>
-  <div class="flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Size:</Label>
+  <div class="flex flex-wrap space-x-2 mb-4">
+    <Label class="mb-4 w-full font-bold">Size</Label>
     {#each progressSizes as size}
       <Radio labelClass="w-24 my-1" name="progress_size" bind:group={progressSize.size} value={size.size} onchange={() => updateProgressSize(size.size)}>{size.size}</Radio>
     {/each}

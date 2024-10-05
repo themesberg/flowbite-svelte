@@ -121,7 +121,7 @@
     </Card>
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Size:</Label>
+    <Label class="mb-4 w-full font-bold">Size</Label>
     {#each sizes as size}
       <Radio labelClass="w-16 my-1" name="interactive_card_size" bind:group={cardSize} value={size}>{size}</Radio>
     {/each}
@@ -133,13 +133,13 @@
     {/each}
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Padding:</Label>
+    <Label class="mb-4 w-full font-bold">Padding</Label>
     {#each paddings as padding}
       <Radio labelClass="w-16 my-1" name="interactive_card_padding" bind:group={cardPadding} value={padding}>{padding}</Radio>
     {/each}
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Shadow:</Label>
+    <Label class="mb-4 w-full font-bold">Shadow</Label>
     {#each shadows as shadow}
       <Radio labelClass="w-16 my-1" name="interactive_card_shadow" bind:group={cardShadow} value={shadow}>{shadow}</Radio>
     {/each}
@@ -160,7 +160,7 @@
 
 <CodeWrapper>
   <div class="mb-12 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Example:</Label>
+    <Label class="mb-4 w-full font-bold">Example</Label>
     {#each exampleArr as style}
       <Radio labelClass="w-48 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}

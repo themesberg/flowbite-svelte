@@ -138,7 +138,7 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`;
 
 <CodeWrapper>
   <div class="mb-8 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Example:</Label>
+    <Label class="mb-4 w-full font-bold">Example</Label>
     {#each exampleArr as style}
       <Radio labelClass="w-36 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}

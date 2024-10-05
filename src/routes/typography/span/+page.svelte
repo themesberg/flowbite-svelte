@@ -116,7 +116,7 @@
     <P size="xl" weight="bold">Lorem ipsum <Span italic={spanItalic} underline={spanUnderline} linethrough={spanLinethrough} uppercase={spanUppercase} gradient={spanGradient} decoration={spanDecoration} decorationColor={spanDecorationColor} decorationThickness={spanDecorationThickness} highlight={spanHighlight} class={opacityClass}>{editableContent}</Span> consectetur elit.</P>
   </div>
   <div class="mb-4 mt-4 flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Highlight:</Label>
+    <Label class="mb-4 w-full font-bold">Highlight</Label>
     {#each highlights as highlight}
       <Radio
         labelClass="w-20 my-1"
@@ -134,13 +134,13 @@
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Gradient:</Label>
+    <Label class="mb-4 w-full font-bold">Gradient</Label>
     {#each gradients as gradient}
       <Radio labelClass="w-32 my-1" name="span_gradient" bind:group={spanGradient} onchange={() => (spanHighlight = 'none')} value={gradient}>{gradient}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Decoration thickness:</Label>
+    <Label class="mb-4 w-full font-bold">Decoration thickness</Label>
     {#each docrationThickness as thickness}
       <Radio
         labelClass="w-12 my-1"
@@ -157,7 +157,7 @@
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Decoration color:</Label>
+    <Label class="mb-4 w-full font-bold">Decoration color</Label>
     {#each decorationColors as color}
       <Radio
         labelClass="w-20 my-1"
@@ -175,7 +175,7 @@
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Decoration:</Label>
+    <Label class="mb-4 w-full font-bold">Decoration</Label>
     {#each decorations as decoration}
       <Radio
         labelClass="w-20 my-1"

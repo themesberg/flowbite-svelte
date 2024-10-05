@@ -53,7 +53,7 @@
 
 <CodeWrapper>
   <div class="mb-8 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Example:</Label>
+    <Label class="mb-4 w-full font-bold">Example</Label>
     {#each exampleArr as style}
       <Radio labelClass="w-[170px] my-1" onclick={() => (expand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}

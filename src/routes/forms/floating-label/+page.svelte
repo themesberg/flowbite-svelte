@@ -80,7 +80,7 @@
     {/if}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Style:</Label>
+    <Label class="mb-4 w-full font-bold">Style</Label>
     {#each styles as option}
       <Radio labelClass="w-24 my-1" name="style1" bind:group={style} value={option}>{option}</Radio>
     {/each}
@@ -99,7 +99,7 @@
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Size:</Label>
+    <Label class="mb-4 w-full font-bold">Size</Label>
     <Toggle
       onclick={() => {
         floatingSize = floatingSize === 'default' ? 'small' : 'default';

@@ -135,7 +135,7 @@ ${closeBtnStatus ? `</Input>` : ''}${helperSlot ? `<Helper class="ps-6" color="$
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Size:</Label>
+    <Label class="mb-4 w-full font-bold">Size</Label>
     {#each sizes as option}
       <Radio labelClass="w-20 my-1" name="input_size" bind:group={inputSize} value={option}>{option}</Radio>
     {/each}
@@ -160,7 +160,7 @@ ${closeBtnStatus ? `</Input>` : ''}${helperSlot ? `<Helper class="ps-6" color="$
 
 <CodeWrapper>
   <div class="mb-8 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Example:</Label>
+    <Label class="mb-4 w-full font-bold">Example</Label>
     {#each exampleArr as style}
       <Radio labelClass="w-40 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}

@@ -89,37 +89,37 @@
     <P contenteditable weight={pWeight} size={pSize} space={pSpace} height={pHeight} align={pAlign} whitespace={pWhitespace} {italic} firstUpper={pFirstupper} justify={pJustify}>{text}</P>
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Size:</Label>
+    <Label class="mb-4 w-full font-bold">Size</Label>
     {#each sizes as size}
       <Radio labelClass="w-12 my-1" name="p_size" bind:group={pSize} value={size}>{size}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Weight:</Label>
+    <Label class="mb-4 w-full font-bold">Weight</Label>
     {#each weights as weight}
       <Radio labelClass="w-20 my-1" name="p_weight" bind:group={pWeight} value={weight}>{weight}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Space(Tracking):</Label>
+    <Label class="mb-4 w-full font-bold">Space(Tracking)</Label>
     {#each spaces as space}
       <Radio labelClass="w-20 my-1" name="p_space" bind:group={pSpace} value={space}>{space}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Height(Leading):</Label>
+    <Label class="mb-4 w-full font-bold">Height(Leading)</Label>
     {#each heights as height}
       <Radio labelClass="w-16 my-1" name="p_height" bind:group={pHeight} value={height}>{height}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Alignment:</Label>
+    <Label class="mb-4 w-full font-bold">Alignment</Label>
     {#each alignments as align}
       <Radio labelClass="w-20 my-1" name="p_align" bind:group={pAlign} onchange={() => (pJustify = false)} value={align}>{align}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">whitespace:</Label>
+    <Label class="mb-4 w-full font-bold">Whitespace</Label>
     {#each whitespaces as whitespace}
       <Radio labelClass="w-16 my-1" name="p_whitespace" bind:group={pWhitespace} value={whitespace}>{whitespace}</Radio>
     {/each}

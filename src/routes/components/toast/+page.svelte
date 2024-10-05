@@ -148,7 +148,7 @@
     <Button disabled={toastStatus ? true : false} onclick={() => (toastStatus = true)}>Open toast</Button>
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Color:</Label>
+    <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
       <Radio labelClass="w-24 my-1" name="interactive_toast_color" bind:group={toastColor} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
@@ -160,7 +160,7 @@
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Position:</Label>
+    <Label class="mb-4 w-full font-bold">Position</Label>
     {#each positions as option}
       <Radio labelClass="w-32 my-1" name="interactive_toast_position" bind:group={toastPosition} value={option}>{option}</Radio>
     {/each}
@@ -177,7 +177,7 @@
 
 <CodeWrapper>
   <div class="mb-12 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Example:</Label>
+    <Label class="mb-4 w-full font-bold">Example</Label>
     {#each exampleArr as style}
       <Radio labelClass="w-40 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}

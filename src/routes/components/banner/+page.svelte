@@ -168,7 +168,7 @@
       <Button class="w-48" disabled={bannerStatus ? true : false} onclick={changeStatus}>Open banner</Button>
     </div>
     <div class="mb-4 flex flex-wrap space-x-4">
-      <Label class="mb-4 w-full font-bold">Change color {color}</Label>
+      <Label class="mb-4 w-full font-bold">Color</Label>
       {#each colors as colorOption}
         <Radio labelClass="w-24 my-1" name="color" bind:group={color} color={colorOption as BannerProps['color']} value={colorOption}>{colorOption}</Radio>
       {/each}
@@ -194,7 +194,7 @@
 
 <CodeWrapper innerClass="p-0">
   <div class="mb-4 flex flex-wrap p-6">
-    <Label class="mb-4 w-full font-bold">Example:</Label>
+    <Label class="mb-4 w-full font-bold">Example</Label>
     {#each exampleArr as style}
       <Radio labelClass="w-64 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}

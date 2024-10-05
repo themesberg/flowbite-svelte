@@ -115,13 +115,13 @@
     </Toggle>
   </div>
   <div class="mb-4 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Color:</Label>
+    <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
       <Radio labelClass="w-24 m-2" name="toggle_color" bind:group={toggleColor} color={colorOption as ToggleColor} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Size:</Label>
+    <Label class="mb-4 w-full font-bold">Size</Label>
     {#each sizes as size}
       <Radio labelClass="w-32 m-2" name="toggle_size" bind:group={toggleSize} value={size}>{size}</Radio>
     {/each}
@@ -140,7 +140,7 @@
 
 <CodeWrapper>
   <div class="mb-12 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Example:</Label>
+    <Label class="mb-4 w-full font-bold">Example</Label>
     {#each exampleArr as style}
       <Radio labelClass="w-40 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}

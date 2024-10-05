@@ -120,7 +120,7 @@ ${
   <Label>Size: {rangeSize}</Label>
   <Range id="small-range" {rangeSize} />
   <div class="mt-4 flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Size:</Label>
+    <Label class="mb-4 w-full font-bold">Size</Label>
     {#each rangeSizes as sizeOption}
       <Radio labelClass="w-16 my-1" name="file_input_size" bind:group={rangeSize} value={sizeOption}>{sizeOption}</Radio>
     {/each}

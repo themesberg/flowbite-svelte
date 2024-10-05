@@ -141,13 +141,13 @@
     </Li>
   </List>
   <div class="mb-4 mt-4 flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Tag:</Label>
+    <Label class="mb-4 w-full font-bold">Tag</Label>
     {#each tags as tag}
       <Radio labelClass="w-20 my-1" name="list_tag" bind:group={listTag} value={tag}>{tag}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Position:</Label>
+    <Label class="mb-4 w-full font-bold">Position</Label>
     {#each positions as position}
       <Radio labelClass="w-20 my-1" name="list_position" bind:group={listPosition} value={position}>{position}</Radio>
     {/each}
@@ -166,7 +166,7 @@
 
 <CodeWrapper>
   <div class="mb-8 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Example:</Label>
+    <Label class="mb-4 w-full font-bold">Example</Label>
     {#each exampleArr as style}
       <Radio labelClass="w-36 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}

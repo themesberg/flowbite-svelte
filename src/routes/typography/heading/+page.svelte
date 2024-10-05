@@ -92,7 +92,7 @@
     <Heading tag={headingTag} class={headingCls}>{text}</Heading>
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Rounded:</Label>
+    <Label class="mb-4 w-full font-bold">Rounded</Label>
     {#each tags as tag}
       <Radio labelClass="w-12 my-1" name="tag" bind:group={headingTag} value={tag}>{tag}</Radio>
     {/each}
@@ -109,7 +109,7 @@
 
 <CodeWrapper>
   <div class="mb-8 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Example:</Label>
+    <Label class="mb-4 w-full font-bold">Example</Label>
     {#each exampleArr as style}
       <Radio labelClass="w-28 my-1" onclick={() => (expand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}

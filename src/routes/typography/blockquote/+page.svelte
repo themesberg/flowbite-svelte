@@ -110,13 +110,13 @@
     <Blockquote {border} {italic} size={selectedSize} {bg} alignment={selectedAlignment} class={blockClass}>{text}</Blockquote>
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Size:</Label>
+    <Label class="mb-4 w-full font-bold">Size</Label>
     {#each sizes as size}
       <Radio labelClass="w-16 my-1" name="block_size" bind:group={selectedSize} value={size}>{size}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Alignment:</Label>
+    <Label class="mb-4 w-full font-bold">Alignment</Label>
     {#each alignments as alignment}
       <Radio labelClass="w-16 my-1" name="block_alignment" bind:group={selectedAlignment} value={alignment}>{alignment}</Radio>
     {/each}
@@ -136,7 +136,7 @@
 
 <CodeWrapper>
   <div class="mb-12 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Example:</Label>
+    <Label class="mb-4 w-full font-bold">Example</Label>
     {#each exampleArr as style}
       <Radio labelClass="w-24 my-1" onclick={() => (expand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}

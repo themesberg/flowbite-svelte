@@ -158,13 +158,13 @@
     </Modal>
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Size:</Label>
+    <Label class="mb-4 w-full font-bold">Size</Label>
     {#each sizes as size}
       <Radio labelClass="w-12 my-1" name="modal-size" bind:group={modalSize} value={size}>{size}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Position:</Label>
+    <Label class="mb-4 w-full font-bold">Position</Label>
     {#each positions as position}
       <Radio labelClass="w-32 my-1" name="modal-position" bind:group={modalPosition} value={position}>{position}</Radio>
     {/each}
@@ -189,7 +189,7 @@
 
 <CodeWrapper>
   <div class="mb-4 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Example:</Label>
+    <Label class="mb-4 w-full font-bold">Example</Label>
     {#each exampleArr as style}
       <Radio labelClass="w-44 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
     {/each}

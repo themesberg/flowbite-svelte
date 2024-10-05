@@ -79,7 +79,7 @@
     <Skeleton size={skeletonSize} class={skeletonClass} />
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Size(width):</Label>
+    <Label class="mb-4 w-full font-bold">Size(width)</Label>
     {#each skeletonSizes as size}
       <Radio labelClass="w-12 my-1" name="skeletonsize" bind:group={skeletonSize} value={size}>{size}</Radio>
     {/each}
@@ -96,13 +96,13 @@
     <ImagePlaceholder size={imagePlaceholderSize} rounded={imagePlaceholderRounded} class={imagePlaceholderClass} />
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Size:</Label>
+    <Label class="mb-4 w-full font-bold">Size</Label>
     {#each imageSizes as size}
       <Radio labelClass="w-12 my-1" name="imageSize" bind:group={imagePlaceholderSize} value={size}>{size}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Rounded:</Label>
+    <Label class="mb-4 w-full font-bold">Rounded</Label>
     {#each imageRoundedSizes as size}
       <Radio labelClass="w-12 my-1" name="imageRoundedSize" bind:group={imagePlaceholderRounded} value={size}>{size}</Radio>
     {/each}
@@ -119,7 +119,7 @@
     <VideoPlaceholder size={videoPlaceholderSize} class={videoPlaceholderClass} />
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Size(width):</Label>
+    <Label class="mb-4 w-full font-bold">Size(width)</Label>
     {#each videoSizes as size}
       <Radio labelClass="w-12 my-1" name="videoSize" bind:group={videoPlaceholderSize} value={size}>{size}</Radio>
     {/each}
@@ -134,7 +134,7 @@
 <CodeWrapper>
   <TextPlaceholder size={textPlaceholderSize} class={textPlaceholderClass} />
   <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Size(width):</Label>
+    <Label class="mb-4 w-full font-bold">Size(width)</Label>
     {#each textSizes as size}
       <Radio labelClass="w-12 my-1" name="textSize" bind:group={textPlaceholderSize} value={size}>{size}</Radio>
     {/each}
@@ -149,7 +149,7 @@
 <CodeWrapper>
   <CardPlaceholder size={cardPlaceholderSize} class={cardPlaceholderClass} />
   <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Size(width):</Label>
+    <Label class="mb-4 w-full font-bold">Size(width)</Label>
     {#each cardSizes as size}
       <Radio labelClass="w-12 my-1" name="cardSize" bind:group={cardPlaceholderSize} value={size}>{size}</Radio>
     {/each}
@@ -175,13 +175,13 @@
     <ListPlaceholder itemNumber={listPlaceholderItemNumber} size={listPlaceholderSize} rounded={listPlaceholderRounded} class={listPlaceholderClass} />
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Size:</Label>
+    <Label class="mb-4 w-full font-bold">Size</Label>
     {#each listSizes as size}
       <Radio labelClass="w-12 my-1" name="size" bind:group={listPlaceholderSize} value={size}>{size}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Rounded:</Label>
+    <Label class="mb-4 w-full font-bold">Rounded</Label>
     {#each listRoundedSizes as size}
       <Radio labelClass="w-12 my-1" name="roundedSize" bind:group={listPlaceholderRounded} value={size}>{size}</Radio>
     {/each}
