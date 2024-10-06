@@ -15,7 +15,7 @@
   setContext('category', category);
 
   const headerNames = {
-    props: ['Name', 'Default'],
+    props: ['Name', 'Type', 'Default'],
     events: ['Names']
   };
   let header = headerNames[category];
