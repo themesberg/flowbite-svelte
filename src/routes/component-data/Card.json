@@ -1,70 +1,18 @@
 {
   "name": "Card",
   "props": [
-    [
-      "children",
-      "Snippet",
-      ""
-    ],
-    [
-      "href",
-      "string",
-      ""
-    ],
-    [
-      "color",
-      "VariantProps<typeof card>['color']",
-      "'gray'"
-    ],
-    [
-      "horizontal",
-      "boolean",
-      "false"
-    ],
-    [
-      "shadow",
-      "VariantProps<typeof card>['shadow']",
-      "'md'"
-    ],
-    [
-      "reverse",
-      "boolean",
-      "false"
-    ],
-    [
-      "img",
-      "{\n  src: string | undefined | null",
-      ""
-    ],
-    [
-      "padding",
-      "VariantProps<typeof card>['padding']",
-      "'lg'"
-    ],
-    [
-      "size",
-      "VariantProps<typeof card>['size']",
-      "'sm'"
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ],
-    [
-      "imgClass",
-      "string",
-      ""
-    ],
-    [
-      "contentClass",
-      "string",
-      ""
-    ],
-    [
-      "onclick",
-      "() => void",
-      ""
-    ]
+    ["children", "Snippet", ""],
+    ["href", "string", ""],
+    ["color", "VariantProps<typeof card>['color']", "'gray'"],
+    ["horizontal", "boolean", "false"],
+    ["shadow", "VariantProps<typeof card>['shadow']", "'md'"],
+    ["reverse", "boolean", "false"],
+    ["img", "{\n  src: string | undefined | null", ""],
+    ["padding", "VariantProps<typeof card>['padding']", "'lg'"],
+    ["size", "VariantProps<typeof card>['size']", "'sm'"],
+    ["class", "string", ""],
+    ["imgClass", "string", ""],
+    ["contentClass", "string", ""],
+    ["onclick", "() => void", ""]
   ]
 }

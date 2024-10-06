@@ -1,65 +1,17 @@
 {
   "name": "Toast",
   "props": [
-    [
-      "children",
-      "Snippet",
-      ""
-    ],
-    [
-      "icon",
-      "Snippet",
-      ""
-    ],
-    [
-      "toastStatus",
-      "boolean",
-      "$bindable(true)"
-    ],
-    [
-      "dismissable",
-      "boolean",
-      "true"
-    ],
-    [
-      "color",
-      "ColorType",
-      "'primary'"
-    ],
-    [
-      "position",
-      "PositionType",
-      ""
-    ],
-    [
-      "baseClass",
-      "string",
-      ""
-    ],
-    [
-      "iconClass",
-      "string",
-      ""
-    ],
-    [
-      "contentClass",
-      "string",
-      ""
-    ],
-    [
-      "align",
-      "boolean",
-      "true"
-    ],
-    [
-      "params",
-      "ParamsType",
-      ""
-    ],
-    [
-      "transition",
-      "TransitionFunc",
-      "fly"
-    ]
+    ["children", "Snippet", ""],
+    ["icon", "Snippet", ""],
+    ["toastStatus", "boolean", "$bindable(true)"],
+    ["dismissable", "boolean", "true"],
+    ["color", "ColorType", "'primary'"],
+    ["position", "PositionType", ""],
+    ["baseClass", "string", ""],
+    ["iconClass", "string", ""],
+    ["contentClass", "string", ""],
+    ["align", "boolean", "true"],
+    ["params", "ParamsType", ""],
+    ["transition", "TransitionFunc", "fly"]
   ]
 }

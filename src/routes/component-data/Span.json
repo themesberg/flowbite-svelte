@@ -1,60 +1,16 @@
 {
   "name": "Span",
   "props": [
-    [
-      "children",
-      "Snippet",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ],
-    [
-      "italic",
-      "boolean",
-      ""
-    ],
-    [
-      "underline",
-      "boolean",
-      ""
-    ],
-    [
-      "linethrough",
-      "boolean",
-      ""
-    ],
-    [
-      "uppercase",
-      "boolean",
-      ""
-    ],
-    [
-      "gradient",
-      "VariantProps<typeof span>['gradient']",
-      ""
-    ],
-    [
-      "highlight",
-      "VariantProps<typeof span>['highlight']",
-      ""
-    ],
-    [
-      "decoration",
-      "VariantProps<typeof span>['decoration']",
-      ""
-    ],
-    [
-      "decorationColor",
-      "VariantProps<typeof span>['decorationColor']",
-      ""
-    ],
-    [
-      "decorationThickness",
-      "VariantProps<typeof span>['decorationThickness']",
-      ""
-    ]
+    ["children", "Snippet", ""],
+    ["class", "string", ""],
+    ["italic", "boolean", ""],
+    ["underline", "boolean", ""],
+    ["linethrough", "boolean", ""],
+    ["uppercase", "boolean", ""],
+    ["gradient", "VariantProps<typeof span>['gradient']", ""],
+    ["highlight", "VariantProps<typeof span>['highlight']", ""],
+    ["decoration", "VariantProps<typeof span>['decoration']", ""],
+    ["decorationColor", "VariantProps<typeof span>['decorationColor']", ""],
+    ["decorationThickness", "VariantProps<typeof span>['decorationThickness']", ""]
   ]
 }

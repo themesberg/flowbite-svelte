@@ -1,35 +1,11 @@
 {
   "name": "List",
   "props": [
-    [
-      "children",
-      "Snippet",
-      ""
-    ],
-    [
-      "tag",
-      "VariantProps<typeof list>['tag']",
-      "'ul'"
-    ],
-    [
-      "isContenteditable",
-      "boolean",
-      "false"
-    ],
-    [
-      "position",
-      "VariantProps<typeof list>['position']",
-      "'inside'"
-    ],
-    [
-      "ctxClass",
-      "string",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ]
+    ["children", "Snippet", ""],
+    ["tag", "VariantProps<typeof list>['tag']", "'ul'"],
+    ["isContenteditable", "boolean", "false"],
+    ["position", "VariantProps<typeof list>['position']", "'inside'"],
+    ["ctxClass", "string", ""],
+    ["class", "string", ""]
   ]
 }

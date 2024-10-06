@@ -1,55 +1,15 @@
 {
   "name": "SidebarItem",
   "props": [
-    [
-      "iconSlot",
-      "any",
-      ""
-    ],
-    [
-      "subtext",
-      "any",
-      ""
-    ],
-    [
-      "href",
-      "any",
-      ""
-    ],
-    [
-      "label",
-      "any",
-      ""
-    ],
-    [
-      "spanClass",
-      "any",
-      "'ms-3'"
-    ],
-    [
-      "activeClass",
-      "any",
-      ""
-    ],
-    [
-      "nonActiveClass",
-      "any",
-      ""
-    ],
-    [
-      "aClass",
-      "any",
-      ""
-    ],
-    [
-      "active",
-      "any",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ]
+    ["iconSlot", "any", ""],
+    ["subtext", "any", ""],
+    ["href", "any", ""],
+    ["label", "any", ""],
+    ["spanClass", "any", "'ms-3'"],
+    ["activeClass", "any", ""],
+    ["nonActiveClass", "any", ""],
+    ["aClass", "any", ""],
+    ["active", "any", ""],
+    ["class", "string", ""]
   ]
 }

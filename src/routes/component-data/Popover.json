@@ -1,60 +1,16 @@
 {
   "name": "Popover",
   "props": [
-    [
-      "children",
-      "Snippet",
-      ""
-    ],
-    [
-      "titleSlot",
-      "Snippet | string",
-      ""
-    ],
-    [
-      "color",
-      "PopoverColorType",
-      "'default'"
-    ],
-    [
-      "arrow",
-      "boolean",
-      "true"
-    ],
-    [
-      "offset",
-      "number",
-      "0"
-    ],
-    [
-      "triggeredBy",
-      "string",
-      ""
-    ],
-    [
-      "position",
-      "'top' | 'bottom' | 'left' | 'right' | 'right-start' | 'right-end' | 'left-start' | 'left-end' | 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end'",
-      "'top'"
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ],
-    [
-      "reference",
-      "string",
-      ""
-    ],
-    [
-      "transition",
-      "TransitionFunc",
-      "fade"
-    ],
-    [
-      "params",
-      "ParamsType | undefined",
-      ""
-    ]
+    ["children", "Snippet", ""],
+    ["titleSlot", "Snippet | string", ""],
+    ["color", "PopoverColorType", "'default'"],
+    ["arrow", "boolean", "true"],
+    ["offset", "number", "0"],
+    ["triggeredBy", "string", ""],
+    ["position", "'top' | 'bottom' | 'left' | 'right' | 'right-start' | 'right-end' | 'left-start' | 'left-end' | 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end'", "'top'"],
+    ["class", "string", ""],
+    ["reference", "string", ""],
+    ["transition", "TransitionFunc", "fade"],
+    ["params", "ParamsType | undefined", ""]
   ]
 }

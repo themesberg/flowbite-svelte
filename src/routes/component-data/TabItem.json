@@ -1,50 +1,14 @@
 {
   "name": "TabItem",
   "props": [
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "titleSlot",
-      "any",
-      ""
-    ],
-    [
-      "open",
-      "any",
-      "false"
-    ],
-    [
-      "title",
-      "any",
-      "'Tab title'"
-    ],
-    [
-      "activeClass",
-      "any",
-      ""
-    ],
-    [
-      "inactiveClass",
-      "any",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ],
-    [
-      "disabled",
-      "any",
-      ""
-    ],
-    [
-      "tabStyle",
-      "any",
-      ""
-    ]
+    ["children", "any", ""],
+    ["titleSlot", "any", ""],
+    ["open", "any", "false"],
+    ["title", "any", "'Tab title'"],
+    ["activeClass", "any", ""],
+    ["inactiveClass", "any", ""],
+    ["class", "string", ""],
+    ["disabled", "any", ""],
+    ["tabStyle", "any", ""]
   ]
 }

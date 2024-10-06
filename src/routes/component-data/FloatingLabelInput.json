@@ -1,55 +1,15 @@
 {
   "name": "FloatingLabelInput",
   "props": [
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "id",
-      "any",
-      "idGenerator()"
-    ],
-    [
-      "value",
-      "any",
-      "$bindable()"
-    ],
-    [
-      "aria_describedby",
-      "any",
-      ""
-    ],
-    [
-      "style",
-      "any",
-      "'standard'"
-    ],
-    [
-      "size",
-      "any",
-      "'default'"
-    ],
-    [
-      "color",
-      "any",
-      "'default'"
-    ],
-    [
-      "divClass",
-      "any",
-      ""
-    ],
-    [
-      "inputClass",
-      "any",
-      ""
-    ],
-    [
-      "labelClass",
-      "any",
-      ""
-    ]
+    ["children", "any", ""],
+    ["id", "any", "idGenerator()"],
+    ["value", "any", "$bindable()"],
+    ["aria_describedby", "any", ""],
+    ["style", "any", "'standard'"],
+    ["size", "any", "'default'"],
+    ["color", "any", "'default'"],
+    ["divClass", "any", ""],
+    ["inputClass", "any", ""],
+    ["labelClass", "any", ""]
   ]
 }
