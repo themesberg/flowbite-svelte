@@ -1,5 +1,5 @@
 {
-  "name": "GradientButton",
+  "name": "kisida",
   "props": [
     [
       "children",
@@ -7,28 +7,38 @@
       ""
     ],
     [
-      "outline",
+      "icon",
       "any",
       ""
     ],
     [
-      "pill",
+      "badgeStatus",
       "any",
-      ""
+      "$bindable(true)"
     ],
     [
       "color",
       "any",
-      "'blue'"
+      "'primary'"
     ],
     [
-      "shadow",
+      "large",
       "any",
-      ""
+      "false"
+    ],
+    [
+      "dismissable",
+      "any",
+      "false"
     ],
     [
       "class",
       "string",
+      ""
+    ],
+    [
+      "border",
+      "any",
       ""
     ],
     [
@@ -37,32 +47,27 @@
       ""
     ],
     [
-      "target",
+      "rounded",
       "any",
       ""
     ],
     [
-      "rel",
+      "transition",
+      "any",
+      "fade"
+    ],
+    [
+      "params",
       "any",
       ""
     ],
     [
-      "type",
+      "aClass",
       "any",
       ""
     ],
     [
-      "disabled",
-      "any",
-      ""
-    ],
-    [
-      "size",
-      "any",
-      ""
-    ],
-    [
-      "name",
+      "onclick",
       "any",
       ""
     ]

@@ -1,13 +1,40 @@
 {
   "name": "Dropdown",
   "props": [
-    ["children", ""],
-    ["dropdownStatus", "$bindable()"],
-    ["closeDropdown", ""],
-    ["class: className", ""],
-    ["backdropClass", ""],
-    ["params", ""],
-    ["transition", "fly"],
-    ["...restProps", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "dropdownStatus",
+      "boolean",
+      "$bindable()"
+    ],
+    [
+      "closeDropdown",
+      "() => void",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "backdropClass",
+      "string",
+      ""
+    ],
+    [
+      "params",
+      "ParamsType",
+      ""
+    ],
+    [
+      "transition",
+      "TransitionFunc",
+      "fly"
+    ]
   ]
 }

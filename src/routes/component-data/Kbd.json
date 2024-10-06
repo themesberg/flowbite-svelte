@@ -1,8 +1,15 @@
 {
   "name": "Kbd",
   "props": [
-    ["children", ""],
-    ["class: kbdClass", ""],
-    ["...restProps", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

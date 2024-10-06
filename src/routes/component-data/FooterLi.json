@@ -1,10 +1,25 @@
 {
   "name": "FooterLi",
   "props": [
-    ["children", ""],
-    ["liClass", ""],
-    ["aClass", ""],
-    ["href", ""],
-    ["...restProps", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "liClass",
+      "string",
+      ""
+    ],
+    [
+      "aClass",
+      "string",
+      ""
+    ],
+    [
+      "href",
+      "string",
+      ""
+    ]
   ]
 }

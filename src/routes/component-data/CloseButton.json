@@ -1,13 +1,40 @@
 {
   "name": "CloseButton",
   "props": [
-    ["color", "gray"],
-    ["onclick", ""],
-    ["name", "Close"],
-    ["ariaLabel", ""],
-    ["size", "md"],
-    ["href", ""],
-    ["class: className", ""],
-    ["...restProps", ""]
+    [
+      "color",
+      "VariantProps<typeof closeButtonVariants>['color']",
+      "'gray'"
+    ],
+    [
+      "onclick",
+      "() => void",
+      ""
+    ],
+    [
+      "name",
+      "string",
+      "'Close'"
+    ],
+    [
+      "ariaLabel",
+      "string",
+      ""
+    ],
+    [
+      "size",
+      "VariantProps<typeof closeButtonVariants>['size']",
+      "'md'"
+    ],
+    [
+      "href",
+      "string",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

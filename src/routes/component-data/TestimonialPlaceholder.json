@@ -1,7 +1,4 @@
 {
   "name": "TestimonialPlaceholder",
-  "props": [
-    ["class: className", ""],
-    ["...restProps", ""]
-  ]
+  "props": []
 }

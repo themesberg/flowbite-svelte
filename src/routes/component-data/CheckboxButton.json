@@ -1,17 +1,60 @@
 {
   "name": "CheckboxButton",
   "props": [
-    ["children", ""],
-    ["class: className", ""],
-    ["group", "[]"],
-    ["value", "on"],
-    ["checked", ""],
-    ["inline", "true"],
-    ["pill", ""],
-    ["outline", ""],
-    ["size", ""],
-    ["color", ""],
-    ["shadow", ""],
-    ["...restProps", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "group",
+      "(string | number)[]",
+      "[]"
+    ],
+    [
+      "value",
+      "string | number",
+      "'on'"
+    ],
+    [
+      "checked",
+      "boolean | undefined",
+      ""
+    ],
+    [
+      "inline",
+      "boolean",
+      "true"
+    ],
+    [
+      "pill",
+      "boolean",
+      ""
+    ],
+    [
+      "outline",
+      "boolean",
+      ""
+    ],
+    [
+      "size",
+      "SizeType",
+      ""
+    ],
+    [
+      "color",
+      "ColorName | 'alternative' | 'dark' | 'light'",
+      ""
+    ],
+    [
+      "shadow",
+      "boolean",
+      ""
+    ]
   ]
 }

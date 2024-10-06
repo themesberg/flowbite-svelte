@@ -1,12 +1,35 @@
 {
   "name": "GroupItem",
   "props": [
-    ["timelines", ""],
-    ["aClass", ""],
-    ["imgClass", ""],
-    ["divClass", ""],
-    ["titleClass", ""],
-    ["spanClass", ""],
-    ["...restProps", ""]
+    [
+      "timelines",
+      "interface GroupTimelineType {\n  name: string | HTMLElement;\n  src: string;\n  alt: string;\n  href?: string;\n  isPrivate?: boolean;\n  comment?: string | HTMLElement;\n}[]",
+      ""
+    ],
+    [
+      "aClass",
+      "string",
+      ""
+    ],
+    [
+      "imgClass",
+      "string",
+      ""
+    ],
+    [
+      "divClass",
+      "string",
+      ""
+    ],
+    [
+      "titleClass",
+      "string",
+      ""
+    ],
+    [
+      "spanClass",
+      "string",
+      ""
+    ]
   ]
 }

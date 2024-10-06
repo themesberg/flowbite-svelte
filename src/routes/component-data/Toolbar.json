@@ -1,12 +1,35 @@
 {
   "name": "Toolbar",
   "props": [
-    ["children", ""],
-    ["end", ""],
-    ["color", "default"],
-    ["embedded", ""],
-    ["separatorClass", ""],
-    ["class: className", ""],
-    ["...restProps", ""]
+    [
+      "children",
+      "type Snippet } from 'svelte';\nimport { toolbar, toolbarGroup, toolbarButton }",
+      ""
+    ],
+    [
+      "end",
+      "type Snippet } from 'svelte';\nimport { toolbar, toolbarGroup, toolbarButton }",
+      ""
+    ],
+    [
+      "color",
+      "VariantProps<typeof toolbar>['color']",
+      "'default'"
+    ],
+    [
+      "embedded",
+      "boolean",
+      ""
+    ],
+    [
+      "separatorClass",
+      "string",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

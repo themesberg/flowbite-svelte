@@ -1,8 +1,15 @@
 {
   "name": "FooterUl",
   "props": [
-    ["class: ulClass", ""],
-    ["children", ""],
-    ["...restProps", ""]
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "children",
+      "Snippet",
+      ""
+    ]
   ]
 }

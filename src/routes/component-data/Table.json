@@ -1,18 +1,65 @@
 {
   "name": "Table",
   "props": [
-    ["children", ""],
-    ["footerSlot", ""],
-    ["captionSlot", ""],
-    ["tableItems", ""],
-    ["divClass", "relative overflow-x-auto"],
-    ["striped", ""],
-    ["hoverable", ""],
-    ["noborder", ""],
-    ["shadow", ""],
-    ["color", "default"],
-    ["customeColor", ""],
-    ["class: className", ""],
-    ["...restProps", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "footerSlot",
+      "Snippet",
+      ""
+    ],
+    [
+      "captionSlot",
+      "Snippet",
+      ""
+    ],
+    [
+      "tableItems",
+      "Record<string, string | number | boolean>[]",
+      ""
+    ],
+    [
+      "divClass",
+      "string",
+      "'relative overflow-x-auto'"
+    ],
+    [
+      "striped",
+      "boolean",
+      ""
+    ],
+    [
+      "hoverable",
+      "boolean",
+      ""
+    ],
+    [
+      "noborder",
+      "boolean",
+      ""
+    ],
+    [
+      "shadow",
+      "boolean",
+      ""
+    ],
+    [
+      "color",
+      "VariantProps<typeof table>['color']",
+      "'default'"
+    ],
+    [
+      "customeColor",
+      "string",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

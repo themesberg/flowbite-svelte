@@ -1,22 +1,85 @@
 {
   "name": "Sidebar",
   "props": [
-    ["children", ""],
-    ["isOpen", "false"],
-    ["closeSidebar", ""],
-    ["isSingle", "true"],
-    ["breakpoint", "md"],
-    ["position", "fixed"],
-    ["activateClickOutside", "true"],
-    ["backdrop", "true"],
-    ["backdropClass", ""],
-    ["transition", "fly"],
-    ["params", ""],
-    ["divClass", ""],
-    ["ariaLabel", ""],
-    ["nonActiveClass", ""],
-    ["activeClass", ""],
-    ["class: className", ""],
-    ["...restProps", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "isOpen",
+      "boolean",
+      "false"
+    ],
+    [
+      "closeSidebar",
+      "() => void",
+      ""
+    ],
+    [
+      "isSingle",
+      "boolean",
+      "true"
+    ],
+    [
+      "breakpoint",
+      "VariantProps<typeof sidebar>['breakpoint']",
+      "'md'"
+    ],
+    [
+      "position",
+      "VariantProps<typeof sidebar>['position']",
+      "'fixed'"
+    ],
+    [
+      "activateClickOutside",
+      "boolean",
+      "true"
+    ],
+    [
+      "backdrop",
+      "boolean",
+      "true"
+    ],
+    [
+      "backdropClass",
+      "string",
+      ""
+    ],
+    [
+      "transition",
+      "TransitionFunc",
+      "fly"
+    ],
+    [
+      "params",
+      "ParamsType",
+      ""
+    ],
+    [
+      "divClass",
+      "string",
+      ""
+    ],
+    [
+      "ariaLabel",
+      "string",
+      ""
+    ],
+    [
+      "nonActiveClass",
+      "string",
+      ""
+    ],
+    [
+      "activeClass",
+      "string",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

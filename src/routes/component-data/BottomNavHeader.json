@@ -1,9 +1,20 @@
 {
   "name": "BottomNavHeader",
   "props": [
-    ["children", ""],
-    ["outerClass", ""],
-    ["innerClass", ""],
-    ["...restProps", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "outerClass",
+      "string",
+      ""
+    ],
+    [
+      "innerClass",
+      "string",
+      ""
+    ]
   ]
 }

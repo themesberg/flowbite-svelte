@@ -1,11 +1,30 @@
 {
   "name": "PaginationItem",
   "props": [
-    ["children", ""],
-    ["size", ""],
-    ["class: className", ""],
-    ["href", ""],
-    ["active", ""],
-    ["...restProps", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "size",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "href",
+      "any",
+      ""
+    ],
+    [
+      "active",
+      "any",
+      ""
+    ]
   ]
 }

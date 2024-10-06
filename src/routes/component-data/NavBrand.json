@@ -1,11 +1,30 @@
 {
   "name": "NavBrand",
   "props": [
-    ["children", ""],
-    ["siteName", ""],
-    ["closeNav", ""],
-    ["aClass", ""],
-    ["spanClass", ""],
-    ["...restProps", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "siteName",
+      "string | undefined | null",
+      ""
+    ],
+    [
+      "closeNav",
+      "() => void",
+      ""
+    ],
+    [
+      "aClass",
+      "string",
+      ""
+    ],
+    [
+      "spanClass",
+      "string",
+      ""
+    ]
   ]
 }

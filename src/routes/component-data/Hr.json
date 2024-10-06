@@ -1,10 +1,25 @@
 {
   "name": "Hr",
   "props": [
-    ["children", ""],
-    ["divClass", ""],
-    ["hrClass", ""],
-    ["innerDivClass", ""],
-    ["...restProps", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "divClass",
+      "string",
+      ""
+    ],
+    [
+      "hrClass",
+      "string",
+      ""
+    ],
+    [
+      "innerDivClass",
+      "string",
+      ""
+    ]
   ]
 }

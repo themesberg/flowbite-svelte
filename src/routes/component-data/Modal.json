@@ -1,1 +1,4 @@
-{ "name": "Modal", "props": [] }
+{
+  "name": "Modal",
+  "props": []
+}

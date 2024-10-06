@@ -1,7 +1,15 @@
 {
   "name": "Chart",
   "props": [
-    ["options", ""],
-    ["class: classname", ""]
+    [
+      "options",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

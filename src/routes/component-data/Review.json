@@ -1,18 +1,70 @@
 {
   "name": "Review",
   "props": [
-    ["children", ""],
-    ["address", ""],
-    ["item1", ""],
-    ["item2", ""],
-    ["item3", ""],
-    ["review", ""],
-    ["articleClass", ""],
-    ["divClass", ""],
-    ["div2Class", ""],
-    ["div3Class", ""],
-    ["imgClass", ""],
-    ["ulClass", ""],
-    ["liClass", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "address",
+      "Snippet",
+      ""
+    ],
+    [
+      "item1",
+      "Snippet",
+      ""
+    ],
+    [
+      "item2",
+      "Snippet",
+      ""
+    ],
+    [
+      "item3",
+      "Snippet",
+      ""
+    ],
+    [
+      "review",
+      "{\n  name?: string",
+      ""
+    ],
+    [
+      "articleClass",
+      "string",
+      ""
+    ],
+    [
+      "divClass",
+      "string",
+      ""
+    ],
+    [
+      "div2Class",
+      "string",
+      ""
+    ],
+    [
+      "div3Class",
+      "string",
+      ""
+    ],
+    [
+      "imgClass",
+      "string",
+      ""
+    ],
+    [
+      "ulClass",
+      "string",
+      ""
+    ],
+    [
+      "liClass",
+      "string",
+      ""
+    ]
   ]
 }

@@ -1,14 +1,45 @@
 {
   "name": "Pagination",
   "props": [
-    ["pages", "[]"],
-    ["previous", ""],
-    ["next", ""],
-    ["prevContent", ""],
-    ["nextContent", ""],
-    ["table", ""],
-    ["size", ""],
-    ["ariaLabel", ""],
-    ["...restProps", ""]
+    [
+      "pages",
+      "interface PaginationItemSpecificProps {\n  children?: Snippet;\n  name?: string;\n  href?: string;\n  active?: boolean;\n  rel?: string;\n  size?: PaginationItemType['size'];\n} &\n  Omit<HTMLButtonAttributes, keyof PaginationItemSpecificProps> &\n  Omit<HTMLAnchorAttributes, keyof PaginationItemSpecificProps> & {\n    href?: string[]",
+      "[]"
+    ],
+    [
+      "previous",
+      "() => void",
+      ""
+    ],
+    [
+      "next",
+      "() => void",
+      ""
+    ],
+    [
+      "prevContent",
+      "Snippet",
+      ""
+    ],
+    [
+      "nextContent",
+      "Snippet",
+      ""
+    ],
+    [
+      "table",
+      "boolean",
+      ""
+    ],
+    [
+      "size",
+      "VariantProps<typeof paginationItem>['size']",
+      ""
+    ],
+    [
+      "ariaLabel",
+      "string",
+      ""
+    ]
   ]
 }

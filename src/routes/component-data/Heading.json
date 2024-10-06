@@ -1,9 +1,20 @@
 {
   "name": "Heading",
   "props": [
-    ["children", ""],
-    ["tag", "h1"],
-    ["class: className", ""],
-    ["...restProps", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "tag",
+      "VariantProps<typeof heading>['tag']",
+      "'h1'"
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

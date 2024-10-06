@@ -1,17 +1,60 @@
 {
   "name": "P",
   "props": [
-    ["children", ""],
-    ["class: className", ""],
-    ["height", "normal"],
-    ["align", "left"],
-    ["justify", "false"],
-    ["italic", ""],
-    ["firstUpper", "false"],
-    ["whitespace", "normal"],
-    ["size", "base"],
-    ["space", "normal"],
-    ["weight", "normal"],
-    ["...restProps", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      "'text-gray-900 dark:text-white'"
+    ],
+    [
+      "height",
+      "any",
+      "'normal'"
+    ],
+    [
+      "align",
+      "any",
+      "'left'"
+    ],
+    [
+      "justify",
+      "any",
+      "false"
+    ],
+    [
+      "italic",
+      "any",
+      ""
+    ],
+    [
+      "firstUpper",
+      "any",
+      "false"
+    ],
+    [
+      "whitespace",
+      "any",
+      "'normal'"
+    ],
+    [
+      "size",
+      "any",
+      "'base'"
+    ],
+    [
+      "space",
+      "any",
+      "'normal'"
+    ],
+    [
+      "weight",
+      "any",
+      "'normal'"
+    ]
   ]
 }

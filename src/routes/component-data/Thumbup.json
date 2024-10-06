@@ -1,14 +1,45 @@
 {
   "name": "Thumbup",
   "props": [
-    ["fillPercent", "100"],
-    ["fillColor", "#00b500"],
-    ["strokeColor", "#00b500"],
-    ["size", "24"],
-    ["ariaLabel", "thumbup"],
-    ["id", "idGenerator()"],
-    ["role", "img"],
-    ["svgClass", ""],
-    ["...restProps", ""]
+    [
+      "fillPercent",
+      "number",
+      "100"
+    ],
+    [
+      "fillColor",
+      "string",
+      "'#00b500'"
+    ],
+    [
+      "strokeColor",
+      "string",
+      "'#00b500'"
+    ],
+    [
+      "size",
+      "number",
+      "24"
+    ],
+    [
+      "ariaLabel",
+      "string",
+      "'thumbup'"
+    ],
+    [
+      "id",
+      "string",
+      "idGenerator()"
+    ],
+    [
+      "role",
+      "string",
+      "'img'"
+    ],
+    [
+      "svgClass",
+      "string",
+      ""
+    ]
   ]
 }

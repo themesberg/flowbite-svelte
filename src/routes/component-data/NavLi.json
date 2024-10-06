@@ -1,13 +1,40 @@
 {
   "name": "NavLi",
   "props": [
-    ["closeNav", ""],
-    ["href", ""],
-    ["children", ""],
-    ["aClass", ""],
-    ["activeClass", ""],
-    ["nonActiveClass", ""],
-    ["class: className", ""],
-    ["...restProps", ""]
+    [
+      "closeNav",
+      "() => void",
+      ""
+    ],
+    [
+      "href",
+      "string",
+      ""
+    ],
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "aClass",
+      "string",
+      ""
+    ],
+    [
+      "activeClass",
+      "string",
+      ""
+    ],
+    [
+      "nonActiveClass",
+      "string",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

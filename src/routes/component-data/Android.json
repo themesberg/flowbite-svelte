@@ -1,14 +1,45 @@
 {
   "name": "Android",
   "props": [
-    ["children", ""],
-    ["divClass", ""],
-    ["div2Class", ""],
-    ["div3Class", ""],
-    ["div4Class", ""],
-    ["div5Class", ""],
-    ["div6Class", ""],
-    ["div7Class", ""],
-    ["...restProps", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "divClass",
+      "any",
+      ""
+    ],
+    [
+      "div2Class",
+      "any",
+      ""
+    ],
+    [
+      "div3Class",
+      "any",
+      ""
+    ],
+    [
+      "div4Class",
+      "any",
+      ""
+    ],
+    [
+      "div5Class",
+      "string",
+      ""
+    ],
+    [
+      "div6Class",
+      "string",
+      ""
+    ],
+    [
+      "div7Class",
+      "string",
+      ""
+    ]
   ]
 }

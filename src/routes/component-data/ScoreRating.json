@@ -1,8 +1,20 @@
 {
   "name": "ScoreRating",
   "props": [
-    ["ratings", ""],
-    ["ratings2", ""],
-    ["headerLabel", ""]
+    [
+      "ratings",
+      "{ label",
+      ""
+    ],
+    [
+      "ratings2",
+      "any",
+      ""
+    ],
+    [
+      "headerLabel",
+      "any",
+      ""
+    ]
   ]
 }

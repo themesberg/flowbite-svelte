@@ -1,9 +1,20 @@
 {
   "name": "ButtonGroup",
   "props": [
-    ["children", ""],
-    ["size", "md"],
-    ["class: className", ""],
-    ["...restProps", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "size",
+      "VariantProps<typeof buttonGroup>['size']",
+      "'md'"
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

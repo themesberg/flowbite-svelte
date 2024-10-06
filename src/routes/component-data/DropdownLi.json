@@ -1,11 +1,30 @@
 {
   "name": "DropdownLi",
   "props": [
-    ["aClass", ""],
-    ["children", ""],
-    ["href", ""],
-    ["activeClass", ""],
-    ["liClass", ""],
-    ["...restProps", ""]
+    [
+      "aClass",
+      "string",
+      ""
+    ],
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "href",
+      "string",
+      ""
+    ],
+    [
+      "activeClass",
+      "string",
+      ""
+    ],
+    [
+      "liClass",
+      "string",
+      ""
+    ]
   ]
 }

@@ -1,12 +1,35 @@
 {
   "name": "TableBodyRow",
   "props": [
-    ["children", ""],
-    ["class: className", ""],
-    ["color", ""],
-    ["striped", ""],
-    ["hoverable", ""],
-    ["noborder", ""],
-    ["...restProps", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "color",
+      "VariantProps<typeof table>['color']",
+      ""
+    ],
+    [
+      "striped",
+      "boolean",
+      ""
+    ],
+    [
+      "hoverable",
+      "boolean",
+      ""
+    ],
+    [
+      "noborder",
+      "boolean",
+      ""
+    ]
   ]
 }

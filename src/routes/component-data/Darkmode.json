@@ -1,11 +1,30 @@
 {
   "name": "Darkmode",
   "props": [
-    ["class: className", ""],
-    ["lightIcon", ""],
-    ["darkIcon", ""],
-    ["size", "md"],
-    ["ariaLabel", "Dark mode"],
-    ["...restProps", ""]
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "lightIcon",
+      "Snippet",
+      ""
+    ],
+    [
+      "darkIcon",
+      "Snippet",
+      ""
+    ],
+    [
+      "size",
+      "'sm' | 'md' | 'lg'",
+      "'md'"
+    ],
+    [
+      "ariaLabel",
+      "string",
+      "'Dark mode'"
+    ]
   ]
 }

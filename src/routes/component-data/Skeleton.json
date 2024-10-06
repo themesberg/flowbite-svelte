@@ -1,8 +1,15 @@
 {
   "name": "Skeleton",
   "props": [
-    ["size", "sm"],
-    ["class: className", ""],
-    ["...restProps", ""]
+    [
+      "size",
+      "VariantProps<typeof skeleton>['size']",
+      "'sm'"
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

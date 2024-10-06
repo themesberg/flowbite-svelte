@@ -1,15 +1,50 @@
 {
   "name": "TimelineItem",
   "props": [
-    ["children", ""],
-    ["orientationSlot", ""],
-    ["title", ""],
-    ["date", ""],
-    ["svgClass", ""],
-    ["liClass", ""],
-    ["divClass", ""],
-    ["timeClass", ""],
-    ["h3Class", ""],
-    ["...restProps", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "orientationSlot",
+      "Snippet",
+      ""
+    ],
+    [
+      "title",
+      "string",
+      ""
+    ],
+    [
+      "date",
+      "string",
+      ""
+    ],
+    [
+      "svgClass",
+      "string",
+      ""
+    ],
+    [
+      "liClass",
+      "string",
+      ""
+    ],
+    [
+      "divClass",
+      "string",
+      ""
+    ],
+    [
+      "timeClass",
+      "string",
+      ""
+    ],
+    [
+      "h3Class",
+      "string",
+      ""
+    ]
   ]
 }

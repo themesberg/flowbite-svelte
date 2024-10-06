@@ -1,9 +1,20 @@
 {
   "name": "A",
   "props": [
-    ["children", ""],
-    ["color", "primary"],
-    ["class: className", ""],
-    ["...restProps", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "color",
+      "any",
+      "'primary'"
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

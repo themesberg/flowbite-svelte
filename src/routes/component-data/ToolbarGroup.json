@@ -1,12 +1,35 @@
 {
   "name": "ToolbarGroup",
   "props": [
-    ["children", ""],
-    ["spacing", "default"],
-    ["padding", "default"],
-    ["position", "middle"],
-    ["class: className", ""],
-    ["divClass", "flex items-center space-x-1 rtl:space-x-reverse sm:pe-4 sm:ps-4 first:sm:ps-0 last:sm:pe-0"],
-    ["...restProps", ""]
+    [
+      "children",
+      "type Snippet } from 'svelte';\nimport { toolbar, toolbarGroup, toolbarButton }",
+      ""
+    ],
+    [
+      "spacing",
+      "VariantProps<typeof toolbarGroup>['spacing']",
+      "'default'"
+    ],
+    [
+      "padding",
+      "VariantProps<typeof toolbarGroup>['padding']",
+      "'default'"
+    ],
+    [
+      "position",
+      "VariantProps<typeof toolbarGroup>['position']",
+      "'middle'"
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "divClass",
+      "string",
+      "'flex items-center space-x-1 rtl:space-x-reverse sm:pe-4 sm:ps-4 first:sm:ps-0 last:sm:pe-0'"
+    ]
   ]
 }

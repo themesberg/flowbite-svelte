@@ -1,1 +1,4 @@
-{ "name": "WidgetPlaceholder", "props": [["class: className", ""]] }
+{
+  "name": "WidgetPlaceholder",
+  "props": []
+}

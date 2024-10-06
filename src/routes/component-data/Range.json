@@ -1,11 +1,30 @@
 {
   "name": "Range",
   "props": [
-    ["value", "$bindable()"],
-    ["appearance", "none"],
-    ["color", "blue"],
-    ["rangeSize", "md"],
-    ["inputClass", ""],
-    ["...restProps", ""]
+    [
+      "value",
+      "number | string",
+      "$bindable()"
+    ],
+    [
+      "appearance",
+      "VariantProps<typeof range>['appearance']",
+      "'none'"
+    ],
+    [
+      "color",
+      "'gray' | 'red' | 'blue' | 'indigo' | 'violet' | 'purple' | 'fuchsia' | 'pink' | 'rose'",
+      "'blue'"
+    ],
+    [
+      "rangeSize",
+      "'sm' | 'md' | 'lg'",
+      "'md'"
+    ],
+    [
+      "inputClass",
+      "string",
+      ""
+    ]
   ]
 }

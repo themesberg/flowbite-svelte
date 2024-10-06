@@ -1,8 +1,15 @@
 {
   "name": "NavHamburger",
   "props": [
-    ["toggleNav", ""],
-    ["class: className", ""],
-    ["...restProps", ""]
+    [
+      "toggleNav",
+      "() => void",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

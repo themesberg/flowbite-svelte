@@ -1,14 +1,45 @@
 {
   "name": "Accordion",
   "props": [
-    ["children", ""],
-    ["flush", ""],
-    ["activeClass", ""],
-    ["inactiveClass", ""],
-    ["isSingle", "true"],
-    ["class: className", ""],
-    ["transition", ""],
-    ["params", ""],
-    ["...restProps", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "flush",
+      "boolean",
+      ""
+    ],
+    [
+      "activeClass",
+      "string",
+      ""
+    ],
+    [
+      "inactiveClass",
+      "string",
+      ""
+    ],
+    [
+      "isSingle",
+      "boolean",
+      "true"
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "transition",
+      "TransitionFunc",
+      ""
+    ],
+    [
+      "params",
+      "ParamsType",
+      ""
+    ]
   ]
 }

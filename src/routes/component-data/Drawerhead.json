@@ -1,13 +1,40 @@
 {
   "name": "Drawerhead",
   "props": [
-    ["closeIcon", ""],
-    ["children", ""],
-    ["tag", "h5"],
-    ["headClass", ""],
-    ["buttonClass", ""],
-    ["svgClass", ""],
-    ["class: className", ""],
-    ["...restProps", ""]
+    [
+      "closeIcon",
+      "Snippet",
+      ""
+    ],
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "tag",
+      "string",
+      "'h5'"
+    ],
+    [
+      "headClass",
+      "string",
+      ""
+    ],
+    [
+      "buttonClass",
+      "string",
+      ""
+    ],
+    [
+      "svgClass",
+      "string",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

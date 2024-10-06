@@ -1,13 +1,40 @@
 {
   "name": "BottomNav",
   "props": [
-    ["children", ""],
-    ["header", ""],
-    ["position", "fixed"],
-    ["navType", "default"],
-    ["outerClass", ""],
-    ["innerClass", ""],
-    ["activeClass", ""],
-    ["...restProps", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "header",
+      "Snippet",
+      ""
+    ],
+    [
+      "position",
+      "VariantProps<typeof bottomNav>['position']",
+      "'fixed'"
+    ],
+    [
+      "navType",
+      "VariantProps<typeof bottomNav>['navType']",
+      "'default'"
+    ],
+    [
+      "outerClass",
+      "string",
+      ""
+    ],
+    [
+      "innerClass",
+      "string",
+      ""
+    ],
+    [
+      "activeClass",
+      "string",
+      ""
+    ]
   ]
 }

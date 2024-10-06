@@ -1,10 +1,25 @@
 {
   "name": "ListPlaceholder",
   "props": [
-    ["itemNumber", "5"],
-    ["size", "md"],
-    ["rounded", ""],
-    ["class: className", ""],
-    ["...restProps", ""]
+    [
+      "itemNumber",
+      "number",
+      "5"
+    ],
+    [
+      "size",
+      "VariantProps<typeof imagePlaceholder>['size']",
+      "'md'"
+    ],
+    [
+      "rounded",
+      "VariantProps<typeof imagePlaceholder>['rounded']",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

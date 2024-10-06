@@ -1,8 +1,15 @@
 {
   "name": "Layout",
   "props": [
-    ["children", ""],
-    ["class: className", ""],
-    ["...restProps", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

@@ -1,13 +1,40 @@
 {
   "name": "Blockquote",
   "props": [
-    ["children", ""],
-    ["class: className", ""],
-    ["border", ""],
-    ["italic", "true"],
-    ["bg", ""],
-    ["alignment", "left"],
-    ["size", "lg"],
-    ["...restProps", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "border",
+      "boolean",
+      ""
+    ],
+    [
+      "italic",
+      "boolean",
+      "true"
+    ],
+    [
+      "bg",
+      "boolean",
+      ""
+    ],
+    [
+      "alignment",
+      "VariantProps<typeof blockquote>['alignment']",
+      "'left'"
+    ],
+    [
+      "size",
+      "VariantProps<typeof blockquote>['size']",
+      "'lg'"
+    ]
   ]
 }

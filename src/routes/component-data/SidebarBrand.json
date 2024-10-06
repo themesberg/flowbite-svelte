@@ -1,11 +1,30 @@
 {
   "name": "SidebarBrand",
   "props": [
-    ["children", ""],
-    ["site", ""],
-    ["imgClass", ""],
-    ["spanClass", ""],
-    ["class: className", ""],
-    ["...restProps", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "site",
+      "interface SiteType {\n  name?: string;\n  href?: string;\n  img?: string;\n}",
+      ""
+    ],
+    [
+      "imgClass",
+      "string",
+      ""
+    ],
+    [
+      "spanClass",
+      "string",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

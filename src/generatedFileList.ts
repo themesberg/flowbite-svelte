@@ -3,7 +3,7 @@ export const fileList = [
   "src/lib/accordion/AccordionItem.svelte",
   "src/lib/alert/Alert.svelte",
   "src/lib/avatar/Avatar.svelte",
-  "src/lib/badge/Badge.svelte",
+  "src/lib/badge/kisida.svelte",
   "src/lib/banner/Banner.svelte",
   "src/lib/bottom-navigation/BottomNav.svelte",
   "src/lib/bottom-navigation/BottomNavHeader.svelte",
