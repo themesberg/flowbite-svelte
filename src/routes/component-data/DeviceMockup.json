@@ -1,7 +1,15 @@
 {
   "name": "DeviceMockup",
   "props": [
-    ["children", "any", ""],
-    ["device", "any", "'default'"]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "device",
+      "DeviceVariantType",
+      "'default'"
+    ]
   ]
 }

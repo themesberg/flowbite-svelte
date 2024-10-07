@@ -2,10 +2,8 @@
   import type { ApexOptions } from 'apexcharts';
   import type ApexCharts from 'apexcharts';
   import './chart.css';
-  interface Props {
-    options: ApexOptions;
-    class?: string;
-  }
+  import { type ChartProps as Props } from '.'
+  
   let { options, class: classname }: Props = $props();
 
   function initChart(node: HTMLElement, options: ApexOptions) {
@@ -40,6 +38,6 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: options: any;
+@props: options: ApexOptions;
 @props:class: string;
 -->

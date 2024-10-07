@@ -1,23 +1,12 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
   import type { SizeType } from '$lib/types';
   import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
   import { clampSize } from '$lib';
-  import type { HTMLAttributes } from 'svelte/elements';
-
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    children: Snippet;
-    class?: string;
-    size?: 'sm' | 'md' | 'lg' | undefined;
-  }
+  import { type InputAddonProps as Props } from '.'
 
   let { children, class: className, size, ...restProps }: Props = $props();
-  // export let size: 'sm' | 'md' | 'lg' | undefined = undefined;
-
-  // tinted if put in component having its own background
   let background: boolean = getContext('background');
-
   let group: { size: SizeType } = getContext('group');
 
   const borderClasses = {
@@ -52,7 +41,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children: Snippet;
 @props:class: string;
-@props:size: any;
+@props:size: 'sm' | 'md' | 'lg' | undefined;
 -->

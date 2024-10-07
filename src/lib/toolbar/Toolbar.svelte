@@ -1,7 +1,6 @@
 <script lang="ts">
   import { setContext } from 'svelte';
   import { writable } from 'svelte/store';
-  // import { twMerge } from 'tailwind-merge';
   import { type ToolbarProps as Props, toolbar } from './';
 
   let { children, end, color = 'default', embedded, separatorClass, class: className, ...restProps }: Props = $props();

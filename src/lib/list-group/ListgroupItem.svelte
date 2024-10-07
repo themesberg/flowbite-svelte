@@ -59,7 +59,7 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children: Snippet;
-@props:onclick: (event?;
+@props:onclick: (event?: MouseEvent) => void;
 @props:active: boolean;
 @props:current: boolean;
 @props:disabled: boolean;

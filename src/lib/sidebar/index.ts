@@ -82,4 +82,21 @@ interface SidebarDropdownWrapperProps extends HTMLButtonAttributes {
   isSingle?: boolean;
 }
 
-export { Sidebar, sidebar, type SidebarProps, SidebarDropdownWrapper, sidebardropdownwrapper, type SidebarDropdownWrapperProps, SidebarGroup, SidebarItem, type SidebarCtxType, SidebarButton, sidebarbutton, type SidebarButtonProps, SidebarCta, sidebarcta, type SidebarCtaProps, SidebarBrand, sitebarbrand, type SidebarBrandProps, type BreakpointType, type PosisionType };
+interface SidebarGroupProps extends HTMLAttributes<HTMLUListElement> {
+  children: Snippet;
+  borderClass?: string;
+  border?: boolean;
+}
+
+interface SidebarItemProps extends HTMLAnchorAttributes {
+  iconSlot?: Snippet;
+  subtext?: Snippet;
+  label?: string;
+  spanClass?: string;
+  activeClass?: string;
+  nonActiveClass?: string;
+  aClass?: string;
+  active?: boolean;
+}
+
+export { Sidebar, sidebar, type SidebarProps, SidebarDropdownWrapper, sidebardropdownwrapper, type SidebarDropdownWrapperProps, SidebarGroup, type SidebarGroupProps, SidebarItem, type SidebarItemProps, type SidebarCtxType, SidebarButton, sidebarbutton, type SidebarButtonProps, SidebarCta, sidebarcta, type SidebarCtaProps, SidebarBrand, sitebarbrand, type SidebarBrandProps, type BreakpointType, type PosisionType };

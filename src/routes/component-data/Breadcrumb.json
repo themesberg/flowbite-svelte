@@ -1,10 +1,30 @@
 {
   "name": "Breadcrumb",
   "props": [
-    ["children", "Snippet", ""],
-    ["solid", "boolean", "false"],
-    ["navClass", "string", ""],
-    ["olClass", "string", ""],
-    ["ariaLabel", "string", "'Breadcrumb'"]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "solid",
+      "boolean",
+      "false"
+    ],
+    [
+      "navClass",
+      "string",
+      ""
+    ],
+    [
+      "olClass",
+      "string",
+      ""
+    ],
+    [
+      "ariaLabel",
+      "string",
+      "'Breadcrumb'"
+    ]
   ]
 }

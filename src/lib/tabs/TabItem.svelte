@@ -60,13 +60,13 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:titleSlot: any;
-@props:open: any = false;
-@props:title: any = 'Tab title';
-@props:activeClass: any;
-@props:inactiveClass: any;
+@props: children: Snippet;
+@props:titleSlot: Snippet;
+@props:open: boolean = false;
+@props:title: string = 'Tab title';
+@props:activeClass: string;
+@props:inactiveClass: string;
 @props:class: string;
-@props:disabled: any;
-@props:tabStyle: any;
+@props:disabled: boolean;
+@props:tabStyle: 'full' | 'pill' | 'underline' | 'none';
 -->

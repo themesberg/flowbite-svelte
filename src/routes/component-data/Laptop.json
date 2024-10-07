@@ -1,10 +1,30 @@
 {
   "name": "Laptop",
   "props": [
-    ["children", "any", ""],
-    ["divClass", "any", ""],
-    ["div2Class", "any", ""],
-    ["div3Class", "any", ""],
-    ["div4Class", "any", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "divClass",
+      "string",
+      ""
+    ],
+    [
+      "div2Class",
+      "string",
+      ""
+    ],
+    [
+      "div3Class",
+      "string",
+      ""
+    ],
+    [
+      "div4Class",
+      "string",
+      ""
+    ]
   ]
 }

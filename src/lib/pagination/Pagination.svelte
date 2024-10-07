@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { page } from '$app/stores';
   import { setContext } from 'svelte';
   import { type PaginationProps as Props, pagination, PaginationItem } from '.';
 

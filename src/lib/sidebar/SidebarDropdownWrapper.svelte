@@ -4,7 +4,7 @@
   import type { ParamsType } from '../types';
   import { slide } from 'svelte/transition';
   import { uiHelpers } from '$lib';
-  import { type SidebarDropdownWrapperProps as Props, sidebardropdownwrapper, type SidebarCtxType } from '.';
+  import { type SidebarDropdownWrapperProps as Props, sidebardropdownwrapper } from '.';
 
   type SidebarContext = {
     selected?: Writable<object | null>;

@@ -1,13 +1,6 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
-  import type { HTMLAttributes } from 'svelte/elements';
-  import { kbd } from '.';
-
-  interface Props extends HTMLAttributes<HTMLElement> {
-    children: Snippet;
-    class: string | undefined | null;
-  }
+  import { kbd, type KbdProps as Props } from '.';
 
   let { children, class: kbdClass, ...restProps }: Props = $props();
   const kbdCls = kbd();
@@ -21,6 +14,6 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children: Snippet;
 @props:class: string;
 -->

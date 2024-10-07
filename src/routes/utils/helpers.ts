@@ -11,6 +11,10 @@ export function removeHyphensAndCapitalize(str: string) {
   return capitalized.replace(/-|\s{2,}/g, ' ');
 }
 
+export function toKebabCase(inputString: string) {
+  return inputString.toLowerCase().replace(/\s+/g, '-');
+}
+
 export function splitAndCapitalize(text: string) {
   // Split the string using '/' as the delimiter
   const parts = text.split('/');
@@ -75,8 +79,15 @@ export const isSvelteOverflow = (sveltefile: string, exampleModules: Record<stri
 
 import { fileList } from '../../generatedFileList';
 
+/**
+ * Returns an array of file names from the `fileList` that include the specified `dirName`.
+ *
+ * @param {string} dirName - The directory name to filter the file list by.
+ * @return {string[]} An array of file names without extensions.
+ */
 export function getFilteredFileNames(dirName: string): string[] {
-  const filteredPaths = fileList.filter((path) => path.includes(dirName));
+  const filteredPaths = fileList.filter((path) => path.includes(`src/lib/${dirName}`));
+  console.log('filteredPaths', filteredPaths);
   const fileNames = filteredPaths.map((path) => {
     const parts = path.split('/');
     const fileNameWithExtension = parts[parts.length - 1];

@@ -1,12 +1,5 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import type { HTMLAttributes } from 'svelte/elements';
-
-  interface Props extends HTMLAttributes<HTMLUListElement> {
-    children: Snippet;
-    borderClass?: string;
-    border?: boolean;
-  }
+  import { type SidebarGroupProps as Props } from '.';
 
   let { children, class: className = 'space-y-2', borderClass = 'pt-4 mt-4 border-t border-gray-200 dark:border-gray-700', border = false, ...restProps }: Props = $props();
 </script>
@@ -19,8 +12,8 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children: Snippet;
 @props:class: string = 'space-y-2';
-@props:borderClass: any = 'pt-4 mt-4 border-t border-gray-200 dark:border-gray-700';
-@props:border: any = false;
+@props:borderClass: string = 'pt-4 mt-4 border-t border-gray-200 dark:border-gray-700';
+@props:border: boolean = false;
 -->

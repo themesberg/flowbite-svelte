@@ -7,6 +7,8 @@
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
   import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
+  const dirName = 'mega-menu';
 
   // for examples section that dynamically changes the svelte component and svelteCode content
   import * as ExampleComponents from './examples';
@@ -59,3 +61,6 @@
     <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${svelteCode}`] as string} />
   {/snippet}
 </CodeWrapper>
+
+<H2>Component data</H2>
+<CompoAttributesViewer {dirName} />

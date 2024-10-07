@@ -14,15 +14,15 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
+@props: children: Snippet;
 @props:class: string = 'text-gray-900 dark:text-white';
-@props:height: any = 'normal';
-@props:align: any = 'left';
-@props:justify: any = false;
-@props:italic: any;
-@props:firstUpper: any = false;
-@props:whitespace: any = 'normal';
-@props:size: any = 'base';
-@props:space: any = 'normal';
-@props:weight: any = 'normal';
+@props:height: VariantProps<typeof paragraph>['height'] = 'normal';
+@props:align: VariantProps<typeof paragraph>['align'] = 'left';
+@props:justify: boolean = false;
+@props:italic: boolean;
+@props:firstUpper: boolean = false;
+@props:whitespace: VariantProps<typeof paragraph>['whitespace'] = 'normal';
+@props:size: VariantProps<typeof paragraph>['size'] = 'base';
+@props:space: VariantProps<typeof paragraph>['space'] = 'normal';
+@props:weight: VariantProps<typeof paragraph>['weight'] = 'normal';
 -->

@@ -28,7 +28,7 @@
 ## Props
 @props: rating: Snippet;
 @props:globalText: Snippet;
-@props:ratings: { label;
+@props:ratings: { label: string | undefined | null;
 @props:divClass: any;
 @props:spanClass: any;
 @props:div2Class: any;

@@ -1,8 +1,20 @@
 {
   "name": "InputAddon",
   "props": [
-    ["children", "any", ""],
-    ["class", "string", ""],
-    ["size", "any", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "size",
+      "'sm' | 'md' | 'lg' | undefined",
+      ""
+    ]
   ]
 }

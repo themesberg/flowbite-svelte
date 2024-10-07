@@ -1,7 +1,15 @@
 {
   "name": "VideoPlaceholder",
   "props": [
-    ["size", "VariantProps<typeof textPlaceholder>['size']", "'sm'"],
-    ["class", "string", ""]
+    [
+      "size",
+      "VariantProps<typeof textPlaceholder>['size']",
+      "'sm'"
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

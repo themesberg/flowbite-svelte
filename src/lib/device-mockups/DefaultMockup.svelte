@@ -22,11 +22,11 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:divClass: any;
-@props:div2Class: any;
-@props:div3Class: any;
-@props:div4Class: any;
+@props: children: Snippet;
+@props:divClass: string;
+@props:div2Class: string;
+@props:div3Class: string;
+@props:div4Class: string;
 @props:div5Class: string;
 @props:div6Class: string;
 -->

@@ -1,16 +1,60 @@
 {
   "name": "Banner",
   "props": [
-    ["children", "Snippet", ""],
-    ["header", "Snippet", ""],
-    ["bannerStatus", "boolean", "$bindable(true)"],
-    ["position", "VariantProps<typeof banner>['position']", "'sticky'"],
-    ["dismissable", "boolean", "true"],
-    ["color", "VariantProps<typeof banner>['color']", "'gray'"],
-    ["bannerType", "VariantProps<typeof banner>['bannerType']", "'default'"],
-    ["class", "string", ""],
-    ["innerClass", "string", ""],
-    ["transition", "TransitionFunc", "fade"],
-    ["params", "object", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "header",
+      "Snippet",
+      ""
+    ],
+    [
+      "bannerStatus",
+      "boolean",
+      "$bindable(true)"
+    ],
+    [
+      "position",
+      "VariantProps<typeof banner>['position']",
+      "'sticky'"
+    ],
+    [
+      "dismissable",
+      "boolean",
+      "true"
+    ],
+    [
+      "color",
+      "VariantProps<typeof banner>['color']",
+      "'gray'"
+    ],
+    [
+      "bannerType",
+      "VariantProps<typeof banner>['bannerType']",
+      "'default'"
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "innerClass",
+      "string",
+      ""
+    ],
+    [
+      "transition",
+      "TransitionFunc",
+      "fade"
+    ],
+    [
+      "params",
+      "object",
+      ""
+    ]
   ]
 }

@@ -3,15 +3,13 @@
   import TableProp from './TableProp.svelte';
   import TableDefaultRow from './TableDefaultRow.svelte';
   import { ClipboardSolid } from 'flowbite-svelte-icons';
-  import { getFilteredFileNames } from './helpers';
+  import { getFilteredFileNames, toKebabCase } from './helpers';
 
   type TCompoData = {
     data: {
       default: {
         name?: string;
         props?: string[][];
-        events?: string[][];
-        slots?: string[][];
         snippet?: string[][];
       };
     };
@@ -23,7 +21,8 @@
   let { dirName, components }: Props = $props();
   let compoData: TCompoData[] = $state([]);
   // default is find fileName using dirName
-  const fileNames = getFilteredFileNames(dirName);
+  const fileNames = getFilteredFileNames(toKebabCase(dirName));
+  console.log('fileNames', fileNames);
 
   // if components are given (e.g. checkbox, etc in forms, typography, utils) use the components string
   let componentArray = components ? components.split(', ') : [];

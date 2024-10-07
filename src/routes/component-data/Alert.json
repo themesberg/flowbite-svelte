@@ -1,17 +1,65 @@
 {
   "name": "Alert",
   "props": [
-    ["children", "Snippet", ""],
-    ["icon", "Snippet", ""],
-    ["alertStatus", "boolean", "$bindable(true)"],
-    ["closeIcon", "boolean", ""],
-    ["color", "VariantProps<typeof alert>['color']", "'primary'"],
-    ["rounded", "boolean", "true"],
-    ["border", "boolean", ""],
-    ["class", "string", ""],
-    ["dismissable", "boolean", ""],
-    ["transition", "TransitionFunc", "fade"],
-    ["params", "ParamsType", ""],
-    ["onclick", "() => void", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "icon",
+      "Snippet",
+      ""
+    ],
+    [
+      "alertStatus",
+      "boolean",
+      "$bindable(true)"
+    ],
+    [
+      "closeIcon",
+      "boolean",
+      ""
+    ],
+    [
+      "color",
+      "VariantProps<typeof alert>['color']",
+      "'primary'"
+    ],
+    [
+      "rounded",
+      "boolean",
+      "true"
+    ],
+    [
+      "border",
+      "boolean",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "dismissable",
+      "boolean",
+      ""
+    ],
+    [
+      "transition",
+      "TransitionFunc",
+      "fade"
+    ],
+    [
+      "params",
+      "ParamsType",
+      ""
+    ],
+    [
+      "onclick",
+      "() => void",
+      ""
+    ]
   ]
 }

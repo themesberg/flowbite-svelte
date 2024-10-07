@@ -1,7 +1,5 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
   import type { Component } from 'svelte';
-  import type { DeviceVariantType } from '$lib/types';
   import Android from './Android.svelte';
   import DefaultMockup from './DefaultMockup.svelte';
   import Desktop from './Desktop.svelte';
@@ -9,11 +7,7 @@
   import Laptop from './Laptop.svelte';
   import Smartwatch from './Smartwatch.svelte';
   import Tablet from './Tablet.svelte';
-
-  interface Props {
-    children: Snippet;
-    device?: DeviceVariantType;
-  }
+  import { type DeviceMockupProps as Props } from '.'
 
   let { children, device = 'default' }: Props = $props();
 
@@ -38,6 +32,6 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:device: any = 'default';
+@props: children: Snippet;
+@props:device: DeviceVariantType = 'default';
 -->

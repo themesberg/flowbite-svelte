@@ -103,8 +103,8 @@ importers:
         specifier: ^4.0.4
         version: 4.0.4(svelte@5.0.0-next.262)(typescript@5.6.2)
       svelte-lib-helpers:
-        specifier: ^0.4.12
-        version: 0.4.12
+        specifier: ^0.4.15
+        version: 0.4.15
       svelte-rune-highlight:
         specifier: ^0.5.11
         version: 0.5.11(svelte@5.0.0-next.262)
@@ -947,8 +947,8 @@ packages:
   concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
 
-  cookie@0.7.1:
-    resolution: {integrity: sha512-6DnInpx7SJ2AK3+CTUE/ZM0vWTUboZCegxhC2xiIydHR9jNuTAASBrfEpHhiGOZw/nX51bHt6YQl8jsGo4y/0w==}
+  cookie@0.7.2:
+    resolution: {integrity: sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==}
     engines: {node: '>= 0.6'}
 
   cross-spawn@5.1.0:
@@ -1944,8 +1944,8 @@ packages:
       svelte:
         optional: true
 
-  svelte-lib-helpers@0.4.12:
-    resolution: {integrity: sha512-JLJOmmaV5dWBWM2uA1Lg/d0ZNXY9K6phH6q9ZZhNnHQDDrqE4PqLJzEVDAIXuN27A6MwJ63DKV0ZAfAHmZATvw==}
+  svelte-lib-helpers@0.4.15:
+    resolution: {integrity: sha512-OBvfJs85Uhbkc+Xz9+SmJ0E8vM5UCTXa2o7vK52qsTlz0IEZensSwdjE3tsXCmvESxZzj+TENMPhO9fZM2Zi+Q==}
     hasBin: true
 
   svelte-rune-highlight@0.5.11:
@@ -2681,7 +2681,7 @@ snapshots:
     dependencies:
       '@sveltejs/vite-plugin-svelte': 4.0.0-next.7(svelte@5.0.0-next.262)(vite@5.4.8(@types/node@22.7.4))
       '@types/cookie': 0.6.0
-      cookie: 0.7.1
+      cookie: 0.7.2
       devalue: 5.1.1
       esm-env: 1.0.0
       import-meta-resolve: 4.1.0
@@ -2982,7 +2982,7 @@ snapshots:
 
   concat-map@0.0.1: {}
 
-  cookie@0.7.1: {}
+  cookie@0.7.2: {}
 
   cross-spawn@5.1.0:
     dependencies:
@@ -3901,7 +3901,7 @@ snapshots:
     optionalDependencies:
       svelte: 5.0.0-next.262
 
-  svelte-lib-helpers@0.4.12:
+  svelte-lib-helpers@0.4.15:
     dependencies:
       yargs: 17.7.2
 

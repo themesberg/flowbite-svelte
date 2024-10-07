@@ -9,7 +9,7 @@
   import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
   // for Props table
   import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'button';
+  const dirName = 'buttons';
   import { capitalizeFirstLetter } from '../../utils/helpers';
 
   // for examples section that dynamically changes the svelte component and svelteCode content

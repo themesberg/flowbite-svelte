@@ -39,7 +39,7 @@
   [key: string]: any;
 } | string)[];
 @props:active: boolean;
-@props:onclick: (event?;
+@props:onclick: (event?: MouseEvent) => void;
 @props:rounded: boolean = true;
 @props:border: boolean = true;
 @props:class: string;

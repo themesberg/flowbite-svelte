@@ -1,5 +1,4 @@
 <script lang="ts">
-  // import { twMerge } from 'tailwind-merge';
   import type { Writable } from 'svelte/store';
   import { getContext } from 'svelte';
   import { type ToolbarGroupProps as Props, toolbarGroup } from './';

@@ -9,6 +9,12 @@ import Tablet from './Tablet.svelte';
 import type { Snippet } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
 import { android, defaultMockup, desktop, ios, laptop, smartwatch, tablet } from './theme';
+import type { DeviceVariantType } from '$lib/types';
+
+interface DeviceMockupProps {
+  children: Snippet;
+  device?: DeviceVariantType;
+}
 
 interface MockupBaseProps extends HTMLAttributes<HTMLElement> {
   children?: Snippet;
@@ -44,4 +50,4 @@ interface TabletProps extends MockupBaseProps {
   div6Class?: string;
 }
 
-export { Android, DefaultMockup, Desktop, DeviceMockup, Ios, Laptop, Smartwatch, Tablet, android, defaultMockup, desktop, ios, laptop, smartwatch, tablet, type AndroidProps, type DefaultMockupProps, type IosProps, type SmartwatchProps, type TabletProps, type MockupBaseProps };
+export { Android, DefaultMockup, Desktop, DeviceMockup, type DeviceMockupProps, Ios, Laptop, Smartwatch, Tablet, android, defaultMockup, desktop, ios, laptop, smartwatch, tablet, type AndroidProps, type DefaultMockupProps, type IosProps, type SmartwatchProps, type TabletProps, type MockupBaseProps };

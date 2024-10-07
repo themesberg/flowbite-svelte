@@ -1,3 +1,9 @@
 import Chart from './Chart.svelte';
+import type { ApexOptions } from 'apexcharts';
 
-export { Chart };
+interface ChartProps {
+  options: ApexOptions;
+  class?: string;
+}
+
+export { Chart, type ChartProps };
