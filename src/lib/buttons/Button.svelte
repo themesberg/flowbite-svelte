@@ -7,10 +7,7 @@
 
   let { children, pill = false, outline = false, size = group ? 'sm' : 'md', href, type = 'button', color = group ? (outline ? 'dark' : 'alternative') : 'primary', shadow = false, tag = 'button', disabled, class: className, ...restProps }: Props = $props();
 
-  // const disabledValue = disabled !== null ? disabled : undefined;
   const base = $derived(button({ color, size, disabled, pill, group: !!group, outline, shadow, className }));
-
-  // $inspect('group: ', group, 'isGroup: ', isGroup);
 </script>
 
 {#if href}

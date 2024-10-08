@@ -1,8 +1,8 @@
 <script lang="ts">
   import type { ParamsType } from '$lib/types';
-  import { type DrawerProps as Props, drawer } from '.';
   import { fly } from 'svelte/transition';
   import { sineIn } from 'svelte/easing';
+  import { type DrawerProps as Props, drawer } from '.';
 
   let { children, drawerStatus, closeDrawer, activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = 'left', class: className, params = { x: -320, duration: 200, easing: sineIn }, transition = fly, ...restProps }: Props = $props();
 
