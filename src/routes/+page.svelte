@@ -30,25 +30,25 @@
 <H3>Svelte 5 Runes</H3>
 <P>Installing Svelte 5:</P>
 
-<HighlightCompo codeLang="js" code={modules["./md/install-svelte.md"] as string} />
+<HighlightCompo class="mb-8" codeLang="js" code={modules["./md/install-svelte.md"] as string} />
 
 <P>
   After installing Svelte-5, you can <a href="https://svelte-5-preview.vercel.app/docs/runes#how-to-opt-in">opt-in to runes mode</a>
   by updating `svelte.config.js` to enable `runes`:
 </P>
 
-<HighlightCompo codeLang="js" code={modules["./md/runes.md"] as string} />
+<HighlightCompo class="mb-8" codeLang="js" code={modules["./md/runes.md"] as string} />
 
 <H3>Svelte-5-Ui-Lib</H3>
 Install `svelte-5-ui-lib` and update dependencies:
 
-<HighlightCompo codeLang="sh" code={modules["./md/svelte-5-ui-lib.md"] as string} />
+<HighlightCompo class="mb-8" codeLang="sh" code={modules["./md/svelte-5-ui-lib.md"] as string} />
 
 <H3>Flowbite-Svelte-Icons@next</H3>
 
 Install flowbite-svelte-icons@next:
 
-<HighlightCompo codeLang="sh" code={modules["./md/flowbite-svelte-icons.md"] as string} />
+<HighlightCompo class="mb-8" codeLang="sh" code={modules["./md/flowbite-svelte-icons.md"] as string} />
 
 Check if it has the latest version at
 <a class="hover:underline dark:text-primary-500" href="https://github.com/themesberg/flowbite-svelte-icons/releases">Releases page</a>
@@ -57,11 +57,11 @@ Check if it has the latest version at
 <H3>Tailwind</H3>
 Install tailwindcss:
 
-<HighlightCompo codeLang="sh" code={modules["./md/tailwind.md"] as string} />
+<HighlightCompo class="mb-8" codeLang="sh" code={modules["./md/tailwind.md"] as string} />
 
 Add the following to tailwind.config.js:
 
-<HighlightCompo codeLang="json" code={modules["./md/tailwind-config.md"] as string} />
+<HighlightCompo class="mb-8" codeLang="json" code={modules["./md/tailwind-config.md"] as string} />
 
 <H2>Dependency info</H2>
 <ul>
