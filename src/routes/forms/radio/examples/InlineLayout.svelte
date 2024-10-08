@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Radio } from '$lib';
-  let inline1 = $state('second');
+  import { Radio } from "$lib";
+  let inline1 = $state("second");
 </script>
 
 <div class="flex gap-3 p-4">

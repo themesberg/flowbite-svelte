@@ -1,14 +1,14 @@
 <script lang="ts">
   interface Props {
-    size?: 'sm' | 'md' | 'lg';
+    size?: "sm" | "md" | "lg";
     class?: string;
   }
-  let { size = 'lg', class: className }: Props = $props();
+  let { size = "lg", class: className }: Props = $props();
 
   const sizes = {
-    sm: 'w-4 h-4',
-    md: 'w-5 h-5',
-    lg: 'w-6 h-6'
+    sm: "w-4 h-4",
+    md: "w-5 h-5",
+    lg: "w-6 h-6"
   };
 </script>
 

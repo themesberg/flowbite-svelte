@@ -1,2 +1,2 @@
-export { handlebars } from './';
-export { handlebars as default } from './';
+export { handlebars } from "./";
+export { handlebars as default } from "./";

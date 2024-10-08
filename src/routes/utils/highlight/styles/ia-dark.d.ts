@@ -1,1 +1,1 @@
-export { iaDark as default } from './';
+export { iaDark as default } from "./";

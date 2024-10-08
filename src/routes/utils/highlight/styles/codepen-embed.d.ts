@@ -1,1 +1,1 @@
-export { codepenEmbed as default } from './';
+export { codepenEmbed as default } from "./";

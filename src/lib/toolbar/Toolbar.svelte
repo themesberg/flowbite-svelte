@@ -1,14 +1,14 @@
 <script lang="ts">
-  import { setContext } from 'svelte';
-  import { writable } from 'svelte/store';
-  import { type ToolbarProps as Props, toolbar } from './';
+  import { setContext } from "svelte";
+  import { writable } from "svelte/store";
+  import { type ToolbarProps as Props, toolbar } from "./";
 
-  let { children, end, color = 'default', embedded, separatorClass, class: className, ...restProps }: Props = $props();
+  let { children, end, color = "default", embedded, separatorClass, class: className, ...restProps }: Props = $props();
 
   const separators = writable(false);
-  setContext('toolbar', separators);
+  setContext("toolbar", separators);
 
-  let frameColor = $derived(embedded ? 'default' : color);
+  let frameColor = $derived(embedded ? "default" : color);
 
   let { base, content } = $derived(
     toolbar({

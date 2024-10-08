@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { PaginationItem } from '$lib';
+  import { PaginationItem } from "$lib";
 
   const previous = () => {
-    alert('Previous btn clicked. Make a call to your server to fetch data.');
+    alert("Previous btn clicked. Make a call to your server to fetch data.");
   };
   const next = () => {
-    alert('Next btn clicked. Make a call to your server to fetch data.');
+    alert("Next btn clicked. Make a call to your server to fetch data.");
   };
 </script>
 

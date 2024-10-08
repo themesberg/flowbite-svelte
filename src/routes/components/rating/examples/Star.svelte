@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Star } from '$lib';
+  import { Star } from "$lib";
 </script>
 
 <div class="flex gap-2">

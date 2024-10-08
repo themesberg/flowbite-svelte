@@ -1,1 +1,1 @@
-export { agate as default } from './';
+export { agate as default } from "./";

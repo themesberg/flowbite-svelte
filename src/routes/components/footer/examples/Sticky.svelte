@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Footer, FooterCopyright, FooterUl, FooterLi, Skeleton, ImagePlaceholder, TextPlaceholder } from '$lib';
+  import { Footer, FooterCopyright, FooterUl, FooterLi, Skeleton, ImagePlaceholder, TextPlaceholder } from "$lib";
 </script>
 
 <div class="relative p-6">

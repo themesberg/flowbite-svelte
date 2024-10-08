@@ -1,18 +1,18 @@
 <script lang="ts">
-  import { setContext } from 'svelte';
-  import ListgroupItem from './ListgroupItem.svelte';
-  import { type ListgroupProps as Props, listGroup } from '.';
+  import { setContext } from "svelte";
+  import ListgroupItem from "./ListgroupItem.svelte";
+  import { type ListgroupProps as Props, listGroup } from ".";
 
   let { children, items, active, onclick, rounded = true, border = true, class: className, ...restProps }: Props = $props();
   const base = $derived(listGroup({ rounded, border, className }));
-  let tag = active ? 'div' : 'ul';
-  setContext('active', active);
+  let tag = active ? "div" : "ul";
+  setContext("active", active);
 </script>
 
 <svelte:element this={tag} {...restProps} class={base}>
   {#if items}
     {#each items as item}
-      {#if typeof item === 'string'}
+      {#if typeof item === "string"}
         <ListgroupItem {active} {onclick}>{item}</ListgroupItem>
       {:else}
         <ListgroupItem {active} {...item} onclick={item.onclick ? item.onclick : onclick}>{item}</ListgroupItem>
@@ -39,7 +39,7 @@
   [key: string]: any;
 } | string)[];
 @props:active: boolean;
-@props:onclick: (event?: MouseEvent) => void;
+@props:onclick: (event?;
 @props:rounded: boolean = true;
 @props:border: boolean = true;
 @props:class: string;

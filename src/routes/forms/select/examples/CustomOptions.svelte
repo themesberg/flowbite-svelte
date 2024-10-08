@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Label, Select } from '$lib';
+  import { Label, Select } from "$lib";
 
   interface Country {
     value: string;
@@ -12,9 +12,9 @@
   }
 
   let countries: Country[] = [
-    { value: 'us', name: 'United States', href: '/' },
-    { value: 'ca', name: 'Canada', href: '/' },
-    { value: 'fr', name: 'France', href: '/' }
+    { value: "us", name: "United States", href: "/" },
+    { value: "ca", name: "Canada", href: "/" },
+    { value: "fr", name: "France", href: "/" }
   ];
   let customSelected: State | undefined = $state();
 </script>

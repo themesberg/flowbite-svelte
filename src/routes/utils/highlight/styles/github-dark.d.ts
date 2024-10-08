@@ -1,1 +1,1 @@
-export { githubDark as default } from './';
+export { githubDark as default } from "./";

@@ -1,6 +1,6 @@
 <script>
-  import { Popover } from '$lib';
-  import { QuestionCircleSolid, ChevronRightOutline } from 'flowbite-svelte-icons';
+  import { Popover } from "$lib";
+  import { QuestionCircleSolid, ChevronRightOutline } from "flowbite-svelte-icons";
 </script>
 
 <div class="h-80">

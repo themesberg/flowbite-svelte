@@ -1,1 +1,1 @@
-export { far as default } from './';
+export { far as default } from "./";

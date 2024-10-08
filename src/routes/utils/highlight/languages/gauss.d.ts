@@ -1,2 +1,2 @@
-export { gauss } from './';
-export { gauss as default } from './';
+export { gauss } from "./";
+export { gauss as default } from "./";

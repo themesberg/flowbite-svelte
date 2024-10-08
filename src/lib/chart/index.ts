@@ -1,5 +1,5 @@
-import Chart from './Chart.svelte';
-import type { ApexOptions } from 'apexcharts';
+import Chart from "./Chart.svelte";
+import type { ApexOptions } from "apexcharts";
 
 interface ChartProps {
   options: ApexOptions;

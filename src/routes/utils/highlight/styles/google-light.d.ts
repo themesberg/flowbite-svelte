@@ -1,1 +1,1 @@
-export { googleLight as default } from './';
+export { googleLight as default } from "./";

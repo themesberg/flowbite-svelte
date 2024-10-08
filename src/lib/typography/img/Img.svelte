@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { type ImgProps as Props, img } from './index';
+  import { type ImgProps as Props, img } from "./index";
 
-  let { size = 'none', alignment = 'left', effect = 'none', shadow = 'none', rounded = 'none', caption, imgClass, figClass, captionClass, href, ...restProps }: Props = $props();
+  let { size = "none", alignment = "left", effect = "none", shadow = "none", rounded = "none", caption, imgClass, figClass, captionClass, href, ...restProps }: Props = $props();
 
   let { base, figure, figureCaption } = $derived(img({ size, alignment, effect, shadow, rounded }));
 </script>

@@ -1,1 +1,1 @@
-export { marrakesh as default } from './';
+export { marrakesh as default } from "./";

@@ -1,7 +1,7 @@
 <script lang="ts">
   // import type { ApexOptions } from 'apexcharts';
-  import { Chart, Card, A, Button, Dropdown, DropdownLi, DropdownUl, uiHelpers } from '$lib';
-  import { UsersGroupSolid, ArrowUpOutline, ChevronRightOutline, ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Chart, Card, A, Button, Dropdown, DropdownLi, DropdownUl, uiHelpers } from "$lib";
+  import { UsersGroupSolid, ArrowUpOutline, ChevronRightOutline, ChevronDownOutline } from "flowbite-svelte-icons";
   let dropdown = uiHelpers();
   let isOpen = $state(false);
   let toggle = dropdown.toggle;
@@ -22,10 +22,10 @@
 
   const options = {
     chart: {
-      height: '400px',
-      maxWidth: '100%',
-      type: 'area' as const,
-      fontFamily: 'Inter, sans-serif',
+      height: "400px",
+      maxWidth: "100%",
+      type: "area" as const,
+      fontFamily: "Inter, sans-serif",
       dropShadow: {
         enabled: false
       },
@@ -40,12 +40,12 @@
       }
     },
     fill: {
-      type: 'gradient',
+      type: "gradient",
       gradient: {
         opacityFrom: 0.55,
         opacityTo: 0,
-        shade: '#1C64F2',
-        gradientToColors: ['#1C64F2']
+        shade: "#1C64F2",
+        gradientToColors: ["#1C64F2"]
       }
     },
     dataLabels: {
@@ -65,13 +65,13 @@
     },
     series: [
       {
-        name: 'New users',
+        name: "New users",
         data: [6500, 6418, 6456, 6526, 6356, 6456],
-        color: '#1A56DB'
+        color: "#1A56DB"
       }
     ],
     xaxis: {
-      categories: ['01 February', '02 February', '03 February', '04 February', '05 February', '06 February', '07 February'],
+      categories: ["01 February", "02 February", "03 February", "04 February", "05 February", "06 February", "07 February"],
       labels: {
         show: false
       },
@@ -88,39 +88,39 @@
   };
 
   const optionCol = {
-    colors: ['#1A56DB', '#FDBA8C'],
+    colors: ["#1A56DB", "#FDBA8C"],
     series: [
       {
-        name: 'Organic',
-        color: '#1A56DB',
+        name: "Organic",
+        color: "#1A56DB",
         data: [
-          { x: 'Mon', y: 231 },
-          { x: 'Tue', y: 122 },
-          { x: 'Wed', y: 63 },
-          { x: 'Thu', y: 421 },
-          { x: 'Fri', y: 122 },
-          { x: 'Sat', y: 323 },
-          { x: 'Sun', y: 111 }
+          { x: "Mon", y: 231 },
+          { x: "Tue", y: 122 },
+          { x: "Wed", y: 63 },
+          { x: "Thu", y: 421 },
+          { x: "Fri", y: 122 },
+          { x: "Sat", y: 323 },
+          { x: "Sun", y: 111 }
         ]
       },
       {
-        name: 'Social media',
-        color: '#FDBA8C',
+        name: "Social media",
+        color: "#FDBA8C",
         data: [
-          { x: 'Mon', y: 232 },
-          { x: 'Tue', y: 113 },
-          { x: 'Wed', y: 341 },
-          { x: 'Thu', y: 224 },
-          { x: 'Fri', y: 522 },
-          { x: 'Sat', y: 411 },
-          { x: 'Sun', y: 243 }
+          { x: "Mon", y: 232 },
+          { x: "Tue", y: 113 },
+          { x: "Wed", y: 341 },
+          { x: "Thu", y: 224 },
+          { x: "Fri", y: 522 },
+          { x: "Sat", y: 411 },
+          { x: "Sun", y: 243 }
         ]
       }
     ],
     chart: {
-      type: 'bar' as const,
-      height: '320px',
-      fontFamily: 'Inter, sans-serif',
+      type: "bar" as const,
+      height: "320px",
+      fontFamily: "Inter, sans-serif",
       toolbar: {
         show: false
       }
@@ -128,8 +128,8 @@
     plotOptions: {
       bar: {
         horizontal: false,
-        columnWidth: '70%',
-        borderRadiusApplication: 'end' as const,
+        columnWidth: "70%",
+        borderRadiusApplication: "end" as const,
         borderRadius: 8
       }
     },
@@ -137,13 +137,13 @@
       shared: true,
       intersect: false,
       style: {
-        fontFamily: 'Inter, sans-serif'
+        fontFamily: "Inter, sans-serif"
       }
     },
     states: {
       hover: {
         filter: {
-          type: 'darken',
+          type: "darken",
           value: 1
         }
       }
@@ -151,7 +151,7 @@
     stroke: {
       show: true,
       width: 0,
-      colors: ['transparent']
+      colors: ["transparent"]
     },
     grid: {
       show: false,
@@ -173,8 +173,8 @@
       labels: {
         show: true,
         style: {
-          fontFamily: 'Inter, sans-serif',
-          cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+          fontFamily: "Inter, sans-serif",
+          cssClass: "text-xs font-normal fill-gray-500 dark:fill-gray-400"
         }
       },
       axisBorder: {
@@ -194,22 +194,22 @@
   const optionBar = {
     series: [
       {
-        name: 'Income',
-        color: '#31C48D',
+        name: "Income",
+        color: "#31C48D",
         data: [1420, 1620, 1820, 1420, 1650, 2120]
       },
       {
-        name: 'Expense',
+        name: "Expense",
         data: [788, 810, 866, 788, 1100, 1200],
-        color: '#F05252'
+        color: "#F05252"
       }
     ],
     chart: {
       sparkline: {
         enabled: false
       },
-      type: 'bar' as const,
-      width: '100%',
+      type: "bar" as const,
+      width: "100%",
       height: 400,
       toolbar: {
         show: false
@@ -221,17 +221,17 @@
     plotOptions: {
       bar: {
         horizontal: true,
-        columnWidth: '100%',
-        borderRadiusApplication: 'end' as const,
+        columnWidth: "100%",
+        borderRadiusApplication: "end" as const,
         borderRadius: 6,
         dataLabels: {
-          position: 'top'
+          position: "top"
         }
       }
     },
     legend: {
       show: true,
-      position: 'bottom' as const
+      position: "bottom" as const
     },
     dataLabels: {
       enabled: false
@@ -240,21 +240,21 @@
       shared: true,
       intersect: false,
       formatter: function (value: number) {
-        return '$' + value;
+        return "$" + value;
       }
     },
     xaxis: {
       labels: {
         show: true,
         style: {
-          fontFamily: 'Inter, sans-serif',
-          cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+          fontFamily: "Inter, sans-serif",
+          cssClass: "text-xs font-normal fill-gray-500 dark:fill-gray-400"
         },
         formatter: function (value: string) {
-          return '$' + value;
+          return "$" + value;
         }
       },
-      categories: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      categories: ["Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
       axisTicks: {
         show: false
       },
@@ -266,8 +266,8 @@
       labels: {
         show: true,
         style: {
-          fontFamily: 'Inter, sans-serif',
-          cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+          fontFamily: "Inter, sans-serif",
+          cssClass: "text-xs font-normal fill-gray-500 dark:fill-gray-400"
         }
       }
     },
@@ -282,23 +282,23 @@
     }
   };
 
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'breadcrumb';
-  const modules = import.meta.glob('./md/*.md', {
-    query: '?raw',
-    import: 'default',
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "breadcrumb";
+  const modules = import.meta.glob("./md/*.md", {
+    query: "?raw",
+    import: "default",
     eager: true
   });
 </script>
 
 <H1>Chart</H1>
 <H2>Setup</H2>
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<HighlightCompo code={modules["./md/setup.md"] as string} />
 <H2>Area chart</H2>
 <CodeWrapper class="flex items-start justify-center">
   <Card>
@@ -337,7 +337,7 @@
     </div>
   </Card>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/area-chart.md'] as string} />
+<HighlightCompo code={modules["./md/area-chart.md"] as string} />
 
 <H2>Column chart</H2>
 <CodeWrapper class="flex items-start justify-center">
@@ -392,7 +392,7 @@
     </div>
   </Card>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/column-chart.md'] as string} />
+<HighlightCompo code={modules["./md/column-chart.md"] as string} />
 
 <H2>Bar chart</H2>
 <CodeWrapper class="flex items-start justify-center">
@@ -444,4 +444,4 @@
     </div>
   </Card>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/bar-chart.md'] as string} />
+<HighlightCompo code={modules["./md/bar-chart.md"] as string} />

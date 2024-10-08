@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Input, Label } from '$lib';
+  import { Input, Label } from "$lib";
   let value = $state(5);
 </script>
 

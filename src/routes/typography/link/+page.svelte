@@ -1,30 +1,30 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { A, Button, anchor, Label, Radio, Input, CloseButton, uiHelpers, type AnchorProps, type AnchorColorType } from '$lib';
-  import { ArrowRightOutline } from 'flowbite-svelte-icons';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import { A, Button, anchor, Label, Radio, Input, CloseButton, uiHelpers, type AnchorProps, type AnchorColorType } from "$lib";
+  import { ArrowRightOutline } from "flowbite-svelte-icons";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  let { text = $bindable('Read more') } = $props();
-  const dirName = 'typography/anchor';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  let { text = $bindable("Read more") } = $props();
+  const dirName = "typography/anchor";
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
   const exampleArr = [
-    { name: 'Button link', component: ExampleComponents.ButtonLink },
-    { name: 'Cta link', component: ExampleComponents.CtaLink },
-    { name: 'Card link', component: ExampleComponents.CardLink },
-    { name: 'Card with image', component: ExampleComponents.CardWithImage }
+    { name: "Button link", component: ExampleComponents.ButtonLink },
+    { name: "Cta link", component: ExampleComponents.CtaLink },
+    { name: "Card link", component: ExampleComponents.CardLink },
+    { name: "Card with image", component: ExampleComponents.CardWithImage }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -37,10 +37,10 @@
   // end of dynamic svelte component
 
   const colors = Object.keys(anchor.variants.color);
-  let anchorColor: AnchorProps['color'] = $state('primary');
-  let linkClass = $state('font-medium hover:underline');
+  let anchorColor: AnchorProps["color"] = $state("primary");
+  let linkClass = $state("font-medium hover:underline");
   const changeLinkClass = () => {
-    linkClass = linkClass === 'font-medium hover:underline' ? 'underline hover:no-underline italic font-semibold' : 'font-medium hover:underline';
+    linkClass = linkClass === "font-medium hover:underline" ? "underline hover:no-underline italic font-semibold" : "font-medium hover:underline";
   };
   let linkIcon = $state(false);
   const changeIcon = () => {
@@ -53,12 +53,12 @@
       let props = [];
       let iconSlot;
       props.push(` href="/"`);
-      if (anchorColor !== 'primary') props.push(` color="${anchorColor}"`);
+      if (anchorColor !== "primary") props.push(` color="${anchorColor}"`);
       if (linkClass) props.push(` class="${linkClass}"`);
-      iconSlot = linkIcon ? `\n  <ArrowRightOutline class="ms-2 h-6 w-6" />` : '';
+      iconSlot = linkIcon ? `\n  <ArrowRightOutline class="ms-2 h-6 w-6" />` : "";
       // if (imgAlignment !== 'left') props.push(` alignment="${imgAlignment}"`);
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
       return `<A${propsString}>
   ${text} ${iconSlot}
@@ -99,7 +99,7 @@
   <Label class="text-md mb-2">Edit link</Label>
   <Input type="text" bind:value={text} placeholder="Write your blockquote text" class="mb-4 pr-12">
     {#snippet right()}
-      <CloseButton onclick={() => (text = '')} />
+      <CloseButton onclick={() => (text = "")} />
     {/snippet}
   </Input>
   <div class="mb-4 md:h-10">
@@ -115,8 +115,8 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-36" color="blue" onclick={changeLinkClass}>{linkClass === 'font-medium hover:underline' ? 'Change class' : 'Remove class'}</Button>
-    <Button class="w-36" color="pink" onclick={changeIcon}>{linkIcon ? 'Remove icon' : 'Add icon'}</Button>
+    <Button class="w-36" color="blue" onclick={changeLinkClass}>{linkClass === "font-medium hover:underline" ? "Change class" : "Remove class"}</Button>
+    <Button class="w-36" color="pink" onclick={changeIcon}>{linkIcon ? "Remove icon" : "Add icon"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

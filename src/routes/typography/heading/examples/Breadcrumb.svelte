@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Breadcrumb, BreadcrumbItem } from '$lib';
+  import { Breadcrumb, BreadcrumbItem } from "$lib";
 </script>
 
 <Breadcrumb class="mb-4">

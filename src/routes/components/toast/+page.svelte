@@ -1,38 +1,38 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { Toast, toast, Button, Label, Radio, uiHelpers, type RadioColorType, type ToastProps } from '$lib';
-  import { CheckCircleSolid } from 'flowbite-svelte-icons';
-  import { linear } from 'svelte/easing';
-  import { blur, fly, slide, scale, fade } from 'svelte/transition';
-  import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import H3 from '../../utils/H3.svelte';
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import { Toast, toast, Button, Label, Radio, uiHelpers, type RadioColorType, type ToastProps } from "$lib";
+  import { CheckCircleSolid } from "flowbite-svelte-icons";
+  import { linear } from "svelte/easing";
+  import { blur, fly, slide, scale, fade } from "svelte/transition";
+  import type { FlyParams, BlurParams, SlideParams, ScaleParams } from "svelte/transition";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import H3 from "../../utils/H3.svelte";
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'toast';
-  const modules = import.meta.glob('./md/*.md', {
-    query: '?raw',
-    import: 'default',
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "toast";
+  const modules = import.meta.glob("./md/*.md", {
+    query: "?raw",
+    import: "default",
     eager: true
   });
 
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
   const exampleArr = [
-    { name: 'Push notification', component: ExampleComponents.PushNotification },
-    { name: 'Toast message', component: ExampleComponents.ToastMessage },
-    { name: 'Undo button', component: ExampleComponents.UndoButton }
+    { name: "Push notification", component: ExampleComponents.PushNotification },
+    { name: "Toast message", component: ExampleComponents.ToastMessage },
+    { name: "Undo button", component: ExampleComponents.UndoButton }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -44,14 +44,14 @@
   const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
 
-  const colors = Object.keys(toast.variants.color) as ToastProps['color'][];
-  let toastColor: ToastProps['color'] = $state('primary');
+  const colors = Object.keys(toast.variants.color) as ToastProps["color"][];
+  let toastColor: ToastProps["color"] = $state("primary");
   let dismissable = $state(true);
   const changeDismissable = () => {
     dismissable = !dismissable;
   };
-  const positions = Object.keys(toast.variants.position) as ToastProps['position'][];
-  let toastPosition: ToastProps['position'] = $state('top-left');
+  const positions = Object.keys(toast.variants.position) as ToastProps["position"][];
+  let toastPosition: ToastProps["position"] = $state("top-left");
   // console.log('positions', positions);
   // transition example
   type TransitionOption = {
@@ -61,15 +61,15 @@
   };
 
   const transitions: TransitionOption[] = [
-    { name: 'Default', transition: fly, params: { duration: 400 } },
-    { name: 'Fly', transition: fly, params: { duration: 300, easing: linear, x: 150 } },
-    { name: 'Blur', transition: blur, params: { duration: 400, easing: linear } },
-    { name: 'Slide', transition: slide, params: { duration: 500, easing: linear, x: -150 } },
-    { name: 'Scale', transition: scale, params: { duration: 400, easing: linear } },
-    { name: 'Fade', transition: fade, params: { duration: 500, easing: linear } }
+    { name: "Default", transition: fly, params: { duration: 400 } },
+    { name: "Fly", transition: fly, params: { duration: 300, easing: linear, x: 150 } },
+    { name: "Blur", transition: blur, params: { duration: 400, easing: linear } },
+    { name: "Slide", transition: slide, params: { duration: 500, easing: linear, x: -150 } },
+    { name: "Scale", transition: scale, params: { duration: 400, easing: linear } },
+    { name: "Fade", transition: fade, params: { duration: 500, easing: linear } }
   ];
 
-  let selectedTransition: string | number = $state('Default');
+  let selectedTransition: string | number = $state("Default");
   let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
   let defaultToastStatus: boolean = $state(true);
   let toastStatus: boolean = $state(true);
@@ -82,23 +82,23 @@
   let generatedCode = $derived(
     (() => {
       let props = [];
-      if (toastColor !== 'primary') props.push(` color="${toastColor}"`);
-      if (dismissable !== true) props.push(' dismissable={false}');
-      if (toastPosition !== 'top-left') props.push(` position="${toastPosition}"`);
+      if (toastColor !== "primary") props.push(` color="${toastColor}"`);
+      if (dismissable !== true) props.push(" dismissable={false}");
+      if (toastPosition !== "top-left") props.push(` position="${toastPosition}"`);
       if (currentTransition !== transitions[0] && dismissable) {
         props.push(` transition={${currentTransition.transition.name}}`);
         const paramsString = Object.entries(currentTransition.params)
           .map(([key, value]) => {
-            if (typeof value === 'function') {
+            if (typeof value === "function") {
               return `${key}:${value.name}`;
             }
             return `${key}:${value}`;
           })
-          .join(',');
+          .join(",");
         props.push(` params={{${paramsString}}}`);
       }
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
       return `<div class="relative h-56">
   <Toast${propsString}>My Toast</Toast>
@@ -166,7 +166,7 @@
     {/each}
   </div>
   <div class="flex flex-wrap gap-2">
-    <Button onclick={changeDismissable}>{dismissable ? 'Disable' : 'Enable'} dismissable</Button>
+    <Button onclick={changeDismissable}>{dismissable ? "Disable" : "Enable"} dismissable</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

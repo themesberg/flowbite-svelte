@@ -1,1 +1,1 @@
-export { apathy as default } from './';
+export { apathy as default } from "./";

@@ -1,17 +1,17 @@
-import type { Snippet } from 'svelte';
-import type { HTMLAttributes } from 'svelte/elements';
-import Popover from './Popover.svelte';
-import type { TransitionFunc, ParamsType } from '../types';
-import { popover } from './theme';
-import { type VariantProps } from 'tailwind-variants';
+import type { Snippet } from "svelte";
+import type { HTMLAttributes } from "svelte/elements";
+import Popover from "./Popover.svelte";
+import type { TransitionFunc, ParamsType } from "../types";
+import { popover } from "./theme";
+import { type VariantProps } from "tailwind-variants";
 
-type PopoverColorType = VariantProps<typeof popover>['color'];
+type PopoverColorType = VariantProps<typeof popover>["color"];
 interface PopoverProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   triggeredBy: string;
   titleSlot?: Snippet | string;
   // placement?: 'top' | 'bottom' | 'left' | 'right';
-  position?: 'top' | 'bottom' | 'left' | 'right' | 'right-start' | 'right-end' | 'left-start' | 'left-end' | 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end';
+  position?: "top" | "bottom" | "left" | "right" | "right-start" | "right-end" | "left-start" | "left-end" | "top-start" | "top-end" | "bottom-start" | "bottom-end";
   color?: PopoverColorType;
   arrow?: boolean;
   offset?: number;
@@ -22,7 +22,7 @@ interface PopoverProps extends HTMLAttributes<HTMLDivElement> {
 
 // tooltipPositioner.ts
 
-type Position = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end' | 'right' | 'right-start' | 'right-end';
+type Position = "top" | "top-start" | "top-end" | "bottom" | "bottom-start" | "bottom-end" | "left" | "left-start" | "left-end" | "right" | "right-start" | "right-end";
 
 interface TooltipPositionOptions {
   tooltipRect: DOMRect;
@@ -51,7 +51,7 @@ function calculateTooltipPosition({ tooltipRect, referenceRect, position, offset
   let top: number, left: number, arrowTop: number | undefined, arrowLeft: number | undefined;
 
   switch (position) {
-    case 'top':
+    case "top":
       top = referenceRect.top + scrollY - tooltipRect.height - 10 - offset;
       left = referenceRect.left + scrollX + referenceRect.width / 2 - tooltipRect.width / 2;
       if (arrowRect && offset === 0) {
@@ -59,7 +59,7 @@ function calculateTooltipPosition({ tooltipRect, referenceRect, position, offset
         arrowLeft = tooltipRect.width / 2 - arrowRect.width / 2;
       }
       break;
-    case 'top-start':
+    case "top-start":
       top = referenceRect.top + scrollY - tooltipRect.height - 10 - offset;
       left = referenceRect.left + scrollX;
       if (arrowRect && offset === 0) {
@@ -67,7 +67,7 @@ function calculateTooltipPosition({ tooltipRect, referenceRect, position, offset
         arrowLeft = referenceRect.width / 2 - arrowRect.width / 2;
       }
       break;
-    case 'top-end':
+    case "top-end":
       top = referenceRect.top + scrollY - tooltipRect.height - 10 - offset;
       left = referenceRect.right + scrollX - tooltipRect.width;
       if (arrowRect && offset === 0) {
@@ -75,7 +75,7 @@ function calculateTooltipPosition({ tooltipRect, referenceRect, position, offset
         arrowLeft = tooltipRect.width - referenceRect.width / 2 - arrowRect.width / 2;
       }
       break;
-    case 'bottom':
+    case "bottom":
       top = referenceRect.bottom + scrollY + 10 + offset;
       left = referenceRect.left + scrollX + referenceRect.width / 2 - tooltipRect.width / 2;
       if (arrowRect && offset === 0) {
@@ -83,7 +83,7 @@ function calculateTooltipPosition({ tooltipRect, referenceRect, position, offset
         arrowLeft = tooltipRect.width / 2 - arrowRect.width / 2;
       }
       break;
-    case 'bottom-start':
+    case "bottom-start":
       top = referenceRect.bottom + scrollY + 10 + offset;
       left = referenceRect.left + scrollX;
       if (arrowRect && offset === 0) {
@@ -91,7 +91,7 @@ function calculateTooltipPosition({ tooltipRect, referenceRect, position, offset
         arrowLeft = referenceRect.width / 2 - arrowRect.width / 2;
       }
       break;
-    case 'bottom-end':
+    case "bottom-end":
       top = referenceRect.bottom + scrollY + 10 + offset;
       left = referenceRect.right + scrollX - tooltipRect.width;
       if (arrowRect && offset === 0) {
@@ -99,7 +99,7 @@ function calculateTooltipPosition({ tooltipRect, referenceRect, position, offset
         arrowLeft = tooltipRect.width - referenceRect.width / 2 - arrowRect.width / 2;
       }
       break;
-    case 'left':
+    case "left":
       top = referenceRect.top + scrollY + referenceRect.height / 2 - tooltipRect.height / 2;
       left = referenceRect.left + scrollX - tooltipRect.width - 10 - offset;
       if (arrowRect && offset === 0) {
@@ -107,7 +107,7 @@ function calculateTooltipPosition({ tooltipRect, referenceRect, position, offset
         arrowLeft = tooltipRect.width - 5;
       }
       break;
-    case 'left-start':
+    case "left-start":
       top = referenceRect.top + scrollY;
       left = referenceRect.left + scrollX - tooltipRect.width - 10 - offset;
       if (arrowRect && offset === 0) {
@@ -115,7 +115,7 @@ function calculateTooltipPosition({ tooltipRect, referenceRect, position, offset
         arrowLeft = tooltipRect.width - 5;
       }
       break;
-    case 'left-end':
+    case "left-end":
       top = referenceRect.bottom + scrollY - tooltipRect.height;
       left = referenceRect.left + scrollX - tooltipRect.width - 10 - offset;
       if (arrowRect && offset === 0) {
@@ -123,7 +123,7 @@ function calculateTooltipPosition({ tooltipRect, referenceRect, position, offset
         arrowLeft = tooltipRect.width - 5;
       }
       break;
-    case 'right':
+    case "right":
       top = referenceRect.top + scrollY + referenceRect.height / 2 - tooltipRect.height / 2;
       left = referenceRect.right + scrollX + 10 + offset;
       if (arrowRect && offset === 0) {
@@ -131,7 +131,7 @@ function calculateTooltipPosition({ tooltipRect, referenceRect, position, offset
         arrowLeft = -arrowRect.width / 2 + 2;
       }
       break;
-    case 'right-start':
+    case "right-start":
       top = referenceRect.top + scrollY;
       left = referenceRect.right + scrollX + 10 + offset;
       if (arrowRect && offset === 0) {
@@ -139,7 +139,7 @@ function calculateTooltipPosition({ tooltipRect, referenceRect, position, offset
         arrowLeft = -arrowRect.width / 2 + 2;
       }
       break;
-    case 'right-end':
+    case "right-end":
       top = referenceRect.bottom + scrollY - tooltipRect.height;
       left = referenceRect.right + scrollX + 10 + offset;
       if (arrowRect && offset === 0) {

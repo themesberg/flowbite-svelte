@@ -1,1 +1,1 @@
-export { humanoidDark as default } from './';
+export { humanoidDark as default } from "./";

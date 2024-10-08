@@ -1,2 +1,2 @@
-export { makefile } from './';
-export { makefile as default } from './';
+export { makefile } from "./";
+export { makefile as default } from "./";

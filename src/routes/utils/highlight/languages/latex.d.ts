@@ -1,2 +1,2 @@
-export { latex } from './';
-export { latex as default } from './';
+export { latex } from "./";
+export { latex as default } from "./";

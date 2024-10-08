@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Heading, P, Mark } from '$lib';
+  import { Heading, P, Mark } from "$lib";
 </script>
 
 <Heading tag="h1" class="mb-4">Regain <Mark>control</Mark> over your days</Heading>

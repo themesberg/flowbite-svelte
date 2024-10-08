@@ -1,50 +1,14 @@
 {
   "name": "AdvancedRating",
   "props": [
-    [
-      "rating",
-      "Snippet",
-      ""
-    ],
-    [
-      "globalText",
-      "Snippet",
-      ""
-    ],
-    [
-      "ratings",
-      "{ label: string | undefined | null",
-      ""
-    ],
-    [
-      "divClass",
-      "any",
-      ""
-    ],
-    [
-      "spanClass",
-      "any",
-      ""
-    ],
-    [
-      "div2Class",
-      "any",
-      ""
-    ],
-    [
-      "div3Class",
-      "any",
-      ""
-    ],
-    [
-      "span2Class",
-      "any",
-      ""
-    ],
-    [
-      "unit",
-      "any",
-      ""
-    ]
+    ["rating", "Snippet", ""],
+    ["globalText", "Snippet", ""],
+    ["ratings", "{ label", ""],
+    ["divClass", "any", ""],
+    ["spanClass", "any", ""],
+    ["div2Class", "any", ""],
+    ["div3Class", "any", ""],
+    ["span2Class", "any", ""],
+    ["unit", "any", ""]
   ]
 }

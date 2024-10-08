@@ -1,2 +1,2 @@
-export { rib } from './';
-export { rib as default } from './';
+export { rib } from "./";
+export { rib as default } from "./";

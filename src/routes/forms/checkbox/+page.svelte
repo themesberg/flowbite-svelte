@@ -1,35 +1,35 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { Checkbox, checkbox, Helper, Label, Radio, Button, uiHelpers, type RadioColorType, type CheckboxProps } from '$lib';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import { Checkbox, checkbox, Helper, Label, Radio, Button, uiHelpers, type RadioColorType, type CheckboxProps } from "$lib";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'forms/checkbox';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "forms/checkbox";
 
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
   const exampleArr = [
-    { name: 'Advanced', component: ExampleComponents.Advanced },
-    { name: 'Bordered', component: ExampleComponents.Bordered },
-    { name: 'Button', component: ExampleComponents.Button },
-    { name: 'Dropdown', component: ExampleComponents.Dropdown },
-    { name: 'Group variable', component: ExampleComponents.GroupVariable },
-    { name: 'Horizontal list', component: ExampleComponents.HorizontalList },
-    { name: 'Inline layout', component: ExampleComponents.InlineLayout },
-    { name: 'Link', component: ExampleComponents.Link },
-    { name: 'List group', component: ExampleComponents.ListGroup },
-    { name: 'Table', component: ExampleComponents.Table }
+    { name: "Advanced", component: ExampleComponents.Advanced },
+    { name: "Bordered", component: ExampleComponents.Bordered },
+    { name: "Button", component: ExampleComponents.Button },
+    { name: "Dropdown", component: ExampleComponents.Dropdown },
+    { name: "Group variable", component: ExampleComponents.GroupVariable },
+    { name: "Horizontal list", component: ExampleComponents.HorizontalList },
+    { name: "Inline layout", component: ExampleComponents.InlineLayout },
+    { name: "Link", component: ExampleComponents.Link },
+    { name: "List group", component: ExampleComponents.ListGroup },
+    { name: "Table", component: ExampleComponents.Table }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -42,7 +42,7 @@
   // end of dynamic svelte component
 
   const colors = Object.keys(checkbox.variants.color);
-  let checkboxColor: CheckboxProps['color'] = $state('primary');
+  let checkboxColor: CheckboxProps["color"] = $state("primary");
 
   // const checkedStates = [ 'false', 'true', 'indeterminate' ];
   let checkedState = $state(false);
@@ -68,14 +68,14 @@
   let generatedCode = $derived(
     (() => {
       let props = [];
-      if (checkedState) props.push(' checked');
-      if (indeterminateState) props.push(' indeterminate');
-      if (disabledState) props.push(' disabled');
+      if (checkedState) props.push(" checked");
+      if (indeterminateState) props.push(" indeterminate");
+      if (disabledState) props.push(" disabled");
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
       return `<Checkbox${propsString}>My Checkbox</Checkbox>
-${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`;
+${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ""}`;
     })()
   );
 
@@ -124,10 +124,10 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`;
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-48" color="primary" onclick={changeCheckedState}>{checkedState ? 'Remove checked' : 'Add checked'}</Button>
-    <Button class="w-48" color="secondary" onclick={changeIntermidiateState}>{indeterminateState ? 'Remove indeterminate' : 'Add indeterminate'}</Button>
-    <Button class="w-48" color="pink" onclick={changeDisabledState}>{disabledState ? 'Remove disabled' : 'Add disabled'}</Button>
-    <Button class="w-48" color="lime" onclick={changeHelperState}>{helperState ? 'Remove helper' : 'Add helper'}</Button>
+    <Button class="w-48" color="primary" onclick={changeCheckedState}>{checkedState ? "Remove checked" : "Add checked"}</Button>
+    <Button class="w-48" color="secondary" onclick={changeIntermidiateState}>{indeterminateState ? "Remove indeterminate" : "Add indeterminate"}</Button>
+    <Button class="w-48" color="pink" onclick={changeDisabledState}>{disabledState ? "Remove disabled" : "Add disabled"}</Button>
+    <Button class="w-48" color="lime" onclick={changeHelperState}>{helperState ? "Remove helper" : "Add helper"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

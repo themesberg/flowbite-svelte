@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Checkbox } from '$lib';
+  import { Checkbox } from "$lib";
 </script>
 
 <p class="mb-4 font-semibold text-gray-900 dark:text-white">Technology</p>

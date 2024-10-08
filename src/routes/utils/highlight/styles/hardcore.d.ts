@@ -1,1 +1,1 @@
-export { hardcore as default } from './';
+export { hardcore as default } from "./";

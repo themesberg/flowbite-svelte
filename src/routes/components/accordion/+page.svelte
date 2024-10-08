@@ -1,34 +1,34 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { uiHelpers, Label, Radio } from '$lib';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import { uiHelpers, Label, Radio } from "$lib";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'accordion';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "accordion";
 
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
   const exampleArr = [
-    { name: 'Default', component: ExampleComponents.Default },
-    { name: 'Open', component: ExampleComponents.Open },
-    { name: 'Color', component: ExampleComponents.Color },
-    { name: 'Flush', component: ExampleComponents.Flush },
-    { name: 'Arrow style', component: ExampleComponents.ArrowStyle },
-    { name: 'Icon', component: ExampleComponents.Icon },
-    { name: 'Multiple mode', component: ExampleComponents.MultipleMode },
-    { name: 'Transitions', component: ExampleComponents.Transitions },
-    { name: 'Nesting', component: ExampleComponents.Nesting },
-    { name: 'Open multiple', component: ExampleComponents.OpenMultiple }
+    { name: "Default", component: ExampleComponents.Default },
+    { name: "Open", component: ExampleComponents.Open },
+    { name: "Color", component: ExampleComponents.Color },
+    { name: "Flush", component: ExampleComponents.Flush },
+    { name: "Arrow style", component: ExampleComponents.ArrowStyle },
+    { name: "Icon", component: ExampleComponents.Icon },
+    { name: "Multiple mode", component: ExampleComponents.MultipleMode },
+    { name: "Transitions", component: ExampleComponents.Transitions },
+    { name: "Nesting", component: ExampleComponents.Nesting },
+    { name: "Open multiple", component: ExampleComponents.OpenMultiple }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));

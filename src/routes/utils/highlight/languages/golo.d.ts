@@ -1,2 +1,2 @@
-export { golo } from './';
-export { golo as default } from './';
+export { golo } from "./";
+export { golo as default } from "./";

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Blockquote, Rating } from '$lib';
+  import { Blockquote, Rating } from "$lib";
 </script>
 
 <figure class="max-w-screen-md">

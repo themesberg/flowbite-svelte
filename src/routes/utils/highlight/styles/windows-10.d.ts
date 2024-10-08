@@ -1,1 +1,1 @@
-export { windows10 as default } from './';
+export { windows10 as default } from "./";

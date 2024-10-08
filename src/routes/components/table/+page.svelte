@@ -1,35 +1,35 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { Table, table, uiHelpers, Label, Radio, Button, type RadioColorType, type TableProps } from '$lib';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import { Table, table, uiHelpers, Label, Radio, Button, type RadioColorType, type TableProps } from "$lib";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'table';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "table";
 
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
   const exampleArr = [
-    { name: 'Table items', component: ExampleComponents.TableItems },
-    { name: 'Head body items', component: ExampleComponents.HeadBodyItems },
-    { name: 'Cells', component: ExampleComponents.Cells },
-    { name: 'Checkbox', component: ExampleComponents.Checkbox },
-    { name: 'Search', component: ExampleComponents.Search },
-    { name: 'Header slot', component: ExampleComponents.HeaderSlot },
-    { name: 'Footer slot', component: ExampleComponents.FooterSlot },
-    { name: 'Table caption', component: ExampleComponents.TableCaption },
-    { name: 'Overflow', component: ExampleComponents.Overflow },
-    { name: 'Click double click', component: ExampleComponents.ClickDoubleClick }
+    { name: "Table items", component: ExampleComponents.TableItems },
+    { name: "Head body items", component: ExampleComponents.HeadBodyItems },
+    { name: "Cells", component: ExampleComponents.Cells },
+    { name: "Checkbox", component: ExampleComponents.Checkbox },
+    { name: "Search", component: ExampleComponents.Search },
+    { name: "Header slot", component: ExampleComponents.HeaderSlot },
+    { name: "Footer slot", component: ExampleComponents.FooterSlot },
+    { name: "Table caption", component: ExampleComponents.TableCaption },
+    { name: "Overflow", component: ExampleComponents.Overflow },
+    { name: "Click double click", component: ExampleComponents.ClickDoubleClick }
   ];
 
   let selectedExample: string | number = $state(exampleArr[0].name);
@@ -42,7 +42,7 @@
   const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
 
-  let color: TableProps['color'] = $state('default');
+  let color: TableProps["color"] = $state("default");
   const colors = Object.keys(table.variants.color);
   let striped = $state(false);
   const changeStriped = () => {
@@ -63,24 +63,24 @@
   };
 
   const tableItems = [
-    { name: 'Apple MacBook Pro 17"', color: 'Sliver', type: 'Laptop', price: '$2999' },
-    { name: 'Microsoft Surface Pro', color: 'White', type: 'Laptop PC', price: '$1999' },
-    { name: 'Magic Mouse 2', color: 'Black', type: 'Accessories', price: '$99' },
-    { name: 'Google Pixel Phone', color: 'Gray', type: 'Phone', price: '$799' },
-    { name: 'Apple Watch 5', color: 'Red', type: 'Wearables', price: '$999' }
+    { name: 'Apple MacBook Pro 17"', color: "Sliver", type: "Laptop", price: "$2999" },
+    { name: "Microsoft Surface Pro", color: "White", type: "Laptop PC", price: "$1999" },
+    { name: "Magic Mouse 2", color: "Black", type: "Accessories", price: "$99" },
+    { name: "Google Pixel Phone", color: "Gray", type: "Phone", price: "$799" },
+    { name: "Apple Watch 5", color: "Red", type: "Wearables", price: "$999" }
   ];
 
   // code generator
   let generatedCode = $derived(
     (() => {
       let props = [];
-      if (color !== 'default') props.push(` color="${color}"`);
-      if (striped) props.push(' striped');
-      if (hoverable) props.push(' hoverable');
-      if (noborder) props.push(' noborder');
-      if (shadow) props.push(' shadow');
+      if (color !== "default") props.push(` color="${color}"`);
+      if (striped) props.push(" striped");
+      if (hoverable) props.push(" hoverable");
+      if (noborder) props.push(" noborder");
+      if (shadow) props.push(" shadow");
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
       return `<<Table {tableItems}${propsString} />`;
     })()
@@ -123,10 +123,10 @@
     {/each}
   </div>
   <div class="mb-4 flex gap-4">
-    <Button class="w-40" onclick={changeStriped}>{striped ? 'Unstriped' : 'Striped'}</Button>
-    <Button class="w-40" color="secondary" onclick={changeHoverable}>{hoverable ? 'Unhoverable' : 'Hoverable'}</Button>
-    <Button class="w-40" color="indigo" onclick={changeNoborder}>{noborder ? 'Borderless' : 'Border'}</Button>
-    <Button class="w-40" color="rose" onclick={changeShadow}>{shadow ? 'No Shadow' : 'Shadow'}</Button>
+    <Button class="w-40" onclick={changeStriped}>{striped ? "Unstriped" : "Striped"}</Button>
+    <Button class="w-40" color="secondary" onclick={changeHoverable}>{hoverable ? "Unhoverable" : "Hoverable"}</Button>
+    <Button class="w-40" color="indigo" onclick={changeNoborder}>{noborder ? "Borderless" : "Border"}</Button>
+    <Button class="w-40" color="rose" onclick={changeShadow}>{shadow ? "No Shadow" : "Shadow"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

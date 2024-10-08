@@ -1,25 +1,25 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { Label, Fileupload, fileupload, Helper, Radio, Button, uiHelpers, type FileuploadProps } from '$lib';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import { Label, Fileupload, fileupload, Helper, Radio, Button, uiHelpers, type FileuploadProps } from "$lib";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'forms/fileupload';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "forms/fileupload";
 
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
-  const exampleArr = [{ name: 'Dropzone example', component: ExampleComponents.DropzoneExample }];
+  const exampleArr = [{ name: "Dropzone example", component: ExampleComponents.DropzoneExample }];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 
@@ -32,7 +32,7 @@
   type StringType = string;
   let files: FileList | undefined = $state();
   const sizes = Object.keys(fileupload.variants.size);
-  let size: FileuploadProps['size'] = $state('md');
+  let size: FileuploadProps["size"] = $state("md");
   let helperState = $state(false);
   const changeHelperState = () => {
     helperState = !helperState;
@@ -50,19 +50,19 @@
   let generatedCode = $derived(
     (() => {
       let props = [];
-      let fileSlot = '';
-      if (size !== 'md') props.push(` size="${size}"`);
-      if (multiple) props.push(' multiple');
-      if (fileNames) props.push(' bind:files');
+      let fileSlot = "";
+      if (size !== "md") props.push(` size="${size}"`);
+      if (multiple) props.push(" multiple");
+      if (fileNames) props.push(" bind:files");
       if (fileNames) {
         fileSlot = `{#each files as file}
         <p>{file.name}</p>
       {/each}`;
       }
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
-      return `<Fileupload${propsString} />${helperState ? `\n<Helper>Helper text</Helper>` : ''}
-${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ''}`;
+      return `<Fileupload${propsString} />${helperState ? `\n<Helper>Helper text</Helper>` : ""}
+${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ""}`;
     })()
   );
   // for examples DynamicCodeBlockHighlight
@@ -105,9 +105,9 @@ ${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ''}`;
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-40" onclick={changeHelperState}>{helperState ? 'Remove helper' : 'Add helper'}</Button>
-    <Button class="w-40" color="emerald" onclick={changeBindFile}>{fileNames ? 'Hide file names' : 'Show file names'}</Button>
-    <Button class="w-40" color="sky" onclick={changeMultiple}>{multiple ? 'Remove multiple' : 'Add multiple'}</Button>
+    <Button class="w-40" onclick={changeHelperState}>{helperState ? "Remove helper" : "Add helper"}</Button>
+    <Button class="w-40" color="emerald" onclick={changeBindFile}>{fileNames ? "Hide file names" : "Show file names"}</Button>
+    <Button class="w-40" color="sky" onclick={changeMultiple}>{multiple ? "Remove multiple" : "Add multiple"}</Button>
   </div>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCode} />

@@ -1,3 +1,3 @@
 <script lang="ts">
-  import { Popover, Button } from '$lib';
+  import { Popover, Button } from "$lib";
 </script>

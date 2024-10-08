@@ -1,1 +1,1 @@
-export { grayscale as default } from './';
+export { grayscale as default } from "./";

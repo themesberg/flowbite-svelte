@@ -1,2 +1,2 @@
-export { autohotkey } from './';
-export { autohotkey as default } from './';
+export { autohotkey } from "./";
+export { autohotkey as default } from "./";

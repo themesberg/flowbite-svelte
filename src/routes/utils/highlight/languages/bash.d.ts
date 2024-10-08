@@ -1,2 +1,2 @@
-export { bash } from './';
-export { bash as default } from './';
+export { bash } from "./";
+export { bash as default } from "./";

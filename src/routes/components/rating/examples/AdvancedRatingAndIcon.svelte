@@ -1,14 +1,14 @@
 <script lang="ts">
-  import { AdvancedRating, Rating, Thumbup } from '$lib';
+  import { AdvancedRating, Rating, Thumbup } from "$lib";
 </script>
 
 <AdvancedRating
   ratings={[
-    { label: '5 star', rating: 70 },
-    { label: '4 star', rating: 17 },
-    { label: '3 star', rating: 8 },
-    { label: '2 star', rating: 4 },
-    { label: '1 star', rating: 1 }
+    { label: "5 star", rating: 70 },
+    { label: "4 star", rating: 17 },
+    { label: "3 star", rating: 8 },
+    { label: "2 star", rating: 4 },
+    { label: "1 star", rating: 1 }
   ]}
 >
   {#snippet rating()}

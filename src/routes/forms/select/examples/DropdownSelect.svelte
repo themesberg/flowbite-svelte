@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { sineIn } from 'svelte/easing';
-  import { Button, ButtonGroup, Dropdown, DropdownLi, DropdownUl, Select, uiHelpers } from '$lib';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
-  import Usa from '../../../utils/icons/Usa.svelte';
-  import Germany from '../../../utils/icons/Germany.svelte';
-  import Italy from '../../../utils/icons/Italy.svelte';
-  import China from '../../../utils/icons/China.svelte';
+  import { sineIn } from "svelte/easing";
+  import { Button, ButtonGroup, Dropdown, DropdownLi, DropdownUl, Select, uiHelpers } from "$lib";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
+  import Usa from "../../../utils/icons/Usa.svelte";
+  import Germany from "../../../utils/icons/Germany.svelte";
+  import Italy from "../../../utils/icons/Italy.svelte";
+  import China from "../../../utils/icons/China.svelte";
   interface State {
     value: string;
     name: string;
@@ -24,13 +24,13 @@
     easing: sineIn
   };
   let states: State[] = [
-    { value: 'CA', name: 'California' },
-    { value: 'TX', name: 'Texas' },
-    { value: 'WH', name: 'Washinghton' },
-    { value: 'FL', name: 'Florida' },
-    { value: 'VG', name: 'Virginia' },
-    { value: 'GE', name: 'Georgia' },
-    { value: 'MI', name: 'Michigan' }
+    { value: "CA", name: "California" },
+    { value: "TX", name: "Texas" },
+    { value: "WH", name: "Washinghton" },
+    { value: "FL", name: "Florida" },
+    { value: "VG", name: "Virginia" },
+    { value: "GE", name: "Georgia" },
+    { value: "MI", name: "Michigan" }
   ];
 </script>
 

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { sineIn } from 'svelte/easing';
-  import { Dropdown, DropdownUl, DropdownLi, DropdownHeader, DropdownFooter, Avatar, uiHelpers } from '$lib';
+  import { sineIn } from "svelte/easing";
+  import { Dropdown, DropdownUl, DropdownLi, DropdownHeader, DropdownFooter, Avatar, uiHelpers } from "$lib";
   let dropdownUser = uiHelpers();
   let dropdownUserStatus = $state(false);
   let closeDropdownUser = dropdownUser.close;
@@ -10,7 +10,7 @@
 </script>
 
 <div class="flex h-72 items-start justify-center">
-  <Avatar onclick={dropdownUser.toggle} src="/images/profile-picture-3.webp" dot={{ color: 'green' }} />
+  <Avatar onclick={dropdownUser.toggle} src="/images/profile-picture-3.webp" dot={{ color: "green" }} />
 
   <div class="relative">
     <Dropdown dropdownStatus={dropdownUserStatus} closeDropdown={closeDropdownUser} params={{ y: 0, duration: 200, easing: sineIn }} class="absolute -left-[110px] top-[40px]">

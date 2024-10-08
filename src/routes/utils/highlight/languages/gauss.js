@@ -1,4 +1,4 @@
-import register from 'highlight.js/lib/languages/gauss';
+import register from "highlight.js/lib/languages/gauss";
 
-export const gauss = { name: 'gauss', register };
+export const gauss = { name: "gauss", register };
 export default gauss;

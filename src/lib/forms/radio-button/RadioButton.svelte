@@ -1,6 +1,6 @@
 <script lang="ts" generics="T">
-  import Button from '$lib/buttons/Button.svelte';
-  import { type RadioButtonProps as Props, radioButton } from '.';
+  import Button from "$lib/buttons/Button.svelte";
+  import { type RadioButtonProps as Props, radioButton } from ".";
 
   let { children, group = $bindable<T>(), value = $bindable<T>(), inline = true, pill, outline, buttonSize, color, shadow, class: className, ...restProps }: Props<T> = $props();
 

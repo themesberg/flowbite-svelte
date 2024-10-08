@@ -1,1 +1,1 @@
-export { iaLight as default } from './';
+export { iaLight as default } from "./";

@@ -1,6 +1,6 @@
 <script>
-  import { Popover } from '$lib';
-  import { ChevronRightOutline } from 'flowbite-svelte-icons';
+  import { Popover } from "$lib";
+  import { ChevronRightOutline } from "flowbite-svelte-icons";
 </script>
 
 <div class="flex h-80 items-end">

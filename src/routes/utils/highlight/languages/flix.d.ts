@@ -1,2 +1,2 @@
-export { flix } from './';
-export { flix as default } from './';
+export { flix } from "./";
+export { flix as default } from "./";

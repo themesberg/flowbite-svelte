@@ -1,1 +1,1 @@
-export { ascetic as default } from './';
+export { ascetic as default } from "./";

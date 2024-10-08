@@ -1,29 +1,29 @@
 <script lang="ts">
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarButton, uiHelpers } from '$lib';
-  import { ChartOutline, GridSolid, MailBoxSolid, UserSolid } from 'flowbite-svelte-icons';
-  import PlusPlaceholder from '../../../utils/PlusPlaceholder.svelte';
-  const spanClass = 'flex-1 ms-3 whitespace-nowrap';
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarButton, uiHelpers } from "$lib";
+  import { ChartOutline, GridSolid, MailBoxSolid, UserSolid } from "flowbite-svelte-icons";
+  import PlusPlaceholder from "../../../utils/PlusPlaceholder.svelte";
+  const spanClass = "flex-1 ms-3 whitespace-nowrap";
   const sidebarEx1 = [
     {
-      label: 'Dashboard',
-      href: '/',
+      label: "Dashboard",
+      href: "/",
       icon: ChartOutline
     },
     {
-      label: 'Kanban',
-      href: '/',
+      label: "Kanban",
+      href: "/",
       icon: GridSolid,
-      subContent: 'Pro'
+      subContent: "Pro"
     },
     {
-      label: 'Inbox',
-      href: '/',
+      label: "Inbox",
+      href: "/",
       icon: MailBoxSolid,
-      subContent: '3'
+      subContent: "3"
     },
     {
-      label: 'Sidebar',
-      href: '/components/sidebar',
+      label: "Sidebar",
+      href: "/components/sidebar",
       icon: UserSolid
     }
   ];

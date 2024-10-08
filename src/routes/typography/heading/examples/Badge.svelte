@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Heading, Badge } from '$lib';
+  import { Heading, Badge } from "$lib";
 </script>
 
 <Heading tag="h1" class="flex items-center text-5xl">

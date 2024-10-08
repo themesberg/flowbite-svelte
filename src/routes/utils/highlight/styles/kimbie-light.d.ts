@@ -1,1 +1,1 @@
-export { kimbieLight as default } from './';
+export { kimbieLight as default } from "./";

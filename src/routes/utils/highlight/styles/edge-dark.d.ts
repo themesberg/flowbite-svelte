@@ -1,1 +1,1 @@
-export { edgeDark as default } from './';
+export { edgeDark as default } from "./";

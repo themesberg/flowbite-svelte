@@ -1,1 +1,1 @@
-export { windowsNt as default } from './';
+export { windowsNt as default } from "./";

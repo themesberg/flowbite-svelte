@@ -1,2 +1,2 @@
-export { monkey } from './';
-export { monkey as default } from './';
+export { monkey } from "./";
+export { monkey as default } from "./";

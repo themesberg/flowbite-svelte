@@ -1,1 +1,1 @@
-export { horizonLight as default } from './';
+export { horizonLight as default } from "./";

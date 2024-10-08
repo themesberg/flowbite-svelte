@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Alert } from '$lib';
-  import { InfoCircleSolid } from 'flowbite-svelte-icons';
+  import { Alert } from "$lib";
+  import { InfoCircleSolid } from "flowbite-svelte-icons";
 </script>
 
 <div class="mb-4">

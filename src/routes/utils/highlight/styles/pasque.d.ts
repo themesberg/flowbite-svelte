@@ -1,1 +1,1 @@
-export { pasque as default } from './';
+export { pasque as default } from "./";

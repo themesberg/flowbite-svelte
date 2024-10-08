@@ -1,1 +1,1 @@
-export { magula as default } from './';
+export { magula as default } from "./";

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type DescriptionListProps as Props, descriptionList } from './index';
+  import { type DescriptionListProps as Props, descriptionList } from "./index";
 
   let { children, tag, class: className, ...restProps }: Props = $props();
 

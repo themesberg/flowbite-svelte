@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type SidebarCtaProps as Props, sidebarcta } from '.';
+  import { type SidebarCtaProps as Props, sidebarcta } from ".";
   let { children, icon, divClass, spanClass, label, class: className, ...restProps }: Props = $props();
   const { base, div, span } = $derived(sidebarcta());
 </script>

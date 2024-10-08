@@ -1,2 +1,2 @@
-export { gams } from './';
-export { gams as default } from './';
+export { gams } from "./";
+export { gams as default } from "./";

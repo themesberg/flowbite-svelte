@@ -1,42 +1,42 @@
 <script lang="ts">
-  import { Dropzone } from '$lib';
+  import { Dropzone } from "$lib";
 
   let value = $state<string[]>([]);
 
   const dropHandle = (event: DragEvent) => {
     if (event.dataTransfer?.items) {
       const newFiles = Array.from(event.dataTransfer.items)
-        .filter((item) => item.kind === 'file')
+        .filter((item) => item.kind === "file")
         .map((item) => item.getAsFile())
         .filter((file): file is File => file !== null)
         .map((file) => file.name);
       value = [...value, ...newFiles];
-      console.log('Dropped files:', value); // Debugging
+      console.log("Dropped files:", value); // Debugging
     } else if (event.dataTransfer?.files) {
       const newFiles = Array.from(event.dataTransfer.files).map((file) => file.name);
       value = [...value, ...newFiles];
-      console.log('Dropped files:', value); // Debugging
+      console.log("Dropped files:", value); // Debugging
     }
   };
 
   const handleChange = (event: Event) => {
-    console.log('onChange event triggered!'); // Check if the event is firing
+    console.log("onChange event triggered!"); // Check if the event is firing
     const target = event.target as HTMLInputElement;
     const files = target.files;
-    console.log('Files in input:', files); // Check if files are being captured
+    console.log("Files in input:", files); // Check if files are being captured
 
     if (files) {
       const newFiles = Array.from(files).map((file) => file.name);
-      console.log('Selected file names:', newFiles); // Log file names
+      console.log("Selected file names:", newFiles); // Log file names
       value = [...value, ...newFiles]; // Update your state with file names
     }
   };
 
   const showFiles = (files: string[]): string => {
     if (files.length === 1) return files[0];
-    let concat = files.join(', ');
+    let concat = files.join(", ");
     if (concat.length > 40) {
-      concat = concat.slice(0, 40) + '...';
+      concat = concat.slice(0, 40) + "...";
     }
     return concat;
   };

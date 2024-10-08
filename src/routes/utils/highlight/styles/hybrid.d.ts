@@ -1,1 +1,1 @@
-export { hybrid as default } from './';
+export { hybrid as default } from "./";

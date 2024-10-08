@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Button, Drawer, uiHelpers, Drawerhead, Label, Input, Textarea, P, A } from '$lib';
-  import { InfoCircleSolid, UserAddOutline, CalendarEditSolid } from 'flowbite-svelte-icons';
+  import { Button, Drawer, uiHelpers, Drawerhead, Label, Input, Textarea, P, A } from "$lib";
+  import { InfoCircleSolid, UserAddOutline, CalendarEditSolid } from "flowbite-svelte-icons";
   const drawer = uiHelpers();
   let drawerStatus = $state(false);
   const closeDrawer = drawer.close;

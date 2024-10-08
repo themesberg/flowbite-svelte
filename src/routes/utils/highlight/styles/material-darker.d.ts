@@ -1,1 +1,1 @@
-export { materialDarker as default } from './';
+export { materialDarker as default } from "./";

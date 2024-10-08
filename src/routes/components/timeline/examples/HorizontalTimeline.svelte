@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Timeline, TimelineItem } from '$lib';
-  import { CalendarWeekSolid } from 'flowbite-svelte-icons';
+  import { Timeline, TimelineItem } from "$lib";
+  import { CalendarWeekSolid } from "flowbite-svelte-icons";
 </script>
 
 <Timeline order="horizontal">

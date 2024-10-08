@@ -1,27 +1,27 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { Toggle, toggle, Radio, Label, Button, uiHelpers, type ToggleProps, type ToggleColor } from '$lib';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import { Toggle, toggle, Radio, Label, Button, uiHelpers, type ToggleProps, type ToggleColor } from "$lib";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'forms/toggle';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "forms/toggle";
 
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
   const exampleArr = [
-    { name: 'Custom size', component: ExampleComponents.CustomSize },
-    { name: 'Loading', component: ExampleComponents.Loading }
+    { name: "Custom size", component: ExampleComponents.CustomSize },
+    { name: "Loading", component: ExampleComponents.Loading }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -33,10 +33,10 @@
   const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
 
-  const colors = Object.keys(toggle.variants.color) as ToggleProps['color'][];
-  let toggleColor: ToggleProps['color'] = $state('primary');
-  const sizes = Object.keys(toggle.variants.size) as ToggleProps['toggleSize'][];
-  let toggleSize: ToggleProps['toggleSize'] = $state('default');
+  const colors = Object.keys(toggle.variants.color) as ToggleProps["color"][];
+  let toggleColor: ToggleProps["color"] = $state("primary");
+  const sizes = Object.keys(toggle.variants.size) as ToggleProps["toggleSize"][];
+  let toggleSize: ToggleProps["toggleSize"] = $state("default");
   let checked: boolean = $state(false);
   const changeChecked = () => {
     checked = !checked;
@@ -56,15 +56,15 @@
     (() => {
       let props = [];
       // let fileSlot = '';
-      if (toggleSize !== 'default') props.push(` size="${toggleSize}"`);
-      if (toggleColor !== 'primary') props.push(` color="${toggleColor}"`);
-      if (checked) props.push(' checked');
-      if (disabled) props.push(' disabled');
-      if (leftSlot) props.push(' bind:checked');
+      if (toggleSize !== "default") props.push(` size="${toggleSize}"`);
+      if (toggleColor !== "primary") props.push(` color="${toggleColor}"`);
+      if (checked) props.push(" checked");
+      if (disabled) props.push(" disabled");
+      if (leftSlot) props.push(" bind:checked");
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
-      return `<Toggle${propsString}>${leftSlot ? `\n {#snippet leftLabel()}\n  <div class="me-4 {!checked ? 'text-red-600 font-semibold' : ''}">Off</div>\n {/snippet}\n <div class={checked ? 'text-green-600 font-semibold' : ''}>On</div>\n` : 'Toggle me'}</Toggle>`;
+      return `<Toggle${propsString}>${leftSlot ? `\n {#snippet leftLabel()}\n  <div class="me-4 {!checked ? 'text-red-600 font-semibold' : ''}">Off</div>\n {/snippet}\n <div class={checked ? 'text-green-600 font-semibold' : ''}>On</div>\n` : "Toggle me"}</Toggle>`;
     })()
   );
   // for interactive builder
@@ -110,7 +110,7 @@
         {#if checked}Checked
         {/if} Toggle
       {:else}
-        <div class={checked ? 'font-semibold text-green-600' : ''}>On</div>
+        <div class={checked ? "font-semibold text-green-600" : ""}>On</div>
       {/if}
     </Toggle>
   </div>
@@ -127,9 +127,9 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-40" onclick={changeChecked}>{checked ? 'Remove checked' : 'Add checked'}</Button>
-    <Button class="w-40" color="secondary" onclick={changeDisabled}>{disabled ? 'Remove disabled' : 'Add disabled'}</Button>
-    <Button class="w-40" color="emerald" onclick={changeLeftLabel}>{leftSlot ? 'Remove left slot' : 'Add left slot'}</Button>
+    <Button class="w-40" onclick={changeChecked}>{checked ? "Remove checked" : "Add checked"}</Button>
+    <Button class="w-40" color="secondary" onclick={changeDisabled}>{disabled ? "Remove disabled" : "Add disabled"}</Button>
+    <Button class="w-40" color="emerald" onclick={changeLeftLabel}>{leftSlot ? "Remove left slot" : "Add left slot"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

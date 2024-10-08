@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type ActivityItemProps as Props, activityitem } from './index';
+  import { type ActivityItemProps as Props, activityitem } from "./index";
 
   let { activities, liClass, spanClass, imgClass, outerDivClass, innerDivClass, timeClass, titleClass, textClass, ...restProps }: Props = $props();
 

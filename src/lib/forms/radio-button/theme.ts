@@ -1,11 +1,11 @@
-import { tv } from 'tailwind-variants';
+import { tv } from "tailwind-variants";
 
 export const radioButton = tv({
-  base: '',
+  base: "",
   variants: {
     inline: {
-      true: 'inline-flex',
-      false: 'flex'
+      true: "inline-flex",
+      false: "flex"
     }
   }
 });

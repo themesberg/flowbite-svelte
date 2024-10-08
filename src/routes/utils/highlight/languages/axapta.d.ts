@@ -1,2 +1,2 @@
-export { axapta } from './';
-export { axapta as default } from './';
+export { axapta } from "./";
+export { axapta as default } from "./";

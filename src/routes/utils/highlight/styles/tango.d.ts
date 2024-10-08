@@ -1,1 +1,1 @@
-export { tango as default } from './';
+export { tango as default } from "./";

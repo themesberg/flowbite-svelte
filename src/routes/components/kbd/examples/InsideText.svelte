@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Kbd } from '$lib';
+  import { Kbd } from "$lib";
 </script>
 
 <div class="flex flex-wrap justify-center">

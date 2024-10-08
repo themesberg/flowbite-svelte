@@ -1,1 +1,1 @@
-export { isotope as default } from './';
+export { isotope as default } from "./";

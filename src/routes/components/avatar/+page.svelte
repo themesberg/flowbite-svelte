@@ -1,15 +1,15 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { Avatar, avatar, Label, Radio, Button, uiHelpers, type AvatarProps } from '$lib';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import { Avatar, avatar, Label, Radio, Button, uiHelpers, type AvatarProps } from "$lib";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'avatar';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "avatar";
   let dropdown = uiHelpers();
   let dropdownStatus = $state(false);
 
@@ -20,21 +20,21 @@
   });
 
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
   const exampleArr = [
-    { name: 'Avatar text', component: ExampleComponents.AvatarText },
-    { name: 'Dot indicator', component: ExampleComponents.DotIndicator },
-    { name: 'Placeholder', component: ExampleComponents.Placeholder },
-    { name: 'Placeholder initial', component: ExampleComponents.PlaceholderInitial },
-    { name: 'Stacked', component: ExampleComponents.Stacked },
-    { name: 'User dropdown', component: ExampleComponents.UserDropdown },
-    { name: 'Avatar with tooltip', component: ExampleComponents.AvatarWithTooltip }
+    { name: "Avatar text", component: ExampleComponents.AvatarText },
+    { name: "Dot indicator", component: ExampleComponents.DotIndicator },
+    { name: "Placeholder", component: ExampleComponents.Placeholder },
+    { name: "Placeholder initial", component: ExampleComponents.PlaceholderInitial },
+    { name: "Stacked", component: ExampleComponents.Stacked },
+    { name: "User dropdown", component: ExampleComponents.UserDropdown },
+    { name: "Avatar with tooltip", component: ExampleComponents.AvatarWithTooltip }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -48,22 +48,22 @@
 
   // reactive example, rounded, border, stacked, size, className
   const sizes = Object.keys(avatar.variants.size);
-  let avatarSize: AvatarProps['size'] = $state('md');
+  let avatarSize: AvatarProps["size"] = $state("md");
   let isRounded = $state(false);
   const toggleCornerStyle = () => {
     isRounded = !isRounded;
   };
-  let border: AvatarProps['border'] = $state(false);
+  let border: AvatarProps["border"] = $state(false);
   const changeBorder = () => {
     border = !border;
   };
-  let stacked: AvatarProps['stacked'] = $state(false);
+  let stacked: AvatarProps["stacked"] = $state(false);
   const changeStacked = () => {
     stacked = !stacked;
   };
-  let avatarClass: AvatarProps['class'] = $state('');
+  let avatarClass: AvatarProps["class"] = $state("");
   const changeClass = () => {
-    avatarClass = avatarClass === '' ? 'mx-0.5' : '';
+    avatarClass = avatarClass === "" ? "mx-0.5" : "";
   };
 
   // code generator
@@ -71,12 +71,12 @@
     (() => {
       let props = [];
       if (isRounded) props.push('cornerStyle="rounded"');
-      if (avatarSize !== 'md') props.push(`size="${avatarSize}"`);
-      if (border) props.push('border');
-      if (stacked) props.push('stacked');
+      if (avatarSize !== "md") props.push(`size="${avatarSize}"`);
+      if (border) props.push("border");
+      if (stacked) props.push("stacked");
       if (avatarClass) props.push(`class="${avatarClass}"`);
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
       return `<Avatar${propsString} />`;
     })()
@@ -113,9 +113,9 @@
 <H2>Interactive Avatar Bilder</H2>
 <CodeWrapper>
   <div class="mb-4 flex h-36 justify-center">
-    <Avatar src="/images/profile-picture-1.webp" cornerStyle={isRounded ? 'rounded' : undefined} {border} {stacked} class={avatarClass} size={avatarSize} />
-    <Avatar src="/images/profile-picture-2.webp" cornerStyle={isRounded ? 'rounded' : undefined} {border} {stacked} class={avatarClass} size={avatarSize} />
-    <Avatar src="/images/profile-picture-3.webp" cornerStyle={isRounded ? 'rounded' : undefined} {border} {stacked} class={avatarClass} size={avatarSize} />
+    <Avatar src="/images/profile-picture-1.webp" cornerStyle={isRounded ? "rounded" : undefined} {border} {stacked} class={avatarClass} size={avatarSize} />
+    <Avatar src="/images/profile-picture-2.webp" cornerStyle={isRounded ? "rounded" : undefined} {border} {stacked} class={avatarClass} size={avatarSize} />
+    <Avatar src="/images/profile-picture-3.webp" cornerStyle={isRounded ? "rounded" : undefined} {border} {stacked} class={avatarClass} size={avatarSize} />
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size</Label>
@@ -124,10 +124,10 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-40" color="blue" onclick={toggleCornerStyle}>{isRounded ? 'Default: circular' : 'Rounded'}</Button>
-    <Button class="w-40" color="red" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
-    <Button class="w-40" color="green" onclick={changeStacked}>{stacked ? 'Remove stacked' : 'Add  stacked'}</Button>
-    <Button class="w-40" color="purple" onclick={changeClass}>{avatarClass ? 'Remove class' : 'Add class'}</Button>
+    <Button class="w-40" color="blue" onclick={toggleCornerStyle}>{isRounded ? "Default: circular" : "Rounded"}</Button>
+    <Button class="w-40" color="red" onclick={changeBorder}>{border ? "Remove border" : "Add border"}</Button>
+    <Button class="w-40" color="green" onclick={changeStacked}>{stacked ? "Remove stacked" : "Add  stacked"}</Button>
+    <Button class="w-40" color="purple" onclick={changeClass}>{avatarClass ? "Remove class" : "Add class"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

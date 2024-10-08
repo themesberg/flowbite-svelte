@@ -1,2 +1,2 @@
-export { autoit } from './';
-export { autoit as default } from './';
+export { autoit } from "./";
+export { autoit as default } from "./";

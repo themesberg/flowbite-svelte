@@ -1,1 +1,1 @@
-export { monokai as default } from './';
+export { monokai as default } from "./";

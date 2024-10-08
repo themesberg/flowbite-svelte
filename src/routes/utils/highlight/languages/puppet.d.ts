@@ -1,2 +1,2 @@
-export { puppet } from './';
-export { puppet as default } from './';
+export { puppet } from "./";
+export { puppet as default } from "./";

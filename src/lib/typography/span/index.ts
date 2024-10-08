@@ -1,14 +1,14 @@
-import Span from './Span.svelte';
-import { type VariantProps } from 'tailwind-variants';
-import type { Snippet } from 'svelte';
-import type { HTMLAttributes } from 'svelte/elements';
-import { span } from './theme';
+import Span from "./Span.svelte";
+import { type VariantProps } from "tailwind-variants";
+import type { Snippet } from "svelte";
+import type { HTMLAttributes } from "svelte/elements";
+import { span } from "./theme";
 
-type DecorationType = VariantProps<typeof span>['decoration'];
-type GradientType = VariantProps<typeof span>['gradient'];
-type HighlightType = VariantProps<typeof span>['highlight'];
-type DecorationColorType = VariantProps<typeof span>['decorationColor'];
-type DecorationThicknessType = VariantProps<typeof span>['decorationThickness'];
+type DecorationType = VariantProps<typeof span>["decoration"];
+type GradientType = VariantProps<typeof span>["gradient"];
+type HighlightType = VariantProps<typeof span>["highlight"];
+type DecorationColorType = VariantProps<typeof span>["decorationColor"];
+type DecorationThicknessType = VariantProps<typeof span>["decorationThickness"];
 
 interface SpanProps extends HTMLAttributes<HTMLSpanElement> {
   children?: Snippet;

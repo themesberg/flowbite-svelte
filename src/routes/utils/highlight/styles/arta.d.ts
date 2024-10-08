@@ -1,1 +1,1 @@
-export { arta as default } from './';
+export { arta as default } from "./";

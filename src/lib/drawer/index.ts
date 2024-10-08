@@ -1,14 +1,14 @@
-import Drawer from './Drawer.svelte';
-import Drawerhead from './Drawerhead.svelte';
-import { type VariantProps } from 'tailwind-variants';
-import type { Snippet } from 'svelte';
-import type { HTMLAttributes, HTMLButtonAttributes } from 'svelte/elements';
-import type { TransitionFunc, ParamsType } from '../types';
-import { drawer, drawerhead } from './theme';
+import Drawer from "./Drawer.svelte";
+import Drawerhead from "./Drawerhead.svelte";
+import { type VariantProps } from "tailwind-variants";
+import type { Snippet } from "svelte";
+import type { HTMLAttributes, HTMLButtonAttributes } from "svelte/elements";
+import type { TransitionFunc, ParamsType } from "../types";
+import { drawer, drawerhead } from "./theme";
 
-type WidthType = VariantProps<typeof drawer>['width'];
-type PlacementType = VariantProps<typeof drawer>['placement'];
-type PosisionType = VariantProps<typeof drawer>['position'];
+type WidthType = VariantProps<typeof drawer>["width"];
+type PlacementType = VariantProps<typeof drawer>["placement"];
+type PosisionType = VariantProps<typeof drawer>["position"];
 
 interface DrawerProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;

@@ -1,2 +1,2 @@
-export { brainfuck } from './';
-export { brainfuck as default } from './';
+export { brainfuck } from "./";
+export { brainfuck as default } from "./";

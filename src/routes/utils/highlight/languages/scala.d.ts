@@ -1,2 +1,2 @@
-export { scala } from './';
-export { scala as default } from './';
+export { scala } from "./";
+export { scala as default } from "./";

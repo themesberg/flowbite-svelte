@@ -1,1 +1,1 @@
-export { srcery as default } from './';
+export { srcery as default } from "./";

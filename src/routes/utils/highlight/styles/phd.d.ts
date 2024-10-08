@@ -1,1 +1,1 @@
-export { phd as default } from './';
+export { phd as default } from "./";

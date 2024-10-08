@@ -1,2 +1,2 @@
-export { thrift } from './';
-export { thrift as default } from './';
+export { thrift } from "./";
+export { thrift as default } from "./";

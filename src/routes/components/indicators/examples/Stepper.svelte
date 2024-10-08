@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Indicator } from '$lib';
-  import { CheckCircleSolid } from 'flowbite-svelte-icons';
+  import { Indicator } from "$lib";
+  import { CheckCircleSolid } from "flowbite-svelte-icons";
 </script>
 
 <ol class="flex items-center">

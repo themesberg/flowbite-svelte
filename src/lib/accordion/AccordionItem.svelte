@@ -1,14 +1,14 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
-  import { slide } from 'svelte/transition';
-  import { getContext } from 'svelte';
-  import { writable } from 'svelte/store';
-  import { type AccordionCtxType, type AccordionItemProps as Props, accordionitem } from '.';
-  import type { ParamsType } from '../types';
+  import { twMerge } from "tailwind-merge";
+  import { slide } from "svelte/transition";
+  import { getContext } from "svelte";
+  import { writable } from "svelte/store";
+  import { type AccordionCtxType, type AccordionItemProps as Props, accordionitem } from ".";
+  import type { ParamsType } from "../types";
 
   let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transition = slide, params, class: className }: Props = $props();
 
-  const ctx: AccordionCtxType = getContext('ctx') ?? {};
+  const ctx: AccordionCtxType = getContext("ctx") ?? {};
   // selected type is writable in AccordionCtxType
   if (!ctx.selected) {
     ctx.selected = writable();

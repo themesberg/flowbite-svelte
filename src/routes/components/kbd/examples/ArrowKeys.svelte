@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Kbd } from '$lib';
-  import { CaretDownSolid, CaretLeftSolid, CaretRightSolid, CaretUpSolid } from 'flowbite-svelte-icons';
+  import { Kbd } from "$lib";
+  import { CaretDownSolid, CaretLeftSolid, CaretRightSolid, CaretUpSolid } from "flowbite-svelte-icons";
 </script>
 
 <div class="flex flex-wrap justify-center">

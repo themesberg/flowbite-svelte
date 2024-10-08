@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { Pagination } from '$lib';
-  import { ArrowLeftOutline, ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Pagination } from "$lib";
+  import { ArrowLeftOutline, ArrowRightOutline } from "flowbite-svelte-icons";
   let helper = { start: 1, end: 10, total: 100 };
   const previous = () => {
-    alert('Previous btn clicked. Make a call to your server to fetch data.');
+    alert("Previous btn clicked. Make a call to your server to fetch data.");
   };
   const next = () => {
-    alert('Next btn clicked. Make a call to your server to fetch data.');
+    alert("Next btn clicked. Make a call to your server to fetch data.");
   };
 </script>
 

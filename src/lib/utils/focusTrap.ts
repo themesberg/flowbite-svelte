@@ -3,7 +3,7 @@
 //
 
 // add all the elements inside modal which you want to make focusable
-import type { Action } from 'svelte/action';
+import type { Action } from "svelte/action";
 
 const selectorTabbable = `
   a[href], area[href], input:not([disabled]):not([tabindex='-1']),
@@ -14,7 +14,7 @@ const selectorTabbable = `
 
 const focusTrap: Action<HTMLElement> = (node) => {
   const handleFocusTrap = (e: KeyboardEvent) => {
-    const isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+    const isTabPressed = e.key === "Tab" || e.keyCode === 9;
 
     if (!isTabPressed) {
       return;
@@ -31,11 +31,11 @@ const focusTrap: Action<HTMLElement> = (node) => {
     e.preventDefault();
   };
 
-  document.addEventListener('keydown', handleFocusTrap, true);
+  document.addEventListener("keydown", handleFocusTrap, true);
 
   return {
     destroy() {
-      document.removeEventListener('keydown', handleFocusTrap, true);
+      document.removeEventListener("keydown", handleFocusTrap, true);
     }
   };
 };

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type LayoutProps as Props, layout } from './index';
+  import { type LayoutProps as Props, layout } from "./index";
 
   let { children, class: className, ...restProps }: Props = $props();
 

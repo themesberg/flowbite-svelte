@@ -1,1 +1,1 @@
-export { qtcreatorDark as default } from './';
+export { qtcreatorDark as default } from "./";

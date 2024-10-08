@@ -1,1 +1,1 @@
-export { atelierSeasideLight as default } from './';
+export { atelierSeasideLight as default } from "./";

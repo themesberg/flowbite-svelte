@@ -1,1 +1,1 @@
-export { gradientDark as default } from './';
+export { gradientDark as default } from "./";

@@ -1,12 +1,12 @@
-import Activity from './Activity.svelte';
-import ActivityItem from './ActivityItem.svelte';
-import Group from './Group.svelte';
-import GroupItem from './GroupItem.svelte';
-import Timeline from './Timeline.svelte';
-import TimelineItem from './TimelineItem.svelte';
-import { activity, activityitem, group, groupitem, timeline, timelineitem } from './theme';
-import type { HTMLOlAttributes, HTMLLiAttributes } from 'svelte/elements';
-import type { Snippet } from 'svelte';
+import Activity from "./Activity.svelte";
+import ActivityItem from "./ActivityItem.svelte";
+import Group from "./Group.svelte";
+import GroupItem from "./GroupItem.svelte";
+import Timeline from "./Timeline.svelte";
+import TimelineItem from "./TimelineItem.svelte";
+import { activity, activityitem, group, groupitem, timeline, timelineitem } from "./theme";
+import type { HTMLOlAttributes, HTMLLiAttributes } from "svelte/elements";
+import type { Snippet } from "svelte";
 
 interface ActivityType {
   name: HTMLElement | string;
@@ -60,7 +60,7 @@ interface GroupItemProps extends HTMLLiAttributes {
 
 interface TimelineProps extends HTMLOlAttributes {
   children: Snippet;
-  order?: 'default' | 'vertical' | 'horizontal' | 'activity' | 'group';
+  order?: "default" | "vertical" | "horizontal" | "activity" | "group";
 }
 
 interface TimelineItemProps extends HTMLLiAttributes {

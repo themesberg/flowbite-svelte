@@ -1,12 +1,12 @@
-import Button from './Button.svelte';
-import GradientButton from './GradientButton.svelte';
-import { type VariantProps } from 'tailwind-variants';
-import type { Snippet } from 'svelte';
-import type { HTMLButtonAttributes, HTMLAnchorAttributes } from 'svelte/elements';
-import { button, gradientButton } from './theme';
+import Button from "./Button.svelte";
+import GradientButton from "./GradientButton.svelte";
+import { type VariantProps } from "tailwind-variants";
+import type { Snippet } from "svelte";
+import type { HTMLButtonAttributes, HTMLAnchorAttributes } from "svelte/elements";
+import { button, gradientButton } from "./theme";
 
-type ButtonColorType = VariantProps<typeof button>['color'];
-type ButtonSizeType = VariantProps<typeof button>['size'];
+type ButtonColorType = VariantProps<typeof button>["color"];
+type ButtonSizeType = VariantProps<typeof button>["size"];
 
 type ButtonSpecificProps = {
   children: Snippet;
@@ -27,7 +27,7 @@ type ButtonProps = ButtonSpecificProps &
     href?: string;
   };
 
-type GradientButtonColorType = VariantProps<typeof gradientButton>['color'];
+type GradientButtonColorType = VariantProps<typeof gradientButton>["color"];
 
 type GradientButtonSpecificProps = {
   children: Snippet;

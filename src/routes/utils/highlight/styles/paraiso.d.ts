@@ -1,1 +1,1 @@
-export { paraiso as default } from './';
+export { paraiso as default } from "./";

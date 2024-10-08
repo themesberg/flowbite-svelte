@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Heading, Secondary } from '$lib';
+  import { Heading, Secondary } from "$lib";
 </script>
 
 <Heading tag="h1" class="text-5xl font-extrabold">

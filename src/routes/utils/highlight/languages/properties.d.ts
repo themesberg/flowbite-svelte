@@ -1,2 +1,2 @@
-export { properties } from './';
-export { properties as default } from './';
+export { properties } from "./";
+export { properties as default } from "./";

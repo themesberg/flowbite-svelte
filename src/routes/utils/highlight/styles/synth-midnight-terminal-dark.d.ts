@@ -1,1 +1,1 @@
-export { synthMidnightTerminalDark as default } from './';
+export { synthMidnightTerminalDark as default } from "./";

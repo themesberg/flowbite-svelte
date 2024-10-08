@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { type TooltipProps as Props, tooltip } from '.';
-  import { onDestroy } from 'svelte';
+  import { type TooltipProps as Props, tooltip } from ".";
+  import { onDestroy } from "svelte";
 
-  let { children, color = 'default', arrow = true, offset = 0, triggeredBy, position = 'top', class: className, reference, ...restProps }: Props = $props();
+  let { children, color = "default", arrow = true, offset = 0, triggeredBy, position = "top", class: className, reference, ...restProps }: Props = $props();
 
   let { base, arrowBase } = $derived(tooltip({ color, arrow, position }));
 
@@ -39,7 +39,7 @@
     let top, left, arrowTop, arrowLeft;
 
     switch (position) {
-      case 'top':
+      case "top":
         top = referenceRect.top + scrollY - tooltipRect.height - 10 - offset;
         left = referenceRect.left + scrollX + referenceRect.width / 2 - tooltipRect.width / 2;
         if (arrowRect && offset === 0) {
@@ -47,7 +47,7 @@
           arrowLeft = tooltipRect.width / 2 - arrowRect.width / 2;
         }
         break;
-      case 'bottom':
+      case "bottom":
         top = referenceRect.bottom + scrollY + 10 + offset;
         left = referenceRect.left + scrollX + referenceRect.width / 2 - tooltipRect.width / 2;
         if (arrowRect && offset === 0) {
@@ -55,7 +55,7 @@
           arrowLeft = tooltipRect.width / 2 - arrowRect.width / 2;
         }
         break;
-      case 'left':
+      case "left":
         top = referenceRect.top + scrollY + referenceRect.height / 2 - tooltipRect.height / 2;
         left = referenceRect.left + scrollX - tooltipRect.width - 10 - offset;
         if (arrowRect && offset === 0) {
@@ -63,7 +63,7 @@
           arrowLeft = tooltipRect.width - 5;
         }
         break;
-      case 'right':
+      case "right":
         top = referenceRect.top + scrollY + referenceRect.height / 2 - tooltipRect.height / 2;
         left = referenceRect.right + scrollX + 10 + offset;
         if (arrowRect && offset === 0) {
@@ -87,8 +87,8 @@
     referenceElement = reference ? document.querySelector(reference) : triggerElement;
 
     if (triggerElement) {
-      triggerElement.addEventListener('mouseenter', showTooltip);
-      triggerElement.addEventListener('mouseleave', hideTooltip);
+      triggerElement.addEventListener("mouseenter", showTooltip);
+      triggerElement.addEventListener("mouseleave", hideTooltip);
     }
 
     const handlePositionUpdate = () => {
@@ -97,22 +97,22 @@
       }
     };
 
-    window.addEventListener('resize', handlePositionUpdate);
-    window.addEventListener('scroll', handlePositionUpdate, true);
+    window.addEventListener("resize", handlePositionUpdate);
+    window.addEventListener("scroll", handlePositionUpdate, true);
 
     onDestroy(() => {
       if (triggerElement) {
-        triggerElement.removeEventListener('mouseenter', showTooltip);
-        triggerElement.removeEventListener('mouseleave', hideTooltip);
+        triggerElement.removeEventListener("mouseenter", showTooltip);
+        triggerElement.removeEventListener("mouseleave", hideTooltip);
       }
-      window.removeEventListener('resize', handlePositionUpdate);
-      window.removeEventListener('scroll', handlePositionUpdate, true);
+      window.removeEventListener("resize", handlePositionUpdate);
+      window.removeEventListener("scroll", handlePositionUpdate, true);
     });
   });
 </script>
 
 {#if visible}
-  <div role="tooltip" bind:this={tooltipElement} class={`${base({ className })} ${positioned ? 'visible opacity-100' : 'invisible opacity-0'} transition-opacity duration-200`} {...restProps}>
+  <div role="tooltip" bind:this={tooltipElement} class={`${base({ className })} ${positioned ? "visible opacity-100" : "invisible opacity-0"} transition-opacity duration-200`} {...restProps}>
     {@render children()}
     {#if arrow}<div bind:this={arrowEl} class={arrowBase({ arrow, position })}></div>{/if}
   </div>

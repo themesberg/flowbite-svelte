@@ -1,16 +1,16 @@
-import Select from './Select.svelte';
-import type { Snippet } from 'svelte';
-import type { HTMLSelectAttributes, HTMLAttributes } from 'svelte/elements';
-import { select } from './theme';
+import Select from "./Select.svelte";
+import type { Snippet } from "svelte";
+import type { HTMLSelectAttributes, HTMLAttributes } from "svelte/elements";
+import { select } from "./theme";
 
-type SelectSize = 'sm' | 'md' | 'lg';
+type SelectSize = "sm" | "md" | "lg";
 
 type SelectOptionType<T> = {
   name: string | number;
   value: T;
 };
 
-interface SelectProps<T> extends Omit<HTMLSelectAttributes, 'size'> {
+interface SelectProps<T> extends Omit<HTMLSelectAttributes, "size"> {
   children?: Snippet;
   items?: SelectOptionType<T>[];
   value?: T;

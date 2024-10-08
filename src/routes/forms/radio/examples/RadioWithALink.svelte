@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Radio } from '$lib';
+  import { Radio } from "$lib";
 </script>
 
 <Radio name="with-link" labelClass="m-2">

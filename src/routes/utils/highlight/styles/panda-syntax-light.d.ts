@@ -1,1 +1,1 @@
-export { pandaSyntaxLight as default } from './';
+export { pandaSyntaxLight as default } from "./";

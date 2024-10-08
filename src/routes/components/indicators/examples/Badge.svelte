@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Avatar, Badge, Indicator } from '$lib';
+  import { Avatar, Badge, Indicator } from "$lib";
 </script>
 
 <div class="flex gap-2">

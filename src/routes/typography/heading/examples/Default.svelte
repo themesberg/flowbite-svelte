@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Heading, P, Button } from '$lib';
-  import { ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Heading, P, Button } from "$lib";
+  import { ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
 <Heading tag="h1" class="mb-4 text-4xl font-extrabold  md:text-5xl lg:text-6xl">We invest in the world’s potential</Heading>

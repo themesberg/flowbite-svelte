@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { getContext } from 'svelte';
-  import type { navbarType } from '$lib/types';
-  import { navhamburger, type NavHamburgerProps as Props } from '.';
+  import { getContext } from "svelte";
+  import type { navbarType } from "$lib/types";
+  import { navhamburger, type NavHamburgerProps as Props } from ".";
 
   let { toggleNav, class: className, ...restProps }: Props = $props();
 
   let breakPoint;
-  const context = getContext<navbarType>('navbarContext');
-  breakPoint = context.breakPoint ?? 'md';
+  const context = getContext<navbarType>("navbarContext");
+  breakPoint = context.breakPoint ?? "md";
   const toggleButton = $derived(navhamburger({ breakPoint, className }));
   // const handletoggleNav = () => {
   //   toggleNav();

@@ -1,1 +1,1 @@
-export { monoBlue as default } from './';
+export { monoBlue as default } from "./";

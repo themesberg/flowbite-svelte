@@ -1,1 +1,1 @@
-export { googlecode as default } from './';
+export { googlecode as default } from "./";

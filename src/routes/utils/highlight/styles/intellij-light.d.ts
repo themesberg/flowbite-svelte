@@ -1,1 +1,1 @@
-export { intellijLight as default } from './';
+export { intellijLight as default } from "./";

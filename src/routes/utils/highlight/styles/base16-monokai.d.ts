@@ -1,1 +1,1 @@
-export { base16Monokai as default } from './';
+export { base16Monokai as default } from "./";

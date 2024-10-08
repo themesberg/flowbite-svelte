@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { ButtonGroup, Button } from '$lib';
+  import { ButtonGroup, Button } from "$lib";
   const handleClick = () => {
-    alert('Clicked');
+    alert("Clicked");
   };
 </script>
 

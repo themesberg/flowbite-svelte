@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Tabs, TabItem } from '$lib';
+  import { Tabs, TabItem } from "$lib";
 </script>
 
 <Tabs tabStyle="full" ulClass="flex flex-nowrap rounded-lg divide-x rtl:divide-x-reverse divide-gray-200 shadow dark:divide-gray-700 space-x-0">

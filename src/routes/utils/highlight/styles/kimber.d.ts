@@ -1,1 +1,1 @@
-export { kimber as default } from './';
+export { kimber as default } from "./";

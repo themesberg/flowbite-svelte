@@ -1,2 +1,2 @@
-export { stan } from './';
-export { stan as default } from './';
+export { stan } from "./";
+export { stan as default } from "./";

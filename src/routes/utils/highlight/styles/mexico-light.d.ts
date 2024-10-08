@@ -1,1 +1,1 @@
-export { mexicoLight as default } from './';
+export { mexicoLight as default } from "./";

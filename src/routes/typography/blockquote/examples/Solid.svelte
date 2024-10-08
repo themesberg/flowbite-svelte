@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Blockquote, P } from '$lib';
+  import { Blockquote, P } from "$lib";
 </script>
 
 <P color="text-gray-500 dark:text-gray-400">Does your user know how to exit out of screens? Can they follow your intended user journey and buy something from the site you’ve designed? By running a usability test, you’ll be able to see how users will interact with your design once it’s live.</P>

@@ -1,16 +1,16 @@
 <script lang="ts">
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarButton, uiHelpers } from '$lib';
-  import { ChartOutline, GridSolid, MailBoxSolid, UserSolid } from 'flowbite-svelte-icons';
-  import PlusPlaceholder from '../../../utils/PlusPlaceholder.svelte';
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarButton, uiHelpers } from "$lib";
+  import { ChartOutline, GridSolid, MailBoxSolid, UserSolid } from "flowbite-svelte-icons";
+  import PlusPlaceholder from "../../../utils/PlusPlaceholder.svelte";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
   $effect(() => {
     isDemoOpen = demoSidebarUi.isOpen;
   });
-  const spanClass = 'flex-1 ms-3 whitespace-nowrap';
-  const activeClass = 'flex items-center p-2 text-base font-normal text-white bg-primary-600 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-800 dark:hover:bg-primary-800';
-  const nonActiveClass = 'flex items-center p-2 text-base font-normal text-green-900 rounded-lg dark:text-white hover:bg-green-100 dark:hover:bg-green-700';
+  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const activeClass = "flex items-center p-2 text-base font-normal text-white bg-primary-600 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-800 dark:hover:bg-primary-800";
+  const nonActiveClass = "flex items-center p-2 text-base font-normal text-green-900 rounded-lg dark:text-white hover:bg-green-100 dark:hover:bg-green-700";
 </script>
 
 <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />

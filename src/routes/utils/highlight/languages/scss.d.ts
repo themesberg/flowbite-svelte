@@ -1,2 +1,2 @@
-export { scss } from './';
-export { scss as default } from './';
+export { scss } from "./";
+export { scss as default } from "./";

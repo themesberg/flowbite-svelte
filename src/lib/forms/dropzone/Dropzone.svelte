@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { DragEventHandler, ChangeEventHandler } from 'svelte/elements';
-  import { type DropzoneProps as Props, dropzone } from '.';
+  import type { DragEventHandler, ChangeEventHandler } from "svelte/elements";
+  import { type DropzoneProps as Props, dropzone } from ".";
 
   type HTMLInputElementWithFiles = HTMLInputElement & { files: FileList | null };
 
@@ -19,7 +19,7 @@
   let input: HTMLInputElement;
 
   function keydown(ev: KeyboardEvent) {
-    if ([' ', 'Enter'].includes(ev.key)) {
+    if ([" ", "Enter"].includes(ev.key)) {
       ev.preventDefault();
       input.click();
     }

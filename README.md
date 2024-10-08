@@ -9,8 +9,8 @@ UI library for Svelte 5
 After installing Svelte-5, you can [opt-in to runes mode](https://svelte-5-preview.vercel.app/docs/runes#how-to-opt-in) by updating `svelte.config.js` to enable `runes`:
 
 ```js
-import adapter from '@sveltejs/adapter-auto';
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import adapter from "@sveltejs/adapter-auto";
+import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {

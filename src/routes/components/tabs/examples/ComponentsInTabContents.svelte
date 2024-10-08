@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Tabs, TabItem, Timeline, TimelineItem, Button } from '$lib';
-  import { ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Tabs, TabItem, Timeline, TimelineItem, Button } from "$lib";
+  import { ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
 <Tabs>

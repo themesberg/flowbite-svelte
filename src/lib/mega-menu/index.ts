@@ -1,10 +1,10 @@
-import type { Snippet } from 'svelte';
-import MegaMenu from './MegaMenu.svelte';
-import { megamenu } from './theme';
-import type { ParamsType, TransitionFunc, LinkType } from '../types';
-import type { HTMLAttributes } from 'svelte/elements';
+import type { Snippet } from "svelte";
+import MegaMenu from "./MegaMenu.svelte";
+import { megamenu } from "./theme";
+import type { ParamsType, TransitionFunc, LinkType } from "../types";
+import type { HTMLAttributes } from "svelte/elements";
 
-interface MegaMenuProps extends Omit<HTMLAttributes<HTMLDivElement>, 'children'> {
+interface MegaMenuProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
   children: Snippet<[{ item: LinkType; index: number }]>;
   footer?: Snippet;
   items?: LinkType[];

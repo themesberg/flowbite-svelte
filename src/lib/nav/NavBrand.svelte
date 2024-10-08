@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { type NavBrandProps as Props, navbrand } from '.';
-  import { getContext } from 'svelte';
-  import type { navbarType } from '$lib/types';
+  import { type NavBrandProps as Props, navbrand } from ".";
+  import { getContext } from "svelte";
+  import type { navbarType } from "$lib/types";
 
   let { children, siteName, closeNav, aClass, spanClass, ...restProps }: Props = $props();
 
-  const context = getContext<navbarType>('navbarContext');
+  const context = getContext<navbarType>("navbarContext");
   closeNav = context.closeNav ?? closeNav;
 
   const { base, span } = $derived(navbrand());

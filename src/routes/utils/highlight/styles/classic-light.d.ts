@@ -1,1 +1,1 @@
-export { classicLight as default } from './';
+export { classicLight as default } from "./";

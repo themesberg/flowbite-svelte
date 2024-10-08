@@ -1,1 +1,1 @@
-export { mellowPurple as default } from './';
+export { mellowPurple as default } from "./";

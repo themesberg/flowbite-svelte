@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Footer, FooterBrand, FooterLi, FooterUl, FooterCopyright, FooterIcon } from '$lib';
-  import { FacebookSolid, GithubSolid, DiscordSolid, TwitterSolid } from 'flowbite-svelte-icons';
+  import { Footer, FooterBrand, FooterLi, FooterUl, FooterCopyright, FooterIcon } from "$lib";
+  import { FacebookSolid, GithubSolid, DiscordSolid, TwitterSolid } from "flowbite-svelte-icons";
 </script>
 
 <Footer footerType="socialmedia">

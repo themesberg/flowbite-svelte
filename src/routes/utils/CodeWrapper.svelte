@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import type { HTMLAttributes } from 'svelte/elements';
-  import { codewrapper } from './theme';
+  import type { Snippet } from "svelte";
+  import type { HTMLAttributes } from "svelte/elements";
+  import { codewrapper } from "./theme";
   interface Props extends HTMLAttributes<HTMLDivElement> {
     children?: Snippet;
     codeblock?: Snippet;

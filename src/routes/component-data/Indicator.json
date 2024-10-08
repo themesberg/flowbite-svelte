@@ -1,45 +1,13 @@
 {
   "name": "Indicator",
   "props": [
-    [
-      "children",
-      "Snippet",
-      ""
-    ],
-    [
-      "color",
-      "VariantProps<typeof indicator>['color']",
-      "'primary'"
-    ],
-    [
-      "cornerStyle",
-      "'rounded' | 'circular'",
-      "'circular'"
-    ],
-    [
-      "size",
-      "VariantProps<typeof indicator>['size']",
-      "'md'"
-    ],
-    [
-      "border",
-      "boolean",
-      "false"
-    ],
-    [
-      "placement",
-      "VariantProps<typeof indicator>['placement'] | undefined",
-      ""
-    ],
-    [
-      "offset",
-      "boolean",
-      "true"
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ]
+    ["children", "Snippet", ""],
+    ["color", "VariantProps<typeof indicator>['color']", "'primary'"],
+    ["cornerStyle", "'rounded' | 'circular'", "'circular'"],
+    ["size", "VariantProps<typeof indicator>['size']", "'md'"],
+    ["border", "boolean", "false"],
+    ["placement", "VariantProps<typeof indicator>['placement'] | undefined", ""],
+    ["offset", "boolean", "true"],
+    ["class", "string", ""]
   ]
 }

@@ -1,1 +1,1 @@
-export { windowsHighContrast as default } from './';
+export { windowsHighContrast as default } from "./";

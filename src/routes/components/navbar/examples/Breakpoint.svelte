@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Navbar, NavBrand, NavUl, NavLi, uiHelpers } from '$lib';
+  import { Navbar, NavBrand, NavUl, NavLi, uiHelpers } from "$lib";
   let nav = uiHelpers();
   let navStatus = $state(false);
   let toggleNav = nav.toggle;

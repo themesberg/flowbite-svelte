@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Button } from '$lib';
-  import { ArrowRightOutline, ThumbsUpSolid } from 'flowbite-svelte-icons';
+  import { Button } from "$lib";
+  import { ArrowRightOutline, ThumbsUpSolid } from "flowbite-svelte-icons";
 </script>
 
 <Button class="!p-2"><ArrowRightOutline class="h-7 w-7" /></Button>

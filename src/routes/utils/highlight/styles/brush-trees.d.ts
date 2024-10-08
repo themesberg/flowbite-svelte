@@ -1,1 +1,1 @@
-export { brushTrees as default } from './';
+export { brushTrees as default } from "./";

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ButtonGroup, Input, InputAddon, Label, Button, Checkbox } from '$lib';
+  import { ButtonGroup, Input, InputAddon, Label, Button, Checkbox } from "$lib";
 </script>
 
 <div>

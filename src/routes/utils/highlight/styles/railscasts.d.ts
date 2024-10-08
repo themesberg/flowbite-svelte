@@ -1,1 +1,1 @@
-export { railscasts as default } from './';
+export { railscasts as default } from "./";

@@ -1,72 +1,72 @@
 <script lang="ts">
-  import type { HTMLAttributes } from 'svelte/elements';
-  import { Skeleton, skeleton, CardPlaceholder, ImagePlaceholder, imagePlaceholder, VideoPlaceholder, TextPlaceholder, ListPlaceholder, TestimonialPlaceholder, Label, Radio, WidgetPlaceholder, Button, type SkeletonProps, type CardPlaceholderProps, type ListPlaceholderProps, type TextPlaceholderProps, type ImagePlaceholderProps, type VideoPlaceholderProps } from '$lib';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
+  import type { HTMLAttributes } from "svelte/elements";
+  import { Skeleton, skeleton, CardPlaceholder, ImagePlaceholder, imagePlaceholder, VideoPlaceholder, TextPlaceholder, ListPlaceholder, TestimonialPlaceholder, Label, Radio, WidgetPlaceholder, Button, type SkeletonProps, type CardPlaceholderProps, type ListPlaceholderProps, type TextPlaceholderProps, type ImagePlaceholderProps, type VideoPlaceholderProps } from "$lib";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'skeleton';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "skeleton";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
   // size
-  const skeletonSizes = Object.keys(skeleton.variants.size) as SkeletonProps['size'][];
-  let skeletonSize: SkeletonProps['size'] = $state('sm');
-  const imageSizes = Object.keys(imagePlaceholder.variants.size) as ImagePlaceholderProps['size'][];
-  let imagePlaceholderSize: ImagePlaceholderProps['size'] = $state('md');
-  let imagePlaceholderRounded: ImagePlaceholderProps['rounded'] = $state('none');
+  const skeletonSizes = Object.keys(skeleton.variants.size) as SkeletonProps["size"][];
+  let skeletonSize: SkeletonProps["size"] = $state("sm");
+  const imageSizes = Object.keys(imagePlaceholder.variants.size) as ImagePlaceholderProps["size"][];
+  let imagePlaceholderSize: ImagePlaceholderProps["size"] = $state("md");
+  let imagePlaceholderRounded: ImagePlaceholderProps["rounded"] = $state("none");
   const videoSizes = skeletonSizes;
-  let videoPlaceholderSize: VideoPlaceholderProps['size'] = $state('sm');
-  const imageRoundedSizes = Object.keys(imagePlaceholder.variants.rounded) as ImagePlaceholderProps['rounded'][];
+  let videoPlaceholderSize: VideoPlaceholderProps["size"] = $state("sm");
+  const imageRoundedSizes = Object.keys(imagePlaceholder.variants.rounded) as ImagePlaceholderProps["rounded"][];
   const textSizes = skeletonSizes;
-  let textPlaceholderSize: TextPlaceholderProps['size'] = $state('sm');
+  let textPlaceholderSize: TextPlaceholderProps["size"] = $state("sm");
   const cardSizes = skeletonSizes;
-  let cardPlaceholderSize: CardPlaceholderProps['size'] = $state('sm');
+  let cardPlaceholderSize: CardPlaceholderProps["size"] = $state("sm");
   const listSizes = imageSizes;
   const listRoundedSizes = imageRoundedSizes;
   const listItemNumbers = [1, 2, 3, 4, 5];
-  let listPlaceholderSize: ListPlaceholderProps['size'] = $state('md');
-  let listPlaceholderRounded: ListPlaceholderProps['rounded'] = $state('none');
-  let listPlaceholderItemNumber: ListPlaceholderProps['itemNumber'] = $state(5);
+  let listPlaceholderSize: ListPlaceholderProps["size"] = $state("md");
+  let listPlaceholderRounded: ListPlaceholderProps["rounded"] = $state("none");
+  let listPlaceholderItemNumber: ListPlaceholderProps["itemNumber"] = $state(5);
   // class
-  let skeletonClass: SkeletonProps['class'] = $state('');
-  let imagePlaceholderClass: ImagePlaceholderProps['class'] = $state('');
-  let videoPlaceholderClass: VideoPlaceholderProps['class'] = $state('');
-  let textPlaceholderClass: TextPlaceholderProps['class'] = $state('');
-  let cardPlaceholderClass: CardPlaceholderProps['class'] = $state('');
-  let widgetPlaceholderClass: HTMLAttributes<HTMLDivElement>['class'] = $state('');
-  let listPlaceholderClass: ListPlaceholderProps['class'] = $state('');
-  let TestimonialPlaceholderClass: HTMLAttributes<HTMLDivElement>['class'] = $state('');
+  let skeletonClass: SkeletonProps["class"] = $state("");
+  let imagePlaceholderClass: ImagePlaceholderProps["class"] = $state("");
+  let videoPlaceholderClass: VideoPlaceholderProps["class"] = $state("");
+  let textPlaceholderClass: TextPlaceholderProps["class"] = $state("");
+  let cardPlaceholderClass: CardPlaceholderProps["class"] = $state("");
+  let widgetPlaceholderClass: HTMLAttributes<HTMLDivElement>["class"] = $state("");
+  let listPlaceholderClass: ListPlaceholderProps["class"] = $state("");
+  let TestimonialPlaceholderClass: HTMLAttributes<HTMLDivElement>["class"] = $state("");
 
   // code generator
   const generatePlaceholderCode = (componentName: string, size: string, classes: string): string => {
     let props = [];
-    if (componentName === 'Skeleton' && size !== 'sm') props.push(` size="${size}"`);
-    if (componentName === 'ImagePlaceholder' && size !== 'md') props.push(` size="${size}"`);
-    if (componentName === 'VideoPlaceholder' && size !== 'sm') props.push(` size="${size}"`);
-    if (componentName === 'TextPlaceholder' && size !== 'sm') props.push(` size="${size}"`);
-    if (componentName === 'CardPlaceholder' && size !== 'sm') props.push(` size="${size}"`);
-    if (componentName === 'ListPlaceholder' && size !== 'md') props.push(` size="${size}"`);
+    if (componentName === "Skeleton" && size !== "sm") props.push(` size="${size}"`);
+    if (componentName === "ImagePlaceholder" && size !== "md") props.push(` size="${size}"`);
+    if (componentName === "VideoPlaceholder" && size !== "sm") props.push(` size="${size}"`);
+    if (componentName === "TextPlaceholder" && size !== "sm") props.push(` size="${size}"`);
+    if (componentName === "CardPlaceholder" && size !== "sm") props.push(` size="${size}"`);
+    if (componentName === "ListPlaceholder" && size !== "md") props.push(` size="${size}"`);
 
-    if (classes !== '') props.push(` class="${classes}"`);
-    if (componentName === 'ImagePlaceholder' && imagePlaceholderRounded !== 'none') props.push(` rounded="${imagePlaceholderRounded}"`);
-    if (componentName === 'ListPlaceholder' && listPlaceholderItemNumber !== 5) props.push(` itemNumber={${listPlaceholderItemNumber}}`);
-    if (componentName === 'ListPlaceholder' && listPlaceholderRounded !== 'none') props.push(` rounded="${listPlaceholderRounded}"`);
+    if (classes !== "") props.push(` class="${classes}"`);
+    if (componentName === "ImagePlaceholder" && imagePlaceholderRounded !== "none") props.push(` rounded="${imagePlaceholderRounded}"`);
+    if (componentName === "ListPlaceholder" && listPlaceholderItemNumber !== 5) props.push(` itemNumber={${listPlaceholderItemNumber}}`);
+    if (componentName === "ListPlaceholder" && listPlaceholderRounded !== "none") props.push(` rounded="${listPlaceholderRounded}"`);
 
-    return `<${componentName}${props.join('')} />`;
+    return `<${componentName}${props.join("")} />`;
   };
-  let generatedCodeSkeleton = $derived(generatePlaceholderCode('Skeleton', skeletonSize, skeletonClass));
-  let generatedCodeVideo = $derived(generatePlaceholderCode('VideoPlaceholder', videoPlaceholderSize, videoPlaceholderClass));
-  let generatedCodeText = $derived(generatePlaceholderCode('TextPlaceholder', textPlaceholderSize, textPlaceholderClass));
-  let generatedCodeCard = $derived(generatePlaceholderCode('CardPlaceholder', cardPlaceholderSize, cardPlaceholderClass));
-  let generatedCodeImage = $derived(generatePlaceholderCode('ImagePlaceholder', imagePlaceholderSize, imagePlaceholderClass));
-  let generatedCodeWidget = $derived(generatePlaceholderCode('WidgetPlaceholder', 'md', widgetPlaceholderClass));
-  let generatedCodeList = $derived(generatePlaceholderCode('ListPlaceholder', listPlaceholderSize, listPlaceholderClass));
-  let generatedCodeTestimonial = $derived(generatePlaceholderCode('TestimonialPlaceholder', 'md', TestimonialPlaceholderClass));
+  let generatedCodeSkeleton = $derived(generatePlaceholderCode("Skeleton", skeletonSize, skeletonClass));
+  let generatedCodeVideo = $derived(generatePlaceholderCode("VideoPlaceholder", videoPlaceholderSize, videoPlaceholderClass));
+  let generatedCodeText = $derived(generatePlaceholderCode("TextPlaceholder", textPlaceholderSize, textPlaceholderClass));
+  let generatedCodeCard = $derived(generatePlaceholderCode("CardPlaceholder", cardPlaceholderSize, cardPlaceholderClass));
+  let generatedCodeImage = $derived(generatePlaceholderCode("ImagePlaceholder", imagePlaceholderSize, imagePlaceholderClass));
+  let generatedCodeWidget = $derived(generatePlaceholderCode("WidgetPlaceholder", "md", widgetPlaceholderClass));
+  let generatedCodeList = $derived(generatePlaceholderCode("ListPlaceholder", listPlaceholderSize, listPlaceholderClass));
+  let generatedCodeTestimonial = $derived(generatePlaceholderCode("TestimonialPlaceholder", "md", TestimonialPlaceholderClass));
 </script>
 
 <H1>Skeleton</H1>
@@ -84,7 +84,7 @@
       <Radio labelClass="w-12 my-1" name="skeletonsize" bind:group={skeletonSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <Button class="w-36" onclick={() => (skeletonClass === '' ? (skeletonClass = 'ml-4') : (skeletonClass = ''))}>{skeletonClass ? 'Remove class' : 'Add class'}</Button>
+  <Button class="w-36" onclick={() => (skeletonClass === "" ? (skeletonClass = "ml-4") : (skeletonClass = ""))}>{skeletonClass ? "Remove class" : "Add class"}</Button>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCodeSkeleton} />
   {/snippet}
@@ -107,7 +107,7 @@
       <Radio labelClass="w-12 my-1" name="imageRoundedSize" bind:group={imagePlaceholderRounded} value={size}>{size}</Radio>
     {/each}
   </div>
-  <Button class="w-36" onclick={() => (imagePlaceholderClass === '' ? (imagePlaceholderClass = 'ml-4') : (imagePlaceholderClass = ''))}>{imagePlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <Button class="w-36" onclick={() => (imagePlaceholderClass === "" ? (imagePlaceholderClass = "ml-4") : (imagePlaceholderClass = ""))}>{imagePlaceholderClass ? "Remove class" : "Add class"}</Button>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCodeImage} />
   {/snippet}
@@ -124,7 +124,7 @@
       <Radio labelClass="w-12 my-1" name="videoSize" bind:group={videoPlaceholderSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <Button class="w-36" onclick={() => (videoPlaceholderClass === '' ? (videoPlaceholderClass = 'ml-4') : (videoPlaceholderClass = ''))}>{videoPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <Button class="w-36" onclick={() => (videoPlaceholderClass === "" ? (videoPlaceholderClass = "ml-4") : (videoPlaceholderClass = ""))}>{videoPlaceholderClass ? "Remove class" : "Add class"}</Button>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCodeVideo} />
   {/snippet}
@@ -139,7 +139,7 @@
       <Radio labelClass="w-12 my-1" name="textSize" bind:group={textPlaceholderSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <Button class="w-36" onclick={() => (textPlaceholderClass === '' ? (textPlaceholderClass = 'ml-4') : (textPlaceholderClass = ''))}>{textPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <Button class="w-36" onclick={() => (textPlaceholderClass === "" ? (textPlaceholderClass = "ml-4") : (textPlaceholderClass = ""))}>{textPlaceholderClass ? "Remove class" : "Add class"}</Button>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCodeText} />
   {/snippet}
@@ -154,7 +154,7 @@
       <Radio labelClass="w-12 my-1" name="cardSize" bind:group={cardPlaceholderSize} value={size}>{size}</Radio>
     {/each}
   </div>
-  <Button class="w-36" onclick={() => (cardPlaceholderClass === '' ? (cardPlaceholderClass = 'ml-4') : (cardPlaceholderClass = ''))}>{cardPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <Button class="w-36" onclick={() => (cardPlaceholderClass === "" ? (cardPlaceholderClass = "ml-4") : (cardPlaceholderClass = ""))}>{cardPlaceholderClass ? "Remove class" : "Add class"}</Button>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCodeCard} />
   {/snippet}
@@ -163,7 +163,7 @@
 <H2>Widget placeholder</H2>
 <CodeWrapper>
   <WidgetPlaceholder class={widgetPlaceholderClass} />
-  <Button class="mt-4 w-36" onclick={() => (widgetPlaceholderClass === '' ? (widgetPlaceholderClass = 'ml-4') : (widgetPlaceholderClass = ''))}>{widgetPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <Button class="mt-4 w-36" onclick={() => (widgetPlaceholderClass === "" ? (widgetPlaceholderClass = "ml-4") : (widgetPlaceholderClass = ""))}>{widgetPlaceholderClass ? "Remove class" : "Add class"}</Button>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCodeWidget} />
   {/snippet}
@@ -192,7 +192,7 @@
       <Radio labelClass="w-10 my-1" name="itemNumber" bind:group={listPlaceholderItemNumber} value={itemNumber}>{itemNumber}</Radio>
     {/each}
   </div>
-  <Button class="w-36" onclick={() => (listPlaceholderClass === '' ? (listPlaceholderClass = 'ml-4') : (listPlaceholderClass = ''))}>{listPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <Button class="w-36" onclick={() => (listPlaceholderClass === "" ? (listPlaceholderClass = "ml-4") : (listPlaceholderClass = ""))}>{listPlaceholderClass ? "Remove class" : "Add class"}</Button>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCodeList} />
   {/snippet}
@@ -201,7 +201,7 @@
 <H2>Testimonial placeholder</H2>
 <CodeWrapper>
   <TestimonialPlaceholder class={TestimonialPlaceholderClass} />
-  <Button class="mt-4 w-36" onclick={() => (TestimonialPlaceholderClass === '' ? (TestimonialPlaceholderClass = 'mx-auto w-[200px] sm:w-[400px]') : (TestimonialPlaceholderClass = ''))}>{TestimonialPlaceholderClass ? 'Remove class' : 'Add class'}</Button>
+  <Button class="mt-4 w-36" onclick={() => (TestimonialPlaceholderClass === "" ? (TestimonialPlaceholderClass = "mx-auto w-[200px] sm:w-[400px]") : (TestimonialPlaceholderClass = ""))}>{TestimonialPlaceholderClass ? "Remove class" : "Add class"}</Button>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCodeTestimonial} />
   {/snippet}

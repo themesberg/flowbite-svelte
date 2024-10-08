@@ -1,1 +1,1 @@
-export { onedark as default } from './';
+export { onedark as default } from "./";

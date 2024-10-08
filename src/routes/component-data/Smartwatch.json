@@ -1,40 +1,12 @@
 {
   "name": "Smartwatch",
   "props": [
-    [
-      "children",
-      "Snippet",
-      ""
-    ],
-    [
-      "divClass",
-      "string",
-      ""
-    ],
-    [
-      "div2Class",
-      "string",
-      ""
-    ],
-    [
-      "div3Class",
-      "string",
-      ""
-    ],
-    [
-      "div4Class",
-      "string",
-      ""
-    ],
-    [
-      "div5Class",
-      "string",
-      ""
-    ],
-    [
-      "div6Class",
-      "string",
-      ""
-    ]
+    ["children", "any", ""],
+    ["divClass", "any", ""],
+    ["div2Class", "any", ""],
+    ["div3Class", "any", ""],
+    ["div4Class", "any", ""],
+    ["div5Class", "string", ""],
+    ["div6Class", "string", ""]
   ]
 }

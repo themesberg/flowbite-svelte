@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Card } from '$lib';
+  import { Card } from "$lib";
 </script>
 
 <Card href="/">

@@ -1,1 +1,1 @@
-export { oceanicnext as default } from './';
+export { oceanicnext as default } from "./";

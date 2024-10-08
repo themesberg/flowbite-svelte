@@ -1,1 +1,1 @@
-export { edgeLight as default } from './';
+export { edgeLight as default } from "./";

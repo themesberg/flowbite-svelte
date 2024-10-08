@@ -1,21 +1,21 @@
 <script lang="ts">
-  import { setContext } from 'svelte';
-  import { type PaginationProps as Props, pagination, PaginationItem } from '.';
+  import { setContext } from "svelte";
+  import { type PaginationProps as Props, pagination, PaginationItem } from ".";
 
   let { pages = [], previous, next, prevContent, nextContent, table, size, ariaLabel, ...restProps }: Props = $props();
 
-  setContext('group', true);
-  setContext('table', table);
-  setContext('size', size);
+  setContext("group", true);
+  setContext("table", table);
+  setContext("size", size);
 
   const paginationClass = $derived(pagination({ table, size }));
 </script>
 
 <nav aria-label={ariaLabel}>
   <ul class={paginationClass}>
-    {#if typeof previous === 'function'}
+    {#if typeof previous === "function"}
       <li {...restProps}>
-        <PaginationItem {size} onclick={() => previous()} class={table ? 'rounded-none rounded-l' : 'rounded-none  rounded-s-lg'}>
+        <PaginationItem {size} onclick={() => previous()} class={table ? "rounded-none rounded-l" : "rounded-none  rounded-s-lg"}>
           {#if prevContent}
             {@render prevContent()}
           {:else}
@@ -31,9 +31,9 @@
         </PaginationItem>
       </li>
     {/each}
-    {#if typeof next === 'function'}
+    {#if typeof next === "function"}
       <li {...restProps}>
-        <PaginationItem {size} onclick={() => next()} class={table ? 'rounded-none rounded-r' : 'rounded-none rounded-e-lg'}>
+        <PaginationItem {size} onclick={() => next()} class={table ? "rounded-none rounded-r" : "rounded-none rounded-e-lg"}>
           {#if nextContent}
             {@render nextContent()}
           {:else}

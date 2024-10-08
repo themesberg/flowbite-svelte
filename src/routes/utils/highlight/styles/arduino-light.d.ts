@@ -1,1 +1,1 @@
-export { arduinoLight as default } from './';
+export { arduinoLight as default } from "./";

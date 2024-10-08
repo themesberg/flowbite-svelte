@@ -1,1 +1,1 @@
-export { pico as default } from './';
+export { pico as default } from "./";

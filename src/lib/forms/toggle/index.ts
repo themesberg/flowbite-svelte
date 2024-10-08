@@ -1,11 +1,11 @@
-import Toggle from './Toggle.svelte';
-import type { Snippet } from 'svelte';
-import type { HTMLInputAttributes } from 'svelte/elements';
-import { toggle } from './theme';
-import { type VariantProps } from 'tailwind-variants';
+import Toggle from "./Toggle.svelte";
+import type { Snippet } from "svelte";
+import type { HTMLInputAttributes } from "svelte/elements";
+import { toggle } from "./theme";
+import { type VariantProps } from "tailwind-variants";
 
-type SizeType = VariantProps<typeof toggle>['size'];
-type ToggleColor = VariantProps<typeof toggle>['color'];
+type SizeType = VariantProps<typeof toggle>["size"];
+type ToggleColor = VariantProps<typeof toggle>["color"];
 
 interface ToggleProps extends HTMLInputAttributes {
   children: Snippet;

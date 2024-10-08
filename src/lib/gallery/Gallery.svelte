@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { type GalleryProps as Props, type ImgType, gallery } from '.';
+  import { type GalleryProps as Props, type ImgType, gallery } from ".";
 
   let { children, items = [], imgClass, divClass, ...restProps }: Props = $props();
 
   function init(node: HTMLElement) {
-    if (getComputedStyle(node).gap === 'normal') node.style.gap = 'inherit';
+    if (getComputedStyle(node).gap === "normal") node.style.gap = "inherit";
   }
 
   const { image, div } = gallery();

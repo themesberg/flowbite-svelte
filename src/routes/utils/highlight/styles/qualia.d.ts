@@ -1,1 +1,1 @@
-export { qualia as default } from './';
+export { qualia as default } from "./";

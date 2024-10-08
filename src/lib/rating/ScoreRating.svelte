@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type ScoreRatingProps as Props, scorerating } from '.';
+  import { type ScoreRatingProps as Props, scorerating } from ".";
 
   let { ratings, ratings2, headerLabel }: Props = $props();
 
@@ -64,7 +64,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: ratings: { label: string | undefined | null;
+@props: ratings: { label;
 @props:ratings2: any;
 @props:headerLabel: any;
 -->

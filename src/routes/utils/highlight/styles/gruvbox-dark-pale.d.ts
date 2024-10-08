@@ -1,1 +1,1 @@
-export { gruvboxDarkPale as default } from './';
+export { gruvboxDarkPale as default } from "./";

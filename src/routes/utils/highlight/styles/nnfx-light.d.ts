@@ -1,1 +1,1 @@
-export { nnfxLight as default } from './';
+export { nnfxLight as default } from "./";

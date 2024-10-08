@@ -1,21 +1,21 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { List, list, Li, Heading, Label, Radio, Button, uiHelpers, type ListProps } from '$lib';
-  import { CheckCircleSolid } from 'flowbite-svelte-icons';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import { List, list, Li, Heading, Label, Radio, Button, uiHelpers, type ListProps } from "$lib";
+  import { CheckCircleSolid } from "flowbite-svelte-icons";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'typography/list';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "typography/list";
 
   const tags = Object.keys(list.variants.tag);
-  let listTag: ListProps['tag'] = $state('ul');
+  let listTag: ListProps["tag"] = $state("ul");
   const positions = Object.keys(list.variants.position);
-  let listPosition: ListProps['position'] = $state('inside');
+  let listPosition: ListProps["position"] = $state("inside");
   let listIcon = $state(false);
   const changeListIcon = () => {
     listIcon = !listIcon;
@@ -23,9 +23,9 @@
       nested = false;
     }
   };
-  let ctxClass = $state('');
+  let ctxClass = $state("");
   const changeCtxClass = () => {
-    ctxClass = ctxClass === '' ? 'pl-8' : '';
+    ctxClass = ctxClass === "" ? "pl-8" : "";
   };
   let nested = $state(false);
   const changeNested = () => {
@@ -43,12 +43,12 @@
       let liIcon;
       let nestedContent;
 
-      if (listTag !== 'ul') props.push(` tag="${listTag}"`);
-      if (listPosition !== 'inside') props.push(` position="${listPosition}"`);
+      if (listTag !== "ul") props.push(` tag="${listTag}"`);
+      if (listPosition !== "inside") props.push(` position="${listPosition}"`);
       // if (linkClass) props.push(` class="${linkClass}"`);
-      iconSlot = listIcon ? `<CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />` : '';
+      iconSlot = listIcon ? `<CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />` : "";
       if (ctxClass) props.push(` ctxClass="${ctxClass}"`);
-      liIcon = listIcon ? ` icon` : '';
+      liIcon = listIcon ? ` icon` : "";
       nestedContent = nested
         ? `<List tag="ol" ctxClass="mt-2 space-y-1 ps-5">
       <Li>item 1-1</Li>
@@ -56,9 +56,9 @@
       <Li>item 1-3</Li>
     </List>
       `
-        : '';
+        : "";
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
       return `<List${propsString}>
   <Li${liIcon}>${iconSlot}Item 1${nestedContent}</Li>
@@ -68,19 +68,19 @@
     })()
   );
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
-  console.log('typeof exampleModules', exampleModules);
+  console.log("typeof exampleModules", exampleModules);
 
   const exampleArr = [
-    { name: 'Description list', component: ExampleComponents.DescriptionList },
-    { name: 'Horizontal list', component: ExampleComponents.HorizontalList },
-    { name: 'Advanced layout', component: ExampleComponents.AdvancedLayout }
+    { name: "Description list", component: ExampleComponents.DescriptionList },
+    { name: "Horizontal list", component: ExampleComponents.HorizontalList },
+    { name: "Advanced layout", component: ExampleComponents.AdvancedLayout }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -153,9 +153,9 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-48" color="blue" onclick={changeListIcon}>{listIcon ? 'Remove icon' : 'Add icon'}</Button>
-    <Button class="w-48" color="rose" onclick={changeCtxClass}>{ctxClass !== '' ? 'Remove ctxClass' : 'Add ctxClass'}</Button>
-    <Button class="w-48" color="teal" onclick={changeNested}>{nested ? 'Remove nested' : 'Add nested'}</Button>
+    <Button class="w-48" color="blue" onclick={changeListIcon}>{listIcon ? "Remove icon" : "Add icon"}</Button>
+    <Button class="w-48" color="rose" onclick={changeCtxClass}>{ctxClass !== "" ? "Remove ctxClass" : "Add ctxClass"}</Button>
+    <Button class="w-48" color="teal" onclick={changeNested}>{nested ? "Remove nested" : "Add nested"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

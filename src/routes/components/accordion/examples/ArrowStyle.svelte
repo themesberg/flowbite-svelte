@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Accordion, AccordionItem } from '$lib';
-  import { ChevronDoubleUpOutline, ChevronDoubleDownOutline } from 'flowbite-svelte-icons';
+  import { Accordion, AccordionItem } from "$lib";
+  import { ChevronDoubleUpOutline, ChevronDoubleDownOutline } from "flowbite-svelte-icons";
 </script>
 
 <Accordion>

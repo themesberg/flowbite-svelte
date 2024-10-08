@@ -1,1 +1,1 @@
-export { rainbow as default } from './';
+export { rainbow as default } from "./";

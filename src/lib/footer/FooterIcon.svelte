@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type FooterIconProps as Props, footerIcon } from '.';
+  import { type FooterIconProps as Props, footerIcon } from ".";
 
   let { children, href, ariaLabel, class: aClass, ...restProps }: Props = $props();
 

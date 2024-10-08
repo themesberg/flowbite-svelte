@@ -1,2 +1,2 @@
-export { plaintext } from './';
-export { plaintext as default } from './';
+export { plaintext } from "./";
+export { plaintext as default } from "./";

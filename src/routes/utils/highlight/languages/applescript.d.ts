@@ -1,2 +1,2 @@
-export { applescript } from './';
-export { applescript as default } from './';
+export { applescript } from "./";
+export { applescript as default } from "./";

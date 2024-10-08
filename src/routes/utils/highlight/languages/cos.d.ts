@@ -1,2 +1,2 @@
-export { cos } from './';
-export { cos as default } from './';
+export { cos } from "./";
+export { cos as default } from "./";

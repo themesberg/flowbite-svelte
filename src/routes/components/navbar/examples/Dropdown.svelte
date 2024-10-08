@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Navbar, NavBrand, NavUl, NavLi, uiHelpers, Dropdown, DropdownUl, DropdownLi } from '$lib';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Navbar, NavBrand, NavUl, NavLi, uiHelpers, Dropdown, DropdownUl, DropdownLi } from "$lib";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
   // for navbar
   let nav = uiHelpers();
   let navStatus = $state(false);

@@ -1,1 +1,1 @@
-export { mocha as default } from './';
+export { mocha as default } from "./";

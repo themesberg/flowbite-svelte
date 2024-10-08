@@ -1,20 +1,20 @@
 <script lang="ts">
-  import { RatingComment } from '$lib';
+  import { RatingComment } from "$lib";
   let comment = {
-    id: '1',
+    id: "1",
     user: {
-      name: 'Jese Leos',
+      name: "Jese Leos",
       img: {
-        src: '/images/profile-picture-2.webp',
-        alt: 'Jese Leos'
+        src: "/images/profile-picture-2.webp",
+        alt: "Jese Leos"
       },
-      joined: 'Joined on August 2014'
+      joined: "Joined on August 2014"
     },
     total: 5,
     rating: 4.5,
-    heading: 'Thinking to buy another one!',
-    address: 'the UK',
-    datetime: '2022-03-25'
+    heading: "Thinking to buy another one!",
+    address: "the UK",
+    datetime: "2022-03-25"
   };
 </script>
 

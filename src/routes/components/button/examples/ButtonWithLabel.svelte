@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Indicator } from '$lib';
+  import { Button, Indicator } from "$lib";
 </script>
 
 <Button class="gap-2">

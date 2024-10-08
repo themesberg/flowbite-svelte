@@ -1,2 +1,2 @@
-export { powershell } from './';
-export { powershell as default } from './';
+export { powershell } from "./";
+export { powershell as default } from "./";

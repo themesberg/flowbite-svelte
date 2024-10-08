@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Toast, Avatar } from '$lib';
+  import { Toast, Avatar } from "$lib";
 </script>
 
 <div class="flex h-[140px] flex-col items-center">

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type SmartwatchProps as Props, smartwatch } from '.';
+  import { type SmartwatchProps as Props, smartwatch } from ".";
 
   let { children, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: Props = $props();
 
@@ -24,11 +24,11 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:divClass: string;
-@props:div2Class: string;
-@props:div3Class: string;
-@props:div4Class: string;
+@props: children: any;
+@props:divClass: any;
+@props:div2Class: any;
+@props:div3Class: any;
+@props:div4Class: any;
 @props:div5Class: string;
 @props:div6Class: string;
 -->

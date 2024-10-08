@@ -1,1 +1,1 @@
-export { darktooth as default } from './';
+export { darktooth as default } from "./";

@@ -1,38 +1,38 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { uiHelpers, Label, Radio } from '$lib';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import { uiHelpers, Label, Radio } from "$lib";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'sidebar';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "sidebar";
 
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
   const exampleArr = [
-    { name: 'Default', component: ExampleComponents.Default },
-    { name: 'Close button', component: ExampleComponents.CloseButton },
-    { name: 'Active class', component: ExampleComponents.ActiveClass },
-    { name: 'Overriding active', component: ExampleComponents.OverridingActive },
-    { name: 'Multilevel', component: ExampleComponents.Multilevel },
-    { name: 'Single selection', component: ExampleComponents.SingleSelection },
-    { name: 'All open', component: ExampleComponents.AllOpen },
-    { name: 'Content separator', component: ExampleComponents.ContentSeparator },
-    { name: 'Icon', component: ExampleComponents.Icon },
-    { name: 'Cta', component: ExampleComponents.Cta },
-    { name: 'Logo branding', component: ExampleComponents.LogoBranding },
-    { name: 'Branding with children', component: ExampleComponents.BrandingWithChildren },
-    { name: 'Dropdown transition', component: ExampleComponents.DropdownTransition },
-    { name: 'Static positioning', component: ExampleComponents.StaticPositioning }
+    { name: "Default", component: ExampleComponents.Default },
+    { name: "Close button", component: ExampleComponents.CloseButton },
+    { name: "Active class", component: ExampleComponents.ActiveClass },
+    { name: "Overriding active", component: ExampleComponents.OverridingActive },
+    { name: "Multilevel", component: ExampleComponents.Multilevel },
+    { name: "Single selection", component: ExampleComponents.SingleSelection },
+    { name: "All open", component: ExampleComponents.AllOpen },
+    { name: "Content separator", component: ExampleComponents.ContentSeparator },
+    { name: "Icon", component: ExampleComponents.Icon },
+    { name: "Cta", component: ExampleComponents.Cta },
+    { name: "Logo branding", component: ExampleComponents.LogoBranding },
+    { name: "Branding with children", component: ExampleComponents.BrandingWithChildren },
+    { name: "Dropdown transition", component: ExampleComponents.DropdownTransition },
+    { name: "Static positioning", component: ExampleComponents.StaticPositioning }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));

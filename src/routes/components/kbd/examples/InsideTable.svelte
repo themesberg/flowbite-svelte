@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Kbd } from '$lib';
-  import { CaretDownSolid, CaretUpSolid, CaretLeftSolid, CaretRightSolid } from 'flowbite-svelte-icons';
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Kbd } from "$lib";
+  import { CaretDownSolid, CaretUpSolid, CaretLeftSolid, CaretRightSolid } from "flowbite-svelte-icons";
 </script>
 
 <Table>

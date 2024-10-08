@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { Checkbox } from '$lib';
-  import React from '../../../utils/icons/React.svelte';
-  import Vue from '../../../utils/icons/Vue.svelte';
-  import Angular from '../../../utils/icons/Angular.svelte';
+  import { Checkbox } from "$lib";
+  import React from "../../../utils/icons/React.svelte";
+  import Vue from "../../../utils/icons/Vue.svelte";
+  import Angular from "../../../utils/icons/Angular.svelte";
 </script>
 
 <p class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Choose technology:</p>

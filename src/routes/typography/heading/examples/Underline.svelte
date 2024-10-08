@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Heading, P, Span } from '$lib';
+  import { Heading, P, Span } from "$lib";
 </script>
 
 <Heading tag="h1" class="mb-4">

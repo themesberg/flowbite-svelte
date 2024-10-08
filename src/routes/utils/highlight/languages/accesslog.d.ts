@@ -1,2 +1,2 @@
-export { accesslog } from './';
-export { accesslog as default } from './';
+export { accesslog } from "./";
+export { accesslog as default } from "./";

@@ -1,26 +1,26 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { Button, Tooltip, tooltip, Radio, Label, uiHelpers, type RadioColorType, type TooltipProps } from '$lib';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import { Button, Tooltip, tooltip, Radio, Label, uiHelpers, type RadioColorType, type TooltipProps } from "$lib";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'tooltip';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "tooltip";
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
   const exampleArr = [
-    { name: 'External reference', component: ExampleComponents.ExternalReference },
-    { name: 'Inline', component: ExampleComponents.Inline }
+    { name: "External reference", component: ExampleComponents.ExternalReference },
+    { name: "Inline", component: ExampleComponents.Inline }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -34,12 +34,12 @@
 
   // for interactive code builder
   const positions = Object.keys(tooltip.variants.position);
-  let position: TooltipProps['position'] = $state(positions[0] as TooltipProps['position']);
-  const colors = Object.keys(tooltip.variants.color) as TooltipProps['color'][];
-  let color: TooltipProps['color'] = $state('default');
-  let tooltipClass: TooltipProps['class'] = $state('');
+  let position: TooltipProps["position"] = $state(positions[0] as TooltipProps["position"]);
+  const colors = Object.keys(tooltip.variants.color) as TooltipProps["color"][];
+  let color: TooltipProps["color"] = $state("default");
+  let tooltipClass: TooltipProps["class"] = $state("");
   const changeClass = () => {
-    tooltipClass = tooltipClass === '' ? 'p-4' : '';
+    tooltipClass = tooltipClass === "" ? "p-4" : "";
   };
   let arrow = $state(true);
   const changeArrow = () => {
@@ -58,11 +58,11 @@
       let props = [];
       if (arrow !== true) props.push(`arrow="${arrow}"`);
       if (color) props.push(`color="${color}"`);
-      if (position !== 'top') props.push(`position="${position}"`);
+      if (position !== "top") props.push(`position="${position}"`);
       if (offset) props.push(`offset="${offset}"`);
-      if (tooltipClass !== '') props.push(`class="${tooltipClass}"`);
+      if (tooltipClass !== "") props.push(`class="${tooltipClass}"`);
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
       return `<Button id="type-1" class="m-8">Tooltip trigger</Button>\n<Toottip${propsString}  triggeredBy="#type-1">Tooltip content</Tooltip>`;
     })()
@@ -115,9 +115,9 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-36" onclick={changeClass}>{tooltipClass ? 'Remove class' : 'Add class'}</Button>
-    <Button class="w-36" color="secondary" onclick={changeArrow}>{arrow ? 'Remove arrow' : 'Add arrow'}</Button>
-    <Button class="w-36" color="rose" onclick={changeOffset}>{offset ? 'Remove offset' : 'Add offset'}</Button>
+    <Button class="w-36" onclick={changeClass}>{tooltipClass ? "Remove class" : "Add class"}</Button>
+    <Button class="w-36" color="secondary" onclick={changeArrow}>{arrow ? "Remove arrow" : "Add arrow"}</Button>
+    <Button class="w-36" color="rose" onclick={changeOffset}>{offset ? "Remove offset" : "Add offset"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

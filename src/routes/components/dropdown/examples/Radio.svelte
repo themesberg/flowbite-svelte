@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { sineIn } from 'svelte/easing';
-  import { Button, Dropdown, DropdownUl, DropdownLi, uiHelpers, DropdownHeader, Search, Radio, DropdownFooter } from '$lib';
-  import { ChevronDownOutline, UserRemoveSolid } from 'flowbite-svelte-icons';
+  import { sineIn } from "svelte/easing";
+  import { Button, Dropdown, DropdownUl, DropdownLi, uiHelpers, DropdownHeader, Search, Radio, DropdownFooter } from "$lib";
+  import { ChevronDownOutline, UserRemoveSolid } from "flowbite-svelte-icons";
 
   let group1 = $state(2);
   let dropdownRadio = uiHelpers();

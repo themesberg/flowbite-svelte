@@ -1,20 +1,8 @@
 {
   "name": "Helper",
   "props": [
-    [
-      "children",
-      "Snippet",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ],
-    [
-      "color",
-      "type ColorName } from '$lib/types';\n\ninterface HelperProps extends HTMLAttributes<HTMLParagraphElement> {\n  children: Snippet;\n  class?: string;\n  color?: ColorName | 'disabled';\n} | 'disabled'",
-      "'gray'"
-    ]
+    ["children", "Snippet", ""],
+    ["class", "string", ""],
+    ["color", "type ColorName } from '$lib/types';\n\ninterface HelperProps extends HTMLAttributes<HTMLParagraphElement> {\n  children: Snippet;\n  class?: string;\n  color?: ColorName | 'disabled';\n} | 'disabled'", "'gray'"]
   ]
 }

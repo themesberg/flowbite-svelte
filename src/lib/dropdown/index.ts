@@ -1,13 +1,13 @@
-import Dropdown from './Dropdown.svelte';
-import DropdownDivider from './DropdownDivider.svelte';
-import DropdownUl from './DropdownUl.svelte';
-import DropdownLi from './DropdownLi.svelte';
-import DropdownHeader from './DropdownHeader.svelte';
-import DropdownFooter from './DropdownFooter.svelte';
-import { dropdown, dropdowndivider, dropdownli, dropdownul, dropdownHeader, dropdownFooter } from './theme';
-import type { Snippet } from 'svelte';
-import type { ParamsType, TransitionFunc } from '../types';
-import type { HTMLAttributes, HTMLAnchorAttributes } from 'svelte/elements';
+import Dropdown from "./Dropdown.svelte";
+import DropdownDivider from "./DropdownDivider.svelte";
+import DropdownUl from "./DropdownUl.svelte";
+import DropdownLi from "./DropdownLi.svelte";
+import DropdownHeader from "./DropdownHeader.svelte";
+import DropdownFooter from "./DropdownFooter.svelte";
+import { dropdown, dropdowndivider, dropdownli, dropdownul, dropdownHeader, dropdownFooter } from "./theme";
+import type { Snippet } from "svelte";
+import type { ParamsType, TransitionFunc } from "../types";
+import type { HTMLAttributes, HTMLAnchorAttributes } from "svelte/elements";
 
 interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;

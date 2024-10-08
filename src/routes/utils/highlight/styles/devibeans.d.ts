@@ -1,1 +1,1 @@
-export { devibeans as default } from './';
+export { devibeans as default } from "./";

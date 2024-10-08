@@ -1,2 +1,2 @@
-export { moonscript } from './';
-export { moonscript as default } from './';
+export { moonscript } from "./";
+export { moonscript as default } from "./";

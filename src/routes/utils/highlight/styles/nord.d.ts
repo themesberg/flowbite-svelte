@@ -1,1 +1,1 @@
-export { nord as default } from './';
+export { nord as default } from "./";

@@ -1,5 +1,5 @@
 <script>
-  import { Button, Modal, Label, Input, Checkbox, uiHelpers } from '$lib';
+  import { Button, Modal, Label, Input, Checkbox, uiHelpers } from "$lib";
   const modalExample = uiHelpers();
   let modalStatus = $state(false);
   const closeModal = modalExample.close;

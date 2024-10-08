@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type TextareaProps as Props, textarea } from '.';
+  import { type TextareaProps as Props, textarea } from ".";
 
   let { header, footer, value = $bindable(), divClass, innerClass, headerClass, footerClass, disabled, class: className, cols, ...restProps }: Props = $props();
 

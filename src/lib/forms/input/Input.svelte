@@ -1,17 +1,17 @@
 <script lang="ts">
-  import type { SizeType } from '$lib/types';
-  import { getContext } from 'svelte';
-  import { type InputProps as Props, input, clampSize, type InputValue } from '.';
+  import type { SizeType } from "$lib/types";
+  import { getContext } from "svelte";
+  import { type InputProps as Props, input, clampSize, type InputValue } from ".";
 
-  let { children, left, right, value = $bindable<InputValue>(), size, color = 'default', class: className, classLeft, classRight, ...restProps }: Props<InputValue> = $props();
+  let { children, left, right, value = $bindable<InputValue>(), size, color = "default", class: className, classLeft, classRight, ...restProps }: Props<InputValue> = $props();
 
   // tinted if put in component having its own background
-  let background: boolean = getContext('background');
+  let background: boolean = getContext("background");
 
-  let group: { size: SizeType } = getContext('group');
+  let group: { size: SizeType } = getContext("group");
   let isGroup = !!group;
-  let _size = $derived(size || clampSize(group?.size) || 'md');
-  const _color = $derived(color === 'default' && background ? 'tinted' : color);
+  let _size = $derived(size || clampSize(group?.size) || "md");
+  const _color = $derived(color === "default" && background ? "tinted" : color);
 
   const { input: inputCls, left: leftCls, right: rightCls } = $derived(input({ size: _size, color: _color, group: isGroup, class: className }));
 </script>

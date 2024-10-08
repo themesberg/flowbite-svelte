@@ -1,1 +1,1 @@
-export { docco as default } from './';
+export { docco as default } from "./";

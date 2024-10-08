@@ -1,4 +1,4 @@
-import register from 'highlight.js/lib/languages/xml';
+import register from "highlight.js/lib/languages/xml";
 
-export const xml = { name: 'xml', register };
+export const xml = { name: "xml", register };
 export default xml;

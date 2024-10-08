@@ -1,2 +1,2 @@
-export { dockerfile } from './';
-export { dockerfile as default } from './';
+export { dockerfile } from "./";
+export { dockerfile as default } from "./";

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Indicator } from '$lib';
+  import { Indicator } from "$lib";
 </script>
 
 <div class="flex flex-wrap justify-start gap-4 md:justify-center">

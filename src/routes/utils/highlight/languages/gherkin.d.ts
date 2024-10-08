@@ -1,2 +1,2 @@
-export { gherkin } from './';
-export { gherkin as default } from './';
+export { gherkin } from "./";
+export { gherkin as default } from "./";

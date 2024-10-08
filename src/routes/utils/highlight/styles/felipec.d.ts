@@ -1,1 +1,1 @@
-export { felipec as default } from './';
+export { felipec as default } from "./";

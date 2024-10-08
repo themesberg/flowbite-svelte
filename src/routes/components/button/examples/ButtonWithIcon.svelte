@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Button } from '$lib';
-  import { ShoppingBagSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Button } from "$lib";
+  import { ShoppingBagSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
 <div class="flex flex-wrap gap-2">

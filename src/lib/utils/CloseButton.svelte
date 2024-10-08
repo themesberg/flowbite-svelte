@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { type CloseButtonProps as Props, closeButtonVariants } from './index';
+  import { type CloseButtonProps as Props, closeButtonVariants } from "./index";
 
-  let { color = 'gray', onclick, name = 'Close', ariaLabel, size = 'md', href, class: className, ...restProps }: Props = $props();
+  let { color = "gray", onclick, name = "Close", ariaLabel, size = "md", href, class: className, ...restProps }: Props = $props();
 
   const { base, svg } = $derived(closeButtonVariants({ color, size }));
 </script>

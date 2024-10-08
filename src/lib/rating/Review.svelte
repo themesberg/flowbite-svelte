@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
-  import { type ReviewProps as Props, review as reviewVariants } from '.';
+  import { twMerge } from "tailwind-merge";
+  import { type ReviewProps as Props, review as reviewVariants } from ".";
 
   let { children, address, item1, item2, item3, review, articleClass, divClass, div2Class, div3Class, imgClass, ulClass, liClass }: Props = $props();
 

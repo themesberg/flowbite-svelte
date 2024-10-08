@@ -1,36 +1,36 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { Badge, badge, Button, Radio, Label, type BadgeProps, uiHelpers } from '$lib';
-  import { ClockSolid } from 'flowbite-svelte-icons';
-  import { blur, fly, slide, scale } from 'svelte/transition';
-  import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
-  import { linear } from 'svelte/easing';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import { Badge, badge, Button, Radio, Label, type BadgeProps, uiHelpers } from "$lib";
+  import { ClockSolid } from "flowbite-svelte-icons";
+  import { blur, fly, slide, scale } from "svelte/transition";
+  import type { FlyParams, BlurParams, SlideParams, ScaleParams } from "svelte/transition";
+  import { linear } from "svelte/easing";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'badge';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "badge";
 
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
   const exampleArr = [
-    { name: 'Dismissing with custom icon', component: ExampleComponents.DismissingWithCustomIcon },
-    { name: 'Dismissing with events', component: ExampleComponents.DismissingWithEvents },
-    { name: 'Notification badge', component: ExampleComponents.NotificationBadge },
-    { name: 'Button with badge', component: ExampleComponents.ButtonWithBadge },
-    { name: 'Badge with icon only', component: ExampleComponents.BadgeWithIconOnly },
-    { name: 'Opening badge', component: ExampleComponents.OpeningBadge },
-    { name: 'Dynamic color', component: ExampleComponents.DynamicColor }
+    { name: "Dismissing with custom icon", component: ExampleComponents.DismissingWithCustomIcon },
+    { name: "Dismissing with events", component: ExampleComponents.DismissingWithEvents },
+    { name: "Notification badge", component: ExampleComponents.NotificationBadge },
+    { name: "Button with badge", component: ExampleComponents.ButtonWithBadge },
+    { name: "Badge with icon only", component: ExampleComponents.BadgeWithIconOnly },
+    { name: "Opening badge", component: ExampleComponents.OpeningBadge },
+    { name: "Dynamic color", component: ExampleComponents.DynamicColor }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -44,34 +44,34 @@
 
   // interactive example
   const colors = Object.keys(badge.variants.color);
-  let color: BadgeProps['color'] = $state('primary');
-  let badgeSize: BadgeProps['large'] = $state(false);
+  let color: BadgeProps["color"] = $state("primary");
+  let badgeSize: BadgeProps["large"] = $state(false);
   const changeSize = () => {
     badgeSize = !badgeSize;
   };
-  let badgeDismissable: BadgeProps['dismissable'] = $state(false);
+  let badgeDismissable: BadgeProps["dismissable"] = $state(false);
   const changeDismissable = () => {
     badgeDismissable = !badgeDismissable;
   };
-  let badgeClass: BadgeProps['class'] = $state('');
+  let badgeClass: BadgeProps["class"] = $state("");
   const changeClass = () => {
-    badgeClass = badgeClass === '' ? 'w-40 p-2' : '';
+    badgeClass = badgeClass === "" ? "w-40 p-2" : "";
   };
   let badgeStatus2 = $state(true);
   const changeStatus = () => {
     badgeStatus2 = true;
   };
-  let border: BadgeProps['border'] = $state(false);
+  let border: BadgeProps["border"] = $state(false);
   const changeBorder = () => {
     border = !border;
   };
-  let rounded: BadgeProps['rounded'] = $state(false);
+  let rounded: BadgeProps["rounded"] = $state(false);
   const changeRounded = () => {
     rounded = !rounded;
   };
-  let link = $state('');
+  let link = $state("");
   const changeLink = () => {
-    link = link === '' ? '/' : '';
+    link = link === "" ? "/" : "";
   };
   let iconSlot = $state(false);
   const changeIconSlot = () => {
@@ -83,46 +83,46 @@
     name: string;
     transition: typeof fly | typeof blur | typeof slide | typeof scale;
     params: FlyParams | BlurParams | SlideParams | ScaleParams;
-    color: BadgeProps['color'];
+    color: BadgeProps["color"];
   };
 
   const transitions: TransitionOption[] = [
-    { name: 'Fly', transition: fly, params: { duration: 500, easing: linear, x: 150 }, color: 'blue' },
-    { name: 'Blur', transition: blur, params: { duration: 500, easing: linear }, color: 'lime' },
-    { name: 'Slide', transition: slide, params: { duration: 500, easing: linear, x: -150 }, color: 'violet' },
-    { name: 'Scale', transition: scale, params: { duration: 500, easing: linear }, color: 'pink' }
+    { name: "Fly", transition: fly, params: { duration: 500, easing: linear, x: 150 }, color: "blue" },
+    { name: "Blur", transition: blur, params: { duration: 500, easing: linear }, color: "lime" },
+    { name: "Slide", transition: slide, params: { duration: 500, easing: linear, x: -150 }, color: "violet" },
+    { name: "Scale", transition: scale, params: { duration: 500, easing: linear }, color: "pink" }
   ];
 
-  let selectedTransition = $state('Fly');
+  let selectedTransition = $state("Fly");
   let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
 
   let generatedCode = $derived(
     (() => {
       let props = [];
-      if (color !== 'primary') props.push(` color="${color}"`);
-      if (badgeSize) props.push(' large');
-      if (badgeDismissable) props.push(' dismissable');
+      if (color !== "primary") props.push(` color="${color}"`);
+      if (badgeSize) props.push(" large");
+      if (badgeDismissable) props.push(" dismissable");
       if (badgeClass) props.push(` class="${badgeClass}"`);
-      if (!badgeStatus2) props.push(' badgeStatus={false}');
-      if (border) props.push(' border');
+      if (!badgeStatus2) props.push(" badgeStatus={false}");
+      if (border) props.push(" border");
       if (link) props.push(` href="${link}"`);
-      if (rounded) props.push(' rounded');
+      if (rounded) props.push(" rounded");
       if (currentTransition !== transitions[0] && badgeDismissable) {
         props.push(` transition={${currentTransition.transition.name}}`);
         // Generate params string without quotes and handle functions
         const paramsString = Object.entries(currentTransition.params)
           .map(([key, value]) => {
-            if (typeof value === 'function') {
+            if (typeof value === "function") {
               return `${key}:${value.name}`;
             }
             return `${key}:${value}`;
           })
-          .join(',');
+          .join(",");
 
         props.push(` params={{${paramsString}}}`);
       }
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
       if (iconSlot) {
         return `<Badge${propsString}>
@@ -177,7 +177,7 @@
   <div class="flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio labelClass="w-24 my-1" name="color" bind:group={color} color={colorOption as BadgeProps['color']} value={colorOption}>{colorOption}</Radio>
+      <Radio labelClass="w-24 my-1" name="color" bind:group={color} color={colorOption as BadgeProps["color"]} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
@@ -187,13 +187,13 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-40" color="blue" onclick={changeSize}>{badgeSize ? 'Small' : 'Large'}</Button>
-    <Button class="w-40" color="green" onclick={changeDismissable}>{badgeDismissable ? 'Not dismissable' : 'Dismissable'}</Button>
-    <Button class="w-40" color="purple" onclick={changeClass}>{badgeClass ? 'Remove class' : 'Add class'}</Button>
-    <Button class="w-40" color="yellow" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
-    <Button class="w-40" color="dark" onclick={changeRounded}>{rounded ? 'Remove rounded' : 'Add rounded'}</Button>
-    <Button class="w-40" color="pink" onclick={changeLink}>{link ? 'Remove href' : 'Add href'}</Button>
-    <Button class="w-40" color="teal" onclick={changeIconSlot}>{iconSlot ? 'Remove icon' : 'Add icon'}</Button>
+    <Button class="w-40" color="blue" onclick={changeSize}>{badgeSize ? "Small" : "Large"}</Button>
+    <Button class="w-40" color="green" onclick={changeDismissable}>{badgeDismissable ? "Not dismissable" : "Dismissable"}</Button>
+    <Button class="w-40" color="purple" onclick={changeClass}>{badgeClass ? "Remove class" : "Add class"}</Button>
+    <Button class="w-40" color="yellow" onclick={changeBorder}>{border ? "Remove border" : "Add border"}</Button>
+    <Button class="w-40" color="dark" onclick={changeRounded}>{rounded ? "Remove rounded" : "Add rounded"}</Button>
+    <Button class="w-40" color="pink" onclick={changeLink}>{link ? "Remove href" : "Add href"}</Button>
+    <Button class="w-40" color="teal" onclick={changeIconSlot}>{iconSlot ? "Remove icon" : "Add icon"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

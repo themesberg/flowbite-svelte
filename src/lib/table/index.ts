@@ -1,14 +1,14 @@
-import Table from './Table.svelte';
-import TableBody from './TableBody.svelte';
-import TableBodyCell from './TableBodyCell.svelte';
-import TableBodyRow from './TableBodyRow.svelte';
-import TableHeadCell from './TableHeadCell.svelte';
-import TableHead from './TableHead.svelte';
-import TableSearch from './TableSearch.svelte';
-import { table, tablebodyrow, tablehead, tablebodycell, tableheadcell } from './theme';
-import type { HTMLTableAttributes, HTMLAttributes, HTMLTdAttributes, HTMLThAttributes } from 'svelte/elements';
-import type { Snippet } from 'svelte';
-import { type VariantProps } from 'tailwind-variants';
+import Table from "./Table.svelte";
+import TableBody from "./TableBody.svelte";
+import TableBodyCell from "./TableBodyCell.svelte";
+import TableBodyRow from "./TableBodyRow.svelte";
+import TableHeadCell from "./TableHeadCell.svelte";
+import TableHead from "./TableHead.svelte";
+import TableSearch from "./TableSearch.svelte";
+import { table, tablebodyrow, tablehead, tablebodycell, tableheadcell } from "./theme";
+import type { HTMLTableAttributes, HTMLAttributes, HTMLTdAttributes, HTMLThAttributes } from "svelte/elements";
+import type { Snippet } from "svelte";
+import { type VariantProps } from "tailwind-variants";
 
 type TableCtxType = {
   striped?: boolean;
@@ -35,7 +35,7 @@ interface TableHeadProps extends HTMLAttributes<HTMLTableSectionElement> {
   color?: TableColrType;
 }
 
-type TableColrType = VariantProps<typeof table>['color'];
+type TableColrType = VariantProps<typeof table>["color"];
 type TableItemType = Record<string, string | number | boolean>;
 
 interface TableProps extends HTMLTableAttributes {

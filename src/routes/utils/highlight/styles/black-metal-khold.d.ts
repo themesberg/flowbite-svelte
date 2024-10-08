@@ -1,1 +1,1 @@
-export { blackMetalKhold as default } from './';
+export { blackMetalKhold as default } from "./";

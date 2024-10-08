@@ -1,2 +1,2 @@
-export { profile } from './';
-export { profile as default } from './';
+export { profile } from "./";
+export { profile as default } from "./";

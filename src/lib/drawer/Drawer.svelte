@@ -1,10 +1,10 @@
 <script lang="ts">
-  import type { ParamsType } from '$lib/types';
-  import { fly } from 'svelte/transition';
-  import { sineIn } from 'svelte/easing';
-  import { type DrawerProps as Props, drawer } from '.';
+  import type { ParamsType } from "$lib/types";
+  import { fly } from "svelte/transition";
+  import { sineIn } from "svelte/easing";
+  import { type DrawerProps as Props, drawer } from ".";
 
-  let { children, drawerStatus, closeDrawer, activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = 'left', class: className, params = { x: -320, duration: 200, easing: sineIn }, transition = fly, ...restProps }: Props = $props();
+  let { children, drawerStatus, closeDrawer, activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = "left", class: className, params = { x: -320, duration: 200, easing: sineIn }, transition = fly, ...restProps }: Props = $props();
 
   const { base, backdrop: backdropCls } = $derived(
     drawer({
@@ -35,5 +35,18 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: 
+@props: children: Snippet;
+@props:drawerStatus: boolean;
+@props:closeDrawer: () => void;
+@props:activateClickOutside: boolean = true;
+@props:position: VariantProps<typeof drawer>['position'];
+@props:width: VariantProps<typeof drawer>['width'];
+@props:backdrop: boolean = true;
+@props:backdropClass: string;
+@props:placement: VariantProps<typeof drawer>['placement'] = 'left';
+@props:class: string;
+@props:params: ParamsType = { x: -320;
+@props:duration: any;
+@props:easing: any;
+@props:transition: TransitionFunc = fly;
 -->

@@ -1,2 +1,2 @@
-export { fix } from './';
-export { fix as default } from './';
+export { fix } from "./";
+export { fix as default } from "./";

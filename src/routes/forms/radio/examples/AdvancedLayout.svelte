@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Radio } from '$lib';
-  import { ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Radio } from "$lib";
+  import { ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
 <p class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Choose technology:</p>

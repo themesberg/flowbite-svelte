@@ -1,3 +1,3 @@
 <script>
-  import { Alert } from 'svelte-5-ui-lib';
+  import { Alert } from "svelte-5-ui-lib";
 </script>

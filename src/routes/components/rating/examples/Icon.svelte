@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Rating, Heart, Thumbup } from '$lib';
+  import { Rating, Heart, Thumbup } from "$lib";
 </script>
 
 <Rating total={5} rating={3.3} Icon={Heart} />

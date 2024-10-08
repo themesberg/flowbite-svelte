@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Table, TableHead, TableHeadCell, TableBody, TableBodyRow, TableBodyCell } from '$lib';
+  import { Table, TableHead, TableHeadCell, TableBody, TableBodyRow, TableBodyCell } from "$lib";
 </script>
 
 <Table hoverable>

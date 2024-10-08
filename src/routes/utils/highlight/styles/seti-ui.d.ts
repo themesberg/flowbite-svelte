@@ -1,1 +1,1 @@
-export { setiUi as default } from './';
+export { setiUi as default } from "./";

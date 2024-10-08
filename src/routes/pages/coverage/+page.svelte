@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { List, Li, Heading } from '$lib';
-  import { CheckCircleSolid, CloseCircleSolid, QuestionCircleSolid } from 'flowbite-svelte-icons';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
+  import { List, Li, Heading } from "$lib";
+  import { CheckCircleSolid, CloseCircleSolid, QuestionCircleSolid } from "flowbite-svelte-icons";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
   function convertStringToKebabCase(text: string) {
-    return text.replace(/[A-Z]/g, (match) => '-' + match.toLowerCase());
+    return text.replace(/[A-Z]/g, (match) => "-" + match.toLowerCase());
   }
   interface Component {
     checked: boolean;
@@ -41,7 +41,7 @@
     },
     bottomNavigation: {
       checked: true,
-      problems: 'Tooltip'
+      problems: "Tooltip"
       // notes: 'Variants'
     },
     breadcrumb: {
@@ -80,7 +80,7 @@
     },
     dropdown: {
       checked: true,
-      problems: 'apply floating-ui'
+      problems: "apply floating-ui"
       //   'Sizes, Placement, Double placement, Events'
       // notes: 'Variants checked'
     },
@@ -107,7 +107,7 @@
     },
     megaMenu: {
       checked: true,
-      problems: 'apply floating-ui'
+      problems: "apply floating-ui"
     },
     modal: {
       checked: true
@@ -122,7 +122,7 @@
     },
     popover: {
       checked: true,
-      problems: 'apply floating-ui'
+      problems: "apply floating-ui"
     },
     progress: {
       checked: true
@@ -145,11 +145,11 @@
     },
     speedDial: {
       checked: false,
-      problems: 'apply floating-ui'
+      problems: "apply floating-ui"
     },
     table: {
       checked: true,
-      problems: 'Sorting by column, Click and double-click on row'
+      problems: "Sorting by column, Click and double-click on row"
     },
     tabs: {
       checked: true
@@ -162,12 +162,12 @@
     },
     toast: {
       checked: true,
-      problems: 'Icons, Autohide example'
+      problems: "Icons, Autohide example"
       // notes: 'Variants, reactive examples'
     },
     tooltip: {
       checked: true,
-      problems: 'apply floating-ui'
+      problems: "apply floating-ui"
     },
     video: {
       checked: true
@@ -183,7 +183,7 @@
     },
     fileInput: {
       checked: true,
-      problems: 'Dropzone example'
+      problems: "Dropzone example"
       // notes: 'Variants, reactive examples'
     },
     floatingLabel: {
@@ -217,7 +217,7 @@
     },
     select: {
       checked: true,
-      problems: 'MultiSelect'
+      problems: "MultiSelect"
       // notes: 'Variants, reactive examples'
     },
     textarea: {

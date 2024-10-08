@@ -1,1 +1,1 @@
-export { heetchLight as default } from './';
+export { heetchLight as default } from "./";

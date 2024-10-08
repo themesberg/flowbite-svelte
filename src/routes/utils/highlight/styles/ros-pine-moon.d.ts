@@ -1,1 +1,1 @@
-export { rosPineMoon as default } from './';
+export { rosPineMoon as default } from "./";

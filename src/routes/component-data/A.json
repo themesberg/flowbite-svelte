@@ -1,20 +1,8 @@
 {
   "name": "A",
   "props": [
-    [
-      "children",
-      "Snippet",
-      ""
-    ],
-    [
-      "color",
-      "AnchorColorType",
-      "'primary'"
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ]
+    ["children", "Snippet", ""],
+    ["color", "AnchorColorType", "'primary'"],
+    ["class", "string", ""]
   ]
 }

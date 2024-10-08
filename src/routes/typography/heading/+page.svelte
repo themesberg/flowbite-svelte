@@ -1,34 +1,34 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { Heading, Button, Label, Radio, Input, CloseButton, uiHelpers, type HeadingProps } from '$lib';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import { Heading, Button, Label, Radio, Input, CloseButton, uiHelpers, type HeadingProps } from "$lib";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'typography/heading';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "typography/heading";
 
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
   const exampleArr = [
-    { name: 'Default', component: ExampleComponents.Default },
-    { name: 'Badge', component: ExampleComponents.Badge },
-    { name: 'Breadcrumb', component: ExampleComponents.Breadcrumb },
-    { name: 'Gradient', component: ExampleComponents.Gradient },
-    { name: 'Highlighted', component: ExampleComponents.Highlighted },
-    { name: 'Mark', component: ExampleComponents.Mark },
-    { name: 'Secondary', component: ExampleComponents.Secondary },
-    { name: 'Second level', component: ExampleComponents.SecondLevel },
-    { name: 'Underline', component: ExampleComponents.Underline }
+    { name: "Default", component: ExampleComponents.Default },
+    { name: "Badge", component: ExampleComponents.Badge },
+    { name: "Breadcrumb", component: ExampleComponents.Breadcrumb },
+    { name: "Gradient", component: ExampleComponents.Gradient },
+    { name: "Highlighted", component: ExampleComponents.Highlighted },
+    { name: "Mark", component: ExampleComponents.Mark },
+    { name: "Secondary", component: ExampleComponents.Secondary },
+    { name: "Second level", component: ExampleComponents.SecondLevel },
+    { name: "Underline", component: ExampleComponents.Underline }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -40,21 +40,21 @@
   const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
 
-  const tags = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
-  let headingTag: HeadingProps['tag'] = $state('h1');
-  let headingCls = $state('text-primary-700 dark:text-primary-500');
+  const tags = ["h1", "h2", "h3", "h4", "h5", "h6"];
+  let headingTag: HeadingProps["tag"] = $state("h1");
+  let headingCls = $state("text-primary-700 dark:text-primary-500");
   const changeHeadingCls = () => {
-    headingCls = headingCls === 'text-primary-700 dark:text-primary-500' ? 'text-blue-500 dark:text-blue-400 uppercase italic underline text-center font-semibold bg-gray-50 dark:bg-gray-700 p-4' : 'text-primary-700 dark:text-primary-500';
+    headingCls = headingCls === "text-primary-700 dark:text-primary-500" ? "text-blue-500 dark:text-blue-400 uppercase italic underline text-center font-semibold bg-gray-50 dark:bg-gray-700 p-4" : "text-primary-700 dark:text-primary-500";
   };
 
-  let { text = $bindable('My heading') } = $props();
+  let { text = $bindable("My heading") } = $props();
   // code generator
   let generatedCode = $derived(
     (() => {
       let props = [];
       if (headingTag) props.push(` tag="${headingTag}"`);
       if (headingCls) props.push(` class="${headingCls}"`);
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
       return `<Heading${propsString}>
   ${text}
@@ -85,7 +85,7 @@
   <Label class="text-md mb-2">Edit heading</Label>
   <Input type="text" bind:value={text} placeholder="Write your blockquote text" class="mb-8 pr-12">
     {#snippet right()}
-      <CloseButton onclick={() => (text = '')} />
+      <CloseButton onclick={() => (text = "")} />
     {/snippet}
   </Input>
   <div class="h-24">
@@ -98,7 +98,7 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-40" color="blue" onclick={changeHeadingCls}>{headingCls !== 'text-primary-700 dark:text-primary-500' ? 'Original class' : 'Change class'}</Button>
+    <Button class="w-40" color="blue" onclick={changeHeadingCls}>{headingCls !== "text-primary-700 dark:text-primary-500" ? "Original class" : "Change class"}</Button>
   </div>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCode} />

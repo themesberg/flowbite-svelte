@@ -1,1 +1,1 @@
-export { bright as default } from './';
+export { bright as default } from "./";

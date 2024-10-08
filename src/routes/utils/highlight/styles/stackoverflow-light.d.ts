@@ -1,1 +1,1 @@
-export { stackoverflowLight as default } from './';
+export { stackoverflowLight as default } from "./";

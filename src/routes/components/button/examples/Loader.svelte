@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Spinner } from '$lib';
+  import { Button, Spinner } from "$lib";
 </script>
 
 <Button>

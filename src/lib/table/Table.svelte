@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { setContext } from 'svelte';
-  import { type TableProps as Props, table as tableCls, type TableCtxType, TableHead, TableBody } from '.';
+  import { setContext } from "svelte";
+  import { type TableProps as Props, table as tableCls, type TableCtxType, TableHead, TableBody } from ".";
 
-  let { children, footerSlot, captionSlot, tableItems, divClass = 'relative overflow-x-auto', striped, hoverable, noborder, shadow, color = 'default', customeColor, class: className, ...restProps }: Props = $props();
+  let { children, footerSlot, captionSlot, tableItems, divClass = "relative overflow-x-auto", striped, hoverable, noborder, shadow, color = "default", customeColor, class: className, ...restProps }: Props = $props();
 
   const { base, table } = $derived(tableCls({ color, shadow }));
 
@@ -21,7 +21,7 @@
     }
   };
 
-  setContext('tableCtx', tableCtx);
+  setContext("tableCtx", tableCtx);
   let headItems: string[] = $state([]);
   let bodyItems: (string | number | boolean)[][] = $state([]);
   if (tableItems) {

@@ -1,9 +1,9 @@
 <script lang="ts">
-  import Star from './Star.svelte';
-  import { idGenerator } from '$lib/uiHelpers.svelte';
-  import { type RatingProps as Props, rating as ratingVariants } from '.';
+  import Star from "./Star.svelte";
+  import { idGenerator } from "$lib/uiHelpers.svelte";
+  import { type RatingProps as Props, rating as ratingVariants } from ".";
 
-  let { children, text, divClass, size = 24, total = 5, rating = 4, partialId = 'partialStar' + idGenerator(), Icon = Star, count = false, pClass }: Props = $props();
+  let { children, text, divClass, size = 24, total = 5, rating = 4, partialId = "partialStar" + idGenerator(), Icon = Star, count = false, pClass }: Props = $props();
 
   const { base, p } = $derived(ratingVariants());
 

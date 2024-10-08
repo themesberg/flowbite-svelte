@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Search, Button } from '$lib';
+  import { Search, Button } from "$lib";
 </script>
 
 <Search size="lg">

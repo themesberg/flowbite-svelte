@@ -1,1 +1,1 @@
-export { gruvboxLightHard as default } from './';
+export { gruvboxLightHard as default } from "./";

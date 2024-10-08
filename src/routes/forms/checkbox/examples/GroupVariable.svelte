@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { Checkbox, Button, type CheckboxItem } from '$lib';
+  import { Checkbox, Button, type CheckboxItem } from "$lib";
   let choices: CheckboxItem[] = [
-    { value: '1', checkboxLabel: 'One' },
-    { value: '2', checkboxLabel: 'Two' },
-    { value: '3', checkboxLabel: 'Three' }
+    { value: "1", checkboxLabel: "One" },
+    { value: "2", checkboxLabel: "Two" },
+    { value: "3", checkboxLabel: "Three" }
   ];
-  let group: (string | number)[] = $state(['2', '3']);
+  let group: (string | number)[] = $state(["2", "3"]);
   const clearGroup = () => {
     group = [];
   };

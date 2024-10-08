@@ -1,1 +1,1 @@
-export { brushTreesDark as default } from './';
+export { brushTreesDark as default } from "./";

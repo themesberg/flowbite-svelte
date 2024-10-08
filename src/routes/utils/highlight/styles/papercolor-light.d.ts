@@ -1,1 +1,1 @@
-export { papercolorLight as default } from './';
+export { papercolorLight as default } from "./";

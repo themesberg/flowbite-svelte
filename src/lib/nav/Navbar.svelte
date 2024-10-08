@@ -1,16 +1,16 @@
 <script lang="ts">
-  import { setContext } from 'svelte';
-  import { clickOutside } from '../uiHelpers.svelte';
-  import { slide, type SlideParams } from 'svelte/transition';
-  import { quintOut } from 'svelte/easing';
-  import type { navbarType } from '$lib/types';
-  import { type NavbarProps as Props, navbar } from './';
+  import { setContext } from "svelte";
+  import { clickOutside } from "../uiHelpers.svelte";
+  import { slide, type SlideParams } from "svelte/transition";
+  import { quintOut } from "svelte/easing";
+  import type { navbarType } from "$lib/types";
+  import { type NavbarProps as Props, navbar } from "./";
 
-  let { children, navSlotBlock, navSlotHiddenTop, navSlotHiddenBottom, toggleNav, closeNav = () => {}, navStatus, fluid, brand, hamburgerMenu = true, breakPoint = 'md', navClass, divClass, btnClass, div2Class, activeClass, nonActiveClass, ...restProps }: Props = $props();
+  let { children, navSlotBlock, navSlotHiddenTop, navSlotHiddenBottom, toggleNav, closeNav = () => {}, navStatus, fluid, brand, hamburgerMenu = true, breakPoint = "md", navClass, divClass, btnClass, div2Class, activeClass, nonActiveClass, ...restProps }: Props = $props();
 
   const { base, container, toggleButton, menuContainer, activeLink, inactiveLink } = $derived(navbar({ fluid, breakPoint, navStatus }));
 
-  setContext<navbarType>('navbarContext', {
+  setContext<navbarType>("navbarContext", {
     navStatus,
     breakPoint,
     get activeClass() {
@@ -67,5 +67,21 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: 
+@props: children: Snippet;
+@props:navSlotBlock: Snippet;
+@props:navSlotHiddenTop: Snippet;
+@props:navSlotHiddenBottom: Snippet;
+@props:toggleNav: () => void;
+@props:closeNav: () => void = ();
+@props:navStatus: boolean | undefined;
+@props:fluid: boolean;
+@props:brand: Snippet;
+@props:hamburgerMenu: boolean = true;
+@props:breakPoint: navbarType['breakPoint'] = 'md';
+@props:navClass: string;
+@props:divClass: string;
+@props:btnClass: string;
+@props:div2Class: string;
+@props:activeClass: string;
+@props:nonActiveClass: string;
 -->

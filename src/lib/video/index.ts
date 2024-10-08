@@ -1,7 +1,7 @@
-import Video from './Video.svelte';
+import Video from "./Video.svelte";
 // import { type VariantProps, tv } from 'tailwind-variants';
-import type { Snippet } from 'svelte';
-import type { HTMLVideoAttributes } from 'svelte/elements';
+import type { Snippet } from "svelte";
+import type { HTMLVideoAttributes } from "svelte/elements";
 
 interface VideoProps extends HTMLVideoAttributes {
   children?: Snippet;

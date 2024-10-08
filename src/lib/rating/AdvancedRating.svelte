@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type AdvancedRatingProps as Props, advancedrating } from '.';
+  import { type AdvancedRatingProps as Props, advancedrating } from ".";
 
   let { rating, globalText, ratings, divClass, spanClass, div2Class, div3Class, span2Class, unit }: Props = $props();
 
@@ -28,7 +28,7 @@
 ## Props
 @props: rating: Snippet;
 @props:globalText: Snippet;
-@props:ratings: { label: string | undefined | null;
+@props:ratings: { label;
 @props:divClass: any;
 @props:spanClass: any;
 @props:div2Class: any;

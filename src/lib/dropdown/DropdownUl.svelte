@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type DropdownUlProps as Props, dropdownul } from '.';
+  import { type DropdownUlProps as Props, dropdownul } from ".";
 
   let { children, class: className, ...restProps }: Props = $props();
 

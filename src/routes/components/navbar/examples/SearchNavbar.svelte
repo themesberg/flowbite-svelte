@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Navbar, NavBrand, NavUl, NavLi, uiHelpers, Button, NavHamburger, Input } from '$lib';
-  import SearchOutline from 'flowbite-svelte-icons/SearchOutline.svelte';
+  import { Navbar, NavBrand, NavUl, NavLi, uiHelpers, Button, NavHamburger, Input } from "$lib";
+  import SearchOutline from "flowbite-svelte-icons/SearchOutline.svelte";
 
   let nav = uiHelpers();
   let navStatus = $state(false);

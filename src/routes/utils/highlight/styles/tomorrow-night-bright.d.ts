@@ -1,1 +1,1 @@
-export { tomorrowNightBright as default } from './';
+export { tomorrowNightBright as default } from "./";

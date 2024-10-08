@@ -1,1 +1,1 @@
-export { pandaSyntaxDark as default } from './';
+export { pandaSyntaxDark as default } from "./";

@@ -1,17 +1,17 @@
 <script lang="ts">
-  import { getContext } from 'svelte';
-  import { type TimelineItemProps as Props, timelineitem } from '.';
+  import { getContext } from "svelte";
+  import { type TimelineItemProps as Props, timelineitem } from ".";
 
   let { children, orientationSlot, title, date, svgClass, liClass, divClass, timeClass, h3Class, ...restProps }: Props = $props();
-  let order: 'default' | 'vertical' | 'horizontal' | 'activity' | 'group' = getContext('order');
+  let order: "default" | "vertical" | "horizontal" | "activity" | "group" = getContext("order");
 
   const { li, div, time, h3, svg } = $derived(timelineitem({ order }));
 </script>
 
 <li class={li({ class: liClass })} {...restProps}>
   <div class={div({ class: divClass })}></div>
-  {#if order !== 'default'}
-    {#if orientationSlot && (order === 'vertical' || order === 'horizontal')}
+  {#if order !== "default"}
+    {#if orientationSlot && (order === "vertical" || order === "horizontal")}
       {@render orientationSlot()}
     {:else}
       <svg aria-hidden="true" class={svg({ class: svgClass })} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -28,7 +28,7 @@
     </h3>
   {/if}
 
-  {#if order !== 'default'}
+  {#if order !== "default"}
     {#if date}
       <time class={time({ class: timeClass })}>{date}</time>
     {/if}

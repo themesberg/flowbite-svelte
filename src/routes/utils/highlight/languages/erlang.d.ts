@@ -1,2 +1,2 @@
-export { erlang } from './';
-export { erlang as default } from './';
+export { erlang } from "./";
+export { erlang as default } from "./";

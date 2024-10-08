@@ -1,2 +1,2 @@
-export { vbscriptHtml } from './';
-export { vbscriptHtml as default } from './';
+export { vbscriptHtml } from "./";
+export { vbscriptHtml as default } from "./";

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Badge } from '$lib';
-  import { CheckCircleOutline } from 'flowbite-svelte-icons';
+  import { Badge } from "$lib";
+  import { CheckCircleOutline } from "flowbite-svelte-icons";
 </script>
 
 <div class="flex h-8 justify-center">

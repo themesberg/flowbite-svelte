@@ -1,1 +1,1 @@
-export { paraisoLight as default } from './';
+export { paraisoLight as default } from "./";

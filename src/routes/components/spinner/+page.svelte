@@ -1,25 +1,25 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { Spinner, spinner, Button, Label, Radio, uiHelpers, type RadioColorType, type SpinnerProps } from '$lib';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import { Spinner, spinner, Button, Label, Radio, uiHelpers, type RadioColorType, type SpinnerProps } from "$lib";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'spinner';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "spinner";
 
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
-  const exampleArr = [{ name: 'Button', component: ExampleComponents.Button }];
+  const exampleArr = [{ name: "Button", component: ExampleComponents.Button }];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 
@@ -31,35 +31,35 @@
   // end of dynamic svelte component
 
   // color, size, class
-  const colors: SpinnerProps['color'][] = Object.keys(spinner.variants.color) as SpinnerProps['color'][];
-  let spinnerColor: SpinnerProps['color'] = $state('primary');
-  const sizes: SpinnerProps['size'][] = ['4', '5', '6', '8', '10', '12', '16'];
-  let spinnerSize: SpinnerProps['size'] = $state('8');
-  let spinnerClass: SpinnerProps['class'] = $state('');
+  const colors: SpinnerProps["color"][] = Object.keys(spinner.variants.color) as SpinnerProps["color"][];
+  let spinnerColor: SpinnerProps["color"] = $state("primary");
+  const sizes: SpinnerProps["size"][] = ["4", "5", "6", "8", "10", "12", "16"];
+  let spinnerSize: SpinnerProps["size"] = $state("8");
+  let spinnerClass: SpinnerProps["class"] = $state("");
   const changeClass = () => {
-    spinnerClass = spinnerClass === '' ? 'ml-4' : '';
+    spinnerClass = spinnerClass === "" ? "ml-4" : "";
   };
   const alignments = [
-    { name: 'left', class: 'text-left' },
-    { name: 'center', class: 'text-center' },
-    { name: 'right', class: 'text-right' }
+    { name: "left", class: "text-left" },
+    { name: "center", class: "text-center" },
+    { name: "right", class: "text-right" }
   ];
 
-  let selectedAlignment: string | number = $state('left');
+  let selectedAlignment: string | number = $state("left");
   let currentSpinner = $derived(alignments.find((t) => t.name === selectedAlignment) || alignments[0]);
 
   // code generator
   let generatedCode = $derived(
     (() => {
       let props = [];
-      if (spinnerSize !== '8') props.push(` size="${spinnerSize}"`);
-      if (spinnerColor !== 'primary') props.push(` color="${spinnerColor}"`);
-      if (spinnerClass !== '') props.push(` class="${spinnerClass}"`);
+      if (spinnerSize !== "8") props.push(` size="${spinnerSize}"`);
+      if (spinnerColor !== "primary") props.push(` color="${spinnerColor}"`);
+      if (spinnerClass !== "") props.push(` class="${spinnerClass}"`);
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
       // alignment needs div wrapper
-      if (selectedAlignment !== 'left') {
+      if (selectedAlignment !== "left") {
         return `<div class="${currentSpinner.class}">\n  <Spinner${propsString}/>\n</div>`;
       } else {
         return `<Spinner${propsString}/>`;
@@ -121,7 +121,7 @@
       <Radio labelClass="w-16 my-1" name="alignment" bind:group={selectedAlignment} value={option.name}>{option.name}</Radio>
     {/each}
   </div>
-  <Button class="w-36" onclick={changeClass}>{spinnerClass ? 'Remove class' : 'Add class'}</Button>
+  <Button class="w-36" onclick={changeClass}>{spinnerClass ? "Remove class" : "Add class"}</Button>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
   {/snippet}

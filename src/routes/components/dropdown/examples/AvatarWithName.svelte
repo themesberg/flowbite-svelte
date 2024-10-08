@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { sineIn } from 'svelte/easing';
-  import { Button, Dropdown, DropdownHeader, DropdownFooter, DropdownUl, DropdownLi, uiHelpers, Avatar } from '$lib';
+  import { sineIn } from "svelte/easing";
+  import { Button, Dropdown, DropdownHeader, DropdownFooter, DropdownUl, DropdownLi, uiHelpers, Avatar } from "$lib";
   let dropdownAvatar = uiHelpers();
   let dropdownAvatarStatus = $state(false);
   let closeDropdownAvatar = dropdownAvatar.close;

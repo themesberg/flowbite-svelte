@@ -1,1 +1,1 @@
-export { tender as default } from './';
+export { tender as default } from "./";

@@ -1,1 +1,1 @@
-export { apprentice as default } from './';
+export { apprentice as default } from "./";

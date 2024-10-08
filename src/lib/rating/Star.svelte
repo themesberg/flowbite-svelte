@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { idGenerator } from '$lib/uiHelpers.svelte';
-  import { type StarProps as Props } from '.';
+  import { idGenerator } from "$lib/uiHelpers.svelte";
+  import { type StarProps as Props } from ".";
 
-  let { fillPercent = 100, fillColor = '#F5CA14', strokeColor = '#F5CA14', size = 24, ariaLabel = 'star', id = idGenerator(), role = 'img', svgClass, ...restProps }: Props = $props();
+  let { fillPercent = 100, fillColor = "#F5CA14", strokeColor = "#F5CA14", size = 24, ariaLabel = "star", id = idGenerator(), role = "img", svgClass, ...restProps }: Props = $props();
 </script>
 
 <svg width={size} height={size} {...restProps} class={svgClass} aria-label={ariaLabel} viewBox="100 100 120 120" {role}>

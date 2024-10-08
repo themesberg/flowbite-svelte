@@ -1,15 +1,15 @@
 <script lang="ts">
-  import { getContext } from 'svelte';
-  import { page } from '$app/stores';
-  import type { navbarType } from '$lib/types';
-  import { type NavLiProps as Props, navLi } from '.';
+  import { getContext } from "svelte";
+  import { page } from "$app/stores";
+  import type { navbarType } from "$lib/types";
+  import { type NavLiProps as Props, navLi } from ".";
 
   let { closeNav, href, children, aClass, activeClass, nonActiveClass, class: className, ...restProps }: Props = $props();
 
-  let breakPoint: navbarType['breakPoint'];
+  let breakPoint: navbarType["breakPoint"];
 
-  const context = getContext<navbarType>('navbarContext');
-  breakPoint = context.breakPoint ?? 'md';
+  const context = getContext<navbarType>("navbarContext");
+  breakPoint = context.breakPoint ?? "md";
   closeNav = context.closeNav ?? closeNav;
   let currentUrl = $state($page.url.pathname);
   let isActive = $derived(currentUrl === href);

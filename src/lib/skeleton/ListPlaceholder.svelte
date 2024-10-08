@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { listPlaceholder, type ListPlaceholderProps as Props } from './index';
+  import { listPlaceholder, type ListPlaceholderProps as Props } from "./index";
 
-  let { itemNumber = 5, size = 'md', rounded, class: className, ...restProps }: Props = $props();
+  let { itemNumber = 5, size = "md", rounded, class: className, ...restProps }: Props = $props();
 
   const { base, item, itemContent, itemTitle, itemSubtitle, itemExtra } = $derived(listPlaceholder({ size, rounded }));
 
@@ -10,7 +10,7 @@
 
 <div role="status" class={base({ className })} {...restProps}>
   {#each items as _, i}
-    <div class={item({ class: i > 0 ? 'pt-4' : '' })}>
+    <div class={item({ class: i > 0 ? "pt-4" : "" })}>
       <div class={itemContent()}>
         <div class={itemTitle()}></div>
         <div class={itemSubtitle()}></div>

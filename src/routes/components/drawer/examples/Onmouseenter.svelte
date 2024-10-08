@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Button, Drawer, Drawerhead, uiHelpers } from '$lib';
-  import { InfoCircleSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Button, Drawer, Drawerhead, uiHelpers } from "$lib";
+  import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   const drawerMouseEnter = uiHelpers();
   let drawerStatusMouseEnter = $state(false);
   const closeDrawerMouseEnter = drawerMouseEnter.close;

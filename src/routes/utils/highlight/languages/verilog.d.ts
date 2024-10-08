@@ -1,2 +1,2 @@
-export { verilog } from './';
-export { verilog as default } from './';
+export { verilog } from "./";
+export { verilog as default } from "./";

@@ -32,28 +32,28 @@ export function uiHelpers() {
 
 export function clickOutside(element: HTMLElement, callbackFunction?: () => void) {
   function onClick(event: MouseEvent) {
-    if (typeof callbackFunction === 'function') {
+    if (typeof callbackFunction === "function") {
       const targetNode = event.target as Node | null;
       if (!element.contains(targetNode)) {
         callbackFunction();
       }
     } else {
-      console.error('Callback function is not a function');
+      console.error("Callback function is not a function");
     }
   }
 
-  document.body.addEventListener('click', onClick);
+  document.body.addEventListener("click", onClick);
 
   return {
     update(newCallbackFunction: () => void) {
-      if (typeof newCallbackFunction === 'function') {
+      if (typeof newCallbackFunction === "function") {
         callbackFunction = newCallbackFunction;
       } else {
-        console.error('New callback function is not a function');
+        console.error("New callback function is not a function");
       }
     },
     destroy() {
-      document.body.removeEventListener('click', onClick);
+      document.body.removeEventListener("click", onClick);
     }
   };
 }

@@ -1,2 +1,2 @@
-export { taggerscript } from './';
-export { taggerscript as default } from './';
+export { taggerscript } from "./";
+export { taggerscript as default } from "./";

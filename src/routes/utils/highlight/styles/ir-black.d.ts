@@ -1,1 +1,1 @@
-export { irBlack as default } from './';
+export { irBlack as default } from "./";

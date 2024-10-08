@@ -1,1 +1,1 @@
-export { chalk as default } from './';
+export { chalk as default } from "./";

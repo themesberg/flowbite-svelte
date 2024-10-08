@@ -1,2 +1,2 @@
-export { aspectj } from './';
-export { aspectj as default } from './';
+export { aspectj } from "./";
+export { aspectj as default } from "./";

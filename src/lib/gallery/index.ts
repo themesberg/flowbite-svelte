@@ -1,7 +1,7 @@
-import Gallery from './Gallery.svelte';
-import type { Snippet } from 'svelte';
-import type { HTMLImgAttributes } from 'svelte/elements';
-import { gallery } from './theme';
+import Gallery from "./Gallery.svelte";
+import type { Snippet } from "svelte";
+import type { HTMLImgAttributes } from "svelte/elements";
+import { gallery } from "./theme";
 
 type ImgType = {
   src?: string;

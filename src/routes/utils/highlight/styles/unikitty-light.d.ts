@@ -1,1 +1,1 @@
-export { unikittyLight as default } from './';
+export { unikittyLight as default } from "./";

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Accordion, AccordionItem } from '$lib';
-  import { fade, fly } from 'svelte/transition';
-  import { quintOut } from 'svelte/easing';
+  import { Accordion, AccordionItem } from "$lib";
+  import { fade, fly } from "svelte/transition";
+  import { quintOut } from "svelte/easing";
 </script>
 
 <Accordion>

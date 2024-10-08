@@ -1,27 +1,27 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { Select, Label, Radio, Helper, uiHelpers, Button, type SelectProps, type SelectOptionType, type SelectSize } from '$lib';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import { Select, Label, Radio, Helper, uiHelpers, Button, type SelectProps, type SelectOptionType, type SelectSize } from "$lib";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'forms/select';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "forms/select";
 
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
   const exampleArr = [
-    { name: 'Dropdown Select', component: ExampleComponents.DropdownSelect },
-    { name: 'Custom Options', component: ExampleComponents.CustomOptions }
+    { name: "Dropdown Select", component: ExampleComponents.DropdownSelect },
+    { name: "Custom Options", component: ExampleComponents.CustomOptions }
     // { name: 'My options', component: ExampleComponents.MyOptions },
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
@@ -45,9 +45,9 @@
   }
 
   let countries: Country[] = [
-    { value: 'us', name: 'United States', href: '/' },
-    { value: 'ca', name: 'Canada', href: '/' },
-    { value: 'fr', name: 'France', href: '/' }
+    { value: "us", name: "United States", href: "/" },
+    { value: "ca", name: "Canada", href: "/" },
+    { value: "fr", name: "France", href: "/" }
   ];
 
   let dropdown = uiHelpers();
@@ -59,13 +59,13 @@
     dropdownStatus = dropdown.isOpen;
   });
 
-  const sizes: SelectSize[] = ['sm', 'md', 'lg'];
-  let selectSize: SelectSize = $state('md');
+  const sizes: SelectSize[] = ["sm", "md", "lg"];
+  let selectSize: SelectSize = $state("md");
 
   const sizeDisplay = {
-    sm: 'Small',
-    md: 'Medium',
-    lg: 'Large'
+    sm: "Small",
+    md: "Medium",
+    lg: "Large"
   };
   let underline = $state(false);
   const changeUnderline = () => {
@@ -75,7 +75,7 @@
   const changeDiabled = () => {
     disabled = !disabled;
   };
-  let selected = $state('');
+  let selected = $state("");
   let bindValue = $state(false);
   const changeBindValue = () => {
     bindValue = !bindValue;
@@ -86,14 +86,14 @@
     (() => {
       let props = [];
       // let fileSlot = '';
-      if (selectSize !== 'md') props.push(` size="${selectSize}"`);
-      if (underline) props.push(' underline');
-      if (disabled) props.push(' disabled');
-      if (bindValue) props.push(' bind:value={selected}');
+      if (selectSize !== "md") props.push(` size="${selectSize}"`);
+      if (underline) props.push(" underline");
+      if (disabled) props.push(" disabled");
+      if (bindValue) props.push(" bind:value={selected}");
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
-      return `<Select${propsString} />${bindValue ? '\nSelected value: {selected}' : ''}`;
+      return `<Select${propsString} />${bindValue ? "\nSelected value: {selected}" : ""}`;
     })()
   );
   // for interactive builder
@@ -145,9 +145,9 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-40" onclick={changeUnderline}>{underline ? 'Default' : 'Underline'}</Button>
-    <Button class="w-40" color="secondary" onclick={changeDiabled}>{disabled ? 'Enabled' : 'Disabled'}</Button>
-    <Button class="w-40" color="rose" onclick={changeBindValue}>{bindValue ? 'Unbind' : 'Bind value'}</Button>
+    <Button class="w-40" onclick={changeUnderline}>{underline ? "Default" : "Underline"}</Button>
+    <Button class="w-40" color="secondary" onclick={changeDiabled}>{disabled ? "Enabled" : "Disabled"}</Button>
+    <Button class="w-40" color="rose" onclick={changeBindValue}>{bindValue ? "Unbind" : "Bind value"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

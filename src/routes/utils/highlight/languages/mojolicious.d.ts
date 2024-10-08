@@ -1,2 +1,2 @@
-export { mojolicious } from './';
-export { mojolicious as default } from './';
+export { mojolicious } from "./";
+export { mojolicious as default } from "./";

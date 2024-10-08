@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Checkbox, Label, Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from '$lib';
+  import { Checkbox, Label, Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "$lib";
 </script>
 
 <Table>

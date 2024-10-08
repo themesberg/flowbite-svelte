@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ButtonGroup, GradientButton } from '$lib';
+  import { ButtonGroup, GradientButton } from "$lib";
 </script>
 
 <ButtonGroup class="space-x-px">

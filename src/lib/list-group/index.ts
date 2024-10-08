@@ -1,10 +1,10 @@
-import Listgroup from './Listgroup.svelte';
-import ListgroupItem from './ListgroupItem.svelte';
-import type { Snippet } from 'svelte';
+import Listgroup from "./Listgroup.svelte";
+import ListgroupItem from "./ListgroupItem.svelte";
+import type { Snippet } from "svelte";
 // import type { ListGroupItemType } from '../types';
-import type { HTMLAnchorAttributes } from 'svelte/elements';
-import type { Component } from 'svelte';
-import { listGroup, listGroupItem } from './theme';
+import type { HTMLAnchorAttributes } from "svelte/elements";
+import type { Component } from "svelte";
+import { listGroup, listGroupItem } from "./theme";
 
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 interface ListGroupItemType {

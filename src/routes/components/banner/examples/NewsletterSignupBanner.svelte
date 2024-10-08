@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Skeleton, ImagePlaceholder, Banner } from '$lib';
+  import { Skeleton, ImagePlaceholder, Banner } from "$lib";
 </script>
 
 <div class="relative">

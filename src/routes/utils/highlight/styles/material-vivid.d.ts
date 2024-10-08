@@ -1,1 +1,1 @@
-export { materialVivid as default } from './';
+export { materialVivid as default } from "./";

@@ -1,9 +1,9 @@
-import type { Snippet } from 'svelte';
-import type { HTMLAttributes } from 'svelte/elements';
-import type { HTMLLiAttributes } from 'svelte/elements';
-import Breadcrumb from './Breadcrumb.svelte';
-import BreadcrumbItem from './BreadcrumbItem.svelte';
-import { breadcrumb } from './theme';
+import type { Snippet } from "svelte";
+import type { HTMLAttributes } from "svelte/elements";
+import type { HTMLLiAttributes } from "svelte/elements";
+import Breadcrumb from "./Breadcrumb.svelte";
+import BreadcrumbItem from "./BreadcrumbItem.svelte";
+import { breadcrumb } from "./theme";
 
 interface BreadcrumbProps extends HTMLAttributes<HTMLElement> {
   children: Snippet;

@@ -1,22 +1,22 @@
 <script lang="ts">
-  import { setContext, type Snippet } from 'svelte';
+  import { setContext, type Snippet } from "svelte";
 
   interface Props {
     children: Snippet;
-    category?: 'props' | 'events';
+    category?: "props" | "events";
     tableClass?: string;
     theadClass?: string;
     thClass?: string;
     divClass?: string;
   }
 
-  let { children, category = 'props', tableClass = 'w-full text-sm text-left text-gray-500 dark:text-gray-400', theadClass = 'text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400', thClass = 'px-6 py-3', divClass = 'w-full relative overflow-x-auto shadow-md sm:rounded-lg' }: Props = $props();
+  let { children, category = "props", tableClass = "w-full text-sm text-left text-gray-500 dark:text-gray-400", theadClass = "text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400", thClass = "px-6 py-3", divClass = "w-full relative overflow-x-auto shadow-md sm:rounded-lg" }: Props = $props();
 
-  setContext('category', category);
+  setContext("category", category);
 
   const headerNames = {
-    props: ['Name', 'Type', 'Default'],
-    events: ['Names']
+    props: ["Name", "Type", "Default"],
+    events: ["Names"]
   };
   let header = headerNames[category];
 </script>
@@ -25,7 +25,7 @@
   <table class={tableClass}>
     <thead class={theadClass}>
       <tr>
-        {#if category === 'props'}
+        {#if category === "props"}
           {#each header as column}
             <th scope="col" class={thClass}>
               {column}

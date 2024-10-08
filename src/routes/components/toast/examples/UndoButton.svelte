@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Toast } from '$lib';
+  import { Button, Toast } from "$lib";
   let toastUndoStatus: boolean = $state(true);
   const changeUndoStatus = () => {
     toastUndoStatus = !toastUndoStatus;

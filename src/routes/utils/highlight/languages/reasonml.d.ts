@@ -1,2 +1,2 @@
-export { reasonml } from './';
-export { reasonml as default } from './';
+export { reasonml } from "./";
+export { reasonml as default } from "./";

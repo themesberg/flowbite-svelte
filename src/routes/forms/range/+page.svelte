@@ -1,17 +1,17 @@
 <script lang="ts">
-  import { Range, range, Label, Button, Radio, uiHelpers, type RangeProps, type RangeColorType } from '$lib';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { Range, range, Label, Button, Radio, uiHelpers, type RangeProps, type RangeColorType } from "$lib";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'forms/range';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "forms/range";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
@@ -21,7 +21,7 @@
     stepValue = stepValue === 0.5 ? 1 : 0.5;
   };
   const colors = Object.keys(range.variants.color);
-  let rangeColor: RangeProps['color'] = $state('blue');
+  let rangeColor: RangeProps["color"] = $state("blue");
   let disabled = $state(false);
   const changeDisabled = () => {
     disabled = !disabled;
@@ -43,7 +43,7 @@
     labelStatus = !labelStatus;
   };
   const rangeSizes = Object.keys(range.variants.size);
-  let rangeSize: RangeProps['rangeSize'] = $state('md' as RangeProps['rangeSize']);
+  let rangeSize: RangeProps["rangeSize"] = $state("md" as RangeProps["rangeSize"]);
   // code generator
   let generatedCode = $derived(
     (() => {
@@ -51,17 +51,17 @@
       if (rangeColor) props.push(`color="${rangeColor}"`);
       if (minmax.max !== 10) props.push(`min="${minmax.min}" max="${minmax.max}"`);
       if (stepValue !== 1) props.push(`step="${stepValue}"`);
-      if (disabled) props.push('disabled');
+      if (disabled) props.push("disabled");
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
-      return `${labelStatus ? `<div class="relative">\n  ` : ''}<Range${propsString}/>
+      return `${labelStatus ? `<div class="relative">\n  ` : ""}<Range${propsString}/>
 ${
   labelStatus
     ? `<span class="text-sm text-gray-500 dark:text-gray-400 absolute start-0 -bottom-6">Min: ${minmax.min}</span>
 <span class="text-sm text-gray-500 dark:text-gray-400 absolute start-1/2 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">${minmax.max / 2}</span>
 <span class="text-sm text-gray-500 dark:text-gray-400 absolute end-0 -bottom-6">Max: ${minmax.max}</span></div>`
-    : ''
+    : ""
 }`;
     })()
   );
@@ -86,7 +86,7 @@ ${
 <H2>Interactive Range Builder</H2>
 <CodeWrapper>
   <div class="relative">
-    {stepValue !== 1 ? `Step: ${stepValue}` : ''}
+    {stepValue !== 1 ? `Step: ${stepValue}` : ""}
     {#if minmax.max !== 10}
       <p>Value: {interactiveValue}</p>
     {/if}
@@ -104,10 +104,10 @@ ${
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-40" onclick={changeDisabled}>{disabled ? 'Enabled' : 'Disabled'}</Button>
-    <Button class="w-40" color="secondary" onclick={changeMinMax}>{minmax.max === 10 ? 'Add max min' : 'Remove max min'}</Button>
-    <Button class="w-40" color="rose" onclick={changeLabelStatus}>{labelStatus ? 'Remove label' : 'Add label'}</Button>
-    <Button class="w-40" color="indigo" onclick={changeStepValue}>{stepValue !== 0.5 ? 'Add step' : 'Remove step'}</Button>
+    <Button class="w-40" onclick={changeDisabled}>{disabled ? "Enabled" : "Disabled"}</Button>
+    <Button class="w-40" color="secondary" onclick={changeMinMax}>{minmax.max === 10 ? "Add max min" : "Remove max min"}</Button>
+    <Button class="w-40" color="rose" onclick={changeLabelStatus}>{labelStatus ? "Remove label" : "Add label"}</Button>
+    <Button class="w-40" color="indigo" onclick={changeStepValue}>{stepValue !== 0.5 ? "Add step" : "Remove step"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

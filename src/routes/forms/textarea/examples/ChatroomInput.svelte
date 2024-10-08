@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Textarea, ToolbarButton } from '$lib';
-  import { ImageOutline, FaceGrinOutline, PaperPlaneOutline } from 'flowbite-svelte-icons';
+  import { Textarea, ToolbarButton } from "$lib";
+  import { ImageOutline, FaceGrinOutline, PaperPlaneOutline } from "flowbite-svelte-icons";
 </script>
 
 <form>

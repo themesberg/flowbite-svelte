@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { sineIn } from 'svelte/easing';
-  import { Search, Button, Dropdown, DropdownUl, DropdownLi, uiHelpers } from '$lib';
-  import { ChevronDownOutline, SearchOutline } from 'flowbite-svelte-icons';
-  const items = [{ label: 'All categories' }, { label: 'Mockups' }, { label: 'Templates' }, { label: 'Design' }, { label: 'Logos' }];
-  let selectCategory = $state('All categories');
+  import { sineIn } from "svelte/easing";
+  import { Search, Button, Dropdown, DropdownUl, DropdownLi, uiHelpers } from "$lib";
+  import { ChevronDownOutline, SearchOutline } from "flowbite-svelte-icons";
+  const items = [{ label: "All categories" }, { label: "Mockups" }, { label: "Templates" }, { label: "Design" }, { label: "Logos" }];
+  let selectCategory = $state("All categories");
   let dropdown = uiHelpers();
   let dropdownStatus = $state(false);
   let closeDropdown = dropdown.close;
@@ -14,7 +14,7 @@
   };
   const handleClick = (label: string) => {
     selectCategory = label;
-    console.log('selectCategory', selectCategory);
+    console.log("selectCategory", selectCategory);
     dropdown.close();
   };
   $effect(() => {

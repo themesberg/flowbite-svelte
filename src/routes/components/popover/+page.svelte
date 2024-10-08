@@ -1,37 +1,37 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { blur, fly, slide, scale, fade } from 'svelte/transition';
-  import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
-  import { sineIn, linear } from 'svelte/easing';
-  import { Popover, popover, Button, Label, Radio, uiHelpers, type RadioColorType, type PopoverProps } from '$lib';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import { blur, fly, slide, scale, fade } from "svelte/transition";
+  import type { FlyParams, BlurParams, SlideParams, ScaleParams } from "svelte/transition";
+  import { sineIn, linear } from "svelte/easing";
+  import { Popover, popover, Button, Label, Radio, uiHelpers, type RadioColorType, type PopoverProps } from "$lib";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'popover';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "popover";
   // end of props table
 
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
   const exampleArr = [
-    { name: 'Title slot', component: ExampleComponents.TitleSlot },
-    { name: 'User profile', component: ExampleComponents.UserProfile },
-    { name: 'Company profile', component: ExampleComponents.CompanyProfile },
-    { name: 'Image', component: ExampleComponents.Image },
-    { name: 'Description', component: ExampleComponents.Description },
-    { name: 'Progress', component: ExampleComponents.Progress },
-    { name: 'Password', component: ExampleComponents.Password },
-    { name: 'External reference', component: ExampleComponents.ExternalReference }
+    { name: "Title slot", component: ExampleComponents.TitleSlot },
+    { name: "User profile", component: ExampleComponents.UserProfile },
+    { name: "Company profile", component: ExampleComponents.CompanyProfile },
+    { name: "Image", component: ExampleComponents.Image },
+    { name: "Description", component: ExampleComponents.Description },
+    { name: "Progress", component: ExampleComponents.Progress },
+    { name: "Password", component: ExampleComponents.Password },
+    { name: "External reference", component: ExampleComponents.ExternalReference }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -44,12 +44,12 @@
   // end of dynamic svelte component
 
   const positions = Object.keys(popover.variants.position);
-  let position: PopoverProps['position'] = $state(positions[0]) as PopoverProps['position'];
+  let position: PopoverProps["position"] = $state(positions[0]) as PopoverProps["position"];
   const colors = Object.keys(popover.variants.color);
-  let color: PopoverProps['color'] = $state('default');
-  let popoverClass: PopoverProps['class'] = $state('w-64 text-sm font-light');
+  let color: PopoverProps["color"] = $state("default");
+  let popoverClass: PopoverProps["class"] = $state("w-64 text-sm font-light");
   const changeClass = () => {
-    popoverClass = popoverClass === 'w-64 text-sm font-light' ? 'w-64 text-sm font-light p-2' : 'w-64 text-sm font-light';
+    popoverClass = popoverClass === "w-64 text-sm font-light" ? "w-64 text-sm font-light p-2" : "w-64 text-sm font-light";
   };
   let arrow = $state(true);
   const changeArrow = () => {
@@ -71,23 +71,23 @@
   };
 
   const transitions: TransitionOption[] = [
-    { name: 'Fade', transition: fade, params: { duration: 100, easing: linear } },
-    { name: 'Fly', transition: fly, params: { duration: 300, easing: linear, x: -150 } },
-    { name: 'Blur', transition: blur, params: { duration: 800, easing: sineIn } }
+    { name: "Fade", transition: fade, params: { duration: 100, easing: linear } },
+    { name: "Fly", transition: fly, params: { duration: 300, easing: linear, x: -150 } },
+    { name: "Blur", transition: blur, params: { duration: 800, easing: sineIn } }
   ];
 
-  let selectedTransition: string | number = $state('Fade');
+  let selectedTransition: string | number = $state("Fade");
   let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
 
   // code generator
   let generatedCode = $derived(
     (() => {
       let props = [];
-      if (color !== 'default') props.push(` color="${color}"`);
-      if (position !== 'top') props.push(` position="${position}"`);
+      if (color !== "default") props.push(` color="${color}"`);
+      if (position !== "top") props.push(` position="${position}"`);
       if (offset) props.push(` offset="${offset}"`);
-      if (popoverClass !== 'w-64 text-sm font-light') props.push(` class="${popoverClass}"`);
-      if (arrow !== true) props.push(' arrow={false}');
+      if (popoverClass !== "w-64 text-sm font-light") props.push(` class="${popoverClass}"`);
+      if (arrow !== true) props.push(" arrow={false}");
       if (currentTransition !== transitions[0]) {
         props.push(` transition={${currentTransition.transition.name}}`);
 
@@ -95,16 +95,16 @@
         let paramValues = currentTransition.params;
         const paramsString = Object.entries(paramValues)
           .map(([key, value]) => {
-            if (typeof value === 'function') {
+            if (typeof value === "function") {
               return `${key}:${value.name}`;
             }
             return `${key}:${value}`;
           })
-          .join(',');
+          .join(",");
         props.push(` params={{${paramsString}}}`);
       }
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
       return `<Button id="demo">Popover</Button>
 <Popover titleSlot="Popover title" triggeredBy="#demo"${propsString} >
@@ -168,9 +168,9 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-36" onclick={changeClass}>{popoverClass !== 'w-64 text-sm font-light' ? 'Remove class' : 'Add class'}</Button>
-    <Button class="w-36" color="secondary" onclick={changeArrow}>{arrow ? 'Remove arrow' : 'Add arrow'}</Button>
-    <Button class="w-36" color="rose" onclick={changeOffset}>{offset ? 'Remove offset' : 'Add offset'}</Button>
+    <Button class="w-36" onclick={changeClass}>{popoverClass !== "w-64 text-sm font-light" ? "Remove class" : "Add class"}</Button>
+    <Button class="w-36" color="secondary" onclick={changeArrow}>{arrow ? "Remove arrow" : "Add arrow"}</Button>
+    <Button class="w-36" color="rose" onclick={changeOffset}>{offset ? "Remove offset" : "Add offset"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

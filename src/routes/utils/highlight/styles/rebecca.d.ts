@@ -1,1 +1,1 @@
-export { rebecca as default } from './';
+export { rebecca as default } from "./";

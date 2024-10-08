@@ -1,7 +1,7 @@
-import Hr from './Hr.svelte';
-import type { Snippet } from 'svelte';
-import type { HTMLAttributes } from 'svelte/elements';
-import { hr } from './theme';
+import Hr from "./Hr.svelte";
+import type { Snippet } from "svelte";
+import type { HTMLAttributes } from "svelte/elements";
+import { hr } from "./theme";
 
 interface HrProps extends HTMLAttributes<HTMLElement> {
   children?: Snippet;

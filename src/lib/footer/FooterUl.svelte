@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type FooterUlProps as Props, footerUl } from './';
+  import { type FooterUlProps as Props, footerUl } from "./";
 
   let { class: ulClass, children, ...restProps }: Props = $props();
   const base = $derived(footerUl({ class: ulClass }));

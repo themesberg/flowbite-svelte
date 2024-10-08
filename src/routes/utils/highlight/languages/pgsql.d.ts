@@ -1,2 +1,2 @@
-export { pgsql } from './';
-export { pgsql as default } from './';
+export { pgsql } from "./";
+export { pgsql as default } from "./";

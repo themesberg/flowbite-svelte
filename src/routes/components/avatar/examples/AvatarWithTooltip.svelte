@@ -1,5 +1,5 @@
 <script>
-  import { Avatar, Tooltip } from '$lib';
+  import { Avatar, Tooltip } from "$lib";
 </script>
 
 <div class="flex justify-center gap-8">

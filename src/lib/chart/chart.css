@@ -60,7 +60,7 @@
   color: #111827;
   font-size: 0.875rem;
 }
-:is([dir='rtl']) .apexcharts-tooltip .apexcharts-tooltip-marker {
+:is([dir="rtl"]) .apexcharts-tooltip .apexcharts-tooltip-marker {
   margin-right: 0px;
   margin-left: e;
 }
@@ -113,7 +113,7 @@
   padding-left: 1.25rem;
   color: #6b7280 !important;
 }
-:is([dir='rtl']) .apexcharts-canvas .apexcharts-legend-text {
+:is([dir="rtl"]) .apexcharts-canvas .apexcharts-legend-text {
   padding-right: 0.5rem;
 }
 .apexcharts-canvas .apexcharts-legend-text:not(.apexcharts-inactive-legend):hover {

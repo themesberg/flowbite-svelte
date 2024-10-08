@@ -1,2 +1,2 @@
-export { vim } from './';
-export { vim as default } from './';
+export { vim } from "./";
+export { vim as default } from "./";

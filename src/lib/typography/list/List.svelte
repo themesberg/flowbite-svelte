@@ -1,15 +1,15 @@
 <script lang="ts">
-  import { setContext } from 'svelte';
-  import { type ListProps as Props, list } from './index';
+  import { setContext } from "svelte";
+  import { type ListProps as Props, list } from "./index";
 
-  let { children, tag = 'ul', isContenteditable = false, position = 'inside', ctxClass, class: className, ...restProps }: Props = $props();
+  let { children, tag = "ul", isContenteditable = false, position = "inside", ctxClass, class: className, ...restProps }: Props = $props();
 
-  let contextClass = $state(ctxClass || '');
+  let contextClass = $state(ctxClass || "");
 
-  setContext('ctxClass', () => contextClass);
+  setContext("ctxClass", () => contextClass);
 
   $effect(() => {
-    contextClass = ctxClass || '';
+    contextClass = ctxClass || "";
   });
 
   let classList = $derived(list({ position, tag, className }));

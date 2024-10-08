@@ -1,33 +1,33 @@
 <script lang="ts">
-  import { getContext } from 'svelte';
-  import { twMerge } from 'tailwind-merge';
-  import { tv } from 'tailwind-variants';
-  import { type ListgroupItemProps as Props, listGroupItem } from '.';
+  import { getContext } from "svelte";
+  import { twMerge } from "tailwind-merge";
+  import { tv } from "tailwind-variants";
+  import { type ListgroupItemProps as Props, listGroupItem } from ".";
 
-  let { children, onclick, active, current, disabled, name, Icon, href, currentClass = 'text-white bg-primary-700 dark:text-white dark:bg-gray-800', normalClass, disabledClass = 'text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400', liClass = 'py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg', class: className, ...restProps }: Props = $props();
+  let { children, onclick, active, current, disabled, name, Icon, href, currentClass = "text-white bg-primary-700 dark:text-white dark:bg-gray-800", normalClass, disabledClass = "text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400", liClass = "py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg", class: className, ...restProps }: Props = $props();
 
-  active = getContext('active');
+  active = getContext("active");
 
   const itemClass = listGroupItem({
-    state: disabled ? 'disabled' : current ? 'current' : 'normal',
+    state: disabled ? "disabled" : current ? "current" : "normal",
     active,
     class: twMerge(liClass, disabled ? disabledClass : current ? currentClass : normalClass, className)
   });
 
   const buttonClass = tv({
-    base: 'flex items-center text-left',
+    base: "flex items-center text-left",
     extend: listGroupItem
   })({
-    state: disabled ? 'disabled' : current ? 'current' : 'normal',
+    state: disabled ? "disabled" : current ? "current" : "normal",
     active,
     class: itemClass
   });
 
   const linkClass = tv({
-    base: 'block',
+    base: "block",
     extend: listGroupItem
   })({
-    state: disabled ? 'disabled' : current ? 'current' : 'normal',
+    state: disabled ? "disabled" : current ? "current" : "normal",
     active,
     class: itemClass
   });
@@ -59,7 +59,7 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children: Snippet;
-@props:onclick: (event?: MouseEvent) => void;
+@props:onclick: (event?;
 @props:active: boolean;
 @props:current: boolean;
 @props:disabled: boolean;

@@ -1,6 +1,6 @@
 <script>
-  import { Popover, Button, Avatar } from '$lib';
-  import { GlobeOutline, HeartSolid, ThumbsUpSolid, DotsHorizontalOutline } from 'flowbite-svelte-icons';
+  import { Popover, Button, Avatar } from "$lib";
+  import { GlobeOutline, HeartSolid, ThumbsUpSolid, DotsHorizontalOutline } from "flowbite-svelte-icons";
 </script>
 
 <div class="flex h-80 items-end justify-center">

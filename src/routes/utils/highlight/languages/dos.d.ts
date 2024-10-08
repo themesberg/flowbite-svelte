@@ -1,2 +1,2 @@
-export { dos } from './';
-export { dos as default } from './';
+export { dos } from "./";
+export { dos as default } from "./";

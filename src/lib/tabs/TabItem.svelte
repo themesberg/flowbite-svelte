@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { getContext } from 'svelte';
-  import { writable } from 'svelte/store';
-  import { type TabitemProps as Props, type TabCtxType, tabItem, tabs } from '.';
+  import { getContext } from "svelte";
+  import { writable } from "svelte/store";
+  import { type TabitemProps as Props, type TabCtxType, tabItem, tabs } from ".";
 
-  let { children, titleSlot, open = false, title = 'Tab title', activeClass, inactiveClass, class: className, disabled, tabStyle, ...restProps }: Props = $props();
+  let { children, titleSlot, open = false, title = "Tab title", activeClass, inactiveClass, class: className, disabled, tabStyle, ...restProps }: Props = $props();
 
-  const ctx: TabCtxType = getContext('ctx');
-  let compoTabStyle = $derived(tabStyle ? tabStyle : ctx.tabStyle || 'full');
+  const ctx: TabCtxType = getContext("ctx");
+  let compoTabStyle = $derived(tabStyle ? tabStyle : ctx.tabStyle || "full");
   // console.log('tabStyle in TabItem', ctx);
   const { active, inactive } = $derived(tabs({ tabStyle: compoTabStyle, hasDivider: true }));
   // const tableCtx: TableCtxType = getContext('tableCtx');

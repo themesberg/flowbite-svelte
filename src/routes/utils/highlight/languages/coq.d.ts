@@ -1,2 +1,2 @@
-export { coq } from './';
-export { coq as default } from './';
+export { coq } from "./";
+export { coq as default } from "./";

@@ -1,6 +1,6 @@
-import CheckboxButton from './CheckboxButton.svelte';
-import type { SizeType, ColorName } from '$lib/types';
-import type { Snippet } from 'svelte';
+import CheckboxButton from "./CheckboxButton.svelte";
+import type { SizeType, ColorName } from "$lib/types";
+import type { Snippet } from "svelte";
 
 interface CheckboxButtonProps {
   children: Snippet;
@@ -12,7 +12,7 @@ interface CheckboxButtonProps {
   pill?: boolean;
   outline?: boolean;
   size?: SizeType;
-  color?: ColorName | 'alternative' | 'dark' | 'light';
+  color?: ColorName | "alternative" | "dark" | "light";
   shadow?: boolean;
 }
 

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Popover, Label, Input, Checkbox, Button } from '$lib';
-  import { CheckOutline, CloseOutline } from 'flowbite-svelte-icons';
+  import { Popover, Label, Input, Checkbox, Button } from "$lib";
+  import { CheckOutline, CloseOutline } from "flowbite-svelte-icons";
 </script>
 
 <form class="mb-8">

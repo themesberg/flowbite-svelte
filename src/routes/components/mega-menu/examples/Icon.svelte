@@ -1,18 +1,18 @@
 <script>
-  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, uiHelpers } from '$lib';
-  import { ChevronDownOutline, UserCircleOutline } from 'flowbite-svelte-icons';
+  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, uiHelpers } from "$lib";
+  import { ChevronDownOutline, UserCircleOutline } from "flowbite-svelte-icons";
   let menu = [
-    { name: 'About us', href: '/about', Icon: UserCircleOutline },
-    { name: 'Blog', href: '/blog', Icon: UserCircleOutline },
-    { name: 'Contact us', href: '/contact', Icon: UserCircleOutline },
-    { name: 'Library', href: '/library', Icon: UserCircleOutline },
-    { name: 'Newsletter', href: '/news', Icon: UserCircleOutline },
-    { name: 'Support Center', href: '/support', Icon: UserCircleOutline },
-    { name: 'Resources', href: '/resource', Icon: UserCircleOutline },
-    { name: 'Playground', href: '/play', Icon: UserCircleOutline },
-    { name: 'Terms', href: '/tersm', Icon: UserCircleOutline },
-    { name: 'Pro Version', href: '/pro', Icon: UserCircleOutline },
-    { name: 'License', href: '/license', Icon: UserCircleOutline }
+    { name: "About us", href: "/about", Icon: UserCircleOutline },
+    { name: "Blog", href: "/blog", Icon: UserCircleOutline },
+    { name: "Contact us", href: "/contact", Icon: UserCircleOutline },
+    { name: "Library", href: "/library", Icon: UserCircleOutline },
+    { name: "Newsletter", href: "/news", Icon: UserCircleOutline },
+    { name: "Support Center", href: "/support", Icon: UserCircleOutline },
+    { name: "Resources", href: "/resource", Icon: UserCircleOutline },
+    { name: "Playground", href: "/play", Icon: UserCircleOutline },
+    { name: "Terms", href: "/tersm", Icon: UserCircleOutline },
+    { name: "Pro Version", href: "/pro", Icon: UserCircleOutline },
+    { name: "License", href: "/license", Icon: UserCircleOutline }
   ];
   let nav = uiHelpers();
   let navStatus = $state(false);

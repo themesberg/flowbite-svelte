@@ -1,1 +1,1 @@
-export { blackMetalBathory as default } from './';
+export { blackMetalBathory as default } from "./";

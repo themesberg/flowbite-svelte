@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { type BreadcrumbItemProps as Props, breadcrumb } from './index';
-  import { twMerge } from 'tailwind-merge';
+  import { type BreadcrumbItemProps as Props, breadcrumb } from "./index";
+  import { twMerge } from "tailwind-merge";
 
   let { children, icon, home = false, href, linkClass, spanClass, homeClass, class: className, ...restProps }: Props = $props();
 

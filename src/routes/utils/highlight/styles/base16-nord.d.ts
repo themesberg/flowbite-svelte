@@ -1,1 +1,1 @@
-export { base16Nord as default } from './';
+export { base16Nord as default } from "./";

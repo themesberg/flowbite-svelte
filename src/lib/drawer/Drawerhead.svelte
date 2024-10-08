@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { drawerhead, type DrawerheadProps as Props } from '.';
+  import { drawerhead, type DrawerheadProps as Props } from ".";
 
-  let { closeIcon, children, tag = 'h5', headClass, buttonClass, svgClass, class: className, ...restProps }: Props = $props();
+  let { closeIcon, children, tag = "h5", headClass, buttonClass, svgClass, class: className, ...restProps }: Props = $props();
 
   const { base, button, svg } = $derived(drawerhead());
 </script>
@@ -26,11 +26,11 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: closeIcon: any;
-@props:children: any;
-@props:tag: any = 'h5';
-@props:headClass: any;
-@props:buttonClass: any;
-@props:svgClass: any;
+@props: closeIcon: Snippet;
+@props:children: Snippet;
+@props:tag: string = 'h5';
+@props:headClass: string;
+@props:buttonClass: string;
+@props:svgClass: string;
 @props:class: string;
 -->

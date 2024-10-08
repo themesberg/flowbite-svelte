@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type FooterBrandProps as Props, footerBrand } from '.';
+  import { type FooterBrandProps as Props, footerBrand } from ".";
 
   let { children, aClass, spanClass, imgClass, href, src, alt, name, ...restProps }: Props = $props();
 

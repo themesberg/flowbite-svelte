@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
-  import { type MarkProps as Props, mark } from './index';
+  import { twMerge } from "tailwind-merge";
+  import { type MarkProps as Props, mark } from "./index";
 
   let { children, class: className, ...restProps }: Props = $props();
 </script>

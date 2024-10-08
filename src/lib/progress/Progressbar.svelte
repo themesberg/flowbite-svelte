@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { cubicOut } from 'svelte/easing';
-  import { twMerge } from 'tailwind-merge';
-  import { tweened } from 'svelte/motion';
-  import { type ProgressbarProps as Props, progressbar } from '.';
+  import { cubicOut } from "svelte/easing";
+  import { twMerge } from "tailwind-merge";
+  import { tweened } from "svelte/motion";
+  import { type ProgressbarProps as Props, progressbar } from ".";
 
-  let { progress = '45', precision = 0, tweenDuration = 400, animate = false, size = 'h-2.5', labelInside = false, labelOutside = '', easing = cubicOut, color = 'primary', div2Class, oustsideSpanClass, oustsideProgressClass, labeloutsidedivClass, divClass, ...restProps }: Props = $props();
+  let { progress = "45", precision = 0, tweenDuration = 400, animate = false, size = "h-2.5", labelInside = false, labelOutside = "", easing = cubicOut, color = "primary", div2Class, oustsideSpanClass, oustsideProgressClass, labeloutsidedivClass, divClass, ...restProps }: Props = $props();
 
   const _progress = tweened(0, {
     duration: animate ? tweenDuration : 0,

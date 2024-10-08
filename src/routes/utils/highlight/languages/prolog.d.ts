@@ -1,2 +1,2 @@
-export { prolog } from './';
-export { prolog as default } from './';
+export { prolog } from "./";
+export { prolog as default } from "./";

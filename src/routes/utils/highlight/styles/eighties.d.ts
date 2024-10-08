@@ -1,1 +1,1 @@
-export { eighties as default } from './';
+export { eighties as default } from "./";

@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import type { HTMLAttributes } from 'svelte/elements';
-  import { Heading } from '$lib';
-  import { h2Cls } from './theme';
+  import type { Snippet } from "svelte";
+  import type { HTMLAttributes } from "svelte/elements";
+  import { Heading } from "$lib";
+  import { h2Cls } from "./theme";
   interface Props extends HTMLAttributes<HTMLHeadingElement> {
     children: Snippet;
   }

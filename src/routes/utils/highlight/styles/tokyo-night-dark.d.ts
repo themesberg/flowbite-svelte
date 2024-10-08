@@ -1,1 +1,1 @@
-export { tokyoNightDark as default } from './';
+export { tokyoNightDark as default } from "./";

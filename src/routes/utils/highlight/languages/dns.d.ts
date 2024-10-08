@@ -1,2 +1,2 @@
-export { dns } from './';
-export { dns as default } from './';
+export { dns } from "./";
+export { dns as default } from "./";

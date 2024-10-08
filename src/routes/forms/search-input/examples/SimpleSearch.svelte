@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Search, Button } from '$lib';
-  import { SearchOutline } from 'flowbite-svelte-icons';
+  import { Search, Button } from "$lib";
+  import { SearchOutline } from "flowbite-svelte-icons";
 </script>
 
 <form class="flex gap-2">

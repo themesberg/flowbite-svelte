@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { getContext } from 'svelte';
-  import { writable, type Writable } from 'svelte/store';
-  import type { ParamsType } from '../types';
-  import { slide } from 'svelte/transition';
-  import { uiHelpers } from '$lib';
-  import { type SidebarDropdownWrapperProps as Props, sidebardropdownwrapper } from '.';
+  import { getContext } from "svelte";
+  import { writable, type Writable } from "svelte/store";
+  import type { ParamsType } from "../types";
+  import { slide } from "svelte/transition";
+  import { uiHelpers } from "$lib";
+  import { type SidebarDropdownWrapperProps as Props, sidebardropdownwrapper } from ".";
 
   type SidebarContext = {
     selected?: Writable<object | null>;
@@ -17,7 +17,7 @@
 
   let sidebarDropdown = uiHelpers();
   sidebarDropdown.isOpen = isOpen;
-  let ctx = getContext<SidebarContext>('sidebarContext') || { isSingle: false };
+  let ctx = getContext<SidebarContext>("sidebarContext") || { isSingle: false };
   let self = {};
 
   // Create a new Writable store for tracking the selected dropdown if it doesn't exist in the context

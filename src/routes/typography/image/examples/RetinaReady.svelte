@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Img } from '$lib';
+  import { Img } from "$lib";
 </script>
 
 <div class="flex justify-center">

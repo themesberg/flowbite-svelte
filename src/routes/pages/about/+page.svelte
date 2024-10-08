@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { P, A, List, Li } from '$lib';
-  import { removeHyphensAndCapitalize } from '../../utils/helpers';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
+  import { P, A, List, Li } from "$lib";
+  import { removeHyphensAndCapitalize } from "../../utils/helpers";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
   /*eslint no-undef: "off"*/
   const name = __NAME__;
   const svelte5uilibVersion = __VERSION__;

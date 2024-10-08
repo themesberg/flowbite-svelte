@@ -1,1 +1,1 @@
-export { shapeshifter as default } from './';
+export { shapeshifter as default } from "./";

@@ -1,20 +1,20 @@
-import { tv } from 'tailwind-variants';
+import { tv } from "tailwind-variants";
 
 export const list = tv({
-  base: '',
+  base: "",
   variants: {
     tag: {
-      ul: 'list-disc',
-      dl: 'list-none',
-      ol: 'list-decimal'
+      ul: "list-disc",
+      dl: "list-none",
+      ol: "list-decimal"
     },
     position: {
-      inside: 'list-inside',
-      outside: 'list-outside'
+      inside: "list-inside",
+      outside: "list-outside"
     }
   },
   defaultVariants: {
-    position: 'inside',
-    tag: 'ul'
+    position: "inside",
+    tag: "ul"
   }
 });

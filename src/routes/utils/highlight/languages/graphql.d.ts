@@ -1,2 +1,2 @@
-export { graphql } from './';
-export { graphql as default } from './';
+export { graphql } from "./";
+export { graphql as default } from "./";

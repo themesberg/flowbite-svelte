@@ -1,31 +1,31 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { Banner, banner, Button, Skeleton, ImagePlaceholder, Label, Radio, type BannerProps, uiHelpers } from '$lib';
-  import { BullhornOutline } from 'flowbite-svelte-icons';
-  import { blur, fly, slide, scale } from 'svelte/transition';
-  import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
-  import { linear } from 'svelte/easing';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import { Banner, banner, Button, Skeleton, ImagePlaceholder, Label, Radio, type BannerProps, uiHelpers } from "$lib";
+  import { BullhornOutline } from "flowbite-svelte-icons";
+  import { blur, fly, slide, scale } from "svelte/transition";
+  import type { FlyParams, BlurParams, SlideParams, ScaleParams } from "svelte/transition";
+  import { linear } from "svelte/easing";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'banner';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "banner";
 
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
   const exampleArr = [
-    { name: 'Newsletter signup banner', component: ExampleComponents.NewsletterSignupBanner },
-    { name: 'Information banner', component: ExampleComponents.InformationBanner }
+    { name: "Newsletter signup banner", component: ExampleComponents.NewsletterSignupBanner },
+    { name: "Information banner", component: ExampleComponents.InformationBanner }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -40,24 +40,24 @@
   // interactive example
   // position, bannerType, color, class:divClass
   const colors = Object.keys(banner.variants.color);
-  let position: BannerProps['position'] = $state('sticky');
+  let position: BannerProps["position"] = $state("sticky");
   const changePosition = () => {
-    position = position === 'sticky' ? 'absolute' : 'sticky';
-    if (position === 'sticky') {
-      bannerType = 'default';
+    position = position === "sticky" ? "absolute" : "sticky";
+    if (position === "sticky") {
+      bannerType = "default";
     }
   };
-  let bannerType: BannerProps['bannerType'] = $state('default');
+  let bannerType: BannerProps["bannerType"] = $state("default");
   const changeBannerType = () => {
-    bannerType = bannerType === 'default' ? 'cta' : 'default';
-    if (bannerType === 'cta') {
-      position = 'absolute';
+    bannerType = bannerType === "default" ? "cta" : "default";
+    if (bannerType === "cta") {
+      position = "absolute";
     }
   };
-  let color: BannerProps['color'] = $state('primary');
-  let bannerClass: BannerProps['class'] = $state('');
+  let color: BannerProps["color"] = $state("primary");
+  let bannerClass: BannerProps["class"] = $state("");
   const changeClass = () => {
-    bannerClass = bannerClass === '' ? 'mt-4' : '';
+    bannerClass = bannerClass === "" ? "mt-4" : "";
   };
   let bannerStatus = $state(true);
   const changeStatus = () => {
@@ -72,13 +72,13 @@
   };
 
   const transitions: TransitionOption[] = [
-    { name: 'Fly', transition: fly, params: { duration: 500, easing: linear, x: 150 } },
-    { name: 'Blur', transition: blur, params: { duration: 500, easing: linear } },
-    { name: 'Slide', transition: slide, params: { duration: 500, easing: linear, x: -150 } },
-    { name: 'Scale', transition: scale, params: { duration: 500, easing: linear } }
+    { name: "Fly", transition: fly, params: { duration: 500, easing: linear, x: 150 } },
+    { name: "Blur", transition: blur, params: { duration: 500, easing: linear } },
+    { name: "Slide", transition: slide, params: { duration: 500, easing: linear, x: -150 } },
+    { name: "Scale", transition: scale, params: { duration: 500, easing: linear } }
   ];
 
-  let selectedTransition = $state('Fly');
+  let selectedTransition = $state("Fly");
   let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
 
   // code generator
@@ -86,27 +86,27 @@
     (() => {
       // position, bannerType color, class
       let props = [];
-      if (color !== 'primary') props.push(` color="${color}"`);
-      if (bannerType !== 'default') props.push(` bannerType="${bannerType}"`);
-      if (position !== 'sticky') props.push(` position="${position}"`);
+      if (color !== "primary") props.push(` color="${color}"`);
+      if (bannerType !== "default") props.push(` bannerType="${bannerType}"`);
+      if (position !== "sticky") props.push(` position="${position}"`);
       if (bannerClass) props.push(` class="${bannerClass}"`);
-      if (!bannerStatus) props.push(' bannerStatus={false}');
+      if (!bannerStatus) props.push(" bannerStatus={false}");
       if (currentTransition !== transitions[0]) {
         props.push(` transition={${currentTransition.transition.name}}`);
 
         // Generate params string without quotes and handle functions
         const paramsString = Object.entries(currentTransition.params)
           .map(([key, value]) => {
-            if (typeof value === 'function') {
+            if (typeof value === "function") {
               return `${key}:${value.name}`;
             }
             return `${key}:${value}`;
           })
-          .join(',');
+          .join(",");
         props.push(` params={{${paramsString}}}`);
       }
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
       return `<div class="relative h-40">
   <Banner${propsString}>
@@ -170,7 +170,7 @@
     <div class="mb-4 flex flex-wrap space-x-4">
       <Label class="mb-4 w-full font-bold">Color</Label>
       {#each colors as colorOption}
-        <Radio labelClass="w-24 my-1" name="color" bind:group={color} color={colorOption as BannerProps['color']} value={colorOption}>{colorOption}</Radio>
+        <Radio labelClass="w-24 my-1" name="color" bind:group={color} color={colorOption as BannerProps["color"]} value={colorOption}>{colorOption}</Radio>
       {/each}
     </div>
     <div class="mb-4 flex flex-wrap space-x-4">
@@ -180,9 +180,9 @@
       {/each}
     </div>
     <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-      <Button class="w-40" onclick={changePosition}>Position: {position === 'sticky' ? 'absolute' : 'sticky'}</Button>
-      <Button class="w-40" color="blue" onclick={changeBannerType}>Type: {bannerType === 'default' ? 'cta' : 'default'}</Button>
-      <Button class="w-40" color="green" onclick={changeClass}>{bannerClass ? 'Remove class' : 'Add class'}</Button>
+      <Button class="w-40" onclick={changePosition}>Position: {position === "sticky" ? "absolute" : "sticky"}</Button>
+      <Button class="w-40" color="blue" onclick={changeBannerType}>Type: {bannerType === "default" ? "cta" : "default"}</Button>
+      <Button class="w-40" color="green" onclick={changeClass}>{bannerClass ? "Remove class" : "Add class"}</Button>
     </div>
   </div>
   {#snippet codeblock()}

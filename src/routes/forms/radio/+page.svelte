@@ -1,32 +1,32 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { Radio, radio, Helper, Label, Button, uiHelpers, type RadioProps, type RadioColorType } from '$lib';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import { Radio, radio, Helper, Label, Button, uiHelpers, type RadioProps, type RadioColorType } from "$lib";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'forms/radio';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "forms/radio";
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
   const exampleArr = [
-    { name: 'Radio with a link', component: ExampleComponents.RadioWithALink },
-    { name: 'Bordered', component: ExampleComponents.Bordered },
-    { name: 'Advanced layout', component: ExampleComponents.AdvancedLayout },
-    { name: 'Horizontal list group', component: ExampleComponents.HorizontalListGroup },
-    { name: 'Inline layout', component: ExampleComponents.InlineLayout },
-    { name: 'Radio button', component: ExampleComponents.RadioButton },
-    { name: 'Radio in dropdown', component: ExampleComponents.RadioInDropdown },
-    { name: 'Radio list group', component: ExampleComponents.RadioListGroup }
+    { name: "Radio with a link", component: ExampleComponents.RadioWithALink },
+    { name: "Bordered", component: ExampleComponents.Bordered },
+    { name: "Advanced layout", component: ExampleComponents.AdvancedLayout },
+    { name: "Horizontal list group", component: ExampleComponents.HorizontalListGroup },
+    { name: "Inline layout", component: ExampleComponents.InlineLayout },
+    { name: "Radio button", component: ExampleComponents.RadioButton },
+    { name: "Radio in dropdown", component: ExampleComponents.RadioInDropdown },
+    { name: "Radio list group", component: ExampleComponents.RadioListGroup }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -38,24 +38,24 @@
   const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
   type GroupType = string;
-  const colors = Object.keys(radio.variants.color) as RadioProps<GroupType>['color'][];
-  let radioColor: RadioProps<GroupType>['color'] = $state('primary');
+  const colors = Object.keys(radio.variants.color) as RadioProps<GroupType>["color"][];
+  let radioColor: RadioProps<GroupType>["color"] = $state("primary");
   // hack for demo purposes
-  let demoRadioColor: RadioProps<GroupType>['color'] = $state('primary');
+  let demoRadioColor: RadioProps<GroupType>["color"] = $state("primary");
   let isChecked = $state(true);
-  const handleOnchange = (colorOption: RadioProps<GroupType>['color']) => {
+  const handleOnchange = (colorOption: RadioProps<GroupType>["color"]) => {
     demoRadioColor = colorOption;
     isChecked = false;
     isChecked = true;
   };
   // end of hack
   let helperState = $state(false);
-  const inputClasses = ['', 'w-6 h-6'];
+  const inputClasses = ["", "w-6 h-6"];
   let inputClass = $state(inputClasses[0]);
   const changeInputClass = () => {
     inputClass = inputClass === inputClasses[0] ? inputClasses[1] : inputClasses[0];
   };
-  const labelClasses = ['w-24 m-2', ''];
+  const labelClasses = ["w-24 m-2", ""];
   let labelClass = $state(labelClasses[0]);
   const changeLabelClass = () => {
     labelClass = labelClass === labelClasses[0] ? labelClasses[1] : labelClasses[0];
@@ -64,7 +64,7 @@
   const changeDisabled = () => {
     disabled = !disabled;
   };
-  let helperColor: RadioProps<GroupType>['color'] = $state('primary');
+  let helperColor: RadioProps<GroupType>["color"] = $state("primary");
   let helperSlot = $state(false);
   const changeHelperSlot = () => {
     helperSlot = !helperSlot;
@@ -75,18 +75,18 @@
   let generatedCode = $derived(
     (() => {
       let props = [];
-      if (radioColor !== 'primary') props.push(`color="${radioColor}"`);
-      if (labelClass !== '') props.push(`labelClass="${labelClass}"`);
-      if (inputClass !== '') props.push(`inputClass="${inputClass}"`);
-      if (disabled) props.push('disabled');
+      if (radioColor !== "primary") props.push(`color="${radioColor}"`);
+      if (labelClass !== "") props.push(`labelClass="${labelClass}"`);
+      if (inputClass !== "") props.push(`inputClass="${inputClass}"`);
+      if (disabled) props.push("disabled");
       // if (indeterminateState) props.push(' indeterminate');
       // if (disabledState) props.push(' disabled');
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
       return `<Radio
   name="my_radio"${propsString}>Item 1</Radio>
-${helperSlot ? `<Helper class="ps-6" color="${helperColor}">Helper text</Helper>` : ''}`;
+${helperSlot ? `<Helper class="ps-6" color="${helperColor}">Helper text</Helper>` : ""}`;
     })()
   );
 
@@ -133,16 +133,16 @@ ${helperSlot ? `<Helper class="ps-6" color="${helperColor}">Helper text</Helper>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
-    <Button class="mb-4 w-40" color="secondary" onclick={changeHelperSlot}>{helperSlot ? 'Remove helper' : 'Add helper'}</Button>
+    <Button class="mb-4 w-40" color="secondary" onclick={changeHelperSlot}>{helperSlot ? "Remove helper" : "Add helper"}</Button>
     <Label class="mb-4 w-full font-bold">Helper Color</Label>
     {#each colors as colorOption}
       <Radio labelClass="w-24 my-1 {helperSlot ? '' : 'opacity-30 cursor-not-allowed'}" disabled={helperSlot ? false : true} name="helper_color" bind:group={helperColor} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-32" color="primary" onclick={changeInputClass}>{inputClass === inputClasses[0] ? 'inputClass=w-6 h-6' : 'Default size'}</Button>
-    <Button class="w-32" color="secondary" onclick={changeLabelClass}>{labelClass === labelClasses[0] ? 'Default labelClass' : 'labelClass=w-24 m-2'}</Button>
-    <Button class="w-32" color="lime" onclick={changeDisabled}>{disabled ? 'Enabled' : 'Disabled'}</Button>
+    <Button class="w-32" color="primary" onclick={changeInputClass}>{inputClass === inputClasses[0] ? "inputClass=w-6 h-6" : "Default size"}</Button>
+    <Button class="w-32" color="secondary" onclick={changeLabelClass}>{labelClass === labelClasses[0] ? "Default labelClass" : "labelClass=w-24 m-2"}</Button>
+    <Button class="w-32" color="lime" onclick={changeDisabled}>{disabled ? "Enabled" : "Disabled"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

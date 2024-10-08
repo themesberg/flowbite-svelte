@@ -1,1 +1,1 @@
-export { pop as default } from './';
+export { pop as default } from "./";

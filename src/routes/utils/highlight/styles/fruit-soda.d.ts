@@ -1,1 +1,1 @@
-export { fruitSoda as default } from './';
+export { fruitSoda as default } from "./";

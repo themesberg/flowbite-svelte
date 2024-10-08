@@ -1,1 +1,1 @@
-export { greenScreen as default } from './';
+export { greenScreen as default } from "./";

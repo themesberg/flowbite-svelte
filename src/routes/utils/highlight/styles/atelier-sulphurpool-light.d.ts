@@ -1,1 +1,1 @@
-export { atelierSulphurpoolLight as default } from './';
+export { atelierSulphurpoolLight as default } from "./";

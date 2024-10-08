@@ -1,4 +1,4 @@
-import register from 'highlight.js/lib/languages/lsl';
+import register from "highlight.js/lib/languages/lsl";
 
-export const lsl = { name: 'lsl', register };
+export const lsl = { name: "lsl", register };
 export default lsl;

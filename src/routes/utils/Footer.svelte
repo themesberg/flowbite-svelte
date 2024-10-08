@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Footer, FooterBrand, FooterLi, FooterUl } from '$lib';
+  import { Footer, FooterBrand, FooterLi, FooterUl } from "$lib";
 </script>
 
 <Footer class="rounded-none border-t border-gray-200 shadow-none dark:border-gray-600 dark:bg-gray-950" footerType="logo">

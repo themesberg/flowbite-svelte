@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { type DropdownProps as Props, dropdown } from './';
-  import { fly } from 'svelte/transition';
-  import type { ParamsType } from '$lib/types';
+  import { type DropdownProps as Props, dropdown } from "./";
+  import { fly } from "svelte/transition";
+  import type { ParamsType } from "$lib/types";
 
   let { children, dropdownStatus = $bindable(), closeDropdown, class: className, backdropClass, params, transition = fly, ...restProps }: Props = $props();
 

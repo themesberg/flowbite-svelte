@@ -1,1 +1,1 @@
-export { windowsNtLight as default } from './';
+export { windowsNtLight as default } from "./";

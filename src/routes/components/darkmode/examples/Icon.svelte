@@ -1,6 +1,6 @@
 <script>
-  import { Darkmode } from '$lib';
-  import { ThumbsUpSolid, ThumbsDownSolid } from 'flowbite-svelte-icons';
+  import { Darkmode } from "$lib";
+  import { ThumbsUpSolid, ThumbsDownSolid } from "flowbite-svelte-icons";
 </script>
 
 <Darkmode class="text-lg">

@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { type MegaMenuProps as Props, megamenu } from '.';
-  import { fly } from 'svelte/transition';
+  import { type MegaMenuProps as Props, megamenu } from ".";
+  import { fly } from "svelte/transition";
 
   let { children, footer, items = [], full, dropdownStatus = $bindable(), class: className, backdropClass, params, transition = fly, ...restProps }: Props = $props();
 
   const { base, div, ul, footerDiv } = $derived(megamenu());
-  $inspect('dropdownStatus', dropdownStatus);
+  $inspect("dropdownStatus", dropdownStatus);
 </script>
 
 <!-- Dropdown menu -->

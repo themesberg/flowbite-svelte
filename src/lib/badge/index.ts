@@ -1,11 +1,11 @@
-import { type VariantProps } from 'tailwind-variants';
-import type { Snippet } from 'svelte';
-import type { ParamsType, TransitionFunc } from '../types';
-import type { HTMLAttributes } from 'svelte/elements';
-import Badge from './Badge.svelte';
-import { badge } from './theme';
+import { type VariantProps } from "tailwind-variants";
+import type { Snippet } from "svelte";
+import type { ParamsType, TransitionFunc } from "../types";
+import type { HTMLAttributes } from "svelte/elements";
+import Badge from "./Badge.svelte";
+import { badge } from "./theme";
 
-type badgeColor = VariantProps<typeof badge>['color'];
+type badgeColor = VariantProps<typeof badge>["color"];
 
 interface BadgeProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;

@@ -1,1 +1,1 @@
-export { nova as default } from './';
+export { nova as default } from "./";

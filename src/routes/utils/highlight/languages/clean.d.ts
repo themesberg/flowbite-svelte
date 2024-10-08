@@ -1,2 +1,2 @@
-export { clean } from './';
-export { clean as default } from './';
+export { clean } from "./";
+export { clean as default } from "./";

@@ -1,1 +1,1 @@
-export { darcula as default } from './';
+export { darcula as default } from "./";

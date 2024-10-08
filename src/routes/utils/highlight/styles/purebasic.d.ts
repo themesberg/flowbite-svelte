@@ -1,1 +1,1 @@
-export { purebasic as default } from './';
+export { purebasic as default } from "./";

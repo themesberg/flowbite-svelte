@@ -1,9 +1,9 @@
 <script lang="ts">
-  import Button from '$lib/buttons/Button.svelte';
-  import { twMerge } from 'tailwind-merge';
-  import { type CheckboxButtonProps as Props } from '.';
+  import Button from "$lib/buttons/Button.svelte";
+  import { twMerge } from "tailwind-merge";
+  import { type CheckboxButtonProps as Props } from ".";
 
-  let { children, class: className, group = [], value = 'on', checked, inline = true, pill, outline, size, color, shadow, ...restProps }: Props = $props();
+  let { children, class: className, group = [], value = "on", checked, inline = true, pill, outline, size, color, shadow, ...restProps }: Props = $props();
 
   // react on external group changes
   function init(_: HTMLElement, _group: (string | number)[]) {
@@ -40,7 +40,7 @@
     }
   }
 
-  let buttonClass: string = $derived(twMerge(inline ? 'inline-flex' : 'flex', className));
+  let buttonClass: string = $derived(twMerge(inline ? "inline-flex" : "flex", className));
 </script>
 
 <Button tag="label" {checked} {pill} {outline} {size} {color} {shadow} class={buttonClass}>

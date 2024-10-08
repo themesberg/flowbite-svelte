@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Blockquote } from '$lib';
-  import { QuoteSolid } from 'flowbite-svelte-icons';
+  import { Blockquote } from "$lib";
+  import { QuoteSolid } from "flowbite-svelte-icons";
 </script>
 
 <Blockquote size="xl">

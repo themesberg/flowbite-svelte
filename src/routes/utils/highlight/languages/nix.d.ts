@@ -1,2 +1,2 @@
-export { nix } from './';
-export { nix as default } from './';
+export { nix } from "./";
+export { nix as default } from "./";

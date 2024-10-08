@@ -1,2 +1,2 @@
-export { qml } from './';
-export { qml as default } from './';
+export { qml } from "./";
+export { qml as default } from "./";

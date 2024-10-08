@@ -1,33 +1,33 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { Navbar, uiHelpers, Label, Radio } from '$lib';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import { Navbar, uiHelpers, Label, Radio } from "$lib";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'nav';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "nav";
 
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
   const exampleArr = [
-    { name: 'Default', component: ExampleComponents.Default },
-    { name: 'Breakpoint', component: ExampleComponents.Breakpoint },
-    { name: 'Cta button', component: ExampleComponents.CtaButton },
-    { name: 'Sticky', component: ExampleComponents.Sticky },
-    { name: 'Search navbar', component: ExampleComponents.SearchNavbar },
+    { name: "Default", component: ExampleComponents.Default },
+    { name: "Breakpoint", component: ExampleComponents.Breakpoint },
+    { name: "Cta button", component: ExampleComponents.CtaButton },
+    { name: "Sticky", component: ExampleComponents.Sticky },
+    { name: "Search navbar", component: ExampleComponents.SearchNavbar },
     // need to fix this for extra space for div relative
-    { name: 'Dropdown', component: ExampleComponents.Dropdown },
-    { name: 'Background color', component: ExampleComponents.BackgroundColor },
-    { name: 'User dropdown', component: ExampleComponents.UserDropdown }
+    { name: "Dropdown", component: ExampleComponents.Dropdown },
+    { name: "Background color", component: ExampleComponents.BackgroundColor },
+    { name: "User dropdown", component: ExampleComponents.UserDropdown }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));

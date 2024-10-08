@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { idGenerator } from '$lib/uiHelpers.svelte';
-  import { type ThumbupProps as Props } from '.';
+  import { idGenerator } from "$lib/uiHelpers.svelte";
+  import { type ThumbupProps as Props } from ".";
 
-  let { fillPercent = 100, fillColor = '#00b500', strokeColor = '#00b500', size = 24, ariaLabel = 'thumbup', id = idGenerator(), role = 'img', svgClass, ...restProps }: Props = $props();
+  let { fillPercent = 100, fillColor = "#00b500", strokeColor = "#00b500", size = 24, ariaLabel = "thumbup", id = idGenerator(), role = "img", svgClass, ...restProps }: Props = $props();
 </script>
 
 <svg width={size} height={size} {...restProps} class={svgClass} aria-label={ariaLabel} viewBox="0 0 24 24" {role} stroke-width="1.5" stroke="currentColor" fill="none">

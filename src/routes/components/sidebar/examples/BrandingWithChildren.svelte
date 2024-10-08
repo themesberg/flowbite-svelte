@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarButton, SidebarBrand, uiHelpers, CloseButton } from '$lib';
-  import { ChartOutline, GridSolid, MailBoxSolid, UserSolid } from 'flowbite-svelte-icons';
-  import PlusPlaceholder from '../../../utils/PlusPlaceholder.svelte';
-  const spanClass = 'flex-1 ms-3 whitespace-nowrap';
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarButton, SidebarBrand, uiHelpers, CloseButton } from "$lib";
+  import { ChartOutline, GridSolid, MailBoxSolid, UserSolid } from "flowbite-svelte-icons";
+  import PlusPlaceholder from "../../../utils/PlusPlaceholder.svelte";
+  const spanClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -10,9 +10,9 @@
     isDemoOpen = demoSidebarUi.isOpen;
   });
   const site = {
-    name: 'Flowbite-Svelte',
-    href: '/',
-    img: '/images/flowbite-svelte-icon-logo.svg'
+    name: "Flowbite-Svelte",
+    href: "/",
+    img: "/images/flowbite-svelte-icon-logo.svg"
   };
 </script>
 

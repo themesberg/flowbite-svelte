@@ -1,1 +1,1 @@
-export { hopscotch as default } from './';
+export { hopscotch as default } from "./";

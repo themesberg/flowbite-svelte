@@ -1,4 +1,4 @@
-import register from 'highlight.js/lib/languages/powershell';
+import register from "highlight.js/lib/languages/powershell";
 
-export const powershell = { name: 'powershell', register };
+export const powershell = { name: "powershell", register };
 export default powershell;

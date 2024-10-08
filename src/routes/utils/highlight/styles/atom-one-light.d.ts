@@ -1,1 +1,1 @@
-export { atomOneLight as default } from './';
+export { atomOneLight as default } from "./";

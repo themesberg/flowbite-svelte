@@ -1,1 +1,1 @@
-export { _3024 as default } from './';
+export { _3024 as default } from "./";

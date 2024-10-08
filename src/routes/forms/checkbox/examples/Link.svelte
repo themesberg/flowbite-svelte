@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Checkbox } from '$lib';
+  import { Checkbox } from "$lib";
 </script>
 
 <Checkbox>

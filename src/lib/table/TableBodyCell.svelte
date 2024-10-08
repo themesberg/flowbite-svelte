@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type TableBodyCellProps as Props, tablebodycell } from './';
+  import { type TableBodyCellProps as Props, tablebodycell } from "./";
 
   let { children, color, class: className, colspan, onclick, ...restProps }: Props = $props();
 

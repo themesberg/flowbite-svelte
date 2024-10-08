@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ButtonGroup, Button } from '$lib';
+  import { ButtonGroup, Button } from "$lib";
 </script>
 
 <ButtonGroup class="space-x-px">

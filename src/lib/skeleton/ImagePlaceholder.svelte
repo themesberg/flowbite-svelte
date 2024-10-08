@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { imagePlaceholder, type ImagePlaceholderProps as Props } from './index';
+  import { imagePlaceholder, type ImagePlaceholderProps as Props } from "./index";
 
-  let { size = 'md', rounded, class: className, ...restProps }: Props = $props();
+  let { size = "md", rounded, class: className, ...restProps }: Props = $props();
 
   const { base, image, svg, content, line } = $derived(
     imagePlaceholder({
@@ -18,13 +18,13 @@
     </svg>
   </div>
   <div class={content()}>
-    <div class={line({ class: 'mb-4 h-2.5 w-1/2' })}></div>
-    <div class={line({ class: 'mb-2.5 h-2 w-9/12' })}></div>
-    <div class={line({ class: 'mb-2.5 h-2' })}></div>
-    <div class={line({ class: 'mb-2.5 h-2' })}></div>
-    <div class={line({ class: 'mb-2.5 h-2 w-10/12' })}></div>
-    <div class={line({ class: 'mb-2.5 h-2 w-11/12' })}></div>
-    <div class={line({ class: 'h-2 w-9/12' })}></div>
+    <div class={line({ class: "mb-4 h-2.5 w-1/2" })}></div>
+    <div class={line({ class: "mb-2.5 h-2 w-9/12" })}></div>
+    <div class={line({ class: "mb-2.5 h-2" })}></div>
+    <div class={line({ class: "mb-2.5 h-2" })}></div>
+    <div class={line({ class: "mb-2.5 h-2 w-10/12" })}></div>
+    <div class={line({ class: "mb-2.5 h-2 w-11/12" })}></div>
+    <div class={line({ class: "h-2 w-9/12" })}></div>
   </div>
   <span class="sr-only">Loading...</span>
 </div>

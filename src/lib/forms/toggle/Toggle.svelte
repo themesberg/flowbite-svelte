@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { Label } from '../label';
-  import { type ToggleProps as Props, toggle } from './index';
+  import { Label } from "../label";
+  import { type ToggleProps as Props, toggle } from "./index";
 
-  let { children, toggleSize = 'default', value, checked = $bindable(), disabled, color = 'primary', aria_describedby, labelClass, inputClass, spanClass, leftLabel, ...restProps }: Props = $props();
+  let { children, toggleSize = "default", value, checked = $bindable(), disabled, color = "primary", aria_describedby, labelClass, inputClass, spanClass, leftLabel, ...restProps }: Props = $props();
 
   const { input, label, span } = $derived(toggle({ color, checked, size: toggleSize, disabled }));
 </script>

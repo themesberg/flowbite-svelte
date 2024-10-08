@@ -1,35 +1,35 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { Label, Radio, uiHelpers } from '$lib';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import H3 from '../../utils/H3.svelte';
-  import { isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import { Label, Radio, uiHelpers } from "$lib";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import H3 from "../../utils/H3.svelte";
+  import { isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'rating';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "rating";
 
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
   const exampleArr = [
-    { name: 'Default', component: ExampleComponents.Default },
-    { name: 'Star', component: ExampleComponents.Star },
-    { name: 'Text', component: ExampleComponents.Text },
-    { name: 'Count', component: ExampleComponents.Count },
-    { name: 'Icon', component: ExampleComponents.Icon },
-    { name: 'Advanced rating', component: ExampleComponents.AdvancedRating },
-    { name: 'Advanced rating and icon', component: ExampleComponents.AdvancedRatingAndIcon },
-    { name: 'Score rating', component: ExampleComponents.ScoreRating },
-    { name: 'Rating comment', component: ExampleComponents.RatingComment },
-    { name: 'Review content', component: ExampleComponents.ReviewContent }
+    { name: "Default", component: ExampleComponents.Default },
+    { name: "Star", component: ExampleComponents.Star },
+    { name: "Text", component: ExampleComponents.Text },
+    { name: "Count", component: ExampleComponents.Count },
+    { name: "Icon", component: ExampleComponents.Icon },
+    { name: "Advanced rating", component: ExampleComponents.AdvancedRating },
+    { name: "Advanced rating and icon", component: ExampleComponents.AdvancedRatingAndIcon },
+    { name: "Score rating", component: ExampleComponents.ScoreRating },
+    { name: "Rating comment", component: ExampleComponents.RatingComment },
+    { name: "Review content", component: ExampleComponents.ReviewContent }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));

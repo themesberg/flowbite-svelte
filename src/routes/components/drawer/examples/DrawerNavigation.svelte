@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { Button, Drawer, Drawerhead, uiHelpers, Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper } from '$lib';
-  import { InfoCircleSolid, ChartOutline, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditSolid, ShoppingBagSolid } from 'flowbite-svelte-icons';
+  import { Button, Drawer, Drawerhead, uiHelpers, Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper } from "$lib";
+  import { InfoCircleSolid, ChartOutline, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditSolid, ShoppingBagSolid } from "flowbite-svelte-icons";
   const drawer = uiHelpers();
   let drawerStatus = $state(false);
   const closeDrawer = drawer.close;
   $effect(() => {
     drawerStatus = drawer.isOpen;
   });
-  let spanClass = 'flex-1 ms-3 whitespace-nowrap';
+  let spanClass = "flex-1 ms-3 whitespace-nowrap";
 </script>
 
 <div class="text-center">

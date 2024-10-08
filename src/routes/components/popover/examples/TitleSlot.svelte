@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Popover } from '$lib';
+  import { Button, Popover } from "$lib";
 </script>
 
 <div class="flex h-40 items-end justify-center">

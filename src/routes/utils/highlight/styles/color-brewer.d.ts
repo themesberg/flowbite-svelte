@@ -1,1 +1,1 @@
-export { colorBrewer as default } from './';
+export { colorBrewer as default } from "./";

@@ -1,45 +1,13 @@
 {
   "name": "ToolbarButton",
   "props": [
-    [
-      "children",
-      "type Snippet } from 'svelte';\nimport { toolbar, toolbarGroup, toolbarButton }",
-      ""
-    ],
-    [
-      "color",
-      "VariantProps<typeof toolbarButton>['color']",
-      "'default'"
-    ],
-    [
-      "name",
-      "string",
-      ""
-    ],
-    [
-      "ariaLabel",
-      "string",
-      ""
-    ],
-    [
-      "size",
-      "'xs' | 'sm' | 'md' | 'lg'",
-      "'md'"
-    ],
-    [
-      "href",
-      "string",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ],
-    [
-      "onclick",
-      "() => void",
-      ""
-    ]
+    ["children", "type Snippet } from 'svelte';\nimport { toolbar, toolbarGroup, toolbarButton }", ""],
+    ["color", "VariantProps<typeof toolbarButton>['color']", "'default'"],
+    ["name", "string", ""],
+    ["ariaLabel", "string", ""],
+    ["size", "'xs' | 'sm' | 'md' | 'lg'", "'md'"],
+    ["href", "string", ""],
+    ["class", "string", ""],
+    ["onclick", "() => void", ""]
   ]
 }

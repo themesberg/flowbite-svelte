@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { sineIn } from 'svelte/easing';
-  import { Dropdown, DropdownUl, DropdownLi, DropdownDivider, uiHelpers, Navbar, NavBrand, NavUl, NavLi } from '$lib';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { sineIn } from "svelte/easing";
+  import { Dropdown, DropdownUl, DropdownLi, DropdownDivider, uiHelpers, Navbar, NavBrand, NavUl, NavLi } from "$lib";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
   let nav = uiHelpers();
   let navStatus = $state(false);
   let toggleNav = nav.toggle;

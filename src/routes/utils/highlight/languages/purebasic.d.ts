@@ -1,2 +1,2 @@
-export { purebasic } from './';
-export { purebasic as default } from './';
+export { purebasic } from "./";
+export { purebasic as default } from "./";

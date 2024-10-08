@@ -1,1 +1,1 @@
-export { kimbieDark as default } from './';
+export { kimbieDark as default } from "./";

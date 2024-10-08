@@ -1,16 +1,16 @@
-import Sidebar from './Sidebar.svelte';
-import SidebarDropdownWrapper from './SidebarDropdownWrapper.svelte';
-import SidebarGroup from './SidebarGroup.svelte';
-import SidebarItem from './SidebarItem.svelte';
-import SidebarButton from './SidebarButton.svelte';
-import SidebarCta from './SidebarCta.svelte';
-import SidebarBrand from './SidebarBrand.svelte';
-import { sidebar, sidebarbutton, sidebarcta, sitebarbrand, sidebardropdownwrapper } from './theme';
-import { type Writable } from 'svelte/store';
-import type { Snippet } from 'svelte';
-import type { HTMLAttributes, HTMLButtonAttributes, HTMLAnchorAttributes } from 'svelte/elements';
-import type { VariantProps } from 'tailwind-variants';
-import type { TransitionFunc, ParamsType } from '../types';
+import Sidebar from "./Sidebar.svelte";
+import SidebarDropdownWrapper from "./SidebarDropdownWrapper.svelte";
+import SidebarGroup from "./SidebarGroup.svelte";
+import SidebarItem from "./SidebarItem.svelte";
+import SidebarButton from "./SidebarButton.svelte";
+import SidebarCta from "./SidebarCta.svelte";
+import SidebarBrand from "./SidebarBrand.svelte";
+import { sidebar, sidebarbutton, sidebarcta, sitebarbrand, sidebardropdownwrapper } from "./theme";
+import { type Writable } from "svelte/store";
+import type { Snippet } from "svelte";
+import type { HTMLAttributes, HTMLButtonAttributes, HTMLAnchorAttributes } from "svelte/elements";
+import type { VariantProps } from "tailwind-variants";
+import type { TransitionFunc, ParamsType } from "../types";
 
 type SidebarCtxType = {
   closeSidebar?: () => void;
@@ -20,8 +20,8 @@ type SidebarCtxType = {
   selected?: Writable<object>;
 };
 
-type BreakpointType = VariantProps<typeof sidebar>['breakpoint'];
-type PosisionType = VariantProps<typeof sidebar>['position'];
+type BreakpointType = VariantProps<typeof sidebar>["breakpoint"];
+type PosisionType = VariantProps<typeof sidebar>["position"];
 
 interface SidebarProps extends HTMLAttributes<HTMLElement> {
   children: Snippet;

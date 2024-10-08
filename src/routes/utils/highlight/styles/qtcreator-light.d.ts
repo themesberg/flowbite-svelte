@@ -1,1 +1,1 @@
-export { qtcreatorLight as default } from './';
+export { qtcreatorLight as default } from "./";

@@ -1,2 +1,2 @@
-export { phpTemplate } from './';
-export { phpTemplate as default } from './';
+export { phpTemplate } from "./";
+export { phpTemplate as default } from "./";

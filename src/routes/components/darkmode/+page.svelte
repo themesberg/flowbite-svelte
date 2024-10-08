@@ -1,32 +1,32 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { uiHelpers, Label, Radio } from '$lib';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import { uiHelpers, Label, Radio } from "$lib";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'darkmode';
-  const modules = import.meta.glob('./md/*.md', {
-    query: '?raw',
-    import: 'default',
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "darkmode";
+  const modules = import.meta.glob("./md/*.md", {
+    query: "?raw",
+    import: "default",
     eager: true
   });
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
   const exampleArr = [
-    { name: 'Default', component: ExampleComponents.Default },
-    { name: 'Icon', component: ExampleComponents.Icon },
-    { name: 'Style', component: ExampleComponents.Style }
+    { name: "Default", component: ExampleComponents.Default },
+    { name: "Icon", component: ExampleComponents.Icon },
+    { name: "Style", component: ExampleComponents.Style }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -55,13 +55,13 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md'] as string} />
+<HighlightCompo code={modules["./md/setup.md"] as string} />
 
 <H2>Initial theme</H2>
 
 Add the following to `app.html`:
 
-<HighlightCompo code={modules['./md/initialtheme.md'] as string} />
+<HighlightCompo code={modules["./md/initialtheme.md"] as string} />
 
 <H2>Examples</H2>
 

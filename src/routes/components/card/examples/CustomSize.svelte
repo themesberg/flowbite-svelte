@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Card } from '$lib';
+  import { Card } from "$lib";
 </script>
 
 <div class="flex justify-center">

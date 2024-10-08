@@ -1,1 +1,1 @@
-export { icyDark as default } from './';
+export { icyDark as default } from "./";

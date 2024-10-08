@@ -1,14 +1,14 @@
 <script lang="ts">
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper, SidebarButton, uiHelpers } from '$lib';
-  import { ChartOutline, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditSolid, ShoppingBagSolid } from 'flowbite-svelte-icons';
-  import PlusPlaceholder from '../../../utils/PlusPlaceholder.svelte';
-  import { fade } from 'svelte/transition';
-  import { sineIn } from 'svelte/easing';
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper, SidebarButton, uiHelpers } from "$lib";
+  import { ChartOutline, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditSolid, ShoppingBagSolid } from "flowbite-svelte-icons";
+  import PlusPlaceholder from "../../../utils/PlusPlaceholder.svelte";
+  import { fade } from "svelte/transition";
+  import { sineIn } from "svelte/easing";
   let params = {
     duration: 700,
     easing: sineIn
   };
-  const spanClass = 'flex-1 ms-3 whitespace-nowrap';
+  const spanClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;

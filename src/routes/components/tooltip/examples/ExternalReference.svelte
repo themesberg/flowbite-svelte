@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Tooltip } from '$lib';
+  import { Button, Tooltip } from "$lib";
 </script>
 
 <div class="m-4 flex justify-center">

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Listgroup, ListgroupItem, Avatar } from '$lib';
-  import { TrashBinSolid } from 'flowbite-svelte-icons';
+  import { Listgroup, ListgroupItem, Avatar } from "$lib";
+  import { TrashBinSolid } from "flowbite-svelte-icons";
 </script>
 
 <div class="flex justify-center">

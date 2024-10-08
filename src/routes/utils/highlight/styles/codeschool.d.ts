@@ -1,1 +1,1 @@
-export { codeschool as default } from './';
+export { codeschool as default } from "./";

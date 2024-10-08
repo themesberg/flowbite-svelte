@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { sineIn } from 'svelte/easing';
-  import { Dropdown, DropdownUl, DropdownLi, DropdownHeader, DropdownFooter, Avatar, uiHelpers } from '$lib';
-  import { BellSolid, EyeSolid } from 'flowbite-svelte-icons';
+  import { sineIn } from "svelte/easing";
+  import { Dropdown, DropdownUl, DropdownLi, DropdownHeader, DropdownFooter, Avatar, uiHelpers } from "$lib";
+  import { BellSolid, EyeSolid } from "flowbite-svelte-icons";
   let dropdownNotification = uiHelpers();
   let dropdownNotificationStatus = $state(false);
   let closeDropdownNotification = dropdownNotification.close;
@@ -22,7 +22,7 @@
       <DropdownHeader class="py-2 text-center font-bold">Notifications</DropdownHeader>
       <DropdownUl class="max-w-sm space-y-2 divide-y divide-gray-100 rounded p-2 shadow dark:divide-gray-700 dark:bg-gray-800">
         <DropdownLi liClass="flex space-x-4 rtl:space-x-reverse p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-          <Avatar src="/images/profile-picture-1.webp" dot={{ color: 'gray' }} cornerStyle="rounded" />
+          <Avatar src="/images/profile-picture-1.webp" dot={{ color: "gray" }} cornerStyle="rounded" />
           <div class="w-full ps-3">
             <div class="mb-1.5 text-sm text-gray-500 dark:text-gray-400">
               New message from <span class="font-semibold text-gray-900 dark:text-white">Jese Leos</span>
@@ -32,7 +32,7 @@
           </div>
         </DropdownLi>
         <DropdownLi liClass="flex space-x-4 rtl:space-x-reverse p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-          <Avatar src="/images/profile-picture-2.webp" dot={{ color: 'red' }} cornerStyle="rounded" />
+          <Avatar src="/images/profile-picture-2.webp" dot={{ color: "red" }} cornerStyle="rounded" />
           <div class="w-full ps-3">
             <div class="mb-1.5 text-sm text-gray-500 dark:text-gray-400">
               <span class="font-semibold text-gray-900 dark:text-white">Joseph Mcfall</span>
@@ -44,7 +44,7 @@
           </div>
         </DropdownLi>
         <DropdownLi liClass="flex space-x-4 rtl:space-x-reverse p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-          <Avatar src="/images/profile-picture-3.webp" dot={{ color: 'green' }} cornerStyle="rounded" />
+          <Avatar src="/images/profile-picture-3.webp" dot={{ color: "green" }} cornerStyle="rounded" />
           <div class="w-full ps-3">
             <div class="mb-1.5 text-sm text-gray-500 dark:text-gray-400">
               <span class="font-semibold text-gray-900 dark:text-white">Bonnie Green</span>

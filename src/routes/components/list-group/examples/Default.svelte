@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Listgroup } from '$lib';
-  let simpleList = ['Profile', 'Settings', 'Messages', 'Download'];
+  import { Listgroup } from "$lib";
+  let simpleList = ["Profile", "Settings", "Messages", "Download"];
 </script>
 
 <div class="flex justify-center">

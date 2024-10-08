@@ -1,4 +1,4 @@
-import register from 'highlight.js/lib/languages/sml';
+import register from "highlight.js/lib/languages/sml";
 
-export const sml = { name: 'sml', register };
+export const sml = { name: "sml", register };
 export default sml;

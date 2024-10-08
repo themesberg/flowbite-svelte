@@ -1,1 +1,1 @@
-export { solarFlare as default } from './';
+export { solarFlare as default } from "./";

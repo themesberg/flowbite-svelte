@@ -1,1 +1,1 @@
-export { lightfair as default } from './';
+export { lightfair as default } from "./";

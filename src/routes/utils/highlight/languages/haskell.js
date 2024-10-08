@@ -1,4 +1,4 @@
-import register from 'highlight.js/lib/languages/haskell';
+import register from "highlight.js/lib/languages/haskell";
 
-export const haskell = { name: 'haskell', register };
+export const haskell = { name: "haskell", register };
 export default haskell;

@@ -1,2 +1,2 @@
-export { nginx } from './';
-export { nginx as default } from './';
+export { nginx } from "./";
+export { nginx as default } from "./";

@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { writable } from 'svelte/store';
-  import { setContext } from 'svelte';
-  import { type TabsProps as Props, type TabCtxType, tabs } from '.';
+  import { writable } from "svelte/store";
+  import { setContext } from "svelte";
+  import { type TabsProps as Props, type TabCtxType, tabs } from ".";
 
-  let { children, tabStyle = 'none', ulClass, ctxActive, ctxInactive, contentClass, divider = true, ...restProps }: Props = $props();
+  let { children, tabStyle = "none", ulClass, ctxActive, ctxInactive, contentClass, divider = true, ...restProps }: Props = $props();
 
   // using $derived() shows State referenced in its own scope will never update. Did you mean to reference it inside a closure?
   const { base, content, divider: dividerClass, active, inactive } = $derived(tabs({ tabStyle, hasDivider: divider }));
@@ -15,9 +15,9 @@
     selected: writable<HTMLElement>()
   };
 
-  let dividerBool = $derived(['full', 'pill'].includes(tabStyle) ? false : divider);
+  let dividerBool = $derived(["full", "pill"].includes(tabStyle) ? false : divider);
 
-  setContext('ctx', ctx);
+  setContext("ctx", ctx);
 
   function init(node: HTMLElement) {
     const destroy = ctx.selected.subscribe((x: HTMLElement) => {

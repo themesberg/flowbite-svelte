@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { TableBodyRow, TableBodyCell, type TableBodyProps as Props, type CellValue, type BodyRow } from '.';
+  import { TableBodyRow, TableBodyCell, type TableBodyProps as Props, type CellValue, type BodyRow } from ".";
 
   let { children, bodyItems, class: className, ...restProps }: Props = $props();
 
@@ -17,7 +17,7 @@
     {#each bodyItems as row}
       <TableBodyRow>
         {#each getCellValues(row) as cellValue}
-          <TableBodyCell>{cellValue ?? ''}</TableBodyCell>
+          <TableBodyCell>{cellValue ?? ""}</TableBodyCell>
         {/each}
       </TableBodyRow>
     {/each}

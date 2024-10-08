@@ -1,1 +1,1 @@
-export { rosPineDawn as default } from './';
+export { rosPineDawn as default } from "./";

@@ -1,17 +1,17 @@
 <script lang="ts">
-  import { setContext } from 'svelte';
-  import { fly } from 'svelte/transition';
-  import { sineIn } from 'svelte/easing';
-  import { type SidebarProps as Props, sidebar, type SidebarCtxType } from '.';
+  import { setContext } from "svelte";
+  import { fly } from "svelte/transition";
+  import { sineIn } from "svelte/easing";
+  import { type SidebarProps as Props, sidebar, type SidebarCtxType } from ".";
 
-  let { children, isOpen = false, closeSidebar, isSingle = true, breakpoint = 'md', position = 'fixed', activateClickOutside = true, backdrop = true, backdropClass, transition = fly, params, divClass, ariaLabel, nonActiveClass, activeClass, class: className, ...restProps }: Props = $props();
+  let { children, isOpen = false, closeSidebar, isSingle = true, breakpoint = "md", position = "fixed", activateClickOutside = true, backdrop = true, backdropClass, transition = fly, params, divClass, ariaLabel, nonActiveClass, activeClass, class: className, ...restProps }: Props = $props();
 
   const breakpointValues = {
     sm: 640,
     md: 768,
     lg: 1024,
     xl: 1280,
-    '2xl': 1536
+    "2xl": 1536
   };
 
   let isLargeScreen = $state(false);
@@ -37,11 +37,11 @@
 
   let transitionParams = params ? params : { x: -320, duration: 200, easing: sineIn };
 
-  setContext('sidebarContext', sidebarCtx);
+  setContext("sidebarContext", sidebarCtx);
   $effect(() => {
     checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-    return () => window.removeEventListener('resize', checkScreenSize);
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
   });
 </script>
 

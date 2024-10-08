@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Radio } from '$lib';
-  let technology = $state('svelte');
+  import { Radio } from "$lib";
+  let technology = $state("svelte");
 </script>
 
 <p class="mb-4 font-semibold text-gray-900 dark:text-white">

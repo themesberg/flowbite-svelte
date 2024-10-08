@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { Table } from '$lib';
+  import { Table } from "$lib";
   const tableItems = [
-    { name: 'Apple MacBook Pro 17"', qty: '1', price: '$2999' },
-    { name: 'Microsoft Surface Pro', qty: '1', price: '$1999' },
-    { name: 'Magic Mouse 2', qty: '1', price: '$99' }
+    { name: 'Apple MacBook Pro 17"', qty: "1", price: "$2999" },
+    { name: "Microsoft Surface Pro", qty: "1", price: "$1999" },
+    { name: "Magic Mouse 2", qty: "1", price: "$99" }
   ];
 </script>
 

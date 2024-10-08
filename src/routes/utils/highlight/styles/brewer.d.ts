@@ -1,1 +1,1 @@
-export { brewer as default } from './';
+export { brewer as default } from "./";

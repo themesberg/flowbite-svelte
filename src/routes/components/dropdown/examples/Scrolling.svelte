@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { sineIn } from 'svelte/easing';
-  import { Button, Dropdown, DropdownUl, DropdownLi, DropdownFooter, Avatar, uiHelpers } from '$lib';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { sineIn } from "svelte/easing";
+  import { Button, Dropdown, DropdownUl, DropdownLi, DropdownFooter, Avatar, uiHelpers } from "$lib";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
   let dropdownScroll = uiHelpers();
   let dropdownScrollStatus = $state(false);
   let closeDropdownScroll = dropdownScroll.close;

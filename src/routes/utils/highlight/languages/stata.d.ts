@@ -1,2 +1,2 @@
-export { stata } from './';
-export { stata as default } from './';
+export { stata } from "./";
+export { stata as default } from "./";

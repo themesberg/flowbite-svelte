@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Accordion, AccordionItem, Button } from '$lib';
+  import { Accordion, AccordionItem, Button } from "$lib";
   let item0 = $state(false);
   let item1 = $state(false);
   let item2 = $state(false);

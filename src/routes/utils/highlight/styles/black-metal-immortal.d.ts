@@ -1,1 +1,1 @@
-export { blackMetalImmortal as default } from './';
+export { blackMetalImmortal as default } from "./";

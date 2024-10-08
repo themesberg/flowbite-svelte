@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type GroupItemProps as Props, groupitem } from '.';
+  import { type GroupItemProps as Props, groupitem } from ".";
 
   let { timelines, aClass, imgClass, divClass, titleClass, spanClass, ...restProps }: Props = $props();
 

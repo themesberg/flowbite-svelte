@@ -1,2 +1,2 @@
-export { vhdl } from './';
-export { vhdl as default } from './';
+export { vhdl } from "./";
+export { vhdl as default } from "./";

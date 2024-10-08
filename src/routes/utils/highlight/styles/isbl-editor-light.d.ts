@@ -1,1 +1,1 @@
-export { isblEditorLight as default } from './';
+export { isblEditorLight as default } from "./";

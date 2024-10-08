@@ -1,31 +1,31 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { Label, Radio, uiHelpers } from '$lib';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import { isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
+  import { type Component } from "svelte";
+  import { Label, Radio, uiHelpers } from "$lib";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import { isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'gallery';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "gallery";
 
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
   const exampleArr = [
-    { name: 'Default', component: ExampleComponents.Default },
-    { name: 'Mansory grid', component: ExampleComponents.MansoryGrid },
-    { name: 'Featured image', component: ExampleComponents.FeaturedImage },
-    { name: 'Quad', component: ExampleComponents.Quad },
-    { name: 'Gallery with tag', component: ExampleComponents.GalleryWithTag },
-    { name: 'Heterogeneous', component: ExampleComponents.Heterogeneous },
-    { name: 'Custom image rendering', component: ExampleComponents.CustomImageRendering }
+    { name: "Default", component: ExampleComponents.Default },
+    { name: "Mansory grid", component: ExampleComponents.MansoryGrid },
+    { name: "Featured image", component: ExampleComponents.FeaturedImage },
+    { name: "Quad", component: ExampleComponents.Quad },
+    { name: "Gallery with tag", component: ExampleComponents.GalleryWithTag },
+    { name: "Heterogeneous", component: ExampleComponents.Heterogeneous },
+    { name: "Custom image rendering", component: ExampleComponents.CustomImageRendering }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));

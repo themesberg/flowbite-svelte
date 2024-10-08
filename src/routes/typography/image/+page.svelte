@@ -1,25 +1,25 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { Img, img, Badge, Radio, Label, Button, uiHelpers, type ImgProps } from '$lib';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import { Img, img, Badge, Radio, Label, Button, uiHelpers, type ImgProps } from "$lib";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'typography/img';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "typography/img";
 
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
-  const exampleArr = [{ name: 'Retina ready', component: ExampleComponents.RetinaReady }];
+  const exampleArr = [{ name: "Retina ready", component: ExampleComponents.RetinaReady }];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 
@@ -31,22 +31,22 @@
   // end of dynamic svelte component
 
   const sizes = Object.keys(img.variants.size);
-  let imgSize: ImgProps['size'] = $state('none');
+  let imgSize: ImgProps["size"] = $state("none");
   const alignments = Object.keys(img.variants.alignment);
-  let imgAlignment: ImgProps['alignment'] = $state('left');
+  let imgAlignment: ImgProps["alignment"] = $state("left");
   const effects = Object.keys(img.variants.effect);
-  let imgEffect: ImgProps['effect'] = $state('none');
+  let imgEffect: ImgProps["effect"] = $state("none");
   const shadows = Object.keys(img.variants.shadow);
-  let imgShadow: ImgProps['shadow'] = $state('none');
+  let imgShadow: ImgProps["shadow"] = $state("none");
   const roundeds = Object.keys(img.variants.rounded);
-  let imgRounded: ImgProps['rounded'] = $state('none');
+  let imgRounded: ImgProps["rounded"] = $state("none");
   let imgCaption = $state(false);
   const changeImgCaption = () => {
     imgCaption = !imgCaption;
   };
-  let imgHref = $state('');
+  let imgHref = $state("");
   const changeImgHrf = () => {
-    imgHref = imgHref === '' ? '/' : '';
+    imgHref = imgHref === "" ? "/" : "";
   };
 
   // code generator
@@ -54,17 +54,17 @@
     (() => {
       // size, alignment, effect, shadow, rounded, caption, imgClass, figClass, captionClass,
       let props = [];
-      if (imgSize !== 'none') props.push(` size="${imgSize}"`);
-      if (imgAlignment !== 'left') props.push(` alignment="${imgAlignment}"`);
-      if (imgEffect !== 'none') props.push(` effect="${imgEffect}"`);
-      if (imgShadow !== 'none') props.push(` shadow="${imgShadow}"`);
-      if (imgRounded !== 'none') props.push(` rounded="${imgRounded}"`);
-      if (imgEffect !== 'none' && imgCaption) props.push(` figClass="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"`);
-      if (imgEffect !== 'none' && imgCaption) props.push(` captionClass="absolute bottom-6 px-4 text-lg text-white"`);
+      if (imgSize !== "none") props.push(` size="${imgSize}"`);
+      if (imgAlignment !== "left") props.push(` alignment="${imgAlignment}"`);
+      if (imgEffect !== "none") props.push(` effect="${imgEffect}"`);
+      if (imgShadow !== "none") props.push(` shadow="${imgShadow}"`);
+      if (imgRounded !== "none") props.push(` rounded="${imgRounded}"`);
+      if (imgEffect !== "none" && imgCaption) props.push(` figClass="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"`);
+      if (imgEffect !== "none" && imgCaption) props.push(` captionClass="absolute bottom-6 px-4 text-lg text-white"`);
       if (imgCaption) props.push(` caption="Image caption"`);
       if (imgHref) props.push(` href="/"`);
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
       return `<Img${propsString}src='/images/examples/content-gallery-1.png'/>`;
     })()
@@ -100,7 +100,7 @@
 <H2>Interactive Image Builder</H2>
 <CodeWrapper>
   <div class="mb-4 overflow-y-auto md:h-[470px]">
-    <Img src={imgEffect !== 'none' ? '/images/examples/content-gallery-3.png' : imgRounded === 'full' ? '/images/examples/image-4@2x.jpg' : '/images/examples/image-1@2x.jpg'} size={imgSize} shadow={imgShadow} alignment={imgAlignment} rounded={imgRounded} alt="sample 1" effect={imgEffect} figClass={imgEffect !== 'none' && imgCaption ? 'relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0' : ''} captionClass={imgEffect !== 'none' && imgCaption ? 'absolute bottom-6 px-4 text-lg text-white' : ''} caption={imgEffect !== 'none' ? 'Do you want to get notified when a new component is added to Flowbite?' : imgCaption ? 'Image caption' : ''} href={imgHref} />
+    <Img src={imgEffect !== "none" ? "/images/examples/content-gallery-3.png" : imgRounded === "full" ? "/images/examples/image-4@2x.jpg" : "/images/examples/image-1@2x.jpg"} size={imgSize} shadow={imgShadow} alignment={imgAlignment} rounded={imgRounded} alt="sample 1" effect={imgEffect} figClass={imgEffect !== "none" && imgCaption ? "relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0" : ""} captionClass={imgEffect !== "none" && imgCaption ? "absolute bottom-6 px-4 text-lg text-white" : ""} caption={imgEffect !== "none" ? "Do you want to get notified when a new component is added to Flowbite?" : imgCaption ? "Image caption" : ""} href={imgHref} />
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Size</Label>
@@ -133,8 +133,8 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-48" color="blue" onclick={changeImgCaption}>{imgCaption ? 'Remove caption' : 'Add caption'}</Button>
-    <Button class="w-48" color="lime" onclick={changeImgHrf}>{imgHref === '' ? 'Add href' : 'Remove href'}</Button>
+    <Button class="w-48" color="blue" onclick={changeImgCaption}>{imgCaption ? "Remove caption" : "Add caption"}</Button>
+    <Button class="w-48" color="lime" onclick={changeImgHrf}>{imgHref === "" ? "Add href" : "Remove href"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

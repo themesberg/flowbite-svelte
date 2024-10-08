@@ -1,1 +1,1 @@
-export { materialPalenight as default } from './';
+export { materialPalenight as default } from "./";

@@ -1,1 +1,1 @@
-export { materialLighter as default } from './';
+export { materialLighter as default } from "./";

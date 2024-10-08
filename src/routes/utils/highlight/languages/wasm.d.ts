@@ -1,2 +1,2 @@
-export { wasm } from './';
-export { wasm as default } from './';
+export { wasm } from "./";
+export { wasm as default } from "./";

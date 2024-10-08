@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Tabs, TabItem } from '$lib';
-  import { UserCircleSolid, GridSolid, AdjustmentsVerticalSolid, ClipboardSolid } from 'flowbite-svelte-icons';
+  import { Tabs, TabItem } from "$lib";
+  import { UserCircleSolid, GridSolid, AdjustmentsVerticalSolid, ClipboardSolid } from "flowbite-svelte-icons";
 </script>
 
 <Tabs tabStyle="underline">

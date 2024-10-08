@@ -1,1 +1,1 @@
-export { horizonDark as default } from './';
+export { horizonDark as default } from "./";

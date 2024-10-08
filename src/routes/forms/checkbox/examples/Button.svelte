@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { CheckboxButton, ButtonGroup } from '$lib';
-  import { ChevronDownOutline, AppleSolid, FacebookSolid, DiscordSolid, DropboxSolid } from 'flowbite-svelte-icons';
+  import { CheckboxButton, ButtonGroup } from "$lib";
+  import { ChevronDownOutline, AppleSolid, FacebookSolid, DiscordSolid, DropboxSolid } from "flowbite-svelte-icons";
 </script>
 
 <div class="mb-4 space-y-2">

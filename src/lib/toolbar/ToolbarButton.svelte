@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { getContext } from 'svelte';
-  import { type ToolbarButtonProps as Props, toolbarButton } from './';
+  import { getContext } from "svelte";
+  import { type ToolbarButtonProps as Props, toolbarButton } from "./";
 
-  const background = getContext('background');
-  let { children, color = 'default', name, ariaLabel, size = 'md', href, class: className, onclick, ...restProps }: Props = $props();
+  const background = getContext("background");
+  let { children, color = "default", name, ariaLabel, size = "md", href, class: className, onclick, ...restProps }: Props = $props();
 
   const buttonClass = $derived(
     toolbarButton({

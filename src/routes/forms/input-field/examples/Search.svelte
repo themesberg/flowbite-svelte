@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Input, Label, Button } from '$lib';
-  import { SearchOutline } from 'flowbite-svelte-icons';
+  import { Input, Label, Button } from "$lib";
+  import { SearchOutline } from "flowbite-svelte-icons";
 </script>
 
 <form>

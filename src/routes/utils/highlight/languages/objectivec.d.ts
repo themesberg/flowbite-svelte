@@ -1,2 +1,2 @@
-export { objectivec } from './';
-export { objectivec as default } from './';
+export { objectivec } from "./";
+export { objectivec as default } from "./";

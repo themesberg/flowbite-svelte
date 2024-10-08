@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Skeleton, ImagePlaceholder, Banner } from '$lib';
-  import { BookOpenSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Skeleton, ImagePlaceholder, Banner } from "$lib";
+  import { BookOpenSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
 <div class="relative">

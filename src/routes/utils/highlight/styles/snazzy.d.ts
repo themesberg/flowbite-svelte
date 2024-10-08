@@ -1,1 +1,1 @@
-export { snazzy as default } from './';
+export { snazzy as default } from "./";

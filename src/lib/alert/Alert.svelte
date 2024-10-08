@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { type AlertProps as Props, alert } from '.';
-  import { CloseButton } from '$lib';
-  import { fade } from 'svelte/transition';
-  import type { ParamsType } from '$lib/types';
+  import { type AlertProps as Props, alert } from ".";
+  import { CloseButton } from "$lib";
+  import { fade } from "svelte/transition";
+  import type { ParamsType } from "$lib/types";
 
-  let { children, icon, alertStatus = $bindable(true), closeIcon, color = 'primary', rounded = true, border, class: className, dismissable, transition = fade, params, onclick, ...restProps }: Props = $props();
+  let { children, icon, alertStatus = $bindable(true), closeIcon, color = "primary", rounded = true, border, class: className, dismissable, transition = fade, params, onclick, ...restProps }: Props = $props();
 
   let divCls = $derived(
     alert({

@@ -1,10 +1,10 @@
-import Accordion from './Accordion.svelte';
-import AccordionItem from './AccordionItem.svelte';
-import { type Writable } from 'svelte/store';
-import type { Snippet } from 'svelte';
-import type { ParamsType, TransitionFunc } from '../types';
-import type { HTMLAttributes } from 'svelte/elements';
-import { accordion, accordionitem } from './theme';
+import Accordion from "./Accordion.svelte";
+import AccordionItem from "./AccordionItem.svelte";
+import { type Writable } from "svelte/store";
+import type { Snippet } from "svelte";
+import type { ParamsType, TransitionFunc } from "../types";
+import type { HTMLAttributes } from "svelte/elements";
+import { accordion, accordionitem } from "./theme";
 
 interface AccordionCtxType {
   flush: boolean;

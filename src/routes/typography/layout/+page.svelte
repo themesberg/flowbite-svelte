@@ -1,28 +1,28 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { Label, Radio, uiHelpers } from '$lib';
+  import { type Component } from "svelte";
+  import { Label, Radio, uiHelpers } from "$lib";
   // import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'typography/layout';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "typography/layout";
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
   const exampleArr = [
-    { name: 'One column', component: ExampleComponents.OneColumn },
-    { name: 'Two columns even', component: ExampleComponents.TwoColumnsEven },
-    { name: 'Two columns uneven', component: ExampleComponents.TwoColumnsUneven },
-    { name: 'Three columns even', component: ExampleComponents.ThreeColumnsEven }
+    { name: "One column", component: ExampleComponents.OneColumn },
+    { name: "Two columns even", component: ExampleComponents.TwoColumnsEven },
+    { name: "Two columns uneven", component: ExampleComponents.TwoColumnsUneven },
+    { name: "Three columns even", component: ExampleComponents.ThreeColumnsEven }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));

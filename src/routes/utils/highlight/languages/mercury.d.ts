@@ -1,2 +1,2 @@
-export { mercury } from './';
-export { mercury as default } from './';
+export { mercury } from "./";
+export { mercury as default } from "./";

@@ -1,19 +1,19 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'dropdown';
-  import { Button, Radio, Dropdown, DropdownDivider, DropdownUl, DropdownLi, DropdownHeader, DropdownFooter, uiHelpers, Label } from '$lib';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
-  import { blur, fly, slide, scale } from 'svelte/transition';
-  import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
-  import { sineIn, linear } from 'svelte/easing';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "dropdown";
+  import { Button, Radio, Dropdown, DropdownDivider, DropdownUl, DropdownLi, DropdownHeader, DropdownFooter, uiHelpers, Label } from "$lib";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
+  import { blur, fly, slide, scale } from "svelte/transition";
+  import type { FlyParams, BlurParams, SlideParams, ScaleParams } from "svelte/transition";
+  import { sineIn, linear } from "svelte/easing";
 
   let dropdownDividerHeaderFooter = uiHelpers();
   let dropdownDividerHeaderFooterStatus = $state(false);
@@ -26,31 +26,31 @@
   });
 
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
   const exampleArr = [
-    { name: 'Active link', component: ExampleComponents.ActiveLink },
-    { name: 'Avatar with name', component: ExampleComponents.AvatarWithName },
-    { name: 'Checkbox', component: ExampleComponents.Checkbox },
-    { name: 'Helper text', component: ExampleComponents.HelperText },
-    { name: 'Menu icon', component: ExampleComponents.MenuIcon },
-    { name: 'Multi level', component: ExampleComponents.MultiLevel },
-    { name: 'Navbar', component: ExampleComponents.Navbar },
-    { name: 'Notification bell', component: ExampleComponents.NotificationBell },
-    { name: 'Placement bottom', component: ExampleComponents.PlacementBottom },
-    { name: 'Placement left', component: ExampleComponents.PlacementLeft },
-    { name: 'Placement right', component: ExampleComponents.PlacementRight },
-    { name: 'Placement top', component: ExampleComponents.PlacementTop },
-    { name: 'Radio', component: ExampleComponents.Radio },
-    { name: 'Scrolling', component: ExampleComponents.Scrolling },
-    { name: 'Search', component: ExampleComponents.Search },
-    { name: 'Toggle', component: ExampleComponents.Toggle },
-    { name: 'User avatar', component: ExampleComponents.UserAvatar }
+    { name: "Active link", component: ExampleComponents.ActiveLink },
+    { name: "Avatar with name", component: ExampleComponents.AvatarWithName },
+    { name: "Checkbox", component: ExampleComponents.Checkbox },
+    { name: "Helper text", component: ExampleComponents.HelperText },
+    { name: "Menu icon", component: ExampleComponents.MenuIcon },
+    { name: "Multi level", component: ExampleComponents.MultiLevel },
+    { name: "Navbar", component: ExampleComponents.Navbar },
+    { name: "Notification bell", component: ExampleComponents.NotificationBell },
+    { name: "Placement bottom", component: ExampleComponents.PlacementBottom },
+    { name: "Placement left", component: ExampleComponents.PlacementLeft },
+    { name: "Placement right", component: ExampleComponents.PlacementRight },
+    { name: "Placement top", component: ExampleComponents.PlacementTop },
+    { name: "Radio", component: ExampleComponents.Radio },
+    { name: "Scrolling", component: ExampleComponents.Scrolling },
+    { name: "Search", component: ExampleComponents.Search },
+    { name: "Toggle", component: ExampleComponents.Toggle },
+    { name: "User avatar", component: ExampleComponents.UserAvatar }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -83,12 +83,12 @@
   };
 
   const transitions: TransitionOption[] = [
-    { name: 'Fly', transition: fly, params: { y: 0, duration: 200, easing: sineIn } },
-    { name: 'Blur', transition: blur, params: { y: 0, duration: 400, easing: linear } },
-    { name: 'Slide', transition: slide, params: { x: -100, duration: 300, easing: sineIn } },
-    { name: 'Scale', transition: scale, params: { duration: 300, easing: linear } }
+    { name: "Fly", transition: fly, params: { y: 0, duration: 200, easing: sineIn } },
+    { name: "Blur", transition: blur, params: { y: 0, duration: 400, easing: linear } },
+    { name: "Slide", transition: slide, params: { x: -100, duration: 300, easing: sineIn } },
+    { name: "Scale", transition: scale, params: { duration: 300, easing: linear } }
   ];
-  let selectedTransition = $state('Fly');
+  let selectedTransition = $state("Fly");
   let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
 
   // code generator
@@ -100,7 +100,7 @@
       <div>Bonnie Green</div>
       <div class="truncate font-medium">name@flowbite.com</div>
     </DropdownHeader>`
-        : '';
+        : "";
       let footerContent = footerStatus
         ? `
     <DropdownFooter>
@@ -108,11 +108,11 @@
         <a href="/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
       </div>
     </DropdownFooter>`
-        : '';
+        : "";
       let dividerContent = dividerStatus
         ? `
       <DropdownDivider />`
-        : '';
+        : "";
       let props = [];
       if (currentTransition !== transitions[0]) {
         props.push(` transition={${currentTransition.transition.name}}`);
@@ -120,16 +120,16 @@
         // Generate params string without quotes and handle functions
         const paramsString = Object.entries(currentTransition.params)
           .map(([key, value]) => {
-            if (typeof value === 'function') {
+            if (typeof value === "function") {
               return `${key}:${value.name}`;
             }
             return `${key}:${value}`;
           })
-          .join(',');
+          .join(",");
         props.push(` params={{${paramsString}}}`);
       }
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
       return `<div class="flex items-start justify-center">
   <Button onclick={dropdownA.toggle}>Dropdown

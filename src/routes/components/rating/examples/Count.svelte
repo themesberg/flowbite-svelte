@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Rating } from '$lib';
+  import { Rating } from "$lib";
 </script>
 
 <Rating count rating={4.95}>

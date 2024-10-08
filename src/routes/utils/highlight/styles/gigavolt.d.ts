@@ -1,1 +1,1 @@
-export { gigavolt as default } from './';
+export { gigavolt as default } from "./";

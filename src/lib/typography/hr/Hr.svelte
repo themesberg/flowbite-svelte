@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type HrProps as Props, hr } from './index';
+  import { type HrProps as Props, hr } from "./index";
 
   let { children, divClass, hrClass, innerDivClass, ...restProps }: Props = $props();
 

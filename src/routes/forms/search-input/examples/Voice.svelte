@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { Search, Button } from '$lib';
-  import { SearchOutline, MicrophoneSolid } from 'flowbite-svelte-icons';
+  import { Search, Button } from "$lib";
+  import { SearchOutline, MicrophoneSolid } from "flowbite-svelte-icons";
   function handleVoiceBtn() {
-    alert('You clicked voice button');
+    alert("You clicked voice button");
   }
 </script>
 

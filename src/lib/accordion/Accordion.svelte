@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { setContext } from 'svelte';
-  import { type AccordionProps as Props, accordion } from './';
+  import { setContext } from "svelte";
+  import { type AccordionProps as Props, accordion } from "./";
 
   let { children, flush, activeClass, inactiveClass, isSingle = true, class: className, transition, params, ...restProps }: Props = $props();
 
@@ -11,7 +11,7 @@
     isSingle
   };
 
-  setContext('ctx', ctx);
+  setContext("ctx", ctx);
 
   const base = $derived(accordion({ flush, className }));
 </script>

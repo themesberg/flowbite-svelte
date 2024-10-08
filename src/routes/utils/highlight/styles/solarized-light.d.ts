@@ -1,1 +1,1 @@
-export { solarizedLight as default } from './';
+export { solarizedLight as default } from "./";

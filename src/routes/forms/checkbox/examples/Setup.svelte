@@ -1,3 +1,3 @@
 <script>
-  import { Checkbox, Helper, Label } from '$lib';
+  import { Checkbox, Helper, Label } from "$lib";
 </script>

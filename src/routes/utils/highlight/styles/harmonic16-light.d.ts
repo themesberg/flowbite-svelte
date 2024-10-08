@@ -1,1 +1,1 @@
-export { harmonic16Light as default } from './';
+export { harmonic16Light as default } from "./";

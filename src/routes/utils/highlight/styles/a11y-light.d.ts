@@ -1,1 +1,1 @@
-export { a11yLight as default } from './';
+export { a11yLight as default } from "./";

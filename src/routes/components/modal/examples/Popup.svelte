@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Modal, Button, uiHelpers } from '$lib';
-  import { ExclamationCircleOutline } from 'flowbite-svelte-icons';
+  import { Modal, Button, uiHelpers } from "$lib";
+  import { ExclamationCircleOutline } from "flowbite-svelte-icons";
   const modalExample = uiHelpers();
   let modalStatus = $state(false);
   const closeModal = modalExample.close;

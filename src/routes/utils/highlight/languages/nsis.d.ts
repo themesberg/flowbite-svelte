@@ -1,2 +1,2 @@
-export { nsis } from './';
-export { nsis as default } from './';
+export { nsis } from "./";
+export { nsis as default } from "./";

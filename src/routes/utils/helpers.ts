@@ -1,6 +1,6 @@
 export function removeHyphensAndCapitalize(str: string) {
   // Handle empty string or strings without '-'
-  if (!str || !str.includes('-')) {
+  if (!str || !str.includes("-")) {
     return str;
   }
 
@@ -8,19 +8,19 @@ export function removeHyphensAndCapitalize(str: string) {
   const capitalized = str.replace(/(^|\s|-)\w/g, (match: string) => match.toUpperCase());
 
   // Remove hyphens and ensure spaces after words
-  return capitalized.replace(/-|\s{2,}/g, ' ');
+  return capitalized.replace(/-|\s{2,}/g, " ");
 }
 
 export function toKebabCase(inputString: string) {
-  return inputString.toLowerCase().replace(/\s+/g, '-');
+  return inputString.toLowerCase().replace(/\s+/g, "-");
 }
 
 export function splitAndCapitalize(text: string) {
   // Split the string using '/' as the delimiter
-  const parts = text.split('/');
+  const parts = text.split("/");
 
   // If there are no parts, return an empty string
-  if (!parts.length) return '';
+  if (!parts.length) return "";
 
   // Get the last element of the array and capitalize it
   return parts[parts.length - 1].charAt(0).toUpperCase() + parts[parts.length - 1].slice(1);
@@ -40,17 +40,17 @@ export function copyToClipboard(text: string): Promise<void> {
   return navigator.clipboard
     .writeText(text)
     .then(() => {
-      console.log('Text copied to clipboard');
+      console.log("Text copied to clipboard");
     })
     .catch((err) => {
-      console.error('Failed to copy: ', err);
+      console.error("Failed to copy: ", err);
       throw err; // Re-throw the error so the caller can handle it if needed
     });
 }
 
 export function toUpperSnakeCase(text: string): string {
   // replace spaces and - to _ and convert to uppercase
-  return text.replace(/[\s-]/g, '_').toUpperCase();
+  return text.replace(/[\s-]/g, "_").toUpperCase();
 }
 
 // export const isOverflow = (markdown: string, modules: Record<string, any>): boolean => {
@@ -60,7 +60,7 @@ export function toUpperSnakeCase(text: string): string {
 // };
 
 export const isGeneratedCodeOverflow = (code: string): boolean => {
-  const lines = code.split('\n');
+  const lines = code.split("\n");
   return lines.length > 7;
 };
 
@@ -68,16 +68,16 @@ export const isSvelteOverflow = (sveltefile: string, exampleModules: Record<stri
   const filePath = `./examples/${sveltefile}`;
   const fileContent = exampleModules[filePath];
 
-  if (typeof fileContent !== 'string') {
+  if (typeof fileContent !== "string") {
     console.warn(`File content for ${filePath} is not found or not a string`);
     return false;
   }
 
-  const lines = fileContent.split('\n');
+  const lines = fileContent.split("\n");
   return lines.length > 7;
 };
 
-import { fileList } from '../../generatedFileList';
+import { fileList } from "../../generatedFileList";
 
 /**
  * Returns an array of file names from the `fileList` that include the specified `dirName`.
@@ -87,11 +87,11 @@ import { fileList } from '../../generatedFileList';
  */
 export function getFilteredFileNames(dirName: string): string[] {
   const filteredPaths = fileList.filter((path) => path.includes(`src/lib/${dirName}`));
-  console.log('filteredPaths', filteredPaths);
+  console.log("filteredPaths", filteredPaths);
   const fileNames = filteredPaths.map((path) => {
-    const parts = path.split('/');
+    const parts = path.split("/");
     const fileNameWithExtension = parts[parts.length - 1];
-    const fileNameWithoutExtension = fileNameWithExtension.substring(0, fileNameWithExtension.lastIndexOf('.'));
+    const fileNameWithoutExtension = fileNameWithExtension.substring(0, fileNameWithExtension.lastIndexOf("."));
 
     return fileNameWithoutExtension;
   });
@@ -108,14 +108,14 @@ export function getExampleFileName(selectedExample: string, exampleArr: { name: 
 
   if (!foundExample) {
     // If the selectedExample is not in the array, default to the first example
-    selectedExample = exampleArr[0].name || '';
+    selectedExample = exampleArr[0].name || "";
   }
 
   // Convert the selected example to PascalCase
   const result = selectedExample
-    .split(' ')
+    .split(" ")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-    .join('');
+    .join("");
 
   return `${result}.svelte`;
 }

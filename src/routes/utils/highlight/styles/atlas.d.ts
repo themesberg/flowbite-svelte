@@ -1,1 +1,1 @@
-export { atlas as default } from './';
+export { atlas as default } from "./";

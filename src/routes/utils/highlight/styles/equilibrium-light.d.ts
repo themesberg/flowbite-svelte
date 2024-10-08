@@ -1,1 +1,1 @@
-export { equilibriumLight as default } from './';
+export { equilibriumLight as default } from "./";

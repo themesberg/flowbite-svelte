@@ -1,4 +1,4 @@
-import register from 'highlight.js/lib/languages/mipsasm';
+import register from "highlight.js/lib/languages/mipsasm";
 
-export const mipsasm = { name: 'mipsasm', register };
+export const mipsasm = { name: "mipsasm", register };
 export default mipsasm;

@@ -1,2 +1,2 @@
-export { tp } from './';
-export { tp as default } from './';
+export { tp } from "./";
+export { tp as default } from "./";

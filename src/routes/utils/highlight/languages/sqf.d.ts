@@ -1,2 +1,2 @@
-export { sqf } from './';
-export { sqf as default } from './';
+export { sqf } from "./";
+export { sqf as default } from "./";

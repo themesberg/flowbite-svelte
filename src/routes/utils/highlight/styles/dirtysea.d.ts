@@ -1,1 +1,1 @@
-export { dirtysea as default } from './';
+export { dirtysea as default } from "./";

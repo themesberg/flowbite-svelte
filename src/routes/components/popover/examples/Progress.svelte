@@ -1,6 +1,6 @@
 <script>
-  import { Popover, Button } from '$lib';
-  import { DatabaseSolid, ChevronRightOutline } from 'flowbite-svelte-icons';
+  import { Popover, Button } from "$lib";
+  import { DatabaseSolid, ChevronRightOutline } from "flowbite-svelte-icons";
 </script>
 
 <div class="flex h-40 items-end justify-center">

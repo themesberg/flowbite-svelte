@@ -1,1 +1,1 @@
-export { androidstudio as default } from './';
+export { androidstudio as default } from "./";

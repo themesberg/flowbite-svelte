@@ -1,1 +1,1 @@
-export { windows10Light as default } from './';
+export { windows10Light as default } from "./";

@@ -1,31 +1,31 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { Blockquote, blockquote, Label, Radio, Button, Input, CloseButton, uiHelpers, type BlockquoteProps } from '$lib';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import { Blockquote, blockquote, Label, Radio, Button, Input, CloseButton, uiHelpers, type BlockquoteProps } from "$lib";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'typography/blockquote';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "typography/blockquote";
 
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
   const exampleArr = [
-    { name: 'Default', component: ExampleComponents.Default },
-    { name: 'Context', component: ExampleComponents.Context },
-    { name: 'Icon', component: ExampleComponents.Icon },
-    { name: 'Review', component: ExampleComponents.Review },
-    { name: 'Solid', component: ExampleComponents.Solid },
-    { name: 'Testimonial', component: ExampleComponents.Testimonial }
+    { name: "Default", component: ExampleComponents.Default },
+    { name: "Context", component: ExampleComponents.Context },
+    { name: "Icon", component: ExampleComponents.Icon },
+    { name: "Review", component: ExampleComponents.Review },
+    { name: "Solid", component: ExampleComponents.Solid },
+    { name: "Testimonial", component: ExampleComponents.Testimonial }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -37,13 +37,13 @@
   const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
 
-  let { text = $bindable('Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quas commodi accusamus dignissimos qui totam iste rem necessitatibus? Cumque minus et animi nostrum deserunt provident excepturi laboriosam ipsum minima nisi!') } = $props();
+  let { text = $bindable("Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quas commodi accusamus dignissimos qui totam iste rem necessitatibus? Cumque minus et animi nostrum deserunt provident excepturi laboriosam ipsum minima nisi!") } = $props();
 
   const sizes = Object.keys(blockquote.variants.size);
-  let selectedSize: BlockquoteProps['size'] = $state('lg');
+  let selectedSize: BlockquoteProps["size"] = $state("lg");
 
   const alignments = Object.keys(blockquote.variants.alignment);
-  let selectedAlignment: BlockquoteProps['alignment'] = $state('left');
+  let selectedAlignment: BlockquoteProps["alignment"] = $state("left");
   let border = $state(false);
   const changeBorder = () => {
     border = !border;
@@ -56,23 +56,23 @@
   const changeBg = () => {
     bg = !bg;
   };
-  let blockClass: BlockquoteProps['class'] = $state('p-8');
+  let blockClass: BlockquoteProps["class"] = $state("p-8");
   const changeClass = () => {
-    blockClass = blockClass === 'p-8' ? 'p-4' : 'p-8';
+    blockClass = blockClass === "p-8" ? "p-4" : "p-8";
   };
 
   // code generator
   let generatedCode = $derived(
     (() => {
       let props = [];
-      if (bg) props.push(' bg');
-      if (border) props.push(' border');
-      if (italic) props.push(' italic');
-      if (selectedAlignment !== 'left') props.push(` alignment="${selectedAlignment}"`);
+      if (bg) props.push(" bg");
+      if (border) props.push(" border");
+      if (italic) props.push(" italic");
+      if (selectedAlignment !== "left") props.push(` alignment="${selectedAlignment}"`);
       // blockClass
       if (blockClass) props.push(` class="${blockClass}"`);
-      if (selectedSize !== 'lg') props.push(` size="${selectedSize}"`);
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+      if (selectedSize !== "lg") props.push(` size="${selectedSize}"`);
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
       return `<Blockquote${propsString}>
   ${text}
@@ -103,7 +103,7 @@
 <CodeWrapper>
   <Input type="text" bind:value={text} placeholder="Write your blockquote text" class="mb-8 pr-12">
     {#snippet right()}
-      <CloseButton onclick={() => (text = '')} />
+      <CloseButton onclick={() => (text = "")} />
     {/snippet}
   </Input>
   <div class="mb-4 h-[300px] overflow-y-auto md:h-[250px]">
@@ -122,10 +122,10 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-40" color="blue" onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
-    <Button class="w-40" color="rose" onclick={changeItalic}>{italic ? 'Remove italic' : 'Add italic'}</Button>
-    <Button class="w-40" color="indigo" onclick={changeBg}>{bg ? 'Remove bg' : 'Add bg'}</Button>
-    <Button class="w-40" color="sky" onclick={changeClass}>{blockClass === 'p-8' ? 'class: p-4' : 'class: p-8'}</Button>
+    <Button class="w-40" color="blue" onclick={changeBorder}>{border ? "Remove border" : "Add border"}</Button>
+    <Button class="w-40" color="rose" onclick={changeItalic}>{italic ? "Remove italic" : "Add italic"}</Button>
+    <Button class="w-40" color="indigo" onclick={changeBg}>{bg ? "Remove bg" : "Add bg"}</Button>
+    <Button class="w-40" color="sky" onclick={changeClass}>{blockClass === "p-8" ? "class: p-4" : "class: p-8"}</Button>
   </div>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCode} />

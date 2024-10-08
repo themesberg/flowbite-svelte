@@ -1,4 +1,4 @@
-import register from 'highlight.js/lib/languages/gherkin';
+import register from "highlight.js/lib/languages/gherkin";
 
-export const gherkin = { name: 'gherkin', register };
+export const gherkin = { name: "gherkin", register };
 export default gherkin;

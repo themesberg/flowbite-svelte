@@ -1,4 +1,4 @@
-import register from 'highlight.js/lib/languages/dart';
+import register from "highlight.js/lib/languages/dart";
 
-export const dart = { name: 'dart', register };
+export const dart = { name: "dart", register };
 export default dart;

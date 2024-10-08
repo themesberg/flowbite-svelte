@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { RunesMetaTags, deepMerge } from 'runes-meta-tags';
-  import { Runatics } from 'runatics';
-  import { page } from '$app/stores';
-  import '../app.pcss';
-  import Footer from './utils/Footer.svelte';
-  import { Navbar, NavLi, NavBrand, NavUl, uiHelpers, Darkmode, Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper } from '$lib';
-  import GitHub from './utils/GitHub.svelte';
-  import DynamicCodeBlockStyle from './utils/DynamicCodeBlockStyle.svelte';
+  import { RunesMetaTags, deepMerge } from "runes-meta-tags";
+  import { Runatics } from "runatics";
+  import { page } from "$app/stores";
+  import "../app.pcss";
+  import Footer from "./utils/Footer.svelte";
+  import { Navbar, NavLi, NavBrand, NavUl, uiHelpers, Darkmode, Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper } from "$lib";
+  import GitHub from "./utils/GitHub.svelte";
+  import DynamicCodeBlockStyle from "./utils/DynamicCodeBlockStyle.svelte";
 
   const sidebarUi = uiHelpers();
   let isOpen = $state(false);
@@ -29,7 +29,7 @@
 
   const hasPath = (key: string) => currentUrl.includes(key);
 
-  let navClass = 'w-full divide-gray-200 border-gray-200 bg-gray-50 dark_bg_theme text-gray-500 dark:divide-gray-700 dark:border-gray-700 dark:transparent dark:text-gray-400 sm:px-4';
+  let navClass = "w-full divide-gray-200 border-gray-200 bg-gray-50 dark_bg_theme text-gray-500 dark:divide-gray-700 dark:border-gray-700 dark:transparent dark:text-gray-400 sm:px-4";
   let { children, data } = $props();
 
   const analyticsId = data.ANALYTICS_ID_RUNES_LIB;
@@ -76,11 +76,11 @@
 <div class="lg:flex">
   <Sidebar isSingle {isOpen} {closeSidebar} breakpoint="lg" activeClass="flex items-center p-1 text-base font-normal text-white dark:hover:text-white hover:text-gray-900 bg-primary-700 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" nonActiveClass="p-1 hover:bg-gray-200" divClass="dark:bg-gray-900 bg-gray-50" class="top-[62px] h-screen dark:bg-gray-900">
     <SidebarGroup>
-      <SidebarDropdownWrapper label="GETTING STARTED" isOpen={hasPath('pages')} svgClass="me-4" btnClass="p-1">
+      <SidebarDropdownWrapper label="GETTING STARTED" isOpen={hasPath("pages")} svgClass="me-4" btnClass="p-1">
         <SidebarItem label="About" href="/pages/about" />
         <SidebarItem label="Coverage" href="/pages/coverage" />
       </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper label="Components" isOpen={hasPath('components')} svgClass="me-4" btnClass="p-1">
+      <SidebarDropdownWrapper label="Components" isOpen={hasPath("components")} svgClass="me-4" btnClass="p-1">
         <SidebarItem label="Accordion" href="/components/accordion" />
         <SidebarItem label="Alert" href="/components/alert" />
         <SidebarItem label="Avatar" href="/components/avatar" />
@@ -119,7 +119,7 @@
         <SidebarItem label="Tooltip" href="/components/tooltip" />
         <SidebarItem label="Video" href="/components/video" />
       </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper label="Forms" isOpen={hasPath('forms')} svgClass="me-4" btnClass="p-1">
+      <SidebarDropdownWrapper label="Forms" isOpen={hasPath("forms")} svgClass="me-4" btnClass="p-1">
         <SidebarItem label="Checkbox" href="/forms/checkbox" />
         <SidebarItem label="File input" href="/forms/file-input" />
         <SidebarItem label="Floating label" href="/forms/floating-label" />
@@ -132,7 +132,7 @@
         <SidebarItem label="Textarea" href="/forms/textarea" />
         <SidebarItem label="Toggle" href="/forms/toggle" />
       </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper label="Typography" isOpen={hasPath('typography')} svgClass="me-4" btnClass="p-1">
+      <SidebarDropdownWrapper label="Typography" isOpen={hasPath("typography")} svgClass="me-4" btnClass="p-1">
         <SidebarItem label="Blockquote" href="/typography/blockquote" />
         <SidebarItem label="Heading/Mark" href="/typography/heading" />
         <SidebarItem label="HR" href="/typography/hr" />

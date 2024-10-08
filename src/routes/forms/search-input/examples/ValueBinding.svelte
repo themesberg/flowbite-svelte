@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Search, Button } from '$lib';
-  import { SearchOutline } from 'flowbite-svelte-icons';
-  let value = $state('');
+  import { Search, Button } from "$lib";
+  import { SearchOutline } from "flowbite-svelte-icons";
+  let value = $state("");
   const submitted = () => {
     alert(`You are searching: ${value}`);
   };

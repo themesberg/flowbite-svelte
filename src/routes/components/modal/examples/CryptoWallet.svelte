@@ -1,11 +1,11 @@
 <script>
-  import { Button, Modal, uiHelpers } from '$lib';
-  import MetaMask from '../../../utils/icons/MetaMask.svelte';
-  import CoinbaseWallet from '../../../utils/icons/CoinbaseWallet.svelte';
-  import OperaWallet from '../../../utils/icons/OperaWallet.svelte';
-  import Fortmatic from '../../../utils/icons/Fortmatic.svelte';
-  import WalletConnect from '../../../utils/icons/WalletConnect.svelte';
-  import { QuestionCircleOutline } from 'flowbite-svelte-icons';
+  import { Button, Modal, uiHelpers } from "$lib";
+  import MetaMask from "../../../utils/icons/MetaMask.svelte";
+  import CoinbaseWallet from "../../../utils/icons/CoinbaseWallet.svelte";
+  import OperaWallet from "../../../utils/icons/OperaWallet.svelte";
+  import Fortmatic from "../../../utils/icons/Fortmatic.svelte";
+  import WalletConnect from "../../../utils/icons/WalletConnect.svelte";
+  import { QuestionCircleOutline } from "flowbite-svelte-icons";
   let walletModal = $state(false);
   const modalExample = uiHelpers();
   let modalStatus = $state(false);

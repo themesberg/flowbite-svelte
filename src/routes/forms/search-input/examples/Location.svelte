@@ -1,33 +1,33 @@
 <script lang="ts">
-  import { sineIn } from 'svelte/easing';
-  import { Search, Button, Dropdown, DropdownUl, DropdownLi, uiHelpers } from '$lib';
-  import { ChevronDownOutline, SearchOutline } from 'flowbite-svelte-icons';
-  const items = [{ label: 'All categories' }, { label: 'Mockups' }, { label: 'Templates' }, { label: 'Design' }, { label: 'Logos' }];
+  import { sineIn } from "svelte/easing";
+  import { Search, Button, Dropdown, DropdownUl, DropdownLi, uiHelpers } from "$lib";
+  import { ChevronDownOutline, SearchOutline } from "flowbite-svelte-icons";
+  const items = [{ label: "All categories" }, { label: "Mockups" }, { label: "Templates" }, { label: "Design" }, { label: "Logos" }];
   const countries = [
     {
-      label: 'United States',
-      labelSelected: 'USA',
-      icon: '/images/forms/search-input/usa-flag.svg'
+      label: "United States",
+      labelSelected: "USA",
+      icon: "/images/forms/search-input/usa-flag.svg"
     },
     {
-      label: 'Germany',
-      labelSelected: 'DE',
-      icon: '/images/forms/search-input/de-flag.svg'
+      label: "Germany",
+      labelSelected: "DE",
+      icon: "/images/forms/search-input/de-flag.svg"
     },
     {
-      label: 'Italy',
-      labelSelected: 'ITA',
-      icon: '/images/forms/search-input/it-flag.svg'
+      label: "Italy",
+      labelSelected: "ITA",
+      icon: "/images/forms/search-input/it-flag.svg"
     },
     {
-      label: 'China',
-      labelSelected: 'CH',
-      icon: '/images/forms/search-input/ch-flag.svg'
+      label: "China",
+      labelSelected: "CH",
+      icon: "/images/forms/search-input/ch-flag.svg"
     }
   ];
-  let selectCountry = $state('USA');
+  let selectCountry = $state("USA");
   let buttonLabel = $derived(countries.find(({ labelSelected }) => labelSelected === selectCountry));
-  let selectCategory = $state('All categories');
+  let selectCategory = $state("All categories");
   let dropdown = uiHelpers();
   let dropdownStatus = $state(false);
   let closeDropdown = dropdown.close;
@@ -38,7 +38,7 @@
   };
   const handleClick = (label: string) => {
     selectCategory = label;
-    console.log('selectCategory', selectCategory);
+    console.log("selectCategory", selectCategory);
     dropdown.close();
   };
   $effect(() => {

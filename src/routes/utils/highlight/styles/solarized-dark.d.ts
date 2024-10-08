@@ -1,1 +1,1 @@
-export { solarizedDark as default } from './';
+export { solarizedDark as default } from "./";

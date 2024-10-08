@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { CloseButton } from '$lib';
-  import type { ParamsType } from '$lib/types';
-  import { toast, type ToastProps as Props } from '.';
-  import { fly } from 'svelte/transition';
+  import { CloseButton } from "$lib";
+  import type { ParamsType } from "$lib/types";
+  import { toast, type ToastProps as Props } from ".";
+  import { fly } from "svelte/transition";
 
-  let { children, icon, toastStatus = $bindable(true), dismissable = true, color = 'primary', position, baseClass, iconClass, contentClass, align = true, params, transition = fly, ...restProps }: Props = $props();
+  let { children, icon, toastStatus = $bindable(true), dismissable = true, color = "primary", position, baseClass, iconClass, contentClass, align = true, params, transition = fly, ...restProps }: Props = $props();
 
   const { base, icon: iconVariants, content, close } = $derived(toast({ color, position, align }));
 </script>

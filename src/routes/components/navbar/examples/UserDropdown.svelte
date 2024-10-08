@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Navbar, NavBrand, NavUl, NavLi, uiHelpers, NavHamburger, Dropdown, DropdownHeader, DropdownUl, DropdownLi, DropdownDivider, Avatar, DropdownFooter } from '$lib';
-  import { sineIn } from 'svelte/easing';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Navbar, NavBrand, NavUl, NavLi, uiHelpers, NavHamburger, Dropdown, DropdownHeader, DropdownUl, DropdownLi, DropdownDivider, Avatar, DropdownFooter } from "$lib";
+  import { sineIn } from "svelte/easing";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
   let nav = uiHelpers();
   let navStatus = $state(false);
   let toggleNav = nav.toggle;
@@ -23,7 +23,7 @@
     {/snippet}
     {#snippet navSlotBlock()}
       <div class="flex items-center space-x-1 md:order-2">
-        <Avatar onclick={dropdownUser.toggle} src="/images/profile-picture-3.webp" dot={{ color: 'green' }} />
+        <Avatar onclick={dropdownUser.toggle} src="/images/profile-picture-3.webp" dot={{ color: "green" }} />
         <div class="relative">
           <Dropdown dropdownStatus={dropdownUserStatus} closeDropdown={closeDropdownUser} params={{ y: 0, duration: 200, easing: sineIn }} class="absolute -left-[110px] top-[14px] md:-left-[160px] ">
             <DropdownHeader class="px-4 py-2">

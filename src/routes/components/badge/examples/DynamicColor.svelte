@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { Badge, type BadgeProps } from '$lib';
+  import { Badge, type BadgeProps } from "$lib";
 
   setInterval(handleHover, 500);
 
-  let color = $state('primary') as BadgeProps['color'];
+  let color = $state("primary") as BadgeProps["color"];
   function handleHover() {
-    color = color === 'primary' ? 'secondary' : 'primary';
+    color = color === "primary" ? "secondary" : "primary";
   }
 </script>
 

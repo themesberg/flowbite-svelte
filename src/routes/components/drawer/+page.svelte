@@ -1,34 +1,34 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { Drawer, Drawerhead, Button, uiHelpers, Label, Radio, type DrawerProps } from '$lib';
-  import { InfoCircleSolid } from 'flowbite-svelte-icons';
-  import { blur, fly, slide, scale, fade } from 'svelte/transition';
-  import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
-  import { linear, sineIn } from 'svelte/easing';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import { Drawer, Drawerhead, Button, uiHelpers, Label, Radio, type DrawerProps } from "$lib";
+  import { InfoCircleSolid } from "flowbite-svelte-icons";
+  import { blur, fly, slide, scale, fade } from "svelte/transition";
+  import type { FlyParams, BlurParams, SlideParams, ScaleParams } from "svelte/transition";
+  import { linear, sineIn } from "svelte/easing";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'drawer';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "drawer";
 
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
   const exampleArr = [
-    { name: 'Form elements', component: ExampleComponents.FormElements },
-    { name: 'Contact form', component: ExampleComponents.ContactForm },
-    { name: 'Drawer navigation', component: ExampleComponents.DrawerNavigation },
-    { name: 'Offset', component: ExampleComponents.Offset },
-    { name: 'Onmouseenter', component: ExampleComponents.Onmouseenter }
+    { name: "Form elements", component: ExampleComponents.FormElements },
+    { name: "Contact form", component: ExampleComponents.ContactForm },
+    { name: "Drawer navigation", component: ExampleComponents.DrawerNavigation },
+    { name: "Offset", component: ExampleComponents.Offset },
+    { name: "Onmouseenter", component: ExampleComponents.Onmouseenter }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -57,24 +57,24 @@
   };
 
   const transitions: TransitionOption[] = [
-    { name: 'Fly', transition: fly, params: { duration: 300, easing: linear, x: -150 } },
-    { name: 'Blur', transition: blur, params: { duration: 400, easing: sineIn } },
-    { name: 'Slide', transition: slide, params: { duration: 200, easing: linear } },
-    { name: 'Scale', transition: scale, params: { duration: 300, easing: sineIn } },
-    { name: 'Fade', transition: fade, params: { duration: 400, easing: linear } }
+    { name: "Fly", transition: fly, params: { duration: 300, easing: linear, x: -150 } },
+    { name: "Blur", transition: blur, params: { duration: 400, easing: sineIn } },
+    { name: "Slide", transition: slide, params: { duration: 200, easing: linear } },
+    { name: "Scale", transition: scale, params: { duration: 300, easing: sineIn } },
+    { name: "Fade", transition: fade, params: { duration: 400, easing: linear } }
   ];
 
-  let selectedTransition = $state('Fly');
+  let selectedTransition = $state("Fly");
   let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
 
   const placements = [
-    { name: 'Left', placement: 'left', params: { x: -320, duration: 300, easing: sineIn }, width: 'default' },
-    { name: 'Top', placement: 'top', params: { y: -320, duration: 300, easing: sineIn }, width: 'full' },
-    { name: 'Right', placement: 'right', params: { x: 320, duration: 300, easing: sineIn }, width: 'default' },
-    { name: 'Bottom', placement: 'bottom', params: { y: 320, duration: 300, easing: sineIn }, width: 'full' }
+    { name: "Left", placement: "left", params: { x: -320, duration: 300, easing: sineIn }, width: "default" },
+    { name: "Top", placement: "top", params: { y: -320, duration: 300, easing: sineIn }, width: "full" },
+    { name: "Right", placement: "right", params: { x: 320, duration: 300, easing: sineIn }, width: "default" },
+    { name: "Bottom", placement: "bottom", params: { y: 320, duration: 300, easing: sineIn }, width: "full" }
   ];
 
-  let selectedPlacement = $state('Left');
+  let selectedPlacement = $state("Left");
   let currentPlacement = $derived(placements.find((p) => p.name === selectedPlacement) || placements[0]);
 
   // backdrop
@@ -92,22 +92,22 @@
   let generatedCode = $derived(
     (() => {
       let props = [];
-      if (!backdropStatus) props.push(' backdrop={false}');
-      if (!outsideclickStatus) props.push(' activateClickOutside={false}');
-      if (currentPlacement.width !== 'default') props.push(` width="${currentPlacement.width}"`);
+      if (!backdropStatus) props.push(" backdrop={false}");
+      if (!outsideclickStatus) props.push(" activateClickOutside={false}");
+      if (currentPlacement.width !== "default") props.push(` width="${currentPlacement.width}"`);
       if (currentTransition !== transitions[0]) {
         props.push(` transition={${currentTransition.transition.name}}`);
 
         // Generate params string without quotes and handle functions
-        let paramValues = currentPlacement.placement === 'left' ? currentTransition.params : currentPlacement.params;
+        let paramValues = currentPlacement.placement === "left" ? currentTransition.params : currentPlacement.params;
         const paramsString = Object.entries(paramValues)
           .map(([key, value]) => {
-            if (typeof value === 'function') {
+            if (typeof value === "function") {
               return `${key}:${value.name}`;
             }
             return `${key}:${value}`;
           })
-          .join(',');
+          .join(",");
         props.push(` params={{${paramsString}}}`);
       }
       // placement
@@ -115,7 +115,7 @@
         props.push(` placement="${currentPlacement.placement}"`);
       }
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
       return `<Button onclick={drawer.toggle}>Drawer</Button>
 <Drawer drawerStatus={drawerStatus} closeDrawer={closeDrawer}${propsString}>
@@ -161,7 +161,7 @@
   <div class="text-center">
     <Button onclick={drawerTransition.toggle}>Drawer</Button>
   </div>
-  <Drawer drawerStatus={drawerStatusTransition} closeDrawer={closeDrawerTransition} transition={currentTransition.transition} placement={currentPlacement.placement as DrawerProps['placement']} width={currentPlacement.width as DrawerProps['width']} params={currentPlacement.placement === 'left' ? currentTransition.params : currentPlacement.params} backdrop={backdropStatus} activateClickOutside={outsideclickStatus}>
+  <Drawer drawerStatus={drawerStatusTransition} closeDrawer={closeDrawerTransition} transition={currentTransition.transition} placement={currentPlacement.placement as DrawerProps["placement"]} width={currentPlacement.width as DrawerProps["width"]} params={currentPlacement.placement === "left" ? currentTransition.params : currentPlacement.params} backdrop={backdropStatus} activateClickOutside={outsideclickStatus}>
     <Drawerhead onclick={closeDrawerTransition} class="mb-4">
       <h5 id="drawer-label" class="inline-flex items-center text-xl font-semibold text-gray-500 dark:text-gray-400">
         <InfoCircleSolid class="me-2.5 h-5 w-5" />{selectedTransition} drawer
@@ -169,9 +169,9 @@
     </Drawerhead>
     <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">Content</p>
     <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
-      Backdrop: {backdropStatus ? 'true' : 'false'}
+      Backdrop: {backdropStatus ? "true" : "false"}
       <br />
-      Outsideclick: {outsideclickStatus ? 'true' : 'false'}
+      Outsideclick: {outsideclickStatus ? "true" : "false"}
     </p>
   </Drawer>
   <div class="mb-4 flex flex-wrap space-x-2">
@@ -187,8 +187,8 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-48" color="primary" onclick={changeBackdropStatus}>{backdropStatus ? 'Hide backdrop' : 'Show backdrop'}</Button>
-    <Button class="w-48" color="secondary" onclick={changeOutsideclickStatus}>{outsideclickStatus ? 'Disable outsideclick' : 'Enable outsideclick'}</Button>
+    <Button class="w-48" color="primary" onclick={changeBackdropStatus}>{backdropStatus ? "Hide backdrop" : "Show backdrop"}</Button>
+    <Button class="w-48" color="secondary" onclick={changeOutsideclickStatus}>{outsideclickStatus ? "Disable outsideclick" : "Enable outsideclick"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

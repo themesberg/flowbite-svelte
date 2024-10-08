@@ -1,1 +1,1 @@
-export { vs as default } from './';
+export { vs as default } from "./";

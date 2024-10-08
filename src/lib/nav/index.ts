@@ -1,12 +1,12 @@
-import Navbar from './Navbar.svelte';
-import NavBrand from './NavBrand.svelte';
-import NavLi from './NavLi.svelte';
-import NavUl from './NavUl.svelte';
-import NavHamburger from './NavHamburger.svelte';
-import type { HTMLAttributes, HTMLAnchorAttributes } from 'svelte/elements';
-import type { Snippet } from 'svelte';
-import type { navbarType } from '$lib/types';
-import { navbar, navUl, navbrand, navLi, navcontainer, navhamburger } from './theme';
+import Navbar from "./Navbar.svelte";
+import NavBrand from "./NavBrand.svelte";
+import NavLi from "./NavLi.svelte";
+import NavUl from "./NavUl.svelte";
+import NavHamburger from "./NavHamburger.svelte";
+import type { HTMLAttributes, HTMLAnchorAttributes } from "svelte/elements";
+import type { Snippet } from "svelte";
+import type { navbarType } from "$lib/types";
+import { navbar, navUl, navbrand, navLi, navcontainer, navhamburger } from "./theme";
 
 interface NavbarProps extends HTMLAttributes<HTMLElement> {
   children: Snippet;
@@ -19,7 +19,7 @@ interface NavbarProps extends HTMLAttributes<HTMLElement> {
   fluid?: boolean;
   brand?: Snippet;
   hamburgerMenu?: boolean;
-  breakPoint?: navbarType['breakPoint'];
+  breakPoint?: navbarType["breakPoint"];
   navClass?: string;
   divClass?: string;
   btnClass?: string;

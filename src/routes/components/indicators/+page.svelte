@@ -1,30 +1,30 @@
 <script lang="ts">
-  import { type Component } from 'svelte';
-  import { Indicator, indicator, Button, Label, Radio, uiHelpers, type IndicatorProps } from '$lib';
-  import HighlightCompo from '../../utils/HighlightCompo.svelte';
-  import DynamicCodeBlockHighlight from '../../utils/DynamicCodeBlockHighlight.svelte';
-  import CodeWrapper from '../../utils/CodeWrapper.svelte';
-  import H1 from '../../utils/H1.svelte';
-  import H2 from '../../utils/H2.svelte';
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from '../../utils/helpers';
+  import { type Component } from "svelte";
+  import { Indicator, indicator, Button, Label, Radio, uiHelpers, type IndicatorProps } from "$lib";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
-  import CompoAttributesViewer from '../../utils/CompoAttributesViewer.svelte';
-  const dirName = 'indicator';
+  import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
+  const dirName = "indicator";
 
   // for examples section that dynamically changes the svelte component and svelteCode content
-  import * as ExampleComponents from './examples';
-  const exampleModules = import.meta.glob('./examples/*.svelte', {
-    query: '?raw',
-    import: 'default',
+  import * as ExampleComponents from "./examples";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
   const exampleArr = [
-    { name: 'Legend', component: ExampleComponents.Legend },
-    { name: 'Count', component: ExampleComponents.Count },
-    { name: 'Status', component: ExampleComponents.Status },
-    { name: 'Badge', component: ExampleComponents.Badge },
-    { name: 'Stepper', component: ExampleComponents.Stepper }
+    { name: "Legend", component: ExampleComponents.Legend },
+    { name: "Count", component: ExampleComponents.Count },
+    { name: "Status", component: ExampleComponents.Status },
+    { name: "Badge", component: ExampleComponents.Badge },
+    { name: "Stepper", component: ExampleComponents.Stepper }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
@@ -37,20 +37,20 @@
   // end of dynamic svelte component
 
   // color, size, rounded, border, placement and offset
-  const sizes = Object.keys(indicator.variants.size) as IndicatorProps['size'][];
-  const colors = Object.keys(indicator.variants.color) as IndicatorProps['color'][];
-  const placements = Object.keys(indicator.variants.placement) as IndicatorProps['placement'][];
-  let color: IndicatorProps['color'] = $state('primary');
-  let size: IndicatorProps['size'] = $state('md');
-  let border: IndicatorProps['border'] = $state(false);
+  const sizes = Object.keys(indicator.variants.size) as IndicatorProps["size"][];
+  const colors = Object.keys(indicator.variants.color) as IndicatorProps["color"][];
+  const placements = Object.keys(indicator.variants.placement) as IndicatorProps["placement"][];
+  let color: IndicatorProps["color"] = $state("primary");
+  let size: IndicatorProps["size"] = $state("md");
+  let border: IndicatorProps["border"] = $state(false);
   const changeBorder = () => {
     border = !border;
   };
-  let cornerStyle: IndicatorProps['cornerStyle'] = $state('circular');
+  let cornerStyle: IndicatorProps["cornerStyle"] = $state("circular");
   const changeCornerStyle = () => {
-    cornerStyle = cornerStyle === 'circular' ? 'rounded' : 'circular';
+    cornerStyle = cornerStyle === "circular" ? "rounded" : "circular";
   };
-  let placement: IndicatorProps['placement'] = $state('default');
+  let placement: IndicatorProps["placement"] = $state("default");
 
   // code generator
   let generatedCode = $derived(
@@ -59,13 +59,13 @@
       // {color} {size} {border} {placement} {cornerStyle}
       // color = 'primary', cornerStyle = 'circular', size = 'md', border = false, placement, offset = true,
       // if (color) props.push(` color="${color}"`);
-      if (color !== 'primary') props.push(` color="${color}"`);
-      if (size !== 'md') props.push(` size="${size}"`);
-      if (border) props.push(' border');
-      if (placement !== 'default') props.push(` placement="${placement}"`);
-      if (cornerStyle !== 'circular') props.push(` cornerStyle="${cornerStyle}"`);
+      if (color !== "primary") props.push(` color="${color}"`);
+      if (size !== "md") props.push(` size="${size}"`);
+      if (border) props.push(" border");
+      if (placement !== "default") props.push(` placement="${placement}"`);
+      if (cornerStyle !== "circular") props.push(` cornerStyle="${cornerStyle}"`);
 
-      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
       return `<div class="borer relative h-56 w-56 rounded-lg border-gray-300 m-8">
   <Indicator${propsString} />
@@ -109,7 +109,7 @@
     <div class="flex flex-wrap space-x-2">
       <Label class="mb-4 w-full font-bold">Color</Label>
       {#each colors as colorOption}
-        <Radio labelClass="w-24 my-1" name="color" bind:group={color} color={colorOption as IndicatorProps['color']} value={colorOption}>{colorOption}</Radio>
+        <Radio labelClass="w-24 my-1" name="color" bind:group={color} color={colorOption as IndicatorProps["color"]} value={colorOption}>{colorOption}</Radio>
       {/each}
     </div>
     <div class="flex flex-wrap space-x-4">
@@ -124,8 +124,8 @@
         <Radio labelClass="w-32 my-1" name="placement" bind:group={placement} value={positionOption}>{positionOption}</Radio>
       {/each}
     </div>
-    <Button onclick={changeBorder}>{border ? 'Remove border' : 'Add border'}</Button>
-    <Button onclick={changeCornerStyle}>{cornerStyle === 'circular' ? 'Rounded' : 'Circular'}</Button>
+    <Button onclick={changeBorder}>{border ? "Remove border" : "Add border"}</Button>
+    <Button onclick={changeCornerStyle}>{cornerStyle === "circular" ? "Rounded" : "Circular"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

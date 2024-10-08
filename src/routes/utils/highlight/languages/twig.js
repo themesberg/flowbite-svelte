@@ -1,4 +1,4 @@
-import register from 'highlight.js/lib/languages/twig';
+import register from "highlight.js/lib/languages/twig";
 
-export const twig = { name: 'twig', register };
+export const twig = { name: "twig", register };
 export default twig;

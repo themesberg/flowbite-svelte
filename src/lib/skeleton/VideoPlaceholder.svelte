@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { type VideoPlaceholderProps as Props, videoPlaceholder } from './index';
+  import { type VideoPlaceholderProps as Props, videoPlaceholder } from "./index";
 
-  let { size = 'sm', class: className }: Props = $props();
+  let { size = "sm", class: className }: Props = $props();
   const base = $derived(videoPlaceholder({ size, className }));
 </script>
 

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Card, Button } from '$lib';
-  import { ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Card, Button } from "$lib";
+  import { ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
 <div class="flex justify-center">

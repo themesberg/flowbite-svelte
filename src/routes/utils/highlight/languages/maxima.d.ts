@@ -1,2 +1,2 @@
-export { maxima } from './';
-export { maxima as default } from './';
+export { maxima } from "./";
+export { maxima as default } from "./";

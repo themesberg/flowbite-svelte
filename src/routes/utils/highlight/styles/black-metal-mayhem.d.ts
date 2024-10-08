@@ -1,1 +1,1 @@
-export { blackMetalMayhem as default } from './';
+export { blackMetalMayhem as default } from "./";

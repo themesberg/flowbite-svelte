@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Toast, Button } from '$lib';
-  import { CameraPhotoOutline } from 'flowbite-svelte-icons';
+  import { Toast, Button } from "$lib";
+  import { CameraPhotoOutline } from "flowbite-svelte-icons";
 </script>
 
 <div class="flex h-48 flex-col items-center">

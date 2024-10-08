@@ -1,14 +1,14 @@
-import AdvancedRating from './AdvancedRating.svelte';
-import Heart from './Heart.svelte';
-import Rating from './Rating.svelte';
-import RatingComment from './RatingComment.svelte';
-import Review from './Review.svelte';
-import ScoreRating from './ScoreRating.svelte';
-import Star from './Star.svelte';
-import Thumbup from './Thumbup.svelte';
-import type { Snippet, Component } from 'svelte';
-import { advancedrating, rating, review, scorerating } from './theme';
-import type { SVGAttributes, HTMLAttributes } from 'svelte/elements';
+import AdvancedRating from "./AdvancedRating.svelte";
+import Heart from "./Heart.svelte";
+import Rating from "./Rating.svelte";
+import RatingComment from "./RatingComment.svelte";
+import Review from "./Review.svelte";
+import ScoreRating from "./ScoreRating.svelte";
+import Star from "./Star.svelte";
+import Thumbup from "./Thumbup.svelte";
+import type { Snippet, Component } from "svelte";
+import { advancedrating, rating, review, scorerating } from "./theme";
+import type { SVGAttributes, HTMLAttributes } from "svelte/elements";
 
 interface AdvancedRatingProps {
   rating?: Snippet;

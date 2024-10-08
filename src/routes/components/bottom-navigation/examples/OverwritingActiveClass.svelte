@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Skeleton, ImagePlaceholder, BottomNav, BottomNavItem } from '$lib';
-  import { AdjustmentsVerticalSolid, HomeSolid, WalletSolid, UserCircleSolid } from 'flowbite-svelte-icons';
+  import { Skeleton, ImagePlaceholder, BottomNav, BottomNavItem } from "$lib";
+  import { AdjustmentsVerticalSolid, HomeSolid, WalletSolid, UserCircleSolid } from "flowbite-svelte-icons";
 </script>
 
 <div class="relative flex flex-col p-6">

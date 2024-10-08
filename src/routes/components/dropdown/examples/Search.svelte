@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { sineIn } from 'svelte/easing';
-  import { Button, Dropdown, DropdownUl, DropdownLi, DropdownHeader, DropdownFooter, Search, Checkbox, uiHelpers } from '$lib';
-  import { ChevronDownOutline, UserRemoveSolid } from 'flowbite-svelte-icons';
+  import { sineIn } from "svelte/easing";
+  import { Button, Dropdown, DropdownUl, DropdownLi, DropdownHeader, DropdownFooter, Search, Checkbox, uiHelpers } from "$lib";
+  import { ChevronDownOutline, UserRemoveSolid } from "flowbite-svelte-icons";
 
-  let searchTerm = $state('');
+  let searchTerm = $state("");
   const people = [
-    { name: 'Robert Gouth', checked: false },
-    { name: 'Jese Leos', checked: false },
-    { name: 'Bonnie Green', checked: true }
+    { name: "Robert Gouth", checked: false },
+    { name: "Jese Leos", checked: false },
+    { name: "Bonnie Green", checked: true }
   ];
   let filteredItems = $derived(people.filter((person) => person.name.toLowerCase().indexOf(searchTerm?.toLowerCase()) !== -1));
 

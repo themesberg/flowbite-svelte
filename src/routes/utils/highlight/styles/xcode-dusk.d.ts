@@ -1,1 +1,1 @@
-export { xcodeDusk as default } from './';
+export { xcodeDusk as default } from "./";

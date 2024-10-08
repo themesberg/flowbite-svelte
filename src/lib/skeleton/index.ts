@@ -1,23 +1,23 @@
-import type { HTMLAttributes } from 'svelte/elements';
-import { type VariantProps } from 'tailwind-variants';
-import CardPlaceholder from './CardPlaceholder.svelte';
-import ImagePlaceholder from './ImagePlaceholder.svelte';
-import ListPlaceholder from './ListPlaceholder.svelte';
-import Skeleton from './Skeleton.svelte';
-import TestimonialPlaceholder from './TestimonialPlaceholder.svelte';
-import TextPlaceholder from './TextPlaceholder.svelte';
-import VideoPlaceholder from './VideoPlaceholder.svelte';
-import WidgetPlaceholder from './WidgetPlaceholder.svelte';
-import { cardPlaceholder, imagePlaceholder, listPlaceholder, skeleton, testimonialPlaceholder, textPlaceholder, videoPlaceholder, widgetPlaceholder } from './theme';
+import type { HTMLAttributes } from "svelte/elements";
+import { type VariantProps } from "tailwind-variants";
+import CardPlaceholder from "./CardPlaceholder.svelte";
+import ImagePlaceholder from "./ImagePlaceholder.svelte";
+import ListPlaceholder from "./ListPlaceholder.svelte";
+import Skeleton from "./Skeleton.svelte";
+import TestimonialPlaceholder from "./TestimonialPlaceholder.svelte";
+import TextPlaceholder from "./TextPlaceholder.svelte";
+import VideoPlaceholder from "./VideoPlaceholder.svelte";
+import WidgetPlaceholder from "./WidgetPlaceholder.svelte";
+import { cardPlaceholder, imagePlaceholder, listPlaceholder, skeleton, testimonialPlaceholder, textPlaceholder, videoPlaceholder, widgetPlaceholder } from "./theme";
 
-type CardSizeType = VariantProps<typeof cardPlaceholder>['size'];
+type CardSizeType = VariantProps<typeof cardPlaceholder>["size"];
 interface CardPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
   size?: CardSizeType;
   class?: string;
 }
 
-type SizeImageType = VariantProps<typeof imagePlaceholder>['size'];
-type RoundedType = VariantProps<typeof imagePlaceholder>['rounded'];
+type SizeImageType = VariantProps<typeof imagePlaceholder>["size"];
+type RoundedType = VariantProps<typeof imagePlaceholder>["rounded"];
 
 interface ImagePlaceholderProps extends HTMLAttributes<HTMLDivElement> {
   size?: SizeImageType;
@@ -25,8 +25,8 @@ interface ImagePlaceholderProps extends HTMLAttributes<HTMLDivElement> {
   class?: string;
 }
 
-type SizeListType = VariantProps<typeof imagePlaceholder>['size'];
-type RoundedListType = VariantProps<typeof imagePlaceholder>['rounded'];
+type SizeListType = VariantProps<typeof imagePlaceholder>["size"];
+type RoundedListType = VariantProps<typeof imagePlaceholder>["rounded"];
 
 interface ListPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
   itemNumber?: number;
@@ -35,20 +35,20 @@ interface ListPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
   class?: string;
 }
 
-type SizeSkeletonType = VariantProps<typeof skeleton>['size'];
+type SizeSkeletonType = VariantProps<typeof skeleton>["size"];
 
 interface SkeletonProps extends HTMLAttributes<HTMLDivElement> {
   size?: SizeSkeletonType;
   class?: string;
 }
 
-type SizeTextType = VariantProps<typeof textPlaceholder>['size'];
+type SizeTextType = VariantProps<typeof textPlaceholder>["size"];
 
 interface TextPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
   size?: SizeTextType;
 }
 
-type SizeVideoType = VariantProps<typeof textPlaceholder>['size'];
+type SizeVideoType = VariantProps<typeof textPlaceholder>["size"];
 
 interface VideoPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
   size?: SizeVideoType;

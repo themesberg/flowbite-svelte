@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Button, Indicator } from '$lib';
-  import { EnvelopeSolid } from 'flowbite-svelte-icons';
+  import { Button, Indicator } from "$lib";
+  import { EnvelopeSolid } from "flowbite-svelte-icons";
 </script>
 
 <div class="flex justify-center">

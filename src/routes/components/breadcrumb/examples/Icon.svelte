@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Breadcrumb, BreadcrumbItem } from '$lib';
-  import { ChevronDoubleRightOutline, HomeOutline } from 'flowbite-svelte-icons';
+  import { Breadcrumb, BreadcrumbItem } from "$lib";
+  import { ChevronDoubleRightOutline, HomeOutline } from "flowbite-svelte-icons";
 </script>
 
 <div class="overflow-x-scroll p-2 sm:p-6">

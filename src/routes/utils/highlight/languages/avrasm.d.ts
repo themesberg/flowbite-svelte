@@ -1,2 +1,2 @@
-export { avrasm } from './';
-export { avrasm as default } from './';
+export { avrasm } from "./";
+export { avrasm as default } from "./";

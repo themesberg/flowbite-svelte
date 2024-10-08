@@ -1,16 +1,16 @@
 <script lang="ts">
-  import { type AnchorProps as Props, anchor } from '.';
+  import { type AnchorProps as Props, anchor } from ".";
 
   let { children, spanClass, aClass, class: className, tag, ...restProps }: Props = $props();
 
   const { base, span, anchor: anchorCls } = $derived(anchor());
 
-  let content: string = $state('');
-  let slug: string = $state('');
+  let content: string = $state("");
+  let slug: string = $state("");
 
   function init(node: HTMLElement) {
-    content = node.innerText ?? '';
-    slug = content.replace(/\s/g, '_').replace(/__#+/g, '');
+    content = node.innerText ?? "";
+    slug = content.replace(/\s/g, "_").replace(/__#+/g, "");
   }
 </script>
 

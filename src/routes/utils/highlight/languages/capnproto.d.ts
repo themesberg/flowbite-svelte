@@ -1,2 +1,2 @@
-export { capnproto } from './';
-export { capnproto as default } from './';
+export { capnproto } from "./";
+export { capnproto as default } from "./";

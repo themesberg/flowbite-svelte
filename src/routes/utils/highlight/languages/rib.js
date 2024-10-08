@@ -1,4 +1,4 @@
-import register from 'highlight.js/lib/languages/rib';
+import register from "highlight.js/lib/languages/rib";
 
-export const rib = { name: 'rib', register };
+export const rib = { name: "rib", register };
 export default rib;

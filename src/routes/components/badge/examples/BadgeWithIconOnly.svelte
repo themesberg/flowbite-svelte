@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Badge } from '$lib';
-  import { CheckOutline, InfoCircleSolid, UserCircleSolid } from 'flowbite-svelte-icons';
+  import { Badge } from "$lib";
+  import { CheckOutline, InfoCircleSolid, UserCircleSolid } from "flowbite-svelte-icons";
 </script>
 
 <div class="flex justify-center gap-2">

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { type SidebarButtonProps as Props, sidebarbutton } from '.';
-  let { breakpoint = 'md', class: className, ...restProps }: Props = $props();
+  import { type SidebarButtonProps as Props, sidebarbutton } from ".";
+  let { breakpoint = "md", class: className, ...restProps }: Props = $props();
 
   const base = $derived(sidebarbutton({ breakpoint, className }));
 </script>

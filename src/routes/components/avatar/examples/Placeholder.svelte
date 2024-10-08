@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Avatar } from '$lib';
+  import { Avatar } from "$lib";
 </script>
 
 <div class="flex justify-center gap-4">

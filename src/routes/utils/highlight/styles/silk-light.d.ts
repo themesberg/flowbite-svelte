@@ -1,1 +1,1 @@
-export { silkLight as default } from './';
+export { silkLight as default } from "./";

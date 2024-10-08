@@ -1,2 +1,2 @@
-export { dsconfig } from './';
-export { dsconfig as default } from './';
+export { dsconfig } from "./";
+export { dsconfig as default } from "./";

@@ -1,4 +1,4 @@
-import register from 'highlight.js/lib/languages/processing';
+import register from "highlight.js/lib/languages/processing";
 
-export const processing = { name: 'processing', register };
+export const processing = { name: "processing", register };
 export default processing;

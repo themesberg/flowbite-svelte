@@ -1,1 +1,1 @@
-export { obsidian as default } from './';
+export { obsidian as default } from "./";

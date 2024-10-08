@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { Indicator } from '$lib';
-  import { type AvatarProps as Props, avatar } from '.';
+  import { Indicator } from "$lib";
+  import { type AvatarProps as Props, avatar } from ".";
 
-  let { children, src, href, cornerStyle = 'circular', border, stacked, dot, class: className, alt, size = 'md', onclick, ...restProps }: Props = $props();
+  let { children, src, href, cornerStyle = "circular", border, stacked, dot, class: className, alt, size = "md", onclick, ...restProps }: Props = $props();
 
-  dot = dot && { placement: 'top-right', color: 'gray', size: 'lg', ...dot };
+  dot = dot && { placement: "top-right", color: "gray", size: "lg", ...dot };
 
   let avatarClass = $derived(
     avatar({
@@ -18,9 +18,9 @@
 </script>
 
 {#if !src || !!href || children || dot}
-  <svelte:element this={href ? 'a' : 'div'} role={href ? 'link' : 'img'} {onclick} {href} {...restProps} class={avatarClass}>
+  <svelte:element this={href ? "a" : "div"} role={href ? "link" : "img"} {onclick} {href} {...restProps} class={avatarClass}>
     {#if src}
-      <img {alt} {src} class={cornerStyle === 'circular' ? 'rounded-full' : 'rounded'} />
+      <img {alt} {src} class={cornerStyle === "circular" ? "rounded-full" : "rounded"} />
     {:else if children}
       {@render children()}
     {:else}
@@ -29,7 +29,7 @@
       </svg>
     {/if}
     {#if dot}
-      <Indicator border offset={cornerStyle === 'circular' ? true : false} {...dot} />
+      <Indicator border offset={cornerStyle === "circular" ? true : false} {...dot} />
     {/if}
   </svelte:element>
 {:else}

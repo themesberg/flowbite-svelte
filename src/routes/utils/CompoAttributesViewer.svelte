@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { Tabs, TabItem } from '$lib';
-  import TableProp from './TableProp.svelte';
-  import TableDefaultRow from './TableDefaultRow.svelte';
-  import { ClipboardSolid } from 'flowbite-svelte-icons';
-  import { getFilteredFileNames, toKebabCase } from './helpers';
+  import { Tabs, TabItem } from "$lib";
+  import TableProp from "./TableProp.svelte";
+  import TableDefaultRow from "./TableDefaultRow.svelte";
+  import { ClipboardSolid } from "flowbite-svelte-icons";
+  import { getFilteredFileNames, toKebabCase } from "./helpers";
 
   type TCompoData = {
     data: {
@@ -22,14 +22,14 @@
   let compoData: TCompoData[] = $state([]);
   // default is find fileName using dirName
   const fileNames = getFilteredFileNames(toKebabCase(dirName));
-  console.log('fileNames', fileNames);
+  console.log("fileNames", fileNames);
 
   // if components are given (e.g. checkbox, etc in forms, typography, utils) use the components string
-  let componentArray = components ? components.split(', ') : [];
+  let componentArray = components ? components.split(", ") : [];
 
   if (components) {
     // Split the components into an array
-    const componentArray = components.split(', ');
+    const componentArray = components.split(", ");
   }
 
   type ComponentData = {
@@ -61,14 +61,14 @@
     try {
       compoData = await Promise.all(importPromises);
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
       throw error;
     }
   }
 
   $effect(() => {
     processComponents().catch((error) => {
-      console.error('Error outside of processComponents:', error);
+      console.error("Error outside of processComponents:", error);
     });
   });
 </script>

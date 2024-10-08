@@ -1,17 +1,17 @@
 <script lang="ts">
-  import { Review } from '$lib';
-  import { LandmarkSolid, CalendarMonthSolid, UsersGroupOutline, ThumbsUpSolid, ThumbsDownSolid } from 'flowbite-svelte-icons';
+  import { Review } from "$lib";
+  import { LandmarkSolid, CalendarMonthSolid, UsersGroupOutline, ThumbsUpSolid, ThumbsDownSolid } from "flowbite-svelte-icons";
   let review = {
-    name: 'Jese Leos',
-    imgSrc: '/images/profile-picture-2.webp',
-    imgAlt: 'jese leos',
-    address: 'United States',
-    reviewDate: 'January 20, 2022',
-    title: 'Spotless, good appliances, excellent layout, host was genuinely nice and helpful.',
+    name: "Jese Leos",
+    imgSrc: "/images/profile-picture-2.webp",
+    imgAlt: "jese leos",
+    address: "United States",
+    reviewDate: "January 20, 2022",
+    title: "Spotless, good appliances, excellent layout, host was genuinely nice and helpful.",
     rating: 8.79,
-    item1: 'Apartament with City View',
-    item2: '3 nights December 2021',
-    item3: 'Family'
+    item1: "Apartament with City View",
+    item2: "3 nights December 2021",
+    item3: "Family"
   };
 </script>
 

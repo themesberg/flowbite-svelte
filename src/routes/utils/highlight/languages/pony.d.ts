@@ -1,2 +1,2 @@
-export { pony } from './';
-export { pony as default } from './';
+export { pony } from "./";
+export { pony as default } from "./";

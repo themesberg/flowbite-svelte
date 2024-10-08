@@ -1,1 +1,1 @@
-export { spacemacs as default } from './';
+export { spacemacs as default } from "./";

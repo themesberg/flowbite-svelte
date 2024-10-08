@@ -1,1 +1,1 @@
-export { ashes as default } from './';
+export { ashes as default } from "./";

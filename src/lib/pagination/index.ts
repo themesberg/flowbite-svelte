@@ -1,9 +1,9 @@
-import { paginationItem, pagination } from './theme';
-import type { Snippet } from 'svelte';
-import Pagination from './Pagination.svelte';
-import { type VariantProps } from 'tailwind-variants';
-import PaginationItem from './PaginationItem.svelte';
-import type { HTMLAnchorAttributes, HTMLButtonAttributes, HTMLLiAttributes } from 'svelte/elements';
+import { paginationItem, pagination } from "./theme";
+import type { Snippet } from "svelte";
+import Pagination from "./Pagination.svelte";
+import { type VariantProps } from "tailwind-variants";
+import PaginationItem from "./PaginationItem.svelte";
+import type { HTMLAnchorAttributes, HTMLButtonAttributes, HTMLLiAttributes } from "svelte/elements";
 
 // type PaginationItemProps = PaginationItemAttributes & ((HTMLAnchorAttributes & { href: string, disabled?: never }) | (HTMLButtonAttributes & { href?: never }));
 
@@ -23,7 +23,7 @@ interface PaginationItemSpecificProps {
   href?: string;
   active?: boolean;
   rel?: string;
-  size?: PaginationItemType['size'];
+  size?: PaginationItemType["size"];
 }
 
 type PaginationItemProps = PaginationItemSpecificProps &
@@ -39,7 +39,7 @@ interface PaginationProps extends HTMLLiAttributes {
   previous?: () => void;
   next?: () => void;
   table?: boolean;
-  size?: PaginationItemType['size'];
+  size?: PaginationItemType["size"];
   ariaLabel?: string;
 }
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type MockupBaseProps as Props, desktop } from '.';
+  import { type MockupBaseProps as Props, desktop } from ".";
 
   let { children, divClass, div2Class, div3Class, div4Class, ...restProps }: Props = $props();
 

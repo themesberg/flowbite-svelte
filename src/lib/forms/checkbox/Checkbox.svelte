@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Label from '../label/Label.svelte';
-  import { type CheckboxProps as Props, checkbox } from '.';
+  import Label from "../label/Label.svelte";
+  import { type CheckboxProps as Props, checkbox } from ".";
 
-  let { children, aria_describedby, color = 'primary', custom, inline, tinted, rounded, group = $bindable([]), choices = [], checked = $bindable(false), classLabel, indeterminate, class: className, ...restProps }: Props = $props();
+  let { children, aria_describedby, color = "primary", custom, inline, tinted, rounded, group = $bindable([]), choices = [], checked = $bindable(false), classLabel, indeterminate, class: className, ...restProps }: Props = $props();
 
   const { base, label } = $derived(checkbox({ color, tinted, custom, rounded, inline }));
 </script>

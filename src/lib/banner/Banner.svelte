@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { CloseButton } from '$lib';
-  import { fade } from 'svelte/transition';
-  import { type BannerProps as Props, banner } from './index';
-  import type { ParamsType } from '../types';
+  import { CloseButton } from "$lib";
+  import { fade } from "svelte/transition";
+  import { type BannerProps as Props, banner } from "./index";
+  import type { ParamsType } from "../types";
 
-  let { children, header, bannerStatus = $bindable(true), position = 'sticky', dismissable = true, color = 'gray', bannerType = 'default', class: className, innerClass, transition = fade, params, ...restProps }: Props = $props();
+  let { children, header, bannerStatus = $bindable(true), position = "sticky", dismissable = true, color = "gray", bannerType = "default", class: className, innerClass, transition = fade, params, ...restProps }: Props = $props();
 
   const { base, insideDiv } = banner({
     bannerType,
