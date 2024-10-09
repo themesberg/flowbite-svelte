@@ -5,9 +5,9 @@
   let show1 = $state(false);
 </script>
 
-<div class="mb-4">
+<form class="mb-4">
   <Label for="show-password" class="mb-2">Your password</Label>
-  <Input id="show-password" type={show ? "text" : "password"} placeholder="Your password here" size="lg" class="pl-10">
+  <Input id="show-password" name="show-password" autocomplete="new-password" type={show ? "text" : "password"} placeholder="Your password here" size="lg" class="pl-10">
     {#snippet left()}
       <button onclick={() => (show = !show)} class="pointer-events-auto">
         {#if show}
@@ -18,9 +18,9 @@
       </button>
     {/snippet}
   </Input>
-</div>
+</form>
 
-<div>
+<form>
   <Label for="show-password1" class="mb-2">Your password</Label>
   <ButtonGroup class="w-full">
     <InputAddon>
@@ -32,6 +32,7 @@
         {/if}
       </button>
     </InputAddon>
-    <Input id="show-password1" type={show1 ? "text" : "password"} placeholder="Your password here" />
+    <Input id="show-password1" type={show1 ? "text" : "password"} name="show-password1" autocomplete="new-password" placeholder="Your password here" />
+    <Input id="usename" name="usename" type="text" class="hidden" />
   </ButtonGroup>
-</div>
+</form>

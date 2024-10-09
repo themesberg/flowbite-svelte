@@ -31,15 +31,15 @@
   </div>
   <div class="mb-6">
     <Label for="email" class="mb-2">Email address</Label>
-    <Input type="email" id="email" placeholder="john.doe@company.com" required />
+    <Input type="email" id="email" autocomplete="email" placeholder="john.doe@company.com" required />
   </div>
   <div class="mb-6">
     <Label for="password" class="mb-2">Password</Label>
-    <Input type="password" id="password" placeholder="•••••••••" required />
+    <Input type="password" name="password" autocomplete="new-password" id="password" placeholder="•••••••••" required />
   </div>
   <div class="mb-6">
     <Label for="confirm_password" class="mb-2">Confirm password</Label>
-    <Input type="password" id="confirm_password" placeholder="•••••••••" required />
+    <Input type="password" id="confirm_password" name="confirm_password" autocomplete="new-password" placeholder="•••••••••" required />
   </div>
   <Checkbox classLabel="mb-6 space-x-1 rtl:space-x-reverse" required>
     I agree with the <A href="/" class="text-primary-700 hover:underline dark:text-primary-600">terms and conditions</A>.
