@@ -87,7 +87,7 @@ import { fileList } from "../../generatedFileList";
  */
 export function getFilteredFileNames(dirName: string): string[] {
   const filteredPaths = fileList.filter((path) => path.includes(`src/lib/${dirName}`));
-  console.log("filteredPaths", filteredPaths);
+  // console.log("filteredPaths", filteredPaths);
   const fileNames = filteredPaths.map((path) => {
     const parts = path.split("/");
     const fileNameWithExtension = parts[parts.length - 1];

@@ -11,6 +11,7 @@ interface InputProps<T extends InputValue = string> extends Omit<HTMLInputAttrib
   right?: Snippet;
   size?: FormSizeType;
   value?: T;
+  clearable?: boolean;
   color?: ColorName | "default" | "tinted";
   classLeft?: string;
   classRight?: string;

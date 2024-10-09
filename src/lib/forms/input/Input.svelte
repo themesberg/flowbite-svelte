@@ -3,7 +3,7 @@
   import { getContext } from "svelte";
   import { type InputProps as Props, input, clampSize, type InputValue } from ".";
 
-  let { children, left, right, value = $bindable<InputValue>(), size, color = "default", class: className, classLeft, classRight, ...restProps }: Props<InputValue> = $props();
+  let { children, left, right, value = $bindable<InputValue>(), clearable = false, size, color = "default", class: className, classLeft, classRight, ...restProps }: Props<InputValue> = $props();
 
   // tinted if put in component having its own background
   let background: boolean = getContext("background");

@@ -22,7 +22,7 @@
   let compoData: TCompoData[] = $state([]);
   // default is find fileName using dirName
   const fileNames = getFilteredFileNames(toKebabCase(dirName));
-  console.log("fileNames", fileNames);
+  // console.log("fileNames", fileNames);
 
   // if components are given (e.g. checkbox, etc in forms, typography, utils) use the components string
   let componentArray = components ? components.split(", ") : [];
