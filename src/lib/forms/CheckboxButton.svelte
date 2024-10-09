@@ -5,14 +5,14 @@
   import { twMerge } from 'tailwind-merge';
 
   type $$Props = ComponentProps<Button> & {
-    group: (string | number)[];
-    value: string | number;
+    group?: (string | number)[];
+    value?: string | number;
     checked?: boolean;
     inline?: boolean;
     pill?: boolean;
     outline?: boolean;
-    size?: SizeType | undefined;
-    color?: ButtonColorType | undefined;
+    size?: SizeType;
+    color?: ButtonColorType;
     shadow?: boolean;
   }
 
@@ -26,35 +26,33 @@
   export let color: $$Props['color'] = undefined;
   export let shadow: $$Props['shadow'] = false;
 
-  // react on external group changes
-  function init(_: HTMLElement, _group: (string | number)[]) {
-    if (checked === undefined) checked = _group.includes(value);
-    onChange();
-
-    return {
-      update(_group: (string | number)[]) {
+  function init(node: HTMLElement, _group: (string | number)[] | undefined) {
+    function update(_group: (string | number)[] | undefined) {
+      if (_group && value !== undefined) {
         checked = _group.includes(value);
       }
-    };
+    }
+
+    update(_group);
+    return { update };
   }
 
   function onChange() {
-    // There's a bug in Svelte and bind:group is not working with wrapped checkbox
-    // This workaround is taken from:
-    // https://svelte.dev/repl/de117399559f4e7e9e14e2fc9ab243cc?version=3.12.1
-    const index = group.indexOf(value);
+    if (group && value !== undefined) {
+      const index = group.indexOf(value);
 
-    if (checked === undefined) checked = index >= 0;
+      if (checked === undefined) checked = index >= 0;
 
-    if (checked) {
-      if (index < 0) {
-        group.push(value);
-        group = group;
-      }
-    } else {
-      if (index >= 0) {
-        group.splice(index, 1);
-        group = group;
+      if (checked) {
+        if (index < 0) {
+          group.push(value);
+          group = group;
+        }
+      } else {
+        if (index >= 0) {
+          group.splice(index, 1);
+          group = group;
+        }
       }
     }
   }
@@ -68,7 +66,7 @@
     use:init={group}
     type="checkbox"
     bind:checked
-    {value}
+    value={value !== undefined ? value : 'on'}
     {...$$restProps}
     class="sr-only"
     on:keyup
@@ -85,18 +83,3 @@
     on:change />
   <slot />
 </Button>
-
-<!--
-@component
-[Go to docs](https://flowbite-svelte.com/)
-## Props
-@prop export let group: $$Props['group'] = [];
-@prop export let value: $$Props['value'] = 'on';
-@prop export let checked: $$Props['checked'] = undefined;
-@prop export let inline: $$Props['inline'] = true;
-@prop export let pill: $$Props['pill'] = false;
-@prop export let outline: $$Props['outline'] = false;
-@prop export let size: $$Props['size'] = undefined;
-@prop export let color: $$Props['color'] = undefined;
-@prop export let shadow: $$Props['shadow'] = false;
--->
