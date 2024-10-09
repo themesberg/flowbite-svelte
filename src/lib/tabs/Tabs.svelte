@@ -65,7 +65,7 @@
   $: ulClass = twMerge(defaultClass, tabStyle === 'underline' && '-mb-px', $$props.class);
 </script>
 
-<ul class={ulClass} {...$$restProps}>
+<ul {...$$restProps} class={ulClass}>
   <slot {tabStyle}></slot>
 </ul>
 {#if divider}
