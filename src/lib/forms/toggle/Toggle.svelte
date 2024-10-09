@@ -21,11 +21,11 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children: Snippet;
-@props:toggleSize: SizeType = 'default';
+@props:toggleSize: SizeType = "default";
 @props:value: string | number;
 @props:checked: boolean | undefined = $bindable();
 @props:disabled: boolean;
-@props:color: ToggleColor = 'primary';
+@props:color: ToggleColor = "primary";
 @props:aria_describedby: string;
 @props:labelClass: string;
 @props:inputClass: string;

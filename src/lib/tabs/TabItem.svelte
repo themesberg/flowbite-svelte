@@ -63,10 +63,10 @@
 @props: children: Snippet;
 @props:titleSlot: Snippet;
 @props:open: boolean = false;
-@props:title: string = 'Tab title';
+@props:title: string = "Tab title";
 @props:activeClass: string;
 @props:inactiveClass: string;
 @props:class: string;
 @props:disabled: boolean;
-@props:tabStyle: 'full' | 'pill' | 'underline' | 'none';
+@props:tabStyle: "full" | "pill" | "underline" | "none";
 -->

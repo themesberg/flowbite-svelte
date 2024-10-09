@@ -36,11 +36,11 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: type Snippet } from 'svelte';
+@props: children: type Snippet } from "svelte";
 import { toolbar, toolbarGroup, toolbarButton };
-@props:end: type Snippet } from 'svelte';
+@props:end: type Snippet } from "svelte";
 import { toolbar, toolbarGroup, toolbarButton };
-@props:color: VariantProps<typeof toolbar>['color'] = 'default';
+@props:color: VariantProps<typeof toolbar>["color"] = "default";
 @props:embedded: boolean;
 @props:separatorClass: string;
 @props:class: string;

@@ -30,6 +30,6 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: size: VariantProps<typeof cardPlaceholder>['size'] = 'sm';
+@props: size: VariantProps<typeof cardPlaceholder>["size"] = "sm";
 @props:class: string;
 -->

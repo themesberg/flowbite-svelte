@@ -16,11 +16,11 @@
 ## Props
 @props: children: Snippet;
 @props:class: string;
-@props:color: type ColorName } from '$lib/types';
+@props:color: type ColorName } from "$lib/types";
 
 interface HelperProps extends HTMLAttributes<HTMLParagraphElement> {
   children: Snippet;
   class?: string;
-  color?: ColorName | 'disabled';
-} | 'disabled' = 'gray';
+  color?: ColorName | "disabled";
+} | "disabled" = "gray";
 -->

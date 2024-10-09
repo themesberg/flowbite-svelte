@@ -54,12 +54,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: type Snippet } from 'svelte';
+@props: children: type Snippet } from "svelte";
 import { toolbar, toolbarGroup, toolbarButton };
-@props:color: VariantProps<typeof toolbarButton>['color'] = 'default';
+@props:color: VariantProps<typeof toolbarButton>["color"] = "default";
 @props:name: string;
 @props:ariaLabel: string;
-@props:size: 'xs' | 'sm' | 'md' | 'lg' = 'md';
+@props:size: "xs" | "sm" | "md" | "lg" = "md";
 @props:href: string;
 @props:class: string;
 @props:onclick: () => void;

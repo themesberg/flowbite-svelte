@@ -1,21 +1,85 @@
 {
   "name": "Sidebar",
   "props": [
-    ["children", "Snippet", ""],
-    ["isOpen", "boolean", "false"],
-    ["closeSidebar", "() => void", ""],
-    ["isSingle", "boolean", "true"],
-    ["breakpoint", "VariantProps<typeof sidebar>['breakpoint']", "'md'"],
-    ["position", "VariantProps<typeof sidebar>['position']", "'fixed'"],
-    ["activateClickOutside", "boolean", "true"],
-    ["backdrop", "boolean", "true"],
-    ["backdropClass", "string", ""],
-    ["transition", "TransitionFunc", "fly"],
-    ["params", "ParamsType", ""],
-    ["divClass", "string", ""],
-    ["ariaLabel", "string", ""],
-    ["nonActiveClass", "string", ""],
-    ["activeClass", "string", ""],
-    ["class", "string", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "isOpen",
+      "boolean",
+      "false"
+    ],
+    [
+      "closeSidebar",
+      "() => void",
+      ""
+    ],
+    [
+      "isSingle",
+      "boolean",
+      "true"
+    ],
+    [
+      "breakpoint",
+      "VariantProps<typeof sidebar>[\"breakpoint\"]",
+      "\"md\""
+    ],
+    [
+      "position",
+      "VariantProps<typeof sidebar>[\"position\"]",
+      "\"fixed\""
+    ],
+    [
+      "activateClickOutside",
+      "boolean",
+      "true"
+    ],
+    [
+      "backdrop",
+      "boolean",
+      "true"
+    ],
+    [
+      "backdropClass",
+      "string",
+      ""
+    ],
+    [
+      "transition",
+      "TransitionFunc",
+      "fly"
+    ],
+    [
+      "params",
+      "ParamsType",
+      ""
+    ],
+    [
+      "divClass",
+      "string",
+      ""
+    ],
+    [
+      "ariaLabel",
+      "string",
+      ""
+    ],
+    [
+      "nonActiveClass",
+      "string",
+      ""
+    ],
+    [
+      "activeClass",
+      "string",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

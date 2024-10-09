@@ -36,7 +36,7 @@
 @props:subtext: Snippet;
 @props:href: any;
 @props:label: string;
-@props:spanClass: string = 'ms-3';
+@props:spanClass: string = "ms-3";
 @props:activeClass: string;
 @props:nonActiveClass: string;
 @props:aClass: string;

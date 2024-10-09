@@ -31,12 +31,12 @@
 @props: children: any;
 @props:pill: any = false;
 @props:outline: any = false;
-@props:size: any = group ? 'sm' : 'md';
+@props:size: any = group ? "sm" : "md";
 @props:href: any;
-@props:type: any = 'button';
-@props:color: any = group ? (outline ? 'dark' : 'alternative') : 'primary';
+@props:type: any = "button";
+@props:color: any = group ? (outline ? "dark" : "alternative") : "primary";
 @props:shadow: any = false;
-@props:tag: any = 'button';
+@props:tag: any = "button";
 @props:disabled: any;
 @props:class: string;
 -->

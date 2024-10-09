@@ -40,7 +40,7 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children: Snippet;
-@props:tabStyle: 'full' | 'pill' | 'underline' | 'none' = 'none';
+@props:tabStyle: "full" | "pill" | "underline" | "none" = "none";
 @props:ulClass: string;
 @props:ctxActive: string;
 @props:ctxInactive: string;

@@ -55,7 +55,7 @@
   href?: string;
   active?: boolean;
   rel?: string;
-  size?: PaginationItemType['size'];
+  size?: PaginationItemType["size"];
 } &
   Omit<HTMLButtonAttributes, keyof PaginationItemSpecificProps> &
   Omit<HTMLAnchorAttributes, keyof PaginationItemSpecificProps> & {
@@ -65,6 +65,6 @@
 @props:prevContent: Snippet;
 @props:nextContent: Snippet;
 @props:table: boolean;
-@props:size: VariantProps<typeof paginationItem>['size'];
+@props:size: VariantProps<typeof paginationItem>["size"];
 @props:ariaLabel: string;
 -->

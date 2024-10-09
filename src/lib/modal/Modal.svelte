@@ -89,10 +89,10 @@
 @props:bodyClass: string;
 @props:footerClass: string;
 @props:outsideClose: boolean = true;
-@props:size: VariantProps<typeof modal>['size'] = 'md';
+@props:size: VariantProps<typeof modal>["size"] = "md";
 @props:backdrop: boolean = true;
 @props:backdropClass: string;
-@props:position: VariantProps<typeof modal>['position'] = 'center';
+@props:position: VariantProps<typeof modal>["position"] = "center";
 @props:class: string;
 @props:params: ParamsType = { duration: 100;
 @props:easing: any;

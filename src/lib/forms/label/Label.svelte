@@ -19,15 +19,15 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children: Snippet;
-@props:color: type ColorName } from '$lib/types';
+@props:color: type ColorName } from "$lib/types";
 
 interface LabelProps extends HTMLLabelAttributes {
   children: Snippet;
-  color?: ColorName | 'disabled';
+  color?: ColorName | "disabled";
   show?: boolean;
   class?: string;
   for?: string;
-} | 'disabled' = 'gray';
+} | "disabled" = "gray";
 @props:show: boolean = true;
 @props:class: string;
 -->

@@ -66,9 +66,9 @@
 @props:name: string;
 @props:Icon: Component;
 @props:href: string;
-@props:currentClass: string = 'text-white bg-primary-700 dark:text-white dark:bg-gray-800';
+@props:currentClass: string = "text-white bg-primary-700 dark:text-white dark:bg-gray-800";
 @props:normalClass: string;
-@props:disabledClass: string = 'text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400';
-@props:liClass: string = 'py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg';
+@props:disabledClass: string = "text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400";
+@props:liClass: string = "py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg";
 @props:class: string;
 -->

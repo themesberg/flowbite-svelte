@@ -47,7 +47,7 @@
 @props:size: number = 24;
 @props:total: number = 5;
 @props:rating: number = 4;
-@props:partialId: string = 'partialStar' + idGenerator();
+@props:partialId: string = "partialStar" + idGenerator();
 @props:Icon: Component = Star;
 @props:count: boolean = false;
 @props:pClass: string;

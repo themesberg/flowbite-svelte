@@ -123,11 +123,11 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children: Snippet;
-@props:color: TooltipColorType = 'default';
+@props:color: TooltipColorType = "default";
 @props:arrow: boolean = true;
 @props:offset: number = 0;
 @props:triggeredBy: string;
-@props:position: 'top' | 'bottom' | 'left' | 'right' = 'top';
+@props:position: "top" | "bottom" | "left" | "right" = "top";
 @props:class: string;
 @props:reference: string;
 -->

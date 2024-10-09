@@ -1,10 +1,30 @@
 {
   "name": "Spinner",
   "props": [
-    ["color", "VariantProps<typeof spinner>['color']", "'primary'"],
-    ["size", "VariantProps<typeof spinner>['size']", "'8'"],
-    ["class", "string", ""],
-    ["currentFill", "string", "'currentFill'"],
-    ["currentColor", "string", "'currentColor'"]
+    [
+      "color",
+      "VariantProps<typeof spinner>[\"color\"]",
+      "\"primary\""
+    ],
+    [
+      "size",
+      "VariantProps<typeof spinner>[\"size\"]",
+      "\"8\""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "currentFill",
+      "string",
+      "\"currentFill\""
+    ],
+    [
+      "currentColor",
+      "string",
+      "\"currentColor\""
+    ]
   ]
 }

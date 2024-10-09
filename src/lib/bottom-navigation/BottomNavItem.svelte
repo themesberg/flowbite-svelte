@@ -35,10 +35,10 @@
 ## Props
 @props: children: Snippet;
 @props:btnName: string;
-@props:appBtnPosition: AppBtnVariantProps<typeof bottomNav>['position'] = 'middle';
+@props:appBtnPosition: AppBtnVariantProps<typeof bottomNav>["position"] = "middle";
 @props:target: string;
 @props:activeClass: string;
-@props:href: string = '';
+@props:href: string = "";
 @props:btnClass: string;
 @props:spanClass: string;
 -->

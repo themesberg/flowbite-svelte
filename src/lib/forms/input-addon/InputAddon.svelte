@@ -43,5 +43,5 @@
 ## Props
 @props: children: Snippet;
 @props:class: string;
-@props:size: 'sm' | 'md' | 'lg' | undefined;
+@props:size: "sm" | "md" | "lg" | undefined;
 -->

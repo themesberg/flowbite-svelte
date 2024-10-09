@@ -1,12 +1,40 @@
 {
   "name": "Ios",
   "props": [
-    ["children", "any", ""],
-    ["divClass", "any", ""],
-    ["div2Class", "any", ""],
-    ["div3Class", "any", ""],
-    ["div4Class", "any", ""],
-    ["div5Class", "string", ""],
-    ["div6Class", "string", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "divClass",
+      "any",
+      ""
+    ],
+    [
+      "div2Class",
+      "any",
+      ""
+    ],
+    [
+      "div3Class",
+      "any",
+      ""
+    ],
+    [
+      "div4Class",
+      "any",
+      ""
+    ],
+    [
+      "div5Class",
+      "string",
+      ""
+    ],
+    [
+      "div6Class",
+      "string",
+      ""
+    ]
   ]
 }

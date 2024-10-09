@@ -1,19 +1,75 @@
 {
   "name": "Badge",
   "props": [
-    ["children", "Snippet", ""],
-    ["icon", "Snippet", ""],
-    ["badgeStatus", "boolean", "$bindable(true)"],
-    ["color", "VariantProps<typeof badge>['color']", "'primary'"],
-    ["large", "boolean", "false"],
-    ["dismissable", "boolean", "false"],
-    ["class", "string", ""],
-    ["border", "boolean", ""],
-    ["href", "string", ""],
-    ["rounded", "boolean", ""],
-    ["transition", "TransitionFunc", "fade"],
-    ["params", "ParamsType", ""],
-    ["aClass", "string", ""],
-    ["onclick", "() => void", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "icon",
+      "Snippet",
+      ""
+    ],
+    [
+      "badgeStatus",
+      "boolean",
+      "$bindable(true)"
+    ],
+    [
+      "color",
+      "VariantProps<typeof badge>[\"color\"]",
+      "\"primary\""
+    ],
+    [
+      "large",
+      "boolean",
+      "false"
+    ],
+    [
+      "dismissable",
+      "boolean",
+      "false"
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "border",
+      "boolean",
+      ""
+    ],
+    [
+      "href",
+      "string",
+      ""
+    ],
+    [
+      "rounded",
+      "boolean",
+      ""
+    ],
+    [
+      "transition",
+      "TransitionFunc",
+      "fade"
+    ],
+    [
+      "params",
+      "ParamsType",
+      ""
+    ],
+    [
+      "aClass",
+      "string",
+      ""
+    ],
+    [
+      "onclick",
+      "() => void",
+      ""
+    ]
   ]
 }

@@ -15,6 +15,6 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children: Snippet;
-@props:footerType: VariantProps<typeof footer>['footerType'] = 'default';
+@props:footerType: VariantProps<typeof footer>["footerType"] = "default";
 @props:class: string;
 -->

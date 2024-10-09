@@ -28,6 +28,6 @@
 @props:border: boolean;
 @props:italic: boolean = true;
 @props:bg: boolean;
-@props:alignment: VariantProps<typeof blockquote>['alignment'] = 'left';
-@props:size: VariantProps<typeof blockquote>['size'] = 'lg';
+@props:alignment: VariantProps<typeof blockquote>["alignment"] = "left";
+@props:size: VariantProps<typeof blockquote>["size"] = "lg";
 -->

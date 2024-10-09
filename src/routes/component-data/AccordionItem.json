@@ -1,15 +1,55 @@
 {
   "name": "AccordionItem",
   "props": [
-    ["children", "Snippet", ""],
-    ["header", "Snippet", ""],
-    ["arrowup", "Snippet", ""],
-    ["arrowdown", "Snippet", ""],
-    ["open", "boolean", "$bindable(false)"],
-    ["activeClass", "string", ""],
-    ["inactiveClass", "string", ""],
-    ["transition", "TransitionFunc", "slide"],
-    ["params", "ParamsType", ""],
-    ["class", "string", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "header",
+      "Snippet",
+      ""
+    ],
+    [
+      "arrowup",
+      "Snippet",
+      ""
+    ],
+    [
+      "arrowdown",
+      "Snippet",
+      ""
+    ],
+    [
+      "open",
+      "boolean",
+      "$bindable(false)"
+    ],
+    [
+      "activeClass",
+      "string",
+      ""
+    ],
+    [
+      "inactiveClass",
+      "string",
+      ""
+    ],
+    [
+      "transition",
+      "TransitionFunc",
+      "slide"
+    ],
+    [
+      "params",
+      "ParamsType",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

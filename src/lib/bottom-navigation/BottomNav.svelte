@@ -32,8 +32,8 @@
 ## Props
 @props: children: Snippet;
 @props:header: Snippet;
-@props:position: VariantProps<typeof bottomNav>['position'] = 'fixed';
-@props:navType: VariantProps<typeof bottomNav>['navType'] = 'default';
+@props:position: VariantProps<typeof bottomNav>["position"] = "fixed";
+@props:navType: VariantProps<typeof bottomNav>["navType"] = "default";
 @props:outerClass: string;
 @props:innerClass: string;
 @props:activeClass: string;

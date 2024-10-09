@@ -1,19 +1,75 @@
 {
   "name": "Drawer",
   "props": [
-    ["children", "Snippet", ""],
-    ["drawerStatus", "boolean", ""],
-    ["closeDrawer", "() => void", ""],
-    ["activateClickOutside", "boolean", "true"],
-    ["position", "VariantProps<typeof drawer>['position']", ""],
-    ["width", "VariantProps<typeof drawer>['width']", ""],
-    ["backdrop", "boolean", "true"],
-    ["backdropClass", "string", ""],
-    ["placement", "VariantProps<typeof drawer>['placement']", "'left'"],
-    ["class", "string", ""],
-    ["params", "ParamsType", "{ x: -320"],
-    ["duration", "any", ""],
-    ["easing", "any", ""],
-    ["transition", "TransitionFunc", "fly"]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "drawerStatus",
+      "boolean",
+      ""
+    ],
+    [
+      "closeDrawer",
+      "() => void",
+      ""
+    ],
+    [
+      "activateClickOutside",
+      "boolean",
+      "true"
+    ],
+    [
+      "position",
+      "VariantProps<typeof drawer>[\"position\"]",
+      ""
+    ],
+    [
+      "width",
+      "VariantProps<typeof drawer>[\"width\"]",
+      ""
+    ],
+    [
+      "backdrop",
+      "boolean",
+      "true"
+    ],
+    [
+      "backdropClass",
+      "string",
+      ""
+    ],
+    [
+      "placement",
+      "VariantProps<typeof drawer>[\"placement\"]",
+      "\"left\""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "params",
+      "ParamsType",
+      "{ x: -320"
+    ],
+    [
+      "duration",
+      "any",
+      ""
+    ],
+    [
+      "easing",
+      "any",
+      ""
+    ],
+    [
+      "transition",
+      "TransitionFunc",
+      "fly"
+    ]
   ]
 }

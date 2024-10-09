@@ -18,10 +18,10 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children: Snippet;
-@props:type: string = 'video/mp4';
+@props:type: string = "video/mp4";
 @props:trackSrc: string;
 @props:src: string;
-@props:srclang: string = 'en';
-@props:label: string = 'english_captions';
+@props:srclang: string = "en";
+@props:label: string = "english_captions";
 @props:class: string;
 -->

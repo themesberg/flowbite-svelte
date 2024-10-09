@@ -77,7 +77,7 @@
 @props:fluid: boolean;
 @props:brand: Snippet;
 @props:hamburgerMenu: boolean = true;
-@props:breakPoint: navbarType['breakPoint'] = 'md';
+@props:breakPoint: navbarType["breakPoint"] = "md";
 @props:navClass: string;
 @props:divClass: string;
 @props:btnClass: string;

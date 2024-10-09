@@ -30,7 +30,7 @@
 @props: children: any;
 @props:outline: any;
 @props:pill: any;
-@props:color: any = 'blue';
+@props:color: any = "blue";
 @props:shadow: any;
 @props:class: string;
 @props:href: any;

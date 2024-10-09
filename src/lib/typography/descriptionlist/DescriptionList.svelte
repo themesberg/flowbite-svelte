@@ -20,6 +20,6 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children: Snippet;
-@props:tag: 'dt' | 'dd';
+@props:tag: "dt" | "dd";
 @props:class: string;
 -->

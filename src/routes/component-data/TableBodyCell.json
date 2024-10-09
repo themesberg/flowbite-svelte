@@ -1,10 +1,30 @@
 {
   "name": "TableBodyCell",
   "props": [
-    ["children", "Snippet", ""],
-    ["color", "VariantProps<typeof table>['color']", ""],
-    ["class", "string", ""],
-    ["colspan", "number", ""],
-    ["onclick", "() => void", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "color",
+      "VariantProps<typeof table>[\"color\"]",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "colspan",
+      "number",
+      ""
+    ],
+    [
+      "onclick",
+      "() => void",
+      ""
+    ]
   ]
 }

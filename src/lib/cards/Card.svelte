@@ -35,14 +35,14 @@
 ## Props
 @props: children: Snippet;
 @props:href: string;
-@props:color: VariantProps<typeof card>['color'] = 'gray';
+@props:color: VariantProps<typeof card>["color"] = "gray";
 @props:horizontal: boolean = false;
-@props:shadow: VariantProps<typeof card>['shadow'] = 'md';
+@props:shadow: VariantProps<typeof card>["shadow"] = "md";
 @props:reverse: boolean = false;
 @props:img: {
   src: string | undefined | null;
-@props:padding: VariantProps<typeof card>['padding'] = 'lg';
-@props:size: VariantProps<typeof card>['size'] = 'sm';
+@props:padding: VariantProps<typeof card>["padding"] = "lg";
+@props:size: VariantProps<typeof card>["size"] = "sm";
 @props:class: string;
 @props:imgClass: string;
 @props:contentClass: string;

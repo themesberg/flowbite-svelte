@@ -17,6 +17,6 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children: Snippet;
-@props:order: 'default' | 'vertical' | 'horizontal' | 'activity' | 'group' = 'default';
+@props:order: "default" | "vertical" | "horizontal" | "activity" | "group" = "default";
 @props:class: string;
 -->

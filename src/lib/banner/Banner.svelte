@@ -48,10 +48,10 @@
 @props: children: Snippet;
 @props:header: Snippet;
 @props:bannerStatus: boolean = $bindable(true);
-@props:position: VariantProps<typeof banner>['position'] = 'sticky';
+@props:position: VariantProps<typeof banner>["position"] = "sticky";
 @props:dismissable: boolean = true;
-@props:color: VariantProps<typeof banner>['color'] = 'gray';
-@props:bannerType: VariantProps<typeof banner>['bannerType'] = 'default';
+@props:color: VariantProps<typeof banner>["color"] = "gray";
+@props:bannerType: VariantProps<typeof banner>["bannerType"] = "default";
 @props:class: string;
 @props:innerClass: string;
 @props:transition: TransitionFunc = fade;

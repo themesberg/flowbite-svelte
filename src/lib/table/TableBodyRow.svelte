@@ -26,7 +26,7 @@
 ## Props
 @props: children: Snippet;
 @props:class: string;
-@props:color: VariantProps<typeof table>['color'];
+@props:color: VariantProps<typeof table>["color"];
 @props:striped: boolean;
 @props:hoverable: boolean;
 @props:noborder: boolean;

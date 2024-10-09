@@ -15,6 +15,6 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children: Snippet;
-@props:tag: VariantProps<typeof heading>['tag'] = 'h1';
+@props:tag: VariantProps<typeof heading>["tag"] = "h1";
 @props:class: string;
 -->

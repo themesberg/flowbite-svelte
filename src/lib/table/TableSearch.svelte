@@ -61,18 +61,18 @@
 @props: children: Snippet;
 @props:header: Snippet;
 @props:footer: Snippet;
-@props:divClass: string = 'relative overflow-x-auto shadow-md sm:rounded-lg';
+@props:divClass: string = "relative overflow-x-auto shadow-md sm:rounded-lg";
 @props:inputValue: string = $bindable();
 @props:striped: boolean;
 @props:hoverable: boolean;
-@props:customColor: string = '';
-@props:color: string = 'default';
-@props:innerDivClass: string = 'p-4';
+@props:customColor: string = "";
+@props:color: string = "default";
+@props:innerDivClass: string = "p-4";
 @props:inputClass: string;
-@props:searchClass: string = 'relative mt-1';
+@props:searchClass: string = "relative mt-1";
 @props:svgDivClass: string;
-@props:svgClass: string = 'w-5 h-5 text-gray-500 dark:text-gray-400';
-@props:tableClass: string = 'w-full text-left text-sm';
+@props:svgClass: string = "w-5 h-5 text-gray-500 dark:text-gray-400";
+@props:tableClass: string = "w-full text-left text-sm";
 @props:class: string;
-@props:placeholder: string = 'Search';
+@props:placeholder: string = "Search";
 -->

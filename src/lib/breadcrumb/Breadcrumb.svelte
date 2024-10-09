@@ -21,5 +21,5 @@
 @props:solid: boolean = false;
 @props:navClass: string;
 @props:olClass: string;
-@props:ariaLabel: string = 'Breadcrumb';
+@props:ariaLabel: string = "Breadcrumb";
 -->

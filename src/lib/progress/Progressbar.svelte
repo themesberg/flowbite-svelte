@@ -42,15 +42,15 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: progress: string | number = '45';
+@props: progress: string | number = "45";
 @props:precision: number = 0;
 @props:tweenDuration: number = 400;
 @props:animate: boolean = false;
-@props:size: string = 'h-2.5';
+@props:size: string = "h-2.5";
 @props:labelInside: boolean = false;
-@props:labelOutside: string = '';
+@props:labelOutside: string = "";
 @props:easing: EasingFunction = cubicOut;
-@props:color: VariantProps<typeof progressbar>['color'] = 'primary';
+@props:color: VariantProps<typeof progressbar>["color"] = "primary";
 @props:div2Class: string;
 @props:oustsideSpanClass: string;
 @props:oustsideProgressClass: string;

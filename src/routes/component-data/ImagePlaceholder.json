@@ -1,8 +1,20 @@
 {
   "name": "ImagePlaceholder",
   "props": [
-    ["size", "VariantProps<typeof imagePlaceholder>['size']", "'md'"],
-    ["rounded", "VariantProps<typeof imagePlaceholder>['rounded']", ""],
-    ["class", "string", ""]
+    [
+      "size",
+      "VariantProps<typeof imagePlaceholder>[\"size\"]",
+      "\"md\""
+    ],
+    [
+      "rounded",
+      "VariantProps<typeof imagePlaceholder>[\"rounded\"]",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

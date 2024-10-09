@@ -1,8 +1,20 @@
 {
   "name": "Li",
   "props": [
-    ["children", "Snippet", ""],
-    ["icon", "boolean", ""],
-    ["class", "string", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "icon",
+      "boolean",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

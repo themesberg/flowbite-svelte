@@ -28,7 +28,7 @@
 ## Props
 @props: closeIcon: Snippet;
 @props:children: Snippet;
-@props:tag: string = 'h5';
+@props:tag: string = "h5";
 @props:headClass: string;
 @props:buttonClass: string;
 @props:svgClass: string;

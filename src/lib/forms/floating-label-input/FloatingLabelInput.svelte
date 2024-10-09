@@ -23,9 +23,9 @@
 @props:id: any = idGenerator();
 @props:value: any = $bindable();
 @props:aria_describedby: any;
-@props:style: any = 'standard';
-@props:size: any = 'default';
-@props:color: any = 'default';
+@props:style: any = "standard";
+@props:size: any = "default";
+@props:color: any = "default";
 @props:divClass: any;
 @props:inputClass: any;
 @props:labelClass: any;

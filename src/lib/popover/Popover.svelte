@@ -235,11 +235,11 @@
 ## Props
 @props: children: Snippet;
 @props:titleSlot: Snippet | string;
-@props:color: PopoverColorType = 'default';
+@props:color: PopoverColorType = "default";
 @props:arrow: boolean = true;
 @props:offset: number = 0;
 @props:triggeredBy: string;
-@props:position: 'top' | 'bottom' | 'left' | 'right' | 'right-start' | 'right-end' | 'left-start' | 'left-end' | 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end' = 'top';
+@props:position: "top" | "bottom" | "left" | "right" | "right-start" | "right-end" | "left-start" | "left-end" | "top-start" | "top-end" | "bottom-start" | "bottom-end" = "top";
 @props:class: string;
 @props:reference: string;
 @props:transition: TransitionFunc = fade;

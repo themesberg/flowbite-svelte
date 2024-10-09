@@ -55,12 +55,12 @@
 @props: children: Snippet;
 @props:class: string;
 @props:group: (string | number)[] = [];
-@props:value: string | number = 'on';
+@props:value: string | number = "on";
 @props:checked: boolean | undefined;
 @props:inline: boolean = true;
 @props:pill: boolean;
 @props:outline: boolean;
 @props:size: SizeType;
-@props:color: ColorName | 'alternative' | 'dark' | 'light';
+@props:color: ColorName | "alternative" | "dark" | "light";
 @props:shadow: boolean;
 -->

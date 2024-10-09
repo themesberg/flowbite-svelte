@@ -28,6 +28,6 @@
 @props:aClass: string;
 @props:href: string;
 @props:by: string;
-@props:copyrightMessage: string = 'All Rights Reserved.';
+@props:copyrightMessage: string = "All Rights Reserved.";
 @props:year: number | undefined;
 -->

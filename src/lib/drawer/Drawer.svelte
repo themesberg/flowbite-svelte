@@ -39,11 +39,11 @@
 @props:drawerStatus: boolean;
 @props:closeDrawer: () => void;
 @props:activateClickOutside: boolean = true;
-@props:position: VariantProps<typeof drawer>['position'];
-@props:width: VariantProps<typeof drawer>['width'];
+@props:position: VariantProps<typeof drawer>["position"];
+@props:width: VariantProps<typeof drawer>["width"];
 @props:backdrop: boolean = true;
 @props:backdropClass: string;
-@props:placement: VariantProps<typeof drawer>['placement'] = 'left';
+@props:placement: VariantProps<typeof drawer>["placement"] = "left";
 @props:class: string;
 @props:params: ParamsType = { x: -320;
 @props:duration: any;

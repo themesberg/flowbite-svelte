@@ -42,7 +42,7 @@
 @props:icon: Snippet;
 @props:toastStatus: boolean = $bindable(true);
 @props:dismissable: boolean = true;
-@props:color: ColorType = 'primary';
+@props:color: ColorType = "primary";
 @props:position: PositionType;
 @props:baseClass: string;
 @props:iconClass: string;

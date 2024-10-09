@@ -23,7 +23,7 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children: Snippet;
-@props:color: VariantProps<typeof table>['color'];
+@props:color: VariantProps<typeof table>["color"];
 @props:class: string;
 @props:colspan: number;
 @props:onclick: () => void;

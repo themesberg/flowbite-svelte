@@ -47,7 +47,7 @@
 ## Props
 @props: children: Snippet;
 @props:headerSlot: Snippet;
-@props:color: VariantProps<typeof table>['color'];
+@props:color: VariantProps<typeof table>["color"];
 @props:striped: boolean;
 @props:hoverable: boolean;
 @props:noborder: boolean;

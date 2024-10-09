@@ -1,8 +1,20 @@
 {
   "name": "Timeline",
   "props": [
-    ["children", "Snippet", ""],
-    ["order", "'default' | 'vertical' | 'horizontal' | 'activity' | 'group'", "'default'"],
-    ["class", "string", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "order",
+      "\"default\" | \"vertical\" | \"horizontal\" | \"activity\" | \"group\"",
+      "\"default\""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

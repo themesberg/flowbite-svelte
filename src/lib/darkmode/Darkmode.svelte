@@ -63,6 +63,6 @@
 @props: class: string;
 @props:lightIcon: Snippet;
 @props:darkIcon: Snippet;
-@props:size: 'sm' | 'md' | 'lg' = 'md';
-@props:ariaLabel: string = 'Dark mode';
+@props:size: "sm" | "md" | "lg" = "md";
+@props:ariaLabel: string = "Dark mode";
 -->

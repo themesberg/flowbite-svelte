@@ -43,12 +43,12 @@
 @props: children: Snippet;
 @props:src: string;
 @props:href: string;
-@props:cornerStyle: 'rounded' | 'circular' = 'circular';
+@props:cornerStyle: "rounded" | "circular" = "circular";
 @props:border: any;
 @props:stacked: boolean;
 @props:dot: object | undefined;
 @props:class: string;
 @props:alt: string;
-@props:size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
+@props:size: "xs" | "sm" | "md" | "lg" | "xl" = "md";
 @props:onclick: () => void;
 -->

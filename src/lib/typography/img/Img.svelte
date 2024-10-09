@@ -31,11 +31,11 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: size: VariantProps<typeof img>['size'] = 'none';
-@props:alignment: VariantProps<typeof img>['alignment'] = 'left';
-@props:effect: VariantProps<typeof img>['effect'] = 'none';
-@props:shadow: VariantProps<typeof img>['shadow'] = 'none';
-@props:rounded: VariantProps<typeof img>['rounded'] = 'none';
+@props: size: VariantProps<typeof img>["size"] = "none";
+@props:alignment: VariantProps<typeof img>["alignment"] = "left";
+@props:effect: VariantProps<typeof img>["effect"] = "none";
+@props:shadow: VariantProps<typeof img>["shadow"] = "none";
+@props:rounded: VariantProps<typeof img>["rounded"] = "none";
 @props:caption: string;
 @props:imgClass: string;
 @props:figClass: string;

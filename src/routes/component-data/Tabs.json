@@ -1,12 +1,40 @@
 {
   "name": "Tabs",
   "props": [
-    ["children", "Snippet", ""],
-    ["tabStyle", "'full' | 'pill' | 'underline' | 'none'", "'none'"],
-    ["ulClass", "string", ""],
-    ["ctxActive", "string", ""],
-    ["ctxInactive", "string", ""],
-    ["contentClass", "string", ""],
-    ["divider", "boolean", "true"]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "tabStyle",
+      "\"full\" | \"pill\" | \"underline\" | \"none\"",
+      "\"none\""
+    ],
+    [
+      "ulClass",
+      "string",
+      ""
+    ],
+    [
+      "ctxActive",
+      "string",
+      ""
+    ],
+    [
+      "ctxInactive",
+      "string",
+      ""
+    ],
+    [
+      "contentClass",
+      "string",
+      ""
+    ],
+    [
+      "divider",
+      "boolean",
+      "true"
+    ]
   ]
 }

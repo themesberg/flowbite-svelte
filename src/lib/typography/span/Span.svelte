@@ -35,9 +35,9 @@
 @props:underline: boolean;
 @props:linethrough: boolean;
 @props:uppercase: boolean;
-@props:gradient: VariantProps<typeof span>['gradient'];
-@props:highlight: VariantProps<typeof span>['highlight'];
-@props:decoration: VariantProps<typeof span>['decoration'];
-@props:decorationColor: VariantProps<typeof span>['decorationColor'];
-@props:decorationThickness: VariantProps<typeof span>['decorationThickness'];
+@props:gradient: VariantProps<typeof span>["gradient"];
+@props:highlight: VariantProps<typeof span>["highlight"];
+@props:decoration: VariantProps<typeof span>["decoration"];
+@props:decorationColor: VariantProps<typeof span>["decorationColor"];
+@props:decorationThickness: VariantProps<typeof span>["decorationThickness"];
 -->

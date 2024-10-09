@@ -55,12 +55,12 @@
 @props:footerSlot: Snippet;
 @props:captionSlot: Snippet;
 @props:tableItems: Record<string, string | number | boolean>[];
-@props:divClass: string = 'relative overflow-x-auto';
+@props:divClass: string = "relative overflow-x-auto";
 @props:striped: boolean;
 @props:hoverable: boolean;
 @props:noborder: boolean;
 @props:shadow: boolean;
-@props:color: VariantProps<typeof table>['color'] = 'default';
+@props:color: VariantProps<typeof table>["color"] = "default";
 @props:customeColor: string;
 @props:class: string;
 -->
