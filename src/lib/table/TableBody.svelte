@@ -17,7 +17,7 @@
   $: sorted = $sorter ? filtered.toSorted((a, b) => $sorter.sortDirection * $sorter.sort(a, b)) : filtered;
 </script>
 
-<tbody class={tableBodyClass} {...$$restProps}>
+<tbody {...$$restProps} class={tableBodyClass}>
   <slot />
   {#each sorted as item}
     <slot name="row" {item} />

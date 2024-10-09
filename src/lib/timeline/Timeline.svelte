@@ -19,7 +19,7 @@
   };
 </script>
 
-<ol class={twMerge(olClasses[order], $$props.class)} {...$$restProps}>
+<ol {...$$restProps} class={twMerge(olClasses[order], $$props.class)} >
   <slot />
 </ol>
 

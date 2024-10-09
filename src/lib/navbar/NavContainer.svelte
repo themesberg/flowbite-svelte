@@ -9,7 +9,7 @@
   export let fluid: boolean = false;
 </script>
 
-<div class={twMerge('mx-auto flex flex-wrap justify-between items-center ', fluid ? 'w-full' : 'container', $$props.class)} {...$$restProps}>
+<div {...$$restProps} class={twMerge('mx-auto flex flex-wrap justify-between items-center ', fluid ? 'w-full' : 'container', $$props.class)} >
   <slot />
 </div>
 

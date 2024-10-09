@@ -17,7 +17,7 @@
   export let homeClass: $$Props['homeClass'] = 'inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white';
 </script>
 
-<li class={twMerge('inline-flex items-center', $$props.class)} {...$$restProps}>
+<li {...$$restProps} class={twMerge('inline-flex items-center', $$props.class)}>
   {#if home}
     <a class={twMerge(homeClass, $$props.classHome)} {href}>
       {#if $$slots.icon}

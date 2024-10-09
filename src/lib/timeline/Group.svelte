@@ -21,7 +21,7 @@
 
 <div class={divCls}>
   <time class={timeCls}>{date}</time>
-  <ol class={olCls} {...$$restProps}>
+  <ol {...$$restProps} class={olCls}>
     <slot />
   </ol>
 </div>

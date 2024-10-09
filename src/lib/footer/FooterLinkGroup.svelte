@@ -9,7 +9,7 @@
   export let ulClass: $$Props['ulClass'] = 'text-gray-600 dark:text-gray-400';
 </script>
 
-<ul class={twMerge(ulClass, $$props.class)} {...$$restProps}>
+<ul {...$$restProps} class={twMerge(ulClass, $$props.class)} >
   <slot />
 </ul>
 
