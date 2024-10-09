@@ -28,6 +28,7 @@
     { name: "Icon", component: ExampleComponents.Icon },
     { name: "Number", component: ExampleComponents.Number },
     { name: "Search", component: ExampleComponents.Search },
+    { name: "Clearable", component: ExampleComponents.Clearable },
     { name: "Advanced usage", component: ExampleComponents.AdvancedUsage }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);

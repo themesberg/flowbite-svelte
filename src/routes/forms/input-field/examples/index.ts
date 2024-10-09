@@ -6,3 +6,4 @@ export { default as Number } from "./Number.svelte";
 export { default as Search } from "./Search.svelte";
 export { default as Dropdown } from "./Dropdown.svelte";
 export { default as AdvancedUsage } from "./AdvancedUsage.svelte";
+export { default as Clearable } from "./Clearable.svelte";
