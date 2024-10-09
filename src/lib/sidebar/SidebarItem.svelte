@@ -28,13 +28,10 @@
 
   let sidebarUrl = '';
   activeUrlStore.subscribe((value) => {
-    // console.log('value: ', value)
     sidebarUrl = value;
   });
-  // console.log('sidbarUrl: ', sidebarUrl)
-  // console.log('href: ', href)
+
   $: active = sidebarUrl ? href === sidebarUrl : false;
-  // console.log('active: ', active)
 
   $: aClass = twMerge(active ? activeClass ?? context.activeClass : nonActiveClass ?? context.nonActiveClass, $$props.class);
 </script>

@@ -76,7 +76,7 @@
   };
 </script>
 
-<Wrapper class="relative w-full" show>
+<Wrapper class="relative w-full" show={$$slots.left || $$slots.right}>
   {#if $$slots.left}
     <div class="{twMerge(floatClass, $$props.classLeft)} start-0 ps-2.5 pointer-events-none">
       <slot name="left" />
@@ -85,14 +85,14 @@
   <slot props={{ ...$$restProps, class: inputClass }}>
     <input {...$$restProps} bind:value on:blur on:change on:click on:contextmenu on:focus on:keydown on:keypress on:keyup on:mouseover on:mouseenter on:mouseleave on:paste on:input {...{ type }} class={inputClass} />
   </slot>
+  {#if $$slots.right}
   <div class="{twMerge(floatClass, $$props.classRight)} end-0 pe-2.5">
-    {#if $$slots.right}
-      <slot name="right"></slot>
-    {/if}
-    {#if clearable && value && `${value}`.length > 0}
-      <CloseButton {size} on:click={clearAll} color="none" class="p-0 focus:ring-gray-400 dark:text-white" />
-    {/if}
+    <slot name="right"></slot>
   </div>
+  {/if}
+  {#if clearable && value && `${value}`.length > 0}
+    <CloseButton {size} on:click={clearAll} color="none" class=" {twMerge(floatClass, $$props.classRight)} focus:ring-0 end-6 focus:ring-gray-400 dark:text-white" />
+  {/if}
 </Wrapper>
 
 <!--
