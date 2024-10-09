@@ -5,7 +5,7 @@
   const base = activity({ class: className });
 </script>
 
-<ol class={base} {...restProps}>
+<ol {...restProps} class={base}>
   {@render children()}
 </ol>
 

@@ -11,7 +11,7 @@
   const { base, span } = $derived(navbrand());
 </script>
 
-<a href="/" onclick={closeNav} class={base({ class: aClass })} {...restProps}>
+<a href="/" onclick={closeNav} {...restProps} class={base({ class: aClass })}>
   {#if children}
     {@render children()}
   {/if}

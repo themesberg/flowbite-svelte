@@ -12,7 +12,7 @@
   }
 </script>
 
-<tbody class={className} {...restProps}>
+<tbody {...restProps} class={className}>
   {#if bodyItems}
     {#each bodyItems as row}
       <TableBodyRow>

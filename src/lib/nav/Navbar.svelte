@@ -29,7 +29,7 @@
   };
 </script>
 
-<nav class={base({ class: navClass })} use:clickOutside={closeNav} {...restProps}>
+<nav {...restProps} class={base({ class: navClass })} use:clickOutside={closeNav}>
   <div class={container({ class: divClass })}>
     {#if brand}
       {@render brand()}

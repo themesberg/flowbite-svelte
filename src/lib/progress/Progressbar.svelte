@@ -28,7 +28,7 @@
     <span class={outsideProgress({ class: oustsideProgressClass })}>{progress}%</span>
   </div>
 {/if}
-<div class={twMerge(base({ class: divClass }), size)} {...restProps}>
+<div {...restProps} class={twMerge(base({ class: divClass }), size)}>
   {#if labelInside}
     <div class={twMerge(labelInsideDiv({ class: div2Class }), size)} style="width: {$_progress}%">
       {$_progress.toFixed(precision)}%

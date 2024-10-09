@@ -8,7 +8,7 @@
   const { li, div, time, h3, svg } = $derived(timelineitem({ order }));
 </script>
 
-<li class={li({ class: liClass })} {...restProps}>
+<li {...restProps} class={li({ class: liClass })}>
   <div class={div({ class: divClass })}></div>
   {#if order !== "default"}
     {#if orientationSlot && (order === "vertical" || order === "horizontal")}

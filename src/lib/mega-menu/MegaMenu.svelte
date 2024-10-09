@@ -10,7 +10,7 @@
 
 <!-- Dropdown menu -->
 {#if dropdownStatus}
-  <div class={base({ className })} {...restProps}>
+  <div {...restProps} class={base({ className })}>
     <div class={div()}>
       <ul class={ul()}>
         {#each items as item, index}

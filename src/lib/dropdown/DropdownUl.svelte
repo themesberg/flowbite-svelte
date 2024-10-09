@@ -6,7 +6,7 @@
   const ulCls = $derived(dropdownul({ class: className }));
 </script>
 
-<ul class={ulCls} {...restProps}>
+<ul {...restProps} class={ulCls}>
   {@render children()}
 </ul>
 

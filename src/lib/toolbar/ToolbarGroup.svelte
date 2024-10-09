@@ -11,7 +11,7 @@
   if (options) $options = true;
 </script>
 
-<div class={groupClass} {...restProps}>
+<div {...restProps} class={groupClass}>
   {@render children()}
 </div>
 

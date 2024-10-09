@@ -11,7 +11,7 @@
   });
 </script>
 
-<li class={item()} {...restProps}>
+<li {...restProps} class={item()}>
   {#if home}
     <a class={item({ home: true, class: homeClass })} {href}>
       {#if icon}

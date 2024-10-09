@@ -8,7 +8,7 @@
   let items = $derived([...Array(itemNumber).keys()]);
 </script>
 
-<div role="status" class={base({ className })} {...restProps}>
+<div role="status" {...restProps} class={base({ className })}>
   {#each items as _, i}
     <div class={item({ class: i > 0 ? "pt-4" : "" })}>
       <div class={itemContent()}>

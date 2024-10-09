@@ -14,7 +14,7 @@
 
 <li class={liClass}>
   {#if href}
-    <a {href} class={currentUrl === href ? activeAnchor({ class: activeClass }) : anchor({ class: aClass })} {...restProps}>
+    <a {href} {...restProps} class={currentUrl === href ? activeAnchor({ class: activeClass }) : anchor({ class: aClass })}>
       {@render children()}
     </a>
   {:else}

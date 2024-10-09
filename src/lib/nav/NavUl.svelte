@@ -12,7 +12,7 @@
   const base = $derived(navUl({ breakPoint, className }));
 </script>
 
-<ul class={base} {...restProps}>
+<ul {...restProps} class={base}>
   {@render children()}
 </ul>
 

@@ -8,7 +8,7 @@
   const olCls = $derived(timeline({ order, className }));
 </script>
 
-<ol class={olCls} {...restProps}>
+<ol {...restProps} class={olCls}>
   {@render children()}
 </ol>
 

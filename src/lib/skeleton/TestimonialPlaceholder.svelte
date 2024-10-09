@@ -6,7 +6,7 @@
   const { wrapper, line1, line2, svg, subContent } = testimonialPlaceholder();
 </script>
 
-<div role="status" class={wrapper({ className })} {...restProps}>
+<div role="status" {...restProps} class={wrapper({ className })}>
   <div class={line2({ class: "mx-auto mb-2.5 h-2.5 max-w-[640px]" })}></div>
   <div class={line2({ class: "mx-auto h-2.5 max-w-[540px]" })}></div>
   <div class={subContent()}>

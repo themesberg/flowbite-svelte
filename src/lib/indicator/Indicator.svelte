@@ -17,7 +17,7 @@
   );
 </script>
 
-<div class={base({ className })} {...restProps}>
+<div {...restProps} class={base({ className })}>
   {#if children}
     {@render children()}
   {/if}

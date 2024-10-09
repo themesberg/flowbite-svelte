@@ -6,7 +6,7 @@
   const { div, slot, top, leftTop, leftMid, leftBot, right } = android();
 </script>
 
-<div class={div({ class: divClass })} {...restProps}>
+<div {...restProps} class={div({ class: divClass })}>
   <div class={top({ class: div2Class })}></div>
   <div class={leftTop({ class: div3Class })}></div>
   <div class={leftMid({ class: div4Class })}></div>

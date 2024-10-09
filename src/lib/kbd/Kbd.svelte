@@ -6,7 +6,7 @@
   const kbdCls = kbd();
 </script>
 
-<kbd class={twMerge(kbdCls, kbdClass)} {...restProps}>
+<kbd {...restProps} class={twMerge(kbdCls, kbdClass)}>
   {@render children()}
 </kbd>
 

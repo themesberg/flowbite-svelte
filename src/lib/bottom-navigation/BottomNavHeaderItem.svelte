@@ -4,7 +4,7 @@
   let base = $derived(bottomnavheaderitem({ active, className }));
 </script>
 
-<button class={base} {...restProps}>
+<button {...restProps} class={base}>
   {itemName}
 </button>
 

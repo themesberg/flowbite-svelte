@@ -16,7 +16,7 @@
   );
 </script>
 
-<svelte:element this={href ? "a" : "div"} {href} class={base({ className })} role={href ? "link" : "presentation"} {onclick} {...restProps}>
+<svelte:element this={href ? "a" : "div"} {...restProps} {href} class={base({ className })} role={href ? "link" : "presentation"} {onclick}>
   {#if img}
     <img class={image({ class: imgClass })} src={img.src} alt={img.alt} />
     <div class={content({ class: contentClass })}>

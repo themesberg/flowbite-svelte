@@ -5,7 +5,7 @@
   let footerClass = $derived(dropdownFooter({ class: className }));
 </script>
 
-<div class={footerClass} {...restProps}>
+<div {...restProps} class={footerClass}>
   {@render children()}
 </div>
 

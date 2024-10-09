@@ -6,7 +6,7 @@
   const { div, leftTop, leftMid, leftBot, right, slot } = tablet();
 </script>
 
-<div class={div({ class: divClass })} {...restProps}>
+<div {...restProps} class={div({ class: divClass })}>
   <div class={leftTop({ class: div2Class })}></div>
   <div class={leftMid({ class: div3Class })}></div>
   <div class={leftBot({ class: div4Class })}></div>

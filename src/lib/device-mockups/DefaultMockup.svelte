@@ -6,7 +6,7 @@
   const { div, slot, top, leftTop, leftBot, right } = defaultMockup();
 </script>
 
-<div class={div({ class: divClass })} {...restProps}>
+<div {...restProps} class={div({ class: divClass })}>
   <div class={top({ class: div2Class })}></div>
   <div class={leftTop({ class: div3Class })}></div>
   <div class={leftBot({ class: div4Class })}></div>

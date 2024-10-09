@@ -27,7 +27,7 @@
   }
 </script>
 
-<ul class={base({ class: ulClass })} {...restProps}>
+<ul {...restProps} class={base({ class: ulClass })}>
   {@render children()}
 </ul>
 {#if dividerBool}

@@ -204,7 +204,7 @@
 </script>
 
 {#if transition && visible}
-  <div transition:transition={params || defaultParams} role="tooltip" bind:this={tooltipElement} class={`${base({ className })} ${positioned ? "visible opacity-100" : "invisible opacity-0"} transition-opacity duration-200`} onmouseenter={onPopoverEnter} onmouseleave={onPopoverLeave} {...restProps}>
+  <div transition:transition={params || defaultParams} role="tooltip" bind:this={tooltipElement} {...restProps} class={`${base({ className })} ${positioned ? "visible opacity-100" : "invisible opacity-0"} transition-opacity duration-200`} onmouseenter={onPopoverEnter} onmouseleave={onPopoverLeave}>
     {#if typeof titleSlot === "string"}
       <div class={title()}>
         <h3 class={h3()}>{titleSlot}</h3>
@@ -216,7 +216,7 @@
     {#if arrow}<div bind:this={arrowEl} class={arrowBase({ arrow, position })}></div>{/if}
   </div>
 {:else if visible}
-  <div role="tooltip" bind:this={tooltipElement} class={`${base({ className })} ${positioned ? "visible opacity-100" : "invisible opacity-0"} transition-opacity duration-200`} onmouseenter={onPopoverEnter} onmouseleave={onPopoverLeave} {...restProps}>
+  <div role="tooltip" bind:this={tooltipElement} {...restProps} class={`${base({ className })} ${positioned ? "visible opacity-100" : "invisible opacity-0"} transition-opacity duration-200`} onmouseenter={onPopoverEnter} onmouseleave={onPopoverLeave}>
     {#if typeof titleSlot === "string"}
       <div class={title()}>
         <h3 class={h3()}>{titleSlot}</h3>

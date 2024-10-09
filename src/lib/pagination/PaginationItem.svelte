@@ -10,13 +10,13 @@
 </script>
 
 {#if href}
-  <a {href} class={paginationClass} {...restProps}>
+  <a {href} {...restProps} class={paginationClass}>
     {#if children}
       {@render children()}
     {/if}
   </a>
 {:else}
-  <button class={paginationClass} {...restProps}>
+  <button {...restProps} class={paginationClass}>
     {#if children}
       {@render children()}
     {/if}

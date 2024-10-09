@@ -5,7 +5,7 @@
   let headerClass = $derived(dropdownHeader({ class: className }));
 </script>
 
-<div class={headerClass} {...restProps}>
+<div {...restProps} class={headerClass}>
   {@render children()}
 </div>
 

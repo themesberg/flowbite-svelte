@@ -5,7 +5,7 @@
   const { innerDiv, outerDiv } = $derived(bottomnavheader());
 </script>
 
-<div class={outerDiv({ class: outerClass })} {...restProps}>
+<div {...restProps} class={outerDiv({ class: outerClass })}>
   <div class={innerDiv({ class: innerClass })} role="group">
     {@render children()}
   </div>

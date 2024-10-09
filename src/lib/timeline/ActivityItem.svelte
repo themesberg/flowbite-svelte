@@ -7,7 +7,7 @@
 </script>
 
 {#each activities as { name, date, src, alt, activity }}
-  <li class={li({ class: liClass })} {...restProps}>
+  <li {...restProps} class={li({ class: liClass })}>
     <span class={span({ class: spanClass })}>
       <img class={img({ class: imgClass })} {src} {alt} />
     </span>

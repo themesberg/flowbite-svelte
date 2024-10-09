@@ -4,7 +4,7 @@
   const { wrapper, line } = $derived(skeleton({ size }));
 </script>
 
-<div role="status" class={wrapper({ className })} {...restProps}>
+<div role="status" {...restProps} class={wrapper({ className })}>
   <div class={line({ class: "mb-4 h-2.5 w-1/2" })}></div>
   <div class={line({ class: "mb-2.5 h-2 w-9/12" })}></div>
   <div class={line({ class: "mb-2.5 h-2" })}></div>

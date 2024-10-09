@@ -30,7 +30,7 @@
   const { base, button, content } = $derived(tabItem({ open, disabled }));
 </script>
 
-<li class={base({ class: className })} role="presentation" {...restProps}>
+<li {...restProps} class={base({ class: className })} role="presentation">
   <button
     type="button"
     onclick={() => (open = true)}

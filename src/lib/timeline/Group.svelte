@@ -7,7 +7,7 @@
 
 <div class={div({ class: divClass })}>
   <time class={time({ class: timeClass })}>{date}</time>
-  <ol class={ol({ class: olClass })} {...restProps}>
+  <ol {...restProps} class={ol({ class: olClass })}>
     {@render children()}
   </ol>
 </div>

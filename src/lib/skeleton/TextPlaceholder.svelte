@@ -9,7 +9,7 @@
   );
 </script>
 
-<div role="status" class={baseWrapper({ className })} {...restProps}>
+<div role="status" {...restProps} class={baseWrapper({ className })}>
   <div class={divWrapper({ class: "w-full" })}>
     <div class={lineA({ class: "h-2.5 w-32" })}></div>
     <div class={lineB({ class: "h-2.5 w-24" })}></div>
