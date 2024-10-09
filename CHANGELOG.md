@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.20
+
+### Patch Changes
+
+- fix: move {...$restProps} before class ([`af194870eedfadac9232d50365aaa08841566a01`](https://github.com/shinokada/svelte-5-ui-lib/commit/af194870eedfadac9232d50365aaa08841566a01))
+
 ## 0.9.19
 
 ### Patch Changes

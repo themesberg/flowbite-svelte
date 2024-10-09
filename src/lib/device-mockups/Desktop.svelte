@@ -6,7 +6,7 @@
   const { div, inner, bot, botUnder } = desktop();
 </script>
 
-<div class={div({ class: divClass })} {...restProps}>
+<div {...restProps} class={div({ class: divClass })}>
   <div class={inner({ class: div2Class })}>
     {#if children}
       {@render children()}
