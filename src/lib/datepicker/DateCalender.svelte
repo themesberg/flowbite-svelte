@@ -165,3 +165,20 @@
 		</div>
 	</div>
 </Modal>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let currentDate: Date = new Date();
+@prop export let open = false;
+@prop export let locale: string = 'default';
+@prop export let firstDayOfWeek: number = 0;
+@prop export let showToday: boolean = true;
+@prop export let showClose: boolean = true;
+@prop export let dateFormat: Intl.DateTimeFormatOptions = { month: 'long', year: 'numeric' };
+@prop export let dayLabelFormat: 'short' | 'narrow' | 'long' = 'short';
+@prop export let customClass: string = '';
+@prop export let primaryColor: Button['color'] = 'blue';
+@prop export let secondaryColor: string = 'gray';
+-->

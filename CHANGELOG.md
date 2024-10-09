@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.46.23
+
+### Patch Changes
+
+- bug fix ([`5b0798a414d2bbcd72dc940ebf20d8448b600150`](https://github.com/themesberg/flowbite-svelte/commit/5b0798a414d2bbcd72dc940ebf20d8448b600150))
+
 ## 0.46.22
 
 ### Patch Changes

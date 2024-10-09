@@ -83,3 +83,18 @@
     on:change />
   <slot />
 </Button>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let group: $$Props['group'] = [];
+@prop export let value: $$Props['value'] = 'on';
+@prop export let checked: $$Props['checked'] = undefined;
+@prop export let inline: $$Props['inline'] = true;
+@prop export let pill: $$Props['pill'] = false;
+@prop export let outline: $$Props['outline'] = false;
+@prop export let size: $$Props['size'] = undefined;
+@prop export let color: $$Props['color'] = undefined;
+@prop export let shadow: $$Props['shadow'] = false;
+-->
