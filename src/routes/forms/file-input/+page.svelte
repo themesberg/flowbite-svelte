@@ -19,7 +19,10 @@
     eager: true
   }) as Record<string, string>;
 
-  const exampleArr = [{ name: "Dropzone example", component: ExampleComponents.DropzoneExample }];
+  const exampleArr = [
+    { name: "Clearable", component: ExampleComponents.Clearable },  
+    { name: "Dropzone example", component: ExampleComponents.DropzoneExample }
+];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
 

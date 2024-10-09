@@ -1,12 +1,27 @@
 <script lang="ts">
   import { type FileuploadProps as Props, fileupload } from ".";
+  import { CloseButton } from "$lib";
+  let { files = $bindable<FileList | undefined>(), size = "md", clearable = false, value = $bindable(), class: className, ...restProps }: Props = $props();
+  const { base, wrapper, right } = $derived(fileupload({ size, class: className }));
 
-  let { files = $bindable<FileList | undefined>(), size = "md", class: className, ...restProps }: Props = $props();
-  const base = $derived(fileupload({ size, class: className }));
+  let fileInputRef: HTMLInputElement | undefined = $state();
+  const clearAll = () => {
+    if (fileInputRef) {
+      fileInputRef.value = '';
+      files = undefined;
+    }
+  };
+
 </script>
 
-<input type="file" bind:files {...restProps} class={base} />
-
+{#if clearable}
+<div class={wrapper()}>
+  <input type="file" bind:files bind:this={fileInputRef} {...restProps} class={base({ className})} />
+  <CloseButton onclick={clearAll} class={right()}/>
+</div>
+{:else}
+  <input type="file" bind:files {...restProps} class={base({ className })} />
+{/if}
 <!--
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
