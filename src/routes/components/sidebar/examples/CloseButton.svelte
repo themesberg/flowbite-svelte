@@ -44,7 +44,7 @@
       </SidebarItem>
     </SidebarGroup>
   </Sidebar>
-  <div class="h-96 overflow-scroll px-4 md:ml-64">
+  <div class="h-96 overflow-auto px-4 md:ml-64">
     <div class="rounded-lg border-2 border-dashed border-gray-200 p-4 dark:border-gray-700">
       <PlusPlaceholder colnum={3} rownum={1} />
       <PlusPlaceholder />

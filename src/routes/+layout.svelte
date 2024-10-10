@@ -20,8 +20,8 @@
   let closeNav = nav.close;
   let currentUrl = $state($page.url.pathname);
   const hasPath = (key: string) => currentUrl.includes(key);
-  let pageStatus = hasPath("pages");
-  let componentStatus = hasPath("components");
+  let pageStatus = $derived(hasPath("pages"));
+  let componentStatus = $derived(hasPath("components"));
   $inspect('currentUrl: ', currentUrl);
   $inspect('pageStatus: ', pageStatus);
   $inspect('componentStatus: ', componentStatus);
@@ -31,8 +31,8 @@
     navStatus = nav.isOpen;
     currentUrl = $page.url.pathname;
     isOpen = sidebarUi.isOpen;
-    pageStatus = hasPath("pages");
-    componentStatus = hasPath("components");
+    // pageStatus = hasPath("pages");
+    // componentStatus = hasPath("components");
   });
 
   let navClass = "w-full divide-gray-200 border-gray-200 bg-gray-50 dark_bg_theme text-gray-500 dark:divide-gray-700 dark:border-gray-700 dark:transparent dark:text-gray-400 sm:px-4";

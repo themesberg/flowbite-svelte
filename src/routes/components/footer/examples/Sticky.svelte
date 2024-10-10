@@ -3,7 +3,7 @@
 </script>
 
 <div class="relative p-6">
-  <div style="height:300px;" class="overflow-scroll">
+  <div style="height:300px;" class="overflow-auto">
     <Skeleton class="my-8" />
     <ImagePlaceholder class="my-8" />
     <TextPlaceholder class="my-8" />

@@ -85,7 +85,7 @@
       <CloseButton onclick={() => (text = "")} />
     {/snippet}
   </Input>
-  <div class="mb-4 overflow-scroll md:h-[200px]">
+  <div class="mb-4 overflow-auto md:h-[200px]">
     <P contenteditable weight={pWeight} size={pSize} space={pSpace} height={pHeight} align={pAlign} whitespace={pWhitespace} {italic} firstUpper={pFirstupper} justify={pJustify}>{text}</P>
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">

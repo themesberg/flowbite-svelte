@@ -11,7 +11,7 @@
   });
 </script>
 
-<div class="h-96 overflow-scroll px-4">
+<div class="h-96 overflow-auto px-4">
   <div class="rounded-lg border-2 border-dashed border-gray-200 p-4 dark:border-gray-700">
     <div class="flex w-full flex-row pb-4">
       <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
