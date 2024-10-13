@@ -49,7 +49,7 @@
     "@playwright/test": "^1.48.0",
     "@popperjs/core": "^2.11.8",
     "@sveltejs/adapter-auto": "^3.2.5",
-    "@sveltejs/kit": "^2.6.4",
+    "@sveltejs/kit": "^2.7.0",
     "@sveltejs/package": "^2.3.5",
     "@sveltejs/vite-plugin-svelte": "4.0.0-next.7",
     "@svitejs/changesets-changelog-github-compact": "^1.1.0",

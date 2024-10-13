@@ -100,7 +100,7 @@ export function getFilteredFileNames(dirName: string): string[] {
 }
 
 export function replaceLibImport(componentString: string): string {
-  return componentString.replace(/from '\$lib'/g, "from 'svelte-5-ui-lib'");
+  return componentString.replace(/from "\$lib"/g, "from 'svelte-5-ui-lib'");
 }
 
 export function getExampleFileName(selectedExample: string, exampleArr: { name: string }[]): string {

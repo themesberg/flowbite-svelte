@@ -1,12 +1,9 @@
 import type { Snippet } from "svelte";
 import type { HTMLAttributes } from "svelte/elements";
-import { type VariantProps } from "tailwind-variants";
 import Avatar from "./Avatar.svelte";
 import { avatar } from "./theme";
 
-type AvatarVariants = VariantProps<typeof avatar>;
-
-interface AvatarProps extends HTMLAttributes<HTMLDivElement>, AvatarVariants {
+interface AvatarProps extends HTMLAttributes<HTMLDivElement> {
   children?: Snippet;
   href?: string;
   src?: string;
@@ -16,6 +13,7 @@ interface AvatarProps extends HTMLAttributes<HTMLDivElement>, AvatarVariants {
   alt?: string;
   size?: "xs" | "sm" | "md" | "lg" | "xl";
   onclick?: () => void;
+  border?: boolean;
 }
 
 export { Avatar, avatar, type AvatarProps };

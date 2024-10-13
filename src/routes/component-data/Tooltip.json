@@ -1,45 +1,13 @@
 {
   "name": "Tooltip",
   "props": [
-    [
-      "children",
-      "Snippet",
-      ""
-    ],
-    [
-      "color",
-      "TooltipColorType",
-      "\"default\""
-    ],
-    [
-      "arrow",
-      "boolean",
-      "true"
-    ],
-    [
-      "offset",
-      "number",
-      "0"
-    ],
-    [
-      "triggeredBy",
-      "string",
-      ""
-    ],
-    [
-      "position",
-      "\"top\" | \"bottom\" | \"left\" | \"right\"",
-      "\"top\""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ],
-    [
-      "reference",
-      "string",
-      ""
-    ]
+    ["children", "Snippet", ""],
+    ["color", "TooltipColorType", "\"default\""],
+    ["arrow", "boolean", "true"],
+    ["offset", "number", "0"],
+    ["triggeredBy", "string", ""],
+    ["position", "\"top\" | \"bottom\" | \"left\" | \"right\"", "\"top\""],
+    ["class", "string", ""],
+    ["reference", "string", ""]
   ]
 }

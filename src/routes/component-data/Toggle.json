@@ -1,60 +1,16 @@
 {
   "name": "Toggle",
   "props": [
-    [
-      "children",
-      "Snippet",
-      ""
-    ],
-    [
-      "toggleSize",
-      "SizeType",
-      "\"default\""
-    ],
-    [
-      "value",
-      "string | number",
-      ""
-    ],
-    [
-      "checked",
-      "boolean | undefined",
-      "$bindable()"
-    ],
-    [
-      "disabled",
-      "boolean",
-      ""
-    ],
-    [
-      "color",
-      "ToggleColor",
-      "\"primary\""
-    ],
-    [
-      "aria_describedby",
-      "string",
-      ""
-    ],
-    [
-      "labelClass",
-      "string",
-      ""
-    ],
-    [
-      "inputClass",
-      "string",
-      ""
-    ],
-    [
-      "spanClass",
-      "string",
-      ""
-    ],
-    [
-      "leftLabel",
-      "Snippet",
-      ""
-    ]
+    ["children", "Snippet", ""],
+    ["toggleSize", "SizeType", "\"default\""],
+    ["value", "string | number", ""],
+    ["checked", "boolean | undefined", "$bindable()"],
+    ["disabled", "boolean", ""],
+    ["color", "ToggleColor", "\"primary\""],
+    ["aria_describedby", "string", ""],
+    ["labelClass", "string", ""],
+    ["inputClass", "string", ""],
+    ["spanClass", "string", ""],
+    ["leftLabel", "Snippet", ""]
   ]
 }

@@ -7,7 +7,7 @@
   let fileInputRef: HTMLInputElement | undefined = $state();
   const clearAll = () => {
     if (fileInputRef) {
-      fileInputRef.value = '';
+      fileInputRef.value = "";
       files = undefined;
     }
   };
@@ -15,16 +15,15 @@
 </script>
 
 {#if clearable}
-<div class={wrapper()}>
-  <input type="file" bind:files bind:this={fileInputRef} {...restProps} class={base({ className})} />
-  {#if hasFiles}
-    <CloseButton onclick={clearAll} class={right()}/>
-  {/if}
-</div>
+  <div class={wrapper()}>
+    <input type="file" bind:files bind:this={fileInputRef} {...restProps} class={base({ className })} />
+    {#if hasFiles}
+      <CloseButton onclick={clearAll} class={right()} />
+    {/if}
+  </div>
 {:else}
   <input type="file" bind:files {...restProps} class={base({ className })} />
 {/if}
-
 
 <!--
 @component

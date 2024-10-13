@@ -1,60 +1,16 @@
 {
   "name": "P",
   "props": [
-    [
-      "children",
-      "Snippet",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      "\"text-gray-900 dark:text-white\""
-    ],
-    [
-      "height",
-      "VariantProps<typeof paragraph>[\"height\"]",
-      "\"normal\""
-    ],
-    [
-      "align",
-      "VariantProps<typeof paragraph>[\"align\"]",
-      "\"left\""
-    ],
-    [
-      "justify",
-      "boolean",
-      "false"
-    ],
-    [
-      "italic",
-      "boolean",
-      ""
-    ],
-    [
-      "firstUpper",
-      "boolean",
-      "false"
-    ],
-    [
-      "whitespace",
-      "VariantProps<typeof paragraph>[\"whitespace\"]",
-      "\"normal\""
-    ],
-    [
-      "size",
-      "VariantProps<typeof paragraph>[\"size\"]",
-      "\"base\""
-    ],
-    [
-      "space",
-      "VariantProps<typeof paragraph>[\"space\"]",
-      "\"normal\""
-    ],
-    [
-      "weight",
-      "VariantProps<typeof paragraph>[\"weight\"]",
-      "\"normal\""
-    ]
+    ["children", "Snippet", ""],
+    ["class", "string", "\"text-gray-900 dark:text-white\""],
+    ["height", "VariantProps<typeof paragraph>[\"height\"]", "\"normal\""],
+    ["align", "VariantProps<typeof paragraph>[\"align\"]", "\"left\""],
+    ["justify", "boolean", "false"],
+    ["italic", "boolean", ""],
+    ["firstUpper", "boolean", "false"],
+    ["whitespace", "VariantProps<typeof paragraph>[\"whitespace\"]", "\"normal\""],
+    ["size", "VariantProps<typeof paragraph>[\"size\"]", "\"base\""],
+    ["space", "VariantProps<typeof paragraph>[\"space\"]", "\"normal\""],
+    ["weight", "VariantProps<typeof paragraph>[\"weight\"]", "\"normal\""]
   ]
 }

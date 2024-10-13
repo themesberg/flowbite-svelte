@@ -1,50 +1,14 @@
 {
   "name": "TableHead",
   "props": [
-    [
-      "children",
-      "Snippet",
-      ""
-    ],
-    [
-      "headerSlot",
-      "Snippet",
-      ""
-    ],
-    [
-      "color",
-      "VariantProps<typeof table>[\"color\"]",
-      ""
-    ],
-    [
-      "striped",
-      "boolean",
-      ""
-    ],
-    [
-      "hoverable",
-      "boolean",
-      ""
-    ],
-    [
-      "noborder",
-      "boolean",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ],
-    [
-      "headItems",
-      "string | number | {\n  text: string[]",
-      ""
-    ],
-    [
-      "defaultRow",
-      "boolean",
-      "true"
-    ]
+    ["children", "Snippet", ""],
+    ["headerSlot", "Snippet", ""],
+    ["color", "VariantProps<typeof table>[\"color\"]", ""],
+    ["striped", "boolean", ""],
+    ["hoverable", "boolean", ""],
+    ["noborder", "boolean", ""],
+    ["class", "string", ""],
+    ["headItems", "string | number | {\n  text: string[]", ""],
+    ["defaultRow", "boolean", "true"]
   ]
 }

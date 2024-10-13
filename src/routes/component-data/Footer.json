@@ -1,20 +1,8 @@
 {
   "name": "Footer",
   "props": [
-    [
-      "children",
-      "Snippet",
-      ""
-    ],
-    [
-      "footerType",
-      "VariantProps<typeof footer>[\"footerType\"]",
-      "\"default\""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ]
+    ["children", "Snippet", ""],
+    ["footerType", "VariantProps<typeof footer>[\"footerType\"]", "\"default\""],
+    ["class", "string", ""]
   ]
 }

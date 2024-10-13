@@ -22,9 +22,9 @@
   const hasPath = (key: string) => currentUrl.includes(key);
   let pageStatus = $derived(hasPath("pages"));
   let componentStatus = $derived(hasPath("components"));
-  $inspect('currentUrl: ', currentUrl);
-  $inspect('pageStatus: ', pageStatus);
-  $inspect('componentStatus: ', componentStatus);
+  $inspect("currentUrl: ", currentUrl);
+  $inspect("pageStatus: ", pageStatus);
+  $inspect("componentStatus: ", componentStatus);
 
   $effect(() => {
     navDrawerStatus = navDrawer.isOpen;

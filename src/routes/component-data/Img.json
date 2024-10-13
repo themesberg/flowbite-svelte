@@ -1,55 +1,15 @@
 {
   "name": "Img",
   "props": [
-    [
-      "size",
-      "VariantProps<typeof img>[\"size\"]",
-      "\"none\""
-    ],
-    [
-      "alignment",
-      "VariantProps<typeof img>[\"alignment\"]",
-      "\"left\""
-    ],
-    [
-      "effect",
-      "VariantProps<typeof img>[\"effect\"]",
-      "\"none\""
-    ],
-    [
-      "shadow",
-      "VariantProps<typeof img>[\"shadow\"]",
-      "\"none\""
-    ],
-    [
-      "rounded",
-      "VariantProps<typeof img>[\"rounded\"]",
-      "\"none\""
-    ],
-    [
-      "caption",
-      "string",
-      ""
-    ],
-    [
-      "imgClass",
-      "string",
-      ""
-    ],
-    [
-      "figClass",
-      "string",
-      ""
-    ],
-    [
-      "captionClass",
-      "string",
-      ""
-    ],
-    [
-      "href",
-      "string",
-      ""
-    ]
+    ["size", "VariantProps<typeof img>[\"size\"]", "\"none\""],
+    ["alignment", "VariantProps<typeof img>[\"alignment\"]", "\"left\""],
+    ["effect", "VariantProps<typeof img>[\"effect\"]", "\"none\""],
+    ["shadow", "VariantProps<typeof img>[\"shadow\"]", "\"none\""],
+    ["rounded", "VariantProps<typeof img>[\"rounded\"]", "\"none\""],
+    ["caption", "string", ""],
+    ["imgClass", "string", ""],
+    ["figClass", "string", ""],
+    ["captionClass", "string", ""],
+    ["href", "string", ""]
   ]
 }

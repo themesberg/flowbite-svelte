@@ -1,15 +1,7 @@
 {
   "name": "Kbd",
   "props": [
-    [
-      "children",
-      "Snippet",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ]
+    ["children", "Snippet", ""],
+    ["class", "string", ""]
   ]
 }

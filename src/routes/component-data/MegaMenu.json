@@ -1,50 +1,14 @@
 {
   "name": "MegaMenu",
   "props": [
-    [
-      "children",
-      "Snippet<[{ item: LinkType",
-      ""
-    ],
-    [
-      "footer",
-      "any",
-      ""
-    ],
-    [
-      "items",
-      "any",
-      "[]"
-    ],
-    [
-      "full",
-      "any",
-      ""
-    ],
-    [
-      "dropdownStatus",
-      "any",
-      "$bindable()"
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ],
-    [
-      "backdropClass",
-      "any",
-      ""
-    ],
-    [
-      "params",
-      "any",
-      ""
-    ],
-    [
-      "transition",
-      "any",
-      "fly"
-    ]
+    ["children", "Snippet<[{ item: LinkType", ""],
+    ["footer", "any", ""],
+    ["items", "any", "[]"],
+    ["full", "any", ""],
+    ["dropdownStatus", "any", "$bindable()"],
+    ["class", "string", ""],
+    ["backdropClass", "any", ""],
+    ["params", "any", ""],
+    ["transition", "any", "fly"]
   ]
 }

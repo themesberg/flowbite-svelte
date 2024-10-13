@@ -38,7 +38,7 @@
     </div>
   {/if}
   {#if clearable && value && `${value}`.length > 0}
-    <CloseButton {size} onclick={clearAll} class={rightCls({ class: classRight })}/>
+    <CloseButton {size} onclick={clearAll} class={rightCls({ class: classRight })} />
   {/if}
 {/snippet}
 
