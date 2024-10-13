@@ -8,7 +8,6 @@ import TableSearch from "./TableSearch.svelte";
 import { table, tablebodyrow, tablehead, tablebodycell, tableheadcell } from "./theme";
 import type { HTMLTableAttributes, HTMLAttributes, HTMLTdAttributes, HTMLThAttributes } from "svelte/elements";
 import type { Snippet } from "svelte";
-import { type VariantProps } from "tailwind-variants";
 
 type TableCtxType = {
   striped?: boolean;
@@ -35,7 +34,7 @@ interface TableHeadProps extends HTMLAttributes<HTMLTableSectionElement> {
   color?: TableColrType;
 }
 
-type TableColrType = VariantProps<typeof table>["color"];
+type TableColrType = "primary" | "gray" | "red" | "yellow" | "green" | "indigo" | "purple" | "pink" | "blue" | "orange" | "amber" | "lime" | "emerald" | "teal" | "cyan" | "sky" | "violet" | "fuchsia" | "rose" | "secondary" | "default" | undefined;
 type TableItemType = Record<string, string | number | boolean>;
 
 interface TableProps extends HTMLTableAttributes {

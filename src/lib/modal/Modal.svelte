@@ -89,10 +89,10 @@
 @props:bodyClass: string;
 @props:footerClass: string;
 @props:outsideClose: boolean = true;
-@props:size: VariantProps<typeof modal>["size"] = "md";
+@props:size: "md" | "sm" | "lg" | "xl" | "xs" | undefined = "md";
 @props:backdrop: boolean = true;
 @props:backdropClass: string;
-@props:position: VariantProps<typeof modal>["position"] = "center";
+@props:position: "top-left" | "top-center" | "top-right" | "center-left" | "center" | "center-right" | "bottom-left" | "bottom-center" | "bottom-right" | "default" | undefined = "center";
 @props:class: string;
 @props:params: ParamsType = { duration: 100;
 @props:easing: any;

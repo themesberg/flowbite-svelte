@@ -1,11 +1,10 @@
-import { type VariantProps } from "tailwind-variants";
 import Blockquote from "./Blockquote.svelte";
 import type { Snippet } from "svelte";
 import type { HTMLBlockquoteAttributes } from "svelte/elements";
 import { blockquote } from "./theme";
 
-type SizeType = VariantProps<typeof blockquote>["size"];
-type AlignmentType = VariantProps<typeof blockquote>["alignment"];
+type SizeType = "sm" | "lg" | "xl" | "2xl" | "base" | "xs" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl" | undefined;
+type AlignmentType = "left" | "center" | "right" | undefined;
 
 interface BlockquoteProps extends HTMLBlockquoteAttributes {
   children: Snippet;

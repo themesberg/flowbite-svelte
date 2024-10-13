@@ -1,12 +1,11 @@
 import List from "./List.svelte";
 import Li from "./Li.svelte";
-import { type VariantProps } from "tailwind-variants";
 import type { Snippet } from "svelte";
 import type { HTMLLiAttributes } from "svelte/elements";
 import { list } from "./theme";
 
-type TagType = VariantProps<typeof list>["tag"];
-type PositionType = VariantProps<typeof list>["position"];
+type TagType = "ul" | "dl" | "ol" | undefined;
+type PositionType = "inside" | "outside" | undefined;
 
 interface ListProps {
   children: Snippet;

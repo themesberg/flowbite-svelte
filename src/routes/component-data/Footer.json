@@ -2,7 +2,7 @@
   "name": "Footer",
   "props": [
     ["children", "Snippet", ""],
-    ["footerType", "VariantProps<typeof footer>[\"footerType\"]", "\"default\""],
+    ["footerType", "\"default\" | \"sticky\" | \"sitemap\" | \"socialmedia\" | \"logo\" | undefined", "\"default\""],
     ["class", "string", ""]
   ]
 }

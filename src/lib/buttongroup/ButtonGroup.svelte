@@ -17,6 +17,6 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children: Snippet;
-@props:size: VariantProps<typeof buttonGroup>["size"] = "md";
+@props:size: "sm" | "md" | "lg" | undefined = "md";
 @props:class: string;
 -->

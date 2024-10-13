@@ -3,7 +3,7 @@
   "props": [
     ["children", "Snippet", ""],
     ["btnName", "string", ""],
-    ["appBtnPosition", "AppBtnVariantProps<typeof bottomNav>[\"position\"]", "\"middle\""],
+    ["appBtnPosition", "AppBtn\"static\" | \"fixed\" | \"absolute\" | \"relative\" | \"sticky\" | undefined", "\"middle\""],
     ["target", "string", ""],
     ["activeClass", "string", ""],
     ["href", "string", "\"\""],

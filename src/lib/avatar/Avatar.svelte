@@ -44,8 +44,8 @@
 @props:src: string;
 @props:href: string;
 @props:cornerStyle: "rounded" | "circular" = "circular";
-@props:border: any;
-@props:stacked: boolean;
+@props:border: boolean = false;
+@props:stacked: boolean = false;
 @props:dot: object | undefined;
 @props:class: string;
 @props:alt: string;

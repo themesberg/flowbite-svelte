@@ -3,7 +3,7 @@
   "props": [
     ["children", "Snippet", ""],
     ["titleSlot", "Snippet | string", ""],
-    ["color", "PopoverColorType", "\"default\""],
+    ["color", "\"default\" | \"primary\" | \"secondary\" | \"gray\" | \"red\" | \"orange\" | \"amber\" | \"yellow\" | \"lime\" | \"green\" | \"emerald\" | \"teal\" | \"cyan\" | \"sky\" | \"blue\" | \"indigo\" | \"violet\" | \"purple\" | \"fuchsia\" | \"pink\" | \"rose\" | undefined", "\"default\""],
     ["arrow", "boolean", "true"],
     ["offset", "number", "0"],
     ["triggeredBy", "string", ""],

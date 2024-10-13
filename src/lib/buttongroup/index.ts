@@ -1,4 +1,3 @@
-import { type VariantProps } from "tailwind-variants";
 import type { Snippet } from "svelte";
 import ButtonGroup from "./ButtonGroup.svelte";
 import { buttonGroup } from "./theme";
@@ -9,6 +8,6 @@ interface ButtonGroupProps {
   class?: string;
 }
 
-type SizeType = VariantProps<typeof buttonGroup>["size"];
+type SizeType = "sm" | "md" | "lg" | undefined;
 
 export { ButtonGroup, buttonGroup, type ButtonGroupProps };

@@ -49,14 +49,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: pages: interface PaginationItemSpecificProps {
-  children?: Snippet;
-  name?: string;
-  href?: string;
-  active?: boolean;
-  rel?: string;
-  size?: PaginationItemType["size"];
-} &
+@props: pages: PaginationItemSpecificProps &
   Omit<HTMLButtonAttributes, keyof PaginationItemSpecificProps> &
   Omit<HTMLAnchorAttributes, keyof PaginationItemSpecificProps> & {
     href?: string[] = [];
@@ -65,6 +58,7 @@
 @props:prevContent: Snippet;
 @props:nextContent: Snippet;
 @props:table: boolean;
-@props:size: VariantProps<typeof paginationItem>["size"];
+@props:size: {
+  size?: "default" | "large" | null["size"];
 @props:ariaLabel: string;
 -->

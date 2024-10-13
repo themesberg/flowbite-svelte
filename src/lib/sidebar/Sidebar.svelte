@@ -72,8 +72,8 @@
 @props:isOpen: boolean = false;
 @props:closeSidebar: () => void;
 @props:isSingle: boolean = true;
-@props:breakpoint: VariantProps<typeof sidebar>["breakpoint"] = "md";
-@props:position: VariantProps<typeof sidebar>["position"] = "fixed";
+@props:breakpoint: "sm" | "md" | "lg" | "xl" | "2xl" | undefined = "md";
+@props:position: "fixed" | "absolute" | "static" | undefined = "fixed";
 @props:activateClickOutside: boolean = true;
 @props:backdrop: boolean = true;
 @props:backdropClass: string;

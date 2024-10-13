@@ -235,7 +235,7 @@
 ## Props
 @props: children: Snippet;
 @props:titleSlot: Snippet | string;
-@props:color: PopoverColorType = "default";
+@props:color: "default" | "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined = "default";
 @props:arrow: boolean = true;
 @props:offset: number = 0;
 @props:triggeredBy: string;

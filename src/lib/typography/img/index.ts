@@ -1,13 +1,12 @@
 import Img from "./Img.svelte";
-import { type VariantProps } from "tailwind-variants";
 import type { HTMLImgAttributes } from "svelte/elements";
 import { img } from "./theme";
 
-type SizeType = VariantProps<typeof img>["size"];
-type AlignmentType = VariantProps<typeof img>["alignment"];
-type EffectType = VariantProps<typeof img>["effect"];
-type ShadowType = VariantProps<typeof img>["shadow"];
-type RoundedType = VariantProps<typeof img>["rounded"];
+type SizeType = "sm" | "md" | "lg" | "xl" | "2xl" | "none" | "xs" | "full" | undefined;
+type AlignmentType = "left" | "center" | "right" | undefined;
+type EffectType = "none" | "grayscale" | "blur" | "invert" | "sepia" | "saturate" | "hue-rotate" | undefined;
+type ShadowType = "sm" | "md" | "lg" | "xl" | "2xl" | "none" | "regular" | "inner" | undefined;
+type RoundedType = "sm" | "md" | "lg" | "xl" | "2xl" | "full" | "none" | "regular" | "3xl" | undefined;
 
 interface ImgProps extends HTMLImgAttributes {
   size?: SizeType;

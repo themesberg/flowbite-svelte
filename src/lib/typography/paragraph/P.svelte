@@ -16,13 +16,13 @@
 ## Props
 @props: children: Snippet;
 @props:class: string = "text-gray-900 dark:text-white";
-@props:height: VariantProps<typeof paragraph>["height"] = "normal";
-@props:align: VariantProps<typeof paragraph>["align"] = "left";
+@props:height: "normal" | "tight" | "none" | "snug" | "relaxed" | "loose" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | undefined = "normal";
+@props:align: "left" | "center" | "right" | undefined = "left";
 @props:justify: boolean = false;
 @props:italic: boolean;
 @props:firstUpper: boolean = false;
-@props:whitespace: VariantProps<typeof paragraph>["whitespace"] = "normal";
-@props:size: VariantProps<typeof paragraph>["size"] = "base";
-@props:space: VariantProps<typeof paragraph>["space"] = "normal";
-@props:weight: VariantProps<typeof paragraph>["weight"] = "normal";
+@props:whitespace: "normal" | "nowrap" | "pre" | "preline" | "prewrap" | undefined = "normal";
+@props:size: "sm" | "lg" | "xl" | "2xl" | "xs" | "base" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl" | undefined = "base";
+@props:space: "normal" | "tighter" | "tight" | "wide" | "wider" | "widest" | undefined = "normal";
+@props:weight: "normal" | "thin" | "extralight" | "light" | "medium" | "semibold" | "bold" | "extrabold" | "black" | undefined = "normal";
 -->

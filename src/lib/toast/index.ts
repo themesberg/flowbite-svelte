@@ -3,10 +3,9 @@ import { toast } from "./theme";
 import type { Snippet } from "svelte";
 import type { ParamsType, TransitionFunc } from "../types";
 import type { HTMLAttributes } from "svelte/elements";
-import { type VariantProps } from "tailwind-variants";
 
-type ColorType = VariantProps<typeof toast>["color"];
-type PositionType = VariantProps<typeof toast>["position"];
+type ColorType = "primary" | "gray" | "red" | "yellow" | "green" | "indigo" | "purple" | "pink" | "blue" | "orange" | "amber" | "lime" | "emerald" | "teal" | "cyan" | "sky" | "violet" | "fuchsia" | "rose" | undefined;
+type PositionType = "top-left" | "top-right" | "bottom-left" | "bottom-right" | undefined;
 
 interface ToastProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;

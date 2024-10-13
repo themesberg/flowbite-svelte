@@ -2,7 +2,6 @@ import Checkbox from "./Checkbox.svelte";
 import type { Snippet } from "svelte";
 import type { HTMLInputAttributes } from "svelte/elements";
 import { checkbox } from "./theme";
-import { type VariantProps } from "tailwind-variants";
 
 type CheckboxItem = {
   value: string;
@@ -10,7 +9,8 @@ type CheckboxItem = {
   isChecked?: boolean;
 };
 
-type ColorType = VariantProps<typeof checkbox>["color"];
+type ColorType = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined;
+
 interface CheckboxProps extends HTMLInputAttributes {
   children?: Snippet;
   aria_describedby?: string;

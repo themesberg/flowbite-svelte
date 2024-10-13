@@ -1,14 +1,13 @@
 import Card from "./Card.svelte";
-import { type VariantProps } from "tailwind-variants";
 import type { Snippet } from "svelte";
 import type { HTMLAttributes } from "svelte/elements";
 import { card } from "./theme";
 
 // type CardSizeType = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-type CardSizeType = VariantProps<typeof card>["size"];
-type PaddingType = VariantProps<typeof card>["padding"];
-type ShadowType = VariantProps<typeof card>["shadow"];
-type ColorType = VariantProps<typeof card>["color"];
+type CardSizeType = "sm" | "md" | "lg" | "xl" | "xs" | undefined;
+type PaddingType = "sm" | "lg" | "md" | "xl" | "xs" | undefined;
+type ShadowType = "sm" | "normal" | "lg" | "md" | "xl" | "2xl" | "inner" | undefined;
+type ColorType = "gray" | "primary" | "secondary" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined;
 
 type ImgType = {
   src: string | undefined | null;

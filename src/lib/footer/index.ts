@@ -4,12 +4,11 @@ import FooterCopyright from "./FooterCopyright.svelte";
 import FooterIcon from "./FooterIcon.svelte";
 import FooterLi from "./FooterLi.svelte";
 import FooterUl from "./FooterUl.svelte";
-import { type VariantProps } from "tailwind-variants";
 import type { Snippet } from "svelte";
 import type { HTMLAttributes, HTMLAnchorAttributes } from "svelte/elements";
 import { footer, footerBrand, footerCopyright, footerIcon, footerUl, footerLi } from "./theme";
 
-type FooterType = VariantProps<typeof footer>["footerType"];
+type FooterType = "default" | "sticky" | "sitemap" | "socialmedia" | "logo" | undefined;
 interface FooterProps extends HTMLAttributes<HTMLElement> {
   children: Snippet;
   footerType?: FooterType;

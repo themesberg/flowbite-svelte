@@ -47,7 +47,7 @@
 ## Props
 @props: children: Snippet;
 @props:headerSlot: Snippet;
-@props:color: VariantProps<typeof table>["color"];
+@props:color: "primary" | "gray" | "red" | "yellow" | "green" | "indigo" | "purple" | "pink" | "blue" | "orange" | "amber" | "lime" | "emerald" | "teal" | "cyan" | "sky" | "violet" | "fuchsia" | "rose" | "secondary" | "default" | undefined;
 @props:striped: boolean;
 @props:hoverable: boolean;
 @props:noborder: boolean;

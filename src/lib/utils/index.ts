@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 import CloseButton from "./CloseButton.svelte";
-import { type VariantProps, tv } from "tailwind-variants";
+import { tv } from "tailwind-variants";
 
 const closeButtonVariants = tv({
   base: "focus:outline-none whitespace-normal",
@@ -69,8 +69,8 @@ const closeButtonVariants = tv({
   ]
 });
 
-type ColorType = VariantProps<typeof closeButtonVariants>["color"];
-type SizeType = VariantProps<typeof closeButtonVariants>["size"];
+type ColorType = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined;
+type SizeType = "md" | "xs" | "sm" | "lg" | undefined;
 
 interface CloseButtonProps {
   color?: ColorType;

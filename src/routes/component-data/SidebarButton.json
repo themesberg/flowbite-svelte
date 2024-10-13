@@ -1,7 +1,7 @@
 {
   "name": "SidebarButton",
   "props": [
-    ["breakpoint", "VariantProps<typeof sidebar>[\"breakpoint\"]", "\"md\""],
+    ["breakpoint", "\"sm\" | \"md\" | \"lg\" | \"xl\" | \"2xl\" | undefined", "\"md\""],
     ["class", "string", ""]
   ]
 }

@@ -2,7 +2,7 @@
   "name": "ToolbarButton",
   "props": [
     ["children", "type Snippet } from \"svelte\";\nimport { toolbar, toolbarGroup, toolbarButton }", ""],
-    ["color", "VariantProps<typeof toolbarButton>[\"color\"]", "\"default\""],
+    ["color", "\"primary\" | \"default\" | \"dark\" | \"gray\" | \"red\" | \"yellow\" | \"green\" | \"indigo\" | \"purple\" | \"pink\" | \"blue\" | undefined", "\"default\""],
     ["name", "string", ""],
     ["ariaLabel", "string", ""],
     ["size", "\"xs\" | \"sm\" | \"md\" | \"lg\"", "\"md\""],

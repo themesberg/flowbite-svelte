@@ -3,6 +3,7 @@
   "props": [
     ["files", "any", "$bindable<FileList | undefined>()"],
     ["size", "any", "\"md\""],
+    ["clearable", "any", "false"],
     ["class", "string", ""]
   ]
 }

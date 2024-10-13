@@ -1,12 +1,11 @@
 import Indicator from "./Indicator.svelte";
 import type { Snippet } from "svelte";
 import type { HTMLAttributes } from "svelte/elements";
-import { type VariantProps } from "tailwind-variants";
 import { indicator } from "./theme";
 
-type ColorType = VariantProps<typeof indicator>["color"];
-type SizeType = VariantProps<typeof indicator>["size"];
-type PlacementType = VariantProps<typeof indicator>["placement"];
+type ColorType = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined;
+type SizeType = "md" | "sm" | "lg" | "xl" | "xs" | undefined;
+type PlacementType = "top-left" | "top-center" | "top-right" | "center-left" | "center-right" | "bottom-left" | "bottom-center" | "bottom-right" | "default" | "center" | undefined;
 
 interface IndicatorProps extends HTMLAttributes<HTMLDivElement> {
   children?: Snippet;

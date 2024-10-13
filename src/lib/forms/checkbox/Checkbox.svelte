@@ -32,14 +32,15 @@
 ## Props
 @props: children: Snippet;
 @props:aria_describedby: string;
-@props:color: VariantProps<typeof checkbox>["color"] = "primary";
+@props:color: "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined = "primary";
 @props:custom: boolean;
 @props:inline: boolean;
 @props:tinted: boolean;
 @props:rounded: boolean;
 @props:group: (string | number)[] = $bindable([]);
-@props:choices: CheckboxItem[] = [];
-@props:checked: boolean = $bindable(false);
+@props:choices: {
+  value: string[] = [];
+@props:checked: any = $bindable(false);
 @props:classLabel: string;
 @props:indeterminate: boolean;
 @props:class: string;

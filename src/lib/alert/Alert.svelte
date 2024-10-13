@@ -72,7 +72,7 @@
 @props:icon: Snippet;
 @props:alertStatus: boolean = $bindable(true);
 @props:closeIcon: boolean;
-@props:color: VariantProps<typeof alert>["color"] = "primary";
+@props:color: "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" = "primary";
 @props:rounded: boolean = true;
 @props:border: boolean;
 @props:class: string;

@@ -24,9 +24,9 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children: Snippet;
-@props:tag: VariantProps<typeof list>["tag"] = "ul";
+@props:tag: "ul" | "dl" | "ol" | undefined = "ul";
 @props:isContenteditable: boolean = false;
-@props:position: VariantProps<typeof list>["position"] = "inside";
+@props:position: "inside" | "outside" | undefined = "inside";
 @props:ctxClass: string;
 @props:class: string;
 -->

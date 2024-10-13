@@ -7,6 +7,7 @@ const banner = tv({
   },
   variants: {
     position: {
+      // "static" | "fixed" | "absolute" | "relative" | "sticky"
       static: { base: "static" },
       fixed: { base: "fixed" },
       absolute: { base: "absolute" },
@@ -14,6 +15,7 @@ const banner = tv({
       sticky: { base: "sticky" }
     },
     bannerType: {
+      // "default" | "bottom" | "cta" | "signup" | "info"
       default: {
         base: "top-0 start-0 w-full border-b border-gray-200 bg-gray-50",
         insideDiv: "mx-auto"

@@ -9,7 +9,6 @@ import { sidebar, sidebarbutton, sidebarcta, sitebarbrand, sidebardropdownwrappe
 import { type Writable } from "svelte/store";
 import type { Snippet } from "svelte";
 import type { HTMLAttributes, HTMLButtonAttributes, HTMLAnchorAttributes } from "svelte/elements";
-import type { VariantProps } from "tailwind-variants";
 import type { TransitionFunc, ParamsType } from "../types";
 
 type SidebarCtxType = {
@@ -20,8 +19,8 @@ type SidebarCtxType = {
   selected?: Writable<object>;
 };
 
-type BreakpointType = VariantProps<typeof sidebar>["breakpoint"];
-type PosisionType = VariantProps<typeof sidebar>["position"];
+type BreakpointType = "sm" | "md" | "lg" | "xl" | "2xl" | undefined;
+type PosisionType = "fixed" | "absolute" | "static" | undefined;
 
 interface SidebarProps extends HTMLAttributes<HTMLElement> {
   children: Snippet;

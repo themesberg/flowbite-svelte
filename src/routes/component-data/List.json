@@ -2,9 +2,9 @@
   "name": "List",
   "props": [
     ["children", "Snippet", ""],
-    ["tag", "VariantProps<typeof list>[\"tag\"]", "\"ul\""],
+    ["tag", "\"ul\" | \"dl\" | \"ol\" | undefined", "\"ul\""],
     ["isContenteditable", "boolean", "false"],
-    ["position", "VariantProps<typeof list>[\"position\"]", "\"inside\""],
+    ["position", "\"inside\" | \"outside\" | undefined", "\"inside\""],
     ["ctxClass", "string", ""],
     ["class", "string", ""]
   ]

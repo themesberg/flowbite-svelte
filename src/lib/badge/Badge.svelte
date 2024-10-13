@@ -57,7 +57,7 @@
 @props: children: Snippet;
 @props:icon: Snippet;
 @props:badgeStatus: boolean = $bindable(true);
-@props:color: VariantProps<typeof badge>["color"] = "primary";
+@props:color: "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" = "primary";
 @props:large: boolean = false;
 @props:dismissable: boolean = false;
 @props:class: string;

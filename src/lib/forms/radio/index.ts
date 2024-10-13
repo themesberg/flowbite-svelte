@@ -1,10 +1,10 @@
 import Radio from "./Radio.svelte";
 import type { Snippet } from "svelte";
 import type { HTMLInputAttributes } from "svelte/elements";
-import type { VariantProps } from "tailwind-variants";
 import { radio } from "./theme";
 
-type RadioColorType = VariantProps<typeof radio>["color"];
+type RadioColorType = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined;
+
 interface RadioProps<T> extends HTMLInputAttributes {
   children: Snippet;
   aria_describedby?: string;

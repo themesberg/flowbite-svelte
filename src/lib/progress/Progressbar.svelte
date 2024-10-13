@@ -50,7 +50,7 @@
 @props:labelInside: boolean = false;
 @props:labelOutside: string = "";
 @props:easing: EasingFunction = cubicOut;
-@props:color: VariantProps<typeof progressbar>["color"] = "primary";
+@props:color: "primary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined = "primary";
 @props:div2Class: string;
 @props:oustsideSpanClass: string;
 @props:oustsideProgressClass: string;

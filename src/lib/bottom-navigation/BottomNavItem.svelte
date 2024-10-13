@@ -35,7 +35,7 @@
 ## Props
 @props: children: Snippet;
 @props:btnName: string;
-@props:appBtnPosition: AppBtnVariantProps<typeof bottomNav>["position"] = "middle";
+@props:appBtnPosition: AppBtn"static" | "fixed" | "absolute" | "relative" | "sticky" | undefined = "middle";
 @props:target: string;
 @props:activeClass: string;
 @props:href: string = "";

@@ -2,8 +2,8 @@
   "name": "Range",
   "props": [
     ["value", "number | string", "$bindable()"],
-    ["appearance", "VariantProps<typeof range>[\"appearance\"]", "\"none\""],
-    ["color", "'gray' | 'red' | 'blue' | 'indigo' | 'violet' | 'purple' | 'fuchsia' | 'pink' | 'rose'", "\"blue\""],
+    ["appearance", "\"auto\" | \"none\" | undefined", "\"none\""],
+    ["color", "\"gray\" | \"red\" | \"blue\" | \"indigo\" | \"violet\" | \"purple\" | \"fuchsia\" | \"pink\" | \"rose\" | undefined", "\"blue\""],
     ["rangeSize", "\"sm\" | \"md\" | \"lg\"", "\"md\""],
     ["inputClass", "string", ""]
   ]

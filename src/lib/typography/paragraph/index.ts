@@ -1,15 +1,14 @@
 import P from "./P.svelte";
-import { type VariantProps } from "tailwind-variants";
 import type { Snippet } from "svelte";
 import type { HTMLAttributes } from "svelte/elements";
 import { paragraph } from "./theme";
 
-type PsizeType = VariantProps<typeof paragraph>["size"];
-type PweightType = VariantProps<typeof paragraph>["weight"];
-type SpaceType = VariantProps<typeof paragraph>["space"];
-type HeightType = VariantProps<typeof paragraph>["height"];
-type AlignType = VariantProps<typeof paragraph>["align"];
-type WhitespaceType = VariantProps<typeof paragraph>["whitespace"];
+type PsizeType = "sm" | "lg" | "xl" | "2xl" | "xs" | "base" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl" | undefined;
+type PweightType = "normal" | "thin" | "extralight" | "light" | "medium" | "semibold" | "bold" | "extrabold" | "black" | undefined;
+type SpaceType = "normal" | "tighter" | "tight" | "wide" | "wider" | "widest" | undefined;
+type HeightType = "normal" | "tight" | "none" | "snug" | "relaxed" | "loose" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | undefined;
+type AlignType = "left" | "center" | "right" | undefined;
+type WhitespaceType = "normal" | "nowrap" | "pre" | "preline" | "prewrap" | undefined;
 
 interface ParagraphProps extends HTMLAttributes<HTMLParagraphElement> {
   children: Snippet;

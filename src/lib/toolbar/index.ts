@@ -3,10 +3,10 @@ import ToolbarButton from "./ToolbarButton.svelte";
 import ToolbarGroup from "./ToolbarGroup.svelte";
 import { type Snippet } from "svelte";
 import { toolbar, toolbarGroup, toolbarButton } from "./theme";
-import { type VariantProps } from "tailwind-variants";
 import type { HTMLAttributes } from "svelte/elements";
 
-type ToolbarColor = VariantProps<typeof toolbar>["color"];
+type ToolbarColor = "primary" | "secondary" | "default" | undefined;
+
 interface ToolbarProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   end?: Snippet;
@@ -15,9 +15,10 @@ interface ToolbarProps extends HTMLAttributes<HTMLDivElement> {
   separatorClass?: string;
 }
 
-type SpacingType = VariantProps<typeof toolbarGroup>["spacing"];
-type PaddingType = VariantProps<typeof toolbarGroup>["padding"];
-type PositionType = VariantProps<typeof toolbarGroup>["position"];
+type SpacingType = "default" | "tight" | "loose" | undefined;
+type PaddingType = "default" | "none" | undefined;
+type PositionType = "first" | "last" | "middle" | undefined;
+
 interface ToolbarGroupProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   class?: string;
@@ -27,7 +28,8 @@ interface ToolbarGroupProps extends HTMLAttributes<HTMLDivElement> {
   position?: PositionType;
 }
 
-type ToolbarButtonType = VariantProps<typeof toolbarButton>["color"];
+type ToolbarButtonType = "primary" | "default" | "dark" | "gray" | "red" | "yellow" | "green" | "indigo" | "purple" | "pink" | "blue" | undefined;
+
 interface ToolbarButtonProps {
   children: Snippet;
   color?: ToolbarButtonType;

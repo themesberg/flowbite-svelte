@@ -1,14 +1,13 @@
 import Span from "./Span.svelte";
-import { type VariantProps } from "tailwind-variants";
 import type { Snippet } from "svelte";
 import type { HTMLAttributes } from "svelte/elements";
 import { span } from "./theme";
 
-type DecorationType = VariantProps<typeof span>["decoration"];
-type GradientType = VariantProps<typeof span>["gradient"];
-type HighlightType = VariantProps<typeof span>["highlight"];
-type DecorationColorType = VariantProps<typeof span>["decorationColor"];
-type DecorationThicknessType = VariantProps<typeof span>["decorationThickness"];
+type DecorationType = "none" | "solid" | "double" | "dotted" | "dashed" | "wavy" | undefined;
+type GradientType = "skyToEmerald" | "purpleToBlue" | "pinkToOrange" | "tealToLime" | "redToYellow" | "indigoToCyan" | "fuchsiaToRose" | "amberToEmerald" | "violetToRed" | "blueToGreen" | "orangeToPurple" | "yellowToRed" | "none" | undefined;
+type HighlightType = "none" | "blue" | "green" | "red" | "yellow" | "purple" | "pink" | "indigo" | "teal" | "orange" | "cyan" | "fuchsia" | "amber" | "lime" | undefined;
+type DecorationColorType = "none" | "blue" | "green" | "red" | "yellow" | "purple" | "pink" | "indigo" | "teal" | "orange" | "cyan" | "fuchsia" | "lime" | "primary" | "secondary" | "gray" | "emerald" | "sky" | "violet" | "rose" | undefined;
+type DecorationThicknessType = "1" | "2" | "4" | "8" | "0" | undefined;
 
 interface SpanProps extends HTMLAttributes<HTMLSpanElement> {
   children?: Snippet;

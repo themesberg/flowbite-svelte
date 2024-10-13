@@ -1,12 +1,11 @@
 import Button from "./Button.svelte";
 import GradientButton from "./GradientButton.svelte";
-import { type VariantProps } from "tailwind-variants";
 import type { Snippet } from "svelte";
 import type { HTMLButtonAttributes, HTMLAnchorAttributes } from "svelte/elements";
 import { button, gradientButton } from "./theme";
 
-type ButtonColorType = VariantProps<typeof button>["color"];
-type ButtonSizeType = VariantProps<typeof button>["size"];
+type ButtonColorType = "primary" | "dark" | "alternative" | "light" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose";
+type ButtonSizeType = "sm" | "md" | "lg" | "xl" | "xs" | undefined;
 
 type ButtonSpecificProps = {
   children: Snippet;
@@ -21,15 +20,25 @@ type ButtonSpecificProps = {
   disabled?: boolean;
 };
 
-type ButtonProps = ButtonSpecificProps &
-  Omit<HTMLButtonAttributes, keyof ButtonSpecificProps> &
-  Omit<HTMLAnchorAttributes, keyof ButtonSpecificProps> & {
-    href?: string;
-  };
+type HTMLAttributesWithoutAbort = Omit<HTMLButtonAttributes, "on:abort"> & Omit<HTMLAnchorAttributes, "on:abort">;
 
-type GradientButtonColorType = VariantProps<typeof gradientButton>["color"];
+interface ButtonProps extends HTMLAttributesWithoutAbort {
+  children: Snippet;
+  pill?: boolean;
+  outline?: boolean;
+  size?: ButtonSizeType;
+  color?: ButtonColorType;
+  shadow?: boolean;
+  tag?: string;
+  checked?: boolean;
+  class?: string;
+  disabled?: boolean;
+  href?: string;
+}
 
-type GradientButtonSpecificProps = {
+type GradientButtonColorType = "red" | "lime" | "green" | "teal" | "cyan" | "blue" | "purple" | "pink" | "purpleToBlue" | "cyanToBlue" | "greenToBlue" | "purpleToPink" | "pinkToOrange" | "tealToLime" | "redToYellow" | undefined;
+
+interface GradientButtonProps extends HTMLAttributesWithoutAbort {
   children: Snippet;
   pill?: boolean;
   outline?: boolean;
@@ -40,12 +49,7 @@ type GradientButtonSpecificProps = {
   checked?: boolean;
   class?: string;
   disabled?: boolean;
-};
-
-type GradientButtonProps = GradientButtonSpecificProps &
-  Omit<HTMLButtonAttributes, keyof ButtonSpecificProps> &
-  Omit<HTMLAnchorAttributes, keyof ButtonSpecificProps> & {
-    href?: string;
-  };
+  href?: string;
+}
 
 export { Button, GradientButton, gradientButton, button, type ButtonProps, type GradientButtonProps };

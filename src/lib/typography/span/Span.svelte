@@ -35,9 +35,9 @@
 @props:underline: boolean;
 @props:linethrough: boolean;
 @props:uppercase: boolean;
-@props:gradient: VariantProps<typeof span>["gradient"];
-@props:highlight: VariantProps<typeof span>["highlight"];
-@props:decoration: VariantProps<typeof span>["decoration"];
-@props:decorationColor: VariantProps<typeof span>["decorationColor"];
-@props:decorationThickness: VariantProps<typeof span>["decorationThickness"];
+@props:gradient: "skyToEmerald" | "purpleToBlue" | "pinkToOrange" | "tealToLime" | "redToYellow" | "indigoToCyan" | "fuchsiaToRose" | "amberToEmerald" | "violetToRed" | "blueToGreen" | "orangeToPurple" | "yellowToRed" | "none" | undefined;
+@props:highlight: "none" | "blue" | "green" | "red" | "yellow" | "purple" | "pink" | "indigo" | "teal" | "orange" | "cyan" | "fuchsia" | "amber" | "lime" | undefined;
+@props:decoration: "none" | "solid" | "double" | "dotted" | "dashed" | "wavy" | undefined;
+@props:decorationColor: "none" | "blue" | "green" | "red" | "yellow" | "purple" | "pink" | "indigo" | "teal" | "orange" | "cyan" | "fuchsia" | "lime" | "primary" | "secondary" | "gray" | "emerald" | "sky" | "violet" | "rose" | undefined;
+@props:decorationThickness: "1" | "2" | "4" | "8" | "0" | undefined;
 -->

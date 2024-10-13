@@ -1,11 +1,11 @@
 {
   "name": "CloseButton",
   "props": [
-    ["color", "VariantProps<typeof closeButtonVariants>[\"color\"]", "\"gray\""],
+    ["color", "\"primary\" | \"secondary\" | \"gray\" | \"red\" | \"orange\" | \"amber\" | \"yellow\" | \"lime\" | \"green\" | \"emerald\" | \"teal\" | \"cyan\" | \"sky\" | \"blue\" | \"indigo\" | \"violet\" | \"purple\" | \"fuchsia\" | \"pink\" | \"rose\" | undefined", "\"gray\""],
     ["onclick", "() => void", ""],
     ["name", "string", "\"Close\""],
     ["ariaLabel", "string", ""],
-    ["size", "VariantProps<typeof closeButtonVariants>[\"size\"]", "\"md\""],
+    ["size", "\"md\" | \"xs\" | \"sm\" | \"lg\" | undefined", "\"md\""],
     ["href", "string", ""],
     ["class", "string", ""]
   ]

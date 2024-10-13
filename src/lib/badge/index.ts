@@ -1,11 +1,10 @@
-import { type VariantProps } from "tailwind-variants";
 import type { Snippet } from "svelte";
 import type { ParamsType, TransitionFunc } from "../types";
 import type { HTMLAttributes } from "svelte/elements";
 import Badge from "./Badge.svelte";
 import { badge } from "./theme";
 
-type badgeColor = VariantProps<typeof badge>["color"];
+type badgeColor = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose";
 
 interface BadgeProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;

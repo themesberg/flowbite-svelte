@@ -1,13 +1,12 @@
 import Modal from "./Modal.svelte";
 import type { Snippet } from "svelte";
 import type { HTMLAttributes } from "svelte/elements";
-import { type VariantProps } from "tailwind-variants";
 import type { TransitionFunc, ParamsType } from "../types";
 import { modal } from "./theme";
 
-type WidthType = VariantProps<typeof modal>["size"];
-// type PlacementType = VariantProps<typeof modal>['placement'];
-type PosisionType = VariantProps<typeof modal>["position"];
+type WidthType = "md" | "sm" | "lg" | "xl" | "xs" | undefined;
+type PosisionType = "top-left" | "top-center" | "top-right" | "center-left" | "center" | "center-right" | "bottom-left" | "bottom-center" | "bottom-right" | "default" | undefined;
+
 interface ModalProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   header?: Snippet;

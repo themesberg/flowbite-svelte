@@ -9,7 +9,7 @@
     ["labelInside", "boolean", "false"],
     ["labelOutside", "string", "\"\""],
     ["easing", "EasingFunction", "cubicOut"],
-    ["color", "VariantProps<typeof progressbar>[\"color\"]", "\"primary\""],
+    ["color", "\"primary\" | \"gray\" | \"red\" | \"orange\" | \"amber\" | \"yellow\" | \"lime\" | \"green\" | \"emerald\" | \"teal\" | \"cyan\" | \"sky\" | \"blue\" | \"indigo\" | \"violet\" | \"purple\" | \"fuchsia\" | \"pink\" | \"rose\" | undefined", "\"primary\""],
     ["div2Class", "string", ""],
     ["oustsideSpanClass", "string", ""],
     ["oustsideProgressClass", "string", ""],

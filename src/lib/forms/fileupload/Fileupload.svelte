@@ -31,5 +31,6 @@
 ## Props
 @props: files: any = $bindable<FileList | undefined>();
 @props:size: any = "md";
+@props:clearable: any = false;
 @props:class: string;
 -->

@@ -27,17 +27,17 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: any;
-@props:outline: any;
-@props:pill: any;
-@props:color: any = "blue";
-@props:shadow: any;
+@props: children: Snippet;
+@props:outline: boolean;
+@props:pill: boolean;
+@props:color: Gradient"primary" | "dark" | "alternative" | "light" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" = "blue";
+@props:shadow: boolean;
 @props:class: string;
-@props:href: any;
+@props:href: string;
 @props:target: any;
 @props:rel: any;
 @props:type: any;
-@props:disabled: any;
-@props:size: any;
+@props:disabled: boolean;
+@props:size: "sm" | "md" | "lg" | "xl" | "xs" | undefined;
 @props:name: any;
 -->

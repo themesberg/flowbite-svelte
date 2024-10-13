@@ -4,7 +4,7 @@
     ["children", "Snippet", ""],
     ["icon", "Snippet", ""],
     ["badgeStatus", "boolean", "$bindable(true)"],
-    ["color", "VariantProps<typeof badge>[\"color\"]", "\"primary\""],
+    ["color", "\"primary\" | \"secondary\" | \"gray\" | \"red\" | \"orange\" | \"amber\" | \"yellow\" | \"lime\" | \"green\" | \"emerald\" | \"teal\" | \"cyan\" | \"sky\" | \"blue\" | \"indigo\" | \"violet\" | \"purple\" | \"fuchsia\" | \"pink\" | \"rose\"", "\"primary\""],
     ["large", "boolean", "false"],
     ["dismissable", "boolean", "false"],
     ["class", "string", ""],

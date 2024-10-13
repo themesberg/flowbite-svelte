@@ -33,7 +33,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: size: VariantProps<typeof imagePlaceholder>["size"] = "md";
-@props:rounded: VariantProps<typeof imagePlaceholder>["rounded"];
+@props: size: "sm" | "md" | "lg" | undefined = "md";
+@props:rounded: "sm" | "md" | "lg" | "none" | "full" | undefined;
 @props:class: string;
 -->

@@ -3,9 +3,9 @@ import type { HTMLAttributes } from "svelte/elements";
 import Tooltip from "./Tooltip.svelte";
 // import TooltipScroll from './TooltipScroll.svelte';
 import { tooltip } from "./theme";
-import { type VariantProps } from "tailwind-variants";
 
-type TooltipColorType = VariantProps<typeof tooltip>["color"];
+type TooltipColorType = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | "default" | undefined;
+
 interface TooltipProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   triggeredBy: string;

@@ -2,7 +2,7 @@
   "name": "Tooltip",
   "props": [
     ["children", "Snippet", ""],
-    ["color", "TooltipColorType", "\"default\""],
+    ["color", "\"primary\" | \"secondary\" | \"gray\" | \"red\" | \"orange\" | \"amber\" | \"yellow\" | \"lime\" | \"green\" | \"emerald\" | \"teal\" | \"cyan\" | \"sky\" | \"blue\" | \"indigo\" | \"violet\" | \"purple\" | \"fuchsia\" | \"pink\" | \"rose\" | \"default\" | undefined", "\"default\""],
     ["arrow", "boolean", "true"],
     ["offset", "number", "0"],
     ["triggeredBy", "string", ""],

@@ -40,7 +40,7 @@
 import { toolbar, toolbarGroup, toolbarButton };
 @props:end: type Snippet } from "svelte";
 import { toolbar, toolbarGroup, toolbarButton };
-@props:color: VariantProps<typeof toolbar>["color"] = "default";
+@props:color: "primary" | "secondary" | "default" | undefined = "default";
 @props:embedded: boolean;
 @props:separatorClass: string;
 @props:class: string;

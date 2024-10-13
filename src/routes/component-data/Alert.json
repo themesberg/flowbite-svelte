@@ -5,7 +5,7 @@
     ["icon", "Snippet", ""],
     ["alertStatus", "boolean", "$bindable(true)"],
     ["closeIcon", "boolean", ""],
-    ["color", "VariantProps<typeof alert>[\"color\"]", "\"primary\""],
+    ["color", "\"primary\" | \"secondary\" | \"gray\" | \"red\" | \"orange\" | \"amber\" | \"yellow\" | \"lime\" | \"green\" | \"emerald\" | \"teal\" | \"cyan\" | \"sky\" | \"blue\" | \"indigo\" | \"violet\" | \"purple\" | \"fuchsia\" | \"pink\" | \"rose\"", "\"primary\""],
     ["rounded", "boolean", "true"],
     ["border", "boolean", ""],
     ["class", "string", ""],

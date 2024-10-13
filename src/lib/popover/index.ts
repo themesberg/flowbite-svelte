@@ -3,9 +3,8 @@ import type { HTMLAttributes } from "svelte/elements";
 import Popover from "./Popover.svelte";
 import type { TransitionFunc, ParamsType } from "../types";
 import { popover } from "./theme";
-import { type VariantProps } from "tailwind-variants";
 
-type PopoverColorType = VariantProps<typeof popover>["color"];
+type PopoverColorType = "default" | "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined;
 interface PopoverProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   triggeredBy: string;

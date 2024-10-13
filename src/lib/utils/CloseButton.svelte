@@ -26,11 +26,11 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: color: VariantProps<typeof closeButtonVariants>["color"] = "gray";
+@props: color: "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined = "gray";
 @props:onclick: () => void;
 @props:name: string = "Close";
 @props:ariaLabel: string;
-@props:size: VariantProps<typeof closeButtonVariants>["size"] = "md";
+@props:size: "md" | "xs" | "sm" | "lg" | undefined = "md";
 @props:href: string;
 @props:class: string;
 -->

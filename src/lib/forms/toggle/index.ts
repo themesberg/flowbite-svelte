@@ -2,10 +2,9 @@ import Toggle from "./Toggle.svelte";
 import type { Snippet } from "svelte";
 import type { HTMLInputAttributes } from "svelte/elements";
 import { toggle } from "./theme";
-import { type VariantProps } from "tailwind-variants";
 
-type SizeType = VariantProps<typeof toggle>["size"];
-type ToggleColor = VariantProps<typeof toggle>["color"];
+type SizeType = "default" | "small" | "large" | undefined;
+type ToggleColor = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined;
 
 interface ToggleProps extends HTMLInputAttributes {
   children: Snippet;

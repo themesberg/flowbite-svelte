@@ -1,7 +1,7 @@
 {
   "name": "Skeleton",
   "props": [
-    ["size", "VariantProps<typeof skeleton>[\"size\"]", "\"sm\""],
+    ["size", "\"sm\" | \"md\" | \"lg\" | \"xl\" | \"2xl\" | undefined", "\"sm\""],
     ["class", "string", ""]
   ]
 }

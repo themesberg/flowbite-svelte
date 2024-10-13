@@ -56,7 +56,7 @@
 ## Props
 @props: children: type Snippet } from "svelte";
 import { toolbar, toolbarGroup, toolbarButton };
-@props:color: VariantProps<typeof toolbarButton>["color"] = "default";
+@props:color: "primary" | "default" | "dark" | "gray" | "red" | "yellow" | "green" | "indigo" | "purple" | "pink" | "blue" | undefined = "default";
 @props:name: string;
 @props:ariaLabel: string;
 @props:size: "xs" | "sm" | "md" | "lg" = "md";

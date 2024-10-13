@@ -2,8 +2,8 @@
   "name": "ListPlaceholder",
   "props": [
     ["itemNumber", "number", "5"],
-    ["size", "VariantProps<typeof imagePlaceholder>[\"size\"]", "\"md\""],
-    ["rounded", "VariantProps<typeof imagePlaceholder>[\"rounded\"]", ""],
+    ["size", "\"sm\" | \"md\" | \"lg\" | undefined", "\"md\""],
+    ["rounded", "\"sm\" | \"md\" | \"lg\" | \"none\" | \"full\" | undefined", ""],
     ["class", "string", ""]
   ]
 }

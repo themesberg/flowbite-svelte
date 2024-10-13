@@ -28,6 +28,6 @@
 @props:border: boolean;
 @props:italic: boolean = true;
 @props:bg: boolean;
-@props:alignment: VariantProps<typeof blockquote>["alignment"] = "left";
-@props:size: VariantProps<typeof blockquote>["size"] = "lg";
+@props:alignment: "left" | "center" | "right" | undefined = "left";
+@props:size: "sm" | "lg" | "xl" | "2xl" | "base" | "xs" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl" | undefined = "lg";
 -->

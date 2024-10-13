@@ -1,7 +1,7 @@
 {
   "name": "CardPlaceholder",
   "props": [
-    ["size", "VariantProps<typeof cardPlaceholder>[\"size\"]", "\"sm\""],
+    ["size", "\"sm\" | \"md\" | \"lg\" | \"xl\" | \"2xl\" | undefined", "\"sm\""],
     ["class", "string", ""]
   ]
 }

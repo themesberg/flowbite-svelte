@@ -47,6 +47,6 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: size: VariantProps<typeof textPlaceholder>["size"] = "sm";
+@props: size: "sm" | "md" | "lg" | "xl" | "2xl" | undefined = "sm";
 @props:class: string;
 -->

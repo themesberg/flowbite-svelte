@@ -2,7 +2,7 @@
   "name": "ButtonGroup",
   "props": [
     ["children", "Snippet", ""],
-    ["size", "VariantProps<typeof buttonGroup>[\"size\"]", "\"md\""],
+    ["size", "\"sm\" | \"md\" | \"lg\" | undefined", "\"md\""],
     ["class", "string", ""]
   ]
 }

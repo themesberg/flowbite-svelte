@@ -1,7 +1,7 @@
 {
   "name": "TextPlaceholder",
   "props": [
-    ["size", "VariantProps<typeof textPlaceholder>[\"size\"]", "\"sm\""],
+    ["size", "\"sm\" | \"md\" | \"lg\" | \"xl\" | \"2xl\" | undefined", "\"sm\""],
     ["class", "string", ""]
   ]
 }

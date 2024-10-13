@@ -7,10 +7,10 @@
     ["underline", "boolean", ""],
     ["linethrough", "boolean", ""],
     ["uppercase", "boolean", ""],
-    ["gradient", "VariantProps<typeof span>[\"gradient\"]", ""],
-    ["highlight", "VariantProps<typeof span>[\"highlight\"]", ""],
-    ["decoration", "VariantProps<typeof span>[\"decoration\"]", ""],
-    ["decorationColor", "VariantProps<typeof span>[\"decorationColor\"]", ""],
-    ["decorationThickness", "VariantProps<typeof span>[\"decorationThickness\"]", ""]
+    ["gradient", "\"skyToEmerald\" | \"purpleToBlue\" | \"pinkToOrange\" | \"tealToLime\" | \"redToYellow\" | \"indigoToCyan\" | \"fuchsiaToRose\" | \"amberToEmerald\" | \"violetToRed\" | \"blueToGreen\" | \"orangeToPurple\" | \"yellowToRed\" | \"none\" | undefined", ""],
+    ["highlight", "\"none\" | \"blue\" | \"green\" | \"red\" | \"yellow\" | \"purple\" | \"pink\" | \"indigo\" | \"teal\" | \"orange\" | \"cyan\" | \"fuchsia\" | \"amber\" | \"lime\" | undefined", ""],
+    ["decoration", "\"none\" | \"solid\" | \"double\" | \"dotted\" | \"dashed\" | \"wavy\" | undefined", ""],
+    ["decorationColor", "\"none\" | \"blue\" | \"green\" | \"red\" | \"yellow\" | \"purple\" | \"pink\" | \"indigo\" | \"teal\" | \"orange\" | \"cyan\" | \"fuchsia\" | \"lime\" | \"primary\" | \"secondary\" | \"gray\" | \"emerald\" | \"sky\" | \"violet\" | \"rose\" | undefined", ""],
+    ["decorationThickness", "\"1\" | \"2\" | \"4\" | \"8\" | \"0\" | undefined", ""]
   ]
 }
