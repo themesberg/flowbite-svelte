@@ -77,7 +77,7 @@
       if (color !== "default") props.push(` color="${color}"`);
       if (striped) props.push(" striped");
       if (hoverable) props.push(" hoverable");
-      if (noborder) props.push(" noborder");
+      if (!noborder) props.push(" noborder");
       if (shadow) props.push(" shadow");
 
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";

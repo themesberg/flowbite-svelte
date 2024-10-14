@@ -24,28 +24,53 @@ interface MockupBaseProps extends HTMLAttributes<HTMLElement> {
   div4Class?: string;
 }
 
-interface AndroidProps extends MockupBaseProps {
+interface AndroidProps {
+  children?: Snippet;
+  divClass?: string;
+  div2Class?: string;
+  div3Class?: string;
+  div4Class?: string;
   div5Class?: string;
   div6Class?: string;
   div7Class?: string;
 }
 
-interface DefaultMockupProps extends MockupBaseProps {
+interface DefaultMockupProps {
+  children?: Snippet;
+  divClass?: string;
+  div2Class?: string;
+  div3Class?: string;
+  div4Class?: string;
   div5Class?: string;
   div6Class?: string;
 }
 
-interface IosProps extends MockupBaseProps {
+interface IosProps {
+  children?: Snippet;
+  divClass?: string;
+  div2Class?: string;
+  div3Class?: string;
+  div4Class?: string;
   div5Class?: string;
   div6Class?: string;
 }
 
-interface SmartwatchProps extends MockupBaseProps {
+interface SmartwatchProps {
+  children?: Snippet;
+  divClass?: string;
+  div2Class?: string;
+  div3Class?: string;
+  div4Class?: string;
   div5Class?: string;
   div6Class?: string;
 }
 
-interface TabletProps extends MockupBaseProps {
+interface TabletProps {
+  children?: Snippet;
+  divClass?: string;
+  div2Class?: string;
+  div3Class?: string;
+  div4Class?: string;
   div5Class?: string;
   div6Class?: string;
 }

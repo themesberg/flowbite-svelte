@@ -17,14 +17,19 @@ interface PaginationItemSpecificProps {
   href?: string;
   active?: boolean;
   rel?: string;
-  size?: PaginationItemType["size"];
+  size?: "default" | "large" | undefined;
 }
 
-type PaginationItemProps = PaginationItemSpecificProps &
-  Omit<HTMLButtonAttributes, keyof PaginationItemSpecificProps> &
-  Omit<HTMLAnchorAttributes, keyof PaginationItemSpecificProps> & {
-    href?: string;
-  };
+type HTMLAttributesWithoutAbort = Omit<HTMLButtonAttributes, "on:abort"> & Omit<HTMLAnchorAttributes, "on:abort">;
+
+interface PaginationItemProps extends HTMLAttributesWithoutAbort {
+  children?: Snippet;
+  name?: string;
+  href?: string;
+  active?: boolean;
+  rel?: string;
+  size?: "default" | "large" | undefined;
+}
 
 interface PaginationProps extends HTMLLiAttributes {
   prevContent?: Snippet;

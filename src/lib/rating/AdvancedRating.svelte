@@ -28,11 +28,11 @@
 ## Props
 @props: rating: Snippet;
 @props:globalText: Snippet;
-@props:ratings: { label;
-@props:divClass: any;
-@props:spanClass: any;
-@props:div2Class: any;
-@props:div3Class: any;
-@props:span2Class: any;
-@props:unit: any;
+@props:ratings: { label: string | null | undefined[];
+@props:divClass: string;
+@props:spanClass: string;
+@props:div2Class: string;
+@props:div3Class: string;
+@props:span2Class: string;
+@props:unit: string;
 -->

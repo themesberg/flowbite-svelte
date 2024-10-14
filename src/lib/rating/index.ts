@@ -10,10 +10,12 @@ import type { Snippet, Component } from "svelte";
 import { advancedrating, rating, review, scorerating } from "./theme";
 import type { SVGAttributes, HTMLAttributes } from "svelte/elements";
 
+type RatingItem = { label: string | null | undefined; rating: number };
+
 interface AdvancedRatingProps {
   rating?: Snippet;
   globalText?: Snippet;
-  ratings: { label: string | undefined | null; rating: number }[];
+  ratings: RatingItem[];
   divClass?: string;
   spanClass?: string;
   div2Class?: string;
