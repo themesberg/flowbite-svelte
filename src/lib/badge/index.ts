@@ -1,6 +1,6 @@
 import type { Snippet } from "svelte";
 import type { ParamsType, TransitionFunc } from "../types";
-import type { HTMLAttributes } from "svelte/elements";
+import type { HTMLAttributes, HTMLAnchorAttributes } from "svelte/elements";
 import Badge from "./Badge.svelte";
 import { badge } from "./theme";
 
@@ -14,7 +14,8 @@ interface BadgeProps extends HTMLAttributes<HTMLDivElement> {
   large?: boolean;
   dismissable?: boolean;
   border?: boolean;
-  href?: string;
+  href?: HTMLAnchorAttributes["href"];
+  target?: HTMLAnchorAttributes["target"];
   rounded?: boolean;
   transition?: TransitionFunc;
   params?: ParamsType;

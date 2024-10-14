@@ -2,7 +2,7 @@
   import { Indicator } from "$lib";
   import { type AvatarProps as Props, avatar } from ".";
 
-  let { children, src, href, cornerStyle = "circular", border = false, stacked = false, dot, class: className, alt, size = "md", onclick, ...restProps }: Props = $props();
+  let { children, src, href, target, cornerStyle = "circular", border = false, stacked = false, dot, class: className, alt, size = "md", onclick, ...restProps }: Props = $props();
 
   dot = dot && { placement: "top-right", color: "gray", size: "lg", ...dot };
 
@@ -18,7 +18,7 @@
 </script>
 
 {#if !src || !!href || children || dot}
-  <svelte:element this={href ? "a" : "div"} role={href ? "link" : "img"} {onclick} {href} {...restProps} class={avatarClass}>
+  <svelte:element this={href ? "a" : "div"} role={href ? "link" : "img"} {onclick} {href} {target} {...restProps} class={avatarClass}>
     {#if src}
       <img {alt} {src} class={cornerStyle === "circular" ? "rounded-full" : "rounded"} />
     {:else if children}

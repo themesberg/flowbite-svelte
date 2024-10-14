@@ -4,7 +4,7 @@
   import { fade } from "svelte/transition";
   import type { ParamsType } from "$lib/types";
 
-  let { children, icon, badgeStatus = $bindable(true), color = "primary", large = false, dismissable = false, class: className, border, href, rounded, transition = fade, params, aClass, onclick, ...restProps }: Props = $props();
+  let { children, icon, badgeStatus = $bindable(true), color = "primary", large = false, dismissable = false, class: className, border, href, target, rounded, transition = fade, params, aClass, onclick, ...restProps }: Props = $props();
 
   const { base, hrefClass } = $derived(badge({ color, size: large ? "large" : "small", border, rounded }));
   // $inspect('badgeStatus: ', badgeStatus);
@@ -13,7 +13,7 @@
 {#if badgeStatus}
   <div {...restProps} transition:transition={params as ParamsType} class={base({ className })}>
     {#if href}
-      <a {href} class={hrefClass({ class: aClass })}>
+      <a {href} {target} class={hrefClass({ class: aClass })}>
         {@render children()}
       </a>
     {:else}
