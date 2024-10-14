@@ -1,12 +1,40 @@
 {
   "name": "BottomNav",
   "props": [
-    ["children", "Snippet", ""],
-    ["header", "Snippet", ""],
-    ["position", "\"static\" | \"fixed\" | \"absolute\" | \"relative\" | \"sticky\" | undefined", "\"fixed\""],
-    ["navType", "\"border\" | \"application\" | \"group\" | \"default\" | \"pagination\" | \"card\" | \"meeting\" | \"video\" | undefined", "\"default\""],
-    ["outerClass", "string", ""],
-    ["innerClass", "string", ""],
-    ["activeClass", "string", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "header",
+      "Snippet",
+      ""
+    ],
+    [
+      "position",
+      "\"static\" | \"fixed\" | \"absolute\" | \"relative\" | \"sticky\" | undefined",
+      "\"fixed\""
+    ],
+    [
+      "navType",
+      "\"border\" | \"application\" | \"group\" | \"default\" | \"pagination\" | \"card\" | \"meeting\" | \"video\" | undefined",
+      "\"default\""
+    ],
+    [
+      "outerClass",
+      "string",
+      ""
+    ],
+    [
+      "innerClass",
+      "string",
+      ""
+    ],
+    [
+      "activeClass",
+      "string",
+      ""
+    ]
   ]
 }

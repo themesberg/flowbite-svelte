@@ -62,7 +62,8 @@
 @props:dismissable: boolean = false;
 @props:class: string;
 @props:border: boolean;
-@props:href: string;
+@props:href: HTMLAnchorAttributes["href"];
+@props:target: HTMLAnchorAttributes["target"];
 @props:rounded: boolean;
 @props:transition: TransitionFunc = fade;
 @props:params: ParamsType;

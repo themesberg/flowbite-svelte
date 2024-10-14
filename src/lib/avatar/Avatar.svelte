@@ -42,7 +42,8 @@
 ## Props
 @props: children: Snippet;
 @props:src: string;
-@props:href: string;
+@props:href: HTMLAnchorAttributes["href"];
+@props:target: HTMLAnchorAttributes["target"];
 @props:cornerStyle: "rounded" | "circular" = "circular";
 @props:border: boolean = false;
 @props:stacked: boolean = false;

@@ -1,8 +1,20 @@
 {
   "name": "ImagePlaceholder",
   "props": [
-    ["size", "\"sm\" | \"md\" | \"lg\" | undefined", "\"md\""],
-    ["rounded", "\"sm\" | \"md\" | \"lg\" | \"none\" | \"full\" | undefined", ""],
-    ["class", "string", ""]
+    [
+      "size",
+      "\"sm\" | \"md\" | \"lg\" | undefined",
+      "\"md\""
+    ],
+    [
+      "rounded",
+      "\"sm\" | \"md\" | \"lg\" | \"none\" | \"full\" | undefined",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

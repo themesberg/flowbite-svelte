@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.21
+
+### Patch Changes
+
+- fix: target prop to Avatar and Badge ([`33e218594d6ba5b62fab553950b68f392abf40cf`](https://github.com/shinokada/svelte-5-ui-lib/commit/33e218594d6ba5b62fab553950b68f392abf40cf))
+
 ## 0.9.20
 
 ### Patch Changes

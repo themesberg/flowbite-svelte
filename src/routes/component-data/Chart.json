@@ -1,7 +1,15 @@
 {
   "name": "Chart",
   "props": [
-    ["options", "ApexOptions", ""],
-    ["class", "string", ""]
+    [
+      "options",
+      "ApexOptions",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

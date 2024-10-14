@@ -1,7 +1,15 @@
 {
   "name": "TextPlaceholder",
   "props": [
-    ["size", "\"sm\" | \"md\" | \"lg\" | \"xl\" | \"2xl\" | undefined", "\"sm\""],
-    ["class", "string", ""]
+    [
+      "size",
+      "\"sm\" | \"md\" | \"lg\" | \"xl\" | \"2xl\" | undefined",
+      "\"sm\""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

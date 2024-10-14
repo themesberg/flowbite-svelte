@@ -1,11 +1,35 @@
 {
   "name": "TableBodyRow",
   "props": [
-    ["children", "Snippet", ""],
-    ["class", "string", ""],
-    ["color", "\"primary\" | \"gray\" | \"red\" | \"yellow\" | \"green\" | \"indigo\" | \"purple\" | \"pink\" | \"blue\" | \"orange\" | \"amber\" | \"lime\" | \"emerald\" | \"teal\" | \"cyan\" | \"sky\" | \"violet\" | \"fuchsia\" | \"rose\" | \"secondary\" | \"default\" | undefined", ""],
-    ["striped", "boolean", ""],
-    ["hoverable", "boolean", ""],
-    ["noborder", "boolean", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "color",
+      "\"primary\" | \"gray\" | \"red\" | \"yellow\" | \"green\" | \"indigo\" | \"purple\" | \"pink\" | \"blue\" | \"orange\" | \"amber\" | \"lime\" | \"emerald\" | \"teal\" | \"cyan\" | \"sky\" | \"violet\" | \"fuchsia\" | \"rose\" | \"secondary\" | \"default\" | undefined",
+      ""
+    ],
+    [
+      "striped",
+      "boolean",
+      ""
+    ],
+    [
+      "hoverable",
+      "boolean",
+      ""
+    ],
+    [
+      "noborder",
+      "boolean",
+      ""
+    ]
   ]
 }
