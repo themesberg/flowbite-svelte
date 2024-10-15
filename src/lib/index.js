@@ -45,7 +45,7 @@ export { default as Chart } from './charts/Chart.svelte';
 export { default as DarkMode } from './darkmode/DarkMode.svelte';
 
 // Datepicker
-export { default as DatePicker } from './datepicker/DatePicker.svelte';
+export { default as Datepicker } from './datepicker/Datepicker.svelte';
 
 // DeviceMockup
 export { default as DeviceMockup } from './device-mockups/DeviceMockup.svelte';

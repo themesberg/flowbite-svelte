@@ -1,5 +1,5 @@
 {
-  "name": "DatePicker",
+  "name": "Datepicker",
   "slots": [],
   "events": ["select", "clear", "apply"],
   "props": [
