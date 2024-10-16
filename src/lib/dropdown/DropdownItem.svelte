@@ -3,16 +3,15 @@
   import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
   import type { DropdownType } from './Dropdown.svelte';
-  import type { HTMLAttributes } from 'svelte/elements';
+  import type { HTMLButtonAttributes, HTMLAnchorAttributes } from 'svelte/elements';
 
-  type ElementType = 'a' | 'button';
-  type DynamicElementProps<T extends ElementType> = HTMLAttributes<HTMLElementTagNameMap[T]> 
-
-  interface $$Props extends DynamicElementProps<ElementType> {
+  interface DropdownItemProps {
     defaultClass?: string;
     href?: string;
     activeClass?: string;
   }
+
+  type $$Props = DropdownItemProps & (HTMLAnchorAttributes | HTMLButtonAttributes);
 
   export let defaultClass: $$Props['defaultClass'] = 'font-medium py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600';
   export let href: $$Props['href'] = undefined;

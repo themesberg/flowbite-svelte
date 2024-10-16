@@ -1,4 +1,4 @@
-// src/routes/experimental/[slug]/+page.js
+// src/routes/plugins/[slug]/+page.js
 /** @type {import('./$types').PageLoad} */
 export async function load({ params }) {
   const post = await import(`../${params.slug}.md`);

@@ -31,7 +31,7 @@ export default [
     }
   },
   {
-    ignores: ['build/', '.svelte-kit/', 'dist/', 'test-results/', '*.md']
+    ignores: ['build/', '.svelte-kit/', 'dist/', 'test-results/', '*.md', 'node_modules/', '.vercel/']
   },
   {
     rules: {

@@ -1,19 +1,17 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
-  import type { HTMLAttributes } from 'svelte/elements';
+  import type { HTMLButtonAttributes, HTMLAnchorAttributes  } from 'svelte/elements';
 
-  type ElementType = 'a' | 'button';
-
-  type DynamicElementProps<T extends ElementType> = HTMLAttributes<HTMLElementTagNameMap[T]>;
-
-  interface $$Props extends DynamicElementProps<ElementType> {
+  interface PaginationItemProps {
     href?: string;
     active?: boolean;
     activeClass?: string;
     normalClass?: string;
     large?: boolean;
   }
+
+  type $$Props = PaginationItemProps & (HTMLAnchorAttributes | HTMLButtonAttributes);
 
   export let href: $$Props['href'] = undefined;
   export let active: $$Props['active'] = false;

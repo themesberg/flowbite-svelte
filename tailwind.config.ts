@@ -1,9 +1,15 @@
-const config = {
+import type { Config } from 'tailwindcss';
+
+export default {
   content: ['./src/**/*.{html,js,svelte,ts,md}', './node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'],
   plugins: [require('flowbite/plugin')],
   darkMode: 'selector',
+
   theme: {
     extend: {
+      zIndex: {
+        '100': '100'
+      },
       colors: {
         // flowbite-svelte
         primary: {
@@ -18,7 +24,6 @@ const config = {
           800: '#CC4522',
           900: '#A5371B'
         }
-
         // pink
         // primary: {"50":"#fdf2f8","100":"#fce7f3","200":"#fbcfe8","300":"#f9a8d4","400":"#f472b6","500":"#ec4899","600":"#db2777","700":"#be185d","800":"#9d174d","900":"#831843"}
 
@@ -84,6 +89,4 @@ const config = {
       }
     }
   }
-};
-
-module.exports = config;
+} as Config;

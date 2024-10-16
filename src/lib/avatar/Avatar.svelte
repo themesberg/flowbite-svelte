@@ -1,13 +1,9 @@
 <script lang="ts">
   import Indicator from '$lib/indicators/Indicator.svelte';
   import { twMerge } from 'tailwind-merge';
-  import type { HTMLAttributes } from 'svelte/elements';
+  import type { HTMLAttributes, HTMLAnchorAttributes } from 'svelte/elements';
 
-  type ElementType = 'a' | 'div';
-
-  type DynamicElementProps<T extends ElementType> = HTMLAttributes<HTMLElementTagNameMap[T]>;
-
-  interface $$Props extends DynamicElementProps<ElementType> {
+  interface AvatarProps {
     href?: string;
     src?: string;
     rounded?: boolean;
@@ -17,6 +13,8 @@
     alt?: string;
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none';
   }
+
+  type $$Props = AvatarProps & (HTMLAnchorAttributes | HTMLAttributes<HTMLDivElement>);
 
   export let src: $$Props['src'] = '';
   export let href: $$Props['href'] = undefined;

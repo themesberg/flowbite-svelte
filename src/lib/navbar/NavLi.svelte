@@ -2,17 +2,15 @@
   import { getContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import type { NavbarLiType } from './NavUl.svelte';
-  import type { HTMLAttributes } from 'svelte/elements';
+  import type { HTMLAttributes, HTMLAnchorAttributes  } from 'svelte/elements';
 
-  type ElementType = 'a' | 'div';
-
-  type DynamicElementProps<T extends ElementType> = HTMLAttributes<HTMLElementTagNameMap[T]>;
-
-  interface $$Props extends DynamicElementProps<ElementType> {
+  interface NavLiProps {
     href?: string;
     activeClass?: string;
     nonActiveClass?: string;
   }
+
+  type $$Props = NavLiProps & (HTMLAnchorAttributes | HTMLAttributes<HTMLDivElement>);
 
   export let href: $$Props['href'] = '';
   export let activeClass: $$Props['activeClass'] = undefined;

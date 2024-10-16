@@ -6,7 +6,7 @@
 
   export let data: PageData;
 
-  let components = [...data.posts.forms, ...data.posts.components, ...data.posts.typography, ...data.posts.experimental].sort((a, b) => a.meta.component_title.localeCompare(b.meta.component_title));
+  let components = [...data.posts.forms, ...data.posts.components, ...data.posts.typography].sort((a, b) => a.meta.component_title.localeCompare(b.meta.component_title));
 
   const INIT_COUNT = 18;
   let expanded: boolean = false;
