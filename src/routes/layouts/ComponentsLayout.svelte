@@ -61,7 +61,7 @@
             {/each}
           </SidebarDropdownWrapper>
         {/each}
-        <SidebarItem label='Blocks' href='https://flowbite-svelte-blocks.vercel.app/' spanClass='w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-900 dark:text-white mb-4' {activeClass} />
+        <SidebarItem label='Blocks' href='https://flowbite-svelte-blocks.vercel.app/' spanClass='w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-900 dark:text-white my-4' {activeClass} />
         <SidebarItem label='Admin Dashboard' href='https://flowbite-svelte-admin-dashboard.vercel.app/' spanClass='w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-900 dark:text-white' {activeClass} />
       </SidebarGroup>
     </nav>

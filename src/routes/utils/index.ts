@@ -157,6 +157,6 @@ export const fetchMarkdownPosts = async () => {
     extend: allExtends,
     utilities: allUtils,
     plugins: allPlugins,
-    experimental: allExperimental
+    // experimental: allExperimental
   };
 };
