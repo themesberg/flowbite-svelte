@@ -35,7 +35,7 @@
     "package:publish": "standard-version && git push --follow-tags origin main && npm publish"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.9",
+    "@changesets/cli": "2.27.9",
     "@docsearch/css": "^3.6.2",
     "@docsearch/js": "^3.6.2",
     "@playwright/test": "^1.48.0",
@@ -50,8 +50,9 @@
     "esbuild": "0.23.1",
     "eslint": "^9.12.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-svelte": "^2.44.1",
+    "eslint-plugin-svelte": "^2.45.0",
     "flowbite-svelte-icons": "^1.6.1",
+    "globals": "^15.11.0",
     "mdsvex": "^0.12.3",
     "mdsvexamples": "^0.4.1",
     "postcss": "^8.4.47",
@@ -240,14 +241,6 @@
     "./DarkMode.svelte": {
       "types": "./dist/darkmode/DarkMode.svelte.d.ts",
       "svelte": "./dist/darkmode/DarkMode.svelte"
-    },
-    "./Calender.svelte": {
-      "types": "./dist/datepicker/Calender.svelte.d.ts",
-      "svelte": "./dist/datepicker/Calender.svelte"
-    },
-    "./DateCalender.svelte": {
-      "types": "./dist/datepicker/DateCalender.svelte.d.ts",
-      "svelte": "./dist/datepicker/DateCalender.svelte"
     },
     "./Datepicker.svelte": {
       "types": "./dist/datepicker/Datepicker.svelte.d.ts",

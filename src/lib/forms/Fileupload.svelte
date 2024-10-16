@@ -20,7 +20,6 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let value: $$Props['value'] = '';
 @prop export let files: $$Props['files'] = undefined;
 @prop export let inputClass: $$Props['inputClass'] = 'border !p-0 dark:text-gray-400';
 -->

@@ -1,14 +1,24 @@
 {
   "name": "Datepicker",
   "slots": [],
-  "events": [],
+  "events": ["select", "clear", "apply"],
   "props": [
+    ["value", "Date | null", "null"],
+    ["defaultDate", "Date | null", "null"],
     ["range", "boolean", "false"],
-    ["datepickerButtons", "boolean", "false"],
-    ["datepickerFormat", "string", "'mm/dd/yyyy'"],
-    ["datepickerOrientation", "string", "'bottom'"],
-    ["datepickerTitle", "string", "'Flowbite datepicker'"],
-    ["attribute", "string", "''"],
-    ["inputClass", "string", "'bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'"]
+    ["rangeFrom", "Date | null", "null"],
+    ["rangeTo", "Date | null", "null"],
+    ["locale", "string", "'default'"],
+    ["firstDayOfWeek", "number", "0"],
+    ["dateFormat", "Intl.DateTimeFormatOptions", "{ year: 'numeric', month: 'long', day: 'numeric' }"],
+    ["placeholder", "string", "'Select date'"],
+    ["disabled", "boolean", "false"],
+    ["required", "boolean", "false"],
+    ["inputClass", "string", "''"],
+    ["color", "Button['color']", "'primary'"],
+    ["inline", "boolean", "false"],
+    ["autohide", "boolean", "true"],
+    ["showActionButtons", "boolean", "false"],
+    ["title", "string", "''"]
   ]
 }
