@@ -242,14 +242,6 @@
       "types": "./dist/darkmode/DarkMode.svelte.d.ts",
       "svelte": "./dist/darkmode/DarkMode.svelte"
     },
-    "./Calender.svelte": {
-      "types": "./dist/datepicker/Calender.svelte.d.ts",
-      "svelte": "./dist/datepicker/Calender.svelte"
-    },
-    "./DateCalender.svelte": {
-      "types": "./dist/datepicker/DateCalender.svelte.d.ts",
-      "svelte": "./dist/datepicker/DateCalender.svelte"
-    },
     "./Datepicker.svelte": {
       "types": "./dist/datepicker/Datepicker.svelte.d.ts",
       "svelte": "./dist/datepicker/Datepicker.svelte"

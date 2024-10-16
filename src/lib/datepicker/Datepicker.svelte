@@ -165,9 +165,9 @@
 
   function isSelected(day: Date): boolean {
     if (range) {
-      return (rangeFrom && day.toDateString() === rangeFrom.toDateString()) || (rangeTo && day.toDateString() === rangeTo.toDateString());
+      return !!(rangeFrom && day.toDateString() === rangeFrom.toDateString()) || !!(rangeTo && day.toDateString() === rangeTo.toDateString());
     }
-    return value && day.toDateString() === value.toDateString();
+    return !!(value && day.toDateString() === value.toDateString());
   }
 
   function isInRange(day: Date): boolean {
@@ -218,7 +218,7 @@
 
     // Focus the button for the focused date
     setTimeout(() => {
-      const focusedButton = calendarRef.querySelector(`button[aria-label="${focusedDate.toLocaleDateString(locale, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}"]`) as HTMLButtonElement | null;
+      const focusedButton = calendarRef.querySelector(`button[aria-label="${focusedDate!.toLocaleDateString(locale, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}"]`) as HTMLButtonElement | null;
       focusedButton?.focus();
     }, 0);
   }
@@ -309,6 +309,7 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let value: Date | null = null;
+@prop export let defaultDate: Date | null = null;
 @prop export let range: boolean = false;
 @prop export let rangeFrom: Date | null = null;
 @prop export let rangeTo: Date | null = null;
