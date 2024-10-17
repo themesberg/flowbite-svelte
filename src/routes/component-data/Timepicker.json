@@ -1,0 +1,14 @@
+{
+  "name": "Timepicker",
+  "slots": [],
+  "events": ["change"],
+  "props": [
+    ["id", "string", "'time'"],
+    ["value", "string", "'00:00'"],
+    ["min", "string", "''"],
+    ["max", "string", "''"],
+    ["required", "boolean", "true"],
+    ["disabled", "boolean", "false"],
+    ["color", "Colors", "'primary'"]
+  ]
+}
