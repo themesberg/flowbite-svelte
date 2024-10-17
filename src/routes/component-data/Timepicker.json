@@ -9,6 +9,7 @@
     ["max", "string", "''"],
     ["required", "boolean", "true"],
     ["disabled", "boolean", "false"],
-    ["color", "Colors", "'primary'"]
+    ["color", "Colors", "'primary'"],
+    ["icon", "ComponentType | string", "`<svg />`"]
   ]
 }
