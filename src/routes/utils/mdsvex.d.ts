@@ -1,9 +1,25 @@
 declare module '*.md' {
-  import type { SvelteComponentDev } from 'svelte/internal';
+  import type { SvelteComponent } from 'svelte';
 
-  export default class Comp extends SvelteComponentDev {
+  export default class Comp extends SvelteComponent {
     $$prop_def: {};
-    metadata: Record<string, any>;
+    metadata: Record<string, unknown>;
   }
-  export const metadata: Record<string, any>;
+  export const metadata: Record<string, unknown>;
+}
+
+declare module '*.svx' {
+	import type { SvelteComponent } from 'svelte';
+
+	export default class Comp extends SvelteComponent {}
+
+	export const metadata: Record<string, unknown>;
+}
+
+declare module '*.svelte.md' {
+	import type { SvelteComponent } from 'svelte';
+
+	export default class Comp extends SvelteComponent {}
+
+	export const metadata: Record<string, unknown>;
 }

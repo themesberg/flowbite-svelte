@@ -18,6 +18,6 @@
     ["id?", "string", "'drawer-example'"],
     ["divClass?", "string", "'overflow-y-auto z-50 p-4 bg-white dark:bg-gray-800'"],
     ["transitionParams?", "drawerTransitionParamTypes", "{}"],
-    ["transitionType?", "drawerTransitionTypes", "'fly'"]
+    ["transitionType?", "TransitionTypes", "'fly'"]
   ]
 }

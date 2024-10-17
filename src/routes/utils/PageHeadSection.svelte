@@ -2,13 +2,13 @@
   import { Heading } from '$lib';
   import CompoDescription from './CompoDescription.svelte';
 
-  export let dir: string;
-  export let breadcrumb_title: string;
+  // export let dir: string;
+  // export let breadcrumb_title: string;
   export let title: string;
   export let description: string;
 
-  dir;
-  breadcrumb_title;
+  // dir;
+  // breadcrumb_title;
 </script>
 
 <div class="pb-8">

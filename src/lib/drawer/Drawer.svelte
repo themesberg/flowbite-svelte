@@ -1,6 +1,6 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
-  import type { drawerTransitionParamTypes, drawerTransitionTypes } from '../types';
+  import type { drawerTransitionParamTypes, TransitionTypes } from '../types';
   import { fly, slide, blur, fade } from 'svelte/transition';
   import { clickOutside } from '../utils/clickOutside';
   import type { HTMLAttributes } from 'svelte/elements';
@@ -21,7 +21,7 @@
     id?: string;
     divClass?: string;
     transitionParams?: drawerTransitionParamTypes;
-    transitionType?: drawerTransitionTypes;
+    transitionType?: TransitionTypes;
   }
   export let activateClickOutside: $$Props['activateClickOutside'] = true;
   export let hidden: $$Props['hidden'] = true;

@@ -9,6 +9,8 @@
   import { onMount } from 'svelte';
   export let divClass = 'w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-6';
 
+  type NotificationDirection = 'ltr' | 'rtl' | 'auto';
+
   // the source of the example, if you want it
   export let src: any = undefined;
 

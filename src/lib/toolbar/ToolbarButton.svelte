@@ -1,5 +1,4 @@
 <script lang="ts">
-  // import type { ToolbarButtonType } from '../types';
   import { getContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';

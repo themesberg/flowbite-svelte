@@ -82,6 +82,14 @@ pnpm gen:docs && pnpm gen:compo-data
 
 This first command is to generate component documentation for all Svelte files within the src/lib directory. The second command is to generate JSON files containing props, slots, events information from all Svelte files in the src/lib directory, placing them in the routes/component-data directory.
 
+## Format and check
+
+Please run the following to format the code.
+
+```
+pnpm format && pnpm check
+```
+
 ## Conventional commit
 
 When making a commit, we recommend using [the Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).

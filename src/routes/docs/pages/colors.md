@@ -14,37 +14,29 @@ description: Customize your project and the color of the components from Flowbit
 
 ## Primary color in tailwind.config.cjs
 
-There are 22 colors defined in the <A href="https://github.com/themesberg/flowbite-svelte/blob/main/tailwind.config.cjs">tailwind.config.cjs</A>.
+There are 22 colors defined in the <A href="https://github.com/themesberg/flowbite-svelte/blob/main/tailwind.config.ts">tailwind.config.ts</A>.
 
 <Img src="/images/colors.webp" alt="Primary colors" class="flex justify-center rounded-lg p-8" />
 
 In the provided code, you can customize the primary color by modifying the appropriate color values. To change the primary color, simply uncomment the desired color object and modify the corresponding color values as needed.
 
 ```js
-const config = {
+import type { Config } from 'tailwindcss';
+import plugin from 'flowbite/plugin';
+
+export default {
   content: ['./src/**/*.{html,js,svelte,ts}', './node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'],
-
-  plugins: [require('flowbite/plugin')],
-
-  darkMode: 'class',
+  plugins: [plugin],
+  darkMode: 'selector',
 
   theme: {
     extend: {
+      zIndex: {
+        '100': '100'
+      },
       colors: {
         // flowbite-svelte
-        primary: {
-          50: '#FFF5F2',
-          100: '#FFF1EE',
-          200: '#FFE4DE',
-          300: '#FFD5CC',
-          400: '#FFBCAD',
-          500: '#FE795D',
-          600: '#EF562F',
-          700: '#EB4F27',
-          800: '#CC4522',
-          900: '#A5371B'
-        }
-
+        primary: { 50: '#FFF5F2', 100: '#FFF1EE', 200: '#FFE4DE', 300: '#FFD5CC', 400: '#FFBCAD', 500: '#FE795D', 600: '#EF562F', 700: '#EB4F27', 800: '#CC4522', 900: '#A5371B' }
         // pink
         // primary: {"50":"#fdf2f8","100":"#fce7f3","200":"#fbcfe8","300":"#f9a8d4","400":"#f472b6","500":"#ec4899","600":"#db2777","700":"#be185d","800":"#9d174d","900":"#831843"}
 
@@ -110,9 +102,7 @@ const config = {
       }
     }
   }
-};
-
-module.exports = config;
+} as Config;
 ```
 
 ## Examples
