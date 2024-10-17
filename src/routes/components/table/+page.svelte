@@ -82,7 +82,7 @@
 
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
-      return `<<Table {tableItems}${propsString} />`;
+      return `<Table {tableItems}${propsString} />`;
     })()
   );
   // for interactive builder
