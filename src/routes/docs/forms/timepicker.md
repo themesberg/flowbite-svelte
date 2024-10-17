@@ -76,7 +76,7 @@ This example shows how to use the timepicker with custom properties.
 
 This example demonstrates how to use the timepicker with a dropdown for selecting duration.
 
-```svelte example class="h-96"
+```svelte example class="h-64"
 <script>
   import { Label, Timepicker, P } from 'flowbite-svelte';
 

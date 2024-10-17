@@ -10,8 +10,6 @@ export type CheckboxItem = {
   isChecked?: boolean;
 };
 
-export type Colors = 'primary' | 'pink' | 'fuchsia' | 'purple' | 'violet' | 'indigo' | 'blue' | 'sky' | 'cyan' | 'teal' | 'emerald' | 'green' | 'lime' | 'yellow' | 'amber' | 'orange' | 'red' | 'stone' | 'neutral' | 'zinc' | 'gray' | 'slate';
-
 export type ColorVariant = 'dark' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'primary' | 'none';
 
 export type ImgType = {
