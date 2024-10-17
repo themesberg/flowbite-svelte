@@ -9,7 +9,11 @@
     ["max", "string", "''"],
     ["required", "boolean", "true"],
     ["disabled", "boolean", "false"],
-    ["color", "Colors", "'primary'"],
-    ["icon", "ComponentType | string", "`<svg />`"]
+    ["color", "'base' | 'red' | 'green' | undefined", "'base'"],
+    ["buttonColor", "ButtonColorType", "'primary'"],
+    ["icon", "ComponentType | string", "`<svg />`"],
+    ["dropdown", "boolean", "false"],
+    ["dropdownLabel", "string", "''"],
+    ["dropdownOptions", "Array<{ value: string; label: string }>", "[]"]
   ]
 }

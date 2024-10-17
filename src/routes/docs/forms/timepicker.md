@@ -6,7 +6,6 @@ component_title: Timepicker
 dir: Forms
 description: Use the timepicker component to allow the user to select a time using a native time input element including hours and minutes
 ---
-
 <script>
   import { CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
   const components = 'Timepicker'
@@ -43,7 +42,6 @@ This example can be used to select a time via an input field where you can add a
 <script>
   import { Label, Timepicker } from 'flowbite-svelte';
   import { ClockSolid } from 'flowbite-svelte-icons';
-
   const customSvg = `<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6v4l3.276 3.276M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
   </svg>`;
@@ -72,6 +70,36 @@ This example shows how to use the timepicker with custom properties.
   min="08:00"
   max="18:00"
 />
+```
+
+## Timepicker with dropdown
+
+This example demonstrates how to use the timepicker with a dropdown for selecting duration.
+
+```svelte example class="h-96"
+<script>
+  import { Label, Timepicker, P } from 'flowbite-svelte';
+
+  let selectedTime = { time: '12:00', duration: '30 minutes' };
+
+  function handleTimeChange(event) {
+    selectedTime = event.detail;
+  }
+</script>
+
+<Label>Select Time and Duration:</Label>
+<Timepicker
+  dropdown={true}
+  dropdownLabel="Duration"
+  dropdownOptions={[
+    { value: '30', label: '30 minutes' },
+    { value: '60', label: '1 hour' },
+    { value: '120', label: '2 hours' }
+  ]}
+  on:change={handleTimeChange}
+/>
+
+<P>Selected: {selectedTime.time}, Duration: {selectedTime.duration}</P>
 ```
 
 ## Props
