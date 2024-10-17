@@ -23,6 +23,7 @@
   export let isOpen: $$Props['isOpen'] = false;
 
   // make a custom transition function that returns the desired transition
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   const multiple = (node: HTMLElement, params: any) => {
     switch (transitionType) {
       case 'blur':

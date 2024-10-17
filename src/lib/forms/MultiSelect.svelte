@@ -6,6 +6,7 @@
   import type { FormSizeType, SelectOptionType } from '../types';
   import { createEventDispatcher } from 'svelte';
 
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   interface $$Props extends Omit<HTMLSelectAttributes,'size'> {
     items?: SelectOptionType<any>[];
     value?: (string | number)[];

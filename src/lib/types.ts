@@ -94,6 +94,7 @@ export interface GroupTimelineType {
   comment?: string | HTMLElement;
 }
 
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 export interface ListGroupItemType {
   name?: string;
   current?: boolean;

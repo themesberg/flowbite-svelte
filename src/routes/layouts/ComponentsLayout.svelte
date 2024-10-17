@@ -8,7 +8,7 @@
   import { ChevronDownOutline, ChevronUpOutline } from 'flowbite-svelte-icons';
 
   export let data;
-
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   const posts: Record<string, any[]> = data.posts || {};
   const drawerHidden: Writable<boolean> = getContext('drawer');
 

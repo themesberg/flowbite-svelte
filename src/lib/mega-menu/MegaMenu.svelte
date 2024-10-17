@@ -16,6 +16,7 @@
   export let open: $$Props['open'] = false;
   export let ulClass: $$Props['ulClass'] = 'grid grid-flow-row gap-y-4 md:gap-x-0 auto-col-max auto-row-max';
 
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   interface LinkTypeLike extends LinkType {
     [propName: string]: any;
   }

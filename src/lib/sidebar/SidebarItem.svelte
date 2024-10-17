@@ -5,6 +5,7 @@
   import { twMerge } from 'tailwind-merge';
   import type { SidebarType } from './Sidebar.svelte';
 
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   interface $$Props extends HTMLAnchorAttributes {
     action?: Action<HTMLElement, any>;
     params?: any;

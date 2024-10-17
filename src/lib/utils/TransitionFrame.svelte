@@ -4,6 +4,7 @@
   import { fade, type TransitionConfig } from 'svelte/transition';
   import Frame from './Frame.svelte';
 
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 
   // propagate props type from underying Frame

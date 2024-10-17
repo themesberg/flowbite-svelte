@@ -5,7 +5,8 @@
   import { twMerge } from 'tailwind-merge';
   import { CloseButton } from '$lib';
   import type { ColorVariant, ToastPositionType } from '$lib/types';
-
+  
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 
   interface $$Props extends HTMLAttributes<HTMLDivElement> {

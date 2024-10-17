@@ -32,7 +32,7 @@
     // Split the components into an array
     const componentArray = components.split(', ');
   }
-  
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   let importPromises: Promise<any>[] = [];
   
   async function processComponents() {

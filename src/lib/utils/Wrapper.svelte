@@ -3,6 +3,7 @@
 
   export let tag: string = 'div';
   export let show: boolean;
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   export let use: Action<HTMLElement, any> = () => {};
 </script>
 

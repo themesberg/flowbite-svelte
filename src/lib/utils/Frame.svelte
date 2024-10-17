@@ -32,7 +32,7 @@
 
   const noop = () => {};
 
-  
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 
   interface $$Props extends HTMLAnchorAttributes {

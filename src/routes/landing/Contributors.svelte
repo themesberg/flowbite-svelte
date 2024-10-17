@@ -9,6 +9,7 @@
   export let data: PageData;
 
   let name: string;
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   function on_show(e: CustomEvent<any>) {
     if (e?.target instanceof HTMLElement) {
       name = e?.target?.dataset.name ?? '';

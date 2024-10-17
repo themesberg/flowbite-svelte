@@ -4,6 +4,7 @@
   import Wrapper from '$lib/utils/Wrapper.svelte';
   import Input from './Input.svelte';
 
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   interface $$Props extends ComponentProps<Input> {
     size?: FormSizeType;
     placeholder?: string;

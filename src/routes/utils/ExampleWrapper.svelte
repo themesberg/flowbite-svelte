@@ -11,6 +11,7 @@
 
   type NotificationDirection = 'ltr' | 'rtl' | 'auto';
 
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   // the source of the example, if you want it
   export let src: any = undefined;
 

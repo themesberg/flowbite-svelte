@@ -13,6 +13,7 @@
   import type { InputType } from '../types';
   import CloseButton from '$lib/utils/CloseButton.svelte';
 
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   interface $$Props extends Omit<HTMLInputAttributes,'size'> {
     type?: InputType;
     value?: any;

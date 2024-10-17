@@ -124,6 +124,7 @@
   }
 
   onMount(() => {
+    /* eslint-disable  @typescript-eslint/no-explicit-any */
     const events: [string, any, boolean][] = [
       ['focusin', showHandler, focusable],
       ['focusout', hideHandler, focusable],

@@ -2,7 +2,7 @@
   import type { HTMLAnchorAttributes } from 'svelte/elements';
   import type { Action } from 'svelte/action';
   import { twMerge } from 'tailwind-merge';
-
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   interface $$Props extends HTMLAnchorAttributes {
     action?: Action<HTMLElement, any>;
     params?: any;

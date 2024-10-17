@@ -3,6 +3,7 @@
   import { twMerge } from 'tailwind-merge';
   import type { SelectOptionType } from '../types';
 
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   interface $$Props extends Omit<HTMLSelectAttributes, 'size'> {
     items?: SelectOptionType<any>[];
     value?: any;
