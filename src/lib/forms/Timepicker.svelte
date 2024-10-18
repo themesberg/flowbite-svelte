@@ -26,7 +26,7 @@
   export let timerangeLabel = 'Choose time range';
   export let timerangeButtonLabel = 'Save time';
   export let timeIntervals: string[] = [];
-  export let columns = 2;
+  export let columns: 1 | 2 | 3 | 4 = 2;
 
   let dropdownOpen = false;
   let showTimerange = false;
@@ -187,7 +187,7 @@
     {/if}
   </ButtonGroup>
 {:else}
-  <div class="grid gap-2 grid-cols-{columns} w-full">
+  <div class="grid gap-2 w-full" class:grid-cols-1={columns === 1} class:grid-cols-2={columns === 2} class:grid-cols-3={columns === 3} class:grid-cols-4={columns === 4}>
     {#each timeIntervals as time}
       <Button {size} color={value === time ? buttonColor : 'light'} class="rounded-lg" on:click={() => handleInlineButtonSelect(time)}>
         {time}
@@ -222,5 +222,5 @@
 @prop export let timerangeLabel: string = 'Choose time range';
 @prop export let timerangeButtonLabel: string = 'Save time';
 @prop export let timeIntervals: string[] = [];
-@prop export let columns: number = 2;
+@prop export let columns: 1 | 2 | 3 | 4 = 2;
 -->

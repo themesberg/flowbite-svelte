@@ -25,6 +25,6 @@
     ["timerangeLabel", "string", "'Choose time range'"],
     ["timerangeButtonLabel", "string", "'Save time'"],
     ["timeIntervals", "string[]", "[]"],
-    ["columns", "number", "2"]
+    ["columns", "1 | 2 | 3 | 4", "2"]
   ]
 }
