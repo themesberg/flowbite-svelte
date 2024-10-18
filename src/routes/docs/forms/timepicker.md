@@ -210,13 +210,135 @@ This example demonstrates a timerange picker that can be toggled on and off, all
 <Label class="mb-2" for="timerange-toggle">Toggle Time Range:</Label>
 <Timepicker
   type="timerange-toggle"
-  toggleLabel="Toggle Time Range Picker"
   on:select={handleChange}
   value={selectedTimerange.time}
   endValue={selectedTimerange.endTime}
 />
 
 <P>Selected Range: {selectedTimerange.time} - {selectedTimerange.endTime}</P>
+```
+
+## Inline timepicker buttons
+
+This is an advanced example that you can use to show the details of an event and select a date of the event based on the Flowbite Datepicker and select the time using a predefined set of time intervals based on checkbox elements.
+  
+```svelte example class="p-4"
+<script>
+  import { Label, Datepicker, Timepicker, Button, Accordion, AccordionItem, Avatar, Input } from 'flowbite-svelte';
+  import { CalendarMonthSolid, ClockSolid, MapPinSolid } from 'flowbite-svelte-icons';
+
+  let selectedDate = new Date('2024-06-30');
+  let selectedTime = '12:00';
+  let eventTitle = 'Digital Transformation';
+  let eventLocation = 'California, USA';
+  let eventDuration = '30 min';
+  let eventType = 'Web conference';
+  let participants = [
+    { img: '/images/profile-picture-1.webp', alt: 'Participant 1' },
+    { img: '/images/profile-picture-2.webp', alt: 'Participant 2' },
+    { img: '/images/profile-picture-3.webp', alt: 'Participant 3' },
+  ];
+
+  const timeIntervals = [
+    '10:00', '10:30', '11:00', '11:30', '12:00', '12:30',
+    '13:00', '13:30', '14:00', '14:30', '15:00', '15:30'
+  ];
+
+  function handleDateSelect(event) {
+    selectedDate = event.detail;
+  }
+
+  function handleTimeSelect(event) {
+    selectedTime = event.detail.time;
+  }
+</script>
+
+<div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md">
+  <div class="p-6">
+    <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{eventTitle}</h2>
+    
+    <div class="flex flex-wrap gap-4 mb-6">
+      <div class="flex items-center">
+        <CalendarMonthSolid class="w-5 h-5 text-gray-500 dark:text-gray-400 mr-2" />
+        <span class="text-gray-900 dark:text-white">{selectedDate.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' })}</span>
+      </div>
+      <div class="flex items-center">
+        <ClockSolid class="w-5 h-5 text-gray-500 dark:text-gray-400 mr-2" />
+        <span class="text-gray-900 dark:text-white">{selectedTime}</span>
+      </div>
+      <div class="flex items-center">
+        <MapPinSolid class="w-5 h-5 text-gray-500 dark:text-gray-400 mr-2" />
+        <span class="text-gray-900 dark:text-white">{eventLocation}</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+      <div>
+        <Label class="mb-2">Participants</Label>
+        <div class="flex -space-x-4">
+          {#each participants as participant}
+            <Avatar src={participant.img} alt={participant.alt} />
+          {/each}
+          <Avatar class="bg-gray-700 text-white">+99</Avatar>
+        </div>
+      </div>
+      <div>
+        <Label class="mb-2">Duration</Label>
+        <span class="text-gray-900 dark:text-white text-lg font-medium">{eventDuration}</span>
+      </div>
+      <div>
+        <Label class="mb-2">Meeting Type</Label>
+        <span class="text-gray-900 dark:text-white text-lg font-medium">{eventType}</span>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <Label class="mb-2">Select Date</Label>
+          <Datepicker bind:value={selectedDate} on:select={handleDateSelect} inline />
+        </div>
+        <div>
+          <Label class="mb-2">Select Time</Label>
+          <Timepicker 
+            type="inline-buttons"
+            value={selectedTime}
+            timeIntervals={timeIntervals}
+            on:select={handleTimeSelect}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <Accordion flush>
+    <AccordionItem  class="p-2">
+      <svelte:fragment slot="header">Additional Options</svelte:fragment>
+      <div class="p-4 space-y-4">
+        <div>
+          <Label for="event-title">Event Title</Label>
+          <Input id="event-title" bind:value={eventTitle} />
+        </div>
+        <div>
+          <Label for="event-location">Location</Label>
+          <Input id="event-location" bind:value={eventLocation} />
+        </div>
+        <div>
+          <Label for="event-duration">Duration</Label>
+          <Input id="event-duration" bind:value={eventDuration} />
+        </div>
+        <div>
+          <Label for="event-type">Meeting Type</Label>
+          <Input id="event-type" bind:value={eventType} />
+        </div>
+      </div>
+    </AccordionItem>
+  </Accordion>
+
+  <div class="p-6 border-t border-gray-200 dark:border-gray-700">
+    <Button color="primary">Schedule Event</Button>
+  </div>
+</div>
 ```
 
 ## Props
