@@ -11,6 +11,9 @@
     size?: 'small' | 'default';
     color?: 'base' | 'green' | 'red';
     value?: any;
+    classDiv?: string;
+    classInput?: string;
+    classLabel?: string;
   }
 
   export let id: $$Props['id'] = generateId();
@@ -19,6 +22,9 @@
   export let size: NonNullable<$$Props['size']> = 'default';
   export let color: NonNullable<$$Props['color']> = 'base';
   export let value: $$Props['value'] = undefined;
+  export let classDiv: $$Props['classDiv'] = '';
+  export let classInput: $$Props['classInput'] = '';
+  export let classLabel: $$Props['classLabel'] = '';
 
   const divClasses = {
     filled: 'relative',
@@ -81,10 +87,10 @@
   };
 </script>
 
-<div class={twMerge(divClasses[style], $$props.classDiv)}>
-  <input {id} {...$$restProps} bind:value on:blur on:change on:click on:focus on:input on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover on:paste {...{ type }} placeholder=" " class={twMerge(inputClasses[style], inputColorClasses[color], inputSizes[style][size], $$props.classInput)} />
+<div class={twMerge(divClasses[style], classDiv)}>
+  <input {id} {...$$restProps} bind:value on:blur on:change on:click on:focus on:input on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover on:paste {...{ type }} placeholder=" " class={twMerge(inputClasses[style], inputColorClasses[color], inputSizes[style][size], classInput)} />
 
-  <label for={id} class={twMerge(labelClasses[style], labelColorClasses[color], labelSizes[style][size], $$props.classLabel)}>
+  <label for={id} class={twMerge(labelClasses[style], labelColorClasses[color], labelSizes[style][size], classLabel)}>
     <slot />
   </label>
 </div>
@@ -99,4 +105,7 @@
 @prop export let size: NonNullable<$$Props['size']> = 'default';
 @prop export let color: NonNullable<$$Props['color']> = 'base';
 @prop export let value: $$Props['value'] = undefined;
+@prop export let classDiv: $$Props['classDiv'] = '';
+@prop export let classInput: $$Props['classInput'] = '';
+@prop export let classLabel: $$Props['classLabel'] = '';
 -->
