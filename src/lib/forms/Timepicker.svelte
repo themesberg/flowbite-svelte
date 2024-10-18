@@ -2,7 +2,7 @@
   import { createEventDispatcher } from 'svelte';
   import type { ButtonColorType } from '$lib/types';
   import type { ComponentType } from 'svelte';
-  import { Dropdown, DropdownItem, Button, Input, ButtonGroup, Select, InputAddon } from '$lib';
+  import { Dropdown, DropdownItem, Button, Input, ButtonGroup, Select, InputAddon, Label } from '$lib';
 
   export let id = 'time';
   export let endId = 'end-time';
@@ -17,7 +17,7 @@
   export let icon: ComponentType | string = `<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6v4l3.276 3.276M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
   </svg>`;
-  export let type: 'default' | 'dropdown' | 'select' | 'range' = 'default';
+  export let type: 'default' | 'dropdown' | 'select' | 'range' | 'timerange-dropdown' = 'default';
   export let optionLabel = '';
   export let options: { value: string; name: string }[] = [];
   export let selectedOption = '';
@@ -25,6 +25,8 @@
   export let divClass = 'inline-flex rounded-lg shadow-sm';
   export let inputClass = 'block disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right focus:ring-0 focus:outline-none p-2.5 border-r-0';
   export let selectClass = 'text-gray-900 disabled:text-gray-400 bg-gray-50 border border-gray-300 rounded-r-lg focus:ring-0 focus:outline-none block w-full p-2.5 border-l-1 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:disabled:text-gray-500 dark:focus:ring-primary-500 dark:focus:border-primary-500';
+  export let timerangeLabel = 'Choose time range';
+  export let timerangeButtonLabel = 'Save time';
 
   let dropdownOpen = false;
   const dispatch = createEventDispatcher<{
@@ -34,49 +36,44 @@
   function handleTimeChange(event: Event, isEndTime = false) {
     const newValue = (event.target as HTMLInputElement).value;
     if (isEndTime) {
-      if (newValue < value) {
-        // Swap times
-        const temp = value;
-        value = newValue;
-        endValue = temp;
-      } else {
-        endValue = newValue;
-      }
+      [value, endValue] = newValue < value ? [newValue, value] : [value, newValue];
     } else {
-      if (newValue > endValue) {
-        // Swap times
-        const temp = endValue;
-        endValue = newValue;
-        value = temp;
-      } else {
-        value = newValue;
-      }
+      [value, endValue] = newValue > endValue ? [endValue, newValue] : [newValue, endValue];
     }
-    dispatchChange(value, endValue, selectedOption);
+
+    if (type !== 'timerange-dropdown') {
+      dispatchChange();
+    }
   }
 
   function handleOptionSelect(event: Event) {
-    const newSelectedOption = (event.target as HTMLSelectElement).value;
-    dispatchChange(value, endValue, newSelectedOption);
+    selectedOption = (event.target as HTMLSelectElement).value;
+    dispatchChange();
   }
 
   function handleDropdownSelect(option: { value: string; name: string }) {
     dropdownOpen = false;
-    dispatchChange(value, endValue, option.value);
+    selectedOption = option.value;
+    dispatchChange();
   }
 
-  function dispatchChange(time: string, endTime: string, optionValue: string) {
+  function dispatchChange() {
     dispatch('select', {
-      time,
-      endTime,
-      [optionLabel.toLowerCase()]: optionValue || options[0]?.value || ''
+      time: value,
+      endTime: endValue,
+      [optionLabel.toLowerCase()]: selectedOption || options[0]?.value || ''
     });
+  }
+
+  function applyTimerange() {
+    dropdownOpen = false;
+    dispatchChange();
   }
 </script>
 
 <ButtonGroup {size} {divClass}>
-  <Input {id} {color} type="time" defaultClass="{inputClass} rounded-l-lg" {min} {max} bind:value on:change={(e) => handleTimeChange(e)} {required} {disabled} />
   {#if type === 'default'}
+    <Input {id} {color} type="time" {min} {max} {required} {disabled} defaultClass="{inputClass} rounded-l-lg" bind:value on:change={(e) => handleTimeChange(e)} />
     <InputAddon class="rounded-r-lg">
       {#if typeof icon === 'string'}
         {@html icon}
@@ -85,8 +82,10 @@
       {/if}
     </InputAddon>
   {:else if type === 'select'}
+    <Input {id} {color} type="time" {min} {max} {required} {disabled} defaultClass="{inputClass} rounded-l-lg" bind:value on:change={(e) => handleTimeChange(e)} />
     <Select defaultClass={selectClass} on:change={handleOptionSelect} items={options} value={selectedOption} />
   {:else if type === 'dropdown'}
+    <Input {id} {color} type="time" {min} {max} {required} {disabled} defaultClass="{inputClass} rounded-l-lg" bind:value on:change={(e) => handleTimeChange(e)} />
     <Button color={buttonColor} class="rounded-r-lg">
       {optionLabel}
       <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -99,7 +98,8 @@
       {/each}
     </Dropdown>
   {:else if type === 'range'}
-    <InputAddon class="rounded-r-lg">
+    <Input {id} {color} type="time" {min} {max} {required} {disabled} defaultClass="{inputClass} rounded-l-lg" bind:value on:change={(e) => handleTimeChange(e)} />
+    <InputAddon class="rounded-none">
       {#if typeof icon === 'string'}
         {@html icon}
       {:else if icon}
@@ -107,14 +107,36 @@
       {/if}
     </InputAddon>
     <span class="flex items-center justify-center text-gray-500 dark:text-gray-400 px-2">-</span>
-    <Input id={endId} {color} type="time" defaultClass="{inputClass} rounded-l-lg" {min} {max} bind:value={endValue} on:change={(e) => handleTimeChange(e, true)} {required} {disabled} />
-    <InputAddon>
+    <Input id={endId} {color} type="time" {min} {max} {required} {disabled} defaultClass="{inputClass} rounded-none" bind:value={endValue} on:change={(e) => handleTimeChange(e, true)} />
+    <InputAddon class="rounded-r-lg">
       {#if typeof icon === 'string'}
         {@html icon}
       {:else if icon}
         <svelte:component this={icon} class="w-4 h-4 text-gray-500 dark:text-gray-400" />
       {/if}
     </InputAddon>
+  {:else if type === 'timerange-dropdown'}
+    <Button color={buttonColor} {size} class="rounded-r-lg">
+      {timerangeLabel}
+      <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+    </Button>
+    <Dropdown bind:open={dropdownOpen} classContainer="p-4 w-auto last:rounded-r-lg">
+      <div class="flex flex-col space-y-4">
+        <div class="flex space-x-4">
+          <div class="flex flex-col">
+            <Label for={id}>Start time:</Label>
+            <Input {id} {color} type="time" {min} {max} {required} {disabled} defaultClass="{inputClass} rounded-l-lg" bind:value on:change={(e) => handleTimeChange(e)} />
+          </div>
+          <div class="flex flex-col">
+            <Label for={endId}>End time:</Label>
+            <Input id={endId} {color} type="time" {min} {max} {required} {disabled} defaultClass="{inputClass} rounded-l-lg" bind:value={endValue} on:change={(e) => handleTimeChange(e, true)} />
+          </div>
+        </div>
+        <Button color={buttonColor} class="w-full rounded-l-lg" on:click={applyTimerange}>
+          {timerangeButtonLabel}
+        </Button>
+      </div>
+    </Dropdown>
   {/if}
 </ButtonGroup>
 
@@ -134,7 +156,7 @@
 @prop export let buttonColor: ButtonColorType = 'primary';
 @prop export let icon: ComponentType | string = `<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6v4l3.276 3.276M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/> </svg>`;
-@prop export let type: 'default' | 'dropdown' | 'select' | 'range' = 'default';
+@prop export let type: 'default' | 'dropdown' | 'select' | 'range' | 'timerange-dropdown' = 'default';
 @prop export let optionLabel: string = '';
 @prop export let options: { value: string; name: string }[] = [];
 @prop export let selectedOption: string = '';
@@ -142,4 +164,6 @@
 @prop export let divClass: string = 'inline-flex rounded-lg shadow-sm';
 @prop export let inputClass: string = 'block disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right focus:ring-0 focus:outline-none p-2.5 border-r-0';
 @prop export let selectClass: string = 'text-gray-900 disabled:text-gray-400 bg-gray-50 border border-gray-300 rounded-r-lg focus:ring-0 focus:outline-none block w-full p-2.5 border-l-1 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:disabled:text-gray-500 dark:focus:ring-primary-500 dark:focus:border-primary-500';
+@prop export let timerangeLabel: string = 'Choose time range';
+@prop export let timerangeButtonLabel: string = 'Save time';
 -->

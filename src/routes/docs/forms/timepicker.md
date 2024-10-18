@@ -167,6 +167,31 @@ Use this example to select a time interval using two input fields, often used fo
 <P>Selected Range: {selectedTime.time} - {selectedTime.endTime}</P>
 ```
 
+## Timerange with dropdown
+
+This example can be used to show the timerange picker inside a dropdown only when clicking on a button.
+
+```svelte example class="h-80"
+<script>
+  import { Label, Timepicker, P } from 'flowbite-svelte';
+
+  let selectedTimerange = { time: '09:00', endTime: '17:00' };
+
+  function handleChange(event) {
+    selectedTimerange = event.detail;
+  }
+</script>
+
+<Label>Select Time Range:</Label>
+<Timepicker
+  type="timerange-dropdown"
+  on:select={handleChange}
+  value={selectedTimerange.time}
+  endValue={selectedTimerange.endTime}
+/>
+<P>Selected Range: {selectedTimerange.time} - {selectedTimerange.endTime}</P>
+```
+
 ## Props
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
