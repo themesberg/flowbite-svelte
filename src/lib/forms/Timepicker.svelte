@@ -158,7 +158,7 @@
     {:else if type === 'timerange-toggle'}
       <div class="flex flex-col space-y-2 w-full">
         <div class="flex items-center justify-between">
-          <Toggle id="timerange-toggle" checked={showTimerange} on:change={toggleTimerange} />
+          <Toggle id={`${id}-timerange-toggle`} checked={showTimerange} on:change={toggleTimerange} />
         </div>
         {#if showTimerange}
           <div class="flex space-x-4">
