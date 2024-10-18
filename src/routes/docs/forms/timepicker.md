@@ -142,6 +142,31 @@ Use this example to show a select input next to the timepicker to select an opti
 <P>Selected: {selectedTime.time} {selectedTime.timezone}</P>
 ```
 
+## Timepicker range selector
+
+Use this example to select a time interval using two input fields, often used for the duration of an event. If you set the end time to be earlier than the start time, the component will automatically swap the two times.
+
+```svelte example
+<script>
+  import { Label, Timepicker, P } from 'flowbite-svelte';
+
+  let selectedTime = { time: '09:00', endTime: '17:00' };
+
+  function handleChange(event) {
+    selectedTime = event.detail;
+  }
+</script>
+
+<Label>Select Time Range:</Label>
+<Timepicker
+  type="range"
+  on:select={handleChange}
+  value={selectedTime.time}
+  endValue={selectedTime.endTime}
+/>
+<P>Selected Range: {selectedTime.time} - {selectedTime.endTime}</P>
+```
+
 ## Props
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

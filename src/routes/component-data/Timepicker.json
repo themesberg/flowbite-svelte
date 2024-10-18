@@ -4,7 +4,9 @@
   "events": ["select"],
   "props": [
     ["id", "string", "'time'"],
+    ["endId", "string", "'end-time'"],
     ["value", "string", "'00:00'"],
+    ["endValue", "string", "'00:00'"],
     ["min", "string", "''"],
     ["max", "string", "''"],
     ["required", "boolean", "true"],
@@ -12,7 +14,7 @@
     ["color", "'base' | 'red' | 'green' | undefined", "'base'"],
     ["buttonColor", "ButtonColorType", "'primary'"],
     ["icon", "ComponentType | string", "`<svg />`"],
-    ["type", "'default' | 'dropdown' | 'select'", "'default'"],
+    ["type", "'default' | 'dropdown' | 'select' | 'range'", "'default'"],
     ["optionLabel", "string", "''"],
     ["options", "{ value: string; name: string }[]", "[]"],
     ["selectedOption", "string", "''"],
