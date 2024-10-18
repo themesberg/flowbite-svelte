@@ -2,60 +2,73 @@
   import { createEventDispatcher } from 'svelte';
   import type { ButtonColorType } from '$lib/types';
   import type { ComponentType } from 'svelte';
-  import { Dropdown, DropdownItem, Button, Input, ButtonGroup } from '$lib';
-  import InputAddon from './InputAddon.svelte';
+  import { Dropdown, DropdownItem, Button, Input, ButtonGroup, Select, InputAddon } from '$lib';
 
-  export let id: string = 'time';
-  export let value: string = '00:00';
-  export let min: string = '';
-  export let max: string = '';
-  export let required: boolean = true;
-  export let disabled: boolean = false;
+  export let id = 'time';
+  export let value = '00:00';
+  export let min = '';
+  export let max = '';
+  export let required = true;
+  export let disabled = false;
   export let color: 'base' | 'red' | 'green' | undefined = 'base';
   export let buttonColor: ButtonColorType = 'primary';
   export let icon: ComponentType | string = `<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6v4l3.276 3.276M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
   </svg>`;
-  export let dropdown: boolean = false;
-  export let dropdownLabel: string = '';
-  export let dropdownOptions: Array<{ value: string; label: string }> = [];
+  export let type: 'default' | 'dropdown' | 'select' = 'default';
+  export let optionLabel = '';
+  export let options: { value: string; name: string }[] = [];
+  export let selectedOption = '';
+  export let size: 'sm' | 'md' | 'lg' = 'md';
+  export let divClass = 'inline-flex rounded-lg shadow-sm';
+  export let inputClass = 'block disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right focus:ring-0 focus:outline-none p-2.5 border-r-0 ';
+  export let selectClass = 'text-gray-900 disabled:text-gray-400 bg-gray-50 border border-gray-300 rounded-r-lg focus:ring-0 focus:outline-none block w-full p-2.5 border-l-1 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:disabled:text-gray-500 dark:focus:ring-primary-500 dark:focus:border-primary-500';
 
   let dropdownOpen = false;
+  const dispatch = createEventDispatcher<{
+    select: { time: string; [key: string]: string };
+  }>();
 
-  const dispatch = createEventDispatcher();
-
-  let selectedOption = dropdownOptions[0];
-
-  function handleChange(event: Event) {
+  function handleTimeChange(event: Event) {
     const newValue = (event.target as HTMLInputElement).value;
-    dispatch('change', dropdown ? { time: newValue, [dropdownLabel.toLowerCase()]: selectedOption.value } : newValue);
+    dispatchChange(newValue, selectedOption);
   }
 
-  function handleOptionChange(option: { value: string; label: string }) {
-    selectedOption = option;
-    dispatch('change', { time: value, [dropdownLabel.toLowerCase()]: option.value });
+  function handleOptionSelect(event: Event) {
+    const newSelectedOption = (event.target as HTMLSelectElement).value;
+    dispatchChange(value, newSelectedOption);
+  }
+
+  function handleDropdownSelect(option: { value: string; name: string }) {
     dropdownOpen = false;
+    dispatchChange(value, option.value);
+  }
+
+  function dispatchChange(time: string, optionValue: string) {
+    dispatch('select', {
+      time,
+      [optionLabel.toLowerCase()]: optionValue || options[0]?.value || ''
+    });
   }
 </script>
 
-{#if dropdown}
-  <ButtonGroup>
-    <Input {id} type="time" {color} class="focus:ring-0 focus:outline-none block w-full p-2.5 border-r-0" {min} {max} bind:value {required} {disabled} on:change={handleChange} />
+<ButtonGroup {size} {divClass}>
+  <Input {id} {color} type="time" defaultClass={inputClass} {min} {max} {value} {required} {disabled} on:change={handleTimeChange} />
+  {#if type === 'select'}
+    <Select defaultClass={selectClass} on:change={handleOptionSelect} items={options} value={selectedOption} />
+  {:else if type === 'dropdown'}
     <Button color={buttonColor} class="rounded-r-lg">
-      {dropdownLabel}
+      {optionLabel}
       <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
     </Button>
     <Dropdown bind:open={dropdownOpen}>
-      {#each dropdownOptions as option}
-        <DropdownItem on:click={() => handleOptionChange(option)}>
-          {option.label}
+      {#each options as option}
+        <DropdownItem on:click={() => handleDropdownSelect(option)}>
+          {option.name}
         </DropdownItem>
       {/each}
     </Dropdown>
-  </ButtonGroup>
-{:else}
-  <ButtonGroup>
-    <Input {id} type="time" class="focus:ring-0 focus:outline-none block w-full p-2.5 border-r-0" {min} {max} bind:value {required} {disabled} on:change={handleChange} />
+  {:else}
     <InputAddon>
       {#if typeof icon === 'string'}
         {@html icon}
@@ -63,8 +76,8 @@
         <svelte:component this={icon} class="w-4 h-4 text-gray-500 dark:text-gray-400" />
       {/if}
     </InputAddon>
-  </ButtonGroup>
-{/if}
+  {/if}
+</ButtonGroup>
 
 <!--
 @component
@@ -80,7 +93,12 @@
 @prop export let buttonColor: ButtonColorType = 'primary';
 @prop export let icon: ComponentType | string = `<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6v4l3.276 3.276M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/> </svg>`;
-@prop export let dropdown: boolean = false;
-@prop export let dropdownLabel: string = '';
-@prop export let dropdownOptions: Array<{ value: string; label: string }> = [];
+@prop export let type: 'default' | 'dropdown' | 'select' = 'default';
+@prop export let optionLabel: string = '';
+@prop export let options: { value: string; name: string }[] = [];
+@prop export let selectedOption: string = '';
+@prop export let size: 'sm' | 'md' | 'lg' = 'md';
+@prop export let divClass: string = 'inline-flex rounded-lg shadow-sm';
+@prop export let inputClass: string = 'block disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right focus:ring-0 focus:outline-none p-2.5 border-r-0 ';
+@prop export let selectClass: string = 'text-gray-900 disabled:text-gray-400 bg-gray-50 border border-gray-300 rounded-r-lg focus:ring-0 focus:outline-none block w-full p-2.5 border-l-1 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:disabled:text-gray-500 dark:focus:ring-primary-500 dark:focus:border-primary-500';
 -->

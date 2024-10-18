@@ -6,6 +6,7 @@ component_title: Timepicker
 dir: Forms
 description: Use the timepicker component to allow the user to select a time using a native time input element including hours and minutes
 ---
+
 <script>
   import { CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
   const components = 'Timepicker'
@@ -80,26 +81,65 @@ This example demonstrates how to use the timepicker with a dropdown for selectin
 <script>
   import { Label, Timepicker, P } from 'flowbite-svelte';
 
-  let selectedTime = { time: '12:00', duration: '30 minutes' };
+  let selectedTime = { time: '12:00', duration: '30' };
+  const durations = [
+    { value: '30', name: '30 minutes' },
+    { value: '60', name: '1 hour' },
+    { value: '120', name: '2 hours' }
+  ];
 
-  function handleTimeChange(event) {
+  function handleChange(event) {
     selectedTime = event.detail;
   }
 </script>
 
 <Label>Select Time and Duration:</Label>
 <Timepicker
-  dropdown={true}
-  dropdownLabel="Duration"
-  dropdownOptions={[
-    { value: '30', label: '30 minutes' },
-    { value: '60', label: '1 hour' },
-    { value: '120', label: '2 hours' }
-  ]}
-  on:change={handleTimeChange}
+  type="dropdown"
+  optionLabel="Duration"
+  options={durations}
+  on:select={handleChange}
+  value={selectedTime.time}
+  selectedOption={selectedTime.duration}
 />
 
 <P>Selected: {selectedTime.time}, Duration: {selectedTime.duration}</P>
+```
+
+## Timepicker with select
+
+Use this example to show a select input next to the timepicker to select an option like a timezone.
+
+```svelte example
+<script>
+  import { Label, Timepicker, P } from 'flowbite-svelte';
+ 
+  let selectedTime = { time: '12:00', timezone: 'UTC' };
+  const timezones = [
+    { value: 'UTC', name: 'UTC' },
+    { value: 'EST', name: 'Eastern Time (EST)' },
+    { value: 'CST', name: 'Central Time (CST)' },
+    { value: 'MST', name: 'Mountain Time (MST)' },
+    { value: 'PST', name: 'Pacific Time (PST)' },
+    { value: 'GMT', name: 'Greenwich Mean Time (GMT)' },
+    { value: 'CET', name: 'Central European Time (CET)' },
+  ];
+
+  function handleChange(event) {
+    selectedTime = event.detail;
+  }
+</script>
+
+<Label>Select Time and Timezone:</Label>
+<Timepicker
+  type="select"
+  optionLabel="Timezone"
+  options={timezones}
+  on:select={handleChange}
+  value={selectedTime.time}
+  selectedOption={selectedTime.timezone}
+/>
+<P>Selected: {selectedTime.time} {selectedTime.timezone}</P>
 ```
 
 ## Props
