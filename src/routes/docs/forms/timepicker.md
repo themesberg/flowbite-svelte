@@ -413,6 +413,132 @@ Use this example to select a date and time inside of a modal component based on 
 </Modal>
 ```
 
+## Drawer with timepicker
+
+Use this example to show multiple time interval selections inside of a drawer component to schedule time based on multiple entries (ie. days of the week) using the native browser time selection input element.
+
+```svelte example class="h-96 p-4"
+<script>
+  import { Button, Drawer, Label, Select, Toggle, Checkbox, Timepicker, P, Heading, Span } from 'flowbite-svelte';
+  import { InfoCircleSolid, ClockSolid, PlusOutline, TrashBinSolid } from 'flowbite-svelte-icons';
+
+  let hidden = true;
+  let businessHoursEnabled = true;
+  let selectedTimezone = '';
+  let workingDays = [
+    { day: 'Mon', enabled: true, startTime: '09:00', endTime: '17:00' },
+    { day: 'Tue', enabled: false, startTime: '09:00', endTime: '17:00' },
+    { day: 'Wed', enabled: true, startTime: '09:00', endTime: '17:00' },
+    { day: 'Thu', enabled: false, startTime: '09:00', endTime: '17:00' },
+    { day: 'Fri', enabled: false, startTime: '09:00', endTime: '17:00' },
+  ];
+
+  const timezones = [
+    { value: 'America/New_York', name: 'EST (Eastern Standard Time) - GMT-5 (New York)' },
+    { value: 'America/Los_Angeles', name: 'PST (Pacific Standard Time) - GMT-8 (Los Angeles)' },
+    { value: 'Europe/London', name: 'GMT (Greenwich Mean Time) - GMT+0 (London)' },
+    // Add more timezones as needed
+  ];
+
+  function toggleDay(index) {
+    workingDays[index].enabled = !workingDays[index].enabled;
+    workingDays = [...workingDays];
+  }
+
+  function handleTimeChange(index, isStartTime, event) {
+    const newTime = event.detail.time;
+    if (isStartTime) {
+      workingDays[index].startTime = newTime;
+    } else {
+      workingDays[index].endTime = newTime;
+    }
+    workingDays = [...workingDays];
+  }
+
+  function addInterval() {
+    workingDays = [...workingDays, { day: 'New', enabled: true, startTime: '09:00', endTime: '17:00' }];
+  }
+
+  function removeInterval(index) {
+    workingDays.splice(index, 1);
+    workingDays = [...workingDays];
+  }
+
+  function saveAll() {
+    console.log('Saving all settings:', { businessHoursEnabled, selectedTimezone, workingDays });
+    hidden = true;
+  }
+</script>
+
+<div class="text-center">
+  <Button on:click={() => (hidden = false)}>
+    <ClockSolid class="w-4 h-4 me-2" />
+    Set time schedule
+  </Button>
+</div>
+
+<Drawer bind:hidden width="w-full sm:max-w-lg md:max-w-2xl lg:max-w-4xl" id="drawer-timepicker" class="p-4">
+  <div class="flex items-center mb-6">
+    <Heading tag="h5" id="drawer-label" class="inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
+      <ClockSolid class="w-4 h-4 me-2.5" />
+      Time schedule
+    </Heading>
+    <Button class="ms-auto" color="gray" pill={true} size="xs" on:click={() => (hidden = true)}>
+      <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+      </svg>
+      <Span class="sr-only">Close menu</Span>
+    </Button>
+  </div>
+
+  <form on:submit|preventDefault={saveAll} class="space-y-6">
+    <div class="rounded-lg border border-gray-200 bg-gray-50 dark:border-gray-600 dark:bg-gray-700 p-4">
+      <div class="flex justify-between items-center mb-3">
+        <span class="text-gray-900 dark:text-white text-base font-medium">Business hours</span>
+        <Toggle bind:checked={businessHoursEnabled} />
+      </div>
+      <P class="text-sm">
+        Enable or disable business working hours for all weekly working days
+      </P>
+    </div>
+
+    <div>
+      <Label for="timezones" class="flex items-center mb-2">
+        <Span class="me-1">Select a timezone</Span>
+        <InfoCircleSolid class="w-4 h-4 text-gray-400 hover:text-gray-900 dark:hover:text-white cursor-help" />
+      </Label>
+      <Select id="timezones" bind:value={selectedTimezone} items={timezones} />
+    </div>
+
+    <div class="space-y-4">
+      {#each workingDays as { day, enabled, startTime, endTime }, index}
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between space-y-2 sm:space-y-0 sm:space-x-4">
+          <div class="flex items-center min-w-[4rem]">
+            <Checkbox on:change={() => toggleDay(index)} checked={enabled}>{day}</Checkbox>
+          </div>
+          <div class="flex items-center space-x-2 w-full sm:w-auto">
+            <Timepicker type="range" value={startTime} endValue={endTime} on:select={(e) => handleTimeChange(index, true, e)} class="w-full sm:w-28"/>
+            <Button color="light" size="sm" pill={true} on:click={() => removeInterval(index)}>
+              <TrashBinSolid class="w-4 h-4" />
+            </Button>
+          </div>
+        </div>
+      {/each}
+    </div>
+
+    <Button type="button" class="w-full" color="alternative" on:click={addInterval}>
+      <PlusOutline class="w-4 h-4 me-2" />
+      Add interval
+    </Button>
+
+    <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
+      <Button class="w-full sm:w-1/2" color="alternative" on:click={() => (hidden = true)}>Close</Button>
+      <Button type="submit" class="w-full sm:w-1/2" color="primary">Save all</Button>
+    </div>
+  </form>
+</Drawer>
+```
+
 ## Props
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
