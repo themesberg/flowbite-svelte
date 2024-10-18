@@ -73,7 +73,7 @@
       // This ensures that the floating element does not hide immediately when the mouse 
       // moves from the reference element to the floating element.
       setTimeout(() => {
-        if (ev.type === 'mouseleave' && !elements.some(hasHover)) {
+        if ((ev.type === 'mouseleave' || ev.type === 'pointerleave') && !elements.some(hasHover)) {
           open = false;
         }
       }, 100);
@@ -129,8 +129,8 @@
       ['focusin', showHandler, focusable],
       ['focusout', hideHandler, focusable],
       ['click', showHandler, clickable],
-      ['mouseenter', showHandler, hoverable],
-      ['mouseleave', hideHandler, hoverable]
+      ['pointerenter', showHandler, hoverable],
+      ['pointerleave', hideHandler, hoverable]
     ];
 
     if (triggeredBy) triggerEls = [...document.querySelectorAll<HTMLElement>(triggeredBy)];
@@ -151,7 +151,7 @@
         console.error(`Popup reference not found: '${reference}'`);
       } else {
         if (focusable) referenceEl.addEventListener('focusout', hideHandler);
-        if (hoverable) referenceEl.addEventListener('mouseleave', hideHandler);
+        if (hoverable) referenceEl.addEventListener('pointerleave', hideHandler);
       }
     } else {
       referenceEl = triggerEls[0];
@@ -169,7 +169,7 @@
 
       if (referenceEl) {
         referenceEl.removeEventListener('focusout', hideHandler);
-        referenceEl.removeEventListener('mouseleave', hideHandler);
+        referenceEl.removeEventListener('pointerleave', hideHandler);
       }
 
       document.removeEventListener('click', closeOnClickOutside);
