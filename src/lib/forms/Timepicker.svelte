@@ -14,9 +14,7 @@
   export let disabled = false;
   export let color: 'base' | 'red' | 'green' | undefined = 'base';
   export let buttonColor: ButtonColorType = 'primary';
-  export let icon: ComponentType | string = `<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6v4l3.276 3.276M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
-  </svg>`;
+  export let icon: ComponentType;
   export let type: 'default' | 'dropdown' | 'select' | 'range' | 'timerange-dropdown' | 'timerange-toggle' | 'inline-buttons' = 'default';
   export let optionLabel = '';
   export let options: { value: string; name: string }[] = [];
@@ -91,10 +89,12 @@
     {#if type === 'default'}
       <Input {id} {color} type="time" {min} {max} {required} {disabled} defaultClass="{inputClass} rounded-l-lg" bind:value on:change={(e) => handleTimeChange(e)} />
       <InputAddon class="rounded-r-lg">
-        {#if typeof icon === 'string'}
-          {@html icon}
-        {:else if icon}
+        {#if icon}
           <svelte:component this={icon} class="w-4 h-4 text-gray-500 dark:text-gray-400" />
+        {:else}
+          <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6v4l3.276 3.276M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+          </svg>
         {/if}
       </InputAddon>
     {:else if type === 'select'}
@@ -125,10 +125,12 @@
       <span class="flex items-center justify-center text-gray-500 dark:text-gray-400 px-2">-</span>
       <Input id={endId} {color} type="time" {min} {max} {required} {disabled} defaultClass="{inputClass} rounded-none" bind:value={endValue} on:change={(e) => handleTimeChange(e, true)} />
       <InputAddon class="rounded-r-lg">
-        {#if typeof icon === 'string'}
-          {@html icon}
-        {:else if icon}
+        {#if icon}
           <svelte:component this={icon} class="w-4 h-4 text-gray-500 dark:text-gray-400" />
+        {:else}
+          <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6v4l3.276 3.276M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+          </svg>
         {/if}
       </InputAddon>
     {:else if type === 'timerange-dropdown'}
@@ -197,8 +199,7 @@
 @prop export let disabled: boolean = false;
 @prop export let color: 'base' | 'red' | 'green' | undefined = 'base';
 @prop export let buttonColor: ButtonColorType = 'primary';
-@prop export let icon: ComponentType | string = `<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6v4l3.276 3.276M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/> </svg>`;
+@prop export let icon: ComponentType;
 @prop export let type: 'default' | 'dropdown' | 'select' | 'range' | 'timerange-dropdown' | 'timerange-toggle' | 'inline-buttons' = 'default';
 @prop export let optionLabel: string = '';
 @prop export let options: { value: string; name: string }[] = [];

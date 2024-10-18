@@ -13,7 +13,7 @@
     ["disabled", "boolean", "false"],
     ["color", "'base' | 'red' | 'green' | undefined", "'base'"],
     ["buttonColor", "ButtonColorType", "'primary'"],
-    ["icon", "ComponentType | string", "`<svg />`"],
+    ["icon", "ComponentType", ""],
     ["type", "'default' | 'dropdown' | 'select' | 'range' | 'timerange-dropdown' | 'timerange-toggle' | 'inline-buttons", "'default'"],
     ["optionLabel", "string", "''"],
     ["options", "{ value: string; name: string }[]", "[]"],
