@@ -16,7 +16,7 @@
   export let buttonColor: ButtonColorType = 'primary';
   export let icon: ComponentType;
   export let type: 'default' | 'dropdown' | 'select' | 'range' | 'timerange-dropdown' | 'timerange-toggle' | 'inline-buttons' = 'default';
-  export let optionLabel = '';
+  export let optionLabel = 'Options';
   export let options: { value: string; name: string }[] = [];
   export let selectedOption = '';
   export let size: 'sm' | 'md' | 'lg' = 'md';
@@ -62,7 +62,7 @@
     dispatch('select', {
       time: value,
       endTime: endValue,
-      [optionLabel.toLowerCase()]: selectedOption || options[0]?.value || ''
+      [optionLabel ? optionLabel.toLowerCase() : 'options']: selectedOption || options[0]?.value || ''
     });
   }
 
@@ -201,7 +201,7 @@
 @prop export let buttonColor: ButtonColorType = 'primary';
 @prop export let icon: ComponentType;
 @prop export let type: 'default' | 'dropdown' | 'select' | 'range' | 'timerange-dropdown' | 'timerange-toggle' | 'inline-buttons' = 'default';
-@prop export let optionLabel: string = '';
+@prop export let optionLabel: string = 'Options';
 @prop export let options: { value: string; name: string }[] = [];
 @prop export let selectedOption: string = '';
 @prop export let size: 'sm' | 'md' | 'lg' = 'md';
