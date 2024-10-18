@@ -34,12 +34,21 @@
     select: { time: string; endTime?: string; [key: string]: string };
   }>();
 
+  function timeToMinutes(time: string): number {
+    const [hours, minutes] = time.split(':').map(Number);
+    return hours * 60 + minutes;
+  }
+
   function handleTimeChange(event: Event, isEndTime = false) {
     const newValue = (event.target as HTMLInputElement).value;
+    const newMinutes = timeToMinutes(newValue);
+    const valueMinutes = timeToMinutes(value);
+    const endValueMinutes = timeToMinutes(endValue);
+
     if (isEndTime) {
-      [value, endValue] = newValue < value ? [newValue, value] : [value, newValue];
+      [value, endValue] = newMinutes < valueMinutes ? [newValue, value] : [value, newValue];
     } else {
-      [value, endValue] = newValue > endValue ? [endValue, newValue] : [newValue, endValue];
+      [value, endValue] = newMinutes > endValueMinutes ? [endValue, newValue] : [newValue, endValue];
     }
 
     if (type !== 'timerange-dropdown') {
