@@ -341,6 +341,78 @@ This is an advanced example that you can use to show the details of an event and
 </div>
 ```
 
+## Modal with timepicker
+
+Use this example to select a date and time inside of a modal component based on the Flowbite Datepicker and select a time interval using checkbox elements with predefined time values for event time scheduling.
+
+```svelte example class="h-96"
+<script>
+  import { Button, Modal, Label, Datepicker, Timepicker, Heading, P } from 'flowbite-svelte';
+  import { ClockSolid } from 'flowbite-svelte-icons';
+
+  let open = false;
+  let selectedDate = new Date();
+  let selectedTime = '';
+
+  const timeIntervals = [
+    '10:00', '10:30', '11:00', '11:30', '12:00', '12:30',
+    '13:00', '13:30', '14:00', '14:30', '15:00', '15:30'
+  ];
+
+  function handleDateSelect(event) {
+    selectedDate = event.detail;
+  }
+
+  function handleTimeSelect(event) {
+    selectedTime = event.detail.time;
+  }
+
+  function handleSave() {
+    open = false;
+  }
+</script>
+
+<Button on:click={() => (open = true)}>
+  <ClockSolid class="w-4 h-4 me-2" />
+  Schedule appointment
+</Button>
+
+{#if selectedTime}
+  <P>Appointment scheduled for {selectedDate.toDateString()} at {selectedTime}</P>
+{/if}
+
+<Modal bind:open class="w-full max-w-[23rem]">
+  <svelte:fragment slot="header">
+    <Heading tag="h5" class="mb-4 font-medium text-gray-900 dark:text-white">Schedule an appointment</Heading>
+  </svelte:fragment>
+  <div class="p-4 sm:p-5">
+    <div class="mb-4">
+      <Datepicker 
+        bind:value={selectedDate} 
+        on:select={handleDateSelect} 
+        inline 
+        class="mx-auto [&>div>div]:shadow-none [&>div>div]:bg-gray-50 [&_div>button]:bg-gray-50"
+      />
+    </div>
+    <div class="mb-4">
+      <Label class="mb-2 block">Pick your time</Label>
+      <Timepicker
+        type="inline-buttons"
+        value={selectedTime}
+        timeIntervals={timeIntervals}
+        on:select={handleTimeSelect}
+        columns={3}
+        class="mb-4"
+      />
+    </div>
+    <div class="flex items-center space-x-4">
+      <Button color="primary" class="w-full" on:click={handleSave}>Save</Button>
+      <Button color="alternative" class="w-full" on:click={() => (open = false)}>Discard</Button>
+    </div>
+  </div>
+</Modal>
+```
+
 ## Props
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
