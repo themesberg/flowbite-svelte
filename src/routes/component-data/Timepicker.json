@@ -14,7 +14,7 @@
     ["color", "'base' | 'red' | 'green' | undefined", "'base'"],
     ["buttonColor", "ButtonColorType", "'primary'"],
     ["icon", "ComponentType | string", "`<svg />`"],
-    ["type", "'default' | 'dropdown' | 'select' | 'range' | 'timerange-dropdown'", "'default'"],
+    ["type", "'default' | 'dropdown' | 'select' | 'range' | 'timerange-dropdown' | 'timerange-toggle'", "'default'"],
     ["optionLabel", "string", "''"],
     ["options", "{ value: string; name: string }[]", "[]"],
     ["selectedOption", "string", "''"],

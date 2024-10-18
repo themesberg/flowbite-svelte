@@ -192,6 +192,33 @@ This example can be used to show the timerange picker inside a dropdown only whe
 <P>Selected Range: {selectedTimerange.time} - {selectedTimerange.endTime}</P>
 ```
 
+## Timerange picker with toggle
+
+This example demonstrates a timerange picker that can be toggled on and off, allowing users to select a start and end time when the picker is visible.
+
+```svelte example class="h-96"
+<script>
+  import { Label, Timepicker, P } from 'flowbite-svelte';
+
+  let selectedTimerange = { time: '09:00', endTime: '17:00' };
+
+  function handleChange(event) {
+    selectedTimerange = event.detail;
+  }
+</script>
+
+<Label class="mb-2" for="timerange-toggle">Toggle Time Range:</Label>
+<Timepicker
+  type="timerange-toggle"
+  toggleLabel="Toggle Time Range Picker"
+  on:select={handleChange}
+  value={selectedTimerange.time}
+  endValue={selectedTimerange.endTime}
+/>
+
+<P>Selected Range: {selectedTimerange.time} - {selectedTimerange.endTime}</P>
+```
+
 ## Props
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

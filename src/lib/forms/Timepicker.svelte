@@ -2,7 +2,7 @@
   import { createEventDispatcher } from 'svelte';
   import type { ButtonColorType } from '$lib/types';
   import type { ComponentType } from 'svelte';
-  import { Dropdown, DropdownItem, Button, Input, ButtonGroup, Select, InputAddon, Label } from '$lib';
+  import { Dropdown, DropdownItem, Button, Input, ButtonGroup, Select, InputAddon, Label, Toggle } from '$lib';
 
   export let id = 'time';
   export let endId = 'end-time';
@@ -17,7 +17,7 @@
   export let icon: ComponentType | string = `<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6v4l3.276 3.276M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
   </svg>`;
-  export let type: 'default' | 'dropdown' | 'select' | 'range' | 'timerange-dropdown' = 'default';
+  export let type: 'default' | 'dropdown' | 'select' | 'range' | 'timerange-dropdown' | 'timerange-toggle' = 'default';
   export let optionLabel = '';
   export let options: { value: string; name: string }[] = [];
   export let selectedOption = '';
@@ -29,6 +29,7 @@
   export let timerangeButtonLabel = 'Save time';
 
   let dropdownOpen = false;
+  let showTimerange = false;
   const dispatch = createEventDispatcher<{
     select: { time: string; endTime?: string; [key: string]: string };
   }>();
@@ -68,6 +69,13 @@
   function applyTimerange() {
     dropdownOpen = false;
     dispatchChange();
+  }
+
+  function toggleTimerange() {
+    showTimerange = !showTimerange;
+    if (!showTimerange) {
+      dispatchChange();
+    }
   }
 </script>
 
@@ -137,6 +145,24 @@
         </Button>
       </div>
     </Dropdown>
+  {:else if type === 'timerange-toggle'}
+    <div class="flex flex-col space-y-2 w-full">
+      <div class="flex items-center justify-between">
+        <Toggle id="timerange-toggle" checked={showTimerange} on:change={toggleTimerange} />
+      </div>
+      {#if showTimerange}
+        <div class="flex space-x-4">
+          <div class="flex flex-col">
+            <Label for={id}>Start time:</Label>
+            <Input {id} {color} type="time" {min} {max} {required} {disabled} defaultClass="{inputClass} rounded-lg" bind:value on:change={(e) => handleTimeChange(e)} />
+          </div>
+          <div class="flex flex-col">
+            <Label for={endId}>End time:</Label>
+            <Input id={endId} {color} type="time" {min} {max} {required} {disabled} defaultClass="{inputClass} rounded-lg" bind:value={endValue} on:change={(e) => handleTimeChange(e, true)} />
+          </div>
+        </div>
+      {/if}
+    </div>
   {/if}
 </ButtonGroup>
 
@@ -156,7 +182,7 @@
 @prop export let buttonColor: ButtonColorType = 'primary';
 @prop export let icon: ComponentType | string = `<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6v4l3.276 3.276M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/> </svg>`;
-@prop export let type: 'default' | 'dropdown' | 'select' | 'range' | 'timerange-dropdown' = 'default';
+@prop export let type: 'default' | 'dropdown' | 'select' | 'range' | 'timerange-dropdown' | 'timerange-toggle' = 'default';
 @prop export let optionLabel: string = '';
 @prop export let options: { value: string; name: string }[] = [];
 @prop export let selectedOption: string = '';
