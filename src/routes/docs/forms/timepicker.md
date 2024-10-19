@@ -416,8 +416,8 @@ Use this example to show multiple time interval selections inside of a drawer co
 
 ```svelte example class="h-96 p-4"
 <script>
-  import { Button, Drawer, Label, Select, Toggle, Checkbox, Timepicker, P, Heading, Span } from 'flowbite-svelte';
-  import { InfoCircleSolid, ClockSolid, PlusOutline, TrashBinSolid } from 'flowbite-svelte-icons';
+  import { Button, Drawer, Label, Select, Toggle, Checkbox, Timepicker, Card, P, Heading, Span } from 'flowbite-svelte';
+  import { InfoCircleSolid, ClockSolid, PlusOutline, TrashBinSolid, CloseOutline } from 'flowbite-svelte-icons';
 
   let hidden = true;
   let businessHoursEnabled = true;
@@ -430,12 +430,18 @@ Use this example to show multiple time interval selections inside of a drawer co
     { day: 'Fri', enabled: false, startTime: '09:00', endTime: '17:00' },
   ];
 
-  const timezones = [
+   const timezones = [
     { value: 'America/New_York', name: 'EST (Eastern Standard Time) - GMT-5 (New York)' },
     { value: 'America/Los_Angeles', name: 'PST (Pacific Standard Time) - GMT-8 (Los Angeles)' },
     { value: 'Europe/London', name: 'GMT (Greenwich Mean Time) - GMT+0 (London)' },
-    // Add more timezones as needed
+    { value: 'Europe/Berlin', name: 'CET (Central European Time) - GMT+1 (Berlin)' },
+    { value: 'Asia/Tokyo', name: 'JST (Japan Standard Time) - GMT+9 (Tokyo)' },
   ];
+
+  $: sortedWorkingDays = [...workingDays].sort((a, b) => {
+    const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+    return days.indexOf(a.day) - days.indexOf(b.day);
+  });
 
   function toggleDay(index) {
     workingDays[index].enabled = !workingDays[index].enabled;
@@ -453,84 +459,149 @@ Use this example to show multiple time interval selections inside of a drawer co
   }
 
   function addInterval() {
-    workingDays = [...workingDays, { day: 'New', enabled: true, startTime: '09:00', endTime: '17:00' }];
+    const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+    const existingDays = new Set(workingDays.map(d => d.day));
+    const availableDays = days.filter(d => !existingDays.has(d));
+    
+    if (availableDays.length > 0) {
+      workingDays = [...workingDays, { 
+        day: availableDays[0], 
+        enabled: true, 
+        startTime: '09:00', 
+        endTime: '17:00' 
+      }];
+    }
   }
 
   function removeInterval(index) {
-    workingDays.splice(index, 1);
-    workingDays = [...workingDays];
+    workingDays = workingDays.filter((_, i) => i !== index);
   }
 
   function saveAll() {
-    console.log('Saving all settings:', { businessHoursEnabled, selectedTimezone, workingDays });
+    console.log('Saving settings:', { businessHoursEnabled, selectedTimezone, workingDays });
     hidden = true;
   }
+
+  const timepickerClasses = {
+    divClass: 'inline-flex rounded-lg shadow-sm text-xs sm:text-sm w-full sm:w-auto',
+    inputClass: 'block disabled:cursor-not-allowed disabled:opacity-50 p-1.5 sm:p-2.5 text-xs sm:text-sm border-r-0 focus:ring-0 focus:outline-none'
+  };
 </script>
 
-<div class="text-center">
-  <Button on:click={() => (hidden = false)}>
+<div class="flex justify-center">
+  <Button on:click={() => (hidden = false)} class="transform transition-all hover:scale-105">
     <ClockSolid class="w-4 h-4 me-2" />
-    Set time schedule
+    Set Time Schedule
   </Button>
 </div>
 
-<Drawer bind:hidden width="w-full sm:max-w-lg md:max-w-2xl lg:max-w-4xl" id="drawer-timepicker" class="p-4">
-  <div class="flex items-center mb-6">
-    <Heading tag="h5" id="drawer-label" class="inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
-      <ClockSolid class="w-4 h-4 me-2.5" />
+<Drawer 
+  bind:hidden 
+  width="w-96"
+  class="p-6 bg-gray-50 dark:bg-gray-800"
+  id="drawer-timepicker"
+>
+  <div class="flex items-center justify-between mb-8">
+    <Heading tag="h5" id="drawer-label" class="inline-flex items-center text-base font-semibold text-gray-800 dark:text-white uppercase">
+      <ClockSolid class="w-6 h-6" />
       Time schedule
     </Heading>
-    <Button class="ms-auto" color="gray" pill={true} size="xs" on:click={() => (hidden = true)}>
-      <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-      </svg>
-      <Span class="sr-only">Close menu</Span>
+    <Button color="gray" pill={true} size="sm" on:click={() => (hidden = true)}>
+      <CloseOutline class="w-4 h-4 text-gray-500 dark:text-gray-400" />
     </Button>
   </div>
 
-  <form on:submit|preventDefault={saveAll} class="space-y-6">
-    <div class="rounded-lg border border-gray-200 bg-gray-50 dark:border-gray-600 dark:bg-gray-700 p-4">
-      <div class="flex justify-between items-center mb-3">
-        <span class="text-gray-900 dark:text-white text-base font-medium">Business hours</span>
-        <Toggle bind:checked={businessHoursEnabled} />
+  <form on:submit|preventDefault={saveAll} class="space-y-8">
+    <Card class="transition-shadow hover:shadow-lg">
+      <div class="flex justify-between items-center">
+        <div>
+          <Heading tag="h6" class="text-lg font-semibold text-gray-900 dark:text-white">
+            Business Hours
+          </Heading>
+          <P class="text-sm">
+            Enable or disable business hours scheduling
+          </P>
+        </div>
+        <Toggle bind:checked={businessHoursEnabled} class="scale-110" />
       </div>
-      <P class="text-sm">
-        Enable or disable business working hours for all weekly working days
-      </P>
-    </div>
+    </Card>
 
-    <div>
-      <Label for="timezones" class="flex items-center mb-2">
-        <Span class="me-1">Select a timezone</Span>
-        <InfoCircleSolid class="w-4 h-4 text-gray-400 hover:text-gray-900 dark:hover:text-white cursor-help" />
+    <div class="space-y-2">
+      <Label for="timezones" class="flex items-center gap-2 text-lg">
+        Timezone
+        <InfoCircleSolid class="w-4 h-4 text-gray-400 cursor-help" />
       </Label>
-      <Select id="timezones" bind:value={selectedTimezone} items={timezones} />
+      <Select 
+        id="timezones" 
+        bind:value={selectedTimezone} 
+        items={timezones}
+        class="w-full"
+      />
     </div>
 
-    <div class="space-y-4">
-      {#each workingDays as { day, enabled, startTime, endTime }, index}
-        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between space-y-2 sm:space-y-0 sm:space-x-4">
-          <div class="flex items-center min-w-[4rem]">
-            <Checkbox on:change={() => toggleDay(index)} checked={enabled}>{day}</Checkbox>
+    <div class="space-y-2 sm:space-y-4">
+      {#each sortedWorkingDays as { day, enabled, startTime, endTime }, index}
+        <div class="flex flex-col gap-2 p-2 bg-white dark:bg-gray-700 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-center min-w-[65px]">
+            <Checkbox
+              on:change={() => toggleDay(index)}
+              checked={enabled}
+              class="scale-100"
+            >
+              <Span class="ml-2 text-sm truncate">{day}</Span>
+            </Checkbox>
           </div>
-          <div class="flex items-center space-x-2 w-full sm:w-auto">
-            <Timepicker type="range" value={startTime} endValue={endTime} on:select={(e) => handleTimeChange(index, true, e)} class="w-full sm:w-28"/>
-            <Button color="light" size="sm" pill={true} on:click={() => removeInterval(index)}>
-              <TrashBinSolid class="w-4 h-4" />
+          <div class="flex items-center gap-2 flex-1">
+            <Timepicker
+              type="range"
+              value={startTime}
+              endValue={endTime}
+              on:select={(e) => handleTimeChange(index, true, e)}
+              divClass={timepickerClasses.divClass}
+              inputClass={timepickerClasses.inputClass}
+              size="sm"
+            />
+            <Button
+              color="red"
+              size="xs"
+              sm:size="sm"
+              pill={true}
+              on:click={() => removeInterval(index)}
+              class="hover:bg-red-600 shrink-0"
+            >
+              <TrashBinSolid class="w-3 h-3 sm:w-4 sm:h-4" />
             </Button>
           </div>
         </div>
       {/each}
     </div>
 
-    <Button type="button" class="w-full" color="alternative" on:click={addInterval}>
-      <PlusOutline class="w-4 h-4 me-2" />
-      Add interval
+    <Button 
+      type="button" 
+      class="w-full transition-all hover:shadow-lg" 
+      color="alternative" 
+      on:click={addInterval}
+      disabled={workingDays.length >= 7}
+    >
+      <PlusOutline class="w-5 h-5 me-2" />
+      Add Working Day
     </Button>
 
-    <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
-      <Button class="w-full sm:w-1/2" color="alternative" on:click={() => (hidden = true)}>Close</Button>
-      <Button type="submit" class="w-full sm:w-1/2" color="primary">Save all</Button>
+    <div class="flex gap-4">
+      <Button 
+        class="w-1/2" 
+        color="alternative" 
+        on:click={() => (hidden = true)}
+      >
+        Cancel
+      </Button>
+      <Button 
+        type="submit" 
+        class="w-1/2" 
+        color="primary"
+      >
+        Save Changes
+      </Button>
     </div>
   </form>
 </Drawer>
