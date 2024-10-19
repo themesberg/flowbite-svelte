@@ -2,9 +2,7 @@
   import { createEventDispatcher, onMount } from 'svelte';
   import { fade } from 'svelte/transition';
   import { Button } from '$lib';
-  import { ChevronLeftOutline, ChevronRightOutline, CalendarMonthSolid } from 'flowbite-svelte-icons';
 
-  // Props
   export let value: Date | null = null;
   export let defaultDate: Date | null = null;
   export let range: boolean = false;
@@ -252,7 +250,9 @@
     <div class="relative">
       <input bind:this={inputElement} type="text" class="w-full px-4 py-2 text-sm border rounded-md focus:outline-none dark:bg-gray-700 dark:text-white dark:border-gray-600 {getFocusRingClass(color)} {inputClass}" {placeholder} value={range ? `${formatDate(rangeFrom)} - ${formatDate(rangeTo)}` : formatDate(value)} on:focus={() => (isOpen = true)} on:input={handleInputChange} on:keydown={handleInputKeydown} {disabled} {required} aria-haspopup="dialog" />
       <button type="button" class="absolute inset-y-0 right-0 flex items-center px-3 text-gray-500 dark:text-gray-400 focus:outline-none" on:click={() => (isOpen = !isOpen)} {disabled} aria-label={isOpen ? 'Close date picker' : 'Open date picker'}>
-        <CalendarMonthSolid class="w-5 h-5" />
+        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"></path>
+        </svg>
       </button>
     </div>
   {/if}
@@ -273,13 +273,13 @@
         {/if}
         <div class="flex items-center justify-between mb-4">
           <Button on:click={() => changeMonth(-1)} {color} size="sm" aria-label="Previous month">
-            <ChevronLeftOutline class="w-4 h-4" />
+            <svg class="w-3 h-3 rtl:rotate-180 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"></path></svg>
           </Button>
           <h3 class="text-lg font-semibold dark:text-white" aria-live="polite">
             {currentMonth.toLocaleString(locale, { month: 'long', year: 'numeric' })}
           </h3>
           <Button on:click={() => changeMonth(1)} {color} size="sm" aria-label="Next month">
-            <ChevronRightOutline class="w-4 h-4" />
+            <svg class="w-3 h-3 rtl:rotate-180 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"></path></svg>
           </Button>
         </div>
         <div class="grid grid-cols-7 gap-1" role="grid">

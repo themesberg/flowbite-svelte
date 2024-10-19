@@ -2,14 +2,5 @@
   "name": "Avatar",
   "slots": [],
   "events": [],
-  "props": [
-    ["href?", "string", "undefined"],
-    ["src?", "string", "''"],
-    ["rounded?", "boolean", "false"],
-    ["border?", "boolean", "false"],
-    ["stacked?", "boolean", "false"],
-    ["dot?", "object | undefined", "undefined"],
-    ["alt?", "string", "''"],
-    ["size?", "'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none'", ""]
-  ]
+  "props": []
 }

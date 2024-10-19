@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.47.1
+
+### Patch Changes
+
+- fix: remove flowbite-svelte-icons from Datepicker ([`e017ac0`](https://github.com/themesberg/flowbite-svelte/commit/e017ac075eab02067890db40c2e11d3f03e8a79a))
+
 ## 0.47.0
 
 ### Minor Changes
