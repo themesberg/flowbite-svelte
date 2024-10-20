@@ -1,20 +1,8 @@
 {
   "name": "Footer",
   "props": [
-    [
-      "children",
-      "Snippet",
-      ""
-    ],
-    [
-      "footerType",
-      "\"default\" | \"sticky\" | \"sitemap\" | \"socialmedia\" | \"logo\" | undefined",
-      "\"default\""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ]
+    ["children", "Snippet", ""],
+    ["footerType", "\"default\" | \"sticky\" | \"sitemap\" | \"socialmedia\" | \"logo\" | undefined", "\"default\""],
+    ["class", "string", ""]
   ]
 }

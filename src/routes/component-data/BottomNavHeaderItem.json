@@ -1,20 +1,8 @@
 {
   "name": "BottomNavHeaderItem",
   "props": [
-    [
-      "itemName",
-      "string",
-      ""
-    ],
-    [
-      "active",
-      "boolean",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ]
+    ["itemName", "string", ""],
+    ["active", "boolean", ""],
+    ["class", "string", ""]
   ]
 }

@@ -1,80 +1,20 @@
 {
   "name": "Badge",
   "props": [
-    [
-      "children",
-      "Snippet",
-      ""
-    ],
-    [
-      "icon",
-      "Snippet",
-      ""
-    ],
-    [
-      "badgeStatus",
-      "boolean",
-      "$bindable(true)"
-    ],
-    [
-      "color",
-      "\"primary\" | \"secondary\" | \"gray\" | \"red\" | \"orange\" | \"amber\" | \"yellow\" | \"lime\" | \"green\" | \"emerald\" | \"teal\" | \"cyan\" | \"sky\" | \"blue\" | \"indigo\" | \"violet\" | \"purple\" | \"fuchsia\" | \"pink\" | \"rose\"",
-      "\"primary\""
-    ],
-    [
-      "large",
-      "boolean",
-      "false"
-    ],
-    [
-      "dismissable",
-      "boolean",
-      "false"
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ],
-    [
-      "border",
-      "boolean",
-      ""
-    ],
-    [
-      "href",
-      "HTMLAnchorAttributes[\"href\"]",
-      ""
-    ],
-    [
-      "target",
-      "HTMLAnchorAttributes[\"target\"]",
-      ""
-    ],
-    [
-      "rounded",
-      "boolean",
-      ""
-    ],
-    [
-      "transition",
-      "TransitionFunc",
-      "fade"
-    ],
-    [
-      "params",
-      "ParamsType",
-      ""
-    ],
-    [
-      "aClass",
-      "string",
-      ""
-    ],
-    [
-      "onclick",
-      "() => void",
-      ""
-    ]
+    ["children", "Snippet", ""],
+    ["icon", "Snippet", ""],
+    ["badgeStatus", "boolean", "$bindable(true)"],
+    ["color", "\"primary\" | \"secondary\" | \"gray\" | \"red\" | \"orange\" | \"amber\" | \"yellow\" | \"lime\" | \"green\" | \"emerald\" | \"teal\" | \"cyan\" | \"sky\" | \"blue\" | \"indigo\" | \"violet\" | \"purple\" | \"fuchsia\" | \"pink\" | \"rose\"", "\"primary\""],
+    ["large", "boolean", "false"],
+    ["dismissable", "boolean", "false"],
+    ["class", "string", ""],
+    ["border", "boolean", ""],
+    ["href", "HTMLAnchorAttributes[\"href\"]", ""],
+    ["target", "HTMLAnchorAttributes[\"target\"]", ""],
+    ["rounded", "boolean", ""],
+    ["transition", "TransitionFunc", "fade"],
+    ["params", "ParamsType", ""],
+    ["aClass", "string", ""],
+    ["onclick", "() => void", ""]
   ]
 }
