@@ -13,7 +13,9 @@
   {/if}
   <input type="checkbox" bind:checked {value} aria-describedby={aria_describedby} {...restProps} {disabled} class={input({ class: inputClass })} />
   <span class={span({ class: spanClass })}></span>
-  {@render children()}
+  {#if children}
+    {@render children()}
+  {/if}
 </Label>
 
 <!--

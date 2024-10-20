@@ -41,7 +41,7 @@
 @props:reverse: boolean = false;
 @props:img: {
   src: string | undefined | null;
-@props:padding: "sm" | "lg" | "md" | "xl" | "xs" | undefined = "lg";
+@props:padding: "sm" | "lg" | "md" | "xl" | "xs" | "none" | undefined = "lg";
 @props:size: "sm" | "md" | "lg" | "xl" | "xs" | undefined = "sm";
 @props:class: string;
 @props:imgClass: string;

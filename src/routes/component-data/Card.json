@@ -38,7 +38,7 @@
     ],
     [
       "padding",
-      "\"sm\" | \"lg\" | \"md\" | \"xl\" | \"xs\" | undefined",
+      "\"sm\" | \"lg\" | \"md\" | \"xl\" | \"xs\" | \"none\" | undefined",
       "\"lg\""
     ],
     [

@@ -7,7 +7,7 @@ type SizeType = "default" | "small" | "large" | undefined;
 type ToggleColor = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined;
 
 interface ToggleProps extends HTMLInputAttributes {
-  children: Snippet;
+  children?: Snippet;
   leftLabel?: Snippet;
   toggleSize?: SizeType;
   value?: string | number;

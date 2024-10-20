@@ -51,7 +51,8 @@ export const card = tv({
       sm: { content: "p-4 md:p-6" },
       md: { content: "p-4 sm:p-5 md:p-7" },
       lg: { content: "p-4 sm:p-6 md:p-8" },
-      xl: { content: "p-4 sm:p-8 md:p-10" }
+      xl: { content: "p-4 sm:p-8 md:p-10" },
+      none: { content: "p-0" }
     },
     horizontal: {
       true: {
