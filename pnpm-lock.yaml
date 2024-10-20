@@ -35,16 +35,16 @@ importers:
         version: 2.11.8
       '@sveltejs/adapter-auto':
         specifier: ^3.2.5
-        version: 3.2.5(@sveltejs/kit@2.7.2(@sveltejs/vite-plugin-svelte@4.0.0-next.7(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7)))(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7)))
+        version: 3.2.5(@sveltejs/kit@2.7.2(@sveltejs/vite-plugin-svelte@4.0.0(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7)))(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7)))
       '@sveltejs/kit':
         specifier: ^2.7.2
-        version: 2.7.2(@sveltejs/vite-plugin-svelte@4.0.0-next.7(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7)))(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7))
+        version: 2.7.2(@sveltejs/vite-plugin-svelte@4.0.0(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7)))(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7))
       '@sveltejs/package':
         specifier: ^2.3.5
         version: 2.3.5(svelte@5.0.2)(typescript@5.6.3)
       '@sveltejs/vite-plugin-svelte':
-        specifier: 4.0.0-next.7
-        version: 4.0.0-next.7(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7))
+        specifier: 4.0.0
+        version: 4.0.0(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7))
       '@svitejs/changesets-changelog-github-compact':
         specifier: ^1.2.0
         version: 1.2.0
@@ -64,8 +64,8 @@ importers:
         specifier: ^9.1.0
         version: 9.1.0(eslint@9.13.0(jiti@1.21.6))
       eslint-plugin-svelte:
-        specifier: 2.44.1
-        version: 2.44.1(eslint@9.13.0(jiti@1.21.6))(svelte@5.0.2)
+        specifier: 2.45.1
+        version: 2.45.1(eslint@9.13.0(jiti@1.21.6))(svelte@5.0.2)
       flowbite-svelte-icons:
         specifier: 2.0.0-next.16
         version: 2.0.0-next.16(svelte@5.0.2)(tailwind-merge@2.5.4)(tailwindcss@3.4.14)
@@ -94,8 +94,8 @@ importers:
         specifier: ^0.1.3
         version: 0.1.3(svelte@5.0.2)
       runes-meta-tags:
-        specifier: ^0.3.2
-        version: 0.3.2(svelte@5.0.2)
+        specifier: ^0.4.0
+        version: 0.4.0(svelte@5.0.2)
       svelte:
         specifier: 5.0.2
         version: 5.0.2
@@ -704,8 +704,8 @@ packages:
       svelte: ^5.0.0-next.96 || ^5.0.0
       vite: ^5.0.0
 
-  '@sveltejs/vite-plugin-svelte@4.0.0-next.7':
-    resolution: {integrity: sha512-yMUnAqquoayvBDztk1rWUgdtvjv7YcHgopCAB7sWl9SQht8U/7lqwTlJU0ZTAY09pFFRe6bbakd7YoiyyIvJiA==}
+  '@sveltejs/vite-plugin-svelte@4.0.0':
+    resolution: {integrity: sha512-kpVJwF+gNiMEsoHaw+FJL76IYiwBikkxYU83+BpqQLdVMff19KeRKLd2wisS8niNBMJ2omv5gG+iGDDwd8jzag==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22}
     peerDependencies:
       svelte: ^5.0.0-next.96 || ^5.0.0
@@ -1052,8 +1052,8 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
-  eslint-plugin-svelte@2.44.1:
-    resolution: {integrity: sha512-w6wkoJPw1FJKFtM/2oln21rlu5+HTd2CSkkzhm32A+trNoW2EYQqTQAbDTU6k2GI/6Vh64rBHYQejqEgDld7fw==}
+  eslint-plugin-svelte@2.45.1:
+    resolution: {integrity: sha512-mYAKNDRji0YWl7o00KQi0enREcrtzcN7xwK/8lwk5uLRoKLjzPXc+WjngsYpPV35I3AF7UlXc1+JfyNMJS+njA==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0-0 || ^9.0.0-0
@@ -1829,8 +1829,8 @@ packages:
     peerDependencies:
       svelte: ^5.0.0
 
-  runes-meta-tags@0.3.2:
-    resolution: {integrity: sha512-6uL9R7nFcX+ZUzzYR3CdeAZ+fUqnMK3Y/vkUkCPWUUPWVftvm5+BytT3MYU9arON8VJBI7lzb3Qg6lahAqXTOA==}
+  runes-meta-tags@0.4.0:
+    resolution: {integrity: sha512-MDw7tseN2B6F5nn3k7gfr9zgstNK/RO+FDUBjuemOjltjDDQYswvPMeIQGXzsYc8yWqf8t/K8vcHMBD+n5wPnw==}
     peerDependencies:
       svelte: ^5.0.0
 
@@ -1935,8 +1935,8 @@ packages:
       svelte: ^4.0.0 || ^5.0.0-next.0
       typescript: '>=5.0.0'
 
-  svelte-eslint-parser@0.41.1:
-    resolution: {integrity: sha512-08ndI6zTghzI8SuJAFpvMbA/haPSGn3xz19pjre19yYMw8Nw/wQJ2PrZBI/L8ijGTgtkWCQQiLLy+Z1tfaCwNA==}
+  svelte-eslint-parser@0.42.0:
+    resolution: {integrity: sha512-e7LyqFPTuF43ZYhKOf0Gq1lzP+G64iWVJXAIcwVxohGx5FFyqdUkw7DEXNjZ+Fm+TAA98zPmDqWvgD1OpyMi5A==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       svelte: ^3.37.0 || ^4.0.0 || ^5.0.0-next.191
@@ -2672,14 +2672,14 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.24.0':
     optional: true
 
-  '@sveltejs/adapter-auto@3.2.5(@sveltejs/kit@2.7.2(@sveltejs/vite-plugin-svelte@4.0.0-next.7(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7)))(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7)))':
+  '@sveltejs/adapter-auto@3.2.5(@sveltejs/kit@2.7.2(@sveltejs/vite-plugin-svelte@4.0.0(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7)))(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7)))':
     dependencies:
-      '@sveltejs/kit': 2.7.2(@sveltejs/vite-plugin-svelte@4.0.0-next.7(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7)))(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7))
+      '@sveltejs/kit': 2.7.2(@sveltejs/vite-plugin-svelte@4.0.0(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7)))(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7))
       import-meta-resolve: 4.1.0
 
-  '@sveltejs/kit@2.7.2(@sveltejs/vite-plugin-svelte@4.0.0-next.7(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7)))(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7))':
+  '@sveltejs/kit@2.7.2(@sveltejs/vite-plugin-svelte@4.0.0(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7)))(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 4.0.0-next.7(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7))
+      '@sveltejs/vite-plugin-svelte': 4.0.0(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7))
       '@types/cookie': 0.6.0
       cookie: 0.6.0
       devalue: 5.1.1
@@ -2706,18 +2706,18 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@sveltejs/vite-plugin-svelte-inspector@3.0.0(@sveltejs/vite-plugin-svelte@4.0.0-next.7(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7)))(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7))':
+  '@sveltejs/vite-plugin-svelte-inspector@3.0.0(@sveltejs/vite-plugin-svelte@4.0.0(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7)))(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 4.0.0-next.7(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7))
+      '@sveltejs/vite-plugin-svelte': 4.0.0(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7))
       debug: 4.3.7
       svelte: 5.0.2
       vite: 5.4.9(@types/node@22.7.7)
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte@4.0.0-next.7(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7))':
+  '@sveltejs/vite-plugin-svelte@4.0.0(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 3.0.0(@sveltejs/vite-plugin-svelte@4.0.0-next.7(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7)))(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7))
+      '@sveltejs/vite-plugin-svelte-inspector': 3.0.0(@sveltejs/vite-plugin-svelte@4.0.0(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7)))(svelte@5.0.2)(vite@5.4.9(@types/node@22.7.7))
       debug: 4.3.7
       deepmerge: 4.3.1
       kleur: 4.1.5
@@ -3103,7 +3103,7 @@ snapshots:
     dependencies:
       eslint: 9.13.0(jiti@1.21.6)
 
-  eslint-plugin-svelte@2.44.1(eslint@9.13.0(jiti@1.21.6))(svelte@5.0.2):
+  eslint-plugin-svelte@2.45.1(eslint@9.13.0(jiti@1.21.6))(svelte@5.0.2):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@9.13.0(jiti@1.21.6))
       '@jridgewell/sourcemap-codec': 1.5.0
@@ -3116,7 +3116,7 @@ snapshots:
       postcss-safe-parser: 6.0.0(postcss@8.4.47)
       postcss-selector-parser: 6.1.2
       semver: 7.6.3
-      svelte-eslint-parser: 0.41.1(svelte@5.0.2)
+      svelte-eslint-parser: 0.42.0(svelte@5.0.2)
     optionalDependencies:
       svelte: 5.0.2
     transitivePeerDependencies:
@@ -3792,8 +3792,9 @@ snapshots:
     dependencies:
       svelte: 5.0.2
 
-  runes-meta-tags@0.3.2(svelte@5.0.2):
+  runes-meta-tags@0.4.0(svelte@5.0.2):
     dependencies:
+      deepmerge: 4.3.1
       svelte: 5.0.2
 
   sade@1.8.1:
@@ -3891,7 +3892,7 @@ snapshots:
     transitivePeerDependencies:
       - picomatch
 
-  svelte-eslint-parser@0.41.1(svelte@5.0.2):
+  svelte-eslint-parser@0.42.0(svelte@5.0.2):
     dependencies:
       eslint-scope: 7.2.2
       eslint-visitor-keys: 3.4.3
