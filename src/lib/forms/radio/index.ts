@@ -13,6 +13,7 @@ interface RadioProps<T> extends HTMLInputAttributes {
   value?: T;
   inputClass?: string;
   labelClass?: string;
+  hidden?: boolean;
 }
 
 export { Radio, radio, type RadioProps, type RadioColorType };
