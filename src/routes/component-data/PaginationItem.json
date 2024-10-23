@@ -1,10 +1,30 @@
 {
   "name": "PaginationItem",
   "props": [
-    ["children", "Snippet", ""],
-    ["size", "\"default\" | \"large\" | undefined", ""],
-    ["class", "string", ""],
-    ["href", "string", ""],
-    ["active", "boolean", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "size",
+      "\"default\" | \"large\" | undefined",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "href",
+      "string",
+      ""
+    ],
+    [
+      "active",
+      "boolean",
+      ""
+    ]
   ]
 }

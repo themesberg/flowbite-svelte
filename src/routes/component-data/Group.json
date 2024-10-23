@@ -1,10 +1,30 @@
 {
   "name": "Group",
   "props": [
-    ["children", "Snippet", ""],
-    ["divClass", "string", ""],
-    ["timeClass", "string", ""],
-    ["date", "Date | string", ""],
-    ["olClass", "string", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "divClass",
+      "string",
+      ""
+    ],
+    [
+      "timeClass",
+      "string",
+      ""
+    ],
+    [
+      "date",
+      "Date | string",
+      ""
+    ],
+    [
+      "olClass",
+      "string",
+      ""
+    ]
   ]
 }

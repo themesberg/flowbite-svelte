@@ -1,8 +1,20 @@
 {
   "name": "TableBody",
   "props": [
-    ["children", "Snippet", ""],
-    ["bodyItems", "CellValue[] | Record<string, CellValue>[]", ""],
-    ["class", "string", ""]
+    [
+      "children",
+      "Snippet",
+      ""
+    ],
+    [
+      "bodyItems",
+      "CellValue[] | Record<string, CellValue>[]",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

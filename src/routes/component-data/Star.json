@@ -1,13 +1,45 @@
 {
   "name": "Star",
   "props": [
-    ["fillPercent", "number", "100"],
-    ["fillColor", "string", "\"#F5CA14\""],
-    ["strokeColor", "string", "\"#F5CA14\""],
-    ["size", "number", "24"],
-    ["ariaLabel", "string", "\"star\""],
-    ["id", "string", "idGenerator()"],
-    ["role", "string", "\"img\""],
-    ["svgClass", "string", ""]
+    [
+      "fillPercent",
+      "number",
+      "100"
+    ],
+    [
+      "fillColor",
+      "string",
+      "\"#F5CA14\""
+    ],
+    [
+      "strokeColor",
+      "string",
+      "\"#F5CA14\""
+    ],
+    [
+      "size",
+      "number",
+      "24"
+    ],
+    [
+      "ariaLabel",
+      "string",
+      "\"star\""
+    ],
+    [
+      "id",
+      "string",
+      "idGenerator()"
+    ],
+    [
+      "role",
+      "string",
+      "\"img\""
+    ],
+    [
+      "svgClass",
+      "string",
+      ""
+    ]
   ]
 }

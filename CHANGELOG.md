@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.23
+
+### Patch Changes
+
+- feat: Tooltip click and external control ([`9d6683d`](https://github.com/shinokada/svelte-5-ui-lib/commit/9d6683dc8ab7d48c25bcc196820c17c9e9f2209d))
+
 ## 0.9.22
 
 ### Patch Changes

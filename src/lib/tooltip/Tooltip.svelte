@@ -166,3 +166,19 @@
     {#if arrow}<div bind:this={arrowEl} class={arrowBase({ arrow, position })}></div>{/if}
   </div>
 {/if}
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
+## Props
+@props: children: Snippet;
+@props:color: "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | "default" | undefined = "default";
+@props:showOn: "hover" | "click" = "hover";
+@props:arrow: boolean = true;
+@props:offset: number = 0;
+@props:triggeredBy: string;
+@props:position: "top" | "bottom" | "left" | "right" = "top";
+@props:class: string;
+@props:visible: boolean = false;
+@props:reference: string;
+-->
