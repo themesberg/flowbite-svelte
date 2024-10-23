@@ -19,6 +19,7 @@
   }) as Record<string, string>;
 
   const exampleArr = [
+    { name: "Show on click", component: ExampleComponents.ShowOnClick },
     { name: "External reference", component: ExampleComponents.ExternalReference },
     { name: "Inline", component: ExampleComponents.Inline }
   ];

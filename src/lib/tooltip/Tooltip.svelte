@@ -2,7 +2,7 @@
   import { type TooltipProps as Props, tooltip } from ".";
   import { onDestroy } from "svelte";
 
-  let { children, color = "default", arrow = true, offset = 0, triggeredBy, position = "top", class: className, reference, ...restProps }: Props = $props();
+  let { children, color = "default", showOn = "hover", arrow = true, offset = 0, triggeredBy, position = "top", class: className, visible = false, reference, ...restProps }: Props = $props();
 
   let { base, arrowBase } = $derived(tooltip({ color, arrow, position }));
 
@@ -10,20 +10,31 @@
   let triggerElement: HTMLElement | null = null;
   let referenceElement: HTMLElement | null = null;
   let arrowEl: HTMLElement | null = $state(null);
-  let visible = $state(false);
-  let positioned = $state(false);
 
   const showTooltip = () => {
     visible = true;
     setTimeout(() => {
       positionTooltip();
-      positioned = true;
     }, 0);
   };
 
   const hideTooltip = () => {
     visible = false;
-    positioned = false;
+  };
+
+  const toggleTooltip = () => {
+    visible = !visible;
+    if (visible) {
+      setTimeout(() => {
+        positionTooltip();
+      }, 0);
+    }
+  };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (showOn === "click" && visible && tooltipElement && triggerElement && !tooltipElement.contains(event.target as Node) && !triggerElement.contains(event.target as Node)) {
+      hideTooltip();
+    }
   };
 
   const positionTooltip = () => {
@@ -87,8 +98,13 @@
     referenceElement = reference ? document.querySelector(reference) : triggerElement;
 
     if (triggerElement) {
-      triggerElement.addEventListener("mouseenter", showTooltip);
-      triggerElement.addEventListener("mouseleave", hideTooltip);
+      if (showOn === "hover") {
+        triggerElement.addEventListener("mouseenter", showTooltip);
+        triggerElement.addEventListener("mouseleave", hideTooltip);
+      } else if (showOn === "click") {
+        triggerElement.addEventListener("click", toggleTooltip);
+        document.addEventListener("click", handleClickOutside);
+      }
     }
 
     const handlePositionUpdate = () => {
@@ -102,8 +118,13 @@
 
     onDestroy(() => {
       if (triggerElement) {
-        triggerElement.removeEventListener("mouseenter", showTooltip);
-        triggerElement.removeEventListener("mouseleave", hideTooltip);
+        if (showOn === "hover") {
+          triggerElement.removeEventListener("mouseenter", showTooltip);
+          triggerElement.removeEventListener("mouseleave", hideTooltip);
+        } else if (showOn === "click") {
+          triggerElement.removeEventListener("click", toggleTooltip);
+          document.removeEventListener("click", handleClickOutside);
+        }
       }
       window.removeEventListener("resize", handlePositionUpdate);
       window.removeEventListener("scroll", handlePositionUpdate, true);
@@ -112,7 +133,7 @@
 </script>
 
 {#if visible}
-  <div role="tooltip" bind:this={tooltipElement} {...restProps} class={`${base({ className })} ${positioned ? "visible opacity-100" : "invisible opacity-0"} transition-opacity duration-200`}>
+  <div role="tooltip" bind:this={tooltipElement} {...restProps} class={`${base({ className })} ${visible ? "visible opacity-100" : "invisible opacity-0"} transition-opacity duration-200`}>
     {@render children()}
     {#if arrow}<div bind:this={arrowEl} class={arrowBase({ arrow, position })}></div>{/if}
   </div>
