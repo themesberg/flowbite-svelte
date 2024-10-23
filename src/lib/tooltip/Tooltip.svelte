@@ -4,6 +4,12 @@
 
   let { children, color = "default", showOn = "hover", arrow = true, offset = 0, triggeredBy, position = "top", class: className, visible = false, reference, ...restProps }: Props = $props();
 
+  let isVisible = $state(visible);
+
+  $effect(() => {
+    isVisible = visible;
+  });
+
   let { base, arrowBase } = $derived(tooltip({ color, arrow, position }));
 
   let tooltipElement: HTMLElement | null = $state(null);
@@ -12,19 +18,22 @@
   let arrowEl: HTMLElement | null = $state(null);
 
   const showTooltip = () => {
-    visible = true;
+    if (!triggeredBy) return; // Only handle manual show/hide when triggeredBy is present
+    isVisible = true;
     setTimeout(() => {
       positionTooltip();
     }, 0);
   };
 
   const hideTooltip = () => {
-    visible = false;
+    if (!triggeredBy) return; // Only handle manual show/hide when triggeredBy is present
+    isVisible = false;
   };
 
   const toggleTooltip = () => {
-    visible = !visible;
-    if (visible) {
+    if (!triggeredBy) return; // Only handle manual show/hide when triggeredBy is present
+    isVisible = !isVisible;
+    if (isVisible) {
       setTimeout(() => {
         positionTooltip();
       }, 0);
@@ -32,15 +41,23 @@
   };
 
   const handleClickOutside = (event: MouseEvent) => {
-    if (showOn === "click" && visible && tooltipElement && triggerElement && !tooltipElement.contains(event.target as Node) && !triggerElement.contains(event.target as Node)) {
+    if (showOn === "click" && isVisible && tooltipElement && triggerElement && !tooltipElement.contains(event.target as Node) && !triggerElement.contains(event.target as Node)) {
       hideTooltip();
     }
   };
 
   const positionTooltip = () => {
-    if (!tooltipElement || !triggerElement) return;
-    const triggerRect = triggerElement.getBoundingClientRect();
-    const referenceRect = reference && referenceElement ? referenceElement.getBoundingClientRect() : triggerRect;
+    if (!tooltipElement) return;
+
+    // Get the reference element for positioning
+    const targetElement = reference ? document.querySelector(reference) : triggeredBy ? document.querySelector(triggeredBy) : null;
+
+    if (!targetElement) {
+      console.warn("Tooltip: No reference element found for positioning");
+      return;
+    }
+
+    const referenceRect = targetElement.getBoundingClientRect();
     const tooltipRect = tooltipElement.getBoundingClientRect();
     const arrowRect = arrow && arrowEl ? arrowEl.getBoundingClientRect() : null;
 
@@ -94,21 +111,32 @@
   };
 
   $effect(() => {
-    triggerElement = document.querySelector(triggeredBy);
-    referenceElement = reference ? document.querySelector(reference) : triggerElement;
+    // Only set up event listeners if triggeredBy is provided
+    if (triggeredBy) {
+      triggerElement = document.querySelector(triggeredBy);
 
-    if (triggerElement) {
-      if (showOn === "hover") {
-        triggerElement.addEventListener("mouseenter", showTooltip);
-        triggerElement.addEventListener("mouseleave", hideTooltip);
-      } else if (showOn === "click") {
-        triggerElement.addEventListener("click", toggleTooltip);
-        document.addEventListener("click", handleClickOutside);
+      if (triggerElement) {
+        if (showOn === "hover") {
+          triggerElement.addEventListener("mouseenter", showTooltip);
+          triggerElement.addEventListener("mouseleave", hideTooltip);
+        } else if (showOn === "click") {
+          triggerElement.addEventListener("click", toggleTooltip);
+          document.addEventListener("click", handleClickOutside);
+        }
       }
     }
 
+    // Always set up positioning when visibility changes
+    $effect(() => {
+      if (isVisible) {
+        setTimeout(() => {
+          positionTooltip();
+        }, 0);
+      }
+    });
+
     const handlePositionUpdate = () => {
-      if (visible) {
+      if (isVisible) {
         positionTooltip();
       }
     };
@@ -132,23 +160,9 @@
   });
 </script>
 
-{#if visible}
-  <div role="tooltip" bind:this={tooltipElement} {...restProps} class={`${base({ className })} ${visible ? "visible opacity-100" : "invisible opacity-0"} transition-opacity duration-200`}>
+{#if isVisible}
+  <div role="tooltip" bind:this={tooltipElement} {...restProps} class={`${base({ className })} ${isVisible ? "visible opacity-100" : "invisible opacity-0"} transition-opacity duration-200`}>
     {@render children()}
     {#if arrow}<div bind:this={arrowEl} class={arrowBase({ arrow, position })}></div>{/if}
   </div>
 {/if}
-
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: Snippet;
-@props:color: "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | "default" | undefined = "default";
-@props:arrow: boolean = true;
-@props:offset: number = 0;
-@props:triggeredBy: string;
-@props:position: "top" | "bottom" | "left" | "right" = "top";
-@props:class: string;
-@props:reference: string;
--->

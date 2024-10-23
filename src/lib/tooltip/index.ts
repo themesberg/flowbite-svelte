@@ -8,7 +8,7 @@ type TooltipColorType = "primary" | "secondary" | "gray" | "red" | "orange" | "a
 
 interface TooltipProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
-  triggeredBy: string;
+  triggeredBy?: string;
   showOn?: "hover" | "click";
   position?: "top" | "bottom" | "left" | "right";
   color?: TooltipColorType;
