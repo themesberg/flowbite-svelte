@@ -15,10 +15,7 @@
   const name = __NAME__;
   const version = __VERSION__;
   const githuburl = __GITHUBURL__;
-  const svelteVersion = __SVELTEVERSION__;
-  const svelteKitVersion = __SVELTEKITVERSION__;
-  // const viteVersion = __VITEVERSION__;
-  const tailwindcssVersion = __TAILWINDCSSVERSION__;
+
 </script>
 
 <H1><a class="hover:underline dark:text-primary-500" href={githuburl}>{removeHyphensAndCapitalize(name)}: v{version}</a></H1>
@@ -32,14 +29,7 @@
 
 <HighlightCompo class="mb-8" codeLang="js" code={modules["./md/install-svelte.md"] as string} />
 
-<P>
-  After installing Svelte-5, you can <a href="https://svelte-5-preview.vercel.app/docs/runes#how-to-opt-in">opt-in to runes mode</a>
-  by updating `svelte.config.js` to enable `runes`:
-</P>
-
-<HighlightCompo class="mb-8" codeLang="js" code={modules["./md/runes.md"] as string} />
-
-<H3>Svelte-5-Ui-Lib</H3>
+<H3>Installing Svelte-5-Ui-Lib</H3>
 Install `svelte-5-ui-lib` and update dependencies:
 
 <HighlightCompo class="mb-8" codeLang="sh" code={modules["./md/svelte-5-ui-lib.md"] as string} />
@@ -62,17 +52,3 @@ Install tailwindcss:
 Add the following to tailwind.config.js:
 
 <HighlightCompo class="mb-8" codeLang="json" code={modules["./md/tailwind-config.md"] as string} />
-
-<H2>Dependency info</H2>
-<ul>
-  <li>Svelte: {svelteVersion}</li>
-  <li>SvelteKit: {svelteKitVersion}</li>
-  <li>TailwindCSS: {tailwindcssVersion}</li>
-</ul>
-
-<H2>Credits</H2>
-
-<ul>
-  <li>Flowbite</li>
-  <li>Flowbite-Svelte</li>
-</ul>

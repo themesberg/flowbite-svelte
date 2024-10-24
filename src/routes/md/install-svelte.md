@@ -1,1 +1,4 @@
-npm create svelte@latest my-svelte-5-app
+npx sv create myapp
+cd myapp
+pnpm install
+pnpm run dev
