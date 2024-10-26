@@ -1,10 +1,10 @@
 ---
 layout: componentLayout
-title: Outline Icons - Flowbite Svelte Icons
+title: Svelte Outline Icons - Flowbite
 breadcrumb_title: Outline Icons
-component_title: OutlineIcons
+component_title: Outline Icons
 dir: Icons
-description: Outline icons
+description: Get started with a collection of outline styled open-source Svelte 5 powered icons built by the Flowbite community
 ---
 
 <script>

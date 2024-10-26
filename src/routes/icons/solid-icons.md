@@ -1,10 +1,10 @@
 ---
 layout: componentLayout
-title: Solid Icons - Flowbite Svelte Icons
+title: Svelte Solid Icons - Flowbite
 breadcrumb_title: Solid Icons
-component_title: SolidIcons
+component_title: Solid Icons
 dir: Icons
-description: Solid icons
+description: Get started with a collection of solid styled open-source Svelte 5 powered icons built by the Flowbite community
 ---
 
 <script>
