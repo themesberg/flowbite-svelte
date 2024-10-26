@@ -38,7 +38,7 @@ description: Get started with a collection of outline styled open-source Svelte 
 <MetaTag {title} {subtitle} {path} {description} />
 
 <div class="m-8 w-full">
-  <h1>Outline Icons - Flowbite Svelte Icons</h1>
+  <h2>Outline Icons - Flowbite Svelte Icons</h2>
   <TableSearch
     placeholder="Search by icon name"
     hoverable={true}
