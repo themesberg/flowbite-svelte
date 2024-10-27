@@ -54,4 +54,10 @@
 @prop export let leftMid: $$Props['leftMid'] = 'h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[124px] rounded-l-lg';
 @prop export let leftBot: $$Props['leftBot'] = 'h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg';
 @prop export let right: $$Props['right'] = 'h-[64px] w-[3px] bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg';
+@prop export let classTop: $$Props['classTop'] = '';
+@prop export let classLeftTop: $$Props['classLeftTop'] = '';
+@prop export let classLeftMid: $$Props['classLeftMid'] = '';
+@prop export let classLeftBot: $$Props['classLeftBot'] = '';
+@prop export let classRight: $$Props['classRight'] = '';
+@prop export let classSlot: $$Props['classSlot'] = '';
 -->

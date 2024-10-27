@@ -36,4 +36,6 @@
 @prop export let aClass: $$Props['aClass'] = 'hover:underline';
 @prop export let href: $$Props['href'] = '';
 @prop export let target: $$Props['target'] = undefined;
+@prop export let classLi: $$Props['classLi'] = '';
+@prop export let classA: $$Props['classA'] = '';
 -->

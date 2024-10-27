@@ -81,4 +81,9 @@
 @prop export let titleClass: $$Props['titleClass'] = 'text-base font-normal';
 @prop export let spanClass: $$Props['spanClass'] = 'inline-flex items-center text-xs font-normal text-gray-500 dark:text-gray-400';
 @prop export let isPrivacy: $$Props['isPrivacy'] = true;
+@prop export let classA: $$Props['classA'] = '';
+@prop export let classImg: $$Props['classImg'] = '';
+@prop export let classDiv: $$Props['classDiv'] = '';
+@prop export let classTitle: $$Props['classTitle'] = '';
+@prop export let classSpan: $$Props['classSpan'] = '';
 -->

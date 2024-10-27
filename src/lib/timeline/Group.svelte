@@ -40,4 +40,7 @@
 @prop export let timeClass: $$Props['timeClass'] = 'text-lg font-semibold text-gray-900 dark:text-white';
 @prop export let date: $$Props['date'] = '';
 @prop export let olClass: $$Props['olClass'] = 'mt-3 divide-y divider-gray-200 dark:divide-gray-700';
+@prop export let classDiv: $$Props['classDiv'] = '';
+@prop export let classTime: $$Props['classTime'] = '';
+@prop export let classOl: $$Props['classOl'] = '';
 -->

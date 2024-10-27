@@ -50,4 +50,6 @@
 @prop export let by: $$Props['by'] = '';
 @prop export let target: $$Props['target'] = undefined;
 @prop export let copyrightMessage: $$Props['copyrightMessage'] = 'All Rights Reserved.';
+@prop export let classSpan: $$Props['classSpan'] = '';
+@prop export let classA: $$Props['classA'] = '';
 -->

@@ -90,4 +90,7 @@
 @prop export let outerClass: $$Props['outerClass'] = 'w-full z-50 border-gray-200 dark:bg-gray-700 dark:border-gray-600';
 @prop export let innerClass: $$Props['innerClass'] = 'grid h-full max-w-lg mx-auto';
 @prop export let activeClass: $$Props['activeClass'] = 'text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900';
+@prop export let classActive: $$Props['classActive'] = '';
+@prop export let classOuter: $$Props['classOuter'] = '';
+@prop export let classInner: $$Props['classInner'] = '';
 -->

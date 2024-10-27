@@ -65,4 +65,5 @@
 @prop export let value: $$Props['value'] = '';
 @prop export let checked: $$Props['checked'] = undefined;
 @prop export let customSize: $$Props['customSize'] = '';
+@prop export let classDiv: string = '';
 -->

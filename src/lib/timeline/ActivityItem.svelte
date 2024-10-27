@@ -84,4 +84,12 @@
 @prop export let timeClass: $$Props['timeClass'] = 'mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0';
 @prop export let titleClass: $$Props['titleClass'] = 'text-sm font-normal text-gray-500 lex dark:text-gray-300';
 @prop export let textClass: $$Props['textClass'] = 'p-3 text-xs italic font-normal text-gray-500 bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-300';
+@prop export let classLi: $$Props['classLi'] = '';
+@prop export let classSpan: $$Props['classSpan'] = '';
+@prop export let classImg: $$Props['classImg'] = '';
+@prop export let classOuterDiv: $$Props['classOuterDiv'] = '';
+@prop export let classInnerDiv: $$Props['classInnerDiv'] = '';
+@prop export let classTime: $$Props['classTime'] = '';
+@prop export let classTitle: $$Props['classTitle'] = '';
+@prop export let classText: $$Props['classText'] = '';
 -->

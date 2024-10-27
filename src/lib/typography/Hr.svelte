@@ -50,4 +50,7 @@
 @prop export let iconDivClass: $$Props['iconDivClass'] = 'absolute start-1/2 px-4 bg-white -translate-x-1/2 rtl:translate-x-1/2 ';
 @prop export let textSpanClass: $$Props['textSpanClass'] = 'absolute px-3 font-medium text-gray-900 -translate-x-1/2 rtl:translate-x-1/2 bg-white start-1/2 dark:text-white dark:bg-gray-900 ';
 @prop export let innerDivClass: $$Props['innerDivClass'] = 'absolute px-4 -translate-x-1/2 rtl:translate-x-1/2 bg-white start-1/2 dark:bg-gray-900';
+@prop export let classHr: $$Props['classHr'] = '';
+@prop export let classDiv: $$Props['classDiv'] = '';
+@prop export let classInnerDiv: $$Props['classInnerDiv'] = '';
 -->

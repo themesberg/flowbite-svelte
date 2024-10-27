@@ -1,19 +1,79 @@
 {
   "name": "Checkbox",
   "slots": [],
-  "events": ["keyup", "keydown", "keypress", "focus", "blur", "click", "mouseover", "mouseenter", "mouseleave", "paste", "change"],
+  "events": [
+    "keyup",
+    "keydown",
+    "keypress",
+    "focus",
+    "blur",
+    "click",
+    "mouseover",
+    "mouseenter",
+    "mouseleave",
+    "paste",
+    "change"
+  ],
   "props": [
-    ["color?", "FormColorType", ""],
-    ["custom?", "boolean", ""],
-    ["inline?", "boolean", ""],
-    ["group?", "string[]", "[]"],
-    ["choices?", "CheckboxItem[]", ""],
-    ["value?", "string | number", "'on'"],
-    ["checked?", "boolean", "undefined"],
-    ["spacing?", "string", ""],
-    ["groupLabelClass?", "string", ""],
-    ["groupInputClass?", "string", ""],
-    ["class?", "string", ""],
-    ["required?", "boolean", ""]
+    [
+      "color?",
+      "FormColorType",
+      ""
+    ],
+    [
+      "custom?",
+      "boolean",
+      ""
+    ],
+    [
+      "inline?",
+      "boolean",
+      ""
+    ],
+    [
+      "group?",
+      "string[]",
+      "[]"
+    ],
+    [
+      "choices?",
+      "CheckboxItem[]",
+      ""
+    ],
+    [
+      "value?",
+      "string | number",
+      "'on'"
+    ],
+    [
+      "checked?",
+      "boolean",
+      "undefined"
+    ],
+    [
+      "spacing?",
+      "string",
+      ""
+    ],
+    [
+      "groupLabelClass?",
+      "string",
+      ""
+    ],
+    [
+      "groupInputClass?",
+      "string",
+      ""
+    ],
+    [
+      "class?",
+      "string",
+      ""
+    ],
+    [
+      "required?",
+      "boolean",
+      ""
+    ]
   ]
 }

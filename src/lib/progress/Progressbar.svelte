@@ -87,4 +87,5 @@
 @prop export let labelInsideClass: $$Props['labelInsideClass'] = 'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
 @prop export let divClass: $$Props['divClass'] = 'w-full bg-gray-200 rounded-full dark:bg-gray-700';
 @prop export let progressClass: $$Props['progressClass'] = '';
+@prop export let classLabelOutside: $$Props['classLabelOutside'] = '';
 -->

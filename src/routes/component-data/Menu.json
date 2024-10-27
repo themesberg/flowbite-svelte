@@ -1,11 +1,29 @@
 {
   "name": "Menu",
   "slots": [],
-  "events": ["click"],
+  "events": [
+    "click"
+  ],
   "props": [
-    ["size?", "string", "'24'"],
-    ["color?", "string", "'currentColor'"],
-    ["variation?", "'solid' | 'outline'", "'outline'"],
-    ["ariaLabel?", "string", "'bars 3'"]
+    [
+      "size?",
+      "string",
+      "'24'"
+    ],
+    [
+      "color?",
+      "string",
+      "'currentColor'"
+    ],
+    [
+      "variation?",
+      "'solid' | 'outline'",
+      "'outline'"
+    ],
+    [
+      "ariaLabel?",
+      "string",
+      "'bars 3'"
+    ]
   ]
 }

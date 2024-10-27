@@ -35,4 +35,5 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let fluid: $$Props['fluid'] = false;
+@prop export let navContainerClass: string= '';
 -->

@@ -1,6 +1,17 @@
 {
   "name": "PaginationItem",
   "slots": [],
-  "events": ["blur", "change", "click", "focus", "keydown", "keypress", "keyup", "mouseenter", "mouseleave", "mouseover"],
+  "events": [
+    "blur",
+    "change",
+    "click",
+    "focus",
+    "keydown",
+    "keypress",
+    "keyup",
+    "mouseenter",
+    "mouseleave",
+    "mouseover"
+  ],
   "props": []
 }

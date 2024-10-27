@@ -64,4 +64,7 @@
 @prop export let linkClass: $$Props['linkClass'] = 'ms-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ms-2 dark:text-gray-400 dark:hover:text-white';
 @prop export let spanClass: $$Props['spanClass'] = 'ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400';
 @prop export let homeClass: $$Props['homeClass'] = 'inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white';
+@prop export let classHome: $$Props['classHome'] = '';
+@prop export let classLink: $$Props['classLink'] = '';
+@prop export let classSpan: $$Props['classSpan'] = '';
 -->

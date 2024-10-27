@@ -47,4 +47,9 @@
 @prop export let ratingClass: string = 'h-5 bg-yellow-400 rounded';
 @prop export let rightLabelClass: string = 'text-sm font-medium text-gray-600 dark:text-gray-500';
 @prop export let unit: string = '%';
+@prop export let classDiv: string = '';
+@prop export let classLabel: string = '';
+@prop export let classRatingDiv: string = '';
+@prop export let classRating: string = '';
+@prop export let classRightLabel: string = '';
 -->

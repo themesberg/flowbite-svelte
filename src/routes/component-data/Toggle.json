@@ -1,12 +1,42 @@
 {
   "name": "Toggle",
-  "slots": ["offLabel"],
-  "events": ["click", "change"],
+  "slots": [
+    "offLabel"
+  ],
+  "events": [
+    "click",
+    "change"
+  ],
   "props": [
-    ["size?", "'small' | 'default' | 'large' | 'custom'", ""],
-    ["group?", "string[]", "[]"],
-    ["value?", "string | number", "''"],
-    ["checked?", "boolean", "undefined"],
-    ["customSize?", "string", "''"]
+    [
+      "size?",
+      "'small' | 'default' | 'large' | 'custom'",
+      ""
+    ],
+    [
+      "group?",
+      "string[]",
+      "[]"
+    ],
+    [
+      "value?",
+      "string | number",
+      "''"
+    ],
+    [
+      "checked?",
+      "boolean",
+      "undefined"
+    ],
+    [
+      "customSize?",
+      "string",
+      "''"
+    ],
+    [
+      "classDiv?",
+      "string",
+      ""
+    ]
   ]
 }

@@ -86,4 +86,8 @@
 @prop export let title: $$Props['title'] = '';
 @prop export let date: $$Props['date'] = '';
 @prop export let svgClass: $$Props['svgClass'] = 'w-3 h-3 text-primary-600 dark:text-primary-400';
+@prop export let classDiv: $$Props['classDiv'] = '';
+@prop export let classLi: $$Props['classLi'] = '';
+@prop export let classTime: $$Props['classTime'] = '';
+@prop export let classH3: $$Props['classH3'] = '';
 -->

@@ -3,10 +3,35 @@
   "slots": [],
   "events": [],
   "props": [
-    ["solid?", "boolean", "false"],
-    ["navClass?", "string", ""],
-    ["solidClass?", "string", ""],
-    ["olClass?", "string", "'inline-flex items-center space-x-1 rtl:space-x-reverse md:space-x-3 rtl:space-x-reverse'"],
-    ["ariaLabel?", "string", "'Breadcrumb'"]
+    [
+      "solid?",
+      "boolean",
+      "false"
+    ],
+    [
+      "navClass?",
+      "string",
+      ""
+    ],
+    [
+      "solidClass?",
+      "string",
+      ""
+    ],
+    [
+      "olClass?",
+      "string",
+      "'inline-flex items-center space-x-1 rtl:space-x-reverse md:space-x-3 rtl:space-x-reverse'"
+    ],
+    [
+      "ariaLabel?",
+      "string",
+      "'Breadcrumb'"
+    ],
+    [
+      "classOl?",
+      "string",
+      "''"
+    ]
   ]
 }

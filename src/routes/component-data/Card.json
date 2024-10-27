@@ -1,14 +1,48 @@
 {
   "name": "Card",
   "slots": [],
-  "events": ["click", "focusin", "focusout", "mouseenter", "mouseleave"],
+  "events": [
+    "click",
+    "focusin",
+    "focusout",
+    "mouseenter",
+    "mouseleave"
+  ],
   "props": [
-    ["href?", "string", "undefined"],
-    ["horizontal?", "boolean", "false"],
-    ["reverse?", "boolean", "false"],
-    ["img?", "string", "undefined"],
-    ["padding?", "SizeType | 'none'", ""],
-    ["size?", "SizeType | 'none'", ""],
-    ["imgClass?", "string", "''"]
+    [
+      "href?",
+      "string",
+      "undefined"
+    ],
+    [
+      "horizontal?",
+      "boolean",
+      "false"
+    ],
+    [
+      "reverse?",
+      "boolean",
+      "false"
+    ],
+    [
+      "img?",
+      "string",
+      "undefined"
+    ],
+    [
+      "padding?",
+      "SizeType | 'none'",
+      ""
+    ],
+    [
+      "size?",
+      "SizeType | 'none'",
+      ""
+    ],
+    [
+      "imgClass?",
+      "string",
+      "''"
+    ]
   ]
 }

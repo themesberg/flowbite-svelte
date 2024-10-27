@@ -54,4 +54,7 @@
 @prop export let alt: $$Props['alt'] = '';
 @prop export let name: $$Props['name'] = '';
 @prop export let target: $$Props['target'] = '';
+@prop export let classA: $$Props['classA'] = '';
+@prop export let classSpan: $$Props['classSpan'] = '';
+@prop export let classImg: $$Props['classImg'] = '';
 -->

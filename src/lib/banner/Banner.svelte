@@ -82,4 +82,6 @@
 @prop export let bannerStatus: $$Props['bannerStatus'] = true;
 @prop export let transition: NonNullable<$$Props['transition']> = fade;
 @prop export let params: $$Props['params'] = {};
+@prop export let classDiv: $$Props['classDiv'] = '';
+@prop export let classInner: $$Props['classInner'] = '';
 -->

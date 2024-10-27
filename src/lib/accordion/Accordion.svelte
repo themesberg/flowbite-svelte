@@ -60,4 +60,6 @@
 @prop export let activeClass: $$Props['activeClass'] = 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800';
 @prop export let inactiveClass: $$Props['inactiveClass'] = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800';
 @prop export let defaultClass: $$Props['defaultClass'] = 'text-gray-500 dark:text-gray-400';
+@prop export let classActive: $$Props['classActive'] = '';
+@prop export let classInactive: $$Props['classInactive'] = '';
 -->

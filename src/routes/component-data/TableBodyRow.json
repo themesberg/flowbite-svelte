@@ -1,6 +1,16 @@
 {
   "name": "TableBodyRow",
   "slots": [],
-  "events": ["click", "contextmenu", "dblclick"],
-  "props": [["color?", "'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom'", ""]]
+  "events": [
+    "click",
+    "contextmenu",
+    "dblclick"
+  ],
+  "props": [
+    [
+      "color?",
+      "'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom'",
+      ""
+    ]
+  ]
 }

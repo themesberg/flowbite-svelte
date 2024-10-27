@@ -1,14 +1,55 @@
 {
   "name": "SidebarItem",
-  "slots": ["icon", "subtext"],
-  "events": ["blur", "click", "focus", "keydown", "keypress", "keyup", "mouseenter", "mouseleave", "mouseover"],
+  "slots": [
+    "icon",
+    "subtext"
+  ],
+  "events": [
+    "blur",
+    "click",
+    "focus",
+    "keydown",
+    "keypress",
+    "keyup",
+    "mouseenter",
+    "mouseleave",
+    "mouseover"
+  ],
   "props": [
-    ["action?", "Action<HTMLElement, any>", ""],
-    ["params?", "any", "{}"],
-    ["href?", "string", "''"],
-    ["label?", "string", "''"],
-    ["spanClass?", "string", "'ms-3'"],
-    ["activeClass?", "string", "undefined"],
-    ["nonActiveClass?", "string", "undefined"]
+    [
+      "action?",
+      "Action<HTMLElement, any>",
+      ""
+    ],
+    [
+      "params?",
+      "any",
+      "{}"
+    ],
+    [
+      "href?",
+      "string",
+      "''"
+    ],
+    [
+      "label?",
+      "string",
+      "''"
+    ],
+    [
+      "spanClass?",
+      "string",
+      "'ms-3'"
+    ],
+    [
+      "activeClass?",
+      "string",
+      "undefined"
+    ],
+    [
+      "nonActiveClass?",
+      "string",
+      "undefined"
+    ]
   ]
 }

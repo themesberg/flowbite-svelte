@@ -32,4 +32,5 @@
 ## Props
 @prop export let menuClass: $$Props['menuClass'] = 'h-6 w-6 shrink-0';
 @prop export let onClick: $$Props['onClick'] = undefined;
+@prop export let classMenu: $$Props['classMenu'] = '';
 -->

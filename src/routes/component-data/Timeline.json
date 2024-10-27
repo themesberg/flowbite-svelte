@@ -2,5 +2,11 @@
   "name": "Timeline",
   "slots": [],
   "events": [],
-  "props": [["order?", "'default' | 'vertical' | 'horizontal' | 'activity' | 'group'", ""]]
+  "props": [
+    [
+      "order?",
+      "'default' | 'vertical' | 'horizontal' | 'activity' | 'group'",
+      ""
+    ]
+  ]
 }
