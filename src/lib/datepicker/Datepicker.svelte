@@ -26,7 +26,6 @@
   let isOpen: boolean = inline;
   let inputElement: HTMLInputElement;
   let currentMonth: Date = value || defaultDate || new Date();
-  currentMonth.setDate(1); // Set to first day of the month
   let focusedDate: Date | null = null;
   let calendarRef: HTMLDivElement;
 
