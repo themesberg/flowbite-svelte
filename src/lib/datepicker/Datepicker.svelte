@@ -161,12 +161,17 @@
     return date.toLocaleDateString(locale, dateFormat);
   }
 
-  function isSelected(day: Date): boolean {
-    if (range) {
-      return !!(rangeFrom && day.toDateString() === rangeFrom.toDateString()) || !!(rangeTo && day.toDateString() === rangeTo.toDateString());
-    }
-    return !!(value && day.toDateString() === value.toDateString());
+  function isSameDate(date1: Date | null, date2: Date | null): boolean {
+    if (!date1 || !date2) return false;
+    return date1.toDateString() === date2.toDateString();
   }
+
+  $: isSelected = (day: Date): boolean => {
+    if (range) {
+      return isSameDate(day, rangeFrom) || isSameDate(day, rangeTo);
+    }
+    return isSameDate(day, value);
+  };
 
   function isInRange(day: Date): boolean {
     if (!range || !rangeFrom || !rangeTo) return false;
