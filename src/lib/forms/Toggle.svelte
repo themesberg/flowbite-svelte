@@ -11,6 +11,7 @@
     value?: string | number;
     checked?: boolean;
     customSize?: string;
+    classDiv?: string;
   }
 
   export let size: NonNullable<$$Props['size']> = 'default';
@@ -18,6 +19,7 @@
   export let value: $$Props['value'] = '';
   export let checked: $$Props['checked'] = undefined;
   export let customSize: $$Props['customSize'] = '';
+  export let classDiv: string = '';
 
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
@@ -45,7 +47,7 @@
 
   let divClass: string;
 
-  $: divClass = twMerge(common, $$slots.offLabel ? "ms-3" : "", background ? 'dark:bg-gray-600 dark:border-gray-500' : 'dark:bg-gray-700 dark:border-gray-600', colors[($$restProps.color as FormColorType) ?? 'primary'], sizes[size], 'relative', $$props.classDiv);
+  $: divClass = twMerge(common, $$slots.offLabel ? "ms-3" : "", background ? 'dark:bg-gray-600 dark:border-gray-500' : 'dark:bg-gray-700 dark:border-gray-600', colors[($$restProps.color as FormColorType) ?? 'primary'], sizes[size], 'relative', classDiv);
 </script>
 
 <Checkbox custom {...$$restProps} class={$$props.class} {value} bind:checked bind:group on:click on:change>

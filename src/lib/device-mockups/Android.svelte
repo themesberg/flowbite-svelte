@@ -14,6 +14,7 @@
     classLeftMid?: string;
     classLeftBot?: string;
     classRight?: string;
+    classSlot?: string;
   }
 
   export let div: $$Props['div'] = 'relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-xl h-[600px] w-[300px] shadow-xl';
@@ -28,6 +29,7 @@
   export let classLeftMid: $$Props['classLeftMid'] = '';
   export let classLeftBot: $$Props['classLeftBot'] = '';
   export let classRight: $$Props['classRight'] = '';
+  export let classSlot: $$Props['classSlot'] = '';
 </script>
 
 <div class={twMerge(div, $$props.class)}>
