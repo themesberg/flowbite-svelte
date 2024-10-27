@@ -2,11 +2,5 @@
   "name": "NavBrand",
   "slots": [],
   "events": [],
-  "props": [
-    [
-      "href?",
-      "string",
-      "''"
-    ]
-  ]
+  "props": [["href?", "string", "''"]]
 }

@@ -2,11 +2,5 @@
   "name": "ScoreRating",
   "slots": [],
   "events": [],
-  "props": [
-    [
-      "ratings",
-      "{ label",
-      "[]"
-    ]
-  ]
+  "props": [["ratings", "{ label", "[]"]]
 }

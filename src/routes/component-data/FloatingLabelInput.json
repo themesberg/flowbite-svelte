@@ -1,65 +1,16 @@
 {
   "name": "FloatingLabelInput",
   "slots": [],
-  "events": [
-    "blur",
-    "change",
-    "click",
-    "focus",
-    "input",
-    "keydown",
-    "keypress",
-    "keyup",
-    "mouseenter",
-    "mouseleave",
-    "mouseover",
-    "paste"
-  ],
+  "events": ["blur", "change", "click", "focus", "input", "keydown", "keypress", "keyup", "mouseenter", "mouseleave", "mouseover", "paste"],
   "props": [
-    [
-      "id?",
-      "string",
-      "generateId()"
-    ],
-    [
-      "style?",
-      "'filled' | 'outlined' | 'standard'",
-      ""
-    ],
-    [
-      "type?",
-      "InputType",
-      ""
-    ],
-    [
-      "size?",
-      "'small' | 'default'",
-      ""
-    ],
-    [
-      "color?",
-      "'base' | 'green' | 'red'",
-      ""
-    ],
-    [
-      "value?",
-      "any",
-      "undefined"
-    ],
-    [
-      "classDiv?",
-      "string",
-      "''"
-    ],
-    [
-      "classInput?",
-      "string",
-      "''"
-    ],
-    [
-      "classLabel?",
-      "string",
-      "''"
-    ]
+    ["id?", "string", "generateId()"],
+    ["style?", "'filled' | 'outlined' | 'standard'", ""],
+    ["type?", "InputType", ""],
+    ["size?", "'small' | 'default'", ""],
+    ["color?", "'base' | 'green' | 'red'", ""],
+    ["value?", "any", "undefined"],
+    ["classDiv?", "string", "''"],
+    ["classInput?", "string", "''"],
+    ["classLabel?", "string", "''"]
   ]
 }

@@ -1,15 +1,6 @@
 {
   "name": "BottomNavItem",
   "slots": [],
-  "events": [
-    "click",
-    "change",
-    "keydown",
-    "keyup",
-    "focus",
-    "blur",
-    "mouseenter",
-    "mouseleave"
-  ],
+  "events": ["click", "change", "keydown", "keyup", "focus", "blur", "mouseenter", "mouseleave"],
   "props": []
 }

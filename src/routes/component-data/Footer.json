@@ -2,11 +2,5 @@
   "name": "Footer",
   "slots": [],
   "events": [],
-  "props": [
-    [
-      "footerType?",
-      "'sitemap' | 'default' | 'logo' | 'socialmedia'",
-      "undefined"
-    ]
-  ]
+  "props": [["footerType?", "'sitemap' | 'default' | 'logo' | 'socialmedia'", "undefined"]]
 }
