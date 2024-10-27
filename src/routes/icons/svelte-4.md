@@ -1,12 +1,11 @@
 ---
 layout: componentLayout
-title: Svelte 4 Getting started - Flowbite Svelte Icons v1
-breadcrumb_title: Svelte 4 Getting started
-component_title: Svelte 4 Getting started
+title: Svelte 4 Icons - Flowbite
+breadcrumb_title: Svelte 4 Icons
+component_title: Svelte 4 Icons
 dir: Icons
-description: Svelte 4 Getting started
+description: Get started with a collection of open-source Svelte 5 powered icons built by the Flowbite community and based on the official design
 ---
-
 
 <script>
   import { Banner } from 'flowbite-svelte';
@@ -14,7 +13,7 @@ description: Svelte 4 Getting started
   import { removeHyphensAndCapitalize } from './utils/utils';
 </script>
 
-# Svelte 4 Getting started - Flowbite Svelte Icons v1
+Use well over 500 SVG icons based on the open-source [Flowbite Icons](https://flowbite.com/icons/) library to power your Svelte application with optimized icons provided with both outline and solid styles. This page allows usage for Svelte 4 applications.
 
 <div class="flex gap-2 my-8">
 <a href="https://github.com/sponsors/shinokada" target="_blank"><img src="https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86" alt="sponsor" ></a>

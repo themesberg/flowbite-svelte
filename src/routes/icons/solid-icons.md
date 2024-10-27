@@ -1,11 +1,17 @@
 ---
 layout: componentLayout
-title: Solid Icons - Flowbite Svelte Icons
+title: Svelte Solid Icons - Flowbite
 breadcrumb_title: Solid Icons
-component_title: SolidIcons
+component_title: Solid Icons
 dir: Icons
-description: Solid icons
+description: Get started with a collection of solid styled open-source Svelte 5 powered icons built by the Flowbite community and use the interactive search and configurator features
 ---
+
+Use this page to easily search and configure a collection of up to 500 SVG open-source solid styled icons from the Flowbite library optimized for Svelte. Make sure that you have followed the Svelte 4 or Svelte 5 Icons guide from the documentation.
+
+## Browse solid icons
+
+Search by the icon name and you'll find the component name that you need to import in your Svelte app.
 
 <script>
   import MetaTag from './utils/MetaTag.svelte';
@@ -37,15 +43,14 @@ description: Solid icons
 
 <MetaTag {title} {subtitle} {path} {description} />
 
-<div class="m-8 w-full">
-  <h1>Solid Icons - Flowbite Svelte Icons</h1>
+<div class="w-full">
   <TableSearch
     placeholder="Search by icon name"
     hoverable={true}
     bind:inputValue={searchTerm}
-    divClass="relative overflow-x-auto"
+    divClass="relative overflow-x-auto [&>div]:p-0"
   >
-    <div class="xl:w-1/3 lg:w-2/5 md:w-1/2 sm:w-3/4 w-full p-4">
+    <div class="w-full max-w-64 mb-4">
       <Label class="text-lg py-4 ">Icon size: {size}</Label>
       <Range id="range1" min="4" max="10" bind:value={size} />
     </div>
