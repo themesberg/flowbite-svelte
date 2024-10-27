@@ -44,7 +44,7 @@
 </script>
 
 <li>
-  <button {...$$restProps} on:click={() => handleDropdown()} type="button" class={twMerge(btnClass, $$props.class)} aria-controls="sidebar-dropdown">
+  <button {...$$restProps} on:click={() => handleDropdown()} on:click type="button" class={twMerge(btnClass, $$props.class)} aria-controls="sidebar-dropdown">
     <slot name="icon" />
     <span class={spanClass}>{label}</span>
     {#if isOpen}

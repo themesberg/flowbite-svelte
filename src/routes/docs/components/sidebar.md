@@ -568,6 +568,45 @@ The `SidebarItem` component has `use:action` directive you can use:
 </Sidebar>
 ```
 
+## on:click handler on SidebarDropdownWrapper
+
+```svelte example
+<script>
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarDropdownItem, SidebarDropdownWrapper } from 'flowbite-svelte';
+  import { ChartPieSolid, CartSolid, ChevronDoubleUpOutline, ChevronDoubleDownOutline } from 'flowbite-svelte-icons';
+  let spanClass = 'flex-1 ms-3 whitespace-nowrap';
+  const handleClick = () => {
+    console.log('Hello from SidebarDropdownWrapper.');
+  }
+</script>
+
+<Sidebar>
+  <SidebarWrapper>
+    <SidebarGroup>
+      <SidebarItem label="Dashboard">
+        <svelte:fragment slot="icon">
+          <ChartPieSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        </svelte:fragment>
+      </SidebarItem>
+      <SidebarDropdownWrapper label="E-commerce" on:click={handleClick}>
+        <svelte:fragment slot="icon">
+          <CartSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        </svelte:fragment>
+        <svelte:fragment slot="arrowup">
+          <ChevronDoubleUpOutline class="w-6 h-6" />
+        </svelte:fragment>
+        <svelte:fragment slot="arrowdown">
+          <ChevronDoubleDownOutline class="w-6 h-6" />
+        </svelte:fragment>
+        <SidebarDropdownItem label="Products" />
+        <SidebarDropdownItem label="Billing" />
+        <SidebarDropdownItem label="Invoice" />
+      </SidebarDropdownWrapper>
+    </SidebarGroup>
+  </SidebarWrapper>
+</Sidebar>
+```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
