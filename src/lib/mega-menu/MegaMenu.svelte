@@ -22,7 +22,7 @@
   }
 
   let wrapperClass: string;
-  $: wrapperClass = twMerge(full && 'border-y w-full', $$props.class);
+  $: wrapperClass = twMerge(full && 'border-y w-full !ml-0', $$props.class);
 
   let ulCls: string;
   $: ulCls = twMerge(ulClass, full && $$slots.extra ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-3', 'text-sm font-medium', full && $$slots.extra && 'md:w-2/3', $$props.classUl);
