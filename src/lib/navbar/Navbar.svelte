@@ -11,6 +11,7 @@
   }
 
   export let fluid: $$Props['fluid'] = false;
+  export let navContainerClass: string= '';
 
   let hidden = writable(true);
   setContext('navHidden', hidden);
@@ -24,7 +25,7 @@
 </script>
 
 <Frame tag="nav" {...$$restProps} class={twMerge('px-2 sm:px-4 py-2.5 w-full', $$props.class)}>
-  <NavContainer {fluid}>
+  <NavContainer {fluid} class={navContainerClass}>
     <slot hidden={$hidden} {toggle} {NavContainer} />
   </NavContainer>
 </Frame>

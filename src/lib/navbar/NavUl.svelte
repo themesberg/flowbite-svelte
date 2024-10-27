@@ -22,6 +22,7 @@
     slideParams?: SlideParams;
     activeClass?: string;
     nonActiveClass?: string;
+    classUl?: string;
   }
 
   export let activeUrl: NonNullable<$$Props['activeUrl']> = '';
@@ -31,6 +32,7 @@
   export let slideParams: $$Props['slideParams'] = { delay: 250, duration: 500, easing: sineIn };
   export let activeClass: NonNullable<$$Props['activeClass']> = 'text-white bg-primary-700 md:bg-transparent md:text-primary-700 md:dark:text-white dark:bg-primary-600 md:dark:bg-transparent';
   export let nonActiveClass: NonNullable<$$Props['nonActiveClass']> = 'text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent';
+  export let classUl: $$Props['classUl'] = '';
   
   const activeUrlStore = writable('');
   setContext<NavbarLiType>('navbarContext', { activeClass, nonActiveClass });
@@ -47,11 +49,7 @@
   $: _divClass = twMerge(divClass, $$props.class);
 
   let _ulClass: string;
-  $: _ulClass = twMerge(
-    ulClass,
-    // 'divide-y md:divide-y-0 divide-gray-100 dark:divide-gray-700',
-    $$props.classUl
-  );
+  $: _ulClass = twMerge( ulClass, classUl );
 </script>
 
 {#if !_hidden}
