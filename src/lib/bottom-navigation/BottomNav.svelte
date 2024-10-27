@@ -19,6 +19,9 @@
     outerClass?: string;
     innerClass?: string;
     activeClass?: string;
+    classActive?: string;
+    classOuter?: string;
+    classInner?: string;
   }
 
   export let activeUrl: $$Props['activeUrl'] = '';
@@ -27,12 +30,15 @@
   export let outerClass: $$Props['outerClass'] = 'w-full z-50 border-gray-200 dark:bg-gray-700 dark:border-gray-600';
   export let innerClass: $$Props['innerClass'] = 'grid h-full max-w-lg mx-auto';
   export let activeClass: $$Props['activeClass'] = 'text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900';
+  export let classActive: $$Props['classActive'] = '';
+  export let classOuter: $$Props['classOuter'] = '';
+  export let classInner: $$Props['classInner'] = '';
 
   let activeCls = '';
 
   const activeUrlStore = writable('');
 
-  activeCls = twMerge(activeClass, $$props.classActive);
+  activeCls = twMerge(activeClass, classActive);
   setContext('navType', navType);
   setContext<BottomNavType>('bottomNavType', { activeClass: activeCls });
 
@@ -63,8 +69,8 @@
     video: 'flex items-center w-full'
   };
 
-  $: outerCls = twMerge(position, outerClass, outerDivClasses[navType], $$props.classOuter);
-  $: innerCls = twMerge(innerClass, innerDivClasses[navType], $$props.classInner);
+  $: outerCls = twMerge(position, outerClass, outerDivClasses[navType], classOuter);
+  $: innerCls = twMerge(innerClass, innerDivClasses[navType], classInner);
 </script>
 
 <div {...$$restProps} class={outerCls}>

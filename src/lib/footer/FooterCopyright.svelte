@@ -3,13 +3,15 @@
   import { twMerge } from 'tailwind-merge';
 
   interface $$Props extends HTMLAnchorAttributes {
-    classSpan?: string;
+    spanClass?: string;
     aClass?: string;
     year?: number;
     by?: string;
     href?: string;
     target?: string;
     copyrightMessage?: string;
+    classSpan?: string;
+    classA?: string;
   }
   export let spanClass: $$Props['classSpan'] = 'block text-sm text-gray-500 sm:text-center dark:text-gray-400';
   export let aClass: $$Props['aClass'] = 'hover:underline';
@@ -18,9 +20,11 @@
   export let by: $$Props['by'] = '';
   export let target: $$Props['target'] = undefined;
   export let copyrightMessage: $$Props['copyrightMessage'] = 'All Rights Reserved.';
+  export let classSpan: $$Props['classSpan'] = '';
+  export let classA: $$Props['classA'] = '';
 
-  let spanCls: string = twMerge(spanClass, $$props.classSpan);
-  let aCls: string = twMerge(aClass, $$props.classA);
+  let spanCls: string = twMerge(spanClass, classSpan);
+  let aCls: string = twMerge(aClass, classA);
 </script>
 
 <span class={spanCls}>

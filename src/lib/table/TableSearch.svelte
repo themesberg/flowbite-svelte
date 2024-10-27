@@ -16,6 +16,8 @@
     svgDivClass?: string;
     svgClass?: string;
     inputClass?: string;
+    classInput?: string;
+    classSvgDiv?: string;
   }
 
   export let divClass: $$Props['divClass'] = 'relative overflow-x-auto shadow-md sm:rounded-lg';
@@ -30,9 +32,11 @@
   export let svgDivClass: $$Props['svgDivClass'] = 'absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none';
   export let svgClass: $$Props['svgClass'] = 'w-5 h-5 text-gray-500 dark:text-gray-400';
   export let inputClass: $$Props['inputClass'] = 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 p-2.5 ps-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500';
+  export let classInput: $$Props['classInput'] = '';
+  export let classSvgDiv: $$Props['classSvgDiv'] = '';
 
-  let inputCls = twMerge(inputClass, $$props.classInput);
-  let svgDivCls = twMerge(svgDivClass, $$props.classSvgDiv);
+  let inputCls = twMerge(inputClass, classInput);
+  let svgDivCls = twMerge(svgDivClass, classSvgDiv);
 
   const colors = {
     default: 'text-gray-500 dark:text-gray-400',

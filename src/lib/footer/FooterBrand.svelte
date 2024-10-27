@@ -11,6 +11,9 @@
     alt?: string;
     name?: string;
     target?: string;
+    classA?: string;
+    classSpan?: string;
+    classImg?: string;
   }
   export let aClass: $$Props['aClass'] = 'flex items-center';
   export let spanClass: $$Props['spanClass'] = 'self-center text-2xl font-semibold whitespace-nowrap dark:text-white';
@@ -20,10 +23,13 @@
   export let alt: $$Props['alt'] = '';
   export let name: $$Props['name'] = '';
   export let target: $$Props['target'] = '';
+  export let classA: $$Props['classA'] = '';
+  export let classSpan: $$Props['classSpan'] = '';
+  export let classImg: $$Props['classImg'] = '';
 
-  let aCls: string = twMerge(aClass, $$props.classA);
-  let spanCls: string = twMerge(spanClass, $$props.classSpan);
-  let imgCls: string = twMerge(imgClass, $$props.classImg);
+  let aCls: string = twMerge(aClass, classA);
+  let spanCls: string = twMerge(spanClass, classSpan);
+  let imgCls: string = twMerge(imgClass, classImg);
 </script>
 
 {#if href}

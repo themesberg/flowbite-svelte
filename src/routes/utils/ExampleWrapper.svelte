@@ -30,6 +30,7 @@
   let path: URL;
 
   // suppress vite-plugin-svelte warning about unused props
+  /* eslint-disable @typescript-eslint/no-unused-expressions */
   $: src, meta;
 
   let showExpandButton: boolean = false;

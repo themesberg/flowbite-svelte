@@ -9,6 +9,11 @@
     imgClass?: string;
     ulClass?: string;
     liClass?: string;
+    classArticle?: string;
+    classDiv?: string;
+    classImg?: string;
+    classUl?: string;
+    classLi?: string;
   }
 
   export let review: $$Props['review'];
@@ -17,12 +22,17 @@
   export let imgClass: $$Props['imgClass'] = 'w-10 h-10 rounded-full';
   export let ulClass: $$Props['ulClass'] = 'space-y-4 text-sm text-gray-500 dark:text-gray-400';
   export let liClass: $$Props['liClass'] = 'flex items-center';
+  export let classArticle: $$Props['classArticle'] = '';
+  export let classDiv: $$Props['classDiv'] = '';
+  export let classImg: $$Props['classImg'] = '';
+  export let classUl: $$Props['classUl'] = '';
+  export let classLi: $$Props['classLi'] = '';
 </script>
 
-<article class={twMerge(articleClass, $$props.classArticle)}>
+<article class={twMerge(articleClass, classArticle)}>
   <div>
-    <div class={twMerge(divClass, $$props.classDiv)}>
-      <img class={twMerge(imgClass, $$props.classImg)} src={review.imgSrc} alt={review.imgAlt} />
+    <div class={twMerge(divClass, classDiv)}>
+      <img class={twMerge(imgClass, classImg)} src={review.imgSrc} alt={review.imgAlt} />
       <div class="space-y-1 font-medium dark:text-white">
         <p>{review.name}</p>
         {#if review.address}
@@ -33,19 +43,19 @@
       </div>
     </div>
     {#if $$slots.item1 || $$slots.item2 || $$slots.item3}
-      <ul class={twMerge(ulClass, $$props.classUl)}>
+      <ul class={twMerge(ulClass, classUl)}>
         {#if $$slots.item1}
-          <li class={twMerge(liClass, $$props.classLi)}>
+          <li class={twMerge(liClass, classLi)}>
             <slot name="item1" />
           </li>
         {/if}
         {#if $$slots.item2}
-          <li class={twMerge(liClass, $$props.classLi)}>
+          <li class={twMerge(liClass, classLi)}>
             <slot name="item2" />
           </li>
         {/if}
         {#if $$slots.item3}
-          <li class={twMerge(liClass, $$props.classLi)}>
+          <li class={twMerge(liClass, classLi)}>
             <slot name="item3" />
           </li>
         {/if}

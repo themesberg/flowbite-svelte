@@ -8,6 +8,9 @@
     linkClass?: string;
     spanClass?: string;
     homeClass?: string;
+    classHome?: string;
+    classLink?: string;
+    classSpan?: string;
   }
   
   export let home: $$Props['home'] = false;
@@ -15,11 +18,14 @@
   export let linkClass: $$Props['linkClass'] = 'ms-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ms-2 dark:text-gray-400 dark:hover:text-white';
   export let spanClass: $$Props['spanClass'] = 'ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400';
   export let homeClass: $$Props['homeClass'] = 'inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white';
+  export let classHome: $$Props['classHome'] = '';
+  export let classLink: $$Props['classLink'] = '';
+  export let classSpan: $$Props['classSpan'] = '';
 </script>
 
 <li {...$$restProps} class={twMerge('inline-flex items-center', $$props.class)}>
   {#if home}
-    <a class={twMerge(homeClass, $$props.classHome)} {href}>
+    <a class={twMerge(homeClass, classHome)} {href}>
       {#if $$slots.icon}
         <slot name="icon" />
       {:else}
@@ -38,11 +44,11 @@
       </svg>
     {/if}
     {#if href}
-      <a class={twMerge(linkClass, $$props.classLink)} {href}>
+      <a class={twMerge(linkClass, classLink)} {href}>
         <slot />
       </a>
     {:else}
-      <span class={twMerge(spanClass, $$props.classSpan)}>
+      <span class={twMerge(spanClass, classSpan)}>
         <slot />
       </span>
     {/if}

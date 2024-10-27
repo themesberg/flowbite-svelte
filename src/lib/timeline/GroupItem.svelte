@@ -10,6 +10,11 @@
     titleClass?: string;
     spanClass?: string;
     isPrivacy?: boolean;
+    classA?: string;
+    classImg?: string;
+    classDiv?: string;
+    classTitle?: string;
+    classSpan?: string;
   }
 
 
@@ -20,12 +25,17 @@
   export let titleClass: $$Props['titleClass'] = 'text-base font-normal';
   export let spanClass: $$Props['spanClass'] = 'inline-flex items-center text-xs font-normal text-gray-500 dark:text-gray-400';
   export let isPrivacy: $$Props['isPrivacy'] = true;
+  export let classA: $$Props['classA'] = '';
+  export let classImg: $$Props['classImg'] = '';
+  export let classDiv: $$Props['classDiv'] = '';
+  export let classTitle: $$Props['classTitle'] = '';
+  export let classSpan: $$Props['classSpan'] = '';
 
-  let aCls: string = twMerge(aClass, $$props.classA);
-  let imgCls: string = twMerge(imgClass, $$props.classImg);
-  let divCls: string = twMerge(divClass, $$props.classDiv);
-  let titleCls: string = twMerge(titleClass, $$props.classTitle);
-  let spanCls: string = twMerge(spanClass, $$props.classSpan);
+  let aCls: string = twMerge(aClass, classA);
+  let imgCls: string = twMerge(imgClass, classImg);
+  let divCls: string = twMerge(divClass, classDiv);
+  let titleCls: string = twMerge(titleClass, classTitle);
+  let spanCls: string = twMerge(spanClass, classSpan);
 </script>
 
 {#each timelines as { title, src, alt, isPrivate, href, comment }}

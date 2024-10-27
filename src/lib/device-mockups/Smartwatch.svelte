@@ -8,6 +8,11 @@
     rightBot?: string;
     top?: string;
     bot?: string;
+    classTop?: string;
+    classRightTop?: string;
+    classRightBot?: string;
+    classSlot?: string;
+    classBot?: string;
   }
   export let div: $$Props['div'] = 'relative mx-auto bg-gray-800 dark:bg-gray-700 rounded-t-[2.5rem] h-[63px] max-w-[133px]';
   export let slot: $$Props['slot'] = 'rounded-[2rem] overflow-hidden h-[193px] w-[188px]';
@@ -15,17 +20,22 @@
   export let rightBot: $$Props['rightBot'] = 'h-[32px] w-[6px] bg-gray-800 dark:bg-gray-800 absolute -right-[16px] top-[88px] rounded-r-lg';
   export let top: $$Props['top'] = 'relative mx-auto border-gray-900 dark:bg-gray-800 dark:border-gray-800 border-[10px] rounded-[2.5rem] h-[213px] w-[208px]';
   export let bot: $$Props['bot'] = 'relative mx-auto bg-gray-800 dark:bg-gray-700 rounded-b-[2.5rem] h-[63px] max-w-[133px]';
+  export let classTop: $$Props['classTop'] = '';
+  export let classRightTop: $$Props['classRightTop'] = '';
+  export let classRightBot: $$Props['classRightBot'] = '';
+  export let classSlot: $$Props['classSlot'] = '';
+  export let classBot: $$Props['classBot'] = '';
 </script>
 
 <div class={twMerge(div, $$props.class)}></div>
-<div class={twMerge(top, $$props.classTop)}>
-  <div class={twMerge(rightTop, $$props.classRightTop)}></div>
-  <div class={twMerge(rightBot, $$props.classRightBot)}></div>
-  <div class={twMerge(slot, $$props.classSlot)}>
+<div class={twMerge(top, classTop)}>
+  <div class={twMerge(rightTop, classRightTop)}></div>
+  <div class={twMerge(rightBot, classRightBot)}></div>
+  <div class={twMerge(slot, classSlot)}>
     <slot></slot>
   </div>
 </div>
-<div class={twMerge(bot, $$props.classBot)}></div>
+<div class={twMerge(bot, classBot)}></div>
 
 <!--
 @component

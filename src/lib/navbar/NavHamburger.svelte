@@ -9,10 +9,12 @@
   type $$Props = ComponentProps<ToolbarButton> & {
     menuClass?: string;
     onClick?: (() => void) | undefined;
+    classMenu?: string;
   };
 
   export let menuClass: $$Props['menuClass'] = 'h-6 w-6 shrink-0';
   export let onClick: $$Props['onClick'] = undefined;
+  export let classMenu: $$Props['classMenu'] = '';
 
   let btnClass: string = 'ms-3 md:hidden';
 
@@ -21,7 +23,7 @@
 </script>
 
 <ToolbarButton name="Open main menu" on:click={onClick || toggle} {...$$restProps} class={twMerge(btnClass, $$props.class)}>
-  <Menu class={twMerge(menuClass, $$props.classMenu)} />
+  <Menu class={twMerge(menuClass, classMenu)} />
 </ToolbarButton>
 
 <!--

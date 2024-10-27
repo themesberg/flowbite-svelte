@@ -6,11 +6,19 @@
     title?: string;
     date?: string;
     svgClass?: string;
+    classLi?: string;
+    classDiv?: string;
+    classTime?: string;
+    classH3?: string;
   }
 
   export let title: $$Props['title'] = '';
   export let date: $$Props['date'] = '';
   export let svgClass: $$Props['svgClass'] = 'w-3 h-3 text-primary-600 dark:text-primary-400';
+  export let classDiv: $$Props['classDiv'] = '';
+  export let classLi: $$Props['classLi'] = '';
+  export let classTime: $$Props['classTime'] = '';
+  export let classH3: $$Props['classH3'] = '';
 
   let order: 'default' | 'vertical' | 'horizontal' | 'activity' | 'group' = 'default';
   order = getContext('order');
@@ -38,10 +46,10 @@
     group: 'text-lg font-semibold text-gray-900 dark:text-white'
   };
 
-  let liCls: string = twMerge(liClasses[order], $$props.classLi);
-  let divCls: string = twMerge(divClasses[order], $$props.classDiv);
-  let timeCls: string = twMerge(timeClasses[order], $$props.classTime);
-  const h3Cls = twMerge(order === 'vertical' ? 'flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white' : 'text-lg font-semibold text-gray-900 dark:text-white', $$props.classH3);
+  let liCls: string = twMerge(liClasses[order], classLi);
+  let divCls: string = twMerge(divClasses[order], classDiv);
+  let timeCls: string = twMerge(timeClasses[order], classTime);
+  const h3Cls = twMerge(order === 'vertical' ? 'flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white' : 'text-lg font-semibold text-gray-900 dark:text-white', classH3);
 </script>
 
 <li class={liCls}>

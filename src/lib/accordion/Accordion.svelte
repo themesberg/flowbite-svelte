@@ -31,11 +31,13 @@
   export let activeClass: $$Props['activeClass'] = 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800';
   export let inactiveClass: $$Props['inactiveClass'] = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800';
   export let defaultClass: $$Props['defaultClass'] = 'text-gray-500 dark:text-gray-400';
+  export let classActive: $$Props['classActive'] = '';
+  export let classInactive: $$Props['classInactive'] = '';
 
   const ctx: AccordionCtxType = {
     flush,
-    activeClass: twMerge(activeClass, $$props.classActive),
-    inactiveClass: twMerge(inactiveClass, $$props.classInactive),
+    activeClass: twMerge(activeClass, classActive),
+    inactiveClass: twMerge(inactiveClass, classInactive),
     selected: multiple ? undefined : writable()
   };
 

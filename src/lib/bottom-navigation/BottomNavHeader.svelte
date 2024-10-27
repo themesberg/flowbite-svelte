@@ -5,14 +5,18 @@
   interface $$Props extends HTMLAttributes<HTMLDivElement> {
     outerClass?: string;
     innerClass?: string;
+    classOuter?: string;
+    classInner?: string;
   }
 
   export let outerClass: $$Props['outerClass'] = 'w-full';
   export let innerClass: $$Props['innerClass'] = 'grid max-w-xs grid-cols-3 gap-1 p-1 mx-auto my-2 bg-gray-100 rounded-lg dark:bg-gray-600';
+  export let classOuter: $$Props['classOuter'] = '';
+  export let classInner: $$Props['classInner'] = '';
 </script>
 
-<div {...$$restProps} class={twMerge(outerClass, $$props.classOuter)} >
-  <div class={twMerge(innerClass, $$props.classInner)} role="group">
+<div {...$$restProps} class={twMerge(outerClass, classOuter)} >
+  <div class={twMerge(innerClass, classInner)} role="group">
     <slot />
   </div>
 </div>

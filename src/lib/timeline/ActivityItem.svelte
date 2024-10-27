@@ -12,6 +12,14 @@
     timeClass?: string;
     titleClass?: string;
     textClass?: string;
+    classLi?: string;
+    classSpan?: string;
+    classImg?: string;
+    classOuterDiv?: string;
+    classInnerDiv?: string;
+    classTime?: string;
+    classTitle?: string;
+    classText?: string;
   }
 
   export let activities: $$Props['activities'] = [];
@@ -23,15 +31,23 @@
   export let timeClass: $$Props['timeClass'] = 'mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0';
   export let titleClass: $$Props['titleClass'] = 'text-sm font-normal text-gray-500 lex dark:text-gray-300';
   export let textClass: $$Props['textClass'] = 'p-3 text-xs italic font-normal text-gray-500 bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-300';
+  export let classLi: $$Props['classLi'] = '';
+  export let classSpan: $$Props['classSpan'] = '';
+  export let classImg: $$Props['classImg'] = '';
+  export let classOuterDiv: $$Props['classOuterDiv'] = '';
+  export let classInnerDiv: $$Props['classInnerDiv'] = '';
+  export let classTime: $$Props['classTime'] = '';
+  export let classTitle: $$Props['classTitle'] = '';
+  export let classText: $$Props['classText'] = '';
 
-  let liCls: string = twMerge(liClass, $$props.classLi);
-  let spanCls: string = twMerge(spanClass, $$props.classSpan);
-  let imgCls: string = twMerge(imgClass, $$props.classImg);
-  let outerDivCls: string = twMerge(outerDivClass, $$props.classOuterDiv);
-  let innerDivCls: string = twMerge(innerDivClass, $$props.classInnerDiv);
-  let timeCls: string = twMerge(timeClass, $$props.classTime);
-  let titleCls: string = twMerge(titleClass, $$props.classTitle);
-  let textCls: string = twMerge(textClass, $$props.classText);
+  let liCls: string = twMerge(liClass, classLi);
+  let spanCls: string = twMerge(spanClass, classSpan);
+  let imgCls: string = twMerge(imgClass, classImg);
+  let outerDivCls: string = twMerge(outerDivClass, classOuterDiv);
+  let innerDivCls: string = twMerge(innerDivClass, classInnerDiv);
+  let timeCls: string = twMerge(timeClass, classTime);
+  let titleCls: string = twMerge(titleClass, classTitle);
+  let textCls: string = twMerge(textClass, classText);
 </script>
 
 {#each activities as { title, date, src, alt, text }}

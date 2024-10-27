@@ -22,6 +22,7 @@
   export let /** @type {string} */ layout = '';
 
   // calm down `unused export property` warrning
+  /* eslint-disable @typescript-eslint/no-unused-expressions */
   layout;
   component_title;
 </script>

@@ -15,6 +15,8 @@
     bannerStatus?: boolean;
     transition?: TransitionFunc;
     params?: object;
+    classDiv?: string;
+    classInner?: string;
   }
 
   export let position: $$Props['position'] = 'sticky';
@@ -25,6 +27,8 @@
   export let bannerStatus: $$Props['bannerStatus'] = true;
   export let transition: NonNullable<$$Props['transition']> = fade;
   export let params: $$Props['params'] = {};
+  export let classDiv: $$Props['classDiv'] = '';
+  export let classInner: $$Props['classInner'] = '';
 
   const divClasses = {
     default: 'top-0 start-0 w-full border-b border-gray-200 bg-gray-50',
@@ -42,8 +46,8 @@
     info: 'items-center flex-shrink-0'
   };
 
-  $: divClass = twMerge(position, divClass, divClasses[bannerType], $$props.classDiv);
-  $: div2Class = twMerge(innerClass, insideDivClasses[bannerType], $$props.classInner);
+  $: divClass = twMerge(position, divClass, divClasses[bannerType], classDiv);
+  $: div2Class = twMerge(innerClass, insideDivClasses[bannerType], classInner);
 
   function close(e: MouseEvent) {
     e.preventDefault();

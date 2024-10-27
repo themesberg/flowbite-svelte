@@ -18,6 +18,7 @@
     labelInsideClass?: string;
     divClass?: string;
     progressClass?: string;
+    classLabelOutside?: string;
   }
 
   export let progress: $$Props['progress'] = '45';
@@ -32,6 +33,7 @@
   export let labelInsideClass: $$Props['labelInsideClass'] = 'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
   export let divClass: $$Props['divClass'] = 'w-full bg-gray-200 rounded-full dark:bg-gray-700';
   export let progressClass: $$Props['progressClass'] = '';
+  export let classLabelOutside: $$Props['classLabelOutside'] = '';
 
   const _progress = tweened(0, {
     duration: animate ? tweenDuration : 0,
@@ -54,7 +56,7 @@
 </script>
 
 {#if labelOutside}
-  <div {...$$restProps} class={twMerge('flex justify-between mb-1', $$props.classLabelOutside)}>
+  <div {...$$restProps} class={twMerge('flex justify-between mb-1', classLabelOutside)}>
     <span class="text-base font-medium text-blue-700 dark:text-white">{labelOutside}</span>
     <span class="text-sm font-medium text-blue-700 dark:text-white">{progress}%</span>
   </div>
