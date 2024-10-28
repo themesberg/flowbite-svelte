@@ -157,7 +157,7 @@ Get started with the small, default, and large sizes for the select component fr
 <Select id="select-md" size="md" items={countries} class="mb-6" />
 <Label for="select-lg" class="mb-2">Large select</Label>
 <Select id="select-lg" size="lg" items={countries} class="mb-6" />
-<p class="my-6" />
+<p class="my-6" ></p>
 <Label for="select-sm" class="sr-only">Underline small select</Label>
 <Select id="select-sm" underline size="sm" items={countries} class="mb-6" />
 <Label for="select-md" class="sr-only">Underline default select</Label>

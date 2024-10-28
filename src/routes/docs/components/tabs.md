@@ -28,11 +28,11 @@ The tabs component can be used either as an extra navigational hierarchy complem
 
 Use the following default tabs component example to show a dynamic content in your webpage.
 
-<p class="my-2"/>
+<p class="my-2"></p>
 
 If your tab title is a simple string set the `title` property on `TabItem`, otherwise when more control is needed overwrite the `title` slot.
 
-<p class="my-2"/>
+<p class="my-2"></p>
 
 The last tab in that example shows not only how to show a disabled tab, but how to use the `title` slot entry as well.
 
@@ -80,11 +80,11 @@ The last tab in that example shows not only how to show a disabled tab, but how 
 
 You can control the style of tabs component by settings the `activeClasses` and `inactiveClasses` on the `TabItem` elements. See the `Custom style` section below for more details.
 
-<p class="my-2"/>
+<p class="my-2"></p>
 
 However tabs component comes with several pre-defined styles that are accessible to you by setting the `tabStyle` property. This will set the `activeClasses` and `inactiveClasses` properties for you.
 
-<p class="my-2"/>
+<p class="my-2"></p>
 
 Use the `tabStyle="underline"` to achieve this alternative tabs component style with an underline instead of a background when hovering and being active on a certain page.
 

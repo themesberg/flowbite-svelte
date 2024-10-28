@@ -48,7 +48,7 @@
           {name}
         </PaginationItem>
       {:else}
-        <div />
+        <div></div>
       {/if}
       <div class="hidden sm:block">
         <slot />
@@ -60,7 +60,7 @@
           <ArrowRight />
         </PaginationItem>
       {:else}
-        <div />
+        <div></div>
       {/if}
     </div>
   {/if}

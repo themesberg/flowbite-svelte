@@ -25,7 +25,7 @@ Use well over 500 SVG icons based on the open-source [Flowbite Icons](https://fl
 ## Requirements
 
 ```markdown
-- Svelte 4 or 5 (without Runes)
+- Svelte 4 or 5
 - TailwindCSS
 - tailwind-merge
 ```
@@ -39,7 +39,7 @@ npm create svelte@latest my-project
 cd my-project
 npx svelte-add@latest tailwindcss
 pnpm i
-pnpm i -D flowbite-svelte-icons
+pnpm i -D flowbite-svelte-icons@v1-latest
 ```
 
 To make sure the classes used by flowbite-svelte-icons are included by the Tailwindcss, add the following to tailwind.config.cjs.

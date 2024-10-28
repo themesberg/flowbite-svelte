@@ -30,7 +30,7 @@ Get started with multiple sizes, colors, and styles built with the utility class
 
 Modal visibility (open/close) is controlled by the `open` property. You can bind it to a variable that other element (usually button) will toggle. You can also use the `open=true` attribute to show open the modal by default. Opening and closing the modal will trigger the `open` and `close` events.
 
-<p class="p-2"/>
+<p class="p-2"></p>
 
 An option of automatic closing of the modal can be enabled by setting the `autoclose` property. Any `<button>` element put in the modal will close it on click.
 

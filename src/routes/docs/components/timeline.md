@@ -103,7 +103,7 @@ Use this horizontally aligned timeline component to show a series of data in a c
         <div class="flex z-10 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0">
           <CalendarWeekSolid class="w-4 h-4 text-primary-600 dark:text-primary-400" />
         </div>
-        <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
+        <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" ></div>
       </div>
     </svelte:fragment>
     <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements.</p>
@@ -114,7 +114,7 @@ Use this horizontally aligned timeline component to show a series of data in a c
         <div class="flex z-10 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0">
           <CalendarWeekSolid class="w-4 h-4 text-primary-600 dark:text-primary-400" />
         </div>
-        <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
+        <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
       </div>
     </svelte:fragment>
     <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements.</p>
@@ -125,7 +125,7 @@ Use this horizontally aligned timeline component to show a series of data in a c
         <div class="flex z-10 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0">
           <CalendarWeekSolid class="w-4 h-4 text-primary-600 dark:text-primary-400" />
         </div>
-        <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
+        <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
       </div>
     </svelte:fragment>
     <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements.</p>

@@ -35,5 +35,5 @@
  </script>
 
 <aside class="fixed bottom-5 right-5 z-50 hidden sm:block">
-  <div id="carbon-container" />
+  <div id="carbon-container" ></div>
 </aside>

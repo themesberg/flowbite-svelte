@@ -25,7 +25,7 @@ Use well over 500 SVG icons based on the open-source [Flowbite Icons](https://fl
 ## Requirements
 
 ```markdown
-- Svelte 5:Runes
+- Svelte 5 or later
 - TailwindCSS
 - tailwind-merge
 ```
@@ -35,37 +35,15 @@ Use well over 500 SVG icons based on the open-source [Flowbite Icons](https://fl
 Install Svelte and TailwindCSS:
 
 ```sh
-// install Svelte 5
-npm create svelte@latest my-project
-cd my-project
-npx svelte-add@latest tailwindcss
-pnpm i
+npx sv create myapp
+// select tailwindcss to install
+cd myapp
 ```
 
-Install `flowbite-svelte-icons v2`:
+Install `flowbite-svelte-icons`:
 
 ```sh
-pnpm i -D flowbite-svelte-icons@next
-```
-
-Enable Runes in `svelte.config.js`:
-
-```js
-import adapter from '@sveltejs/adapter-auto';
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-
-/** @type {import('@sveltejs/kit').Config} */
-const config = {
-	preprocess: [vitePreprocess({})],
-	compilerOptions: {
-		runes: true
-	},
-	kit: {
-		adapter: adapter()
-	}
-};
-
-export default config;
+pnpm i -D flowbite-svelte-icons
 ```
 
 ## tailwind.config.cjs

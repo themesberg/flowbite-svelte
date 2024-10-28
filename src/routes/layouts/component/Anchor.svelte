@@ -24,6 +24,6 @@
 
 <svelte:element this={tag} {...$$restProps} class={elemClass} use:init>
   <slot />
-  <span id={slug} class="absolute -top-[140px]" />
+  <span id={slug} class="absolute -top-[140px]"></span>
   <a class="ms-2 text-primary-700 opacity-0 transition-opacity dark:text-primary-700 group-hover:opacity-100" href="#{slug}" aria-label="Link to this section: {content}"> # </a>
 </svelte:element>

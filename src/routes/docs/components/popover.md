@@ -154,12 +154,12 @@ Use this example to trigger a popover component with detailed information and an
       <div class="space-y-2">
         <h3 class="font-semibold text-gray-900 dark:text-white">
           About Italy
-          <h3>
+          <span>
             <p class="text-gray-500 dark:text-gray-500">Italy is located in the middle of the Mediterranean Sea, in Southern Europe it is also considered part of Western Europe. A unitary parliamentary republic with Rome as its capital and largest city.</p>
             <a href="/" class="flex items-center font-medium text-primary-600 dark:text-primary-500 dark:hover:text-primary-600 hover:text-primary-700">
               Read more <ChevronRightOutline class="w-2 h-2 ms-1.5 text-primary-600 dark:text-primary-500" />
             </a>
-          </h3>
+          </span>
         </h3>
       </div>
     </div>
@@ -189,7 +189,7 @@ Show helpful information inside a popover when hovering over a question mark but
   <div class="p-3 space-y-2">
     <h3 class="font-semibold text-gray-900 dark:text-white">Activity growth - Incremental</h3>
     Report helps navigate cumulative growth of community activities. Ideally, the chart should have a growing trend.
-    <h3 class="font-semibold text-gray-900 dark:text-white">Calculation</h3>
+    <span class="font-semibold text-gray-900 dark:text-white">Calculation</span>
     For each date bucket, the all-time volume of activities is calculated. This means that activities in period n contain all activities up to period n.
     <a href="/" class="flex items-center font-medium text-primary-600 dark:text-primary-500 dark:hover:text-primary-600 hover:text-primary-700">
       Read more <ChevronRightOutline class="w-4 h-4 ms-1.5 text-primary-600 dark:text-primary-500" />
@@ -221,7 +221,7 @@ Show a progress bar with details inside a popover when hovering over a settings 
       of block storage remaining.
     </p>
     <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
-      <div class="bg-red-600 h-2.5 rounded-full" style="width: 85%" />
+      <div class="bg-red-600 h-2.5 rounded-full" style="width: 85%" ></div>
     </div>
     <a href="/" class="flex items-center font-medium text-primary-600 dark:text-primary-500 dark:hover:text-primary-600 hover:text-primary-700">
       Upgrade now <ChevronRightOutline class="w-4 h-4 ms-1.5 text-primary-600 dark:text-primary-500" />
@@ -255,10 +255,10 @@ Dynamically show the password strength progress when creating a new password pos
 <Popover class="text-sm" triggeredBy="#password" placement="bottom">
   <h3 class="font-semibold text-gray-900 dark:text-white">Must have at least 6 characters</h3>
   <div class="grid grid-cols-4 gap-2">
-    <div class="h-1 bg-orange-300 dark:bg-orange-400" />
-    <div class="h-1 bg-orange-300 dark:bg-orange-400" />
-    <div class="h-1 bg-gray-200 dark:bg-gray-600" />
-    <div class="h-1 bg-gray-200 dark:bg-gray-600" />
+    <div class="h-1 bg-orange-300 dark:bg-orange-400" ></div>
+    <div class="h-1 bg-orange-300 dark:bg-orange-400" ></div>
+    <div class="h-1 bg-gray-200 dark:bg-gray-600" ></div>
+    <div class="h-1 bg-gray-200 dark:bg-gray-600" ></div>
   </div>
   <p class="py-2">It’s better to have:</p>
   <ul>
