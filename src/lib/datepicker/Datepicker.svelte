@@ -151,7 +151,7 @@
   }
 
   function handleClickOutside(event: MouseEvent) {
-    if (isOpen && !datepickerContainerElement.contains(event.target as Node)) {
+    if (isOpen && datepickerContainerElement && !datepickerContainerElement.contains(event.target as Node)) {
       isOpen = false;
     }
   }
