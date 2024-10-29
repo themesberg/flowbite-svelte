@@ -1,6 +1,6 @@
 # Svelte 5 UI Lib
 
-UI library for Svelte 5
+Svelte 5 UI Lib is a UI library built from the ground up for Svelte 5's pure runes mode. It uses Svelte 5's runes system to create smooth, reactive UI components. Each component and utility is built from scratch to work naturally with Svelte 5's approach.
 
 - [Docs](https://svelte-5-ui-lib.codewithshin.com/)
 
