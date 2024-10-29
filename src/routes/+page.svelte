@@ -19,7 +19,7 @@
 
 <H1><a class="hover:underline dark:text-primary-500" href={githuburl}>{removeHyphensAndCapitalize(name)}: v{version}</a></H1>
 
-<P>Svelte 5 UI Lib is a UI library built from the ground up for Svelte 5's pure runes mode. It uses Svelte 5's runes system to create smooth, reactive UI components. Each component and utility is built from scratch to work naturally with Svelte 5's approach.</P>
+<P>Svelte 5 UI Lib is a UI library built from scratch to leverage Svelte 5's runes system, creating smooth, reactive components.</P>
 
 <H2>Installation</H2>
 
