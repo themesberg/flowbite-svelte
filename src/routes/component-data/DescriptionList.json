@@ -1,20 +1,8 @@
 {
   "name": "DescriptionList",
   "props": [
-    [
-      "children",
-      "Snippet",
-      ""
-    ],
-    [
-      "tag",
-      "\"dt\" | \"dd\"",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ]
+    ["children", "Snippet", ""],
+    ["tag", "\"dt\" | \"dd\"", ""],
+    ["class", "string", ""]
   ]
 }

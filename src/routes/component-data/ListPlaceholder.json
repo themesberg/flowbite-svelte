@@ -1,25 +1,9 @@
 {
   "name": "ListPlaceholder",
   "props": [
-    [
-      "itemNumber",
-      "number",
-      "5"
-    ],
-    [
-      "size",
-      "\"sm\" | \"md\" | \"lg\" | undefined",
-      "\"md\""
-    ],
-    [
-      "rounded",
-      "\"sm\" | \"md\" | \"lg\" | \"none\" | \"full\" | undefined",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ]
+    ["itemNumber", "number", "5"],
+    ["size", "\"sm\" | \"md\" | \"lg\" | undefined", "\"md\""],
+    ["rounded", "\"sm\" | \"md\" | \"lg\" | \"none\" | \"full\" | undefined", ""],
+    ["class", "string", ""]
   ]
 }

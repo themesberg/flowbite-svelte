@@ -1,1 +1,1 @@
-pnpm i -D flowbite-svelte-icons@next
+pnpm i -D flowbite-svelte-icons

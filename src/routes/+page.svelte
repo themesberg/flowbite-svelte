@@ -15,7 +15,6 @@
   const name = __NAME__;
   const version = __VERSION__;
   const githuburl = __GITHUBURL__;
-
 </script>
 
 <H1><a class="hover:underline dark:text-primary-500" href={githuburl}>{removeHyphensAndCapitalize(name)}: v{version}</a></H1>
@@ -30,25 +29,11 @@
 <HighlightCompo class="mb-8" codeLang="js" code={modules["./md/install-svelte.md"] as string} />
 
 <H3>Installing Svelte-5-Ui-Lib</H3>
-Install `svelte-5-ui-lib` and update dependencies:
+<P>Install `svelte-5-ui-lib` and update dependencies:</P>
 
 <HighlightCompo class="mb-8" codeLang="sh" code={modules["./md/svelte-5-ui-lib.md"] as string} />
 
-<H3>Flowbite-Svelte-Icons@next</H3>
-
-Install flowbite-svelte-icons@next:
-
-<HighlightCompo class="mb-8" codeLang="sh" code={modules["./md/flowbite-svelte-icons.md"] as string} />
-
-Check if it has the latest version at
-<a class="hover:underline dark:text-primary-500" href="https://github.com/themesberg/flowbite-svelte-icons/releases">Releases page</a>
-.
-
 <H3>Tailwind</H3>
-Install tailwindcss:
-
-<HighlightCompo class="mb-8" codeLang="sh" code={modules["./md/tailwind.md"] as string} />
-
-Add the following to tailwind.config.js:
+<P>Add the following to tailwind.config.js:</P>
 
 <HighlightCompo class="mb-8" codeLang="json" code={modules["./md/tailwind-config.md"] as string} />

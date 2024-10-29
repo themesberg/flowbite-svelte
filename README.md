@@ -6,37 +6,14 @@ Svelte 5 UI Lib is a UI library built from the ground up for Svelte 5's pure run
 
 ## Installation
 
-After installing Svelte-5, you can [opt-in to runes mode](https://svelte-5-preview.vercel.app/docs/runes#how-to-opt-in) by updating `svelte.config.js` to enable `runes`:
-
-```js
-import adapter from "@sveltejs/adapter-auto";
-import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
-
-/** @type {import('@sveltejs/kit').Config} */
-const config = {
-  preprocess: [vitePreprocess({})],
-  compilerOptions: {
-    runes: true
-  },
-  kit: {
-    adapter: adapter()
-  }
-};
-
-export default config;
-```
-
-Install `svelte-5-ui-lib`, update dependencies and install the latest:
+Install `svelte`, `tailwindcss`, and `svelte-5-ui-lib`, update dependencies and install the latest:
 
 ```sh
-pnpm i -D svelte-5-ui-lib && pnpm update && pnpm i -D flowbite-svelte-icons@next
-```
-
-Install tailwindcss:
-
-```sh
-npx svelte-add@latest tailwindcss
-pnpm i
+npx sv create myapp // select to install tailwindcss
+cd myapp
+pnpm install
+pnpm run dev
+pnpm i -D svelte-5-ui-lib
 ```
 
 Add the following to tailwind.config.js:

@@ -1,40 +1,12 @@
 {
   "name": "CloseButton",
   "props": [
-    [
-      "color",
-      "\"primary\" | \"secondary\" | \"gray\" | \"red\" | \"orange\" | \"amber\" | \"yellow\" | \"lime\" | \"green\" | \"emerald\" | \"teal\" | \"cyan\" | \"sky\" | \"blue\" | \"indigo\" | \"violet\" | \"purple\" | \"fuchsia\" | \"pink\" | \"rose\" | undefined",
-      "\"gray\""
-    ],
-    [
-      "onclick",
-      "() => void",
-      ""
-    ],
-    [
-      "name",
-      "string",
-      "\"Close\""
-    ],
-    [
-      "ariaLabel",
-      "string",
-      ""
-    ],
-    [
-      "size",
-      "\"md\" | \"xs\" | \"sm\" | \"lg\" | undefined",
-      "\"md\""
-    ],
-    [
-      "href",
-      "string",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ]
+    ["color", "\"primary\" | \"secondary\" | \"gray\" | \"red\" | \"orange\" | \"amber\" | \"yellow\" | \"lime\" | \"green\" | \"emerald\" | \"teal\" | \"cyan\" | \"sky\" | \"blue\" | \"indigo\" | \"violet\" | \"purple\" | \"fuchsia\" | \"pink\" | \"rose\" | undefined", "\"gray\""],
+    ["onclick", "() => void", ""],
+    ["name", "string", "\"Close\""],
+    ["ariaLabel", "string", ""],
+    ["size", "\"md\" | \"xs\" | \"sm\" | \"lg\" | undefined", "\"md\""],
+    ["href", "string", ""],
+    ["class", "string", ""]
   ]
 }

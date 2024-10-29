@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.24
+
+### Patch Changes
+
+- docs: README update for npmjs
+
 ## 0.9.23
 
 ### Patch Changes

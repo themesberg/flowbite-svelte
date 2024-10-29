@@ -1,130 +1,30 @@
 {
   "name": "Modal",
   "props": [
-    [
-      "children",
-      "Snippet",
-      ""
-    ],
-    [
-      "header",
-      "Snippet",
-      ""
-    ],
-    [
-      "footer",
-      "Snippet",
-      ""
-    ],
-    [
-      "title",
-      "string",
-      ""
-    ],
-    [
-      "modalStatus",
-      "boolean",
-      ""
-    ],
-    [
-      "dismissable",
-      "boolean",
-      "true"
-    ],
-    [
-      "closeModal",
-      "() => void",
-      ""
-    ],
-    [
-      "divClass",
-      "string",
-      ""
-    ],
-    [
-      "contentClass",
-      "string",
-      ""
-    ],
-    [
-      "closeBtnClass",
-      "string",
-      ""
-    ],
-    [
-      "h3Class",
-      "string",
-      ""
-    ],
-    [
-      "headerClass",
-      "string",
-      ""
-    ],
-    [
-      "bodyClass",
-      "string",
-      ""
-    ],
-    [
-      "footerClass",
-      "string",
-      ""
-    ],
-    [
-      "outsideClose",
-      "boolean",
-      "true"
-    ],
-    [
-      "size",
-      "\"md\" | \"sm\" | \"lg\" | \"xl\" | \"xs\" | undefined",
-      "\"md\""
-    ],
-    [
-      "backdrop",
-      "boolean",
-      "true"
-    ],
-    [
-      "backdropClass",
-      "string",
-      ""
-    ],
-    [
-      "position",
-      "\"top-left\" | \"top-center\" | \"top-right\" | \"center-left\" | \"center\" | \"center-right\" | \"bottom-left\" | \"bottom-center\" | \"bottom-right\" | \"default\" | undefined",
-      "\"center\""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ],
-    [
-      "params",
-      "ParamsType",
-      "{ duration: 100"
-    ],
-    [
-      "easing",
-      "any",
-      ""
-    ],
-    [
-      "transition",
-      "TransitionFunc",
-      "fade"
-    ],
-    [
-      "rounded",
-      "boolean",
-      "true"
-    ],
-    [
-      "shadow",
-      "boolean",
-      "true"
-    ]
+    ["children", "Snippet", ""],
+    ["header", "Snippet", ""],
+    ["footer", "Snippet", ""],
+    ["title", "string", ""],
+    ["modalStatus", "boolean", ""],
+    ["dismissable", "boolean", "true"],
+    ["closeModal", "() => void", ""],
+    ["divClass", "string", ""],
+    ["contentClass", "string", ""],
+    ["closeBtnClass", "string", ""],
+    ["h3Class", "string", ""],
+    ["headerClass", "string", ""],
+    ["bodyClass", "string", ""],
+    ["footerClass", "string", ""],
+    ["outsideClose", "boolean", "true"],
+    ["size", "\"md\" | \"sm\" | \"lg\" | \"xl\" | \"xs\" | undefined", "\"md\""],
+    ["backdrop", "boolean", "true"],
+    ["backdropClass", "string", ""],
+    ["position", "\"top-left\" | \"top-center\" | \"top-right\" | \"center-left\" | \"center\" | \"center-right\" | \"bottom-left\" | \"bottom-center\" | \"bottom-right\" | \"default\" | undefined", "\"center\""],
+    ["class", "string", ""],
+    ["params", "ParamsType", "{ duration: 100"],
+    ["easing", "any", ""],
+    ["transition", "TransitionFunc", "fade"],
+    ["rounded", "boolean", "true"],
+    ["shadow", "boolean", "true"]
   ]
 }
