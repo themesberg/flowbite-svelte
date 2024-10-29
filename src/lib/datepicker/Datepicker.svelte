@@ -25,6 +25,7 @@
   const dispatch = createEventDispatcher();
   let isOpen: boolean = inline;
   let inputElement: HTMLInputElement;
+  let datepickerContainerElement: HTMLDivElement;
   let currentMonth: Date = value || defaultDate || new Date();
   let focusedDate: Date | null = null;
   let calendarRef: HTMLDivElement;
@@ -150,7 +151,7 @@
   }
 
   function handleClickOutside(event: MouseEvent) {
-    if (isOpen && !inputElement.contains(event.target as Node)) {
+    if (isOpen && !datepickerContainerElement.contains(event.target as Node)) {
       isOpen = false;
     }
   }
@@ -249,7 +250,7 @@
   }
 </script>
 
-<div class="relative {inline ? 'inline-block' : ''}">
+<div bind:this={datepickerContainerElement} class="relative {inline ? 'inline-block' : ''}">
   {#if !inline}
     <div class="relative">
       <input bind:this={inputElement} type="text" class="w-full px-4 py-2 text-sm border rounded-md focus:outline-none dark:bg-gray-700 dark:text-white dark:border-gray-600 {getFocusRingClass(color)} {inputClass}" {placeholder} value={range ? `${formatDate(rangeFrom)} - ${formatDate(rangeTo)}` : formatDate(value)} on:focus={() => (isOpen = true)} on:input={handleInputChange} on:keydown={handleInputKeydown} {disabled} {required} aria-haspopup="dialog" />
