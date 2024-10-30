@@ -2,7 +2,7 @@
   import { onMount } from 'svelte';
   import type { ApexOptions } from 'apexcharts';
   import type ApexCharts from 'apexcharts';
-  
+
   interface $$Props {
     options: ApexOptions;
     class?: string;
@@ -11,11 +11,16 @@
   export let options: ApexOptions;
   let chart: ApexCharts | undefined;
 
+  // Add reactivity to update options when options change
+  $: {
+    chart?.updateOptions(options);
+  }
+
   interface ChartAction {
     update: (options: ApexOptions) => void;
     destroy: () => void;
   }
-  
+
   function initChart(node: HTMLElement, options: ApexOptions): ChartAction {
     async function asyncInitChart(): Promise<void> {
       const ApexChartsModule = await import('apexcharts');
