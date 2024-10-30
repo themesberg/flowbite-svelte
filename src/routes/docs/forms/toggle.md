@@ -83,6 +83,23 @@ Get started with the default toggle component example as a checkbox element to r
 </Toggle>
 ```
 
+## Disabled
+
+```svelte example class="flex flex-col gap-2"
+<script lang="ts">
+  import { Input, Label, Button, Toggle } from 'flowbite-svelte';
+  let isDisabled = false;
+  let checked: boolean;
+  const handleClick = () => {
+    isDisabled = !isDisabled;
+  }
+</script>
+
+<Button class="w-48" on:click={handleClick}>Disabled: {isDisabled ? 'True' : 'False'}</Button>
+
+<Toggle class="mt-3" bind:checked disabled={isDisabled}>Disabled: {isDisabled}</Toggle>
+```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

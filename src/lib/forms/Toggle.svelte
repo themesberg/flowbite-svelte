@@ -12,6 +12,7 @@
     checked?: boolean;
     customSize?: string;
     classDiv?: string;
+    disabled?: boolean;
   }
 
   export let size: NonNullable<$$Props['size']> = 'default';
@@ -20,6 +21,7 @@
   export let checked: $$Props['checked'] = undefined;
   export let customSize: $$Props['customSize'] = '';
   export let classDiv: string = '';
+  export let disabled: $$Props['disabled'] = false;
 
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
@@ -48,9 +50,11 @@
   let divClass: string;
 
   $: divClass = twMerge(common, $$slots.offLabel ? "ms-3" : "", background ? 'dark:bg-gray-600 dark:border-gray-500' : 'dark:bg-gray-700 dark:border-gray-600', colors[($$restProps.color as FormColorType) ?? 'primary'], sizes[size], 'relative', classDiv);
+  let checkboxCls: string;
+  $: checkboxCls = disabled ? "cursor-not-allowed grayscale contrast-50 text-gray-400" : "cursor-pointer text-gray-900";
 </script>
 
-<Checkbox custom {...$$restProps} class={$$props.class} {value} bind:checked bind:group on:click on:change>
+<Checkbox custom {...$$restProps} {disabled} class={twMerge(checkboxCls, $$props.class)} {value} bind:checked bind:group on:click on:change>
   <slot name="offLabel"></slot>
   <span class={divClass}></span>
   <slot></slot>
