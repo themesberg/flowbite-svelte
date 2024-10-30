@@ -3,14 +3,14 @@
   import { twMerge, twJoin } from 'tailwind-merge';
 
   interface $$Props extends HTMLAttributes<HTMLElement> {
-    steps: string[];
-    currentStep: number;
-    size: string;
-    color: 'primary' | 'secondary' | 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'custom';
-    glow: boolean;
-    hideLabel: boolean;
-    completedCustom: string;
-    currentCustom: string;
+    steps?: string[];
+    currentStep?: number;
+    size?: string;
+    color?: 'primary' | 'secondary' | 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'custom';
+    glow?: boolean;
+    hideLabel?: boolean;
+    completedCustom?: string;
+    currentCustom?: string;
   }
 
   export let steps: $$Props['steps'] = ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'];
