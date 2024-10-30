@@ -51,7 +51,7 @@
 </script>
 
 <Label class={labelClass(inline, $$props.class)} show={$$slots.default}>
-  <input type="radio" bind:group={group} on:blur on:change on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover on:paste {value} {...$$restProps} class={inputClass(custom, color, false, background, spacing, $$slots.default || $$props.class)} />
+  <input type="radio" {...$$restProps} bind:group={group} on:blur on:change on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover on:paste {value} class={inputClass(custom, color, false, background, spacing, $$slots.default || $$props.class)} />
   <slot />
 </Label>
 

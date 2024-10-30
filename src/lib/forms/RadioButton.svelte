@@ -28,7 +28,7 @@
   $: buttonClass = twMerge(inline ? 'inline-flex' : 'flex', $$props.class);
 </script>
 
-<Button checked={value === group} {pill} {outline} {size} {color} {shadow} class={buttonClass}>
+<Button tag="label" checked={value === group} {pill} {outline} {size} {color} {shadow} class={buttonClass}>
   <input
     type="radio"
     bind:group

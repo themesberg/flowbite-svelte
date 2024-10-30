@@ -302,15 +302,15 @@ This component accepts all props from the [Button](/docs/components/buttons) for
 </script>
 
 <div>
-  <RadioButton value={"notes"} bind:group={radioGroup}><ListMusicSolid class="w-7 h-7" /></RadioButton>
-  <RadioButton value={"numbers"} bind:group={radioGroup}><OrderedListOutline class="w-7 h-7"/></RadioButton>
-  <RadioButton value={"bullets"} bind:group={radioGroup}><ListOutline class="w-7 h-7"/></RadioButton>
+  <RadioButton value="notes" bind:group={radioGroup}><ListMusicSolid class="w-7 h-7" /></RadioButton>
+  <RadioButton value="numbers" bind:group={radioGroup}><OrderedListOutline class="w-7 h-7"/></RadioButton>
+  <RadioButton value="bullets" bind:group={radioGroup}><ListOutline class="w-7 h-7"/></RadioButton>
 </div>
 
 <ButtonGroup>
-  <RadioButton value={"notes"} bind:group={radioGroup}><ListMusicSolid class="w-7 h-7"/></RadioButton>
-  <RadioButton value={"numbers"} bind:group={radioGroup}><OrderedListOutline class="w-7 h-7"/></RadioButton>
-  <RadioButton value={"bullets"} bind:group={radioGroup}><ListOutline class="w-7 h-7"/></RadioButton>
+  <RadioButton value="notes" bind:group={radioGroup}><ListMusicSolid class="w-7 h-7"/></RadioButton>
+  <RadioButton value="numbers" bind:group={radioGroup}><OrderedListOutline class="w-7 h-7"/></RadioButton>
+  <RadioButton value="bullets" bind:group={radioGroup}><ListOutline class="w-7 h-7"/></RadioButton>
 </ButtonGroup>
 
 <p>List style: {radioGroup}</p>

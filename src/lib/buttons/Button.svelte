@@ -11,7 +11,7 @@
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     color?: ButtonColor;
     shadow?: boolean;
-    tag?: 'a' | 'button';
+    tag?: 'a' | 'button'| 'label'; 
     checked?: boolean;
   }
 
@@ -142,6 +142,10 @@
   <a {href} {...$$restProps} class={buttonClass} role="button" on:click on:change on:keydown on:keyup on:touchstart|passive on:touchend on:touchcancel on:mouseenter on:mouseleave>
     <slot />
   </a>
+{:else if tag === 'label'}
+  <label {...$$restProps} class={buttonClass}>
+    <slot />
+  </label>
 {:else if tag === 'button' }
   <button {type} {...$$restProps} {disabled} class={buttonClass} on:click on:change on:keydown on:keyup on:touchstart|passive on:touchend on:touchcancel on:mouseenter on:mouseleave>
     <slot />
