@@ -18,8 +18,9 @@
   import Indicators from './Indicators.svelte';
   import Slide from './Slide.svelte';
   import { canChangeSlide } from './CarouselSlide';
+  import type { ParamsType } from '../types'
 
-  type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
+  type TransitionFunc = (node: HTMLElement, params: ParamsType) => TransitionConfig;
   const SLIDE_DURATION_RATIO = 0.25; // TODO: Expose one day?
 
   export let images: HTMLImgAttributes[];
@@ -78,6 +79,7 @@
     carouselDiv = node; // used by DragStart
 
     // loop timer
+    /* eslint-disable  @typescript-eslint/no-explicit-any */
     let intervalId: any;
 
     if (duration > 0) intervalId = setInterval(nextSlide, duration);
@@ -116,7 +118,7 @@
 
   const onDragStart = (evt: MouseEvent | TouchEvent) => {
     if (disableSwipe) return;
-
+    /* eslint-disable  @typescript-eslint/no-unused-expressions */
     touchEvent = evt;
     evt.cancelable && evt.preventDefault();
     const start = getPositionFromEvent(evt);

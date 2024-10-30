@@ -5,10 +5,11 @@
   import { getContext } from 'svelte';
   import type { Writable } from 'svelte/store';
   import type { State } from './Carousel.svelte';
+  import type { ParamsType } from '../types'
 
   const state = getContext<Writable<State>>('state');
 
-  type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
+  type TransitionFunc = (node: HTMLElement, params: ParamsType) => TransitionConfig;
 
   export let image: HTMLImgAttributes;
   export let transition: TransitionFunc | null = null; // Optional transition function, overrides default slide transition

@@ -24,21 +24,6 @@ The file input component can be used to upload one or more files from the device
 </script>
 ```
 
-## File upload example
-
-```svelte example
-<script>
-  import { Fileupload, Label } from 'flowbite-svelte';
-  let value;
-</script>
-
-<Label class="space-y-2 mb-2">
-  <span>Upload file</span>
-  <Fileupload bind:value />
-</Label>
-<Label>File: {value}</Label>
-```
-
 ## Helper text
 
 ```svelte example
@@ -51,25 +36,17 @@ The file input component can be used to upload one or more files from the device
 <Helper>SVG, PNG, JPG or GIF (MAX. 800x400px).</Helper>
 ```
 
-## Multiple files
-
-When the user selected multiple files, the `value` represents the first file in the list of files they selected. The other files can be identified using the `files` property.
+## Clearable and multiple files
 
 ```svelte example
-<script>
-  import { Fileupload, Label, Listgroup, ListgroupItem } from 'flowbite-svelte';
-  let files; // FileList type
+<script lang="ts">
+  import { Fileupload, Helper } from 'flowbite-svelte';
+  let selectedFiles: FileList | undefined;
+  $: fileNames =  selectedFiles ? Array.from(selectedFiles).map((file) => file.name).join(", "): "No files selected";
 </script>
 
-<Label class="pb-2" for="multiple_files">Upload multiple files</Label>
-<Fileupload id="multiple_files" multiple bind:files />
-<Listgroup items={files} let:item class="mt-2">
-  {#if item}
-    {item.name}
-  {:else}
-    <ListgroupItem>No files</ListgroupItem>
-  {/if}
-</Listgroup>
+<Fileupload clearable bind:files={selectedFiles} multiple />
+<Helper color="emerald" class="mt-2">Selected files: {fileNames}</Helper>
 ```
 
 ## Sizes

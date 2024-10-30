@@ -10,7 +10,7 @@
     type?: InputType;
     size?: 'small' | 'default';
     color?: 'base' | 'green' | 'red';
-    value?: any;
+    value?: string | number | readonly string[] | undefined;
     classDiv?: string;
     classInput?: string;
     classLabel?: string;

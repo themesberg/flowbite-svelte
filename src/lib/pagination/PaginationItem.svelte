@@ -34,7 +34,6 @@
   );
 </script>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
 <svelte:element this={href ? 'a' : 'button'} {href} class={defaultClass} on:blur on:change on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover role={href ? 'button' : undefined}>
   <slot />
 </svelte:element>

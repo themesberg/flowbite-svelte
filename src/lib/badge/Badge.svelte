@@ -6,6 +6,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { fade, type TransitionConfig } from 'svelte/transition';
 
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 
   const dispatcher = createEventDispatcher();

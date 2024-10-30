@@ -31,7 +31,6 @@
 </script>
 
 {#if show}
-  <!-- svelte-ignore a11y-label-has-associated-control -->
   <label bind:this={node} {...$$restProps} class={labelClass}><slot /></label>
 {:else}
   <slot />

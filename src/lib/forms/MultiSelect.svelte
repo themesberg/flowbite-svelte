@@ -146,7 +146,6 @@
     <option {value} {disabled}>{name}</option>
   {/each}
 </select>
-<!-- svelte-ignore a11y-click-events-have-key-events -->
 <div on:click={() => !disabled && (show = !show)} on:focusout={() => !disabled && (show = false)} on:keydown={handleKeyDown} tabindex="0" role="listbox" class={twMerge(multiSelectClass, sizes[size], $$props.class, !disabled && "focus-within:ring-1 focus-within:border-primary-500 dark:focus-within:border-primary-500", disabled && "opacity-50 cursor-not-allowed")}>
   {#if !selectItems.length}
     <span class="text-gray-400">{placeholder}</span>
@@ -175,7 +174,6 @@
   {#if show}
     <div on:click|stopPropagation role="presentation" class={multiSelectDropdown}>
       {#each items as item (item.name)}
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
         <div on:click={() => selectOption(item)} role="presentation" class={twMerge(itemsClass, selectItems.includes(item) && itemsSelectClass, activeItem === item && activeItemClass, disabled && "pointer-events-none", item.disabled && "opacity-50 cursor-not-allowed")}>
           {item.name}
         </div>

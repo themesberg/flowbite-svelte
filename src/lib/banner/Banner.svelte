@@ -3,8 +3,9 @@
   import CloseButton from '../utils/CloseButton.svelte';
   import type { HTMLAttributes } from 'svelte/elements';
   import { fade, type TransitionConfig } from 'svelte/transition';
+  import type { ParamsType } from '../types'
 
-  type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
+  type TransitionFunc = (node: HTMLElement, params: ParamsType) => TransitionConfig;
 
   interface $$Props extends HTMLAttributes<HTMLDivElement> {
     position?: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky';

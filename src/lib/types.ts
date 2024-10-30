@@ -1,4 +1,5 @@
 import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
+import type { TransitionConfig, FadeParams, BlurParams, FlyParams, SlideParams, ScaleParams } from 'svelte/transition';
 
 export type BlockQuoteType = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | '8xl' | '9xl';
 
@@ -26,6 +27,8 @@ export type InputType = 'color' | 'date' | 'datetime-local' | 'email' | 'file' |
 export type FormColorType = 'blue' | 'red' | 'green' | 'purple' | 'teal' | 'yellow' | 'orange' | 'primary' | 'secondary';
 
 export type ModalPlacementType = 'top-left' | 'top-center' | 'top-right' | 'center-left' | 'center' | 'center-right' | 'bottom-left' | 'bottom-center' | 'bottom-right';
+
+export type ParamsType = FadeParams | BlurParams | FlyParams | SlideParams | ScaleParams;
 
 export type PsizeType = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | '8xl' | '9xl';
 

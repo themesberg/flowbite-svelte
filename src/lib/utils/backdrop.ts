@@ -3,19 +3,10 @@ export let open = false;
 
 const backdropClasses = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40';
 export let placement: string;
-// const placement:
-// 		| 'top-left'
-// 		| 'top-center'
-// 		| 'top-right'
-// 		| 'center-left'
-// 		| 'center'
-// 		| 'center-right'
-// 		| 'bottom-left'
-// 		| 'bottom-center'
-// 		| 'bottom-right'='center';
 
 export const init = (node: HTMLElement, _open: boolean) => {
   getPlacementClasses().map((c) => node.classList.add(c));
+  /* eslint-disable  @typescript-eslint/no-unused-expressions */
   _open && createBackdrop(node);
 
   return {

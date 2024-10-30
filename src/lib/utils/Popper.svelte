@@ -44,6 +44,7 @@
   $: hoverable = trigger === 'hover';
 
   $: dispatch('show', open);
+  /* eslint-disable  @typescript-eslint/no-unused-expressions */
   $: placement && (referenceEl = referenceEl);
 
   let referenceEl: Element;

@@ -39,7 +39,7 @@
   export let divClass: $$Props['divClass'] = 'overflow-y-auto z-50 p-4 bg-white dark:bg-gray-800';
   export let transitionParams: $$Props['transitionParams'] = {};
   export let transitionType: $$Props['transitionType'] = 'fly';
-
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   function multiple(node: HTMLElement, params: any) {
     switch (transitionType) {
       case 'slide':

@@ -30,7 +30,6 @@
 <div class={twMerge('flex flex-row justify-center bg-gray-100 w-full', $$props.class)}>
   {#each images as image, idx}
     {@const selected = index === idx}
-    <!-- svelte-ignore a11y-click-events-have-key-events -->
     <button on:click={() => btnClick(idx)} aria-label={ariaLabel}>
       <slot {Thumbnail} {image} {selected} {imgClass}>
         <Thumbnail {...image} {selected} class={imgClass} />

@@ -5,7 +5,7 @@
   import Wrapper from '../utils/Wrapper.svelte';
 
   interface $$Props extends HTMLTextareaAttributes {
-    value?: any;
+    value?: string;
     wrappedClass?: string;
     unWrappedClass?: string;
     innerWrappedClass?: string;

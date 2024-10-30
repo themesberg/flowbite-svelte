@@ -2,25 +2,27 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { twMerge, twJoin } from 'tailwind-merge';
 
+  type ColorType = 'primary' | 'secondary' | 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'custom';
+
   interface $$Props extends HTMLAttributes<HTMLElement> {
-    steps?: string[];
-    currentStep?: number;
+    steps: string[];
+    currentStep: number;
     size?: string;
-    color?: 'primary' | 'secondary' | 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'custom';
+    color?: ColorType;
     glow?: boolean;
     hideLabel?: boolean;
     completedCustom?: string;
     currentCustom?: string;
   }
 
-  export let steps: $$Props['steps'] = ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'];
-  export let currentStep: $$Props['currentStep'] = 1;
-  export let size: $$Props['size'] = 'h-2.5';
-  export let color: $$Props['color'] = 'primary';
-  export let glow: $$Props['glow'] = false;
-  export let hideLabel: $$Props['hideLabel'] = false;
-  export let completedCustom: $$Props['completedCustom'] = '';
-  export let currentCustom: $$Props['currentCustom'] = '';
+  export let steps = ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'];
+  export let currentStep = 1;
+  export let size = 'h-2.5';
+  export let color: ColorType = 'primary';
+  export let glow = false;
+  export let hideLabel = false;
+  export let completedCustom = '';
+  export let currentCustom = '';
 
   const completedStepColors = {
     primary: 'bg-primary-500 dark:bg-primary-900',
@@ -48,11 +50,14 @@
     blue: 'bg-blue-800 dark:bg-blue-400',
     custom: currentCustom
   };
+  // Ensure currentStep is within bounds
+  $: safeCurrentStep = Math.max(1, Math.min(currentStep, steps.length));
+  $: currentStepLabel = steps[safeCurrentStep - 1] ?? 'Unknown Step';
 </script>
 
 <div {...$$restProps} class={twMerge('space-y-2 dark:text-white', $$props.class)}>
   {#if !hideLabel}
-    <h3 class="text-base font-semibold">{steps[currentStep - 1]}</h3>
+    <h3 class="text-base font-semibold">{currentStepLabel}</h3>
   {/if}
   <div class={twJoin('flex justify-between gap-2 w-full', size)}>
     {#each steps as step, i}
