@@ -2,5 +2,11 @@
   "name": "InputAddon",
   "slots": [],
   "events": [],
-  "props": [["size?", "'sm' | 'md' | 'lg'", "undefined"]]
+  "props": [
+    [
+      "size?",
+      "'sm' | 'md' | 'lg'",
+      "undefined"
+    ]
+  ]
 }

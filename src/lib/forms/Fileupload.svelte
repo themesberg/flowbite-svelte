@@ -55,4 +55,6 @@
 ## Props
 @prop export let files: $$Props['files'] = undefined;
 @prop export let inputClass: $$Props['inputClass'] = 'border !p-0 dark:text-gray-400';
+@prop export let clearable: $$Props['clearable'] = false;
+@prop export let size: $$Props['size'] = 'md';
 -->

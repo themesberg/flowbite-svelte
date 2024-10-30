@@ -70,4 +70,5 @@
 @prop export let checked: $$Props['checked'] = undefined;
 @prop export let customSize: $$Props['customSize'] = '';
 @prop export let classDiv: string = '';
+@prop export let disabled: $$Props['disabled'] = false;
 -->

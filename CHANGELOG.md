@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.47.3
+
+### Patch Changes
+
+- fix: #1392 #1455 #1463 #1468 #1475 #1476
+
 ## 0.47.2
 
 ### Patch Changes
