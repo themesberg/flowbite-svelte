@@ -3,35 +3,11 @@
   "slots": [],
   "events": [],
   "props": [
-    [
-      "color?",
-      "'primary' | 'blue' | 'gray' | 'green' | 'red' | 'yellow' | 'pink' | 'purple' | 'white' | 'custom'",
-      "'primary'"
-    ],
-    [
-      "bg?",
-      "string",
-      "'text-gray-300'"
-    ],
-    [
-      "size?",
-      "string | number",
-      "'8'"
-    ],
-    [
-      "currentFill?",
-      "string",
-      "'currentFill'"
-    ],
-    [
-      "currentColor?",
-      "string",
-      "'currentColor'"
-    ],
-    [
-      "customColor?",
-      "string",
-      "''"
-    ]
+    ["color?", "'primary' | 'blue' | 'gray' | 'green' | 'red' | 'yellow' | 'pink' | 'purple' | 'white' | 'custom'", "'primary'"],
+    ["bg?", "string", "'text-gray-300'"],
+    ["size?", "string | number", "'8'"],
+    ["currentFill?", "string", "'currentFill'"],
+    ["currentColor?", "string", "'currentColor'"],
+    ["customColor?", "string", "''"]
   ]
 }

@@ -2,11 +2,5 @@
   "name": "DropdownDivider",
   "slots": [],
   "events": [],
-  "props": [
-    [
-      "divClass?",
-      "string",
-      "'my-1 h-px bg-gray-100 dark:bg-gray-600'"
-    ]
-  ]
+  "props": [["divClass?", "string", "'my-1 h-px bg-gray-100 dark:bg-gray-600'"]]
 }

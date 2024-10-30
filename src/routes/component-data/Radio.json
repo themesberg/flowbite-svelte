@@ -1,54 +1,14 @@
 {
   "name": "Radio",
   "slots": [],
-  "events": [
-    "blur",
-    "change",
-    "click",
-    "focus",
-    "keydown",
-    "keypress",
-    "keyup",
-    "mouseenter",
-    "mouseleave",
-    "mouseover",
-    "paste"
-  ],
+  "events": ["blur", "change", "click", "focus", "keydown", "keypress", "keyup", "mouseenter", "mouseleave", "mouseover", "paste"],
   "props": [
-    [
-      "color?",
-      "FormColorType",
-      ""
-    ],
-    [
-      "custom?",
-      "boolean",
-      ""
-    ],
-    [
-      "inline?",
-      "boolean",
-      ""
-    ],
-    [
-      "group?",
-      "number | string | undefined",
-      "undefined"
-    ],
-    [
-      "value?",
-      "number | string",
-      "''"
-    ],
-    [
-      "spacing?",
-      "string",
-      ""
-    ],
-    [
-      "checked?",
-      "boolean",
-      "false"
-    ]
+    ["color?", "FormColorType", ""],
+    ["custom?", "boolean", ""],
+    ["inline?", "boolean", ""],
+    ["group?", "number | string | undefined", "undefined"],
+    ["value?", "number | string", "''"],
+    ["spacing?", "string", ""],
+    ["checked?", "boolean", "false"]
   ]
 }

@@ -1,8 +1,6 @@
 {
   "name": "ToolbarButton",
   "slots": [],
-  "events": [
-    "click"
-  ],
+  "events": ["click"],
   "props": []
 }

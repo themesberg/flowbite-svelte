@@ -2,11 +2,5 @@
   "name": "DeviceMockup",
   "slots": [],
   "events": [],
-  "props": [
-    [
-      "device?",
-      "'default' | 'ios' | 'android' | 'tablet' | 'laptop' | 'desktop' | 'smartwatch'",
-      ""
-    ]
-  ]
+  "props": [["device?", "'default' | 'ios' | 'android' | 'tablet' | 'laptop' | 'desktop' | 'smartwatch'", ""]]
 }
