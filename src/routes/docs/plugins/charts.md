@@ -979,18 +979,18 @@ To create a radial chart with multiple data entries you need to set the type: "r
 
 ```svelte example class="flex justify-center"
 <script lang="ts">
-  import { Chart } from 'flowbite-svelte';
+  import { Chart } from '$lib';
   import { onMount, onDestroy } from 'svelte';
+  import type { ApexOptions } from 'apexcharts';
   
-  let chart: ApexCharts;
+  let chart: ApexCharts | undefined;
   
   const initialData = [6500, 6418, 6456, 6526, 6356, 6456];
   const alternateData = [5500, 5418, 5456, 4526, 4356, 3456];
   
-  let options = {
+  let options: ApexOptions = {
     chart: {
-      height: '400px',
-      maxWidth: '100%',
+      height: 400,
       type: 'area',
       fontFamily: 'Inter, sans-serif',
       dropShadow: {
@@ -1015,16 +1015,18 @@ To create a radial chart with multiple data entries you need to set the type: "r
     ]
   };
   
-  let intervalId: number;
+  let intervalId: ReturnType<typeof setInterval>;
   
   function toggleData() {
-    const series = [
-      {
-        ...options.series[0],
-        data: options.series[0].data === initialData ? alternateData : initialData
-      }
-    ];
-    chart.updateSeries(series);
+    options = {
+      ...options,
+      series: [
+        {
+          ...options.series[0],
+          data: options.series[0].data === initialData ? alternateData : initialData
+        }
+      ]
+    };
   }
   
   onMount(() => {
@@ -1034,9 +1036,9 @@ To create a radial chart with multiple data entries you need to set the type: "r
   onDestroy(() => {
     clearInterval(intervalId);
   });
-  </script>
-  
-  <Chart {options} bind:chart />
+</script>
+
+<Chart bind:options bind:chart />
 ```
 
 ## Component data
