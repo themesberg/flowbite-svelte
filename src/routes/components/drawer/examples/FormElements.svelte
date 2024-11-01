@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Drawer, uiHelpers, Drawerhead, Label, Input, Textarea, P, A } from "$lib";
+  import { Button, Drawer, uiHelpers, Drawerhead, Label, Input, Textarea } from "$lib";
   import { InfoCircleSolid, UserAddOutline, CalendarEditSolid } from "flowbite-svelte-icons";
   const drawer = uiHelpers();
   let drawerStatus = $state(false);
@@ -7,7 +7,6 @@
   $effect(() => {
     drawerStatus = drawer.isOpen;
   });
-  let hidden = true;
 </script>
 
 <div class="text-center">

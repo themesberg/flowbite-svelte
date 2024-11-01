@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Button, Drawer, Drawerhead, uiHelpers } from "$lib";
-  import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
+  import { InfoCircleSolid } from "flowbite-svelte-icons";
   const drawerBackdrop = uiHelpers();
   let drawerStatusBackdrop = $state(false);
   const closeDrawerBackdrop = drawerBackdrop.close;

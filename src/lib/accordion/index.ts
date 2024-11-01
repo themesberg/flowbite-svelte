@@ -25,8 +25,6 @@ interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
   defaultClass?: string;
   classActive?: string;
   classInactive?: string;
-  transition?: TransitionFunc;
-  params?: ParamsType;
 }
 
 interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {

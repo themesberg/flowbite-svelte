@@ -22,13 +22,14 @@
     <p class={p({ class: pClass })}>{rating}</p>
     {@render children()}
   {:else}
-    {#each Array(fullStars) as star}
+    <!-- eslint-disable @typescript-eslint/no-unused-vars -->
+    {#each Array(fullStars) as _}
       <Icon {size} fillPercent={100} id={fullStarId} />
     {/each}
     {#if percentRating}
       <Icon {size} fillPercent={percentRating} id={partialId} />
     {/if}
-    {#each Array(grayStars) as star}
+    {#each Array(grayStars) as _}
       <Icon {size} fillPercent={0} id={grayStarId} />
     {/each}
     {#if text}

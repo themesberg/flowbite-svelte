@@ -3,10 +3,10 @@
   import { setContext } from "svelte";
   import { type TabsProps as Props, type TabCtxType, tabs } from ".";
 
-  let { children, tabStyle = "none", ulClass, ctxActive, ctxInactive, contentClass, divider = true, ...restProps }: Props = $props();
+  let { children, tabStyle = "none", ulClass, contentClass, divider = true, ...restProps }: Props = $props();
 
   // using $derived() shows State referenced in its own scope will never update. Did you mean to reference it inside a closure?
-  const { base, content, divider: dividerClass, active, inactive } = $derived(tabs({ tabStyle, hasDivider: divider }));
+  const { base, content, divider: dividerClass } = $derived(tabs({ tabStyle, hasDivider: divider }));
 
   const ctx: TabCtxType = {
     get tabStyle() {

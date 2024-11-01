@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Component } from "svelte";
-  import { Select, Label, Radio, Helper, uiHelpers, Button, type SelectProps, type SelectOptionType, type SelectSize } from "$lib";
+  import { Select, Label, Radio, Helper, uiHelpers, Button, type SelectSize } from "$lib";
   import HighlightCompo from "../../utils/HighlightCompo.svelte";
   import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../../utils/CodeWrapper.svelte";
@@ -39,25 +39,12 @@
     name: string;
     href?: string;
   }
-  interface State {
-    value: string;
-    name: string;
-  }
 
   let countries: Country[] = [
     { value: "us", name: "United States", href: "/" },
     { value: "ca", name: "Canada", href: "/" },
     { value: "fr", name: "France", href: "/" }
   ];
-
-  let dropdown = uiHelpers();
-  let dropdownStatus = $state(false);
-
-  $effect(() => {
-    // this can be done adding nav.navStatus directly to DOM element
-    // without using effect
-    dropdownStatus = dropdown.isOpen;
-  });
 
   const sizes: SelectSize[] = ["sm", "md", "lg"];
   let selectSize: SelectSize = $state("md");

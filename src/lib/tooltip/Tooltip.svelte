@@ -14,7 +14,6 @@
 
   let tooltipElement: HTMLElement | null = $state(null);
   let triggerElement: HTMLElement | null = null;
-  let referenceElement: HTMLElement | null = null;
   let arrowEl: HTMLElement | null = $state(null);
 
   const showTooltip = () => {

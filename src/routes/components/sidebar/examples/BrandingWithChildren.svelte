@@ -9,11 +9,6 @@
   $effect(() => {
     isDemoOpen = demoSidebarUi.isOpen;
   });
-  const site = {
-    name: "Flowbite-Svelte",
-    href: "/",
-    img: "/images/flowbite-svelte-icon-logo.svg"
-  };
 </script>
 
 <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />

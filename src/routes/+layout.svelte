@@ -11,9 +11,6 @@
   const sidebarUi = uiHelpers();
   let isOpen = $state(false);
   const closeSidebar = sidebarUi.close;
-
-  const navDrawer = uiHelpers();
-  let navDrawerStatus = $state(false);
   let nav = uiHelpers();
   let navStatus = $state(false);
   let toggleNav = nav.toggle;
@@ -22,12 +19,11 @@
   const hasPath = (key: string) => currentUrl.includes(key);
   let pageStatus = $derived(hasPath("pages"));
   let componentStatus = $derived(hasPath("components"));
-  $inspect("currentUrl: ", currentUrl);
-  $inspect("pageStatus: ", pageStatus);
-  $inspect("componentStatus: ", componentStatus);
+  // $inspect("currentUrl: ", currentUrl);
+  // $inspect("pageStatus: ", pageStatus);
+  // $inspect("componentStatus: ", componentStatus);
 
   $effect(() => {
-    navDrawerStatus = navDrawer.isOpen;
     navStatus = nav.isOpen;
     currentUrl = $page.url.pathname;
     isOpen = sidebarUi.isOpen;

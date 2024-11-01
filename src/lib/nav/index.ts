@@ -6,7 +6,7 @@ import NavHamburger from "./NavHamburger.svelte";
 import type { HTMLAttributes, HTMLAnchorAttributes } from "svelte/elements";
 import type { Snippet } from "svelte";
 import type { navbarType } from "$lib/types";
-import { navbar, navUl, navbrand, navLi, navcontainer, navhamburger } from "./theme";
+import { navbar, navUl, navbrand, navLi, navhamburger } from "./theme";
 
 interface NavbarProps extends HTMLAttributes<HTMLElement> {
   children: Snippet;
@@ -46,8 +46,6 @@ interface NavLiProps extends HTMLAnchorAttributes {
   closeNav?: () => void;
   href?: string;
   aClass?: string;
-  activeClass?: string;
-  nonActiveClass?: string;
   class?: string;
 }
 

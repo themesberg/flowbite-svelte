@@ -2,9 +2,6 @@
   import { type Component } from "svelte";
   import { ButtonGroup, buttonGroup, Button, button, Label, Radio, type ButtonGroupProps, uiHelpers, type RadioColorType, type ButtonProps } from "$lib";
   import { UserCircleSolid, AdjustmentsVerticalSolid, DownloadSolid } from "flowbite-svelte-icons";
-  const handleClick = () => {
-    alert("Clicked");
-  };
   import HighlightCompo from "../../utils/HighlightCompo.svelte";
   import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../../utils/CodeWrapper.svelte";
@@ -14,11 +11,6 @@
   // for Props table
   import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
   const dirName = "buttongroup";
-  const modules = import.meta.glob("./md/*.md", {
-    query: "?raw",
-    import: "default",
-    eager: true
-  });
 
   // for examples section that dynamically changes the svelte component and svelteCode content
   import * as ExampleComponents from "./examples";

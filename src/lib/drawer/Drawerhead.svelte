@@ -1,7 +1,7 @@
 <script lang="ts">
   import { drawerhead, type DrawerheadProps as Props } from ".";
 
-  let { closeIcon, children, tag = "h5", headClass, buttonClass, svgClass, class: className, ...restProps }: Props = $props();
+  let { closeIcon, children, buttonClass, svgClass, class: className, ...restProps }: Props = $props();
 
   const { base, button, svg } = $derived(drawerhead());
 </script>

@@ -10,16 +10,10 @@
   import CodeWrapper from "../../utils/CodeWrapper.svelte";
   import H1 from "../../utils/H1.svelte";
   import H2 from "../../utils/H2.svelte";
-  import H3 from "../../utils/H3.svelte";
   import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
   import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
   const dirName = "toast";
-  const modules = import.meta.glob("./md/*.md", {
-    query: "?raw",
-    import: "default",
-    eager: true
-  });
 
   // for examples section that dynamically changes the svelte component and svelteCode content
   import * as ExampleComponents from "./examples";
@@ -71,13 +65,7 @@
 
   let selectedTransition: string | number = $state("Default");
   let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
-  let defaultToastStatus: boolean = $state(true);
   let toastStatus: boolean = $state(true);
-  let toastUndoStatus: boolean = $state(true);
-  const changeUndoStatus = () => {
-    toastUndoStatus = !toastUndoStatus;
-  };
-
   // code generator
   let generatedCode = $derived(
     (() => {

@@ -7,7 +7,6 @@
   $effect(() => {
     drawerStatus = drawer.isOpen;
   });
-  let hidden = true;
 </script>
 
 <div class="text-center">

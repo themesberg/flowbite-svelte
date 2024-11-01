@@ -10,14 +10,6 @@
   // Props table
   import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
   const dirName = "avatar";
-  let dropdown = uiHelpers();
-  let dropdownStatus = $state(false);
-
-  $effect(() => {
-    // this can be done adding nav.navStatus directly to DOM element
-    // without using effect
-    dropdownStatus = dropdown.isOpen;
-  });
 
   // for examples section that dynamically changes the svelte component and svelteCode content
   import * as ExampleComponents from "./examples";

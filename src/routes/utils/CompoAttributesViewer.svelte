@@ -31,8 +31,7 @@
 
   if (components) {
     // Split the components into an array
-    const componentArray = components.split(", ");
-    // console.log("componentArray", componentArray);
+    componentArray = components.split(", ");
   }
 
   type ComponentData = {

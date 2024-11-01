@@ -22,6 +22,7 @@
 {/snippet}
 
 <div class="mb-4 grid {colclass} gap-4">
+  <!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
   {#each Array(calculateGridItems()) as _}
     {@render figure()}
   {/each}

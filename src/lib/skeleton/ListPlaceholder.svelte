@@ -9,6 +9,7 @@
 </script>
 
 <div role="status" {...restProps} class={base({ className })}>
+  <!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
   {#each items as _, i}
     <div class={item({ class: i > 0 ? "pt-4" : "" })}>
       <div class={itemContent()}>

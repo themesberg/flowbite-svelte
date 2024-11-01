@@ -5,7 +5,7 @@
   import { fade } from "svelte/transition";
   import { sineIn } from "svelte/easing";
 
-  let { children, header, footer, title, modalStatus, dismissable = true, closeModal, divClass, contentClass, closeBtnClass, h3Class, headerClass, bodyClass, footerClass, outsideClose = true, size = "md", backdrop = true, backdropClass, position = "center", class: className, params = { duration: 100, easing: sineIn }, transition = fade, rounded = true, shadow = true, ...restProps }: Props = $props();
+  let { children, header, footer, title, modalStatus, dismissable = true, closeModal, divClass, contentClass, closeBtnClass, h3Class, headerClass, bodyClass, footerClass, outsideClose = true, size = "md", backdrop = true, backdropClass, position = "center", class: className, params = { duration: 100, easing: sineIn }, transition = fade, rounded = true, ...restProps }: Props = $props();
 
   const {
     base,

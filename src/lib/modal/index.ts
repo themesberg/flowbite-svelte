@@ -28,7 +28,6 @@ interface ModalProps extends HTMLAttributes<HTMLDivElement> {
   backdrop?: boolean;
   backdropClass?: string;
   rounded?: boolean;
-  shadow?: boolean;
   // placement?: PlacementType;
   class?: string;
   params?: ParamsType;

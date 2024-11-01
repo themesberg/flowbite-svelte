@@ -2,7 +2,6 @@
   import { sineIn } from "svelte/easing";
   import { Search, Button, Dropdown, DropdownUl, DropdownLi, uiHelpers } from "$lib";
   import { ChevronDownOutline, SearchOutline } from "flowbite-svelte-icons";
-  const items = [{ label: "All categories" }, { label: "Mockups" }, { label: "Templates" }, { label: "Design" }, { label: "Logos" }];
   const countries = [
     {
       label: "United States",
@@ -36,11 +35,7 @@
     duration: 200,
     easing: sineIn
   };
-  const handleClick = (label: string) => {
-    selectCategory = label;
-    console.log("selectCategory", selectCategory);
-    dropdown.close();
-  };
+
   $effect(() => {
     dropdownStatus = dropdown.isOpen;
   });

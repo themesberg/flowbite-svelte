@@ -2,7 +2,7 @@
   import { setContext } from "svelte";
   import { type AccordionProps as Props, accordion } from "./";
 
-  let { children, flush, activeClass, inactiveClass, isSingle = true, class: className, transition, params, ...restProps }: Props = $props();
+  let { children, flush, activeClass, inactiveClass, isSingle = true, class: className, ...restProps }: Props = $props();
 
   const ctx = {
     flush,

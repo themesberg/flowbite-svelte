@@ -12,7 +12,6 @@ interface ToolbarProps extends HTMLAttributes<HTMLDivElement> {
   end?: Snippet;
   embedded?: boolean;
   color?: ToolbarColor;
-  separatorClass?: string;
 }
 
 type SpacingType = "default" | "tight" | "loose" | undefined;
@@ -22,7 +21,6 @@ type PositionType = "first" | "last" | "middle" | undefined;
 interface ToolbarGroupProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   class?: string;
-  divClass?: string;
   spacing?: SpacingType;
   padding?: PaddingType;
   position?: PositionType;

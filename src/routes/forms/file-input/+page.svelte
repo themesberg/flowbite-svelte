@@ -32,7 +32,7 @@
   }
   const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
   // end of dynamic svelte component
-  type StringType = string;
+
   let files: FileList | undefined = $state();
   const sizes = Object.keys(fileupload.variants.size);
   let size: FileuploadProps["size"] = $state("md");
@@ -53,15 +53,10 @@
   let generatedCode = $derived(
     (() => {
       let props = [];
-      let fileSlot = "";
       if (size !== "md") props.push(` size="${size}"`);
       if (multiple) props.push(" multiple");
       if (fileNames) props.push(" bind:files");
-      if (fileNames) {
-        fileSlot = `{#each files as file}
-        <p>{file.name}</p>
-      {/each}`;
-      }
+
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
       return `<Fileupload${propsString} />${helperState ? `\n<Helper>Helper text</Helper>` : ""}

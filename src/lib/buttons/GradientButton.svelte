@@ -6,7 +6,7 @@
 
   const group: SizeType = getContext("group");
 
-  let { children, outline, pill, color = "blue", shadow, class: className, href, target, rel, type, disabled, size, name, ...restProps }: Props = $props();
+  let { children, outline, pill, color = "blue", shadow, class: className, href, disabled, size, ...restProps }: Props = $props();
 
   const { base, outlineWrapper } = $derived(gradientButton({ color, outline, pill, shadow, disabled, group: !!group }));
 </script>

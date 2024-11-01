@@ -23,7 +23,7 @@
 
   selected.subscribe((x) => (open = x === self));
 
-  const handleToggle = (_: Event) => selected.set(open ? {} : self);
+  const handleToggle = () => selected.set(open ? {} : self);
 
   const { base, button, content, active, inactive } = accordionitem({ flush: ctx.flush, open });
 

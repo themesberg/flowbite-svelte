@@ -2,7 +2,7 @@
   import { getContext } from "svelte";
   import { TableHeadCell, type TableHeadProps as Props, tablehead, type TableCtxType, type HeadItemType } from ".";
 
-  let { children, headerSlot, color, striped, hoverable, noborder, class: className, headItems, defaultRow = true, ...restProps }: Props = $props();
+  let { children, headerSlot, color, striped, noborder, class: className, headItems, defaultRow = true, ...restProps }: Props = $props();
 
   const tableCtx = getContext<TableCtxType>("tableCtx");
   // for reactivity with svelte context

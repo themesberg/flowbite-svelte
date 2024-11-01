@@ -7,19 +7,6 @@ import { button, gradientButton } from "./theme";
 type ButtonColorType = "primary" | "dark" | "alternative" | "light" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose";
 type ButtonSizeType = "sm" | "md" | "lg" | "xl" | "xs" | undefined;
 
-type ButtonSpecificProps = {
-  children: Snippet;
-  pill?: boolean;
-  outline?: boolean;
-  size?: ButtonSizeType;
-  color?: ButtonColorType;
-  shadow?: boolean;
-  tag?: string;
-  checked?: boolean;
-  class?: string;
-  disabled?: boolean;
-};
-
 type HTMLAttributesWithoutAbort = Omit<HTMLButtonAttributes, "on:abort"> & Omit<HTMLAnchorAttributes, "on:abort">;
 
 interface ButtonProps extends HTMLAttributesWithoutAbort {

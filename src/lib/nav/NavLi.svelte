@@ -4,7 +4,7 @@
   import type { navbarType } from "$lib/types";
   import { type NavLiProps as Props, navLi } from ".";
 
-  let { closeNav, href, children, aClass, activeClass, nonActiveClass, class: className, ...restProps }: Props = $props();
+  let { closeNav, href, children, aClass, class: className, ...restProps }: Props = $props();
 
   let breakPoint: navbarType["breakPoint"];
 

@@ -28,8 +28,8 @@
     { name: "Header slot", component: ExampleComponents.HeaderSlot },
     { name: "Footer slot", component: ExampleComponents.FooterSlot },
     { name: "Table caption", component: ExampleComponents.TableCaption },
-    { name: "Overflow", component: ExampleComponents.Overflow },
-    { name: "Click double click", component: ExampleComponents.ClickDoubleClick }
+    { name: "Overflow", component: ExampleComponents.Overflow }
+    // { name: "Click double click", component: ExampleComponents.ClickDoubleClick }
   ];
 
   let selectedExample: string | number = $state(exampleArr[0].name);

@@ -3,7 +3,7 @@
   import { writable } from "svelte/store";
   import { type ToolbarProps as Props, toolbar } from "./";
 
-  let { children, end, color = "default", embedded, separatorClass, class: className, ...restProps }: Props = $props();
+  let { children, end, color = "default", embedded, class: className, ...restProps }: Props = $props();
 
   const separators = writable(false);
   setContext("toolbar", separators);

@@ -3,7 +3,7 @@
   import { getContext } from "svelte";
   import { type ToolbarGroupProps as Props, toolbarGroup } from "./";
 
-  let { children, spacing = "default", padding = "default", position = "middle", class: className, divClass = "flex items-center space-x-1 rtl:space-x-reverse sm:pe-4 sm:ps-4 first:sm:ps-0 last:sm:pe-0", ...restProps }: Props = $props();
+  let { children, spacing = "default", padding = "default", position = "middle", class: className, ...restProps }: Props = $props();
 
   const groupClass = $derived(toolbarGroup({ spacing, padding, position, class: className }));
 

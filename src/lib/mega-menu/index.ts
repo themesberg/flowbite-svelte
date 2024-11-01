@@ -1,7 +1,7 @@
 import type { Snippet } from "svelte";
 import MegaMenu from "./MegaMenu.svelte";
 import { megamenu } from "./theme";
-import type { ParamsType, TransitionFunc, LinkType } from "../types";
+import type { LinkType } from "../types";
 import type { HTMLAttributes } from "svelte/elements";
 
 interface MegaMenuProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
@@ -14,9 +14,9 @@ interface MegaMenuProps extends Omit<HTMLAttributes<HTMLDivElement>, "children">
   divClass?: string;
   footerClass?: string;
   headerClass?: string;
-  backdropClass?: string;
-  params?: ParamsType;
-  transition?: TransitionFunc;
+  // backdropClass?: string;
+  // params?: ParamsType;
+  // transition?: TransitionFunc;
 }
 
 export { MegaMenu, type MegaMenuProps, megamenu };

@@ -29,7 +29,6 @@ interface TableHeadProps extends HTMLAttributes<HTMLTableSectionElement> {
   headItems?: HeadItemType[];
   class?: string;
   striped?: boolean;
-  hoverable?: boolean;
   noborder?: boolean;
   color?: TableColrType;
 }
@@ -47,14 +46,12 @@ interface TableProps extends HTMLTableAttributes {
   noborder?: boolean;
   shadow?: boolean;
   color?: TableColrType;
-  customeColor?: string;
   tableItems?: TableItemType[];
 }
 
 interface TableBodyRowProps extends HTMLAttributes<HTMLTableRowElement> {
   children?: Snippet;
   class?: string;
-  color?: TableColrType;
   striped?: boolean;
   hoverable?: boolean;
   noborder?: boolean;

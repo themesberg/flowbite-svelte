@@ -8,12 +8,11 @@
 
   let { class: className }: Props = $props();
   const stylesImport = import.meta.glob("./highlight/styles/*.css");
-  /*eslint no-undef: "off"*/
   const localStorageName = toUpperSnakeCase(__NAME__) + "_CODE_BLOCK_STYLE";
 
   let selected: string = $state(browser ? (localStorage.getItem(localStorageName) ?? "gigavolt") : "gigavolt");
 
-  const styles = Object.entries(stylesImport).map(([path, importFn]) => ({
+  const styles = Object.entries(stylesImport).map(([path]) => ({
     value: path.slice(path.lastIndexOf("/") + 1, -4),
     name: path.slice(path.lastIndexOf("/") + 1, -4)
   }));

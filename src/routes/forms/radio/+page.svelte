@@ -49,7 +49,7 @@
     isChecked = true;
   };
   // end of hack
-  let helperState = $state(false);
+
   const inputClasses = ["", "w-6 h-6"];
   let inputClass = $state(inputClasses[0]);
   const changeInputClass = () => {

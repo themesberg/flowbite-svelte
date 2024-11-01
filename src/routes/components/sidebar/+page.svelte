@@ -23,6 +23,7 @@
     { name: "Close button", component: ExampleComponents.CloseButton },
     { name: "Active class", component: ExampleComponents.ActiveClass },
     { name: "Overriding active", component: ExampleComponents.OverridingActive },
+    { name: "Using object", component: ExampleComponents.UsingObject },
     { name: "Multilevel", component: ExampleComponents.Multilevel },
     { name: "Single selection", component: ExampleComponents.SingleSelection },
     { name: "All open", component: ExampleComponents.AllOpen },

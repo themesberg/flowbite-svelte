@@ -6,7 +6,6 @@
   import Fortmatic from "../../../utils/icons/Fortmatic.svelte";
   import WalletConnect from "../../../utils/icons/WalletConnect.svelte";
   import { QuestionCircleOutline } from "flowbite-svelte-icons";
-  let walletModal = $state(false);
   const modalExample = uiHelpers();
   let modalStatus = $state(false);
   const closeModal = modalExample.close;

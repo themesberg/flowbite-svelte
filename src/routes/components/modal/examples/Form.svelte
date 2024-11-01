@@ -6,7 +6,6 @@
   $effect(() => {
     modalStatus = modalExample.isOpen;
   });
-  let formModal = $state(false);
 </script>
 
 <div class="flex justify-center">

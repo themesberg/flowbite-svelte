@@ -1,5 +1,5 @@
 <script>
-  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, uiHelpers } from "$lib";
+  import { Navbar, NavBrand, NavUl, NavLi, MegaMenu, uiHelpers } from "$lib";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   let menu = [
     { name: "About us", href: "/about" },

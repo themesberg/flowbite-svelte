@@ -27,8 +27,6 @@ interface DrawerProps extends HTMLAttributes<HTMLDivElement> {
 interface DrawerheadProps extends HTMLButtonAttributes {
   closeIcon?: Snippet;
   children?: Snippet;
-  tag?: string;
-  headClass?: string;
   buttonClass?: string;
   svgClass?: string;
 }

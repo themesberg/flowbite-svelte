@@ -2,7 +2,6 @@
   import { Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper, SidebarButton, uiHelpers } from "$lib";
   import { ChartOutline, ChevronDoubleUpOutline, ChevronDoubleDownOutline, ShoppingBagSolid } from "flowbite-svelte-icons";
   import PlusPlaceholder from "../../../utils/PlusPlaceholder.svelte";
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;

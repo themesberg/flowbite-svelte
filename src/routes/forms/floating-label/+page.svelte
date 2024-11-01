@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { FloatingLabelInput, Helper, Label, Radio, Toggle, floatingLabelInput, Button, uiHelpers, type RadioColorType, type FloatingLabelInputProps, type HelperProps } from "$lib";
+  import { FloatingLabelInput, Helper, Label, Radio, Toggle, floatingLabelInput, Button, type RadioColorType, type FloatingLabelInputProps, type HelperProps } from "$lib";
   import HighlightCompo from "../../utils/HighlightCompo.svelte";
   import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../../utils/CodeWrapper.svelte";
@@ -54,8 +54,8 @@
 </FloatingLabelInput>${helperCode}`;
     })()
   );
+
   // for interactive builder
-  let builder = uiHelpers();
   let builderExpand = $state(false);
   let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
   const handleBuilderExpandClick = () => {
