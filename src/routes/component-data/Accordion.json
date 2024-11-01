@@ -6,8 +6,6 @@
     ["activeClass", "string", ""],
     ["inactiveClass", "string", ""],
     ["isSingle", "boolean", "true"],
-    ["class", "string", ""],
-    ["transition", "TransitionFunc", ""],
-    ["params", "ParamsType", ""]
+    ["class", "string", ""]
   ]
 }

@@ -24,7 +24,6 @@
     ["params", "ParamsType", "{ duration: 100"],
     ["easing", "any", ""],
     ["transition", "TransitionFunc", "fade"],
-    ["rounded", "boolean", "true"],
-    ["shadow", "boolean", "true"]
+    ["rounded", "boolean", "true"]
   ]
 }

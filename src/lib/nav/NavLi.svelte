@@ -34,7 +34,5 @@
 @props:href: string;
 @props:children: Snippet;
 @props:aClass: string;
-@props:activeClass: string;
-@props:nonActiveClass: string;
 @props:class: string;
 -->

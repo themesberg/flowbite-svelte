@@ -8,11 +8,7 @@
     ["shadow", "boolean", ""],
     ["class", "string", ""],
     ["href", "string", ""],
-    ["target", "any", ""],
-    ["rel", "any", ""],
-    ["type", "any", ""],
     ["disabled", "boolean", ""],
-    ["size", "\"sm\" | \"md\" | \"lg\" | \"xl\" | \"xs\" | undefined", ""],
-    ["name", "any", ""]
+    ["size", "\"sm\" | \"md\" | \"lg\" | \"xl\" | \"xs\" | undefined", ""]
   ]
 }

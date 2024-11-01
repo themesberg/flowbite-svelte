@@ -34,10 +34,6 @@
 @props:shadow: boolean;
 @props:class: string;
 @props:href: string;
-@props:target: any;
-@props:rel: any;
-@props:type: any;
 @props:disabled: boolean;
 @props:size: "sm" | "md" | "lg" | "xl" | "xs" | undefined;
-@props:name: any;
 -->

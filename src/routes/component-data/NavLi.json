@@ -5,8 +5,6 @@
     ["href", "string", ""],
     ["children", "Snippet", ""],
     ["aClass", "string", ""],
-    ["activeClass", "string", ""],
-    ["nonActiveClass", "string", ""],
     ["class", "string", ""]
   ]
 }

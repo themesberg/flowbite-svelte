@@ -25,5 +25,4 @@ import { toolbar, toolbarGroup, toolbarButton };
 @props:padding: "default" | "none" | undefined = "default";
 @props:position: "first" | "last" | "middle" | undefined = "middle";
 @props:class: string;
-@props:divClass: string = "flex items-center space-x-1 rtl:space-x-reverse sm:pe-4 sm:ps-4 first:sm:ps-0 last:sm:pe-0";
 -->

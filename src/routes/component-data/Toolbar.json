@@ -5,7 +5,6 @@
     ["end", "type Snippet } from \"svelte\";\nimport { toolbar, toolbarGroup, toolbarButton }", ""],
     ["color", "\"primary\" | \"secondary\" | \"default\" | undefined", "\"default\""],
     ["embedded", "boolean", ""],
-    ["separatorClass", "string", ""],
     ["class", "string", ""]
   ]
 }

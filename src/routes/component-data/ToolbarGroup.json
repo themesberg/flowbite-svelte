@@ -5,7 +5,6 @@
     ["spacing", "\"default\" | \"tight\" | \"loose\" | undefined", "\"default\""],
     ["padding", "\"default\" | \"none\" | undefined", "\"default\""],
     ["position", "\"first\" | \"last\" | \"middle\" | undefined", "\"middle\""],
-    ["class", "string", ""],
-    ["divClass", "string", "\"flex items-center space-x-1 rtl:space-x-reverse sm:pe-4 sm:ps-4 first:sm:ps-0 last:sm:pe-0\""]
+    ["class", "string", ""]
   ]
 }

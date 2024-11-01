@@ -49,7 +49,6 @@
 @props:headerSlot: Snippet;
 @props:color: "primary" | "gray" | "red" | "yellow" | "green" | "indigo" | "purple" | "pink" | "blue" | "orange" | "amber" | "lime" | "emerald" | "teal" | "cyan" | "sky" | "violet" | "fuchsia" | "rose" | "secondary" | "default" | undefined;
 @props:striped: boolean;
-@props:hoverable: boolean;
 @props:noborder: boolean;
 @props:class: string;
 @props:headItems: string | number | {

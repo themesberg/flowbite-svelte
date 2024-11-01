@@ -30,6 +30,4 @@
 @props:inactiveClass: string;
 @props:isSingle: boolean = true;
 @props:class: string;
-@props:transition: TransitionFunc;
-@props:params: ParamsType;
 -->

@@ -2,7 +2,6 @@
   "name": "TableBodyCell",
   "props": [
     ["children", "Snippet", ""],
-    ["color", "\"primary\" | \"gray\" | \"red\" | \"yellow\" | \"green\" | \"indigo\" | \"purple\" | \"pink\" | \"blue\" | \"orange\" | \"amber\" | \"lime\" | \"emerald\" | \"teal\" | \"cyan\" | \"sky\" | \"violet\" | \"fuchsia\" | \"rose\" | \"secondary\" | \"default\" | undefined", ""],
     ["class", "string", ""],
     ["colspan", "number", ""],
     ["onclick", "() => void", ""]

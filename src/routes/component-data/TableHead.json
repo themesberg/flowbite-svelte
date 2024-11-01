@@ -5,7 +5,6 @@
     ["headerSlot", "Snippet", ""],
     ["color", "\"primary\" | \"gray\" | \"red\" | \"yellow\" | \"green\" | \"indigo\" | \"purple\" | \"pink\" | \"blue\" | \"orange\" | \"amber\" | \"lime\" | \"emerald\" | \"teal\" | \"cyan\" | \"sky\" | \"violet\" | \"fuchsia\" | \"rose\" | \"secondary\" | \"default\" | undefined", ""],
     ["striped", "boolean", ""],
-    ["hoverable", "boolean", ""],
     ["noborder", "boolean", ""],
     ["class", "string", ""],
     ["headItems", "string | number | {\n  text: string[]", ""],

@@ -39,7 +39,4 @@
 @props:full: any;
 @props:dropdownStatus: any = $bindable();
 @props:class: string;
-@props:backdropClass: any;
-@props:params: any;
-@props:transition: any = fly;
 -->

@@ -42,6 +42,5 @@ import { toolbar, toolbarGroup, toolbarButton };
 import { toolbar, toolbarGroup, toolbarButton };
 @props:color: "primary" | "secondary" | "default" | undefined = "default";
 @props:embedded: boolean;
-@props:separatorClass: string;
 @props:class: string;
 -->

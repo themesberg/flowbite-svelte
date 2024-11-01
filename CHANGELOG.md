@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.25
+
+### Patch Changes
+
+- fix: lint fixes
+
 ## 0.9.24
 
 ### Patch Changes

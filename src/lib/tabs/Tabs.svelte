@@ -42,8 +42,6 @@
 @props: children: Snippet;
 @props:tabStyle: "full" | "pill" | "underline" | "none" = "none";
 @props:ulClass: string;
-@props:ctxActive: string;
-@props:ctxInactive: string;
 @props:contentClass: string;
 @props:divider: boolean = true;
 -->

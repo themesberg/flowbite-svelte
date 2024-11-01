@@ -61,6 +61,5 @@
 @props:noborder: boolean;
 @props:shadow: boolean;
 @props:color: "primary" | "gray" | "red" | "yellow" | "green" | "indigo" | "purple" | "pink" | "blue" | "orange" | "amber" | "lime" | "emerald" | "teal" | "cyan" | "sky" | "violet" | "fuchsia" | "rose" | "secondary" | "default" | undefined = "default";
-@props:customeColor: string;
 @props:class: string;
 -->

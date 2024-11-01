@@ -98,5 +98,4 @@
 @props:easing: any;
 @props:transition: TransitionFunc = fade;
 @props:rounded: boolean = true;
-@props:shadow: boolean = true;
 -->

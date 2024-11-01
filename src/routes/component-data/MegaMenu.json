@@ -6,9 +6,6 @@
     ["items", "any", "[]"],
     ["full", "any", ""],
     ["dropdownStatus", "any", "$bindable()"],
-    ["class", "string", ""],
-    ["backdropClass", "any", ""],
-    ["params", "any", ""],
-    ["transition", "any", "fly"]
+    ["class", "string", ""]
   ]
 }
