@@ -1,41 +1,89 @@
 <script lang="ts">
-  import { type TooltipProps as Props, tooltip } from ".";
+  import { computePosition, flip, shift, arrow, offset as floatingOffset, type Placement, type Strategy } from "@floating-ui/dom";
   import { onDestroy } from "svelte";
+  import { tooltip } from "./theme";
+  import type { TooltipProps } from ".";
 
-  let { children, color = "default", showOn = "hover", arrow = true, offset = 0, triggeredBy, position = "top", class: className, visible = false, reference, ...restProps }: Props = $props();
+  let { children, color = "default", showOn = "hover", arrow: showArrow = true, offset = 8, triggeredBy, reference, position = "top" as Placement, strategy = "absolute", class: className, visible = false, ...restProps }: TooltipProps = $props();
 
   let isVisible = $state(visible);
-
-  $effect(() => {
-    isVisible = visible;
-  });
-
-  let { base, arrowBase } = $derived(tooltip({ color, arrow, position }));
-
   let tooltipElement: HTMLElement | null = $state(null);
   let triggerElement: HTMLElement | null = null;
-  let arrowEl: HTMLElement | null = $state(null);
+  let referenceElement: HTMLElement | null = null;
+  let arrowElement: HTMLElement | null = $state(null);
+
+  let { base, arrowBase } = $derived(tooltip({ color, arrow: showArrow, position }));
+
+  const staticSideMap = {
+    top: "bottom",
+    right: "left",
+    bottom: "top",
+    left: "right"
+  } as const;
+
+  type StaticSide = (typeof staticSideMap)[keyof typeof staticSideMap];
+
+  const getStaticSide = (placement: string): StaticSide => {
+    const basePlacement = placement.split("-")[0] as keyof typeof staticSideMap;
+    return staticSideMap[basePlacement];
+  };
+
+  const updatePosition = async () => {
+    // Get the reference element (either from reference prop or triggeredBy)
+    const targetElement = reference ? referenceElement : triggerElement;
+
+    if (!tooltipElement || !targetElement) return;
+
+    const middleware = [flip(), shift({ padding: 8 }), floatingOffset(offset)];
+
+    if (showArrow && arrowElement) {
+      middleware.push(arrow({ element: arrowElement }));
+    }
+
+    const { x, y, placement, middlewareData } = await computePosition(targetElement, tooltipElement, {
+      placement: position as Placement,
+      strategy: strategy as Strategy,
+      middleware
+    });
+
+    Object.assign(tooltipElement.style, {
+      left: `${x}px`,
+      top: `${y}px`,
+      position: strategy
+    });
+
+    if (showArrow && arrowElement && middlewareData.arrow) {
+      const { x: arrowX, y: arrowY } = middlewareData.arrow;
+      const staticSide = getStaticSide(placement);
+
+      const styles: Partial<CSSStyleDeclaration> = {
+        left: arrowX != null ? `${arrowX}px` : "",
+        top: arrowY != null ? `${arrowY}px` : "",
+        right: "",
+        bottom: ""
+      };
+
+      styles[staticSide] = "-4px";
+      Object.assign(arrowElement.style, styles);
+    }
+  };
 
   const showTooltip = () => {
-    if (!triggeredBy) return; // Only handle manual show/hide when triggeredBy is present
+    if (!triggeredBy) return;
     isVisible = true;
-    setTimeout(() => {
-      positionTooltip();
-    }, 0);
+    setTimeout(updatePosition, 0);
   };
 
   const hideTooltip = () => {
-    if (!triggeredBy) return; // Only handle manual show/hide when triggeredBy is present
+    if (!triggeredBy) return;
     isVisible = false;
   };
 
   const toggleTooltip = () => {
-    if (!triggeredBy) return; // Only handle manual show/hide when triggeredBy is present
+    if (!triggeredBy) return;
     isVisible = !isVisible;
     if (isVisible) {
-      setTimeout(() => {
-        positionTooltip();
-      }, 0);
+      setTimeout(updatePosition, 0);
     }
   };
 
@@ -45,72 +93,17 @@
     }
   };
 
-  const positionTooltip = () => {
-    if (!tooltipElement) return;
-
-    // Get the reference element for positioning
-    const targetElement = reference ? document.querySelector(reference) : triggeredBy ? document.querySelector(triggeredBy) : null;
-
-    if (!targetElement) {
-      console.warn("Tooltip: No reference element found for positioning");
-      return;
-    }
-
-    const referenceRect = targetElement.getBoundingClientRect();
-    const tooltipRect = tooltipElement.getBoundingClientRect();
-    const arrowRect = arrow && arrowEl ? arrowEl.getBoundingClientRect() : null;
-
-    const scrollX = window.scrollX || document.documentElement.scrollLeft;
-    const scrollY = window.scrollY || document.documentElement.scrollTop;
-
-    let top, left, arrowTop, arrowLeft;
-
-    switch (position) {
-      case "top":
-        top = referenceRect.top + scrollY - tooltipRect.height - 10 - offset;
-        left = referenceRect.left + scrollX + referenceRect.width / 2 - tooltipRect.width / 2;
-        if (arrowRect && offset === 0) {
-          arrowTop = tooltipRect.height - 5;
-          arrowLeft = tooltipRect.width / 2 - arrowRect.width / 2;
-        }
-        break;
-      case "bottom":
-        top = referenceRect.bottom + scrollY + 10 + offset;
-        left = referenceRect.left + scrollX + referenceRect.width / 2 - tooltipRect.width / 2;
-        if (arrowRect && offset === 0) {
-          arrowTop = -arrowRect.height + 9;
-          arrowLeft = tooltipRect.width / 2 - arrowRect.width / 2;
-        }
-        break;
-      case "left":
-        top = referenceRect.top + scrollY + referenceRect.height / 2 - tooltipRect.height / 2;
-        left = referenceRect.left + scrollX - tooltipRect.width - 10 - offset;
-        if (arrowRect && offset === 0) {
-          arrowTop = tooltipRect.height / 2 - arrowRect.height / 2;
-          arrowLeft = tooltipRect.width - 5;
-        }
-        break;
-      case "right":
-        top = referenceRect.top + scrollY + referenceRect.height / 2 - tooltipRect.height / 2;
-        left = referenceRect.right + scrollX + 10 + offset;
-        if (arrowRect && offset === 0) {
-          arrowTop = tooltipRect.height / 2 - arrowRect.height / 2;
-          arrowLeft = -arrowRect.width / 2 + 2;
-        }
-        break;
-    }
-
-    tooltipElement.style.top = `${top}px`;
-    tooltipElement.style.left = `${left}px`;
-
-    if (arrowEl && arrowRect) {
-      arrowEl.style.top = `${arrowTop}px`;
-      arrowEl.style.left = `${arrowLeft}px`;
-    }
-  };
+  $effect(() => {
+    isVisible = visible;
+  });
 
   $effect(() => {
-    // Only set up event listeners if triggeredBy is provided
+    // Set up reference element if provided
+    if (reference) {
+      referenceElement = document.querySelector(reference);
+    }
+
+    // Set up trigger element and events if provided
     if (triggeredBy) {
       triggerElement = document.querySelector(triggeredBy);
 
@@ -125,25 +118,7 @@
       }
     }
 
-    // Always set up positioning when visibility changes
-    $effect(() => {
-      if (isVisible) {
-        setTimeout(() => {
-          positionTooltip();
-        }, 0);
-      }
-    });
-
-    const handlePositionUpdate = () => {
-      if (isVisible) {
-        positionTooltip();
-      }
-    };
-
-    window.addEventListener("resize", handlePositionUpdate);
-    window.addEventListener("scroll", handlePositionUpdate, true);
-
-    onDestroy(() => {
+    const cleanup = () => {
       if (triggerElement) {
         if (showOn === "hover") {
           triggerElement.removeEventListener("mouseenter", showTooltip);
@@ -153,16 +128,35 @@
           document.removeEventListener("click", handleClickOutside);
         }
       }
-      window.removeEventListener("resize", handlePositionUpdate);
-      window.removeEventListener("scroll", handlePositionUpdate, true);
-    });
+    };
+
+    onDestroy(cleanup);
+    return cleanup;
+  });
+
+  $effect(() => {
+    if (isVisible) {
+      const handlePositionUpdate = () => {
+        if (isVisible) updatePosition();
+      };
+
+      window.addEventListener("resize", handlePositionUpdate);
+      window.addEventListener("scroll", handlePositionUpdate, true);
+
+      return () => {
+        window.removeEventListener("resize", handlePositionUpdate);
+        window.removeEventListener("scroll", handlePositionUpdate, true);
+      };
+    }
   });
 </script>
 
 {#if isVisible}
   <div role="tooltip" bind:this={tooltipElement} {...restProps} class={`${base({ className })} ${isVisible ? "visible opacity-100" : "invisible opacity-0"} transition-opacity duration-200`}>
     {@render children()}
-    {#if arrow}<div bind:this={arrowEl} class={arrowBase({ arrow, position })}></div>{/if}
+    {#if showArrow}
+      <div bind:this={arrowElement} class={arrowBase({ arrow: showArrow, position })}></div>
+    {/if}
   </div>
 {/if}
 
@@ -171,13 +165,14 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children: Snippet;
-@props:color: "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | "default" | undefined = "default";
-@props:showOn: "hover" | "click" = "hover";
-@props:arrow: boolean = true;
-@props:offset: number = 0;
-@props:triggeredBy: string;
-@props:position: "top" | "bottom" | "left" | "right" = "top";
+@props:color: any = "default";
+@props:showOn: any = "hover";
+@props:arrow: any = true;
+@props:offset: any = 8;
+@props:triggeredBy: any;
+@props:reference: any;
+@props:position: any = "top" as Placement;
+@props:strategy: any = "absolute";
 @props:class: string;
-@props:visible: boolean = false;
-@props:reference: string;
+@props:visible: any = false;
 -->

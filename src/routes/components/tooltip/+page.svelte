@@ -46,13 +46,18 @@
   let arrow = $state(true);
   const changeArrow = () => {
     arrow = !arrow;
-    offset = 0;
   };
-  let offset = $state(0);
-  const changeOffset = () => {
-    offset = offset === 0 ? 20 : 0;
-    arrow = false;
-  };
+  let offset = $state(6);
+
+  function increaseOffset() {
+    offset += 2;
+  }
+
+  function decreaseOffset() {
+    if (offset > 0) {
+      offset -= 2;
+    }
+  }
 
   // code generator
   let generatedCode = $derived(
@@ -61,12 +66,12 @@
       if (arrow !== true) props.push(`arrow="${arrow}"`);
       if (color) props.push(`color="${color}"`);
       if (position !== "top") props.push(`position="${position}"`);
-      if (offset) props.push(`offset="${offset}"`);
+      if (offset) props.push(`offset={${offset}}`);
       if (tooltipClass !== "") props.push(`class="${tooltipClass}"`);
 
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
-      return `<Button id="type-1" class="m-8">Tooltip trigger</Button>\n<Toottip${propsString}  triggeredBy="#type-1">Tooltip content</Tooltip>`;
+      return `<Button id="type-1" class="m-8">Tooltip trigger</Button>\n<Tooltip${propsString}  triggeredBy="#type-1">Tooltip content</Tooltip>`;
     })()
   );
 
@@ -116,10 +121,14 @@
       <Radio labelClass="w-20 my-1" name="interactive_toast_position" bind:group={position} value={option}>{option}</Radio>
     {/each}
   </div>
+  <div class="mb-4">
+    <Button onclick={decreaseOffset} class="rounded border p-1">-</Button>
+    <span class="mx-2">Offset: {offset}px</span>
+    <Button onclick={increaseOffset} class="rounded border p-1">+</Button>
+  </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
     <Button class="w-36" onclick={changeClass}>{tooltipClass ? "Remove class" : "Add class"}</Button>
     <Button class="w-36" color="secondary" onclick={changeArrow}>{arrow ? "Remove arrow" : "Add arrow"}</Button>
-    <Button class="w-36" color="rose" onclick={changeOffset}>{offset ? "Remove offset" : "Add offset"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

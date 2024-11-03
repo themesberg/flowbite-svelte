@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.10.0
+
+### Minor Changes
+
+- feat: add @floating-ui/dom to Tooltip
+
 ## 0.9.25
 
 ### Patch Changes

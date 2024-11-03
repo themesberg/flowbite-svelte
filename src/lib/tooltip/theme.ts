@@ -1,9 +1,10 @@
 import { tv } from "tailwind-variants";
+import type { Placement } from "@floating-ui/dom";
 
 export const tooltip = tv({
   slots: {
-    base: "tooltip absolute bg-gray-800 text-white px-2 py-1 rounded text-sm z-50 pointer-events-none",
-    arrowBase: "absolute pointer-events-none block w-[10px] h-[10px] rotate-45 bg-inherit border-inherit"
+    base: "absolute bg-gray-800 text-white px-2 py-1 rounded text-sm z-50 pointer-events-none",
+    arrowBase: "absolute w-2 h-2 rotate-45 bg-inherit"
   },
   variants: {
     color: {
@@ -30,36 +31,27 @@ export const tooltip = tv({
       rose: { base: "bg-rose-800" }
     },
     arrow: {
-      true: "",
-      false: ""
+      true: { arrowBase: "visible" },
+      false: { arrowBase: "hidden" }
     },
     position: {
-      top: "",
-      bottom: "",
-      left: "",
-      right: ""
-    }
+      top: {},
+      "top-start": {},
+      "top-end": {},
+      bottom: {},
+      "bottom-start": {},
+      "bottom-end": {},
+      left: {},
+      "left-start": {},
+      "left-end": {},
+      right: {},
+      "right-start": {},
+      "right-end": {}
+    } as Record<Placement, object>
+  },
+  defaultVariants: {
+    color: "default",
+    arrow: true,
+    position: "top"
   }
-  // compoundVariants: [
-  //   {
-  //     arrow: true,
-  //     position: 'top',
-  //     class: { arrowBase:'border-t border-s'}
-  //   },
-  //   {
-  //     arrow: true,
-  //     position: 'bottom',
-  //     class: { arrowBase: 'border-b border-e' }
-  //   },
-  //   {
-  //     arrow: true,
-  //     position: 'left',
-  //     class: { arrowBase: 'border-b border-s' }
-  //   },
-  //   {
-  //     arrow: true,
-  //     position: 'right',
-  //     class: { arrowBase: 'border-t border-e' }
-  //   }
-  // ]
 });

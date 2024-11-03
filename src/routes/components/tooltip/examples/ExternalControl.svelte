@@ -63,5 +63,5 @@
     </div>
   </Button>
 
-  <Tooltip visible={tooltipVisible} reference="#myButton" class="p-4 text-center" color="purple">Controlled tooltip</Tooltip>
+  <Tooltip visible={tooltipVisible} class="-m-14 p-4 text-center" color="purple">Controlled tooltip</Tooltip>
 </div>
