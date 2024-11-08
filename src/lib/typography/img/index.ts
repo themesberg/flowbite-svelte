@@ -2,7 +2,7 @@ import Img from "./Img.svelte";
 import EnhancedImg from "./EnhancedImg.svelte";
 import ImgEnhanced from "./ImgEnhanced.svelte";
 import type { HTMLImgAttributes } from "svelte/elements";
-import type { Picture } from 'vite-imagetools';
+import type { Picture } from "vite-imagetools";
 import { img } from "./theme";
 
 type SizeType = "sm" | "md" | "lg" | "xl" | "2xl" | "none" | "xs" | "full" | undefined;
@@ -11,7 +11,7 @@ type EffectType = "none" | "grayscale" | "blur" | "invert" | "sepia" | "saturate
 type ShadowType = "sm" | "md" | "lg" | "xl" | "2xl" | "none" | "regular" | "inner" | undefined;
 type RoundedType = "sm" | "md" | "lg" | "xl" | "2xl" | "full" | "none" | "regular" | "3xl" | undefined;
 
-type EnhancedImgAttributes = Omit<HTMLImgAttributes, 'src'> & { src?: string | Picture | undefined | null };
+type EnhancedImgAttributes = Omit<HTMLImgAttributes, "src"> & { src: string | Picture };
 
 interface ImgProps extends HTMLImgAttributes {
   size?: SizeType;
@@ -28,7 +28,6 @@ interface ImgProps extends HTMLImgAttributes {
 }
 
 interface EnhandedImgProps extends EnhancedImgAttributes {
-  isEnhanced?: boolean;
   size?: SizeType;
   multiple?: boolean;
   transform?: string;

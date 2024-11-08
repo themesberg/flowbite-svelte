@@ -2,6 +2,7 @@ import { tv } from "tailwind-variants";
 
 export const input = tv({
   slots: {
+    base: "relative w-full",
     input: "block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right focus:outline-none",
     left: "flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400 pointer-events-none start-0 ps-2.5",
     right: "flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400 end-0 p-2.5"

@@ -1,6 +1,6 @@
 {
   "name": "svelte-5-ui-lib",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "description": "Svelte 5 UI Lib is a UI library built from scratch to leverage Svelte 5's runes system, creating smooth, reactive components.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -592,9 +592,17 @@
       "types": "./dist/typography/hr/Hr.svelte.d.ts",
       "svelte": "./dist/typography/hr/Hr.svelte"
     },
+    "./EnhancedImg.svelte": {
+      "types": "./dist/typography/img/EnhancedImg.svelte.d.ts",
+      "svelte": "./dist/typography/img/EnhancedImg.svelte"
+    },
     "./Img.svelte": {
       "types": "./dist/typography/img/Img.svelte.d.ts",
       "svelte": "./dist/typography/img/Img.svelte"
+    },
+    "./ImgEnhanced.svelte": {
+      "types": "./dist/typography/img/ImgEnhanced.svelte.d.ts",
+      "svelte": "./dist/typography/img/ImgEnhanced.svelte"
     },
     "./Layout.svelte": {
       "types": "./dist/typography/layout/Layout.svelte.d.ts",

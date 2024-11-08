@@ -16,6 +16,7 @@ interface InputProps<T extends InputValue = string> extends Omit<HTMLInputAttrib
   classLeft?: string;
   classRight?: string;
   class?: string;
+  divClass?: string;
 }
 
 function clampSize(s: SizeType) {
