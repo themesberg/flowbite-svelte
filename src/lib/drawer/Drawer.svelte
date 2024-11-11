@@ -23,8 +23,6 @@
     <div role="presentation" class={backdropCls({ class: backdropClass })}></div>
   {:else if !backdrop && activateClickOutside}
     <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full" onclick={closeDrawer}></div>
-  {:else if !backdrop && !activateClickOutside}
-    <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full"></div>
   {/if}
   <div {...restProps} class={base({ className })} transition:transition={params as ParamsType} tabindex="-1">
     {@render children()}
