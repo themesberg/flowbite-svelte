@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.10.2
+
+### Patch Changes
+
+- fix: Table headItems prop to be an array of HeadItemType
+
 ## 0.10.1
 
 ### Patch Changes

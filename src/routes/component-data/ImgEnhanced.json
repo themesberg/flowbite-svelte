@@ -2,7 +2,6 @@
   "name": "ImgEnhanced",
   "props": [
     ["src", "any", ""],
-    ["isEnhanced", "any", "true"],
     ["size", "\"sm\" | \"md\" | \"lg\" | \"xl\" | \"2xl\" | \"none\" | \"xs\" | \"full\" | undefined", "\"none\""],
     ["alignment", "\"left\" | \"center\" | \"right\" | undefined", "\"left\""],
     ["effect", "\"none\" | \"grayscale\" | \"blur\" | \"invert\" | \"sepia\" | \"saturate\" | \"hue-rotate\" | undefined", "\"none\""],
