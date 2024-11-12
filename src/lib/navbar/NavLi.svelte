@@ -31,7 +31,23 @@
 </script>
 
 <li>
-  <svelte:element this={href ? 'a' : 'div'} role={href ? undefined : 'link'} {href} {...$$restProps} on:blur on:change on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover class={liClass}>
+  <svelte:element
+    this={href ? 'a' : 'div'}
+    role={href ? 'link' : 'presentation'}
+    {href}
+    {...$$restProps}
+    on:blur
+    on:change
+    on:click
+    on:focus
+    on:keydown
+    on:keypress
+    on:keyup
+    on:mouseenter
+    on:mouseleave
+    on:mouseover
+    class={liClass}
+  >
     <slot />
   </svelte:element>
 </li>
