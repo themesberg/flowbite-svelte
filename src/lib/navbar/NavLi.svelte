@@ -34,7 +34,8 @@
   <svelte:element
     this={href ? 'a' : 'div'}
     role={href ? 'link' : 'presentation'}
-    {href} {...$$restProps}
+    {href}
+    {...$$restProps}
     on:blur
     on:change
     on:click
