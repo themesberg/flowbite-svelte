@@ -72,7 +72,7 @@ export const button = tv({
     {
       shadow: true,
       color: "alternative",
-      class: "hadow-gray-500/50 dark:shadow-gray-800/80"
+      class: "shadow-gray-500/50 dark:shadow-gray-800/80"
     },
     {
       shadow: true,
