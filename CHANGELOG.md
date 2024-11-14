@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.10.3
+
+### Patch Changes
+
+- fix: Input.svelte without div class with no left or right
+
 ## 0.10.2
 
 ### Patch Changes
