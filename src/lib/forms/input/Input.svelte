@@ -3,7 +3,6 @@
   import { getContext } from "svelte";
   import { CloseButton } from "$lib";
   import { type InputProps as Props, input, clampSize, type InputValue } from ".";
-  import { r } from "svelte-rune-highlight/languages";
 
   let { children, left, right, value = $bindable<InputValue>(), clearable = false, size, color = "default", class: className, classLeft, classRight, divClass, ...restProps }: Props<InputValue> = $props();
 

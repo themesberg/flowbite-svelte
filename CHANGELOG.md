@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.10.4
+
+### Patch Changes
+
+- fix: remove unnecessary import
+
 ## 0.10.3
 
 ### Patch Changes
