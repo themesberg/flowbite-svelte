@@ -6,6 +6,7 @@
     value?: string;
     files?: FileList | undefined;
     defaultClass?: string;
+    multiple?: boolean;
   }
 
   type $$Props = DropzoneProps & HTMLInputAttributes;
@@ -13,6 +14,7 @@
   export let value: $$Props['value'] = '';
   export let files: $$Props['files'] = undefined;
   export let defaultClass: $$Props['defaultClass'] = 'flex flex-col justify-center items-center w-full h-64 bg-gray-50 rounded-lg border-2 border-gray-300 border-dashed cursor-pointer dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600';
+  export let multiple: $$Props['multiple'] = false;
 
   let input: HTMLInputElement;
 
@@ -33,7 +35,7 @@
   <slot />
 </button>
 <label class="hidden">
-  <input {...$$restProps} bind:value bind:files bind:this={input} on:change on:click type="file" />
+  <input {...$$restProps} {multiple} bind:value bind:files bind:this={input} on:change on:click type="file" />
 </label>
 
 <!--
