@@ -27,6 +27,12 @@
     duration: 500,
     easing: quintOut
   };
+  // Create a helper to determine menu role and tabindex for A11y
+  function getMenuProps(isOpen: boolean) {
+    return isOpen 
+      ? { role: "menu", tabindex: 0 } 
+      : { role: "none", tabindex: -1 };
+  }
 </script>
 
 <nav {...restProps} class={base({ class: navClass })} use:clickOutside={closeNav}>
@@ -49,14 +55,14 @@
       {#if navSlotHiddenTop}
         {@render navSlotHiddenTop()}
       {/if}
-      <div class={menuContainer({ class: div2Class })} transition:slide={slideParams} role="button" tabindex="0">
+      <div class={menuContainer({ class: div2Class })} transition:slide={slideParams} {...getMenuProps(true)}>
         {@render children()}
       </div>
       {#if navSlotHiddenBottom}
         {@render navSlotHiddenBottom()}
       {/if}
     {:else}
-      <div class={menuContainer({ class: div2Class })} role="button" tabindex="0">
+      <div class={menuContainer({ class: div2Class })} {...getMenuProps(false)}>
         {@render children()}
       </div>
     {/if}
