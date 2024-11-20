@@ -75,8 +75,8 @@
     <div class="mt-4 flex justify-end space-x-4 sm:hidden"><DynamicCodeBlockStyle /> <Darkmode class="sm:hidden" /></div>
   </Navbar>
 </header>
-<div class="lg:flex">
-  <Sidebar id="sidebar" isSingle {isOpen} {closeSidebar} breakpoint="lg" activeClass="flex items-center p-1 text-base font-normal text-white dark:hover:text-white hover:text-gray-900 bg-primary-700 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" nonActiveClass="p-1 hover:bg-gray-200" divClass="dark:bg-gray-900 bg-gray-50" class="top-[62px] h-screen dark:bg-gray-900">
+<div class="lg:flex" id="sidebar">
+  <Sidebar isSingle {isOpen} {closeSidebar} breakpoint="lg" activeClass="flex items-center p-1 text-base font-normal text-white dark:hover:text-white hover:text-gray-900 bg-primary-700 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" nonActiveClass="p-1 hover:bg-gray-200" divClass="dark:bg-gray-900 bg-gray-50" class="top-[62px] h-screen dark:bg-gray-900">
     <SidebarGroup>
       <SidebarDropdownWrapper label="GETTING STARTED" isOpen={pageStatus} svgClass="me-4" btnClass="p-1">
         <SidebarItem label="About" href="/pages/about" />
