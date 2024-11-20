@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.10.7
+
+### Patch Changes
+
+- fix: dependencies update
+
+## 0.10.6
+
+### Patch Changes
+
+- fix: remove sveltekit dependencies
+
 ## 0.10.5
 
 ### Patch Changes
