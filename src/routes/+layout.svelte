@@ -49,7 +49,7 @@
 <header class="sticky top-0 z-50 mx-auto w-full flex-none border-b border-gray-200 bg-gray-50 lg:pl-4 dark:border-gray-600 dark:bg-gray-950">
   <Navbar {navClass} {toggleNav} {closeNav} {navStatus} fluid div2Class="ml-auto w-full">
     {#snippet brand()}
-      <button onclick={sidebarUi.toggle} type="button" class="z-50 mr-4 mt-1 lg:hidden" aria-controls="navbar-default">
+      <button onclick={sidebarUi.toggle} type="button" class="z-50 mr-4 mt-1 lg:hidden" aria-controls="sidebar" aria-expanded={isOpen} >
         <span class="sr-only">Toggle sidebar menu</span>
         <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
@@ -71,12 +71,12 @@
       <NavLi href="/pages/coverage">Coverage</NavLi>
       <NavLi href="/pages/about">About</NavLi>
       <NavLi class="sm:hidden" href="https://github.com/shinokada/svelte-5-ui-lib">Repo</NavLi>
-      <div class="mt-4 flex justify-end space-x-4 sm:hidden"><DynamicCodeBlockStyle /> <Darkmode class="sm:hidden" /></div>
     </NavUl>
+    <div class="mt-4 flex justify-end space-x-4 sm:hidden"><DynamicCodeBlockStyle /> <Darkmode class="sm:hidden" /></div>
   </Navbar>
 </header>
 <div class="lg:flex">
-  <Sidebar isSingle {isOpen} {closeSidebar} breakpoint="lg" activeClass="flex items-center p-1 text-base font-normal text-white dark:hover:text-white hover:text-gray-900 bg-primary-700 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" nonActiveClass="p-1 hover:bg-gray-200" divClass="dark:bg-gray-900 bg-gray-50" class="top-[62px] h-screen dark:bg-gray-900">
+  <Sidebar id="sidebar" isSingle {isOpen} {closeSidebar} breakpoint="lg" activeClass="flex items-center p-1 text-base font-normal text-white dark:hover:text-white hover:text-gray-900 bg-primary-700 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" nonActiveClass="p-1 hover:bg-gray-200" divClass="dark:bg-gray-900 bg-gray-50" class="top-[62px] h-screen dark:bg-gray-900">
     <SidebarGroup>
       <SidebarDropdownWrapper label="GETTING STARTED" isOpen={pageStatus} svgClass="me-4" btnClass="p-1">
         <SidebarItem label="About" href="/pages/about" />
