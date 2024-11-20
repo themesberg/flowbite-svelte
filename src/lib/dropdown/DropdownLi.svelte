@@ -1,12 +1,11 @@
 <script lang="ts">
-  import { page } from "$app/stores";
   import { type DropdownLiProps as Props, dropdownli } from "./";
 
   let { aClass, children, href, activeClass, liClass, ...restProps }: Props = $props();
 
-  let currentUrl = $state();
+  let currentUrl = $state("");
   $effect(() => {
-    currentUrl = $page.url.pathname;
+    currentUrl = window.location.pathname;
   });
 
   const { anchor, activeAnchor } = $derived(dropdownli());

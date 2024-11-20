@@ -1,16 +1,15 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { page } from "$app/stores";
   import { twMerge } from "tailwind-merge";
   import { type SidebarCtxType, type SidebarItemProps as Props } from "./";
 
   let { iconSlot, subtext, href, label, spanClass = "ms-3", activeClass, nonActiveClass, aClass, active, class: className, ...restProps }: Props = $props();
 
   const context = getContext<SidebarCtxType>("sidebarContext") ?? {};
-  let currentUrl = $state();
+  let currentUrl = $state("");
 
   $effect(() => {
-    currentUrl = $page.url.pathname;
+    currentUrl = window.location.pathname;
   });
 
   let aCls = $derived((active ?? currentUrl === href) ? (activeClass ?? context.activeClass) : (nonActiveClass ?? context.nonActiveClass));

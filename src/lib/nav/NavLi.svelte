@@ -1,6 +1,5 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { page } from "$app/stores";
   import type { navbarType } from "$lib/types";
   import { type NavLiProps as Props, navLi } from ".";
 
@@ -11,10 +10,10 @@
   const context = getContext<navbarType>("navbarContext");
   breakPoint = context.breakPoint ?? "md";
   closeNav = context.closeNav ?? closeNav;
-  let currentUrl = $state($page.url.pathname);
+  let currentUrl = $state("");
   let isActive = $derived(currentUrl === href);
   $effect(() => {
-    currentUrl = $page.url.pathname;
+    currentUrl = window.location.pathname;
   });
 
   const { base, link } = $derived(navLi({ active: isActive, breakPoint }));

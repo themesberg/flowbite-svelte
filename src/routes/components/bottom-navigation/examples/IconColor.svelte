@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { page } from "$app/stores";
   import { Skeleton, ImagePlaceholder, BottomNav, BottomNavItem } from "$lib";
   import { AdjustmentsVerticalSolid, HomeSolid, WalletSolid, UserCircleSolid } from "flowbite-svelte-icons";
   let svgClass = "mb-1 text-pink-500 dark:text-pink-400 group-hover:text-pink-600 dark:group-hover:text-pink-500";
@@ -7,7 +6,7 @@
   let activeUrl = $state("");
 
   $effect(() => {
-    activeUrl = $page.url.pathname;
+    activeUrl = window.location.pathname;
   });
 </script>
 

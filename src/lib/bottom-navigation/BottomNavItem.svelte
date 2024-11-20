@@ -2,20 +2,19 @@
   import { getContext } from "svelte";
   import { type BottomNavItemProps as Props, type BottomNavContextType, type BottomNavVariantType, bottomNavItem } from "./index";
   import { twMerge } from "tailwind-merge";
-  import { page } from "$app/stores";
 
   let { children, btnName, appBtnPosition = "middle", target, activeClass, href = "", btnClass, spanClass, ...restProps }: Props = $props();
 
   const navType: BottomNavVariantType = getContext("navType");
   const context = getContext<BottomNavContextType>("bottomNavType") ?? {};
-  console.log("context", context);
-  let currentUrl = $state($page.url.pathname);
+  // console.log("context", context);
+  let currentUrl = $state("");
   let active: boolean = $state(false);
   // let btnCls: string = $state('');
   // let spanCls: string = $state('');
   const { base, span } = bottomNavItem({ navType, appBtnPosition });
   $effect(() => {
-    currentUrl = $page.url.pathname;
+    currentUrl = window.location.pathname;
     active = href === currentUrl;
   });
 
