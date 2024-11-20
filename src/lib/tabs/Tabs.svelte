@@ -5,14 +5,17 @@
 
   let { children, tabStyle = "none", ulClass, contentClass, divider = true, ...restProps }: Props = $props();
 
-  // using $derived() shows State referenced in its own scope will never update. Did you mean to reference it inside a closure?
   const { base, content, divider: dividerClass } = $derived(tabs({ tabStyle, hasDivider: divider }));
+
+  // Generate a unique ID for the tab panel
+  const panelId = `tab-panel-${Math.random().toString(36).substring(2)}`;
 
   const ctx: TabCtxType = {
     get tabStyle() {
       return tabStyle;
     },
-    selected: writable<HTMLElement>()
+    selected: writable<HTMLElement>(),
+    panelId // Add panelId to the context
   };
 
   let dividerBool = $derived(["full", "pill"].includes(tabStyle) ? false : divider);
@@ -33,7 +36,7 @@
 {#if dividerBool}
   <div class={dividerClass()}></div>
 {/if}
-<div class={content({ class: contentClass })} role="tabpanel" aria-labelledby="id-tab" use:init></div>
+<div class={content({ class: contentClass })} role="tabpanel" aria-labelledby={panelId} use:init></div>
 
 <!--
 @component

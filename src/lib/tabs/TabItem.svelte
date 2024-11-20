@@ -7,13 +7,11 @@
 
   const ctx: TabCtxType = getContext("ctx");
   let compoTabStyle = $derived(tabStyle ? tabStyle : ctx.tabStyle || "full");
-  // console.log('tabStyle in TabItem', ctx);
-  const { active, inactive } = $derived(tabs({ tabStyle: compoTabStyle, hasDivider: true }));
-  // const tableCtx: TableCtxType = getContext('tableCtx');
-  // let compoColor = $derived(color ? color : tableCtx.color || 'default');
 
-  // $inspect('ctx from item: ', ctx);
+  const { active, inactive } = $derived(tabs({ tabStyle: compoTabStyle, hasDivider: true }));
   let selected = ctx.selected ?? writable<HTMLElement>();
+  // Generate a unique ID for this tab button
+  const tabId = `tab-${Math.random().toString(36).substring(2)}`;
 
   function init(node: HTMLElement) {
     selected.set(node);
@@ -35,6 +33,8 @@
     type="button"
     onclick={() => (open = true)}
     role="tab"
+    id={tabId}
+    aria-controls={ctx.panelId}
     {disabled}
     class={button({
       class: open ? (activeClass ?? active()) : (inactiveClass ?? inactive())

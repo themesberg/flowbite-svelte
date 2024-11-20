@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.10.8
+
+### Patch Changes
+
+- fix: peerDependencies update
+
 ## 0.10.7
 
 ### Patch Changes

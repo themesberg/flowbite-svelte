@@ -31,6 +31,7 @@ interface TabCtxType {
   inactiveClass?: string;
   tabStyle?: "full" | "pill" | "underline" | "none";
   selected: Writable<HTMLElement>;
+  panelId: string;
 }
 
 export { TabItem, tabItem, Tabs, tabs, type TabsProps, type TabitemProps, type TabCtxType };
