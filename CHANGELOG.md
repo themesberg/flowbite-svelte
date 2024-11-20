@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.10.10
+
+### Patch Changes
+
+- fix: Tabs: add the id to the panel div
+- fix: TabItem: add aria-selected to the button to improve accessibility
+
 ## 0.10.9
 
 ### Patch Changes
