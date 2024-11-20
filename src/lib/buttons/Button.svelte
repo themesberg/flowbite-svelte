@@ -11,7 +11,7 @@
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     color?: ButtonColor;
     shadow?: boolean;
-    tag?: 'a' | 'button'| 'label'; 
+    tag?: 'a' | 'button'| 'label';
     checked?: boolean;
   }
 
@@ -25,7 +25,7 @@
   };
 
   type $$Props = AnchorProps | ButtonProps;
-  
+
   const group: SizeType = getContext('group');
 
   export let pill: $$Props['pill'] = false;
@@ -139,7 +139,7 @@
 </script>
 
 {#if href && !disabled}
-  <a {href} {...$$restProps} class={buttonClass} role="button" on:click on:change on:keydown on:keyup on:touchstart|passive on:touchend on:touchcancel on:mouseenter on:mouseleave>
+  <a {href} {...$$restProps} class={buttonClass} role="button" on:click on:change on:keydown on:keyup on:touchstart|passive on:touchend on:touchcancel on:mouseenter on:mouseleave on:mouseup on:mousedown>
     <slot />
   </a>
 {:else if tag === 'label'}
@@ -147,7 +147,7 @@
     <slot />
   </label>
 {:else if tag === 'button' }
-  <button {type} {...$$restProps} {disabled} class={buttonClass} on:click on:change on:keydown on:keyup on:touchstart|passive on:touchend on:touchcancel on:mouseenter on:mouseleave>
+  <button {type} {...$$restProps} {disabled} class={buttonClass} on:click on:change on:keydown on:keyup on:touchstart|passive on:touchend on:touchcancel on:mouseenter on:mouseleave on:mouseup on:mousedown>
     <slot />
   </button>
 {:else}
