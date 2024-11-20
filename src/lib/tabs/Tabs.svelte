@@ -36,7 +36,7 @@
 {#if dividerBool}
   <div class={dividerClass()}></div>
 {/if}
-<div class={content({ class: contentClass })} role="tabpanel" aria-labelledby={panelId} use:init></div>
+<div id={panelId} class={content({ class: contentClass })} role="tabpanel" aria-labelledby={panelId} use:init></div>
 
 <!--
 @component

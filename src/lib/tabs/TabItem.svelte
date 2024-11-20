@@ -35,6 +35,7 @@
     role="tab"
     id={tabId}
     aria-controls={ctx.panelId}
+    aria-selected={open}
     {disabled}
     class={button({
       class: open ? (activeClass ?? active()) : (inactiveClass ?? inactive())
