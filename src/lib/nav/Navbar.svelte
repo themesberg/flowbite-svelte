@@ -29,9 +29,7 @@
   };
   // Create a helper to determine menu role and tabindex for A11y
   function getMenuProps(isOpen: boolean) {
-    return isOpen 
-      ? { role: "menu", tabindex: 0 } 
-      : { role: "none", tabindex: -1 };
+    return isOpen ? { role: "menu", tabindex: 0 } : { role: "none", tabindex: -1 };
   }
 </script>
 

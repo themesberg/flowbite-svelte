@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.10.5
+
+### Patch Changes
+
+- fix: #34 change style to inputStyle
+
 ## 0.10.4
 
 ### Patch Changes

@@ -5,7 +5,7 @@
     ["id", "any", "idGenerator()"],
     ["value", "any", "$bindable()"],
     ["aria_describedby", "any", ""],
-    ["style", "any", "\"standard\""],
+    ["inputStyle", "any", "\"standard\""],
     ["size", "any", "\"default\""],
     ["color", "any", "\"default\""],
     ["divClass", "any", ""],

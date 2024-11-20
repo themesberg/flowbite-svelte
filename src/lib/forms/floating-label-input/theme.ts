@@ -7,7 +7,7 @@ export const floatingLabelInput = tv({
     label: "absolute text-sm duration-300 transform scale-75 z-10 origin-left rtl:origin-right peer-placeholder-shown:scale-100 peer-focus:scale-75"
   },
   variants: {
-    style: {
+    inputStyle: {
       filled: {
         base: "relative",
         input: "rounded-t-lg border-0 border-b-2 bg-gray-50 dark:bg-gray-700",
@@ -117,7 +117,7 @@ export const floatingLabelInput = tv({
   },
   compoundVariants: [
     {
-      style: "filled",
+      inputStyle: "filled",
       size: "small",
       class: {
         input: "px-2.5 pb-1.5 pt-4",
@@ -125,7 +125,7 @@ export const floatingLabelInput = tv({
       }
     },
     {
-      style: "filled",
+      inputStyle: "filled",
       size: "default",
       class: {
         input: "px-2.5 pb-2.5 pt-5",
@@ -133,7 +133,7 @@ export const floatingLabelInput = tv({
       }
     },
     {
-      style: "outlined",
+      inputStyle: "outlined",
       size: "small",
       class: {
         input: "px-2.5 pb-1.5 pt-3",
@@ -141,7 +141,7 @@ export const floatingLabelInput = tv({
       }
     },
     {
-      style: "outlined",
+      inputStyle: "outlined",
       size: "default",
       class: {
         input: "px-2.5 pb-2.5 pt-4",
@@ -149,7 +149,7 @@ export const floatingLabelInput = tv({
       }
     },
     {
-      style: "standard",
+      inputStyle: "standard",
       size: "small",
       class: {
         input: "py-2 px-0",
@@ -157,7 +157,7 @@ export const floatingLabelInput = tv({
       }
     },
     {
-      style: "standard",
+      inputStyle: "standard",
       size: "default",
       class: {
         input: "py-2.5 px-0",
@@ -165,7 +165,7 @@ export const floatingLabelInput = tv({
       }
     },
     {
-      style: "filled",
+      inputStyle: "filled",
       color: "primary",
       class: {
         input: "dark:focus:border-primary-500 focus:border-primary-600"
@@ -173,7 +173,7 @@ export const floatingLabelInput = tv({
     }
   ],
   defaultVariants: {
-    style: "standard",
+    inputStyle: "standard",
     size: "default",
     color: "primary"
   }
