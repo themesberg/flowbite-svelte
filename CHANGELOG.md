@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.10.9
+
+### Patch Changes
+
+- fix: Tabs and TabItem: generate unique IDs dynamically, add id to tab buttons, add aria-controls to link tab buttons to the panel, pass panelId through context to maintain the connection
+
+- fix: #35 remove sveltekit dependencies
+
+- fix: use undefined to role in Card
+
+- fix: remove link role is unnecessary for element a with attribute href in Card component
+
+- fix: #29 style in CardPlaceholder
+
+- fix: #34 change prop style to inputStyle, navbar A11y update
+
 ## 0.10.8
 
 ### Patch Changes
