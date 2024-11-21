@@ -105,9 +105,9 @@
 <H2>Interactive Avatar Bilder</H2>
 <CodeWrapper>
   <div class="mb-4 flex h-36 justify-center">
-    <Avatar src="/images/profile-picture-1.webp" cornerStyle={isRounded ? "rounded" : undefined} {border} {stacked} class={avatarClass} size={avatarSize} />
-    <Avatar src="/images/profile-picture-2.webp" cornerStyle={isRounded ? "rounded" : undefined} {border} {stacked} class={avatarClass} size={avatarSize} />
-    <Avatar src="/images/profile-picture-3.webp" cornerStyle={isRounded ? "rounded" : undefined} {border} {stacked} class={avatarClass} size={avatarSize} />
+    <Avatar src="/images/profile-picture-1.webp" alt="Profile picture 1" cornerStyle={isRounded ? "rounded" : undefined} {border} {stacked} class={avatarClass} size={avatarSize} />
+    <Avatar src="/images/profile-picture-2.webp" alt="Profile picture 2" cornerStyle={isRounded ? "rounded" : undefined} {border} {stacked} class={avatarClass} size={avatarSize} />
+    <Avatar src="/images/profile-picture-3.webp" alt="Profile picture 3" cornerStyle={isRounded ? "rounded" : undefined} {border} {stacked} class={avatarClass} size={avatarSize} />
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size</Label>

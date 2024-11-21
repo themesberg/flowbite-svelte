@@ -12,7 +12,7 @@
 </script>
 
 <div class="flex h-64 items-start justify-center">
-  <Avatar onclick={dropdown.toggle} src="/images/profile-picture-3.webp" class="cursor-pointer" dot={{ color: "green" }} />
+  <Avatar onclick={dropdown.toggle} src="/images/profile-picture-3.webp"  alt="Profile picture" class="cursor-pointer" dot={{ color: "green" }} />
   <div class="relative">
     <Dropdown {dropdownStatus} {closeDropdown} class="absolute -left-[100px] top-[40px]">
       <DropdownHeader>

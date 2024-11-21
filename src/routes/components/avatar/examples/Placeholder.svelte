@@ -3,8 +3,8 @@
 </script>
 
 <div class="flex justify-center gap-4">
-  <Avatar />
-  <Avatar cornerStyle="rounded" />
-  <Avatar border />
-  <Avatar cornerStyle="rounded" border />
+  <Avatar alt="placeholder" />
+  <Avatar cornerStyle="rounded" alt="rounded placeholder" />
+  <Avatar border alt="bordered placeholder" />
+  <Avatar cornerStyle="rounded" border alt="rounded bordered placeholder" />
 </div>

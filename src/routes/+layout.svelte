@@ -15,17 +15,14 @@
   let navStatus = $state(false);
   let toggleNav = nav.toggle;
   let closeNav = nav.close;
-  let currentUrl = $state($page.url.pathname);
-  const hasPath = (key: string) => currentUrl.includes(key);
+  let activeUrl = $state($page.url.pathname);
+  const hasPath = (key: string) => activeUrl.includes(key);
   let pageStatus = $derived(hasPath("pages"));
   let componentStatus = $derived(hasPath("components"));
-  // $inspect("currentUrl: ", currentUrl);
-  // $inspect("pageStatus: ", pageStatus);
-  // $inspect("componentStatus: ", componentStatus);
 
   $effect(() => {
     navStatus = nav.isOpen;
-    currentUrl = $page.url.pathname;
+    activeUrl = $page.url.pathname;
     isOpen = sidebarUi.isOpen;
     // pageStatus = hasPath("pages");
     // componentStatus = hasPath("components");
@@ -40,6 +37,8 @@
 
   $effect(() => {
     metaTags = $page.data.pageMetaTags ? deepMerge($page.data.layoutMetaTags, $page.data.pageMetaTags) : data.layoutMetaTags;
+    activeUrl = $page.url.pathname;
+    $inspect("activeUrl in layout: ", activeUrl);
   });
 </script>
 
@@ -67,7 +66,7 @@
         <Darkmode class="hidden sm:block" />
       </div>
     {/snippet}
-    <NavUl class="md:space-x-6 lg:space-x-8">
+    <NavUl class="md:space-x-6 lg:space-x-8" {activeUrl}>
       <NavLi href="/pages/coverage">Coverage</NavLi>
       <NavLi href="/pages/about">About</NavLi>
       <NavLi class="sm:hidden" href="https://github.com/shinokada/svelte-5-ui-lib">Repo</NavLi>

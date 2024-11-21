@@ -3,5 +3,5 @@
 </script>
 
 <div class="flex h-10 justify-center">
-  <Avatar>JL</Avatar>
+  <Avatar alt="JL">JL</Avatar>
 </div>

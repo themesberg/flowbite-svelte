@@ -10,17 +10,24 @@
   const context = getContext<navbarType>("navbarContext");
   breakPoint = context.breakPoint ?? "md";
   closeNav = context.closeNav ?? closeNav;
-  let currentUrl = $state("");
-  let isActive = $derived(currentUrl === href);
+  const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
+
+  let navUrl = $state('');
+  activeUrlStore.subscribe((value) => {
+    navUrl = value;
+  });
+
+  // let currentUrl = $state();
+  let isActive = $derived(navUrl ? href === navUrl : false);
   $effect(() => {
-    currentUrl = window.location.pathname;
+    $inspect('navUrl: ', navUrl);
   });
 
   const { base, link } = $derived(navLi({ active: isActive, breakPoint }));
 </script>
 
 <li class={base({ class: className })}>
-  <a {href} onclick={closeNav} {...restProps} aria-current={currentUrl === href} class={link({ class: aClass })}>
+  <a {href} onclick={closeNav} {...restProps} aria-current={isActive} class={link({ class: aClass })}>
     {@render children()}
   </a>
 </li>

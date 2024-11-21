@@ -39,6 +39,7 @@ interface NavBrandProps extends HTMLAnchorAttributes {
 interface NavUlProps extends HTMLAttributes<HTMLUListElement> {
   children: Snippet;
   class?: string;
+  activeUrl?: string;
 }
 
 interface NavLiProps extends HTMLAnchorAttributes {
