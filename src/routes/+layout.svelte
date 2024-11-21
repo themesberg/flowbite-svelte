@@ -49,7 +49,7 @@
 <header class="sticky top-0 z-50 mx-auto w-full flex-none border-b border-gray-200 bg-gray-50 lg:pl-4 dark:border-gray-600 dark:bg-gray-950">
   <Navbar {navClass} {toggleNav} {closeNav} {navStatus} fluid div2Class="ml-auto w-full">
     {#snippet brand()}
-      <button onclick={sidebarUi.toggle} type="button" class="z-50 mr-4 mt-1 lg:hidden" aria-controls="sidebar" aria-expanded={isOpen} >
+      <button onclick={sidebarUi.toggle} type="button" class="z-50 mr-4 mt-1 lg:hidden" aria-controls="sidebar" aria-expanded={isOpen}>
         <span class="sr-only">Toggle sidebar menu</span>
         <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
