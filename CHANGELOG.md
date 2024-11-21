@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.10.11
+
+### Patch Changes
+
+- fix: put back gen:exports to lib-helers script
+
 ## 0.10.10
 
 ### Patch Changes
