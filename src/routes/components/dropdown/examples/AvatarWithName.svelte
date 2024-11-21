@@ -1,7 +1,7 @@
 <script lang="ts">
   import { sineIn } from "svelte/easing";
   import { Button, Dropdown, DropdownHeader, DropdownFooter, DropdownUl, DropdownLi, uiHelpers, Avatar } from "$lib";
-  import { page } from '$app/stores';
+  import { page } from "$app/stores";
   let activeUrl = $state($page.url.pathname);
   $effect(() => {
     activeUrl = $page.url.pathname;

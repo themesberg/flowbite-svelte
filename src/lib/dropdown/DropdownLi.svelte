@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { getContext } from 'svelte';
+  import { getContext } from "svelte";
   import { type DropdownLiProps as Props, dropdownli } from "./";
 
   let { aClass, children, href, activeClass, liClass, ...restProps }: Props = $props();
 
-  const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
-  let sidebarUrl = $state('');
+  const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
+  let sidebarUrl = $state("");
   activeUrlStore.subscribe((value) => {
     // console.log('value: ', value)
     sidebarUrl = value;

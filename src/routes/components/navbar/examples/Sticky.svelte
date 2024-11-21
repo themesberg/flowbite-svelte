@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Navbar, NavBrand, NavUl, NavLi, Skeleton, ImagePlaceholder, TextPlaceholder, uiHelpers } from "$lib";
-  import { page } from '$app/stores';
+  import { page } from "$app/stores";
   let activeUrl = $state($page.url.pathname);
   let nav = uiHelpers();
   let navStatus = $state(false);

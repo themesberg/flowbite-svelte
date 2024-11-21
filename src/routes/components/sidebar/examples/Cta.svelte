@@ -2,7 +2,7 @@
   import { Sidebar, SidebarGroup, SidebarItem, SidebarButton, SidebarCta, uiHelpers } from "$lib";
   import { ChartOutline, GridSolid, MailBoxSolid, UserSolid, CloseOutline } from "flowbite-svelte-icons";
   import PlusPlaceholder from "../../../utils/PlusPlaceholder.svelte";
-  import { page } from '$app/stores';
+  import { page } from "$app/stores";
   let activeUrl = $state($page.url.pathname);
   const spanClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();

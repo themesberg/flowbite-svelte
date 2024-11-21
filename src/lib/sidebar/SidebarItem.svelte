@@ -6,7 +6,7 @@
   let { iconSlot, subtext, href, label, spanClass = "ms-3", activeClass, nonActiveClass, aClass, class: className, ...restProps }: Props = $props();
 
   const context = getContext<SidebarCtxType>("sidebarContext") ?? {};
-  const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
+  const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
 
   let sidebarUrl = $state("");
   activeUrlStore.subscribe((value) => {
@@ -45,6 +45,5 @@
 @props:activeClass: string;
 @props:nonActiveClass: string;
 @props:aClass: string;
-@props:active: boolean;
 @props:class: string;
 -->

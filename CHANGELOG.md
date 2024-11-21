@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.11.0
+
+### Minor Changes
+
+- feat: activeUrl for dropdown, bottom-navigation, nav, sidebar
+
 ## 0.10.11
 
 ### Patch Changes

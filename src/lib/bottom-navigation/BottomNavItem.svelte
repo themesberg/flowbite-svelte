@@ -7,12 +7,12 @@
 
   const navType: BottomNavVariantType = getContext("navType");
   const context = getContext<BottomNavContextType>("bottomNavType") ?? {};
-  
+
   let active: boolean = $state(false);
 
-  const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
+  const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
 
-  let navUrl = $state('');
+  let navUrl = $state("");
   activeUrlStore.subscribe((value) => {
     navUrl = value;
   });

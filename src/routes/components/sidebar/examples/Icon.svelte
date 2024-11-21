@@ -2,7 +2,7 @@
   import { Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper, SidebarButton, uiHelpers } from "$lib";
   import { ChartOutline, ChevronDoubleUpOutline, ChevronDoubleDownOutline, ShoppingBagSolid } from "flowbite-svelte-icons";
   import PlusPlaceholder from "../../../utils/PlusPlaceholder.svelte";
-  import { page } from '$app/stores';
+  import { page } from "$app/stores";
   let activeUrl = $state($page.url.pathname);
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);

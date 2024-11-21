@@ -16,6 +16,7 @@
     ["ariaLabel", "string", ""],
     ["nonActiveClass", "string", ""],
     ["activeClass", "string", ""],
+    ["activeUrl", "string", "''"],
     ["class", "string", ""]
   ]
 }

@@ -1,12 +1,12 @@
 <script>
   import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from "$lib";
   import { HomeSolid, WalletSolid, AdjustmentsVerticalOutline, UserCircleSolid, PlusOutline } from "flowbite-svelte-icons";
-  import { page } from '$app/stores';
+  import { page } from "$app/stores";
 
   let activeUrl = $state($page.url.pathname);
   $effect(() => {
     activeUrl = $page.url.pathname;
-  })
+  });
 </script>
 
 <div class="relative flex flex-col p-6">

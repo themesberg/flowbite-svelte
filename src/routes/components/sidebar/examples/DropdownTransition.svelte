@@ -4,7 +4,7 @@
   import PlusPlaceholder from "../../../utils/PlusPlaceholder.svelte";
   import { fade } from "svelte/transition";
   import { sineIn } from "svelte/easing";
-  import { page } from '$app/stores';
+  import { page } from "$app/stores";
   let activeUrl = $state($page.url.pathname);
   let params = {
     duration: 700,

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Navbar, NavBrand, NavUl, NavLi, uiHelpers, Dropdown, DropdownUl, DropdownLi } from "$lib";
-  import { page } from '$app/stores';
+  import { page } from "$app/stores";
   let activeUrl = $state($page.url.pathname);
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   // for navbar

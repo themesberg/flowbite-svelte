@@ -2,6 +2,7 @@
   "name": "NavUl",
   "props": [
     ["children", "Snippet", ""],
+    ["activeUrl", "string", "''"],
     ["class", "string", ""]
   ]
 }

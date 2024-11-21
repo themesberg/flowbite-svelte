@@ -10,9 +10,9 @@
   const context = getContext<navbarType>("navbarContext");
   breakPoint = context.breakPoint ?? "md";
   closeNav = context.closeNav ?? closeNav;
-  const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
+  const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
 
-  let navUrl = $state('');
+  let navUrl = $state("");
   activeUrlStore.subscribe((value) => {
     navUrl = value;
   });
@@ -20,7 +20,7 @@
   // let currentUrl = $state();
   let isActive = $derived(navUrl ? href === navUrl : false);
   $effect(() => {
-    $inspect('navUrl: ', navUrl);
+    $inspect("navUrl: ", navUrl);
   });
 
   const { base, link } = $derived(navLi({ active: isActive, breakPoint }));
