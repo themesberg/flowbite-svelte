@@ -3,18 +3,19 @@
   import { AdjustmentsVerticalSolid, HomeSolid, WalletSolid, UserCircleSolid } from "flowbite-svelte-icons";
   let svgClass = "mb-1 text-pink-500 dark:text-pink-400 group-hover:text-pink-600 dark:group-hover:text-pink-500";
   let svgActiveClass = "mb-1 text-green-500 dark:text-green-500 group-hover:text-green-700 dark:group-hover:text-green-700";
-  let activeUrl = $state("");
+  import { page } from '$app/stores';
 
-  $effect(() => {
-    activeUrl = window.location.pathname;
-  });
+let activeUrl = $state($page.url.pathname);
+$effect(() => {
+  activeUrl = $page.url.pathname;
+})
 </script>
 
 <div class="relative flex flex-col p-6">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
-  <BottomNav position="absolute" innerClass="grid-cols-4">
+  <BottomNav {activeUrl} position="absolute" innerClass="grid-cols-4">
     <BottomNavItem btnName="Home" href="/">
       <HomeSolid class={activeUrl === "/" ? svgActiveClass : svgClass} />
     </BottomNavItem>

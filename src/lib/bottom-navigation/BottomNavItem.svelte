@@ -7,15 +7,20 @@
 
   const navType: BottomNavVariantType = getContext("navType");
   const context = getContext<BottomNavContextType>("bottomNavType") ?? {};
-  // console.log("context", context);
-  let currentUrl = $state("");
+  
   let active: boolean = $state(false);
+
+  const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
+
+  let navUrl = $state('');
+  activeUrlStore.subscribe((value) => {
+    navUrl = value;
+  });
   // let btnCls: string = $state('');
   // let spanCls: string = $state('');
   const { base, span } = bottomNavItem({ navType, appBtnPosition });
   $effect(() => {
-    currentUrl = window.location.pathname;
-    active = href === currentUrl;
+    active = navUrl ? href === navUrl : navUrl ? navUrl.startsWith(href) : false;
   });
 
   let btnCls = $derived(twMerge(base({ class: btnClass }), active && (activeClass ?? context.activeClass)));

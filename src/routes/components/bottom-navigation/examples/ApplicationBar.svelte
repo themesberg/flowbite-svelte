@@ -1,13 +1,19 @@
 <script>
   import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from "$lib";
   import { HomeSolid, WalletSolid, AdjustmentsVerticalOutline, UserCircleSolid, PlusOutline } from "flowbite-svelte-icons";
+  import { page } from '$app/stores';
+
+  let activeUrl = $state($page.url.pathname);
+  $effect(() => {
+    activeUrl = $page.url.pathname;
+  })
 </script>
 
 <div class="relative flex flex-col p-6">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
-  <BottomNav position="absolute" navType="application" innerClass="grid-cols-5">
+  <BottomNav {activeUrl} position="absolute" navType="application" innerClass="grid-cols-5">
     <BottomNavItem btnName="Home" appBtnPosition="left" btnClass="static">
       <HomeSolid id="home" class="mb-1 h-6 w-6 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
     </BottomNavItem>
