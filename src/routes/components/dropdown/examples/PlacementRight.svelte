@@ -2,6 +2,11 @@
   import { sineIn } from "svelte/easing";
   import { Button, Dropdown, DropdownUl, DropdownLi, uiHelpers } from "$lib";
   import { ChevronRightOutline } from "flowbite-svelte-icons";
+  import { page } from '$app/stores';
+  let activeUrl = $state($page.url.pathname);
+  $effect(() => {
+    activeUrl = $page.url.pathname;
+  });
   let dropdownRight = uiHelpers();
   let dropdownRightStatus = $state(false);
   let closeDropdownRight = dropdownRight.close;
@@ -13,11 +18,11 @@
 <div class="flex h-[160px] items-center justify-center">
   <Button onclick={dropdownRight.toggle}>Dropdown right<ChevronRightOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <div class="relative">
-    <Dropdown dropdownStatus={dropdownRightStatus} closeDropdown={closeDropdownRight} params={{ y: 0, duration: 200, easing: sineIn }} class="absolute -top-[80px] left-[10px]">
+    <Dropdown {activeUrl} dropdownStatus={dropdownRightStatus} closeDropdown={closeDropdownRight} params={{ y: 0, duration: 200, easing: sineIn }} class="absolute -top-[80px] left-[10px]">
       <DropdownUl>
         <DropdownLi href="/">Dashboard</DropdownLi>
         <DropdownLi href="/components/drawer">Drawer</DropdownLi>
-        <DropdownLi href="/components/footer">Footer</DropdownLi>
+        <DropdownLi href="/components/dropdown">Dropdown</DropdownLi>
         <DropdownLi href="/components">Alert</DropdownLi>
       </DropdownUl>
     </Dropdown>

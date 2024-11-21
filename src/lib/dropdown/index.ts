@@ -20,6 +20,7 @@ interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
   backdropClass?: string;
   params?: ParamsType;
   transition?: TransitionFunc;
+  activeUrl?: string;
 }
 
 interface DropdownDividerProps extends HTMLAttributes<HTMLDivElement> {

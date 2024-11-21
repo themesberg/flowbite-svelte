@@ -1,11 +1,18 @@
 <script lang="ts">
+  import { getContext } from 'svelte';
   import { type DropdownLiProps as Props, dropdownli } from "./";
 
   let { aClass, children, href, activeClass, liClass, ...restProps }: Props = $props();
 
-  let currentUrl = $state("");
+  const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
+  let sidebarUrl = $state('');
+  activeUrlStore.subscribe((value) => {
+    // console.log('value: ', value)
+    sidebarUrl = value;
+  });
+  let active = $state(false);
   $effect(() => {
-    currentUrl = window.location.pathname;
+    active = sidebarUrl ? href === sidebarUrl : false;
   });
 
   const { anchor, activeAnchor } = $derived(dropdownli());
@@ -13,7 +20,7 @@
 
 <li class={liClass}>
   {#if href}
-    <a {href} {...restProps} class={currentUrl === href ? activeAnchor({ class: activeClass }) : anchor({ class: aClass })}>
+    <a {href} {...restProps} class={active ? activeAnchor({ class: activeClass }) : anchor({ class: aClass })}>
       {@render children()}
     </a>
   {:else}

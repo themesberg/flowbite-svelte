@@ -18,9 +18,7 @@
     <Dropdown dropdownStatus={dropdownRadioStatus} closeDropdown={closeDropdownRadio} params={{ y: 0, duration: 200, easing: sineIn }} class="absolute -left-[185px] top-[45px] w-48 overflow-y-auto pb-3 text-sm">
       <DropdownUl>
         <DropdownHeader class="px-2 py-1">
-          <div class="p-0">
-            <Search size="md" class="pl-10" />
-          </div>
+            <Search size="md" />
         </DropdownHeader>
         <DropdownLi liClass="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
           <Radio name="group1" bind:group={group1} value={1}>Default radio</Radio>

@@ -14,6 +14,11 @@
   import { blur, fly, slide, scale } from "svelte/transition";
   import type { FlyParams, BlurParams, SlideParams, ScaleParams } from "svelte/transition";
   import { sineIn, linear } from "svelte/easing";
+  import { page } from '$app/stores';
+  let activeUrl = $state($page.url.pathname);
+  $effect(() => {
+    activeUrl = $page.url.pathname;
+  });
 
   let dropdownDividerHeaderFooter = uiHelpers();
   let dropdownDividerHeaderFooterStatus = $state(false);
@@ -136,7 +141,7 @@
     <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
   </Button>
   <div class="relative h-96">
-    <Dropdown${propsString} dropdownStatus={dropdownAStatus} closeDropdown={closeDropdownA} class="absolute -left-[150px] top-[40px]">${headerContent}
+    <Dropdown {activeUrl}${propsString} dropdownStatus={dropdownAStatus} closeDropdown={closeDropdownA} class="absolute -left-[150px] top-[40px]">${headerContent}
       <DropdownUl>
         <DropdownLi href="/">Dashboard</DropdownLi>${dividerContent}
         <DropdownLi href="/components/dropdown">Dropdown</DropdownLi>
@@ -182,7 +187,7 @@
       <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
     </Button>
     <div class="relative h-96">
-      <Dropdown dropdownStatus={dropdownDividerHeaderFooterStatus} closeDropdown={closeDropdownDividerHeaderFooter} transition={currentTransition.transition} params={currentTransition.params} class="absolute -left-[150px] top-[40px]">
+      <Dropdown {activeUrl} dropdownStatus={dropdownDividerHeaderFooterStatus} closeDropdown={closeDropdownDividerHeaderFooter} transition={currentTransition.transition} params={currentTransition.params} class="absolute -left-[150px] top-[40px]">
         {#if headerStatus}
           <DropdownHeader>
             <div>Bonnie Green</div>
