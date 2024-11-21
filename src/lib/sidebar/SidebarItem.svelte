@@ -3,20 +3,26 @@
   import { twMerge } from "tailwind-merge";
   import { type SidebarCtxType, type SidebarItemProps as Props } from "./";
 
-  let { iconSlot, subtext, href, label, spanClass = "ms-3", activeClass, nonActiveClass, aClass, active, class: className, ...restProps }: Props = $props();
+  let { iconSlot, subtext, href, label, spanClass = "ms-3", activeClass, nonActiveClass, aClass, class: className, ...restProps }: Props = $props();
 
   const context = getContext<SidebarCtxType>("sidebarContext") ?? {};
-  let currentUrl = $state("");
+  const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
+
+  let sidebarUrl = $state("");
+  activeUrlStore.subscribe((value) => {
+    sidebarUrl = value;
+  });
+  let active = $state();
 
   $effect(() => {
-    currentUrl = window.location.pathname;
+    active = sidebarUrl ? href === sidebarUrl : false;
   });
 
-  let aCls = $derived((active ?? currentUrl === href) ? (activeClass ?? context.activeClass) : (nonActiveClass ?? context.nonActiveClass));
+  let aCls = $derived((active ?? sidebarUrl === href) ? (activeClass ?? context.activeClass) : (nonActiveClass ?? context.nonActiveClass));
 </script>
 
 <li class={className}>
-  <a onclick={context.closeSidebar} {...restProps} {href} aria-current={active ?? currentUrl === href} class={twMerge(aCls, aClass)}>
+  <a onclick={context.closeSidebar} {...restProps} {href} aria-current={active ?? sidebarUrl === href} class={twMerge(aCls, aClass)}>
     {#if iconSlot}
       {@render iconSlot()}
     {/if}

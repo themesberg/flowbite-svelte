@@ -1,5 +1,7 @@
 <script lang="ts">
   import { Navbar, NavBrand, NavUl, NavLi, uiHelpers, NavHamburger, Dropdown, DropdownHeader, DropdownUl, DropdownLi, Avatar, DropdownFooter } from "$lib";
+  import { page } from '$app/stores';
+  let activeUrl = $state($page.url.pathname);
   import { sineIn } from "svelte/easing";
   let nav = uiHelpers();
   let navStatus = $state(false);
@@ -10,6 +12,7 @@
   $effect(() => {
     dropdownUserStatus = dropdownUser.isOpen;
     navStatus = nav.isOpen;
+    activeUrl = $page.url.pathname;
   });
 </script>
 
@@ -41,7 +44,7 @@
         <NavHamburger {toggleNav} />
       </div>
     {/snippet}
-    <NavUl class="order-1">
+    <NavUl class="order-1" {activeUrl}>
       <NavLi href="/">Home</NavLi>
       <NavLi href="/components/navbar">Navbar</NavLi>
       <NavLi href="/components/footer">Footer</NavLi>

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getContext, setContext } from "svelte";
   import type { navbarType } from "$lib/types";
-  import { writable, type Writable } from 'svelte/store';
+  import { writable } from 'svelte/store';
   import { type NavUlProps as Props, navUl } from ".";
 
   let { children, activeUrl = '', class: className, ...restProps }: Props = $props();

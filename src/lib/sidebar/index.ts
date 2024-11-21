@@ -17,6 +17,7 @@ type SidebarCtxType = {
   nonActiveClass?: string;
   isSingle?: boolean;
   selected?: Writable<object>;
+  activeUrl?: string;
 };
 
 type BreakpointType = "sm" | "md" | "lg" | "xl" | "2xl" | undefined;
@@ -38,6 +39,7 @@ interface SidebarProps extends HTMLAttributes<HTMLElement> {
   transition?: TransitionFunc;
   backdrop?: boolean;
   backdropClass?: string;
+  activeUrl?: string;
 }
 
 interface SidebarButtonProps extends HTMLButtonAttributes {
@@ -95,7 +97,6 @@ interface SidebarItemProps extends HTMLAnchorAttributes {
   activeClass?: string;
   nonActiveClass?: string;
   aClass?: string;
-  active?: boolean;
 }
 
 export { Sidebar, sidebar, type SidebarProps, SidebarDropdownWrapper, sidebardropdownwrapper, type SidebarDropdownWrapperProps, SidebarGroup, type SidebarGroupProps, SidebarItem, type SidebarItemProps, type SidebarCtxType, SidebarButton, sidebarbutton, type SidebarButtonProps, SidebarCta, sidebarcta, type SidebarCtaProps, SidebarBrand, sitebarbrand, type SidebarBrandProps, type BreakpointType, type PosisionType };

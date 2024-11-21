@@ -1,5 +1,7 @@
 <script lang="ts">
   import { Navbar, NavBrand, NavUl, NavLi, uiHelpers, Button, NavHamburger, Input } from "$lib";
+  import { page } from '$app/stores';
+  let activeUrl = $state($page.url.pathname);
   import SearchOutline from "flowbite-svelte-icons/SearchOutline.svelte";
 
   let nav = uiHelpers();
@@ -7,6 +9,7 @@
   let toggleNav = nav.toggle;
   $effect(() => {
     navStatus = nav.isOpen;
+    activeUrl = $page.url.pathname;
   });
 </script>
 
@@ -30,7 +33,7 @@
       <NavHamburger {toggleNav} />
     </div>
   {/snippet}
-  <NavUl class="order-1">
+  <NavUl class="order-1" {activeUrl}>
     <NavLi href="/">Home</NavLi>
     <NavLi href="/components/navbar">Navbar</NavLi>
     <NavLi href="/components/footer">Footer</NavLi>

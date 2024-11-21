@@ -1,5 +1,7 @@
 <script lang="ts">
   import { Navbar, NavBrand, NavUl, NavLi, uiHelpers, Dropdown, DropdownUl, DropdownLi } from "$lib";
+  import { page } from '$app/stores';
+  let activeUrl = $state($page.url.pathname);
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   // for navbar
   let nav = uiHelpers();
@@ -13,6 +15,7 @@
   $effect(() => {
     navStatus = nav.isOpen;
     dropdownStatus = dropdown.isOpen;
+    activeUrl = $page.url.pathname;
   });
 </script>
 
@@ -24,7 +27,7 @@
       </NavBrand>
     {/snippet}
 
-    <NavUl>
+    <NavUl {activeUrl}>
       <NavLi href="/">Home</NavLi>
       <NavLi href="/components/navbar">Navbar</NavLi>
       <NavLi onclick={dropdown.toggle} class="cursor-pointer">
