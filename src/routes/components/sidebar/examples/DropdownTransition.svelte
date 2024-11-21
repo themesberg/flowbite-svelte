@@ -4,6 +4,8 @@
   import PlusPlaceholder from "../../../utils/PlusPlaceholder.svelte";
   import { fade } from "svelte/transition";
   import { sineIn } from "svelte/easing";
+  import { page } from '$app/stores';
+  let activeUrl = $state($page.url.pathname);
   let params = {
     duration: 700,
     easing: sineIn
@@ -14,12 +16,13 @@
   const closeDemoSidebar = demoSidebarUi.close;
   $effect(() => {
     isDemoOpen = demoSidebarUi.isOpen;
+    activeUrl = $page.url.pathname;
   });
 </script>
 
 <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
 <div class="relative">
-  <Sidebar backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" activeClass="p-2" nonActiveClass="p-2" class="z-50 h-full">
+  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" activeClass="p-2" nonActiveClass="p-2" class="z-50 h-full">
     <SidebarGroup>
       <SidebarItem label="Dashboard">
         {#snippet iconSlot()}

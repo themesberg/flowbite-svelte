@@ -1,12 +1,15 @@
 <script lang="ts">
   import { Sidebar, SidebarGroup, SidebarItem, SidebarButton, uiHelpers } from "$lib";
   import { ChartOutline, GridSolid, MailBoxSolid, UserSolid } from "flowbite-svelte-icons";
+  import { page } from '$app/stores';
+  let activeUrl = $state($page.url.pathname);
   import PlusPlaceholder from "../../../utils/PlusPlaceholder.svelte";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
   $effect(() => {
     isDemoOpen = demoSidebarUi.isOpen;
+    activeUrl = $page.url.pathname;
   });
   const spanClass = "flex-1 ms-3 whitespace-nowrap";
   const activeClass = "flex items-center p-2 text-base font-normal text-white bg-primary-600 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-800 dark:hover:bg-primary-800";
@@ -15,7 +18,7 @@
 
 <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
 <div class="relative">
-  <Sidebar backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} {activeClass} {nonActiveClass} position="absolute" class="z-50 h-full">
+  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} {activeClass} {nonActiveClass} position="absolute" class="z-50 h-full">
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
         {#snippet iconSlot()}
