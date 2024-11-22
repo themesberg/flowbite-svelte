@@ -97,6 +97,7 @@ interface SidebarItemProps extends HTMLAnchorAttributes {
   activeClass?: string;
   nonActiveClass?: string;
   aClass?: string;
+  active?: boolean;
 }
 
 export { Sidebar, sidebar, type SidebarProps, SidebarDropdownWrapper, sidebardropdownwrapper, type SidebarDropdownWrapperProps, SidebarGroup, type SidebarGroupProps, SidebarItem, type SidebarItemProps, type SidebarCtxType, SidebarButton, sidebarbutton, type SidebarButtonProps, SidebarCta, sidebarcta, type SidebarCtaProps, SidebarBrand, sitebarbrand, type SidebarBrandProps, type BreakpointType, type PosisionType };

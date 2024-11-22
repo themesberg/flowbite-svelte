@@ -1,6 +1,6 @@
 import Card from "./Card.svelte";
 import type { Snippet } from "svelte";
-import type { HTMLAttributes } from "svelte/elements";
+import type { HTMLAttributes, HTMLAnchorAttributes } from "svelte/elements";
 import { card } from "./theme";
 
 // type CardSizeType = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
@@ -14,9 +14,25 @@ type ImgType = {
   alt: string | undefined | null;
 };
 
-interface CardProps extends HTMLAttributes<HTMLDivElement> {
+// interface CardProps extends HTMLAttributes<HTMLDivElement> {
+//   children: Snippet;
+//   href?: string;
+//   horizontal?: boolean;
+//   color?: ColorType;
+//   target?: string;
+//   shadow?: ShadowType;
+//   reverse?: boolean;
+//   img?: ImgType;
+//   padding?: PaddingType;
+//   size?: CardSizeType;
+//   class?: string;
+//   onclick?: () => void;
+//   imgClass?: string;
+//   contentClass?: string;
+// }
+
+interface BaseCardProps {
   children: Snippet;
-  href?: string;
   horizontal?: boolean;
   color?: ColorType;
   target?: string;
@@ -26,9 +42,14 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
   padding?: PaddingType;
   size?: CardSizeType;
   class?: string;
-  onclick?: () => void;
+  // onclick?: () => void;
   imgClass?: string;
   contentClass?: string;
 }
+type CardProps = BaseCardProps & 
+  (
+    | ({ href: string } & HTMLAnchorAttributes) 
+    | ({ href?: never } & HTMLAttributes<HTMLDivElement>)
+  );
 
 export { Card, card, type CardProps };

@@ -1,7 +1,8 @@
 <script lang="ts">
   import { card, type CardProps as Props } from ".";
+  import type { HTMLAttributes, HTMLButtonAttributes, HTMLAnchorAttributes } from 'svelte/elements';
 
-  let { children, href, color = "gray", horizontal = false, shadow = "md", reverse = false, img, padding = "lg", size = "sm", class: className, imgClass, contentClass, onclick, ...restProps }: Props = $props();
+  let { children, href, color = "gray", horizontal = false, shadow = "md", reverse = false, img, padding = "lg", size = "sm", class: className, imgClass, contentClass, ...restProps }: Props = $props();
 
   const { base, image, content } = $derived(
     card({
@@ -14,9 +15,26 @@
       href: !!href
     })
   );
+
+  // new 
+
+  const commonProps: Record<string, any> = $derived({
+    class: base({ class: className }),
+    ...restProps
+  });
+
+  const anchorProps: HTMLAnchorAttributes = $derived({
+    ...commonProps,
+    href
+  });
+
+  const divProps: HTMLAttributes<HTMLDivElement> = $derived({
+    ...commonProps,
+    type: "presentation" as const
+  });
 </script>
 
-<svelte:element this={href ? "a" : "div"} {...restProps} {href} class={base({ className })} role={href ? undefined : "presentation"} {onclick}>
+{#snippet childSlot()}
   {#if img}
     <img class={image({ class: imgClass })} src={img.src} alt={img.alt} />
     <div class={content({ class: contentClass })}>
@@ -27,7 +45,18 @@
       {@render children()}
     </div>
   {/if}
-</svelte:element>
+{/snippet}
+
+{#if href}
+  <a {...anchorProps}>
+    {@render childSlot()}
+  </a>
+{:else}
+  <div {...divProps}>
+    {@render childSlot()}
+  </div>
+{/if}
+
 
 <!--
 @component

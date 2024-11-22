@@ -24,16 +24,6 @@ interface BottomNavProps extends HTMLAttributes<HTMLDivElement> {
   activeClass?: string;
 }
 
-// interface BottomNavItemProps extends HTMLAnchorAttributes {
-//   children: Snippet;
-//   btnName?: string;
-//   appBtnPosition?: AppBtnPositionType;
-//   target?: string;
-//   activeClass?: string;
-//   href?: string;
-//   btnClass?: string;
-//   spanClass?: string;
-// }
 interface BaseBottomNavItemProps {
   children: Snippet;
   btnName?: string;
