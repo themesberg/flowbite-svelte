@@ -3,7 +3,7 @@
   import { twMerge } from "tailwind-merge";
   import { type SidebarCtxType, type SidebarItemProps as Props } from "./";
 
-  let { iconSlot, subtext, href, label, spanClass = "ms-3", activeClass, nonActiveClass, aClass, class: className, ...restProps }: Props = $props();
+  let { iconSlot, subtext, href, label, spanClass = "ms-3", activeClass, nonActiveClass, aClass, active, class: className, ...restProps }: Props = $props();
 
   const context = getContext<SidebarCtxType>("sidebarContext") ?? {};
   const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
@@ -12,17 +12,22 @@
   activeUrlStore.subscribe((value) => {
     sidebarUrl = value;
   });
-  let active = $state();
+  let activeItem = $state();
 
+  // $effect(() => {
+  //   activeItem = sidebarUrl ? href === sidebarUrl : false;
+  // });
   $effect(() => {
-    active = sidebarUrl ? href === sidebarUrl : false;
+    // Prioritize the explicit 'active' prop if provided
+    activeItem = active !== undefined ? active : sidebarUrl ? href === sidebarUrl : false;
   });
 
-  let aCls = $derived((active ?? sidebarUrl === href) ? (activeClass ?? context.activeClass) : (nonActiveClass ?? context.nonActiveClass));
+  // let aCls = $derived((activeItem ?? sidebarUrl === href) ? (activeClass ?? context.activeClass) : (nonActiveClass ?? context.nonActiveClass));
+  let aCls = $derived((activeItem ?? sidebarUrl === href) ? (activeClass ?? context.activeClass) : (nonActiveClass ?? context.nonActiveClass));
 </script>
 
 <li class={className}>
-  <a onclick={context.closeSidebar} {...restProps} {href} aria-current={active ?? sidebarUrl === href} class={twMerge(aCls, aClass)}>
+  <a onclick={context.closeSidebar} {...restProps} {href} aria-current={(activeItem ?? sidebarUrl === href) ? "page" : undefined} class={twMerge(aCls, aClass)}>
     {#if iconSlot}
       {@render iconSlot()}
     {/if}

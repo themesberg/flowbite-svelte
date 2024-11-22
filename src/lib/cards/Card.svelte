@@ -1,6 +1,6 @@
 <script lang="ts">
   import { card, type CardProps as Props } from ".";
-  import type { HTMLAttributes, HTMLButtonAttributes, HTMLAnchorAttributes } from 'svelte/elements';
+  import type { HTMLAttributes, HTMLAnchorAttributes } from "svelte/elements";
 
   let { children, href, color = "gray", horizontal = false, shadow = "md", reverse = false, img, padding = "lg", size = "sm", class: className, imgClass, contentClass, ...restProps }: Props = $props();
 
@@ -16,8 +16,7 @@
     })
   );
 
-  // new 
-
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   const commonProps: Record<string, any> = $derived({
     class: base({ class: className }),
     ...restProps
@@ -56,7 +55,6 @@
     {@render childSlot()}
   </div>
 {/if}
-
 
 <!--
 @component

@@ -46,10 +46,6 @@ interface BaseCardProps {
   imgClass?: string;
   contentClass?: string;
 }
-type CardProps = BaseCardProps & 
-  (
-    | ({ href: string } & HTMLAnchorAttributes) 
-    | ({ href?: never } & HTMLAttributes<HTMLDivElement>)
-  );
+type CardProps = BaseCardProps & (({ href: string } & HTMLAnchorAttributes) | ({ href?: never } & HTMLAttributes<HTMLDivElement>));
 
 export { Card, card, type CardProps };

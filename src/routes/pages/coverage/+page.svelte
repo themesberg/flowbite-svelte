@@ -40,7 +40,7 @@
       // notes: 'Variants, reactive examples'
     },
     bottomNavigation: {
-      checked: true,
+      checked: true
       // problems: "Tooltip"
       // notes: 'Variants'
     },
@@ -166,7 +166,7 @@
       // notes: 'Variants, reactive examples'
     },
     tooltip: {
-      checked: true,
+      checked: true
       // problems: "apply floating-ui"
     },
     video: {

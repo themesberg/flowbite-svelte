@@ -33,11 +33,7 @@ interface BaseBottomNavItemProps {
   btnClass?: string;
   spanClass?: string;
 }
-type BottomNavItemProps = BaseBottomNavItemProps & 
-  (
-    | ({ href: string } & HTMLAnchorAttributes) 
-    | ({ href?: never } & HTMLButtonAttributes)
-  );
+type BottomNavItemProps = BaseBottomNavItemProps & (({ href: string } & HTMLAnchorAttributes) | ({ href?: never } & HTMLButtonAttributes));
 
 interface BottomNavHeaderProps {
   children: Snippet;
