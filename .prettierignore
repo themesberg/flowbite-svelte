@@ -4,3 +4,4 @@ package-lock.json
 yarn.lock
 samples/
 /src/routes/md/
+*.html

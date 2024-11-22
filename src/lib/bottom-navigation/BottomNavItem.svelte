@@ -1,5 +1,6 @@
 <script lang="ts">
   import { getContext } from "svelte";
+  import type { HTMLButtonAttributes, HTMLAnchorAttributes } from 'svelte/elements';
   import { type BottomNavItemProps as Props, type BottomNavContextType, type BottomNavVariantType, bottomNavItem } from "./index";
   import { twMerge } from "tailwind-merge";
 
@@ -16,22 +17,55 @@
   activeUrlStore.subscribe((value) => {
     navUrl = value;
   });
-  // let btnCls: string = $state('');
-  // let spanCls: string = $state('');
+ 
   const { base, span } = bottomNavItem({ navType, appBtnPosition });
+
   $effect(() => {
     active = navUrl ? href === navUrl : navUrl ? navUrl.startsWith(href) : false;
   });
+  
+  function getCommonClass() {
+    return twMerge(base({ class: btnClass }), active && (activeClass ?? context.activeClass));
+  }
 
-  let btnCls = $derived(twMerge(base({ class: btnClass }), active && (activeClass ?? context.activeClass)));
+  function getSpanClass() {
+    return twMerge(span({ class: spanClass }), active && (activeClass ?? context.activeClass));
+  }
 
-  let spanCls = $derived(twMerge(span({ class: spanClass }), active && (activeClass ?? context.activeClass)));
+  const commonProps: Record<string, any> = $derived({
+    "aria-label": btnName,
+    class: getCommonClass(),
+    ...restProps
+  });
+
+  const anchorProps: HTMLAnchorAttributes = $derived({
+    ...commonProps,
+    href,
+    target
+  });
+
+  const buttonProps: HTMLButtonAttributes = $derived({
+    ...commonProps,
+    type: "button" as const
+  });
+
+  $effect(() => {
+    console.log('commonProps: ', commonProps)
+  });
 </script>
 
-<svelte:element this={href ? "a" : "button"} aria-label={btnName} {href} {target} role={href ? "link" : "button"} {...restProps} class={btnCls}>
-  {@render children()}
-  <span class={spanCls}>{btnName}</span>
-</svelte:element>
+
+{#if href}
+  <a {...anchorProps}>
+    {@render children()}
+    <span class={getSpanClass()}>{btnName}</span>
+  </a>
+{:else}
+  <button {...buttonProps}>
+    {@render children()}
+    <span class={getSpanClass()}>{btnName}</span>
+  </button>
+{/if}
 
 <!--
 @component
