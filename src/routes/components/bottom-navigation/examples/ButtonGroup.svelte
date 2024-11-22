@@ -1,5 +1,5 @@
 <script>
-  import { BottomNav, BottomNavItem, BottomNavHeader, BottomNavHeaderItem, Skeleton, ImagePlaceholder } from "$lib";
+  import { BottomNav, BottomNavItem, BottomNavHeader, BottomNavHeaderItem, Skeleton, ImagePlaceholder, Tooltip } from "$lib";
   import { HomeSolid, BookmarkSolid, PlusOutline, SearchOutline, AdjustmentsVerticalOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -16,19 +16,24 @@
       </BottomNavHeader>
     {/snippet}
     <BottomNavItem btnName="Home">
-      <HomeSolid class="mb-1 h-6 w-6 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
+      <HomeSolid id="home" class="mb-1 h-6 w-6 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
+      <Tooltip arrow={false} triggeredBy="#home">Home</Tooltip>
     </BottomNavItem>
     <BottomNavItem btnName="Bookmark">
-      <BookmarkSolid class="mb-1 h-6 w-6 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
+      <BookmarkSolid id="bookmark" class="mb-1 h-6 w-6 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
+      <Tooltip arrow={false} triggeredBy="#bookmark">Bookmark</Tooltip>
     </BottomNavItem>
     <BottomNavItem btnName="New post">
-      <PlusOutline class="mb-1 h-6 w-6 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
+      <PlusOutline id="create" class="mb-1 h-6 w-6 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
+      <Tooltip arrow={false} triggeredBy="#create">New post</Tooltip>
     </BottomNavItem>
     <BottomNavItem btnName="Search">
-      <SearchOutline class="mb-1 h-6 w-6 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
+      <SearchOutline id="search" class="mb-1 h-6 w-6 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
+      <Tooltip arrow={false} triggeredBy="#search">Search</Tooltip>
     </BottomNavItem>
     <BottomNavItem btnName="Settings">
-      <AdjustmentsVerticalOutline class="mb-1 h-6 w-6 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
+      <AdjustmentsVerticalOutline id="settings" class="mb-1 h-6 w-6 text-gray-500 group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-500" />
+      <Tooltip arrow={false} triggeredBy="#settings">Settings</Tooltip>
     </BottomNavItem>
   </BottomNav>
 </div>

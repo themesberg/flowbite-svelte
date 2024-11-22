@@ -1,5 +1,5 @@
 import type { Snippet } from "svelte";
-import type { HTMLAttributes, HTMLButtonAttributes } from "svelte/elements";
+import type { HTMLAttributes, HTMLButtonAttributes, HTMLAnchorAttributes } from "svelte/elements";
 import BottomNav from "./BottomNav.svelte";
 import BottomNavItem from "./BottomNavItem.svelte";
 import BottomNavHeaderItem from "./BottomNavHeaderItem.svelte";
@@ -24,16 +24,30 @@ interface BottomNavProps extends HTMLAttributes<HTMLDivElement> {
   activeClass?: string;
 }
 
-interface BottomNavItemProps {
+// interface BottomNavItemProps extends HTMLAnchorAttributes {
+//   children: Snippet;
+//   btnName?: string;
+//   appBtnPosition?: AppBtnPositionType;
+//   target?: string;
+//   activeClass?: string;
+//   href?: string;
+//   btnClass?: string;
+//   spanClass?: string;
+// }
+interface BaseBottomNavItemProps {
   children: Snippet;
   btnName?: string;
   appBtnPosition?: AppBtnPositionType;
   target?: string;
   activeClass?: string;
-  href?: string;
   btnClass?: string;
   spanClass?: string;
 }
+type BottomNavItemProps = BaseBottomNavItemProps & 
+  (
+    | ({ href: string } & HTMLAnchorAttributes) 
+    | ({ href?: never } & HTMLButtonAttributes)
+  );
 
 interface BottomNavHeaderProps {
   children: Snippet;
