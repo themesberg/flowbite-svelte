@@ -44,5 +44,5 @@
 @props:outerClass: string;
 @props:innerClass: string;
 @props:activeClass: string;
-@props:activeUrl: string = '';
+@props:activeUrl: string = "";
 -->

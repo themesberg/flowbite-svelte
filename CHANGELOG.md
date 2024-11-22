@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.11.1
+
+### Patch Changes
+
+- fix: BottomNavItem type
+- 8c325984 fix: Card
+- 2020074f docs: coverage update
+- cbd25300 fix: BottomNavItem: types, docs: tooltip to bottom-nav examples
+- 1b97cb19 fix: BottomNav: remove attribute href from element button
+- b003187e fix: package.json "node": "^20.0.0"
+
 ## 0.11.0
 
 ### Minor Changes

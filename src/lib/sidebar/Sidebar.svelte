@@ -90,6 +90,6 @@
 @props:ariaLabel: string;
 @props:nonActiveClass: string;
 @props:activeClass: string;
-@props:activeUrl: string = '';
+@props:activeUrl: string = "";
 @props:class: string;
 -->

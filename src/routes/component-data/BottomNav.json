@@ -8,6 +8,6 @@
     ["outerClass", "string", ""],
     ["innerClass", "string", ""],
     ["activeClass", "string", ""],
-    ["activeUrl", "string", "''"]
+    ["activeUrl", "string", "\"\""]
   ]
 }

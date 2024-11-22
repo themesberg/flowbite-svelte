@@ -60,18 +60,16 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:href: string;
-@props:color: "gray" | "primary" | "secondary" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined = "gray";
-@props:horizontal: boolean = false;
-@props:shadow: "sm" | "normal" | "lg" | "md" | "xl" | "2xl" | "inner" | undefined = "md";
-@props:reverse: boolean = false;
-@props:img: {
-  src: string | undefined | null;
-@props:padding: "sm" | "lg" | "md" | "xl" | "xs" | "none" | undefined = "lg";
-@props:size: "sm" | "md" | "lg" | "xl" | "xs" | undefined = "sm";
+@props: children: any;
+@props:href: string } & HTMLAnchorAttributes) | ({ href?: never } & HTMLAttributes<HTMLDivElement>));
+@props:color: any = "gray";
+@props:horizontal: any = false;
+@props:shadow: any = "md";
+@props:reverse: any = false;
+@props:img: any;
+@props:padding: any = "lg";
+@props:size: any = "sm";
 @props:class: string;
-@props:imgClass: string;
-@props:contentClass: string;
-@props:onclick: () => void;
+@props:imgClass: any;
+@props:contentClass: any;
 -->

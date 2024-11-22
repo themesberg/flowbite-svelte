@@ -1,13 +1,13 @@
 {
   "name": "BottomNavItem",
   "props": [
-    ["children", "Snippet", ""],
-    ["btnName", "string", ""],
-    ["appBtnPosition", "AppBtn\"static\" | \"fixed\" | \"absolute\" | \"relative\" | \"sticky\" | undefined", "\"middle\""],
-    ["target", "string", ""],
-    ["activeClass", "string", ""],
-    ["href", "string", "\"\""],
-    ["btnClass", "string", ""],
-    ["spanClass", "string", ""]
+    ["children", "any", ""],
+    ["btnName", "any", ""],
+    ["appBtnPosition", "any", "\"middle\""],
+    ["target", "any", ""],
+    ["activeClass", "any", ""],
+    ["href", "any", "\"\""],
+    ["btnClass", "any", ""],
+    ["spanClass", "any", ""]
   ]
 }

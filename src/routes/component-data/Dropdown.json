@@ -8,6 +8,6 @@
     ["backdropClass", "string", ""],
     ["params", "ParamsType", ""],
     ["transition", "TransitionFunc", "fly"],
-    ["activeUrl", "string", "''"]
+    ["activeUrl", "string", "\"\""]
   ]
 }

@@ -36,5 +36,5 @@
 @props:backdropClass: string;
 @props:params: ParamsType;
 @props:transition: TransitionFunc = fly;
-@props:activeUrl: string = '';
+@props:activeUrl: string = "";
 -->

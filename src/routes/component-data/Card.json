@@ -1,18 +1,17 @@
 {
   "name": "Card",
   "props": [
-    ["children", "Snippet", ""],
-    ["href", "string", ""],
-    ["color", "\"gray\" | \"primary\" | \"secondary\" | \"red\" | \"orange\" | \"amber\" | \"yellow\" | \"lime\" | \"green\" | \"emerald\" | \"teal\" | \"cyan\" | \"sky\" | \"blue\" | \"indigo\" | \"violet\" | \"purple\" | \"fuchsia\" | \"pink\" | \"rose\" | undefined", "\"gray\""],
-    ["horizontal", "boolean", "false"],
-    ["shadow", "\"sm\" | \"normal\" | \"lg\" | \"md\" | \"xl\" | \"2xl\" | \"inner\" | undefined", "\"md\""],
-    ["reverse", "boolean", "false"],
-    ["img", "{\n  src: string | undefined | null", ""],
-    ["padding", "\"sm\" | \"lg\" | \"md\" | \"xl\" | \"xs\" | \"none\" | undefined", "\"lg\""],
-    ["size", "\"sm\" | \"md\" | \"lg\" | \"xl\" | \"xs\" | undefined", "\"sm\""],
+    ["children", "any", ""],
+    ["href", "string } & HTMLAnchorAttributes) | ({ href?: never } & HTMLAttributes<HTMLDivElement>))", ""],
+    ["color", "any", "\"gray\""],
+    ["horizontal", "any", "false"],
+    ["shadow", "any", "\"md\""],
+    ["reverse", "any", "false"],
+    ["img", "any", ""],
+    ["padding", "any", "\"lg\""],
+    ["size", "any", "\"sm\""],
     ["class", "string", ""],
-    ["imgClass", "string", ""],
-    ["contentClass", "string", ""],
-    ["onclick", "() => void", ""]
+    ["imgClass", "any", ""],
+    ["contentClass", "any", ""]
   ]
 }

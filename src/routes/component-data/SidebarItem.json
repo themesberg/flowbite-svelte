@@ -9,6 +9,7 @@
     ["activeClass", "string", ""],
     ["nonActiveClass", "string", ""],
     ["aClass", "string", ""],
+    ["active", "boolean", ""],
     ["class", "string", ""]
   ]
 }

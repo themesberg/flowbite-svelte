@@ -50,5 +50,6 @@
 @props:activeClass: string;
 @props:nonActiveClass: string;
 @props:aClass: string;
+@props:active: boolean;
 @props:class: string;
 -->
