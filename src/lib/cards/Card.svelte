@@ -28,8 +28,7 @@
   });
 
   const divProps: HTMLAttributes<HTMLDivElement> = $derived({
-    ...commonProps,
-    type: "presentation" as const
+    ...commonProps
   });
 </script>
 
