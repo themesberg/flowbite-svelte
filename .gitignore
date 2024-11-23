@@ -12,3 +12,4 @@ vite.config.ts.timestamp-*
 /src/routes/testdir
 /test-results
 bun.lockb
+/.vercel
