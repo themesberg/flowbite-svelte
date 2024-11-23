@@ -1,0 +1,77 @@
+const name = "Review";
+const props = [
+  [
+    "children",
+    "Snippet",
+    ""
+  ],
+  [
+    "address",
+    "Snippet",
+    ""
+  ],
+  [
+    "item1",
+    "Snippet",
+    ""
+  ],
+  [
+    "item2",
+    "Snippet",
+    ""
+  ],
+  [
+    "item3",
+    "Snippet",
+    ""
+  ],
+  [
+    "review",
+    "{\n  name?: string",
+    ""
+  ],
+  [
+    "articleClass",
+    "string",
+    ""
+  ],
+  [
+    "divClass",
+    "string",
+    ""
+  ],
+  [
+    "div2Class",
+    "string",
+    ""
+  ],
+  [
+    "div3Class",
+    "string",
+    ""
+  ],
+  [
+    "imgClass",
+    "string",
+    ""
+  ],
+  [
+    "ulClass",
+    "string",
+    ""
+  ],
+  [
+    "liClass",
+    "string",
+    ""
+  ]
+];
+const Review = {
+  name,
+  props
+};
+export {
+  Review as default,
+  name,
+  props
+};

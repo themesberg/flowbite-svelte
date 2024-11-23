@@ -1,0 +1,62 @@
+const name = "AccordionItem";
+const props = [
+  [
+    "children",
+    "Snippet",
+    ""
+  ],
+  [
+    "header",
+    "Snippet",
+    ""
+  ],
+  [
+    "arrowup",
+    "Snippet",
+    ""
+  ],
+  [
+    "arrowdown",
+    "Snippet",
+    ""
+  ],
+  [
+    "open",
+    "boolean",
+    "$bindable(false)"
+  ],
+  [
+    "activeClass",
+    "string",
+    ""
+  ],
+  [
+    "inactiveClass",
+    "string",
+    ""
+  ],
+  [
+    "transition",
+    "TransitionFunc",
+    "slide"
+  ],
+  [
+    "params",
+    "ParamsType",
+    ""
+  ],
+  [
+    "class",
+    "string",
+    ""
+  ]
+];
+const AccordionItem = {
+  name,
+  props
+};
+export {
+  AccordionItem as default,
+  name,
+  props
+};

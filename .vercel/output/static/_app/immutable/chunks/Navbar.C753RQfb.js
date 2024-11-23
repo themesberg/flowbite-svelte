@@ -1,0 +1,97 @@
+const name = "Navbar";
+const props = [
+  [
+    "children",
+    "Snippet",
+    ""
+  ],
+  [
+    "navSlotBlock",
+    "Snippet",
+    ""
+  ],
+  [
+    "navSlotHiddenTop",
+    "Snippet",
+    ""
+  ],
+  [
+    "navSlotHiddenBottom",
+    "Snippet",
+    ""
+  ],
+  [
+    "toggleNav",
+    "() => void",
+    ""
+  ],
+  [
+    "closeNav",
+    "() => void",
+    "()"
+  ],
+  [
+    "navStatus",
+    "boolean | undefined",
+    ""
+  ],
+  [
+    "fluid",
+    "boolean",
+    ""
+  ],
+  [
+    "brand",
+    "Snippet",
+    ""
+  ],
+  [
+    "hamburgerMenu",
+    "boolean",
+    "true"
+  ],
+  [
+    "breakPoint",
+    'navbarType["breakPoint"]',
+    '"md"'
+  ],
+  [
+    "navClass",
+    "string",
+    ""
+  ],
+  [
+    "divClass",
+    "string",
+    ""
+  ],
+  [
+    "btnClass",
+    "string",
+    ""
+  ],
+  [
+    "div2Class",
+    "string",
+    ""
+  ],
+  [
+    "activeClass",
+    "string",
+    ""
+  ],
+  [
+    "nonActiveClass",
+    "string",
+    ""
+  ]
+];
+const Navbar = {
+  name,
+  props
+};
+export {
+  Navbar as default,
+  name,
+  props
+};

@@ -1,0 +1,62 @@
+const name = "SidebarItem";
+const props = [
+  [
+    "iconSlot",
+    "Snippet",
+    ""
+  ],
+  [
+    "subtext",
+    "Snippet",
+    ""
+  ],
+  [
+    "href",
+    "any",
+    ""
+  ],
+  [
+    "label",
+    "string",
+    ""
+  ],
+  [
+    "spanClass",
+    "string",
+    '"ms-3"'
+  ],
+  [
+    "activeClass",
+    "string",
+    ""
+  ],
+  [
+    "nonActiveClass",
+    "string",
+    ""
+  ],
+  [
+    "aClass",
+    "string",
+    ""
+  ],
+  [
+    "active",
+    "boolean",
+    ""
+  ],
+  [
+    "class",
+    "string",
+    ""
+  ]
+];
+const SidebarItem = {
+  name,
+  props
+};
+export {
+  SidebarItem as default,
+  name,
+  props
+};

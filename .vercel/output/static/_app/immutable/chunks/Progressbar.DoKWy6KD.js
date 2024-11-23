@@ -1,0 +1,82 @@
+const name = "Progressbar";
+const props = [
+  [
+    "progress",
+    "string | number",
+    '"45"'
+  ],
+  [
+    "precision",
+    "number",
+    "0"
+  ],
+  [
+    "tweenDuration",
+    "number",
+    "400"
+  ],
+  [
+    "animate",
+    "boolean",
+    "false"
+  ],
+  [
+    "size",
+    "string",
+    '"h-2.5"'
+  ],
+  [
+    "labelInside",
+    "boolean",
+    "false"
+  ],
+  [
+    "labelOutside",
+    "string",
+    '""'
+  ],
+  [
+    "easing",
+    "EasingFunction",
+    "cubicOut"
+  ],
+  [
+    "color",
+    '"primary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined',
+    '"primary"'
+  ],
+  [
+    "div2Class",
+    "string",
+    ""
+  ],
+  [
+    "oustsideSpanClass",
+    "string",
+    ""
+  ],
+  [
+    "oustsideProgressClass",
+    "string",
+    ""
+  ],
+  [
+    "labeloutsidedivClass",
+    "string",
+    ""
+  ],
+  [
+    "divClass",
+    "string",
+    ""
+  ]
+];
+const Progressbar = {
+  name,
+  props
+};
+export {
+  Progressbar as default,
+  name,
+  props
+};

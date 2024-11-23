@@ -1,0 +1,82 @@
+const name = "kisida";
+const props = [
+  [
+    "children",
+    "any",
+    ""
+  ],
+  [
+    "icon",
+    "any",
+    ""
+  ],
+  [
+    "badgeStatus",
+    "any",
+    "$bindable(true)"
+  ],
+  [
+    "color",
+    "any",
+    "'primary'"
+  ],
+  [
+    "large",
+    "any",
+    "false"
+  ],
+  [
+    "dismissable",
+    "any",
+    "false"
+  ],
+  [
+    "class",
+    "string",
+    ""
+  ],
+  [
+    "border",
+    "any",
+    ""
+  ],
+  [
+    "href",
+    "any",
+    ""
+  ],
+  [
+    "rounded",
+    "any",
+    ""
+  ],
+  [
+    "transition",
+    "any",
+    "fade"
+  ],
+  [
+    "params",
+    "any",
+    ""
+  ],
+  [
+    "aClass",
+    "any",
+    ""
+  ],
+  [
+    "onclick",
+    "any",
+    ""
+  ]
+];
+const kisida = {
+  name,
+  props
+};
+export {
+  kisida as default,
+  name,
+  props
+};
