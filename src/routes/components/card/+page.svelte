@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Component } from "svelte";
-  import { Card, card, Button, Toggle, Label, Radio, uiHelpers, type RadioColorType, type CardProps } from "$lib";
+  import { Card, card, Button, Toggle, Label, Radio, uiHelpers, type RadioColorType, type CardProps, type ImgType } from "$lib";
   import HighlightCompo from "../../utils/HighlightCompo.svelte";
   import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../../utils/CodeWrapper.svelte";
@@ -55,9 +55,14 @@
   const changeClass = () => {
     cardClass = cardClass === "" ? "pl-10" : "";
   };
-  let cardImage = $state({});
+  let cardImage = $state<ImgType | undefined>(undefined);
   const changeImage = () => {
-    cardImage = Object.keys(cardImage).length === 0 ? { src: "/images/image-1.webp", alt: "my image" } : {};
+    cardImage = !cardImage
+      ? {
+          src: "/images/image-1.webp",
+          alt: "my image"
+        }
+      : undefined;
   };
 
   // code generator
@@ -72,7 +77,7 @@
       if (link) props.push(` href="${link}"`);
       if (horizontal) props.push(` horizontal`);
       if (reverse) props.push(` reverse`);
-      if (Object.keys(cardImage).length > 0) {
+      if (cardImage && typeof cardImage === "object") {
         const imgString = Object.entries(cardImage)
           .map(([key, value]) => `${key}:"${value}"`)
           .join(",");
@@ -105,6 +110,11 @@
     exampleExpand = codeBlock.isOpen;
     builderExpand = builder.isOpen;
   });
+
+  // helper function
+  const hasImageContent = (img: ImgType | undefined): boolean => {
+    return !!img && !!img.src;
+  };
 </script>
 
 <H1>Cards</H1>
@@ -115,7 +125,7 @@
 <H2>Interactive Card Builder</H2>
 <CodeWrapper>
   <div class="flex justify-center">
-    <Card size={cardSize} {color} padding={cardPadding} shadow={cardShadow} href={link ? link : ""} class={cardClass} img={cardImage as CardProps["img"]} {horizontal} {reverse}>
+    <Card size={cardSize} {color} padding={cardPadding} shadow={cardShadow} href={link ? link : ""} class={cardClass} img={cardImage} {horizontal} {reverse}>
       <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
       <p class="font-normal leading-tight text-gray-700 dark:text-gray-300">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
     </Card>
@@ -147,9 +157,18 @@
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
     <Button class="w-40" color="sky" onclick={changeLink}>{link === "" ? "Add link" : "Remove link"}</Button>
     <Button class="w-40" color="green" onclick={changeClass}>{cardClass ? "Remove class" : "Add class"}</Button>
-    <Button class="w-40" color="blue" onclick={changeImage}>{Object.keys(cardImage).length === 0 ? "Add image" : "Remove image"}</Button>
-    <Button disabled={Object.keys(cardImage).length === 0} class="w-40" color="violet" onclick={changeImgLayout}>{horizontal ? "Vertical" : "Horizontal"}</Button>
-    <Toggle bind:checked={reverse} labelClass="italic dark:text-gray-500 {Object.keys(cardImage).length === 0 ? 'opacity-50 cursor-not-allowed' : ''}" disabled={Object.keys(cardImage).length === 0}>Reverse: {reverse}</Toggle>
+
+    <Button class="w-40" color="blue" onclick={changeImage}>
+      {hasImageContent(cardImage) ? "Remove image" : "Add image"}
+    </Button>
+
+    <Button disabled={!hasImageContent(cardImage)} class="w-40" color="violet" onclick={changeImgLayout}>
+      {horizontal ? "Vertical" : "Horizontal"}
+    </Button>
+
+    <Toggle bind:checked={reverse} labelClass="italic dark:text-gray-500 {!hasImageContent(cardImage) ? 'opacity-50 cursor-not-allowed' : ''}" disabled={!hasImageContent(cardImage)}>
+      Reverse: {reverse}
+    </Toggle>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

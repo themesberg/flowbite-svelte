@@ -10,26 +10,9 @@ type ShadowType = "sm" | "normal" | "lg" | "md" | "xl" | "2xl" | "inner" | undef
 type ColorType = "gray" | "primary" | "secondary" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined;
 
 type ImgType = {
-  src: string | undefined | null;
-  alt: string | undefined | null;
+  src?: string | undefined | null;
+  alt?: string | undefined | null;
 };
-
-// interface CardProps extends HTMLAttributes<HTMLDivElement> {
-//   children: Snippet;
-//   href?: string;
-//   horizontal?: boolean;
-//   color?: ColorType;
-//   target?: string;
-//   shadow?: ShadowType;
-//   reverse?: boolean;
-//   img?: ImgType;
-//   padding?: PaddingType;
-//   size?: CardSizeType;
-//   class?: string;
-//   onclick?: () => void;
-//   imgClass?: string;
-//   contentClass?: string;
-// }
 
 interface BaseCardProps {
   children: Snippet;
