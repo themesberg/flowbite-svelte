@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.11.2
+
+### Patch Changes
+
+- chore: sveltekit update
+  - change test:integration to test:e2e
+  - removed enginges from package.json
+
 ## 0.11.1
 
 ### Patch Changes
