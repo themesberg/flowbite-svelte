@@ -24,6 +24,7 @@
     { name: "Text", component: ExampleComponents.Text },
     { name: "Count", component: ExampleComponents.Count },
     { name: "Icon", component: ExampleComponents.Icon },
+    { name: "Custom icon", component: ExampleComponents.CustomIcon },
     { name: "Advanced rating", component: ExampleComponents.AdvancedRating },
     { name: "Advanced rating and icon", component: ExampleComponents.AdvancedRatingAndIcon },
     { name: "Score rating", component: ExampleComponents.ScoreRating },

@@ -1,13 +1,14 @@
 <script lang="ts">
-  import { idGenerator } from "$lib/uiHelpers.svelte";
-  import { type StarProps as Props } from ".";
+  import { type RatingIconProps as Props } from ".";
 
-  let { fillPercent = 100, fillColor = "#F5CA14", strokeColor = "#F5CA14", size = 24, ariaLabel = "star", id = idGenerator(), role = "img", svgClass, ...restProps }: Props = $props();
+  let { fillPercent = 100, fillColor = "#F5CA14", strokeColor = "#F5CA14", size = 24, ariaLabel = "star", starIndex = 0, groupId ="star", role = "img", svgClass, ...restProps }: Props = $props();
+
+  const uniqueId = `${groupId}-${starIndex}`;
 </script>
 
 <svg width={size} height={size} {...restProps} class={svgClass} aria-label={ariaLabel} viewBox="100 100 120 120" {role}>
   <defs>
-    <linearGradient {id}>
+    <linearGradient id={uniqueId}>
       {#if fillPercent !== 100}
         <stop offset="0%" stop-color={fillColor} />
         <stop offset="{fillPercent}%" stop-color={fillColor} />
@@ -19,7 +20,7 @@
       {/if}
     </linearGradient>
   </defs>
-  <g fill="url(#{id})" stroke={strokeColor} stroke-width="2">
+  <g fill="url(#{uniqueId})" stroke={strokeColor} stroke-width="2">
     <polygon
       points="165.000, 185.000, 188.511, 197.361, 184.021, 171.180, 
       203.042, 152.639, 176.756, 148.820, 165.000, 125.000, 

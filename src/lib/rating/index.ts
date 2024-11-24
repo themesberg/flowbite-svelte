@@ -6,6 +6,7 @@ import Review from "./Review.svelte";
 import ScoreRating from "./ScoreRating.svelte";
 import Star from "./Star.svelte";
 import Thumbup from "./Thumbup.svelte";
+import CustomIcon from "./CustomIcon.svelte";
 import type { Snippet, Component } from "svelte";
 import { advancedrating, rating, review, scorerating } from "./theme";
 import type { SVGAttributes, HTMLAttributes } from "svelte/elements";
@@ -24,17 +25,6 @@ interface AdvancedRatingProps {
   unit?: string;
 }
 
-interface HeartProps extends SVGAttributes<SVGSVGElement> {
-  fillPercent?: number;
-  fillColor?: string;
-  strokeColor?: string;
-  size?: number;
-  ariaLabel?: string;
-  id?: string;
-  role?: string;
-  svgClass?: string;
-}
-
 interface RatingProps {
   children?: Snippet;
   text?: Snippet;
@@ -42,7 +32,6 @@ interface RatingProps {
   size?: number;
   total?: number;
   rating?: number;
-  partialId?: string;
   Icon?: Component;
   count?: boolean;
   pClass?: string;
@@ -111,26 +100,17 @@ interface ScoreRatingProps {
   };
 }
 
-interface StarProps extends SVGAttributes<SVGSVGElement> {
+interface RatingIconProps extends SVGAttributes<SVGSVGElement> {
   fillPercent?: number;
   fillColor?: string;
   strokeColor?: string;
   size?: number;
   ariaLabel?: string;
-  id?: string;
   role?: string;
   svgClass?: string;
+  starIndex?: number;
+  groupId?: string;
+  pathd?: string;
 }
 
-interface ThumbupProps extends SVGAttributes<SVGSVGElement> {
-  fillPercent?: number;
-  fillColor?: string;
-  strokeColor?: string;
-  size?: number;
-  ariaLabel?: string;
-  id?: string;
-  role?: string;
-  svgClass?: string;
-}
-
-export { AdvancedRating, advancedrating, Heart, Rating, rating, RatingComment, Review, review, ScoreRating, scorerating, Star, Thumbup, type AdvancedRatingProps, type HeartProps, type RatingProps, type RatingCommentProps, type ReviewProps, type ScoreRatingProps, type StarProps, type ThumbupProps };
+export { AdvancedRating, advancedrating, Heart, Rating, rating, RatingComment, Review, review, ScoreRating, scorerating, Star, Thumbup, CustomIcon, type AdvancedRatingProps, type RatingProps, type RatingCommentProps, type ReviewProps, type ScoreRatingProps, type RatingIconProps };

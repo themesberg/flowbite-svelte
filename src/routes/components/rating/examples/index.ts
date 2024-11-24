@@ -1,6 +1,7 @@
 export { default as AdvancedRating } from "./AdvancedRating.svelte";
 export { default as AdvancedRatingAndIcon } from "./AdvancedRatingAndIcon.svelte";
 export { default as Count } from "./Count.svelte";
+export { default as CustomIcon } from "./CustomIcon.svelte";
 export { default as Default } from "./Default.svelte";
 export { default as Icon } from "./Icon.svelte";
 export { default as RatingComment } from "./RatingComment.svelte";

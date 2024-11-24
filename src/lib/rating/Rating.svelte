@@ -1,15 +1,11 @@
 <script lang="ts">
   import Star from "./Star.svelte";
-  import { idGenerator } from "$lib/uiHelpers.svelte";
   import { type RatingProps as Props, rating as ratingVariants } from ".";
 
-  let { children, text, divClass, size = 24, total = 5, rating = 4, partialId = "partialStar" + idGenerator(), Icon = Star, count = false, pClass }: Props = $props();
+  let { children, text, divClass, size = 24, total = 5, rating = 4,  Icon = Star, count = false, pClass }: Props = $props();
 
   const { base, p } = $derived(ratingVariants());
-
-  // generate unique id for full star and gray star
-  const fullStarId: string = idGenerator();
-  const grayStarId: string = idGenerator();
+  const ratingGroupId = crypto.randomUUID();
   let fullStars: number = Math.floor(rating);
   let rateDiffence = rating - fullStars;
   let percentRating = Math.round(rateDiffence * 100);
@@ -18,19 +14,22 @@
 
 <div class={base({ class: divClass })}>
   {#if count && children}
-    <Icon fillPercent={100} {size} />
+    <Icon fillPercent={100} {size} starIndex={0} groupId={ratingGroupId}/>
     <p class={p({ class: pClass })}>{rating}</p>
     {@render children()}
   {:else}
     <!-- eslint-disable @typescript-eslint/no-unused-vars -->
-    {#each Array(fullStars) as _}
-      <Icon {size} fillPercent={100} id={fullStarId} />
+    {#each Array(fullStars) as _, index}
+      <Icon {size} fillPercent={100} starIndex={index}
+      groupId={`${ratingGroupId}-full`} />
     {/each}
     {#if percentRating}
-      <Icon {size} fillPercent={percentRating} id={partialId} />
+      <Icon {size} fillPercent={percentRating} starIndex={fullStars}
+      groupId={`${ratingGroupId}-partial`} />
     {/if}
-    {#each Array(grayStars) as _}
-      <Icon {size} fillPercent={0} id={grayStarId} />
+    {#each Array(grayStars) as _, index}
+      <Icon {size} fillPercent={0} starIndex={index}
+      groupId={`${ratingGroupId}-empty`} />
     {/each}
     {#if text}
       {@render text()}
