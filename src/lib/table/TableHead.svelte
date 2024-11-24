@@ -25,11 +25,13 @@
     {#if headerSlot}
       {@render headerSlot()}
     {/if}
-    {#each headItems as item}
-      <TableHeadCell>
-        {getItemText(item)}
-      </TableHeadCell>
-    {/each}
+    <tr>
+      {#each headItems as item}
+        <TableHeadCell>
+          {getItemText(item)}
+        </TableHeadCell>
+      {/each}
+    </tr>
   {:else if children}
     {#if defaultRow}
       <tr>
