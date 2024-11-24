@@ -5,8 +5,9 @@
     ["fillColor", "string", "\"#ff0000\""],
     ["strokeColor", "string", "\"#ff0000\""],
     ["size", "number", "24"],
-    ["ariaLabel", "string", "\"heart\""],
-    ["id", "string", "idGenerator()"],
+    ["ariaLabel", "string", "\"star\""],
+    ["iconIndex", "number", "0"],
+    ["groupId", "string", "\"star\""],
     ["role", "string", "\"img\""],
     ["svgClass", "string", ""]
   ]

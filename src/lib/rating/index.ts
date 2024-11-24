@@ -108,7 +108,7 @@ interface RatingIconProps extends SVGAttributes<SVGSVGElement> {
   ariaLabel?: string;
   role?: string;
   svgClass?: string;
-  starIndex?: number;
+  iconIndex?: number;
   groupId?: string;
   pathd?: string;
 }

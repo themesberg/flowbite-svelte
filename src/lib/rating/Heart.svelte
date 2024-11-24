@@ -1,9 +1,9 @@
 <script lang="ts">
   import { type RatingIconProps as Props } from ".";
 
-  let { fillPercent = 100, fillColor = "#ff0000", strokeColor = "#ff0000", size = 24, ariaLabel = "star", starIndex = 0, groupId ="star", role = "img", svgClass, ...restProps }: Props = $props();
+  let { fillPercent = 100, fillColor = "#ff0000", strokeColor = "#ff0000", size = 24, ariaLabel = "star", iconIndex = 0, groupId = "star", role = "img", svgClass, ...restProps }: Props = $props();
 
-const uniqueId = `${groupId}-${starIndex}`;
+  const uniqueId = `${groupId}-${iconIndex}`;
 </script>
 
 <svg width={size} height={size} class={svgClass} {...restProps} aria-label={ariaLabel} viewBox="0 0 24 24" {role} stroke-width="1.5" stroke="currentColor" fill="none">
@@ -31,8 +31,9 @@ const uniqueId = `${groupId}-${starIndex}`;
 @props:fillColor: string = "#ff0000";
 @props:strokeColor: string = "#ff0000";
 @props:size: number = 24;
-@props:ariaLabel: string = "heart";
-@props:id: string = idGenerator();
+@props:ariaLabel: string = "star";
+@props:iconIndex: number = 0;
+@props:groupId: string = "star";
 @props:role: string = "img";
 @props:svgClass: string;
 -->

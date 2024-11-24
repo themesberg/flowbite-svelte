@@ -20,6 +20,7 @@
 
   const exampleArr = [
     { name: "Default timeline", component: ExampleComponents.DefaultTimeline },
+    { name: "Date format", component: ExampleComponents.DateFormat },
     { name: "Vertical timeline", component: ExampleComponents.VerticalTimeline },
     { name: "Horizontal timeline", component: ExampleComponents.HorizontalTimeline },
     { name: "Activity log", component: ExampleComponents.ActivityLog },

@@ -58,6 +58,8 @@ interface GroupItemProps extends HTMLLiAttributes {
   spanClass?: string;
 }
 
+type DateFormat = "year" | "month-year" | "full-date";
+
 interface TimelineProps extends HTMLOlAttributes {
   children: Snippet;
   order?: "default" | "vertical" | "horizontal" | "activity" | "group";
@@ -73,6 +75,7 @@ interface TimelineItemProps extends HTMLLiAttributes {
   divClass?: string;
   timeClass?: string;
   h3Class?: string;
+  dateFormat?: DateFormat;
 }
 
-export { Activity, ActivityItem, Group, GroupItem, Timeline, TimelineItem, activity, activityitem, group, groupitem, timeline, timelineitem, type ActivityType, type ActivityProps, type ActivityItemProps, type GroupTimelineType, type GroupProps, type GroupItemProps, type TimelineProps, type TimelineItemProps };
+export { Activity, ActivityItem, Group, GroupItem, Timeline, TimelineItem, activity, activityitem, group, groupitem, timeline, timelineitem, type ActivityType, type ActivityProps, type ActivityItemProps, type GroupTimelineType, type GroupProps, type GroupItemProps, type TimelineProps, type TimelineItemProps, type DateFormat };

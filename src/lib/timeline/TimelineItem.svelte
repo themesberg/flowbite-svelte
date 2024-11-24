@@ -1,11 +1,39 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { type TimelineItemProps as Props, timelineitem } from ".";
+  import { type TimelineItemProps as Props, timelineitem, type DateFormat } from ".";
 
-  let { children, orientationSlot, title, date, svgClass, liClass, divClass, timeClass, h3Class, ...restProps }: Props = $props();
+  let { children, orientationSlot, title, date, dateFormat = "month-year", svgClass, liClass, divClass, timeClass, h3Class, ...restProps }: Props = $props();
+
   let order: "default" | "vertical" | "horizontal" | "activity" | "group" = getContext("order");
 
   const { li, div, time, h3, svg } = $derived(timelineitem({ order }));
+
+  function formatDisplayDate(dateStr: string, format: DateFormat) {
+    const date = new Date(dateStr);
+
+    switch (format) {
+      case "year":
+        return date.toLocaleDateString(undefined, {
+          year: "numeric"
+        });
+      case "month-year":
+        return date.toLocaleDateString(undefined, {
+          month: "long",
+          year: "numeric"
+        });
+      case "full-date":
+        return date.toLocaleDateString(undefined, {
+          day: "numeric",
+          month: "long",
+          year: "numeric"
+        });
+      default:
+        return date.toLocaleDateString(undefined, {
+          month: "long",
+          year: "numeric"
+        });
+    }
+  }
 </script>
 
 <li {...restProps} class={li({ class: liClass })}>
@@ -19,7 +47,9 @@
       </svg>
     {/if}
   {:else if date}
-    <time class={time({ class: timeClass })}>{date}</time>
+    <time datetime={date} class={time({ class: timeClass })}>
+      {formatDisplayDate(date, dateFormat)}
+    </time>
   {/if}
 
   {#if title}
@@ -30,7 +60,9 @@
 
   {#if order !== "default"}
     {#if date}
-      <time class={time({ class: timeClass })}>{date}</time>
+      <time datetime={date} class={time({ class: timeClass })}>
+        {formatDisplayDate(date, dateFormat)}
+      </time>
     {/if}
   {/if}
 
@@ -45,6 +77,7 @@
 @props:orientationSlot: Snippet;
 @props:title: string;
 @props:date: string;
+@props:dateFormat: "year" | "month-year" | "full-date" = "month-year";
 @props:svgClass: string;
 @props:liClass: string;
 @props:divClass: string;
