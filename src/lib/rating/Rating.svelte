@@ -21,15 +21,15 @@
     <!-- eslint-disable @typescript-eslint/no-unused-vars -->
     {#each Array(fullStars) as _, index}
       <Icon {size} fillPercent={100} starIndex={index}
-      groupId={`${ratingGroupId}-full`} />
+      groupId={`rating-${ratingGroupId}-full`} />
     {/each}
     {#if percentRating}
       <Icon {size} fillPercent={percentRating} starIndex={fullStars}
-      groupId={`${ratingGroupId}-partial`} />
+      groupId={`rating-${ratingGroupId}-partial`} />
     {/if}
     {#each Array(grayStars) as _, index}
       <Icon {size} fillPercent={0} starIndex={index}
-      groupId={`${ratingGroupId}-empty`} />
+      groupId={`rating-${ratingGroupId}-empty`} />
     {/each}
     {#if text}
       {@render text()}
