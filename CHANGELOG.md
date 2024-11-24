@@ -4,17 +4,17 @@
 
 ### Minor Changes
 
-  - 15812aeb (HEAD -> main, origin/main, origin/HEAD) fix: TableHead add tr tag
-  - a47f3687 fix: Rating id not a valid XML name
-  - 19c1219c feat: rating/CustomIcon, fix: Star, Heart, Thumbup
-  - 59c5ef39 docs: change span to div in indicators/examples/legend
-  - 721e10ca fix: card page
-  - 7e56bb32 fix: remove type prsentation from divin Card
-  - 78496d98 chore: add /.vercel to gitignore
-  - 49c0c7e6 fix: add ignores .vercel/ to eslint.config.js
-  - 7f90ca8c fix: change adapter-auto to adapter-vercel
-  - fix: CustomIcon.svelte, Heart.svelte, Rating.svelte, Star.svelte, Thumbup.svelte
-  - fix: TimelineItem.svelte
+- 15812aeb (HEAD -> main, origin/main, origin/HEAD) fix: TableHead add tr tag
+- a47f3687 fix: Rating id not a valid XML name
+- 19c1219c feat: rating/CustomIcon, fix: Star, Heart, Thumbup
+- 59c5ef39 docs: change span to div in indicators/examples/legend
+- 721e10ca fix: card page
+- 7e56bb32 fix: remove type prsentation from divin Card
+- 78496d98 chore: add /.vercel to gitignore
+- 49c0c7e6 fix: add ignores .vercel/ to eslint.config.js
+- 7f90ca8c fix: change adapter-auto to adapter-vercel
+- fix: CustomIcon.svelte, Heart.svelte, Rating.svelte, Star.svelte, Thumbup.svelte
+- fix: TimelineItem.svelte
 
 ## 0.11.2
 

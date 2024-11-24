@@ -72,6 +72,7 @@ export const fileList = [
   "src/lib/popover/Popover.svelte",
   "src/lib/progress/Progressbar.svelte",
   "src/lib/rating/AdvancedRating.svelte",
+  "src/lib/rating/CustomIcon.svelte",
   "src/lib/rating/Heart.svelte",
   "src/lib/rating/Rating.svelte",
   "src/lib/rating/RatingComment.svelte",
