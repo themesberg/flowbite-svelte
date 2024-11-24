@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.12.1
+
+### Patch Changes
+
+- fix: change tailwind-variants from devDependencies to dependencies
+
 ## 0.12.0
 
 ### Minor Changes
