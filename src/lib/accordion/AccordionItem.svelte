@@ -31,7 +31,7 @@
 </script>
 
 <h2 class={base()}>
-  <div onclick={handleToggle} onkeydown={(e) => e.key === 'Enter' && handleToggle()} role="button" tabindex="0" class={buttonClass} aria-expanded={open}>
+  <button onclick={handleToggle} class={buttonClass} aria-expanded={open}>
     {#if header}
       {@render header()}
       {#if open}
@@ -50,7 +50,7 @@
         {@render arrowdown()}
       {/if}
     {/if}
-      </div>
+  </button>
 </h2>
 {#if open}
   <div transition:transition={params as ParamsType}>
