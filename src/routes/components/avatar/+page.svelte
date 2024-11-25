@@ -1,12 +1,11 @@
 <script lang="ts">
-  import { type Component } from "svelte";
   import { Avatar, avatar, Label, Radio, Button, uiHelpers, type AvatarProps } from "$lib";
   import HighlightCompo from "../../utils/HighlightCompo.svelte";
   import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../../utils/CodeWrapper.svelte";
   import H1 from "../../utils/H1.svelte";
   import H2 from "../../utils/H2.svelte";
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
+  import { isGeneratedCodeOverflow } from "../../utils/helpers";
   // Props table
   import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
   const dirName = "avatar";
@@ -18,25 +17,6 @@
     import: "default",
     eager: true
   }) as Record<string, string>;
-
-  const exampleArr = [
-    { name: "Avatar text", component: ExampleComponents.AvatarText },
-    { name: "Dot indicator", component: ExampleComponents.DotIndicator },
-    { name: "Placeholder", component: ExampleComponents.Placeholder },
-    { name: "Placeholder initial", component: ExampleComponents.PlaceholderInitial },
-    { name: "Stacked", component: ExampleComponents.Stacked },
-    { name: "User dropdown", component: ExampleComponents.UserDropdown },
-    { name: "Avatar with tooltip", component: ExampleComponents.AvatarWithTooltip }
-  ];
-  let selectedExample: string | number = $state(exampleArr[0].name);
-  let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
-
-  function findObject(arr: { name: string; component: Component }[], name: string) {
-    const matchingObject = arr.find((obj) => obj.name === name);
-    return matchingObject ? matchingObject.component : null;
-  }
-  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
-  // end of dynamic svelte component
 
   // reactive example, rounded, border, stacked, size, className
   const sizes = Object.keys(avatar.variants.size);
@@ -81,18 +61,8 @@
   const handleBuilderExpandClick = () => {
     builderExpand = !builderExpand;
   };
-  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the svelteCode content.
 
-  // for examples DynamicCodeBlockHighlight
-  let codeBlock = uiHelpers();
-  let exampleExpand = $state(false);
-  let showExpandButton = $derived(isSvelteOverflow(svelteCode, exampleModules));
-  const handleExpandClick = () => {
-    exampleExpand = !exampleExpand;
-  };
-  // end of DynamicCodeBlock setup
   $effect(() => {
-    exampleExpand = codeBlock.isOpen;
     builderExpand = builder.isOpen;
   });
 </script>
@@ -126,18 +96,59 @@
   {/snippet}
 </CodeWrapper>
 
-<H2>Examples</H2>
-
+<H2>Avatar text</H2>
 <CodeWrapper>
-  <div class="mb-12 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Example</Label>
-    {#each exampleArr as style}
-      <Radio labelClass="w-40 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
-    {/each}
-  </div>
-  <SelectedComponent />
+  <ExampleComponents.AvatarText />
   {#snippet codeblock()}
-    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${svelteCode}`] as string} />
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/AvatarText.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Dot indicator</H2>
+<CodeWrapper>
+  <ExampleComponents.DotIndicator />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/DotIndicator.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Placeholder</H2>
+<CodeWrapper>
+  <ExampleComponents.Placeholder />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Placeholder.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Placeholder initial</H2>
+<CodeWrapper>
+  <ExampleComponents.PlaceholderInitial />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/PlaceholderInitial.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Stacked</H2>
+<CodeWrapper>
+  <ExampleComponents.Stacked />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Stacked.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>User dropdown</H2>
+<CodeWrapper>
+  <ExampleComponents.UserDropdown />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/UserDropdown.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Avatar with tooltip</H2>
+<CodeWrapper>
+  <ExampleComponents.AvatarWithTooltip />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/AvatarWithTooltip.svelte"] as string} />
   {/snippet}
 </CodeWrapper>
 

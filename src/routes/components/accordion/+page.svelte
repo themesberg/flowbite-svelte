@@ -1,11 +1,8 @@
 <script lang="ts">
-  import { type Component } from "svelte";
-  import { uiHelpers, Label, Radio } from "$lib";
-  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
   import CodeWrapper from "../../utils/CodeWrapper.svelte";
   import H1 from "../../utils/H1.svelte";
   import H2 from "../../utils/H2.svelte";
-  import { isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // Props table
   import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
   const dirName = "accordion";
@@ -17,54 +14,89 @@
     import: "default",
     eager: true
   }) as Record<string, string>;
-
-  const exampleArr = [
-    { name: "Default", component: ExampleComponents.Default },
-    { name: "Open", component: ExampleComponents.Open },
-    { name: "Color", component: ExampleComponents.Color },
-    { name: "Flush", component: ExampleComponents.Flush },
-    { name: "Arrow style", component: ExampleComponents.ArrowStyle },
-    { name: "Icon", component: ExampleComponents.Icon },
-    { name: "Multiple mode", component: ExampleComponents.MultipleMode },
-    { name: "Transitions", component: ExampleComponents.Transitions },
-    { name: "Nesting", component: ExampleComponents.Nesting },
-    { name: "Open multiple", component: ExampleComponents.OpenMultiple }
-  ];
-  let selectedExample: string | number = $state(exampleArr[0].name);
-  let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
-
-  function findObject(arr: { name: string; component: Component }[], name: string) {
-    const matchingObject = arr.find((obj) => obj.name === name);
-    return matchingObject ? matchingObject.component : null;
-  }
-  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
-  // end of dynamic svelte component
-
-  // for examples DynamicCodeBlockHighlight
-  let codeBlock = uiHelpers();
-  let exampleExpand = $state(false);
-  let showExpandButton = $derived(isSvelteOverflow(svelteCode, exampleModules));
-  const handleExpandClick = () => {
-    exampleExpand = !exampleExpand;
-  };
-  // end of DynamicCodeBlock setup
-  $effect(() => {
-    exampleExpand = codeBlock.isOpen;
-  });
 </script>
 
 <H1>Accordion</H1>
 
+<H2>Default Accordion</H2>
+
 <CodeWrapper>
-  <div class="mb-12 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Example</Label>
-    {#each exampleArr as style}
-      <Radio labelClass="w-40 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
-    {/each}
-  </div>
-  <SelectedComponent />
+  <ExampleComponents.Default />
   {#snippet codeblock()}
-    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${svelteCode}`] as string} />
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Default.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Open</H2>
+
+<CodeWrapper>
+  <ExampleComponents.Open />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Open.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Color</H2>
+<CodeWrapper>
+  <ExampleComponents.Color />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Color.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Flush</H2>
+<CodeWrapper>
+  <ExampleComponents.Flush />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Flush.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Arrow style</H2>
+<CodeWrapper>
+  <ExampleComponents.ArrowStyle />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/ArrowStyle.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Icon (animated icons)</H2>
+<CodeWrapper>
+  <ExampleComponents.Icon />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Icon.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Multiple mode</H2>
+<CodeWrapper>
+  <ExampleComponents.MultipleMode />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/MultipleMode.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Transitions</H2>
+<CodeWrapper>
+  <ExampleComponents.Transitions />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Transitions.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Nesting</H2>
+<CodeWrapper>
+  <ExampleComponents.Nesting />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Nesting.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Open multiple</H2>
+<CodeWrapper>
+  <ExampleComponents.OpenMultiple />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/OpenMultiple.svelte"] as string} />
   {/snippet}
 </CodeWrapper>
 

@@ -2,7 +2,7 @@
   import { Avatar, Tooltip } from "$lib";
 </script>
 
-<div class="flex justify-center gap-8">
+<div class="flex h-32 items-center justify-center gap-8">
   <Avatar id="jese" cornerStyle="rounded" alt="Jese Leos" src="/images/profile-picture-1.webp" />
   <Tooltip triggeredBy="#jese">Jese Leos</Tooltip>
   <Avatar id="robert" cornerStyle="rounded" alt="Robert Gouth" src="/images/profile-picture-2.webp" />
