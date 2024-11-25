@@ -7,7 +7,7 @@
   <AccordionItem>
     {#snippet header()}
       <span class="flex gap-2 text-base">
-        <CartFlowbite/>
+        <CartFlowbite />
         <span>My Header 1</span>
       </span>
     {/snippet}

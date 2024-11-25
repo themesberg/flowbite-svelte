@@ -19,7 +19,7 @@
   <TabItem>
     {#snippet titleSlot()}
       <div class="flex items-center gap-2">
-        <GridFlowbite/>
+        <GridFlowbite />
         Dashboard
       </div>
     {/snippet}

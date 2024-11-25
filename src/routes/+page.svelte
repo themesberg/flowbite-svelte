@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { P } from "$lib";
+  import { P, A } from "$lib";
   import HighlightCompo from "./utils/HighlightCompo.svelte";
   import H1 from "./utils/H1.svelte";
   import H2 from "./utils/H2.svelte";
@@ -34,5 +34,10 @@
 
 <H3>Tailwind</H3>
 <P>Add the following to tailwind.config.js:</P>
+
+<H3>SVG Icons</H3>
+<P>If you are using any icons from <A href="https://svelte-svg-icons.codewithshin.com/">Svelte SVG Icon Sets</A>, you need to update the content in tailwind.config.js. For example, if you are using Flowbite-Svelte-Icons and Svelte-Animated-Icons:</P>
+
+<HighlightCompo class="mb-8" codeLang="js" code={modules["./md/svg-icons.md"] as string} />
 
 <HighlightCompo class="mb-8" codeLang="json" code={modules["./md/tailwind-config.md"] as string} />
