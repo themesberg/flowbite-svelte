@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { type Component } from "svelte";
   import { Badge, badge, Button, Radio, Label, type BadgeProps, uiHelpers } from "$lib";
   import { ClockSolid } from "flowbite-svelte-icons";
   import { blur, fly, slide, scale } from "svelte/transition";
@@ -22,25 +21,6 @@
     import: "default",
     eager: true
   }) as Record<string, string>;
-
-  const exampleArr = [
-    { name: "Dismissing with custom icon", component: ExampleComponents.DismissingWithCustomIcon },
-    { name: "Dismissing with events", component: ExampleComponents.DismissingWithEvents },
-    { name: "Notification badge", component: ExampleComponents.NotificationBadge },
-    { name: "Button with badge", component: ExampleComponents.ButtonWithBadge },
-    { name: "Badge with icon only", component: ExampleComponents.BadgeWithIconOnly },
-    { name: "Opening badge", component: ExampleComponents.OpeningBadge },
-    { name: "Dynamic color", component: ExampleComponents.DynamicColor }
-  ];
-  let selectedExample: string | number = $state(exampleArr[0].name);
-  let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
-
-  function findObject(arr: { name: string; component: Component }[], name: string) {
-    const matchingObject = arr.find((obj) => obj.name === name);
-    return matchingObject ? matchingObject.component : null;
-  }
-  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
-  // end of dynamic svelte component
 
   // interactive example
   const colors = Object.keys(badge.variants.color);
@@ -200,18 +180,59 @@
   {/snippet}
 </CodeWrapper>
 
-<H2>Examples</H2>
-
+<H2>Dismissing with custom icon</H2>
 <CodeWrapper>
-  <div class="mb-8 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Example</Label>
-    {#each exampleArr as style}
-      <Radio labelClass="w-[230px] my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
-    {/each}
-  </div>
-  <SelectedComponent />
+  <ExampleComponents.DismissingWithCustomIcon />
   {#snippet codeblock()}
-    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${svelteCode}`] as string} />
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/DismissingWithCustomIcon.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Dismissing with events</H2>
+<CodeWrapper>
+  <ExampleComponents.DismissingWithEvents />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/DismissingWithEvents.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Notification badge</H2>
+<CodeWrapper>
+  <ExampleComponents.NotificationBadge />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/NotificationBadge.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Button with badge</H2>
+<CodeWrapper>
+  <ExampleComponents.ButtonWithBadge />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/ButtonWithBadge.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Badge with icon only</H2>
+<CodeWrapper>
+  <ExampleComponents.BadgeWithIconOnly />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/BadgeWithIconOnly.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Opening badge</H2>
+<CodeWrapper>
+  <ExampleComponents.OpeningBadge />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/OpeningBadge.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Dynamic color</H2>
+<CodeWrapper>
+  <ExampleComponents.DynamicColor />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/DynamicColor.svelte"] as string} />
   {/snippet}
 </CodeWrapper>
 
