@@ -20,7 +20,6 @@
   }) as Record<string, string>;
 
   const exampleArr = [
-    { name: "Advanced", component: ExampleComponents.Advanced },
     { name: "Bordered", component: ExampleComponents.Bordered },
     { name: "Button", component: ExampleComponents.Button },
     { name: "Dropdown", component: ExampleComponents.Dropdown },
@@ -29,7 +28,8 @@
     { name: "Inline layout", component: ExampleComponents.InlineLayout },
     { name: "Link", component: ExampleComponents.Link },
     { name: "List group", component: ExampleComponents.ListGroup },
-    { name: "Table", component: ExampleComponents.Table }
+    { name: "Table", component: ExampleComponents.Table },
+    { name: "Advanced", component: ExampleComponents.Advanced }
   ];
   let selectedExample: string | number = $state(exampleArr[0].name);
   let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));

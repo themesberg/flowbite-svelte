@@ -26,7 +26,7 @@
         <div class="relative">
           <DropdownHeader>
             <div class="p-0">
-              <Search size="md" class="pl-8" />
+              <Search size="md" />
             </div>
           </DropdownHeader>
           <DropdownUl>
