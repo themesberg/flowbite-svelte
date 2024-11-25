@@ -1,3 +1,4 @@
+export { default as AnimatedIcons } from "./AnimatedIcons.svelte";
 export { default as Default } from "./Default.svelte";
 export { default as UsingObject } from "./UsingObject.svelte";
 export { default as ActiveClass } from "./ActiveClass.svelte";

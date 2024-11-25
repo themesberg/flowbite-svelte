@@ -106,7 +106,7 @@
       }}
     >
       {#snippet leftLabel()}
-        <div class="me-4">Default</div>
+        <span class="me-4">Default</span>
       {/snippet}
       Small
     </Toggle>

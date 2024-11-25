@@ -20,6 +20,7 @@
 
   const exampleArr = [
     { name: "Default", component: ExampleComponents.Default },
+    { name: "Animated icons", component: ExampleComponents.AnimatedIcons },
     { name: "Close button", component: ExampleComponents.CloseButton },
     { name: "Active class", component: ExampleComponents.ActiveClass },
     { name: "Overriding active", component: ExampleComponents.OverridingActive },

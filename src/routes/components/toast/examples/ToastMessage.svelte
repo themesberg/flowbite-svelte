@@ -5,7 +5,7 @@
 <div class="flex h-[180px] flex-col items-center">
   <Toast align={false} iconClass="w-10 h-10 rounded-full">
     {#snippet icon()}
-      <Avatar src="/images/profile-picture-1.webp" />
+      <Avatar src="/images/profile-picture-1.webp" alt="Jese Leos"/>
     {/snippet}
     <div class="ms-3 text-sm font-normal">
       <span class="mb-1 text-sm font-semibold text-gray-900 dark:text-white">Jese Leos</span>

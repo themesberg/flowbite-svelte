@@ -1,3 +1,4 @@
+export { default as AnimatedIcons } from "./AnimatedIcons.svelte";
 export { default as Default } from "./Default.svelte";
 export { default as LinkAndActiveClass } from "./LinkAndActiveClass.svelte";
 export { default as OverwritingActiveClass } from "./OverwritingActiveClass.svelte";

@@ -3,7 +3,7 @@
   import ListgroupItem from "./ListgroupItem.svelte";
   import { type ListgroupProps as Props, listGroup } from ".";
 
-  let { children, items, active, onclick, rounded = true, border = true, class: className, ...restProps }: Props = $props();
+  let { children, items, active, onclick, rounded = true, border = true, class: className, itemClass, iconClass, ...restProps }: Props = $props();
   const base = $derived(listGroup({ rounded, border, className }));
   let tag = active ? "div" : "ul";
   setContext("active", active);
@@ -13,9 +13,9 @@
   {#if items}
     {#each items as item}
       {#if typeof item === "string"}
-        <ListgroupItem {active} {onclick}>{item}</ListgroupItem>
+        <ListgroupItem class={itemClass} {iconClass} {active} {onclick}>{item}</ListgroupItem>
       {:else}
-        <ListgroupItem {active} {...item} onclick={item.onclick ? item.onclick : onclick}>{item}</ListgroupItem>
+        <ListgroupItem class={itemClass} {iconClass} {active} {...item} onclick={item.onclick ? item.onclick : onclick}>{item}</ListgroupItem>
       {/if}
     {/each}
   {:else if children}

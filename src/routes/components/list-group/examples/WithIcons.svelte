@@ -1,15 +1,15 @@
 <script lang="ts">
   import { Listgroup, type ListGroupItemType } from "$lib";
-  import { AdjustmentsHorizontalSolid, DownloadSolid, MessagesSolid, UserCircleSolid } from "flowbite-svelte-icons";
+  import { AdjustmentsHorizontalFlowbite, DownloadFlowbite, MessagesFlowbite, UserCircleFlowbite } from "svelte-animated-icons";
   let iconList: ListGroupItemType[] = [
-    { name: "Profile", Icon: UserCircleSolid, mycustomfield: "data1" },
+    { name: "Profile", Icon: UserCircleFlowbite, mycustomfield: "data1" },
     {
       name: "Settings",
-      Icon: AdjustmentsHorizontalSolid,
+      Icon: AdjustmentsHorizontalFlowbite,
       mycustomfield: "data2"
     },
-    { name: "Messages", Icon: MessagesSolid, mycustomfield: "data3" },
-    { name: "Download", Icon: DownloadSolid, mycustomfield: "data4" }
+    { name: "Messages", Icon: MessagesFlowbite, mycustomfield: "data3" },
+    { name: "Download", Icon: DownloadFlowbite, mycustomfield: "data4" }
   ];
 
   const handleClick = (e?: MouseEvent) => {
@@ -22,5 +22,5 @@
 </script>
 
 <div class="flex justify-center">
-  <Listgroup active items={iconList} class="w-48" onclick={handleClick} />
+  <Listgroup active items={iconList} iconClass="pr-1.5" class="w-48" onclick={handleClick} />
 </div>

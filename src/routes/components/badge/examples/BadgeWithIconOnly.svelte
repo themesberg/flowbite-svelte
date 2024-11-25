@@ -1,19 +1,19 @@
 <script lang="ts">
   import { Badge } from "$lib";
-  import { CheckOutline, InfoCircleSolid, UserCircleSolid } from "flowbite-svelte-icons";
+  import { CheckFlowbite, InfoCircleFlowbite, UserCircleFlowbite } from "svelte-animated-icons";
 </script>
 
 <div class="flex justify-center gap-2">
   <Badge color="gray" rounded large class="!p-1 !font-semibold">
-    <CheckOutline class="h-4 w-4" />
+    <CheckFlowbite class="h-6 w-6" />
     <span class="sr-only">Icon description</span>
   </Badge>
   <Badge rounded large class="!p-1 !font-semibold">
-    <InfoCircleSolid class="h-4 w-4 text-primary-600 dark:text-primary-400" />
+    <InfoCircleFlowbite class="h-6 w-6 text-primary-600 dark:text-primary-400" />
     <span class="sr-only">Icon description</span>
   </Badge>
   <Badge rounded large color="blue" class="!p-1 !font-semibold">
-    <UserCircleSolid class="h-4 w-4 text-blue-600 dark:text-blue-400" />
+    <UserCircleFlowbite class="h-6 w-6 text-blue-600 dark:text-blue-400" />
     <span class="sr-only">Icon description</span>
   </Badge>
 </div>

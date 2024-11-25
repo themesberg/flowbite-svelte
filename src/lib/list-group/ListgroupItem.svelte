@@ -4,7 +4,7 @@
   import { tv } from "tailwind-variants";
   import { type ListgroupItemProps as Props, listGroupItem } from ".";
 
-  let { children, onclick, active, current, disabled, name, Icon, href, currentClass = "text-white bg-primary-700 dark:text-white dark:bg-gray-800", normalClass, disabledClass = "text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400", liClass = "py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg", class: className, ...restProps }: Props = $props();
+  let { children, onclick, active, current, disabled, name, Icon, href, currentClass = "text-white bg-primary-700 dark:text-white dark:bg-gray-800", normalClass, disabledClass = "text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400", liClass = "py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg", class: className, aClasss, btnClass, iconClass="me-2.5 h-5 w-5", ...restProps }: Props = $props();
 
   active = getContext("active");
 
@@ -20,7 +20,7 @@
   })({
     state: disabled ? "disabled" : current ? "current" : "normal",
     active,
-    class: itemClass
+    class: twMerge(itemClass, btnClass)
   });
 
   const linkClass = tv({
@@ -29,7 +29,7 @@
   })({
     state: disabled ? "disabled" : current ? "current" : "normal",
     active,
-    class: itemClass
+    class: twMerge(itemClass, aClasss)
   });
 </script>
 
@@ -44,7 +44,7 @@
 {:else}
   <button type="button" {onclick} class={buttonClass} {disabled} aria-current={current}>
     {#if Icon}
-      <Icon class="me-2.5 h-5 w-5" />
+      <Icon class={iconClass} />
     {/if}
     {#if name}
       {name}

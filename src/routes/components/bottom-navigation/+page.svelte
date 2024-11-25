@@ -20,6 +20,7 @@
 
   const exampleArr = [
     { name: "Default", component: ExampleComponents.Default },
+    { name: "Animated icons", component: ExampleComponents.AnimatedIcons },
     { name: "Link and active class", component: ExampleComponents.LinkAndActiveClass },
     { name: "Overwriting active class", component: ExampleComponents.OverwritingActiveClass },
     { name: "Icon color", component: ExampleComponents.IconColor },

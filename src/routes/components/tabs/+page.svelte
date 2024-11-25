@@ -22,6 +22,7 @@
   const exampleArr = [
     { name: "Full width", component: ExampleComponents.FullWidth },
     { name: "Icon", component: ExampleComponents.Icon },
+    { name: "Animated icons", component: ExampleComponents.AnimatedIcons },
     { name: "Components in tab contents", component: ExampleComponents.ComponentsInTabContents }
   ];
 

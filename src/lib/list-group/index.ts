@@ -26,6 +26,10 @@ interface ListgroupProps {
   rounded?: boolean;
   border?: boolean;
   class?: string;
+  itemClass?: string;
+  aClasss?: string;
+  btnClass?: string;
+  iconClass?: string;
 }
 
 interface ListgroupItemProps extends HTMLAnchorAttributes {
@@ -42,6 +46,9 @@ interface ListgroupItemProps extends HTMLAnchorAttributes {
   disabledClass?: string;
   liClass?: string;
   class?: string;
+  aClasss?: string;
+  btnClass?: string;
+  iconClass?: string;
 }
 
 export { Listgroup, ListgroupItem, listGroup, listGroupItem, type ListgroupProps, type ListgroupItemProps, type ListGroupItemType };

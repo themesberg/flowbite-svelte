@@ -38,7 +38,7 @@ export default [
     }
   },
   {
-    ignores: [".vercel/", "src/routes/utils/highlight", "build/", ".svelte-kit/", "dist/", "test-results/", "*.md", "src/**/*/Setup.svelte"]
+    ignores: [".vercel/", "src/routes/utils/highlight/", "build/", ".svelte-kit/", "dist/", "test-results/", "*.md", "src/**/*/Setup.svelte"]
   },
   {
     rules: {
