@@ -1,8 +1,5 @@
 <script lang="ts">
-  import { type Component } from "svelte";
-  import { Label, Radio, uiHelpers } from "$lib";
-  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
-  import { isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
   import CodeWrapper from "../../utils/CodeWrapper.svelte";
   import H1 from "../../utils/H1.svelte";
   import H2 from "../../utils/H2.svelte";
@@ -17,51 +14,63 @@
     import: "default",
     eager: true
   }) as Record<string, string>;
-
-  const exampleArr = [
-    { name: "Default", component: ExampleComponents.Default },
-    { name: "Mansory grid", component: ExampleComponents.MansoryGrid },
-    { name: "Featured image", component: ExampleComponents.FeaturedImage },
-    { name: "Quad", component: ExampleComponents.Quad },
-    { name: "Gallery with tag", component: ExampleComponents.GalleryWithTag },
-    { name: "Heterogeneous", component: ExampleComponents.Heterogeneous },
-    { name: "Custom image rendering", component: ExampleComponents.CustomImageRendering }
-  ];
-  let selectedExample: string | number = $state(exampleArr[0].name);
-  let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
-
-  function findObject(arr: { name: string; component: Component }[], name: string) {
-    const matchingObject = arr.find((obj) => obj.name === name);
-    return matchingObject ? matchingObject.component : null;
-  }
-  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
-  // end of dynamic svelte component
-
-  // for examples DynamicCodeBlockHighlight
-  let codeBlock = uiHelpers();
-  let exampleExpand = $state(false);
-  let showExpandButton = $derived(isSvelteOverflow(svelteCode, exampleModules));
-  const handleExpandClick = () => {
-    exampleExpand = !exampleExpand;
-  };
-  // end of DynamicCodeBlock setup
-  $effect(() => {
-    exampleExpand = codeBlock.isOpen;
-  });
 </script>
 
 <H1>Gallery</H1>
 
+<H2>Default</H2>
 <CodeWrapper>
-  <div class="mb-8 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Example</Label>
-    {#each exampleArr as style}
-      <Radio labelClass="w-48 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
-    {/each}
-  </div>
-  <SelectedComponent />
+  <ExampleComponents.Default />
   {#snippet codeblock()}
-    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${svelteCode}`] as string} />
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Default.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Monsory grid</H2>
+<CodeWrapper>
+  <ExampleComponents.MansoryGrid />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/MansoryGrid.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Featured image</H2>
+<CodeWrapper>
+  <ExampleComponents.FeaturedImage />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/FeaturedImage.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Quad</H2>
+<CodeWrapper>
+  <ExampleComponents.Quad />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Quad.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Gallery with tag</H2>
+<CodeWrapper>
+  <ExampleComponents.GalleryWithTag />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/GalleryWithTag.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Heterogeneous</H2>
+<CodeWrapper>
+  <ExampleComponents.Heterogeneous />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Heterogeneous.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Custom image rendering</H2>
+<CodeWrapper>
+  <ExampleComponents.CustomImageRendering />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/CustomImageRendering.svelte"] as string} />
   {/snippet}
 </CodeWrapper>
 

@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { type Component } from "svelte";
   import { fade, blur, fly, slide, scale } from "svelte/transition";
   import type { FlyParams, BlurParams, SlideParams, ScaleParams } from "svelte/transition";
   import { linear } from "svelte/easing";
@@ -9,7 +8,7 @@
   import CodeWrapper from "../../utils/CodeWrapper.svelte";
   import H1 from "../../utils/H1.svelte";
   import H2 from "../../utils/H2.svelte";
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
+  import { isGeneratedCodeOverflow } from "../../utils/helpers";
   import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
   const dirName = "modal";
 
@@ -20,25 +19,6 @@
     import: "default",
     eager: true
   }) as Record<string, string>;
-
-  const exampleArr = [
-    { name: "Default", component: ExampleComponents.Default },
-    { name: "Popup", component: ExampleComponents.Popup },
-    { name: "Form", component: ExampleComponents.Form },
-    { name: "Disable outsideclose", component: ExampleComponents.DisableOutsideclose },
-    { name: "Crypto wallet", component: ExampleComponents.CryptoWallet },
-    { name: "Header snippet", component: ExampleComponents.HeaderSnippet },
-    { name: "Footer snippet", component: ExampleComponents.FooterSnippet }
-  ];
-  let selectedExample = $state(exampleArr[0].name);
-  let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
-
-  function findObject(arr: { name: string; component: Component }[], name: string) {
-    const matchingObject = arr.find((obj) => obj.name === name);
-    return matchingObject ? matchingObject.component : null;
-  }
-  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
-  // end of dynamic svelte component
 
   const interactiveModalExample = uiHelpers();
   let interactiveModalStatus = $state(false);
@@ -123,18 +103,8 @@
   const handleBuilderExpandClick = () => {
     builderExpand = !builderExpand;
   };
-  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the svelteCode content.
 
-  // for examples DynamicCodeBlockHighlight
-  let codeBlock = uiHelpers();
-  let exampleExpand = $state(false);
-  let showExpandButton = $derived(isSvelteOverflow(svelteCode, exampleModules));
-  const handleExpandClick = () => {
-    exampleExpand = !exampleExpand;
-  };
-  // end of DynamicCodeBlock setup
   $effect(() => {
-    exampleExpand = codeBlock.isOpen;
     builderExpand = builder.isOpen;
   });
 </script>
@@ -185,18 +155,59 @@
   {/snippet}
 </CodeWrapper>
 
-<H2>Examples</H2>
-
+<H2>Default</H2>
 <CodeWrapper>
-  <div class="mb-4 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Example</Label>
-    {#each exampleArr as style}
-      <Radio labelClass="w-44 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
-    {/each}
-  </div>
-  <SelectedComponent />
+  <ExampleComponents.Default />
   {#snippet codeblock()}
-    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${svelteCode}`] as string} />
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Default.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Popup</H2>
+<CodeWrapper>
+  <ExampleComponents.Popup />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Popup.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Form</H2>
+<CodeWrapper>
+  <ExampleComponents.Form />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Form.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Disable outsideclose</H2>
+<CodeWrapper>
+  <ExampleComponents.DisableOutsideclose />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/DisableOutsideclose.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Crypto wallet</H2>
+<CodeWrapper>
+  <ExampleComponents.CryptoWallet />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/CryptoWallet.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Header snippet</H2>
+<CodeWrapper>
+  <ExampleComponents.HeaderSnippet />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/HeaderSnippet.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Footer snippet</H2>
+<CodeWrapper>
+  <ExampleComponents.FooterSnippet />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/FooterSnippet.svelte"] as string} />
   {/snippet}
 </CodeWrapper>
 
