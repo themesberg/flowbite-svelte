@@ -19,10 +19,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: type Snippet } from "svelte";
-import { toolbar, toolbarGroup, toolbarButton };
-@props:spacing: "default" | "tight" | "loose" | undefined = "default";
-@props:padding: "default" | "none" | undefined = "default";
-@props:position: "first" | "last" | "middle" | undefined = "middle";
+@props: children: any;
+@props:spacing: any = "default";
+@props:padding: any = "default";
+@props:position: any = "middle";
 @props:class: string;
 -->

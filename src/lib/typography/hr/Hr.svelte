@@ -21,8 +21,8 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:divClass: string;
-@props:hrClass: string;
-@props:innerDivClass: string;
+@props: children: any;
+@props:divClass: any;
+@props:hrClass: any;
+@props:innerDivClass: any;
 -->

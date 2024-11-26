@@ -23,10 +23,10 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:tag: "ul" | "dl" | "ol" | undefined = "ul";
-@props:isContenteditable: boolean = false;
-@props:position: "inside" | "outside" | undefined = "inside";
-@props:ctxClass: string;
+@props: children: any;
+@props:tag: any = "ul";
+@props:isContenteditable: any = false;
+@props:position: any = "inside";
+@props:ctxClass: any;
 @props:class: string;
 -->

@@ -29,15 +29,15 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
+@props: children: any;
 @props:class: string;
-@props:italic: boolean;
-@props:underline: boolean;
-@props:linethrough: boolean;
-@props:uppercase: boolean;
-@props:gradient: "skyToEmerald" | "purpleToBlue" | "pinkToOrange" | "tealToLime" | "redToYellow" | "indigoToCyan" | "fuchsiaToRose" | "amberToEmerald" | "violetToRed" | "blueToGreen" | "orangeToPurple" | "yellowToRed" | "none" | undefined;
-@props:highlight: "none" | "blue" | "green" | "red" | "yellow" | "purple" | "pink" | "indigo" | "teal" | "orange" | "cyan" | "fuchsia" | "amber" | "lime" | undefined;
-@props:decoration: "none" | "solid" | "double" | "dotted" | "dashed" | "wavy" | undefined;
-@props:decorationColor: "none" | "blue" | "green" | "red" | "yellow" | "purple" | "pink" | "indigo" | "teal" | "orange" | "cyan" | "fuchsia" | "lime" | "primary" | "secondary" | "gray" | "emerald" | "sky" | "violet" | "rose" | undefined;
-@props:decorationThickness: "1" | "2" | "4" | "8" | "0" | undefined;
+@props:italic: any;
+@props:underline: any;
+@props:linethrough: any;
+@props:uppercase: any;
+@props:gradient: any;
+@props:highlight: any;
+@props:decoration: any;
+@props:decorationColor: any;
+@props:decorationThickness: any;
 -->

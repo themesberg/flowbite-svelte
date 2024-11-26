@@ -14,13 +14,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
+@props: children: any;
 @props:class: string;
-@props:color: type ColorName } from "$lib/types";
-
-interface HelperProps extends HTMLAttributes<HTMLParagraphElement> {
-  children: Snippet;
-  class?: string;
-  color?: ColorName | "disabled";
-} | "disabled" = "gray";
+@props:color: any = "gray";
 -->

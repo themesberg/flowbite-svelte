@@ -32,14 +32,14 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: src: any;
-@props:size: "sm" | "md" | "lg" | "xl" | "2xl" | "none" | "xs" | "full" | undefined = "none";
-@props:alignment: "left" | "center" | "right" | undefined = "left";
-@props:effect: "none" | "grayscale" | "blur" | "invert" | "sepia" | "saturate" | "hue-rotate" | undefined = "none";
-@props:shadow: "sm" | "md" | "lg" | "xl" | "2xl" | "none" | "regular" | "inner" | undefined = "none";
-@props:rounded: "sm" | "md" | "lg" | "xl" | "2xl" | "full" | "none" | "regular" | "3xl" | undefined = "none";
-@props:caption: string;
-@props:imgClass: string;
-@props:figClass: string;
-@props:captionClass: string;
-@props:href: string;
+@props:size: any = "none";
+@props:alignment: any = "left";
+@props:effect: any = "none";
+@props:shadow: any = "none";
+@props:rounded: any = "none";
+@props:caption: any;
+@props:imgClass: any;
+@props:figClass: any;
+@props:captionClass: any;
+@props:href: any;
 -->

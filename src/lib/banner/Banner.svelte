@@ -45,15 +45,15 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:header: Snippet;
-@props:bannerStatus: boolean = $bindable(true);
-@props:position: "static" | "fixed" | "absolute" | "relative" | "sticky" = "sticky";
-@props:dismissable: boolean = true;
-@props:color: "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" = "gray";
-@props:bannerType: "default" | "bottom" | "cta" | "signup" | "info" = "default";
+@props: children: any;
+@props:header: any;
+@props:bannerStatus: any = $bindable(true);
+@props:position: any = "sticky";
+@props:dismissable: any = true;
+@props:color: any = "gray";
+@props:bannerType: any = "default";
 @props:class: string;
-@props:innerClass: string;
-@props:transition: TransitionFunc = fade;
-@props:params: object;
+@props:innerClass: any;
+@props:transition: any = fade;
+@props:params: any;
 -->

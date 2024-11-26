@@ -37,12 +37,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:header: Snippet;
-@props:position: "static" | "fixed" | "absolute" | "relative" | "sticky" | undefined = "fixed";
-@props:navType: "border" | "application" | "group" | "default" | "pagination" | "card" | "meeting" | "video" | undefined = "default";
-@props:outerClass: string;
-@props:innerClass: string;
-@props:activeClass: string;
-@props:activeUrl: string = "";
+@props: children: any;
+@props:header: any;
+@props:position: any = "fixed";
+@props:navType: any = "default";
+@props:outerClass: any;
+@props:innerClass: any;
+@props:activeClass: any;
+@props:activeUrl: any = "";
 -->

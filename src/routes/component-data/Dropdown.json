@@ -1,13 +1,13 @@
 {
   "name": "Dropdown",
   "props": [
-    ["children", "Snippet", ""],
-    ["dropdownStatus", "boolean", "$bindable()"],
-    ["closeDropdown", "() => void", ""],
+    ["children", "any", ""],
+    ["dropdownStatus", "any", "$bindable()"],
+    ["closeDropdown", "any", ""],
     ["class", "string", ""],
-    ["backdropClass", "string", ""],
-    ["params", "ParamsType", ""],
-    ["transition", "TransitionFunc", "fly"],
-    ["activeUrl", "string", "\"\""]
+    ["backdropClass", "any", ""],
+    ["params", "any", ""],
+    ["transition", "any", "fly"],
+    ["activeUrl", "any", "\"\""]
   ]
 }

@@ -2,15 +2,15 @@
   "name": "ImgEnhanced",
   "props": [
     ["src", "any", ""],
-    ["size", "\"sm\" | \"md\" | \"lg\" | \"xl\" | \"2xl\" | \"none\" | \"xs\" | \"full\" | undefined", "\"none\""],
-    ["alignment", "\"left\" | \"center\" | \"right\" | undefined", "\"left\""],
-    ["effect", "\"none\" | \"grayscale\" | \"blur\" | \"invert\" | \"sepia\" | \"saturate\" | \"hue-rotate\" | undefined", "\"none\""],
-    ["shadow", "\"sm\" | \"md\" | \"lg\" | \"xl\" | \"2xl\" | \"none\" | \"regular\" | \"inner\" | undefined", "\"none\""],
-    ["rounded", "\"sm\" | \"md\" | \"lg\" | \"xl\" | \"2xl\" | \"full\" | \"none\" | \"regular\" | \"3xl\" | undefined", "\"none\""],
-    ["caption", "string", ""],
-    ["imgClass", "string", ""],
-    ["figClass", "string", ""],
-    ["captionClass", "string", ""],
-    ["href", "string", ""]
+    ["size", "any", "\"none\""],
+    ["alignment", "any", "\"left\""],
+    ["effect", "any", "\"none\""],
+    ["shadow", "any", "\"none\""],
+    ["rounded", "any", "\"none\""],
+    ["caption", "any", ""],
+    ["imgClass", "any", ""],
+    ["figClass", "any", ""],
+    ["captionClass", "any", ""],
+    ["href", "any", ""]
   ]
 }

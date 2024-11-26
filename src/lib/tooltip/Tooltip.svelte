@@ -164,7 +164,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
+@props: children: any;
 @props:color: any = "default";
 @props:showOn: any = "hover";
 @props:arrow: any = true;

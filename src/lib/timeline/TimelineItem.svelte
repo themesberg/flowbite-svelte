@@ -73,14 +73,14 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:orientationSlot: Snippet;
-@props:title: string;
-@props:date: string;
-@props:dateFormat: "year" | "month-year" | "full-date" = "month-year";
-@props:svgClass: string;
-@props:liClass: string;
-@props:divClass: string;
-@props:timeClass: string;
-@props:h3Class: string;
+@props: children: any;
+@props:orientationSlot: any;
+@props:title: any;
+@props:date: any;
+@props:dateFormat: any = "month-year";
+@props:svgClass: any;
+@props:liClass: any;
+@props:divClass: any;
+@props:timeClass: any;
+@props:h3Class: any;
 -->

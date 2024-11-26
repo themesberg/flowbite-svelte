@@ -14,15 +14,15 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
+@props: children: any;
 @props:class: string = "text-gray-900 dark:text-white";
-@props:height: "normal" | "tight" | "none" | "snug" | "relaxed" | "loose" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | undefined = "normal";
-@props:align: "left" | "center" | "right" | undefined = "left";
-@props:justify: boolean = false;
-@props:italic: boolean;
-@props:firstUpper: boolean = false;
-@props:whitespace: "normal" | "nowrap" | "pre" | "preline" | "prewrap" | undefined = "normal";
-@props:size: "sm" | "lg" | "xl" | "2xl" | "xs" | "base" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl" | undefined = "base";
-@props:space: "normal" | "tighter" | "tight" | "wide" | "wider" | "widest" | undefined = "normal";
-@props:weight: "normal" | "thin" | "extralight" | "light" | "medium" | "semibold" | "bold" | "extrabold" | "black" | undefined = "normal";
+@props:height: any = "normal";
+@props:align: any = "left";
+@props:justify: any = false;
+@props:italic: any;
+@props:firstUpper: any = false;
+@props:whitespace: any = "normal";
+@props:size: any = "base";
+@props:space: any = "normal";
+@props:weight: any = "normal";
 -->

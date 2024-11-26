@@ -75,21 +75,21 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:isOpen: boolean = false;
-@props:closeSidebar: () => void;
-@props:isSingle: boolean = true;
-@props:breakpoint: "sm" | "md" | "lg" | "xl" | "2xl" | undefined = "md";
-@props:position: "fixed" | "absolute" | "static" | undefined = "fixed";
-@props:activateClickOutside: boolean = true;
-@props:backdrop: boolean = true;
-@props:backdropClass: string;
-@props:transition: TransitionFunc = fly;
-@props:params: ParamsType;
-@props:divClass: string;
-@props:ariaLabel: string;
-@props:nonActiveClass: string;
-@props:activeClass: string;
-@props:activeUrl: string = "";
+@props: children: any;
+@props:isOpen: any = false;
+@props:closeSidebar: any;
+@props:isSingle: any = true;
+@props:breakpoint: any = "md";
+@props:position: any = "fixed";
+@props:activateClickOutside: any = true;
+@props:backdrop: any = true;
+@props:backdropClass: any;
+@props:transition: any = fly;
+@props:params: any;
+@props:divClass: any;
+@props:ariaLabel: any;
+@props:nonActiveClass: any;
+@props:activeClass: any;
+@props:activeUrl: any = "";
 @props:class: string;
 -->

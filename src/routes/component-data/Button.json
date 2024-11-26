@@ -1,16 +1,16 @@
 {
   "name": "Button",
   "props": [
-    ["children", "Snippet", ""],
-    ["pill", "boolean", "false"],
-    ["outline", "boolean", "false"],
-    ["size", "\"sm\" | \"md\" | \"lg\" | \"xl\" | \"xs\" | undefined", "group ? \"sm\" : \"md\""],
-    ["href", "string", ""],
+    ["children", "any", ""],
+    ["pill", "any", "false"],
+    ["outline", "any", "false"],
+    ["size", "any", "group ? \"sm\" : \"md\""],
+    ["href", "any", ""],
     ["type", "any", "\"button\""],
-    ["color", "\"primary\" | \"dark\" | \"alternative\" | \"light\" | \"secondary\" | \"gray\" | \"red\" | \"orange\" | \"amber\" | \"yellow\" | \"lime\" | \"green\" | \"emerald\" | \"teal\" | \"cyan\" | \"sky\" | \"blue\" | \"indigo\" | \"violet\" | \"purple\" | \"fuchsia\" | \"pink\" | \"rose\"", "group ? (outline ? \"dark\" : \"alternative\") : \"primary\""],
-    ["shadow", "boolean", "false"],
-    ["tag", "string", "\"button\""],
-    ["disabled", "boolean", ""],
+    ["color", "any", "group ? (outline ? \"dark\" : \"alternative\") : \"primary\""],
+    ["shadow", "any", "false"],
+    ["tag", "any", "\"button\""],
+    ["disabled", "any", ""],
     ["class", "string", ""]
   ]
 }

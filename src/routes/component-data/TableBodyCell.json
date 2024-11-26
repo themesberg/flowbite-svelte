@@ -1,9 +1,9 @@
 {
   "name": "TableBodyCell",
   "props": [
-    ["children", "Snippet", ""],
+    ["children", "any", ""],
     ["class", "string", ""],
-    ["colspan", "number", ""],
-    ["onclick", "() => void", ""]
+    ["colspan", "any", ""],
+    ["onclick", "any", ""]
   ]
 }

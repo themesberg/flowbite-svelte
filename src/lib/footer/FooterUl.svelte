@@ -14,5 +14,5 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: class: string;
-@props:children: Snippet;
+@props:children: any;
 -->

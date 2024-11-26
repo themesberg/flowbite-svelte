@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { type Component } from "svelte";
   import { ButtonGroup, buttonGroup, Button, button, Label, Radio, type ButtonGroupProps, uiHelpers, type RadioColorType, type ButtonProps } from "$lib";
   import { UserCircleSolid, AdjustmentsVerticalSolid, DownloadSolid } from "flowbite-svelte-icons";
   import HighlightCompo from "../../utils/HighlightCompo.svelte";
@@ -7,7 +6,7 @@
   import CodeWrapper from "../../utils/CodeWrapper.svelte";
   import H1 from "../../utils/H1.svelte";
   import H2 from "../../utils/H2.svelte";
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
+  import { isGeneratedCodeOverflow } from "../../utils/helpers";
   // for Props table
   import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
   const dirName = "buttongroup";
@@ -19,25 +18,6 @@
     import: "default",
     eager: true
   }) as Record<string, string>;
-
-  const exampleArr = [
-    { name: "Dualtone gradient", component: ExampleComponents.DualtoneGradient },
-    { name: "Dualtone gradient pill", component: ExampleComponents.DualtoneGradientPill },
-    { name: "Events", component: ExampleComponents.Events },
-    { name: "Gradient shadow", component: ExampleComponents.GradientShadow },
-    { name: "Outline buttons", component: ExampleComponents.OutlineButtons },
-    { name: "Pill buttons", component: ExampleComponents.PillButtons },
-    { name: "Standard buttons", component: ExampleComponents.StandardButtons }
-  ];
-  let selectedExample: string | number = $state(exampleArr[0].name);
-  let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
-
-  function findObject(arr: { name: string; component: Component }[], name: string) {
-    const matchingObject = arr.find((obj) => obj.name === name);
-    return matchingObject ? matchingObject.component : null;
-  }
-  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
-  // end of dynamic svelte component
 
   // size, class
   const sizes = Object.keys(buttonGroup.variants.size);
@@ -92,18 +72,8 @@
   const handleBuilderExpandClick = () => {
     builderExpand = !builderExpand;
   };
-  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the svelteCode content.
 
-  // for examples DynamicCodeBlockHighlight
-  let codeBlock = uiHelpers();
-  let exampleExpand = $state(false);
-  let showExpandButton = $derived(isSvelteOverflow(svelteCode, exampleModules));
-  const handleExpandClick = () => {
-    exampleExpand = !exampleExpand;
-  };
-  // end of DynamicCodeBlock setup
   $effect(() => {
-    exampleExpand = codeBlock.isOpen;
     builderExpand = builder.isOpen;
   });
 </script>
@@ -151,18 +121,59 @@
   {/snippet}
 </CodeWrapper>
 
-<H2>Examples</H2>
-
+<H2>Dualtone gradient</H2>
 <CodeWrapper>
-  <div class="mb-8 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Example</Label>
-    {#each exampleArr as style}
-      <Radio labelClass="w-[230px] my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
-    {/each}
-  </div>
-  <SelectedComponent />
+  <ExampleComponents.DualtoneGradient />
   {#snippet codeblock()}
-    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${svelteCode}`] as string} />
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/DualtoneGradient.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Dualtone gradient pill</H2>
+<CodeWrapper>
+  <ExampleComponents.DualtoneGradientPill />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/DualtoneGradientPill.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Events</H2>
+<CodeWrapper>
+  <ExampleComponents.Events />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Events.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Gradient shadow</H2>
+<CodeWrapper>
+  <ExampleComponents.GradientShadow />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/GradientShadow.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Outline buttons</H2>
+<CodeWrapper>
+  <ExampleComponents.OutlineButtons />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/OutlineButtons.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Pill buttons</H2>
+<CodeWrapper>
+  <ExampleComponents.PillButtons />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/PillButtons.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Standard buttons</H2>
+<CodeWrapper>
+  <ExampleComponents.StandardButtons />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/StandardButtons.svelte"] as string} />
   {/snippet}
 </CodeWrapper>
 

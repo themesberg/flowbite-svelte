@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.12.2
+
+### Patch Changes
+
+- fix: move all types and interfaces from index to ./type.ts
+
 ## 0.12.1
 
 ### Patch Changes

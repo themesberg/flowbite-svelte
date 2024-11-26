@@ -83,7 +83,7 @@
         {#if compo.data.default.props && compo.data.default.props.length > 0}
           <TabItem open>
             {#snippet titleSlot()}
-              <div class="flex items-center gap-2">
+              <div class="flex items-center gap-2 text-primary-900">
                 <ClipboardSolid size="sm" />
                 Props
               </div>

@@ -33,7 +33,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet<[{ item: LinkType;
+@props: children: any;
 @props:footer: any;
 @props:items: any = [];
 @props:full: any;

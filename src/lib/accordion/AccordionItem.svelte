@@ -64,14 +64,14 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:header: Snippet;
-@props:arrowup: Snippet;
-@props:arrowdown: Snippet;
-@props:open: boolean = $bindable(false);
-@props:activeClass: string;
-@props:inactiveClass: string;
-@props:transition: TransitionFunc = slide;
-@props:params: ParamsType;
+@props: children: any;
+@props:header: any;
+@props:arrowup: any;
+@props:arrowdown: any;
+@props:open: any = $bindable(false);
+@props:activeClass: any;
+@props:inactiveClass: any;
+@props:transition: any = slide;
+@props:params: any;
 @props:class: string;
 -->

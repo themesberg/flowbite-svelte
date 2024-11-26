@@ -24,10 +24,10 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
+@props: children: any;
 @props:class: string;
 @props:color: any;
-@props:striped: boolean;
-@props:hoverable: boolean;
-@props:noborder: boolean;
+@props:striped: any;
+@props:hoverable: any;
+@props:noborder: any;
 -->

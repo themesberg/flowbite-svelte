@@ -1,14 +1,14 @@
 {
   "name": "Heart",
   "props": [
-    ["fillPercent", "number", "100"],
-    ["fillColor", "string", "\"#ff0000\""],
-    ["strokeColor", "string", "\"#ff0000\""],
-    ["size", "number", "24"],
-    ["ariaLabel", "string", "\"star\""],
-    ["iconIndex", "number", "0"],
-    ["groupId", "string", "\"star\""],
-    ["role", "string", "\"img\""],
-    ["svgClass", "string", ""]
+    ["fillPercent", "any", "100"],
+    ["fillColor", "any", "\"#ff0000\""],
+    ["strokeColor", "any", "\"#ff0000\""],
+    ["size", "any", "24"],
+    ["ariaLabel", "any", "\"star\""],
+    ["iconIndex", "any", "0"],
+    ["groupId", "any", "\"star\""],
+    ["role", "any", "\"img\""],
+    ["svgClass", "any", ""]
   ]
 }

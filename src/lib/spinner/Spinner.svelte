@@ -15,9 +15,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: color: "primary" | "gray" | "red" | "yellow" | "green" | "indigo" | "purple" | "pink" | "blue" | "orange" | "amber" | "lime" | "emerald" | "teal" | "cyan" | "sky" | "violet" | "fuchsia" | "rose" | "secondary" | undefined = "primary";
-@props:size: "8" | "4" | "5" | "6" | "10" | "12" | "16" | undefined = "8";
+@props: color: any = "primary";
+@props:size: any = "8";
 @props:class: string;
-@props:currentFill: string = "currentFill";
-@props:currentColor: string = "currentColor";
+@props:currentFill: any = "currentFill";
+@props:currentColor: any = "currentColor";
 -->

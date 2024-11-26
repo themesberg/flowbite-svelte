@@ -30,6 +30,6 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: size: "sm" | "md" | "lg" | "xl" | "2xl" | undefined = "sm";
+@props: size: any = "sm";
 @props:class: string;
 -->

@@ -19,13 +19,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:site: interface SiteType {
-  name?: string;
-  href?: string;
-  img?: string;
-};
-@props:imgClass: string;
-@props:spanClass: string;
+@props: children: any;
+@props:site: any;
+@props:imgClass: any;
+@props:spanClass: any;
 @props:class: string;
 -->

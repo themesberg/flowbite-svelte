@@ -41,17 +41,10 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: timelines: interface GroupTimelineType {
-  name: string | HTMLElement;
-  src: string;
-  alt: string;
-  href?: string;
-  isPrivate?: boolean;
-  comment?: string | HTMLElement;
-}[];
-@props:aClass: string;
-@props:imgClass: string;
-@props:divClass: string;
-@props:titleClass: string;
-@props:spanClass: string;
+@props: timelines: any;
+@props:aClass: any;
+@props:imgClass: any;
+@props:divClass: any;
+@props:titleClass: any;
+@props:spanClass: any;
 -->

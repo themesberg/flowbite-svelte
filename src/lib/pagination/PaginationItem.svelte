@@ -27,9 +27,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:size: "default" | "large" | undefined;
+@props: children: any;
+@props:size: any;
 @props:class: string;
-@props:href: string;
-@props:active: boolean;
+@props:href: any;
+@props:active: any;
 -->

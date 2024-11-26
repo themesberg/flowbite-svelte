@@ -30,7 +30,7 @@
   </script>
 </svelte:head>
 
-<button onclick={toggleTheme} aria-label={ariaLabel} type="button" {...restProps} class={btnCls}>
+<button onclick={toggleTheme} aria-label={ariaLabel} type="button" {...restProps} class={btnCls} tabindex={0}>
   <span class="hidden dark:block">
     {#if lightIcon}
       {@render lightIcon()}
@@ -61,8 +61,8 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: class: string;
-@props:lightIcon: Snippet;
-@props:darkIcon: Snippet;
-@props:size: "sm" | "md" | "lg" = "md";
-@props:ariaLabel: string = "Dark mode";
+@props:lightIcon: any;
+@props:darkIcon: any;
+@props:size: any = "md";
+@props:ariaLabel: any = "Dark mode";
 -->

@@ -1,7 +1,7 @@
 {
   "name": "Tooltip",
   "props": [
-    ["children", "Snippet", ""],
+    ["children", "any", ""],
     ["color", "any", "\"default\""],
     ["showOn", "any", "\"hover\""],
     ["arrow", "any", "true"],

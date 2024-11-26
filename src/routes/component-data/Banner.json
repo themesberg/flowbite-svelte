@@ -1,16 +1,16 @@
 {
   "name": "Banner",
   "props": [
-    ["children", "Snippet", ""],
-    ["header", "Snippet", ""],
-    ["bannerStatus", "boolean", "$bindable(true)"],
-    ["position", "\"static\" | \"fixed\" | \"absolute\" | \"relative\" | \"sticky\"", "\"sticky\""],
-    ["dismissable", "boolean", "true"],
-    ["color", "\"primary\" | \"secondary\" | \"gray\" | \"red\" | \"orange\" | \"amber\" | \"yellow\" | \"lime\" | \"green\" | \"emerald\" | \"teal\" | \"cyan\" | \"sky\" | \"blue\" | \"indigo\" | \"violet\" | \"purple\" | \"fuchsia\" | \"pink\" | \"rose\"", "\"gray\""],
-    ["bannerType", "\"default\" | \"bottom\" | \"cta\" | \"signup\" | \"info\"", "\"default\""],
+    ["children", "any", ""],
+    ["header", "any", ""],
+    ["bannerStatus", "any", "$bindable(true)"],
+    ["position", "any", "\"sticky\""],
+    ["dismissable", "any", "true"],
+    ["color", "any", "\"gray\""],
+    ["bannerType", "any", "\"default\""],
     ["class", "string", ""],
-    ["innerClass", "string", ""],
-    ["transition", "TransitionFunc", "fade"],
-    ["params", "object", ""]
+    ["innerClass", "any", ""],
+    ["transition", "any", "fade"],
+    ["params", "any", ""]
   ]
 }

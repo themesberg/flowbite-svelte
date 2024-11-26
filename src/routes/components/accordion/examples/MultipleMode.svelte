@@ -15,8 +15,8 @@
   };
 </script>
 
-<Button onclick={open_all}>Open all</Button>
-<Button onclick={close_all}>Close all</Button>
+<Button onclick={open_all} class="bg-primary-800">Open all</Button>
+<Button onclick={close_all} class="bg-primary-800">Close all</Button>
 <Accordion class="mt-4">
   <AccordionItem bind:open={item0}>
     {#snippet header()}

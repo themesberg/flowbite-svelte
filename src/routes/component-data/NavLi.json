@@ -1,10 +1,10 @@
 {
   "name": "NavLi",
   "props": [
-    ["closeNav", "() => void", ""],
-    ["href", "string", ""],
-    ["children", "Snippet", ""],
-    ["aClass", "string", ""],
+    ["closeNav", "any", ""],
+    ["href", "any", ""],
+    ["children", "any", ""],
+    ["aClass", "any", ""],
     ["class", "string", ""]
   ]
 }

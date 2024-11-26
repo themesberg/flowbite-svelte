@@ -40,16 +40,16 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:src: string;
-@props:href: HTMLAnchorAttributes["href"];
-@props:target: HTMLAnchorAttributes["target"];
-@props:cornerStyle: "rounded" | "circular" = "circular";
-@props:border: boolean = false;
-@props:stacked: boolean = false;
-@props:dot: object | undefined;
+@props: children: any;
+@props:src: any;
+@props:href: any;
+@props:target: any;
+@props:cornerStyle: any = "circular";
+@props:border: any = false;
+@props:stacked: any = false;
+@props:dot: any;
 @props:class: string;
-@props:alt: string;
-@props:size: "xs" | "sm" | "md" | "lg" | "xl" = "md";
-@props:onclick: () => void;
+@props:alt: any;
+@props:size: any = "md";
+@props:onclick: any;
 -->

@@ -1,10 +1,10 @@
 {
   "name": "Toolbar",
   "props": [
-    ["children", "type Snippet } from \"svelte\";\nimport { toolbar, toolbarGroup, toolbarButton }", ""],
-    ["end", "type Snippet } from \"svelte\";\nimport { toolbar, toolbarGroup, toolbarButton }", ""],
-    ["color", "\"primary\" | \"secondary\" | \"default\" | undefined", "\"default\""],
-    ["embedded", "boolean", ""],
+    ["children", "any", ""],
+    ["end", "any", ""],
+    ["color", "any", "\"default\""],
+    ["embedded", "any", ""],
     ["class", "string", ""]
   ]
 }

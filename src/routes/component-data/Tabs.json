@@ -1,10 +1,10 @@
 {
   "name": "Tabs",
   "props": [
-    ["children", "Snippet", ""],
-    ["tabStyle", "\"full\" | \"pill\" | \"underline\" | \"none\"", "\"none\""],
-    ["ulClass", "string", ""],
-    ["contentClass", "string", ""],
-    ["divider", "boolean", "true"]
+    ["children", "any", ""],
+    ["tabStyle", "any", "\"none\""],
+    ["ulClass", "any", ""],
+    ["contentClass", "any", ""],
+    ["divider", "any", "true"]
   ]
 }

@@ -1,8 +1,8 @@
 {
   "name": "A",
   "props": [
-    ["children", "Snippet", ""],
-    ["color", "\"primary\" | \"secondary\" | \"gray\" | \"red\" | \"orange\" | \"amber\" | \"yellow\" | \"lime\" | \"green\" | \"emerald\" | \"teal\" | \"cyan\" | \"sky\" | \"blue\" | \"indigo\" | \"violet\" | \"purple\" | \"fuchsia\" | \"pink\" | \"rose\" | undefined", "\"primary\""],
+    ["children", "any", ""],
+    ["color", "any", "\"primary\""],
     ["class", "string", ""]
   ]
 }

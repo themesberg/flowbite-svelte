@@ -30,18 +30,17 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:aria_describedby: string;
-@props:color: "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined = "primary";
-@props:custom: boolean;
-@props:inline: boolean;
-@props:tinted: boolean;
-@props:rounded: boolean;
-@props:group: (string | number)[] = $bindable([]);
-@props:choices: {
-  value: string[] = [];
+@props: children: any;
+@props:aria_describedby: any;
+@props:color: any = "primary";
+@props:custom: any;
+@props:inline: any;
+@props:tinted: any;
+@props:rounded: any;
+@props:group: any = $bindable([]);
+@props:choices: any = [];
 @props:checked: any = $bindable(false);
-@props:classLabel: string;
-@props:indeterminate: boolean;
+@props:classLabel: any;
+@props:indeterminate: any;
 @props:class: string;
 -->

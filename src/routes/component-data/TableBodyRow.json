@@ -1,11 +1,11 @@
 {
   "name": "TableBodyRow",
   "props": [
-    ["children", "Snippet", ""],
+    ["children", "any", ""],
     ["class", "string", ""],
     ["color", "any", ""],
-    ["striped", "boolean", ""],
-    ["hoverable", "boolean", ""],
-    ["noborder", "boolean", ""]
+    ["striped", "any", ""],
+    ["hoverable", "any", ""],
+    ["noborder", "any", ""]
   ]
 }

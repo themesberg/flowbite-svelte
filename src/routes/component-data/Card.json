@@ -2,7 +2,7 @@
   "name": "Card",
   "props": [
     ["children", "any", ""],
-    ["href", "string } & HTMLAnchorAttributes) | ({ href?: never } & HTMLAttributes<HTMLDivElement>))", ""],
+    ["href", "any", ""],
     ["color", "any", "\"gray\""],
     ["horizontal", "any", "false"],
     ["shadow", "any", "\"md\""],

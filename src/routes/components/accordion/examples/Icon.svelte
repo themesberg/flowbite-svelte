@@ -1,13 +1,13 @@
 <script lang="ts">
   import { Accordion, AccordionItem } from "$lib";
-  import { CartSolid, CogSolid } from "flowbite-svelte-icons";
+  import { CartFlowbite, CogFlowbite } from "svelte-animated-icons";
 </script>
 
 <Accordion>
   <AccordionItem>
     {#snippet header()}
       <span class="flex gap-2 text-base">
-        <CartSolid />
+        <CartFlowbite />
         <span>My Header 1</span>
       </span>
     {/snippet}
@@ -16,7 +16,7 @@
   <AccordionItem>
     {#snippet header()}
       <span class="flex gap-2 text-base">
-        <CogSolid />
+        <CogFlowbite />
         <span>My Header 2</span>
       </span>
     {/snippet}

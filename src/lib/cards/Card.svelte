@@ -60,7 +60,7 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children: any;
-@props:href: string } & HTMLAnchorAttributes) | ({ href?: never } & HTMLAttributes<HTMLDivElement>));
+@props:href: any;
 @props:color: any = "gray";
 @props:horizontal: any = false;
 @props:shadow: any = "md";

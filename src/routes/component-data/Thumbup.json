@@ -1,14 +1,14 @@
 {
   "name": "Thumbup",
   "props": [
-    ["fillPercent", "number", "100"],
-    ["fillColor", "string", "\"#00b500\""],
-    ["strokeColor", "string", "\"#00b500\""],
-    ["size", "number", "24"],
-    ["ariaLabel", "string", "\"thumbup\""],
-    ["iconIndex", "number", "0"],
-    ["groupId", "string", "\"star\""],
-    ["role", "string", "\"img\""],
-    ["svgClass", "string", ""]
+    ["fillPercent", "any", "100"],
+    ["fillColor", "any", "\"#00b500\""],
+    ["strokeColor", "any", "\"#00b500\""],
+    ["size", "any", "24"],
+    ["ariaLabel", "any", "\"thumbup\""],
+    ["iconIndex", "any", "0"],
+    ["groupId", "any", "\"star\""],
+    ["role", "any", "\"img\""],
+    ["svgClass", "any", ""]
   ]
 }

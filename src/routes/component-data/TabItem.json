@@ -1,14 +1,14 @@
 {
   "name": "TabItem",
   "props": [
-    ["children", "Snippet", ""],
-    ["titleSlot", "Snippet", ""],
-    ["open", "boolean", "false"],
-    ["title", "string", "\"Tab title\""],
-    ["activeClass", "string", ""],
-    ["inactiveClass", "string", ""],
+    ["children", "any", ""],
+    ["titleSlot", "any", ""],
+    ["open", "any", "false"],
+    ["title", "any", "\"Tab title\""],
+    ["activeClass", "any", ""],
+    ["inactiveClass", "any", ""],
     ["class", "string", ""],
-    ["disabled", "boolean", ""],
-    ["tabStyle", "\"full\" | \"pill\" | \"underline\" | \"none\"", ""]
+    ["disabled", "any", ""],
+    ["tabStyle", "any", ""]
   ]
 }

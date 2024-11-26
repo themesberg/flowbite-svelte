@@ -12,7 +12,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: itemName: string;
-@props:active: boolean;
+@props: itemName: any;
+@props:active: any;
 @props:class: string;
 -->

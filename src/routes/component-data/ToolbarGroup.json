@@ -1,10 +1,10 @@
 {
   "name": "ToolbarGroup",
   "props": [
-    ["children", "type Snippet } from \"svelte\";\nimport { toolbar, toolbarGroup, toolbarButton }", ""],
-    ["spacing", "\"default\" | \"tight\" | \"loose\" | undefined", "\"default\""],
-    ["padding", "\"default\" | \"none\" | undefined", "\"default\""],
-    ["position", "\"first\" | \"last\" | \"middle\" | undefined", "\"middle\""],
+    ["children", "any", ""],
+    ["spacing", "any", "\"default\""],
+    ["padding", "any", "\"default\""],
+    ["position", "any", "\"middle\""],
     ["class", "string", ""]
   ]
 }

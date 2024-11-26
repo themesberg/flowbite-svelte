@@ -31,13 +31,13 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: src: any;
-@props:href: string;
-@props:caption: string;
-@props:size: "sm" | "md" | "lg" | "xl" | "2xl" | "none" | "xs" | "full" | undefined;
-@props:alignment: "left" | "center" | "right" | undefined;
-@props:shadow: "sm" | "md" | "lg" | "xl" | "2xl" | "none" | "regular" | "inner" | undefined;
-@props:rounded: "sm" | "md" | "lg" | "xl" | "2xl" | "full" | "none" | "regular" | "3xl" | undefined;
-@props:figClass: string;
-@props:imgClass: string;
-@props:captionClass: string;
+@props:href: any;
+@props:caption: any;
+@props:size: any;
+@props:alignment: any;
+@props:shadow: any;
+@props:rounded: any;
+@props:figClass: any;
+@props:imgClass: any;
+@props:captionClass: any;
 -->

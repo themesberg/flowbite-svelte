@@ -1,8 +1,8 @@
 {
   "name": "ImagePlaceholder",
   "props": [
-    ["size", "\"sm\" | \"md\" | \"lg\" | undefined", "\"md\""],
-    ["rounded", "\"sm\" | \"md\" | \"lg\" | \"none\" | \"full\" | undefined", ""],
+    ["size", "any", "\"md\""],
+    ["rounded", "any", ""],
     ["class", "string", ""]
   ]
 }

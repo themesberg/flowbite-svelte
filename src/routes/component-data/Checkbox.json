@@ -1,18 +1,18 @@
 {
   "name": "Checkbox",
   "props": [
-    ["children", "Snippet", ""],
-    ["aria_describedby", "string", ""],
-    ["color", "\"primary\" | \"secondary\" | \"gray\" | \"red\" | \"orange\" | \"amber\" | \"yellow\" | \"lime\" | \"green\" | \"emerald\" | \"teal\" | \"cyan\" | \"sky\" | \"blue\" | \"indigo\" | \"violet\" | \"purple\" | \"fuchsia\" | \"pink\" | \"rose\" | undefined", "\"primary\""],
-    ["custom", "boolean", ""],
-    ["inline", "boolean", ""],
-    ["tinted", "boolean", ""],
-    ["rounded", "boolean", ""],
-    ["group", "(string | number)[]", "$bindable([])"],
-    ["choices", "{\n  value: string[]", "[]"],
+    ["children", "any", ""],
+    ["aria_describedby", "any", ""],
+    ["color", "any", "\"primary\""],
+    ["custom", "any", ""],
+    ["inline", "any", ""],
+    ["tinted", "any", ""],
+    ["rounded", "any", ""],
+    ["group", "any", "$bindable([])"],
+    ["choices", "any", "[]"],
     ["checked", "any", "$bindable(false)"],
-    ["classLabel", "string", ""],
-    ["indeterminate", "boolean", ""],
+    ["classLabel", "any", ""],
+    ["indeterminate", "any", ""],
     ["class", "string", ""]
   ]
 }

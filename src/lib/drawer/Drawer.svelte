@@ -33,18 +33,18 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:drawerStatus: boolean;
-@props:closeDrawer: () => void;
-@props:activateClickOutside: boolean = true;
-@props:position: "fixed" | "absolute" | undefined;
-@props:width: "default" | "full" | "half" | undefined;
-@props:backdrop: boolean = true;
-@props:backdropClass: string;
-@props:placement: "left" | "right" | "top" | "bottom" | undefined = "left";
+@props: children: any;
+@props:drawerStatus: any;
+@props:closeDrawer: any;
+@props:activateClickOutside: any = true;
+@props:position: any;
+@props:width: any;
+@props:backdrop: any = true;
+@props:backdropClass: any;
+@props:placement: any = "left";
 @props:class: string;
-@props:params: ParamsType = { x: -320;
+@props:params: any = { x: -320;
 @props:duration: any;
 @props:easing: any;
-@props:transition: TransitionFunc = fly;
+@props:transition: any = fly;
 -->

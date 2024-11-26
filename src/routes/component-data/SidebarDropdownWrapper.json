@@ -1,19 +1,19 @@
 {
   "name": "SidebarDropdownWrapper",
   "props": [
-    ["children", "Snippet", ""],
-    ["arrowup", "Snippet", ""],
-    ["arrowdown", "Snippet", ""],
-    ["iconSlot", "Snippet", ""],
-    ["isOpen", "boolean | undefined", "false"],
-    ["btnClass", "string", ""],
-    ["label", "string | undefined", ""],
-    ["spanClass", "string", ""],
-    ["ulClass", "string", ""],
-    ["transition", "TransitionFunc", "slide"],
-    ["params", "ParamsType", ""],
-    ["svgClass", "string", ""],
+    ["children", "any", ""],
+    ["arrowup", "any", ""],
+    ["arrowdown", "any", ""],
+    ["iconSlot", "any", ""],
+    ["isOpen", "any", "false"],
+    ["btnClass", "any", ""],
+    ["label", "any", ""],
+    ["spanClass", "any", ""],
+    ["ulClass", "any", ""],
+    ["transition", "any", "slide"],
+    ["params", "any", ""],
+    ["svgClass", "any", ""],
     ["class", "string", ""],
-    ["onclick", "() => void", ""]
+    ["onclick", "any", ""]
   ]
 }

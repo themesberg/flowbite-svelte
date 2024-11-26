@@ -12,9 +12,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: value: number | string = $bindable();
-@props:appearance: "auto" | "none" | undefined = "none";
-@props:color: "gray" | "red" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined = "blue";
-@props:rangeSize: "sm" | "md" | "lg" = "md";
-@props:inputClass: string;
+@props: value: any = $bindable();
+@props:appearance: any = "none";
+@props:color: any = "blue";
+@props:rangeSize: any = "md";
+@props:inputClass: any;
 -->

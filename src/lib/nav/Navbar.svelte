@@ -71,21 +71,21 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:navSlotBlock: Snippet;
-@props:navSlotHiddenTop: Snippet;
-@props:navSlotHiddenBottom: Snippet;
-@props:toggleNav: () => void;
-@props:closeNav: () => void = ();
-@props:navStatus: boolean | undefined;
-@props:fluid: boolean;
-@props:brand: Snippet;
-@props:hamburgerMenu: boolean = true;
-@props:breakPoint: navbarType["breakPoint"] = "md";
-@props:navClass: string;
-@props:divClass: string;
-@props:btnClass: string;
-@props:div2Class: string;
-@props:activeClass: string;
-@props:nonActiveClass: string;
+@props: children: any;
+@props:navSlotBlock: any;
+@props:navSlotHiddenTop: any;
+@props:navSlotHiddenBottom: any;
+@props:toggleNav: any;
+@props:closeNav: any = ();
+@props:navStatus: any;
+@props:fluid: any;
+@props:brand: any;
+@props:hamburgerMenu: any = true;
+@props:breakPoint: any = "md";
+@props:navClass: any;
+@props:divClass: any;
+@props:btnClass: any;
+@props:div2Class: any;
+@props:activeClass: any;
+@props:nonActiveClass: any;
 -->

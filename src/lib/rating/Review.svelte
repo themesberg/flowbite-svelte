@@ -77,18 +77,17 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:address: Snippet;
-@props:item1: Snippet;
-@props:item2: Snippet;
-@props:item3: Snippet;
-@props:review: {
-  name?: string;
-@props:articleClass: string;
-@props:divClass: string;
-@props:div2Class: string;
-@props:div3Class: string;
-@props:imgClass: string;
-@props:ulClass: string;
-@props:liClass: string;
+@props: children: any;
+@props:address: any;
+@props:item1: any;
+@props:item2: any;
+@props:item3: any;
+@props:review: any;
+@props:articleClass: any;
+@props:divClass: any;
+@props:div2Class: any;
+@props:div3Class: any;
+@props:imgClass: any;
+@props:ulClass: any;
+@props:liClass: any;
 -->

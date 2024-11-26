@@ -1,13 +1,13 @@
 {
   "name": "FooterBrand",
   "props": [
-    ["children", "Snippet", ""],
-    ["aClass", "string", ""],
-    ["spanClass", "string", ""],
-    ["imgClass", "string", ""],
-    ["href", "string", ""],
-    ["src", "string", ""],
-    ["alt", "string", ""],
-    ["name", "string", ""]
+    ["children", "any", ""],
+    ["aClass", "any", ""],
+    ["spanClass", "any", ""],
+    ["imgClass", "any", ""],
+    ["href", "any", ""],
+    ["src", "any", ""],
+    ["alt", "any", ""],
+    ["name", "any", ""]
   ]
 }

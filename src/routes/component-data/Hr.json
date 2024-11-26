@@ -1,9 +1,9 @@
 {
   "name": "Hr",
   "props": [
-    ["children", "Snippet", ""],
-    ["divClass", "string", ""],
-    ["hrClass", "string", ""],
-    ["innerDivClass", "string", ""]
+    ["children", "any", ""],
+    ["divClass", "any", ""],
+    ["hrClass", "any", ""],
+    ["innerDivClass", "any", ""]
   ]
 }

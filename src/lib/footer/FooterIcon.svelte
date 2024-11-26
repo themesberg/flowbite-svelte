@@ -18,8 +18,8 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:href: string;
-@props:ariaLabel: string;
+@props: children: any;
+@props:href: any;
+@props:ariaLabel: any;
 @props:class: string;
 -->

@@ -1,7 +1,7 @@
 {
   "name": "MegaMenu",
   "props": [
-    ["children", "Snippet<[{ item: LinkType", ""],
+    ["children", "any", ""],
     ["footer", "any", ""],
     ["items", "any", "[]"],
     ["full", "any", ""],

@@ -27,12 +27,12 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:color: "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined = "primary";
-@props:cornerStyle: "rounded" | "circular" = "circular";
-@props:size: "md" | "sm" | "lg" | "xl" | "xs" | undefined = "md";
-@props:border: boolean = false;
-@props:placement: "top-left" | "top-center" | "top-right" | "center-left" | "center-right" | "bottom-left" | "bottom-center" | "bottom-right" | "default" | "center" | undefined | undefined;
-@props:offset: boolean = true;
+@props: children: any;
+@props:color: any = "primary";
+@props:cornerStyle: any = "circular";
+@props:size: any = "md";
+@props:border: any = false;
+@props:placement: any;
+@props:offset: any = true;
 @props:class: string;
 -->

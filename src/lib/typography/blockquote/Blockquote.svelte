@@ -23,11 +23,11 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
+@props: children: any;
 @props:class: string;
-@props:border: boolean;
-@props:italic: boolean = true;
-@props:bg: boolean;
-@props:alignment: "left" | "center" | "right" | undefined = "left";
-@props:size: "sm" | "lg" | "xl" | "2xl" | "base" | "xs" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl" | undefined = "lg";
+@props:border: any;
+@props:italic: any = true;
+@props:bg: any;
+@props:alignment: any = "left";
+@props:size: any = "lg";
 -->

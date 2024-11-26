@@ -42,9 +42,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:tabStyle: "full" | "pill" | "underline" | "none" = "none";
-@props:ulClass: string;
-@props:contentClass: string;
-@props:divider: boolean = true;
+@props: children: any;
+@props:tabStyle: any = "none";
+@props:ulClass: any;
+@props:contentClass: any;
+@props:divider: any = true;
 -->

@@ -1,16 +1,16 @@
 {
   "name": "Popover",
   "props": [
-    ["children", "Snippet", ""],
-    ["titleSlot", "Snippet | string", ""],
-    ["color", "\"default\" | \"primary\" | \"secondary\" | \"gray\" | \"red\" | \"orange\" | \"amber\" | \"yellow\" | \"lime\" | \"green\" | \"emerald\" | \"teal\" | \"cyan\" | \"sky\" | \"blue\" | \"indigo\" | \"violet\" | \"purple\" | \"fuchsia\" | \"pink\" | \"rose\" | undefined", "\"default\""],
-    ["arrow", "boolean", "true"],
-    ["offset", "number", "0"],
-    ["triggeredBy", "string", ""],
-    ["position", "\"top\" | \"bottom\" | \"left\" | \"right\" | \"right-start\" | \"right-end\" | \"left-start\" | \"left-end\" | \"top-start\" | \"top-end\" | \"bottom-start\" | \"bottom-end\"", "\"top\""],
+    ["children", "any", ""],
+    ["titleSlot", "any", ""],
+    ["color", "any", "\"default\""],
+    ["arrow", "any", "true"],
+    ["offset", "any", "0"],
+    ["triggeredBy", "any", ""],
+    ["position", "any", "\"top\""],
     ["class", "string", ""],
-    ["reference", "string", ""],
-    ["transition", "TransitionFunc", "fade"],
-    ["params", "ParamsType | undefined", ""]
+    ["reference", "any", ""],
+    ["transition", "any", "fade"],
+    ["params", "any", ""]
   ]
 }

@@ -68,16 +68,16 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:icon: Snippet;
-@props:alertStatus: boolean = $bindable(true);
-@props:closeIcon: boolean;
-@props:color: "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" = "primary";
-@props:rounded: boolean = true;
-@props:border: boolean;
+@props: children: any;
+@props:icon: any;
+@props:alertStatus: any = $bindable(true);
+@props:closeIcon: any;
+@props:color: any = "primary";
+@props:rounded: any = true;
+@props:border: any;
 @props:class: string;
-@props:dismissable: boolean;
-@props:transition: TransitionFunc = fade;
-@props:params: ParamsType;
-@props:onclick: () => void;
+@props:dismissable: any;
+@props:transition: any = fade;
+@props:params: any;
+@props:onclick: any;
 -->

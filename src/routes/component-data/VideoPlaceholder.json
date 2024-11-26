@@ -1,7 +1,7 @@
 {
   "name": "VideoPlaceholder",
   "props": [
-    ["size", "\"sm\" | \"md\" | \"lg\" | \"xl\" | \"2xl\" | undefined", "\"sm\""],
+    ["size", "any", "\"sm\""],
     ["class", "string", ""]
   ]
 }

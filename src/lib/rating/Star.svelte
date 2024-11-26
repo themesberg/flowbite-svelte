@@ -34,13 +34,13 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: fillPercent: number = 100;
-@props:fillColor: string = "#F5CA14";
-@props:strokeColor: string = "#F5CA14";
-@props:size: number = 24;
-@props:ariaLabel: string = "star";
-@props:iconIndex: number = 0;
-@props:groupId: string = "star";
-@props:role: string = "img";
-@props:svgClass: string;
+@props: fillPercent: any = 100;
+@props:fillColor: any = "#F5CA14";
+@props:strokeColor: any = "#F5CA14";
+@props:size: any = 24;
+@props:ariaLabel: any = "star";
+@props:iconIndex: any = 0;
+@props:groupId: any = "star";
+@props:role: any = "img";
+@props:svgClass: any;
 -->

@@ -1,17 +1,17 @@
 {
   "name": "Toast",
   "props": [
-    ["children", "Snippet", ""],
-    ["icon", "Snippet", ""],
-    ["toastStatus", "boolean", "$bindable(true)"],
-    ["dismissable", "boolean", "true"],
-    ["color", "\"primary\" | \"gray\" | \"red\" | \"yellow\" | \"green\" | \"indigo\" | \"purple\" | \"pink\" | \"blue\" | \"orange\" | \"amber\" | \"lime\" | \"emerald\" | \"teal\" | \"cyan\" | \"sky\" | \"violet\" | \"fuchsia\" | \"rose\" | undefined", "\"primary\""],
-    ["position", "\"top-left\" | \"top-right\" | \"bottom-left\" | \"bottom-right\" | undefined", ""],
-    ["baseClass", "string", ""],
-    ["iconClass", "string", ""],
-    ["contentClass", "string", ""],
-    ["align", "boolean", "true"],
-    ["params", "ParamsType", ""],
-    ["transition", "TransitionFunc", "fly"]
+    ["children", "any", ""],
+    ["icon", "any", ""],
+    ["toastStatus", "any", "$bindable(true)"],
+    ["dismissable", "any", "true"],
+    ["color", "any", "\"primary\""],
+    ["position", "any", ""],
+    ["baseClass", "any", ""],
+    ["iconClass", "any", ""],
+    ["contentClass", "any", ""],
+    ["align", "any", "true"],
+    ["params", "any", ""],
+    ["transition", "any", "fly"]
   ]
 }

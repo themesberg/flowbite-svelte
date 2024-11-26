@@ -1,15 +1,15 @@
 {
   "name": "TimelineItem",
   "props": [
-    ["children", "Snippet", ""],
-    ["orientationSlot", "Snippet", ""],
-    ["title", "string", ""],
-    ["date", "string", ""],
-    ["dateFormat", "\"year\" | \"month-year\" | \"full-date\"", "\"month-year\""],
-    ["svgClass", "string", ""],
-    ["liClass", "string", ""],
-    ["divClass", "string", ""],
-    ["timeClass", "string", ""],
-    ["h3Class", "string", ""]
+    ["children", "any", ""],
+    ["orientationSlot", "any", ""],
+    ["title", "any", ""],
+    ["date", "any", ""],
+    ["dateFormat", "any", "\"month-year\""],
+    ["svgClass", "any", ""],
+    ["liClass", "any", ""],
+    ["divClass", "any", ""],
+    ["timeClass", "any", ""],
+    ["h3Class", "any", ""]
   ]
 }

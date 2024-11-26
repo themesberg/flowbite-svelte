@@ -1,14 +1,14 @@
 {
   "name": "Rating",
   "props": [
-    ["children", "Snippet", ""],
-    ["text", "Snippet", ""],
-    ["divClass", "string", ""],
-    ["size", "number", "24"],
-    ["total", "number", "5"],
-    ["rating", "number", "4"],
-    ["Icon", "Component", "Star"],
-    ["count", "boolean", "false"],
-    ["pClass", "string", ""]
+    ["children", "any", ""],
+    ["text", "any", ""],
+    ["divClass", "any", ""],
+    ["size", "any", "24"],
+    ["total", "any", "5"],
+    ["rating", "any", "4"],
+    ["Icon", "any", "Star"],
+    ["count", "any", "false"],
+    ["pClass", "any", ""]
   ]
 }

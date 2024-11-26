@@ -1,11 +1,11 @@
 {
   "name": "FooterCopyright",
   "props": [
-    ["spanClass", "string", ""],
-    ["aClass", "string", ""],
-    ["href", "string", ""],
-    ["by", "string", ""],
-    ["copyrightMessage", "string", "\"All Rights Reserved.\""],
-    ["year", "number | undefined", ""]
+    ["spanClass", "any", ""],
+    ["aClass", "any", ""],
+    ["href", "any", ""],
+    ["by", "any", ""],
+    ["copyrightMessage", "any", "\"All Rights Reserved.\""],
+    ["year", "any", ""]
   ]
 }

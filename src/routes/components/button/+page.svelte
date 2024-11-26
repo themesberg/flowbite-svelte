@@ -1,12 +1,11 @@
 <script lang="ts">
-  import { type Component } from "svelte";
   import { Button, GradientButton, gradientButton, button, Radio, Label, uiHelpers, type ButtonProps, type GradientButtonProps, type RadioColorType } from "$lib";
   import HighlightCompo from "../../utils/HighlightCompo.svelte";
   import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../../utils/CodeWrapper.svelte";
   import H1 from "../../utils/H1.svelte";
   import H2 from "../../utils/H2.svelte";
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
+  import { isGeneratedCodeOverflow } from "../../utils/helpers";
   // for Props table
   import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
   const dirName = "buttons";
@@ -19,23 +18,6 @@
     import: "default",
     eager: true
   }) as Record<string, string>;
-
-  const exampleArr = [
-    { name: "Button with Icon", component: ExampleComponents.ButtonWithIcon },
-    { name: "Button with label", component: ExampleComponents.ButtonWithLabel },
-    { name: "Events", component: ExampleComponents.Events },
-    { name: "Icon buttons", component: ExampleComponents.IconButtons },
-    { name: "Loader", component: ExampleComponents.Loader }
-  ];
-  let selectedExample: string | number = $state(exampleArr[0].name);
-  let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
-
-  function findObject(arr: { name: string; component: Component }[], name: string) {
-    const matchingObject = arr.find((obj) => obj.name === name);
-    return matchingObject ? matchingObject.component : null;
-  }
-  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
-  // end of dynamic svelte component
 
   // color, size, group, outline, shadow, disabled, pill
   const btnColors = Object.keys(button.variants.color);
@@ -144,18 +126,8 @@
   const handleBuilderExpandClick = () => {
     builderExpand = !builderExpand;
   };
-  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the svelteCode content.
 
-  // for examples DynamicCodeBlockHighlight
-  let codeBlock = uiHelpers();
-  let exampleExpand = $state(false);
-  let showExpandButton = $derived(isSvelteOverflow(svelteCode, exampleModules));
-  const handleExpandClick = () => {
-    exampleExpand = !exampleExpand;
-  };
-  // end of DynamicCodeBlock setup
   $effect(() => {
-    exampleExpand = codeBlock.isOpen;
     builderExpand = builder.isOpen;
   });
 </script>
@@ -227,18 +199,43 @@
   {/snippet}
 </CodeWrapper>
 
-<H2>Examples</H2>
-
+<H2>Button with icon</H2>
 <CodeWrapper>
-  <div class="mb-12 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Example</Label>
-    {#each exampleArr as style}
-      <Radio labelClass="w-40 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
-    {/each}
-  </div>
-  <SelectedComponent />
+  <ExampleComponents.ButtonWithIcon />
   {#snippet codeblock()}
-    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${svelteCode}`] as string} />
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/ButtonWithIcon.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Button with label</H2>
+<CodeWrapper>
+  <ExampleComponents.ButtonWithLabel />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/ButtonWithLabel.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Events</H2>
+<CodeWrapper>
+  <ExampleComponents.Events />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Events.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Icon buttons</H2>
+<CodeWrapper>
+  <ExampleComponents.IconButtons />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/IconButtons.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Loader</H2>
+<CodeWrapper>
+  <ExampleComponents.Loader />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Loader.svelte"] as string} />
   {/snippet}
 </CodeWrapper>
 

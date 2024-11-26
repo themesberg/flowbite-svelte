@@ -26,7 +26,7 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:activeUrl: string = "";
+@props: children: any;
+@props:activeUrl: any = "";
 @props:class: string;
 -->

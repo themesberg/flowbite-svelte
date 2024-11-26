@@ -24,10 +24,10 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:flush: boolean;
-@props:activeClass: string;
-@props:inactiveClass: string;
-@props:isSingle: boolean = true;
+@props: children: any;
+@props:flush: any;
+@props:activeClass: any;
+@props:inactiveClass: any;
+@props:isSingle: any = true;
 @props:class: string;
 -->

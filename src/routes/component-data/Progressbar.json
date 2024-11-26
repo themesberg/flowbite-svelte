@@ -1,19 +1,19 @@
 {
   "name": "Progressbar",
   "props": [
-    ["progress", "string | number", "\"45\""],
-    ["precision", "number", "0"],
-    ["tweenDuration", "number", "400"],
-    ["animate", "boolean", "false"],
-    ["size", "string", "\"h-2.5\""],
-    ["labelInside", "boolean", "false"],
-    ["labelOutside", "string", "\"\""],
-    ["easing", "EasingFunction", "cubicOut"],
-    ["color", "\"primary\" | \"gray\" | \"red\" | \"orange\" | \"amber\" | \"yellow\" | \"lime\" | \"green\" | \"emerald\" | \"teal\" | \"cyan\" | \"sky\" | \"blue\" | \"indigo\" | \"violet\" | \"purple\" | \"fuchsia\" | \"pink\" | \"rose\" | undefined", "\"primary\""],
-    ["div2Class", "string", ""],
-    ["oustsideSpanClass", "string", ""],
-    ["oustsideProgressClass", "string", ""],
-    ["labeloutsidedivClass", "string", ""],
-    ["divClass", "string", ""]
+    ["progress", "any", "\"45\""],
+    ["precision", "any", "0"],
+    ["tweenDuration", "any", "400"],
+    ["animate", "any", "false"],
+    ["size", "any", "\"h-2.5\""],
+    ["labelInside", "any", "false"],
+    ["labelOutside", "any", "\"\""],
+    ["easing", "any", "cubicOut"],
+    ["color", "any", "\"primary\""],
+    ["div2Class", "any", ""],
+    ["oustsideSpanClass", "any", ""],
+    ["oustsideProgressClass", "any", ""],
+    ["labeloutsidedivClass", "any", ""],
+    ["divClass", "any", ""]
   ]
 }

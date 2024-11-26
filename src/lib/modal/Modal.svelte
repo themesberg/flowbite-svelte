@@ -74,28 +74,28 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: children: Snippet;
-@props:header: Snippet;
-@props:footer: Snippet;
-@props:title: string;
-@props:modalStatus: boolean;
-@props:dismissable: boolean = true;
-@props:closeModal: () => void;
-@props:divClass: string;
-@props:contentClass: string;
-@props:closeBtnClass: string;
-@props:h3Class: string;
-@props:headerClass: string;
-@props:bodyClass: string;
-@props:footerClass: string;
-@props:outsideClose: boolean = true;
-@props:size: "md" | "sm" | "lg" | "xl" | "xs" | undefined = "md";
-@props:backdrop: boolean = true;
-@props:backdropClass: string;
-@props:position: "top-left" | "top-center" | "top-right" | "center-left" | "center" | "center-right" | "bottom-left" | "bottom-center" | "bottom-right" | "default" | undefined = "center";
+@props: children: any;
+@props:header: any;
+@props:footer: any;
+@props:title: any;
+@props:modalStatus: any;
+@props:dismissable: any = true;
+@props:closeModal: any;
+@props:divClass: any;
+@props:contentClass: any;
+@props:closeBtnClass: any;
+@props:h3Class: any;
+@props:headerClass: any;
+@props:bodyClass: any;
+@props:footerClass: any;
+@props:outsideClose: any = true;
+@props:size: any = "md";
+@props:backdrop: any = true;
+@props:backdropClass: any;
+@props:position: any = "center";
 @props:class: string;
-@props:params: ParamsType = { duration: 100;
+@props:params: any = { duration: 100;
 @props:easing: any;
-@props:transition: TransitionFunc = fade;
-@props:rounded: boolean = true;
+@props:transition: any = fade;
+@props:rounded: any = true;
 -->

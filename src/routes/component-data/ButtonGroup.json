@@ -1,8 +1,8 @@
 {
   "name": "ButtonGroup",
   "props": [
-    ["children", "Snippet", ""],
-    ["size", "\"sm\" | \"md\" | \"lg\" | undefined", "\"md\""],
+    ["children", "any", ""],
+    ["size", "any", "\"md\""],
     ["class", "string", ""]
   ]
 }

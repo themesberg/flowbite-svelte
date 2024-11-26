@@ -1,20 +1,20 @@
 {
   "name": "Badge",
   "props": [
-    ["children", "Snippet", ""],
-    ["icon", "Snippet", ""],
-    ["badgeStatus", "boolean", "$bindable(true)"],
-    ["color", "\"primary\" | \"secondary\" | \"gray\" | \"red\" | \"orange\" | \"amber\" | \"yellow\" | \"lime\" | \"green\" | \"emerald\" | \"teal\" | \"cyan\" | \"sky\" | \"blue\" | \"indigo\" | \"violet\" | \"purple\" | \"fuchsia\" | \"pink\" | \"rose\"", "\"primary\""],
-    ["large", "boolean", "false"],
-    ["dismissable", "boolean", "false"],
+    ["children", "any", ""],
+    ["icon", "any", ""],
+    ["badgeStatus", "any", "$bindable(true)"],
+    ["color", "any", "\"primary\""],
+    ["large", "any", "false"],
+    ["dismissable", "any", "false"],
     ["class", "string", ""],
-    ["border", "boolean", ""],
-    ["href", "HTMLAnchorAttributes[\"href\"]", ""],
-    ["target", "HTMLAnchorAttributes[\"target\"]", ""],
-    ["rounded", "boolean", ""],
-    ["transition", "TransitionFunc", "fade"],
-    ["params", "ParamsType", ""],
-    ["aClass", "string", ""],
-    ["onclick", "() => void", ""]
+    ["border", "any", ""],
+    ["href", "any", ""],
+    ["target", "any", ""],
+    ["rounded", "any", ""],
+    ["transition", "any", "fade"],
+    ["params", "any", ""],
+    ["aClass", "any", ""],
+    ["onclick", "any", ""]
   ]
 }

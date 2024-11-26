@@ -1,17 +1,17 @@
 {
   "name": "Avatar",
   "props": [
-    ["children", "Snippet", ""],
-    ["src", "string", ""],
-    ["href", "HTMLAnchorAttributes[\"href\"]", ""],
-    ["target", "HTMLAnchorAttributes[\"target\"]", ""],
-    ["cornerStyle", "\"rounded\" | \"circular\"", "\"circular\""],
-    ["border", "boolean", "false"],
-    ["stacked", "boolean", "false"],
-    ["dot", "object | undefined", ""],
+    ["children", "any", ""],
+    ["src", "any", ""],
+    ["href", "any", ""],
+    ["target", "any", ""],
+    ["cornerStyle", "any", "\"circular\""],
+    ["border", "any", "false"],
+    ["stacked", "any", "false"],
+    ["dot", "any", ""],
     ["class", "string", ""],
-    ["alt", "string", ""],
-    ["size", "\"xs\" | \"sm\" | \"md\" | \"lg\" | \"xl\"", "\"md\""],
-    ["onclick", "() => void", ""]
+    ["alt", "any", ""],
+    ["size", "any", "\"md\""],
+    ["onclick", "any", ""]
   ]
 }
