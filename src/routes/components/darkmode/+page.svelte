@@ -1,12 +1,8 @@
 <script lang="ts">
-  import { type Component } from "svelte";
-  import { uiHelpers, Label, Radio } from "$lib";
   import HighlightCompo from "../../utils/HighlightCompo.svelte";
-  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../../utils/CodeWrapper.svelte";
   import H1 from "../../utils/H1.svelte";
   import H2 from "../../utils/H2.svelte";
-  import { isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
   import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
   const dirName = "darkmode";
@@ -22,33 +18,6 @@
     import: "default",
     eager: true
   }) as Record<string, string>;
-
-  const exampleArr = [
-    { name: "Default", component: ExampleComponents.Default },
-    { name: "Icon", component: ExampleComponents.Icon },
-    { name: "Style", component: ExampleComponents.Style }
-  ];
-  let selectedExample: string | number = $state(exampleArr[0].name);
-  let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
-
-  function findObject(arr: { name: string; component: Component }[], name: string) {
-    const matchingObject = arr.find((obj) => obj.name === name);
-    return matchingObject ? matchingObject.component : null;
-  }
-  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
-  // end of dynamic svelte component
-
-  // for examples DynamicCodeBlockHighlight
-  let codeBlock = uiHelpers();
-  let exampleExpand = $state(false);
-  let showExpandButton = $derived(isSvelteOverflow(svelteCode, exampleModules));
-  const handleExpandClick = () => {
-    exampleExpand = !exampleExpand;
-  };
-  // end of DynamicCodeBlock setup
-  $effect(() => {
-    exampleExpand = codeBlock.isOpen;
-  });
 </script>
 
 <H1>Darkmode</H1>
@@ -63,18 +32,27 @@ Add the following to `app.html`:
 
 <HighlightCompo code={modules["./md/initialtheme.md"] as string} />
 
-<H2>Examples</H2>
-
+<H2>Default</H2>
 <CodeWrapper>
-  <div class="mb-8 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Example</Label>
-    {#each exampleArr as style}
-      <Radio labelClass="w-24 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
-    {/each}
-  </div>
-  <SelectedComponent />
+  <ExampleComponents.Default />
   {#snippet codeblock()}
-    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${svelteCode}`] as string} />
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Default.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Icon</H2>
+<CodeWrapper>
+  <ExampleComponents.Icon />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Icon.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Style</H2>
+<CodeWrapper>
+  <ExampleComponents.Style />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Style.svelte"] as string} />
   {/snippet}
 </CodeWrapper>
 
