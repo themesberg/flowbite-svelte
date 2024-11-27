@@ -1,12 +1,11 @@
 <script lang="ts">
-  import { type Component } from "svelte";
   import { Button, Tooltip, tooltip, Radio, Label, uiHelpers, type RadioColorType, type TooltipProps } from "$lib";
   import HighlightCompo from "../../utils/HighlightCompo.svelte";
   import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../../utils/CodeWrapper.svelte";
   import H1 from "../../utils/H1.svelte";
   import H2 from "../../utils/H2.svelte";
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
+  import { isGeneratedCodeOverflow } from "../../utils/helpers";
   // Props table
   import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
   const dirName = "tooltip";
@@ -17,22 +16,6 @@
     import: "default",
     eager: true
   }) as Record<string, string>;
-
-  const exampleArr = [
-    { name: "Show on click", component: ExampleComponents.ShowOnClick },
-    { name: "External control", component: ExampleComponents.ExternalControl },
-    { name: "External reference", component: ExampleComponents.ExternalReference },
-    { name: "Inline", component: ExampleComponents.Inline }
-  ];
-  let selectedExample: string | number = $state(exampleArr[0].name);
-  let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
-
-  function findObject(arr: { name: string; component: Component }[], name: string) {
-    const matchingObject = arr.find((obj) => obj.name === name);
-    return matchingObject ? matchingObject.component : null;
-  }
-  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
-  // end of dynamic svelte component
 
   // for interactive code builder
   const positions = Object.keys(tooltip.variants.position);
@@ -82,18 +65,8 @@
   const handleBuilderExpandClick = () => {
     builderExpand = !builderExpand;
   };
-  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the svelteCode content.
 
-  // for examples DynamicCodeBlockHighlight
-  let codeBlock = uiHelpers();
-  let exampleExpand = $state(false);
-  let showExpandButton = $derived(isSvelteOverflow(svelteCode, exampleModules));
-  const handleExpandClick = () => {
-    exampleExpand = !exampleExpand;
-  };
-  // end of DynamicCodeBlock setup
   $effect(() => {
-    exampleExpand = codeBlock.isOpen;
     builderExpand = builder.isOpen;
   });
 </script>
@@ -135,18 +108,35 @@
   {/snippet}
 </CodeWrapper>
 
-<H2>Examples</H2>
-
+<H2>Show on click</H2>
 <CodeWrapper>
-  <div class="mb-12 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Example</Label>
-    {#each exampleArr as style}
-      <Radio labelClass="w-40 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
-    {/each}
-  </div>
-  <SelectedComponent />
+  <ExampleComponents.ShowOnClick />
   {#snippet codeblock()}
-    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${svelteCode}`] as string} />
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/ShowOnClick.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>External control</H2>
+<CodeWrapper>
+  <ExampleComponents.ExternalControl />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/ExternalControl.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>External reference</H2>
+<CodeWrapper>
+  <ExampleComponents.ExternalReference />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/ExternalReference.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Inline</H2>
+<CodeWrapper>
+  <ExampleComponents.Inline />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Inline.svelte"] as string} />
   {/snippet}
 </CodeWrapper>
 

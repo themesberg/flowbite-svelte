@@ -1,11 +1,8 @@
 <script lang="ts">
-  import { type Component } from "svelte";
-  import { Label, Radio, uiHelpers } from "$lib";
-  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
   import CodeWrapper from "../../utils/CodeWrapper.svelte";
   import H1 from "../../utils/H1.svelte";
   import H2 from "../../utils/H2.svelte";
-  import { isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
   import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
   const dirName = "timeline";
@@ -17,50 +14,55 @@
     import: "default",
     eager: true
   }) as Record<string, string>;
-
-  const exampleArr = [
-    { name: "Default timeline", component: ExampleComponents.DefaultTimeline },
-    { name: "Date format", component: ExampleComponents.DateFormat },
-    { name: "Vertical timeline", component: ExampleComponents.VerticalTimeline },
-    { name: "Horizontal timeline", component: ExampleComponents.HorizontalTimeline },
-    { name: "Activity log", component: ExampleComponents.ActivityLog },
-    { name: "Grouped timeline", component: ExampleComponents.GroupedTimeline }
-  ];
-  let selectedExample: string | number = $state(exampleArr[0].name);
-  let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
-
-  function findObject(arr: { name: string; component: Component }[], name: string) {
-    const matchingObject = arr.find((obj) => obj.name === name);
-    return matchingObject ? matchingObject.component : null;
-  }
-  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
-  // end of dynamic svelte component
-
-  // for examples DynamicCodeBlockHighlight
-  let codeBlock = uiHelpers();
-  let exampleExpand = $state(false);
-  let showExpandButton = $derived(isSvelteOverflow(svelteCode, exampleModules));
-  const handleExpandClick = () => {
-    exampleExpand = !exampleExpand;
-  };
-  // end of DynamicCodeBlock setup
-  $effect(() => {
-    exampleExpand = codeBlock.isOpen;
-  });
 </script>
 
 <H1>Timeline</H1>
 
+<H2>Default timeline</H2>
 <CodeWrapper>
-  <div class="mb-8 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Example</Label>
-    {#each exampleArr as style}
-      <Radio labelClass="w-40 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
-    {/each}
-  </div>
-  <SelectedComponent />
+  <ExampleComponents.DefaultTimeline />
   {#snippet codeblock()}
-    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${svelteCode}`] as string} />
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/DefaultTimeline.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Date format</H2>
+<CodeWrapper>
+  <ExampleComponents.DateFormat />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/DateFormat.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Vertical timeline</H2>
+<CodeWrapper>
+  <ExampleComponents.VerticalTimeline />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/VerticalTimeline.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Horizontal timeline</H2>
+<CodeWrapper>
+  <ExampleComponents.HorizontalTimeline />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/HorizontalTimeline.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Activity log</H2>
+<CodeWrapper>
+  <ExampleComponents.ActivityLog />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/ActivityLog.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Grouped timeline</H2>
+<CodeWrapper>
+  <ExampleComponents.GroupedTimeline />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/GroupedTimeline.svelte"] as string} />
   {/snippet}
 </CodeWrapper>
 

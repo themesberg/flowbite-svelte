@@ -1,12 +1,11 @@
 <script lang="ts">
-  import { type Component } from "svelte";
   import { Checkbox, checkbox, Helper, Label, Radio, Button, uiHelpers, type RadioColorType, type CheckboxProps } from "$lib";
   import HighlightCompo from "../../utils/HighlightCompo.svelte";
   import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../../utils/CodeWrapper.svelte";
   import H1 from "../../utils/H1.svelte";
   import H2 from "../../utils/H2.svelte";
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
+  import { isGeneratedCodeOverflow } from "../../utils/helpers";
   // for Props table
   import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
   const dirName = "forms/checkbox";
@@ -18,28 +17,6 @@
     import: "default",
     eager: true
   }) as Record<string, string>;
-
-  const exampleArr = [
-    { name: "Bordered", component: ExampleComponents.Bordered },
-    { name: "Button", component: ExampleComponents.Button },
-    { name: "Dropdown", component: ExampleComponents.Dropdown },
-    { name: "Group variable", component: ExampleComponents.GroupVariable },
-    { name: "Horizontal list", component: ExampleComponents.HorizontalList },
-    { name: "Inline layout", component: ExampleComponents.InlineLayout },
-    { name: "Link", component: ExampleComponents.Link },
-    { name: "List group", component: ExampleComponents.ListGroup },
-    { name: "Table", component: ExampleComponents.Table },
-    { name: "Advanced", component: ExampleComponents.Advanced }
-  ];
-  let selectedExample: string | number = $state(exampleArr[0].name);
-  let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
-
-  function findObject(arr: { name: string; component: Component }[], name: string) {
-    const matchingObject = arr.find((obj) => obj.name === name);
-    return matchingObject ? matchingObject.component : null;
-  }
-  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
-  // end of dynamic svelte component
 
   const colors = Object.keys(checkbox.variants.color);
   let checkboxColor: CheckboxProps["color"] = $state("primary");
@@ -86,18 +63,8 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ""}`;
   const handleBuilderExpandClick = () => {
     builderExpand = !builderExpand;
   };
-  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the svelteCode content.
 
-  // for examples DynamicCodeBlockHighlight
-  let codeBlock = uiHelpers();
-  let exampleExpand = $state(false);
-  let showExpandButton = $derived(isSvelteOverflow(svelteCode, exampleModules));
-  const handleExpandClick = () => {
-    exampleExpand = !exampleExpand;
-  };
-  // end of DynamicCodeBlock setup
   $effect(() => {
-    exampleExpand = codeBlock.isOpen;
     builderExpand = builder.isOpen;
   });
 </script>
@@ -134,18 +101,83 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ""}`;
   {/snippet}
 </CodeWrapper>
 
-<H2>Examples</H2>
-
+<H2>Bordered</H2>
 <CodeWrapper>
-  <div class="mb-8 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Example</Label>
-    {#each exampleArr as style}
-      <Radio labelClass="w-36 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
-    {/each}
-  </div>
-  <SelectedComponent />
+  <ExampleComponents.Bordered />
   {#snippet codeblock()}
-    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${svelteCode}`] as string} />
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Bordered.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Button</H2>
+<CodeWrapper>
+  <ExampleComponents.Button />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Button.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Dropdown</H2>
+<CodeWrapper>
+  <ExampleComponents.Dropdown />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Dropdown.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Group variable</H2>
+<CodeWrapper>
+  <ExampleComponents.GroupVariable />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/GroupVariable.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Horizontal list</H2>
+<CodeWrapper>
+  <ExampleComponents.HorizontalList />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/HorizontalList.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Inline layout</H2>
+<CodeWrapper>
+  <ExampleComponents.InlineLayout />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/InlineLayout.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Link</H2>
+<CodeWrapper>
+  <ExampleComponents.Link />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Link.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>List group</H2>
+<CodeWrapper>
+  <ExampleComponents.ListGroup />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/ListGroup.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Table</H2>
+<CodeWrapper>
+  <ExampleComponents.Table />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Table.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Advanced</H2>
+<CodeWrapper>
+  <ExampleComponents.Advanced />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Advanced.svelte"] as string} />
   {/snippet}
 </CodeWrapper>
 

@@ -1,11 +1,8 @@
 <script lang="ts">
-  import { type Component } from "svelte";
-  import { uiHelpers, Label, Radio } from "$lib";
-  import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
   import CodeWrapper from "../../utils/CodeWrapper.svelte";
   import H1 from "../../utils/H1.svelte";
   import H2 from "../../utils/H2.svelte";
-  import { isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
   // for Props table
   import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
   const dirName = "sidebar";
@@ -17,59 +14,135 @@
     import: "default",
     eager: true
   }) as Record<string, string>;
-
-  const exampleArr = [
-    { name: "Default", component: ExampleComponents.Default },
-    { name: "Animated icons", component: ExampleComponents.AnimatedIcons },
-    { name: "Close button", component: ExampleComponents.CloseButton },
-    { name: "Active class", component: ExampleComponents.ActiveClass },
-    { name: "Overriding active", component: ExampleComponents.OverridingActive },
-    { name: "Using object", component: ExampleComponents.UsingObject },
-    { name: "Multilevel", component: ExampleComponents.Multilevel },
-    { name: "Single selection", component: ExampleComponents.SingleSelection },
-    { name: "All open", component: ExampleComponents.AllOpen },
-    { name: "Content separator", component: ExampleComponents.ContentSeparator },
-    { name: "Icon", component: ExampleComponents.Icon },
-    { name: "Cta", component: ExampleComponents.Cta },
-    { name: "Logo branding", component: ExampleComponents.LogoBranding },
-    { name: "Branding with children", component: ExampleComponents.BrandingWithChildren },
-    { name: "Dropdown transition", component: ExampleComponents.DropdownTransition },
-    { name: "Static positioning", component: ExampleComponents.StaticPositioning }
-  ];
-  let selectedExample: string | number = $state(exampleArr[0].name);
-  let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
-
-  function findObject(arr: { name: string; component: Component }[], name: string) {
-    const matchingObject = arr.find((obj) => obj.name === name);
-    return matchingObject ? matchingObject.component : null;
-  }
-  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
-  // end of dynamic svelte component
-  // for examples DynamicCodeBlockHighlight
-  let codeBlock = uiHelpers();
-  let exampleExpand = $state(false);
-  let showExpandButton = $derived(isSvelteOverflow(svelteCode, exampleModules));
-  const handleExpandClick = () => {
-    exampleExpand = !exampleExpand;
-  };
-  // end of DynamicCodeBlock setup
-  $effect(() => {
-    exampleExpand = codeBlock.isOpen;
-  });
 </script>
 
 <H1>Sidebar</H1>
 
+<H2>Default</H2>
 <CodeWrapper>
-  <div class="mb-12 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Example</Label>
-    {#each exampleArr as style}
-      <Radio labelClass="w-48 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
-    {/each}
-  </div>
-  <SelectedComponent />
+  <ExampleComponents.Default />
   {#snippet codeblock()}
-    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${svelteCode}`] as string} />
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Default.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Animated icons</H2>
+<CodeWrapper>
+  <ExampleComponents.AnimatedIcons />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/AnimatedIcons.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Close button</H2>
+<CodeWrapper>
+  <ExampleComponents.CloseButton />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/CloseButton.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Active class</H2>
+<CodeWrapper>
+  <ExampleComponents.ActiveClass />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/ActiveClass.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Overriding active</H2>
+<CodeWrapper>
+  <ExampleComponents.OverridingActive />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/OverridingActive.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Using object</H2>
+<CodeWrapper>
+  <ExampleComponents.UsingObject />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/UsingObject.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Multilevel</H2>
+<CodeWrapper>
+  <ExampleComponents.Multilevel />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Multilevel.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Single selection</H2>
+<CodeWrapper>
+  <ExampleComponents.SingleSelection />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/SingleSelection.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>All open</H2>
+<CodeWrapper>
+  <ExampleComponents.AllOpen />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/AllOpen.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Content separator</H2>
+<CodeWrapper>
+  <ExampleComponents.ContentSeparator />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/ContentSeparator.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Icon</H2>
+<CodeWrapper>
+  <ExampleComponents.Icon />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Icon.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Cta</H2>
+<CodeWrapper>
+  <ExampleComponents.Cta />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Cta.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Logo branding</H2>
+<CodeWrapper>
+  <ExampleComponents.LogoBranding />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/LogoBranding.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Branding with children</H2>
+<CodeWrapper>
+  <ExampleComponents.BrandingWithChildren />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/BrandingWithChildren.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Dropdown transition</H2>
+<CodeWrapper>
+  <ExampleComponents.DropdownTransition />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/DropdownTransition.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Static positioning</H2>
+<CodeWrapper>
+  <ExampleComponents.StaticPositioning />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/StaticPositioning.svelte"] as string} />
   {/snippet}
 </CodeWrapper>
 

@@ -1,12 +1,11 @@
 <script lang="ts">
-  import { type Component } from "svelte";
   import { Table, table, uiHelpers, Label, Radio, Button, type RadioColorType, type TableProps } from "$lib";
   import DynamicCodeBlockHighlight from "../../utils/DynamicCodeBlockHighlight.svelte";
   import HighlightCompo from "../../utils/HighlightCompo.svelte";
   import CodeWrapper from "../../utils/CodeWrapper.svelte";
   import H1 from "../../utils/H1.svelte";
   import H2 from "../../utils/H2.svelte";
-  import { isGeneratedCodeOverflow, isSvelteOverflow, getExampleFileName } from "../../utils/helpers";
+  import { isGeneratedCodeOverflow } from "../../utils/helpers";
   // for Props table
   import CompoAttributesViewer from "../../utils/CompoAttributesViewer.svelte";
   const dirName = "table";
@@ -18,29 +17,6 @@
     import: "default",
     eager: true
   }) as Record<string, string>;
-
-  const exampleArr = [
-    { name: "Table items", component: ExampleComponents.TableItems },
-    { name: "Head body items", component: ExampleComponents.HeadBodyItems },
-    { name: "Cells", component: ExampleComponents.Cells },
-    { name: "Checkbox", component: ExampleComponents.Checkbox },
-    { name: "Search", component: ExampleComponents.Search },
-    { name: "Header slot", component: ExampleComponents.HeaderSlot },
-    { name: "Footer slot", component: ExampleComponents.FooterSlot },
-    { name: "Table caption", component: ExampleComponents.TableCaption },
-    { name: "Overflow", component: ExampleComponents.Overflow }
-    // { name: "Click double click", component: ExampleComponents.ClickDoubleClick }
-  ];
-
-  let selectedExample: string | number = $state(exampleArr[0].name);
-  let svelteCode = $derived(getExampleFileName(selectedExample, exampleArr));
-
-  function findObject(arr: { name: string; component: Component }[], name: string) {
-    const matchingObject = arr.find((obj) => obj.name === name);
-    return matchingObject ? matchingObject.component : null;
-  }
-  const SelectedComponent = $derived(findObject(exampleArr, selectedExample));
-  // end of dynamic svelte component
 
   let color: TableProps["color"] = $state("default");
   const colors = Object.keys(table.variants.color);
@@ -92,18 +68,8 @@
   const handleBuilderExpandClick = () => {
     builderExpand = !builderExpand;
   };
-  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the svelteCode content.
 
-  // for examples DynamicCodeBlockHighlight
-  let codeBlock = uiHelpers();
-  let exampleExpand = $state(false);
-  let showExpandButton = $derived(isSvelteOverflow(svelteCode, exampleModules));
-  const handleExpandClick = () => {
-    exampleExpand = !exampleExpand;
-  };
-  // end of DynamicCodeBlock setup
   $effect(() => {
-    exampleExpand = codeBlock.isOpen;
     builderExpand = builder.isOpen;
   });
 </script>
@@ -133,18 +99,75 @@
   {/snippet}
 </CodeWrapper>
 
-<H2>Examples</H2>
-
+<H2>Table items</H2>
 <CodeWrapper>
-  <div class="mb-12 flex flex-wrap">
-    <Label class="mb-4 w-full font-bold">Example</Label>
-    {#each exampleArr as style}
-      <Radio labelClass="w-40 my-1" onclick={() => (exampleExpand = false)} name="block_style" bind:group={selectedExample} value={style.name}>{style.name}</Radio>
-    {/each}
-  </div>
-  <SelectedComponent />
+  <ExampleComponents.TableItems />
   {#snippet codeblock()}
-    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} expand={exampleExpand} {showExpandButton} code={exampleModules[`./examples/${svelteCode}`] as string} />
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/TableItems.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Head body items</H2>
+<CodeWrapper>
+  <ExampleComponents.HeadBodyItems />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/HeadBodyItems.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Cells</H2>
+<CodeWrapper>
+  <ExampleComponents.Cells />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Cells.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Checkbox</H2>
+<CodeWrapper>
+  <ExampleComponents.Checkbox />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Checkbox.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Search</H2>
+<CodeWrapper>
+  <ExampleComponents.Search />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Search.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Header slot</H2>
+<CodeWrapper>
+  <ExampleComponents.HeaderSlot />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/HeaderSlot.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Footer slot</H2>
+<CodeWrapper>
+  <ExampleComponents.FooterSlot />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/FooterSlot.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Table caption</H2>
+<CodeWrapper>
+  <ExampleComponents.TableCaption />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/TableCaption.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Overflow</H2>
+<CodeWrapper>
+  <ExampleComponents.Overflow />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Overflow.svelte"] as string} />
   {/snippet}
 </CodeWrapper>
 
