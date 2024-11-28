@@ -1,7 +1,14 @@
 <script lang="ts">
+  import { getContext } from 'svelte';
   import { type HrProps as Props, hr } from "./index";
 
   let { children, divClass, hrClass, innerDivClass, ...restProps }: Props = $props();
+
+  // Get merged theme from context
+  const context = getContext<Record<string, any>>("themeConfig");
+  
+  // Use context theme if available, otherwise fallback to default
+  const usedHr = context?.hr || hr;
 
   let { base, container, content } = $derived(hr({ withChildren: !!children }));
 </script>
