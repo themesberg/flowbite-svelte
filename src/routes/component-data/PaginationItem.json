@@ -1,0 +1,10 @@
+{
+  "name": "PaginationItem",
+  "props": [
+    ["children", "any", ""],
+    ["size", "any", ""],
+    ["class", "string", ""],
+    ["href", "any", ""],
+    ["active", "any", ""]
+  ]
+}

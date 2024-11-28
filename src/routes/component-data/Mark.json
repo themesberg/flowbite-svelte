@@ -1,0 +1,7 @@
+{
+  "name": "Mark",
+  "props": [
+    ["children", "any", ""],
+    ["class", "string", ""]
+  ]
+}

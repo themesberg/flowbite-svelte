@@ -1,0 +1,7 @@
+{
+  "name": "SidebarButton",
+  "props": [
+    ["breakpoint", "any", "\"md\""],
+    ["class", "string", ""]
+  ]
+}

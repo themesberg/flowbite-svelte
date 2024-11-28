@@ -1,0 +1,10 @@
+{
+  "name": "Drawerhead",
+  "props": [
+    ["closeIcon", "any", ""],
+    ["children", "any", ""],
+    ["buttonClass", "any", ""],
+    ["svgClass", "any", ""],
+    ["class", "string", ""]
+  ]
+}

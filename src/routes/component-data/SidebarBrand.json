@@ -1,0 +1,10 @@
+{
+  "name": "SidebarBrand",
+  "props": [
+    ["children", "any", ""],
+    ["site", "any", ""],
+    ["imgClass", "any", ""],
+    ["spanClass", "any", ""],
+    ["class", "string", ""]
+  ]
+}

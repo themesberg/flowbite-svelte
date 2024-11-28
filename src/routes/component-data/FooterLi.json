@@ -1,0 +1,9 @@
+{
+  "name": "FooterLi",
+  "props": [
+    ["children", "any", ""],
+    ["liClass", "any", ""],
+    ["aClass", "any", ""],
+    ["href", "any", ""]
+  ]
+}

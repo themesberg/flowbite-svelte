@@ -1,0 +1,11 @@
+{
+  "name": "Accordion",
+  "props": [
+    ["children", "any", ""],
+    ["flush", "any", ""],
+    ["activeClass", "any", ""],
+    ["inactiveClass", "any", ""],
+    ["isSingle", "any", "true"],
+    ["class", "string", ""]
+  ]
+}

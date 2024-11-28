@@ -1,0 +1,7 @@
+{
+  "name": "FooterUl",
+  "props": [
+    ["class", "string", ""],
+    ["children", "any", ""]
+  ]
+}

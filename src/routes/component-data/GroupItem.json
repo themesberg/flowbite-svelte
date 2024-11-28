@@ -1,0 +1,11 @@
+{
+  "name": "GroupItem",
+  "props": [
+    ["timelines", "any", ""],
+    ["aClass", "any", ""],
+    ["imgClass", "any", ""],
+    ["divClass", "any", ""],
+    ["titleClass", "any", ""],
+    ["spanClass", "any", ""]
+  ]
+}

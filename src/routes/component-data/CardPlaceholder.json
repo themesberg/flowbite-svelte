@@ -1,0 +1,7 @@
+{
+  "name": "CardPlaceholder",
+  "props": [
+    ["size", "any", "\"sm\""],
+    ["class", "string", ""]
+  ]
+}

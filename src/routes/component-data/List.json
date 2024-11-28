@@ -1,0 +1,11 @@
+{
+  "name": "List",
+  "props": [
+    ["children", "any", ""],
+    ["tag", "any", "\"ul\""],
+    ["isContenteditable", "any", "false"],
+    ["position", "any", "\"inside\""],
+    ["ctxClass", "any", ""],
+    ["class", "string", ""]
+  ]
+}

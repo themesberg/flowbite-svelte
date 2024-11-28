@@ -1,0 +1,7 @@
+{
+  "name": "NavHamburger",
+  "props": [
+    ["toggleNav", "any", ""],
+    ["class", "string", ""]
+  ]
+}

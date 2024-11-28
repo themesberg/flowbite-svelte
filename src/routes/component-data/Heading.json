@@ -1,0 +1,8 @@
+{
+  "name": "Heading",
+  "props": [
+    ["children", "any", ""],
+    ["tag", "any", "\"h1\""],
+    ["class", "string", ""]
+  ]
+}

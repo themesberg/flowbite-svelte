@@ -1,0 +1,8 @@
+{
+  "name": "NavUl",
+  "props": [
+    ["children", "any", ""],
+    ["activeUrl", "any", "\"\""],
+    ["class", "string", ""]
+  ]
+}

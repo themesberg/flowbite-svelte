@@ -1,0 +1,10 @@
+{
+  "name": "Group",
+  "props": [
+    ["children", "any", ""],
+    ["divClass", "any", ""],
+    ["timeClass", "any", ""],
+    ["date", "any", ""],
+    ["olClass", "any", ""]
+  ]
+}

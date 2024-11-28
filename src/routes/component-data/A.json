@@ -1,0 +1,8 @@
+{
+  "name": "A",
+  "props": [
+    ["children", "any", ""],
+    ["color", "any", "\"primary\""],
+    ["class", "string", ""]
+  ]
+}

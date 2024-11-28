@@ -1,0 +1,10 @@
+{
+  "name": "Desktop",
+  "props": [
+    ["children", "any", ""],
+    ["divClass", "any", ""],
+    ["div2Class", "any", ""],
+    ["div3Class", "any", ""],
+    ["div4Class", "any", ""]
+  ]
+}

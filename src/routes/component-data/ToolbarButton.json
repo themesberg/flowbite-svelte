@@ -1,0 +1,13 @@
+{
+  "name": "ToolbarButton",
+  "props": [
+    ["children", "any", ""],
+    ["color", "any", "\"default\""],
+    ["name", "any", ""],
+    ["ariaLabel", "any", ""],
+    ["size", "any", "\"md\""],
+    ["href", "any", ""],
+    ["class", "string", ""],
+    ["onclick", "any", ""]
+  ]
+}

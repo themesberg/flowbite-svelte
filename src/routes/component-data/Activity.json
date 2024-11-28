@@ -1,0 +1,7 @@
+{
+  "name": "Activity",
+  "props": [
+    ["children", "any", ""],
+    ["class", "string", ""]
+  ]
+}

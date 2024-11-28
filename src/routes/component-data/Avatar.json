@@ -1,0 +1,17 @@
+{
+  "name": "Avatar",
+  "props": [
+    ["children", "any", ""],
+    ["src", "any", ""],
+    ["href", "any", ""],
+    ["target", "any", ""],
+    ["cornerStyle", "any", "\"circular\""],
+    ["border", "any", "false"],
+    ["stacked", "any", "false"],
+    ["dot", "any", ""],
+    ["class", "string", ""],
+    ["alt", "any", ""],
+    ["size", "any", "\"md\""],
+    ["onclick", "any", ""]
+  ]
+}
