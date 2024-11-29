@@ -1,5 +1,16 @@
 import type { TransitionConfig, FadeParams, BlurParams, FlyParams, SlideParams, ScaleParams } from "svelte/transition";
 
+import { tv } from 'tailwind-variants';
+
+export interface ThemeConfig {
+  slots?: Record<string, object | string>;
+  variants?: Record<string, object>;
+  compoundVariants?: Array<Record<string, object>>;
+  defaultVariants?: Record<string, object>;
+}
+export interface ThemeType {
+  [key: string]: ReturnType<typeof tv>;
+}
 // primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
 export type ColorName = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose";
 

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { getContext } from "svelte";
   import { type BadgeProps as Props, badge } from "./index";
   import { CloseButton } from "$lib";
   import { fade } from "svelte/transition";
@@ -6,12 +7,17 @@
 
   let { children, icon, badgeStatus = $bindable(true), color = "primary", large = false, dismissable = false, class: className, border, href, target, rounded, transition = fade, params, aClass, onclick, ...restProps }: Props = $props();
 
-  const { base, hrefClass } = $derived(badge({ color, size: large ? "large" : "small", border, rounded }));
+  // Get merged theme from context
+  const context = getContext<Record<string, object>>("themeConfig");
+  // Use context theme if available, otherwise fallback to default
+  const badgeTheme = context?.badge || badge;
+
+  const { divWrapper, hrefClass } = $derived(badgeTheme({ color, size: large ? "large" : "small", border, rounded }));
   // $inspect('badgeStatus: ', badgeStatus);
 </script>
 
 {#if badgeStatus}
-  <div {...restProps} transition:transition={params as ParamsType} class={base({ className })}>
+  <div {...restProps} transition:transition={params as ParamsType} class={divWrapper({ className })}>
     {#if href}
       <a {href} {target} class={hrefClass({ class: aClass })}>
         {@render children()}

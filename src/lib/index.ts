@@ -72,3 +72,5 @@ export * from "./typography/span";
 export * from "./video";
 export * from "./utils";
 export * from "./types";
+
+export { default as Theme } from "./theme/Theme.svelte";

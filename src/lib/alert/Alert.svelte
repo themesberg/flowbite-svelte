@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { getContext } from "svelte";
   import { type AlertProps as Props, alert } from ".";
   import { CloseButton } from "$lib";
   import { fade } from "svelte/transition";
@@ -6,8 +7,13 @@
 
   let { children, icon, alertStatus = $bindable(true), closeIcon, color = "primary", rounded = true, border, class: className, dismissable, transition = fade, params, onclick, ...restProps }: Props = $props();
 
+  // Theme context
+  const context = getContext<Record<string, object>>("themeConfig");
+  // Use theme context if available, otherwise fallback to default
+  const alertTheme = context?.alert || alert;
+
   let divCls = $derived(
-    alert({
+    alertTheme({
       color,
       rounded,
       border,

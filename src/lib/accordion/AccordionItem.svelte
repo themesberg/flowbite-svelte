@@ -8,6 +8,11 @@
 
   let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transition = slide, params, class: className }: Props = $props();
 
+  // Theme context
+  const context = getContext<Record<string, object>>("themeConfig");
+  // Use theme context if available, otherwise fallback to default
+  const accordionitemTheme = context?.accordionitem || accordionitem;
+
   const ctx: AccordionCtxType = getContext("ctx") ?? {};
   // selected type is writable in AccordionCtxType
   if (!ctx.selected) {
@@ -25,7 +30,7 @@
 
   const handleToggle = () => selected.set(open ? {} : self);
 
-  const { base, button, content, active, inactive } = accordionitem({ flush: ctx.flush, open });
+  const { base, button, content, active, inactive } = $derived(accordionitemTheme({ flush: ctx.flush, open }));
 
   let buttonClass = $derived(twMerge(button(), open && !ctx.flush && (activeClass || ctx.activeClass || active()), !open && !ctx.flush && (inactiveClass || ctx.inactiveClass || inactive()), className));
 </script>
