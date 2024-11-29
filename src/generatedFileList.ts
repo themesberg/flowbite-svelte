@@ -105,6 +105,7 @@ export const fileList = [
   "src/lib/table/TableSearch.svelte",
   "src/lib/tabs/TabItem.svelte",
   "src/lib/tabs/Tabs.svelte",
+  "src/lib/theme/Theme.svelte",
   "src/lib/timeline/Activity.svelte",
   "src/lib/timeline/ActivityItem.svelte",
   "src/lib/timeline/Group.svelte",
