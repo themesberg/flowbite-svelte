@@ -1,1 +1,7 @@
-{ "name": "theme", "props": [] }
+{
+  "name": "Theme",
+  "props": [
+    ["children", "any", ""],
+    ["theme", "any", ""]
+  ]
+}

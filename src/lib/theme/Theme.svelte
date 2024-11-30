@@ -282,3 +282,11 @@
 </script>
 
 {@render children()}
+
+<!--
+@component
+[Go to docs](https://preview.flowbite-svelte.com/)
+## Props
+@props: children: any;
+@props:theme: any;
+-->

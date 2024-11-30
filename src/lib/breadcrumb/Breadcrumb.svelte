@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getContext } from 'svelte';
+  import { getContext } from "svelte";
   import { type BreadcrumbProps as Props, breadcrumb } from "./index";
 
   let { children, solid = false, navClass, olClass, ariaLabel = "Breadcrumb", ...restProps }: Props = $props();
@@ -19,3 +19,14 @@
     {@render children()}
   </ol>
 </nav>
+
+<!--
+@component
+[Go to docs](https://preview.flowbite-svelte.com/)
+## Props
+@props: children: any;
+@props:solid: any = false;
+@props:navClass: any;
+@props:olClass: any;
+@props:ariaLabel: any = "Breadcrumb";
+-->

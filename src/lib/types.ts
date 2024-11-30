@@ -1,6 +1,6 @@
 import type { TransitionConfig, FadeParams, BlurParams, FlyParams, SlideParams, ScaleParams } from "svelte/transition";
 
-import { tv } from 'tailwind-variants';
+import { tv } from "tailwind-variants";
 
 export interface ThemeConfig {
   slots?: Record<string, object | string>;

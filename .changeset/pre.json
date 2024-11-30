@@ -1,0 +1,8 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "flowbite-svelte": "1.0.0-next.0"
+  },
+  "changesets": []
+}

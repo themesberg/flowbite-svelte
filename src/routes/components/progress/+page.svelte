@@ -39,9 +39,9 @@
   const changeLabelInside = () => {
     labelInside = !labelInside;
   };
-  let { labelContent = $bindable("Svelte-5-Ui-Lib") } = $props();
+  let { labelContent = $bindable("Flowbite-Svelte") } = $props();
   const changeLabelContent = () => {
-    labelContent = labelContent === "Svelte-5-Ui-Lib" ? "" : "Svelte-5-Ui-Lib";
+    labelContent = labelContent === "Flowbite-Svelte" ? "" : "Flowbite-Svelte";
   };
   let animation = $state(false);
   let tweenDuration: number | undefined = $state();

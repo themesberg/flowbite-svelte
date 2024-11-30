@@ -27,10 +27,10 @@
 
 <HighlightCompo class="mb-8" codeLang="js" code={modules["./md/install-svelte.md"] as string} />
 
-<H3>Installing Svelte-5-Ui-Lib</H3>
-<P>Install `svelte-5-ui-lib` and update dependencies:</P>
+<H3>Installing flowbite-svelte</H3>
+<P>Install `flowbite-svelte@next` and update dependencies:</P>
 
-<HighlightCompo class="mb-8" codeLang="sh" code={modules["./md/svelte-5-ui-lib.md"] as string} />
+<HighlightCompo class="mb-8" codeLang="sh" code={modules["./md/flowbite-svelte.md"] as string} />
 
 <H3>Tailwind</H3>
 <P>Add the following to tailwind.config.js:</P>
@@ -38,6 +38,10 @@
 <H3>SVG Icons</H3>
 <P>If you are using any icons from <A href="https://svelte-svg-icons.codewithshin.com/">Svelte SVG Icon Sets</A>, you need to update the content in tailwind.config.js. For example, if you are using Flowbite-Svelte-Icons and Svelte-Animated-Icons:</P>
 
-<HighlightCompo class="mb-8" codeLang="js" code={modules["./md/svg-icons.md"] as string} />
-
 <HighlightCompo class="mb-8" codeLang="json" code={modules["./md/tailwind-config.md"] as string} />
+
+<P>If you want to use Svelte-Animated-Icons:</P>
+
+<HighlightCompo class="mb-8" codeLang="json" code={modules["./md/install-animated-icons.md"] as string} />
+
+<HighlightCompo class="mb-8" codeLang="js" code={modules["./md/svg-icons.md"] as string} />
