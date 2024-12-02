@@ -1,50 +1,13 @@
 {
   "name": "TabItem",
-  "slots": [
-    "title"
-  ],
-  "events": [
-    "blur",
-    "click",
-    "contextmenu",
-    "focus",
-    "keydown",
-    "keypress",
-    "keyup",
-    "mouseenter",
-    "mouseleave",
-    "mouseover"
-  ],
+  "slots": ["title"],
+  "events": ["blur", "click", "contextmenu", "focus", "keydown", "keypress", "keyup", "mouseenter", "mouseleave", "mouseover"],
   "props": [
-    [
-      "open?",
-      "boolean",
-      "false"
-    ],
-    [
-      "title?",
-      "string",
-      "'Tab title'"
-    ],
-    [
-      "activeClasses?",
-      "string",
-      "undefined"
-    ],
-    [
-      "inactiveClasses?",
-      "string",
-      "undefined"
-    ],
-    [
-      "defaultClass?",
-      "string",
-      "'inline-block text-sm font-medium text-center disabled:cursor-not-allowed'"
-    ],
-    [
-      "divClass?",
-      "string",
-      "''"
-    ]
+    ["open?", "boolean", "false"],
+    ["title?", "string", "'Tab title'"],
+    ["activeClasses?", "string", "undefined"],
+    ["inactiveClasses?", "string", "undefined"],
+    ["defaultClass?", "string", "'inline-block text-sm font-medium text-center disabled:cursor-not-allowed'"],
+    ["divClass?", "string", "''"]
   ]
 }

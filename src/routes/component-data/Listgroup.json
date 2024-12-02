@@ -3,20 +3,8 @@
   "slots": [],
   "events": [],
   "props": [
-    [
-      "items?",
-      "T[]",
-      ""
-    ],
-    [
-      "active?",
-      "boolean",
-      "false"
-    ],
-    [
-      "defaultClass?",
-      "string",
-      "'divide-y divide-gray-200 dark:divide-gray-600'"
-    ]
+    ["items?", "T[]", ""],
+    ["active?", "boolean", "false"],
+    ["defaultClass?", "string", "'divide-y divide-gray-200 dark:divide-gray-600'"]
   ]
 }

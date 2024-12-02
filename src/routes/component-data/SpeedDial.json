@@ -1,10 +1,6 @@
 {
   "name": "SpeedDial",
-  "slots": [
-    "button",
-    "icon",
-    "icon"
-  ],
+  "slots": ["button", "icon", "icon"],
   "events": [],
   "props": []
 }

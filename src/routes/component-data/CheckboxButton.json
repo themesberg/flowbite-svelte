@@ -1,18 +1,6 @@
 {
   "name": "CheckboxButton",
   "slots": [],
-  "events": [
-    "keyup",
-    "keydown",
-    "keypress",
-    "focus",
-    "blur",
-    "click",
-    "mouseover",
-    "mouseenter",
-    "mouseleave",
-    "paste",
-    "change"
-  ],
+  "events": ["keyup", "keydown", "keypress", "focus", "blur", "click", "mouseover", "mouseenter", "mouseleave", "paste", "change"],
   "props": []
 }

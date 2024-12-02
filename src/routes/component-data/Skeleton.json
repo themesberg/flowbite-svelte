@@ -3,15 +3,7 @@
   "slots": [],
   "events": [],
   "props": [
-    [
-      "divClass?",
-      "string",
-      "'animate-pulse'"
-    ],
-    [
-      "size?",
-      "keyof Sizes",
-      ""
-    ]
+    ["divClass?", "string", "'animate-pulse'"],
+    ["size?", "keyof Sizes", ""]
   ]
 }

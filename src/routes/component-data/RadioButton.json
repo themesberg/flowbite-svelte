@@ -1,59 +1,15 @@
 {
   "name": "RadioButton",
   "slots": [],
-  "events": [
-    "keyup",
-    "keydown",
-    "keypress",
-    "focus",
-    "blur",
-    "click",
-    "mouseover",
-    "mouseenter",
-    "mouseleave",
-    "paste",
-    "change"
-  ],
+  "events": ["keyup", "keydown", "keypress", "focus", "blur", "click", "mouseover", "mouseenter", "mouseleave", "paste", "change"],
   "props": [
-    [
-      "group",
-      "string | number",
-      "''"
-    ],
-    [
-      "value",
-      "string | number",
-      "''"
-    ],
-    [
-      "inline?",
-      "boolean",
-      "true"
-    ],
-    [
-      "pill?",
-      "boolean",
-      "false"
-    ],
-    [
-      "outline?",
-      "boolean",
-      "false"
-    ],
-    [
-      "size?",
-      "SizeType | undefined",
-      "undefined"
-    ],
-    [
-      "color?",
-      "ButtonColorType | undefined",
-      "undefined"
-    ],
-    [
-      "shadow?",
-      "boolean",
-      "false"
-    ]
+    ["group", "string | number", "''"],
+    ["value", "string | number", "''"],
+    ["inline?", "boolean", "true"],
+    ["pill?", "boolean", "false"],
+    ["outline?", "boolean", "false"],
+    ["size?", "SizeType | undefined", "undefined"],
+    ["color?", "ButtonColorType | undefined", "undefined"],
+    ["shadow?", "boolean", "false"]
   ]
 }

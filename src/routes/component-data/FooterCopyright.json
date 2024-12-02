@@ -3,50 +3,14 @@
   "slots": [],
   "events": [],
   "props": [
-    [
-      "spanClass?",
-      "string",
-      "'block text-sm text-gray-500 sm:text-center dark:text-gray-400'"
-    ],
-    [
-      "aClass?",
-      "string",
-      "'hover:underline'"
-    ],
-    [
-      "year?",
-      "number",
-      "new Date().getFullYear()"
-    ],
-    [
-      "by?",
-      "string",
-      "''"
-    ],
-    [
-      "href?",
-      "string",
-      "''"
-    ],
-    [
-      "target?",
-      "string",
-      "undefined"
-    ],
-    [
-      "copyrightMessage?",
-      "string",
-      "'All Rights Reserved.'"
-    ],
-    [
-      "classSpan?",
-      "string",
-      "''"
-    ],
-    [
-      "classA?",
-      "string",
-      "''"
-    ]
+    ["spanClass?", "string", "'block text-sm text-gray-500 sm:text-center dark:text-gray-400'"],
+    ["aClass?", "string", "'hover:underline'"],
+    ["year?", "number", "new Date().getFullYear()"],
+    ["by?", "string", "''"],
+    ["href?", "string", "''"],
+    ["target?", "string", "undefined"],
+    ["copyrightMessage?", "string", "'All Rights Reserved.'"],
+    ["classSpan?", "string", "''"],
+    ["classA?", "string", "''"]
   ]
 }

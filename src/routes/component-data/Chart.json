@@ -3,20 +3,8 @@
   "slots": [],
   "events": [],
   "props": [
-    [
-      "options",
-      "ApexOptions",
-      ""
-    ],
-    [
-      "class?",
-      "string",
-      ""
-    ],
-    [
-      "chart?",
-      "ApexCharts",
-      ""
-    ]
+    ["options", "ApexOptions", ""],
+    ["class?", "string", ""],
+    ["chart?", "ApexCharts", ""]
   ]
 }

@@ -1,68 +1,17 @@
 {
   "name": "Banner",
-  "slots": [
-    "header"
-  ],
-  "events": [
-    "click",
-    "change",
-    "keydown",
-    "keyup",
-    "focus",
-    "blur",
-    "mouseenter",
-    "mouseleave"
-  ],
+  "slots": ["header"],
+  "events": ["click", "change", "keydown", "keyup", "focus", "blur", "mouseenter", "mouseleave"],
   "props": [
-    [
-      "position?",
-      "'static' | 'fixed' | 'absolute' | 'relative' | 'sticky'",
-      "'sticky'"
-    ],
-    [
-      "dismissable?",
-      "boolean",
-      "true"
-    ],
-    [
-      "bannerType?",
-      "'default' | 'bottom' | 'cta' | 'signup' | 'info'",
-      ""
-    ],
-    [
-      "divClass?",
-      "string",
-      "'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600'"
-    ],
-    [
-      "innerClass?",
-      "string",
-      "'flex'"
-    ],
-    [
-      "bannerStatus?",
-      "boolean",
-      "true"
-    ],
-    [
-      "transition?",
-      "TransitionFunc",
-      ""
-    ],
-    [
-      "params?",
-      "object",
-      "{}"
-    ],
-    [
-      "classDiv?",
-      "string",
-      "''"
-    ],
-    [
-      "classInner?",
-      "string",
-      "''"
-    ]
+    ["position?", "'static' | 'fixed' | 'absolute' | 'relative' | 'sticky'", "'sticky'"],
+    ["dismissable?", "boolean", "true"],
+    ["bannerType?", "'default' | 'bottom' | 'cta' | 'signup' | 'info'", ""],
+    ["divClass?", "string", "'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600'"],
+    ["innerClass?", "string", "'flex'"],
+    ["bannerStatus?", "boolean", "true"],
+    ["transition?", "TransitionFunc", ""],
+    ["params?", "object", "{}"],
+    ["classDiv?", "string", "''"],
+    ["classInner?", "string", "''"]
   ]
 }
