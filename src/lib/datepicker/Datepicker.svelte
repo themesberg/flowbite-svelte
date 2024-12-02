@@ -92,7 +92,7 @@
     let start = firstDay.getDay() - firstDayOfWeek;
     if (start < 0) start += 7;
     for (let i = 0; i < start; i++) {
-      daysArray.push(new Date(year, month, -i));
+      daysArray.unshift(new Date(year, month, -i));
     }
 
     // Add days of the current month
