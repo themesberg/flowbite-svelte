@@ -1,7 +1,7 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import path from 'path';
 import examples from 'mdsvexamples/vite';
-import pkg from './package.json' assert { type: 'json' };
+import pkg from './package.json' with { type: 'json' };
 
 /** @type {import('vite').UserConfig} */
 const config = {
