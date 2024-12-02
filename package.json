@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "0.47.3",
+  "version": "0.47.4",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "packageManager": "pnpm@8.15.4",
@@ -32,7 +32,10 @@
     "gen:componentData": "svelte-lib-helpers component-data",
     "copy:package": "svelte-lib-helpers package",
     "lib-helpers": "pnpm format && pnpm gen:docs && pnpm gen:componentData && pnpm package && pnpm gen:exports && pnpm copy:package",
-    "package:publish": "standard-version && git push --follow-tags origin main && npm publish"
+    "package:publish": "standard-version && git push --follow-tags origin main && npm publish",
+    "ch": "npx changeset",
+    "cv": "npx changeset version",
+    "cp": "npx changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "2.27.10",

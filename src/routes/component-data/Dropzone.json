@@ -1,6 +1,18 @@
 {
   "name": "Dropzone",
   "slots": [],
-  "events": ["focus", "blur", "mouseenter", "mouseleave", "mouseover", "dragenter", "dragleave", "dragover", "drop", "change", "click"],
+  "events": [
+    "focus",
+    "blur",
+    "mouseenter",
+    "mouseleave",
+    "mouseover",
+    "dragenter",
+    "dragleave",
+    "dragover",
+    "drop",
+    "change",
+    "click"
+  ],
   "props": []
 }

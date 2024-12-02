@@ -1,13 +1,39 @@
 {
   "name": "Tabs",
-  "slots": ["divider"],
+  "slots": [
+    "divider"
+  ],
   "events": [],
   "props": [
-    ["tabStyle?", "'full' | 'pill' | 'underline' | 'none'", ""],
-    ["defaultClass?", "string", "'flex flex-wrap space-x-2 rtl:space-x-reverse'"],
-    ["contentClass?", "string", "'p-4 bg-gray-50 rounded-lg dark:bg-gray-800 mt-4'"],
-    ["divider?", "boolean", "true"],
-    ["activeClasses?", "string", ""],
-    ["inactiveClasses?", "string", ""]
+    [
+      "tabStyle?",
+      "'full' | 'pill' | 'underline' | 'none'",
+      ""
+    ],
+    [
+      "defaultClass?",
+      "string",
+      "'flex flex-wrap space-x-2 rtl:space-x-reverse'"
+    ],
+    [
+      "contentClass?",
+      "string",
+      "'p-4 bg-gray-50 rounded-lg dark:bg-gray-800 mt-4'"
+    ],
+    [
+      "divider?",
+      "boolean",
+      "true"
+    ],
+    [
+      "activeClasses?",
+      "string",
+      ""
+    ],
+    [
+      "inactiveClasses?",
+      "string",
+      ""
+    ]
   ]
 }
