@@ -85,6 +85,7 @@ export { default as Range } from './forms/Range.svelte';
 export { default as Search } from './forms/Search.svelte';
 export { default as Select } from './forms/Select.svelte';
 export { default as Textarea } from './forms/Textarea.svelte';
+export { default as Timepicker } from './forms/Timepicker.svelte';
 export { default as Toggle } from './forms/Toggle.svelte';
 
 // Gallery
