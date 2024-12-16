@@ -16,8 +16,8 @@
 </script>
 
 <td {...$$restProps} class={tdClassfinal}>
-  {#if $$props.onclick}
-  <button on:click={$$props.onclick}>
+  {#if $$restProps.onclick}
+  <button on:click={$$restProps.onclick}>
     <slot />
   </button>
   {:else}
