@@ -86,7 +86,7 @@ This first command is to generate component documentation for all Svelte files w
 
 Please run the following to format the code.
 
-```
+```sh
 pnpm format && pnpm check
 ```
 
@@ -113,7 +113,7 @@ feat!: add drawer component and page
 
 When you have a breaking change:
 
-```
+```sh
 git commit -a "feat: change btnClass name to bClass" -m "BREAKING CHANGE: change the Button component attributes"
 ```
 
