@@ -18,6 +18,7 @@
     activeUrl?: string;
     divClass?: string;
     ulClass?: string;
+    classUl?: string;
     hidden?: boolean | undefined;
     slideParams?: SlideParams;
     activeClass?: string;
@@ -27,12 +28,12 @@
   export let activeUrl: NonNullable<$$Props['activeUrl']> = '';
   export let divClass: $$Props['divClass'] = 'w-full md:block md:w-auto';
   export let ulClass: $$Props['ulClass'] = 'flex flex-col p-4 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:text-sm md:font-medium';
+  export let classUl: $$Props['classUl'] = '';
   export let hidden: $$Props['hidden'] = undefined;
   export let slideParams: $$Props['slideParams'] = { delay: 250, duration: 500, easing: sineIn };
   export let activeClass: NonNullable<$$Props['activeClass']> = 'text-white bg-primary-700 md:bg-transparent md:text-primary-700 md:dark:text-white dark:bg-primary-600 md:dark:bg-transparent';
   export let nonActiveClass: NonNullable<$$Props['nonActiveClass']> = 'text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent';
-  export let classUl: string = '';
-  
+
   const activeUrlStore = writable('');
   setContext<NavbarLiType>('navbarContext', { activeClass, nonActiveClass });
   $: {
@@ -72,9 +73,9 @@
 @prop export let activeUrl: NonNullable<$$Props['activeUrl']> = '';
 @prop export let divClass: $$Props['divClass'] = 'w-full md:block md:w-auto';
 @prop export let ulClass: $$Props['ulClass'] = 'flex flex-col p-4 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:text-sm md:font-medium';
+@prop export let classUl: $$Props['classUl'] = '';
 @prop export let hidden: $$Props['hidden'] = undefined;
 @prop export let slideParams: $$Props['slideParams'] = { delay: 250, duration: 500, easing: sineIn };
 @prop export let activeClass: NonNullable<$$Props['activeClass']> = 'text-white bg-primary-700 md:bg-transparent md:text-primary-700 md:dark:text-white dark:bg-primary-600 md:dark:bg-transparent';
 @prop export let nonActiveClass: NonNullable<$$Props['nonActiveClass']> = 'text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent';
-@prop export let classUl: string = '';
 -->

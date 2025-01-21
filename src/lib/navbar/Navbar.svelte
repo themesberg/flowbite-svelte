@@ -8,10 +8,11 @@
   // propagate props type from underlying Frame
   interface $$Props extends ComponentProps<Frame> {
     fluid?: boolean;
+    navContainerClass?: string;
   }
 
   export let fluid: $$Props['fluid'] = false;
-  export let navContainerClass: string= '';
+  export let navContainerClass: $$Props['navContainerClass'] = '';
 
   let hidden = writable(true);
   setContext('navHidden', hidden);
@@ -35,5 +36,5 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let fluid: $$Props['fluid'] = false;
-@prop export let navContainerClass: string= '';
+@prop export let navContainerClass: $$Props['navContainerClass'] = '';
 -->
