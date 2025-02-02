@@ -323,12 +323,13 @@ By default the `Input` component binds the `value` as `string`. If you need a va
 </script>
 
 <Label class="space-y-2 mb-4">
-  <span>Your Email</span>
+  <span>Your Age</span>
   <NumberInput bind:value />
 </Label>
-
-<p>Value: {value}</p>
-<p>Type of value: {typeof value}</p>
+<div class="dark:text-white">
+  <p>Value: {value}</p>
+  <p>Type of value: {typeof value}</p>
+</div>
 ```
 
 ## Search input
