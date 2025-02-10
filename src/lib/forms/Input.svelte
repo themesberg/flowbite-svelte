@@ -82,7 +82,7 @@
   };
 </script>
 
-<Wrapper class="relative w-full" show={$$slots.left || $$slots.right}>
+<Wrapper class="relative w-full" show={$$slots.left || $$slots.right || clearable}>
   {#if $$slots.left}
     <div class="{twMerge(floatClass, classLeft)} start-0 ps-2.5 pointer-events-none">
       <slot name="left" />
