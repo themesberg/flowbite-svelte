@@ -8,6 +8,7 @@
   // propagate props type from underlying Frame
   interface $$Props extends ComponentProps<Frame> {
     fluid?: boolean;
+    navContainerClass?: string;
   }
 
   export let fluid: $$Props['fluid'] = false;

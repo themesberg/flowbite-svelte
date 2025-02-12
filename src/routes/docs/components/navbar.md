@@ -27,7 +27,7 @@ Get started with the responsive navbar component from Flowbite to quickly set up
 
 Use this example of a navigation bar built with the utility classes from Tailwind CSS to enable users to navigate across the pages of your website.
 
-By default navbar content width is controled by Tailwind class `container`. If you want your navbar to be full page width set the prop `fluid=true`.
+By default, navbar content width is controlled by Tailwind class `container`. If you want your navbar to be full page width set the prop `fluid=true`.
 
 ```svelte example hideScript class="h-96 md:h-80"
 <script>
@@ -307,7 +307,8 @@ The component has the following props, type, and default values. See [types page
 
 ### Navbar styling
 
-- Use the `class` prop to overwrite default stylint.
+- Use the `class` prop to overwrite default styling.
+- Use the `navContainerClass` prop to overwrite the `navContainer` styles.
 
 ### NavBrand styling
 
