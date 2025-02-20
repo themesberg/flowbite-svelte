@@ -201,7 +201,7 @@ Use this example to show a CTA button in the center of the navigation component 
     <Tooltip arrow={false}>Wallet</Tooltip>
   </BottomNavItem>
   <div class="flex items-center justify-center">
-    <BottomNavItem btnName="Create new item" appBtnPosition="middle" btnClass="inline-flex items-center justify-center w-10 h-10 font-medium bg-primary-600 rounded-full hover:bg-primary-700 group focus:ring-4 focus:ring-primary-300 focus:outline-none dark:focus:ring-primary-800">
+    <BottomNavItem btnName="Create new item" appBtnPosition="middle" btnClass="inline-flex items-center justify-center w-10 h-10 font-medium bg-primary-600 rounded-full hover:bg-primary-700 group focus:ring-4 focus:ring-primary-300 focus:outline-hidden dark:focus:ring-primary-800">
       <PlusOutline class="text-white" />
       <Tooltip arrow={false}>Create new item</Tooltip>
     </BottomNavItem>
@@ -241,12 +241,12 @@ This example be used to paginate multiple pages on a single view alongside other
   </BottomNavItem>
   <div class="flex items-center justify-center col-span-2">
     <div class="flex items-center justify-between w-full text-gray-600 dark:text-gray-400 bg-gray-100 rounded-lg dark:bg-gray-600 max-w-[128px] mx-2">
-      <button type="button" class="inline-flex items-center justify-center h-8 px-1 bg-gray-100 rounded-s-lg dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-800">
+      <button type="button" class="inline-flex items-center justify-center h-8 px-1 bg-gray-100 rounded-s-lg dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-800 focus:outline-hidden focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-800">
         <AngleLeftOutline class="w-2 h-2 ms-1" />
         <span class="sr-only">Previous page</span>
       </button>
-      <span class="flex-shrink-0 mx-1 text-sm font-medium">1 of 345</span>
-      <button type="button" class="inline-flex items-center justify-center h-8 px-1 bg-gray-100 rounded-e-lg dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-800">
+      <span class="shrink-0 mx-1 text-sm font-medium">1 of 345</span>
+      <button type="button" class="inline-flex items-center justify-center h-8 px-1 bg-gray-100 rounded-e-lg dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-800 focus:outline-hidden focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-800">
         <AngleRightOutline class="w-2 h-2 me-1" />
         <span class="sr-only">Next page</span>
       </button>
@@ -343,9 +343,9 @@ You can even use the other bottom navbar examples to exchange the default one pr
 </script>
 
 <Card padding="none" class="relative overflow-y-scroll bg-white border border-gray-100 rounded-lg dark:bg-gray-700 dark:border-gray-600 h-96">
-  <Listgroup items={list} let:item class="border-0 dark:!bg-transparent">
+  <Listgroup items={list} let:item class="border-0 dark:bg-transparent!">
     <a href="/" class="flex items-center justify-center w-full px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">
-      <Avatar src={item.img.src} alt={item.img.alt} class="flex-shrink-0 me-3" />
+      <Avatar src={item.img.src} alt={item.img.alt} class="shrink-0 me-3" />
       <div>
         <p class="text-sm text-gray-500 dark:text-gray-400">{@html item.comment}</p>
         <span class="text-xs text-primary-600 dark:text-primary-500">{@html item.message}</span>

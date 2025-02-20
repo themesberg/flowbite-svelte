@@ -125,10 +125,10 @@ Use this example of a radio inside a card element to enable a larger area of cli
 </script>
 
 <div class="grid grid-cols-2 gap-6">
-  <div class="rounded border border-gray-200 dark:border-gray-700">
+  <div class="rounded-sm border border-gray-200 dark:border-gray-700">
     <Radio name="bordered" value="1" bind:group={selectedValue3} class="w-full p-4">Default radio</Radio>
   </div>
-  <div class="rounded border border-gray-200 dark:border-gray-700">
+  <div class="rounded-sm border border-gray-200 dark:border-gray-700">
     <Radio name="bordered" value="2" bind:group={selectedValue3} class="w-full p-4">Checked state</Radio>
   </div>
 </div>
@@ -187,15 +187,15 @@ Here’s an example of a list group that you can use right away.
 <Button>Dropdown radio<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
 <Dropdown class="w-60">
   <ul class="p-2">
-    <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+    <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
       <Radio name="group3" bind:group={group3} value={1}>Enable notifications</Radio>
       <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
     </li>
-    <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+    <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
       <Radio name="group3" bind:group={group3} value={2}>Enable 2FA auth</Radio>
       <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
     </li>
-    <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+    <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
       <Radio name="group3" bind:group={group3} value={3}>Subscribe newsletter</Radio>
       <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
     </li>

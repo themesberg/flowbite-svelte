@@ -34,7 +34,7 @@
   export let href: string | undefined = undefined;
   export let type: HTMLButtonAttributes['type'] = 'button';
   export let color: NonNullable<$$Props['color']> = group ? (outline ? 'dark' : 'alternative') : 'primary';
-  export let shadow: $$Props['shadow'] = false;
+  export let shadow: $$Props['shadow-sm'] = false;
   export let tag: $$Props['tag'] = 'button';
   export let checked: $$Props['checked'] = undefined;
   export let disabled: HTMLButtonAttributes['disabled'] = false;
@@ -119,7 +119,7 @@
     'text-center font-medium',
     group ? 'focus-within:ring-2' : 'focus-within:ring-4',
     group && 'focus-within:z-10',
-    group || 'focus-within:outline-none',
+    group || 'focus-within:outline-hidden',
     'inline-flex items-center justify-center ' + sizeClasses[size],
     outline && checked && 'border dark:border-gray-900',
     outline && checked && colorCheckedClasses[color],
@@ -129,7 +129,7 @@
     color === 'alternative' && (group && !checked ? 'dark:bg-gray-700 dark:text-white dark:border-gray-700 dark:hover:border-gray-600 dark:hover:bg-gray-600' : 'dark:bg-transparent dark:border-gray-600 dark:hover:border-gray-600'),
     outline && color === 'dark' && (group ? (checked ? 'bg-gray-900 border-gray-800 dark:border-white dark:bg-gray-600' : 'dark:text-white border-gray-800 dark:border-white') : 'dark:text-gray-400 dark:border-gray-700'),
     coloredFocusClasses[color],
-    hasBorder() && group && '[&:not(:first-child)]:-ms-px',
+    hasBorder() && group && 'not-first:-ms-px',
     group ? (pill && 'first:rounded-s-full last:rounded-e-full') || 'first:rounded-s-lg last:rounded-e-lg' : (pill && 'rounded-full') || 'rounded-lg',
     shadow && 'shadow-lg',
     shadow && coloredShadowClasses[color],
@@ -166,7 +166,7 @@
 @prop export let href: string | undefined = undefined;
 @prop export let type: HTMLButtonAttributes['type'] = 'button';
 @prop export let color: NonNullable<$$Props['color']> = group ? (outline ? 'dark' : 'alternative') : 'primary';
-@prop export let shadow: $$Props['shadow'] = false;
+@prop export let shadow: $$Props['shadow-sm'] = false;
 @prop export let tag: $$Props['tag'] = 'button';
 @prop export let checked: $$Props['checked'] = undefined;
 @prop export let disabled: HTMLButtonAttributes['disabled'] = false;

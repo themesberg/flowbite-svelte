@@ -27,7 +27,7 @@
   export let dismissable: $$Props['dismissable'] = false;
   export let border: $$Props['border'] = false;
   export let href: $$Props['href'] = '';
-  export let rounded: $$Props['rounded'] = false;
+  export let rounded: $$Props['rounded-sm'] = false;
   export let transition: NonNullable<$$Props['transition']> = fade;
   export let params: $$Props['params'] = {};
 
@@ -78,7 +78,7 @@
   const baseClass: string = 'font-medium inline-flex items-center justify-center px-2.5 py-0.5';
 
   let badgeClass: string;
-  $: badgeClass = twMerge(baseClass, large ? 'text-sm' : 'text-xs', border ? `border ${borderedColors[color]}` : colors[color], href && hoverColors[color], rounded ? 'rounded-full' : 'rounded', $$restProps.class);
+  $: badgeClass = twMerge(baseClass, large ? 'text-sm' : 'text-xs', border ? `border ${borderedColors[color]}` : colors[color], href && hoverColors[color], rounded ? 'rounded-full' : 'rounded-sm', $$restProps.class);
 </script>
 
 {#if badgeStatus}
@@ -115,7 +115,7 @@
 @prop export let dismissable: $$Props['dismissable'] = false;
 @prop export let border: $$Props['border'] = false;
 @prop export let href: $$Props['href'] = '';
-@prop export let rounded: $$Props['rounded'] = false;
+@prop export let rounded: $$Props['rounded-sm'] = false;
 @prop export let transition: NonNullable<$$Props['transition']> = fade;
 @prop export let params: $$Props['params'] = {};
 -->

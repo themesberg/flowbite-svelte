@@ -29,7 +29,7 @@
   export let multiple: $$Props['multiple'] = false;
   export let flush: $$Props['flush'] = false;
   export let activeClass: $$Props['activeClass'] = 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800';
-  export let inactiveClass: $$Props['inactiveClass'] = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800';
+  export let inactiveClass: $$Props['inactiveClass'] = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800';
   export let defaultClass: $$Props['defaultClass'] = 'text-gray-500 dark:text-gray-400';
   export let classActive: $$Props['classActive'] = '';
   export let classInactive: $$Props['classInactive'] = '';
@@ -58,7 +58,7 @@
 @prop export let multiple: $$Props['multiple'] = false;
 @prop export let flush: $$Props['flush'] = false;
 @prop export let activeClass: $$Props['activeClass'] = 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800';
-@prop export let inactiveClass: $$Props['inactiveClass'] = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800';
+@prop export let inactiveClass: $$Props['inactiveClass'] = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800';
 @prop export let defaultClass: $$Props['defaultClass'] = 'text-gray-500 dark:text-gray-400';
 @prop export let classActive: $$Props['classActive'] = '';
 @prop export let classInactive: $$Props['classInactive'] = '';

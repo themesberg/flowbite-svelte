@@ -25,7 +25,7 @@
   export let dismissable: $$Props['dismissable'] = true;
   export let color: NonNullable<$$Props['color']> = 'primary';
   export let position: NonNullable<$$Props['position']> = 'none';
-  export let divClass: $$Props['divClass'] = 'w-full max-w-xs p-4 text-gray-500 bg-white shadow dark:text-gray-400 dark:bg-gray-800 gap-3';
+  export let divClass: $$Props['divClass'] = 'w-full max-w-xs p-4 text-gray-500 bg-white shadow-sm dark:text-gray-400 dark:bg-gray-800 gap-3';
   export let defaultIconClass: $$Props['defaultIconClass'] = 'w-8 h-8';
   export let contentClass: $$Props['contentClass'] = 'w-full text-sm font-normal';
   export let align: $$Props['align'] = true;
@@ -116,7 +116,7 @@
 @prop export let dismissable: $$Props['dismissable'] = true;
 @prop export let color: NonNullable<$$Props['color']> = 'primary';
 @prop export let position: NonNullable<$$Props['position']> = 'none';
-@prop export let divClass: $$Props['divClass'] = 'w-full max-w-xs p-4 text-gray-500 bg-white shadow dark:text-gray-400 dark:bg-gray-800 gap-3';
+@prop export let divClass: $$Props['divClass'] = 'w-full max-w-xs p-4 text-gray-500 bg-white shadow-sm dark:text-gray-400 dark:bg-gray-800 gap-3';
 @prop export let defaultIconClass: $$Props['defaultIconClass'] = 'w-8 h-8';
 @prop export let contentClass: $$Props['contentClass'] = 'w-full text-sm font-normal';
 @prop export let align: $$Props['align'] = true;

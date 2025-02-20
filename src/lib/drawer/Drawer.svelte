@@ -33,7 +33,7 @@
   export let width: $$Props['width'] = 'w-80';
   export let backdrop: $$Props['backdrop'] = true;
   export let bgColor: $$Props['bgColor'] = 'bg-gray-900';
-  export let bgOpacity: $$Props['bgOpacity'] = 'bg-opacity-75';
+  export let bgOpacity: $$Props['bgOpacity'] = 'bg-black/75';
   export let placement: NonNullable<$$Props['placement']> = 'left';
   export let id: $$Props['id'] = 'drawer-example';
   export let divClass: $$Props['divClass'] = 'overflow-y-auto z-50 p-4 bg-white dark:bg-gray-800';
@@ -44,7 +44,7 @@
     switch (transitionType) {
       case 'slide':
         return slide(node, params);
-      case 'blur':
+      case 'blur-sm':
         return blur(node, params);
       case 'fade':
         return fade(node, params);
@@ -99,7 +99,7 @@
 @prop export let width: $$Props['width'] = 'w-80';
 @prop export let backdrop: $$Props['backdrop'] = true;
 @prop export let bgColor: $$Props['bgColor'] = 'bg-gray-900';
-@prop export let bgOpacity: $$Props['bgOpacity'] = 'bg-opacity-75';
+@prop export let bgOpacity: $$Props['bgOpacity'] = 'bg-black/75';
 @prop export let placement: NonNullable<$$Props['placement']> = 'left';
 @prop export let id: $$Props['id'] = 'drawer-example';
 @prop export let divClass: $$Props['divClass'] = 'overflow-y-auto z-50 p-4 bg-white dark:bg-gray-800';

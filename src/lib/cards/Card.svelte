@@ -47,7 +47,7 @@
     sm: 'max-w-sm',
     md: 'max-w-xl',
     lg: 'max-w-2xl',
-    xl: 'max-w-screen-xl'
+    xl: 'max-w-(--breakpoint-xl)'
   };
 
   let innerPadding: string;

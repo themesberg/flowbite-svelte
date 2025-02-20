@@ -161,7 +161,7 @@ The `Carousel` exposes the `change` event containing info about the currently di
     <Indicators />
   </Carousel>
 
-  <div class="rounded h-10 bg-gray-300 dark:bg-gray-700 dark:text-white p-2 my-2 text-center">
+  <div class="rounded-sm h-10 bg-gray-300 dark:bg-gray-700 dark:text-white p-2 my-2 text-center">
     {image?.alt}
   </div>
 </div>
@@ -198,7 +198,7 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
 </script>
 
 <div class="max-w-4xl space-y-4">
-  <Carousel {images} imgClass="object-contain h-full w-fit rounded-sm" let:Indicators let:Controls class="rounded-md ring-4 ring-green-500 border-4 border-white dark:border-gray-800 min-h-[320px] bg-gray-200">
+  <Carousel {images} imgClass="object-contain h-full w-fit rounded-xs" let:Indicators let:Controls class="rounded-md ring-4 ring-green-500 border-4 border-white dark:border-gray-800 min-h-[320px] bg-gray-200">
     <Indicators class="border border-white rounded-md p-2" />
     <Controls class="items-center text-red-400 dark:text-green-400 pt-4" />
   </Carousel>

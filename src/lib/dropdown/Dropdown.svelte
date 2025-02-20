@@ -46,8 +46,8 @@
   export let trigger: $$Props['trigger'] = 'click';
   export let placement: $$Props['placement'] = 'bottom';
   export let color: $$Props['color'] = 'dropdown';
-  export let shadow: $$Props['shadow'] = true;
-  export let rounded: $$Props['rounded'] = true;
+  export let shadow: $$Props['shadow-sm'] = true;
+  export let rounded: $$Props['rounded-sm'] = true;
 
   const activeUrlStore = writable('');
   let activeCls = twMerge(activeClass, classActive);
@@ -100,6 +100,6 @@
 @prop export let trigger: $$Props['trigger'] = 'click';
 @prop export let placement: $$Props['placement'] = 'bottom';
 @prop export let color: $$Props['color'] = 'dropdown';
-@prop export let shadow: $$Props['shadow'] = true;
-@prop export let rounded: $$Props['rounded'] = true;
+@prop export let shadow: $$Props['shadow-sm'] = true;
+@prop export let rounded: $$Props['rounded-sm'] = true;
 -->

@@ -32,7 +32,7 @@ Use the following code to stack together buttons into a single group.
   import { ButtonGroup, Button } from 'flowbite-svelte';
 </script>
 
-<ButtonGroup class="*:!ring-primary-700">
+<ButtonGroup class="*:ring-primary-700!">
   <Button>Profile</Button>
   <Button>Settings</Button>
   <Button>Messages</Button>
@@ -89,7 +89,7 @@ You can also use the button group component as links.
   import { ButtonGroup, Button } from 'flowbite-svelte';
 </script>
 
-<ButtonGroup class="*:!ring-primary-700">
+<ButtonGroup class="*:ring-primary-700!">
   <Button href="/">Profile</Button>
   <Button href="/">Settings</Button>
   <Button href="/">Messages</Button>
@@ -106,7 +106,7 @@ You can also use SVG icons inside the grouped buttons.
   import { UserCircleSolid, AdjustmentsVerticalOutline, DownloadSolid } from 'flowbite-svelte-icons';
 </script>
 
-<ButtonGroup class="*:!ring-primary-700">
+<ButtonGroup class="*:ring-primary-700!">
   <Button>
     <UserCircleSolid class="w-4 h-4 me-2" />
     Profile
@@ -176,7 +176,7 @@ You can add the `on:click` event to the `Button` component.
   };
 </script>
 
-<ButtonGroup class="*:!ring-primary-700">
+<ButtonGroup class="*:ring-primary-700!">
   <Button on:click={handleClick}>Click me</Button>
   <Button>Settings</Button>
   <Button>Messages</Button>

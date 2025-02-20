@@ -10,7 +10,7 @@
   }
 
   export let size: $$Props['size'] = 'md';
-  export let divClass: $$Props['divClass'] = 'inline-flex rounded-lg shadow-sm';
+  export let divClass: $$Props['divClass'] = 'inline-flex rounded-lg shadow-xs';
 
   setContext('group', { size });
 </script>
@@ -24,5 +24,5 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let size: $$Props['size'] = 'md';
-@prop export let divClass: $$Props['divClass'] = 'inline-flex rounded-lg shadow-sm';
+@prop export let divClass: $$Props['divClass'] = 'inline-flex rounded-lg shadow-xs';
 -->

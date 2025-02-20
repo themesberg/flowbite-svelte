@@ -13,7 +13,7 @@
   }
 
   export let color: NonNullable<$$Props['color']> = 'gray';
-  export let rounded: $$Props['rounded'] = false;
+  export let rounded: $$Props['rounded-sm'] = false;
   export let size: NonNullable<$$Props['size']> = 'md';
   export let border: $$Props['border'] = false;
   export let placement: $$Props['placement'] = undefined;
@@ -78,7 +78,7 @@
   };
 
   let dotClass: string;
-  $: dotClass = twMerge('flex-shrink-0', rounded ? 'rounded' : 'rounded-full', border && 'border-2 border-white dark:border-gray-800', sizes[size], colors[color], $$slots.default && 'inline-flex items-center justify-center', placement && 'absolute ' + placements[placement], placement && offset && offsets[placement], $$props.class);
+  $: dotClass = twMerge('shrink-0', rounded ? 'rounded-sm' : 'rounded-full', border && 'border-2 border-white dark:border-gray-800', sizes[size], colors[color], $$slots.default && 'inline-flex items-center justify-center', placement && 'absolute ' + placements[placement], placement && offset && offsets[placement], $$props.class);
 </script>
 
 <div {...$$restProps} class={dotClass} ><slot /></div>
@@ -88,7 +88,7 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let color: NonNullable<$$Props['color']> = 'gray';
-@prop export let rounded: $$Props['rounded'] = false;
+@prop export let rounded: $$Props['rounded-sm'] = false;
 @prop export let size: NonNullable<$$Props['size']> = 'md';
 @prop export let border: $$Props['border'] = false;
 @prop export let placement: $$Props['placement'] = undefined;

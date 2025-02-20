@@ -153,7 +153,7 @@ Use this example to show a list and a description inside an alert component.
   import { InfoCircleSolid } from 'flowbite-svelte-icons';
 </script>
 
-<Alert class="!items-start">
+<Alert class="items-start!">
   <span slot="icon">
     <InfoCircleSolid class="w-5 h-5" />
     <span class="sr-only">Info</span>
@@ -165,7 +165,7 @@ Use this example to show a list and a description inside an alert component.
     <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
   </ul>
 </Alert>
-<Alert color="blue" class="!items-start">
+<Alert color="blue" class="items-start!">
   <span slot="icon">
     <InfoCircleSolid class="w-5 h-5" />
     <span class="sr-only">Info</span>
@@ -244,22 +244,22 @@ Use the following alert components with a border accent as an alternative style.
   <span class="font-medium">Info alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert color="red" rounded={false} class="border-t-4">
+<Alert color="red" rounded-sm={false} class="border-t-4">
   <InfoCircleSolid slot="icon" class="w-5 h-5" />
   <span class="font-medium">Danger alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert color="green" rounded={false} class="border-t-4">
+<Alert color="green" rounded-sm={false} class="border-t-4">
   <InfoCircleSolid slot="icon" class="w-5 h-5" />
   <span class="font-medium">Success alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert color="yellow" rounded={false} class="border-t-4">
+<Alert color="yellow" rounded-sm={false} class="border-t-4">
   <InfoCircleSolid slot="icon" class="w-5 h-5" />
   <span class="font-medium">Warning alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert color="dark" rounded={false} class="border-t-4 flex-row-reverse">
+<Alert color="dark" rounded-sm={false} class="border-t-4 flex-row-reverse">
   <InfoCircleSolid slot="icon" class="w-5 h-5" />
   <span class="font-medium">Dark alert!</span>
   Change a few things up and try submitting again.

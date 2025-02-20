@@ -26,7 +26,7 @@
   $: defaultClass = twMerge(
     'flex items-center font-medium',
     large ? 'h-10 px-4 text-base' : 'h-8 px-3 text-sm',
-    group ? '' : table ? 'rounded' : 'rounded-lg',
+    group ? '' : table ? 'rounded-sm' : 'rounded-lg',
     // table || 'border border-gray-300 dark:border-gray-700 dark:bg-gray-800',
     table ? '' : 'border',
     active ? activeClass : normalClass,
