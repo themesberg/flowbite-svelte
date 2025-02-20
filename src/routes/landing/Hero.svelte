@@ -28,7 +28,7 @@
       </div>
 
       <div class="p-0 hidden xl:block">
-        <div class="relative dark:hidden">
+        <div class="block relative dark:hidden">
           <img class="max-w-xl -me-7" src="/images/gallery.png" alt="Header" />
         </div>
         <div class="hidden relative dark:block">

@@ -232,7 +232,7 @@ If you want to show the tabs on the full width relative to the parent element us
   import { Tabs, TabItem } from 'flowbite-svelte';
 </script>
 
-<Tabs tabStyle="full" defaultClass="flex rounded-lg divide-x rtl:divide-x-reverse divide-gray-200 shadow dark:divide-gray-700">
+<Tabs tabStyle="full" defaultClass="flex rounded-lg divide-x rtl:divide-x-reverse divide-gray-200 shadow-sm dark:divide-gray-700">
   <TabItem class="w-full" open>
     <span slot="title">Profile</span>
     <p class="text-sm text-gray-500 dark:text-gray-400">

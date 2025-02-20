@@ -216,13 +216,13 @@ Use this example to update the background color of a menu item when using a list
 
 <Button>Dropdown checkbox<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
 <Dropdown class="w-48 p-3 space-y-1 text-sm">
-  <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Checkbox>Default checkbox</Checkbox>
   </li>
-  <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Checkbox checked>Checked state</Checkbox>
   </li>
-  <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Checkbox>Default checkbox</Checkbox>
   </li>
 </Dropdown>
@@ -240,15 +240,15 @@ Add an extra helper text to each checkbox element inside the dropdown menu list 
 
 <Button>Dropdown checkbox<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
 <Dropdown class="w-60 p-3 space-y-1 text-sm">
-  <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Checkbox>Enable notifications</Checkbox>
     <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
   </li>
-  <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Checkbox checked>Enable 2FA auth</Checkbox>
     <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
   </li>
-  <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Checkbox>Subscribe newsletter</Checkbox>
     <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
   </li>
@@ -295,13 +295,13 @@ Use this example to update the background color of a menu item when using a list
 
 <Button>Dropdown radio<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
 <Dropdown class="w-48 p-3 space-y-1">
-  <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Radio name="group2" bind:group={group2} value={1}>Default radio</Radio>
   </li>
-  <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Radio name="group2" bind:group={group2} value={2}>Checked state</Radio>
   </li>
-  <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Radio name="group2" bind:group={group2} value={3}>Default radio</Radio>
   </li>
 </Dropdown>
@@ -320,15 +320,15 @@ Add an extra helper text to each radio element inside the dropdown menu list wit
 
 <Button>Dropdown radio<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
 <Dropdown class="w-60 p-3 space-y-1">
-  <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Radio name="group3" bind:group={group3} value={1}>Enable notifications</Radio>
     <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
   </li>
-  <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Radio name="group3" bind:group={group3} value={2}>Enable 2FA auth</Radio>
     <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
   </li>
-  <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Radio name="group3" bind:group={group3} value={3}>Subscribe newsletter</Radio>
     <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
   </li>
@@ -349,13 +349,13 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 <Button>Dropdown toggle<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
 <Dropdown class="w-56 p-3 space-y-1">
   <li>
-    <Toggle class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">Default toggle</Toggle>
+    <Toggle class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">Default toggle</Toggle>
   </li>
   <li>
-    <Toggle class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600" checked>Checked state</Toggle>
+    <Toggle class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600" checked>Checked state</Toggle>
   </li>
   <li>
-    <Toggle class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">Default toggle</Toggle>
+    <Toggle class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">Default toggle</Toggle>
   </li>
 </Dropdown>
 ```
@@ -454,7 +454,7 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
     <Search size="md" bind:value={searchTerm}/>
   </div>
   {#each filteredItems as person (person.name)}
-    <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+    <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
       <Checkbox bind:checked={person.checked}>{person.name}</Checkbox>
     </li>
   {/each}
@@ -494,13 +494,13 @@ Use this example to show a list of notifications inside your application by prov
   import { BellSolid, EyeSolid } from 'flowbite-svelte-icons';
 </script>
 
-<div id="bell" class="inline-flex items-center text-sm font-medium text-center text-gray-500 hover:text-gray-900 focus:outline-none dark:hover:text-white dark:text-gray-400">
+<div id="bell" class="inline-flex items-center text-sm font-medium text-center text-gray-500 hover:text-gray-900 focus:outline-hidden dark:hover:text-white dark:text-gray-400">
   <BellSolid class="w-8 h-8" />
   <div class="flex relative">
     <div class="inline-flex relative -top-2 end-4 w-3 h-3 bg-red-500 rounded-full border-2 border-white dark:border-gray-900"></div>
   </div>
 </div>
-<Dropdown triggeredBy="#bell" class="w-full max-w-sm rounded divide-y divide-gray-100 shadow dark:bg-gray-800 dark:divide-gray-700">
+<Dropdown triggeredBy="#bell" class="w-full max-w-sm rounded-sm divide-y divide-gray-100 shadow-sm dark:bg-gray-800 dark:divide-gray-700">
   <div slot="header" class="text-center py-2 font-bold">Notifications</div>
   <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
     <Avatar src="/images/profile-picture-1.webp" dot={{ color: 'bg-gray-300' }} rounded />
@@ -576,7 +576,7 @@ Use this example to also show the name or email of the user next to the avatar f
   import { Button, Dropdown, DropdownItem, Avatar, DropdownHeader, DropdownDivider } from 'flowbite-svelte';
 </script>
 
-<Button pill color="light" id="avatar_with_name" class="!p-1">
+<Button pill color="light" id="avatar_with_name" class="p-1!">
   <Avatar src="/images/profile-picture-3.webp" class="me-2" />
   Bonnie Green
 </Button>

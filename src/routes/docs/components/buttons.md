@@ -235,12 +235,12 @@ Sometimes you need a button to indicate an action using only an icon.
 </script>
 
 <div class="flex flex-wrap items-center gap-2">
-  <Button class="!p-2"><ArrowRightOutline class="w-6 h-6" /></Button>
-  <Button pill={true} class="!p-2"><ArrowRightOutline class="w-6 h-6" /></Button>
-  <Button outline={true} class="!p-2" size="lg">
+  <Button class="p-2!"><ArrowRightOutline class="w-6 h-6" /></Button>
+  <Button pill={true} class="p-2!"><ArrowRightOutline class="w-6 h-6" /></Button>
+  <Button outline={true} class="p-2!" size="lg">
     <ThumbsUpSolid class="w-7 h-7 text-primary-700" />
   </Button>
-  <Button pill={true} outline={true} class="!p-2" size="xl">
+  <Button pill={true} outline={true} class="p-2!" size="xl">
     <ThumbsUpSolid class="w-6 h-6 text-primary-700" />
   </Button>
 </div>

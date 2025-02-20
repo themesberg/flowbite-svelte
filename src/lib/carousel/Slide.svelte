@@ -30,7 +30,7 @@
     duration: $state.slideDuration
   };
 
-  $: imgClass = twMerge('absolute block !w-full h-full object-cover', $$props.class);
+  $: imgClass = twMerge('absolute block w-full! h-full object-cover', $$props.class);
 </script>
 
 {#if transition}

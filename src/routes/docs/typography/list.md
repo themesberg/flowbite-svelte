@@ -247,7 +247,7 @@ This example can be used to show more details for each list item such as the use
 <List tag="ul" list="none" class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
   <Li class="pb-3 sm:pb-4">
     <div class="flex items-center space-x-4 rtl:space-x-reverse">
-      <div class="flex-shrink-0">
+      <div class="shrink-0">
         <img class="w-8 h-8 rounded-full" src="/images/profile-picture-1.webp" alt="Neil profile" />
       </div>
       <div class="flex-1 min-w-0">
@@ -259,7 +259,7 @@ This example can be used to show more details for each list item such as the use
   </Li>
   <Li class="py-3 sm:py-4">
     <div class="flex items-center space-x-4 rtl:space-x-reverse">
-      <div class="flex-shrink-0">
+      <div class="shrink-0">
         <img class="w-8 h-8 rounded-full" src="/images/profile-picture-2.webp" alt="Bonnie profile" />
       </div>
       <div class="flex-1 min-w-0">
@@ -271,7 +271,7 @@ This example can be used to show more details for each list item such as the use
   </Li>
   <Li class="py-3 sm:py-4">
     <div class="flex items-center space-x-4 rtl:space-x-reverse">
-      <div class="flex-shrink-0">
+      <div class="shrink-0">
         <img class="w-8 h-8 rounded-full" src="/images/profile-picture-3.webp" alt="Michael profile" />
       </div>
       <div class="flex-1 min-w-0">
@@ -283,7 +283,7 @@ This example can be used to show more details for each list item such as the use
   </Li>
   <Li class="py-3 sm:py-4">
     <div class="flex items-center space-x-4 rtl:space-x-reverse">
-      <div class="flex-shrink-0">
+      <div class="shrink-0">
         <img class="w-8 h-8 rounded-full" src="/images/profile-picture-4.webp" alt="Thomas profile" />
       </div>
       <div class="flex-1 min-w-0">
@@ -295,7 +295,7 @@ This example can be used to show more details for each list item such as the use
   </Li>
   <Li class="py-3 sm:py-4">
     <div class="flex items-center space-x-4 rtl:space-x-reverse">
-      <div class="flex-shrink-0">
+      <div class="shrink-0">
         <img class="w-8 h-8 rounded-full" src="/images/profile-picture-5.webp" alt="Lana profile" />
       </div>
       <div class="flex-1 min-w-0">

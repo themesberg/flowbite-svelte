@@ -210,7 +210,7 @@ To create a double line chart check the example below.
         <h5 class="inline-flex items-center text-gray-500 dark:text-gray-400 leading-none font-normal mb-2">
           Clicks
           <InfoCircleSolid id="b1" class="w-3 h-3 text-gray-400 hover:text-gray-900 dark:hover:text-white cursor-pointer ms-1" />
-          <Popover triggeredBy="#b1" class="text-sm text-gray-500 bg-white border border-gray-200 rounded-lg shadow-sm w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400 z-10">
+          <Popover triggeredBy="#b1" class="text-sm text-gray-500 bg-white border border-gray-200 rounded-lg shadow-xs w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400 z-10">
             <div class="p-3 space-y-2">
               <h3 class="font-semibold text-gray-900 dark:text-white">Clicks growth - Incremental</h3>
               <p>Report helps navigate cumulative growth of community activities. Ideally, the chart should have a growing trend, as stagnating chart signifies a significant decrease of community activity.</p>
@@ -228,7 +228,7 @@ To create a double line chart check the example below.
         <h5 class="inline-flex items-center text-gray-500 dark:text-gray-400 leading-none font-normal mb-2">
           CPC
           <InfoCircleSolid id="b2" class="w-3 h-3 text-gray-400 hover:text-gray-900 dark:hover:text-white cursor-pointer ms-1" />
-          <Popover triggeredBy="#b2" class="text-sm text-gray-500 bg-white border border-gray-200 rounded-lg shadow-sm w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400 z-10">
+          <Popover triggeredBy="#b2" class="text-sm text-gray-500 bg-white border border-gray-200 rounded-lg shadow-xs w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400 z-10">
             <div class="p-3 space-y-2">
               <h3 class="font-semibold text-gray-900 dark:text-white">CPC growth - Incremental</h3>
               <p>Report helps navigate cumulative growth of community activities. Ideally, the chart should have a growing trend, as stagnating chart signifies a significant decrease of community activity.</p>
@@ -255,7 +255,7 @@ To create a double line chart check the example below.
   <Chart {options} />
   <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between mt-2.5">
     <div class="pt-5">
-      <Button href="/" class="px-4 py-2.5 text-sm font-medium text-white inline-flex items-center bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 rounded-lg text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+      <Button href="/" class="px-4 py-2.5 text-sm font-medium text-white inline-flex items-center bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-hidden focus:ring-primary-300 rounded-lg text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
         <FileLinesSolid class="w-3.5 h-3.5 text-white me-2" />
         View full report
       </Button>
@@ -645,7 +645,7 @@ Create a pie chart with multiple data series by setting the type: "pie" chart ty
       <div class="flex items-center mb-1">
         <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white me-1">Website traffic</h5>
         <InfoCircleSolid id="pie1" class="w-3.5 h-3.5 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white cursor-pointer ms-1" />
-        <Popover triggeredBy="#pie1" class="text-sm text-gray-500 bg-white border border-gray-200 rounded-lg shadow-sm w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400 z-10">
+        <Popover triggeredBy="#pie1" class="text-sm text-gray-500 bg-white border border-gray-200 rounded-lg shadow-xs w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400 z-10">
           <div class="p-3 space-y-2">
             <h3 class="font-semibold text-gray-900 dark:text-white">Activity growth - Incremental</h3>
             <p>Report helps navigate cumulative growth of community activities. Ideally, the chart should have a growing trend, as stagnating chart signifies a significant decrease of community activity.</p>
@@ -786,7 +786,7 @@ Set the chart type: "donut" to create a donut chart and copy the options from th
       <div class="flex items-center mb-1">
         <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white me-1">Website traffic</h5>
         <InfoCircleSolid id="donut1" class="w-3.5 h-3.5 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white cursor-pointer ms-1" />
-        <Popover triggeredBy="#donut1" class="text-sm text-gray-500 bg-white border border-gray-200 rounded-lg shadow-sm w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400 z-10">
+        <Popover triggeredBy="#donut1" class="text-sm text-gray-500 bg-white border border-gray-200 rounded-lg shadow-xs w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400 z-10">
           <div class="p-3 space-y-2">
             <h3 class="font-semibold text-gray-900 dark:text-white">Activity growth - Incremental</h3>
             <p>Report helps navigate cumulative growth of community activities. Ideally, the chart should have a growing trend, as stagnating chart signifies a significant decrease of community activity.</p>
@@ -899,7 +899,7 @@ To create a radial chart with multiple data entries you need to set the type: "r
       <div class="flex items-center mb-1">
         <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white me-1">Your team's progress</h5>
         <InfoCircleSolid id="donut1" class="w-3.5 h-3.5 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white cursor-pointer ms-1" />
-        <Popover triggeredBy="#donut1" class="text-sm text-gray-500 bg-white border border-gray-200 rounded-lg shadow-sm w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400 z-10">
+        <Popover triggeredBy="#donut1" class="text-sm text-gray-500 bg-white border border-gray-200 rounded-lg shadow-xs w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400 z-10">
           <div class="p-3 space-y-2">
             <h3 class="font-semibold text-gray-900 dark:text-white">Activity growth - Incremental</h3>
             <p>Report helps navigate cumulative growth of community activities. Ideally, the chart should have a growing trend, as stagnating chart signifies a significant decrease of community activity.</p>

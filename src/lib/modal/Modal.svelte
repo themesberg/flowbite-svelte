@@ -36,7 +36,7 @@
   export let autoclose: $$Props['autoclose'] = false;
   export let outsideclose: $$Props['outsideclose'] = false;
   export let dismissable: $$Props['dismissable'] = true;
-  export let backdropClass: $$Props['backdropClass'] = 'fixed inset-0 z-40 bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
+  export let backdropClass: $$Props['backdropClass'] = 'fixed inset-0 z-40 bg-gray-900 bg-black/50 dark:bg-black/80';
   export let classBackdrop: $$Props['classBackdrop'] = undefined;
   export let dialogClass: $$Props['dialogClass'] = 'fixed top-0 start-0 end-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex';
   export let classDialog: $$Props['classDialog'] = undefined;
@@ -182,7 +182,7 @@
 @prop export let autoclose: $$Props['autoclose'] = false;
 @prop export let outsideclose: $$Props['outsideclose'] = false;
 @prop export let dismissable: $$Props['dismissable'] = true;
-@prop export let backdropClass: $$Props['backdropClass'] = 'fixed inset-0 z-40 bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
+@prop export let backdropClass: $$Props['backdropClass'] = 'fixed inset-0 z-40 bg-gray-900 bg-black/50 dark:bg-black/80';
 @prop export let classBackdrop: $$Props['classBackdrop'] = undefined;
 @prop export let dialogClass: $$Props['dialogClass'] = 'fixed top-0 start-0 end-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex';
 @prop export let classDialog: $$Props['classDialog'] = undefined;

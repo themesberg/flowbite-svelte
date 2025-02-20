@@ -26,7 +26,7 @@
   /* eslint-disable  @typescript-eslint/no-explicit-any */
   const multiple = (node: HTMLElement, params: any) => {
     switch (transitionType) {
-      case 'blur':
+      case 'blur-sm':
         return blur(node, params);
       case 'fly':
         return fly(node, params);

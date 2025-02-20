@@ -50,7 +50,7 @@ Use the simplest form of a search input component with an icon and a search butt
 
 <form class="flex gap-2">
   <Search size="md" />
-  <Button class="!p-2.5">
+  <Button class="p-2.5!">
     <SearchOutline class="w-6 h-6" />
   </Button>
 </form>
@@ -107,7 +107,7 @@ Use this search component with a dropdown to let your users select a category in
     </Dropdown>
   </div>
   <Search size="md" class="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
-  <Button class="!p-2.5 rounded-s-none">
+  <Button class="p-2.5! rounded-s-none">
     <SearchOutline class="w-6 h-6" />
   </Button>
 </form>
@@ -173,7 +173,7 @@ Use this example where you can select a country in which you want to search for 
     </Dropdown>
   </div>
   <Search size="md" class="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
-  <Button class="!p-2.5 rounded-s-none">
+  <Button class="p-2.5! rounded-s-none">
     <SearchOutline class="w-6 h-6" />
   </Button>
 </form>
@@ -194,7 +194,7 @@ Get started with this example if you would like to enable voice search for your 
 
 <form class="flex gap-2">
   <Search size="md" class="flex gap-2 items-center" placeholder="Search Mockups, Logos, Design Templates...">
-    <button type="button" on:click={handleVoiceBtn} class="outline-none">
+    <button type="button" on:click={handleVoiceBtn} class="outline-hidden">
       <MicrophoneSolid class="w-5 h-5 me-2" />
     </button>
   </Search>

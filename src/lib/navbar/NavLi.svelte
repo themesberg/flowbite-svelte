@@ -26,7 +26,7 @@
 
   $: active = navUrl ? href === navUrl : false;
 
-  $: liClass = twMerge('block py-2 pe-4 ps-3 md:p-0 rounded md:border-0', active ? activeClass ?? context.activeClass : nonActiveClass ?? context.nonActiveClass, $$props.class);
+  $: liClass = twMerge('block py-2 pe-4 ps-3 md:p-0 rounded-sm md:border-0', active ? activeClass ?? context.activeClass : nonActiveClass ?? context.nonActiveClass, $$props.class);
   // $: console.log()
 </script>
 
