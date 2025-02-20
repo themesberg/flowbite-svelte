@@ -28,7 +28,7 @@
       </div>
     </div>
     <div class="flex-col items-center justify-center hidden h-full lg:flex">
-      <div class="relative dark:hidden rounded-xl">
+      <div class="block relative dark:hidden rounded-xl">
         <img class="max-w-auto w-full" src="/images/figma.png" alt="Header" />
       </div>
       <div class="hidden relative dark:block">
