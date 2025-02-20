@@ -46,7 +46,7 @@ Use this free example to show a text message for announcement with a CTA link, a
       <span class="sr-only">Light bulb</span>
     </span>
     <span>
-      New brand identity has been launched for the <a href="https://flowbite.com" class="inline font-medium text-primary-600 underline dark:text-primary-500 underline-offset-2 decoration-600 dark:decoration-500 decoration-solid hover:no-underline"> Flowbite Library </a>
+      New brand identity has been launched for the <a href="https://flowbite.com" class="inline font-medium text-primary-600 underline dark:text-primary-500 underline-offset-2 decoration-2 dark:decoration-1 decoration-solid hover:no-underline"> Flowbite Library </a>
     </span>
   </p>
 </Banner>

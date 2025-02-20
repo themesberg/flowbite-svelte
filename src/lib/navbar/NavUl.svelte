@@ -32,7 +32,7 @@
   export let activeClass: NonNullable<$$Props['activeClass']> = 'text-white bg-primary-700 md:bg-transparent md:text-primary-700 md:dark:text-white dark:bg-primary-600 md:dark:bg-transparent';
   export let nonActiveClass: NonNullable<$$Props['nonActiveClass']> = 'text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent';
   export let classUl: string = '';
-  
+
   const activeUrlStore = writable('');
   setContext<NavbarLiType>('navbarContext', { activeClass, nonActiveClass });
   $: {
@@ -48,7 +48,7 @@
   $: _divClass = twMerge(divClass, $$props.class);
 
   let _ulClass: string;
-  $: _ulClass = twMerge( ulClass, classUl );
+  $: _ulClass = twMerge(ulClass, classUl);
 </script>
 
 {#if !_hidden}
@@ -58,7 +58,7 @@
     </Frame>
   </div>
 {:else}
-  <div {...$$restProps} class={_divClass} hidden={_hidden}>
+  <div {...$$restProps} class={_divClass} class:hidden={_hidden}>
     <ul class={_ulClass}>
       <slot />
     </ul>
