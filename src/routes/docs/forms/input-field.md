@@ -323,12 +323,13 @@ By default the `Input` component binds the `value` as `string`. If you need a va
 </script>
 
 <Label class="space-y-2 mb-4">
-  <span>Your Email</span>
+  <span>Your Age</span>
   <NumberInput bind:value />
 </Label>
-
-<p>Value: {value}</p>
-<p>Type of value: {typeof value}</p>
+<div class="dark:text-white">
+  <p>Value: {value}</p>
+  <p>Type of value: {typeof value}</p>
+</div>
 ```
 
 ## Search input
@@ -359,7 +360,7 @@ Use this example to show a dropdown menu right next to the input field.
 </script>
 
 <ButtonGroup class="w-full">
-  <Button color="none" class="flex-shrink-0 text-gray-900 bg-gray-100 border border-gray-300 dark:border-gray-700 dark:text-white hover:bg-gray-200 focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+  <Button color="none" class="shrink-0 text-gray-900 bg-gray-100 border border-gray-300 dark:border-gray-700 dark:text-white hover:bg-gray-200 focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
     All categories<ChevronDownOutline class="w-6 h-6 ms-2" />
   </Button>
   <Dropdown>
@@ -369,7 +370,7 @@ Use this example to show a dropdown menu right next to the input field.
     <DropdownItem>Finance</DropdownItem>
   </Dropdown>
   <Input placeholder="Search" />
-  <Button color="primary" class="!p-2.5" type="submit">
+  <Button color="primary" class="p-2.5!" type="submit">
     <SearchOutline class="w-5 h-5" />
   </Button>
 </ButtonGroup>

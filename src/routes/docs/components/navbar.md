@@ -27,7 +27,7 @@ Get started with the responsive navbar component from Flowbite to quickly set up
 
 Use this example of a navigation bar built with the utility classes from Tailwind CSS to enable users to navigate across the pages of your website.
 
-By default navbar content width is controled by Tailwind class `container`. If you want your navbar to be full page width set the prop `fluid=true`.
+By default, navbar content width is controlled by Tailwind class `container`. If you want your navbar to be full page width set the prop `fluid=true`.
 
 ```svelte example hideScript class="h-96 md:h-80"
 <script>
@@ -158,7 +158,7 @@ Use this example of a navbar element to also show a search input element that yo
     <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
   </NavBrand>
   <div class="flex md:order-2">
-    <Button color="none" data-collapse-toggle="mobile-menu-3" aria-controls="mobile-menu-3" aria-expanded="false" class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1">
+    <Button color="none" data-collapse-toggle="mobile-menu-3" aria-controls="mobile-menu-3" aria-expanded="false" class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-hidden focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1">
       <SearchOutline class="w-5 h-5" />
     </Button>
     <div class="hidden relative md:block">
@@ -307,7 +307,8 @@ The component has the following props, type, and default values. See [types page
 
 ### Navbar styling
 
-- Use the `class` prop to overwrite default stylint.
+- Use the `class` prop to overwrite default styling.
+- Use the `navContainerClass` prop to overwrite the `navContainer` styles.
 
 ### NavBrand styling
 

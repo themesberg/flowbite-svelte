@@ -138,7 +138,7 @@ Apply a blur by using the blur-size utility class from Tailwind CSS to an image 
   import { Img } from 'flowbite-svelte';
 </script>
 
-<Img src="/images/examples/content-gallery-3.png" size="max-w-lg" alt="My gallery" class="rounded-lg transition-all duration-300 blur-sm hover:blur-none" />
+<Img src="/images/examples/content-gallery-3.png" size="max-w-lg" alt="My gallery" class="rounded-lg transition-all duration-300 blur-xs hover:blur-none" />
 ```
 
 ## Alignment

@@ -72,7 +72,7 @@
   let inputClass: string;
   $: {
     const _color = color === 'base' && background ? 'tinted' : color;
-    inputClass = twMerge([defaultClass, inputPadding[_size], ($$slots.left && leftPadding[_size]) || ((clearable || $$slots.right) && rightPadding[_size]), ringClasses[color], colorClasses[_color], borderClasses[_color], textSizes[_size], group || 'rounded-lg', group && 'first:rounded-s-lg last:rounded-e-lg', group && '[&:not(:first-child)]:-ms-px', $$props.class]);
+    inputClass = twMerge([defaultClass, inputPadding[_size], ($$slots.left && leftPadding[_size]) || ((clearable || $$slots.right) && rightPadding[_size]), ringClasses[color], colorClasses[_color], borderClasses[_color], textSizes[_size], group || 'rounded-lg', group && 'first:rounded-s-lg last:rounded-e-lg', group && 'not-first:-ms-px', $$props.class]);
   }
 
   const clearAll = (e: MouseEvent) => {
@@ -82,7 +82,7 @@
   };
 </script>
 
-<Wrapper class="relative w-full" show={$$slots.left || $$slots.right}>
+<Wrapper class="relative w-full" show={$$slots.left || $$slots.right || clearable}>
   {#if $$slots.left}
     <div class="{twMerge(floatClass, classLeft)} start-0 ps-2.5 pointer-events-none">
       <slot name="left" />
@@ -97,7 +97,7 @@
   </div>
   {/if}
   {#if clearable && value && `${value}`.length > 0}
-    <CloseButton {size} on:click={clearAll} color="none" class=" {twMerge(floatClass, classRight)} focus:ring-0 end-6 focus:ring-gray-400 dark:text-white" />
+    <CloseButton {size} on:click={clearAll} color="none" class=" {twMerge(floatClass, classRight)} focus:ring-0 end-1 focus:ring-gray-400 dark:text-white" />
   {/if}
 </Wrapper>
 

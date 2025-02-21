@@ -88,7 +88,7 @@ This example can be used for user testimonials by mentioning the author and occu
   import { QuoteSolid } from 'flowbite-svelte-icons';
 </script>
 
-<figure class="mx-auto max-w-screen-md text-center">
+<figure class="mx-auto max-w-(--breakpoint-md) text-center">
   <QuoteSolid class="mx-auto mb-3 w-12 h-12 text-gray-400 dark:text-gray-600" />
   <Blockquote alignment="center" size="2xl">"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</Blockquote>
   <figcaption class="flex justify-center items-center mt-6 space-x-3 rtl:space-x-reverse">
@@ -110,7 +110,7 @@ Use this example to show a user review with rating stars and the name and occupa
   import { Blockquote, Rating } from 'flowbite-svelte';
 </script>
 
-<figure class="max-w-screen-md">
+<figure class="max-w-(--breakpoint-md)">
   <div class="flex items-center mb-4 text-yellow-300">
     <Rating total={5} rating={4.66} ceil size="24" />
   </div>

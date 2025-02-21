@@ -112,21 +112,21 @@ This example can be used to add an indicator inside of a badge component.
         <p class="text-sm font-semibold text-gray-900 truncate dark:text-white">Neil Sims</p>
         <p class="text-sm text-gray-500 truncate dark:text-gray-400">email@flowbite.com</p>
       </div>
-      <Badge color="green" rounded class="px-2.5 py-0.5">
+      <Badge color="green" rounded-sm class="px-2.5 py-0.5">
         <Indicator color="green" size="xs" class="me-1" />Available
       </Badge>
     </div>
   </li>
   <li class="py-3 sm:py-4">
     <div class="flex items-center space-x-3 rtl:space-x-reverse">
-      <div class="flex-shrink-0">
+      <div class="shrink-0">
         <Avatar src="/images/profile-picture-4.webp" alt="Bonnie image" />
       </div>
       <div class="flex-1 min-w-0">
         <p class="text-sm font-semibold text-gray-900 truncate dark:text-white">Bonnie Green</p>
         <p class="text-sm text-gray-500 truncate dark:text-gray-400">email@flowbite.com</p>
       </div>
-      <Badge color="red" rounded class="px-2.5 py-0.5">
+      <Badge color="red" rounded-sm class="px-2.5 py-0.5">
         <Indicator color="red" size="xs" class="me-1" />Unavailable
       </Badge>
     </div>
@@ -226,7 +226,7 @@ You can also use the indicators inside of a stepper component when completing a 
   <li class="relative w-full mb-6">
     <div class="flex items-center">
       <Indicator size="xl" color="gray" class="dark:bg-gray-700 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
-        <Indicator color="dark" class="dark:!bg-gray-300" />
+        <Indicator color="dark" class="dark:bg-gray-300!" />
       </Indicator>
     </div>
     <div class="mt-3">

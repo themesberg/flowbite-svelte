@@ -93,11 +93,11 @@ Use this example to show a tooltip when hovering over the avatar.
   import { Avatar, Tooltip } from 'flowbite-svelte';
 </script>
 
-<Avatar data-name="Jese Leos" rounded src="/images/profile-picture-1.webp" />
+<Avatar data-name="Jese Leos" rounded-sm src="/images/profile-picture-1.webp" />
 <Tooltip>Jese Leos</Tooltip>
-<Avatar data-name="Robert Gouth" rounded src="/images/profile-picture-2.webp" />
+<Avatar data-name="Robert Gouth" rounded-sm src="/images/profile-picture-2.webp" />
 <Tooltip>Robert Gouth</Tooltip>
-<Avatar data-name="Bonnie Green" rounded src="/images/profile-picture-3.webp" />
+<Avatar data-name="Bonnie Green" rounded-sm src="/images/profile-picture-3.webp" />
 <Tooltip>Bonnie Green</Tooltip>
 ```
 
@@ -202,12 +202,12 @@ Preset values are equivalents of:
 </script>
 
 <div class=" flex flex-wrap justify-center space-x-4 rtl:space-x-reverse">
-  <Avatar src="/images/profile-picture-3.webp" rounded size="xs" />
-  <Avatar src="/images/profile-picture-3.webp" rounded size="sm" />
-  <Avatar src="/images/profile-picture-3.webp" rounded size="md" />
-  <Avatar src="/images/profile-picture-3.webp" rounded size="lg" />
-  <Avatar src="/images/profile-picture-3.webp" rounded size="xl" />
-  <Avatar src="/images/profile-picture-3.webp" rounded size="none" class="w-28 h-28" />
+  <Avatar src="/images/profile-picture-3.webp" rounded-sm size="xs" />
+  <Avatar src="/images/profile-picture-3.webp" rounded-sm size="sm" />
+  <Avatar src="/images/profile-picture-3.webp" rounded-sm size="md" />
+  <Avatar src="/images/profile-picture-3.webp" rounded-sm size="lg" />
+  <Avatar src="/images/profile-picture-3.webp" rounded-sm size="xl" />
+  <Avatar src="/images/profile-picture-3.webp" rounded-sm size="none" class="w-28 h-28" />
 </div>
 ```
 

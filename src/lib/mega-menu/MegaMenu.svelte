@@ -22,14 +22,14 @@
   }
 
   let wrapperClass: string;
-  $: wrapperClass = twMerge(full && 'border-y w-full !ml-0', $$props.class);
+  $: wrapperClass = twMerge(full && 'border-y w-full ml-0!', $$props.class);
 
   let ulCls: string;
   $: ulCls = twMerge(ulClass, full && $$slots.extra ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-3', 'text-sm font-medium', full && $$slots.extra && 'md:w-2/3', $$props.classUl);
 </script>
 
-<Popper color={full ? 'default' : 'dropdown'} border={!full} rounded={!full} activeContent arrow={false} trigger="click" placement="bottom" yOnly={full} {...$$restProps} class={wrapperClass} on:show bind:open>
-  <div class="flex flex-col md:flex-row p-4 max-w-screen-md justify-center mx-auto mt-2">
+<Popper color={full ? 'default' : 'dropdown'} border={!full} rounded-sm={!full} activeContent arrow={false} trigger="click" placement="bottom" yOnly={full} {...$$restProps} class={wrapperClass} on:show bind:open>
+  <div class="flex flex-col md:flex-row p-4 max-w-(--breakpoint-md) justify-center mx-auto mt-2">
     <ul class={ulCls}>
       {#each items as item, index}
         <li>

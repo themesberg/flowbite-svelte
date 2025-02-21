@@ -10,7 +10,7 @@
   dir = dir.toLowerCase();
 </script>
 
-<Card href="/docs/{dir}{path}/" padding="none" {...$$restProps} class="!max-w-none shadow-none hover:shadow-lg dark:hover:bg-gray-900 dark:hover:shadow-lg-light">
+<Card href="/docs/{dir}{path}/" padding="none" {...$$restProps} class="max-w-none! shadow-none hover:shadow-lg dark:hover:bg-gray-900 dark:hover:shadow-lg-light">
   <div class="bg-gray-50 dark:bg-gray-700 rounded-t-md py-2.5 px-5 flex justify-between items-center border-b border-gray-200 dark:border-gray-700">
     <span class="text-base font-medium text-gray-900 dark:text-white">{name}</span>
     <span class="text-gray-500 dark:text-gray-400">
@@ -20,10 +20,10 @@
     </span>
   </div>
   <div class="flex justify-center items-center h-52">
-    <div class="relative dark:hidden h-5/6 {thumnailSize ? thumnailSize : 'w-56'}">
+    <div class="block relative dark:hidden h-5/6 {thumnailSize ? thumnailSize : 'w-56'}">
       <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
         <img alt={name} src="/images/{dir}{path}.svg" decoding="async" data-nimg="fill" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;" sizes="100vw" srcset="/images/{dir}{path}.svg 640w, /images/{dir}{path}.svg 750w, /images/{dir}{path}.svg 828w, /images/{dir}{path}.svg 1080w, /images/{dir}{path}.svg 1200w, /images/{dir}{path}.svg 1920w, /images/{dir}{path}.svg 2048w, /images/{dir}{path}.svg 3840w" />
-        <noscript ></noscript>
+        <noscript></noscript>
       </span>
     </div>
     <div class="hidden relative dark:block h-5/6 {thumnailSize ? thumnailSize : 'w-56'}">

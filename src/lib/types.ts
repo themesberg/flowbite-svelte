@@ -64,7 +64,7 @@ export type SelectOptionType<T> = {
   disabled?: boolean;
 };
 
-export type TransitionTypes = 'fade' | 'fly' | 'slide' | 'blur' | 'in:fly' | 'out:fly' | 'in:slide' | 'out:slide' | 'in:fade' | 'out:fade' | 'in:blur' | 'out:blur';
+export type TransitionTypes = 'fade' | 'fly' | 'slide' | 'blur-sm' | 'in:fly' | 'out:fly' | 'in:slide' | 'out:slide' | 'in:fade' | 'out:fade' | 'in:blur' | 'out:blur';
 
 export interface ActivityType {
   title: HTMLElement | string;

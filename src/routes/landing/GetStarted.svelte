@@ -13,7 +13,7 @@
     </div>
     <div class="mt-4 md:mt-5 sm:flex justify-center sm:justify-start1 w-full">
       <div class="flex flex-col sm:flex-row mx-0 gap-4 sm:gap-6 items-center max-w-2xl">
-        <CopyCliboardInput class="bg-white md:!w-80" />
+        <CopyCliboardInput class="bg-white md:w-80!" />
         <Button size="lg" class="gap-2 sm:max-w-sm w-full md:w-fit whitespace-nowrap hover:bg-primary-800" href="/docs/components/accordion" color="primary">
           See our docs <ArrowRight />
         </Button>

@@ -196,7 +196,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
 
 <Table hoverable={true}>
   <TableHead>
-    <TableHeadCell class="!p-4">
+    <TableHeadCell class="p-4!">
       <Checkbox />
     </TableHeadCell>
     <TableHeadCell>Product name</TableHeadCell>
@@ -209,7 +209,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
   </TableHead>
   <TableBody tableBodyClass="divide-y">
     <TableBodyRow>
-      <TableBodyCell class="!p-4">
+      <TableBodyCell class="p-4!">
         <Checkbox />
       </TableBodyCell>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
@@ -221,7 +221,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
-      <TableBodyCell class="!p-4">
+      <TableBodyCell class="p-4!">
         <Checkbox />
       </TableBodyCell>
       <TableBodyCell>Microsoft Surface Pro</TableBodyCell>
@@ -233,7 +233,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
-      <TableBodyCell class="!p-4">
+      <TableBodyCell class="p-4!">
         <Checkbox />
       </TableBodyCell>
       <TableBodyCell>Magic Mouse 2</TableBodyCell>
@@ -551,7 +551,7 @@ Use this example to enable horizontal scrolling if the content inside the table 
 
 <Table>
   <TableHead>
-    <TableHeadCell class="!p-4">
+    <TableHeadCell class="p-4!">
       <Checkbox />
     </TableHeadCell>
     <TableHeadCell>Product name</TableHeadCell>
@@ -565,7 +565,7 @@ Use this example to enable horizontal scrolling if the content inside the table 
   </TableHead>
   <TableBody tableBodyClass="divide-y">
     <TableBodyRow>
-      <TableBodyCell class="!p-4">
+      <TableBodyCell class="p-4!">
         <Checkbox />
       </TableBodyCell>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
@@ -581,7 +581,7 @@ Use this example to enable horizontal scrolling if the content inside the table 
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
-      <TableBodyCell class="!p-4">
+      <TableBodyCell class="p-4!">
         <Checkbox />
       </TableBodyCell>
       <TableBodyCell>Microsoft Surface Pro</TableBodyCell>
@@ -597,7 +597,7 @@ Use this example to enable horizontal scrolling if the content inside the table 
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
-      <TableBodyCell class="!p-4">
+      <TableBodyCell class="p-4!">
         <Checkbox />
       </TableBodyCell>
       <TableBodyCell>Magic Mouse 2</TableBodyCell>

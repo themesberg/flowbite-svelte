@@ -22,7 +22,7 @@
   export let outline: $$Props['outline'] = false;
   export let size: $$Props['size'] = undefined;
   export let color: $$Props['color'] = undefined;
-  export let shadow: $$Props['shadow'] = false;
+  export let shadow: $$Props['shadow-sm'] = false;
 
   let buttonClass: string;
   $: buttonClass = twMerge(inline ? 'inline-flex' : 'flex', $$props.class);
@@ -60,5 +60,5 @@
 @prop export let outline: $$Props['outline'] = false;
 @prop export let size: $$Props['size'] = undefined;
 @prop export let color: $$Props['color'] = undefined;
-@prop export let shadow: $$Props['shadow'] = false;
+@prop export let shadow: $$Props['shadow-sm'] = false;
 -->

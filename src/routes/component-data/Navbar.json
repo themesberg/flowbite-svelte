@@ -2,5 +2,8 @@
   "name": "Navbar",
   "slots": [],
   "events": [],
-  "props": [["fluid?", "boolean", "false"]]
+  "props": [
+    ["fluid?", "boolean", "false"],
+    ["navContainerClass?", "string", ""]
+  ]
 }

@@ -7,7 +7,7 @@
   import Tooltip from '$lib/tooltip/Tooltip.svelte';
   import { DesktopPcOutline, TabletOutline, MobilePhoneOutline } from 'flowbite-svelte-icons';
   import { onMount } from 'svelte';
-  export let divClass = 'w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-6';
+  export let divClass = 'w-full mx-auto bg-linear-to-r bg-white dark:bg-gray-900 p-6';
 
   type NotificationDirection = 'ltr' | 'rtl' | 'auto';
 
@@ -175,7 +175,7 @@
     <div class="w-full p-4 border border-gray-200 bg-gray-50 rounded-t-xl dark:border-gray-600 dark:bg-gray-700">
       <div class="grid {meta.hideResponsiveButtons ? 'grid-cols-2' : 'grid-cols-2 sm:grid-cols-3'}">
         {#if path}
-          <Button size="xs" color="alternative" class="dark:!bg-gray-900 w-fit hover:text-primary-600 gap-2" href={'' + path} target="_blank" rel="noreferrer">
+          <Button size="xs" color="alternative" class="dark:bg-gray-900! w-fit hover:text-primary-600 gap-2" href={'' + path} target="_blank" rel="noreferrer">
             <GitHub size="sm" />Edit on GitHub
           </Button>
           {#if !meta.hideResponsiveButtons}
@@ -200,7 +200,7 @@
     </div>
 
     <div class="code-preview-wrapper">
-      <div class="flex p-0 bg-white border-gray-200 bg-gradient-to-r code-preview dark:bg-gray-900 border-x dark:border-gray-600" class:dark dir={rtl}>
+      <div class="flex p-0 bg-white border-gray-200 bg-linear-to-r code-preview dark:bg-gray-900 border-x dark:border-gray-600" class:dark dir={rtl}>
         <div class="w-full code-responsive-wrapper">
           <div class="code-responive-content {twJoin(!meta.hideResponsiveButtons && 'mx-auto', responsiveSize[responsiveDevice])}" bind:this={codeResponsiveContent}>
             {#if !meta.hideResponsiveButtons}
@@ -243,7 +243,7 @@
       <div class="relative">
         <div class="overflow-hidden" class:max-h-72={!expand} tabindex="-1" use:checkOverflow>
           <div class="highlight">
-            <pre bind:this={code} class="language-svelte !-mt-2 !rounded-none"><slot name="code" /></pre>
+            <pre bind:this={code} class="language-svelte -mt-2! rounded-none!"><slot name="code" /></pre>
           </div>
         </div>
         {#if showExpandButton && !expand}

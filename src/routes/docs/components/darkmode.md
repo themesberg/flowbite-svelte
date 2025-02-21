@@ -48,7 +48,7 @@ Finally, use the dark mode component to display a switcher (that is a button) fo
 
 Use `class="dark"` to set the initial theme to the dark mode. The default mode is `light`.
 
-```
+```html
 <html class="dark" lang="en">
 ```
 

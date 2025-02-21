@@ -36,8 +36,8 @@ In Tailwind CSS, you can make any utility class important by adding a `!` charac
   import { Button } from 'flowbite-svelte';
 </script>
 
-<Button class="!bg-blue-500">Blue Button</Button>
-<Button class="!bg-green-500">Green Button</Button>
+<Button class="bg-blue-500!">Blue Button</Button>
+<Button class="bg-green-500!">Green Button</Button>
 ```
 
 ## Overwriting Specific Classes
@@ -69,7 +69,7 @@ Start by creating your own component based on Flowbite-Svelte.
 
 Create a new file for your button component in the lib directory:
 
-```
+```svelte example hideOutput
 // src/lib/MyButton.svelte
 <script>
   import { Button } from 'flowbite-svelte'
@@ -84,7 +84,7 @@ Once you have created your button component, you can use it in your project.
 
 In your project, import your custom button component:
 
-```
+```js
 <script>
   import MyButton from "$lib/MyButton.svelte"
 </script>
@@ -92,7 +92,7 @@ In your project, import your custom button component:
 
 Use the custom button component in your project by adding the following code:
 
-```
+```html
 <MyButton>My New Button</MyButton>
 ```
 

@@ -400,15 +400,15 @@ pre.language-svelte .token.comment {
 }
 
 .DocSearch.DocSearch-Button {
-  @apply m-0 ml-0 flex h-[40px] w-[40px] items-center justify-center rounded-lg border bg-white p-2 shadow-none hover:bg-gray-100 hover:shadow-none focus:shadow-none focus:outline-none focus:ring-4 focus:ring-gray-200 md:mr-0 md:w-52 md:justify-between md:border-solid md:border-gray-300 md:bg-gray-50 xl:w-64 xl:pl-4;
+  @apply m-2! ml-0 flex h-[40px] w-[40px] items-center justify-center rounded-lg! border! bg-white dark:bg-gray-700! p-2! shadow-none hover:bg-gray-100! hover:shadow-none focus:shadow-none focus:outline-hidden focus:ring-4 focus:ring-gray-200 md:mr-0 md:w-52 md:justify-between md:border-solid! md:border-gray-300! md:bg-gray-50! dark:md:border-gray-600! xl:w-64 xl:pl-4;
 }
 
 .DocSearch .DocSearch-Button-Placeholder {
-  @apply text-sm font-normal text-gray-500;
+  @apply text-sm! font-normal text-gray-500;
 }
 
 .DocSearch .DocSearch-Search-Icon {
-  @apply h-4 w-4 text-transparent md:mr-1 md:h-3 md:w-3 !important;
+  @apply h-4! w-4! text-transparent! md:mr-1! md:h-3! md:w-3!;
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20"><path stroke="%236A7280" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/></svg>');
 }
 
@@ -449,7 +449,7 @@ pre.language-svelte .token.comment {
 }
 
 .DocSearch .DocSearch-Container {
-  @apply bg-gray-900 bg-opacity-50;
+  @apply bg-gray-900 bg-black/50;
 }
 
 .DocSearch .DocSearch-Modal {
@@ -465,7 +465,7 @@ pre.language-svelte .token.comment {
 }
 
 .DocSearch .DocSearch-Input {
-  @apply text-sm text-gray-500 shadow-none focus:shadow-none focus:outline-none focus:ring-0;
+  @apply text-sm text-gray-500 shadow-none focus:shadow-none focus:outline-hidden focus:ring-0;
 }
 
 .DocSearch .DocSearch-LoadingIndicator svg,
@@ -560,7 +560,7 @@ pre.language-svelte .token.comment {
   }
 
   .DocSearch .DocSearch-Container {
-    @apply bg-opacity-80;
+    @apply bg-black/80;
   }
 
   .DocSearch .DocSearch-Modal {

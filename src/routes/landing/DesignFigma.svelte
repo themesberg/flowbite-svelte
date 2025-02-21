@@ -16,11 +16,11 @@
       <div class="flex flex-col items-center gap-4">
         <p class="self-stretch">Our design system is being used by a large number of devs:</p>
         <div class="flex flex-col items-start gap-4 isolate self-stretch max-w-l">
-          <Button color="light" class="self-stretch max-w-lg !px-4 !justify-start gap-5 sm:gap-7" size="xl" href="https://www.figma.com/file/5pHMkriSz9q98zawojb4mx/flowbite-pro-figma-v2.5.0?node-id=18-0&t=X431WUvSP7jsPiEI-0">
+          <Button color="light" class="self-stretch max-w-lg px-4! justify-start! gap-5 sm:gap-7" size="xl" href="https://www.figma.com/file/5pHMkriSz9q98zawojb4mx/flowbite-pro-figma-v2.5.0?node-id=18-0&t=X431WUvSP7jsPiEI-0">
             <Figma /> Preview in Figma
             <div class="ms-auto hidden sm:block"><ArrowRight /></div>
           </Button>
-          <Button color="light" class="self-stretch max-w-lg !px-4 !justify-start gap-4 sm:gap-6" size="xl" href="https://flowbite.com/figma/">
+          <Button color="light" class="self-stretch max-w-lg px-4! justify-start! gap-4 sm:gap-6" size="xl" href="https://flowbite.com/figma/">
             <FlowbiteLogo /> Learn more
             <div class="ms-auto hidden sm:block"><ArrowRight /></div>
           </Button>
@@ -28,7 +28,7 @@
       </div>
     </div>
     <div class="flex-col items-center justify-center hidden h-full lg:flex">
-      <div class="relative dark:hidden rounded-xl">
+      <div class="block relative dark:hidden rounded-xl">
         <img class="max-w-auto w-full" src="/images/figma.png" alt="Header" />
       </div>
       <div class="hidden relative dark:block">

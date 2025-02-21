@@ -14,7 +14,7 @@
   }
 
   export let value: $$Props['value'] = undefined;
-  export let wrappedClass: $$Props['wrappedClass'] = 'block w-full text-sm border-0 px-0 bg-inherit dark:bg-inherit focus:outline-none focus:ring-0 disabled:cursor-not-allowed disabled:opacity-50';
+  export let wrappedClass: $$Props['wrappedClass'] = 'block w-full text-sm border-0 px-0 bg-inherit dark:bg-inherit focus:outline-hidden focus:ring-0 disabled:cursor-not-allowed disabled:opacity-50';
   export let unWrappedClass: $$Props['unWrappedClass'] = 'p-2.5 text-sm focus:ring-primary-500 border-gray-300 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 disabled:cursor-not-allowed disabled:opacity-50';
   export let innerWrappedClass: $$Props['innerWrappedClass'] = 'py-2 px-4 bg-white dark:bg-gray-800';
   export let headerClass: $$Props['headerClass'] = ''
@@ -57,7 +57,7 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let value: $$Props['value'] = undefined;
-@prop export let wrappedClass: $$Props['wrappedClass'] = 'block w-full text-sm border-0 px-0 bg-inherit dark:bg-inherit focus:outline-none focus:ring-0 disabled:cursor-not-allowed disabled:opacity-50';
+@prop export let wrappedClass: $$Props['wrappedClass'] = 'block w-full text-sm border-0 px-0 bg-inherit dark:bg-inherit focus:outline-hidden focus:ring-0 disabled:cursor-not-allowed disabled:opacity-50';
 @prop export let unWrappedClass: $$Props['unWrappedClass'] = 'p-2.5 text-sm focus:ring-primary-500 border-gray-300 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 disabled:cursor-not-allowed disabled:opacity-50';
 @prop export let innerWrappedClass: $$Props['innerWrappedClass'] = 'py-2 px-4 bg-white dark:bg-gray-800';
 @prop export let headerClass: $$Props['headerClass'] = ''

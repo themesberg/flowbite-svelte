@@ -10,7 +10,7 @@
 
   export let color: $$Props['color'] = 'text-white dark:bg-blue-500';
   export let bgColor: $$Props['bgColor'] = 'bg-blue-600';
-  export let markClass: $$Props['markClass'] = 'px-2 rounded';
+  export let markClass: $$Props['markClass'] = 'px-2 rounded-sm';
 </script>
 
 <mark {...$$restProps} class={twMerge(markClass, bgColor, color, $$props.class)}>
@@ -23,5 +23,5 @@
 ## Props
 @prop export let color: $$Props['color'] = 'text-white dark:bg-blue-500';
 @prop export let bgColor: $$Props['bgColor'] = 'bg-blue-600';
-@prop export let markClass: $$Props['markClass'] = 'px-2 rounded';
+@prop export let markClass: $$Props['markClass'] = 'px-2 rounded-sm';
 -->

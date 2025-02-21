@@ -1,10 +1,45 @@
-@import '../static/styles/docs.css';
-@import '../node_modules/flowbite/dist/flowbite.css';
+@import '../static/styles/docs.css' layer(base);
+@import '../node_modules/flowbite/dist/flowbite.css' layer(base);
 
 /* Write your global styles here, in PostCSS syntax */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin 'flowbite/plugin';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --z-index-100: 100;
+
+  --color-primary-50: #fff5f2;
+  --color-primary-100: #fff1ee;
+  --color-primary-200: #ffe4de;
+  --color-primary-300: #ffd5cc;
+  --color-primary-400: #ffbcad;
+  --color-primary-500: #fe795d;
+  --color-primary-600: #ef562f;
+  --color-primary-700: #eb4f27;
+  --color-primary-800: #cc4522;
+  --color-primary-900: #a5371b;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
 
 @layer base {
   html {
@@ -40,6 +75,6 @@
   }
 
   #mainContent > pre {
-    @apply text-sm rounded-xl overflow-auto w-full my-4 mx-auto bg-gradient-to-r text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6;
+    @apply text-sm rounded-xl overflow-auto w-full my-4 mx-auto bg-linear-to-r text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6;
   }
 }

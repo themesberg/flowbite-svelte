@@ -92,7 +92,7 @@ Use this example to show a navigational sidebar inside the drawer component.
     <CloseButton on:click={() => (hidden2 = true)} class="mb-4 dark:text-white" />
   </div>
   <Sidebar>
-    <SidebarWrapper divClass="overflow-y-auto py-4 px-3 rounded dark:bg-gray-800">
+    <SidebarWrapper divClass="overflow-y-auto py-4 px-3 rounded-sm dark:bg-gray-800">
       <SidebarGroup>
         <SidebarItem label="Dashboard">
           <svelte:fragment slot="icon">
@@ -244,7 +244,7 @@ Use this example if you want to add form elements inside the drawer component in
     <div class="mb-4">
       <div class="relative">
         <Input noBorder id="search" placeholder="Add guest email" class="p-3" />
-        <Button textSize="text-sm" class="absolute inline-flex items-center px-3 py-1 text-sm font-medium text-white bg-primary-700 rounded-lg end-2 bottom-2 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" type="submit">
+        <Button textSize="text-sm" class="absolute inline-flex items-center px-3 py-1 text-sm font-medium text-white bg-primary-700 rounded-lg end-2 bottom-2 hover:bg-primary-800 focus:ring-4 focus:outline-hidden focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" type="submit">
           <UserAddOutline class="w-3 h-3 me-1.5 text-white" />Add
         </Button>
       </div>

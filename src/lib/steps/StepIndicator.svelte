@@ -63,15 +63,15 @@
     {#each steps as step, i}
       {#if i === currentStep - 1}
         <div class="relative w-full h-full">
-          <div class={twJoin('relative w-full h-full rounded-sm', currentStepColors[color])}></div>
+          <div class={twJoin('relative w-full h-full rounded-xs', currentStepColors[color])}></div>
           {#if glow}
-            <div class={twJoin('absolute -inset-1 rounded-sm blur opacity-30 dark:opacity-25', currentStepColors[color])}></div>
+            <div class={twJoin('absolute -inset-1 rounded-xs blur-sm opacity-30 dark:opacity-25', currentStepColors[color])}></div>
           {/if}
         </div>
       {:else if i < currentStep - 1}
-        <div class={twJoin('w-full h-full rounded-sm', completedStepColors[color])}></div>
+        <div class={twJoin('w-full h-full rounded-xs', completedStepColors[color])}></div>
       {:else}
-        <div class="w-full h-full rounded-sm bg-gray-200 dark:bg-gray-700"></div>
+        <div class="w-full h-full rounded-xs bg-gray-200 dark:bg-gray-700"></div>
       {/if}
     {/each}
   </div>
