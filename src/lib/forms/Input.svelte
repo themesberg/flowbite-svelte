@@ -82,7 +82,7 @@
   };
 </script>
 
-<Wrapper class="relative w-full" show={$$slots.left || $$slots.right}>
+<Wrapper class="relative w-full" show={$$slots.left || $$slots.right || clearable}>
   {#if $$slots.left}
     <div class="{twMerge(floatClass, classLeft)} start-0 ps-2.5 pointer-events-none">
       <slot name="left" />
@@ -97,7 +97,7 @@
   </div>
   {/if}
   {#if clearable && value && `${value}`.length > 0}
-    <CloseButton {size} on:click={clearAll} color="none" class=" {twMerge(floatClass, classRight)} focus:ring-0 end-6 focus:ring-gray-400 dark:text-white" />
+    <CloseButton {size} on:click={clearAll} color="none" class=" {twMerge(floatClass, classRight)} focus:ring-0 end-1 focus:ring-gray-400 dark:text-white" />
   {/if}
 </Wrapper>
 
