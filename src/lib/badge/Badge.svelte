@@ -20,6 +20,7 @@
     rounded?: boolean;
     transition?: TransitionFunc;
     params?: object;
+    tag?: string;
   }
 
   export let color: NonNullable<$$Props['color']> = 'primary';
@@ -30,6 +31,7 @@
   export let rounded: $$Props['rounded'] = false;
   export let transition: NonNullable<$$Props['transition']> = fade;
   export let params: $$Props['params'] = {};
+  export let tag: $$Props['tag'] = 'div';
 
   let badgeStatus: boolean = true;
 
@@ -82,7 +84,7 @@
 </script>
 
 {#if badgeStatus}
-  <div {...$$restProps} transition:transition={params} class={badgeClass} on:close>
+  <svelte:element this={tag} {...$$restProps} transition:transition={params} class={badgeClass} on:close>
     {#if href}
       <a {href}>
         <slot></slot>
@@ -103,7 +105,7 @@
           }} />
       </slot>
     {/if}
-  </div>
+  </svelte:element>
 {/if}
 
 <!--
