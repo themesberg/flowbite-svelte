@@ -1,7 +1,8 @@
 <script lang="ts">
+  import type { HTMLAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
 
-  interface $$Props {
+  interface $$Props extends HTMLAttributes<HTMLDivElement> {
     divClass?: string;
   }
 

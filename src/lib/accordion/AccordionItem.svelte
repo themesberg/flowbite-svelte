@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
   import { getContext, onMount } from 'svelte';
   import { writable } from 'svelte/store';
-  import { fade, blur, fly, slide } from 'svelte/transition';
-  import type { TransitionTypes, TransitionParamTypes } from '../types';
+  import { blur, fade, fly, slide } from 'svelte/transition';
+  import { twMerge } from 'tailwind-merge';
+  import type { TransitionParamTypes, TransitionTypes } from '../types';
   import type { AccordionCtxType } from './Accordion.svelte';
 
   interface $$Props {
@@ -24,6 +24,7 @@
     borderSharedClass?: string;
     classActive?: string;
     classInactive?: string;
+    class?: string;
   }
 
   export let tag: $$Props['tag'] = 'h2';

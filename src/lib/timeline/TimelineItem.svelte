@@ -1,8 +1,9 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
+  import type { HTMLLiAttributes } from 'svelte/elements';
 
-  interface $$Props {
+  interface $$Props extends HTMLLiAttributes {
     title?: string;
     date?: string;
     svgClass?: string;

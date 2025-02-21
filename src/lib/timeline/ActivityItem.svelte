@@ -1,8 +1,9 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
   import type { ActivityType } from '../types';
+  import type { HTMLLiAttributes } from 'svelte/elements';
 
-  interface $$Props {
+  interface $$Props extends HTMLLiAttributes {
     activities: ActivityType[];
     liClass?: string;
     spanClass?: string;

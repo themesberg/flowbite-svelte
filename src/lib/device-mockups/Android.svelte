@@ -15,6 +15,7 @@
     classLeftBot?: string;
     classRight?: string;
     classSlot?: string;
+    class?: string;
   }
 
   export let div: $$Props['div'] = 'relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-xl h-[600px] w-[300px] shadow-xl';

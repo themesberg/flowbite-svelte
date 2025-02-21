@@ -16,6 +16,7 @@
   interface $$Props {
     divClass?: string;
     size?: keyof Sizes;
+    class?: string;
   }
 
   export let divClass: $$Props['divClass'] = 'animate-pulse';

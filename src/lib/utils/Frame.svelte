@@ -27,7 +27,7 @@
   import { twMerge } from 'tailwind-merge';
 
   import type { Action } from 'svelte/action';
-  import type { HTMLAnchorAttributes } from 'svelte/elements';
+  import type { HTMLAnchorAttributes, HTMLAttributes } from 'svelte/elements';
   import { type TransitionConfig } from 'svelte/transition';
 
   const noop = () => {};
@@ -35,7 +35,7 @@
   /* eslint-disable  @typescript-eslint/no-explicit-any */
   type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 
-  interface $$Props extends HTMLAnchorAttributes {
+  interface $$Props extends HTMLAttributes<HTMLElement> {
     tag?: string;
     color?: FrameColor;
     rounded?: boolean;
@@ -82,7 +82,6 @@
   $: setContext('color', color);
 
   // your script goes here
-  
 
   const textColors = {
     gray: 'text-gray-800 dark:text-gray-300',

@@ -9,6 +9,7 @@
     classInner?: string;
     classBot?: string;
     classBotUnder?: string;
+    class?: string;
   }
 
   export let inner: $$Props['inner'] = 'rounded-xl overflow-hidden h-[140px] md:h-[262px]';
