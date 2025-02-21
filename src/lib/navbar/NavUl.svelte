@@ -53,7 +53,7 @@
 
 {#if !_hidden}
   <div {...$$restProps} class={_divClass} transition:slide={slideParams} on:click role="button" tabindex="0">
-    <Frame tag="ul" border rounded-sm color="navbarUl" class={_ulClass}>
+    <Frame tag="ul" border rounded color="navbarUl" class={_ulClass}>
       <slot />
     </Frame>
   </div>
