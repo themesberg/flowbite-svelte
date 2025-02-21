@@ -107,7 +107,7 @@
 @prop export let striped: $$Props['striped'] = false;
 @prop export let hoverable: $$Props['hoverable'] = false;
 @prop export let noborder: $$Props['noborder'] = false;
-@prop export let shadow: $$Props['shadow-sm'] = false;
+@prop export let shadow: $$Props['shadow'] = false;
 @prop export let color: NonNullable<$$Props['color']> = 'default';
 @prop export let customeColor: $$Props['customeColor'] = '';
 @prop export let items: $$Props['items'] = [];

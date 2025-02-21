@@ -16,7 +16,7 @@
 
   export const labelClass = (inline: boolean, extraClass: string) => twMerge(inline ? 'inline-flex' : 'flex', 'items-center', extraClass);
 
-  export const inputClass = (custom: boolean, color: FormColorType, rounded: boolean, tinted: boolean, spacing: string, extraClass: string) => twMerge('w-4 h-4 bg-gray-100 border-gray-300 dark:ring-offset-gray-800 focus:ring-2', spacing, tinted ? 'dark:bg-gray-600 dark:border-gray-500' : 'dark:bg-gray-700 dark:border-gray-600', custom && 'sr-only peer', rounded && 'rounded-sm', colorClasses[color], extraClass);
+  export const inputClass = (custom: boolean, color: FormColorType, rounded: boolean, tinted: boolean, spacing: string, extraClass: string) => twMerge('w-4 h-4 bg-gray-100 border-gray-300 dark:ring-offset-gray-800 focus:ring-2', spacing, tinted ? 'dark:bg-gray-600 dark:border-gray-500' : 'dark:bg-gray-700 dark:border-gray-600', custom && 'sr-only peer', rounded && 'rounded', colorClasses[color], extraClass);
 </script>
 
 <script lang="ts">
@@ -51,7 +51,7 @@
 </script>
 
 <Label class={labelClass(inline, $$props.class)} show={$$slots.default}>
-  <input type="radio" {...$$restProps} bind:group={group} on:blur on:change on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover on:paste {value} class={inputClass(custom, color, false, background, spacing, $$slots.default || $$props.class)} />
+  <input type="radio" {...$$restProps} bind:group on:blur on:change on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover on:paste {value} class={inputClass(custom, color, false, background, spacing, $$slots.default || $$props.class)} />
   <slot />
 </Label>
 

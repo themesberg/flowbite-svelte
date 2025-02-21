@@ -1,7 +1,7 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
-  import type { HTMLButtonAttributes, HTMLAnchorAttributes  } from 'svelte/elements';
+  import type { HTMLButtonAttributes, HTMLAnchorAttributes } from 'svelte/elements';
 
   interface PaginationItemProps {
     href?: string;
@@ -26,7 +26,7 @@
   $: defaultClass = twMerge(
     'flex items-center font-medium',
     large ? 'h-10 px-4 text-base' : 'h-8 px-3 text-sm',
-    group ? '' : table ? 'rounded-sm' : 'rounded-lg',
+    group ? '' : table ? 'rounded' : 'rounded-lg',
     // table || 'border border-gray-300 dark:border-gray-700 dark:bg-gray-800',
     table ? '' : 'border',
     active ? activeClass : normalClass,

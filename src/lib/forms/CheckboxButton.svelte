@@ -14,7 +14,7 @@
     size?: SizeType;
     color?: ButtonColorType;
     shadow?: boolean;
-  }
+  };
 
   export let group: $$Props['group'] = [];
   export let value: $$Props['value'] = 'on';
@@ -24,7 +24,7 @@
   export let outline: $$Props['outline'] = false;
   export let size: $$Props['size'] = undefined;
   export let color: $$Props['color'] = undefined;
-  export let shadow: $$Props['shadow-sm'] = false;
+  export let shadow: $$Props['shadow'] = false;
 
   function init(node: HTMLElement, _group: (string | number)[] | undefined) {
     function update(_group: (string | number)[] | undefined) {
@@ -62,25 +62,7 @@
 </script>
 
 <Button {checked} {pill} {outline} {size} {color} {shadow} class={buttonClass}>
-  <input
-    use:init={group}
-    type="checkbox"
-    bind:checked
-    value={value !== undefined ? value : 'on'}
-    {...$$restProps}
-    class="sr-only"
-    on:keyup
-    on:keydown
-    on:keypress
-    on:focus
-    on:blur
-    on:click
-    on:mouseover
-    on:mouseenter
-    on:mouseleave
-    on:paste
-    on:change={onChange}
-    on:change />
+  <input use:init={group} type="checkbox" bind:checked value={value !== undefined ? value : 'on'} {...$$restProps} class="sr-only" on:keyup on:keydown on:keypress on:focus on:blur on:click on:mouseover on:mouseenter on:mouseleave on:paste on:change={onChange} on:change />
   <slot />
 </Button>
 
@@ -96,5 +78,5 @@
 @prop export let outline: $$Props['outline'] = false;
 @prop export let size: $$Props['size'] = undefined;
 @prop export let color: $$Props['color'] = undefined;
-@prop export let shadow: $$Props['shadow-sm'] = false;
+@prop export let shadow: $$Props['shadow'] = false;
 -->

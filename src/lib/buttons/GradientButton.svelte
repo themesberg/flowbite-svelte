@@ -12,7 +12,7 @@
   const group = getContext('group');
 
   export let color: NonNullable<$$Props['color']> = 'blue';
-  export let shadow: $$Props['shadow-sm'] = false;
+  export let shadow: $$Props['shadow'] = false;
 
   const gradientClasses = {
     blue: 'text-white bg-linear-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-linear-to-br focus:ring-blue-300 dark:focus:ring-blue-800 ',
@@ -81,5 +81,5 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let color: NonNullable<$$Props['color']> = 'blue';
-@prop export let shadow: $$Props['shadow-sm'] = false;
+@prop export let shadow: $$Props['shadow'] = false;
 -->
