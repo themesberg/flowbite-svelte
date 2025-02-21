@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ApexCharts from 'apexcharts';
+  import type ApexCharts from 'apexcharts';
   import type { ApexOptions } from 'apexcharts';
   import { onMount } from 'svelte';
 
