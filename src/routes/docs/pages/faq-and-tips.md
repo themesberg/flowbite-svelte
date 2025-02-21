@@ -63,13 +63,13 @@ The following example shows how to add navigation using the key blocks:
 
 First build the current setting and check the CSS size.
 
-```
+```sh
 pnpm build
 ```
 
 Then run the following command to see your compiled CSS sizes.
 
-```
+```sh
 find .svelte-kit/output/client/_app/immutable -type f -name "*.css" -exec du -h {} +
 ```
 
@@ -77,13 +77,13 @@ To purge the CSS files, you can use `vite-plugin-tailwind-purgecss`.
 
 ### Installation
 
-```
+```sh
 pnpm i -D vite-plugin-tailwind-purgecss
 ```
 
 ### vite.config.ts
 
-```
+```js
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vitest/config';
 import { purgeCss } from 'vite-plugin-tailwind-purgecss';
@@ -98,6 +98,6 @@ export default defineConfig({
 
 Run `pnpm build` and run the same command to see the compiled CSS size.
 
-```
+```sh
 find .svelte-kit/output/client/_app/immutable -type f -name "*.css" -exec du -h {} +
 ```

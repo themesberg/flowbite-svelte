@@ -14,7 +14,7 @@ description: Learn how you can manage and improve the Svelte compilation speed w
 
 If your Svelte app only requires a few components, it's recommended that you import them directly. Doing so can help optimize compilation speed and improve performance by reducing the amount of code that needs to be processed during compilation. Since version 0.34.1, it's now possible to import individual components.
 
-```
+```js
   import Alert from 'flowbite-svelte/Alert.svelte'
 ```
 
