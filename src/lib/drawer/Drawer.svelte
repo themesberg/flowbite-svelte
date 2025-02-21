@@ -15,6 +15,7 @@
     bottomOffset?: string;
     width?: string;
     backdrop?: boolean;
+    backdropClass?: string;
     bgColor?: string;
     bgOpacity?: string;
     placement?: 'left' | 'right' | 'top' | 'bottom';
@@ -23,6 +24,7 @@
     transitionParams?: drawerTransitionParamTypes;
     transitionType?: TransitionTypes;
   }
+
   export let activateClickOutside: $$Props['activateClickOutside'] = true;
   export let hidden: $$Props['hidden'] = true;
   export let position: $$Props['position'] = 'fixed';
@@ -32,6 +34,7 @@
   export let bottomOffset: $$Props['bottomOffset'] = 'inset-x-0 bottom-0';
   export let width: $$Props['width'] = 'w-80';
   export let backdrop: $$Props['backdrop'] = true;
+  export let backdropClass: $$Props['backdropClass'] = '';
   export let bgColor: $$Props['bgColor'] = 'bg-gray-900';
   export let bgOpacity: $$Props['bgOpacity'] = 'bg-black/75';
   export let placement: NonNullable<$$Props['placement']> = 'left';
@@ -66,7 +69,7 @@
 
   const handleClickOutside = () => activateClickOutside && !hidden && handleDrawer();
 
-  let backdropDivClass = twMerge('fixed top-0 start-0 z-50 w-full h-full', backdrop && bgColor, backdrop && bgOpacity);
+  let backdropDivClass = twMerge('fixed top-0 start-0 z-50 w-full h-full', backdrop && bgColor, backdrop && bgOpacity, backdropClass);
 
   function clickOutsideWrapper(node: HTMLElement, callback: () => void) {
     return activateClickOutside ? clickOutside(node, callback) : undefined;
