@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.48.1
+
+### Patch Changes
+
+- fix: bugs
+
 ## 0.47.4
 
 ### Patch Changes
