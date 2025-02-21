@@ -3,6 +3,7 @@
 
   interface $$Props {
     divClass?: string;
+    class?: string;
   }
 
   export let divClass: $$Props['divClass'] = 'p-4 space-y-4 max-w-md rounded-sm border border-gray-200 divide-y divide-gray-200 shadow-sm animate-pulse dark:divide-gray-700 md:p-6 dark:border-gray-700';

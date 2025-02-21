@@ -15,6 +15,7 @@
   interface $$Props {
     divClass?: string;
     size?: keyof Sizes;
+    class?: string;
   }
 
   export let divClass: $$Props['divClass'] = 'flex justify-center items-center h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700';

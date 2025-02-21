@@ -1,4 +1,5 @@
 <script lang="ts">
+  import type { HTMLAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
   interface Sizes {
     [key: string]: string;
@@ -12,7 +13,7 @@
     xxl: 'max-w-2xl'
   };
 
-  interface $$Props {
+  interface $$Props extends HTMLAttributes<HTMLDivElement> {
     divClass?: string;
     size?: keyof Sizes;
   }

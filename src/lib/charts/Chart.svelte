@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import type { ApexOptions, ApexChart } from 'apexcharts';
   import type ApexCharts from 'apexcharts';
-  
+  import type { ApexOptions } from 'apexcharts';
+  import { onMount } from 'svelte';
+
   interface $$Props {
     options: ApexOptions;
     class?: string;
@@ -17,7 +17,7 @@
     update: (options: ApexOptions) => void;
     destroy: () => void;
   }
-  
+
   function initChart(node: HTMLElement, options: ApexOptions): ChartAction {
     async function asyncInitChart(): Promise<void> {
       const ApexChartsModule = await import('apexcharts');

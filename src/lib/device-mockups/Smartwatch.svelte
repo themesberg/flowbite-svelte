@@ -13,7 +13,9 @@
     classRightBot?: string;
     classSlot?: string;
     classBot?: string;
+    class?: string;
   }
+
   export let div: $$Props['div'] = 'relative mx-auto bg-gray-800 dark:bg-gray-700 rounded-t-[2.5rem] h-[63px] max-w-[133px]';
   export let slot: $$Props['slot'] = 'rounded-[2rem] overflow-hidden h-[193px] w-[188px]';
   export let rightTop: $$Props['rightTop'] = 'h-[41px] w-[6px] bg-gray-800 dark:bg-gray-800 absolute -right-[16px] top-[40px] rounded-r-lg';

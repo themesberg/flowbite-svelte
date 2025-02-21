@@ -10,11 +10,13 @@
     menuClass?: string;
     onClick?: (() => void) | undefined;
     classMenu?: string;
+    title?: string;
   };
 
   export let menuClass: $$Props['menuClass'] = 'h-6 w-6 shrink-0';
   export let onClick: $$Props['onClick'] = undefined;
   export let classMenu: $$Props['classMenu'] = '';
+  export let title: $$Props['title'] = 'Open main menu';
 
   let btnClass: string = 'ms-3 md:hidden';
 
@@ -22,7 +24,7 @@
   const toggle = (ev: MouseEvent) => hiddenStore.update((h) => !h);
 </script>
 
-<ToolbarButton name="Open main menu" on:click={onClick || toggle} {...$$restProps} class={twMerge(btnClass, $$props.class)}>
+<ToolbarButton name={title} on:click={onClick || toggle} {...$$restProps} class={twMerge(btnClass, $$props.class)}>
   <Menu class={twMerge(menuClass, classMenu)} />
 </ToolbarButton>
 

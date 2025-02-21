@@ -18,7 +18,7 @@
 
   export let src: $$Props['src'] = '';
   export let href: $$Props['href'] = undefined;
-  export let rounded: $$Props['rounded-sm'] = false;
+  export let rounded: $$Props['rounded'] = false;
   export let border: $$Props['border'] = false;
   export let stacked: $$Props['stacked'] = false;
   export let dot: $$Props['dot'] = undefined;
@@ -37,17 +37,17 @@
   };
 
   let avatarClass: string;
-  $: avatarClass = twMerge(rounded ? 'rounded-sm' : 'rounded-full', border && 'p-1 ring-2 ring-gray-300 dark:ring-gray-500', sizes[size], stacked && 'border-2 -ms-4 border-white dark:border-gray-800', 'bg-gray-100 dark:bg-gray-600 text-gray-600 dark:text-gray-300 object-cover', $$props.class);
+  $: avatarClass = twMerge(rounded ? 'rounded' : 'rounded-full', border && 'p-1 ring-2 ring-gray-300 dark:ring-gray-500', sizes[size], stacked && 'border-2 -ms-4 border-white dark:border-gray-800', 'bg-gray-100 dark:bg-gray-600 text-gray-600 dark:text-gray-300 object-cover', $$props.class);
 </script>
 
 {#if !src || !!href || $$slots.default || dot}
   <svelte:element this={href ? 'a' : 'div'} {href} {...$$restProps} class="relative flex justify-center items-center {avatarClass}">
     {#if src}
-      <img {alt} {src} class={rounded ? 'rounded-sm' : 'rounded-full'} />
+      <img {alt} {src} class={rounded ? 'rounded' : 'rounded-full'} />
     {:else}
       <slot>
         <!-- default avatar placeholder -->
-        <svg class="w-full h-full {rounded ? 'rounded-sm' : 'rounded-full'}" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+        <svg class="w-full h-full {rounded ? 'rounded' : 'rounded-full'}" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
         </svg>
       </slot>
@@ -66,7 +66,7 @@
 ## Props
 @prop export let src: $$Props['src'] = '';
 @prop export let href: $$Props['href'] = undefined;
-@prop export let rounded: $$Props['rounded-sm'] = false;
+@prop export let rounded: $$Props['rounded'] = false;
 @prop export let border: $$Props['border'] = false;
 @prop export let stacked: $$Props['stacked'] = false;
 @prop export let dot: $$Props['dot'] = undefined;

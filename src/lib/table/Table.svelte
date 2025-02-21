@@ -14,7 +14,7 @@
     color?: TableColorType;
     customeColor?: string;
     items?: T[];
-    filter?:  ((t: T, term: string) => boolean) | null;
+    filter?: ((t: T, term: string) => boolean) | null;
     placeholder?: string;
     innerDivClass?: string;
     searchClass?: string;
@@ -29,7 +29,7 @@
   export let striped: $$Props['striped'] = false;
   export let hoverable: $$Props['hoverable'] = false;
   export let noborder: $$Props['noborder'] = false;
-  export let shadow: $$Props['shadow-sm'] = false;
+  export let shadow: $$Props['shadow'] = false;
   export let color: NonNullable<$$Props['color']> = 'default';
   export let customeColor: $$Props['customeColor'] = '';
   export let items: $$Props['items'] = [];
@@ -70,7 +70,7 @@
   setContext('filter', filterStore);
   $: searchTermStore.set(searchTerm);
   $: {
-    if(filter) filterStore.set(filter)
+    if (filter) filterStore.set(filter);
   }
   setContext('sorter', writable(null));
 </script>
@@ -88,7 +88,7 @@
               </svg>
             </slot>
           </div>
-          <input bind:value={searchTerm} type="text" id="table-search" class={inputCls} {placeholder} />
+          <input bind:value={searchTerm} type="search" id="table-search" class={inputCls} {placeholder} />
         </div>
         <slot name="header" />
       </div>
@@ -107,7 +107,7 @@
 @prop export let striped: $$Props['striped'] = false;
 @prop export let hoverable: $$Props['hoverable'] = false;
 @prop export let noborder: $$Props['noborder'] = false;
-@prop export let shadow: $$Props['shadow-sm'] = false;
+@prop export let shadow: $$Props['shadow'] = false;
 @prop export let color: NonNullable<$$Props['color']> = 'default';
 @prop export let customeColor: $$Props['customeColor'] = '';
 @prop export let items: $$Props['items'] = [];

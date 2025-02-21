@@ -29,8 +29,8 @@
     name?: string;
     gradient?: boolean;
     open?: boolean;
-  }
-  
+  };
+
   export let defaultClass: $$Props['defaultClass'] = 'fixed end-6 bottom-6';
   export let popperDefaultClass: $$Props['popperDefaultClass'] = 'flex items-center mb-4 gap-2';
   export let placement: NonNullable<$$Props['placement']> = 'top';
@@ -50,8 +50,6 @@
 
   let poperClass: string;
   $: poperClass = twMerge(popperDefaultClass, ['top', 'bottom'].includes(placement.split('-')[0]) && 'flex-col');
-
-  $: console.log(typeof $$restProps, Object.keys($$restProps));
 </script>
 
 <div class={divClass}>

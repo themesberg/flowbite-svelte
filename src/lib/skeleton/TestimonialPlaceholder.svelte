@@ -2,6 +2,7 @@
   import { twMerge } from 'tailwind-merge';
 
   interface $$Props {
+    class?: string;
     divClass?: string;
   }
 

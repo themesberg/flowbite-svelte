@@ -11,7 +11,7 @@
   import Popper from '$lib/utils/Popper.svelte';
   import { setContext } from 'svelte';
   import { writable } from 'svelte/store';
-  import type {FrameColor} from '$lib/utils/Frame.svelte';
+  import type { FrameColor } from '$lib/utils/Frame.svelte';
 
   interface $$Props extends ComponentProps<Popper> {
     activeUrl?: string;
@@ -46,8 +46,8 @@
   export let trigger: $$Props['trigger'] = 'click';
   export let placement: $$Props['placement'] = 'bottom';
   export let color: $$Props['color'] = 'dropdown';
-  export let shadow: $$Props['shadow-sm'] = true;
-  export let rounded: $$Props['rounded-sm'] = true;
+  export let shadow: $$Props['shadow'] = true;
+  export let rounded: $$Props['rounded'] = true;
 
   const activeUrlStore = writable('');
   let activeCls = twMerge(activeClass, classActive);
@@ -57,13 +57,12 @@
   $: activeUrlStore.set(activeUrl ?? '');
 
   setContext('activeUrl', activeUrlStore);
- 
+
   $: containerCls = twMerge(containerClass, classContainer);
   $: headerCls = twMerge(headerClass, classHeader);
   $: ulCls = twMerge('py-1', $$props.class);
   $: footerCls = twMerge(footerClass, classFooter);
   // let arrow, trigger, placement, color, shadow, rounded;
-  
 </script>
 
 <Popper activeContent {...$$restProps} {trigger} {arrow} {placement} {shadow} {rounded} {color} class={containerCls} on:show bind:open>
@@ -100,6 +99,6 @@
 @prop export let trigger: $$Props['trigger'] = 'click';
 @prop export let placement: $$Props['placement'] = 'bottom';
 @prop export let color: $$Props['color'] = 'dropdown';
-@prop export let shadow: $$Props['shadow-sm'] = true;
-@prop export let rounded: $$Props['rounded-sm'] = true;
+@prop export let shadow: $$Props['shadow'] = true;
+@prop export let rounded: $$Props['rounded'] = true;
 -->

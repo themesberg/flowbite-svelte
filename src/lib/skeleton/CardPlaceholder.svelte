@@ -15,6 +15,7 @@
   interface $$Props {
     divClass?: string;
     size?: keyof Sizes;
+    class?: string;
   }
 
   export let divClass: $$Props['divClass'] = 'p-4 rounded-sm border border-gray-200 shadow-sm animate-pulse md:p-6 dark:border-gray-700';

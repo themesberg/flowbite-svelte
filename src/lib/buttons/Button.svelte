@@ -11,18 +11,20 @@
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     color?: ButtonColor;
     shadow?: boolean;
-    tag?: 'a' | 'button'| 'label';
+    tag?: 'a' | 'button' | 'label';
     checked?: boolean;
-  }
-
-  type AnchorProps = CommonProps & Omit<HTMLAnchorAttributes, 'type'> & {
-    href?: string | undefined;
   };
 
-  type ButtonProps = CommonProps & HTMLButtonAttributes & {
-    disabled?: HTMLButtonAttributes['disabled'];
-    type?: HTMLButtonAttributes['type'];
-  };
+  type AnchorProps = CommonProps &
+    Omit<HTMLAnchorAttributes, 'type'> & {
+      href?: string | undefined;
+    };
+
+  type ButtonProps = CommonProps &
+    HTMLButtonAttributes & {
+      disabled?: HTMLButtonAttributes['disabled'];
+      type?: HTMLButtonAttributes['type'];
+    };
 
   type $$Props = AnchorProps | ButtonProps;
 
@@ -34,7 +36,7 @@
   export let href: string | undefined = undefined;
   export let type: HTMLButtonAttributes['type'] = 'button';
   export let color: NonNullable<$$Props['color']> = group ? (outline ? 'dark' : 'alternative') : 'primary';
-  export let shadow: $$Props['shadow-sm'] = false;
+  export let shadow: $$Props['shadow'] = false;
   export let tag: $$Props['tag'] = 'button';
   export let checked: $$Props['checked'] = undefined;
   export let disabled: HTMLButtonAttributes['disabled'] = false;
@@ -146,7 +148,7 @@
   <label {...$$restProps} class={buttonClass}>
     <slot />
   </label>
-{:else if tag === 'button' }
+{:else if tag === 'button'}
   <button {type} {...$$restProps} {disabled} class={buttonClass} on:click on:change on:keydown on:keyup on:touchstart|passive on:touchend on:touchcancel on:mouseenter on:mouseleave on:mouseup on:mousedown>
     <slot />
   </button>
@@ -166,7 +168,7 @@
 @prop export let href: string | undefined = undefined;
 @prop export let type: HTMLButtonAttributes['type'] = 'button';
 @prop export let color: NonNullable<$$Props['color']> = group ? (outline ? 'dark' : 'alternative') : 'primary';
-@prop export let shadow: $$Props['shadow-sm'] = false;
+@prop export let shadow: $$Props['shadow'] = false;
 @prop export let tag: $$Props['tag'] = 'button';
 @prop export let checked: $$Props['checked'] = undefined;
 @prop export let disabled: HTMLButtonAttributes['disabled'] = false;
