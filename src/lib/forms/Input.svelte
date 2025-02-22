@@ -14,7 +14,7 @@
   import CloseButton from '$lib/utils/CloseButton.svelte';
 
   /* eslint-disable  @typescript-eslint/no-explicit-any */
-  interface $$Props extends Omit<HTMLInputAttributes,'size'> {
+  interface $$Props extends Omit<HTMLInputAttributes, 'size'> {
     type?: InputType;
     value?: any;
     size?: FormSizeType;
@@ -24,9 +24,9 @@
     floatClass?: string;
     classLeft?: string;
     classRight?: string;
-
+    wrapperClass?: string;
   }
-  
+
   export let type: $$Props['type'] = 'text';
   export let value: $$Props['value'] = undefined;
   export let size: $$Props['size'] = undefined;
@@ -36,6 +36,7 @@
   export let floatClass: $$Props['floatClass'] = 'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400';
   export let classLeft: $$Props['classLeft'] = '';
   export let classRight: $$Props['classRight'] = '';
+  export let wrapperClass: $$Props['wrapperClass'] = 'relative w-auto';
 
   const dispatcher = createEventDispatcher();
   const borderClasses = {
@@ -82,7 +83,7 @@
   };
 </script>
 
-<Wrapper class="relative w-full" show={$$slots.left || $$slots.right || clearable}>
+<Wrapper class={wrapperClass} show={$$slots.left || $$slots.right || !!clearable}>
   {#if $$slots.left}
     <div class="{twMerge(floatClass, classLeft)} start-0 ps-2.5 pointer-events-none">
       <slot name="left" />
@@ -92,12 +93,12 @@
     <input {...$$restProps} bind:value on:blur on:change on:click on:contextmenu on:focus on:keydown on:keypress on:keyup on:mouseover on:mouseenter on:mouseleave on:paste on:input {...{ type }} class={inputClass} />
   </slot>
   {#if $$slots.right}
-  <div class="{twMerge(floatClass, classRight)} end-0 pe-2.5">
-    <slot name="right"></slot>
-  </div>
+    <div class="{twMerge(floatClass, classRight)} end-0 pe-2.5">
+      <slot name="right"></slot>
+    </div>
   {/if}
   {#if clearable && value && `${value}`.length > 0}
-    <CloseButton {size} on:click={clearAll} color="none" class=" {twMerge(floatClass, classRight)} focus:ring-0 end-1 focus:ring-gray-400 dark:text-white" />
+    <CloseButton {size} on:click={clearAll} color="none" class="{twMerge(floatClass, classRight)} focus:ring-0 end-1" tabindex={-1} />
   {/if}
 </Wrapper>
 

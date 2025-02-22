@@ -34,7 +34,7 @@ You will also find more advanced search components on this page including dropdo
 </script>
 
 <Search>
-  <Button>Search</Button>
+  <Button class="me-1">Search</Button>
 </Search>
 ```
 
@@ -226,17 +226,19 @@ on: paste;
 
 ```svelte example class="space-y-4"
 <script>
-  import { Search, Button } from '$lib';
+  import { Search, Button, P } from '$lib';
+
   let value = '';
 
-  const submitted = () => {
+  const submitted = (ev) => {
+    ev.preventDefault();
     alert(`You are searching: ${value}`);
   };
 </script>
 
 <form id="example-form" on:submit={submitted}>
   <Search bind:value />
-  <p>You are searching: {value}</p>
+  <P class="my-1">You are searching: {value}</P>
   <Button type="submit">Submit</Button>
 </form>
 ```
