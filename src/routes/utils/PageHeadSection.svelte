@@ -11,7 +11,7 @@
   // breadcrumb_title;
 </script>
 
-<div class="pb-8">
+<div class="pb-8 border-b border-gray-200 dark:border-gray-800">
   <Heading class="inline-block mb-2 font-extrabold tracking-tight text-gray-900 dark:text-white" tag="h1" customSize="text-3xl">
     {title}
   </Heading>
