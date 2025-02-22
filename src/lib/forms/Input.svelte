@@ -36,7 +36,7 @@
   export let floatClass: $$Props['floatClass'] = 'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400';
   export let classLeft: $$Props['classLeft'] = '';
   export let classRight: $$Props['classRight'] = '';
-  export let wrapperClass: $$Props['wrapperClass'] = 'relative w-full';
+  export let wrapperClass: $$Props['wrapperClass'] = 'relative w-auto';
 
   const dispatcher = createEventDispatcher();
   const borderClasses = {
@@ -98,7 +98,7 @@
     </div>
   {/if}
   {#if clearable && value && `${value}`.length > 0}
-    <CloseButton {size} on:click={clearAll} color="none" class=" {twMerge(floatClass, classRight)} focus:ring-0 end-1 focus:ring-gray-400 dark:text-white" />
+    <CloseButton {size} on:click={clearAll} color="none" class="{twMerge(floatClass, classRight)} focus:ring-0 end-1" tabindex={-1} />
   {/if}
 </Wrapper>
 
