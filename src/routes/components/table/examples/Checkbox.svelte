@@ -4,7 +4,7 @@
 
 <Table hoverable={true}>
   <TableHead>
-    <TableHeadCell class="!p-4">
+    <TableHeadCell class="p-4!">
       <Checkbox />
     </TableHeadCell>
     <TableHeadCell>Product name</TableHeadCell>
@@ -17,7 +17,7 @@
   </TableHead>
   <TableBody class="divide-y">
     <TableBodyRow>
-      <TableBodyCell class="!p-4">
+      <TableBodyCell class="p-4!">
         <Checkbox />
       </TableBodyCell>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
@@ -29,7 +29,7 @@
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
-      <TableBodyCell class="!p-4">
+      <TableBodyCell class="p-4!">
         <Checkbox />
       </TableBodyCell>
       <TableBodyCell>Microsoft Surface Pro</TableBodyCell>
@@ -41,7 +41,7 @@
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
-      <TableBodyCell class="!p-4">
+      <TableBodyCell class="p-4!">
         <Checkbox />
       </TableBodyCell>
       <TableBodyCell>Magic Mouse 2</TableBodyCell>

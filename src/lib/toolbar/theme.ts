@@ -66,7 +66,7 @@ export const toolbarGroup = tv({
 });
 
 export const toolbarButton = tv({
-  base: "focus:outline-none whitespace-normal",
+  base: "focus:outline-hidden whitespace-normal",
   variants: {
     color: {
       dark: "text-gray-500 hover:text-gray-900 hover:bg-gray-200 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600",
@@ -82,8 +82,8 @@ export const toolbarButton = tv({
       default: "focus:ring-gray-400 hover:bg-gray-100"
     },
     size: {
-      xs: "m-0.5 rounded-sm focus:ring-1 p-0.5",
-      sm: "m-0.5 rounded focus:ring-1 p-0.5",
+      xs: "m-0.5 rounded-xs focus:ring-1 p-0.5",
+      sm: "m-0.5 rounded-sm focus:ring-1 p-0.5",
       md: "m-0.5 rounded-lg focus:ring-2 p-1.5",
       lg: "m-0.5 rounded-lg focus:ring-2 p-2.5"
     },

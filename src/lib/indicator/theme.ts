@@ -2,7 +2,7 @@ import { tv } from "tailwind-variants";
 
 const indicator = tv({
   slots: {
-    base: "flex-shrink-0"
+    base: "shrink-0"
   },
   variants: {
     color: {
@@ -36,7 +36,7 @@ const indicator = tv({
       xl: { base: "w-6 h-6" }
     },
     cornerStyle: {
-      rounded: { base: "rounded" },
+      rounded: { base: "rounded-sm" },
       circular: { base: "rounded-full" }
     },
     border: {

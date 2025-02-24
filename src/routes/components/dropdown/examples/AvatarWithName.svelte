@@ -15,7 +15,7 @@
 </script>
 
 <div class="flex h-80 items-start justify-center">
-  <Button onclick={dropdownAvatar.toggle} pill color="light" class="!p-1">
+  <Button onclick={dropdownAvatar.toggle} pill color="light" class="p-1!">
     <Avatar src="/images/profile-picture-3.webp" class="me-2" />
     Bonnie Green
   </Button>

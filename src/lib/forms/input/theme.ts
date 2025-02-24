@@ -3,7 +3,7 @@ import { tv } from "tailwind-variants";
 export const input = tv({
   slots: {
     base: "relative w-full",
-    input: "block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right focus:outline-none",
+    input: "block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right focus:outline-hidden",
     left: "flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400 pointer-events-none start-0 ps-2.5",
     right: "flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400 end-0 p-2.5"
   },
@@ -84,7 +84,7 @@ export const input = tv({
     group: {
       false: { input: "rounded-lg" },
       true: {
-        input: "first:rounded-s-lg last:rounded-e-lg [&:not(:first-child)]:-ms-px"
+        input: "first:rounded-s-lg last:rounded-e-lg not-first:-ms-px"
       }
     }
   },

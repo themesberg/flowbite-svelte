@@ -1,5 +1,59 @@
 /* @import "./style/nav.postcss"; */
-@tailwind base;
+@import 'tailwindcss';
+
+@source '../node_modules/flowbite-svelte-icons/**/*.{html,js,svelte,ts}';
+@source '../node_modules/svelte-animated-icons/**/*.{html,js,svelte,ts}';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --z-index-100: 100;
+
+  --color-primary-50: #fff5f2;
+  --color-primary-100: #fff1ee;
+  --color-primary-200: #ffe4de;
+  --color-primary-300: #ffd5cc;
+  --color-primary-400: #ffbcad;
+  --color-primary-500: #fe795d;
+  --color-primary-600: #ef562f;
+  --color-primary-700: #eb4f27;
+  --color-primary-800: #cc4522;
+  --color-primary-900: #a5371b;
+
+  --color-secondary-50: #f0f9ff;
+  --color-secondary-100: #e0f2fe;
+  --color-secondary-200: #bae6fd;
+  --color-secondary-300: #7dd3fc;
+  --color-secondary-400: #38bdf8;
+  --color-secondary-500: #0ea5e9;
+  --color-secondary-600: #0284c7;
+  --color-secondary-700: #0369a1;
+  --color-secondary-800: #075985;
+  --color-secondary-900: #0c4a6e;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility container {
+  /* other classes */
+  @apply m-4;
+}
 
 @layer base {
   html {
@@ -326,15 +380,3 @@
     padding-left: 0;
   }
 }
-
-@tailwind components;
-
-@layer components {
-  /* other classes */
-
-  .container {
-    @apply m-4;
-  }
-}
-
-@tailwind utilities;

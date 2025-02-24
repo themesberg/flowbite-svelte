@@ -4,10 +4,10 @@ export const navbar = tv({
   slots: {
     base: "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 border-gray-100 dark:border-gray-700 divide-gray-100 dark:divide-gray-700 px-2 sm:px-4 py-2.5 w-full",
     container: "mx-auto flex flex-wrap items-center justify-between",
-    toggleButton: "inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600",
+    toggleButton: "inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600",
     menuContainer: "w-full",
-    activeLink: "block py-2 px-3 text-white bg-primary-700 rounded dark:text-white",
-    inactiveLink: "block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
+    activeLink: "block py-2 px-3 text-white bg-primary-700 rounded-sm dark:text-white",
+    inactiveLink: "block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
   },
   variants: {
     fluid: {
@@ -20,17 +20,17 @@ export const navbar = tv({
     },
     breakPoint: {
       md: {
-        container: "max-w-screen-xl",
+        container: "max-w-(--breakpoint-xl)",
         toggleButton: "md:hidden",
         menuContainer: "md:block md:w-auto"
       },
       lg: {
-        container: "max-w-screen-xl",
+        container: "max-w-(--breakpoint-xl)",
         toggleButton: "lg:hidden",
         menuContainer: "lg:block lg:w-auto"
       },
       xl: {
-        container: "max-w-screen-xl",
+        container: "max-w-(--breakpoint-xl)",
         toggleButton: "xl:hidden",
         menuContainer: "xl:block xl:w-auto"
       },
@@ -78,7 +78,7 @@ export const navbrand = tv({
 export const navLi = tv({
   slots: {
     base: "list-none",
-    link: "block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
+    link: "block py-2 pl-3 pr-4 text-gray-900 rounded-sm hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
   },
   variants: {
     active: {
@@ -148,7 +148,7 @@ export const navcontainer = tv({
 });
 
 export const navhamburger = tv({
-  base: "inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600",
+  base: "inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600",
   variants: {
     breakPoint: {
       md: "md:hidden",

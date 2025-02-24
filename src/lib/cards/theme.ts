@@ -12,7 +12,7 @@ export const card = tv({
       sm: { base: "max-w-sm" },
       md: { base: "max-w-lg" },
       lg: { base: "max-w-2xl" },
-      xl: { base: "max-w-screen-xl" }
+      xl: { base: "max-w-(--breakpoint-xl)" }
     },
     color: {
       // primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
@@ -39,7 +39,7 @@ export const card = tv({
     },
     shadow: {
       sm: { base: "shadow-md" },
-      normal: { base: "shadow" },
+      normal: { base: "shadow-sm" },
       md: { base: "shadow-md" },
       lg: { base: "shadow-lg" },
       xl: { base: "shadow-xl" },

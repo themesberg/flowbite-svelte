@@ -37,11 +37,11 @@
 
 <div class="flex justify-center">
   <Card class="relative h-96 overflow-y-scroll rounded-lg border border-gray-100 bg-white dark:border-gray-600 dark:bg-gray-700" contentClass="p-0 sm:p-0 md:p-0">
-    <Listgroup class="border-0 dark:!bg-transparent">
+    <Listgroup class="border-0 dark:bg-transparent!">
       {#snippet children()}
         {#each list as item}
           <a href="/" class="flex w-full items-center justify-center px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">
-            <Avatar src={item.img.src} alt={item.img.alt} class="me-3 flex-shrink-0" />
+            <Avatar src={item.img.src} alt={item.img.alt} class="me-3 shrink-0" />
             <div>
               <p class="text-sm text-gray-500 dark:text-gray-400">{@html item.comment}</p>
               <span class="text-xs text-primary-600 dark:text-primary-500">{@html item.message}</span>

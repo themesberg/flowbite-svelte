@@ -366,7 +366,7 @@
       {:else}
         <QuestionCircleSolid class="me-2 h-8 w-8 text-gray-500 dark:text-gray-400" />
       {/if}
-      <a href="/components/{convertStringToKebabCase(key)}" class="text-blue-800 underline hover:text-blue-500 dark:text-blue-300 hover:dark:text-blue-200">{key}</a>
+      <a href="/components/{convertStringToKebabCase(key)}" class="text-blue-800 underline hover:text-blue-500 dark:text-blue-300 dark:hover:text-blue-200">{key}</a>
       {#if problems}
         <span class="ml-4 text-red-500">( {problems})</span>{/if}{#if notes}<span class="ml-4 text-green-500">(DONE: {notes})</span>
       {/if}
@@ -385,7 +385,7 @@
       {:else}
         <QuestionCircleSolid class="me-2 h-8 w-8 text-gray-500 dark:text-gray-400" />
       {/if}
-      <a href="/forms/{convertStringToKebabCase(key)}" class="text-blue-800 underline hover:text-blue-500 dark:text-blue-300 hover:dark:text-blue-200">{key}</a>
+      <a href="/forms/{convertStringToKebabCase(key)}" class="text-blue-800 underline hover:text-blue-500 dark:text-blue-300 dark:hover:text-blue-200">{key}</a>
       {#if problems}
         <span class="ml-4 text-red-500">( {problems})</span>{/if}{#if notes}<span class="ml-4 text-green-500">(DONE: {notes})</span>
       {/if}
@@ -404,7 +404,7 @@
       {:else}
         <QuestionCircleSolid class="me-2 h-8 w-8 text-gray-500 dark:text-gray-400" />
       {/if}
-      <a href="/typography/{convertStringToKebabCase(key)}" class="text-blue-800 underline hover:text-blue-500 dark:text-blue-300 hover:dark:text-blue-200">{key}</a>
+      <a href="/typography/{convertStringToKebabCase(key)}" class="text-blue-800 underline hover:text-blue-500 dark:text-blue-300 dark:hover:text-blue-200">{key}</a>
       {#if problems}
         <span class="ml-4 text-red-500">( {problems})</span>{/if}{#if notes}<span class="ml-4 text-green-500">(DONE: {notes})</span>
       {/if}

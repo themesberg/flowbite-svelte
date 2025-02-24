@@ -31,7 +31,7 @@
       </DropdownHeader>
       <DropdownUl class="h-24 overflow-y-auto p-2">
         {#each filteredItems as person (person.name)}
-          <DropdownLi liClass="rounded p-1 hover:bg-gray-100 dark:hover:bg-gray-600">
+          <DropdownLi liClass="rounded-sm p-1 hover:bg-gray-100 dark:hover:bg-gray-600">
             <Checkbox bind:checked={person.checked}>{person.name}</Checkbox>
           </DropdownLi>
         {/each}

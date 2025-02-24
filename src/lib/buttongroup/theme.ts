@@ -1,7 +1,7 @@
 import { tv } from "tailwind-variants";
 
 const buttonGroup = tv({
-  base: "inline-flex rounded-lg shadow-sm",
+  base: "inline-flex rounded-lg shadow-xs",
   variants: {
     size: {
       sm: "scale-90",

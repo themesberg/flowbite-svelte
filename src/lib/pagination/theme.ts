@@ -16,7 +16,7 @@ export const paginationItem = tv({
       false: "rounded-lg"
     },
     table: {
-      true: "rounded",
+      true: "rounded-sm",
       false: "border"
     }
   },

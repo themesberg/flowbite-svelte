@@ -3,7 +3,7 @@ import type { Placement } from "@floating-ui/dom";
 
 export const tooltip = tv({
   slots: {
-    base: "absolute bg-gray-800 text-white px-2 py-1 rounded text-sm z-50 pointer-events-none",
+    base: "absolute bg-gray-800 text-white px-2 py-1 rounded-sm text-sm z-50 pointer-events-none",
     arrowBase: "absolute w-2 h-2 rotate-45 bg-inherit"
   },
   variants: {

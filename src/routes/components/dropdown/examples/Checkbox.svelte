@@ -15,22 +15,22 @@
   <div class="relative">
     <Dropdown dropdownStatus={dropdownCheckboxStatus} closeDropdown={closeDropdownCheckbox} params={{ y: 0, duration: 200, easing: sineIn }} class="absolute -left-[195px] top-[45px]">
       <DropdownUl>
-        <DropdownLi liClass="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <DropdownLi liClass="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
           <Checkbox>Robert Gouth</Checkbox>
         </DropdownLi>
-        <DropdownLi liClass="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <DropdownLi liClass="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
           <Checkbox>Jese Leos</Checkbox>
         </DropdownLi>
-        <DropdownLi liClass="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <DropdownLi liClass="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
           <Checkbox checked>Bonnie Green</Checkbox>
         </DropdownLi>
-        <DropdownLi liClass="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <DropdownLi liClass="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
           <Checkbox>Jese Leos</Checkbox>
         </DropdownLi>
-        <DropdownLi liClass="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <DropdownLi liClass="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
           <Checkbox>Robert Gouth</Checkbox>
         </DropdownLi>
-        <DropdownLi liClass="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <DropdownLi liClass="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
           <Checkbox>Bonnie Green</Checkbox>
         </DropdownLi>
       </DropdownUl>

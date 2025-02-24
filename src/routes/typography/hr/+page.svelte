@@ -25,7 +25,7 @@
         hr = `<Hr hrClass="my-8" />`;
       }
       if (selectedStyle === "trimmed") {
-        hr = `<Hr hrClass="w-48 h-1 mx-auto my-4 rounded md:my-10" />`;
+        hr = `<Hr hrClass="w-48 h-1 mx-auto my-4 rounded-sm md:my-10" />`;
       }
       if (selectedStyle === "icon") {
         hr = `<Hr hrClass="my-8 w-64 h-1" icon>
@@ -55,7 +55,7 @@
   <div class="mb-4 sm:h-[250px] md:h-[200px]">
     <P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools.</P>
     {#if selectedStyle === "trimmed"}
-      <Hr hrClass="w-48 h-1 mx-auto my-4 rounded md:my-10" />
+      <Hr hrClass="w-48 h-1 mx-auto my-4 rounded-sm md:my-10" />
     {:else if selectedStyle === "icon"}
       <Hr hrClass="my-8 w-64 h-1">
         <QuoteSolid class="h-6 w-6 text-gray-700 dark:text-gray-300" />

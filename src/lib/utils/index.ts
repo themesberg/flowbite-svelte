@@ -8,7 +8,7 @@ import CloseButton from "./CloseButton.svelte";
 import { tv } from "tailwind-variants";
 
 const closeButtonVariants = tv({
-  base: "focus:outline-none whitespace-normal",
+  base: "focus:outline-hidden whitespace-normal",
   variants: {
     // primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
     color: {
@@ -34,8 +34,8 @@ const closeButtonVariants = tv({
       rose: "text-rose-500 focus:ring-rose-400 hover:bg-rose-200 dark:hover:bg-rose-800 dark:hover:text-rose-300"
     },
     size: {
-      xs: "m-0.5 rounded-sm focus:ring-1 p-0.5",
-      sm: "m-0.5 rounded focus:ring-1 p-0.5",
+      xs: "m-0.5 rounded-xs focus:ring-1 p-0.5",
+      sm: "m-0.5 rounded-sm focus:ring-1 p-0.5",
       md: "m-0.5 rounded-lg focus:ring-2 p-1.5",
       lg: "m-0.5 rounded-lg focus:ring-2 p-2.5"
     }

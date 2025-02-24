@@ -3,8 +3,8 @@ import { tv } from "tailwind-variants";
 // card placeholder
 const cardPlaceholder = tv({
   slots: {
-    base: "p-4 rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700",
-    imageArea: "mb-4 flex h-48 items-center justify-center rounded bg-gray-300 dark:bg-gray-700",
+    base: "p-4 rounded-sm border border-gray-200 shadow-sm animate-pulse md:p-6 dark:border-gray-700",
+    imageArea: "mb-4 flex h-48 items-center justify-center rounded-sm bg-gray-300 dark:bg-gray-700",
     imageIcon: "text-gray-200 dark:text-gray-600",
     line: "rounded-full bg-gray-200 dark:bg-gray-700",
     footerArea: "mt-4 flex items-center space-x-3 rtl:space-x-reverse"
@@ -24,7 +24,7 @@ const cardPlaceholder = tv({
 const imagePlaceholder = tv({
   slots: {
     base: "space-y-8 animate-pulse md:space-y-0 md:space-x-8 rtl:space-x-reverse md:flex md:items-center",
-    image: "flex w-full items-center justify-center rounded bg-gray-300 sm:w-96 dark:bg-gray-700",
+    image: "flex w-full items-center justify-center rounded-sm bg-gray-300 sm:w-96 dark:bg-gray-700",
     svg: "text-gray-200",
     content: "w-full",
     line: "rounded-full bg-gray-200 dark:bg-gray-700"
@@ -50,12 +50,12 @@ const imagePlaceholder = tv({
         line: "rounded-none"
       },
       sm: {
-        image: "rounded-sm",
-        line: "rounded-sm"
+        image: "rounded-xs",
+        line: "rounded-xs"
       },
       md: {
-        image: "rounded",
-        line: "rounded"
+        image: "rounded-sm",
+        line: "rounded-sm"
       },
       lg: {
         image: "rounded-lg",
@@ -72,7 +72,7 @@ const imagePlaceholder = tv({
 // ListPlaceholder
 const listPlaceholder = tv({
   slots: {
-    base: "p-4 space-y-4 max-w-md rounded border border-gray-200 divide-y divide-gray-200 shadow animate-pulse dark:divide-gray-700 md:p-6 dark:border-gray-700",
+    base: "p-4 space-y-4 max-w-md rounded-sm border border-gray-200 divide-y divide-gray-200 shadow-sm animate-pulse dark:divide-gray-700 md:p-6 dark:border-gray-700",
     item: "flex items-center justify-between",
     itemContent: "",
     itemTitle: "mb-2.5 h-2.5 w-24 rounded-full bg-gray-300 dark:bg-gray-600",
@@ -97,8 +97,8 @@ const listPlaceholder = tv({
     },
     rounded: {
       none: { base: "rounded-none" },
-      sm: { base: "rounded-sm" },
-      md: { base: "rounded" },
+      sm: { base: "rounded-xs" },
+      md: { base: "rounded-sm" },
       lg: { base: "rounded-lg" },
       full: { base: "rounded-full p-8 md:p-16" }
     }
@@ -179,7 +179,7 @@ const videoPlaceholder = tv({
 // WidgetPlaceholder
 const widgetPlaceholder = tv({
   slots: {
-    base: "p-4 max-w-sm rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700",
+    base: "p-4 max-w-sm rounded-sm border border-gray-200 shadow-sm animate-pulse md:p-6 dark:border-gray-700",
     wrapper: "mt-4 flex items-baseline space-x-6 rtl:space-x-reverse",
     hLine: "rounded-full bg-gray-200 dark:bg-gray-700",
     vLine: "w-full rounded-t-lg bg-gray-200 dark:bg-gray-700"

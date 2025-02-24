@@ -85,7 +85,7 @@
   <li class="relative mb-6 w-full">
     <div class="flex items-center">
       <Indicator size="xl" class="z-10 shrink-0 ring-0 ring-white sm:ring-8 dark:bg-gray-700 dark:ring-gray-900">
-        <Indicator color="emerald" class="dark:!bg-gray-300" />
+        <Indicator color="emerald" class="dark:bg-gray-300!" />
       </Indicator>
     </div>
     <div class="mt-3">

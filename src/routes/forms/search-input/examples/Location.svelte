@@ -61,7 +61,7 @@
       </Dropdown>
     </div>
     <Search inputClass="rounded-none py-3 pl-8" placeholder="Searching {selectCategory}" />
-    <Button class="rounded-s-none !p-2.5">
+    <Button class="rounded-s-none p-2.5!">
       <SearchOutline class="h-6 w-6" />
     </Button>
   </form>
