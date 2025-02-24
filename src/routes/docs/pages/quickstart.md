@@ -96,6 +96,8 @@ If you use SvelteKit the main css file is `src/app.css`.
   --color-primary-800: #cc4522;
   --color-primary-900: #a5371b;
 }
+
+@source "../node_modules/flowbite-svelte/dist";
 ```
 
 
