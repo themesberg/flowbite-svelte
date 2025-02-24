@@ -25,16 +25,16 @@ const banner = tv({
         insideDiv: "mx-auto"
       },
       cta: {
-        base: "flex-col md:flex-row w-[calc(100%-2rem)] -translate-x-1/2 rtl:translate-x-1/2 bg-white border border-gray-100 rounded-lg shadow-sm lg:max-w-7xl start-1/2 top-6",
+        base: "flex-col md:flex-row w-[calc(100%-2rem)] -translate-x-1/2 rtl:translate-x-1/2 bg-white border border-gray-100 rounded-lg shadow-xs lg:max-w-7xl start-1/2 top-6",
         insideDiv: "flex-col items-start mb-3 me-4 md:items-center md:flex-row md:mb-0"
       },
       signup: {
         base: "top-0 start-0 w-full border-b border-gray-200 bg-gray-50",
-        insideDiv: "flex-shrink-0 w-full mx-auto sm:w-auto"
+        insideDiv: "shrink-0 w-full mx-auto sm:w-auto"
       },
       info: {
         base: "top-0 start-0 flex-col w-full border-b border-gray-200 md:flex-row bg-gray-50",
-        insideDiv: "flex-shrink-0"
+        insideDiv: "shrink-0"
       }
     },
     color: {

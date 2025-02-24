@@ -26,7 +26,7 @@ export const img = tv({
       grayscale: {
         base: "cursor-pointer rounded-lg grayscale filter transition-all duration-300 hover:grayscale-0"
       },
-      blur: { base: "blur-sm transition-all duration-300 hover:blur-none" },
+      blur: { base: "blur-xs transition-all duration-300 hover:blur-none" },
       invert: {
         base: "invert filter transition-all duration-300 hover:invert-0"
       },
@@ -44,8 +44,8 @@ export const img = tv({
       }
     },
     shadow: {
-      sm: { base: "shadow-sm" },
-      regular: { base: "shadow" },
+      sm: { base: "shadow-xs" },
+      regular: { base: "shadow-sm" },
       md: { base: "shadow-md" },
       lg: { base: "shadow-lg" },
       xl: { base: "shadow-xl" },
@@ -54,8 +54,8 @@ export const img = tv({
       none: { base: "shadow-none" }
     },
     rounded: {
-      sm: { base: "rounded-sm" },
-      regular: { base: "rounded" },
+      sm: { base: "rounded-xs" },
+      regular: { base: "rounded-sm" },
       md: { base: "rounded-md" },
       lg: { base: "rounded-lg" },
       xl: { base: "rounded-xl" },

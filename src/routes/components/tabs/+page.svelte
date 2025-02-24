@@ -84,7 +84,7 @@
 
 <H2>Interactive Tab Builder</H2>
 <CodeWrapper>
-  <Tabs {tabStyle} ulClass={tabStyle === "full" ? "flex flex-nowrap rounded-lg divide-x rtl:divide-x-reverse divide-gray-200 shadow dark:divide-gray-700 space-x-0" : ""}>
+  <Tabs {tabStyle} ulClass={tabStyle === "full" ? "flex flex-nowrap rounded-lg divide-x rtl:divide-x-reverse divide-gray-200 shadow-sm dark:divide-gray-700 space-x-0" : ""}>
     <TabItem open title={tabStyle === "full" ? "" : "Profile"} class={tabStyle === "full" ? "w-full" : ""}>
       {#snippet titleSlot()}Profile{/snippet}
       <p class="text-sm text-gray-500 dark:text-gray-400">

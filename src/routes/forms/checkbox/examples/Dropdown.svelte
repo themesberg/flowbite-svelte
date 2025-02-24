@@ -30,10 +30,10 @@
             </div>
           </DropdownHeader>
           <DropdownUl>
-            <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+            <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
               <Checkbox>Robert Gouth</Checkbox>
             </li>
-            <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+            <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
               <Checkbox>Bonnie Green</Checkbox>
             </li>
           </DropdownUl>

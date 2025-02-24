@@ -23,15 +23,15 @@
   <div class="relative">
     <Dropdown {dropdownStatus} {closeDropdown} params={transitionParams} class="absolute -left-[220px] top-[40px] w-64">
       <DropdownUl>
-        <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
           <Radio name="group3" bind:group={group3} value={1}>Enable notifications</Radio>
           <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
         </li>
-        <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
           <Radio name="group3" bind:group={group3} value={2}>Enable 2FA auth</Radio>
           <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
         </li>
-        <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
           <Radio name="group3" bind:group={group3} value={3}>Subscribe newsletter</Radio>
           <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
         </li>

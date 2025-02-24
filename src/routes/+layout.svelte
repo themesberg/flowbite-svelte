@@ -2,7 +2,7 @@
   import { RunesMetaTags, deepMerge } from "runes-meta-tags";
   import { Runatics } from "runatics";
   import { page } from "$app/stores";
-  import "../app.pcss";
+  import "../app.css";
   import Footer from "./utils/Footer.svelte";
   import { Navbar, NavLi, NavBrand, NavUl, uiHelpers, Darkmode, Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper } from "$lib";
   import GitHub from "./utils/GitHub.svelte";
@@ -60,7 +60,7 @@
 
       <div class="ml-auto flex items-center space-x-2 md:order-1">
         <DynamicCodeBlockStyle class="mr-4 hidden sm:block" />
-        <a class="inline-block whitespace-normal rounded-lg p-1 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-0 focus:ring-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" href="https://github.com/themesberg/flowbite-svelte" aria-label="View project on GitHub">
+        <a class="inline-block whitespace-normal rounded-lg p-1 hover:bg-gray-100 hover:text-gray-900 focus:outline-hidden focus:ring-0 focus:ring-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" href="https://github.com/themesberg/flowbite-svelte" aria-label="View project on GitHub">
           <GitHub class="hidden sm:block" tabindex={0} />
         </a>
         <Darkmode class="hidden sm:block" />

@@ -18,7 +18,7 @@
     </li>
     <li class="py-3 sm:py-4">
       <div class="flex items-center space-x-3 rtl:space-x-reverse">
-        <div class="flex-shrink-0">
+        <div class="shrink-0">
           <Avatar src="/images/profile-picture-4.webp" alt="Bonnie image" />
         </div>
         <div class="min-w-0 flex-1">

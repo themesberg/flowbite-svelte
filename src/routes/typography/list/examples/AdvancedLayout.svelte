@@ -5,7 +5,7 @@
 <List tag="dl" class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
   <Li class="pb-3 sm:pb-4">
     <div class="flex items-center space-x-4 rtl:space-x-reverse">
-      <div class="flex-shrink-0">
+      <div class="shrink-0">
         <img class="h-8 w-8 rounded-full" src="/images/profile-picture-1.webp" alt="Neil profile" />
       </div>
       <div class="min-w-0 flex-1">
@@ -17,7 +17,7 @@
   </Li>
   <Li class="py-3 sm:py-4">
     <div class="flex items-center space-x-4 rtl:space-x-reverse">
-      <div class="flex-shrink-0">
+      <div class="shrink-0">
         <img class="h-8 w-8 rounded-full" src="/images/profile-picture-2.webp" alt="Bonnie profile" />
       </div>
       <div class="min-w-0 flex-1">
@@ -29,7 +29,7 @@
   </Li>
   <Li class="py-3 sm:py-4">
     <div class="flex items-center space-x-4 rtl:space-x-reverse">
-      <div class="flex-shrink-0">
+      <div class="shrink-0">
         <img class="h-8 w-8 rounded-full" src="/images/profile-picture-3.webp" alt="Michael profile" />
       </div>
       <div class="min-w-0 flex-1">
@@ -41,7 +41,7 @@
   </Li>
   <Li class="py-3 sm:py-4">
     <div class="flex items-center space-x-4 rtl:space-x-reverse">
-      <div class="flex-shrink-0">
+      <div class="shrink-0">
         <img class="h-8 w-8 rounded-full" src="/images/profile-picture-4.webp" alt="Thomas profile" />
       </div>
       <div class="min-w-0 flex-1">
@@ -53,7 +53,7 @@
   </Li>
   <Li class="py-3 sm:py-4">
     <div class="flex items-center space-x-4 rtl:space-x-reverse">
-      <div class="flex-shrink-0">
+      <div class="shrink-0">
         <img class="h-8 w-8 rounded-full" src="/images/profile-picture-5.webp" alt="Lana profile" />
       </div>
       <div class="min-w-0 flex-1">

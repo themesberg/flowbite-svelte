@@ -63,6 +63,6 @@
         </DropdownUl>
       </Dropdown>
     </div>
-    <Select items={states} placeholder="Choose the state" class="!rounded-s-none" />
+    <Select items={states} placeholder="Choose the state" class="rounded-s-none!" />
   </ButtonGroup>
 </div>

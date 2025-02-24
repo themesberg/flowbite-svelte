@@ -2,7 +2,7 @@
   import { Tabs, TabItem } from "$lib";
 </script>
 
-<Tabs tabStyle="full" ulClass="flex flex-nowrap rounded-lg divide-x rtl:divide-x-reverse divide-gray-200 shadow dark:divide-gray-700 space-x-0">
+<Tabs tabStyle="full" ulClass="flex flex-nowrap rounded-lg divide-x rtl:divide-x-reverse divide-gray-200 shadow-sm dark:divide-gray-700 space-x-0">
   <TabItem class="w-full" open>
     {#snippet titleSlot()}Profile{/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">

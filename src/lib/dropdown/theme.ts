@@ -2,7 +2,7 @@ import { tv } from "tailwind-variants";
 
 export const dropdown = tv({
   slots: {
-    base: "z-10 w-44 mt-2 divide-y divide-gray-300 dark:divide-gray-500 overflow-hidden rounded-lg bg-white shadow dark:bg-gray-700",
+    base: "z-10 w-44 mt-2 divide-y divide-gray-300 dark:divide-gray-500 overflow-hidden rounded-lg bg-white shadow-sm dark:bg-gray-700",
     backdrop: "fixed top-0 start-0 w-full h-full"
   }
 });

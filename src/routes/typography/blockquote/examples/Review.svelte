@@ -2,7 +2,7 @@
   import { Blockquote, Rating } from "$lib";
 </script>
 
-<figure class="max-w-screen-md">
+<figure class="max-w-(--breakpoint-md)">
   <div class="mb-4 flex items-center text-yellow-300">
     <Rating total={5} rating={4.66} size={24} />
   </div>

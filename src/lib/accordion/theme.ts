@@ -16,7 +16,7 @@ export const accordionitem = tv({
     button: "flex items-center justify-between w-full font-medium text-left group-first:rounded-t-xl border-gray-200 dark:border-gray-700 border-b",
     content: "border-b border-gray-200 dark:border-gray-700",
     active: "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800",
-    inactive: "text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800"
+    inactive: "text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
   },
   variants: {
     flush: {

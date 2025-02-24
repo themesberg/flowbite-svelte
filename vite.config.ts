@@ -6,9 +6,10 @@ import sveltePackage from "./node_modules/svelte/package.json" with { type: "jso
 import svelteKitPackage from "./node_modules/@sveltejs/kit/package.json" with { type: "json" };
 import vitePackage from "./node_modules/vite/package.json" with { type: "json" };
 import tailwindcssPackage from "./node_modules/tailwindcss/package.json" with { type: "json" };
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  plugins: [enhancedImages(), sveltekit()],
+  plugins: [enhancedImages(), sveltekit(), tailwindcss()],
   build: {
     minify: false
   },

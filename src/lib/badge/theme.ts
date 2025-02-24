@@ -38,7 +38,7 @@ const badge = tv({
     },
     rounded: {
       true: "rounded-full",
-      false: "rounded"
+      false: "rounded-sm"
     }
   },
   compoundVariants: [

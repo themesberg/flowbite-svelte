@@ -40,7 +40,7 @@ export const modal = tv({
       true: { backdrop: "bg-gray-900 bg-opacity-75" }
     },
     rounded: {
-      true: { content: "rounded" }
+      true: { content: "rounded-sm" }
     },
     shadow: {
       true: { content: "shadow-md" }

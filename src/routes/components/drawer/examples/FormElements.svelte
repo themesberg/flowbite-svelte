@@ -33,7 +33,7 @@
     <div class="mb-4">
       <div class="relative">
         <Input id="search" placeholder="Add guest email" class="p-3" />
-        <Button class="absolute bottom-2 end-2 inline-flex items-center rounded-lg bg-primary-700 px-3 py-1 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" type="submit">
+        <Button class="absolute bottom-2 end-2 inline-flex items-center rounded-lg bg-primary-700 px-3 py-1 text-sm font-medium text-white hover:bg-primary-800 focus:outline-hidden focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" type="submit">
           <UserAddOutline class="me-1.5 h-3 w-3 text-white" />Add
         </Button>
       </div>

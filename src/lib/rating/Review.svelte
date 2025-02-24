@@ -64,7 +64,7 @@
             {review.title}
           </h4>
         </div>
-        <p class="inline-flex items-center rounded bg-primary-700 p-1.5 text-sm font-semibold text-white">
+        <p class="inline-flex items-center rounded-sm bg-primary-700 p-1.5 text-sm font-semibold text-white">
           {review.rating}
         </p>
       </div>

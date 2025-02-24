@@ -102,7 +102,7 @@
   <div class="flex justify-center">
     <Card size={cardSize} {color} padding={cardPadding} shadow={cardShadow} href={link ? link : ""} class={cardClass} img={cardImage} {horizontal} {reverse}>
       <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
-      <p class="font-normal leading-tight text-gray-700 dark:text-gray-300">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
+      <p class="leading-tight font-normal text-gray-700 dark:text-gray-300">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
     </Card>
   </div>
   <div class="my-4 flex flex-wrap space-x-4">

@@ -43,7 +43,7 @@
       {#if closeIcon}
         <button
           type="button"
-          class="m-0.5 -me-1.5 ms-1.5 whitespace-normal rounded p-0.5 text-primary-500 hover:bg-primary-200 focus:outline-none focus:ring-1 focus:ring-primary-400 dark:hover:bg-primary-800 dark:hover:text-primary-300"
+          class="text-primary-500 hover:bg-primary-200 focus:ring-primary-400 dark:hover:bg-primary-800 dark:hover:text-primary-300 m-0.5 ms-1.5 -me-1.5 rounded-sm p-0.5 whitespace-normal focus:ring-1 focus:outline-hidden"
           aria-label="Remove badge"
           onclick={() => {
             alertStatus = false;
@@ -55,10 +55,10 @@
           {/if}
         </button>
       {:else if onclick}
-        <CloseButton class="-my-1.5 -me-1.5 ms-auto dark:hover:bg-gray-700" {color} ariaLabel="Remove badge" {onclick} />
+        <CloseButton class="-my-1.5 ms-auto -me-1.5 dark:hover:bg-gray-700" {color} ariaLabel="Remove badge" {onclick} />
       {:else}
         <CloseButton
-          class="-my-1.5 -me-1.5 ms-auto dark:hover:bg-gray-700"
+          class="-my-1.5 ms-auto -me-1.5 dark:hover:bg-gray-700"
           {color}
           ariaLabel="Remove alert"
           onclick={() => {

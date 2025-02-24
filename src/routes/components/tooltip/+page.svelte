@@ -95,9 +95,9 @@
     {/each}
   </div>
   <div class="mb-4">
-    <Button onclick={decreaseOffset} class="rounded border p-1">-</Button>
+    <Button onclick={decreaseOffset} class="rounded-sm border p-1">-</Button>
     <span class="mx-2">Offset: {offset}px</span>
-    <Button onclick={increaseOffset} class="rounded border p-1">+</Button>
+    <Button onclick={increaseOffset} class="rounded-sm border p-1">+</Button>
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
     <Button class="w-36" onclick={changeClass}>{tooltipClass ? "Remove class" : "Add class"}</Button>

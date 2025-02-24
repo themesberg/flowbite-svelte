@@ -20,13 +20,13 @@
         <DropdownHeader class="px-2 py-1">
           <Search size="md" />
         </DropdownHeader>
-        <DropdownLi liClass="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <DropdownLi liClass="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
           <Radio name="group1" bind:group={group1} value={1}>Default radio</Radio>
         </DropdownLi>
-        <DropdownLi liClass="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <DropdownLi liClass="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
           <Radio name="group1" bind:group={group1} value={2}>Checked state</Radio>
         </DropdownLi>
-        <DropdownLi liClass="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <DropdownLi liClass="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
           <Radio name="group1" bind:group={group1} value={3}>Default radio</Radio>
         </DropdownLi>
       </DropdownUl>
