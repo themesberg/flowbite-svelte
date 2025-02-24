@@ -10,7 +10,7 @@
   export let color: NonNullable<$$Props['color']> = getContext('color');
 
   const colors = {
-    default: 'bg-white dark:bg-gray-800 dark:border-gray-700',
+    default: 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700',
     blue: 'bg-blue-500 border-blue-400',
     green: 'bg-green-500 border-green-400',
     red: 'bg-red-500 border-red-400',
