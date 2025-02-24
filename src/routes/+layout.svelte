@@ -2,7 +2,7 @@
   import { RunesMetaTags, deepMerge } from "runes-meta-tags";
   import { Runatics } from "runatics";
   import { page } from "$app/stores";
-  import "../app.pcss";
+  import "../app.css";
   import Footer from "./utils/Footer.svelte";
   import { Navbar, NavLi, NavBrand, NavUl, uiHelpers, Darkmode, Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper } from "$lib";
   import GitHub from "./utils/GitHub.svelte";
