@@ -1,17 +1,65 @@
 {
   "name": "Card",
   "props": [
-    ["children", "any", ""],
-    ["href", "any", ""],
-    ["color", "any", "\"gray\""],
-    ["horizontal", "any", "false"],
-    ["shadow", "any", "\"md\""],
-    ["reverse", "any", "false"],
-    ["img", "any", ""],
-    ["padding", "any", "\"lg\""],
-    ["size", "any", "\"sm\""],
-    ["class", "string", ""],
-    ["imgClass", "any", ""],
-    ["contentClass", "any", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "href",
+      "any",
+      ""
+    ],
+    [
+      "color",
+      "any",
+      "\"gray\""
+    ],
+    [
+      "horizontal",
+      "any",
+      "false"
+    ],
+    [
+      "shadow",
+      "any",
+      "\"md\""
+    ],
+    [
+      "reverse",
+      "any",
+      "false"
+    ],
+    [
+      "img",
+      "any",
+      ""
+    ],
+    [
+      "padding",
+      "any",
+      "\"lg\""
+    ],
+    [
+      "size",
+      "any",
+      "\"sm\""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "imgClass",
+      "any",
+      ""
+    ],
+    [
+      "contentClass",
+      "any",
+      ""
+    ]
   ]
 }

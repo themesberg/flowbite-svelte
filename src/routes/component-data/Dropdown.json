@@ -1,13 +1,40 @@
 {
   "name": "Dropdown",
   "props": [
-    ["children", "any", ""],
-    ["dropdownStatus", "any", "$bindable()"],
-    ["closeDropdown", "any", ""],
-    ["class", "string", ""],
-    ["backdropClass", "any", ""],
-    ["params", "any", ""],
-    ["transition", "any", "fly"],
-    ["activeUrl", "any", "\"\""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "arrow",
+      "any",
+      "false"
+    ],
+    [
+      "placement",
+      "any",
+      "\"bottom\""
+    ],
+    [
+      "offset",
+      "any",
+      "2"
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "backdropClass",
+      "any",
+      ""
+    ],
+    [
+      "activeUrl",
+      "any",
+      "\"\""
+    ]
   ]
 }

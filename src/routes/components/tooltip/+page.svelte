@@ -18,8 +18,8 @@
   }) as Record<string, string>;
 
   // for interactive code builder
-  const positions = Object.keys(tooltip.variants.position);
-  let position: TooltipProps["position"] = $state(positions[0] as TooltipProps["position"]);
+  const positions = Object.keys(tooltip.variants.placement);
+  let placement: TooltipProps["placement"] = $state(positions[0] as TooltipProps["placement"]);
   const colors = Object.keys(tooltip.variants.color) as TooltipProps["color"][];
   let color: TooltipProps["color"] = $state("default");
   let tooltipClass: TooltipProps["class"] = $state("");
@@ -48,7 +48,7 @@
       let props = [];
       if (arrow !== true) props.push(`arrow="${arrow}"`);
       if (color) props.push(`color="${color}"`);
-      if (position !== "top") props.push(`position="${position}"`);
+      if (placement !== "top") props.push(`placement="${placement}"`);
       if (offset) props.push(`offset={${offset}}`);
       if (tooltipClass !== "") props.push(`class="${tooltipClass}"`);
 
@@ -80,7 +80,7 @@
 <CodeWrapper>
   <div class="my-4 flex justify-center">
     <Button id="type-1" class="m-8">Tooltip trigger</Button>
-    <Tooltip triggeredBy="#type-1" {color} {position} {arrow} {offset} class={tooltipClass}>Tooltip content</Tooltip>
+    <Tooltip triggeredBy="#type-1" {color} {placement} {arrow} {offset} class={tooltipClass}>Tooltip content</Tooltip>
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
@@ -91,7 +91,7 @@
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Position</Label>
     {#each positions as option}
-      <Radio labelClass="w-20 my-1" name="interactive_toast_position" bind:group={position} value={option}>{option}</Radio>
+      <Radio labelClass="w-20 my-1" name="interactive_toast_position" bind:group={placement} value={option}>{option}</Radio>
     {/each}
   </div>
   <div class="mb-4">

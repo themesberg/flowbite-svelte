@@ -1,18 +1,14 @@
 import type { Snippet } from "svelte";
 import type { ParamsType, TransitionFunc } from "../types";
 import type { HTMLAttributes, HTMLAnchorAttributes } from "svelte/elements";
+import type { PopperProps } from "$lib/utils/Popper.svelte";
 
-interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
-  children: Snippet;
-  dropdownStatus: boolean;
-  closeDropdown?: () => void;
+interface DropdownProps extends PopperProps {
   divClass?: string;
   footerClass?: string;
   headerClass?: string;
   ulClass?: string;
   backdropClass?: string;
-  params?: ParamsType;
-  transition?: TransitionFunc;
   activeUrl?: string;
 }
 

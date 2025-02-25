@@ -8,18 +8,4 @@
   $effect(() => {
     activeUrl = $page.url.pathname;
   });
-
-  let transitionParams = {
-    y: 0,
-    duration: 200,
-    easing: sineIn
-  };
-
-  let dropdownA = uiHelpers();
-  let dropdownAStatus = $state(false);
-  let closeDropdownA = dropdownA.close;
-
-  $effect(() => {
-    dropdownAStatus = dropdownA.isOpen;
-  });
 </script>

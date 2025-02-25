@@ -34,7 +34,8 @@ export const tooltip = tv({
       true: { arrowBase: "visible" },
       false: { arrowBase: "hidden" }
     },
-    position: {
+
+    placement: {
       top: {},
       "top-start": {},
       "top-end": {},
@@ -52,6 +53,6 @@ export const tooltip = tv({
   defaultVariants: {
     color: "default",
     arrow: true,
-    position: "top"
+    placement: "top"
   }
 });

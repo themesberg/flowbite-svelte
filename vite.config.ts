@@ -1,17 +1,24 @@
-import { sveltekit } from "@sveltejs/kit/vite";
 import { enhancedImages } from "@sveltejs/enhanced-img";
-import { defineConfig } from "vite";
-import pkg from "./package.json" with { type: "json" };
-import sveltePackage from "./node_modules/svelte/package.json" with { type: "json" };
-import svelteKitPackage from "./node_modules/@sveltejs/kit/package.json" with { type: "json" };
-import vitePackage from "./node_modules/vite/package.json" with { type: "json" };
-import tailwindcssPackage from "./node_modules/tailwindcss/package.json" with { type: "json" };
+import { sveltekit } from "@sveltejs/kit/vite";
 import tailwindcss from '@tailwindcss/vite';
+import path from 'path';
+import { defineConfig } from "vite";
+import svelteKitPackage from "./node_modules/@sveltejs/kit/package.json" with { type: "json" };
+import sveltePackage from "./node_modules/svelte/package.json" with { type: "json" };
+import tailwindcssPackage from "./node_modules/tailwindcss/package.json" with { type: "json" };
+import vitePackage from "./node_modules/vite/package.json" with { type: "json" };
+import pkg from "./package.json" with { type: "json" };
 
 export default defineConfig({
   plugins: [enhancedImages(), sveltekit(), tailwindcss()],
   build: {
     minify: false
+  },
+  resolve: {
+    alias: {
+      'flowbite-svelte': path.resolve(process.cwd(), './src/lib/index.js'),
+      'flowbite-svelte-blocks': path.resolve(process.cwd(), './node_modules/flowbite-svelte-blocks/dist/index.js')
+    }
   },
   define: {
     __NAME__: JSON.stringify(pkg.name),
