@@ -10,6 +10,6 @@
   <Button id="ref-top">Top</Button>
   <Button id="ref-right">Right</Button>
 </div>
-<Popover reference="#ext-ref" color="emerald" triggeredBy="#ref-left" position="left" class="w-40 p-4 text-sm font-light">Popover content.</Popover>
-<Popover reference="#ext-ref" color="cyan" triggeredBy="#ref-top" position="top" class="w-40 p-4 text-sm font-light">Popover content.</Popover>
-<Popover reference="#ext-ref" color="pink" triggeredBy="#ref-right" position="right" class="w-40 p-4 text-sm font-light">Popover content.</Popover>
+<Popover reference="#ext-ref" color="emerald" triggeredBy="#ref-left" placement="left" class="w-40 p-4 text-sm font-light">Popover content.</Popover>
+<Popover reference="#ext-ref" color="cyan" triggeredBy="#ref-top" placement="top" class="w-40 p-4 text-sm font-light">Popover content.</Popover>
+<Popover reference="#ext-ref" color="pink" triggeredBy="#ref-right" placement="right" class="w-40 p-4 text-sm font-light">Popover content.</Popover>

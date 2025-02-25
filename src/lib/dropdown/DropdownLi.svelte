@@ -1,8 +1,9 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import { type DropdownLiProps as Props, dropdownli } from "./";
+  import { tv } from "tailwind-variants";
 
-  let { aClass, children, href, activeClass, liClass, ...restProps }: Props = $props();
+  let { aClass, children, href, activeClass, liClass, class: className, ...restProps }: Props = $props();
 
   const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
   let sidebarUrl = $state("");
@@ -16,15 +17,18 @@
   });
 
   const { anchor, activeAnchor } = $derived(dropdownli());
+  let finalClass = $derived([active ? activeAnchor({ class: activeClass }) : anchor({ class: aClass }), className]);
 </script>
 
 <li class={liClass}>
   {#if href}
-    <a {href} {...restProps} class={active ? activeAnchor({ class: activeClass }) : anchor({ class: aClass })}>
+    <a {href} {...restProps} class={finalClass}>
       {@render children()}
     </a>
   {:else}
-    {@render children()}
+    <div class={finalClass}>
+      {@render children()}
+    </div>
   {/if}
 </li>
 
@@ -37,4 +41,5 @@
 @props:href: any;
 @props:activeClass: any;
 @props:liClass: any;
+@props:class: string;
 -->

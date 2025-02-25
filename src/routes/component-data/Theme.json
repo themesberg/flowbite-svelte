@@ -1,5 +1,5 @@
 {
-  "name": "Footer",
+  "name": "Theme",
   "props": [
     [
       "children",
@@ -7,13 +7,8 @@
       ""
     ],
     [
-      "footerType",
+      "theme",
       "any",
-      "\"default\""
-    ],
-    [
-      "class",
-      "string",
       ""
     ]
   ]

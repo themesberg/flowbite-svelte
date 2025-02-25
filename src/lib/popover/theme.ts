@@ -119,7 +119,7 @@ export const popover = tv({
       true: "",
       false: ""
     },
-    position: {
+    placement: {
       top: "",
       bottom: "",
       left: "",

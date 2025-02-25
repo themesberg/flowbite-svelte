@@ -22,8 +22,8 @@
     eager: true
   }) as Record<string, string>;
 
-  const positions = Object.keys(popover.variants.position);
-  let position: PopoverProps["position"] = $state(positions[0]) as PopoverProps["position"];
+  const positions = Object.keys(popover.variants.placement);
+  let position: PopoverProps["placement"] = $state(positions[0]) as PopoverProps["placement"];
   const colors = Object.keys(popover.variants.color);
   let color: PopoverProps["color"] = $state("default");
   let popoverClass: PopoverProps["class"] = $state("w-64 text-sm font-light");

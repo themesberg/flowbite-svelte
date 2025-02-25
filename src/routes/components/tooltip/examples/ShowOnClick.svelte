@@ -4,5 +4,5 @@
 
 <div class="mt-20 flex justify-center">
   <Button id="btn">Click me</Button>
-  <Tooltip showOn="click" triggeredBy="#btn" color="blue" position="top" class="p-4">Click anywhere to hide me.</Tooltip>
+  <Tooltip trigger="click" triggeredBy="#btn" color="blue" placement="top" class="p-4">Click anywhere to hide me.</Tooltip>
 </div>

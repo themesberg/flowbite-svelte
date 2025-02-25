@@ -141,37 +141,35 @@
 
 <H2>Interactive Dropdown Builder</H2>
 <CodeWrapper>
-  <div class="flex items-start justify-center">
-    <Button onclick={dropdownDividerHeaderFooter.toggle}>
+  <div class="flex h-96 items-start justify-center">
+    <Button>
       Dropdown
       <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
     </Button>
-    <div class="relative h-96">
-      <Dropdown {activeUrl} dropdownStatus={dropdownDividerHeaderFooterStatus} closeDropdown={closeDropdownDividerHeaderFooter} transition={currentTransition.transition} params={currentTransition.params} class="absolute -left-[150px] top-[40px]">
-        {#if headerStatus}
-          <DropdownHeader>
-            <div>Bonnie Green</div>
-            <div class="truncate font-medium">name@flowbite.com</div>
-          </DropdownHeader>
+    <Dropdown {activeUrl}>
+      {#if headerStatus}
+        <DropdownHeader>
+          <div>Bonnie Green</div>
+          <div class="truncate font-medium">name@flowbite.com</div>
+        </DropdownHeader>
+      {/if}
+      <DropdownUl>
+        <DropdownLi href="/">Dashboard</DropdownLi>
+        {#if dividerStatus}
+          <DropdownDivider />
         {/if}
-        <DropdownUl>
-          <DropdownLi href="/">Dashboard</DropdownLi>
-          {#if dividerStatus}
-            <DropdownDivider />
-          {/if}
-          <DropdownLi href="/components/dropdown">Dropdown</DropdownLi>
-          <DropdownLi href="/components/footer">Footer</DropdownLi>
-          <DropdownLi href="/components">Alert</DropdownLi>
-        </DropdownUl>
-        {#if footerStatus}
-          <DropdownFooter>
-            <div class="py-2">
-              <a href="/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
-            </div>
-          </DropdownFooter>
-        {/if}
-      </Dropdown>
-    </div>
+        <DropdownLi href="/components/dropdown">Dropdown</DropdownLi>
+        <DropdownLi href="/components/footer">Footer</DropdownLi>
+        <DropdownLi href="/components">Alert</DropdownLi>
+      </DropdownUl>
+      {#if footerStatus}
+        <DropdownFooter>
+          <div class="py-2">
+            <a href="/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
+          </div>
+        </DropdownFooter>
+      {/if}
+    </Dropdown>
   </div>
   <div class="mb-4 flex gap-4">
     <Button onclick={changeHeaderStatus}>

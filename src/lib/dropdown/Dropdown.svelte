@@ -1,11 +1,10 @@
 <script lang="ts">
-  import { type DropdownProps as Props, dropdown } from "./";
-  import { fly } from "svelte/transition";
-  import type { ParamsType } from "$lib/types";
+  import Popper from "$lib/utils/Popper.svelte";
   import { setContext } from "svelte";
   import { writable } from "svelte/store";
+  import { type DropdownProps as Props, dropdown } from "./";
 
-  let { children, dropdownStatus = $bindable(), closeDropdown, class: className, backdropClass, params, transition = fly, activeUrl = "", ...restProps }: Props = $props();
+  let { children, arrow = false, placement = "bottom", offset = 2, class: className, backdropClass, activeUrl = "", ...restProps }: Props = $props();
 
   const { base, backdrop } = $derived(dropdown());
   const activeUrlStore = writable("");
@@ -17,24 +16,20 @@
 </script>
 
 <!-- Dropdown menu -->
-{#if dropdownStatus}
-  <div {...restProps} class={base({ class: className })} transition:transition={params as ParamsType}>
-    {@render children()}
-  </div>
 
-  <div role="presentation" class={backdrop({ class: backdropClass })} onclick={closeDropdown}></div>
-{/if}
+<Popper {...restProps} {arrow} {placement} {offset} class={base({ class: className })}>
+  {@render children()}
+</Popper>
 
 <!--
 @component
 [Go to docs](https://preview.flowbite-svelte.com/)
 ## Props
 @props: children: any;
-@props:dropdownStatus: any = $bindable();
-@props:closeDropdown: any;
+@props:arrow: any = false;
+@props:placement: any = "bottom";
+@props:offset: any = 2;
 @props:class: string;
 @props:backdropClass: any;
-@props:params: any;
-@props:transition: any = fly;
 @props:activeUrl: any = "";
 -->

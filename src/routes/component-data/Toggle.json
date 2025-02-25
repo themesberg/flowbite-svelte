@@ -1,16 +1,60 @@
 {
   "name": "Toggle",
   "props": [
-    ["children", "any", ""],
-    ["toggleSize", "any", "\"default\""],
-    ["value", "any", ""],
-    ["checked", "any", "$bindable()"],
-    ["disabled", "any", ""],
-    ["color", "any", "\"primary\""],
-    ["aria_describedby", "any", ""],
-    ["labelClass", "any", ""],
-    ["inputClass", "any", ""],
-    ["spanClass", "any", ""],
-    ["leftLabel", "any", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "toggleSize",
+      "any",
+      "\"default\""
+    ],
+    [
+      "value",
+      "any",
+      ""
+    ],
+    [
+      "checked",
+      "any",
+      "$bindable()"
+    ],
+    [
+      "disabled",
+      "any",
+      ""
+    ],
+    [
+      "color",
+      "any",
+      "\"primary\""
+    ],
+    [
+      "aria_describedby",
+      "any",
+      ""
+    ],
+    [
+      "labelClass",
+      "any",
+      ""
+    ],
+    [
+      "inputClass",
+      "any",
+      ""
+    ],
+    [
+      "spanClass",
+      "any",
+      ""
+    ],
+    [
+      "leftLabel",
+      "any",
+      ""
+    ]
   ]
 }

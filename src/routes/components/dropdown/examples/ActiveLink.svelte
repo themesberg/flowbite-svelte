@@ -7,27 +7,20 @@
   $effect(() => {
     activeUrl = $page.url.pathname;
   });
-  let dropdownB = uiHelpers();
-  let dropdownBStatus = $state(false);
-  let closeDropdownB = dropdownB.close;
-  $effect(() => {
-    dropdownBStatus = dropdownB.isOpen;
-  });
 </script>
 
 <div class="flex h-48 items-start justify-center">
-  <Button onclick={dropdownB.toggle}>
+  <Button>
     Dropdown
     <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
   </Button>
-  <div class="relative">
-    <Dropdown {activeUrl} dropdownStatus={dropdownBStatus} closeDropdown={closeDropdownB} params={{ y: 0, duration: 200, easing: sineIn }} class="absolute -left-[150px] top-[40px]">
-      <DropdownUl>
-        <DropdownLi href="/">Dashboard</DropdownLi>
-        <DropdownLi href="/components/dropdown">Dropdown</DropdownLi>
-        <DropdownLi href="/components/footer">Footer</DropdownLi>
-        <DropdownLi href="/components/alert">Alert</DropdownLi>
-      </DropdownUl>
-    </Dropdown>
-  </div>
+
+  <Dropdown {activeUrl} class="absolute top-[40px] -left-[150px]">
+    <DropdownUl>
+      <DropdownLi href="/">Dashboard</DropdownLi>
+      <DropdownLi href="/components/dropdown">Dropdown</DropdownLi>
+      <DropdownLi href="/components/footer">Footer</DropdownLi>
+      <DropdownLi href="/components/alert">Alert</DropdownLi>
+    </DropdownUl>
+  </Dropdown>
 </div>
