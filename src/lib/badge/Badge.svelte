@@ -1,23 +1,24 @@
 <script lang="ts">
-  import { getContext } from "svelte";
-  import { type BadgeProps as Props, badge } from "./index";
-  import { CloseButton } from "$lib";
-  import { fade } from "svelte/transition";
-  import type { ParamsType } from "$lib/types";
+  import { getContext } from 'svelte';
+  import { type BadgeProps as Props, badge } from './index';
+  import { CloseButton } from '$lib';
+  import { fade } from 'svelte/transition';
+  import type { ParamsType } from '$lib/types';
+  import type { BaseThemes } from '$lib/theme';
 
-  let { children, icon, badgeStatus = $bindable(true), color = "primary", large = false, dismissable = false, class: className, border, href, target, rounded, transition = fade, params, aClass, onclick, ...restProps }: Props = $props();
+  let { children, icon, badgeStatus = $bindable(true), color = 'primary', large = false, dismissable = false, class: className, border, href, target, rounded, transition = fade, params, aClass, onclick, ...restProps }: Props = $props();
 
   // Get merged theme from context
-  const context = getContext<Record<string, object>>("themeConfig");
+  const context = getContext<BaseThemes>('themeConfig');
   // Use context theme if available, otherwise fallback to default
   const badgeTheme = context?.badge || badge;
 
-  const { divWrapper, hrefClass } = $derived(badgeTheme({ color, size: large ? "large" : "small", border, rounded }));
+  const { base, hrefClass } = $derived(badgeTheme());
   // $inspect('badgeStatus: ', badgeStatus);
 </script>
 
 {#if badgeStatus}
-  <div {...restProps} transition:transition={params as ParamsType} class={divWrapper({ className })}>
+  <div {...restProps} transition:transition={params as ParamsType} class={base({ color, size: large ? 'large' : 'small', rounded })}>
     {#if href}
       <a {href} {target} class={hrefClass({ class: aClass })}>
         {@render children()}
@@ -34,23 +35,21 @@
           aria-label="Remove badge"
           onclick={() => {
             badgeStatus = false;
-          }}
-        >
+          }}>
           <span class="sr-only">Remove badge</span>
           {@render icon()}
         </button>
       {:else if onclick}
-        <CloseButton class="ms-1.5 -me-1.5" {color} size={large ? "sm" : "xs"} ariaLabel="Remove badge" {onclick} />
+        <CloseButton class="ms-1.5 -me-1.5" {color} size={large ? 'sm' : 'xs'} ariaLabel="Remove badge" {onclick} />
       {:else}
         <CloseButton
           class="ms-1.5 -me-1.5"
           {color}
-          size={large ? "sm" : "xs"}
+          size={large ? 'sm' : 'xs'}
           ariaLabel="Remove badge"
           onclick={() => {
             badgeStatus = false;
-          }}
-        />
+          }} />
       {/if}
     {/if}
   </div>
@@ -58,12 +57,12 @@
 
 <!--
 @component
-[Go to docs](https://preview.flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @props: children: any;
 @props:icon: any;
 @props:badgeStatus: any = $bindable(true);
-@props:color: any = "primary";
+@props:color: any = 'primary';
 @props:large: any = false;
 @props:dismissable: any = false;
 @props:class: string;

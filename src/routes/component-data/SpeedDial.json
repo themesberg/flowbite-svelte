@@ -1,0 +1,6 @@
+{
+  "name": "SpeedDial",
+  "slots": ["button", "icon", "icon"],
+  "events": [],
+  "props": []
+}

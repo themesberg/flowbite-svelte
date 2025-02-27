@@ -1,0 +1,12 @@
+{
+  "name": "Thumbnails",
+  "slots": [],
+  "events": [],
+  "props": [
+    ["images", "HTMLImgAttributes[]", "[]"],
+    ["index", "number", "0"],
+    ["ariaLabel", "string", "'Click to view image'"],
+    ["imgClass", "string", "''"],
+    ["throttleDelay", "number", "650; // ms"]
+  ]
+}

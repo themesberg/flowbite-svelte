@@ -1,0 +1,30 @@
+{
+  "name": "DarkMode",
+  "props": [
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "lightIcon",
+      "any",
+      ""
+    ],
+    [
+      "darkIcon",
+      "any",
+      ""
+    ],
+    [
+      "size",
+      "any",
+      "'md'"
+    ],
+    [
+      "ariaLabel",
+      "any",
+      "'Dark mode'"
+    ]
+  ]
+}

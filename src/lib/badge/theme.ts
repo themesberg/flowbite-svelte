@@ -1,33 +1,35 @@
-import { tv } from "tailwind-variants";
+import { defaultConfig, tv, type VariantProps } from "tailwind-variants";
 
+type BadgeVariants = VariantProps<typeof badge>;
+// console.log('BC', defaultConfig)
 const badge = tv({
   slots: {
     hrefClass: "flex align-middle",
-    divWrapper: "font-medium inline-flex items-center justify-center px-2.5 py-0.5"
+    base: "font-medium inline-flex items-center justify-center px-2.5 py-0.5"
   },
   variants: {
     color: {
       // primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
-      primary: { divWrapper: "bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-300" },
-      secondary: { divWrapper: "bg-secondary-100 text-secondary-800 dark:bg-secondary-900 dark:text-secondary-300" },
-      gray: { divWrapper: "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300" },
-      red: { divWrapper: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300" },
-      orange: { divWrapper: "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300" },
-      amber: { divWrapper: "bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-300" },
-      yellow: { divWrapper: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300" },
-      lime: { divWrapper: "bg-lime-100 text-lime-800 dark:bg-lime-900 dark:text-lime-300" },
-      green: { divWrapper: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300" },
-      emerald: { divWrapper: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-300" },
-      teal: { divWrapper: "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-300" },
-      cyan: { divWrapper: "bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-300" },
-      sky: { divWrapper: "bg-sky-100 text-sky-800 dark:bg-sky-900 dark:text-sky-300" },
-      blue: { divWrapper: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300" },
-      indigo: { divWrapper: "bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300" },
-      violet: { divWrapper: "bg-violet-100 text-violet-800 dark:bg-violet-900 dark:text-violet-300" },
-      fuchsia: { divWrapper: "bg-fuchsia-100 text-fuchsia-800 dark:bg-fuchsia-900 dark:text-fuchsia-300" },
-      purple: { divWrapper: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300" },
-      pink: { divWrapper: "bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-300" },
-      rose: { divWrapper: "bg-rose-100 text-rose-800 dark:bg-rose-900 dark:text-rose-300" }
+      primary: { base: "bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-300" },
+      secondary: { base: "bg-secondary-100 text-secondary-800 dark:bg-secondary-900 dark:text-secondary-300" },
+      gray: { base: "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300" },
+      red: { base: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300" },
+      orange: { base: "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300" },
+      amber: { base: "bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-300" },
+      yellow: { base: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300" },
+      lime: { base: "bg-lime-100 text-lime-800 dark:bg-lime-900 dark:text-lime-300" },
+      green: { base: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300" },
+      emerald: { base: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-300" },
+      teal: { base: "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-300" },
+      cyan: { base: "bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-300" },
+      sky: { base: "bg-sky-100 text-sky-800 dark:bg-sky-900 dark:text-sky-300" },
+      blue: { base: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300" },
+      indigo: { base: "bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300" },
+      violet: { base: "bg-violet-100 text-violet-800 dark:bg-violet-900 dark:text-violet-300" },
+      fuchsia: { base: "bg-fuchsia-100 text-fuchsia-800 dark:bg-fuchsia-900 dark:text-fuchsia-300" },
+      purple: { base: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300" },
+      pink: { base: "bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-300" },
+      rose: { base: "bg-rose-100 text-rose-800 dark:bg-rose-900 dark:text-rose-300" }
     },
     size: {
       small: "text-xs",
@@ -250,4 +252,4 @@ const badge = tv({
   }
 });
 
-export { badge };
+export { badge, type BadgeVariants };

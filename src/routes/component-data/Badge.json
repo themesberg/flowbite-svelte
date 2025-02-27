@@ -19,7 +19,7 @@
     [
       "color",
       "any",
-      "\"primary\""
+      "'primary'"
     ],
     [
       "large",

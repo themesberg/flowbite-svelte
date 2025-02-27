@@ -44,7 +44,7 @@
     [
       "placement",
       "any",
-      "\"left\""
+      "'left'"
     ],
     [
       "class",

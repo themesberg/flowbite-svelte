@@ -7,10 +7,10 @@ type PaddingType = "sm" | "lg" | "md" | "xl" | "xs" | "none" | undefined;
 type ShadowType = "sm" | "normal" | "lg" | "md" | "xl" | "2xl" | "inner" | undefined;
 type ColorType = "gray" | "primary" | "secondary" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined;
 
-type ImgType = {
-  src?: string | undefined | null;
-  alt?: string | undefined | null;
-};
+// type ImgType = {
+//   src?: string | undefined | null;
+//   alt?: string | undefined | null;
+// };
 
 interface BaseCardProps {
   children: Snippet;
@@ -19,7 +19,7 @@ interface BaseCardProps {
   target?: string;
   shadow?: ShadowType;
   reverse?: boolean;
-  img?: ImgType;
+  img?: string;
   padding?: PaddingType;
   size?: CardSizeType;
   class?: string;

@@ -1,0 +1,15 @@
+{
+  "name": "StepIndicator",
+  "slots": [],
+  "events": [],
+  "props": [
+    ["steps", "string[]", ""],
+    ["currentStep", "number", ""],
+    ["size?", "string", ""],
+    ["color?", "ColorType", ""],
+    ["glow?", "boolean", ""],
+    ["hideLabel?", "boolean", ""],
+    ["completedCustom?", "string", ""],
+    ["currentCustom?", "string", ""]
+  ]
+}

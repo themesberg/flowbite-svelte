@@ -1,0 +1,9 @@
+{
+  "name": "ControlButton",
+  "slots": [],
+  "events": ["on:click"],
+  "props": [
+    ["forward", "boolean", ""],
+    ["name", "string", "@prop export let forward: boolean"]
+  ]
+}

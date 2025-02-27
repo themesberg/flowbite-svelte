@@ -1,0 +1,13 @@
+{
+  "name": "MultiSelect",
+  "slots": [],
+  "events": ["input"],
+  "props": [
+    ["items?", "SelectOptionType<any>[]", ""],
+    ["value?", "(string | number)[]", ""],
+    ["size?", "FormSizeType", ""],
+    ["dropdownClass?", "string", "''"],
+    ["placeholder?", "string", "''"],
+    ["disabled?", "boolean", "false"]
+  ]
+}

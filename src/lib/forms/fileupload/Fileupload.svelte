@@ -27,7 +27,7 @@
 
 <!--
 @component
-[Go to docs](https://preview.flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @props: files: any = $bindable<FileList | undefined>();
 @props:size: any = "md";

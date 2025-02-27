@@ -54,7 +54,7 @@
     [
       "breakPoint",
       "any",
-      "\"md\""
+      "'md'"
     ],
     [
       "navClass",

@@ -1,0 +1,6 @@
+{
+  "name": "TransitionFrame",
+  "slots": [],
+  "events": ["show"],
+  "props": []
+}

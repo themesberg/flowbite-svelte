@@ -1,0 +1,11 @@
+{
+  "name": "Thumbnail",
+  "slots": [],
+  "events": [],
+  "props": [
+    ["selected?", "boolean", ""],
+    ["alt?", "string | undefined | null", ""],
+    ["activeClass?", "string", ""],
+    ["inactiveClass?", "string", ""]
+  ]
+}

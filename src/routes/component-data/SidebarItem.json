@@ -24,7 +24,7 @@
     [
       "spanClass",
       "any",
-      "\"ms-3\""
+      "'ms-3 dupa'"
     ],
     [
       "activeClass",

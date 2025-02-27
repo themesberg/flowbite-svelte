@@ -1,0 +1,15 @@
+{
+  "name": "DropdownGroup",
+  "props": [
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
+  ]
+}

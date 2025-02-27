@@ -1,14 +1,14 @@
 <script lang="ts">
-  import { getContext } from "svelte";
-  import { twMerge } from "tailwind-merge";
-  import { type SidebarCtxType, type SidebarItemProps as Props } from "./";
+  import { getContext } from 'svelte';
+  import { twMerge } from 'tailwind-merge';
+  import { type SidebarCtxType, type SidebarItemProps as Props } from './';
 
-  let { iconSlot, subtext, href, label, spanClass = "ms-3", activeClass, nonActiveClass, aClass, active, class: className, ...restProps }: Props = $props();
+  let { iconSlot, subtext, href, label, spanClass = 'ms-3 dupa', activeClass, nonActiveClass, aClass, active, class: className, ...restProps }: Props = $props();
 
-  const context = getContext<SidebarCtxType>("sidebarContext") ?? {};
-  const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
+  const context = getContext<SidebarCtxType>('sidebarContext') ?? {};
+  const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
 
-  let sidebarUrl = $state("");
+  let sidebarUrl = $state('');
   activeUrlStore.subscribe((value) => {
     sidebarUrl = value;
   });
@@ -27,7 +27,7 @@
 </script>
 
 <li class={className}>
-  <a onclick={context.closeSidebar} {...restProps} {href} aria-current={(activeItem ?? sidebarUrl === href) ? "page" : undefined} class={twMerge(aCls, aClass)}>
+  <a onclick={context.closeSidebar} {...restProps} {href} aria-current={(activeItem ?? sidebarUrl === href) ? 'page' : undefined} class={twMerge(aCls, aClass)}>
     {#if iconSlot}
       {@render iconSlot()}
     {/if}
@@ -40,13 +40,13 @@
 
 <!--
 @component
-[Go to docs](https://preview.flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @props: iconSlot: any;
 @props:subtext: any;
 @props:href: any;
 @props:label: any;
-@props:spanClass: any = "ms-3";
+@props:spanClass: any = 'ms-3 dupa';
 @props:activeClass: any;
 @props:nonActiveClass: any;
 @props:aClass: any;

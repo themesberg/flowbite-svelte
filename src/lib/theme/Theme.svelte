@@ -1,144 +1,30 @@
 <script lang="ts">
-  import { setContext, type Snippet } from "svelte";
-  import { tv } from "tailwind-variants";
-  import deepmerge from "deepmerge";
-  import {
-    accordion,
-    accordionitem,
-    alert,
-    avatar,
-    badge,
-    banner,
-    bottomNav,
-    bottomNavItem,
-    bottomnavheader,
-    bottomnavheaderitem,
-    breadcrumb,
-    buttonGroup,
-    button,
-    gradientButton,
-    card,
-    darkmode,
-    android,
-    defaultMockup,
-    desktop,
-    ios,
-    laptop,
-    smartwatch,
-    tablet,
-    drawer,
-    drawerhead,
-    dropdown,
-    dropdowndivider,
-    dropdownli,
-    dropdownul,
-    dropdownHeader,
-    dropdownFooter,
-    footer,
-    footerBrand,
-    footerCopyright,
-    footerIcon,
-    footerUl,
-    footerLi,
-    gallery,
-    indicator,
-    kbd,
-    listGroup,
-    listGroupItem,
-    megamenu,
-    modal,
-    navbar,
-    navUl,
-    navbrand,
-    navLi,
-    navhamburger,
-    paginationItem,
-    pagination,
-    popover,
-    progressbar,
-    advancedrating,
-    rating,
-    review,
-    scorerating,
-    sidebar,
-    sidebarbutton,
-    sidebarcta,
-    sitebarbrand,
-    sidebardropdownwrapper,
-    cardPlaceholder,
-    imagePlaceholder,
-    listPlaceholder,
-    skeleton,
-    testimonialPlaceholder,
-    textPlaceholder,
-    videoPlaceholder,
-    widgetPlaceholder,
-    spinner,
-    table,
-    tablebodyrow,
-    tablehead,
-    tablebodycell,
-    tableheadcell,
-    tabs,
-    tabItem,
-    activity,
-    activityitem,
-    group,
-    groupitem,
-    timeline,
-    timelineitem,
-    toast,
-    toolbar,
-    toolbarGroup,
-    toolbarButton,
-    tooltip,
-    checkbox,
-    dropzone,
-    fileupload,
-    floatingLabelInput,
-    helper,
-    input,
-    label,
-    radio,
-    radioButton,
-    range,
-    search,
-    select,
-    textarea,
-    toggle,
-    anchor,
-    blockquote,
-    descriptionList,
-    heading,
-    hr,
-    img,
-    layout,
-    list,
-    mark,
-    paragraph,
-    secondary,
-    span
-  } from "$lib";
-  import type { ThemeType } from "$lib/types";
+  import deepmerge from 'deepmerge';
+  import { setContext, type Snippet } from 'svelte';
+  import { tv } from 'tailwind-variants';
+  import { baseThemes, type BaseThemes } from './index';
 
   interface Props {
     children: Snippet;
-    theme?: Record<string, any>;
+    theme?: BaseThemes;
   }
 
   let { children, theme }: Props = $props();
 
+  type K = keyof BaseThemes;
+
   // Function to merge theme configurations
-  function mergeThemes(baseThemes: ThemeType, customTheme?: ThemeType) {
-    const mergedTheme: ThemeType = {};
-
+  function mergeThemes(baseThemes: BaseThemes, customTheme?: BaseThemes) {
+    const mergedTheme: BaseThemes = deepmerge(baseThemes, {});
     // Merge each component's theme
-    for (const [componentName, baseTheme] of Object.entries(baseThemes)) {
-      const customComponentTheme = customTheme?.[componentName] || {};
+    for (const [name, baseTheme] of Object.entries(baseThemes)) {
+      const componentName: K = name as K;
+      if (customTheme && componentName in customTheme) {
+        const customComponentTheme = customTheme[componentName as keyof typeof customTheme];
 
-      // Deep merge base theme with custom theme
-      mergedTheme[componentName] = tv(
-        deepmerge(
+        // Deep merge base theme with custom theme
+        // const result = deepmerge(baseTheme, customComponentTheme);
+        const result = deepmerge(
           {
             slots: baseTheme.slots,
             variants: baseTheme.variants,
@@ -151,141 +37,25 @@
             compoundVariants: customComponentTheme.compoundVariants || [],
             defaultVariants: customComponentTheme.defaultVariants || {}
           }
-        )
-      );
+        );
+        // @ts-ignore
+        mergedTheme[componentName] = tv(result);
+      }
     }
 
-    return mergedTheme;
+    return mergedTheme as BaseThemes;
   }
-
-  const baseThemes = {
-    accordion,
-    accordionitem,
-    alert,
-    avatar,
-    badge,
-    banner,
-    bottomNav,
-    bottomNavItem,
-    bottomnavheader,
-    bottomnavheaderitem,
-    breadcrumb,
-    buttonGroup,
-    button,
-    gradientButton,
-    card,
-    darkmode,
-    android,
-    defaultMockup,
-    desktop,
-    ios,
-    laptop,
-    smartwatch,
-    tablet,
-    drawer,
-    drawerhead,
-    dropdown,
-    dropdowndivider,
-    dropdownli,
-    dropdownul,
-    dropdownHeader,
-    dropdownFooter,
-    footer,
-    footerBrand,
-    footerCopyright,
-    footerIcon,
-    footerUl,
-    footerLi,
-    gallery,
-    indicator,
-    kbd,
-    listGroup,
-    listGroupItem,
-    megamenu,
-    modal,
-    navbar,
-    navUl,
-    navbrand,
-    navLi,
-    navhamburger,
-    paginationItem,
-    pagination,
-    popover,
-    progressbar,
-    advancedrating,
-    rating,
-    review,
-    scorerating,
-    sidebar,
-    sidebarbutton,
-    sidebarcta,
-    sitebarbrand,
-    sidebardropdownwrapper,
-    cardPlaceholder,
-    imagePlaceholder,
-    listPlaceholder,
-    skeleton,
-    testimonialPlaceholder,
-    textPlaceholder,
-    videoPlaceholder,
-    widgetPlaceholder,
-    spinner,
-    table,
-    tablebodyrow,
-    tablehead,
-    tablebodycell,
-    tableheadcell,
-    tabs,
-    tabItem,
-    activity,
-    activityitem,
-    group,
-    groupitem,
-    timeline,
-    timelineitem,
-    toast,
-    toolbar,
-    toolbarGroup,
-    toolbarButton,
-    tooltip,
-    checkbox,
-    dropzone,
-    fileupload,
-    floatingLabelInput,
-    helper,
-    input,
-    label,
-    radio,
-    radioButton,
-    range,
-    search,
-    select,
-    textarea,
-    toggle,
-    anchor,
-    blockquote,
-    descriptionList,
-    heading,
-    hr,
-    img,
-    layout,
-    list,
-    mark,
-    paragraph,
-    secondary,
-    span
-  };
 
   const mergedThemes = mergeThemes(baseThemes, theme);
 
-  setContext("themeConfig", mergedThemes);
+  setContext<BaseThemes>('themeConfig', mergedThemes);
 </script>
 
 {@render children()}
 
 <!--
 @component
-[Go to docs](https://preview.flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @props: children: any;
 @props:theme: any;

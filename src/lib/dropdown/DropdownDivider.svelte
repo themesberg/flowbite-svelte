@@ -1,15 +1,15 @@
 <script lang="ts">
-  import { type DropdownDividerProps as Props, dropdowndivider } from "./";
+  import { type DropdownDividerProps as Props, dropdownDivider } from './';
 
   let { class: divClass, ...restProps }: Props = $props();
-  const base = dropdowndivider({ class: divClass });
+  const base = dropdownDivider({ class: divClass });
 </script>
 
 <div {...restProps} class={base}></div>
 
 <!--
 @component
-[Go to docs](https://preview.flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @props: class: string;
 -->

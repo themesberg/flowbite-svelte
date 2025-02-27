@@ -1,0 +1,35 @@
+{
+  "name": "DropdownItem",
+  "props": [
+    [
+      "aClass",
+      "any",
+      ""
+    ],
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "href",
+      "any",
+      ""
+    ],
+    [
+      "activeClass",
+      "any",
+      ""
+    ],
+    [
+      "liClass",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
+  ]
+}

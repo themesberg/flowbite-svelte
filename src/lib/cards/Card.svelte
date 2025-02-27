@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { card, type CardProps as Props } from ".";
-  import type { HTMLAttributes, HTMLAnchorAttributes } from "svelte/elements";
+  import { card, type CardProps as Props } from '.';
+  import type { HTMLAttributes, HTMLAnchorAttributes } from 'svelte/elements';
 
-  let { children, href, color = "gray", horizontal = false, shadow = "md", reverse = false, img, padding = "lg", size = "sm", class: className, imgClass, contentClass, ...restProps }: Props = $props();
+  let { children, href, color = 'gray', horizontal = false, shadow = 'md', reverse = false, img, padding = 'lg', size = 'sm', class: className, imgClass, contentClass, ...restProps }: Props = $props();
 
   const { base, image, content } = $derived(
     card({
@@ -34,7 +34,7 @@
 
 {#snippet childSlot()}
   {#if img}
-    <img class={image({ class: imgClass })} src={img.src} alt={img.alt} />
+    <img class={image({ class: imgClass })} src={img} alt={img} />
     <div class={content({ class: contentClass })}>
       {@render children()}
     </div>
@@ -57,7 +57,7 @@
 
 <!--
 @component
-[Go to docs](https://preview.flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @props: children: any;
 @props:href: any;

@@ -7,14 +7,19 @@
       ""
     ],
     [
-      "arrow",
+      "header",
       "any",
-      "false"
+      ""
+    ],
+    [
+      "footer",
+      "any",
+      ""
     ],
     [
       "placement",
       "any",
-      "\"bottom\""
+      "'bottom'"
     ],
     [
       "offset",
@@ -34,7 +39,7 @@
     [
       "activeUrl",
       "any",
-      "\"\""
+      "''"
     ]
   ]
 }

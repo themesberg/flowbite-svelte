@@ -65,7 +65,7 @@ export type FormSizeType = "sm" | "md" | "lg";
 //   custom?: string;
 // }
 
-export type navbarType = {
+export type NavbarType = {
   navStatus: boolean | undefined;
   breakPoint: "md" | "lg" | "xl" | "xxl";
   activeClass: string | undefined | null;

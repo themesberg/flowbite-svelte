@@ -3,8 +3,8 @@ import { tv } from "tailwind-variants";
 export const sidebar = tv({
   slots: {
     base: "top-0 left-0 z-50 w-64 transition-transform bg-gray-50 dark:bg-gray-800",
-    active: "flex items-center text-base font-normal text-gray-900 bg-gray-200 dark:bg-gray-700 rounded-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700",
-    nonactive: "flex items-center text-base font-normal text-gray-900 rounded-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700",
+    active: "flex items-center ms-2 text-base font-normal text-gray-900 bg-gray-200 dark:bg-gray-700 rounded-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700",
+    nonactive: "flex items-center ms-6 text-base font-normal text-gray-900 rounded-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700",
     div: "overflow-y-auto h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800",
     backdrop: "fixed top-0 start-0 z-40 w-full h-full"
   },
