@@ -3,11 +3,11 @@
 }
 </script>
 
-<script>import Wrapper from "../utils/Wrapper.svelte";
+<script>import Wrapper from "$lib/utils/Wrapper.svelte";
 import { twMerge } from "tailwind-merge";
 import { createEventDispatcher, getContext } from "svelte";
-import Badge from "../badge/Badge.svelte";
-import CloseButton from "../utils/CloseButton.svelte";
+import Badge from "$lib/badge/Badge.svelte";
+import CloseButton from '$lib/utils/CloseButton.svelte';
 export let type = "text";
 export let value = [];
 export let size = void 0;
