@@ -86,6 +86,7 @@ export { default as Search } from './forms/Search.svelte';
 export { default as Select } from './forms/Select.svelte';
 export { default as Textarea } from './forms/Textarea.svelte';
 export { default as Toggle } from './forms/Toggle.svelte';
+export { default as MultiInput } from './forms/MultiInput.svelte';
 
 // Gallery
 export { default as Gallery } from './gallery/Gallery.svelte';
