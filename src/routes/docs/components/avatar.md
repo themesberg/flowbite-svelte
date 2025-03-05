@@ -165,7 +165,7 @@ Use this example if you want to show a dropdown menu when clicking on the avatar
 
 ```svelte example class="flex justify-center h-96" hideResponsiveButtons
 <script>
-  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider } from 'flowbite-svelte';
+  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownGroup } from 'flowbite-svelte';
 </script>
 
 <Avatar id="user-drop" src="/images/profile-picture-3.webp" class="cursor-pointer" dot={{ color: 'green' }} />
@@ -174,10 +174,11 @@ Use this example if you want to show a dropdown menu when clicking on the avatar
     <span class="block text-sm">Bonnie Green</span>
     <span class="block truncate text-sm font-medium">name@flowbite.com</span>
   </DropdownHeader>
-  <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem>Settings</DropdownItem>
-  <DropdownItem>Earnings</DropdownItem>
-  <DropdownDivider />
+  <DropdownGroup>
+    <DropdownItem>Dashboard</DropdownItem>
+    <DropdownItem>Settings</DropdownItem>
+    <DropdownItem>Earnings</DropdownItem>
+  </DropdownGroup>
   <DropdownItem>Sign out</DropdownItem>
 </Dropdown>
 ```

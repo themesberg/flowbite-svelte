@@ -1,12 +1,14 @@
 <script lang="ts">
-  import { getContext } from "svelte";
   import { Indicator } from "$lib";
+  import type { BaseThemes } from "$lib/theme";
+  import clsx from "clsx";
+  import { getContext } from "svelte";
   import { type AvatarProps as Props, avatar } from ".";
 
   let { children, src, href, target, cornerStyle = "circular", border = false, stacked = false, dot, class: className, alt, size = "md", onclick, ...restProps }: Props = $props();
 
   // Get merged theme from context
-  const context = getContext<Record<string, object>>("themeConfig");
+  const context = getContext<BaseThemes>("themeConfig");
   // Use context theme if available, otherwise fallback to default
   const avatarTheme = context?.avatar || avatar;
 
@@ -18,7 +20,7 @@
       border,
       stacked,
       size,
-      className
+      class: clsx(className)
     })
   );
 </script>
