@@ -15,10 +15,9 @@
     };
   };
 
-  export let dirName: string = "";
-  export let components: string;
+  let { dirName = "", components }: { dirName: string; components: string } = $props();
 
-  let compoData: TCompoData[] = [];
+  let compoData: TCompoData[] = $state([]);
   // default is find fileName using dirName
   const fileNames = getFilteredFileNames(dirName);
 

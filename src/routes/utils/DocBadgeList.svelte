@@ -1,6 +1,7 @@
 <script lang="ts">
-  import DocBadge from './DocBadge.svelte';
-  export let items: string[] = [];
+  import DocBadge from "./DocBadge.svelte";
+  let { items = [] } = $props();
+  console.log("DocBadgeList - used indeed.");
 </script>
 
 <div class="flex flex-wrap gap-2">

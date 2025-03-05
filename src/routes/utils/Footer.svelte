@@ -1,29 +1,32 @@
 <script lang="ts">
-  import { page } from '$app/stores';
-  import Footer from '$lib/footer/Footer.svelte';
-  import FooterBrand from '$lib/footer/FooterBrand.svelte';
-  import FooterCopyright from '$lib/footer/FooterCopyright.svelte';
-  import FooterIcon from '$lib/footer/FooterIcon.svelte';
-  import { FooterLi, FooterUl } from '$lib';
-  let logo = '/images/flowbite-svelte-icon-logo.svg';
+  import { page } from "$app/stores";
+  import Footer from "$lib/footer/Footer.svelte";
+  import FooterBrand from "$lib/footer/FooterBrand.svelte";
+  import FooterCopyright from "$lib/footer/FooterCopyright.svelte";
+  import FooterIcon from "$lib/footer/FooterIcon.svelte";
+  import { FooterLi, FooterUl } from "$lib";
+  let logo = "/images/flowbite-svelte-icon-logo.svg";
 
-  let isHomePage: boolean;
-  $: isHomePage = $page.route.id === '/';
+  let isHomePage: boolean = $state(false);
+
+  $effect(() => {
+    isHomePage = $page.route.id === "/";
+  });
 
   const footer_links = {
     Resources: {
-      GitHub: 'https://github.com/themesberg/flowbite-svelte',
-      Flowbite: 'https://flowbite.com/',
-      'Tailwind CSS': 'https://tailwindcss.com/',
-      'Figma Design': 'https://flowbite.com/figma/'
+      GitHub: "https://github.com/themesberg/flowbite-svelte",
+      Flowbite: "https://flowbite.com/",
+      "Tailwind CSS": "https://tailwindcss.com/",
+      "Figma Design": "https://flowbite.com/figma/"
     },
-    'Help and Support': {
-      'Discord Community': 'https://discord.gg/4eeurUVvTy',
-      'GitHub Discussions': 'https://github.com/themesberg/flowbite-svelte/discussions'
+    "Help and Support": {
+      "Discord Community": "https://discord.gg/4eeurUVvTy",
+      "GitHub Discussions": "https://github.com/themesberg/flowbite-svelte/discussions"
     },
     Legal: {
-      License: 'https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE',
-      'Brand usage': 'https://flowbite.com/brand/'
+      License: "https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE",
+      "Brand usage": "https://flowbite.com/brand/"
     }
   };
 </script>
@@ -36,9 +39,9 @@
         <p class="max-w-sm mb-3 text-gray-600 dark:text-gray-400 mt-4">Flowbite Svelte is an open-source UI component library built with Svelte components and Tailwind CSS that can help you build websites faster.</p>
         <p class="max-w-sm mb-3 text-gray-600 dark:text-gray-400">
           Code licensed
-          <a href="https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE" class="text-primary-600 hover:underline"> MIT </a>
+          <a href="https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE" class="text-primary-600 hover:underline">MIT</a>
           , docs
-          <a href="https://creativecommons.org/licenses/by/3.0/" class="text-primary-600 hover:underline"> CC BY 3.0 </a>
+          <a href="https://creativecommons.org/licenses/by/3.0/" class="text-primary-600 hover:underline">CC BY 3.0</a>
           .
         </p>
       </div>
