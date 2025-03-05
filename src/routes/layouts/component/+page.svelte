@@ -1,20 +1,20 @@
 <script module>
-  import code from './code.svelte';
-  import h2 from './h2.svelte';
-  import h3 from './h3.svelte';
+  import code from "./code.svelte";
+  import h2 from "./h2.svelte";
+  import h3 from "./h3.svelte";
   export { h2, h3, code };
 </script>
 
 <script>
-  import Footer from '../../utils/Footer.svelte';
-  import MetaTag from '../../utils/MetaTag.svelte';
-  import Newsletter from '../../utils/Newsletter.svelte';
-  import PageHeadSection from '../../utils/PageHeadSection.svelte';
-  import Paging from '../../utils/Paging.svelte';
-  import Toc from '../../utils/Toc.svelte';
-  import { extract } from './Anchor.svelte';
+  import Footer from "../../utils/Footer.svelte";
+  import MetaTag from "../../utils/MetaTag.svelte";
+  import Newsletter from "../../utils/Newsletter.svelte";
+  import PageHeadSection from "../../utils/PageHeadSection.svelte";
+  import Paging from "../../utils/Paging.svelte";
+  import Toc from "../../utils/Toc.svelte";
+  import { extract } from "./Anchor.svelte";
 
-  let { title, breadcrumb_title, component_title = '', dir, description, layout = '', children } = $props();
+  let { title, breadcrumb_title, component_title = "", dir, description, layout = "", children } = $props();
 
   // calm down `unused export property` warrning
   /* eslint-disable @typescript-eslint/no-unused-expressions */
@@ -34,5 +34,6 @@
     <Newsletter />
     <Footer />
   </div>
+
   <Toc {extract} headingSelector="#mainContent > :where(h2, h3)" />
 </div>
