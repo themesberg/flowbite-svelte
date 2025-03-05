@@ -19,9 +19,16 @@ export let classLeft = "";
 export let classRight = "";
 export let placeholder = "";
 export let disabled = false;
-export let separators = ",";
+export let separators = ["Enter", ","];
+export let validationCallback = undefined;
+export let validationErrorClass = "text-red-700 dark:text-red-500";
 let inputCurrent = "";
-$: inputItems = value.map(item => ({ value: item, id: Math.floor(Math.random() * 10000) }));
+let inputInvalid = false;
+let idCounter = 0;
+$: inputItems = value.map(item => {
+  idCounter += 1;
+  return { value: item, id: idCounter };
+});
 const dispatcher = createEventDispatcher();
 const multiInputClass = "relative border border-gray-300 flex items-center rounded-lg gap-2 dark:border-gray-600 ring-primary-500 dark:ring-primary-500 focus-visible:outline-none bg-gray-50 text-gray-900 dark:bg-gray-600 dark:text-white";
 const sizes = {
@@ -51,16 +58,20 @@ const clearThisOption = (thisValue) => {
   }
 };
 function handleInputSeparation() {
-  if (!value.includes(inputCurrent)) {
-    value.push(inputCurrent);
+  inputCurrent = inputCurrent.trim();
+  if (inputCurrent && !value.includes(inputCurrent)) {
+    if (validationCallback && !validationCallback(inputCurrent)) {
+      inputInvalid = true;
+      return;
+    }
+    value = [...value, inputCurrent];
   }
   inputCurrent = "";
 };
 function handleKeyDown(event) {
   if (disabled) return;
-  let seps = separators.split('')
-  seps.push("Enter");
-  for (let s of seps) {
+  inputInvalid = false;
+  for (let s of separators) {
     if (event.key == s) {
       handleInputSeparation();
       event.stopPropagation();
@@ -78,7 +89,7 @@ function handleKeyDown(event) {
     </div>
   {/if}
   <slot props={{ ...$$restProps, class: inputClass }}>
-    <div on:click={() => !disabled} on:focusout={() => !disabled} tabindex="0" role="listbox" class={twMerge(multiInputClass, sizes[size], $$props.class, !disabled && "focus-within:ring-1 focus-within:border-primary-500 dark:focus-within:border-primary-500", disabled && "opacity-50 cursor-not-allowed")}>
+    <div tabindex="0" role="listbox" class={twMerge(multiInputClass, sizes[size], $$props.class, !disabled && "focus-within:ring-1 focus-within:border-primary-500 dark:focus-within:border-primary-500", disabled && "opacity-50 cursor-not-allowed")}>
       {#if !inputItems.length}
         <span class="text-gray-400">{placeholder}</span>
       {/if}
@@ -90,7 +101,7 @@ function handleKeyDown(event) {
             </Badge>
           {/each}
         {/if}
-        <input {...$$restProps} bind:value={inputCurrent} on:blur on:change on:click on:contextmenu on:focus on:keydown={handleKeyDown} on:keypress on:keyup on:mouseover on:mouseenter on:mouseleave on:paste on:input {...{ type }} class={inputClass} />
+        <input {...$$restProps} bind:value={inputCurrent} on:blur on:change on:click on:contextmenu on:focus on:keydown={handleKeyDown} on:keypress on:keyup on:mouseover on:mouseenter on:mouseleave on:paste on:input {...{ type }} class="{inputClass} { inputInvalid ? validationErrorClass : ''}" />
       </span>
       <div class="flex ms-auto gap-2 items-center">
         {#if inputItems.length}
@@ -124,5 +135,7 @@ function handleKeyDown(event) {
 @prop export let classRight: $$Props['classRight'] = '';
 @prop export let placeholder: $$Props['placeholder'] = '';
 @prop export let disabled: $$Props['disabled'] = false;
-@prop export let separators: $$Props['separators'] = ',';
+@prop export let separators: $$Props['separators'] = ['Enter', ','];
+@prop export let validationCallback: $$Props['validationCallback'] = undefined;
+@prop export let validationErrorClass: $$Props['validationErrorClass'] = 'text-red-700 dark:text-red-500';
 -->
