@@ -11,10 +11,6 @@ interface AlertProps extends Omit<AlertVariants, "icon">, Omit<HTMLAttributes<HT
   icon?: Snippet;
   alertStatus?: boolean;
   closeIcon?: boolean;
-  // color?: alertColor;
-  // border?: boolean;
-  // rounded?: boolean;
-  // dismissable?: boolean;
   transition?: TransitionFunc;
   params?: ParamsType;
   onclick?: () => void;

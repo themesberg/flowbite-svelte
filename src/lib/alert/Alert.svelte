@@ -1,16 +1,17 @@
 <script lang="ts">
-  import { CloseButton } from '$lib';
-  import type { BaseThemes } from '$lib/theme';
-  import type { ParamsType } from '$lib/types';
-  import { getContext } from 'svelte';
-  import { fade } from 'svelte/transition';
-  import { type AlertProps as Props, alert } from '.';
+  import { CloseButton } from "$lib";
+  import type { BaseThemes } from "$lib/theme";
+  import type { ParamsType } from "$lib/types";
+  import { getContext } from "svelte";
+  import { fade } from "svelte/transition";
+  import { type AlertProps as Props, alert } from ".";
+  import clsx from "clsx";
 
-  let { children, icon, alertStatus = $bindable(true), closeIcon, color = 'primary', rounded = true, border, class: className, dismissable, transition = fade, params, onclick, ...restProps }: Props = $props();
+  let { children, icon, alertStatus = $bindable(true), closeIcon, color = "primary", rounded = true, border, class: className, dismissable, transition = fade, params, onclick, ...restProps }: Props = $props();
 
   // Theme context
 
-  const context = getContext<BaseThemes>('themeConfig');
+  const context = getContext<BaseThemes>("themeConfig");
   // Use theme context if available, otherwise fallback to default
   const alertTheme = context?.alert || alert;
 
@@ -20,7 +21,8 @@
       rounded,
       border,
       icon: !!icon,
-      dismissable
+      dismissable,
+      class: clsx(className)
     })
   );
 </script>
@@ -47,7 +49,8 @@
           aria-label="Remove badge"
           onclick={() => {
             alertStatus = false;
-          }}>
+          }}
+        >
           <span class="sr-only">Remove alert</span>
           {#if icon}
             {@render icon()}
@@ -62,7 +65,8 @@
           ariaLabel="Remove alert"
           onclick={() => {
             alertStatus = false;
-          }} />
+          }}
+        />
       {/if}
     {/if}
   </div>
