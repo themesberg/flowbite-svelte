@@ -1,16 +1,18 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import { type BreadcrumbProps as Props, breadcrumb } from "./index";
+  import type { BaseThemes } from "$lib/theme";
+  import clsx from "clsx";
 
-  let { children, solid = false, navClass, olClass, ariaLabel = "Breadcrumb", ...restProps }: Props = $props();
+  let { children, solid = false, class: className, olClass, ariaLabel = "Breadcrumb", ...restProps }: Props = $props();
 
   // Get merged theme from context
-  const context = getContext<Record<string, any>>("themeConfig");
+  const context = getContext<BaseThemes>("themeConfig");
   // Use context theme if available, otherwise fallback to default
   const breadcrumbTheme = context?.breadcrumb || breadcrumb;
 
   const { nav, list } = breadcrumbTheme({ solid });
-  let classNav = $derived(nav({ class: navClass }));
+  let classNav = $derived(nav({ class: clsx(className) }));
   let classList = $derived(list({ class: olClass }));
 </script>
 

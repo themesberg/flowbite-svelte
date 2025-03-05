@@ -5,10 +5,8 @@ import type { HTMLLiAttributes } from "svelte/elements";
 interface BreadcrumbProps extends HTMLAttributes<HTMLElement> {
   children: Snippet;
   solid?: boolean;
-  navClass?: string;
   olClass?: string;
   ariaLabel?: string;
-  class?: string;
 }
 
 interface BreadcrumbItemProps extends HTMLLiAttributes {
@@ -19,7 +17,6 @@ interface BreadcrumbItemProps extends HTMLLiAttributes {
   linkClass?: string;
   spanClass?: string;
   homeClass?: string;
-  class?: string;
 }
 
 export { type BreadcrumbProps, type BreadcrumbItemProps };

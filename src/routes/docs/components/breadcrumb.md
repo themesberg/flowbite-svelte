@@ -60,7 +60,7 @@ You can alternatively also use the breadcrumb components with a solid background
 
 ## Icons
 
-Use the `icon` slot to change icons.
+Use the `icon` snippet to change icons.
 
 ```svelte example
 <script>
@@ -70,20 +70,20 @@ Use the `icon` slot to change icons.
 
 <Breadcrumb aria-label="Solid background breadcrumb example" class="bg-gray-50 py-3 px-5 dark:bg-gray-900">
   <BreadcrumbItem href="/" home>
-    <svelte:fragment slot="icon">
+    {#snippet icon()}
       <HomeOutline class="w-4 h-4 me-2" />
-    </svelte:fragment>Home
+    {/snippet}Home
   </BreadcrumbItem>
   <BreadcrumbItem href="/">
-    <svelte:fragment slot="icon">
+    {#snippet icon()}
       <ChevronDoubleRightOutline class="w-5 h-5 mx-2 dark:text-white" />
-    </svelte:fragment>
+    {/snippet}
     Projects
   </BreadcrumbItem>
   <BreadcrumbItem>
-    <svelte:fragment slot="icon">
+    {#snippet icon()}
       <ChevronDoubleRightOutline class="w-5 h-5 mx-2 dark:text-white" />
-    </svelte:fragment>
+    {/snippet}
     Flowbite Svelte
   </BreadcrumbItem>
 </Breadcrumb>
