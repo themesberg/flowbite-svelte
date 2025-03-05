@@ -2,7 +2,7 @@
   import code from "./code.svelte";
   import h2 from "./h2.svelte";
   import h3 from "./h3.svelte";
-  export { h2, h3, code };
+  export { code, h2, h3 };
 </script>
 
 <script>
