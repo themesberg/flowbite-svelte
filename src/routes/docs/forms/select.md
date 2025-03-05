@@ -8,7 +8,7 @@ description: Get started with the select component to allow the user to choose f
 ---
 
 <script>
-import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
+import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
 import { Badge, A, Kbd, ArrowKeyDown, ArrowKeyUp } from '$lib'
 const components = 'Select, MultiSelect'
 </script>

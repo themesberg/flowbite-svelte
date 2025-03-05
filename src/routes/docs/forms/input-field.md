@@ -8,7 +8,7 @@ description: Get started with a collection of input fields built with Tailwind C
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, DocBadgeList, CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { TableProp, TableDefaultRow,  CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { onMount } from 'svelte';
   import { Badge, A } from '$lib'
 

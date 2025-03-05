@@ -8,7 +8,7 @@ description: Use the search input component as a text field to allow users to en
 ---
 
 <script>
-  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, A } from '$lib'
   import componentData1 from '../../component-data/Search.json'
   const components = 'Search'

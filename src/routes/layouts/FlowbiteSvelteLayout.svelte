@@ -1,26 +1,26 @@
 <script lang="ts">
-  import { page } from '$app/stores';
-  import { DarkMode, Navbar, NavBrand, NavHamburger, NavLi, NavUl, uiHelpers } from '$lib';
-  import Tooltip from '$lib/tooltip/Tooltip.svelte';
-  import { onMount, setContext } from 'svelte';
-  import { writable, type Writable } from 'svelte/store';
+  import { page } from "$app/stores";
+  import { DarkMode, Navbar, NavBrand, NavHamburger, NavLi, NavUl, uiHelpers } from "$lib";
+  import Tooltip from "$lib/tooltip/Tooltip.svelte";
+  import { onMount, setContext } from "svelte";
+  import { writable, type Writable } from "svelte/store";
 
-  import DocBadge from '../utils/DocBadge.svelte';
-  import Discord from '../utils/icons/Discord.svelte';
-  import GitHub from '../utils/icons/GitHub.svelte';
-  import YouTube from '../utils/icons/YouTube.svelte';
-  import ToolbarLink from '../utils/ToolbarLink.svelte';
-  import AlgoliaSearch from '../utils/AlgoliaSearch.svelte';
+  import Discord from "../utils/icons/Discord.svelte";
+  import GitHub from "../utils/icons/GitHub.svelte";
+  import YouTube from "../utils/icons/YouTube.svelte";
+  import ToolbarLink from "../utils/ToolbarLink.svelte";
+  import AlgoliaSearch from "../utils/AlgoliaSearch.svelte";
+  import Badge from "$lib/badge/Badge.svelte";
 
   let { children } = $props();
 
-  let isHomePage: boolean = $derived($page.route.id === '/');
+  let isHomePage: boolean = $derived($page.route.id === "/");
   /*eslint no-undef: "off"*/
   const version = __VERSION__;
 
-  let logo = '/images/flowbite-svelte-icon-logo.svg';
+  let logo = "/images/flowbite-svelte-icon-logo.svg";
   // let divClass = 'w-full ms-auto lg:block lg:w-auto order-1 lg:order-none';
-  let ulClass = 'flex flex-col py-3 my-4 lg:flex-row lg:my-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-4';
+  let ulClass = "flex flex-col py-3 my-4 lg:flex-row lg:my-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-4";
 
   let activeUrl = $state($page.url.pathname);
   let nav = uiHelpers();
@@ -33,9 +33,9 @@
   });
 
   const drawerHiddenStore: Writable<boolean> = writable<boolean>(true);
-  setContext('drawer', drawerHiddenStore);
+  setContext("drawer", drawerHiddenStore);
 
-  setContext('testC', 'test for textContext');
+  setContext("testC", "test for textContext");
 
   const toggleDrawer = () => {
     drawerHiddenStore.update((state) => !state);
@@ -44,7 +44,7 @@
 
   onMount(() => {
     // Workaround until https://github.com/sveltejs/kit/issues/2664 is fixed
-    if (typeof window !== 'undefined' && window.location.hash) {
+    if (typeof window !== "undefined" && window.location.hash) {
       const deepLinkedElement = document.getElementById(window.location.hash.substring(1));
 
       if (deepLinkedElement) {
@@ -58,7 +58,7 @@
   <Navbar color="default" {toggleNav} {closeNav} {navStatus} breakPoint="xxl" fluid class="py-1.5 {isHomePage ? 'lg:px-0 max-w-7xl mx-auto' : ''}">
     <NavBrand href="/">
       <img src={logo} class="me-3 h-8" alt="Flowbite Svelte Logo" />
-      <span class="self-center whitespace-nowrap text-2xl font-semibold text-gray-900 dark:text-white"> Flowbite Svelte </span>
+      <span class="self-center whitespace-nowrap text-2xl font-semibold text-gray-900 dark:text-white">Flowbite Svelte</span>
     </NavBrand>
 
     {#if !isHomePage}
@@ -92,9 +92,9 @@
       <Tooltip class="dark:bg-gray-900" placement="bottom-end">Toggle dark mode</Tooltip>
     </div>
     <a href="https://www.npmjs.com/package/flowbite-svelte" class="hidden sm:block">
-      <DocBadge large class="ms-2 xl:ms-6 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-800 dark:hover:text-white">
+      <Badge large class="ms-2 xl:ms-6 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-800 dark:hover:text-white">
         v{version}
-      </DocBadge>
+      </Badge>
     </a>
 
     <!-- <NavHamburger on:click={toggle} class="ms-3 m-0 md:block lg:hidden {isHomePage ? '' : 'hidden'}" /> -->

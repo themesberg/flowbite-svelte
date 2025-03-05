@@ -8,7 +8,7 @@ description: Get started with the range component to receive a number from the u
 ---
 
 <script>
-  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, A } from '$lib'
   const components = 'Range'
   let minmaxValue=5

@@ -8,7 +8,7 @@ description: Use the textarea component as a multi-line text field input and use
 ---
 
 <script>
-  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, A } from '$lib'
 
   const components = 'Textarea'

@@ -8,7 +8,7 @@ description: Show contextual information to your users using alert elements base
 ---
 
 <script>
-  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   const dirName = toKebabCase(component_title)
 </script>
 

@@ -8,7 +8,7 @@ description: Button groups are a Tailwind CSS powered set of buttons sticked tog
 ---
 
 <script>
-  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, P, A } from '$lib'
   const dirName = toKebabCase(component_title)
 </script>

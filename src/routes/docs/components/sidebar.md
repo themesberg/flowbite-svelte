@@ -10,7 +10,7 @@ thumnailSize: w-72
 
 <script>
   import { page } from '$app/stores';
-  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, Heading, P, A } from '$lib'
   const dirName = toKebabCase(component_title)
 </script>

@@ -1,8 +1,6 @@
 import type Mdsvex from '*.md';
 
 export { default as CompoDescription } from './CompoDescription.svelte';
-export { default as DocBadge } from './DocBadge.svelte';
-export { default as DocBadgeList } from './DocBadgeList.svelte';
 export { default as GitHubSource } from './GitHubSource.svelte';
 export { default as GitHubSourceList } from './GitHubSourceList.svelte';
 export { default as PageHeadSection } from './PageHeadSection.svelte';

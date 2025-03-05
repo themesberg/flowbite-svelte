@@ -8,7 +8,7 @@ description: The navbar component can be used to show a list of navigation links
 ---
 
 <script>
-  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, Heading, P, A } from '$lib';
   const dirName = toKebabCase(component_title)
 </script>
