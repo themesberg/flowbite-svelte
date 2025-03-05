@@ -40,7 +40,7 @@ Use the default bottom navigation bar example to show a list of menu items as bu
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav position="absolute" classInner="grid-cols-4">
+<BottomNav position="absolute" innerClass="grid-cols-4">
   <BottomNavItem btnName="Home">
     <HomeSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
   </BottomNavItem>
@@ -73,7 +73,7 @@ By default, the `BottomNavItem` will only be set to active if the `href` and the
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav {activeUrl} position="absolute" classInner="grid-cols-4">
+<BottomNav {activeUrl} position="absolute" innerClass="grid-cols-4">
   <BottomNavItem btnName="Home" href="/">
     <HomeSolid />
   </BottomNavItem>
@@ -102,7 +102,7 @@ The following example shows how to change active class, by overwriting `activeCl
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav {activeUrl} position="absolute" classInner="grid-cols-4" classActive="font-bold text-green-500 hover:text-green-900 dark:hover:text-green-700 dark:text-green-300">
+<BottomNav {activeUrl} position="absolute" innerClass="grid-cols-4" classActive="font-bold text-green-500 hover:text-green-900 dark:hover:text-green-700 dark:text-green-300">
   <BottomNavItem btnName="Home" href="/">
     <HomeSolid />
   </BottomNavItem>
@@ -133,7 +133,7 @@ Use the following example to change the icon colors:
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav {activeUrl} position="absolute" classInner="grid-cols-4">
+<BottomNav {activeUrl} position="absolute" innerClass="grid-cols-4">
   <BottomNavItem btnName="Home" href="/">
     <HomeSolid class={activeUrl === '/' ? svgActiveClass : svgClass} />
   </BottomNavItem>
@@ -162,7 +162,7 @@ This example can be used to show a border between the menu items inside the bott
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav position="absolute" navType="border" classInner="grid-cols-4">
+<BottomNav position="absolute" navType="border" innerClass="grid-cols-4">
   <BottomNavItem btnName="Home">
     <HomeSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
   </BottomNavItem>
@@ -191,29 +191,29 @@ Use this example to show a CTA button in the center of the navigation component 
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav position="absolute" navType="application" classInner="grid-cols-5">
+<BottomNav position="absolute" navType="application" innerClass="grid-cols-5">
   <BottomNavItem btnName="Home" appBtnPosition="left">
     <HomeSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
-    <Tooltip arrow={false}>Home</Tooltip>
   </BottomNavItem>
+  <Tooltip arrow={false}>Home</Tooltip>
   <BottomNavItem btnName="Wallet" appBtnPosition="middle">
     <WalletSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
-    <Tooltip arrow={false}>Wallet</Tooltip>
   </BottomNavItem>
+  <Tooltip arrow={false}>Wallet</Tooltip>
   <div class="flex items-center justify-center">
     <BottomNavItem btnName="Create new item" appBtnPosition="middle" btnClass="inline-flex items-center justify-center w-10 h-10 font-medium bg-primary-600 rounded-full hover:bg-primary-700 group focus:ring-4 focus:ring-primary-300 focus:outline-hidden dark:focus:ring-primary-800">
       <PlusOutline class="text-white" />
-      <Tooltip arrow={false}>Create new item</Tooltip>
     </BottomNavItem>
+    <Tooltip arrow={false}>Create new item</Tooltip>
   </div>
   <BottomNavItem btnName="Settings" appBtnPosition="middle">
     <AdjustmentsVerticalOutline class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
-    <Tooltip arrow={false}>Settings</Tooltip>
   </BottomNavItem>
+  <Tooltip arrow={false}>Settings</Tooltip>
   <BottomNavItem btnName="Profile" appBtnPosition="right">
     <UserCircleSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
-    <Tooltip arrow={false}>Profile</Tooltip>
   </BottomNavItem>
+  <Tooltip arrow={false}>Profile</Tooltip>
 </BottomNav>
 ```
 
@@ -230,15 +230,15 @@ This example be used to paginate multiple pages on a single view alongside other
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav position="absolute" navType="pagination" classInner="grid-cols-6">
+<BottomNav position="absolute" navType="pagination" innerClass="grid-cols-6">
   <BottomNavItem btnName="New document">
     <FileCirclePlusOutline class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
-    <Tooltip arrow={false}>New document</Tooltip>
   </BottomNavItem>
+  <Tooltip arrow={false}>New document</Tooltip>
   <BottomNavItem btnName="Bookmark">
     <BookmarkSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
-    <Tooltip arrow={false}>Bookmark</Tooltip>
   </BottomNavItem>
+  <Tooltip arrow={false}>Bookmark</Tooltip>
   <div class="flex items-center justify-center col-span-2">
     <div class="flex items-center justify-between w-full text-gray-600 dark:text-gray-400 bg-gray-100 rounded-lg dark:bg-gray-600 max-w-[128px] mx-2">
       <button type="button" class="inline-flex items-center justify-center h-8 px-1 bg-gray-100 rounded-s-lg dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-800 focus:outline-hidden focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-800">
@@ -254,12 +254,12 @@ This example be used to paginate multiple pages on a single view alongside other
   </div>
   <BottomNavItem btnName="Settings">
     <AdjustmentsVerticalOutline class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
-    <Tooltip arrow={false}>Settings</Tooltip>
   </BottomNavItem>
+  <Tooltip arrow={false}>Settings</Tooltip>
   <BottomNavItem btnName="Profile">
     <UserCircleSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
-    <Tooltip arrow={false}>Profile</Tooltip>
   </BottomNavItem>
+  <Tooltip arrow={false}>Profile</Tooltip>
 </BottomNav>
 ```
 
@@ -271,36 +271,40 @@ This example be used to paginate multiple pages on a single view alongside other
   import { HomeSolid, BookmarkSolid, PlusOutline, SearchOutline,  AdjustmentsVerticalOutline } from 'flowbite-svelte-icons';
 </script>
 
-<Skeleton class="py-4" />
-<ImagePlaceholder class="pb-20" />
+<div class="relative flex flex-col p-6">
+  <Skeleton class="py-4" />
+  <ImagePlaceholder class="pb-20" />
 
-<BottomNav position="absolute" navType="group" classInner="grid-cols-5">
-  <BottomNavHeader slot="header">
-    <BottomNavHeaderItem itemName="New" />
-    <BottomNavHeaderItem itemName="Popular" active={true} />
-    <BottomNavHeaderItem itemName="Following" />
-  </BottomNavHeader>
-  <BottomNavItem btnName="Home" id="group-home">
-    <HomeSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+  <BottomNav position="absolute" navType="group" innerClass="grid-cols-5">
+    {#snippet header()}
+    <BottomNavHeader>
+      <BottomNavHeaderItem itemName="New" />
+      <BottomNavHeaderItem itemName="Popular" active={true} />
+      <BottomNavHeaderItem itemName="Following" />
+    </BottomNavHeader>
+    {/snippet}
+    <BottomNavItem btnName="Home" id="group-home" innerClass="grid-cols-4">
+      <HomeSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    </BottomNavItem>
     <Tooltip arrow={false}>Home</Tooltip>
-  </BottomNavItem>
-  <BottomNavItem btnName="Bookmark" id="group-bookmark">
-    <BookmarkSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    <BottomNavItem btnName="Bookmark" id="group-bookmark">
+      <BookmarkSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    </BottomNavItem>
     <Tooltip arrow={false}>Bookmark</Tooltip>
-  </BottomNavItem>
-  <BottomNavItem btnName="New post" id="group-new">
-    <PlusOutline class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    <BottomNavItem btnName="New post" id="group-new">
+      <PlusOutline class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    </BottomNavItem>
     <Tooltip arrow={false}>New Post</Tooltip>
-  </BottomNavItem>
-  <BottomNavItem btnName="Search" id="group-search">
-    <SearchOutline class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    <BottomNavItem btnName="Search" id="group-search">
+      <SearchOutline class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    </BottomNavItem>
     <Tooltip arrow={false}>Search</Tooltip>
-  </BottomNavItem>
-  <BottomNavItem btnName="Settings" id="group-settings">
-    <AdjustmentsVerticalOutline class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    <BottomNavItem btnName="Settings" id="group-settings">
+      <AdjustmentsVerticalOutline class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+    </BottomNavItem>
     <Tooltip arrow={false}>Settings</Tooltip>
-  </BottomNavItem>
-</BottomNav>
+  </BottomNav>
+</div>
 ```
 
 ## Card with bottom bar
@@ -352,7 +356,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
       </div>
     </a>
   </Listgroup>
-  <BottomNav position="sticky" navType="card" classInner="grid-cols-3 pt-2 pb-4">
+  <BottomNav position="sticky" navType="card" innerClass="grid-cols-3 pt-2 pb-4">
     <BottomNavItem btnName="Latest" id="card-latest">
       <ClockSolid class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
     </BottomNavItem>
@@ -373,13 +377,13 @@ The component has the following props, type, and default values. See [types page
 ### BottomNav styling
 
 - Use the `classOuter` prop to overwrite `outerClass`.
-- Use the `classInner` prop to overwrite `innerClass`.
+- Use the `innerClass` prop to overwrite `innerClass`.
 - Use the `classActive` prop to overwrite `activeClass`.
 
 ### BottomNavHeader styling
 
 - Use the `classOuter` prop to overwrite `outerClass`.
-- Use the `classInner` prop to overwrite `innerClass`.
+- Use the `innerClass` prop to overwrite `innerClass`.
 
 ### BottomNavHeaderItem styling
 
