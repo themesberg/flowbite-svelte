@@ -69,7 +69,6 @@
     "svelte-lib-helpers": "^0.4.16",
     "svelte-meta-tags": "^4.1.0",
     "svelte-preprocess": "^6.0.3",
-    "svelte2tsx": "^0.7.34",
     "tailwind-merge": "^1.13.1",
     "tailwind-variants": "^0.3.1",
     "tailwindcss": "^4.0.8",

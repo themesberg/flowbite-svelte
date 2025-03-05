@@ -7,6 +7,7 @@
   import { type AccordionCtxType, type AccordionItemProps as Props, accordionitem } from ".";
   import type { ParamsType } from "../types";
   import type { BaseThemes } from "$lib/theme";
+  import clsx from "clsx";
 
   let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transition = slide, params, class: className }: Props = $props();
 
@@ -29,7 +30,7 @@
 
   const { base, button, content, active, inactive } = $derived(accordionitemTheme({ flush: ctx.flush, open }));
 
-  let buttonClass = $derived(twMerge(button(), open && !ctx.flush && (activeClass || ctx.activeClass || active()), !open && !ctx.flush && (inactiveClass || ctx.inactiveClass || inactive()), className));
+  let buttonClass = $derived(twMerge(button(), open && !ctx.flush && (activeClass || ctx.activeClass || active()), !open && !ctx.flush && (inactiveClass || ctx.inactiveClass || inactive()), clsx(className)));
 </script>
 
 <h2 class={base()}>

@@ -3,6 +3,7 @@
   import { writable } from "svelte/store";
   import { type AccordionProps as Props, accordion } from "./";
   import type { BaseThemes } from "$lib/theme";
+  import clsx from "clsx";
 
   let { children, flush, activeClass, inactiveClass, multiple = false, class: className, ...restProps }: Props = $props();
 
@@ -19,7 +20,7 @@
   };
 
   setContext("ctx", ctx);
-  const base = $derived(accordionTheme({ flush, class: className }));
+  const base = $derived(accordionTheme({ flush, class: clsx(className) }));
 </script>
 
 <div {...restProps} class={base}>
