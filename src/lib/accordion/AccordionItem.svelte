@@ -3,27 +3,24 @@
   import { slide } from "svelte/transition";
   import { getContext } from "svelte";
   import { writable } from "svelte/store";
+
   import { type AccordionCtxType, type AccordionItemProps as Props, accordionitem } from ".";
   import type { ParamsType } from "../types";
+  import type { BaseThemes } from "$lib/theme";
 
   let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transition = slide, params, class: className }: Props = $props();
 
   // Theme context
-  const context = getContext<Record<string, object>>("themeConfig");
+  const context = getContext<BaseThemes>("themeConfig");
   // Use theme context if available, otherwise fallback to default
   const accordionitemTheme = context?.accordionitem || accordionitem;
 
   const ctx: AccordionCtxType = getContext("ctx") ?? {};
-  // selected type is writable in AccordionCtxType
-  if (!ctx.selected) {
-    ctx.selected = writable();
-  }
 
   // single selection
   const self = {};
-  const selected = ctx.isSingle ? ctx.selected : writable();
+  const selected = ctx.selected ?? writable();
 
-  // open && selected.set(self);
   if (open) selected.set(self);
 
   selected.subscribe((x) => (open = x === self));
