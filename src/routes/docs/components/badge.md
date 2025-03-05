@@ -222,7 +222,7 @@ Use the `dimissable` prop to dismiss the current badge.
 <Badge dismissable large color="pink">Pink</Badge>
 ```
 
-Use the `close-button` slot to add your desired button. Don't forget to use the slot prop `close` to dismiss your badge.
+Use the `icon` snippet to add your desired button.
 
 ```svelte example class="gap-4"
 <script>
@@ -232,25 +232,28 @@ Use the `close-button` slot to add your desired button. Don't forget to use the 
 
 <Badge dismissable>
   Default
-  <button slot="close-button" let:close on:click={close} type="button" class="inline-flex items-center rounded-full p-0.5 my-0.5 ms-1.5 -me-1.5 text-sm bg-primary-500 dark:bg-primary-400 text-white dark:text-primary-800 hover:bg-primary-900 hover:text-white dark:hover:bg-red-900 dark:hover:text-yellow-300" aria-label="Remove">
-    <CloseCircleSolid class="h-4 w-4" />
-    <span class="sr-only">Remove badge</span>
-  </button>
+  {#snippet icon()}
+    <button type="button" class="inline-flex items-center rounded-full p-0.5 my-0.5 ms-1.5 -me-1.5 text-sm bg-primary-500 dark:bg-primary-400 text-white dark:text-primary-800 hover:bg-primary-900 hover:text-white dark:hover:bg-red-900 dark:hover:text-yellow-300" aria-label="Remove">
+      <CloseCircleSolid class="h-4 w-4" />
+      <span class="sr-only">Remove badge</span>
+    </button>
+  {/snippet}
 </Badge>
 ```
 
-A `close` event will be dispatched during the dismissal, listen to it if needed.
+A `onclose` callback will be dispatched during the dismissal, listen to it if needed.
 
 ```svelte example class="gap-4"
 <script>
   import { Badge } from 'flowbite-svelte';
 
   function handleClose(event) {
+    event.preventDefault();
     alert('Badge dismissed');
   }
 </script>
 
-<Badge dismissable large on:close={handleClose}>Default</Badge>
+<Badge dismissable large onclose={handleClose}>Default</Badge>
 ```
 
 ## Dynamic color

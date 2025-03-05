@@ -74,7 +74,7 @@ type SizeType = "md" | "xs" | "sm" | "lg" | undefined;
 
 interface CloseButtonProps {
   color?: ColorType;
-  onclick?: () => void;
+  onclick?: (ev: MouseEvent) => void;
   name?: string;
   ariaLabel?: string;
   size?: SizeType;

@@ -10,14 +10,11 @@ interface BadgeProps extends BadgeVariants, Omit<HTMLAttributes<HTMLDivElement>,
   badgeStatus?: boolean;
   large?: boolean;
   dismissable?: boolean;
-  // color?: BadgeColorType;
-  // border?: boolean;
-  // rounded?: boolean;
   href?: HTMLAnchorAttributes["href"];
   target?: HTMLAnchorAttributes["target"];
   transition?: TransitionFunc;
   params?: ParamsType;
-  onclick?: () => void;
+  onclose?: (ev: Event) => void;
   aClass?: string;
 }
 
