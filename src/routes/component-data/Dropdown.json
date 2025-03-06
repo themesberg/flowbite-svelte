@@ -7,14 +7,9 @@
       ""
     ],
     [
-      "header",
+      "simple",
       "any",
-      ""
-    ],
-    [
-      "footer",
-      "any",
-      ""
+      "false"
     ],
     [
       "placement",

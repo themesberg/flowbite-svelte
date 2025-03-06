@@ -14,7 +14,7 @@
     [
       "color",
       "any",
-      "\"gray\""
+      "'gray'"
     ],
     [
       "horizontal",
@@ -24,7 +24,7 @@
     [
       "shadow",
       "any",
-      "\"md\""
+      "'md'"
     ],
     [
       "reverse",
@@ -39,12 +39,12 @@
     [
       "padding",
       "any",
-      "\"lg\""
+      "'lg'"
     ],
     [
       "size",
       "any",
-      "\"sm\""
+      "'sm'"
     ],
     [
       "class",

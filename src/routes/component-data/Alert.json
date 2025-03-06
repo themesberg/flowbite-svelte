@@ -24,7 +24,7 @@
     [
       "color",
       "any",
-      "'primary'"
+      "\"primary\""
     ],
     [
       "rounded",

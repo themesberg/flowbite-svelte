@@ -28,7 +28,7 @@
 ## Props
 @props: children: any;
 @props:solid: any = false;
-@props:navClass: any;
+@props:class: string;
 @props:olClass: any;
 @props:ariaLabel: any = "Breadcrumb";
 -->

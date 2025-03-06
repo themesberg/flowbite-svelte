@@ -12,8 +12,8 @@
       "false"
     ],
     [
-      "navClass",
-      "any",
+      "class",
+      "string",
       ""
     ],
     [

@@ -9,7 +9,7 @@ description: Use the footer section at the bottom of every page to show valuable
 
 <script>
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
-  import { P, A } from '$lib'
+  import { P, A, Footer } from '$lib'
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -33,7 +33,7 @@ The footer is one of the most underestimated sections of a website being located
 </script>
 
 <Footer>
-  <div class="sm:flex sm:items-center sm:justify-between">
+  
   <FooterCopyright href="/" by="Flowbite™" year={2022} />
   <FooterLinkGroup ulClass="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
     <FooterLink href="/">About</FooterLink>
@@ -41,7 +41,7 @@ The footer is one of the most underestimated sections of a website being located
     <FooterLink href="/">Licensing</FooterLink>
     <FooterLink href="/">Contact</FooterLink>
   </FooterLinkGroup>
-  </div>
+  
 </Footer>
 ```
 
@@ -55,7 +55,6 @@ The footer is one of the most underestimated sections of a website being located
 </script>
 
 <Footer footerType="logo">
-  <div class="sm:flex sm:items-center sm:justify-between">
     <FooterBrand href="https://flowbite.com" src="/images/flowbite-svelte-icon-logo.svg" alt="Flowbite Logo" name="Flowbite" />
     <FooterLinkGroup ulClass="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
       <FooterLink href="/">About</FooterLink>
@@ -63,7 +62,6 @@ The footer is one of the most underestimated sections of a website being located
       <FooterLink href="/">Licensing</FooterLink>
       <FooterLink href="/">Contact</FooterLink>
     </FooterLinkGroup>
-  </div>
   <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
   <FooterCopyright href="/" by="Flowbite™" />
 </Footer>
@@ -182,7 +180,7 @@ The footer is one of the most underestimated sections of a website being located
       </FooterLinkGroup>
     </div>
   </div>
-  <div class="py-6 px-4 bg-gray-700 md:flex md:items-center md:justify-between">
+  <div class="py-6 px-4 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
     <FooterCopyright spanClass="text-sm text-gray-300 sm:text-center" href="/" by="Flowbite™" />
     <div class="flex mt-4 space-x-6 rtl:space-x-reverse sm:justify-center md:mt-0">
       <FooterIcon href="/">

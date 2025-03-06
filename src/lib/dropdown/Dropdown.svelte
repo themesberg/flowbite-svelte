@@ -33,8 +33,7 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @props: children: any;
-@props:header: any;
-@props:footer: any;
+@props:simple: any = false;
 @props:placement: any = 'bottom';
 @props:offset: any = 2;
 @props:class: string;

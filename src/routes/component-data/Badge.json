@@ -19,7 +19,7 @@
     [
       "color",
       "any",
-      "'primary'"
+      "\"primary\""
     ],
     [
       "large",
@@ -72,7 +72,7 @@
       ""
     ],
     [
-      "onclick",
+      "onclose",
       "any",
       ""
     ]

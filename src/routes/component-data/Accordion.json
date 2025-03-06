@@ -22,9 +22,9 @@
       ""
     ],
     [
-      "isSingle",
+      "multiple",
       "any",
-      "true"
+      "false"
     ],
     [
       "class",

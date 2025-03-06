@@ -182,18 +182,18 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @props: triggeredBy: any;
-@props:trigger: any = "click";
-@props:placement: any = "top";
+@props:trigger: any = 'click';
+@props:placement: any = 'top';
 @props:offset: any = 8;
-@props:arrow: any = true;
+@props:arrow: any = false;
 @props:border: any = true;
 @props:yOnly: any = false;
-@props:strategy: any = "absolute";
+@props:strategy: any = 'absolute';
 @props:reference: any;
 @props:middlewares: any = [dom.flip();
 @props:dom.shift()]: any;
 @props:onbeforetoggle: any;
 @props:ontoggle: any;
-@props:class: string = "";
+@props:class: string = '';
 @props:children: any;
 -->

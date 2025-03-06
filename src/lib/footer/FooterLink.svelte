@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { type FooterLiProps as Props, footerLi } from "./";
+  import { type FooterLinkProps as Props, footerLink } from ".";
 
   let { children, liClass, aClass, href, ...restProps }: Props = $props();
-  const { base, link } = $derived(footerLi());
+  const { base, link } = $derived(footerLink());
 </script>
 
 <li class={base({ class: liClass })}>

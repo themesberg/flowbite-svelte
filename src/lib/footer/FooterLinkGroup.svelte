@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { type FooterUlProps as Props, footerUl } from "./";
+  import { type FooterLinkGroupProps as Props, footerLinkGroup } from ".";
 
   let { class: ulClass, children, ...restProps }: Props = $props();
-  const base = $derived(footerUl({ class: ulClass }));
+  const base = $derived(footerLinkGroup({ class: ulClass }));
 </script>
 
 <ul {...restProps} class={base}>

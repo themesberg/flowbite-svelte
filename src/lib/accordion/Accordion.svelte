@@ -35,6 +35,6 @@
 @props:flush: any;
 @props:activeClass: any;
 @props:inactiveClass: any;
-@props:isSingle: any = true;
+@props:multiple: any = false;
 @props:class: string;
 -->

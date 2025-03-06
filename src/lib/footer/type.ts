@@ -35,16 +35,16 @@ interface FooterIconProps extends HTMLAnchorAttributes {
   class?: string;
 }
 
-interface FooterUlProps extends HTMLAttributes<HTMLUListElement> {
+interface FooterLinkGroupProps extends HTMLAttributes<HTMLUListElement> {
   children: Snippet;
   class?: string;
 }
 
-interface FooterLiProps extends HTMLAnchorAttributes {
+interface FooterLinkProps extends HTMLAnchorAttributes {
   children: Snippet;
   liClass?: string;
   aClass?: string;
   href?: string;
 }
 
-export { type FooterProps, type FooterBrandProps, type FooterCopyrightProps, type FooterIconProps, type FooterUlProps, type FooterLiProps };
+export { type FooterProps, type FooterBrandProps, type FooterCopyrightProps, type FooterIconProps, type FooterLinkGroupProps, type FooterLinkProps };

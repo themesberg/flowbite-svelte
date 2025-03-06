@@ -27,7 +27,7 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @props: color: "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined = "gray";
-@props:onclick: () => void;
+@props:onclick: (ev;
 @props:name: string = "Close";
 @props:ariaLabel: string;
 @props:size: "md" | "xs" | "sm" | "lg" | undefined = "md";

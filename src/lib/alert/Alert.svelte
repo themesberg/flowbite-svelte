@@ -80,7 +80,7 @@
 @props:icon: any;
 @props:alertStatus: any = $bindable(true);
 @props:closeIcon: any;
-@props:color: any = 'primary';
+@props:color: any = "primary";
 @props:rounded: any = true;
 @props:border: any;
 @props:class: string;

@@ -52,7 +52,7 @@
 @props: children: any;
 @props:icon: any;
 @props:badgeStatus: any = $bindable(true);
-@props:color: any = 'primary';
+@props:color: any = "primary";
 @props:large: any = false;
 @props:dismissable: any = false;
 @props:class: string;
@@ -63,5 +63,5 @@
 @props:transition: any = fade;
 @props:params: any;
 @props:aClass: any;
-@props:onclick: any;
+@props:onclose: any;
 -->
