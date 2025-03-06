@@ -1,16 +1,16 @@
 import type { Snippet } from "svelte";
-import type { HTMLImgAttributes } from "svelte/elements";
+import type { HTMLAttributes, HTMLImgAttributes } from "svelte/elements";
 
 type ImgType = {
   src?: string;
   alt?: string;
 };
 
-interface GalleryProps {
+interface GalleryProps extends HTMLAttributes<HTMLDivElement> {
   children?: Snippet;
+  figure?: Snippet<[item: ImgType]>;
   items?: HTMLImgAttributes[];
   imgClass?: string;
-  divClass?: string;
 }
 
 export { type GalleryProps, type ImgType };

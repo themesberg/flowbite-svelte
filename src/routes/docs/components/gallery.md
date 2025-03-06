@@ -207,10 +207,12 @@ This example shows how to get a complete control over the gallery images look an
   ];
 </script>
 
-<Gallery class="gap-4 grid-cols-3" items={images} let:item>
+<Gallery class="gap-4 grid-cols-3" items={images}>
+  {#snippet figure(item)}
   <div class="ring-4 ring-red-600 dark:ring-red-400 p-1">
     <img src={item.src} alt={item.alt} class="h-auto max-w-full" />
   </div>
+  {/snippet}
 </Gallery>
 ```
 
