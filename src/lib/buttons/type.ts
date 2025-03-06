@@ -15,7 +15,6 @@ interface ButtonProps extends HTMLAttributesWithoutAbort {
   shadow?: boolean;
   tag?: string;
   checked?: boolean;
-  class?: string;
   disabled?: boolean;
   href?: string;
 }
@@ -31,7 +30,6 @@ interface GradientButtonProps extends HTMLAttributesWithoutAbort {
   shadow?: boolean;
   tag?: string;
   checked?: boolean;
-  class?: string;
   disabled?: boolean;
   href?: string;
 }

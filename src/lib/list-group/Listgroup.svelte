@@ -12,14 +12,16 @@
 <svelte:element this={tag} {...restProps} class={base}>
   {#if items}
     {#each items as item}
-      {#if typeof item === "string"}
+      {#if children}
+        {@render children(item)}
+      {:else if typeof item === "string"}
         <ListgroupItem class={itemClass} {iconClass} {active} {onclick}>{item}</ListgroupItem>
       {:else}
         <ListgroupItem class={itemClass} {iconClass} {active} {...item} onclick={item.onclick ? item.onclick : onclick}>{item}</ListgroupItem>
       {/if}
     {/each}
   {:else if children}
-    {@render children()}
+    {@render children(items?.[0])}
   {/if}
 </svelte:element>
 

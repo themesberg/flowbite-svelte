@@ -2,12 +2,13 @@
   import { getContext } from "svelte";
   import type { SizeType } from "$lib/types";
   import { type ButtonProps as Props, button } from ".";
+  import clsx from "clsx";
 
   const group: SizeType = getContext("group");
 
   let { children, pill = false, outline = false, size = group ? "sm" : "md", href, type = "button", color = group ? (outline ? "dark" : "alternative") : "primary", shadow = false, tag = "button", disabled, class: className, ...restProps }: Props = $props();
 
-  const base = $derived(button({ color, size, disabled, pill, group: !!group, outline, shadow, className }));
+  const base = $derived(button({ color, size, disabled, pill, group: !!group, outline, shadow, class: clsx(className) }));
 </script>
 
 {#if href}

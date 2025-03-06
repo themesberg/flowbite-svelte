@@ -15,7 +15,7 @@ interface ListGroupItemType {
 }
 
 interface ListgroupProps {
-  children?: Snippet;
+  children?: Snippet<[item: ListGroupItemType | string | undefined]>;
   items?: (ListGroupItemType | string)[];
   active?: boolean;
   onclick?: (event?: MouseEvent) => void;

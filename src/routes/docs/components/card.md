@@ -271,8 +271,9 @@ Use this card example if you want to show a list of data:
     <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Latest Customers</h5>
     <a href="/" class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"> View all </a>
   </div>
-  <Listgroup items={list} let:item class="border-0 dark:bg-transparent!">
-    <div class="flex items-center space-x-4 rtl:space-x-reverse">
+  <Listgroup items={list} class="border-0 dark:bg-transparent!">
+    {#snippet children(item)}
+    <div class="flex items-center space-x-4 rtl:space-x-reverse py-2">
       <Avatar src={item.img.src} alt={item.img.alt} class="shrink-0" />
       <div class="flex-1 min-w-0">
         <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
@@ -286,6 +287,7 @@ Use this card example if you want to show a list of data:
         {item.value}
       </div>
     </div>
+    {/snippet}
   </Listgroup>
 </Card>
 ```
@@ -351,7 +353,7 @@ Use this example to split cards into multiple sections such as for testimonials 
   import { Card } from 'flowbite-svelte';
 </script>
 
-<Card padding="none" size="xl" class="grid md:grid-cols-2">
+<Card padding="none" size="xl" contentClass="grid md:grid-cols-2">
   <figure class="flex flex-col justify-center items-center p-8 text-center bg-white rounded-t-lg border-b border-gray-200 md:rounded-t-none md:rounded-tl-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
     <blockquote class="mx-auto mb-4 max-w-2xl text-gray-500 dark:text-gray-400">
       <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Very easy this was to integrate</h3>
