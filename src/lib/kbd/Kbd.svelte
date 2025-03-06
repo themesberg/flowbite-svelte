@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
   import { kbd, type KbdProps as Props } from ".";
 
-  let { children, class: kbdClass, ...restProps }: Props = $props();
-  const kbdCls = kbd();
+  let { children, class: className, ...restProps }: Props = $props();
+  const kbdCls = kbd({ class: clsx(className) });
 </script>
 
-<kbd {...restProps} class={twMerge(kbdCls, kbdClass)}>
+<kbd {...restProps} class={kbdCls}>
   {@render children()}
 </kbd>
 
