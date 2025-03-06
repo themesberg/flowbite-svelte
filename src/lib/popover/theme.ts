@@ -1,8 +1,11 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type PopoverVariants = VariantProps<typeof popover>;
 
 export const popover = tv({
   slots: {
-    base: "popover absolute rounded-lg shadow-md",
+    base: "rounded-lg shadow-md",
+    content: "p-2",
     title: "py-2 px-3 rounded-t-md border-b ",
     h3: "font-semibold",
     arrowBase: "absolute pointer-events-none block w-[10px] h-[10px] rotate-45 bg-inherit border-inherit shadow-md"

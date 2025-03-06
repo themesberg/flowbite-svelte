@@ -1,21 +1,22 @@
 <script lang="ts" module>
+  import type { Snippet } from "svelte";
+
   export interface TriggeredToggleEvent extends ToggleEvent {
     trigger: HTMLElement;
   }
 
-  export interface PopperProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onbeforetoggle' | 'ontoggle'> {
+  export interface PopperProps extends Omit<HTMLAttributes<HTMLDivElement>, "onbeforetoggle" | "ontoggle"> {
     triggeredBy?: string;
-    trigger?: 'hover' | 'click';
+    trigger?: "hover" | "click";
     placement?: Placement;
     arrow?: boolean;
     border?: boolean;
     offset?: number;
     yOnly?: boolean; // special case for megamenu - only move on y axis
-    strategy?: 'absolute' | 'fixed';
+    strategy?: "absolute" | "fixed";
     reference?: string | undefined;
     middlewares?: Middleware[];
-    class?: string;
-    children?: any;
+    children: Snippet;
 
     onbeforetoggle?: (ev: TriggeredToggleEvent) => void;
     ontoggle?: (ev: TriggeredToggleEvent) => void;
@@ -23,45 +24,45 @@
 </script>
 
 <script lang="ts">
-  import type { Coords, Middleware, Placement } from '@floating-ui/dom';
-  import * as dom from '@floating-ui/dom';
-  import Arrow from './Arrow.svelte';
-  import type { HTMLAttributes, HTMLButtonAttributes } from 'svelte/elements';
+  import type { Coords, Middleware, Placement } from "@floating-ui/dom";
+  import * as dom from "@floating-ui/dom";
+  import type { HTMLAttributes } from "svelte/elements";
+  import Arrow from "./Arrow.svelte";
 
   const TRIGGER_DELAY = 100;
 
-  let { triggeredBy, trigger = 'click', placement = 'top', offset = 8, arrow = false, border = true, yOnly = false, strategy = 'absolute', reference, middlewares = [dom.flip(), dom.shift()], onbeforetoggle: _onbeforetoggle, ontoggle: _ontoggle, class: className = '', children }: PopperProps = $props();
+  let { triggeredBy, trigger = "click", placement = "top", offset = 8, arrow = false, border = true, yOnly = false, strategy = "absolute", reference, middlewares = [dom.flip(), dom.shift()], onbeforetoggle: _onbeforetoggle, ontoggle: _ontoggle, class: className = "", children }: PopperProps = $props();
 
   let focusable: boolean = true;
-  let clickable: boolean = $derived(trigger === 'click');
-  let hoverable: boolean = $derived(trigger === 'hover');
+  let clickable: boolean = $derived(trigger === "click");
+  let hoverable: boolean = $derived(trigger === "hover");
 
   let popover: HTMLElement | undefined = undefined;
   let invoker: HTMLElement | undefined = undefined;
   let referenceElement: HTMLElement | null = null;
   let triggerEls: HTMLButtonElement[] = [];
-  let arrowParams: { placement: Placement; border: boolean; cords: Partial<Coords>; strategy: 'absolute' | 'fixed' } = $state({
+  let arrowParams: { placement: Placement; border: boolean; cords: Partial<Coords>; strategy: "absolute" | "fixed" } = $state({
     placement,
     border,
     cords: { x: 0, y: 0 },
     strategy
   });
 
-  const px = (n: number | undefined) => (n ? `${n}px` : '');
+  const px = (n: number | undefined) => (n ? `${n}px` : "");
 
   function updatePopoverPosition() {
     if (!invoker || !popover) {
       return;
     }
 
-    const arrowEl: HTMLElement | null = popover.querySelector('.popover-arrow');
+    const arrowEl: HTMLElement | null = popover.querySelector(".popover-arrow");
 
     let middleware: Middleware[] = [...middlewares, dom.offset(offset)];
     if (arrowEl) middleware.push(dom.arrow({ element: arrowEl }));
 
     return dom.computePosition(referenceElement ?? invoker, popover, { placement, middleware, strategy }).then(({ x, y, middlewareData: { arrow }, placement: pl, strategy }) => {
       if (popover) {
-        Object.assign(popover.style, { position: strategy, left: yOnly ? '0' : px(x), top: px(y) });
+        Object.assign(popover.style, { position: strategy, left: yOnly ? "0" : px(x), top: px(y) });
 
         if (arrow && arrowEl instanceof HTMLElement) {
           arrowParams = { placement: pl, border, cords: { x: arrow.x, y: arrow.y }, strategy };
@@ -83,7 +84,7 @@
       popover?.hidePopover(); // invoker changed need to hide old popover
     }
 
-    if (ev.type === 'pointerdown') popover?.togglePopover();
+    if (ev.type === "pointerdown") popover?.togglePopover();
     else popover?.showPopover();
   }
 
@@ -92,8 +93,8 @@
     await new Promise((resolve) => setTimeout(resolve, TRIGGER_DELAY));
     if (isTriggered) return;
 
-    if (ev?.type === 'pointerleave' && popover?.contains(document.activeElement)) return;
-    if (ev?.type === 'focusout' && popover?.contains(document.activeElement)) return;
+    if (ev?.type === "pointerleave" && popover?.contains(document.activeElement)) return;
+    if (ev?.type === "focusout" && popover?.contains(document.activeElement)) return;
 
     popover?.hidePopover();
   }
@@ -108,13 +109,13 @@
     let autoUpdateDestroy = () => {};
 
     // console.log(e.oldState, "=>", e.newState);
-    if (ev.newState === 'open') {
+    if (ev.newState === "open") {
       autoUpdateDestroy = dom.autoUpdate(referenceElement ?? invoker, popover, updatePopoverPosition);
-      document.addEventListener('click', closeOnClickOutside);
+      document.addEventListener("click", closeOnClickOutside);
     } else {
       // When closing the popover, we destroy the autoUpdate instance
       autoUpdateDestroy();
-      document.removeEventListener('click', closeOnClickOutside);
+      document.removeEventListener("click", closeOnClickOutside);
     }
   }
 
@@ -127,18 +128,18 @@
 
   function set_triggers(node: HTMLElement) {
     const events: [string, any, boolean][] = [
-      ['focusin', open_popover, focusable],
-      ['focusout', close_popover, focusable],
-      ['pointerdown', open_popover, clickable],
-      ['pointerenter', open_popover, hoverable],
-      ['pointerleave', close_popover, hoverable]
+      ["focusin", open_popover, focusable],
+      ["focusout", close_popover, focusable],
+      ["pointerdown", open_popover, clickable],
+      ["pointerenter", open_popover, hoverable],
+      ["pointerleave", close_popover, hoverable]
     ];
 
     if (triggeredBy) triggerEls = [...document.querySelectorAll<HTMLButtonElement>(triggeredBy)];
     else if (node.previousElementSibling) triggerEls = [node.previousElementSibling as HTMLButtonElement];
 
     if (!triggerEls.length) {
-      console.error('No triggers found.');
+      console.error("No triggers found.");
       return;
     }
 

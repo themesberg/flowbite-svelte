@@ -1,14 +1,15 @@
 <script lang="ts">
+  import clsx from "clsx";
   import Popper from "../utils/Popper.svelte";
   import { popover } from "./theme";
   import type { PopoverProps } from "./type";
 
-  let { titleSlot, color = "default", trigger = "click", arrow = true, children, placement = "top", class: className, ...restProps }: PopoverProps = $props();
+  let { title: titleSlot, color = "default", trigger = "click", defaultClass, arrow = true, children, placement = "top", class: className, ...restProps }: PopoverProps = $props();
 
-  let { base, title, h3, arrowBase } = $derived(popover({ color, arrow, placement }));
+  let { base, title, h3, arrowBase, content } = $derived(popover({ color, arrow, placement }));
 </script>
 
-<Popper {...restProps} {placement} border {trigger} {arrow} class={base({ className })}>
+<Popper {...restProps} {placement} border {trigger} {arrow} class={base({ class: clsx(className) })}>
   {#if typeof titleSlot === "string"}
     <div class={title()}>
       <h3 class={h3()}>{titleSlot}</h3>
@@ -16,7 +17,9 @@
   {:else if titleSlot}
     {@render titleSlot()}
   {/if}
-  {@render children()}
+  <div class={content({ class: defaultClass })}>
+    {@render children()}
+  </div>
 </Popper>
 
 <!--

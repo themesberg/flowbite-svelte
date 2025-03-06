@@ -148,7 +148,7 @@ Use this example to trigger a popover component with detailed information and an
   Due to its central geographic location in Southern Europe, <a href="/" class="text-primary-600 underline dark:text-primary-500 hover:no-underline" id="popover-image"> Italy </a>
   has historically been home to myriad peoples and cultures. In addition to the various ancient peoples dispersed throughout what is now modern-day Italy, the most predominant being the Indo-European Italic peoples who gave the peninsula its name, beginning from the classical era, Phoenicians and Carthaginians founded colonies mostly in insular Italy
 </p>
-<Popover triggeredBy="#popover-image" class="w-96 text-sm font-light" defaultClass="">
+<Popover trigger="hover" triggeredBy="#popover-image" class="w-96 text-sm font-light" defaultClass="p-0">
   <div class="grid grid-cols-5">
     <div class="col-span-3 p-3">
       <div class="space-y-2">
@@ -284,16 +284,16 @@ Set the position of the popover component relative to the trigger element by usi
 ```svelte example class="flex gap-4 flex-col justify-center items-center h-96" hideResponsiveButtons
 <script>
   import { Popover, Button } from 'flowbite-svelte';
-  let placement;
+  let placement = $state("bottom");
 </script>
 
-<Button id="placement-top" on:mouseenter={() => (placement = 'top')}>Top popover</Button>
+<Button id="placement-top" onmousedown={() => (placement = 'top')}>Top popover</Button>
 <div class="space-x-4 rtl:space-x-reverse">
-  <Button id="placement-left" on:mouseenter={() => (placement = 'left')}>Left popover</Button>
-  <Button id="placement-right" on:mouseenter={() => (placement = 'right')}>Right popover</Button>
+  <Button id="placement-left" onmousedown={() => (placement = 'left')}>Left popover</Button>
+  <Button id="placement-right" onmousedown={() => (placement = 'right')}>Right popover</Button>
 </div>
-<Button id="placement-bottom" on:mouseenter={() => (placement = 'bottom')}>Bottom popover</Button>
-<Popover triggeredBy="[id^='placement-']" {placement} class="w-64 text-sm font-light " title="Popover left">And here's some amazing content. It's very engaging. Right?</Popover>
+<Button id="placement-bottom" onmousedown={() => (placement = 'bottom')}>Bottom popover</Button>
+<Popover triggeredBy="[id^='placement-']" {placement} class="w-64 text-sm font-light " title="Popover {placement}">And here's some amazing content. It's very engaging. Right?</Popover>
 ```
 
 ## Triggering
@@ -305,10 +305,8 @@ Set the position of the popover component relative to the trigger element by usi
 
 <Button id="hover">Hover popover</Button>
 <Button id="click">Click popover</Button>
-<Button id="focus">Focus popover</Button>
 <Popover class="w-64 text-sm font-light " title="Popover title" triggeredBy="#hover" trigger="hover">And here's some amazing content. It's very engaging. Right?</Popover>
 <Popover class="w-64 text-sm font-light " title="Popover title" triggeredBy="#click" trigger="click">And here's some amazing content. It's very engaging. Right?</Popover>
-<Popover class="w-64 text-sm font-light " title="Popover title" triggeredBy="#focus" trigger="focus">And here's some amazing content. It's very engaging. Right?</Popover>
 ```
 
 ## Offset
@@ -321,7 +319,7 @@ Increase or decrease the default offset by adding the `offset` attribute where t
 </script>
 
 <Button id="offset">Default popover</Button>
-<Popover offset="30" class="w-64 text-sm font-light" title="Popover title" triggeredBy="#offset">And here's some amazing content. It's very engaging. Right?</Popover>
+<Popover offset={30} class="w-64 text-sm font-light" title="Popover title" triggeredBy="#offset">And here's some amazing content. It's very engaging. Right?</Popover>
 ```
 
 ## Animation
