@@ -119,6 +119,7 @@
     if (inputCurrent && !value.includes(inputCurrent)) {
       if (validationCallback && !validationCallback(inputCurrent)) {
         inputInvalid = true;
+        color = 'red';
         return;
       }
       value = [...value, inputCurrent];
@@ -128,6 +129,7 @@
   function handleKeyDown(event: KeyboardEvent) {
     if (disabled || !separators) return;
     inputInvalid = false;
+    color = 'base';
     for (let s of separators) {
       if (event.key == s) {
         handleInputSeparation();
