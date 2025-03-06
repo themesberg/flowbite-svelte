@@ -1,9 +1,10 @@
 <script lang="ts" generics="T">
+  import clsx from "clsx";
   import { type SelectProps as Props, select as selectCls } from ".";
 
   let { children, items, value = $bindable(), underline, size = "md", class: className, placeholder = "Choose option ...", ...restProps }: Props<T> = $props();
 
-  const selectStyle = $derived(selectCls({ underline, size, className }));
+  const selectStyle = $derived(selectCls({ underline, size, class: clsx(className) }));
 </script>
 
 <select {...restProps} bind:value class={selectStyle}>

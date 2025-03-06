@@ -171,7 +171,9 @@ Get started with the default example of a select input component to get a single
 
 ## MultiSelect
 
-```svelte example class="h-80"
+**Not implemented yet!**
+
+```html
 <script>
   import { MultiSelect } from 'flowbite-svelte';
 
