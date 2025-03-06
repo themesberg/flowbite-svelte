@@ -34,9 +34,7 @@ Here’s an example of a list group that you can use right away.
   let simpleList = ['Profile', 'Settings', 'Messages', 'Download'];
 </script>
 
-<Listgroup items={simpleList} let:item class="w-48">
-  {item}
-</Listgroup>
+<Listgroup items={simpleList} class="w-48" />
 ```
 
 ## List group with links
@@ -60,9 +58,7 @@ You can pass extra properties to the `<a>` element by setting the `attrs` atrrib
   ];
 </script>
 
-<Listgroup active items={links} let:item class="w-48">
-  {item.name}
-</Listgroup>
+<Listgroup active items={links} class="w-48" />
 ```
 
 ## List group with buttons
@@ -77,7 +73,7 @@ You can pass extra properties to the `<button>` element by setting the `attrs` a
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Listgroup } from 'flowbite-svelte';
+  import { Listgroup, ListgroupItem } from 'flowbite-svelte';
   let buttons = [
     { name: 'Profile', mycustomfield: 'data1', current: true },
     { name: 'Settings', mycustomfield: 'data2' },
@@ -86,8 +82,7 @@ You can pass extra properties to the `<button>` element by setting the `attrs` a
   ];
 </script>
 
-<Listgroup active items={buttons} let:item class="w-48" on:click={(e) => alert(Object.entries(e.detail))}>
-  {item.name}
+<Listgroup active items={buttons} class="w-48" onclick={(e) => alert(Object.entries(e.detail))}>
 </Listgroup>
 ```
 
@@ -100,19 +95,16 @@ Use the following example to create a list of buttons as a menu together with SV
   import { Listgroup } from "flowbite-svelte";
   import { AdjustmentsHorizontalSolid, DownloadSolid, MessagesSolid, UserCircleSolid } from 'flowbite-svelte-icons';
   let icons = [
-    { name: 'Profile', icon: UserCircleSolid },
-    { name: 'Settings', icon: AdjustmentsHorizontalSolid },
-    { name: 'Messages', icon: MessagesSolid },
-    { name: 'Download', icon: DownloadSolid }
+    { name: 'Profile', Icon: UserCircleSolid },
+    { name: 'Settings', Icon: AdjustmentsHorizontalSolid },
+    { name: 'Messages', Icon: MessagesSolid },
+    { name: 'Download', Icon: DownloadSolid }
   ];
   // <svelte:component this={IconSolid} icon={item.icon} class="w-3 h-3 me-2.5" />
 </script>
 
 
-<Listgroup active items={icons} let:item class="w-48" on:click={console.log}>
-  <svelte:component this={item.icon} class="w-4 h-4 me-2.5"/>
-  {item.name}
-</Listgroup>
+<Listgroup active items={icons} class="w-48" onclick={console.log} />
 ```
 
 ## Advanced
