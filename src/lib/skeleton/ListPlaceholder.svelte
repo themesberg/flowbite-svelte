@@ -1,4 +1,5 @@
 <script lang="ts">
+  import clsx from "clsx";
   import { listPlaceholder, type ListPlaceholderProps as Props } from "./index";
 
   let { itemNumber = 5, size = "md", rounded, class: className, ...restProps }: Props = $props();
@@ -8,7 +9,7 @@
   let items = $derived([...Array(itemNumber).keys()]);
 </script>
 
-<div role="status" {...restProps} class={base({ className })}>
+<div role="status" {...restProps} class={base({ class: clsx(className) })}>
   <!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
   {#each items as _, i}
     <div class={item({ class: i > 0 ? "pt-4" : "" })}>

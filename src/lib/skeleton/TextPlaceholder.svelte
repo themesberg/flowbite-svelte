@@ -1,4 +1,5 @@
 <script lang="ts">
+  import clsx from "clsx";
   import { textPlaceholder, type TextPlaceholderProps as Props } from "./index";
 
   let { size = "sm", class: className, ...restProps }: Props = $props();
@@ -9,7 +10,7 @@
   );
 </script>
 
-<div role="status" {...restProps} class={baseWrapper({ className })}>
+<div role="status" {...restProps} class={baseWrapper({ class: clsx(className) })}>
   <div class={divWrapper({ class: "w-full" })}>
     <div class={lineA({ class: "h-2.5 w-32" })}></div>
     <div class={lineB({ class: "h-2.5 w-24" })}></div>

@@ -1,12 +1,13 @@
 <script lang="ts">
   import type { HTMLAttributes } from "svelte/elements";
   import { testimonialPlaceholder } from "./index";
+  import clsx from "clsx";
 
   let { class: className, ...restProps }: HTMLAttributes<HTMLDivElement> = $props();
   const { wrapper, line1, line2, svg, subContent } = testimonialPlaceholder();
 </script>
 
-<div role="status" {...restProps} class={wrapper({ className })}>
+<div role="status" {...restProps} class={wrapper({ class: clsx(className) })}>
   <div class={line2({ class: "mx-auto mb-2.5 h-2.5 max-w-[640px]" })}></div>
   <div class={line2({ class: "mx-auto h-2.5 max-w-[540px]" })}></div>
   <div class={subContent()}>

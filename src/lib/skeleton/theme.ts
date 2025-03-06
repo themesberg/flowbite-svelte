@@ -1,6 +1,7 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
 
 // card placeholder
+type CardPlaceholderVariants = VariantProps<typeof cardPlaceholder>;
 const cardPlaceholder = tv({
   slots: {
     base: "p-4 rounded-sm border border-gray-200 shadow-sm animate-pulse md:p-6 dark:border-gray-700",
@@ -20,7 +21,9 @@ const cardPlaceholder = tv({
   }
 });
 
+
 // ImagePlaceholder
+type ImagePlaceholderVariants = VariantProps<typeof imagePlaceholder>;
 const imagePlaceholder = tv({
   slots: {
     base: "space-y-8 animate-pulse md:space-y-0 md:space-x-8 rtl:space-x-reverse md:flex md:items-center",
@@ -70,6 +73,8 @@ const imagePlaceholder = tv({
 });
 
 // ListPlaceholder
+type ListPlaceholderVariants = VariantProps<typeof listPlaceholder>;
+
 const listPlaceholder = tv({
   slots: {
     base: "p-4 space-y-4 max-w-md rounded-sm border border-gray-200 divide-y divide-gray-200 shadow-sm animate-pulse dark:divide-gray-700 md:p-6 dark:border-gray-700",
@@ -104,6 +109,8 @@ const listPlaceholder = tv({
     }
   }
 });
+
+type SkeletonVariants = VariantProps<typeof skeleton>;
 
 // Skeleton
 const skeleton = tv({
@@ -144,6 +151,8 @@ const testimonialPlaceholder = tv({
 });
 
 // TextPlaceholder
+type TextPlaceholderVariants = VariantProps<typeof textPlaceholder>;
+
 const textPlaceholder = tv({
   slots: {
     baseWrapper: "space-y-2.5 animate-pulse",
@@ -163,6 +172,7 @@ const textPlaceholder = tv({
 });
 
 // VideoPlaceholder
+type VideoPlaceholderVariants = VariantProps<typeof videoPlaceholder>;
 const videoPlaceholder = tv({
   base: "flex justify-center items-center h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700",
   variants: {
@@ -186,4 +196,4 @@ const widgetPlaceholder = tv({
   }
 });
 
-export { cardPlaceholder, imagePlaceholder, listPlaceholder, skeleton, testimonialPlaceholder, textPlaceholder, videoPlaceholder, widgetPlaceholder };
+export { cardPlaceholder, type CardPlaceholderVariants, imagePlaceholder, type ImagePlaceholderVariants, listPlaceholder, type ListPlaceholderVariants, skeleton, type SkeletonVariants, testimonialPlaceholder, textPlaceholder, type TextPlaceholderVariants, videoPlaceholder, type VideoPlaceholderVariants, widgetPlaceholder, };

@@ -1,8 +1,9 @@
 <script lang="ts">
+  import clsx from "clsx";
   import { type VideoPlaceholderProps as Props, videoPlaceholder } from "./index";
 
   let { size = "sm", class: className }: Props = $props();
-  const base = $derived(videoPlaceholder({ size, className }));
+  const base = $derived(videoPlaceholder({ size, class: clsx(className) }));
 </script>
 
 <div role="status" class={base}>

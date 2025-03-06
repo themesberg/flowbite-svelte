@@ -1,47 +1,31 @@
 import type { HTMLAttributes } from "svelte/elements";
+import type { CardPlaceholderVariants, ImagePlaceholderVariants, ListPlaceholderVariants, SkeletonVariants, TextPlaceholderVariants, VideoPlaceholderVariants } from "./theme";
 
-type CardSizeType = "sm" | "md" | "lg" | "xl" | "2xl" | undefined;
 interface CardPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
-  size?: CardSizeType;
-  class?: string;
+  size?: CardPlaceholderVariants["size"];
 }
-
-type SizeImageType = "sm" | "md" | "lg" | undefined;
-type RoundedType = "sm" | "md" | "lg" | "none" | "full" | undefined;
 
 interface ImagePlaceholderProps extends HTMLAttributes<HTMLDivElement> {
-  size?: SizeImageType;
-  rounded?: RoundedType;
-  class?: string;
+  size?: ImagePlaceholderVariants["size"];
+  rounded?: ImagePlaceholderVariants["rounded"];
 }
-
-type SizeListType = "sm" | "md" | "lg" | undefined;
-type RoundedListType = "sm" | "md" | "lg" | "none" | "full" | undefined;
 
 interface ListPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
   itemNumber?: number;
-  size?: SizeListType;
-  rounded?: RoundedListType;
-  class?: string;
+  size?: ListPlaceholderVariants["size"];
+  rounded?: ListPlaceholderVariants["rounded"];
 }
-
-type SizeSkeletonType = "sm" | "md" | "lg" | "xl" | "2xl" | undefined;
 
 interface SkeletonProps extends HTMLAttributes<HTMLDivElement> {
-  size?: SizeSkeletonType;
-  class?: string;
+  size?: SkeletonVariants["size"];
 }
-
-type SizeTextType = "sm" | "md" | "lg" | "xl" | "2xl" | undefined;
 
 interface TextPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
-  size?: SizeTextType;
+  size?: TextPlaceholderVariants["size"];
 }
-
-type SizeVideoType = "sm" | "md" | "lg" | "xl" | "2xl" | undefined;
 
 interface VideoPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
-  size?: SizeVideoType;
+  size?: VideoPlaceholderVariants["size"];
 }
 
-export type { CardPlaceholderProps, ImagePlaceholderProps, ListPlaceholderProps, SkeletonProps, TextPlaceholderProps, VideoPlaceholderProps, SizeVideoType };
+export type { CardPlaceholderProps, ImagePlaceholderProps, ListPlaceholderProps, SkeletonProps, TextPlaceholderProps, VideoPlaceholderProps };
