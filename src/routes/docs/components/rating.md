@@ -32,14 +32,15 @@ Let's import all necessary components in the script tag. We import a heart, thum
 
 The default rating icon is a star. Set the total and rating props. The `id` prop is required. Use a unique name.
 
-```svelte example hideScript
+```svelte example 
 <script>
-  import { Rating } from 'flowbite-svelte';
+  import { Rating, Star } from 'flowbite-svelte';
+  const wrapper = (props) => (anchor, _props) => Star(anchor, { ..._props, ...props });
 </script>
 
 <Rating id="example-1" total={5} size={50} rating={1.4} />
 <Rating id="example-1b" total={5} size={50} rating={4.66} />
-<Rating id="example-1b" iconFillColor='#008800' iconStrokeColor='#008800' total={5} size={50} rating={4.66} />
+<Rating id="example-1b" icon={wrapper({fillColor:'#008800', strokeColor:'#008800'})} total={5} size={50} rating={4.66} />
 ```
 
 ## Stars

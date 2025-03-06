@@ -1,8 +1,9 @@
 <script lang="ts">
   import Star from "./Star.svelte";
   import { type RatingProps as Props, rating as ratingVariants } from ".";
+  import clsx from "clsx";
 
-  let { children, text, divClass, size = 24, total = 5, rating = 4, Icon = Star, count = false, pClass }: Props = $props();
+  let { children, text, class: divClass, size = 24, total = 5, rating = 4, icon: Icon = Star, count = false, pClass }: Props = $props();
 
   const { base, p } = $derived(ratingVariants());
   const ratingGroupId = crypto.randomUUID();
@@ -12,7 +13,7 @@
   let grayStars: number = total - (fullStars + Math.ceil(rateDiffence));
 </script>
 
-<div class={base({ class: divClass })}>
+<div class={base({ class: clsx(divClass) })}>
   {#if count && children}
     <Icon fillPercent={100} {size} iconIndex={0} groupId={ratingGroupId} />
     <p class={p({ class: pClass })}>{rating}</p>

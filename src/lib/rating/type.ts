@@ -15,14 +15,13 @@ interface AdvancedRatingProps {
   unit?: string;
 }
 
-interface RatingProps {
+interface RatingProps extends HTMLAttributes<HTMLDivElement> {
   children?: Snippet;
   text?: Snippet;
-  divClass?: string;
   size?: number;
   total?: number;
   rating?: number;
-  Icon?: Component;
+  icon?: Component;
   count?: boolean;
   pClass?: string;
 }
