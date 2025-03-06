@@ -148,9 +148,6 @@
   {/if}
   <slot props={{ ...$$restProps }}>
     <div tabindex="0" role="listbox" class={multiInputClass}>
-      {#if !inputItems.length}
-        <span class="text-gray-400">{placeholder}</span>
-      {/if}
       <span class="flex gap-2 flex-wrap w-full">
         {#if inputItems.length}
           {#each inputItems as item (item.id)}
@@ -159,7 +156,7 @@
             </Badge>
           {/each}
         {/if}
-        <input {...$$restProps} bind:value={inputCurrent} on:blur on:change on:click on:contextmenu on:focus on:keydown={handleKeyDown} on:keypress on:keyup on:mouseover on:mouseenter on:mouseleave on:paste on:input {...{ type }} class="{inputClass} { inputInvalid ? validationErrorClass : ''}" />
+        <input {...$$restProps} placeholder={inputItems.length == 0 ? placeholder : undefined} bind:value={inputCurrent} on:blur on:change on:click on:contextmenu on:focus on:keydown={handleKeyDown} on:keypress on:keyup on:mouseover on:mouseenter on:mouseleave on:paste on:input {...{ type }} class="{inputClass} { inputInvalid ? validationErrorClass : ''}" />
       </span>
       <div class="flex ms-auto gap-2 items-center">
         {#if inputItems.length}
