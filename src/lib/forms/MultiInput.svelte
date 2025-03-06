@@ -90,14 +90,13 @@
   let group = getContext('group');
 
   const textSizes = { sm: 'sm:text-xs', md: 'text-sm', lg: 'sm:text-base' };
-  const inputPadding = { sm: 'p-2', md: 'p-2.5', lg: 'p-3' };
 
   $: _size = size || clampSize(group?.size) || 'md';
   let inputClass: string;
   let multiInputClass: string;
   $: {
     const _color = color === 'base' && background ? 'tinted' : color;
-    inputClass = twMerge([inputDefaultClass, inputPadding[_size], textSizes[_size], group || 'rounded-lg', group && 'first:rounded-s-lg last:rounded-e-lg', group && '[&:not(:first-child)]:-ms-px', $$props.class], colorClasses[_color]) + ' border-none rounded-none p-0';
+    inputClass = twMerge([inputDefaultClass, textSizes[_size], group || 'rounded-lg', group && 'first:rounded-s-lg last:rounded-e-lg', group && '[&:not(:first-child)]:-ms-px', $$props.class], colorClasses[_color]) + ' border-none rounded-none p-0';
     multiInputClass = twMerge(containerDefaultClass, sizes[size], $$props.class, !disabled && 'focus-within:ring-1 focus-within:border-primary-500 dark:focus-within:border-primary-500', disabled && 'opacity-50 cursor-not-allowed', ringClasses[color], borderClasses[_color], colorClasses[_color]);
   }
 
