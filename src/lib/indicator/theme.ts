@@ -1,6 +1,9 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
 
-const indicator = tv({
+
+export type IndicatorVariants = VariantProps<typeof indicator>;
+
+export const indicator = tv({
   slots: {
     base: "shrink-0"
   },
@@ -122,4 +125,4 @@ const indicator = tv({
   }
 });
 
-export { indicator };
+

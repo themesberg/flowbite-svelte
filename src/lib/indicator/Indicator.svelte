@@ -1,4 +1,5 @@
 <script lang="ts">
+  import clsx from "clsx";
   import { indicator, type IndicatorProps as Props } from "./index";
 
   let { children, color = "primary", cornerStyle = "circular", size = "md", border = false, placement, offset = true, class: className, ...restProps }: Props = $props();
@@ -17,7 +18,7 @@
   );
 </script>
 
-<div {...restProps} class={base({ className })}>
+<div {...restProps} class={base({ class: clsx(className) })}>
   {#if children}
     {@render children()}
   {/if}

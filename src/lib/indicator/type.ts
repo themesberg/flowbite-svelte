@@ -1,18 +1,14 @@
 import type { Snippet } from "svelte";
 import type { HTMLAttributes } from "svelte/elements";
-
-type ColorType = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined;
-type SizeType = "md" | "sm" | "lg" | "xl" | "xs" | undefined;
-type PlacementType = "top-left" | "top-center" | "top-right" | "center-left" | "center-right" | "bottom-left" | "bottom-center" | "bottom-right" | "default" | "center" | undefined;
+import type { IndicatorVariants } from "./theme";
 
 interface IndicatorProps extends HTMLAttributes<HTMLDivElement> {
   children?: Snippet;
-  color?: ColorType;
-  cornerStyle?: "rounded" | "circular";
-  size?: SizeType;
+  color?: IndicatorVariants["color"];
+  cornerStyle?: IndicatorVariants["cornerStyle"];
+  size?: IndicatorVariants["size"];
   border?: boolean;
-  placement?: PlacementType | undefined;
-  class?: string;
+  placement?: IndicatorVariants["placement"];
   offset?: boolean;
 }
 
