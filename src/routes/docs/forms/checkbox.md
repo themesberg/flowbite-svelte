@@ -172,34 +172,36 @@ Use this example to show a list of checkbox items inside a dropdown menu.
 
 ```svelte example class="flex justify-center items-start h-96"
 <script>
-  import { Dropdown, DropdownItem, Checkbox, Button, Search } from 'flowbite-svelte';
+  import { Dropdown, DropdownItem, DropdownGroup, Checkbox, Button, Search } from 'flowbite-svelte';
   import { ChevronDownOutline, UserRemoveSolid } from 'flowbite-svelte-icons';
 </script>
 
 <Button>Project users<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
-<Dropdown class="overflow-y-auto px-3 pb-3 text-sm h-44">
-  <div slot="header" class="p-3">
+<Dropdown>
+  <div class="p-3">
     <Search size="md" />
   </div>
-  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-    <Checkbox>Robert Gouth</Checkbox>
-  </li>
-  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-    <Checkbox>Jese Leos</Checkbox>
-  </li>
-  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-    <Checkbox checked>Bonnie Green</Checkbox>
-  </li>
-  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-    <Checkbox>Jese Leos</Checkbox>
-  </li>
-  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-    <Checkbox>Robert Gouth</Checkbox>
-  </li>
-  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-    <Checkbox>Bonnie Green</Checkbox>
-  </li>
-  <a slot="footer" href="/" class="flex items-center p-3 -mb-1 text-sm font-medium text-red-600 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
+  <DropdownGroup class="overflow-y-auto h-48">
+    <DropdownItem>
+      <Checkbox>Robert Gouth</Checkbox>
+    </DropdownItem>
+    <DropdownItem>
+      <Checkbox>Jese Leos</Checkbox>
+    </DropdownItem>
+    <DropdownItem>
+      <Checkbox checked>Bonnie Green</Checkbox>
+    </DropdownItem>
+    <DropdownItem>
+      <Checkbox>Jese Leos</Checkbox>
+    </DropdownItem>
+    <DropdownItem>
+      <Checkbox>Robert Gouth</Checkbox>
+    </DropdownItem>
+    <DropdownItem>
+      <Checkbox>Bonnie Green</Checkbox>
+    </DropdownItem>
+  </DropdownGroup>
+  <a href="/" class="flex items-center p-3 -mb-1 text-sm font-medium text-red-600 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
     <UserRemoveSolid class="w-5 h-5 me-1" />Delete user
   </a>
 </Dropdown>

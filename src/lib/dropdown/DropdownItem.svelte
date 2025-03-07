@@ -1,12 +1,13 @@
 <script lang="ts">
-  import { getContext } from 'svelte';
-  import { type DropdownItemProps as Props, dropdownItem } from '.';
-  import { tv } from 'tailwind-variants';
+  import { getContext } from "svelte";
+  import { type DropdownItemProps as Props, dropdownItem } from ".";
+  import { tv } from "tailwind-variants";
+  import clsx from "clsx";
 
   let { aClass, children, href, activeClass, liClass, class: className, ...restProps }: Props = $props();
 
-  const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
-  let sidebarUrl = $state('');
+  const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
+  let sidebarUrl = $state("");
   activeUrlStore.subscribe((value) => {
     // console.log('value: ', value)
     sidebarUrl = value;
@@ -17,8 +18,8 @@
     active = sidebarUrl ? href === sidebarUrl : false;
   });
 
-  const { anchor, activeAnchor } = $derived(dropdownItem());
-  let finalClass = $derived([active ? activeAnchor({ class: activeClass }) : anchor({ class: aClass }), className]);
+  const { anchor, activeAnchor } = dropdownItem();
+  let finalClass = $derived([active ? activeAnchor({ class: clsx(activeClass, className) }) : anchor({ class: clsx(aClass, className) })]);
 </script>
 
 <li class={liClass}>

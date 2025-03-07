@@ -14,7 +14,6 @@ interface DropdownProps extends PopperProps {
 }
 
 interface DropdownDividerProps extends HTMLAttributes<HTMLDivElement> {
-  class?: string;
 }
 
 interface DropdownHeaderProps extends HTMLAttributes<HTMLDivElement> {

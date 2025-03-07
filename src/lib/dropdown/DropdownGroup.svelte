@@ -1,9 +1,10 @@
 <script lang="ts">
-  import { type DropdownGroupProps as Props, dropdownGroup } from '.';
+  import clsx from "clsx";
+  import { type DropdownGroupProps as Props, dropdownGroup } from ".";
 
   let { children, class: className, ...restProps }: Props = $props();
 
-  const ulCls = $derived(dropdownGroup({ class: className }));
+  const ulCls = $derived(dropdownGroup({ class: clsx(className) }));
 </script>
 
 <ul {...restProps} class={ulCls}>
