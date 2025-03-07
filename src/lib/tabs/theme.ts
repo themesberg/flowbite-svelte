@@ -1,8 +1,10 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type TabsVaraints = VariantProps<typeof tabs>;
 
 export const tabs = tv({
   slots: {
-    base: "flex flex-wrap space-x-2 rtl:space-x-reverse",
+    base: "flex space-x-2 rtl:space-x-reverse",
     content: "p-4 bg-gray-50 rounded-lg dark:bg-gray-800 mt-4",
     divider: "h-px bg-gray-200 dark:bg-gray-700",
     active: "p-4 text-primary-600 bg-gray-100 rounded-t-lg dark:bg-gray-800 dark:text-primary-500",

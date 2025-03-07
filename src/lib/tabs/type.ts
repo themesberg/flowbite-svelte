@@ -1,14 +1,14 @@
 import type { Snippet } from "svelte";
 import type { HTMLAttributes, HTMLLiAttributes } from "svelte/elements";
 import { type Writable } from "svelte/store";
+import type { TabsVaraints } from "./theme";
 
 interface TabsProps extends HTMLAttributes<HTMLUListElement> {
   children: Snippet;
-  tabStyle?: "full" | "pill" | "underline" | "none";
+  tabStyle?: TabsVaraints["tabStyle"];
   ulClass?: string;
   contentClass?: string;
   divider?: boolean;
-  class?: string;
 }
 
 interface TabitemProps extends HTMLLiAttributes {
@@ -18,15 +18,14 @@ interface TabitemProps extends HTMLLiAttributes {
   title?: string;
   activeClass?: string;
   inactiveClass?: string;
-  class?: string;
   disabled?: boolean;
-  tabStyle?: "full" | "pill" | "underline" | "none";
+  tabStyle?: TabsVaraints["tabStyle"];
 }
 
 interface TabCtxType {
   activeClass?: string;
   inactiveClass?: string;
-  tabStyle?: "full" | "pill" | "underline" | "none";
+  tabStyle?: TabsVaraints["tabStyle"];
   selected: Writable<HTMLElement>;
   panelId: string;
 }

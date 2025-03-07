@@ -2,6 +2,7 @@
   import { getContext } from "svelte";
   import { writable } from "svelte/store";
   import { type TabitemProps as Props, type TabCtxType, tabItem, tabs } from ".";
+  import clsx from "clsx";
 
   let { children, titleSlot, open = false, title = "Tab title", activeClass, inactiveClass, class: className, disabled, tabStyle, ...restProps }: Props = $props();
 
@@ -28,7 +29,7 @@
   const { base, button, content } = $derived(tabItem({ open, disabled }));
 </script>
 
-<li {...restProps} class={base({ class: className })} role="presentation">
+<li {...restProps} class={base({ class: clsx(className) })} role="presentation">
   <button
     type="button"
     onclick={() => (open = true)}
