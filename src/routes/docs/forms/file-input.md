@@ -39,10 +39,10 @@ The file input component can be used to upload one or more files from the device
 ## Clearable and multiple files
 
 ```svelte example
-<script lang="ts">
+<script>
   import { Fileupload, Helper } from 'flowbite-svelte';
-  let selectedFiles: FileList | undefined;
-  $: fileNames =  selectedFiles ? Array.from(selectedFiles).map((file) => file.name).join(", "): "No files selected";
+  let selectedFiles = $state([]);
+  let fileNames = $derived(selectedFiles ? Array.from(selectedFiles).map((file) => file.name).join(", "): "No files selected");
 </script>
 
 <Fileupload clearable bind:files={selectedFiles} multiple />

@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { DragEventHandler, ChangeEventHandler } from "svelte/elements";
   import { type DropzoneProps as Props, dropzone } from ".";
+  import clsx from "clsx";
 
   type HTMLInputElementWithFiles = HTMLInputElement & { files: FileList | null };
 
@@ -15,7 +16,7 @@
     onchange?: ChangeEventHandler<HTMLInputElementWithFiles>;
   } = $props();
 
-  const base = $derived(dropzone({ className }));
+  const base = $derived(dropzone({ class: clsx(className) }));
   let input: HTMLInputElement;
 
   function keydown(ev: KeyboardEvent) {

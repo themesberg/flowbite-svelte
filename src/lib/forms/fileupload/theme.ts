@@ -1,4 +1,6 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type FileuploadViariants = VariantProps<typeof fileupload>;
 
 export const fileupload = tv({
   slots: {
