@@ -2,6 +2,7 @@
   import { twMerge } from "tailwind-merge";
   import { setContext } from "svelte";
   import { type TableSearchProps as Props, type TableSearchType } from ".";
+  import clsx from "clsx";
 
   let { children, header, footer, divClass = "relative overflow-x-auto shadow-md sm:rounded-lg", inputValue = $bindable(), striped, hoverable, customColor = "", color = "default", innerDivClass = "p-4", inputClass, searchClass = "relative mt-1", svgDivClass, svgClass = "w-5 h-5 text-gray-500 dark:text-gray-400", tableClass = "w-full text-left text-sm", class: className, placeholder = "Search", ...restProps }: Props = $props();
 
@@ -44,7 +45,7 @@
       {@render header()}
     {/if}
   </div>
-  <table {...restProps} class={twMerge(tableClass, colors[color], className)}>
+  <table {...restProps} class={twMerge(tableClass, colors[color], clsx(className))}>
     {#if children}
       {@render children()}
     {/if}

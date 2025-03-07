@@ -1,4 +1,6 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type TableVariants = VariantProps<typeof table>;
 
 export const table = tv({
   slots: {
@@ -315,7 +317,7 @@ export const tablehead = tv({
       pink: "text-white dark:text-white bg-pink-700 dark:bg-pink-700",
       rose: "text-white dark:text-white bg-rose-700 dark:bg-rose-700"
     },
-    noborder: {
+    border: {
       true: "",
       false: ""
     },
@@ -327,13 +329,13 @@ export const tablehead = tv({
   compoundVariants: [
     {
       color: "default",
-      noborder: true,
-      class: "bg-transparent dark:bg-transparent"
+      border: true,
+      class: "" //"bg-transparent dark:bg-transparent"
     },
     {
       color: "default",
       striped: true,
-      class: "bg-transparent dark:bg-transparent border-gray-700"
+      class: "" //"bg-transparent dark:bg-transparent border-gray-700"
     },
     {
       striped: true,

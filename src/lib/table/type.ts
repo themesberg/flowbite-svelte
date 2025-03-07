@@ -1,11 +1,12 @@
 import type { HTMLTableAttributes, HTMLAttributes, HTMLTdAttributes, HTMLThAttributes } from "svelte/elements";
 import type { Snippet } from "svelte";
+import type { TableVariants } from "./theme";
 
 type TableCtxType = {
   striped?: boolean;
   hoverable?: boolean;
-  noborder?: boolean;
-  color?: TableColrType;
+  border?: boolean;
+  color?: TableVariants["color"];
 };
 
 // prettier-ignore
@@ -19,41 +20,37 @@ interface TableHeadProps extends HTMLAttributes<HTMLTableSectionElement> {
   headerSlot?: Snippet;
   defaultRow?: boolean;
   headItems?: HeadItemType[];
-  class?: string;
   striped?: boolean;
-  noborder?: boolean;
-  color?: TableColrType;
+  border?: boolean;
+  color?: TableVariants["color"];
 }
 
-type TableColrType = "primary" | "gray" | "red" | "yellow" | "green" | "indigo" | "purple" | "pink" | "blue" | "orange" | "amber" | "lime" | "emerald" | "teal" | "cyan" | "sky" | "violet" | "fuchsia" | "rose" | "secondary" | "default" | undefined;
 type TableItemType = Record<string, string | number | boolean>;
 
-interface TableProps extends HTMLTableAttributes {
+interface TableProps extends Omit<HTMLTableAttributes, "border"> {
   children?: Snippet;
   footerSlot?: Snippet;
   captionSlot?: Snippet;
   divClass?: string;
   striped?: boolean;
   hoverable?: boolean;
-  noborder?: boolean;
+  border?: boolean;
   shadow?: boolean;
-  color?: TableColrType;
-  tableItems?: TableItemType[];
+  color?: TableVariants["color"];
+  items?: TableItemType[];
 }
 
 interface TableBodyRowProps extends HTMLAttributes<HTMLTableRowElement> {
   children?: Snippet;
-  class?: string;
   striped?: boolean;
   hoverable?: boolean;
-  noborder?: boolean;
+  border?: boolean;
 }
 
 interface TableBodyCellProps extends HTMLTdAttributes {
   children?: Snippet;
-  class?: string;
   colspan?: number;
-  color?: TableColrType;
+  color?: TableVariants["color"];
   onclick?: () => void;
 }
 
@@ -61,13 +58,11 @@ type CellValue = string | number | boolean | null | undefined;
 type BodyRow = CellValue[] | Record<string, CellValue>;
 interface TableBodyProps extends HTMLAttributes<HTMLTableSectionElement> {
   children?: Snippet;
-  class?: string;
   bodyItems?: BodyRow[];
 }
 
 interface TableHeadCellProps extends HTMLThAttributes {
   children?: Snippet;
-  class?: string;
 }
 
 type TableSearchType = {
@@ -91,8 +86,7 @@ interface TableSearchProps extends HTMLTableAttributes {
   svgDivClass?: string;
   svgClass?: string;
   tableClass?: string;
-  class?: string;
   placeholder?: string;
 }
 
-export type { TableProps, TableCtxType, TableHeadProps, HeadItemType, TableColrType, TableBodyRowProps, TableBodyCellProps, BodyRow, CellValue, TableBodyProps, TableHeadCellProps, TableSearchProps, TableSearchType, TableItemType };
+export type { TableProps, TableCtxType, TableHeadProps, HeadItemType, TableBodyRowProps, TableBodyCellProps, BodyRow, CellValue, TableBodyProps, TableHeadCellProps, TableSearchProps, TableSearchType, TableItemType };

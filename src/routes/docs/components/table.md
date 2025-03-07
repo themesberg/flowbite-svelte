@@ -42,7 +42,7 @@ Use the following example of a responsive table component to show multiple rows 
     <TableHeadCell>Category</TableHeadCell>
     <TableHeadCell>Price</TableHeadCell>
   </TableHead>
-  <TableBody tableBodyClass="divide-y">
+  <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
       <TableBodyCell>Sliver</TableBodyCell>
@@ -84,7 +84,7 @@ Set the `striped` prop to `true` to alternate background colors of every second 
       <span class="sr-only">Edit</span>
     </TableHeadCell>
   </TableHead>
-  <TableBody tableBodyClass="divide-y">
+  <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
       <TableBodyCell>Sliver</TableBodyCell>
@@ -153,7 +153,7 @@ Set `hoverable` to `true` to change the background color of a data row when hove
       <span class="sr-only">Edit</span>
     </TableHeadCell>
   </TableHead>
-  <TableBody tableBodyClass="divide-y">
+  <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
       <TableBodyCell>Sliver</TableBodyCell>
@@ -207,7 +207,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
       <span class="sr-only">Edit</span>
     </TableHeadCell>
   </TableHead>
-  <TableBody tableBodyClass="divide-y">
+  <TableBody>
     <TableBodyRow>
       <TableBodyCell class="p-4!">
         <Checkbox />
@@ -248,7 +248,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
 </Table>
 ```
 
-## Search input
+## Table from data
 
 ```svelte example
 <script>
@@ -261,21 +261,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
   ];
 </script>
 
-<Table {items} placeholder="Search by maker name" hoverable={true} filter={(item, searchTerm) => item.maker.toLowerCase().includes(searchTerm.toLowerCase())}>
-  <TableHead>
-    <TableHeadCell>ID</TableHeadCell>
-    <TableHeadCell>Maker</TableHeadCell>
-    <TableHeadCell>Type</TableHeadCell>
-    <TableHeadCell>Make</TableHeadCell>
-  </TableHead>
-  <TableBody tableBodyClass="divide-y">
-    <TableBodyRow slot="row" let:item>
-      <TableBodyCell>{item.id}</TableBodyCell>
-      <TableBodyCell>{item.maker}</TableBodyCell>
-      <TableBodyCell>{item.type}</TableBodyCell>
-      <TableBodyCell>{item.make}</TableBodyCell>
-    </TableBodyRow>
-  </TableBody>
+<Table {items} hoverable={true}>
 </Table>
 ```
 
@@ -302,7 +288,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
       <span class="sr-only">Buy</span>
     </TableHeadCell>
   </TableHead>
-  <TableBody tableBodyClass="divide-y">
+  <TableBody>
     <TableBodyRow slot="row" let:item>
       <TableBodyCell>{item.id}</TableBodyCell>
       <TableBodyCell>{item.maker}</TableBodyCell>
@@ -339,7 +325,7 @@ By default, the `<TableHead>` component will create a single `<tr>` element with
       <TableHeadCell>Price</TableHeadCell>
     </tr>
   </TableHead>
-  <TableBody tableBodyClass="divide-y">
+  <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple</TableBodyCell>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
@@ -374,7 +360,7 @@ Use this example where the `<tfoot>` HTML element can be used in conjunction wit
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from 'flowbite-svelte';
 </script>
 
-<Table noborder={true}>
+<Table border={false}>
   <TableHead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
     <TableHeadCell>Product name</TableHeadCell>
     <TableHeadCell>Qty</TableHeadCell>
@@ -430,7 +416,7 @@ Improve accessibility by using a caption inside the table as a heading to better
       <span class="sr-only">Edit</span>
     </TableHeadCell>
   </TableHead>
-  <TableBody tableBodyClass="divide-y">
+  <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
       <TableBodyCell>Sliver</TableBodyCell>
@@ -471,7 +457,7 @@ Use this example of a table component without any border between the table cells
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from 'flowbite-svelte';
 </script>
 
-<Table noborder={true}>
+<Table border={false}>
   <TableHead>
     <TableHeadCell>Product name</TableHeadCell>
     <TableHeadCell>Color</TableHeadCell>
@@ -517,7 +503,7 @@ Use this example to apply a shadow border to the table component.
     <TableHeadCell>Category</TableHeadCell>
     <TableHeadCell>Price</TableHeadCell>
   </TableHead>
-  <TableBody tableBodyClass="divide-y">
+  <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
       <TableBodyCell>Sliver</TableBodyCell>
@@ -563,7 +549,7 @@ Use this example to enable horizontal scrolling if the content inside the table 
     <TableHeadCell>WEIGHT</TableHeadCell>
     <TableHeadCell>ACTION</TableHeadCell>
   </TableHead>
-  <TableBody tableBodyClass="divide-y">
+  <TableBody>
     <TableBodyRow>
       <TableBodyCell class="p-4!">
         <Checkbox />
@@ -632,7 +618,7 @@ Use one of colors from blue, green, red, yellow, purple for the `color` prop. Th
     <TableHeadCell>Category</TableHeadCell>
     <TableHeadCell>Price</TableHeadCell>
   </TableHead>
-  <TableBody tableBodyClass="divide-y">
+  <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
       <TableBodyCell>Sliver</TableBodyCell>
@@ -658,24 +644,24 @@ Use one of colors from blue, green, red, yellow, purple for the `color` prop. Th
 ```svelte example
 <script>
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, TableSearch } from 'flowbite-svelte';
-  let searchTerm = '';
+  let searchTerm = $state('');
   let items = [
     { id: 1, maker: 'Toyota', type: 'ABC', make: 2017 },
     { id: 2, maker: 'Ford', type: 'CDE', make: 2018 },
     { id: 3, maker: 'Volvo', type: 'FGH', make: 2019 },
     { id: 4, maker: 'Saab', type: 'IJK', make: 2020 }
   ];
-  $: filteredItems = items.filter((item) => item.maker.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
+  let filteredItems = $derived(items.filter((item) =>!searchTerm || item.maker.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1));
 </script>
 
-<TableSearch color="red" placeholder="Search by maker name" hoverable={true} bind:inputValue={searchTerm}>
+<TableSearch color="red" placeholder="Search by maker name" hoverable bind:inputValue={searchTerm}>
   <TableHead>
     <TableHeadCell>ID</TableHeadCell>
     <TableHeadCell>Maker</TableHeadCell>
     <TableHeadCell>Type</TableHeadCell>
     <TableHeadCell>Make</TableHeadCell>
   </TableHead>
-  <TableBody tableBodyClass="divide-y">
+  <TableBody>
     {#each filteredItems as item}
       <TableBodyRow>
         <TableBodyCell>{item.id}</TableBodyCell>
@@ -700,7 +686,7 @@ Use one of colors from blue, green, red, yellow, purple for the `color` prop. Th
     <TableHeadCell>Category</TableHeadCell>
     <TableHeadCell>Price</TableHeadCell>
   </TableHead>
-  <TableBody tableBodyClass="divide-y">
+  <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
       <TableBodyCell>Sliver</TableBodyCell>
@@ -742,7 +728,7 @@ Use this example to apply a different color to every second row inside the table
       <span class="sr-only">Edit</span>
     </TableHeadCell>
   </TableHead>
-  <TableBody tableBodyClass="divide-y">
+  <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
       <TableBodyCell>Sliver</TableBodyCell>
@@ -848,7 +834,7 @@ An example to use on:click (main row) and on:dblclick (expanded row)
     <TableHeadCell>Category</TableHeadCell>
     <TableHeadCell>Price</TableHeadCell>
   </TableHead>
-  <TableBody tableBodyClass="divide-y">
+  <TableBody>
     {#each items as item, i}
       <TableBodyRow on:click={() => toggleRow(i)}>
         <TableBodyCell>{item.name}</TableBodyCell>

@@ -1,8 +1,9 @@
 <script lang="ts">
+  import clsx from "clsx";
   import { type TableHeadCellProps as Props, tableheadcell } from "./";
 
   let { children, class: className, ...restProps }: Props = $props();
-  const base = $derived(tableheadcell({ className }));
+  const base = $derived(tableheadcell({ class: clsx(className) }));
 </script>
 
 <th {...restProps} class={base}>

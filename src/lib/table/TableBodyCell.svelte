@@ -1,9 +1,10 @@
 <script lang="ts">
+  import clsx from "clsx";
   import { type TableBodyCellProps as Props, tablebodycell } from "./";
 
   let { children, class: className, colspan, onclick, ...restProps }: Props = $props();
 
-  const base = $derived(tablebodycell({ className }));
+  const base = $derived(tablebodycell({ class: clsx(className) }));
 </script>
 
 <td {...restProps} class={base} colspan={colspan ?? 1}>

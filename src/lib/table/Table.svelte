@@ -1,8 +1,9 @@
 <script lang="ts">
   import { setContext } from "svelte";
   import { type TableProps as Props, table as tableCls, type TableCtxType, TableHead, TableBody, type HeadItemType } from ".";
+  import clsx from "clsx";
 
-  let { children, footerSlot, captionSlot, tableItems, divClass = "relative overflow-x-auto", striped, hoverable, noborder, shadow, color = "default", class: className, ...restProps }: Props = $props();
+  let { children, footerSlot, captionSlot, items: tableItems, divClass = "relative overflow-x-auto", striped, hoverable, border = true, shadow, color = "default", class: className, ...restProps }: Props = $props();
 
   const { base, table } = $derived(tableCls({ color, shadow }));
 
@@ -13,8 +14,8 @@
     get hoverable() {
       return hoverable;
     },
-    get noborder() {
-      return noborder;
+    get border() {
+      return border;
     },
     get color() {
       return color;
@@ -31,7 +32,7 @@
 </script>
 
 <div class={base({ class: divClass })}>
-  <table {...restProps} class={table({ className })}>
+  <table {...restProps} class={table({ class: clsx(className) })}>
     {#if captionSlot}
       {@render captionSlot()}
     {/if}
@@ -58,7 +59,7 @@
 @props:divClass: any = "relative overflow-x-auto";
 @props:striped: any;
 @props:hoverable: any;
-@props:noborder: any;
+@props:border: any;
 @props:shadow: any;
 @props:color: any = "default";
 @props:class: string;
