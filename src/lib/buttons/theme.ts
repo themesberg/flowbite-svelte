@@ -1,4 +1,6 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type ButtonVariants = VariantProps<typeof button>;
 
 export const button = tv({
   base: "text-center font-medium inline-flex items-center justify-center",
@@ -41,16 +43,20 @@ export const button = tv({
       false: "focus-within:ring-4 focus-within:outline-hidden"
     },
     outline: {
-      true: "border border-gray-300 dark:border-gray-400"
+      true: "border border-gray-300 dark:border-gray-400",
+      false: ""
     },
     shadow: {
-      true: "shadow-lg"
+      true: "shadow-lg",
+      false: ""
     },
     disabled: {
-      true: "cursor-not-allowed opacity-50"
+      true: "cursor-not-allowed opacity-50",
+      false: ""
     },
     pill: {
-      true: "rounded-full"
+      true: "rounded-full",
+      false: ""
     },
     checked: {
       true: "",
@@ -238,6 +244,8 @@ export const button = tv({
     }
   ]
 });
+
+export type GradientButtonVariantes = VariantProps<typeof gradientButton>;
 
 export const gradientButton = tv({
   slots: {
