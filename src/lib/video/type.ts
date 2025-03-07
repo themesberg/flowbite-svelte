@@ -1,14 +1,13 @@
 import type { Snippet } from "svelte";
-import type { HTMLVideoAttributes } from "svelte/elements";
+import type { HTMLSourceAttributes, HTMLTrackAttributes, HTMLVideoAttributes } from "svelte/elements";
 
 interface VideoProps extends HTMLVideoAttributes {
   children?: Snippet;
-  type?: string;
-  src?: string;
-  trackSrc?: string;
-  srclang?: string;
-  label?: string;
-  class?: string;
+  type?: HTMLSourceAttributes["type"];
+  src?: HTMLSourceAttributes["src"];
+  trackSrc?: HTMLTrackAttributes["src"];
+  srclang?: HTMLTrackAttributes["lang"];
+  label?: HTMLTrackAttributes["label"];
 }
 
 export { type VideoProps };
