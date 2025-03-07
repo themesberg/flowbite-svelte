@@ -1,9 +1,10 @@
 <script lang="ts">
+  import clsx from "clsx";
   import { type LabelProps as Props, label } from ".";
 
   let { children, color = "gray", show = true, class: className, ...restProps }: Props = $props();
 
-  const base = $derived(label({ color, className }));
+  let base = $derived(label({ color, class: clsx(className) }));
 </script>
 
 {#if show}

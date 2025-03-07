@@ -1,4 +1,6 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type LabelVariants = VariantProps<typeof label>;
 
 export const label = tv({
   base: "text-sm rtl:text-right font-medium block",
