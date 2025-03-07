@@ -7,7 +7,10 @@
   import Rating from "$lib/rating/Rating.svelte";
   import Star from "$lib/rating/Star.svelte";
   import type { ComponentInternals, ComponentProps } from "svelte";
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, TableSearch } from "flowbite-svelte";
+  import { badge } from "$lib/badge/theme";
+  import P from "$lib/typography/paragraph/P.svelte";
+
+  const { base, hrefClass } = badge({ class: "dupa", color: "red" });
   let searchTerm = $state("");
   let items = [
     { id: 1, maker: "Toyota", type: "ABC", make: 2017 },
@@ -39,21 +42,9 @@
 
 <Rating id="example-1b" icon={MyStar({ fillColor: "#F492C1", strokeColor: "#008800" })} total={5} size={50} rating={4.66} />
 
-<TableSearch color="red" placeholder="Search by maker name" hoverable bind:inputValue={searchTerm}>
-  <TableHead>
-    <TableHeadCell>ID</TableHeadCell>
-    <TableHeadCell>Maker</TableHeadCell>
-    <TableHeadCell>Type</TableHeadCell>
-    <TableHeadCell>Make</TableHeadCell>
-  </TableHead>
-  <TableBody>
-    {#each filteredItems as item}
-      <TableBodyRow>
-        <TableBodyCell>{item.id}</TableBodyCell>
-        <TableBodyCell>{item.maker}</TableBodyCell>
-        <TableBodyCell>{item.type}</TableBodyCell>
-        <TableBodyCell>{item.make}</TableBodyCell>
-      </TableBodyRow>
-    {/each}
-  </TableBody>
-</TableSearch>
+<P>
+  Base: {base({ class: "blada", color: "blue" })}
+</P>
+<p>
+  href: {hrefClass()}
+</p>

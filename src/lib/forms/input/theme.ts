@@ -1,17 +1,19 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type InputVariants = VariantProps<typeof input>;
 
 export const input = tv({
   slots: {
     base: "relative w-full",
     input: "block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right focus:outline-hidden",
-    left: "flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400 pointer-events-none start-0 ps-2.5",
+    left: "flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400 pointer-events-none start-0 p-2.5",
     right: "flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400 end-0 p-2.5"
   },
   variants: {
     size: {
-      sm: { input: "text-xs ps-9 pe-9 p-2" },
-      md: { input: "text-sm ps-10 pe-10 p-2.5" },
-      lg: { input: "sm:text-base ps-11 pe-11 p-3" }
+      sm: { input: "text-xs px-2 py-2" },
+      md: { input: "text-sm px-2.5 py-2.5" },
+      lg: { input: "sm:text-base px-3 py-3" }
     },
     color: {
       default: {

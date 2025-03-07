@@ -3,6 +3,7 @@
   import { getContext } from "svelte";
   import { CloseButton } from "$lib";
   import { type InputProps as Props, input, clampSize, type InputValue } from ".";
+  import clsx from "clsx";
 
   let { children, left, right, value = $bindable<InputValue>(), clearable = false, size, color = "default", class: className, classLeft, classRight, divClass, ...restProps }: Props<InputValue> = $props();
 
@@ -14,7 +15,7 @@
   let _size = $derived(size || clampSize(group?.size) || "md");
   const _color = $derived(color === "default" && background ? "tinted" : color);
 
-  const { base, input: inputCls, left: leftCls, right: rightCls } = $derived(input({ size: _size, color: _color, group: isGroup, class: className }));
+  const { base, input: inputCls, left: leftCls, right: rightCls } = $derived(input({ size: _size, color: _color, group: isGroup, class: clsx(className) }));
 
   const clearAll = () => {
     value = undefined;
@@ -30,7 +31,7 @@
   {#if children}
     {@render children({ ...restProps, class: inputCls() })}
   {:else}
-    <input {...restProps} bind:value class={inputCls({ class: className })} />
+    <input {...restProps} bind:value class={inputCls({ class: clsx(className) })} />
   {/if}
   {#if right}
     <div class={rightCls({ class: classRight })}>

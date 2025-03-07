@@ -75,7 +75,7 @@ Use this example as a generic form element which includes multiple input fields 
     <Label for="confirm_password" class="mb-2">Confirm password</Label>
     <Input type="password" id="confirm_password" placeholder="•••••••••" required />
   </div>
-  <Checkbox class="mb-6 space-x-1 rtl:space-x-reverse" required>
+  <Checkbox class="mb-6 gap-1 rtl:space-x-reverse" required>
     I agree with the <A href="/" class="text-primary-700 dark:text-primary-600 hover:underline">terms and conditions</A>.
   </Checkbox>
   <Button type="submit">Submit</Button>
@@ -94,17 +94,17 @@ User the size prop to change the input size. Choose one from 'sm:text-md' | 'tex
 </script>
 
 <Label class="space-y-2">
-  <span>Small icon input</span>
+  <div>Small icon input</div>
   <Input type="email" placeholder="Small input" size="sm" />
 </Label>
 
 <Label class="space-y-2">
-  <span>Default icon input</span>
+  <div>Default icon input</div>
   <Input type="email" placeholder="Default input" size="md" />
 </Label>
 
 <Label class="space-y-2">
-  <span>Large icon input</span>
+  <div>Large icon input</div>
   <Input type="email" placeholder="Large input" size="lg" />
 </Label>
 ```
@@ -171,24 +171,32 @@ Use the following example to apply validation styles for success and error messa
 </script>
 
 <Label class="space-y-2">
-  <span>Small input - left icon</span>
-  <Input type="email" placeholder="name@flowbite.com" size="sm">
-    <EnvelopeSolid slot="left" class="w-4 h-4" />
+  <div>Small input - left icon</div>
+  <Input type="email" placeholder="name@flowbite.com" size="sm" class="ps-8">
+    {#snippet left()}
+    <EnvelopeSolid class="w-4 h-4" />
+    {/snippet}
   </Input>
 </Label>
 
 <Label class="space-y-2">
-  <span>Default input - right icon</span>
-  <Input type="email" placeholder="name@flowbite.com" size="md">
-    <EnvelopeSolid slot="right" class="w-5 h-5" />
+  <div>Default input - right icon</div>
+  <Input type="email" placeholder="name@flowbite.com" size="md" class="ps-9">
+    {#snippet left()}
+    <EnvelopeSolid class="w-5 h-5" />
+    {/snippet}
   </Input>
 </Label>
 
 <Label class="space-y-2">
-  <span>Large input - both icons</span>
-  <Input type="email" placeholder="name@flowbite.com" size="lg">
-    <EnvelopeSolid slot="left" class="w-6 h-6" />
-    <CloseButton slot="right" />
+  <div>Large input - both icons</div>
+  <Input type="email" placeholder="name@flowbite.com" size="lg" class="ps-11">
+    {#snippet left()}
+    <EnvelopeSolid class="w-6 h-6" />
+    {/snippet}
+    {#snippet right()}
+    <CloseButton  />
+    {/snippet}
   </Input>
 </Label>
 ```
@@ -204,25 +212,25 @@ This example can be used to add a descriptive icon or additional text inside the
 
 <div>
   <Label class="mb-2" for="input-addon-sm">Small additional text</Label>
-  <ButtonGroup class="w-full" size="sm">
+  <ButtonGroup class="w-full">
     <InputAddon>@</InputAddon>
-    <Input id="input-addon-sm" type="email" placeholder="elonmusk" />
+    <Input id="input-addon-sm" type="email" placeholder="john.doe@mail.com" />
   </ButtonGroup>
 </div>
 
 <div>
   <Label class="mb-2" for="input-addon-md">Default additional text</Label>
-  <ButtonGroup class="w-full" size="md">
-    <Input id="input-addon-md" type="email" placeholder="elonmusk" />
+  <ButtonGroup class="w-full">
+    <Input id="input-addon-md" type="email" placeholder="john.doe@mail.com" />
     <InputAddon>.com</InputAddon>
   </ButtonGroup>
 </div>
 
 <div>
   <Label class="mb-2" for="input-addon-lg">Large additional text</Label>
-  <ButtonGroup class="w-full" size="lg">
+  <ButtonGroup class="w-full">
     <InputAddon>@</InputAddon>
-    <Input id="input-addon-lg" type="email" placeholder="elonmusk" />
+    <Input id="input-addon-lg" type="email" placeholder="john.doe@mail.com" />
     <InputAddon>.com</InputAddon>
   </ButtonGroup>
 </div>
@@ -231,7 +239,7 @@ This example can be used to add a descriptive icon or additional text inside the
   <Label for="input-addon" class="mb-2">Grouped with button</Label>
   <ButtonGroup class="w-full">
     <InputAddon>@</InputAddon>
-    <Input id="input-addon" type="email" placeholder="elonmusk" />
+    <Input id="input-addon" type="email" placeholder="john.doe@mail.com" />
     <Button color="primary">Search</Button>
   </ButtonGroup>
 </div>
@@ -242,7 +250,7 @@ This example can be used to add a descriptive icon or additional text inside the
     <InputAddon><Checkbox /></InputAddon>
     <Button color="primary">Search</Button>
     <InputAddon>http://</InputAddon>
-    <Input id="input-addon" type="email" placeholder="elonmusk" />
+    <Input id="input-addon" type="email" placeholder="john.doe@mail.com" />
     <InputAddon>@</InputAddon>
     <InputAddon><Checkbox /></InputAddon>
     <Button color="blue">Send</Button>
@@ -255,7 +263,7 @@ This example can be used to add a descriptive icon or additional text inside the
 
 This example shows how to add `on:click` event handler to the icon in `Input`. By clicking an icon, it toggles icon and `type`:
 
-```svelte example class="space-y-6"
+```svelte example class="gap-6"
 <script>
   import { Button, Label, Input, ButtonGroup, InputAddon, ToolbarButton } from 'flowbite-svelte';
   import { EyeOutline, EyeSlashOutline } from 'flowbite-svelte-icons';
@@ -302,7 +310,7 @@ Use the helper prop to add your helper text. You can use HTML in the helper text
   import { Input, Label, Helper } from 'flowbite-svelte';
 </script>
 
-<Label class="block space-y-2">
+<Label class="flex flex-col gap-2">
   <span>Your email</span>
   <Input label="Email" id="email" name="email" required placeholder="name@flowbite.com" />
   <Helper class="text-sm">
@@ -318,13 +326,13 @@ By default the `Input` component binds the `value` as `string`. If you need a va
 
 ```svelte example
 <script>
-  import { NumberInput, Label } from 'flowbite-svelte';
+  import { Input, Label } from 'flowbite-svelte';
   let value = 5;
 </script>
 
-<Label class="space-y-2 mb-4">
+<Label class="flex flex-col gap-2 mb-4">
   <span>Your Age</span>
-  <NumberInput bind:value />
+  <Input type="number" bind:value />
 </Label>
 <div class="dark:text-white">
   <p>Value: {value}</p>
@@ -342,9 +350,13 @@ By default the `Input` component binds the `value` as `string`. If you need a va
 
 <form>
   <Label for="search" class="block mb-2">Your Email</Label>
-  <Input id="search" placeholder="Search" size="lg">
-    <SearchOutline slot="left" class="w-6 h-6 text-gray-500 dark:text-gray-400" />
-    <Button slot="right" size="sm" type="submit">Search</Button>
+  <Input id="search" placeholder="Search" size="lg" class="ps-9">
+    {#snippet left()}
+    <SearchOutline class="w-6 h-6 text-gray-500 dark:text-gray-400" />
+    {/snippet}
+    {#snippet right()}
+    <Button size="sm" type="submit">Search</Button>
+    {/snippet}
   </Input>
 </form>
 ```
@@ -380,15 +392,17 @@ Use this example to show a dropdown menu right next to the input field.
 
 If you need a full control over `input` HTML element while still re-using the Flowbite formatting, you can put the `input` element as a default slot. The example below is in fact the implementation of the above mentioned `NumberInput`.
 
-```svelte example class="space-y-4"
+```svelte example class="gap-4"
 <script>
   import { Input } from 'flowbite-svelte';
   let value = 5;
 </script>
 
-<Input let:props>
-  <div slot="left">#</div>
-  <input type="number" {...props} bind:value />
+<Input>
+  {#snippet left()}#{/snippet}
+  {#snippet children(props)}
+  <input type="number" {...props} bind:value class={[props.class, "ps-9"]} />
+  {/snippet}
 </Input>
 ```
 
