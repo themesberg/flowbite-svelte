@@ -1,4 +1,6 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type ToolbarVariants = VariantProps<typeof toolbar>;
 
 export const toolbar = tv({
   slots: {
@@ -9,18 +11,58 @@ export const toolbar = tv({
     embedded: {
       true: {},
       false: {
-        base: "py-2 px-3"
+        base: "py-2 px-3 rounded-lg dark:border"
       }
     },
     color: {
-      default: {},
+      default: {
+        base: "bg-gray-50 dark:bg-gray-800 dark:border-gray-600",
+        content: 'divide-gray-300 dark:divide-gray-800'
+      },
       primary: {
-        base: "bg-primary-100 text-primary-800"
+        base: "bg-primary-50 dark:bg-gray-800 dark:border-primary-800",
+        content: 'divide-primary-300 dark:divide-primary-800'
       },
       secondary: {
-        base: "bg-secondary-100 text-secondary-800"
-      }
-      // Add more color variants as needed
+        base: "bg-secondary-50 dark:bg-gray-800 dark:border-secondary-800",
+        content: 'divide-secondary-300 dark:divide-primary-800'
+      },
+      gray: {
+        base: 'bg-gray-50 dark:bg-gray-800 dark:border-gray-800',
+        content: 'divide-gray-300 dark:divide-gray-800'
+      },
+      red: {
+        base: 'bg-red-50 dark:bg-gray-800 dark:border-red-800',
+        content: 'divide-red-300 dark:divide-red-800'
+      },
+      yellow: {
+        base: 'bg-yellow-50 dark:bg-gray-800 dark:border-yellow-800',
+        content: 'divide-yellow-300 dark:divide-yellow-800'
+      },
+      green: {
+        base: 'bg-green-50 dark:bg-gray-800 dark:border-green-800',
+        content: 'divide-green-300 dark:divide-green-800'
+      },
+      indigo: {
+        base: 'bg-indigo-50 dark:bg-gray-800 dark:border-indigo-800',
+        content: 'divide-indigo-300 dark:divide-indigo-800'
+      },
+      purple: {
+        base: 'bg-purple-50 dark:bg-gray-800 dark:border-purple-800',
+        content: 'divide-purple-300 dark:divide-purple-800'
+      },
+      pink: {
+        base: 'bg-pink-50 dark:bg-gray-800 dark:border-pink-800',
+        content: 'divide-pink-300 dark:divide-pink-800'
+      },
+      blue: {
+        base: 'bg-blue-50 dark:bg-gray-800 dark:border-blue-800',
+        content: 'divide-blue-300 dark:divide-blue-800'
+      },
+      dark: {
+        base: 'bg-gray-50 dark:bg-gray-800 dark:border-gray-800',
+        content: 'divide-gray-300 dark:divide-gray-800'
+      },
     },
     separators: {
       true: {
@@ -39,6 +81,8 @@ export const toolbar = tv({
   ]
 });
 
+export type ToolbarGroupVariants = VariantProps<typeof toolbarGroup>;
+
 export const toolbarGroup = tv({
   base: "flex items-center",
   variants: {
@@ -48,7 +92,7 @@ export const toolbarGroup = tv({
       loose: "space-x-2 rtl:space-x-reverse"
     },
     padding: {
-      default: "sm:pe-4 sm:ps-4",
+      default: "sm:not(:last):pe-4 sm:not(:first):ps-4",
       none: ""
     },
     position: {
@@ -65,6 +109,8 @@ export const toolbarGroup = tv({
   ]
 });
 
+export type ToolbarButtonVariants = VariantProps<typeof toolbarButton>;
+
 export const toolbarButton = tv({
   base: "focus:outline-hidden whitespace-normal",
   variants: {
@@ -79,7 +125,7 @@ export const toolbarButton = tv({
       pink: "text-pink-500 focus:ring-pink-400 hover:bg-pink-200 dark:hover:bg-pink-800 dark:hover:text-pink-300",
       blue: "text-blue-500 focus:ring-blue-400 hover:bg-blue-200 dark:hover:bg-blue-800 dark:hover:text-blue-300",
       primary: "text-primary-500 focus:ring-primary-400 hover:bg-primary-200 dark:hover:bg-primary-800 dark:hover:text-primary-300",
-      default: "focus:ring-gray-400 hover:bg-gray-100"
+      default: "focus:ring-gray-400 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-gray-50"
     },
     size: {
       xs: "m-0.5 rounded-xs focus:ring-1 p-0.5",

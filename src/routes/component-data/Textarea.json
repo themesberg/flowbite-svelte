@@ -17,11 +17,6 @@
       "$bindable()"
     ],
     [
-      "divClass",
-      "any",
-      ""
-    ],
-    [
       "innerClass",
       "any",
       ""

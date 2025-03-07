@@ -17,7 +17,7 @@
       ""
     ],
     [
-      "ariaLabel",
+      "\"aria-label\"",
       "any",
       ""
     ],
@@ -34,11 +34,6 @@
     [
       "class",
       "string",
-      ""
-    ],
-    [
-      "onclick",
-      "any",
       ""
     ]
   ]

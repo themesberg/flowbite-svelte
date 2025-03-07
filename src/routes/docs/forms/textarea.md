@@ -50,18 +50,22 @@ If you want to add other actions as buttons alongside your textarea component, s
 <form>
   <label for="editor" class="sr-only">Publish post</label>
   <Textarea id="editor" rows="8" class="mb-4" placeholder="Write a comment">
-    <Toolbar slot="header" embedded>
-      <ToolbarGroup>
-        <ToolbarButton name="Attach file"><PaperClipOutline class="w-6 h-6 rotate-45" /></ToolbarButton>
-        <ToolbarButton name="Embed map"><MapPinAltSolid class="w-6 h-6" /></ToolbarButton>
-        <ToolbarButton name="Upload image"><ImageOutline class="w-6 h-6" /></ToolbarButton>
-      </ToolbarGroup>
-      <ToolbarGroup>
-        <ToolbarButton name="Format code"><CodeOutline class="w-6 h-6" /></ToolbarButton>
-        <ToolbarButton name="Add emoji"><FaceGrinOutline class="w-6 h-6" /></ToolbarButton>
-      </ToolbarGroup>
-      <ToolbarButton name="send" slot="end"><PaperPlaneOutline class="w-6 h-6 rotate-45" /></ToolbarButton>
-    </Toolbar>
+    {#snippet header()}
+      <Toolbar embedded>
+        <ToolbarGroup>
+          <ToolbarButton name="Attach file"><PaperClipOutline class="w-6 h-6 rotate-45" /></ToolbarButton>
+          <ToolbarButton name="Embed map"><MapPinAltSolid class="w-6 h-6" /></ToolbarButton>
+          <ToolbarButton name="Upload image"><ImageOutline class="w-6 h-6" /></ToolbarButton>
+        </ToolbarGroup>
+        <ToolbarGroup>
+          <ToolbarButton name="Format code"><CodeOutline class="w-6 h-6" /></ToolbarButton>
+          <ToolbarButton name="Add emoji"><FaceGrinOutline class="w-6 h-6" /></ToolbarButton>
+        </ToolbarGroup>
+        {#snippet end()}
+          <ToolbarButton name="send"><PaperPlaneOutline class="w-6 h-6 rotate-45" /></ToolbarButton>
+        {/snippet}
+      </Toolbar>
+    {/snippet}
   </Textarea>
   <Button>Publish post</Button>
 </form>
@@ -79,7 +83,8 @@ Most often the textarea component is used as the main text field input element i
 
 <form>
   <Textarea class="mb-4" placeholder="Write a comment">
-    <div slot="footer" class="flex items-center justify-between">
+    {#snippet footer()}
+    <div class="flex items-center justify-between">
       <Button type="submit">Post comment</Button>
       <Toolbar embedded>
         <ToolbarButton name="Attach file"><PaperClipOutline class="w-6 h-6" /></ToolbarButton>
@@ -87,6 +92,7 @@ Most often the textarea component is used as the main text field input element i
         <ToolbarButton name="Upload image"><ImageOutline class="w-6 h-6" /></ToolbarButton>
       </Toolbar>
     </div>
+    {/snippet}
   </Textarea>
 </form>
 <p class="ms-auto text-xs text-gray-500 dark:text-gray-400">
