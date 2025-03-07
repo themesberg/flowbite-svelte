@@ -1,9 +1,10 @@
 import type { PopperProps } from "../utils/Popper.svelte";
+import type { TooltipVariants } from "./theme";
 
-type TooltipColorType = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | "default" | undefined;
 interface TooltipProps extends PopperProps {
   type?: "light" | "dark";
-  color?: TooltipColorType;
+  color?: TooltipVariants["color"];
 }
+
 export { type TooltipProps };
 

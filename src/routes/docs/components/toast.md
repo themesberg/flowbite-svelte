@@ -167,7 +167,7 @@ You can use any [icon components](/icons).
 </script>
 
 <div class="flex gap-10">
-  <Button on:click={trigger} class="my-3">Restart</Button>
+  <Button onclick={trigger} class="my-3">Restart</Button>
   <Toast dismissable={false} transition={slide} bind:toastStatus>
     <CheckCircleSolid slot="icon" class="w-5 h-5" />
     Autohide in {counter}s.

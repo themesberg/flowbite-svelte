@@ -1,4 +1,5 @@
 <script lang="ts">
+  import clsx from "clsx";
   import type { TriggeredToggleEvent } from "../utils/Popper.svelte";
   import Popper from "../utils/Popper.svelte";
   import { tooltip } from "./theme";
@@ -20,7 +21,7 @@
   //   let popperClass = twMerge(commonClass, type === "light" ? light_class : dark_class, className);
 </script>
 
-<Popper {...restProps} {placement} border {trigger} {arrow} class={base({ className })} onbeforetoggle={_onopen}>
+<Popper {...restProps} {placement} border {trigger} {arrow} class={base({ class: clsx(className) })} onbeforetoggle={_onopen}>
   <div class="pointer-events-none">{@render children()}</div>
 </Popper>
 

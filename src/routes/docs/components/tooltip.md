@@ -130,14 +130,14 @@ If you need the tooltip to be attached to the other element then the tiggering o
 ```svelte example class="flex gap-4 flex-col justify-center items-center h-72" hideResponsiveButtons
 <script>
   import { Tooltip, Button } from 'flowbite-svelte';
-  let placement = '';
+  let placement = $state('');
 </script>
 
 <div id="ext-ref" class="p-2 rounded-lg border border-gray-200 dark:border-gray-600">External reference</div>
 <div class="space-x-4 rtl:space-x-reverse">
-  <Button id="ref-left" on:mouseenter={() => (placement = 'left')}>Left</Button>
-  <Button id="ref-top" on:mouseenter={() => (placement = 'top')}>Top</Button>
-  <Button id="ref-right" on:mouseenter={() => (placement = 'right')}>Right</Button>
+  <Button id="ref-left" onmouseenter={() => (placement = 'left')}>Left</Button>
+  <Button id="ref-top" onmouseenter={() => (placement = 'top')}>Top</Button>
+  <Button id="ref-right" onmouseenter={() => (placement = 'right')}>Right</Button>
 </div>
 <Tooltip reference="#ext-ref" triggeredBy="[id^='ref-']" {placement} class="w-64 text-sm font-light">And here's some amazing content. It's very engaging. Right?</Tooltip>
 ```
