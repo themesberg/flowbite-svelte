@@ -1,4 +1,6 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type RangeVariants = VariantProps<typeof range>;
 
 export const range = tv({
   base: "w-full bg-gray-200 rounded-lg cursor-pointer dark:bg-gray-700",

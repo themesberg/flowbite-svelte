@@ -17,13 +17,13 @@
       "\"blue\""
     ],
     [
-      "rangeSize",
+      "size",
       "any",
       "\"md\""
     ],
     [
-      "inputClass",
-      "any",
+      "class",
+      "string",
       ""
     ]
   ]
