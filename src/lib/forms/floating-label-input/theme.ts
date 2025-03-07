@@ -1,4 +1,6 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type FloatingLabelInputVaratiants = VariantProps<typeof floatingLabelInput>;
 
 export const floatingLabelInput = tv({
   slots: {
@@ -7,7 +9,7 @@ export const floatingLabelInput = tv({
     label: "absolute text-sm duration-300 transform scale-75 z-10 origin-left rtl:origin-right peer-placeholder-shown:scale-100 peer-focus:scale-75"
   },
   variants: {
-    inputStyle: {
+    variant: {
       filled: {
         base: "relative",
         input: "rounded-t-lg border-0 border-b-2 bg-gray-50 dark:bg-gray-700",
@@ -117,7 +119,7 @@ export const floatingLabelInput = tv({
   },
   compoundVariants: [
     {
-      inputStyle: "filled",
+      variant: "filled",
       size: "small",
       class: {
         input: "px-2.5 pb-1.5 pt-4",
@@ -125,7 +127,7 @@ export const floatingLabelInput = tv({
       }
     },
     {
-      inputStyle: "filled",
+      variant: "filled",
       size: "default",
       class: {
         input: "px-2.5 pb-2.5 pt-5",
@@ -133,7 +135,7 @@ export const floatingLabelInput = tv({
       }
     },
     {
-      inputStyle: "outlined",
+      variant: "outlined",
       size: "small",
       class: {
         input: "px-2.5 pb-1.5 pt-3",
@@ -141,7 +143,7 @@ export const floatingLabelInput = tv({
       }
     },
     {
-      inputStyle: "outlined",
+      variant: "outlined",
       size: "default",
       class: {
         input: "px-2.5 pb-2.5 pt-4",
@@ -149,7 +151,7 @@ export const floatingLabelInput = tv({
       }
     },
     {
-      inputStyle: "standard",
+      variant: "standard",
       size: "small",
       class: {
         input: "py-2 px-0",
@@ -157,7 +159,7 @@ export const floatingLabelInput = tv({
       }
     },
     {
-      inputStyle: "standard",
+      variant: "standard",
       size: "default",
       class: {
         input: "py-2.5 px-0",
@@ -165,7 +167,7 @@ export const floatingLabelInput = tv({
       }
     },
     {
-      inputStyle: "filled",
+      variant: "filled",
       color: "primary",
       class: {
         input: "dark:focus:border-primary-500 focus:border-primary-600"
@@ -173,7 +175,7 @@ export const floatingLabelInput = tv({
     }
   ],
   defaultVariants: {
-    inputStyle: "standard",
+    variant: "standard",
     size: "default",
     color: "primary"
   }

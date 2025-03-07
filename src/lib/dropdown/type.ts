@@ -32,4 +32,4 @@ interface DropdownGroupProps extends HTMLAttributes<HTMLUListElement> {
   children: Snippet;
 }
 
-export { type DropdownProps, type DropdownDividerProps, type DropdownItemProps, type DropdownGroupProps, type DropdownHeaderProps, type DropdownFooterProps };
+export { type DropdownProps, type DropdownDividerProps, type DropdownItemProps, type DropdownGroupProps, type DropdownHeaderProps };
