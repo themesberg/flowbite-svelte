@@ -1,11 +1,10 @@
 import type { SVGAttributes } from "svelte/elements";
+import type { SpinnerVaraiants } from "./theme";
 
-type ColorType = "primary" | "gray" | "red" | "yellow" | "green" | "indigo" | "purple" | "pink" | "blue" | "orange" | "amber" | "lime" | "emerald" | "teal" | "cyan" | "sky" | "violet" | "fuchsia" | "rose" | "secondary" | undefined;
-type SizeType = "8" | "4" | "5" | "6" | "10" | "12" | "16" | undefined;
 
 interface SpinnerProps extends SVGAttributes<SVGSVGElement> {
-  color?: ColorType;
-  size?: SizeType;
+  color?: SpinnerVaraiants["color"];
+  size?: SpinnerVaraiants["size"];
   currentFill?: string;
   currentColor?: string;
 }

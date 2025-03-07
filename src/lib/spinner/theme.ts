@@ -1,4 +1,6 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type SpinnerVaraiants = VariantProps<typeof spinner>;
 
 export const spinner = tv({
   base: "inline-block animate-spin text-gray-300",

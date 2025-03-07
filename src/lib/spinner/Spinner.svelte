@@ -1,9 +1,10 @@
 <script lang="ts">
+  import clsx from "clsx";
   import { type SpinnerProps as Props, spinner } from "./index";
 
   let { color = "primary", size = "8", class: className, currentFill = "currentFill", currentColor = "currentColor", ...restProps }: Props = $props();
 
-  let spinnerClass = $derived(spinner({ color, size, className }));
+  let spinnerClass = $derived(spinner({ color, size, class: clsx(className) }));
 </script>
 
 <svg {...restProps} role="status" class={spinnerClass} viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
