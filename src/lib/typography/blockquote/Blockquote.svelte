@@ -1,4 +1,5 @@
 <script lang="ts">
+  import clsx from "clsx";
   import { type BlockquoteProps as Props, blockquote } from "./index";
 
   let { children, class: className, border, italic = true, bg, alignment = "left", size = "lg", ...restProps }: Props = $props();
@@ -10,7 +11,7 @@
       bg,
       alignment,
       size,
-      className
+      class: clsx(className)
     })
   );
 </script>

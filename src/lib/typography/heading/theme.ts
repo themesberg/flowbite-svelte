@@ -1,4 +1,6 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type HeadingVariants = VariantProps<typeof heading>;
 
 export const heading = tv({
   base: "font-bold text-gray-900 dark:text-white",

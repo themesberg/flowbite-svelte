@@ -1,42 +1,27 @@
 import type { HTMLImgAttributes } from "svelte/elements";
 import type { Picture } from "vite-imagetools";
-
-type SizeType = "sm" | "md" | "lg" | "xl" | "2xl" | "none" | "xs" | "full" | undefined;
-type AlignmentType = "left" | "center" | "right" | undefined;
-type EffectType = "none" | "grayscale" | "blur" | "invert" | "sepia" | "saturate" | "hue-rotate" | undefined;
-type ShadowType = "sm" | "md" | "lg" | "xl" | "2xl" | "none" | "regular" | "inner" | undefined;
-type RoundedType = "sm" | "md" | "lg" | "xl" | "2xl" | "full" | "none" | "regular" | "3xl" | undefined;
+import type { ImgVariants } from "./theme";
 
 type EnhancedImgAttributes = Omit<HTMLImgAttributes, "src"> & { src: string | Picture };
 
 interface ImgProps extends HTMLImgAttributes {
-  size?: SizeType;
-  alignment?: AlignmentType;
-  effect?: EffectType;
-  shadow?: ShadowType;
-  rounded?: RoundedType;
+  size?: ImgVariants["size"];
+  effect?: ImgVariants["effect"];
   caption?: string;
-  imgClass?: string;
   figClass?: string;
   captionClass?: string;
-  class?: string;
-  href?: string;
+  href?: HTMLAnchorElement["href"];
 }
 
 interface EnhandedImgProps extends EnhancedImgAttributes {
-  size?: SizeType;
+  size?: ImgVariants["size"];
   multiple?: boolean;
   transform?: string;
-  alignment?: AlignmentType;
-  effect?: EffectType;
-  shadow?: ShadowType;
-  rounded?: RoundedType;
+  effect?: ImgVariants["effect"];
   caption?: string;
-  imgClass?: string;
   figClass?: string;
   captionClass?: string;
-  class?: string;
-  href?: string;
+  href?: HTMLAnchorElement["href"];
 }
 
 export { type ImgProps, type EnhandedImgProps };

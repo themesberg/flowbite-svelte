@@ -1,6 +1,7 @@
 <script lang="ts">
   import { setContext } from "svelte";
   import { type ListProps as Props, list } from "./index";
+  import clsx from "clsx";
 
   let { children, tag = "ul", isContenteditable = false, position = "inside", ctxClass, class: className, ...restProps }: Props = $props();
 
@@ -12,7 +13,7 @@
     contextClass = ctxClass || "";
   });
 
-  let classList = $derived(list({ position, tag, className }));
+  let classList = $derived(list({ position, tag, class: clsx(className) }));
 </script>
 
 <svelte:element this={tag} {...restProps} class={classList} contenteditable={isContenteditable}>

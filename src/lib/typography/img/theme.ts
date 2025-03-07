@@ -1,4 +1,6 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type ImgVariants = VariantProps<typeof img>;
 
 export const img = tv({
   slots: {
@@ -16,11 +18,6 @@ export const img = tv({
       "2xl": { base: "max-w-2xl", figure: "max-w-2xl" },
       full: { base: "max-w-full", figure: "max-w-full" },
       none: { base: "", figure: "" }
-    },
-    alignment: {
-      left: {},
-      center: { base: "mx-auto", figure: "mx-auto" },
-      right: { base: "ms-auto", figure: "ms-auto" }
     },
     effect: {
       grayscale: {
@@ -43,26 +40,5 @@ export const img = tv({
         base: "transition-all duration-300"
       }
     },
-    shadow: {
-      sm: { base: "shadow-xs" },
-      regular: { base: "shadow-sm" },
-      md: { base: "shadow-md" },
-      lg: { base: "shadow-lg" },
-      xl: { base: "shadow-xl" },
-      "2xl": { base: "shadow-2xl" },
-      inner: { base: "shadow-inner" },
-      none: { base: "shadow-none" }
-    },
-    rounded: {
-      sm: { base: "rounded-xs" },
-      regular: { base: "rounded-sm" },
-      md: { base: "rounded-md" },
-      lg: { base: "rounded-lg" },
-      xl: { base: "rounded-xl" },
-      "2xl": { base: "rounded-2xl" },
-      "3xl": { base: "rounded-3xl" },
-      full: { base: "rounded-full" },
-      none: { base: "rounded-none" }
-    }
   }
 });

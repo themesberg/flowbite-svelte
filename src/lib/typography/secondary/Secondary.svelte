@@ -1,11 +1,12 @@
 <script lang="ts">
   import { twMerge } from "tailwind-merge";
   import { type SecondaryProps as Props, secondary } from "./index";
+  import clsx from "clsx";
 
   let { children, class: className, ...restProps }: Props = $props();
 </script>
 
-<small {...restProps} class={twMerge(secondary(), className)}>
+<small {...restProps} class={secondary({ class: clsx(className) })}>
   {@render children()}
 </small>
 

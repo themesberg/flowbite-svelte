@@ -1,4 +1,6 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type AnchorVariants = VariantProps<typeof anchor>;
 
 export const anchor = tv({
   base: "inline-flex items-center hover:underline",

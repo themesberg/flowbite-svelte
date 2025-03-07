@@ -1,15 +1,13 @@
 import type { Snippet } from "svelte";
-import type { HTMLLiAttributes } from "svelte/elements";
+import type { HTMLLiAttributes, HTMLOlAttributes } from "svelte/elements";
+import type { ListVariants } from "./theme";
 
-type TagType = "ul" | "dl" | "ol" | undefined;
-type PositionType = "inside" | "outside" | undefined;
 
-interface ListProps {
+interface ListProps extends HTMLOlAttributes {
   children: Snippet;
-  tag?: TagType;
-  position?: PositionType;
+  tag?: ListVariants["tag"];
+  position?: ListVariants["position"];
   ctxClass?: string;
-  class?: string;
   isContenteditable?: boolean;
 }
 

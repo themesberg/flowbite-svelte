@@ -1,4 +1,6 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type ListVariants = VariantProps<typeof list>;
 
 export const list = tv({
   base: "",

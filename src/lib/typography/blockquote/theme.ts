@@ -1,4 +1,6 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type BlockquoteVariants = VariantProps<typeof blockquote>;
 
 export const blockquote = tv({
   base: "font-semibold text-gray-900 dark:text-white",

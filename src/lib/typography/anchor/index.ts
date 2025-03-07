@@ -1,5 +1,5 @@
-import type { AnchorProps, AnchorColorType } from "./type";
+import type { AnchorProps } from "./type";
 import A from "./A.svelte";
 import { anchor } from "./theme";
 
-export { A, anchor, type AnchorProps, type AnchorColorType };
+export { A, anchor, type AnchorProps };

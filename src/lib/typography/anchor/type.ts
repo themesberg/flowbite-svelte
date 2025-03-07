@@ -1,12 +1,10 @@
 import type { Snippet } from "svelte";
 import type { HTMLAnchorAttributes } from "svelte/elements";
-
-type AnchorColorType = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined;
+import type { AnchorVariants } from "./theme";
 
 interface AnchorProps extends HTMLAnchorAttributes {
   children: Snippet;
-  color?: AnchorColorType;
-  class?: string;
+  color?: AnchorVariants["color"];
 }
 
-export { type AnchorProps, type AnchorColorType };
+export { type AnchorProps };

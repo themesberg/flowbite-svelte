@@ -1,4 +1,5 @@
 <script lang="ts">
+  import clsx from "clsx";
   import { type SpanProps as Props, span } from "./index";
 
   let { children, class: className, italic, underline, linethrough, uppercase, gradient, highlight, decoration, decorationColor, decorationThickness, ...restProps }: Props = $props();
@@ -14,7 +15,7 @@
       decoration,
       decorationColor,
       decorationThickness,
-      className
+      class: clsx(className)
     })
   );
 </script>

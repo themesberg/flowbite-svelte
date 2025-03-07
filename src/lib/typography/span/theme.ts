@@ -1,4 +1,6 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type SpanVariants = VariantProps<typeof span>;
 
 export const span = tv({
   variants: {

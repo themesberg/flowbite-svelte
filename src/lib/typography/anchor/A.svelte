@@ -1,8 +1,9 @@
 <script lang="ts">
+  import clsx from "clsx";
   import { type AnchorProps as Props, anchor } from "./index";
 
   let { children, color = "primary", class: className, ...restProps }: Props = $props();
-  let linkClass = $derived(anchor({ color, className }));
+  let linkClass = $derived(anchor({ color, class: clsx(className) }));
 </script>
 
 <a {...restProps} class={linkClass}>

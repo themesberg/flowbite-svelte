@@ -108,7 +108,7 @@ The component has the following props, type, and default values. See [types page
 
 ### Hr styling
 
-- Use the `classHr` prop to overwrite `hrClass`.
+- Use the `class` prop to overwrite `hr` element class.
 - Use the `divClass` prop to overwrite `classDiv`.
 - Use the `classInnerDiv` prop to overwrite `innerDivClass`.
 
