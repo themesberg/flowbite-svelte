@@ -1,4 +1,6 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type SelectVariants = VariantProps<typeof select>;
 
 export const select = tv({
   base: "block w-full",
