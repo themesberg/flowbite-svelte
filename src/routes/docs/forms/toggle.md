@@ -78,7 +78,9 @@ Get started with the default toggle component example as a checkbox element to r
 </script>
 
 <Toggle>
-  <svelte:fragment slot="offLabel">dark mode</svelte:fragment>
+  {#snippet offLabel()}
+  dark mode
+  {/snippet}
   light mode
 </Toggle>
 ```
@@ -88,14 +90,14 @@ Get started with the default toggle component example as a checkbox element to r
 ```svelte example class="flex flex-col gap-2"
 <script lang="ts">
   import { Input, Label, Button, Toggle } from 'flowbite-svelte';
-  let isDisabled = false;
+  let isDisabled = $state(false);
   let checked: boolean;
   const handleClick = () => {
     isDisabled = !isDisabled;
   }
 </script>
 
-<Button class="w-48" on:click={handleClick}>Disabled: {isDisabled ? 'True' : 'False'}</Button>
+<Button class="w-48" onclick={handleClick}>Disabled: {isDisabled ? 'True' : 'False'}</Button>
 
 <Toggle class="mt-3" bind:checked disabled={isDisabled}>Disabled: {isDisabled}</Toggle>
 ```
@@ -106,8 +108,8 @@ The component has the following props, type, and default values. See [types page
 
 ### Toggle styling
 
-- Use the `class` prop to overwrite the `Checkbox` component.
-- Use the `classDiv` prop to overwrite the `divClass`.
+- Use the `class` prop to overwrite the overlapping `Label` component.
+- Use the `inputClass` prop to overwrite the `<input/>`.
 
 <CompoAttributesViewer {components}/>
 

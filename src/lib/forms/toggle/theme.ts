@@ -1,4 +1,6 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type ToggleVariants = VariantProps<typeof toggle>;
 
 export const toggle = tv({
   slots: {
@@ -13,6 +15,9 @@ export const toggle = tv({
     checked: {
       true: "",
       false: ""
+    },
+    _offLabel: {
+      true: { span: "ms-3" }
     },
     color: {
       // primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose

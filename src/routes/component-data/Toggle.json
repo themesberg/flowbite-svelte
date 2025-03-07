@@ -7,7 +7,7 @@
       ""
     ],
     [
-      "toggleSize",
+      "size",
       "any",
       "\"default\""
     ],
@@ -32,13 +32,8 @@
       "\"primary\""
     ],
     [
-      "aria_describedby",
-      "any",
-      ""
-    ],
-    [
-      "labelClass",
-      "any",
+      "class",
+      "string",
       ""
     ],
     [
@@ -52,7 +47,7 @@
       ""
     ],
     [
-      "leftLabel",
+      "offLabel",
       "any",
       ""
     ]

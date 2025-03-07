@@ -1,17 +1,18 @@
 <script lang="ts">
+  import clsx from "clsx";
   import { Label } from "../label";
   import { type ToggleProps as Props, toggle } from "./index";
 
-  let { children, toggleSize = "default", value, checked = $bindable(), disabled, color = "primary", aria_describedby, labelClass, inputClass, spanClass, leftLabel, ...restProps }: Props = $props();
+  let { children, size = "default", value, checked = $bindable(), disabled, color = "primary", class: className, inputClass, spanClass, offLabel, ...restProps }: Props = $props();
 
-  const { input, label, span } = $derived(toggle({ color, checked, size: toggleSize, disabled }));
+  const { input, label, span } = $derived(toggle({ color, checked, size, disabled, _offLabel: !!offLabel }));
 </script>
 
-<Label class={label({ class: labelClass })}>
-  {#if leftLabel}
-    {@render leftLabel()}
+<Label class={label({ class: clsx(className) })}>
+  {#if offLabel}
+    {@render offLabel()}
   {/if}
-  <input type="checkbox" bind:checked {value} aria-describedby={aria_describedby} {...restProps} {disabled} class={input({ class: inputClass })} />
+  <input type="checkbox" bind:checked {value} {...restProps} {disabled} class={input({ class: inputClass })} />
   <span class={span({ class: spanClass })}></span>
   {#if children}
     {@render children()}
@@ -23,14 +24,13 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @props: children: any;
-@props:toggleSize: any = "default";
+@props:size: any = "default";
 @props:value: any;
 @props:checked: any = $bindable();
 @props:disabled: any;
 @props:color: any = "primary";
-@props:aria_describedby: any;
-@props:labelClass: any;
+@props:class: string;
 @props:inputClass: any;
 @props:spanClass: any;
-@props:leftLabel: any;
+@props:offLabel: any;
 -->
