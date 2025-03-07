@@ -1,4 +1,6 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type ToastVaraints = VariantProps<typeof toast>;
 
 export const toast = tv({
   slots: {
