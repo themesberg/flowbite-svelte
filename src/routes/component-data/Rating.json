@@ -12,8 +12,8 @@
       ""
     ],
     [
-      "divClass",
-      "any",
+      "class",
+      "string",
       ""
     ],
     [
@@ -32,7 +32,7 @@
       "4"
     ],
     [
-      "Icon",
+      "icon",
       "any",
       "Star"
     ],

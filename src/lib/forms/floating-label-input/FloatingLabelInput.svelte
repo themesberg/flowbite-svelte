@@ -23,11 +23,11 @@
 @props: children: any;
 @props:id: any = idGenerator();
 @props:value: any = $bindable();
-@props:aria_describedby: any;
-@props:inputStyle: any = "standard";
+@props:"aria-describedby": any;
+@props:variant: any = "standard";
 @props:size: any = "default";
 @props:color: any = "default";
-@props:divClass: any;
+@props:class: string;
 @props:inputClass: any;
 @props:labelClass: any;
 -->

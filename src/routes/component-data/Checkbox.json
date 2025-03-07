@@ -7,11 +7,6 @@
       ""
     ],
     [
-      "aria_describedby",
-      "any",
-      ""
-    ],
-    [
       "color",
       "any",
       "\"primary\""
@@ -50,11 +45,6 @@
       "checked",
       "any",
       "$bindable(false)"
-    ],
-    [
-      "classLabel",
-      "any",
-      ""
     ],
     [
       "indeterminate",

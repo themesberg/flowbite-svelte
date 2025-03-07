@@ -52,7 +52,7 @@
 @props:headerSlot: any;
 @props:color: any;
 @props:striped: any;
-@props:noborder: any;
+@props:border: any;
 @props:class: string;
 @props:headItems: any;
 @props:defaultRow: any = true;

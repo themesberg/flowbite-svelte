@@ -33,12 +33,9 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @props: size: any = "none";
-@props:alignment: any = "left";
 @props:effect: any = "none";
-@props:shadow: any = "none";
-@props:rounded: any = "none";
 @props:caption: any;
-@props:imgClass: any;
+@props:class: string;
 @props:figClass: any;
 @props:captionClass: any;
 @props:href: any;

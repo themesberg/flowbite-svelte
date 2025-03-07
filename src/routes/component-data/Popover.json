@@ -2,7 +2,7 @@
   "name": "Popover",
   "props": [
     [
-      "titleSlot",
+      "title",
       "any",
       ""
     ],
@@ -15,6 +15,11 @@
       "trigger",
       "any",
       "\"click\""
+    ],
+    [
+      "defaultClass",
+      "any",
+      ""
     ],
     [
       "arrow",

@@ -35,9 +35,9 @@
 ## Props
 @props: children: any;
 @props:simple: any = false;
-@props:placement: any = 'bottom';
+@props:placement: any = "bottom";
 @props:offset: any = 2;
 @props:class: string;
 @props:backdropClass: any;
-@props:activeUrl: any = '';
+@props:activeUrl: any = "";
 -->

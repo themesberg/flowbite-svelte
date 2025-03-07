@@ -9,12 +9,12 @@
     [
       "trigger",
       "any",
-      "'click'"
+      "\"click\""
     ],
     [
       "placement",
       "any",
-      "'top'"
+      "\"top\""
     ],
     [
       "offset",
@@ -39,7 +39,7 @@
     [
       "strategy",
       "any",
-      "'absolute'"
+      "\"absolute\""
     ],
     [
       "reference",
@@ -69,7 +69,7 @@
     [
       "class",
       "string",
-      "''"
+      "\"\""
     ],
     [
       "children",

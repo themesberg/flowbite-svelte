@@ -22,28 +22,13 @@
       ""
     ],
     [
-      "alignment",
-      "any",
-      ""
-    ],
-    [
-      "shadow",
-      "any",
-      ""
-    ],
-    [
-      "rounded",
-      "any",
-      ""
-    ],
-    [
       "figClass",
       "any",
       ""
     ],
     [
-      "imgClass",
-      "any",
+      "class",
+      "string",
       ""
     ],
     [

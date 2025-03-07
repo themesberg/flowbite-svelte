@@ -179,27 +179,25 @@ Here’s an example of a list group that you can use right away.
 
 ```svelte example class="flex justify-center items-start h-80"
 <script>
-  import { Radio, Dropdown, Button, Helper } from 'flowbite-svelte';
+  import { Radio, Dropdown, DropdownItem, Button, Helper } from 'flowbite-svelte';
   import { ChevronDownOutline } from 'flowbite-svelte-icons';
   let group3 = 2;
 </script>
 
 <Button>Dropdown radio<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
-<Dropdown class="w-60">
-  <ul class="p-2">
-    <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio name="group3" bind:group={group3} value={1}>Enable notifications</Radio>
-      <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
-    </li>
-    <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio name="group3" bind:group={group3} value={2}>Enable 2FA auth</Radio>
-      <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
-    </li>
-    <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio name="group3" bind:group={group3} value={3}>Subscribe newsletter</Radio>
-      <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
-    </li>
-  </ul>
+<Dropdown simple class="w-60">
+  <DropdownItem>
+    <Radio name="group3" bind:group={group3} value={1}>Enable notifications</Radio>
+    <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
+  </DropdownItem>
+  <DropdownItem>
+    <Radio name="group3" bind:group={group3} value={2}>Enable 2FA auth</Radio>
+    <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
+  </DropdownItem>
+  <DropdownItem>
+    <Radio name="group3" bind:group={group3} value={3}>Subscribe newsletter</Radio>
+    <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
+  </DropdownItem>
 </Dropdown>
 ```
 

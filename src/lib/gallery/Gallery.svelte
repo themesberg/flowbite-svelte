@@ -36,7 +36,8 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @props: children: any;
+@props:figure: any;
 @props:items: any = [];
 @props:imgClass: any;
-@props:divClass: any;
+@props:class: string;
 -->

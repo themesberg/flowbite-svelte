@@ -1,17 +1,18 @@
 import type { Snippet } from "svelte";
 import type { HTMLInputAttributes } from "svelte/elements";
+import type { RadioVariants } from "./theme";
 
-type RadioColorType = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined;
 
-interface RadioProps<T> extends HTMLInputAttributes {
+interface RadioProps<T> extends Omit<HTMLInputAttributes, "color">, RadioVariants {
   children: Snippet;
-  aria_describedby?: string;
-  color?: RadioColorType;
+  // color?: RadioVariants["color"];
   group?: T;
   value?: T;
   inputClass?: string;
   labelClass?: string;
-  hidden?: boolean;
+  // hidden?: boolean;
+  // inline?: boolean;
+  // custom?: boolean;
 }
 
-export { type RadioProps, type RadioColorType };
+export { type RadioProps };

@@ -42,11 +42,11 @@
 ## Props
 @props: children: any;
 @props:text: any;
-@props:divClass: any;
+@props:class: string;
 @props:size: any = 24;
 @props:total: any = 5;
 @props:rating: any = 4;
-@props:Icon: any = Star;
+@props:icon: any = Star;
 @props:count: any = false;
 @props:pClass: any;
 -->

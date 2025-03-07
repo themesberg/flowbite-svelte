@@ -55,11 +55,11 @@
 @props: children: any;
 @props:footerSlot: any;
 @props:captionSlot: any;
-@props:tableItems: any;
+@props:items: any;
 @props:divClass: any = "relative overflow-x-auto";
 @props:striped: any;
 @props:hoverable: any;
-@props:border: any;
+@props:border: any = true;
 @props:shadow: any;
 @props:color: any = "default";
 @props:class: string;

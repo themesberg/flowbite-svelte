@@ -7,22 +7,7 @@
       "\"none\""
     ],
     [
-      "alignment",
-      "any",
-      "\"left\""
-    ],
-    [
       "effect",
-      "any",
-      "\"none\""
-    ],
-    [
-      "shadow",
-      "any",
-      "\"none\""
-    ],
-    [
-      "rounded",
       "any",
       "\"none\""
     ],
@@ -32,8 +17,8 @@
       ""
     ],
     [
-      "imgClass",
-      "any",
+      "class",
+      "string",
       ""
     ],
     [

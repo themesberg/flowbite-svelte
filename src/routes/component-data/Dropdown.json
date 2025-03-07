@@ -14,7 +14,7 @@
     [
       "placement",
       "any",
-      "'bottom'"
+      "\"bottom\""
     ],
     [
       "offset",
@@ -34,7 +34,7 @@
     [
       "activeUrl",
       "any",
-      "''"
+      "\"\""
     ]
   ]
 }

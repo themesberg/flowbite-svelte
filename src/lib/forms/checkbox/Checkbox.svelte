@@ -32,7 +32,6 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @props: children: any;
-@props:aria_describedby: any;
 @props:color: any = "primary";
 @props:custom: any;
 @props:inline: any;
@@ -41,7 +40,6 @@
 @props:group: any = $bindable([]);
 @props:choices: any = [];
 @props:checked: any = $bindable(false);
-@props:classLabel: any;
 @props:indeterminate: any;
 @props:class: string;
 -->

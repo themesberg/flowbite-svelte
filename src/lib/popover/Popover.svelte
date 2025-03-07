@@ -26,9 +26,10 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@props: titleSlot: any;
+@props: title: any;
 @props:color: any = "default";
 @props:trigger: any = "click";
+@props:defaultClass: any;
 @props:arrow: any = true;
 @props:children: any;
 @props:placement: any = "top";

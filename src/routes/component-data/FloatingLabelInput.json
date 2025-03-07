@@ -17,12 +17,12 @@
       "$bindable()"
     ],
     [
-      "aria_describedby",
+      "\"aria-describedby\"",
       "any",
       ""
     ],
     [
-      "inputStyle",
+      "variant",
       "any",
       "\"standard\""
     ],
@@ -37,8 +37,8 @@
       "\"default\""
     ],
     [
-      "divClass",
-      "any",
+      "class",
+      "string",
       ""
     ],
     [

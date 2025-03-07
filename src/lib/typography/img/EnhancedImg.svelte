@@ -35,10 +35,7 @@
 @props:href: any;
 @props:caption: any;
 @props:size: any;
-@props:alignment: any;
-@props:shadow: any;
-@props:rounded: any;
 @props:figClass: any;
-@props:imgClass: any;
+@props:class: string;
 @props:captionClass: any;
 -->

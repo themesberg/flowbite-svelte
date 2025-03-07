@@ -24,6 +24,6 @@
 ## Props
 @props: children: any;
 @props:divClass: any;
-@props:hrClass: any;
+@props:class: string;
 @props:innerDivClass: any;
 -->

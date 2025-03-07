@@ -30,5 +30,5 @@
 @props:color: any;
 @props:striped: any;
 @props:hoverable: any;
-@props:noborder: any;
+@props:border: any;
 -->

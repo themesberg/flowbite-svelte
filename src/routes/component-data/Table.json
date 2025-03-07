@@ -17,7 +17,7 @@
       ""
     ],
     [
-      "tableItems",
+      "items",
       "any",
       ""
     ],
@@ -37,9 +37,9 @@
       ""
     ],
     [
-      "noborder",
+      "border",
       "any",
-      ""
+      "true"
     ],
     [
       "shadow",
