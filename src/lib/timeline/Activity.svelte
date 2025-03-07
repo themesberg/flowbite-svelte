@@ -1,8 +1,9 @@
 <script lang="ts">
+  import clsx from "clsx";
   import { type ActivityProps as Props, activity } from "./index";
 
   let { children, class: className, ...restProps }: Props = $props();
-  const base = activity({ class: className });
+  const base = activity({ class: clsx(className) });
 </script>
 
 <ol {...restProps} class={base}>

@@ -1,12 +1,13 @@
 import type { HTMLOlAttributes, HTMLLiAttributes } from "svelte/elements";
 import type { Snippet } from "svelte";
+import type { TimelineVariants } from "./theme";
 
 interface ActivityType {
-  name: HTMLElement | string;
+  title: HTMLElement | string;
   date: Date | string;
   src: string;
   alt: string;
-  activity?: HTMLElement | string;
+  text?: HTMLElement | string;
 }
 
 interface GroupTimelineType {
@@ -55,7 +56,7 @@ type DateFormat = "year" | "month-year" | "full-date";
 
 interface TimelineProps extends HTMLOlAttributes {
   children: Snippet;
-  order?: "default" | "vertical" | "horizontal" | "activity" | "group";
+  order?: TimelineVariants["order"];
 }
 
 interface TimelineItemProps extends HTMLLiAttributes {

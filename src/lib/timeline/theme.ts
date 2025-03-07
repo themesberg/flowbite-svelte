@@ -1,4 +1,4 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
 
 export const activity = tv({
   base: "relative border-s border-gray-200 dark:border-gray-700"
@@ -35,6 +35,8 @@ export const groupitem = tv({
   }
 });
 
+export type TimelineVariants = VariantProps<typeof timeline>;
+
 export const timeline = tv({
   variants: {
     order: {
@@ -49,6 +51,8 @@ export const timeline = tv({
     order: "default"
   }
 });
+
+export type TimelineItemVariants = VariantProps<typeof timelineitem>;
 
 export const timelineitem = tv({
   slots: {

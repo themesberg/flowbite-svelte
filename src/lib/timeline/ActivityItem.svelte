@@ -6,7 +6,7 @@
   const { li, span, img, outerDiv, innerDiv, time, title, text } = $derived(activityitem());
 </script>
 
-{#each activities as { name, date, src, alt, activity }}
+{#each activities as { title: name, date, src, alt, text: activity }}
   <li {...restProps} class={li({ class: liClass })}>
     <span class={span({ class: spanClass })}>
       <img class={img({ class: imgClass })} {src} {alt} />
