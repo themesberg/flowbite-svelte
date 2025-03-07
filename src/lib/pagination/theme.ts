@@ -1,4 +1,6 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type PaginationItemVariants = VariantProps<typeof paginationItem>;
 
 export const paginationItem = tv({
   base: "flex items-center font-medium",
@@ -34,6 +36,8 @@ export const paginationItem = tv({
     table: false
   }
 });
+
+export type PaginationVariants = VariantProps<typeof pagination>;
 
 export const pagination = tv({
   base: "inline-flex -space-x-px rtl:space-x-reverse items-center",

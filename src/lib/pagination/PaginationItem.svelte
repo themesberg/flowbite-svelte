@@ -1,4 +1,5 @@
 <script lang="ts">
+  import clsx from "clsx";
   import { paginationItem, type PaginationItemProps as Props } from ".";
   import { getContext } from "svelte";
 
@@ -6,7 +7,7 @@
 
   const group = getContext<boolean>("group");
   const table = getContext<boolean>("table");
-  const paginationClass = $derived(paginationItem({ size, active, group, table, className }));
+  const paginationClass = $derived(paginationItem({ size, active, group, table, class: clsx(className) }));
 </script>
 
 {#if href}

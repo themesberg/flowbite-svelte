@@ -1,5 +1,6 @@
 import type { Snippet } from "svelte";
 import type { HTMLAnchorAttributes, HTMLButtonAttributes, HTMLLiAttributes } from "svelte/elements";
+import type { PaginationItemVariants, PaginationVariants } from "./theme";
 
 type PaginationItemType = {
   size?: "default" | "large";
@@ -17,25 +18,21 @@ interface PaginationItemSpecificProps {
   size?: "default" | "large" | undefined;
 }
 
-type HTMLAttributesWithoutAbort = Omit<HTMLButtonAttributes, "on:abort"> & Omit<HTMLAnchorAttributes, "on:abort">;
+type HTMLButtonOrAnchorAttributes = HTMLButtonAttributes & HTMLAnchorAttributes;
 
-interface PaginationItemProps extends HTMLAttributesWithoutAbort {
+interface PaginationItemProps extends PaginationItemVariants, HTMLButtonOrAnchorAttributes {
   children?: Snippet;
-  name?: string;
-  href?: string;
-  active?: boolean;
-  rel?: string;
-  size?: "default" | "large" | undefined;
+  // name?: string;
+  // href?: string;
+  // rel?: string;
 }
 
-interface PaginationProps extends HTMLLiAttributes {
+interface PaginationProps extends PaginationVariants, HTMLLiAttributes {
   prevContent?: Snippet;
   nextContent?: Snippet;
   pages?: PaginationItemProps[];
   previous?: () => void;
   next?: () => void;
-  table?: boolean;
-  size?: PaginationItemType["size"];
   ariaLabel?: string;
 }
 
