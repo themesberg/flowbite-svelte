@@ -1,11 +1,9 @@
 import type { Snippet } from "svelte";
 import type { HTMLInputAttributes } from "svelte/elements";
+import type { SearchVariants } from "./theme";
 
-interface SearchProps<T> extends Omit<HTMLInputAttributes, "size"> {
+interface SearchProps<T> extends SearchVariants, Omit<HTMLInputAttributes, "size"> {
   children?: Snippet;
-  inputClass?: string;
-  size?: "sm" | "md" | "lg";
-  placeholder?: string;
   value?: T;
 }
 

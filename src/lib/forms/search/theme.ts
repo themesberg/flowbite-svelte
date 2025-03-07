@@ -1,4 +1,6 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type SearchVariants = VariantProps<typeof search>;
 
 export const search = tv({
   slots: {
