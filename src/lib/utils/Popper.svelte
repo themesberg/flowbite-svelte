@@ -37,8 +37,8 @@
   let clickable: boolean = $derived(trigger === "click");
   let hoverable: boolean = $derived(trigger === "hover");
 
-  let popover: HTMLElement | undefined = undefined;
-  let invoker: HTMLElement | undefined = undefined;
+  let popover: HTMLElement | null = null;
+  let invoker: HTMLButtonElement | null = null;
   let referenceElement: HTMLElement | null = null;
   let triggerEls: HTMLButtonElement[] = [];
   let arrowParams: { placement: Placement; border: boolean; cords: Partial<Coords>; strategy: "absolute" | "fixed" } = $state({
@@ -81,6 +81,7 @@
 
     if (ev.target !== invoker && triggerEls.includes(ev.target as HTMLButtonElement)) {
       invoker = ev.target as HTMLButtonElement;
+      // if (invoker) invoker.popoverTargetElement = popover;
       popover?.hidePopover(); // invoker changed need to hide old popover
     }
 
@@ -93,11 +94,14 @@
     await new Promise((resolve) => setTimeout(resolve, TRIGGER_DELAY));
     if (isTriggered) return;
 
+    // if popover has focus don't close when leaving the invoker
     if (ev?.type === "pointerleave" && popover?.contains(document.activeElement)) return;
     if (ev?.type === "focusout" && popover?.contains(document.activeElement)) return;
 
     popover?.hidePopover();
   }
+
+  let autoUpdateDestroy = () => {};
 
   function on_before_toggle(ev: ToggleEvent) {
     if (!invoker || !popover) return;
@@ -106,9 +110,7 @@
     _onbeforetoggle?.(ev as TriggeredToggleEvent);
 
     // Floating UI instance when it’s closed we need to keep a autoUpdate destroy function
-    let autoUpdateDestroy = () => {};
 
-    // console.log(e.oldState, "=>", e.newState);
     if (ev.newState === "open") {
       autoUpdateDestroy = dom.autoUpdate(referenceElement ?? invoker, popover, updatePopoverPosition);
       document.addEventListener("click", closeOnClickOutside);
