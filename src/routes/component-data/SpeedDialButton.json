@@ -1,6 +1,50 @@
 {
   "name": "SpeedDialButton",
-  "slots": [],
-  "events": ["click"],
-  "props": []
+  "props": [
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "name",
+      "any",
+      "\"\""
+    ],
+    [
+      "color",
+      "any",
+      "\"light\""
+    ],
+    [
+      "tooltip",
+      "any",
+      "context.tooltip"
+    ],
+    [
+      "pill",
+      "any",
+      "context.pill"
+    ],
+    [
+      "textOutside",
+      "any",
+      "context.textOutside"
+    ],
+    [
+      "textOutsideClass",
+      "any",
+      ""
+    ],
+    [
+      "textDefaultClass",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
+  ]
 }

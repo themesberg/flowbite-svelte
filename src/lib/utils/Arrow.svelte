@@ -54,15 +54,15 @@
 
 <div use:positioning class:border-none={!border} class="popover-arrow clip block pointer-events-none bg-inherit text-inherit w-[10px] h-[10px] border-l border-b {className}"></div>
 
+<style>
+  :global(.clip) {
+    clip-path: polygon(0 0, 0% 100%, 100% 100%, 100% 85%, 15% 0);
+  }
+</style>
+
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @props: 
 -->
-
-<style>
-  :global(.clip) {
-    clip-path: polygon(0 0, 0% 100%, 100% 100%, 100% 85%, 15% 0);
-  }
-</style>

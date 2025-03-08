@@ -28,6 +28,7 @@ export * from "./progress";
 export * from "./rating";
 export * from "./sidebar";
 export * from "./skeleton";
+export * from "./speed-dial";
 export * from "./spinner";
 export * from "./tabs";
 export * from "./table";

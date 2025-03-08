@@ -91,7 +91,7 @@ Get started with the default toggle component example as a checkbox element to r
 <script lang="ts">
   import { Input, Label, Button, Toggle } from 'flowbite-svelte';
   let isDisabled = $state(false);
-  let checked: boolean;
+  let checked: boolean = $state();
   const handleClick = () => {
     isDisabled = !isDisabled;
   }

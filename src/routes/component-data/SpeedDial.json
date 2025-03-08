@@ -1,6 +1,75 @@
 {
   "name": "SpeedDial",
-  "slots": ["button", "icon", "icon"],
-  "events": [],
-  "props": []
+  "props": [
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "icon",
+      "any",
+      ""
+    ],
+    [
+      "button",
+      "any",
+      ""
+    ],
+    [
+      "popperDefaultClass",
+      "any",
+      ""
+    ],
+    [
+      "placement",
+      "any",
+      "\"top\""
+    ],
+    [
+      "pill",
+      "any",
+      "true"
+    ],
+    [
+      "tooltip",
+      "any",
+      "\"left\""
+    ],
+    [
+      "trigger",
+      "any",
+      "\"hover\""
+    ],
+    [
+      "textOutside",
+      "any",
+      "false"
+    ],
+    [
+      "name",
+      "any",
+      "\"Open actions menu\""
+    ],
+    [
+      "gradient",
+      "any",
+      "false"
+    ],
+    [
+      "defaultClass",
+      "any",
+      ""
+    ],
+    [
+      "ontoggle",
+      "any",
+      ""
+    ],
+    [
+      "onbeforetoggle",
+      "any",
+      ""
+    ]
+  ]
 }
