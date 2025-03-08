@@ -21,7 +21,7 @@
   //   let popperClass = twMerge(commonClass, type === "light" ? light_class : dark_class, className);
 </script>
 
-<Popper {...restProps} {placement} border {trigger} {arrow} class={base({ class: clsx(className) })} onbeforetoggle={_onopen}>
+<Popper {...restProps} {placement} border={false} {trigger} {arrow} class={base({ class: clsx(className) })} onbeforetoggle={_onopen}>
   <div class="pointer-events-none">{@render children()}</div>
 </Popper>
 
