@@ -34,7 +34,7 @@ const footerIcon = tv({
 });
 
 const footerLinkGroup = tv({
-  base: "text-gray-600 dark:text-gray-400 flex flex-wrap items-center"
+  base: "text-sm text-gray-600 dark:text-gray-400 flex flex-wrap items-center"
 });
 
 const footerLink = tv({

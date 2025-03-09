@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { type SearchProps as Props, search } from ".";
 
-  let { children, class: inputClass, size = "md", placeholder = "Search", value = $bindable<T>(), ...restProps }: Props<T> = $props();
+  let { children, class: inputClass, size, placeholder = "Search", value = $bindable<T>(), ...restProps }: Props<T> = $props();
 
   const { base, content, icon, input: inputCls, leftDiv } = $derived(search({ size }));
 </script>

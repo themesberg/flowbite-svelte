@@ -30,6 +30,6 @@ export const search = tv({
     }
   },
   defaultVariants: {
-    size: "md"
+    size: "lg"
   }
 });

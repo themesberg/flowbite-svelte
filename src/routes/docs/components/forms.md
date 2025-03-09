@@ -101,7 +101,7 @@ With the Input component, you can add <a href="https://flowbite-svelte.vercel.ap
     <InputAddon>
       <UserCircleSolid class="w-4 h-4 text-gray-500 dark:text-gray-400" />
     </InputAddon>
-    <Input id="website-admin" placeholder="elonmusk" />
+    <Input id="website-admin" placeholder="johndoe" />
   </ButtonGroup>
 </div>
 ```

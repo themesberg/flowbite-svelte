@@ -8,7 +8,7 @@
   }
 
   onMount(() => {
-    refreshCarbonAds();
+    // refreshCarbonAds();
   });
 
   $effect(() => {
