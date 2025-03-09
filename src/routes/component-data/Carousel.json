@@ -1,15 +1,65 @@
 {
   "name": "Carousel",
-  "slots": ["slide"],
-  "events": [],
   "props": [
-    ["images", "HTMLImgAttributes[]", ""],
-    ["index", "number", "0"],
-    ["slideDuration", "number", "1000"],
-    ["transition", "TransitionFunc | null", "null"],
-    ["duration", "number", "0"],
-    ["ariaLabel", "string", "'Draggable Carousel'"],
-    ["disableSwipe", "boolean", "false"],
-    ["imgClass", "string", "''"]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "slide",
+      "any",
+      ""
+    ],
+    [
+      "images",
+      "any",
+      ""
+    ],
+    [
+      "index",
+      "any",
+      "$bindable()"
+    ],
+    [
+      "slideDuration",
+      "any",
+      "1000"
+    ],
+    [
+      "transition",
+      "any",
+      ""
+    ],
+    [
+      "duration",
+      "any",
+      "0"
+    ],
+    [
+      "\"aria-label\"",
+      "any",
+      "\"Draggable Carousel\""
+    ],
+    [
+      "disableSwipe",
+      "any",
+      "false"
+    ],
+    [
+      "imgClass",
+      "any",
+      "\"\""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "onchange",
+      "any",
+      ""
+    ]
   ]
 }

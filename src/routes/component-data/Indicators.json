@@ -1,9 +1,25 @@
 {
   "name": "Indicators",
-  "slots": [],
-  "events": [],
   "props": [
-    ["activeClass", "string", "'opacity-100'"],
-    ["inactiveClass", "string", "'opacity-60'"]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "activeClass",
+      "any",
+      ""
+    ],
+    [
+      "inactiveClass",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

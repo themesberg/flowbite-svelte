@@ -20,10 +20,6 @@ export declare const md = "md";
 export declare const lg = "lg";
 export declare const xl = "xl";
 
-export type CloseButtonColorType = "dark" | "default" | "gray" | "red" | "yellow" | "green" | "indigo" | "purple" | "pink" | "blue" | "primary" | "none";
-
-export type IndicatorPlacementType = "top-left" | "top-center" | "top-right" | "center-left" | "center" | "center-right" | "bottom-left" | "bottom-center" | "bottom-right" | undefined;
-
 export interface drawerTransitionParamTypes {
   amount?: number;
   delay?: number;

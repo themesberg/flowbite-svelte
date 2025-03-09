@@ -1,12 +1,40 @@
 {
   "name": "Thumbnails",
-  "slots": [],
-  "events": [],
   "props": [
-    ["images", "HTMLImgAttributes[]", "[]"],
-    ["index", "number", "0"],
-    ["ariaLabel", "string", "'Click to view image'"],
-    ["imgClass", "string", "''"],
-    ["throttleDelay", "number", "650; // ms"]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "images",
+      "any",
+      "[]"
+    ],
+    [
+      "index",
+      "any",
+      "$bindable()"
+    ],
+    [
+      "ariaLabel",
+      "any",
+      "\"Click to view image\""
+    ],
+    [
+      "imgClass",
+      "any",
+      ""
+    ],
+    [
+      "throttleDelay",
+      "any",
+      "650"
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

@@ -3,7 +3,6 @@
   import Thumbnail from "./Thumbnail.svelte";
   import { thumbnails } from "./theme";
   import type { ThumbnailsProps as Props } from "./type";
-  import { twMerge } from "tailwind-merge";
 
   let { children, images = [], index = $bindable(), ariaLabel = "Click to view image", imgClass, throttleDelay = 650, class: className }: Props = $props();
 
@@ -32,9 +31,9 @@
     {@const selected = index === idx}
     <button onclick={() => btnClick(idx)} aria-label={ariaLabel}>
       {#if children}
-        {@render children(image, selected, imgClass)}
+        {@render children({ image, selected, imgClass, Thumbnail })}
       {:else}
-        <img {...image} class={twMerge(selected ? "opacity-100" : "opacity-60", imgClass)} />
+        <Thumbnail {...image} class={imgClass} />
       {/if}
     </button>
   {/each}
@@ -44,9 +43,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let images: HTMLImgAttributes[] = [];
-@prop export let index: number = 0;
-@prop export let ariaLabel: string = 'Click to view image';
-@prop export let imgClass: string = '';
-@prop export let throttleDelay: number = 650;
+@props: children: any;
+@props:images: any = [];
+@props:index: any = $bindable();
+@props:ariaLabel: any = "Click to view image";
+@props:imgClass: any;
+@props:throttleDelay: any = 650;
+@props:class: string;
 -->

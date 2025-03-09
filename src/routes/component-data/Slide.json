@@ -1,9 +1,20 @@
 {
   "name": "Slide",
-  "slots": [],
-  "events": [],
   "props": [
-    ["image", "HTMLImgAttributes", ""],
-    ["transition", "TransitionFunc | null", "null; // Optional transition function, overrides default slide transition"]
+    [
+      "image",
+      "any",
+      ""
+    ],
+    [
+      "transition",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

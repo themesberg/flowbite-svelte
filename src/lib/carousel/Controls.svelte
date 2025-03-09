@@ -46,3 +46,10 @@
   <ControlButton name="Previous" forward={false} onclick={() => changeSlide(false)} class={className} />
   <ControlButton name="Next" forward={true} onclick={() => changeSlide(true)} class={className} />
 {/if}
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@props: 
+-->

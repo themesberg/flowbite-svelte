@@ -29,6 +29,8 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let forward: boolean;
-@prop export let name: string;
+@props: children: any;
+@props:forward: any;
+@props:name: any;
+@props:class: string;
 -->

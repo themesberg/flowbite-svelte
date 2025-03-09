@@ -3,19 +3,16 @@
   import { onMount, setContext } from "svelte";
   import { writable } from "svelte/store";
   import type { TransitionConfig } from "svelte/transition";
-  import { twMerge } from "tailwind-merge";
   import type { ParamsType } from "../types";
   import { canChangeSlide } from "./CarouselSlide";
   import Slide from "./Slide.svelte";
+  import { carousel } from "./theme";
   import type { CarouselProps as Props, State } from "./type";
 
   type TransitionFunc = (node: HTMLElement, params: ParamsType) => TransitionConfig;
   const SLIDE_DURATION_RATIO = 0.25; // TODO: Expose one day?
 
-  let { children, slide, images, index = $bindable(), slideDuration = 1000, transition, duration = 0, ariaLabel = "Draggable Carousel", disableSwipe = false, imgClass = "", class: className, onchange, ...restProps }: Props = $props();
-
-  // Carousel
-  let divClass: string = "grid overflow-hidden relative rounded-lg h-56 sm:h-64 xl:h-80 2xl:h-96";
+  let { children, slide, images, index = $bindable(), slideDuration = 1000, transition, duration = 0, "aria-label": ariaLabel = "Draggable Carousel", disableSwipe = false, imgClass = "", class: className, onchange, ...restProps }: Props = $props();
 
   const { set, subscribe, update } = writable<State>({ images, index: index ?? 0, forward: true, slideDuration, lastSlideChange: new Date() });
 
@@ -177,9 +174,9 @@
 <!-- The move listeners go here, so things keep working if the touch strays out of the element. -->
 <svelte:document onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} />
 <div bind:this={carouselDiv} class="relative" onmousedown={onDragStart} ontouchstart={onDragStart} onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} role="button" aria-label={ariaLabel} tabindex="0">
-  <div {...restProps} class={twMerge(divClass, activeDragGesture === undefined ? "transition-transform" : "", clsx(className))} use:loop={duration}>
+  <div {...restProps} class={carousel({ class: clsx(activeDragGesture === undefined ? "transition-transform" : "", className) })} use:loop={duration}>
     {#if slide}
-      {@render slide(index)}
+      {@render slide({ index, Slide })}
     {:else}
       <Slide image={images[index]} class={imgClass} {transition} />
     {/if}
@@ -191,12 +188,16 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let images: HTMLImgAttributes[];
-@prop export let index: number = 0;
-@prop export let slideDuration: number = 1000;
-@prop export let transition: TransitionFunc | null = null;
-@prop export let duration: number = 0;
-@prop export let ariaLabel: string = 'Draggable Carousel';
-@prop export let disableSwipe: boolean = false;
-@prop export let imgClass: string = '';
+@props: children: any;
+@props:slide: any;
+@props:images: any;
+@props:index: any = $bindable();
+@props:slideDuration: any = 1000;
+@props:transition: any;
+@props:duration: any = 0;
+@props:"aria-label": any = "Draggable Carousel";
+@props:disableSwipe: any = false;
+@props:imgClass: any = "";
+@props:class: string;
+@props:onchange: any;
 -->

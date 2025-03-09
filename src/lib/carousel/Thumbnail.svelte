@@ -1,27 +1,17 @@
 <script lang="ts">
-  import type { HTMLImgAttributes } from 'svelte/elements';
-  import { twMerge } from 'tailwind-merge';
-  interface $$Props extends HTMLImgAttributes {
-    selected?: boolean;
-    alt?: string | undefined | null;
-    activeClass?: string;
-    inactiveClass?: string;
-  }
+  import clsx from "clsx";
+  import { thumbnail } from "./theme";
+  import type { ThumbnailProps as Props } from "./type";
 
-  export let selected: boolean = false;
-  export let alt: string | undefined | null = '';
-  export let activeClass: string = 'opacity-100';
-  export let inactiveClass: string = 'opacity-60';
+  let { selected, class: className, ...restProps }: Props = $props();
 </script>
 
-<img {...$$restProps} {alt} class={twMerge(selected ? activeClass : inactiveClass, $$props.class)} />
+<img {...restProps} class={thumbnail({ selected, class: clsx(className) })} />
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let selected: boolean = false;
-@prop export let alt: string | undefined | null = '';
-@prop export let activeClass: string = 'opacity-100';
-@prop export let inactiveClass: string = 'opacity-60';
+@props: selected: any;
+@props:class: string;
 -->

@@ -4,9 +4,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 export type CarouselVariants = VariantProps<typeof carousel>;
 
 export const carousel = tv({
-  slots: {
-    base: "w-full flex max-w-sm bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700",
-  },
+  base: "grid overflow-hidden relative rounded-lg h-56 sm:h-64 xl:h-80 2xl:h-96",
   variants: {
 
   },
@@ -43,6 +41,19 @@ export const controlButton = tv({
 export const thumbnails = tv({
   base: 'flex flex-row justify-center bg-gray-100 w-full'
 });
+
+export const thumbnail = tv({
+  base: "",
+  variants: {
+    selected: {
+      true: { indicator: "opacity-100" },
+      false: { indicator: "opacity-60" }
+    }
+  },
+  defaultVariants: {
+    selected: false
+  }
+})
 
 export const slide = tv({
   base: "absolute block w-full! h-full object-cover"

@@ -43,6 +43,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let image: HTMLImgAttributes;
-@prop export let transition: TransitionFunc | null = null;
+@props: image: any;
+@props:transition: any;
+@props:class: string;
 -->

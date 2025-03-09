@@ -174,13 +174,13 @@ You can use `slide` snippet and internal component `Slide` to control the image 
 
 ```svelte example
 <script>
-  import { Carousel, Slide, Indicators} from 'flowbite-svelte';
+  import { Carousel, Indicators} from 'flowbite-svelte';
   import images from './imageData/images.json';
 </script>
 
 <div class="max-w-4xl space-y-4">
   <Carousel {images} duration={3900}>
-    {#snippet slide(index)}
+    {#snippet slide({index, Slide})}
     <a href="http://google.com/search?q={images[index]?.title}" target="_blank">
       <Slide image={images[index]} />
     </a>
@@ -212,7 +212,7 @@ You can use `slide` snippet and internal component `Slide` to control the image 
 
 ```svelte example
 <script>
-  import { Button, Carousel, ControlButton, Controls, Indicator, Indicators, Thumbnail, Thumbnails } from 'flowbite-svelte';
+  import { Button, Carousel, ControlButton, Controls, Indicator, Indicators, Thumbnails } from 'flowbite-svelte';
   import { CaretRightOutline } from 'flowbite-svelte-icons';
   import images from './imageData/images.json';
   let index = 0;
@@ -237,8 +237,8 @@ You can use `slide` snippet and internal component `Slide` to control the image 
     </Controls>
   </Carousel>
   <Thumbnails class="bg-transparent gap-3" {images} bind:index>
-    {#snippet children(image, selected)}
-    <img {...image} class="rounded-md shadow-xl hover:outline hover:outline-primary-500 {selected ? 'opacity-100 outline-4 outline-primary-400':'opacity-40'}"/>
+    {#snippet children({image, selected, Thumbnail})}
+    <Thumbnail {...image} class="rounded-md shadow-xl hover:outline hover:outline-primary-500 {selected ? 'outline-4 outline-primary-400':''}"/>
     {/snippet}
   </Thumbnails>
 </div>
