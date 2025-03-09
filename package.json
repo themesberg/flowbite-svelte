@@ -62,6 +62,7 @@
     "mdsvexamples": "^0.5.0",
     "prettier": "^3.5.2",
     "prettier-plugin-svelte": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "prism-themes": "^1.9.0",
     "publint": "^0.3.6",
     "svelte": "^5.20.4",
