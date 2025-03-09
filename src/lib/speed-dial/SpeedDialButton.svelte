@@ -8,10 +8,10 @@
 
   const context = getContext<SpeedCtxType>("speed-dial");
 
-  let { children, name = "", color = "light", tooltip = context.tooltip, pill = context.pill, textOutside = context.textOutside, textOutsideClass, textDefaultClass, class: className, ...restProps }: Props = $props();
+  let { children, name = "", color = "light", tooltip = context.tooltip, pill = context.pill, textOutside = context.textOutside, textClass, class: className, ...restProps }: Props = $props();
 
   let { base, span } = $derived(speed_dial_button({ textOutside, tooltip: tooltip == "none" }));
-  let spanClass = $derived(tooltip === "none" ? span() : "sr-only");
+  let spanClass = $derived(tooltip === "none" ? span({ class: textClass }) : "sr-only");
 </script>
 
 <Button {pill} outline {color} {...restProps} class={base({ class: clsx(className) })}>
@@ -33,7 +33,6 @@
 @props:tooltip: any = context.tooltip;
 @props:pill: any = context.pill;
 @props:textOutside: any = context.textOutside;
-@props:textOutsideClass: any;
-@props:textDefaultClass: any;
+@props:textClass: any;
 @props:class: string;
 -->

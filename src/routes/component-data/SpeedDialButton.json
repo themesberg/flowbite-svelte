@@ -32,12 +32,7 @@
       "context.textOutside"
     ],
     [
-      "textOutsideClass",
-      "any",
-      ""
-    ],
-    [
-      "textDefaultClass",
+      "textClass",
       "any",
       ""
     ],

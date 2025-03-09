@@ -8,7 +8,7 @@
   import { speed_dial } from "./theme";
   import type { SpeedDialProps as Props, SpeedCtxType } from "./type";
 
-  let { children, icon, button, popperDefaultClass, placement = "top", pill = true, tooltip = "left", trigger = "hover", textOutside = false, name = "Open actions menu", gradient = false, defaultClass: className, ontoggle, onbeforetoggle, ...restProps }: Props = $props();
+  let { children, icon, button, popperClass, placement = "top", pill = true, tooltip = "left", trigger = "hover", textOutside = false, name = "Open actions menu", gradient = false, class: className, ontoggle, onbeforetoggle, ...restProps }: Props = $props();
 
   setContext<SpeedCtxType>("speed-dial", { pill, tooltip, textOutside });
 
@@ -46,7 +46,7 @@
     </Button>
   {/if}
   <Popper {trigger} arrow={false} {placement} {ontoggle} {onbeforetoggle} class="bg-transparent">
-    <div class={popper()}>
+    <div class={popper({ class: popperClass })}>
       {@render children()}
     </div>
   </Popper>
@@ -59,7 +59,7 @@
 @props: children: any;
 @props:icon: any;
 @props:button: any;
-@props:popperDefaultClass: any;
+@props:popperClass: any;
 @props:placement: any = "top";
 @props:pill: any = true;
 @props:tooltip: any = "left";
@@ -67,7 +67,7 @@
 @props:textOutside: any = false;
 @props:name: any = "Open actions menu";
 @props:gradient: any = false;
-@props:defaultClass: any;
+@props:class: string;
 @props:ontoggle: any;
 @props:onbeforetoggle: any;
 -->

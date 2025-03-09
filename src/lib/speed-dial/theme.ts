@@ -5,7 +5,7 @@ export type SpeedDialVariants = VariantProps<typeof speed_dial>;
 
 export const speed_dial = tv({
     slots: {
-        base: "group fixed end-6 bottom-6",
+        base: "group",
         popper: "flex items-center gap-2 bg-transparent text-inherit"
     },
     variants: {
@@ -14,6 +14,7 @@ export const speed_dial = tv({
         }
     },
     defaultVariants: {
+        vertical: false
     }
 });
 
@@ -39,5 +40,6 @@ export const speed_dial_button = tv({
         }
     },
     defaultVariants: {
+
     }
 });
