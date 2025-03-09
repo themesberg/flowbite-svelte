@@ -14,12 +14,12 @@
     [
       "group",
       "any",
-      "[]"
+      "$bindable()"
     ],
     [
       "value",
       "any",
-      "\"on\""
+      ""
     ],
     [
       "checked",
@@ -29,7 +29,7 @@
     [
       "inline",
       "any",
-      "true"
+      ""
     ],
     [
       "pill",

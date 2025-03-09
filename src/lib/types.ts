@@ -11,14 +11,13 @@ export interface ThemeConfig {
 export interface ThemeType {
   [key: string]: ReturnType<typeof tv>;
 }
-// primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
-export type ColorName = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose";
 
 export declare const xs = "xs";
 export declare const sm = "sm";
 export declare const md = "md";
 export declare const lg = "lg";
 export declare const xl = "xl";
+
 
 export interface drawerTransitionParamTypes {
   amount?: number;

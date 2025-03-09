@@ -1,11 +1,7 @@
-import type { Snippet } from "svelte";
 import type { HTMLAttributes } from "svelte/elements";
-import { type ColorName } from "$lib/types";
+import type { HelperVariants } from "./theme";
 
-interface HelperProps extends HTMLAttributes<HTMLParagraphElement> {
-  children: Snippet;
-  class?: string;
-  color?: ColorName | "disabled";
+interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> {
 }
 
 export { type HelperProps };

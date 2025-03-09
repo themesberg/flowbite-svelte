@@ -1,4 +1,6 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type HelperVariants = VariantProps<typeof helper>;
 
 export const helper = tv({
   base: "text-xs font-normal text-gray-500 dark:text-gray-300",

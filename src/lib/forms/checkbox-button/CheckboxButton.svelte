@@ -1,12 +1,15 @@
 <script lang="ts">
   import Button from "$lib/buttons/Button.svelte";
-  import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
   import { type CheckboxButtonProps as Props } from ".";
+  import { checkButton } from "./theme";
 
-  let { children, class: className, group = [], value = "on", checked, inline = true, pill, outline, size, color, shadow, ...restProps }: Props = $props();
+  let { children, class: className, group = $bindable(), value, checked, inline, pill, outline, size, color, shadow, ...restProps }: Props = $props();
 
   // react on external group changes
   function init(_: HTMLElement, _group: (string | number)[]) {
+    group = _group ?? [];
+
     if (checked === undefined && value !== undefined) checked = _group.includes(value);
     onChange();
 
@@ -40,12 +43,12 @@
     }
   }
 
-  let buttonClass: string = $derived(twMerge(inline ? "inline-flex" : "flex", className));
+  let buttonClass: string = $derived(checkButton({ inline, checked, class: clsx(className) }));
 </script>
 
 <Button tag="label" {checked} {pill} {outline} {size} {color} {shadow} class={buttonClass}>
   <input use:init={group} type="checkbox" bind:checked {value} {...restProps} class="sr-only" onchange={onChange} />
-  {@render children()}
+  {@render children?.()}
 </Button>
 
 <!--
@@ -54,10 +57,10 @@
 ## Props
 @props: children: any;
 @props:class: string;
-@props:group: any = [];
-@props:value: any = "on";
+@props:group: any = $bindable();
+@props:value: any;
 @props:checked: any;
-@props:inline: any = true;
+@props:inline: any;
 @props:pill: any;
 @props:outline: any;
 @props:size: any;

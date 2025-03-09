@@ -6,6 +6,12 @@ export const radioButton = tv({
     inline: {
       true: "inline-flex",
       false: "flex"
-    }
+    },
+    checked: {
+      true: 'outline-4 outline-green-500',
+    },
+  },
+  defaultVariants: {
+    inline: true
   }
 });

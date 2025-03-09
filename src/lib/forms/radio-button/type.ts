@@ -1,16 +1,15 @@
-import type { Snippet } from "svelte";
-import type { SizeType, ColorName } from "$lib/types";
+import type { ButtonProps } from "$lib/buttons";
 import type { HTMLInputAttributes } from "svelte/elements";
 
-interface RadioButtonProps<T> extends HTMLInputAttributes {
-  children: Snippet;
+interface RadioButtonProps<T> extends Omit<HTMLInputAttributes, "size"> {
   group?: T;
   value?: T;
   inline?: boolean;
   pill?: boolean;
   outline?: boolean;
-  buttonSize?: SizeType | undefined;
-  color?: ColorName | "alternative" | "dark" | "light";
+  size?: ButtonProps["size"];
+  color?: ButtonProps["color"];
   shadow?: boolean;
 }
+
 export { type RadioButtonProps };

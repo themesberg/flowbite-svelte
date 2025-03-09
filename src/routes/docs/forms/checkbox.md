@@ -268,20 +268,21 @@ This component accepts all props from the [Button](/docs/components/buttons) for
 <script>
   import { ButtonGroup, CheckboxButton } from 'flowbite-svelte';
   import {AppleSolid, FacebookSolid, DiscordSolid, DropboxSolid } from 'flowbite-svelte-icons';
+  let group = [];
 </script>
 
   <div>
-    <CheckboxButton><AppleSolid class="w-6 h-6 me-2"/>Apple</CheckboxButton>
-    <CheckboxButton><FacebookSolid class="w-6 h-6 me-2"/>Facebook</CheckboxButton>
-    <CheckboxButton><DiscordSolid class="w-6 h-6 me-2"/>Discord</CheckboxButton>
-    <CheckboxButton><DropboxSolid class="w-6 h-6 me-2"/>Dropbox</CheckboxButton>
+    <CheckboxButton bind:group><AppleSolid class="w-6 h-6 me-2"/>Apple</CheckboxButton>
+    <CheckboxButton bind:group><FacebookSolid class="w-6 h-6 me-2"/>Facebook</CheckboxButton>
+    <CheckboxButton bind:group><DiscordSolid class="w-6 h-6 me-2"/>Discord</CheckboxButton>
+    <CheckboxButton bind:group><DropboxSolid class="w-6 h-6 me-2"/>Dropbox</CheckboxButton>
   </div>
 
   <ButtonGroup>
-    <CheckboxButton><AppleSolid class="w-6 h-6 me-2"/>Apple</CheckboxButton>
-    <CheckboxButton><FacebookSolid class="w-6 h-6 me-2"/>Facebook</CheckboxButton>
-    <CheckboxButton><DiscordSolid class="w-6 h-6 me-2"/>Discord</CheckboxButton>
-    <CheckboxButton><DropboxSolid class="w-6 h-6 me-2"/>Dropbox</CheckboxButton>
+    <CheckboxButton bind:group><AppleSolid class="w-6 h-6 me-2"/>Apple</CheckboxButton>
+    <CheckboxButton bind:group><FacebookSolid class="w-6 h-6 me-2"/>Facebook</CheckboxButton>
+    <CheckboxButton bind:group><DiscordSolid class="w-6 h-6 me-2"/>Discord</CheckboxButton>
+    <CheckboxButton bind:group><DropboxSolid class="w-6 h-6 me-2"/>Dropbox</CheckboxButton>
   </ButtonGroup>
 ```
 

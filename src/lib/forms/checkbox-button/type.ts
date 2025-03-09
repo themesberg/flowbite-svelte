@@ -1,17 +1,15 @@
-import type { SizeType, ColorName } from "$lib/types";
-import type { Snippet } from "svelte";
+import type { ButtonProps } from "$lib/buttons";
+import type { HTMLInputAttributes } from "svelte/elements";
 
-interface CheckboxButtonProps {
-  children: Snippet;
-  class?: string;
+interface CheckboxButtonProps extends Omit<HTMLInputAttributes, "size"> {
   group?: (string | number)[];
   value?: string | number;
   checked?: boolean | undefined;
   inline?: boolean;
   pill?: boolean;
   outline?: boolean;
-  size?: SizeType;
-  color?: ColorName | "alternative" | "dark" | "light";
+  size?: ButtonProps["size"];
+  color?: ButtonProps["color"];
   shadow?: boolean;
 }
 
