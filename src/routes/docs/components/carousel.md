@@ -91,12 +91,12 @@ You can customize the control elements with the `class` property.
 
 ```svelte example
 <script>
-  import { Carousel } from 'flowbite-svelte';
+  import { Carousel, Controls } from 'flowbite-svelte';
   import images from './imageData/images.json';
 </script>
 
 <div class="max-w-4xl">
-  <Carousel {images} let:Controls>
+  <Carousel {images}>
     <Controls />
   </Carousel>
 </div>
@@ -108,12 +108,12 @@ Show the carousel indicators by adding the internal `Indicators` component.
 
 ```svelte example
 <script>
-  import { Carousel } from 'flowbite-svelte';
+  import { Carousel, Indicators } from 'flowbite-svelte';
   import images from './imageData/images.json';
 </script>
 
 <div class="max-w-4xl">
-  <Carousel {images} let:Indicators>
+  <Carousel {images} >
     <Indicators />
   </Carousel>
 </div>
@@ -125,15 +125,16 @@ You can control the `Carousel` component externally by the `index` prop. Here is
 
 ```svelte example
 <script>
-  import { Carousel, Thumbnails } from 'flowbite-svelte';
+  import { Carousel, Controls, Indicators, Thumbnails } from 'flowbite-svelte';
   import images from './imageData/images.json';
 
-  let index = 0;
+  let index = $state(0);
   let forward = true; // sync animation direction between Thumbnails and Carousel
+  $inspect(index)
 </script>
 
 <div class="max-w-4xl space-y-4">
-  <Carousel {images} {forward} let:Indicators let:Controls bind:index>
+  <Carousel {images} {forward} bind:index>
     <Controls />
     <Indicators />
   </Carousel>
@@ -147,7 +148,7 @@ The `Carousel` exposes the `change` event containing info about the currently di
 
 ```svelte example
 <script>
-  import { Carousel } from 'flowbite-svelte';
+  import { Carousel, Controls, Indicators } from 'flowbite-svelte';
   import images from './imageData/images.json';
 
   let index = 0;
@@ -156,7 +157,7 @@ The `Carousel` exposes the `change` event containing info about the currently di
 
 <div class="max-w-4xl space-y-4">
 
-  <Carousel {images} let:Indicators let:Controls on:change={({ detail }) => (image = detail)}>
+  <Carousel {images} onchange={(detail) => (image = detail)}>
     <Controls />
     <Indicators />
   </Carousel>
@@ -169,20 +170,22 @@ The `Carousel` exposes the `change` event containing info about the currently di
 
 ## Carousel with links
 
-You can use `slot="slide"` and internal component `Slide` to control the image display. Here's an example how to wrap images with the anchor element.
+You can use `slide` snippet and internal component `Slide` to control the image display. Here's an example how to wrap images with the anchor element.
 
 ```svelte example
 <script>
-  import { Carousel } from 'flowbite-svelte';
+  import { Carousel, Slide, Indicators} from 'flowbite-svelte';
   import images from './imageData/images.json';
 </script>
 
 <div class="max-w-4xl space-y-4">
-  <Carousel {images} duration={3900} let:Indicators>
-    <a slot="slide" href="http://google.com/search?q={images[index]?.title}" target="_blank" let:Slide let:index>
+  <Carousel {images} duration={3900}>
+    {#snippet slide(index)}
+    <a href="http://google.com/search?q={images[index]?.title}" target="_blank">
       <Slide image={images[index]} />
     </a>
-    <Indicators />
+    {/snippet}
+    <!-- Indicators / -->
   </Carousel>
 </div>
 ```
@@ -193,12 +196,12 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
 
 ```svelte example
 <script>
-  import { Carousel } from 'flowbite-svelte';
+  import { Carousel, Controls, Indicators} from 'flowbite-svelte';
   import images from './imageData/images.json';
 </script>
 
 <div class="max-w-4xl space-y-4">
-  <Carousel {images} imgClass="object-contain h-full w-fit rounded-xs" let:Indicators let:Controls class="rounded-md ring-4 ring-green-500 border-4 border-white dark:border-gray-800 min-h-[320px] bg-gray-200">
+  <Carousel {images} imgClass="object-contain h-full w-fit rounded-xs" class="rounded-md ring-4 ring-green-500 border-4 border-white dark:border-gray-800 min-h-[320px] bg-gray-200">
     <Indicators class="border border-white rounded-md p-2" />
     <Controls class="items-center text-red-400 dark:text-green-400 pt-4" />
   </Carousel>
@@ -209,26 +212,34 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
 
 ```svelte example
 <script>
-  import { Carousel, Thumbnails, Button, Indicator } from 'flowbite-svelte';
+  import { Button, Carousel, ControlButton, Controls, Indicator, Indicators, Thumbnail, Thumbnails } from 'flowbite-svelte';
   import { CaretRightOutline } from 'flowbite-svelte-icons';
   import images from './imageData/images.json';
   let index = 0;
 </script>
 
 <div class="max-w-4xl space-y-4">
-  <Carousel {images} let:Indicators let:Controls bind:index>
-    <Indicators let:selected let:index>
+  <Carousel {images} bind:index>
+    <Indicators>
+      {#snippet children(selected, index)}
       <Indicator color={selected ? 'red' : 'green'} class="w-5 h-5 text-white border border-white {selected ? 'opacity-100' : 'opacity-80'}">
         {index}
       </Indicator>
+      {/snippet}
     </Indicators>
-    <Controls let:changeSlide let:ControlButton>
-      <ControlButton name="Previous" forward={false} on:click={()=>changeSlide(false)} class="bg-red-300/50 dark:bg-red-400/50" />
-      <Button pill class="p-2 absolute top-1/2 -translate-y-1/2 end-4 font-bold" on:click={()=>changeSlide(true)}><CaretRightOutline /></Button>
+    <Controls>
+      {#snippet children(changeSlide)}
+      <ControlButton name="Previous" forward={false} onclick={()=>changeSlide(false)} class="bg-red-300/50 dark:bg-red-400/50" />
+      <Button pill class="p-2 absolute top-1/2 -translate-y-1/2 end-4 font-bold" onclick={()=>changeSlide(true)}>
+        <CaretRightOutline />
+      </Button>
+      {/snippet}
     </Controls>
   </Carousel>
-  <Thumbnails class="bg-transparent gap-3" let:Thumbnail let:image let:selected {images} bind:index>
-    <Thumbnail {...image} {selected} class="rounded-md shadow-xl hover:outline hover:outline-primary-500" activeClass="outline outline-primary-400"/>
+  <Thumbnails class="bg-transparent gap-3" {images} bind:index>
+    {#snippet children(image, selected)}
+    <img {...image} class="rounded-md shadow-xl hover:outline hover:outline-primary-500 {selected ? 'opacity-100 outline-4 outline-primary-400':'opacity-40'}"/>
+    {/snippet}
   </Thumbnails>
 </div>
 ```
@@ -237,7 +248,7 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
 
 ```svelte example
 <script>
-  import { Carousel } from 'flowbite-svelte';
+  import { Carousel, Controls, Indicators } from 'flowbite-svelte';
   import images from './imageData/images.json';
   import { scale } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
@@ -246,7 +257,7 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
 </script>
 
 <div class="max-w-4xl">
-  <Carousel {images} transition={scaleAnimation} let:Controls let:Indicators>
+  <Carousel {images} transition={scaleAnimation}>
     <Controls />
     <Indicators />
   </Carousel>
