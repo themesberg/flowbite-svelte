@@ -22,19 +22,14 @@
       ""
     ],
     [
-      "modalStatus",
+      "open",
       "any",
-      ""
+      "$bindable(false)"
     ],
     [
       "dismissable",
       "any",
       "true"
-    ],
-    [
-      "closeModal",
-      "any",
-      ""
     ],
     [
       "divClass",
@@ -92,9 +87,9 @@
       ""
     ],
     [
-      "position",
+      "placement",
       "any",
-      "\"center\""
+      ""
     ],
     [
       "class",
@@ -119,7 +114,7 @@
     [
       "rounded",
       "any",
-      "true"
+      ""
     ]
   ]
 }

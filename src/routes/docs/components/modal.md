@@ -202,7 +202,7 @@ You can use five different modal sizing options starting from extra small to ext
 <script>
   import { Button, Modal } from 'flowbite-svelte';
   let openModal = $state(false);
-  let size;
+  let size = $state();
 </script>
 
 <div class="block space-y-4 md:space-y-0 md:space-x-4 rtl:space-x-reverse">
@@ -228,7 +228,7 @@ You can use five different modal sizing options starting from extra small to ext
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Button, Modal } from 'flowbite-svelte';
-  let id;
+  let id = $state();
   let placement = $state();
   let open = $state(false);
 
@@ -237,8 +237,6 @@ You can use five different modal sizing options starting from extra small to ext
     id = `${placement}-modal`;
     open = !open;
   };
-
-  $inspect(placement)
 </script>
 
 <div class="inline-grid grid-cols-3 grid-rows-3 gap-4">
@@ -269,7 +267,7 @@ You can use five different modal sizing options starting from extra small to ext
 <script>
   import { Button, Modal, P } from 'flowbite-svelte';
   let open = $state(false);
-  let color;
+  let color = $state();
 </script>
 
 <div class="block space-y-4 md:space-y-0 md:space-x-4 rtl:space-x-reverse">

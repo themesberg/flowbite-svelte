@@ -88,9 +88,8 @@
 @props:header: any;
 @props:footer: any;
 @props:title: any;
-@props:open: any;
+@props:open: any = $bindable(false);
 @props:dismissable: any = true;
-@props:closeModal: any;
 @props:divClass: any;
 @props:contentClass: any;
 @props:closeBtnClass: any;
@@ -102,10 +101,10 @@
 @props:size: any = "md";
 @props:backdrop: any = true;
 @props:backdropClass: any;
-@props:position: any = "center";
+@props:placement: any;
 @props:class: string;
 @props:params: any = { duration: 100;
 @props:easing: any;
 @props:transition: any = fade;
-@props:rounded: any = true;
+@props:rounded: any;
 -->

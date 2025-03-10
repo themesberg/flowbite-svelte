@@ -7,9 +7,9 @@
       ""
     ],
     [
-      "drawerStatus",
+      "hidden",
       "any",
-      ""
+      "$bindable()"
     ],
     [
       "closeDrawer",
@@ -44,7 +44,7 @@
     [
       "placement",
       "any",
-      "'left'"
+      "\"left\""
     ],
     [
       "class",

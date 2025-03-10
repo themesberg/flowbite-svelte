@@ -22,7 +22,7 @@
       ""
     ],
     [
-      "dropdownStatus",
+      "open",
       "any",
       "$bindable()"
     ],

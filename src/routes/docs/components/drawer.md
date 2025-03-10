@@ -44,15 +44,15 @@ For accessibility you should also set the `id` prop to the element. This will ad
 </script>
 
 <div class="text-center">
-  <Button on:click={() => (hidden1 = false)}>Show drawer</Button>
+  <Button onclick={() => (hidden1 = false)}>Show drawer</Button>
 </div>
 
 <Drawer transitionType="fly" {transitionParams} bind:hidden={hidden1} id="sidebar1">
-  <div class="flex items-center">
+  <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="w-5 h-5 me-2.5" />Info
     </h5>
-    <CloseButton on:click={() => (hidden1 = true)} class="mb-4 dark:text-white" />
+    <CloseButton onclick={() => (hidden1 = true)} class="mb-4 dark:text-white" />
   </div>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline dark:text-primary-500 hover:no-underline"> limited-time sale </a>
@@ -71,7 +71,7 @@ Use this example to show a navigational sidebar inside the drawer component.
 
 ```svelte example hideResponsiveButtons
 <script>
-  import { Drawer, Button, CloseButton, Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper } from 'flowbite-svelte';
+  import { Drawer, Button, CloseButton, Sidebar, SidebarBrand, SidebarCta, SidebarDropdownWrapper, SidebarGroup, SidebarItem } from 'flowbite-svelte';
   import { ChartPieSolid, CartSolid, GridSolid, MailBoxSolid, UsersSolid, ShoppingBagSolid, ArrowRightToBracketOutline, EditOutline } from 'flowbite-svelte-icons';
   import { sineIn } from 'svelte/easing';
   let hidden2 = true;
@@ -84,64 +84,64 @@ Use this example to show a navigational sidebar inside the drawer component.
 </script>
 
 <div class="text-center">
-  <Button on:click={() => (hidden2 = false)}>Show navigation</Button>
+  <Button onclick={() => (hidden2 = false)}>Show navigation</Button>
 </div>
 <Drawer transitionType="fly" {transitionParams} bind:hidden={hidden2} id="sidebar2">
-  <div class="flex items-center">
+  <div class="flex items-center justify-between">
     <h5 id="drawer-navigation-label-3" class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
-    <CloseButton on:click={() => (hidden2 = true)} class="mb-4 dark:text-white" />
+    <CloseButton onclick={() => (hidden2 = true)} class="mb-4 dark:text-white" />
   </div>
   <Sidebar>
     <SidebarWrapper divClass="overflow-y-auto py-4 px-3 rounded-sm dark:bg-gray-800">
       <SidebarGroup>
         <SidebarItem label="Dashboard">
-          <svelte:fragment slot="icon">
+          {#snippet icon()}
             <ChartPieSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
-          </svelte:fragment>
+          {/snippet}
         </SidebarItem>
         <SidebarDropdownWrapper label="E-commerce">
-          <svelte:fragment slot="icon">
+          {#snippet icon()}
             <CartSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
-          </svelte:fragment>
-          <SidebarDropdownItem label="Products" />
-          <SidebarDropdownItem label="Billing" />
-          <SidebarDropdownItem label="Invoice" />
+          {/snippet}
+          <SidebarItem label="Products" />
+          <SidebarItem label="Billing" />
+          <SidebarItem label="Invoice" />
         </SidebarDropdownWrapper>
         <SidebarItem label="Kanban" {spanClass}>
-          <svelte:fragment slot="icon">
+          {#snippet icon()}
             <GridSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
-          </svelte:fragment>
-          <svelte:fragment slot="subtext">
+          {/snippet}
+          {#snippet subtext()}
             <span class="inline-flex justify-center items-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"> Pro </span>
-          </svelte:fragment>
+          {/snippet}
         </SidebarItem>
         <SidebarItem label="Inbox" {spanClass}>
-          <svelte:fragment slot="icon">
+          {#snippet icon()}
             <MailBoxSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
-          </svelte:fragment>
-          <svelte:fragment slot="subtext">
+          {/snippet}
+          {#snippet subtext()}
             <span class="inline-flex justify-center items-center p-3 ms-3 w-3 h-3 text-sm font-medium text-primary-600 bg-primary-200 rounded-full dark:bg-primary-900 dark:text-primary-200"> 3 </span>
-          </svelte:fragment>
+          {/snippet}
         </SidebarItem>
         <SidebarItem label="Users">
-          <svelte:fragment slot="icon">
+          {#snippet icon()}
             <UsersSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
-          </svelte:fragment>
+          {/snippet}
         </SidebarItem>
         <SidebarItem label="Products">
-          <svelte:fragment slot="icon">
+          {#snippet icon()}
             <ShoppingBagSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
-          </svelte:fragment>
+          {/snippet}
         </SidebarItem>
         <SidebarItem label="Sign In">
-          <svelte:fragment slot="icon">
+          {#snippet icon()}
             <ArrowRightToBracketOutline class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
-          </svelte:fragment>
+          {/snippet}
         </SidebarItem>
         <SidebarItem label="Sign Up">
-          <svelte:fragment slot="icon">
+          {#snippet icon()}
             <EditOutline class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
-          </svelte:fragment>
+          {/snippet}
         </SidebarItem>
       </SidebarGroup>
     </SidebarWrapper>
@@ -168,14 +168,14 @@ Use this example to show a contact form inside the drawer component.
 </script>
 
 <div class="text-center">
-  <Button on:click={() => (hidden3 = false)}>Show contact form</Button>
+  <Button onclick={() => (hidden3 = false)}>Show contact form</Button>
 </div>
 <Drawer transitionType="fly" {transitionParams} bind:hidden={hidden3} id="sidebar3">
-  <div class="flex items-center">
+  <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="inline-flex items-center mb-6 text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
       <InfoCircleSolid class="w-5 h-5 me-2.5" />Contact us
     </h5>
-    <CloseButton on:click={() => (hidden3 = true)} class="mb-4 dark:text-white" />
+    <CloseButton onclick={() => (hidden3 = true)} class="mb-4 dark:text-white" />
   </div>
   <form action="#" class="mb-6">
     <div class="mb-6">
@@ -220,14 +220,14 @@ Use this example if you want to add form elements inside the drawer component in
 </script>
 
 <div class="text-center">
-  <Button on:click={() => (hidden4 = false)}>Show drawer form</Button>
+  <Button onclick={() => (hidden4 = false)}>Show drawer form</Button>
 </div>
 <Drawer transitionType="fly" {transitionParams} bind:hidden={hidden4} id="sidebar4">
-  <div class="flex items-center">
+  <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="inline-flex items-center mb-6 text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
       <InfoCircleSolid class="w-5 h-5 me-2.5" />New event
     </h5>
-    <CloseButton on:click={() => (hidden4 = true)} class="mb-4 dark:text-white" />
+    <CloseButton onclick={() => (hidden4 = true)} class="mb-4 dark:text-white" />
   </div>
   <form action="#" class="mb-6">
     <div class="mb-6">
@@ -283,15 +283,15 @@ Use the placement prop to position the drawer component either on the top, right
 </script>
 
 <div class="text-center">
-  <Button on:click={() => (hidden5 = false)}>Show drawer</Button>
+  <Button onclick={() => (hidden5 = false)}>Show drawer</Button>
 </div>
 
 <Drawer placement="left" transitionType="fly" {transitionParams} bind:hidden={hidden5} id="sidebar5">
-  <div class="flex items-center">
+  <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="w-5 h-5 me-2.5" />Info
     </h5>
-    <CloseButton on:click={() => (hidden5 = true)} class="mb-4 dark:text-white" />
+    <CloseButton onclick={() => (hidden5 = true)} class="mb-4 dark:text-white" />
   </div>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline dark:text-primary-500 hover:no-underline"> limited-time sale </a>
@@ -325,15 +325,15 @@ Set the `transitionParams` variable to new variables.
 </script>
 
 <div class="text-center">
-  <Button on:click={() => (hidden6 = false)}>Show drawer</Button>
+  <Button onclick={() => (hidden6 = false)}>Show drawer</Button>
 </div>
 
 <Drawer placement="right" transitionType="fly" transitionParams={transitionParamsRight} bind:hidden={hidden6} id="sidebar6">
-  <div class="flex items-center">
+  <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="w-5 h-5 me-2.5" />Info
     </h5>
-    <CloseButton on:click={() => (hidden6 = true)} class="mb-4 dark:text-white" />
+    <CloseButton onclick={() => (hidden6 = true)} class="mb-4 dark:text-white" />
   </div>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline dark:text-primary-500 hover:no-underline"> limited-time sale </a>
@@ -365,15 +365,15 @@ Use this example to show the drawer on the top side of the page.
 </script>
 
 <div class="text-center">
-  <Button on:click={() => (hidden7 = false)}>Show drawer</Button>
+  <Button onclick={() => (hidden7 = false)}>Show drawer</Button>
 </div>
 
 <Drawer placement="top" width="w-full" transitionType="fly" transitionParams={transitionParamsTop} bind:hidden={hidden7} id="sidebar7">
-  <div class="flex items-center">
+  <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="w-5 h-5 me-2.5" />Top drawer
     </h5>
-    <CloseButton on:click={() => (hidden7 = true)} class="mb-4 dark:text-white" />
+    <CloseButton onclick={() => (hidden7 = true)} class="mb-4 dark:text-white" />
   </div>
   <p class="max-w-lg mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <A href="/" class="text-primary-600 underline dark:text-primary-500 hover:no-underline">limited-time sale</A> for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
@@ -402,15 +402,15 @@ Use this example to show the drawer on the bottom side of the page.
 </script>
 
 <div class="text-center">
-  <Button on:click={() => (hidden8 = false)}>Show drawer</Button>
+  <Button onclick={() => (hidden8 = false)}>Show drawer</Button>
 </div>
 
 <Drawer placement="bottom" width="w-full" transitionType="fly" transitionParams={transitionParamsBottom} bind:hidden={hidden8} id="sidebar8">
-  <div class="flex items-center">
+  <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="w-5 h-5 me-2.5" />Info
     </h5>
-    <CloseButton on:click={() => (hidden8 = true)} class="mb-4 dark:text-white" />
+    <CloseButton onclick={() => (hidden8 = true)} class="mb-4 dark:text-white" />
   </div>
   <p class="max-w-lg mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline dark:text-primary-500 hover:no-underline"> limited-time sale </a>
@@ -446,15 +446,15 @@ Use this example to enable the backdrop element by default.
 </script>
 
 <div class="text-center">
-  <Button on:click={() => (hiddenBackdropTrue = false)}>Show drawer</Button>
+  <Button onclick={() => (hiddenBackdropTrue = false)}>Show drawer</Button>
 </div>
 
 <Drawer backdrop={true} transitionType="fly" {transitionParams} bind:hidden={hiddenBackdropTrue} id="sidebar1">
-  <div class="flex items-center">
+  <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="w-5 h-5 me-2.5" />Info
     </h5>
-    <CloseButton on:click={() => (hiddenBackdropTrue = true)} class="mb-4 dark:text-white" />
+    <CloseButton onclick={() => (hiddenBackdropTrue = true)} class="mb-4 dark:text-white" />
   </div>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline dark:text-primary-500 hover:no-underline"> limited-time sale </a>
@@ -486,15 +486,15 @@ Use the `backdrop={false}` prop to disable the backdrop element when the drawer 
 </script>
 
 <div class="text-center">
-  <Button on:click={() => (hiddenBackdropFalse = false)}>Show drawer</Button>
+  <Button onclick={() => (hiddenBackdropFalse = false)}>Show drawer</Button>
 </div>
 
 <Drawer backdrop={false} transitionType="fly" {transitionParams} bind:hidden={hiddenBackdropFalse} id="sidebar1">
-  <div class="flex items-center">
+  <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="w-5 h-5 me-2.5" />Info
     </h5>
-    <CloseButton on:click={() => (hiddenBackdropFalse = true)} class="mb-4 dark:text-white" />
+    <CloseButton onclick={() => (hiddenBackdropFalse = true)} class="mb-4 dark:text-white" />
   </div>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline dark:text-primary-500 hover:no-underline"> limited-time sale </a>
@@ -526,15 +526,15 @@ Use `leftOffset|rightOffset|topOffset|bottomOffset` prop to change the position 
 </script>
 
 <div class="text-center">
-  <Button on:click={() => (hidden9 = false)}>Show drawer</Button>
+  <Button onclick={() => (hidden9 = false)}>Show drawer</Button>
 </div>
 
 <Drawer leftOffset="top-16 h-screen start-0" transitionType="fly" {transitionParams} bind:hidden={hidden9} id="sidebar9">
-  <div class="flex items-center">
+  <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="w-5 h-5 me-2.5" />Info
     </h5>
-    <CloseButton on:click={() => (hidden9 = true)} class="mb-4 dark:text-white" />
+    <CloseButton onclick={() => (hidden9 = true)} class="mb-4 dark:text-white" />
   </div>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline dark:text-primary-500 hover:no-underline"> limited-time sale </a>
@@ -567,15 +567,15 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 </script>
 
 <div class="text-center">
-  <Button on:click={() => (hidden10 = false)}>Show drawer</Button>
+  <Button onclick={() => (hidden10 = false)}>Show drawer</Button>
 </div>
 
 <Drawer {activateClickOutside} {backdrop} transitionType="fly" {transitionParams} bind:hidden={hidden10} id="sidebar10">
-  <div class="flex items-center">
+  <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="w-5 h-5 me-2.5" />Info
     </h5>
-    <CloseButton on:click={() => (hidden10 = true)} class="mb-4 dark:text-white" />
+    <CloseButton onclick={() => (hidden10 = true)} class="mb-4 dark:text-white" />
   </div>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline dark:text-primary-500 hover:no-underline"> limited-time sale </a>
@@ -601,15 +601,15 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 </script>
 
 <div class="text-center">
-  <Button on:click={() => (hiddenBackdropFalse = false)}>Show drawer</Button>
+  <Button onclick={() => (hiddenBackdropFalse = false)}>Show drawer</Button>
 </div>
 
 <Drawer activateClickOutside={false} transitionType="fly" {transitionParams} bind:hidden={hiddenBackdropFalse} id="sidebar1">
-  <div class="flex items-center">
+  <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="w-5 h-5 me-2.5" />Info
     </h5>
-    <CloseButton on:click={() => (hiddenBackdropFalse = true)} class="mb-4 dark:text-white" />
+    <CloseButton onclick={() => (hiddenBackdropFalse = true)} class="mb-4 dark:text-white" />
   </div>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 underline dark:text-primary-500 hover:no-underline"> limited-time sale </a>
