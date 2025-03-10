@@ -25,6 +25,10 @@
   //     bottom: " border-b border-e",
   // };
 
+  // calming down the warnings
+  getSide;
+  getOppositePlacement;
+
   const rotationMap: Record<Side, string> = {
     left: " rotate-45",
     right: " -rotate-135",
@@ -52,13 +56,7 @@
   }
 </script>
 
-<div use:positioning class:border-none={!border} class="popover-arrow clip block pointer-events-none bg-inherit text-inherit w-[10px] h-[10px] border-l border-b {className}"></div>
-
-<style>
-  :global(.clip) {
-    clip-path: polygon(0 0, 0% 100%, 100% 100%, 100% 85%, 15% 0);
-  }
-</style>
+<div use:positioning class:border-none={!border} class="popover-arrow clip pointer-events-none block h-[10px] w-[10px] border-b border-l bg-inherit text-inherit {className}"></div>
 
 <!--
 @component
@@ -66,3 +64,9 @@
 ## Props
 @props: 
 -->
+
+<style>
+  :global(.clip) {
+    clip-path: polygon(0 0, 0% 100%, 100% 100%, 100% 85%, 15% 0);
+  }
+</style>
