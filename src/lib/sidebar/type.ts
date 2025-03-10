@@ -62,7 +62,7 @@ interface SidebarDropdownWrapperProps extends HTMLButtonAttributes {
   children: Snippet;
   arrowup?: Snippet;
   arrowdown?: Snippet;
-  iconSlot?: Snippet;
+  icon?: Snippet;
   isOpen?: boolean | undefined;
   btnClass?: string;
   label: string | undefined;
@@ -82,7 +82,7 @@ interface SidebarGroupProps extends HTMLAttributes<HTMLUListElement> {
 }
 
 interface SidebarItemProps extends HTMLAnchorAttributes {
-  iconSlot?: Snippet;
+  icon?: Snippet;
   subtext?: Snippet;
   label?: string;
   spanClass?: string;

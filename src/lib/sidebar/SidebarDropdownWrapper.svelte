@@ -12,7 +12,7 @@
     isSingle: boolean;
   };
 
-  let { children, arrowup, arrowdown, iconSlot, isOpen = false, btnClass, label, spanClass, ulClass, transition = slide, params, svgClass, class: className, onclick, ...restProps }: Props = $props();
+  let { children, arrowup, arrowdown, icon, isOpen = false, btnClass, label, spanClass, ulClass, transition = slide, params, svgClass, class: className, onclick, ...restProps }: Props = $props();
 
   const { base, btn, span, svg, ul } = $derived(sidebardropdownwrapper());
 
@@ -50,8 +50,8 @@
 
 <li class={base({ class: clsx(className) })}>
   <button {...restProps} onclick={handleDropdown} type="button" class={btn({ class: btnClass })} aria-controls="sidebar-dropdown">
-    {#if iconSlot}
-      {@render iconSlot()}
+    {#if icon}
+      {@render icon()}
     {/if}
     <span class={span({ class: spanClass })}>{label}</span>
     {#if isOpen}
@@ -84,7 +84,7 @@
 @props: children: any;
 @props:arrowup: any;
 @props:arrowdown: any;
-@props:iconSlot: any;
+@props:icon: any;
 @props:isOpen: any = false;
 @props:btnClass: any;
 @props:label: any;

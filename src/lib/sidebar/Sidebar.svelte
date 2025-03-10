@@ -1,31 +1,35 @@
 <script lang="ts">
-  import { setContext } from 'svelte';
-  import { fly } from 'svelte/transition';
-  import { writable } from 'svelte/store';
-  import { sineIn } from 'svelte/easing';
-  import { type SidebarProps as Props, sidebar, type SidebarCtxType } from '.';
+  import { setContext } from "svelte";
+  import { fly } from "svelte/transition";
+  import { writable } from "svelte/store";
+  import { sineIn } from "svelte/easing";
+  import { type SidebarProps as Props, sidebar, type SidebarCtxType } from ".";
+  import clsx from "clsx";
 
-  let { children, isOpen = false, closeSidebar, isSingle = true, breakpoint = 'md', position = 'fixed', activateClickOutside = true, backdrop = true, backdropClass, transition = fly, params, divClass, ariaLabel, nonActiveClass, activeClass, activeUrl = '', class: className, ...restProps }: Props = $props();
+  let { children, isOpen = false, closeSidebar, isSingle = true, breakpoint = "md", position = "fixed", activateClickOutside = true, backdrop = true, backdropClass, transition = fly, params, divClass, ariaLabel, nonActiveClass, activeClass, activeUrl = "", class: className, ...restProps }: Props = $props();
 
   const breakpointValues = {
     sm: 640,
     md: 768,
     lg: 1024,
     xl: 1280,
-    '2xl': 1536
+    "2xl": 1536
   };
 
-  let isLargeScreen = $state(false);
+  let innerWidth: number = $state(-1);
+  let isLargeScreen = $derived(innerWidth >= breakpointValues[breakpoint]);
 
-  const activeUrlStore = writable('');
-  setContext('activeUrl', activeUrlStore);
+  const initialPosition = position;
+
+  $effect(() => {
+    // position = isLargeScreen ? "static" : initialPosition;
+  });
+
+  const activeUrlStore = writable("");
+  setContext("activeUrl", activeUrlStore);
   $effect(() => {
     activeUrlStore.set(activeUrl);
   });
-
-  function checkScreenSize() {
-    isLargeScreen = window.innerWidth >= breakpointValues[breakpoint];
-  }
 
   const { base, active, nonactive, div, backdrop: backdropCls } = $derived(sidebar({ isOpen, breakpoint, position, backdrop }));
 
@@ -34,6 +38,7 @@
       return closeSidebar;
     },
     get activeClass() {
+      console.log(active({ class: activeClass }));
       return active({ class: activeClass });
     },
     get nonActiveClass() {
@@ -44,13 +49,10 @@
 
   let transitionParams = params ? params : { x: -320, duration: 200, easing: sineIn };
 
-  setContext('sidebarContext', sidebarCtx);
-  $effect(() => {
-    checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-    return () => window.removeEventListener('resize', checkScreenSize);
-  });
+  setContext("sidebarContext", sidebarCtx);
 </script>
+
+<svelte:window bind:innerWidth />
 
 {#if isOpen || isLargeScreen}
   {#if isOpen}
@@ -59,12 +61,12 @@
     {:else if backdrop && !activateClickOutside}
       <div role="presentation" class={backdropCls({ class: backdropClass })}></div>
     {:else if !backdrop && activateClickOutside}
-      <div role="presentation" class="fixed1 start-0 top-0 z-50 h-full w-full" onclick={closeSidebar}></div>
+      <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full" onclick={closeSidebar}></div>
     {:else if !backdrop && !activateClickOutside}
-      <div role="presentation" class="fixed1 start-0 top-0 z-50 h-full w-full"></div>
+      <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full"></div>
     {/if}
   {/if}
-  <aside transition:transition={transitionParams} {...restProps} class={base({ className })} aria-label={ariaLabel}>
+  <aside transition:transition={transitionParams} {...restProps} class={base({ class: clsx(className) })} aria-label={ariaLabel}>
     <div class={div({ class: divClass })}>
       {@render children()}
     </div>

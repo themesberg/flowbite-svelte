@@ -16,6 +16,9 @@
   import DarkMode from "$lib/darkmode/DarkMode.svelte";
   import type { Placement } from "@floating-ui/utils";
   import { twJoin, twMerge } from "tailwind-merge";
+  import CloseButton from "$lib/utils/CloseButton.svelte";
+  import { fly } from "svelte/transition";
+  import Dialog from "./Dialog.svelte";
 
   const { base, hrefClass } = badge({ class: "dupa", color: "red" });
   let searchTerm = $state("");
@@ -32,75 +35,54 @@
       return Star(anchor, { ..._props, ...props });
     };
   }
-  const placements: [string, Placement, Placement][] = [
-    ["start-2 top-2", "right", "bottom"],
-    ["end-6 top-2", "bottom", "left"],
-    ["end-6 bottom-6", "left", "top"],
-    ["start-2 bottom-6", "top", "right"]
-  ];
+
+  let open: boolean = $state(false);
 </script>
 
-<div class="mx-48">
-  <DarkMode></DarkMode>
-  <p>Tekst</p>
-  <div>
-    <Button>Dropdown</Button>
-    <Dropdown trigger="hover" arrow class="m-20 p-2">
-      <DropdownHeader>Header</DropdownHeader>
-      <DropdownGroup>
-        <DropdownItem>Raz</DropdownItem>
-        <DropdownItem>Dwa</DropdownItem>
-      </DropdownGroup>
-    </Dropdown>
-  </div>
-  {twMerge("start-6", "start-5")}
-</div>
+<Button class="ms-96 mt-12" onclick={() => (open = !open)}>Open dialog</Button>
+<Dialog bind:open>
+  <p>Raz</p>
+  <p>Raz</p>
+  <p>Raz</p>
+</Dialog>
 
-<SpeedDial defaultClass="fixed end-6 bottom-6" placement="left">
-  <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-6 h-6" />
-  </SpeedDialButton>
-  <SpeedDialButton name="Print">
-    <PrinterSolid class="w-6 h-6" />
-  </SpeedDialButton>
-  <SpeedDialButton name="Download">
-    <DownloadSolid class="w-6 h-6" />
-  </SpeedDialButton>
-  <SpeedDialButton name="Copy">
-    <FileCopySolid class="w-6 h-6" />
-  </SpeedDialButton>
-</SpeedDial>
+<!-- <style>
+  /* enable transitions */
+  [popover],
+  dialog,
+  ::backdrop {
+    transition:
+      display 3s allow-discrete,
+      overlay 3s allow-discrete,
+      opacity 3s;
+    opacity: 0;
+  }
 
-<SpeedDial defaultClass="fixed start-2 bottom-6" placement="left">
-  <SpeedDialButton name="Share">
-    <ShareNodesSolid class="w-6 h-6" />
-  </SpeedDialButton>
-  <SpeedDialButton name="Print">
-    <PrinterSolid class="w-6 h-6" />
-  </SpeedDialButton>
-  <SpeedDialButton name="Download">
-    <DownloadSolid class="w-6 h-6" />
-  </SpeedDialButton>
-  <SpeedDialButton name="Copy">
-    <FileCopySolid class="w-6 h-6" />
-  </SpeedDialButton>
-</SpeedDial>
+  /* On Stage */
+  :popover-open,
+  :popover-open::backdrop,
+  [open],
+  [open]::backdrop {
+    opacity: 1;
+  }
 
-{#if false}
-  {#each placements as [position, placement, tooltip]}
-    <SpeedDial defaultClass="fixed {position}" {placement}>
-      <SpeedDialButton name="Share" {tooltip}>
-        <ShareNodesSolid class="w-6 h-6" />
-      </SpeedDialButton>
-      <SpeedDialButton name="Print" {tooltip}>
-        <PrinterSolid class="w-6 h-6" />
-      </SpeedDialButton>
-      <SpeedDialButton name="Download" {tooltip}>
-        <DownloadSolid class="w-6 h-6" />
-      </SpeedDialButton>
-      <SpeedDialButton name="Copy" {tooltip}>
-        <FileCopySolid class="w-6 h-6" />
-      </SpeedDialButton>
-    </SpeedDial>
-  {/each}
-{/if}
+  /* Off Stage */
+  @starting-style {
+    :popover-open,
+    :popover-open::backdrop,
+    [open],
+    [open]::backdrop {
+      opacity: 0;
+    }
+  }
+
+  @layer demo.support {
+    html {
+      color-scheme: dark light;
+    }
+
+    ::backdrop {
+      background-color: #0005;
+    }
+  }
+</style> -->
