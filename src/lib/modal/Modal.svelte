@@ -4,8 +4,11 @@
   import { type ModalProps as Props, modal } from ".";
   import { fade } from "svelte/transition";
   import { sineIn } from "svelte/easing";
+  import clsx from "clsx";
 
-  let { children, header, footer, title, modalStatus, dismissable = true, closeModal, divClass, contentClass, closeBtnClass, h3Class, headerClass, bodyClass, footerClass, outsideClose = true, size = "md", backdrop = true, backdropClass, position = "center", class: className, params = { duration: 100, easing: sineIn }, transition = fade, rounded = true, ...restProps }: Props = $props();
+  // TODO: missing focus trap
+
+  let { children, header, footer, title, open = $bindable(false), dismissable = true, divClass, contentClass, closeBtnClass, h3Class, headerClass, bodyClass, footerClass, outsideClose = true, size = "md", backdrop = true, backdropClass, placement, class: className, params = { duration: 100, easing: sineIn }, transition = fade, rounded, ...restProps }: Props = $props();
 
   const {
     base,
@@ -19,15 +22,22 @@
     h3
   } = $derived(
     modal({
-      position,
+      placement,
       size,
       backdrop,
       rounded
     })
   );
+
+  function closeModal(ev: KeyboardEvent | MouseEvent) {
+    if (ev instanceof KeyboardEvent && ev.key !== "Escape") return;
+    open = false;
+  }
 </script>
 
-{#if modalStatus}
+<svelte:window onkeydown={open ? closeModal : undefined} />
+
+{#if open}
   {#if backdrop && outsideClose}
     <div role="presentation" class={backdropCls({ class: backdropClass })} onclick={closeModal}></div>
   {:else if backdrop && !outsideClose}
@@ -37,7 +47,7 @@
   {:else if !backdrop && !outsideClose}
     <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full"></div>
   {/if}
-  <div {...restProps} class={base({ className })} transition:transition={params as ParamsType} tabindex="-1">
+  <div {...restProps} class={base({ class: clsx(className) })} transition:transition={params as ParamsType} tabindex="-1">
     <div class={div({ class: divClass })}>
       <div class={content({ class: contentClass })}>
         {#if title || header}
@@ -78,7 +88,7 @@
 @props:header: any;
 @props:footer: any;
 @props:title: any;
-@props:modalStatus: any;
+@props:open: any;
 @props:dismissable: any = true;
 @props:closeModal: any;
 @props:divClass: any;

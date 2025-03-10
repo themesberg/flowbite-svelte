@@ -37,17 +37,17 @@ An option of automatic closing of the modal can be enabled by setting the `autoc
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Button, Modal } from 'flowbite-svelte';
-  let defaultModal = false;
+  let defaultModal = $state(false);
 </script>
 
-<Button on:click={() => (defaultModal = true)}>Default modal</Button>
+<Button onclick={() => (defaultModal = true)}>Default modal</Button>
 <Modal title="Terms of Service" bind:open={defaultModal} autoclose>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
-  <svelte:fragment slot="footer">
-    <Button on:click={() => alert('Handle "success"')}>I accept</Button>
+  {#snippet footer()}
+    <Button onclick={() => alert('Handle "success"')}>I accept</Button>
     <Button color="alternative">Decline</Button>
-  </svelte:fragment>
+  {/snippet}
 </Modal>
 ```
 
@@ -58,18 +58,18 @@ You can use the `outsideclose` prop to allow the user to close the modal by clic
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Button, Modal } from 'flowbite-svelte';
-  let clickOutsideModal = false;
+  let clickOutsideModal = $state(false);
 </script>
 
-<Button on:click={() => (clickOutsideModal = true)}>Default modal</Button>
+<Button onclick={() => (clickOutsideModal = true)}>Default modal</Button>
 
 <Modal title="Terms of Service" bind:open={clickOutsideModal} autoclose outsideclose>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
-  <svelte:fragment slot="footer">
-    <Button on:click={() => alert('Handle "success"')}>I accept</Button>
+  {#snippet footer()}
+    <Button onclick={() => alert('Handle "success"')}>I accept</Button>
     <Button color="alternative">Decline</Button>
-  </svelte:fragment>
+  {/snippet}
 </Modal>
 ```
 
@@ -77,16 +77,16 @@ You can use the `outsideclose` prop to allow the user to close the modal by clic
 
 You can use this modal example to show a pop-up decision dialog to your users especially when deleting an item and making sure if the user really wants to do that by double confirming.
 
-Notice lack of the `footer` slot.
+Notice lack of the `footer` snippet.
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Button, Modal } from 'flowbite-svelte';
   import { ExclamationCircleOutline } from 'flowbite-svelte-icons';
-  let popupModal = false;
+  let popupModal = $state(false);
 </script>
 
-<Button on:click={() => (popupModal = true)}>Pop-up modal</Button>
+<Button onclick={() => (popupModal = true)}>Pop-up modal</Button>
 
 <Modal bind:open={popupModal} size="xs" autoclose>
   <div class="text-center">
@@ -105,10 +105,10 @@ Use this modal example with form input element to receive information from your 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Button, Modal, Label, Input, Checkbox } from 'flowbite-svelte';
-  let formModal = false;
+  let formModal = $state(false);
 </script>
 
-<Button on:click={() => (formModal = true)}>Form modal</Button>
+<Button onclick={() => (formModal = true)}>Form modal</Button>
 
 <Modal bind:open={formModal} size="xs" autoclose={false} class="w-full">
   <form class="flex flex-col space-y-6" action="#">
@@ -146,10 +146,10 @@ Use this web3 modal component to show crypto wallet connection options like Meta
   import Fortmatic from '../../utils/icons/Fortmatic.svelte';
   import WalletConnect from '../../utils/icons/WalletConnect.svelte';
   import { QuestionCircleOutline } from 'flowbite-svelte-icons';
-  let walletModal = false;
+  let walletModal = $state(false);
 </script>
 
-<Button on:click={() => (walletModal = true)}>Crypto wallet modal</Button>
+<Button onclick={() => (walletModal = true)}>Crypto wallet modal</Button>
 
 <Modal title="Connect wallet" bind:open={walletModal} size="xs">
   <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Connect with one of our available wallet providers or create a new one.</p>
@@ -201,25 +201,25 @@ You can use five different modal sizing options starting from extra small to ext
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Button, Modal } from 'flowbite-svelte';
-  let openModal = false;
+  let openModal = $state(false);
   let size;
 </script>
 
 <div class="block space-y-4 md:space-y-0 md:space-x-4 rtl:space-x-reverse">
-  <Button size="xs" on:click={() => { size = 'xs'; openModal = true; }}>xs</Button>
-  <Button size="sm" on:click={() => { size = 'sm'; openModal = true; }}>sm</Button>
-  <Button size="md" on:click={() => { size = 'md'; openModal = true; }}>md</Button>
-  <Button size="lg" on:click={() => { size = 'lg'; openModal = true; }}>lg</Button>
-  <Button size="xl" on:click={() => { size = 'xl'; openModal = true; }}>xl</Button>
+  <Button size="xs" onclick={() => { size = 'xs'; openModal = true; }}>xs</Button>
+  <Button size="sm" onclick={() => { size = 'sm'; openModal = true; }}>sm</Button>
+  <Button size="md" onclick={() => { size = 'md'; openModal = true; }}>md</Button>
+  <Button size="lg" onclick={() => { size = 'lg'; openModal = true; }}>lg</Button>
+  <Button size="xl" onclick={() => { size = 'xl'; openModal = true; }}>xl</Button>
 </div>
 
 <Modal title="Terms of Service" bind:open={openModal} {size} autoclose>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
-  <svelte:fragment slot="footer">
+  {#snippet footer()}
     <Button>I accept</Button>
     <Button color="alternative">Decline</Button>
-  </svelte:fragment>
+  {/snippet}
 </Modal>
 ```
 
@@ -229,35 +229,37 @@ You can use five different modal sizing options starting from extra small to ext
 <script>
   import { Button, Modal } from 'flowbite-svelte';
   let id;
-  let placement;
-  let open = false;
+  let placement = $state();
+  let open = $state(false);
 
   const setPlacement = (ev) => {
     placement = ev.target.textContent; // text in the button
     id = `${placement}-modal`;
     open = !open;
   };
+
+  $inspect(placement)
 </script>
 
 <div class="inline-grid grid-cols-3 grid-rows-3 gap-4">
-  <Button on:click={setPlacement}>top-left</Button>
-  <Button on:click={setPlacement}>top-center</Button>
-  <Button on:click={setPlacement}>top-right</Button>
-  <Button on:click={setPlacement}>center-left</Button>
-  <Button on:click={setPlacement}>center</Button>
-  <Button on:click={setPlacement}>center-right</Button>
-  <Button on:click={setPlacement}>bottom-left</Button>
-  <Button on:click={setPlacement}>bottom-center</Button>
-  <Button on:click={setPlacement}>bottom-right</Button>
+  <Button onclick={setPlacement}>top-left</Button>
+  <Button onclick={setPlacement}>top-center</Button>
+  <Button onclick={setPlacement}>top-right</Button>
+  <Button onclick={setPlacement}>center-left</Button>
+  <Button onclick={setPlacement}>center</Button>
+  <Button onclick={setPlacement}>center-right</Button>
+  <Button onclick={setPlacement}>bottom-left</Button>
+  <Button onclick={setPlacement}>bottom-center</Button>
+  <Button onclick={setPlacement}>bottom-right</Button>
 </div>
 
 <Modal {id} title="Terms of Service" bind:open {placement} autoclose>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
-  <svelte:fragment slot="footer">
+  {#snippet footer()}
     <Button>I accept</Button>
     <Button color="alternative">Decline</Button>
-  </svelte:fragment>
+  {/snippet}
 </Modal>
 ```
 
@@ -266,24 +268,24 @@ You can use five different modal sizing options starting from extra small to ext
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Button, Modal, P } from 'flowbite-svelte';
-  let open = false;
+  let open = $state(false);
   let color;
 </script>
 
 <div class="block space-y-4 md:space-y-0 md:space-x-4 rtl:space-x-reverse">
-  <Button on:click={() => {color = 'primary'; open = true;}}>Primary modal</Button>
-  <Button color="red" on:click={() => { color = 'red'; open = true; }}>Red modal</Button>
-  <Button color="green" on:click={() => { color = 'green'; open = true; }}>Green modal</Button>
-  <Button color="blue" on:click={() => { color = 'blue'; open = true; }}>Blue modal</Button>
-  <Button color="yellow" on:click={() => { color = 'yellow'; open = true; }}>Yellow modal</Button>
+  <Button onclick={() => {color = 'primary'; open = true;}}>Primary modal</Button>
+  <Button color="red" onclick={() => { color = 'red'; open = true; }}>Red modal</Button>
+  <Button color="green" onclick={() => { color = 'green'; open = true; }}>Green modal</Button>
+  <Button color="blue" onclick={() => { color = 'blue'; open = true; }}>Blue modal</Button>
+  <Button color="yellow" onclick={() => { color = 'yellow'; open = true; }}>Yellow modal</Button>
 </div>
 
 <Modal title="Terms of Service" bind:open {color} autoclose>
   <div class="text-base leading-relaxed">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</div>
-  <svelte:fragment slot="footer">
-    <Button on:click={() => alert('Handle "success"')} {color}>I accept</Button>
+  {#snippet footer()}
+    <Button onclick={() => alert('Handle "success"')} {color}>I accept</Button>
     <Button color="alternative">Decline</Button>
-  </svelte:fragment>
+  {/snippet}
 </Modal>
 ```
 
@@ -292,10 +294,10 @@ You can use five different modal sizing options starting from extra small to ext
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Button, Modal } from 'flowbite-svelte';
-  let scrollingModal = false;
+  let scrollingModal = $state(false);
 </script>
 
-<Button on:click={() => (scrollingModal = true)} autoclose>Scrolling modal</Button>
+<Button onclick={() => (scrollingModal = true)} autoclose>Scrolling modal</Button>
 
 <Modal title="Terms of Service" bind:open={scrollingModal}>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
@@ -312,10 +314,10 @@ You can use five different modal sizing options starting from extra small to ext
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
-  <svelte:fragment slot="footer">
-    <Button on:click={() => alert('Handle "success"')}>I accept</Button>
+  {#snippet footer()}
+    <Button onclick={() => alert('Handle "success"')}>I accept</Button>
     <Button color="alternative">Decline</Button>
-  </svelte:fragment>
+  {/snippet}
 </Modal>
 ```
 

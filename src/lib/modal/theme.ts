@@ -1,4 +1,6 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type ModalVariants = VariantProps<typeof modal>;
 
 export const modal = tv({
   slots: {
@@ -17,7 +19,7 @@ export const modal = tv({
     //   fixed: { base: 'fixed' },
     //   absolute: { base: 'absolute' }
     // },
-    position: {
+    placement: {
       "top-left": { base: "justify-start items-start" },
       "top-center": { base: "justify-center items-start" },
       "top-right": { base: "justify-end items-start" },
@@ -45,5 +47,9 @@ export const modal = tv({
     shadow: {
       true: { content: "shadow-md" }
     }
+  },
+  defaultVariants: {
+    placement: "center",
+    rounded: true
   }
 });
