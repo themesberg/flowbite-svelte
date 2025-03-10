@@ -5,8 +5,10 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 import CloseButton from "./CloseButton.svelte";
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+import type { HTMLButtonAttributes } from "svelte/elements";
 
+type CloseButtonVariants = VariantProps<typeof closeButtonVariants>;
 const closeButtonVariants = tv({
   base: "focus:outline-hidden whitespace-normal",
   variants: {
@@ -31,7 +33,8 @@ const closeButtonVariants = tv({
       purple: "text-purple-500 focus:ring-purple-400 hover:bg-purple-200 dark:hover:bg-purple-800 dark:hover:text-purple-300",
       fuchsia: "text-fuchsia-500 focus:ring-fuchsia-400 hover:bg-fuchsia-200 dark:hover:bg-fuchsia-800 dark:hover:text-fuchsia-300",
       pink: "text-pink-500 focus:ring-pink-400 hover:bg-pink-200 dark:hover:bg-pink-800 dark:hover:text-pink-300",
-      rose: "text-rose-500 focus:ring-rose-400 hover:bg-rose-200 dark:hover:bg-rose-800 dark:hover:text-rose-300"
+      rose: "text-rose-500 focus:ring-rose-400 hover:bg-rose-200 dark:hover:bg-rose-800 dark:hover:text-rose-300",
+      none: ""
     },
     size: {
       xs: "m-0.5 rounded-xs focus:ring-1 p-0.5",
@@ -69,17 +72,12 @@ const closeButtonVariants = tv({
   ]
 });
 
-type ColorType = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined;
-type SizeType = "md" | "xs" | "sm" | "lg" | undefined;
 
-interface CloseButtonProps {
-  color?: ColorType;
+interface CloseButtonProps extends CloseButtonVariants, Omit<HTMLButtonAttributes, "color"> {
   onclick?: (ev: MouseEvent) => void;
   name?: string;
   ariaLabel?: string;
-  size?: SizeType;
   href?: string;
-  class?: string;
 }
 
 export { CloseButton, closeButtonVariants, type CloseButtonProps };

@@ -116,7 +116,7 @@ Use this example if you want to create a multi-level dropdown and select compone
     USA
     <ChevronDownOutline class="w-6 h-6 ms-2" />
   </button>
-  <Dropdown triggeredBy="#states-button">
+  <Dropdown simple triggeredBy="#states-button">
     <DropdownItem class="flex items-center">
       <Usa />
       United States
@@ -304,9 +304,9 @@ Some keyboard interaction was implemented. Use <Kbd class="p-1.5"><ArrowUpOutlin
 
 ### Customization
 
-To customize the look and feel use the `slot` to insert inner [`Badge`](/docs/components/badge) component.
+To customize the look and feel use the `children` snippet to insert inner [`Badge`](/docs/components/badge) component.
 
-Remember to connect the `clear` slot's prop to trigger option removal.
+Remember to connect the `clear` snippet's prop to trigger option removal.
 
 ```svelte example class="h-96"
 <script>
@@ -322,10 +322,12 @@ Remember to connect the `clear` slot's prop to trigger option removal.
   ];
 </script>
 
-<MultiSelect items={countries} bind:value={selected} let:item let:clear>
+<MultiSelect items={countries} bind:value={selected}>
+  {#snippet children({item, clear})}
   <Badge color={item.color} dismissable params={{ duration: 100 }} on:close={clear}>
     {item.name}
   </Badge>
+  {/snippet}
 </MultiSelect>
 ```
 
