@@ -2,6 +2,7 @@ import { type Writable } from "svelte/store";
 import type { Snippet } from "svelte";
 import type { HTMLAttributes, HTMLButtonAttributes, HTMLAnchorAttributes } from "svelte/elements";
 import type { TransitionFunc, ParamsType } from "../types";
+import type { SidebarVariants } from "./theme";
 
 type SidebarCtxType = {
   closeSidebar?: () => void;
@@ -12,17 +13,12 @@ type SidebarCtxType = {
   activeUrl?: string;
 };
 
-type BreakpointType = "sm" | "md" | "lg" | "xl" | "2xl" | undefined;
-type PosisionType = "fixed" | "absolute" | "static" | undefined;
-
-interface SidebarProps extends HTMLAttributes<HTMLElement> {
+interface SidebarProps extends SidebarVariants, HTMLAttributes<HTMLElement> {
   children: Snippet;
   isOpen?: boolean;
   closeSidebar?: () => void;
   activateClickOutside?: boolean;
   isSingle?: boolean;
-  breakpoint?: BreakpointType;
-  position?: PosisionType;
   ariaLabel?: string;
   divClass?: string;
   nonActiveClass?: string;
@@ -35,11 +31,10 @@ interface SidebarProps extends HTMLAttributes<HTMLElement> {
 }
 
 interface SidebarButtonProps extends HTMLButtonAttributes {
-  breakpoint?: BreakpointType;
+  breakpoint?: SidebarVariants["breakpoint"];
 }
 
 interface SidebarCtaProps extends HTMLAttributes<HTMLDivElement> {
-  children: Snippet;
   icon?: Snippet;
   divClass?: string;
   spanClass?: string;
@@ -52,7 +47,6 @@ interface SiteType {
   img?: string;
 }
 interface SidebarBrandProps extends HTMLAnchorAttributes {
-  children?: Snippet;
   site?: SiteType;
   imgClass?: string;
   spanClass?: string;
@@ -92,4 +86,4 @@ interface SidebarItemProps extends HTMLAnchorAttributes {
   active?: boolean;
 }
 
-export type { SidebarProps, SidebarDropdownWrapperProps, SidebarGroupProps, SidebarItemProps, SidebarCtxType, SidebarButtonProps, SidebarCtaProps, SidebarBrandProps, BreakpointType, PosisionType };
+export type { SidebarProps, SidebarDropdownWrapperProps, SidebarGroupProps, SidebarItemProps, SidebarCtxType, SidebarButtonProps, SidebarCtaProps, SidebarBrandProps };

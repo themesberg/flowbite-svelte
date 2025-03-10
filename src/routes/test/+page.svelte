@@ -1,24 +1,7 @@
 <script lang="ts">
-  import Button from "$lib/buttons/Button.svelte";
-  import Dropdown from "$lib/dropdown/Dropdown.svelte";
-  import DropdownGroup from "$lib/dropdown/DropdownGroup.svelte";
-  import DropdownHeader from "$lib/dropdown/DropdownHeader.svelte";
-  import DropdownItem from "$lib/dropdown/DropdownItem.svelte";
-  import Rating from "$lib/rating/Rating.svelte";
+  import { badge } from "$lib/badge/theme";
   import Star from "$lib/rating/Star.svelte";
   import type { ComponentInternals, ComponentProps } from "svelte";
-  import { badge } from "$lib/badge/theme";
-  import P from "$lib/typography/paragraph/P.svelte";
-
-  import SpeedDial from "$lib/speed-dial/SpeedDial.svelte";
-  import SpeedDialButton from "$lib/speed-dial/SpeedDialButton.svelte";
-  import { DownloadSolid, FileCopySolid, PrinterSolid, ShareNodesSolid } from "flowbite-svelte-icons";
-  import DarkMode from "$lib/darkmode/DarkMode.svelte";
-  import type { Placement } from "@floating-ui/utils";
-  import { twJoin, twMerge } from "tailwind-merge";
-  import CloseButton from "$lib/utils/CloseButton.svelte";
-  import { fly } from "svelte/transition";
-  import Dialog from "./Dialog.svelte";
 
   const { base, hrefClass } = badge({ class: "dupa", color: "red" });
   let searchTerm = $state("");
@@ -38,13 +21,6 @@
 
   let open: boolean = $state(false);
 </script>
-
-<Button class="ms-96 mt-12" onclick={() => (open = !open)}>Open dialog</Button>
-<Dialog bind:open>
-  <p>Raz</p>
-  <p>Raz</p>
-  <p>Raz</p>
-</Dialog>
 
 <!-- <style>
   /* enable transitions */

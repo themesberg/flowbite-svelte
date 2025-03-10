@@ -1,4 +1,6 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type SidebarVariants = VariantProps<typeof sidebar>;
 
 export const sidebar = tv({
   slots: {

@@ -24,12 +24,12 @@
     [
       "breakpoint",
       "any",
-      "'md'"
+      "\"md\""
     ],
     [
       "position",
       "any",
-      "'fixed'"
+      "\"fixed\""
     ],
     [
       "activateClickOutside",
@@ -79,7 +79,7 @@
     [
       "activeUrl",
       "any",
-      "''"
+      "\"\""
     ],
     [
       "class",

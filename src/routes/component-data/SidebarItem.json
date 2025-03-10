@@ -2,7 +2,7 @@
   "name": "SidebarItem",
   "props": [
     [
-      "iconSlot",
+      "icon",
       "any",
       ""
     ],
@@ -24,7 +24,7 @@
     [
       "spanClass",
       "any",
-      "'ms-3 dupa'"
+      "\"ms-3\""
     ],
     [
       "activeClass",
