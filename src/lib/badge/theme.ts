@@ -1,7 +1,7 @@
-import { defaultConfig, tv, type VariantProps } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
 
 type BadgeVariants = VariantProps<typeof badge>;
-// console.log('BC', defaultConfig)
+
 const badge = tv({
   slots: {
     hrefClass: "flex align-middle",

@@ -40,7 +40,6 @@
     "@changesets/cli": "2.28.1",
     "@docsearch/css": "^3.9.0",
     "@docsearch/js": "^3.9.0",
-    "@floating-ui/utils": "^0.2.9",
     "@playwright/test": "1.50.1",
     "@sveltejs/adapter-vercel": "^5.6.3",
     "@sveltejs/kit": "^2.17.3",
@@ -128,6 +127,7 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1.6.13",
+    "@floating-ui/utils": "^0.2.9",
     "apexcharts": "^4.5.0",
     "flowbite": "^3.1.2",
     "tailwind-merge": "^3.0.2"

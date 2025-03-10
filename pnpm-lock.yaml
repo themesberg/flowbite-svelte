@@ -8,6 +8,9 @@ dependencies:
   '@floating-ui/dom':
     specifier: ^1.6.13
     version: 1.6.13
+  '@floating-ui/utils':
+    specifier: ^0.2.9
+    version: 0.2.9
   apexcharts:
     specifier: ^4.5.0
     version: 4.5.0
@@ -28,9 +31,6 @@ devDependencies:
   '@docsearch/js':
     specifier: ^3.9.0
     version: 3.9.0(@algolia/client-search@5.20.3)(search-insights@2.17.3)
-  '@floating-ui/utils':
-    specifier: ^0.2.9
-    version: 0.2.9
   '@playwright/test':
     specifier: 1.50.1
     version: 1.50.1
@@ -1083,6 +1083,7 @@ packages:
 
   /@floating-ui/utils@0.2.9:
     resolution: {integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==}
+    dev: false
 
   /@humanfs/core@0.19.1:
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
