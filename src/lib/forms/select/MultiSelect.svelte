@@ -141,10 +141,5 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let items: NonNullable<$$Props['items']> = [];
-@prop export let value: NonNullable<$$Props['value']> = [];
-@prop export let size: NonNullable<$$Props['size']> = 'md';
-@prop export let dropdownClass: $$Props['dropdownClass'] = '';
-@prop export let placeholder: $$Props['placeholder'] = '';
-@prop export let disabled: $$Props['disabled'] = false;
+@props: 
 -->

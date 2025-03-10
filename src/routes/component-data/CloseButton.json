@@ -3,32 +3,32 @@
   "props": [
     [
       "color",
-      "\"primary\" | \"secondary\" | \"gray\" | \"red\" | \"orange\" | \"amber\" | \"yellow\" | \"lime\" | \"green\" | \"emerald\" | \"teal\" | \"cyan\" | \"sky\" | \"blue\" | \"indigo\" | \"violet\" | \"purple\" | \"fuchsia\" | \"pink\" | \"rose\" | undefined",
+      "any",
       "\"gray\""
     ],
     [
       "onclick",
-      "(ev",
+      "any",
       ""
     ],
     [
       "name",
-      "string",
+      "any",
       "\"Close\""
     ],
     [
       "ariaLabel",
-      "string",
+      "any",
       ""
     ],
     [
       "size",
-      "\"md\" | \"xs\" | \"sm\" | \"lg\" | undefined",
+      "any",
       "\"md\""
     ],
     [
       "href",
-      "string",
+      "any",
       ""
     ],
     [
