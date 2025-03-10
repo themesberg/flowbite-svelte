@@ -30,11 +30,11 @@ Use the Datepicker for single date selection. The selected date is bound to the 
 ```svelte example
 <script>
   import { Datepicker, P } from 'flowbite-svelte';
-  let selectedDate = null;
+  let selectedDate = $state();
 </script>
 
 <div class="mb-64 md:w-1/2">
-  <Datepicker bind:value={selectedDate} />
+  <Datepicker bind:value={selectedDate} color="green" />
   <P class="mt-4">Selected date: {selectedDate ? selectedDate.toLocaleDateString() : 'None'}</P>
 </div>
 ```
@@ -50,7 +50,7 @@ Enable date range selection using the `range` prop. The start and end dates are 
 </script>
 
 <div class="mb-64 md:w-1/2">
-  <Datepicker range bind:rangeFrom={dateRange.from} bind:rangeTo={dateRange.to} />
+  <Datepicker range bind:rangeFrom={dateRange.from} bind:rangeTo={dateRange.to} color="pink"/>
   <P class="mt-4">
     Selected range:
     {dateRange.from ? dateRange.from.toLocaleDateString() : 'None'} -
@@ -131,9 +131,9 @@ Add action buttons (Today, Clear, Apply) using the `showActionButtons` prop. You
     lastAction = 'Cleared';
   }
 
-  function handleApply(event) {
+  function handleApply(detail) {
     lastAction = 'Applied';
-    selectedDate = event.detail;
+    selectedDate = detail;
   }
 </script>
 
@@ -142,8 +142,8 @@ Add action buttons (Today, Clear, Apply) using the `showActionButtons` prop. You
     bind:value={selectedDate} 
     showActionButtons 
     autohide={false}
-    on:clear={handleClear}
-    on:apply={handleApply}
+    onclear={handleClear}
+    onapply={handleApply}
   />
   <P class="mt-4">Selected date: {selectedDate ? selectedDate.toLocaleDateString() : 'None'}</P>
   <P class="mt-2">Last action: {lastAction}</P>
@@ -202,25 +202,25 @@ Set a custom first day of the week using the `firstDayOfWeek` prop.
 </script>
 
 <div class="mb-64 md:w-1/2">
-  <Datepicker firstDayOfWeek={0} />
+  <Datepicker firstDayOfWeek={3} />
 </div>
 ```
 
 ## Event Handling
 
-Listen for date selection events using the `on:select` event.
+Listen for date selection events using the `onselect` event.
 
 ```svelte example
 <script>
   import { Datepicker } from 'flowbite-svelte';
  
-  function handleDateSelect(event) {
-    console.log('Selected date:', event.detail);
+  function handleDateSelect(detail) {
+    console.log('Selected date:', detail);
   }
 </script>
 
 <div class="mb-64 md:w-1/2">
-  <Datepicker on:select={handleDateSelect} />
+  <Datepicker onselect={handleDateSelect} />
 </div>
 ```
 

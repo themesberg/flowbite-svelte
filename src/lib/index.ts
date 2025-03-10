@@ -12,6 +12,7 @@ export * from "./cards";
 export * from "./carousel";
 export * from "./chart";
 export * from "./darkmode";
+export * from "./datepicker";
 export * from "./device-mockups";
 export * from "./dropdown";
 export * from "./drawer";
