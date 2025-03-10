@@ -226,8 +226,8 @@ You can use `slot="close"` to override the default close button. That slot expos
 </Alert>
 <Alert color="dark" dismissable>
   {#snippet icon()}<InfoCircleSolid class="w-5 h-5" />{/snippet}
-  An alert with the custom dismissal button.
-  <Button slot="close-button" size="xs" let:close on:click={close} class="ms-auto">Dissmiss</Button>
+  An alert with the custom dismissal button. slot
+  <Button slot="close-button" size="xs" let:close on:click={close} class="ms-auto">Dissmiss me</Button>
 </Alert>
 ```
 

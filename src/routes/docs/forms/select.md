@@ -9,7 +9,8 @@ description: Get started with the select component to allow the user to choose f
 
 <script>
 import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
-import { Badge, A, Kbd, ArrowKeyDown, ArrowKeyUp } from '$lib'
+import { Badge, A, Kbd  } from '$lib';
+import { ArrowUpOutline, ArrowDownOutline } from 'flowbite-svelte-icons';
 const components = 'Select, MultiSelect'
 </script>
 
@@ -299,7 +300,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 ### Keyboard Usage
 
-Some keyboard interaction was implemented. Use <Kbd class="p-1.5"><ArrowKeyUp class="inline-block"/></Kbd>/<Kbd class="p-1.5"><ArrowKeyDown class="inline-block"/></Kbd> to highlight an item, then press <Kbd class="p-1.5">Enter</Kbd> or <Kbd class="p-1.5">SpaceBar</Kbd> to toggle the highlighted item. Press <Kbd class="p-1.5">Esc</Kbd> to close the selection pop-up.
+Some keyboard interaction was implemented. Use <Kbd class="p-1.5"><ArrowUpOutline class="inline-block"/></Kbd>/<Kbd class="p-1.5"><ArrowDownOutline class="inline-block"/></Kbd> to highlight an item, then press <Kbd class="p-1.5">Enter</Kbd> or <Kbd class="p-1.5">SpaceBar</Kbd> to toggle the highlighted item. Press <Kbd class="p-1.5">Esc</Kbd> to close the selection pop-up.
 
 ### Customization
 

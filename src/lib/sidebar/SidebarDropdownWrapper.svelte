@@ -5,6 +5,7 @@
   import { slide } from "svelte/transition";
   import { uiHelpers } from "$lib";
   import { type SidebarDropdownWrapperProps as Props, sidebardropdownwrapper } from ".";
+  import clsx from "clsx";
 
   type SidebarContext = {
     selected?: Writable<object | null>;
@@ -47,7 +48,7 @@
   }
 </script>
 
-<li class={base({ className })}>
+<li class={base({ class: clsx(className) })}>
   <button {...restProps} onclick={handleDropdown} type="button" class={btn({ class: btnClass })} aria-controls="sidebar-dropdown">
     {#if iconSlot}
       {@render iconSlot()}

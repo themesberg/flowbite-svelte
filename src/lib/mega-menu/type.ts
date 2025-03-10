@@ -8,7 +8,7 @@ interface MegaMenuProps extends Omit<HTMLAttributes<HTMLDivElement>, "children">
   items?: LinkType[];
   full?: boolean;
   ulClass?: string;
-  dropdownStatus: boolean;
+  open: boolean;
   divClass?: string;
   footerClass?: string;
   headerClass?: string;

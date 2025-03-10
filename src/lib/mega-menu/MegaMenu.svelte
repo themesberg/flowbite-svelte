@@ -1,15 +1,16 @@
 <script lang="ts">
+  import clsx from "clsx";
   import { type MegaMenuProps as Props, megamenu } from ".";
 
-  let { children, footer, items = [], full, dropdownStatus = $bindable(), class: className, ...restProps }: Props = $props();
+  let { children, footer, items = [], full, open = $bindable(), class: className, ...restProps }: Props = $props();
 
   const { base, div, ul, footerDiv } = $derived(megamenu());
-  $inspect("dropdownStatus", dropdownStatus);
+  $inspect("open", open);
 </script>
 
 <!-- Dropdown menu -->
-{#if dropdownStatus}
-  <div {...restProps} class={base({ className })}>
+{#if open}
+  <div {...restProps} class={base({ class: clsx(className) })}>
     <div class={div()}>
       <ul class={ul()}>
         {#each items as item, index}
@@ -37,6 +38,6 @@
 @props:footer: any;
 @props:items: any = [];
 @props:full: any;
-@props:dropdownStatus: any = $bindable();
+@props:open: any = $bindable();
 @props:class: string;
 -->
