@@ -54,11 +54,11 @@
   });
 </script>
 
-<header class="sticky top-0 z-40 flex-none w-full mx-auto bg-white border-b border-gray-200 dark:border-gray-600 dark:bg-gray-800">
-  <Navbar color="default" {toggleNav} {closeNav} {navStatus} breakPoint="xxl" fluid class="py-1.5 {isHomePage ? 'lg:px-0 max-w-7xl mx-auto' : ''}">
+<header class="sticky top-0 z-40 mx-auto w-full flex-none border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-800">
+  <Navbar color="default" {toggleNav} {closeNav} {navStatus} breakPoint="xxl" fluid class="py-1.5 {isHomePage ? 'mx-auto max-w-screen-xl lg:px-0' : ''}">
     <NavBrand href="/">
       <img src={logo} class="me-3 h-8" alt="Flowbite Svelte Logo" />
-      <span class="self-center whitespace-nowrap text-2xl font-semibold text-gray-900 dark:text-white">Flowbite Svelte</span>
+      <span class="self-center text-2xl font-semibold whitespace-nowrap text-gray-900 dark:text-white">Flowbite Svelte</span>
     </NavBrand>
 
     {#if !isHomePage}
@@ -70,29 +70,29 @@
     {/if}
 
     <NavUl {activeUrl} onclick={() => setTimeout(toggle, 1)}>
-      <NavLi class="lg:px-2 lg:mb-0" href="/">Home</NavLi>
-      <NavLi class="lg:px-2 lg:mb-0" href="/docs/pages/introduction">Docs</NavLi>
-      <NavLi class="lg:px-2 lg:mb-0" href="/docs/components/accordion">Components</NavLi>
-      <NavLi class="lg:px-2 lg:mb-0" href="/icons/svelte-4">Icons</NavLi>
-      <NavLi class="lg:px-2 lg:mb-0" href="https://flowbite-svelte-blocks.vercel.app/">Blocks</NavLi>
-      <NavLi class="lg:px-2 lg:mb-0" href="https://flowbite-svelte-admin-dashboard.vercel.app/">Dashboard</NavLi>
+      <NavLi class="lg:mb-0 lg:px-2" href="/">Home</NavLi>
+      <NavLi class="lg:mb-0 lg:px-2" href="/docs/pages/introduction">Docs</NavLi>
+      <NavLi class="lg:mb-0 lg:px-2" href="/docs/components/accordion">Components</NavLi>
+      <NavLi class="lg:mb-0 lg:px-2" href="/icons/svelte-4">Icons</NavLi>
+      <NavLi class="lg:mb-0 lg:px-2" href="https://flowbite-svelte-blocks.vercel.app/">Blocks</NavLi>
+      <NavLi class="lg:mb-0 lg:px-2" href="https://flowbite-svelte-admin-dashboard.vercel.app/">Dashboard</NavLi>
     </NavUl>
 
-    <div class="flex items-center ms-auto">
-      <ToolbarLink class="hidden sm:inline-block dark:hover:text-white hover:text-gray-900 focus:ring-0" name="View on GitHub" href="https://github.com/themesberg/flowbite-svelte">
+    <div class="ms-auto flex items-center">
+      <ToolbarLink class="hidden hover:text-gray-900 focus:ring-0 sm:inline-block dark:hover:text-white" name="View on GitHub" href="https://github.com/themesberg/flowbite-svelte">
         <GitHub />
       </ToolbarLink>
-      <ToolbarLink class="hidden xl:inline-block dark:hover:text-white hover:text-gray-900 focus:ring-0" name="Join community on Discord" href="https://discord.gg/4eeurUVvTy">
+      <ToolbarLink class="hidden hover:text-gray-900 focus:ring-0 xl:inline-block dark:hover:text-white" name="Join community on Discord" href="https://discord.gg/4eeurUVvTy">
         <Discord />
       </ToolbarLink>
-      <ToolbarLink class="hidden xl:inline-block dark:hover:text-white hover:text-gray-900 focus:ring-0" name="Subscribe to YouTube channel" href="https://www.youtube.com/channel/UC_Ms4V2kYDsh7F_CSsHyQ6A">
+      <ToolbarLink class="hidden hover:text-gray-900 focus:ring-0 xl:inline-block dark:hover:text-white" name="Subscribe to YouTube channel" href="https://www.youtube.com/channel/UC_Ms4V2kYDsh7F_CSsHyQ6A">
         <YouTube />
       </ToolbarLink>
-      <DarkMode size="lg" class="inline-block dark:hover:text-white hover:text-gray-900" />
+      <DarkMode size="lg" class="inline-block hover:text-gray-900 dark:hover:text-white" />
       <Tooltip class="dark:bg-gray-900" placement="bottom-end">Toggle dark mode</Tooltip>
     </div>
     <a href="https://www.npmjs.com/package/flowbite-svelte" class="hidden sm:block">
-      <Badge large class="ms-2 xl:ms-6 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-800 dark:hover:text-white">
+      <Badge large class="hover:bg-primary-600 dark:hover:bg-primary-800 ms-2 hover:text-white xl:ms-6 dark:hover:text-white">
         v{version}
       </Badge>
     </a>
@@ -101,6 +101,6 @@
   </Navbar>
 </header>
 
-<div class="lg:flex w-full">
+<div class="w-full lg:flex">
   {@render children()}
 </div>
