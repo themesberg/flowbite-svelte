@@ -2,14 +2,15 @@ import type { Snippet } from "svelte";
 import type { HTMLInputAttributes } from "svelte/elements";
 import type { CheckboxVariants } from "./theme";
 
-type CheckboxItem = {
+interface CheckboxItem {
   value: string;
-  checkboxLabel?: string;
-  isChecked?: boolean;
+  label?: string;
+  checked?: boolean | null;
+  [key: string]: any;
 };
 
-interface CheckboxProps extends HTMLInputAttributes {
-  children?: Snippet;
+interface CheckboxProps extends Omit<HTMLInputAttributes, "children"> {
+  children?: Snippet<[CheckboxItem]>;
   color?: CheckboxVariants["color"];
   custom?: boolean;
   inline?: boolean;

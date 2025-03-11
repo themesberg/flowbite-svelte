@@ -136,16 +136,36 @@ Use this example to show a list of checkbox items grouped inside a card.
 
 ```svelte example hideScript
 <script>
-  import { Checkbox } from 'flowbite-svelte';
+  import { Checkbox, Listgroup } from 'flowbite-svelte';
 </script>
 
 <p class="mb-4 font-semibold text-gray-900 dark:text-white">Technology</p>
-<ul class="w-48 bg-white rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-600 divide-y divide-gray-200 dark:divide-gray-600">
+<Listgroup class="w-48">
   <li><Checkbox class="p-3">svelte</Checkbox></li>
   <li><Checkbox class="p-3">Vue JS</Checkbox></li>
   <li><Checkbox class="p-3">React</Checkbox></li>
   <li><Checkbox class="p-3">Angular</Checkbox></li>
-</ul>
+</Listgroup>
+```
+
+You can use the internal loop to render a list of `CheckboxItem`s.
+
+```svelte example
+<script>
+  import { Checkbox, Listgroup } from 'flowbite-svelte';
+  let choices = [
+    {value:"svelte", label:"svelte"},
+    {value:"vue", label:"Vue JS"},
+    {value:"react", label:"React", checked: true},
+    {value:"angular", label:"Angular"},
+  ];
+  let group = $state([]);
+</script>
+
+<p class="my-2">Choices: {group.join(", ")}</p>
+<Listgroup class="w-48">
+  <Checkbox bind:group {choices} class="p-3"/>
+</Listgroup>
 ```
 
 ## Horizontal list group
@@ -264,25 +284,25 @@ The special case component - `CheckboxButton` - is the `Checkbox` with the [Butt
 
 This component accepts all props from the [Button](/docs/components/buttons) for styling and `Checkbox` for behaviour.
 
-```svelte example hideScript class="space-y-4"
+```svelte example class="space-y-4"
 <script>
   import { ButtonGroup, CheckboxButton } from 'flowbite-svelte';
   import {AppleSolid, FacebookSolid, DiscordSolid, DropboxSolid } from 'flowbite-svelte-icons';
-  let group = [];
+  let group = $state([]);
 </script>
 
   <div>
-    <CheckboxButton bind:group><AppleSolid class="w-6 h-6 me-2"/>Apple</CheckboxButton>
-    <CheckboxButton bind:group><FacebookSolid class="w-6 h-6 me-2"/>Facebook</CheckboxButton>
-    <CheckboxButton bind:group><DiscordSolid class="w-6 h-6 me-2"/>Discord</CheckboxButton>
-    <CheckboxButton bind:group><DropboxSolid class="w-6 h-6 me-2"/>Dropbox</CheckboxButton>
+    <CheckboxButton bind:group value="Apple"><AppleSolid class="w-6 h-6 me-2"/>Apple</CheckboxButton>
+    <CheckboxButton bind:group value="Facebook"><FacebookSolid class="w-6 h-6 me-2"/>Facebook</CheckboxButton>
+    <CheckboxButton bind:group value="Discord"><DiscordSolid class="w-6 h-6 me-2"/>Discord</CheckboxButton>
+    <CheckboxButton bind:group value="Dropbox"><DropboxSolid class="w-6 h-6 me-2"/>Dropbox</CheckboxButton>
   </div>
 
   <ButtonGroup>
-    <CheckboxButton bind:group><AppleSolid class="w-6 h-6 me-2"/>Apple</CheckboxButton>
-    <CheckboxButton bind:group><FacebookSolid class="w-6 h-6 me-2"/>Facebook</CheckboxButton>
-    <CheckboxButton bind:group><DiscordSolid class="w-6 h-6 me-2"/>Discord</CheckboxButton>
-    <CheckboxButton bind:group><DropboxSolid class="w-6 h-6 me-2"/>Dropbox</CheckboxButton>
+    <CheckboxButton bind:group value="Apple"><AppleSolid class="w-6 h-6"/>Apple</CheckboxButton>
+    <CheckboxButton bind:group value="Facebook"><FacebookSolid class="w-6 h-6"/>Facebook</CheckboxButton>
+    <CheckboxButton bind:group value="Discord"><DiscordSolid class="w-6 h-6"/>Discord</CheckboxButton>
+    <CheckboxButton bind:group value="Dropbox"><DropboxSolid class="w-6 h-6"/>Dropbox</CheckboxButton>
   </ButtonGroup>
 ```
 
@@ -338,7 +358,7 @@ Use this example of an advanced layout of checkbox elements where the label pare
 </script>
 
 <div class="flex gap-2">
-  <Checkbox name="flavours" {choices} bind:group groupInputClass='ms-2'/>
+  <Checkbox name="flavours" {choices} bind:group/>
 </div>
 <div class="my-2 border border-gray-200 dark:border-gray-700 rounded-lg p-2 w-44 dark:text-gray-400">Group: {group}</div>
 <Button on:click={() => (group.length = 0)}>Clear</Button>
