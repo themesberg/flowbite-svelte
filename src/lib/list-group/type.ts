@@ -1,6 +1,7 @@
-import type { Snippet } from "svelte";
-import type { HTMLAnchorAttributes } from "svelte/elements";
-import type { Component } from "svelte";
+import type { Component, Snippet } from "svelte";
+import type { HTMLAnchorAttributes, HTMLAttributes, HTMLButtonAttributes } from "svelte/elements";
+import type { ListgroupItemVariants, ListgroupVariants } from "./theme";
+import type { AnchorButtonAttributes } from "$lib/types";
 
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 interface ListGroupItemType {
@@ -14,37 +15,25 @@ interface ListGroupItemType {
   [key: string]: any;
 }
 
-interface ListgroupProps {
+interface ListgroupProps extends ListgroupVariants, Omit<HTMLAttributes<HTMLUListElement>, "children"> {
   children?: Snippet<[item: ListGroupItemType | string | undefined]>;
   items?: (ListGroupItemType | string)[];
   active?: boolean;
   onclick?: (event?: MouseEvent) => void;
-  rounded?: boolean;
-  border?: boolean;
-  class?: string;
   itemClass?: string;
   aClasss?: string;
   btnClass?: string;
   iconClass?: string;
 }
 
-interface ListgroupItemProps extends HTMLAnchorAttributes {
-  children: Snippet;
-  onclick?: (event?: MouseEvent) => void;
-  active?: boolean;
+type ListgroupItemProps = Omit<ListgroupItemVariants, "state"> & AnchorButtonAttributes & {
   current?: boolean;
   disabled?: boolean;
-  name?: string;
   Icon?: Component;
-  href?: string;
-  currentClass?: string;
-  normalClass?: string;
-  disabledClass?: string;
-  liClass?: string;
-  class?: string;
-  aClasss?: string;
-  btnClass?: string;
   iconClass?: string;
+  name?: string
 }
 
-export { type ListgroupProps, type ListgroupItemProps, type ListGroupItemType };
+
+export { type ListgroupItemProps, type ListGroupItemType, type ListgroupProps };
+

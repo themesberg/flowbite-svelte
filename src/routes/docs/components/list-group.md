@@ -34,7 +34,7 @@ Here’s an example of a list group that you can use right away.
   let simpleList = ['Profile', 'Settings', 'Messages', 'Download'];
 </script>
 
-<Listgroup items={simpleList} class="w-48" />
+<Listgroup items={simpleList} />
 ```
 
 ## List group with links
@@ -82,8 +82,7 @@ You can pass extra properties to the `<button>` element by setting the `attrs` a
   ];
 </script>
 
-<Listgroup active items={buttons} class="w-48" onclick={(e) => alert(Object.entries(e.detail))}>
-</Listgroup>
+<Listgroup active items={buttons} class="w-48" onclick={(e) => alert(Object.entries(e.detail))} />
 ```
 
 ## List group with icons
@@ -100,11 +99,27 @@ Use the following example to create a list of buttons as a menu together with SV
     { name: 'Messages', Icon: MessagesSolid },
     { name: 'Download', Icon: DownloadSolid }
   ];
-  // <svelte:component this={IconSolid} icon={item.icon} class="w-3 h-3 me-2.5" />
+</script>
+<Listgroup active items={icons} class="w-48" onclick={console.log} />
+```
+
+## Horizontal list group
+
+Use the `horizontal` property to change the direction of list items.
+
+```svelte example class="flex justify-center" hideResponsiveButtons
+<script>
+  import { Listgroup, ListgroupItem } from 'flowbite-svelte';
+  let buttons = [
+    { name: 'Profile', mycustomfield: 'data1', current: true },
+    { name: 'Settings', mycustomfield: 'data2' },
+    { name: 'Messages', mycustomfield: 'data3' },
+    { name: 'Download', mycustomfield: 'data4', disabled: true, attrs: {type: 'submit'} }
+  ];
 </script>
 
-
-<Listgroup active items={icons} class="w-48" onclick={console.log} />
+<Listgroup active items={buttons} horizontal onclick={(e) => alert(Object.entries(e.detail))}>
+</Listgroup>
 ```
 
 ## Advanced

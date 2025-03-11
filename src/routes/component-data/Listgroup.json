@@ -22,14 +22,19 @@
       ""
     ],
     [
+      "horizontal",
+      "any",
+      ""
+    ],
+    [
       "rounded",
       "any",
-      "true"
+      ""
     ],
     [
       "border",
       "any",
-      "true"
+      ""
     ],
     [
       "class",

@@ -1,3 +1,5 @@
+import type { HTMLButtonAttributes } from "svelte/elements";
+import type { HTMLAnchorAttributes } from "svelte/elements";
 import type { TransitionConfig, FadeParams, BlurParams, FlyParams, SlideParams, ScaleParams } from "svelte/transition";
 
 import { tv } from "tailwind-variants";
@@ -110,3 +112,13 @@ export interface LinkType {
   active?: boolean;
   [propName: string]: any;
 }
+
+interface AnchorAttributes extends Omit<HTMLAnchorAttributes, "on:copy" | "oncopy"> {
+  href: string
+}
+
+interface ButtonAttibutes extends Omit<HTMLButtonAttributes, "on:copy" | "oncopy"> {
+  href: null;
+}
+
+export type AnchorButtonAttributes = AnchorAttributes | ButtonAttibutes;
