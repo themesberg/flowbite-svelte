@@ -1,13 +1,13 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import type { navbarType } from "$lib/types";
+  import type { NavbarType } from "$lib/types";
   import { type NavLiProps as Props, navLi } from ".";
 
   let { closeNav, href, children, aClass, class: className, ...restProps }: Props = $props();
 
-  let breakPoint: navbarType["breakPoint"];
+  let breakPoint: NavbarType["breakPoint"];
 
-  const context = getContext<navbarType>("navbarContext");
+  const context = getContext<NavbarType>("navbarContext");
   breakPoint = context.breakPoint ?? "md";
   closeNav = context.closeNav ?? closeNav;
   const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
@@ -19,9 +19,6 @@
 
   // let currentUrl = $state();
   let isActive = $derived(navUrl ? href === navUrl : false);
-  $effect(() => {
-    $inspect("navUrl: ", navUrl);
-  });
 
   const { base, link } = $derived(navLi({ active: isActive, breakPoint }));
 </script>
