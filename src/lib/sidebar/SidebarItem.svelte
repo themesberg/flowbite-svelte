@@ -6,7 +6,7 @@
   let { icon, subtext, href, label, spanClass = "ms-3", activeClass, nonActiveClass, aClass, active, class: className, ...restProps }: Props = $props();
 
   const context = getContext<SidebarCtxType>("sidebarContext") ?? {};
-  console.log("context", context.activeClass);
+
   const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
 
   let sidebarUrl = $state("");

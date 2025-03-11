@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { afterNavigate } from "$app/navigation";
   /*  
     Inspired by 'svelte-toc'
     Simplified version of Table of Contents.
@@ -23,17 +24,19 @@
       headings = [...document.querySelectorAll<HTMLElement>(headingSelector)].map(extract).filter((x) => x.name);
     });
   }
+
+  afterNavigate(toc);
 </script>
 
 <svelte:document use:toc />
 
-<div class="flex-none hidden w-64 ps-8 xl:text-sm xl:block end-0">
+<div class="me-auto hidden w-64 flex-none ps-8 xl:block xl:text-sm">
   {#if headings.length}
-    <div class="flex overflow-y-auto sticky top-20 flex-col justify-between pb-6 h-[calc(100vh-5rem)]">
+    <div class="sticky top-20 flex h-[calc(100vh-5rem)] flex-col justify-between overflow-y-auto pb-6">
       <div class="mb-40">
-        <h4 class="ps-2.5 my-4 text-sm font-semibold tracking-wide text-gray-900 uppercase dark:text-white">On this page</h4>
+        <h4 class="my-4 ps-2.5 text-sm font-semibold tracking-wide text-gray-900 uppercase dark:text-white">On this page</h4>
         <nav>
-          <ul class="overflow-x-hidden font-medium text-gray-500 dark:text-gray-400 space-y-2.5">
+          <ul class="space-y-2.5 overflow-x-hidden font-medium text-gray-500 dark:text-gray-400">
             {#each headings as { rel, href, name }}
               <li>
                 <a {href} class="{indent(rel)} {aClass}">{name}</a>

@@ -38,7 +38,6 @@
       return closeSidebar;
     },
     get activeClass() {
-      console.log(active({ class: activeClass }));
       return active({ class: activeClass });
     },
     get nonActiveClass() {

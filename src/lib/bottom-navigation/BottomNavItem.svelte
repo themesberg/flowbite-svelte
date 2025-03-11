@@ -49,10 +49,6 @@
     ...commonProps,
     type: "button" as const
   });
-
-  $effect(() => {
-    console.log("commonProps: ", commonProps);
-  });
 </script>
 
 {#if href}

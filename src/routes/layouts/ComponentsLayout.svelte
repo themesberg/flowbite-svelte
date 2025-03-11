@@ -7,6 +7,8 @@
   import type { Writable } from "svelte/store";
   import { ChevronDownOutline, ChevronUpOutline } from "flowbite-svelte-icons";
   import SidebarButton from "$lib/sidebar/SidebarButton.svelte";
+  import Toc from "../utils/Toc.svelte";
+  import { extract } from "./component/Anchor.svelte";
 
   let { data, children } = $props();
   /* eslint-disable  @typescript-eslint/no-explicit-any */
@@ -48,7 +50,7 @@
   });
 
   let spanClass = "";
-  let mainClass = "relative fixed inset-0 z-30 h-full w-64 flex-none border1-e border-gray-200 bg-white lg:static lg:block lg:h-auto lg:pt-0 dark:border-gray-600 dark:bg-gray-900";
+  let mainClass = "ms-auto relative fixed inset-0 z-30 h-full w-64 flex-none border1-e border-gray-200 bg-white lg:static lg:block lg:h-auto lg:pt-0 dark:border-gray-600 dark:bg-gray-900";
   let nonActiveClass = "text-sm transition-colors duration-200 relative font-medium hover:text-gray-900 hover:bg-transparent dark:hover:bg-transparent hover:cursor-pointer text-gray-500 dark:text-gray-400 dark:hover:text-white";
   let activeClass = "text-sm relative font-medium cursor-default bg-transparent dark:bg-transparent hover:bg-transparent dark:hover:bg-transparent text-primary-700 dark:text-primary-700";
   let btnClass = "my-0 text-sm font-semibold tracking-wide uppercase hover:bg-transparent dark:hover:bg-transparent hover:text-primary-700 dark:hover:text-primary-600";
@@ -83,6 +85,7 @@
 
 <div hidden={$drawerHidden} class="static inset-0 z-20 bg-gray-900/50 dark:bg-gray-900/60" onclick={closeSidebar} onkeydown={closeSidebar} role="presentation"></div>
 
-<main class="w-full min-w-0 flex-auto lg:static lg:mx-auto lg:max-h-full lg:overflow-visible">
+<main class="flex1-auto lg:mx1-auto w1-full min-w-0 lg:static lg:max-h-full lg:overflow-visible">
   {@render children()}
 </main>
+<Toc {extract} headingSelector="#mainContent > :where(h2, h3)" />
