@@ -41,7 +41,7 @@ The file input component can be used to upload one or more files from the device
 ```svelte example
 <script>
   import { Fileupload, Helper } from 'flowbite-svelte';
-  let selectedFiles = $state([]);
+  let selectedFiles = $state();
   let fileNames = $derived(selectedFiles ? Array.from(selectedFiles).map((file) => file.name).join(", "): "No files selected");
 </script>
 

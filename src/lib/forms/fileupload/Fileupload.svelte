@@ -2,7 +2,7 @@
   import { type FileuploadProps as Props, fileupload } from ".";
   import { CloseButton } from "$lib";
   import clsx from "clsx";
-  let { files = $bindable<FileList | undefined>(), size = "md", clearable = false, class: className, ...restProps }: Props = $props();
+  let { files = $bindable(), size = "md", clearable = false, class: className, ...restProps }: Props = $props();
   const { base, wrapper, right } = fileupload();
 
   let fileInputRef: HTMLInputElement | undefined = $state();
