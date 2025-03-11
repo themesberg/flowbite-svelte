@@ -14,7 +14,7 @@
     [
       "group",
       "any",
-      "$bindable()"
+      "$bindable([])"
     ],
     [
       "value",
