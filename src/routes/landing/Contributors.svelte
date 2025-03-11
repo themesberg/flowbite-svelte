@@ -5,14 +5,15 @@
   import Community from "../utils/icons/Community.svelte";
   import type { PageData } from "../$types";
   import Section from "./utils/Section.svelte";
+  import type { TriggeredToggleEvent } from "$lib/utils/Popper.svelte";
 
   export let data: PageData;
 
   let name: string;
   /* eslint-disable  @typescript-eslint/no-explicit-any */
-  function on_show(e: CustomEvent<any>) {
-    if (e?.target instanceof HTMLElement) {
-      name = e?.target?.dataset.name ?? "";
+  function on_show(e: TriggeredToggleEvent) {
+    if (e?.trigger instanceof HTMLElement) {
+      name = e?.trigger?.dataset.name ?? "";
     }
   }
 </script>
@@ -36,7 +37,7 @@
           {/each}
         {/if}
       </div>
-      <Tooltip triggeredBy="[data-name]" on:show={on_show}>{name}</Tooltip>
+      <Tooltip triggeredBy="[data-name]" ontoggle={on_show}>{name}</Tooltip>
     </div>
     <div class="flex w-full max-w-5xl flex-row items-center justify-between lg:px-4">
       <div class="flex w-full flex-col items-start justify-between gap-4 rounded-lg bg-gray-50 p-4 sm:flex-row sm:items-center sm:gap-8 dark:bg-gray-800">

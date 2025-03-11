@@ -1,16 +1,17 @@
 <script lang="ts">
-  import { setContext } from 'svelte';
-  import { clickOutside } from '../uiHelpers.svelte';
-  import { slide, type SlideParams } from 'svelte/transition';
-  import { quintOut } from 'svelte/easing';
-  import type { NavbarType } from '$lib/types';
-  import { type NavbarProps as Props, navbar } from '.';
+  import { setContext } from "svelte";
+  import { clickOutside } from "../uiHelpers.svelte";
+  import { slide, type SlideParams } from "svelte/transition";
+  import { quintOut } from "svelte/easing";
+  import type { NavbarType } from "$lib/types";
+  import { type NavbarProps as Props, navbar } from ".";
+  import clsx from "clsx";
 
-  let { children, navSlotBlock, navSlotHiddenTop, navSlotHiddenBottom, toggleNav, closeNav = () => {}, navStatus, fluid, brand, hamburgerMenu = true, breakPoint = 'md', navClass, divClass, btnClass, div2Class, activeClass, nonActiveClass, ...restProps }: Props = $props();
+  let { children, navSlotBlock, navSlotHiddenTop, navSlotHiddenBottom, toggleNav, closeNav = () => {}, navStatus, fluid, brand, hamburgerMenu = true, breakPoint = "md", class: navClass, divClass, btnClass, div2Class, activeClass, nonActiveClass, ...restProps }: Props = $props();
 
   const { base, container, toggleButton, menuContainer, activeLink, inactiveLink } = $derived(navbar({ fluid, breakPoint, navStatus }));
 
-  setContext<NavbarType>('navbarContext', {
+  setContext<NavbarType>("navbarContext", {
     navStatus,
     breakPoint,
     get activeClass() {
@@ -29,11 +30,11 @@
   };
   // Create a helper to determine menu role and tabindex for A11y
   function getMenuProps(isOpen: boolean) {
-    return isOpen ? { role: 'menu', tabindex: 0 } : { role: 'none', tabindex: -1 };
+    return isOpen ? { role: "menu", tabindex: 0 } : { role: "none", tabindex: -1 };
   }
 </script>
 
-<nav {...restProps} class={base({ class: navClass, fluid })} use:clickOutside={closeNav}>
+<nav {...restProps} class={base({ class: clsx(navClass), fluid })} use:clickOutside={closeNav}>
   <div class={container({ class: divClass, fluid })}>
     {#if brand}
       {@render brand()}

@@ -6,6 +6,8 @@
   let { children, color = "primary", custom, inline, tinted, rounded, group = $bindable([]), choices = [], checked = $bindable(false), indeterminate, class: className, ...restProps }: Props = $props();
 
   const { base, label } = $derived(checkbox({ color, tinted, custom, rounded, inline }));
+
+  // see the discussion for bind:group - https://github.com/sveltejs/svelte/issues/2308
 </script>
 
 {#if choices.length > 0}

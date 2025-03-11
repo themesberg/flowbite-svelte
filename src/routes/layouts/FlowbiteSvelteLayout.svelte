@@ -55,7 +55,7 @@
 </script>
 
 <header class="sticky top-0 z-40 mx-auto w-full flex-none border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-800">
-  <Navbar color="default" {toggleNav} {closeNav} {navStatus} breakPoint="xxl" fluid class="py-1.5 {isHomePage ? 'mx-auto max-w-screen-xl lg:px-0' : ''}">
+  <Navbar color="default" {toggleNav} {closeNav} {navStatus} breakPoint="xxl" fluid class="mx-auto max-w-[88rem] py-1.5 lg:px-0">
     <NavBrand href="/">
       <img src={logo} class="me-3 h-8" alt="Flowbite Svelte Logo" />
       <span class="self-center text-2xl font-semibold whitespace-nowrap text-gray-900 dark:text-white">Flowbite Svelte</span>
@@ -69,7 +69,7 @@
       </div>
     {/if}
 
-    <NavUl {activeUrl} onclick={() => setTimeout(toggle, 1)}>
+    <NavUl {activeUrl} onclick={() => setTimeout(toggle, 1)} class="ms-auto text-sm 2xl:space-x-2">
       <NavLi class="lg:mb-0 lg:px-2" href="/">Home</NavLi>
       <NavLi class="lg:mb-0 lg:px-2" href="/docs/pages/introduction">Docs</NavLi>
       <NavLi class="lg:mb-0 lg:px-2" href="/docs/components/accordion">Components</NavLi>
@@ -78,7 +78,7 @@
       <NavLi class="lg:mb-0 lg:px-2" href="https://flowbite-svelte-admin-dashboard.vercel.app/">Dashboard</NavLi>
     </NavUl>
 
-    <div class="ms-auto flex items-center">
+    <div class="flex items-center">
       <ToolbarLink class="hidden hover:text-gray-900 focus:ring-0 sm:inline-block dark:hover:text-white" name="View on GitHub" href="https://github.com/themesberg/flowbite-svelte">
         <GitHub />
       </ToolbarLink>

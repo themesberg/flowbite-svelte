@@ -33,7 +33,7 @@
 
 <Footer class="bg-white dark:bg-gray-900">
   <div class="mx-auto flex max-w-screen-xl flex-col py-6 lg:py-12">
-    <div class="flex flex-col items-start gap-8 md:justify-between lg:flex-row {isHomePage ? 'px-4 lg:px-20' : ''}">
+    <div class="flex flex-col items-start gap-8 md:justify-between lg:flex-row {isHomePage ? 'px-4 lg:px-4' : ''}">
       <div class="w-full max-w-sm">
         <FooterBrand href="https://flowbite-svelte.com" src={logo} alt="Flowbite Svelte Logo" name="Flowbite Svelte" class="text-gray-900 dark:text-white" />
         <p class="mt-4 mb-3 max-w-sm text-gray-600 dark:text-gray-400">Flowbite Svelte is an open-source UI component library built with Svelte components and Tailwind CSS that can help you build websites faster.</p>

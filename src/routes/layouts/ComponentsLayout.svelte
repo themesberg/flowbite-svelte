@@ -60,7 +60,7 @@
 
 <SidebarButton onclick={sidebarUi.toggle} class="mb-2" />
 
-<Sidebar {nonActiveClass} {activeClass} activeUrl={mainSidebarUrl} {divClass} class={mainClass}>
+<Sidebar {nonActiveClass} {activeClass} activeUrl={mainSidebarUrl} {divClass} class={mainClass} transition={() => ({})}>
   <!-- <Sidebar activeUrl={mainSidebarUrl} {activeClass} {nonActiveClass} backdrop={false} {isOpen} {closeSidebar} params={{ x: -50, duration: 50 }} class="z-10 mt-0 h-full overflow-y-scroll"> -->
   <h4 id="sidebar-label" class="sr-only">Browse docs</h4>
   <!-- SidebarWrapper divClass="overflow-y-auto px-4 pt-20 lg:pt-0 h-full scrolling-touch max-w-2xs lg:h-[calc(100vh-8rem)] lg:block lg:me-0 lg:sticky top-20" -->

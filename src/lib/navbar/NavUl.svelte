@@ -10,7 +10,6 @@
   const context = getContext<navbarType>("navbarContext");
   breakPoint = context.breakPoint ?? "md";
 
-  const base = $derived(navUl({ breakPoint, className }));
   const activeUrlStore = writable("");
   $effect(() => {
     activeUrlStore.set(activeUrl);
@@ -18,7 +17,7 @@
   setContext("activeUrl", activeUrlStore);
 </script>
 
-<ul {...restProps} class={base}>
+<ul {...restProps} class={navUl({ breakPoint, className })}>
   {@render children()}
 </ul>
 

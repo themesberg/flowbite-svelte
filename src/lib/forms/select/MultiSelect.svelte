@@ -6,6 +6,8 @@
   import { multiselect } from "./theme";
   import type { MultiSelectProps as Props, SelectOptionType } from "./type";
 
+  // Consider reusing that component - https://svelecte.vercel.app/
+
   let { children, items = [], value = [], size = "md", dropdownClass = "", placeholder = "", disabled = false, onchange, class: className, ...restProps }: Props<T> = $props();
 
   let selectItems = $derived(items.filter((x) => value.includes(x.value)));
