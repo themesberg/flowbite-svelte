@@ -73,6 +73,7 @@
     "tailwind-merge": "^3.0.2",
     "tailwind-variants": "^1.0.0",
     "tailwindcss": "^4.0.13",
+    "tsx": "^4.19.3",
     "typescript": "^5.8.2",
     "typescript-eslint": "8.26.1",
     "vite": "^6.2.1",
