@@ -36,7 +36,7 @@
 <P>Add the following to tailwind.config.js:</P>
 
 <H3>SVG Icons</H3>
-<P>If you are using any icons from <A href="https://svelte-svg-icons.codewithshin.com/">Svelte SVG Icon Sets</A>, you need to update the content in tailwind.config.js. For example, if you are using Flowbite-Svelte-Icons and Svelte-Animated-Icons:</P>
+<P>If you are using any icons from <A href="https://svelte-svg-icons.codewithshin.com/">Svelte SVG Icon Sets</A>, you need to update the content in tailwind.config.js. For example, if you are using flowbite-svelte-icons and Svelte-Animated-Icons:</P>
 
 <HighlightCompo class="mb-8" codeLang="js" code={modules["./md/svg-icons.md"] as string} />
 

@@ -38,9 +38,9 @@
   let videoPlaceholderClass: VideoPlaceholderProps["class"] = $state("");
   let textPlaceholderClass: TextPlaceholderProps["class"] = $state("");
   let cardPlaceholderClass: CardPlaceholderProps["class"] = $state("");
-  let widgetPlaceholderClass: HTMLAttributes<HTMLDivElement>["class"] = $state("");
+  let widgetPlaceholderClass: string = $state("");
   let listPlaceholderClass: ListPlaceholderProps["class"] = $state("");
-  let TestimonialPlaceholderClass: HTMLAttributes<HTMLDivElement>["class"] = $state("");
+  let TestimonialPlaceholderClass: string = $state("");
 
   // code generator
   const generatePlaceholderCode = (componentName: string, size: string, classes: string): string => {

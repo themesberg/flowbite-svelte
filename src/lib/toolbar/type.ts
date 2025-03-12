@@ -8,6 +8,7 @@ interface ToolbarProps extends HTMLAttributes<HTMLDivElement> {
   end?: Snippet;
   embedded?: boolean;
   color?: ToolbarColor;
+  class?: string;
 }
 
 type SpacingType = "default" | "tight" | "loose" | undefined;

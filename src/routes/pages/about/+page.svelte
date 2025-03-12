@@ -14,7 +14,7 @@
 <div class="p-4">
   <H1>About</H1>
 
-  <P>Svelte 5 UI Lib – a UI library for Svelte 5 and built upon Flowbite/Flowbite-Svelte.</P>
+  <P>Svelte 5 UI Lib – a UI library for Svelte 5 and built upon Flowbite/svelte-5-ui-lib.</P>
 
   <H2>Techinical info</H2>
   <List>
@@ -30,11 +30,11 @@
     <Li><A href="https://codewithshin.com">codewithshin</A></Li>
   </List>
 
-  <H2>Other Flowbite-Svelte</H2>
+  <H2>Other svelte-5-ui-lib</H2>
   <List>
-    <Li><A href="https://flowbite-svelte.com/">Flowbite-Svelte</A></Li>
-    <Li><A href="https://flowbite-svelte-icons.codewithshin.com/">Flowbite-Svelte-Icons</A></Li>
-    <Li><A href="https://flowbite-svelte-blocks.codewithshin.com/">Flowbite-Svelte-Blocks</A></Li>
-    <Li><A href="https://flowbite-svelte-admin-dashboard.codewithshin.com/">Flowbite-Svelte-Dashboard</A></Li>
+    <Li><A href="https://svelte-5-ui-lib.com/">svelte-5-ui-lib</A></Li>
+    <Li><A href="https://flowbite-svelte-icons.codewithshin.com/">flowbite-svelte-icons</A></Li>
+    <Li><A href="https://svelte-5-ui-lib-blocks.codewithshin.com/">svelte-5-ui-lib-Blocks</A></Li>
+    <Li><A href="https://svelte-5-ui-lib-admin-dashboard.codewithshin.com/">svelte-5-ui-lib-Dashboard</A></Li>
   </List>
 </div>

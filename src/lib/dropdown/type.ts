@@ -14,6 +14,7 @@ interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
   params?: ParamsType;
   transition?: TransitionFunc;
   activeUrl?: string;
+  class?: string;
 }
 
 interface DropdownDividerProps extends HTMLAttributes<HTMLDivElement> {
@@ -22,10 +23,12 @@ interface DropdownDividerProps extends HTMLAttributes<HTMLDivElement> {
 
 interface DropdownHeaderProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
+  class?: string;
 }
 
 interface DropdownFooterProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
+  class?: string;
 }
 
 interface DropdownLiProps extends HTMLAnchorAttributes {
@@ -38,6 +41,7 @@ interface DropdownLiProps extends HTMLAnchorAttributes {
 
 interface DropdownUlProps extends HTMLAttributes<HTMLUListElement> {
   children: Snippet;
+  class?: string;
 }
 
 export { type DropdownProps, type DropdownDividerProps, type DropdownLiProps, type DropdownUlProps, type DropdownHeaderProps, type DropdownFooterProps };

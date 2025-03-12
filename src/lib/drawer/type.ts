@@ -26,6 +26,7 @@ interface DrawerheadProps extends HTMLButtonAttributes {
   children?: Snippet;
   buttonClass?: string;
   svgClass?: string;
+  class?: string;
 }
 
 export { type DrawerProps, type DrawerheadProps };

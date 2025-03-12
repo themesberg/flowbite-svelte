@@ -16,6 +16,7 @@ interface ListProps {
 interface LiProps extends HTMLLiAttributes {
   children: Snippet;
   icon?: boolean;
+  class?: string;
 }
 
 export { type ListProps, type LiProps };

@@ -15,6 +15,7 @@ interface TooltipProps extends HTMLAttributes<HTMLDivElement> {
   offset?: number;
   strategy?: Strategy;
   visible?: boolean;
+  class?: string;
 }
 
 export { type TooltipProps };

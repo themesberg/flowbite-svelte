@@ -13,9 +13,9 @@
     activeUrl = $page.url.pathname;
   });
   const site = {
-    name: "Flowbite-Svelte",
+    name: "svelte-5-ui-lib",
     href: "/",
-    img: "/images/flowbite-svelte-icon-logo.svg",
+    img: "/images/flowbite-svelte-icons-logo.svg",
     imgClass: "h-6 w-6"
   };
 </script>

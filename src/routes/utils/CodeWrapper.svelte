@@ -6,6 +6,7 @@
     children?: Snippet;
     codeblock?: Snippet;
     innerClass?: string;
+    class?: string;
   }
   let { children, codeblock, innerClass, class: classname }: Props = $props();
   const { base, inner } = $derived(codewrapper());

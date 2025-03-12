@@ -32,10 +32,12 @@ interface SidebarProps extends HTMLAttributes<HTMLElement> {
   backdrop?: boolean;
   backdropClass?: string;
   activeUrl?: string;
+  class?: string;
 }
 
 interface SidebarButtonProps extends HTMLButtonAttributes {
   breakpoint?: BreakpointType;
+  class?: string;
 }
 
 interface SidebarCtaProps extends HTMLAttributes<HTMLDivElement> {
@@ -44,6 +46,7 @@ interface SidebarCtaProps extends HTMLAttributes<HTMLDivElement> {
   divClass?: string;
   spanClass?: string;
   label: string;
+  class?: string;
 }
 
 interface SiteType {
@@ -56,6 +59,7 @@ interface SidebarBrandProps extends HTMLAnchorAttributes {
   site?: SiteType;
   imgClass?: string;
   spanClass?: string;
+  class?: string;
 }
 
 interface SidebarDropdownWrapperProps extends HTMLButtonAttributes {
@@ -73,6 +77,7 @@ interface SidebarDropdownWrapperProps extends HTMLButtonAttributes {
   svgClass?: string;
   onclick?: () => void;
   isSingle?: boolean;
+  class?: string;
 }
 
 interface SidebarGroupProps extends HTMLAttributes<HTMLUListElement> {

@@ -5,6 +5,7 @@
   import { h3Cls } from "./theme";
   interface Props extends HTMLAttributes<HTMLHeadingElement> {
     children: Snippet;
+    class?: string;
   }
   let { children, class: className }: Props = $props();
   const base = $derived(h3Cls({ className }));

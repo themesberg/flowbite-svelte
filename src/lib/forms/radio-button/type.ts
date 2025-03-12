@@ -12,5 +12,6 @@ interface RadioButtonProps<T> extends HTMLInputAttributes {
   buttonSize?: SizeType | undefined;
   color?: ColorName | "alternative" | "dark" | "light";
   shadow?: boolean;
+  class?: string;
 }
 export { type RadioButtonProps };

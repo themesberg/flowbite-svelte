@@ -39,6 +39,7 @@ interface TableProps extends HTMLTableAttributes {
   shadow?: boolean;
   color?: TableColrType;
   tableItems?: TableItemType[];
+  class?: string;
 }
 
 interface TableBodyRowProps extends HTMLAttributes<HTMLTableRowElement> {

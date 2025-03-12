@@ -5,6 +5,7 @@
   import { h2Cls } from "./theme";
   interface Props extends HTMLAttributes<HTMLHeadingElement> {
     children: Snippet;
+    class?: string;
   }
   let { children, class: className }: Props = $props();
   const base = $derived(h2Cls({ className }));

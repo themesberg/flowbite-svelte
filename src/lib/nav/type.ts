@@ -46,6 +46,7 @@ interface NavLiProps extends HTMLAnchorAttributes {
 
 interface NavHamburgerProps extends HTMLAttributes<HTMLButtonElement> {
   toggleNav: () => void;
+  class?: string;
 }
 
 export { type NavbarProps, type NavBrandProps, type NavLiProps, type NavUlProps, type NavHamburgerProps };

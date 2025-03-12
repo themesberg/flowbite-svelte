@@ -1,9 +1,4 @@
-# Ignore files for PNPM, NPM and YARN
-pnpm-lock.yaml
+# Package Managers
 package-lock.json
+pnpm-lock.yaml
 yarn.lock
-samples/
-/src/routes/md/
-*.html
-/src/routes/utils/highlight/*
-/.vercel

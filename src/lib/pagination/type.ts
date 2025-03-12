@@ -26,6 +26,7 @@ interface PaginationItemProps extends HTMLAttributesWithoutAbort {
   active?: boolean;
   rel?: string;
   size?: "default" | "large" | undefined;
+  class?: string;
 }
 
 interface PaginationProps extends HTMLLiAttributes {

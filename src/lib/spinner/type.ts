@@ -8,6 +8,7 @@ interface SpinnerProps extends SVGAttributes<SVGSVGElement> {
   size?: SizeType;
   currentFill?: string;
   currentColor?: string;
+  class?: string;
 }
 
 export type { SpinnerProps };

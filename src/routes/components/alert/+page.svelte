@@ -78,6 +78,11 @@
   // code generator
   let generatedCode = $derived(
     (() => {
+      // Generate import script using string literals
+      const importScript = `&lt;script&gt;
+    import { Alert } from "svelte-5-ui-lib";
+  &lt;/script&gt;\n\n`;
+      
       let props = [];
       if (color !== "primary") props.push(` color="${color}"`);
       if (rounded) props.push(" rounded");
@@ -105,13 +110,15 @@
       let iconCode = "";
       if (iconSlot) {
         iconCode = `
-  {#snippet icon()}
-    <InfoCircleSolid class="h-5 w-5" />
-  {/snippet}`;
+    {#snippet icon()}
+      <InfoCircleSolid class="h-5 w-5" />
+    {/snippet}`;
       }
-      return `<Alert${propsString}>${iconCode}
-  My Alert
-</Alert>`;
+      
+      // Add import script at the beginning
+      return importScript + `<Alert${propsString}>${iconCode}
+    My Alert
+  </Alert>`;
     })()
   );
   // end of code generator

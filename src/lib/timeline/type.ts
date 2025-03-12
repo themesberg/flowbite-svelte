@@ -20,6 +20,7 @@ interface GroupTimelineType {
 
 interface ActivityProps extends HTMLOlAttributes {
   children: Snippet;
+  class?: string;
 }
 
 interface ActivityItemProps extends HTMLLiAttributes {
@@ -56,6 +57,7 @@ type DateFormat = "year" | "month-year" | "full-date";
 interface TimelineProps extends HTMLOlAttributes {
   children: Snippet;
   order?: "default" | "vertical" | "horizontal" | "activity" | "group";
+  class?: string;
 }
 
 interface TimelineItemProps extends HTMLLiAttributes {

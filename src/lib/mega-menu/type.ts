@@ -12,6 +12,7 @@ interface MegaMenuProps extends Omit<HTMLAttributes<HTMLDivElement>, "children">
   divClass?: string;
   footerClass?: string;
   headerClass?: string;
+  class?: string;
 }
 
 export { type MegaMenuProps };

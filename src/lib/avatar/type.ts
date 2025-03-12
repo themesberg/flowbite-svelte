@@ -13,6 +13,7 @@ interface AvatarProps extends HTMLAttributes<HTMLDivElement> {
   size?: "xs" | "sm" | "md" | "lg" | "xl";
   onclick?: () => void;
   border?: boolean;
+  class?: string;
 }
 
 export { type AvatarProps };

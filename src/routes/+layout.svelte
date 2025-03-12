@@ -1,8 +1,8 @@
 <script lang="ts">
   import { RunesMetaTags, deepMerge } from "runes-meta-tags";
   import { Runatics } from "runatics";
-  import { page } from "$app/stores";
-  import "../app.pcss";
+  import { page } from "$app/state";
+  import "../app.css";
   import Footer from "./utils/Footer.svelte";
   import { Navbar, NavLi, NavBrand, NavUl, uiHelpers, Darkmode, Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper } from "$lib";
   import GitHub from "./utils/GitHub.svelte";
@@ -15,14 +15,14 @@
   let navStatus = $state(false);
   let toggleNav = nav.toggle;
   let closeNav = nav.close;
-  let activeUrl = $state($page.url.pathname);
+  let activeUrl = $state(page.url.pathname);
   const hasPath = (key: string) => activeUrl.includes(key);
   let pageStatus = $derived(hasPath("pages"));
   let componentStatus = $derived(hasPath("components"));
 
   $effect(() => {
     navStatus = nav.isOpen;
-    activeUrl = $page.url.pathname;
+    activeUrl = page.url.pathname;
     isOpen = sidebarUi.isOpen;
     // pageStatus = hasPath("pages");
     // componentStatus = hasPath("components");
@@ -33,11 +33,11 @@
 
   const analyticsId = data.ANALYTICS_ID_RUNES_LIB;
   // meta tags
-  let metaTags = $state($page.data.pageMetaTags ? deepMerge($page.data.layoutMetaTags, $page.data.pageMetaTags) : data.layoutMetaTags);
+  let metaTags = $state(page.data.pageMetaTags ? deepMerge(page.data.layoutMetaTags, page.data.pageMetaTags) : data.layoutMetaTags);
 
   $effect(() => {
-    metaTags = $page.data.pageMetaTags ? deepMerge($page.data.layoutMetaTags, $page.data.pageMetaTags) : data.layoutMetaTags;
-    activeUrl = $page.url.pathname;
+    metaTags = page.data.pageMetaTags ? deepMerge(page.data.layoutMetaTags, page.data.pageMetaTags) : data.layoutMetaTags;
+    activeUrl = page.url.pathname;
     $inspect("activeUrl in layout: ", activeUrl);
   });
 </script>

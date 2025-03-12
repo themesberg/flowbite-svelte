@@ -11,6 +11,7 @@ interface BlockquoteProps extends HTMLBlockquoteAttributes {
   bg?: boolean;
   alignment?: AlignmentType;
   size?: SizeType;
+  class?: string;
 }
 
 export { type BlockquoteProps };

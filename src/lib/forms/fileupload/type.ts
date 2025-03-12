@@ -6,6 +6,7 @@ interface FileuploadProps extends Omit<HTMLInputAttributes, "size"> {
   size?: InputProps<never>["size"];
   color?: InputProps<never>["color"];
   clearable?: boolean;
+  class?: string;
 }
 
 export { type FileuploadProps };

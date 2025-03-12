@@ -1,8 +1,11 @@
 <script lang="ts">
   import type { HTMLAttributes } from "svelte/elements";
   import { testimonialPlaceholder } from "./index";
+  type Props = {
+    class?: string;
+  };
 
-  let { class: className, ...restProps }: HTMLAttributes<HTMLDivElement> = $props();
+  let { class: className, ...restProps }: Props = $props();
   const { wrapper, line1, line2, svg, subContent } = testimonialPlaceholder();
 </script>
 

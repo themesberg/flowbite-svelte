@@ -36,12 +36,14 @@ type SizeTextType = "sm" | "md" | "lg" | "xl" | "2xl" | undefined;
 
 interface TextPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
   size?: SizeTextType;
+  class?: string;
 }
 
 type SizeVideoType = "sm" | "md" | "lg" | "xl" | "2xl" | undefined;
 
 interface VideoPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
   size?: SizeVideoType;
+  class?: string;
 }
 
 export type { CardPlaceholderProps, ImagePlaceholderProps, ListPlaceholderProps, SkeletonProps, TextPlaceholderProps, VideoPlaceholderProps, SizeVideoType };

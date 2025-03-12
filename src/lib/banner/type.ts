@@ -18,6 +18,7 @@ interface BannerProps extends HTMLAttributes<HTMLDivElement> {
   innerClass?: string;
   transition?: TransitionFunc;
   params?: object;
+  class?: string;
 }
 
 export { type BannerProps };

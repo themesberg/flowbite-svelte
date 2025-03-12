@@ -31,7 +31,7 @@
   <Navbar {toggleNav} {closeNav} {navStatus}>
     {#snippet brand()}
       <NavBrand href="/">
-        <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
+        <img src="/images/flowbite-svelte-icons-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
         <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
       </NavBrand>
     {/snippet}

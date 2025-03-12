@@ -19,6 +19,7 @@ interface ParagraphProps extends HTMLAttributes<HTMLParagraphElement> {
   height?: HeightType;
   align?: AlignType;
   justify?: boolean;
+  class?: string;
 }
 
 export { type ParagraphProps };

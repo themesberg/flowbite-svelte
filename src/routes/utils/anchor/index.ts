@@ -8,6 +8,7 @@ interface AnchorProps extends HTMLAttributes<HTMLHeadingElement> {
   tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   spanClass?: string;
   aClass?: string;
+  class?: string;
 }
 
 export { Anchor, anchor, type AnchorProps };

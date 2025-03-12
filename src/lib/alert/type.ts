@@ -16,6 +16,7 @@ interface AlertProps extends HTMLAttributes<HTMLDivElement> {
   transition?: TransitionFunc;
   params?: ParamsType;
   onclick?: () => void;
+  class?: string;
 }
 
 export type { alertColor, AlertProps };

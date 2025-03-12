@@ -15,6 +15,7 @@ interface PopoverProps extends HTMLAttributes<HTMLDivElement> {
   reference?: string;
   params?: ParamsType | undefined;
   transition?: TransitionFunc;
+  class?: string;
 }
 
 type Position = "top" | "top-start" | "top-end" | "bottom" | "bottom-start" | "bottom-end" | "left" | "left-start" | "left-end" | "right" | "right-start" | "right-end";

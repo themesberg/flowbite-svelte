@@ -39,6 +39,7 @@ interface BottomNavHeaderProps {
 interface BottomNavHeaderItemProps extends HTMLButtonAttributes {
   itemName: string;
   active?: boolean;
+  class?: string;
 }
 
 export { type BottomNavProps, type BottomNavItemProps, type BottomNavContextType, type BottomNavVariantType, type BottomNavHeaderProps, type BottomNavHeaderItemProps };
