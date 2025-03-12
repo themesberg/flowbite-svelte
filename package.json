@@ -29,8 +29,6 @@
     "gen:component-data-from-type": "svelte-lib-helpers component-data-from-type",
     "copy:packagejson": "svelte-lib-helpers package",
     "lib-helpers": "pnpm gen:component-data-from-type && pnpm format && pnpm package && pnpm gen:exports && pnpm copy:packagejson",
-    "generate-file-list": "tsx scripts/generateFileList.ts",
-    "prebuild": "npm run generate-file-list",
     "ch": "npx changeset",
     "cv": "npx changeset version",
     "cp": "npx changeset publish"
