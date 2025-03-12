@@ -5,8 +5,10 @@
   import Button from "$lib/buttons/Button.svelte";
   import Tooltip from "$lib/tooltip/Tooltip.svelte";
   import { DesktopPcOutline, MobilePhoneOutline, TabletOutline } from "flowbite-svelte-icons";
+  import { mount, onMount } from "svelte";
   import { twJoin, twMerge } from "tailwind-merge";
   import ExampleDarkMode from "./ExampleDarkMode.svelte";
+  import ExampleHelper from "./ExampleHelper.svelte";
   import ExampleRtl from "./ExampleRTL.svelte";
   import GitHub from "./icons/GitHub.svelte";
 
@@ -31,17 +33,10 @@
 
   let path: URL | undefined = $state();
 
-  // suppress vite-plugin-svelte warning about unused props
-  /* eslint-disable @typescript-eslint/no-unused-expressions */
-  $effect(() => {
-    src;
-    meta;
-  });
-
   let showExpandButton: boolean = $state(false);
   let expand: boolean = $state(false);
   let dark: boolean = $state(false);
-  let rtl: NotificationDirection | undefined = $state();
+  let rtl: NotificationDirection = $state("auto");
   let responsiveDevice: keyof typeof responsiveSize = $state("desktop");
 
   const responsiveSize = {
@@ -114,6 +109,72 @@
   }
 
   let copy_text = "Copy";
+
+  // iFrame support
+  let iframe: HTMLIFrameElement | undefined = $state();
+  let iframeLoad: boolean = $state(false);
+
+  const injectContent = () => {
+    if (!iframe?.contentDocument) return;
+
+    iframeLoad = true;
+    // get only css and style frome head
+    const externalCss = document.querySelectorAll('head link[href*="https://"][rel="stylesheet"], head style');
+    const internalCss = Array.from(document.styleSheets).filter((el) => el.href?.includes(document.location.hostname));
+    // extract style to avoid multiple network request to css
+    const extractInlineCss = internalCss.reduce((acc, el) => {
+      acc += Array.from(el.cssRules)
+        .map((rule) => rule.cssText)
+        .join(" ");
+      return acc;
+    }, "");
+    const styleTag = document.createElement("style");
+    styleTag.innerHTML = extractInlineCss;
+    // extract outerHtlm in order to clone html
+
+    const headContent = Array.from(externalCss).reduce((acc, el) => (acc += el.outerHTML), "");
+    // put the content of head in the head of the iframe
+    iframe.contentDocument?.head.insertAdjacentHTML("beforeend", `${headContent}${styleTag.outerHTML}` || "");
+    // append the component content in the iframe body
+    mount(ExampleHelper, { target: iframe.contentDocument?.body, props: { snippet: example, class: twMerge(divClass, meta.class) } });
+    updateHeightContent();
+    // listen change on height of the iframe content and update the preview height
+    if (iframe.contentDocument?.body.firstChild) {
+      const resizeObserver = new ResizeObserver(updateHeightContent);
+      resizeObserver.observe(iframe.contentDocument.body.firstElementChild as Element);
+    }
+    iframe = iframe;
+  };
+
+  const updateHeightContent = () => {
+    console.log("updateHight");
+    if (codeResponsiveContent) {
+      codeResponsiveContent.style.height = `${(iframe?.contentDocument?.body?.firstElementChild as HTMLDivElement)?.offsetHeight || 0}px`;
+    }
+  };
+
+  onMount(() => {
+    // workaround for svelte issue https://github.com/sveltejs/svelte/issues/6967
+    setTimeout(() => {
+      if (iframe && !iframeLoad) {
+        iframe.dispatchEvent(new Event("load"));
+      }
+    }, 500);
+  });
+
+  $effect(() => {
+    if (iframe) {
+      // toggle dark mode class in the iframe
+      dark ? iframe?.contentDocument?.documentElement.classList.add("dark") : iframe?.contentDocument?.documentElement.classList.remove("dark");
+    }
+  });
+
+  $effect(() => {
+    if (iframe && iframe.contentDocument) {
+      // toggle dir value in the iframe
+      iframe.contentDocument.documentElement.dir = rtl ?? "";
+    }
+  });
 </script>
 
 <div class="code-example mt-8" use:init>
@@ -149,9 +210,13 @@
       <div class="code-preview flex border-x border-gray-200 bg-white bg-linear-to-r p-0 dark:border-gray-600 dark:bg-gray-900" class:dark dir={rtl}>
         <div class="code-responsive-wrapper w-full">
           <div class="code-responive-content {twJoin(!meta.hideResponsiveButtons && 'mx-auto', responsiveSize[responsiveDevice])}" bind:this={codeResponsiveContent}>
-            <div class={twMerge(divClass, meta.class)}>
-              {@render example?.()}
-            </div>
+            {#if !meta.hideResponsiveButtons}
+              <iframe bind:this={iframe} class="h-full w-full" title="iframe-code-content" onload={injectContent}></iframe>
+            {:else}
+              <div class={twMerge(divClass, meta.class)}>
+                {@render example()}
+              </div>
+            {/if}
           </div>
         </div>
       </div>
