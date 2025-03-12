@@ -1,40 +1,12 @@
 {
   "name": "ToolbarButton",
   "props": [
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "color",
-      "any",
-      "\"default\""
-    ],
-    [
-      "name",
-      "any",
-      ""
-    ],
-    [
-      "\"aria-label\"",
-      "any",
-      ""
-    ],
-    [
-      "size",
-      "any",
-      "\"md\""
-    ],
-    [
-      "href",
-      "any",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ]
+    ["children", "any", ""],
+    ["color", "any", "\"default\""],
+    ["name", "any", ""],
+    ["\"aria-label\"", "any", ""],
+    ["size", "any", "\"md\""],
+    ["href", "any", ""],
+    ["class", "string", ""]
   ]
 }

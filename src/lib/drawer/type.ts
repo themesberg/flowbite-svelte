@@ -3,7 +3,6 @@ import type { HTMLAttributes, HTMLButtonAttributes } from "svelte/elements";
 import type { TransitionFunc, ParamsType } from "../types";
 import type { DrawerVariants } from "./theme";
 
-
 interface DrawerProps extends DrawerVariants, HTMLAttributes<HTMLDivElement> {
   hidden: boolean;
   closeDrawer?: () => void;

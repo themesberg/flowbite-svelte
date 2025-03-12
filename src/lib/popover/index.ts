@@ -8,6 +8,4 @@ import type { PopoverProps } from "./type";
  * @returns The calculated position for the tooltip and arrow
  */
 
-
 export { Popover, popover, type PopoverProps };
-

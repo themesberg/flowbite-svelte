@@ -2,7 +2,6 @@ import type { Snippet } from "svelte";
 import type { HTMLLiAttributes, HTMLOlAttributes } from "svelte/elements";
 import type { ListVariants } from "./theme";
 
-
 interface ListProps extends HTMLOlAttributes {
   children: Snippet;
   tag?: ListVariants["tag"];

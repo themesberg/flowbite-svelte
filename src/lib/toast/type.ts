@@ -3,7 +3,6 @@ import type { ParamsType, TransitionFunc } from "../types";
 import type { HTMLAttributes } from "svelte/elements";
 import type { ToastVaraints } from "./theme";
 
-
 interface ToastProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   icon?: Snippet;

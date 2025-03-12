@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { MetaTags } from 'svelte-meta-tags';
-  export let path: string = '';
-  export let description: string = '';
-  export let title: string = '';
-  export let subtitle: string = '';
+  import { MetaTags } from "svelte-meta-tags";
+  export let path: string = "";
+  export let description: string = "";
+  export let title: string = "";
+  export let subtitle: string = "";
 
   let imgsrc = `https://open-graph-vercel.vercel.app/api/flowbite-svelte-icons?title=${subtitle}`;
 
@@ -14,7 +14,7 @@
   {title}
   {description}
   openGraph={{
-    type: 'website',
+    type: "website",
     url: `${og_url}`,
     title: `${title}`,
     description: `${description}`,
@@ -26,11 +26,11 @@
         alt: `${title}`
       }
     ],
-    siteName: 'Flowbite Svelte Icons'
+    siteName: "Flowbite Svelte Icons"
   }}
   twitter={{
-    handle: '@shinokada',
-    cardType: 'summary_large_image',
+    handle: "@shinokada",
+    cardType: "summary_large_image",
     title: `${title}`,
     description: `${description}`,
     image: imgsrc,

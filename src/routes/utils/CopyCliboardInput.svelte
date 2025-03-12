@@ -30,10 +30,10 @@
   };
 </script>
 
-<Input size="lg" {placeholder} readonly class="text-sm py-3 sm:text-sm focus:ring-primary-600 focus:border-primary-600 md:min-w-[315px] {$$props.class ?? ''}">
+<Input size="lg" {placeholder} readonly class="focus:ring-primary-600 focus:border-primary-600 py-3 text-sm sm:text-sm md:min-w-[315px] {$$props.class ?? ''}">
   {#snippet right()}
     <div class="flex items-center ps-32">
-      <button on:click={copyToClipboard} class="hover:text-primary-700 py-2 px-1">
+      <button on:click={copyToClipboard} class="hover:text-primary-700 px-1 py-2">
         {#if tooltip_text == text_not_copied}<Clipboard />{:else}<Check />{/if}
       </button>
 

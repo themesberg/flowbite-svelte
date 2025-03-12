@@ -20,7 +20,7 @@ The tabs component can be used either as an extra navigational hierarchy complem
 
 ```svelte example hideOutput
 <script>
-  import { Tabs, TabItem } from 'flowbite-svelte';
+  import { Tabs, TabItem } from "flowbite-svelte";
 </script>
 ```
 
@@ -38,7 +38,7 @@ The last tab in that example shows not only how to show a disabled tab, but how 
 
 ```svelte example
 <script>
-  import { Tabs, TabItem } from 'flowbite-svelte';
+  import { Tabs, TabItem } from "flowbite-svelte";
 </script>
 
 <Tabs>
@@ -90,7 +90,7 @@ Use the `tabStyle="underline"` to achieve this alternative tabs component style 
 
 ```svelte example
 <script>
-  import { Tabs, TabItem } from 'flowbite-svelte';
+  import { Tabs, TabItem } from "flowbite-svelte";
 </script>
 
 <Tabs tabStyle="underline">
@@ -134,8 +134,8 @@ This is an example of the tabs component where you can also use a SVG powered ic
 
 ```svelte example
 <script>
-  import { Tabs, TabItem } from 'flowbite-svelte';
-  import { UserCircleSolid, GridSolid, AdjustmentsVerticalSolid, ClipboardSolid } from 'flowbite-svelte-icons';
+  import { Tabs, TabItem } from "flowbite-svelte";
+  import { UserCircleSolid, GridSolid, AdjustmentsVerticalSolid, ClipboardSolid } from "flowbite-svelte-icons";
 </script>
 
 <Tabs tabStyle="underline">
@@ -188,7 +188,7 @@ If you want to use pills as a style for the tabs component use `tabStyle="pill"`
 
 ```svelte example
 <script>
-  import { Tabs, TabItem } from 'flowbite-svelte';
+  import { Tabs, TabItem } from "flowbite-svelte";
 </script>
 
 <Tabs tabStyle="pill">
@@ -229,7 +229,7 @@ If you want to show the tabs on the full width relative to the parent element us
 
 ```svelte example
 <script>
-  import { Tabs, TabItem } from 'flowbite-svelte';
+  import { Tabs, TabItem } from "flowbite-svelte";
 </script>
 
 <Tabs tabStyle="full" defaultClass="flex rounded-lg divide-x rtl:divide-x-reverse divide-gray-200 shadow-sm dark:divide-gray-700">
@@ -270,8 +270,8 @@ You can add other components to the `TabItem` component. Here we are adding a ti
 
 ```svelte example class="h-auto"
 <script>
-  import { Tabs, TabItem, Timeline, TimelineItem, Button } from 'flowbite-svelte';
-  import { ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Tabs, TabItem, Timeline, TimelineItem, Button } from "flowbite-svelte";
+  import { ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
 <Tabs>
@@ -282,7 +282,7 @@ You can add other components to the `TabItem` component. Here we are adding a ti
         <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
         <Button color="alternative">
           Learn more
-          <ArrowRightOutline class="ms-2 w-5 h-5" />
+          <ArrowRightOutline class="ms-2 h-5 w-5" />
         </Button>
       </TimelineItem>
       <TimelineItem title="Application UI code in Tailwind CSS" date="March 2022">

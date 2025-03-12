@@ -1,40 +1,12 @@
 {
   "name": "EnhancedImg",
   "props": [
-    [
-      "src",
-      "any",
-      ""
-    ],
-    [
-      "href",
-      "any",
-      ""
-    ],
-    [
-      "caption",
-      "any",
-      ""
-    ],
-    [
-      "size",
-      "any",
-      ""
-    ],
-    [
-      "figClass",
-      "any",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ],
-    [
-      "captionClass",
-      "any",
-      ""
-    ]
+    ["src", "any", ""],
+    ["href", "any", ""],
+    ["caption", "any", ""],
+    ["size", "any", ""],
+    ["figClass", "any", ""],
+    ["class", "string", ""],
+    ["captionClass", "any", ""]
   ]
 }

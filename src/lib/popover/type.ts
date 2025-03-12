@@ -12,4 +12,3 @@ interface PopoverProps extends Omit<PopperProps, "title"> {
 }
 
 export type { PopoverProps };
-

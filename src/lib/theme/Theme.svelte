@@ -1,8 +1,8 @@
 <script lang="ts">
-  import deepmerge from 'deepmerge';
-  import { setContext, type Snippet } from 'svelte';
-  import { tv } from 'tailwind-variants';
-  import { baseThemes, type BaseThemes } from './index';
+  import deepmerge from "deepmerge";
+  import { setContext, type Snippet } from "svelte";
+  import { tv } from "tailwind-variants";
+  import { baseThemes, type BaseThemes } from "./index";
 
   interface Props {
     children: Snippet;
@@ -48,7 +48,7 @@
 
   const mergedThemes = mergeThemes(baseThemes, theme);
 
-  setContext<BaseThemes>('themeConfig', mergedThemes);
+  setContext<BaseThemes>("themeConfig", mergedThemes);
 </script>
 
 {@render children()}

@@ -43,12 +43,11 @@ export const datepicker = tv({
       false: { base: "absolute z-10 mt-1" }
     },
     current: {
-      true: { dayButton: 'text-gray-300 dark:text-gray-600' }
+      true: { dayButton: "text-gray-300 dark:text-gray-600" }
     },
     today: {
       true: { dayButton: "font-bold" }
     }
   },
-  compoundVariants: [
-  ]
+  compoundVariants: []
 });

@@ -20,7 +20,7 @@ Use the skeleton component to indicate a loading status with placeholder element
 
 ```svelte example hideOutput
 <script>
-  import { CardPlaceholder, ImagePlaceholder, ListPlaceholder, Skeleton, TestimonialPlaceholder, TextPlaceholder, VideoPlaceholder, WidgetPlaceholder } from 'flowbite-svelte';
+  import { CardPlaceholder, ImagePlaceholder, ListPlaceholder, Skeleton, TestimonialPlaceholder, TextPlaceholder, VideoPlaceholder, WidgetPlaceholder } from "flowbite-svelte";
 </script>
 ```
 
@@ -28,7 +28,7 @@ Use the skeleton component to indicate a loading status with placeholder element
 
 ```svelte example
 <script>
-  import { Skeleton } from 'flowbite-svelte';
+  import { Skeleton } from "flowbite-svelte";
 </script>
 
 <Skeleton size="sm" class="my-8" />
@@ -44,7 +44,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 ```svelte example class="flex flex-col gap-8"
 <script>
-  import { ImagePlaceholder } from 'flowbite-svelte';
+  import { ImagePlaceholder } from "flowbite-svelte";
 </script>
 
 <ImagePlaceholder size="sm" />
@@ -56,7 +56,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 ```svelte example
 <script>
-  import { VideoPlaceholder } from 'flowbite-svelte';
+  import { VideoPlaceholder } from "flowbite-svelte";
 </script>
 
 <VideoPlaceholder />
@@ -70,7 +70,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 ```svelte example
 <script>
-  import { TextPlaceholder } from 'flowbite-svelte';
+  import { TextPlaceholder } from "flowbite-svelte";
 </script>
 
 <TextPlaceholder />
@@ -84,7 +84,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 ```svelte example
 <script>
-  import { CardPlaceholder } from 'flowbite-svelte';
+  import { CardPlaceholder } from "flowbite-svelte";
 </script>
 
 <CardPlaceholder />
@@ -98,7 +98,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 ```svelte example
 <script>
-  import { WidgetPlaceholder } from 'flowbite-svelte';
+  import { WidgetPlaceholder } from "flowbite-svelte";
 </script>
 
 <WidgetPlaceholder />
@@ -108,7 +108,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 ```svelte example
 <script>
-  import { ListPlaceholder } from 'flowbite-svelte';
+  import { ListPlaceholder } from "flowbite-svelte";
 </script>
 
 <ListPlaceholder />
@@ -118,7 +118,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 ```svelte example
 <script>
-  import { TestimonialPlaceholder } from 'flowbite-svelte';
+  import { TestimonialPlaceholder } from "flowbite-svelte";
 </script>
 
 <TestimonialPlaceholder />

@@ -47,11 +47,11 @@ To make sure the classes used by flowbite-svelte-icons are included by the Tailw
 ```js
 const config = {
   content: [
-       // more lines
-        "./node_modules/flowbite-svelte-icons/**/*.{html,js,svelte,ts}",
-    ],
     // more lines
-}  
+    "./node_modules/flowbite-svelte-icons/**/*.{html,js,svelte,ts}"
+  ]
+  // more lines
+};
 ```
 
 ## Basic Usages
@@ -60,13 +60,13 @@ In a svelte file:
 
 ```html
 <script>
-  import { AddressBookOutline } from 'flowbite-svelte-icons';
+  import { AddressBookOutline } from "flowbite-svelte-icons";
 </script>
 
 <AddressBookOutline />
 ```
 
-## A11y friendly 
+## A11y friendly
 
 Use `title`, `desc`, and `ariaLabel` props to make your icons accessible.
 
@@ -85,7 +85,7 @@ If you need only a few icons from this library in your Svelte app, import them d
 
 ```html
 <script>
-  import AddressBookOutline from 'flowbite-svelte-icons/AddressBookOutline.svelte';
+  import AddressBookOutline from "flowbite-svelte-icons/AddressBookOutline.svelte";
 </script>
 
 <AddressBookOutline />
@@ -96,14 +96,14 @@ If you need only a few icons from this library in your Svelte app, import them d
 Since all icons have `{...$$restProps}`, you can pass other attibutes as well.
 
 ```html
-<AddressBookOutline id="my-svg" transform="rotate(45)"/>
+<AddressBookOutline id="my-svg" transform="rotate(45)" />
 ```
 
 ## Using svelte:component
 
 ```html
 <script>
-  import { AddressBookOutline } from 'flowbite-svelte-icons';
+  import { AddressBookOutline } from "flowbite-svelte-icons";
 </script>
 
 <svelte:component this="{AddressBookOutline}" />
@@ -113,11 +113,11 @@ Since all icons have `{...$$restProps}`, you can pass other attibutes as well.
 
 ```html
 <script>
-  import { AddressBookOutline } from 'flowbite-svelte-icons';
-  import { onMount } from 'svelte';
+  import { AddressBookOutline } from "flowbite-svelte-icons";
+  import { onMount } from "svelte";
   const props = {
-    size: '50',
-    color: '#ff0000'
+    size: "50",
+    color: "#ff0000"
   };
   onMount(() => {
     const icon = new AddressBookOutline({ target: document.body, props });
@@ -131,7 +131,7 @@ Use `import * as Icon from 'flowbite-svelte-icons`.
 
 ```html
 <script>
-  import * as Icon from 'flowbite-svelte-icons';
+  import * as Icon from "flowbite-svelte-icons";
 </script>
 
 <Icon.AddressBookOutline />
@@ -151,7 +151,7 @@ Use `import * as Icon from 'flowbite-svelte-icons`.
 - withEvents = ctx.withEvents || false;
 - title: TitleType = {};
 - desc: DescType = {};
-- strokeLinecap: 'round' | 'inherit' | 'butt' | 'square' | undefined =  ctx.strokeLinecap || 'round';
+- strokeLinecap: 'round' | 'inherit' | 'butt' | 'square' | undefined = ctx.strokeLinecap || 'round';
 - strokeWidth = ctx.strokeWidth || '2';
 - ariaLabel = '<icon file name>';
 ```
@@ -173,12 +173,12 @@ Use `import * as Icon from 'flowbite-svelte-icons`.
 The following table provides details about the available sizes for icons:
 
 ```markdown
-Size  CSS classes
-xs    'w-3 h-3'
-sm    'w-4 h-4'
-md    'w-5 h-5'
-lg    'w-6 h-6'
-xl    'w-8 h-8'
+Size CSS classes
+xs 'w-3 h-3'
+sm 'w-4 h-4'
+md 'w-5 h-5'
+lg 'w-6 h-6'
+xl 'w-8 h-8'
 ```
 
 To change the size of an icon, use the `size` prop and specify the desired size. For example:
@@ -190,7 +190,7 @@ To change the size of an icon, use the `size` prop and specify the desired size.
 If you want to override the preconfigured size, you can add a custom size using Tailwind CSS by including the desired classes in the `class` prop. For example:
 
 ```html
-<AddressBookOutline class="h-24 w-24 text-blue-700 mr-4" />
+<AddressBookOutline class="mr-4 h-24 w-24 text-blue-700" />
 ```
 
 ## Color
@@ -198,9 +198,9 @@ If you want to override the preconfigured size, you can add a custom size using 
 You can apply Tailwind CSS color directly to the icon component or its parent tag using the `class` prop.
 
 ```html
-<AddressBookOutline size="md" class="text-red-700 dark:text-green-300 inline m-1"/>
+<AddressBookOutline size="md" class="m-1 inline text-red-700 dark:text-green-300" />
 
-<div class="text-red-700 dark:text-green-300 inline m-1">
+<div class="m-1 inline text-red-700 dark:text-green-300">
   <AddressBookOutline size="md" />
 </div>
 ```
@@ -210,7 +210,7 @@ You can apply Tailwind CSS color directly to the icon component or its parent ta
 Use the color attribute to change colors with HEX color code for Filled and Outlined components.
 
 ```html
-<AddressBookOutline color="#ff0000" size="md"/> 
+<AddressBookOutline color="#ff0000" size="md" />
 ```
 
 ## Dark mode
@@ -248,7 +248,7 @@ Use `title`, `desc`, and `ariaLabel` props to make your icons accessible.
 As default all icons are unfocusable. However you can add `withEvents` prop to make your icons focusable.
 
 ```html
-<AddressBookOutline withEvents/>
+<AddressBookOutline withEvents />
 <ArchiveSolid withEvents />
 ```
 
@@ -256,7 +256,7 @@ It is possible to add `tabindex="0"`, but it is not recommended for A11y.
 If you want to use it add `withEvents` prop as well.
 
 ```html
-<AddressBookOutline tabindex="0" withEvents/>
+<AddressBookOutline tabindex="0" withEvents />
 ```
 
 ## Events
@@ -276,7 +276,7 @@ Use `withEvents` prop to use the following events:
 ```
 
 ```html
-<AddressBookOutline withEvents on:click={handleClick}/>
+<AddressBookOutline withEvents on:click="{handleClick}" />
 ```
 
 ## Passing down other attributes
@@ -284,7 +284,7 @@ Use `withEvents` prop to use the following events:
 Since all icons have `{...$$restProps}`, you can pass other attibutes as well.
 
 ```html
-<AddressBookOutline id="my-svg" transform="rotate(45)"/>
+<AddressBookOutline id="my-svg" transform="rotate(45)" />
 ```
 
 ## Custom Default Icons
@@ -297,12 +297,12 @@ Create a Svelte component named `src/lib/MyIcon.svelte`:
 
 ```html
 <script lang="ts">
-  import type { ComponentType } from 'svelte';
+  import type { ComponentType } from "svelte";
   const config = {
     size: "xl",
-    color: '#FF5733'
+    color: "#FF5733"
   };
-  import { IconSolid } from 'flowbite-svelte-icons';
+  import { IconSolid } from "flowbite-svelte-icons";
   export let icon: ComponentType;
 </script>
 
@@ -317,8 +317,8 @@ To use your custom default icon in a Svelte page, do the following:
 
 ```html
 <script>
-  import MyIcon from '$lib/MyIcon.svelte';
-  import { AngleLeftSolid } from 'flowbite-svelte-icons';
+  import MyIcon from "$lib/MyIcon.svelte";
+  import { AngleLeftSolid } from "flowbite-svelte-icons";
 </script>
 
 <MyIcon icon="{AngleLeftSolid}" />
@@ -336,13 +336,13 @@ In your `+layout.svelte` or `+page.svelte`, you can define and set global icon p
 
 ```html
 <script>
-  import { setContext } from 'svelte';
+  import { setContext } from "svelte";
 
   // Define your global icon settings
   const iconCtx = {
-    size: 'xl', // Icon size in pixels
+    size: "xl" // Icon size in pixels
   };
-  setContext('iconCtx', iconCtx);
+  setContext("iconCtx", iconCtx);
 </script>
 ```
 
@@ -354,12 +354,12 @@ If you set `size`, icons can be customized with different color. For example:
 
 ```html
 <script>
-  import { setContext } from 'svelte';
-  import { MapLocationOutline } from 'flowbite-svelte-icons';
+  import { setContext } from "svelte";
+  import { MapLocationOutline } from "flowbite-svelte-icons";
   const iconCtx = {
-    size: 'xl'
+    size: "xl"
   };
-  setContext('iconCtx', iconCtx);
+  setContext("iconCtx", iconCtx);
 </script>
 
 <MapLocationOutline color="#ff4488" />

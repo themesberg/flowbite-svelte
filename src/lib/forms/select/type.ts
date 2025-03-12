@@ -2,7 +2,6 @@ import type { Snippet } from "svelte";
 import type { HTMLSelectAttributes, HTMLAttributes } from "svelte/elements";
 import type { MultiSelectVariants, SelectVariants } from "./theme";
 
-
 type SelectOptionType<T> = {
   name: string | number;
   value: T;
@@ -15,9 +14,8 @@ interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttributes, "siz
   placeholder?: string;
 }
 
-
-interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLSelectAttributes, 'size' | 'children'> {
-  children?: Snippet<[{ item: SelectOptionType<T>, clear: () => void }]>
+interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLSelectAttributes, "size" | "children"> {
+  children?: Snippet<[{ item: SelectOptionType<T>; clear: () => void }]>;
   items?: SelectOptionType<T>[];
   // value?: (string | number)[];
   dropdownClass?: string;

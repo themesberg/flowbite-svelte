@@ -23,7 +23,7 @@ On this page you will find a three different input field styles including a stan
 
 ```svelte example hideOutput
 <script>
-  import { FloatingLabelInput, Helper } from 'flowbite-svelte';
+  import { FloatingLabelInput, Helper } from "flowbite-svelte";
 </script>
 ```
 
@@ -33,19 +33,13 @@ Get started with the following three styles for the floating label component and
 
 ```svelte example hideScript
 <script>
-  import { FloatingLabelInput } from 'flowbite-svelte';
+  import { FloatingLabelInput } from "flowbite-svelte";
 </script>
 
-<div id="exampleWrapper" class="grid gap-6 items-end w-full md:grid-cols-3">
-  <FloatingLabelInput variant="filled" id="floating_filled" name="floating_filled" type="text">
-    Floating filled
-  </FloatingLabelInput>
-  <FloatingLabelInput variant="outlined" id="floating_outlined" name="floating_outlined" type="text">
-    Floating outlined
-  </FloatingLabelInput>
-  <FloatingLabelInput id="floating_standard" name="floating_standard" type="text" label="Floating standard">
-    Floating standard
-  </FloatingLabelInput>
+<div id="exampleWrapper" class="grid w-full items-end gap-6 md:grid-cols-3">
+  <FloatingLabelInput variant="filled" id="floating_filled" name="floating_filled" type="text">Floating filled</FloatingLabelInput>
+  <FloatingLabelInput variant="outlined" id="floating_outlined" name="floating_outlined" type="text">Floating outlined</FloatingLabelInput>
+  <FloatingLabelInput id="floating_standard" name="floating_standard" type="text" label="Floating standard">Floating standard</FloatingLabelInput>
 </div>
 ```
 
@@ -55,19 +49,13 @@ Apply the disabled attribute to the input fields to disallow the user from chang
 
 ```svelte example hideScript
 <script>
-  import { FloatingLabelInput } from 'flowbite-svelte';
+  import { FloatingLabelInput } from "flowbite-svelte";
 </script>
 
-<div id="exampleWrapper" class="grid gap-6 items-end w-full md:grid-cols-3">
-  <FloatingLabelInput variant="filled" id="disabled_filled" name="disabled_filled" type="text" disabled >
-    Disabled filled
-  </FloatingLabelInput>
-  <FloatingLabelInput variant="outlined" id="disabled_outlined" name="disabled_outlined" type="text" disabled>
-    Disabled outlined
-  </FloatingLabelInput>
-  <FloatingLabelInput id="disabled_standard" name="disabled_standard" type="text" disabled>
-    Disabled standard
-  </FloatingLabelInput>
+<div id="exampleWrapper" class="grid w-full items-end gap-6 md:grid-cols-3">
+  <FloatingLabelInput variant="filled" id="disabled_filled" name="disabled_filled" type="text" disabled>Disabled filled</FloatingLabelInput>
+  <FloatingLabelInput variant="outlined" id="disabled_outlined" name="disabled_outlined" type="text" disabled>Disabled outlined</FloatingLabelInput>
+  <FloatingLabelInput id="disabled_standard" name="disabled_standard" type="text" disabled>Disabled standard</FloatingLabelInput>
 </div>
 ```
 
@@ -77,33 +65,27 @@ Use the following examples of input validation for the success and error message
 
 ```svelte example
 <script>
-  import { FloatingLabelInput, Helper } from 'flowbite-svelte';
+  import { FloatingLabelInput, Helper } from "flowbite-svelte";
 </script>
 
 <!-- Success messages -->
-<div class="grid gap-6 items-end mb-6 md:grid-cols-3">
+<div class="mb-6 grid items-end gap-6 md:grid-cols-3">
   <div>
-    <FloatingLabelInput color="green" variant="filled" id="filled_success" aria-describedby="filled_success_help" name="filled_success" type="text">
-      Filled success
-    </FloatingLabelInput>
+    <FloatingLabelInput color="green" variant="filled" id="filled_success" aria-describedby="filled_success_help" name="filled_success" type="text">Filled success</FloatingLabelInput>
     <Helper color="green">
       <span class="font-medium">Well done!</span>
       Some success message.
     </Helper>
   </div>
   <div>
-    <FloatingLabelInput color="green" variant="outlined" id="outlined_success" aria-describedby="outlined_success_help" name="outlined_success" type="text">
-      Outlined success
-    </FloatingLabelInput>
+    <FloatingLabelInput color="green" variant="outlined" id="outlined_success" aria-describedby="outlined_success_help" name="outlined_success" type="text">Outlined success</FloatingLabelInput>
     <Helper color="green">
       <span class="font-medium">Well done!</span>
       Some success message.
     </Helper>
   </div>
   <div>
-    <FloatingLabelInput color="green" variant="standard" id="standard_success" aria-describedby="standard_success_help" name="standard_success" type="text">
-      Standard success
-    </FloatingLabelInput>
+    <FloatingLabelInput color="green" variant="standard" id="standard_success" aria-describedby="standard_success_help" name="standard_success" type="text">Standard success</FloatingLabelInput>
     <Helper color="green">
       <span class="font-medium">Well done!</span>
       Some success message.
@@ -111,29 +93,23 @@ Use the following examples of input validation for the success and error message
   </div>
 </div>
 <!-- Error messages -->
-<div class="grid gap-6 items-end mb-6 md:grid-cols-3">
+<div class="mb-6 grid items-end gap-6 md:grid-cols-3">
   <div>
-    <FloatingLabelInput color="red" variant="filled" id="filled_error" aria-describedby="filled_error_help" name="filled_error" type="text">
-      Filled error
-    </FloatingLabelInput>
+    <FloatingLabelInput color="red" variant="filled" id="filled_error" aria-describedby="filled_error_help" name="filled_error" type="text">Filled error</FloatingLabelInput>
     <Helper color="red">
       <span class="font-medium">Oh, snapp!</span>
       Some error message.
     </Helper>
   </div>
   <div>
-    <FloatingLabelInput color="red" variant="outlined" id="outlined_error" aria-describedby="outlined_error_help" name="outlined_success" type="text">
-      Outlined error
-    </FloatingLabelInput>
+    <FloatingLabelInput color="red" variant="outlined" id="outlined_error" aria-describedby="outlined_error_help" name="outlined_success" type="text">Outlined error</FloatingLabelInput>
     <Helper color="red">
       <span class="font-medium">Oh, snapp!</span>
       Some error message.
     </Helper>
   </div>
   <div>
-    <FloatingLabelInput color="red" variant="standard" id="standard_error" aria-describedby="standard_error_help" name="standard_success" type="text">
-      Standard error
-    </FloatingLabelInput>
+    <FloatingLabelInput color="red" variant="standard" id="standard_error" aria-describedby="standard_error_help" name="standard_success" type="text">Standard error</FloatingLabelInput>
     <Helper color="red">
       <span class="font-medium">Oh, snapp!</span>
       Some error message.
@@ -148,30 +124,18 @@ Use the small and default sizes of the floating label input fields from the foll
 
 ```svelte example hideScript
 <script>
-  import { FloatingLabelInput } from 'flowbite-svelte';
+  import { FloatingLabelInput } from "flowbite-svelte";
 </script>
 
-<div class="grid gap-6 items-end mb-6 md:grid-cols-3">
-  <FloatingLabelInput size="small" variant="filled" id="small_filled" name="small_filled" type="text">
-    Small filled
-  </FloatingLabelInput>
-  <FloatingLabelInput size="small" variant="outlined" id="small_outlined" name="small_outlined" type="text">
-    Small outlined
-  </FloatingLabelInput>
-  <FloatingLabelInput size="small" id="small_standard" name="small_standard" type="text">
-    Small standard
-  </FloatingLabelInput>
+<div class="mb-6 grid items-end gap-6 md:grid-cols-3">
+  <FloatingLabelInput size="small" variant="filled" id="small_filled" name="small_filled" type="text">Small filled</FloatingLabelInput>
+  <FloatingLabelInput size="small" variant="outlined" id="small_outlined" name="small_outlined" type="text">Small outlined</FloatingLabelInput>
+  <FloatingLabelInput size="small" id="small_standard" name="small_standard" type="text">Small standard</FloatingLabelInput>
 </div>
-<div class="grid gap-6 items-end md:grid-cols-3">
-  <FloatingLabelInput variant="filled" id="default_filled" name="default_filled" type="text">
-    Default filled
-  </FloatingLabelInput>
-  <FloatingLabelInput variant="outlined" id="default_outlined" name="default_outlined" type="text">
-    Default outlined
-  </FloatingLabelInput>
-  <FloatingLabelInput id="default_standard" name="default_standard" type="text">
-    Default standard
-  </FloatingLabelInput>
+<div class="grid items-end gap-6 md:grid-cols-3">
+  <FloatingLabelInput variant="filled" id="default_filled" name="default_filled" type="text">Default filled</FloatingLabelInput>
+  <FloatingLabelInput variant="outlined" id="default_outlined" name="default_outlined" type="text">Default outlined</FloatingLabelInput>
+  <FloatingLabelInput id="default_standard" name="default_standard" type="text">Default standard</FloatingLabelInput>
 </div>
 ```
 
@@ -181,14 +145,12 @@ Add a helper text in addition to the label if you want to show more information 
 
 ```svelte example
 <script>
-  import { FloatingLabelInput, Helper } from 'flowbite-svelte';
+  import { FloatingLabelInput, Helper } from "flowbite-svelte";
 </script>
 
-<FloatingLabelInput variant="filled" id="floating_helper" aria-describedby="floating_helper_text" name="floating_helper" type="text">
-  Floating helper
-</FloatingLabelInput>
+<FloatingLabelInput variant="filled" id="floating_helper" aria-describedby="floating_helper_text" name="floating_helper" type="text">Floating helper</FloatingLabelInput>
 <Helper class="pt-2">
-  Remember, contributions to this topic should follow our <a href="/" class="text-primary-600 dark:text-primary-500 hover:underline"> Community Guidelines </a>
+  Remember, contributions to this topic should follow our <a href="/" class="text-primary-600 dark:text-primary-500 hover:underline">Community Guidelines</a>
   .
 </Helper>
 ```

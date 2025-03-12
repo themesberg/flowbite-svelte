@@ -7,7 +7,7 @@ interface CheckboxItem {
   label?: string;
   checked?: boolean | null;
   [key: string]: any;
-};
+}
 
 interface CheckboxProps extends Omit<HTMLInputAttributes, "children"> {
   children?: Snippet<[CheckboxItem]>;

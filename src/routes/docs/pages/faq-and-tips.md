@@ -37,23 +37,23 @@ For example, if you have a following group routing:
 The following example shows how to add navigation using the key blocks:
 
 ```svelte example hideOutput
-// src/routes/(app)/+layout.svelte
 <script>
-  import { page } from '$app/stores';
-  import { Navbar, NavLi, NavUl } from 'flowbite-svelte';
+  import { page } from "$app/stores";
+  import { Navbar, NavLi, NavUl } from "flowbite-svelte";
   $: activeUrl = $page.url.pathname;
 </script>
 
+// src/routes/(app)/+layout.svelte
 {#key activeUrl}
-<Navbar let:hidden let:toggle>
-  <NavUl {hidden} {activeUrl}>
+  <Navbar let:hidden let:toggle>
+    <NavUl {hidden} {activeUrl}>
       <NavLi href="/">Home</NavLi>
       <NavLi href="/about">About</NavLi>
       <NavLi href="/contact">Contact</NavLi>
       <NavLi href="/orders">Orders</NavLi>
       <NavLi href="/profile">Profile</NavLi>
-  </NavUl>
-</Navbar>
+    </NavUl>
+  </Navbar>
 {/key}
 
 <slot />
@@ -84,15 +84,15 @@ pnpm i -D vite-plugin-tailwind-purgecss
 ### vite.config.ts
 
 ```js
-import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vitest/config';
-import { purgeCss } from 'vite-plugin-tailwind-purgecss';
+import { sveltekit } from "@sveltejs/kit/vite";
+import { defineConfig } from "vitest/config";
+import { purgeCss } from "vite-plugin-tailwind-purgecss";
 
 export default defineConfig({
-	plugins: [sveltekit(), purgeCss()],
-	test: {
-		include: ['src/**/*.{test,spec}.{js,ts}']
-	}
+  plugins: [sveltekit(), purgeCss()],
+  test: {
+    include: ["src/**/*.{test,spec}.{js,ts}"]
+  }
 });
 ```
 

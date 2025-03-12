@@ -21,7 +21,7 @@ The radio component can be used to allow the user to choose a single option from
 
 ```svelte example hideOutput
 <script>
-  import { Radio } from 'flowbite-svelte';
+  import { Radio } from "flowbite-svelte";
 </script>
 ```
 
@@ -31,7 +31,7 @@ Use the default example of a radio component with the checked and unchecked stat
 
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
-  import { Radio } from 'flowbite-svelte';
+  import { Radio } from "flowbite-svelte";
   let selectedValue = "2";
 </script>
 
@@ -47,7 +47,7 @@ This example can be used for the disabled state of the radio component by applyi
 
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
-  import { Radio } from 'flowbite-svelte';
+  import { Radio } from "flowbite-svelte";
   let selectedValue = "2";
 </script>
 
@@ -61,7 +61,7 @@ If you need separate control over the label and the radio you can use the verbos
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Radio, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, TableBodyRow, Label } from 'flowbite-svelte';
+  import { Radio, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, TableBodyRow, Label } from "flowbite-svelte";
 </script>
 
 <Table>
@@ -92,11 +92,11 @@ Use this example if you want to add an anchor link inside the label of the radio
 
 ```svelte example hideScript
 <script>
-  import { Radio } from 'flowbite-svelte';
+  import { Radio } from "flowbite-svelte";
 </script>
 
 <Radio name="with-link">
-  I agree with the <a href="/" class="text-primary-600 dark:text-primary-500 hover:underline ms-1"> terms and conditions </a>
+  I agree with the <a href="/" class="text-primary-600 dark:text-primary-500 ms-1 hover:underline">terms and conditions</a>
   .
 </Radio>
 ```
@@ -107,7 +107,7 @@ Get started with this example if you want to add a secondary helper text for the
 
 ```svelte example
 <script>
-  import { Radio, Helper } from 'flowbite-svelte';
+  import { Radio, Helper } from "flowbite-svelte";
 </script>
 
 <Radio aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Radio>
@@ -120,8 +120,8 @@ Use this example of a radio inside a card element to enable a larger area of cli
 
 ```svelte example hideScript
 <script>
-  import { Radio } from 'flowbite-svelte';
-  let selectedValue3 = "2"
+  import { Radio } from "flowbite-svelte";
+  let selectedValue3 = "2";
 </script>
 
 <div class="grid grid-cols-2 gap-6">
@@ -140,14 +140,14 @@ Use this example to show a list of radio items grouped inside a card.
 
 ```svelte example
 <script>
-  import { Radio } from 'flowbite-svelte';
-  let technology = 'svelte';
+  import { Radio } from "flowbite-svelte";
+  let technology = "svelte";
 </script>
 
 <p class="mb-4 font-semibold text-gray-900 dark:text-white">
   Technology <span class="capitalize">{technology}</span>
 </p>
-<ul class="w-48 bg-white rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-600 divide-y divide-gray-200 dark:divide-gray-600">
+<ul class="w-48 divide-y divide-gray-200 rounded-lg border border-gray-200 bg-white dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800">
   <li><Radio class="p-3" bind:group={technology} value="svelte">Svelte</Radio></li>
   <li><Radio class="p-3" bind:group={technology} value="vue js">Vue JS</Radio></li>
   <li><Radio class="p-3" bind:group={technology} value="react">React</Radio></li>
@@ -161,11 +161,11 @@ Use this example to show a list of radio items inside a card horizontally.
 
 ```svelte example hideScript
 <script>
-  import { Radio } from 'flowbite-svelte';
+  import { Radio } from "flowbite-svelte";
 </script>
 
 <p class="mb-4 font-semibold text-gray-900 dark:text-white">Identification</p>
-<ul class="items-center w-full rounded-lg border border-gray-200 sm:flex dark:bg-gray-800 dark:border-gray-600 divide-x rtl:divide-x-reverse divide-gray-200 dark:divide-gray-600">
+<ul class="w-full items-center divide-x divide-gray-200 rounded-lg border border-gray-200 sm:flex rtl:divide-x-reverse dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800">
   <li class="w-full"><Radio name="hor-list" class="p-3">Svelte</Radio></li>
   <li class="w-full"><Radio name="hor-list" class="p-3">Vue JS</Radio></li>
   <li class="w-full"><Radio name="hor-list" class="p-3">React</Radio></li>
@@ -179,12 +179,12 @@ Here’s an example of a list group that you can use right away.
 
 ```svelte example class="flex justify-center items-start h-80"
 <script>
-  import { Radio, Dropdown, DropdownItem, Button, Helper } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Radio, Dropdown, DropdownItem, Button, Helper } from "flowbite-svelte";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
   let group3 = 2;
 </script>
 
-<Button>Dropdown radio<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
+<Button>Dropdown radio<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
 <Dropdown simple class="w-60">
   <DropdownItem>
     <Radio name="group3" bind:group={group3} value={1}>Enable notifications</Radio>
@@ -207,8 +207,8 @@ You can align the radio elements horizontally by using a wrapper tag and applyin
 
 ```svelte example
 <script>
-  import { Radio } from 'flowbite-svelte';
-  let inline1 = 'second';
+  import { Radio } from "flowbite-svelte";
+  let inline1 = "second";
 </script>
 
 <div class="flex gap-3">
@@ -223,8 +223,8 @@ You can use the property `inline` as the alternative.
 
 ```svelte example
 <script>
-  import { Radio } from 'flowbite-svelte';
-  let inline2 = 'third';
+  import { Radio } from "flowbite-svelte";
+  let inline2 = "third";
 </script>
 
 <Radio bind:group={inline2} inline value="first" class="me-2">Inline 1</Radio>
@@ -237,7 +237,7 @@ You can use the property `inline` as the alternative.
 
 ```svelte example hideResponsiveButtons
 <script>
-  import { Radio } from 'flowbite-svelte';
+  import { Radio } from "flowbite-svelte";
   let colors = "text-purple-500";
 </script>
 
@@ -258,28 +258,28 @@ Use this example of an advanced layout of radio elements where the label parent 
 
 ```svelte example
 <script>
-  import { Radio } from 'flowbite-svelte';
-  import { ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Radio } from "flowbite-svelte";
+  import { ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
 <p class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Choose technology:</p>
-<div class="grid gap-6 w-full md:grid-cols-2">
+<div class="grid w-full gap-6 md:grid-cols-2">
   <Radio name="custom" custom>
-    <div class="inline-flex justify-between items-center p-5 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-primary-500 peer-checked:border-primary-600 peer-checked:text-primary-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+    <div class="dark:peer-checked:text-primary-500 peer-checked:border-primary-600 peer-checked:text-primary-600 inline-flex w-full cursor-pointer items-center justify-between rounded-lg border border-gray-200 bg-white p-5 text-gray-500 hover:bg-gray-100 hover:text-gray-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300">
       <div>
         <div class="w-full text-lg font-semibold">0-50 MB</div>
         <div class="w-full">Good for small websites</div>
       </div>
-      <ArrowRightOutline class="ms-3 w-10 h-10" />
+      <ArrowRightOutline class="ms-3 h-10 w-10" />
     </div>
   </Radio>
   <Radio name="custom" custom>
-    <div for="hosting-big" class="inline-flex justify-between items-center p-5 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-primary-500 peer-checked:border-primary-600 peer-checked:text-primary-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+    <div for="hosting-big" class="dark:peer-checked:text-primary-500 peer-checked:border-primary-600 peer-checked:text-primary-600 inline-flex w-full cursor-pointer items-center justify-between rounded-lg border border-gray-200 bg-white p-5 text-gray-500 hover:bg-gray-100 hover:text-gray-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300">
       <div class="block">
         <div class="w-full text-lg font-semibold">500-1000 MB</div>
         <div class="w-full">Good for large websites</div>
       </div>
-      <ArrowRightOutline class="ms-3 w-10 h-10" />
+      <ArrowRightOutline class="ms-3 h-10 w-10" />
     </div>
   </Radio>
 </div>
@@ -293,22 +293,22 @@ This component accepts all props from the [Button](/docs/components/buttons) for
 
 ```svelte example class="space-y-4"
 <script>
-  import { RadioButton, ButtonGroup } from 'flowbite-svelte';
-  import { ListMusicSolid, OrderedListOutline, ListOutline } from 'flowbite-svelte-icons';
+  import { RadioButton, ButtonGroup } from "flowbite-svelte";
+  import { ListMusicSolid, OrderedListOutline, ListOutline } from "flowbite-svelte-icons";
 
   let radioGroup = "notes";
 </script>
 
 <div>
-  <RadioButton value="notes" bind:group={radioGroup}><ListMusicSolid class="w-7 h-7" /></RadioButton>
-  <RadioButton value="numbers" bind:group={radioGroup}><OrderedListOutline class="w-7 h-7"/></RadioButton>
-  <RadioButton value="bullets" bind:group={radioGroup}><ListOutline class="w-7 h-7"/></RadioButton>
+  <RadioButton value="notes" bind:group={radioGroup}><ListMusicSolid class="h-7 w-7" /></RadioButton>
+  <RadioButton value="numbers" bind:group={radioGroup}><OrderedListOutline class="h-7 w-7" /></RadioButton>
+  <RadioButton value="bullets" bind:group={radioGroup}><ListOutline class="h-7 w-7" /></RadioButton>
 </div>
 
 <ButtonGroup>
-  <RadioButton value="notes" bind:group={radioGroup}><ListMusicSolid class="w-7 h-7"/></RadioButton>
-  <RadioButton value="numbers" bind:group={radioGroup}><OrderedListOutline class="w-7 h-7"/></RadioButton>
-  <RadioButton value="bullets" bind:group={radioGroup}><ListOutline class="w-7 h-7"/></RadioButton>
+  <RadioButton value="notes" bind:group={radioGroup}><ListMusicSolid class="h-7 w-7" /></RadioButton>
+  <RadioButton value="numbers" bind:group={radioGroup}><OrderedListOutline class="h-7 w-7" /></RadioButton>
+  <RadioButton value="bullets" bind:group={radioGroup}><ListOutline class="h-7 w-7" /></RadioButton>
 </ButtonGroup>
 
 <p>List style: {radioGroup}</p>

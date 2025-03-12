@@ -5,7 +5,6 @@ import type { TransitionConfig } from "svelte/transition";
 import type { ParamsType } from "$lib/types";
 import type Slide from "./Slide.svelte";
 
-
 export type State = {
   images: HTMLImgAttributes[];
   index: number;
@@ -16,7 +15,7 @@ export type State = {
 
 interface CarouselProps extends CarouselVariants, Omit<HTMLAttributes<HTMLDivElement>, "children" | "onchange"> {
   children?: Snippet<[number]>;
-  slide?: Snippet<[{ index: number, Slide: typeof Slide }]>;
+  slide?: Snippet<[{ index: number; Slide: typeof Slide }]>;
   images: HTMLImgAttributes[];
   index: number;
   slideDuration: number;
@@ -24,11 +23,11 @@ interface CarouselProps extends CarouselVariants, Omit<HTMLAttributes<HTMLDivEle
   duration: number;
   disableSwipe: boolean;
   imgClass: string;
-  onchange?: (x: HTMLImgAttributes) => {}
+  onchange?: (x: HTMLImgAttributes) => {};
 }
 
 interface IndicatorsProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
-  children?: Snippet<[{ selected: boolean, index: number }]>;
+  children?: Snippet<[{ selected: boolean; index: number }]>;
   activeClass?: string;
   inactiveClass?: string;
 }
@@ -43,7 +42,7 @@ interface ThumbnailProps extends HTMLImgAttributes {
 }
 
 interface ThumbnailsProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
-  children?: Snippet<[{ image: HTMLImgAttributes, selected: boolean, imgClass: string, Thumbnail: Component }]>;
+  children?: Snippet<[{ image: HTMLImgAttributes; selected: boolean; imgClass: string; Thumbnail: Component }]>;
   images: HTMLImgAttributes[];
   index: number;
   ariaLabel: string;

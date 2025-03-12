@@ -20,7 +20,7 @@ The textarea component is a multi-line text field input that can be used to rece
 
 ```svelte example hideOutput
 <script>
-  import { Textarea } from 'flowbite-svelte';
+  import { Textarea } from "flowbite-svelte";
 </script>
 ```
 
@@ -30,7 +30,7 @@ Get started with the default example of a textarea component below.
 
 ```svelte example
 <script>
-  import { Textarea, Label } from 'flowbite-svelte';
+  import { Textarea, Label } from "flowbite-svelte";
 </script>
 
 <Label for="textarea-id" class="mb-2">Your message</Label>
@@ -43,8 +43,8 @@ If you want to add other actions as buttons alongside your textarea component, s
 
 ```svelte example
 <script>
-  import { Textarea, Toolbar, ToolbarGroup, ToolbarButton, Button } from 'flowbite-svelte';
-  import { PaperClipOutline, MapPinAltSolid, ImageOutline, CodeOutline, FaceGrinOutline, PaperPlaneOutline } from 'flowbite-svelte-icons';
+  import { Textarea, Toolbar, ToolbarGroup, ToolbarButton, Button } from "flowbite-svelte";
+  import { PaperClipOutline, MapPinAltSolid, ImageOutline, CodeOutline, FaceGrinOutline, PaperPlaneOutline } from "flowbite-svelte-icons";
 </script>
 
 <form>
@@ -53,16 +53,16 @@ If you want to add other actions as buttons alongside your textarea component, s
     {#snippet header()}
       <Toolbar embedded>
         <ToolbarGroup>
-          <ToolbarButton name="Attach file"><PaperClipOutline class="w-6 h-6 rotate-45" /></ToolbarButton>
-          <ToolbarButton name="Embed map"><MapPinAltSolid class="w-6 h-6" /></ToolbarButton>
-          <ToolbarButton name="Upload image"><ImageOutline class="w-6 h-6" /></ToolbarButton>
+          <ToolbarButton name="Attach file"><PaperClipOutline class="h-6 w-6 rotate-45" /></ToolbarButton>
+          <ToolbarButton name="Embed map"><MapPinAltSolid class="h-6 w-6" /></ToolbarButton>
+          <ToolbarButton name="Upload image"><ImageOutline class="h-6 w-6" /></ToolbarButton>
         </ToolbarGroup>
         <ToolbarGroup>
-          <ToolbarButton name="Format code"><CodeOutline class="w-6 h-6" /></ToolbarButton>
-          <ToolbarButton name="Add emoji"><FaceGrinOutline class="w-6 h-6" /></ToolbarButton>
+          <ToolbarButton name="Format code"><CodeOutline class="h-6 w-6" /></ToolbarButton>
+          <ToolbarButton name="Add emoji"><FaceGrinOutline class="h-6 w-6" /></ToolbarButton>
         </ToolbarGroup>
         {#snippet end()}
-          <ToolbarButton name="send"><PaperPlaneOutline class="w-6 h-6 rotate-45" /></ToolbarButton>
+          <ToolbarButton name="send"><PaperPlaneOutline class="h-6 w-6 rotate-45" /></ToolbarButton>
         {/snippet}
       </Toolbar>
     {/snippet}
@@ -77,26 +77,26 @@ Most often the textarea component is used as the main text field input element i
 
 ```svelte example class="space-y-4"
 <script>
-  import { Textarea, Toolbar, ToolbarGroup, ToolbarButton, Button } from 'flowbite-svelte';
-  import { PaperClipOutline, MapPinAltSolid, ImageOutline } from 'flowbite-svelte-icons';
+  import { Textarea, Toolbar, ToolbarGroup, ToolbarButton, Button } from "flowbite-svelte";
+  import { PaperClipOutline, MapPinAltSolid, ImageOutline } from "flowbite-svelte-icons";
 </script>
 
 <form>
   <Textarea class="mb-4" placeholder="Write a comment">
     {#snippet footer()}
-    <div class="flex items-center justify-between">
-      <Button type="submit">Post comment</Button>
-      <Toolbar embedded>
-        <ToolbarButton name="Attach file"><PaperClipOutline class="w-6 h-6" /></ToolbarButton>
-        <ToolbarButton name="Set location"><MapPinAltSolid class="w-6 h-6" /></ToolbarButton>
-        <ToolbarButton name="Upload image"><ImageOutline class="w-6 h-6" /></ToolbarButton>
-      </Toolbar>
-    </div>
+      <div class="flex items-center justify-between">
+        <Button type="submit">Post comment</Button>
+        <Toolbar embedded>
+          <ToolbarButton name="Attach file"><PaperClipOutline class="h-6 w-6" /></ToolbarButton>
+          <ToolbarButton name="Set location"><MapPinAltSolid class="h-6 w-6" /></ToolbarButton>
+          <ToolbarButton name="Upload image"><ImageOutline class="h-6 w-6" /></ToolbarButton>
+        </Toolbar>
+      </div>
     {/snippet}
   </Textarea>
 </form>
 <p class="ms-auto text-xs text-gray-500 dark:text-gray-400">
-  Remember, contributions to this topic should follow our <a href="/" class="text-primary-600 dark:text-primary-500 hover:underline"> Community Guidelines </a>
+  Remember, contributions to this topic should follow our <a href="/" class="text-primary-600 dark:text-primary-500 hover:underline">Community Guidelines</a>
   .
 </p>
 ```
@@ -107,24 +107,24 @@ If you want to build a chatroom component you will usually want to use a textare
 
 ```svelte example class="space-y-4"
 <script>
-  import { Textarea, Alert, ToolbarButton } from 'flowbite-svelte';
-  import { ImageOutline, FaceGrinOutline, PaperPlaneOutline } from 'flowbite-svelte-icons';
+  import { Textarea, Alert, ToolbarButton } from "flowbite-svelte";
+  import { ImageOutline, FaceGrinOutline, PaperPlaneOutline } from "flowbite-svelte-icons";
 </script>
 
 <form>
   <label for="chat" class="sr-only">Your message</label>
-  <div class="flex items-center px-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-700">
+  <div class="flex items-center rounded-lg bg-gray-50 px-3 py-2 dark:bg-gray-700">
     <ToolbarButton color="dark" class="text-gray-500 dark:text-gray-400">
-      <ImageOutline class="w-6 h-6" />
+      <ImageOutline class="h-6 w-6" />
       <span class="sr-only">Upload image</span>
     </ToolbarButton>
     <ToolbarButton color="dark" class="text-gray-500 dark:text-gray-400">
-      <FaceGrinOutline class="w-6 h-6" />
+      <FaceGrinOutline class="h-6 w-6" />
       <span class="sr-only">Add emoji</span>
     </ToolbarButton>
     <Textarea id="chat" class="mx-4 bg-white dark:bg-gray-800" rows="1" placeholder="Your message..." />
-    <ToolbarButton type="submit" color="blue" class="rounded-full text-primary-600 dark:text-primary-500">
-      <PaperPlaneOutline class="w-6 h-6 rotate-45" />
+    <ToolbarButton type="submit" color="blue" class="text-primary-600 dark:text-primary-500 rounded-full">
+      <PaperPlaneOutline class="h-6 w-6 rotate-45" />
       <span class="sr-only">Send message</span>
     </ToolbarButton>
   </div>

@@ -21,7 +21,7 @@ A popular use case would be the “Frequently Asked Questions” section of a we
 
 ```svelte example hideOutput
 <script>
-  import { AccordionItem, Accordion } from 'flowbite-svelte';
+  import { AccordionItem, Accordion } from "flowbite-svelte";
 </script>
 ```
 
@@ -33,7 +33,7 @@ To prevent that behavior set `multiple` property to `true`.
 
 ```svelte example
 <script>
-  import { AccordionItem, Accordion } from 'flowbite-svelte';
+  import { AccordionItem, Accordion } from "flowbite-svelte";
 </script>
 
 <Accordion>
@@ -41,7 +41,7 @@ To prevent that behavior set `multiple` property to `true`.
     {#snippet header()}My Header 1{/snippet}
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     <p class="text-gray-500 dark:text-gray-400">
-      Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline"> get started </a>
+      Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 hover:underline dark:text-blue-500">get started</a>
       and start developing websites even faster with components on top of Tailwind CSS.
     </p>
   </AccordionItem>
@@ -50,12 +50,12 @@ To prevent that behavior set `multiple` property to `true`.
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-    <ul class="list-disc ps-5 dark:text-gray-400 text-gray-500">
+    <ul class="list-disc ps-5 text-gray-500 dark:text-gray-400">
       <li>
-        <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline"> Lorem ipsum </a>
+        <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 hover:underline dark:text-blue-500">Lorem ipsum</a>
       </li>
       <li>
-        <a href="https://tailwindui.com/" rel="noreferrer" target="_blank" class="text-blue-600 dark:text-blue-500 hover:underline"> Tailwind UI </a>
+        <a href="https://tailwindui.com/" rel="noreferrer" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Tailwind UI</a>
       </li>
     </ul>
   </AccordionItem>
@@ -68,7 +68,7 @@ Use the `open` prop to make an item open on mount.
 
 ```svelte example
 <script>
-  import { AccordionItem, Accordion } from 'flowbite-svelte';
+  import { AccordionItem, Accordion } from "flowbite-svelte";
 </script>
 
 <Accordion>
@@ -89,7 +89,7 @@ You can control the look and feel of `AccordionItems` by overwriting the `active
 
 ```svelte example
 <script>
-  import { AccordionItem, Accordion } from 'flowbite-svelte';
+  import { AccordionItem, Accordion } from "flowbite-svelte";
 </script>
 
 <Accordion activeClass="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800" inactiveClass="text-gray-500 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800">
@@ -110,7 +110,7 @@ Use `flush` prop to remove the rounded borders.
 
 ```svelte example
 <script>
-  import { AccordionItem, Accordion } from 'flowbite-svelte';
+  import { AccordionItem, Accordion } from "flowbite-svelte";
 </script>
 
 <Accordion flush>
@@ -131,28 +131,28 @@ Use the `arrowup` and `arrowdown` slots to set up and down icons.
 
 ```svelte example
 <script>
-  import { AccordionItem, Accordion } from 'flowbite-svelte';
-  import { ChevronDoubleUpOutline, ChevronDoubleDownOutline } from 'flowbite-svelte-icons';
+  import { AccordionItem, Accordion } from "flowbite-svelte";
+  import { ChevronDoubleUpOutline, ChevronDoubleDownOutline } from "flowbite-svelte-icons";
 </script>
 
 <Accordion>
   <AccordionItem>
     {#snippet header()}Header 2-1{/snippet}
     {#snippet arrowup()}
-      <ChevronDoubleUpOutline class="h-6 w-6 -me-0.5" />
+      <ChevronDoubleUpOutline class="-me-0.5 h-6 w-6" />
     {/snippet}
     {#snippet arrowdown()}
-      <ChevronDoubleDownOutline class="h-6 w-6 -me-0.5" />
+      <ChevronDoubleDownOutline class="-me-0.5 h-6 w-6" />
     {/snippet}
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
   <AccordionItem>
     {#snippet header()}Header 2-2{/snippet}
     {#snippet arrowup()}
-      <ChevronDoubleUpOutline class="h-6 w-6 -me-0.5" />
+      <ChevronDoubleUpOutline class="-me-0.5 h-6 w-6" />
     {/snippet}
     {#snippet arrowdown()}
-      <ChevronDoubleDownOutline class="h-6 w-6 -me-0.5" />
+      <ChevronDoubleDownOutline class="-me-0.5 h-6 w-6" />
     {/snippet}
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
@@ -163,27 +163,29 @@ Use the `arrowup` and `arrowdown` slots to set up and down icons.
 
 ```svelte example
 <script>
-  import { AccordionItem, Accordion } from 'flowbite-svelte';
-  import { CartSolid, CogOutline } from 'flowbite-svelte-icons';
+  import { AccordionItem, Accordion } from "flowbite-svelte";
+  import { CartSolid, CogOutline } from "flowbite-svelte-icons";
 </script>
 
 <Accordion>
   <AccordionItem>
     {#snippet header()}
       <div class="flex items-center gap-2">
-        <CartSolid /> <span>My Header 1</span>
+        <CartSolid />
+        <span>My Header 1</span>
       </div>
     {/snippet}
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo...</p>
     <p class="text-gray-500 dark:text-gray-400">
-      Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline"> get started </a>
+      Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 hover:underline dark:text-blue-500">get started</a>
       and start websites even faster with components on top of Tailwind CSS.
     </p>
   </AccordionItem>
   <AccordionItem>
     {#snippet header()}
       <div class="flex items-center gap-2">
-        <CogOutline /> <span>My Header 2</span>
+        <CogOutline />
+        <span>My Header 2</span>
       </div>
     {/snippet}
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sintexplicabo...</p>
@@ -197,7 +199,7 @@ Example how to use the `multiple` option together with expand all behavior.
 
 ```svelte example class="space-y-4"
 <script>
-  import { AccordionItem, Accordion, Button } from 'flowbite-svelte';
+  import { AccordionItem, Accordion, Button } from "flowbite-svelte";
   const items = [false, false, false];
 
   const open_all = () => items.forEach((_, i) => (items[i] = true));
@@ -211,7 +213,7 @@ Example how to use the `multiple` option together with expand all behavior.
     {#snippet header()}My Header 1{/snippet}
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     <p class="text-gray-500 dark:text-gray-400">
-      Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline"> get started </a>
+      Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 hover:underline dark:text-blue-500">get started</a>
       and start developing websites even faster with components on top of Tailwind CSS.
     </p>
   </AccordionItem>
@@ -234,7 +236,7 @@ The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#r
 
 ```svelte example
 <script>
-  import { AccordionItem, Accordion } from 'flowbite-svelte';
+  import { AccordionItem, Accordion } from "flowbite-svelte";
 </script>
 
 <Accordion>
@@ -259,7 +261,7 @@ Accordions can be nested. All of the mentioned options are supported.
 
 ```svelte example hideScript
 <script>
-  import { AccordionItem, Accordion } from 'flowbite-svelte';
+  import { AccordionItem, Accordion } from "flowbite-svelte";
 </script>
 
 <Accordion>
@@ -269,16 +271,19 @@ Accordions can be nested. All of the mentioned options are supported.
       <AccordionItem>
         {#snippet header()}My Header 1{/snippet}
         <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-        <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
+        <p class="text-gray-500 dark:text-gray-400">
+          Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 hover:underline dark:text-blue-500">get started</a>
+          and start developing websites even faster with components on top of Tailwind CSS.
+        </p>
       </AccordionItem>
       <AccordionItem>
         {#snippet header()}My Header 2{/snippet}
         <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
         <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
         <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-        <ul class="list-disc ps-5 dark:text-gray-400 text-gray-500">
-          <li><a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline">Lorem ipsum</a></li>
-          <li><a href="https://tailwindui.com/" rel="noreferrer" target="_blank" class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
+        <ul class="list-disc ps-5 text-gray-500 dark:text-gray-400">
+          <li><a href="/" target="_blank" rel="noreferrer" class="text-blue-600 hover:underline dark:text-blue-500">Lorem ipsum</a></li>
+          <li><a href="https://tailwindui.com/" rel="noreferrer" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Tailwind UI</a></li>
         </ul>
       </AccordionItem>
     </Accordion>
@@ -288,14 +293,13 @@ Accordions can be nested. All of the mentioned options are supported.
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-    <ul class="list-disc ps-5 dark:text-gray-400 text-gray-500">
-      <li><a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline">Lorem ipsum</a></li>
-      <li><a href="https://tailwindui.com/" rel="noreferrer" target="_blank" class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
+    <ul class="list-disc ps-5 text-gray-500 dark:text-gray-400">
+      <li><a href="/" target="_blank" rel="noreferrer" class="text-blue-600 hover:underline dark:text-blue-500">Lorem ipsum</a></li>
+      <li><a href="https://tailwindui.com/" rel="noreferrer" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Tailwind UI</a></li>
     </ul>
   </AccordionItem>
 </Accordion>
 ```
-
 
 ## Component data
 

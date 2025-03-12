@@ -20,15 +20,15 @@ Use this example to show a basic area chart.
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Chart, Card, A, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
-  import { ChevronRightOutline, ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Chart, Card, A, Button, Dropdown, DropdownItem } from "flowbite-svelte";
+  import { ChevronRightOutline, ChevronDownOutline } from "flowbite-svelte-icons";
 
   let options = {
     chart: {
-      height: '400px',
-      maxWidth: '100%',
-      type: 'area',
-      fontFamily: 'Inter, sans-serif',
+      height: "400px",
+      maxWidth: "100%",
+      type: "area",
+      fontFamily: "Inter, sans-serif",
       dropShadow: {
         enabled: false
       },
@@ -43,12 +43,12 @@ Use this example to show a basic area chart.
       }
     },
     fill: {
-      type: 'gradient',
+      type: "gradient",
       gradient: {
         opacityFrom: 0.55,
         opacityTo: 0,
-        shade: '#1C64F2',
-        gradientToColors: ['#1C64F2']
+        shade: "#1C64F2",
+        gradientToColors: ["#1C64F2"]
       }
     },
     dataLabels: {
@@ -68,13 +68,13 @@ Use this example to show a basic area chart.
     },
     series: [
       {
-        name: 'New users',
+        name: "New users",
         data: [6500, 6418, 6456, 6526, 6356, 6456],
-        color: '#1A56DB'
+        color: "#1A56DB"
       }
     ],
     xaxis: {
-      categories: ['01 February', '02 February', '03 February', '04 February', '05 February', '06 February', '07 February'],
+      categories: ["01 February", "02 February", "03 February", "04 February", "05 February", "06 February", "07 February"],
       labels: {
         show: false
       },
@@ -94,18 +94,18 @@ Use this example to show a basic area chart.
 <Card>
   <div class="flex justify-between">
     <div>
-      <h5 class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2">32.4k</h5>
+      <h5 class="pb-2 text-3xl leading-none font-bold text-gray-900 dark:text-white">32.4k</h5>
       <p class="text-base font-normal text-gray-500 dark:text-gray-400">Users this week</p>
     </div>
-    <div class="flex items-center px-2.5 py-0.5 text-base font-semibold text-green-500 dark:text-green-500 text-center">
+    <div class="flex items-center px-2.5 py-0.5 text-center text-base font-semibold text-green-500 dark:text-green-500">
       12%
-      <ChevronRightOutline class="w-6 h-6 ms-1" />
+      <ChevronRightOutline class="ms-1 h-6 w-6" />
     </div>
   </div>
   <Chart {options} />
-  <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
-    <div class="flex justify-between items-center pt-5">
-      <Button class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0">Last 7 days<ChevronDownOutline class="w-2.5 m-2.5 ms-1.5" /></Button>
+  <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
+    <div class="flex items-center justify-between pt-5">
+      <Button class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent">Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button>
       <Dropdown class="w-40" offset="-6">
         <DropdownItem>Yesterday</DropdownItem>
         <DropdownItem>Today</DropdownItem>
@@ -113,9 +113,9 @@ Use this example to show a basic area chart.
         <DropdownItem>Last 30 days</DropdownItem>
         <DropdownItem>Last 90 days</DropdownItem>
       </Dropdown>
-      <A href="/" class="uppercase text-sm font-semibold hover:text-primary-700 dark:hover:text-primary-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2 hover:no-underline">
+      <A href="/" class="hover:text-primary-700 dark:hover:text-primary-500 rounded-lg px-3 py-2 text-sm font-semibold uppercase hover:bg-gray-100 hover:no-underline dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700">
         Users Report
-        <ChevronRightOutline class="w-2.5 h-2.5 ms-1.5" />
+        <ChevronRightOutline class="ms-1.5 h-2.5 w-2.5" />
       </A>
     </div>
   </div>
@@ -128,15 +128,15 @@ To create a double line chart check the example below.
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover } from 'flowbite-svelte';
-  import { InfoCircleSolid, ChevronRightOutline, ChevronDownOutline, FileLinesSolid } from 'flowbite-svelte-icons';
+  import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover } from "flowbite-svelte";
+  import { InfoCircleSolid, ChevronRightOutline, ChevronDownOutline, FileLinesSolid } from "flowbite-svelte-icons";
 
   let options = {
     chart: {
-      height: '400px',
-      maxWidth: '100%',
-      type: 'line',
-      fontFamily: 'Inter, sans-serif',
+      height: "400px",
+      maxWidth: "100%",
+      type: "line",
+      fontFamily: "Inter, sans-serif",
       dropShadow: {
         enabled: false
       },
@@ -155,7 +155,7 @@ To create a double line chart check the example below.
     },
     stroke: {
       width: 6,
-      curve: 'smooth'
+      curve: "smooth"
     },
     grid: {
       show: true,
@@ -168,26 +168,26 @@ To create a double line chart check the example below.
     },
     series: [
       {
-        name: 'Clicks',
+        name: "Clicks",
         data: [6500, 6418, 6456, 6526, 6356, 6456],
-        color: '#1A56DB'
+        color: "#1A56DB"
       },
       {
-        name: 'CPC',
+        name: "CPC",
         data: [6456, 6356, 6526, 6332, 6418, 6500],
-        color: '#7E3AF2'
+        color: "#7E3AF2"
       }
     ],
     legend: {
       show: false
     },
     xaxis: {
-      categories: ['01 Feb', '02 Feb', '03 Feb', '04 Feb', '05 Feb', '06 Feb', '07 Feb'],
+      categories: ["01 Feb", "02 Feb", "03 Feb", "04 Feb", "05 Feb", "06 Feb", "07 Feb"],
       labels: {
         show: true,
         style: {
-          fontFamily: 'Inter, sans-serif',
-          cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+          fontFamily: "Inter, sans-serif",
+          cssClass: "text-xs font-normal fill-gray-500 dark:fill-gray-400"
         }
       },
       axisBorder: {
@@ -204,45 +204,46 @@ To create a double line chart check the example below.
 </script>
 
 <Card>
-  <div class="flex justify-between mb-5">
-    <div class="grid gap-4 grid-cols-2">
+  <div class="mb-5 flex justify-between">
+    <div class="grid grid-cols-2 gap-4">
       <div>
-        <h5 class="inline-flex items-center text-gray-500 dark:text-gray-400 leading-none font-normal mb-2">
+        <h5 class="mb-2 inline-flex items-center leading-none font-normal text-gray-500 dark:text-gray-400">
           Clicks
-          <InfoCircleSolid id="b1" class="w-3 h-3 text-gray-400 hover:text-gray-900 dark:hover:text-white cursor-pointer ms-1" />
-          <Popover triggeredBy="#b1" class="text-sm text-gray-500 bg-white border border-gray-200 rounded-lg shadow-xs w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400 z-10">
-            <div class="p-3 space-y-2">
+          <InfoCircleSolid id="b1" class="ms-1 h-3 w-3 cursor-pointer text-gray-400 hover:text-gray-900 dark:hover:text-white" />
+          <Popover triggeredBy="#b1" class="z-10 w-72 rounded-lg border border-gray-200 bg-white text-sm text-gray-500 shadow-xs dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400">
+            <div class="space-y-2 p-3">
               <h3 class="font-semibold text-gray-900 dark:text-white">Clicks growth - Incremental</h3>
               <p>Report helps navigate cumulative growth of community activities. Ideally, the chart should have a growing trend, as stagnating chart signifies a significant decrease of community activity.</p>
               <h3 class="font-semibold text-gray-900 dark:text-white">Calculation</h3>
               <p>For each date bucket, the all-time volume of activities is calculated. This means that activities in period n contain all activities up to period n, plus the activities generated by your community in period.</p>
-              <A href="/"
-                >Read more
-                <ChevronRightOutline class="w-2 h-2 ms-1.5" /></A>
+              <A href="/">
+                Read more
+                <ChevronRightOutline class="ms-1.5 h-2 w-2" />
+              </A>
             </div>
           </Popover>
         </h5>
-        <p class="text-gray-900 dark:text-white text-2xl leading-none font-bold">42,3k</p>
+        <p class="text-2xl leading-none font-bold text-gray-900 dark:text-white">42,3k</p>
       </div>
       <div>
-        <h5 class="inline-flex items-center text-gray-500 dark:text-gray-400 leading-none font-normal mb-2">
+        <h5 class="mb-2 inline-flex items-center leading-none font-normal text-gray-500 dark:text-gray-400">
           CPC
-          <InfoCircleSolid id="b2" class="w-3 h-3 text-gray-400 hover:text-gray-900 dark:hover:text-white cursor-pointer ms-1" />
-          <Popover triggeredBy="#b2" class="text-sm text-gray-500 bg-white border border-gray-200 rounded-lg shadow-xs w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400 z-10">
-            <div class="p-3 space-y-2">
+          <InfoCircleSolid id="b2" class="ms-1 h-3 w-3 cursor-pointer text-gray-400 hover:text-gray-900 dark:hover:text-white" />
+          <Popover triggeredBy="#b2" class="z-10 w-72 rounded-lg border border-gray-200 bg-white text-sm text-gray-500 shadow-xs dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400">
+            <div class="space-y-2 p-3">
               <h3 class="font-semibold text-gray-900 dark:text-white">CPC growth - Incremental</h3>
               <p>Report helps navigate cumulative growth of community activities. Ideally, the chart should have a growing trend, as stagnating chart signifies a significant decrease of community activity.</p>
               <h3 class="font-semibold text-gray-900 dark:text-white">Calculation</h3>
               <p>For each date bucket, the all-time volume of activities is calculated. This means that activities in period n contain all activities up to period n, plus the activities generated by your community in period.</p>
-              <A href="/">Read more <ChevronRightOutline class="w-2 h-2 ms-1.5" /></A>
+              <A href="/">Read more <ChevronRightOutline class="ms-1.5 h-2 w-2" /></A>
             </div>
           </Popover>
         </h5>
-        <p class="text-gray-900 dark:text-white text-2xl leading-none font-bold">$5.40</p>
+        <p class="text-2xl leading-none font-bold text-gray-900 dark:text-white">$5.40</p>
       </div>
     </div>
     <div>
-      <Button color="light" class="px-3 py-2">Last week<ChevronDownOutline class="w-2.5 h-2.5 ms-1.5" /></Button>
+      <Button color="light" class="px-3 py-2">Last week<ChevronDownOutline class="ms-1.5 h-2.5 w-2.5" /></Button>
       <Dropdown class="w-40">
         <DropdownItem>Yesterday</DropdownItem>
         <DropdownItem>Today</DropdownItem>
@@ -253,10 +254,10 @@ To create a double line chart check the example below.
     </div>
   </div>
   <Chart {options} />
-  <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between mt-2.5">
+  <div class="mt-2.5 grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
     <div class="pt-5">
-      <Button href="/" class="px-4 py-2.5 text-sm font-medium text-white inline-flex items-center bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-hidden focus:ring-primary-300 rounded-lg text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-        <FileLinesSolid class="w-3.5 h-3.5 text-white me-2" />
+      <Button href="/" class="bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 inline-flex items-center rounded-lg px-4 py-2.5 text-center text-sm font-medium text-white focus:ring-4 focus:outline-hidden">
+        <FileLinesSolid class="me-2 h-3.5 w-3.5 text-white" />
         View full report
       </Button>
     </div>
@@ -270,43 +271,43 @@ You can represent multiple data entries using columns by setting the type: "bar"
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Chart, Card, A, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
-  import { UsersGroupOutline, ArrowUpOutline, ChevronDownOutline, ChevronRightOutline } from 'flowbite-svelte-icons';
+  import { Chart, Card, A, Button, Dropdown, DropdownItem } from "flowbite-svelte";
+  import { UsersGroupOutline, ArrowUpOutline, ChevronDownOutline, ChevronRightOutline } from "flowbite-svelte-icons";
 
   const options = {
-    colors: ['#1A56DB', '#FDBA8C'],
+    colors: ["#1A56DB", "#FDBA8C"],
     series: [
       {
-        name: 'Organic',
-        color: '#1A56DB',
+        name: "Organic",
+        color: "#1A56DB",
         data: [
-          { x: 'Mon', y: 231 },
-          { x: 'Tue', y: 122 },
-          { x: 'Wed', y: 63 },
-          { x: 'Thu', y: 421 },
-          { x: 'Fri', y: 122 },
-          { x: 'Sat', y: 323 },
-          { x: 'Sun', y: 111 }
+          { x: "Mon", y: 231 },
+          { x: "Tue", y: 122 },
+          { x: "Wed", y: 63 },
+          { x: "Thu", y: 421 },
+          { x: "Fri", y: 122 },
+          { x: "Sat", y: 323 },
+          { x: "Sun", y: 111 }
         ]
       },
       {
-        name: 'Social media',
-        color: '#FDBA8C',
+        name: "Social media",
+        color: "#FDBA8C",
         data: [
-          { x: 'Mon', y: 232 },
-          { x: 'Tue', y: 113 },
-          { x: 'Wed', y: 341 },
-          { x: 'Thu', y: 224 },
-          { x: 'Fri', y: 522 },
-          { x: 'Sat', y: 411 },
-          { x: 'Sun', y: 243 }
+          { x: "Mon", y: 232 },
+          { x: "Tue", y: 113 },
+          { x: "Wed", y: 341 },
+          { x: "Thu", y: 224 },
+          { x: "Fri", y: 522 },
+          { x: "Sat", y: 411 },
+          { x: "Sun", y: 243 }
         ]
       }
     ],
     chart: {
-      type: 'bar',
-      height: '320px',
-      fontFamily: 'Inter, sans-serif',
+      type: "bar",
+      height: "320px",
+      fontFamily: "Inter, sans-serif",
       toolbar: {
         show: false
       }
@@ -314,8 +315,8 @@ You can represent multiple data entries using columns by setting the type: "bar"
     plotOptions: {
       bar: {
         horizontal: false,
-        columnWidth: '70%',
-        borderRadiusApplication: 'end',
+        columnWidth: "70%",
+        borderRadiusApplication: "end",
         borderRadius: 8
       }
     },
@@ -323,13 +324,13 @@ You can represent multiple data entries using columns by setting the type: "bar"
       shared: true,
       intersect: false,
       style: {
-        fontFamily: 'Inter, sans-serif'
+        fontFamily: "Inter, sans-serif"
       }
     },
     states: {
       hover: {
         filter: {
-          type: 'darken',
+          type: "darken",
           value: 1
         }
       }
@@ -337,7 +338,7 @@ You can represent multiple data entries using columns by setting the type: "bar"
     stroke: {
       show: true,
       width: 0,
-      colors: ['transparent']
+      colors: ["transparent"]
     },
     grid: {
       show: false,
@@ -359,8 +360,8 @@ You can represent multiple data entries using columns by setting the type: "bar"
       labels: {
         show: true,
         style: {
-          fontFamily: 'Inter, sans-serif',
-          cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+          fontFamily: "Inter, sans-serif",
+          cssClass: "text-xs font-normal fill-gray-500 dark:fill-gray-400"
         }
       },
       axisBorder: {
@@ -380,37 +381,37 @@ You can represent multiple data entries using columns by setting the type: "bar"
 </script>
 
 <Card>
-  <div class="flex justify-between pb-4 mb-4 border-b border-gray-200 dark:border-gray-700">
+  <div class="mb-4 flex justify-between border-b border-gray-200 pb-4 dark:border-gray-700">
     <div class="flex items-center">
-      <div class="w-12 h-12 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center me-3">
-        <UsersGroupOutline class="w-6 h-6 text-gray-500 dark:text-gray-400" />
+      <div class="me-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700">
+        <UsersGroupOutline class="h-6 w-6 text-gray-500 dark:text-gray-400" />
       </div>
       <div>
-        <h5 class="leading-none text-2xl font-bold text-gray-900 dark:text-white pb-1">3.4k</h5>
+        <h5 class="pb-1 text-2xl leading-none font-bold text-gray-900 dark:text-white">3.4k</h5>
         <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Leads generated per week</p>
       </div>
     </div>
     <div>
-      <span class="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-1 rounded-md dark:bg-green-900 dark:text-green-300">
-        <ArrowUpOutline class="w-2.5 h-2.5 me-1.5" />
+      <span class="inline-flex items-center rounded-md bg-green-100 px-2.5 py-1 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300">
+        <ArrowUpOutline class="me-1.5 h-2.5 w-2.5" />
         42.5%
       </span>
     </div>
   </div>
   <div class="grid grid-cols-2">
     <dl class="flex items-center">
-      <dt class="text-gray-500 dark:text-gray-400 text-sm font-normal me-1">Money spent:</dt>
-      <dd class="text-gray-900 text-sm dark:text-white font-semibold">$3,232</dd>
+      <dt class="me-1 text-sm font-normal text-gray-500 dark:text-gray-400">Money spent:</dt>
+      <dd class="text-sm font-semibold text-gray-900 dark:text-white">$3,232</dd>
     </dl>
     <dl class="flex items-center justify-end">
-      <dt class="text-gray-500 dark:text-gray-400 text-sm font-normal me-1">Conversion rate:</dt>
-      <dd class="text-gray-900 text-sm dark:text-white font-semibold">1.2%</dd>
+      <dt class="me-1 text-sm font-normal text-gray-500 dark:text-gray-400">Conversion rate:</dt>
+      <dd class="text-sm font-semibold text-gray-900 dark:text-white">1.2%</dd>
     </dl>
   </div>
   <Chart {options} />
-  <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
-    <div class="flex justify-between items-center pt-5">
-      <Button class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0">Last 7 days<ChevronDownOutline class="w-2.5 m-2.5 ms-1.5" /></Button>
+  <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
+    <div class="flex items-center justify-between pt-5">
+      <Button class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent">Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button>
       <Dropdown class="w-40" offset="-6">
         <DropdownItem>Yesterday</DropdownItem>
         <DropdownItem>Today</DropdownItem>
@@ -418,9 +419,9 @@ You can represent multiple data entries using columns by setting the type: "bar"
         <DropdownItem>Last 30 days</DropdownItem>
         <DropdownItem>Last 90 days</DropdownItem>
       </Dropdown>
-      <A href="/" class="uppercase text-sm font-semibold hover:text-primary-700 dark:hover:text-primary-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2 hover:no-underline">
+      <A href="/" class="hover:text-primary-700 dark:hover:text-primary-500 rounded-lg px-3 py-2 text-sm font-semibold uppercase hover:bg-gray-100 hover:no-underline dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700">
         Leads Report
-        <ChevronRightOutline class="w-2.5 h-2.5 ms-1.5" />
+        <ChevronRightOutline class="ms-1.5 h-2.5 w-2.5" />
       </A>
     </div>
   </div>
@@ -433,28 +434,28 @@ Create a horizontal bar chart with as many data series as you like by setting th
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Chart, Card, A, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
-  import { ArrowUpOutline, ChevronDownOutline, ChevronRightOutline } from 'flowbite-svelte-icons';
+  import { Chart, Card, A, Button, Dropdown, DropdownItem } from "flowbite-svelte";
+  import { ArrowUpOutline, ChevronDownOutline, ChevronRightOutline } from "flowbite-svelte-icons";
 
   const options = {
     series: [
       {
-        name: 'Income',
-        color: '#31C48D',
-        data: ['1420', '1620', '1820', '1420', '1650', '2120']
+        name: "Income",
+        color: "#31C48D",
+        data: ["1420", "1620", "1820", "1420", "1650", "2120"]
       },
       {
-        name: 'Expense',
-        data: ['788', '810', '866', '788', '1100', '1200'],
-        color: '#F05252'
+        name: "Expense",
+        data: ["788", "810", "866", "788", "1100", "1200"],
+        color: "#F05252"
       }
     ],
     chart: {
       sparkline: {
         enabled: false
       },
-      type: 'bar',
-      width: '100%',
+      type: "bar",
+      width: "100%",
       height: 400,
       toolbar: {
         show: false
@@ -466,17 +467,17 @@ Create a horizontal bar chart with as many data series as you like by setting th
     plotOptions: {
       bar: {
         horizontal: true,
-        columnWidth: '100%',
-        borderRadiusApplication: 'end',
+        columnWidth: "100%",
+        borderRadiusApplication: "end",
         borderRadius: 6,
         dataLabels: {
-          position: 'top'
+          position: "top"
         }
       }
     },
     legend: {
       show: true,
-      position: 'bottom'
+      position: "bottom"
     },
     dataLabels: {
       enabled: false
@@ -485,21 +486,21 @@ Create a horizontal bar chart with as many data series as you like by setting th
       shared: true,
       intersect: false,
       formatter: function (value) {
-        return '$' + value;
+        return "$" + value;
       }
     },
     xaxis: {
       labels: {
         show: true,
         style: {
-          fontFamily: 'Inter, sans-serif',
-          cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+          fontFamily: "Inter, sans-serif",
+          cssClass: "text-xs font-normal fill-gray-500 dark:fill-gray-400"
         },
         formatter: function (value) {
-          return '$' + value;
+          return "$" + value;
         }
       },
-      categories: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      categories: ["Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
       axisTicks: {
         show: false
       },
@@ -511,8 +512,8 @@ Create a horizontal bar chart with as many data series as you like by setting th
       labels: {
         show: true,
         style: {
-          fontFamily: 'Inter, sans-serif',
-          cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+          fontFamily: "Inter, sans-serif",
+          cssClass: "text-xs font-normal fill-gray-500 dark:fill-gray-400"
         }
       }
     },
@@ -529,14 +530,14 @@ Create a horizontal bar chart with as many data series as you like by setting th
 </script>
 
 <Card>
-  <div class="flex justify-between border-gray-200 border-b dark:border-gray-700 pb-3">
+  <div class="flex justify-between border-b border-gray-200 pb-3 dark:border-gray-700">
     <dl>
-      <dt class="text-base font-normal text-gray-500 dark:text-gray-400 pb-1">Profit</dt>
-      <dd class="leading-none text-3xl font-bold text-gray-900 dark:text-white">$5,405</dd>
+      <dt class="pb-1 text-base font-normal text-gray-500 dark:text-gray-400">Profit</dt>
+      <dd class="text-3xl leading-none font-bold text-gray-900 dark:text-white">$5,405</dd>
     </dl>
     <div>
-      <span class="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-1 rounded-md dark:bg-green-900 dark:text-green-300">
-        <ArrowUpOutline class="w-2.5 h-2.5 me-1.5" />
+      <span class="inline-flex items-center rounded-md bg-green-100 px-2.5 py-1 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300">
+        <ArrowUpOutline class="me-1.5 h-2.5 w-2.5" />
         Profit rate 23.5%
       </span>
     </div>
@@ -544,19 +545,19 @@ Create a horizontal bar chart with as many data series as you like by setting th
 
   <div class="grid grid-cols-2 py-3">
     <dl>
-      <dt class="text-base font-normal text-gray-500 dark:text-gray-400 pb-1">Income</dt>
-      <dd class="leading-none text-xl font-bold text-green-500 dark:text-green-400">$23,635</dd>
+      <dt class="pb-1 text-base font-normal text-gray-500 dark:text-gray-400">Income</dt>
+      <dd class="text-xl leading-none font-bold text-green-500 dark:text-green-400">$23,635</dd>
     </dl>
     <dl>
-      <dt class="text-base font-normal text-gray-500 dark:text-gray-400 pb-1">Expense</dt>
-      <dd class="leading-none text-xl font-bold text-red-600 dark:text-red-500">-$18,230</dd>
+      <dt class="pb-1 text-base font-normal text-gray-500 dark:text-gray-400">Expense</dt>
+      <dd class="text-xl leading-none font-bold text-red-600 dark:text-red-500">-$18,230</dd>
     </dl>
   </div>
 
   <Chart {options} />
-  <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
-    <div class="flex justify-between items-center pt-5">
-      <Button class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0">Last 7 days<ChevronDownOutline class="w-2.5 m-2.5 ms-1.5" /></Button>
+  <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
+    <div class="flex items-center justify-between pt-5">
+      <Button class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent">Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button>
       <Dropdown class="w-40" offset="-6">
         <DropdownItem>Yesterday</DropdownItem>
         <DropdownItem>Today</DropdownItem>
@@ -564,9 +565,9 @@ Create a horizontal bar chart with as many data series as you like by setting th
         <DropdownItem>Last 30 days</DropdownItem>
         <DropdownItem>Last 90 days</DropdownItem>
       </Dropdown>
-      <A href="/" class="uppercase text-sm font-semibold hover:text-primary-700 dark:hover:text-primary-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2 hover:no-underline">
+      <A href="/" class="hover:text-primary-700 dark:hover:text-primary-500 rounded-lg px-3 py-2 text-sm font-semibold uppercase hover:bg-gray-100 hover:no-underline dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700">
         Leads Report
-        <ChevronRightOutline class="w-2.5 h-2.5 ms-1.5" />
+        <ChevronRightOutline class="ms-1.5 h-2.5 w-2.5" />
       </A>
     </div>
   </div>
@@ -579,54 +580,54 @@ Create a pie chart with multiple data series by setting the type: "pie" chart ty
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover } from 'flowbite-svelte';
-  import { InfoCircleSolid, ChevronDownOutline, ChevronRightOutline, PenSolid, DownloadSolid, ShareNodesSolid, TrashBinSolid, DotsHorizontalOutline } from 'flowbite-svelte-icons';
+  import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover } from "flowbite-svelte";
+  import { InfoCircleSolid, ChevronDownOutline, ChevronRightOutline, PenSolid, DownloadSolid, ShareNodesSolid, TrashBinSolid, DotsHorizontalOutline } from "flowbite-svelte-icons";
 
   const options = {
     series: [52.8, 26.8, 20.4],
-    colors: ['#1C64F2', '#16BDCA', '#9061F9'],
+    colors: ["#1C64F2", "#16BDCA", "#9061F9"],
     chart: {
       height: 420,
-      width: '100%',
-      type: 'pie'
+      width: "100%",
+      type: "pie"
     },
     stroke: {
-      colors: ['white'],
-      lineCap: ''
+      colors: ["white"],
+      lineCap: ""
     },
     plotOptions: {
       pie: {
         labels: {
           show: true
         },
-        size: '100%',
+        size: "100%",
         dataLabels: {
           offset: -25
         }
       }
     },
-    labels: ['Direct', 'Organic search', 'Referrals'],
+    labels: ["Direct", "Organic search", "Referrals"],
     dataLabels: {
       enabled: true,
       style: {
-        fontFamily: 'Inter, sans-serif'
+        fontFamily: "Inter, sans-serif"
       }
     },
     legend: {
-      position: 'bottom',
-      fontFamily: 'Inter, sans-serif'
+      position: "bottom",
+      fontFamily: "Inter, sans-serif"
     },
     yaxis: {
       labels: {
         formatter: function (value) {
-          return value + '%';
+          return value + "%";
         }
       }
     },
     xaxis: {
       labels: {
         formatter: function (value) {
-          return value + '%';
+          return value + "%";
         }
       },
       axisTicks: {
@@ -640,38 +641,38 @@ Create a pie chart with multiple data series by setting the type: "pie" chart ty
 </script>
 
 <Card>
-  <div class="flex justify-between items-start w-full">
+  <div class="flex w-full items-start justify-between">
     <div class="flex-col items-center">
-      <div class="flex items-center mb-1">
-        <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white me-1">Website traffic</h5>
-        <InfoCircleSolid id="pie1" class="w-3.5 h-3.5 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white cursor-pointer ms-1" />
-        <Popover triggeredBy="#pie1" class="text-sm text-gray-500 bg-white border border-gray-200 rounded-lg shadow-xs w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400 z-10">
-          <div class="p-3 space-y-2">
+      <div class="mb-1 flex items-center">
+        <h5 class="me-1 text-xl leading-none font-bold text-gray-900 dark:text-white">Website traffic</h5>
+        <InfoCircleSolid id="pie1" class="ms-1 h-3.5 w-3.5 cursor-pointer text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" />
+        <Popover triggeredBy="#pie1" class="z-10 w-72 rounded-lg border border-gray-200 bg-white text-sm text-gray-500 shadow-xs dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400">
+          <div class="space-y-2 p-3">
             <h3 class="font-semibold text-gray-900 dark:text-white">Activity growth - Incremental</h3>
             <p>Report helps navigate cumulative growth of community activities. Ideally, the chart should have a growing trend, as stagnating chart signifies a significant decrease of community activity.</p>
             <h3 class="font-semibold text-gray-900 dark:text-white">Calculation</h3>
             <p>For each date bucket, the all-time volume of activities is calculated. This means that activities in period n contain all activities up to period n, plus the activities generated by your community in period.</p>
-            <A href="/">Read more <ChevronRightOutline class="w-2 h-2 ms-1.5" /></A>
+            <A href="/">Read more <ChevronRightOutline class="ms-1.5 h-2 w-2" /></A>
           </div>
         </Popover>
       </div>
     </div>
-    <div class="flex justify-end items-center">
+    <div class="flex items-center justify-end">
       <DotsHorizontalOutline id="dots-menu" class="dots-menu dark:text-white" />
       <Dropdown triggeredBy="#dots-menu" class="w-44" offset="-6">
-        <DropdownItem><PenSolid class="inline w-3 h-3 me-2" /> Edit widget</DropdownItem>
-        <DropdownItem><DownloadSolid class="inline w-3 h-3 me-2" />Dropdown data</DropdownItem>
-        <DropdownItem><ShareNodesSolid class="inline w-3 h-3 me-2" />Add to repository</DropdownItem>
-        <DropdownItem><TrashBinSolid class="inline w-3 h-3 me-2" />Delete widget</DropdownItem>
+        <DropdownItem><PenSolid class="me-2 inline h-3 w-3" /> Edit widget</DropdownItem>
+        <DropdownItem><DownloadSolid class="me-2 inline h-3 w-3" />Dropdown data</DropdownItem>
+        <DropdownItem><ShareNodesSolid class="me-2 inline h-3 w-3" />Add to repository</DropdownItem>
+        <DropdownItem><TrashBinSolid class="me-2 inline h-3 w-3" />Delete widget</DropdownItem>
       </Dropdown>
     </div>
   </div>
 
   <Chart {options} class="py-6" />
 
-  <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
-    <div class="flex justify-between items-center pt-5">
-      <Button class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0">Last 7 days<ChevronDownOutline class="w-2.5 m-2.5 ms-1.5" /></Button>
+  <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
+    <div class="flex items-center justify-between pt-5">
+      <Button class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent">Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button>
       <Dropdown class="w-40" offset="-6">
         <DropdownItem>Yesterday</DropdownItem>
         <DropdownItem>Today</DropdownItem>
@@ -679,9 +680,9 @@ Create a pie chart with multiple data series by setting the type: "pie" chart ty
         <DropdownItem>Last 30 days</DropdownItem>
         <DropdownItem>Last 90 days</DropdownItem>
       </Dropdown>
-      <A href="/" class="uppercase text-sm font-semibold hover:text-primary-700 dark:hover:text-primary-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2 hover:no-underline">
+      <A href="/" class="hover:text-primary-700 dark:hover:text-primary-500 rounded-lg px-3 py-2 text-sm font-semibold uppercase hover:bg-gray-100 hover:no-underline dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700">
         Traffic analysis
-        <ChevronRightOutline class="w-2.5 h-2.5 ms-1.5" />
+        <ChevronRightOutline class="ms-1.5 h-2.5 w-2.5" />
       </A>
     </div>
   </div>
@@ -694,20 +695,20 @@ Set the chart type: "donut" to create a donut chart and copy the options from th
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from 'flowbite-svelte';
-  import { InfoCircleSolid, ArrowDownToBracketOutline, ChevronDownOutline, ChevronRightOutline, PenSolid, DownloadSolid, ShareNodesSolid } from 'flowbite-svelte-icons';
+  import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from "flowbite-svelte";
+  import { InfoCircleSolid, ArrowDownToBracketOutline, ChevronDownOutline, ChevronRightOutline, PenSolid, DownloadSolid, ShareNodesSolid } from "flowbite-svelte-icons";
 
   const options = {
     series: [35.1, 23.5, 2.4, 5.4],
-    colors: ['#1C64F2', '#16BDCA', '#FDBA8C', '#E74694'],
+    colors: ["#1C64F2", "#16BDCA", "#FDBA8C", "#E74694"],
     chart: {
       height: 320,
-      width: '100%',
-      type: 'donut'
+      width: "100%",
+      type: "donut"
     },
     stroke: {
-      colors: ['transparent'],
-      lineCap: ''
+      colors: ["transparent"],
+      lineCap: ""
     },
     plotOptions: {
       pie: {
@@ -716,14 +717,14 @@ Set the chart type: "donut" to create a donut chart and copy the options from th
             show: true,
             name: {
               show: true,
-              fontFamily: 'Inter, sans-serif',
+              fontFamily: "Inter, sans-serif",
               offsetY: 20
             },
             total: {
               showAlways: true,
               show: true,
-              label: 'Unique visitors',
-              fontFamily: 'Inter, sans-serif',
+              label: "Unique visitors",
+              fontFamily: "Inter, sans-serif",
               formatter: function (w) {
                 const sum = w.globals.seriesTotals.reduce((a, b) => {
                   return a + b;
@@ -733,14 +734,14 @@ Set the chart type: "donut" to create a donut chart and copy the options from th
             },
             value: {
               show: true,
-              fontFamily: 'Inter, sans-serif',
+              fontFamily: "Inter, sans-serif",
               offsetY: -20,
               formatter: function (value) {
-                return value + 'k';
+                return value + "k";
               }
             }
           },
-          size: '80%'
+          size: "80%"
         }
       }
     },
@@ -749,25 +750,25 @@ Set the chart type: "donut" to create a donut chart and copy the options from th
         top: -2
       }
     },
-    labels: ['Direct', 'Sponsor', 'Affiliate', 'Email marketing'],
+    labels: ["Direct", "Sponsor", "Affiliate", "Email marketing"],
     dataLabels: {
       enabled: false
     },
     legend: {
-      position: 'bottom',
-      fontFamily: 'Inter, sans-serif'
+      position: "bottom",
+      fontFamily: "Inter, sans-serif"
     },
     yaxis: {
       labels: {
         formatter: function (value) {
-          return value + 'k';
+          return value + "k";
         }
       }
     },
     xaxis: {
       labels: {
         formatter: function (value) {
-          return value + 'k';
+          return value + "k";
         }
       },
       axisTicks: {
@@ -781,33 +782,33 @@ Set the chart type: "donut" to create a donut chart and copy the options from th
 </script>
 
 <Card>
-  <div class="flex justify-between items-start w-full">
+  <div class="flex w-full items-start justify-between">
     <div class="flex-col items-center">
-      <div class="flex items-center mb-1">
-        <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white me-1">Website traffic</h5>
-        <InfoCircleSolid id="donut1" class="w-3.5 h-3.5 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white cursor-pointer ms-1" />
-        <Popover triggeredBy="#donut1" class="text-sm text-gray-500 bg-white border border-gray-200 rounded-lg shadow-xs w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400 z-10">
-          <div class="p-3 space-y-2">
+      <div class="mb-1 flex items-center">
+        <h5 class="me-1 text-xl leading-none font-bold text-gray-900 dark:text-white">Website traffic</h5>
+        <InfoCircleSolid id="donut1" class="ms-1 h-3.5 w-3.5 cursor-pointer text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" />
+        <Popover triggeredBy="#donut1" class="z-10 w-72 rounded-lg border border-gray-200 bg-white text-sm text-gray-500 shadow-xs dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400">
+          <div class="space-y-2 p-3">
             <h3 class="font-semibold text-gray-900 dark:text-white">Activity growth - Incremental</h3>
             <p>Report helps navigate cumulative growth of community activities. Ideally, the chart should have a growing trend, as stagnating chart signifies a significant decrease of community activity.</p>
             <h3 class="font-semibold text-gray-900 dark:text-white">Calculation</h3>
             <p>For each date bucket, the all-time volume of activities is calculated. This means that activities in period n contain all activities up to period n, plus the activities generated by your community in period.</p>
-            <A href="/">Read more <ChevronRightOutline class="w-2 h-2 ms-1.5" /></A>
+            <A href="/">Read more <ChevronRightOutline class="ms-1.5 h-2 w-2" /></A>
           </div>
         </Popover>
       </div>
     </div>
-    <div class="flex justify-end items-center">
-      <ArrowDownToBracketOutline class="w-3.5 h-3.5" />
+    <div class="flex items-center justify-end">
+      <ArrowDownToBracketOutline class="h-3.5 w-3.5" />
       <Tooltip>Download CSV</Tooltip>
     </div>
   </div>
 
   <Chart {options} class="py-6" />
 
-  <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
-    <div class="flex justify-between items-center pt-5">
-      <Button class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0">Last 7 days<ChevronDownOutline class="w-2.5 m-2.5 ms-1.5" /></Button>
+  <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
+    <div class="flex items-center justify-between pt-5">
+      <Button class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent">Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button>
       <Dropdown class="w-40" offset="-6">
         <DropdownItem>Yesterday</DropdownItem>
         <DropdownItem>Today</DropdownItem>
@@ -815,9 +816,9 @@ Set the chart type: "donut" to create a donut chart and copy the options from th
         <DropdownItem>Last 30 days</DropdownItem>
         <DropdownItem>Last 90 days</DropdownItem>
       </Dropdown>
-      <A href="/" class="uppercase text-sm font-semibold hover:text-primary-700 dark:hover:text-primary-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2 hover:no-underline">
+      <A href="/" class="hover:text-primary-700 dark:hover:text-primary-500 rounded-lg px-3 py-2 text-sm font-semibold uppercase hover:bg-gray-100 hover:no-underline dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700">
         Traffic analysis
-        <ChevronRightOutline class="w-2.5 h-2.5 ms-1.5" />
+        <ChevronRightOutline class="ms-1.5 h-2.5 w-2.5" />
       </A>
     </div>
   </div>
@@ -830,18 +831,18 @@ To create a radial chart with multiple data entries you need to set the type: "r
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from 'flowbite-svelte';
-  import { InfoCircleSolid, ArrowDownToBracketOutline, ChevronDownOutline, ChevronRightOutline, PenSolid, DownloadSolid, ShareNodesSolid } from 'flowbite-svelte-icons';
+  import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from "flowbite-svelte";
+  import { InfoCircleSolid, ArrowDownToBracketOutline, ChevronDownOutline, ChevronRightOutline, PenSolid, DownloadSolid, ShareNodesSolid } from "flowbite-svelte-icons";
 
   let isOpen = false;
 
   const options = {
     series: [90, 85, 70],
-    colors: ['#1C64F2', '#16BDCA', '#FDBA8C'],
+    colors: ["#1C64F2", "#16BDCA", "#FDBA8C"],
     chart: {
-      height: '380px',
-      width: '100%',
-      type: 'radialBar',
+      height: "380px",
+      width: "100%",
+      type: "radialBar",
       sparkline: {
         enabled: true
       }
@@ -849,14 +850,14 @@ To create a radial chart with multiple data entries you need to set the type: "r
     plotOptions: {
       radialBar: {
         track: {
-          background: '#E5E7EB'
+          background: "#E5E7EB"
         },
         dataLabels: {
           show: false
         },
         hollow: {
           margin: 0,
-          size: '32%'
+          size: "32%"
         }
       }
     },
@@ -870,11 +871,11 @@ To create a radial chart with multiple data entries you need to set the type: "r
         bottom: -20
       }
     },
-    labels: ['Done', 'In progress', 'To do'],
+    labels: ["Done", "In progress", "To do"],
     legend: {
       show: true,
-      position: 'bottom',
-      fontFamily: 'Inter, sans-serif'
+      position: "bottom",
+      fontFamily: "Inter, sans-serif"
     },
     tooltip: {
       enabled: true,
@@ -886,7 +887,7 @@ To create a radial chart with multiple data entries you need to set the type: "r
       show: false,
       labels: {
         formatter: function (value) {
-          return value + '%';
+          return value + "%";
         }
       }
     }
@@ -894,61 +895,62 @@ To create a radial chart with multiple data entries you need to set the type: "r
 </script>
 
 <Card>
-  <div class="flex justify-between items-start w-full">
+  <div class="flex w-full items-start justify-between">
     <div class="flex-col items-center">
-      <div class="flex items-center mb-1">
-        <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white me-1">Your team's progress</h5>
-        <InfoCircleSolid id="donut1" class="w-3.5 h-3.5 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white cursor-pointer ms-1" />
-        <Popover triggeredBy="#donut1" class="text-sm text-gray-500 bg-white border border-gray-200 rounded-lg shadow-xs w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400 z-10">
-          <div class="p-3 space-y-2">
+      <div class="mb-1 flex items-center">
+        <h5 class="me-1 text-xl leading-none font-bold text-gray-900 dark:text-white">Your team's progress</h5>
+        <InfoCircleSolid id="donut1" class="ms-1 h-3.5 w-3.5 cursor-pointer text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" />
+        <Popover triggeredBy="#donut1" class="z-10 w-72 rounded-lg border border-gray-200 bg-white text-sm text-gray-500 shadow-xs dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400">
+          <div class="space-y-2 p-3">
             <h3 class="font-semibold text-gray-900 dark:text-white">Activity growth - Incremental</h3>
             <p>Report helps navigate cumulative growth of community activities. Ideally, the chart should have a growing trend, as stagnating chart signifies a significant decrease of community activity.</p>
             <h3 class="font-semibold text-gray-900 dark:text-white">Calculation</h3>
             <p>For each date bucket, the all-time volume of activities is calculated. This means that activities in period n contain all activities up to period n, plus the activities generated by your community in period.</p>
-            <A href="/">Read more <ChevronRightOutline class="w-2 h-2 ms-1.5" /></A>
+            <A href="/">Read more <ChevronRightOutline class="ms-1.5 h-2 w-2" /></A>
           </div>
         </Popover>
       </div>
     </div>
-    <div class="flex justify-end items-center">
-      <ArrowDownToBracketOutline class="w-3.5 h-3.5" />
+    <div class="flex items-center justify-end">
+      <ArrowDownToBracketOutline class="h-3.5 w-3.5" />
       <Tooltip>Download CSV</Tooltip>
     </div>
   </div>
 
-  <div class="bg-gray-50 dark:bg-gray-700 p-3 rounded-lg">
-    <div class="grid grid-cols-3 gap-3 mb-2">
-      <dl class="bg-orange-50 dark:bg-gray-600 rounded-lg flex flex-col items-center justify-center h-[78px]">
-        <dt class="w-8 h-8 rounded-full bg-orange-100 dark:bg-gray-500 text-orange-600 dark:text-orange-300 text-sm font-medium flex items-center justify-center mb-1">12</dt>
-        <dd class="text-orange-600 dark:text-orange-300 text-sm font-medium">To do</dd>
+  <div class="rounded-lg bg-gray-50 p-3 dark:bg-gray-700">
+    <div class="mb-2 grid grid-cols-3 gap-3">
+      <dl class="flex h-[78px] flex-col items-center justify-center rounded-lg bg-orange-50 dark:bg-gray-600">
+        <dt class="mb-1 flex h-8 w-8 items-center justify-center rounded-full bg-orange-100 text-sm font-medium text-orange-600 dark:bg-gray-500 dark:text-orange-300">12</dt>
+        <dd class="text-sm font-medium text-orange-600 dark:text-orange-300">To do</dd>
       </dl>
-      <dl class="bg-teal-50 dark:bg-gray-600 rounded-lg flex flex-col items-center justify-center h-[78px]">
-        <dt class="w-8 h-8 rounded-full bg-teal-100 dark:bg-gray-500 text-teal-600 dark:text-teal-300 text-sm font-medium flex items-center justify-center mb-1">23</dt>
-        <dd class="text-teal-600 dark:text-teal-300 text-sm font-medium">In progress</dd>
+      <dl class="flex h-[78px] flex-col items-center justify-center rounded-lg bg-teal-50 dark:bg-gray-600">
+        <dt class="mb-1 flex h-8 w-8 items-center justify-center rounded-full bg-teal-100 text-sm font-medium text-teal-600 dark:bg-gray-500 dark:text-teal-300">23</dt>
+        <dd class="text-sm font-medium text-teal-600 dark:text-teal-300">In progress</dd>
       </dl>
-      <dl class="bg-blue-50 dark:bg-gray-600 rounded-lg flex flex-col items-center justify-center h-[78px]">
-        <dt class="w-8 h-8 rounded-full bg-blue-100 dark:bg-gray-500 text-blue-600 dark:text-blue-300 text-sm font-medium flex items-center justify-center mb-1">64</dt>
-        <dd class="text-blue-600 dark:text-blue-300 text-sm font-medium">Done</dd>
+      <dl class="flex h-[78px] flex-col items-center justify-center rounded-lg bg-blue-50 dark:bg-gray-600">
+        <dt class="mb-1 flex h-8 w-8 items-center justify-center rounded-full bg-blue-100 text-sm font-medium text-blue-600 dark:bg-gray-500 dark:text-blue-300">64</dt>
+        <dd class="text-sm font-medium text-blue-600 dark:text-blue-300">Done</dd>
       </dl>
     </div>
-    <button on:click={() => (isOpen = !isOpen)} type="button" class="hover:underline text-xs text-gray-500 dark:text-gray-400 font-medium inline-flex items-center">Show more details <ChevronDownOutline class="w-2 h-2 ms-1" /> </button>
+    <button on:click={() => (isOpen = !isOpen)} type="button" class="inline-flex items-center text-xs font-medium text-gray-500 hover:underline dark:text-gray-400">Show more details <ChevronDownOutline class="ms-1 h-2 w-2" /></button>
     {#if isOpen}
-      <div id="more-details" class="border-gray-200 border-t dark:border-gray-600 pt-3 mt-3 space-y-2">
+      <div id="more-details" class="mt-3 space-y-2 border-t border-gray-200 pt-3 dark:border-gray-600">
         <dl class="flex items-center justify-between">
-          <dt class="text-gray-500 dark:text-gray-400 text-sm font-normal">Average task completion rate:</dt>
-          <dd class="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-1 rounded-md dark:bg-green-900 dark:text-green-300">
-            <svg class="w-2.5 h-2.5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 14">
+          <dt class="text-sm font-normal text-gray-500 dark:text-gray-400">Average task completion rate:</dt>
+          <dd class="inline-flex items-center rounded-md bg-green-100 px-2.5 py-1 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300">
+            <svg class="me-1.5 h-2.5 w-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 14">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13V1m0 0L1 5m4-4 4 4" />
-            </svg> 57%
+            </svg>
+            57%
           </dd>
         </dl>
         <dl class="flex items-center justify-between">
-          <dt class="text-gray-500 dark:text-gray-400 text-sm font-normal">Days until sprint ends:</dt>
-          <dd class="bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-1 rounded-md dark:bg-gray-600 dark:text-gray-300">13 days</dd>
+          <dt class="text-sm font-normal text-gray-500 dark:text-gray-400">Days until sprint ends:</dt>
+          <dd class="inline-flex items-center rounded-md bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-800 dark:bg-gray-600 dark:text-gray-300">13 days</dd>
         </dl>
         <dl class="flex items-center justify-between">
-          <dt class="text-gray-500 dark:text-gray-400 text-sm font-normal">Next meeting:</dt>
-          <dd class="bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-1 rounded-md dark:bg-gray-600 dark:text-gray-300">Thursday</dd>
+          <dt class="text-sm font-normal text-gray-500 dark:text-gray-400">Next meeting:</dt>
+          <dd class="inline-flex items-center rounded-md bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-800 dark:bg-gray-600 dark:text-gray-300">Thursday</dd>
         </dl>
       </div>
     {/if}
@@ -956,9 +958,9 @@ To create a radial chart with multiple data entries you need to set the type: "r
 
   <Chart {options} class="py-6" />
 
-  <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
-    <div class="flex justify-between items-center pt-5">
-      <Button class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0">Last 7 days<ChevronDownOutline class="w-2.5 m-2.5 ms-1.5" /></Button>
+  <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
+    <div class="flex items-center justify-between pt-5">
+      <Button class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent">Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button>
       <Dropdown class="w-40" offset="-6">
         <DropdownItem>Yesterday</DropdownItem>
         <DropdownItem>Today</DropdownItem>
@@ -966,9 +968,9 @@ To create a radial chart with multiple data entries you need to set the type: "r
         <DropdownItem>Last 30 days</DropdownItem>
         <DropdownItem>Last 90 days</DropdownItem>
       </Dropdown>
-      <A href="/" class="uppercase text-sm font-semibold hover:text-primary-700 dark:hover:text-primary-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2 hover:no-underline">
+      <A href="/" class="hover:text-primary-700 dark:hover:text-primary-500 rounded-lg px-3 py-2 text-sm font-semibold uppercase hover:bg-gray-100 hover:no-underline dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700">
         PROGRESS REPORT
-        <ChevronRightOutline class="w-2.5 h-2.5 ms-1.5" />
+        <ChevronRightOutline class="ms-1.5 h-2.5 w-2.5" />
       </A>
     </div>
   </div>
@@ -979,20 +981,20 @@ To create a radial chart with multiple data entries you need to set the type: "r
 
 ```svelte example class="flex justify-center"
 <script lang="ts">
-  import { Chart } from '$lib';
-  import { onMount, onDestroy } from 'svelte';
-  import type { ApexOptions } from 'apexcharts';
-  
+  import { Chart } from "$lib";
+  import { onMount, onDestroy } from "svelte";
+  import type { ApexOptions } from "apexcharts";
+
   let chart: ApexCharts | undefined;
-  
+
   const initialData = [6500, 6418, 6456, 6526, 6356, 6456];
   const alternateData = [5500, 5418, 5456, 4526, 4356, 3456];
-  
+
   let options: ApexOptions = {
     chart: {
       height: 400,
-      type: 'area',
-      fontFamily: 'Inter, sans-serif',
+      type: "area",
+      fontFamily: "Inter, sans-serif",
       dropShadow: {
         enabled: false
       },
@@ -1008,15 +1010,15 @@ To create a radial chart with multiple data entries you need to set the type: "r
     },
     series: [
       {
-        name: 'New users',
+        name: "New users",
         data: initialData,
-        color: '#1A56DB'
+        color: "#1A56DB"
       }
     ]
   };
-  
+
   let intervalId: ReturnType<typeof setInterval>;
-  
+
   function toggleData() {
     options = {
       ...options,
@@ -1028,11 +1030,11 @@ To create a radial chart with multiple data entries you need to set the type: "r
       ]
     };
   }
-  
+
   onMount(() => {
     intervalId = setInterval(toggleData, 5000);
   });
-  
+
   onDestroy(() => {
     clearInterval(intervalId);
   });

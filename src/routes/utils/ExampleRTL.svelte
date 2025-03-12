@@ -1,5 +1,5 @@
 <script lang="ts">
-  type NotificationDirection = 'ltr' | 'rtl' | 'auto';
+  type NotificationDirection = "ltr" | "rtl" | "auto";
 
   let { rtl = $bindable() }: { rtl?: NotificationDirection } = $props();
 
@@ -8,18 +8,18 @@
   }
 
   const transitions: Record<NotificationDirection, NotificationDirection> = {
-    ltr: 'rtl',
-    rtl: 'ltr',
-    auto: 'rtl'
+    ltr: "rtl",
+    rtl: "ltr",
+    auto: "rtl"
   };
 
   function toggle() {
-    rtl = transitions[rtl ?? 'auto'];
+    rtl = transitions[rtl ?? "auto"];
   }
 </script>
 
-<button onclick={toggle} type="button" class="flex items-center p-2 me-2 text-xs font-medium text-gray-700 bg-white border border-gray-200 rounded-lg toggle-dark-state-example hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-500 dark:bg-gray-800 focus:outline-hidden dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-  {#if rtl === 'rtl'}
+<button onclick={toggle} type="button" class="toggle-dark-state-example hover:text-primary-700 me-2 flex items-center rounded-lg border border-gray-200 bg-white p-2 text-xs font-medium text-gray-700 hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-gray-300 focus:outline-hidden dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-500">
+  {#if rtl === "rtl"}
     LTR
   {:else}
     RTL

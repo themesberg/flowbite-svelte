@@ -24,7 +24,7 @@ Import a badge component in the script tag.
 
 ```svelte example hideOutput
 <script>
-  import { Badge } from 'flowbite-svelte';
+  import { Badge } from "flowbite-svelte";
 </script>
 ```
 
@@ -34,7 +34,7 @@ Use the following badge elements to indicate counts or labels inside or outside 
 
 ```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
 <script>
-  import { Badge } from 'flowbite-svelte';
+  import { Badge } from "flowbite-svelte";
 </script>
 
 <Badge>Default</Badge>
@@ -53,7 +53,7 @@ Use the `large` prop to create a large variant of the badges.
 
 ```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
 <script>
-  import { Badge } from 'flowbite-svelte';
+  import { Badge } from "flowbite-svelte";
 </script>
 
 <Badge large>Default</Badge>
@@ -72,7 +72,7 @@ Use the `border` prop to add a border accent to the badge component.
 
 ```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
 <script>
-  import { Badge } from 'flowbite-svelte';
+  import { Badge } from "flowbite-svelte";
 </script>
 
 <Badge border>Default</Badge>
@@ -91,7 +91,7 @@ Use the `rounded-sm` prop to make the corners even more rounded like pills for t
 
 ```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
 <script>
-  import { Badge } from 'flowbite-svelte';
+  import { Badge } from "flowbite-svelte";
 </script>
 
 <Badge rounded>Default</Badge>
@@ -110,7 +110,7 @@ You can also use badges as anchor elements to link to another page.
 
 ```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
 <script>
-  import { Badge } from 'flowbite-svelte';
+  import { Badge } from "flowbite-svelte";
 </script>
 
 <Badge href="/">Badge link</Badge>
@@ -125,16 +125,16 @@ You can also use SVG icons inside the badge elements.
 
 ```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>
-  import { Badge } from 'flowbite-svelte';
-  import { ClockSolid } from 'flowbite-svelte-icons';
+  import { Badge } from "flowbite-svelte";
+  import { ClockSolid } from "flowbite-svelte-icons";
 </script>
 
 <Badge color="dark" border>
-  <ClockSolid class="w-2.5 h-2.5 me-1.5" />
+  <ClockSolid class="me-1.5 h-2.5 w-2.5" />
   3 days ago
 </Badge>
 <Badge border>
-  <ClockSolid class="text-primary-800 dark:text-primary-400 w-2.5 h-2.5 me-1.5" />
+  <ClockSolid class="text-primary-800 dark:text-primary-400 me-1.5 h-2.5 w-2.5" />
   2 minutes ago
 </Badge>
 ```
@@ -145,8 +145,8 @@ To achive the functionality of the notification badge, use the sibling [`Indicat
 
 ```svelte example class="flex flex-wrap gap-4" hideResponsiveButtons
 <script>
-  import { Button, Indicator } from 'flowbite-svelte';
-  import { EnvelopeSolid } from 'flowbite-svelte-icons';
+  import { Button, Indicator } from "flowbite-svelte";
+  import { EnvelopeSolid } from "flowbite-svelte-icons";
 </script>
 
 <Button class="relative" size="sm">
@@ -174,12 +174,12 @@ Use this example to add a badge inside a button component for a count indicator.
 
 ```svelte example class="flex flex-wrap gap-4" hideResponsiveButtons
 <script>
-  import { Badge, Button } from 'flowbite-svelte';
+  import { Badge, Button } from "flowbite-svelte";
 </script>
 
 <Button>
   Messages
-  <Badge rounded class="w-4 h-4 ms-2 p-0 font-semibold text-primary-800 bg-white dark:text-primary-800 dark:bg-white">2</Badge>
+  <Badge rounded class="text-primary-800 dark:text-primary-800 ms-2 h-4 w-4 bg-white p-0 font-semibold dark:bg-white">2</Badge>
 </Button>
 ```
 
@@ -189,8 +189,8 @@ Alternatively you can also use badges which indicate only a SVG icon.
 
 ```svelte example hideScript hideResponsiveButtons
 <script>
-  import { Badge } from 'flowbite-svelte';
-  import { CheckOutline } from 'flowbite-svelte-icons';
+  import { Badge } from "flowbite-svelte";
+  import { CheckOutline } from "flowbite-svelte-icons";
 </script>
 
 <Badge color="dark" rounded-sm large class="p-1! font-semibold!">
@@ -198,7 +198,7 @@ Alternatively you can also use badges which indicate only a SVG icon.
   <span class="sr-only">Icon description</span>
 </Badge>
 <Badge rounded large class="p-1! font-semibold!">
-  <CheckOutline class="h-3 w-3 text-primary-800 dark:text-primary-400" />
+  <CheckOutline class="text-primary-800 dark:text-primary-400 h-3 w-3" />
   <span class="sr-only">Icon description</span>
 </Badge>
 ```
@@ -209,7 +209,7 @@ Use the `dimissable` prop to dismiss the current badge.
 
 ```svelte example class="flex flex-wrap gap-4" hideScript hideResponsiveButtons
 <script>
-  import { Badge } from 'flowbite-svelte';
+  import { Badge } from "flowbite-svelte";
 </script>
 
 <Badge dismissable large>Default</Badge>
@@ -226,14 +226,14 @@ Use the `icon` snippet to add your desired button.
 
 ```svelte example class="gap-4"
 <script>
-  import { Badge } from 'flowbite-svelte';
-  import { CloseCircleSolid } from 'flowbite-svelte-icons';
+  import { Badge } from "flowbite-svelte";
+  import { CloseCircleSolid } from "flowbite-svelte-icons";
 </script>
 
 <Badge dismissable>
   Default
   {#snippet icon()}
-    <button type="button" class="inline-flex items-center rounded-full p-0.5 my-0.5 ms-1.5 -me-1.5 text-sm bg-primary-500 dark:bg-primary-400 text-white dark:text-primary-800 hover:bg-primary-900 hover:text-white dark:hover:bg-red-900 dark:hover:text-yellow-300" aria-label="Remove">
+    <button type="button" class="bg-primary-500 dark:bg-primary-400 dark:text-primary-800 hover:bg-primary-900 my-0.5 ms-1.5 -me-1.5 inline-flex items-center rounded-full p-0.5 text-sm text-white hover:text-white dark:hover:bg-red-900 dark:hover:text-yellow-300" aria-label="Remove">
       <CloseCircleSolid class="h-4 w-4" />
       <span class="sr-only">Remove badge</span>
     </button>
@@ -245,11 +245,11 @@ A `onclose` callback will be dispatched during the dismissal, listen to it if ne
 
 ```svelte example class="gap-4"
 <script>
-  import { Badge } from 'flowbite-svelte';
+  import { Badge } from "flowbite-svelte";
 
   function handleClose(event) {
     event.preventDefault();
-    alert('Badge dismissed');
+    alert("Badge dismissed");
   }
 </script>
 
@@ -262,13 +262,13 @@ The color can be changed dynamically.
 
 ```svelte example class="flex flex-wrap gap-4" hideResponsiveButtons
 <script>
-  import { Badge } from 'flowbite-svelte';
+  import { Badge } from "flowbite-svelte";
 
   setInterval(handleHover, 500);
 
-  let color = 'primary';
+  let color = "primary";
   function handleHover() {
-    color = color === 'primary' ? 'dark' : 'primary';
+    color = color === "primary" ? "dark" : "primary";
   }
 </script>
 

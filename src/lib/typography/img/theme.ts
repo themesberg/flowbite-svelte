@@ -39,6 +39,6 @@ export const img = tv({
       none: {
         base: "transition-all duration-300"
       }
-    },
+    }
   }
 });

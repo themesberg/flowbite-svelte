@@ -20,7 +20,6 @@ export declare const md = "md";
 export declare const lg = "lg";
 export declare const xl = "xl";
 
-
 export interface drawerTransitionParamTypes {
   amount?: number;
   delay?: number;
@@ -114,7 +113,7 @@ export interface LinkType {
 }
 
 interface AnchorAttributes extends Omit<HTMLAnchorAttributes, "on:copy" | "oncopy"> {
-  href: string
+  href: string;
 }
 
 interface ButtonAttibutes extends Omit<HTMLButtonAttributes, "on:copy" | "oncopy"> {

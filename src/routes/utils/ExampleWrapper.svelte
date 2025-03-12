@@ -2,17 +2,17 @@
   /**
    * I removed the iFrames. They where used for resizing. I'm not sure they still needed.
    */
-  import Button from '$lib/buttons/Button.svelte';
-  import Tooltip from '$lib/tooltip/Tooltip.svelte';
-  import { DesktopPcOutline, MobilePhoneOutline, TabletOutline } from 'flowbite-svelte-icons';
-  import { twJoin, twMerge } from 'tailwind-merge';
-  import ExampleDarkMode from './ExampleDarkMode.svelte';
-  import ExampleRtl from './ExampleRTL.svelte';
-  import GitHub from './icons/GitHub.svelte';
+  import Button from "$lib/buttons/Button.svelte";
+  import Tooltip from "$lib/tooltip/Tooltip.svelte";
+  import { DesktopPcOutline, MobilePhoneOutline, TabletOutline } from "flowbite-svelte-icons";
+  import { twJoin, twMerge } from "tailwind-merge";
+  import ExampleDarkMode from "./ExampleDarkMode.svelte";
+  import ExampleRtl from "./ExampleRTL.svelte";
+  import GitHub from "./icons/GitHub.svelte";
 
-  let { src = undefined, meta = undefined, example, code, divClass = 'w-full mx-auto bg-linear-to-r bg-white dark:bg-gray-900 p-6' } = $props();
+  let { src = undefined, meta = undefined, example, code, divClass = "w-full mx-auto bg-linear-to-r bg-white dark:bg-gray-900 p-6" } = $props();
 
-  type NotificationDirection = 'ltr' | 'rtl' | 'auto';
+  type NotificationDirection = "ltr" | "rtl" | "auto";
 
   // suppress vite-plugin-svelte warning about unused props
   // the source of the example, if you want it
@@ -27,7 +27,7 @@
   let codeResponsiveContent: HTMLDivElement | undefined = $state();
 
   // https://github.com/themesberg/flowbite-svelte/blob/main/src/routes/docs/components/accordion.md#always-open
-  const gitHub = new URL('https://github.com/themesberg/flowbite-svelte/blob/main/src/routes/');
+  const gitHub = new URL("https://github.com/themesberg/flowbite-svelte/blob/main/src/routes/");
 
   let path: URL | undefined = $state();
 
@@ -42,38 +42,38 @@
   let expand: boolean = $state(false);
   let dark: boolean = $state(false);
   let rtl: NotificationDirection | undefined = $state();
-  let responsiveDevice: keyof typeof responsiveSize = $state('desktop');
+  let responsiveDevice: keyof typeof responsiveSize = $state("desktop");
 
   const responsiveSize = {
-    mobile: 'max-w-sm',
-    tablet: 'max-w-lg',
-    desktop: ''
+    mobile: "max-w-sm",
+    tablet: "max-w-lg",
+    desktop: ""
   };
 
   function updateDarkMode(ev: Event) {
     const target = ev.target as HTMLElement,
-      isDark = target.ownerDocument.documentElement.classList.contains('dark');
+      isDark = target.ownerDocument.documentElement.classList.contains("dark");
     dark = isDark;
   }
 
   function init(node: HTMLElement) {
     browserSupport = !!window?.navigator?.clipboard;
     const button: HTMLButtonElement = node.ownerDocument.querySelector('button[aria-label="Dark mode"]') as HTMLButtonElement;
-    button?.addEventListener('click', updateDarkMode);
+    button?.addEventListener("click", updateDarkMode);
 
-    dark = node.ownerDocument.documentElement.classList.contains('dark');
+    dark = node.ownerDocument.documentElement.classList.contains("dark");
     setTimeout(() => find_sections(node), 0);
 
     return {
       destroy() {
-        button?.removeEventListener('click', updateDarkMode);
+        button?.removeEventListener("click", updateDarkMode);
       }
     };
   }
 
   function find_sections(node: HTMLElement) {
     // find closes previous section anchor
-    const section = [...document.querySelectorAll('#mainContent > :where(h2, h3) > [id]')]
+    const section = [...document.querySelectorAll("#mainContent > :where(h2, h3) > [id]")]
       .map((x: Element) => ({ id: x.id, top: x.parentElement?.offsetTop ?? Infinity, obj: x }))
       .filter((x) => x.top < (node?.offsetTop ?? Infinity))
       .filter((x) => x.id)
@@ -82,8 +82,8 @@
 
     if (section) {
       const pathname = new URL(node.baseURI).pathname;
-      path = new URL(pathname.slice(1) + '.md', gitHub);
-      path.hash = section.id.replaceAll('_', '-').replaceAll('/', '').toLowerCase();
+      path = new URL(pathname.slice(1) + ".md", gitHub);
+      path.hash = section.id.replaceAll("_", "-").replaceAll("/", "").toLowerCase();
     }
   }
 
@@ -93,7 +93,7 @@
       codeEl?.innerText.replace(REG_HEX, function (_match: string, group1: string) {
         const num = parseInt(group1, 16);
         return String.fromCharCode(num);
-      }) ?? '';
+      }) ?? "";
 
     await window.navigator.clipboard.writeText(decodedText);
 
@@ -102,37 +102,37 @@
 
     const lastChild = button?.lastChild;
     if (lastChild) {
-      lastChild.textContent = 'Copied';
-      setTimeout(() => (lastChild.textContent = 'Copy'), 3000);
+      lastChild.textContent = "Copied";
+      setTimeout(() => (lastChild.textContent = "Copy"), 3000);
     }
   };
 
   function checkOverflow(el: HTMLElement) {
     const isOverflowingY = el.clientHeight < el.scrollHeight;
     showExpandButton = isOverflowingY;
-    el.firstElementChild?.classList.add('-mb-8');
+    el.firstElementChild?.classList.add("-mb-8");
   }
 
-  let copy_text = 'Copy';
+  let copy_text = "Copy";
 </script>
 
-<div class="mt-8 code-example" use:init>
+<div class="code-example mt-8" use:init>
   {#if !meta.hideOutput}
-    <div class="w-full p-4 border border-gray-200 bg-gray-50 rounded-t-xl dark:border-gray-600 dark:bg-gray-700">
+    <div class="w-full rounded-t-xl border border-gray-200 bg-gray-50 p-4 dark:border-gray-600 dark:bg-gray-700">
       <div class="grid {meta.hideResponsiveButtons ? 'grid-cols-2' : 'grid-cols-2 sm:grid-cols-3'}">
         {#if path}
-          <Button size="xs" color="alternative" class="dark:bg-gray-900! w-fit hover:text-primary-600 gap-2" href={'' + path} target="_blank" rel="noreferrer">
+          <Button size="xs" color="alternative" class="hover:text-primary-600 w-fit gap-2 dark:bg-gray-900!" href={"" + path} target="_blank" rel="noreferrer">
             <GitHub size="sm" />Edit on GitHub
           </Button>
           {#if !meta.hideResponsiveButtons}
-            <div class="justify-center gap-x-2 hidden sm:flex">
-              <Button size="xs" color="alternative" onclick={() => (responsiveDevice = 'desktop')}>
+            <div class="hidden justify-center gap-x-2 sm:flex">
+              <Button size="xs" color="alternative" onclick={() => (responsiveDevice = "desktop")}>
                 <DesktopPcOutline size="sm" />
               </Button>
-              <Button size="xs" color="alternative" onclick={() => (responsiveDevice = 'tablet')}>
+              <Button size="xs" color="alternative" onclick={() => (responsiveDevice = "tablet")}>
                 <TabletOutline size="sm" />
               </Button>
-              <Button size="xs" color="alternative" onclick={() => (responsiveDevice = 'mobile')}>
+              <Button size="xs" color="alternative" onclick={() => (responsiveDevice = "mobile")}>
                 <MobilePhoneOutline size="sm" />
               </Button>
             </div>
@@ -146,8 +146,8 @@
     </div>
 
     <div class="code-preview-wrapper">
-      <div class="flex p-0 bg-white border-gray-200 bg-linear-to-r code-preview dark:bg-gray-900 border-x dark:border-gray-600" class:dark dir={rtl}>
-        <div class="w-full code-responsive-wrapper">
+      <div class="code-preview flex border-x border-gray-200 bg-white bg-linear-to-r p-0 dark:border-gray-600 dark:bg-gray-900" class:dark dir={rtl}>
+        <div class="code-responsive-wrapper w-full">
           <div class="code-responive-content {twJoin(!meta.hideResponsiveButtons && 'mx-auto', responsiveSize[responsiveDevice])}" bind:this={codeResponsiveContent}>
             <div class={twMerge(divClass, meta.class)}>
               {@render example?.()}
@@ -159,17 +159,17 @@
   {/if}
   <!--  -->
   <div class="code-syntax-wrapper">
-    <div class="relative border-gray-200 border-y border-x code-syntax dark:border-gray-600">
-      <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md dark:bg-gray-700 dark:border-gray-600">
-        <ul class="flex text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+    <div class="code-syntax relative border-x border-y border-gray-200 dark:border-gray-600">
+      <div class="grid w-full grid-cols-2 rounded-t-md border-b border-gray-200 bg-gray-50 dark:border-gray-600 dark:bg-gray-700">
+        <ul class="flex text-center text-sm font-medium text-gray-500 dark:text-gray-400">
           <li>
-            <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-e border-gray-200 dark:text-white dark:bg-gray-800 dark:border-gray-600"> Svelte </span>
+            <span class="inline-block w-full border-e border-gray-200 bg-gray-100 p-2 px-3 text-gray-800 dark:border-gray-600 dark:bg-gray-800 dark:text-white">Svelte</span>
           </li>
         </ul>
         <div class="flex justify-end">
           {#if browserSupport}
-            <button onclick={(e) => copyToClipboard(e)} type="button" class="flex items-center px-3 py-2 text-xs font-medium text-gray-600 bg-gray-100 border-s border-gray-200 dark:border-gray-600 dark:text-gray-400 dark:bg-gray-800 hover:text-primary-700 dark:hover:text-white copy-to-clipboard-button">
-              <svg class="w-4 h-4 me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <button onclick={(e) => copyToClipboard(e)} type="button" class="hover:text-primary-700 copy-to-clipboard-button flex items-center border-s border-gray-200 bg-gray-100 px-3 py-2 text-xs font-medium text-gray-600 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-white">
+              <svg class="me-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
               </svg>
               {copy_text}
@@ -185,7 +185,7 @@
           </div>
         </div>
         {#if showExpandButton && !expand}
-          <button onclick={() => (expand = !expand)} data-expand-code="" type="button" class="absolute bottom-0 start-0 py-2.5 px-5 w-full text-sm font-medium text-gray-900 bg-gray-100 border-t border-gray-200 hover:bg-gray-100 hover:text-primary-700 dark:bg-gray-700 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"> Expand code </button>
+          <button onclick={() => (expand = !expand)} data-expand-code="" type="button" class="hover:text-primary-700 absolute start-0 bottom-0 w-full border-t border-gray-200 bg-gray-100 px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Expand code</button>
         {/if}
       </div>
     </div>

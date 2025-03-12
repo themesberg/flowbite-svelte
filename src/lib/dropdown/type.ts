@@ -13,8 +13,7 @@ interface DropdownProps extends PopperProps {
   activeUrl?: string;
 }
 
-interface DropdownDividerProps extends HTMLAttributes<HTMLDivElement> {
-}
+interface DropdownDividerProps extends HTMLAttributes<HTMLDivElement> {}
 
 interface DropdownHeaderProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;

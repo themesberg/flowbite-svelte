@@ -7,4 +7,3 @@ import { dropdown, dropdownDivider, dropdownGroup, dropdownHeader, dropdownItem 
 import type { DropdownDividerProps, DropdownFooterProps, DropdownGroupProps, DropdownHeaderProps, DropdownItemProps, DropdownProps } from "./type";
 
 export { Dropdown, dropdown, DropdownDivider, dropdownDivider, DropdownGroup, dropdownGroup, DropdownHeader, dropdownHeader, DropdownItem, dropdownItem, type DropdownDividerProps, type DropdownFooterProps, type DropdownGroupProps, type DropdownHeaderProps, type DropdownItemProps, type DropdownProps };
-

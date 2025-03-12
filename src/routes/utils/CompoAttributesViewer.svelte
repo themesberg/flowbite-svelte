@@ -63,7 +63,7 @@
 {#if compoData}
   <div id="compoData">
     {#each compoData as compo}
-      <h4 class="text-xl font-bold text-black dark:text-white mt-8">{compo.data.default.name}</h4>
+      <h4 class="mt-8 text-xl font-bold text-black dark:text-white">{compo.data.default.name}</h4>
       <ul class="w-full">
         <TableProp>
           <TableDefaultRow items={compo.data.default.props} rowState="hover" />

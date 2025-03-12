@@ -20,7 +20,7 @@ The KBD (Keyboard) component can be used to indicate a textual user input from t
 
 ```svelte example hideOutput
 <script>
-  import { Kbd } from 'flowbite-svelte';
+  import { Kbd } from "flowbite-svelte";
 </script>
 ```
 
@@ -30,7 +30,7 @@ Here’s a list of KBD components that you can use inside any other element.
 
 ```svelte example hideScript hideResponsiveButtons
 <script>
-  import { Kbd } from 'flowbite-svelte';
+  import { Kbd } from "flowbite-svelte";
 </script>
 
 <Kbd>Shift</Kbd>
@@ -48,7 +48,7 @@ Use this example by nesting an inline KBD component inside a paragraph.
 
 ```svelte example hideScript hideResponsiveButtons
 <script>
-  import { Kbd } from 'flowbite-svelte';
+  import { Kbd } from "flowbite-svelte";
 </script>
 
 <p class="text-gray-500 dark:text-gray-400">
@@ -62,8 +62,8 @@ The KBD component can also be used inside table components to denote what type o
 
 ```svelte example hideResponsiveButtons
 <script>
-  import { Kbd, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, TableBodyRow} from 'flowbite-svelte';
-  import { CaretUpSolid, CaretDownSolid, CaretRightSolid, CaretLeftSolid } from 'flowbite-svelte-icons';
+  import { Kbd, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, TableBodyRow } from "flowbite-svelte";
+  import { CaretUpSolid, CaretDownSolid, CaretRightSolid, CaretLeftSolid } from "flowbite-svelte-icons";
 </script>
 
 <Table>
@@ -86,19 +86,19 @@ The KBD component can also be used inside table components to denote what type o
     </TableBodyRow>
     <TableBodyRow>
       <TableBodyCell>
-        <Kbd class="inline-flex items-center me-1 px-2 py-1.5">
+        <Kbd class="me-1 inline-flex items-center px-2 py-1.5">
           <CaretUpSolid />
           <span class="sr-only">Arrow key up</span>
         </Kbd>
-        <Kbd class="inline-flex items-center me-1 px-2 py-1.5">
+        <Kbd class="me-1 inline-flex items-center px-2 py-1.5">
           <CaretDownSolid />
           <span class="sr-only">Arrow key down</span>
         </Kbd> or
-        <Kbd class="inline-flex items-center me-1 px-2 py-1.5">
+        <Kbd class="me-1 inline-flex items-center px-2 py-1.5">
           <CaretLeftSolid />
           <span class="sr-only">Arrow key left</span>
         </Kbd>
-        <Kbd class="inline-flex items-center me-1 px-2 py-1.5">
+        <Kbd class="me-1 inline-flex items-center px-2 py-1.5">
           <CaretRightSolid />
           <span class="sr-only">Arrow key right</span>
         </Kbd>
@@ -115,23 +115,23 @@ Use this example to show arrow keys inside the KBD styled element.
 
 ```svelte example hideResponsiveButtons
 <script>
-  import { Kbd } from 'flowbite-svelte';
-  import { CaretUpSolid, CaretDownSolid, CaretRightSolid, CaretLeftSolid } from 'flowbite-svelte-icons';
+  import { Kbd } from "flowbite-svelte";
+  import { CaretUpSolid, CaretDownSolid, CaretRightSolid, CaretLeftSolid } from "flowbite-svelte-icons";
 </script>
 
-<Kbd class="inline-flex items-center me-1 px-2 py-1.5">
+<Kbd class="me-1 inline-flex items-center px-2 py-1.5">
   <CaretUpSolid />
   <span class="sr-only">Arrow key up</span>
 </Kbd>
-<Kbd class="inline-flex items-center me-1 px-2 py-1.5">
+<Kbd class="me-1 inline-flex items-center px-2 py-1.5">
   <CaretDownSolid />
   <span class="sr-only">Arrow key down</span>
 </Kbd>
-<Kbd class="inline-flex items-center me-1 px-2 py-1.5">
+<Kbd class="me-1 inline-flex items-center px-2 py-1.5">
   <CaretLeftSolid />
   <span class="sr-only">Arrow key left</span>
 </Kbd>
-<Kbd class="inline-flex items-center me-1 px-2 py-1.5">
+<Kbd class="me-1 inline-flex items-center px-2 py-1.5">
   <CaretRightSolid />
   <span class="sr-only">Arrow key right</span>
 </Kbd>
@@ -143,7 +143,7 @@ Use this example if you need to show a key from the latin alphabet
 
 ```svelte example hideScript hideResponsiveButtons
 <script>
-  import { Kbd } from 'flowbite-svelte';
+  import { Kbd } from "flowbite-svelte";
 </script>
 
 <Kbd>Q</Kbd>
@@ -180,7 +180,7 @@ Use this example to show a key inside a KBD component from the english numeral s
 
 ```svelte example hideScript hideResponsiveButtons
 <script>
-  import { Kbd } from 'flowbite-svelte';
+  import { Kbd } from "flowbite-svelte";
 </script>
 
 <Kbd>1</Kbd>
@@ -201,7 +201,7 @@ This example can be used to denote function keys inside the KBD component.
 
 ```svelte example hideScript hideResponsiveButtons
 <script>
-  import { Kbd } from 'flowbite-svelte';
+  import { Kbd } from "flowbite-svelte";
 </script>
 
 <Kbd>F1</Kbd>

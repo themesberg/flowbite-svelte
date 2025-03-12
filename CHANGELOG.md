@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.0-next.2
+
+### Minor Changes
+
+- Updates ([`fefe126`](https://github.com/themesberg/flowbite-svelte-next/commit/fefe126819a084c79d461ea00d77a20c83cce10a))
+
+### Patch Changes
+
+- fix: bugs, component updates ([`e50568b`](https://github.com/themesberg/flowbite-svelte-next/commit/e50568bb5ba28fab74b7582650f1589f1fb2256b))
+
 ## 0.48.3
 
 ### Patch Changes

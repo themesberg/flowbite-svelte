@@ -2,7 +2,6 @@ import { tv, type VariantProps } from "tailwind-variants";
 
 type AlertVariants = VariantProps<typeof alert>;
 
-
 const alert = tv({
   base: "p-4 gap-3 text-sm",
   variants: {

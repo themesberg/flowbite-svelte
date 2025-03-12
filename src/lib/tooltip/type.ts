@@ -7,4 +7,3 @@ interface TooltipProps extends PopperProps {
 }
 
 export { type TooltipProps };
-

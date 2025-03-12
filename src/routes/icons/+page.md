@@ -1,8 +1,8 @@
 ---
 layout: homeLayout
 title: Accessible SVG Icons - Flowbite Svelte Icons
-subtitle: Accessible SVG Icons 
-path: 
+subtitle: Accessible SVG Icons
+path:
 description: 480+ SVG Flowbite icons components for Svelte 3/4/5/Runes.
 ---
 
@@ -27,7 +27,6 @@ description: 480+ SVG Flowbite icons components for Svelte 3/4/5/Runes.
   </p>
   </Card>
 
-
   <Card href='/icons/outline-icons'>
   <BadgeCheckOutline class="w-8 h-8 mb-3 text-pink-500 dark:text-green-400" />
   <h3 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Outline Icons</h3>
@@ -43,7 +42,6 @@ description: 480+ SVG Flowbite icons components for Svelte 3/4/5/Runes.
   520+ Solid and Outline SVG Icons.
   </p>
   </Card>
-
 
   <Card>
   <StarOutline class="w-8 h-8 mb-3 text-red-500 dark:text-red-400" />

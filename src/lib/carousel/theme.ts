@@ -5,14 +5,9 @@ export type CarouselVariants = VariantProps<typeof carousel>;
 
 export const carousel = tv({
   base: "grid overflow-hidden relative rounded-lg h-56 sm:h-64 xl:h-80 2xl:h-96",
-  variants: {
-
-  },
-  compoundVariants: [
-
-  ],
-  defaultVariants: {
-  }
+  variants: {},
+  compoundVariants: [],
+  defaultVariants: {}
 });
 
 export const indicators = tv({
@@ -26,7 +21,7 @@ export const indicators = tv({
       false: { indicator: "opacity-60" }
     }
   }
-})
+});
 
 export const controlButton = tv({
   base: "flex absolute top-0 z-30 justify-center items-center px-4 h-full group focus:outline-hidden text-white dark:text-gray-300",
@@ -36,10 +31,10 @@ export const controlButton = tv({
       false: "start-0"
     }
   }
-})
+});
 
 export const thumbnails = tv({
-  base: 'flex flex-row justify-center bg-gray-100 w-full'
+  base: "flex flex-row justify-center bg-gray-100 w-full"
 });
 
 export const thumbnail = tv({
@@ -53,8 +48,8 @@ export const thumbnail = tv({
   defaultVariants: {
     selected: false
   }
-})
+});
 
 export const slide = tv({
   base: "absolute block w-full! h-full object-cover"
-})
+});

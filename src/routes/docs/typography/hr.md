@@ -21,7 +21,7 @@ The `Hr` component can be used to separate content using a horizontal line by ad
 
 ```html
 <script>
-  import { Hr } from 'flowbite-svelte';
+  import { Hr } from "flowbite-svelte";
 </script>
 ```
 
@@ -29,7 +29,7 @@ The `Hr` component can be used to separate content using a horizontal line by ad
 
 ```svelte example
 <script>
-  import { Hr, P } from 'flowbite-svelte';
+  import { Hr, P } from "flowbite-svelte";
 </script>
 
 <P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
@@ -43,7 +43,7 @@ Use this example to show a shorter version of the horizontal line.
 
 ```svelte example
 <script>
-  import { Hr, P } from 'flowbite-svelte';
+  import { Hr, P } from "flowbite-svelte";
 </script>
 
 <P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
@@ -57,14 +57,14 @@ This example can be used to set a custom SVG icon in the middle of the HR elemen
 
 ```svelte example
 <script>
-  import { Hr, P } from 'flowbite-svelte';
-  import { QuoteSolid } from 'flowbite-svelte-icons';
+  import { Hr, P } from "flowbite-svelte";
+  import { QuoteSolid } from "flowbite-svelte-icons";
 </script>
 
 <div class="text-center">
   <P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
   <Hr classHr="my-8 w-64 h-1" icon>
-    <QuoteSolid class="w-6 h-6 text-gray-700 dark:text-gray-300" />
+    <QuoteSolid class="h-6 w-6 text-gray-700 dark:text-gray-300" />
   </Hr>
   <P>Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
 </div>
@@ -76,7 +76,7 @@ Use this example to add a text in the middle of the HR component.
 
 ```svelte example
 <script>
-  import { Hr, P } from 'flowbite-svelte';
+  import { Hr, P } from "flowbite-svelte";
 </script>
 
 <div class="text-center">
@@ -92,7 +92,7 @@ This example can be used to separate content with a HR tag as a shape instead of
 
 ```svelte example
 <script>
-  import { Hr, P, Blockquote } from 'flowbite-svelte';
+  import { Hr, P, Blockquote } from "flowbite-svelte";
 </script>
 
 <P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>

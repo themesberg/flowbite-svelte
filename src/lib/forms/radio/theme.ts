@@ -76,8 +76,8 @@ export const radio = tv({
       false: { input: "relative" }
     },
     inline: {
-      true: { label: 'inline-flex' },
-      false: { label: 'flex' }
+      true: { label: "inline-flex" },
+      false: { label: "flex" }
     }
   },
   defaultVariants: {

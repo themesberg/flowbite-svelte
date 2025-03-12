@@ -22,7 +22,7 @@ Get started with multiple sizes, colors, and styles built with the utility class
 
 ```svelte example class="flex justify-center" hideOutput
 <script>
-  import { Modal } from 'flowbite-svelte';
+  import { Modal } from "flowbite-svelte";
 </script>
 ```
 
@@ -36,7 +36,7 @@ An option of automatic closing of the modal can be enabled by setting the `autoc
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Button, Modal } from 'flowbite-svelte';
+  import { Button, Modal } from "flowbite-svelte";
   let defaultModal = $state(false);
 </script>
 
@@ -57,7 +57,7 @@ You can use the `outsideclose` prop to allow the user to close the modal by clic
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Button, Modal } from 'flowbite-svelte';
+  import { Button, Modal } from "flowbite-svelte";
   let clickOutsideModal = $state(false);
 </script>
 
@@ -81,8 +81,8 @@ Notice lack of the `footer` snippet.
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Button, Modal } from 'flowbite-svelte';
-  import { ExclamationCircleOutline } from 'flowbite-svelte-icons';
+  import { Button, Modal } from "flowbite-svelte";
+  import { ExclamationCircleOutline } from "flowbite-svelte-icons";
   let popupModal = $state(false);
 </script>
 
@@ -90,7 +90,7 @@ Notice lack of the `footer` snippet.
 
 <Modal bind:open={popupModal} size="xs" autoclose>
   <div class="text-center">
-    <ExclamationCircleOutline class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" />
+    <ExclamationCircleOutline class="mx-auto mb-4 h-12 w-12 text-gray-400 dark:text-gray-200" />
     <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this product?</h3>
     <Button color="red" class="me-2">Yes, I'm sure</Button>
     <Button color="alternative">No, cancel</Button>
@@ -104,7 +104,7 @@ Use this modal example with form input element to receive information from your 
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Button, Modal, Label, Input, Checkbox } from 'flowbite-svelte';
+  import { Button, Modal, Label, Input, Checkbox } from "flowbite-svelte";
   let formModal = $state(false);
 </script>
 
@@ -123,11 +123,11 @@ Use this modal example with form input element to receive information from your 
     </Label>
     <div class="flex items-start">
       <Checkbox>Remember me</Checkbox>
-      <a href="/" class="ms-auto text-sm text-primary-700 hover:underline dark:text-primary-500"> Lost password? </a>
+      <a href="/" class="text-primary-700 dark:text-primary-500 ms-auto text-sm hover:underline">Lost password?</a>
     </div>
     <Button type="submit" class="w-full1">Login to your account</Button>
     <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-      Not registered? <a href="/" class="text-primary-700 hover:underline dark:text-primary-500"> Create account </a>
+      Not registered? <a href="/" class="text-primary-700 dark:text-primary-500 hover:underline">Create account</a>
     </div>
   </form>
 </Modal>
@@ -139,13 +139,13 @@ Use this web3 modal component to show crypto wallet connection options like Meta
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Button, Modal, Label, Input, Checkbox } from 'flowbite-svelte';
-  import MetaMask from '../../utils/icons/MetaMask.svelte';
-  import CoinbaseWallet from '../../utils/icons/CoinbaseWallet.svelte';
-  import OperaWallet from '../../utils/icons/OperaWallet.svelte';
-  import Fortmatic from '../../utils/icons/Fortmatic.svelte';
-  import WalletConnect from '../../utils/icons/WalletConnect.svelte';
-  import { QuestionCircleOutline } from 'flowbite-svelte-icons';
+  import { Button, Modal, Label, Input, Checkbox } from "flowbite-svelte";
+  import MetaMask from "../../utils/icons/MetaMask.svelte";
+  import CoinbaseWallet from "../../utils/icons/CoinbaseWallet.svelte";
+  import OperaWallet from "../../utils/icons/OperaWallet.svelte";
+  import Fortmatic from "../../utils/icons/Fortmatic.svelte";
+  import WalletConnect from "../../utils/icons/WalletConnect.svelte";
+  import { QuestionCircleOutline } from "flowbite-svelte-icons";
   let walletModal = $state(false);
 </script>
 
@@ -155,40 +155,40 @@ Use this web3 modal component to show crypto wallet connection options like Meta
   <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Connect with one of our available wallet providers or create a new one.</p>
   <ul class="my-4 space-y-3">
     <li>
-      <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow-sm dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+      <a href="/" class="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow-sm dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500">
         <MetaMask />
-        <span class="flex-1 ms-3 whitespace-nowrap">MetaMask</span>
-        <span class="inline-flex items-center justify-center px-2 py-0.5 ms-3 text-xs font-medium text-gray-500 bg-gray-200 rounded-sm dark:bg-gray-700 dark:text-gray-400"> Popular </span>
+        <span class="ms-3 flex-1 whitespace-nowrap">MetaMask</span>
+        <span class="ms-3 inline-flex items-center justify-center rounded-sm bg-gray-200 px-2 py-0.5 text-xs font-medium text-gray-500 dark:bg-gray-700 dark:text-gray-400">Popular</span>
       </a>
     </li>
     <li>
-      <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow-sm dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+      <a href="/" class="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow-sm dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500">
         <CoinbaseWallet />
-        <span class="flex-1 ms-3 whitespace-nowrap">Coinbase Wallet</span>
+        <span class="ms-3 flex-1 whitespace-nowrap">Coinbase Wallet</span>
       </a>
     </li>
     <li>
-      <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow-sm dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+      <a href="/" class="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow-sm dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500">
         <OperaWallet />
-        <span class="flex-1 ms-3 whitespace-nowrap">Opera Wallet</span>
+        <span class="ms-3 flex-1 whitespace-nowrap">Opera Wallet</span>
       </a>
     </li>
     <li>
-      <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow-sm dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+      <a href="/" class="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow-sm dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500">
         <WalletConnect />
-        <span class="flex-1 ms-3 whitespace-nowrap">WalletConnect</span>
+        <span class="ms-3 flex-1 whitespace-nowrap">WalletConnect</span>
       </a>
     </li>
     <li>
-      <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow-sm dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+      <a href="/" class="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow-sm dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500">
         <Fortmatic />
-        <span class="flex-1 ms-3 whitespace-nowrap">Fortmatic</span>
+        <span class="ms-3 flex-1 whitespace-nowrap">Fortmatic</span>
       </a>
     </li>
   </ul>
   <div>
     <a href="/" class="inline-flex items-center text-xs font-normal text-gray-500 hover:underline dark:text-gray-400">
-      <QuestionCircleOutline class="w-3 h-3 me-2" /> Why do I need to connect with my wallet?
+      <QuestionCircleOutline class="me-2 h-3 w-3" /> Why do I need to connect with my wallet?
     </a>
   </div>
 </Modal>
@@ -200,17 +200,57 @@ You can use five different modal sizing options starting from extra small to ext
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Button, Modal } from 'flowbite-svelte';
+  import { Button, Modal } from "flowbite-svelte";
   let openModal = $state(false);
   let size = $state();
 </script>
 
 <div class="block space-y-4 md:space-y-0 md:space-x-4 rtl:space-x-reverse">
-  <Button size="xs" onclick={() => { size = 'xs'; openModal = true; }}>xs</Button>
-  <Button size="sm" onclick={() => { size = 'sm'; openModal = true; }}>sm</Button>
-  <Button size="md" onclick={() => { size = 'md'; openModal = true; }}>md</Button>
-  <Button size="lg" onclick={() => { size = 'lg'; openModal = true; }}>lg</Button>
-  <Button size="xl" onclick={() => { size = 'xl'; openModal = true; }}>xl</Button>
+  <Button
+    size="xs"
+    onclick={() => {
+      size = "xs";
+      openModal = true;
+    }}
+  >
+    xs
+  </Button>
+  <Button
+    size="sm"
+    onclick={() => {
+      size = "sm";
+      openModal = true;
+    }}
+  >
+    sm
+  </Button>
+  <Button
+    size="md"
+    onclick={() => {
+      size = "md";
+      openModal = true;
+    }}
+  >
+    md
+  </Button>
+  <Button
+    size="lg"
+    onclick={() => {
+      size = "lg";
+      openModal = true;
+    }}
+  >
+    lg
+  </Button>
+  <Button
+    size="xl"
+    onclick={() => {
+      size = "xl";
+      openModal = true;
+    }}
+  >
+    xl
+  </Button>
 </div>
 
 <Modal title="Terms of Service" bind:open={openModal} {size} autoclose>
@@ -227,7 +267,7 @@ You can use five different modal sizing options starting from extra small to ext
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Button, Modal } from 'flowbite-svelte';
+  import { Button, Modal } from "flowbite-svelte";
   let id = $state();
   let placement = $state();
   let open = $state(false);
@@ -265,17 +305,56 @@ You can use five different modal sizing options starting from extra small to ext
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Button, Modal, P } from 'flowbite-svelte';
+  import { Button, Modal, P } from "flowbite-svelte";
   let open = $state(false);
   let color = $state();
 </script>
 
 <div class="block space-y-4 md:space-y-0 md:space-x-4 rtl:space-x-reverse">
-  <Button onclick={() => {color = 'primary'; open = true;}}>Primary modal</Button>
-  <Button color="red" onclick={() => { color = 'red'; open = true; }}>Red modal</Button>
-  <Button color="green" onclick={() => { color = 'green'; open = true; }}>Green modal</Button>
-  <Button color="blue" onclick={() => { color = 'blue'; open = true; }}>Blue modal</Button>
-  <Button color="yellow" onclick={() => { color = 'yellow'; open = true; }}>Yellow modal</Button>
+  <Button
+    onclick={() => {
+      color = "primary";
+      open = true;
+    }}
+  >
+    Primary modal
+  </Button>
+  <Button
+    color="red"
+    onclick={() => {
+      color = "red";
+      open = true;
+    }}
+  >
+    Red modal
+  </Button>
+  <Button
+    color="green"
+    onclick={() => {
+      color = "green";
+      open = true;
+    }}
+  >
+    Green modal
+  </Button>
+  <Button
+    color="blue"
+    onclick={() => {
+      color = "blue";
+      open = true;
+    }}
+  >
+    Blue modal
+  </Button>
+  <Button
+    color="yellow"
+    onclick={() => {
+      color = "yellow";
+      open = true;
+    }}
+  >
+    Yellow modal
+  </Button>
 </div>
 
 <Modal title="Terms of Service" bind:open {color} autoclose>
@@ -291,7 +370,7 @@ You can use five different modal sizing options starting from extra small to ext
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Button, Modal } from 'flowbite-svelte';
+  import { Button, Modal } from "flowbite-svelte";
   let scrollingModal = $state(false);
 </script>
 

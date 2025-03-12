@@ -1,10 +1,10 @@
-import { sveltekit } from '@sveltejs/kit/vite';
-import examples from 'mdsvexamples/vite';
-import path from 'path';
-import pkg from './package.json' with { type: 'json' };
+import { sveltekit } from "@sveltejs/kit/vite";
+import examples from "mdsvexamples/vite";
+import path from "path";
+import pkg from "./package.json" with { type: "json" };
 
-import tailwindcss from '@tailwindcss/vite';
-import { defineConfig } from 'vite';
+import tailwindcss from "@tailwindcss/vite";
+import { defineConfig } from "vite";
 
 /** @type {import('vite').UserConfig} */
 export default defineConfig({
@@ -21,13 +21,11 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      'flowbite-svelte': path.resolve(process.cwd(), './src/lib/index.ts'),
-      'flowbite-svelte-blocks': path.resolve(process.cwd(), './node_modules/flowbite-svelte-blocks/dist/index.js')
+      "flowbite-svelte": path.resolve(process.cwd(), "./src/lib/index.ts"),
+      "flowbite-svelte-blocks": path.resolve(process.cwd(), "./node_modules/flowbite-svelte-blocks/dist/index.js")
     }
   },
   define: {
     __VERSION__: JSON.stringify(pkg.version)
   }
 });
-
-

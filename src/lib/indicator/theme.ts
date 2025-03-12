@@ -1,6 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
 
-
 export type IndicatorVariants = VariantProps<typeof indicator>;
 
 export const indicator = tv({
@@ -124,5 +123,3 @@ export const indicator = tv({
     hasChildren: false
   }
 });
-
-

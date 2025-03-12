@@ -71,14 +71,14 @@ pnpm i -D flowbite-svelte-icons
 
 ### Configuration
 
-*Tailwindcss v4 does not need the `tailwind.config.cjs` file.*
+_Tailwindcss v4 does not need the `tailwind.config.cjs` file._
 
-Update your main `css` file to support Tailwindcss and Flowbite plugin. You can as well customize the primary color by modifying the appropriate color values. 
+Update your main `css` file to support Tailwindcss and Flowbite plugin. You can as well customize the primary color by modifying the appropriate color values.
 
 If you use SvelteKit the main css file is `src/app.css`.
 
 ```css
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin 'flowbite/plugin';
 
@@ -100,7 +100,6 @@ If you use SvelteKit the main css file is `src/app.css`.
 @source "../node_modules/flowbite-svelte/dist";
 ```
 
-
 Now you should be able to work with the Flowbite Svelte library and import components such as the navbar, dropdown, modal, and more.
 
 <div class="h-8" ></div>
@@ -109,7 +108,7 @@ Now you are ready to go! Add the following to `src/routes/+page.svelte` and if y
 
 ```svelte example
 <script>
-  import { Alert } from 'flowbite-svelte';
+  import { Alert } from "flowbite-svelte";
 </script>
 
 <div class="p-8">

@@ -21,7 +21,7 @@ The checkbox component can be used to receive one or more selected options from 
 
 ```svelte example hideOutput
 <script>
-  import { Checkbox } from 'flowbite-svelte';
+  import { Checkbox } from "flowbite-svelte";
 </script>
 ```
 
@@ -31,7 +31,7 @@ Use this default example of a checbkox element in a checked, unchecked and indet
 
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
-  import { Checkbox } from 'flowbite-svelte';
+  import { Checkbox } from "flowbite-svelte";
 </script>
 
 <Checkbox>Default checkbox</Checkbox>
@@ -45,7 +45,7 @@ This example can be used for the disabled state of the checkbox component by app
 
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
-  import { Checkbox } from 'flowbite-svelte';
+  import { Checkbox } from "flowbite-svelte";
 </script>
 
 <Checkbox disabled>Disabled checkbox</Checkbox>
@@ -59,7 +59,7 @@ If you need separate control over the label and the checkbox you can use the ver
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Checkbox, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, Label, TableBodyRow } from 'flowbite-svelte';
+  import { Checkbox, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, Label, TableBodyRow } from "flowbite-svelte";
 </script>
 
 <Table>
@@ -90,12 +90,12 @@ Use this example if you want to add an anchor link inside the label of the check
 
 ```svelte example hideScript
 <script>
-  import { Checkbox } from 'flowbite-svelte';
+  import { Checkbox } from "flowbite-svelte";
 </script>
 
 <Checkbox>
   I agree with the
-  <a href="/" class="text-primary-600 dark:text-primary-500 hover:underline ms-1">terms and conditions</a>
+  <a href="/" class="text-primary-600 dark:text-primary-500 ms-1 hover:underline">terms and conditions</a>
   .
 </Checkbox>
 ```
@@ -106,7 +106,7 @@ Get started with this example if you want to add a secondary helper text for the
 
 ```svelte example
 <script>
-  import { Checkbox, Helper } from 'flowbite-svelte';
+  import { Checkbox, Helper } from "flowbite-svelte";
 </script>
 
 <Checkbox aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Checkbox>
@@ -119,7 +119,7 @@ Use this example of a checkbox inside a card element to enable a larger area of 
 
 ```svelte example hideScript
 <script>
-  import { Checkbox } from 'flowbite-svelte';
+  import { Checkbox } from "flowbite-svelte";
 </script>
 
 <div class="rounded-sm border border-gray-200 dark:border-gray-700">
@@ -136,7 +136,7 @@ Use this example to show a list of checkbox items grouped inside a card.
 
 ```svelte example hideScript
 <script>
-  import { Checkbox, Listgroup } from 'flowbite-svelte';
+  import { Checkbox, Listgroup } from "flowbite-svelte";
 </script>
 
 <p class="mb-4 font-semibold text-gray-900 dark:text-white">Technology</p>
@@ -152,19 +152,19 @@ You can use the internal loop to render a list of `CheckboxItem`s.
 
 ```svelte example
 <script>
-  import { Checkbox, Listgroup } from 'flowbite-svelte';
+  import { Checkbox, Listgroup } from "flowbite-svelte";
   let choices = [
-    {value:"svelte", label:"svelte"},
-    {value:"vue", label:"Vue JS"},
-    {value:"react", label:"React", checked: true},
-    {value:"angular", label:"Angular"},
+    { value: "svelte", label: "svelte" },
+    { value: "vue", label: "Vue JS" },
+    { value: "react", label: "React", checked: true },
+    { value: "angular", label: "Angular" }
   ];
   let group = $state([]);
 </script>
 
 <p class="my-2">Choices: {group.join(", ")}</p>
 <Listgroup class="w-48">
-  <Checkbox bind:group {choices} class="p-3"/>
+  <Checkbox bind:group {choices} class="p-3" />
 </Listgroup>
 ```
 
@@ -174,11 +174,11 @@ Use this example to show a list of checkbox items inside a card horizontally.
 
 ```svelte example hideScript
 <script>
-  import { Checkbox } from 'flowbite-svelte';
+  import { Checkbox } from "flowbite-svelte";
 </script>
 
 <p class="mb-4 font-semibold text-gray-900 dark:text-white">Identification</p>
-<ul class="items-center w-full rounded-lg border border-gray-200 sm:flex dark:bg-gray-800 dark:border-gray-600 divide-x rtl:divide-x-reverse divide-gray-200 dark:divide-gray-600">
+<ul class="w-full items-center divide-x divide-gray-200 rounded-lg border border-gray-200 sm:flex rtl:divide-x-reverse dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800">
   <li class="w-full"><Checkbox class="p-3">Svelte</Checkbox></li>
   <li class="w-full"><Checkbox class="p-3">Vue JS</Checkbox></li>
   <li class="w-full"><Checkbox class="p-3">React</Checkbox></li>
@@ -192,16 +192,16 @@ Use this example to show a list of checkbox items inside a dropdown menu.
 
 ```svelte example class="flex justify-center items-start h-96"
 <script>
-  import { Dropdown, DropdownItem, DropdownGroup, Checkbox, Button, Search } from 'flowbite-svelte';
-  import { ChevronDownOutline, UserRemoveSolid } from 'flowbite-svelte-icons';
+  import { Dropdown, DropdownItem, DropdownGroup, Checkbox, Button, Search } from "flowbite-svelte";
+  import { ChevronDownOutline, UserRemoveSolid } from "flowbite-svelte-icons";
 </script>
 
-<Button>Project users<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
+<Button>Project users<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
 <Dropdown>
   <div class="p-3">
     <Search size="md" />
   </div>
-  <DropdownGroup class="overflow-y-auto h-48">
+  <DropdownGroup class="h-48 overflow-y-auto">
     <DropdownItem>
       <Checkbox>Robert Gouth</Checkbox>
     </DropdownItem>
@@ -221,8 +221,8 @@ Use this example to show a list of checkbox items inside a dropdown menu.
       <Checkbox>Bonnie Green</Checkbox>
     </DropdownItem>
   </DropdownGroup>
-  <a href="/" class="flex items-center p-3 -mb-1 text-sm font-medium text-red-600 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
-    <UserRemoveSolid class="w-5 h-5 me-1" />Delete user
+  <a href="/" class="-mb-1 flex items-center bg-gray-50 p-3 text-sm font-medium text-red-600 hover:bg-gray-100 hover:underline dark:bg-gray-700 dark:text-red-500 dark:hover:bg-gray-600">
+    <UserRemoveSolid class="me-1 h-5 w-5" />Delete user
   </a>
 </Dropdown>
 ```
@@ -233,7 +233,7 @@ You can align the checkbox elements horizontally by using a wrapper tag and appl
 
 ```svelte example hideScript
 <script>
-  import { Checkbox } from 'flowbite-svelte';
+  import { Checkbox } from "flowbite-svelte";
 </script>
 
 <div class="flex gap-3">
@@ -248,7 +248,7 @@ You can use the property `inline` as the alternative.
 
 ```svelte example hideScript
 <script>
-  import { Checkbox } from 'flowbite-svelte';
+  import { Checkbox } from "flowbite-svelte";
 </script>
 
 <Checkbox inline class="me-2">Inline 1</Checkbox>
@@ -261,7 +261,7 @@ You can use the property `inline` as the alternative.
 
 ```svelte example hideScript hideResponsiveButtons
 <script>
-  import { Label, Checkbox } from 'flowbite-svelte';
+  import { Label, Checkbox } from "flowbite-svelte";
 </script>
 
 <div class="flex gap-4">
@@ -286,24 +286,24 @@ This component accepts all props from the [Button](/docs/components/buttons) for
 
 ```svelte example class="space-y-4"
 <script>
-  import { ButtonGroup, CheckboxButton } from 'flowbite-svelte';
-  import {AppleSolid, FacebookSolid, DiscordSolid, DropboxSolid } from 'flowbite-svelte-icons';
+  import { ButtonGroup, CheckboxButton } from "flowbite-svelte";
+  import { AppleSolid, FacebookSolid, DiscordSolid, DropboxSolid } from "flowbite-svelte-icons";
   let group = $state([]);
 </script>
 
-  <div>
-    <CheckboxButton bind:group value="Apple"><AppleSolid class="w-6 h-6 me-2"/>Apple</CheckboxButton>
-    <CheckboxButton bind:group value="Facebook"><FacebookSolid class="w-6 h-6 me-2"/>Facebook</CheckboxButton>
-    <CheckboxButton bind:group value="Discord"><DiscordSolid class="w-6 h-6 me-2"/>Discord</CheckboxButton>
-    <CheckboxButton bind:group value="Dropbox"><DropboxSolid class="w-6 h-6 me-2"/>Dropbox</CheckboxButton>
-  </div>
+<div>
+  <CheckboxButton bind:group value="Apple"><AppleSolid class="me-2 h-6 w-6" />Apple</CheckboxButton>
+  <CheckboxButton bind:group value="Facebook"><FacebookSolid class="me-2 h-6 w-6" />Facebook</CheckboxButton>
+  <CheckboxButton bind:group value="Discord"><DiscordSolid class="me-2 h-6 w-6" />Discord</CheckboxButton>
+  <CheckboxButton bind:group value="Dropbox"><DropboxSolid class="me-2 h-6 w-6" />Dropbox</CheckboxButton>
+</div>
 
-  <ButtonGroup>
-    <CheckboxButton bind:group value="Apple"><AppleSolid class="w-6 h-6"/>Apple</CheckboxButton>
-    <CheckboxButton bind:group value="Facebook"><FacebookSolid class="w-6 h-6"/>Facebook</CheckboxButton>
-    <CheckboxButton bind:group value="Discord"><DiscordSolid class="w-6 h-6"/>Discord</CheckboxButton>
-    <CheckboxButton bind:group value="Dropbox"><DropboxSolid class="w-6 h-6"/>Dropbox</CheckboxButton>
-  </ButtonGroup>
+<ButtonGroup>
+  <CheckboxButton bind:group value="Apple"><AppleSolid class="h-6 w-6" />Apple</CheckboxButton>
+  <CheckboxButton bind:group value="Facebook"><FacebookSolid class="h-6 w-6" />Facebook</CheckboxButton>
+  <CheckboxButton bind:group value="Discord"><DiscordSolid class="h-6 w-6" />Discord</CheckboxButton>
+  <CheckboxButton bind:group value="Dropbox"><DropboxSolid class="h-6 w-6" />Dropbox</CheckboxButton>
+</ButtonGroup>
 ```
 
 ## Advanced layout
@@ -312,30 +312,30 @@ Use this example of an advanced layout of checkbox elements where the label pare
 
 ```svelte example
 <script>
-  import { Checkbox } from 'flowbite-svelte';
-  import React from '../../utils/icons/React.svelte';
-  import Vue from '../../utils/icons/Vue.svelte';
-  import Angular from '../../utils/icons/Angular.svelte';
+  import { Checkbox } from "flowbite-svelte";
+  import React from "../../utils/icons/React.svelte";
+  import Vue from "../../utils/icons/Vue.svelte";
+  import Angular from "../../utils/icons/Angular.svelte";
 </script>
 
 <p class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Choose technology:</p>
-<div class="grid gap-6 w-full md:grid-cols-3">
+<div class="grid w-full gap-6 md:grid-cols-3">
   <Checkbox custom>
-    <div class="font-normal p-5 w-full text-gray-500 bg-white rounded-lg border-2 border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-primary-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+    <div class="peer-checked:border-primary-600 w-full cursor-pointer rounded-lg border-2 border-gray-200 bg-white p-5 font-normal text-gray-500 peer-checked:text-gray-600 hover:bg-gray-50 hover:text-gray-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:peer-checked:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-gray-300">
       <React />
       <div class="w-full text-lg font-semibold">React Js</div>
       <div class="w-full text-sm">A JavaScript library for building user interfaces.</div>
     </div>
   </Checkbox>
   <Checkbox custom>
-    <div class="font-normal p-5 w-full text-gray-500 bg-white rounded-lg border-2 border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-primary-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+    <div class="peer-checked:border-primary-600 w-full cursor-pointer rounded-lg border-2 border-gray-200 bg-white p-5 font-normal text-gray-500 peer-checked:text-gray-600 hover:bg-gray-50 hover:text-gray-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:peer-checked:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-gray-300">
       <Vue />
       <div class="w-full text-lg font-semibold">Vue Js</div>
       <div class="w-full text-sm">Vue.js is an model–view front end JavaScript framework.</div>
     </div>
   </Checkbox>
   <Checkbox custom>
-    <div class="font-normal p-5 w-full text-gray-500 bg-white rounded-lg border-2 border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-primary-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+    <div class="peer-checked:border-primary-600 w-full cursor-pointer rounded-lg border-2 border-gray-200 bg-white p-5 font-normal text-gray-500 peer-checked:text-gray-600 hover:bg-gray-50 hover:text-gray-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:peer-checked:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-gray-300">
       <Angular />
       <div class="w-full text-lg font-semibold">Angular</div>
       <div class="w-full text-sm">A TypeScript-based web application framework.</div>
@@ -348,19 +348,19 @@ Use this example of an advanced layout of checkbox elements where the label pare
 
 ```svelte example
 <script>
-  import { Button, Checkbox } from 'flowbite-svelte';
+  import { Button, Checkbox } from "flowbite-svelte";
   let choices = [
-    { value: '1', label: 'One'},
-    { value: '2', label: 'Two'},
-    { value: '3', label: 'Three' }
-  ]
-  let group = ['2', '3'];
+    { value: "1", label: "One" },
+    { value: "2", label: "Two" },
+    { value: "3", label: "Three" }
+  ];
+  let group = ["2", "3"];
 </script>
 
 <div class="flex gap-2">
-  <Checkbox name="flavours" {choices} bind:group/>
+  <Checkbox name="flavours" {choices} bind:group />
 </div>
-<div class="my-2 border border-gray-200 dark:border-gray-700 rounded-lg p-2 w-44 dark:text-gray-400">Group: {group}</div>
+<div class="my-2 w-44 rounded-lg border border-gray-200 p-2 dark:border-gray-700 dark:text-gray-400">Group: {group}</div>
 <Button on:click={() => (group.length = 0)}>Clear</Button>
 ```
 

@@ -20,7 +20,7 @@ The pagination component can be used to navigate across a series of content and 
 
 ```svelte example hideOutput
 <script>
-  import { Pagination, PaginationItem } from 'flowbite-svelte';
+  import { Pagination, PaginationItem } from "flowbite-svelte";
 </script>
 ```
 
@@ -30,24 +30,24 @@ Use the following list of pagination items to indicate a series of content for y
 
 ```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
 <script>
-  import { page } from '$app/stores';
-  import { Pagination } from 'flowbite-svelte';
+  import { page } from "$app/stores";
+  import { Pagination } from "flowbite-svelte";
 
-  $: activeUrl = $page.url.searchParams.get('page');
+  $: activeUrl = $page.url.searchParams.get("page");
   let pages = [
-    { name: 1, href: '/components/pagination?page=1' },
-    { name: 2, href: '/components/pagination?page=2' },
-    { name: 3, href: '/components/pagination?page=3' },
-    { name: 4, href: '/components/pagination?page=4' },
-    { name: 5, href: '/components/pagination?page=5' }
+    { name: 1, href: "/components/pagination?page=1" },
+    { name: 2, href: "/components/pagination?page=2" },
+    { name: 3, href: "/components/pagination?page=3" },
+    { name: 4, href: "/components/pagination?page=4" },
+    { name: 5, href: "/components/pagination?page=5" }
   ];
 
   $: {
     pages.forEach((page) => {
-      let splitUrl = page.href.split('?');
-      let queryString = splitUrl.slice(1).join('?');
+      let splitUrl = page.href.split("?");
+      let queryString = splitUrl.slice(1).join("?");
       const hrefParams = new URLSearchParams(queryString);
-      let hrefValue = hrefParams.get('page');
+      let hrefValue = hrefParams.get("page");
       if (hrefValue === activeUrl) {
         page.active = true;
       } else {
@@ -58,10 +58,10 @@ Use the following list of pagination items to indicate a series of content for y
   }
 
   const previous = () => {
-    alert('Previous btn clicked. Make a call to your server to fetch data.');
+    alert("Previous btn clicked. Make a call to your server to fetch data.");
   };
   const next = () => {
-    alert('Next btn clicked. Make a call to your server to fetch data.');
+    alert("Next btn clicked. Make a call to your server to fetch data.");
   };
 </script>
 
@@ -75,25 +75,25 @@ The following pagination component example shows how you can use SVG icons inste
 
 ```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
 <script>
-  import { page } from '$app/stores';
-  import { Pagination } from 'flowbite-svelte';
-  import { ChevronLeftOutline, ChevronRightOutline } from 'flowbite-svelte-icons';
+  import { page } from "$app/stores";
+  import { Pagination } from "flowbite-svelte";
+  import { ChevronLeftOutline, ChevronRightOutline } from "flowbite-svelte-icons";
 
-  $: activeUrl = $page.url.searchParams.get('page');
+  $: activeUrl = $page.url.searchParams.get("page");
   let pages = [
-    { name: 6, href: '/components/pagination?page=6' },
-    { name: 7, href: '/components/pagination?page=7' },
-    { name: 8, href: '/components/pagination?page=8' },
-    { name: 9, href: '/components/pagination?page=9' },
-    { name: 10, href: '/components/pagination?page=10' }
+    { name: 6, href: "/components/pagination?page=6" },
+    { name: 7, href: "/components/pagination?page=7" },
+    { name: 8, href: "/components/pagination?page=8" },
+    { name: 9, href: "/components/pagination?page=9" },
+    { name: 10, href: "/components/pagination?page=10" }
   ];
 
   $: {
     pages.forEach((page) => {
-      let splitUrl = page.href.split('?');
-      let queryString = splitUrl.slice(1).join('?');
+      let splitUrl = page.href.split("?");
+      let queryString = splitUrl.slice(1).join("?");
       const hrefParams = new URLSearchParams(queryString);
-      let hrefValue = hrefParams.get('page');
+      let hrefValue = hrefParams.get("page");
       if (hrefValue === activeUrl) {
         page.active = true;
       } else {
@@ -104,32 +104,32 @@ The following pagination component example shows how you can use SVG icons inste
   }
 
   const previous = () => {
-    alert('Previous btn clicked. Make a call to your server to fetch data.');
+    alert("Previous btn clicked. Make a call to your server to fetch data.");
   };
   const next = () => {
-    alert('Next btn clicked. Make a call to your server to fetch data.');
+    alert("Next btn clicked. Make a call to your server to fetch data.");
   };
 </script>
 
 <Pagination {pages} on:previous={previous} on:next={next} icon>
   <svelte:fragment slot="prev">
     <span class="sr-only">Previous</span>
-    <ChevronLeftOutline class="w-2.5 h-2.5" />
+    <ChevronLeftOutline class="h-2.5 w-2.5" />
   </svelte:fragment>
   <svelte:fragment slot="next">
     <span class="sr-only">Next</span>
-    <ChevronRightOutline class="w-2.5 h-2.5" />
+    <ChevronRightOutline class="h-2.5 w-2.5" />
   </svelte:fragment>
 </Pagination>
 
 <Pagination {pages} large on:previous={previous} on:next={next} icon>
   <svelte:fragment slot="prev">
     <span class="sr-only">Previous</span>
-    <ChevronLeftOutline class="w-6 h-6" />
+    <ChevronLeftOutline class="h-6 w-6" />
   </svelte:fragment>
   <svelte:fragment slot="next">
     <span class="sr-only">Next</span>
-    <ChevronRightOutline class="w-6 h-6" />
+    <ChevronRightOutline class="h-6 w-6" />
   </svelte:fragment>
 </Pagination>
 ```
@@ -140,12 +140,12 @@ Use the following markup to show simple previous and next elements.
 
 ```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
 <script>
-  import { Pagination, PaginationItem } from 'flowbite-svelte';
+  import { Pagination, PaginationItem } from "flowbite-svelte";
   const previous = () => {
-    alert('Previous btn clicked. Make a call to your server to fetch data.');
+    alert("Previous btn clicked. Make a call to your server to fetch data.");
   };
   const next = () => {
-    alert('Next btn clicked. Make a call to your server to fetch data.');
+    alert("Next btn clicked. Make a call to your server to fetch data.");
   };
 </script>
 
@@ -165,34 +165,34 @@ Use the following code to show simple previous and next elements with icons.
 
 ```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
 <script>
-  import { Pagination, PaginationItem } from 'flowbite-svelte';
-  import { ArrowLeftOutline, ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Pagination, PaginationItem } from "flowbite-svelte";
+  import { ArrowLeftOutline, ArrowRightOutline } from "flowbite-svelte-icons";
   const previous = () => {
-    alert('Previous btn clicked. Make a call to your server to fetch data.');
+    alert("Previous btn clicked. Make a call to your server to fetch data.");
   };
   const next = () => {
-    alert('Next btn clicked. Make a call to your server to fetch data.');
+    alert("Next btn clicked. Make a call to your server to fetch data.");
   };
 </script>
 
 <div class="flex space-x-3 rtl:space-x-reverse">
   <PaginationItem class="flex items-center" on:click={previous}>
-    <ArrowLeftOutline class="me-2 w-3.5 h-3.5" />
+    <ArrowLeftOutline class="me-2 h-3.5 w-3.5" />
     Previous
   </PaginationItem>
   <PaginationItem class="flex items-center" on:click={next}>
     Next
-    <ArrowRightOutline class="ms-2 w-3.5 h-3.5" />
+    <ArrowRightOutline class="ms-2 h-3.5 w-3.5" />
   </PaginationItem>
 </div>
 <div class="flex space-x-3 rtl:space-x-reverse">
   <PaginationItem large class="flex items-center" on:click={previous}>
-    <ArrowLeftOutline class="me-2 w-5 h-5" />
+    <ArrowLeftOutline class="me-2 h-5 w-5" />
     Previous
   </PaginationItem>
   <PaginationItem large class="flex items-center" on:click={next}>
     Next
-    <ArrowRightOutline class="ms-2 w-5 h-5" />
+    <ArrowRightOutline class="ms-2 h-5 w-5" />
   </PaginationItem>
 </div>
 ```
@@ -203,15 +203,15 @@ You can use the following markup to show the number of data shown inside a table
 
 ```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
 <script>
-  import { Pagination, PaginationItem } from 'flowbite-svelte';
+  import { Pagination, PaginationItem } from "flowbite-svelte";
 
   let helper = { start: 1, end: 10, total: 100 };
 
   const previous = () => {
-    alert('Previous btn clicked. Make a call to your server to fetch data.');
+    alert("Previous btn clicked. Make a call to your server to fetch data.");
   };
   const next = () => {
-    alert('Next btn clicked. Make a call to your server to fetch data.');
+    alert("Next btn clicked. Make a call to your server to fetch data.");
   };
 </script>
 
@@ -251,15 +251,15 @@ You can use the following code to show the number of data shown inside a table e
 
 ```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
 <script>
-  import { Pagination } from 'flowbite-svelte';
-  import { ArrowLeftOutline, ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Pagination } from "flowbite-svelte";
+  import { ArrowLeftOutline, ArrowRightOutline } from "flowbite-svelte-icons";
   let helper = { start: 1, end: 10, total: 100 };
 
   const previous = () => {
-    alert('Previous btn clicked. Make a call to your server to fetch data.');
+    alert("Previous btn clicked. Make a call to your server to fetch data.");
   };
   const next = () => {
-    alert('Next btn clicked. Make a call to your server to fetch data.');
+    alert("Next btn clicked. Make a call to your server to fetch data.");
   };
 </script>
 
@@ -274,13 +274,13 @@ You can use the following code to show the number of data shown inside a table e
   </div>
 
   <Pagination table>
-    <div slot="prev" class="flex items-center gap-2 text-white bg-gray-800">
-      <ArrowLeftOutline class="w-3.5 h-3.5 me-2" />
+    <div slot="prev" class="flex items-center gap-2 bg-gray-800 text-white">
+      <ArrowLeftOutline class="me-2 h-3.5 w-3.5" />
       Prev
     </div>
-    <div slot="next" class="flex items-center gap-2 text-white bg-gray-800">
+    <div slot="next" class="flex items-center gap-2 bg-gray-800 text-white">
       Next
-      <ArrowRightOutline class="w-6 h-6 ms-2" />
+      <ArrowRightOutline class="ms-2 h-6 w-6" />
     </div>
   </Pagination>
 </div>
@@ -295,13 +295,13 @@ You can use the following code to show the number of data shown inside a table e
   </div>
 
   <Pagination table large>
-    <div slot="prev" class="flex items-center gap-2 text-white bg-gray-800">
-      <ArrowLeftOutline class="w-3.5 h-3.5 me-2" />
+    <div slot="prev" class="flex items-center gap-2 bg-gray-800 text-white">
+      <ArrowLeftOutline class="me-2 h-3.5 w-3.5" />
       Prev
     </div>
-    <div slot="next" class="flex items-center gap-2 text-white bg-gray-800">
+    <div slot="next" class="flex items-center gap-2 bg-gray-800 text-white">
       Next
-      <ArrowRightOutline class="w-6 h-6 me-2" />
+      <ArrowRightOutline class="me-2 h-6 w-6" />
     </div>
   </Pagination>
 </div>
@@ -311,17 +311,17 @@ You can use the following code to show the number of data shown inside a table e
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script lang="ts">
-  import { Pagination } from 'flowbite-svelte';
+  import { Pagination } from "flowbite-svelte";
 
-  let pages = [{ name: "1"}, { name: "2" }, { name: "3" }, { name: "4" }, { name: "5" }];
+  let pages = [{ name: "1" }, { name: "2" }, { name: "3" }, { name: "4" }, { name: "5" }];
   const previous = () => {
-    alert('Previous btn clicked. Make a call to your server to fetch data.');
+    alert("Previous btn clicked. Make a call to your server to fetch data.");
   };
   const next = () => {
-    alert('Next btn clicked. Make a call to your server to fetch data.');
+    alert("Next btn clicked. Make a call to your server to fetch data.");
   };
   const handleClick = () => {
-    alert('Page clicked');
+    alert("Page clicked");
   };
 </script>
 

@@ -72,7 +72,6 @@ const closeButtonVariants = tv({
   ]
 });
 
-
 interface CloseButtonProps extends CloseButtonVariants, Omit<HTMLButtonAttributes, "color"> {
   onclick?: (ev: MouseEvent) => void;
   name?: string;

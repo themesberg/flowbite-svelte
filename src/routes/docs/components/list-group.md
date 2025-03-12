@@ -20,7 +20,7 @@ The list group component can be used to display a series of elements, buttons or
 
 ```svelte example hideOutput
 <script>
-  import { Listgroup, ListgroupItem } from 'flowbite-svelte';
+  import { Listgroup, ListgroupItem } from "flowbite-svelte";
 </script>
 ```
 
@@ -30,8 +30,8 @@ Here’s an example of a list group that you can use right away.
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Listgroup } from 'flowbite-svelte';
-  let simpleList = ['Profile', 'Settings', 'Messages', 'Download'];
+  import { Listgroup } from "flowbite-svelte";
+  let simpleList = ["Profile", "Settings", "Messages", "Download"];
 </script>
 
 <Listgroup items={simpleList} />
@@ -49,12 +49,12 @@ You can pass extra properties to the `<a>` element by setting the `attrs` atrrib
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Listgroup } from 'flowbite-svelte';
+  import { Listgroup } from "flowbite-svelte";
   let links = [
-    { name: 'Accordions', href: '/docs/components/accordion', current: true },
-    { name: 'Alerts', href: '/docs/components/alert' },
-    { name: 'Badges', href: '/docs/components/badge' },
-    { name: 'Breadcrumbs', href: '/docs/components/breadcrumb', attrs: {target: '_blank'} }
+    { name: "Accordions", href: "/docs/components/accordion", current: true },
+    { name: "Alerts", href: "/docs/components/alert" },
+    { name: "Badges", href: "/docs/components/badge" },
+    { name: "Breadcrumbs", href: "/docs/components/breadcrumb", attrs: { target: "_blank" } }
   ];
 </script>
 
@@ -73,12 +73,12 @@ You can pass extra properties to the `<button>` element by setting the `attrs` a
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Listgroup, ListgroupItem } from 'flowbite-svelte';
+  import { Listgroup, ListgroupItem } from "flowbite-svelte";
   let buttons = [
-    { name: 'Profile', mycustomfield: 'data1', current: true },
-    { name: 'Settings', mycustomfield: 'data2' },
-    { name: 'Messages', mycustomfield: 'data3' },
-    { name: 'Download', mycustomfield: 'data4', disabled: true, attrs: {type: 'submit'} }
+    { name: "Profile", mycustomfield: "data1", current: true },
+    { name: "Settings", mycustomfield: "data2" },
+    { name: "Messages", mycustomfield: "data3" },
+    { name: "Download", mycustomfield: "data4", disabled: true, attrs: { type: "submit" } }
   ];
 </script>
 
@@ -92,14 +92,15 @@ Use the following example to create a list of buttons as a menu together with SV
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Listgroup } from "flowbite-svelte";
-  import { AdjustmentsHorizontalSolid, DownloadSolid, MessagesSolid, UserCircleSolid } from 'flowbite-svelte-icons';
+  import { AdjustmentsHorizontalSolid, DownloadSolid, MessagesSolid, UserCircleSolid } from "flowbite-svelte-icons";
   let icons = [
-    { name: 'Profile', Icon: UserCircleSolid },
-    { name: 'Settings', Icon: AdjustmentsHorizontalSolid },
-    { name: 'Messages', Icon: MessagesSolid },
-    { name: 'Download', Icon: DownloadSolid }
+    { name: "Profile", Icon: UserCircleSolid },
+    { name: "Settings", Icon: AdjustmentsHorizontalSolid },
+    { name: "Messages", Icon: MessagesSolid },
+    { name: "Download", Icon: DownloadSolid }
   ];
 </script>
+
 <Listgroup active items={icons} class="w-48" onclick={console.log} />
 ```
 
@@ -109,17 +110,16 @@ Use the `horizontal` property to change the direction of list items.
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Listgroup, ListgroupItem } from 'flowbite-svelte';
+  import { Listgroup, ListgroupItem } from "flowbite-svelte";
   let buttons = [
-    { name: 'Profile', mycustomfield: 'data1', current: true },
-    { name: 'Settings', mycustomfield: 'data2' },
-    { name: 'Messages', mycustomfield: 'data3' },
-    { name: 'Download', mycustomfield: 'data4', disabled: true, attrs: {type: 'submit'} }
+    { name: "Profile", mycustomfield: "data1", current: true },
+    { name: "Settings", mycustomfield: "data2" },
+    { name: "Messages", mycustomfield: "data3" },
+    { name: "Download", mycustomfield: "data4", disabled: true, attrs: { type: "submit" } }
   ];
 </script>
 
-<Listgroup active items={buttons} horizontal onclick={(e) => alert(Object.entries(e.detail))}>
-</Listgroup>
+<Listgroup active items={buttons} horizontal onclick={(e) => alert(Object.entries(e.detail))}></Listgroup>
 ```
 
 ## Advanced
@@ -128,23 +128,23 @@ When non standard usage is needed you can omit the `items` props and add element
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Listgroup, ListgroupItem, Avatar } from 'flowbite-svelte';
-  import { TrashBinSolid } from 'flowbite-svelte-icons';
+  import { Listgroup, ListgroupItem, Avatar } from "flowbite-svelte";
+  import { TrashBinSolid } from "flowbite-svelte-icons";
 </script>
 
 <Listgroup active class="w-48">
   <h3 class="p-1 text-center text-xl font-medium text-gray-900 dark:text-white">User list</h3>
-  <ListgroupItem class="text-base font-semibold gap-2">
+  <ListgroupItem class="gap-2 text-base font-semibold">
     <Avatar src="/images/profile-picture-1.webp" size="xs" />Jese Leos
   </ListgroupItem>
-  <ListgroupItem class="text-base font-semibold gap-2">
+  <ListgroupItem class="gap-2 text-base font-semibold">
     <Avatar src="/images/profile-picture-2.webp" size="xs" />Robert Gouth
   </ListgroupItem>
-  <ListgroupItem class="text-base font-semibold gap-2">
+  <ListgroupItem class="gap-2 text-base font-semibold">
     <Avatar src="/images/profile-picture-3.webp" size="xs" />Bonnie Green
   </ListgroupItem>
-  <a href="/" class="flex items-center p-3 text-sm font-medium text-red-600 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline rounded-b-lg">
-    <TrashBinSolid class="w-6 h-6 ms-1 me-2" />
+  <a href="/" class="flex items-center rounded-b-lg bg-gray-50 p-3 text-sm font-medium text-red-600 hover:bg-gray-100 hover:underline dark:bg-gray-700 dark:text-red-500 dark:hover:bg-gray-600">
+    <TrashBinSolid class="ms-1 me-2 h-6 w-6" />
     Delete user
   </a>
 </Listgroup>

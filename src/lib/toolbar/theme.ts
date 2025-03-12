@@ -17,52 +17,52 @@ export const toolbar = tv({
     color: {
       default: {
         base: "bg-gray-50 dark:bg-gray-800 dark:border-gray-600",
-        content: 'divide-gray-300 dark:divide-gray-800'
+        content: "divide-gray-300 dark:divide-gray-800"
       },
       primary: {
         base: "bg-primary-50 dark:bg-gray-800 dark:border-primary-800",
-        content: 'divide-primary-300 dark:divide-primary-800'
+        content: "divide-primary-300 dark:divide-primary-800"
       },
       secondary: {
         base: "bg-secondary-50 dark:bg-gray-800 dark:border-secondary-800",
-        content: 'divide-secondary-300 dark:divide-primary-800'
+        content: "divide-secondary-300 dark:divide-primary-800"
       },
       gray: {
-        base: 'bg-gray-50 dark:bg-gray-800 dark:border-gray-800',
-        content: 'divide-gray-300 dark:divide-gray-800'
+        base: "bg-gray-50 dark:bg-gray-800 dark:border-gray-800",
+        content: "divide-gray-300 dark:divide-gray-800"
       },
       red: {
-        base: 'bg-red-50 dark:bg-gray-800 dark:border-red-800',
-        content: 'divide-red-300 dark:divide-red-800'
+        base: "bg-red-50 dark:bg-gray-800 dark:border-red-800",
+        content: "divide-red-300 dark:divide-red-800"
       },
       yellow: {
-        base: 'bg-yellow-50 dark:bg-gray-800 dark:border-yellow-800',
-        content: 'divide-yellow-300 dark:divide-yellow-800'
+        base: "bg-yellow-50 dark:bg-gray-800 dark:border-yellow-800",
+        content: "divide-yellow-300 dark:divide-yellow-800"
       },
       green: {
-        base: 'bg-green-50 dark:bg-gray-800 dark:border-green-800',
-        content: 'divide-green-300 dark:divide-green-800'
+        base: "bg-green-50 dark:bg-gray-800 dark:border-green-800",
+        content: "divide-green-300 dark:divide-green-800"
       },
       indigo: {
-        base: 'bg-indigo-50 dark:bg-gray-800 dark:border-indigo-800',
-        content: 'divide-indigo-300 dark:divide-indigo-800'
+        base: "bg-indigo-50 dark:bg-gray-800 dark:border-indigo-800",
+        content: "divide-indigo-300 dark:divide-indigo-800"
       },
       purple: {
-        base: 'bg-purple-50 dark:bg-gray-800 dark:border-purple-800',
-        content: 'divide-purple-300 dark:divide-purple-800'
+        base: "bg-purple-50 dark:bg-gray-800 dark:border-purple-800",
+        content: "divide-purple-300 dark:divide-purple-800"
       },
       pink: {
-        base: 'bg-pink-50 dark:bg-gray-800 dark:border-pink-800',
-        content: 'divide-pink-300 dark:divide-pink-800'
+        base: "bg-pink-50 dark:bg-gray-800 dark:border-pink-800",
+        content: "divide-pink-300 dark:divide-pink-800"
       },
       blue: {
-        base: 'bg-blue-50 dark:bg-gray-800 dark:border-blue-800',
-        content: 'divide-blue-300 dark:divide-blue-800'
+        base: "bg-blue-50 dark:bg-gray-800 dark:border-blue-800",
+        content: "divide-blue-300 dark:divide-blue-800"
       },
       dark: {
-        base: 'bg-gray-50 dark:bg-gray-800 dark:border-gray-800',
-        content: 'divide-gray-300 dark:divide-gray-800'
-      },
+        base: "bg-gray-50 dark:bg-gray-800 dark:border-gray-800",
+        content: "divide-gray-300 dark:divide-gray-800"
+      }
     },
     separators: {
       true: {

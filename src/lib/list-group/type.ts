@@ -26,14 +26,13 @@ interface ListgroupProps extends ListgroupVariants, Omit<HTMLAttributes<HTMLULis
   iconClass?: string;
 }
 
-type ListgroupItemProps = Omit<ListgroupItemVariants, "state"> & AnchorButtonAttributes & {
-  current?: boolean;
-  disabled?: boolean;
-  Icon?: Component;
-  iconClass?: string;
-  name?: string
-}
-
+type ListgroupItemProps = Omit<ListgroupItemVariants, "state"> &
+  AnchorButtonAttributes & {
+    current?: boolean;
+    disabled?: boolean;
+    Icon?: Component;
+    iconClass?: string;
+    name?: string;
+  };
 
 export { type ListgroupItemProps, type ListGroupItemType, type ListgroupProps };
-

@@ -31,5 +31,5 @@
 <svelte:element this={tag} {...restProps} class={elemClass} use:init>
   {@render children()}
   <span id={slug} class="absolute -top-[140px]"></span>
-  <a class="ms-2 text-primary-700 opacity-0 transition-opacity dark:text-primary-700 group-hover:opacity-100" href="#{slug}" aria-label="Link to this section: {content}">#</a>
+  <a class="text-primary-700 dark:text-primary-700 ms-2 opacity-0 transition-opacity group-hover:opacity-100" href="#{slug}" aria-label="Link to this section: {content}">#</a>
 </svelte:element>

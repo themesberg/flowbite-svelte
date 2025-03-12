@@ -1,65 +1,17 @@
 {
   "name": "Checkbox",
   "props": [
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "color",
-      "any",
-      "\"primary\""
-    ],
-    [
-      "custom",
-      "any",
-      ""
-    ],
-    [
-      "inline",
-      "any",
-      ""
-    ],
-    [
-      "tinted",
-      "any",
-      ""
-    ],
-    [
-      "rounded",
-      "any",
-      ""
-    ],
-    [
-      "group",
-      "any",
-      "$bindable([])"
-    ],
-    [
-      "choices",
-      "any",
-      "[]"
-    ],
-    [
-      "checked",
-      "any",
-      "$bindable(false)"
-    ],
-    [
-      "indeterminate",
-      "any",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ],
-    [
-      "value",
-      "any",
-      ""
-    ]
+    ["children", "any", ""],
+    ["color", "any", "\"primary\""],
+    ["custom", "any", ""],
+    ["inline", "any", ""],
+    ["tinted", "any", ""],
+    ["rounded", "any", ""],
+    ["group", "any", "$bindable([])"],
+    ["choices", "any", "[]"],
+    ["checked", "any", "$bindable(false)"],
+    ["indeterminate", "any", ""],
+    ["class", "string", ""],
+    ["value", "any", ""]
   ]
 }

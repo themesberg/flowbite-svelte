@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "1.0.0-next.1",
+  "version": "1.0.0-next.2",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -15,7 +15,7 @@
     "dev": "vite dev",
     "build": "vite build && npm run package",
     "preview": "vite preview",
-    "prepack": "svelte-kit sync && svelte-package && publint",
+    "package": "svelte-kit sync && svelte-package && publint",
     "prepublishOnly": "npm run package",
     "test": "npm run test:integration && npm run test:unit",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -26,11 +26,11 @@
     "test:e2e": "playwright test",
     "test:unit": "vitest",
     "gen:exports": "svelte-lib-helpers exports",
-    "gen:docs": "svelte-lib-helpers docs",
-    "gen:component-data": "svelte-lib-helpers component-data-from-type",
-    "copy:package": "svelte-lib-helpers package",
-    "lib-helpers": "pnpm format && pnpm gen:docs && pnpm gen:componentData && pnpm prepack && pnpm gen:exports && pnpm copy:package",
-    "package:publish": "standard-version && git push --follow-tags origin main && npm publish",
+    "gen:component-data-from-type": "svelte-lib-helpers component-data-from-type",
+    "copy:packagejson": "svelte-lib-helpers package",
+    "lib-helpers": "pnpm gen:component-data-from-type && pnpm format && pnpm package && pnpm gen:exports && pnpm copy:packagejson",
+    "generate-file-list": "tsx scripts/generateFileList.ts",
+    "prebuild": "npm run generate-file-list",
     "ch": "npx changeset",
     "cv": "npx changeset version",
     "cp": "npx changeset publish"
@@ -387,6 +387,10 @@
     "./Search.svelte": {
       "types": "./dist/forms/search/Search.svelte.d.ts",
       "svelte": "./dist/forms/search/Search.svelte"
+    },
+    "./MultiSelect.svelte": {
+      "types": "./dist/forms/select/MultiSelect.svelte.d.ts",
+      "svelte": "./dist/forms/select/MultiSelect.svelte"
     },
     "./Select.svelte": {
       "types": "./dist/forms/select/Select.svelte.d.ts",

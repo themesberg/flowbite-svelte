@@ -98,7 +98,7 @@ Use the following code to create list items with ordered and unordered lists.
 
 ```svelte example hideResponsiveButtons
 <script>
-  import { List, Li, Heading } from 'flowbite-svelte';
+  import { List, Li, Heading } from "flowbite-svelte";
 </script>
 
 <Heading tag="h5">List disc</Heading>
@@ -127,7 +127,7 @@ Use the list-inside and list-outside classes to set the list item position insid
 
 ```svelte example hideResponsiveButtons
 <script>
-  import { List, Li, Heading } from 'flowbite-svelte';
+  import { List, Li, Heading } from "flowbite-svelte";
 </script>
 
 <Heading tag="h5">List inside</Heading>

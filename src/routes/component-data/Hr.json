@@ -1,25 +1,9 @@
 {
   "name": "Hr",
   "props": [
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "divClass",
-      "any",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ],
-    [
-      "innerDivClass",
-      "any",
-      ""
-    ]
+    ["children", "any", ""],
+    ["divClass", "any", ""],
+    ["class", "string", ""],
+    ["innerDivClass", "any", ""]
   ]
 }

@@ -23,7 +23,7 @@ Hyperlinks are a great way to reduce bounce rate of the current page and encoura
 
 ```html
 <script>
-  import { A } from 'flowbite-svelte';
+  import { A } from "flowbite-svelte";
 </script>
 ```
 
@@ -33,7 +33,7 @@ Use this example to set default styles to an inline link element.
 
 ```svelte example
 <script>
-  import { A } from 'flowbite-svelte';
+  import { A } from "flowbite-svelte";
 </script>
 
 <A class="font-medium hover:underline">Read more</A>
@@ -45,7 +45,7 @@ This example can be used to set a hyperlink on a button component.
 
 ```svelte example
 <script>
-  import { Button } from 'flowbite-svelte';
+  import { Button } from "flowbite-svelte";
 </script>
 
 <Button href="/">Read more</Button>
@@ -57,7 +57,7 @@ Use this example to set a link inside a paragraph with an underline style.
 
 ```svelte example
 <script>
-  import { A, P } from 'flowbite-svelte';
+  import { A, P } from "flowbite-svelte";
 </script>
 
 <P>
@@ -71,15 +71,15 @@ This example can be used to set a custom SVG icon inside the hyperlink element.
 
 ```svelte example
 <script>
-  import { A, P } from 'flowbite-svelte';
-  import { ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { A, P } from "flowbite-svelte";
+  import { ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
 <P>
   500,000 people have made over a million apps with Glide.
   <A href="/" textColor="text-primary-600 dark:text-primary-500" aClass="inline-flex items-center font-medium  hover:underline">
     Read their stories
-    <ArrowRightOutline class="w-6 h-6 ms-2" />
+    <ArrowRightOutline class="ms-2 h-6 w-6" />
   </A>
 </P>
 ```
@@ -90,15 +90,15 @@ Use this example to set a hyperlink on a CTA element with text and a custom icon
 
 ```svelte example
 <script>
-  import { A } from 'flowbite-svelte';
-  import { ArrowRightOutline } from 'flowbite-svelte-icons';
-  import Figma from '../../utils/icons/Figma.svelte';
+  import { A } from "flowbite-svelte";
+  import { ArrowRightOutline } from "flowbite-svelte-icons";
+  import Figma from "../../utils/icons/Figma.svelte";
 </script>
 
 <A href="/" aClass="dark:hover:text-white inline-flex justify-center items-center p-5 text-base font-medium bg-gray-50 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 hover:no-underline">
   <Figma />
-  <span class="w-full ms-3">Get started with our Figma Design System</span>
-  <ArrowRightOutline class="w-6 h-6 ms-2" />
+  <span class="ms-3 w-full">Get started with our Figma Design System</span>
+  <ArrowRightOutline class="ms-2 h-6 w-6" />
 </A>
 ```
 
@@ -108,12 +108,12 @@ Use this example to set a hyperlink on a card component.
 
 ```svelte example
 <script>
-  import { Card } from 'flowbite-svelte';
+  import { Card } from "flowbite-svelte";
 </script>
 
 <Card href="/cards">
   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-  <p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+  <p class="leading-tight font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
 </Card>
 ```
 
@@ -123,15 +123,15 @@ This example can be used to set a hyperlink on an image inside a card component.
 
 ```svelte example
 <script>
-  import { Card, Button } from 'flowbite-svelte';
-  import { ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Card, Button } from "flowbite-svelte";
+  import { ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
 <Card img="/images/image-1.webp" href="/cards">
   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+  <p class="mb-3 leading-tight font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
   <Button>
-    Read more <ArrowRightOutline class="w-6 h-6 ms-2" />
+    Read more <ArrowRightOutline class="ms-2 h-6 w-6" />
   </Button>
 </Card>
 ```
@@ -140,15 +140,14 @@ This example can be used to set a hyperlink on an image inside a card component.
 
 ```svelte example
 <script>
-  import { A } from 'flowbite-svelte';
+  import { A } from "flowbite-svelte";
 
   const myaction = () => {
-    console.log('Action triggered');
+    console.log("Action triggered");
   };
 </script>
 
 <A href="/" action={myaction}>Read more</A>
-
 ```
 
 ## Component data

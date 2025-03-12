@@ -20,7 +20,7 @@ Flowbite-Svelte allows you to show extra information when hovering or focusing o
 
 ```svelte example hideOutput
 <script>
-  import { Tooltip } from 'flowbite-svelte';
+  import { Tooltip } from "flowbite-svelte";
 </script>
 ```
 
@@ -30,7 +30,7 @@ To get started with using tooltips all you need to do is set `triggeredBy` attri
 
 ```svelte example class="flex items-end h-32" hideResponsiveButtons
 <script>
-  import { Tooltip, Button } from 'flowbite-svelte';
+  import { Tooltip, Button } from "flowbite-svelte";
 </script>
 
 <!-- only works if the button and tooltip are adjacent on your page. Like this: -->
@@ -42,7 +42,7 @@ If you have anything else between the button and tooltip, they won't find each o
 
 ```svelte example hideScript class="h-32 flex items-end gap-2"
 <script>
-  import { Tooltip, Button, P } from 'flowbite-svelte';
+  import { Tooltip, Button, P } from "flowbite-svelte";
 </script>
 
 <Button id="specific-button-anywhere-on-page">Default tooltip</Button>
@@ -57,16 +57,16 @@ You can use choose between dark and light version styles for the tooltip compone
 
 ```svelte example class="flex items-end gap-2 h-32" hideResponsiveButtons
 <script>
-  import { Tooltip, Button } from 'flowbite-svelte';
-  let type = 'dark';
+  import { Tooltip, Button } from "flowbite-svelte";
+  let type = "dark";
 </script>
 
-<Button id="type-1" >Light tooltip</Button>
-<Tooltip type='light' triggeredBy="#type-1">Tooltip content</Tooltip>
-<Button id="type-2" >Default tooltip</Button>
-<Tooltip type='auto' triggeredBy="#type-2">Tooltip content</Tooltip>
-<Button id="type-3" >Dark tooltip</Button>
-<Tooltip type='dark' triggeredBy="#type-3">Tooltip content</Tooltip>
+<Button id="type-1">Light tooltip</Button>
+<Tooltip type="light" triggeredBy="#type-1">Tooltip content</Tooltip>
+<Button id="type-2">Default tooltip</Button>
+<Tooltip type="auto" triggeredBy="#type-2">Tooltip content</Tooltip>
+<Button id="type-3">Dark tooltip</Button>
+<Tooltip type="dark" triggeredBy="#type-3">Tooltip content</Tooltip>
 ```
 
 ## Placement
@@ -77,33 +77,25 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 
 ```svelte example class="flex items-center justify-center gap-2 h-36" hideResponsiveButtons
 <script>
-  import { Tooltip, Button } from 'flowbite-svelte';
-  let placement = 'left';
+  import { Tooltip, Button } from "flowbite-svelte";
+  let placement = "left";
 </script>
 
 <Button id="placement-1">Tooltip left</Button>
-<Tooltip triggeredBy="#placement-1" placement='left'>
-  Tooltip content - Left
-</Tooltip>
+<Tooltip triggeredBy="#placement-1" placement="left">Tooltip content - Left</Tooltip>
 <Button id="placement-2">Tooltip top</Button>
-<Tooltip triggeredBy="#placement-2" placement='top'>
-  Tooltip content - Top
-</Tooltip>
+<Tooltip triggeredBy="#placement-2" placement="top">Tooltip content - Top</Tooltip>
 <Button id="placement-3">Tooltip bottom</Button>
-<Tooltip triggeredBy="#placement-3" placement='bottom'>
-  Tooltip content - Bottom
-</Tooltip>
-<Button id="placement-4" >Tooltip right</Button>
-<Tooltip triggeredBy="#placement-4" placement='right'>
-  Tooltip content - Right
-</Tooltip>
+<Tooltip triggeredBy="#placement-3" placement="bottom">Tooltip content - Bottom</Tooltip>
+<Button id="placement-4">Tooltip right</Button>
+<Tooltip triggeredBy="#placement-4" placement="right">Tooltip content - Right</Tooltip>
 ```
 
 ## Triggering
 
 ```svelte example class="flex items-end gap-2 h-32" hideResponsiveButtons
 <script>
-  import { Tooltip, Button } from 'flowbite-svelte';
+  import { Tooltip, Button } from "flowbite-svelte";
 </script>
 
 <Button id="hover">Tooltip hover</Button>
@@ -116,7 +108,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 
 ```svelte example class="flex items-end gap-2 h-32" hideResponsiveButtons
 <script>
-  import { Tooltip, Button } from 'flowbite-svelte';
+  import { Tooltip, Button } from "flowbite-svelte";
 </script>
 
 <Button id="disable-arrow">Default tooltip</Button>
@@ -129,15 +121,15 @@ If you need the tooltip to be attached to the other element then the tiggering o
 
 ```svelte example class="flex gap-4 flex-col justify-center items-center h-72" hideResponsiveButtons
 <script>
-  import { Tooltip, Button } from 'flowbite-svelte';
-  let placement = $state('');
+  import { Tooltip, Button } from "flowbite-svelte";
+  let placement = $state("");
 </script>
 
-<div id="ext-ref" class="p-2 rounded-lg border border-gray-200 dark:border-gray-600">External reference</div>
+<div id="ext-ref" class="rounded-lg border border-gray-200 p-2 dark:border-gray-600">External reference</div>
 <div class="space-x-4 rtl:space-x-reverse">
-  <Button id="ref-left" onmouseenter={() => (placement = 'left')}>Left</Button>
-  <Button id="ref-top" onmouseenter={() => (placement = 'top')}>Top</Button>
-  <Button id="ref-right" onmouseenter={() => (placement = 'right')}>Right</Button>
+  <Button id="ref-left" onmouseenter={() => (placement = "left")}>Left</Button>
+  <Button id="ref-top" onmouseenter={() => (placement = "top")}>Top</Button>
+  <Button id="ref-right" onmouseenter={() => (placement = "right")}>Right</Button>
 </div>
 <Tooltip reference="#ext-ref" triggeredBy="[id^='ref-']" {placement} class="w-64 text-sm font-light">And here's some amazing content. It's very engaging. Right?</Tooltip>
 ```
@@ -150,7 +142,7 @@ When you want to add a fully custom styles, use `type="custom"`, `defaultClass`,
 
 ```svelte example class="flex items-center h-64 gap-2" hideResponsiveButtons
 <script>
-  import { Tooltip, Button } from 'flowbite-svelte';
+  import { Tooltip, Button } from "flowbite-svelte";
 </script>
 
 <Button>Green tooltip</Button>
@@ -160,7 +152,7 @@ When you want to add a fully custom styles, use `type="custom"`, `defaultClass`,
 <Tooltip color="yellow">Tooltip content</Tooltip>
 
 <Button>Custom type</Button>
-<Tooltip placement="right" type="custom" defaultClass="" class="p-4 text-lg font-medium bg-purple-500 text-gray-100" arrow={false}>Tooltip content</Tooltip>
+<Tooltip placement="right" type="custom" defaultClass="" class="bg-purple-500 p-4 text-lg font-medium text-gray-100" arrow={false}>Tooltip content</Tooltip>
 ```
 
 ## Component data

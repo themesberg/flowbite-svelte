@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { page } from '$app/stores';
-  import PaginationItem from '$lib/pagination/PaginationItem.svelte';
-  import ArrowLeft from './icons/ArrowLeft.svelte';
-  import ArrowRight from './icons/ArrowRight.svelte';
+  import { page } from "$app/stores";
+  import PaginationItem from "$lib/pagination/PaginationItem.svelte";
+  import ArrowLeft from "./icons/ArrowLeft.svelte";
+  import ArrowRight from "./icons/ArrowRight.svelte";
 
   // const identity = x => x;
-  
+
   const {
     data,
     url,
@@ -27,12 +27,12 @@
     .filter((x): x is Post => x.meta && x.meta.dir === data.dir)
     .map(({ path, meta }) => ({ path, name: meta.component_title }));
 
-  const index = components.findIndex((x) => x.path === '/' + slug);
+  const index = components.findIndex((x) => x.path === "/" + slug);
 
   function sibling(next: boolean) {
     const i = next ? index + 1 : index - 1,
       { path, name } = components[i],
-      href = '' + new URL(path.slice(1), url);
+      href = "" + new URL(path.slice(1), url);
 
     return { href, name };
   }
@@ -43,7 +43,7 @@
     <div class="flex flex-row justify-between gap-2.5 self-stretch">
       {#if index > 0}
         {@const { name, href } = sibling(false)}
-        <PaginationItem {href} class="flex items-center gap-2.5  hover:text-primary-700  dark:hover:text-primary-700">
+        <PaginationItem {href} class="hover:text-primary-700 dark:hover:text-primary-700 flex  items-center  gap-2.5">
           <ArrowLeft />
           {name}
         </PaginationItem>
@@ -55,7 +55,7 @@
       </div>
       {#if index < components.length - 1}
         {@const { name, href } = sibling(true)}
-        <PaginationItem {href} class="flex items-center gap-2.5 hover:text-primary-700 dark: dark:hover:text-primary-700">
+        <PaginationItem {href} class="hover:text-primary-700 dark: dark:hover:text-primary-700 flex items-center gap-2.5">
           {name}
           <ArrowRight />
         </PaginationItem>

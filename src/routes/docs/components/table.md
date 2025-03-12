@@ -22,7 +22,7 @@ Get started with multiple variants and styles of these table components.
 
 ```svelte example hideOutput
 <script>
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox, TableSearch } from 'flowbite-svelte';
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox, TableSearch } from "flowbite-svelte";
 </script>
 ```
 
@@ -32,7 +32,7 @@ Use the following example of a responsive table component to show multiple rows 
 
 ```svelte example
 <script>
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from 'flowbite-svelte';
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
 </script>
 
 <Table>
@@ -71,7 +71,7 @@ Set the `striped` prop to `true` to alternate background colors of every second 
 
 ```svelte example
 <script>
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from 'flowbite-svelte';
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
 </script>
 
 <Table striped={true}>
@@ -91,7 +91,7 @@ Set the `striped` prop to `true` to alternate background colors of every second 
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
@@ -100,7 +100,7 @@ Set the `striped` prop to `true` to alternate background colors of every second 
       <TableBodyCell>Laptop PC</TableBodyCell>
       <TableBodyCell>$1999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
@@ -109,7 +109,7 @@ Set the `striped` prop to `true` to alternate background colors of every second 
       <TableBodyCell>Accessories</TableBodyCell>
       <TableBodyCell>$99</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
@@ -118,7 +118,7 @@ Set the `striped` prop to `true` to alternate background colors of every second 
       <TableBodyCell>Phone</TableBodyCell>
       <TableBodyCell>$799</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
@@ -127,7 +127,7 @@ Set the `striped` prop to `true` to alternate background colors of every second 
       <TableBodyCell>Wearables</TableBodyCell>
       <TableBodyCell>$999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
       </TableBodyCell>
     </TableBodyRow>
   </TableBody>
@@ -140,7 +140,7 @@ Set `hoverable` to `true` to change the background color of a data row when hove
 
 ```svelte example
 <script>
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from 'flowbite-svelte';
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
 </script>
 
 <Table hoverable={true}>
@@ -160,7 +160,7 @@ Set `hoverable` to `true` to change the background color of a data row when hove
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
@@ -169,7 +169,7 @@ Set `hoverable` to `true` to change the background color of a data row when hove
       <TableBodyCell>Laptop PC</TableBodyCell>
       <TableBodyCell>$1999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
@@ -178,7 +178,7 @@ Set `hoverable` to `true` to change the background color of a data row when hove
       <TableBodyCell>Accessories</TableBodyCell>
       <TableBodyCell>$99</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
       </TableBodyCell>
     </TableBodyRow>
   </TableBody>
@@ -191,7 +191,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
 
 ```svelte example
 <script>
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox } from 'flowbite-svelte';
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox } from "flowbite-svelte";
 </script>
 
 <Table hoverable={true}>
@@ -217,7 +217,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
@@ -229,7 +229,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
       <TableBodyCell>Laptop PC</TableBodyCell>
       <TableBodyCell>$1999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
@@ -241,7 +241,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
       <TableBodyCell>Accessories</TableBodyCell>
       <TableBodyCell>$99</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
       </TableBodyCell>
     </TableBodyRow>
   </TableBody>
@@ -252,29 +252,28 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
 
 ```svelte example
 <script>
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from 'flowbite-svelte';
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
   let items = [
-    { id: 1, maker: 'Toyota', type: 'ABC', make: 2017 },
-    { id: 2, maker: 'Ford', type: 'CDE', make: 2018 },
-    { id: 3, maker: 'Volvo', type: 'FGH', make: 2019 },
-    { id: 4, maker: 'Saab', type: 'IJK', make: 2020 }
+    { id: 1, maker: "Toyota", type: "ABC", make: 2017 },
+    { id: 2, maker: "Ford", type: "CDE", make: 2018 },
+    { id: 3, maker: "Volvo", type: "FGH", make: 2019 },
+    { id: 4, maker: "Saab", type: "IJK", make: 2020 }
   ];
 </script>
 
-<Table {items} hoverable={true}>
-</Table>
+<Table {items} hoverable={true}></Table>
 ```
 
 ## Sorting by column
 
 ```svelte example
 <script>
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from 'flowbite-svelte';
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
   let items = [
-    { id: 1, maker: 'Toyota', type: 'ABC', make: 2017 },
-    { id: 2, maker: 'Ford', type: 'CDE', make: 2018 },
-    { id: 3, maker: 'Volvo', type: 'FGH', make: 2019 },
-    { id: 4, maker: 'Saab', type: 'IJK', make: 2020 }
+    { id: 1, maker: "Toyota", type: "ABC", make: 2017 },
+    { id: 2, maker: "Ford", type: "CDE", make: 2018 },
+    { id: 3, maker: "Volvo", type: "FGH", make: 2019 },
+    { id: 4, maker: "Saab", type: "IJK", make: 2020 }
   ];
 </script>
 
@@ -295,7 +294,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
       <TableBodyCell>{item.type}</TableBodyCell>
       <TableBodyCell>{item.make}</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Buy</a>
+        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Buy</a>
       </TableBodyCell>
     </TableBodyRow>
   </TableBody>
@@ -308,7 +307,7 @@ By default, the `<TableHead>` component will create a single `<tr>` element with
 
 ```svelte example
 <script>
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from 'flowbite-svelte';
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
 </script>
 
 <Table>
@@ -357,11 +356,11 @@ Use this example where the `<tfoot>` HTML element can be used in conjunction wit
 
 ```svelte example
 <script>
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from 'flowbite-svelte';
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
 </script>
 
 <Table border={false}>
-  <TableHead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
+  <TableHead class="bg-gray-100 text-xs text-gray-700 uppercase dark:bg-gray-700 dark:text-gray-400">
     <TableHeadCell>Product name</TableHeadCell>
     <TableHeadCell>Qty</TableHeadCell>
     <TableHeadCell>Price</TableHeadCell>
@@ -385,9 +384,9 @@ Use this example where the `<tfoot>` HTML element can be used in conjunction wit
   </TableBody>
   <tfoot>
     <tr class="font-semibold text-gray-900 dark:text-white">
-      <th scope="row" class="py-3 px-6 text-base">Total</th>
-      <td class="py-3 px-6">3</td>
-      <td class="py-3 px-6">21,000</td>
+      <th scope="row" class="px-6 py-3 text-base">Total</th>
+      <td class="px-6 py-3">3</td>
+      <td class="px-6 py-3">21,000</td>
     </tr>
   </tfoot>
 </Table>
@@ -399,11 +398,11 @@ Improve accessibility by using a caption inside the table as a heading to better
 
 ```svelte example
 <script>
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from 'flowbite-svelte';
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
 </script>
 
 <Table>
-  <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+  <caption class="bg-white p-5 text-left text-lg font-semibold text-gray-900 dark:bg-gray-800 dark:text-white">
     Our products
     <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Browse a list of Flowbite products designed to help you work and play, stay organized, get answers, keep in touch, grow your business, and more.</p>
   </caption>
@@ -423,7 +422,7 @@ Improve accessibility by using a caption inside the table as a heading to better
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
@@ -432,7 +431,7 @@ Improve accessibility by using a caption inside the table as a heading to better
       <TableBodyCell>Laptop PC</TableBodyCell>
       <TableBodyCell>$1999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
@@ -441,7 +440,7 @@ Improve accessibility by using a caption inside the table as a heading to better
       <TableBodyCell>Accessories</TableBodyCell>
       <TableBodyCell>$99</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
       </TableBodyCell>
     </TableBodyRow>
   </TableBody>
@@ -454,7 +453,7 @@ Use this example of a table component without any border between the table cells
 
 ```svelte example
 <script>
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from 'flowbite-svelte';
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
 </script>
 
 <Table border={false}>
@@ -493,7 +492,7 @@ Use this example to apply a shadow border to the table component.
 
 ```svelte example
 <script>
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from 'flowbite-svelte';
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
 </script>
 
 <Table shadow>
@@ -532,7 +531,7 @@ Use this example to enable horizontal scrolling if the content inside the table 
 
 ```svelte example
 <script>
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox } from 'flowbite-svelte';
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox } from "flowbite-svelte";
 </script>
 
 <Table>
@@ -562,7 +561,7 @@ Use this example to enable horizontal scrolling if the content inside the table 
       <TableBodyCell>$2999</TableBodyCell>
       <TableBodyCell>3.0 lb.</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
         <a href="/tables" class="font-medium text-red-600 hover:underline dark:text-red-500">Remove</a>
       </TableBodyCell>
     </TableBodyRow>
@@ -578,7 +577,7 @@ Use this example to enable horizontal scrolling if the content inside the table 
       <TableBodyCell>$1999</TableBodyCell>
       <TableBodyCell>1.0 lb.</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
         <a href="/tables" class="font-medium text-red-600 hover:underline dark:text-red-500">Remove</a>
       </TableBodyCell>
     </TableBodyRow>
@@ -594,7 +593,7 @@ Use this example to enable horizontal scrolling if the content inside the table 
       <TableBodyCell>$99</TableBodyCell>
       <TableBodyCell>0.2 lb.</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
         <a href="/tables" class="font-medium text-red-600 hover:underline dark:text-red-500">Remove</a>
       </TableBodyCell>
     </TableBodyRow>
@@ -608,7 +607,7 @@ Use one of colors from blue, green, red, yellow, purple for the `color` prop. Th
 
 ```svelte example
 <script>
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from 'flowbite-svelte';
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
 </script>
 
 <Table color="blue" hoverable={true}>
@@ -643,15 +642,15 @@ Use one of colors from blue, green, red, yellow, purple for the `color` prop. Th
 
 ```svelte example
 <script>
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, TableSearch } from 'flowbite-svelte';
-  let searchTerm = $state('');
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, TableSearch } from "flowbite-svelte";
+  let searchTerm = $state("");
   let items = [
-    { id: 1, maker: 'Toyota', type: 'ABC', make: 2017 },
-    { id: 2, maker: 'Ford', type: 'CDE', make: 2018 },
-    { id: 3, maker: 'Volvo', type: 'FGH', make: 2019 },
-    { id: 4, maker: 'Saab', type: 'IJK', make: 2020 }
+    { id: 1, maker: "Toyota", type: "ABC", make: 2017 },
+    { id: 2, maker: "Ford", type: "CDE", make: 2018 },
+    { id: 3, maker: "Volvo", type: "FGH", make: 2019 },
+    { id: 4, maker: "Saab", type: "IJK", make: 2020 }
   ];
-  let filteredItems = $derived(items.filter((item) =>!searchTerm || item.maker.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1));
+  let filteredItems = $derived(items.filter((item) => !searchTerm || item.maker.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1));
 </script>
 
 <TableSearch color="red" placeholder="Search by maker name" hoverable bind:inputValue={searchTerm}>
@@ -676,7 +675,7 @@ Use one of colors from blue, green, red, yellow, purple for the `color` prop. Th
 
 ```svelte example
 <script>
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from 'flowbite-svelte';
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
 </script>
 
 <Table color="green" hoverable={true}>
@@ -715,7 +714,7 @@ Use this example to apply a different color to every second row inside the table
 
 ```svelte example
 <script>
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from 'flowbite-svelte';
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
 </script>
 
 <Table striped={true} color="purple">
@@ -735,7 +734,7 @@ Use this example to apply a different color to every second row inside the table
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
@@ -744,7 +743,7 @@ Use this example to apply a different color to every second row inside the table
       <TableBodyCell>Laptop PC</TableBodyCell>
       <TableBodyCell>$1999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
@@ -753,7 +752,7 @@ Use this example to apply a different color to every second row inside the table
       <TableBodyCell>Accessories</TableBodyCell>
       <TableBodyCell>$99</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
@@ -762,7 +761,7 @@ Use this example to apply a different color to every second row inside the table
       <TableBodyCell>Phone</TableBodyCell>
       <TableBodyCell>$799</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
@@ -771,7 +770,7 @@ Use this example to apply a different color to every second row inside the table
       <TableBodyCell>Wearables</TableBodyCell>
       <TableBodyCell>$999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Edit</a>
+        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
       </TableBodyCell>
     </TableBodyRow>
   </TableBody>
@@ -784,47 +783,37 @@ An example to use on:click (main row) and on:dblclick (expanded row)
 
 ```svelte example
 <script>
-  import {
-    Table,
-    TableBody,
-    TableBodyCell,
-    TableBodyRow,
-    TableHead,
-    TableHeadCell,
-    ImagePlaceholder,
-    Modal
-  } from 'flowbite-svelte';
-  import { slide } from 'svelte/transition';
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, ImagePlaceholder, Modal } from "flowbite-svelte";
+  import { slide } from "svelte/transition";
 
   const items = [
     {
       name: 'Apple MacBook Pro 17"',
       color: "Sliver",
       type: "Laptop",
-      price: "$2999",
+      price: "$2999"
     },
     {
       name: "Microsoft Surface Pro",
       color: "White",
       type: "Laptop PC",
-      price: "$1999",
+      price: "$1999"
     },
     {
       name: "Magic Mouse 2",
       color: "Black",
       type: "Accessories",
-      price: "$99",
-    },
+      price: "$99"
+    }
   ];
 
-  let openRow
-  let details
-  let doubleClickModal = false
+  let openRow;
+  let details;
+  let doubleClickModal = false;
 
   const toggleRow = (i) => {
-    openRow = openRow === i ? null : i
-  }
-
+    openRow = openRow === i ? null : i;
+  };
 </script>
 
 <Table>
@@ -843,12 +832,14 @@ An example to use on:click (main row) and on:dblclick (expanded row)
         <TableBodyCell>{item.price}</TableBodyCell>
       </TableBodyRow>
       {#if openRow === i}
-        <TableBodyRow on:dblclick={() => {
-          doubleClickModal = true;
-          details = item;
-        }}>
+        <TableBodyRow
+          on:dblclick={() => {
+            doubleClickModal = true;
+            details = item;
+          }}
+        >
           <TableBodyCell colspan="4" class="p-0">
-            <div class="px-2 py-3" transition:slide={{ duration: 300, axis: 'y' }}>
+            <div class="px-2 py-3" transition:slide={{ duration: 300, axis: "y" }}>
               <ImagePlaceholder />
             </div>
           </TableBodyCell>

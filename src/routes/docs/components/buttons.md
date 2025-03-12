@@ -24,7 +24,7 @@ Import a button component in the script tag.
 
 ```svelte example hideOutput
 <script>
-  import { Button } from 'flowbite-svelte';
+  import { Button } from "flowbite-svelte";
 </script>
 ```
 
@@ -34,7 +34,7 @@ Use these default button styles with multiple colors to indicate an action or li
 
 ```svelte example class="flex flex-wrap gap-2" hideScript
 <script>
-  import { Button } from 'flowbite-svelte';
+  import { Button } from "flowbite-svelte";
 </script>
 
 <Button>Default</Button>
@@ -54,7 +54,7 @@ You can add a link to a Button component:
 
 ```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
 <script>
-  import { Button } from 'flowbite-svelte';
+  import { Button } from "flowbite-svelte";
 </script>
 
 <Button href="/">Home</Button>
@@ -66,7 +66,7 @@ The button pills can be used as an alternative style by using fully rounded edge
 
 ```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
 <script>
-  import { Button } from 'flowbite-svelte';
+  import { Button } from "flowbite-svelte";
 </script>
 
 <Button pill>Default</Button>
@@ -86,7 +86,7 @@ These beautifully colored buttons built with the gradient color stops utility cl
 
 ```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>
-  import { GradientButton } from 'flowbite-svelte';
+  import { GradientButton } from "flowbite-svelte";
 </script>
 
 <GradientButton color="blue">Blue</GradientButton>
@@ -105,7 +105,7 @@ These buttons use a style that includes two contrasted colors creating an impres
 
 ```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>
-  import { GradientButton } from 'flowbite-svelte';
+  import { GradientButton } from "flowbite-svelte";
 </script>
 
 <GradientButton color="purpleToBlue">Purple to Blue</GradientButton>
@@ -123,7 +123,7 @@ This is a special button style that incorporates a gradient color for the outlin
 
 ```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>
-  import { GradientButton } from 'flowbite-svelte';
+  import { GradientButton } from "flowbite-svelte";
 </script>
 
 <GradientButton outline color="purpleToBlue">Purple to Blue</GradientButton>
@@ -142,7 +142,7 @@ These beautiful button elements with color shadows can be used since the release
 
 ```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>
-  import { Button, GradientButton } from 'flowbite-svelte';
+  import { Button, GradientButton } from "flowbite-svelte";
 </script>
 
 <GradientButton shadow color="blue">Blue</GradientButton>
@@ -161,7 +161,7 @@ Use the following button styles to show the colors only for the border of the el
 
 ```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
 <script>
-  import { Button } from 'flowbite-svelte';
+  import { Button } from "flowbite-svelte";
 </script>
 
 <div class="flex flex-wrap gap-2">
@@ -180,15 +180,15 @@ Use these examples if you want to use smaller or larger buttons.
 
 ```svelte example class="gap-2" hideScript hideResponsiveButtons
 <script>
-  import { Button } from 'flowbite-svelte';
-  import { EnvelopeSolid } from 'flowbite-svelte-icons';
+  import { Button } from "flowbite-svelte";
+  import { EnvelopeSolid } from "flowbite-svelte-icons";
 </script>
 
-<Button size="xs"><EnvelopeSolid class="w-4 h-4 me-2" />Extra small</Button>
-<Button size="sm"><EnvelopeSolid class="w-4 h-4 me-2" />Small</Button>
-<Button size="md"><EnvelopeSolid class="w-5 h-5 me-2" />Base</Button>
-<Button size="lg"><EnvelopeSolid class="w-5 h-5 me-2" />Large</Button>
-<Button size="xl"><EnvelopeSolid class="w-6 h-6 me-2" />Extra large</Button>
+<Button size="xs"><EnvelopeSolid class="me-2 h-4 w-4" />Extra small</Button>
+<Button size="sm"><EnvelopeSolid class="me-2 h-4 w-4" />Small</Button>
+<Button size="md"><EnvelopeSolid class="me-2 h-5 w-5" />Base</Button>
+<Button size="lg"><EnvelopeSolid class="me-2 h-5 w-5" />Large</Button>
+<Button size="xl"><EnvelopeSolid class="me-2 h-6 w-6" />Extra large</Button>
 ```
 
 ## Button with icon
@@ -197,15 +197,15 @@ Use the following examples to add a SVG icon inside the button either on the lef
 
 ```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>
-  import { Button } from 'flowbite-svelte';
-  import { ArrowRightOutline, CartSolid } from 'flowbite-svelte-icons';
+  import { Button } from "flowbite-svelte";
+  import { ArrowRightOutline, CartSolid } from "flowbite-svelte-icons";
 </script>
 
 <Button>
-  <CartSolid class="w-5 h-5 me-2" /> Buy Now
+  <CartSolid class="me-2 h-5 w-5" /> Buy Now
 </Button>
 <Button>
-  Choose Plan <ArrowRightOutline class="w-5 h-5 ms-2" />
+  Choose Plan <ArrowRightOutline class="ms-2 h-5 w-5" />
 </Button>
 ```
 
@@ -215,12 +215,12 @@ This example can be used to show a notification count or helper text inside a bu
 
 ```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>
-  import { Button, Indicator } from 'flowbite-svelte';
+  import { Button, Indicator } from "flowbite-svelte";
 </script>
 
 <Button class="gap-2">
   Messages
-  <Indicator color="none" class="bg-primary-200 text-xs text-primary-800 font-semibold" size="lg">2</Indicator>
+  <Indicator color="none" class="bg-primary-200 text-primary-800 text-xs font-semibold" size="lg">2</Indicator>
 </Button>
 ```
 
@@ -230,18 +230,18 @@ Sometimes you need a button to indicate an action using only an icon.
 
 ```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>
-  import { Button } from 'flowbite-svelte';
-  import { ThumbsUpSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Button } from "flowbite-svelte";
+  import { ThumbsUpSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
 <div class="flex flex-wrap items-center gap-2">
-  <Button class="p-2!"><ArrowRightOutline class="w-6 h-6" /></Button>
-  <Button pill={true} class="p-2!"><ArrowRightOutline class="w-6 h-6" /></Button>
+  <Button class="p-2!"><ArrowRightOutline class="h-6 w-6" /></Button>
+  <Button pill={true} class="p-2!"><ArrowRightOutline class="h-6 w-6" /></Button>
   <Button outline={true} class="p-2!" size="lg">
-    <ThumbsUpSolid class="w-7 h-7 text-primary-700" />
+    <ThumbsUpSolid class="text-primary-700 h-7 w-7" />
   </Button>
   <Button pill={true} outline={true} class="p-2!" size="xl">
-    <ThumbsUpSolid class="w-6 h-6 text-primary-700" />
+    <ThumbsUpSolid class="text-primary-700 h-6 w-6" />
   </Button>
 </div>
 ```
@@ -252,7 +252,7 @@ Use the spinner components from Flowbite-Svelte to indicate a loader animation i
 
 ```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>
-  import { Button, Spinner } from 'flowbite-svelte';
+  import { Button, Spinner } from "flowbite-svelte";
 </script>
 
 <Button>
@@ -269,7 +269,7 @@ You can add any additional button attributes. The following example shows adding
 
 ```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
 <script>
-  import { Button } from 'flowbite-svelte';
+  import { Button } from "flowbite-svelte";
 </script>
 
 <Button disabled>Disabled</Button>
@@ -281,12 +281,12 @@ You can use on:click or any standard on:\* to listen to the event.
 
 ```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>
-  import { Button } from 'flowbite-svelte';
+  import { Button } from "flowbite-svelte";
   const btn1 = () => {
-    alert('You clicked btn1.');
+    alert("You clicked btn1.");
   };
   const btn2 = () => {
-    alert('You touched btn2.');
+    alert("You touched btn2.");
   };
 </script>
 

@@ -1,1 +1,1 @@
-<h2 class="leading-tight text-3xl lg:text-4xl font-extrabold text-gray-900 dark:text-white"><slot /></h2>
+<h2 class="text-3xl leading-tight font-extrabold text-gray-900 lg:text-4xl dark:text-white"><slot /></h2>

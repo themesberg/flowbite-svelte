@@ -72,12 +72,12 @@ pnpm i -D flowbite-svelte-icons
 
 ### Configuration
 
-Update your main `css` file to support Tailwindcss and Flowbite plugin. You can as well customize the primary color by modifying the appropriate color values. 
+Update your main `css` file to support Tailwindcss and Flowbite plugin. You can as well customize the primary color by modifying the appropriate color values.
 
 If you use SvelteKit the main css file is `src/app.css`.
 
 ```css
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin 'flowbite/plugin';
 

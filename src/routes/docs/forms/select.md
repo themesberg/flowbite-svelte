@@ -20,7 +20,7 @@ The select input component can be used to gather information from users based on
 
 ```svelte example hideOutput
 <script>
-  import { Select } from 'flowbite-svelte';
+  import { Select } from "flowbite-svelte";
 </script>
 ```
 
@@ -30,13 +30,13 @@ Get started with the default example of a select input component to get a single
 
 ```svelte example
 <script>
-  import { Select, Label } from 'flowbite-svelte';
-  let selected = '';
+  import { Select, Label } from "flowbite-svelte";
+  let selected = "";
   let countries = [
-    { value: 'us', name: 'United States' },
-    { value: 'ca', name: 'Canada' },
-    { value: 'de', name: 'Germany' },
-    { value: 'fr', name: 'France', disabled: true },
+    { value: "us", name: "United States" },
+    { value: "ca", name: "Canada" },
+    { value: "de", name: "Germany" },
+    { value: "fr", name: "France", disabled: true }
   ];
 </script>
 
@@ -52,11 +52,11 @@ Apply the disable state to the select component to disallow the selection of new
 
 ```svelte example
 <script>
-  import { Select, Label } from 'flowbite-svelte';
+  import { Select, Label } from "flowbite-svelte";
   let countries = [
-    { value: 'us', name: 'United States' },
-    { value: 'ca', name: 'Canada' },
-    { value: 'fr', name: 'France' }
+    { value: "us", name: "United States" },
+    { value: "ca", name: "Canada" },
+    { value: "fr", name: "France" }
   ];
 </script>
 
@@ -70,11 +70,11 @@ Use the underline style for the select component as an alternative appearance.
 
 ```svelte example
 <script>
-  import { Select, Label } from 'flowbite-svelte';
+  import { Select, Label } from "flowbite-svelte";
   let countries = [
-    { value: 'us', name: 'United States' },
-    { value: 'ca', name: 'Canada' },
-    { value: 'fr', name: 'France' }
+    { value: "us", name: "United States" },
+    { value: "ca", name: "Canada" },
+    { value: "fr", name: "France" }
   ];
 </script>
 
@@ -88,33 +88,33 @@ Use this example if you want to create a multi-level dropdown and select compone
 
 ```svelte example class="h-64"
 <script>
-  import { Select, Dropdown, DropdownItem } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
-  import Usa from '../../utils/icons/Usa.svelte';
-  import Germany from '../../utils/icons/Germany.svelte';
-  import Italy from '../../utils/icons/Italy.svelte';
-  import China from '../../utils/icons/China.svelte';
+  import { Select, Dropdown, DropdownItem } from "flowbite-svelte";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
+  import Usa from "../../utils/icons/Usa.svelte";
+  import Germany from "../../utils/icons/Germany.svelte";
+  import Italy from "../../utils/icons/Italy.svelte";
+  import China from "../../utils/icons/China.svelte";
   let countries = [
-    { value: 'us', name: 'United States' },
-    { value: 'ca', name: 'Canada' },
-    { value: 'fr', name: 'France' }
+    { value: "us", name: "United States" },
+    { value: "ca", name: "Canada" },
+    { value: "fr", name: "France" }
   ];
   let states = [
-    { value: 'CA', name: 'California' },
-    { value: 'TX', name: 'Texas' },
-    { value: 'WH', name: 'Washinghton' },
-    { value: 'FL', name: 'Florida' },
-    { value: 'VG', name: 'Virginia' },
-    { value: 'GE', name: 'Georgia' },
-    { value: 'MI', name: 'Michigan' }
+    { value: "CA", name: "California" },
+    { value: "TX", name: "Texas" },
+    { value: "WH", name: "Washinghton" },
+    { value: "FL", name: "Florida" },
+    { value: "VG", name: "Virginia" },
+    { value: "GE", name: "Georgia" },
+    { value: "MI", name: "Michigan" }
   ];
 </script>
 
 <div class="flex">
-  <button id="states-button" class="shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-500 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-hidden focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600" type="button">
+  <button id="states-button" class="z-10 inline-flex shrink-0 items-center rounded-s-lg border border-gray-300 bg-gray-100 px-4 py-2.5 text-center text-sm font-medium text-gray-500 hover:bg-gray-200 focus:ring-4 focus:ring-gray-100 focus:outline-hidden dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-700" type="button">
     <Usa />
     USA
-    <ChevronDownOutline class="w-6 h-6 ms-2" />
+    <ChevronDownOutline class="ms-2 h-6 w-6" />
   </button>
   <Dropdown simple triggeredBy="#states-button">
     <DropdownItem class="flex items-center">
@@ -144,11 +144,11 @@ Get started with the small, default, and large sizes for the select component fr
 
 ```svelte example
 <script>
-  import { Select, Label } from 'flowbite-svelte';
+  import { Select, Label } from "flowbite-svelte";
   let countries = [
-    { value: 'us', name: 'United States' },
-    { value: 'ca', name: 'Canada' },
-    { value: 'fr', name: 'France' }
+    { value: "us", name: "United States" },
+    { value: "ca", name: "Canada" },
+    { value: "fr", name: "France" }
   ];
 </script>
 
@@ -158,7 +158,7 @@ Get started with the small, default, and large sizes for the select component fr
 <Select id="select-md" size="md" items={countries} class="mb-6" />
 <Label for="select-lg" class="mb-2">Large select</Label>
 <Select id="select-lg" size="lg" items={countries} class="mb-6" />
-<p class="my-6" ></p>
+<p class="my-6"></p>
 <Label for="select-sm" class="sr-only">Underline small select</Label>
 <Select id="select-sm" underline size="sm" items={countries} class="mb-6" />
 <Label for="select-md" class="sr-only">Underline default select</Label>
@@ -173,12 +173,12 @@ If you want custom options, put them directly inside the component and leave the
 
 ```svelte example
 <script>
-  import { Select, Label } from 'flowbite-svelte';
+  import { Select, Label } from "flowbite-svelte";
   let selected;
   let countries = [
-    { value: 'us', name: 'United States' },
-    { value: 'ca', name: 'Canada' },
-    { value: 'fr', name: 'France' }
+    { value: "us", name: "United States" },
+    { value: "ca", name: "Canada" },
+    { value: "fr", name: "France" }
   ];
 </script>
 
@@ -196,7 +196,7 @@ If you want custom options, put them directly inside the component and leave the
 
 ```svelte example hideOutput
 <script>
-  import { MultiSelect } from 'flowbite-svelte';
+  import { MultiSelect } from "flowbite-svelte";
 </script>
 ```
 
@@ -206,15 +206,15 @@ Get started with the default toggle component example as a checkbox element to r
 
 ```svelte example class="h-80"
 <script>
-  import { MultiSelect } from 'flowbite-svelte';
+  import { MultiSelect } from "flowbite-svelte";
 
   let selected = [];
   let countries = [
-    { value: 'us', name: 'United States' },
-    { value: 'ca', name: 'Canada' },
-    { value: 'fr', name: 'France' },
-    { value: 'jp', name: 'Japan' },
-    { value: 'en', name: 'England' }
+    { value: "us", name: "United States" },
+    { value: "ca", name: "Canada" },
+    { value: "fr", name: "France" },
+    { value: "jp", name: "Japan" },
+    { value: "en", name: "England" }
   ];
 </script>
 
@@ -225,35 +225,35 @@ Get started with the default toggle component example as a checkbox element to r
 
 ```svelte example class="h-80"
 <script>
-  import { MultiSelect } from 'flowbite-svelte';
+  import { MultiSelect } from "flowbite-svelte";
 
-  let placeholder = 'placeholder text';
+  let placeholder = "placeholder text";
   let selected = [];
   let countries = [
-    { value: 'us', name: 'United States' },
-    { value: 'ca', name: 'Canada' },
-    { value: 'fr', name: 'France' },
-    { value: 'jp', name: 'Japan' },
-    { value: 'en', name: 'England' }
+    { value: "us", name: "United States" },
+    { value: "ca", name: "Canada" },
+    { value: "fr", name: "France" },
+    { value: "jp", name: "Japan" },
+    { value: "en", name: "England" }
   ];
 </script>
 
-<MultiSelect items={countries} bind:value={selected} size="lg" placeholder={placeholder} />
+<MultiSelect items={countries} bind:value={selected} size="lg" {placeholder} />
 ```
 
 ### Disabled select
 
 ```svelte example class="h-80"
 <script>
-  import { MultiSelect } from 'flowbite-svelte';
+  import { MultiSelect } from "flowbite-svelte";
 
   let selected = [];
   let countries = [
-    { value: 'us', name: 'United States' },
-    { value: 'ca', name: 'Canada' },
-    { value: 'fr', name: 'France' },
-    { value: 'jp', name: 'Japan' },
-    { value: 'en', name: 'England' }
+    { value: "us", name: "United States" },
+    { value: "ca", name: "Canada" },
+    { value: "fr", name: "France" },
+    { value: "jp", name: "Japan" },
+    { value: "en", name: "England" }
   ];
 </script>
 
@@ -264,15 +264,15 @@ Get started with the default toggle component example as a checkbox element to r
 
 ```svelte example class="h-80"
 <script>
-  import { MultiSelect } from 'flowbite-svelte';
+  import { MultiSelect } from "flowbite-svelte";
 
   let selected = [];
   let countries = [
-    { value: 'us', name: 'United States' },
-    { value: 'ca', name: 'Canada' },
-    { value: 'fr', name: 'France' },
-    { value: 'jp', name: 'Japan', disabled: true },
-    { value: 'en', name: 'England', disabled: true }
+    { value: "us", name: "United States" },
+    { value: "ca", name: "Canada" },
+    { value: "fr", name: "France" },
+    { value: "jp", name: "Japan", disabled: true },
+    { value: "en", name: "England", disabled: true }
   ];
 </script>
 
@@ -283,16 +283,16 @@ Get started with the default toggle component example as a checkbox element to r
 
 ```svelte example class="h-96"
 <script>
-  import { MultiSelect } from 'flowbite-svelte';
+  import { MultiSelect } from "flowbite-svelte";
 
   let countries = [
-    { value: 'us', name: 'United States', color: 'indigo' },
-    { value: 'ca', name: 'Canada', color: 'green' },
-    { value: 'fr', name: 'France', color: 'blue' },
-    { value: 'jp', name: 'Japan', color: 'red' },
-    { value: 'en', name: 'England', color: 'yellow' }
+    { value: "us", name: "United States", color: "indigo" },
+    { value: "ca", name: "Canada", color: "green" },
+    { value: "fr", name: "France", color: "blue" },
+    { value: "jp", name: "Japan", color: "red" },
+    { value: "en", name: "England", color: "yellow" }
   ];
-  let selected = ['us', 'fr'];
+  let selected = ["us", "fr"];
 </script>
 
 <MultiSelect items={countries} bind:value={selected} />
@@ -310,23 +310,23 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 
 ```svelte example class="h-96"
 <script>
-  import { MultiSelect, Badge } from 'flowbite-svelte';
+  import { MultiSelect, Badge } from "flowbite-svelte";
 
   let selected = [];
   let countries = [
-    { value: 'us', name: 'United States', color: 'indigo' },
-    { value: 'ca', name: 'Canada', color: 'green' },
-    { value: 'fr', name: 'France', color: 'blue' },
-    { value: 'jp', name: 'Japan', color: 'red' },
-    { value: 'en', name: 'England', color: 'yellow' }
+    { value: "us", name: "United States", color: "indigo" },
+    { value: "ca", name: "Canada", color: "green" },
+    { value: "fr", name: "France", color: "blue" },
+    { value: "jp", name: "Japan", color: "red" },
+    { value: "en", name: "England", color: "yellow" }
   ];
 </script>
 
 <MultiSelect items={countries} bind:value={selected}>
-  {#snippet children({item, clear})}
-  <Badge color={item.color} dismissable params={{ duration: 100 }} on:close={clear}>
-    {item.name}
-  </Badge>
+  {#snippet children({ item, clear })}
+    <Badge color={item.color} dismissable params={{ duration: 100 }} on:close={clear}>
+      {item.name}
+    </Badge>
   {/snippet}
 </MultiSelect>
 ```

@@ -14,14 +14,13 @@ export const select = tv({
       sm: "text-sm p-2",
       md: "text-sm p-2.5",
       lg: "text-base py-3 px-4"
-    },
+    }
   },
   defaultVariants: {
     underline: false,
     size: "md"
   }
 });
-
 
 export type MultiSelectVariants = VariantProps<typeof multiselect>;
 

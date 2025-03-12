@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { card, type CardProps as Props } from '.';
-  import type { HTMLAttributes, HTMLAnchorAttributes } from 'svelte/elements';
+  import { card, type CardProps as Props } from ".";
+  import type { HTMLAttributes, HTMLAnchorAttributes } from "svelte/elements";
 
-  let { children, href, color = 'gray', horizontal = false, shadow = 'md', reverse = false, img, padding = 'lg', size = 'sm', class: className, imgClass, contentClass, ...restProps }: Props = $props();
+  let { children, href, color = "gray", horizontal = false, shadow = "md", reverse = false, img, padding = "lg", size = "sm", class: className, imgClass, contentClass, ...restProps }: Props = $props();
 
   const { base, image, content } = $derived(
     card({
@@ -61,13 +61,13 @@
 ## Props
 @props: children: any;
 @props:href: any;
-@props:color: any = 'gray';
+@props:color: any = "gray";
 @props:horizontal: any = false;
-@props:shadow: any = 'md';
+@props:shadow: any = "md";
 @props:reverse: any = false;
 @props:img: any;
-@props:padding: any = 'lg';
-@props:size: any = 'sm';
+@props:padding: any = "lg";
+@props:size: any = "sm";
 @props:class: string;
 @props:imgClass: any;
 @props:contentClass: any;

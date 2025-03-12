@@ -23,7 +23,7 @@ Disclaimer: this sidebar component is based on this <A class="text-primary-700" 
 
 ```svelte example hideOutput
 <script>
-  import { Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper } from 'flowbite-svelte';
+  import { Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper } from "flowbite-svelte";
 </script>
 ```
 
@@ -33,10 +33,10 @@ Use this example to show a responsive list of menu items inside the sidebar with
 
 ```svelte example
 <script>
-  import { page } from '$app/state';
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from 'flowbite-svelte';
-  import { ChartPieSolid, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditOutline } from 'flowbite-svelte-icons';
-  let spanClass = 'flex-1 ms-3 whitespace-nowrap';
+  import { page } from "$app/state";
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from "flowbite-svelte";
+  import { ChartPieSolid, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditOutline } from "flowbite-svelte-icons";
+  let spanClass = "flex-1 ms-3 whitespace-nowrap";
   let activeUrl = page.url.pathname;
 </script>
 
@@ -44,39 +44,39 @@ Use this example to show a responsive list of menu items inside the sidebar with
   <SidebarWrapper>
     <SidebarGroup>
       <SidebarItem label="Dashboard">
-       {#snippet icon()}
-          <ChartPieSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <ChartPieSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Kanban" {spanClass}>
-       {#snippet icon()}
-          <GridSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <GridSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
-       {#snippet subtext()}
-          <span class="inline-flex justify-center items-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"> Pro </span>
+        {#snippet subtext()}
+          <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Inbox" {spanClass}>
-       {#snippet icon()}
-          <MailBoxSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <MailBoxSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
-       {#snippet subtext()}
-          <span class="inline-flex justify-center items-center p-3 ms-3 w-3 h-3 text-sm font-medium text-primary-600 bg-primary-200 rounded-full dark:bg-primary-900 dark:text-primary-200"> 3 </span>
+        {#snippet subtext()}
+          <span class="text-primary-600 bg-primary-200 dark:bg-primary-900 dark:text-primary-200 ms-3 inline-flex h-3 w-3 items-center justify-center rounded-full p-3 text-sm font-medium">3</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Sidebar" href="/docs/components/sidebar" active={activeUrl === '/docs/components/sidebar'}>
-       {#snippet icon()}
-          <UserSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+      <SidebarItem label="Sidebar" href="/docs/components/sidebar" active={activeUrl === "/docs/components/sidebar"}>
+        {#snippet icon()}
+          <UserSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sign In">
-       {#snippet icon()}
-          <ArrowRightToBracketOutline class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <ArrowRightToBracketOutline class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sign Up">
-       {#snippet icon()}
-          <EditOutline class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <EditOutline class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
     </SidebarGroup>
@@ -90,9 +90,9 @@ Utilize the `href` prop within the `SidebarItem` component to incorporate a hype
 
 ```svelte example
 <script>
-  import { page } from '$app/state';
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from 'flowbite-svelte';
-  import { ChartPieSolid, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditOutline } from 'flowbite-svelte-icons';
+  import { page } from "$app/state";
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from "flowbite-svelte";
+  import { ChartPieSolid, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditOutline } from "flowbite-svelte-icons";
   let activeUrl = page.url.pathname;
 </script>
 
@@ -100,28 +100,28 @@ Utilize the `href` prop within the `SidebarItem` component to incorporate a hype
   <SidebarWrapper>
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
-       {#snippet icon()}
-          <ChartPieSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <ChartPieSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Accordion" href="/docs/components/accordion">
-       {#snippet icon()}
-          <GridSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <GridSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Alert" href="/docs/components/alert">
-       {#snippet icon()}
-          <MailBoxSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <MailBoxSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sidebar" href="/docs/components/sidebar">
-       {#snippet icon()}
-          <UserSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <UserSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Badge" href="/docs/components/badge">
-       {#snippet icon()}
-          <ArrowRightToBracketOutline class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <ArrowRightToBracketOutline class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
     </SidebarGroup>
@@ -133,40 +133,40 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
 
 ```svelte example
 <script>
-  import { page } from '$app/state';
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from 'flowbite-svelte';
-  import { ChartPieSolid, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditOutline } from 'flowbite-svelte-icons';
+  import { page } from "$app/state";
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from "flowbite-svelte";
+  import { ChartPieSolid, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditOutline } from "flowbite-svelte-icons";
   let activeUrl = page.url.pathname;
-  let activeClass = 'flex items-center p-2 text-base font-normal text-primary-900 bg-primary-200 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-100 dark:hover:bg-gray-700';
-  let nonActiveClass = 'flex items-center p-2 text-base font-normal text-green-900 rounded-lg dark:text-white hover:bg-green-100 dark:hover:bg-green-700';
+  let activeClass = "flex items-center p-2 text-base font-normal text-primary-900 bg-primary-200 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-100 dark:hover:bg-gray-700";
+  let nonActiveClass = "flex items-center p-2 text-base font-normal text-green-900 rounded-lg dark:text-white hover:bg-green-100 dark:hover:bg-green-700";
 </script>
 
 <Sidebar position="static" {activeUrl} {activeClass} {nonActiveClass}>
   <SidebarWrapper>
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
-       {#snippet icon()}
-          <ChartPieSolid class="w-6 h-6" />
+        {#snippet icon()}
+          <ChartPieSolid class="h-6 w-6" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Accordion" href="/docs/components/accordion">
-       {#snippet icon()}
-          <GridSolid class="w-6 h-6" />
+        {#snippet icon()}
+          <GridSolid class="h-6 w-6" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Alert" href="/docs/components/alert">
-       {#snippet icon()}
-          <MailBoxSolid class="w-6 h-6" />
+        {#snippet icon()}
+          <MailBoxSolid class="h-6 w-6" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sidebar" href="/docs/components/sidebar">
-       {#snippet icon()}
-          <UserSolid class="w-6 h-6" />
+        {#snippet icon()}
+          <UserSolid class="h-6 w-6" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Badge" href="/docs/components/badge">
-       {#snippet icon()}
-          <ArrowRightToBracketOutline class="w-6 h-6" />
+        {#snippet icon()}
+          <ArrowRightToBracketOutline class="h-6 w-6" />
         {/snippet}
       </SidebarItem>
     </SidebarGroup>
@@ -182,56 +182,56 @@ Use this sidebar example to create multi-level menu items by using the SidebarDr
 
 ```svelte example
 <script>
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarDropdownItem, SidebarDropdownWrapper } from 'flowbite-svelte';
-  import { ChartPieSolid, GridSolid, CartSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditOutline } from 'flowbite-svelte-icons';
-  let spanClass = 'flex-1 ms-3 whitespace-nowrap';
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarDropdownItem, SidebarDropdownWrapper } from "flowbite-svelte";
+  import { ChartPieSolid, GridSolid, CartSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditOutline } from "flowbite-svelte-icons";
+  let spanClass = "flex-1 ms-3 whitespace-nowrap";
 </script>
 
-<Sidebar position="static" >
+<Sidebar position="static">
   <SidebarWrapper>
     <SidebarGroup>
       <SidebarItem label="Dashboard">
-       {#snippet icon()}
-          <ChartPieSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <ChartPieSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarDropdownWrapper label="E-commerce">
-       {#snippet icon()}
-          <CartSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <CartSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         <SidebarDropdownItem label="Products" />
         <SidebarDropdownItem label="Billing" />
         <SidebarDropdownItem label="Invoice" />
       </SidebarDropdownWrapper>
       <SidebarItem label="Kanban" {spanClass}>
-       {#snippet icon()}
-          <GridSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <GridSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
-       {#snippet subtext()}
-          <span class="inline-flex justify-center items-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"> Pro </span>
+        {#snippet subtext()}
+          <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Inbox" {spanClass}>
-       {#snippet icon()}
-          <MailBoxSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <MailBoxSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
-       {#snippet subtext()}
-          <span class="inline-flex justify-center items-center p-3 ms-3 w-3 h-3 text-sm font-medium text-primary-600 bg-primary-200 rounded-full dark:bg-primary-900 dark:text-primary-200"> 3 </span>
+        {#snippet subtext()}
+          <span class="text-primary-600 bg-primary-200 dark:bg-primary-900 dark:text-primary-200 ms-3 inline-flex h-3 w-3 items-center justify-center rounded-full p-3 text-sm font-medium">3</span>
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Users">
-       {#snippet icon()}
-          <UserSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <UserSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sign In">
-       {#snippet icon()}
-          <ArrowRightToBracketOutline class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <ArrowRightToBracketOutline class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sign Up">
-       {#snippet icon()}
-          <EditOutline class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <EditOutline class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
     </SidebarGroup>
@@ -243,28 +243,28 @@ You can change the icons using `arrowup` and `arrowdown` slots.
 
 ```svelte example
 <script>
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarDropdownItem, SidebarDropdownWrapper } from 'flowbite-svelte';
-  import { ChartPieSolid, CartSolid, ChevronDoubleUpOutline, ChevronDoubleDownOutline } from 'flowbite-svelte-icons';
-  let spanClass = 'flex-1 ms-3 whitespace-nowrap';
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarDropdownItem, SidebarDropdownWrapper } from "flowbite-svelte";
+  import { ChartPieSolid, CartSolid, ChevronDoubleUpOutline, ChevronDoubleDownOutline } from "flowbite-svelte-icons";
+  let spanClass = "flex-1 ms-3 whitespace-nowrap";
 </script>
 
-<Sidebar position="static" >
+<Sidebar position="static">
   <SidebarWrapper>
     <SidebarGroup>
       <SidebarItem label="Dashboard">
-       {#snippet icon()}
-          <ChartPieSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <ChartPieSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarDropdownWrapper label="E-commerce">
-       {#snippet icon()}
-          <CartSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <CartSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
-       {#snippet arrowup()}
-          <ChevronDoubleUpOutline class="w-6 h-6" />
+        {#snippet arrowup()}
+          <ChevronDoubleUpOutline class="h-6 w-6" />
         {/snippet}
-       {#snippet arrowdown()}
-          <ChevronDoubleDownOutline class="w-6 h-6" />
+        {#snippet arrowdown()}
+          <ChevronDoubleDownOutline class="h-6 w-6" />
         {/snippet}
         <SidebarDropdownItem label="Products" />
         <SidebarDropdownItem label="Billing" />
@@ -281,75 +281,75 @@ Separate the content inside the sidebar component by applying a border separator
 
 ```svelte example
 <script>
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from 'flowbite-svelte';
-  import { ChartPieSolid, GridSolid, MailBoxSolid, UserSolid, ShoppingBagSolid, ArrowRightToBracketOutline, EditOutline, FireSolid, BookSolid, RestoreWindowOutline, LifeSaverSolid } from 'flowbite-svelte-icons';
-  let spanClass = 'flex-1 ms-3 whitespace-nowrap';
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from "flowbite-svelte";
+  import { ChartPieSolid, GridSolid, MailBoxSolid, UserSolid, ShoppingBagSolid, ArrowRightToBracketOutline, EditOutline, FireSolid, BookSolid, RestoreWindowOutline, LifeSaverSolid } from "flowbite-svelte-icons";
+  let spanClass = "flex-1 ms-3 whitespace-nowrap";
 </script>
 
-<Sidebar position="static" >
+<Sidebar position="static">
   <SidebarWrapper>
     <SidebarGroup>
       <SidebarItem label="Dashboard">
-       {#snippet icon()}
-          <ChartPieSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <ChartPieSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Kanban" {spanClass}>
-       {#snippet icon()}
-          <GridSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <GridSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
-       {#snippet subtext()}
-          <span class="inline-flex justify-center items-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"> Pro </span>
+        {#snippet subtext()}
+          <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Inbox" {spanClass}>
-       {#snippet icon()}
-          <MailBoxSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <MailBoxSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
-       {#snippet subtext()}
-          <span class="inline-flex justify-center items-center p-3 ms-3 w-3 h-3 text-sm font-medium text-primary-600 bg-primary-200 rounded-full dark:bg-primary-900 dark:text-primary-200"> 3 </span>
+        {#snippet subtext()}
+          <span class="text-primary-600 bg-primary-200 dark:bg-primary-900 dark:text-primary-200 ms-3 inline-flex h-3 w-3 items-center justify-center rounded-full p-3 text-sm font-medium">3</span>
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Users">
-       {#snippet icon()}
-          <UserSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <UserSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Products">
-       {#snippet icon()}
-          <ShoppingBagSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <ShoppingBagSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sign In">
-       {#snippet icon()}
-          <ArrowRightToBracketOutline class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <ArrowRightToBracketOutline class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sign Up">
-       {#snippet icon()}
-          <EditOutline class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <EditOutline class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
     </SidebarGroup>
     <SidebarGroup border>
       <SidebarItem label="Upgrade to Pro">
-       {#snippet icon()}
-          <FireSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <FireSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Documentation">
-       {#snippet icon()}
-          <BookSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <BookSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Components">
-       {#snippet icon()}
-          <RestoreWindowOutline class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <RestoreWindowOutline class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Help">
-       {#snippet icon()}
-          <LifeSaverSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <LifeSaverSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
     </SidebarGroup>
@@ -363,60 +363,60 @@ Use this example to add a CTA button inside the sidebar component and encourage 
 
 ```svelte example
 <script>
-  import { page } from '$app/state';
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarCta } from 'flowbite-svelte';
-  import { ChartPieSolid, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditOutline, CloseOutline } from 'flowbite-svelte-icons';
-  let spanClass = 'flex-1 ms-3 whitespace-nowrap';
+  import { page } from "$app/state";
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarCta } from "flowbite-svelte";
+  import { ChartPieSolid, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditOutline, CloseOutline } from "flowbite-svelte-icons";
+  let spanClass = "flex-1 ms-3 whitespace-nowrap";
 </script>
 
-<Sidebar position="static" >
+<Sidebar position="static">
   <SidebarWrapper>
     <SidebarGroup>
       <SidebarItem label="Dashboard">
-       {#snippet icon()}
-          <ChartPieSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <ChartPieSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Kanban" {spanClass}>
-       {#snippet icon()}
-          <GridSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <GridSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
-       {#snippet subtext()}
-          <span class="inline-flex justify-center items-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"> Pro </span>
+        {#snippet subtext()}
+          <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Inbox" {spanClass}>
-       {#snippet icon()}
-          <MailBoxSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <MailBoxSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
-       {#snippet subtext()}
-          <span class="inline-flex justify-center items-center p-3 ms-3 w-3 h-3 text-sm font-medium text-primary-600 bg-primary-200 rounded-full dark:bg-primary-900 dark:text-primary-200"> 3 </span>
+        {#snippet subtext()}
+          <span class="text-primary-600 bg-primary-200 dark:bg-primary-900 dark:text-primary-200 ms-3 inline-flex h-3 w-3 items-center justify-center rounded-full p-3 text-sm font-medium">3</span>
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Users">
-       {#snippet icon()}
-          <UserSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <UserSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sign In">
-       {#snippet icon()}
-          <ArrowRightToBracketOutline class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <ArrowRightToBracketOutline class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sign Up">
-       {#snippet icon()}
-          <EditOutline class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <EditOutline class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarCta label="Beta">
-       {#snippet icon()}
-          <button type="button" class="ms-auto -mx-1.5 -my-1.5 bg-primary-50 text-primary-900 rounded-lg focus:ring-2 focus:ring-primary-400 p-1 hover:bg-primary-200 inline-flex h-6 w-6 dark:bg-primary-900 dark:text-primary-400 dark:hover:bg-primary-800" data-collapse-toggle="dropdown-cta" aria-label="Close">
+        {#snippet icon()}
+          <button type="button" class="bg-primary-50 text-primary-900 focus:ring-primary-400 hover:bg-primary-200 dark:bg-primary-900 dark:text-primary-400 dark:hover:bg-primary-800 -mx-1.5 -my-1.5 ms-auto inline-flex h-6 w-6 rounded-lg p-1 focus:ring-2" data-collapse-toggle="dropdown-cta" aria-label="Close">
             <span class="sr-only">Close</span>
-            <CloseOutline class="w-4 h-4" />
+            <CloseOutline class="h-4 w-4" />
           </button>
         {/snippet}
-        <p class="mb-3 text-sm text-primary-900 dark:text-primary-400">Preview the new Flowbite dashboard navigation! You can turn the new navigation off for a limited time in your profile.</p>
-        <a class="text-sm text-primary-900 underline hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300" href="/"> Turn new navigation off </a>
+        <p class="text-primary-900 dark:text-primary-400 mb-3 text-sm">Preview the new Flowbite dashboard navigation! You can turn the new navigation off for a limited time in your profile.</p>
+        <a class="text-primary-900 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300 text-sm underline" href="/">Turn new navigation off</a>
       </SidebarCta>
     </SidebarGroup>
   </SidebarWrapper>
@@ -429,55 +429,55 @@ Show the logo of your brand and link back to the homepage from the top part of t
 
 ```svelte example
 <script>
-  import { Sidebar, SidebarWrapper, SidebarBrand, SidebarItem, SidebarGroup } from 'flowbite-svelte';
-  import { ChartPieSolid, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditOutline } from 'flowbite-svelte-icons';
-  let spanClass = 'flex-1 ms-3 whitespace-nowrap';
+  import { Sidebar, SidebarWrapper, SidebarBrand, SidebarItem, SidebarGroup } from "flowbite-svelte";
+  import { ChartPieSolid, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditOutline } from "flowbite-svelte-icons";
+  let spanClass = "flex-1 ms-3 whitespace-nowrap";
 
   let site = {
-    name: 'Flowbite-Svelte',
-    href: '/',
-    img: '/images/flowbite-svelte-icon-logo.svg'
+    name: "Flowbite-Svelte",
+    href: "/",
+    img: "/images/flowbite-svelte-icon-logo.svg"
   };
 </script>
 
-<Sidebar position="static" >
+<Sidebar position="static">
   <SidebarWrapper>
     <SidebarGroup>
       <SidebarBrand {site} />
       <SidebarItem label="Dashboard">
-       {#snippet icon()}
-          <ChartPieSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <ChartPieSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Kanban" {spanClass}>
-       {#snippet icon()}
-          <GridSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <GridSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
-       {#snippet subtext()}
-          <span class="inline-flex justify-center items-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"> Pro </span>
+        {#snippet subtext()}
+          <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Inbox" {spanClass}>
-       {#snippet icon()}
-          <MailBoxSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <MailBoxSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
-       {#snippet subtext()}
-          <span class="inline-flex justify-center items-center p-3 ms-3 w-3 h-3 text-sm font-medium text-primary-600 bg-primary-200 rounded-full dark:bg-primary-900 dark:text-primary-200"> 3 </span>
+        {#snippet subtext()}
+          <span class="text-primary-600 bg-primary-200 dark:bg-primary-900 dark:text-primary-200 ms-3 inline-flex h-3 w-3 items-center justify-center rounded-full p-3 text-sm font-medium">3</span>
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Users">
-       {#snippet icon()}
-          <UserSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <UserSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sign In">
-       {#snippet icon()}
-          <ArrowRightToBracketOutline class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <ArrowRightToBracketOutline class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sign Up">
-       {#snippet icon()}
-          <EditOutline class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <EditOutline class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
     </SidebarGroup>
@@ -491,10 +491,10 @@ You can add own transition by setting `transitionType` and `transitionParams`.
 
 ```svelte example
 <script>
-  import { page } from '$app/state';
-  import { sineIn } from 'svelte/easing';
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarDropdownWrapper, SidebarDropdownItem } from 'flowbite-svelte';
-  let spanClass = 'flex-1 ms-3 whitespace-nowrap';
+  import { page } from "$app/state";
+  import { sineIn } from "svelte/easing";
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarDropdownWrapper, SidebarDropdownItem } from "flowbite-svelte";
+  let spanClass = "flex-1 ms-3 whitespace-nowrap";
   let activeUrl = page.url.pathname;
   let containPath = () => {
     // add your logic here
@@ -507,7 +507,7 @@ You can add own transition by setting `transitionType` and `transitionParams`.
   };
 </script>
 
-<Sidebar position="static" >
+<Sidebar position="static">
   <SidebarWrapper>
     <SidebarGroup>
       <SidebarItem label="Dashboard" />
@@ -537,31 +537,31 @@ The `SidebarItem` component has `use:action` directive you can use:
 
 ```svelte example
 <script>
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from 'flowbite-svelte';
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from "flowbite-svelte";
   const routes = [
     {
-      label: 'Home',
-      href: '/'
+      label: "Home",
+      href: "/"
     },
     {
-      label: 'Contact',
-      href: '/contact'
+      label: "Contact",
+      href: "/contact"
     },
     {
-      label: 'Profile',
-      href: '/profile'
+      label: "Profile",
+      href: "/profile"
     }
   ];
   const myaction = (label) => {
-    console.log('Hello ', label);
+    console.log("Hello ", label);
   };
 </script>
 
-<Sidebar position="static" >
+<Sidebar position="static">
   <SidebarWrapper>
     <SidebarGroup>
-      {#each routes as {label, href}}
-      <SidebarItem {label} {href} action={myaction(label)}/>
+      {#each routes as { label, href }}
+        <SidebarItem {label} {href} action={myaction(label)} />
       {/each}
     </SidebarGroup>
   </SidebarWrapper>
@@ -572,31 +572,31 @@ The `SidebarItem` component has `use:action` directive you can use:
 
 ```svelte example
 <script>
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarDropdownItem, SidebarDropdownWrapper } from 'flowbite-svelte';
-  import { ChartPieSolid, CartSolid, ChevronDoubleUpOutline, ChevronDoubleDownOutline } from 'flowbite-svelte-icons';
-  let spanClass = 'flex-1 ms-3 whitespace-nowrap';
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarDropdownItem, SidebarDropdownWrapper } from "flowbite-svelte";
+  import { ChartPieSolid, CartSolid, ChevronDoubleUpOutline, ChevronDoubleDownOutline } from "flowbite-svelte-icons";
+  let spanClass = "flex-1 ms-3 whitespace-nowrap";
   const handleClick = () => {
-    console.log('Hello from SidebarDropdownWrapper.');
-  }
+    console.log("Hello from SidebarDropdownWrapper.");
+  };
 </script>
 
-<Sidebar position="static" >
+<Sidebar position="static">
   <SidebarWrapper>
     <SidebarGroup>
       <SidebarItem label="Dashboard">
-       {#snippet icon()}
-          <ChartPieSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <ChartPieSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarDropdownWrapper label="E-commerce" onclickclick={handleClick}>
-       {#snippet icon()}
-          <CartSolid class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        {#snippet icon()}
+          <CartSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
-       {#snippet arrowup()}
-          <ChevronDoubleUpOutline class="w-6 h-6" />
+        {#snippet arrowup()}
+          <ChevronDoubleUpOutline class="h-6 w-6" />
         {/snippet}
-       {#snippet arrowdown()}
-          <ChevronDoubleDownOutline class="w-6 h-6" />
+        {#snippet arrowdown()}
+          <ChevronDoubleDownOutline class="h-6 w-6" />
         {/snippet}
         <SidebarDropdownItem label="Products" />
         <SidebarDropdownItem label="Billing" />

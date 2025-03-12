@@ -8,8 +8,8 @@ export const radioButton = tv({
       false: "flex"
     },
     checked: {
-      true: 'outline-4 outline-green-500',
-    },
+      true: "outline-4 outline-green-500"
+    }
   },
   defaultVariants: {
     inline: true

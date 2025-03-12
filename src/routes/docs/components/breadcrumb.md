@@ -22,7 +22,7 @@ Flowbite includes two styles of breadcrumb elements, one that has a transparent 
 
 ```svelte example hideOutput
 <script>
-  import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
+  import { Breadcrumb, BreadcrumbItem } from "flowbite-svelte";
 </script>
 ```
 
@@ -32,7 +32,7 @@ Use the following breadcrumb example to show the hierarchical structure of pages
 
 ```svelte example hideScript
 <script>
-  import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
+  import { Breadcrumb, BreadcrumbItem } from "flowbite-svelte";
 </script>
 
 <Breadcrumb aria-label="Default breadcrumb example">
@@ -48,7 +48,7 @@ You can alternatively also use the breadcrumb components with a solid background
 
 ```svelte example hideScript
 <script>
-  import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
+  import { Breadcrumb, BreadcrumbItem } from "flowbite-svelte";
 </script>
 
 <Breadcrumb aria-label="Solid background breadcrumb example" solid>
@@ -64,25 +64,25 @@ Use the `icon` snippet to change icons.
 
 ```svelte example
 <script>
-  import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
-  import { HomeOutline, ChevronDoubleRightOutline } from 'flowbite-svelte-icons';
+  import { Breadcrumb, BreadcrumbItem } from "flowbite-svelte";
+  import { HomeOutline, ChevronDoubleRightOutline } from "flowbite-svelte-icons";
 </script>
 
-<Breadcrumb aria-label="Solid background breadcrumb example" class="bg-gray-50 py-3 px-5 dark:bg-gray-900">
+<Breadcrumb aria-label="Solid background breadcrumb example" class="bg-gray-50 px-5 py-3 dark:bg-gray-900">
   <BreadcrumbItem href="/" home>
     {#snippet icon()}
-      <HomeOutline class="w-4 h-4 me-2" />
+      <HomeOutline class="me-2 h-4 w-4" />
     {/snippet}Home
   </BreadcrumbItem>
   <BreadcrumbItem href="/">
     {#snippet icon()}
-      <ChevronDoubleRightOutline class="w-5 h-5 mx-2 dark:text-white" />
+      <ChevronDoubleRightOutline class="mx-2 h-5 w-5 dark:text-white" />
     {/snippet}
     Projects
   </BreadcrumbItem>
   <BreadcrumbItem>
     {#snippet icon()}
-      <ChevronDoubleRightOutline class="w-5 h-5 mx-2 dark:text-white" />
+      <ChevronDoubleRightOutline class="mx-2 h-5 w-5 dark:text-white" />
     {/snippet}
     Flowbite Svelte
   </BreadcrumbItem>

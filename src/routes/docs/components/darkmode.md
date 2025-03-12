@@ -19,7 +19,7 @@ In Flowbite-Svelte, the `class` strategy is used to support toggling dark mode m
 ```js example
 // tailwind.config.cjs
 const config = {
-  darkMode: 'class'
+  darkMode: "class"
   // ...
 };
 ```
@@ -38,7 +38,7 @@ Finally, use the dark mode component to display a switcher (that is a button) fo
 ```svelte example
 <!-- src/routes/+layout.svelte -->
 <script>
-  import { DarkMode } from 'flowbite-svelte';
+  import { DarkMode } from "flowbite-svelte";
 </script>
 
 <DarkMode />
@@ -49,7 +49,7 @@ Finally, use the dark mode component to display a switcher (that is a button) fo
 Use `class="dark"` to set the initial theme to the dark mode. The default mode is `light`.
 
 ```html
-<html class="dark" lang="en">
+<html class="dark" lang="en"></html>
 ```
 
 ## Switcher style
@@ -58,9 +58,9 @@ Use the `btnClass` prop to overwrite the default classes:
 
 ```svelte example
 <script>
-  import { DarkMode } from 'flowbite-svelte';
+  import { DarkMode } from "flowbite-svelte";
 
-  let btnClass = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-xl p-2';
+  let btnClass = "text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-xl p-2";
 </script>
 
 <DarkMode {btnClass} />
@@ -70,7 +70,7 @@ Or just use `class` attribute to append classes to the default classes:
 
 ```svelte example
 <script>
-  import { DarkMode } from 'flowbite-svelte';
+  import { DarkMode } from "flowbite-svelte";
 </script>
 
 <DarkMode class="text-primary-500 dark:text-primary-600 border dark:border-gray-800" />
@@ -82,13 +82,13 @@ Use the `lightIcon` and `darkIcon` slots to change icons:
 
 ```svelte example
 <script>
-  import { DarkMode } from 'flowbite-svelte';
-  import { ThumbsUpSolid, ThumbsDownSolid } from 'flowbite-svelte-icons';
+  import { DarkMode } from "flowbite-svelte";
+  import { ThumbsUpSolid, ThumbsDownSolid } from "flowbite-svelte-icons";
 </script>
 
 <DarkMode class="text-lg">
-    <ThumbsUpSolid slot="lightIcon" color="red" />
-    <ThumbsDownSolid slot="darkIcon" color="green" />
+  <ThumbsUpSolid slot="lightIcon" color="red" />
+  <ThumbsDownSolid slot="darkIcon" color="green" />
 </DarkMode>
 ```
 

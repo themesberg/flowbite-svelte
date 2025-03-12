@@ -20,7 +20,7 @@ Import Alert and set variables in the script tag.
 
 ```svelte example hideOutput
 <script>
-  import { Alert } from 'flowbite-svelte';
+  import { Alert } from "flowbite-svelte";
 </script>
 ```
 
@@ -30,7 +30,7 @@ Use the following examples of alert components to show messages as feedback to y
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Alert } from 'flowbite-svelte';
+  import { Alert } from "flowbite-svelte";
 </script>
 
 <Alert>
@@ -65,37 +65,37 @@ You can also include a descriptive icon to complement the message inside the ale
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Alert } from 'flowbite-svelte';
-  import { InfoCircleSolid } from 'flowbite-svelte-icons';
+  import { Alert } from "flowbite-svelte";
+  import { InfoCircleSolid } from "flowbite-svelte-icons";
 </script>
 
 <Alert>
-  {#snippet icon()}<InfoCircleSolid class="w-5 h-5" />{/snippet}
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Default alert!</span>
   Change a few things up and try submitting again.
 </Alert>
 <Alert color="blue">
-  {#snippet icon()}<InfoCircleSolid class="w-5 h-5" />{/snippet}
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Info alert!</span>
   Change a few things up and try submitting again.
 </Alert>
 <Alert color="red">
-  {#snippet icon()}<InfoCircleSolid class="w-5 h-5" />{/snippet}
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Danger alert!</span>
   Change a few things up and try submitting again.
 </Alert>
 <Alert color="green">
-  {#snippet icon()}<InfoCircleSolid class="w-5 h-5" />{/snippet}
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Success alert!</span>
   Change a few things up and try submitting again.
 </Alert>
 <Alert color="yellow">
-  {#snippet icon()}<InfoCircleSolid class="w-5 h-5" />{/snippet}
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Warning alert!</span>
   Change a few things up and try submitting again.
 </Alert>
 <Alert color="dark">
-  {#snippet icon()}<InfoCircleSolid class="w-5 h-5" />{/snippet}
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Dark alert!</span>
   Change a few things up and try submitting again.
 </Alert>
@@ -107,37 +107,37 @@ Use this example to add a border accent to the alert component instead of just a
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Alert } from 'flowbite-svelte';
-  import { InfoCircleSolid } from 'flowbite-svelte-icons';
+  import { Alert } from "flowbite-svelte";
+  import { InfoCircleSolid } from "flowbite-svelte-icons";
 </script>
 
 <Alert border>
-  {#snippet icon()}<InfoCircleSolid class="w-5 h-5" />{/snippet}
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Default alert!</span>
   Change a few things up and try submitting again.
 </Alert>
 <Alert border color="blue">
-  {#snippet icon()}<InfoCircleSolid class="w-5 h-5" />{/snippet}
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Info alert!</span>
   Change a few things up and try submitting again.
 </Alert>
 <Alert border color="red">
-  {#snippet icon()}<InfoCircleSolid class="w-5 h-5" />{/snippet}
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Danger alert!</span>
   Change a few things up and try submitting again.
 </Alert>
 <Alert border color="green">
-  {#snippet icon()}<InfoCircleSolid class="w-5 h-5" />{/snippet}
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Success alert!</span>
   Change a few things up and try submitting again.
 </Alert>
 <Alert border color="yellow">
-  {#snippet icon()}<InfoCircleSolid class="w-5 h-5" />{/snippet}
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Warning alert!</span>
   Change a few things up and try submitting again.
 </Alert>
 <Alert border color="dark">
-  {#snippet icon()}<InfoCircleSolid class="w-5 h-5" />{/snippet}
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Dark alert!</span>
   Change a few things up and try submitting again.
 </Alert>
@@ -149,18 +149,18 @@ Use this example to show a list and a description inside an alert component.
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Alert, Li, List } from 'flowbite-svelte';
-  import { InfoCircleSolid } from 'flowbite-svelte-icons';
+  import { Alert, Li, List } from "flowbite-svelte";
+  import { InfoCircleSolid } from "flowbite-svelte-icons";
 </script>
 
 <Alert class="items-start!">
   {#snippet icon()}<span>
-    <InfoCircleSolid class="w-5 h-5" />
-    <span class="sr-only">Info</span>
-  </span>
-    {/snippet}
+      <InfoCircleSolid class="h-5 w-5" />
+      <span class="sr-only">Info</span>
+    </span>
+  {/snippet}
   <p class="font-medium">Ensure that these requirements are met:</p>
-  <ul class="mt-1.5 ms-4 list-disc list-inside">
+  <ul class="ms-4 mt-1.5 list-inside list-disc">
     <li>At least 10 characters (and up to 100 characters)</li>
     <li>At least one lowercase character</li>
     <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
@@ -168,12 +168,12 @@ Use this example to show a list and a description inside an alert component.
 </Alert>
 <Alert color="blue" class="items-start!">
   {#snippet icon()}<span>
-    <InfoCircleSolid class="w-5 h-5" />
-    <span class="sr-only">Info</span>
-  </span>
-    {/snippet}
+      <InfoCircleSolid class="h-5 w-5" />
+      <span class="sr-only">Info</span>
+    </span>
+  {/snippet}
   <p class="font-medium">Ensure that these requirements are met:</p>
-  <List class="mt-1.5 ms-4">
+  <List class="ms-4 mt-1.5">
     <Li>At least 10 characters (and up to 100 characters)</Li>
     <Li>At least one lowercase character</Li>
     <Li>Inclusion of at least one special character, e.g., ! @ # ?</Li>
@@ -191,41 +191,41 @@ You can use `slot="close"` to override the default close button. That slot expos
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Alert, Button } from 'flowbite-svelte';
-  import { InfoCircleSolid } from 'flowbite-svelte-icons';
-  import { fly } from 'svelte/transition';
+  import { Alert, Button } from "flowbite-svelte";
+  import { InfoCircleSolid } from "flowbite-svelte-icons";
+  import { fly } from "svelte/transition";
 </script>
 
 <Alert dismissable>
-  {#snippet icon()}<InfoCircleSolid class="w-5 h-5" />{/snippet}
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   A simple default alert with an
   <a href="/" class="font-semibold underline hover:text-blue-800 dark:hover:text-blue-900">example link</a>
   . Give it a click if you like.
 </Alert>
 <Alert color="blue" dismissable>
-  {#snippet icon()}<InfoCircleSolid class="w-5 h-5" />{/snippet}
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   A simple info alert with an
   <a href="/" class="font-semibold underline hover:text-blue-800 dark:hover:text-blue-900">example link</a>
   . Give it a click if you like.
 </Alert>
 <Alert color="red" dismissable>
-  {#snippet icon()}<InfoCircleSolid class="w-5 h-5" />{/snippet}
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   A simple info alert with an
   <a href="/" class="font-semibold underline hover:text-red-800 dark:hover:text-red-900">example link</a>
   . Give it a click if you like.
 </Alert>
 <Alert color="green" dismissable>
-  {#snippet icon()}<InfoCircleSolid class="w-5 h-5" />{/snippet}
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   A simple info alert with an
   <a href="/" class="font-semibold underline hover:text-green-800 dark:hover:text-green-900">example link</a>
   . Give it a click if you like.
 </Alert>
 <Alert color="yellow" dismissable transition={fly} params={{ x: 200 }}>
-  {#snippet icon()}<InfoCircleSolid class="w-5 h-5" />{/snippet}
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   An alert with non default animation - fly away.
 </Alert>
 <Alert color="dark" dismissable>
-  {#snippet icon()}<InfoCircleSolid class="w-5 h-5" />{/snippet}
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   An alert with the custom dismissal button. slot
   <Button slot="close-button" size="xs" let:close on:click={close} class="ms-auto">Dissmiss me</Button>
 </Alert>
@@ -237,32 +237,32 @@ Use the following alert components with a border accent as an alternative style.
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Alert } from 'flowbite-svelte';
-  import { InfoCircleSolid } from 'flowbite-svelte-icons';
+  import { Alert } from "flowbite-svelte";
+  import { InfoCircleSolid } from "flowbite-svelte-icons";
 </script>
 
 <Alert rounded={false} class="border-t-4">
-  {#snippet icon()}<InfoCircleSolid class="w-5 h-5" />{/snippet}
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Info alert!</span>
   Change a few things up and try submitting again.
 </Alert>
 <Alert color="red" rounded={false} class="border-t-4">
-  {#snippet icon()}<InfoCircleSolid class="w-5 h-5" />{/snippet}
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Danger alert!</span>
   Change a few things up and try submitting again.
 </Alert>
 <Alert color="green" rounded={false} class="border-t-4">
-  {#snippet icon()}<InfoCircleSolid class="w-5 h-5" />{/snippet}
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Success alert!</span>
   Change a few things up and try submitting again.
 </Alert>
 <Alert color="yellow" rounded={false} class="border-t-4">
-  {#snippet icon()}<InfoCircleSolid class="w-5 h-5" />{/snippet}
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Warning alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert color="dark" rounded={false} class="border-t-4 flex-row-reverse">
-  {#snippet icon()}<InfoCircleSolid class="w-5 h-5" />{/snippet}
+<Alert color="dark" rounded={false} class="flex-row-reverse border-t-4">
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Dark alert!</span>
   Change a few things up and try submitting again.
 </Alert>
@@ -274,29 +274,29 @@ The following alert components can be used if you wish to disclose more informat
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Alert, Button } from 'flowbite-svelte';
-  import { InfoCircleSolid, EyeSolid } from 'flowbite-svelte-icons';
+  import { Alert, Button } from "flowbite-svelte";
+  import { InfoCircleSolid, EyeSolid } from "flowbite-svelte-icons";
 </script>
 
 <Alert>
   <div class="flex items-center gap-3">
-    <InfoCircleSolid class="w-5 h-5" />
+    <InfoCircleSolid class="h-5 w-5" />
     <span class="text-lg font-medium">This is a info alert</span>
   </div>
   <p class="mt-2 mb-4 text-sm">More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
   <div class="flex gap-2">
-    <Button size="xs"><EyeSolid class="w-4 h-4 me-2" />View more</Button>
+    <Button size="xs"><EyeSolid class="me-2 h-4 w-4" />View more</Button>
     <Button size="xs" outline>Go to Home</Button>
   </div>
 </Alert>
 <Alert color="green">
   <div class="flex items-center gap-3">
-    <InfoCircleSolid class="w-5 h-5" />
+    <InfoCircleSolid class="h-5 w-5" />
     <span class="text-lg font-medium">This is a info alert</span>
   </div>
   <p class="mt-2 mb-4 text-sm">More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
   <div class="flex gap-2">
-    <Button size="xs" color="green"><EyeSolid class="w-4 h-4 me-2" />View more</Button>
+    <Button size="xs" color="green"><EyeSolid class="me-2 h-4 w-4" />View more</Button>
     <Button size="xs" outline color="green">Go to Home</Button>
   </div>
 </Alert>
@@ -308,7 +308,7 @@ Use `color='none'` to disable coloring. Then use `class` to add your custom colo
 
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
-  import { Alert } from 'flowbite-svelte';
+  import { Alert } from "flowbite-svelte";
 </script>
 
 <Alert color="none" class="bg-sky-500 text-white">Your content</Alert>
@@ -320,9 +320,9 @@ Use the `click` event with `dismissable` prop.
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Alert } from 'flowbite-svelte';
+  import { Alert } from "flowbite-svelte";
   const closeAlert = () => {
-    alert('Clicked closeAlert.');
+    alert("Clicked closeAlert.");
   };
 </script>
 

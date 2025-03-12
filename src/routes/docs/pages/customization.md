@@ -19,7 +19,7 @@ In this case, you can overwrite the `defaultClass` by adding the `class` prop. H
 
 ```svelte example
 <script>
-  import { Alert } from '$lib';
+  import { Alert } from "$lib";
 </script>
 
 <Alert class="text-xl">Add a class to overwrite the default class!</Alert>
@@ -33,7 +33,7 @@ In Tailwind CSS, you can make any utility class important by adding a `!` charac
 
 ```svelte example
 <script>
-  import { Button } from 'flowbite-svelte';
+  import { Button } from "flowbite-svelte";
 </script>
 
 <Button class="bg-blue-500!">Blue Button</Button>
@@ -46,7 +46,7 @@ While the `class` prop can be used for most components, some components with a c
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { Banner, Skeleton, ImagePlaceholder } from 'flowbite-svelte';
+  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
 </script>
 
 <Skeleton class="py-4" />
@@ -70,11 +70,11 @@ Start by creating your own component based on Flowbite-Svelte.
 Create a new file for your button component in the lib directory:
 
 ```svelte example hideOutput
-// src/lib/MyButton.svelte
 <script>
-  import { Button } from 'flowbite-svelte'
+  import { Button } from "flowbite-svelte";
 </script>
 
+// src/lib/MyButton.svelte
 <Button color="green" pill class="p-8">
   <slot />
 </Button>
@@ -85,9 +85,7 @@ Once you have created your button component, you can use it in your project.
 In your project, import your custom button component:
 
 ```js
-<script>
-  import MyButton from "$lib/MyButton.svelte"
-</script>
+<script>import MyButton from "$lib/MyButton.svelte"</script>
 ```
 
 Use the custom button component in your project by adding the following code:

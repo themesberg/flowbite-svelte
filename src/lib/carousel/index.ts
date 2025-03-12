@@ -7,4 +7,3 @@ import Thumbnails from "./Thumbnails.svelte";
 import type { CarouselProps } from "./type";
 
 export { Carousel, carousel, ControlButton, Controls, Indicators, Thumbnails, type CarouselProps };
-

@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { Input, Label, Button, Checkbox, A } from '$lib';
+  import { Input, Label, Button, Checkbox, A } from "$lib";
   let formData = {
-    first_name: '',
-    last_name: '',
-    company: '',
-    website: '',
-    email: ''
+    first_name: "",
+    last_name: "",
+    company: "",
+    website: "",
+    email: ""
   };
   export const snapshot = {
     capture: () => formData,
@@ -14,7 +14,7 @@
 </script>
 
 <form class="p-16">
-  <div class="grid gap-6 mb-6 md:grid-cols-2">
+  <div class="mb-6 grid gap-6 md:grid-cols-2">
     <div>
       <Label for="first_name" class="mb-2">First name</Label>
       <Input type="text" id="first_name" placeholder="John" required bind:value={formData.first_name} />

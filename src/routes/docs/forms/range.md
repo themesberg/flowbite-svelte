@@ -20,7 +20,7 @@ The range component can be used as an input field to get a number from the user 
 
 ```svelte example hideOutput
 <script>
-  import { Range } from 'flowbite-svelte';
+  import { Range } from "flowbite-svelte";
 </script>
 ```
 
@@ -28,22 +28,22 @@ The range component can be used as an input field to get a number from the user 
 
 ```svelte example
 <script>
-  import { Range, Label } from 'flowbite-svelte';
+  import { Range, Label } from "flowbite-svelte";
 </script>
 
 <Label>Default range</Label>
-<Range id="range1"  value={50} />
+<Range id="range1" value={50} />
 ```
 
 ## Disabled state
 
 ```svelte example
 <script>
-  import { Range, Label } from 'flowbite-svelte';
+  import { Range, Label } from "flowbite-svelte";
 </script>
 
 <Label>Default range</Label>
-<Range id="range-disabled" disabled  value={50}/>
+<Range id="range-disabled" disabled value={50} />
 ```
 
 ## Binding value
@@ -54,7 +54,7 @@ Use bind:value to bind the range input value as seen the the following examples.
 
 ```svelte example
 <script>
-  import { Range, Label } from 'flowbite-svelte';
+  import { Range, Label } from "flowbite-svelte";
   let minmaxValue = 5;
 </script>
 
@@ -67,7 +67,7 @@ Use bind:value to bind the range input value as seen the the following examples.
 
 ```svelte example
 <script>
-  import { Range, Label } from 'flowbite-svelte';
+  import { Range, Label } from "flowbite-svelte";
   let stepValue = 2.5;
 </script>
 
@@ -80,15 +80,15 @@ Use bind:value to bind the range input value as seen the the following examples.
 
 ```svelte example class="space-y-6"
 <script>
-  import { Range, Label } from 'flowbite-svelte';
+  import { Range, Label } from "flowbite-svelte";
 </script>
 
 <Label>Small range</Label>
-<Range id="small-range" size="sm"  value={50}/>
+<Range id="small-range" size="sm" value={50} />
 <Label>Default range</Label>
-<Range id="default-range" size="md"  value={50}/>
+<Range id="default-range" size="md" value={50} />
 <Label>Large range</Label>
-<Range id="large-range" size="lg"  value={50}/>
+<Range id="large-range" size="lg" value={50} />
 ```
 
 ## Unknown attributes

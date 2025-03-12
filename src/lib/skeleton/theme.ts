@@ -21,7 +21,6 @@ const cardPlaceholder = tv({
   }
 });
 
-
 // ImagePlaceholder
 type ImagePlaceholderVariants = VariantProps<typeof imagePlaceholder>;
 const imagePlaceholder = tv({
@@ -196,4 +195,4 @@ const widgetPlaceholder = tv({
   }
 });
 
-export { cardPlaceholder, type CardPlaceholderVariants, imagePlaceholder, type ImagePlaceholderVariants, listPlaceholder, type ListPlaceholderVariants, skeleton, type SkeletonVariants, testimonialPlaceholder, textPlaceholder, type TextPlaceholderVariants, videoPlaceholder, type VideoPlaceholderVariants, widgetPlaceholder, };
+export { cardPlaceholder, type CardPlaceholderVariants, imagePlaceholder, type ImagePlaceholderVariants, listPlaceholder, type ListPlaceholderVariants, skeleton, type SkeletonVariants, testimonialPlaceholder, textPlaceholder, type TextPlaceholderVariants, videoPlaceholder, type VideoPlaceholderVariants, widgetPlaceholder };

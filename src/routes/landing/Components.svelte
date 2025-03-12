@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Button from '$lib/buttons/Button.svelte';
-  import type { PageData } from '../$types';
-  import CompoCard from '../utils/CompoCard.svelte';
-  import Section from './utils/Section.svelte';
+  import Button from "$lib/buttons/Button.svelte";
+  import type { PageData } from "../$types";
+  import CompoCard from "../utils/CompoCard.svelte";
+  import Section from "./utils/Section.svelte";
 
   export let data: PageData;
 
@@ -14,8 +14,8 @@
 
 <Section class="flex flex-col gap-8 sm:gap-12 lg:pt-24">
   <div class="flex flex-col items-center gap-4 sm:gap-4">
-    <h2 class="tracking-tight font-extrabold text-3xl lg:text-4xl text-gray-900 dark:text-white">Svelte UI components</h2>
-    <p class="text-lg font-normal text-gray-500 dark:text-gray-400 max-w-3xl mx-auto text-center">
+    <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 lg:text-4xl dark:text-white">Svelte UI components</h2>
+    <p class="mx-auto max-w-3xl text-center text-lg font-normal text-gray-500 dark:text-gray-400">
       Explore the whole collection of <span class="font-medium text-gray-900 dark:text-white">
         over {components.length} open-source
       </span>
@@ -23,7 +23,7 @@
     </p>
   </div>
 
-  <div class="grid grid-cols-1 gap-4 sm:gap-8 sm:grid-cols-2 xl:grid-cols-3">
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-8 xl:grid-cols-3">
     {#each components.slice(0, INIT_COUNT) as { path, meta: { dir, component_title, thumnailSize } } (dir + path)}
       <CompoCard name={component_title} {thumnailSize} {dir} {path} />
     {/each}
@@ -35,8 +35,8 @@
   </div>
 
   {#if !expanded}
-    <div class="w-full flex justify-center mb-4">
-      <Button size="md" class="whitespace-nowrap hover:text-primary-600 focus:text-primary-600" color="alternative" on:click={() => (expanded = true)}>View all components</Button>
+    <div class="mb-4 flex w-full justify-center">
+      <Button size="md" class="hover:text-primary-600 focus:text-primary-600 whitespace-nowrap" color="alternative" on:click={() => (expanded = true)}>View all components</Button>
     </div>
   {/if}
 </Section>
