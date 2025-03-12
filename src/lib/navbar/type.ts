@@ -3,7 +3,6 @@ import type { Snippet } from "svelte";
 import type { NavbarType } from "$lib/types";
 
 interface NavbarProps extends HTMLAttributes<HTMLElement> {
-  children: Snippet;
   navSlotBlock?: Snippet;
   navSlotHiddenTop?: Snippet;
   navSlotHiddenBottom?: Snippet;
@@ -23,7 +22,6 @@ interface NavbarProps extends HTMLAttributes<HTMLElement> {
 }
 
 interface NavBrandProps extends HTMLAnchorAttributes {
-  children?: Snippet;
   siteName?: string | undefined | null;
   closeNav?: () => void;
   aClass?: string;
@@ -31,13 +29,11 @@ interface NavBrandProps extends HTMLAnchorAttributes {
 }
 
 interface NavUlProps extends HTMLAttributes<HTMLUListElement> {
-  children: Snippet;
   class?: string;
   activeUrl?: string;
 }
 
 interface NavLiProps extends HTMLAnchorAttributes {
-  children: Snippet;
   closeNav?: () => void;
   href?: string;
   aClass?: string;

@@ -6,9 +6,8 @@
 
   let { toggleNav, class: className, ...restProps }: Props = $props();
 
-  let breakPoint;
   const context = getContext<NavbarType>("navbarContext");
-  breakPoint = context.breakPoint ?? "md";
+  let breakPoint = $derived(context.breakPoint ?? "md");
   const toggleButton = $derived(navhamburger({ breakPoint, class: clsx(className) }));
   // const handletoggleNav = () => {
   //   toggleNav();

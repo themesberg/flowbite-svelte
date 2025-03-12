@@ -12,9 +12,7 @@
 </script>
 
 <a href="/" onclick={closeNav} {...restProps} class={base({ class: aClass })}>
-  {#if children}
-    {@render children()}
-  {/if}
+  {@render children?.()}
   {#if siteName}
     <span class={span({ class: spanClass })}>{siteName}</span>
   {/if}

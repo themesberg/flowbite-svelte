@@ -25,7 +25,7 @@
 
 <li class={base({ class: className })}>
   <a {href} onclick={closeNav} {...restProps} aria-current={isActive} class={link({ class: aClass })}>
-    {@render children()}
+    {@render children?.()}
   </a>
 </li>
 

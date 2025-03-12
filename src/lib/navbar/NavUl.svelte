@@ -17,7 +17,7 @@
 </script>
 
 <ul {...restProps} class={navUl({ breakPoint, className })}>
-  {@render children()}
+  {@render children?.()}
 </ul>
 
 <!--

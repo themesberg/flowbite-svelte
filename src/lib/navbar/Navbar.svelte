@@ -55,14 +55,14 @@
         {@render navSlotHiddenTop()}
       {/if}
       <div class={menuContainer({ class: div2Class })} transition:slide={slideParams} {...getMenuProps(true)}>
-        {@render children()}
+        {@render children?.()}
       </div>
       {#if navSlotHiddenBottom}
         {@render navSlotHiddenBottom()}
       {/if}
     {:else}
       <div class={menuContainer({ class: div2Class })} {...getMenuProps(false)}>
-        {@render children()}
+        {@render children?.()}
       </div>
     {/if}
   </div>

@@ -33,7 +33,7 @@
     siteName: "Flowbite Svelte"
   }}
   twitter={{
-    handle: "@shinokada",
+    creator: "@shinokada",
     cardType: "summary_large_image",
     title: `${title}`,
     description: `${description}`,
