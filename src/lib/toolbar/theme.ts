@@ -78,7 +78,10 @@ export const toolbar = tv({
         base: "bg-transparent"
       }
     }
-  ]
+  ],
+  defaultVariants: {
+    color: "default"
+  }
 });
 
 export type ToolbarGroupVariants = VariantProps<typeof toolbarGroup>;
@@ -106,7 +109,11 @@ export const toolbarGroup = tv({
       position: ["first", "last"],
       class: "sm:px-0"
     }
-  ]
+  ],
+  defaultVariants: {
+    spacing: "default",
+    padding: "default",
+  }
 });
 
 export type ToolbarButtonVariants = VariantProps<typeof toolbarButton>;
@@ -149,5 +156,9 @@ export const toolbarButton = tv({
       background: false,
       class: "dark:hover:bg-gray-700"
     }
-  ]
+  ],
+  defaultVariants: {
+    color: "default",
+    size: "md"
+  }
 });

@@ -4,7 +4,7 @@
   import { type ToolbarProps as Props, toolbar } from "./";
   import clsx from "clsx";
 
-  let { children, end, color = "default", embedded, class: className, ...restProps }: Props = $props();
+  let { children, end, color, embedded, class: className, ...restProps }: Props = $props();
 
   const separators = writable(false);
   setContext("toolbar", separators);
@@ -26,7 +26,7 @@
 
 <div {...restProps} class={base({ class: clsx(className) })}>
   <div class={content()}>
-    {@render children()}
+    {@render children?.()}
   </div>
   {#if end}
     {@render end()}

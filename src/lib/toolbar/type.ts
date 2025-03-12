@@ -1,34 +1,19 @@
+import type { AnchorButtonAttributes } from "$lib/types";
 import { type Snippet } from "svelte";
-import type { HTMLAnchorAttributes, HTMLAttributes, HTMLButtonAttributes } from "svelte/elements";
-import type { ToolbarButtonVariants, ToolbarVariants } from "./theme";
-
-type ToolbarColor = "primary" | "secondary" | "default" | undefined;
+import type { HTMLAttributes } from "svelte/elements";
+import type { ToolbarButtonVariants, ToolbarGroupVariants, ToolbarVariants } from "./theme";
 
 interface ToolbarProps extends ToolbarVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
-  children: Snippet;
   end?: Snippet;
-  // embedded?: boolean;
-  // color?: ToolbarColor;
 }
 
-type SpacingType = "default" | "tight" | "loose" | undefined;
-type PaddingType = "default" | "none" | undefined;
-type PositionType = "first" | "last" | "middle" | undefined;
-
-interface ToolbarGroupProps extends HTMLAttributes<HTMLDivElement> {
-  children: Snippet;
-  class?: string;
-  spacing?: SpacingType;
-  padding?: PaddingType;
-  position?: PositionType;
+interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> {
 }
 
-type HTMLButtonOrAnchorAttributes = Omit<HTMLButtonAttributes & HTMLAnchorAttributes, "color">;
-
-interface ToolbarButtonProps extends ToolbarButtonVariants, HTMLButtonOrAnchorAttributes {
-  children: Snippet;
+type ToolbarButtonProps = ToolbarButtonVariants & AnchorButtonAttributes & {
   name?: string;
   // ariaLabel?: string;
 }
 
-export type { ToolbarProps, ToolbarGroupProps, ToolbarButtonProps };
+export type { ToolbarButtonProps, ToolbarGroupProps, ToolbarProps };
+
