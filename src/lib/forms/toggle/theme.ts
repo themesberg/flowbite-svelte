@@ -16,7 +16,7 @@ export const toggle = tv({
       true: "",
       false: ""
     },
-    _offLabel: {
+    off_state_label: {
       true: { span: "ms-3" }
     },
     color: {

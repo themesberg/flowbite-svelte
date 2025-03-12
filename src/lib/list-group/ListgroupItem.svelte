@@ -23,11 +23,11 @@
   {/if}
 {/snippet}
 
-{#if restProps.href === null && !active}
+{#if restProps.href === undefined && !active}
   <li class={itemClass}>
     {@render nameOrChildren()}
   </li>
-{:else if restProps.href === null}
+{:else if restProps.href === undefined}
   <button type="button" {...restProps} class={itemClass} {disabled} aria-current={current}>
     {@render nameOrChildren()}
   </button>

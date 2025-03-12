@@ -1,7 +1,8 @@
 <script lang="ts">
+  import clsx from "clsx";
   import { type BottomNavHeaderItemProps as Props, bottomnavheaderitem } from ".";
   let { itemName, active, class: className, ...restProps }: Props = $props();
-  let base = $derived(bottomnavheaderitem({ active, className }));
+  let base = $derived(bottomnavheaderitem({ active, class: clsx(className) }));
 </script>
 
 <button {...restProps} class={base}>

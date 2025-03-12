@@ -117,7 +117,7 @@ interface AnchorAttributes extends Omit<HTMLAnchorAttributes, "on:copy" | "oncop
 }
 
 interface ButtonAttibutes extends Omit<HTMLButtonAttributes, "on:copy" | "oncopy"> {
-  href: null;
+  href?: undefined;
 }
 
 export type AnchorButtonAttributes = AnchorAttributes | ButtonAttibutes;

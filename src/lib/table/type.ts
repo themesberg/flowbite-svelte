@@ -45,6 +45,7 @@ interface TableBodyRowProps extends HTMLAttributes<HTMLTableRowElement> {
   striped?: boolean;
   hoverable?: boolean;
   border?: boolean;
+  color?: TableVariants["color"]
 }
 
 interface TableBodyCellProps extends HTMLTdAttributes {

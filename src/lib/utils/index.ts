@@ -1,12 +1,12 @@
+import type { AnchorButtonAttributes } from "$lib/types";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { tv, type VariantProps } from "tailwind-variants";
+import CloseButton from "./CloseButton.svelte";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
-import CloseButton from "./CloseButton.svelte";
-import { tv, type VariantProps } from "tailwind-variants";
-import type { HTMLButtonAttributes } from "svelte/elements";
 
 type CloseButtonVariants = VariantProps<typeof closeButtonVariants>;
 const closeButtonVariants = tv({
@@ -45,7 +45,8 @@ const closeButtonVariants = tv({
   },
   defaultVariants: {
     color: "gray",
-    size: "md"
+    size: "md",
+    href: null
   },
   slots: {
     svg: ""
@@ -72,11 +73,10 @@ const closeButtonVariants = tv({
   ]
 });
 
-interface CloseButtonProps extends CloseButtonVariants, Omit<HTMLButtonAttributes, "color"> {
+type CloseButtonProps = CloseButtonVariants & AnchorButtonAttributes & {
   onclick?: (ev: MouseEvent) => void;
   name?: string;
   ariaLabel?: string;
-  href?: string;
 }
 
 export { CloseButton, closeButtonVariants, type CloseButtonProps };

@@ -18,9 +18,9 @@
       {#if children}
         {@render children(item)}
       {:else if typeof item === "string"}
-        <ListgroupItem href={null} class={itemClass} {iconClass} {active} {horizontal} {onclick}>{item}</ListgroupItem>
+        <ListgroupItem href={undefined} class={itemClass} {iconClass} {active} {horizontal} {onclick}>{item}</ListgroupItem>
       {:else}
-        <ListgroupItem href={item.href ?? null} class={itemClass} {iconClass} {active} {horizontal} {...item} onclick={item.onclick ?? onclick} />
+        <ListgroupItem href={item.href} class={itemClass} {iconClass} {active} {horizontal} {...item} onclick={item.onclick ?? onclick} />
       {/if}
     {/each}
   {:else}

@@ -36,7 +36,7 @@
 
   {#if !expanded}
     <div class="mb-4 flex w-full justify-center">
-      <Button size="md" class="hover:text-primary-600 focus:text-primary-600 whitespace-nowrap" color="alternative" on:click={() => (expanded = true)}>View all components</Button>
+      <Button size="md" class="hover:text-primary-600 focus:text-primary-600 whitespace-nowrap" color="alternative" onclick={() => (expanded = true)}>View all components</Button>
     </div>
   {/if}
 </Section>

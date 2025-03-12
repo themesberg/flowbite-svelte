@@ -1,9 +1,8 @@
-import type { Component, Snippet } from "svelte";
-import type { HTMLAnchorAttributes, HTMLAttributes, HTMLButtonAttributes } from "svelte/elements";
-import type { ListgroupItemVariants, ListgroupVariants } from "./theme";
 import type { AnchorButtonAttributes } from "$lib/types";
+import type { Component, Snippet } from "svelte";
+import type { HTMLAttributes } from "svelte/elements";
+import type { ListgroupItemVariants, ListgroupVariants } from "./theme";
 
-/* eslint-disable  @typescript-eslint/no-explicit-any */
 interface ListGroupItemType {
   name: string;
   Icon?: Component;

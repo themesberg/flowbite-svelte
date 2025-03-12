@@ -3,6 +3,7 @@
   import { fade } from "svelte/transition";
   import { type BannerProps as Props, banner } from "./index";
   import type { ParamsType } from "../types";
+  import clsx from "clsx";
 
   let { children, header, bannerStatus = $bindable(true), position = "sticky", dismissable = true, color = "gray", bannerType = "default", class: className, innerClass, transition = fade, params, ...restProps }: Props = $props();
 
@@ -11,7 +12,7 @@
     color
   });
 
-  let bannerClass = $derived(base({ position, bannerType, color, className }));
+  let bannerClass = $derived(base({ position, bannerType, color, class: clsx(className) }));
 
   let innerCls = $derived(insideDiv({ bannerType, class: innerClass }));
 </script>

@@ -5,7 +5,7 @@
 
   let { children, size = "default", value, checked = $bindable(), disabled, color = "primary", class: className, inputClass, spanClass, offLabel, ...restProps }: Props = $props();
 
-  const { input, label, span } = $derived(toggle({ color, checked, size, disabled, _offLabel: !!offLabel }));
+  const { input, label, span } = $derived(toggle({ color, checked, size, disabled, off_state_label: !!offLabel }));
 </script>
 
 <Label class={label({ class: clsx(className) })}>

@@ -13,15 +13,15 @@
 
 {#if href}
   <a {href} {...restProps} class={base} role="button">
-    {@render children()}
+    {@render children?.()}
   </a>
 {:else if tag === "button"}
   <button {type} {...restProps} class={base} {disabled}>
-    {@render children()}
+    {@render children?.()}
   </button>
 {:else}
   <svelte:element this={tag} {...restProps} class={base}>
-    {@render children()}
+    {@render children?.()}
   </svelte:element>
 {/if}
 

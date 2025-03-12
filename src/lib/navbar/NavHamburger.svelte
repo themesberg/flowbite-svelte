@@ -2,13 +2,14 @@
   import { getContext } from "svelte";
   import type { NavbarType } from "$lib/types";
   import { navhamburger, type NavHamburgerProps as Props } from ".";
+  import clsx from "clsx";
 
   let { toggleNav, class: className, ...restProps }: Props = $props();
 
   let breakPoint;
   const context = getContext<NavbarType>("navbarContext");
   breakPoint = context.breakPoint ?? "md";
-  const toggleButton = $derived(navhamburger({ breakPoint, className }));
+  const toggleButton = $derived(navhamburger({ breakPoint, class: clsx(className) }));
   // const handletoggleNav = () => {
   //   toggleNav();
   //   console.log('toggleNav clicked')
