@@ -1,8 +1,20 @@
 {
   "name": "Slide",
   "props": [
-    ["image", "any", ""],
-    ["transition", "any", ""],
-    ["class", "string", ""]
+    [
+      "image",
+      "any",
+      ""
+    ],
+    [
+      "transition",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

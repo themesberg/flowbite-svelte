@@ -1,11 +1,40 @@
 {
   "name": "MegaMenu",
   "props": [
-    ["children", "any", ""],
-    ["footer", "any", ""],
-    ["items", "any", "[]"],
-    ["full", "any", ""],
-    ["open", "any", "$bindable()"],
-    ["class", "string", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "extra",
+      "any",
+      ""
+    ],
+    [
+      "items",
+      "any",
+      "[]"
+    ],
+    [
+      "full",
+      "any",
+      "false"
+    ],
+    [
+      "open",
+      "any",
+      "false"
+    ],
+    [
+      "ulClass",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

@@ -25,7 +25,9 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let menuClass: $$Props['menuClass'] = 'h-6 w-6 shrink-0';
-@prop export let onClick: $$Props['onClick'] = undefined;
-@prop export let classMenu: $$Props['classMenu'] = '';
+@props: children: any;
+@props:onclick: any;
+@props:menuClass: any;
+@props:class: string;
+@props:title: any = "Open main menu";
 -->

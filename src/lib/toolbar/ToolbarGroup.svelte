@@ -21,8 +21,8 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @props: children: any;
-@props:spacing: any = "default";
-@props:padding: any = "default";
+@props:spacing: any;
+@props:padding: any;
 @props:position: any = "middle";
 @props:class: string;
 -->

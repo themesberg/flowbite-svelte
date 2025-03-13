@@ -1,7 +1,15 @@
 {
   "name": "Skeleton",
   "props": [
-    ["size", "any", "\"sm\""],
-    ["class", "string", ""]
+    [
+      "size",
+      "any",
+      "\"sm\""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

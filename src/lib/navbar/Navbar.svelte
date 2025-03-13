@@ -36,6 +36,8 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let fluid: $$Props['fluid'] = false;
-@prop export let navContainerClass: string= '';
+@props: children: any;
+@props:fluid: any;
+@props:navContainerClass: any;
+@props:class: string;
 -->

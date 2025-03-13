@@ -35,10 +35,9 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @props: children: any;
-@props:color: any = "default";
+@props:color: any;
 @props:name: any;
 @props:"aria-label": any;
-@props:size: any = "md";
-@props:href: any;
+@props:size: any;
 @props:class: string;
 -->

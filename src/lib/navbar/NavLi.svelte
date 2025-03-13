@@ -37,7 +37,8 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let href: $$Props['href'] = '';
-@prop export let activeClass: $$Props['activeClass'] = undefined;
-@prop export let nonActiveClass: $$Props['nonActiveClass'] = undefined;
+@props: children: any;
+@props:activeClass: any = context.activeClass;
+@props:nonActiveClass: any = context.nonActiveClass;
+@props:class: string;
 -->

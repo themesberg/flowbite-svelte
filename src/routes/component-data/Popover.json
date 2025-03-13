@@ -1,13 +1,45 @@
 {
   "name": "Popover",
   "props": [
-    ["title", "any", ""],
-    ["color", "any", "\"default\""],
-    ["trigger", "any", "\"click\""],
-    ["defaultClass", "any", ""],
-    ["arrow", "any", "true"],
-    ["children", "any", ""],
-    ["placement", "any", "\"top\""],
-    ["class", "string", ""]
+    [
+      "title",
+      "any",
+      ""
+    ],
+    [
+      "color",
+      "any",
+      "\"default\""
+    ],
+    [
+      "trigger",
+      "any",
+      "\"click\""
+    ],
+    [
+      "defaultClass",
+      "any",
+      ""
+    ],
+    [
+      "arrow",
+      "any",
+      "true"
+    ],
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "placement",
+      "any",
+      "\"top\""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

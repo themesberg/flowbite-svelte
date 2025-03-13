@@ -1,19 +1,75 @@
 {
   "name": "SpeedDial",
   "props": [
-    ["children", "any", ""],
-    ["icon", "any", ""],
-    ["button", "any", ""],
-    ["popperClass", "any", ""],
-    ["placement", "any", "\"top\""],
-    ["pill", "any", "true"],
-    ["tooltip", "any", "\"left\""],
-    ["trigger", "any", "\"hover\""],
-    ["textOutside", "any", "false"],
-    ["name", "any", "\"Open actions menu\""],
-    ["gradient", "any", "false"],
-    ["class", "string", ""],
-    ["ontoggle", "any", ""],
-    ["onbeforetoggle", "any", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "icon",
+      "any",
+      ""
+    ],
+    [
+      "button",
+      "any",
+      ""
+    ],
+    [
+      "popperClass",
+      "any",
+      ""
+    ],
+    [
+      "placement",
+      "any",
+      "\"top\""
+    ],
+    [
+      "pill",
+      "any",
+      "true"
+    ],
+    [
+      "tooltip",
+      "any",
+      "\"left\""
+    ],
+    [
+      "trigger",
+      "any",
+      "\"hover\""
+    ],
+    [
+      "textOutside",
+      "any",
+      "false"
+    ],
+    [
+      "name",
+      "any",
+      "\"Open actions menu\""
+    ],
+    [
+      "gradient",
+      "any",
+      "false"
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "ontoggle",
+      "any",
+      ""
+    ],
+    [
+      "onbeforetoggle",
+      "any",
+      ""
+    ]
   ]
 }

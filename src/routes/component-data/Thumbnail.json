@@ -1,7 +1,15 @@
 {
   "name": "Thumbnail",
   "props": [
-    ["selected", "any", ""],
-    ["class", "string", ""]
+    [
+      "selected",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

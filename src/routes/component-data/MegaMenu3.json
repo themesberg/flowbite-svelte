@@ -1,5 +1,5 @@
 {
-  "name": "Ios",
+  "name": "MegaMenu3",
   "props": [
     [
       "children",
@@ -7,33 +7,28 @@
       ""
     ],
     [
-      "divClass",
+      "extra",
       "any",
       ""
     ],
     [
-      "div2Class",
+      "items",
+      "any",
+      "[]"
+    ],
+    [
+      "full",
       "any",
       ""
     ],
     [
-      "div3Class",
+      "open",
       "any",
-      ""
+      "$bindable()"
     ],
     [
-      "div4Class",
-      "any",
-      ""
-    ],
-    [
-      "div5Class",
-      "any",
-      ""
-    ],
-    [
-      "div6Class",
-      "any",
+      "class",
+      "string",
       ""
     ]
   ]

@@ -1,28 +1,120 @@
 {
   "name": "Modal",
   "props": [
-    ["children", "any", ""],
-    ["header", "any", ""],
-    ["footer", "any", ""],
-    ["title", "any", ""],
-    ["open", "any", "$bindable(false)"],
-    ["dismissable", "any", "true"],
-    ["divClass", "any", ""],
-    ["contentClass", "any", ""],
-    ["closeBtnClass", "any", ""],
-    ["h3Class", "any", ""],
-    ["headerClass", "any", ""],
-    ["bodyClass", "any", ""],
-    ["footerClass", "any", ""],
-    ["outsideClose", "any", "true"],
-    ["size", "any", "\"md\""],
-    ["backdrop", "any", "true"],
-    ["backdropClass", "any", ""],
-    ["placement", "any", ""],
-    ["class", "string", ""],
-    ["params", "any", "{ duration: 100"],
-    ["easing", "any", ""],
-    ["transition", "any", "fade"],
-    ["rounded", "any", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "header",
+      "any",
+      ""
+    ],
+    [
+      "footer",
+      "any",
+      ""
+    ],
+    [
+      "title",
+      "any",
+      ""
+    ],
+    [
+      "open",
+      "any",
+      "$bindable(false)"
+    ],
+    [
+      "dismissable",
+      "any",
+      "true"
+    ],
+    [
+      "divClass",
+      "any",
+      ""
+    ],
+    [
+      "contentClass",
+      "any",
+      ""
+    ],
+    [
+      "closeBtnClass",
+      "any",
+      ""
+    ],
+    [
+      "h3Class",
+      "any",
+      ""
+    ],
+    [
+      "headerClass",
+      "any",
+      ""
+    ],
+    [
+      "bodyClass",
+      "any",
+      ""
+    ],
+    [
+      "footerClass",
+      "any",
+      ""
+    ],
+    [
+      "outsideClose",
+      "any",
+      "true"
+    ],
+    [
+      "size",
+      "any",
+      "\"md\""
+    ],
+    [
+      "backdrop",
+      "any",
+      "true"
+    ],
+    [
+      "backdropClass",
+      "any",
+      ""
+    ],
+    [
+      "placement",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "params",
+      "any",
+      "{ duration: 100"
+    ],
+    [
+      "easing",
+      "any",
+      ""
+    ],
+    [
+      "transition",
+      "any",
+      "fade"
+    ],
+    [
+      "rounded",
+      "any",
+      ""
+    ]
   ]
 }

@@ -40,7 +40,7 @@
 ## Props
 @props: children: any;
 @props:hidden: any = $bindable();
-@props:closeDrawer: any;
+@props:closeDrawer: any = ();
 @props:activateClickOutside: any = true;
 @props:position: any;
 @props:width: any;
@@ -48,8 +48,6 @@
 @props:backdropClass: any;
 @props:placement: any = "left";
 @props:class: string;
-@props:params: any = { x: -320;
-@props:duration: any;
-@props:easing: any;
+@props:params: any;
 @props:transition: any = fly;
 -->

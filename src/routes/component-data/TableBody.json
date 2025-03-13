@@ -1,8 +1,20 @@
 {
   "name": "TableBody",
   "props": [
-    ["children", "any", ""],
-    ["bodyItems", "any", ""],
-    ["class", "string", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "bodyItems",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

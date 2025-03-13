@@ -14,5 +14,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let fluid: boolean = false;
+@props: children: any;
+@props:fluid: any;
+@props:class: string;
 -->

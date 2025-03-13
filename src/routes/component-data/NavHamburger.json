@@ -1,7 +1,30 @@
 {
   "name": "NavHamburger",
   "props": [
-    ["toggleNav", "any", ""],
-    ["class", "string", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "onclick",
+      "any",
+      ""
+    ],
+    [
+      "menuClass",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "title",
+      "any",
+      "\"Open main menu\""
+    ]
   ]
 }

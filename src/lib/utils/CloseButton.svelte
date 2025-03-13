@@ -32,6 +32,5 @@
 @props:name: any = "Close";
 @props:ariaLabel: any;
 @props:size: any = "md";
-@props:href: any;
 @props:class: string;
 -->

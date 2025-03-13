@@ -1,11 +1,35 @@
 {
   "name": "Accordion",
   "props": [
-    ["children", "any", ""],
-    ["flush", "any", ""],
-    ["activeClass", "any", ""],
-    ["inactiveClass", "any", ""],
-    ["multiple", "any", "false"],
-    ["class", "string", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "flush",
+      "any",
+      ""
+    ],
+    [
+      "activeClass",
+      "any",
+      ""
+    ],
+    [
+      "inactiveClass",
+      "any",
+      ""
+    ],
+    [
+      "multiple",
+      "any",
+      "false"
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }
