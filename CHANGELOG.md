@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.0-next.3
+
+### Patch Changes
+
+- Feature ready
+
 ## 1.0.0-next.2
 
 ### Minor Changes

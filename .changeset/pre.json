@@ -4,5 +4,9 @@
   "initialVersions": {
     "flowbite-svelte": "1.0.0-next.0"
   },
-  "changesets": ["fast-candies-add", "heavy-teeth-wink"]
+  "changesets": [
+    "fast-candies-add",
+    "heavy-teeth-wink",
+    "salty-cats-doubt"
+  ]
 }
