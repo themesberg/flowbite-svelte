@@ -30,19 +30,19 @@ export function uiHelpers() {
   };
 }
 
-export function clickOutside(element: HTMLElement, callbackFunction?: () => void) {
-  function onClick(event: MouseEvent) {
+export function clickOutside(element: HTMLElement, callbackFunction?: (e: MouseEvent) => void) {
+  const onClick = (event: MouseEvent) => {
     if (typeof callbackFunction === "function") {
       const targetNode = event.target as Node | null;
       if (!element.contains(targetNode)) {
-        callbackFunction();
+        callbackFunction(event);
       }
     } else {
       console.error("Callback function is not a function");
     }
   }
 
-  document.body.addEventListener("click", onClick);
+  element.ownerDocument.body.addEventListener("click", onClick);
 
   return {
     update(newCallbackFunction: () => void) {
@@ -53,7 +53,7 @@ export function clickOutside(element: HTMLElement, callbackFunction?: () => void
       }
     },
     destroy() {
-      document.body.removeEventListener("click", onClick);
+      element.ownerDocument.body.removeEventListener("click", onClick);
     }
   };
 }

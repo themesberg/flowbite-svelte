@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
-  import { Button, type ButtonProps } from "$lib";
+  import { Button, clickOutside, type ButtonProps } from "$lib";
   import type { DatepickerProps as Props } from "./type";
   import { datepicker } from "./theme";
 
@@ -40,9 +40,9 @@
 
   onMount(() => {
     if (!inline) {
-      document.addEventListener("click", handleClickOutside);
+      datepickerContainerElement?.ownerDocument.addEventListener("click", handleClickOutside);
       return () => {
-        document.removeEventListener("click", handleClickOutside);
+        datepickerContainerElement?.ownerDocument.removeEventListener("click", handleClickOutside);
       };
     }
   });

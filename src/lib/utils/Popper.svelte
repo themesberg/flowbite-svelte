@@ -13,7 +13,7 @@
     border?: boolean;
     offset?: number;
     yOnly?: boolean; // special case for megamenu - only move on y axis
-    strategy?: "absolute" | "fixed";
+    strategy?: Strategy;
     reference?: string | undefined;
     middlewares?: Middleware[];
     children: Snippet;
@@ -24,7 +24,7 @@
 </script>
 
 <script lang="ts">
-  import type { Coords, Middleware, Placement } from "@floating-ui/dom";
+  import type { Coords, Middleware, Placement, Strategy } from "@floating-ui/dom";
   import * as dom from "@floating-ui/dom";
   import type { HTMLAttributes } from "svelte/elements";
   import Arrow from "./Arrow.svelte";
@@ -95,8 +95,8 @@
     if (isTriggered) return;
 
     // if popover has focus don't close when leaving the invoker
-    if (ev?.type === "pointerleave" && popover?.contains(document.activeElement)) return;
-    if (ev?.type === "focusout" && popover?.contains(document.activeElement)) return;
+    if (ev?.type === "pointerleave" && popover?.contains(popover.ownerDocument.activeElement)) return;
+    if (ev?.type === "focusout" && popover?.contains(popover.ownerDocument.activeElement)) return;
 
     popover?.hidePopover();
   }
@@ -113,11 +113,11 @@
 
     if (ev.newState === "open") {
       autoUpdateDestroy = dom.autoUpdate(referenceElement ?? invoker, popover, updatePopoverPosition);
-      document.addEventListener("click", closeOnClickOutside);
+      popover.ownerDocument.addEventListener("click", closeOnClickOutside);
     } else {
       // When closing the popover, we destroy the autoUpdate instance
       autoUpdateDestroy();
-      document.removeEventListener("click", closeOnClickOutside);
+      popover.ownerDocument.removeEventListener("click", closeOnClickOutside);
     }
   }
 
@@ -126,6 +126,13 @@
 
     (ev as TriggeredToggleEvent).trigger = invoker;
     _ontoggle?.(ev as TriggeredToggleEvent);
+  }
+
+  function getTopParent(node: Element) {
+    while (node.parentElement) {
+      node = node.parentElement;
+    }
+    return node;
   }
 
   function set_triggers(node: HTMLElement) {
@@ -137,15 +144,17 @@
       ["pointerleave", close_popover, hoverable]
     ];
 
-    if (triggeredBy) triggerEls = [...document.querySelectorAll<HTMLButtonElement>(triggeredBy)];
+    // workaround for the iframe used in ExampleWrapper.svelte
+
+    if (triggeredBy) triggerEls = [...node.ownerDocument.querySelectorAll<HTMLButtonElement>(triggeredBy)];
     else if (node.previousElementSibling) triggerEls = [node.previousElementSibling as HTMLButtonElement];
 
     if (!triggerEls.length) {
-      console.error("No triggers found.");
+      console.error("No triggers found.", triggeredBy);
       return;
     }
 
-    if (reference) referenceElement = document.querySelector<HTMLElement>(reference);
+    if (reference) referenceElement = node.ownerDocument.querySelector<HTMLElement>(reference);
     // invoker = triggerEls[0];
 
     triggerEls.forEach((element: HTMLButtonElement) => {
