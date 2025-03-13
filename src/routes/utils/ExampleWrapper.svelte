@@ -5,7 +5,7 @@
   import Button from "$lib/buttons/Button.svelte";
   import Tooltip from "$lib/tooltip/Tooltip.svelte";
   import { DesktopPcOutline, MobilePhoneOutline, TabletOutline } from "flowbite-svelte-icons";
-  import { hydrate, mount, onMount } from "svelte";
+  import { mount, onMount } from "svelte";
   import { twJoin, twMerge } from "tailwind-merge";
   import ExampleDarkMode from "./ExampleDarkMode.svelte";
   import ExampleHelper from "./ExampleHelper.svelte";
@@ -187,18 +187,18 @@
     <div class="w-full rounded-t-xl border border-gray-200 bg-gray-50 p-4 dark:border-gray-600 dark:bg-gray-700">
       <div class="grid {meta.hideResponsiveButtons ? 'grid-cols-2' : 'grid-cols-2 sm:grid-cols-3'}">
         {#if path}
-          <Button size="xs" color="alternative" class="hover:text-primary-600 w-fit gap-2 dark:bg-gray-900!" href={"" + path} target="_blank" rel="noreferrer">
+          <Button size="xs" color="alternative" class="hover:text-primary-600 w-fit gap-2 dark:bg-gray-900" href={"" + path} target="_blank" rel="noreferrer">
             <GitHub size="sm" />Edit on GitHub
           </Button>
           {#if !meta.hideResponsiveButtons}
             <div class="hidden justify-center gap-x-2 sm:flex">
-              <Button size="xs" color="alternative" onclick={() => (responsiveDevice = "desktop")}>
+              <Button size="xs" color="alternative" class="dark:bg-gray-900" onclick={() => (responsiveDevice = "desktop")}>
                 <DesktopPcOutline size="sm" />
               </Button>
-              <Button size="xs" color="alternative" onclick={() => (responsiveDevice = "tablet")}>
+              <Button size="xs" color="alternative" class="dark:bg-gray-900" onclick={() => (responsiveDevice = "tablet")}>
                 <TabletOutline size="sm" />
               </Button>
-              <Button size="xs" color="alternative" onclick={() => (responsiveDevice = "mobile")}>
+              <Button size="xs" color="alternative" class="dark:bg-gray-900" onclick={() => (responsiveDevice = "mobile")}>
                 <MobilePhoneOutline size="sm" />
               </Button>
             </div>

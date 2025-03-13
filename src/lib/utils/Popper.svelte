@@ -128,13 +128,6 @@
     _ontoggle?.(ev as TriggeredToggleEvent);
   }
 
-  function getTopParent(node: Element) {
-    while (node.parentElement) {
-      node = node.parentElement;
-    }
-    return node;
-  }
-
   function set_triggers(node: HTMLElement) {
     const events: [string, any, boolean][] = [
       ["focusin", open_popover, focusable],
@@ -143,8 +136,6 @@
       ["pointerenter", open_popover, hoverable],
       ["pointerleave", close_popover, hoverable]
     ];
-
-    // workaround for the iframe used in ExampleWrapper.svelte
 
     if (triggeredBy) triggerEls = [...node.ownerDocument.querySelectorAll<HTMLButtonElement>(triggeredBy)];
     else if (node.previousElementSibling) triggerEls = [node.previousElementSibling as HTMLButtonElement];
@@ -155,10 +146,10 @@
     }
 
     if (reference) referenceElement = node.ownerDocument.querySelector<HTMLElement>(reference);
-    // invoker = triggerEls[0];
+    invoker = triggerEls[0];
 
     triggerEls.forEach((element: HTMLButtonElement) => {
-      if (element.tabIndex < 0) element.tabIndex = 0; // trigger must be focusable
+      // if (element.tabIndex < 0) element.tabIndex = 0; // trigger must be focusable
       for (const [name, handler, cond] of events) if (cond) element.addEventListener(name, handler);
     });
 

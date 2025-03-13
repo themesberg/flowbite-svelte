@@ -41,3 +41,9 @@ const focusTrap: Action<HTMLElement> = (node) => {
 };
 
 export default focusTrap;
+
+export function isFocusable(element: Element) {
+  if (!element) return false;
+
+  return element.matches(selectorTabbable);
+}

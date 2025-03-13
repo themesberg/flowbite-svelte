@@ -23,7 +23,6 @@
 
   let hiddenStore = getContext("navHidden") as Writable<boolean>;
   let _hidden: boolean = $derived(hidden ?? $hiddenStore ?? true);
-  $inspect(_hidden);
   let _divClass: string = $derived(base({ class: clsx(clasName) }));
   let _ulClass: string = $derived(ul({ hidden: _hidden, class: ulClass }));
 </script>

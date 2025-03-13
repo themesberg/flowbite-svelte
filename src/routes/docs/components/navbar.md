@@ -108,7 +108,7 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
 
 This example can be used to show a secondary dropdown menu when clicking on one of the navigation links.
 
-```svelte example class="h-96 md:h-80"
+```svelte example class="h-96 md:h-80" hideResponsiveButtons
 <script>
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Dropdown, DropdownItem, DropdownDivider } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
@@ -131,6 +131,7 @@ This example can be used to show a secondary dropdown menu when clicking on one 
       <DropdownItem href="/">Dashboard</DropdownItem>
       <DropdownItem href="/docs/components/navbar">Settings</DropdownItem>
       <DropdownItem href="/">Earnings</DropdownItem>
+      <DropdownDivider/>
       <DropdownItem href="/">Sign out</DropdownItem>
     </Dropdown>
     <NavLi href="/settings">Setting</NavLi>
@@ -241,7 +242,7 @@ Use this example to create a navigation bar with a user profile or button to tog
 
 ```svelte example class="h-96 md:h-80"
 <script>
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar, Dropdown, DropdownItem, DropdownHeader, DropdownDivider } from "flowbite-svelte";
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar, Dropdown, DropdownItem, DropdownHeader, DropdownGroup } from "flowbite-svelte";
 </script>
 
 <Navbar>
@@ -258,11 +259,12 @@ Use this example to create a navigation bar with a user profile or button to tog
       <span class="block text-sm">Bonnie Green</span>
       <span class="block truncate text-sm font-medium">name@flowbite.com</span>
     </DropdownHeader>
-    <DropdownItem>Dashboard</DropdownItem>
-    <DropdownItem>Settings</DropdownItem>
-    <DropdownItem>Earnings</DropdownItem>
-    <DropdownDivider />
-    <DropdownItem>Sign out</DropdownItem>
+    <DropdownGroup>
+      <DropdownItem>Dashboard</DropdownItem>
+      <DropdownItem>Settings</DropdownItem>
+      <DropdownItem>Earnings</DropdownItem>
+    </DropdownGroup>
+    <DropdownHeader>Sign out</DropdownHeader>
   </Dropdown>
   <NavUl>
     <NavLi href="/" active={true}>Home</NavLi>
