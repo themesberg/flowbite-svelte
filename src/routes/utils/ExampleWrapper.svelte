@@ -5,7 +5,7 @@
   import Button from "$lib/buttons/Button.svelte";
   import Tooltip from "$lib/tooltip/Tooltip.svelte";
   import { DesktopPcOutline, MobilePhoneOutline, TabletOutline } from "flowbite-svelte-icons";
-  import { mount, onMount } from "svelte";
+  import { hydrate, mount, onMount } from "svelte";
   import { twJoin, twMerge } from "tailwind-merge";
   import ExampleDarkMode from "./ExampleDarkMode.svelte";
   import ExampleHelper from "./ExampleHelper.svelte";
@@ -68,7 +68,7 @@
 
   function find_sections(node: HTMLElement) {
     // find closes previous section anchor
-    const section = [...document.querySelectorAll("#mainContent > :where(h2, h3) > [id]")]
+    const section = [...node.ownerDocument.querySelectorAll("#mainContent > :where(h2, h3) > [id]")]
       .map((x: Element) => ({ id: x.id, top: x.parentElement?.offsetTop ?? Infinity, obj: x }))
       .filter((x) => x.top < (node?.offsetTop ?? Infinity))
       .filter((x) => x.id)
@@ -116,6 +116,7 @@
 
   const injectContent = () => {
     if (!iframe?.contentDocument) return;
+    if (!iframe?.contentWindow) return;
 
     iframeLoad = true;
     // get only css and style frome head
@@ -134,9 +135,14 @@
 
     const headContent = Array.from(externalCss).reduce((acc, el) => (acc += el.outerHTML), "");
     // put the content of head in the head of the iframe
-    iframe.contentDocument?.head.insertAdjacentHTML("beforeend", `${headContent}${styleTag.outerHTML}` || "");
-    // append the component content in the iframe body
-    mount(ExampleHelper, { target: iframe.contentDocument?.body, props: { snippet: example, class: twMerge(divClass, meta.class) } });
+    iframe.contentDocument.head.insertAdjacentHTML("beforeend", `${headContent}${styleTag.outerHTML}` || "");
+
+    // mount component
+    mount(ExampleHelper, {
+      target: iframe.contentDocument.body,
+      props: { snippet: example, class: twMerge(divClass, meta.class) }
+    });
+
     updateHeightContent();
     // listen change on height of the iframe content and update the preview height
     if (iframe.contentDocument?.body.firstChild) {
@@ -147,7 +153,6 @@
   };
 
   const updateHeightContent = () => {
-    console.log("updateHight");
     if (codeResponsiveContent) {
       codeResponsiveContent.style.height = `${(iframe?.contentDocument?.body?.firstElementChild as HTMLDivElement)?.offsetHeight || 0}px`;
     }
