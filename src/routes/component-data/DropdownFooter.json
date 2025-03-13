@@ -1,7 +1,7 @@
 {
-  "name": "DropdownFooter",
-  "props": [
-    ["children", "any", ""],
-    ["class", "string", ""]
-  ]
+	"name": "DropdownFooter",
+	"props": [
+		["children", "any", ""],
+		["class", "string", ""]
+	]
 }

@@ -1,9 +1,9 @@
 {
-  "name": "Gallery",
-  "props": [
-    ["children", "any", ""],
-    ["items", "any", "[]"],
-    ["imgClass", "any", ""],
-    ["divClass", "any", ""]
-  ]
+	"name": "Gallery",
+	"props": [
+		["children", "any", ""],
+		["items", "any", "[]"],
+		["imgClass", "any", ""],
+		["divClass", "any", ""]
+	]
 }

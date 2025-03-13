@@ -1,11 +1,11 @@
-import type { Snippet } from "svelte";
+import type { Snippet } from 'svelte';
 
 interface ButtonGroupProps {
-  children: Snippet;
-  size?: SizeType;
-  class?: string;
+	children: Snippet;
+	size?: SizeType;
+	class?: string;
 }
 
-type SizeType = "sm" | "md" | "lg" | undefined;
+type SizeType = 'sm' | 'md' | 'lg' | undefined;
 
 export { type ButtonGroupProps };

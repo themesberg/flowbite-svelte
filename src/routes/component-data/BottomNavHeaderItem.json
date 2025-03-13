@@ -1,8 +1,8 @@
 {
-  "name": "BottomNavHeaderItem",
-  "props": [
-    ["itemName", "any", ""],
-    ["active", "any", ""],
-    ["class", "string", ""]
-  ]
+	"name": "BottomNavHeaderItem",
+	"props": [
+		["itemName", "any", ""],
+		["active", "any", ""],
+		["class", "string", ""]
+	]
 }

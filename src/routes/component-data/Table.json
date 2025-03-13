@@ -1,16 +1,16 @@
 {
-  "name": "Table",
-  "props": [
-    ["children", "any", ""],
-    ["footerSlot", "any", ""],
-    ["captionSlot", "any", ""],
-    ["tableItems", "any", ""],
-    ["divClass", "any", "\"relative overflow-x-auto\""],
-    ["striped", "any", ""],
-    ["hoverable", "any", ""],
-    ["noborder", "any", ""],
-    ["shadow", "any", ""],
-    ["color", "any", "\"default\""],
-    ["class", "string", ""]
-  ]
+	"name": "Table",
+	"props": [
+		["children", "any", ""],
+		["footerSlot", "any", ""],
+		["captionSlot", "any", ""],
+		["tableItems", "any", ""],
+		["divClass", "any", "\"relative overflow-x-auto\""],
+		["striped", "any", ""],
+		["hoverable", "any", ""],
+		["noborder", "any", ""],
+		["shadow", "any", ""],
+		["color", "any", "\"default\""],
+		["class", "string", ""]
+	]
 }

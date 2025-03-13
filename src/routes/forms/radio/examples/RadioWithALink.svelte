@@ -1,8 +1,10 @@
 <script lang="ts">
-  import { Radio } from "$lib";
+	import { Radio } from '$lib';
 </script>
 
 <Radio name="with-link" labelClass="m-2">
-  I agree with the <a href="/" class="ms-1 text-primary-600 hover:underline dark:text-primary-500">terms and conditions</a>
-  .
+	I agree with the <a href="/" class="text-primary-600 dark:text-primary-500 ms-1 hover:underline"
+		>terms and conditions</a
+	>
+	.
 </Radio>

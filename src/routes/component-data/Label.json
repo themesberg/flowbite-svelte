@@ -1,9 +1,9 @@
 {
-  "name": "Label",
-  "props": [
-    ["children", "any", ""],
-    ["color", "any", "\"gray\""],
-    ["show", "any", "true"],
-    ["class", "string", ""]
-  ]
+	"name": "Label",
+	"props": [
+		["children", "any", ""],
+		["color", "any", "\"gray\""],
+		["show", "any", "true"],
+		["class", "string", ""]
+	]
 }

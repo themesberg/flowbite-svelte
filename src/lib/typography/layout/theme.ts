@@ -1,5 +1,5 @@
-import { tv } from "tailwind-variants";
+import { tv } from 'tailwind-variants';
 
 export const layout = tv({
-  base: "grid grid-cols-1 sm:grid-cols-2"
+	base: 'grid grid-cols-1 sm:grid-cols-2'
 });

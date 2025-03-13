@@ -1,25 +1,27 @@
 <script lang="ts">
-  import { listPlaceholder, type ListPlaceholderProps as Props } from "./index";
+	import { listPlaceholder, type ListPlaceholderProps as Props } from './index';
 
-  let { itemNumber = 5, size = "md", rounded, class: className, ...restProps }: Props = $props();
+	let { itemNumber = 5, size = 'md', rounded, class: className, ...restProps }: Props = $props();
 
-  const { base, item, itemContent, itemTitle, itemSubtitle, itemExtra } = $derived(listPlaceholder({ size, rounded }));
+	const { base, item, itemContent, itemTitle, itemSubtitle, itemExtra } = $derived(
+		listPlaceholder({ size, rounded })
+	);
 
-  let items = $derived([...Array(itemNumber).keys()]);
+	let items = $derived([...Array(itemNumber).keys()]);
 </script>
 
 <div role="status" {...restProps} class={base({ className })}>
-  <!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
-  {#each items as _, i}
-    <div class={item({ class: i > 0 ? "pt-4" : "" })}>
-      <div class={itemContent()}>
-        <div class={itemTitle()}></div>
-        <div class={itemSubtitle()}></div>
-      </div>
-      <div class={itemExtra()}></div>
-    </div>
-  {/each}
-  <span class="sr-only">Loading...</span>
+	<!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
+	{#each items as _, i}
+		<div class={item({ class: i > 0 ? 'pt-4' : '' })}>
+			<div class={itemContent()}>
+				<div class={itemTitle()}></div>
+				<div class={itemSubtitle()}></div>
+			</div>
+			<div class={itemExtra()}></div>
+		</div>
+	{/each}
+	<span class="sr-only">Loading...</span>
 </div>
 
 <!--

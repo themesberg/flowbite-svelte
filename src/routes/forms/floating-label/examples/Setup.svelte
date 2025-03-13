@@ -1,3 +1,3 @@
 <script>
-  import { FloatingLabelInput, Helper } from "$lib";
+	import { FloatingLabelInput, Helper } from '$lib';
 </script>

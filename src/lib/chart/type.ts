@@ -1,8 +1,8 @@
-import type { ApexOptions } from "apexcharts";
+import type { ApexOptions } from 'apexcharts';
 
 interface ChartProps {
-  options: ApexOptions;
-  class?: string;
+	options: ApexOptions;
+	class?: string;
 }
 
 export { type ChartProps };

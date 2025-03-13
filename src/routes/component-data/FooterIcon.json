@@ -1,9 +1,9 @@
 {
-  "name": "FooterIcon",
-  "props": [
-    ["children", "any", ""],
-    ["href", "any", ""],
-    ["ariaLabel", "any", ""],
-    ["class", "string", ""]
-  ]
+	"name": "FooterIcon",
+	"props": [
+		["children", "any", ""],
+		["href", "any", ""],
+		["ariaLabel", "any", ""],
+		["class", "string", ""]
+	]
 }

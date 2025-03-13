@@ -1,8 +1,8 @@
 {
-  "name": "Footer",
-  "props": [
-    ["children", "any", ""],
-    ["footerType", "any", "\"default\""],
-    ["class", "string", ""]
-  ]
+	"name": "Footer",
+	"props": [
+		["children", "any", ""],
+		["footerType", "any", "\"default\""],
+		["class", "string", ""]
+	]
 }

@@ -1,13 +1,13 @@
 {
-  "name": "Indicator",
-  "props": [
-    ["children", "any", ""],
-    ["color", "any", "\"primary\""],
-    ["cornerStyle", "any", "\"circular\""],
-    ["size", "any", "\"md\""],
-    ["border", "any", "false"],
-    ["placement", "any", ""],
-    ["offset", "any", "true"],
-    ["class", "string", ""]
-  ]
+	"name": "Indicator",
+	"props": [
+		["children", "any", ""],
+		["color", "any", "\"primary\""],
+		["cornerStyle", "any", "\"circular\""],
+		["size", "any", "\"md\""],
+		["border", "any", "false"],
+		["placement", "any", ""],
+		["offset", "any", "true"],
+		["class", "string", ""]
+	]
 }

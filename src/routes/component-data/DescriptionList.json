@@ -1,8 +1,8 @@
 {
-  "name": "DescriptionList",
-  "props": [
-    ["children", "any", ""],
-    ["tag", "any", ""],
-    ["class", "string", ""]
-  ]
+	"name": "DescriptionList",
+	"props": [
+		["children", "any", ""],
+		["tag", "any", ""],
+		["class", "string", ""]
+	]
 }

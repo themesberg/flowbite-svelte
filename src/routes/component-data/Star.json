@@ -1,14 +1,14 @@
 {
-  "name": "Star",
-  "props": [
-    ["fillPercent", "any", "100"],
-    ["fillColor", "any", "\"#F5CA14\""],
-    ["strokeColor", "any", "\"#F5CA14\""],
-    ["size", "any", "24"],
-    ["ariaLabel", "any", "\"star\""],
-    ["iconIndex", "any", "0"],
-    ["groupId", "any", "\"star\""],
-    ["role", "any", "\"img\""],
-    ["svgClass", "any", ""]
-  ]
+	"name": "Star",
+	"props": [
+		["fillPercent", "any", "100"],
+		["fillColor", "any", "\"#F5CA14\""],
+		["strokeColor", "any", "\"#F5CA14\""],
+		["size", "any", "24"],
+		["ariaLabel", "any", "\"star\""],
+		["iconIndex", "any", "0"],
+		["groupId", "any", "\"star\""],
+		["role", "any", "\"img\""],
+		["svgClass", "any", ""]
+	]
 }

@@ -1,12 +1,12 @@
 {
-  "name": "Video",
-  "props": [
-    ["children", "any", ""],
-    ["type", "any", "\"video/mp4\""],
-    ["trackSrc", "any", ""],
-    ["src", "any", ""],
-    ["srclang", "any", "\"en\""],
-    ["label", "any", "\"english_captions\""],
-    ["class", "string", ""]
-  ]
+	"name": "Video",
+	"props": [
+		["children", "any", ""],
+		["type", "any", "\"video/mp4\""],
+		["trackSrc", "any", ""],
+		["src", "any", ""],
+		["srclang", "any", "\"en\""],
+		["label", "any", "\"english_captions\""],
+		["class", "string", ""]
+	]
 }

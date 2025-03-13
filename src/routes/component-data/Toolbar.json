@@ -1,10 +1,10 @@
 {
-  "name": "Toolbar",
-  "props": [
-    ["children", "any", ""],
-    ["end", "any", ""],
-    ["color", "any", "\"default\""],
-    ["embedded", "any", ""],
-    ["class", "string", ""]
-  ]
+	"name": "Toolbar",
+	"props": [
+		["children", "any", ""],
+		["end", "any", ""],
+		["color", "any", "\"default\""],
+		["embedded", "any", ""],
+		["class", "string", ""]
+	]
 }

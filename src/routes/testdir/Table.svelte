@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { Snippet } from "svelte";
+	import type { Snippet } from 'svelte';
 	interface Fruit {
-    name: string;
-    qty: number;
-    price: number;
+		name: string;
+		qty: number;
+		price: number;
 	}
 	interface Props {
 		children?: Snippet;
@@ -39,11 +39,12 @@
 		border-spacing: 0;
 	}
 
-	tbody tr:nth-child(2n+1) {
+	tbody tr:nth-child(2n + 1) {
 		background: #eee;
 	}
 
-	table :global(th), table :global(td) {
+	table :global(th),
+	table :global(td) {
 		padding: 0.5em;
 	}
 </style>

@@ -1,23 +1,23 @@
 <script lang="ts">
-  import { type NavBrandProps as Props, navbrand } from ".";
-  import { getContext } from "svelte";
-  import type { navbarType } from "$lib/types";
+	import { type NavBrandProps as Props, navbrand } from '.';
+	import { getContext } from 'svelte';
+	import type { navbarType } from '$lib/types';
 
-  let { children, siteName, closeNav, aClass, spanClass, ...restProps }: Props = $props();
+	let { children, siteName, closeNav, aClass, spanClass, ...restProps }: Props = $props();
 
-  const context = getContext<navbarType>("navbarContext");
-  closeNav = context.closeNav ?? closeNav;
+	const context = getContext<navbarType>('navbarContext');
+	closeNav = context.closeNav ?? closeNav;
 
-  const { base, span } = $derived(navbrand());
+	const { base, span } = $derived(navbrand());
 </script>
 
 <a href="/" onclick={closeNav} {...restProps} class={base({ class: aClass })}>
-  {#if children}
-    {@render children()}
-  {/if}
-  {#if siteName}
-    <span class={span({ class: spanClass })}>{siteName}</span>
-  {/if}
+	{#if children}
+		{@render children()}
+	{/if}
+	{#if siteName}
+		<span class={span({ class: spanClass })}>{siteName}</span>
+	{/if}
 </a>
 
 <!--

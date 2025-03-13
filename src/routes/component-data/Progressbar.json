@@ -1,19 +1,19 @@
 {
-  "name": "Progressbar",
-  "props": [
-    ["progress", "any", "\"45\""],
-    ["precision", "any", "0"],
-    ["tweenDuration", "any", "400"],
-    ["animate", "any", "false"],
-    ["size", "any", "\"h-2.5\""],
-    ["labelInside", "any", "false"],
-    ["labelOutside", "any", "\"\""],
-    ["easing", "any", "cubicOut"],
-    ["color", "any", "\"primary\""],
-    ["div2Class", "any", ""],
-    ["oustsideSpanClass", "any", ""],
-    ["oustsideProgressClass", "any", ""],
-    ["labeloutsidedivClass", "any", ""],
-    ["divClass", "any", ""]
-  ]
+	"name": "Progressbar",
+	"props": [
+		["progress", "any", "\"45\""],
+		["precision", "any", "0"],
+		["tweenDuration", "any", "400"],
+		["animate", "any", "false"],
+		["size", "any", "\"h-2.5\""],
+		["labelInside", "any", "false"],
+		["labelOutside", "any", "\"\""],
+		["easing", "any", "cubicOut"],
+		["color", "any", "\"primary\""],
+		["div2Class", "any", ""],
+		["oustsideSpanClass", "any", ""],
+		["oustsideProgressClass", "any", ""],
+		["labeloutsidedivClass", "any", ""],
+		["divClass", "any", ""]
+	]
 }

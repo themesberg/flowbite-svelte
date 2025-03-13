@@ -1,16 +1,16 @@
 <script lang="ts">
-  import Anchor from "../anchor/Anchor.svelte";
-  import type { Snippet } from "svelte";
+	import Anchor from '../anchor/Anchor.svelte';
+	import type { Snippet } from 'svelte';
 
-  interface Props {
-    children: Snippet;
-    class?: string;
-  }
-  let { children, class: className = "group relative" }: Props = $props();
+	interface Props {
+		children: Snippet;
+		class?: string;
+	}
+	let { children, class: className = 'group relative' }: Props = $props();
 </script>
 
 <Anchor tag="h2" class={className}>
-  {@render children()}
+	{@render children()}
 </Anchor>
 
 <!--

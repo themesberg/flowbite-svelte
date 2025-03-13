@@ -1,13 +1,13 @@
 {
-  "name": "TableHead",
-  "props": [
-    ["children", "any", ""],
-    ["headerSlot", "any", ""],
-    ["color", "any", ""],
-    ["striped", "any", ""],
-    ["noborder", "any", ""],
-    ["class", "string", ""],
-    ["headItems", "any", ""],
-    ["defaultRow", "any", "true"]
-  ]
+	"name": "TableHead",
+	"props": [
+		["children", "any", ""],
+		["headerSlot", "any", ""],
+		["color", "any", ""],
+		["striped", "any", ""],
+		["noborder", "any", ""],
+		["class", "string", ""],
+		["headItems", "any", ""],
+		["defaultRow", "any", "true"]
+	]
 }

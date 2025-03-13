@@ -1,9 +1,9 @@
 {
-  "name": "TableBodyCell",
-  "props": [
-    ["children", "any", ""],
-    ["class", "string", ""],
-    ["colspan", "any", ""],
-    ["onclick", "any", ""]
-  ]
+	"name": "TableBodyCell",
+	"props": [
+		["children", "any", ""],
+		["class", "string", ""],
+		["colspan", "any", ""],
+		["onclick", "any", ""]
+	]
 }

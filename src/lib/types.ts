@@ -1,29 +1,78 @@
-import type { TransitionConfig, FadeParams, BlurParams, FlyParams, SlideParams, ScaleParams } from "svelte/transition";
+import type {
+	TransitionConfig,
+	FadeParams,
+	BlurParams,
+	FlyParams,
+	SlideParams,
+	ScaleParams
+} from 'svelte/transition';
 
 // primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
-export type ColorName = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose";
+export type ColorName =
+	| 'primary'
+	| 'secondary'
+	| 'gray'
+	| 'red'
+	| 'orange'
+	| 'amber'
+	| 'yellow'
+	| 'lime'
+	| 'green'
+	| 'emerald'
+	| 'teal'
+	| 'cyan'
+	| 'sky'
+	| 'blue'
+	| 'indigo'
+	| 'violet'
+	| 'purple'
+	| 'fuchsia'
+	| 'pink'
+	| 'rose';
 
-export declare const xs = "xs";
-export declare const sm = "sm";
-export declare const md = "md";
-export declare const lg = "lg";
-export declare const xl = "xl";
+export declare const xs = 'xs';
+export declare const sm = 'sm';
+export declare const md = 'md';
+export declare const lg = 'lg';
+export declare const xl = 'xl';
 
-export type CloseButtonColorType = "dark" | "default" | "gray" | "red" | "yellow" | "green" | "indigo" | "purple" | "pink" | "blue" | "primary" | "none";
+export type CloseButtonColorType =
+	| 'dark'
+	| 'default'
+	| 'gray'
+	| 'red'
+	| 'yellow'
+	| 'green'
+	| 'indigo'
+	| 'purple'
+	| 'pink'
+	| 'blue'
+	| 'primary'
+	| 'none';
 
-export type IndicatorPlacementType = "top-left" | "top-center" | "top-right" | "center-left" | "center" | "center-right" | "bottom-left" | "bottom-center" | "bottom-right" | undefined;
+export type IndicatorPlacementType =
+	| 'top-left'
+	| 'top-center'
+	| 'top-right'
+	| 'center-left'
+	| 'center'
+	| 'center-right'
+	| 'bottom-left'
+	| 'bottom-center'
+	| 'bottom-right'
+	| undefined;
 
 export interface drawerTransitionParamTypes {
-  amount?: number;
-  delay?: number;
-  duration?: number;
-  easing?: (t: number) => number;
-  opacity?: number;
-  x?: number;
-  y?: number;
+	amount?: number;
+	delay?: number;
+	duration?: number;
+	easing?: (t: number) => number;
+	opacity?: number;
+	x?: number;
+	y?: number;
 }
 
-export type FormSizeType = "sm" | "md" | "lg";
+export type FormSizeType = 'sm' | 'md' | 'lg';
 
 // export type drawerTransitionTypes = 'fade' | 'fly' | 'slide' | 'blur' | 'in:fly' | 'out:fly' | 'in:slide' | 'out:slide' | 'in:fade' | 'out:fade' | 'in:blur' | 'out:blur' | undefined;
 
@@ -55,18 +104,35 @@ export type FormSizeType = "sm" | "md" | "lg";
 // }
 
 export type navbarType = {
-  navStatus: boolean | undefined;
-  breakPoint: "md" | "lg" | "xl" | "xxl";
-  activeClass: string | undefined | null;
-  nonActiveClass: string | undefined | null;
-  closeNav: () => void;
+	navStatus: boolean | undefined;
+	breakPoint: 'md' | 'lg' | 'xl' | 'xxl';
+	activeClass: string | undefined | null;
+	nonActiveClass: string | undefined | null;
+	closeNav: () => void;
 };
 
-export type ColorVariant = "gray" | "red" | "yellow" | "green" | "indigo" | "purple" | "pink" | "blue" | "primary" | "none";
+export type ColorVariant =
+	| 'gray'
+	| 'red'
+	| 'yellow'
+	| 'green'
+	| 'indigo'
+	| 'purple'
+	| 'pink'
+	| 'blue'
+	| 'primary'
+	| 'none';
 
 // export type BottomNavVariantType = 'default' | 'border' | 'application' | 'pagination' | 'group' | 'card' | 'meeting' | 'video';
 
-export type DeviceVariantType = "default" | "ios" | "android" | "tablet" | "laptop" | "desktop" | "smartwatch";
+export type DeviceVariantType =
+	| 'default'
+	| 'ios'
+	| 'android'
+	| 'tablet'
+	| 'laptop'
+	| 'desktop'
+	| 'smartwatch';
 
 // export type ProgressBarColorType = 'primary' | 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo';
 
@@ -80,27 +146,48 @@ export type DeviceVariantType = "default" | "ios" | "android" | "tablet" | "lapt
 
 export declare type SizeType = typeof xs | typeof sm | typeof md | typeof lg | typeof xl;
 
-export type TransitionTypes = "fade" | "fly" | "slide" | "blur" | "in:fly" | "out:fly" | "in:slide" | "out:slide" | "in:fade" | "out:fade" | "in:blur" | "out:blur";
+export type TransitionTypes =
+	| 'fade'
+	| 'fly'
+	| 'slide'
+	| 'blur'
+	| 'in:fly'
+	| 'out:fly'
+	| 'in:slide'
+	| 'out:slide'
+	| 'in:fade'
+	| 'out:fade'
+	| 'in:blur'
+	| 'out:blur';
 
 export interface TransitionParamTypes {
-  delay?: number;
-  duration?: number;
-  easing?: (t: number) => number;
-  css?: (t: number, u: number) => string | undefined | null;
-  tick?: (t: number, u: number) => void;
+	delay?: number;
+	duration?: number;
+	easing?: (t: number) => number;
+	css?: (t: number, u: number) => string | undefined | null;
+	tick?: (t: number, u: number) => void;
 }
 
 export type ParamsType = FadeParams | BlurParams | FlyParams | SlideParams | ScaleParams;
 
 export type TransitionFunc = (node: HTMLElement, params: ParamsType) => TransitionConfig;
 
-export type ModalPlacementType = "top-left" | "top-center" | "top-right" | "center-left" | "center" | "center-right" | "bottom-left" | "bottom-center" | "bottom-right";
+export type ModalPlacementType =
+	| 'top-left'
+	| 'top-center'
+	| 'top-right'
+	| 'center-left'
+	| 'center'
+	| 'center-right'
+	| 'bottom-left'
+	| 'bottom-center'
+	| 'bottom-right';
 
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 export interface LinkType {
-  name: string;
-  href?: string;
-  rel?: string;
-  active?: boolean;
-  [propName: string]: any;
+	name: string;
+	href?: string;
+	rel?: string;
+	active?: boolean;
+	[propName: string]: any;
 }

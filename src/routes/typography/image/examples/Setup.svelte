@@ -1,3 +1,3 @@
 <script>
-  import { Img } from "svelte-5-ui-lib";
+	import { Img } from 'svelte-5-ui-lib';
 </script>

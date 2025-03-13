@@ -1,5 +1,5 @@
 <script>
-  import { Darkmode } from "$lib";
+	import { Darkmode } from '$lib';
 </script>
 
 <Darkmode />

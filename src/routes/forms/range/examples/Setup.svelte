@@ -1,3 +1,3 @@
 <script>
-  import { Range } from "$lib";
+	import { Range } from '$lib';
 </script>

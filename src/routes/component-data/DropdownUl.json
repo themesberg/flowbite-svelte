@@ -1,7 +1,7 @@
 {
-  "name": "DropdownUl",
-  "props": [
-    ["children", "any", ""],
-    ["class", "string", ""]
-  ]
+	"name": "DropdownUl",
+	"props": [
+		["children", "any", ""],
+		["class", "string", ""]
+	]
 }

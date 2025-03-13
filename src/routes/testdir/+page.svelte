@@ -1,5 +1,5 @@
 <script lang="ts">
-	import MyImage from "../typography/image/examples/garnished.webp";
+	import MyImage from '../typography/image/examples/garnished.webp';
 </script>
 
 <div class="p-8">

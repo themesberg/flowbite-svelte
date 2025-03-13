@@ -1,3 +1,3 @@
 <script lang="ts">
-  import { Search } from "$lib";
+	import { Search } from '$lib';
 </script>

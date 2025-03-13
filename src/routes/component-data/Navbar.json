@@ -1,22 +1,22 @@
 {
-  "name": "Navbar",
-  "props": [
-    ["children", "any", ""],
-    ["navSlotBlock", "any", ""],
-    ["navSlotHiddenTop", "any", ""],
-    ["navSlotHiddenBottom", "any", ""],
-    ["toggleNav", "any", ""],
-    ["closeNav", "any", "()"],
-    ["navStatus", "any", ""],
-    ["fluid", "any", ""],
-    ["brand", "any", ""],
-    ["hamburgerMenu", "any", "true"],
-    ["breakPoint", "any", "\"md\""],
-    ["navClass", "any", ""],
-    ["divClass", "any", ""],
-    ["btnClass", "any", ""],
-    ["div2Class", "any", ""],
-    ["activeClass", "any", ""],
-    ["nonActiveClass", "any", ""]
-  ]
+	"name": "Navbar",
+	"props": [
+		["children", "any", ""],
+		["navSlotBlock", "any", ""],
+		["navSlotHiddenTop", "any", ""],
+		["navSlotHiddenBottom", "any", ""],
+		["toggleNav", "any", ""],
+		["closeNav", "any", "()"],
+		["navStatus", "any", ""],
+		["fluid", "any", ""],
+		["brand", "any", ""],
+		["hamburgerMenu", "any", "true"],
+		["breakPoint", "any", "\"md\""],
+		["navClass", "any", ""],
+		["divClass", "any", ""],
+		["btnClass", "any", ""],
+		["div2Class", "any", ""],
+		["activeClass", "any", ""],
+		["nonActiveClass", "any", ""]
+	]
 }

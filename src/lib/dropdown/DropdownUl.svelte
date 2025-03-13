@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { type DropdownUlProps as Props, dropdownul } from ".";
+	import { type DropdownUlProps as Props, dropdownul } from '.';
 
-  let { children, class: className, ...restProps }: Props = $props();
+	let { children, class: className, ...restProps }: Props = $props();
 
-  const ulCls = $derived(dropdownul({ class: className }));
+	const ulCls = $derived(dropdownul({ class: className }));
 </script>
 
 <ul {...restProps} class={ulCls}>
-  {@render children()}
+	{@render children()}
 </ul>
 
 <!--

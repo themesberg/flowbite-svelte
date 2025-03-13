@@ -1,7 +1,7 @@
 {
-  "name": "Kbd",
-  "props": [
-    ["children", "any", ""],
-    ["class", "string", ""]
-  ]
+	"name": "Kbd",
+	"props": [
+		["children", "any", ""],
+		["class", "string", ""]
+	]
 }

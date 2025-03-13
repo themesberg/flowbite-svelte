@@ -1,3 +1,3 @@
 <script>
-  import { Radio, Helper } from "$lib";
+	import { Radio, Helper } from '$lib';
 </script>

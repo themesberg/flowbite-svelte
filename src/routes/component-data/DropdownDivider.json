@@ -1,4 +1,4 @@
 {
-  "name": "DropdownDivider",
-  "props": [["class", "string", ""]]
+	"name": "DropdownDivider",
+	"props": [["class", "string", ""]]
 }

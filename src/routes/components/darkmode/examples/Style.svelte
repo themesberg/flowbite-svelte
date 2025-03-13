@@ -1,5 +1,5 @@
 <script>
-  import { Darkmode } from "$lib";
+	import { Darkmode } from '$lib';
 </script>
 
-<Darkmode class="border text-primary-500 dark:border-gray-800 dark:text-primary-600" />
+<Darkmode class="text-primary-500 dark:text-primary-600 border dark:border-gray-800" />

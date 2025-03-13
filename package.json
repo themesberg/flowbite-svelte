@@ -1,121 +1,662 @@
 {
-	"name": "svelte-5-ui-lib",
-	"version": "0.12.2",
-	"description": "Svelte 5 UI Lib is a UI library built from scratch to leverage Svelte 5's runes system, creating smooth, reactive components.",
-	"license": "MIT",
-	"main": "dist/index.js",
-	"homepage": "https://svelte-5-ui-lib.codewithshin.com/",
-	"author": {
-		"name": "Shinichi Okada",
-		"email": "connect@codewithshin.com",
-		"url": "https://blog.codewithshin.com"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/shinokada/svelte-5-ui-lib"
-	},
-	"keywords": [
-		"svelte 5",
-		"sveltekit 2",
-		"UI",
-		"component library",
-		"tailwindcss",
-		"flowbite"
-	],
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build && npm run prepack",
-		"preview": "vite preview",
-		"prepare": "svelte-kit sync || echo ''",
-		"prepack": "svelte-kit sync && svelte-package && publint",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"format": "prettier --write .",
-		"lint": "prettier --check . && eslint .",
-		"test:unit": "vitest",
-		"test": "npm run test:unit -- --run && npm run test:e2e",
-		"test:e2e": "playwright test",
-		"gen:exports": "svelte-lib-helpers exports",
-		"gen:component-data-from-type": "svelte-lib-helpers component-data-from-type",
-		"copy:packagejson": "svelte-lib-helpers package",
-		"lib-helpers": "pnpm gen:component-data-from-type && pnpm format && pnpm package && pnpm gen:exports && pnpm copy:packagejson",
-		"generate-file-list": "tsx scripts/generateFileList.ts",
-		"prebuild": "npm run generate-file-list",
-		"ch": "npx changeset",
-		"cv": "npx changeset version",
-		"cp": "npx changeset publish"
-	},
-	"files": [
-		"dist",
-		"!dist/**/*.test.*",
-		"!dist/**/*.spec.*"
-	],
-	"sideEffects": [
-		"**/*.css"
-	],
-	"svelte": "./dist/index.js",
-	"types": "./dist/index.d.ts",
-	"type": "module",
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"svelte": "./dist/index.js"
-		}
-	},
-	"peerDependencies": {
-		"svelte": "^5.0.0"
-	},
-	"devDependencies": {
-		"@changesets/cli": "^2.28.1",
-		"@eslint/compat": "^1.2.7",
-		"@eslint/js": "^9.22.0",
-		"@playwright/test": "^1.51.0",
-		"@sveltejs/adapter-auto": "^4.0.0",
-		"@sveltejs/enhanced-img": "^0.4.4",
-		"@sveltejs/kit": "^2.19.0",
-		"@sveltejs/package": "^2.3.10",
-		"@sveltejs/vite-plugin-svelte": "^5.0.3",
-		"@svitejs/changesets-changelog-github-compact": "^1.2.0",
-		"@tailwindcss/vite": "^4.0.12",
-		"@testing-library/jest-dom": "^6.6.3",
-		"@testing-library/svelte": "^5.2.7",
-		"eslint": "^9.22.0",
-		"eslint-config-prettier": "^10.1.1",
-		"eslint-plugin-svelte": "^3.0.3",
-		"flowbite-svelte-icons": "^2.0.2",
-		"globals": "^16.0.0",
-		"highlight.js": "^11.11.1",
-		"jsdom": "^26.0.0",
-		"prettier": "^3.5.3",
-		"prettier-plugin-svelte": "^3.3.3",
-		"prettier-plugin-tailwindcss": "^0.6.11",
-		"publint": "^0.3.8",
-		"runatics": "^0.1.4",
-		"runes-meta-tags": "^0.4.2",
-		"svelte": "^5.22.6",
-		"svelte-animated-icons": "^0.7.0",
-		"svelte-check": "^4.1.5",
-		"svelte-lib-helpers": "^0.4.16",
-		"svelte-rune-highlight": "^0.5.13",
-		"tailwindcss": "^4.0.12",
-		"tsx": "^4.19.3",
-		"typescript": "^5.8.2",
-		"typescript-eslint": "^8.26.0",
-		"vite": "^6.2.1",
-		"vite-imagetools": "^7.0.5",
-		"vitest": "^3.0.8"
-	},
-	"pnpm": {
-		"onlyBuiltDependencies": [
-			"esbuild"
-		]
-	},
-	"dependencies": {
-		"@floating-ui/dom": "^1.6.13",
-		"apexcharts": "^4.5.0",
-		"clsx": "^2.1.1",
-		"deepmerge": "^4.3.1",
-		"tailwind-merge": "^3.0.2",
-		"tailwind-variants": "^1.0.0"
-	}
+  "name": "svelte-5-ui-lib",
+  "version": "0.12.3",
+  "description": "Svelte 5 UI Lib is a UI library built from scratch to leverage Svelte 5's runes system, creating smooth, reactive components.",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "homepage": "https://svelte-5-ui-lib.codewithshin.com/",
+  "author": {
+    "name": "Shinichi Okada",
+    "email": "connect@codewithshin.com",
+    "url": "https://blog.codewithshin.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shinokada/svelte-5-ui-lib"
+  },
+  "keywords": [
+    "svelte 5",
+    "sveltekit 2",
+    "UI",
+    "component library",
+    "tailwindcss",
+    "flowbite"
+  ],
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build && npm run prepack",
+    "preview": "vite preview",
+    "prepare": "svelte-kit sync || echo ''",
+    "package": "svelte-kit sync && svelte-package && publint",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "format": "prettier --write .",
+    "lint": "prettier --check . && eslint .",
+    "test:unit": "vitest",
+    "test": "npm run test:unit -- --run && npm run test:e2e",
+    "test:e2e": "playwright test",
+    "gen:exports": "svelte-lib-helpers exports",
+    "gen:component-data-from-type": "svelte-lib-helpers component-data-from-type",
+    "copy:packagejson": "svelte-lib-helpers package",
+    "lib-helpers": "pnpm gen:component-data-from-type && pnpm format && pnpm package && pnpm gen:exports && pnpm copy:packagejson",
+    "generate-file-list": "tsx scripts/generateFileList.ts",
+    "prebuild": "npm run generate-file-list",
+    "ch": "npx changeset",
+    "cv": "npx changeset version",
+    "cp": "npx changeset publish"
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "!dist/**/*.spec.*"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "svelte": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "peerDependencies": {
+    "svelte": "^5.0.0"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.28.1",
+    "@eslint/compat": "^1.2.7",
+    "@eslint/js": "^9.22.0",
+    "@playwright/test": "^1.51.0",
+    "@sveltejs/adapter-auto": "^4.0.0",
+    "@sveltejs/enhanced-img": "^0.4.4",
+    "@sveltejs/kit": "^2.19.0",
+    "@sveltejs/package": "^2.3.10",
+    "@sveltejs/vite-plugin-svelte": "^5.0.3",
+    "@svitejs/changesets-changelog-github-compact": "^1.2.0",
+    "@tailwindcss/vite": "^4.0.12",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/svelte": "^5.2.7",
+    "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-svelte": "^3.0.3",
+    "flowbite-svelte-icons": "^2.0.2",
+    "globals": "^16.0.0",
+    "highlight.js": "^11.11.1",
+    "jsdom": "^26.0.0",
+    "prettier": "^3.5.3",
+    "prettier-plugin-svelte": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "publint": "^0.3.8",
+    "runatics": "^0.1.4",
+    "runes-meta-tags": "^0.4.2",
+    "svelte": "^5.22.6",
+    "svelte-animated-icons": "^0.7.0",
+    "svelte-check": "^4.1.5",
+    "svelte-lib-helpers": "^0.4.16",
+    "svelte-rune-highlight": "^0.5.13",
+    "tailwindcss": "^4.0.12",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.0",
+    "vite": "^6.2.1",
+    "vite-imagetools": "^7.0.5",
+    "vitest": "^3.0.8"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  },
+  "dependencies": {
+    "@floating-ui/dom": "^1.6.13",
+    "apexcharts": "^4.5.0",
+    "clsx": "^2.1.1",
+    "deepmerge": "^4.3.1",
+    "tailwind-merge": "^3.0.2",
+    "tailwind-variants": "^1.0.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js"
+    },
+    "./Accordion.svelte": {
+      "types": "./dist/accordion/Accordion.svelte.d.ts",
+      "svelte": "./dist/accordion/Accordion.svelte"
+    },
+    "./AccordionItem.svelte": {
+      "types": "./dist/accordion/AccordionItem.svelte.d.ts",
+      "svelte": "./dist/accordion/AccordionItem.svelte"
+    },
+    "./Alert.svelte": {
+      "types": "./dist/alert/Alert.svelte.d.ts",
+      "svelte": "./dist/alert/Alert.svelte"
+    },
+    "./Avatar.svelte": {
+      "types": "./dist/avatar/Avatar.svelte.d.ts",
+      "svelte": "./dist/avatar/Avatar.svelte"
+    },
+    "./Badge.svelte": {
+      "types": "./dist/badge/Badge.svelte.d.ts",
+      "svelte": "./dist/badge/Badge.svelte"
+    },
+    "./Banner.svelte": {
+      "types": "./dist/banner/Banner.svelte.d.ts",
+      "svelte": "./dist/banner/Banner.svelte"
+    },
+    "./BottomNav.svelte": {
+      "types": "./dist/bottom-navigation/BottomNav.svelte.d.ts",
+      "svelte": "./dist/bottom-navigation/BottomNav.svelte"
+    },
+    "./BottomNavHeader.svelte": {
+      "types": "./dist/bottom-navigation/BottomNavHeader.svelte.d.ts",
+      "svelte": "./dist/bottom-navigation/BottomNavHeader.svelte"
+    },
+    "./BottomNavHeaderItem.svelte": {
+      "types": "./dist/bottom-navigation/BottomNavHeaderItem.svelte.d.ts",
+      "svelte": "./dist/bottom-navigation/BottomNavHeaderItem.svelte"
+    },
+    "./BottomNavItem.svelte": {
+      "types": "./dist/bottom-navigation/BottomNavItem.svelte.d.ts",
+      "svelte": "./dist/bottom-navigation/BottomNavItem.svelte"
+    },
+    "./Breadcrumb.svelte": {
+      "types": "./dist/breadcrumb/Breadcrumb.svelte.d.ts",
+      "svelte": "./dist/breadcrumb/Breadcrumb.svelte"
+    },
+    "./BreadcrumbItem.svelte": {
+      "types": "./dist/breadcrumb/BreadcrumbItem.svelte.d.ts",
+      "svelte": "./dist/breadcrumb/BreadcrumbItem.svelte"
+    },
+    "./ButtonGroup.svelte": {
+      "types": "./dist/buttongroup/ButtonGroup.svelte.d.ts",
+      "svelte": "./dist/buttongroup/ButtonGroup.svelte"
+    },
+    "./Button.svelte": {
+      "types": "./dist/buttons/Button.svelte.d.ts",
+      "svelte": "./dist/buttons/Button.svelte"
+    },
+    "./GradientButton.svelte": {
+      "types": "./dist/buttons/GradientButton.svelte.d.ts",
+      "svelte": "./dist/buttons/GradientButton.svelte"
+    },
+    "./Card.svelte": {
+      "types": "./dist/cards/Card.svelte.d.ts",
+      "svelte": "./dist/cards/Card.svelte"
+    },
+    "./Chart.svelte": {
+      "types": "./dist/chart/Chart.svelte.d.ts",
+      "svelte": "./dist/chart/Chart.svelte"
+    },
+    "./Darkmode.svelte": {
+      "types": "./dist/darkmode/Darkmode.svelte.d.ts",
+      "svelte": "./dist/darkmode/Darkmode.svelte"
+    },
+    "./Android.svelte": {
+      "types": "./dist/device-mockups/Android.svelte.d.ts",
+      "svelte": "./dist/device-mockups/Android.svelte"
+    },
+    "./DefaultMockup.svelte": {
+      "types": "./dist/device-mockups/DefaultMockup.svelte.d.ts",
+      "svelte": "./dist/device-mockups/DefaultMockup.svelte"
+    },
+    "./Desktop.svelte": {
+      "types": "./dist/device-mockups/Desktop.svelte.d.ts",
+      "svelte": "./dist/device-mockups/Desktop.svelte"
+    },
+    "./DeviceMockup.svelte": {
+      "types": "./dist/device-mockups/DeviceMockup.svelte.d.ts",
+      "svelte": "./dist/device-mockups/DeviceMockup.svelte"
+    },
+    "./Ios.svelte": {
+      "types": "./dist/device-mockups/Ios.svelte.d.ts",
+      "svelte": "./dist/device-mockups/Ios.svelte"
+    },
+    "./Laptop.svelte": {
+      "types": "./dist/device-mockups/Laptop.svelte.d.ts",
+      "svelte": "./dist/device-mockups/Laptop.svelte"
+    },
+    "./Smartwatch.svelte": {
+      "types": "./dist/device-mockups/Smartwatch.svelte.d.ts",
+      "svelte": "./dist/device-mockups/Smartwatch.svelte"
+    },
+    "./Tablet.svelte": {
+      "types": "./dist/device-mockups/Tablet.svelte.d.ts",
+      "svelte": "./dist/device-mockups/Tablet.svelte"
+    },
+    "./Drawer.svelte": {
+      "types": "./dist/drawer/Drawer.svelte.d.ts",
+      "svelte": "./dist/drawer/Drawer.svelte"
+    },
+    "./Drawerhead.svelte": {
+      "types": "./dist/drawer/Drawerhead.svelte.d.ts",
+      "svelte": "./dist/drawer/Drawerhead.svelte"
+    },
+    "./Dropdown.svelte": {
+      "types": "./dist/dropdown/Dropdown.svelte.d.ts",
+      "svelte": "./dist/dropdown/Dropdown.svelte"
+    },
+    "./DropdownDivider.svelte": {
+      "types": "./dist/dropdown/DropdownDivider.svelte.d.ts",
+      "svelte": "./dist/dropdown/DropdownDivider.svelte"
+    },
+    "./DropdownFooter.svelte": {
+      "types": "./dist/dropdown/DropdownFooter.svelte.d.ts",
+      "svelte": "./dist/dropdown/DropdownFooter.svelte"
+    },
+    "./DropdownHeader.svelte": {
+      "types": "./dist/dropdown/DropdownHeader.svelte.d.ts",
+      "svelte": "./dist/dropdown/DropdownHeader.svelte"
+    },
+    "./DropdownLi.svelte": {
+      "types": "./dist/dropdown/DropdownLi.svelte.d.ts",
+      "svelte": "./dist/dropdown/DropdownLi.svelte"
+    },
+    "./DropdownUl.svelte": {
+      "types": "./dist/dropdown/DropdownUl.svelte.d.ts",
+      "svelte": "./dist/dropdown/DropdownUl.svelte"
+    },
+    "./Footer.svelte": {
+      "types": "./dist/footer/Footer.svelte.d.ts",
+      "svelte": "./dist/footer/Footer.svelte"
+    },
+    "./FooterBrand.svelte": {
+      "types": "./dist/footer/FooterBrand.svelte.d.ts",
+      "svelte": "./dist/footer/FooterBrand.svelte"
+    },
+    "./FooterCopyright.svelte": {
+      "types": "./dist/footer/FooterCopyright.svelte.d.ts",
+      "svelte": "./dist/footer/FooterCopyright.svelte"
+    },
+    "./FooterIcon.svelte": {
+      "types": "./dist/footer/FooterIcon.svelte.d.ts",
+      "svelte": "./dist/footer/FooterIcon.svelte"
+    },
+    "./FooterLi.svelte": {
+      "types": "./dist/footer/FooterLi.svelte.d.ts",
+      "svelte": "./dist/footer/FooterLi.svelte"
+    },
+    "./FooterUl.svelte": {
+      "types": "./dist/footer/FooterUl.svelte.d.ts",
+      "svelte": "./dist/footer/FooterUl.svelte"
+    },
+    "./Checkbox.svelte": {
+      "types": "./dist/forms/checkbox/Checkbox.svelte.d.ts",
+      "svelte": "./dist/forms/checkbox/Checkbox.svelte"
+    },
+    "./CheckboxButton.svelte": {
+      "types": "./dist/forms/checkbox-button/CheckboxButton.svelte.d.ts",
+      "svelte": "./dist/forms/checkbox-button/CheckboxButton.svelte"
+    },
+    "./Dropzone.svelte": {
+      "types": "./dist/forms/dropzone/Dropzone.svelte.d.ts",
+      "svelte": "./dist/forms/dropzone/Dropzone.svelte"
+    },
+    "./Fileupload.svelte": {
+      "types": "./dist/forms/fileupload/Fileupload.svelte.d.ts",
+      "svelte": "./dist/forms/fileupload/Fileupload.svelte"
+    },
+    "./FloatingLabelInput.svelte": {
+      "types": "./dist/forms/floating-label-input/FloatingLabelInput.svelte.d.ts",
+      "svelte": "./dist/forms/floating-label-input/FloatingLabelInput.svelte"
+    },
+    "./Helper.svelte": {
+      "types": "./dist/forms/helper/Helper.svelte.d.ts",
+      "svelte": "./dist/forms/helper/Helper.svelte"
+    },
+    "./Input.svelte": {
+      "types": "./dist/forms/input/Input.svelte.d.ts",
+      "svelte": "./dist/forms/input/Input.svelte"
+    },
+    "./InputAddon.svelte": {
+      "types": "./dist/forms/input-addon/InputAddon.svelte.d.ts",
+      "svelte": "./dist/forms/input-addon/InputAddon.svelte"
+    },
+    "./Label.svelte": {
+      "types": "./dist/forms/label/Label.svelte.d.ts",
+      "svelte": "./dist/forms/label/Label.svelte"
+    },
+    "./Radio.svelte": {
+      "types": "./dist/forms/radio/Radio.svelte.d.ts",
+      "svelte": "./dist/forms/radio/Radio.svelte"
+    },
+    "./RadioButton.svelte": {
+      "types": "./dist/forms/radio-button/RadioButton.svelte.d.ts",
+      "svelte": "./dist/forms/radio-button/RadioButton.svelte"
+    },
+    "./Range.svelte": {
+      "types": "./dist/forms/range/Range.svelte.d.ts",
+      "svelte": "./dist/forms/range/Range.svelte"
+    },
+    "./Search.svelte": {
+      "types": "./dist/forms/search/Search.svelte.d.ts",
+      "svelte": "./dist/forms/search/Search.svelte"
+    },
+    "./Select.svelte": {
+      "types": "./dist/forms/select/Select.svelte.d.ts",
+      "svelte": "./dist/forms/select/Select.svelte"
+    },
+    "./Textarea.svelte": {
+      "types": "./dist/forms/textarea/Textarea.svelte.d.ts",
+      "svelte": "./dist/forms/textarea/Textarea.svelte"
+    },
+    "./Toggle.svelte": {
+      "types": "./dist/forms/toggle/Toggle.svelte.d.ts",
+      "svelte": "./dist/forms/toggle/Toggle.svelte"
+    },
+    "./Gallery.svelte": {
+      "types": "./dist/gallery/Gallery.svelte.d.ts",
+      "svelte": "./dist/gallery/Gallery.svelte"
+    },
+    "./Indicator.svelte": {
+      "types": "./dist/indicator/Indicator.svelte.d.ts",
+      "svelte": "./dist/indicator/Indicator.svelte"
+    },
+    "./Kbd.svelte": {
+      "types": "./dist/kbd/Kbd.svelte.d.ts",
+      "svelte": "./dist/kbd/Kbd.svelte"
+    },
+    "./Listgroup.svelte": {
+      "types": "./dist/list-group/Listgroup.svelte.d.ts",
+      "svelte": "./dist/list-group/Listgroup.svelte"
+    },
+    "./ListgroupItem.svelte": {
+      "types": "./dist/list-group/ListgroupItem.svelte.d.ts",
+      "svelte": "./dist/list-group/ListgroupItem.svelte"
+    },
+    "./MegaMenu.svelte": {
+      "types": "./dist/mega-menu/MegaMenu.svelte.d.ts",
+      "svelte": "./dist/mega-menu/MegaMenu.svelte"
+    },
+    "./Modal.svelte": {
+      "types": "./dist/modal/Modal.svelte.d.ts",
+      "svelte": "./dist/modal/Modal.svelte"
+    },
+    "./NavBrand.svelte": {
+      "types": "./dist/nav/NavBrand.svelte.d.ts",
+      "svelte": "./dist/nav/NavBrand.svelte"
+    },
+    "./NavHamburger.svelte": {
+      "types": "./dist/nav/NavHamburger.svelte.d.ts",
+      "svelte": "./dist/nav/NavHamburger.svelte"
+    },
+    "./NavLi.svelte": {
+      "types": "./dist/nav/NavLi.svelte.d.ts",
+      "svelte": "./dist/nav/NavLi.svelte"
+    },
+    "./NavUl.svelte": {
+      "types": "./dist/nav/NavUl.svelte.d.ts",
+      "svelte": "./dist/nav/NavUl.svelte"
+    },
+    "./Navbar.svelte": {
+      "types": "./dist/nav/Navbar.svelte.d.ts",
+      "svelte": "./dist/nav/Navbar.svelte"
+    },
+    "./Pagination.svelte": {
+      "types": "./dist/pagination/Pagination.svelte.d.ts",
+      "svelte": "./dist/pagination/Pagination.svelte"
+    },
+    "./PaginationItem.svelte": {
+      "types": "./dist/pagination/PaginationItem.svelte.d.ts",
+      "svelte": "./dist/pagination/PaginationItem.svelte"
+    },
+    "./Popover.svelte": {
+      "types": "./dist/popover/Popover.svelte.d.ts",
+      "svelte": "./dist/popover/Popover.svelte"
+    },
+    "./Progressbar.svelte": {
+      "types": "./dist/progress/Progressbar.svelte.d.ts",
+      "svelte": "./dist/progress/Progressbar.svelte"
+    },
+    "./AdvancedRating.svelte": {
+      "types": "./dist/rating/AdvancedRating.svelte.d.ts",
+      "svelte": "./dist/rating/AdvancedRating.svelte"
+    },
+    "./CustomIcon.svelte": {
+      "types": "./dist/rating/CustomIcon.svelte.d.ts",
+      "svelte": "./dist/rating/CustomIcon.svelte"
+    },
+    "./Heart.svelte": {
+      "types": "./dist/rating/Heart.svelte.d.ts",
+      "svelte": "./dist/rating/Heart.svelte"
+    },
+    "./Rating.svelte": {
+      "types": "./dist/rating/Rating.svelte.d.ts",
+      "svelte": "./dist/rating/Rating.svelte"
+    },
+    "./RatingComment.svelte": {
+      "types": "./dist/rating/RatingComment.svelte.d.ts",
+      "svelte": "./dist/rating/RatingComment.svelte"
+    },
+    "./Review.svelte": {
+      "types": "./dist/rating/Review.svelte.d.ts",
+      "svelte": "./dist/rating/Review.svelte"
+    },
+    "./ScoreRating.svelte": {
+      "types": "./dist/rating/ScoreRating.svelte.d.ts",
+      "svelte": "./dist/rating/ScoreRating.svelte"
+    },
+    "./Star.svelte": {
+      "types": "./dist/rating/Star.svelte.d.ts",
+      "svelte": "./dist/rating/Star.svelte"
+    },
+    "./Thumbup.svelte": {
+      "types": "./dist/rating/Thumbup.svelte.d.ts",
+      "svelte": "./dist/rating/Thumbup.svelte"
+    },
+    "./Sidebar.svelte": {
+      "types": "./dist/sidebar/Sidebar.svelte.d.ts",
+      "svelte": "./dist/sidebar/Sidebar.svelte"
+    },
+    "./SidebarBrand.svelte": {
+      "types": "./dist/sidebar/SidebarBrand.svelte.d.ts",
+      "svelte": "./dist/sidebar/SidebarBrand.svelte"
+    },
+    "./SidebarButton.svelte": {
+      "types": "./dist/sidebar/SidebarButton.svelte.d.ts",
+      "svelte": "./dist/sidebar/SidebarButton.svelte"
+    },
+    "./SidebarCta.svelte": {
+      "types": "./dist/sidebar/SidebarCta.svelte.d.ts",
+      "svelte": "./dist/sidebar/SidebarCta.svelte"
+    },
+    "./SidebarDropdownWrapper.svelte": {
+      "types": "./dist/sidebar/SidebarDropdownWrapper.svelte.d.ts",
+      "svelte": "./dist/sidebar/SidebarDropdownWrapper.svelte"
+    },
+    "./SidebarGroup.svelte": {
+      "types": "./dist/sidebar/SidebarGroup.svelte.d.ts",
+      "svelte": "./dist/sidebar/SidebarGroup.svelte"
+    },
+    "./SidebarItem.svelte": {
+      "types": "./dist/sidebar/SidebarItem.svelte.d.ts",
+      "svelte": "./dist/sidebar/SidebarItem.svelte"
+    },
+    "./CardPlaceholder.svelte": {
+      "types": "./dist/skeleton/CardPlaceholder.svelte.d.ts",
+      "svelte": "./dist/skeleton/CardPlaceholder.svelte"
+    },
+    "./ImagePlaceholder.svelte": {
+      "types": "./dist/skeleton/ImagePlaceholder.svelte.d.ts",
+      "svelte": "./dist/skeleton/ImagePlaceholder.svelte"
+    },
+    "./ListPlaceholder.svelte": {
+      "types": "./dist/skeleton/ListPlaceholder.svelte.d.ts",
+      "svelte": "./dist/skeleton/ListPlaceholder.svelte"
+    },
+    "./Skeleton.svelte": {
+      "types": "./dist/skeleton/Skeleton.svelte.d.ts",
+      "svelte": "./dist/skeleton/Skeleton.svelte"
+    },
+    "./TestimonialPlaceholder.svelte": {
+      "types": "./dist/skeleton/TestimonialPlaceholder.svelte.d.ts",
+      "svelte": "./dist/skeleton/TestimonialPlaceholder.svelte"
+    },
+    "./TextPlaceholder.svelte": {
+      "types": "./dist/skeleton/TextPlaceholder.svelte.d.ts",
+      "svelte": "./dist/skeleton/TextPlaceholder.svelte"
+    },
+    "./VideoPlaceholder.svelte": {
+      "types": "./dist/skeleton/VideoPlaceholder.svelte.d.ts",
+      "svelte": "./dist/skeleton/VideoPlaceholder.svelte"
+    },
+    "./WidgetPlaceholder.svelte": {
+      "types": "./dist/skeleton/WidgetPlaceholder.svelte.d.ts",
+      "svelte": "./dist/skeleton/WidgetPlaceholder.svelte"
+    },
+    "./Spinner.svelte": {
+      "types": "./dist/spinner/Spinner.svelte.d.ts",
+      "svelte": "./dist/spinner/Spinner.svelte"
+    },
+    "./Table.svelte": {
+      "types": "./dist/table/Table.svelte.d.ts",
+      "svelte": "./dist/table/Table.svelte"
+    },
+    "./TableBody.svelte": {
+      "types": "./dist/table/TableBody.svelte.d.ts",
+      "svelte": "./dist/table/TableBody.svelte"
+    },
+    "./TableBodyCell.svelte": {
+      "types": "./dist/table/TableBodyCell.svelte.d.ts",
+      "svelte": "./dist/table/TableBodyCell.svelte"
+    },
+    "./TableBodyRow.svelte": {
+      "types": "./dist/table/TableBodyRow.svelte.d.ts",
+      "svelte": "./dist/table/TableBodyRow.svelte"
+    },
+    "./TableHead.svelte": {
+      "types": "./dist/table/TableHead.svelte.d.ts",
+      "svelte": "./dist/table/TableHead.svelte"
+    },
+    "./TableHeadCell.svelte": {
+      "types": "./dist/table/TableHeadCell.svelte.d.ts",
+      "svelte": "./dist/table/TableHeadCell.svelte"
+    },
+    "./TableSearch.svelte": {
+      "types": "./dist/table/TableSearch.svelte.d.ts",
+      "svelte": "./dist/table/TableSearch.svelte"
+    },
+    "./TabItem.svelte": {
+      "types": "./dist/tabs/TabItem.svelte.d.ts",
+      "svelte": "./dist/tabs/TabItem.svelte"
+    },
+    "./Tabs.svelte": {
+      "types": "./dist/tabs/Tabs.svelte.d.ts",
+      "svelte": "./dist/tabs/Tabs.svelte"
+    },
+    "./Theme.svelte": {
+      "types": "./dist/theme/Theme.svelte.d.ts",
+      "svelte": "./dist/theme/Theme.svelte"
+    },
+    "./Activity.svelte": {
+      "types": "./dist/timeline/Activity.svelte.d.ts",
+      "svelte": "./dist/timeline/Activity.svelte"
+    },
+    "./ActivityItem.svelte": {
+      "types": "./dist/timeline/ActivityItem.svelte.d.ts",
+      "svelte": "./dist/timeline/ActivityItem.svelte"
+    },
+    "./Group.svelte": {
+      "types": "./dist/timeline/Group.svelte.d.ts",
+      "svelte": "./dist/timeline/Group.svelte"
+    },
+    "./GroupItem.svelte": {
+      "types": "./dist/timeline/GroupItem.svelte.d.ts",
+      "svelte": "./dist/timeline/GroupItem.svelte"
+    },
+    "./Timeline.svelte": {
+      "types": "./dist/timeline/Timeline.svelte.d.ts",
+      "svelte": "./dist/timeline/Timeline.svelte"
+    },
+    "./TimelineItem.svelte": {
+      "types": "./dist/timeline/TimelineItem.svelte.d.ts",
+      "svelte": "./dist/timeline/TimelineItem.svelte"
+    },
+    "./Toast.svelte": {
+      "types": "./dist/toast/Toast.svelte.d.ts",
+      "svelte": "./dist/toast/Toast.svelte"
+    },
+    "./Toolbar.svelte": {
+      "types": "./dist/toolbar/Toolbar.svelte.d.ts",
+      "svelte": "./dist/toolbar/Toolbar.svelte"
+    },
+    "./ToolbarButton.svelte": {
+      "types": "./dist/toolbar/ToolbarButton.svelte.d.ts",
+      "svelte": "./dist/toolbar/ToolbarButton.svelte"
+    },
+    "./ToolbarGroup.svelte": {
+      "types": "./dist/toolbar/ToolbarGroup.svelte.d.ts",
+      "svelte": "./dist/toolbar/ToolbarGroup.svelte"
+    },
+    "./Tooltip.svelte": {
+      "types": "./dist/tooltip/Tooltip.svelte.d.ts",
+      "svelte": "./dist/tooltip/Tooltip.svelte"
+    },
+    "./A.svelte": {
+      "types": "./dist/typography/anchor/A.svelte.d.ts",
+      "svelte": "./dist/typography/anchor/A.svelte"
+    },
+    "./Blockquote.svelte": {
+      "types": "./dist/typography/blockquote/Blockquote.svelte.d.ts",
+      "svelte": "./dist/typography/blockquote/Blockquote.svelte"
+    },
+    "./DescriptionList.svelte": {
+      "types": "./dist/typography/descriptionlist/DescriptionList.svelte.d.ts",
+      "svelte": "./dist/typography/descriptionlist/DescriptionList.svelte"
+    },
+    "./Heading.svelte": {
+      "types": "./dist/typography/heading/Heading.svelte.d.ts",
+      "svelte": "./dist/typography/heading/Heading.svelte"
+    },
+    "./Hr.svelte": {
+      "types": "./dist/typography/hr/Hr.svelte.d.ts",
+      "svelte": "./dist/typography/hr/Hr.svelte"
+    },
+    "./EnhancedImg.svelte": {
+      "types": "./dist/typography/img/EnhancedImg.svelte.d.ts",
+      "svelte": "./dist/typography/img/EnhancedImg.svelte"
+    },
+    "./Img.svelte": {
+      "types": "./dist/typography/img/Img.svelte.d.ts",
+      "svelte": "./dist/typography/img/Img.svelte"
+    },
+    "./ImgEnhanced.svelte": {
+      "types": "./dist/typography/img/ImgEnhanced.svelte.d.ts",
+      "svelte": "./dist/typography/img/ImgEnhanced.svelte"
+    },
+    "./Layout.svelte": {
+      "types": "./dist/typography/layout/Layout.svelte.d.ts",
+      "svelte": "./dist/typography/layout/Layout.svelte"
+    },
+    "./Li.svelte": {
+      "types": "./dist/typography/list/Li.svelte.d.ts",
+      "svelte": "./dist/typography/list/Li.svelte"
+    },
+    "./List.svelte": {
+      "types": "./dist/typography/list/List.svelte.d.ts",
+      "svelte": "./dist/typography/list/List.svelte"
+    },
+    "./Mark.svelte": {
+      "types": "./dist/typography/mark/Mark.svelte.d.ts",
+      "svelte": "./dist/typography/mark/Mark.svelte"
+    },
+    "./P.svelte": {
+      "types": "./dist/typography/paragraph/P.svelte.d.ts",
+      "svelte": "./dist/typography/paragraph/P.svelte"
+    },
+    "./Secondary.svelte": {
+      "types": "./dist/typography/secondary/Secondary.svelte.d.ts",
+      "svelte": "./dist/typography/secondary/Secondary.svelte"
+    },
+    "./Span.svelte": {
+      "types": "./dist/typography/span/Span.svelte.d.ts",
+      "svelte": "./dist/typography/span/Span.svelte"
+    },
+    "./CloseButton.svelte": {
+      "types": "./dist/utils/CloseButton.svelte.d.ts",
+      "svelte": "./dist/utils/CloseButton.svelte"
+    },
+    "./Video.svelte": {
+      "types": "./dist/video/Video.svelte.d.ts",
+      "svelte": "./dist/video/Video.svelte"
+    },
+    "./package.json": "./package.json"
+  }
 }

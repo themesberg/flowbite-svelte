@@ -1,8 +1,8 @@
 {
-  "name": "Helper",
-  "props": [
-    ["children", "any", ""],
-    ["class", "string", ""],
-    ["color", "any", "\"gray\""]
-  ]
+	"name": "Helper",
+	"props": [
+		["children", "any", ""],
+		["class", "string", ""],
+		["color", "any", "\"gray\""]
+	]
 }

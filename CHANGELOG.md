@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.12.3
+
+### Patch Changes
+
+- fix: update svelte and tailwindcss 4
+
 ## 0.12.2
 
 ### Patch Changes

@@ -1,23 +1,27 @@
 <script lang="ts">
-  import { type AnchorProps as Props, anchor } from ".";
+	import { type AnchorProps as Props, anchor } from '.';
 
-  let { children, spanClass, aClass, class: className, tag, ...restProps }: Props = $props();
+	let { children, spanClass, aClass, class: className, tag, ...restProps }: Props = $props();
 
-  const { base, span, anchor: anchorCls } = $derived(anchor());
+	const { base, span, anchor: anchorCls } = $derived(anchor());
 
-  let content: string = $state("");
-  let slug: string = $state("");
+	let content: string = $state('');
+	let slug: string = $state('');
 
-  function init(node: HTMLElement) {
-    content = node.innerText ?? "";
-    slug = content.replace(/\s/g, "_").replace(/__#+/g, "");
-  }
+	function init(node: HTMLElement) {
+		content = node.innerText ?? '';
+		slug = content.replace(/\s/g, '_').replace(/__#+/g, '');
+	}
 </script>
 
 <svelte:element this={tag} {...restProps} class={base({ className })} use:init>
-  {@render children()}
-  <span id={slug} class={span({ class: spanClass })}></span>
-  <a class={anchorCls({ class: aClass })} href="#{slug}" aria-label="Link to this section: {content}">#</a>
+	{@render children()}
+	<span id={slug} class={span({ class: spanClass })}></span>
+	<a
+		class={anchorCls({ class: aClass })}
+		href="#{slug}"
+		aria-label="Link to this section: {content}">#</a
+	>
 </svelte:element>
 
 <!--
