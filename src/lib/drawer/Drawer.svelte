@@ -5,9 +5,9 @@
   import { type DrawerProps as Props, drawer } from ".";
   import clsx from "clsx";
 
-  let { children, hidden = $bindable(), closeDrawer, activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = "left", class: className, params = { x: -320, duration: 200, easing: sineIn }, transition = fly, ...restProps }: Props = $props();
+  let { children, hidden = $bindable(), closeDrawer = () => (hidden = true), activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = "left", class: className, params, transition = fly, ...restProps }: Props = $props();
 
-  const { base, backdrop: backdropCls } = $derived(
+  const { base, backdrop_: backdropCls } = $derived(
     drawer({
       position,
       placement,
@@ -15,19 +15,21 @@
       backdrop
     })
   );
+
+  let innerWidth: number = $state(-1);
+  let innerHeight: number = $state(-1);
+  // let startX = $derived(position === 'fixed'? 0: )
+  let x = $derived(placement === "left" ? -320 : placement === "right" ? innerWidth + 320 : undefined);
+  let y = $derived(placement === "top" ? -100 : placement === "bottom" ? innerHeight + 100 : undefined);
+
+  let transition_params = $derived(Object.assign({}, { x, y, duration: 200, easing: sineIn }));
 </script>
 
-<svelte:window onkeydown={hidden ? undefined : (ev: KeyboardEvent) => ev.key === "Escape" && (hidden = true)} />
+<svelte:window onkeydown={hidden ? undefined : (ev: KeyboardEvent) => ev.key === "Escape" && (hidden = true)} bind:innerWidth bind:innerHeight />
 
 {#if !hidden}
-  {#if backdrop && activateClickOutside}
-    <div role="presentation" class={backdropCls({ class: backdropClass })} onclick={closeDrawer}></div>
-  {:else if backdrop && !activateClickOutside}
-    <div role="presentation" class={backdropCls({ class: backdropClass })}></div>
-  {:else if !backdrop && activateClickOutside}
-    <div role="presentation" class="start-0 top-0 z-50 h-full w-full" onclick={closeDrawer}></div>
-  {/if}
-  <div {...restProps} class={base({ class: clsx(className) })} transition:transition={params as ParamsType} tabindex="-1">
+  <div role="presentation" class={backdropCls({ class: backdropClass })} onclick={activateClickOutside ? closeDrawer : undefined}></div>
+  <div {...restProps} class={base({ class: clsx(className) })} transition:transition={transition_params as ParamsType} tabindex="-1">
     {@render children?.()}
   </div>
 {/if}

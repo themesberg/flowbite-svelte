@@ -7,6 +7,7 @@ interface DrawerProps extends DrawerVariants, HTMLAttributes<HTMLDivElement> {
   hidden: boolean;
   closeDrawer?: () => void;
   activateClickOutside?: boolean;
+  backdrop?: boolean;
   backdropClass?: string;
   params?: ParamsType;
   transition?: TransitionFunc;

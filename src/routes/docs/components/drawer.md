@@ -36,18 +36,13 @@ For accessibility you should also set the `id` prop to the element. This will ad
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
   let hidden1 = true;
-  let transitionParams = {
-    x: -320,
-    duration: 200,
-    easing: sineIn
-  };
 </script>
 
 <div class="text-center">
   <Button onclick={() => (hidden1 = false)}>Show drawer</Button>
 </div>
 
-<Drawer transitionType="fly" {transitionParams} bind:hidden={hidden1} id="sidebar1">
+<Drawer bind:hidden={hidden1}>
   <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
@@ -71,7 +66,7 @@ Use this example to show a navigational sidebar inside the drawer component.
 
 ```svelte example hideResponsiveButtons
 <script>
-  import { Drawer, Button, CloseButton, Sidebar, SidebarBrand, SidebarCta, SidebarDropdownWrapper, SidebarGroup, SidebarItem } from "flowbite-svelte";
+  import { Drawer, Button, CloseButton, Sidebar, SidebarBrand, SidebarCta, SidebarWrapper, SidebarDropdownWrapper, SidebarGroup, SidebarItem } from "flowbite-svelte";
   import { ChartPieSolid, CartSolid, GridSolid, MailBoxSolid, UsersSolid, ShoppingBagSolid, ArrowRightToBracketOutline, EditOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
   let hidden2 = true;
@@ -86,12 +81,12 @@ Use this example to show a navigational sidebar inside the drawer component.
 <div class="text-center">
   <Button onclick={() => (hidden2 = false)}>Show navigation</Button>
 </div>
-<Drawer transitionType="fly" {transitionParams} bind:hidden={hidden2} id="sidebar2">
-  <div class="flex items-center justify-between">
-    <h5 id="drawer-navigation-label-3" class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
-    <CloseButton onclick={() => (hidden2 = true)} class="mb-4 dark:text-white" />
+<Drawer transitionType="fly" {transitionParams} bind:hidden={hidden2} class="w-fit p-0 bg-gray-50 dark:bg-gray-800">
+  <div class="flex items-center justify-between px-2 pt-4">
+    <h5 class="px-4 text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
+    <CloseButton onclick={() => (hidden2 = true)} class="dark:text-white" />
   </div>
-  <Sidebar>
+  <Sidebar class="static">
     <SidebarWrapper divClass="overflow-y-auto py-4 px-3 rounded-sm dark:bg-gray-800">
       <SidebarGroup>
         <SidebarItem label="Dashboard">
@@ -170,7 +165,7 @@ Use this example to show a contact form inside the drawer component.
 <div class="text-center">
   <Button onclick={() => (hidden3 = false)}>Show contact form</Button>
 </div>
-<Drawer transitionType="fly" {transitionParams} bind:hidden={hidden3} id="sidebar3">
+<Drawer transitionType="fly" {transitionParams} bind:hidden={hidden3}>
   <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Contact us
@@ -222,7 +217,7 @@ Use this example if you want to add form elements inside the drawer component in
 <div class="text-center">
   <Button onclick={() => (hidden4 = false)}>Show drawer form</Button>
 </div>
-<Drawer transitionType="fly" {transitionParams} bind:hidden={hidden4} id="sidebar4">
+<Drawer transitionType="fly" {transitionParams} bind:hidden={hidden4}>
   <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />New event
@@ -286,7 +281,7 @@ Use the placement prop to position the drawer component either on the top, right
   <Button onclick={() => (hidden5 = false)}>Show drawer</Button>
 </div>
 
-<Drawer placement="left" transitionType="fly" {transitionParams} bind:hidden={hidden5} id="sidebar5">
+<Drawer placement="left" transitionType="fly" {transitionParams} bind:hidden={hidden5}>
   <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
@@ -328,7 +323,7 @@ Set the `transitionParams` variable to new variables.
   <Button onclick={() => (hidden6 = false)}>Show drawer</Button>
 </div>
 
-<Drawer placement="right" transitionType="fly" transitionParams={transitionParamsRight} bind:hidden={hidden6} id="sidebar6">
+<Drawer placement="right" transitionType="fly" transitionParams={transitionParamsRight} bind:hidden={hidden6}>
   <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
@@ -368,7 +363,7 @@ Use this example to show the drawer on the top side of the page.
   <Button onclick={() => (hidden7 = false)}>Show drawer</Button>
 </div>
 
-<Drawer placement="top" width="w-full" transitionType="fly" transitionParams={transitionParamsTop} bind:hidden={hidden7} id="sidebar7">
+<Drawer placement="top" width="w-full" transitionType="fly" transitionParams={transitionParamsTop} bind:hidden={hidden7}>
   <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Top drawer
@@ -405,7 +400,7 @@ Use this example to show the drawer on the bottom side of the page.
   <Button onclick={() => (hidden8 = false)}>Show drawer</Button>
 </div>
 
-<Drawer placement="bottom" width="w-full" transitionType="fly" transitionParams={transitionParamsBottom} bind:hidden={hidden8} id="sidebar8">
+<Drawer placement="bottom" width="w-full" transitionType="fly" transitionParams={transitionParamsBottom} bind:hidden={hidden8}>
   <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
@@ -449,7 +444,7 @@ Use this example to enable the backdrop element by default.
   <Button onclick={() => (hiddenBackdropTrue = false)}>Show drawer</Button>
 </div>
 
-<Drawer backdrop={true} transitionType="fly" {transitionParams} bind:hidden={hiddenBackdropTrue} id="sidebar1">
+<Drawer backdrop={true} transitionType="fly" {transitionParams} bind:hidden={hiddenBackdropTrue}>
   <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
@@ -489,7 +484,7 @@ Use the `backdrop={false}` prop to disable the backdrop element when the drawer 
   <Button onclick={() => (hiddenBackdropFalse = false)}>Show drawer</Button>
 </div>
 
-<Drawer backdrop={false} transitionType="fly" {transitionParams} bind:hidden={hiddenBackdropFalse} id="sidebar1">
+<Drawer backdrop={false} transitionType="fly" {transitionParams} bind:hidden={hiddenBackdropFalse}>
   <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
@@ -509,27 +504,22 @@ Use the `backdrop={false}` prop to disable the backdrop element when the drawer 
 
 ## Position
 
-Use `leftOffset|rightOffset|topOffset|bottomOffset` prop to change the position of the drawer.
+Use `fixed|aboslute` prop to manage the CSS position value of the drawer.
 
-```svelte example hideResponsiveButtons
+```svelte example hideResponsiveButtons class="h-56"
 <script>
   import { Drawer, Button, CloseButton, A } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
 
   let hidden9 = true;
-  let transitionParams = {
-    x: -320,
-    duration: 200,
-    easing: sineIn
-  };
 </script>
 
 <div class="text-center">
   <Button onclick={() => (hidden9 = false)}>Show drawer</Button>
 </div>
 
-<Drawer leftOffset="top-16 h-screen start-0" transitionType="fly" {transitionParams} bind:hidden={hidden9} id="sidebar9">
+<Drawer position="absolute" placement="right" bind:hidden={hidden9}>
   <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
@@ -604,7 +594,7 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
   <Button onclick={() => (hiddenBackdropFalse = false)}>Show drawer</Button>
 </div>
 
-<Drawer activateClickOutside={false} transitionType="fly" {transitionParams} bind:hidden={hiddenBackdropFalse} id="sidebar1">
+<Drawer activateClickOutside={false} transitionType="fly" {transitionParams} bind:hidden={hiddenBackdropFalse}>
   <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
