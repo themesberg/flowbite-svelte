@@ -5,6 +5,7 @@
   import ArrowRight from "./icons/ArrowRight.svelte";
 
   // const identity = x => x;
+  let { children } = $props();
 
   const {
     data,
@@ -51,7 +52,7 @@
         <div></div>
       {/if}
       <div class="hidden sm:block">
-        <slot />
+        {@render children?.()}
       </div>
       {#if index < components.length - 1}
         {@const { name, href } = sibling(true)}
@@ -65,6 +66,6 @@
     </div>
   {/if}
   <div class="sm:hidden">
-    <slot />
+    {@render children?.()}
   </div>
 </div>

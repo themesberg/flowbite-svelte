@@ -1,4 +1,4 @@
-import type { Snippet } from "svelte";
+import type { Component, Snippet } from "svelte";
 import type { ParamsType, TransitionFunc } from "../types";
 import type { HTMLAttributes } from "svelte/elements";
 import type { AlertVariants } from "./theme";
@@ -9,7 +9,7 @@ interface AlertProps extends Omit<AlertVariants, "icon">, Omit<HTMLAttributes<HT
   children: Snippet;
   icon?: Snippet;
   alertStatus?: boolean;
-  closeIcon?: boolean;
+  closeIcon?: Component;
   transition?: TransitionFunc;
   params?: ParamsType;
   onclick?: () => void;

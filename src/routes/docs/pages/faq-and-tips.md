@@ -38,15 +38,16 @@ The following example shows how to add navigation using the key blocks:
 
 ```svelte example hideOutput
 <script>
-  import { page } from "$app/stores";
+  import { page } from "$app/state";
   import { Navbar, NavLi, NavUl } from "flowbite-svelte";
-  $: activeUrl = $page.url.pathname;
+  let {children} = $props();
+  let activeUrl = $derived(page.url.pathname);
 </script>
 
 // src/routes/(app)/+layout.svelte
 {#key activeUrl}
-  <Navbar let:hidden let:toggle>
-    <NavUl {hidden} {activeUrl}>
+  <Navbar>
+    <NavUl {activeUrl}>
       <NavLi href="/">Home</NavLi>
       <NavLi href="/about">About</NavLi>
       <NavLi href="/contact">Contact</NavLi>
@@ -56,7 +57,7 @@ The following example shows how to add navigation using the key blocks:
   </Navbar>
 {/key}
 
-<slot />
+{@render children()}
 ```
 
 ## My compiled CSS size is more than 120K. How can I make it smaller?

@@ -1,7 +1,9 @@
 <script lang="ts">
   import { badge } from "$lib/badge/theme";
   import Star from "$lib/rating/Star.svelte";
-  import type { ComponentInternals, ComponentProps } from "svelte";
+  import { mount, type ComponentInternals, type ComponentProps } from "svelte";
+  import Comp from "./Component.svelte";
+  import Inner from "./Inner.svelte";
 
   const { base, hrefClass } = badge({ class: "dupa", color: "red" });
   let searchTerm = $state("");
@@ -20,7 +22,18 @@
   }
 
   let open: boolean = $state(false);
+
+  function onload(ev) {
+    mount(Comp, { target: ev.target.contentDocument?.body, props: { name: "iframe" } });
+    console.log(ev.target.childNodes);
+  }
 </script>
+
+<Comp></Comp>
+
+<iframe title="iframe" {onload}>
+  <div>Inside</div>
+</iframe>
 
 <!-- <style>
   /* enable transitions */

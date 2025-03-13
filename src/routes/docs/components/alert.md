@@ -192,7 +192,7 @@ You can use `slot="close"` to override the default close button. That slot expos
 ```svelte example class="flex flex-col gap-4"
 <script>
   import { Alert, Button } from "flowbite-svelte";
-  import { InfoCircleSolid } from "flowbite-svelte-icons";
+  import { InfoCircleSolid, EnvelopeSolid } from "flowbite-svelte-icons";
   import { fly } from "svelte/transition";
 </script>
 
@@ -224,10 +224,9 @@ You can use `slot="close"` to override the default close button. That slot expos
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   An alert with non default animation - fly away.
 </Alert>
-<Alert color="dark" dismissable>
+<Alert color="purple" dismissable closeIcon={EnvelopeSolid}>
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   An alert with the custom dismissal button. slot
-  <Button slot="close-button" size="xs" let:close on:click={close} class="ms-auto">Dissmiss me</Button>
 </Alert>
 ```
 

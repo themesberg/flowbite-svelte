@@ -108,7 +108,7 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
 
 This example can be used to show a secondary dropdown menu when clicking on one of the navigation links.
 
-```svelte example class="h-96 md:h-80" hideResponsiveButtons
+```svelte example class="h-96 md:h-80"
 <script>
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Dropdown, DropdownItem, DropdownDivider } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
