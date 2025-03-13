@@ -12,7 +12,7 @@
   import ExampleRtl from "./ExampleRTL.svelte";
   import GitHub from "./icons/GitHub.svelte";
 
-  let { src = undefined, meta = undefined, example, code, divClass = "w-full mx-auto bg-linear-to-r bg-white dark:bg-gray-900 p-6" } = $props();
+  let { src = undefined, meta = undefined, example, code, divClass = "relative w-full mx-auto bg-linear-to-r bg-white dark:bg-gray-900 p-6" } = $props();
 
   type NotificationDirection = "ltr" | "rtl" | "auto";
 

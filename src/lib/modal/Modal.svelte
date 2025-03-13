@@ -38,15 +38,7 @@
 <svelte:window onkeydown={open ? closeModal : undefined} />
 
 {#if open}
-  {#if backdrop && outsideClose}
-    <div role="presentation" class={backdropCls({ class: backdropClass })} onclick={closeModal}></div>
-  {:else if backdrop && !outsideClose}
-    <div role="presentation" class={backdropCls({ class: backdropClass })}></div>
-  {:else if !backdrop && outsideClose}
-    <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full" onclick={closeModal}></div>
-  {:else if !backdrop && !outsideClose}
-    <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full"></div>
-  {/if}
+  <div role="presentation" class={backdropCls({ class: backdropClass })} onclick={outsideClose ? closeModal : undefined}></div>
   <div {...restProps} class={base({ class: clsx(className) })} transition:transition={params as ParamsType} tabindex="-1">
     <div class={div({ class: divClass })}>
       <div class={content({ class: contentClass })}>
