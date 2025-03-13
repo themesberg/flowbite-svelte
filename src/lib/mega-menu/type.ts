@@ -1,17 +1,13 @@
+import type { PopperProps } from "$lib/utils/Popper.svelte";
 import type { Snippet } from "svelte";
 import type { LinkType } from "../types";
-import type { HTMLAttributes } from "svelte/elements";
 
-interface MegaMenuProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
+interface MegaMenuProps extends Omit<PopperProps, "children"> {
   children: Snippet<[{ item: LinkType; index: number }]>;
-  footer?: Snippet;
+  extra?: Snippet;
   items?: LinkType[];
   full?: boolean;
   ulClass?: string;
-  open: boolean;
-  divClass?: string;
-  footerClass?: string;
-  headerClass?: string;
 }
 
 export { type MegaMenuProps };

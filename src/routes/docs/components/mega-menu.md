@@ -44,21 +44,24 @@ Use this example to show a list of links aligned on three columns inside the meg
     { name: "Pro Version", href: "/pro" },
     { name: "License", href: "/license" }
   ];
+  let open = $state();
 </script>
 
-<Navbar let:hidden let:toggle>
+<Navbar>
   <NavBrand href="/">
     <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
   </NavBrand>
-  <NavHamburger on:click={toggle} />
-  <NavUl {hidden}>
+  <NavHamburger />
+  <NavUl>
     <NavLi href="/">Home</NavLi>
-    <NavLi class="cursor-pointer">
+    <NavLi class="cursor-pointer" onclick={()=> (open=true)}>
       Mega menu<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
     </NavLi>
-    <MegaMenu items={menu} let:item>
+    <MegaMenu items={menu} bind:open>
+      {#snippet children({item})}
       <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
+      {/snippet}
     </MegaMenu>
     <NavLi href="/services">Services</NavLi>
     <NavLi href="/services">Products</NavLi>
@@ -90,22 +93,24 @@ This example of a mega menu dropdown can be used to also show an icon near the t
   ];
 </script>
 
-<Navbar let:hidden let:toggle>
+<Navbar>
   <NavBrand href="/">
     <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
   </NavBrand>
-  <NavHamburger on:click={toggle} />
-  <NavUl {hidden}>
+  <NavHamburger/>
+  <NavUl>
     <NavLi href="/">Home</NavLi>
     <NavLi class="cursor-pointer">
       Mega menu<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
     </NavLi>
-    <MegaMenu items={menu} let:item>
+    <MegaMenu items={menu}>
+      {#snippet children({item})}
       <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500 flex items-center">
         <span class="sr-only">{item.name}</span>
-        <svelte:component this={IconOutline} icon={item.icon} class="me-2 h-4 w-4" />{item.name}
+        <svelte:component this={item.icon} class="me-2 h-4 w-4" />{item.name}
       </a>
+      {/snippet}
     </MegaMenu>
     <NavLi href="/services">Services</NavLi>
     <NavLi href="/services">Products</NavLi>
@@ -137,22 +142,24 @@ Use this example to show a mega menu dropdown that spans the entire width of the
   ];
 </script>
 
-<Navbar let:hidden let:toggle>
+<Navbar>
   <NavBrand href="/">
     <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
   </NavBrand>
-  <NavHamburger on:click={toggle} />
-  <NavUl {hidden}>
+  <NavHamburger/>
+  <NavUl>
     <NavLi href="/">Home</NavLi>
     <NavLi class="cursor-pointer">
       Mega menu<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
     </NavLi>
-    <MegaMenu full items={menu2} let:item>
+    <MegaMenu full items={menu2}>
+      {#snippet children({item})}
       <a href="/" class="block h-full rounded-lg p-3 hover:bg-gray-50 dark:hover:bg-gray-700">
         <div class="font-semibold dark:text-white">{item.name}</div>
         <span class="text-sm font-light text-gray-500 dark:text-gray-400">{item.help}</span>
       </a>
+      {/snippet}
     </MegaMenu>
     <NavLi href="/services">Services</NavLi>
     <NavLi href="/services">Products</NavLi>
@@ -184,22 +191,24 @@ This example can be used to also show a CTA button or link next to the menu item
   ];
 </script>
 
-<Navbar let:hidden let:toggle>
+<Navbar>
   <NavBrand href="/">
     <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
   </NavBrand>
-  <NavHamburger on:click={toggle} />
-  <NavUl {hidden}>
+  <NavHamburger/>
+  <NavUl>
     <NavLi href="/">Home</NavLi>
     <NavLi class="cursor-pointer">
       Company<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
     </NavLi>
-    <MegaMenu full items={menu} let:item>
+    <MegaMenu full items={menu}>
+      {#snippet children({item})}
       <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500 hover:underline">
         {item.name}
       </a>
-      <div slot="extra" class="">
+      {/snippet}
+      {#snippet extra()}
         <h2 class="mt-4 mb-2 font-semibold text-gray-900 dark:text-white">Our brands</h2>
         <p class="mb-2 p-0 text-sm font-light text-gray-500 dark:text-gray-300">At Flowbite, we have a portfolio of brands that cater to a variety of preferences.</p>
         <a href="/" class="text-primary-600 hover:text-primary-600 dark:text-primary-500 dark:hover:text-primary-700 inline-flex items-center text-sm font-medium hover:underline">
@@ -207,7 +216,7 @@ This example can be used to also show a CTA button or link next to the menu item
           <span class="sr-only">Explore our brands</span>
           <ArrowRightOutline class="text-primary-600 hover:text-primary-600 dark:text-primary-500 dark:hover:text-primary-700  ms-2 h-6 w-6" />
         </a>
-      </div>
+      {/snippet}
     </MegaMenu>
     <NavLi href="/services">Marketplace</NavLi>
     <NavLi href="/services">Resources</NavLi>
@@ -239,25 +248,29 @@ This example can be used to also show a CTA with a backdround image inside the d
   ];
 </script>
 
-<Navbar let:hidden let:toggle>
+<Navbar>
   <NavBrand href="/">
     <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
   </NavBrand>
-  <NavHamburger on:click={toggle} />
-  <NavUl {hidden}>
+  <NavHamburger/>
+  <NavUl>
     <NavLi href="/">Home</NavLi>
     <NavLi class="cursor-pointer">
       Mega menu<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
     </NavLi>
-    <MegaMenu full items={menu} let:item>
+    <MegaMenu full items={menu}>
+      {#snippet children({item})}
       <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500 hover:underline">
         {item.name}
       </a>
-      <a slot="extra" href="/" class="mt-4 block rounded-lg bg-gray-500 bg-cover bg-local bg-center bg-no-repeat p-4 text-left bg-blend-multiply hover:bg-blend-soft-light dark:hover:bg-blend-darken" style="background-image: url(/images/dashboard-overview.png)">
+      {/snippet}
+      {#snippet extra()}
+      <a href="/" class="mt-4 block rounded-lg bg-gray-500 bg-cover bg-local bg-center bg-no-repeat p-4 text-left bg-blend-multiply hover:bg-blend-soft-light dark:hover:bg-blend-darken" style="background-image: url(/images/dashboard-overview.png)">
         <p class="mb-5 max-w-xl p-0 text-sm leading-tight font-extrabold tracking-tight text-white">Preview the new Flowbite dashboard navigation.</p>
         <Button>Get started</Button>
       </a>
+      {/snippet}
     </MegaMenu>
     <NavLi href="/services">Services</NavLi>
     <NavLi href="/services">Products</NavLi>
