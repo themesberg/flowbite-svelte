@@ -24,7 +24,7 @@
   ],
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build && npm run prepack",
+    "build": "vite build && npm run package",
     "preview": "vite preview",
     "prepare": "svelte-kit sync || echo ''",
     "package": "svelte-kit sync && svelte-package && publint",
