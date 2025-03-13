@@ -1,47 +1,43 @@
-import type { HTMLAttributes, HTMLAnchorAttributes } from "svelte/elements";
-import type { Snippet } from "svelte";
-import type { NavbarType } from "$lib/types";
+import type { AnchorButtonAttributes, TransitionParamTypes } from "$lib/types";
+import type { Component, Snippet } from "svelte";
+import type { HTMLAnchorAttributes, HTMLAttributes, HTMLButtonAttributes } from "svelte/elements";
 
-interface NavbarProps extends HTMLAttributes<HTMLElement> {
-  navSlotBlock?: Snippet;
-  navSlotHiddenTop?: Snippet;
-  navSlotHiddenBottom?: Snippet;
-  toggleNav?: () => void;
-  closeNav?: () => void;
-  navStatus?: boolean | undefined;
+export type NavbarLiType = {
+  activeClass: string;
+  nonActiveClass: string;
+};
+
+interface NavbarProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
+  children: Snippet<[{ hidden: boolean, toggle: () => void, NavContainer: Component }]>;
   fluid?: boolean;
-  brand?: Snippet;
-  hamburgerMenu?: boolean;
-  breakPoint?: NavbarType["breakPoint"];
-  navClass?: string;
-  divClass?: string;
-  btnClass?: string;
-  div2Class?: string;
-  nonActiveClass?: string;
-  activeClass?: string;
+  navContainerClass?: string;
 }
 
-interface NavBrandProps extends HTMLAnchorAttributes {
-  siteName?: string | undefined | null;
-  closeNav?: () => void;
-  aClass?: string;
-  spanClass?: string;
+interface NavBrandProps extends HTMLAnchorAttributes { }
+
+interface NavContainerProps extends HTMLAttributes<HTMLDivElement> {
+  fluid?: boolean;
 }
 
-interface NavUlProps extends HTMLAttributes<HTMLUListElement> {
-  class?: string;
+interface NavHamburgerProps extends HTMLButtonAttributes {
+  menuClass?: string;
+  classMenu?: string;
+  name?: string;
+};
+
+interface NavUlProps extends HTMLAttributes<HTMLDivElement> {
   activeUrl?: string;
+  ulClass?: string;
+  hidden?: boolean;
+  slideParams?: TransitionParamTypes;
+  activeClass?: string;
+  nonActiveClass?: string;
 }
 
-interface NavLiProps extends HTMLAnchorAttributes {
-  closeNav?: () => void;
-  href?: string;
-  aClass?: string;
-  class?: string;
+type NavLiProps = AnchorButtonAttributes & {
+  activeClass?: string;
+  nonActiveClass?: string;
 }
 
-interface NavHamburgerProps extends HTMLAttributes<HTMLButtonElement> {
-  toggleNav: () => void;
-}
+export { type NavbarProps, type NavBrandProps, type NavContainerProps, type NavHamburgerProps, type NavLiProps, type NavUlProps };
 
-export { type NavbarProps, type NavBrandProps, type NavLiProps, type NavUlProps, type NavHamburgerProps };

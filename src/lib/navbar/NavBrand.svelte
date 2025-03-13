@@ -1,30 +1,18 @@
 <script lang="ts">
-  import { type NavBrandProps as Props, navbrand } from ".";
-  import { getContext } from "svelte";
-  import type { NavbarType } from "$lib/types";
+  import clsx from "clsx";
+  import { navbar_brand } from "./theme";
+  import type { NavBrandProps as Props } from "./type";
 
-  let { children, siteName, closeNav, aClass, spanClass, ...restProps }: Props = $props();
-
-  const context = getContext<NavbarType>("navbarContext");
-  closeNav = context.closeNav ?? closeNav;
-
-  const { base, span } = $derived(navbrand());
+  let { children, class: className, ...restProps }: Props = $props();
 </script>
 
-<a href="/" onclick={closeNav} {...restProps} class={base({ class: aClass })}>
+<a {...restProps} class={navbar_brand({ class: clsx(className) })}>
   {@render children?.()}
-  {#if siteName}
-    <span class={span({ class: spanClass })}>{siteName}</span>
-  {/if}
 </a>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@props: children: any;
-@props:siteName: any;
-@props:closeNav: any;
-@props:aClass: any;
-@props:spanClass: any;
+@prop export let href: $$Props['href'] = '';
 -->

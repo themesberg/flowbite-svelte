@@ -4,6 +4,6 @@ import NavBrand from "./NavBrand.svelte";
 import NavLi from "./NavLi.svelte";
 import NavUl from "./NavUl.svelte";
 import NavHamburger from "./NavHamburger.svelte";
-import { navbar, navUl, navbrand, navLi, navhamburger } from "./theme";
+import { navbar, navbar_ul, navbar_brand, navbar_li, navbar_hamburger } from "./theme";
 
-export { Navbar, navbar, type NavbarProps, NavBrand, navbrand, type NavBrandProps, NavLi, navLi, type NavLiProps, NavUl, navUl, type NavUlProps, NavHamburger, navhamburger, type NavHamburgerProps };
+export { Navbar, navbar, type NavbarProps, NavBrand, navbar_brand, type NavBrandProps, NavLi, navbar_li, type NavLiProps, NavUl, navbar_ul, type NavUlProps, NavHamburger, navbar_hamburger, type NavHamburgerProps };

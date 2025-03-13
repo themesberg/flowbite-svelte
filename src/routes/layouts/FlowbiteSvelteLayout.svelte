@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { page } from "$app/stores";
+  import { page } from "$app/state";
   import { DarkMode, Navbar, NavBrand, NavHamburger, NavLi, NavUl, uiHelpers } from "$lib";
   import Tooltip from "$lib/tooltip/Tooltip.svelte";
   import { onMount, setContext } from "svelte";
@@ -14,33 +14,24 @@
 
   let { children } = $props();
 
-  let isHomePage: boolean = $derived($page.route.id === "/");
+  let isHomePage: boolean = $derived(page.route.id === "/");
   /*eslint no-undef: "off"*/
   const version = __VERSION__;
 
   let logo = "/images/flowbite-svelte-icon-logo.svg";
   // let divClass = 'w-full ms-auto lg:block lg:w-auto order-1 lg:order-none';
-  let ulClass = "flex flex-col py-3 my-4 lg:flex-row lg:my-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-4";
 
-  let activeUrl = $state($page.url.pathname);
-  let nav = uiHelpers();
-  let navStatus = $state(false);
-  let toggleNav = nav.toggle;
-  let closeNav = nav.close;
-  $effect(() => {
-    navStatus = nav.isOpen;
-    activeUrl = $page.url.pathname;
-  });
+  let activeUrl = $derived(page.url.pathname);
 
-  const drawerHiddenStore: Writable<boolean> = writable<boolean>(true);
-  setContext("drawer", drawerHiddenStore);
+  // const drawerHiddenStore: Writable<boolean> = writable<boolean>(true);
+  // setContext("drawer", drawerHiddenStore);
 
-  setContext("testC", "test for textContext");
+  // setContext("testC", "test for textContext");
 
-  const toggleDrawer = () => {
-    drawerHiddenStore.update((state) => !state);
-  };
-  const toggle = () => {};
+  // const toggleDrawer = () => {
+  //   drawerHiddenStore.update((state) => !state);
+  // };
+  // const toggle = () => {};
 
   onMount(() => {
     // Workaround until https://github.com/sveltejs/kit/issues/2664 is fixed
@@ -55,11 +46,12 @@
 </script>
 
 <header class="sticky top-0 z-40 mx-auto w-full flex-none border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-900">
-  <Navbar color="default" {toggleNav} {closeNav} {navStatus} breakPoint="xxl" fluid class="mx-auto max-w-[88rem] py-1.5 lg:px-0">
+  <Navbar color="default" fluid class="mx-auto max-w-[88rem] py-1.5 lg:px-0">
     <NavBrand href="/">
       <img src={logo} class="me-3 h-8" alt="Flowbite Svelte Logo" />
       <span class="self-center text-2xl font-semibold whitespace-nowrap text-gray-900 dark:text-white">Flowbite Svelte</span>
     </NavBrand>
+    <NavHamburger />
 
     {#if !isHomePage}
       <AlgoliaSearch />
@@ -69,7 +61,7 @@
       </div>
     {/if}
 
-    <NavUl {activeUrl} onclick={() => setTimeout(toggle, 1)} class="ms-auto text-sm 2xl:space-x-2">
+    <NavUl {activeUrl} class="ms-auto" ulClass="text-sm 2xl:space-x-2">
       <NavLi class="lg:mb-0 lg:px-2" href="/">Home</NavLi>
       <NavLi class="lg:mb-0 lg:px-2" href="/docs/pages/introduction">Docs</NavLi>
       <NavLi class="lg:mb-0 lg:px-2" href="/docs/components/accordion">Components</NavLi>
@@ -96,8 +88,6 @@
         v{version}
       </Badge>
     </a>
-
-    <!-- <NavHamburger on:click={toggle} class="ms-3 m-0 md:block lg:hidden {isHomePage ? '' : 'hidden'}" /> -->
   </Navbar>
 </header>
 

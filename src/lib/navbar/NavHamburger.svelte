@@ -1,31 +1,31 @@
 <script lang="ts">
-  import { getContext } from "svelte";
-  import type { NavbarType } from "$lib/types";
-  import { navhamburger, type NavHamburgerProps as Props } from ".";
   import clsx from "clsx";
+  import { getContext } from "svelte";
+  import { writable, type Writable } from "svelte/store";
+  import ToolbarButton from "../toolbar/ToolbarButton.svelte";
+  import Menu from "./Menu.svelte";
+  import { navbar_hamburger } from "./theme";
+  import type { NavHamburgerProps as Props } from "./type";
 
-  let { toggleNav, class: className, ...restProps }: Props = $props();
+  let { children, onclick, menuClass, class: className, title = "Open main menu", ...restProps }: Props = $props();
 
-  const context = getContext<NavbarType>("navbarContext");
-  let breakPoint = $derived(context.breakPoint ?? "md");
-  const toggleButton = $derived(navhamburger({ breakPoint, class: clsx(className) }));
-  // const handletoggleNav = () => {
-  //   toggleNav();
-  //   console.log('toggleNav clicked')
-  // }
+  let { base, menu } = navbar_hamburger();
+
+  let hiddenStore = getContext<Writable<boolean>>("navHidden") ?? writable(true);
+  const toggle = (ev: MouseEvent) => {
+    hiddenStore.update((h) => !h);
+  };
 </script>
 
-<button onclick={toggleNav} type="button" {...restProps} class={toggleButton}>
-  <span class="sr-only">Open main menu</span>
-  <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
-  </svg>
-</button>
+<ToolbarButton name={title} onclick={onclick || toggle} {...restProps} class={base({ class: clsx(className) })}>
+  <Menu class={menu({ class: menuClass })} />
+</ToolbarButton>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@props: toggleNav: any;
-@props:class: string;
+@prop export let menuClass: $$Props['menuClass'] = 'h-6 w-6 shrink-0';
+@prop export let onClick: $$Props['onClick'] = undefined;
+@prop export let classMenu: $$Props['classMenu'] = '';
 -->

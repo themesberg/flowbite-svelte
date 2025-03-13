@@ -127,11 +127,10 @@ This example can be used to show a secondary dropdown menu when clicking on one 
     <NavLi class="cursor-pointer">
       Dropdown<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
     </NavLi>
-    <Dropdown class="z-20 w-44">
+    <Dropdown simple class="w-44">
       <DropdownItem href="/">Dashboard</DropdownItem>
       <DropdownItem href="/docs/components/navbar">Settings</DropdownItem>
       <DropdownItem href="/">Earnings</DropdownItem>
-      <DropdownDivider />
       <DropdownItem href="/">Sign out</DropdownItem>
     </Dropdown>
     <NavLi href="/settings">Setting</NavLi>

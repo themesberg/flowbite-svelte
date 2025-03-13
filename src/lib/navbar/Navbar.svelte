@@ -1,70 +1,34 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { clickOutside } from "../uiHelpers.svelte";
-  import { slide, type SlideParams } from "svelte/transition";
-  import { quintOut } from "svelte/easing";
-  import type { NavbarType } from "$lib/types";
-  import { type NavbarProps as Props, navbar } from ".";
   import clsx from "clsx";
+  import { writable } from "svelte/store";
+  import NavContainer from "./NavContainer.svelte";
+  import { navbar } from "./theme";
+  import type { NavbarProps as Props } from "./type";
+  import NavHamburger from "./NavHamburger.svelte";
 
-  let { children, navSlotBlock, navSlotHiddenTop, navSlotHiddenBottom, toggleNav, closeNav = () => {}, navStatus, fluid, brand, hamburgerMenu = true, breakPoint = "md", class: navClass, divClass, btnClass, div2Class, activeClass, nonActiveClass, ...restProps }: Props = $props();
+  // propagate props type from underlying Frame
 
-  const { base, container, toggleButton, menuContainer, activeLink, inactiveLink } = $derived(navbar({ fluid, breakPoint, navStatus }));
+  let { children, fluid, navContainerClass, class: className, ...restProps }: Props = $props();
 
-  setContext<NavbarType>("navbarContext", {
-    navStatus,
-    breakPoint,
-    get activeClass() {
-      return activeLink({ class: activeClass });
-    },
-    get nonActiveClass() {
-      return inactiveLink({ class: nonActiveClass });
-    },
-    closeNav: closeNav
-  });
+  let hidden = writable(true);
+  setContext("navHidden", hidden);
 
-  let slideParams: SlideParams = {
-    delay: 250,
-    duration: 500,
-    easing: quintOut
+  // $: {
+  //   // override default Frame value
+  //   $$restProps.color = $$restProps.color ?? "navbar";
+  // }
+
+  let toggle = () => {
+    hidden.update((hidden) => !hidden);
   };
-  // Create a helper to determine menu role and tabindex for A11y
-  function getMenuProps(isOpen: boolean) {
-    return isOpen ? { role: "menu", tabindex: 0 } : { role: "none", tabindex: -1 };
-  }
 </script>
 
-<nav {...restProps} class={base({ class: clsx(navClass), fluid })} use:clickOutside={closeNav}>
-  <div class={container({ class: divClass, fluid })}>
-    {#if brand}
-      {@render brand()}
-    {/if}
-    {#if hamburgerMenu}
-      <button onclick={toggleNav} type="button" class={toggleButton({ class: btnClass })}>
-        <span class="sr-only">Open main menu</span>
-        <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
-        </svg>
-      </button>
-    {/if}
-    {#if navSlotBlock}
-      {@render navSlotBlock()}
-    {/if}
-    {#if navStatus}
-      {#if navSlotHiddenTop}
-        {@render navSlotHiddenTop()}
-      {/if}
-      <div class={menuContainer({ class: div2Class })} transition:slide={slideParams} {...getMenuProps(true)}>
-        {@render children?.()}
-      </div>
-      {#if navSlotHiddenBottom}
-        {@render navSlotHiddenBottom()}
-      {/if}
-    {:else}
-      <div class={menuContainer({ class: div2Class })} {...getMenuProps(false)}>
-        {@render children?.()}
-      </div>
-    {/if}
+<nav>
+  <div {...restProps} class={navbar({ class: clsx(className) })}>
+    <NavContainer {fluid} class={navContainerClass}>
+      {@render children({ hidden: $hidden, toggle, NavContainer })}
+    </NavContainer>
   </div>
 </nav>
 
@@ -72,21 +36,6 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@props: children: any;
-@props:navSlotBlock: any;
-@props:navSlotHiddenTop: any;
-@props:navSlotHiddenBottom: any;
-@props:toggleNav: any;
-@props:closeNav: any = ();
-@props:navStatus: any;
-@props:fluid: any;
-@props:brand: any;
-@props:hamburgerMenu: any = true;
-@props:breakPoint: any = "md";
-@props:class: string;
-@props:divClass: any;
-@props:btnClass: any;
-@props:div2Class: any;
-@props:activeClass: any;
-@props:nonActiveClass: any;
+@prop export let fluid: $$Props['fluid'] = false;
+@prop export let navContainerClass: string= '';
 -->

@@ -1,15 +1,13 @@
 <script lang="ts">
+  import clsx from "clsx";
   import { getContext } from "svelte";
-  import type { NavbarType } from "$lib/types";
-  import { type NavLiProps as Props, navLi } from ".";
+  import { navbar_li } from "./theme";
+  import type { NavbarLiType, NavLiProps as Props } from "./type";
 
-  let { closeNav, href, children, aClass, class: className, ...restProps }: Props = $props();
+  const context = getContext<NavbarLiType>("navbarContext") ?? {};
 
-  let breakPoint: NavbarType["breakPoint"];
+  let { children, activeClass = context.activeClass, nonActiveClass = context.nonActiveClass, class: className, ...restProps }: Props = $props();
 
-  const context = getContext<NavbarType>("navbarContext");
-  breakPoint = context.breakPoint ?? "md";
-  closeNav = context.closeNav ?? closeNav;
   const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
 
   let navUrl = $state("");
@@ -17,25 +15,29 @@
     navUrl = value;
   });
 
-  // let currentUrl = $state();
-  let isActive = $derived(navUrl ? href === navUrl : false);
+  let active = $derived(navUrl ? restProps.href === navUrl : false);
+  let liClass = $derived(navbar_li({ class: clsx(active ? activeClass : nonActiveClass, className) }));
 
-  const { base, link } = $derived(navLi({ active: isActive, breakPoint }));
+  console.log("CHANGE BUTTON TO DIV - NavLi");
 </script>
 
-<li class={base({ class: className })}>
-  <a {href} onclick={closeNav} {...restProps} aria-current={isActive} class={link({ class: aClass })}>
-    {@render children?.()}
-  </a>
+<li>
+  {#if restProps.href === undefined}
+    <button role="presentation" {...restProps} class={[liClass]}>
+      {@render children?.()}
+    </button>
+  {:else}
+    <a {...restProps} class={liClass}>
+      {@render children?.()}
+    </a>
+  {/if}
 </li>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@props: closeNav: any;
-@props:href: any;
-@props:children: any;
-@props:aClass: any;
-@props:class: string;
+@prop export let href: $$Props['href'] = '';
+@prop export let activeClass: $$Props['activeClass'] = undefined;
+@prop export let nonActiveClass: $$Props['nonActiveClass'] = undefined;
 -->
