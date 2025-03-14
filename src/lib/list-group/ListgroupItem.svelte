@@ -4,7 +4,7 @@
   import { type ListgroupItemVariants, listGroupItem } from "./theme";
   import clsx from "clsx";
 
-  let { children, active, current, disabled, horizontal, name, Icon, class: className, iconClass = "me-2.5 h-5 w-5", ...restProps }: Props = $props();
+  let { children, active, current, disabled, horizontal, name, Icon, class: className, iconClass = "me-2.5 h-5 w-5", onclick, ...restProps }: Props = $props();
 
   active = active ?? getContext("active");
 
@@ -28,7 +28,7 @@
     {@render nameOrChildren()}
   </li>
 {:else if restProps.href === undefined}
-  <button type="button" {...restProps} class={itemClass} {disabled} aria-current={current}>
+  <button type="button" {...restProps} class={itemClass} {disabled} aria-current={current} {onclick}>
     {@render nameOrChildren()}
   </button>
 {:else}

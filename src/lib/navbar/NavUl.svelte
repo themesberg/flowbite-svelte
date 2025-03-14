@@ -1,25 +1,27 @@
 <script lang="ts">
   import { getContext, setContext } from "svelte";
   import { sineIn } from "svelte/easing";
-  import { writable, type Writable } from "svelte/store";
+  import { writable } from "svelte/store";
   import { slide } from "svelte/transition";
 
   import clsx from "clsx";
   import { navbar_ul } from "./theme";
-  import type { NavbarLiType, NavUlProps as Props } from "./type";
+  import type { NavbarState, NavUlProps as Props } from "./type";
 
-  let hiddenStore = getContext("navHidden") as Writable<boolean>;
+  let navState = getContext<NavbarState>("navState");
 
-  let { children, activeUrl, ulClass, hidden = undefined, slideParams = { delay: 250, duration: 500, easing: sineIn }, activeClass, nonActiveClass, class: clasName, ...restProps }: Props = $props();
+  let { children, activeUrl, ulClass, slideParams = { delay: 250, duration: 500, easing: sineIn }, activeClass, nonActiveClass, class: clasName, ...restProps }: Props = $props();
 
   const activeUrlStore = writable<string>("");
 
-  let _hidden: boolean = $derived(hidden ?? $hiddenStore ?? true);
+  let hidden: boolean = $derived(navState.hidden ?? true);
 
-  let { base, ul, active, nonActive } = $derived(navbar_ul({ hidden: _hidden }));
+  let { base, ul, active, nonActive } = $derived(navbar_ul({ hidden }));
 
   $effect(() => {
-    setContext<NavbarLiType>("navbarContext", { activeClass: active({ class: activeClass }), nonActiveClass: nonActive({ class: nonActiveClass }) });
+    // setContext<NavbarLiType>("navbarContext", { activeClass: active({ class: activeClass }), nonActiveClass: nonActive({ class: nonActiveClass }) });
+    navState.activeClass = active({ class: activeClass });
+    navState.nonActiveClass = nonActive({ class: nonActiveClass });
   });
 
   $effect(() => {
@@ -31,7 +33,7 @@
   let _ulClass: string = $derived(ul({ class: ulClass }));
 </script>
 
-{#if !_hidden}
+{#if !hidden}
   <div {...restProps} class={_divClass} transition:slide={slideParams}>
     <!-- onclick -->
     <ul class={_ulClass}>

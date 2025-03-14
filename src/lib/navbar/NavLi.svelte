@@ -2,15 +2,11 @@
   import clsx from "clsx";
   import { getContext } from "svelte";
   import { navbar_li } from "./theme";
-  import type { NavbarLiType, NavLiProps as Props } from "./type";
-  import type { Writable } from "svelte/store";
+  import type { NavbarState, NavLiProps as Props } from "./type";
 
-  const context = getContext<NavbarLiType>("navbarContext") ?? {};
-  let hiddenStore = getContext<Writable<boolean>>("navHidden");
-  $effect(() => {
-    console.log($hiddenStore, "hs");
-  });
-  let { children, activeClass = context.activeClass, nonActiveClass = context.nonActiveClass, class: className, ...restProps }: Props = $props();
+  let navState = getContext<NavbarState>("navState");
+
+  let { children, activeClass, nonActiveClass, class: className, onclick, ...restProps }: Props = $props();
 
   const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
 
@@ -20,16 +16,12 @@
   });
 
   let active = $derived(navUrl ? restProps.href === navUrl : false);
-  let liClass = $derived(navbar_li({ hidden: $hiddenStore, class: clsx(active ? activeClass : nonActiveClass, className) }));
-
-  $effect(() => {
-    console.log("CHANGE BUTTON TO DIV - NavLi", liClass);
-  });
+  let liClass = $derived(navbar_li({ hidden: navState.hidden, class: clsx(active ? (activeClass ?? navState.activeClass) : (nonActiveClass ?? navState.nonActiveClass), className) }));
 </script>
 
 <li>
   {#if restProps.href === undefined}
-    <button role="presentation" {...restProps} class={"hover:text-primary-500"}>
+    <button role="presentation" {...restProps} class={liClass} {onclick}>
       {@render children?.()}
     </button>
   {:else}

@@ -1,23 +1,23 @@
 <script lang="ts">
   import clsx from "clsx";
   import { getContext } from "svelte";
-  import { writable, type Writable } from "svelte/store";
   import ToolbarButton from "../toolbar/ToolbarButton.svelte";
   import Menu from "./Menu.svelte";
   import { navbar_hamburger } from "./theme";
-  import type { NavHamburgerProps as Props } from "./type";
+  import type { NavbarState, NavHamburgerProps as Props } from "./type";
+  import type { MouseEventHandler } from "svelte/elements";
 
-  let { children, onclick, menuClass, class: className, title = "Open main menu", ...restProps }: Props = $props();
+  let { children, onclick, menuClass, class: className, name = "Open main menu", ...restProps }: Props = $props();
 
   let { base, menu } = navbar_hamburger();
 
-  let hiddenStore = getContext<Writable<boolean>>("navHidden") ?? writable(true);
-  const toggle = (ev: MouseEvent) => {
-    hiddenStore.update((h) => !h);
+  let navState = getContext<NavbarState>("navState");
+  const toggle: MouseEventHandler<HTMLButtonElement> = (ev) => {
+    navState.hidden = !navState.hidden;
   };
 </script>
 
-<ToolbarButton name={title} onclick={onclick || toggle} {...restProps} class={base({ class: clsx(className) })}>
+<ToolbarButton {name} onclick={onclick || toggle} {...restProps} class={base({ class: clsx(className) })}>
   <Menu class={menu({ class: menuClass })} />
 </ToolbarButton>
 

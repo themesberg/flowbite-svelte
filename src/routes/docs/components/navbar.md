@@ -285,7 +285,7 @@ Use this example to show a solid background for the navbar component instead of 
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "flowbite-svelte";
 </script>
 
-<Navbar rounded color="form">
+<Navbar class="bg-primary-100 dark:bg-primary-700">
   <NavBrand href="/">
     <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>

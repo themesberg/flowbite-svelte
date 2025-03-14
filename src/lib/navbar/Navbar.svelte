@@ -1,33 +1,26 @@
 <script lang="ts">
-  import { setContext } from "svelte";
   import clsx from "clsx";
-  import { writable } from "svelte/store";
+  import { setContext } from "svelte";
   import NavContainer from "./NavContainer.svelte";
   import { navbar } from "./theme";
-  import type { NavbarProps as Props } from "./type";
-  import NavHamburger from "./NavHamburger.svelte";
+  import type { NavbarState, NavbarProps as Props } from "./type";
 
   // propagate props type from underlying Frame
 
   let { children, fluid, navContainerClass, class: className, ...restProps }: Props = $props();
 
-  let hidden = writable(true);
-  setContext("navHidden", hidden);
-
-  // $: {
-  //   // override default Frame value
-  //   $$restProps.color = $$restProps.color ?? "navbar";
-  // }
+  let navState = $state({ hidden: true });
+  setContext<NavbarState>("navState", navState);
 
   let toggle = () => {
-    hidden.update((hidden) => !hidden);
+    navState.hidden = !navState.hidden;
   };
 </script>
 
 <nav>
   <div {...restProps} class={navbar({ class: clsx(className) })}>
     <NavContainer {fluid} class={navContainerClass}>
-      {@render children({ hidden: $hidden, toggle, NavContainer })}
+      {@render children({ hidden: navState.hidden, toggle, NavContainer })}
     </NavContainer>
   </div>
 </nav>
