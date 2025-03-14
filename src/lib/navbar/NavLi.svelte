@@ -3,9 +3,13 @@
   import { getContext } from "svelte";
   import { navbar_li } from "./theme";
   import type { NavbarLiType, NavLiProps as Props } from "./type";
+  import type { Writable } from "svelte/store";
 
   const context = getContext<NavbarLiType>("navbarContext") ?? {};
-
+  let hiddenStore = getContext<Writable<boolean>>("navHidden");
+  $effect(() => {
+    console.log($hiddenStore, "hs");
+  });
   let { children, activeClass = context.activeClass, nonActiveClass = context.nonActiveClass, class: className, ...restProps }: Props = $props();
 
   const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
@@ -16,14 +20,16 @@
   });
 
   let active = $derived(navUrl ? restProps.href === navUrl : false);
-  let liClass = $derived(navbar_li({ class: clsx(active ? activeClass : nonActiveClass, className) }));
+  let liClass = $derived(navbar_li({ hidden: $hiddenStore, class: clsx(active ? activeClass : nonActiveClass, className) }));
 
-  console.log("CHANGE BUTTON TO DIV - NavLi");
+  $effect(() => {
+    console.log("CHANGE BUTTON TO DIV - NavLi", liClass);
+  });
 </script>
 
 <li>
   {#if restProps.href === undefined}
-    <button role="presentation" {...restProps} class={[liClass]}>
+    <button role="presentation" {...restProps} class={"hover:text-primary-500"}>
       {@render children?.()}
     </button>
   {:else}
