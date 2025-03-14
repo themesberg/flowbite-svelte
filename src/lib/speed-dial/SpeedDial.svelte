@@ -27,7 +27,7 @@
   {#if button}
     {@render button()}
   {:else if gradient}
-    <GradientButton {pill} {name} {...restProps} class="p-3!">
+    <GradientButton {pill} {...restProps} class="p-3!">
       {#if icon}
         {@render icon()}
       {:else}
@@ -36,7 +36,7 @@
       <span class="sr-only">{name}</span>
     </GradientButton>
   {:else}
-    <Button {pill} {name} {...restProps} class="p-3!">
+    <Button {pill} {...restProps} class="p-3!">
       {#if icon}
         {@render icon()}
       {:else}

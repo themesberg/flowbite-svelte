@@ -1,14 +1,14 @@
 import type { HTMLAnchorAttributes, HTMLButtonAttributes } from "svelte/elements";
 import type { ButtonVariants, GradientButtonVariantes } from "./theme";
+import type { AnchorButtonAttributes } from "$lib/types";
 
 type HTMLButtonOrAnchorAttributes = Omit<HTMLButtonAttributes & HTMLAnchorAttributes, "color">;
 
-interface ButtonProps extends ButtonVariants, HTMLButtonOrAnchorAttributes {
+type ButtonProps = ButtonVariants & AnchorButtonAttributes & {
   tag?: string;
   disabled?: boolean;
   outline?: boolean;
   shadow?: boolean;
-  href?: string;
 }
 
 interface GradientButtonProps extends GradientButtonVariantes, HTMLButtonOrAnchorAttributes {

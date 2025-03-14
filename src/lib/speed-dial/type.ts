@@ -9,7 +9,7 @@ export interface SpeedCtxType {
   textOutside: boolean;
 }
 
-export interface SpeedDialProps extends Omit<ButtonProps, "ontoggle" | "onbeforetoggle"> {
+export type SpeedDialProps = ButtonProps & {
   children: Snippet;
   icon?: Snippet;
   button?: Snippet;
@@ -24,7 +24,7 @@ export interface SpeedDialProps extends Omit<ButtonProps, "ontoggle" | "onbefore
   onbeforetoggle?: PopperProps["onbeforetoggle"];
 }
 
-export interface SpeedDialButtonProps extends ButtonProps {
+export type SpeedDialButtonProps = ButtonProps & {
   name?: string;
   tooltip?: Placement | "none";
   pill?: boolean;

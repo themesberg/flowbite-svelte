@@ -7,20 +7,20 @@
 
   const group: SizeType = getContext("group");
 
-  let { children, pill, outline = false, size = group ? "sm" : "md", href, type = "button", color = group ? (outline ? "dark" : "alternative") : "primary", shadow = false, tag = "button", disabled, class: className, ...restProps }: Props = $props();
+  let { children, onclick, pill, outline = false, size = group ? "sm" : "md", color = group ? (outline ? "dark" : "alternative") : "primary", shadow = false, tag = "button", disabled, class: className, ...restProps }: Props = $props();
 
   const { base, outline: outline_, shadow: shadow_ } = $derived(button({ color, size, disabled, pill, group: !!group }));
   let btnCls = $derived(twMerge(base(), outline && outline_(), shadow && shadow_(), clsx(className)));
 </script>
 
-{#if href}
-  <a {href} {...restProps} class={btnCls} role="button">
-    {@render children?.()}
-  </a>
-{:else if tag === "button"}
-  <button {type} {...restProps} class={btnCls} {disabled}>
+{#if restProps.href === undefined}
+  <button type="button" {...restProps} class={btnCls} {disabled} {onclick}>
     {@render children?.()}
   </button>
+{:else if restProps.href}
+  <a {...restProps} class={btnCls} role="button">
+    {@render children?.()}
+  </a>
 {:else}
   <svelte:element this={tag} {...restProps} class={btnCls}>
     {@render children?.()}
