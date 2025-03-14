@@ -50,4 +50,5 @@
 @props:Icon: any;
 @props:class: string;
 @props:iconClass: any = "me-2.5 h-5 w-5";
+@props:onclick: any;
 -->

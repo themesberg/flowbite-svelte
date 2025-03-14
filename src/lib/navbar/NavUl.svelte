@@ -56,11 +56,10 @@
 @props: children: any;
 @props:activeUrl: any;
 @props:ulClass: any;
-@props:hidden: any = undefined;
 @props:slideParams: any = { delay: 250;
 @props:duration: any;
 @props:easing: any;
-@props:activeClass: any = active();
-@props:nonActiveClass: any = nonActive();
+@props:activeClass: any;
+@props:nonActiveClass: any;
 @props:class: string;
 -->

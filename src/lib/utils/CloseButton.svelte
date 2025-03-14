@@ -35,7 +35,8 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@props: color: any = "gray";
+@props: children: any;
+@props:color: any = "gray";
 @props:onclick: any;
 @props:name: any = "Close";
 @props:ariaLabel: any;

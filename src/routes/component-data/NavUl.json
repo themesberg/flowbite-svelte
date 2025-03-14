@@ -17,11 +17,6 @@
       ""
     ],
     [
-      "hidden",
-      "any",
-      "undefined"
-    ],
-    [
       "slideParams",
       "any",
       "{ delay: 250"
@@ -39,12 +34,12 @@
     [
       "activeClass",
       "any",
-      "active()"
+      ""
     ],
     [
       "nonActiveClass",
       "any",
-      "nonActive()"
+      ""
     ],
     [
       "class",

@@ -68,5 +68,5 @@
 @props:dismissable: any;
 @props:transition: any = fade;
 @props:params: any;
-@props:onclick: any;
+@props:onclick: any = ();
 -->

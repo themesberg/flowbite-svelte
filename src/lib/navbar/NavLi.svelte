@@ -36,7 +36,8 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @props: children: any;
-@props:activeClass: any = context.activeClass;
-@props:nonActiveClass: any = context.nonActiveClass;
+@props:activeClass: any;
+@props:nonActiveClass: any;
 @props:class: string;
+@props:onclick: any;
 -->

@@ -45,6 +45,11 @@
       "iconClass",
       "any",
       "\"me-2.5 h-5 w-5\""
+    ],
+    [
+      "onclick",
+      "any",
+      ""
     ]
   ]
 }

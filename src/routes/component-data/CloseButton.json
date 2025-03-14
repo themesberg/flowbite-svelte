@@ -2,6 +2,11 @@
   "name": "CloseButton",
   "props": [
     [
+      "children",
+      "any",
+      ""
+    ],
+    [
       "color",
       "any",
       "\"gray\""

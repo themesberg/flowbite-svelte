@@ -29,5 +29,5 @@
 @props:onclick: any;
 @props:menuClass: any;
 @props:class: string;
-@props:title: any = "Open main menu";
+@props:name: any = "Open main menu";
 -->

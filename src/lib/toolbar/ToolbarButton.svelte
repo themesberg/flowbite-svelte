@@ -35,6 +35,7 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @props: children: any;
+@props:onclick: any;
 @props:color: any;
 @props:name: any;
 @props:"aria-label": any;

@@ -9,16 +9,21 @@
     [
       "activeClass",
       "any",
-      "context.activeClass"
+      ""
     ],
     [
       "nonActiveClass",
       "any",
-      "context.nonActiveClass"
+      ""
     ],
     [
       "class",
       "string",
+      ""
+    ],
+    [
+      "onclick",
+      "any",
       ""
     ]
   ]
