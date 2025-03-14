@@ -1,5 +1,5 @@
 <script lang="ts">
-  let { children, tinted = false, class: className } = $props();
+  let { children, tinted = false, class: className = undefined } = $props();
 </script>
 
 <section class={tinted ? "bg-gray-50 dark:bg-gray-800" : ""}>

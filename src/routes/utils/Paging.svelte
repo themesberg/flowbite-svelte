@@ -5,7 +5,7 @@
   import ArrowRight from "./icons/ArrowRight.svelte";
 
   // const identity = x => x;
-  let { children } = $props();
+  let { children = undefined } = $props();
 
   const {
     data,
