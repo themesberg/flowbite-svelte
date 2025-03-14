@@ -1,4 +1,4 @@
-import type { HTMLButtonAttributes } from "svelte/elements";
+import type { HTMLButtonAttributes, MouseEventHandler } from "svelte/elements";
 import type { HTMLAnchorAttributes } from "svelte/elements";
 import type { TransitionConfig, FadeParams, BlurParams, FlyParams, SlideParams, ScaleParams } from "svelte/transition";
 
@@ -112,8 +112,9 @@ export interface LinkType {
   [propName: string]: any;
 }
 
-interface AnchorAttributes extends Omit<HTMLAnchorAttributes, "on:copy" | "oncopy"> {
+interface AnchorAttributes extends Omit<HTMLAnchorAttributes, "on:copy" | "oncopy" | "onclick"> {
   href: string;
+  onclick?: HTMLButtonAttributes['onclick']
 }
 
 interface ButtonAttibutes extends Omit<HTMLButtonAttributes, "on:copy" | "oncopy"> {
