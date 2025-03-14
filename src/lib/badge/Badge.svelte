@@ -14,7 +14,7 @@
   // Use context theme if available, otherwise fallback to default
   const badgeTheme = context?.badge || badge;
 
-  const { base, hrefClass } = $derived(badgeTheme());
+  const { base, hrefClass } = $derived(badgeTheme({ color, size: large ? "large" : "small", rounded, border }));
 
   const close = (ev: MouseEvent) => {
     onclose?.(ev);
@@ -23,7 +23,7 @@
 </script>
 
 {#if badgeStatus}
-  <div {...restProps} transition:transition={params as ParamsType} class={base({ color, size: large ? "large" : "small", rounded, class: clsx(className) })}>
+  <div {...restProps} transition:transition={params as ParamsType} class={base({ class: clsx(className) })}>
     {#if href}
       <a {href} {target} class={hrefClass({ class: aClass })}>
         {@render children()}

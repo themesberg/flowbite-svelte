@@ -36,10 +36,10 @@ const badge = tv({
       large: "text-sm"
     },
     border: {
-      true: "border"
+      true: { base: "border" }
     },
     rounded: {
-      true: "rounded-full",
+      true: { base: "rounded-full" },
       false: "rounded-sm"
     }
   },
@@ -47,102 +47,102 @@ const badge = tv({
     {
       border: true,
       color: "primary",
-      class: "bg-primary-100 text-primary-800 dark:bg-primary-700/50 dark:text-primary-400 border-primary-400 dark:border-primary-400"
+      class: "dark:bg-transparent dark:text-primary-400 border-primary-400 dark:border-primary-400"
     },
     {
       border: true,
       color: "secondary",
-      class: "bg-secondary-100 text-secondary-800 dark:bg-secondary-700/50 dark:text-secondary-400 border-secondary-400 dark:border-secondary-400"
+      class: "dark:bg-transparent dark:text-secondary-400 border-secondary-400 dark:border-secondary-400"
     },
     {
       border: true,
       color: "gray",
-      class: "bg-gray-100 text-gray-800 dark:bg-gray-700/50 dark:text-gray-400 border-gray-400 dark:border-gray-400"
+      class: "dark:bg-transparent dark:text-gray-400 border-gray-400 dark:border-gray-400"
     },
     {
       border: true,
       color: "red",
-      class: "bg-red-100 text-red-800 dark:bg-red-700/50 dark:text-red-400 border-red-400 dark:border-red-400"
+      class: "dark:bg-transparent dark:text-red-400 border-red-400 dark:border-red-400",
     },
     {
       border: true,
       color: "orange",
-      class: "bg-orange-100 text-orange-800 dark:bg-orange-700/50 dark:text-orange-400 border-orange-400 dark:border-orange-400"
+      class: "dark:bg-transparent dark:text-orange-400 border-orange-400 dark:border-orange-400"
     },
     {
       border: true,
       color: "amber",
-      class: "bg-amber-100 text-amber-800 dark:bg-amber-700/50 dark:text-amber-400 border-amber-400 dark:border-amber-400"
+      class: "dark:bg-transparent dark:text-amber-400 border-amber-400 dark:border-amber-400"
     },
     {
       border: true,
       color: "yellow",
-      class: "bg-yellow-100 text-yellow-800 dark:bg-yellow-700/50 dark:text-yellow-300 border-yellow-300 dark:border-yellow-300"
+      class: "dark:bg-transparent dark:text-yellow-300 border-yellow-300 dark:border-yellow-300"
     },
     {
       border: true,
       color: "lime",
-      class: "bg-lime-100 text-lime-800 dark:bg-lime-700/50 dark:text-lime-400 border-lime-400 dark:border-lime-400"
+      class: "dark:bg-transparent dark:text-lime-400 border-lime-400 dark:border-lime-400"
     },
     {
       border: true,
       color: "green",
-      class: "bg-green-100 text-green-800 dark:bg-green-700/50 dark:text-green-400 border-green-400 dark:border-green-400"
+      class: "dark:bg-transparent dark:text-green-400 border-green-400 dark:border-green-400"
     },
     {
       border: true,
       color: "emerald",
-      class: "bg-emerald-100 text-emerald-800 dark:bg-emerald-700/50 dark:text-emerald-400 border-emerald-400 dark:border-emerald-400"
+      class: "dark:bg-transparent dark:text-emerald-400 border-emerald-400 dark:border-emerald-400"
     },
     {
       border: true,
       color: "teal",
-      class: "bg-teal-100 text-teal-800 dark:bg-teal-700/50 dark:text-teal-400 border-teal-400 dark:border-teal-400"
+      class: "dark:bg-transparent dark:text-teal-400 border-teal-400 dark:border-teal-400"
     },
     {
       border: true,
       color: "cyan",
-      class: "bg-cyan-100 text-cyan-800 dark:bg-cyan-700/50 dark:text-cyan-400 border-cyan-400 dark:border-cyan-400"
+      class: "dark:bg-transparent dark:text-cyan-400 border-cyan-400 dark:border-cyan-400"
     },
     {
       border: true,
       color: "sky",
-      class: "bg-sky-100 text-sky-800 dark:bg-sky-700/50 dark:text-sky-400 border-sky-400 dark:border-sky-400"
+      class: "dark:bg-transparent dark:text-sky-400 border-sky-400 dark:border-sky-400"
     },
     {
       border: true,
       color: "blue",
-      class: "bg-blue-100 text-blue-800 dark:bg-blue-700/50 dark:text-blue-400 border-blue-400 dark:border-blue-400"
+      class: "dark:bg-transparent dark:text-blue-400 border-blue-400 dark:border-blue-400"
     },
     {
       border: true,
       color: "indigo",
-      class: "bg-indigo-100 text-indigo-800 dark:bg-indigo-700/50 dark:text-indigo-400 border-indigo-400 dark:border-indigo-400"
+      class: "dark:bg-transparent dark:text-indigo-400 border-indigo-400 dark:border-indigo-400"
     },
     {
       border: true,
       color: "violet",
-      class: "bg-violet-100 text-violet-800 dark:bg-violet-700/50 dark:text-violet-400 border-violet-400 dark:border-violet-400"
+      class: "dark:bg-transparent dark:text-violet-400 border-violet-400 dark:border-violet-400"
     },
     {
       border: true,
       color: "purple",
-      class: "bg-purple-100 text-purple-800 dark:bg-purple-700/50 dark:text-purple-400 border-purple-400 dark:border-purple-400"
+      class: "dark:bg-transparent dark:text-purple-400 border-purple-400 dark:border-purple-400"
     },
     {
       border: true,
       color: "fuchsia",
-      class: "bg-fuchsia-100 text-fuchsia-800 dark:bg-fuchsia-700/50 dark:text-fuchsia-400 border-fuchsia-400 dark:border-fuchsia-400"
+      class: "dark:bg-transparent dark:text-fuchsia-400 border-fuchsia-400 dark:border-fuchsia-400"
     },
     {
       border: true,
       color: "pink",
-      class: "bg-pink-100 text-pink-800 dark:bg-pink-700/50 dark:text-pink-400 border-pink-400 dark:border-pink-400"
+      class: "dark:bg-transparent dark:text-pink-400 border-pink-400 dark:border-pink-400"
     },
     {
       border: true,
       color: "rose",
-      class: "bg-rose-100 text-rose-800 dark:bg-rose-700/50 dark:text-rose-400 border-rose-400 dark:border-rose-400"
+      class: "dark:bg-transparent dark:text-rose-400 border-rose-400 dark:border-rose-400"
     },
     {
       href: true,

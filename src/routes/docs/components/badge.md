@@ -38,7 +38,7 @@ Use the following badge elements to indicate counts or labels inside or outside 
 </script>
 
 <Badge>Default</Badge>
-<Badge color="dark">Dark</Badge>
+<Badge color="gray">Gray</Badge>
 <Badge color="red">Red</Badge>
 <Badge color="green">Green</Badge>
 <Badge color="yellow">Yellow</Badge>
@@ -57,7 +57,7 @@ Use the `large` prop to create a large variant of the badges.
 </script>
 
 <Badge large>Default</Badge>
-<Badge large color="dark">Dark</Badge>
+<Badge large color="gray">Gray</Badge>
 <Badge large color="red">Red</Badge>
 <Badge large color="green">Green</Badge>
 <Badge large color="yellow">Yellow</Badge>
@@ -76,7 +76,7 @@ Use the `border` prop to add a border accent to the badge component.
 </script>
 
 <Badge border>Default</Badge>
-<Badge border color="dark">Dark</Badge>
+<Badge border color="gray">Gray</Badge>
 <Badge border color="red">Red</Badge>
 <Badge border color="green">Green</Badge>
 <Badge border color="yellow">Yellow</Badge>
@@ -95,7 +95,7 @@ Use the `rounded-sm` prop to make the corners even more rounded like pills for t
 </script>
 
 <Badge rounded>Default</Badge>
-<Badge rounded color="dark">Dark</Badge>
+<Badge rounded color="gray">Gray</Badge>
 <Badge rounded color="red">Red</Badge>
 <Badge rounded color="green">Green</Badge>
 <Badge rounded color="yellow">Yellow</Badge>
@@ -129,7 +129,7 @@ You can also use SVG icons inside the badge elements.
   import { ClockSolid } from "flowbite-svelte-icons";
 </script>
 
-<Badge color="dark" border>
+<Badge color="gray" border>
   <ClockSolid class="me-1.5 h-2.5 w-2.5" />
   3 days ago
 </Badge>
@@ -164,7 +164,7 @@ To achive the functionality of the notification badge, use the sibling [`Indicat
 <Button class="relative" size="sm">
   <EnvelopeSolid class="text-white dark:text-white" />
   <span class="sr-only">Notifications</span>
-  <Indicator color="dark" border size="xl" placement="bottom-right" class="text-xs font-bold">20</Indicator>
+  <Indicator color="gray" border size="xl" placement="bottom-right" class="text-xs font-bold">20</Indicator>
 </Button>
 ```
 
@@ -193,7 +193,7 @@ Alternatively you can also use badges which indicate only a SVG icon.
   import { CheckOutline } from "flowbite-svelte-icons";
 </script>
 
-<Badge color="dark" rounded-sm large class="p-1! font-semibold!">
+<Badge color="gray" rounded-sm large class="p-1! font-semibold!">
   <CheckOutline class="h-3 w-3" />
   <span class="sr-only">Icon description</span>
 </Badge>
@@ -213,7 +213,7 @@ Use the `dimissable` prop to dismiss the current badge.
 </script>
 
 <Badge dismissable large>Default</Badge>
-<Badge dismissable large color="dark">Dark</Badge>
+<Badge dismissable large color="gray">Gray</Badge>
 <Badge dismissable large color="red">Red</Badge>
 <Badge dismissable large color="green">Green</Badge>
 <Badge dismissable large color="yellow">Yellow</Badge>
