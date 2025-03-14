@@ -41,8 +41,8 @@ export const thumbnail = tv({
   base: "",
   variants: {
     selected: {
-      true: { indicator: "opacity-100" },
-      false: { indicator: "opacity-60" }
+      true: "opacity-100",
+      false: "opacity-60"
     }
   },
   defaultVariants: {

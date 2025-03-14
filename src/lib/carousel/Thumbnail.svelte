@@ -4,6 +4,10 @@
   import type { ThumbnailProps as Props } from "./type";
 
   let { selected, class: className, ...restProps }: Props = $props();
+
+  $effect(() => {
+    console.log(thumbnail({ selected, class: clsx(className) }));
+  });
 </script>
 
 <img {...restProps} class={thumbnail({ selected, class: clsx(className) })} />

@@ -33,7 +33,7 @@
       {#if children}
         {@render children({ image, selected, imgClass, Thumbnail })}
       {:else}
-        <Thumbnail {...image} class={imgClass} />
+        <Thumbnail {selected} {...image} class={imgClass} />
       {/if}
     </button>
   {/each}

@@ -138,7 +138,7 @@ You can control the `Carousel` component externally by the `index` prop. Here is
     <Controls />
     <Indicators />
   </Carousel>
-  <Thumbnails {images} {forward} bind:index />
+  <Thumbnails {images} bind:index />
 </div>
 ```
 
@@ -220,7 +220,7 @@ You can use `slide` snippet and internal component `Slide` to control the image 
 <div class="max-w-4xl space-y-4">
   <Carousel {images} bind:index>
     <Indicators>
-      {#snippet children(selected, index)}
+      {#snippet children({selected, index})}
         <Indicator color={selected ? "red" : "green"} class="h-5 w-5 border border-white text-white {selected ? 'opacity-100' : 'opacity-80'}">
           {index}
         </Indicator>
@@ -237,7 +237,7 @@ You can use `slide` snippet and internal component `Slide` to control the image 
   </Carousel>
   <Thumbnails class="gap-3 bg-transparent" {images} bind:index>
     {#snippet children({ image, selected, Thumbnail })}
-      <Thumbnail {...image} class="hover:outline-primary-500 rounded-md shadow-xl hover:outline {selected ? 'outline-primary-400 outline-4' : ''}" />
+      <Thumbnail {selected} {...image} class="hover:outline-primary-500 rounded-md shadow-xl hover:outline {selected ? 'outline-primary-400 outline-4' : ''}" />
     {/snippet}
   </Thumbnails>
 </div>
