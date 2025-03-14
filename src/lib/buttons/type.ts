@@ -6,6 +6,8 @@ type HTMLButtonOrAnchorAttributes = Omit<HTMLButtonAttributes & HTMLAnchorAttrib
 interface ButtonProps extends ButtonVariants, HTMLButtonOrAnchorAttributes {
   tag?: string;
   disabled?: boolean;
+  outline?: boolean;
+  shadow?: boolean;
   href?: string;
 }
 

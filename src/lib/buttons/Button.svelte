@@ -3,24 +3,26 @@
   import type { SizeType } from "$lib/types";
   import { type ButtonProps as Props, button } from ".";
   import clsx from "clsx";
+  import { twMerge } from "tailwind-merge";
 
   const group: SizeType = getContext("group");
 
-  let { children, pill = false, outline = false, size = group ? "sm" : "md", href, type = "button", color = group ? (outline ? "dark" : "alternative") : "primary", shadow = false, tag = "button", disabled, class: className, ...restProps }: Props = $props();
+  let { children, pill, outline = false, size = group ? "sm" : "md", href, type = "button", color = group ? (outline ? "dark" : "alternative") : "primary", shadow = false, tag = "button", disabled, class: className, ...restProps }: Props = $props();
 
-  const base = $derived(button({ color, size, disabled, pill, group: !!group, outline, shadow, class: clsx(className) }));
+  const { base, outline: outline_, shadow: shadow_ } = $derived(button({ color, size, disabled, pill, group: !!group }));
+  let btnCls = $derived(twMerge(base(), outline && outline_(), shadow && shadow_(), clsx(className)));
 </script>
 
 {#if href}
-  <a {href} {...restProps} class={base} role="button">
+  <a {href} {...restProps} class={btnCls} role="button">
     {@render children?.()}
   </a>
 {:else if tag === "button"}
-  <button {type} {...restProps} class={base} {disabled}>
+  <button {type} {...restProps} class={btnCls} {disabled}>
     {@render children?.()}
   </button>
 {:else}
-  <svelte:element this={tag} {...restProps} class={base}>
+  <svelte:element this={tag} {...restProps} class={btnCls}>
     {@render children?.()}
   </svelte:element>
 {/if}
