@@ -4,11 +4,14 @@
 
 **⚠️ Flowbite Svelte is currently in early development and APIs and packages are likely to change quite often.**
 
-> [!IMPORTANT]
-> This repo is fairly stable implementation in Svelte 4
-> 
-> There is early stage re-implementation of that library in Svelte 5 available at [flowbite-svelte-next](https://github.com/themesberg/flowbite-svelte-next)
+---
 
+> [!IMPORTANT]
+> This repo is fairly stable implementation in Svelte 4. It's maintenance is now limited.
+> 
+> There is early stage re-implementation of that library in Svelte 5 available at [flowbite-svelte-next](https://github.com/themesberg/flowbite-svelte-next). If you interested to try it out, please do give us the feedback by creating the issues.
+
+---
 
 <p>
     <a href="https://flowbite-svelte.com" >
