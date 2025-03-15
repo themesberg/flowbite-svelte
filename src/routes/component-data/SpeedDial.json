@@ -7,16 +7,6 @@
       ""
     ],
     [
-      "icon",
-      "any",
-      ""
-    ],
-    [
-      "button",
-      "any",
-      ""
-    ],
-    [
       "popperClass",
       "any",
       ""
@@ -47,28 +37,8 @@
       "false"
     ],
     [
-      "name",
-      "any",
-      "\"Open actions menu\""
-    ],
-    [
-      "gradient",
-      "any",
-      "false"
-    ],
-    [
       "class",
       "string",
-      ""
-    ],
-    [
-      "ontoggle",
-      "any",
-      ""
-    ],
-    [
-      "onbeforetoggle",
-      "any",
       ""
     ]
   ]

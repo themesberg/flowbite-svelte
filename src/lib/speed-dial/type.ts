@@ -9,17 +9,15 @@ export interface SpeedCtxType {
   textOutside: boolean;
 }
 
-export type SpeedDialProps = ButtonProps & {
+export type SpeedDialProps = PopperProps & {
   children: Snippet;
-  icon?: Snippet;
   button?: Snippet;
   popperClass?: string;
   placement?: Placement;
   tooltip?: Placement | "none";
   trigger?: PopperProps["trigger"];
   textOutside?: boolean;
-  name?: string;
-  gradient?: boolean;
+  pill?: boolean;
   ontoggle?: PopperProps["ontoggle"];
   onbeforetoggle?: PopperProps["onbeforetoggle"];
 }
@@ -30,4 +28,10 @@ export type SpeedDialButtonProps = ButtonProps & {
   pill?: boolean;
   textOutside?: boolean;
   textClass?: string;
+}
+
+export type SpeedDialTriggerProps = ButtonProps & {
+  icon?: Snippet;
+  gradient?: boolean;
+  name?: string;
 }

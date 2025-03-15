@@ -14,7 +14,7 @@
   let spanClass = $derived(tooltip === "none" ? span({ class: textClass }) : "sr-only");
 </script>
 
-<Button {pill} outline {color} {...restProps} class={base({ class: clsx(className) })}>
+<Button {pill} {color} {...restProps} class={base({ class: clsx(className) })}>
   {@render children?.()}
   <span class={spanClass}>{name}</span>
 </Button>
