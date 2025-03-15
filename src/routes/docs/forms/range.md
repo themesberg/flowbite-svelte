@@ -20,7 +20,7 @@ The range component can be used as an input field to get a number from the user 
 
 ```svelte example hideOutput
 <script>
-  import { Range } from "flowbite-svelte";
+  import { Range } from "flowbite-svelte-next";
 </script>
 ```
 
@@ -28,7 +28,7 @@ The range component can be used as an input field to get a number from the user 
 
 ```svelte example
 <script>
-  import { Range, Label } from "flowbite-svelte";
+  import { Range, Label } from "flowbite-svelte-next";
 </script>
 
 <Label>Default range</Label>
@@ -39,7 +39,7 @@ The range component can be used as an input field to get a number from the user 
 
 ```svelte example
 <script>
-  import { Range, Label } from "flowbite-svelte";
+  import { Range, Label } from "flowbite-svelte-next";
 </script>
 
 <Label>Default range</Label>
@@ -54,7 +54,7 @@ Use bind:value to bind the range input value as seen the the following examples.
 
 ```svelte example
 <script>
-  import { Range, Label } from "flowbite-svelte";
+  import { Range, Label } from "flowbite-svelte-next";
   let minmaxValue = 5;
 </script>
 
@@ -67,7 +67,7 @@ Use bind:value to bind the range input value as seen the the following examples.
 
 ```svelte example
 <script>
-  import { Range, Label } from "flowbite-svelte";
+  import { Range, Label } from "flowbite-svelte-next";
   let stepValue = 2.5;
 </script>
 
@@ -80,7 +80,7 @@ Use bind:value to bind the range input value as seen the the following examples.
 
 ```svelte example class="space-y-6"
 <script>
-  import { Range, Label } from "flowbite-svelte";
+  import { Range, Label } from "flowbite-svelte-next";
 </script>
 
 <Label>Small range</Label>

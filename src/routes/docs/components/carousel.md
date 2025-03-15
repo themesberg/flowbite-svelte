@@ -19,7 +19,7 @@ The carousel component can be used to cycle through a set of elements using cust
 
 ```svelte example hideOutput
 <script>
-  import { Carousel } from "flowbite-svelte";
+  import { Carousel } from "flowbite-svelte-next";
   // ./imageData/+server.js has the following
   export const images = [
     {
@@ -74,7 +74,7 @@ The default value for `duration` is set to zero that means no autochange of imag
 
 ```svelte example
 <script>
-  import { Carousel } from "flowbite-svelte";
+  import { Carousel } from "flowbite-svelte-next";
   import images from "./imageData/images.json";
 </script>
 
@@ -91,7 +91,7 @@ You can customize the control elements with the `class` property.
 
 ```svelte example
 <script>
-  import { Carousel, Controls } from "flowbite-svelte";
+  import { Carousel, Controls } from "flowbite-svelte-next";
   import images from "./imageData/images.json";
 </script>
 
@@ -108,7 +108,7 @@ Show the carousel indicators by adding the internal `Indicators` component.
 
 ```svelte example
 <script>
-  import { Carousel, Indicators } from "flowbite-svelte";
+  import { Carousel, Indicators } from "flowbite-svelte-next";
   import images from "./imageData/images.json";
 </script>
 
@@ -125,7 +125,7 @@ You can control the `Carousel` component externally by the `index` prop. Here is
 
 ```svelte example
 <script>
-  import { Carousel, Controls, Indicators, Thumbnails } from "flowbite-svelte";
+  import { Carousel, Controls, Indicators, Thumbnails } from "flowbite-svelte-next";
   import images from "./imageData/images.json";
 
   let index = $state(0);
@@ -148,7 +148,7 @@ The `Carousel` exposes the `change` event containing info about the currently di
 
 ```svelte example
 <script>
-  import { Carousel, Controls, Indicators } from "flowbite-svelte";
+  import { Carousel, Controls, Indicators } from "flowbite-svelte-next";
   import images from "./imageData/images.json";
 
   let index = 0;
@@ -173,7 +173,7 @@ You can use `slide` snippet and internal component `Slide` to control the image 
 
 ```svelte example
 <script>
-  import { Carousel, Indicators } from "flowbite-svelte";
+  import { Carousel, Indicators } from "flowbite-svelte-next";
   import images from "./imageData/images.json";
 </script>
 
@@ -195,7 +195,7 @@ You can use `slide` snippet and internal component `Slide` to control the image 
 
 ```svelte example
 <script>
-  import { Carousel, Controls, Indicators } from "flowbite-svelte";
+  import { Carousel, Controls, Indicators } from "flowbite-svelte-next";
   import images from "./imageData/images.json";
 </script>
 
@@ -211,7 +211,7 @@ You can use `slide` snippet and internal component `Slide` to control the image 
 
 ```svelte example
 <script>
-  import { Button, Carousel, ControlButton, Controls, Indicator, Indicators, Thumbnails } from "flowbite-svelte";
+  import { Button, Carousel, ControlButton, Controls, Indicator, Indicators, Thumbnails } from "flowbite-svelte-next";
   import { CaretRightOutline } from "flowbite-svelte-icons";
   import images from "./imageData/images.json";
   let index = 0;
@@ -247,7 +247,7 @@ You can use `slide` snippet and internal component `Slide` to control the image 
 
 ```svelte example
 <script>
-  import { Carousel, Controls, Indicators } from "flowbite-svelte";
+  import { Carousel, Controls, Indicators } from "flowbite-svelte-next";
   import images from "./imageData/images.json";
   import { scale } from "svelte/transition";
   import { quintOut } from "svelte/easing";

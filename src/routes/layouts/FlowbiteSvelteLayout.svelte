@@ -71,7 +71,7 @@
     </NavUl>
 
     <div class="flex items-center">
-      <ToolbarLink class="hidden hover:text-gray-900 focus:ring-0 sm:inline-block dark:hover:text-white" name="View on GitHub" href="https://github.com/themesberg/flowbite-svelte">
+      <ToolbarLink class="hidden hover:text-gray-900 focus:ring-0 sm:inline-block dark:hover:text-white" name="View on GitHub" href="https://github.com/themesberg/flowbite-svelte-next">
         <GitHub />
       </ToolbarLink>
       <ToolbarLink class="hidden hover:text-gray-900 focus:ring-0 xl:inline-block dark:hover:text-white" name="Join community on Discord" href="https://discord.gg/4eeurUVvTy">
@@ -83,7 +83,7 @@
       <DarkMode size="lg" class="inline-block hover:text-gray-900 dark:hover:text-white" />
       <Tooltip class="dark:bg-gray-900" placement="bottom-end">Toggle dark mode</Tooltip>
     </div>
-    <a href="https://www.npmjs.com/package/flowbite-svelte" class="hidden sm:block">
+    <a href="https://www.npmjs.com/package/flowbite-svelte-next" class="hidden sm:block">
       <Badge large class="hover:bg-primary-600 dark:hover:bg-primary-800 ms-2 hover:text-white xl:ms-6 dark:hover:text-white">
         v{version}
       </Badge>

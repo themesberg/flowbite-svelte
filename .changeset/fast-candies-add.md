@@ -1,5 +1,5 @@
 ---
-"flowbite-svelte": minor
+"flowbite-svelte-next": minor
 ---
 
 Updates

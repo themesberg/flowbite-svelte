@@ -18,7 +18,7 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
 
 ```svelte example hideOutput
 <script>
-  import { Toolbar, ToolbarButton, ToolbarGroup } from "flowbite-svelte";
+  import { Toolbar, ToolbarButton, ToolbarGroup } from "flowbite-svelte-next";
 </script>
 ```
 
@@ -26,7 +26,7 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
 
 ```svelte example
 <script>
-  import { Toolbar, ToolbarButton, ToolbarGroup } from "flowbite-svelte";
+  import { Toolbar, ToolbarButton, ToolbarGroup } from "flowbite-svelte-next";
   import { HomeOutline, EnvelopeOutline, ImageOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -41,7 +41,7 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
 
 ```svelte example class="space-y-4"
 <script>
-  import { Toolbar, ToolbarButton, ToolbarGroup } from "flowbite-svelte";
+  import { Toolbar, ToolbarButton, ToolbarGroup } from "flowbite-svelte-next";
   import { HomeOutline, EnvelopeOutline, ImageOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -61,7 +61,7 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
 
 ```svelte example
 <script>
-  import { Toolbar, ToolbarButton, ToolbarGroup } from "flowbite-svelte";
+  import { Toolbar, ToolbarButton, ToolbarGroup } from "flowbite-svelte-next";
   import { HomeOutline, EnvelopeOutline, ImageOutline, CogOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -88,7 +88,7 @@ If you want to add other actions as buttons alongside your textarea component, s
 
 ```svelte example
 <script>
-  import { Textarea, Toolbar, ToolbarGroup, ToolbarButton, Button } from "flowbite-svelte";
+  import { Textarea, Toolbar, ToolbarGroup, ToolbarButton, Button } from "flowbite-svelte-next";
   import { PaperClipOutline, MapPinAltSolid, ImageOutline, CodeOutline, FaceGrinOutline, PaperPlaneOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -122,7 +122,7 @@ Most often the textarea component is used as the main text field input element i
 
 ```svelte example class="space-y-4"
 <script>
-  import { Toolbar, ToolbarButton, ToolbarGroup, Textarea, Button } from "flowbite-svelte";
+  import { Toolbar, ToolbarButton, ToolbarGroup, Textarea, Button } from "flowbite-svelte-next";
   import { PaperClipOutline, MapPinAltSolid, ImageOutline } from "flowbite-svelte-icons";
 </script>
 

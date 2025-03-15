@@ -20,7 +20,7 @@ Import Alert and set variables in the script tag.
 
 ```svelte example hideOutput
 <script>
-  import { Alert } from "flowbite-svelte";
+  import { Alert } from "flowbite-svelte-next";
 </script>
 ```
 
@@ -30,7 +30,7 @@ Use the following examples of alert components to show messages as feedback to y
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Alert } from "flowbite-svelte";
+  import { Alert } from "flowbite-svelte-next";
 </script>
 
 <Alert>
@@ -65,7 +65,7 @@ You can also include a descriptive icon to complement the message inside the ale
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Alert } from "flowbite-svelte";
+  import { Alert } from "flowbite-svelte-next";
   import { InfoCircleSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -107,7 +107,7 @@ Use this example to add a border accent to the alert component instead of just a
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Alert } from "flowbite-svelte";
+  import { Alert } from "flowbite-svelte-next";
   import { InfoCircleSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -149,7 +149,7 @@ Use this example to show a list and a description inside an alert component.
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Alert, Li, List } from "flowbite-svelte";
+  import { Alert, Li, List } from "flowbite-svelte-next";
   import { InfoCircleSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -191,7 +191,7 @@ You can use `slot="close"` to override the default close button. That slot expos
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Alert, Button } from "flowbite-svelte";
+  import { Alert, Button } from "flowbite-svelte-next";
   import { InfoCircleSolid, EnvelopeSolid } from "flowbite-svelte-icons";
   import { fly } from "svelte/transition";
 </script>
@@ -236,7 +236,7 @@ Use the following alert components with a border accent as an alternative style.
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Alert } from "flowbite-svelte";
+  import { Alert } from "flowbite-svelte-next";
   import { InfoCircleSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -273,7 +273,7 @@ The following alert components can be used if you wish to disclose more informat
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Alert, Button } from "flowbite-svelte";
+  import { Alert, Button } from "flowbite-svelte-next";
   import { InfoCircleSolid, EyeSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -307,7 +307,7 @@ Use `color='none'` to disable coloring. Then use `class` to add your custom colo
 
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
-  import { Alert } from "flowbite-svelte";
+  import { Alert } from "flowbite-svelte-next";
 </script>
 
 <Alert color="none" class="bg-sky-500 text-white">Your content</Alert>
@@ -319,7 +319,7 @@ Use the `click` event with `dismissable` prop.
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Alert } from "flowbite-svelte";
+  import { Alert } from "flowbite-svelte-next";
   const closeAlert = () => {
     alert("Clicked closeAlert.");
   };

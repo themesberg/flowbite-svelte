@@ -36,7 +36,7 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte-next.com/)
 ## Props
 @props: options: any;
 @props:class: string;

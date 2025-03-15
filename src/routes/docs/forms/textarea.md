@@ -20,7 +20,7 @@ The textarea component is a multi-line text field input that can be used to rece
 
 ```svelte example hideOutput
 <script>
-  import { Textarea } from "flowbite-svelte";
+  import { Textarea } from "flowbite-svelte-next";
 </script>
 ```
 
@@ -30,7 +30,7 @@ Get started with the default example of a textarea component below.
 
 ```svelte example
 <script>
-  import { Textarea, Label } from "flowbite-svelte";
+  import { Textarea, Label } from "flowbite-svelte-next";
 </script>
 
 <Label for="textarea-id" class="mb-2">Your message</Label>
@@ -43,7 +43,7 @@ If you want to add other actions as buttons alongside your textarea component, s
 
 ```svelte example
 <script>
-  import { Textarea, Toolbar, ToolbarGroup, ToolbarButton, Button } from "flowbite-svelte";
+  import { Textarea, Toolbar, ToolbarGroup, ToolbarButton, Button } from "flowbite-svelte-next";
   import { PaperClipOutline, MapPinAltSolid, ImageOutline, CodeOutline, FaceGrinOutline, PaperPlaneOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -77,7 +77,7 @@ Most often the textarea component is used as the main text field input element i
 
 ```svelte example class="space-y-4"
 <script>
-  import { Textarea, Toolbar, ToolbarGroup, ToolbarButton, Button } from "flowbite-svelte";
+  import { Textarea, Toolbar, ToolbarGroup, ToolbarButton, Button } from "flowbite-svelte-next";
   import { PaperClipOutline, MapPinAltSolid, ImageOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -107,7 +107,7 @@ If you want to build a chatroom component you will usually want to use a textare
 
 ```svelte example class="space-y-4"
 <script>
-  import { Textarea, Alert, ToolbarButton } from "flowbite-svelte";
+  import { Textarea, Alert, ToolbarButton } from "flowbite-svelte-next";
   import { ImageOutline, FaceGrinOutline, PaperPlaneOutline } from "flowbite-svelte-icons";
 </script>
 

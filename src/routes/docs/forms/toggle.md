@@ -22,7 +22,7 @@ The toggle component can be used to receive a simple “yes” or “no” type 
 
 ```svelte example hideOutput
 <script>
-  import { Toggle } from "flowbite-svelte";
+  import { Toggle } from "flowbite-svelte-next";
 </script>
 ```
 
@@ -32,7 +32,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 ```svelte example class="flex flex-col gap-2" hideScript
 <script>
-  import { Toggle } from "flowbite-svelte";
+  import { Toggle } from "flowbite-svelte-next";
 </script>
 
 <Toggle>Toggle me</Toggle>
@@ -45,7 +45,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 ```svelte example class="flex justify-between" hideScript hideResponsiveButtons
 <script>
-  import { Toggle } from "flowbite-svelte";
+  import { Toggle } from "flowbite-svelte-next";
 </script>
 
 <Toggle color="red" checked>Red</Toggle>
@@ -60,7 +60,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 ```svelte example class="flex flex-col gap-2"
 <script>
-  import { Toggle } from "flowbite-svelte";
+  import { Toggle } from "flowbite-svelte-next";
   const customSize = "w-16 h-10 after:top-1 after:left-[4px]  after:h-8 after:w-8";
 </script>
 
@@ -74,7 +74,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 ```svelte example class="flex flex-col gap-2"
 <script>
-  import { Toggle } from "flowbite-svelte";
+  import { Toggle } from "flowbite-svelte-next";
 </script>
 
 <Toggle>
@@ -89,7 +89,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 ```svelte example class="flex flex-col gap-2"
 <script lang="ts">
-  import { Input, Label, Button, Toggle } from "flowbite-svelte";
+  import { Input, Label, Button, Toggle } from "flowbite-svelte-next";
   let isDisabled = $state(false);
   let checked: boolean = $state();
   const handleClick = () => {

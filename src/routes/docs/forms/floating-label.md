@@ -23,7 +23,7 @@ On this page you will find a three different input field styles including a stan
 
 ```svelte example hideOutput
 <script>
-  import { FloatingLabelInput, Helper } from "flowbite-svelte";
+  import { FloatingLabelInput, Helper } from "flowbite-svelte-next";
 </script>
 ```
 
@@ -33,7 +33,7 @@ Get started with the following three styles for the floating label component and
 
 ```svelte example hideScript
 <script>
-  import { FloatingLabelInput } from "flowbite-svelte";
+  import { FloatingLabelInput } from "flowbite-svelte-next";
 </script>
 
 <div id="exampleWrapper" class="grid w-full items-end gap-6 md:grid-cols-3">
@@ -49,7 +49,7 @@ Apply the disabled attribute to the input fields to disallow the user from chang
 
 ```svelte example hideScript
 <script>
-  import { FloatingLabelInput } from "flowbite-svelte";
+  import { FloatingLabelInput } from "flowbite-svelte-next";
 </script>
 
 <div id="exampleWrapper" class="grid w-full items-end gap-6 md:grid-cols-3">
@@ -65,7 +65,7 @@ Use the following examples of input validation for the success and error message
 
 ```svelte example
 <script>
-  import { FloatingLabelInput, Helper } from "flowbite-svelte";
+  import { FloatingLabelInput, Helper } from "flowbite-svelte-next";
 </script>
 
 <!-- Success messages -->
@@ -124,7 +124,7 @@ Use the small and default sizes of the floating label input fields from the foll
 
 ```svelte example hideScript
 <script>
-  import { FloatingLabelInput } from "flowbite-svelte";
+  import { FloatingLabelInput } from "flowbite-svelte-next";
 </script>
 
 <div class="mb-6 grid items-end gap-6 md:grid-cols-3">
@@ -145,7 +145,7 @@ Add a helper text in addition to the label if you want to show more information 
 
 ```svelte example
 <script>
-  import { FloatingLabelInput, Helper } from "flowbite-svelte";
+  import { FloatingLabelInput, Helper } from "flowbite-svelte-next";
 </script>
 
 <FloatingLabelInput variant="filled" id="floating_helper" aria-describedby="floating_helper_text" name="floating_helper" type="text">Floating helper</FloatingLabelInput>

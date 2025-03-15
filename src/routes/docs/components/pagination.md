@@ -20,7 +20,7 @@ The pagination component can be used to navigate across a series of content and 
 
 ```svelte example hideOutput
 <script>
-  import { Pagination, PaginationItem } from "flowbite-svelte";
+  import { Pagination, PaginationItem } from "flowbite-svelte-next";
 </script>
 ```
 
@@ -31,7 +31,7 @@ Use the following list of pagination items to indicate a series of content for y
 ```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
 <script>
   import { page } from "$app/stores";
-  import { Pagination } from "flowbite-svelte";
+  import { Pagination } from "flowbite-svelte-next";
 
   $: activeUrl = $page.url.searchParams.get("page");
   let pages = [
@@ -76,7 +76,7 @@ The following pagination component example shows how you can use SVG icons inste
 ```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
 <script>
   import { page } from "$app/stores";
-  import { Pagination } from "flowbite-svelte";
+  import { Pagination } from "flowbite-svelte-next";
   import { ChevronLeftOutline, ChevronRightOutline } from "flowbite-svelte-icons";
 
   $: activeUrl = $page.url.searchParams.get("page");
@@ -140,7 +140,7 @@ Use the following markup to show simple previous and next elements.
 
 ```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
 <script>
-  import { Pagination, PaginationItem } from "flowbite-svelte";
+  import { Pagination, PaginationItem } from "flowbite-svelte-next";
   const previous = () => {
     alert("Previous btn clicked. Make a call to your server to fetch data.");
   };
@@ -165,7 +165,7 @@ Use the following code to show simple previous and next elements with icons.
 
 ```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
 <script>
-  import { Pagination, PaginationItem } from "flowbite-svelte";
+  import { Pagination, PaginationItem } from "flowbite-svelte-next";
   import { ArrowLeftOutline, ArrowRightOutline } from "flowbite-svelte-icons";
   const previous = () => {
     alert("Previous btn clicked. Make a call to your server to fetch data.");
@@ -203,7 +203,7 @@ You can use the following markup to show the number of data shown inside a table
 
 ```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
 <script>
-  import { Pagination, PaginationItem } from "flowbite-svelte";
+  import { Pagination, PaginationItem } from "flowbite-svelte-next";
 
   let helper = { start: 1, end: 10, total: 100 };
 
@@ -251,7 +251,7 @@ You can use the following code to show the number of data shown inside a table e
 
 ```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
 <script>
-  import { Pagination } from "flowbite-svelte";
+  import { Pagination } from "flowbite-svelte-next";
   import { ArrowLeftOutline, ArrowRightOutline } from "flowbite-svelte-icons";
   let helper = { start: 1, end: 10, total: 100 };
 
@@ -311,7 +311,7 @@ You can use the following code to show the number of data shown inside a table e
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script lang="ts">
-  import { Pagination } from "flowbite-svelte";
+  import { Pagination } from "flowbite-svelte-next";
 
   let pages = [{ name: "1" }, { name: "2" }, { name: "3" }, { name: "4" }, { name: "5" }];
   const previous = () => {

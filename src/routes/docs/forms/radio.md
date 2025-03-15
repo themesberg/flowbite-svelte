@@ -21,7 +21,7 @@ The radio component can be used to allow the user to choose a single option from
 
 ```svelte example hideOutput
 <script>
-  import { Radio } from "flowbite-svelte";
+  import { Radio } from "flowbite-svelte-next";
 </script>
 ```
 
@@ -31,7 +31,7 @@ Use the default example of a radio component with the checked and unchecked stat
 
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
-  import { Radio } from "flowbite-svelte";
+  import { Radio } from "flowbite-svelte-next";
   let selectedValue = "2";
 </script>
 
@@ -47,7 +47,7 @@ This example can be used for the disabled state of the radio component by applyi
 
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
-  import { Radio } from "flowbite-svelte";
+  import { Radio } from "flowbite-svelte-next";
   let selectedValue = "2";
 </script>
 
@@ -61,7 +61,7 @@ If you need separate control over the label and the radio you can use the verbos
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Radio, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, TableBodyRow, Label } from "flowbite-svelte";
+  import { Radio, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, TableBodyRow, Label } from "flowbite-svelte-next";
 </script>
 
 <Table>
@@ -92,7 +92,7 @@ Use this example if you want to add an anchor link inside the label of the radio
 
 ```svelte example hideScript
 <script>
-  import { Radio } from "flowbite-svelte";
+  import { Radio } from "flowbite-svelte-next";
 </script>
 
 <Radio name="with-link">
@@ -107,7 +107,7 @@ Get started with this example if you want to add a secondary helper text for the
 
 ```svelte example
 <script>
-  import { Radio, Helper } from "flowbite-svelte";
+  import { Radio, Helper } from "flowbite-svelte-next";
 </script>
 
 <Radio aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Radio>
@@ -120,7 +120,7 @@ Use this example of a radio inside a card element to enable a larger area of cli
 
 ```svelte example hideScript
 <script>
-  import { Radio } from "flowbite-svelte";
+  import { Radio } from "flowbite-svelte-next";
   let selectedValue3 = "2";
 </script>
 
@@ -140,7 +140,7 @@ Use this example to show a list of radio items grouped inside a card.
 
 ```svelte example
 <script>
-  import { Radio } from "flowbite-svelte";
+  import { Radio } from "flowbite-svelte-next";
   let technology = "svelte";
 </script>
 
@@ -161,7 +161,7 @@ Use this example to show a list of radio items inside a card horizontally.
 
 ```svelte example hideScript
 <script>
-  import { Radio } from "flowbite-svelte";
+  import { Radio } from "flowbite-svelte-next";
 </script>
 
 <p class="mb-4 font-semibold text-gray-900 dark:text-white">Identification</p>
@@ -179,7 +179,7 @@ Here’s an example of a list group that you can use right away.
 
 ```svelte example class="flex justify-center items-start h-80"
 <script>
-  import { Radio, Dropdown, DropdownItem, Button, Helper } from "flowbite-svelte";
+  import { Radio, Dropdown, DropdownItem, Button, Helper } from "flowbite-svelte-next";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   let group3 = 2;
 </script>
@@ -207,7 +207,7 @@ You can align the radio elements horizontally by using a wrapper tag and applyin
 
 ```svelte example
 <script>
-  import { Radio } from "flowbite-svelte";
+  import { Radio } from "flowbite-svelte-next";
   let inline1 = "second";
 </script>
 
@@ -223,7 +223,7 @@ You can use the property `inline` as the alternative.
 
 ```svelte example
 <script>
-  import { Radio } from "flowbite-svelte";
+  import { Radio } from "flowbite-svelte-next";
   let inline2 = "third";
 </script>
 
@@ -237,7 +237,7 @@ You can use the property `inline` as the alternative.
 
 ```svelte example hideResponsiveButtons
 <script>
-  import { Radio } from "flowbite-svelte";
+  import { Radio } from "flowbite-svelte-next";
   let colors = "text-purple-500";
 </script>
 
@@ -258,7 +258,7 @@ Use this example of an advanced layout of radio elements where the label parent 
 
 ```svelte example
 <script>
-  import { Radio } from "flowbite-svelte";
+  import { Radio } from "flowbite-svelte-next";
   import { ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -293,7 +293,7 @@ This component accepts all props from the [Button](/docs/components/buttons) for
 
 ```svelte example class="space-y-4"
 <script>
-  import { RadioButton, ButtonGroup } from "flowbite-svelte";
+  import { RadioButton, ButtonGroup } from "flowbite-svelte-next";
   import { ListMusicSolid, OrderedListOutline, ListOutline } from "flowbite-svelte-icons";
 
   let radioGroup = "notes";

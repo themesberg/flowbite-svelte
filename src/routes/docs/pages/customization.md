@@ -11,7 +11,7 @@ When working with components, you may want to customize their default or specifi
 
 ## Understanding Props
 
-Each component has a props section where you can find information on how to customize classes. For example, let's refer to the [Alert Props section](https://flowbite-svelte.com/docs/components/alert#Props).
+Each component has a props section where you can find information on how to customize classes. For example, let's refer to the [Alert Props section](https://flowbite-svelte-next.com/docs/components/alert#Props).
 
 ![alert prop](/images/alert-prop.png)
 
@@ -33,7 +33,7 @@ In Tailwind CSS, you can make any utility class important by adding a `!` charac
 
 ```svelte example
 <script>
-  import { Button } from "flowbite-svelte";
+  import { Button } from "flowbite-svelte-next";
 </script>
 
 <Button class="bg-blue-500!">Blue Button</Button>
@@ -42,11 +42,11 @@ In Tailwind CSS, you can make any utility class important by adding a `!` charac
 
 ## Overwriting Specific Classes
 
-While the `class` prop can be used for most components, some components with a complex structure may require multiple props. For instance, let's consider [the Banner component](https://flowbite-svelte.com/docs/components/banner) has two relevant props: `classDiv` for `divClass` and `classInner` for `innerClass`. To overwrite the `divClass`, you can use the `classDiv` prop:
+While the `class` prop can be used for most components, some components with a complex structure may require multiple props. For instance, let's consider [the Banner component](https://flowbite-svelte-next.com/docs/components/banner) has two relevant props: `classDiv` for `divClass` and `classInner` for `innerClass`. To overwrite the `divClass`, you can use the `classDiv` prop:
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
+  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte-next";
 </script>
 
 <Skeleton class="py-4" />
@@ -63,15 +63,15 @@ We hope these instructions help you confidently customize component classes. Fee
 
 ## Global customization
 
-To customize the Flowbite-Svelte component globally, follow these steps:
+To customize the flowbite-svelte-next component globally, follow these steps:
 
-Start by creating your own component based on Flowbite-Svelte.
+Start by creating your own component based on flowbite-svelte-next.
 
 Create a new file for your button component in the lib directory:
 
 ```svelte example hideOutput
 <script>
-  import { Button } from "flowbite-svelte";
+  import { Button } from "flowbite-svelte-next";
   let {children} = $props();
 </script>
 
@@ -95,4 +95,4 @@ Use the custom button component in your project by adding the following code:
 <MyButton>My New Button</MyButton>
 ```
 
-With these steps, you can customize and use your own button component globally based on Flowbite-Svelte. Feel free to modify the styles and properties of the component according to your requirements.
+With these steps, you can customize and use your own button component globally based on flowbite-svelte-next. Feel free to modify the styles and properties of the component according to your requirements.

@@ -23,7 +23,7 @@ On this page you will find all of the input types based on multiple variants, st
 
 ```svelte example hideOutput
 <script>
-  import { Input, Label, Helper } from "flowbite-svelte";
+  import { Input, Label, Helper } from "flowbite-svelte-next";
 </script>
 ```
 
@@ -33,7 +33,7 @@ Use this example as a generic form element which includes multiple input fields 
 
 ```svelte example
 <script>
-  import { Input, Label, Helper, Button, Checkbox, A } from "flowbite-svelte";
+  import { Input, Label, Helper, Button, Checkbox, A } from "flowbite-svelte-next";
 </script>
 
 <form>
@@ -90,7 +90,7 @@ User the size prop to change the input size. Choose one from 'sm:text-md' | 'tex
 
 ```svelte example hideScript class="space-y-6"
 <script>
-  import { Input, Label } from "flowbite-svelte";
+  import { Input, Label } from "flowbite-svelte-next";
 </script>
 
 <Label class="space-y-2">
@@ -115,7 +115,7 @@ Get started with this example if you want to apply the disabled state to an inpu
 
 ```svelte example hideScript
 <script>
-  import { Input } from "flowbite-svelte";
+  import { Input } from "flowbite-svelte-next";
 </script>
 
 <Input class="mb-6" disabled value="Disabled input" />
@@ -129,7 +129,7 @@ text with one click.
 
 ```svelte example hideScript
 <script>
-  import { Input } from "flowbite-svelte";
+  import { Input } from "flowbite-svelte-next";
 </script>
 
 <Input clearable value="Clearable input" />
@@ -141,7 +141,7 @@ Use the following example to apply validation styles for success and error messa
 
 ```svelte example
 <script>
-  import { Input, Label, Helper } from "flowbite-svelte";
+  import { Input, Label, Helper } from "flowbite-svelte-next";
 </script>
 
 <div class="mb-6">
@@ -166,7 +166,7 @@ Use the following example to apply validation styles for success and error messa
 
 ```svelte example class="space-y-6"
 <script>
-  import { Label, Input, Button, CloseButton } from "flowbite-svelte";
+  import { Label, Input, Button, CloseButton } from "flowbite-svelte-next";
   import { EnvelopeSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -207,7 +207,7 @@ This example can be used to add a descriptive icon or additional text inside the
 
 ```svelte example class="space-y-6"
 <script>
-  import { Label, Input, Button, InputAddon, ButtonGroup, Checkbox } from "flowbite-svelte";
+  import { Label, Input, Button, InputAddon, ButtonGroup, Checkbox } from "flowbite-svelte-next";
 </script>
 
 <div>
@@ -265,7 +265,7 @@ This example shows how to add `on:click` event handler to the icon in `Input`. B
 
 ```svelte example class="gap-6"
 <script>
-  import { Button, Label, Input, ButtonGroup, InputAddon, ToolbarButton } from "flowbite-svelte";
+  import { Button, Label, Input, ButtonGroup, InputAddon, ToolbarButton } from "flowbite-svelte-next";
   import { EyeOutline, EyeSlashOutline } from "flowbite-svelte-icons";
   let show = false;
   let show1 = false;
@@ -307,7 +307,7 @@ Use the helper prop to add your helper text. You can use HTML in the helper text
 
 ```svelte example
 <script>
-  import { Input, Label, Helper } from "flowbite-svelte";
+  import { Input, Label, Helper } from "flowbite-svelte-next";
 </script>
 
 <Label class="flex flex-col gap-2">
@@ -326,7 +326,7 @@ By default the `Input` component binds the `value` as `string`. If you need a va
 
 ```svelte example
 <script>
-  import { Input, Label } from "flowbite-svelte";
+  import { Input, Label } from "flowbite-svelte-next";
   let value = 5;
 </script>
 
@@ -344,7 +344,7 @@ By default the `Input` component binds the `value` as `string`. If you need a va
 
 ```svelte example
 <script>
-  import { Input, Label, Button } from "flowbite-svelte";
+  import { Input, Label, Button } from "flowbite-svelte-next";
   import { SearchOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -367,7 +367,7 @@ Use this example to show a dropdown menu right next to the input field.
 
 ```svelte example class="h-64"
 <script>
-  import { Input, InputAddon, ButtonGroup, Button, Dropdown, DropdownItem } from "flowbite-svelte";
+  import { Input, InputAddon, ButtonGroup, Button, Dropdown, DropdownItem } from "flowbite-svelte-next";
   import { ChevronDownOutline, SearchOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -394,7 +394,7 @@ If you need a full control over `input` HTML element while still re-using the Fl
 
 ```svelte example class="gap-4"
 <script>
-  import { Input } from "flowbite-svelte";
+  import { Input } from "flowbite-svelte-next";
   let value = 5;
 </script>
 

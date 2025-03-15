@@ -12,7 +12,7 @@ description: Learn more about the value types and class interfaces that you can 
 Enhance the reliability and scalability of your user interface code by leveraging data types. Here's an example of how to use them:
 
 ```typescript
-import { Button, type SizeType } from "flowbite-svelte";
+import { Button, type SizeType } from "flowbite-svelte-next";
 export let size: SizeType = "lg";
 ```
 

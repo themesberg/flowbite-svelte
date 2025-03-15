@@ -1,5 +1,5 @@
 ---
-"flowbite-svelte": patch
+"flowbite-svelte-next": patch
 ---
 
 Feature ready

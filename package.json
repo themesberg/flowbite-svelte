@@ -1,5 +1,5 @@
 {
-  "name": "flowbite-svelte",
+  "name": "flowbite-svelte-next",
   "version": "1.0.0-next.3",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
@@ -8,8 +8,8 @@
     "email": "connect@codewithshin.com",
     "url": "https://blog.codewithshin.com"
   },
-  "bugs": "https://github.com/themesberg/flowbite-svelte/issues",
-  "homepage": "https://flowbite-svelte.com/",
+  "bugs": "https://github.com/themesberg/flowbite-svelte-next/issues",
+  "homepage": "https://flowbite-svelte-next.com/",
   "license": "MIT",
   "scripts": {
     "dev": "vite dev",
@@ -122,7 +122,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/themesberg/flowbite-svelte.git"
+    "url": "git+https://github.com/themesberg/flowbite-svelte-next.git"
   },
   "dependencies": {
     "@floating-ui/dom": "^1.6.13",

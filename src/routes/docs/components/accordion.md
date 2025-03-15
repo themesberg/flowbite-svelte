@@ -21,7 +21,7 @@ A popular use case would be the “Frequently Asked Questions” section of a we
 
 ```svelte example hideOutput
 <script>
-  import { AccordionItem, Accordion } from "flowbite-svelte";
+  import { AccordionItem, Accordion } from "flowbite-svelte-next";
 </script>
 ```
 
@@ -33,7 +33,7 @@ To prevent that behavior set `multiple` property to `true`.
 
 ```svelte example
 <script>
-  import { AccordionItem, Accordion } from "flowbite-svelte";
+  import { AccordionItem, Accordion } from "flowbite-svelte-next";
 </script>
 
 <Accordion>
@@ -68,7 +68,7 @@ Use the `open` prop to make an item open on mount.
 
 ```svelte example
 <script>
-  import { AccordionItem, Accordion } from "flowbite-svelte";
+  import { AccordionItem, Accordion } from "flowbite-svelte-next";
 </script>
 
 <Accordion>
@@ -89,7 +89,7 @@ You can control the look and feel of `AccordionItems` by overwriting the `active
 
 ```svelte example
 <script>
-  import { AccordionItem, Accordion } from "flowbite-svelte";
+  import { AccordionItem, Accordion } from "flowbite-svelte-next";
 </script>
 
 <Accordion activeClass="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800" inactiveClass="text-gray-500 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800">
@@ -110,7 +110,7 @@ Use `flush` prop to remove the rounded borders.
 
 ```svelte example
 <script>
-  import { AccordionItem, Accordion } from "flowbite-svelte";
+  import { AccordionItem, Accordion } from "flowbite-svelte-next";
 </script>
 
 <Accordion flush>
@@ -131,7 +131,7 @@ Use the `arrowup` and `arrowdown` slots to set up and down icons.
 
 ```svelte example
 <script>
-  import { AccordionItem, Accordion } from "flowbite-svelte";
+  import { AccordionItem, Accordion } from "flowbite-svelte-next";
   import { ChevronDoubleUpOutline, ChevronDoubleDownOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -163,7 +163,7 @@ Use the `arrowup` and `arrowdown` slots to set up and down icons.
 
 ```svelte example
 <script>
-  import { AccordionItem, Accordion } from "flowbite-svelte";
+  import { AccordionItem, Accordion } from "flowbite-svelte-next";
   import { CartSolid, CogOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -199,7 +199,7 @@ Example how to use the `multiple` option together with expand all behavior.
 
 ```svelte example class="space-y-4"
 <script>
-  import { AccordionItem, Accordion, Button } from "flowbite-svelte";
+  import { AccordionItem, Accordion, Button } from "flowbite-svelte-next";
   const items = [false, false, false];
 
   const open_all = () => items.forEach((_, i) => (items[i] = true));
@@ -236,7 +236,7 @@ The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#r
 
 ```svelte example
 <script>
-  import { AccordionItem, Accordion } from "flowbite-svelte";
+  import { AccordionItem, Accordion } from "flowbite-svelte-next";
 </script>
 
 <Accordion>
@@ -261,7 +261,7 @@ Accordions can be nested. All of the mentioned options are supported.
 
 ```svelte example hideScript
 <script>
-  import { AccordionItem, Accordion } from "flowbite-svelte";
+  import { AccordionItem, Accordion } from "flowbite-svelte-next";
 </script>
 
 <Accordion>

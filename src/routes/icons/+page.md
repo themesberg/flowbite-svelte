@@ -7,7 +7,7 @@ description: 480+ SVG Flowbite icons components for Svelte 3/4/5/Runes.
 ---
 
 <script>
-  import { Banner, Card } from 'flowbite-svelte';
+  import { Banner, Card } from 'flowbite-svelte-next';
   import { MetaTags } from 'svelte-meta-tags';
   import MetaTag from './utils/MetaTag.svelte';
   import { removeHyphensAndCapitalize } from './utils/utils';

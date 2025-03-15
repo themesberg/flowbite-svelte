@@ -16,7 +16,7 @@ description: Flowbite-Svelte-Blocks provides all necessary components to get sta
 
 ## Installation
 
-After installing Flowbite-Svelte, run the following to install Flowbite-Svelte-Blocks:
+After installing flowbite-svelte-next, run the following to install Flowbite-Svelte-Blocks:
 
 ```sh
 pnpm i -D flowbite-svelte-blocks

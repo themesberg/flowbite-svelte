@@ -58,7 +58,7 @@ pnpm dev
 Run the following command to install all Flowbite dependencies and libraries:
 
 ```sh
-pnpm i -D flowbite-svelte flowbite
+pnpm i -D flowbite-svelte-next flowbite
 ```
 
 ### Optional
@@ -97,7 +97,7 @@ If you use SvelteKit the main css file is `src/app.css`.
   --color-primary-900: #a5371b;
 }
 
-@source "../node_modules/flowbite-svelte/dist";
+@source "../node_modules/flowbite-svelte-next/dist";
 ```
 
 Now you should be able to work with the Flowbite Svelte library and import components such as the navbar, dropdown, modal, and more.
@@ -108,7 +108,7 @@ Now you are ready to go! Add the following to `src/routes/+page.svelte` and if y
 
 ```svelte example
 <script>
-  import { Alert } from "flowbite-svelte";
+  import { Alert } from "flowbite-svelte-next";
 </script>
 
 <div class="p-8">

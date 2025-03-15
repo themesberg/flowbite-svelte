@@ -23,7 +23,7 @@ Disclaimer: this sidebar component is based on this <A class="text-primary-700" 
 
 ```svelte example hideOutput
 <script>
-  import { Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper } from "flowbite-svelte";
+  import { Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper } from "flowbite-svelte-next";
 </script>
 ```
 
@@ -34,7 +34,7 @@ Use this example to show a responsive list of menu items inside the sidebar with
 ```svelte example
 <script>
   import { page } from "$app/state";
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from "flowbite-svelte";
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from "flowbite-svelte-next";
   import { ChartPieSolid, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditOutline } from "flowbite-svelte-icons";
   let spanClass = "flex-1 ms-3 whitespace-nowrap";
   let activeUrl = page.url.pathname;
@@ -91,7 +91,7 @@ Utilize the `href` prop within the `SidebarItem` component to incorporate a hype
 ```svelte example
 <script>
   import { page } from "$app/state";
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from "flowbite-svelte";
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from "flowbite-svelte-next";
   import { ChartPieSolid, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditOutline } from "flowbite-svelte-icons";
   let activeUrl = page.url.pathname;
 </script>
@@ -134,7 +134,7 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
 ```svelte example
 <script>
   import { page } from "$app/state";
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from "flowbite-svelte";
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from "flowbite-svelte-next";
   import { ChartPieSolid, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditOutline } from "flowbite-svelte-icons";
   let activeUrl = page.url.pathname;
   let activeClass = "flex items-center p-2 text-base font-normal text-primary-900 bg-primary-200 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-100 dark:hover:bg-gray-700";
@@ -182,7 +182,7 @@ Use this sidebar example to create multi-level menu items by using the SidebarDr
 
 ```svelte example
 <script>
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarDropdownItem, SidebarDropdownWrapper } from "flowbite-svelte";
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarDropdownItem, SidebarDropdownWrapper } from "flowbite-svelte-next";
   import { ChartPieSolid, GridSolid, CartSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditOutline } from "flowbite-svelte-icons";
   let spanClass = "flex-1 ms-3 whitespace-nowrap";
 </script>
@@ -243,7 +243,7 @@ You can change the icons using `arrowup` and `arrowdown` slots.
 
 ```svelte example
 <script>
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarDropdownItem, SidebarDropdownWrapper } from "flowbite-svelte";
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarDropdownItem, SidebarDropdownWrapper } from "flowbite-svelte-next";
   import { ChartPieSolid, CartSolid, ChevronDoubleUpOutline, ChevronDoubleDownOutline } from "flowbite-svelte-icons";
   let spanClass = "flex-1 ms-3 whitespace-nowrap";
 </script>
@@ -281,7 +281,7 @@ Separate the content inside the sidebar component by applying a border separator
 
 ```svelte example
 <script>
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from "flowbite-svelte";
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from "flowbite-svelte-next";
   import { ChartPieSolid, GridSolid, MailBoxSolid, UserSolid, ShoppingBagSolid, ArrowRightToBracketOutline, EditOutline, FireSolid, BookSolid, RestoreWindowOutline, LifeSaverSolid } from "flowbite-svelte-icons";
   let spanClass = "flex-1 ms-3 whitespace-nowrap";
 </script>
@@ -364,7 +364,7 @@ Use this example to add a CTA button inside the sidebar component and encourage 
 ```svelte example
 <script>
   import { page } from "$app/state";
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarCta } from "flowbite-svelte";
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarCta } from "flowbite-svelte-next";
   import { ChartPieSolid, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditOutline, CloseOutline } from "flowbite-svelte-icons";
   let spanClass = "flex-1 ms-3 whitespace-nowrap";
 </script>
@@ -429,12 +429,12 @@ Show the logo of your brand and link back to the homepage from the top part of t
 
 ```svelte example
 <script>
-  import { Sidebar, SidebarWrapper, SidebarBrand, SidebarItem, SidebarGroup } from "flowbite-svelte";
+  import { Sidebar, SidebarWrapper, SidebarBrand, SidebarItem, SidebarGroup } from "flowbite-svelte-next";
   import { ChartPieSolid, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditOutline } from "flowbite-svelte-icons";
   let spanClass = "flex-1 ms-3 whitespace-nowrap";
 
   let site = {
-    name: "Flowbite-Svelte",
+    name: "flowbite-svelte-next",
     href: "/",
     img: "/images/flowbite-svelte-icon-logo.svg"
   };
@@ -493,7 +493,7 @@ You can add own transition by setting `transitionType` and `transitionParams`.
 <script>
   import { page } from "$app/state";
   import { sineIn } from "svelte/easing";
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarDropdownWrapper, SidebarDropdownItem } from "flowbite-svelte";
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarDropdownWrapper, SidebarDropdownItem } from "flowbite-svelte-next";
   let spanClass = "flex-1 ms-3 whitespace-nowrap";
   let activeUrl = page.url.pathname;
   let containPath = () => {
@@ -537,7 +537,7 @@ The `SidebarItem` component has `use:action` directive you can use:
 
 ```svelte example
 <script>
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from "flowbite-svelte";
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from "flowbite-svelte-next";
   const routes = [
     {
       label: "Home",
@@ -572,7 +572,7 @@ The `SidebarItem` component has `use:action` directive you can use:
 
 ```svelte example
 <script>
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarDropdownItem, SidebarDropdownWrapper } from "flowbite-svelte";
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarDropdownItem, SidebarDropdownWrapper } from "flowbite-svelte-next";
   import { ChartPieSolid, CartSolid, ChevronDoubleUpOutline, ChevronDoubleDownOutline } from "flowbite-svelte-icons";
   let spanClass = "flex-1 ms-3 whitespace-nowrap";
   const handleClick = () => {

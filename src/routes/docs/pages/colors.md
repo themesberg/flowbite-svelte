@@ -14,7 +14,7 @@ description: Customize your project and the color of the components from Flowbit
 
 ## Primary color in tailwind.config.cjs
 
-There are 22 colors defined in the <A href="https://github.com/themesberg/flowbite-svelte/blob/main/tailwind.config.ts">tailwind.config.ts</A>.
+There are 22 colors defined in the <A href="https://github.com/themesberg/flowbite-svelte-next/blob/main/tailwind.config.ts">tailwind.config.ts</A>.
 
 <Img src="/images/colors.webp" alt="Primary colors" class="flex justify-center rounded-lg p-8" />
 
@@ -25,7 +25,7 @@ import type { Config } from 'tailwindcss';
 import plugin from 'flowbite/plugin';
 
 export default {
-  content: ['./src/**/*.{html,js,svelte,ts}', './node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'],
+  content: ['./src/**/*.{html,js,svelte,ts}', './node_modules/flowbite-svelte-next/**/*.{html,js,svelte,ts}'],
   plugins: [plugin],
   darkMode: 'selector',
 
@@ -109,7 +109,7 @@ export default {
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Button, Alert, Card, Navbar, NavBrand, NavLi, NavUl, NavHamburger, Toast } from "flowbite-svelte";
+  import { Button, Alert, Card, Navbar, NavBrand, NavLi, NavUl, NavHamburger, Toast } from "flowbite-svelte-next";
   import { FireOutline } from "flowbite-svelte-icons";
 </script>
 

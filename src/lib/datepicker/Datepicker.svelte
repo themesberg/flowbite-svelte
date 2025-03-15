@@ -249,7 +249,7 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte-next.com/)
 ## Props
 @props: value: any = $bindable();
 @props:defaultDate: any = null;

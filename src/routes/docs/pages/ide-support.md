@@ -12,7 +12,7 @@ description: The Flowbite Svelte components support component documentation.
 If you are using an LSP-compatible editor, such as VSCode, Atom, Sublime Text, or Neovim, hovering over a component name will display a documentation link, features, props, events, and an example.
 
 <script>
-  import { Img } from 'flowbite-svelte';
+  import { Img } from 'flowbite-svelte-next';
   
 </script>
 

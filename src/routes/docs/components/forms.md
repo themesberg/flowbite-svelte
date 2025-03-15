@@ -22,7 +22,7 @@ User the size prop to change the input size. Choose one from 'sm:text-md' | 'tex
 
 ```svelte example
 <script>
-  import { Label, Input } from "flowbite-svelte";
+  import { Label, Input } from "flowbite-svelte-next";
 </script>
 
 <div class="mb-6">
@@ -45,7 +45,7 @@ Get started with this example if you want to apply the disabled state to an inpu
 
 ```svelte example
 <script>
-  import { Label, Input } from "flowbite-svelte";
+  import { Label, Input } from "flowbite-svelte-next";
 </script>
 
 <Input id="disabled-input" class="mb-6" disabled value="Disabled input" />
@@ -58,7 +58,7 @@ Use the helper prop to add your helper text. You can use HTML in the helper text
 
 ```svelte example
 <script>
-  import { Label, Input, Helper } from "flowbite-svelte";
+  import { Label, Input, Helper } from "flowbite-svelte-next";
 </script>
 
 <Label class="mb-2 block">Your email</Label>
@@ -71,11 +71,11 @@ Use the helper prop to add your helper text. You can use HTML in the helper text
 
 ## Input element with icon
 
-With the Input component, you can add <a href="https://flowbite-svelte.vercel.app/icons/heroicons" class="text-primary-700 dark:text-primary-500 hover:underline">Heroicons</a> or <a href="https://svelte-svg-icons.vercel.app/" class="text-primary-700 dark:text-primary-500 hover:underline">other icon sets</a>.
+With the Input component, you can add <a href="https://flowbite-svelte-next.vercel.app/icons/heroicons" class="text-primary-700 dark:text-primary-500 hover:underline">Heroicons</a> or <a href="https://svelte-svg-icons.vercel.app/" class="text-primary-700 dark:text-primary-500 hover:underline">other icon sets</a>.
 
 ```svelte example
 <script>
-  import { Label, Input, ButtonGroup } from "flowbite-svelte";
+  import { Label, Input, ButtonGroup } from "flowbite-svelte-next";
   import { EnvelopeSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -91,7 +91,7 @@ With the Input component, you can add <a href="https://flowbite-svelte.vercel.ap
 
 ```svelte example
 <script>
-  import { Label, Input, InputAddon, ButtonGroup } from "flowbite-svelte";
+  import { Label, Input, InputAddon, ButtonGroup } from "flowbite-svelte-next";
   import { UserCircleSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -112,7 +112,7 @@ Use the following example to apply validation styles for success and error messa
 
 ```svelte example
 <script>
-  import { Label, Input, Helper } from "flowbite-svelte";
+  import { Label, Input, Helper } from "flowbite-svelte-next";
 </script>
 
 <div class="mb-6">
@@ -137,7 +137,7 @@ Use the following example to apply validation styles for success and error messa
 
 ```svelte example
 <script>
-  import { Textarea } from "flowbite-svelte";
+  import { Textarea } from "flowbite-svelte-next";
   let textareaprops = {
     id: "message",
     name: "message",
@@ -156,7 +156,7 @@ Get started with the default example of a select input component to get a single
 
 ```svelte example
 <script>
-  import { Label, Select } from "flowbite-svelte";
+  import { Label, Select } from "flowbite-svelte-next";
   let selected;
 
   let countries = [
@@ -178,7 +178,7 @@ Get started with the default example of a select input component to get a single
 
 ```html
 <script>
-  import { MultiSelect } from "flowbite-svelte";
+  import { MultiSelect } from "flowbite-svelte-next";
 
   let selected = [];
   let countries = [
@@ -197,7 +197,7 @@ Get started with the default example of a select input component to get a single
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Checkbox } from "flowbite-svelte";
+  import { Checkbox } from "flowbite-svelte-next";
 </script>
 
 <Checkbox>Default checkbox</Checkbox>
@@ -208,7 +208,7 @@ Get started with the default example of a select input component to get a single
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Radio } from "flowbite-svelte";
+  import { Radio } from "flowbite-svelte-next";
 </script>
 
 <Radio name="example">Default radio</Radio>
@@ -219,7 +219,7 @@ Get started with the default example of a select input component to get a single
 
 ```svelte example
 <script>
-  import { Label, Fileupload } from "flowbite-svelte";
+  import { Label, Fileupload } from "flowbite-svelte-next";
 
   let fileuploadprops = {
     id: "user_avatar"
@@ -238,7 +238,7 @@ Get started with the default example of a select input component to get a single
 
 ```svelte example class="flex flex-col gap-2"
 <script>
-  import { Toggle } from "flowbite-svelte";
+  import { Toggle } from "flowbite-svelte-next";
 </script>
 
 <Toggle>Toggle me</Toggle>

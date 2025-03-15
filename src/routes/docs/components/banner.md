@@ -22,7 +22,7 @@ Explore the following examples based on various styles, sizes, and positionings 
 
 ```svelte example hideOutput
 <script>
-  import { Banner } from "flowbite-svelte";
+  import { Banner } from "flowbite-svelte-next";
 </script>
 ```
 
@@ -32,7 +32,7 @@ Use this free example to show a text message for announcement with a CTA link, a
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
+  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte-next";
   import { BullhornSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -58,7 +58,7 @@ This example can be used to position the sticky banner to the bottom side of the
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
+  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte-next";
   import { SalePercentSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -86,15 +86,15 @@ Use this free example to show a text message for announcement with a CTA link.
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
+  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte-next";
 </script>
 
 <Skeleton class="py-4" />
 <ImagePlaceholder class="py-4" />
 
 <Banner id="cta-banner" position="absolute" bannerType="cta">
-  <a href="https://flowbite-svelte.com/" class="mb-2 flex items-center border-gray-200 md:me-4 md:mb-0 md:border-e md:pe-4 dark:border-gray-600">
-    <img src="https://flowbite-svelte.com/images/flowbite-svelte-icon-logo.svg" class="me-2 h-6" alt="Flowbite Logo" />
+  <a href="https://flowbite-svelte-next.com/" class="mb-2 flex items-center border-gray-200 md:me-4 md:mb-0 md:border-e md:pe-4 dark:border-gray-600">
+    <img src="https://flowbite-svelte-next.com/images/flowbite-svelte-icon-logo.svg" class="me-2 h-6" alt="Flowbite Logo" />
     <span class="self-center text-lg font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
   </a>
   <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">Build websites even faster with components on top of Tailwind CSS</p>
@@ -107,7 +107,7 @@ This example can be used to encourage your website visitors to sign up to your e
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
+  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte-next";
 </script>
 
 <Skeleton class="py-4" />
@@ -128,7 +128,7 @@ This example can be used to share important information with your website visito
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
+  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte-next";
   import { BookOpenOutline, ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -160,7 +160,7 @@ This example demonstrates a sliding transition using the slide transition from s
 <script>
   import { slide } from "svelte/transition";
   import { quintOut } from "svelte/easing";
-  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
+  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte-next";
   import { BullhornSolid } from "flowbite-svelte-icons";
 
   const params = { delay: 250, duration: 500, easing: quintOut };

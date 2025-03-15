@@ -14,7 +14,7 @@ thumnailSize: w-24
   const dirName = toKebabCase(component_title)
 </script>
 
-In Flowbite-Svelte, the `class` strategy is used to support toggling dark mode manually, so you should explicitly configure it in Tailwind CSS:
+In flowbite-svelte-next, the `class` strategy is used to support toggling dark mode manually, so you should explicitly configure it in Tailwind CSS:
 
 ```js example
 // tailwind.config.cjs
@@ -38,7 +38,7 @@ Finally, use the dark mode component to display a switcher (that is a button) fo
 ```svelte example
 <!-- src/routes/+layout.svelte -->
 <script>
-  import { DarkMode } from "flowbite-svelte";
+  import { DarkMode } from "flowbite-svelte-next";
 </script>
 
 <DarkMode />
@@ -58,7 +58,7 @@ Use the `btnClass` prop to overwrite the default classes:
 
 ```svelte example
 <script>
-  import { DarkMode } from "flowbite-svelte";
+  import { DarkMode } from "flowbite-svelte-next";
 
   let btnClass = "text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-xl p-2";
 </script>
@@ -70,7 +70,7 @@ Or just use `class` attribute to append classes to the default classes:
 
 ```svelte example
 <script>
-  import { DarkMode } from "flowbite-svelte";
+  import { DarkMode } from "flowbite-svelte-next";
 </script>
 
 <DarkMode class="text-primary-500 dark:text-primary-600 border dark:border-gray-800" />
@@ -82,7 +82,7 @@ Use the `lightIcon` and `darkIcon` slots to change icons:
 
 ```svelte example
 <script>
-  import { DarkMode } from "flowbite-svelte";
+  import { DarkMode } from "flowbite-svelte-next";
   import { ThumbsUpSolid, ThumbsDownSolid } from "flowbite-svelte-icons";
 </script>
 

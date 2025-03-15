@@ -24,7 +24,7 @@ Import `Gallery` in the script tag.
 
 ```svelte example hideOutput
 <script>
-  import { Gallery } from "flowbite-svelte";
+  import { Gallery } from "flowbite-svelte-next";
 </script>
 ```
 
@@ -38,7 +38,7 @@ Example below show a gallery with three pictures on a row.
 
 ```svelte example class="flex flex-wrap gap-2"
 <script>
-  import { Gallery } from "flowbite-svelte";
+  import { Gallery } from "flowbite-svelte-next";
   const images = [
     { alt: "erbology", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" },
     { alt: "shoes", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" },
@@ -64,7 +64,7 @@ This example can be used to show the images inside a masongry grid layouts with 
 
 ```svelte example class="flex flex-wrap gap-2"
 <script>
-  import { Gallery } from "flowbite-svelte";
+  import { Gallery } from "flowbite-svelte-next";
   const images1 = [
     { alt: "erbology", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg" },
     { alt: "shoes", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" },
@@ -101,7 +101,7 @@ This example can be used to feature the most important image and show a row of f
 
 ```svelte example class="flex flex-wrap gap-2"
 <script>
-  import { Gallery } from "flowbite-svelte";
+  import { Gallery } from "flowbite-svelte-next";
   const image1 = {
     alt: "erbology",
     src: "https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg"
@@ -127,7 +127,7 @@ Use this example to show four larger images with two items on a row.
 
 ```svelte example class="flex flex-wrap gap-2"
 <script>
-  import { Gallery } from "flowbite-svelte";
+  import { Gallery } from "flowbite-svelte-next";
 
   const images = [
     { alt: "shoes", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" },
@@ -146,7 +146,7 @@ Use this example to show a list of tags and filter the images below based on the
 
 ```svelte example class="flex flex-wrap gap-2"
 <script>
-  import { Gallery, Button } from "flowbite-svelte";
+  import { Gallery, Button } from "flowbite-svelte-next";
   const images = [
     { alt: "erbology", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" },
     { alt: "shoes", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" },
@@ -180,7 +180,7 @@ Gallery items don't have to be all the same but then you need to list them manua
 
 ```svelte example class="flex flex-wrap gap-2" hideScript
 <script>
-  import { Gallery } from "flowbite-svelte";
+  import { Gallery } from "flowbite-svelte-next";
 </script>
 
 <Gallery class="grid-cols-2 gap-4">
@@ -197,7 +197,7 @@ This example shows how to get a complete control over the gallery images look an
 
 ```svelte example class="flex flex-wrap gap-2"
 <script>
-  import { Gallery } from "flowbite-svelte";
+  import { Gallery } from "flowbite-svelte-next";
   const images = [
     { alt: "shoes", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" },
     { alt: "small bag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" },

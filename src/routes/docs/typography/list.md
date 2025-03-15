@@ -20,7 +20,7 @@ Get started with a collection of list components built with Tailwind CSS for ord
 
 ```html
 <script>
-  import { List, Li } from "flowbite-svelte";
+  import { List, Li } from "flowbite-svelte-next";
 </script>
 ```
 
@@ -30,7 +30,7 @@ Use this example to create a default unordered list of items.
 
 ```svelte example
 <script>
-  import { Li, List, Heading } from "flowbite-svelte";
+  import { Li, List, Heading } from "flowbite-svelte-next";
 </script>
 
 <Heading tag="h2" customSize="text-lg font-semibold" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
@@ -47,7 +47,7 @@ This example can be used to apply custom icons instead of the default bullets fo
 
 ```svelte example
 <script>
-  import { List, Li, Heading } from "flowbite-svelte";
+  import { List, Li, Heading } from "flowbite-svelte-next";
   import { CheckCircleSolid, CloseCircleSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -74,7 +74,7 @@ Use this example to nested another list of items inside the parent list element.
 
 ```svelte example
 <script>
-  import { List, Li } from "flowbite-svelte";
+  import { List, Li } from "flowbite-svelte-next";
 </script>
 
 <List tag="ul" class="space-y-4 text-gray-500 dark:text-gray-400">
@@ -111,7 +111,7 @@ Use the `list="none"` prop to disable the list style bullets or numbers.
 
 ```svelte example
 <script>
-  import { List, Li, Heading } from "flowbite-svelte";
+  import { List, Li, Heading } from "flowbite-svelte-next";
 </script>
 
 <Heading tag="h2" customSize="text-lg font-semibold" class="mb-2 text-lg font-semibold  text-gray-900 dark:text-white">Password requirements</Heading>
@@ -128,7 +128,7 @@ Use the `tag="ol"` prop to create an ordered list of items with numbers.
 
 ```svelte example
 <script>
-  import { List, Li, Span, Heading } from "flowbite-svelte";
+  import { List, Li, Span, Heading } from "flowbite-svelte-next";
 </script>
 
 <Heading tag="h2" customSize="text-lg font-semibold" class="mb-2 text-lg font-semibold  text-gray-900 dark:text-white">Top students:</Heading>
@@ -145,7 +145,7 @@ This example can be used to nest multiple lists into each other.
 
 ```svelte example
 <script>
-  import { List, Li } from "flowbite-svelte";
+  import { List, Li } from "flowbite-svelte-next";
 </script>
 
 <List tag="ol" list="decimal" class="text-gray-500 dark:text-gray-400">
@@ -182,7 +182,7 @@ Create a description list by using the `tag="dl"` prop and set the term and name
 
 ```svelte example
 <script>
-  import { List, Li, DescriptionList } from "flowbite-svelte";
+  import { List, Li, DescriptionList } from "flowbite-svelte-next";
 </script>
 
 <List tag="dl" class="divide-y divide-gray-200 text-gray-900 dark:divide-gray-700  dark:text-white">
@@ -207,7 +207,7 @@ Use this example to create a list of items with custom SVG icons instead of the 
 
 ```svelte example
 <script>
-  import { List, Li, Span } from "flowbite-svelte";
+  import { List, Li, Span } from "flowbite-svelte-next";
   import { CheckOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -241,7 +241,7 @@ This example can be used to show more details for each list item such as the use
 
 ```svelte example
 <script>
-  import { List, Li } from "flowbite-svelte";
+  import { List, Li } from "flowbite-svelte-next";
 </script>
 
 <List tag="ul" list="none" class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
@@ -314,7 +314,7 @@ Use this example to create a horizontally aligned list of items.
 
 ```svelte example
 <script>
-  import { List, Li, A } from "flowbite-svelte";
+  import { List, Li, A } from "flowbite-svelte-next";
 </script>
 
 <List tag="ul" list="none" class="mb-6 flex flex-wrap items-center justify-center">

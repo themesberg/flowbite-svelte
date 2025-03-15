@@ -17,7 +17,7 @@
   let title = "Flowbite Svelte - UI Component Library";
   let description = "Flowbite Svelte is an open-source UI component library built with Svelte components, Tailwind CSS utility classes and based on the Flowbite design system and components.";
   let default_title = "Svelte UI Components";
-  const image = `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${default_title}`;
+  const image = `https://open-graph-vercel.vercel.app/api/flowbite-svelte-next?title=${default_title}`;
 </script>
 
 <FlowbiteSvelteLayout>
@@ -27,7 +27,7 @@
     facebook={{ appId: "453670756870545" }}
     openGraph={{
       type: "website",
-      url: `https://flowbite-svelte.com/`,
+      url: `https://flowbite-svelte-next.com/`,
       title: `${title}`,
       description: `${description}`,
       images: [{ url: image, width: 1200, height: 630, alt: `${title}` }],

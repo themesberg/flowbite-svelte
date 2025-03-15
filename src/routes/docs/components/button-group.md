@@ -13,13 +13,13 @@ description: Button groups are a Tailwind CSS powered set of buttons sticked tog
   const dirName = toKebabCase(component_title)
 </script>
 
-The button group component from Flowbite-Svelte can be used to stack together multiple buttons and links inside a single element.
+The button group component from flowbite-svelte-next can be used to stack together multiple buttons and links inside a single element.
 
 ## Setup
 
 ```svelte example hideOutput
 <script>
-  import { ButtonGroup, Button } from "flowbite-svelte";
+  import { ButtonGroup, Button } from "flowbite-svelte-next";
 </script>
 ```
 
@@ -29,7 +29,7 @@ Use the following code to stack together buttons into a single group.
 
 ```svelte example class="flex justify-center" hideScript hideResponsiveButtons
 <script>
-  import { ButtonGroup, Button } from "flowbite-svelte";
+  import { ButtonGroup, Button } from "flowbite-svelte-next";
 </script>
 
 <ButtonGroup class="*:ring-primary-700!">
@@ -43,7 +43,7 @@ Use the following code to stack together buttons into a single group.
 
 ```svelte example class="flex flex-col flex-wrap gap-4" hideResponsiveButtons
 <script>
-  import { ButtonGroup, Button, GradientButton } from "flowbite-svelte";
+  import { ButtonGroup, Button, GradientButton } from "flowbite-svelte-next";
 </script>
 
 <div class="text-gray-900 dark:text-gray-100">
@@ -86,7 +86,7 @@ You can also use the button group component as links.
 
 ```svelte example class="flex justify-center" hideScript hideResponsiveButtons
 <script>
-  import { ButtonGroup, Button } from "flowbite-svelte";
+  import { ButtonGroup, Button } from "flowbite-svelte-next";
 </script>
 
 <ButtonGroup class="*:ring-primary-700!">
@@ -102,7 +102,7 @@ You can also use SVG icons inside the grouped buttons.
 
 ```svelte example class="flex justify-center"
 <script>
-  import { ButtonGroup, Button } from "flowbite-svelte";
+  import { ButtonGroup, Button } from "flowbite-svelte-next";
   import { UserCircleSolid, AdjustmentsVerticalOutline, DownloadSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -128,7 +128,7 @@ Group a series of buttons together on a single line or stack them in a vertical 
 
 ```svelte example class="flex justify-center" hideScript hideResponsiveButtons
 <script>
-  import { ButtonGroup, Button } from "flowbite-svelte";
+  import { ButtonGroup, Button } from "flowbite-svelte-next";
 </script>
 
 <ButtonGroup>
@@ -144,7 +144,7 @@ Group a series of buttons together on a single line or stack them in a vertical 
 
 ```svelte example class="flex justify-center"
 <script>
-  import { ButtonGroup, Button } from "flowbite-svelte";
+  import { ButtonGroup, Button } from "flowbite-svelte-next";
   import { UserCircleSolid, AdjustmentsVerticalOutline, DownloadSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -170,7 +170,7 @@ You can add the `on:click` event to the `Button` component.
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { ButtonGroup, Button } from "flowbite-svelte";
+  import { ButtonGroup, Button } from "flowbite-svelte-next";
   const handleClick = () => {
     alert("Clicked");
   };

@@ -10,7 +10,7 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte-next.com/)
 ## Props
 @props: children: any;
 @props:class: string = "space-y-2";

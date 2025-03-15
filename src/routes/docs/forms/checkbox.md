@@ -21,7 +21,7 @@ The checkbox component can be used to receive one or more selected options from 
 
 ```svelte example hideOutput
 <script>
-  import { Checkbox } from "flowbite-svelte";
+  import { Checkbox } from "flowbite-svelte-next";
 </script>
 ```
 
@@ -31,7 +31,7 @@ Use this default example of a checbkox element in a checked, unchecked and indet
 
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
-  import { Checkbox } from "flowbite-svelte";
+  import { Checkbox } from "flowbite-svelte-next";
 </script>
 
 <Checkbox>Default checkbox</Checkbox>
@@ -45,7 +45,7 @@ This example can be used for the disabled state of the checkbox component by app
 
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
-  import { Checkbox } from "flowbite-svelte";
+  import { Checkbox } from "flowbite-svelte-next";
 </script>
 
 <Checkbox disabled>Disabled checkbox</Checkbox>
@@ -59,7 +59,7 @@ If you need separate control over the label and the checkbox you can use the ver
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Checkbox, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, Label, TableBodyRow } from "flowbite-svelte";
+  import { Checkbox, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, Label, TableBodyRow } from "flowbite-svelte-next";
 </script>
 
 <Table>
@@ -90,7 +90,7 @@ Use this example if you want to add an anchor link inside the label of the check
 
 ```svelte example hideScript
 <script>
-  import { Checkbox } from "flowbite-svelte";
+  import { Checkbox } from "flowbite-svelte-next";
 </script>
 
 <Checkbox>
@@ -106,7 +106,7 @@ Get started with this example if you want to add a secondary helper text for the
 
 ```svelte example
 <script>
-  import { Checkbox, Helper } from "flowbite-svelte";
+  import { Checkbox, Helper } from "flowbite-svelte-next";
 </script>
 
 <Checkbox aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Checkbox>
@@ -119,7 +119,7 @@ Use this example of a checkbox inside a card element to enable a larger area of 
 
 ```svelte example hideScript
 <script>
-  import { Checkbox } from "flowbite-svelte";
+  import { Checkbox } from "flowbite-svelte-next";
 </script>
 
 <div class="rounded-sm border border-gray-200 dark:border-gray-700">
@@ -136,7 +136,7 @@ Use this example to show a list of checkbox items grouped inside a card.
 
 ```svelte example hideScript
 <script>
-  import { Checkbox, Listgroup } from "flowbite-svelte";
+  import { Checkbox, Listgroup } from "flowbite-svelte-next";
 </script>
 
 <p class="mb-4 font-semibold text-gray-900 dark:text-white">Technology</p>
@@ -152,7 +152,7 @@ You can use the internal loop to render a list of `CheckboxItem`s.
 
 ```svelte example
 <script>
-  import { Checkbox, Listgroup } from "flowbite-svelte";
+  import { Checkbox, Listgroup } from "flowbite-svelte-next";
   let choices = [
     { value: "svelte", label: "svelte" },
     { value: "vue", label: "Vue JS" },
@@ -174,7 +174,7 @@ Use this example to show a list of checkbox items inside a card horizontally.
 
 ```svelte example hideScript
 <script>
-  import { Checkbox } from "flowbite-svelte";
+  import { Checkbox } from "flowbite-svelte-next";
 </script>
 
 <p class="mb-4 font-semibold text-gray-900 dark:text-white">Identification</p>
@@ -192,7 +192,7 @@ Use this example to show a list of checkbox items inside a dropdown menu.
 
 ```svelte example class="flex justify-center items-start h-96"
 <script>
-  import { Dropdown, DropdownItem, DropdownGroup, Checkbox, Button, Search } from "flowbite-svelte";
+  import { Dropdown, DropdownItem, DropdownGroup, Checkbox, Button, Search } from "flowbite-svelte-next";
   import { ChevronDownOutline, UserRemoveSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -233,7 +233,7 @@ You can align the checkbox elements horizontally by using a wrapper tag and appl
 
 ```svelte example hideScript
 <script>
-  import { Checkbox } from "flowbite-svelte";
+  import { Checkbox } from "flowbite-svelte-next";
 </script>
 
 <div class="flex gap-3">
@@ -248,7 +248,7 @@ You can use the property `inline` as the alternative.
 
 ```svelte example hideScript
 <script>
-  import { Checkbox } from "flowbite-svelte";
+  import { Checkbox } from "flowbite-svelte-next";
 </script>
 
 <Checkbox inline class="me-2">Inline 1</Checkbox>
@@ -261,7 +261,7 @@ You can use the property `inline` as the alternative.
 
 ```svelte example hideScript hideResponsiveButtons
 <script>
-  import { Label, Checkbox } from "flowbite-svelte";
+  import { Label, Checkbox } from "flowbite-svelte-next";
 </script>
 
 <div class="flex gap-4">
@@ -286,7 +286,7 @@ This component accepts all props from the [Button](/docs/components/buttons) for
 
 ```svelte example class="space-y-4"
 <script>
-  import { ButtonGroup, CheckboxButton } from "flowbite-svelte";
+  import { ButtonGroup, CheckboxButton } from "flowbite-svelte-next";
   import { AppleSolid, FacebookSolid, DiscordSolid, DropboxSolid } from "flowbite-svelte-icons";
   let group = $state([]);
 </script>
@@ -312,7 +312,7 @@ Use this example of an advanced layout of checkbox elements where the label pare
 
 ```svelte example
 <script>
-  import { Checkbox } from "flowbite-svelte";
+  import { Checkbox } from "flowbite-svelte-next";
   import React from "../../utils/icons/React.svelte";
   import Vue from "../../utils/icons/Vue.svelte";
   import Angular from "../../utils/icons/Angular.svelte";
@@ -348,7 +348,7 @@ Use this example of an advanced layout of checkbox elements where the label pare
 
 ```svelte example
 <script>
-  import { Button, Checkbox } from "flowbite-svelte";
+  import { Button, Checkbox } from "flowbite-svelte-next";
   let choices = [
     { value: "1", label: "One" },
     { value: "2", label: "Two" },

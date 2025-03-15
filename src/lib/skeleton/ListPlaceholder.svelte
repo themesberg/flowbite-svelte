@@ -25,7 +25,7 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte-next.com/)
 ## Props
 @props: itemNumber: any = 5;
 @props:size: any = "md";

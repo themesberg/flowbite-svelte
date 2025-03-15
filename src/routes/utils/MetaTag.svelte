@@ -4,7 +4,7 @@
   export let description: string = "";
   export let title: string = "";
   // title = title.replaceAll(' ', '-');
-  let imgsrc = `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${encodeURIComponent(breadcrumb_title)}`;
+  let imgsrc = `https://open-graph-vercel.vercel.app/api/flowbite-svelte-next?title=${encodeURIComponent(breadcrumb_title)}`;
   export let dir: string = "";
   let dirstring = dir.toLowerCase();
   let breadcrumb = breadcrumb_title.toLowerCase().replaceAll(" ", "-");
@@ -19,7 +19,7 @@
   }}
   openGraph={{
     type: "website",
-    url: `https://flowbite-svelte.com/${dirstring}/${breadcrumb}`,
+    url: `https://flowbite-svelte-next.com/${dirstring}/${breadcrumb}`,
     title: `${title}`,
     description: `${description}`,
     images: [

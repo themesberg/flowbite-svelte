@@ -23,7 +23,7 @@ Hyperlinks are a great way to reduce bounce rate of the current page and encoura
 
 ```html
 <script>
-  import { A } from "flowbite-svelte";
+  import { A } from "flowbite-svelte-next";
 </script>
 ```
 
@@ -33,7 +33,7 @@ Use this example to set default styles to an inline link element.
 
 ```svelte example
 <script>
-  import { A } from "flowbite-svelte";
+  import { A } from "flowbite-svelte-next";
 </script>
 
 <A class="font-medium hover:underline">Read more</A>
@@ -45,7 +45,7 @@ This example can be used to set a hyperlink on a button component.
 
 ```svelte example
 <script>
-  import { Button } from "flowbite-svelte";
+  import { Button } from "flowbite-svelte-next";
 </script>
 
 <Button href="/">Read more</Button>
@@ -57,7 +57,7 @@ Use this example to set a link inside a paragraph with an underline style.
 
 ```svelte example
 <script>
-  import { A, P } from "flowbite-svelte";
+  import { A, P } from "flowbite-svelte-next";
 </script>
 
 <P>
@@ -71,7 +71,7 @@ This example can be used to set a custom SVG icon inside the hyperlink element.
 
 ```svelte example
 <script>
-  import { A, P } from "flowbite-svelte";
+  import { A, P } from "flowbite-svelte-next";
   import { ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -90,7 +90,7 @@ Use this example to set a hyperlink on a CTA element with text and a custom icon
 
 ```svelte example
 <script>
-  import { A } from "flowbite-svelte";
+  import { A } from "flowbite-svelte-next";
   import { ArrowRightOutline } from "flowbite-svelte-icons";
   import Figma from "../../utils/icons/Figma.svelte";
 </script>
@@ -108,7 +108,7 @@ Use this example to set a hyperlink on a card component.
 
 ```svelte example
 <script>
-  import { Card } from "flowbite-svelte";
+  import { Card } from "flowbite-svelte-next";
 </script>
 
 <Card href="/cards">
@@ -123,7 +123,7 @@ This example can be used to set a hyperlink on an image inside a card component.
 
 ```svelte example
 <script>
-  import { Card, Button } from "flowbite-svelte";
+  import { Card, Button } from "flowbite-svelte-next";
   import { ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -140,7 +140,7 @@ This example can be used to set a hyperlink on an image inside a card component.
 
 ```svelte example
 <script>
-  import { A } from "flowbite-svelte";
+  import { A } from "flowbite-svelte-next";
 
   const myaction = () => {
     console.log("Action triggered");

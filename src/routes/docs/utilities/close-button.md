@@ -23,7 +23,7 @@ Use `CloseButton` component to close a component.
 
 ```svelte example
 <script>
-  import { CloseButton } from "flowbite-svelte";
+  import { CloseButton } from "flowbite-svelte-next";
   let visible = $state(true);
 </script>
 

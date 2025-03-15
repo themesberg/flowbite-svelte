@@ -48,7 +48,7 @@
           <h2 class="text-left text-xl font-bold tracking-tight text-gray-900 dark:text-white">Join the community</h2>
           <p>Become a member of a community of developers supporting by Flowbite</p>
         </div>
-        <a class="text-primary-700 flex items-center gap-2 text-base font-medium whitespace-nowrap hover:underline" href="http://github.com/themesberg/flowbite-svelte">
+        <a class="text-primary-700 flex items-center gap-2 text-base font-medium whitespace-nowrap hover:underline" href="http://github.com/themesberg/flowbite-svelte-next">
           See our repository <ChevronRightOutline class="h-6 w-6" />
         </a>
       </div>

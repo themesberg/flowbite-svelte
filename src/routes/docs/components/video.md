@@ -18,7 +18,7 @@ thumnailSize: w-64
 
 ```svelte example hideOutput
 <script>
-  import { Video } from "flowbite-svelte";
+  import { Video } from "flowbite-svelte-next";
 </script>
 ```
 
@@ -28,7 +28,7 @@ Use this example to create a native browser video player and apply the w-full ut
 
 ```svelte example hideScript
 <script>
-  import { Video } from "flowbite-svelte";
+  import { Video } from "flowbite-svelte-next";
 </script>
 
 <Video src="/videos/flowbite.mp4" controls trackSrc="flowbite.mp4" />
@@ -40,7 +40,7 @@ Use the autoplay attribute on the video component to automatically start the vid
 
 ```svelte example hideScript
 <script>
-  import { Video } from "flowbite-svelte";
+  import { Video } from "flowbite-svelte-next";
 </script>
 
 <Video src="/videos/flowbite.mp4" autoplay controls trackSrc="flowbite.mp4" />
@@ -52,7 +52,7 @@ Use the muted attribute together with the autoplay option to start the video whi
 
 ```svelte example hideScript
 <script>
-  import { Video } from "flowbite-svelte";
+  import { Video } from "flowbite-svelte-next";
 </script>
 
 <Video src="/videos/flowbite.mp4" autoplay muted controls trackSrc="flowbite.mp4" />
@@ -68,7 +68,7 @@ Use the `w-{size}` class to set the height of the video player.
 
 ```svelte example hideScript
 <script>
-  import { Video } from "flowbite-svelte";
+  import { Video } from "flowbite-svelte-next";
 </script>
 
 <Video src="/videos/flowbite.mp4" controls class="w-96" trackSrc="flowbite.mp4" />
@@ -80,7 +80,7 @@ Use the `h-{size}` class to set the height of the video player.
 
 ```svelte example hideScript
 <script>
-  import { Video } from "flowbite-svelte";
+  import { Video } from "flowbite-svelte-next";
 </script>
 
 <Video src="/videos/flowbite.mp4" controls class="h-80" trackSrc="flowbite.mp4" />
@@ -92,7 +92,7 @@ Use the following example to make the video responsive across all devices and vi
 
 ```svelte example hideScript
 <script>
-  import { Video } from "flowbite-svelte";
+  import { Video } from "flowbite-svelte-next";
 </script>
 
 <Video src="/videos/flowbite.mp4" controls class="h-auto w-full max-w-full" trackSrc="flowbite.mp4" />
@@ -104,7 +104,7 @@ Customize the video player appearance using the utility classes from Tailwind CS
 
 ```svelte example hideScript
 <script>
-  import { Video } from "flowbite-svelte";
+  import { Video } from "flowbite-svelte-next";
 </script>
 
 <Video src="/videos/flowbite.mp4" controls class="h-auto w-full max-w-full rounded-lg border border-gray-200 dark:border-gray-700" trackSrc="flowbite.mp4" />

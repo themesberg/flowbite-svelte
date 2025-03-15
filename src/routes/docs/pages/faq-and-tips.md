@@ -7,9 +7,9 @@ dir: Pages
 description: Tips for your apps.
 ---
 
-## Does Flowbite-Svelte work on Svelte 5?
+## Does flowbite-svelte-next work on Svelte 5?
 
-You can find [the progress report](https://flowbite-svelte-5-dev.vercel.app/) for Flowbite-Svelte on Svelte 5.
+You can find [the progress report](https://flowbite-svelte-5-dev.vercel.app/) for flowbite-svelte-next on Svelte 5.
 
 For Svelte 5: Runes, we need to rewrite and you can find most of the components at [Svelte 5 UI Lib](https://svelte-5-ui-lib.codewithshin.com/) which is a beta version.
 
@@ -39,7 +39,7 @@ The following example shows how to add navigation using the key blocks:
 ```svelte example hideOutput
 <script>
   import { page } from "$app/state";
-  import { Navbar, NavLi, NavUl } from "flowbite-svelte";
+  import { Navbar, NavLi, NavUl } from "flowbite-svelte-next";
   let {children} = $props();
   let activeUrl = $derived(page.url.pathname);
 </script>

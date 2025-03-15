@@ -7,7 +7,7 @@
     docsearch({
       container: searchContainer,
       appId: "JWUQIZ9PGE",
-      indexName: "flowbite-svelte",
+      indexName: "flowbite-svelte-next",
       apiKey: "db6396bd138ab613540d2a2bc07f958d",
       placeholder: "Search documentation"
     });

@@ -8,7 +8,7 @@ description: Get started with a collection of open-source Svelte 5 powered icons
 ---
 
 <script>
-  import { Banner } from 'flowbite-svelte';
+  import { Banner } from 'flowbite-svelte-next';
   import { MetaTags } from 'svelte-meta-tags';
   import { removeHyphensAndCapitalize } from './utils/utils';
 </script>
