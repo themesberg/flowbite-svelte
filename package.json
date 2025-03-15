@@ -40,8 +40,9 @@
     "@eslint/compat": "^1.2.7",
     "@eslint/js": "^9.22.0",
     "@playwright/test": "1.51.0",
+    "@sveltejs/adapter-auto": "^4.0.0",
     "@sveltejs/adapter-vercel": "^5.6.3",
-    "@sveltejs/kit": "^2.19.1",
+    "@sveltejs/kit": "^2.19.2",
     "@sveltejs/package": "2.3.10",
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
     "@svitejs/changesets-changelog-github-compact": "^1.2.0",
@@ -79,7 +80,7 @@
     "vitest": "^3.0.8"
   },
   "peerDependencies": {
-    "svelte": "^3.55.1 || ^4.0.0 || ^5.0.0"
+    "svelte": "^5.0.0"
   },
   "type": "module",
   "keywords": [
