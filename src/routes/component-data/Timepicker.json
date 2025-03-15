@@ -1,0 +1,30 @@
+{
+  "name": "Timepicker",
+  "slots": [],
+  "events": ["select"],
+  "props": [
+    ["id", "string", "'time'"],
+    ["endId", "string", "'end-time'"],
+    ["value", "string", "'00:00'"],
+    ["endValue", "string", "'00:00'"],
+    ["min", "string", "''"],
+    ["max", "string", "''"],
+    ["required", "boolean", "true"],
+    ["disabled", "boolean", "false"],
+    ["color", "'base' | 'red' | 'green' | undefined", "'base'"],
+    ["buttonColor", "ButtonColorType", "'primary'"],
+    ["icon", "ComponentType", ""],
+    ["type", "'default' | 'dropdown' | 'select' | 'range' | 'timerange-dropdown' | 'timerange-toggle' | 'inline-buttons", "'default'"],
+    ["optionLabel", "string", "'Options'"],
+    ["options", "{ value: string; name: string }[]", "[]"],
+    ["selectedOption", "string", "''"],
+    ["size", "'sm' | 'md' | 'lg'", "'md'"],
+    ["divClass", "string", "'inline-flex rounded-lg shadow-sm'"],
+    ["inputClass", "string", "'block disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right focus:ring-0 focus:outline-none p-2.5 border-r-0'"],
+    ["selectClass", "string", "'text-gray-900 disabled:text-gray-400 bg-gray-50 border border-gray-300 rounded-r-lg focus:ring-0 focus:outline-none block w-full p-2.5 border-l-1 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:disabled:text-gray-500 dark:focus:ring-primary-500 dark:focus:border-primary-500'"],
+    ["timerangeLabel", "string", "'Choose time range'"],
+    ["timerangeButtonLabel", "string", "'Save time'"],
+    ["timeIntervals", "string[]", "[]"],
+    ["columns", "1 | 2 | 3 | 4", "2"]
+  ]
+}

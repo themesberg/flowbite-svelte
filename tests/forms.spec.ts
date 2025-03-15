@@ -56,6 +56,11 @@ test('Textarea page should have h1', async ({ page }) => {
   expect(await page.textContent('h1')).toBe('Svelte Textarea - Flowbite');
 });
 
+test('Timepicker page should have h1', async ({ page }) => {
+  await page.goto('/docs/forms/timepicker');
+  expect(await page.textContent('h1')).toBe('Svelte Timepicker - Flowbite');
+});
+
 test('Toggle page should have h1', async ({ page }) => {
   await page.goto('/docs/forms/toggle');
   expect(await page.textContent('h1')).toBe('Svelte Toggle (Switch) - Flowbite');

@@ -389,6 +389,10 @@
       "types": "./dist/forms/Textarea.svelte.d.ts",
       "svelte": "./dist/forms/Textarea.svelte"
     },
+    "./Timepicker.svelte": {
+      "types": "./dist/forms/Timepicker.svelte.d.ts",
+      "svelte": "./dist/forms/Timepicker.svelte"
+    },
     "./Toggle.svelte": {
       "types": "./dist/forms/Toggle.svelte.d.ts",
       "svelte": "./dist/forms/Toggle.svelte"
