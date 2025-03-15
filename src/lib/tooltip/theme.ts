@@ -10,7 +10,7 @@ export const tooltip = tv({
   },
   variants: {
     color: {
-      default: { base: "bg-gray-800" },
+      default: { base: "bg-gray-800 dark:bg-gray-300 dark:text-gray-800" },
       primary: { base: "bg-primary-600" },
       secondary: { base: "bg-secondary-600" },
       gray: { base: "bg-gray-600" },

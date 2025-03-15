@@ -19,7 +19,7 @@ export const button = tv({
       dark: {
         base: "text-white bg-gray-800 hover:bg-gray-900 dark:bg-gray-800 dark:hover:bg-gray-700 focus-within:ring-gray-300 dark:focus-within:ring-gray-700",
         outline: "text-gray-900 border-gray-800 hover:bg-gray-900 dark:border-gray-600 dark:text-gray-400 dark:hover:bg-gray-600",
-        shadow: "shadow-dark-500/50 dark:shadow-dark-800/80",
+        shadow: "shadow-gray-500/50 gray:shadow-gray-800/80",
       },
       alternative: {
         base: "text-gray-900 bg-transparent border border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-400 hover:text-primary-700 focus-within:text-primary-700 dark:focus-within:text-white dark:hover:text-white dark:hover:bg-gray-700 focus-within:ring-gray-200 dark:focus-within:ring-gray-700",
@@ -28,8 +28,8 @@ export const button = tv({
       },
       light: {
         base: "text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 focus-within:ring-gray-200 dark:focus-within:ring-gray-700",
-        outline: "text-light-700 border-light-700 hover:bg-light-800 dark:border-light-400 dark:text-light-400 dark:hover:bg-light-500",
-        shadow: "shadow-light-500/50 dark:shadow-light-800/80",
+        outline: "text-gray-700 border-gray-700 hover:bg-gray-800 dark:border-gray-400 dark:text-gray-400 dark:hover:bg-gray-500",
+        shadow: "shadow-gray-500/50 dark:shadow-gray-800/80",
       },
       secondary: {
         base: "text-white bg-secondary-700 hover:bg-secondary-800 dark:bg-secondary-600 dark:hover:bg-secondary-700 focus-within:ring-secondary-300 dark:focus-within:ring-secondary-800",
