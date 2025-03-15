@@ -4,6 +4,16 @@
 
 **⚠️ Flowbite Svelte is currently in early development and APIs and packages are likely to change quite often.**
 
+---
+
+> [!IMPORTANT]
+> This repo is fairly stable implementation in Svelte 4. It is however build on TailwindCss v4. The maintenance of that repo is now limited.
+> 
+> There is early stage re-implementation of that library in Svelte 5 available at [flowbite-svelte-next](https://github.com/themesberg/flowbite-svelte-next). If you interested in trying it out, please go ahead and do give us the feedback by creating the issues in that new repo.
+> 
+
+---
+
 <p>
     <a href="https://flowbite-svelte.com" >
       <img alt="Flowbite Svelte UI components" width="350" src="https://raw.githubusercontent.com/themesberg/flowbite-svelte/main/static/images/flowbite-svelte.png">
