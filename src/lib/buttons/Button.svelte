@@ -32,11 +32,10 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @props: children: any;
-@props:pill: any = false;
+@props:onclick: any;
+@props:pill: any;
 @props:outline: any = false;
 @props:size: any = group ? "sm" : "md";
-@props:href: any;
-@props:type: any = "button";
 @props:color: any = group ? (outline ? "dark" : "alternative") : "primary";
 @props:shadow: any = false;
 @props:tag: any = "button";

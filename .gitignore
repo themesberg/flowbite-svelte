@@ -9,7 +9,10 @@ node_modules
 !.env.example
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
 /src/routes/testdir
+/src/routes/test
+
 /test-results
 bun.lockb
 /.vercel

@@ -22,7 +22,7 @@
 
   function init(node: HTMLElement) {
     content = getText(node);
-    slug = content.replace(/\s/g, "_");
+    slug = content.replace(/\s/g, "-").toLocaleLowerCase();
   }
 
   let elemClass = $derived(twMerge("relative group", className));

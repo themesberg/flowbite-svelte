@@ -7,9 +7,14 @@
       ""
     ],
     [
+      "onclick",
+      "any",
+      ""
+    ],
+    [
       "pill",
       "any",
-      "false"
+      ""
     ],
     [
       "outline",
@@ -20,16 +25,6 @@
       "size",
       "any",
       "group ? \"sm\" : \"md\""
-    ],
-    [
-      "href",
-      "any",
-      ""
-    ],
-    [
-      "type",
-      "any",
-      "\"button\""
     ],
     [
       "color",
