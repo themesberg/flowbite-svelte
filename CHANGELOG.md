@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.0-next.4
+
+### Patch Changes
+
+- fix: components update
+
 ## 1.0.0-next.3
 
 ### Patch Changes

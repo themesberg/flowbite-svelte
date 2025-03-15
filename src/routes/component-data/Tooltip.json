@@ -1,45 +1,13 @@
 {
   "name": "Tooltip",
   "props": [
-    [
-      "type",
-      "any",
-      "\"dark\""
-    ],
-    [
-      "color",
-      "any",
-      "\"default\""
-    ],
-    [
-      "trigger",
-      "any",
-      "\"hover\""
-    ],
-    [
-      "arrow",
-      "any",
-      "true"
-    ],
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "placement",
-      "any",
-      "\"top\""
-    ],
-    [
-      "onbeforetoggle",
-      "any",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ]
+    ["type", "any", "\"dark\""],
+    ["color", "any", "\"default\""],
+    ["trigger", "any", "\"hover\""],
+    ["arrow", "any", "true"],
+    ["children", "any", ""],
+    ["placement", "any", "\"top\""],
+    ["onbeforetoggle", "any", ""],
+    ["class", "string", ""]
   ]
 }

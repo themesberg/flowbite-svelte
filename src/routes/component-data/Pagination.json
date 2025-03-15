@@ -1,45 +1,13 @@
 {
   "name": "Pagination",
   "props": [
-    [
-      "pages",
-      "any",
-      "[]"
-    ],
-    [
-      "previous",
-      "any",
-      ""
-    ],
-    [
-      "next",
-      "any",
-      ""
-    ],
-    [
-      "prevContent",
-      "any",
-      ""
-    ],
-    [
-      "nextContent",
-      "any",
-      ""
-    ],
-    [
-      "table",
-      "any",
-      ""
-    ],
-    [
-      "size",
-      "any",
-      ""
-    ],
-    [
-      "ariaLabel",
-      "any",
-      ""
-    ]
+    ["pages", "any", "[]"],
+    ["previous", "any", ""],
+    ["next", "any", ""],
+    ["prevContent", "any", ""],
+    ["nextContent", "any", ""],
+    ["table", "any", ""],
+    ["size", "any", ""],
+    ["ariaLabel", "any", ""]
   ]
 }

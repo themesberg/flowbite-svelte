@@ -1,45 +1,13 @@
 {
   "name": "BreadcrumbItem",
   "props": [
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "icon",
-      "any",
-      ""
-    ],
-    [
-      "home",
-      "any",
-      "false"
-    ],
-    [
-      "href",
-      "any",
-      ""
-    ],
-    [
-      "linkClass",
-      "any",
-      ""
-    ],
-    [
-      "spanClass",
-      "any",
-      ""
-    ],
-    [
-      "homeClass",
-      "any",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ]
+    ["children", "any", ""],
+    ["icon", "any", ""],
+    ["home", "any", "false"],
+    ["href", "any", ""],
+    ["linkClass", "any", ""],
+    ["spanClass", "any", ""],
+    ["homeClass", "any", ""],
+    ["class", "string", ""]
   ]
 }

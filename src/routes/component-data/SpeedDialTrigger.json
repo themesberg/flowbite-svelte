@@ -1,35 +1,11 @@
 {
   "name": "SpeedDialTrigger",
   "props": [
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "name",
-      "any",
-      "\"Open actions menu\""
-    ],
-    [
-      "gradient",
-      "any",
-      "false"
-    ],
-    [
-      "icon",
-      "any",
-      ""
-    ],
-    [
-      "pill",
-      "any",
-      "true"
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ]
+    ["children", "any", ""],
+    ["name", "any", "\"Open actions menu\""],
+    ["gradient", "any", "false"],
+    ["icon", "any", ""],
+    ["pill", "any", "true"],
+    ["class", "string", ""]
   ]
 }

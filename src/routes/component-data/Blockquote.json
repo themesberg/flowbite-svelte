@@ -1,40 +1,12 @@
 {
   "name": "Blockquote",
   "props": [
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ],
-    [
-      "border",
-      "any",
-      ""
-    ],
-    [
-      "italic",
-      "any",
-      "true"
-    ],
-    [
-      "bg",
-      "any",
-      ""
-    ],
-    [
-      "alignment",
-      "any",
-      "\"left\""
-    ],
-    [
-      "size",
-      "any",
-      "\"lg\""
-    ]
+    ["children", "any", ""],
+    ["class", "string", ""],
+    ["border", "any", ""],
+    ["italic", "any", "true"],
+    ["bg", "any", ""],
+    ["alignment", "any", "\"left\""],
+    ["size", "any", "\"lg\""]
   ]
 }

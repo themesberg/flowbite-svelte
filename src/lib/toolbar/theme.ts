@@ -112,7 +112,7 @@ export const toolbarGroup = tv({
   ],
   defaultVariants: {
     spacing: "default",
-    padding: "default",
+    padding: "default"
   }
 });
 

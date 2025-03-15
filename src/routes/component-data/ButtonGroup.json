@@ -1,20 +1,8 @@
 {
   "name": "ButtonGroup",
   "props": [
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "size",
-      "any",
-      "\"md\""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ]
+    ["children", "any", ""],
+    ["size", "any", "\"md\""],
+    ["class", "string", ""]
   ]
 }

@@ -1,25 +1,9 @@
 {
   "name": "FooterLink",
   "props": [
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "liClass",
-      "any",
-      ""
-    ],
-    [
-      "aClass",
-      "any",
-      ""
-    ],
-    [
-      "href",
-      "any",
-      ""
-    ]
+    ["children", "any", ""],
+    ["liClass", "any", ""],
+    ["aClass", "any", ""],
+    ["href", "any", ""]
   ]
 }

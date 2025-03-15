@@ -23,7 +23,9 @@ const focusTrap: Action<HTMLElement> = (node) => {
     const tabbable = Array.from(node.querySelectorAll(selectorTabbable)).filter((el): el is HTMLElement => el instanceof HTMLElement && el.hidden !== true);
 
     let index = tabbable.indexOf(node.ownerDocument.activeElement as HTMLElement);
-    if (index === -1 && e.shiftKey) { index = 0; }
+    if (index === -1 && e.shiftKey) {
+      index = 0;
+    }
     index += tabbable.length + (e.shiftKey ? -1 : 1);
     index %= tabbable.length;
     tabbable[index].focus();

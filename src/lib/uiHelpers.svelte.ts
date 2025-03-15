@@ -40,7 +40,7 @@ export function clickOutside(element: HTMLElement, callbackFunction?: (e: MouseE
     } else {
       console.error("Callback function is not a function");
     }
-  }
+  };
 
   element.ownerDocument.body.addEventListener("click", onClick);
 

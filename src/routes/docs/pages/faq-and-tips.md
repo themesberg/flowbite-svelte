@@ -40,7 +40,7 @@ The following example shows how to add navigation using the key blocks:
 <script>
   import { page } from "$app/state";
   import { Navbar, NavLi, NavUl } from "flowbite-svelte-next";
-  let {children} = $props();
+  let { children } = $props();
   let activeUrl = $derived(page.url.pathname);
 </script>
 

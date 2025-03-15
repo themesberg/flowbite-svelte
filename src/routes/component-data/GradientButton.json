@@ -1,50 +1,14 @@
 {
   "name": "GradientButton",
   "props": [
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "outline",
-      "any",
-      ""
-    ],
-    [
-      "pill",
-      "any",
-      ""
-    ],
-    [
-      "color",
-      "any",
-      "\"blue\""
-    ],
-    [
-      "shadow",
-      "any",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ],
-    [
-      "href",
-      "any",
-      ""
-    ],
-    [
-      "disabled",
-      "any",
-      ""
-    ],
-    [
-      "size",
-      "any",
-      ""
-    ]
+    ["children", "any", ""],
+    ["outline", "any", ""],
+    ["pill", "any", ""],
+    ["color", "any", "\"blue\""],
+    ["shadow", "any", ""],
+    ["class", "string", ""],
+    ["href", "any", ""],
+    ["disabled", "any", ""],
+    ["size", "any", ""]
   ]
 }

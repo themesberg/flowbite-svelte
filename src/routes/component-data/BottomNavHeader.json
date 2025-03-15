@@ -1,20 +1,8 @@
 {
   "name": "BottomNavHeader",
   "props": [
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "outerClass",
-      "any",
-      ""
-    ],
-    [
-      "innerClass",
-      "any",
-      ""
-    ]
+    ["children", "any", ""],
+    ["outerClass", "any", ""],
+    ["innerClass", "any", ""]
   ]
 }

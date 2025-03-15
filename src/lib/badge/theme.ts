@@ -62,7 +62,7 @@ const badge = tv({
     {
       border: true,
       color: "red",
-      class: "dark:bg-transparent dark:text-red-400 border-red-400 dark:border-red-400",
+      class: "dark:bg-transparent dark:text-red-400 border-red-400 dark:border-red-400"
     },
     {
       border: true,

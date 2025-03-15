@@ -81,7 +81,7 @@ Use this example to show a navigational sidebar inside the drawer component.
 <div class="text-center">
   <Button onclick={() => (hidden2 = false)}>Show navigation</Button>
 </div>
-<Drawer transitionType="fly" {transitionParams} bind:hidden={hidden2} class="w-fit p-0 bg-gray-50 dark:bg-gray-800">
+<Drawer transitionType="fly" {transitionParams} bind:hidden={hidden2} class="w-fit bg-gray-50 p-0 dark:bg-gray-800">
   <div class="flex items-center justify-between px-2 pt-4">
     <h5 class="px-4 text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
     <CloseButton onclick={() => (hidden2 = true)} class="dark:text-white" />

@@ -114,7 +114,7 @@ export interface LinkType {
 
 interface AnchorAttributes extends Omit<HTMLAnchorAttributes, "on:copy" | "oncopy" | "onclick"> {
   href: string;
-  onclick?: HTMLButtonAttributes['onclick']
+  onclick?: HTMLButtonAttributes["onclick"];
 }
 
 interface ButtonAttibutes extends Omit<HTMLButtonAttributes, "on:copy" | "oncopy"> {

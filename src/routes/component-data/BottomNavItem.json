@@ -1,45 +1,13 @@
 {
   "name": "BottomNavItem",
   "props": [
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "btnName",
-      "any",
-      ""
-    ],
-    [
-      "appBtnPosition",
-      "any",
-      "\"middle\""
-    ],
-    [
-      "target",
-      "any",
-      ""
-    ],
-    [
-      "activeClass",
-      "any",
-      ""
-    ],
-    [
-      "href",
-      "any",
-      "\"\""
-    ],
-    [
-      "btnClass",
-      "any",
-      ""
-    ],
-    [
-      "spanClass",
-      "any",
-      ""
-    ]
+    ["children", "any", ""],
+    ["btnName", "any", ""],
+    ["appBtnPosition", "any", "\"middle\""],
+    ["target", "any", ""],
+    ["activeClass", "any", ""],
+    ["href", "any", "\"\""],
+    ["btnClass", "any", ""],
+    ["spanClass", "any", ""]
   ]
 }

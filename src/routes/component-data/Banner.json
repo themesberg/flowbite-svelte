@@ -1,60 +1,16 @@
 {
   "name": "Banner",
   "props": [
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "header",
-      "any",
-      ""
-    ],
-    [
-      "bannerStatus",
-      "any",
-      "$bindable(true)"
-    ],
-    [
-      "position",
-      "any",
-      "\"sticky\""
-    ],
-    [
-      "dismissable",
-      "any",
-      "true"
-    ],
-    [
-      "color",
-      "any",
-      "\"gray\""
-    ],
-    [
-      "bannerType",
-      "any",
-      "\"default\""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ],
-    [
-      "innerClass",
-      "any",
-      ""
-    ],
-    [
-      "transition",
-      "any",
-      "fade"
-    ],
-    [
-      "params",
-      "any",
-      ""
-    ]
+    ["children", "any", ""],
+    ["header", "any", ""],
+    ["bannerStatus", "any", "$bindable(true)"],
+    ["position", "any", "\"sticky\""],
+    ["dismissable", "any", "true"],
+    ["color", "any", "\"gray\""],
+    ["bannerType", "any", "\"default\""],
+    ["class", "string", ""],
+    ["innerClass", "any", ""],
+    ["transition", "any", "fade"],
+    ["params", "any", ""]
   ]
 }

@@ -1,50 +1,14 @@
 {
   "name": "NavUl",
   "props": [
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "activeUrl",
-      "any",
-      ""
-    ],
-    [
-      "ulClass",
-      "any",
-      ""
-    ],
-    [
-      "slideParams",
-      "any",
-      "{ delay: 250"
-    ],
-    [
-      "duration",
-      "any",
-      ""
-    ],
-    [
-      "easing",
-      "any",
-      ""
-    ],
-    [
-      "activeClass",
-      "any",
-      ""
-    ],
-    [
-      "nonActiveClass",
-      "any",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ]
+    ["children", "any", ""],
+    ["activeUrl", "any", ""],
+    ["ulClass", "any", ""],
+    ["slideParams", "any", "{ delay: 250"],
+    ["duration", "any", ""],
+    ["easing", "any", ""],
+    ["activeClass", "any", ""],
+    ["nonActiveClass", "any", ""],
+    ["class", "string", ""]
   ]
 }

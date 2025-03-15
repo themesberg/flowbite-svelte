@@ -4,12 +4,13 @@ import type { AnchorButtonAttributes } from "$lib/types";
 
 type HTMLButtonOrAnchorAttributes = Omit<HTMLButtonAttributes & HTMLAnchorAttributes, "color">;
 
-type ButtonProps = ButtonVariants & AnchorButtonAttributes & {
-  tag?: string;
-  disabled?: boolean;
-  outline?: boolean;
-  shadow?: boolean;
-}
+type ButtonProps = ButtonVariants &
+  AnchorButtonAttributes & {
+    tag?: string;
+    disabled?: boolean;
+    outline?: boolean;
+    shadow?: boolean;
+  };
 
 interface GradientButtonProps extends GradientButtonVariantes, HTMLButtonOrAnchorAttributes {
   tag?: string;

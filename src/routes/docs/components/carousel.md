@@ -220,7 +220,7 @@ You can use `slide` snippet and internal component `Slide` to control the image 
 <div class="max-w-4xl space-y-4">
   <Carousel {images} bind:index>
     <Indicators>
-      {#snippet children({selected, index})}
+      {#snippet children({ selected, index })}
         <Indicator color={selected ? "red" : "green"} class="h-5 w-5 border border-white text-white {selected ? 'opacity-100' : 'opacity-80'}">
           {index}
         </Indicator>

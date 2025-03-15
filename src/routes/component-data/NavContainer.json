@@ -1,20 +1,8 @@
 {
   "name": "NavContainer",
   "props": [
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "fluid",
-      "any",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ]
+    ["children", "any", ""],
+    ["fluid", "any", ""],
+    ["class", "string", ""]
   ]
 }

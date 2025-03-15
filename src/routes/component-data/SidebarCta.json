@@ -1,35 +1,11 @@
 {
   "name": "SidebarCta",
   "props": [
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "icon",
-      "any",
-      ""
-    ],
-    [
-      "divClass",
-      "any",
-      ""
-    ],
-    [
-      "spanClass",
-      "any",
-      ""
-    ],
-    [
-      "label",
-      "any",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ]
+    ["children", "any", ""],
+    ["icon", "any", ""],
+    ["divClass", "any", ""],
+    ["spanClass", "any", ""],
+    ["label", "any", ""],
+    ["class", "string", ""]
   ]
 }

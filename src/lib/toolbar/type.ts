@@ -7,12 +7,11 @@ interface ToolbarProps extends ToolbarVariants, Omit<HTMLAttributes<HTMLDivEleme
   end?: Snippet;
 }
 
-interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> {
-}
+interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> {}
 
-type ToolbarButtonProps = ToolbarButtonVariants & AnchorButtonAttributes & {
-  name?: string;
-}
+type ToolbarButtonProps = ToolbarButtonVariants &
+  AnchorButtonAttributes & {
+    name?: string;
+  };
 
 export type { ToolbarButtonProps, ToolbarGroupProps, ToolbarProps };
-

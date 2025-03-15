@@ -73,10 +73,11 @@ const closeButtonVariants = tv({
   ]
 });
 
-type CloseButtonProps = CloseButtonVariants & AnchorButtonAttributes & {
-  onclick?: (ev: MouseEvent) => void;
-  name?: string;
-  ariaLabel?: string;
-}
+type CloseButtonProps = CloseButtonVariants &
+  AnchorButtonAttributes & {
+    onclick?: (ev: MouseEvent) => void;
+    name?: string;
+    ariaLabel?: string;
+  };
 
 export { CloseButton, closeButtonVariants, type CloseButtonProps };

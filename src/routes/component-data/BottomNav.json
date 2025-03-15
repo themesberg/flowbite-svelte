@@ -1,45 +1,13 @@
 {
   "name": "BottomNav",
   "props": [
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "header",
-      "any",
-      ""
-    ],
-    [
-      "position",
-      "any",
-      "\"fixed\""
-    ],
-    [
-      "navType",
-      "any",
-      "\"default\""
-    ],
-    [
-      "outerClass",
-      "any",
-      ""
-    ],
-    [
-      "innerClass",
-      "any",
-      ""
-    ],
-    [
-      "activeClass",
-      "any",
-      ""
-    ],
-    [
-      "activeUrl",
-      "any",
-      "\"\""
-    ]
+    ["children", "any", ""],
+    ["header", "any", ""],
+    ["position", "any", "\"fixed\""],
+    ["navType", "any", "\"default\""],
+    ["outerClass", "any", ""],
+    ["innerClass", "any", ""],
+    ["activeClass", "any", ""],
+    ["activeUrl", "any", "\"\""]
   ]
 }

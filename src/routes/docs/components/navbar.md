@@ -131,7 +131,7 @@ This example can be used to show a secondary dropdown menu when clicking on one 
       <DropdownItem href="/">Dashboard</DropdownItem>
       <DropdownItem href="/docs/components/navbar">Settings</DropdownItem>
       <DropdownItem href="/">Earnings</DropdownItem>
-      <DropdownDivider/>
+      <DropdownDivider />
       <DropdownItem href="/">Sign out</DropdownItem>
     </Dropdown>
     <NavLi href="/settings">Setting</NavLi>
