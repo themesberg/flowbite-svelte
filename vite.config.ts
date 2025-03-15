@@ -21,7 +21,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "flowbite-svelte-next": path.resolve(process.cwd(), "./src/lib/index.ts"),
+      "flowbite-svelte": path.resolve(process.cwd(), "./src/lib/index.ts"),
       "flowbite-svelte-blocks": path.resolve(process.cwd(), "./node_modules/flowbite-svelte-blocks/dist/index.js")
     }
   },
