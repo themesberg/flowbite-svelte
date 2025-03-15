@@ -19,7 +19,7 @@ Use the Drawer component (or “off-canvas”) to show a fixed element relative 
 
 ```svelte example hideOutput
 <script>
-  import { Drawer, Button, CloseButton } from "flowbite-svelte-next";
+  import { Drawer, Button, CloseButton } from "flowbite-svelte";
   import { sineIn } from "svelte/easing";
 </script>
 ```
@@ -32,7 +32,7 @@ For accessibility you should also set the `id` prop to the element. This will ad
 
 ```svelte example hideResponsiveButtons
 <script>
-  import { Drawer, Button, CloseButton } from "flowbite-svelte-next";
+  import { Drawer, Button, CloseButton } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
   let hidden1 = true;
@@ -66,7 +66,7 @@ Use this example to show a navigational sidebar inside the drawer component.
 
 ```svelte example hideResponsiveButtons
 <script>
-  import { Drawer, Button, CloseButton, Sidebar, SidebarBrand, SidebarCta, SidebarWrapper, SidebarDropdownWrapper, SidebarGroup, SidebarItem } from "flowbite-svelte-next";
+  import { Drawer, Button, CloseButton, Sidebar, SidebarBrand, SidebarCta, SidebarWrapper, SidebarDropdownWrapper, SidebarGroup, SidebarItem } from "flowbite-svelte";
   import { ChartPieSolid, CartSolid, GridSolid, MailBoxSolid, UsersSolid, ShoppingBagSolid, ArrowRightToBracketOutline, EditOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
   let hidden2 = true;
@@ -150,7 +150,7 @@ Use this example to show a contact form inside the drawer component.
 
 ```svelte example hideResponsiveButtons
 <script>
-  import { Drawer, Button, CloseButton, Label, Input, Textarea, P, A, Checkbox } from "flowbite-svelte-next";
+  import { Drawer, Button, CloseButton, Label, Input, Textarea, P, A, Checkbox } from "flowbite-svelte";
   import { InfoCircleSolid } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
 
@@ -202,7 +202,7 @@ Use this example if you want to add form elements inside the drawer component in
 
 ```svelte example hideResponsiveButtons
 <script>
-  import { Drawer, Button, CloseButton, Label, Input, Textarea } from "flowbite-svelte-next";
+  import { Drawer, Button, CloseButton, Label, Input, Textarea } from "flowbite-svelte";
   import { InfoCircleSolid, UserAddOutline, CalendarEditSolid } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
 
@@ -265,7 +265,7 @@ Use the placement prop to position the drawer component either on the top, right
 
 ```svelte example hideResponsiveButtons
 <script>
-  import { Drawer, Button, CloseButton, Label, Textarea } from "flowbite-svelte-next";
+  import { Drawer, Button, CloseButton, Label, Textarea } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
 
@@ -307,7 +307,7 @@ Set the `transitionParams` variable to new variables.
 
 ```svelte example hideResponsiveButtons
 <script>
-  import { Drawer, Button, CloseButton } from "flowbite-svelte-next";
+  import { Drawer, Button, CloseButton } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
 
@@ -347,7 +347,7 @@ Use this example to show the drawer on the top side of the page.
 
 ```svelte example hideResponsiveButtons
 <script>
-  import { Drawer, Button, CloseButton, A } from "flowbite-svelte-next";
+  import { Drawer, Button, CloseButton, A } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
 
@@ -384,7 +384,7 @@ Use this example to show the drawer on the bottom side of the page.
 
 ```svelte example hideResponsiveButtons
 <script>
-  import { Drawer, Button, CloseButton, A } from "flowbite-svelte-next";
+  import { Drawer, Button, CloseButton, A } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
 
@@ -428,7 +428,7 @@ Use this example to enable the backdrop element by default.
 
 ```svelte example hideResponsiveButtons
 <script>
-  import { Drawer, Button, CloseButton, A } from "flowbite-svelte-next";
+  import { Drawer, Button, CloseButton, A } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
 
@@ -468,7 +468,7 @@ Use the `backdrop={false}` prop to disable the backdrop element when the drawer 
 
 ```svelte example hideResponsiveButtons
 <script>
-  import { Drawer, Button, CloseButton, A } from "flowbite-svelte-next";
+  import { Drawer, Button, CloseButton, A } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
 
@@ -508,7 +508,7 @@ Use `fixed|aboslute` prop to manage the CSS position value of the drawer.
 
 ```svelte example hideResponsiveButtons class="h-56"
 <script>
-  import { Drawer, Button, CloseButton, A } from "flowbite-svelte-next";
+  import { Drawer, Button, CloseButton, A } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
 
@@ -543,7 +543,7 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 
 ```svelte example hideResponsiveButtons
 <script>
-  import { Drawer, Button, CloseButton } from "flowbite-svelte-next";
+  import { Drawer, Button, CloseButton } from "flowbite-svelte";
   import { InfoCircleSolid } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
   let hidden10 = true;
@@ -578,7 +578,7 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 
 ```svelte example hideResponsiveButtons
 <script>
-  import { Drawer, Button, CloseButton, A } from "flowbite-svelte-next";
+  import { Drawer, Button, CloseButton, A } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
 

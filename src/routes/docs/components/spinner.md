@@ -20,7 +20,7 @@ The spinner component can be used as a loading indicator which comes in multiple
 
 ```svelte example hideOutput
 <script>
-  import { Spinner } from "flowbite-svelte-next";
+  import { Spinner } from "flowbite-svelte";
 </script>
 ```
 
@@ -30,7 +30,7 @@ Use the following SVG element to show a loading animation:
 
 ```svelte example hideScript
 <script>
-  import { Spinner } from "flowbite-svelte-next";
+  import { Spinner } from "flowbite-svelte";
 </script>
 
 <Spinner />
@@ -42,7 +42,7 @@ You can change the colors of the spinner element using the `color` prop.
 
 ```svelte example hideScript
 <script>
-  import { Spinner } from "flowbite-svelte-next";
+  import { Spinner } from "flowbite-svelte";
 </script>
 
 <Spinner />
@@ -60,7 +60,7 @@ Change the size of the spinner component using the `size` prop.
 
 ```svelte example hideScript
 <script>
-  import { Spinner } from "flowbite-svelte-next";
+  import { Spinner } from "flowbite-svelte";
 </script>
 
 <Spinner size={4} />
@@ -74,7 +74,7 @@ Because the spinner component is an inline HTML element it can easily be aligned
 
 ```svelte example hideScript
 <script>
-  import { Spinner } from "flowbite-svelte-next";
+  import { Spinner } from "flowbite-svelte";
 </script>
 
 <div class="text-left"><Spinner /></div><div class="text-center"><Spinner /></div><div class="text-right"><Spinner /></div>
@@ -86,7 +86,7 @@ The spinner component can also be used inside elements such as buttons when subm
 
 ```svelte example
 <script>
-  import { Spinner, Button } from "flowbite-svelte-next";
+  import { Spinner, Button } from "flowbite-svelte";
 </script>
 
 <div class="flex flex-wrap items-center gap-2">

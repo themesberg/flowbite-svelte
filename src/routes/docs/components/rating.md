@@ -24,7 +24,7 @@ Let's import all necessary components in the script tag. We import a heart, thum
 
 ```svelte example hideOutput
 <script>
-  import { Rating, AdvancedRating, ScoreRating } from "flowbite-svelte-next";
+  import { Rating, AdvancedRating, ScoreRating } from "flowbite-svelte";
 </script>
 ```
 
@@ -34,7 +34,7 @@ The default rating icon is a star. Set the total and rating props. The `id` prop
 
 ```svelte example
 <script>
-  import { Rating, Star } from "flowbite-svelte-next";
+  import { Rating, Star } from "flowbite-svelte";
   const wrapper = (props) => (anchor, _props) => Star(anchor, { ..._props, ...props });
 </script>
 
@@ -49,7 +49,7 @@ You can use the Star component with the `id` and `fillPercent` props.
 
 ```svelte example class="flex"
 <script>
-  import { Star } from "flowbite-svelte-next";
+  import { Star } from "flowbite-svelte";
 </script>
 
 <Star size={50} id="0" fillPercent={0} />
@@ -71,7 +71,7 @@ If you also want to show a text near the stars you can use the `text` slot to ad
 
 ```svelte example hideScript
 <script>
-  import { Rating } from "flowbite-svelte-next";
+  import { Rating } from "flowbite-svelte";
 </script>
 
 <Rating id="example-3" total={5} rating={3.4}>
@@ -88,7 +88,7 @@ Aggregate more results by using this example to show the amount of reviews and t
 
 ```svelte example hideScript
 <script>
-  import { Rating } from "flowbite-svelte-next";
+  import { Rating } from "flowbite-svelte";
 </script>
 
 <Rating count rating={4.95} id="example-4">
@@ -105,7 +105,7 @@ The default icon size is `24`. Import your icon and set it in a icon props.
 
 ```svelte example
 <script>
-  import { Rating, Heart } from "flowbite-svelte-next";
+  import { Rating, Heart } from "flowbite-svelte";
 </script>
 
 <Rating total={5} rating={3.3} id="example-5" icon={Heart} />
@@ -115,7 +115,7 @@ The default icon size is `24`. Import your icon and set it in a icon props.
 
 ```svelte example
 <script>
-  import { Rating, Thumbup } from "flowbite-svelte-next";
+  import { Rating, Thumbup } from "flowbite-svelte";
 </script>
 
 <Rating total={5} rating={4.7} id="example-5c" icon={Thumbup} />
@@ -129,7 +129,7 @@ Set the `total`,` rating`, and `ratings` prop for AdvancedRation component. Use 
 
 ```svelte example
 <script>
-  import { AdvancedRating, Rating } from "flowbite-svelte-next";
+  import { AdvancedRating, Rating } from "flowbite-svelte";
 </script>
 
 <AdvancedRating
@@ -156,7 +156,7 @@ As we describe in the Rating component, you can change an icon in the Rating com
 
 ```svelte example
 <script>
-  import { AdvancedRating, Rating, Thumbup } from "flowbite-svelte-next";
+  import { AdvancedRating, Rating, Thumbup } from "flowbite-svelte";
 </script>
 
 <AdvancedRating
@@ -181,7 +181,7 @@ As we describe in the Rating component, you can change an icon in the Rating com
 
 ```svelte example
 <script>
-  import { ScoreRating } from "flowbite-svelte-next";
+  import { ScoreRating } from "flowbite-svelte";
   let headerLabel = {
     desc1: "8.7",
     desc2: "Excellent",
@@ -215,7 +215,7 @@ Use this component to show a single rating comment and its score alongside other
 
 ```svelte example
 <script>
-  import { RatingComment } from "flowbite-svelte-next";
+  import { RatingComment } from "flowbite-svelte";
   let comment = {
     id: "1",
     user: {
@@ -248,7 +248,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 ```svelte example
 <script>
-  import { Review } from "flowbite-svelte-next";
+  import { Review } from "flowbite-svelte";
   import { LandmarkSolid, CalendarMonthSolid, UsersGroupOutline, ThumbsUpSolid, ThumbsDownSolid } from "flowbite-svelte-icons";
   let review = {
     name: "Jese Leos",

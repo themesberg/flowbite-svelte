@@ -20,7 +20,7 @@ The indicator component can be used as a small element positioned absolutely rel
 
 ```svelte example hideOutput
 <script>
-  import { Indicator } from "flowbite-svelte-next";
+  import { Indicator } from "flowbite-svelte";
 </script>
 ```
 
@@ -30,7 +30,7 @@ Use this example to create a simple indicator with multiple colors and position 
 
 ```svelte example class="flex gap-2"
 <script>
-  import { Indicator } from "flowbite-svelte-next";
+  import { Indicator } from "flowbite-svelte";
 </script>
 
 <Indicator color="gray" />
@@ -51,7 +51,7 @@ This example can be used as a legend indicator for charts to also add a text nex
 
 ```svelte example class="text-sm font-medium text-gray-900 dark:text-white flex gap-2"
 <script>
-  import { Indicator } from "flowbite-svelte-next";
+  import { Indicator } from "flowbite-svelte";
 </script>
 
 <span class="flex items-center"><Indicator size="sm" color="orange" class="me-1.5" />Visitors</span><span class="flex items-center"><Indicator size="sm" color="purple" class="me-1.5" />Sessions</span><span class="flex items-center"><Indicator size="sm" color="indigo" class="me-1.5" />Customers</span><span class="flex items-center"><Indicator size="sm" color="teal" class="me-1.5" />Revenue</span>
@@ -63,7 +63,7 @@ This example can be used to show a number count inside the indicator and positio
 
 ```svelte example class="space-y-4"
 <script>
-  import { Indicator, Button } from "flowbite-svelte-next";
+  import { Indicator, Button } from "flowbite-svelte";
   import { EnvelopeSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -85,7 +85,7 @@ Use this example to show a status indicator for the currently logged in user by 
 
 ```svelte example class="flex gap-2"
 <script>
-  import { Indicator, Avatar } from "flowbite-svelte-next";
+  import { Indicator, Avatar } from "flowbite-svelte";
 </script>
 
 <Avatar src="/images/profile-picture-5.webp" dot={{ color: "green", size: "lg", placement: "top-right" }} />
@@ -98,7 +98,7 @@ This example can be used to add an indicator inside of a badge component.
 
 ```svelte example class="flex gap-2"
 <script>
-  import { Indicator, Avatar, Badge } from "flowbite-svelte-next";
+  import { Indicator, Avatar, Badge } from "flowbite-svelte";
 </script>
 
 <ul class="w-full max-w-sm divide-y divide-gray-200 dark:divide-gray-700">
@@ -137,7 +137,7 @@ You can also use the indicators inside of a stepper component when completing a 
 
 ```svelte example class="space-y-8"
 <script>
-  import { Indicator } from "flowbite-svelte-next";
+  import { Indicator } from "flowbite-svelte";
   import { CheckCircleSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -239,7 +239,7 @@ Use these examples to position the indicator component anywhere relative to the 
 
 ```svelte example class="flex gap-4"
 <script>
-  import { Indicator } from "flowbite-svelte-next";
+  import { Indicator } from "flowbite-svelte";
 </script>
 
 <div class="borer relative h-56 w-56 rounded-lg border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-800">

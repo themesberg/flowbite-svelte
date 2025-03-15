@@ -23,7 +23,7 @@ Check out multiple examples of the bottom navigation component based on various 
 
 ```svelte example hideOutput
 <script>
-  import { BottomNav, BottomNavItem } from "flowbite-svelte-next";
+  import { BottomNav, BottomNavItem } from "flowbite-svelte";
 </script>
 ```
 
@@ -33,7 +33,7 @@ Use the default bottom navigation bar example to show a list of menu items as bu
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from "flowbite-svelte-next";
+  import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from "flowbite-svelte";
   import { HomeSolid, WalletSolid, AdjustmentsVerticalOutline, UserCircleSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -64,7 +64,7 @@ By default, the `BottomNavItem` will only be set to active if the `href` and the
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from "flowbite-svelte-next";
+  import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from "flowbite-svelte";
   import { HomeSolid, WalletSolid, AdjustmentsVerticalOutline, UserCircleSolid } from "flowbite-svelte-icons";
   import { page } from "$app/stores";
   $: activeUrl = $page.url.pathname;
@@ -93,7 +93,7 @@ The following example shows how to change active class, by overwriting `activeCl
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from "flowbite-svelte-next";
+  import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from "flowbite-svelte";
   import { HomeSolid, WalletSolid, AdjustmentsVerticalOutline, UserCircleSolid } from "flowbite-svelte-icons";
   import { page } from "$app/stores";
   $: activeUrl = $page.url.pathname;
@@ -123,7 +123,7 @@ Use the following example to change the icon colors:
 ```svelte example class="flex flex-col relative"
 <script>
   import { page } from "$app/stores";
-  import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from "flowbite-svelte-next";
+  import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from "flowbite-svelte";
   import { HomeSolid, WalletSolid, AdjustmentsVerticalOutline, UserCircleSolid } from "flowbite-svelte-icons";
   $: activeUrl = $page.url.pathname;
   let svgClass = "mb-1 text-pink-500 dark:text-pink-400 group-hover:text-pink-600 dark:group-hover:text-pink-500";
@@ -155,7 +155,7 @@ This example can be used to show a border between the menu items inside the bott
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from "flowbite-svelte-next";
+  import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from "flowbite-svelte";
   import { HomeSolid, WalletSolid, AdjustmentsVerticalOutline, UserCircleSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -184,7 +184,7 @@ Use this example to show a CTA button in the center of the navigation component 
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { BottomNav, BottomNavItem, Tooltip, Skeleton, ImagePlaceholder } from "flowbite-svelte-next";
+  import { BottomNav, BottomNavItem, Tooltip, Skeleton, ImagePlaceholder } from "flowbite-svelte";
   import { HomeSolid, WalletSolid, AdjustmentsVerticalOutline, UserCircleSolid, PlusOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -223,7 +223,7 @@ This example be used to paginate multiple pages on a single view alongside other
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { BottomNav, BottomNavItem, Tooltip, Skeleton, ImagePlaceholder } from "flowbite-svelte-next";
+  import { BottomNav, BottomNavItem, Tooltip, Skeleton, ImagePlaceholder } from "flowbite-svelte";
   import { FileCirclePlusOutline, BookmarkSolid, AngleLeftOutline, AngleRightOutline, AdjustmentsVerticalOutline, UserCircleSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -267,7 +267,7 @@ This example be used to paginate multiple pages on a single view alongside other
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { BottomNav, BottomNavItem, BottomNavHeader, BottomNavHeaderItem, Tooltip, Skeleton, ImagePlaceholder } from "flowbite-svelte-next";
+  import { BottomNav, BottomNavItem, BottomNavHeader, BottomNavHeaderItem, Tooltip, Skeleton, ImagePlaceholder } from "flowbite-svelte";
   import { HomeSolid, BookmarkSolid, PlusOutline, SearchOutline, AdjustmentsVerticalOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -315,7 +315,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 ```svelte example class="flex justify-center"
 <script>
-  import { BottomNav, BottomNavItem, Card, Listgroup, Avatar } from "flowbite-svelte-next";
+  import { BottomNav, BottomNavItem, Card, Listgroup, Avatar } from "flowbite-svelte";
   import { ClockSolid, UsersGroupOutline, StarSolid } from "flowbite-svelte-icons";
   let list = [
     {

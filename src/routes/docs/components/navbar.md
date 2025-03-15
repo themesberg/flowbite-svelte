@@ -19,7 +19,7 @@ Get started with the responsive navbar component from Flowbite to quickly set up
 
 ```svelte example hideOutput
 <script>
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "flowbite-svelte-next";
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "flowbite-svelte";
 </script>
 ```
 
@@ -31,7 +31,7 @@ By default, navbar content width is controlled by Tailwind class `container`. If
 
 ```svelte example hideScript class="h-96 md:h-80"
 <script>
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "flowbite-svelte-next";
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "flowbite-svelte";
 </script>
 
 <Navbar>
@@ -57,7 +57,7 @@ Utilize the `href` prop within the `NavLi` component to incorporate a hyperlink.
 ```svelte example class="h-96 md:h-80"
 <script>
   import { page } from "$app/stores";
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "flowbite-svelte-next";
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "flowbite-svelte";
   $: activeUrl = $page.url.pathname;
 </script>
 
@@ -82,7 +82,7 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
 ```svelte example class="h-96 md:h-80"
 <script>
   import { page } from "$app/stores";
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "flowbite-svelte-next";
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "flowbite-svelte";
   $: activeUrl = $page.url.pathname;
   let activeClass = "text-white bg-green-700 md:bg-transparent md:text-green-700 md:dark:text-white dark:bg-green-600 md:dark:bg-transparent";
   let nonActiveClass = "text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent";
@@ -110,7 +110,7 @@ This example can be used to show a secondary dropdown menu when clicking on one 
 
 ```svelte example class="h-96 md:h-80"
 <script>
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Dropdown, DropdownItem, DropdownDivider } from "flowbite-svelte-next";
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Dropdown, DropdownItem, DropdownDivider } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   import { page } from "$app/stores";
   $: activeUrl = $page.url.pathname;
@@ -147,7 +147,7 @@ Use this example of a navbar element to also show a search input element that yo
 
 ```svelte example class="h-96 md:h-80"
 <script>
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button, Input } from "flowbite-svelte-next";
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button, Input } from "flowbite-svelte";
   import { SearchOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -182,7 +182,7 @@ Use the following navbar element to show a call to action button alongside the l
 
 ```svelte example class="h-96 md:h-80"
 <script>
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button, Input } from "flowbite-svelte-next";
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button, Input } from "flowbite-svelte";
 </script>
 
 <Navbar>
@@ -210,7 +210,7 @@ Use this example to keep the navbar positioned fixed to the top side as you scro
 
 ```svelte example class="p-2 sm:p-6 h-96 md:h-80 overflow-hidden"
 <script>
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, ImagePlaceholder, Skeleton, TextPlaceholder } from "flowbite-svelte-next";
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, ImagePlaceholder, Skeleton, TextPlaceholder } from "flowbite-svelte";
 </script>
 
 <div class="relative px-8">
@@ -242,7 +242,7 @@ Use this example to create a navigation bar with a user profile or button to tog
 
 ```svelte example class="h-96 md:h-80"
 <script>
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar, Dropdown, DropdownItem, DropdownHeader, DropdownGroup } from "flowbite-svelte-next";
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar, Dropdown, DropdownItem, DropdownHeader, DropdownGroup } from "flowbite-svelte";
 </script>
 
 <Navbar>
@@ -282,7 +282,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 ```svelte example class="h-96 md:h-80"
 <script>
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "flowbite-svelte-next";
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "flowbite-svelte";
 </script>
 
 <Navbar class="bg-primary-100 dark:bg-primary-700">

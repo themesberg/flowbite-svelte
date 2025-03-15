@@ -30,7 +30,7 @@ You can use any elment as `SpeedDial` trigger (see the [Custom main button](#cus
 
 ```svelte example class="relative h-96" hideResponsiveButtons
 <script>
-  import { SpeedDial, SpeedDialTrigger, SpeedDialButton } from "flowbite-svelte-next";
+  import {SpeedDial, SpeedDialTrigger, SpeedDialButton } from "flowbite-svelte";
   import { ShareNodesSolid, PrinterSolid, DownloadSolid, FileCopySolid } from "flowbite-svelte-icons";
 </script>
 
@@ -57,7 +57,11 @@ The Speed Dial components accommodate a variety of Button component properties, 
 
 ```svelte example class="relative h-96" hideResponsiveButtons
 <script>
+<<<<<<< HEAD
   import { SpeedDial, SpeedDialTrigger, SpeedDialButton } from "flowbite-svelte-next";
+=======
+  import {SpeedDial, SpeedDialTrigger, SpeedDialButton } from "flowbite-svelte";
+>>>>>>> 92732b4 (corrections to import in docs)
   import { ShareNodesSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -222,7 +226,11 @@ Use this example to make the trigger button’s style square instead of a full c
 
 ```svelte example class="relative h-96" hideResponsiveButtons
 <script>
+<<<<<<< HEAD
   import { SpeedDial, SpeedDialTrigger, SpeedDialButton } from "flowbite-svelte-next";
+=======
+  import {SpeedDial, SpeedDialTrigger, SpeedDialButton } from "flowbite-svelte";
+>>>>>>> 92732b4 (corrections to import in docs)
   import { ShareNodesSolid, PrinterSolid, DownloadSolid, FileCopySolid } from "flowbite-svelte-icons";
 </script>
 
@@ -249,7 +257,11 @@ This example can be used to show the descriptive text inside the button instead 
 
 ```svelte example class="relative h-96" hideResponsiveButtons
 <script>
+<<<<<<< HEAD
   import { SpeedDial, SpeedDialTrigger, SpeedDialButton } from "flowbite-svelte-next";
+=======
+  import {SpeedDial, SpeedDialTrigger, SpeedDialButton } from "flowbite-svelte";
+>>>>>>> 92732b4 (corrections to import in docs)
   import { ShareNodesSolid, PrinterSolid, DownloadSolid, FileCopySolid } from "flowbite-svelte-icons";
 </script>
 
@@ -292,7 +304,11 @@ Use this example to show the text of each button outside of the speed dial as an
 
 ```svelte example class="relative h-96" hideResponsiveButtons
 <script>
+<<<<<<< HEAD
   import { SpeedDial, SpeedDialTrigger, SpeedDialButton } from "flowbite-svelte-next";
+=======
+  import {SpeedDial, SpeedDialTrigger, SpeedDialButton } from "flowbite-svelte";
+>>>>>>> 92732b4 (corrections to import in docs)
   import { ShareNodesSolid, PrinterSolid, DownloadSolid, FileCopySolid } from "flowbite-svelte-icons";
 </script>
 
@@ -335,7 +351,11 @@ This example can be used to show a list of menu items instead of buttons when ac
 
 ```svelte example class="relative h-96" hideResponsiveButtons
 <script>
+<<<<<<< HEAD
   import { SpeedDial, SpeedDialTrigger, Listgroup, ListgroupItem } from "flowbite-svelte-next";
+=======
+  import {SpeedDial, SpeedDialTrigger, Listgroup, ListgroupItem } from "flowbite-svelte";
+>>>>>>> 92732b4 (corrections to import in docs)
   import { DotsHorizontalOutline, DotsVerticalOutline, ShareNodesSolid, PrinterSolid, DownloadSolid, FileCopySolid } from "flowbite-svelte-icons";
 </script>
 
@@ -398,7 +418,11 @@ This example can be used to show an alternative style when showing a list of men
 
 ```svelte example class="relative h-96" hideResponsiveButtons
 <script>
+<<<<<<< HEAD
   import { SpeedDial, SpeedDialTrigger, Listgroup, ListgroupItem } from "flowbite-svelte-next";
+=======
+  import {SpeedDial, SpeedDialTrigger, Listgroup, ListgroupItem } from "flowbite-svelte";
+>>>>>>> 92732b4 (corrections to import in docs)
   import { PenSolid, ShareNodesSolid, PrinterSolid, DownloadSolid, FileCopySolid } from "flowbite-svelte-icons";
 </script>
 
@@ -459,7 +483,11 @@ Control the main button position using the flexbox utility classes from Tailwind
 
 ```svelte example class="relative h-[400px]" hideResponsiveButtons
 <script>
+<<<<<<< HEAD
   import { SpeedDial, SpeedDialTrigger, SpeedDialButton } from "flowbite-svelte-next";
+=======
+  import {SpeedDial, SpeedDialTrigger, SpeedDialButton } from "flowbite-svelte";
+>>>>>>> 92732b4 (corrections to import in docs)
   import { ShareNodesSolid, PrinterSolid, DownloadSolid, FileCopySolid } from "flowbite-svelte-icons";
   const placements = [
     ["start-2 top-2", "right", "bottom"],
@@ -496,7 +524,11 @@ The default trigger type is hover for each speed dial component.
 
 ```svelte example class="relative h-96" hideResponsiveButtons
 <script>
+<<<<<<< HEAD
   import { SpeedDial, SpeedDialTrigger, SpeedDialButton } from "flowbite-svelte-next";
+=======
+  import {SpeedDial, SpeedDialTrigger, SpeedDialButton } from "flowbite-svelte";
+>>>>>>> 92732b4 (corrections to import in docs)
   import { ShareNodesSolid, PrinterSolid, DownloadSolid, FileCopySolid } from "flowbite-svelte-icons";
 </script>
 
@@ -539,7 +571,11 @@ Use the `open` property to control the state of the popup menu.
 
 ```svelte example class="relative h-96" hideResponsiveButtons
 <script>
+<<<<<<< HEAD
   import { SpeedDial, SpeedDialTrigger, SpeedDialButton } from "flowbite-svelte-next";
+=======
+  import {SpeedDial, SpeedDialTrigger, SpeedDialButton } from "flowbite-svelte";
+>>>>>>> 92732b4 (corrections to import in docs)
   let open = false;
 
   const close = () => {
@@ -562,7 +598,7 @@ You can change the main button to any element you want by using the `slot='butto
 
 ```svelte example class="relative h-96" hideResponsiveButtons
 <script>
-  import { Button, SpeedDial, SpeedDialButton, Rating } from "flowbite-svelte-next";
+  import { Button, SpeedDial, SpeedDialButton, Rating } from "flowbite-svelte";
   import { ShareNodesSolid, PrinterSolid, DownloadSolid, FileCopySolid } from "flowbite-svelte-icons";
 </script>
 

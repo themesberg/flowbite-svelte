@@ -22,7 +22,7 @@ Flowbite includes two styles of breadcrumb elements, one that has a transparent 
 
 ```svelte example hideOutput
 <script>
-  import { Breadcrumb, BreadcrumbItem } from "flowbite-svelte-next";
+  import { Breadcrumb, BreadcrumbItem } from "flowbite-svelte";
 </script>
 ```
 
@@ -32,7 +32,7 @@ Use the following breadcrumb example to show the hierarchical structure of pages
 
 ```svelte example hideScript
 <script>
-  import { Breadcrumb, BreadcrumbItem } from "flowbite-svelte-next";
+  import { Breadcrumb, BreadcrumbItem } from "flowbite-svelte";
 </script>
 
 <Breadcrumb aria-label="Default breadcrumb example">
@@ -48,7 +48,7 @@ You can alternatively also use the breadcrumb components with a solid background
 
 ```svelte example hideScript
 <script>
-  import { Breadcrumb, BreadcrumbItem } from "flowbite-svelte-next";
+  import { Breadcrumb, BreadcrumbItem } from "flowbite-svelte";
 </script>
 
 <Breadcrumb aria-label="Solid background breadcrumb example" solid>
@@ -64,7 +64,7 @@ Use the `icon` snippet to change icons.
 
 ```svelte example
 <script>
-  import { Breadcrumb, BreadcrumbItem } from "flowbite-svelte-next";
+  import { Breadcrumb, BreadcrumbItem } from "flowbite-svelte";
   import { HomeOutline, ChevronDoubleRightOutline } from "flowbite-svelte-icons";
 </script>
 

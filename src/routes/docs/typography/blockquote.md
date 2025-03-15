@@ -23,7 +23,7 @@ Use this example to quote an external source inside a blockquote element.
 
 ```svelte example
 <script>
-  import { Blockquote } from "flowbite-svelte-next";
+  import { Blockquote } from "flowbite-svelte";
 </script>
 
 <Blockquote size="xl">"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</Blockquote>
@@ -35,7 +35,7 @@ This example can be used as an alternative style to the default one by applying 
 
 ```svelte example
 <script>
-  import { Blockquote, P } from "flowbite-svelte-next";
+  import { Blockquote, P } from "flowbite-svelte";
 </script>
 
 <P color="text-gray-500 dark:text-gray-400">Does your user know how to exit out of screens? Can they follow your intended user journey and buy something from the site you’ve designed? By running a usability test, you’ll be able to see how users will interact with your design once it’s live.</P>
@@ -51,7 +51,7 @@ Use this example to show an icon above the blockquote text content.
 
 ```svelte example
 <script>
-  import { Blockquote } from "flowbite-svelte-next";
+  import { Blockquote } from "flowbite-svelte";
   import { QuoteSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -67,7 +67,7 @@ Use this example to show a blockquote component between multiple paragraph eleme
 
 ```svelte example
 <script>
-  import { Blockquote, P } from "flowbite-svelte-next";
+  import { Blockquote, P } from "flowbite-svelte";
 </script>
 
 <P class="mb-3" color="text-gray-500 dark:text-gray-400">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
@@ -84,7 +84,7 @@ This example can be used for user testimonials by mentioning the author and occu
 
 ```svelte example
 <script>
-  import { Blockquote } from "flowbite-svelte-next";
+  import { Blockquote } from "flowbite-svelte";
   import { QuoteSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -107,7 +107,7 @@ Use this example to show a user review with rating stars and the name and occupa
 
 ```svelte example
 <script>
-  import { Blockquote, Rating } from "flowbite-svelte-next";
+  import { Blockquote, Rating } from "flowbite-svelte";
 </script>
 
 <figure class="max-w-(--breakpoint-md)">
@@ -135,7 +135,7 @@ The default alignment of the blockquote text content is the left side of the doc
 
 ```svelte example
 <script>
-  import { Blockquote } from "flowbite-svelte-next";
+  import { Blockquote } from "flowbite-svelte";
 </script>
 
 <Blockquote size="xl">"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</Blockquote>
@@ -147,7 +147,7 @@ Use the `alignment="center"` prop to align the text content inside the blockquot
 
 ```svelte example
 <script>
-  import { Blockquote } from "flowbite-svelte-next";
+  import { Blockquote } from "flowbite-svelte";
 </script>
 
 <Blockquote alignment="center" size="xl">"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</Blockquote>
@@ -159,7 +159,7 @@ Use the `alignment="right"` prop to align the blockquote text content to the rig
 
 ```svelte example
 <script>
-  import { Blockquote } from "flowbite-svelte-next";
+  import { Blockquote } from "flowbite-svelte";
 </script>
 
 <Blockquote alignment="right" size="xl">"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</Blockquote>
@@ -173,7 +173,7 @@ Use the `size="lg"` prop to apply the small size for the blockquote component. Y
 
 ```svelte example
 <script>
-  import { Blockquote } from "flowbite-svelte-next";
+  import { Blockquote } from "flowbite-svelte";
 </script>
 
 <Blockquote size="lg">"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</Blockquote>
@@ -185,7 +185,7 @@ Use the `size="xl"` to set the default size for the blockquote element.
 
 ```svelte example
 <script>
-  import { Blockquote } from "flowbite-svelte-next";
+  import { Blockquote } from "flowbite-svelte";
 </script>
 
 <Blockquote size="xl">"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</Blockquote>
@@ -197,7 +197,7 @@ The `size="2xl"` prop can be used to set a large size for the blockquote compone
 
 ```svelte example
 <script>
-  import { Blockquote } from "flowbite-svelte-next";
+  import { Blockquote } from "flowbite-svelte";
 </script>
 
 <Blockquote size="2xl">"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</Blockquote>

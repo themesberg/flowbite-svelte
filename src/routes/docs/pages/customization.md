@@ -33,7 +33,7 @@ In Tailwind CSS, you can make any utility class important by adding a `!` charac
 
 ```svelte example
 <script>
-  import { Button } from "flowbite-svelte-next";
+  import { Button } from "flowbite-svelte";
 </script>
 
 <Button class="bg-blue-500!">Blue Button</Button>
@@ -46,7 +46,7 @@ While the `class` prop can be used for most components, some components with a c
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte-next";
+  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
 </script>
 
 <Skeleton class="py-4" />
@@ -71,8 +71,8 @@ Create a new file for your button component in the lib directory:
 
 ```svelte example hideOutput
 <script>
-  import { Button } from "flowbite-svelte-next";
-  let { children } = $props();
+  import { Button } from "flowbite-svelte";
+  let {children} = $props();
 </script>
 
 // src/lib/MyButton.svelte

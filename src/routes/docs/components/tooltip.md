@@ -20,7 +20,7 @@ flowbite-svelte-next allows you to show extra information when hovering or focus
 
 ```svelte example hideOutput
 <script>
-  import { Tooltip } from "flowbite-svelte-next";
+  import { Tooltip } from "flowbite-svelte";
 </script>
 ```
 
@@ -30,7 +30,7 @@ To get started with using tooltips all you need to do is set `triggeredBy` attri
 
 ```svelte example class="flex items-end h-32" hideResponsiveButtons
 <script>
-  import { Tooltip, Button } from "flowbite-svelte-next";
+  import { Tooltip, Button } from "flowbite-svelte";
 </script>
 
 <!-- only works if the button and tooltip are adjacent on your page. Like this: -->
@@ -42,7 +42,7 @@ If you have anything else between the button and tooltip, they won't find each o
 
 ```svelte example hideScript class="h-32 flex items-end gap-2" hideResponsiveButtons
 <script>
-  import { Tooltip, Button, P } from "flowbite-svelte-next";
+  import { Tooltip, Button, P } from "flowbite-svelte";
 </script>
 
 <Button id="specific-button-anywhere-on-page">Default tooltip</Button>
@@ -57,7 +57,7 @@ You can use choose between dark and light version styles for the tooltip compone
 
 ```svelte example class="flex items-end gap-2 h-32" hideResponsiveButtons
 <script>
-  import { Tooltip, Button } from "flowbite-svelte-next";
+  import { Tooltip, Button } from "flowbite-svelte";
   let type = "dark";
 </script>
 
@@ -77,7 +77,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 
 ```svelte example class="flex items-center justify-center gap-2 h-36" hideResponsiveButtons
 <script>
-  import { Tooltip, Button } from "flowbite-svelte-next";
+  import { Tooltip, Button } from "flowbite-svelte";
   let placement = "left";
 </script>
 
@@ -95,7 +95,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 
 ```svelte example class="flex items-end gap-2 h-32" hideResponsiveButtons
 <script>
-  import { Tooltip, Button } from "flowbite-svelte-next";
+  import { Tooltip, Button } from "flowbite-svelte";
 </script>
 
 <Button id="hover">Tooltip hover</Button>
@@ -108,7 +108,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 
 ```svelte example class="flex items-end gap-2 h-32" hideResponsiveButtons
 <script>
-  import { Tooltip, Button } from "flowbite-svelte-next";
+  import { Tooltip, Button } from "flowbite-svelte";
 </script>
 
 <Button id="disable-arrow">Default tooltip</Button>
@@ -121,7 +121,7 @@ If you need the tooltip to be attached to the other element then the tiggering o
 
 ```svelte example class="flex gap-4 flex-col justify-center items-center h-72" hideResponsiveButtons
 <script>
-  import { Tooltip, Button } from "flowbite-svelte-next";
+  import { Tooltip, Button } from "flowbite-svelte";
   let placement = $state("");
 </script>
 
@@ -142,7 +142,7 @@ When you want to add a fully custom styles, use `type="custom"`, `defaultClass`,
 
 ```svelte example class="flex items-center h-64 gap-2" hideResponsiveButtons
 <script>
-  import { Tooltip, Button } from "flowbite-svelte-next";
+  import { Tooltip, Button } from "flowbite-svelte";
 </script>
 
 <Button>Green tooltip</Button>

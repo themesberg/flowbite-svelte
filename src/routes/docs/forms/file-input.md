@@ -20,7 +20,7 @@ The file input component can be used to upload one or more files from the device
 
 ```svelte example hideOutput
 <script>
-  import { Fileupload } from "flowbite-svelte-next";
+  import { Fileupload } from "flowbite-svelte";
 </script>
 ```
 
@@ -28,7 +28,7 @@ The file input component can be used to upload one or more files from the device
 
 ```svelte example
 <script>
-  import { Fileupload, Label, Helper } from "flowbite-svelte-next";
+  import { Fileupload, Label, Helper } from "flowbite-svelte";
 </script>
 
 <Label for="with_helper" class="pb-2">Upload file</Label>
@@ -40,7 +40,7 @@ The file input component can be used to upload one or more files from the device
 
 ```svelte example
 <script>
-  import { Fileupload, Helper } from "flowbite-svelte-next";
+  import { Fileupload, Helper } from "flowbite-svelte";
   let selectedFiles = $state();
   let fileNames = $derived(
     selectedFiles
@@ -59,7 +59,7 @@ The file input component can be used to upload one or more files from the device
 
 ```svelte example
 <script>
-  import { Fileupload, Label } from "flowbite-svelte-next";
+  import { Fileupload, Label } from "flowbite-svelte";
 </script>
 
 <Label class="pb-2" for="small_size">Small file input</Label>
@@ -74,7 +74,7 @@ The file input component can be used to upload one or more files from the device
 
 ```svelte example
 <script>
-  import { Dropzone } from "flowbite-svelte-next";
+  import { Dropzone } from "flowbite-svelte";
 
   let value = [];
   const dropHandle = (event) => {

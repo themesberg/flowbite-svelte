@@ -22,7 +22,7 @@ Explore the following examples based on various styles, sizes, and positionings 
 
 ```svelte example hideOutput
 <script>
-  import { Banner } from "flowbite-svelte-next";
+  import { Banner } from "flowbite-svelte";
 </script>
 ```
 
@@ -32,7 +32,7 @@ Use this free example to show a text message for announcement with a CTA link, a
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte-next";
+  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
   import { BullhornSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -58,7 +58,7 @@ This example can be used to position the sticky banner to the bottom side of the
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte-next";
+  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
   import { SalePercentSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -86,7 +86,7 @@ Use this free example to show a text message for announcement with a CTA link.
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte-next";
+  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
 </script>
 
 <Skeleton class="py-4" />
@@ -107,7 +107,7 @@ This example can be used to encourage your website visitors to sign up to your e
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte-next";
+  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
 </script>
 
 <Skeleton class="py-4" />
@@ -128,7 +128,7 @@ This example can be used to share important information with your website visito
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte-next";
+  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
   import { BookOpenOutline, ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -160,7 +160,7 @@ This example demonstrates a sliding transition using the slide transition from s
 <script>
   import { slide } from "svelte/transition";
   import { quintOut } from "svelte/easing";
-  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte-next";
+  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
   import { BullhornSolid } from "flowbite-svelte-icons";
 
   const params = { delay: 250, duration: 500, easing: quintOut };

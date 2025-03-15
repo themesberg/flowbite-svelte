@@ -22,7 +22,7 @@ Import the `Progressbar` component in a script tag.
 
 ```svelte example hideOutput
 <script>
-  import { Progressbar } from "flowbite-svelte-next";
+  import { Progressbar } from "flowbite-svelte";
 </script>
 ```
 
@@ -32,7 +32,7 @@ Use the following example of a progress bar element to show a completion rate of
 
 ```svelte example hideScript
 <script>
-  import { Progressbar } from "flowbite-svelte-next";
+  import { Progressbar } from "flowbite-svelte";
 </script>
 
 <Progressbar progress="50" />
@@ -44,7 +44,7 @@ Use the `size` prop to change the size of a progress bar.
 
 ```svelte example hideScript
 <script>
-  import { Progressbar } from "flowbite-svelte-next";
+  import { Progressbar } from "flowbite-svelte";
 </script>
 
 <div class="my-4">
@@ -74,7 +74,7 @@ Use the `labelInside` prop to add the progress in a progress bar.
 
 ```svelte example hideScript
 <script>
-  import { Progressbar } from "flowbite-svelte-next";
+  import { Progressbar } from "flowbite-svelte";
 </script>
 
 <Progressbar progress="50" size="h-4" labelInside />
@@ -86,7 +86,7 @@ Use the `labelOutside` prop to add the progress outside of a progress bar.
 
 ```svelte example hideScript
 <script>
-  import { Progressbar } from "flowbite-svelte-next";
+  import { Progressbar } from "flowbite-svelte";
 </script>
 
 <Progressbar progress="50" labelOutside="flowbite-svelte-next" />
@@ -98,7 +98,7 @@ Use the `color` prop to change the color of a progress bar.
 
 ```svelte example hideScript
 <script>
-  import { Progressbar } from "flowbite-svelte-next";
+  import { Progressbar } from "flowbite-svelte";
 </script>
 
 <div class="my-4">
@@ -143,7 +143,7 @@ Use `labelInsideClass` prop to style your progressbar.
 
 ```svelte example hideScript
 <script>
-  import { Progressbar } from "flowbite-svelte-next";
+  import { Progressbar } from "flowbite-svelte";
 </script>
 
 <Progressbar progress="50" size="h-3" labelInside color="green" labelInsideClass="bg-blue-600 text-blue-100 text-xs font-medium text-center p-0 leading-none rounded-full" class="my-4" labelOutside="Size h-3" />
@@ -159,7 +159,7 @@ By default progress bar has animation disabled, you can activate with `animate`,
 
 ```svelte example
 <script>
-  import { Progressbar, Button } from "flowbite-svelte-next";
+  import { Progressbar, Button } from "flowbite-svelte";
   import { sineOut } from "svelte/easing";
 
   let progress = "45";
@@ -176,7 +176,7 @@ Use the `progressClass` prop to change the color of the progress bar.
 
 ```svelte example
 <script>
-  import { Progressbar } from "flowbite-svelte-next";
+  import { Progressbar } from "flowbite-svelte";
 </script>
 
 <div class="space-y-4">

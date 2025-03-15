@@ -24,7 +24,7 @@ You can choose from multiple examples of mockups including phone, tablet, laptop
 
 ```svelte example hideOutput
 <script>
-  import { DeviceMockup } from "flowbite-svelte-next";
+  import { DeviceMockup } from "flowbite-svelte";
 </script>
 ```
 
@@ -34,7 +34,7 @@ Use this example to show a standard phone mockup based on Tailwind CSS and add y
 
 ```svelte example
 <script>
-  import { DeviceMockup } from "flowbite-svelte-next";
+  import { DeviceMockup } from "flowbite-svelte";
 </script>
 
 <DeviceMockup>
@@ -49,7 +49,7 @@ Use this example to clearly show that the preview of your application is being u
 
 ```svelte example
 <script>
-  import { DeviceMockup } from "flowbite-svelte-next";
+  import { DeviceMockup } from "flowbite-svelte";
 </script>
 
 <DeviceMockup device="ios">
@@ -64,7 +64,7 @@ Use this alternative phone mockup example if you want to feature previews for an
 
 ```svelte example
 <script>
-  import { DeviceMockup } from "flowbite-svelte-next";
+  import { DeviceMockup } from "flowbite-svelte";
 </script>
 
 <DeviceMockup device="android">
@@ -79,7 +79,7 @@ This component can be used to show an application preview inside of a responsive
 
 ```svelte example
 <script>
-  import { DeviceMockup } from "flowbite-svelte-next";
+  import { DeviceMockup } from "flowbite-svelte";
 </script>
 
 <DeviceMockup device="tablet">
@@ -94,7 +94,7 @@ This example can be used to show a screenshot of your application inside a lapto
 
 ```svelte example
 <script>
-  import { DeviceMockup } from "flowbite-svelte-next";
+  import { DeviceMockup } from "flowbite-svelte";
 </script>
 
 <DeviceMockup device="laptop">
@@ -109,7 +109,7 @@ Use this example to show a preview of your applicaiton inside a desktop device s
 
 ```svelte example
 <script>
-  import { DeviceMockup } from "flowbite-svelte-next";
+  import { DeviceMockup } from "flowbite-svelte";
 </script>
 
 <DeviceMockup device="desktop">
@@ -124,7 +124,7 @@ This component can be used to showcase applications built for smartwatches.
 
 ```svelte example
 <script>
-  import { DeviceMockup } from "flowbite-svelte-next";
+  import { DeviceMockup } from "flowbite-svelte";
 </script>
 
 <DeviceMockup device="smartwatch">

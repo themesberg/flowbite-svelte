@@ -21,7 +21,7 @@ The `Hr` component can be used to separate content using a horizontal line by ad
 
 ```html
 <script>
-  import { Hr } from "flowbite-svelte-next";
+  import { Hr } from "flowbite-svelte";
 </script>
 ```
 
@@ -29,7 +29,7 @@ The `Hr` component can be used to separate content using a horizontal line by ad
 
 ```svelte example
 <script>
-  import { Hr, P } from "flowbite-svelte-next";
+  import { Hr, P } from "flowbite-svelte";
 </script>
 
 <P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
@@ -43,7 +43,7 @@ Use this example to show a shorter version of the horizontal line.
 
 ```svelte example
 <script>
-  import { Hr, P } from "flowbite-svelte-next";
+  import { Hr, P } from "flowbite-svelte";
 </script>
 
 <P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
@@ -57,7 +57,7 @@ This example can be used to set a custom SVG icon in the middle of the HR elemen
 
 ```svelte example
 <script>
-  import { Hr, P } from "flowbite-svelte-next";
+  import { Hr, P } from "flowbite-svelte";
   import { QuoteSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -76,7 +76,7 @@ Use this example to add a text in the middle of the HR component.
 
 ```svelte example
 <script>
-  import { Hr, P } from "flowbite-svelte-next";
+  import { Hr, P } from "flowbite-svelte";
 </script>
 
 <div class="text-center">
@@ -92,7 +92,7 @@ This example can be used to separate content with a HR tag as a shape instead of
 
 ```svelte example
 <script>
-  import { Hr, P, Blockquote } from "flowbite-svelte-next";
+  import { Hr, P, Blockquote } from "flowbite-svelte";
 </script>
 
 <P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>

@@ -19,7 +19,7 @@ The mega menu component is a full-width dropdown that can be triggered by clicki
 
 ```svelte example hideOutput
 <script>
-  import { MegaMenu } from "flowbite-svelte-next";
+  import { MegaMenu } from "flowbite-svelte";
 </script>
 ```
 
@@ -29,7 +29,7 @@ Use this example to show a list of links aligned on three columns inside the meg
 
 ```svelte example class="h-[30rem] md:h-80"
 <script>
-  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from "flowbite-svelte-next";
+  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   let menu = [
     { name: "About us", href: "/about" },
@@ -76,7 +76,7 @@ This example of a mega menu dropdown can be used to also show an icon near the t
 
 ```svelte example class="h-[30rem] md:h-80"
 <script>
-  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from "flowbite-svelte-next";
+  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from "flowbite-svelte";
   import { IconOutline, ChevronDownOutline, UserCircleOutline } from "flowbite-svelte-icons";
   let menu = [
     { name: "About us", href: "/about", icon: UserCircleOutline },
@@ -125,7 +125,7 @@ Use this example to show a mega menu dropdown that spans the entire width of the
 
 ```svelte example class="h-[55rem] md:h-[30rem] relative"
 <script>
-  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from "flowbite-svelte-next";
+  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   let menu2 = [
     { name: "Online Stores", help: "Connect with third-party tools that you're already using." },
@@ -174,7 +174,7 @@ This example can be used to also show a CTA button or link next to the menu item
 
 ```svelte example class="h-[40rem] md:h-96 relative"
 <script>
-  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from "flowbite-svelte-next";
+  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from "flowbite-svelte";
   import { ChevronDownOutline, ArrowRightOutline } from "flowbite-svelte-icons";
   let menu = [
     { name: "About us", href: "/about" },
@@ -231,7 +231,7 @@ This example can be used to also show a CTA with a backdround image inside the d
 
 ```svelte example class="h-[40rem] md:h-96 relative"
 <script>
-  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, Button } from "flowbite-svelte-next";
+  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, Button } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   let menu = [
     { name: "About us", href: "/about" },

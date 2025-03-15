@@ -109,7 +109,7 @@ export default {
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Button, Alert, Card, Navbar, NavBrand, NavLi, NavUl, NavHamburger, Toast } from "flowbite-svelte-next";
+  import { Button, Alert, Card, Navbar, NavBrand, NavLi, NavUl, NavHamburger, Toast } from "flowbite-svelte";
   import { FireOutline } from "flowbite-svelte-icons";
 </script>
 

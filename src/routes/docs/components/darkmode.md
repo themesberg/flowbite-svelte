@@ -38,7 +38,7 @@ Finally, use the dark mode component to display a switcher (that is a button) fo
 ```svelte example
 <!-- src/routes/+layout.svelte -->
 <script>
-  import { DarkMode } from "flowbite-svelte-next";
+  import { DarkMode } from "flowbite-svelte";
 </script>
 
 <DarkMode />
@@ -58,7 +58,7 @@ Use the `btnClass` prop to overwrite the default classes:
 
 ```svelte example
 <script>
-  import { DarkMode } from "flowbite-svelte-next";
+  import { DarkMode } from "flowbite-svelte";
 
   let btnClass = "text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-xl p-2";
 </script>
@@ -70,7 +70,7 @@ Or just use `class` attribute to append classes to the default classes:
 
 ```svelte example
 <script>
-  import { DarkMode } from "flowbite-svelte-next";
+  import { DarkMode } from "flowbite-svelte";
 </script>
 
 <DarkMode class="text-primary-500 dark:text-primary-600 border dark:border-gray-800" />
@@ -82,7 +82,7 @@ Use the `lightIcon` and `darkIcon` slots to change icons:
 
 ```svelte example
 <script>
-  import { DarkMode } from "flowbite-svelte-next";
+  import { DarkMode } from "flowbite-svelte";
   import { ThumbsUpSolid, ThumbsDownSolid } from "flowbite-svelte-icons";
 </script>
 

@@ -22,7 +22,7 @@ You will also find more advanced search components on this page including dropdo
 
 ```svelte example hideOutput
 <script>
-  import { Search } from "flowbite-svelte-next";
+  import { Search } from "flowbite-svelte";
 </script>
 ```
 
@@ -30,7 +30,7 @@ You will also find more advanced search components on this page including dropdo
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Search, Button } from "flowbite-svelte-next";
+  import { Search, Button } from "flowbite-svelte";
 </script>
 
 <Search>
@@ -44,7 +44,7 @@ Use the simplest form of a search input component with an icon and a search butt
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Search, Button } from "flowbite-svelte-next";
+  import { Search, Button } from "flowbite-svelte";
   import { SearchOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -62,7 +62,7 @@ Use this search component with a dropdown to let your users select a category in
 
 ```svelte example class="flex flex-col gap-4 h-72"
 <script>
-  import { Search, Button, Dropdown, DropdownItem } from "flowbite-svelte-next";
+  import { Search, Button, Dropdown, DropdownItem } from "flowbite-svelte";
   import { SearchOutline, ChevronDownOutline } from "flowbite-svelte-icons";
 
   const items = [
@@ -118,7 +118,7 @@ Use this example where you can select a country in which you want to search for 
 
 ```svelte example class="flex flex-col gap-4 h-72"
 <script>
-  import { Search, Button, Dropdown, DropdownItem } from "flowbite-svelte-next";
+  import { Search, Button, Dropdown, DropdownItem } from "flowbite-svelte";
   import { SearchOutline, ChevronDownOutline } from "flowbite-svelte-icons";
 
   const countries = [
@@ -183,7 +183,7 @@ Get started with this example if you would like to enable voice search for your 
 
 ```svelte example class="space-y-4"
 <script>
-  import { Search, Button } from "flowbite-svelte-next";
+  import { Search, Button } from "flowbite-svelte";
   import { MicrophoneSolid, SearchOutline } from "flowbite-svelte-icons";
   function handleVoiceBtn() {
     alert("You clicked voice button");

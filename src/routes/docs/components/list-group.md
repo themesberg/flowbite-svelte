@@ -20,7 +20,7 @@ The list group component can be used to display a series of elements, buttons or
 
 ```svelte example hideOutput
 <script>
-  import { Listgroup, ListgroupItem } from "flowbite-svelte-next";
+  import { Listgroup, ListgroupItem } from "flowbite-svelte";
 </script>
 ```
 
@@ -30,7 +30,7 @@ Here’s an example of a list group that you can use right away.
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Listgroup } from "flowbite-svelte-next";
+  import { Listgroup } from "flowbite-svelte";
   let simpleList = ["Profile", "Settings", "Messages", "Download"];
 </script>
 
@@ -49,7 +49,7 @@ You can pass extra properties to the `<a>` element by setting the `attrs` atrrib
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Listgroup } from "flowbite-svelte-next";
+  import { Listgroup } from "flowbite-svelte";
   let links = [
     { name: "Accordions", href: "/docs/components/accordion", current: true },
     { name: "Alerts", href: "/docs/components/alert" },
@@ -73,7 +73,7 @@ You can pass extra properties to the `<button>` element by setting the `attrs` a
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Listgroup, ListgroupItem } from "flowbite-svelte-next";
+  import { Listgroup, ListgroupItem } from "flowbite-svelte";
   let buttons = [
     { name: "Profile", mycustomfield: "data1", current: true },
     { name: "Settings", mycustomfield: "data2" },
@@ -91,7 +91,7 @@ Use the following example to create a list of buttons as a menu together with SV
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Listgroup } from "flowbite-svelte-next";
+  import { Listgroup } from "flowbite-svelte";
   import { AdjustmentsHorizontalSolid, DownloadSolid, MessagesSolid, UserCircleSolid } from "flowbite-svelte-icons";
   let icons = [
     { name: "Profile", Icon: UserCircleSolid },
@@ -110,7 +110,7 @@ Use the `horizontal` property to change the direction of list items.
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Listgroup, ListgroupItem } from "flowbite-svelte-next";
+  import { Listgroup, ListgroupItem } from "flowbite-svelte";
   let buttons = [
     { name: "Profile", mycustomfield: "data1", current: true },
     { name: "Settings", mycustomfield: "data2" },
@@ -128,7 +128,7 @@ When non standard usage is needed you can omit the `items` props and add element
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Listgroup, ListgroupItem, Avatar } from "flowbite-svelte-next";
+  import { Listgroup, ListgroupItem, Avatar } from "flowbite-svelte";
   import { TrashBinSolid } from "flowbite-svelte-icons";
 </script>
 

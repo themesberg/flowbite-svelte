@@ -23,7 +23,7 @@ Import `Avatar`. If you are using the user dropdown, import `Dropdown`, `Dropdow
 
 ```svelte example hideOutput
 <script>
-  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider, Tooltip } from "flowbite-svelte-next";
+  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider, Tooltip } from "flowbite-svelte";
 </script>
 ```
 
@@ -33,7 +33,7 @@ Use this example to create a circle and rounded avatar on an image element.
 
 ```svelte example class="flex justify-center gap-4" hideScript hideResponsiveButtons
 <script>
-  import { Avatar } from "flowbite-svelte-next";
+  import { Avatar } from "flowbite-svelte";
 </script>
 
 <div class="flex space-x-4 rtl:space-x-reverse">
@@ -50,7 +50,7 @@ If you can use the `ring-&#123;color&#125;` class from Tailwind CSS to modify ri
 
 ```svelte example class="flex justify-center gap-4" hideScript hideResponsiveButtons
 <script>
-  import { Avatar } from "flowbite-svelte-next";
+  import { Avatar } from "flowbite-svelte";
 </script>
 
 <Avatar src="/images/profile-picture-2.webp" border />
@@ -63,7 +63,7 @@ When there is no custom image available a placeholder is displayed.
 
 ```svelte example class="flex justify-center gap-4" hideScript hideResponsiveButtons
 <script>
-  import { Avatar } from "flowbite-svelte-next";
+  import { Avatar } from "flowbite-svelte";
 </script>
 
 <Avatar />
@@ -78,7 +78,7 @@ This example can be used to show the initials of the user’s first and last nam
 
 ```svelte example class="flex justify-center gap-4" hideScript hideResponsiveButtons
 <script>
-  import { Avatar } from "flowbite-svelte-next";
+  import { Avatar } from "flowbite-svelte";
 </script>
 
 <Avatar>JL</Avatar>
@@ -90,7 +90,7 @@ Use this example to show a tooltip when hovering over the avatar.
 
 ```svelte example class="flex justify-center gap-4" hideResponsiveButtons
 <script>
-  import { Avatar, Tooltip } from "flowbite-svelte-next";
+  import { Avatar, Tooltip } from "flowbite-svelte";
 </script>
 
 <Avatar data-name="Jese Leos" rounded-sm src="/images/profile-picture-1.webp" />
@@ -107,7 +107,7 @@ Use a dot element relative to the avatar component as an indicator for the user 
 
 ```svelte example class="flex justify-center gap-4" hideResponsiveButtons
 <script>
-  import { Avatar } from "flowbite-svelte-next";
+  import { Avatar } from "flowbite-svelte";
 </script>
 
 <Avatar src="/images/profile-picture-3.webp" dot={{ color: "red" }} />
@@ -124,7 +124,7 @@ Use this example if you want to stack a group of users by overlapping the avatar
 
 ```svelte example class="flex flex-col justify-center gap-4" hideScript hideResponsiveButtons
 <script>
-  import { Avatar } from "flowbite-svelte-next";
+  import { Avatar } from "flowbite-svelte";
 </script>
 
 <div class="mb-5 flex">
@@ -147,7 +147,7 @@ This example can be used if you want to show additional information in the form 
 
 ```svelte example class="flex justify-center gap-4" hideScript hideResponsiveButtons
 <script>
-  import { Avatar } from "flowbite-svelte-next";
+  import { Avatar } from "flowbite-svelte";
 </script>
 
 <div class="flex items-center space-x-4 rtl:space-x-reverse">
@@ -165,7 +165,7 @@ Use this example if you want to show a dropdown menu when clicking on the avatar
 
 ```svelte example class="flex justify-center h-96" hideResponsiveButtons
 <script>
-  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownGroup } from "flowbite-svelte-next";
+  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownGroup } from "flowbite-svelte";
 </script>
 
 <Avatar id="user-drop" src="/images/profile-picture-3.webp" class="cursor-pointer" dot={{ color: "green" }} />
@@ -199,7 +199,7 @@ Preset values are equivalents of:
 
 ```svelte example class="flex flex-col gap-4" hideScript hideResponsiveButtons
 <script>
-  import { Avatar } from "flowbite-svelte-next";
+  import { Avatar } from "flowbite-svelte";
 </script>
 
 <div class=" flex flex-wrap justify-center space-x-4 rtl:space-x-reverse">

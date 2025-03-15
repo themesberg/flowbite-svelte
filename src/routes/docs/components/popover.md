@@ -21,7 +21,7 @@ Make sure that you have the Flowbite JavaScript included in your project to enab
 
 ```svelte example hideOutput
 <script>
-  import { Popover } from "flowbite-svelte-next";
+  import { Popover } from "flowbite-svelte";
 </script>
 ```
 
@@ -29,7 +29,7 @@ Make sure that you have the Flowbite JavaScript included in your project to enab
 
 ```svelte example class="flex h-44 items-end justify-center" hideResponsiveButtons
 <script>
-  import { Popover, Button } from "flowbite-svelte-next";
+  import { Popover, Button } from "flowbite-svelte";
 </script>
 
 <Button id="b1">Default popover</Button>
@@ -42,7 +42,7 @@ Use this example to show more information about a user profile when hovering ove
 
 ```svelte example class="flex h-72 items-end justify-center" hideResponsiveButtons
 <script>
-  import { Popover, Button, Avatar } from "flowbite-svelte-next";
+  import { Popover, Button, Avatar } from "flowbite-svelte";
 </script>
 
 <Button id="b2" class="-mb-2">User profile</Button>
@@ -86,7 +86,7 @@ This example can be used to show more information about a company profile.
 
 ```svelte example class="flex h-96 items-end justify-center" hideResponsiveButtons
 <script>
-  import { Popover, Button, Avatar } from "flowbite-svelte-next";
+  import { Popover, Button, Avatar } from "flowbite-svelte";
   import { GlobeOutline, HeartSolid, ThumbsUpSolid, DotsHorizontalOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -140,7 +140,7 @@ Use this example to trigger a popover component with detailed information and an
 
 ```svelte example class="flex h-96 items-end" hideResponsiveButtons
 <script>
-  import { Popover } from "flowbite-svelte-next";
+  import { Popover } from "flowbite-svelte";
   import { ChevronRightOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -174,7 +174,7 @@ Show helpful information inside a popover when hovering over a question mark but
 
 ```svelte example class="h-96" hideResponsiveButtons
 <script>
-  import { Popover } from "flowbite-svelte-next";
+  import { Popover } from "flowbite-svelte";
   import { QuestionCircleSolid, ChevronRightOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -204,7 +204,7 @@ Show a progress bar with details inside a popover when hovering over a settings 
 
 ```svelte example class="h-60 flex justify-center items-end" hideResponsiveButtons
 <script>
-  import { Popover, Button } from "flowbite-svelte-next";
+  import { Popover, Button } from "flowbite-svelte";
   import { DatabaseSolid, ChevronRightOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -236,7 +236,7 @@ Dynamically show the password strength progress when creating a new password pos
 
 ```svelte example hideResponsiveButtons
 <script>
-  import { Popover, Label, Input, Checkbox, Button } from "flowbite-svelte-next";
+  import { Popover, Label, Input, Checkbox, Button } from "flowbite-svelte";
   import { CheckOutline, CloseOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -283,7 +283,7 @@ Set the position of the popover component relative to the trigger element by usi
 
 ```svelte example class="flex gap-4 flex-col justify-center items-center h-96" hideResponsiveButtons
 <script>
-  import { Popover, Button } from "flowbite-svelte-next";
+  import { Popover, Button } from "flowbite-svelte";
   let placement = $state("bottom");
 </script>
 
@@ -300,7 +300,7 @@ Set the position of the popover component relative to the trigger element by usi
 
 ```svelte example class="flex h-44 items-end justify-center gap-4" hideResponsiveButtons
 <script>
-  import { Popover, Button } from "flowbite-svelte-next";
+  import { Popover, Button } from "flowbite-svelte";
 </script>
 
 <Button id="hover">Hover popover</Button>
@@ -315,7 +315,7 @@ Increase or decrease the default offset by adding the `offset` attribute where t
 
 ```svelte example class="flex h-52 items-end justify-center"
 <script>
-  import { Popover, Button } from "flowbite-svelte-next";
+  import { Popover, Button } from "flowbite-svelte";
 </script>
 
 <Button id="offset">Default popover</Button>
@@ -328,7 +328,7 @@ Customize the animation of the popover component by using the transition functio
 
 ```svelte example class="flex h-44 items-end justify-center gap-8" hideResponsiveButtons
 <script>
-  import { Popover, Button } from "flowbite-svelte-next";
+  import { Popover, Button } from "flowbite-svelte";
   import { blur, fade, slide } from "svelte/transition";
 </script>
 
@@ -346,7 +346,7 @@ You can also disable the popover arrow by setting `arrow` attribute to `false`.
 
 ```svelte example class="flex h-44 items-end justify-center" hideResponsiveButtons
 <script>
-  import { Popover, Button } from "flowbite-svelte-next";
+  import { Popover, Button } from "flowbite-svelte";
 </script>
 
 <Button id="arrow">Default popover</Button>
@@ -359,7 +359,7 @@ If you need the popover to be attached to the other element then the tiggering o
 
 ```svelte example class="flex gap-4 flex-col justify-center items-center h-72" hideResponsiveButtons
 <script>
-  import { Popover, Button } from "flowbite-svelte-next";
+  import { Popover, Button } from "flowbite-svelte";
   let placement = "";
 </script>
 

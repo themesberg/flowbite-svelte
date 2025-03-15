@@ -20,7 +20,7 @@ Use this example to show a basic area chart.
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Chart, Card, A, Button, Dropdown, DropdownItem } from "flowbite-svelte-next";
+  import { Chart, Card, A, Button, Dropdown, DropdownItem } from "flowbite-svelte";
   import { ChevronRightOutline, ChevronDownOutline } from "flowbite-svelte-icons";
 
   let options = {
@@ -128,7 +128,7 @@ To create a double line chart check the example below.
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover } from "flowbite-svelte-next";
+  import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover } from "flowbite-svelte";
   import { InfoCircleSolid, ChevronRightOutline, ChevronDownOutline, FileLinesSolid } from "flowbite-svelte-icons";
 
   let options = {
@@ -271,7 +271,7 @@ You can represent multiple data entries using columns by setting the type: "bar"
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Chart, Card, A, Button, Dropdown, DropdownItem } from "flowbite-svelte-next";
+  import { Chart, Card, A, Button, Dropdown, DropdownItem } from "flowbite-svelte";
   import { UsersGroupOutline, ArrowUpOutline, ChevronDownOutline, ChevronRightOutline } from "flowbite-svelte-icons";
 
   const options = {
@@ -434,7 +434,7 @@ Create a horizontal bar chart with as many data series as you like by setting th
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Chart, Card, A, Button, Dropdown, DropdownItem } from "flowbite-svelte-next";
+  import { Chart, Card, A, Button, Dropdown, DropdownItem } from "flowbite-svelte";
   import { ArrowUpOutline, ChevronDownOutline, ChevronRightOutline } from "flowbite-svelte-icons";
 
   const options = {
@@ -580,7 +580,7 @@ Create a pie chart with multiple data series by setting the type: "pie" chart ty
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover } from "flowbite-svelte-next";
+  import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover } from "flowbite-svelte";
   import { InfoCircleSolid, ChevronDownOutline, ChevronRightOutline, PenSolid, DownloadSolid, ShareNodesSolid, TrashBinSolid, DotsHorizontalOutline } from "flowbite-svelte-icons";
 
   const options = {
@@ -695,7 +695,7 @@ Set the chart type: "donut" to create a donut chart and copy the options from th
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from "flowbite-svelte-next";
+  import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowDownToBracketOutline, ChevronDownOutline, ChevronRightOutline, PenSolid, DownloadSolid, ShareNodesSolid } from "flowbite-svelte-icons";
 
   const options = {
@@ -831,7 +831,7 @@ To create a radial chart with multiple data entries you need to set the type: "r
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from "flowbite-svelte-next";
+  import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowDownToBracketOutline, ChevronDownOutline, ChevronRightOutline, PenSolid, DownloadSolid, ShareNodesSolid } from "flowbite-svelte-icons";
 
   let isOpen = false;

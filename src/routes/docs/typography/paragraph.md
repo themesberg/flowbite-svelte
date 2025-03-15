@@ -23,7 +23,7 @@ Use this example of a paragraph element to use inside article content or a landi
 
 ```svelte example
 <script>
-  import { P } from "flowbite-svelte-next";
+  import { P } from "flowbite-svelte";
 </script>
 
 <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
@@ -36,7 +36,7 @@ The leading text can be used as the first paragraph inside an article content pa
 
 ```svelte example
 <script>
-  import { P } from "flowbite-svelte-next";
+  import { P } from "flowbite-svelte";
 </script>
 
 <P class="mb-3 md:text-xl" weight="light" size="lg" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work and deploy.</P>
@@ -49,7 +49,7 @@ Use `firstupper` prop to highlight the first letter of the paragraph, often used
 
 ```svelte example
 <script>
-  import { P } from "flowbite-svelte-next";
+  import { P } from "flowbite-svelte";
 </script>
 
 <P class="mb-3" color="text-gray-500 dark:text-gray-400" firstupper>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
@@ -62,7 +62,7 @@ This example can be used to add a custom styled link element inside the paragrap
 
 ```svelte example
 <script>
-  import { P, A } from "flowbite-svelte-next";
+  import { P, A } from "flowbite-svelte";
 </script>
 
 <P weight="light" color="text-gray-500 dark:text-gray-400">
@@ -76,7 +76,7 @@ Use this example to highlight a piece of text inside the paragraph by using a bo
 
 ```svelte example
 <script>
-  import { P } from "flowbite-svelte-next";
+  import { P } from "flowbite-svelte";
 </script>
 
 <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
@@ -91,7 +91,7 @@ This example can be used to underline a certain part of the text inside the para
 
 ```svelte example
 <script>
-  import { P } from "flowbite-svelte-next";
+  import { P } from "flowbite-svelte";
 </script>
 
 <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
@@ -106,7 +106,7 @@ Use this example to make the font style of the text inside the paragraph italic.
 
 ```svelte example
 <script>
-  import { P } from "flowbite-svelte-next";
+  import { P } from "flowbite-svelte";
 </script>
 
 <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
@@ -121,7 +121,7 @@ Get started with this example to show a popover with extra information inside pa
 
 ```svelte example class="flex items-end h-96"
 <script>
-  import { Popover, P, A } from "flowbite-svelte-next";
+  import { Popover, P, A } from "flowbite-svelte";
   import { ChevronRightOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -152,7 +152,7 @@ Use this example to show multiple paragraphs on a single line.
 
 ```svelte example
 <script>
-  import { P } from "flowbite-svelte-next";
+  import { P } from "flowbite-svelte";
 </script>
 
 <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
@@ -165,7 +165,7 @@ Use this example to separate paragraphs into two columns for better readability.
 
 ```svelte example
 <script>
-  import { P, Layout } from "flowbite-svelte-next";
+  import { P, Layout } from "flowbite-svelte";
 </script>
 
 <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
@@ -182,7 +182,7 @@ This example can be used to separate paragraphs into three separate columns.
 
 ```svelte example
 <script>
-  import { P, Layout } from "flowbite-svelte-next";
+  import { P, Layout } from "flowbite-svelte";
 </script>
 
 <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
@@ -200,7 +200,7 @@ Use this example to separate paragraphs into two uneven columns.
 
 ```svelte example
 <script>
-  import { P, Layout } from "flowbite-svelte-next";
+  import { P, Layout } from "flowbite-svelte";
 </script>
 
 <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
@@ -224,7 +224,7 @@ The default alignment of the paragraph is to the left side and you can use the `
 
 ```svelte example
 <script>
-  import { P } from "flowbite-svelte-next";
+  import { P } from "flowbite-svelte";
 </script>
 
 <P align="left">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
@@ -236,7 +236,7 @@ Use the `align="center"` prop to align the paragraph text to the center.
 
 ```svelte example
 <script>
-  import { P } from "flowbite-svelte-next";
+  import { P } from "flowbite-svelte";
 </script>
 
 <P align="center">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
@@ -248,7 +248,7 @@ Use the `align="right"` prop to align the paragraph text the right side of the p
 
 ```svelte example
 <script>
-  import { P } from "flowbite-svelte-next";
+  import { P } from "flowbite-svelte";
 </script>
 
 <P align="right">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>

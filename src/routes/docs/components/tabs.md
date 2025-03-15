@@ -20,7 +20,7 @@ The tabs component can be used either as an extra navigational hierarchy complem
 
 ```svelte example hideOutput
 <script>
-  import { Tabs, TabItem } from "flowbite-svelte-next";
+  import { Tabs, TabItem } from "flowbite-svelte";
 </script>
 ```
 
@@ -38,7 +38,7 @@ The last tab in that example shows not only how to show a disabled tab, but how 
 
 ```svelte example
 <script>
-  import { Tabs, TabItem } from "flowbite-svelte-next";
+  import { Tabs, TabItem } from "flowbite-svelte";
 </script>
 
 <Tabs>
@@ -90,7 +90,7 @@ Use the `tabStyle="underline"` to achieve this alternative tabs component style 
 
 ```svelte example
 <script>
-  import { Tabs, TabItem } from "flowbite-svelte-next";
+  import { Tabs, TabItem } from "flowbite-svelte";
 </script>
 
 <Tabs tabStyle="underline">
@@ -134,7 +134,7 @@ This is an example of the tabs component where you can also use a SVG powered ic
 
 ```svelte example
 <script>
-  import { Tabs, TabItem } from "flowbite-svelte-next";
+  import { Tabs, TabItem } from "flowbite-svelte";
   import { UserCircleSolid, GridSolid, AdjustmentsVerticalSolid, ClipboardSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -188,7 +188,7 @@ If you want to use pills as a style for the tabs component use `tabStyle="pill"`
 
 ```svelte example
 <script>
-  import { Tabs, TabItem } from "flowbite-svelte-next";
+  import { Tabs, TabItem } from "flowbite-svelte";
 </script>
 
 <Tabs tabStyle="pill">
@@ -229,7 +229,7 @@ If you want to show the tabs on the full width relative to the parent element us
 
 ```svelte example
 <script>
-  import { Tabs, TabItem } from "flowbite-svelte-next";
+  import { Tabs, TabItem } from "flowbite-svelte";
 </script>
 
 <Tabs tabStyle="full" defaultClass="flex rounded-lg divide-x rtl:divide-x-reverse divide-gray-200 shadow-sm dark:divide-gray-700">
@@ -270,7 +270,7 @@ You can add other components to the `TabItem` component. Here we are adding a ti
 
 ```svelte example class="h-auto"
 <script>
-  import { Tabs, TabItem, Timeline, TimelineItem, Button } from "flowbite-svelte-next";
+  import { Tabs, TabItem, Timeline, TimelineItem, Button } from "flowbite-svelte";
   import { ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 

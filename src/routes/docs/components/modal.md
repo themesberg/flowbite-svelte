@@ -22,7 +22,7 @@ Get started with multiple sizes, colors, and styles built with the utility class
 
 ```svelte example class="flex justify-center" hideOutput
 <script>
-  import { Modal } from "flowbite-svelte-next";
+  import { Modal } from "flowbite-svelte";
 </script>
 ```
 
@@ -36,7 +36,7 @@ An option of automatic closing of the modal can be enabled by setting the `autoc
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Button, Modal } from "flowbite-svelte-next";
+  import { Button, Modal } from "flowbite-svelte";
   let defaultModal = $state(false);
 </script>
 
@@ -57,7 +57,7 @@ You can use the `outsideclose` prop to allow the user to close the modal by clic
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Button, Modal } from "flowbite-svelte-next";
+  import { Button, Modal } from "flowbite-svelte";
   let clickOutsideModal = $state(false);
 </script>
 
@@ -81,7 +81,7 @@ Notice lack of the `footer` snippet.
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Button, Modal } from "flowbite-svelte-next";
+  import { Button, Modal } from "flowbite-svelte";
   import { ExclamationCircleOutline } from "flowbite-svelte-icons";
   let popupModal = $state(false);
 </script>
@@ -104,7 +104,7 @@ Use this modal example with form input element to receive information from your 
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Button, Modal, Label, Input, Checkbox } from "flowbite-svelte-next";
+  import { Button, Modal, Label, Input, Checkbox } from "flowbite-svelte";
   let formModal = $state(false);
 </script>
 
@@ -139,7 +139,7 @@ Use this web3 modal component to show crypto wallet connection options like Meta
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Button, Modal, Label, Input, Checkbox } from "flowbite-svelte-next";
+  import { Button, Modal, Label, Input, Checkbox } from "flowbite-svelte";
   import MetaMask from "../../utils/icons/MetaMask.svelte";
   import CoinbaseWallet from "../../utils/icons/CoinbaseWallet.svelte";
   import OperaWallet from "../../utils/icons/OperaWallet.svelte";
@@ -200,7 +200,7 @@ You can use five different modal sizing options starting from extra small to ext
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Button, Modal } from "flowbite-svelte-next";
+  import { Button, Modal } from "flowbite-svelte";
   let openModal = $state(false);
   let size = $state();
 </script>
@@ -267,7 +267,7 @@ You can use five different modal sizing options starting from extra small to ext
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Button, Modal } from "flowbite-svelte-next";
+  import { Button, Modal } from "flowbite-svelte";
   let id = $state();
   let placement = $state();
   let open = $state(false);
@@ -305,7 +305,7 @@ You can use five different modal sizing options starting from extra small to ext
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Button, Modal, P } from "flowbite-svelte-next";
+  import { Button, Modal, P } from "flowbite-svelte";
   let open = $state(false);
   let color = $state();
 </script>
@@ -370,7 +370,7 @@ You can use five different modal sizing options starting from extra small to ext
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Button, Modal } from "flowbite-svelte-next";
+  import { Button, Modal } from "flowbite-svelte";
   let scrollingModal = $state(false);
 </script>
 

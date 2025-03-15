@@ -22,7 +22,7 @@ Import Card in the script tag.
 
 ```svelte example hideOutput
 <script>
-  import { Card } from "flowbite-svelte-next";
+  import { Card } from "flowbite-svelte";
 </script>
 ```
 
@@ -32,7 +32,7 @@ Use the following simple card component with a title and description. Notice the
 
 ```svelte example class="flex justify-center flex-wrap gap-2" hideScript
 <script>
-  import { Card } from "flowbite-svelte-next";
+  import { Card } from "flowbite-svelte";
 </script>
 
 <Card href="/cards">
@@ -47,7 +47,7 @@ Use the following example of a card element if you also want to have an action b
 
 ```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
-  import { Card, Button } from "flowbite-svelte-next";
+  import { Card, Button } from "flowbite-svelte";
   import { ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -66,7 +66,7 @@ This example can be used to show a CTA as a link instead of a button inside the 
 
 ```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
-  import { Card } from "flowbite-svelte-next";
+  import { Card } from "flowbite-svelte";
   import { GiftBoxSolid, ArrowUpRightFromSquareOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -91,7 +91,7 @@ You can use the following example of a card element with an image for blog posts
 
 ```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
-  import { Card, Button, Toggle } from "flowbite-svelte-next";
+  import { Card, Button, Toggle } from "flowbite-svelte";
   import { ArrowRightOutline } from "flowbite-svelte-icons";
   let vCard = false;
 </script>
@@ -114,7 +114,7 @@ If you want to spice up your cards you can use the following card which has its 
 
 ```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
-  import { Card, Button, Toggle } from "flowbite-svelte-next";
+  import { Card, Button, Toggle } from "flowbite-svelte";
   let hCard = false;
 </script>
 
@@ -133,7 +133,7 @@ Use this user profile card example if you want to show a dropdown menu and butto
 
 ```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
-  import { Card, Dropdown, DropdownItem, Avatar, Button } from "flowbite-svelte-next";
+  import { Card, Dropdown, DropdownItem, Avatar, Button } from "flowbite-svelte";
   import { DotsHorizontalOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -164,7 +164,7 @@ Use this card example where you can add form input elements that can be used for
 
 ```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
-  import { Card, Button, Label, Input, Checkbox } from "flowbite-svelte-next";
+  import { Card, Button, Label, Input, Checkbox } from "flowbite-svelte";
 </script>
 
 <Card>
@@ -196,7 +196,7 @@ Use this card for your e-commerce websites and show information about the produc
 
 ```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
-  import { Card, Button, Rating, Badge } from "flowbite-svelte-next";
+  import { Card, Button, Rating, Badge } from "flowbite-svelte";
 </script>
 
 <Card padding="none">
@@ -224,7 +224,7 @@ Use this CTA card example to encourage your users to visit a certain page such a
 
 ```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
-  import { Card, Button } from "flowbite-svelte-next";
+  import { Card, Button } from "flowbite-svelte";
 </script>
 
 <Card class="text-center" size="lg" padding="xl">
@@ -243,7 +243,7 @@ Use this card example if you want to show a list of data:
 
 ```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
-  import { Card, Listgroup, Avatar } from "flowbite-svelte-next";
+  import { Card, Listgroup, Avatar } from "flowbite-svelte";
   let list = [
     {
       img: { src: "/images/profile-picture-1.webp", alt: "Neil Sims" },
@@ -298,7 +298,7 @@ Show detailed information to potential customers about your product’s pricing 
 
 ```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
-  import { Card, Button } from "flowbite-svelte-next";
+  import { Card, Button } from "flowbite-svelte";
   import { CheckCircleSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -350,7 +350,7 @@ Use this example to split cards into multiple sections such as for testimonials 
 
 ```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
-  import { Card } from "flowbite-svelte-next";
+  import { Card } from "flowbite-svelte";
 </script>
 
 <Card padding="none" size="xl" contentClass="grid md:grid-cols-2">
