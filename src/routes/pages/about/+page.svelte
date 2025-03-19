@@ -9,6 +9,7 @@
 	const svelteVersion = __SVELTEVERSION__;
 	const svelteKitVersion = __SVELTEKITVERSION__;
 	const viteVersion = __VITEVERSION__;
+	const tailwindcssVersion = __TAILWINDCSSVERSION__;
 </script>
 
 <div class="p-4">
@@ -29,6 +30,7 @@
 			></Li
 		>
 		<Li><A href="https://kit.svelte.dev/">Svelte Kit: {svelteKitVersion}</A></Li>
+		<Li><A href="https://tailwindcss.com/">Tailwind css: {tailwindcssVersion}</A></Li>
 		<Li><A href="https://vitejs.dev/">Vite: {viteVersion}</A></Li>
 	</List>
 
@@ -36,17 +38,5 @@
 	<List>
 		<Li><A href="https://github.com/shinokada/svelte-5-ui-lib">GitHub</A></Li>
 		<Li><A href="https://codewithshin.com">codewithshin</A></Li>
-	</List>
-
-	<H2>Other svelte-5-ui-lib</H2>
-	<List>
-		<Li><A href="https://svelte-5-ui-lib.com/">svelte-5-ui-lib</A></Li>
-		<Li><A href="https://flowbite-svelte-icons.codewithshin.com/">flowbite-svelte-icons</A></Li>
-		<Li><A href="https://svelte-5-ui-lib-blocks.codewithshin.com/">svelte-5-ui-lib-Blocks</A></Li>
-		<Li
-			><A href="https://svelte-5-ui-lib-admin-dashboard.codewithshin.com/"
-				>svelte-5-ui-lib-Dashboard</A
-			></Li
-		>
 	</List>
 </div>

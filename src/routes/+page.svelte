@@ -39,17 +39,8 @@
 
 <HighlightCompo class="mb-8" codeLang="sh" code={modules['./md/svelte-5-ui-lib.md'] as string} />
 
-<H3>Tailwind</H3>
-<P>Add the following to tailwind.config.js:</P>
+<H3>TailwindCSS</H3>
+<P>Update src/app.css:</P>
 
-<H3>SVG Icons</H3>
-<P
-	>If you are using any icons from <A href="https://svelte-svg-icons.codewithshin.com/"
-		>Svelte SVG Icon Sets</A
-	>, you need to update the content in tailwind.config.js. For example, if you are using
-	flowbite-svelte-icons and Svelte-Animated-Icons:</P
->
+<HighlightCompo class="mb-8" codeLang="js" code={modules['./md/app-css.md'] as string} />
 
-<HighlightCompo class="mb-8" codeLang="js" code={modules['./md/svg-icons.md'] as string} />
-
-<HighlightCompo class="mb-8" codeLang="json" code={modules['./md/tailwind-config.md'] as string} />
