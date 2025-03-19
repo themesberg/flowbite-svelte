@@ -30,10 +30,10 @@ Use the following list of pagination items to indicate a series of content for y
 
 ```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
 <script>
-  import { page } from "$app/stores";
+  import { page } from "$app/state";
   import { Pagination } from "flowbite-svelte";
 
-  $: activeUrl = $page.url.searchParams.get("page");
+  $: activeUrl = page.url.searchParams.get("page");
   let pages = [
     { name: 1, href: "/components/pagination?page=1" },
     { name: 2, href: "/components/pagination?page=2" },
@@ -75,11 +75,11 @@ The following pagination component example shows how you can use SVG icons inste
 
 ```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
 <script>
-  import { page } from "$app/stores";
+  import { page } from "$app/state";
   import { Pagination } from "flowbite-svelte";
   import { ChevronLeftOutline, ChevronRightOutline } from "flowbite-svelte-icons";
 
-  $: activeUrl = $page.url.searchParams.get("page");
+  $: activeUrl = page.url.searchParams.get("page");
   let pages = [
     { name: 6, href: "/components/pagination?page=6" },
     { name: 7, href: "/components/pagination?page=7" },

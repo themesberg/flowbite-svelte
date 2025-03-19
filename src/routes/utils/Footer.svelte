@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { page } from "$app/stores";
+  import { page } from "$app/state";
   import Footer from "$lib/footer/Footer.svelte";
   import FooterBrand from "$lib/footer/FooterBrand.svelte";
   import FooterCopyright from "$lib/footer/FooterCopyright.svelte";
@@ -10,7 +10,7 @@
   let isHomePage: boolean = $state(false);
 
   $effect(() => {
-    isHomePage = $page.route.id === "/";
+    isHomePage = page.route.id === "/";
   });
 
   const footer_links = {

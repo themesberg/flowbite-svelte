@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { page } from "$app/stores";
+  import { page } from "$app/state";
   import PaginationItem from "$lib/pagination/PaginationItem.svelte";
   import ArrowLeft from "./icons/ArrowLeft.svelte";
   import ArrowRight from "./icons/ArrowRight.svelte";
@@ -11,7 +11,7 @@
     data,
     url,
     params: { slug }
-  } = $page;
+  } = page;
 
   interface PostMeta {
     dir: string;

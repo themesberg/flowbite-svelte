@@ -6,10 +6,10 @@
   import Npm from "../utils/icons/Npm.svelte";
   import Quote from "../utils/icons/Quote.svelte";
   import Section from "./utils/Section.svelte";
-  import { page } from "$app/stores";
+  import { page } from "$app/state";
   import type { PageData } from "../$types";
 
-  let data: PageData = $page.data as PageData;
+  let data: PageData = page.data as PageData;
 
   let github = data.github?.["stargazers_count"] ?? 0;
   let npm = data.npm?.["downloads"] ?? 0;

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { page } from "$app/stores";
+  import { page } from "$app/state";
   import { afterNavigate } from "$app/navigation";
   import { Sidebar, SidebarGroup, SidebarItem, uiHelpers } from "$lib";
   import SidebarDropdownWrapper from "$lib/sidebar/SidebarDropdownWrapper.svelte";
@@ -19,13 +19,13 @@
   //   drawerHidden.set(true);
   // };
 
-  let activeUrl = $state($page.url.pathname);
+  let activeUrl = $state(page.url.pathname);
   const sidebarUi = uiHelpers();
   let isOpen = $state(true);
   const closeSidebar = sidebarUi.close;
   $effect(() => {
     isOpen = sidebarUi.isOpen;
-    activeUrl = $page.url.pathname;
+    activeUrl = page.url.pathname;
   });
 
   const names_mapping: Record<string, string> = {
@@ -34,7 +34,7 @@
 
   const fileDir = (path: string) => path.split("/").slice(0, -1).pop() ?? "";
 
-  let mainSidebarUrl = $derived($page.url.pathname);
+  let mainSidebarUrl = $derived(page.url.pathname);
   let activeMainSidebar: string;
 
   afterNavigate((navigation) => {
