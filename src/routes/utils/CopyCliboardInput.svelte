@@ -4,12 +4,13 @@
   import Check from "./icons/Check.svelte";
   import Clipboard from "./icons/Clipboard.svelte";
 
+  let { class: clasName = "" } = $props();
   const show = (ev: ToggleEvent) => ev.newState == "open" || set_tooltip(false);
   const text_copied = "Copied!";
   const text_not_copied = "Copy to clipboard";
 
   let placeholder: string = "pnpm i -D flowbite-svelte-next flowbite";
-  let tooltip_text: string = text_not_copied;
+  let tooltip_text: string = $state(text_not_copied);
 
   function set_tooltip(copied: boolean) {
     tooltip_text = copied ? text_copied : text_not_copied;
@@ -30,10 +31,10 @@
   };
 </script>
 
-<Input size="lg" {placeholder} readonly class="focus:ring-primary-600 focus:border-primary-600 py-3 text-sm sm:text-sm md:min-w-[315px] {$$props.class ?? ''}">
+<Input size="lg" {placeholder} readonly class="focus:ring-primary-600 focus:border-primary-600 py-3 text-sm sm:text-sm md:min-w-[315px] {clasName}">
   {#snippet right()}
     <div class="flex items-center ps-32">
-      <button on:click={copyToClipboard} class="hover:text-primary-700 px-1 py-2">
+      <button onclick={copyToClipboard} class="hover:text-primary-700 px-1 py-2">
         {#if tooltip_text == text_not_copied}<Clipboard />{:else}<Check />{/if}
       </button>
 

@@ -93,7 +93,7 @@ Use bind:value to bind the range input value as seen the the following examples.
 
 ## Unknown attributes
 
-Since we added `$$restProps` to input field, you can contain the props which are not declared with export. It will pass down other unknown attributes to an element in a component.
+Since we added `...restProps` to input field, you can contain the props which are not declared with export. It will pass down other unknown attributes to an element in a component.
 
 ## Component data
 

@@ -93,7 +93,7 @@ If you need only a few icons from this library in your Svelte app, import them d
 
 ## Passing down other attributes
 
-Since all icons have `{...$$restProps}`, you can pass other attibutes as well.
+Since all icons have `{...restProps}`, you can pass other attibutes as well.
 
 ```html
 <AddressBookOutline id="my-svg" transform="rotate(45)" />
@@ -281,7 +281,7 @@ Use `withEvents` prop to use the following events:
 
 ## Passing down other attributes
 
-Since all icons have `{...$$restProps}`, you can pass other attibutes as well.
+Since all icons have `{...restProps}`, you can pass other attibutes as well.
 
 ```html
 <AddressBookOutline id="my-svg" transform="rotate(45)" />
