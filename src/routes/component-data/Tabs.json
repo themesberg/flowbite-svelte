@@ -2,7 +2,7 @@
 	"name": "Tabs",
 	"props": [
 		["children", "any", ""],
-		["tabStyle", "any", "\"none\""],
+		["tabStyle", "any", "'none'"],
 		["ulClass", "any", ""],
 		["contentClass", "any", ""],
 		["divider", "any", "true"]

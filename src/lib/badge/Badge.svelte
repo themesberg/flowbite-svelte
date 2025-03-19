@@ -82,7 +82,7 @@
 @props: children: any;
 @props:icon: any;
 @props:badgeStatus: any = $bindable(true);
-@props:color: any = "primary";
+@props:color: any = 'primary';
 @props:large: any = false;
 @props:dismissable: any = false;
 @props:class: string;

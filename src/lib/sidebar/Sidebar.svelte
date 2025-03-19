@@ -117,8 +117,8 @@
 @props:isOpen: any = false;
 @props:closeSidebar: any;
 @props:isSingle: any = true;
-@props:breakpoint: any = "md";
-@props:position: any = "fixed";
+@props:breakpoint: any = 'md';
+@props:position: any = 'fixed';
 @props:activateClickOutside: any = true;
 @props:backdrop: any = true;
 @props:backdropClass: any;
@@ -128,6 +128,6 @@
 @props:ariaLabel: any;
 @props:nonActiveClass: any;
 @props:activeClass: any;
-@props:activeUrl: any = "";
+@props:activeUrl: any = '';
 @props:class: string;
 -->

@@ -60,7 +60,7 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children: any;
-@props:tabStyle: any = "none";
+@props:tabStyle: any = 'none';
 @props:ulClass: any;
 @props:contentClass: any;
 @props:divider: any = true;

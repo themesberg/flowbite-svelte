@@ -3,7 +3,7 @@
 	"props": [
 		["children", "any", ""],
 		["aria_describedby", "any", ""],
-		["color", "any", "\"primary\""],
+		["color", "any", "'primary'"],
 		["custom", "any", ""],
 		["inline", "any", ""],
 		["tinted", "any", ""],

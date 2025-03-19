@@ -5,13 +5,13 @@
 		["src", "any", ""],
 		["href", "any", ""],
 		["target", "any", ""],
-		["cornerStyle", "any", "\"circular\""],
+		["cornerStyle", "any", "'circular'"],
 		["border", "any", "false"],
 		["stacked", "any", "false"],
 		["dot", "any", ""],
 		["class", "string", ""],
 		["alt", "any", ""],
-		["size", "any", "\"md\""],
+		["size", "any", "'md'"],
 		["onclick", "any", ""]
 	]
 }

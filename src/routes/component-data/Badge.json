@@ -4,7 +4,7 @@
 		["children", "any", ""],
 		["icon", "any", ""],
 		["badgeStatus", "any", "$bindable(true)"],
-		["color", "any", "\"primary\""],
+		["color", "any", "'primary'"],
 		["large", "any", "false"],
 		["dismissable", "any", "false"],
 		["class", "string", ""],

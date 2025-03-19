@@ -3,7 +3,7 @@
 	"props": [
 		["children", "any", ""],
 		["end", "any", ""],
-		["color", "any", "\"default\""],
+		["color", "any", "'default'"],
 		["embedded", "any", ""],
 		["class", "string", ""]
 	]

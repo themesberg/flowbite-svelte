@@ -3,11 +3,11 @@
 	"props": [
 		["children", "any", ""],
 		["header", "any", ""],
-		["position", "any", "\"fixed\""],
-		["navType", "any", "\"default\""],
+		["position", "any", "'fixed'"],
+		["navType", "any", "'default'"],
 		["outerClass", "any", ""],
 		["innerClass", "any", ""],
 		["activeClass", "any", ""],
-		["activeUrl", "any", "\"\""]
+		["activeUrl", "any", "''"]
 	]
 }

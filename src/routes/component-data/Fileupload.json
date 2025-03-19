@@ -2,7 +2,7 @@
 	"name": "Fileupload",
 	"props": [
 		["files", "any", "$bindable<FileList | undefined>()"],
-		["size", "any", "\"md\""],
+		["size", "any", "'md'"],
 		["clearable", "any", "false"],
 		["class", "string", ""]
 	]

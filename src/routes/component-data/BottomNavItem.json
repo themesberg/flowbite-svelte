@@ -3,10 +3,10 @@
 	"props": [
 		["children", "any", ""],
 		["btnName", "any", ""],
-		["appBtnPosition", "any", "\"middle\""],
+		["appBtnPosition", "any", "'middle'"],
 		["target", "any", ""],
 		["activeClass", "any", ""],
-		["href", "any", "\"\""],
+		["href", "any", "''"],
 		["btnClass", "any", ""],
 		["spanClass", "any", ""]
 	]

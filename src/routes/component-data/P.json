@@ -2,15 +2,15 @@
 	"name": "P",
 	"props": [
 		["children", "any", ""],
-		["class", "string", "\"text-gray-900 dark:text-white\""],
-		["height", "any", "\"normal\""],
-		["align", "any", "\"left\""],
+		["class", "string", "'text-gray-900 dark:text-white'"],
+		["height", "any", "'normal'"],
+		["align", "any", "'left'"],
 		["justify", "any", "false"],
 		["italic", "any", ""],
 		["firstUpper", "any", "false"],
-		["whitespace", "any", "\"normal\""],
-		["size", "any", "\"base\""],
-		["space", "any", "\"normal\""],
-		["weight", "any", "\"normal\""]
+		["whitespace", "any", "'normal'"],
+		["size", "any", "'base'"],
+		["space", "any", "'normal'"],
+		["weight", "any", "'normal'"]
 	]
 }

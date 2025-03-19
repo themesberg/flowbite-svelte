@@ -35,9 +35,9 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: color: any = "primary";
-@props:size: any = "8";
+@props: color: any = 'primary';
+@props:size: any = '8';
 @props:class: string;
-@props:currentFill: any = "currentFill";
-@props:currentColor: any = "currentColor";
+@props:currentFill: any = 'currentFill';
+@props:currentColor: any = 'currentColor';
 -->

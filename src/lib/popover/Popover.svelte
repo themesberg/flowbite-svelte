@@ -264,11 +264,11 @@
 ## Props
 @props: children: any;
 @props:titleSlot: any;
-@props:color: any = "default";
+@props:color: any = 'default';
 @props:arrow: any = true;
 @props:offset: any = 0;
 @props:triggeredBy: any;
-@props:position: any = "top";
+@props:position: any = 'top';
 @props:class: string;
 @props:reference: any;
 @props:transition: any = fade;

@@ -2,6 +2,6 @@
 	"name": "DeviceMockup",
 	"props": [
 		["children", "any", ""],
-		["device", "any", "\"default\""]
+		["device", "any", "'default'"]
 	]
 }

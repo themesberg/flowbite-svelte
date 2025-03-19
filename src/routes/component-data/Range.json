@@ -2,9 +2,9 @@
 	"name": "Range",
 	"props": [
 		["value", "any", "$bindable()"],
-		["appearance", "any", "\"none\""],
-		["color", "any", "\"blue\""],
-		["rangeSize", "any", "\"md\""],
+		["appearance", "any", "'none'"],
+		["color", "any", "'blue'"],
+		["rangeSize", "any", "'md'"],
 		["inputClass", "any", ""]
 	]
 }

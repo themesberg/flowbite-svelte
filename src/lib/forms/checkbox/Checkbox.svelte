@@ -61,7 +61,7 @@
 ## Props
 @props: children: any;
 @props:aria_describedby: any;
-@props:color: any = "primary";
+@props:color: any = 'primary';
 @props:custom: any;
 @props:inline: any;
 @props:tinted: any;

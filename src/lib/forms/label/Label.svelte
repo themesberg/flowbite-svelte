@@ -19,7 +19,7 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children: any;
-@props:color: any = "gray";
+@props:color: any = 'gray';
 @props:show: any = true;
 @props:class: string;
 -->

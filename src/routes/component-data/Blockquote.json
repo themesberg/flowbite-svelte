@@ -6,7 +6,7 @@
 		["border", "any", ""],
 		["italic", "any", "true"],
 		["bg", "any", ""],
-		["alignment", "any", "\"left\""],
-		["size", "any", "\"lg\""]
+		["alignment", "any", "'left'"],
+		["size", "any", "'lg'"]
 	]
 }

@@ -2,7 +2,7 @@
 	"name": "NavUl",
 	"props": [
 		["children", "any", ""],
-		["activeUrl", "any", "\"\""],
+		["activeUrl", "any", "''"],
 		["class", "string", ""]
 	]
 }

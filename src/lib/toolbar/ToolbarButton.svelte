@@ -65,10 +65,10 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children: any;
-@props:color: any = "default";
+@props:color: any = 'default';
 @props:name: any;
 @props:ariaLabel: any;
-@props:size: any = "md";
+@props:size: any = 'md';
 @props:href: any;
 @props:class: string;
 @props:onclick: any;

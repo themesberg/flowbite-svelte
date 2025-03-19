@@ -70,7 +70,7 @@
 @props:subtext: any;
 @props:href: any;
 @props:label: any;
-@props:spanClass: any = "ms-3";
+@props:spanClass: any = 'ms-3';
 @props:activeClass: any;
 @props:nonActiveClass: any;
 @props:aClass: any;

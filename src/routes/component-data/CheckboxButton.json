@@ -4,7 +4,7 @@
 		["children", "any", ""],
 		["class", "string", ""],
 		["group", "any", "[]"],
-		["value", "any", "\"on\""],
+		["value", "any", "'on'"],
 		["checked", "any", ""],
 		["inline", "any", "true"],
 		["pill", "any", ""],

@@ -4,7 +4,7 @@
 		["children", "any", ""],
 		["titleSlot", "any", ""],
 		["open", "any", "false"],
-		["title", "any", "\"Tab title\""],
+		["title", "any", "'Tab title'"],
 		["activeClass", "any", ""],
 		["inactiveClass", "any", ""],
 		["class", "string", ""],

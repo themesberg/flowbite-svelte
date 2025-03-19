@@ -36,6 +36,6 @@
 @props:aClass: any;
 @props:href: any;
 @props:by: any;
-@props:copyrightMessage: any = "All Rights Reserved.";
+@props:copyrightMessage: any = 'All Rights Reserved.';
 @props:year: any;
 -->

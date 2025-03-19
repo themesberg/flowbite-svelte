@@ -38,9 +38,9 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children: any;
-@props:color: any = "primary";
-@props:cornerStyle: any = "circular";
-@props:size: any = "md";
+@props:color: any = 'primary';
+@props:cornerStyle: any = 'circular';
+@props:size: any = 'md';
 @props:border: any = false;
 @props:placement: any;
 @props:offset: any = true;

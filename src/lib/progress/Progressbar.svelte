@@ -58,15 +58,15 @@
 @component
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
-@props: progress: any = "45";
+@props: progress: any = '45';
 @props:precision: any = 0;
 @props:tweenDuration: any = 400;
 @props:animate: any = false;
-@props:size: any = "h-2.5";
+@props:size: any = 'h-2.5';
 @props:labelInside: any = false;
-@props:labelOutside: any = "";
+@props:labelOutside: any = '';
 @props:easing: any = cubicOut;
-@props:color: any = "primary";
+@props:color: any = 'primary';
 @props:div2Class: any;
 @props:oustsideSpanClass: any;
 @props:oustsideProgressClass: any;

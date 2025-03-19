@@ -17,6 +17,6 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: children: any;
-@props:order: any = "default";
+@props:order: any = 'default';
 @props:class: string;
 -->

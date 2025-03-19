@@ -3,6 +3,6 @@
 	"props": [
 		["children", "any", ""],
 		["class", "string", ""],
-		["color", "any", "\"gray\""]
+		["color", "any", "'gray'"]
 	]
 }

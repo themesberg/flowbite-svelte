@@ -77,11 +77,11 @@
 @props:footerSlot: any;
 @props:captionSlot: any;
 @props:tableItems: any;
-@props:divClass: any = "relative overflow-x-auto";
+@props:divClass: any = 'relative overflow-x-auto';
 @props:striped: any;
 @props:hoverable: any;
 @props:noborder: any;
 @props:shadow: any;
-@props:color: any = "default";
+@props:color: any = 'default';
 @props:class: string;
 -->

@@ -42,7 +42,7 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: files: any = $bindable<FileList | undefined>();
-@props:size: any = "md";
+@props:size: any = 'md';
 @props:clearable: any = false;
 @props:class: string;
 -->

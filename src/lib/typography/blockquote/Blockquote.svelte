@@ -37,6 +37,6 @@
 @props:border: any;
 @props:italic: any = true;
 @props:bg: any;
-@props:alignment: any = "left";
-@props:size: any = "lg";
+@props:alignment: any = 'left';
+@props:size: any = 'lg';
 -->

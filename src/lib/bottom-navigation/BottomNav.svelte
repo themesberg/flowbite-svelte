@@ -52,10 +52,10 @@
 ## Props
 @props: children: any;
 @props:header: any;
-@props:position: any = "fixed";
-@props:navType: any = "default";
+@props:position: any = 'fixed';
+@props:navType: any = 'default';
 @props:outerClass: any;
 @props:innerClass: any;
 @props:activeClass: any;
-@props:activeUrl: any = "";
+@props:activeUrl: any = '';
 -->

@@ -5,7 +5,7 @@
 		["orientationSlot", "any", ""],
 		["title", "any", ""],
 		["date", "any", ""],
-		["dateFormat", "any", "\"month-year\""],
+		["dateFormat", "any", "'month-year'"],
 		["svgClass", "any", ""],
 		["liClass", "any", ""],
 		["divClass", "any", ""],

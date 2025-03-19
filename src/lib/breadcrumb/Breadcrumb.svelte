@@ -35,5 +35,5 @@
 @props:solid: any = false;
 @props:navClass: any;
 @props:olClass: any;
-@props:ariaLabel: any = "Breadcrumb";
+@props:ariaLabel: any = 'Breadcrumb';
 -->

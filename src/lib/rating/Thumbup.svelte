@@ -56,12 +56,12 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: fillPercent: any = 100;
-@props:fillColor: any = "#00b500";
-@props:strokeColor: any = "#00b500";
+@props:fillColor: any = '#00b500';
+@props:strokeColor: any = '#00b500';
 @props:size: any = 24;
-@props:ariaLabel: any = "thumbup";
+@props:ariaLabel: any = 'thumbup';
 @props:iconIndex: any = 0;
-@props:groupId: any = "star";
-@props:role: any = "img";
+@props:groupId: any = 'star';
+@props:role: any = 'img';
 @props:svgClass: any;
 -->

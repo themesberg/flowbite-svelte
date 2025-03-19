@@ -5,7 +5,7 @@
 		["icon", "any", ""],
 		["toastStatus", "any", "$bindable(true)"],
 		["dismissable", "any", "true"],
-		["color", "any", "\"primary\""],
+		["color", "any", "'primary'"],
 		["position", "any", ""],
 		["baseClass", "any", ""],
 		["iconClass", "any", ""],

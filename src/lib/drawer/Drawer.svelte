@@ -68,7 +68,7 @@
 @props:width: any;
 @props:backdrop: any = true;
 @props:backdropClass: any;
-@props:placement: any = "left";
+@props:placement: any = 'left';
 @props:class: string;
 @props:params: any = { x: -320;
 @props:duration: any;

@@ -5,8 +5,8 @@
 		["isOpen", "any", "false"],
 		["closeSidebar", "any", ""],
 		["isSingle", "any", "true"],
-		["breakpoint", "any", "\"md\""],
-		["position", "any", "\"fixed\""],
+		["breakpoint", "any", "'md'"],
+		["position", "any", "'fixed'"],
 		["activateClickOutside", "any", "true"],
 		["backdrop", "any", "true"],
 		["backdropClass", "any", ""],
@@ -16,7 +16,7 @@
 		["ariaLabel", "any", ""],
 		["nonActiveClass", "any", ""],
 		["activeClass", "any", ""],
-		["activeUrl", "any", "\"\""],
+		["activeUrl", "any", "''"],
 		["class", "string", ""]
 	]
 }

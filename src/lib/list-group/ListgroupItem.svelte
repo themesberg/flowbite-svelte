@@ -88,12 +88,12 @@
 @props:name: any;
 @props:Icon: any;
 @props:href: any;
-@props:currentClass: any = "text-white bg-primary-700 dark:text-white dark:bg-gray-800";
+@props:currentClass: any = 'text-white bg-primary-700 dark:text-white dark:bg-gray-800';
 @props:normalClass: any;
-@props:disabledClass: any = "text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400";
-@props:liClass: any = "py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg";
+@props:disabledClass: any = 'text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400';
+@props:liClass: any = 'py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg';
 @props:class: string;
 @props:aClasss: any;
 @props:btnClass: any;
-@props:iconClass: any = "me-2.5 h-5 w-5";
+@props:iconClass: any = 'me-2.5 h-5 w-5';
 -->

@@ -2,9 +2,9 @@
 	"name": "ToolbarGroup",
 	"props": [
 		["children", "any", ""],
-		["spacing", "any", "\"default\""],
-		["padding", "any", "\"default\""],
-		["position", "any", "\"middle\""],
+		["spacing", "any", "'default'"],
+		["padding", "any", "'default'"],
+		["position", "any", "'middle'"],
 		["class", "string", ""]
 	]
 }

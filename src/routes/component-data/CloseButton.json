@@ -3,13 +3,13 @@
 	"props": [
 		[
 			"color",
-			"\"primary\" | \"secondary\" | \"gray\" | \"red\" | \"orange\" | \"amber\" | \"yellow\" | \"lime\" | \"green\" | \"emerald\" | \"teal\" | \"cyan\" | \"sky\" | \"blue\" | \"indigo\" | \"violet\" | \"purple\" | \"fuchsia\" | \"pink\" | \"rose\" | undefined",
-			"\"gray\""
+			"| 'primary'\n\t| 'secondary'\n\t| 'gray'\n\t| 'red'\n\t| 'orange'\n\t| 'amber'\n\t| 'yellow'\n\t| 'lime'\n\t| 'green'\n\t| 'emerald'\n\t| 'teal'\n\t| 'cyan'\n\t| 'sky'\n\t| 'blue'\n\t| 'indigo'\n\t| 'violet'\n\t| 'purple'\n\t| 'fuchsia'\n\t| 'pink'\n\t| 'rose'\n\t| undefined",
+			"'gray'"
 		],
 		["onclick", "() => void", ""],
-		["name", "string", "\"Close\""],
+		["name", "string", "'Close'"],
 		["ariaLabel", "string", ""],
-		["size", "\"md\" | \"xs\" | \"sm\" | \"lg\" | undefined", "\"md\""],
+		["size", "'md' | 'xs' | 'sm' | 'lg' | undefined", "'md'"],
 		["href", "string", ""],
 		["class", "string", ""]
 	]

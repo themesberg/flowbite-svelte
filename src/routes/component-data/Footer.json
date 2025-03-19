@@ -2,7 +2,7 @@
 	"name": "Footer",
 	"props": [
 		["children", "any", ""],
-		["footerType", "any", "\"default\""],
+		["footerType", "any", "'default'"],
 		["class", "string", ""]
 	]
 }

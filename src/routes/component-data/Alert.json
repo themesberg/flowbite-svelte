@@ -5,7 +5,7 @@
 		["icon", "any", ""],
 		["alertStatus", "any", "$bindable(true)"],
 		["closeIcon", "any", ""],
-		["color", "any", "\"primary\""],
+		["color", "any", "'primary'"],
 		["rounded", "any", "true"],
 		["border", "any", ""],
 		["class", "string", ""],

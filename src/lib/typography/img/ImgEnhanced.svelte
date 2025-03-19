@@ -45,11 +45,11 @@
 [Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
 ## Props
 @props: src: any;
-@props:size: any = "none";
-@props:alignment: any = "left";
-@props:effect: any = "none";
-@props:shadow: any = "none";
-@props:rounded: any = "none";
+@props:size: any = 'none';
+@props:alignment: any = 'left';
+@props:effect: any = 'none';
+@props:shadow: any = 'none';
+@props:rounded: any = 'none';
 @props:caption: any;
 @props:imgClass: any;
 @props:figClass: any;

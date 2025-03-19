@@ -11,7 +11,7 @@
 		["fluid", "any", ""],
 		["brand", "any", ""],
 		["hamburgerMenu", "any", "true"],
-		["breakPoint", "any", "\"md\""],
+		["breakPoint", "any", "'md'"],
 		["navClass", "any", ""],
 		["divClass", "any", ""],
 		["btnClass", "any", ""],

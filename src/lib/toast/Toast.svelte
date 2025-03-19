@@ -61,7 +61,7 @@
 @props:icon: any;
 @props:toastStatus: any = $bindable(true);
 @props:dismissable: any = true;
-@props:color: any = "primary";
+@props:color: any = 'primary';
 @props:position: any;
 @props:baseClass: any;
 @props:iconClass: any;

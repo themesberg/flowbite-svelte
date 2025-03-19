@@ -2,14 +2,14 @@
 	"name": "Tooltip",
 	"props": [
 		["children", "any", ""],
-		["color", "any", "\"default\""],
-		["showOn", "any", "\"hover\""],
+		["color", "any", "'default'"],
+		["showOn", "any", "'hover'"],
 		["arrow", "any", "true"],
 		["offset", "any", "8"],
 		["triggeredBy", "any", ""],
 		["reference", "any", ""],
-		["position", "any", "\"top\" as Placement"],
-		["strategy", "any", "\"absolute\""],
+		["position", "any", "'top' as Placement"],
+		["strategy", "any", "'absolute'"],
 		["class", "string", ""],
 		["visible", "any", "false"]
 	]

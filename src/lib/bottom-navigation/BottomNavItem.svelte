@@ -90,10 +90,10 @@
 ## Props
 @props: children: any;
 @props:btnName: any;
-@props:appBtnPosition: any = "middle";
+@props:appBtnPosition: any = 'middle';
 @props:target: any;
 @props:activeClass: any;
-@props:href: any = "";
+@props:href: any = '';
 @props:btnClass: any;
 @props:spanClass: any;
 -->

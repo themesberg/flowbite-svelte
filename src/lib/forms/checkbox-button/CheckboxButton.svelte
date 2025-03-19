@@ -76,7 +76,7 @@
 @props: children: any;
 @props:class: string;
 @props:group: any = [];
-@props:value: any = "on";
+@props:value: any = 'on';
 @props:checked: any;
 @props:inline: any = true;
 @props:pill: any;

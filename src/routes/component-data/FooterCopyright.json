@@ -5,7 +5,7 @@
 		["aClass", "any", ""],
 		["href", "any", ""],
 		["by", "any", ""],
-		["copyrightMessage", "any", "\"All Rights Reserved.\""],
+		["copyrightMessage", "any", "'All Rights Reserved.'"],
 		["year", "any", ""]
 	]
 }

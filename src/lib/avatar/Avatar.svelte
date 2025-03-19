@@ -75,12 +75,12 @@
 @props:src: any;
 @props:href: any;
 @props:target: any;
-@props:cornerStyle: any = "circular";
+@props:cornerStyle: any = 'circular';
 @props:border: any = false;
 @props:stacked: any = false;
 @props:dot: any;
 @props:class: string;
 @props:alt: any;
-@props:size: any = "md";
+@props:size: any = 'md';
 @props:onclick: any;
 -->

@@ -2,7 +2,7 @@
 	"name": "Timeline",
 	"props": [
 		["children", "any", ""],
-		["order", "any", "\"default\""],
+		["order", "any", "'default'"],
 		["class", "string", ""]
 	]
 }

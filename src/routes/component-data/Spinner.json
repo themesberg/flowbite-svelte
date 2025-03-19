@@ -1,10 +1,10 @@
 {
 	"name": "Spinner",
 	"props": [
-		["color", "any", "\"primary\""],
-		["size", "any", "\"8\""],
+		["color", "any", "'primary'"],
+		["size", "any", "'8'"],
 		["class", "string", ""],
-		["currentFill", "any", "\"currentFill\""],
-		["currentColor", "any", "\"currentColor\""]
+		["currentFill", "any", "'currentFill'"],
+		["currentColor", "any", "'currentColor'"]
 	]
 }

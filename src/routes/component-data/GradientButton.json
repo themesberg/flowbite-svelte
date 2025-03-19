@@ -4,7 +4,7 @@
 		["children", "any", ""],
 		["outline", "any", ""],
 		["pill", "any", ""],
-		["color", "any", "\"blue\""],
+		["color", "any", "'blue'"],
 		["shadow", "any", ""],
 		["class", "string", ""],
 		["href", "any", ""],

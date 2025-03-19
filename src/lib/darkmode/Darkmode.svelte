@@ -94,6 +94,6 @@
 @props: class: string;
 @props:lightIcon: any;
 @props:darkIcon: any;
-@props:size: any = "md";
-@props:ariaLabel: any = "Dark mode";
+@props:size: any = 'md';
+@props:ariaLabel: any = 'Dark mode';
 -->

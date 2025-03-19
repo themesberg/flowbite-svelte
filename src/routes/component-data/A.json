@@ -2,7 +2,7 @@
 	"name": "A",
 	"props": [
 		["children", "any", ""],
-		["color", "any", "\"primary\""],
+		["color", "any", "'primary'"],
 		["class", "string", ""]
 	]
 }

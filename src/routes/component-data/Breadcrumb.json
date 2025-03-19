@@ -5,6 +5,6 @@
 		["solid", "any", "false"],
 		["navClass", "any", ""],
 		["olClass", "any", ""],
-		["ariaLabel", "any", "\"Breadcrumb\""]
+		["ariaLabel", "any", "'Breadcrumb'"]
 	]
 }

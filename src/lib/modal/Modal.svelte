@@ -127,10 +127,10 @@
 @props:bodyClass: any;
 @props:footerClass: any;
 @props:outsideClose: any = true;
-@props:size: any = "md";
+@props:size: any = 'md';
 @props:backdrop: any = true;
 @props:backdropClass: any;
-@props:position: any = "center";
+@props:position: any = 'center';
 @props:class: string;
 @props:params: any = { duration: 100;
 @props:easing: any;

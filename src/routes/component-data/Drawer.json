@@ -9,7 +9,7 @@
 		["width", "any", ""],
 		["backdrop", "any", "true"],
 		["backdropClass", "any", ""],
-		["placement", "any", "\"left\""],
+		["placement", "any", "'left'"],
 		["class", "string", ""],
 		["params", "any", "{ x: -320"],
 		["duration", "any", ""],

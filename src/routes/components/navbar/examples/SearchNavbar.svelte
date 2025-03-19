@@ -2,7 +2,7 @@
 	import { Navbar, NavBrand, NavUl, NavLi, uiHelpers, Button, NavHamburger, Input } from '$lib';
 	import { page } from '$app/stores';
 	let activeUrl = $state($page.url.pathname);
-	import {SearchOutline} from 'flowbite-svelte-icons';
+	import { SearchOutline } from 'flowbite-svelte-icons';
 
 	let nav = uiHelpers();
 	let navStatus = $state(false);

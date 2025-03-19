@@ -9,17 +9,17 @@
 		["name", "any", ""],
 		["Icon", "any", ""],
 		["href", "any", ""],
-		["currentClass", "any", "\"text-white bg-primary-700 dark:text-white dark:bg-gray-800\""],
+		["currentClass", "any", "'text-white bg-primary-700 dark:text-white dark:bg-gray-800'"],
 		["normalClass", "any", ""],
-		["disabledClass", "any", "\"text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400\""],
+		["disabledClass", "any", "'text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400'"],
 		[
 			"liClass",
 			"any",
-			"\"py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg\""
+			"'py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg'"
 		],
 		["class", "string", ""],
 		["aClasss", "any", ""],
 		["btnClass", "any", ""],
-		["iconClass", "any", "\"me-2.5 h-5 w-5\""]
+		["iconClass", "any", "'me-2.5 h-5 w-5'"]
 	]
 }

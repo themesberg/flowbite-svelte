@@ -4,7 +4,7 @@
 		["class", "string", ""],
 		["lightIcon", "any", ""],
 		["darkIcon", "any", ""],
-		["size", "any", "\"md\""],
-		["ariaLabel", "any", "\"Dark mode\""]
+		["size", "any", "'md'"],
+		["ariaLabel", "any", "'Dark mode'"]
 	]
 }

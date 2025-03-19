@@ -50,5 +50,5 @@
 @props:backdropClass: any;
 @props:params: any;
 @props:transition: any = fly;
-@props:activeUrl: any = "";
+@props:activeUrl: any = '';
 -->

@@ -2,11 +2,11 @@
 	"name": "Toggle",
 	"props": [
 		["children", "any", ""],
-		["toggleSize", "any", "\"default\""],
+		["toggleSize", "any", "'default'"],
 		["value", "any", ""],
 		["checked", "any", "$bindable()"],
 		["disabled", "any", ""],
-		["color", "any", "\"primary\""],
+		["color", "any", "'primary'"],
 		["aria_describedby", "any", ""],
 		["labelClass", "any", ""],
 		["inputClass", "any", ""],

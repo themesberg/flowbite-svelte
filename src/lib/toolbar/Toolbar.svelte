@@ -45,7 +45,7 @@
 ## Props
 @props: children: any;
 @props:end: any;
-@props:color: any = "default";
+@props:color: any = 'default';
 @props:embedded: any;
 @props:class: string;
 -->

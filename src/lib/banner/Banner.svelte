@@ -66,10 +66,10 @@
 @props: children: any;
 @props:header: any;
 @props:bannerStatus: any = $bindable(true);
-@props:position: any = "sticky";
+@props:position: any = 'sticky';
 @props:dismissable: any = true;
-@props:color: any = "gray";
-@props:bannerType: any = "default";
+@props:color: any = 'gray';
+@props:bannerType: any = 'default';
 @props:class: string;
 @props:innerClass: any;
 @props:transition: any = fade;

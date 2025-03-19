@@ -118,7 +118,7 @@
 @props:fluid: any;
 @props:brand: any;
 @props:hamburgerMenu: any = true;
-@props:breakPoint: any = "md";
+@props:breakPoint: any = 'md';
 @props:navClass: any;
 @props:divClass: any;
 @props:btnClass: any;

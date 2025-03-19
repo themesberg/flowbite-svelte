@@ -2,8 +2,8 @@
 	"name": "SidebarGroup",
 	"props": [
 		["children", "any", ""],
-		["class", "string", "\"space-y-2\""],
-		["borderClass", "any", "\"pt-4 mt-4 border-t border-gray-200 dark:border-gray-700\""],
+		["class", "string", "'space-y-2'"],
+		["borderClass", "any", "'pt-4 mt-4 border-t border-gray-200 dark:border-gray-700'"],
 		["border", "any", "false"]
 	]
 }

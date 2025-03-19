@@ -8,6 +8,6 @@
 		["backdropClass", "any", ""],
 		["params", "any", ""],
 		["transition", "any", "fly"],
-		["activeUrl", "any", "\"\""]
+		["activeUrl", "any", "''"]
 	]
 }

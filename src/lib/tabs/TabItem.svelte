@@ -75,7 +75,7 @@
 @props: children: any;
 @props:titleSlot: any;
 @props:open: any = false;
-@props:title: any = "Tab title";
+@props:title: any = 'Tab title';
 @props:activeClass: any;
 @props:inactiveClass: any;
 @props:class: string;
