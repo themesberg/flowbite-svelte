@@ -52,7 +52,7 @@ Utilize the `href` prop within the `DropdownItem` component to incorporate a hyp
   import { Button, Dropdown, DropdownItem } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   import { page } from "$app/state";
-  $: activeUrl = page.url.pathname;
+  let activeUrl = $derived(page.url.pathname);
 </script>
 
 <Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
@@ -71,7 +71,7 @@ To change the active class, use the `activeClass` prop:
   import { Button, Dropdown, DropdownItem } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   import { page } from "$app/state";
-  $: activeUrl = page.url.pathname;
+  let activeUrl = $derived(page.url.pathname);
   let activeClass = "text-green-500 dark:text-green-300 hover:text-green-700 dark:hover:text-green-500";
 </script>
 
@@ -449,7 +449,7 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
     { name: "Jese Leos", checked: false },
     { name: "Bonnie Green", checked: true }
   ];
-  $: filteredItems = people.filter((person) => person.name.toLowerCase().indexOf(searchTerm?.toLowerCase()) !== -1);
+  let filteredItems = $derived(people.filter((person) => person.name.toLowerCase().indexOf(searchTerm?.toLowerCase()) !== -1));
 </script>
 
 <Button>Dropdown search<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>

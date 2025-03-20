@@ -1,5 +1,5 @@
 <script lang="ts">
-  let { small }: { small: boolean } = $props();
+  let { small = false } = $props();
 </script>
 
 {#if small}

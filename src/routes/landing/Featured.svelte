@@ -1,9 +1,9 @@
 <script lang="ts">
+  import Combinator from "../utils/icons/Combinator.svelte";
   import Dev from "../utils/icons/Dev.svelte";
+  import Hunt from "../utils/icons/Hunt.svelte";
   import Reddit from "../utils/icons/Reddit.svelte";
   import YouTubeFull from "../utils/icons/YouTubeFull.svelte";
-  import Hunt from "../utils/icons/Hunt.svelte";
-  import Combinator from "../utils/icons/Combinator.svelte";
   import Section from "./utils/Section.svelte";
 
   const features = {

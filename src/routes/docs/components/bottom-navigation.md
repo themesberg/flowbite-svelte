@@ -67,7 +67,7 @@ By default, the `BottomNavItem` will only be set to active if the `href` and the
   import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from "flowbite-svelte";
   import { HomeSolid, WalletSolid, AdjustmentsVerticalOutline, UserCircleSolid } from "flowbite-svelte-icons";
   import { page } from "$app/state";
-  $: activeUrl = page.url.pathname;
+  let activeUrl = $derived( page.url.pathname);
 </script>
 
 <Skeleton class="py-4" />
@@ -96,7 +96,7 @@ The following example shows how to change active class, by overwriting `activeCl
   import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from "flowbite-svelte";
   import { HomeSolid, WalletSolid, AdjustmentsVerticalOutline, UserCircleSolid } from "flowbite-svelte-icons";
   import { page } from "$app/state";
-  $: activeUrl = page.url.pathname;
+  let activeUrl = $derived( page.url.pathname);
 </script>
 
 <Skeleton class="py-4" />
@@ -125,7 +125,7 @@ Use the following example to change the icon colors:
   import { page } from "$app/state";
   import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from "flowbite-svelte";
   import { HomeSolid, WalletSolid, AdjustmentsVerticalOutline, UserCircleSolid } from "flowbite-svelte-icons";
-  $: activeUrl = page.url.pathname;
+  let activeUrl = $derived( page.url.pathname);
   let svgClass = "mb-1 text-pink-500 dark:text-pink-400 group-hover:text-pink-600 dark:group-hover:text-pink-500";
   let svgActiveClass = "mb-1 text-green-500 dark:text-green-500 group-hover:text-green-700 dark:group-hover:text-green-700";
 </script>

@@ -33,7 +33,7 @@ Use the following list of pagination items to indicate a series of content for y
   import { page } from "$app/state";
   import { Pagination } from "flowbite-svelte";
 
-  $: activeUrl = page.url.searchParams.get("page");
+  let activeUrl = $derived(page.url.searchParams.get("page"));
   let pages = [
     { name: 1, href: "/components/pagination?page=1" },
     { name: 2, href: "/components/pagination?page=2" },
@@ -42,7 +42,7 @@ Use the following list of pagination items to indicate a series of content for y
     { name: 5, href: "/components/pagination?page=5" }
   ];
 
-  $: {
+  $effect(()=> {
     pages.forEach((page) => {
       let splitUrl = page.href.split("?");
       let queryString = splitUrl.slice(1).join("?");
@@ -55,7 +55,7 @@ Use the following list of pagination items to indicate a series of content for y
       }
     });
     pages = pages;
-  }
+  });
 
   const previous = () => {
     alert("Previous btn clicked. Make a call to your server to fetch data.");
@@ -79,7 +79,7 @@ The following pagination component example shows how you can use SVG icons inste
   import { Pagination } from "flowbite-svelte";
   import { ChevronLeftOutline, ChevronRightOutline } from "flowbite-svelte-icons";
 
-  $: activeUrl = page.url.searchParams.get("page");
+  let activeUrl = $derived(page.url.searchParams.get("page"));
   let pages = [
     { name: 6, href: "/components/pagination?page=6" },
     { name: 7, href: "/components/pagination?page=7" },
@@ -88,7 +88,7 @@ The following pagination component example shows how you can use SVG icons inste
     { name: 10, href: "/components/pagination?page=10" }
   ];
 
-  $: {
+  $effect(()=> {
     pages.forEach((page) => {
       let splitUrl = page.href.split("?");
       let queryString = splitUrl.slice(1).join("?");
@@ -101,7 +101,7 @@ The following pagination component example shows how you can use SVG icons inste
       }
     });
     pages = pages;
-  }
+  });
 
   const previous = () => {
     alert("Previous btn clicked. Make a call to your server to fetch data.");

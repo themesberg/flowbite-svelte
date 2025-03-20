@@ -146,7 +146,7 @@ Use this example where you can select a country in which you want to search for 
 
   let selectCountry = "USA";
 
-  $: buttonLabel = countries.find(({ labelSelected }) => labelSelected === selectCountry);
+  let buttonLabel = $derived(countries.find(({ labelSelected }) => labelSelected === selectCountry));
 </script>
 
 <form class="flex">

@@ -29,10 +29,10 @@ Search by the icon name and you'll find the component name that you need to impo
   const contentClass = ' rounded-lg mt-4';
   let searchTerm = '';
 
-  $: filteredEntries = Object.entries(keyIcons).filter(([name, component]) => {
-    return name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1;
+  let filteredEntries = $derived(Object.entries(keyIcons).filter(([name, component]) => {
+    return name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
   });
-  $: size = 6;
+  let size = $state(6);
   // for metatag
   const title = 'Outline Icons - Flowbite Svelte Icons';
   const subtitle = 'Outline Icons';

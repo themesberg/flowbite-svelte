@@ -1,12 +1,11 @@
 <script lang="ts">
-  import { page } from "$app/state";
   import { afterNavigate } from "$app/navigation";
+  import { page } from "$app/state";
   import { Sidebar, SidebarGroup, SidebarItem, uiHelpers } from "$lib";
+  import SidebarButton from "$lib/sidebar/SidebarButton.svelte";
   import SidebarDropdownWrapper from "$lib/sidebar/SidebarDropdownWrapper.svelte";
   import { getContext } from "svelte";
   import type { Writable } from "svelte/store";
-  import { ChevronDownOutline, ChevronUpOutline } from "flowbite-svelte-icons";
-  import SidebarButton from "$lib/sidebar/SidebarButton.svelte";
   import Toc from "../utils/Toc.svelte";
   import { extract } from "./component/Anchor.svelte";
 
