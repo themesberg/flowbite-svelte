@@ -6,11 +6,13 @@
 </script>
 
 <script lang="ts">
+  import type { HTMLInputAttributes } from 'svelte/elements';
   import Wrapper from '$lib/utils/Wrapper.svelte';
   import { twMerge } from 'tailwind-merge';
   import { createEventDispatcher, getContext } from 'svelte';
   import Badge from '$lib/badge/Badge.svelte';
   import CloseButton from '$lib/utils/CloseButton.svelte';
+  import type { InputType } from '../types';
 
   /* eslint-disable  @typescript-eslint/no-explicit-any */
   interface $$Props extends Omit<HTMLInputAttributes, 'size'> {
@@ -95,9 +97,10 @@
   let inputClass: string;
   let multiInputClass: string;
   $: {
-    const _color = color === 'base' && background ? 'tinted' : color;
+    const _color = inputInvalid ? 'red' : (color === 'base' && background ? 'tinted' : color);
+    const _colorRing = inputInvalid ? 'red' : color;
     inputClass = twMerge([inputDefaultClass, textSizes[_size], group || 'rounded-lg', group && 'first:rounded-s-lg last:rounded-e-lg', group && '[&:not(:first-child)]:-ms-px', $$props.class], colorClasses[_color]) + ' border-none rounded-none p-0';
-    multiInputClass = twMerge(containerDefaultClass, sizes[size], $$props.class, !disabled && 'focus-within:ring-1 focus-within:border-primary-500 dark:focus-within:border-primary-500', disabled && 'opacity-50 cursor-not-allowed', ringClasses[color], borderClasses[_color], colorClasses[_color]);
+    multiInputClass = twMerge(containerDefaultClass, sizes[_size], $$props.class, !disabled && 'focus-within:ring-1', disabled && 'opacity-50 cursor-not-allowed', ringClasses[_colorRing], borderClasses[_color], colorClasses[_color]);
   }
 
   const clearAll = (e: MouseEvent) => {
@@ -119,17 +122,16 @@
     if (inputCurrent && !value.includes(inputCurrent)) {
       if (validationCallback && !validationCallback(inputCurrent)) {
         inputInvalid = true;
-        color = 'red';
         return;
       }
       value = [...value, inputCurrent];
     }
     inputCurrent = '';
   };
+
   function handleKeyDown(event: KeyboardEvent) {
     if (disabled || !separators) return;
     inputInvalid = false;
-    color = 'base';
     for (let s of separators) {
       if (event.key == s) {
         handleInputSeparation();
@@ -139,7 +141,6 @@
       }
     }
   };
-
 </script>
 
 <Wrapper class={wrapperClass} show={$$slots.left || $$slots.right}>
@@ -158,7 +159,7 @@
             </Badge>
           {/each}
         {/if}
-        <input {...$$restProps} placeholder={inputItems.length == 0 ? placeholder : undefined} bind:value={inputCurrent} on:blur on:change on:click on:contextmenu on:focus on:keydown={handleKeyDown} on:keypress on:keyup on:mouseover on:mouseenter on:mouseleave on:paste on:input {...{ type }} class="{inputClass} { inputInvalid ? validationErrorClass : ''}" />
+        <input {...$$restProps} placeholder={inputItems.length == 0 ? placeholder : undefined} bind:value={inputCurrent} on:blur={handleInputSeparation} on:change on:click on:contextmenu on:focus on:keydown={handleKeyDown} on:keypress on:keyup on:mouseover on:mouseenter on:mouseleave on:paste on:input {...{ type }} class="{inputClass} { inputInvalid ? validationErrorClass : ''}" />
       </span>
       <div class="flex ms-auto gap-2 items-center">
         {#if inputItems.length}
