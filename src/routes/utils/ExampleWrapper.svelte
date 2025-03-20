@@ -227,37 +227,38 @@
       </div>
     </div>
   {/if}
-  <!--  -->
-  <div class="code-syntax-wrapper">
-    <div class="code-syntax relative border-x border-y border-gray-200 dark:border-gray-600">
-      <div class="grid w-full grid-cols-2 rounded-t-md border-b border-gray-200 bg-gray-50 dark:border-gray-600 dark:bg-gray-700">
-        <ul class="flex text-center text-sm font-medium text-gray-500 dark:text-gray-400">
-          <li>
-            <span class="inline-block w-full border-e border-gray-200 bg-gray-100 p-2 px-3 text-gray-800 dark:border-gray-600 dark:bg-gray-800 dark:text-white">Svelte</span>
-          </li>
-        </ul>
-        <div class="flex justify-end">
-          {#if browserSupport}
-            <button onclick={(e) => copyToClipboard(e)} type="button" class="hover:text-primary-700 copy-to-clipboard-button flex items-center border-s border-gray-200 bg-gray-100 px-3 py-2 text-xs font-medium text-gray-600 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-white">
-              <svg class="me-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-              </svg>
-              {copy_text}
-            </button>
-            <Tooltip placement="bottom-end">Copy to clipboard.</Tooltip>
+  {#if !meta.hideSource}
+    <div class="code-syntax-wrapper">
+      <div class="code-syntax relative border-x border-y border-gray-200 dark:border-gray-600">
+        <div class="grid w-full grid-cols-2 rounded-t-md border-b border-gray-200 bg-gray-50 dark:border-gray-600 dark:bg-gray-700">
+          <ul class="flex text-center text-sm font-medium text-gray-500 dark:text-gray-400">
+            <li>
+              <span class="inline-block w-full border-e border-gray-200 bg-gray-100 p-2 px-3 text-gray-800 dark:border-gray-600 dark:bg-gray-800 dark:text-white">Svelte</span>
+            </li>
+          </ul>
+          <div class="flex justify-end">
+            {#if browserSupport}
+              <button onclick={(e) => copyToClipboard(e)} type="button" class="hover:text-primary-700 copy-to-clipboard-button flex items-center border-s border-gray-200 bg-gray-100 px-3 py-2 text-xs font-medium text-gray-600 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-white">
+                <svg class="me-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+                {copy_text}
+              </button>
+              <Tooltip placement="bottom-end">Copy to clipboard.</Tooltip>
+            {/if}
+          </div>
+        </div>
+        <div class="relative">
+          <div class="overflow-hidden" class:max-h-72={!expand} tabindex="-1" use:checkOverflow>
+            <div class="highlight">
+              <pre bind:this={codeEl} class="language-svelte -mt-2! rounded-none!">{@render code?.()}</pre>
+            </div>
+          </div>
+          {#if showExpandButton && !expand}
+            <button onclick={() => (expand = !expand)} data-expand-code="" type="button" class="hover:text-primary-700 absolute start-0 bottom-0 w-full border-t border-gray-200 bg-gray-100 px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Expand code</button>
           {/if}
         </div>
       </div>
-      <div class="relative">
-        <div class="overflow-hidden" class:max-h-72={!expand} tabindex="-1" use:checkOverflow>
-          <div class="highlight">
-            <pre bind:this={codeEl} class="language-svelte -mt-2! rounded-none!">{@render code?.()}</pre>
-          </div>
-        </div>
-        {#if showExpandButton && !expand}
-          <button onclick={() => (expand = !expand)} data-expand-code="" type="button" class="hover:text-primary-700 absolute start-0 bottom-0 w-full border-t border-gray-200 bg-gray-100 px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Expand code</button>
-        {/if}
-      </div>
     </div>
-  </div>
+  {/if}
 </div>

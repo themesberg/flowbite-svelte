@@ -13,7 +13,6 @@ const config = defineConfig({
   },
 
   remarkPlugins: [[examples, { defaults: { Wrapper: "/src/routes/utils/ExampleWrapper.svelte" } }]],
-  // remarkPlugins: [[examples,]],
   rehypePlugins: []
 });
 

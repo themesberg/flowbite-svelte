@@ -9,7 +9,7 @@ description: Show contextual information to your users using alert elements base
 
 <script>
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
-  const dirName = toKebabCase(component_title)
+  const dirName = toKebabCase(component_title);
 </script>
 
 The alert component can be used to provide information to your users such as success or error messages, but also highlighted information complementing the normal flow of paragraphs and headers on a page. Flowbite also includes dismissable alerts which can be hidden by the users by clicking on the close icon.

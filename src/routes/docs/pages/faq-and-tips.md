@@ -11,7 +11,6 @@ description: Tips for your apps.
 
 You can find [the progress report](https://flowbite-svelte-5-dev.vercel.app/) for flowbite-svelte-next on Svelte 5.
 
-For Svelte 5: Runes, we need to rewrite and you can find most of the components at [Svelte 5 UI Lib](https://svelte-5-ui-lib.codewithshin.com/) which is a beta version.
 
 ## Svelte key blocks
 
