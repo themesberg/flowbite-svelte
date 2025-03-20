@@ -79,6 +79,12 @@
     red: 'focus:ring-red-500 focus:border-red-500 dark:focus:ring-red-500 dark:focus:border-red-500'
   };
 
+  const ringWithinClasses = {
+    base: 'focus-within:border-primary-500 focus-within:ring-primary-500 dark:focus-within:border-primary-500 dark:focus-within:ring-primary-500',
+    green: 'focus-within:ring-green-500 focus-within:border-green-500 dark:focus-within:border-green-500 dark:focus-within:ring-green-500',
+    red: 'focus-within:ring-red-500 focus-within:border-red-500 dark:focus-within:ring-red-500 dark:focus-within:border-red-500'
+  };
+
   const colorClasses = {
     base: 'bg-gray-50 text-gray-900 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400',
     tinted: 'bg-gray-50 text-gray-900 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400',
@@ -100,7 +106,7 @@
     const _color = inputInvalid ? 'red' : (color === 'base' && background ? 'tinted' : color);
     const _colorRing = inputInvalid ? 'red' : color;
     inputClass = twMerge([inputDefaultClass, textSizes[_size], group || 'rounded-lg', group && 'first:rounded-s-lg last:rounded-e-lg', group && '[&:not(:first-child)]:-ms-px', $$props.class], colorClasses[_color]) + ' border-none rounded-none p-0';
-    multiInputClass = twMerge(containerDefaultClass, sizes[_size], $$props.class, !disabled && 'focus-within:ring-1', disabled && 'opacity-50 cursor-not-allowed', ringClasses[_colorRing], borderClasses[_color], colorClasses[_color]);
+    multiInputClass = twMerge(containerDefaultClass, sizes[_size], $$props.class, !disabled && 'focus-within:ring-1 ' + ringWithinClasses[_colorRing], disabled && 'opacity-50 cursor-not-allowed', ringClasses[_colorRing], borderClasses[_color], colorClasses[_color]);
   }
 
   const clearAll = (e: MouseEvent) => {
