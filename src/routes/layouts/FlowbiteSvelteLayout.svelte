@@ -90,6 +90,6 @@
   </Navbar>
 </header>
 
-<div class="container border md:mx-auto lg:flex">
+<div class="container md:mx-auto lg:flex">
   {@render children()}
 </div>
