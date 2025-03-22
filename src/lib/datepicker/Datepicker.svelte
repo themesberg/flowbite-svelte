@@ -4,6 +4,7 @@
   import { Button, clickOutside, type ButtonProps } from "$lib";
   import type { DatepickerProps as Props } from "./type";
   import { datepicker } from "./theme";
+  import ToolbarButton from "$lib/toolbar/ToolbarButton.svelte";
 
   let {
     value = $bindable(),
@@ -193,11 +194,11 @@
 </script>
 
 {#snippet navButton(forward: boolean)}
-  <Button onclick={() => changeMonth(forward ? 1 : -1)} {color} size="sm" aria-label={forward ? "Next month" : "Previous month"}>
-    <svg class="h-3 w-3 text-white rtl:rotate-180 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+  <ToolbarButton color="dark" onclick={() => changeMonth(forward ? 1 : -1)} size="lg" aria-label={forward ? "Next month" : "Previous month"}>
+    <svg class="h-3 w-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={forward ? "M1 5h12m0 0L9 1m4 4L9 9" : "M13 5H1m0 0 4 4M1 5l4-4"}></path>
     </svg>
-  </Button>
+  </ToolbarButton>
 {/snippet}
 
 <div bind:this={datepickerContainerElement} class={["relative", inline && "inline-block"]}>
@@ -214,35 +215,34 @@
 
   {#if isOpen || inline}
     <div bind:this={calendarRef} id="datepicker-dropdown" class={base({ inline })} transition:fade={{ duration: 100 }} role="dialog" aria-label="Calendar">
-      <div class="p-4" role="application">
-        {#if title}
-          <h2 class={titleVariant()}>{title}</h2>
-        {/if}
-        <div class={nav()}>
-          {@render navButton(false)}
-          <h3 class={polite()} aria-live="polite">
-            {currentMonth.toLocaleString(locale, { month: "long", year: "numeric" })}
-          </h3>
-          {@render navButton(true)}
-        </div>
-        <div class={grid()} role="grid">
-          {#each weekdays as day}
-            <div class={columnHeader} role="columnheader">{day}</div>
-          {/each}
-          {#each daysInMonth as day}
-            <Button color={isSelected(day) ? color : "alternative"} size="sm" class={dayButton({ current: day.getMonth() !== currentMonth.getMonth(), today: isToday(day), color: isInRange(day) ? color : undefined })} onclick={() => handleDaySelect(day)} onkeydown={handleCalendarKeydown} aria-label={day.toLocaleDateString(locale, { weekday: "long", year: "numeric", month: "long", day: "numeric" })} aria-selected={isSelected(day)} role="gridcell">
-              {day.getDate()}
-            </Button>
-          {/each}
-        </div>
-        {#if showActionButtons}
-          <div class={actionButtons()}>
-            <Button onclick={() => handleDaySelect(new Date())} {color} size="sm">Today</Button>
-            <Button onclick={handleClear} color="red" size="sm">Clear</Button>
-            <Button onclick={handleApply} {color} size="sm">Apply</Button>
-          </div>
-        {/if}
+      {#if title}
+        <h2 class={titleVariant()}>{title}</h2>
+      {/if}
+      <div class={nav()}>
+        {@render navButton(false)}
+        <h3 class={polite()} aria-live="polite">
+          {currentMonth.toLocaleString(locale, { month: "long", year: "numeric" })}
+        </h3>
+        {@render navButton(true)}
       </div>
+      <div class={grid()} role="grid">
+        {#each weekdays as day}
+          <div class={columnHeader()} role="columnheader">{day}</div>
+        {/each}
+        {#each daysInMonth as day}
+          {@const current = day.getMonth() !== currentMonth.getMonth()}
+          <button color={isSelected(day) ? color : "alternative"} class={dayButton({ current, today: isToday(day), color: isInRange(day) ? color : undefined })} onclick={() => handleDaySelect(day)} onkeydown={handleCalendarKeydown} aria-label={day.toLocaleDateString(locale, { weekday: "long", year: "numeric", month: "long", day: "numeric" })} aria-selected={isSelected(day)} role="gridcell">
+            {day.getDate()}
+          </button>
+        {/each}
+      </div>
+      {#if showActionButtons}
+        <div class={actionButtons()}>
+          <Button onclick={() => handleDaySelect(new Date())} {color} size="sm">Today</Button>
+          <Button onclick={handleClear} color="red" size="sm">Clear</Button>
+          <Button onclick={handleApply} {color} size="sm">Apply</Button>
+        </div>
+      {/if}
     </div>
   {/if}
 </div>

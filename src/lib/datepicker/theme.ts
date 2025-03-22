@@ -2,16 +2,16 @@ import { tv } from "tailwind-variants";
 
 export const datepicker = tv({
   slots: {
-    base: "rounded-md bg-white shadow-lg dark:bg-gray-800",
+    base: "inline-block rounded-lg bg-white dark:bg-gray-700 shadow-lg p-4",
     input: "w-full rounded-md border px-4 py-2 text-sm focus:ring-2 focus:outline-none outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-white",
-    titleVariant: "mb-4 text-lg font-semibold dark:text-white",
+    titleVariant: "mb-2 text-lg font-semibold dark:text-white",
+    polite: "text-sm rounded-lg text-gray-900 dark:text-white bg-white dark:bg-gray-700 font-semibold py-2.5 px-5 hover:bg-gray-100 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-200",
     button: "absolute inset-y-0 right-0 flex items-center px-3 text-gray-500 focus:outline-hidden dark:text-gray-400",
     actionButtons: "mt-4 flex justify-between",
     columnHeader: "text-center text-sm font-medium text-gray-500 dark:text-gray-400",
-    polite: "text-lg font-semibold dark:text-white",
-    grid: "grid grid-cols-7 gap-1",
+    grid: "grid grid-cols-7 gap-1 w-64",
     nav: "mb-4 flex items-center justify-between",
-    dayButton: "h-8 w-full"
+    dayButton: "h-8 w-full hover:bg-gray-100 dark:hover:bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900 dark:text-white font-semibold text-sm day"
   },
   variants: {
     color: {
@@ -43,7 +43,7 @@ export const datepicker = tv({
       false: { base: "absolute z-10 mt-1" }
     },
     current: {
-      true: { dayButton: "text-gray-300 dark:text-gray-600" }
+      true: { dayButton: "text-gray-400 dark:text-gray-500" }
     },
     today: {
       true: { dayButton: "font-bold" }
