@@ -45,11 +45,11 @@
   });
 </script>
 
-<header class="sticky top-0 z-40 mx-auto w-full flex-none border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-900">
-  <Navbar color="default" fluid class="mx-auto max-w-[88rem] py-1.5 lg:px-0">
+<header class="sticky top-0 z-60 mx-auto w-full flex-none border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-900">
+  <Navbar color="default" fluid class="container mx-auto px-0 py-1.5">
     <NavBrand href="/">
       <img src={logo} class="me-3 h-8" alt="Flowbite Svelte Logo" />
-      <span class="self-center text-2xl font-semibold whitespace-nowrap text-gray-900 dark:text-white">Flowbite Svelte</span>
+      <span class="hidden self-center text-2xl font-semibold whitespace-nowrap text-gray-900 lg:block dark:text-white">Flowbite Svelte</span>
     </NavBrand>
     <NavHamburger />
 
@@ -62,7 +62,6 @@
     {/if}
 
     <NavUl {activeUrl} class="ms-auto" ulClass="text-sm 2xl:space-x-2">
-      <NavLi class="lg:mb-0 lg:px-2" href="/">Home</NavLi>
       <NavLi class="lg:mb-0 lg:px-2" href="/docs/pages/introduction">Docs</NavLi>
       <NavLi class="lg:mb-0 lg:px-2" href="/docs/components/accordion">Components</NavLi>
       <NavLi class="lg:mb-0 lg:px-2" href="/icons/svelte-4">Icons</NavLi>
@@ -91,6 +90,6 @@
   </Navbar>
 </header>
 
-<div class="w-full lg:flex">
+<div class="container border md:mx-auto lg:flex">
   {@render children()}
 </div>

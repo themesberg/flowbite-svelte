@@ -49,17 +49,17 @@
   });
 
   let spanClass = "";
-  let mainClass = "ms-auto relative fixed inset-0 z-30 h-full w-64 flex-none border1-e border-gray-200 bg-white lg:static lg:block lg:h-auto lg:pt-0 dark:border-gray-600 dark:bg-gray-900";
+  let mainClass = "lg:static lg:mt-2 z-50 h-full w-96"; // "lg:ms-auto relative fixed inset-0 z-30 h-full w-64 flex-none border1-e border-gray-200 bg-white lg:static lg:block lg:h-auto lg:pt-0 dark:border-gray-600 dark:bg-gray-900";
   let nonActiveClass = "text-sm transition-colors duration-200 relative font-medium hover:text-gray-900 hover:bg-transparent dark:hover:bg-transparent hover:cursor-pointer text-gray-500 dark:text-gray-400 dark:hover:text-white";
   let activeClass = "text-sm relative font-medium cursor-default bg-transparent dark:bg-transparent hover:bg-transparent dark:hover:bg-transparent text-primary-700 dark:text-primary-700";
   let btnClass = "my-0 text-sm font-semibold tracking-wide uppercase text-gray-700 dark:text-gray-200 hover:bg-transparent dark:hover:bg-transparent hover:text-primary-700 dark:hover:text-primary-600";
   let dropdowns = Object.fromEntries(Object.keys(posts).map((x) => [x, false]));
-  let divClass = "overflow-y-auto px-4 pt-20 lg:pt-0 h-full scrolling-touch max-w-2xs lg:h-[calc(100vh-6rem)] lg:block lg:me-0 lg:sticky top-20 bg-white dark:bg-gray-900";
+  let divClass = "overflow-y-auto pt-20 lg:pt-0 h-full scrolling-touch max-w-2xs lg:h-[calc(100vh-6rem)] lg:block lg:me-0 lg:sticky top-20 bg-white dark:bg-gray-900";
 </script>
 
-<SidebarButton onclick={sidebarUi.toggle} class="mb-2" />
+<SidebarButton breakpoint="md" onclick={sidebarUi.toggle} class="z-0 mb-2" />
 
-<Sidebar {isOpen} {nonActiveClass} {activeClass} activeUrl={mainSidebarUrl} {divClass} class={mainClass} transition={() => ({})}>
+<Sidebar breakpoint="lg" {isOpen} {nonActiveClass} {activeClass} activeUrl={mainSidebarUrl} {divClass} class={mainClass} transition={() => ({})}>
   <!-- <Sidebar activeUrl={mainSidebarUrl} {activeClass} {nonActiveClass} backdrop={false} {isOpen} {closeSidebar} params={{ x: -50, duration: 50 }} class="z-10 mt-0 h-full overflow-y-scroll"> -->
   <h4 id="sidebar-label" class="sr-only">Browse docs</h4>
   <!-- SidebarWrapper divClass="overflow-y-auto px-4 pt-20 lg:pt-0 h-full scrolling-touch max-w-2xs lg:h-[calc(100vh-8rem)] lg:block lg:me-0 lg:sticky top-20" -->
@@ -84,7 +84,7 @@
 
 <div hidden={$drawerHidden} class="static inset-0 z-20 bg-gray-900/50 dark:bg-gray-900/60" onclick={closeSidebar} onkeydown={closeSidebar} role="presentation"></div>
 
-<main class="flex1-auto lg:mx1-auto w1-full min-w-0 lg:static lg:max-h-full lg:overflow-visible">
+<main class="min-w-0 lg:static lg:container lg:mx-auto lg:max-h-full lg:overflow-visible">
   {@render children()}
 </main>
 <Toc {extract} headingSelector="#mainContent > :where(h2, h3)" />
