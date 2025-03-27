@@ -36,8 +36,8 @@ In Tailwind CSS, you can make any utility class important by adding a `!` charac
   import { Button } from 'flowbite-svelte';
 </script>
 
-<Button class="bg-blue-500!">Blue Button</Button>
-<Button class="bg-green-500!">Green Button</Button>
+<Button class="!bg-blue-500">Blue Button</Button>
+<Button class="!bg-green-500">Green Button</Button>
 ```
 
 ## Overwriting Specific Classes
