@@ -56,7 +56,7 @@
 			? deepMerge(page.data.layoutMetaTags, page.data.pageMetaTags)
 			: data.layoutMetaTags;
 		activeUrl = page.url.pathname;
-		$inspect('activeUrl in layout: ', activeUrl);
+		// $inspect('activeUrl in layout: ', activeUrl);
 	});
 </script>
 

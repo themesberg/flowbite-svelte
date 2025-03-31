@@ -46,7 +46,7 @@
 		modal({
 			position,
 			size,
-			backdrop,
+			// backdrop,
 			rounded
 		})
 	);

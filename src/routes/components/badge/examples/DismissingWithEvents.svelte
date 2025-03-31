@@ -2,7 +2,7 @@
 	import { Badge } from '$lib';
 	let eventStatus = $state(true);
 	function handleClose() {
-		console.log('Badge dismissed');
+		// console.log('Badge dismissed');
 		alert('Badge dismissed');
 		eventStatus = false;
 	}

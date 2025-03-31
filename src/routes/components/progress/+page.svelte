@@ -64,7 +64,7 @@
 			easing = undefined;
 		}
 	};
-	$inspect('tweenDuration', tweenDuration, 'animation', animation);
+	// $inspect('tweenDuration', tweenDuration, 'animation', animation);
 	// const randomize = () => {
 	//   progress = `${Math.round(Math.random() * 100)}`
 	// }

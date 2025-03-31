@@ -28,7 +28,7 @@
 	if (replaceLib) {
 		code = replaceLibImport(code);
 	}
-	console.log('code: ', code)
+	// console.log('code: ', code)
 
 	let showExpandButton: boolean = $state(false);
 	let expand: boolean = $state(false);

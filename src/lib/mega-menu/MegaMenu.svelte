@@ -12,7 +12,7 @@
 	}: Props = $props();
 
 	const { base, div, ul, footerDiv } = $derived(megamenu());
-	$inspect('dropdownStatus', dropdownStatus);
+	// $inspect('dropdownStatus', dropdownStatus);
 </script>
 
 <!-- Dropdown menu -->

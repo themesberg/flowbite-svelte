@@ -20,7 +20,7 @@
 	};
 	const handleClick = (label: string) => {
 		selectCategory = label;
-		console.log('selectCategory', selectCategory);
+		// console.log('selectCategory', selectCategory);
 		dropdown.close();
 	};
 	$effect(() => {

@@ -2,7 +2,7 @@
 	import { Alert } from '$lib';
 	let alertEventStatus = $state(true);
 	function handleClose() {
-		console.log('Alert dismissed');
+		// console.log('Alert dismissed');
 		alert('Alert dismissed');
 		alertEventStatus = false;
 	}

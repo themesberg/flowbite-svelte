@@ -68,7 +68,7 @@
 	});
 
 	$effect(() => {
-		console.log('commonProps: ', commonProps);
+		// console.log('commonProps: ', commonProps);
 	});
 </script>
 

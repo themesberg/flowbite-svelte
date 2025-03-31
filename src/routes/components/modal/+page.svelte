@@ -30,7 +30,7 @@
 	const positions = Object.keys(modal.variants.position);
 	let modalPosition: ModalProps['position'] = $state('default');
 	const sizes = Object.keys(modal.variants.size);
-	console.log('sizes', sizes);
+	// console.log('sizes', sizes);
 	let modalSize: ModalProps['size'] = $state('md');
 	let backdrop = $state(true);
 	const changeBackdrop = () => {
