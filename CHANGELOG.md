@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.12.5
+
+### Patch Changes
+
+- fix: modal backdrop
+
 ## 0.12.4
 
 ### Patch Changes
