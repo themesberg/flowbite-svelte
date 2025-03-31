@@ -208,54 +208,18 @@ You can use five different modal sizing options starting from extra small to ext
   import { Button, Modal } from "flowbite-svelte";
   let openModal = $state(false);
   let size = $state();
+  function onclick(ev) {
+    size = ev.target.textContent;
+    openModal = true;
+  }
 </script>
 
 <div class="block space-y-4 md:space-y-0 md:space-x-4 rtl:space-x-reverse">
-  <Button
-    size="xs"
-    onclick={() => {
-      size = "xs";
-      openModal = true;
-    }}
-  >
-    xs
-  </Button>
-  <Button
-    size="sm"
-    onclick={() => {
-      size = "sm";
-      openModal = true;
-    }}
-  >
-    sm
-  </Button>
-  <Button
-    size="md"
-    onclick={() => {
-      size = "md";
-      openModal = true;
-    }}
-  >
-    md
-  </Button>
-  <Button
-    size="lg"
-    onclick={() => {
-      size = "lg";
-      openModal = true;
-    }}
-  >
-    lg
-  </Button>
-  <Button
-    size="xl"
-    onclick={() => {
-      size = "xl";
-      openModal = true;
-    }}
-  >
-    xl
-  </Button>
+  <Button size="xs" {onclick}>xs</Button>
+  <Button size="sm" {onclick}>sm</Button>
+  <Button size="md" {onclick}>md</Button>
+  <Button size="lg" {onclick}>lg</Button>
+  <Button size="xl" {onclick}>xl</Button>
 </div>
 
 <Modal title="Terms of Service" bind:open={openModal} {size} autoclose>
@@ -313,53 +277,18 @@ You can use five different modal sizing options starting from extra small to ext
   import { Button, Modal, P } from "flowbite-svelte";
   let open = $state(false);
   let color = $state();
+  function onclick (ev) {
+    color = ev.target.textContent.split(' ')[0].toLowerCase()
+    open = true;
+  }
 </script>
 
-<div class="block space-y-4 md:space-y-0 md:space-x-4 rtl:space-x-reverse">
-  <Button
-    onclick={() => {
-      color = "primary";
-      open = true;
-    }}
-  >
-    Primary modal
-  </Button>
-  <Button
-    color="red"
-    onclick={() => {
-      color = "red";
-      open = true;
-    }}
-  >
-    Red modal
-  </Button>
-  <Button
-    color="green"
-    onclick={() => {
-      color = "green";
-      open = true;
-    }}
-  >
-    Green modal
-  </Button>
-  <Button
-    color="blue"
-    onclick={() => {
-      color = "blue";
-      open = true;
-    }}
-  >
-    Blue modal
-  </Button>
-  <Button
-    color="yellow"
-    onclick={() => {
-      color = "yellow";
-      open = true;
-    }}
-  >
-    Yellow modal
-  </Button>
+<div class="block space-y-4 md:space-y-0 md:space-x-2 rtl:space-x-reverse">
+  <Button color="primary" {onclick}>Primary modal</Button>
+  <Button color="red" {onclick}>Red modal</Button>
+  <Button color="green" {onclick}>Green modal</Button>
+  <Button color="blue" {onclick}>Blue modal</Button>
+  <Button color="yellow" {onclick}>Yellow modal</Button>
 </div>
 
 <Modal title="Terms of Service" bind:open {color} autoclose>
@@ -403,6 +332,26 @@ You can use five different modal sizing options starting from extra small to ext
 </Modal>
 ```
 
+## Non-modal case
+
+Rarely you would need a non-modal dialog. You can get it by setting `modal` property to `false`. Note, however, that in that mode dialog does not have a backdrop, is not a top level window, does not manage `Esc` key.
+
+```svelte example class="flex justify-center" hideResponsiveButtons
+<script>
+  import { Button, Modal } from "flowbite-svelte";
+  let defaultModal = $state(false);
+</script>
+
+<Button onclick={() => (defaultModal = true)}>Non modal</Button>
+<Modal title="Terms of Service" bind:open={defaultModal} autoclose modal={false} contentClass="border shadow-xl">
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
+  {#snippet footer()}
+    <Button onclick={() => alert('Handle "success"')}>I accept</Button>
+    <Button color="alternative">Decline</Button>
+  {/snippet}
+</Modal>
+```
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

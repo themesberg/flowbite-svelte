@@ -1,10 +1,10 @@
 <script lang="ts">
   import type { ParamsType } from "$lib/types";
   import CloseButton from "$lib/utils/CloseButton.svelte";
-  import { type ModalProps as Props, modal as modalTheme } from ".";
-  import { fade } from "svelte/transition";
-  import { sineIn } from "svelte/easing";
   import clsx from "clsx";
+  import { sineIn } from "svelte/easing";
+  import { fade } from "svelte/transition";
+  import { type ModalProps as Props, modal as modalTheme } from ".";
 
   // TODO: missing focus trap
 
@@ -19,10 +19,10 @@
     open = $bindable(false),
     dismissable = true,
     divClass,
-    contentClass,
     closeBtnClass,
     h3Class,
     headerClass,
+    contentClass,
     bodyClass,
     footerClass,
     outsideClose = true,
@@ -74,12 +74,12 @@
     oncancel={_oncancel}
     onclick={_onclick}
     transition:transition={params as ParamsType}
-    onintrostart={() => dlg?.showModal()}
+    onintrostart={() => (modal ? dlg?.showModal() : dlg?.show())}
     onoutroend={() => dlg?.close()}
   >
-    <div class={content({ class: clsx(className) })}>
+    <div class={content({ class: contentClass })}>
       {#if title || header}
-        <div class={headerCls({ class: contentClass })}>
+        <div class={headerCls({ class: headerClass })}>
           {#if title}
             <h3 class={h3({ class: h3Class })}>
               {title}
