@@ -1,77 +1,108 @@
 <script lang="ts">
   import type { ParamsType } from "$lib/types";
   import CloseButton from "$lib/utils/CloseButton.svelte";
-  import { type ModalProps as Props, modal } from ".";
+  import { type ModalProps as Props, modal as modalTheme } from ".";
   import { fade } from "svelte/transition";
   import { sineIn } from "svelte/easing";
   import clsx from "clsx";
 
   // TODO: missing focus trap
 
-  let { children, header, footer, title, open = $bindable(false), dismissable = true, divClass, contentClass, closeBtnClass, h3Class, headerClass, bodyClass, footerClass, outsideClose = true, size = "md", backdrop = true, backdropClass, placement, class: className, params = { duration: 100, easing: sineIn }, transition = fade, rounded, ...restProps }: Props = $props();
+  let {
+    children,
+    oncancel,
+    modal = true,
+    autoclose = false,
+    header,
+    footer,
+    title,
+    open = $bindable(false),
+    dismissable = true,
+    divClass,
+    contentClass,
+    closeBtnClass,
+    h3Class,
+    headerClass,
+    bodyClass,
+    footerClass,
+    outsideClose = true,
+    size = "md",
+    placement,
+    class: className,
+    params = { duration: 100, easing: sineIn },
+    transition = fade,
+    ...restProps
+  }: Props = $props();
 
-  const {
-    base,
-    div,
-    content,
-    backdrop: backdropCls,
-    header: headerCls,
-    footer: footerCls,
-    body,
-    closeBtn,
-    h3
-  } = $derived(
-    modal({
-      placement,
-      size,
-      backdrop,
-      rounded
-    })
-  );
+  const { base, content, header: headerCls, footer: footerCls, body, closeBtn, h3 } = $derived(modalTheme({ placement, size }));
 
-  function closeModal(ev: KeyboardEvent | MouseEvent) {
-    if (ev instanceof KeyboardEvent && ev.key !== "Escape") return;
-    open = false;
+  const closeModal = () => (open = false);
+
+  function _oncancel(ev: Event & { currentTarget: HTMLDialogElement }) {
+    // this event get called when user press ESC key
+    if (ev.currentTarget instanceof HTMLDialogElement) {
+      oncancel?.(ev); // propagate the event to the user
+      // if user cancels the event we don't close the modal
+      if (ev.defaultPrevented) return;
+      // now we cancel the event to keep control on closing the modal
+      ev.preventDefault();
+      // and close it manually
+      closeModal();
+    }
   }
+
+  function _onclick(ev: Event & { currentTarget: HTMLDialogElement }) {
+    if (ev.currentTarget instanceof HTMLDialogElement) {
+      if (outsideClose && ev.target === ev.currentTarget) {
+        closeModal();
+      }
+      if (autoclose && ev.target !== ev.currentTarget) {
+        closeModal();
+      }
+    }
+  }
+
+  let dlg: HTMLDialogElement | undefined = $state();
 </script>
 
-<svelte:window onkeydown={open ? closeModal : undefined} />
-
 {#if open}
-  <div role="presentation" class={backdropCls({ class: backdropClass })} onclick={outsideClose ? closeModal : undefined}></div>
-  <div {...restProps} class={base({ class: clsx(className) })} transition:transition={params as ParamsType} tabindex="-1">
-    <div class={div({ class: divClass })}>
-      <div class={content({ class: contentClass })}>
-        {#if title || header}
-          <div class={headerCls({ class: headerClass })}>
-            {#if title}
-              <h3 class={h3({ class: h3Class })}>
-                {title}
-              </h3>
-            {:else if header}
-              {@render header()}
-            {/if}
-            {#if dismissable}
-              <CloseButton onclick={closeModal} class={closeBtn({ class: closeBtnClass })} />
-            {/if}
-          </div>
-        {/if}
-        <div class={body({ class: bodyClass })}>
-          {#if dismissable && !title && !header}
-            <CloseButton onclick={closeModal} class={closeBtn({ class: closeBtnClass })} />
+  <dialog
+    bind:this={dlg}
+    {...restProps}
+    class={base({ class: clsx(className) })}
+    tabindex="-1"
+    oncancel={_oncancel}
+    onclick={_onclick}
+    transition:transition={params as ParamsType}
+    onintrostart={() => dlg?.showModal()}
+    onoutroend={() => dlg?.close()}
+  >
+    <div class={content({ class: clsx(className) })}>
+      {#if title || header}
+        <div class={headerCls({ class: contentClass })}>
+          {#if title}
+            <h3 class={h3({ class: h3Class })}>
+              {title}
+            </h3>
+          {:else if header}
+            {@render header()}
           {/if}
-          {@render children()}
         </div>
-        {#if footer}
-          <div class={footerCls({ class: footerClass })}>
-            {@render footer()}
-          </div>
-        {/if}
+      {/if}
+      <div class={body({ class: bodyClass })}>
+        {@render children?.()}
       </div>
+      {#if footer}
+        <div class={footerCls({ class: footerClass })}>
+          {@render footer()}
+        </div>
+      {/if}
+      {#if dismissable}
+        <CloseButton onclick={closeModal} class={closeBtn({ class: closeBtnClass })} />
+      {/if}
     </div>
-  </div>
+  </dialog>
 {/if}
-
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
@@ -100,3 +131,9 @@
 @props:transition: any = fade;
 @props:rounded: any;
 -->
+
+<!-- <style>
+  :global(::backdrop) {
+    /* background-color: pink; */
+  }
+</style> -->

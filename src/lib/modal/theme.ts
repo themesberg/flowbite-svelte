@@ -4,52 +4,36 @@ export type ModalVariants = VariantProps<typeof modal>;
 
 export const modal = tv({
   slots: {
-    base: "fixed top-0 start-0 end-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex pointer-events-none",
-    div: "flex relative w-full max-h-full",
-    content: "w-full divide-y text-gray-800 dark:text-gray-300 border-gray-300 dark:border-gray-800 divide-gray-300 dark:divide-gray-800 bg-white dark:bg-gray-800 pointer-events-auto",
-    backdrop: "fixed inset-0 z-50",
-    header: "flex justify-between items-center p-4 md:p-5 rounded-t-lg",
-    footer: "flex items-center p-4 md:p-5 space-x-3 rtl:space-x-reverse rounded-b-lg",
+    base: "backdrop:bg-black/80 w-full max-h-screen h-modal bg-transparent", //"h-modal md:inset-0 p-4 pointer-events-none",
+    content: "flex flex-col w-full relative rounded-lg max-h-screen divide-y text-gray-800 dark:text-gray-300 border-gray-300 dark:border-gray-800 divide-gray-300 dark:divide-gray-800 bg-white dark:bg-gray-800 pointer-events-auto",
+    header: "flex items-center p-4 md:p-5 justify-between rounded-t-lg shrink-0",
+    footer: "flex items-center p-4 md:p-5 space-x-3 rtl:space-x-reverse rounded-b-lg shrink-0",
     body: "p-4 md:p-5 space-y-4 flex-1 overflow-y-auto overscroll-contain",
-    closeBtn: "absolute top-3 end-2.5",
+    closeBtn: "absolute top-3 end-2.5 focus:ring-1",
     h3: "text-xl font-semibold text-gray-900 dark:text-white p-0"
   },
   variants: {
-    // position: {
-    //   fixed: { base: 'fixed' },
-    //   absolute: { base: 'absolute' }
-    // },
     placement: {
-      "top-left": { base: "justify-start items-start" },
-      "top-center": { base: "justify-center items-start" },
-      "top-right": { base: "justify-end items-start" },
-      "center-left": { base: "justify-start items-center" },
-      center: { base: "justify-center items-center" },
-      "center-right": { base: "justify-end items-center" },
-      "bottom-left": { base: "justify-start items-end" },
-      "bottom-center": { base: "justify-center items-end" },
-      "bottom-right": { base: "justify-end items-end" },
-      default: { base: "justify-center items-center" }
-    },
-    backdrop: {
-      true: { backdrop: "bg-gray-900 opacity-50 dark:opacity-80 pointer-events-auto" }
+      "top-left": { base: "top-0 left-0" },
+      "top-center": { base: "top-0 left-1/2 -translate-x-1/2" },
+      "top-right": { base: "top-0 left-full -translate-x-full" },
+      "center-left": { base: "top-1/2 left-0 -translate-y-1/2" },
+      center: { base: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" },
+      "center-right": { base: "top-1/2 left-full -translate-x-full -translate-y-1/2" },
+      "bottom-left": { base: "top-full -translate-y-full left-0" },
+      "bottom-center": { base: "top-full -translate-y-full left-1/2 -translate-x-1/2" },
+      "bottom-right": { base: "top-full -translate-y-full left-full -translate-x-full" },
     },
     size: {
-      xs: { div: "max-w-md" },
-      sm: { div: "max-w-lg" },
-      md: { div: "max-w-2xl" },
-      lg: { div: "max-w-4xl" },
-      xl: { div: "max-w-7xl" }
+      xs: { base: "max-w-md" },
+      sm: { base: "max-w-lg" },
+      md: { base: "max-w-2xl" },
+      lg: { base: "max-w-4xl" },
+      xl: { base: "max-w-7xl" }
     },
-    rounded: {
-      true: { content: "rounded-sm" }
-    },
-    shadow: {
-      true: { content: "shadow-md" }
-    }
   },
   defaultVariants: {
     placement: "center",
-    rounded: true
+    size: "md",
   }
 });

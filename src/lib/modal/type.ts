@@ -1,15 +1,17 @@
 import type { Snippet } from "svelte";
-import type { HTMLAttributes } from "svelte/elements";
-import type { TransitionFunc, ParamsType } from "../types";
+import type { HTMLDialogAttributes } from "svelte/elements";
+import type { ParamsType, TransitionFunc } from "../types";
 import type { ModalVariants } from "./theme";
 
-interface ModalProps extends ModalVariants, HTMLAttributes<HTMLDivElement> {
-  children: Snippet;
+interface ModalProps extends ModalVariants, HTMLDialogAttributes {
   header?: Snippet;
   footer?: Snippet;
-  title?: string;
-  open: boolean;
+  modal?: boolean;
+  autoclose?: boolean;
+  outsideClose?: boolean;
   dismissable?: boolean;
+  transition?: TransitionFunc;
+  params?: ParamsType;
   closeBtnClass?: string;
   h3Class?: string;
   divClass?: string;
@@ -17,11 +19,6 @@ interface ModalProps extends ModalVariants, HTMLAttributes<HTMLDivElement> {
   contentClass?: string;
   bodyClass?: string;
   footerClass?: string;
-  outsideClose?: boolean;
-  backdrop?: boolean;
-  backdropClass?: string;
-  params?: ParamsType;
-  transition?: TransitionFunc;
 }
 
 export { type ModalProps };

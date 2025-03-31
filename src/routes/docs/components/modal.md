@@ -10,7 +10,7 @@ thumnailSize: w-48
 
 <script>
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
-  import { P, A } from '$lib'  
+  import { P, A, Alert } from '$lib'  
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -58,12 +58,12 @@ You can use the `outsideclose` prop to allow the user to close the modal by clic
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Button, Modal } from "flowbite-svelte";
-  let clickOutsideModal = $state(false);
+  let open = $state(false);
 </script>
 
-<Button onclick={() => (clickOutsideModal = true)}>Default modal</Button>
+<Button onclick={() => (open = true)}>Default modal</Button>
 
-<Modal title="Terms of Service" bind:open={clickOutsideModal} autoclose outsideclose>
+<Modal title="Terms of Service" bind:open={open} autoclose outsideClose={false}>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
   {#snippet footer()}
@@ -102,6 +102,11 @@ Notice lack of the `footer` snippet.
 
 Use this modal example with form input element to receive information from your users with the advantage of not having to link to another page but keeping the user on the currently active page. A great example would be a login or a register form.
 
+<Alert color="none" border>
+<b>Note!</b> Remember to set <code>method="dialog"</code> on your form inside that <code>dialog</code> component.
+</Alert>
+
+
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Button, Modal, Label, Input, Checkbox } from "flowbite-svelte";
@@ -110,8 +115,8 @@ Use this modal example with form input element to receive information from your 
 
 <Button onclick={() => (formModal = true)}>Form modal</Button>
 
-<Modal bind:open={formModal} size="xs" autoclose={false} class="w-full">
-  <form class="flex flex-col space-y-6" action="#">
+<Modal bind:open={formModal} size="xs" autoclose={false}>
+  <form class="flex flex-col space-y-6" method="dialog" action="#">
     <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h3>
     <Label class="space-y-2">
       <span>Email</span>
