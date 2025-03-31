@@ -59,19 +59,3 @@
 	</div>
 {/if}
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:header: any;
-@props:bannerStatus: any = $bindable(true);
-@props:position: any = 'sticky';
-@props:dismissable: any = true;
-@props:color: any = 'gray';
-@props:bannerType: any = 'default';
-@props:class: string;
-@props:innerClass: any;
-@props:transition: any = fade;
-@props:params: any;
--->

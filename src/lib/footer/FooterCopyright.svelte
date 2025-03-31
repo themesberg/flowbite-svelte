@@ -28,14 +28,3 @@
 	{copyrightMessage}
 </span>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: spanClass: any;
-@props:aClass: any;
-@props:href: any;
-@props:by: any;
-@props:copyrightMessage: any = 'All Rights Reserved.';
-@props:year: any;
--->

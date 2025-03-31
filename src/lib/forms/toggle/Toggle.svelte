@@ -39,19 +39,3 @@
 	{/if}
 </Label>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:toggleSize: any = 'default';
-@props:value: any;
-@props:checked: any = $bindable();
-@props:disabled: any;
-@props:color: any = 'primary';
-@props:aria_describedby: any;
-@props:labelClass: any;
-@props:inputClass: any;
-@props:spanClass: any;
-@props:leftLabel: any;
--->

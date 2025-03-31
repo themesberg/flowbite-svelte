@@ -75,23 +75,3 @@
 	</div>
 {/if}
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:icon: any;
-@props:badgeStatus: any = $bindable(true);
-@props:color: any = 'primary';
-@props:large: any = false;
-@props:dismissable: any = false;
-@props:class: string;
-@props:border: any;
-@props:href: any;
-@props:target: any;
-@props:rounded: any;
-@props:transition: any = fade;
-@props:params: any;
-@props:aClass: any;
-@props:onclick: any;
--->

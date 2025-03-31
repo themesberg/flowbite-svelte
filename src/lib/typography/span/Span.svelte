@@ -38,19 +38,3 @@
 	{/if}
 </span>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:class: string;
-@props:italic: any;
-@props:underline: any;
-@props:linethrough: any;
-@props:uppercase: any;
-@props:gradient: any;
-@props:highlight: any;
-@props:decoration: any;
-@props:decorationColor: any;
-@props:decorationThickness: any;
--->

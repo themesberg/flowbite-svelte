@@ -108,32 +108,3 @@
 	</div>
 {/if}
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:header: any;
-@props:footer: any;
-@props:title: any;
-@props:modalStatus: any;
-@props:dismissable: any = true;
-@props:closeModal: any;
-@props:divClass: any;
-@props:contentClass: any;
-@props:closeBtnClass: any;
-@props:h3Class: any;
-@props:headerClass: any;
-@props:bodyClass: any;
-@props:footerClass: any;
-@props:outsideClose: any = true;
-@props:size: any = 'md';
-@props:backdrop: any = true;
-@props:backdropClass: any;
-@props:position: any = 'center';
-@props:class: string;
-@props:params: any = { duration: 100;
-@props:easing: any;
-@props:transition: any = fade;
-@props:rounded: any = true;
--->

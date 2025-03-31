@@ -39,13 +39,3 @@
 	{/if}
 </div>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:end: any;
-@props:color: any = 'default';
-@props:embedded: any;
-@props:class: string;
--->

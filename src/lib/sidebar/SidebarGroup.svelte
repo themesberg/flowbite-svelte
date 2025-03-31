@@ -14,12 +14,3 @@
 	{@render children()}
 </ul>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:class: string = 'space-y-2';
-@props:borderClass: any = 'pt-4 mt-4 border-t border-gray-200 dark:border-gray-700';
-@props:border: any = false;
--->

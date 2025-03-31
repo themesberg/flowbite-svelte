@@ -55,21 +55,3 @@
 	</Label>
 {/if}
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:aria_describedby: any;
-@props:color: any = 'primary';
-@props:custom: any;
-@props:inline: any;
-@props:tinted: any;
-@props:rounded: any;
-@props:group: any = $bindable([]);
-@props:choices: any = [];
-@props:checked: any = $bindable(false);
-@props:classLabel: any;
-@props:indeterminate: any;
-@props:class: string;
--->

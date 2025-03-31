@@ -28,15 +28,3 @@
 	{@render children()}
 </blockquote>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:class: string;
-@props:border: any;
-@props:italic: any = true;
-@props:bg: any;
-@props:alignment: any = 'left';
-@props:size: any = 'lg';
--->

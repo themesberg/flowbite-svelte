@@ -122,22 +122,3 @@
 	{/if}
 </li>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:arrowup: any;
-@props:arrowdown: any;
-@props:iconSlot: any;
-@props:isOpen: any = false;
-@props:btnClass: any;
-@props:label: any;
-@props:spanClass: any;
-@props:ulClass: any;
-@props:transition: any = slide;
-@props:params: any;
-@props:svgClass: any;
-@props:class: string;
-@props:onclick: any;
--->

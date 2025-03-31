@@ -38,18 +38,3 @@
 	{@render imageSlot()}
 {/if}
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: src: any;
-@props:href: any;
-@props:caption: any;
-@props:size: any;
-@props:alignment: any;
-@props:shadow: any;
-@props:rounded: any;
-@props:figClass: any;
-@props:imgClass: any;
-@props:captionClass: any;
--->

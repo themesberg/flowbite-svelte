@@ -53,20 +53,3 @@
 	</div>
 {/if}
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:icon: any;
-@props:toastStatus: any = $bindable(true);
-@props:dismissable: any = true;
-@props:color: any = 'primary';
-@props:position: any;
-@props:baseClass: any;
-@props:iconClass: any;
-@props:contentClass: any;
-@props:align: any = true;
-@props:params: any;
-@props:transition: any = fly;
--->

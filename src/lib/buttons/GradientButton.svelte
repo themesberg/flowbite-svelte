@@ -36,17 +36,3 @@
 	</Button>
 {/if}
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:outline: any;
-@props:pill: any;
-@props:color: any = 'blue';
-@props:shadow: any;
-@props:class: string;
-@props:href: any;
-@props:disabled: any;
-@props:size: any;
--->

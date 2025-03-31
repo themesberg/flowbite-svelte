@@ -24,12 +24,3 @@
 	<hr class={base({ class: hrClass })} {...restProps} />
 {/if}
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:divClass: any;
-@props:hrClass: any;
-@props:innerDivClass: any;
--->

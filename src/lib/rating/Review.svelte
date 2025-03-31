@@ -89,21 +89,3 @@
 	</article>
 {/if}
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:address: any;
-@props:item1: any;
-@props:item2: any;
-@props:item3: any;
-@props:review: any;
-@props:articleClass: any;
-@props:divClass: any;
-@props:div2Class: any;
-@props:div3Class: any;
-@props:imgClass: any;
-@props:ulClass: any;
-@props:liClass: any;
--->

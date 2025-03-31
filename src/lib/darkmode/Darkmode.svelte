@@ -87,13 +87,3 @@
 	</span>
 </button>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: class: string;
-@props:lightIcon: any;
-@props:darkIcon: any;
-@props:size: any = 'md';
-@props:ariaLabel: any = 'Dark mode';
--->

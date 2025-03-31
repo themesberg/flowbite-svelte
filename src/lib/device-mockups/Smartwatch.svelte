@@ -29,15 +29,3 @@
 	<div class={bot({ class: div6Class })}></div>
 </div>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:divClass: any;
-@props:div2Class: any;
-@props:div3Class: any;
-@props:div4Class: any;
-@props:div5Class: any;
-@props:div6Class: any;
--->

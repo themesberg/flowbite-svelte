@@ -10,11 +10,3 @@
 	{@render children()}
 </footer>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:footerType: any = 'default';
-@props:class: string;
--->

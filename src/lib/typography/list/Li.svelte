@@ -14,11 +14,3 @@
 	{@render children()}
 </li>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:icon: any;
-@props:class: string;
--->

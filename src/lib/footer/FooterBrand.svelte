@@ -23,16 +23,3 @@
 	<img {src} class={img({ class: imgClass })} {alt} />
 {/if}
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:aClass: any;
-@props:spanClass: any;
-@props:imgClass: any;
-@props:href: any;
-@props:src: any;
-@props:alt: any;
-@props:name: any;
--->

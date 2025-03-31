@@ -24,12 +24,3 @@
 	<span class="sr-only">Loading...</span>
 </div>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: itemNumber: any = 5;
-@props:size: any = 'md';
-@props:rounded: any;
-@props:class: string;
--->

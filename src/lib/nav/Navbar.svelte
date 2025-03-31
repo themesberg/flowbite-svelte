@@ -104,25 +104,3 @@
 	</div>
 </nav>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:navSlotBlock: any;
-@props:navSlotHiddenTop: any;
-@props:navSlotHiddenBottom: any;
-@props:toggleNav: any;
-@props:closeNav: any = ();
-@props:navStatus: any;
-@props:fluid: any;
-@props:brand: any;
-@props:hamburgerMenu: any = true;
-@props:breakPoint: any = 'md';
-@props:navClass: any;
-@props:divClass: any;
-@props:btnClass: any;
-@props:div2Class: any;
-@props:activeClass: any;
-@props:nonActiveClass: any;
--->

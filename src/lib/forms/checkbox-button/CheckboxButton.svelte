@@ -69,19 +69,3 @@
 	{@render children()}
 </Button>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:class: string;
-@props:group: any = [];
-@props:value: any = 'on';
-@props:checked: any;
-@props:inline: any = true;
-@props:pill: any;
-@props:outline: any;
-@props:size: any;
-@props:color: any;
-@props:shadow: any;
--->

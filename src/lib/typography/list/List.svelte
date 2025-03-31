@@ -27,14 +27,3 @@
 	{@render children()}
 </svelte:element>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:tag: any = 'ul';
-@props:isContenteditable: any = false;
-@props:position: any = 'inside';
-@props:ctxClass: any;
-@props:class: string;
--->

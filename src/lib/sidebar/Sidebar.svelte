@@ -109,25 +109,3 @@
 	</aside>
 {/if}
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:isOpen: any = false;
-@props:closeSidebar: any;
-@props:isSingle: any = true;
-@props:breakpoint: any = 'md';
-@props:position: any = 'fixed';
-@props:activateClickOutside: any = true;
-@props:backdrop: any = true;
-@props:backdropClass: any;
-@props:transition: any = fly;
-@props:params: any;
-@props:divClass: any;
-@props:ariaLabel: any;
-@props:nonActiveClass: any;
-@props:activeClass: any;
-@props:activeUrl: any = '';
-@props:class: string;
--->

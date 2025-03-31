@@ -39,16 +39,3 @@
 	<div role="presentation" class={backdrop({ class: backdropClass })} onclick={closeDropdown}></div>
 {/if}
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:dropdownStatus: any = $bindable();
-@props:closeDropdown: any;
-@props:class: string;
-@props:backdropClass: any;
-@props:params: any;
-@props:transition: any = fly;
-@props:activeUrl: any = '';
--->

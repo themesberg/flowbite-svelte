@@ -83,20 +83,3 @@
 	</div>
 {/if}
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:icon: any;
-@props:alertStatus: any = $bindable(true);
-@props:closeIcon: any;
-@props:color: any = 'primary';
-@props:rounded: any = true;
-@props:border: any;
-@props:class: string;
-@props:dismissable: any;
-@props:transition: any = fade;
-@props:params: any;
-@props:onclick: any;
--->

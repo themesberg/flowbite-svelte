@@ -56,22 +56,3 @@
 	</div>
 {/if}
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:drawerStatus: any;
-@props:closeDrawer: any;
-@props:activateClickOutside: any = true;
-@props:position: any;
-@props:width: any;
-@props:backdrop: any = true;
-@props:backdropClass: any;
-@props:placement: any = 'left';
-@props:class: string;
-@props:params: any = { x: -320;
-@props:duration: any;
-@props:easing: any;
-@props:transition: any = fly;
--->

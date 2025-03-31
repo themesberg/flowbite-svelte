@@ -36,19 +36,3 @@
 	{@render children()}
 </p>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:class: string = 'text-gray-900 dark:text-white';
-@props:height: any = 'normal';
-@props:align: any = 'left';
-@props:justify: any = false;
-@props:italic: any;
-@props:firstUpper: any = false;
-@props:whitespace: any = 'normal';
-@props:size: any = 'base';
-@props:space: any = 'normal';
-@props:weight: any = 'normal';
--->

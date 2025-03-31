@@ -50,17 +50,3 @@
 	{/if}
 </div>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:text: any;
-@props:divClass: any;
-@props:size: any = 24;
-@props:total: any = 5;
-@props:rating: any = 4;
-@props:Icon: any = Star;
-@props:count: any = false;
-@props:pClass: any;
--->

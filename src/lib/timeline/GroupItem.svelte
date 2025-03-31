@@ -58,14 +58,3 @@
 	</li>
 {/each}
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: timelines: any;
-@props:aClass: any;
-@props:imgClass: any;
-@props:divClass: any;
-@props:titleClass: any;
-@props:spanClass: any;
--->

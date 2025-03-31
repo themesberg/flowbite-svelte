@@ -63,16 +63,3 @@
 	</ul>
 </nav>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: pages: any = [];
-@props:previous: any;
-@props:next: any;
-@props:prevContent: any;
-@props:nextContent: any;
-@props:table: any;
-@props:size: any;
-@props:ariaLabel: any;
--->

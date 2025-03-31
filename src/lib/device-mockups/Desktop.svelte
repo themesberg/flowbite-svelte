@@ -16,13 +16,3 @@
 <div class={bot({ class: div3Class })}></div>
 <div class={botUnder({ class: div4Class })}></div>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:divClass: any;
-@props:div2Class: any;
-@props:div3Class: any;
-@props:div4Class: any;
--->

@@ -41,13 +41,3 @@
 	{/if}
 </div>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: closeIcon: any;
-@props:children: any;
-@props:buttonClass: any;
-@props:svgClass: any;
-@props:class: string;
--->

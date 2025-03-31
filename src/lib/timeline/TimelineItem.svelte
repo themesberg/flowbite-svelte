@@ -91,18 +91,3 @@
 	{@render children()}
 </li>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:orientationSlot: any;
-@props:title: any;
-@props:date: any;
-@props:dateFormat: any = 'month-year';
-@props:svgClass: any;
-@props:liClass: any;
-@props:divClass: any;
-@props:timeClass: any;
-@props:h3Class: any;
--->

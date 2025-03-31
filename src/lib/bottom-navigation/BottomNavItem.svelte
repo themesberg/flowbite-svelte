@@ -84,16 +84,3 @@
 	</button>
 {/if}
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:btnName: any;
-@props:appBtnPosition: any = 'middle';
-@props:target: any;
-@props:activeClass: any;
-@props:href: any = '';
-@props:btnClass: any;
-@props:spanClass: any;
--->

@@ -67,20 +67,3 @@
 	<img {alt} {src} {...restProps} class={avatarClass} />
 {/if}
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:src: any;
-@props:href: any;
-@props:target: any;
-@props:cornerStyle: any = 'circular';
-@props:border: any = false;
-@props:stacked: any = false;
-@props:dot: any;
-@props:class: string;
-@props:alt: any;
-@props:size: any = 'md';
-@props:onclick: any;
--->

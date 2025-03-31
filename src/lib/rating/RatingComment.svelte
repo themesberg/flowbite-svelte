@@ -65,13 +65,3 @@
 	</aside>
 </article>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:evaluation: any;
-@props:helpfullink: any;
-@props:abuselink: any;
-@props:comment: any;
--->

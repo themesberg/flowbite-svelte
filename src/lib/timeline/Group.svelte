@@ -12,13 +12,3 @@
 	</ol>
 </div>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:divClass: any;
-@props:timeClass: any;
-@props:date: any;
-@props:olClass: any;
--->

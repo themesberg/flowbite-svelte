@@ -34,10 +34,3 @@
 	</svg>
 </button>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: toggleNav: any;
-@props:class: string;
--->

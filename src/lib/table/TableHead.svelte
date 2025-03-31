@@ -61,16 +61,3 @@
 	{/if}
 </thead>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:headerSlot: any;
-@props:color: any;
-@props:striped: any;
-@props:noborder: any;
-@props:class: string;
-@props:headItems: any;
-@props:defaultRow: any = true;
--->

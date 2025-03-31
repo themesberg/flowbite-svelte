@@ -34,13 +34,3 @@
 	{/if}
 </li>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: aClass: any;
-@props:children: any;
-@props:href: any;
-@props:activeClass: any;
-@props:liClass: any;
--->

@@ -46,16 +46,3 @@
 	</div>
 </div>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:header: any;
-@props:position: any = 'fixed';
-@props:navType: any = 'default';
-@props:outerClass: any;
-@props:innerClass: any;
-@props:activeClass: any;
-@props:activeUrl: any = '';
--->

@@ -22,13 +22,3 @@
 	{@render children()}
 </div>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: children: any;
-@props:spacing: any = 'default';
-@props:padding: any = 'default';
-@props:position: any = 'middle';
-@props:class: string;
--->

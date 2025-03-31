@@ -46,18 +46,3 @@
 	{/if}
 </div>
 
-<!--
-@component
-[Go to docs](https://svelte-5-ui-lib.codewithshin.com/)
-## Props
-@props: header: any;
-@props:footer: any;
-@props:value: any = $bindable();
-@props:divClass: any;
-@props:innerClass: any;
-@props:headerClass: any;
-@props:footerClass: any;
-@props:disabled: any;
-@props:class: string;
-@props:cols: any;
--->
