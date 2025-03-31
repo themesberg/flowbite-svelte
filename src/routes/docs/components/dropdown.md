@@ -443,7 +443,7 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
 <script>
   import { Button, Dropdown, DropdownItem, DropdownHeader, DropdownGroup, Checkbox, Search } from "flowbite-svelte";
   import { ChevronDownOutline, UserRemoveSolid } from "flowbite-svelte-icons";
-  let searchTerm = "";
+  let searchTerm = $state("");
   const people = [
     { name: "Robert Gouth", checked: false },
     { name: "Jese Leos", checked: false },

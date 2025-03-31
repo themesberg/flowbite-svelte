@@ -34,13 +34,13 @@ Use the following list of pagination items to indicate a series of content for y
   import { Pagination } from "flowbite-svelte";
 
   let activeUrl = $derived(page.url.searchParams.get("page"));
-  let pages = [
+  let pages = $state([
     { name: 1, href: "/components/pagination?page=1" },
     { name: 2, href: "/components/pagination?page=2" },
     { name: 3, href: "/components/pagination?page=3" },
     { name: 4, href: "/components/pagination?page=4" },
     { name: 5, href: "/components/pagination?page=5" }
-  ];
+  ]);
 
   $effect(()=> {
     pages.forEach((page) => {
@@ -80,13 +80,13 @@ The following pagination component example shows how you can use SVG icons inste
   import { ChevronLeftOutline, ChevronRightOutline } from "flowbite-svelte-icons";
 
   let activeUrl = $derived(page.url.searchParams.get("page"));
-  let pages = [
+  let pages = $state([
     { name: 6, href: "/components/pagination?page=6" },
     { name: 7, href: "/components/pagination?page=7" },
     { name: 8, href: "/components/pagination?page=8" },
     { name: 9, href: "/components/pagination?page=9" },
     { name: 10, href: "/components/pagination?page=10" }
-  ];
+  ]);
 
   $effect(()=> {
     pages.forEach((page) => {
@@ -313,7 +313,7 @@ You can use the following code to show the number of data shown inside a table e
 <script lang="ts">
   import { Pagination } from "flowbite-svelte";
 
-  let pages = [{ name: "1" }, { name: "2" }, { name: "3" }, { name: "4" }, { name: "5" }];
+  let pages = $state([{ name: "1" }, { name: "2" }, { name: "3" }, { name: "4" }, { name: "5" }]);
   const previous = () => {
     alert("Previous btn clicked. Make a call to your server to fetch data.");
   };

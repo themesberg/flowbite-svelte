@@ -144,7 +144,7 @@ Use this example where you can select a country in which you want to search for 
     }
   ];
 
-  let selectCountry = "USA";
+  let selectCountry = $state("USA");
 
   let buttonLabel = $derived(countries.find(({ labelSelected }) => labelSelected === selectCountry));
 </script>
