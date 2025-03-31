@@ -30,4 +30,3 @@
 		{@render children()}
 	{/if}
 </select>
-

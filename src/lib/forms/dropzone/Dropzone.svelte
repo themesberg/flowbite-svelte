@@ -64,4 +64,3 @@
 <label class="hidden">
 	<input {...restProps} bind:files bind:this={input} onchange={onChange} type="file" />
 </label>
-

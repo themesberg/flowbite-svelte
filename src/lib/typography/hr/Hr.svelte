@@ -23,4 +23,3 @@
 {:else}
 	<hr class={base({ class: hrClass })} {...restProps} />
 {/if}
-

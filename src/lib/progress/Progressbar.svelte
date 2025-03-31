@@ -53,4 +53,3 @@
 		<div class={twMerge(insideDiv({ class: div2Class }), size)} style="width: {$_progress}%"></div>
 	{/if}
 </div>
-

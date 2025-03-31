@@ -68,4 +68,3 @@
 		{@render childSlot()}
 	</div>
 {/if}
-

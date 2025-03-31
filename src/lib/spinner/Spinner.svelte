@@ -30,4 +30,3 @@
 		fill={currentFill}
 	/>
 </svg>
-

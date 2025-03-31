@@ -19,4 +19,3 @@
 		<span class={span({ class: spanClass })}>{siteName}</span>
 	{/if}
 </a>
-

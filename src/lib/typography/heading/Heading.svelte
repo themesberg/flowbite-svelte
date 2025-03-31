@@ -9,4 +9,3 @@
 <svelte:element this={tag} {...restProps} class={headingClass}>
 	{@render children()}
 </svelte:element>
-

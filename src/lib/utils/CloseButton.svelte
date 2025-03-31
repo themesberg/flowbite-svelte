@@ -50,4 +50,3 @@
 		</svg>
 	</button>
 {/if}
-

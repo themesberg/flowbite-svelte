@@ -64,4 +64,3 @@
 		{/if}
 	</aside>
 </article>
-

@@ -26,4 +26,3 @@
 <svelte:element this={tag} {...restProps} class={classList} contenteditable={isContenteditable}>
 	{@render children()}
 </svelte:element>
-

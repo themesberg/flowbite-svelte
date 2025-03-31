@@ -14,4 +14,3 @@
 </script>
 
 <input type="range" bind:value {...restProps} class={inputCls} />
-

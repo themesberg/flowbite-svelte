@@ -33,4 +33,3 @@
 		{@render children()}
 	</label>
 </div>
-

@@ -257,4 +257,3 @@
 		{#if arrow}<div bind:this={arrowEl} class={arrowBase({ arrow, position })}></div>{/if}
 	</div>
 {/if}
-

@@ -14,4 +14,3 @@
 	<div class={line({ class: 'h-2 w-9/12' })}></div>
 	<span class="sr-only">Loading...</span>
 </div>
-

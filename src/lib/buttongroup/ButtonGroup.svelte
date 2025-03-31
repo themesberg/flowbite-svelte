@@ -11,4 +11,3 @@
 <div {...restProps} class={groupClass} role="group">
 	{@render children()}
 </div>
-

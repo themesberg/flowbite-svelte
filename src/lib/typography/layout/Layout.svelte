@@ -9,4 +9,3 @@
 <div {...restProps} class={classDiv}>
 	{@render children()}
 </div>
-

@@ -8,4 +8,3 @@
 <small {...restProps} class={twMerge(secondary(), className)}>
 	{@render children()}
 </small>
-

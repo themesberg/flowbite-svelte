@@ -13,4 +13,3 @@
 <ul {...restProps} class={border ? borderClass : className}>
 	{@render children()}
 </ul>
-

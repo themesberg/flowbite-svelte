@@ -37,4 +37,3 @@
 {:else}
 	{@render imageSlot()}
 {/if}
-

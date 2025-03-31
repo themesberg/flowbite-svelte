@@ -27,4 +27,3 @@
 <DeviceComponent>
 	{@render children()}
 </DeviceComponent>
-

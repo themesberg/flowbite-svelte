@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.12.6
+
+### Patch Changes
+
+- fix: remove compo docs
+
 ## 0.12.5
 
 ### Patch Changes

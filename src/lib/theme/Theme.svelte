@@ -281,4 +281,3 @@
 </script>
 
 {@render children()}
-

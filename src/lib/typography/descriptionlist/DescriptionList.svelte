@@ -14,4 +14,3 @@
 <svelte:element this={tag} {...restProps} class={classDesc}>
 	{@render children()}
 </svelte:element>
-

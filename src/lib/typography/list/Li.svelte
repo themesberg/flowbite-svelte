@@ -13,4 +13,3 @@
 <li {...restProps} class={liCls}>
 	{@render children()}
 </li>
-

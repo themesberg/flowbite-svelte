@@ -11,4 +11,3 @@
 		{@render children()}
 	</ol>
 </div>
-

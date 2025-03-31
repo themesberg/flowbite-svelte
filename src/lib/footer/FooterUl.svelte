@@ -8,4 +8,3 @@
 <ul {...restProps} class={base}>
 	{@render children()}
 </ul>
-

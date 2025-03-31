@@ -38,4 +38,3 @@
 		{@render children()}
 	{/if}
 </Label>
-

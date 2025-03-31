@@ -36,4 +36,3 @@
 {:else}
 	<input type="file" bind:files {...restProps} class={base({ className })} />
 {/if}
-

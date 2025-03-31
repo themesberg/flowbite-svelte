@@ -15,4 +15,3 @@
 </div>
 <div class={bot({ class: div3Class })}></div>
 <div class={botUnder({ class: div4Class })}></div>
-

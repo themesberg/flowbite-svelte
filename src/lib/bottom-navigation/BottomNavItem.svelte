@@ -83,4 +83,3 @@
 		<span class={getSpanClass()}>{btnName}</span>
 	</button>
 {/if}
-

@@ -66,4 +66,3 @@
 {:else}
 	<img {alt} {src} {...restProps} class={avatarClass} />
 {/if}
-

@@ -21,4 +21,3 @@
 	<track src={trackSrc} kind="captions" {srclang} {label} />
 	Your browser does not support the video tag.
 </video>
-

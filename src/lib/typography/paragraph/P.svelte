@@ -35,4 +35,3 @@
 <p {...restProps} class={classP}>
 	{@render children()}
 </p>
-

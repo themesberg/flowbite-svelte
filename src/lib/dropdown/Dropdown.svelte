@@ -38,4 +38,3 @@
 
 	<div role="presentation" class={backdrop({ class: backdropClass })} onclick={closeDropdown}></div>
 {/if}
-

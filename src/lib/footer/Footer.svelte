@@ -9,4 +9,3 @@
 <footer {...restProps} class={footerCls}>
 	{@render children()}
 </footer>
-

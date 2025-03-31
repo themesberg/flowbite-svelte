@@ -22,4 +22,3 @@
 {:else}
 	<img {src} class={img({ class: imgClass })} {alt} />
 {/if}
-

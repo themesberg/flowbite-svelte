@@ -59,4 +59,3 @@
 		{@render children()}
 	</button>
 {/if}
-

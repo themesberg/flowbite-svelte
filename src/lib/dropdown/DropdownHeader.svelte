@@ -8,4 +8,3 @@
 <div {...restProps} class={headerClass}>
 	{@render children()}
 </div>
-

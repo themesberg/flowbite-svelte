@@ -27,4 +27,3 @@
 	{/if}
 	{copyrightMessage}
 </span>
-

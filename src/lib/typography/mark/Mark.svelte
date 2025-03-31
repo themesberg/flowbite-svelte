@@ -8,4 +8,3 @@
 <mark {...restProps} class={twMerge(mark(), className)}>
 	{@render children()}
 </mark>
-

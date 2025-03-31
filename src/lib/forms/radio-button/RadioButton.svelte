@@ -32,4 +32,3 @@
 	<input type="radio" bind:group {value} {...restProps} class="sr-only" />
 	{@render children()}
 </Button>
-

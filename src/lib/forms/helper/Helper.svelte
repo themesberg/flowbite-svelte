@@ -9,4 +9,3 @@
 <p {...restProps} class={base}>
 	{@render children()}
 </p>
-

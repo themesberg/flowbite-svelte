@@ -6,4 +6,3 @@
 </script>
 
 <div {...restProps} class={base}></div>
-

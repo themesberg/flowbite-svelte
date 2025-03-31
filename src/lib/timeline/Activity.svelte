@@ -8,4 +8,3 @@
 <ol {...restProps} class={base}>
 	{@render children()}
 </ol>
-

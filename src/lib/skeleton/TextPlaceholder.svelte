@@ -42,4 +42,3 @@
 	</div>
 	<span class="sr-only">Loading...</span>
 </div>
-

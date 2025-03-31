@@ -21,4 +21,3 @@
 <div {...restProps} class={groupClass}>
 	{@render children()}
 </div>
-

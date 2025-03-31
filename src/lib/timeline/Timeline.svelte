@@ -11,4 +11,3 @@
 <ol {...restProps} class={olCls}>
 	{@render children()}
 </ol>
-

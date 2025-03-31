@@ -31,4 +31,3 @@
 		<span class={span2({ class: span2Class })}>{rating}{unit}</span>
 	</div>
 {/each}
-

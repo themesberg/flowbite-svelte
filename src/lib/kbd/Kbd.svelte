@@ -9,4 +9,3 @@
 <kbd {...restProps} class={twMerge(kbdCls, kbdClass)}>
 	{@render children()}
 </kbd>
-

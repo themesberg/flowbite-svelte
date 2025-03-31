@@ -28,4 +28,3 @@
 	/>
 	{@render children()}
 </Label>
-

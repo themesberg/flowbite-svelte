@@ -7,4 +7,3 @@
 <button {...restProps} class={base}>
 	{itemName}
 </button>
-

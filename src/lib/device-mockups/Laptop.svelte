@@ -18,4 +18,3 @@
 		<div class={botCen({ class: div4Class })}></div>
 	</div>
 </div>
-

@@ -47,4 +47,3 @@
 <div {...restProps} class={divClass}>
 	{@render children()}
 </div>
-

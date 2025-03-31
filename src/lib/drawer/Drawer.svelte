@@ -55,4 +55,3 @@
 		{@render children()}
 	</div>
 {/if}
-

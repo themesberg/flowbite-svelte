@@ -28,4 +28,3 @@
 	</div>
 	<div class={bot({ class: div6Class })}></div>
 </div>
-

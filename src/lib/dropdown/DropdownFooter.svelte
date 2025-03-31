@@ -8,4 +8,3 @@
 <div {...restProps} class={footerClass}>
 	{@render children()}
 </div>
-

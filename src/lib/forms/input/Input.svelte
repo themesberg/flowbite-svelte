@@ -69,4 +69,3 @@
 {:else}
 	{@render inputContent()}
 {/if}
-

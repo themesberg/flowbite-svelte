@@ -32,4 +32,3 @@
 		{@render children()}
 	{/if}
 </div>
-

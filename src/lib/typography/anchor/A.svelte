@@ -8,4 +8,3 @@
 <a {...restProps} class={linkClass}>
 	{@render children()}
 </a>
-

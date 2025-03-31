@@ -27,4 +27,3 @@
 <blockquote {...restProps} class={blockquoteClass}>
 	{@render children()}
 </blockquote>
-

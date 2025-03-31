@@ -21,4 +21,3 @@
 	</div>
 	{@render children()}
 </div>
-
