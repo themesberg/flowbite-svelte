@@ -36,7 +36,7 @@ An option of automatic closing of the modal can be enabled by setting the `autoc
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Button, Modal } from "flowbite-svelte";
+  import { Button, Modal, P } from "flowbite-svelte";
   let defaultModal = $state(false);
 </script>
 
@@ -44,6 +44,7 @@ An option of automatic closing of the modal can be enabled by setting the `autoc
 <Modal title="Terms of Service" bind:open={defaultModal} autoclose>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
+
   {#snippet footer()}
     <Button onclick={() => alert('Handle "success"')}>I accept</Button>
     <Button color="alternative">Decline</Button>
@@ -53,7 +54,9 @@ An option of automatic closing of the modal can be enabled by setting the `autoc
 
 ## Closing by clicking outside
 
-You can use the `outsideclose` prop to allow the user to close the modal by clicking outside of it.
+`Modal` has got the prop `outsideclose` set to `true` by default, to allow the user to close the modal by clicking outside of it. If you want to block that behaviour set that prop to `false`.
+
+You can control that outside space - called backdrop - by passing the `backdrop:` Tailwind class.
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
@@ -63,7 +66,7 @@ You can use the `outsideclose` prop to allow the user to close the modal by clic
 
 <Button onclick={() => (open = true)}>Default modal</Button>
 
-<Modal title="Terms of Service" bind:open={open} autoclose outsideClose={false}>
+<Modal title="Terms of Service" bind:open={open} autoclose outsideClose={false} class="backdrop:bg-red-900/50 dark:backdrop:bg-green-300/50">
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
   {#snippet footer()}
