@@ -81,9 +81,9 @@
         {:else if header}
           {@render header()}
         {/if}
-        {#if dismissable}
+        <!-- {#if dismissable}
           <CloseButton onclick={closeModal} class={closeBtnClass} tabindex={-1} />
-        {/if}
+        {/if} -->
       </div>
     {/if}
     <div class={body({ class: bodyClass })}>
@@ -94,7 +94,7 @@
         {@render footer()}
       </div>
     {/if}
-    {#if dismissable && !header && !title}
+    {#if dismissable}
       <CloseButton onclick={closeModal} class={closeBtn({ class: closeBtnClass })} />
     {/if}
   </dialog>
