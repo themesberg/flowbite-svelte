@@ -18,14 +18,11 @@
     title,
     open = $bindable(false),
     dismissable = true,
-    divClass,
     closeBtnClass,
-    h3Class,
     headerClass,
-    contentClass,
     bodyClass,
     footerClass,
-    outsideClose = true,
+    outsideclose = true,
     size = "md",
     placement,
     class: className,
@@ -34,7 +31,7 @@
     ...restProps
   }: Props = $props();
 
-  const { base, content, header: headerCls, footer: footerCls, body, closeBtn, h3 } = $derived(modalTheme({ placement, size }));
+  const { base, header: headerCls, footer: footerCls, body, closeBtn } = $derived(modalTheme({ placement, size }));
 
   const closeModal = () => (open = false);
 
@@ -53,10 +50,10 @@
 
   function _onclick(ev: Event & { currentTarget: HTMLDialogElement }) {
     if (ev.currentTarget instanceof HTMLDialogElement) {
-      if (outsideClose && ev.target === ev.currentTarget) {
+      if (outsideclose && ev.target === ev.currentTarget) {
         closeModal();
       }
-      if (autoclose && ev.target !== ev.currentTarget) {
+      if (autoclose && ev.target instanceof HTMLButtonElement) {
         closeModal();
       }
     }
@@ -77,63 +74,59 @@
     onintrostart={() => (modal ? dlg?.showModal() : dlg?.show())}
     onoutroend={() => dlg?.close()}
   >
-    <div class={content({ class: contentClass })}>
-      {#if title || header}
-        <div class={headerCls({ class: headerClass })}>
-          {#if title}
-            <h3 class={h3({ class: h3Class })}>
-              {title}
-            </h3>
-          {:else if header}
-            {@render header()}
-          {/if}
-        </div>
-      {/if}
-      <div class={body({ class: bodyClass })}>
-        {@render children?.()}
+    {#if title || header}
+      <div class={headerCls({ class: headerClass })}>
+        {#if title}
+          <h3>{title}</h3>
+        {:else if header}
+          {@render header()}
+        {/if}
+        {#if dismissable}
+          <CloseButton onclick={closeModal} class={closeBtnClass} tabindex={-1} />
+        {/if}
       </div>
-      {#if footer}
-        <div class={footerCls({ class: footerClass })}>
-          {@render footer()}
-        </div>
-      {/if}
-      {#if dismissable}
-        <CloseButton onclick={closeModal} class={closeBtn({ class: closeBtnClass })} />
-      {/if}
+    {/if}
+    <div class={body({ class: bodyClass })}>
+      {@render children?.()}
     </div>
+    {#if footer}
+      <div class={footerCls({ class: footerClass })}>
+        {@render footer()}
+      </div>
+    {/if}
+    {#if dismissable && !header && !title}
+      <CloseButton onclick={closeModal} class={closeBtn({ class: closeBtnClass })} />
+    {/if}
   </dialog>
 {/if}
-<!--
-@component
-[Go to docs](https://flowbite-svelte-next.com/)
-## Props
-@props: children: any;
-@props:header: any;
-@props:footer: any;
-@props:title: any;
-@props:open: any = $bindable(false);
-@props:dismissable: any = true;
-@props:divClass: any;
-@props:contentClass: any;
-@props:closeBtnClass: any;
-@props:h3Class: any;
-@props:headerClass: any;
-@props:bodyClass: any;
-@props:footerClass: any;
-@props:outsideClose: any = true;
-@props:size: any = "md";
-@props:backdrop: any = true;
-@props:backdropClass: any;
-@props:placement: any;
-@props:class: string;
-@props:params: any = { duration: 100;
-@props:easing: any;
-@props:transition: any = fade;
-@props:rounded: any;
--->
-
 <!-- <style>
   :global(::backdrop) {
     /* background-color: pink; */
   }
 </style> -->
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte-next.com/)
+## Props
+@props: children: any;
+@props:oncancel: any;
+@props:modal: any = true;
+@props:autoclose: any = false;
+@props:header: any;
+@props:footer: any;
+@props:title: any;
+@props:open: any = $bindable(false);
+@props:dismissable: any = true;
+@props:closeBtnClass: any;
+@props:headerClass: any;
+@props:bodyClass: any;
+@props:footerClass: any;
+@props:outsideclose: any = true;
+@props:size: any = "md";
+@props:placement: any;
+@props:class: string;
+@props:params: any = { duration: 100;
+@props:easing: any;
+@props:transition: any = fade;
+-->

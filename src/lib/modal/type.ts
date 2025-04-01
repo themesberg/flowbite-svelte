@@ -8,17 +8,14 @@ interface ModalProps extends ModalVariants, HTMLDialogAttributes {
   footer?: Snippet;
   modal?: boolean;
   autoclose?: boolean;
-  outsideClose?: boolean;
+  outsideclose?: boolean;
   dismissable?: boolean;
   transition?: TransitionFunc;
   params?: ParamsType;
-  closeBtnClass?: string;
-  h3Class?: string;
-  divClass?: string;
   headerClass?: string;
-  contentClass?: string;
   bodyClass?: string;
   footerClass?: string;
+  closeBtnClass?: string;
 }
 
 export { type ModalProps };

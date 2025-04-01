@@ -28,9 +28,9 @@ Get started with multiple sizes, colors, and styles built with the utility class
 
 ## Default modal
 
-Modal visibility (open/close) is controlled by the `open` property. You can bind it to a variable that other element (usually button) will toggle. You can also use the `open=true` attribute to show open the modal by default. Opening and closing the modal will trigger the `open` and `close` events.
+Modal visibility (open/close) is controlled by the `open` property. You can bind it to a variable that other element (usually button) will toggle. 
 
-<p class="p-2"></p>
+Closing the modal will trigger the `close` or `cancel` events - see [`<dialog>`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement) API for details.
 
 An option of automatic closing of the modal can be enabled by setting the `autoclose` property. Any `<button>` element put in the modal will close it on click.
 
@@ -52,11 +52,13 @@ An option of automatic closing of the modal can be enabled by setting the `autoc
 </Modal>
 ```
 
-## Closing by clicking outside
+## Clicking outside
 
 `Modal` has got the prop `outsideclose` set to `true` by default, to allow the user to close the modal by clicking outside of it. If you want to block that behaviour set that prop to `false`.
 
 You can control that outside space - called backdrop - by passing the `backdrop:` Tailwind class.
+
+This example shows the `header` customization as well.
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
@@ -66,7 +68,10 @@ You can control that outside space - called backdrop - by passing the `backdrop:
 
 <Button onclick={() => (open = true)}>Default modal</Button>
 
-<Modal title="Terms of Service" bind:open={open} autoclose outsideClose={false} class="backdrop:bg-red-900/50 dark:backdrop:bg-green-300/50">
+<Modal bind:open={open} autoclose outsideclose={false} class="backdrop:bg-red-900/50 dark:backdrop:bg-green-300/50">
+  {#snippet header()}
+    <h3>Terms of Service <small class="font-normal">(Revised)</small></h3>
+  {/snippet}
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
   {#snippet footer()}
@@ -80,18 +85,19 @@ You can control that outside space - called backdrop - by passing the `backdrop:
 
 You can use this modal example to show a pop-up decision dialog to your users especially when deleting an item and making sure if the user really wants to do that by double confirming.
 
-Notice lack of the `footer` snippet.
+Notice lack of the `footer` snippet and the transition set to `slide`.
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Button, Modal } from "flowbite-svelte";
   import { ExclamationCircleOutline } from "flowbite-svelte-icons";
+  import { slide } from "svelte/transition";
   let popupModal = $state(false);
 </script>
 
 <Button onclick={() => (popupModal = true)}>Pop-up modal</Button>
 
-<Modal bind:open={popupModal} size="xs" autoclose>
+<Modal bind:open={popupModal} size="xs" autoclose transition={slide}>
   <div class="text-center">
     <ExclamationCircleOutline class="mx-auto mb-4 h-12 w-12 text-gray-400 dark:text-gray-200" />
     <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this product?</h3>
@@ -311,7 +317,7 @@ You can use five different modal sizing options starting from extra small to ext
   let scrollingModal = $state(false);
 </script>
 
-<Button onclick={() => (scrollingModal = true)} autoclose>Scrolling modal</Button>
+<Button onclick={() => (scrollingModal = true)}>Scrolling modal</Button>
 
 <Modal title="Terms of Service" bind:open={scrollingModal}>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
@@ -337,7 +343,7 @@ You can use five different modal sizing options starting from extra small to ext
 
 ## Non-modal case
 
-Rarely you would need a non-modal dialog. You can get it by setting `modal` property to `false`. Note, however, that in that mode dialog does not have a backdrop, is not a top level window, does not manage `Esc` key.
+Rarely you would need a non-modal dialog. You can get it by setting `modal` property to `false`. Note, however, that in that mode dialog does not have a backdrop, is not a top level window (notice `z-10` class below), does not manage `Esc` key.
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
@@ -346,7 +352,7 @@ Rarely you would need a non-modal dialog. You can get it by setting `modal` prop
 </script>
 
 <Button onclick={() => (defaultModal = true)}>Non modal</Button>
-<Modal title="Terms of Service" bind:open={defaultModal} autoclose modal={false} contentClass="border shadow-xl">
+<Modal title="Terms of Service" bind:open={defaultModal} autoclose modal={false} class="border shadow-xl z-10">
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
   {#snippet footer()}
