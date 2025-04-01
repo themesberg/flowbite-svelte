@@ -7,7 +7,7 @@ export const modal = tv({
     base: "backdrop:bg-black/80 box-border min-h-fit max-h-screen open:flex flex-col w-full rounded-lg divide-y text-gray-500 dark:text-gray-400 border-gray-300 dark:border-gray-800 divide-gray-300 dark:divide-gray-700 bg-white dark:bg-gray-800 pointer-events-auto",
     header: "flex items-center p-4 md:p-5 justify-between rounded-t-lg shrink-0 text-xl font-semibold text-gray-900 dark:text-white",
     footer: "flex items-center p-4 md:p-5 space-x-3 rtl:space-x-reverse rounded-b-lg shrink-0",
-    body: "p-4 md:p-5 space-y-4 flex-1 overflow-y-auto overscroll-contain",
+    body: "p-4 md:p-5 space-y-4 flex-1 box-border min-h-fit overflow-y-auto overscroll-contain",
     closeBtn: "absolute top-3 end-2.5",
   },
   variants: {
