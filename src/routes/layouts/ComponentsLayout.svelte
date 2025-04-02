@@ -49,12 +49,12 @@
   });
 
   let spanClass = "";
-  let mainClass = "lg:static lg:mt-2 z-50 h-full w-96"; // "lg:ms-auto relative fixed inset-0 z-30 h-full w-64 flex-none border1-e border-gray-200 bg-white lg:static lg:block lg:h-auto lg:pt-0 dark:border-gray-600 dark:bg-gray-900";
+  let mainClass = "lg:static z-50 w-96"; // "lg:ms-auto relative fixed inset-0 z-30 w-64 flex-none border1-e border-gray-200 bg-white lg:static lg:block lg:h-auto lg:pt-0 dark:border-gray-600 dark:bg-gray-900";
   let nonActiveClass = "text-sm transition-colors duration-200 relative font-medium hover:text-gray-900 hover:bg-transparent dark:hover:bg-transparent hover:cursor-pointer text-gray-500 dark:text-gray-400 dark:hover:text-white";
   let activeClass = "text-sm relative font-medium cursor-default bg-transparent dark:bg-transparent hover:bg-transparent dark:hover:bg-transparent text-primary-700 dark:text-primary-700";
   let btnClass = "my-0 text-sm font-semibold tracking-wide uppercase text-gray-700 dark:text-gray-200 hover:bg-transparent dark:hover:bg-transparent hover:text-primary-700 dark:hover:text-primary-600";
   let dropdowns = Object.fromEntries(Object.keys(posts).map((x) => [x, false]));
-  let divClass = "overflow-y-auto pt-20 lg:pt-0 h-full scrolling-touch max-w-2xs lg:h-[calc(100vh-6rem)] lg:block lg:me-0 lg:sticky top-20 bg-white dark:bg-gray-900";
+  let divClass = "overflow-y-auto pt-20 lg:pt-0 scrolling-touch max-w-2xs lg:h-[calc(100vh-6rem)] lg:block lg:me-0 lg:sticky top-20 bg-white dark:bg-gray-900";
 </script>
 
 <SidebarButton breakpoint="md" onclick={sidebarUi.toggle} class="z-0 mb-2" />
