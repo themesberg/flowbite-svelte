@@ -20,3 +20,14 @@ export type RadioColorType =
 	| 'pink'
 	| 'rose'
 	| undefined;
+
+export type ModalPlacementType =
+	| "top-left"
+	| "top-center"
+	| "top-right"
+	| "center-left"
+	| "center"
+	| "center-right"
+	| "bottom-left"
+	| "bottom-center"
+	| "bottom-right";
