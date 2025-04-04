@@ -9,7 +9,7 @@
 		type TooltipProps
 	} from '$lib';
   import type { RadioColorType } from './types'
-  import type { Coords, Middleware, Placement, Strategy } from "@floating-ui/dom";
+  import type { Placement } from "@floating-ui/dom";
 	import HighlightCompo from './utils/HighlightCompo.svelte';
 	import DynamicCodeBlockHighlight from './utils/DynamicCodeBlockHighlight.svelte';
 	import CodeWrapper from './utils/CodeWrapper.svelte';
