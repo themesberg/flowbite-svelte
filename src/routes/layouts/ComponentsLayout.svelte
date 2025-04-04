@@ -13,7 +13,7 @@
   /* eslint-disable  @typescript-eslint/no-explicit-any */
   const posts: Record<string, any[]> = data.posts.posts || {};
   const builders: Array<{path: string}> = data.posts.builders || [];  const drawerHidden: Writable<boolean> = getContext("drawer");
-	$inspect('data', JSON.stringify(builders))
+	// $inspect('data', JSON.stringify(builders))
   // const closeDrawer = (
   // ) => {
   //   drawerHidden.set(true);
@@ -84,7 +84,7 @@
       {#if builder.path !== "/+layout"}
       {@const pathWithoutSlash = builder.path.replace(/^\//, '')}
       {@const capitalizedPath = pathWithoutSlash.charAt(0).toUpperCase() + pathWithoutSlash.slice(1)}
-      {@const href = `/builder/${builder.path}`}
+      {@const href = `/builder${builder.path}`}
         <SidebarItem label={capitalizedPath} {href} {spanClass} />
       {/if}
     {/each}
