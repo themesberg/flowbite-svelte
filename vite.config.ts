@@ -27,6 +27,7 @@ export default defineConfig({
     }
   },
   define: {
+    __NAME__: JSON.stringify(pkg.name),
     __VERSION__: JSON.stringify(pkg.version)
   }
 });

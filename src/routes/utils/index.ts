@@ -50,6 +50,7 @@ export const fetchMarkdownPosts = async () => {
       };
     })
   );
+
   // returns an array of paths, /radio from /src/routes/forms/radio.md
   const allForms = await Promise.all(
     iterableFormFiles.map(async ([path, resolver]) => {
@@ -158,4 +159,22 @@ export const fetchMarkdownPosts = async () => {
     plugins: allPlugins
     // experimental: allExperimental
   };
+};
+
+export const fetchBuilders = async () => {
+  const builderFiles = import.meta.glob("/src/routes/builder/*.svelte");
+  
+  const iterableBuilderFiles = Object.entries(builderFiles);
+
+  const allBuilders = await Promise.all(
+    iterableBuilderFiles.map(async ([path, _]) => {
+      // const { metadata } = await resolver();
+      return {
+        // meta: metadata,
+        path: filePath(path)
+      };
+    })
+  )
+
+  return allBuilders
 };

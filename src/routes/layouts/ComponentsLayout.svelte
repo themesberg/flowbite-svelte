@@ -11,14 +11,18 @@
 
   let { data, children } = $props();
   /* eslint-disable  @typescript-eslint/no-explicit-any */
-  const posts: Record<string, any[]> = data.posts || {};
-  const drawerHidden: Writable<boolean> = getContext("drawer");
-
-  // const closeDrawer = () => {
+  const posts: Record<string, any[]> = data.posts.posts || {};
+  const builders: Array<{path: string}> = data.posts.builders || [];  const drawerHidden: Writable<boolean> = getContext("drawer");
+	$inspect('data', JSON.stringify(builders))
+  // const closeDrawer = (
+  // ) => {
   //   drawerHidden.set(true);
   // };
 
   let activeUrl = $state(page.url.pathname);
+  const hasPath = (key: string) => activeUrl.includes(key);
+	let isBuilderPage = $derived(hasPath('builder'));
+  // $inspect('pageStatus:', pageStatus)
   const sidebarUi = uiHelpers();
   let isOpen = $state(true);
   const closeSidebar = sidebarUi.close;
@@ -49,7 +53,7 @@
   });
 
   let spanClass = "";
-  let mainClass = "lg:static z-50 w-96"; // "lg:ms-auto relative fixed inset-0 z-30 w-64 flex-none border1-e border-gray-200 bg-white lg:static lg:block lg:h-auto lg:pt-0 dark:border-gray-600 dark:bg-gray-900";
+  let mainClass = "lg:static z-50 w-96 bg-white"; // "lg:ms-auto relative fixed inset-0 z-30 w-64 flex-none border1-e border-gray-200 bg-white lg:static lg:block lg:h-auto lg:pt-0 dark:border-gray-600 dark:bg-gray-900";
   let nonActiveClass = "text-sm transition-colors duration-200 relative font-medium hover:text-gray-900 hover:bg-transparent dark:hover:bg-transparent hover:cursor-pointer text-gray-500 dark:text-gray-400 dark:hover:text-white";
   let activeClass = "text-sm relative font-medium cursor-default bg-transparent dark:bg-transparent hover:bg-transparent dark:hover:bg-transparent text-primary-700 dark:text-primary-700";
   let btnClass = "my-0 text-sm font-semibold tracking-wide uppercase text-gray-700 dark:text-gray-200 hover:bg-transparent dark:hover:bg-transparent hover:text-primary-700 dark:hover:text-primary-600";
@@ -75,6 +79,16 @@
         {/each}
       </SidebarDropdownWrapper>
     {/each}
+    <SidebarDropdownWrapper label='Builders' ulClass="space-y-0 p-0" {btnClass} class={ "text-primary-700 dark:text-primary-700" }>
+    {#each builders as builder}
+      {#if builder.path !== "/+layout"}
+      {@const pathWithoutSlash = builder.path.replace(/^\//, '')}
+      {@const capitalizedPath = pathWithoutSlash.charAt(0).toUpperCase() + pathWithoutSlash.slice(1)}
+      {@const href = `/builder/${builder.path}`}
+        <SidebarItem label={capitalizedPath} {href} {spanClass} />
+      {/if}
+    {/each}
+    </SidebarDropdownWrapper>
     <SidebarItem label="Blocks" href="https://flowbite-svelte-blocks.vercel.app/" spanClass="mt-4 ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass} />
     <SidebarItem label="Admin Dashboard" href="https://flowbite-svelte-admin-dashboard.vercel.app/" spanClass="ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass} />
   </SidebarGroup>
@@ -84,7 +98,13 @@
 
 <div hidden={$drawerHidden} class="static inset-0 z-20 bg-gray-900/50 dark:bg-gray-900/60" onclick={closeSidebar} onkeydown={closeSidebar} role="presentation"></div>
 
+{#if isBuilderPage}
+<main class="min-w-0 lg:static lg:mx-auto lg:max-h-full lg:overflow-visible mb-40">
+  {@render children()}
+</main>
+{:else}
 <main class="min-w-0 lg:static lg:container lg:mx-auto lg:max-h-full lg:overflow-visible">
   {@render children()}
 </main>
 <Toc {extract} headingSelector="#mainContent > :where(h2, h3)" />
+{/if}

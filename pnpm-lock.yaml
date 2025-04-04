@@ -126,6 +126,9 @@ importers:
       svelte-meta-tags:
         specifier: ^4.2.0
         version: 4.2.0(svelte@5.23.2)
+      svelte-rune-highlight:
+        specifier: ^0.6.6
+        version: 0.6.6(svelte@5.23.2)
       tailwind-merge:
         specifier: ^3.0.2
         version: 3.0.2
@@ -1905,6 +1908,10 @@ packages:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
 
+  highlight.js@11.11.1:
+    resolution: {integrity: sha512-Xwwo44whKBVCYoliBQwaPvtd/2tYFkRQtXDWj1nackaV2JPXx3L0+Jvd8/qCJ2p+ML0/XVkJ2q+Mr+UVdpJK5w==}
+    engines: {node: '>=12.0.0'}
+
   html-encoding-sniffer@4.0.0:
     resolution: {integrity: sha512-Y22oTqIU4uuPgEemfz7NDJz6OeKf12Lsu+QC+s3BVpda64lTiMYCyGwg5ki4vFxkMwQdeZDl2adZoqUgdFuTgQ==}
     engines: {node: '>=18'}
@@ -2699,6 +2706,11 @@ packages:
 
   svelte-meta-tags@4.2.0:
     resolution: {integrity: sha512-VFnbdN4CNLeGaiRK++mhHKm/otgId3qM0hY6fu6vhh+e+jGE9Xr3kSUjgKAEnquktskEjUEo7W0ek7EANsyTHw==}
+    peerDependencies:
+      svelte: ^5.0.0
+
+  svelte-rune-highlight@0.6.6:
+    resolution: {integrity: sha512-IDpujRQgJJA4gu/9+yF8bMLEn/2GKqI+oGB571MqkSVlLonVuEWp2FGaM7RQ0OCTUfOU1ibumzZh1VrBA4ehAg==}
     peerDependencies:
       svelte: ^5.0.0
 
@@ -4814,6 +4826,8 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
+  highlight.js@11.11.1: {}
+
   html-encoding-sniffer@4.0.0:
     dependencies:
       whatwg-encoding: 3.1.1
@@ -5496,6 +5510,11 @@ snapshots:
   svelte-meta-tags@4.2.0(svelte@5.23.2):
     dependencies:
       schema-dts: 1.1.5
+      svelte: 5.23.2
+
+  svelte-rune-highlight@0.6.6(svelte@5.23.2):
+    dependencies:
+      highlight.js: 11.11.1
       svelte: 5.23.2
 
   svelte2tsx@0.7.35(svelte@5.23.2)(typescript@5.8.2):

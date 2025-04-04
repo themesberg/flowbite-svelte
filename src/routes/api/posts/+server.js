@@ -1,7 +1,11 @@
-import { fetchMarkdownPosts } from "../../utils";
+import { fetchBuilders, fetchMarkdownPosts } from "../../utils";
 import { json } from "@sveltejs/kit";
 
 export const GET = async () => {
   const allPosts = await fetchMarkdownPosts();
-  return json(allPosts);
+  const allBuilders = await fetchBuilders();
+  return json({
+    posts: allPosts,
+    builders: allBuilders
+  });
 };
