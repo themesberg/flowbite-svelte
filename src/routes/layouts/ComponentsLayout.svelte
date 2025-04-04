@@ -99,7 +99,7 @@
 <div hidden={$drawerHidden} class="static inset-0 z-20 bg-gray-900/50 dark:bg-gray-900/60" onclick={closeSidebar} onkeydown={closeSidebar} role="presentation"></div>
 
 {#if isBuilderPage}
-<main class="min-w-0 lg:static lg:mx-auto lg:max-h-full lg:overflow-visible mb-40">
+<main class="mx-auto max-w-7xl min-w-0 flex-auto px-8 pb-40 lg:static lg:max-h-full lg:overflow-visible">
   {@render children()}
 </main>
 {:else}
