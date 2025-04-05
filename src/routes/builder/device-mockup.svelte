@@ -141,6 +141,7 @@
 		builderExpand = !builderExpand;
 	};
 </script>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
 
 <H1>Device Mockup Builder</H1>
 

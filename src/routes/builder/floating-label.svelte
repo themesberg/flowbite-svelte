@@ -73,6 +73,7 @@
 		builderExpand = !builderExpand;
 	};
 </script>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
 
 <H1>Floating label builder</H1>
 
