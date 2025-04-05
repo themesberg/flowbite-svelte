@@ -64,4 +64,6 @@ export type RangeColorType =
 | 'fuchsia'
 | 'pink'
 | 'rose'
-| undefined;
+	| undefined;
+
+export type SelectSize = 'sm' | 'md' | 'lg';
