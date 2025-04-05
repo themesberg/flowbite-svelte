@@ -138,7 +138,7 @@
 		<Label class="mb-4 w-full font-bold">Color</Label>
 		{#each colors as colorOption}
 			<Radio
-				labelClass="w-24 my-1"
+				class="w-24 my-1"
 				name="alert_reactive"
 				bind:group={color}
 				color={colorOption as RadioColorType}
@@ -150,7 +150,7 @@
 		<Label class="mb-4 w-full font-bold">Padding</Label>
 		{#each paddings as padding}
 			<Radio
-				labelClass="w-16 my-1"
+				class="w-16 my-1"
 				name="interactive_card_padding"
 				bind:group={cardPadding}
 				value={padding}>{padding}</Radio
@@ -161,7 +161,7 @@
 		<Label class="mb-4 w-full font-bold">Shadow</Label>
 		{#each shadows as shadow}
 			<Radio
-				labelClass="w-16 my-1"
+				class="w-16 my-1"
 				name="interactive_card_shadow"
 				bind:group={cardShadow}
 				value={shadow}>{shadow}</Radio

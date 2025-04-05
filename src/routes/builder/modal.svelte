@@ -150,7 +150,7 @@
 		<Label class="mb-4 w-full font-bold">Position</Label>
 		{#each placements as position}
 			<Radio
-				labelClass="w-32 my-1"
+				class="w-32 my-1"
 				name="modal-position"
 				bind:group={placement}
 				value={position}>{position}</Radio
@@ -161,7 +161,7 @@
 		<Label class="mb-4 w-full font-bold">Transition</Label>
 		{#each transitions as transition}
 			<Radio
-				labelClass="w-16 my-1"
+				class="w-16 my-1"
 				name="transition_interactive"
 				bind:group={selectedTransition}
 				value={transition.name}>{transition.name}</Radio

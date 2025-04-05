@@ -107,7 +107,7 @@
 		<Label class="mb-4 w-full font-bold">Color</Label>
 		{#each colors as colorOption}
 			<Radio
-				labelClass="w-24 my-1"
+				class="w-24 my-1"
 				name="color"
 				bind:group={color}
 				color={colorOption as RadioColorType}
@@ -119,7 +119,7 @@
 		<Label class="mb-4 w-full font-bold">Position</Label>
 		{#each placements as option}
 			<Radio
-				labelClass="w-20 my-1"
+				class="w-20 my-1"
 				name="interactive_toast_position"
 				bind:group={placement}
 				value={option}>{option}</Radio

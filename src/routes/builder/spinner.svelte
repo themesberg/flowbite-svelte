@@ -91,7 +91,7 @@
 		<Label class="mb-4 w-full font-bold">Color</Label>
 		{#each colors as color}
 			<Radio
-				labelClass="w-24 my-1"
+				class="w-24 my-1"
 				name="spinnercolor"
 				bind:group={spinnerColor}
 				color={color as RadioColorType}
@@ -111,7 +111,7 @@
 		<Label class="mb-4 w-full font-bold">Alignment</Label>
 		{#each alignments as option}
 			<Radio
-				labelClass="w-16 my-1"
+				class="w-16 my-1"
 				name="alignment"
 				bind:group={selectedAlignment}
 				value={option.name}>{option.name}</Radio

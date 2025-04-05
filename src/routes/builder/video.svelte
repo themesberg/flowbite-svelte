@@ -88,7 +88,7 @@
 		<Label class="mb-4 w-full font-bold">Style</Label>
 		{#each videoClasses as option}
 			<Radio
-				labelClass="w-24 my-1"
+				class="w-24 my-1"
 				name="interactive_toast_color"
 				bind:group={selectedClass}
 				value={option.name}>{option.name}</Radio

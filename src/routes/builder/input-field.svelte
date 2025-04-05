@@ -116,7 +116,7 @@ ${closeBtnStatus ? `</Input>` : ''}${helperSlot ? `<Helper class="ps-6" color="$
 		<Label class="mb-4 w-full font-bold">Color</Label>
 		{#each colors as colorOption}
 			<Radio
-				labelClass="w-20 my-1"
+				class="w-20 my-1"
 				name="input_color"
 				bind:group={inputColor}
 				color={colorOption as RadioColorType}
@@ -139,7 +139,7 @@ ${closeBtnStatus ? `</Input>` : ''}${helperSlot ? `<Helper class="ps-6" color="$
 		<Label class="mb-4 w-full font-bold">Helper Color</Label>
 		{#each colors as colorOption}
 			<Radio
-				labelClass="w-20 my-1 {helperSlot ? '' : 'opacity-30 cursor-not-allowed'}"
+				class="w-20 my-1 {helperSlot ? '' : 'opacity-30 cursor-not-allowed'}"
 				disabled={helperSlot ? false : true}
 				name="helper_color"
 				bind:group={helperColor}

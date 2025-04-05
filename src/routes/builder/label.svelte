@@ -51,7 +51,7 @@
 		<Label class="m-4 w-full font-bold">Color</Label>
 		{#each colors as colorOption}
 			<Radio
-				labelClass="w-24 my-1"
+				class="w-24 my-1"
 				name="default_alert_color"
 				bind:group={labelColor}
 				color={colorOption as ColorName}

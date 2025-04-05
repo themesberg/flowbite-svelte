@@ -106,7 +106,7 @@
 		<Label class="mb-4 w-full font-bold">Color</Label>
 		{#each colors as colorOption}
 			<Radio
-				labelClass="w-24 my-1"
+				class="w-24 my-1"
 				name="floating_color"
 				bind:group={floatingColor}
 				color={colorOption as RadioColorType}
@@ -121,7 +121,7 @@
 		<Label class="mb-4 w-full font-bold">Helper Color</Label>
 		{#each colors as colorOption}
 			<Radio
-				labelClass="w-24 my-1 {helperSlot ? '' : 'opacity-30 cursor-not-allowed'}"
+				class="w-24 my-1 {helperSlot ? '' : 'opacity-30 cursor-not-allowed'}"
 				disabled={helperSlot ? false : true}
 				name="helper_color"
 				bind:group={helperColor}

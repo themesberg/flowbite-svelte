@@ -190,7 +190,7 @@
 		<Label class="mb-4 w-full font-bold">Transition</Label>
 		{#each transitions as transition}
 			<Radio
-				labelClass="w-24 my-1"
+				class="w-24 my-1"
 				name="dropdown_transition"
 				bind:group={selectedTransition}
 				value={transition.name}>{transition.name}</Radio

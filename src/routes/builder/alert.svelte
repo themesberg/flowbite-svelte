@@ -167,7 +167,7 @@
 		<Label class="mb-4 w-full font-bold">Color</Label>
 		{#each colors as colorOption}
 			<Radio
-				labelClass="w-24 my-1"
+				class="w-24 my-1"
 				name="alert_reactive"
 				bind:group={color}
 				color={colorOption as AlertProps['color']}

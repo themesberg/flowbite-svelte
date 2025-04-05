@@ -126,7 +126,7 @@
 		<Label class="mb-4 w-full font-bold">Color</Label>
 		{#each colors as colorOption}
 			<Radio
-				labelClass="w-24 my-1"
+				class="w-24 my-1"
 				name="interactive_toast_color"
 				bind:group={toastColor}
 				color={colorOption as RadioColorType}
@@ -138,7 +138,7 @@
 		<Label class="mb-4 w-full font-bold">Transition</Label>
 		{#each transitions as transition}
 			<Radio
-				labelClass="w-16 my-1"
+				class="w-16 my-1"
 				name="interactive_toast_transition"
 				bind:group={selectedTransition}
 				value={transition.name}>{transition.name}</Radio
@@ -149,7 +149,7 @@
 		<Label class="mb-4 w-full font-bold">Position</Label>
 		{#each positions as option}
 			<Radio
-				labelClass="w-32 my-1"
+				class="w-32 my-1"
 				name="interactive_toast_position"
 				bind:group={toastPosition}
 				value={option}>{option}</Radio

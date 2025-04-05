@@ -179,7 +179,7 @@
 		<Label class="mb-4 w-full font-bold">Rounded</Label>
 		{#each imageRoundedSizes as size}
 			<Radio
-				labelClass="w-12 my-1"
+				class="w-12 my-1"
 				name="imageRoundedSize"
 				bind:group={imagePlaceholderRounded}
 				value={size}>{size}</Radio
@@ -307,7 +307,7 @@
 		<Label class="mb-4 w-full font-bold">Rounded</Label>
 		{#each listRoundedSizes as size}
 			<Radio
-				labelClass="w-12 my-1"
+				class="w-12 my-1"
 				name="roundedSize"
 				bind:group={listPlaceholderRounded}
 				value={size}>{size}</Radio
@@ -318,7 +318,7 @@
 		<Label class="mb-4 w-full font-bold">Items:</Label>
 		{#each listItemNumbers as itemNumber}
 			<Radio
-				labelClass="w-10 my-1"
+				class="w-10 my-1"
 				name="itemNumber"
 				bind:group={listPlaceholderItemNumber}
 				value={itemNumber}>{itemNumber}</Radio

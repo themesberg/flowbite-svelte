@@ -139,7 +139,7 @@
 		<Label class="mb-4 w-full font-bold">Size</Label>
 		{#each progressSizes as size}
 			<Radio
-				labelClass="w-24 my-1"
+				class="w-24 my-1"
 				name="progress_size"
 				bind:group={progressSize.size}
 				value={size.size}
@@ -151,7 +151,7 @@
 		<Label class="mb-4 w-full font-bold">Color</Label>
 		{#each colors as color}
 			<Radio
-				labelClass="w-24 my-1"
+				class="w-24 my-1"
 				name="interactive_progress_color"
 				bind:group={progressColor}
 				color={color as RadioColorType}

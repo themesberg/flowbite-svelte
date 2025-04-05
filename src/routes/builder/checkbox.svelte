@@ -99,7 +99,7 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`;
 		<Label class="mb-4 w-full font-bold">Color</Label>
 		{#each colors as colorOption}
 			<Radio
-				labelClass="w-24 my-1"
+				class="w-24 my-1"
 				name="checkbox_color"
 				bind:group={checkboxColor}
 				color={colorOption as RadioColorType}

@@ -67,3 +67,26 @@ export type RangeColorType =
 	| undefined;
 
 export type SelectSize = 'sm' | 'md' | 'lg';
+
+export type ToggleColor =
+| 'primary'
+| 'secondary'
+| 'gray'
+| 'red'
+| 'orange'
+| 'amber'
+| 'yellow'
+| 'lime'
+| 'green'
+| 'emerald'
+| 'teal'
+| 'cyan'
+| 'sky'
+| 'blue'
+| 'indigo'
+| 'violet'
+| 'purple'
+| 'fuchsia'
+| 'pink'
+| 'rose'
+| undefined;

@@ -163,7 +163,7 @@
 		<Label class="mb-4 w-full font-bold">Color</Label>
 		{#each btnColors as colorOption}
 			<Radio
-				labelClass="w-24 my-1"
+				class="w-24 my-1"
 				name="btn_color"
 				bind:group={btnColor as ButtonProps['color']}
 				color={colorOption as RadioColorType}
@@ -175,7 +175,7 @@
 		<Label class="mb-4 w-full font-bold">Size</Label>
 		{#each btnSizes as sizeOption}
 			<Radio
-				labelClass="w-24 my-1"
+				class="w-24 my-1"
 				name="btn_size"
 				bind:group={btnSize as ButtonProps['size']}
 				value={sizeOption}>{sizeOption}</Radio
@@ -231,7 +231,7 @@
 		<Label class="mb-4 w-full font-bold">Color</Label>
 		{#each gradientColors as colorOption}
 			<Radio
-				labelClass="w-32 my-1"
+				class="w-32 my-1"
 				name="gradient_color"
 				bind:group={gradientColor}
 				value={colorOption}>{colorOption}</Radio
@@ -242,7 +242,7 @@
 		<Label class="mb-4 w-full font-bold">Size</Label>
 		{#each gradientSizes as sizeOption}
 			<Radio
-				labelClass="w-24 my-1"
+				class="w-24 my-1"
 				name="gradient_size"
 				bind:group={gradientSize as GradientButtonProps['size']}
 				value={sizeOption}>{sizeOption}</Radio
