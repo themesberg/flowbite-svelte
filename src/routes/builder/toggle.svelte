@@ -20,6 +20,13 @@
 		isSvelteOverflow,
 		getExampleFileName
 	} from './utils/helpers';
+  import MetaTag from '../utils/MetaTag.svelte'
+  
+	// MetaTag
+	let breadcrumb_title = "Toggle builder"
+	let description = "A quick way to create Toggle component"
+	let title = "Toggle builder"
+	let dir = "builder"
 
 
 	const colors = Object.keys(toggle.variants.color) as ToggleProps['color'][];
@@ -75,6 +82,8 @@
 		builderExpand = builder.isOpen;
 	});
 </script>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
+
 
 <H1>Toggle Builder</H1>
 <CodeWrapper>

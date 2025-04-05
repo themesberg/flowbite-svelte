@@ -135,7 +135,6 @@
 </script>
 <MetaTag {breadcrumb_title} {description} {title} {dir} />
 
-
 <H1>Alert Bilder</H1>
 
 <CodeWrapper>
