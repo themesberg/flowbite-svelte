@@ -10,7 +10,13 @@
 	import H1 from './utils/H1.svelte';
 	import H2 from './utils/H2.svelte';
 	import { isGeneratedCodeOverflow } from './utils/helpers';
-
+	import MetaTag from '../utils/MetaTag.svelte'
+  
+	// MetaTag
+	let breadcrumb_title = "Alert builder"
+	let description = "A quick way to create Alert component"
+	let title = "Alert builder"
+	let dir = "builder"
 	// for interactive code builder
 	const colors = Object.keys(fsalert.variants.color);
 	let color: AlertProps['color'] = $state('primary');
@@ -127,6 +133,8 @@
 		builderExpand = builder.isOpen;
 	});
 </script>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
+
 
 <H1>Alert Bilder</H1>
 

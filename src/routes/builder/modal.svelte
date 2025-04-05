@@ -11,6 +11,13 @@
 	import { isGeneratedCodeOverflow } from './utils/helpers';
   import type { ModalPlacementType } from './types'
 
+	import MetaTag from '../utils/MetaTag.svelte'
+  
+	// MetaTag
+	let breadcrumb_title = "Modal builder"
+	let description = "A quick way to create Modal component"
+	let title = "Modal builder"
+	let dir = "builder"
 
   let defaultModal = $state(false);
   const placements: ModalPlacementType[] = [
@@ -105,6 +112,7 @@
 		builderExpand = builder.isOpen;
 	});
 </script>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
 
 <H1>Modal Bilder</H1>
 

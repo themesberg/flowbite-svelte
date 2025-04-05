@@ -16,7 +16,15 @@
 	import H1 from './utils/H1.svelte';
 	import H2 from './utils/H2.svelte';
 	import { isGeneratedCodeOverflow } from './utils/helpers';
-
+	import MetaTag from '../utils/MetaTag.svelte'
+  
+	// MetaTag
+	let breadcrumb_title = "Checkbox builder"
+	let description = "A quick way to create Checkbox component"
+	let title = "Checkbox builder"
+	let dir = "builder"
+	
+	
 	const colors = Object.keys(checkbox.variants.color);
 	let checkboxColor: CheckboxProps['color'] = $state('primary');
 
@@ -68,6 +76,7 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`;
 		builderExpand = builder.isOpen;
 	});
 </script>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
 
 <H1>Checkbox Builder</H1>
 <CodeWrapper>

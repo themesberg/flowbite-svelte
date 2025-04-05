@@ -15,7 +15,14 @@
 	import CodeWrapper from './utils/CodeWrapper.svelte';
 	import H1 from './utils/H1.svelte';
   import { isGeneratedCodeOverflow } from './utils/helpers';
-
+	import MetaTag from '../utils/MetaTag.svelte'
+  
+	// MetaTag
+	let breadcrumb_title = "Progress builder"
+	let description = "A quick way to create Progress component"
+	let title = "Progress builder"
+	let dir = "builder"
+	
 	let progress = $state('45');
 	const progressSizes = [
 		{ size: 'h-4', class: '' },
@@ -100,6 +107,7 @@
 	});
 
 </script>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
 
 <H1>Progressbar Builder</H1>
 <CodeWrapper>

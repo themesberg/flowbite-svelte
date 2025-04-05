@@ -20,11 +20,19 @@
 	import { blur, fly, slide, scale } from 'svelte/transition';
 	import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
 	import { sineIn, linear } from 'svelte/easing';
-	import { page } from '$app/stores';
-	let activeUrl = $state($page.url.pathname);
+	import { page } from '$app/state';
+	let activeUrl = $state(page.url.pathname);
 	$effect(() => {
-		activeUrl = $page.url.pathname;
+		activeUrl = page.url.pathname;
 	});
+
+	import MetaTag from '../utils/MetaTag.svelte'
+  
+	// MetaTag
+	let breadcrumb_title = "Dropdown builder"
+	let description = "A quick way to create Dropdown component"
+	let title = "Dropdown builder"
+	let dir = "builder"
 
 	let dropdownDividerHeaderFooter = uiHelpers();
 	let dropdownDividerHeaderFooterStatus = $state(false);
@@ -135,6 +143,7 @@
 		builderExpand = builder.isOpen;
 	});
 </script>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
 
 <H1>Dropdown Builder</H1>
 <CodeWrapper>

@@ -18,7 +18,14 @@
 	import H2 from './utils/H2.svelte';
 	import { isGeneratedCodeOverflow } from './utils/helpers';
 	import { capitalizeFirstLetter } from './utils/helpers';
-
+	import MetaTag from '../utils/MetaTag.svelte'
+  
+	// MetaTag
+	let breadcrumb_title = "Button builder"
+	let description = "A quick way to create Button component"
+	let title = "Button builder"
+	let dir = "builder"
+	
 	// color, size, group, outline, shadow, disabled, pill
 	const btnColors = Object.keys(button.variants.color);
 	let btnColor = $state('primary');
@@ -135,6 +142,7 @@
 		builderExpand = builder.isOpen;
 	});
 </script>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
 
 <H1>Button Bilder</H1>
 

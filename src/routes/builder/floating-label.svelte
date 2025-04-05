@@ -17,7 +17,13 @@
 	import H1 from './utils/H1.svelte';
 	import H2 from './utils/H2.svelte';
 	import { isGeneratedCodeOverflow } from './utils/helpers';
-	
+	import MetaTag from '../utils/MetaTag.svelte'
+  
+	// MetaTag
+	let breadcrumb_title = "Floating label builder"
+	let description = "A quick way to create Floating label component"
+	let title = "Floating label builder"
+	let dir = "builder"
 
 	const inputStyles = ['standard', 'filled', 'outlined'];
 	let inputStyle: FloatingLabelInputProps['variant'] = $state('standard');

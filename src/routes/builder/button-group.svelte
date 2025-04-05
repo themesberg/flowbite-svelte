@@ -18,7 +18,14 @@
 	import H1 from './utils/H1.svelte';
 	import H2 from './utils/H2.svelte';
 	import { isGeneratedCodeOverflow } from './utils/helpers';
-
+	import MetaTag from '../utils/MetaTag.svelte'
+  
+	// MetaTag
+	let breadcrumb_title = "Button group builder"
+	let description = "A quick way to create Button group component"
+	let title = "Button group builder"
+	let dir = "builder"
+	
 	// size, class
 	const sizes = Object.keys(buttonGroup.variants.size);
 	let size: ButtonGroupProps['size'] = $state('md');
@@ -78,6 +85,7 @@
 		builderExpand = builder.isOpen;
 	});
 </script>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
 
 <H1>Button-group Builder</H1>
 

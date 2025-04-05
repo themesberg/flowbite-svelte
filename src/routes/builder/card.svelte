@@ -17,7 +17,14 @@
 	import H1 from './utils/H1.svelte';
 	import H2 from './utils/H2.svelte';
 	import { isGeneratedCodeOverflow } from './utils/helpers';
-
+	import MetaTag from '../utils/MetaTag.svelte'
+	
+	// MetaTag
+	let breadcrumb_title = "Card builder"
+	let description = "A quick way to create Card component"
+	let title = "Card builder"
+	let dir = "builder"
+	
   let reverse = $state(false);
 
 	const sizes = Object.keys(card.variants.size);
@@ -95,6 +102,7 @@
 </script>
 
 <H1>Card Builder</H1>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
 
 <CodeWrapper>
 	<div class="flex justify-center">

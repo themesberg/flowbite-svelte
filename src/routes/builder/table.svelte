@@ -15,6 +15,13 @@
 	import H1 from './utils/H1.svelte';
 	import H2 from './utils/H2.svelte';
 	import { isGeneratedCodeOverflow } from './utils/helpers';
+	import MetaTag from '../utils/MetaTag.svelte'
+  
+	// MetaTag
+	let breadcrumb_title = "Table builder"
+	let description = "A quick way to create Table component"
+	let title = "Table builder"
+	let dir = "builder"
 	
 	let color: TableProps['color'] = $state('default');
 	const colors = Object.keys(table.variants.color);
@@ -72,6 +79,7 @@
 		builderExpand = builder.isOpen;
 	});
 </script>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
 
 <H1>Table Builder</H1>
 <CodeWrapper>

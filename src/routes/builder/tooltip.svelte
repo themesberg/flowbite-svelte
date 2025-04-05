@@ -16,7 +16,13 @@
 	import H1 from './utils/H1.svelte';
 	import H2 from './utils/H2.svelte';
 	import { isGeneratedCodeOverflow } from './utils/helpers';
-
+	import MetaTag from '../utils/MetaTag.svelte'
+  
+	// MetaTag
+	let breadcrumb_title = "Tooltip builder"
+	let description = "A quick way to create Tooltip component"
+	let title = "Tooltip builder"
+	let dir = "builder"
 
 	// for interactive code builder
 	// const position: Placement = Object.keys(tooltip.variants.position);
@@ -86,6 +92,7 @@
 		builderExpand = builder.isOpen;
 	});
 </script>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
 
 <H1>Tooltip Builder</H1>
 

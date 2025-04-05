@@ -19,7 +19,14 @@
 	import H1 from './utils/H1.svelte';
 	import H2 from './utils/H2.svelte';
 	import { isGeneratedCodeOverflow } from './utils/helpers';
-
+	import MetaTag from '../utils/MetaTag.svelte'
+  
+	// MetaTag
+	let breadcrumb_title = "Input field builder"
+	let description = "A quick way to create Input field component"
+	let title = "Input field builder"
+	let dir = "builder"
+	
   let { text = $bindable('') } = $props();
 	const sizes = ['sm', 'md', 'lg'];
 	let inputSize: InputProps['size'] = $state('md');
@@ -75,6 +82,7 @@ ${closeBtnStatus ? `</Input>` : ''}${helperSlot ? `<Helper class="ps-6" color="$
 		builderExpand = builder.isOpen;
 	});
 </script>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
 
 <H1>Input Builder</H1>
 

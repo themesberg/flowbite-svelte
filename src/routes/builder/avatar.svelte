@@ -5,7 +5,13 @@
 	import H1 from './utils/H1.svelte';
 	import H2 from './utils/H2.svelte';
 	import { isGeneratedCodeOverflow } from './utils/helpers';
-	const dirName = 'avatar';
+	import MetaTag from '../utils/MetaTag.svelte'
+  
+	// MetaTag
+	let breadcrumb_title = "Avatar builder"
+	let description = "A quick way to create Avatar component"
+	let title = "Avatar builder"
+	let dir = "builder"
 
 	// reactive example, rounded, border, stacked, size, className
 	const sizes = Object.keys(avatar.variants.size);
@@ -56,6 +62,7 @@
 		builderExpand = builder.isOpen;
 	});
 </script>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
 
 <H1>Avatar Bilder</H1>
 

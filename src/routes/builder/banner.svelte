@@ -20,7 +20,14 @@
 	import H1 from './utils/H1.svelte';
 	import H2 from './utils/H2.svelte';
 	import { isGeneratedCodeOverflow } from './utils/helpers';
-
+	import MetaTag from '../utils/MetaTag.svelte'
+  
+	// MetaTag
+	let breadcrumb_title = "Banner builder"
+	let description = "A quick way to create Banner component"
+	let title = "Banner builder"
+	let dir = "builder"
+	
 	// interactive example
 	// position, bannerType, color, class:divClass
 	const colors = Object.keys(banner.variants.color);
@@ -117,6 +124,7 @@
 		builderExpand = builder.isOpen;
 	});
 </script>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
 
 <H1>Banner Builder</H1>
 

@@ -19,7 +19,14 @@
 	import H2 from './utils/H2.svelte';
 	import { isGeneratedCodeOverflow } from './utils/helpers';
   import type { Placement } from "@floating-ui/dom";
-
+	import MetaTag from '../utils/MetaTag.svelte'
+  
+	// MetaTag
+	let breadcrumb_title = "Popover builder"
+	let description = "A quick way to create Popover component"
+	let title = "Popover builder"
+	let dir = "builder"
+	
   const placements: Placement[] = [
     "top", 
     "right", 
@@ -125,6 +132,7 @@
 		builderExpand = builder.isOpen;
 	});
 </script>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
 
 <H1>Popover Builder</H1>
 <CodeWrapper class="">

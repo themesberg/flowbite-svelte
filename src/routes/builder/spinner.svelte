@@ -15,7 +15,14 @@
 	import H1 from './utils/H1.svelte';
 	import H2 from './utils/H2.svelte';
 	import { isGeneratedCodeOverflow } from './utils/helpers';
-
+	import MetaTag from '../utils/MetaTag.svelte'
+  
+	// MetaTag
+	let breadcrumb_title = "Spinner builder"
+	let description = "A quick way to create Spinner component"
+	let title = "Spinner builder"
+	let dir = "builder"
+	
 	// color, size, class
 	const colors: SpinnerProps['color'][] = Object.keys(
 		spinner.variants.color
@@ -70,6 +77,7 @@
 		builderExpand = builder.isOpen;
 	});
 </script>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
 
 <H1>Spinner Builder</H1>
 

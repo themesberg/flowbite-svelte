@@ -6,7 +6,14 @@
 	import H1 from './utils/H1.svelte';
 	import H2 from './utils/H2.svelte';
 	import { isGeneratedCodeOverflow } from './utils/helpers';
-
+	import MetaTag from '../utils/MetaTag.svelte'
+  
+	// MetaTag
+	let breadcrumb_title = "Indicator builder"
+	let description = "A quick way to create Indicator component"
+	let title = "Indicator builder"
+	let dir = "builder"
+	
 	// color, size, rounded, border, placement and offset
 	const sizes = Object.keys(indicator.variants.size) as IndicatorProps['size'][];
 	const colors = Object.keys(indicator.variants.color) as IndicatorProps['color'][];
@@ -56,6 +63,7 @@
 		builderExpand = builder.isOpen;
 	});
 </script>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
 
 <H1>indicator</H1>
 <CodeWrapper>

@@ -10,8 +10,13 @@
 	import H1 from './utils/H1.svelte';
 	import H2 from './utils/H2.svelte';
 	import { isGeneratedCodeOverflow } from './utils/helpers';
-
-	const dirName = 'badge';
+  import MetaTag from '../utils/MetaTag.svelte'
+  
+	// MetaTag
+	let breadcrumb_title = "Badge builder"
+	let description = "A quick way to create Badge component"
+	let title = "Badge builder"
+	let dir = "builder"
 
 	// interactive example
 	const colors = Object.keys(badge.variants.color);
@@ -130,6 +135,7 @@
 		builderExpand = builder.isOpen;
 	});
 </script>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
 
 <H1>Badge Builder</H1>
 

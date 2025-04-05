@@ -6,7 +6,14 @@
 	import H1 from './utils/H1.svelte';
 	import H2 from './utils/H2.svelte';
   import { isGeneratedCodeOverflow } from './utils/helpers';
-
+	import MetaTag from '../utils/MetaTag.svelte'
+  
+	// MetaTag
+	let breadcrumb_title = "File input builder"
+	let description = "A quick way to create File input component"
+	let title = "File input builder"
+	let dir = "builder"
+	
 	let files: FileList | undefined = $state();
 	const sizes = Object.keys(fileupload.variants.size);
 	let size: FileuploadProps['size'] = $state('md');
@@ -50,6 +57,7 @@ ${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ''}`;
 		builderExpand = builder.isOpen;
 	});
 </script>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
 
 <H1>Fileupload Builder</H1>
 <CodeWrapper>

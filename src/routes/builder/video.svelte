@@ -5,7 +5,14 @@
 	import CodeWrapper from './utils/CodeWrapper.svelte';
 	import H1 from './utils/H1.svelte';
   import { isGeneratedCodeOverflow } from './utils/helpers';
-
+	import MetaTag from '../utils/MetaTag.svelte'
+  
+	// MetaTag
+	let breadcrumb_title = "Video builder"
+	let description = "A quick way to create Video component"
+	let title = "Video builder"
+	let dir = "builder"
+	
 	let controls = $state(true);
 	const changeControls = () => {
 		controls = !controls;
@@ -63,6 +70,7 @@
 		builderExpand = builder.isOpen;
 	});
 </script>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
 
 <H1>Video Player Builder</H1>
 <CodeWrapper>

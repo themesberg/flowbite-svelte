@@ -6,7 +6,14 @@
 	import H1 from './utils/H1.svelte';
 	import H2 from './utils/H2.svelte';
 	import { isGeneratedCodeOverflow } from './utils/helpers';
-
+	import MetaTag from '../utils/MetaTag.svelte'
+  
+	// MetaTag
+	let breadcrumb_title = "Tab builder"
+	let description = "A quick way to create Tab component"
+	let title = "Tab builder"
+	let dir = "builder"
+	
 	let tabStyle: TabsProps['tabStyle'] = $state('none') as NonNullable<TabsProps['tabStyle']>;
 	const tabStyles = Object.keys(tabs.variants.tabStyle);
 
@@ -65,6 +72,7 @@
 		builderExpand = builder.isOpen;
 	});
 </script>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
 
 <H1>Tab Builder</H1>
 <CodeWrapper>

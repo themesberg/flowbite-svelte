@@ -8,7 +8,14 @@
 	import H2 from './utils/H2.svelte';
 	import { capitalizeFirstLetter } from './utils/helpers';
   import { isGeneratedCodeOverflow } from './utils/helpers';
-
+  import MetaTag from '../utils/MetaTag.svelte'
+  
+	// MetaTag
+	let breadcrumb_title = "Label builder"
+	let description = "A quick way to create Label component"
+	let title = "Label builder"
+	let dir = "builder"
+	
 	const colors = Object.keys(label.variants.color);
 	let labelColor: ColorName = $state('gray');
 	// code generator
@@ -35,6 +42,7 @@
 		builderExpand = builder.isOpen;
 	});
 </script>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
 
 <H1>Label Builder</H1>
 <CodeWrapper>

@@ -7,6 +7,14 @@
 	import H1 from './utils/H1.svelte';
 	import H2 from './utils/H2.svelte';
   import { isGeneratedCodeOverflow } from './utils/helpers';
+	import MetaTag from '../utils/MetaTag.svelte'
+  
+	// MetaTag
+	let breadcrumb_title = "Device mockup builder"
+	let description = "A quick way to create Device mockup component"
+	let title = "Device mockup builder"
+	let dir = "builder"
+	
 	
 	const dirName = 'device-mockup';
 	
