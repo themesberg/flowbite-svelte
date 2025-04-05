@@ -53,3 +53,15 @@ export type ColorName =
 	| 'fuchsia'
 	| 'pink'
 	| 'rose';
+
+export type RangeColorType =
+| 'gray'
+| 'red'
+| 'blue'
+| 'indigo'
+| 'violet'
+| 'purple'
+| 'fuchsia'
+| 'pink'
+| 'rose'
+| undefined;
