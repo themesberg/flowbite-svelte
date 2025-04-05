@@ -143,7 +143,7 @@
 		>
 	</div>
 	{#snippet codeblock()}
-    <DynamicCodeBlockHighlight
+  <DynamicCodeBlockHighlight
     handleExpandClick={handleBuilderExpandClick}
     expand={builderExpand}
     showExpandButton={showBuilderExpandButton}
