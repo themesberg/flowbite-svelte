@@ -136,7 +136,7 @@
 	});
 </script>
 
-<H1>Interactive Button Bilder</H1>
+<H1>Button Bilder</H1>
 
 <CodeWrapper innerClass="flex flex-wrap gap-2">
 	<div class="h-16">

@@ -71,7 +71,7 @@
 	});
 </script>
 
-<H1>Interactive Spinner Builder</H1>
+<H1>Spinner Builder</H1>
 
 <CodeWrapper>
 	<div class="h-20">

@@ -51,7 +51,7 @@ ${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ''}`;
 	});
 </script>
 
-<H1>Interactive Fileupload Builder</H1>
+<H1>Fileupload Builder</H1>
 <CodeWrapper>
 	<div class="md:h-24">
 		<Fileupload id="small_size" {size} class="mb-2" {multiple} bind:files />

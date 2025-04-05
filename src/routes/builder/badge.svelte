@@ -131,7 +131,7 @@
 	});
 </script>
 
-<H1>Interactive Badge Builder</H1>
+<H1>Badge Builder</H1>
 
 <CodeWrapper>
 	<div class="mb-4 h-10">

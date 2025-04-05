@@ -118,7 +118,7 @@
 	});
 </script>
 
-<H1>Interactive Banner Builder</H1>
+<H1>Banner Builder</H1>
 
 <CodeWrapper class="relative" innerClass="p-0">
 	<div class="mb-4 h-[670px] md:h-[480px]">

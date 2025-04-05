@@ -91,7 +91,7 @@
 	});
 </script>
 
-<H1>Interactive Toast Builder</H1>
+<H1>Toast Builder</H1>
 <CodeWrapper>
 	<div class="relative h-28 md:h-56">
 		<Toast

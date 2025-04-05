@@ -106,7 +106,7 @@
 	});
 </script>
 
-<H1>Interactive Modal Bilder</H1>
+<H1>Modal Bilder</H1>
 
 <CodeWrapper>
 	<div class="mb-4 h-20">

@@ -66,7 +66,7 @@
 	});
 </script>
 
-<H1>Interactive Tab Builder</H1>
+<H1>Tab Builder</H1>
 <CodeWrapper>
 	<Tabs
 		{tabStyle}

@@ -126,7 +126,7 @@
 	});
 </script>
 
-<H1>Interactive Popover Builder</H1>
+<H1>Popover Builder</H1>
 <CodeWrapper class="">
 	<div class="flex h-80 items-center justify-center">
 		<Button id="b1">Popover</Button>

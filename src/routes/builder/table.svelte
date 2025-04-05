@@ -73,7 +73,7 @@
 	});
 </script>
 
-<H1>Interactive Table Builder</H1>
+<H1>Table Builder</H1>
 <CodeWrapper>
 	<Table items={tableItems} {hoverable} {color} {striped} border={noborder} {shadow} />
 	<div class="my-4 flex flex-wrap space-x-4">

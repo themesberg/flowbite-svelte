@@ -31,3 +31,25 @@ export type ModalPlacementType =
 	| "bottom-left"
 	| "bottom-center"
 	| "bottom-right";
+
+export type ColorName =
+	| 'primary'
+	| 'secondary'
+	| 'gray'
+	| 'red'
+	| 'orange'
+	| 'amber'
+	| 'yellow'
+	| 'lime'
+	| 'green'
+	| 'emerald'
+	| 'teal'
+	| 'cyan'
+	| 'sky'
+	| 'blue'
+	| 'indigo'
+	| 'violet'
+	| 'purple'
+	| 'fuchsia'
+	| 'pink'
+	| 'rose';

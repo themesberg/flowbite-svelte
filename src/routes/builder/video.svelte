@@ -64,7 +64,7 @@
 	});
 </script>
 
-<H1>Interactive Video Player Builder</H1>
+<H1>Video Player Builder</H1>
 <CodeWrapper>
 	<div class="mb-4 md:h-[500px]">
 		<Video

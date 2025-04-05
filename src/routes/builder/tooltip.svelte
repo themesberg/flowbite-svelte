@@ -87,7 +87,7 @@
 	});
 </script>
 
-<H1>Interactive Tooltip Builder</H1>
+<H1>Tooltip Builder</H1>
 
 <CodeWrapper>
 	<div class="my-4 flex justify-center">

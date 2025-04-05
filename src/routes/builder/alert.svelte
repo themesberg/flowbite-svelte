@@ -11,14 +11,6 @@
 	import H2 from './utils/H2.svelte';
 	import { isGeneratedCodeOverflow } from './utils/helpers';
 
-	// for examples section that dynamically changes the svelte component and svelteCode content
-	
-	const exampleModules = import.meta.glob('./examples/*.svelte', {
-		query: '?raw',
-		import: 'default',
-		eager: true
-	}) as Record<string, string>;
-
 	// for interactive code builder
 	const colors = Object.keys(fsalert.variants.color);
 	let color: AlertProps['color'] = $state('primary');
@@ -136,8 +128,7 @@
 	});
 </script>
 
-<div class="w-full px-8">
-<H1>Interactive Alert Bilder</H1>
+<H1>Alert Bilder</H1>
 
 <CodeWrapper>
 	<div class="mb-4 h-20">
@@ -217,4 +208,3 @@
 		/>
 	{/snippet}
 </CodeWrapper>
-</div>

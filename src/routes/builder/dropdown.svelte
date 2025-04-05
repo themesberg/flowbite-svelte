@@ -136,7 +136,7 @@
 	});
 </script>
 
-<H1>Interactive Dropdown Builder</H1>
+<H1>Dropdown Builder</H1>
 <CodeWrapper>
 	<div class="flex items-start justify-center">
 		<Button onclick={dropdownDividerHeaderFooter.toggle}>

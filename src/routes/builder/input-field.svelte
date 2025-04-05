@@ -76,7 +76,7 @@ ${closeBtnStatus ? `</Input>` : ''}${helperSlot ? `<Helper class="ps-6" color="$
 	});
 </script>
 
-<H1>Interactive Input Builder</H1>
+<H1>Input Builder</H1>
 
 <CodeWrapper>
 	<div class="mb-4 md:h-24">

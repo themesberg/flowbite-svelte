@@ -69,7 +69,7 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ''}`;
 	});
 </script>
 
-<H1>Interactive Checkbox Builder</H1>
+<H1>Checkbox Builder</H1>
 <CodeWrapper>
 	<div class="md:h-8">
 		<Checkbox

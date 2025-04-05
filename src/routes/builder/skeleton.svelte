@@ -121,7 +121,7 @@
 	});
 </script>
 
-<H1>Interactive Skeleton Builder</H1>
+<H1>Skeleton Builder</H1>
 
 <CodeWrapper>
 	<div class="md:h-40">

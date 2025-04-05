@@ -79,7 +79,7 @@
 	});
 </script>
 
-<H1>Interactive Button-group Builder</H1>
+<H1>Button-group Builder</H1>
 
 <CodeWrapper>
 	<div class="flex h-16 items-center justify-center">

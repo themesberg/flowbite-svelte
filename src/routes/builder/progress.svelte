@@ -101,7 +101,7 @@
 
 </script>
 
-<H1>Interactive Progressbar Builder</H1>
+<H1>Progressbar Builder</H1>
 <CodeWrapper>
 	<div class="my-4 h-16">
 		{#if animation}

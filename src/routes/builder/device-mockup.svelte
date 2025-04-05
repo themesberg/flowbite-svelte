@@ -134,7 +134,7 @@
 	};
 </script>
 
-<H1>Interactive Device Mockup Builder</H1>
+<H1>Device Mockup Builder</H1>
 
 <CodeWrapper innerClass="overflow-auto">
 	<div class="mb-8 flex flex-wrap space-x-2">

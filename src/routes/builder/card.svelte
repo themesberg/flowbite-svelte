@@ -94,7 +94,7 @@
 	};
 </script>
 
-<H1>Interactive Card Builder</H1>
+<H1>Card Builder</H1>
 
 <CodeWrapper>
 	<div class="flex justify-center">
