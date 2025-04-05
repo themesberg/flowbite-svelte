@@ -137,7 +137,7 @@
 				floatingSize = floatingSize === 'default' ? 'small' : 'default';
 			}}
 		>
-			{#snippet leftLabel()}
+			{#snippet offLabel()}
 				<span class="me-4">Default</span>
 			{/snippet}
 			Small

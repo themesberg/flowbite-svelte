@@ -15,9 +15,9 @@
   import MetaTag from '../utils/MetaTag.svelte'
   
 	// MetaTag
-	let breadcrumb_title = "Range builder"
-	let description = "A quick way to create Range component"
-	let title = "Range builder"
+	let breadcrumb_title = "Select builder"
+	let description = "A quick way to create Select component"
+	let title = "Select builder"
 	let dir = "builder"
 	
 
