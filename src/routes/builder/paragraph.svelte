@@ -128,7 +128,7 @@
 		<Label class="mb-4 w-full font-bold">Alignment</Label>
 		{#each alignments as align}
 			<Radio
-				labelClass="w-20 my-1"
+				class="w-20 my-1"
 				name="p_align"
 				bind:group={pAlign}
 				onchange={() => (pJustify = false)}
