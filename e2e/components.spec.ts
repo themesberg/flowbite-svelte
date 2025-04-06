@@ -163,7 +163,7 @@ test("Spinner page should have h1", async ({ page }) => {
 });
 
 // Indicators
-test("Step indicator page should have h1", async ({ page }) => {
+test("Indicators indicator page should have h1", async ({ page }) => {
   await page.goto("/docs/components/indicators");
   expect(await page.textContent("h1")).toBe("Svelte Indicators - Flowbite");
 });
