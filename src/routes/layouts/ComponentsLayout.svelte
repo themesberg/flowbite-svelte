@@ -12,7 +12,9 @@
   let { data, children } = $props();
   /* eslint-disable  @typescript-eslint/no-explicit-any */
   const posts: Record<string, any[]> = data.posts.posts || {};
-  const builders: Array<{path: string}> = data.posts.builders || [];  const drawerHidden: Writable<boolean> = getContext("drawer");
+  const builders: Array<{path: string}> = data.posts.builders || [];
+  // console.log('builders:', builders);
+  const drawerHidden: Writable<boolean> = getContext("drawer");
 	// $inspect('data', JSON.stringify(builders))
   // const closeDrawer = (
   // ) => {
@@ -80,13 +82,11 @@
       </SidebarDropdownWrapper>
     {/each}
     <SidebarDropdownWrapper label='Builders' ulClass="space-y-0 p-0" {btnClass} class={ "text-primary-700 dark:text-primary-700" }>
-    {#each builders as builder}
-      {#if builder.path !== "/+layout"}
-      {@const pathWithoutSlash = builder.path.replace(/^\//, '')}
-      {@const capitalizedPath = pathWithoutSlash.charAt(0).toUpperCase() + pathWithoutSlash.slice(1)}
-      {@const href = `/builder${builder.path}`}
-        <SidebarItem label={capitalizedPath} {href} {spanClass} />
-      {/if}
+      {#each builders.filter(builder => builder.path !== '' && builder.path !== 'layout') as builder}
+        {@const pathWithoutSlash = builder.path.replace(/^\//, '')}
+        {@const capitalizedPath = pathWithoutSlash.charAt(0).toUpperCase() + pathWithoutSlash.slice(1)}
+        {@const href = `/builder/${builder.path}`}
+          <SidebarItem label={capitalizedPath} {href} {spanClass} />
     {/each}
     </SidebarDropdownWrapper>
     <SidebarItem label="Illustration" href="https://flowbite-svelte-illustrations.codewithshin.com/" spanClass="ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass} />

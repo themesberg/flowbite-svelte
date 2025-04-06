@@ -14,6 +14,25 @@ export { toKebabCase, getFilteredFileNames } from "./helpers";
 
 const basename = (path: string) => path.split("/").pop()?.split(".").shift() ?? "";
 const filePath = (path: string) => "/" + basename(path);
+/**
+ * Extracts the route name from a SvelteKit file path
+ * @param {string} path - The file path (e.g. '/src/routes/builder/video/+page.svelte')
+ * @returns {string} - The extracted route name (e.g. 'video')
+ */
+const extractRouteName = (path: string): string => {
+  // Split the path by '/'
+  const parts = path.split('/');
+  
+  // Find the index of the part containing '+page.svelte'
+  const pageIndex = parts.findIndex(part => part.includes('+page.svelte'));
+  
+  // Return the part before '+page.svelte', or empty string if not found
+  return pageIndex > 0 ? parts[pageIndex - 1] : '';
+};
+
+// Example usage:
+// extractRouteName('/src/routes/builder/video/+page.svelte') => 'video'
+// extractRouteName('/src/routes/builder/form/+page.svelte') => 'form'
 
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 const sortByList = (order: string[]) => (a: [string, any], b: [string, any]) => [a[0], b[0]].map((x) => order.indexOf(basename(x))).reduce((x, y) => (x < 0 ? 1 : y < 0 ? -1 : x - y));
@@ -162,19 +181,17 @@ export const fetchMarkdownPosts = async () => {
 };
 
 export const fetchBuilders = async () => {
-  const builderFiles = import.meta.glob("/src/routes/builder/*.svelte");
-  
+  const builderFiles = import.meta.glob("/src/routes/builder/**/*.svelte");
+ 
   const iterableBuilderFiles = Object.entries(builderFiles);
-
+  // console.log('iterableBuilderFiles: ', iterableBuilderFiles);
   const allBuilders = await Promise.all(
     iterableBuilderFiles.map(async ([path, _]) => {
-      // const { metadata } = await resolver();
       return {
-        // meta: metadata,
-        path: filePath(path)
+        path: extractRouteName(path)
       };
     })
   )
-
+  // console.log('allBuilders: ', allBuilders)
   return allBuilders
 };
