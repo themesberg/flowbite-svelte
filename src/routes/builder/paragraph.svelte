@@ -14,7 +14,13 @@
 	import CodeWrapper from './utils/CodeWrapper.svelte';
 	import H1 from './utils/H1.svelte';
 	import { isGeneratedCodeOverflow } from './utils/helpers';
-	
+	import MetaTag from '../utils/MetaTag.svelte'
+  
+	// MetaTag
+	let breadcrumb_title = "Paragraph builder"
+	let description = "A quick way to create Paragraph component"
+	let title = "Paragraph builder"
+	let dir = "builder"
 
 	const sizes = Object.keys(paragraph.variants.size);
 	let pSize: ParagraphProps['size'] = $state('base');
@@ -73,6 +79,7 @@
 		builderExpand = builder.isOpen;
 	});
 </script>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
 
 <H1>Paragraph Builder</H1>
 <CodeWrapper>

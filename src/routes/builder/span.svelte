@@ -16,6 +16,13 @@
 	import CodeWrapper from './utils/CodeWrapper.svelte';
 	import H1 from './utils/H1.svelte';
 	import { isGeneratedCodeOverflow } from './utils/helpers';
+  import MetaTag from '../utils/MetaTag.svelte'
+  
+	// MetaTag
+	let breadcrumb_title = "Span builder"
+	let description = "A quick way to create Span component"
+	let title = "Span builder"
+	let dir = "builder"
 
 	let { editableContent = $bindable('span content') } = $props();
 
@@ -99,6 +106,7 @@
 		builderExpand = builder.isOpen;
 	});
 </script>
+<MetaTag {breadcrumb_title} {description} {title} {dir} />
 
 <H1>Span Builder</H1>
 <CodeWrapper>
