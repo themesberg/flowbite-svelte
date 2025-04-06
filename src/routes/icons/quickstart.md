@@ -1,10 +1,10 @@
 ---
 layout: componentLayout
-title: Svelte 5 Icons - Flowbite
-breadcrumb_title: Svelte 5 Icons
-component_title: Svelte 5 Icons
+title: Flowbite Svelte Icons - Flowbite
+breadcrumb_title: Flowbite Svelte Icons
+component_title: Quickstart
 dir: Icons
-description: Get started with a collection of open-source Svelte 5 powered icons built by the Flowbite community and based on the official design system
+description: Get started with a collection of open-source Flowbite Svelte Icons built by the Flowbite community and based on the official design system
 ---
 
 <script>
@@ -92,7 +92,7 @@ Since all icons have `{...restProps}` and extended <A href="https://github.com/s
 <AddressBookOutline id="my-svg" transform="rotate(45)" class="hover:cursor-pointer dark:text-white" onclick="{()" ="">alert('hello')} /></AddressBookOutline>
 ```
 
-## Using onMount (Svelte 5 legacy mode)
+## Using onMount
 
 ```html
 <script>

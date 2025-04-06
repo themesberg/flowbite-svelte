@@ -64,7 +64,8 @@
     <NavUl {activeUrl} class="ms-auto" ulClass="text-sm 2xl:space-x-2">
       <NavLi class="lg:mb-0 lg:px-2" href="/docs/pages/introduction">Docs</NavLi>
       <NavLi class="lg:mb-0 lg:px-2" href="/docs/components/accordion">Components</NavLi>
-      <NavLi class="lg:mb-0 lg:px-2" href="/icons/svelte-4">Icons</NavLi>
+      <NavLi class="lg:mb-0 lg:px-2" href="/icons/quickstart">Icons</NavLi>
+      <NavLi class="lg:mb-0 lg:px-2" href="https://flowbite-svelte-illustrations.codewithshin.com/">Illustrations</NavLi>
       <NavLi class="lg:mb-0 lg:px-2" href="https://flowbite-svelte-blocks.vercel.app/">Blocks</NavLi>
       <NavLi class="lg:mb-0 lg:px-2" href="https://flowbite-svelte-admin-dashboard.vercel.app/">Dashboard</NavLi>
     </NavUl>
