@@ -1,15 +1,9 @@
 <script lang="ts">
-	import { type Component } from 'svelte';
 	import { Label, uiHelpers, Radio, Textarea, Button, Helper, type TextareaProps } from '$lib';
 	import DynamicCodeBlockHighlight from './utils/DynamicCodeBlockHighlight.svelte';
 	import CodeWrapper from './utils/CodeWrapper.svelte';
 	import H1 from './utils/H1.svelte';
-	import H2 from './utils/H2.svelte';
-	import {
-		isGeneratedCodeOverflow,
-		isSvelteOverflow,
-		getExampleFileName
-	} from './utils/helpers';
+	import { isGeneratedCodeOverflow } from './utils/helpers';
   import MetaTag from '../utils/MetaTag.svelte'
   
 	// MetaTag

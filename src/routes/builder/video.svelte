@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { Video, Button, Label, Radio, uiHelpers } from '$lib';
-	import HighlightCompo from './utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from './utils/DynamicCodeBlockHighlight.svelte';
 	import CodeWrapper from './utils/CodeWrapper.svelte';
 	import H1 from './utils/H1.svelte';

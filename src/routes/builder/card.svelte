@@ -11,11 +11,9 @@
 		type ImgType
 	} from '$lib';
   import type { RadioColorType } from './types'
-	import HighlightCompo from './utils/HighlightCompo.svelte';
 	import DynamicCodeBlockHighlight from './utils/DynamicCodeBlockHighlight.svelte';
 	import CodeWrapper from './utils/CodeWrapper.svelte';
 	import H1 from './utils/H1.svelte';
-	import H2 from './utils/H2.svelte';
 	import { isGeneratedCodeOverflow } from './utils/helpers';
 	import MetaTag from '../utils/MetaTag.svelte'
 	
