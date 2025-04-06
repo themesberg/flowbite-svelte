@@ -4,11 +4,11 @@
 	import { blur, fly, slide, scale } from 'svelte/transition';
 	import type { FlyParams, BlurParams, SlideParams, ScaleParams } from 'svelte/transition';
 	import { linear } from 'svelte/easing';
-	import DynamicCodeBlockHighlight from './utils/DynamicCodeBlockHighlight.svelte';
-	import CodeWrapper from './utils/CodeWrapper.svelte';
-	import H1 from './utils/H1.svelte';
-	import { isGeneratedCodeOverflow } from './utils/helpers';
-	import MetaTag from '../utils/MetaTag.svelte'
+	import DynamicCodeBlockHighlight from '../utils/DynamicCodeBlockHighlight.svelte';
+	import CodeWrapper from '../utils/CodeWrapper.svelte';
+	import H1 from '../utils/H1.svelte';
+	import { isGeneratedCodeOverflow } from '../utils/helpers';
+	import MetaTag from '../../utils/MetaTag.svelte'
   
 	// MetaTag
 	let breadcrumb_title = "Alert builder"
