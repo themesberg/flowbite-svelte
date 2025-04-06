@@ -123,7 +123,7 @@
 		<Label class="mb-4 w-full font-bold">Alignment</Label>
 		{#each alignments as alignment}
 			<Radio
-				labelClass="w-16 my-1"
+				class="w-16 my-1"
 				name="block_alignment"
 				bind:group={selectedAlignment}
 				value={alignment}>{alignment}</Radio
