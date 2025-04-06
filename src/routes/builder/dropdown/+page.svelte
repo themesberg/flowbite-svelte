@@ -24,7 +24,7 @@
 		activeUrl = page.url.pathname;
 	});
 
-	import MetaTag from '.../utils/MetaTag.svelte'
+	import MetaTag from '../../utils/MetaTag.svelte'
   
 	// MetaTag
 	let breadcrumb_title = "Dropdown builder"
