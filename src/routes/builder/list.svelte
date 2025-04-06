@@ -123,7 +123,7 @@
 	<div class="mt-4 mb-4 flex flex-wrap space-x-2">
 		<Label class="mb-4 w-full font-bold">Tag</Label>
 		{#each tags as tag}
-			<Radio labelClass="w-20 my-1" name="list_tag" bind:group={listTag} value={tag}>{tag}</Radio>
+			<Radio class="w-20 my-1" name="list_tag" bind:group={listTag} value={tag}>{tag}</Radio>
 		{/each}
 	</div>
 	<div class="mb-4 flex flex-wrap space-x-2">

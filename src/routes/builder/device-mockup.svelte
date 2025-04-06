@@ -147,7 +147,7 @@
 	<div class="mb-8 flex flex-wrap space-x-2">
 		<Label class="mb-4 w-full font-bold">Device</Label>
 		{#each deviceNames as device}
-			<Radio labelClass="w-24 my-1" name="alert_reactive" bind:group={selectedDevice} value={device}
+			<Radio class="w-24 my-1" name="alert_reactive" bind:group={selectedDevice} value={device}
 				>{device}</Radio
 			>
 		{/each}

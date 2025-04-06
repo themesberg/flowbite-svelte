@@ -75,7 +75,7 @@ ${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ''}`;
 	<div class="mt-4 mb-4 flex flex-wrap space-x-2">
 		<Label class="mb-4 w-full font-bold">Size</Label>
 		{#each sizes as sizeOption}
-			<Radio labelClass="w-16 my-1" name="file_input_size" bind:group={size} value={sizeOption}
+			<Radio class="w-16 my-1" name="file_input_size" bind:group={size} value={sizeOption}
 				>{sizeOption}</Radio
 			>
 		{/each}

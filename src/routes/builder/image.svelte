@@ -115,7 +115,7 @@
 	<div class="mb-4 flex flex-wrap space-x-2">
 		<Label class="mb-4 w-full font-bold">Size</Label>
 		{#each sizes as option}
-			<Radio labelClass="w-16 my-1" name="img_size" bind:group={imgSize} value={option}
+			<Radio class="w-16 my-1" name="img_size" bind:group={imgSize} value={option}
 				>{option}</Radio
 			>
 		{/each}
@@ -124,7 +124,7 @@
 	<div class="mb-4 flex flex-wrap space-x-2">
 		<Label class="mb-4 w-full font-bold">Effect</Label>
 		{#each effects as effect}
-			<Radio labelClass="w-24 my-1" name="img_effect" bind:group={imgEffect} value={effect}
+			<Radio class="w-24 my-1" name="img_effect" bind:group={imgEffect} value={effect}
 				>{effect}</Radio
 			>
 		{/each}

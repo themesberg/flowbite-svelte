@@ -125,7 +125,7 @@ ${closeBtnStatus ? `</Input>` : ''}${helperSlot ? `<Helper class="ps-6" color="$
 	<div class="mb-4 flex flex-wrap space-x-2">
 		<Label class="mb-4 w-full font-bold">Size</Label>
 		{#each sizes as option}
-			<Radio labelClass="w-20 my-1" name="input_size" bind:group={inputSize} value={option}
+			<Radio class="w-20 my-1" name="input_size" bind:group={inputSize} value={option}
 				>{option}</Radio
 			>
 		{/each}

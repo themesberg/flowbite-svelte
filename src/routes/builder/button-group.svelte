@@ -104,7 +104,7 @@
 	<div class="mb-4 flex flex-wrap space-x-4">
 		<Label class="mb-4 w-full font-bold">Size</Label>
 		{#each sizes as sizeOption}
-			<Radio labelClass="w-24 my-1" name="size" bind:group={size} value={sizeOption}
+			<Radio class="w-24 my-1" name="size" bind:group={size} value={sizeOption}
 				>{sizeOption}</Radio
 			>
 		{/each}

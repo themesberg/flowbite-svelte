@@ -86,7 +86,7 @@
 		<div class="flex flex-wrap space-x-4">
 			<Label class="mb-4 w-full font-bold">Size</Label>
 			{#each sizes as sizeOption}
-				<Radio labelClass="w-24 my-1" name="size" bind:group={size} value={sizeOption}
+				<Radio class="w-24 my-1" name="size" bind:group={size} value={sizeOption}
 					>{sizeOption}</Radio
 				>
 			{/each}
@@ -94,7 +94,7 @@
 		<div class="flex flex-wrap space-x-4">
 			<Label class="mb-4 w-full font-bold">Placement</Label>
 			{#each placements as positionOption}
-				<Radio labelClass="w-32 my-1" name="placement" bind:group={placement} value={positionOption}
+				<Radio class="w-32 my-1" name="placement" bind:group={placement} value={positionOption}
 					>{positionOption}</Radio
 				>
 			{/each}

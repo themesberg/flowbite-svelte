@@ -95,7 +95,7 @@
 	<div class="mb-4 flex flex-wrap space-x-2">
 		<Label class="mb-4 w-full font-bold">Style</Label>
 		{#each inputStyles as option}
-			<Radio labelClass="w-24 my-1" name="style1" bind:group={inputStyle} value={option}
+			<Radio class="w-24 my-1" name="style1" bind:group={inputStyle} value={option}
 				>{option}</Radio
 			>
 		{/each}
