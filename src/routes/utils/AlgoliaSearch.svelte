@@ -14,4 +14,4 @@
   };
 </script>
 
-<div use:init id="docsearch" class="ms-3 xl:ps-4"></div>
+<div use:init id="docsearch" class="hidden xl:block ms-3 xl:ps-4"></div>
