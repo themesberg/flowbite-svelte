@@ -73,7 +73,9 @@
 			{#if codeLang === 'md'}
 				<Highlight language={markdown} {code} />
 			{:else if code}
-				<HighlightSvelte {code} />
+			<div class="highlight">
+				<pre class="language-svelte !-mt-2 !rounded-none mb-0">{code}</pre>
+			</div>
 			{:else}
 				no code is provided
 			{/if}
