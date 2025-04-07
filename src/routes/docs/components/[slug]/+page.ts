@@ -1,6 +1,6 @@
-// src/routes/components/[slug]/+page.js
-/** @type {import('./$types').PageLoad} */
-export async function load({ params }) {
+import type { PageLoad } from './$types';
+
+export const load: PageLoad = async ({ params }) => {
   const post = await import(`../${params.slug}.md`);
   const { title, dir } = post.metadata;
   const content = post.default;
@@ -11,3 +11,4 @@ export async function load({ params }) {
     dir
   };
 }
+
