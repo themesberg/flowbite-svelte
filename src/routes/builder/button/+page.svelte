@@ -137,6 +137,13 @@
 	const handleBuilderExpandClick = () => {
 		builderExpand = !builderExpand;
 	};
+	// gradient button
+	let gradientBuilder = uiHelpers();
+	let gradientBuilderExpand = $state(false);
+	let showGradientBuilderExpandButton = $derived(isGeneratedCodeOverflow(gradientGeneratedCode));
+	const handleGradientBuilderExpandClick = () => {
+		gradientBuilderExpand = !gradientBuilderExpand
+	}
 
 	$effect(() => {
 		builderExpand = builder.isOpen;
@@ -270,6 +277,11 @@
 		>
 	</div>
 	{#snippet codeblock()}
-		<HighlightCompo code={gradientGeneratedCode} />
+	<DynamicCodeBlockHighlight
+			handleExpandClick={handleGradientBuilderExpandClick}
+			expand={gradientBuilderExpand}
+			showExpandButton={showGradientBuilderExpandButton}
+			code={gradientGeneratedCode}
+		/>
 	{/snippet}
 </CodeWrapper>
