@@ -235,7 +235,7 @@ Show a progress bar with details inside a popover when hovering over a settings 
 Dynamically show the password strength progress when creating a new password positioned relative to the input element.
 
 ```svelte example hideResponsiveButtons
-<script>
+<script lang="ts">
   import { Popover, Label, Input, Checkbox, Button } from "flowbite-svelte";
   import { CheckOutline, CloseOutline } from "flowbite-svelte-icons";
   function preventDefault<E extends Event>(fn: (event: E) => void) {
