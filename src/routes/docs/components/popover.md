@@ -238,9 +238,15 @@ Dynamically show the password strength progress when creating a new password pos
 <script>
   import { Popover, Label, Input, Checkbox, Button } from "flowbite-svelte";
   import { CheckOutline, CloseOutline } from "flowbite-svelte-icons";
+  function preventDefault<E extends Event>(fn: (event: E) => void) {
+    return function(this: any, event: E) {
+      event.preventDefault();
+      fn.call(this, event);
+    };
+  }
 </script>
 
-<form on:submit|preventDefault class="mb-8">
+<form onsubmit={preventDefault} class="mb-8">
   <div class="mb-6">
     <Label for="email" class="mb-2">Your email</Label>
     <Input type="email" id="email" placeholder="name@flowbite.com" required="" />

@@ -234,7 +234,7 @@ on: paste;
   };
 </script>
 
-<form id="example-form" on:submit={submitted}>
+<form id="example-form" onsubmit={submitted}>
   <Search bind:value />
   <P class="my-1">You are searching: {value}</P>
   <Button type="submit">Submit</Button>

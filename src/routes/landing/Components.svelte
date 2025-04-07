@@ -1,15 +1,15 @@
 <script lang="ts">
   import Button from "$lib/buttons/Button.svelte";
-  import type { PageData } from "../$types";
   import CompoCard from "../utils/CompoCard.svelte";
   import Section from "./utils/Section.svelte";
+  import type { PageProps } from '../$types';
 
-  export let data: PageData;
+  let { data } = $props();
 
   let components = [...data.posts.forms, ...data.posts.components, ...data.posts.typography].sort((a, b) => a.meta.component_title.localeCompare(b.meta.component_title));
 
   const INIT_COUNT = 18;
-  let expanded: boolean = false;
+  let expanded: boolean = $state(false);
 </script>
 
 <Section class="flex flex-col gap-8 sm:gap-12 lg:pt-24">

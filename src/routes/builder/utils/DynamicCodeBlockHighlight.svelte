@@ -59,9 +59,7 @@
 			});
 	}
 </script>
-<div class="flex justify-end">
-	<DynamicCodeBlockStyle class="mr-4 sm:block" />
-</div>
+
 <div class={base({ className })}>
 	<div class="relative">
 		<div

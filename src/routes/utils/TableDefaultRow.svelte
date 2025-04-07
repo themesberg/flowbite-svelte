@@ -1,14 +1,21 @@
 <script lang="ts">
   import { getContext } from "svelte";
+  type Props = {
+    items: Array<Array<string>>;
+    html?: boolean;
+    rowState: "striped" | "hover" | undefined
+  }
 
-  export let items: Array<Array<string>>;
-  export let html: boolean = false;
-  export let rowState: "striped" | "hover" | undefined = undefined;
+  let { items, html, rowState }: Props = $props();
+
+  // export let items: Array<Array<string>>;
+  // export let html: boolean = false;
+  // export let rowState: "striped" | "hover" | undefined = undefined;
 
   const category = getContext("category");
   // console.log('category: ', category)
-  let trClass: string;
-  let trLastClass: string;
+  let trClass: string = $state('');
+  let trLastClass: string = $state('');
   if (rowState === "striped") {
     trClass = "border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 dark:odd:bg-gray-800 dark:even:bg-gray-700";
     trLastClass = "odd:bg-white even:bg-gray-50 dark:odd:bg-gray-800 dark:even:bg-gray-700";

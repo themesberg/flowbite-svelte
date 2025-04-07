@@ -1,12 +1,12 @@
 <script lang="ts">
   import { Input, Label, Button, Checkbox, A } from "$lib";
-  let formData = {
+  let formData = $state({
     first_name: "",
     last_name: "",
     company: "",
     website: "",
     email: ""
-  };
+  });
   export const snapshot = {
     capture: () => formData,
     restore: (value: typeof formData) => (formData = value)

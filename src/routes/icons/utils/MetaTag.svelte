@@ -1,9 +1,12 @@
 <script lang="ts">
   import { MetaTags } from "svelte-meta-tags";
-  export let path: string = "";
-  export let description: string = "";
-  export let title: string = "";
-  export let subtitle: string = "";
+  type Props = {
+    path: string;
+    description: string;
+    title: string;
+    subtitle: string;
+  }
+  let { path, description, title, subtitle }: Props = $props()
 
   let imgsrc = `https://open-graph-vercel.vercel.app/api/flowbite-svelte-icons?title=${subtitle}`;
 

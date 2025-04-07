@@ -3,13 +3,13 @@
   import Tooltip from "$lib/tooltip/Tooltip.svelte";
   import { ChevronRightOutline } from "flowbite-svelte-icons";
   import Community from "../utils/icons/Community.svelte";
-  import type { PageData } from "../$types";
   import Section from "./utils/Section.svelte";
   import type { TriggeredToggleEvent } from "$lib/utils/Popper.svelte";
+  import type { PageProps } from '../$types';
 
-  export let data: PageData;
+  let { data } = $props();
 
-  let name: string;
+  let name: string = $state('');
   /* eslint-disable  @typescript-eslint/no-explicit-any */
   function on_show(e: TriggeredToggleEvent) {
     if (e?.trigger instanceof HTMLElement) {

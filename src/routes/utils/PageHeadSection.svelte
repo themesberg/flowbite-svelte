@@ -1,14 +1,13 @@
 <script lang="ts">
   import { Heading } from "$lib";
   import CompoDescription from "./CompoDescription.svelte";
+  type Props = {
+    title: string;
+    description: string;
+  }
 
-  // export let dir: string;
-  // export let breadcrumb_title: string;
-  export let title: string;
-  export let description: string;
+  let { title, description }: Props = $props()
 
-  // dir;
-  // breadcrumb_title;
 </script>
 
 <div class="border-b border-gray-200 pb-8 dark:border-gray-800">

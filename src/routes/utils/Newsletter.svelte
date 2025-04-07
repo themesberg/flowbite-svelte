@@ -1,15 +1,21 @@
-<script>
-  import { browser } from "$app/environment";
+<script lang="ts">
+  // import { browser } from "$app/environment";
   import { ButtonGroup, Button, Input } from "$lib";
   import Mail from "../utils/icons/Mail.svelte";
-  import data from "./data.json";
-  import { onMount } from "svelte";
+  // import data from "./data.json";
+  // import { onMount } from "svelte";
 
-  let email = "";
-  let isSubmitting = false;
-  let errorMessage = "";
-  let successMessage = "";
+  let email: string = $state("");
+  let isSubmitting: boolean = $state(false);
+  let errorMessage: string = $state("");
+  let successMessage: string = $state("");
 
+  function preventDefault<E extends Event>(fn: (event: E) => void) {
+    return function(this: any, event: E) {
+      event.preventDefault();
+      fn.call(this, event);
+    };
+  }
   // Handle form submission
   async function handleSubmit() {
     if (!email) return;
@@ -58,7 +64,7 @@
     </div>
     <div class="flex flex-col items-start justify-center self-stretch">
       <!-- Custom Form (not using ConvertKit's direct form) -->
-      <form on:submit|preventDefault={handleSubmit} class="self-stretch">
+      <form onsubmit={preventDefault(handleSubmit)} class="self-stretch">
         <div class="mb-3 flex items-end">
           {#if errorMessage}
             <p class="text-red-600 mb-2">{errorMessage}</p>

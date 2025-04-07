@@ -1,5 +1,9 @@
 <script lang="ts">
-  export let size: "sm" | "md" | "lg" = "lg";
+  type Props = {
+    size?: "sm" | "md" | "lg";
+  }
+  let { size = "lg" }: Props = $props();
+  // export let size: "sm" | "md" | "lg" = "lg";
 
   const sizes = {
     sm: "w-4 h-4",
