@@ -115,4 +115,5 @@
 @prop export let floatClass: $$Props['floatClass'] = 'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400';
 @prop export let classLeft: $$Props['classLeft'] = '';
 @prop export let classRight: $$Props['classRight'] = '';
+@prop export let wrapperClass: $$Props['wrapperClass'] = 'relative w-auto';
 -->

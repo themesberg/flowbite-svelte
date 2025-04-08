@@ -1,6 +1,27 @@
 {
   "name": "Button",
   "slots": [],
-  "events": ["click", "change", "keydown", "keyup", "touchend", "touchcancel", "mouseenter", "mouseleave", "click", "change", "keydown", "keyup", "touchend", "touchcancel", "mouseenter", "mouseleave"],
+  "events": [
+    "click",
+    "change",
+    "keydown",
+    "keyup",
+    "touchend",
+    "touchcancel",
+    "mouseenter",
+    "mouseleave",
+    "mouseup",
+    "mousedown",
+    "click",
+    "change",
+    "keydown",
+    "keyup",
+    "touchend",
+    "touchcancel",
+    "mouseenter",
+    "mouseleave",
+    "mouseup",
+    "mousedown"
+  ],
   "props": []
 }

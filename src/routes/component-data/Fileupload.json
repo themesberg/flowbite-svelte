@@ -1,11 +1,50 @@
 {
   "name": "Fileupload",
   "slots": [],
-  "events": ["change", "keyup", "keydown", "keypress", "focus", "blur", "click", "mouseover", "mouseenter", "mouseleave", "paste", "change", "keyup", "keydown", "keypress", "focus", "blur", "click", "mouseover", "mouseenter", "mouseleave", "paste"],
+  "events": [
+    "change",
+    "keyup",
+    "keydown",
+    "keypress",
+    "focus",
+    "blur",
+    "click",
+    "mouseover",
+    "mouseenter",
+    "mouseleave",
+    "paste",
+    "change",
+    "keyup",
+    "keydown",
+    "keypress",
+    "focus",
+    "blur",
+    "click",
+    "mouseover",
+    "mouseenter",
+    "mouseleave",
+    "paste"
+  ],
   "props": [
-    ["files?", "FileList | undefined", "undefined"],
-    ["inputClass?", "string", "'border !p-0 dark:text-gray-400'"],
-    ["clearable?", "boolean", "false"],
-    ["size?", "'sm' | 'md' | 'lg'", "'md'"]
+    [
+      "files?",
+      "FileList | undefined",
+      "undefined"
+    ],
+    [
+      "inputClass?",
+      "string",
+      "'border p-0! dark:text-gray-400'"
+    ],
+    [
+      "clearable?",
+      "boolean",
+      "false"
+    ],
+    [
+      "size?",
+      "'sm' | 'md' | 'lg'",
+      "'md'"
+    ]
   ]
 }

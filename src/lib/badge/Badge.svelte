@@ -120,4 +120,5 @@
 @prop export let rounded: $$Props['rounded'] = false;
 @prop export let transition: NonNullable<$$Props['transition']> = fade;
 @prop export let params: $$Props['params'] = {};
+@prop export let tag: $$Props['tag'] = 'div';
 -->

@@ -101,6 +101,7 @@
 @prop export let bottomOffset: $$Props['bottomOffset'] = 'inset-x-0 bottom-0';
 @prop export let width: $$Props['width'] = 'w-80';
 @prop export let backdrop: $$Props['backdrop'] = true;
+@prop export let backdropClass: $$Props['backdropClass'] = '';
 @prop export let bgColor: $$Props['bgColor'] = 'bg-gray-900';
 @prop export let bgOpacity: $$Props['bgOpacity'] = 'bg-black/75';
 @prop export let placement: NonNullable<$$Props['placement']> = 'left';
