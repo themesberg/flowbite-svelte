@@ -2,8 +2,16 @@
   import Button from "$lib/buttons/Button.svelte";
   import GradientButton from "$lib/buttons/GradientButton.svelte";
   import type { SpeedDialTriggerProps as Props } from "./type";
+  import type { GradientButtonProps } from '../buttons/type'
 
-  let { children, name = "Open actions menu", gradient = false, icon, pill = true, class: className, ...restProps }: Props = $props();
+  let { children, name = "Open actions menu", gradient = false, icon, pill = true, color = 'blue', class: className, ...restProps }: Props = $props();
+
+  const gradientButtonProps = $derived({
+    pill,
+    color,
+    ...restProps,
+    class: ["p-3!", className]
+  } as GradientButtonProps);
 </script>
 
 {#snippet moving_cross()}
@@ -13,7 +21,7 @@
 {/snippet}
 
 {#if gradient}
-  <GradientButton {pill} {...restProps} class={["p-3!", className]}>
+  <GradientButton {pill} {...gradientButtonProps} class={["p-3!", className]}>
     {#if icon}
       {@render icon()}
     {:else}

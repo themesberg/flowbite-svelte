@@ -1,4 +1,4 @@
-import type { ButtonProps } from "$lib/buttons";
+import type { ButtonProps, GradientButtonProps } from "$lib/buttons";
 import type { PopperProps } from "$lib/utils/Popper.svelte";
 import type { Placement } from "@floating-ui/utils";
 import type { Snippet } from "svelte";
@@ -34,4 +34,5 @@ export type SpeedDialTriggerProps = ButtonProps & {
   icon?: Snippet;
   gradient?: boolean;
   name?: string;
+  color?: GradientButtonProps['color'];
 };
