@@ -3,30 +3,10 @@
   "slots": [],
   "events": [],
   "props": [
-    [
-      "activeUrl?",
-      "string",
-      ""
-    ],
-    [
-      "asideClass?",
-      "string",
-      "'w-64'"
-    ],
-    [
-      "nonActiveClass?",
-      "string",
-      ""
-    ],
-    [
-      "activeClass?",
-      "string",
-      ""
-    ],
-    [
-      "ariaLabel?",
-      "string",
-      "'Sidebar'"
-    ]
+    ["activeUrl?", "string", ""],
+    ["asideClass?", "string", "'w-64'"],
+    ["nonActiveClass?", "string", ""],
+    ["activeClass?", "string", ""],
+    ["ariaLabel?", "string", "'Sidebar'"]
   ]
 }

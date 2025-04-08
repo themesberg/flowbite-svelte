@@ -2,11 +2,5 @@
   "name": "NavContainer",
   "slots": [],
   "events": [],
-  "props": [
-    [
-      "fluid?",
-      "boolean",
-      ""
-    ]
-  ]
+  "props": [["fluid?", "boolean", ""]]
 }

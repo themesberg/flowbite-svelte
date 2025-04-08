@@ -3,15 +3,7 @@
   "slots": [],
   "events": [],
   "props": [
-    [
-      "fluid?",
-      "boolean",
-      "false"
-    ],
-    [
-      "navContainerClass?",
-      "string",
-      ""
-    ]
+    ["fluid?", "boolean", "false"],
+    ["navContainerClass?", "string", ""]
   ]
 }

@@ -1,8 +1,6 @@
 {
   "name": "SpeedDialButton",
   "slots": [],
-  "events": [
-    "click"
-  ],
+  "events": ["click"],
   "props": []
 }

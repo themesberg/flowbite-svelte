@@ -1,21 +1,9 @@
 {
   "name": "Popover",
-  "slots": [
-    "title"
-  ],
-  "events": [
-    "show"
-  ],
+  "slots": ["title"],
+  "events": ["show"],
   "props": [
-    [
-      "title?",
-      "string",
-      ""
-    ],
-    [
-      "defaultClass?",
-      "string",
-      ""
-    ]
+    ["title?", "string", ""],
+    ["defaultClass?", "string", ""]
   ]
 }

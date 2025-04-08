@@ -3,20 +3,8 @@
   "slots": [],
   "events": [],
   "props": [
-    [
-      "tag?",
-      "'dt' | 'dd'",
-      "'dt'"
-    ],
-    [
-      "dtClass?",
-      "string",
-      "'text-gray-500 md:text-lg dark:text-gray-400'"
-    ],
-    [
-      "ddClass?",
-      "string",
-      "'text-lg font-semibold'"
-    ]
+    ["tag?", "'dt' | 'dd'", "'dt'"],
+    ["dtClass?", "string", "'text-gray-500 md:text-lg dark:text-gray-400'"],
+    ["ddClass?", "string", "'text-lg font-semibold'"]
   ]
 }

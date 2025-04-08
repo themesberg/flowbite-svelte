@@ -1,23 +1,9 @@
 {
   "name": "Range",
   "slots": [],
-  "events": [
-    "change",
-    "click",
-    "keydown",
-    "keypress",
-    "keyup"
-  ],
+  "events": ["change", "click", "keydown", "keypress", "keyup"],
   "props": [
-    [
-      "value?",
-      "number",
-      "0"
-    ],
-    [
-      "size?",
-      "'sm' | 'md' | 'lg'",
-      ""
-    ]
+    ["value?", "number", "0"],
+    ["size?", "'sm' | 'md' | 'lg'", ""]
   ]
 }

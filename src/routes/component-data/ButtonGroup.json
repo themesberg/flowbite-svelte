@@ -3,15 +3,7 @@
   "slots": [],
   "events": [],
   "props": [
-    [
-      "size?",
-      "SizeType",
-      "'md'"
-    ],
-    [
-      "divClass?",
-      "string",
-      "'inline-flex rounded-lg shadow-xs'"
-    ]
+    ["size?", "SizeType", "'md'"],
+    ["divClass?", "string", "'inline-flex rounded-lg shadow-xs'"]
   ]
 }
