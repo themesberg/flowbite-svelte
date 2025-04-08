@@ -564,7 +564,7 @@ Use this example to show multiple time interval selections inside of a drawer co
             <Button
               color="red"
               size="xs"
-              sm:size="sm"
+              sm="sm"
               pill={true}
               on:click={() => removeInterval(index)}
               class="hover:bg-red-600 shrink-0"
