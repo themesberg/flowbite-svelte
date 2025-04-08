@@ -138,7 +138,7 @@
   <!-- dialog -->
   <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
   <div on:keydown={handleKeys} on:wheel|preventDefault|nonpassive use:prepareFocus use:focusTrap on:click={onAutoClose} on:mousedown={onOutsideClose} class={dialogCls} tabindex="-1" aria-modal="true" role="dialog">
-    <div class="flex relative {sizes[size]} w-full max-h-full">
+    <div class="flex relative {sizes[size]} w-full max-h-screen">
       <!-- Modal content -->
       <Frame rounded shadow {...$$restProps} class={frameCls} {color}>
         <!-- Modal header -->
