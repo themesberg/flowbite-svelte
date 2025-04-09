@@ -9,7 +9,7 @@ description: Use the accordion component to show hidden information based on the
 
 <script>
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
-  import { P, A } from '$lib'; 
+  import { P, A } from 'flowbite-svelte'; 
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -199,7 +199,7 @@ Use `multiple` to open all accordion items.
 
 ```svelte example
 <script lang="ts">
-	import { Accordion, AccordionItem } from '$lib';
+	import { Accordion, AccordionItem } from 'flowbite-svelte';
 </script>
 
 <Accordion multiple>

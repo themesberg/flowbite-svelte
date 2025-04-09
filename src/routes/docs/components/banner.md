@@ -93,8 +93,8 @@ Use this free example to show a text message for announcement with a CTA link.
 <ImagePlaceholder class="py-4" />
 
 <Banner id="cta-banner" position="absolute" bannerType="cta">
-  <a href="https://flowbite-svelte-next.com/" class="mb-2 flex items-center border-gray-200 md:me-4 md:mb-0 md:border-e md:pe-4 dark:border-gray-600">
-    <img src="https://flowbite-svelte-next.com/images/flowbite-svelte-icon-logo.svg" class="me-2 h-6" alt="Flowbite Logo" />
+  <a href="https://flowbite-svelte.com/" class="mb-2 flex items-center border-gray-200 md:me-4 md:mb-0 md:border-e md:pe-4 dark:border-gray-600">
+    <img src="https://flowbite-svelte.com/images/flowbite-svelte-icon-logo.svg" class="me-2 h-6" alt="Flowbite Logo" />
     <span class="self-center text-lg font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
   </a>
   <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">Build websites even faster with components on top of Tailwind CSS</p>
@@ -176,7 +176,7 @@ This example demonstrates a sliding transition using the slide transition from s
       <span class="sr-only">Light bulb</span>
     </span>
     <span>
-      New brand identity has been launched for the <a href="https://flowbite.com" class="text-primary-600 dark:text-primary-500 inline font-medium underline decoration-solid decoration-600 underline-offset-2 hover:no-underline dark:decoration-500">Flowbite Library</a>
+      New brand identity has been launched for the <a href="https://flowbite.com" class="text-primary-600 dark:text-primary-500 inline font-medium underline decoration-solid decoration-2 underline-offset-2 hover:no-underline dark:decoration-1">Flowbite Library</a>
     </span>
   </p>
 </Banner>

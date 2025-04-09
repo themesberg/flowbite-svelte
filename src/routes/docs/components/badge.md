@@ -10,7 +10,7 @@ thumnailSize: w-28
 
 <script>
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
-  import { P, A } from '$lib'
+  import { P, A } from 'flowbite-svelte'
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -274,6 +274,23 @@ The color can be changed dynamically.
 
 <Badge large {color}>Blinking badge</Badge>
 ```
+
+## Opening badge
+
+```svelte example
+<script lang="ts">
+	import { Badge, Button } from 'flowbite-svelte';
+	let openBadgeStatus = $state(false);
+	function openBadge() {
+		openBadgeStatus = true;
+	}
+</script>
+
+<Button onclick={openBadge}>Open badge</Button>
+<Badge class="ml-4" color="blue" dismissable large bind:badgeStatus={openBadgeStatus}>Default</Badge
+>
+```
+
 
 ## Component data
 
