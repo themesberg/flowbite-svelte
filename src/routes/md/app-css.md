@@ -4,6 +4,7 @@
 
 @source "../node_modules/flowbite-svelte-icons/dist";
 @source "../node_modules/svelte-animated-icons/dist";
+@source "../node_modules/svelte-5-ui-lib/dist";
 
 @theme {
     --z-index-100: 100;
