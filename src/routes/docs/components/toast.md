@@ -35,7 +35,9 @@ Use this simple toast component with an icon, message, and dismissable close but
 </script>
 
 <Toast>
-  <FireOutline slot="icon" class="text-primary-500 bg-primary-100 dark:bg-primary-800 dark:text-primary-200 h-6 w-6" />
+  {#snippet icon()}
+    <FireOutline class="text-primary-500 bg-primary-100 dark:bg-primary-800 dark:text-primary-200 h-6 w-6" />
+  {/snippet}
   Set yourself free.
 </Toast>
 ```
@@ -53,56 +55,68 @@ Usually, green, red, and orange are used to show success, danger, or warning ale
 </script>
 
 <Toast color="green">
-  <svelte:fragment slot="icon">
+  {#snippet icon()}
     <CheckCircleSolid class="h-5 w-5" />
     <span class="sr-only">Check icon</span>
-  </svelte:fragment>
+  {/snippet}
   Item moved successfully.
 </Toast>
 
 <Toast color="red">
-  <svelte:fragment slot="icon">
+  {#snippet icon()}
     <CloseCircleSolid class="h-5 w-5" />
     <span class="sr-only">Error icon</span>
-  </svelte:fragment>
+  {/snippet}
   Item has been deleted.
 </Toast>
 
 <Toast color="red">
-  <svelte:fragment slot="icon">
+  {#snippet icon()}
     <ExclamationCircleSolid class="h-5 w-5" />
     <span class="sr-only">Warning icon</span>
-  </svelte:fragment>
+  {/snippet}
   Improve password difficulty.
 </Toast>
 
 <Toast color="dark">
-  <FireOutline slot="icon" class="h-6 w-6" />
+  {#snippet icon()}
+  <FireOutline class="h-6 w-6" />
+  {/snippet}
   Dark
 </Toast>
 
 <Toast color="yellow">
-  <FireOutline slot="icon" class="h-6 w-6" />
+  {#snippet icon()}
+  <FireOutline class="h-6 w-6" />
+  {/snippet}
   Yellow
 </Toast>
 
 <Toast color="blue">
-  <FireOutline slot="icon" class="h-6 w-6" />
+  {#snippet icon()}
+  <FireOutline class="h-6 w-6" />
+  {/snippet}
   Blue
 </Toast>
 
 <Toast color="indigo">
-  <FireOutline slot="icon" class="h-6 w-6" />
+  {#snippet icon()}
+  <FireOutline class="h-6 w-6" />
+  {/snippet}
   Indigo
 </Toast>
 
 <Toast color="purple">
-  <FireOutline slot="icon" class="h-6 w-6" />
+  {#snippet icon()}
+  <FireOutline class="h-6 w-6" />
+  {/snippet}
   Purple
 </Toast>
 
 <Toast color="none" defaultIconClass="w-8 h-8 text-pink-500 bg-pink-100 dark:bg-pink-800 dark:text-pink-200">
-  <FireOutline slot="icon" class="h-6 w-6" />
+  {#snippet icon()}
+    <FireOutline class="h-6 w-6" />
+  {/snippet}
   Customize your colors.
 </Toast>
 ```
@@ -118,14 +132,16 @@ This component can be used to show simple messages and notifications without the
 </script>
 
 <Toast dismissable={false} contentClass="flex space-x-4 rtl:space-x-reverse divide-x rtl:divide-x-reverse divide-gray-200 dark:divide-gray-700">
-  <PaperPlaneOutline class="text-primary-600 dark:text-primary-500 h-5 w-5 rotate-45" />
+  {#snippet icon()}
+    <PaperPlaneOutline class="text-primary-600 dark:text-primary-500 h-5 w-5 rotate-45" />
+  {/snippet}
   <div class="ps-4 text-sm font-normal">Message sent successfully.</div>
 </Toast>
 ```
 
 ## Icons
 
-For the right positioning of the icon use: `slot="icon"`.
+For the right positioning of the icon use: `{#snippet icon()}...{/snippet}`.
 
 You can use any [icon components](/icons).
 
@@ -136,7 +152,9 @@ You can use any [icon components](/icons).
 </script>
 
 <Toast>
-  <ImageOutline slot="icon" class="h-6 w-6" />
+  {#snippet icon()}
+    <ImageOutline class="h-6 w-6" />
+  {/snippet}
   There is a box icon.
 </Toast>
 
@@ -169,7 +187,9 @@ You can use any [icon components](/icons).
 <div class="flex gap-10">
   <Button onclick={trigger} class="my-3">Restart</Button>
   <Toast dismissable={false} transition={slide} bind:toastStatus>
-    <CheckCircleSolid slot="icon" class="h-5 w-5" />
+    {#snippet icon()}
+      <CheckCircleSolid class="h-5 w-5" />
+    {/snippet}
     Autohide in {counter}s.
   </Toast>
 </div>
@@ -188,17 +208,23 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 </script>
 
 <Toast transition={slide} class="mb-4">
-  <CheckCircleSolid slot="icon" class="h-6 w-6" />
+  {#snippet icon()}
+    <CheckCircleSolid class="h-6 w-6" />
+  {/snippet}
   Transition type: slide
 </Toast>
 
 <Toast transition={slide} params={{ delay: 250, duration: 300, easing: quintOut }} class="mb-4">
-  <CheckCircleSolid slot="icon" class="h-6 w-6" />
+  {#snippet icon()}
+    <CheckCircleSolid class="h-6 w-6" />
+  {/snippet}
   Transition type: slide, delay: 250, duration: 300, easing: quintOut
 </Toast>
 
 <Toast transition={slide} params={{ delay: 250, duration: 2000, easing: elasticOut }}>
-  <CheckCircleSolid slot="icon" class="h-6 w-6" />
+  {#snippet icon()}
+    <CheckCircleSolid class="h-6 w-6" />
+  {/snippet}
   Transition type: slide, delay: 250, duration: 2000, easing: elasticOut
 </Toast>
 ```
@@ -213,12 +239,16 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 </script>
 
 <Toast transition={blur} color="purple" params={{ amount: 10 }} class="mb-4">
-  <BellOutline slot="icon" class="h-6 w-6" />
+  {#snippet icon()}
+    <BellOutline class="h-6 w-6" />
+  {/snippet}
   Transition type: blur, amount: 10
 </Toast>
 
 <Toast transition={blur} color="purple" params={{ amount: 50, delay: 1000 }}>
-  <BellOutline slot="icon" class="h-6 w-6" />
+  {#snippet icon()}
+    <BellOutline class="h-6 w-6" />
+  {/snippet}
   Transition type: blur, amount: 50, delay 1000
 </Toast>
 ```
@@ -233,12 +263,16 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 </script>
 
 <Toast transition={fly} params={{ x: 200 }} color="green" class="mb-4">
-  <DownloadOutline slot="icon" class="h-6 w-6" />
+  {#snippet icon()}
+    <DownloadOutline class="h-6 w-6" />
+  {/snippet}
   Transition type: fly right
 </Toast>
 
 <Toast transition={fly} params={{ y: 200 }} color="green">
-  <DownloadOutline slot="icon" class="h-6 w-6" />
+  {#snippet icon()}
+    <DownloadOutline class="h-6 w-6" />
+  {/snippet}
   Transition type: fly down
 </Toast>
 ```
@@ -272,7 +306,9 @@ This component can be used to show messages and a CTA button when receiving chat
 </script>
 
 <Toast align={false} color="none" defaultIconClass="">
-  <Avatar slot="icon" src="/images/profile-picture-1.webp" />
+  {#snippet icon()}
+    <Avatar src="/images/profile-picture-1.webp" class="h-8"/>
+  {/snippet}
   <div class="ms-3 text-sm font-normal">
     <span class="mb-1 text-sm font-semibold text-gray-900 dark:text-white">Jese Leos</span>
     <div class="mb-2 text-sm font-normal">Hi Neil, thanks for sharing your thoughts regarding Flowbite.</div>
@@ -316,7 +352,9 @@ Use this interactive toast component to encourage users to make a certain action
 </script>
 
 <Toast align={false}>
-  <CameraPhotoOutline slot="icon" class="h-6 w-6" />
+  {#snippet icon()}
+    <CameraPhotoOutline class="h-6 w-6" />
+  {/snippet}
 
   <span class="font-semibold text-gray-900 dark:text-white">Update available</span>
   <div class="mt-3">

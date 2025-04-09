@@ -134,9 +134,9 @@ export default {
   </NavUl>
 </Navbar>
 <Toast color="primary">
-  <svelte:fragment slot="icon">
+  {#snippet icon()}
     <FireOutline class="h-6 w-6" />
-  </svelte:fragment>
+  {/snippet}
   Dismissable user notification.
 </Toast>
 ```
