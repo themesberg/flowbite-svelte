@@ -159,7 +159,7 @@
 				<span>
 					New brand identity has been launched for the <a
 						href="https://flowbite.com"
-						class="text-primary-600 dark:text-primary-500 inline font-medium decoration-solid decoration-600 dark:decoration-500"
+						class="text-primary-600 dark:text-primary-500 inline font-medium underline decoration-solid decoration-2 underline-offset-2 hover:no-underline dark:decoration-1"
 						>Flowbite Library</a
 					>
 				</span>
