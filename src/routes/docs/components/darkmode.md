@@ -17,11 +17,8 @@ thumnailSize: w-24
 In flowbite-svelte-next, the `class` strategy is used to support toggling dark mode manually, so you should explicitly configure it in Tailwind CSS:
 
 ```js example
-// tailwind.config.cjs
-const config = {
-  darkMode: "class"
-  // ...
-};
+// app.css
+@custom-variant dark (&:where(.dark, .dark *));
 ```
 
 Then you can use `dark:` prefixed classes to configure the styles applied when dark mode is enabled. For example, if you want to change the body background color from `bg-white` when dark mode is disabled to `bg-gray-800` when dark mode is enabled:
@@ -54,19 +51,7 @@ Use `class="dark"` to set the initial theme to the dark mode. The default mode i
 
 ## Switcher style
 
-Use the `btnClass` prop to overwrite the default classes:
-
-```svelte example
-<script>
-  import { DarkMode } from "flowbite-svelte";
-
-  let btnClass = "text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-xl p-2";
-</script>
-
-<DarkMode {btnClass} />
-```
-
-Or just use `class` attribute to append classes to the default classes:
+Use `class` attribute to append classes to the default classes:
 
 ```svelte example
 <script>
@@ -87,8 +72,12 @@ Use the `lightIcon` and `darkIcon` slots to change icons:
 </script>
 
 <DarkMode class="text-lg">
-  <ThumbsUpSolid slot="lightIcon" color="red" />
-  <ThumbsDownSolid slot="darkIcon" color="green" />
+  {#snippet lightIcon()}
+    <ThumbsUpSolid color="red" />
+  {/snippet}
+  {#snippet darkIcon()}
+    <ThumbsDownSolid color="green" />
+  {/snippet}
 </DarkMode>
 ```
 

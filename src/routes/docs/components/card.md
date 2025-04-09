@@ -409,6 +409,27 @@ Use this example to split cards into multiple sections such as for testimonials 
 </Card>
 ```
 
+## Custom size
+
+Use `class="max-w-[250px]` to create a custom size card.
+
+```svelte example
+<script lang="ts">
+	import { Card } from 'flowbite-svelte';
+</script>
+
+<div class="flex justify-center">
+	<Card class="max-w-[250px]">
+		<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+			Technology acquisitions
+		</h5>
+		<p class="leading-tight font-normal text-gray-700 dark:text-gray-400">
+			Here are the biggest enterprise technology acquisitions.
+		</p>
+	</Card>
+</div>
+```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
