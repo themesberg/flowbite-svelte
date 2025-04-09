@@ -195,7 +195,36 @@ Use the `arrowup` and `arrowdown` slots to set up and down icons.
 
 ## Multiple mode
 
-Example how to use the `multiple` option together with expand all behavior.
+Use `multiple` to open all accordion items.
+
+```svelte example
+<script lang="ts">
+	import { Accordion, AccordionItem } from '$lib';
+</script>
+
+<Accordion multiple>
+	<AccordionItem>
+		{#snippet header()}
+			Header 1-1
+		{/snippet}
+		<p class="mb-2 text-gray-500 dark:text-gray-400">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
+			explicabo ...
+		</p>
+	</AccordionItem>
+	<AccordionItem>
+		{#snippet header()}
+			Header 1-2
+		{/snippet}
+		<p class="mb-2 text-gray-500 dark:text-gray-400">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
+			explicabo ...
+		</p>
+	</AccordionItem>
+</Accordion>
+```
+
+Another example how to use the `multiple` option together with expand all behavior.
 
 ```svelte example class="space-y-4"
 <script>
@@ -237,18 +266,22 @@ The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#r
 ```svelte example
 <script>
   import { AccordionItem, Accordion } from "flowbite-svelte";
+  import { fade, fly } from 'svelte/transition';
+	import { quintOut } from 'svelte/easing';
 </script>
 
 <Accordion>
-  <AccordionItem>
+  <AccordionItem transitionParams={{ duration: 2000 }}>
     {#snippet header()}My Header 1{/snippet}
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
-  <AccordionItem transitionParams={{ duration: 2000 }}>
+  <AccordionItem transitionType={fly}
+		transitionParams={{ delay: 250, duration: 300, x: 100, y: 500, opacity: 0.5, easing: quintOut }}
+  >
     {#snippet header()}My Header 2{/snippet}
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
-  <AccordionItem transitionType="fade" transitionParams={{ duration: 1000 }}>
+  <AccordionItem transitionType={fade} transitionParams={{ duration: 1000 }}>
     {#snippet header()}My Header 3{/snippet}
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>

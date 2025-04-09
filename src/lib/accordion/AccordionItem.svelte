@@ -9,7 +9,7 @@
   import type { BaseThemes } from "$lib/theme";
   import clsx from "clsx";
 
-  let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transition = slide, params, class: className }: Props = $props();
+  let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transitionType = slide, transitionParams, class: className }: Props = $props();
 
   // Theme context
   const context = getContext<BaseThemes>("themeConfig");
@@ -56,7 +56,7 @@
   </button>
 </h2>
 {#if open}
-  <div transition:transition={params as ParamsType}>
+  <div transition:transitionType={transitionParams as ParamsType}>
     <div class={content()}>
       {@render children()}
     </div>

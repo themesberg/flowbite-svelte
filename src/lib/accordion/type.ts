@@ -31,8 +31,8 @@ interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
   open?: boolean;
   activeClass?: string;
   inactiveClass?: string;
-  transition?: TransitionFunc;
-  params?: ParamsType;
+  transitionType?: TransitionFunc;
+  transitionParams?: ParamsType;
 }
 
 export type { AccordionCtxType, AccordionProps, AccordionItemProps };
