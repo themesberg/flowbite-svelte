@@ -177,7 +177,7 @@ You can add the `on:click` event to the `Button` component.
 </script>
 
 <ButtonGroup class="*:ring-primary-700!">
-  <Button on:click={handleClick}>Click me</Button>
+  <Button onclick={handleClick}>Click me</Button>
   <Button>Settings</Button>
   <Button>Messages</Button>
 </ButtonGroup>
