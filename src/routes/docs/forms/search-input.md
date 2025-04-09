@@ -95,7 +95,7 @@ Use this search component with a dropdown to let your users select a category in
     <Dropdown classContainer="w-40">
       {#each items as { label }}
         <DropdownItem
-          on:click={() => {
+          onclick={() => {
             selectCategory = label;
           }}
           class={selectCategory === label ? "underline" : ""}
@@ -159,7 +159,7 @@ Use this example where you can select a country in which you want to search for 
     <Dropdown classContainer="w-40">
       {#each countries as country}
         <DropdownItem
-          on:click={() => {
+          onclick={() => {
             selectCountry = country.labelSelected;
           }}
           class="inline-flex items-center {selectCountry === country.labelSelected ? 'underline' : ''}"
@@ -192,7 +192,7 @@ Get started with this example if you would like to enable voice search for your 
 
 <form class="flex gap-2">
   <Search size="md" class="flex items-center gap-2" placeholder="Search Mockups, Logos, Design Templates...">
-    <button type="button" on:click={handleVoiceBtn} class="outline-hidden">
+    <button type="button" onclick={handleVoiceBtn} class="outline-hidden">
       <MicrophoneSolid class="me-2 h-5 w-5" />
     </button>
   </Search>
@@ -206,18 +206,18 @@ Get started with this example if you would like to enable voice search for your 
 ## Events
 
 ```js
-on: blur;
-on: change;
-on: input;
-on: click;
-on: focus;
-on: keydown;
-on: keypress;
-on: keyup;
-on: mouseenter;
-on: mouseleave;
-on: mouseover;
-on: paste;
+onblur;
+onchange;
+oninput;
+onclick;
+onfocus;
+onkeydown;
+onkeypress;
+onkeyup;
+onmouseenter;
+onmouseleave;
+onmouseover;
+onpaste;
 ```
 
 ## Example

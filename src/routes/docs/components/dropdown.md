@@ -168,12 +168,12 @@ When you want to control your dropdown open status via javascript code you can b
 
 <Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
 <Dropdown bind:open={dropdownOpen} simple>
-  <DropdownItem on:click={() => (dropdownOpen = false)}>Dashboard (close)</DropdownItem>
+  <DropdownItem onclick={() => (dropdownOpen = false)}>Dashboard (close)</DropdownItem>
   <DropdownItem class="flex items-center justify-between">
     Dropdown<ChevronRightOutline class="text-primary-700 ms-2 h-6 w-6 dark:text-white" />
   </DropdownItem>
   <Dropdown simple placement="right-start">
-    <DropdownItem on:click={() => (dropdownOpen = false)}>Overview (close)</DropdownItem>
+    <DropdownItem onclick={() => (dropdownOpen = false)}>Overview (close)</DropdownItem>
     <DropdownItem>My downloads</DropdownItem>
     <DropdownItem>Billing</DropdownItem>
   </Dropdown>
@@ -689,7 +689,7 @@ As dropdown is implemented using the [Floating UI](https://floating-ui.com) libr
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div on:mousedown={(e) => (placement = e.target.dataset.placement)}>
+<div onmousedown={(e) => (placement = e.target.dataset.placement)}>
   <Button data-placement="left-start">
     Dropdown left start<ChevronUpOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
   </Button>
@@ -708,7 +708,7 @@ As dropdown is implemented using the [Floating UI](https://floating-ui.com) libr
 
 ## Events
 
-`DropdownItem` renders to link or button wrapped with `<li/>` element depending whether you supplied the `href` property. Therefore you can catch standard events on it like `on:click`.
+`DropdownItem` renders to link or button wrapped with `<li/>` element depending whether you supplied the `href` property. Therefore you can catch standard events on it like `onclick`.
 
 ```svelte example class="flex justify-center items-start h-40" hideResponsiveButtons
 <script>
@@ -723,7 +723,7 @@ As dropdown is implemented using the [Floating UI](https://floating-ui.com) libr
 <Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
 <Dropdown simple>
   <DropdownItem href="/link" onclick={handleClick}>Rendered as link</DropdownItem>
-  <DropdownItem onclick={handleClick}>Rendered as button</DropdownItem>
+  <DropdownItem>Rendered as button</DropdownItem>
 </Dropdown>
 ```
 

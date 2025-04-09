@@ -277,7 +277,7 @@ You can add any additional button attributes. The following example shows adding
 
 ## Events
 
-You can use on:click or any standard on:\* to listen to the event.
+You can use `onclick` or any standard `on:*` to listen to the event.
 
 ```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>
@@ -290,8 +290,8 @@ You can use on:click or any standard on:\* to listen to the event.
   };
 </script>
 
-<Button on:click={btn1}>Button 1</Button>
-<Button on:touchstart={btn2}>Button 2</Button>
+<Button onclick={btn1}>Button 1</Button>
+<Button ontouchstart={btn2}>Button 2</Button>
 ```
 
 ## Component data

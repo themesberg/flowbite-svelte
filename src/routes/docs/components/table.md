@@ -779,7 +779,7 @@ Use this example to apply a different color to every second row inside the table
 
 ## Click and double-click on row
 
-An example to use on:click (main row) and on:dblclick (expanded row)
+An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 ```svelte example
 <script>
@@ -825,7 +825,7 @@ An example to use on:click (main row) and on:dblclick (expanded row)
   </TableHead>
   <TableBody>
     {#each items as item, i}
-      <TableBodyRow on:click={() => toggleRow(i)}>
+      <TableBodyRow onclick={() => toggleRow(i)}>
         <TableBodyCell>{item.name}</TableBodyCell>
         <TableBodyCell>{item.color}</TableBodyCell>
         <TableBodyCell>{item.type}</TableBodyCell>
@@ -833,7 +833,7 @@ An example to use on:click (main row) and on:dblclick (expanded row)
       </TableBodyRow>
       {#if openRow === i}
         <TableBodyRow
-          on:dblclick={() => {
+          ondblclick={() => {
             doubleClickModal = true;
             details = item;
           }}

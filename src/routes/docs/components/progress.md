@@ -167,7 +167,7 @@ By default progress bar has animation disabled, you can activate with `animate`,
 
 <Progressbar {progress} animate precision={2} labelOutside="With animation" labelInside tweenDuration={1500} easing={sineOut} size="h-6" labelInsideClass="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full" class="mb-8" />
 <Progressbar {progress} labelOutside="Without animation" labelInside size="h-6" labelInsideClass="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full" />
-<Button on:click={() => (progress = `${Math.round(Math.random() * 100)}`)} class="mt-8">Randomize</Button>
+<Button onclick={() => (progress = `${Math.round(Math.random() * 100)}`)} class="mt-8">Randomize</Button>
 ```
 
 ## Custom color

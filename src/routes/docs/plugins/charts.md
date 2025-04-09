@@ -932,7 +932,7 @@ To create a radial chart with multiple data entries you need to set the type: "r
         <dd class="text-sm font-medium text-blue-600 dark:text-blue-300">Done</dd>
       </dl>
     </div>
-    <button on:click={() => (isOpen = !isOpen)} type="button" class="inline-flex items-center text-xs font-medium text-gray-500 hover:underline dark:text-gray-400">Show more details <ChevronDownOutline class="ms-1 h-2 w-2" /></button>
+    <button onclick={() => (isOpen = !isOpen)} type="button" class="inline-flex items-center text-xs font-medium text-gray-500 hover:underline dark:text-gray-400">Show more details <ChevronDownOutline class="ms-1 h-2 w-2" /></button>
     {#if isOpen}
       <div id="more-details" class="mt-3 space-y-2 border-t border-gray-200 pt-3 dark:border-gray-600">
         <dl class="flex items-center justify-between">

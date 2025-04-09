@@ -549,8 +549,8 @@ Use the `open` property to control the state of the popup menu.
 
 <SpeedDialTrigger class="absolute end-6 bottom-6" />
 <SpeedDial bind:open>
-  <SpeedDialButton name="Share" on:click={close}>Share</SpeedDialButton>
-  <SpeedDialButton name="Print" on:click={close}>Print</SpeedDialButton>
+  <SpeedDialButton name="Share" onclick={close}>Share</SpeedDialButton>
+  <SpeedDialButton name="Print" onclick={close}>Print</SpeedDialButton>
 </SpeedDial>
 ```
 

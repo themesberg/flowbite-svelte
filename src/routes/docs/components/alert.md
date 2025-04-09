@@ -325,7 +325,7 @@ Use the `click` event with `dismissable` prop.
   };
 </script>
 
-<Alert dismissable on:click={closeAlert}>Close me</Alert>
+<Alert dismissable onclick={closeAlert}>Close me</Alert>
 ```
 
 ## Component data

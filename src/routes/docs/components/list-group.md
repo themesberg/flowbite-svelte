@@ -65,9 +65,9 @@ You can pass extra properties to the `<a>` element by setting the `attrs` atrrib
 
 It is also possible to display a list of button element inside the list group component. The following example includes an active and disabled item as well.
 
-You need to set the list to `active` mode to enable hovering, focus and `on:click`.
+You need to set the list to `active` mode to enable hovering, focus and `onclick`.
 
-If list is active and data items do not contain `href` field entries are presented as `<button>` elements triggering `on:click` events.
+If list is active and data items do not contain `href` field entries are presented as `<button>` elements triggering `onclick` events.
 
 You can pass extra properties to the `<button>` element by setting the `attrs` atrribute in the items list.
 

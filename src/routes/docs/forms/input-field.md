@@ -261,7 +261,7 @@ This example can be used to add a descriptive icon or additional text inside the
 
 ## Icon click handler
 
-This example shows how to add `on:click` event handler to the icon in `Input`. By clicking an icon, it toggles icon and `type`:
+This example shows how to add `onclick` event handler to the icon in `Input`. By clicking an icon, it toggles icon and `type`:
 
 ```svelte example class="gap-6"
 <script>
@@ -274,7 +274,7 @@ This example shows how to add `on:click` event handler to the icon in `Input`. B
 <div>
   <Label for="show-password" class="mb-2">Your password</Label>
   <Input id="show-password" type={show ? "text" : "password"} placeholder="Your password here" size="lg">
-    <button slot="left" on:click={() => (show = !show)} class="pointer-events-auto">
+    <button slot="left" onclick={() => (show = !show)} class="pointer-events-auto">
       {#if show}
         <EyeOutline class="h-6 w-6" />
       {:else}
@@ -288,7 +288,7 @@ This example shows how to add `on:click` event handler to the icon in `Input`. B
   <Label for="show-password1" class="mb-2">Your password</Label>
   <ButtonGroup class="w-full">
     <InputAddon>
-      <button on:click={() => (show1 = !show1)}>
+      <button onclick={() => (show1 = !show1)}>
         {#if show1}
           <EyeOutline class="h-6 w-6" />
         {:else}

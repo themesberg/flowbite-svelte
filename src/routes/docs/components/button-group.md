@@ -166,7 +166,7 @@ Group a series of buttons together on a single line or stack them in a vertical 
 
 ## Events
 
-You can add the `on:click` event to the `Button` component.
+You can add the `onclick` event to the `Button` component.
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>

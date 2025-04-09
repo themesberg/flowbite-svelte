@@ -35,11 +35,11 @@ Use the following list of pagination items to indicate a series of content for y
 
   let activeUrl = $derived(page.url.searchParams.get("page"));
   let pages = $state([
-    { name: 1, href: "/components/pagination?page=1" },
-    { name: 2, href: "/components/pagination?page=2" },
-    { name: 3, href: "/components/pagination?page=3" },
-    { name: 4, href: "/components/pagination?page=4" },
-    { name: 5, href: "/components/pagination?page=5" }
+    { name: 1, href: "/docs/components/pagination?page=1" },
+    { name: 2, href: "/docs/components/pagination?page=2" },
+    { name: 3, href: "/docs/components/pagination?page=3" },
+    { name: 4, href: "/docs/components/pagination?page=4" },
+    { name: 5, href: "/docs/components/pagination?page=5" }
   ]);
 
   $effect(()=> {
@@ -65,8 +65,8 @@ Use the following list of pagination items to indicate a series of content for y
   };
 </script>
 
-<Pagination {pages} on:previous={previous} on:next={next} />
-<Pagination {pages} large on:previous={previous} on:next={next} />
+<Pagination {pages} {previous} {next} />
+<Pagination {pages} large {previous} {next} />
 ```
 
 ## Pagination with icons
@@ -74,64 +74,37 @@ Use the following list of pagination items to indicate a series of content for y
 The following pagination component example shows how you can use SVG icons instead of text to show the previous and next pages.
 
 ```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
-<script>
-  import { page } from "$app/state";
-  import { Pagination } from "flowbite-svelte";
-  import { ChevronLeftOutline, ChevronRightOutline } from "flowbite-svelte-icons";
-
-  let activeUrl = $derived(page.url.searchParams.get("page"));
-  let pages = $state([
-    { name: 6, href: "/components/pagination?page=6" },
-    { name: 7, href: "/components/pagination?page=7" },
-    { name: 8, href: "/components/pagination?page=8" },
-    { name: 9, href: "/components/pagination?page=9" },
-    { name: 10, href: "/components/pagination?page=10" }
-  ]);
-
-  $effect(()=> {
-    pages.forEach((page) => {
-      let splitUrl = page.href.split("?");
-      let queryString = splitUrl.slice(1).join("?");
-      const hrefParams = new URLSearchParams(queryString);
-      let hrefValue = hrefParams.get("page");
-      if (hrefValue === activeUrl) {
-        page.active = true;
-      } else {
-        page.active = false;
-      }
-    });
-    pages = pages;
-  });
-
-  const previous = () => {
-    alert("Previous btn clicked. Make a call to your server to fetch data.");
-  };
-  const next = () => {
-    alert("Next btn clicked. Make a call to your server to fetch data.");
-  };
+<script lang="ts">
+	import { Pagination } from 'flowbite-svelte';
+	import { ChevronLeftOutline, ChevronRightOutline } from 'flowbite-svelte-icons';
+	let pages = $state([
+		{ name: '1', href: '/docs/components/pagination?page=1', active: false },
+		{ name: '2', href: '/docs/components/pagination?page=2', active: false },
+		{ name: '3', href: '/docs/components/pagination?page=3', active: false },
+		{ name: '4', href: '/docs/components/pagination?page=4', active: false },
+		{ name: '5', href: '/docs/components/pagination?page=5', active: false }
+	]);
+	const previous = () => {
+		alert('Previous btn clicked. Make a call to your server to fetch data.');
+	};
+	const next = () => {
+		alert('Next btn clicked. Make a call to your server to fetch data.');
+	};
 </script>
 
-<Pagination {pages} on:previous={previous} on:next={next} icon>
-  <svelte:fragment slot="prev">
-    <span class="sr-only">Previous</span>
-    <ChevronLeftOutline class="h-2.5 w-2.5" />
-  </svelte:fragment>
-  <svelte:fragment slot="next">
-    <span class="sr-only">Next</span>
-    <ChevronRightOutline class="h-2.5 w-2.5" />
-  </svelte:fragment>
-</Pagination>
+<div class="flex flex-col items-center justify-center gap-3">
+	<Pagination {pages} {previous} {next}>
+		{#snippet prevContent()}
+			<span class="sr-only">Previous</span>
+			<ChevronLeftOutline class="h-5 w-5" />
+		{/snippet}
+		{#snippet nextContent()}
+			<span class="sr-only">Next</span>
+			<ChevronRightOutline class="h-5 w-5" />
+		{/snippet}
+	</Pagination>
+</div>
 
-<Pagination {pages} large on:previous={previous} on:next={next} icon>
-  <svelte:fragment slot="prev">
-    <span class="sr-only">Previous</span>
-    <ChevronLeftOutline class="h-6 w-6" />
-  </svelte:fragment>
-  <svelte:fragment slot="next">
-    <span class="sr-only">Next</span>
-    <ChevronRightOutline class="h-6 w-6" />
-  </svelte:fragment>
-</Pagination>
 ```
 
 ## Previous and next
@@ -150,12 +123,12 @@ Use the following markup to show simple previous and next elements.
 </script>
 
 <div class="flex space-x-3 rtl:space-x-reverse">
-  <PaginationItem on:click={previous}>Previous</PaginationItem>
-  <PaginationItem on:click={next}>Next</PaginationItem>
+  <PaginationItem onclick={previous}>Previous</PaginationItem>
+  <PaginationItem onclick={next}>Next</PaginationItem>
 </div>
 <div class="flex space-x-3 rtl:space-x-reverse">
-  <PaginationItem large on:click={previous}>Previous</PaginationItem>
-  <PaginationItem large on:click={next}>Next</PaginationItem>
+  <PaginationItem large onclick={previous}>Previous</PaginationItem>
+  <PaginationItem large onclick={next}>Next</PaginationItem>
 </div>
 ```
 
@@ -176,21 +149,21 @@ Use the following code to show simple previous and next elements with icons.
 </script>
 
 <div class="flex space-x-3 rtl:space-x-reverse">
-  <PaginationItem class="flex items-center" on:click={previous}>
+  <PaginationItem class="flex items-center" {previous}>
     <ArrowLeftOutline class="me-2 h-3.5 w-3.5" />
     Previous
   </PaginationItem>
-  <PaginationItem class="flex items-center" on:click={next}>
+  <PaginationItem class="flex items-center" {next}>
     Next
     <ArrowRightOutline class="ms-2 h-3.5 w-3.5" />
   </PaginationItem>
 </div>
 <div class="flex space-x-3 rtl:space-x-reverse">
-  <PaginationItem large class="flex items-center" on:click={previous}>
+  <PaginationItem large class="flex items-center" {previous}>
     <ArrowLeftOutline class="me-2 h-5 w-5" />
     Previous
   </PaginationItem>
-  <PaginationItem large class="flex items-center" on:click={next}>
+  <PaginationItem large class="flex items-center" {next}>
     Next
     <ArrowRightOutline class="ms-2 h-5 w-5" />
   </PaginationItem>
@@ -325,7 +298,7 @@ You can use the following code to show the number of data shown inside a table e
   };
 </script>
 
-<Pagination {pages} on:previous={previous} on:next={next} on:click={handleClick} />
+<Pagination {pages} {previous} {next} onclick={handleClick} />
 ```
 
 ## Component data
