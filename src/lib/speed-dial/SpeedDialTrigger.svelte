@@ -6,12 +6,12 @@
 
   let { children, name = "Open actions menu", gradient = false, icon, pill = true, color = "blue", class: className, ...restProps }: Props = $props();
 
-  const gradientButtonProps = $derived({
+  const buttonProps = $derived({
     pill,
     color,
     ...restProps,
-    class: ["p-3!", className]
-  } as GradientButtonProps);
+    class: ["group p-3!", className]
+  });
 </script>
 
 {#snippet moving_cross()}
@@ -21,7 +21,7 @@
 {/snippet}
 
 {#if gradient}
-  <GradientButton {pill} {...gradientButtonProps} class={["p-3!", className]}>
+  <GradientButton {...buttonProps as GradientButtonProps}>
     {#if icon}
       {@render icon()}
     {:else}
@@ -30,7 +30,7 @@
     <span class="sr-only">{name}</span>
   </GradientButton>
 {:else}
-  <Button {pill} {...restProps} class={["p-3!", className]}>
+  <Button {...buttonProps}>
     {#if icon}
       {@render icon()}
     {:else}
