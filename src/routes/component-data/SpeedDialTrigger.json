@@ -6,7 +6,7 @@
     ["gradient", "any", "false"],
     ["icon", "any", ""],
     ["pill", "any", "true"],
-    ["color", "any", "'blue'"],
+    ["color", "any", "\"blue\""],
     ["class", "string", ""]
   ]
 }

@@ -49,6 +49,6 @@
 @props:gradient: any = false;
 @props:icon: any;
 @props:pill: any = true;
-@props:color: any = 'blue';
+@props:color: any = "blue";
 @props:class: string;
 -->
