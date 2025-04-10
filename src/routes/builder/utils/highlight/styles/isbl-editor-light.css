@@ -1,10 +1,10 @@
 pre code.hljs {
-	display: block;
-	overflow-x: auto;
-	padding: 1em;
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
 }
 code.hljs {
-	padding: 3px 5px;
+  padding: 3px 5px;
 }
 /*
 
@@ -12,16 +12,16 @@ ISBL Editor style light color schemec (c) Dmitriy Tarasov <dimatar@gmail.com>
 
 */
 .hljs {
-	background: white;
-	color: black;
+  background: white;
+  color: black;
 }
 /* Base color: saturation 0; */
 .hljs-subst {
-	color: black;
+  color: black;
 }
 .hljs-comment {
-	color: #555555;
-	font-style: italic;
+  color: #555555;
+  font-style: italic;
 }
 .hljs-keyword,
 .hljs-attribute,
@@ -29,12 +29,12 @@ ISBL Editor style light color schemec (c) Dmitriy Tarasov <dimatar@gmail.com>
 .hljs-meta .hljs-keyword,
 .hljs-doctag,
 .hljs-name {
-	color: #000000;
-	font-weight: bold;
+  color: #000000;
+  font-weight: bold;
 }
 /* User color: hue: 0 */
 .hljs-string {
-	color: #000080;
+  color: #000080;
 }
 .hljs-type,
 .hljs-number,
@@ -43,7 +43,7 @@ ISBL Editor style light color schemec (c) Dmitriy Tarasov <dimatar@gmail.com>
 .hljs-quote,
 .hljs-template-tag,
 .hljs-deletion {
-	color: #000000;
+  color: #000000;
 }
 .hljs-regexp,
 .hljs-symbol,
@@ -52,42 +52,42 @@ ISBL Editor style light color schemec (c) Dmitriy Tarasov <dimatar@gmail.com>
 .hljs-link,
 .hljs-selector-attr,
 .hljs-selector-pseudo {
-	color: #5e1700;
+  color: #5e1700;
 }
 /* Language color: hue: 90; */
 .hljs-built_in,
 .hljs-literal {
-	color: #000080;
-	font-weight: bold;
+  color: #000080;
+  font-weight: bold;
 }
 .hljs-bullet,
 .hljs-code,
 .hljs-addition {
-	color: #397300;
+  color: #397300;
 }
 .hljs-class {
-	color: #6f1c00;
-	font-weight: bold;
+  color: #6f1c00;
+  font-weight: bold;
 }
 .hljs-title,
 .hljs-section {
-	color: #fb2c00;
+  color: #fb2c00;
 }
 .hljs-title > .hljs-built_in {
-	color: #008080;
-	font-weight: normal;
+  color: #008080;
+  font-weight: normal;
 }
 /* Meta color: hue: 200 */
 .hljs-meta {
-	color: #1f7199;
+  color: #1f7199;
 }
 .hljs-meta .hljs-string {
-	color: #4d99bf;
+  color: #4d99bf;
 }
 /* Misc effects */
 .hljs-emphasis {
-	font-style: italic;
+  font-style: italic;
 }
 .hljs-strong {
-	font-weight: bold;
+  font-weight: bold;
 }

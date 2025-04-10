@@ -1,4 +1,4 @@
-import register from 'highlight.js/lib/languages/php-template';
+import register from "highlight.js/lib/languages/php-template";
 
-export const phpTemplate = { name: 'php-template', register };
+export const phpTemplate = { name: "php-template", register };
 export default phpTemplate;

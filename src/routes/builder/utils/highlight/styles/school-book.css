@@ -1,10 +1,10 @@
 pre code.hljs {
-	display: block;
-	overflow-x: auto;
-	padding: 1em;
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
 }
 code.hljs {
-	padding: 3px 5px;
+  padding: 3px 5px;
 }
 /*
 
@@ -12,17 +12,17 @@ School Book style from goldblog.com.ua (c) Zaripov Yura <yur4ik7@ukr.net>
 
 */
 .hljs {
-	color: #3e5915;
-	background: #f6f5b2;
+  color: #3e5915;
+  background: #f6f5b2;
 }
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-literal {
-	color: #005599;
-	font-weight: bold;
+  color: #005599;
+  font-weight: bold;
 }
 .hljs-subst {
-	color: #3e5915;
+  color: #3e5915;
 }
 .hljs-string,
 .hljs-title,
@@ -37,13 +37,13 @@ School Book style from goldblog.com.ua (c) Zaripov Yura <yur4ik7@ukr.net>
 .hljs-template-tag,
 .hljs-template-variable,
 .hljs-link {
-	color: #2c009f;
+  color: #2c009f;
 }
 .hljs-comment,
 .hljs-quote,
 .hljs-deletion,
 .hljs-meta {
-	color: #e60415;
+  color: #e60415;
 }
 .hljs-keyword,
 .hljs-selector-tag,
@@ -55,8 +55,8 @@ School Book style from goldblog.com.ua (c) Zaripov Yura <yur4ik7@ukr.net>
 .hljs-name,
 .hljs-selector-id,
 .hljs-strong {
-	font-weight: bold;
+  font-weight: bold;
 }
 .hljs-emphasis {
-	font-style: italic;
+  font-style: italic;
 }

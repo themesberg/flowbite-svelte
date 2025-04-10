@@ -154,29 +154,29 @@ Use this example of a navbar element to also show a search input element that yo
 
 <Navbar>
   {#snippet children({ hidden, toggle, NavContainer })}
-  <NavBrand href="/">
-    <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
-    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-  </NavBrand>
-  <div class="flex md:order-2">
-    <ToolbarButton class="block md:hidden" onclick={toggle}>
-      <SearchOutline class="h-5 w-5 text-gray-500 dark:text-gray-400" />
-    </ToolbarButton>
-    <div class="hidden md:block">
-      <Search size="md" class="ms-auto" placeholder="Search..." />
+    <NavBrand href="/">
+      <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
+      <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+    </NavBrand>
+    <div class="flex md:order-2">
+      <ToolbarButton class="block md:hidden" onclick={toggle}>
+        <SearchOutline class="h-5 w-5 text-gray-500 dark:text-gray-400" />
+      </ToolbarButton>
+      <div class="hidden md:block">
+        <Search size="md" class="ms-auto" placeholder="Search..." />
+      </div>
+      <NavHamburger />
     </div>
-    <NavHamburger />
-  </div>
-  {#if !hidden}
-  <div class="md:hidden w-full mt-2" transition:fade>
-    <Search size="md" placeholder="Search..." />
-  </div>
-  {/if}
-  <NavUl tranistion={fade}>
-    <NavLi href="/" active={true}>Home</NavLi>
-    <NavLi href="/about">About</NavLi>
-    <NavLi href="/docs/components/navbar">Navbar</NavLi>
-  </NavUl>
+    {#if !hidden}
+      <div class="mt-2 w-full md:hidden" transition:fade>
+        <Search size="md" placeholder="Search..." />
+      </div>
+    {/if}
+    <NavUl tranistion={fade}>
+      <NavLi href="/" active={true}>Home</NavLi>
+      <NavLi href="/about">About</NavLi>
+      <NavLi href="/docs/components/navbar">Navbar</NavLi>
+    </NavUl>
   {/snippet}
 </Navbar>
 ```

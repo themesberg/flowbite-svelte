@@ -1,10 +1,10 @@
 pre code.hljs {
-	display: block;
-	overflow-x: auto;
-	padding: 1em;
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
 }
 code.hljs {
-	padding: 3px 5px;
+  padding: 3px 5px;
 }
 /*
     Name:     Kimbie (light)
@@ -13,13 +13,13 @@ code.hljs {
     URL:      https://github.com/idleberg/Kimbie-highlight.js
 */
 .hljs {
-	background: #fbebd4;
-	color: #84613d;
+  background: #fbebd4;
+  color: #84613d;
 }
 /* Kimbie Comment */
 .hljs-comment,
 .hljs-quote {
-	color: #a57a4c;
+  color: #a57a4c;
 }
 /* Kimbie Red */
 .hljs-variable,
@@ -30,7 +30,7 @@ code.hljs {
 .hljs-selector-class,
 .hljs-regexp,
 .hljs-meta {
-	color: #dc3958;
+  color: #dc3958;
 }
 /* Kimbie Orange */
 .hljs-number,
@@ -40,30 +40,30 @@ code.hljs {
 .hljs-params,
 .hljs-deletion,
 .hljs-link {
-	color: #f79a32;
+  color: #f79a32;
 }
 /* Kimbie Green */
 .hljs-string,
 .hljs-symbol,
 .hljs-bullet,
 .hljs-addition {
-	color: #889b4a;
+  color: #889b4a;
 }
 /* Kimbie Purple */
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-function {
-	color: #98676a;
+  color: #98676a;
 }
 /* Kimbie Yellow */
 .hljs-title,
 .hljs-section,
 .hljs-attribute {
-	color: #f06431;
+  color: #f06431;
 }
 .hljs-emphasis {
-	font-style: italic;
+  font-style: italic;
 }
 .hljs-strong {
-	font-weight: bold;
+  font-weight: bold;
 }

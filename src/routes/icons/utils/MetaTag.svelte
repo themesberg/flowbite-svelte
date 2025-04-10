@@ -5,8 +5,8 @@
     description: string;
     title: string;
     subtitle: string;
-  }
-  let { path, description, title, subtitle }: Props = $props()
+  };
+  let { path, description, title, subtitle }: Props = $props();
 
   let imgsrc = `https://open-graph-vercel.vercel.app/api/flowbite-svelte-icons?title=${subtitle}`;
 

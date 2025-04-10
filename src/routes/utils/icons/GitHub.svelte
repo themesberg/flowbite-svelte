@@ -1,7 +1,7 @@
 <script lang="ts">
   type Props = {
     size?: "sm" | "md" | "lg";
-  }
+  };
   let { size = "lg" }: Props = $props();
   // export let size: "sm" | "md" | "lg" = "lg";
 

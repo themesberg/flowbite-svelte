@@ -74,7 +74,7 @@
 @props:open: any = $bindable(false);
 @props:activeClass: any;
 @props:inactiveClass: any;
-@props:transition: any = slide;
-@props:params: any;
+@props:transitionType: any = slide;
+@props:transitionParams: any;
 @props:class: string;
 -->

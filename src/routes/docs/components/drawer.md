@@ -538,7 +538,7 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 <script>
   import { Drawer, Button, CloseButton, A } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
-  
+
   let hiddenBackdropFalse = true;
 </script>
 

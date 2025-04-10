@@ -1,10 +1,10 @@
 pre code.hljs {
-	display: block;
-	overflow-x: auto;
-	padding: 1em;
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
 }
 code.hljs {
-	padding: 3px 5px;
+  padding: 3px 5px;
 }
 /*
 
@@ -12,28 +12,28 @@ Intellij-light style (c) Pegasis <me@pegasis.site>
 
 */
 .hljs {
-	color: #000;
-	background: #fff;
+  color: #000;
+  background: #fff;
 }
 .hljs-subst,
 .hljs-title {
-	font-weight: normal;
-	color: #000;
+  font-weight: normal;
+  color: #000;
 }
 .hljs-title.function_ {
-	color: #7a7a43;
+  color: #7a7a43;
 }
 .hljs-code,
 .hljs-comment,
 .hljs-quote {
-	color: #8c8c8c;
-	font-style: italic;
+  color: #8c8c8c;
+  font-style: italic;
 }
 .hljs-meta {
-	color: #9e880d;
+  color: #9e880d;
 }
 .hljs-section {
-	color: #871094;
+  color: #871094;
 }
 .hljs-variable.language_,
 .hljs-symbol,
@@ -49,49 +49,49 @@ Intellij-light style (c) Pegasis <me@pegasis.site>
 .hljs-name,
 .hljs-built_in,
 .hljs-type {
-	color: #0033b3;
+  color: #0033b3;
 }
 .hljs-property,
 .hljs-attr {
-	color: #871094;
+  color: #871094;
 }
 .hljs-attribute {
-	color: #174ad4;
+  color: #174ad4;
 }
 .hljs-number {
-	color: #1750eb;
+  color: #1750eb;
 }
 .hljs-regexp {
-	color: #264eff;
+  color: #264eff;
 }
 .hljs-link {
-	text-decoration: underline;
-	color: #006dcc;
+  text-decoration: underline;
+  color: #006dcc;
 }
 .hljs-meta .hljs-string,
 .hljs-string {
-	color: #067d17;
+  color: #067d17;
 }
 .hljs-char.escape_ {
-	color: #0037a6;
+  color: #0037a6;
 }
 .hljs-doctag {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 .hljs-template-variable {
-	color: #248f8f;
+  color: #248f8f;
 }
 .hljs-addition {
-	background: #bee6be;
+  background: #bee6be;
 }
 .hljs-deletion {
-	background: #d6d6d6;
+  background: #d6d6d6;
 }
 .hljs-emphasis {
-	font-style: italic;
+  font-style: italic;
 }
 .hljs-strong {
-	font-weight: bold;
+  font-weight: bold;
 }
 .hljs-variable,
 .hljs-operator,
@@ -102,5 +102,5 @@ Intellij-light style (c) Pegasis <me@pegasis.site>
 .hljs-bullet,
 .hljs-formula,
 .hljs-tag {
-	/* purposely ignored */
+  /* purposely ignored */
 }

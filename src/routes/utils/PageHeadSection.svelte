@@ -4,10 +4,9 @@
   type Props = {
     title: string;
     description: string;
-  }
+  };
 
-  let { title, description }: Props = $props()
-
+  let { title, description }: Props = $props();
 </script>
 
 <div class="border-b border-gray-200 pb-8 dark:border-gray-800">

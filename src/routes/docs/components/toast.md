@@ -80,35 +80,35 @@ Usually, green, red, and orange are used to show success, danger, or warning ale
 
 <Toast color="dark">
   {#snippet icon()}
-  <FireOutline class="h-6 w-6" />
+    <FireOutline class="h-6 w-6" />
   {/snippet}
   Dark
 </Toast>
 
 <Toast color="yellow">
   {#snippet icon()}
-  <FireOutline class="h-6 w-6" />
+    <FireOutline class="h-6 w-6" />
   {/snippet}
   Yellow
 </Toast>
 
 <Toast color="blue">
   {#snippet icon()}
-  <FireOutline class="h-6 w-6" />
+    <FireOutline class="h-6 w-6" />
   {/snippet}
   Blue
 </Toast>
 
 <Toast color="indigo">
   {#snippet icon()}
-  <FireOutline class="h-6 w-6" />
+    <FireOutline class="h-6 w-6" />
   {/snippet}
   Indigo
 </Toast>
 
 <Toast color="purple">
   {#snippet icon()}
-  <FireOutline class="h-6 w-6" />
+    <FireOutline class="h-6 w-6" />
   {/snippet}
   Purple
 </Toast>
@@ -307,7 +307,7 @@ This component can be used to show messages and a CTA button when receiving chat
 
 <Toast align={false} color="none" defaultIconClass="">
   {#snippet icon()}
-    <Avatar src="/images/profile-picture-1.webp" class="h-8"/>
+    <Avatar src="/images/profile-picture-1.webp" class="h-8" />
   {/snippet}
   <div class="ms-3 text-sm font-normal">
     <span class="mb-1 text-sm font-semibold text-gray-900 dark:text-white">Jese Leos</span>

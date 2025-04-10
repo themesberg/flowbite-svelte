@@ -1,4 +1,4 @@
-import register from 'highlight.js/lib/languages/openscad';
+import register from "highlight.js/lib/languages/openscad";
 
-export const openscad = { name: 'openscad', register };
+export const openscad = { name: "openscad", register };
 export default openscad;

@@ -199,28 +199,22 @@ Use `multiple` to open all accordion items.
 
 ```svelte example
 <script lang="ts">
-	import { Accordion, AccordionItem } from 'flowbite-svelte';
+  import { Accordion, AccordionItem } from "flowbite-svelte";
 </script>
 
 <Accordion multiple>
-	<AccordionItem>
-		{#snippet header()}
-			Header 1-1
-		{/snippet}
-		<p class="mb-2 text-gray-500 dark:text-gray-400">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
-			explicabo ...
-		</p>
-	</AccordionItem>
-	<AccordionItem>
-		{#snippet header()}
-			Header 1-2
-		{/snippet}
-		<p class="mb-2 text-gray-500 dark:text-gray-400">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
-			explicabo ...
-		</p>
-	</AccordionItem>
+  <AccordionItem>
+    {#snippet header()}
+      Header 1-1
+    {/snippet}
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+  </AccordionItem>
+  <AccordionItem>
+    {#snippet header()}
+      Header 1-2
+    {/snippet}
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+  </AccordionItem>
 </Accordion>
 ```
 
@@ -266,8 +260,8 @@ The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#r
 ```svelte example
 <script>
   import { AccordionItem, Accordion } from "flowbite-svelte";
-  import { fade, fly } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
+  import { fade, fly } from "svelte/transition";
+  import { quintOut } from "svelte/easing";
 </script>
 
 <Accordion>
@@ -275,9 +269,7 @@ The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#r
     {#snippet header()}My Header 1{/snippet}
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
-  <AccordionItem transitionType={fly}
-		transitionParams={{ delay: 250, duration: 300, x: 100, y: 500, opacity: 0.5, easing: quintOut }}
-  >
+  <AccordionItem transitionType={fly} transitionParams={{ delay: 250, duration: 300, x: 100, y: 500, opacity: 0.5, easing: quintOut }}>
     {#snippet header()}My Header 2{/snippet}
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>

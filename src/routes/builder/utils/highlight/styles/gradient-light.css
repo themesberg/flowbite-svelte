@@ -1,10 +1,10 @@
 pre code.hljs {
-	display: block;
-	overflow-x: auto;
-	padding: 1em;
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
 }
 code.hljs {
-	padding: 3px 5px;
+  padding: 3px 5px;
 }
 /*
 
@@ -12,26 +12,18 @@ Gradient Light (c) Samia Ali <samiaab1990@gmail.com>
 
 */
 .hljs {
-	background-color: #f9ccff;
-	background-image: linear-gradient(
-		295deg,
-		#f9ccff 0%,
-		#e6bbf9 11%,
-		#9ec6f9 32%,
-		#55e6ee 60%,
-		#91f5d1 74%,
-		#f9ffbf 98%
-	);
-	color: #250482;
+  background-color: #f9ccff;
+  background-image: linear-gradient(295deg, #f9ccff 0%, #e6bbf9 11%, #9ec6f9 32%, #55e6ee 60%, #91f5d1 74%, #f9ffbf 98%);
+  color: #250482;
 }
 .hljs-subtr {
-	color: #01958b;
+  color: #01958b;
 }
 .hljs-doctag,
 .hljs-meta,
 .hljs-comment,
 .hljs-quote {
-	color: #cb7200;
+  color: #cb7200;
 }
 .hljs-selector-tag,
 .hljs-selector-id,
@@ -39,35 +31,35 @@ Gradient Light (c) Samia Ali <samiaab1990@gmail.com>
 .hljs-regexp,
 .hljs-attr,
 .hljs-tag {
-	color: #07bd5f;
+  color: #07bd5f;
 }
 .hljs-params,
 .hljs-selector-class,
 .hljs-bullet {
-	color: #43449f;
+  color: #43449f;
 }
 .hljs-keyword,
 .hljs-section,
 .hljs-meta .hljs-keyword,
 .hljs-symbol,
 .hljs-type {
-	color: #7d2801;
+  color: #7d2801;
 }
 .hljs-addition,
 .hljs-number,
 .hljs-link {
-	color: #7f0096;
+  color: #7f0096;
 }
 .hljs-string {
-	color: #2681ab;
+  color: #2681ab;
 }
 .hljs-attribute,
 .hljs-addition {
-	color: #296562;
+  color: #296562;
 }
 .hljs-variable,
 .hljs-template-variable {
-	color: #025c8f;
+  color: #025c8f;
 }
 .hljs-built_in,
 .hljs-formula,
@@ -75,16 +67,16 @@ Gradient Light (c) Samia Ali <samiaab1990@gmail.com>
 .hljs-title,
 .hljs-class,
 .hljs-function {
-	color: #529117;
+  color: #529117;
 }
 .hljs-selector-pseudo,
 .hljs-deletion,
 .hljs-literal {
-	color: #ad13ff;
+  color: #ad13ff;
 }
 .hljs-emphasis,
 .hljs-quote {
-	font-style: italic;
+  font-style: italic;
 }
 .hljs-params,
 .hljs-selector-class,
@@ -94,5 +86,5 @@ Gradient Light (c) Samia Ali <samiaab1990@gmail.com>
 .hljs-template-tag,
 .hljs-section,
 .hljs-keyword {
-	font-weight: bold;
+  font-weight: bold;
 }

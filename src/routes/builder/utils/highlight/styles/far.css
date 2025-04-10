@@ -1,10 +1,10 @@
 pre code.hljs {
-	display: block;
-	overflow-x: auto;
-	padding: 1em;
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
 }
 code.hljs {
-	padding: 3px 5px;
+  padding: 3px 5px;
 }
 /*
 
@@ -12,11 +12,11 @@ FAR Style (c) MajestiC <majestic2k@gmail.com>
 
 */
 .hljs {
-	color: #0ff;
-	background: #000080;
+  color: #0ff;
+  background: #000080;
 }
 .hljs-subst {
-	/* default */
+  /* default */
 }
 .hljs-string,
 .hljs-attribute,
@@ -26,7 +26,7 @@ FAR Style (c) MajestiC <majestic2k@gmail.com>
 .hljs-template-tag,
 .hljs-template-variable,
 .hljs-addition {
-	color: #ff0;
+  color: #ff0;
 }
 .hljs-keyword,
 .hljs-selector-tag,
@@ -36,22 +36,22 @@ FAR Style (c) MajestiC <majestic2k@gmail.com>
 .hljs-selector-id,
 .hljs-selector-class,
 .hljs-variable {
-	color: #fff;
+  color: #fff;
 }
 .hljs-comment,
 .hljs-quote,
 .hljs-doctag,
 .hljs-deletion {
-	color: #888;
+  color: #888;
 }
 .hljs-number,
 .hljs-regexp,
 .hljs-literal,
 .hljs-link {
-	color: #0f0;
+  color: #0f0;
 }
 .hljs-meta {
-	color: #008080;
+  color: #008080;
 }
 .hljs-keyword,
 .hljs-selector-tag,
@@ -59,8 +59,8 @@ FAR Style (c) MajestiC <majestic2k@gmail.com>
 .hljs-section,
 .hljs-name,
 .hljs-strong {
-	font-weight: bold;
+  font-weight: bold;
 }
 .hljs-emphasis {
-	font-style: italic;
+  font-style: italic;
 }

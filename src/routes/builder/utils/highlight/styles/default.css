@@ -1,10 +1,10 @@
 pre code.hljs {
-	display: block;
-	overflow-x: auto;
-	padding: 1em;
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
 }
 code.hljs {
-	padding: 3px 5px;
+  padding: 3px 5px;
 }
 /*!
   Theme: Default
@@ -22,33 +22,33 @@ as-is from the repository directly without the need for a build step
 Typically this "required" baseline CSS is added by `makestuff.js` during build.
 */
 pre code.hljs {
-	display: block;
-	overflow-x: auto;
-	padding: 1em;
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
 }
 code.hljs {
-	padding: 3px 5px;
+  padding: 3px 5px;
 }
 /* end baseline CSS */
 .hljs {
-	background: #f3f3f3;
-	color: #444;
+  background: #f3f3f3;
+  color: #444;
 }
 /* Base color: saturation 0; */
 .hljs-subst {
-	/* default */
+  /* default */
 }
 /* purposely ignored */
 .hljs-comment {
-	color: #697070;
+  color: #697070;
 }
 .hljs-tag,
 .hljs-punctuation {
-	color: #444a;
+  color: #444a;
 }
 .hljs-tag .hljs-name,
 .hljs-tag .hljs-attr {
-	color: #444;
+  color: #444;
 }
 .hljs-keyword,
 .hljs-attribute,
@@ -56,7 +56,7 @@ code.hljs {
 .hljs-meta .hljs-keyword,
 .hljs-doctag,
 .hljs-name {
-	font-weight: bold;
+  font-weight: bold;
 }
 /* User color: hue: 0 */
 .hljs-type,
@@ -67,12 +67,12 @@ code.hljs {
 .hljs-quote,
 .hljs-template-tag,
 .hljs-deletion {
-	color: #880000;
+  color: #880000;
 }
 .hljs-title,
 .hljs-section {
-	color: #880000;
-	font-weight: bold;
+  color: #880000;
+  font-weight: bold;
 }
 .hljs-regexp,
 .hljs-symbol,
@@ -82,29 +82,29 @@ code.hljs {
 .hljs-selector-attr,
 .hljs-operator,
 .hljs-selector-pseudo {
-	color: #ab5656;
+  color: #ab5656;
 }
 /* Language color: hue: 90; */
 .hljs-literal {
-	color: #695;
+  color: #695;
 }
 .hljs-built_in,
 .hljs-bullet,
 .hljs-code,
 .hljs-addition {
-	color: #397300;
+  color: #397300;
 }
 /* Meta color: hue: 200 */
 .hljs-meta {
-	color: #1f7199;
+  color: #1f7199;
 }
 .hljs-meta .hljs-string {
-	color: #38a;
+  color: #38a;
 }
 /* Misc effects */
 .hljs-emphasis {
-	font-style: italic;
+  font-style: italic;
 }
 .hljs-strong {
-	font-weight: bold;
+  font-weight: bold;
 }

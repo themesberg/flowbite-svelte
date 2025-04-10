@@ -11,7 +11,6 @@ description: Tips for your apps.
 
 You can find [the progress report](https://flowbite-svelte-5-dev.vercel.app/) for flowbite-svelte-next on Svelte 5.
 
-
 ## Svelte key blocks
 
 Svelte key blocks destroy and recreate their contents when the value of an expression changes. This can be useful when you are using SvelteKit (group) routing.
@@ -39,7 +38,7 @@ The following example shows how to add navigation using the key blocks:
 <script>
   import { page } from "$app/state";
   import { Navbar, NavLi, NavUl } from "flowbite-svelte";
-  let {children} = $props();
+  let { children } = $props();
   let activeUrl = $derived(page.url.pathname);
 </script>
 

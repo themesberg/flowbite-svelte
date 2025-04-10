@@ -1,10 +1,10 @@
 pre code.hljs {
-	display: block;
-	overflow-x: auto;
-	padding: 1em;
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
 }
 code.hljs {
-	padding: 3px 5px;
+  padding: 3px 5px;
 }
 /*!
   Theme: An Old Hope – Star Wars Syntax
@@ -17,13 +17,13 @@ code.hljs {
 */
 /* Millenium Falcon */
 .hljs {
-	background: #1c1d21;
-	color: #c0c5ce;
+  background: #1c1d21;
+  color: #c0c5ce;
 }
 /* Death Star Comment */
 .hljs-comment,
 .hljs-quote {
-	color: #b6b18b;
+  color: #b6b18b;
 }
 /* Darth Vader */
 .hljs-variable,
@@ -34,7 +34,7 @@ code.hljs {
 .hljs-selector-class,
 .hljs-regexp,
 .hljs-deletion {
-	color: #eb3c54;
+  color: #eb3c54;
 }
 /* Threepio */
 .hljs-number,
@@ -44,32 +44,32 @@ code.hljs {
 .hljs-params,
 .hljs-meta,
 .hljs-link {
-	color: #e7ce56;
+  color: #e7ce56;
 }
 /* Luke Skywalker */
 .hljs-attribute {
-	color: #ee7c2b;
+  color: #ee7c2b;
 }
 /* Obi Wan Kenobi */
 .hljs-string,
 .hljs-symbol,
 .hljs-bullet,
 .hljs-addition {
-	color: #4fb4d7;
+  color: #4fb4d7;
 }
 /* Yoda */
 .hljs-title,
 .hljs-section {
-	color: #78bb65;
+  color: #78bb65;
 }
 /* Mace Windu */
 .hljs-keyword,
 .hljs-selector-tag {
-	color: #b45ea4;
+  color: #b45ea4;
 }
 .hljs-emphasis {
-	font-style: italic;
+  font-style: italic;
 }
 .hljs-strong {
-	font-weight: bold;
+  font-weight: bold;
 }

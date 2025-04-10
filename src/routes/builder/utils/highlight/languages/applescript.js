@@ -1,4 +1,4 @@
-import register from 'highlight.js/lib/languages/applescript';
+import register from "highlight.js/lib/languages/applescript";
 
-export const applescript = { name: 'applescript', register };
+export const applescript = { name: "applescript", register };
 export default applescript;

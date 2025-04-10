@@ -21,13 +21,13 @@ const filePath = (path: string) => "/" + basename(path);
  */
 const extractRouteName = (path: string): string => {
   // Split the path by '/'
-  const parts = path.split('/');
-  
+  const parts = path.split("/");
+
   // Find the index of the part containing '+page.svelte'
-  const pageIndex = parts.findIndex(part => part.includes('+page.svelte'));
-  
+  const pageIndex = parts.findIndex((part) => part.includes("+page.svelte"));
+
   // Return the part before '+page.svelte', or empty string if not found
-  return pageIndex > 0 ? parts[pageIndex - 1] : '';
+  return pageIndex > 0 ? parts[pageIndex - 1] : "";
 };
 
 // Example usage:
@@ -182,7 +182,7 @@ export const fetchMarkdownPosts = async () => {
 
 export const fetchBuilders = async () => {
   const builderFiles = import.meta.glob("/src/routes/builder/**/*.svelte");
- 
+
   const iterableBuilderFiles = Object.entries(builderFiles);
   // console.log('iterableBuilderFiles: ', iterableBuilderFiles);
   const allBuilders = await Promise.all(
@@ -191,7 +191,7 @@ export const fetchBuilders = async () => {
         path: extractRouteName(path)
       };
     })
-  )
+  );
   // console.log('allBuilders: ', allBuilders)
-  return allBuilders
+  return allBuilders;
 };

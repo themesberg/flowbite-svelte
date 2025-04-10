@@ -13,7 +13,6 @@ Use this page to easily search and configure a collection of up to 500 SVG open-
 
 Search by the icon name and you'll find the component name that you need to import in your Svelte app.
 
-
 ```svelte example hideSource hideResponsiveButtons
 <script>
   import { Label, Range, TabItem, Tabs } from "$lib";

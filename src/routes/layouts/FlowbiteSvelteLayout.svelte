@@ -75,7 +75,7 @@
       <ToolbarLink class="hidden hover:text-gray-900 focus:ring-0 xl:inline-block dark:hover:text-white" name="Join community on Discord" href="https://discord.gg/4eeurUVvTy">
         <Discord />
       </ToolbarLink>
-      <ToolbarLink class="hidden xl:block hover:text-gray-900 focus:ring-0 xl:inline-block dark:hover:text-white" name="Subscribe to YouTube channel" href="https://www.youtube.com/channel/UC_Ms4V2kYDsh7F_CSsHyQ6A">
+      <ToolbarLink class="hidden hover:text-gray-900 focus:ring-0 xl:block xl:inline-block dark:hover:text-white" name="Subscribe to YouTube channel" href="https://www.youtube.com/channel/UC_Ms4V2kYDsh7F_CSsHyQ6A">
         <YouTube />
       </ToolbarLink>
       <DarkMode size="lg" class="inline-block hover:text-gray-900 dark:hover:text-white" />

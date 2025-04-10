@@ -29,7 +29,7 @@
 
 {#if !hidden}
   <div role="presentation" class={backdropCls({ class: backdropClass })} onclick={activateClickOutside ? closeDrawer : undefined}></div>
-  <div {...restProps} class={base({ class: clsx(className) })} transition:transitionType={transitionParams ? transitionParams : transition_params as ParamsType} tabindex="-1">
+  <div {...restProps} class={base({ class: clsx(className) })} transition:transitionType={transitionParams ? transitionParams : (transition_params as ParamsType)} tabindex="-1">
     {@render children?.()}
   </div>
 {/if}
@@ -48,6 +48,6 @@
 @props:backdropClass: any;
 @props:placement: any = "left";
 @props:class: string;
-@props:params: any;
-@props:transition: any = fly;
+@props:transitionParams: any;
+@props:transitionType: any = fly;
 -->

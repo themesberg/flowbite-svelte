@@ -85,4 +85,3 @@ Search by the icon name and you'll find the component name that you need to impo
   <!-- </TableSearch> -->
 </div>
 ```
-

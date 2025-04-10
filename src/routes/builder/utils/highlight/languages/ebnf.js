@@ -1,4 +1,4 @@
-import register from 'highlight.js/lib/languages/ebnf';
+import register from "highlight.js/lib/languages/ebnf";
 
-export const ebnf = { name: 'ebnf', register };
+export const ebnf = { name: "ebnf", register };
 export default ebnf;

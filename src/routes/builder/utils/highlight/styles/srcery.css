@@ -1,10 +1,10 @@
 pre code.hljs {
-	display: block;
-	overflow-x: auto;
-	padding: 1em;
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
 }
 code.hljs {
-	padding: 3px 5px;
+  padding: 3px 5px;
 }
 /*
 Theme: Srcery
@@ -15,25 +15,25 @@ Website: https://srcery-colors.github.io/
 Date: 2021-04-13
 */
 .hljs {
-	background: #1c1b19;
-	/* Black */
-	color: #fce8c3; /* Bright White */
+  background: #1c1b19;
+  /* Black */
+  color: #fce8c3; /* Bright White */
 }
 /* Bright White */
 .hljs-subst,
 .hljs-quote,
 .hljs-literal {
-	color: #fce8c3;
+  color: #fce8c3;
 }
 /* Bright Blue */
 .hljs-type,
 .hljs-symbol {
-	color: #68a8e4;
+  color: #68a8e4;
 }
 /* Red */
 .hljs-keyword,
 .hljs-deletion {
-	color: #ef2f27;
+  color: #ef2f27;
 }
 /* Yellow */
 .hljs-name,
@@ -45,7 +45,7 @@ Date: 2021-04-13
 .hljs-selector-pseudo,
 .hljs-section,
 .hljs-title {
-	color: #fbb829;
+  color: #fbb829;
 }
 /* Cyan */
 .hljs-code,
@@ -53,36 +53,36 @@ Date: 2021-04-13
 .hljs-property,
 .hljs-template-variable,
 .hljs-class {
-	color: #0aaeb3;
+  color: #0aaeb3;
 }
 /* Bright Green */
 .hljs-string,
 .hljs-regexp,
 .hljs-bullet,
 .hljs-addition {
-	color: #98bc37;
+  color: #98bc37;
 }
 /* Bright Magenta */
 .hljs-built_in,
 .hljs-params {
-	color: #ff5c8f;
+  color: #ff5c8f;
 }
 /* Blue */
 .hljs-template-tag,
 .hljs-selector-tag {
-	color: #2c78bf;
+  color: #2c78bf;
 }
 /* Bright Black */
 .hljs-link,
 .hljs-number,
 .hljs-comment,
 .hljs-meta {
-	color: #918175;
+  color: #918175;
 }
 .hljs-emphasis {
-	font-style: italic;
+  font-style: italic;
 }
 .hljs-strong {
-	font-weight: bold;
+  font-weight: bold;
 }
 /* @see https://github.com/srcery-colors/srcery-emacs for reference */

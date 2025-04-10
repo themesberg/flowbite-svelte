@@ -1,4 +1,4 @@
-import register from 'highlight.js/lib/languages/shell';
+import register from "highlight.js/lib/languages/shell";
 
-export const shell = { name: 'shell', register };
+export const shell = { name: "shell", register };
 export default shell;

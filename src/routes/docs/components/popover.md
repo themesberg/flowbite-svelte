@@ -239,7 +239,7 @@ Dynamically show the password strength progress when creating a new password pos
   import { Popover, Label, Input, Checkbox, Button } from "flowbite-svelte";
   import { CheckOutline, CloseOutline } from "flowbite-svelte-icons";
   function preventDefault<E extends Event>(fn: (event: E) => void) {
-    return function(this: any, event: E) {
+    return function (this: any, event: E) {
       event.preventDefault();
       fn.call(this, event);
     };

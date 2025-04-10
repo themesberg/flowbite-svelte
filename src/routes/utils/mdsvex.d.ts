@@ -12,7 +12,7 @@ declare module "*.md" {
 declare module "*.svx" {
   import type { SvelteComponent } from "svelte";
 
-  export default class Comp extends SvelteComponent { }
+  export default class Comp extends SvelteComponent {}
 
   export const metadata: Record<string, unknown>;
 }
@@ -20,7 +20,7 @@ declare module "*.svx" {
 declare module "*.svelte.md" {
   import type { SvelteComponent } from "svelte";
 
-  export default class Comp extends SvelteComponent { }
+  export default class Comp extends SvelteComponent {}
 
   export const metadata: Record<string, unknown>;
 }

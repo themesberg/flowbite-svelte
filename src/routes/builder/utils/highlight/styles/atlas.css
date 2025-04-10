@@ -1,10 +1,10 @@
 pre code.hljs {
-	display: block;
-	overflow-x: auto;
-	padding: 1em;
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
 }
 code.hljs {
-	padding: 3px 5px;
+  padding: 3px 5px;
 }
 /*!
   Theme: Atlas
@@ -40,39 +40,39 @@ base0E  #9a70a4  Keywords, Storage, Selector, Markup Italic, Diff Changed
 base0F  #c43060  Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
 */
 pre code.hljs {
-	display: block;
-	overflow-x: auto;
-	padding: 1em;
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
 }
 code.hljs {
-	padding: 3px 5px;
+  padding: 3px 5px;
 }
 .hljs {
-	color: #a1a19a;
-	background: #002635;
+  color: #a1a19a;
+  background: #002635;
 }
 .hljs::selection,
 .hljs ::selection {
-	background-color: #517f8d;
-	color: #a1a19a;
+  background-color: #517f8d;
+  color: #a1a19a;
 }
 /* purposely do not highlight these things */
 /* base03 - #6C8B91 -  Comments, Invisibles, Line Highlighting */
 .hljs-comment {
-	color: #6c8b91;
+  color: #6c8b91;
 }
 /* base04 - #869696 -  Dark Foreground (Used for status bars) */
 .hljs-tag {
-	color: #869696;
+  color: #869696;
 }
 /* base05 - #a1a19a -  Default Foreground, Caret, Delimiters, Operators */
 .hljs-subst,
 .hljs-punctuation,
 .hljs-operator {
-	color: #a1a19a;
+  color: #a1a19a;
 }
 .hljs-operator {
-	opacity: 0.7;
+  opacity: 0.7;
 }
 /* base08 - Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted */
 .hljs-bullet,
@@ -81,7 +81,7 @@ code.hljs {
 .hljs-selector-tag,
 .hljs-name,
 .hljs-deletion {
-	color: #ff5a67;
+  color: #ff5a67;
 }
 /* base09 - Integers, Boolean, Constants, XML Attributes, Markup Link Url */
 .hljs-symbol,
@@ -90,24 +90,24 @@ code.hljs {
 .hljs-attr,
 .hljs-variable.constant_,
 .hljs-literal {
-	color: #f08e48;
+  color: #f08e48;
 }
 /* base0A - Classes, Markup Bold, Search Text Background */
 .hljs-title,
 .hljs-class .hljs-title,
 .hljs-title.class_ {
-	color: #ffcc1b;
+  color: #ffcc1b;
 }
 .hljs-strong {
-	font-weight: bold;
-	color: #ffcc1b;
+  font-weight: bold;
+  color: #ffcc1b;
 }
 /* base0B - Strings, Inherited Class, Markup Code, Diff Inserted */
 .hljs-code,
 .hljs-addition,
 .hljs-title.class_.inherited__,
 .hljs-string {
-	color: #7fc06e;
+  color: #7fc06e;
 }
 /* base0C - Support, Regular Expressions, Escape Characters, Markup Quotes */
 /* guessing */
@@ -116,7 +116,7 @@ code.hljs {
 .hljs-quote,
 .hljs-keyword.hljs-atrule,
 .hljs-regexp {
-	color: #14747e;
+  color: #14747e;
 }
 /* base0D - Functions, Methods, Attribute IDs, Headings */
 .hljs-function .hljs-title,
@@ -124,7 +124,7 @@ code.hljs {
 .ruby .hljs-property,
 .hljs-title.function_,
 .hljs-section {
-	color: #5dd7b9;
+  color: #5dd7b9;
 }
 /* base0E - Keywords, Storage, Selector, Markup Italic, Diff Changed */
 /* .hljs-selector-id, */
@@ -135,11 +135,11 @@ code.hljs {
 .hljs-template-tag,
 .diff .hljs-meta,
 .hljs-keyword {
-	color: #9a70a4;
+  color: #9a70a4;
 }
 .hljs-emphasis {
-	color: #9a70a4;
-	font-style: italic;
+  color: #9a70a4;
+  font-style: italic;
 }
 /* base0F - Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?> */
 /*
@@ -149,10 +149,10 @@ code.hljs {
 .hljs-meta,
 .hljs-meta .hljs-keyword,
 .hljs-meta .hljs-string {
-	color: #c43060;
+  color: #c43060;
 }
 /* for v10 compatible themes */
 .hljs-meta .hljs-keyword,
 .hljs-meta-keyword {
-	font-weight: bold;
+  font-weight: bold;
 }

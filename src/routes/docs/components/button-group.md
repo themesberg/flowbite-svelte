@@ -79,10 +79,10 @@ Use the following code to stack together buttons into a single group.
   </ButtonGroup>
   <div class="py-4">Dualtone gradient pill</div>
   <ButtonGroup class="space-x-px">
-	<GradientButton pill color="purpleToBlue">Profile</GradientButton>
-	<GradientButton pill color="cyanToBlue">Settings</GradientButton>
-	<GradientButton pill color="greenToBlue">Messages</GradientButton>
-</ButtonGroup>
+    <GradientButton pill color="purpleToBlue">Profile</GradientButton>
+    <GradientButton pill color="cyanToBlue">Settings</GradientButton>
+    <GradientButton pill color="greenToBlue">Messages</GradientButton>
+  </ButtonGroup>
 </div>
 ```
 

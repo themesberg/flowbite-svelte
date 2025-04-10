@@ -1,4 +1,4 @@
-import register from 'highlight.js/lib/languages/taggerscript';
+import register from "highlight.js/lib/languages/taggerscript";
 
-export const taggerscript = { name: 'taggerscript', register };
+export const taggerscript = { name: "taggerscript", register };
 export default taggerscript;

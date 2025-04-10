@@ -11,7 +11,7 @@
     ["backdropClass", "any", ""],
     ["placement", "any", "\"left\""],
     ["class", "string", ""],
-    ["params", "any", ""],
-    ["transition", "any", "fly"]
+    ["transitionParams", "any", ""],
+    ["transitionType", "any", "fly"]
   ]
 }

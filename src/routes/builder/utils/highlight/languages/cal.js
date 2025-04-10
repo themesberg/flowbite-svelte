@@ -1,4 +1,4 @@
-import register from 'highlight.js/lib/languages/cal';
+import register from "highlight.js/lib/languages/cal";
 
-export const cal = { name: 'cal', register };
+export const cal = { name: "cal", register };
 export default cal;

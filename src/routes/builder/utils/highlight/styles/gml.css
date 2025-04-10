@@ -1,10 +1,10 @@
 pre code.hljs {
-	display: block;
-	overflow-x: auto;
-	padding: 1em;
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
 }
 code.hljs {
-	padding: 3px 5px;
+  padding: 3px 5px;
 }
 /*
 
@@ -12,30 +12,30 @@ GML Theme - Meseta <meseta@gmail.com>
 
 */
 .hljs {
-	background: #222222;
-	color: #c0c0c0;
+  background: #222222;
+  color: #c0c0c0;
 }
 .hljs-keyword {
-	color: #ffb871;
-	font-weight: bold;
+  color: #ffb871;
+  font-weight: bold;
 }
 .hljs-built_in {
-	color: #ffb871;
+  color: #ffb871;
 }
 .hljs-literal {
-	color: #ff8080;
+  color: #ff8080;
 }
 .hljs-symbol {
-	color: #58e55a;
+  color: #58e55a;
 }
 .hljs-comment {
-	color: #5b995b;
+  color: #5b995b;
 }
 .hljs-string {
-	color: #ffff00;
+  color: #ffff00;
 }
 .hljs-number {
-	color: #ff8080;
+  color: #ff8080;
 }
 .hljs-attribute,
 .hljs-selector-tag,
@@ -62,11 +62,11 @@ GML Theme - Meseta <meseta@gmail.com>
 .hljs-meta .hljs-keyword,
 .hljs-meta,
 .hljs-subst {
-	color: #c0c0c0;
+  color: #c0c0c0;
 }
 .hljs-emphasis {
-	font-style: italic;
+  font-style: italic;
 }
 .hljs-strong {
-	font-weight: bold;
+  font-weight: bold;
 }

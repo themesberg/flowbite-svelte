@@ -2,9 +2,9 @@
   import Button from "$lib/buttons/Button.svelte";
   import GradientButton from "$lib/buttons/GradientButton.svelte";
   import type { SpeedDialTriggerProps as Props } from "./type";
-  import type { GradientButtonProps } from '../buttons/type'
+  import type { GradientButtonProps } from "../buttons/type";
 
-  let { children, name = "Open actions menu", gradient = false, icon, pill = true, color = 'blue', class: className, ...restProps }: Props = $props();
+  let { children, name = "Open actions menu", gradient = false, icon, pill = true, color = "blue", class: className, ...restProps }: Props = $props();
 
   const gradientButtonProps = $derived({
     pill,
@@ -49,5 +49,6 @@
 @props:gradient: any = false;
 @props:icon: any;
 @props:pill: any = true;
+@props:color: any = 'blue';
 @props:class: string;
 -->

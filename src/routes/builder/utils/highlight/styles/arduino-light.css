@@ -1,10 +1,10 @@
 pre code.hljs {
-	display: block;
-	overflow-x: auto;
-	padding: 1em;
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
 }
 code.hljs {
-	padding: 3px 5px;
+  padding: 3px 5px;
 }
 /*
 
@@ -12,25 +12,25 @@ Arduino® Light Theme - Stefania Mellai <s.mellai@arduino.cc>
 
 */
 .hljs {
-	background: white;
-	color: #434f54;
+  background: white;
+  color: #434f54;
 }
 .hljs-subst {
-	color: #434f54;
+  color: #434f54;
 }
 .hljs-keyword,
 .hljs-attribute,
 .hljs-selector-tag,
 .hljs-doctag,
 .hljs-name {
-	color: #00979d;
+  color: #00979d;
 }
 .hljs-built_in,
 .hljs-literal,
 .hljs-bullet,
 .hljs-code,
 .hljs-addition {
-	color: #d35400;
+  color: #d35400;
 }
 .hljs-regexp,
 .hljs-symbol,
@@ -39,7 +39,7 @@ Arduino® Light Theme - Stefania Mellai <s.mellai@arduino.cc>
 .hljs-link,
 .hljs-selector-attr,
 .hljs-selector-pseudo {
-	color: #00979d;
+  color: #00979d;
 }
 .hljs-type,
 .hljs-string,
@@ -48,31 +48,31 @@ Arduino® Light Theme - Stefania Mellai <s.mellai@arduino.cc>
 .hljs-quote,
 .hljs-template-tag,
 .hljs-deletion {
-	color: #005c5f;
+  color: #005c5f;
 }
 .hljs-comment {
-	color: rgba(149, 165, 166, 0.8);
+  color: rgba(149, 165, 166, 0.8);
 }
 .hljs-meta .hljs-keyword {
-	color: #728e00;
+  color: #728e00;
 }
 .hljs-meta {
-	color: #434f54;
+  color: #434f54;
 }
 .hljs-emphasis {
-	font-style: italic;
+  font-style: italic;
 }
 .hljs-strong {
-	font-weight: bold;
+  font-weight: bold;
 }
 .hljs-function {
-	color: #728e00;
+  color: #728e00;
 }
 .hljs-title,
 .hljs-section {
-	color: #880000;
-	font-weight: bold;
+  color: #880000;
+  font-weight: bold;
 }
 .hljs-number {
-	color: #8a7b52;
+  color: #8a7b52;
 }

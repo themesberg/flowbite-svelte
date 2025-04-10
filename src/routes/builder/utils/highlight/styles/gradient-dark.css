@@ -1,10 +1,10 @@
 pre code.hljs {
-	display: block;
-	overflow-x: auto;
-	padding: 1em;
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
 }
 code.hljs {
-	padding: 3px 5px;
+  padding: 3px 5px;
 }
 /*
 
@@ -12,18 +12,18 @@ Gradient Dark (c) Samia Ali <samiaab1990@gmail.com>
 
 */
 .hljs {
-	background-color: #652487;
-	background-image: linear-gradient(160deg, #652487 0%, #443ac3 35%, #0174b7 68%, #04988e 100%);
-	color: #e7e4eb;
+  background-color: #652487;
+  background-image: linear-gradient(160deg, #652487 0%, #443ac3 35%, #0174b7 68%, #04988e 100%);
+  color: #e7e4eb;
 }
 .hljs-subtr {
-	color: #e7e4eb;
+  color: #e7e4eb;
 }
 .hljs-doctag,
 .hljs-meta,
 .hljs-comment,
 .hljs-quote {
-	color: #af8dd9;
+  color: #af8dd9;
 }
 .hljs-selector-tag,
 .hljs-selector-id,
@@ -31,35 +31,35 @@ Gradient Dark (c) Samia Ali <samiaab1990@gmail.com>
 .hljs-regexp,
 .hljs-attr,
 .hljs-tag {
-	color: #aefbff;
+  color: #aefbff;
 }
 .hljs-params,
 .hljs-selector-class,
 .hljs-bullet {
-	color: #f19fff;
+  color: #f19fff;
 }
 .hljs-keyword,
 .hljs-section,
 .hljs-meta .hljs-keyword,
 .hljs-symbol,
 .hljs-type {
-	color: #17fc95;
+  color: #17fc95;
 }
 .hljs-addition,
 .hljs-number,
 .hljs-link {
-	color: #c5fe00;
+  color: #c5fe00;
 }
 .hljs-string {
-	color: #38c0ff;
+  color: #38c0ff;
 }
 .hljs-attribute,
 .hljs-addition {
-	color: #e7ff9f;
+  color: #e7ff9f;
 }
 .hljs-variable,
 .hljs-template-variable {
-	color: #e447ff;
+  color: #e447ff;
 }
 .hljs-built_in,
 .hljs-formula,
@@ -67,16 +67,16 @@ Gradient Dark (c) Samia Ali <samiaab1990@gmail.com>
 .hljs-title,
 .hljs-class,
 .hljs-function {
-	color: #ffc800;
+  color: #ffc800;
 }
 .hljs-selector-pseudo,
 .hljs-deletion,
 .hljs-literal {
-	color: #ff9e44;
+  color: #ff9e44;
 }
 .hljs-emphasis,
 .hljs-quote {
-	font-style: italic;
+  font-style: italic;
 }
 .hljs-params,
 .hljs-selector-class,
@@ -86,5 +86,5 @@ Gradient Dark (c) Samia Ali <samiaab1990@gmail.com>
 .hljs-template-tag,
 .hljs-section,
 .hljs-keyword {
-	font-weight: bold;
+  font-weight: bold;
 }

@@ -34,5 +34,5 @@ export type SpeedDialTriggerProps = ButtonProps & {
   icon?: Snippet;
   gradient?: boolean;
   name?: string;
-  color?: GradientButtonProps['color'];
+  color?: GradientButtonProps["color"];
 };

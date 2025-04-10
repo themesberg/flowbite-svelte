@@ -2,7 +2,7 @@
   import Button from "$lib/buttons/Button.svelte";
   import CompoCard from "../utils/CompoCard.svelte";
   import Section from "./utils/Section.svelte";
-  import type { PageProps } from '../$types';
+  import type { PageProps } from "../$types";
 
   let { data } = $props();
 

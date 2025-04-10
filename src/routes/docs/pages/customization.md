@@ -72,7 +72,7 @@ Create a new file for your button component in the lib directory:
 ```svelte example hideOutput
 <script>
   import { Button } from "flowbite-svelte";
-  let {children} = $props();
+  let { children } = $props();
 </script>
 
 // src/lib/MyButton.svelte

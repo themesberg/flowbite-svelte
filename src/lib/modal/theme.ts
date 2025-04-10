@@ -8,7 +8,7 @@ export const modal = tv({
     header: "flex items-center p-4 md:p-5 justify-between rounded-t-lg shrink-0 text-xl font-semibold text-gray-900 dark:text-white",
     footer: "flex items-center p-4 md:p-5 space-x-3 rtl:space-x-reverse rounded-b-lg shrink-0",
     body: "p-4 md:p-5 space-y-4 overflow-y-auto overscroll-contain",
-    closeBtn: "absolute top-3 end-2.5",
+    closeBtn: "absolute top-3 end-2.5"
   },
   variants: {
     placement: {
@@ -20,7 +20,7 @@ export const modal = tv({
       "center-right": { base: "top-1/2 left-full -translate-x-full -translate-y-1/2" },
       "bottom-left": { base: "top-full -translate-y-full left-0" },
       "bottom-center": { base: "top-full -translate-y-full left-1/2 -translate-x-1/2" },
-      "bottom-right": { base: "top-full -translate-y-full left-full -translate-x-full" },
+      "bottom-right": { base: "top-full -translate-y-full left-full -translate-x-full" }
     },
     size: {
       xs: { base: "max-w-md" },
@@ -28,10 +28,10 @@ export const modal = tv({
       md: { base: "max-w-2xl" },
       lg: { base: "max-w-4xl" },
       xl: { base: "max-w-7xl" }
-    },
+    }
   },
   defaultVariants: {
     placement: "center",
-    size: "md",
+    size: "md"
   }
 });

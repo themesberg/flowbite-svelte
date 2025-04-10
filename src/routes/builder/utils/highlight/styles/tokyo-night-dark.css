@@ -1,10 +1,10 @@
 pre code.hljs {
-	display: block;
-	overflow-x: auto;
-	padding: 1em;
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
 }
 code.hljs {
-	padding: 3px 5px;
+  padding: 3px 5px;
 }
 /*!
   Theme: Tokyo-night-Dark
@@ -17,7 +17,7 @@ code.hljs {
 /*  Comment */
 .hljs-meta,
 .hljs-comment {
-	color: #565f89;
+  color: #565f89;
 }
 /* Red */
 /*INFO: This keyword, HTML elements, Regex group symbol, CSS units, Terminal Red */
@@ -31,7 +31,7 @@ code.hljs {
 .hljs-selector-attr,
 .hljs-variable.language_,
 .hljs-deletion {
-	color: #f7768e;
+  color: #f7768e;
 }
 /*Orange */
 /*INFO: Number and Boolean constants, Language support constants */
@@ -42,18 +42,18 @@ code.hljs {
 .hljs-type,
 .hljs-params,
 .hljs-link {
-	color: #ff9e64;
+  color: #ff9e64;
 }
 /*  Yellow */
 /* INFO:  	Function parameters, Regex character sets, Terminal Yellow */
 .hljs-built_in,
 .hljs-attribute {
-	color: #e0af68;
+  color: #e0af68;
 }
 /* cyan */
 /* INFO: Language support functions, CSS HTML elements */
 .hljs-selector-tag {
-	color: #2ac3de;
+  color: #2ac3de;
 }
 /* light blue */
 /* INFO: Object properties, Regex quantifiers and flags, Markdown headings, Terminal Cyan, Markdown code, Import/export keywords */
@@ -64,12 +64,12 @@ code.hljs {
 .hljs-title.class_.inherited__,
 .hljs-subst,
 .hljs-property {
-	color: #7dcfff;
+  color: #7dcfff;
 }
 /*Green*/
 /* INFO: Object literal keys, Markdown links, Terminal Green */
 .hljs-selector-tag {
-	color: #73daca;
+  color: #73daca;
 }
 /*Green(er) */
 /* INFO: Strings, CSS class names */
@@ -78,14 +78,14 @@ code.hljs {
 .hljs-symbol,
 .hljs-bullet,
 .hljs-addition {
-	color: #9ece6a;
+  color: #9ece6a;
 }
 /* Blue */
 /* INFO:  	Function names, CSS property names, Terminal Blue */
 .hljs-code,
 .hljs-formula,
 .hljs-section {
-	color: #7aa2f7;
+  color: #7aa2f7;
 }
 /* Magenta */
 /*INFO: Control Keywords, Storage Types, Regex symbols and operators, HTML Attributes, Terminal Magenta */
@@ -95,20 +95,20 @@ code.hljs {
 .hljs-keyword,
 .hljs-char.escape_,
 .hljs-attr {
-	color: #bb9af7;
+  color: #bb9af7;
 }
 /* white*/
 /* INFO: Variables, Class names, Terminal White */
 .hljs-punctuation {
-	color: #c0caf5;
+  color: #c0caf5;
 }
 .hljs {
-	background: #1a1b26;
-	color: #9aa5ce;
+  background: #1a1b26;
+  color: #9aa5ce;
 }
 .hljs-emphasis {
-	font-style: italic;
+  font-style: italic;
 }
 .hljs-strong {
-	font-weight: bold;
+  font-weight: bold;
 }

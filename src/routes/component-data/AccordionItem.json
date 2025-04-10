@@ -8,8 +8,8 @@
     ["open", "any", "$bindable(false)"],
     ["activeClass", "any", ""],
     ["inactiveClass", "any", ""],
-    ["transition", "any", "slide"],
-    ["params", "any", ""],
+    ["transitionType", "any", "slide"],
+    ["transitionParams", "any", ""],
     ["class", "string", ""]
   ]
 }

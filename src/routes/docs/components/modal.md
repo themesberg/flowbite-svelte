@@ -28,7 +28,7 @@ Get started with multiple sizes, colors, and styles built with the utility class
 
 ## Default modal
 
-Modal visibility (open/close) is controlled by the `open` property. You can bind it to a variable that other element (usually button) will toggle. 
+Modal visibility (open/close) is controlled by the `open` property. You can bind it to a variable that other element (usually button) will toggle.
 
 Closing the modal will trigger the `close` or `cancel` events - see [`<dialog>`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement) API for details.
 
@@ -68,9 +68,11 @@ This example shows the `header` customization as well.
 
 <Button onclick={() => (open = true)}>Default modal</Button>
 
-<Modal bind:open={open} autoclose outsideclose={false} class="backdrop:bg-red-900/50 dark:backdrop:bg-green-300/50">
+<Modal bind:open autoclose outsideclose={false} class="backdrop:bg-red-900/50 dark:backdrop:bg-green-300/50">
   {#snippet header()}
-    <h3>Terms of Service <small class="font-normal">(Revised)</small></h3>
+    <h3>
+      Terms of Service <small class="font-normal">(Revised)</small>
+    </h3>
   {/snippet}
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
@@ -114,7 +116,6 @@ Use this modal example with form input element to receive information from your 
 <Alert color="none" border>
 <b>Note!</b> Remember to set <code>method="dialog"</code> on your form inside that <code>dialog</code> component.
 </Alert>
-
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
@@ -286,8 +287,8 @@ You can use five different modal sizing options starting from extra small to ext
   import { Button, Modal, P } from "flowbite-svelte";
   let open = $state(false);
   let color = $state();
-  function onclick (ev) {
-    color = ev.target.textContent.split(' ')[0].toLowerCase()
+  function onclick(ev) {
+    color = ev.target.textContent.split(" ")[0].toLowerCase();
     open = true;
   }
 </script>
@@ -352,7 +353,7 @@ Rarely you would need a non-modal dialog. You can get it by setting `modal` prop
 </script>
 
 <Button onclick={() => (defaultModal = true)}>Non modal</Button>
-<Modal title="Terms of Service" bind:open={defaultModal} autoclose modal={false} class="border shadow-xl z-10">
+<Modal title="Terms of Service" bind:open={defaultModal} autoclose modal={false} class="z-10 border shadow-xl">
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
   {#snippet footer()}
@@ -361,6 +362,7 @@ Rarely you would need a non-modal dialog. You can get it by setting `modal` prop
   {/snippet}
 </Modal>
 ```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

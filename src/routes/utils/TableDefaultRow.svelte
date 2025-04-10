@@ -3,8 +3,8 @@
   type Props = {
     items: Array<Array<string>>;
     html?: boolean;
-    rowState: "striped" | "hover" | undefined
-  }
+    rowState: "striped" | "hover" | undefined;
+  };
 
   let { items, html, rowState }: Props = $props();
 
@@ -14,8 +14,8 @@
 
   const category = getContext("category");
   // console.log('category: ', category)
-  let trClass: string = $state('');
-  let trLastClass: string = $state('');
+  let trClass: string = $state("");
+  let trLastClass: string = $state("");
   if (rowState === "striped") {
     trClass = "border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 dark:odd:bg-gray-800 dark:even:bg-gray-700";
     trLastClass = "odd:bg-white even:bg-gray-50 dark:odd:bg-gray-800 dark:even:bg-gray-700";

@@ -11,7 +11,7 @@
   let successMessage: string = $state("");
 
   function preventDefault<E extends Event>(fn: (event: E) => void) {
-    return function(this: any, event: E) {
+    return function (this: any, event: E) {
       event.preventDefault();
       fn.call(this, event);
     };
@@ -19,11 +19,11 @@
   // Handle form submission
   async function handleSubmit() {
     if (!email) return;
-    
+
     isSubmitting = true;
     errorMessage = "";
     successMessage = "";
-    
+
     try {
       // Option 1: Use your own server endpoint to proxy the request
       // const response = await fetch('/api/newsletter-signup', {
@@ -34,15 +34,15 @@
 
       // Option 2: Direct client-side submission with no-cors mode
       const formData = new FormData();
-      formData.append('email_address', email);
-      formData.append('fields[source]', window.location.href);
-      
-      await fetch('https://app.convertkit.com/forms/4692392/subscriptions', {
-        method: 'POST',
-        mode: 'no-cors', // This is key to avoiding CORS errors
+      formData.append("email_address", email);
+      formData.append("fields[source]", window.location.href);
+
+      await fetch("https://app.convertkit.com/forms/4692392/subscriptions", {
+        method: "POST",
+        mode: "no-cors", // This is key to avoiding CORS errors
         body: formData
       });
-      
+
       // Since we're using no-cors, we can't read the response
       // So we'll just assume success if no error is thrown
       successMessage = "Thanks for subscribing!";
@@ -67,10 +67,10 @@
       <form onsubmit={preventDefault(handleSubmit)} class="self-stretch">
         <div class="mb-3 flex items-end">
           {#if errorMessage}
-            <p class="text-red-600 mb-2">{errorMessage}</p>
+            <p class="mb-2 text-red-600">{errorMessage}</p>
           {/if}
           {#if successMessage}
-            <p class="text-green-600 mb-2">{successMessage}</p>
+            <p class="mb-2 text-green-600">{successMessage}</p>
           {/if}
           <div class="flex w-full max-w-md items-center">
             <label for="member_email" class="sr-only">Email address</label>
@@ -78,27 +78,12 @@
               <Mail class="absolute start-4 top-1/2 -translate-y-1/2" />
             </div>
             <ButtonGroup>
-              <Input 
-                size="lg" 
-                id="member_email" 
-                class="focus:ring-primary-600 focus:border-primary-600 ps-12 text-gray-900 sm:w-96!" 
-                bind:value={email}
-                aria-label="Email Address" 
-                placeholder="Your email address..." 
-                required 
-                type="email" 
-              />
-              <Button 
-                type="submit" 
-                color="primary" 
-                size="xl" 
-                class="self-stretch"
-                disabled={isSubmitting}
-              >
+              <Input size="lg" id="member_email" class="focus:ring-primary-600 focus:border-primary-600 ps-12 text-gray-900 sm:w-96!" bind:value={email} aria-label="Email Address" placeholder="Your email address..." required type="email" />
+              <Button type="submit" color="primary" size="xl" class="self-stretch" disabled={isSubmitting}>
                 {#if isSubmitting}
                   <div class="flex items-center">
                     <span class="mr-2">Subscribing...</span>
-                    <div class="h-4 w-4 border-2 border-t-transparent border-white rounded-full animate-spin"></div>
+                    <div class="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
                   </div>
                 {:else}
                   Subscribe

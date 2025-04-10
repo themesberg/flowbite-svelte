@@ -1,4 +1,4 @@
-import register from 'highlight.js/lib/languages/nim';
+import register from "highlight.js/lib/languages/nim";
 
-export const nim = { name: 'nim', register };
+export const nim = { name: "nim", register };
 export default nim;
