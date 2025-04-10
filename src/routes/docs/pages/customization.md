@@ -19,7 +19,7 @@ In this case, you can overwrite the `defaultClass` by adding the `class` prop. H
 
 ```svelte example
 <script>
-  import { Alert } from "$lib";
+  import { Alert } from "flowbite-svelte";
 </script>
 
 <Alert class="text-xl">Add a class to overwrite the default class!</Alert>

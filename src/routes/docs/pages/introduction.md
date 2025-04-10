@@ -39,9 +39,9 @@ cd myapp
 pnpm install
 ```
 
-### Install Tailwind CSS
+#### Install Tailwind CSS
 
-In order to enable the utility classes from Tailwind CSS install the package using NPM:
+If your svelte project doesn't have `tailwindcss` installed, install it using NPM:
 
 ```bash
 npx sv add tailwindcss
@@ -59,7 +59,7 @@ pnpm dev
 Run the following command to install all Flowbite dependencies and libraries:
 
 ```sh
-pnpm i -D flowbite-svelte-next flowbite
+pnpm i -D flowbite-svelte@next
 ```
 
 ### Optional
@@ -94,9 +94,21 @@ If you use SvelteKit the main css file is `src/app.css`.
   --color-primary-700: #eb4f27;
   --color-primary-800: #cc4522;
   --color-primary-900: #a5371b;
+
+  --color-secondary-50: #f0f9ff;
+  --color-secondary-100: #e0f2fe;
+  --color-secondary-200: #bae6fd;
+  --color-secondary-300: #7dd3fc;
+  --color-secondary-400: #38bdf8;
+  --color-secondary-500: #0ea5e9;
+  --color-secondary-600: #0284c7;
+  --color-secondary-700: #0369a1;
+  --color-secondary-800: #075985;
+  --color-secondary-900: #0c4a6e;
 }
 
-@source "../node_modules/flowbite-svelte-next/dist";
+@source "../node_modules/flowbite-svelte/dist";
+@source "../node_modules/flowbite-svelte-icons/dist";
 ```
 
 Now you should be able to work with the Flowbite Svelte library and import components such as the navbar, dropdown, modal, and more.
