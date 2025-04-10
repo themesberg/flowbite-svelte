@@ -9,8 +9,8 @@ interface DrawerProps extends DrawerVariants, HTMLAttributes<HTMLDivElement> {
   activateClickOutside?: boolean;
   backdrop?: boolean;
   backdropClass?: string;
-  params?: ParamsType;
-  transition?: TransitionFunc;
+  transitionParams?: ParamsType;
+  transitionType?: TransitionFunc;
 }
 
 interface DrawerheadProps extends HTMLButtonAttributes {

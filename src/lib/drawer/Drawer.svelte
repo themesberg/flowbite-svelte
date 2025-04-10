@@ -5,7 +5,7 @@
   import { type DrawerProps as Props, drawer } from ".";
   import clsx from "clsx";
 
-  let { children, hidden = $bindable(), closeDrawer = () => (hidden = true), activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = "left", class: className, params, transition = fly, ...restProps }: Props = $props();
+  let { children, hidden = $bindable(), closeDrawer = () => (hidden = true), activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = "left", class: className, transitionParams, transitionType = fly, ...restProps }: Props = $props();
 
   const { base, backdrop_: backdropCls } = $derived(
     drawer({
@@ -29,7 +29,7 @@
 
 {#if !hidden}
   <div role="presentation" class={backdropCls({ class: backdropClass })} onclick={activateClickOutside ? closeDrawer : undefined}></div>
-  <div {...restProps} class={base({ class: clsx(className) })} transition:transition={transition_params as ParamsType} tabindex="-1">
+  <div {...restProps} class={base({ class: clsx(className) })} transition:transitionType={transitionParams ? transitionParams : transition_params as ParamsType} tabindex="-1">
     {@render children?.()}
   </div>
 {/if}
