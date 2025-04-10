@@ -50,7 +50,7 @@ import Alert from "flowbite-svelte/Alert.svelte";
   </TableBody>
 </Table>
 
-The above table shows examples from using `import Alert from 'flowbite-svelte-next/Alert.svelte'`. Compare these numbers to the following table where using normal import.
+The above table shows examples from using `import Alert from 'flowbite-svelte/Alert.svelte'`. Compare these numbers to the following table where using normal import.
 
 <Table class="my-8">
   <TableHead>

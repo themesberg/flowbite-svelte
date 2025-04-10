@@ -1,12 +1,12 @@
 # FLOWBITE-SVELTE
 
-[![npm version](https://badgen.net/npm/v/flowbite-svelte-next)](https://www.npmjs.com/package/flowbite-svelte-next) [![npm downloads](https://badgen.net/npm/dw/flowbite-svelte-next)](https://www.npmjs.com/package/flowbite-svelte-next) [![npm downloads](https://badgen.net/npm/dt/flowbite-svelte-next)](https://www.npmjs.com/package/flowbite-svelte-next) [![license](https://badgen.net/npm/license/flowbite-svelte-next)](https://github.com/themesberg/flowbite-svelte-next/blob/main/LICENSE) [![Discord](https://img.shields.io/discord/902911619032576090?color=%237289da&label=Discord)](https://discord.com/invite/4eeurUVvTy)
+[![npm version](https://badgen.net/npm/v/flowbite-svelte-next)](https://www.npmjs.com/package/flowbite-svelte-next) [![npm downloads](https://badgen.net/npm/dw/flowbite-svelte-next)](https://www.npmjs.com/package/flowbite-svelte-next) [![npm downloads](https://badgen.net/npm/dt/flowbite-svelte-next)](https://www.npmjs.com/package/flowbite-svelte-next) [![license](https://badgen.net/npm/license/flowbite-svelte-next)](https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE) [![Discord](https://img.shields.io/discord/902911619032576090?color=%237289da&label=Discord)](https://discord.com/invite/4eeurUVvTy)
 
 **⚠️ Flowbite Svelte is currently in early development and APIs and packages are likely to change quite often.**
 
 <p>
     <a href="https://flowbite-svelte-next.com" >
-      <img alt="Flowbite Svelte UI components" width="350" src="https://raw.githubusercontent.com/themesberg/flowbite-svelte-next/main/static/images/flowbite-svelte-next.png">
+      <img alt="Flowbite Svelte UI components" width="350" src="https://raw.githubusercontent.com/themesberg/flowbite-svelte/main/static/images/flowbite-svelte-next.png">
     </a><br>
     Build websites even faster with Svelte components on top of Tailwind CSS
 </p>
