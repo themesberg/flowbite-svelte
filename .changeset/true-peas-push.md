@@ -2,4 +2,4 @@
 "flowbite-svelte": patch
 ---
 
-fix: components update
+docs: getting started pages

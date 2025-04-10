@@ -1,5 +1,5 @@
 ---
-"flowbite-svelte-next": patch
+"flowbite-svelte": patch
 ---
 
 fix: bugs, component updates

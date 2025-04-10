@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.0-next.7
+
+### Patch Changes
+
+- docs: getting started pages
+
 ## 1.0.0-next.6
 
 ### Patch Changes
