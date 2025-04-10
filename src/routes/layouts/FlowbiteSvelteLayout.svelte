@@ -45,7 +45,7 @@
   });
 </script>
 
-<header class="sticky top-0 z-60 mx-auto w-full flex-none border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-900">
+<header class="sticky top-0 z-40 mx-auto w-full flex-none border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-900">
   <Navbar color="default" fluid class="container mx-auto px-0 py-1.5">
     <NavBrand href="/">
       <img src={logo} class="me-3 h-8" alt="Flowbite Svelte Logo" />
