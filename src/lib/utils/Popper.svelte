@@ -149,7 +149,7 @@
     invoker = triggerEls[0];
 
     triggerEls.forEach((element: HTMLButtonElement) => {
-      // if (element.tabIndex < 0) element.tabIndex = 0; // trigger must be focusable
+      if (element.tabIndex < 0) element.tabIndex = 0; // trigger must be focusable
       for (const [name, handler, cond] of events) if (cond) element.addEventListener(name, handler);
     });
 
