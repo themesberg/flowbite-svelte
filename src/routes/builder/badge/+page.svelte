@@ -81,9 +81,11 @@
 	let currentTransition = $derived(
 		transitions.find((t) => t.name === selectedTransition) || transitions[0]
 	);
-
+  $inspect('currentTransition:', currentTransition)
 	let generatedCode = $derived(
 		(() => {
+			let importScript: string = currentTransition !== transitions[0] ? ` // script tag 
+				import { ${currentTransition} } from 'svelte/transition'` : '';
 			let props = [];
 			if (color !== 'primary') props.push(` color="${color}"`);
 			if (badgeSize) props.push(' large');
@@ -107,12 +109,12 @@
 
 				props.push(` params={{${paramsString}}}`);
 			}
-
+      
 			const propsString =
 				props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
 			if (iconSlot) {
-				return `<Badge${propsString}>
+				return importScript + `<Badge${propsString}>
   <ClockSolid class="me-1.5 h-3 w-3" />
   My Badge
 </Badge>`;

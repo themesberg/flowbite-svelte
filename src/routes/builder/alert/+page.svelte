@@ -72,7 +72,7 @@
 	let generatedCode = $derived(
 		(() => {
 			// Generate import script using string literals
-			const importScript = `  import { Alert } from "flowbite-svelte";\n`;
+			// const importScript = `  // script tag \n  import { Alert } from "flowbite-svelte";\n  // script tag \n`;
 
 			let props = [];
 			if (color !== 'primary') props.push(` color="${color}"`);
@@ -109,9 +109,7 @@
 
 			// Add import script at the beginning
 			return (
-				importScript +
-				`
-  <Alert${propsString}>${iconCode}
+				`  <Alert${propsString}>${iconCode}
     My Alert
   </Alert>`
 			);

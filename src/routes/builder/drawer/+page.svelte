@@ -82,6 +82,9 @@
 	const changeOutsideclickStatus = () => {
 		outsideclickStatus = !outsideclickStatus;
 	};
+	// $effect(() => {
+	// 	changeOutsideclickStatus;
+	// })
 
 	// code generator
 	let generatedCode = $derived(
@@ -91,7 +94,7 @@
 			if (!outsideclickStatus) props.push(' activateClickOutside={false}');
 			if (currentPlacement.width !== 'default') props.push(` width="${currentPlacement.width}"`);
 			if (currentTransition !== transitions[0]) {
-				props.push(` transition={${currentTransition.transition.name}}`);
+				props.push(` transitionType={${currentTransition.transition.name}}`);
 
 				// Generate params string without quotes and handle functions
 				let paramValues =
@@ -147,7 +150,6 @@
 	</div>
 	<Drawer
 		bind:hidden={hidden}
-		closeDrawer={closeDrawerTransition}
 		transitionType={currentTransition.transition}
 		placement={currentPlacement.placement as DrawerProps['placement']}
 		width={currentPlacement.width as DrawerProps['width']}
