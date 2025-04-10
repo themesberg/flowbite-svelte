@@ -2,7 +2,6 @@ import type { Snippet } from "svelte";
 import type { ParamsType, TransitionFunc } from "../types";
 import type { HTMLAttributes, HTMLAnchorAttributes } from "svelte/elements";
 import type { BadgeVariants } from "./theme";
-type BadgeColorType = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose";
 
 interface BadgeProps extends BadgeVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
   children: Snippet;
@@ -18,4 +17,4 @@ interface BadgeProps extends BadgeVariants, Omit<HTMLAttributes<HTMLDivElement>,
   aClass?: string;
 }
 
-export { type BadgeProps, type BadgeColorType };
+export { type BadgeProps };
