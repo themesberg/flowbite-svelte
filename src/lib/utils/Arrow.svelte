@@ -16,6 +16,7 @@
     class?: string;
   } = $props();
 
+  console.log(className);
   const px = (n: number | undefined) => (n ? `${n}px` : "");
 
   // const arrowBordersMap: Record<Side, string> = {
@@ -56,7 +57,7 @@
   }
 </script>
 
-<div use:positioning class:border-none={!border} class="popover-arrow clip pointer-events-none block h-[10px] w-[10px] border-b border-l bg-inherit text-inherit {className}"></div>
+<div use:positioning class:border-none={!border} class="popover-arrow clip pointer-events-none block h-[10px] w-[10px] border-b border-l border-inherit bg-inherit text-inherit {className}"></div>
 
 <!--
 @component
