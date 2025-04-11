@@ -32,21 +32,21 @@ Make sure that you have the Flowbite JavaScript included in your project to enab
   import { Popover, Button } from "flowbite-svelte";
 </script>
 
-<Button id="b1">Default popover</Button>
-<Popover class="w-64 text-sm font-light " title="Popover title" triggeredBy="#b1">And here's some amazing content. It's very engaging. Right?</Popover>
+<Button>Default popover</Button>
+<Popover class="w-64 text-sm font-light " title="Popover title">And here's some amazing content. It's very engaging. Right?</Popover>
 ```
 
 ## User profile
 
 Use this example to show more information about a user profile when hovering over the trigger component.
 
-```svelte example class="flex h-72 items-end justify-center" hideResponsiveButtons
+```svelte example class="flex h-74 items-end justify-center" hideResponsiveButtons
 <script>
   import { Popover, Button, Avatar } from "flowbite-svelte";
 </script>
 
-<Button id="b2" class="-mb-2">User profile</Button>
-<Popover triggeredBy="#b2" class="w-64 bg-white text-sm font-light text-gray-500 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400">
+<Button>User profile</Button>
+<Popover class="w-64 bg-white text-sm font-light text-gray-500 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400">
   <div class="p-3">
     <div class="mb-2 flex items-center justify-between">
       <Avatar href="/" src="/images/profile-picture-1.webp" alt="Jese Leos" />
@@ -84,13 +84,13 @@ Use this example to show more information about a user profile when hovering ove
 
 This example can be used to show more information about a company profile.
 
-```svelte example class="flex h-96 items-end justify-center" hideResponsiveButtons
+```svelte example class="flex h-100 items-end justify-center" hideResponsiveButtons
 <script>
   import { Popover, Button, Avatar } from "flowbite-svelte";
   import { GlobeOutline, HeartSolid, ThumbsUpSolid, DotsHorizontalOutline } from "flowbite-svelte-icons";
 </script>
 
-<Button class="-mb-4">Company profile</Button>
+<Button>Company profile</Button>
 <Popover class="w-80 text-sm">
   <div class="flex">
     <div class="me-3 shrink-0">
@@ -145,10 +145,10 @@ Use this example to trigger a popover component with detailed information and an
 </script>
 
 <p class="font-light text-gray-500 dark:text-gray-400">
-  Due to its central geographic location in Southern Europe, <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline" id="popover-image">Italy</a>
+  Due to its central geographic location in Southern Europe, <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">Italy</a>
   has historically been home to myriad peoples and cultures. In addition to the various ancient peoples dispersed throughout what is now modern-day Italy, the most predominant being the Indo-European Italic peoples who gave the peninsula its name, beginning from the classical era, Phoenicians and Carthaginians founded colonies mostly in insular Italy
 </p>
-<Popover trigger="hover" triggeredBy="#popover-image" class="w-96 text-sm font-light" defaultClass="p-0">
+<Popover trigger="hover" class="w-96 text-sm font-light" defaultClass="p-0">
   <div class="grid grid-cols-5">
     <div class="col-span-3 p-3">
       <div class="space-y-2">
@@ -208,10 +208,10 @@ Show a progress bar with details inside a popover when hovering over a settings 
   import { DatabaseSolid, ChevronRightOutline } from "flowbite-svelte-icons";
 </script>
 
-<Button id="progress">
+<Button>
   <DatabaseSolid class="me-2 h-5 w-5 text-white dark:text-white" /> Storage status
 </Button>
-<Popover triggeredBy="#progress" class="w-64 text-sm font-light">
+<Popover class="w-64 text-sm font-light">
   <div class="space-y-2">
     <h3 class="font-semibold text-gray-900 dark:text-white">Available storage</h3>
     <p class="text-gray-500 dark:text-gray-400">
@@ -319,13 +319,13 @@ Set the position of the popover component relative to the trigger element by usi
 
 Increase or decrease the default offset by adding the `offset` attribute where the value is an integer.
 
-```svelte example class="flex h-52 items-end justify-center"
+```svelte example class="flex h-56 items-end justify-center"
 <script>
   import { Popover, Button } from "flowbite-svelte";
 </script>
 
-<Button id="offset">Default popover</Button>
-<Popover offset={30} class="w-64 text-sm font-light" title="Popover title" triggeredBy="#offset">And here's some amazing content. It's very engaging. Right?</Popover>
+<Button>Default popover</Button>
+<Popover offset={30} class="w-64 text-sm font-light" title="Popover title">And here's some amazing content. It's very engaging. Right?</Popover>
 ```
 
 ## Animation

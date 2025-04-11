@@ -64,7 +64,7 @@
       if (popover) {
         Object.assign(popover.style, { position: strategy, left: yOnly ? "0" : px(x), top: px(y) });
 
-        if (arrow && arrowEl instanceof HTMLElement) {
+        if (arrow && arrowEl) {
           arrowParams = { placement: pl, border, cords: { x: arrow.x, y: arrow.y }, strategy };
         }
       }
