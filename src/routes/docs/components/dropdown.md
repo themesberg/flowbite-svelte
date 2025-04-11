@@ -379,7 +379,7 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
   </NavBrand>
   <NavHamburger />
-  <NavUl class="ms-3 pt-6">
+  <NavUl class="ms-3 pt-1">
     <NavLi href="/" active={true}>Home</NavLi>
     <NavLi class="cursor-pointer">
       Dropdown<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
