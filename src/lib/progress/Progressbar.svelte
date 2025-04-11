@@ -4,7 +4,7 @@
   import { tweened } from "svelte/motion";
   import { type ProgressbarProps as Props, progressbar } from ".";
 
-  let { progress = "45", precision = 0, tweenDuration = 400, animate = false, size = "h-2.5", labelInside = false, labelOutside = "", easing = cubicOut, color = "primary", div2Class, oustsideSpanClass, oustsideProgressClass, labeloutsidedivClass, divClass, ...restProps }: Props = $props();
+  let { progress = "45", precision = 0, tweenDuration = 400, animate = false, size = "h-2.5", labelInside = false, labelOutside = "", easing = cubicOut, color = "primary", labelInsideClass, oustsideSpanClass, oustsideProgressClass, labeloutsidedivClass, divClass, ...restProps }: Props = $props();
 
   const _progress = tweened(0, {
     duration: animate ? tweenDuration : 0,
@@ -30,11 +30,11 @@
 {/if}
 <div {...restProps} class={twMerge(base({ class: divClass }), size)}>
   {#if labelInside}
-    <div class={twMerge(labelInsideDiv({ class: div2Class }), size)} style="width: {$_progress}%">
+    <div class={twMerge(labelInsideDiv({ class: labelInsideClass }), size)} style="width: {$_progress}%">
       {$_progress.toFixed(precision)}%
     </div>
   {:else}
-    <div class={twMerge(insideDiv({ class: div2Class }), size)} style="width: {$_progress}%"></div>
+    <div class={twMerge(insideDiv({ class: labelInsideClass }), size)} style="width: {$_progress}%"></div>
   {/if}
 </div>
 
@@ -51,7 +51,7 @@
 @props:labelOutside: any = "";
 @props:easing: any = cubicOut;
 @props:color: any = "primary";
-@props:div2Class: any;
+@props:labelInsideClass: any;
 @props:oustsideSpanClass: any;
 @props:oustsideProgressClass: any;
 @props:labeloutsidedivClass: any;
