@@ -17,7 +17,7 @@
   let ulCls = $derived(ul({ class: ulClass }));
 </script>
 
-<Popper color={full ? "default" : "dropdown"} border={!full} arrow={false} trigger="click" placement="bottom" yOnly={full} {...restProps} class={wrapperClass}>
+<Popper color={full ? "default" : "dropdown"} arrow={false} trigger="click" placement="bottom" yOnly={full} {...restProps} class={wrapperClass}>
   <div class={div()}>
     <ul class={ulCls}>
       {#each items as item, index}

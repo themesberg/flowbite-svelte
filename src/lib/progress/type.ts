@@ -13,10 +13,10 @@ interface ProgressbarProps extends HTMLAttributes<HTMLDivElement> {
   labelOutside?: string;
   easing?: EasingFunction;
   color?: ColorType;
-  div2Class?: string;
   oustsideSpanClass?: string;
   oustsideProgressClass?: string;
   labeloutsidedivClass?: string;
+  labelInsideClass?: string;
   divClass?: string;
 }
 
