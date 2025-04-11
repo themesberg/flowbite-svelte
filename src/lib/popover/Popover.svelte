@@ -9,7 +9,7 @@
   let { base, title, h3, arrowBase, content } = $derived(popover({ color, arrow, placement }));
 </script>
 
-<Popper {...restProps} {placement} border {trigger} {arrow} class={base({ class: clsx(className) })}>
+<Popper {...restProps} {placement} {trigger} {arrow} class={base({ class: clsx(className) })}>
   {#if typeof titleSlot === "string"}
     <div class={title()}>
       <h3 class={h3()}>{titleSlot}</h3>

@@ -5,9 +5,9 @@
   import { tooltip } from "./theme";
   import type { TooltipProps } from "./type";
 
-  let { type = "dark", color = "default", trigger = "hover", arrow = true, children, placement = "top", onbeforetoggle: _onbeforetoggle, class: className, ...restProps }: TooltipProps = $props();
+  let { type = "dark", color = undefined, trigger = "hover", arrow = true, children, placement = "top", onbeforetoggle: _onbeforetoggle, class: className, ...restProps }: TooltipProps = $props();
 
-  let { base, arrowBase } = $derived(tooltip({ color, arrow }));
+  let { base, arrowBase } = $derived(tooltip({ color, arrow, type }));
 
   function _onopen(ev: TriggeredToggleEvent) {
     // block all focusable elements inside the tooltip
@@ -21,7 +21,7 @@
   //   let popperClass = twMerge(commonClass, type === "light" ? light_class : dark_class, className);
 </script>
 
-<Popper {...restProps} {placement} border={false} {trigger} {arrow} class={base({ class: clsx(className) })} onbeforetoggle={_onopen}>
+<Popper {...restProps} {placement} {trigger} {arrow} class={base({ class: clsx(className) })} onbeforetoggle={_onopen}>
   <div class="pointer-events-none">{@render children()}</div>
 </Popper>
 

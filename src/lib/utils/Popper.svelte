@@ -11,7 +11,6 @@
     placement?: Placement;
     arrow?: boolean;
     arrowClass?: string;
-    border?: boolean;
     offset?: number;
     yOnly?: boolean; // special case for megamenu - only move on y axis
     strategy?: Strategy;
@@ -32,7 +31,7 @@
 
   const TRIGGER_DELAY = 200;
 
-  let { triggeredBy, trigger = "click", placement = "top", offset = 8, arrow = false, border = true, yOnly = false, strategy = "absolute", reference, middlewares = [dom.flip(), dom.shift()], onbeforetoggle: _onbeforetoggle, ontoggle: _ontoggle, class: className = "", arrowClass = "", children }: PopperProps = $props();
+  let { triggeredBy, trigger = "click", placement = "top", offset = 8, arrow = false, yOnly = false, strategy = "absolute", reference, middlewares = [dom.flip(), dom.shift()], onbeforetoggle: _onbeforetoggle, ontoggle: _ontoggle, class: className = "", arrowClass = "", children }: PopperProps = $props();
 
   let focusable: boolean = true;
   let clickable: boolean = $derived(trigger === "click");
@@ -42,9 +41,8 @@
   let invoker: HTMLButtonElement | null = null;
   let referenceElement: HTMLElement | null = null;
   let triggerEls: HTMLButtonElement[] = [];
-  let arrowParams: { placement: Placement; border: boolean; cords: Partial<Coords>; strategy: "absolute" | "fixed" } = $state({
+  let arrowParams: { placement: Placement; cords: Partial<Coords>; strategy: "absolute" | "fixed" } = $state({
     placement,
-    border,
     cords: { x: 0, y: 0 },
     strategy
   });
@@ -66,7 +64,7 @@
         Object.assign(popover.style, { position: strategy, left: yOnly ? "0" : px(x), top: px(y) });
 
         if (arrow && arrowEl) {
-          arrowParams = { placement: pl, border, cords: { x: arrow.x, y: arrow.y }, strategy };
+          arrowParams = { placement: pl, cords: { x: arrow.x, y: arrow.y }, strategy };
         }
       }
     });
@@ -192,7 +190,6 @@
 @props:placement: any = "top";
 @props:offset: any = 8;
 @props:arrow: any = false;
-@props:border: any = true;
 @props:yOnly: any = false;
 @props:strategy: any = "absolute";
 @props:reference: any;

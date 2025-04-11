@@ -5,13 +5,11 @@
   let {
     placement = "top",
     cords,
-    border = true,
     strategy = "absolute",
     class: className = ""
   }: {
     placement?: Placement;
     cords: Partial<Coords>;
-    border?: boolean;
     strategy?: "absolute" | "fixed";
     class?: string;
   } = $props();
@@ -30,6 +28,11 @@
   getSide;
   getOppositePlacement;
 
+  function getBorderWidth(element: HTMLElement) {
+    const computedStyle = window.getComputedStyle(element);
+    return Math.max(parseFloat(computedStyle.borderLeftWidth), parseFloat(computedStyle.borderBottomWidth)) - 0.3;
+  }
+
   const rotationMap: Record<Side, string> = {
     left: " rotate-45",
     right: " -rotate-135",
@@ -46,7 +49,8 @@
       node.style.bottom = "";
 
       let arrowSide = getSide(getOppositePlacement(placement));
-      node.style[arrowSide] = px(-node.offsetWidth / 2 - (border ? 1 : 0) + 1);
+      // node.style[arrowSide] = px(-node.offsetWidth / 2 - (border ? 1 : 0) + 1);
+      node.style[arrowSide] = px(-node.offsetWidth / 2 - getBorderWidth(node));
 
       // node.classList.remove("border-t", "border-b", "border-s", "border-e");
       // border && (node.className += arrowBordersMap[arrowSide]);
@@ -57,7 +61,7 @@
   }
 </script>
 
-<div use:positioning class:border-none={!border} class="popover-arrow clip pointer-events-none block h-[10px] w-[10px] border-b border-l border-inherit bg-inherit text-inherit {className}"></div>
+<div use:positioning class="popover-arrow clip pointer-events-none block h-[10px] w-[10px] border-b border-l border-inherit bg-inherit text-inherit {className}"></div>
 
 <!--
 @component

@@ -5,12 +5,17 @@ export type TooltipVariants = VariantProps<typeof tooltip>;
 
 export const tooltip = tv({
   slots: {
-    base: "absolute bg-gray-800 text-white px-2 py-1 rounded-sm text-sm z-50 pointer-events-none",
-    arrowBase: "absolute w-2 h-2 rotate-45 bg-inherit"
+    base: "absolute px-2 py-1 rounded-lg text-sm z-50 pointer-events-none",
+    arrowBase: ""
   },
   variants: {
+    type: {
+      light: { base: "bg-white text-gray-800 dark:bg-gray-300 dark:text-gray-800 border border-gray-200 dark:border-gray-200" },
+      auto: { base: "bg-white text-gray-800 dark:bg-gray-800 dark:text-white border border-gray-200 dark:border-gray-700" },
+      dark: { base: "bg-gray-800 text-white dark:bg-gray-800 dark:text-white dark:border dark:border-gray-700" },
+    },
     color: {
-      default: { base: "bg-gray-800 dark:bg-gray-300 dark:text-gray-800" },
+      // default: { base: "bg-gray-800 dark:bg-gray-300 dark:text-gray-800" },
       primary: { base: "bg-primary-600" },
       secondary: { base: "bg-secondary-600" },
       gray: { base: "bg-gray-600" },
@@ -36,21 +41,6 @@ export const tooltip = tv({
       true: { arrowBase: "visible" },
       false: { arrowBase: "hidden" }
     },
-
-    placement: {
-      top: {},
-      "top-start": {},
-      "top-end": {},
-      bottom: {},
-      "bottom-start": {},
-      "bottom-end": {},
-      left: {},
-      "left-start": {},
-      "left-end": {},
-      right: {},
-      "right-start": {},
-      "right-end": {}
-    } as Record<Placement, object>
   },
   defaultVariants: {
     color: "default",
