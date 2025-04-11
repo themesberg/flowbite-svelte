@@ -10,6 +10,7 @@
     trigger?: "hover" | "click";
     placement?: Placement;
     arrow?: boolean;
+    arrowClass?: string;
     border?: boolean;
     offset?: number;
     yOnly?: boolean; // special case for megamenu - only move on y axis
@@ -31,7 +32,7 @@
 
   const TRIGGER_DELAY = 200;
 
-  let { triggeredBy, trigger = "click", placement = "top", offset = 8, arrow = false, border = true, yOnly = false, strategy = "absolute", reference, middlewares = [dom.flip(), dom.shift()], onbeforetoggle: _onbeforetoggle, ontoggle: _ontoggle, class: className = "", children }: PopperProps = $props();
+  let { triggeredBy, trigger = "click", placement = "top", offset = 8, arrow = false, border = true, yOnly = false, strategy = "absolute", reference, middlewares = [dom.flip(), dom.shift()], onbeforetoggle: _onbeforetoggle, ontoggle: _ontoggle, class: className = "", arrowClass = "", children }: PopperProps = $props();
 
   let focusable: boolean = true;
   let clickable: boolean = $derived(trigger === "click");
@@ -78,6 +79,8 @@
     isTriggered = true;
     await new Promise((resolve) => setTimeout(resolve, TRIGGER_DELAY));
     if (!isTriggered) return;
+
+    ev.preventDefault();
 
     if (ev.target !== invoker && triggerEls.includes(ev.target as HTMLButtonElement)) {
       invoker = ev.target as HTMLButtonElement;
@@ -176,7 +179,7 @@
 <div popover="manual" bind:this={popover} use:set_triggers class:overflow-visible={true} onfocusout={close_popover} onpointerleave={hoverable ? close_popover : undefined} onpointerenter={hoverable ? open_popover : undefined} onbeforetoggle={on_before_toggle} ontoggle={on_toggle} class={className}>
   {@render children()}
   {#if arrow}
-    <Arrow {...arrowParams} />
+    <Arrow {...arrowParams} class={arrowClass} />
   {/if}
 </div>
 
