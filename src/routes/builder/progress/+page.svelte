@@ -67,9 +67,9 @@
       if (labelInside) props.push(" labelInside");
       if (labelContent !== "") props.push(` labelOutside="${labelContent}"`);
       if (progressSize.size !== "h-4") props.push(` size="${progressSize.size}"`);
-      // Add div2Class prop if not empty
+      // Add labelInsideClass prop if not empty
       if (progressSize.class !== "") {
-        props.push(` div2Class="${progressSize.class}"`);
+        props.push(` labelInsideClass="${progressSize.class}"`);
       }
       if (animation) {
         props.push(" animate");
@@ -103,9 +103,9 @@
 <CodeWrapper>
   <div class="my-4 h-16">
     {#if animation}
-      <Progressbar {progress} size={progressSize.size} color={progressColor} labelOutside={labelContent} {labelInside} div2Class={progressSize.class} animate {tweenDuration} {easing} />
+      <Progressbar {progress} size={progressSize.size} color={progressColor} labelOutside={labelContent} {labelInside} labelInsideClass={progressSize.class} animate {tweenDuration} {easing} />
     {:else}
-      <Progressbar {progress} size={progressSize.size} color={progressColor} labelOutside={labelContent} {labelInside} div2Class={progressSize.class} />
+      <Progressbar {progress} size={progressSize.size} color={progressColor} labelOutside={labelContent} {labelInside} labelInsideClass={progressSize.class} />
     {/if}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">

@@ -19,7 +19,7 @@
   const placements: Placement[] = ["top", "right", "bottom", "left", "top-start", "top-end", "right-start", "right-end", "bottom-start", "bottom-end", "left-start", "left-end"];
   let placement: Placement = $state("top");
   const colors = Object.keys(tooltip.variants.color) as TooltipProps["color"][];
-  let color: TooltipProps["color"] = $state("default");
+  let color: TooltipProps["color"] = $state();
   let tooltipClass: TooltipProps["class"] = $state("");
   const changeClass = () => {
     tooltipClass = tooltipClass === "" ? "p-4" : "";
