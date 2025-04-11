@@ -86,7 +86,7 @@
       popover?.hidePopover(); // invoker changed need to hide old popover
     }
 
-    if (ev.type === "pointerdown") popover?.togglePopover();
+    if (ev.type === "mousedown") popover?.togglePopover();
     else popover?.showPopover();
   }
 
@@ -96,7 +96,7 @@
     if (isTriggered) return;
 
     // if popover has focus don't close when leaving the invoker
-    if (ev?.type === "pointerleave" && popover?.contains(popover.ownerDocument.activeElement)) return;
+    if (ev?.type === "mouseleave" && popover?.contains(popover.ownerDocument.activeElement)) return;
     if (ev?.type === "focusout" && popover?.contains(popover.ownerDocument.activeElement)) return;
 
     popover?.hidePopover();
@@ -133,9 +133,9 @@
     const events: [string, any, boolean][] = [
       ["focusin", open_popover, focusable],
       ["focusout", close_popover, focusable],
-      ["pointerdown", open_popover, clickable],
-      ["pointerenter", open_popover, hoverable],
-      ["pointerleave", close_popover, hoverable]
+      ["mousedown", open_popover, clickable],
+      ["mouseenter", open_popover, hoverable],
+      ["mouseleave", close_popover, hoverable]
     ];
 
     if (triggeredBy) triggerEls = [...node.ownerDocument.querySelectorAll<HTMLButtonElement>(triggeredBy)];
@@ -174,7 +174,7 @@
   }
 </script>
 
-<div popover="manual" bind:this={popover} use:set_triggers class:overflow-visible={true} onfocusout={close_popover} onpointerleave={hoverable ? close_popover : undefined} onpointerenter={hoverable ? open_popover : undefined} onbeforetoggle={on_before_toggle} ontoggle={on_toggle} class={className}>
+<div popover="manual" bind:this={popover} use:set_triggers class:overflow-visible={true} onfocusout={close_popover} onmouseleave={hoverable ? close_popover : undefined} onmouseenter={hoverable ? open_popover : undefined} onbeforetoggle={on_before_toggle} ontoggle={on_toggle} class={className}>
   {@render children()}
   {#if arrow}
     <Arrow {...arrowParams} class={arrowClass} />
