@@ -26,7 +26,8 @@ flowbite-svelte-next allows you to show extra information when hovering or focus
 
 ## Default tooltip example
 
-To get started with using tooltips all you need to do is set `triggeredBy` attribute of the tooltip component to any CSS query targeting trigger element(s). In the following example you can see the tooltip that will be trigger by the `tooltip-default` element to be shown when hovered or focused.
+To get started with using tooltips all you need to do is to place `Tooltip` element directly after tiggering element (usually `Button`).
+In the following example you can see the tooltip that will be trigger by the `tooltip-default` element to be shown when hovered or focused.
 
 ```svelte example class="flex items-end h-32" hideResponsiveButtons
 <script>
@@ -61,12 +62,12 @@ You can use choose between dark and light version styles for the tooltip compone
   let type = "dark";
 </script>
 
-<Button id="type-1">Light tooltip</Button>
-<Tooltip type="light" triggeredBy="#type-1">Tooltip content</Tooltip>
-<Button id="type-2">Default tooltip</Button>
-<Tooltip type="auto" triggeredBy="#type-2">Tooltip content</Tooltip>
-<Button id="type-3">Dark tooltip</Button>
-<Tooltip type="dark" triggeredBy="#type-3">Tooltip content</Tooltip>
+<Button>Light tooltip</Button>
+<Tooltip type="light">Tooltip content</Tooltip>
+<Button>Default tooltip</Button>
+<Tooltip type="auto">Tooltip content</Tooltip>
+<Button>Dark tooltip</Button>
+<Tooltip type="dark">Tooltip content</Tooltip>
 ```
 
 ## Placement
@@ -81,14 +82,14 @@ The positioning of the tooltip element relative to the triggering element (eg. b
   let placement = "left";
 </script>
 
-<Button id="placement-1">Tooltip left</Button>
-<Tooltip triggeredBy="#placement-1" placement="left">Tooltip content - Left</Tooltip>
-<Button id="placement-2">Tooltip top</Button>
-<Tooltip triggeredBy="#placement-2" placement="top">Tooltip content - Top</Tooltip>
-<Button id="placement-3">Tooltip bottom</Button>
-<Tooltip triggeredBy="#placement-3" placement="bottom">Tooltip content - Bottom</Tooltip>
-<Button id="placement-4">Tooltip right</Button>
-<Tooltip triggeredBy="#placement-4" placement="right">Tooltip content - Right</Tooltip>
+<Button>Tooltip left</Button>
+<Tooltip placement="left">Tooltip content - Left</Tooltip>
+<Button>Tooltip top</Button>
+<Tooltip placement="top">Tooltip content - Top</Tooltip>
+<Button>Tooltip bottom</Button>
+<Tooltip placement="bottom">Tooltip content - Bottom</Tooltip>
+<Button>Tooltip right</Button>
+<Tooltip placement="right">Tooltip content - Right</Tooltip>
 ```
 
 ## Triggering
@@ -123,15 +124,18 @@ If you need the tooltip to be attached to the other element then the tiggering o
 <script>
   import { Tooltip, Button } from "flowbite-svelte";
   let placement = $state("");
+  function onbeforetoggle(ev) {
+    placement = ev.trigger.id.replace('ref-', '');
+  }
 </script>
 
 <div id="ext-ref" class="rounded-lg border border-gray-200 p-2 dark:border-gray-600">External reference</div>
 <div class="space-x-4 rtl:space-x-reverse">
-  <Button id="ref-left" onmouseenter={() => (placement = "left")}>Left</Button>
-  <Button id="ref-top" onmouseenter={() => (placement = "top")}>Top</Button>
-  <Button id="ref-right" onmouseenter={() => (placement = "right")}>Right</Button>
+  <Button id="ref-left">Left</Button>
+  <Button id="ref-top">Top</Button>
+  <Button id="ref-right">Right</Button>
 </div>
-<Tooltip reference="#ext-ref" triggeredBy="[id^='ref-']" {placement} class="w-64 text-sm font-light">And here's some amazing content. It's very engaging. Right?</Tooltip>
+<Tooltip reference="#ext-ref" triggeredBy="[id^='ref-']" {placement} {onbeforetoggle} class="w-64 text-sm font-light">And here's some amazing content. It's very engaging. Right?</Tooltip>
 ```
 
 ## Custom type

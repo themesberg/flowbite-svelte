@@ -1,5 +1,4 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { Placement } from "@floating-ui/dom";
 
 export type TooltipVariants = VariantProps<typeof tooltip>;
 
@@ -37,14 +36,5 @@ export const tooltip = tv({
       pink: { base: "bg-pink-600" },
       rose: { base: "bg-rose-800" }
     },
-    arrow: {
-      true: { arrowBase: "visible" },
-      false: { arrowBase: "hidden" }
-    },
   },
-  defaultVariants: {
-    color: "default",
-    arrow: true,
-    placement: "top"
-  }
 });

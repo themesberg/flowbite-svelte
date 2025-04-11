@@ -7,9 +7,9 @@
 
   let { type = "dark", color = undefined, trigger = "hover", arrow = true, children, placement = "top", onbeforetoggle: _onbeforetoggle, class: className, ...restProps }: TooltipProps = $props();
 
-  let { base, arrowBase } = $derived(tooltip({ color, arrow, type }));
+  let { base } = $derived(tooltip({ color, type }));
 
-  function _onopen(ev: TriggeredToggleEvent) {
+  function onbeforetoggle(ev: TriggeredToggleEvent) {
     // block all focusable elements inside the tooltip
     if (ev.target instanceof HTMLElement) {
       ev.target.querySelectorAll('a, button, input, textarea, select, details, [tabindex], [contenteditable="true"]').forEach((element) => element.setAttribute("tabindex", "-1"));
@@ -17,11 +17,9 @@
     // bubble event to parent
     _onbeforetoggle?.(ev);
   }
-
-  //   let popperClass = twMerge(commonClass, type === "light" ? light_class : dark_class, className);
 </script>
 
-<Popper {...restProps} {placement} {trigger} {arrow} class={base({ class: clsx(className) })} onbeforetoggle={_onopen}>
+<Popper {...restProps} {placement} {trigger} {arrow} class={base({ class: clsx(className) })} {onbeforetoggle}>
   <div class="pointer-events-none">{@render children()}</div>
 </Popper>
 
