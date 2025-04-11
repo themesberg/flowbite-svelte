@@ -179,7 +179,9 @@ Use this example if you want to show a dropdown menu when clicking on the avatar
     <DropdownItem>Settings</DropdownItem>
     <DropdownItem>Earnings</DropdownItem>
   </DropdownGroup>
-  <DropdownItem>Sign out</DropdownItem>
+  <DropdownGroup>
+    <DropdownItem>Sign out</DropdownItem>
+  </DropdownGroup>
 </Dropdown>
 ```
 
