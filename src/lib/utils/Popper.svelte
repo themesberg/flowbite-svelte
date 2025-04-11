@@ -29,7 +29,7 @@
   import type { HTMLAttributes } from "svelte/elements";
   import Arrow from "./Arrow.svelte";
 
-  const TRIGGER_DELAY = 100;
+  const TRIGGER_DELAY = 200;
 
   let { triggeredBy, trigger = "click", placement = "top", offset = 8, arrow = false, border = true, yOnly = false, strategy = "absolute", reference, middlewares = [dom.flip(), dom.shift()], onbeforetoggle: _onbeforetoggle, ontoggle: _ontoggle, class: className = "", children }: PopperProps = $props();
 
