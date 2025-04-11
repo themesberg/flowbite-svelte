@@ -34,7 +34,7 @@ Here’s an example of a list group that you can use right away.
   let simpleList = ["Profile", "Settings", "Messages", "Download"];
 </script>
 
-<Listgroup items={simpleList} class="w-48"/>
+<Listgroup items={simpleList} class="w-48" />
 ```
 
 ## List group with links
