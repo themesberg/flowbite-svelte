@@ -17,7 +17,7 @@
   let title = "Popover builder";
   let dir = "builder";
 
-  const placements: Placement[] = ["top", "right", "bottom", "left", "top-start", "top-end", "right-start", "right-end", "bottom-start", "bottom-end", "left-start", "left-end"];
+  const placements: Placement[] = Object.keys(popover.variants.placement) as Placement[];
   let placement: Placement = $state("top");
 
   // const positions = Object.keys(popover.variants.position);
@@ -31,11 +31,11 @@
   let arrow = $state(true);
   const changeArrow = () => {
     arrow = !arrow;
-    offset = 0;
+    offset = undefined;
   };
-  let offset = $state(0);
+  let offset: number | undefined = $state();
   const changeOffset = () => {
-    offset = offset === 0 ? 20 : 0;
+    offset = offset ?? 8;
     arrow = false;
   };
 
