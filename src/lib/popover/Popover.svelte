@@ -6,7 +6,7 @@
 
   let { title: titleSlot, color = "default", trigger = "hover", defaultClass, arrow = true, children, placement = "top", class: className, ...restProps }: PopoverProps = $props();
 
-  let { base, title, h3, arrowBase, content } = $derived(popover({ color, arrow, placement }));
+  let { base, title, h3, arrowBase, content } = $derived(popover({ color }));
 </script>
 
 <Popper {...restProps} {placement} {trigger} {arrow} class={base({ class: clsx(className) })}>

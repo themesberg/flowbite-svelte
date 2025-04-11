@@ -17,7 +17,7 @@
   let title = "Popover builder";
   let dir = "builder";
 
-  const placements: Placement[] = Object.keys(popover.variants.placement) as Placement[];
+  const placements: Placement[] = ["top", "right", "bottom", "left", "top-start", "top-end", "right-start", "right-end", "bottom-start", "bottom-end", "left-start", "left-end"];
   let placement: Placement = $state("top");
 
   // const positions = Object.keys(popover.variants.position);
@@ -26,7 +26,7 @@
   let color: PopoverProps["color"] = $state("default");
   let popoverClass: PopoverProps["class"] = $state("w-64 text-sm font-light");
   const changeClass = () => {
-    popoverClass = popoverClass === "w-64 text-sm font-light" ? "w-64 text-sm font-light p-2" : "w-64 text-sm font-light";
+    popoverClass = popoverClass === "w-64 text-sm font-light" ? "w-64 text-sm font-light" : "w-64 text-sm font-light";
   };
   let arrow = $state(true);
   const changeArrow = () => {
@@ -111,7 +111,7 @@
   <div class="flex h-80 items-center justify-center">
     <Button id="b1">Popover</Button>
     <Popover {color} {placement} {arrow} {offset} class={popoverClass} transition={currentTransition.transition} params={currentTransition.params} title="Popover title" triggeredBy="#b1">
-      <p class="px-3 py-2 dark:text-white">And here's some amazing content. It's very engaging. Right?</p>
+      <p>And here's some amazing content. It's very engaging. Right?</p>
     </Popover>
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
