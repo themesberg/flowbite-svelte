@@ -145,10 +145,10 @@ Use this example to trigger a popover component with detailed information and an
 </script>
 
 <p class="font-light text-gray-500 dark:text-gray-400">
-  Due to its central geographic location in Southern Europe, <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">Italy</a>
+  Due to its central geographic location in Southern Europe, <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline" id="href_1">Italy</a>
   has historically been home to myriad peoples and cultures. In addition to the various ancient peoples dispersed throughout what is now modern-day Italy, the most predominant being the Indo-European Italic peoples who gave the peninsula its name, beginning from the classical era, Phoenicians and Carthaginians founded colonies mostly in insular Italy
 </p>
-<Popover trigger="hover" class="w-96 text-sm font-light" defaultClass="p-0">
+<Popover triggeredBy="#href_1" class="w-96 text-sm font-light" defaultClass="p-0">
   <div class="grid grid-cols-5">
     <div class="col-span-3 p-3">
       <div class="space-y-2">
@@ -291,15 +291,19 @@ Set the position of the popover component relative to the trigger element by usi
 <script>
   import { Popover, Button } from "flowbite-svelte";
   let placement = $state("bottom");
+
+  function onbeforetoggle(ev) {
+    placement = ev.trigger?.id.replace('placement-', '');
+  }
 </script>
 
-<Button id="placement-top" onmousedown={() => (placement = "top")}>Top popover</Button>
+<Button id="placement-top">Top popover</Button>
 <div class="space-x-4 rtl:space-x-reverse">
-  <Button id="placement-left" onmousedown={() => (placement = "left")}>Left popover</Button>
-  <Button id="placement-right" onmousedown={() => (placement = "right")}>Right popover</Button>
+  <Button id="placement-left">Left popover</Button>
+  <Button id="placement-right">Right popover</Button>
 </div>
-<Button id="placement-bottom" onmousedown={() => (placement = "bottom")}>Bottom popover</Button>
-<Popover triggeredBy="[id^='placement-']" {placement} class="w-64 text-sm font-light " title="Popover {placement}">And here's some amazing content. It's very engaging. Right?</Popover>
+<Button id="placement-bottom">Bottom popover</Button>
+<Popover triggeredBy="[id^='placement-']" {placement} class="w-64 text-sm font-light " title="Popover {placement}" {onbeforetoggle}>And here's some amazing content. It's very engaging. Right?</Popover>
 ```
 
 ## Triggering
