@@ -136,10 +136,12 @@ This example can be used to share important information with your website visito
 <ImagePlaceholder class="py-4" />
 
 <Banner id="info-banner" position="absolute" bannerType="info">
-  <div slot="header" class="mb-4 md:me-4 md:mb-0">
+  {#snippet header()}
+  <div class="mb-4 md:me-4 md:mb-0">
     <h2 class="mb-1 text-base font-semibold text-gray-900 dark:text-white">Integration is the key</h2>
     <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">You can integrate Flowbite with many tools.</p>
   </div>
+  {/snippet}
   <a href="/" class="hover:text-primary-700 me-3 inline-flex items-center rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-900 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-200 focus:outline-hidden dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700">
     <BookOpenOutline class="me-2 h-3 w-3" />
     Learn more
