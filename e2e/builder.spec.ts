@@ -79,3 +79,123 @@ test("Builder hr page should have h1", async ({ page }) => {
   await page.goto("/builder/hr");
   expect(await page.textContent("h1")).toBe("Hr Builder");
 });
+
+test("Builder image page should have h1", async ({ page }) => {
+  await page.goto("/builder/image");
+  expect(await page.textContent("h1")).toBe("Image Builder");
+});
+
+test("Builder indicators page should have h1", async ({ page }) => {
+  await page.goto("/builder/indicators");
+  expect(await page.textContent("h1")).toBe("Indicator Builder");
+});
+
+test("Builder input-field page should have h1", async ({ page }) => {
+  await page.goto("/builder/input-field");
+  expect(await page.textContent("h1")).toBe("Input Builder");
+});
+
+test("Builder label page should have h1", async ({ page }) => {
+  await page.goto("/builder/label");
+  expect(await page.textContent("h1")).toBe("Label Builder");
+});
+
+test("Builder layout page should have h1", async ({ page }) => {
+  await page.goto("/builder/layout");
+  expect(await page.textContent("h1")).toBe("Layout");
+});
+
+test("Builder link page should have h1", async ({ page }) => {
+  await page.goto("/builder/link");
+  expect(await page.textContent("h1")).toBe("Link Builder");
+});
+
+test("Builder list page should have h1", async ({ page }) => {
+  await page.goto("/builder/list");
+  expect(await page.textContent("h1")).toBe("List Builder");
+});
+
+test("Builder modal page should have h1", async ({ page }) => {
+  await page.goto("/builder/modal");
+  expect(await page.textContent("h1")).toBe("Modal Builder");
+});
+
+test("Builder paragraph page should have h1", async ({ page }) => {
+  await page.goto("/builder/paragraph");
+  expect(await page.textContent("h1")).toBe("Paragraph Builder");
+});
+
+test("Builder popover page should have h1", async ({ page }) => {
+  await page.goto("/builder/popover");
+  expect(await page.textContent("h1")).toBe("Popover Builder");
+});
+
+test("Builder progress page should have h1", async ({ page }) => {
+  await page.goto("/builder/progress");
+  expect(await page.textContent("h1")).toBe("Progressbar Builder");
+});
+
+test("Builder radio page should have h1", async ({ page }) => {
+  await page.goto("/builder/radio");
+  expect(await page.textContent("h1")).toBe("Radio Builder");
+});
+
+test("Builder range page should have h1", async ({ page }) => {
+  await page.goto("/builder/range");
+  expect(await page.textContent("h1")).toBe("Range Builder");
+});
+
+test("Builder select page should have h1", async ({ page }) => {
+  await page.goto("/builder/select");
+  expect(await page.textContent("h1")).toBe("Select Builder");
+});
+
+test("Builder skeleton page should have h1", async ({ page }) => {
+  await page.goto("/builder/skeleton");
+  expect(await page.textContent("h1")).toBe("Skeleton Builder");
+});
+
+test("Builder span page should have h1", async ({ page }) => {
+  await page.goto("/builder/span");
+  expect(await page.textContent("h1")).toBe("Span Builder");
+});
+
+test("Builder spinner page should have h1", async ({ page }) => {
+  await page.goto("/builder/spinner");
+  expect(await page.textContent("h1")).toBe("Spinner Builder");
+});
+
+test("Builder tab page should have h1", async ({ page }) => {
+  await page.goto("/builder/tab");
+  expect(await page.textContent("h1")).toBe("Tab Builder");
+});
+
+test("Builder table page should have h1", async ({ page }) => {
+  await page.goto("/builder/table");
+  expect(await page.textContent("h1")).toBe("Table Builder");
+});
+
+test("Builder textarea page should have h1", async ({ page }) => {
+  await page.goto("/builder/textarea");
+  expect(await page.textContent("h1")).toBe("Textarea Builder");
+});
+
+test("Builder toast page should have h1", async ({ page }) => {
+  await page.goto("/builder/toast");
+  expect(await page.textContent("h1")).toBe("Toast Builder");
+});
+
+test("Builder toggle page should have h1", async ({ page }) => {
+  await page.goto("/builder/toggle");
+  expect(await page.textContent("h1")).toBe("Toggle Builder");
+});
+
+test("Builder tooltip page should have h1", async ({ page }) => {
+  await page.goto("/builder/tooltip");
+  expect(await page.textContent("h1")).toBe("Tooltip Builder");
+});
+
+test("Builder video page should have h1", async ({ page }) => {
+  await page.goto("/builder/video");
+  expect(await page.textContent("h1")).toBe("Video Player Builder");
+});
