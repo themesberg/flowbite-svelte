@@ -187,7 +187,7 @@ Use the following alert elements that are also dismissable.
 
 As `Alert` inhertits from the `Frame` component you can attach the `transition` and `params` prop to control the dissimal animation. By default `fade` svelte function is used. See the example below.
 
-You can use `slot="close"` to override the default close button. That slot exposes `close` function that makes the alert dismissed when triggered. See the last example.
+You can use `closeIcon` prop to override the default close button. See the last example.
 
 ```svelte example class="flex flex-col gap-4"
 <script>
