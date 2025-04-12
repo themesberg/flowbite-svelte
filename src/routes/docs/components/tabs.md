@@ -67,7 +67,9 @@ The last tab in that example shows not only how to show a disabled tab, but how 
     </p>
   </TabItem>
   <TabItem disabled>
-    <span slot="title" class="text-gray-400 dark:text-gray-500">Disabled</span>
+    {#snippet titleSlot()}
+    <span class="text-gray-400 dark:text-gray-500">Disabled</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Disabled:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -119,7 +121,9 @@ Use the `tabStyle="underline"` to achieve this alternative tabs component style 
     </p>
   </TabItem>
   <TabItem disabled>
-    <span slot="title" class="text-gray-400 dark:text-gray-500">Disabled</span>
+    {#snippet titleSlot()}
+    <span class="text-gray-400 dark:text-gray-500">Disabled</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Disabled:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -140,40 +144,48 @@ This is an example of the tabs component where you can also use a SVG powered ic
 
 <Tabs tabStyle="underline">
   <TabItem open>
-    <div slot="title" class="flex items-center gap-2">
+    {#snippet titleSlot()}
+    <div class="flex items-center gap-2">
       <UserCircleSolid size="md" />
       Profile
     </div>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Profile:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
   <TabItem>
-    <div slot="title" class="flex items-center gap-2">
+    {#snippet titleSlot()}
+    <div class="flex items-center gap-2">
       <GridSolid size="md" />
       Dashboard
     </div>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Dashboard:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
   <TabItem>
-    <div slot="title" class="flex items-center gap-2">
+    {#snippet titleSlot()}
+    <div class="flex items-center gap-2">
       <AdjustmentsVerticalSolid size="md" />
       Settings
     </div>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Settings:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
   <TabItem>
-    <div slot="title" class="flex items-center gap-2">
+    {#snippet titleSlot()}
+    <div class="flex items-center gap-2">
       <ClipboardSolid size="md" />
       Contacts
     </div>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Contacts:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -193,28 +205,36 @@ If you want to use pills as a style for the tabs component use `tabStyle="pill"`
 
 <Tabs tabStyle="pill">
   <TabItem open>
-    <span slot="title">Profile</span>
+    {#snippet titleSlot()}
+    <span>Profile</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Profile:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
   <TabItem>
-    <span slot="title">Dashboard</span>
+    {#snippet titleSlot()}
+    <span>Dashboard</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Dashboard:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
   <TabItem>
-    <span slot="title">Settings</span>
+    {#snippet titleSlot()}
+    <span>Settings</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Settings:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
   <TabItem>
-    <span slot="title">Users</span>
+    {#snippet titleSlot()}
+    <span>Users</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Users:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -234,28 +254,36 @@ If you want to show the tabs on the full width relative to the parent element us
 
 <Tabs tabStyle="full" defaultClass="flex rounded-lg divide-x rtl:divide-x-reverse divide-gray-200 shadow-sm dark:divide-gray-700">
   <TabItem class="w-full" open>
-    <span slot="title">Profile</span>
+    {#snippet titleSlot()}
+    <span>Profile</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Profile:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
   <TabItem class="w-full">
-    <span slot="title">Dashboard</span>
+    {#snippet titleSlot()}
+    <span>Dashboard</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Dashboard:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
   <TabItem class="w-full">
-    <span slot="title">Settings</span>
+    {#snippet titleSlot()}
+    <span>Settings</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Settings:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
   <TabItem class="w-full">
-    <span slot="title">Users</span>
+    {#snippet titleSlot()}
+    <span>Users</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Users:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -276,7 +304,9 @@ You can add other components to the `TabItem` component. Here we are adding a ti
 
 <Tabs>
   <TabItem open>
-    <span slot="title">Profile</span>
+    {#snippet titleSlot()}
+    <span>Profile</span>
+    {/snippet}
     <Timeline>
       <TimelineItem title="Application UI code in Tailwind CSS" date="February 2022">
         <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
@@ -294,21 +324,27 @@ You can add other components to the `TabItem` component. Here we are adding a ti
     </Timeline>
   </TabItem>
   <TabItem>
-    <span slot="title">Dashboard</span>
+    {#snippet titleSlot()}
+    <span>Dashboard</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Dashboard:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
   <TabItem>
-    <span slot="title">Settings</span>
+    {#snippet titleSlot()}
+    <span>Settings</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Settings:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
   <TabItem>
-    <span slot="title">Users</span>
+    {#snippet titleSlot()}
+    <span>Users</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Users:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
