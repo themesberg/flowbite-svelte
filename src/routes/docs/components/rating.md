@@ -75,10 +75,14 @@ If you also want to show a text near the stars you can use the `text` slot to ad
 </script>
 
 <Rating id="example-3" total={5} rating={3.4}>
-  <p slot="text" class="ms-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.4 out of 5</p>
+  {#snippet text()}
+  <p class="ms-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.4 out of 5</p>
+  {/snippet}
 </Rating>
 <Rating id="example-3" total={5} rating={2.8} iconFillColor="#008800" iconStrokeColor="#008800">
-  <p slot="text" class="ms-2 text-sm font-medium text-gray-500 dark:text-gray-400">2.8 out of 5</p>
+  {#snippet text()}
+  <p class="ms-2 text-sm font-medium text-gray-500 dark:text-gray-400">2.8 out of 5</p>
+  {/snippet}
 </Rating>
 ```
 
@@ -141,12 +145,16 @@ Set the `total`,` rating`, and `ratings` prop for AdvancedRation component. Use 
     { label: "1 star", rating: 1 }
   ]}
 >
-  <span slot="rating">
+  {#snippet rating()}
     <Rating total={5} rating={3.72} id="example-8">
-      <p slot="text" class="ms-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.72 out of 5</p>
+      {#snippet text()}
+        <p class="ms-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.72 out of 5</p>
+      {/snippet}
     </Rating>
-  </span>
-  <p slot="globalText" class="mt-2 text-sm font-medium text-gray-500 dark:text-gray-400">1,745 global ratings</p>
+  {/snippet}
+  {#snippet globalText()}
+    <p class="mt-2 text-sm font-medium text-gray-500 dark:text-gray-400">1,745 global ratings</p>
+  {/snippet}
 </AdvancedRating>
 ```
 
@@ -168,12 +176,16 @@ As we describe in the Rating component, you can change an icon in the Rating com
     { label: "1 star", rating: 1 }
   ]}
 >
-  <span slot="rating">
+  {#snippet rating()}
     <Rating total={5} rating={3.8} icon={Thumbup} id="example-9">
-      <p slot="text" class="ms-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.8 out of 5</p>
+      {#snippet text()}
+        <p class="ms-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.8 out of 5</p>
+      {/snippet}
     </Rating>
-  </span>
-  <p slot="globalText" class="mt-2 text-sm font-medium text-gray-500 dark:text-gray-400">1,745 global ratings</p>
+  {/snippet}
+  {#snippet globalText()}
+    <p class="mt-2 text-sm font-medium text-gray-500 dark:text-gray-400">1,745 global ratings</p>
+  {/snippet}
 </AdvancedRating>
 ```
 
