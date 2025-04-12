@@ -3,7 +3,7 @@
   "props": [
     ["title", "any", ""],
     ["color", "any", "\"default\""],
-    ["trigger", "any", "\"click\""],
+    ["trigger", "any", "\"hover\""],
     ["defaultClass", "any", ""],
     ["arrow", "any", "true"],
     ["children", "any", ""],

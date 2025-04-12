@@ -125,7 +125,7 @@ If you need the tooltip to be attached to the other element then the tiggering o
   import { Tooltip, Button } from "flowbite-svelte";
   let placement = $state("");
   function onbeforetoggle(ev) {
-    placement = ev.trigger.id.replace('ref-', '');
+    placement = ev.trigger.id.replace("ref-", "");
   }
 </script>
 

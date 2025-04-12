@@ -293,7 +293,7 @@ Set the position of the popover component relative to the trigger element by usi
   let placement = $state("bottom");
 
   function onbeforetoggle(ev) {
-    placement = ev.trigger?.id.replace('placement-', '');
+    placement = ev.trigger?.id.replace("placement-", "");
   }
 </script>
 

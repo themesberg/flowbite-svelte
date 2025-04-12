@@ -10,7 +10,7 @@
     ["labelOutside", "any", "\"\""],
     ["easing", "any", "cubicOut"],
     ["color", "any", "\"primary\""],
-    ["div2Class", "any", ""],
+    ["labelInsideClass", "any", ""],
     ["oustsideSpanClass", "any", ""],
     ["oustsideProgressClass", "any", ""],
     ["labeloutsidedivClass", "any", ""],

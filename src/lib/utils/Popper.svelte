@@ -198,5 +198,6 @@
 @props:onbeforetoggle: any;
 @props:ontoggle: any;
 @props:class: string = "";
+@props:arrowClass: any = "";
 @props:children: any;
 -->

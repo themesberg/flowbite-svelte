@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.0-next.9
+
+### Patch Changes
+
+- fix: various bugs
+
 ## 1.0.0-next.8
 
 ### Patch Changes

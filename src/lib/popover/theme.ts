@@ -96,8 +96,6 @@ export const popover = tv({
         title: "bg-rose-700",
         h3: "text-white"
       }
-    },
-
-  },
-
+    }
+  }
 });

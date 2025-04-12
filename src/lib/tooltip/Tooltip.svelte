@@ -28,7 +28,7 @@
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Props
 @props: type: any = "dark";
-@props:color: any = "default";
+@props:color: any = undefined;
 @props:trigger: any = "hover";
 @props:arrow: any = true;
 @props:children: any;

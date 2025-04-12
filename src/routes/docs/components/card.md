@@ -209,7 +209,7 @@ Use this card for your e-commerce websites and show information about the produc
     </a>
     <Rating rating={4} size={24} class="mt-2.5 mb-5">
       {#snippet text()}
-      <Badge class="ms-3">4</Badge>
+        <Badge class="ms-3">4</Badge>
       {/snippet}
     </Rating>
     <div class="flex items-center justify-between">

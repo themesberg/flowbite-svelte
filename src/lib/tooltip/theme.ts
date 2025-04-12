@@ -11,7 +11,7 @@ export const tooltip = tv({
     type: {
       light: { base: "bg-white text-gray-800 dark:bg-gray-300 dark:text-gray-800 border border-gray-200 dark:border-gray-200" },
       auto: { base: "bg-white text-gray-800 dark:bg-gray-800 dark:text-white border border-gray-200 dark:border-gray-700" },
-      dark: { base: "bg-gray-800 text-white dark:bg-gray-800 dark:text-white dark:border dark:border-gray-700" },
+      dark: { base: "bg-gray-800 text-white dark:bg-gray-800 dark:text-white dark:border dark:border-gray-700" }
     },
     color: {
       // default: { base: "bg-gray-800 dark:bg-gray-300 dark:text-gray-800" },
@@ -35,6 +35,6 @@ export const tooltip = tv({
       fuchsia: { base: "bg-fuchsia-600 dark:bg-fuchsia-600" },
       pink: { base: "bg-pink-600 dark:bg-pink-600" },
       rose: { base: "bg-rose-800 dark:bg-rose-800" }
-    },
-  },
+    }
+  }
 });

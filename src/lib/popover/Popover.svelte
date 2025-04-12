@@ -28,7 +28,7 @@
 ## Props
 @props: title: any;
 @props:color: any = "default";
-@props:trigger: any = "click";
+@props:trigger: any = "hover";
 @props:defaultClass: any;
 @props:arrow: any = true;
 @props:children: any;

@@ -76,12 +76,12 @@ If you also want to show a text near the stars you can use the `text` slot to ad
 
 <Rating id="example-3" total={5} rating={3.4}>
   {#snippet text()}
-  <p class="ms-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.4 out of 5</p>
+    <p class="ms-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.4 out of 5</p>
   {/snippet}
 </Rating>
 <Rating id="example-3" total={5} rating={2.8} iconFillColor="#008800" iconStrokeColor="#008800">
   {#snippet text()}
-  <p class="ms-2 text-sm font-medium text-gray-500 dark:text-gray-400">2.8 out of 5</p>
+    <p class="ms-2 text-sm font-medium text-gray-500 dark:text-gray-400">2.8 out of 5</p>
   {/snippet}
 </Rating>
 ```

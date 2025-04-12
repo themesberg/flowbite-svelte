@@ -6,7 +6,6 @@
     ["placement", "any", "\"top\""],
     ["offset", "any", "8"],
     ["arrow", "any", "false"],
-    ["border", "any", "true"],
     ["yOnly", "any", "false"],
     ["strategy", "any", "\"absolute\""],
     ["reference", "any", ""],
@@ -15,6 +14,7 @@
     ["onbeforetoggle", "any", ""],
     ["ontoggle", "any", ""],
     ["class", "string", "\"\""],
+    ["arrowClass", "any", "\"\""],
     ["children", "any", ""]
   ]
 }

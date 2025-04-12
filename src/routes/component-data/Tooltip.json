@@ -2,7 +2,7 @@
   "name": "Tooltip",
   "props": [
     ["type", "any", "\"dark\""],
-    ["color", "any", "\"default\""],
+    ["color", "any", "undefined"],
     ["trigger", "any", "\"hover\""],
     ["arrow", "any", "true"],
     ["children", "any", ""],
