@@ -63,7 +63,7 @@
 
 <MetaTag {breadcrumb_title} {description} {title} {dir} />
 
-<H1>Avatar Bilder</H1>
+<H1>Avatar Builder</H1>
 
 <CodeWrapper>
   <div class="mb-4 flex h-36 justify-center">

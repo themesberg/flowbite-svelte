@@ -57,7 +57,7 @@ ${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ""}`;
 
 <MetaTag {breadcrumb_title} {description} {title} {dir} />
 
-<H1>Fileupload Builder</H1>
+<H1>File input Builder</H1>
 <CodeWrapper>
   <div class="md:h-24">
     <Fileupload id="small_size" {size} class="mb-2" {multiple} bind:files />

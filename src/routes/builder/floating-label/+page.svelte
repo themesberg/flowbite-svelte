@@ -63,7 +63,7 @@
 
 <MetaTag {breadcrumb_title} {description} {title} {dir} />
 
-<H1>Floating label builder</H1>
+<H1>Floating-label Builder</H1>
 
 <CodeWrapper>
   <div class="mb-4 md:h-20">

@@ -100,7 +100,7 @@
 
 <MetaTag {breadcrumb_title} {description} {title} {dir} />
 
-<H1>Modal Bilder</H1>
+<H1>Modal Builder</H1>
 
 <CodeWrapper>
   <div class="mb-4 h-20">

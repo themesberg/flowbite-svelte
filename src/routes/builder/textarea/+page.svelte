@@ -84,7 +84,7 @@
 
 <MetaTag {breadcrumb_title} {description} {title} {dir} />
 
-<H1>Textarea Bilder</H1>
+<H1>Textarea Builder</H1>
 
 <CodeWrapper>
   <div class="mb-4 h-64">

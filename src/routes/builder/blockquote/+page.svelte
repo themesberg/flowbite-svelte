@@ -77,7 +77,7 @@
 
 <MetaTag {breadcrumb_title} {description} {title} {dir} />
 
-<H1>Blockquote Bilder</H1>
+<H1>Blockquote Builder</H1>
 <CodeWrapper>
   <Input type="text" bind:value={text} placeholder="Write your blockquote text" class="mb-8 pr-12">
     {#snippet right()}

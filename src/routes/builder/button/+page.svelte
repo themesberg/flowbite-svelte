@@ -138,7 +138,7 @@
 
 <MetaTag {breadcrumb_title} {description} {title} {dir} />
 
-<H1>Button Bilder</H1>
+<H1>Button Builder</H1>
 
 <CodeWrapper innerClass="flex flex-wrap gap-2">
   <div class="h-16">

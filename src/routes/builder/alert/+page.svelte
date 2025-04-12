@@ -127,7 +127,7 @@
 
 <MetaTag {breadcrumb_title} {description} {title} {dir} />
 
-<H1>Alert Bilder</H1>
+<H1>Alert Builder</H1>
 
 <CodeWrapper>
   <div class="mb-4 h-20">
