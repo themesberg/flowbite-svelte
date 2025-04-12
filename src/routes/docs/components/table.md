@@ -288,7 +288,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
     </TableHeadCell>
   </TableHead>
   <TableBody>
-    <TableBodyRow slot="row" let:item>
+    <TableBodyRow let:item>
       <TableBodyCell>{item.id}</TableBodyCell>
       <TableBodyCell>{item.maker}</TableBodyCell>
       <TableBodyCell>{item.type}</TableBodyCell>

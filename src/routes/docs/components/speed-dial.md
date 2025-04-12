@@ -558,7 +558,7 @@ The default trigger type is hover for each speed dial component.
 
 ## Custom main button
 
-You can change the main button to any element you want by using the `slot='button'`.
+You can change the main button to any element you want.
 
 ```svelte example class="relative h-96" hideResponsiveButtons
 <script>
