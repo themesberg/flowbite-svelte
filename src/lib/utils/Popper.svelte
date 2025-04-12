@@ -174,7 +174,7 @@
   }
 </script>
 
-<div popover="manual" bind:this={popover} use:set_triggers class:overflow-visible={true} onfocusout={close_popover} onmouseleave={hoverable ? close_popover : undefined} onmouseenter={hoverable ? open_popover : undefined} onbeforetoggle={on_before_toggle} ontoggle={on_toggle} class={className}>
+<div popover="manual" role="tooltip" bind:this={popover} use:set_triggers class:overflow-visible={true} onfocusout={close_popover} onmouseleave={hoverable ? close_popover : undefined} onmouseenter={hoverable ? open_popover : undefined} onbeforetoggle={on_before_toggle} ontoggle={on_toggle} class={className}>
   {@render children()}
   {#if arrow}
     <Arrow {...arrowParams} class={arrowClass} />
