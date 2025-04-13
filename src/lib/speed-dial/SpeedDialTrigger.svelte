@@ -4,7 +4,7 @@
   import type { SpeedDialTriggerProps as Props } from "./type";
   import type { GradientButtonProps } from "../buttons/type";
 
-  let { children, name = "Open actions menu", gradient = false, icon, pill = true, color = "blue", class: className, ...restProps }: Props = $props();
+  let { children, name = "Open actions menu", gradient = false, icon, pill = true, color, class: className, ...restProps }: Props = $props();
 
   const buttonProps = $derived({
     pill,
