@@ -38,10 +38,9 @@
 @props: children: any;
 @props:header: any;
 @props:open: any = $bindable(true);
-@props:position: any = "sticky";
 @props:dismissable: any = true;
 @props:color: any = "gray";
-@props:type: any = "default";
+@props:type: any;
 @props:class: string;
 @props:innerClass: any;
 @props:transition: any = fade;

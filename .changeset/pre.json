@@ -4,5 +4,5 @@
   "initialVersions": {
     "flowbite-svelte": "1.0.0-next.0"
   },
-  "changesets": ["fast-candies-add", "fifty-corners-look", "heavy-teeth-wink", "rotten-badgers-check", "salty-cats-doubt", "sweet-jars-listen", "tame-baboons-wash", "thick-breads-type", "true-peas-push"]
+  "changesets": ["fast-candies-add", "fifty-corners-look", "heavy-teeth-wink", "rotten-badgers-check", "salty-cats-doubt", "sweet-jars-listen", "tame-baboons-wash", "thick-breads-type", "true-peas-push", "yummy-ghosts-argue"]
 }

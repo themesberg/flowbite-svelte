@@ -11,11 +11,11 @@ const banner = tv({
   variants: {
     type: {
       top: {
-        base: "top-0 start-0 w-full border-b border-gray-200 bg-gray-50",
+        base: "top-0 start-0 w-full border-b border-gray-200 bg-gray-50"
       },
       bottom: {
-        base: "bottom-0 start-0 w-full border-t border-gray-200 bg-gray-50",
-      },
+        base: "bottom-0 start-0 w-full border-t border-gray-200 bg-gray-50"
+      }
     },
     color: {
       // 'primary' secondary, | 'gray' | 'red' | 'orange' | 'amber' | 'yellow' | 'lime' | 'green' | 'emerald' | 'teal' | 'cyan' | 'sky' | 'blue' | 'indigo' | 'violet' | 'purple' | 'fuchsia' | 'pink' | 'rose'

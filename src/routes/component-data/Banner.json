@@ -3,11 +3,10 @@
   "props": [
     ["children", "any", ""],
     ["header", "any", ""],
-    ["bannerStatus", "any", "$bindable(true)"],
-    ["position", "any", "\"sticky\""],
+    ["open", "any", "$bindable(true)"],
     ["dismissable", "any", "true"],
     ["color", "any", "\"gray\""],
-    ["bannerType", "any", "\"default\""],
+    ["type", "any", ""],
     ["class", "string", ""],
     ["innerClass", "any", ""],
     ["transition", "any", "fade"],

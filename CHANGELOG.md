@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.0-next.10
+
+### Patch Changes
+
+- fix: speedDial, banner, popper and other bugs
+
 ## 1.0.0-next.9
 
 ### Patch Changes

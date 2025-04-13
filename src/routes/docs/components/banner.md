@@ -40,7 +40,7 @@ Use this free example to show a text message for announcement with a CTA link, a
 <ImagePlaceholder class="py-4" />
 
 <Banner>
-  <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400 me-8 md:me-0">
+  <p class="me-8 flex items-center text-sm font-normal text-gray-500 md:me-0 dark:text-gray-400">
     <span class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600">
       <BullhornSolid class="h-3 w-3 text-gray-500 dark:text-gray-400" />
       <span class="sr-only">Light bulb</span>
@@ -92,7 +92,7 @@ Use this free example to show a text message for announcement with a CTA link.
 <Skeleton class="py-4" />
 <ImagePlaceholder class="py-4" />
 
-<Banner class="w-[calc(100%-2rem)] bg-white border border-gray-100 rounded-lg shadow-xs lg:max-w-7xl left-1/2 -translate-x-1/2 top-6 dark:bg-gray-700 dark:border-gray-600">
+<Banner class="top-6 left-1/2 w-[calc(100%-2rem)] -translate-x-1/2 rounded-lg border border-gray-100 bg-white shadow-xs lg:max-w-7xl dark:border-gray-600 dark:bg-gray-700">
   <a href="https://flowbite-svelte.com/" class="mb-2 flex items-center border-gray-200 md:me-4 md:mb-0 md:border-e md:pe-4 dark:border-gray-600">
     <img src="https://flowbite-svelte.com/images/flowbite-svelte-icon-logo.svg" class="me-2 h-6" alt="Flowbite Logo" />
     <span class="self-center text-lg font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
@@ -114,13 +114,12 @@ This example can be used to encourage your website visitors to sign up to your e
 <ImagePlaceholder class="py-4" />
 
 <Banner innerClass="w-full sm:w-auto">
-  <form action="/" class="flex flex-col md:flex-row md:items-center w-full gap-2 md:gap-4">
+  <form action="/" class="flex w-full flex-col gap-2 md:flex-row md:items-center md:gap-4">
     <Label for="email" class="shrink-0 text-gray-500 dark:text-gray-400">Sign up for our newsletter</Label>
-    <Input type="email" id="email" placeholder="Enter your email" class="md:w-64 bg-white dark:bg-gray-600 dark:border-gray-500"  required />
+    <Input type="email" id="email" placeholder="Enter your email" class="bg-white md:w-64 dark:border-gray-500 dark:bg-gray-600" required />
     <Button type="submit" class="w-full sm:w-auto">Subscribe</Button>
   </form>
 </Banner>
-
 ```
 
 ## Informational banner
@@ -141,8 +140,8 @@ This example can be used to share important information with your website visito
     <h2 class="mb-1 text-base font-semibold text-gray-900 dark:text-white">Integration is the key</h2>
     <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">You can integrate Flowbite with many tools to make your work even more efficient and lightning fast based on Tailwind CSS.</p>
   </div>
-  <div class="flex items-center shrink-0 gap-3">
-    <Button href="/" size="sm" color="alternative" >
+  <div class="flex shrink-0 items-center gap-3">
+    <Button href="/" size="sm" color="alternative">
       <BookOpenOutline class="me-2 h-3 w-3" /> Learn more
     </Button>
     <Button href="/" size="sm">
