@@ -5,36 +5,25 @@
   import type { ParamsType } from "../types";
   import clsx from "clsx";
 
-  let { children, header, bannerStatus = $bindable(true), position = "sticky", dismissable = true, color = "gray", bannerType = "default", class: className, innerClass, transition = fade, params, ...restProps }: Props = $props();
+  let { children, header, open = $bindable(true), dismissable = true, color = "gray", type, class: className, innerClass, transition = fade, params, ...restProps }: Props = $props();
 
-  const { base, insideDiv } = banner({
-    bannerType,
-    color
-  });
-
-  let bannerClass = $derived(base({ position, bannerType, color, class: clsx(className) }));
-
-  let innerCls = $derived(insideDiv({ bannerType, class: innerClass }));
+  const { base, insideDiv, dismissable: dismissableClass } = banner({ type, color });
 </script>
 
-{#if bannerStatus}
-  <div tabindex="-1" class={bannerClass} {...restProps} transition:transition={params as ParamsType}>
-    {#if header}
-      {@render header()}
-    {/if}
-
-    <div class={innerCls}>
-      {@render children()}
+{#if open}
+  <div tabindex="-1" class={base({ class: clsx(className) })} {...restProps} transition:transition={params as ParamsType}>
+    <div class={insideDiv({ class: innerClass })}>
+      {@render children?.()}
     </div>
 
     {#if dismissable}
-      <div class="flex items-center">
+      <div class="flex items-center justify-end">
         <CloseButton
-          class="-mx-1.5 -my-1.5"
+          class={dismissableClass()}
           {color}
-          ariaLabel="Remove badge"
+          ariaLabel="Remove banner"
           onclick={() => {
-            bannerStatus = false;
+            open = false;
           }}
         />
       </div>
@@ -48,11 +37,11 @@
 ## Props
 @props: children: any;
 @props:header: any;
-@props:bannerStatus: any = $bindable(true);
+@props:open: any = $bindable(true);
 @props:position: any = "sticky";
 @props:dismissable: any = true;
 @props:color: any = "gray";
-@props:bannerType: any = "default";
+@props:type: any = "default";
 @props:class: string;
 @props:innerClass: any;
 @props:transition: any = fade;

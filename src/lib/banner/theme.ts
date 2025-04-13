@@ -1,41 +1,21 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type BannerVariants = VariantProps<typeof banner>;
 
 const banner = tv({
   slots: {
-    base: "z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600",
-    insideDiv: "flex items-center"
+    base: "fixed z-50 flex justify-between p-4 mx-auto dark:bg-gray-700 dark:border-gray-600",
+    insideDiv: "flex flex-col md:flex-row md:items-center gap-2 mx-auto",
+    dismissable: "absolute end-2.5 top-2.5 md:static md:end-auto md:top-auto"
   },
   variants: {
-    position: {
-      // "static" | "fixed" | "absolute" | "relative" | "sticky"
-      static: { base: "static" },
-      fixed: { base: "fixed" },
-      absolute: { base: "absolute" },
-      relative: { base: "relative" },
-      sticky: { base: "sticky" }
-    },
-    bannerType: {
-      // "default" | "bottom" | "cta" | "signup" | "info"
-      default: {
+    type: {
+      top: {
         base: "top-0 start-0 w-full border-b border-gray-200 bg-gray-50",
-        insideDiv: "mx-auto"
       },
       bottom: {
         base: "bottom-0 start-0 w-full border-t border-gray-200 bg-gray-50",
-        insideDiv: "mx-auto"
       },
-      cta: {
-        base: "flex-col md:flex-row w-[calc(100%-2rem)] -translate-x-1/2 rtl:translate-x-1/2 bg-white border border-gray-100 rounded-lg shadow-xs lg:max-w-7xl start-1/2 top-6",
-        insideDiv: "flex-col items-start mb-3 me-4 md:items-center md:flex-row md:mb-0"
-      },
-      signup: {
-        base: "top-0 start-0 w-full border-b border-gray-200 bg-gray-50",
-        insideDiv: "shrink-0 w-full mx-auto sm:w-auto"
-      },
-      info: {
-        base: "top-0 start-0 flex-col w-full border-b border-gray-200 md:flex-row bg-gray-50",
-        insideDiv: "shrink-0"
-      }
     },
     color: {
       // 'primary' secondary, | 'gray' | 'red' | 'orange' | 'amber' | 'yellow' | 'lime' | 'green' | 'emerald' | 'teal' | 'cyan' | 'sky' | 'blue' | 'indigo' | 'violet' | 'purple' | 'fuchsia' | 'pink' | 'rose'
@@ -62,8 +42,8 @@ const banner = tv({
     }
   },
   defaultVariants: {
-    position: "sticky",
-    bannerType: "default"
+    type: "top",
+    multiline: true
   }
 });
 

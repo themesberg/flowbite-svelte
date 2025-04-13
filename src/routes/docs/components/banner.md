@@ -39,8 +39,8 @@ Use this free example to show a text message for announcement with a CTA link, a
 <Skeleton class="py-4" />
 <ImagePlaceholder class="py-4" />
 
-<Banner id="default-banner" position="absolute">
-  <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
+<Banner>
+  <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400 me-8 md:me-0">
     <span class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600">
       <BullhornSolid class="h-3 w-3 text-gray-500 dark:text-gray-400" />
       <span class="sr-only">Light bulb</span>
@@ -58,23 +58,23 @@ This example can be used to position the sticky banner to the bottom side of the
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
+  import { Banner, Skeleton, ImagePlaceholder, A } from "flowbite-svelte";
   import { SalePercentSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
 <Skeleton class="py-4" />
 <ImagePlaceholder class="py-4" />
 
-<Banner id="bottom-banner" position="absolute" bannerType="bottom">
+<Banner type="bottom">
   <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
     <span class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600">
       <SalePercentSolid class="h-4 w-4 text-gray-500 dark:text-gray-400" />
       <span class="sr-only">Discount coupon</span>
     </span>
     <span>
-      Get 5% commission per sale <a href="https://flowbite.com" class="text-primary-600 dark:text-primary-500 ms-0 flex items-center text-sm font-medium hover:underline md:ms-1 md:inline-flex">
+      Get 5% commission per sale <A href="https://flowbite.com">
         Become a partner <ArrowRightOutline class="ms-2 h-3 w-3" />
-      </a>
+      </A>
     </span>
   </p>
 </Banner>
@@ -92,7 +92,7 @@ Use this free example to show a text message for announcement with a CTA link.
 <Skeleton class="py-4" />
 <ImagePlaceholder class="py-4" />
 
-<Banner id="cta-banner" position="absolute" bannerType="cta">
+<Banner class="w-[calc(100%-2rem)] bg-white border border-gray-100 rounded-lg shadow-xs lg:max-w-7xl left-1/2 -translate-x-1/2 top-6 dark:bg-gray-700 dark:border-gray-600">
   <a href="https://flowbite-svelte.com/" class="mb-2 flex items-center border-gray-200 md:me-4 md:mb-0 md:border-e md:pe-4 dark:border-gray-600">
     <img src="https://flowbite-svelte.com/images/flowbite-svelte-icon-logo.svg" class="me-2 h-6" alt="Flowbite Logo" />
     <span class="self-center text-lg font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
@@ -107,19 +107,20 @@ This example can be used to encourage your website visitors to sign up to your e
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
+  import { Banner, Skeleton, ImagePlaceholder, Input, Label, Button } from "flowbite-svelte";
 </script>
 
 <Skeleton class="py-4" />
 <ImagePlaceholder class="py-4" />
 
-<Banner id="signup-banner" position="absolute" bannerType="signup">
-  <form action="/" class="flex w-full flex-col items-center md:flex-row">
-    <label for="email" class="me-auto mb-2 shrink-0 text-sm font-medium text-gray-500 md:m-0 md:me-4 md:mb-0 dark:text-gray-400">Sign up for our newsletter</label>
-    <input type="email" id="email" placeholder="Enter your email" class="focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 mb-2 block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 md:me-4 md:mb-0 md:w-64 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400" required />
-    <button type="submit" class="bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 w-full rounded-lg px-5 py-2.5 text-center text-sm font-medium text-white focus:ring-4 focus:outline-hidden sm:w-auto">Subscribe</button>
+<Banner innerClass="w-full sm:w-auto">
+  <form action="/" class="flex flex-col md:flex-row md:items-center w-full gap-2 md:gap-4">
+    <Label for="email" class="shrink-0 text-gray-500 dark:text-gray-400">Sign up for our newsletter</Label>
+    <Input type="email" id="email" placeholder="Enter your email" class="md:w-64 bg-white dark:bg-gray-600 dark:border-gray-500"  required />
+    <Button type="submit" class="w-full sm:w-auto">Subscribe</Button>
   </form>
 </Banner>
+
 ```
 
 ## Informational banner
@@ -128,27 +129,26 @@ This example can be used to share important information with your website visito
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
+  import { Banner, Skeleton, ImagePlaceholder, Button } from "flowbite-svelte";
   import { BookOpenOutline, ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
 <Skeleton class="py-4" />
 <ImagePlaceholder class="py-4" />
 
-<Banner id="info-banner" position="absolute" bannerType="info">
-  {#snippet header()}
-    <div class="mb-4 md:me-4 md:mb-0">
-      <h2 class="mb-1 text-base font-semibold text-gray-900 dark:text-white">Integration is the key</h2>
-      <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">You can integrate Flowbite with many tools.</p>
-    </div>
-  {/snippet}
-  <a href="/" class="hover:text-primary-700 me-3 inline-flex items-center rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-900 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-200 focus:outline-hidden dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700">
-    <BookOpenOutline class="me-2 h-3 w-3" />
-    Learn more
-  </a>
-  <a href="/" class="bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 me-2 inline-flex rounded-lg px-3 py-2 text-xs font-medium text-white focus:ring-4 focus:outline-hidden">
-    Get started <ArrowRightOutline class="ms-2 h-3 w-3" />
-  </a>
+<Banner>
+  <div class="mb-4 md:me-4 md:mb-0">
+    <h2 class="mb-1 text-base font-semibold text-gray-900 dark:text-white">Integration is the key</h2>
+    <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">You can integrate Flowbite with many tools to make your work even more efficient and lightning fast based on Tailwind CSS.</p>
+  </div>
+  <div class="flex items-center shrink-0 gap-3">
+    <Button href="/" size="sm" color="alternative" >
+      <BookOpenOutline class="me-2 h-3 w-3" /> Learn more
+    </Button>
+    <Button href="/" size="sm">
+      Get started <ArrowRightOutline class="ms-2 h-3 w-3" />
+    </Button>
+  </div>
 </Banner>
 ```
 
@@ -162,7 +162,7 @@ This example demonstrates a sliding transition using the slide transition from s
 <script>
   import { slide } from "svelte/transition";
   import { quintOut } from "svelte/easing";
-  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
+  import { Banner, Skeleton, ImagePlaceholder, A } from "flowbite-svelte";
   import { BullhornSolid } from "flowbite-svelte-icons";
 
   const params = { delay: 250, duration: 500, easing: quintOut };
@@ -171,14 +171,14 @@ This example demonstrates a sliding transition using the slide transition from s
 <Skeleton class="py-4" />
 <ImagePlaceholder class="py-4" />
 
-<Banner id="default-banner" position="absolute" transition={slide} {params}>
+<Banner transition={slide} {params}>
   <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
     <span class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600">
       <BullhornSolid class="h-3 w-3 text-gray-500 dark:text-gray-400" />
       <span class="sr-only">Light bulb</span>
     </span>
     <span>
-      New brand identity has been launched for the <a href="https://flowbite.com" class="text-primary-600 dark:text-primary-500 inline font-medium underline decoration-solid decoration-2 underline-offset-2 hover:no-underline dark:decoration-1">Flowbite Library</a>
+      New brand identity has been launched for the <A href="https://flowbite.com" class="font-medium underline decoration-solid decoration-2 underline-offset-2 hover:no-underline dark:decoration-1">Flowbite Library</A>
     </span>
   </p>
 </Banner>
@@ -190,7 +190,7 @@ The component has the following props, type, and default values. See [types page
 
 ### Banner styling
 
-- Use the `classDiv` prop to overwrite `divClass`.
+- Use the `class` prop to overwrite element styling.
 - Use the `classInner` prop to overwrite `innerClass`.
 
 <CompoAttributesViewer {dirName}/>

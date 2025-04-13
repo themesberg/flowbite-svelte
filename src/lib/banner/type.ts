@@ -1,20 +1,13 @@
 import type { Snippet } from "svelte";
 import type { TransitionFunc } from "../types";
 import type { HTMLAttributes } from "svelte/elements";
+import type { BannerVariants } from "./theme";
 
-type ColorVariants = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose";
-type TypeVariants = "default" | "bottom" | "cta" | "signup" | "info";
-type PositionVariants = "static" | "fixed" | "absolute" | "relative" | "sticky";
-
-interface BannerProps extends HTMLAttributes<HTMLDivElement> {
-  children: Snippet;
+interface BannerProps extends BannerVariants, HTMLAttributes<HTMLDivElement> {
   header?: Snippet;
-  bannerStatus?: boolean;
-  position?: PositionVariants;
+  open?: boolean;
   dismissable?: boolean;
-  color?: ColorVariants;
-  bannerType?: TypeVariants;
-  divClass?: string;
+  color?: BannerVariants["color"];
   innerClass?: string;
   transition?: TransitionFunc;
   params?: object;
