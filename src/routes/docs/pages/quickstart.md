@@ -97,6 +97,11 @@ If you use SvelteKit the main css file is `src/app.css`.
   --color-primary-900: #a5371b;
 }
 
+@layer base {
+  button, [role="button"] {
+    cursor: pointer;
+  }
+}
 @source "../node_modules/flowbite-svelte/dist";
 ```
 
