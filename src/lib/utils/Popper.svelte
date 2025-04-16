@@ -17,6 +17,7 @@
     strategy?: 'absolute' | 'fixed';
     open?: boolean;
     yOnly?: boolean;
+    closeOnTouchDelay?: number;
   }
 
   export let activeContent: boolean = false;
@@ -29,6 +30,7 @@
   export let strategy: 'absolute' | 'fixed' = 'absolute';
   export let open: boolean = false;
   export let yOnly: boolean = false;
+  export let closeOnTouchDelay: number = 3000;
   // extra floating UI middleware list
   export let middlewares: Middleware[] = [dom.flip(), dom.shift()];
 
@@ -52,6 +54,7 @@
   let arrowEl: HTMLElement | null;
   let contentEl: HTMLElement;
   let triggerEls: HTMLElement[] = [];
+  let timer: number|undefined = undefined;
 
   const showHandler = (ev: Event) => {
     if (referenceEl === undefined) console.error('trigger undefined');
@@ -60,7 +63,9 @@
       if (open) return; // If the popper is already open after the reference element has changed
     }
 
-    open = ev.type === 'click' ? !open : true;
+    setTimeout(() => {
+      open = ev.type === 'click' ? !open : true;
+    }, (ev as PointerEvent).pointerType === "touch" ? 300 : 0)
   };
 
   const hasHover = (el: Element) => el.matches(':hover');
@@ -68,16 +73,22 @@
   const px = (n: number | undefined) => (n ? `${n}px` : '');
 
   const hideHandler = (ev: Event) => {
-    if (activeContent && hoverable) {
+    const isTouch = ((ev as PointerEvent).pointerType ?? "mouse") == "touch";
+    if (isTouch && closeOnTouchDelay == -1)
+      return;  // keep touch devices open until tap outside
+    if ((isTouch || activeContent) && hoverable) {
       const elements = [referenceEl, floatingEl, ...triggerEls].filter(Boolean);
       // Add a delay before hiding the floating element to account for hoverable elements. 
       // This ensures that the floating element does not hide immediately when the mouse 
       // moves from the reference element to the floating element.
-      setTimeout(() => {
-        if (ev.type === 'mouseleave' && !elements.some(hasHover)) {
+      const closeDelay = isTouch ? closeOnTouchDelay : 100;
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        if ((ev.type === 'mouseleave' || ev.type === 'pointerleave') &&
+            (isTouch || !elements.some(hasHover))) {
           open = false;
         }
-      }, 100);
+      }, closeDelay) as unknown as number;
     } else {
       open = false;
     }
@@ -130,8 +141,8 @@
       ['focusin', showHandler, focusable],
       ['focusout', hideHandler, focusable],
       ['click', showHandler, clickable],
-      ['mouseenter', showHandler, hoverable],
-      ['mouseleave', hideHandler, hoverable]
+      ['pointerenter', showHandler, hoverable],
+      ['pointerleave', hideHandler, hoverable]
     ];
 
     if (triggeredBy) triggerEls = [...document.querySelectorAll<HTMLElement>(triggeredBy)];
@@ -152,13 +163,13 @@
         console.error(`Popup reference not found: '${reference}'`);
       } else {
         if (focusable) referenceEl.addEventListener('focusout', hideHandler);
-        if (hoverable) referenceEl.addEventListener('mouseleave', hideHandler);
+        if (hoverable) referenceEl.addEventListener('pointerleave', hideHandler);
       }
     } else {
       referenceEl = triggerEls[0];
     }
 
-    if (clickable) document.addEventListener('click', closeOnClickOutside);
+    document.addEventListener('click', closeOnClickOutside);
 
     return () => {
       // This is onDestroy function
@@ -170,7 +181,7 @@
 
       if (referenceEl) {
         referenceEl.removeEventListener('focusout', hideHandler);
-        referenceEl.removeEventListener('mouseleave', hideHandler);
+        referenceEl.removeEventListener('pointerleave', hideHandler);
       }
 
       document.removeEventListener('click', closeOnClickOutside);
@@ -184,7 +195,7 @@
   function closeOnClickOutside(event: MouseEvent) {
     if (open) {
       if (!event.composedPath().includes(floatingEl) && !triggerEls.some((el) => event.composedPath().includes(el))) {
-        hideHandler(event);
+        open = false;
       }
     }
   }
@@ -232,4 +243,5 @@
 @prop export let open: boolean = false;
 @prop export let yOnly: boolean = false;
 @prop export let middlewares: Middleware[] = [dom.flip(), dom.shift()];
+@prop export let closeOnTouchDelay: number = 3000;
 -->
