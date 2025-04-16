@@ -18,7 +18,7 @@
   import Indicators from './Indicators.svelte';
   import Slide from './Slide.svelte';
   import { canChangeSlide } from './CarouselSlide';
-  import type { ParamsType } from '../types'
+  import type { ParamsType } from '../types';
 
   type TransitionFunc = (node: HTMLElement, params: ParamsType) => TransitionConfig;
   const SLIDE_DURATION_RATIO = 0.25; // TODO: Expose one day?
@@ -61,6 +61,7 @@
 
       _state.index = _state.index >= images.length - 1 ? 0 : _state.index + 1;
       _state.lastSlideChange = new Date();
+      _state.forward = true;
       return { ..._state };
     });
   };
@@ -71,6 +72,7 @@
 
       _state.index = _state.index <= 0 ? images.length - 1 : _state.index - 1;
       _state.lastSlideChange = new Date();
+      _state.forward = false;
       return { ..._state };
     });
   };
