@@ -45,15 +45,20 @@
   </Row>
 
   <Row image="bg-[url('/images/graphs.png')] dark:bg-[url('/images/graphs-dark.png')]" reversed contain>
-    <div class="text-red-500 flex flex-row gap-8">
+    <div class="flex flex-row gap-8">
       <div class="flex flex-col items-center gap-2 font-medium text-gray-900 dark:text-gray-400">
-        <DarkMode size="lg" class="hidden dark:block dark:bg-gray-700" />
-        <Sun class="dark:hidden w-11 h-11 p-2 rounded-lg bg-primary-700 dark:bg-gray-700  text-white" />
+        <DarkMode size="lg" class="w-11 h-11 p-2 rounded-lg bg-primary-700 dark:bg-gray-700 text-white">
+          <Sun slot="lightIcon" />
+          <Sun slot="darkIcon" />
+        </DarkMode>
         Light
       </div>
+      
       <div class="flex flex-col items-center gap-2 font-medium text-gray-400 dark:text-white">
-        <Moon class="hidden dark:block w-11 h-11 p-2 rounded-lg bg-primary-700" />
-        <DarkMode size="lg" class="dark:hidden bg-gray-100 dark:bg-gray-700 hover:bg-gray-200" />
+        <DarkMode size="lg" class="w-11 h-11 p-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-primary-700 text-gray-700 dark:text-white">
+          <Moon slot="lightIcon" />
+          <Moon slot="darkIcon" />
+        </DarkMode>
         Dark
       </div>
     </div>
