@@ -19,22 +19,19 @@
   // interactive example
   // position, bannerType, color, class:divClass
   const colors = Object.keys(banner.variants.color);
-  let position: BannerProps["position"] = $state("sticky");
-  const changePosition = () => {
-    position = position === "sticky" ? "absolute" : "sticky";
-    if (position === "sticky") {
-      bannerType = "default";
-    }
-  };
-  let bannerType: BannerProps["bannerType"] = $state("default");
-  const changeBannerType = () => {
-    bannerType = bannerType === "default" ? "cta" : "default";
-    if (bannerType === "cta") {
-      position = "absolute";
-    }
-  };
+  // let position: BannerProps["type"] = $state("top");
+  // const changePosition = () => {
+  //   position = position === "top" ? "bottom" : "top";
+  // };
+  // let bannerType: BannerProps["type"] = $state("top");
+  // const changeBannerType = () => {
+  //   bannerType = bannerType === "default" ? "cta" : "default";
+  //   if (bannerType === "cta") {
+  //   }
+  // };
   let color: BannerProps["color"] = $state("primary");
-  let bannerClass: BannerProps["class"] = $state("");
+  $inspect('color', color);
+  let bannerClass: BannerProps["class"] = $state("absolute");
   const changeClass = () => {
     bannerClass = bannerClass === "" ? "mt-4" : "";
   };
@@ -66,8 +63,6 @@
       // position, bannerType color, class
       let props = [];
       if (color !== "primary") props.push(` color="${color}"`);
-      if (bannerType !== "default") props.push(` bannerType="${bannerType}"`);
-      if (position !== "sticky") props.push(` position="${position}"`);
       if (bannerClass) props.push(` class="${bannerClass}"`);
       if (!bannerStatus) props.push(" bannerStatus={false}");
       if (currentTransition !== transitions[0]) {
@@ -120,7 +115,7 @@
       <Skeleton class="py-4" />
       <ImagePlaceholder class="py-4" />
     </div>
-    <Banner id="sample-banner" {position} {bannerType} {color} class={bannerClass} bind:bannerStatus transition={currentTransition.transition} params={currentTransition.params}>
+    <Banner id="sample-banner" {color} bind:open={bannerStatus} class={bannerClass} transition={currentTransition.transition} params={currentTransition.params}>
       <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
         <span class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600">
           <BullhornOutline class="h-3 w-3 text-gray-500 dark:text-gray-400" />
@@ -147,11 +142,6 @@
       {#each transitions as transition}
         <Radio labelClass="w-16 my-1" name="interactive_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
       {/each}
-    </div>
-    <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-      <Button class="w-40" onclick={changePosition}>Position: {position === "sticky" ? "absolute" : "sticky"}</Button>
-      <Button class="w-40" color="blue" onclick={changeBannerType}>Type: {bannerType === "default" ? "cta" : "default"}</Button>
-      <Button class="w-40" color="green" onclick={changeClass}>{bannerClass ? "Remove class" : "Add class"}</Button>
     </div>
   </div>
   {#snippet codeblock()}

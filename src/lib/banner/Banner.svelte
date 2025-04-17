@@ -7,7 +7,7 @@
 
   let { children, header, open = $bindable(true), dismissable = true, color = "gray", type, class: className, innerClass, transition = fade, params, ...restProps }: Props = $props();
 
-  const { base, insideDiv, dismissable: dismissableClass } = banner({ type, color });
+  const { base, insideDiv, dismissable: dismissableClass } = $derived(banner({ type, color }));
 </script>
 
 {#if open}

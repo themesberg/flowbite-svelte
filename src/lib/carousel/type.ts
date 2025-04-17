@@ -17,12 +17,12 @@ interface CarouselProps extends CarouselVariants, Omit<HTMLAttributes<HTMLDivEle
   children?: Snippet<[number]>;
   slide?: Snippet<[{ index: number; Slide: typeof Slide }]>;
   images: HTMLImgAttributes[];
-  index: number;
-  slideDuration: number;
+  index?: number;
+  slideDuration?: number;
   transition?: TransitionFunc;
-  duration: number;
-  disableSwipe: boolean;
-  imgClass: string;
+  duration?: number;
+  disableSwipe?: boolean;
+  imgClass?: string;
   onchange?: (x: HTMLImgAttributes) => {};
 }
 
