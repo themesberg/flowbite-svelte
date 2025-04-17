@@ -2,9 +2,9 @@
   import type { ApexOptions } from "apexcharts";
   import type ApexCharts from "apexcharts";
   import "./chart.css";
-  import { type ChartProps as Props } from ".";
+  import { type ChartProps } from ".";
 
-  let { options, class: classname }: Props = $props();
+  let { options, class: classname }: ChartProps = $props();
 
   function initChart(node: HTMLElement, options: ApexOptions) {
     let chart: ApexCharts;

@@ -1,13 +1,45 @@
 {
   "name": "FooterBrand",
   "props": [
-    ["children", "any", ""],
-    ["aClass", "any", ""],
-    ["spanClass", "any", ""],
-    ["imgClass", "any", ""],
-    ["href", "any", ""],
-    ["src", "any", ""],
-    ["alt", "any", ""],
-    ["name", "any", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "aClass",
+      "any",
+      ""
+    ],
+    [
+      "spanClass",
+      "any",
+      ""
+    ],
+    [
+      "imgClass",
+      "any",
+      ""
+    ],
+    [
+      "href",
+      "any",
+      ""
+    ],
+    [
+      "src",
+      "any",
+      ""
+    ],
+    [
+      "alt",
+      "any",
+      ""
+    ],
+    [
+      "name",
+      "any",
+      ""
+    ]
   ]
 }

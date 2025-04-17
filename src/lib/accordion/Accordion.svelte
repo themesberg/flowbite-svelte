@@ -1,11 +1,11 @@
 <script lang="ts">
   import { setContext, getContext } from "svelte";
   import { writable } from "svelte/store";
-  import { type AccordionProps as Props, accordion } from "./";
+  import { type AccordionProps, accordion } from "./";
   import type { BaseThemes } from "$lib/theme";
   import clsx from "clsx";
 
-  let { children, flush, activeClass, inactiveClass, multiple = false, class: className, ...restProps }: Props = $props();
+  let { children, flush, activeClass, inactiveClass, multiple = false, class: className, ...restProps }: AccordionProps = $props();
 
   // Get merged theme from context
   const context = getContext<BaseThemes>("themeConfig");

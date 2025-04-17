@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { type MockupBaseProps as Props, laptop } from ".";
+  import { type MockupBaseProps, laptop } from ".";
 
-  let { children, divClass, div2Class, div3Class, div4Class, ...restProps }: Props = $props();
+  let { children, divClass, div2Class, div3Class, div4Class, ...restProps }: MockupBaseProps = $props();
   const { div, inner, bot, botCen } = laptop();
 </script>
 

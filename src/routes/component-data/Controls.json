@@ -1,4 +1,15 @@
 {
   "name": "Controls",
-  "props": []
+  "props": [
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
+  ]
 }

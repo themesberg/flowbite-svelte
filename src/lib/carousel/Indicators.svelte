@@ -3,10 +3,10 @@
   import { getContext } from "svelte";
   import type { Writable } from "svelte/store";
   import { indicators } from "./theme";
-  import type { IndicatorsProps as Props, State } from "./type";
+  import type { IndicatorsProps, State } from "./type";
   import clsx from "clsx";
 
-  let { children, activeClass, inactiveClass, class: className, ...restProps }: Props = $props();
+  let { children, activeClass, inactiveClass, class: className, ...restProps }: IndicatorsProps = $props();
 
   const state = getContext<Writable<State>>("state");
   const { base, indicator } = indicators();

@@ -1,10 +1,30 @@
 {
   "name": "Gallery",
   "props": [
-    ["children", "any", ""],
-    ["figure", "any", ""],
-    ["items", "any", "[]"],
-    ["imgClass", "any", ""],
-    ["class", "string", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "figure",
+      "any",
+      ""
+    ],
+    [
+      "items",
+      "any",
+      "[]"
+    ],
+    [
+      "imgClass",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

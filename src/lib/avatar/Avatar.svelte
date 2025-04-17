@@ -3,9 +3,9 @@
   import type { BaseThemes } from "$lib/theme";
   import clsx from "clsx";
   import { getContext } from "svelte";
-  import { type AvatarProps as Props, avatar } from ".";
+  import { type AvatarProps, avatar } from ".";
 
-  let { children, src, href, target, cornerStyle = "circular", border = false, stacked = false, dot, class: className, alt, size = "md", onclick, ...restProps }: Props = $props();
+  let { children, src, href, target, cornerStyle = "circular", border = false, stacked = false, dot, class: className, alt, size = "md", onclick, ...restProps }: AvatarProps = $props();
 
   // Get merged theme from context
   const context = getContext<BaseThemes>("themeConfig");

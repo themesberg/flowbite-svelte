@@ -78,24 +78,5 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Props
-@props: children: any;
-@props:oncancel: any;
-@props:modal: any = true;
-@props:autoclose: any = false;
-@props:header: any;
-@props:footer: any;
-@props:title: any;
-@props:open: any = $bindable(false);
-@props:dismissable: any = true;
-@props:closeBtnClass: any;
-@props:headerClass: any;
-@props:bodyClass: any;
-@props:footerClass: any;
-@props:outsideclose: any = true;
-@props:size: any = "md";
-@props:placement: any;
-@props:class: string;
-@props:params: any = { duration: 100;
-@props:easing: any;
-@props:transition: any = fade;
+@props: 
 -->

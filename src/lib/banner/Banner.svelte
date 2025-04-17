@@ -1,11 +1,11 @@
 <script lang="ts">
   import { CloseButton } from "$lib";
   import { fade } from "svelte/transition";
-  import { type BannerProps as Props, banner } from "./index";
+  import { type BannerProps, banner } from "./index";
   import type { ParamsType } from "../types";
   import clsx from "clsx";
 
-  let { children, header, open = $bindable(true), dismissable = true, color = "gray", type, class: className, innerClass, transition = fade, params, ...restProps }: Props = $props();
+  let { children, header, open = $bindable(true), dismissable = true, color = "gray", type, class: className, innerClass, transition = fade, params, ...restProps }: BannerProps = $props();
 
   const { base, insideDiv, dismissable: dismissableClass } = $derived(banner({ type, color }));
 </script>

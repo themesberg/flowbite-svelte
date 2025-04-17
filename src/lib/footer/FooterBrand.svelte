@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { type FooterBrandProps as Props, footerBrand } from ".";
+  import { type FooterBrandProps, footerBrand } from ".";
 
-  let { children, aClass, spanClass, imgClass, href, src, alt, name, ...restProps }: Props = $props();
+  let { children, aClass, spanClass, imgClass, href, src, alt, name, ...restProps }: FooterBrandProps = $props();
 
   const { base, span, img } = $derived(footerBrand());
 </script>

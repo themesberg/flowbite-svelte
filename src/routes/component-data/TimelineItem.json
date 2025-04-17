@@ -1,15 +1,55 @@
 {
   "name": "TimelineItem",
   "props": [
-    ["children", "any", ""],
-    ["orientationSlot", "any", ""],
-    ["title", "any", ""],
-    ["date", "any", ""],
-    ["dateFormat", "any", "\"month-year\""],
-    ["svgClass", "any", ""],
-    ["liClass", "any", ""],
-    ["divClass", "any", ""],
-    ["timeClass", "any", ""],
-    ["h3Class", "any", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "orientationSlot",
+      "any",
+      ""
+    ],
+    [
+      "title",
+      "any",
+      ""
+    ],
+    [
+      "date",
+      "any",
+      ""
+    ],
+    [
+      "dateFormat",
+      "any",
+      "\"month-year\""
+    ],
+    [
+      "svgClass",
+      "any",
+      ""
+    ],
+    [
+      "liClass",
+      "any",
+      ""
+    ],
+    [
+      "divClass",
+      "any",
+      ""
+    ],
+    [
+      "timeClass",
+      "any",
+      ""
+    ],
+    [
+      "h3Class",
+      "any",
+      ""
+    ]
   ]
 }

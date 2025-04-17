@@ -4,11 +4,11 @@
   import type { Writable } from "svelte/store";
   import { fly } from "svelte/transition";
   import { slide } from "./theme";
-  import type { SlideProps as Props, State } from "./type";
+  import type { SlideProps, State } from "./type";
 
   const state = getContext<Writable<State>>("state");
 
-  let { image, transition, class: className, ...restProps }: Props = $props();
+  let { image, transition, class: className, ...restProps }: SlideProps = $props();
 
   let transitionSlideIn = $derived({
     x: $state.forward ? "100%" : "-100%",

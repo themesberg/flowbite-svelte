@@ -1,14 +1,50 @@
 {
   "name": "Rating",
   "props": [
-    ["children", "any", ""],
-    ["text", "any", ""],
-    ["class", "string", ""],
-    ["size", "any", "24"],
-    ["total", "any", "5"],
-    ["rating", "any", "4"],
-    ["icon", "any", "Star"],
-    ["count", "any", "false"],
-    ["pClass", "any", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "text",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "size",
+      "any",
+      "24"
+    ],
+    [
+      "total",
+      "any",
+      "5"
+    ],
+    [
+      "rating",
+      "any",
+      "4"
+    ],
+    [
+      "icon",
+      "any",
+      "Star"
+    ],
+    [
+      "count",
+      "any",
+      "false"
+    ],
+    [
+      "pClass",
+      "any",
+      ""
+    ]
   ]
 }

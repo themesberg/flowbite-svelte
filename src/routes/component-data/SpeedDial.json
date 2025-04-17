@@ -1,13 +1,45 @@
 {
   "name": "SpeedDial",
   "props": [
-    ["children", "any", ""],
-    ["popperClass", "any", ""],
-    ["placement", "any", "\"top\""],
-    ["pill", "any", "true"],
-    ["tooltip", "any", "\"left\""],
-    ["trigger", "any", "\"hover\""],
-    ["textOutside", "any", "false"],
-    ["class", "string", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "popperClass",
+      "any",
+      ""
+    ],
+    [
+      "placement",
+      "any",
+      "\"top\""
+    ],
+    [
+      "pill",
+      "any",
+      "true"
+    ],
+    [
+      "tooltip",
+      "any",
+      "\"left\""
+    ],
+    [
+      "trigger",
+      "any",
+      "\"hover\""
+    ],
+    [
+      "textOutside",
+      "any",
+      "false"
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

@@ -1,15 +1,55 @@
 {
   "name": "ListgroupItem",
   "props": [
-    ["children", "any", ""],
-    ["active", "any", ""],
-    ["current", "any", ""],
-    ["disabled", "any", ""],
-    ["horizontal", "any", ""],
-    ["name", "any", ""],
-    ["Icon", "any", ""],
-    ["class", "string", ""],
-    ["iconClass", "any", "\"me-2.5 h-5 w-5\""],
-    ["onclick", "any", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "active",
+      "any",
+      ""
+    ],
+    [
+      "current",
+      "any",
+      ""
+    ],
+    [
+      "disabled",
+      "any",
+      ""
+    ],
+    [
+      "horizontal",
+      "any",
+      ""
+    ],
+    [
+      "name",
+      "any",
+      ""
+    ],
+    [
+      "Icon",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "iconClass",
+      "any",
+      "\"me-2.5 h-5 w-5\""
+    ],
+    [
+      "onclick",
+      "any",
+      ""
+    ]
   ]
 }

@@ -7,9 +7,9 @@
   import Laptop from "./Laptop.svelte";
   import Smartwatch from "./Smartwatch.svelte";
   import Tablet from "./Tablet.svelte";
-  import { type DeviceMockupProps as Props } from ".";
+  import { type DeviceMockupProps } from ".";
 
-  let { children, device = "default" }: Props = $props();
+  let { children, device = "default" }: DeviceMockupProps = $props();
 
   const componets = {
     android: Android,

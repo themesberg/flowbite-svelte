@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { type BottomNavHeaderProps as Props, bottomnavheader } from ".";
+  import { type BottomNavHeaderProps, bottomnavheader } from ".";
 
-  let { children, outerClass, innerClass, ...restProps }: Props = $props();
+  let { children, outerClass, innerClass, ...restProps }: BottomNavHeaderProps = $props();
   const { innerDiv, outerDiv } = $derived(bottomnavheader());
 </script>
 

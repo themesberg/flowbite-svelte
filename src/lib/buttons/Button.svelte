@@ -1,13 +1,13 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import type { SizeType } from "$lib/types";
-  import { type ButtonProps as Props, button } from ".";
+  import { type ButtonProps, button } from ".";
   import clsx from "clsx";
   import { twMerge } from "tailwind-merge";
 
   const group: SizeType = getContext("group");
 
-  let { children, onclick, pill, outline = false, size = group ? "sm" : "md", color = group ? (outline ? "dark" : "alternative") : "primary", shadow = false, tag = "button", disabled, class: className, ...restProps }: Props = $props();
+  let { children, onclick, pill, outline = false, size = group ? "sm" : "md", color = group ? (outline ? "dark" : "alternative") : "primary", shadow = false, tag = "button", disabled, class: className, ...restProps }: ButtonProps = $props();
 
   const { base, outline: outline_, shadow: shadow_ } = $derived(button({ color, size, disabled, pill, group: !!group }));
   let btnCls = $derived(twMerge(base(), outline && outline_(), shadow && shadow_(), clsx(className)));

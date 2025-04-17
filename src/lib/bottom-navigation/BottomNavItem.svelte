@@ -1,10 +1,10 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import type { HTMLButtonAttributes, HTMLAnchorAttributes } from "svelte/elements";
-  import { type BottomNavItemProps as Props, type BottomNavContextType, type BottomNavVariantType, bottomNavItem } from "./index";
+  import { type BottomNavItemProps, type BottomNavContextType, type BottomNavVariantType, bottomNavItem } from "./index";
   import { twMerge } from "tailwind-merge";
 
-  let { children, btnName, appBtnPosition = "middle", target, activeClass, href = "", btnClass, spanClass, ...restProps }: Props = $props();
+  let { children, btnName, appBtnPosition = "middle", target, activeClass, href = "", btnClass, spanClass, ...restProps }: BottomNavItemProps = $props();
 
   const navType: BottomNavVariantType = getContext("navType");
   const context = getContext<BottomNavContextType>("bottomNavType") ?? {};

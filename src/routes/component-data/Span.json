@@ -1,16 +1,60 @@
 {
   "name": "Span",
   "props": [
-    ["children", "any", ""],
-    ["class", "string", ""],
-    ["italic", "any", ""],
-    ["underline", "any", ""],
-    ["linethrough", "any", ""],
-    ["uppercase", "any", ""],
-    ["gradient", "any", ""],
-    ["highlight", "any", ""],
-    ["decoration", "any", ""],
-    ["decorationColor", "any", ""],
-    ["decorationThickness", "any", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "italic",
+      "any",
+      ""
+    ],
+    [
+      "underline",
+      "any",
+      ""
+    ],
+    [
+      "linethrough",
+      "any",
+      ""
+    ],
+    [
+      "uppercase",
+      "any",
+      ""
+    ],
+    [
+      "gradient",
+      "any",
+      ""
+    ],
+    [
+      "highlight",
+      "any",
+      ""
+    ],
+    [
+      "decoration",
+      "any",
+      ""
+    ],
+    [
+      "decorationColor",
+      "any",
+      ""
+    ],
+    [
+      "decorationThickness",
+      "any",
+      ""
+    ]
   ]
 }

@@ -1,8 +1,8 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { drawerhead, type DrawerheadProps as Props } from ".";
+  import { drawerhead, type DrawerheadProps } from ".";
 
-  let { closeIcon, children, buttonClass, svgClass, class: className, ...restProps }: Props = $props();
+  let { closeIcon, children, buttonClass, svgClass, class: className, ...restProps }: DrawerheadProps = $props();
 
   const { base, button, svg } = $derived(drawerhead());
 </script>

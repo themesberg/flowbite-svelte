@@ -1,9 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
   import { thumbnail } from "./theme";
-  import type { ThumbnailProps as Props } from "./type";
+  import type { ThumbnailProps } from "./type";
 
-  let { selected, class: className, ...restProps }: Props = $props();
+  let { selected, class: className, ...restProps }: ThumbnailProps = $props();
 
   $effect(() => {
     console.log(thumbnail({ selected, class: clsx(className) }));

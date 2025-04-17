@@ -1,8 +1,8 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { type ButtonGroupProps as Props, buttonGroup } from "./index";
+  import { type ButtonGroupProps, buttonGroup } from "./index";
 
-  let { children, size = "md", class: className, ...restProps }: Props = $props();
+  let { children, size = "md", class: className, ...restProps }: ButtonGroupProps = $props();
 
   let groupClass = $derived(buttonGroup({ size, className }));
   setContext("group", size);

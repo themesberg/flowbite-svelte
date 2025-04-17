@@ -2,11 +2,11 @@
   import Popper from "$lib/utils/Popper.svelte";
   import { setContext } from "svelte";
   import { writable } from "svelte/store";
-  import { type DropdownProps as Props, dropdown } from "./";
+  import { type DropdownProps, dropdown } from "./";
   import DropdownGroup from "./DropdownGroup.svelte";
   import clsx from "clsx";
 
-  let { children, simple = false, placement = "bottom", offset = 2, class: className, backdropClass, activeUrl = "", ...restProps }: Props = $props();
+  let { children, simple = false, placement = "bottom", offset = 2, class: className, backdropClass, activeUrl = "", ...restProps }: DropdownProps = $props();
 
   const { base, backdrop } = $derived(dropdown());
   const activeUrlStore = writable("");

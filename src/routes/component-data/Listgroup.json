@@ -1,15 +1,55 @@
 {
   "name": "Listgroup",
   "props": [
-    ["children", "any", ""],
-    ["items", "any", ""],
-    ["active", "any", ""],
-    ["onclick", "any", ""],
-    ["horizontal", "any", ""],
-    ["rounded", "any", ""],
-    ["border", "any", ""],
-    ["class", "string", ""],
-    ["itemClass", "any", ""],
-    ["iconClass", "any", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "items",
+      "any",
+      ""
+    ],
+    [
+      "active",
+      "any",
+      ""
+    ],
+    [
+      "onclick",
+      "any",
+      ""
+    ],
+    [
+      "horizontal",
+      "any",
+      ""
+    ],
+    [
+      "rounded",
+      "any",
+      ""
+    ],
+    [
+      "border",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "itemClass",
+      "any",
+      ""
+    ],
+    [
+      "iconClass",
+      "any",
+      ""
+    ]
   ]
 }

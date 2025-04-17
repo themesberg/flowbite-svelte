@@ -1,12 +1,40 @@
 {
   "name": "Thumbnails",
   "props": [
-    ["children", "any", ""],
-    ["images", "any", "[]"],
-    ["index", "any", "$bindable()"],
-    ["ariaLabel", "any", "\"Click to view image\""],
-    ["imgClass", "any", ""],
-    ["throttleDelay", "any", "650"],
-    ["class", "string", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "images",
+      "any",
+      "[]"
+    ],
+    [
+      "index",
+      "any",
+      "$bindable()"
+    ],
+    [
+      "ariaLabel",
+      "any",
+      "\"Click to view image\""
+    ],
+    [
+      "imgClass",
+      "any",
+      ""
+    ],
+    [
+      "throttleDelay",
+      "any",
+      "650"
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

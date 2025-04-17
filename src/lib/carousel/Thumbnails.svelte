@@ -2,9 +2,9 @@
   import clsx from "clsx";
   import Thumbnail from "./Thumbnail.svelte";
   import { thumbnails } from "./theme";
-  import type { ThumbnailsProps as Props } from "./type";
+  import type { ThumbnailsProps } from "./type";
 
-  let { children, images = [], index = $bindable(), ariaLabel = "Click to view image", imgClass, throttleDelay = 650, class: className }: Props = $props();
+  let { children, images = [], index = $bindable(), ariaLabel = "Click to view image", imgClass, throttleDelay = 650, class: className }: ThumbnailsProps = $props();
 
   let lastClickedAt = new Date();
 

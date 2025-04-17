@@ -1,8 +1,8 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type DropdownGroupProps as Props, dropdownGroup } from ".";
+  import { type DropdownGroupProps, dropdownGroup } from ".";
 
-  let { children, class: className, ...restProps }: Props = $props();
+  let { children, class: className, ...restProps }: DropdownGroupProps = $props();
 
   const ulCls = $derived(dropdownGroup({ class: clsx(className) }));
 </script>

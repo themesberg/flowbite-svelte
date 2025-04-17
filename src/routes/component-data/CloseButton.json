@@ -1,12 +1,40 @@
 {
   "name": "CloseButton",
   "props": [
-    ["children", "any", ""],
-    ["color", "any", "\"gray\""],
-    ["onclick", "any", ""],
-    ["name", "any", "\"Close\""],
-    ["ariaLabel", "any", ""],
-    ["size", "any", "\"md\""],
-    ["class", "string", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "color",
+      "any",
+      "\"gray\""
+    ],
+    [
+      "onclick",
+      "any",
+      ""
+    ],
+    [
+      "name",
+      "any",
+      "\"Close\""
+    ],
+    [
+      "ariaLabel",
+      "any",
+      ""
+    ],
+    [
+      "size",
+      "any",
+      "\"md\""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

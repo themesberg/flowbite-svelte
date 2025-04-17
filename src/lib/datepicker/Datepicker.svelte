@@ -1,8 +1,8 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
-  import { Button, clickOutside, type ButtonProps } from "$lib";
-  import type { DatepickerProps as Props } from "./type";
+  import { Button } from "$lib";
+  import type { DatepickerProps } from "./type";
   import { datepicker } from "./theme";
   import ToolbarButton from "$lib/toolbar/ToolbarButton.svelte";
 
@@ -27,7 +27,7 @@
     onselect,
     onclear,
     onapply
-  }: Props = $props();
+  }: DatepickerProps = $props();
 
   // Internal state
   let isOpen: boolean = $state(inline);
@@ -251,26 +251,5 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Props
-@props: value: any = $bindable();
-@props:defaultDate: any = null;
-@props:range: any = false;
-@props:rangeFrom: any = $bindable();
-@props:rangeTo: any = $bindable();
-@props:locale: any = "default";
-@props:firstDayOfWeek: any = 0;
-@props:dateFormat: any = { year: "numeric";
-@props:month: any;
-@props:day: any;
-@props:placeholder: any = "Select date";
-@props:disabled: any = false;
-@props:required: any = false;
-@props:inputClass: any = "";
-@props:color: any = "primary";
-@props:inline: any = false;
-@props:autohide: any = true;
-@props:showActionButtons: any = false;
-@props:title: any = "";
-@props:onselect: any;
-@props:onclear: any;
-@props:onapply: any;
+@props: 
 -->

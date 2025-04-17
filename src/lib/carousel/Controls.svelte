@@ -1,11 +1,16 @@
 <script lang="ts">
-  import { getContext } from "svelte";
+  import { getContext, type Snippet } from "svelte";
   import type { Writable } from "svelte/store";
   import { canChangeSlide } from "./CarouselSlide";
   import ControlButton from "./ControlButton.svelte";
   import type { State } from "./type";
-
-  let { children, class: className } = $props();
+  
+  interface Props {
+    children?: Snippet;
+    class?: string;
+  }
+  
+  let { children, class: className }: Props = $props();
 
   const state = getContext<Writable<State>>("state");
   const { update } = state;
@@ -51,5 +56,6 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Props
-@props: 
+@props: children: any;
+@props:class: string;
 -->

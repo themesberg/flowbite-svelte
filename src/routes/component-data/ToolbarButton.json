@@ -1,12 +1,40 @@
 {
   "name": "ToolbarButton",
   "props": [
-    ["children", "any", ""],
-    ["onclick", "any", ""],
-    ["color", "any", ""],
-    ["name", "any", ""],
-    ["\"aria-label\"", "any", ""],
-    ["size", "any", ""],
-    ["class", "string", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "onclick",
+      "any",
+      ""
+    ],
+    [
+      "color",
+      "any",
+      ""
+    ],
+    [
+      "name",
+      "any",
+      ""
+    ],
+    [
+      "\"aria-label\"",
+      "any",
+      ""
+    ],
+    [
+      "size",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

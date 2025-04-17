@@ -1,15 +1,55 @@
 {
   "name": "Banner",
   "props": [
-    ["children", "any", ""],
-    ["header", "any", ""],
-    ["open", "any", "$bindable(true)"],
-    ["dismissable", "any", "true"],
-    ["color", "any", "\"gray\""],
-    ["type", "any", ""],
-    ["class", "string", ""],
-    ["innerClass", "any", ""],
-    ["transition", "any", "fade"],
-    ["params", "any", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "header",
+      "any",
+      ""
+    ],
+    [
+      "open",
+      "any",
+      "$bindable(true)"
+    ],
+    [
+      "dismissable",
+      "any",
+      "true"
+    ],
+    [
+      "color",
+      "any",
+      "\"gray\""
+    ],
+    [
+      "type",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "innerClass",
+      "any",
+      ""
+    ],
+    [
+      "transition",
+      "any",
+      "fade"
+    ],
+    [
+      "params",
+      "any",
+      ""
+    ]
   ]
 }

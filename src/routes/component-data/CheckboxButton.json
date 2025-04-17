@@ -1,16 +1,60 @@
 {
   "name": "CheckboxButton",
   "props": [
-    ["children", "any", ""],
-    ["class", "string", ""],
-    ["group", "any", "$bindable([])"],
-    ["value", "any", ""],
-    ["checked", "any", ""],
-    ["inline", "any", ""],
-    ["pill", "any", ""],
-    ["outline", "any", ""],
-    ["size", "any", ""],
-    ["color", "any", ""],
-    ["shadow", "any", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "group",
+      "any",
+      "$bindable([])"
+    ],
+    [
+      "value",
+      "any",
+      ""
+    ],
+    [
+      "checked",
+      "any",
+      ""
+    ],
+    [
+      "inline",
+      "any",
+      ""
+    ],
+    [
+      "pill",
+      "any",
+      ""
+    ],
+    [
+      "outline",
+      "any",
+      ""
+    ],
+    [
+      "size",
+      "any",
+      ""
+    ],
+    [
+      "color",
+      "any",
+      ""
+    ],
+    [
+      "shadow",
+      "any",
+      ""
+    ]
   ]
 }

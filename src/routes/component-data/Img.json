@@ -1,12 +1,40 @@
 {
   "name": "Img",
   "props": [
-    ["size", "any", "\"none\""],
-    ["effect", "any", "\"none\""],
-    ["caption", "any", ""],
-    ["class", "string", ""],
-    ["figClass", "any", ""],
-    ["captionClass", "any", ""],
-    ["href", "any", ""]
+    [
+      "size",
+      "any",
+      "\"none\""
+    ],
+    [
+      "effect",
+      "any",
+      "\"none\""
+    ],
+    [
+      "caption",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "figClass",
+      "any",
+      ""
+    ],
+    [
+      "captionClass",
+      "any",
+      ""
+    ],
+    [
+      "href",
+      "any",
+      ""
+    ]
   ]
 }

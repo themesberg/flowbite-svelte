@@ -4,12 +4,12 @@
   import { getContext } from "svelte";
   import { writable } from "svelte/store";
 
-  import { type AccordionCtxType, type AccordionItemProps as Props, accordionitem } from ".";
+  import { type AccordionCtxType, type AccordionItemProps, accordionitem } from ".";
   import type { ParamsType } from "../types";
   import type { BaseThemes } from "$lib/theme";
   import clsx from "clsx";
 
-  let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transitionType = slide, transitionParams, class: className }: Props = $props();
+  let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transitionType = slide, transitionParams, class: className }: AccordionItemProps = $props();
 
   // Theme context
   const context = getContext<BaseThemes>("themeConfig");

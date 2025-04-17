@@ -1,10 +1,30 @@
 {
   "name": "NavLi",
   "props": [
-    ["children", "any", ""],
-    ["activeClass", "any", ""],
-    ["nonActiveClass", "any", ""],
-    ["class", "string", ""],
-    ["onclick", "any", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "activeClass",
+      "any",
+      ""
+    ],
+    [
+      "nonActiveClass",
+      "any",
+      ""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ],
+    [
+      "onclick",
+      "any",
+      ""
+    ]
   ]
 }

@@ -1,10 +1,30 @@
 {
   "name": "ToolbarGroup",
   "props": [
-    ["children", "any", ""],
-    ["spacing", "any", ""],
-    ["padding", "any", ""],
-    ["position", "any", "\"middle\""],
-    ["class", "string", ""]
+    [
+      "children",
+      "any",
+      ""
+    ],
+    [
+      "spacing",
+      "any",
+      ""
+    ],
+    [
+      "padding",
+      "any",
+      ""
+    ],
+    [
+      "position",
+      "any",
+      "\"middle\""
+    ],
+    [
+      "class",
+      "string",
+      ""
+    ]
   ]
 }

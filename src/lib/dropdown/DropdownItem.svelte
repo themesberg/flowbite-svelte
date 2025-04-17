@@ -1,10 +1,10 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { type DropdownItemProps as Props, dropdownItem } from ".";
+  import { type DropdownItemProps, dropdownItem } from ".";
   import { tv } from "tailwind-variants";
   import clsx from "clsx";
 
-  let { aClass, children, href, activeClass, liClass, class: className, ...restProps }: Props = $props();
+  let { aClass, children, href, activeClass, liClass, class: className, ...restProps }: DropdownItemProps = $props();
 
   const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
   let sidebarUrl = $state("");

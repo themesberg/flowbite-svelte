@@ -53,13 +53,5 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Props
-@props: children: any;
-@props:activeUrl: any;
-@props:ulClass: any;
-@props:slideParams: any = { delay: 250;
-@props:duration: any;
-@props:easing: any;
-@props:activeClass: any;
-@props:nonActiveClass: any;
-@props:class: string;
+@props: 
 -->

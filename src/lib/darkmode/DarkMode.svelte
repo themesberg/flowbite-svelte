@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { type DarkmodeProps as Props, darkmode } from "./";
+  import { type DarkmodeProps, darkmode } from "./";
 
   // const THEME_PREFERENCE_KEY = 'color-theme';
-  let { class: className, lightIcon, darkIcon, size = "md", ariaLabel = "Dark mode", ...restProps }: Props = $props();
+  let { class: className, lightIcon, darkIcon, size = "md", ariaLabel = "Dark mode", ...restProps }: DarkmodeProps = $props();
 
   const btnCls = darkmode({ class: className });
   const sizes = {
