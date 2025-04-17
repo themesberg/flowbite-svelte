@@ -28,7 +28,7 @@ The mega menu component is a full-width dropdown that can be triggered by clicki
 Use this example to show a list of links aligned on three columns inside the mega menu dropdown.
 
 ```svelte example class="h-[30rem] md:h-80"
-<script>
+<script lang="ts">
   import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   let menu = [
@@ -58,7 +58,7 @@ Use this example to show a list of links aligned on three columns inside the meg
     <NavLi class="cursor-pointer" onclick={() => (open = true)}>
       Mega menu<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
     </NavLi>
-    <MegaMenu items={menu} bind:open>
+    <MegaMenu items={menu}>
       {#snippet children({ item })}
         <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
       {/snippet}
@@ -75,9 +75,9 @@ Use this example to show a list of links aligned on three columns inside the meg
 This example of a mega menu dropdown can be used to also show an icon near the text of the link.
 
 ```svelte example class="h-[30rem] md:h-80"
-<script>
+<script lang="ts">
   import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from "flowbite-svelte";
-  import { IconOutline, ChevronDownOutline, UserCircleOutline } from "flowbite-svelte-icons";
+  import { ChevronDownOutline, UserCircleOutline } from "flowbite-svelte-icons";
   let menu = [
     { name: "About us", href: "/about", icon: UserCircleOutline },
     { name: "Blog", href: "/blog", icon: UserCircleOutline },
