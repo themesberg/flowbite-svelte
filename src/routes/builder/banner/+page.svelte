@@ -30,7 +30,7 @@
   //   }
   // };
   let color: BannerProps["color"] = $state("primary");
-  $inspect('color', color);
+  $inspect("color", color);
   let bannerClass: BannerProps["class"] = $state("absolute");
   const changeClass = () => {
     bannerClass = bannerClass === "" ? "mt-4" : "";

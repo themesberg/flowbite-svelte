@@ -49,7 +49,8 @@ color utility to any element that depends on these defaults.
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
-  button, [role="button"] {
+  button,
+  [role="button"] {
     cursor: pointer;
   }
 }

@@ -191,7 +191,7 @@
 @props: children: any;
 @props:slide: any;
 @props:images: any;
-@props:index: any = $bindable();
+@props:index: any = $bindable(0);
 @props:slideDuration: any = 1000;
 @props:transition: any;
 @props:duration: any = 0;

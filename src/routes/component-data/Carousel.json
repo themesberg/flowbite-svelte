@@ -4,7 +4,7 @@
     ["children", "any", ""],
     ["slide", "any", ""],
     ["images", "any", ""],
-    ["index", "any", "$bindable()"],
+    ["index", "any", "$bindable(0)"],
     ["slideDuration", "any", "1000"],
     ["transition", "any", ""],
     ["duration", "any", "0"],

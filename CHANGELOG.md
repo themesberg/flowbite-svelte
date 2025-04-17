@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.0-next.11
+
+### Patch Changes
+
+- fix: #73, #74, #75
+
 ## 1.0.0-next.10
 
 ### Patch Changes

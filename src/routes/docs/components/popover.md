@@ -243,10 +243,10 @@ Dynamically show the password strength progress when creating a new password pos
       event.preventDefault();
       fn.call(this, event);
     };
-  }
-  const handler = ()=>{
-    alert('Submitted!')
-  }
+  };
+  const handler = () => {
+    alert("Submitted!");
+  };
 </script>
 
 <form onsubmit={preventDefault(handler)} class="mb-8">
