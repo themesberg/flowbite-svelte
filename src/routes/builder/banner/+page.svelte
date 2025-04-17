@@ -17,18 +17,7 @@
   let dir = "builder";
 
   // interactive example
-  // position, bannerType, color, class:divClass
   const colors = Object.keys(banner.variants.color);
-  // let position: BannerProps["type"] = $state("top");
-  // const changePosition = () => {
-  //   position = position === "top" ? "bottom" : "top";
-  // };
-  // let bannerType: BannerProps["type"] = $state("top");
-  // const changeBannerType = () => {
-  //   bannerType = bannerType === "default" ? "cta" : "default";
-  //   if (bannerType === "cta") {
-  //   }
-  // };
   let color: BannerProps["color"] = $state("primary");
   $inspect("color", color);
   let bannerClass: BannerProps["class"] = $state("absolute");
@@ -47,11 +36,43 @@
     params: FlyParams | BlurParams | SlideParams | ScaleParams;
   };
 
-  const transitions: TransitionOption[] = [
-    { name: "Fly", transition: fly, params: { duration: 500, easing: linear, x: 150 } },
-    { name: "Blur", transition: blur, params: { duration: 500, easing: linear } },
-    { name: "Slide", transition: slide, params: { duration: 500, easing: linear, x: -150 } },
-    { name: "Scale", transition: scale, params: { duration: 500, easing: linear } }
+  type BuilderTransitionOption = {
+    name: string;
+    transition: typeof fly | typeof blur | typeof slide | typeof scale;
+    codeImportName: string;
+    params: FlyParams | BlurParams | SlideParams | ScaleParams;
+    easingName: string;
+  };
+
+  const transitions: BuilderTransitionOption[] = [
+    { 
+      name: "Fly", 
+      transition: fly, 
+      codeImportName: "fly", 
+      params: { duration: 500, easing: linear, x: 150 },
+      easingName: "linear"
+    },
+    { 
+      name: "Blur", 
+      transition: blur, 
+      codeImportName: "blur", 
+      params: { duration: 500, easing: linear },
+      easingName: "linear"
+    },
+    { 
+      name: "Slide", 
+      transition: slide, 
+      codeImportName: "slide", 
+      params: { duration: 500, easing: linear, x: -150 },
+      easingName: "linear"
+    },
+    { 
+      name: "Scale", 
+      transition: scale, 
+      codeImportName: "scale", 
+      params: { duration: 500, easing: linear },
+      easingName: "linear"
+    }
   ];
 
   let selectedTransition = $state("Fly");
@@ -68,16 +89,21 @@
       if (currentTransition !== transitions[0]) {
         props.push(` transition={${currentTransition.transition.name}}`);
 
-        // Generate params string without quotes and handle functions
-        const paramsString = Object.entries(currentTransition.params)
-          .map(([key, value]) => {
-            if (typeof value === "function") {
-              return `${key}:${value.name}`;
-            }
-            return `${key}:${value}`;
-          })
-          .join(",");
-        props.push(` params={{${paramsString}}}`);
+       // Generate params string without quotes and handle functions
+      const paramsString = Object.entries(currentTransition.params)
+        .map(([key, value]) => {
+          if (key === "easing") {
+            return `${key}:${currentTransition.easingName}`;
+          }
+          if (typeof value === "function") {
+            return `${key}:${value.name}`;
+          }
+          return `${key}:${value}`;
+        })
+        .filter(item => !item.includes("easingName")) // Filter out the helper property
+        .join(",");
+      props.push(` params={{${paramsString}}}`);
+      
       }
 
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
