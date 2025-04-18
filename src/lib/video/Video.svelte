@@ -16,12 +16,15 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:type: any = "video/mp4";
-@props:trackSrc: any;
-@props:src: any;
-@props:srclang: any = "en";
-@props:label: any = "english_captions";
-@props:class: string;
+@prop children
+@prop type = "video/mp4"
+@prop trackSrc
+@prop src
+@prop srclang = "en"
+@prop label = "english_captions"
+@prop class: classname
+@prop ...restProps
 -->

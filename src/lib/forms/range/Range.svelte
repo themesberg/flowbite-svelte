@@ -12,10 +12,13 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: value: any = $bindable();
-@props:appearance: any = "none";
-@props:color: any = "blue";
-@props:size: any = "md";
-@props:class: string;
+@prop value = $bindable()
+@prop appearance = "none"
+@prop color = "blue"
+@prop size = "md"
+@prop class: inputClass
+@prop ...restProps
 -->

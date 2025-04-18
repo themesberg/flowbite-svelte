@@ -37,7 +37,9 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+ChartProps
 ## Props
-@props: options: any;
-@props:class: string;
+@prop options
+@prop class: classname
 -->

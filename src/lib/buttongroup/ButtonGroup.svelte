@@ -1,6 +1,7 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { type ButtonGroupProps, buttonGroup } from "./index";
+  import { buttonGroup } from "./index";
+  import type { ButtonGroupProps } from "../types"
 
   let { children, size = "md", class: className, ...restProps }: ButtonGroupProps = $props();
 
@@ -15,8 +16,11 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+[ButtonGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L295)
 ## Props
-@props: children: any;
-@props:size: any = "md";
-@props:class: string;
+@prop children
+@prop size = "md"
+@prop class: className
+@prop ...restProps
 -->

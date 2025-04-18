@@ -26,10 +26,13 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+DrawerheadProps
 ## Props
-@props: closeIcon: any;
-@props:children: any;
-@props:buttonClass: any;
-@props:svgClass: any;
-@props:class: string;
+@prop closeIcon
+@prop children
+@prop buttonClass
+@prop svgClass
+@prop class: className
+@prop ...restProps
 -->

@@ -26,14 +26,17 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: fillPercent: any = 100;
-@props:fillColor: any = "#00b500";
-@props:strokeColor: any = "#00b500";
-@props:size: any = 24;
-@props:ariaLabel: any = "thumbup";
-@props:iconIndex: any = 0;
-@props:groupId: any = "star";
-@props:role: any = "img";
-@props:svgClass: any;
+@prop fillPercent = 100
+@prop fillColor = "#00b500"
+@prop strokeColor = "#00b500"
+@prop size = 24
+@prop ariaLabel = "thumbup"
+@prop iconIndex = 0
+@prop groupId = "star"
+@prop role = "img"
+@prop svgClass
+@prop ...restProps
 -->

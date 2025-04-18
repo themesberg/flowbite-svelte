@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { card, type CardProps } from ".";
+  import { card } from ".";
+  import type { CardProps } from "../types";
   import type { HTMLAttributes, HTMLAnchorAttributes } from "svelte/elements";
 
   let { children, href, color = "gray", horizontal = false, shadow = "md", reverse = false, img, padding = "lg", size = "sm", class: className, imgClass, contentClass, ...restProps }: CardProps = $props();
@@ -58,17 +59,20 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+[CardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L345)
 ## Props
-@props: children: any;
-@props:href: any;
-@props:color: any = "gray";
-@props:horizontal: any = false;
-@props:shadow: any = "md";
-@props:reverse: any = false;
-@props:img: any;
-@props:padding: any = "lg";
-@props:size: any = "sm";
-@props:class: string;
-@props:imgClass: any;
-@props:contentClass: any;
+@prop children
+@prop href
+@prop color = "gray"
+@prop horizontal = false
+@prop shadow = "md"
+@prop reverse = false
+@prop img
+@prop padding = "lg"
+@prop size = "sm"
+@prop class: className
+@prop imgClass
+@prop contentClass
+@prop ...restProps
 -->

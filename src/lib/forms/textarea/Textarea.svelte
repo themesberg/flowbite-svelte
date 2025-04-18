@@ -35,14 +35,17 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: header: any;
-@props:footer: any;
-@props:value: any = $bindable();
-@props:innerClass: any;
-@props:headerClass: any;
-@props:footerClass: any;
-@props:disabled: any;
-@props:class: string;
-@props:cols: any;
+@prop header
+@prop footer
+@prop value = $bindable()
+@prop innerClass
+@prop headerClass
+@prop footerClass
+@prop disabled
+@prop class: className
+@prop cols
+@prop ...restProps
 -->

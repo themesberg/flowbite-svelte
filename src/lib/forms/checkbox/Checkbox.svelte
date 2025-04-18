@@ -33,17 +33,20 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:color: any = "primary";
-@props:custom: any;
-@props:inline: any;
-@props:tinted: any;
-@props:rounded: any;
-@props:group: any = $bindable([]);
-@props:choices: any = [];
-@props:checked: any = $bindable(false);
-@props:indeterminate: any;
-@props:class: string;
-@props:value: any;
+@prop children
+@prop color = "primary"
+@prop custom
+@prop inline
+@prop tinted
+@prop rounded
+@prop group = $bindable([])
+@prop choices = []
+@prop checked = $bindable(false)
+@prop indeterminate
+@prop class: className
+@prop value
+@prop ...restProps
 -->

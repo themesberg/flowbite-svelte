@@ -28,9 +28,12 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:fluid: any;
-@props:navContainerClass: any;
-@props:class: string;
+@prop children
+@prop fluid
+@prop navContainerClass
+@prop class: className
+@prop ...restProps
 -->

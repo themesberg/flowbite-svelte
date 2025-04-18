@@ -1,6 +1,7 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type BreadcrumbItemProps, breadcrumb } from "./index";
+  import { breadcrumb } from "./index";
+  import type { BreadcrumbItemProps } from "../types"
   import { twMerge } from "tailwind-merge";
 
   let { children, icon, home = false, href, linkClass, spanClass, homeClass, class: className, ...restProps }: BreadcrumbItemProps = $props();
@@ -49,13 +50,16 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+[BreadcrumbItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L284)
 ## Props
-@props: children: any;
-@props:icon: any;
-@props:home: any = false;
-@props:href: any;
-@props:linkClass: any;
-@props:spanClass: any;
-@props:homeClass: any;
-@props:class: string;
+@prop children
+@prop icon
+@prop home = false
+@prop href
+@prop linkClass
+@prop spanClass
+@prop homeClass
+@prop class: className
+@prop ...restProps
 -->

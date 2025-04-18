@@ -2,7 +2,8 @@
   import { setContext } from "svelte";
   import { twMerge } from "tailwind-merge";
   import { writable } from "svelte/store";
-  import { type BottomNavProps, type BottomNavContextType, bottomNav } from "./index";
+  import { bottomNav } from "./index";
+  import type { BottomNavProps, BottomNavContextType } from "../types"
 
   let { children, header, position = "fixed", navType = "default", outerClass, innerClass, activeClass, activeUrl = "", ...restProps }: BottomNavProps = $props();
 
@@ -36,13 +37,16 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L241)
 ## Props
-@props: children: any;
-@props:header: any;
-@props:position: any = "fixed";
-@props:navType: any = "default";
-@props:outerClass: any;
-@props:innerClass: any;
-@props:activeClass: any;
-@props:activeUrl: any = "";
+@prop children
+@prop header
+@prop position = "fixed"
+@prop navType = "default"
+@prop outerClass
+@prop innerClass
+@prop activeClass
+@prop activeUrl = ""
+@prop ...restProps
 -->

@@ -22,15 +22,18 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:size: any = "default";
-@props:value: any;
-@props:checked: any = $bindable();
-@props:disabled: any;
-@props:color: any = "primary";
-@props:class: string;
-@props:inputClass: any;
-@props:spanClass: any;
-@props:offLabel: any;
+@prop children
+@prop size = "default"
+@prop value
+@prop checked = $bindable()
+@prop disabled
+@prop color = "primary"
+@prop class: className
+@prop inputClass
+@prop spanClass
+@prop offLabel
+@prop ...restProps
 -->

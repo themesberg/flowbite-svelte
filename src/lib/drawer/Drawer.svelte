@@ -37,17 +37,20 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+DrawerProps
 ## Props
-@props: children: any;
-@props:hidden: any = $bindable();
-@props:closeDrawer: any = ();
-@props:activateClickOutside: any = true;
-@props:position: any;
-@props:width: any;
-@props:backdrop: any = true;
-@props:backdropClass: any;
-@props:placement: any = "left";
-@props:class: string;
-@props:transitionParams: any;
-@props:transitionType: any = fly;
+@prop children
+@prop hidden = $bindable()
+@prop closeDrawer = ()
+@prop activateClickOutside = true
+@prop position
+@prop width
+@prop backdrop = true
+@prop backdropClass
+@prop placement = "left"
+@prop class: className
+@prop transitionParams
+@prop transitionType = fly
+@prop ...restProps
 -->

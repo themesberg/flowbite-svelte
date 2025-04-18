@@ -23,12 +23,15 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:class: string;
-@props:border: any;
-@props:italic: any = true;
-@props:bg: any;
-@props:alignment: any = "left";
-@props:size: any = "lg";
+@prop children
+@prop class: className
+@prop border
+@prop italic = true
+@prop bg
+@prop alignment = "left"
+@prop size = "lg"
+@prop ...restProps
 -->

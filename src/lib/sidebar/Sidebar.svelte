@@ -75,22 +75,25 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:isOpen: any = false;
-@props:closeSidebar: any;
-@props:isSingle: any = true;
-@props:breakpoint: any = "md";
-@props:position: any = "fixed";
-@props:activateClickOutside: any = true;
-@props:backdrop: any = true;
-@props:backdropClass: any;
-@props:transition: any = fly;
-@props:params: any;
-@props:divClass: any;
-@props:ariaLabel: any;
-@props:nonActiveClass: any;
-@props:activeClass: any;
-@props:activeUrl: any = "";
-@props:class: string;
+@prop children
+@prop isOpen = false
+@prop closeSidebar
+@prop isSingle = true
+@prop breakpoint = "md"
+@prop position = "fixed"
+@prop activateClickOutside = true
+@prop backdrop = true
+@prop backdropClass
+@prop transition = fly
+@prop params
+@prop divClass
+@prop ariaLabel
+@prop nonActiveClass
+@prop activeClass
+@prop activeUrl = ""
+@prop class: className
+@prop ...restProps
 -->

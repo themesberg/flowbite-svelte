@@ -2,7 +2,7 @@
   import Button from "$lib/buttons/Button.svelte";
   import GradientButton from "$lib/buttons/GradientButton.svelte";
   import type { SpeedDialTriggerProps as Props } from "./type";
-  import type { GradientButtonProps } from "../buttons/type";
+  import type { GradientButtonProps } from "$lib/types";
 
   let { children, name = "Open actions menu", gradient = false, icon, pill = true, color, class: className, ...restProps }: Props = $props();
 
@@ -43,12 +43,15 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:name: any = "Open actions menu";
-@props:gradient: any = false;
-@props:icon: any;
-@props:pill: any = true;
-@props:color: any;
-@props:class: string;
+@prop children
+@prop name = "Open actions menu"
+@prop gradient = false
+@prop icon
+@prop pill = true
+@prop color
+@prop class: className
+@prop ...restProps
 -->

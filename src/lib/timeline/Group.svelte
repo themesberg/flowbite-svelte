@@ -15,10 +15,13 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:divClass: any;
-@props:timeClass: any;
-@props:date: any;
-@props:olClass: any;
+@prop children
+@prop divClass
+@prop timeClass
+@prop date
+@prop olClass
+@prop ...restProps
 -->

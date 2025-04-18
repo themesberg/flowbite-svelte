@@ -19,10 +19,13 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:spacing: any;
-@props:padding: any;
-@props:position: any = "middle";
-@props:class: string;
+@prop children
+@prop spacing
+@prop padding
+@prop position = "middle"
+@prop class: className
+@prop ...restProps
 -->

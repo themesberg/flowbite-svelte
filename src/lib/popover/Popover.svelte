@@ -25,13 +25,16 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+PopoverProps
 ## Props
-@props: title: any;
-@props:color: any = "default";
-@props:trigger: any = "hover";
-@props:defaultClass: any;
-@props:arrow: any = true;
-@props:children: any;
-@props:placement: any = "top";
-@props:class: string;
+@prop title: titleSlot
+@prop color = "default"
+@prop trigger = "hover"
+@prop defaultClass
+@prop arrow = true
+@prop children
+@prop placement = "top"
+@prop class: className
+@prop ...restProps
 -->

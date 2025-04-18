@@ -26,9 +26,12 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: itemNumber: any = 5;
-@props:size: any = "md";
-@props:rounded: any;
-@props:class: string;
+@prop itemNumber = 5
+@prop size = "md"
+@prop rounded
+@prop class: className
+@prop ...restProps
 -->

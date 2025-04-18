@@ -7,7 +7,7 @@
   import { canChangeSlide } from "./CarouselSlide";
   import Slide from "./Slide.svelte";
   import { carousel } from "./theme";
-  import type { CarouselProps, State } from "./type";
+  import type { CarouselProps, State } from "../types";
 
   type TransitionFunc = (node: HTMLElement, params: ParamsType) => TransitionConfig;
   const SLIDE_DURATION_RATIO = 0.25; // TODO: Expose one day?
@@ -187,17 +187,20 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L359)
 ## Props
-@props: children: any;
-@props:slide: any;
-@props:images: any;
-@props:index: any = $bindable(0);
-@props:slideDuration: any = 1000;
-@props:transition: any;
-@props:duration: any = 0;
-@props:"aria-label": any = "Draggable Carousel";
-@props:disableSwipe: any = false;
-@props:imgClass: any = "";
-@props:class: string;
-@props:onchange: any;
+@prop children
+@prop slide
+@prop images
+@prop index = $bindable(0)
+@prop slideDuration = 1000
+@prop transition
+@prop duration = 0
+@prop "aria-label": ariaLabel = "Draggable Carousel"
+@prop disableSwipe = false
+@prop imgClass = ""
+@prop class: className
+@prop onchange
+@prop ...restProps
 -->

@@ -74,15 +74,18 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:orientationSlot: any;
-@props:title: any;
-@props:date: any;
-@props:dateFormat: any = "month-year";
-@props:svgClass: any;
-@props:liClass: any;
-@props:divClass: any;
-@props:timeClass: any;
-@props:h3Class: any;
+@prop children
+@prop orientationSlot
+@prop title
+@prop date
+@prop dateFormat = "month-year"
+@prop svgClass
+@prop liClass
+@prop divClass
+@prop timeClass
+@prop h3Class
+@prop ...restProps
 -->

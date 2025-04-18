@@ -30,14 +30,17 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: activities: any;
-@props:liClass: any;
-@props:spanClass: any;
-@props:imgClass: any;
-@props:outerDivClass: any;
-@props:innerDivClass: any;
-@props:timeClass: any;
-@props:titleClass: any;
-@props:textClass: any;
+@prop activities
+@prop liClass
+@prop spanClass
+@prop imgClass
+@prop outerDivClass
+@prop innerDivClass
+@prop timeClass
+@prop titleClass
+@prop textClass
+@prop ...restProps
 -->

@@ -61,14 +61,17 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:titleSlot: any;
-@props:open: any = false;
-@props:title: any = "Tab title";
-@props:activeClass: any;
-@props:inactiveClass: any;
-@props:class: string;
-@props:disabled: any;
-@props:tabStyle: any;
+@prop children
+@prop titleSlot
+@prop open = false
+@prop title = "Tab title"
+@prop activeClass
+@prop inactiveClass
+@prop class: className
+@prop disabled
+@prop tabStyle
+@prop ...restProps
 -->

@@ -25,13 +25,16 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+FooterBrandProps
 ## Props
-@props: children: any;
-@props:aClass: any;
-@props:spanClass: any;
-@props:imgClass: any;
-@props:href: any;
-@props:src: any;
-@props:alt: any;
-@props:name: any;
+@prop children
+@prop aClass
+@prop spanClass
+@prop imgClass
+@prop href
+@prop src
+@prop alt
+@prop name
+@prop ...restProps
 -->

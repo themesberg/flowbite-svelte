@@ -47,13 +47,16 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:headerSlot: any;
-@props:color: any;
-@props:striped: any;
-@props:border: any;
-@props:class: string;
-@props:headItems: any;
-@props:defaultRow: any = true;
+@prop children
+@prop headerSlot
+@prop color
+@prop striped
+@prop border
+@prop class: className
+@prop headItems
+@prop defaultRow = true
+@prop ...restProps
 -->

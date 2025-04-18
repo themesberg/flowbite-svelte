@@ -22,9 +22,12 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:class: string;
-@props:colspan: any;
-@props:onclick: any;
+@prop children
+@prop class: className
+@prop colspan
+@prop onclick
+@prop ...restProps
 -->

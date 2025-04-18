@@ -33,8 +33,11 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: size: any = "md";
-@props:rounded: any;
-@props:class: string;
+@prop size = "md"
+@prop rounded
+@prop class: className
+@prop ...restProps
 -->

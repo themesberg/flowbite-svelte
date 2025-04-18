@@ -31,15 +31,18 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:items: any;
-@props:active: any;
-@props:onclick: any;
-@props:horizontal: any;
-@props:rounded: any;
-@props:border: any;
-@props:class: string;
-@props:itemClass: any;
-@props:iconClass: any;
+@prop children
+@prop items
+@prop active
+@prop onclick
+@prop horizontal
+@prop rounded
+@prop border
+@prop class: className
+@prop itemClass
+@prop iconClass
+@prop ...restProps
 -->

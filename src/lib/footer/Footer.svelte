@@ -13,8 +13,11 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+FooterProps
 ## Props
-@props: children: any;
-@props:footerType: any = "default";
-@props:class: string;
+@prop children
+@prop footerType = "default"
+@prop class: className
+@prop ...restProps
 -->

@@ -10,5 +10,5 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Props
-@props: 
+@props: children: any;
 -->

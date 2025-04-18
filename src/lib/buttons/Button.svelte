@@ -1,7 +1,8 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import type { SizeType } from "$lib/types";
-  import { type ButtonProps, button } from ".";
+  import { button } from ".";
+  import type { ButtonProps } from "../types";
   import clsx from "clsx";
   import { twMerge } from "tailwind-merge";
 
@@ -30,15 +31,18 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L306)
 ## Props
-@props: children: any;
-@props:onclick: any;
-@props:pill: any;
-@props:outline: any = false;
-@props:size: any = group ? "sm" : "md";
-@props:color: any = group ? (outline ? "dark" : "alternative") : "primary";
-@props:shadow: any = false;
-@props:tag: any = "button";
-@props:disabled: any;
-@props:class: string;
+@prop children
+@prop onclick
+@prop pill
+@prop outline = false
+@prop size = group ? "sm" : "md"
+@prop color = group ? (outline ? "dark" : "alternative") : "primary"
+@prop shadow = false
+@prop tag = "button"
+@prop disabled
+@prop class: className
+@prop ...restProps
 -->

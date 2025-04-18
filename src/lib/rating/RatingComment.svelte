@@ -62,10 +62,12 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:evaluation: any;
-@props:helpfullink: any;
-@props:abuselink: any;
-@props:comment: any;
+@prop children
+@prop evaluation
+@prop helpfullink
+@prop abuselink
+@prop comment
 -->

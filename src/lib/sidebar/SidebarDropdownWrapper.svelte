@@ -80,19 +80,22 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:arrowup: any;
-@props:arrowdown: any;
-@props:icon: any;
-@props:isOpen: any = false;
-@props:btnClass: any;
-@props:label: any;
-@props:spanClass: any;
-@props:ulClass: any;
-@props:transition: any = slide;
-@props:params: any;
-@props:svgClass: any;
-@props:class: string;
-@props:onclick: any;
+@prop children
+@prop arrowup
+@prop arrowdown
+@prop icon
+@prop isOpen = false
+@prop btnClass
+@prop label
+@prop spanClass
+@prop ulClass
+@prop transition = slide
+@prop params
+@prop svgClass
+@prop class: className
+@prop onclick
+@prop ...restProps
 -->

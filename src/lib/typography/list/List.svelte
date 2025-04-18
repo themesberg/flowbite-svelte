@@ -23,11 +23,14 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:tag: any = "ul";
-@props:isContenteditable: any = false;
-@props:position: any = "inside";
-@props:ctxClass: any;
-@props:class: string;
+@prop children
+@prop tag = "ul"
+@prop isContenteditable = false
+@prop position = "inside"
+@prop ctxClass
+@prop class: className
+@prop ...restProps
 -->

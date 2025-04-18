@@ -13,7 +13,10 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+DropdownHeaderProps
 ## Props
-@props: children: any;
-@props:class: string;
+@prop children
+@prop class: className
+@prop ...restProps
 -->

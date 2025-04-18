@@ -1,8 +1,8 @@
 <script lang="ts">
   import { CloseButton } from "$lib";
   import { fade } from "svelte/transition";
-  import { type BannerProps, banner } from "./index";
-  import type { ParamsType } from "../types";
+  import { banner } from "./index";
+  import type { ParamsType, BannerProps,  } from "../types";
   import clsx from "clsx";
 
   let { children, header, open = $bindable(true), dismissable = true, color = "gray", type, class: className, innerClass, transition = fade, params, ...restProps }: BannerProps = $props();
@@ -34,15 +34,18 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L220)
 ## Props
-@props: children: any;
-@props:header: any;
-@props:open: any = $bindable(true);
-@props:dismissable: any = true;
-@props:color: any = "gray";
-@props:type: any;
-@props:class: string;
-@props:innerClass: any;
-@props:transition: any = fade;
-@props:params: any;
+@prop children
+@prop header
+@prop open = $bindable(true)
+@prop dismissable = true
+@prop color = "gray"
+@prop type
+@prop class: className
+@prop innerClass
+@prop transition = fade
+@prop params
+@prop ...restProps
 -->

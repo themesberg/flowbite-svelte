@@ -1,6 +1,21 @@
-import type { HTMLButtonAttributes, MouseEventHandler } from "svelte/elements";
-import type { HTMLAnchorAttributes } from "svelte/elements";
+import type { HTMLButtonAttributes, HTMLAnchorAttributes, HTMLAttributes, HTMLLiAttributes, HTMLImgAttributes } from "svelte/elements";
 import type { TransitionConfig, FadeParams, BlurParams, FlyParams, SlideParams, ScaleParams } from "svelte/transition";
+import { type Writable } from "svelte/store";
+import type { Snippet, Component } from "svelte";
+
+// component variants
+import type { AlertVariants } from "./alert/theme";
+import type { BadgeVariants } from "./badge/theme";
+import type { BannerVariants } from "./banner/theme";
+import type { ButtonVariants, GradientButtonVariantes } from "./buttons/theme";
+import type { CarouselVariants } from "./carousel/theme";
+import type Slide from "./carousel/Slide.svelte";
+
+
+
+
+
+// end of component variants
 
 import { tv } from "tailwind-variants";
 
@@ -122,3 +137,268 @@ interface ButtonAttibutes extends Omit<HTMLButtonAttributes, "on:copy" | "oncopy
 }
 
 export type AnchorButtonAttributes = AnchorAttributes | ButtonAttibutes;
+
+
+// accordion
+export interface AccordionCtxType {
+  flush: boolean;
+  activeClass: string | undefined | null;
+  inactiveClass: string | undefined | null;
+  selected?: Writable<object>;
+  classActive?: string;
+  classInactive?: string;
+  multiple?: boolean;
+}
+
+export interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
+  children: Snippet;
+  flush?: boolean;
+  multiple?: boolean;
+  activeClass?: string;
+  inactiveClass?: string;
+  defaultClass?: string;
+  classActive?: string;
+  classInactive?: string;
+}
+
+export interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
+  children: Snippet;
+  header?: Snippet;
+  arrowup?: Snippet;
+  arrowdown?: Snippet;
+  open?: boolean;
+  activeClass?: string;
+  inactiveClass?: string;
+  transitionType?: TransitionFunc;
+  transitionParams?: ParamsType;
+}
+
+// alert
+export type alertColor = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose";
+
+export interface AlertProps extends Omit<AlertVariants, "icon">, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
+  children: Snippet;
+  icon?: Snippet;
+  alertStatus?: boolean;
+  closeIcon?: Component;
+  transition?: TransitionFunc;
+  params?: ParamsType;
+  onclick?: () => void;
+}
+
+// avatar
+export interface AvatarProps extends HTMLAttributes<HTMLDivElement> {
+  children?: Snippet;
+  href?: HTMLAnchorAttributes["href"];
+  target?: HTMLAnchorAttributes["target"];
+  src?: string;
+  cornerStyle?: "rounded" | "circular";
+  stacked?: boolean;
+  dot?: object | undefined;
+  alt?: string;
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
+  onclick?: () => void;
+  border?: boolean;
+}
+
+// badge
+export interface BadgeProps extends BadgeVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
+  children: Snippet;
+  icon?: Snippet;
+  badgeStatus?: boolean;
+  large?: boolean;
+  dismissable?: boolean;
+  href?: HTMLAnchorAttributes["href"];
+  target?: HTMLAnchorAttributes["target"];
+  transition?: TransitionFunc;
+  params?: ParamsType;
+  onclose?: (ev: Event) => void;
+  aClass?: string;
+}
+
+// banner
+export interface BannerProps extends BannerVariants, HTMLAttributes<HTMLDivElement> {
+  header?: Snippet;
+  open?: boolean;
+  dismissable?: boolean;
+  color?: BannerVariants["color"];
+  innerClass?: string;
+  transition?: TransitionFunc;
+  params?: object;
+}
+
+// bottom-navigation
+export type BottomNavVariantType = "border" | "application" | "group" | "default" | "pagination" | "card" | "meeting" | "video" | undefined;
+
+export type PositionType = "static" | "fixed" | "absolute" | "relative" | "sticky" | undefined;
+
+export type BottomNavContextType = {
+  activeClass: string | undefined | null;
+};
+
+export type AppBtnPositionType = "middle" | "left" | "right" | undefined;
+
+export interface BottomNavProps extends HTMLAttributes<HTMLDivElement> {
+  children: Snippet;
+  header?: Snippet;
+  activeUrl?: string;
+  position?: PositionType;
+  navType?: BottomNavVariantType;
+  outerClass?: string;
+  innerClass?: string;
+  activeClass?: string;
+}
+
+export interface BaseBottomNavItemProps {
+  children: Snippet;
+  btnName?: string;
+  appBtnPosition?: AppBtnPositionType;
+  target?: string;
+  activeClass?: string;
+  btnClass?: string;
+  spanClass?: string;
+}
+
+export type BottomNavItemProps = BaseBottomNavItemProps & (({ href: string } & HTMLAnchorAttributes) | ({ href?: never } & HTMLButtonAttributes));
+
+export interface BottomNavHeaderProps {
+  children: Snippet;
+  outerClass?: string;
+  innerClass?: string;
+}
+
+export interface BottomNavHeaderItemProps extends HTMLButtonAttributes {
+  itemName: string;
+  active?: boolean;
+}
+
+
+// breadcrumb
+export interface BreadcrumbProps extends HTMLAttributes<HTMLElement> {
+  children: Snippet;
+  solid?: boolean;
+  olClass?: string;
+  ariaLabel?: string;
+}
+
+export interface BreadcrumbItemProps extends HTMLLiAttributes {
+  children: Snippet;
+  icon?: Snippet;
+  home?: boolean;
+  href?: string;
+  linkClass?: string;
+  spanClass?: string;
+  homeClass?: string;
+}
+
+// buttongroup
+export interface ButtonGroupProps {
+  children: Snippet;
+  size?: ButtonGroupSizeType;
+  class?: string;
+}
+
+export type ButtonGroupSizeType = "sm" | "md" | "lg" | undefined;
+
+// button
+export type HTMLButtonOrAnchorAttributes = Omit<HTMLButtonAttributes & HTMLAnchorAttributes, "color">;
+
+export type ButtonProps = ButtonVariants &
+  AnchorButtonAttributes & {
+    tag?: string;
+    disabled?: boolean;
+    outline?: boolean;
+    shadow?: boolean;
+  };
+
+export interface GradientButtonProps extends GradientButtonVariantes, HTMLButtonOrAnchorAttributes {
+  tag?: string;
+  disabled?: boolean;
+  href?: string;
+}
+
+// card
+export type CardSizeType = "sm" | "md" | "lg" | "xl" | "xs" | undefined;
+
+export type PaddingType = "sm" | "lg" | "md" | "xl" | "xs" | "none" | undefined;
+
+export type ShadowType = "sm" | "normal" | "lg" | "md" | "xl" | "2xl" | "inner" | undefined;
+
+export type ColorType = "gray" | "primary" | "secondary" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined;
+
+export interface BaseCardProps {
+  children: Snippet;
+  horizontal?: boolean;
+  color?: ColorType;
+  target?: string;
+  shadow?: ShadowType;
+  reverse?: boolean;
+  img?: string;
+  padding?: PaddingType;
+  size?: CardSizeType;
+  class?: string;
+  // onclick?: () => void;
+  imgClass?: string;
+  contentClass?: string;
+}
+
+export type CardProps = BaseCardProps & (({ href: string } & HTMLAnchorAttributes) | ({ href?: never } & HTMLAttributes<HTMLDivElement>));
+
+// carousel
+
+
+
+export type State = {
+  images: HTMLImgAttributes[];
+  index: number;
+  lastSlideChange: Date;
+  slideDuration: number; // ms
+  forward: boolean;
+};
+
+export interface CarouselProps extends CarouselVariants, Omit<HTMLAttributes<HTMLDivElement>, "children" | "onchange"> {
+  children?: Snippet<[number]>;
+  slide?: Snippet<[{ index: number; Slide: typeof Slide }]>;
+  images: HTMLImgAttributes[];
+  index?: number;
+  slideDuration?: number;
+  transition?: TransitionFunc;
+  duration?: number;
+  disableSwipe?: boolean;
+  imgClass?: string;
+  onchange?: (x: HTMLImgAttributes) => {};
+}
+
+export interface IndicatorsProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
+  children?: Snippet<[{ selected: boolean; index: number }]>;
+  activeClass?: string;
+  inactiveClass?: string;
+}
+
+export interface ControlButtonProps extends HTMLButtonAttributes {
+  forward: boolean;
+  name: string;
+}
+
+export interface ThumbnailProps extends HTMLImgAttributes {
+  selected?: boolean;
+}
+
+export interface ThumbnailsProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
+  children?: Snippet<[{ image: HTMLImgAttributes; selected: boolean; imgClass: string; Thumbnail: Component }]>;
+  images: HTMLImgAttributes[];
+  index: number;
+  ariaLabel: string;
+  imgClass: string;
+  throttleDelay: number;
+}
+
+export interface SlideProps extends HTMLImgAttributes {
+  image: HTMLImgAttributes;
+  transition?: TransitionFunc; // Optional transition function, overrides default slide transition
+}
+
+
+
+
+

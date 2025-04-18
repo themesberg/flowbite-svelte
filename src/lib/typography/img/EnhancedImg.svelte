@@ -30,12 +30,15 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: src: any;
-@props:href: any;
-@props:caption: any;
-@props:size: any;
-@props:figClass: any;
-@props:class: string;
-@props:captionClass: any;
+@prop src
+@prop href
+@prop caption
+@prop size
+@prop figClass
+@prop class: imgClass
+@prop captionClass
+@prop ...restProps
 -->

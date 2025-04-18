@@ -42,15 +42,18 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: icon: any;
-@props:subtext: any;
-@props:href: any;
-@props:label: any;
-@props:spanClass: any = "ms-3";
-@props:activeClass: any;
-@props:nonActiveClass: any;
-@props:aClass: any;
-@props:active: any;
-@props:class: string;
+@prop icon
+@prop subtext
+@prop href
+@prop label
+@prop spanClass = "ms-3"
+@prop activeClass
+@prop nonActiveClass
+@prop aClass
+@prop active
+@prop class: className
+@prop ...restProps
 -->

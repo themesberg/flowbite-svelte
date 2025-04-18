@@ -23,11 +23,14 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: spanClass: any;
-@props:aClass: any;
-@props:href: any;
-@props:by: any;
-@props:copyrightMessage: any = "All Rights Reserved.";
-@props:year: any;
+@prop spanClass
+@prop aClass
+@prop href
+@prop by
+@prop copyrightMessage = "All Rights Reserved."
+@prop year
+@prop ...restProps
 -->

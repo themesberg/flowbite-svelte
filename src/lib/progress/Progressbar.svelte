@@ -41,19 +41,22 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: progress: any = "45";
-@props:precision: any = 0;
-@props:tweenDuration: any = 400;
-@props:animate: any = false;
-@props:size: any = "h-2.5";
-@props:labelInside: any = false;
-@props:labelOutside: any = "";
-@props:easing: any = cubicOut;
-@props:color: any = "primary";
-@props:labelInsideClass: any;
-@props:oustsideSpanClass: any;
-@props:oustsideProgressClass: any;
-@props:labeloutsidedivClass: any;
-@props:divClass: any;
+@prop progress = "45"
+@prop precision = 0
+@prop tweenDuration = 400
+@prop animate = false
+@prop size = "h-2.5"
+@prop labelInside = false
+@prop labelOutside = ""
+@prop easing = cubicOut
+@prop color = "primary"
+@prop labelInsideClass
+@prop oustsideSpanClass
+@prop oustsideProgressClass
+@prop labeloutsidedivClass
+@prop divClass
+@prop ...restProps
 -->

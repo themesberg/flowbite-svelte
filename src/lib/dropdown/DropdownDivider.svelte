@@ -11,6 +11,9 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+DropdownDividerProps
 ## Props
-@props: class: string;
+@prop class: divClass
+@prop ...restProps
 -->

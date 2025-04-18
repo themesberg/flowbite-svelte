@@ -29,8 +29,11 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:bodyItems: any;
-@props:class: string;
+@prop children
+@prop bodyItems
+@prop class: className
+@prop ...restProps
 -->

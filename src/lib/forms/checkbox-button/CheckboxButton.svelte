@@ -55,16 +55,19 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:class: string;
-@props:group: any = $bindable([]);
-@props:value: any;
-@props:checked: any;
-@props:inline: any;
-@props:pill: any;
-@props:outline: any;
-@props:size: any;
-@props:color: any;
-@props:shadow: any;
+@prop children
+@prop class: className
+@prop group = $bindable([])
+@prop value
+@prop checked
+@prop inline
+@prop pill
+@prop outline
+@prop size
+@prop color
+@prop shadow
+@prop ...restProps
 -->

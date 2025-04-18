@@ -18,9 +18,12 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:color: any = "gray";
-@props:show: any = true;
-@props:class: string;
+@prop children
+@prop color = "gray"
+@prop show = true
+@prop class: className
+@prop ...restProps
 -->

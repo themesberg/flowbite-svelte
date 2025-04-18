@@ -1,7 +1,7 @@
 <script lang="ts">
   import clsx from "clsx";
   import { controlButton } from "./theme";
-  import type { ControlButtonProps } from "./type";
+  import type { ControlButtonProps } from "../types";
 
   let { children, forward, name, class: className, ...restProps }: ControlButtonProps = $props();
 </script>
@@ -28,9 +28,12 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+[ControlButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L378)
 ## Props
-@props: children: any;
-@props:forward: any;
-@props:name: any;
-@props:class: string;
+@prop children
+@prop forward
+@prop name
+@prop class: className
+@prop ...restProps
 -->

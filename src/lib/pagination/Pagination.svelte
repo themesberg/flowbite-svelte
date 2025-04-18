@@ -48,13 +48,16 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: pages: any = [];
-@props:previous: any;
-@props:next: any;
-@props:prevContent: any;
-@props:nextContent: any;
-@props:table: any;
-@props:size: any;
-@props:ariaLabel: any;
+@prop pages = []
+@prop previous
+@prop next
+@prop prevContent
+@prop nextContent
+@prop table
+@prop size
+@prop ariaLabel
+@prop ...restProps
 -->

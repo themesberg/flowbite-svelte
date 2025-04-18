@@ -1,4 +1,4 @@
-import type { ButtonProps } from "$lib/buttons";
+import type { ButtonProps } from "$lib/types";
 import type { HTMLInputAttributes } from "svelte/elements";
 
 interface RadioButtonProps<T> extends Omit<HTMLInputAttributes, "size"> {

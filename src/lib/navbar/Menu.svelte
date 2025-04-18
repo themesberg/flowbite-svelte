@@ -38,10 +38,13 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: size: any = "24";
-@props:color: any = "currentColor";
-@props:variation: any = "outline";
-@props:ariaLabel: any = "bars 3";
-@props:class: string;
+@prop size = "24"
+@prop color = "currentColor"
+@prop variation = "outline"
+@prop ariaLabel = "bars 3"
+@prop class: className
+@prop ...restProps
 -->

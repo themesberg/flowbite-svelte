@@ -14,8 +14,11 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:tag: any = "h1";
-@props:class: string;
+@prop children
+@prop tag = "h1"
+@prop class: className
+@prop ...restProps
 -->

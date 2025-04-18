@@ -3,7 +3,7 @@
   import type { Writable } from "svelte/store";
   import { canChangeSlide } from "./CarouselSlide";
   import ControlButton from "./ControlButton.svelte";
-  import type { State } from "./type";
+  import type { State } from "../types";
   
   interface Props {
     children?: Snippet;
@@ -55,7 +55,9 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:class: string;
+@prop children
+@prop class: className
 -->

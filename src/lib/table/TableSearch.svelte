@@ -58,22 +58,25 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:header: any;
-@props:footer: any;
-@props:divClass: any = "relative overflow-x-auto shadow-md sm:rounded-lg";
-@props:inputValue: any = $bindable();
-@props:striped: any;
-@props:hoverable: any;
-@props:customColor: any = "";
-@props:color: any = "default";
-@props:innerDivClass: any = "p-4";
-@props:inputClass: any;
-@props:searchClass: any = "relative mt-1";
-@props:svgDivClass: any;
-@props:svgClass: any = "w-5 h-5 text-gray-500 dark:text-gray-400";
-@props:tableClass: any = "w-full text-left text-sm";
-@props:class: string;
-@props:placeholder: any = "Search";
+@prop children
+@prop header
+@prop footer
+@prop divClass = "relative overflow-x-auto shadow-md sm:rounded-lg"
+@prop inputValue = $bindable()
+@prop striped
+@prop hoverable
+@prop customColor = ""
+@prop color = "default"
+@prop innerDivClass = "p-4"
+@prop inputClass
+@prop searchClass = "relative mt-1"
+@prop svgDivClass
+@prop svgClass = "w-5 h-5 text-gray-500 dark:text-gray-400"
+@prop tableClass = "w-full text-left text-sm"
+@prop class: className
+@prop placeholder = "Search"
+@prop ...restProps
 -->

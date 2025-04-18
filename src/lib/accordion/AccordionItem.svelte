@@ -4,8 +4,8 @@
   import { getContext } from "svelte";
   import { writable } from "svelte/store";
 
-  import { type AccordionCtxType, type AccordionItemProps, accordionitem } from ".";
-  import type { ParamsType } from "../types";
+  import { accordionitem } from ".";
+  import type { AccordionCtxType, AccordionItemProps, ParamsType } from "../types";
   import type { BaseThemes } from "$lib/theme";
   import clsx from "clsx";
 
@@ -66,15 +66,17 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L164)
 ## Props
-@props: children: any;
-@props:header: any;
-@props:arrowup: any;
-@props:arrowdown: any;
-@props:open: any = $bindable(false);
-@props:activeClass: any;
-@props:inactiveClass: any;
-@props:transitionType: any = slide;
-@props:transitionParams: any;
-@props:class: string;
+@prop children
+@prop header
+@prop arrowup
+@prop arrowdown
+@prop open = $bindable(false)
+@prop activeClass
+@prop inactiveClass
+@prop transitionType = slide
+@prop transitionParams
+@prop class: className
 -->

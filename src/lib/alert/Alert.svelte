@@ -4,7 +4,8 @@
   import type { ParamsType } from "$lib/types";
   import { getContext } from "svelte";
   import { fade } from "svelte/transition";
-  import { type AlertProps, alert } from ".";
+  import { alert } from ".";
+  import type { AlertProps } from "../types"
   import clsx from "clsx";
 
   let { children, icon, alertStatus = $bindable(true), closeIcon: CloseIcon, color = "primary", rounded = true, border, class: className, dismissable, transition = fade, params, onclick = () => (alertStatus = false), ...restProps }: AlertProps = $props();
@@ -56,17 +57,20 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L179)
 ## Props
-@props: children: any;
-@props:icon: any;
-@props:alertStatus: any = $bindable(true);
-@props:closeIcon: any;
-@props:color: any = "primary";
-@props:rounded: any = true;
-@props:border: any;
-@props:class: string;
-@props:dismissable: any;
-@props:transition: any = fade;
-@props:params: any;
-@props:onclick: any = ();
+@prop children
+@prop icon
+@prop alertStatus = $bindable(true)
+@prop closeIcon: CloseIcon
+@prop color = "primary"
+@prop rounded = true
+@prop border
+@prop class: className
+@prop dismissable
+@prop transition = fade
+@prop params
+@prop onclick = ()
+@prop ...restProps
 -->

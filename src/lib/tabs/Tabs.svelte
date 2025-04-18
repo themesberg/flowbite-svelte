@@ -41,10 +41,13 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:tabStyle: any = "none";
-@props:ulClass: any;
-@props:contentClass: any;
-@props:divider: any = true;
+@prop children
+@prop tabStyle = "none"
+@prop ulClass
+@prop contentClass
+@prop divider = true
+@prop ...restProps
 -->

@@ -19,15 +19,18 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:id: any = idGenerator();
-@props:value: any = $bindable();
-@props:"aria-describedby": any;
-@props:variant: any = "standard";
-@props:size: any = "default";
-@props:color: any = "default";
-@props:class: string;
-@props:inputClass: any;
-@props:labelClass: any;
+@prop children
+@prop id = idGenerator()
+@prop value = $bindable()
+@prop "aria-describedby": ariaDescribedby
+@prop variant = "standard"
+@prop size = "default"
+@prop color = "default"
+@prop class: divClass
+@prop inputClass
+@prop labelClass
+@prop ...restProps
 -->

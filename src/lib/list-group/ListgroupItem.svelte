@@ -40,15 +40,18 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:active: any;
-@props:current: any;
-@props:disabled: any;
-@props:horizontal: any;
-@props:name: any;
-@props:Icon: any;
-@props:class: string;
-@props:iconClass: any = "me-2.5 h-5 w-5";
-@props:onclick: any;
+@prop children
+@prop active
+@prop current
+@prop disabled
+@prop horizontal
+@prop name
+@prop Icon
+@prop class: className
+@prop iconClass = "me-2.5 h-5 w-5"
+@prop onclick
+@prop ...restProps
 -->

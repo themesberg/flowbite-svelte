@@ -1,4 +1,4 @@
-import type { ButtonProps, GradientButtonProps } from "$lib/buttons";
+import type { ButtonProps, GradientButtonProps } from "$lib/types";
 import type { PopperProps } from "$lib/utils/Popper.svelte";
 import type { Placement } from "@floating-ui/utils";
 import type { Snippet } from "svelte";

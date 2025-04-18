@@ -40,11 +40,14 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: timelines: any;
-@props:aClass: any;
-@props:imgClass: any;
-@props:divClass: any;
-@props:titleClass: any;
-@props:spanClass: any;
+@prop timelines
+@prop aClass
+@prop imgClass
+@prop divClass
+@prop titleClass
+@prop spanClass
+@prop ...restProps
 -->

@@ -40,8 +40,11 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:class: string;
-@props:size: any;
+@prop children
+@prop class: className
+@prop size
+@prop ...restProps
 -->

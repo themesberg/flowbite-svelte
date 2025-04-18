@@ -1,7 +1,8 @@
 <script lang="ts">
   import Button from "./Button.svelte";
   import { getContext } from "svelte";
-  import { type GradientButtonProps, gradientButton } from ".";
+  import { gradientButton } from ".";
+  import type { GradientButtonProps } from "../types"
   import type { SizeType } from "$lib/types";
   import clsx from "clsx";
 
@@ -27,14 +28,17 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L314)
 ## Props
-@props: children: any;
-@props:outline: any;
-@props:pill: any;
-@props:color: any = "blue";
-@props:shadow: any;
-@props:class: string;
-@props:href: any;
-@props:disabled: any;
-@props:size: any;
+@prop children
+@prop outline
+@prop pill
+@prop color = "blue"
+@prop shadow
+@prop class: className
+@prop href
+@prop disabled
+@prop size
+@prop ...restProps
 -->

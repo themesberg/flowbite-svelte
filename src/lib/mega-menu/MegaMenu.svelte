@@ -35,11 +35,14 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:extra: any;
-@props:items: any = [];
-@props:full: any;
-@props:ulClass: any;
-@props:class: string;
+@prop children
+@prop extra
+@prop items = []
+@prop full
+@prop ulClass
+@prop class: className
+@prop ...restProps
 -->

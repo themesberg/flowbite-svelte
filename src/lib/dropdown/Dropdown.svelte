@@ -32,12 +32,15 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+DropdownProps
 ## Props
-@props: children: any;
-@props:simple: any = false;
-@props:placement: any = "bottom";
-@props:offset: any = 2;
-@props:class: string;
-@props:backdropClass: any;
-@props:activeUrl: any = "";
+@prop children
+@prop simple = false
+@prop placement = "bottom"
+@prop offset = 2
+@prop class: className
+@prop backdropClass
+@prop activeUrl = ""
+@prop ...restProps
 -->

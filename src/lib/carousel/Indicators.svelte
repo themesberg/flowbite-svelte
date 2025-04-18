@@ -3,7 +3,7 @@
   import { getContext } from "svelte";
   import type { Writable } from "svelte/store";
   import { indicators } from "./theme";
-  import type { IndicatorsProps, State } from "./type";
+  import type { IndicatorsProps, State } from "../types";
   import clsx from "clsx";
 
   let { children, activeClass, inactiveClass, class: className, ...restProps }: IndicatorsProps = $props();
@@ -28,9 +28,12 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+[IndicatorsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L372)
 ## Props
-@props: children: any;
-@props:activeClass: any;
-@props:inactiveClass: any;
-@props:class: string;
+@prop children
+@prop activeClass
+@prop inactiveClass
+@prop class: className
+@prop ...restProps
 -->

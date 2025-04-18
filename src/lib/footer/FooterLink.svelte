@@ -14,9 +14,12 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:liClass: any;
-@props:aClass: any;
-@props:href: any;
+@prop children
+@prop liClass
+@prop aClass
+@prop href
+@prop ...restProps
 -->

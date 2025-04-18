@@ -34,10 +34,13 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:figure: any;
-@props:items: any = [];
-@props:imgClass: any;
-@props:class: string;
+@prop children
+@prop figure
+@prop items = []
+@prop imgClass
+@prop class: className
+@prop ...restProps
 -->

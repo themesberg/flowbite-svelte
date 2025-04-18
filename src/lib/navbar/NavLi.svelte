@@ -34,10 +34,13 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:activeClass: any;
-@props:nonActiveClass: any;
-@props:class: string;
-@props:onclick: any;
+@prop children
+@prop activeClass
+@prop nonActiveClass
+@prop class: className
+@prop onclick
+@prop ...restProps
 -->

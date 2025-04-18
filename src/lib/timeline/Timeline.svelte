@@ -17,8 +17,11 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:order: any = "default";
-@props:class: string;
+@prop children
+@prop order = "default"
+@prop class: className
+@prop ...restProps
 -->

@@ -51,16 +51,19 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:footerSlot: any;
-@props:captionSlot: any;
-@props:items: any;
-@props:divClass: any = "relative overflow-x-auto";
-@props:striped: any;
-@props:hoverable: any;
-@props:border: any = true;
-@props:shadow: any;
-@props:color: any = "default";
-@props:class: string;
+@prop children
+@prop footerSlot
+@prop captionSlot
+@prop items: tableItems
+@prop divClass = "relative overflow-x-auto"
+@prop striped
+@prop hoverable
+@prop border = true
+@prop shadow
+@prop color = "default"
+@prop class: className
+@prop ...restProps
 -->

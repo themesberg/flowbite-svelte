@@ -31,12 +31,15 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: size: any = "none";
-@props:effect: any = "none";
-@props:caption: any;
-@props:class: string;
-@props:figClass: any;
-@props:captionClass: any;
-@props:href: any;
+@prop size = "none"
+@prop effect = "none"
+@prop caption
+@prop class: imgClass
+@prop figClass
+@prop captionClass
+@prop href
+@prop ...restProps
 -->

@@ -15,10 +15,13 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: color: any = "primary";
-@props:size: any = "8";
-@props:class: string;
-@props:currentFill: any = "currentFill";
-@props:currentColor: any = "currentColor";
+@prop color = "primary"
+@prop size = "8"
+@prop class: className
+@prop currentFill = "currentFill"
+@prop currentColor = "currentColor"
+@prop ...restProps
 -->

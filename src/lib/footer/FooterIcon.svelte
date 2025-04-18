@@ -17,9 +17,12 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:href: any;
-@props:ariaLabel: any;
-@props:class: string;
+@prop children
+@prop href
+@prop ariaLabel
+@prop class: aClass
+@prop ...restProps
 -->

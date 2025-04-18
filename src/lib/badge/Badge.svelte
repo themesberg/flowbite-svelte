@@ -1,6 +1,7 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { type BadgeProps, badge } from "./index";
+  import { badge } from "./index";
+  import type { BadgeProps } from "../types";
   import { CloseButton } from "$lib";
   import { fade } from "svelte/transition";
   import type { ParamsType } from "$lib/types";
@@ -48,20 +49,23 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L205)
 ## Props
-@props: children: any;
-@props:icon: any;
-@props:badgeStatus: any = $bindable(true);
-@props:color: any = "primary";
-@props:large: any = false;
-@props:dismissable: any = false;
-@props:class: string;
-@props:border: any;
-@props:href: any;
-@props:target: any;
-@props:rounded: any;
-@props:transition: any = fade;
-@props:params: any;
-@props:aClass: any;
-@props:onclose: any;
+@prop children
+@prop icon
+@prop badgeStatus = $bindable(true)
+@prop color = "primary"
+@prop large = false
+@prop dismissable = false
+@prop class: className
+@prop border
+@prop href
+@prop target
+@prop rounded
+@prop transition = fade
+@prop params
+@prop aClass
+@prop onclose
+@prop ...restProps
 -->

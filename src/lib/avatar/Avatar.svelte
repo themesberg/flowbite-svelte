@@ -3,7 +3,8 @@
   import type { BaseThemes } from "$lib/theme";
   import clsx from "clsx";
   import { getContext } from "svelte";
-  import { type AvatarProps, avatar } from ".";
+  import { avatar } from ".";
+  import type { AvatarProps } from "../types"
 
   let { children, src, href, target, cornerStyle = "circular", border = false, stacked = false, dot, class: className, alt, size = "md", onclick, ...restProps }: AvatarProps = $props();
 
@@ -47,17 +48,20 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+[AvatarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L190)
 ## Props
-@props: children: any;
-@props:src: any;
-@props:href: any;
-@props:target: any;
-@props:cornerStyle: any = "circular";
-@props:border: any = false;
-@props:stacked: any = false;
-@props:dot: any;
-@props:class: string;
-@props:alt: any;
-@props:size: any = "md";
-@props:onclick: any;
+@prop children
+@prop src
+@prop href
+@prop target
+@prop cornerStyle = "circular"
+@prop border = false
+@prop stacked = false
+@prop dot
+@prop class: className
+@prop alt
+@prop size = "md"
+@prop onclick
+@prop ...restProps
 -->

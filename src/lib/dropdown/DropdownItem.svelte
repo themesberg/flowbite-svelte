@@ -37,11 +37,14 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+DropdownItemProps
 ## Props
-@props: aClass: any;
-@props:children: any;
-@props:href: any;
-@props:activeClass: any;
-@props:liClass: any;
-@props:class: string;
+@prop aClass
+@prop children
+@prop href
+@prop activeClass
+@prop liClass
+@prop class: className
+@prop ...restProps
 -->

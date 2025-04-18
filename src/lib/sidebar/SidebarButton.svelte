@@ -16,7 +16,10 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: breakpoint: any = "md";
-@props:class: string;
+@prop breakpoint = "md"
+@prop class: className
+@prop ...restProps
 -->

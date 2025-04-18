@@ -4,7 +4,7 @@
   import type { Writable } from "svelte/store";
   import { fly } from "svelte/transition";
   import { slide } from "./theme";
-  import type { SlideProps, State } from "./type";
+  import type { SlideProps, State } from "../types";
 
   const state = getContext<Writable<State>>("state");
 
@@ -42,8 +42,11 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+[SlideProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L396)
 ## Props
-@props: image: any;
-@props:transition: any;
-@props:class: string;
+@prop image
+@prop transition
+@prop class: className
+@prop ...restProps
 -->

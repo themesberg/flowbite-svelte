@@ -36,10 +36,13 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:end: any;
-@props:color: any;
-@props:embedded: any;
-@props:class: string;
+@prop children
+@prop end
+@prop color
+@prop embedded
+@prop class: className
+@prop ...restProps
 -->

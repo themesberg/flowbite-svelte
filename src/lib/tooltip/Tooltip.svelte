@@ -26,13 +26,16 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+TooltipProps
 ## Props
-@props: type: any = "dark";
-@props:color: any = undefined;
-@props:trigger: any = "hover";
-@props:arrow: any = true;
-@props:children: any;
-@props:placement: any = "top";
-@props:onbeforetoggle: any;
-@props:class: string;
+@prop type = "dark"
+@prop color = undefined
+@prop trigger = "hover"
+@prop arrow = true
+@prop children
+@prop placement = "top"
+@prop onbeforetoggle: _onbeforetoggle
+@prop class: className
+@prop ...restProps
 -->

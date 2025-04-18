@@ -29,9 +29,12 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: files: any = $bindable<FileList | undefined>();
-@props:size: any = "md";
-@props:clearable: any = false;
-@props:class: string;
+@prop files = $bindable<FileList | undefined>()
+@prop size = "md"
+@prop clearable = false
+@prop class: className
+@prop ...restProps
 -->

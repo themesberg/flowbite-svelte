@@ -11,9 +11,12 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:class: string = "space-y-2";
-@props:borderClass: any = "pt-4 mt-4 border-t border-gray-200 dark:border-gray-700";
-@props:border: any = false;
+@prop children
+@prop class: className = "space-y-2"
+@prop borderClass = "pt-4 mt-4 border-t border-gray-200 dark:border-gray-700"
+@prop border = false
+@prop ...restProps
 -->

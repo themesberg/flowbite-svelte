@@ -27,10 +27,13 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:size: any;
-@props:class: string;
-@props:href: any;
-@props:active: any;
+@prop children
+@prop size
+@prop class: className
+@prop href
+@prop active
+@prop ...restProps
 -->

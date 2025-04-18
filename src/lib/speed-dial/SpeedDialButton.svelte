@@ -26,13 +26,16 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:name: any = "";
-@props:color: any = "light";
-@props:tooltip: any = context.tooltip;
-@props:pill: any = context.pill;
-@props:textOutside: any = context.textOutside;
-@props:textClass: any;
-@props:class: string;
+@prop children
+@prop name = ""
+@prop color = "light"
+@prop tooltip = context.tooltip
+@prop pill = context.pill
+@prop textOutside = context.textOutside
+@prop textClass
+@prop class: className
+@prop ...restProps
 -->

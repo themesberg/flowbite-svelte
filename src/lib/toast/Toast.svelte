@@ -37,17 +37,20 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:icon: any;
-@props:toastStatus: any = $bindable(true);
-@props:dismissable: any = true;
-@props:color: any = "primary";
-@props:position: any;
-@props:baseClass: any;
-@props:iconClass: any;
-@props:contentClass: any;
-@props:align: any = true;
-@props:params: any;
-@props:transition: any = fly;
+@prop children
+@prop icon
+@prop toastStatus = $bindable(true)
+@prop dismissable = true
+@prop color = "primary"
+@prop position
+@prop baseClass
+@prop iconClass
+@prop contentClass
+@prop align = true
+@prop params
+@prop transition = fly
+@prop ...restProps
 -->

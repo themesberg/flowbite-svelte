@@ -24,11 +24,14 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:class: string;
-@props:color: any;
-@props:striped: any;
-@props:hoverable: any;
-@props:border: any;
+@prop children
+@prop class: className
+@prop color
+@prop striped
+@prop hoverable
+@prop border
+@prop ...restProps
 -->

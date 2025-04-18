@@ -21,12 +21,15 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+DefaultMockupProps
 ## Props
-@props: children: any;
-@props:divClass: any;
-@props:div2Class: any;
-@props:div3Class: any;
-@props:div4Class: any;
-@props:div5Class: any;
-@props:div6Class: any;
+@prop children
+@prop divClass
+@prop div2Class
+@prop div3Class
+@prop div4Class
+@prop div5Class
+@prop div6Class
+@prop ...restProps
 -->

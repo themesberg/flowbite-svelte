@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import Thumbnail from "./Thumbnail.svelte";
   import { thumbnails } from "./theme";
-  import type { ThumbnailsProps } from "./type";
+  import type { ThumbnailsProps } from "../types";
 
   let { children, images = [], index = $bindable(), ariaLabel = "Click to view image", imgClass, throttleDelay = 650, class: className }: ThumbnailsProps = $props();
 
@@ -42,12 +42,14 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L387)
 ## Props
-@props: children: any;
-@props:images: any = [];
-@props:index: any = $bindable();
-@props:ariaLabel: any = "Click to view image";
-@props:imgClass: any;
-@props:throttleDelay: any = 650;
-@props:class: string;
+@prop children
+@prop images = []
+@prop index = $bindable()
+@prop ariaLabel = "Click to view image"
+@prop imgClass
+@prop throttleDelay = 650
+@prop class: className
 -->

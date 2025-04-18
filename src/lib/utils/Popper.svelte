@@ -184,20 +184,21 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+PopperProps
 ## Props
-@props: triggeredBy: any;
-@props:trigger: any = "click";
-@props:placement: any = "top";
-@props:offset: any = 8;
-@props:arrow: any = false;
-@props:yOnly: any = false;
-@props:strategy: any = "absolute";
-@props:reference: any;
-@props:middlewares: any = [dom.flip();
-@props:dom.shift()]: any;
-@props:onbeforetoggle: any;
-@props:ontoggle: any;
-@props:class: string = "";
-@props:arrowClass: any = "";
-@props:children: any;
+@prop triggeredBy
+@prop trigger = "click"
+@prop placement = "top"
+@prop offset = 8
+@prop arrow = false
+@prop yOnly = false
+@prop strategy = "absolute"
+@prop reference
+@prop middlewares = [dom.flip(), dom.shift()]
+@prop onbeforetoggle: _onbeforetoggle
+@prop ontoggle: _ontoggle
+@prop class: className = ""
+@prop arrowClass = ""
+@prop children
 -->

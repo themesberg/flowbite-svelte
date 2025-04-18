@@ -39,14 +39,16 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:text: any;
-@props:class: string;
-@props:size: any = 24;
-@props:total: any = 5;
-@props:rating: any = 4;
-@props:icon: any = Star;
-@props:count: any = false;
-@props:pClass: any;
+@prop children
+@prop text
+@prop class: divClass
+@prop size = 24
+@prop total = 5
+@prop rating = 4
+@prop icon: Icon = Star
+@prop count = false
+@prop pClass
 -->

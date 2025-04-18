@@ -24,10 +24,13 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:onclick: any;
-@props:menuClass: any;
-@props:class: string;
-@props:name: any = "Open main menu";
+@prop children
+@prop onclick
+@prop menuClass
+@prop class: className
+@prop name = "Open main menu"
+@prop ...restProps
 -->

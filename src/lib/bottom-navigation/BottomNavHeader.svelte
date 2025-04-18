@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { type BottomNavHeaderProps, bottomnavheader } from ".";
+  import { bottomnavheader } from ".";
+  import type { BottomNavHeaderProps } from "../types";
 
   let { children, outerClass, innerClass, ...restProps }: BottomNavHeaderProps = $props();
   const { innerDiv, outerDiv } = $derived(bottomnavheader());
@@ -14,8 +15,11 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+[BottomNavHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L264)
 ## Props
-@props: children: any;
-@props:outerClass: any;
-@props:innerClass: any;
+@prop children
+@prop outerClass
+@prop innerClass
+@prop ...restProps
 -->

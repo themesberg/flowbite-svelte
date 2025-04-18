@@ -63,8 +63,10 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: ratings: any;
-@props:ratings2: any;
-@props:headerLabel: any;
+@prop ratings
+@prop ratings2
+@prop headerLabel
 -->

@@ -21,9 +21,12 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:divClass: any;
-@props:class: string;
-@props:innerDivClass: any;
+@prop children
+@prop divClass
+@prop class: className
+@prop innerDivClass
+@prop ...restProps
 -->

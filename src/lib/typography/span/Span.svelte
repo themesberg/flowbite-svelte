@@ -29,16 +29,19 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:class: string;
-@props:italic: any;
-@props:underline: any;
-@props:linethrough: any;
-@props:uppercase: any;
-@props:gradient: any;
-@props:highlight: any;
-@props:decoration: any;
-@props:decorationColor: any;
-@props:decorationThickness: any;
+@prop children
+@prop class: className
+@prop italic
+@prop underline
+@prop linethrough
+@prop uppercase
+@prop gradient
+@prop highlight
+@prop decoration
+@prop decorationColor
+@prop decorationThickness
+@prop ...restProps
 -->

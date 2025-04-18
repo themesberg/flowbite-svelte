@@ -1,6 +1,8 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type BottomNavHeaderItemProps, bottomnavheaderitem } from ".";
+  import { bottomnavheaderitem } from ".";
+  import type { BottomNavHeaderItemProps } from "../types";
+  
   let { itemName, active, class: className, ...restProps }: BottomNavHeaderItemProps = $props();
   let base = $derived(bottomnavheaderitem({ active, class: clsx(className) }));
 </script>
@@ -12,8 +14,11 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L270)
 ## Props
-@props: itemName: any;
-@props:active: any;
-@props:class: string;
+@prop itemName
+@prop active
+@prop class: className
+@prop ...restProps
 -->

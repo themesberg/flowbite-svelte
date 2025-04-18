@@ -27,13 +27,16 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:color: any = "primary";
-@props:cornerStyle: any = "circular";
-@props:size: any = "md";
-@props:border: any = false;
-@props:placement: any;
-@props:offset: any = true;
-@props:class: string;
+@prop children
+@prop color = "primary"
+@prop cornerStyle = "circular"
+@prop size = "md"
+@prop border = false
+@prop placement
+@prop offset = true
+@prop class: className
+@prop ...restProps
 -->

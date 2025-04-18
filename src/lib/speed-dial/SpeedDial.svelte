@@ -26,13 +26,16 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:popperClass: any;
-@props:placement: any = "top";
-@props:pill: any = true;
-@props:tooltip: any = "left";
-@props:trigger: any = "hover";
-@props:textOutside: any = false;
-@props:class: string;
+@prop children
+@prop popperClass
+@prop placement = "top"
+@prop pill = true
+@prop tooltip = "left"
+@prop trigger = "hover"
+@prop textOutside = false
+@prop class: className
+@prop ...restProps
 -->

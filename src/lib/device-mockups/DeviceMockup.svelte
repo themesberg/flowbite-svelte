@@ -31,7 +31,9 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+DeviceMockupProps
 ## Props
-@props: children: any;
-@props:device: any = "default";
+@prop children
+@prop device = "default"
 -->

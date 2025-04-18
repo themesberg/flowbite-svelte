@@ -25,14 +25,16 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: rating: any;
-@props:globalText: any;
-@props:ratings: any;
-@props:divClass: any;
-@props:spanClass: any;
-@props:div2Class: any;
-@props:div3Class: any;
-@props:span2Class: any;
-@props:unit: any;
+@prop rating
+@prop globalText
+@prop ratings
+@prop divClass
+@prop spanClass
+@prop div2Class
+@prop div3Class
+@prop span2Class
+@prop unit
 -->

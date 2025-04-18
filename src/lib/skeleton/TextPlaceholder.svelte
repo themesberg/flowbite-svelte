@@ -47,7 +47,10 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: size: any = "sm";
-@props:class: string;
+@prop size = "sm"
+@prop class: className
+@prop ...restProps
 -->

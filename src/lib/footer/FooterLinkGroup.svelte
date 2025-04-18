@@ -12,7 +12,10 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: class: string;
-@props:children: any;
+@prop class: ulClass
+@prop children
+@prop ...restProps
 -->

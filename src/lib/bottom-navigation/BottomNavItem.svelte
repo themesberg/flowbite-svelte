@@ -1,7 +1,8 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import type { HTMLButtonAttributes, HTMLAnchorAttributes } from "svelte/elements";
-  import { type BottomNavItemProps, type BottomNavContextType, type BottomNavVariantType, bottomNavItem } from "./index";
+  import { bottomNavItem } from "./index";
+  import type { BottomNavItemProps, BottomNavContextType, BottomNavVariantType } from "../types"
   import { twMerge } from "tailwind-merge";
 
   let { children, btnName, appBtnPosition = "middle", target, activeClass, href = "", btnClass, spanClass, ...restProps }: BottomNavItemProps = $props();
@@ -66,13 +67,16 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L262)
 ## Props
-@props: children: any;
-@props:btnName: any;
-@props:appBtnPosition: any = "middle";
-@props:target: any;
-@props:activeClass: any;
-@props:href: any = "";
-@props:btnClass: any;
-@props:spanClass: any;
+@prop children
+@prop btnName
+@prop appBtnPosition = "middle"
+@prop target
+@prop activeClass
+@prop href = ""
+@prop btnClass
+@prop spanClass
+@prop ...restProps
 -->

@@ -59,10 +59,13 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+DarkmodeProps
 ## Props
-@props: class: string;
-@props:lightIcon: any;
-@props:darkIcon: any;
-@props:size: any = "md";
-@props:ariaLabel: any = "Dark mode";
+@prop class: className
+@prop lightIcon
+@prop darkIcon
+@prop size = "md"
+@prop ariaLabel = "Dark mode"
+@prop ...restProps
 -->

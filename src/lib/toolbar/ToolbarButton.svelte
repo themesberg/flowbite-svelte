@@ -33,12 +33,15 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+Props
 ## Props
-@props: children: any;
-@props:onclick: any;
-@props:color: any;
-@props:name: any;
-@props:"aria-label": any;
-@props:size: any;
-@props:class: string;
+@prop children
+@prop onclick
+@prop color
+@prop name
+@prop "aria-label": ariaLabel
+@prop size
+@prop class: className
+@prop ...restProps
 -->
