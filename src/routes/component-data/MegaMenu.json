@@ -1,35 +1,11 @@
 {
   "name": "MegaMenu",
   "props": [
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "extra",
-      "any",
-      ""
-    ],
-    [
-      "items",
-      "any",
-      "[]"
-    ],
-    [
-      "full",
-      "any",
-      ""
-    ],
-    [
-      "ulClass",
-      "any",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ]
+    ["children", "any", ""],
+    ["extra", "any", ""],
+    ["items", "any", "[]"],
+    ["full", "any", ""],
+    ["ulClass", "any", ""],
+    ["class", "string", ""]
   ]
 }

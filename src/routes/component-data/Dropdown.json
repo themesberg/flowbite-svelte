@@ -1,40 +1,12 @@
 {
   "name": "Dropdown",
   "props": [
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "simple",
-      "any",
-      "false"
-    ],
-    [
-      "placement",
-      "any",
-      "\"bottom\""
-    ],
-    [
-      "offset",
-      "any",
-      "2"
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ],
-    [
-      "backdropClass",
-      "any",
-      ""
-    ],
-    [
-      "activeUrl",
-      "any",
-      "\"\""
-    ]
+    ["children", "any", ""],
+    ["simple", "any", "false"],
+    ["placement", "any", "\"bottom\""],
+    ["offset", "any", "2"],
+    ["class", "string", ""],
+    ["backdropClass", "any", ""],
+    ["activeUrl", "any", "\"\""]
   ]
 }

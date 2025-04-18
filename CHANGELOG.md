@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.0-next.12
+
+### Patch Changes
+
+- fix: component docs up to table
+
 ## 1.0.0-next.11
 
 ### Patch Changes

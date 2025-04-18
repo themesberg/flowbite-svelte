@@ -1,25 +1,9 @@
 {
   "name": "ControlButton",
   "props": [
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "forward",
-      "any",
-      ""
-    ],
-    [
-      "name",
-      "any",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ]
+    ["children", "any", ""],
+    ["forward", "any", ""],
+    ["name", "any", ""],
+    ["class", "string", ""]
   ]
 }

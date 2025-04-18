@@ -3,7 +3,7 @@
   import { twMerge } from "tailwind-merge";
   import { writable } from "svelte/store";
   import { bottomNav } from "./index";
-  import type { BottomNavProps, BottomNavContextType } from "$lib/types"
+  import type { BottomNavProps, BottomNavContextType } from "$lib/types";
 
   let { children, header, position = "fixed", navType = "default", outerClass, innerClass, activeClass, activeUrl = "", ...restProps }: BottomNavProps = $props();
 

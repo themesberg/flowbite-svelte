@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { indicator } from "./index";
   import type { IndicatorProps } from "$lib/types";
-  
+
   let { children, color = "primary", cornerStyle = "circular", size = "md", border = false, placement, offset = true, class: className, ...restProps }: IndicatorProps = $props();
 
   let hasChildren = !!children;

@@ -1,65 +1,17 @@
 {
   "name": "Drawer",
   "props": [
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "hidden",
-      "any",
-      "$bindable()"
-    ],
-    [
-      "closeDrawer",
-      "any",
-      "()"
-    ],
-    [
-      "activateClickOutside",
-      "any",
-      "true"
-    ],
-    [
-      "position",
-      "any",
-      ""
-    ],
-    [
-      "width",
-      "any",
-      ""
-    ],
-    [
-      "backdrop",
-      "any",
-      "true"
-    ],
-    [
-      "backdropClass",
-      "any",
-      ""
-    ],
-    [
-      "placement",
-      "any",
-      "\"left\""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ],
-    [
-      "transitionParams",
-      "any",
-      ""
-    ],
-    [
-      "transitionType",
-      "any",
-      "fly"
-    ]
+    ["children", "any", ""],
+    ["hidden", "any", "$bindable()"],
+    ["closeDrawer", "any", "()"],
+    ["activateClickOutside", "any", "true"],
+    ["position", "any", ""],
+    ["width", "any", ""],
+    ["backdrop", "any", "true"],
+    ["backdropClass", "any", ""],
+    ["placement", "any", "\"left\""],
+    ["class", "string", ""],
+    ["transitionParams", "any", ""],
+    ["transitionType", "any", "fly"]
   ]
 }

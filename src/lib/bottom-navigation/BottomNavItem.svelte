@@ -2,7 +2,7 @@
   import { getContext } from "svelte";
   import type { HTMLButtonAttributes, HTMLAnchorAttributes } from "svelte/elements";
   import { bottomNavItem } from "./index";
-  import type { BottomNavItemProps, BottomNavContextType, BottomNavVariantType } from "$lib/types"
+  import type { BottomNavItemProps, BottomNavContextType, BottomNavVariantType } from "$lib/types";
   import { twMerge } from "tailwind-merge";
 
   let { children, btnName, appBtnPosition = "middle", target, activeClass, href = "", btnClass, spanClass, ...restProps }: BottomNavItemProps = $props();

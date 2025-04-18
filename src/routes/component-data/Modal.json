@@ -1,105 +1,25 @@
 {
   "name": "Modal",
   "props": [
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "oncancel",
-      "any",
-      ""
-    ],
-    [
-      "modal",
-      "any",
-      "true"
-    ],
-    [
-      "autoclose",
-      "any",
-      "false"
-    ],
-    [
-      "header",
-      "any",
-      ""
-    ],
-    [
-      "footer",
-      "any",
-      ""
-    ],
-    [
-      "title",
-      "any",
-      ""
-    ],
-    [
-      "open",
-      "any",
-      "$bindable(false)"
-    ],
-    [
-      "dismissable",
-      "any",
-      "true"
-    ],
-    [
-      "closeBtnClass",
-      "any",
-      ""
-    ],
-    [
-      "headerClass",
-      "any",
-      ""
-    ],
-    [
-      "bodyClass",
-      "any",
-      ""
-    ],
-    [
-      "footerClass",
-      "any",
-      ""
-    ],
-    [
-      "outsideclose",
-      "any",
-      "true"
-    ],
-    [
-      "size",
-      "any",
-      "\"md\""
-    ],
-    [
-      "placement",
-      "any",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ],
-    [
-      "params",
-      "any",
-      "{ duration: 100"
-    ],
-    [
-      "easing",
-      "any",
-      ""
-    ],
-    [
-      "transition",
-      "any",
-      "fade"
-    ]
+    ["children", "any", ""],
+    ["oncancel", "any", ""],
+    ["modal", "any", "true"],
+    ["autoclose", "any", "false"],
+    ["header", "any", ""],
+    ["footer", "any", ""],
+    ["title", "any", ""],
+    ["open", "any", "$bindable(false)"],
+    ["dismissable", "any", "true"],
+    ["closeBtnClass", "any", ""],
+    ["headerClass", "any", ""],
+    ["bodyClass", "any", ""],
+    ["footerClass", "any", ""],
+    ["outsideclose", "any", "true"],
+    ["size", "any", "\"md\""],
+    ["placement", "any", ""],
+    ["class", "string", ""],
+    ["params", "any", "{ duration: 100"],
+    ["easing", "any", ""],
+    ["transition", "any", "fade"]
   ]
 }

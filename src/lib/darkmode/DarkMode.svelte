@@ -1,6 +1,6 @@
 <script lang="ts">
   import { darkmode } from "./";
-  import type { DarkmodeProps } from "$lib/types"
+  import type { DarkmodeProps } from "$lib/types";
 
   // const THEME_PREFERENCE_KEY = 'color-theme';
   let { class: className, lightIcon, darkIcon, size = "md", ariaLabel = "Dark mode", ...restProps }: DarkmodeProps = $props();

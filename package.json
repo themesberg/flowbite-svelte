@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "1.0.0-next.11",
+  "version": "1.0.0-next.12",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -28,7 +28,7 @@
     "gen:exports": "svelte-lib-helpers exports",
     "gen:docspropvalue": "svelte-lib-helpers docspropvalue",
     "copy:packagejson": "svelte-lib-helpers package",
-    "lib-helpers": "pnpm gen:component-data-from-type && pnpm format && pnpm package && pnpm gen:exports && pnpm copy:packagejson",
+    "lib-helpers": "pnpm gen:docspropvalue && pnpm format && pnpm package && pnpm gen:exports && pnpm copy:packagejson",
     "ch": "npx changeset",
     "cv": "npx changeset version",
     "cp": "npx changeset publish"

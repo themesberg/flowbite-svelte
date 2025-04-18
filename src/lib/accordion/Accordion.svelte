@@ -2,7 +2,7 @@
   import { setContext, getContext } from "svelte";
   import { writable } from "svelte/store";
   import { accordion } from "./";
-  import type { AccordionProps } from "$lib/types"
+  import type { AccordionProps } from "$lib/types";
   import type { BaseThemes } from "$lib/theme";
   import clsx from "clsx";
 

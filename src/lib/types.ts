@@ -38,14 +38,7 @@ import type { TableVariants } from "$lib/table/theme";
 
 import type { ToolbarButtonVariants, ToolbarGroupVariants, ToolbarVariants } from "$lib/toolbar/theme";
 
-
-
-
-
-
 // end of component variants
-
-
 
 export interface ThemeConfig {
   slots?: Record<string, object | string>;
@@ -165,7 +158,6 @@ interface ButtonAttibutes extends Omit<HTMLButtonAttributes, "on:copy" | "oncopy
 }
 
 export type AnchorButtonAttributes = AnchorAttributes | ButtonAttibutes;
-
 
 // accordion
 export interface AccordionCtxType {
@@ -300,7 +292,6 @@ export interface BottomNavHeaderItemProps extends HTMLButtonAttributes {
   active?: boolean;
 }
 
-
 // breadcrumb
 export interface BreadcrumbProps extends HTMLAttributes<HTMLElement> {
   children: Snippet;
@@ -352,7 +343,7 @@ export type PaddingType = "sm" | "lg" | "md" | "xl" | "xs" | "none" | undefined;
 
 export type ShadowType = "sm" | "normal" | "lg" | "md" | "xl" | "2xl" | "inner" | undefined;
 
-export type ColorType = "primary" | "secondary" | "gray" |"red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined;
+export type ColorType = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined;
 
 export interface BaseCardProps {
   children: Snippet;
@@ -373,8 +364,6 @@ export interface BaseCardProps {
 export type CardProps = BaseCardProps & (({ href: string } & HTMLAnchorAttributes) | ({ href?: never } & HTMLAttributes<HTMLDivElement>));
 
 // carousel
-
-
 
 export type State = {
   images: HTMLImgAttributes[];
@@ -892,7 +881,6 @@ export interface MenuProps extends SVGAttributes<SVGSVGElement> {
   ariaLabel?: string;
 }
 
-
 export type NavbarState = {
   hidden: boolean;
   activeClass?: string;
@@ -929,19 +917,6 @@ export type NavLiProps = AnchorButtonAttributes & {
   activeClass?: string;
   nonActiveClass?: string;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // toolbar
 export interface ToolbarProps extends ToolbarVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
@@ -1364,10 +1339,3 @@ export interface TableSearchProps extends HTMLTableAttributes {
   tableClass?: string;
   placeholder?: string;
 }
-
-
-
-
-
-
-

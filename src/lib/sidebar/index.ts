@@ -9,4 +9,4 @@ import SidebarCta from "./SidebarCta.svelte";
 import SidebarBrand from "./SidebarBrand.svelte";
 import { sidebar, sidebarbutton, sidebarcta, sitebarbrand, sidebardropdownwrapper } from "./theme";
 
-export { Sidebar, sidebar,SidebarDropdownItem, SidebarDropdownWrapper, SidebarWrapper, sidebardropdownwrapper,  SidebarGroup, SidebarItem, SidebarButton, sidebarbutton, SidebarCta, sidebarcta, SidebarBrand, sitebarbrand };
+export { Sidebar, sidebar, SidebarDropdownItem, SidebarDropdownWrapper, SidebarWrapper, sidebardropdownwrapper, SidebarGroup, SidebarItem, SidebarButton, sidebarbutton, SidebarCta, sidebarcta, SidebarBrand, sitebarbrand };

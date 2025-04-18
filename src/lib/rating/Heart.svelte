@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type {  RatingIconProps } from "$lib/types";
+  import type { RatingIconProps } from "$lib/types";
 
   let { fillPercent = 100, fillColor = "#ff0000", strokeColor = "#ff0000", size = 24, ariaLabel = "star", iconIndex = 0, groupId = "star", role = "img", svgClass, ...restProps }: RatingIconProps = $props();
 

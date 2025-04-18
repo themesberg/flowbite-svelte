@@ -1,6 +1,6 @@
 <script lang="ts">
   import { smartwatch } from ".";
-  import type {SmartwatchProps} from "$lib/types"
+  import type { SmartwatchProps } from "$lib/types";
 
   let { children, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: SmartwatchProps = $props();
 

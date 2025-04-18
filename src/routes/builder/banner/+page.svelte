@@ -45,31 +45,31 @@
   };
 
   const transitions: BuilderTransitionOption[] = [
-    { 
-      name: "Fly", 
-      transition: fly, 
-      codeImportName: "fly", 
+    {
+      name: "Fly",
+      transition: fly,
+      codeImportName: "fly",
       params: { duration: 500, easing: linear, x: 150 },
       easingName: "linear"
     },
-    { 
-      name: "Blur", 
-      transition: blur, 
-      codeImportName: "blur", 
+    {
+      name: "Blur",
+      transition: blur,
+      codeImportName: "blur",
       params: { duration: 500, easing: linear },
       easingName: "linear"
     },
-    { 
-      name: "Slide", 
-      transition: slide, 
-      codeImportName: "slide", 
+    {
+      name: "Slide",
+      transition: slide,
+      codeImportName: "slide",
       params: { duration: 500, easing: linear, x: -150 },
       easingName: "linear"
     },
-    { 
-      name: "Scale", 
-      transition: scale, 
-      codeImportName: "scale", 
+    {
+      name: "Scale",
+      transition: scale,
+      codeImportName: "scale",
       params: { duration: 500, easing: linear },
       easingName: "linear"
     }
@@ -89,21 +89,20 @@
       if (currentTransition !== transitions[0]) {
         props.push(` transition={${currentTransition.transition.name}}`);
 
-       // Generate params string without quotes and handle functions
-      const paramsString = Object.entries(currentTransition.params)
-        .map(([key, value]) => {
-          if (key === "easing") {
-            return `${key}:${currentTransition.easingName}`;
-          }
-          if (typeof value === "function") {
-            return `${key}:${value.name}`;
-          }
-          return `${key}:${value}`;
-        })
-        .filter(item => !item.includes("easingName")) // Filter out the helper property
-        .join(",");
-      props.push(` params={{${paramsString}}}`);
-      
+        // Generate params string without quotes and handle functions
+        const paramsString = Object.entries(currentTransition.params)
+          .map(([key, value]) => {
+            if (key === "easing") {
+              return `${key}:${currentTransition.easingName}`;
+            }
+            if (typeof value === "function") {
+              return `${key}:${value.name}`;
+            }
+            return `${key}:${value}`;
+          })
+          .filter((item) => !item.includes("easingName")) // Filter out the helper property
+          .join(",");
+        props.push(` params={{${paramsString}}}`);
       }
 
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";

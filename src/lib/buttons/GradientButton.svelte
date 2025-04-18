@@ -2,7 +2,7 @@
   import Button from "./Button.svelte";
   import { getContext } from "svelte";
   import { gradientButton } from ".";
-  import type { GradientButtonProps } from "$lib/types"
+  import type { GradientButtonProps } from "$lib/types";
   import type { SizeType } from "$lib/types";
   import clsx from "clsx";
 

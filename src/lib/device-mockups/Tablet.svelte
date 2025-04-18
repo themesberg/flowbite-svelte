@@ -1,6 +1,6 @@
 <script lang="ts">
   import { tablet } from ".";
-  import type {TabletProps} from "$lib/types"
+  import type { TabletProps } from "$lib/types";
 
   let { children, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: TabletProps = $props();
 

@@ -1,15 +1,7 @@
 {
   "name": "Layout",
   "props": [
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ]
+    ["children", "any", ""],
+    ["class", "string", ""]
   ]
 }

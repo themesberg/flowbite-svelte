@@ -4,7 +4,7 @@
   import clsx from "clsx";
   import { getContext } from "svelte";
   import { avatar } from ".";
-  import type { AvatarProps } from "$lib/types"
+  import type { AvatarProps } from "$lib/types";
 
   let { children, src, href, target, cornerStyle = "circular", border = false, stacked = false, dot, class: className, alt, size = "md", onclick, ...restProps }: AvatarProps = $props();
 

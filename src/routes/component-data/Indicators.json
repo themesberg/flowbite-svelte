@@ -1,25 +1,9 @@
 {
   "name": "Indicators",
   "props": [
-    [
-      "children",
-      "any",
-      ""
-    ],
-    [
-      "activeClass",
-      "any",
-      ""
-    ],
-    [
-      "inactiveClass",
-      "any",
-      ""
-    ],
-    [
-      "class",
-      "string",
-      ""
-    ]
+    ["children", "any", ""],
+    ["activeClass", "any", ""],
+    ["inactiveClass", "any", ""],
+    ["class", "string", ""]
   ]
 }
