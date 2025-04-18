@@ -1,8 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type LayoutProps as Props, layout } from "./index";
+  import { layout } from "./index";
+  import type { LayoutProps } from "$lib/types";
 
-  let { children, class: className, ...restProps }: Props = $props();
+  let { children, class: className, ...restProps }: LayoutProps = $props();
 
   let classDiv = $derived(layout({ class: clsx(className) }));
 </script>
@@ -15,7 +16,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[LayoutProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1551)
 ## Props
 @prop children
 @prop class: className

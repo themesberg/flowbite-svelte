@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { type GroupItemProps as Props, groupitem } from ".";
-
-  let { timelines, aClass, imgClass, divClass, titleClass, spanClass, ...restProps }: Props = $props();
+  import { groupitem } from ".";
+  import type { GroupItemProps } from "$lib/types";
+  let { timelines, aClass, imgClass, divClass, titleClass, spanClass, ...restProps }: GroupItemProps = $props();
 
   const { a, img, div, title, span } = $derived(groupitem());
 </script>
@@ -41,7 +41,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[GroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1438)
 ## Props
 @prop timelines
 @prop aClass

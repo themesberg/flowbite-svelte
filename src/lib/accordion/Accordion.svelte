@@ -2,8 +2,7 @@
   import { setContext, getContext } from "svelte";
   import { writable } from "svelte/store";
   import { accordion } from "./";
-  import type { AccordionProps } from "$lib/types";
-  import type { BaseThemes } from "$lib/theme";
+  import type { AccordionProps, BaseThemes } from "$lib/types";
   import clsx from "clsx";
 
   let { children, flush, activeClass, inactiveClass, multiple = false, class: className, ...restProps }: AccordionProps = $props();
@@ -32,7 +31,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L181)
+[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L188)
 ## Props
 @prop children
 @prop flush

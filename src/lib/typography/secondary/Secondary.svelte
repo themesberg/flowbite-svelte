@@ -1,8 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type SecondaryProps as Props, secondary } from "./index";
+  import { secondary } from "./index";
+  import type { SecondaryProps } from "$lib/types";
 
-  let { children, class: className, ...restProps }: Props = $props();
+  let { children, class: className, ...restProps }: SecondaryProps = $props();
 </script>
 
 <small {...restProps} class={secondary({ class: clsx(className) })}>
@@ -13,7 +14,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[SecondaryProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1589)
 ## Props
 @prop children
 @prop class: className

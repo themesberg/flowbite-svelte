@@ -35,7 +35,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L248)
+[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L255)
 ## Props
 @prop children
 @prop header

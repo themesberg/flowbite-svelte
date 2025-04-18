@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { type ActivityItemProps as Props, activityitem } from "./index";
+  import { activityitem } from "./index";
+  import type { ActivityItemProps } from "$lib/types";
 
-  let { activities, liClass, spanClass, imgClass, outerDivClass, innerDivClass, timeClass, titleClass, textClass, ...restProps }: Props = $props();
+  let { activities, liClass, spanClass, imgClass, outerDivClass, innerDivClass, timeClass, titleClass, textClass, ...restProps }: ActivityItemProps = $props();
 
   const { li, span, img, outerDiv, innerDiv, time, title, text } = $derived(activityitem());
 </script>
@@ -31,7 +32,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[ActivityItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1418)
 ## Props
 @prop activities
 @prop liClass

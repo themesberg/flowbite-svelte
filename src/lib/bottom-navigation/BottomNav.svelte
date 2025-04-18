@@ -38,7 +38,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L269)
+[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L276)
 ## Props
 @prop children
 @prop header

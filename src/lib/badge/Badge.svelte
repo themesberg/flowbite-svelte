@@ -4,8 +4,7 @@
   import type { BadgeProps } from "$lib/types";
   import { CloseButton } from "$lib";
   import { fade } from "svelte/transition";
-  import type { ParamsType } from "$lib/types";
-  import type { BaseThemes } from "$lib/theme";
+  import type { ParamsType, BaseThemes } from "$lib/types";
   import clsx from "clsx";
 
   let { children, icon, badgeStatus = $bindable(true), color = "primary", large = false, dismissable = false, class: className, border, href, target, rounded, transition = fade, params, aClass, onclose, ...restProps }: BadgeProps = $props();
@@ -50,7 +49,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L233)
+[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L240)
 ## Props
 @prop children
 @prop icon

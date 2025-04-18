@@ -1,9 +1,10 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { type ListProps as Props, list } from "./index";
+  import { list } from "./index";
+  import type { ListProps } from "$lib/types";
   import clsx from "clsx";
 
-  let { children, tag = "ul", isContenteditable = false, position = "inside", ctxClass, class: className, ...restProps }: Props = $props();
+  let { children, tag = "ul", isContenteditable = false, position = "inside", ctxClass, class: className, ...restProps }: ListProps = $props();
 
   let contextClass = $state(ctxClass || "");
 
@@ -24,7 +25,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1556)
 ## Props
 @prop children
 @prop tag = "ul"

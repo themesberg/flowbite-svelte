@@ -232,4 +232,4 @@ export const baseThemes = {
   span
 };
 
-export type BaseThemes = typeof baseThemes;
+// export type BaseThemes = typeof baseThemes;

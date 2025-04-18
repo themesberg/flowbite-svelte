@@ -1,8 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type BlockquoteProps as Props, blockquote } from "./index";
+  import { blockquote } from "./index";
+  import type { BlockquoteProps } from "$lib/types";
 
-  let { children, class: className, border, italic = true, bg, alignment = "left", size = "lg", ...restProps }: Props = $props();
+  let { children, class: className, border, italic = true, bg, alignment = "left", size = "lg", ...restProps }: BlockquoteProps = $props();
 
   let blockquoteClass = $derived(
     blockquote({
@@ -24,7 +25,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[BlockquoteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1497)
 ## Props
 @prop children
 @prop class: className

@@ -1,8 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type ParagraphProps as Props, paragraph } from "./index";
+  import { paragraph } from "./index";
+  import type { ParagraphProps } from "$lib/types";
 
-  let { children, class: className = "text-gray-900 dark:text-white", height = "normal", align = "left", justify = false, italic, firstUpper = false, whitespace = "normal", size = "base", space = "normal", weight = "normal", ...restProps }: Props = $props();
+  let { children, class: className = "text-gray-900 dark:text-white", height = "normal", align = "left", justify = false, italic, firstUpper = false, whitespace = "normal", size = "base", space = "normal", weight = "normal", ...restProps }: ParagraphProps = $props();
 
   let classP = $derived(paragraph({ height, size, weight, space, align, justify, italic, firstUpper, whitespace, class: clsx(className) }));
 </script>
@@ -15,7 +16,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[ParagraphProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1575)
 ## Props
 @prop children
 @prop class: className = "text-gray-900 dark:text-white"

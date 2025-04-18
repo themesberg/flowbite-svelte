@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { type VideoProps as Props } from "./index";
+  import type { VideoProps } from "$lib/types";
 
-  let { children, type = "video/mp4", trackSrc, src, srclang = "en", label = "english_captions", class: classname, ...restProps }: Props = $props();
+  let { children, type = "video/mp4", trackSrc, src, srclang = "en", label = "english_captions", class: classname, ...restProps }: VideoProps = $props();
 </script>
 
 <video {...restProps} class={classname}>
@@ -17,7 +17,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[VideoProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1608)
 ## Props
 @prop children
 @prop type = "video/mp4"

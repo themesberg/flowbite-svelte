@@ -1,10 +1,11 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import { writable } from "svelte/store";
-  import { type TabitemProps as Props, type TabCtxType, tabItem, tabs } from ".";
+  import { tabItem, tabs } from ".";
+  import type { TabitemProps, TabCtxType } from "$lib/types";
   import clsx from "clsx";
 
-  let { children, titleSlot, open = false, title = "Tab title", activeClass, inactiveClass, class: className, disabled, tabStyle, ...restProps }: Props = $props();
+  let { children, titleSlot, open = false, title = "Tab title", activeClass, inactiveClass, class: className, disabled, tabStyle, ...restProps }: TabitemProps = $props();
 
   const ctx: TabCtxType = getContext("ctx");
   let compoTabStyle = $derived(tabStyle ? tabStyle : ctx.tabStyle || "full");
@@ -62,7 +63,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1367)
 ## Props
 @prop children
 @prop titleSlot

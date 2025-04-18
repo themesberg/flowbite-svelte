@@ -52,7 +52,7 @@ export const timeline = tv({
   }
 });
 
-export type TimelineItemVariants = VariantProps<typeof timelineitem>;
+// export type TimelineItemVariants = VariantProps<typeof timelineitem>;
 
 export const timelineitem = tv({
   slots: {

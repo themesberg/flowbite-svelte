@@ -1,9 +1,10 @@
 <script lang="ts">
   import { writable } from "svelte/store";
   import { setContext } from "svelte";
-  import { type TabsProps as Props, type TabCtxType, tabs } from ".";
+  import { tabs } from ".";
+  import type { TabsProps, TabCtxType } from "$lib/types";
 
-  let { children, tabStyle = "none", ulClass, contentClass, divider = true, ...restProps }: Props = $props();
+  let { children, tabStyle = "none", ulClass, contentClass, divider = true, ...restProps }: TabsProps = $props();
 
   const { base, content, divider: dividerClass } = $derived(tabs({ tabStyle, hasDivider: divider }));
 
@@ -42,7 +43,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1359)
 ## Props
 @prop children
 @prop tabStyle = "none"

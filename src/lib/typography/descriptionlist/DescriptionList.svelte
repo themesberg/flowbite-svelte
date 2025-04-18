@@ -1,8 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type DescriptionListProps as Props, descriptionList } from "./index";
+  import { descriptionList } from "./index";
+  import type { DescriptionListProps } from "$lib/types";
 
-  let { children, tag, class: className, ...restProps }: Props = $props();
+  let { children, tag, class: className, ...restProps }: DescriptionListProps = $props();
 
   let classDesc = $derived(
     descriptionList({
@@ -20,7 +21,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[DescriptionListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1507)
 ## Props
 @prop children
 @prop tag

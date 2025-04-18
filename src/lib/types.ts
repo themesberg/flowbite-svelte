@@ -1,10 +1,10 @@
-import type { HTMLButtonAttributes, HTMLAnchorAttributes, HTMLAttributes, HTMLLiAttributes, HTMLImgAttributes, HTMLInputAttributes, HTMLLabelAttributes, HTMLSelectAttributes, HTMLTextareaAttributes, HTMLDialogAttributes, SVGAttributes, HTMLTableAttributes, HTMLTdAttributes, HTMLThAttributes } from "svelte/elements";
-
+import type { HTMLButtonAttributes, HTMLAnchorAttributes, HTMLAttributes, HTMLLiAttributes, HTMLImgAttributes, HTMLInputAttributes, HTMLLabelAttributes, HTMLSelectAttributes, HTMLTextareaAttributes, HTMLDialogAttributes, SVGAttributes, HTMLTableAttributes, HTMLTdAttributes, HTMLThAttributes, HTMLOlAttributes, HTMLBlockquoteAttributes, HTMLSourceAttributes, HTMLTrackAttributes, HTMLVideoAttributes } from "svelte/elements";
 import type { TransitionConfig, FadeParams, BlurParams, FlyParams, SlideParams, ScaleParams, EasingFunction } from "svelte/transition";
 import { type Writable } from "svelte/store";
 import type { Snippet, Component } from "svelte";
 import type { Placement } from "@floating-ui/utils";
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+import type { Picture } from "vite-imagetools";
 
 // component variants
 import type { AlertVariants } from "./alert/theme";
@@ -35,8 +35,23 @@ import type { SidebarVariants } from "$lib/sidebar/theme";
 import type { CardPlaceholderVariants, ImagePlaceholderVariants, ListPlaceholderVariants, SkeletonVariants, TextPlaceholderVariants, VideoPlaceholderVariants } from "$lib/skeleton/theme";
 import type { SpinnerVaraiants } from "$lib/spinner/theme";
 import type { TableVariants } from "$lib/table/theme";
-
+import type { TabsVaraints } from "$lib/tabs/theme";
+import { baseThemes } from "$lib/theme";
+import { timeline } from "$lib/timeline/theme";
+import type { ToastVaraints } from "$lib/toast/theme";
 import type { ToolbarButtonVariants, ToolbarGroupVariants, ToolbarVariants } from "$lib/toolbar/theme";
+import type { TooltipVariants } from "$lib/tooltip/theme";
+// typography component variants
+import type { AnchorVariants } from "$lib/typography/anchor/theme";
+import type { BlockquoteVariants } from "$lib/typography/blockquote/theme";
+import type { DescriptionListVariants } from "$lib/typography/descriptionlist/theme";
+import type { HeadingVariants } from "$lib/typography/heading/theme";
+import type { ImgVariants } from "$lib/typography/img/theme";
+import type { ListVariants } from "$lib/typography/list/theme";
+import type { ParagraphVariants } from "$lib/typography/paragraph/theme";
+import type { SpanVariants } from "$lib/typography/span/theme";
+
+
 
 // end of component variants
 
@@ -1339,3 +1354,264 @@ export interface TableSearchProps extends HTMLTableAttributes {
   tableClass?: string;
   placeholder?: string;
 }
+
+// tabs
+export interface TabsProps extends HTMLAttributes<HTMLUListElement> {
+  children: Snippet;
+  tabStyle?: TabsVaraints["tabStyle"];
+  ulClass?: string;
+  contentClass?: string;
+  divider?: boolean;
+}
+
+export interface TabitemProps extends HTMLLiAttributes {
+  children?: Snippet;
+  titleSlot?: Snippet;
+  open?: boolean;
+  title?: string;
+  activeClass?: string;
+  inactiveClass?: string;
+  disabled?: boolean;
+  tabStyle?: TabsVaraints["tabStyle"];
+}
+
+export interface TabCtxType {
+  activeClass?: string;
+  inactiveClass?: string;
+  tabStyle?: TabsVaraints["tabStyle"];
+  selected: Writable<HTMLElement>;
+  panelId: string;
+}
+
+// theme
+export type BaseThemes = typeof baseThemes;
+
+export interface ThemeProps {
+  children: Snippet;
+  theme?: BaseThemes;
+}
+
+// timeline
+export type TimelineVariants = VariantProps<typeof timeline>;
+
+export interface ActivityType {
+  title: HTMLElement | string;
+  date: Date | string;
+  src: string;
+  alt: string;
+  text?: HTMLElement | string;
+}
+
+export interface GroupTimelineType {
+  name: string | HTMLElement;
+  src: string;
+  alt: string;
+  href?: string;
+  isPrivate?: boolean;
+  comment?: string | HTMLElement;
+}
+
+export interface ActivityProps extends HTMLOlAttributes {
+  children: Snippet;
+}
+
+export interface ActivityItemProps extends HTMLLiAttributes {
+  activities: ActivityType[];
+  liClass?: string;
+  spanClass?: string;
+  imgClass?: string;
+  outerDivClass?: string;
+  innerDivClass?: string;
+  timeClass?: string;
+  titleClass?: string;
+  textClass?: string;
+}
+
+export interface GroupProps extends HTMLOlAttributes {
+  children: Snippet;
+  divClass?: string;
+  timeClass?: string;
+  date?: Date | string;
+  olClass?: string;
+}
+
+export interface GroupItemProps extends HTMLLiAttributes {
+  timelines: GroupTimelineType[];
+  aClass?: string;
+  imgClass?: string;
+  divClass?: string;
+  titleClass?: string;
+  spanClass?: string;
+}
+
+export type DateFormat = "year" | "month-year" | "full-date";
+
+export interface TimelineProps extends HTMLOlAttributes {
+  children: Snippet;
+  order?: TimelineVariants["order"];
+}
+
+export interface TimelineItemProps extends HTMLLiAttributes {
+  children: Snippet;
+  orientationSlot?: Snippet;
+  title: string;
+  date: string;
+  svgClass?: string;
+  liClass?: string;
+  divClass?: string;
+  timeClass?: string;
+  h3Class?: string;
+  dateFormat?: DateFormat;
+}
+
+// toast
+export interface ToastProps extends HTMLAttributes<HTMLDivElement> {
+  children: Snippet;
+  icon?: Snippet;
+  toastStatus?: boolean;
+  dismissable?: boolean;
+  color?: ToastVaraints["color"];
+  position?: ToastVaraints["position"];
+  baseClass?: string;
+  iconClass?: string;
+  contentClass?: string;
+  align?: boolean;
+  params?: ParamsType;
+  transition?: TransitionFunc;
+}
+
+// tooltip
+export interface TooltipProps extends PopperProps {
+  type?: "light" | "dark";
+  color?: TooltipVariants["color"];
+}
+
+// typography
+// anchor
+export interface AnchorProps extends HTMLAnchorAttributes {
+  children: Snippet;
+  color?: AnchorVariants["color"];
+}
+
+// blockquote
+export interface BlockquoteProps extends HTMLBlockquoteAttributes {
+  children: Snippet;
+  border?: boolean;
+  italic?: boolean;
+  bg?: boolean;
+  alignment?: BlockquoteVariants["alignment"];
+  size?: BlockquoteVariants["size"];
+}
+
+// descriptionlist
+export interface DescriptionListProps extends HTMLAttributes<HTMLElement> {
+  children: Snippet;
+  tag: DescriptionListVariants["tag"];
+}
+
+// heading
+export interface HeadingProps extends HTMLAttributes<HTMLElement> {
+  children: Snippet;
+  tag?: HeadingVariants["tag"];
+}
+
+// hr
+export interface HrProps extends HTMLAttributes<HTMLElement> {
+  children?: Snippet;
+  divClass?: string;
+  iconDivClass?: string;
+  textSpanClass?: string;
+  innerDivClass?: string;
+}
+
+// img
+export type EnhancedImgAttributes = Omit<HTMLImgAttributes, "src"> & { src: string | Picture };
+
+export interface ImgProps extends HTMLImgAttributes {
+  size?: ImgVariants["size"];
+  effect?: ImgVariants["effect"];
+  caption?: string;
+  figClass?: string;
+  captionClass?: string;
+  href?: HTMLAnchorElement["href"];
+}
+
+export interface EnhandedImgProps extends EnhancedImgAttributes {
+  size?: ImgVariants["size"];
+  multiple?: boolean;
+  transform?: string;
+  effect?: ImgVariants["effect"];
+  caption?: string;
+  figClass?: string;
+  captionClass?: string;
+  href?: HTMLAnchorElement["href"];
+}
+
+// layout
+export interface LayoutProps extends HTMLAttributes<HTMLElement> {
+  children: Snippet;
+}
+
+// list
+export interface ListProps extends HTMLOlAttributes {
+  children: Snippet;
+  tag?: ListVariants["tag"];
+  position?: ListVariants["position"];
+  ctxClass?: string;
+  isContenteditable?: boolean;
+}
+
+export interface LiProps extends HTMLLiAttributes {
+  children: Snippet;
+  icon?: boolean;
+}
+
+// mark
+export interface MarkProps extends HTMLAttributes<HTMLElement> {
+  children: Snippet;
+}
+
+// paragraph
+export interface ParagraphProps extends HTMLAttributes<HTMLParagraphElement> {
+  children: Snippet;
+  italic?: boolean;
+  firstUpper?: boolean;
+  whitespace?: ParagraphVariants["whitespace"];
+  size?: ParagraphVariants["size"];
+  weight?: ParagraphVariants["weight"];
+  space?: ParagraphVariants["space"];
+  height?: ParagraphVariants["height"];
+  align?: ParagraphVariants["align"];
+  justify?: boolean;
+}
+
+// secondary
+export interface SecondaryProps extends HTMLAttributes<HTMLElement> {
+  children: Snippet;
+}
+
+// span
+export interface SpanProps extends HTMLAttributes<HTMLSpanElement> {
+  children?: Snippet;
+  italic?: boolean;
+  underline?: boolean;
+  linethrough?: boolean;
+  uppercase?: boolean;
+  gradient?: SpanVariants["gradient"];
+  highlight?: SpanVariants["highlight"];
+  decoration?: SpanVariants["decoration"];
+  decorationThickness?: SpanVariants["decorationThickness"];
+  decorationColor?: SpanVariants["decorationColor"];
+}
+
+// video
+export interface VideoProps extends HTMLVideoAttributes {
+  children?: Snippet;
+  type?: HTMLSourceAttributes["type"];
+  src?: HTMLSourceAttributes["src"];
+  trackSrc?: HTMLTrackAttributes["src"];
+  srclang?: HTMLTrackAttributes["lang"];
+  label?: HTMLTrackAttributes["label"];
+}
+
+

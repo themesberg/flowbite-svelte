@@ -2,14 +2,10 @@
   import deepmerge from "deepmerge";
   import { setContext, type Snippet } from "svelte";
   import { tv } from "tailwind-variants";
-  import { baseThemes, type BaseThemes } from "./index";
+  import { baseThemes } from ".";
+  import type { ThemeProps, BaseThemes } from "$lib/types";
 
-  interface Props {
-    children: Snippet;
-    theme?: BaseThemes;
-  }
-
-  let { children, theme }: Props = $props();
+  let { children, theme }: ThemeProps = $props();
 
   type K = keyof BaseThemes;
 
@@ -57,7 +53,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[ThemeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1389)
 ## Props
 @prop children
 @prop theme

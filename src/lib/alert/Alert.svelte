@@ -1,11 +1,10 @@
 <script lang="ts">
   import { CloseButton } from "$lib";
-  import type { BaseThemes } from "$lib/theme";
   import type { ParamsType } from "$lib/types";
   import { getContext } from "svelte";
   import { fade } from "svelte/transition";
   import { alert } from ".";
-  import type { AlertProps } from "$lib/types";
+  import type { AlertProps, BaseThemes } from "$lib/types";
   import clsx from "clsx";
 
   let { children, icon, alertStatus = $bindable(true), closeIcon: CloseIcon, color = "primary", rounded = true, border, class: className, dismissable, transition = fade, params, onclick = () => (alertStatus = false), ...restProps }: AlertProps = $props();
@@ -58,7 +57,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L207)
+[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L214)
 ## Props
 @prop children
 @prop icon

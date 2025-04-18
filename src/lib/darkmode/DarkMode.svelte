@@ -61,7 +61,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[DarkmodeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L436)
+[DarkmodeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L440)
 ## Props
 @prop class: className
 @prop lightIcon

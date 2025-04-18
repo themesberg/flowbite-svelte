@@ -16,7 +16,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[BottomNavHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L292)
+[BottomNavHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L299)
 ## Props
 @prop children
 @prop outerClass

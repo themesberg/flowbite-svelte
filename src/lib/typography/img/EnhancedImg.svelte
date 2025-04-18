@@ -1,7 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type EnhandedImgProps as Props, img } from ".";
-  let { src, href, caption, size, figClass, class: imgClass, captionClass, ...restProps }: Props = $props();
+  import { img } from ".";
+  import type { EnhandedImgProps } from "$lib/types";
+
+  let { src, href, caption, size, figClass, class: imgClass, captionClass, ...restProps }: EnhandedImgProps = $props();
 
   let { base, figure, figureCaption } = $derived(img({ size }));
 </script>
@@ -31,7 +33,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[EnhandedImgProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1539)
 ## Props
 @prop src
 @prop href

@@ -1,8 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type MarkProps as Props, mark } from "./index";
-
-  let { children, class: className, ...restProps }: Props = $props();
+  import { mark } from "./index";
+  import type { MarkProps } from "$lib/types";
+  
+  let { children, class: className, ...restProps }: MarkProps = $props();
 </script>
 
 <mark {...restProps} class={mark({ class: clsx(className) })}>
@@ -13,7 +14,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[MarkProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1570)
 ## Props
 @prop children
 @prop class: className

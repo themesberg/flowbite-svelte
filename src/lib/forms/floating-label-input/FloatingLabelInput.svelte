@@ -21,7 +21,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[FloatingLabelInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L678)
+[FloatingLabelInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L682)
 ## Props
 @prop children
 @prop id = idGenerator()

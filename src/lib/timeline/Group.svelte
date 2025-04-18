@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { type GroupProps as Props, group } from ".";
-
-  let { children, divClass, timeClass, date, olClass, ...restProps }: Props = $props();
+  import { group } from ".";
+  import type { GroupProps } from "$lib/types";
+  let { children, divClass, timeClass, date, olClass, ...restProps }: GroupProps = $props();
   const { div, time, ol } = $derived(group());
 </script>
 
@@ -16,7 +16,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1430)
 ## Props
 @prop children
 @prop divClass

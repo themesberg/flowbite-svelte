@@ -1,10 +1,11 @@
 <script lang="ts">
   import { CloseButton } from "$lib";
   import type { ParamsType } from "$lib/types";
-  import { toast, type ToastProps as Props } from ".";
+  import { toast } from ".";
+  import type { ToastProps } from "$lib/types";
   import { fly } from "svelte/transition";
 
-  let { children, icon, toastStatus = $bindable(true), dismissable = true, color = "primary", position, baseClass, iconClass, contentClass, align = true, params, transition = fly, ...restProps }: Props = $props();
+  let { children, icon, toastStatus = $bindable(true), dismissable = true, color = "primary", position, baseClass, iconClass, contentClass, align = true, params, transition = fly, ...restProps }: ToastProps = $props();
 
   const { base, icon: iconVariants, content, close } = $derived(toast({ color, position, align }));
 </script>
@@ -38,7 +39,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1468)
 ## Props
 @prop children
 @prop icon

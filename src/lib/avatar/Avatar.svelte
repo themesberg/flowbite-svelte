@@ -1,10 +1,9 @@
 <script lang="ts">
   import { Indicator } from "$lib";
-  import type { BaseThemes } from "$lib/theme";
   import clsx from "clsx";
   import { getContext } from "svelte";
   import { avatar } from ".";
-  import type { AvatarProps } from "$lib/types";
+  import type { AvatarProps, BaseThemes } from "$lib/types";
 
   let { children, src, href, target, cornerStyle = "circular", border = false, stacked = false, dot, class: className, alt, size = "md", onclick, ...restProps }: AvatarProps = $props();
 
@@ -49,7 +48,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[AvatarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L218)
+[AvatarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L225)
 ## Props
 @prop children
 @prop src

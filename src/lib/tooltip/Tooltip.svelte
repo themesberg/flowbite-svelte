@@ -3,7 +3,7 @@
   import type { TriggeredToggleEvent } from "../utils/Popper.svelte";
   import Popper from "../utils/Popper.svelte";
   import { tooltip } from "./theme";
-  import type { TooltipProps } from "./type";
+  import type { TooltipProps } from "$lib/types";
 
   let { type = "dark", color = undefined, trigger = "hover", arrow = true, children, placement = "top", onbeforetoggle: _onbeforetoggle, class: className, ...restProps }: TooltipProps = $props();
 
@@ -27,7 +27,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-TooltipProps
+[TooltipProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1484)
 ## Props
 @prop type = "dark"
 @prop color = undefined

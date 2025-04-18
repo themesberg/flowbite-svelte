@@ -1,8 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type ImgProps as Props, img } from "./index";
+  import { img } from "./index";
+  import type { ImgProps } from "$lib/types";
 
-  let { size = "none", effect = "none", caption, class: imgClass, figClass, captionClass, href, ...restProps }: Props = $props();
+  let { size = "none", effect = "none", caption, class: imgClass, figClass, captionClass, href, ...restProps }: ImgProps = $props();
 
   let { base, figure, figureCaption } = $derived(img({ size, effect }));
 </script>
@@ -32,7 +33,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[ImgProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1530)
 ## Props
 @prop size = "none"
 @prop effect = "none"

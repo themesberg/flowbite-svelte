@@ -1,8 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type ActivityProps as Props, activity } from "./index";
+  import { activity } from ".";
+  import type { ActivityProps } from "$lib/types";
 
-  let { children, class: className, ...restProps }: Props = $props();
+  let { children, class: className, ...restProps }: ActivityProps = $props();
   const base = activity({ class: clsx(className) });
 </script>
 
@@ -14,7 +15,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[ActivityProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1414)
 ## Props
 @prop children
 @prop class: className

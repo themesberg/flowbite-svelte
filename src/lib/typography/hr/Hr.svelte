@@ -1,8 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type HrProps as Props, hr } from "./index";
+  import { hr } from "./index";
+  import type { HrProps } from "$lib/types";
 
-  let { children, divClass, class: className, innerDivClass, ...restProps }: Props = $props();
+  let { children, divClass, class: className, innerDivClass, ...restProps }: HrProps = $props();
 
   let { base, container, content } = $derived(hr({ withChildren: !!children }));
 </script>
@@ -22,7 +23,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1519)
 ## Props
 @prop children
 @prop divClass
