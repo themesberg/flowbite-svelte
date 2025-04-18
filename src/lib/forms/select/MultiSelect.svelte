@@ -4,11 +4,11 @@
   import clsx from "clsx";
   import { twMerge } from "tailwind-merge";
   import { multiselect } from "./theme";
-  import type { MultiSelectProps as Props, SelectOptionType } from "./type";
+  import type { MultiSelectProps, SelectOptionType } from "$lib/types";
 
   // Consider reusing that component - https://svelecte.vercel.app/
 
-  let { children, items = [], value = [], size = "md", dropdownClass = "", placeholder = "", disabled = false, onchange, class: className, ...restProps }: Props<T> = $props();
+  let { children, items = [], value = [], size = "md", dropdownClass = "", placeholder = "", disabled = false, onchange, class: className, ...restProps }: MultiSelectProps<T> = $props();
 
   let selectItems = $derived(items.filter((x) => value.includes(x.value)));
   let show: boolean = $state(false);

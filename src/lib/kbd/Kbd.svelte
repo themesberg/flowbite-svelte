@@ -1,8 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { kbd, type KbdProps as Props } from ".";
+  import { kbd } from ".";
+  import type { KbdProps } from "$lib/types";
 
-  let { children, class: className, ...restProps }: Props = $props();
+  let { children, class: className, ...restProps }: KbdProps = $props();
   const kbdCls = kbd({ class: clsx(className) });
 </script>
 

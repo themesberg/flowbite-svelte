@@ -1,10 +1,11 @@
 <script lang="ts" generics="T">
   import { getContext } from "svelte";
   import Label from "../label/Label.svelte";
-  import { type RadioProps as Props, radio } from ".";
+  import { radio } from ".";
+  import type { RadioProps } from "$lib/types";
   import clsx from "clsx";
 
-  let { children, "aria-describedby": ariaDescribedby, inline = false, class: labelClass, color = "primary", custom = false, group = $bindable<T>(), value = $bindable<T>(), inputClass, ...restProps }: Props<T> = $props();
+  let { children, "aria-describedby": ariaDescribedby, inline = false, class: labelClass, color = "primary", custom = false, group = $bindable<T>(), value = $bindable<T>(), inputClass, ...restProps }: RadioProps<T> = $props();
 
   const { input, label } = $derived(radio({ color, tinted: !!getContext("background"), custom, inline }));
 </script>

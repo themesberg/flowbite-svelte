@@ -1,8 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type TextareaProps as Props, textarea } from ".";
+  import { textarea } from ".";
+  import type { TextareaProps } from "$lib/types";
 
-  let { header, footer, value = $bindable(), innerClass, headerClass, footerClass, disabled, class: className, cols, ...restProps }: Props = $props();
+  let { header, footer, value = $bindable(), innerClass, headerClass, footerClass, disabled, class: className, cols, ...restProps }: TextareaProps = $props();
 
   let hasHeader = $derived(!!header);
   let hasFooter = $derived(!!footer);

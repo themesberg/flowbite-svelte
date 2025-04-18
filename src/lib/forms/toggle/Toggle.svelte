@@ -1,9 +1,10 @@
 <script lang="ts">
   import clsx from "clsx";
   import { Label } from "../label";
-  import { type ToggleProps as Props, toggle } from "./index";
+  import { toggle } from "./index";
+  import type { ToggleProps } from "$lib/types";
 
-  let { children, size = "default", value, checked = $bindable(), disabled, color = "primary", class: className, inputClass, spanClass, offLabel, ...restProps }: Props = $props();
+  let { children, size = "default", value, checked = $bindable(), disabled, color = "primary", class: className, inputClass, spanClass, offLabel, ...restProps }: ToggleProps = $props();
 
   const { input, label, span } = $derived(toggle({ color, checked, size, disabled, off_state_label: !!offLabel }));
 </script>

@@ -1,4 +1,6 @@
-import type { HTMLButtonAttributes, HTMLAnchorAttributes, HTMLAttributes, HTMLLiAttributes, HTMLImgAttributes, HTMLInputAttributes, HTMLLabelAttributes } from "svelte/elements";
+import type { HTMLButtonAttributes, HTMLAnchorAttributes, HTMLAttributes, HTMLLiAttributes, HTMLImgAttributes, HTMLInputAttributes, HTMLLabelAttributes, HTMLSelectAttributes, HTMLTextareaAttributes } from "svelte/elements";
+
+
 import type { TransitionConfig, FadeParams, BlurParams, FlyParams, SlideParams, ScaleParams } from "svelte/transition";
 import { type Writable } from "svelte/store";
 import type { Snippet, Component } from "svelte";
@@ -19,6 +21,29 @@ import type { FloatingLabelInputVaratiants } from "$lib/forms/floating-label-inp
 import type { HelperVariants } from "$lib/forms/helper/theme";
 import type { InputVariants } from "$lib/forms/input/theme";
 import type { LabelVariants } from "$lib/forms/label/theme";
+import type { RadioVariants } from "$lib/forms/radio/theme";
+import type { RangeVariants } from "$lib/forms/range/theme";
+import type { SearchVariants } from "$lib/forms/search/theme";
+import type { MultiSelectVariants, SelectVariants } from "$lib/forms/select/theme";
+import type { ToggleVariants } from "$lib/forms/toggle/theme";
+import type { IndicatorVariants } from "$lib/indicator/theme";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -701,6 +726,118 @@ export interface LabelProps extends HTMLLabelAttributes {
   color?: LabelVariants["color"];
   show?: boolean;
 }
+
+// radio
+export interface RadioProps<T> extends RadioVariants, Omit<HTMLInputAttributes, "color"> {
+  group?: T;
+  value?: T;
+  inputClass?: string;
+  labelClass?: string;
+}
+
+// raido-button
+export interface RadioButtonProps<T> extends Omit<HTMLInputAttributes, "size"> {
+  group?: T;
+  value?: T;
+  inline?: boolean;
+  pill?: boolean;
+  outline?: boolean;
+  size?: ButtonProps["size"];
+  color?: ButtonProps["color"];
+  shadow?: boolean;
+}
+
+// range
+export interface RangeProps extends RangeVariants, Omit<HTMLInputAttributes, "size" | "color"> {
+  value?: number | string;
+}
+
+// search
+export interface SearchProps<T> extends SearchVariants, Omit<HTMLInputAttributes, "size"> {
+  children?: Snippet;
+  value?: T;
+}
+
+// select
+export type SelectOptionType<T> = {
+  name: string | number;
+  value: T;
+  disabled?: boolean;
+};
+
+export interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttributes, "size"> {
+  children?: Snippet;
+  items?: SelectOptionType<T>[];
+  placeholder?: string;
+}
+
+export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLSelectAttributes, "size" | "children"> {
+  children?: Snippet<[{ item: SelectOptionType<T>; clear: () => void }]>;
+  items?: SelectOptionType<T>[];
+  // value?: (string | number)[];
+  dropdownClass?: string;
+  placeholder?: string;
+  disabled?: boolean;
+}
+
+// textarea
+export interface TextareaProps extends HTMLTextareaAttributes {
+  header?: Snippet;
+  footer?: Snippet;
+  value?: string;
+  wrapped?: boolean;
+  divClass?: string | null;
+  innerClass?: string;
+  headerClass?: string;
+  footerClass?: string;
+  cols?: number;
+}
+
+// toggle
+export interface ToggleProps extends Omit<ToggleVariants, "off_state_label">, Omit<HTMLInputAttributes, "size" | "color"> {
+  offLabel?: Snippet;
+  value?: string | number;
+  checked?: boolean;
+  disabled?: boolean;
+  spanClass?: string;
+  inputClass?: string;
+}
+
+// end of forms
+
+// gallery
+export type ImgType = {
+  src?: string;
+  alt?: string;
+};
+
+export interface GalleryProps extends HTMLAttributes<HTMLDivElement> {
+  children?: Snippet;
+  figure?: Snippet<[item: ImgType]>;
+  items?: HTMLImgAttributes[];
+  imgClass?: string;
+}
+
+// indicator
+export interface IndicatorProps extends HTMLAttributes<HTMLDivElement> {
+  children?: Snippet;
+  color?: IndicatorVariants["color"];
+  cornerStyle?: IndicatorVariants["cornerStyle"];
+  size?: IndicatorVariants["size"];
+  border?: boolean;
+  placement?: IndicatorVariants["placement"];
+  offset?: boolean;
+}
+
+// kbd
+export interface KbdProps extends HTMLAttributes<HTMLElement> {
+  children: Snippet;
+}
+
+
+
+
+
 
 
 

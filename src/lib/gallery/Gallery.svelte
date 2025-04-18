@@ -1,8 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type GalleryProps as Props, type ImgType, gallery } from ".";
+  import { gallery } from ".";
+  import type { GalleryProps, ImgType } from "$lib/types";
 
-  let { children, figure, items = [], imgClass, class: className, ...restProps }: Props = $props();
+  let { children, figure, items = [], imgClass, class: className, ...restProps }: GalleryProps = $props();
 
   function init(node: HTMLElement) {
     if (getComputedStyle(node).gap === "normal") node.style.gap = "inherit";

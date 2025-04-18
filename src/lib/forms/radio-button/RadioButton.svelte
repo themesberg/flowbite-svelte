@@ -1,9 +1,10 @@
 <script lang="ts" generics="T">
   import Button from "$lib/buttons/Button.svelte";
   import clsx from "clsx";
-  import { type RadioButtonProps as Props, radioButton } from ".";
+  import { radioButton } from ".";
+  import type { RadioButtonProps } from "$lib/types";
 
-  let { children, group = $bindable<T>(), value = $bindable<T>(), inline, pill, outline, size, color, shadow, class: className, ...restProps }: Props<T> = $props();
+  let { children, group = $bindable<T>(), value = $bindable<T>(), inline, pill, outline, size, color, shadow, class: className, ...restProps }: RadioButtonProps<T> = $props();
 
   let base = $derived(radioButton({ inline, checked: value == group, class: clsx(className) }));
 </script>
