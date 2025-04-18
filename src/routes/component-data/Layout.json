@@ -1,7 +1,11 @@
 {
   "name": "Layout",
+  "type": {
+    "name": "LayoutProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1549"
+  },
   "props": [
-    ["children", "any", ""],
-    ["class", "string", ""]
+    ["children", ""],
+    ["class: className", ""]
   ]
 }

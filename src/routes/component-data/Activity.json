@@ -1,7 +1,11 @@
 {
   "name": "Activity",
+  "type": {
+    "name": "ActivityProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1412"
+  },
   "props": [
-    ["children", "any", ""],
-    ["class", "string", ""]
+    ["children", ""],
+    ["class: className", ""]
   ]
 }

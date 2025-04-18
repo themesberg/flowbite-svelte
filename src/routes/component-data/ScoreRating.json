@@ -1,8 +1,12 @@
 {
   "name": "ScoreRating",
+  "type": {
+    "name": "ScoreRatingProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1085"
+  },
   "props": [
-    ["ratings", "any", ""],
-    ["ratings2", "any", ""],
-    ["headerLabel", "any", ""]
+    ["ratings", ""],
+    ["ratings2", ""],
+    ["headerLabel", ""]
   ]
 }

@@ -1,14 +1,18 @@
 {
   "name": "AdvancedRating",
+  "type": {
+    "name": "AdvancedRatingProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1010"
+  },
   "props": [
-    ["rating", "any", ""],
-    ["globalText", "any", ""],
-    ["ratings", "any", ""],
-    ["divClass", "any", ""],
-    ["spanClass", "any", ""],
-    ["div2Class", "any", ""],
-    ["div3Class", "any", ""],
-    ["span2Class", "any", ""],
-    ["unit", "any", ""]
+    ["rating", ""],
+    ["globalText", ""],
+    ["ratings", ""],
+    ["divClass", ""],
+    ["spanClass", ""],
+    ["div2Class", ""],
+    ["div3Class", ""],
+    ["span2Class", ""],
+    ["unit", ""]
   ]
 }

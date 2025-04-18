@@ -367,15 +367,6 @@ Rarely you would need a non-modal dialog. You can get it by setting `modal` prop
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Modal styling
-
-- Use the `class` prop to overwrite `defaultClass`.
-- Use the `classBackdrop` prop to overwrite `backdropClass`.
-- Use the `classDialog` prop to overwrite `dialogClass`.
-- Use the `classHeader` prop to overwrite `headerClass`.
-- Use the `classBody` prop to overwrite `bodyClass`.
-- Use the `classFooter` prop to overwrite `footerClass`.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

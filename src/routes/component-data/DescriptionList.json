@@ -1,8 +1,12 @@
 {
   "name": "DescriptionList",
+  "type": {
+    "name": "DescriptionListProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1505"
+  },
   "props": [
-    ["children", "any", ""],
-    ["tag", "any", ""],
-    ["class", "string", ""]
+    ["children", ""],
+    ["tag", ""],
+    ["class: className", ""]
   ]
 }

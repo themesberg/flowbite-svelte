@@ -85,10 +85,6 @@ Use the `lightIcon` and `darkIcon` slots to change icons:
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### DarkMode styling
-
-- Use the `class` prop to overwrite `btnClass`.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

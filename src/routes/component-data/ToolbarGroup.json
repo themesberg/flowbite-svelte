@@ -1,10 +1,14 @@
 {
   "name": "ToolbarGroup",
+  "type": {
+    "name": "ToolbarGroupProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L939"
+  },
   "props": [
-    ["children", "any", ""],
-    ["spacing", "any", ""],
-    ["padding", "any", ""],
-    ["position", "any", "\"middle\""],
-    ["class", "string", ""]
+    ["children", ""],
+    ["spacing", ""],
+    ["padding", ""],
+    ["position", "\"middle\""],
+    ["class: className", ""]
   ]
 }

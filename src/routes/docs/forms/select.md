@@ -335,10 +335,6 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Select styling
-
-- Use the `class` prop to overwrite the select tag.
-
 <CompoAttributesViewer {components}/>
 
 ## References

@@ -247,26 +247,6 @@ The `tag="h6"` can be used as subtitles of the page’s sections.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Heading styling
-
-- Use the `class` prop to overwrite the heading class.
-
-### P styling
-
-- Use the `class` prop to overwrite the `p` tag class.
-
-### A styling
-
-- Use the `class` prop to overwrite the `a` tag class.
-
-### Mark styling
-
-- Use the `class` prop to overwrite the `mark` tag class.
-
-### Secondary styling
-
-- Use the `class` prop to overwrite the `small` tag class.
-
 <CompoAttributesViewer {components}/>
 
 ## References

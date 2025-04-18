@@ -154,10 +154,6 @@ This example can be used to set a hyperlink on an image inside a card component.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### A styling
-
-- Use the `class` prop to overwrite the `a` tag class.
-
 <CompoAttributesViewer {components}/>
 
 ## References

@@ -1,11 +1,15 @@
 {
   "name": "FooterCopyright",
+  "type": {
+    "name": "FooterCopyrightProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L603"
+  },
   "props": [
-    ["spanClass", "any", ""],
-    ["aClass", "any", ""],
-    ["href", "any", ""],
-    ["by", "any", ""],
-    ["copyrightMessage", "any", "\"All Rights Reserved.\""],
-    ["year", "any", ""]
+    ["spanClass", ""],
+    ["aClass", ""],
+    ["href", ""],
+    ["by", ""],
+    ["copyrightMessage", "\"All Rights Reserved.\""],
+    ["year", ""]
   ]
 }

@@ -1,11 +1,15 @@
 {
   "name": "GroupItem",
+  "type": {
+    "name": "GroupItemProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1436"
+  },
   "props": [
-    ["timelines", "any", ""],
-    ["aClass", "any", ""],
-    ["imgClass", "any", ""],
-    ["divClass", "any", ""],
-    ["titleClass", "any", ""],
-    ["spanClass", "any", ""]
+    ["timelines", ""],
+    ["aClass", ""],
+    ["imgClass", ""],
+    ["divClass", ""],
+    ["titleClass", ""],
+    ["spanClass", ""]
   ]
 }

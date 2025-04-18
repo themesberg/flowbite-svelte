@@ -3,7 +3,6 @@
   import Footer from "$lib/footer/Footer.svelte";
   import FooterBrand from "$lib/footer/FooterBrand.svelte";
   import FooterCopyright from "$lib/footer/FooterCopyright.svelte";
-  import FooterIcon from "$lib/footer/FooterIcon.svelte";
   import { FooterLink, FooterLinkGroup } from "$lib";
   let logo = "/images/flowbite-svelte-icon-logo.svg";
 

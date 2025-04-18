@@ -187,11 +187,6 @@ This example demonstrates a sliding transition using the slide transition from s
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Banner styling
-
-- Use the `class` prop to overwrite element styling.
-- Use the `classInner` prop to overwrite `innerClass`.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

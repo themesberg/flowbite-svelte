@@ -258,10 +258,6 @@ Use the `align="right"` prop to align the paragraph text the right side of the p
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### P styling
-
-- Use the `class` prop to overwrite the `p` tag class.
-
 <CompoAttributesViewer {components}/>
 
 ## References

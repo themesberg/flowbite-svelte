@@ -1,7 +1,11 @@
 {
   "name": "Chart",
+  "type": {
+    "name": "ChartProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L432"
+  },
   "props": [
-    ["options", "any", ""],
-    ["class", "string", ""]
+    ["options", ""],
+    ["class: classname", ""]
   ]
 }

@@ -1,8 +1,12 @@
 {
   "name": "Timeline",
+  "type": {
+    "name": "TimelineProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1447"
+  },
   "props": [
-    ["children", "any", ""],
-    ["order", "any", "\"default\""],
-    ["class", "string", ""]
+    ["children", ""],
+    ["order", "\"default\""],
+    ["class: className", ""]
   ]
 }

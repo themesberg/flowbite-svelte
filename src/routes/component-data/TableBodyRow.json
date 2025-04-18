@@ -1,11 +1,15 @@
 {
   "name": "TableBodyRow",
+  "type": {
+    "name": "TableBodyRowProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1303"
+  },
   "props": [
-    ["children", "any", ""],
-    ["class", "string", ""],
-    ["color", "any", ""],
-    ["striped", "any", ""],
-    ["hoverable", "any", ""],
-    ["border", "any", ""]
+    ["children", ""],
+    ["class: className", ""],
+    ["color", ""],
+    ["striped", ""],
+    ["hoverable", ""],
+    ["border", ""]
   ]
 }

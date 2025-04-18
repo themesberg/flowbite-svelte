@@ -432,10 +432,6 @@ Use `class="max-w-[250px]` to create a custom size card.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Card styling
-
-- The Card component uses the Frame component. Use the `class` property to overwrite the default Frame class. The Frame component tag can be either an anchor tag or a div tag depending on the value of the href prop.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

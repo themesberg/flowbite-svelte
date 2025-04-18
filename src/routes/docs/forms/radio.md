@@ -318,14 +318,6 @@ This component accepts all props from the [Button](/docs/components/buttons) for
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Radio styling
-
-- Use the `class` prop to overwrite the `label` and `input` tag class.
-
-### Helper styling
-
-- Use the `class` prop to overwrite the `p` tag class.
-
 <CompoAttributesViewer {components}/>
 
 ## References

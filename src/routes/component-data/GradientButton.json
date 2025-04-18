@@ -1,14 +1,18 @@
 {
   "name": "GradientButton",
+  "type": {
+    "name": "GradientButtonProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L346"
+  },
   "props": [
-    ["children", "any", ""],
-    ["outline", "any", ""],
-    ["pill", "any", ""],
-    ["color", "any", "\"blue\""],
-    ["shadow", "any", ""],
-    ["class", "string", ""],
-    ["href", "any", ""],
-    ["disabled", "any", ""],
-    ["size", "any", ""]
+    ["children", ""],
+    ["outline", ""],
+    ["pill", ""],
+    ["color", "\"blue\""],
+    ["shadow", ""],
+    ["class: className", ""],
+    ["href", ""],
+    ["disabled", ""],
+    ["size", ""]
   ]
 }

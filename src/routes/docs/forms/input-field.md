@@ -412,15 +412,6 @@ If you need a full control over `input` HTML element while still re-using the Fl
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Input styling
-
-- Use the `class` prop to overwrite the `input` tag class.
-- Use the `classRight` and/or `classLeft` prop to overwrite the `floatClass`.
-
-### InputAddon styling
-
-- Use the `class` prop to overwrite the `input` tag class.
-
 <CompoAttributesViewer {components}/>
 
 ## References

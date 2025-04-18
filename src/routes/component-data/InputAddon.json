@@ -1,8 +1,12 @@
 {
   "name": "InputAddon",
+  "type": {
+    "name": "InputAddonProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L712"
+  },
   "props": [
-    ["children", "any", ""],
-    ["class", "string", ""],
-    ["size", "any", ""]
+    ["children", ""],
+    ["class: className", ""],
+    ["size", ""]
   ]
 }

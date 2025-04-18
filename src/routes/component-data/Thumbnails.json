@@ -1,12 +1,16 @@
 {
   "name": "Thumbnails",
+  "type": {
+    "name": "ThumbnailsProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L417"
+  },
   "props": [
-    ["children", "any", ""],
-    ["images", "any", "[]"],
-    ["index", "any", "$bindable()"],
-    ["ariaLabel", "any", "\"Click to view image\""],
-    ["imgClass", "any", ""],
-    ["throttleDelay", "any", "650"],
-    ["class", "string", ""]
+    ["children", ""],
+    ["images", "[]"],
+    ["index", "$bindable()"],
+    ["ariaLabel", "\"Click to view image\""],
+    ["imgClass", ""],
+    ["throttleDelay", "650"],
+    ["class: className", ""]
   ]
 }

@@ -1,8 +1,12 @@
 {
   "name": "Slide",
+  "type": {
+    "name": "SlideProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L426"
+  },
   "props": [
-    ["image", "any", ""],
-    ["transition", "any", ""],
-    ["class", "string", ""]
+    ["image", ""],
+    ["transition", ""],
+    ["class: className", ""]
   ]
 }

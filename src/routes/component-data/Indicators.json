@@ -1,9 +1,13 @@
 {
   "name": "Indicators",
+  "type": {
+    "name": "IndicatorsProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L402"
+  },
   "props": [
-    ["children", "any", ""],
-    ["activeClass", "any", ""],
-    ["inactiveClass", "any", ""],
-    ["class", "string", ""]
+    ["children", ""],
+    ["activeClass", ""],
+    ["inactiveClass", ""],
+    ["class: className", ""]
   ]
 }

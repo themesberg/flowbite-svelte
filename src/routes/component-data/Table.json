@@ -1,16 +1,20 @@
 {
   "name": "Table",
+  "type": {
+    "name": "TableProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1290"
+  },
   "props": [
-    ["children", "any", ""],
-    ["footerSlot", "any", ""],
-    ["captionSlot", "any", ""],
-    ["items", "any", ""],
-    ["divClass", "any", "\"relative overflow-x-auto\""],
-    ["striped", "any", ""],
-    ["hoverable", "any", ""],
-    ["border", "any", "true"],
-    ["shadow", "any", ""],
-    ["color", "any", "\"default\""],
-    ["class", "string", ""]
+    ["children", ""],
+    ["footerSlot", ""],
+    ["captionSlot", ""],
+    ["items: tableItems", ""],
+    ["divClass", "\"relative overflow-x-auto\""],
+    ["striped", ""],
+    ["hoverable", ""],
+    ["border", "true"],
+    ["shadow", ""],
+    ["color", "\"default\""],
+    ["class: className", ""]
   ]
 }

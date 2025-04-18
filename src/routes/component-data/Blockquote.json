@@ -1,12 +1,16 @@
 {
   "name": "Blockquote",
+  "type": {
+    "name": "BlockquoteProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1495"
+  },
   "props": [
-    ["children", "any", ""],
-    ["class", "string", ""],
-    ["border", "any", ""],
-    ["italic", "any", "true"],
-    ["bg", "any", ""],
-    ["alignment", "any", "\"left\""],
-    ["size", "any", "\"lg\""]
+    ["children", ""],
+    ["class: className", ""],
+    ["border", ""],
+    ["italic", "true"],
+    ["bg", ""],
+    ["alignment", "\"left\""],
+    ["size", "\"lg\""]
   ]
 }

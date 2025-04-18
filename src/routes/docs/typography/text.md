@@ -333,10 +333,6 @@ Use the `opacity` and `color` prop to set the opacity of inline text elements.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Span styling
-
-- Use the `class` prop to overwrite the default class.
-
 <CompoAttributesViewer {components}/>
 
 ## References

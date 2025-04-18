@@ -1,14 +1,18 @@
 {
   "name": "ActivityItem",
+  "type": {
+    "name": "ActivityItemProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1416"
+  },
   "props": [
-    ["activities", "any", ""],
-    ["liClass", "any", ""],
-    ["spanClass", "any", ""],
-    ["imgClass", "any", ""],
-    ["outerDivClass", "any", ""],
-    ["innerDivClass", "any", ""],
-    ["timeClass", "any", ""],
-    ["titleClass", "any", ""],
-    ["textClass", "any", ""]
+    ["activities", ""],
+    ["liClass", ""],
+    ["spanClass", ""],
+    ["imgClass", ""],
+    ["outerDivClass", ""],
+    ["innerDivClass", ""],
+    ["timeClass", ""],
+    ["titleClass", ""],
+    ["textClass", ""]
   ]
 }

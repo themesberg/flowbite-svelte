@@ -128,38 +128,6 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### CardPlaceholder styling
-
-- Use the `class` prop to overwrite `divClass`.
-
-### ImagePlaceholder styling
-
-- Use the `class` prop to overwrite `divClass`.
-
-### ListPlaceholder styling
-
-- Use the `class` prop to overwrite `divClass`.
-
-### Skeleton styling
-
-- Use the `class` prop to overwrite `divClass`.
-
-### TestimonialPlaceholder styling
-
-- Use the `class` prop to overwrite `divClass`.
-
-### TextPlaceholder styling
-
-- Use the `class` prop to overwrite `divClass`.
-
-### VideoPlaceholder styling
-
-- Use the `class` prop to overwrite `divClass`.
-
-### WidgetPlaceholder styling
-
-- Use the `class` prop to overwrite `divClass`.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

@@ -230,34 +230,6 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Footer styling
-
-- Use the `class` prop to overwrite the default class.
-
-### FooterBrand styling
-
-- Use the `classA` prop to overwrite `aClass`.
-- Use the `classSpan` prop to overwrite `spanClass`.
-- Use the `classImg` prop to overwrite `imgClass`.
-
-### FooterCopyright styling
-
-- Use `classSpan` prop to overwrite `classSpan`.
-- Use `classA` prop to overwrite `aClass`.
-
-### FooterIcon styling
-
-- Use the `class` prop to overwrite `aClass`.
-
-### FooterLink styling
-
-- Use the `classLi` prop to overwrite `liClass`.
-- Use the `classA` prop to overwrite `aClass`.
-
-### FooterLinkGroup styling
-
-- Use the `class` prop to overwrite `ulClass`.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

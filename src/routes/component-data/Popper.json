@@ -1,20 +1,23 @@
 {
   "name": "Popper",
+  "type": {
+    "name": "PopperProps",
+    "link": null
+  },
   "props": [
-    ["triggeredBy", "any", ""],
-    ["trigger", "any", "\"click\""],
-    ["placement", "any", "\"top\""],
-    ["offset", "any", "8"],
-    ["arrow", "any", "false"],
-    ["yOnly", "any", "false"],
-    ["strategy", "any", "\"absolute\""],
-    ["reference", "any", ""],
-    ["middlewares", "any", "[dom.flip()"],
-    ["dom.shift()]", "any", ""],
-    ["onbeforetoggle", "any", ""],
-    ["ontoggle", "any", ""],
-    ["class", "string", "\"\""],
-    ["arrowClass", "any", "\"\""],
-    ["children", "any", ""]
+    ["triggeredBy", ""],
+    ["trigger", "\"click\""],
+    ["placement", "\"top\""],
+    ["offset", "8"],
+    ["arrow", "false"],
+    ["yOnly", "false"],
+    ["strategy", "\"absolute\""],
+    ["reference", ""],
+    ["middlewares", "[dom.flip(), dom.shift()]"],
+    ["onbeforetoggle: _onbeforetoggle", ""],
+    ["ontoggle: _ontoggle", ""],
+    ["class: className", "\"\""],
+    ["arrowClass", "\"\""],
+    ["children", ""]
   ]
 }

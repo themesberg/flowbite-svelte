@@ -1,13 +1,17 @@
 {
   "name": "Tooltip",
+  "type": {
+    "name": "TooltipProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1482"
+  },
   "props": [
-    ["type", "any", "\"dark\""],
-    ["color", "any", "undefined"],
-    ["trigger", "any", "\"hover\""],
-    ["arrow", "any", "true"],
-    ["children", "any", ""],
-    ["placement", "any", "\"top\""],
-    ["onbeforetoggle", "any", ""],
-    ["class", "string", ""]
+    ["type", "\"dark\""],
+    ["color", "undefined"],
+    ["trigger", "\"hover\""],
+    ["arrow", "true"],
+    ["children", ""],
+    ["placement", "\"top\""],
+    ["onbeforetoggle: _onbeforetoggle", ""],
+    ["class: className", ""]
   ]
 }

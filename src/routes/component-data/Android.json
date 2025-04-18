@@ -1,13 +1,17 @@
 {
   "name": "Android",
+  "type": {
+    "name": "AndroidProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L486"
+  },
   "props": [
-    ["children", "any", ""],
-    ["divClass", "any", ""],
-    ["div2Class", "any", ""],
-    ["div3Class", "any", ""],
-    ["div4Class", "any", ""],
-    ["div5Class", "any", ""],
-    ["div6Class", "any", ""],
-    ["div7Class", "any", ""]
+    ["children", ""],
+    ["divClass", ""],
+    ["div2Class", ""],
+    ["div3Class", ""],
+    ["div4Class", ""],
+    ["div5Class", ""],
+    ["div6Class", ""],
+    ["div7Class", ""]
   ]
 }

@@ -1,7 +1,11 @@
 {
   "name": "Controls",
+  "type": {
+    "name": "Props",
+    "link": null
+  },
   "props": [
-    ["children", "any", ""],
-    ["class", "string", ""]
+    ["children", ""],
+    ["class: className", ""]
   ]
 }

@@ -1,10 +1,14 @@
 {
   "name": "Tabs",
+  "type": {
+    "name": "TabsProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1357"
+  },
   "props": [
-    ["children", "any", ""],
-    ["tabStyle", "any", "\"none\""],
-    ["ulClass", "any", ""],
-    ["contentClass", "any", ""],
-    ["divider", "any", "true"]
+    ["children", ""],
+    ["tabStyle", "\"none\""],
+    ["ulClass", ""],
+    ["contentClass", ""],
+    ["divider", "true"]
   ]
 }

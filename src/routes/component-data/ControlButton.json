@@ -1,9 +1,13 @@
 {
   "name": "ControlButton",
+  "type": {
+    "name": "ControlButtonProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L408"
+  },
   "props": [
-    ["children", "any", ""],
-    ["forward", "any", ""],
-    ["name", "any", ""],
-    ["class", "string", ""]
+    ["children", ""],
+    ["forward", ""],
+    ["name", ""],
+    ["class: className", ""]
   ]
 }

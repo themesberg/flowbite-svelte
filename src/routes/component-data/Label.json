@@ -1,9 +1,13 @@
 {
   "name": "Label",
+  "type": {
+    "name": "LabelProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L719"
+  },
   "props": [
-    ["children", "any", ""],
-    ["color", "any", "\"gray\""],
-    ["show", "any", "true"],
-    ["class", "string", ""]
+    ["children", ""],
+    ["color", "\"gray\""],
+    ["show", "true"],
+    ["class: className", ""]
   ]
 }

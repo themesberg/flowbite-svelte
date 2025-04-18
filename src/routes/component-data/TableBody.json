@@ -1,8 +1,12 @@
 {
   "name": "TableBody",
+  "type": {
+    "name": "TableBodyProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1322"
+  },
   "props": [
-    ["children", "any", ""],
-    ["bodyItems", "any", ""],
-    ["class", "string", ""]
+    ["children", ""],
+    ["bodyItems", ""],
+    ["class: className", ""]
   ]
 }

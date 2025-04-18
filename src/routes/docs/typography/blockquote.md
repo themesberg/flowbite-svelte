@@ -207,10 +207,6 @@ The `size="2xl"` prop can be used to set a large size for the blockquote compone
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Blockquote styleing
-
-- Use the `class` prop to overwrite the `blockquote` tag class.
-
 <CompoAttributesViewer {components}/>
 
 ## References

@@ -1,12 +1,16 @@
 {
   "name": "ToolbarButton",
+  "type": {
+    "name": "ToolbarButtonProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L941"
+  },
   "props": [
-    ["children", "any", ""],
-    ["onclick", "any", ""],
-    ["color", "any", ""],
-    ["name", "any", ""],
-    ["\"aria-label\"", "any", ""],
-    ["size", "any", ""],
-    ["class", "string", ""]
+    ["children", ""],
+    ["onclick", ""],
+    ["color", ""],
+    ["name", ""],
+    ["\"aria-label\": ariaLabel", ""],
+    ["size", ""],
+    ["class: className", ""]
   ]
 }

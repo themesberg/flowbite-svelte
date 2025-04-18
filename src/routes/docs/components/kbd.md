@@ -222,26 +222,6 @@ This example can be used to denote function keys inside the KBD component.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Kbd
-
-- Use the `class` prop to overwrite `kbdClass`.
-
-### CaretDownSolid styling
-
-- Use the `class` prop to overwrite `svgClass`.
-
-### CaretLeftSolid styling
-
-- Use the `class` prop to overwrite `svgClass`.
-
-### CaretRightSolid styling
-
-- Use the `class` prop to overwrite `svgClass`.
-
-### CaretUpSolid styling
-
-- Use the `class` prop to overwrite `svgClass`.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

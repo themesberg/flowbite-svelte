@@ -1,16 +1,20 @@
 {
   "name": "Span",
+  "type": {
+    "name": "SpanProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1592"
+  },
   "props": [
-    ["children", "any", ""],
-    ["class", "string", ""],
-    ["italic", "any", ""],
-    ["underline", "any", ""],
-    ["linethrough", "any", ""],
-    ["uppercase", "any", ""],
-    ["gradient", "any", ""],
-    ["highlight", "any", ""],
-    ["decoration", "any", ""],
-    ["decorationColor", "any", ""],
-    ["decorationThickness", "any", ""]
+    ["children", ""],
+    ["class: className", ""],
+    ["italic", ""],
+    ["underline", ""],
+    ["linethrough", ""],
+    ["uppercase", ""],
+    ["gradient", ""],
+    ["highlight", ""],
+    ["decoration", ""],
+    ["decorationColor", ""],
+    ["decorationThickness", ""]
   ]
 }

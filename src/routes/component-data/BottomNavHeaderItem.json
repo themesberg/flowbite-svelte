@@ -1,8 +1,12 @@
 {
   "name": "BottomNavHeaderItem",
+  "type": {
+    "name": "BottomNavHeaderItemProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L303"
+  },
   "props": [
-    ["itemName", "any", ""],
-    ["active", "any", ""],
-    ["class", "string", ""]
+    ["itemName", ""],
+    ["active", ""],
+    ["class: className", ""]
   ]
 }

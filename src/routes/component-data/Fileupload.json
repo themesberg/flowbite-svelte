@@ -1,9 +1,13 @@
 {
   "name": "Fileupload",
+  "type": {
+    "name": "FileuploadProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L672"
+  },
   "props": [
-    ["files", "any", "$bindable<FileList | undefined>()"],
-    ["size", "any", "\"md\""],
-    ["clearable", "any", "false"],
-    ["class", "string", ""]
+    ["files", "$bindable<FileList | undefined>()"],
+    ["size", "\"md\""],
+    ["clearable", "false"],
+    ["class: className", ""]
   ]
 }

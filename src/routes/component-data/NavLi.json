@@ -1,10 +1,14 @@
 {
   "name": "NavLi",
+  "type": {
+    "name": "NavLiProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L929"
+  },
   "props": [
-    ["children", "any", ""],
-    ["activeClass", "any", ""],
-    ["nonActiveClass", "any", ""],
-    ["class", "string", ""],
-    ["onclick", "any", ""]
+    ["children", ""],
+    ["activeClass", ""],
+    ["nonActiveClass", ""],
+    ["class: className", ""],
+    ["onclick", ""]
   ]
 }

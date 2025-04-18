@@ -1189,38 +1189,6 @@ The `SidebarItem` component has `use:action` directive you can use:
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Sidebar styling
-
-- Use the `class` prop to overwrite `asideClass`.
-
-### SidebarBrand styling
-
-- Use the `class` prop to overwrite `aClass`.
-
-### SidebarCta styling
-
-- Use the `class` prop to overwrite the default class.
-
-### SidebarDropdownItem styling
-
-- Use the `class` prop to overwrite `divWrapperClass`.
-
-### SidebarDropdownWrapper styling
-
-- Use the `class` prop to overwrite `btnClass`.
-
-### SidebarGroup styling
-
-- Use the `class` prop to overwrite `ulClass`.
-
-### SidebarItem styling
-
-- Use the `class` prop to overwrite the `a` tag class.
-
-### SidebarWrapper styling
-
-- Use the `class` prop to overwrite `divClass`.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

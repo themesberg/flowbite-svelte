@@ -193,10 +193,6 @@ You can add the `onclick` event to the `Button` component.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### ButtonGroup styling
-
-- Use the `class` prop to overwrite `divClass`.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

@@ -1,12 +1,16 @@
 {
   "name": "Video",
+  "type": {
+    "name": "VideoProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1606"
+  },
   "props": [
-    ["children", "any", ""],
-    ["type", "any", "\"video/mp4\""],
-    ["trackSrc", "any", ""],
-    ["src", "any", ""],
-    ["srclang", "any", "\"en\""],
-    ["label", "any", "\"english_captions\""],
-    ["class", "string", ""]
+    ["children", ""],
+    ["type", "\"video/mp4\""],
+    ["trackSrc", ""],
+    ["src", ""],
+    ["srclang", "\"en\""],
+    ["label", "\"english_captions\""],
+    ["class: classname", ""]
   ]
 }

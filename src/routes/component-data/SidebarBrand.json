@@ -1,10 +1,14 @@
 {
   "name": "SidebarBrand",
+  "type": {
+    "name": "SidebarBrandProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1153"
+  },
   "props": [
-    ["children", "any", ""],
-    ["site", "any", ""],
-    ["imgClass", "any", ""],
-    ["spanClass", "any", ""],
-    ["class", "string", ""]
+    ["children", ""],
+    ["site", ""],
+    ["imgClass", ""],
+    ["spanClass", ""],
+    ["class: className", ""]
   ]
 }

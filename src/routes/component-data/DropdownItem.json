@@ -1,11 +1,15 @@
 {
   "name": "DropdownItem",
+  "type": {
+    "name": "DropdownItemProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L571"
+  },
   "props": [
-    ["aClass", "any", ""],
-    ["children", "any", ""],
-    ["href", "any", ""],
-    ["activeClass", "any", ""],
-    ["liClass", "any", ""],
-    ["class", "string", ""]
+    ["aClass", ""],
+    ["children", ""],
+    ["href", ""],
+    ["activeClass", ""],
+    ["liClass", ""],
+    ["class: className", ""]
   ]
 }

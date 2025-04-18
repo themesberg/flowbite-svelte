@@ -154,14 +154,6 @@ When non standard usage is needed you can omit the `items` props and add element
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Listgroup styling
-
-- Use the `class` prop to overwrite `defaultClass`.
-
-### ListgroupItem styling
-
-- Use the `class` prop to overwrite the `li` tag class.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

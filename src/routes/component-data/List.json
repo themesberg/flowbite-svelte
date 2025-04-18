@@ -1,11 +1,15 @@
 {
   "name": "List",
+  "type": {
+    "name": "ListProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1554"
+  },
   "props": [
-    ["children", "any", ""],
-    ["tag", "any", "\"ul\""],
-    ["isContenteditable", "any", "false"],
-    ["position", "any", "\"inside\""],
-    ["ctxClass", "any", ""],
-    ["class", "string", ""]
+    ["children", ""],
+    ["tag", "\"ul\""],
+    ["isContenteditable", "false"],
+    ["position", "\"inside\""],
+    ["ctxClass", ""],
+    ["class: className", ""]
   ]
 }

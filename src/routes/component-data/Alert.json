@@ -1,17 +1,21 @@
 {
   "name": "Alert",
+  "type": {
+    "name": "AlertProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L212"
+  },
   "props": [
-    ["children", "any", ""],
-    ["icon", "any", ""],
-    ["alertStatus", "any", "$bindable(true)"],
-    ["closeIcon", "any", ""],
-    ["color", "any", "\"primary\""],
-    ["rounded", "any", "true"],
-    ["border", "any", ""],
-    ["class", "string", ""],
-    ["dismissable", "any", ""],
-    ["transition", "any", "fade"],
-    ["params", "any", ""],
-    ["onclick", "any", "()"]
+    ["children", ""],
+    ["icon", ""],
+    ["alertStatus", "$bindable(true)"],
+    ["closeIcon: CloseIcon", ""],
+    ["color", "\"primary\""],
+    ["rounded", "true"],
+    ["border", ""],
+    ["class: className", ""],
+    ["dismissable", ""],
+    ["transition", "fade"],
+    ["params", ""],
+    ["onclick", "()"]
   ]
 }

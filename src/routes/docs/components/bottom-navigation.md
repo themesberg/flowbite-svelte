@@ -376,26 +376,6 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### BottomNav styling
-
-- Use the `classOuter` prop to overwrite `outerClass`.
-- Use the `innerClass` prop to overwrite `innerClass`.
-- Use the `classActive` prop to overwrite `activeClass`.
-
-### BottomNavHeader styling
-
-- Use the `classOuter` prop to overwrite `outerClass`.
-- Use the `innerClass` prop to overwrite `innerClass`.
-
-### BottomNavHeaderItem styling
-
-- Use the `class` prop to overwrite `defaultClass` or `activeClass`.
-
-### BottomNavItem styling
-
-- Use the `btnClass` prop to overwrite the `button` tag class.
-- Use the `spanClass` prop to overwrite the `span` tag class.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

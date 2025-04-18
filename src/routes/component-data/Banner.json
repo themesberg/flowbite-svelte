@@ -1,15 +1,19 @@
 {
   "name": "Banner",
+  "type": {
+    "name": "BannerProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L253"
+  },
   "props": [
-    ["children", "any", ""],
-    ["header", "any", ""],
-    ["open", "any", "$bindable(true)"],
-    ["dismissable", "any", "true"],
-    ["color", "any", "\"gray\""],
-    ["type", "any", ""],
-    ["class", "string", ""],
-    ["innerClass", "any", ""],
-    ["transition", "any", "fade"],
-    ["params", "any", ""]
+    ["children", ""],
+    ["header", ""],
+    ["open", "$bindable(true)"],
+    ["dismissable", "true"],
+    ["color", "\"gray\""],
+    ["type", ""],
+    ["class: className", ""],
+    ["innerClass", ""],
+    ["transition", "fade"],
+    ["params", ""]
   ]
 }

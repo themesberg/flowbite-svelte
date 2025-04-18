@@ -1,13 +1,17 @@
 {
   "name": "BottomNavItem",
+  "type": {
+    "name": "BottomNavItemProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L295"
+  },
   "props": [
-    ["children", "any", ""],
-    ["btnName", "any", ""],
-    ["appBtnPosition", "any", "\"middle\""],
-    ["target", "any", ""],
-    ["activeClass", "any", ""],
-    ["href", "any", "\"\""],
-    ["btnClass", "any", ""],
-    ["spanClass", "any", ""]
+    ["children", ""],
+    ["btnName", ""],
+    ["appBtnPosition", "\"middle\""],
+    ["target", ""],
+    ["activeClass", ""],
+    ["href", "\"\""],
+    ["btnClass", ""],
+    ["spanClass", ""]
   ]
 }

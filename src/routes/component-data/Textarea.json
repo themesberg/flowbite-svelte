@@ -1,14 +1,18 @@
 {
   "name": "Textarea",
+  "type": {
+    "name": "TextareaProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L779"
+  },
   "props": [
-    ["header", "any", ""],
-    ["footer", "any", ""],
-    ["value", "any", "$bindable()"],
-    ["innerClass", "any", ""],
-    ["headerClass", "any", ""],
-    ["footerClass", "any", ""],
-    ["disabled", "any", ""],
-    ["class", "string", ""],
-    ["cols", "any", ""]
+    ["header", ""],
+    ["footer", ""],
+    ["value", "$bindable()"],
+    ["innerClass", ""],
+    ["headerClass", ""],
+    ["footerClass", ""],
+    ["disabled", ""],
+    ["class: className", ""],
+    ["cols", ""]
   ]
 }

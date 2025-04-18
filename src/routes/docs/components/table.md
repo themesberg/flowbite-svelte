@@ -857,32 +857,6 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Table styling
-
-- Use the `tableBodyClass` prop to overwrite the `table` tag class.
-
-### TableBodyCell styling
-
-- Use the `class` prop to overwrite `tdClass`.
-
-### TableBodyRow styling
-
-- Use the `class` prop to overwrite the `tr` tag class.
-
-### TableHead styling
-
-- Use the `class` prop to overwrite the `thead` tag class.
-
-### TableHeadCell styling
-
-- Use the `class` prop to overwrite the `th` tag class.
-
-### TableSearch styling
-
-- Use the `class` prop to overwrite the `table` tag class.
-- Use the `classInput` prop to overwrite `inputClass`.
-- Use the `classSvgDiv` prop to overwrite `svgDivClass`.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

@@ -1,9 +1,13 @@
 {
   "name": "TableBodyCell",
+  "type": {
+    "name": "TableBodyCellProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1311"
+  },
   "props": [
-    ["children", "any", ""],
-    ["class", "string", ""],
-    ["colspan", "any", ""],
-    ["onclick", "any", ""]
+    ["children", ""],
+    ["class: className", ""],
+    ["colspan", ""],
+    ["onclick", ""]
   ]
 }

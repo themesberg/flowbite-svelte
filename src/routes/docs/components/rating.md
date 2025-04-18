@@ -316,38 +316,6 @@ Use this component to show the review content from a user alongside the avatar, 
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Rating styling
-
-- Use the `class` prop to overwrite `divClass`.
-
-### AdvancedRating styling
-
-- Use the `classDiv` prop to overwrite `divClass`.
-- Use the `classLabel` prop to overwrite `labelClass`.
-- Use the `classRatingDiv` prop to overwrite `ratingDivClass`.
-- Use the `classRating` prop to overwrite `ratingClass`.
-- Use the `classRightLabel` prop to overwrite `rightLabelClass`.
-
-### Review styling
-
-- Use the `classArticle` prop to overwrite `articleClass`.
-- Use the `classDiv` prop to overwrite `divClass`.
-- Use the `classImg` prop to overwrite `imgClass`.
-- Use the `classUl` prop to overwrite `ulClass`.
-- Use the `classLi` prop to overwrite `liClass`.
-
-### Star styling
-
-- Use the `class` prop to overwrite the `svg` tag class.
-
-### Thumbup styling
-
-- Use the `class` prop to overwrite the `svg` tag class.
-
-### Heart styling
-
-- Use the `class` prop to overwrite the `svg` tag class.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

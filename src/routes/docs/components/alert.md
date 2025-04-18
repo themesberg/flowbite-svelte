@@ -330,10 +330,6 @@ Use the `click` event with `dismissable` prop.
 
 ## Component data
 
-### Alert styling
-
-- Use the `class` prop to overwrite `defaultClass`.
-
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 <CompoAttributesViewer {dirName}/>

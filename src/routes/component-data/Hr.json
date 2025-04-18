@@ -1,9 +1,13 @@
 {
   "name": "Hr",
+  "type": {
+    "name": "HrProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1517"
+  },
   "props": [
-    ["children", "any", ""],
-    ["divClass", "any", ""],
-    ["class", "string", ""],
-    ["innerDivClass", "any", ""]
+    ["children", ""],
+    ["divClass", ""],
+    ["class: className", ""],
+    ["innerDivClass", ""]
   ]
 }

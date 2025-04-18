@@ -1,8 +1,12 @@
 {
   "name": "Helper",
+  "type": {
+    "name": "HelperProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L693"
+  },
   "props": [
-    ["children", "any", ""],
-    ["class", "string", ""],
-    ["color", "any", "\"gray\""]
+    ["children", ""],
+    ["class: className", ""],
+    ["color", "\"gray\""]
   ]
 }

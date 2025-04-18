@@ -1,7 +1,11 @@
 {
   "name": "Secondary",
+  "type": {
+    "name": "SecondaryProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1587"
+  },
   "props": [
-    ["children", "any", ""],
-    ["class", "string", ""]
+    ["children", ""],
+    ["class: className", ""]
   ]
 }

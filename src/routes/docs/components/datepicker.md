@@ -222,11 +222,6 @@ Listen for date selection events using the `onselect` event.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Datepicker styling
-
-- Use the `class` prop to overwrite the input field's default class.
-- Use the `color` prop to set the primary color theme for the date picker.
-
 <CompoAttributesViewer {dirName} />
 
 ## References

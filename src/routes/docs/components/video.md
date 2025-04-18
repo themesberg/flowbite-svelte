@@ -114,10 +114,6 @@ Customize the video player appearance using the utility classes from Tailwind CS
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Video styling
-
-- Use the `class` prop to overwrite the `video` tag class.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

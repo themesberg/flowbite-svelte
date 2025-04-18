@@ -1,18 +1,22 @@
 {
   "name": "Review",
+  "type": {
+    "name": "ReviewProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1069"
+  },
   "props": [
-    ["children", "any", ""],
-    ["address", "any", ""],
-    ["item1", "any", ""],
-    ["item2", "any", ""],
-    ["item3", "any", ""],
-    ["review", "any", ""],
-    ["articleClass", "any", ""],
-    ["divClass", "any", ""],
-    ["div2Class", "any", ""],
-    ["div3Class", "any", ""],
-    ["imgClass", "any", ""],
-    ["ulClass", "any", ""],
-    ["liClass", "any", ""]
+    ["children", ""],
+    ["address", ""],
+    ["item1", ""],
+    ["item2", ""],
+    ["item3", ""],
+    ["review", ""],
+    ["articleClass", ""],
+    ["divClass", ""],
+    ["div2Class", ""],
+    ["div3Class", ""],
+    ["imgClass", ""],
+    ["ulClass", ""],
+    ["liClass", ""]
   ]
 }

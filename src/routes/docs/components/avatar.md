@@ -191,13 +191,13 @@ You can set `size` property to preset values of `xs | sm | md | lg | xl`. Custom
 
 Preset values are equivalents of:
 
-| Size |     |   Classes   |
-| :--: | --- | :---------: |
-|  xs  |     |  `w-6 h-6`  |
-|  sm  |     |  `w-8 h-8`  |
-|  md  |     | `w-10 h-10` |
-|  lg  |     | `w-20 h-20` |
-|  xl  |     | `w-36 h-36` |
+| Size  |     |   Classes   |
+| :---: | --- | :---------: |
+|  xs   |     |  `w-6 h-6`  |
+|  sm   |     |  `w-8 h-8`  |
+|  md   |     | `w-10 h-10` |
+|  lg   |     | `w-20 h-20` |
+|  xl   |     | `w-36 h-36` |
 
 ```svelte example class="flex flex-col gap-4" hideScript hideResponsiveButtons
 <script>
@@ -217,10 +217,6 @@ Preset values are equivalents of:
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
-
-### Avatar styling
-
-- Use the `class` prop to overwrite the default class.
 
 <CompoAttributesViewer {dirName}/>
 

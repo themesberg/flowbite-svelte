@@ -208,45 +208,6 @@ Use this component to group multiple data entries inside a single date and show 
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Timeline styling
-
-- Use the `class` prop to overwrite the `ol` tag class.
-
-### TimelineItem styling
-
-- Use the `classLi` prop to overwrite the `li` tag class.
-- Use the `classDiv` prop to overwrite the `div` tag class.
-- Use the `classTime` prop to overwrite the `time` tag class.
-
-### Activity styling
-
-- Use the `class` prop to overwrite `olClass`.
-
-### ActivityItem styling
-
-- Use the `classLi` prop to overwrite `liClass`.
-- Use the `classSpan` prop to overwrite `spanClass`.
-- Use the `classImg` prop to overwrite `imgClass`.
-- Use the `classOuterDiv` prop to overwrite `outerDivClass`.
-- Use the `classInnerDiv` prop to overwrite `innerDivClass`.
-- Use the `classTime` prop to overwrite `timeClass`.
-- Use the `classTitle` prop to overwrite `titleClass`.
-- Use the `classText` prop to overwrite `textClass`.
-
-### Group styling
-
-- Use the `classDiv` prop to overwrite `divClass`.
-- Use the `classTime` prop to overwrite `timeClass`.
-- Use the `classOl` prop to overwrite `olClass`.
-
-### GroupItem styling
-
-- Use the `classA` prop to overwrite `aClass`.
-- Use the `classImg` prop to overwrite `imgClass`.
-- Use the `classDiv` prop to overwrite `divClass`.
-- Use the `classTitle` prop to overwrite `titleClass`.
-- Use the `classSpan` prop to overwrite `spanClass`.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

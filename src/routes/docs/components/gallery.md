@@ -220,11 +220,6 @@ This example shows how to get a complete control over the gallery images look an
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Gallery styling
-
-- Use the `class` prop to overwrite the `div` tag.
-- Use the `classImg` prop to overwrite `imgClass`.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

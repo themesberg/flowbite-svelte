@@ -143,14 +143,6 @@ The file input component can be used to upload one or more files from the device
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Fileupload styling
-
-- Use the `class` prop to overwrite `inputClass`.
-
-### Dropzone styling
-
-- Use the `class` prop to overwrite `defaultClass`.
-
 <CompoAttributesViewer {components}/>
 
 ## References

@@ -1,15 +1,19 @@
 {
   "name": "TimelineItem",
+  "type": {
+    "name": "TimelineItemProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1452"
+  },
   "props": [
-    ["children", "any", ""],
-    ["orientationSlot", "any", ""],
-    ["title", "any", ""],
-    ["date", "any", ""],
-    ["dateFormat", "any", "\"month-year\""],
-    ["svgClass", "any", ""],
-    ["liClass", "any", ""],
-    ["divClass", "any", ""],
-    ["timeClass", "any", ""],
-    ["h3Class", "any", ""]
+    ["children", ""],
+    ["orientationSlot", ""],
+    ["title", ""],
+    ["date", ""],
+    ["dateFormat", "\"month-year\""],
+    ["svgClass", ""],
+    ["liClass", ""],
+    ["divClass", ""],
+    ["timeClass", ""],
+    ["h3Class", ""]
   ]
 }

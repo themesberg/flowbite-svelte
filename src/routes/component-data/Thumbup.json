@@ -1,14 +1,18 @@
 {
   "name": "Thumbup",
+  "type": {
+    "name": "RatingIconProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1096"
+  },
   "props": [
-    ["fillPercent", "any", "100"],
-    ["fillColor", "any", "\"#00b500\""],
-    ["strokeColor", "any", "\"#00b500\""],
-    ["size", "any", "24"],
-    ["ariaLabel", "any", "\"thumbup\""],
-    ["iconIndex", "any", "0"],
-    ["groupId", "any", "\"star\""],
-    ["role", "any", "\"img\""],
-    ["svgClass", "any", ""]
+    ["fillPercent", "100"],
+    ["fillColor", "\"#00b500\""],
+    ["strokeColor", "\"#00b500\""],
+    ["size", "24"],
+    ["ariaLabel", "\"thumbup\""],
+    ["iconIndex", "0"],
+    ["groupId", "\"star\""],
+    ["role", "\"img\""],
+    ["svgClass", ""]
   ]
 }

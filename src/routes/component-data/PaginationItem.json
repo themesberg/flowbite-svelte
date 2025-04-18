@@ -1,10 +1,14 @@
 {
   "name": "PaginationItem",
+  "type": {
+    "name": "PaginationItemProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L967"
+  },
   "props": [
-    ["children", "any", ""],
-    ["size", "any", ""],
-    ["class", "string", ""],
-    ["href", "any", ""],
-    ["active", "any", ""]
+    ["children", ""],
+    ["size", ""],
+    ["class: className", ""],
+    ["href", ""],
+    ["active", ""]
   ]
 }

@@ -1,17 +1,21 @@
 {
   "name": "Avatar",
+  "type": {
+    "name": "AvatarProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L223"
+  },
   "props": [
-    ["children", "any", ""],
-    ["src", "any", ""],
-    ["href", "any", ""],
-    ["target", "any", ""],
-    ["cornerStyle", "any", "\"circular\""],
-    ["border", "any", "false"],
-    ["stacked", "any", "false"],
-    ["dot", "any", ""],
-    ["class", "string", ""],
-    ["alt", "any", ""],
-    ["size", "any", "\"md\""],
-    ["onclick", "any", ""]
+    ["children", ""],
+    ["src", ""],
+    ["href", ""],
+    ["target", ""],
+    ["cornerStyle", "\"circular\""],
+    ["border", "false"],
+    ["stacked", "false"],
+    ["dot", ""],
+    ["class: className", ""],
+    ["alt", ""],
+    ["size", "\"md\""],
+    ["onclick", ""]
   ]
 }

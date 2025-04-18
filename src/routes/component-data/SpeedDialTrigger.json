@@ -1,12 +1,16 @@
 {
   "name": "SpeedDialTrigger",
+  "type": {
+    "name": "SpeedDialTriggerProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1249"
+  },
   "props": [
-    ["children", "any", ""],
-    ["name", "any", "\"Open actions menu\""],
-    ["gradient", "any", "false"],
-    ["icon", "any", ""],
-    ["pill", "any", "true"],
-    ["color", "any", ""],
-    ["class", "string", ""]
+    ["children", ""],
+    ["name", "\"Open actions menu\""],
+    ["gradient", "false"],
+    ["icon", ""],
+    ["pill", "true"],
+    ["color", ""],
+    ["class: className", ""]
   ]
 }

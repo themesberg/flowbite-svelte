@@ -1,7 +1,11 @@
 {
   "name": "Kbd",
+  "type": {
+    "name": "KbdProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L828"
+  },
   "props": [
-    ["children", "any", ""],
-    ["class", "string", ""]
+    ["children", ""],
+    ["class: className", ""]
   ]
 }

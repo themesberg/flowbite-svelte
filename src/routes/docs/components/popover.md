@@ -391,10 +391,6 @@ If you need the popover to be attached to the other element then the tiggering o
 
 The component inherits the following props, type, and default values from `Frame`. See <A href="/docs/pages/typescript">types page</A> for type information.
 
-### Popper styling
-
-- Use the `class` prop to overwrite the default class.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

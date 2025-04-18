@@ -190,11 +190,6 @@ Use the `progressClass` prop to change the color of the progress bar.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Progressbar styling
-
-- Use the `class` prop to overwrite the `div` class.
-- Use the `classLabelOutside` prop to overwrite the outside `div` class.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

@@ -298,14 +298,6 @@ You can use `onclick` or any standard `on:*` to listen to the event.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Button styling
-
-- Use the `class` prop to overwrite `button` tag class.
-
-### GradientButton styling
-
-- Use the `class` prop to overwrite `button` tag class.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

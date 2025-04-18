@@ -106,12 +106,6 @@ This example can be used to separate content with a HR tag as a shape instead of
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Hr styling
-
-- Use the `class` prop to overwrite `hr` element class.
-- Use the `divClass` prop to overwrite `classDiv`.
-- Use the `classInnerDiv` prop to overwrite `innerDivClass`.
-
 <CompoAttributesViewer {components}/>
 
 ## References

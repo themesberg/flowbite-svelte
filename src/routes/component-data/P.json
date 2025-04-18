@@ -1,16 +1,20 @@
 {
   "name": "P",
+  "type": {
+    "name": "ParagraphProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1573"
+  },
   "props": [
-    ["children", "any", ""],
-    ["class", "string", "\"text-gray-900 dark:text-white\""],
-    ["height", "any", "\"normal\""],
-    ["align", "any", "\"left\""],
-    ["justify", "any", "false"],
-    ["italic", "any", ""],
-    ["firstUpper", "any", "false"],
-    ["whitespace", "any", "\"normal\""],
-    ["size", "any", "\"base\""],
-    ["space", "any", "\"normal\""],
-    ["weight", "any", "\"normal\""]
+    ["children", ""],
+    ["class: className", "\"text-gray-900 dark:text-white\""],
+    ["height", "\"normal\""],
+    ["align", "\"left\""],
+    ["justify", "false"],
+    ["italic", ""],
+    ["firstUpper", "false"],
+    ["whitespace", "\"normal\""],
+    ["size", "\"base\""],
+    ["space", "\"normal\""],
+    ["weight", "\"normal\""]
   ]
 }

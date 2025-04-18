@@ -330,16 +330,6 @@ Accordions can be nested. All of the mentioned options are supported.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Accordion styling
-
-- Use the `class` prop to overwrite `defaultClass`.
-- Use the `classActive` prop to overwrite `activeClass`.
-- Use the `classInactive` prop to overwrite `inactiveClass`.
-
-### AccordionItem styling
-
-- Use the `class` prop to overwrite `defaultClass`.
-
 <CompoAttributesViewer {dirName} />
 
 ## References

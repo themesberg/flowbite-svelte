@@ -1,15 +1,19 @@
 {
   "name": "AccordionItem",
+  "type": {
+    "name": "AccordionItemProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L197"
+  },
   "props": [
-    ["children", "any", ""],
-    ["header", "any", ""],
-    ["arrowup", "any", ""],
-    ["arrowdown", "any", ""],
-    ["open", "any", "$bindable(false)"],
-    ["activeClass", "any", ""],
-    ["inactiveClass", "any", ""],
-    ["transitionType", "any", "slide"],
-    ["transitionParams", "any", ""],
-    ["class", "string", ""]
+    ["children", ""],
+    ["header", ""],
+    ["arrowup", ""],
+    ["arrowdown", ""],
+    ["open", "$bindable(false)"],
+    ["activeClass", ""],
+    ["inactiveClass", ""],
+    ["transitionType", "slide"],
+    ["transitionParams", ""],
+    ["class: className", ""]
   ]
 }

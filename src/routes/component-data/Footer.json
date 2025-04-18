@@ -1,8 +1,12 @@
 {
   "name": "Footer",
+  "type": {
+    "name": "FooterProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L586"
+  },
   "props": [
-    ["children", "any", ""],
-    ["footerType", "any", "\"default\""],
-    ["class", "string", ""]
+    ["children", ""],
+    ["footerType", "\"default\""],
+    ["class: className", ""]
   ]
 }

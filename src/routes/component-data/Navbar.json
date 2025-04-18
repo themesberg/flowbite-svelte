@@ -1,9 +1,13 @@
 {
   "name": "Navbar",
+  "type": {
+    "name": "NavbarProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L903"
+  },
   "props": [
-    ["children", "any", ""],
-    ["fluid", "any", ""],
-    ["navContainerClass", "any", ""],
-    ["class", "string", ""]
+    ["children", ""],
+    ["fluid", ""],
+    ["navContainerClass", ""],
+    ["class: className", ""]
   ]
 }

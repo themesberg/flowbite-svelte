@@ -1,27 +1,5 @@
 {
   "name": "Datepicker",
-  "props": [
-    ["value", "any", "$bindable()"],
-    ["defaultDate", "any", "null"],
-    ["range", "any", "false"],
-    ["rangeFrom", "any", "$bindable()"],
-    ["rangeTo", "any", "$bindable()"],
-    ["locale", "any", "\"default\""],
-    ["firstDayOfWeek", "any", "0"],
-    ["dateFormat", "any", "{ year: \"numeric\""],
-    ["month", "any", ""],
-    ["day", "any", ""],
-    ["placeholder", "any", "\"Select date\""],
-    ["disabled", "any", "false"],
-    ["required", "any", "false"],
-    ["inputClass", "any", "\"\""],
-    ["color", "any", "\"primary\""],
-    ["inline", "any", "false"],
-    ["autohide", "any", "true"],
-    ["showActionButtons", "any", "false"],
-    ["title", "any", "\"\""],
-    ["onselect", "any", ""],
-    ["onclear", "any", ""],
-    ["onapply", "any", ""]
-  ]
+  "type": null,
+  "props": []
 }

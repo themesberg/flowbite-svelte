@@ -310,33 +310,6 @@ Use this example to show a solid background for the navbar component instead of 
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Navbar styling
-
-- Use the `class` prop to overwrite default styling.
-- Use the `navContainerClass` prop to overwrite the `navContainer` styles.
-
-### NavBrand styling
-
-- Use the `class` prop to overwrite the `a` tag class.
-
-### NavHamburger styling
-
-- Use the `class` prop to overwrite `btnClass`.
-- Use the `classMenu` prop to overwrite `menuClass`.
-
-### NavLi styling
-
-- Use the `class` prop to overwrite the `li` tag.
-
-### NavUl styling
-
-- Use the `class` prop to overwrite the `div` tag.
-- Use the `classUl` prop to overwrite the `ul` tag.
-
-### Menu styling
-
-- Use the `class` prop to overwrite the `svg` tag class.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

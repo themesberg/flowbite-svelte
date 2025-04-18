@@ -1,14 +1,18 @@
 {
   "name": "Rating",
+  "type": {
+    "name": "RatingProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1022"
+  },
   "props": [
-    ["children", "any", ""],
-    ["text", "any", ""],
-    ["class", "string", ""],
-    ["size", "any", "24"],
-    ["total", "any", "5"],
-    ["rating", "any", "4"],
-    ["icon", "any", "Star"],
-    ["count", "any", "false"],
-    ["pClass", "any", ""]
+    ["children", ""],
+    ["text", ""],
+    ["class: divClass", ""],
+    ["size", "24"],
+    ["total", "5"],
+    ["rating", "4"],
+    ["icon: Icon", "Star"],
+    ["count", "false"],
+    ["pClass", ""]
   ]
 }

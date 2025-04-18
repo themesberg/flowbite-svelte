@@ -161,8 +161,6 @@ When you want to add a fully custom styles, use `type="custom"`, `defaultClass`,
 
 ## Component data
 
-### Tooltip
-
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 <CompoAttributesViewer {dirName}/>

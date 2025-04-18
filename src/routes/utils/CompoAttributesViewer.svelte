@@ -3,14 +3,17 @@
   import { getFilteredFileNames } from "./helpers";
   import TableDefaultRow from "./TableDefaultRow.svelte";
   import TableProp from "./TableProp.svelte";
+  import { A } from "$lib";
 
   type TCompoData = {
     data: {
       default: {
         name: string;
         props: string[][];
-        events: string[][];
-        slots: string[][];
+        type: {
+          name: string;
+          link: string;
+        };
       };
     };
   };
@@ -64,11 +67,12 @@
   <div id="compoData">
     {#each compoData as compo}
       <h4 class="mt-8 text-xl font-bold text-black dark:text-white">{compo.data.default.name}</h4>
-      <ul class="w-full">
-        <TableProp>
-          <TableDefaultRow items={compo.data.default.props} rowState="hover" />
-        </TableProp>
-      </ul>
+      <h5 class="mt-4 text-lg font-bold text-black dark:text-white">Types</h5>
+      <A href={compo.data.default.type.link} class="text-lg">{compo.data.default.type.name}</A>
+      <h5 class="mt-4 text-lg font-bold text-black dark:text-white">Props</h5>
+      <TableProp>
+        <TableDefaultRow items={compo.data.default.props} rowState="hover" />
+      </TableProp>
     {/each}
   </div>
 {/if}

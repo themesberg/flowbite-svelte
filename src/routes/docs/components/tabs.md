@@ -361,14 +361,6 @@ To get a custom look and feel for the `Tabs` component, set `activeClasses` and 
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### TabItem styling
-
-- Use the `class` prop to overwrite the `li` tag class.
-
-### Tabs styling
-
-- Use the `class` prop to overwrite `defaultClass`.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

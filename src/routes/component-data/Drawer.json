@@ -1,17 +1,21 @@
 {
   "name": "Drawer",
+  "type": {
+    "name": "DrawerProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L538"
+  },
   "props": [
-    ["children", "any", ""],
-    ["hidden", "any", "$bindable()"],
-    ["closeDrawer", "any", "()"],
-    ["activateClickOutside", "any", "true"],
-    ["position", "any", ""],
-    ["width", "any", ""],
-    ["backdrop", "any", "true"],
-    ["backdropClass", "any", ""],
-    ["placement", "any", "\"left\""],
-    ["class", "string", ""],
-    ["transitionParams", "any", ""],
-    ["transitionType", "any", "fly"]
+    ["children", ""],
+    ["hidden", "$bindable()"],
+    ["closeDrawer", "()"],
+    ["activateClickOutside", "true"],
+    ["position", ""],
+    ["width", ""],
+    ["backdrop", "true"],
+    ["backdropClass", ""],
+    ["placement", "\"left\""],
+    ["class: className", ""],
+    ["transitionParams", ""],
+    ["transitionType", "fly"]
   ]
 }

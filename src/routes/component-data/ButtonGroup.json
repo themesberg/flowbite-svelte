@@ -1,8 +1,12 @@
 {
   "name": "ButtonGroup",
+  "type": {
+    "name": "ButtonGroupProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L327"
+  },
   "props": [
-    ["children", "any", ""],
-    ["size", "any", "\"md\""],
-    ["class", "string", ""]
+    ["children", ""],
+    ["size", "\"md\""],
+    ["class: className", ""]
   ]
 }

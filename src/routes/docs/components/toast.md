@@ -402,10 +402,6 @@ You can use `onclose` to execute custom logic when the toast is closed.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Toast styling
-
-- Use the `class` prop to overwrite `divClass`.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

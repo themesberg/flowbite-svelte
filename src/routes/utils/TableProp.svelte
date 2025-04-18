@@ -7,7 +7,7 @@
   setContext("category", category);
 
   const headerNames = {
-    props: ["Name", "Type", "Default"],
+    props: ["Name", "Default"],
     events: ["Names"],
     slots: ["Names"]
   };

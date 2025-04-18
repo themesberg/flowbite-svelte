@@ -1,13 +1,17 @@
 {
   "name": "Indicator",
+  "type": {
+    "name": "IndicatorProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L817"
+  },
   "props": [
-    ["children", "any", ""],
-    ["color", "any", "\"primary\""],
-    ["cornerStyle", "any", "\"circular\""],
-    ["size", "any", "\"md\""],
-    ["border", "any", "false"],
-    ["placement", "any", ""],
-    ["offset", "any", "true"],
-    ["class", "string", ""]
+    ["children", ""],
+    ["color", "\"primary\""],
+    ["cornerStyle", "\"circular\""],
+    ["size", "\"md\""],
+    ["border", "false"],
+    ["placement", ""],
+    ["offset", "true"],
+    ["class: className", ""]
   ]
 }

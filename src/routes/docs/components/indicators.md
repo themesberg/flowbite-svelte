@@ -259,10 +259,6 @@ Use these examples to position the indicator component anywhere relative to the 
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Indicator styling
-
-- Use the `class` prop to overwrite the `div` tag class.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

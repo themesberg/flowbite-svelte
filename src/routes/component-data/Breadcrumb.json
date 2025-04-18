@@ -1,10 +1,14 @@
 {
   "name": "Breadcrumb",
+  "type": {
+    "name": "BreadcrumbProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L309"
+  },
   "props": [
-    ["children", "any", ""],
-    ["solid", "any", "false"],
-    ["class", "string", ""],
-    ["olClass", "any", ""],
-    ["ariaLabel", "any", "\"Breadcrumb\""]
+    ["children", ""],
+    ["solid", "false"],
+    ["class: className", ""],
+    ["olClass", ""],
+    ["ariaLabel", "\"Breadcrumb\""]
   ]
 }

@@ -105,10 +105,6 @@ The spinner component can also be used inside elements such as buttons when subm
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Spinner styling
-
-- Use the `class` prop to overwrite the default class.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

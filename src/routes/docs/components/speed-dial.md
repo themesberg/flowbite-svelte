@@ -589,14 +589,6 @@ You can change the main button to any element you want.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### SpeedDial styling
-
-- Use the `class` prop to overwrite default styling.
-
-### SpeedDialButton styling
-
-- Use the `class` prop to overwrite default styling.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

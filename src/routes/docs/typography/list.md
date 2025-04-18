@@ -343,18 +343,6 @@ Use this example to create a horizontally aligned list of items.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### List styling
-
-- Use the `class` prop to overwrite the list class.
-
-### Li styling
-
-- Use the `class` prop to overwrite the `li` tag class.
-
-### DescriptionList styling
-
-- Use the `class` prop to overwrite the `description` tag class.
-
 <CompoAttributesViewer {components}/>
 
 ## References

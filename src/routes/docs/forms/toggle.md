@@ -106,11 +106,6 @@ Get started with the default toggle component example as a checkbox element to r
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Toggle styling
-
-- Use the `class` prop to overwrite the overlapping `Label` component.
-- Use the `inputClass` prop to overwrite the `<input/>`.
-
 <CompoAttributesViewer {components}/>
 
 ## References

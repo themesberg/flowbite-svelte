@@ -1,8 +1,12 @@
 {
   "name": "Li",
+  "type": {
+    "name": "LiProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1562"
+  },
   "props": [
-    ["children", "any", ""],
-    ["icon", "any", ""],
-    ["class", "string", ""]
+    ["children", ""],
+    ["icon", ""],
+    ["class: className", ""]
   ]
 }

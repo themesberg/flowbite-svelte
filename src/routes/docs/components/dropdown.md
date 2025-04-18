@@ -731,25 +731,6 @@ As dropdown is implemented using the [Floating UI](https://floating-ui.com) libr
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Dropdown styling
-
-- Use the `class` prop to style underlying `ul` element.
-- Use the `classContainer` prop to overwrite `containerClass`.
-- Use the `classHeader` prop to overwrite `headerClass`.
-- Use the `classFooter` prop to overwrite `footerClass`.
-
-### DropdownDivider styling
-
-- Use the `class` prop to overwrite `divClass`.
-
-### DropdownHeader styling
-
-- Use the `class` prop to overwrite `divClass`.
-
-### DropdownItem styling
-
-- Use the `class` prop to overwrite `defaultClass`.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

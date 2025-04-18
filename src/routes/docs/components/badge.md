@@ -294,10 +294,6 @@ The color can be changed dynamically.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Badge styling
-
-- Use the `class` prop to overwrite the default class.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

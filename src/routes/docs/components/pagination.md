@@ -275,16 +275,6 @@ You can use the following code to show the number of data shown inside a table e
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Pagination styling
-
-- Use the `class` prop to overwrite the `ul` tag class.
-- Use the `classNormal` prop to overwrite `normalClass`.
-- Use the `classActive` prop to overwrite `activeClass`.
-
-### PaginationItem styling
-
-- Use the `class` prop to overwrite the default class.
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

@@ -1,12 +1,16 @@
 {
   "name": "Dropdown",
+  "type": {
+    "name": "DropdownProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L555"
+  },
   "props": [
-    ["children", "any", ""],
-    ["simple", "any", "false"],
-    ["placement", "any", "\"bottom\""],
-    ["offset", "any", "2"],
-    ["class", "string", ""],
-    ["backdropClass", "any", ""],
-    ["activeUrl", "any", "\"\""]
+    ["children", ""],
+    ["simple", "false"],
+    ["placement", "\"bottom\""],
+    ["offset", "2"],
+    ["class: className", ""],
+    ["backdropClass", ""],
+    ["activeUrl", "\"\""]
   ]
 }

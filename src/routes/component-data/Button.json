@@ -1,15 +1,19 @@
 {
   "name": "Button",
+  "type": {
+    "name": "ButtonProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L338"
+  },
   "props": [
-    ["children", "any", ""],
-    ["onclick", "any", ""],
-    ["pill", "any", ""],
-    ["outline", "any", "false"],
-    ["size", "any", "group ? \"sm\" : \"md\""],
-    ["color", "any", "group ? (outline ? \"dark\" : \"alternative\") : \"primary\""],
-    ["shadow", "any", "false"],
-    ["tag", "any", "\"button\""],
-    ["disabled", "any", ""],
-    ["class", "string", ""]
+    ["children", ""],
+    ["onclick", ""],
+    ["pill", ""],
+    ["outline", "false"],
+    ["size", "group ? \"sm\" : \"md\""],
+    ["color", "group ? (outline ? \"dark\" : \"alternative\") : \"primary\""],
+    ["shadow", "false"],
+    ["tag", "\"button\""],
+    ["disabled", ""],
+    ["class: className", ""]
   ]
 }

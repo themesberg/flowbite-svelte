@@ -1,20 +1,24 @@
 {
   "name": "Badge",
+  "type": {
+    "name": "BadgeProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L238"
+  },
   "props": [
-    ["children", "any", ""],
-    ["icon", "any", ""],
-    ["badgeStatus", "any", "$bindable(true)"],
-    ["color", "any", "\"primary\""],
-    ["large", "any", "false"],
-    ["dismissable", "any", "false"],
-    ["class", "string", ""],
-    ["border", "any", ""],
-    ["href", "any", ""],
-    ["target", "any", ""],
-    ["rounded", "any", ""],
-    ["transition", "any", "fade"],
-    ["params", "any", ""],
-    ["aClass", "any", ""],
-    ["onclose", "any", ""]
+    ["children", ""],
+    ["icon", ""],
+    ["badgeStatus", "$bindable(true)"],
+    ["color", "\"primary\""],
+    ["large", "false"],
+    ["dismissable", "false"],
+    ["class: className", ""],
+    ["border", ""],
+    ["href", ""],
+    ["target", ""],
+    ["rounded", ""],
+    ["transition", "fade"],
+    ["params", ""],
+    ["aClass", ""],
+    ["onclose", ""]
   ]
 }

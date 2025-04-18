@@ -99,10 +99,6 @@ Since we added `...restProps` to input field, you can contain the props which ar
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Search-input styling
-
-Use the `class` prop to overwrite the default class.
-
 <CompoAttributesViewer {components}/>
 
 ## References
