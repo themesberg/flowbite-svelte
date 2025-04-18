@@ -28,7 +28,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L550)
+[DrawerheadProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L548)
 ## Props
 @prop closeIcon
 @prop children

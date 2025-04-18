@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { mark } from "./index";
   import type { MarkProps } from "$lib/types";
-  
+
   let { children, class: className, ...restProps }: MarkProps = $props();
 </script>
 
@@ -14,7 +14,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[MarkProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1570)
+[MarkProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1568)
 ## Props
 @prop children
 @prop class: className

@@ -35,7 +35,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[ToolbarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L943)
+[ToolbarButtonProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L941)
 ## Props
 @prop children
 @prop onclick

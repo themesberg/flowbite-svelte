@@ -53,7 +53,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[ThemeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1389)
+[ThemeProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1387)
 ## Props
 @prop children
 @prop theme

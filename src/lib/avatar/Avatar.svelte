@@ -48,7 +48,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[AvatarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L225)
+[AvatarProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L223)
 ## Props
 @prop children
 @prop src

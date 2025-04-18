@@ -16,7 +16,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[HeadingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1513)
+[HeadingProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1511)
 ## Props
 @prop children
 @prop tag = "h1"

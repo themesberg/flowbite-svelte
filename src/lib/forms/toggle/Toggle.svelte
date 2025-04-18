@@ -24,7 +24,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[ToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L794)
+[ToggleProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L792)
 ## Props
 @prop children
 @prop size = "default"

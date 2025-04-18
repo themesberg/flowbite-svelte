@@ -16,7 +16,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[ParagraphProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1575)
+[ParagraphProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1573)
 ## Props
 @prop children
 @prop class: className = "text-gray-900 dark:text-white"

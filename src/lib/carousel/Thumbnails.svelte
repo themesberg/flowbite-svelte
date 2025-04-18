@@ -43,7 +43,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L419)
+[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L417)
 ## Props
 @prop children
 @prop images = []

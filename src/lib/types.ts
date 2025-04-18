@@ -51,8 +51,6 @@ import type { ListVariants } from "$lib/typography/list/theme";
 import type { ParagraphVariants } from "$lib/typography/paragraph/theme";
 import type { SpanVariants } from "$lib/typography/span/theme";
 
-
-
 // end of component variants
 
 export interface ThemeConfig {
@@ -1613,5 +1611,3 @@ export interface VideoProps extends HTMLVideoAttributes {
   srclang?: HTMLTrackAttributes["lang"];
   label?: HTMLTrackAttributes["label"];
 }
-
-

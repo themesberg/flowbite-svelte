@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "1.0.0-next.12",
+  "version": "1.0.0-next.13",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -26,7 +26,7 @@
     "test:e2e": "playwright test",
     "test:unit": "vitest",
     "gen:exports": "svelte-lib-helpers exports",
-    "gen:docspropvalue": "svelte-lib-helpers docspropvalue",
+    "gen:docspropvalue": "svelte-lib-helpers docspropvalue themesberg/flowbite-svelte-next",
     "copy:packagejson": "svelte-lib-helpers package",
     "lib-helpers": "pnpm gen:docspropvalue && pnpm format && pnpm package && pnpm gen:exports && pnpm copy:packagejson",
     "ch": "npx changeset",
@@ -65,9 +65,9 @@
     "prettier-plugin-tailwindcss": "^0.6.11",
     "prism-themes": "^1.9.0",
     "publint": "^0.3.12",
-    "svelte": "^5.27.3",
+    "svelte": "^5.28.0",
     "svelte-check": "^4.1.6",
-    "svelte-lib-helpers": "^0.4.21",
+    "svelte-lib-helpers": "^0.4.23",
     "svelte-meta-tags": "^4.2.0",
     "svelte-rune-highlight": "^0.6.6",
     "tailwind-merge": "^3.2.0",

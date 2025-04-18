@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.0-next.13
+
+### Patch Changes
+
+- fix: move all types to $lib/types
+
 ## 1.0.0-next.12
 
 ### Patch Changes

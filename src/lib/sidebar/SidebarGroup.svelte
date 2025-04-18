@@ -12,7 +12,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[SidebarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1178)
+[SidebarGroupProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1176)
 ## Props
 @prop children
 @prop class: className = "space-y-2"

@@ -21,7 +21,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[ToolbarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L941)
+[ToolbarGroupProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L939)
 ## Props
 @prop children
 @prop spacing
