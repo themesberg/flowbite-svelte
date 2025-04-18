@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { type DefaultMockupProps, defaultMockup } from ".";
+  import { defaultMockup } from ".";
+  import type { DefaultMockupProps } from "$lib/types"
 
   let { children, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: DefaultMockupProps = $props();
 

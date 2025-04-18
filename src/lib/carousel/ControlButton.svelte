@@ -1,7 +1,7 @@
 <script lang="ts">
   import clsx from "clsx";
   import { controlButton } from "./theme";
-  import type { ControlButtonProps } from "../types";
+  import type { ControlButtonProps } from "$lib/types";
 
   let { children, forward, name, class: className, ...restProps }: ControlButtonProps = $props();
 </script>

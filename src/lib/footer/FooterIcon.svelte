@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { type FooterIconProps as Props, footerIcon } from ".";
+  import { footerIcon } from ".";
+  import type { FooterIconProps } from "$lib/types";
 
-  let { children, href, ariaLabel, class: aClass, ...restProps }: Props = $props();
+  let { children, href, ariaLabel, class: aClass, ...restProps }: FooterIconProps = $props();
 
   const aCls = $derived(footerIcon({ class: aClass }));
 </script>

@@ -1,8 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type LabelProps as Props, label } from ".";
+  import { label } from ".";
+  import type { LabelProps } from "$lib/types";
 
-  let { children, color = "gray", show = true, class: className, ...restProps }: Props = $props();
+  let { children, color = "gray", show = true, class: className, ...restProps }: LabelProps = $props();
 
   let base = $derived(label({ color, class: clsx(className) }));
 </script>

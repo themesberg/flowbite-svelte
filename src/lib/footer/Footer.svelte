@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { type FooterProps, footer } from ".";
+  import { footer } from ".";
+  import type { FooterProps } from "$lib/types";
 
   let { children, footerType = "default", class: className, ...restProps }: FooterProps = $props();
 

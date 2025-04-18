@@ -2,7 +2,7 @@
   import type { ApexOptions } from "apexcharts";
   import type ApexCharts from "apexcharts";
   import "./chart.css";
-  import { type ChartProps } from ".";
+  import type { ChartProps } from "$lib/types";
 
   let { options, class: classname }: ChartProps = $props();
 

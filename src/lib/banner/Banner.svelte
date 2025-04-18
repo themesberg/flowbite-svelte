@@ -2,7 +2,7 @@
   import { CloseButton } from "$lib";
   import { fade } from "svelte/transition";
   import { banner } from "./index";
-  import type { ParamsType, BannerProps,  } from "../types";
+  import type { ParamsType, BannerProps,  } from "$lib/types";
   import clsx from "clsx";
 
   let { children, header, open = $bindable(true), dismissable = true, color = "gray", type, class: className, innerClass, transition = fade, params, ...restProps }: BannerProps = $props();

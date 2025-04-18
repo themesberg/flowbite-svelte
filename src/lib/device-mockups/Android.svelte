@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { type AndroidProps, android } from ".";
+  import { android } from ".";
+  import type { AndroidProps } from "$lib/types"
 
   let { children, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, div7Class, ...restProps }: AndroidProps = $props();
 

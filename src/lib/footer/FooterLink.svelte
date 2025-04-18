@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { type FooterLinkProps as Props, footerLink } from ".";
+  import { footerLink } from ".";
+  import type { FooterLinkProps } from "$lib/types";
 
-  let { children, liClass, aClass, href, ...restProps }: Props = $props();
+  let { children, liClass, aClass, href, ...restProps }: FooterLinkProps = $props();
   const { base, link } = $derived(footerLink());
 </script>
 

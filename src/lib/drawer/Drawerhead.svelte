@@ -1,6 +1,7 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { drawerhead, type DrawerheadProps } from ".";
+  import { drawerhead } from ".";
+  import type { DrawerheadProps } from "$lib/types";
 
   let { closeIcon, children, buttonClass, svgClass, class: className, ...restProps }: DrawerheadProps = $props();
 

@@ -1,9 +1,10 @@
 <script lang="ts">
   import { idGenerator } from "../../uiHelpers.svelte";
-  import { type FloatingLabelInputProps as Props, floatingLabelInput } from ".";
+  import { floatingLabelInput } from ".";
+  import type { FloatingLabelInputProps } from "$lib/types";
   import clsx from "clsx";
 
-  let { children, id = idGenerator(), value = $bindable(), "aria-describedby": ariaDescribedby, variant = "standard", size = "default", color = "default", class: divClass, inputClass, labelClass, ...restProps }: Props = $props();
+  let { children, id = idGenerator(), value = $bindable(), "aria-describedby": ariaDescribedby, variant = "standard", size = "default", color = "default", class: divClass, inputClass, labelClass, ...restProps }: FloatingLabelInputProps = $props();
 
   const { base, input, label } = $derived(floatingLabelInput({ variant, size, color }));
 </script>

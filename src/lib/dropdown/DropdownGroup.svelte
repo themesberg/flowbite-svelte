@@ -1,6 +1,7 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type DropdownGroupProps, dropdownGroup } from ".";
+  import { dropdownGroup } from ".";
+  import type { DropdownGroupProps } from "$lib/types";
 
   let { children, class: className, ...restProps }: DropdownGroupProps = $props();
 

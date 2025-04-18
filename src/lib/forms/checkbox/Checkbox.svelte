@@ -1,9 +1,10 @@
 <script lang="ts">
   import Label from "../label/Label.svelte";
-  import { type CheckboxProps as Props, checkbox } from ".";
+  import { checkbox } from ".";
+  import type { CheckboxProps } from "$lib/types";
   import clsx from "clsx";
 
-  let { children, color = "primary", custom, inline, tinted, rounded, group = $bindable([]), choices = [], checked = $bindable(false), indeterminate, class: className, value, ...restProps }: Props = $props();
+  let { children, color = "primary", custom, inline, tinted, rounded, group = $bindable([]), choices = [], checked = $bindable(false), indeterminate, class: className, value, ...restProps }: CheckboxProps = $props();
 
   const { base, label: labelStyle } = $derived(checkbox({ color, tinted, custom, rounded, inline }));
 

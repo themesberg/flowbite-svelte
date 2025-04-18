@@ -1,4 +1,4 @@
-import type { HTMLButtonAttributes, HTMLAnchorAttributes, HTMLAttributes, HTMLLiAttributes, HTMLImgAttributes } from "svelte/elements";
+import type { HTMLButtonAttributes, HTMLAnchorAttributes, HTMLAttributes, HTMLLiAttributes, HTMLImgAttributes, HTMLInputAttributes, HTMLLabelAttributes } from "svelte/elements";
 import type { TransitionConfig, FadeParams, BlurParams, FlyParams, SlideParams, ScaleParams } from "svelte/transition";
 import { type Writable } from "svelte/store";
 import type { Snippet, Component } from "svelte";
@@ -10,6 +10,16 @@ import type { BannerVariants } from "./banner/theme";
 import type { ButtonVariants, GradientButtonVariantes } from "./buttons/theme";
 import type { CarouselVariants } from "./carousel/theme";
 import type Slide from "./carousel/Slide.svelte";
+import type { ApexOptions } from "apexcharts";
+import type { DrawerVariants } from "./drawer/theme";
+import type { PopperProps } from "$lib/utils/Popper.svelte";
+import type { CheckboxVariants } from "./forms/checkbox/theme";
+import type { FileuploadViariants } from "$lib/forms/fileupload/theme";
+import type { FloatingLabelInputVaratiants } from "$lib/forms/floating-label-input/theme";
+import type { HelperVariants } from "$lib/forms/helper/theme";
+import type { InputVariants } from "$lib/forms/input/theme";
+import type { LabelVariants } from "$lib/forms/label/theme";
+
 
 
 
@@ -397,6 +407,301 @@ export interface SlideProps extends HTMLImgAttributes {
   image: HTMLImgAttributes;
   transition?: TransitionFunc; // Optional transition function, overrides default slide transition
 }
+
+// chart
+export interface ChartProps {
+  options: ApexOptions;
+  class?: string;
+}
+
+// darkmode
+export interface DarkmodeProps extends HTMLButtonAttributes {
+  class?: string;
+  lightIcon?: Snippet;
+  darkIcon?: Snippet;
+  size?: "sm" | "md" | "lg";
+  ariaLabel?: string;
+}
+
+// datepicker
+export type DateOrRange = Date | { from?: Date; to?: Date };
+
+export interface DatepickerProps extends Omit<HTMLAttributes<HTMLDivElement>, "onselect"> {
+  value?: Date;
+  defaultDate?: Date | null;
+  range: boolean;
+  rangeFrom?: Date;
+  rangeTo?: Date;
+  locale: string;
+  firstDayOfWeek: number;
+  dateFormat: Intl.DateTimeFormatOptions;
+  placeholder: string;
+  disabled: boolean;
+  required: boolean;
+  inputClass: string;
+  color: ButtonProps["color"];
+  inline: boolean;
+  autohide: boolean;
+  showActionButtons: boolean;
+  title: string;
+  onselect?: (x: DateOrRange) => void;
+  onclear?: () => void;
+  onapply?: (x: DateOrRange) => void;
+}
+
+// device-mockups
+export interface DeviceMockupProps {
+  children: Snippet;
+  device?: DeviceVariantType;
+}
+
+export interface MockupBaseProps extends HTMLAttributes<HTMLElement> {
+  children?: Snippet;
+  divClass?: string;
+  div2Class?: string;
+  div3Class?: string;
+  div4Class?: string;
+}
+
+export interface AndroidProps {
+  children?: Snippet;
+  divClass?: string;
+  div2Class?: string;
+  div3Class?: string;
+  div4Class?: string;
+  div5Class?: string;
+  div6Class?: string;
+  div7Class?: string;
+}
+
+export interface DefaultMockupProps {
+  children?: Snippet;
+  divClass?: string;
+  div2Class?: string;
+  div3Class?: string;
+  div4Class?: string;
+  div5Class?: string;
+  div6Class?: string;
+}
+
+export interface IosProps {
+  children?: Snippet;
+  divClass?: string;
+  div2Class?: string;
+  div3Class?: string;
+  div4Class?: string;
+  div5Class?: string;
+  div6Class?: string;
+}
+
+export interface SmartwatchProps {
+  children?: Snippet;
+  divClass?: string;
+  div2Class?: string;
+  div3Class?: string;
+  div4Class?: string;
+  div5Class?: string;
+  div6Class?: string;
+}
+
+export interface TabletProps {
+  children?: Snippet;
+  divClass?: string;
+  div2Class?: string;
+  div3Class?: string;
+  div4Class?: string;
+  div5Class?: string;
+  div6Class?: string;
+}
+
+// drawer
+export interface DrawerProps extends DrawerVariants, HTMLAttributes<HTMLDivElement> {
+  hidden: boolean;
+  closeDrawer?: () => void;
+  activateClickOutside?: boolean;
+  backdrop?: boolean;
+  backdropClass?: string;
+  transitionParams?: ParamsType;
+  transitionType?: TransitionFunc;
+}
+
+export interface DrawerheadProps extends HTMLButtonAttributes {
+  closeIcon?: Snippet;
+  buttonClass?: string;
+  svgClass?: string;
+}
+
+// dropdown
+export interface DropdownProps extends PopperProps {
+  simple?: boolean;
+  divClass?: string;
+  footerClass?: string;
+  headerClass?: string;
+  ulClass?: string;
+  backdropClass?: string;
+  activeUrl?: string;
+}
+
+export interface DropdownDividerProps extends HTMLAttributes<HTMLDivElement> {}
+
+export interface DropdownHeaderProps extends HTMLAttributes<HTMLDivElement> {
+  children: Snippet;
+}
+
+export interface DropdownItemProps extends HTMLAnchorAttributes {
+  children: Snippet;
+  aClass?: string;
+  href?: string;
+  activeClass?: string;
+  liClass?: string;
+}
+
+export interface DropdownGroupProps extends HTMLAttributes<HTMLUListElement> {
+  children: Snippet;
+}
+
+// footer
+export type FooterType = "default" | "sticky" | "sitemap" | "socialmedia" | "logo" | undefined;
+
+export interface FooterProps extends HTMLAttributes<HTMLElement> {
+  children: Snippet;
+  footerType?: FooterType;
+  class?: string;
+}
+
+export interface FooterBrandProps extends HTMLAnchorAttributes {
+  children?: Snippet;
+  aClass?: string;
+  spanClass?: string;
+  imgClass?: string;
+  href?: string;
+  src?: string;
+  alt?: string;
+  name?: string;
+}
+
+export interface FooterCopyrightProps extends HTMLAnchorAttributes {
+  spanClass?: string;
+  aClass?: string;
+  href?: string;
+  by?: string;
+  copyrightMessage?: string;
+  year?: number | undefined;
+}
+
+export interface FooterIconProps extends HTMLAnchorAttributes {
+  children: Snippet;
+  href?: string;
+  ariaLabel?: string;
+  class?: string;
+}
+
+export interface FooterLinkGroupProps extends HTMLAttributes<HTMLUListElement> {
+  children: Snippet;
+  class?: string;
+}
+
+export interface FooterLinkProps extends HTMLAnchorAttributes {
+  children: Snippet;
+  liClass?: string;
+  aClass?: string;
+  href?: string;
+}
+
+// forms
+// checkbox
+export interface CheckboxItem {
+  value: string;
+  label?: string;
+  checked?: boolean | null;
+  [key: string]: any;
+}
+
+export interface CheckboxProps extends Omit<HTMLInputAttributes, "children"> {
+  children?: Snippet<[CheckboxItem]>;
+  color?: CheckboxVariants["color"];
+  custom?: boolean;
+  inline?: boolean;
+  tinted?: boolean;
+  rounded?: boolean;
+  group?: (string | number)[];
+  choices?: CheckboxItem[];
+  indeterminate?: boolean;
+}
+
+// checkbox-button
+export interface CheckboxButtonProps extends Omit<HTMLInputAttributes, "size"> {
+  group?: (string | number)[];
+  value?: string | number;
+  checked?: boolean | undefined;
+  inline?: boolean;
+  pill?: boolean;
+  outline?: boolean;
+  size?: ButtonProps["size"];
+  color?: ButtonProps["color"];
+  shadow?: boolean;
+}
+
+// dropzone
+export interface DropzoneProps extends HTMLInputAttributes {
+  children: Snippet;
+  files?: FileList | null;
+}
+
+// fileupload
+export interface FileuploadProps extends Omit<HTMLInputAttributes, "size"> {
+  files?: FileList;
+  size?: FileuploadViariants["size"];
+  color?: InputProps<never>["color"];
+  clearable?: boolean;
+}
+
+// floatinglabel-input
+export interface FloatingLabelInputProps extends Omit<HTMLInputAttributes, "size"> {
+  children: Snippet;
+  id?: string;
+  value?: string | number | readonly string[] | undefined;
+  "aria-describedby"?: string;
+  variant?: FloatingLabelInputVaratiants["variant"];
+  size?: FloatingLabelInputVaratiants["size"];
+  color?: FloatingLabelInputVaratiants["color"];
+  inputClass?: string;
+  labelClass?: string;
+}
+
+// helper
+export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> {}
+
+// input
+export type InputValue = string | number | string[] | undefined;
+
+export interface InputProps<T extends InputValue = string> extends Omit<HTMLInputAttributes, "size" | "children" | "value"> {
+  children?: Snippet<[{ class: string } & Omit<InputProps<T>, "children" | "left" | "right" | "size">]>;
+  left?: Snippet;
+  right?: Snippet;
+  size?: InputVariants["size"];
+  value?: T;
+  clearable?: boolean;
+  color?: InputVariants["color"];
+  classLeft?: string;
+  classRight?: string;
+  divClass?: string;
+}
+
+// input-addon
+export interface InputAddonProps extends HTMLAttributes<HTMLDivElement> {
+  children: Snippet;
+  class?: string;
+  size?: "sm" | "md" | "lg" | undefined;
+}
+
+// label
+export interface LabelProps extends HTMLLabelAttributes {
+  children: Snippet;
+  color?: LabelVariants["color"];
+  show?: boolean;
+}
+
 
 
 

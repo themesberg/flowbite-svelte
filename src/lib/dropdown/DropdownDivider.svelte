@@ -1,6 +1,7 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type DropdownDividerProps, dropdownDivider } from "./";
+  import { dropdownDivider } from "./";
+  import type { DropdownDividerProps } from "$lib/types";
 
   let { class: divClass, ...restProps }: DropdownDividerProps = $props();
   const base = dropdownDivider({ class: clsx(divClass) });

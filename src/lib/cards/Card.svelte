@@ -1,6 +1,6 @@
 <script lang="ts">
   import { card } from ".";
-  import type { CardProps } from "../types";
+  import type { CardProps } from "$lib/types";
   import type { HTMLAttributes, HTMLAnchorAttributes } from "svelte/elements";
 
   let { children, href, color = "gray", horizontal = false, shadow = "md", reverse = false, img, padding = "lg", size = "sm", class: className, imgClass, contentClass, ...restProps }: CardProps = $props();

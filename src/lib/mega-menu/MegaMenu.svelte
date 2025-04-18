@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import type { LinkType } from "../types";
+  import type { LinkType } from "$lib/types";
   import Popper from "../utils/Popper.svelte";
   import { megamenu } from "./theme";
   import type { MegaMenuProps as Props } from "./type";

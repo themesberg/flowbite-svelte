@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { type DropdownItemProps, dropdownItem } from ".";
-  import { tv } from "tailwind-variants";
+  import { dropdownItem } from ".";
+  import type { DropdownItemProps } from "$lib/types";
   import clsx from "clsx";
 
   let { aClass, children, href, activeClass, liClass, class: className, ...restProps }: DropdownItemProps = $props();

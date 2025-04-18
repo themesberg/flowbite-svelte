@@ -1,6 +1,7 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type DropdownHeaderProps, dropdownHeader } from ".";
+  import { dropdownHeader } from ".";
+  import type { DropdownHeaderProps } from "$lib/types";
 
   let { children, class: className, ...restProps }: DropdownHeaderProps = $props();
   let headerClass = $derived(dropdownHeader({ class: clsx(className) }));

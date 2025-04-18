@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { type FooterLinkGroupProps as Props, footerLinkGroup } from ".";
+  import { footerLinkGroup } from ".";
+  import type { FooterLinkGroupProps } from "$lib/types";
 
-  let { class: ulClass, children, ...restProps }: Props = $props();
+  let { class: ulClass, children, ...restProps }: FooterLinkGroupProps = $props();
   const base = $derived(footerLinkGroup({ class: ulClass }));
 </script>
 

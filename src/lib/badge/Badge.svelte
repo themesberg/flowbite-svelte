@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import { badge } from "./index";
-  import type { BadgeProps } from "../types";
+  import type { BadgeProps } from "$lib/types";
   import { CloseButton } from "$lib";
   import { fade } from "svelte/transition";
   import type { ParamsType } from "$lib/types";

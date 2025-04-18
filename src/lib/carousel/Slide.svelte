@@ -4,7 +4,7 @@
   import type { Writable } from "svelte/store";
   import { fly } from "svelte/transition";
   import { slide } from "./theme";
-  import type { SlideProps, State } from "../types";
+  import type { SlideProps, State } from "$lib/types";
 
   const state = getContext<Writable<State>>("state");
 

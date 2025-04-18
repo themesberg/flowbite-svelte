@@ -1,7 +1,7 @@
 <script lang="ts">
   import clsx from "clsx";
   import { thumbnail } from "./theme";
-  import type { ThumbnailProps } from "../types";
+  import type { ThumbnailProps } from "$lib/types";
 
   let { selected, class: className, ...restProps }: ThumbnailProps = $props();
 

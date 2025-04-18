@@ -2,7 +2,8 @@
   import type { ParamsType } from "$lib/types";
   import { fly } from "svelte/transition";
   import { sineIn } from "svelte/easing";
-  import { type DrawerProps, drawer } from ".";
+  import { drawer } from ".";
+  import type { DrawerProps } from "$lib/types";
   import clsx from "clsx";
 
   let { children, hidden = $bindable(), closeDrawer = () => (hidden = true), activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = "left", class: className, transitionParams, transitionType = fly, ...restProps }: DrawerProps = $props();

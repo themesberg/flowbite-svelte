@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { type FooterBrandProps, footerBrand } from ".";
+  import { footerBrand } from ".";
+  import type { FooterBrandProps } from "$lib/types";
 
   let { children, aClass, spanClass, imgClass, href, src, alt, name, ...restProps }: FooterBrandProps = $props();
 

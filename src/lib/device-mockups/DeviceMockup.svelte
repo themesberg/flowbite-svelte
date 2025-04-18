@@ -7,7 +7,7 @@
   import Laptop from "./Laptop.svelte";
   import Smartwatch from "./Smartwatch.svelte";
   import Tablet from "./Tablet.svelte";
-  import { type DeviceMockupProps } from ".";
+  import type { DeviceMockupProps } from "$lib/types"
 
   let { children, device = "default" }: DeviceMockupProps = $props();
 

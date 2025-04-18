@@ -1,7 +1,7 @@
 <script lang="ts">
   import clsx from "clsx";
   import { breadcrumb } from "./index";
-  import type { BreadcrumbItemProps } from "../types"
+  import type { BreadcrumbItemProps } from "$lib/types"
   import { twMerge } from "tailwind-merge";
 
   let { children, icon, home = false, href, linkClass, spanClass, homeClass, class: className, ...restProps }: BreadcrumbItemProps = $props();

@@ -1,10 +1,10 @@
 <script lang="ts">
   import Button from "$lib/buttons/Button.svelte";
   import clsx from "clsx";
-  import { type CheckboxButtonProps as Props } from ".";
+  import type { CheckboxButtonProps } from "$lib/types";
   import { checkButton } from "./theme";
 
-  let { children, class: className, group = $bindable([]), value, checked, inline, pill, outline, size, color, shadow, ...restProps }: Props = $props();
+  let { children, class: className, group = $bindable([]), value, checked, inline, pill, outline, size, color, shadow, ...restProps }: CheckboxButtonProps = $props();
 
   // react on external group changes
   function init(_: HTMLElement, _group: (string | number)[]) {

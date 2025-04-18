@@ -3,9 +3,9 @@
   import { twMerge } from "tailwind-merge";
   import { getContext } from "svelte";
   import { clampSize } from "$lib";
-  import { type InputAddonProps as Props } from ".";
+  import type { InputAddonProps } from "$lib/types";
 
-  let { children, class: className, size, ...restProps }: Props = $props();
+  let { children, class: className, size, ...restProps }: InputAddonProps = $props();
   let background: boolean = getContext("background");
   let group: { size: SizeType } = getContext("group");
 

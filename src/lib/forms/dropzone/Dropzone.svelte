@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { DragEventHandler, ChangeEventHandler } from "svelte/elements";
-  import { type DropzoneProps as Props, dropzone } from ".";
+  import { dropzone } from ".";
+  import type { DropzoneProps } from "$lib/types";
   import clsx from "clsx";
 
   type HTMLInputElementWithFiles = HTMLInputElement & { files: FileList | null };
@@ -10,7 +11,7 @@
     files = $bindable<FileList | null>(),
     class: className,
     ...restProps
-  }: Props & {
+  }: DropzoneProps & {
     ondrop?: DragEventHandler<HTMLButtonElement>;
     ondragover?: DragEventHandler<HTMLButtonElement>;
     onchange?: ChangeEventHandler<HTMLInputElementWithFiles>;

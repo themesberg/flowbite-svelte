@@ -2,10 +2,11 @@
   import type { SizeType } from "$lib/types";
   import { getContext } from "svelte";
   import { CloseButton } from "$lib";
-  import { type InputProps as Props, input, clampSize, type InputValue } from ".";
+  import { input, clampSize } from ".";
+  import type { InputProps, InputValue } from "$lib/types";
   import clsx from "clsx";
 
-  let { children, left, right, value = $bindable<InputValue>(), clearable = false, size, color = "default", class: className, classLeft, classRight, divClass, ...restProps }: Props<InputValue> = $props();
+  let { children, left, right, value = $bindable<InputValue>(), clearable = false, size, color = "default", class: className, classLeft, classRight, divClass, ...restProps }: InputProps<InputValue> = $props();
 
   // tinted if put in component having its own background
   let background: boolean = getContext("background");

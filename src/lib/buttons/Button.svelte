@@ -2,7 +2,7 @@
   import { getContext } from "svelte";
   import type { SizeType } from "$lib/types";
   import { button } from ".";
-  import type { ButtonProps } from "../types";
+  import type { ButtonProps } from "$lib/types";
   import clsx from "clsx";
   import { twMerge } from "tailwind-merge";
 

@@ -5,7 +5,7 @@
   import { writable } from "svelte/store";
 
   import { accordionitem } from ".";
-  import type { AccordionCtxType, AccordionItemProps, ParamsType } from "../types";
+  import type { AccordionCtxType, AccordionItemProps, ParamsType } from "$lib/types";
   import type { BaseThemes } from "$lib/theme";
   import clsx from "clsx";
 

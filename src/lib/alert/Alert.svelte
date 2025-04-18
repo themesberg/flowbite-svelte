@@ -5,7 +5,7 @@
   import { getContext } from "svelte";
   import { fade } from "svelte/transition";
   import { alert } from ".";
-  import type { AlertProps } from "../types"
+  import type { AlertProps } from "$lib/types"
   import clsx from "clsx";
 
   let { children, icon, alertStatus = $bindable(true), closeIcon: CloseIcon, color = "primary", rounded = true, border, class: className, dismissable, transition = fade, params, onclick = () => (alertStatus = false), ...restProps }: AlertProps = $props();

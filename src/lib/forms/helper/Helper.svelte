@@ -1,8 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type HelperProps as Props, helper } from ".";
+  import { helper } from ".";
+  import type { HelperProps } from "$lib/types";
 
-  let { children, class: className, color = "gray", ...restProps }: Props = $props();
+  let { children, class: className, color = "gray", ...restProps }: HelperProps = $props();
 
   const base = $derived(helper({ color, class: clsx(className) }));
 </script>

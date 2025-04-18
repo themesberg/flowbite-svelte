@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
   import { Button } from "$lib";
-  import type { DatepickerProps } from "./type";
+  import type { DatepickerProps } from "$lib/types";
   import { datepicker } from "./theme";
   import ToolbarButton from "$lib/toolbar/ToolbarButton.svelte";
 

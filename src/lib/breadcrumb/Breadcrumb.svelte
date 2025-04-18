@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import { breadcrumb } from "./index";
-  import type { BreadcrumbProps } from "../types"
+  import type { BreadcrumbProps } from "$lib/types"
   import type { BaseThemes } from "$lib/theme";
   import clsx from "clsx";
 

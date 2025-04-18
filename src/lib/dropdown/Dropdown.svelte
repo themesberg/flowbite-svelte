@@ -2,7 +2,8 @@
   import Popper from "$lib/utils/Popper.svelte";
   import { setContext } from "svelte";
   import { writable } from "svelte/store";
-  import { type DropdownProps, dropdown } from "./";
+  import { dropdown } from "./";
+  import type { DropdownProps } from "$lib/types";
   import DropdownGroup from "./DropdownGroup.svelte";
   import clsx from "clsx";
 

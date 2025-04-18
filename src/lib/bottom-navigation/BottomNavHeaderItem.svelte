@@ -1,7 +1,7 @@
 <script lang="ts">
   import clsx from "clsx";
   import { bottomnavheaderitem } from ".";
-  import type { BottomNavHeaderItemProps } from "../types";
+  import type { BottomNavHeaderItemProps } from "$lib/types";
   
   let { itemName, active, class: className, ...restProps }: BottomNavHeaderItemProps = $props();
   let base = $derived(bottomnavheaderitem({ active, class: clsx(className) }));

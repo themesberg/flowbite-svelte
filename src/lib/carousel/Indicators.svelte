@@ -3,7 +3,7 @@
   import { getContext } from "svelte";
   import type { Writable } from "svelte/store";
   import { indicators } from "./theme";
-  import type { IndicatorsProps, State } from "../types";
+  import type { IndicatorsProps, State } from "$lib/types";
   import clsx from "clsx";
 
   let { children, activeClass, inactiveClass, class: className, ...restProps }: IndicatorsProps = $props();
