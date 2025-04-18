@@ -1,8 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type SpinnerProps as Props, spinner } from "./index";
+  import { spinner } from ".";
+  import type { SpinnerProps } from "$lib/types";
 
-  let { color = "primary", size = "8", class: className, currentFill = "currentFill", currentColor = "currentColor", ...restProps }: Props = $props();
+  let { color = "primary", size = "8", class: className, currentFill = "currentFill", currentColor = "currentColor", ...restProps }: SpinnerProps = $props();
 
   let spinnerClass = $derived(spinner({ color, size, class: clsx(className) }));
 </script>

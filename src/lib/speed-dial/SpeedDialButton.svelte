@@ -3,12 +3,12 @@
   import Tooltip from "$lib/tooltip/Tooltip.svelte";
   import { getContext } from "svelte";
   import { speed_dial_button } from "./theme";
-  import type { SpeedCtxType, SpeedDialButtonProps as Props } from "./type";
+  import type { SpeedCtxType, SpeedDialButtonProps } from "$lib/types";
   import clsx from "clsx";
 
   const context = getContext<SpeedCtxType>("speed-dial");
 
-  let { children, name = "", color = "light", tooltip = context.tooltip, pill = context.pill, textOutside = context.textOutside, textClass, class: className, ...restProps }: Props = $props();
+  let { children, name = "", color = "light", tooltip = context.tooltip, pill = context.pill, textOutside = context.textOutside, textClass, class: className, ...restProps }: SpeedDialButtonProps = $props();
 
   let { base, span } = $derived(speed_dial_button({ textOutside, tooltip: tooltip == "none" }));
   let spanClass = $derived(tooltip === "none" ? span({ class: textClass }) : "sr-only");
@@ -27,7 +27,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1253)
 ## Props
 @prop children
 @prop name = ""

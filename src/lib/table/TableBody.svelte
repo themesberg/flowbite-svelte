@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { TableBodyRow, TableBodyCell, type TableBodyProps as Props, type CellValue, type BodyRow } from ".";
+  import { TableBodyRow, TableBodyCell } from ".";
+  import type { TableBodyProps, CellValue, BodyRow } from "$lib/types";
 
-  let { children, bodyItems, class: className, ...restProps }: Props = $props();
+  let { children, bodyItems, class: className, ...restProps }: TableBodyProps = $props();
 
   function getCellValues(row: BodyRow): CellValue[] {
     if (Array.isArray(row)) {

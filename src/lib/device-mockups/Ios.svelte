@@ -23,7 +23,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-IosProps
+[IosProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L505)
 ## Props
 @prop children
 @prop divClass

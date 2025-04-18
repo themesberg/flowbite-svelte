@@ -4,9 +4,9 @@
   import clsx from "clsx";
   import { setContext } from "svelte";
   import { speed_dial } from "./theme";
-  import type { SpeedDialProps as Props, SpeedCtxType } from "./type";
+  import type { SpeedDialProps, SpeedCtxType } from "$lib/types";
 
-  let { children, popperClass, placement = "top", pill = true, tooltip = "left", trigger = "hover", textOutside = false, class: className, ...restProps }: Props = $props();
+  let { children, popperClass, placement = "top", pill = true, tooltip = "left", trigger = "hover", textOutside = false, class: className, ...restProps }: SpeedDialProps = $props();
 
   setContext<SpeedCtxType>("speed-dial", { pill, tooltip, textOutside });
 
@@ -27,7 +27,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1240)
 ## Props
 @prop children
 @prop popperClass

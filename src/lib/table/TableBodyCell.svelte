@@ -1,8 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type TableBodyCellProps as Props, tablebodycell } from "./";
+  import { tablebodycell } from ".";
+  import type { TableBodyCellProps } from "$lib/types";
 
-  let { children, class: className, colspan, onclick, ...restProps }: Props = $props();
+  let { children, class: className, colspan, onclick, ...restProps }: TableBodyCellProps = $props();
 
   const base = $derived(tablebodycell({ class: clsx(className) }));
 </script>

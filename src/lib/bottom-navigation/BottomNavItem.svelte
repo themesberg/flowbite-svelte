@@ -68,7 +68,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L262)
+[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L290)
 ## Props
 @prop children
 @prop btnName

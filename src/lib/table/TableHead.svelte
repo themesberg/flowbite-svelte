@@ -1,9 +1,10 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { TableHeadCell, type TableHeadProps as Props, tablehead, type TableCtxType, type HeadItemType } from ".";
+  import { TableHeadCell, tablehead } from ".";
+  import type { TableHeadProps, TableCtxType, HeadItemType } from "$lib/types";
   import clsx from "clsx";
 
-  let { children, headerSlot, color, striped, border, class: className, headItems, defaultRow = true, ...restProps }: Props = $props();
+  let { children, headerSlot, color, striped, border, class: className, headItems, defaultRow = true, ...restProps }: TableHeadProps = $props();
 
   const tableCtx = getContext<TableCtxType>("tableCtx");
   // for reactivity with svelte context

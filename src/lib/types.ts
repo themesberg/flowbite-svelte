@@ -1,8 +1,10 @@
-import type { HTMLButtonAttributes, HTMLAnchorAttributes, HTMLAttributes, HTMLLiAttributes, HTMLImgAttributes, HTMLInputAttributes, HTMLLabelAttributes, HTMLSelectAttributes, HTMLTextareaAttributes, HTMLDialogAttributes, SVGAttributes } from "svelte/elements";
+import type { HTMLButtonAttributes, HTMLAnchorAttributes, HTMLAttributes, HTMLLiAttributes, HTMLImgAttributes, HTMLInputAttributes, HTMLLabelAttributes, HTMLSelectAttributes, HTMLTextareaAttributes, HTMLDialogAttributes, SVGAttributes, HTMLTableAttributes, HTMLTdAttributes, HTMLThAttributes } from "svelte/elements";
 
 import type { TransitionConfig, FadeParams, BlurParams, FlyParams, SlideParams, ScaleParams, EasingFunction } from "svelte/transition";
 import { type Writable } from "svelte/store";
 import type { Snippet, Component } from "svelte";
+import type { Placement } from "@floating-ui/utils";
+import { tv } from "tailwind-variants";
 
 // component variants
 import type { AlertVariants } from "./alert/theme";
@@ -30,8 +32,9 @@ import type { ListgroupItemVariants, ListgroupVariants } from "$lib/list-group/t
 import type { ModalVariants } from "$lib/modal/theme";
 import type { PopoverVariants } from "$lib/popover/theme";
 import type { SidebarVariants } from "$lib/sidebar/theme";
-
-
+import type { CardPlaceholderVariants, ImagePlaceholderVariants, ListPlaceholderVariants, SkeletonVariants, TextPlaceholderVariants, VideoPlaceholderVariants } from "$lib/skeleton/theme";
+import type { SpinnerVaraiants } from "$lib/spinner/theme";
+import type { TableVariants } from "$lib/table/theme";
 
 import type { ToolbarButtonVariants, ToolbarGroupVariants, ToolbarVariants } from "$lib/toolbar/theme";
 
@@ -42,7 +45,7 @@ import type { ToolbarButtonVariants, ToolbarGroupVariants, ToolbarVariants } fro
 
 // end of component variants
 
-import { tv } from "tailwind-variants";
+
 
 export interface ThemeConfig {
   slots?: Record<string, object | string>;
@@ -1198,6 +1201,172 @@ export interface SidebarItemProps extends HTMLAnchorAttributes {
   aClass?: string;
   active?: boolean;
 }
+
+// skeleton
+export interface CardPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
+  size?: CardPlaceholderVariants["size"];
+}
+
+export interface ImagePlaceholderProps extends HTMLAttributes<HTMLDivElement> {
+  size?: ImagePlaceholderVariants["size"];
+  rounded?: ImagePlaceholderVariants["rounded"];
+}
+
+export interface ListPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
+  itemNumber?: number;
+  size?: ListPlaceholderVariants["size"];
+  rounded?: ListPlaceholderVariants["rounded"];
+}
+
+export interface SkeletonProps extends HTMLAttributes<HTMLDivElement> {
+  size?: SkeletonVariants["size"];
+}
+
+export interface TextPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
+  size?: TextPlaceholderVariants["size"];
+}
+
+export interface VideoPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
+  size?: VideoPlaceholderVariants["size"];
+}
+
+// speeddial
+export interface SpeedCtxType {
+  pill: boolean;
+  tooltip: Placement | "none";
+  textOutside: boolean;
+}
+
+export type SpeedDialProps = PopperProps & {
+  children: Snippet;
+  button?: Snippet;
+  popperClass?: string;
+  placement?: Placement;
+  tooltip?: Placement | "none";
+  trigger?: PopperProps["trigger"];
+  textOutside?: boolean;
+  pill?: boolean;
+  ontoggle?: PopperProps["ontoggle"];
+  onbeforetoggle?: PopperProps["onbeforetoggle"];
+};
+
+export type SpeedDialButtonProps = ButtonProps & {
+  name?: string;
+  tooltip?: Placement | "none";
+  pill?: boolean;
+  textOutside?: boolean;
+  textClass?: string;
+};
+
+export type SpeedDialTriggerProps = ButtonProps & {
+  icon?: Snippet;
+  gradient?: boolean;
+  name?: string;
+  color?: GradientButtonProps["color"];
+};
+
+// spinner
+export interface SpinnerProps extends SVGAttributes<SVGSVGElement> {
+  color?: SpinnerVaraiants["color"];
+  size?: SpinnerVaraiants["size"];
+  currentFill?: string;
+  currentColor?: string;
+}
+
+// tables
+export type TableCtxType = {
+  striped?: boolean;
+  hoverable?: boolean;
+  border?: boolean;
+  color?: TableVariants["color"];
+};
+
+// prettier-ignore
+export type HeadItemType = string | number | {
+  text: string;
+  [key: string]: string | number | boolean;
+};
+
+export interface TableHeadProps extends HTMLAttributes<HTMLTableSectionElement> {
+  children?: Snippet;
+  headerSlot?: Snippet;
+  defaultRow?: boolean;
+  headItems?: HeadItemType[];
+  striped?: boolean;
+  border?: boolean;
+  color?: TableVariants["color"];
+}
+
+export type TableItemType = Record<string, string | number | boolean>;
+
+export interface TableProps extends Omit<HTMLTableAttributes, "border"> {
+  children?: Snippet;
+  footerSlot?: Snippet;
+  captionSlot?: Snippet;
+  divClass?: string;
+  striped?: boolean;
+  hoverable?: boolean;
+  border?: boolean;
+  shadow?: boolean;
+  color?: TableVariants["color"];
+  items?: TableItemType[];
+}
+
+export interface TableBodyRowProps extends HTMLAttributes<HTMLTableRowElement> {
+  children?: Snippet;
+  striped?: boolean;
+  hoverable?: boolean;
+  border?: boolean;
+  color?: TableVariants["color"];
+}
+
+export interface TableBodyCellProps extends HTMLTdAttributes {
+  children?: Snippet;
+  colspan?: number;
+  color?: TableVariants["color"];
+  onclick?: () => void;
+}
+
+export type CellValue = string | number | boolean | null | undefined;
+
+export type BodyRow = CellValue[] | Record<string, CellValue>;
+
+export interface TableBodyProps extends HTMLAttributes<HTMLTableSectionElement> {
+  children?: Snippet;
+  bodyItems?: BodyRow[];
+}
+
+export interface TableHeadCellProps extends HTMLThAttributes {
+  children?: Snippet;
+}
+
+export type TableSearchType = {
+  striped?: boolean;
+  hoverable?: boolean;
+  color?: string;
+};
+
+export interface TableSearchProps extends HTMLTableAttributes {
+  children?: Snippet;
+  header?: Snippet;
+  footer?: Snippet;
+  divClass?: string;
+  inputValue?: string;
+  striped?: boolean;
+  hoverable?: boolean;
+  customColor?: string;
+  color?: string;
+  innerDivClass?: string;
+  inputClass?: string;
+  searchClass?: string;
+  svgDivClass?: string;
+  svgClass?: string;
+  tableClass?: string;
+  placeholder?: string;
+}
+
+
+
 
 
 

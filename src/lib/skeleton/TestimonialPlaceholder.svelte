@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { HTMLAttributes } from "svelte/elements";
-  import { testimonialPlaceholder } from "./index";
+  import { testimonialPlaceholder } from ".";
   import clsx from "clsx";
 
   let { class: className, ...restProps }: HTMLAttributes<HTMLDivElement> = $props();

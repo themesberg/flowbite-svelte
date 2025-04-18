@@ -1,8 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type VideoPlaceholderProps as Props, videoPlaceholder } from "./index";
+  import { videoPlaceholder } from ".";
+  import type { VideoPlaceholderProps } from "$lib/types";
 
-  let { size = "sm", class: className }: Props = $props();
+  let { size = "sm", class: className }: VideoPlaceholderProps = $props();
   const base = $derived(videoPlaceholder({ size, class: clsx(className) }));
 </script>
 
@@ -17,7 +18,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[VideoPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1229)
 ## Props
 @prop size = "sm"
 @prop class: className

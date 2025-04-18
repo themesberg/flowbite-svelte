@@ -1,7 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { skeleton, type SkeletonProps as Props } from "./index";
-  let { size = "sm", class: className, ...restProps }: Props = $props();
+  import { skeleton } from ".";
+  import type { SkeletonProps } from "$lib/types";
+
+  let { size = "sm", class: className, ...restProps }: SkeletonProps = $props();
   const { wrapper, line } = $derived(skeleton({ size }));
 </script>
 
@@ -20,7 +22,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[SkeletonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1221)
 ## Props
 @prop size = "sm"
 @prop class: className

@@ -1,9 +1,10 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { type TableBodyRowProps as Props, tablebodyrow, type TableCtxType } from "./";
+  import { tablebodyrow } from ".";
+  import type { TableBodyRowProps, TableCtxType } from "$lib/types";
   import clsx from "clsx";
 
-  let { children, class: className, color, striped, hoverable, border, ...restProps }: Props = $props();
+  let { children, class: className, color, striped, hoverable, border, ...restProps }: TableBodyRowProps = $props();
 
   const tableCtx = getContext<TableCtxType>("tableCtx");
   // for reactivity with svelte context

@@ -1,9 +1,10 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { type TableProps as Props, table as tableCls, type TableCtxType, TableHead, TableBody, type HeadItemType } from ".";
+  import { table as tableCls, TableHead, TableBody } from ".";
   import clsx from "clsx";
+  import type { TableProps, TableCtxType, HeadItemType } from "$lib/types";
 
-  let { children, footerSlot, captionSlot, items: tableItems, divClass = "relative overflow-x-auto", striped, hoverable, border = true, shadow, color = "default", class: className, ...restProps }: Props = $props();
+  let { children, footerSlot, captionSlot, items: tableItems, divClass = "relative overflow-x-auto", striped, hoverable, border = true, shadow, color = "default", class: className, ...restProps }: TableProps = $props();
 
   const { base, table } = $derived(tableCls({ color, shadow }));
 

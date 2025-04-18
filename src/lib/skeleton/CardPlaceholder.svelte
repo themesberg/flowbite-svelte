@@ -1,8 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type CardPlaceholderProps as Props, cardPlaceholder } from "./index";
+  import { cardPlaceholder } from ".";
+  import type { CardPlaceholderProps } from "$lib/types";
 
-  let { size = "sm", class: className, ...restProps }: Props = $props();
+  let { size = "sm", class: className, ...restProps }: CardPlaceholderProps = $props();
 
   const { base, imageArea, imageIcon, line, footerArea } = $derived(cardPlaceholder({ size }));
 </script>
@@ -31,7 +32,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[CardPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1206)
 ## Props
 @prop size = "sm"
 @prop class: className

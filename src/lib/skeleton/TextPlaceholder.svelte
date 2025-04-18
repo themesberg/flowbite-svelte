@@ -1,8 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { textPlaceholder, type TextPlaceholderProps as Props } from "./index";
+  import { textPlaceholder } from ".";
+  import type { TextPlaceholderProps } from "$lib/types";
 
-  let { size = "sm", class: className, ...restProps }: Props = $props();
+  let { size = "sm", class: className, ...restProps }: TextPlaceholderProps = $props();
   const { baseWrapper, divWrapper, lineA, lineB } = $derived(
     textPlaceholder({
       size
@@ -48,7 +49,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[TextPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1225)
 ## Props
 @prop size = "sm"
 @prop class: className

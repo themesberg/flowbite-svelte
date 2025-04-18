@@ -60,7 +60,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[CardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L345)
+[CardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L373)
 ## Props
 @prop children
 @prop href

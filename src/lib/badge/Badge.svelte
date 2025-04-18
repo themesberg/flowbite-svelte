@@ -50,7 +50,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L205)
+[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L233)
 ## Props
 @prop children
 @prop icon

@@ -1,8 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { imagePlaceholder, type ImagePlaceholderProps as Props } from "./index";
+  import { imagePlaceholder } from ".";
+  import type { ImagePlaceholderProps } from "$lib/types";
 
-  let { size = "md", rounded, class: className, ...restProps }: Props = $props();
+  let { size = "md", rounded, class: className, ...restProps }: ImagePlaceholderProps = $props();
 
   const { base, image, svg, content, line } = $derived(
     imagePlaceholder({
@@ -34,7 +35,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[ImagePlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1210)
 ## Props
 @prop size = "md"
 @prop rounded

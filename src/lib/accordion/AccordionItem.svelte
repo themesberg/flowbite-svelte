@@ -67,7 +67,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L164)
+[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L192)
 ## Props
 @prop children
 @prop header

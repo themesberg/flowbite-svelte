@@ -34,7 +34,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-DropdownProps
+[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L553)
 ## Props
 @prop children
 @prop simple = false

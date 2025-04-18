@@ -38,7 +38,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-DropdownItemProps
+[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L569)
 ## Props
 @prop aClass
 @prop children

@@ -1,8 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { listPlaceholder, type ListPlaceholderProps as Props } from "./index";
+  import { listPlaceholder } from ".";
+  import type { ListPlaceholderProps } from "$lib/types";
 
-  let { itemNumber = 5, size = "md", rounded, class: className, ...restProps }: Props = $props();
+  let { itemNumber = 5, size = "md", rounded, class: className, ...restProps }: ListPlaceholderProps = $props();
 
   const { base, item, itemContent, itemTitle, itemSubtitle, itemExtra } = $derived(listPlaceholder({ size, rounded }));
 
@@ -27,7 +28,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-Props
+[ListPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1215)
 ## Props
 @prop itemNumber = 5
 @prop size = "md"
