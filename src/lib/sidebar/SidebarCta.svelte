@@ -1,7 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type SidebarCtaProps as Props, sidebarcta } from ".";
-  let { children, icon, divClass, spanClass, label, class: className, ...restProps }: Props = $props();
+  import { sidebarcta } from ".";
+  import type { SidebarCtaProps } from "$lib/types";
+
+  let { children, icon, divClass, spanClass, label, class: className, ...restProps }: SidebarCtaProps = $props();
   const { base, div, span } = $derived(sidebarcta());
 </script>
 

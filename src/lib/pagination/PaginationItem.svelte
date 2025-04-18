@@ -1,9 +1,10 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { paginationItem, type PaginationItemProps as Props } from ".";
+  import { paginationItem } from ".";
+  import type { PaginationItemProps } from "$lib/types";
   import { getContext } from "svelte";
 
-  let { children, size, class: className, href, active, ...restProps }: Props = $props();
+  let { children, size, class: className, href, active, ...restProps }: PaginationItemProps = $props();
 
   const group = getContext<boolean>("group");
   const table = getContext<boolean>("table");

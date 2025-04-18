@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { type AdvancedRatingProps as Props, advancedrating } from ".";
+  import { advancedrating } from ".";
+  import type { AdvancedRatingProps } from "$lib/types";
 
-  let { rating, globalText, ratings, divClass, spanClass, div2Class, div3Class, span2Class, unit }: Props = $props();
+  let { rating, globalText, ratings, divClass, spanClass, div2Class, div3Class, span2Class, unit }: AdvancedRatingProps = $props();
 
   const { base, span, div2, div3, span2 } = $derived(advancedrating());
 </script>

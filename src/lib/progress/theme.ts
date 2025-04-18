@@ -11,10 +11,13 @@ export const progressbar = tv({
   },
   variants: {
     color: {
-      // 'primary' | 'gray' | 'red' | 'orange' | 'amber' | 'yellow' | 'lime' | 'green' | 'emerald' | 'teal' | 'cyan' | 'sky' | 'blue' | 'indigo' | 'violet' | 'purple' | 'fuchsia' | 'pink' | 'rose'
       primary: {
         labelInsideDiv: "bg-primary-600",
         insideDiv: "bg-primary-600"
+      },
+      secondary: {
+        labelInsideDiv: "bg-secondary-600",
+        insideDiv: "bg-secondary-600"
       },
       gray: {
         labelInsideDiv: "bg-gray-600 dark:bg-gray-300",

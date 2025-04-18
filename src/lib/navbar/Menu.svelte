@@ -1,14 +1,7 @@
 <script lang="ts">
-  import type { SVGAttributes } from "svelte/elements";
+  import type { MenuProps } from "$lib/types";
 
-  interface Props extends SVGAttributes<SVGSVGElement> {
-    size?: string;
-    color?: string;
-    variation?: "solid" | "outline";
-    ariaLabel?: string;
-  }
-
-  let { size = "24", color = "currentColor", variation = "outline", ariaLabel = "bars 3", class: className, ...restProps }: Props = $props();
+  let { size = "24", color = "currentColor", variation = "outline", ariaLabel = "bars 3", class: className, ...restProps }: MenuProps = $props();
 
   let viewBox: string = $state("0 0 24 24");
   let svgpath: string = $state("");

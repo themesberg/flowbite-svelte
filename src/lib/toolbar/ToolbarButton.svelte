@@ -1,10 +1,11 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { type ToolbarButtonProps as Props, toolbarButton } from "./";
+  import { toolbarButton } from ".";
+  import type { ToolbarButtonProps } from "$lib/types";
   import clsx from "clsx";
 
   const background = getContext("background");
-  let { children, onclick, color, name, "aria-label": ariaLabel, size, class: className, ...restProps }: Props = $props();
+  let { children, onclick, color, name, "aria-label": ariaLabel, size, class: className, ...restProps }: ToolbarButtonProps = $props();
 
   const buttonClass = $derived(
     toolbarButton({

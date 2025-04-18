@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import Popper from "../utils/Popper.svelte";
   import { popover } from "./theme";
-  import type { PopoverProps } from "./type";
+  import type { PopoverProps } from "$lib/types";
 
   let { title: titleSlot, color = "default", trigger = "hover", defaultClass, arrow = true, children, placement = "top", class: className, ...restProps }: PopoverProps = $props();
 

@@ -1,10 +1,10 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import { writable, type Writable } from "svelte/store";
-  import type { ParamsType } from "../types";
   import { slide } from "svelte/transition";
   import { uiHelpers } from "$lib";
-  import { type SidebarDropdownWrapperProps as Props, sidebardropdownwrapper } from ".";
+  import { sidebardropdownwrapper } from ".";
+  import type { SidebarDropdownWrapperProps, ParamsType } from "$lib/types";
   import clsx from "clsx";
 
   type SidebarContext = {
@@ -12,7 +12,7 @@
     isSingle: boolean;
   };
 
-  let { children, arrowup, arrowdown, icon, isOpen = false, btnClass, label, spanClass, ulClass, transition = slide, params, svgClass, class: className, onclick, ...restProps }: Props = $props();
+  let { children, arrowup, arrowdown, icon, isOpen = false, btnClass, label, spanClass, ulClass, transition = slide, params, svgClass, class: className, onclick, ...restProps }: SidebarDropdownWrapperProps = $props();
 
   const { base, btn, span, svg, ul } = $derived(sidebardropdownwrapper());
 

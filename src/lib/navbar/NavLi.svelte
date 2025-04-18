@@ -2,11 +2,11 @@
   import clsx from "clsx";
   import { getContext } from "svelte";
   import { navbar_li } from "./theme";
-  import type { NavbarState, NavLiProps as Props } from "./type";
+  import type { NavbarState, NavLiProps } from "$lib/types";
 
   let navState = getContext<NavbarState>("navState");
 
-  let { children, activeClass, nonActiveClass, class: className, onclick, ...restProps }: Props = $props();
+  let { children, activeClass, nonActiveClass, class: className, onclick, ...restProps }: NavLiProps = $props();
 
   const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
 

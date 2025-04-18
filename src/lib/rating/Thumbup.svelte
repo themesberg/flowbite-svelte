@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { type RatingIconProps as Props } from ".";
+  import type { RatingIconProps } from "$lib/types";
 
-  let { fillPercent = 100, fillColor = "#00b500", strokeColor = "#00b500", size = 24, ariaLabel = "thumbup", iconIndex = 0, groupId = "star", role = "img", svgClass, ...restProps }: Props = $props();
+  let { fillPercent = 100, fillColor = "#00b500", strokeColor = "#00b500", size = 24, ariaLabel = "thumbup", iconIndex = 0, groupId = "star", role = "img", svgClass, ...restProps }: RatingIconProps = $props();
 
   const uniqueId = `${groupId}-${iconIndex}`;
 </script>

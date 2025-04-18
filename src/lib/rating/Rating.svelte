@@ -1,9 +1,10 @@
 <script lang="ts">
   import Star from "./Star.svelte";
-  import { type RatingProps as Props, rating as ratingVariants } from ".";
+  import { rating as ratingVariants } from ".";
+  import type { RatingProps } from "$lib/types";
   import clsx from "clsx";
 
-  let { children, text, class: divClass, size = 24, total = 5, rating = 4, icon: Icon = Star, count = false, pClass }: Props = $props();
+  let { children, text, class: divClass, size = 24, total = 5, rating = 4, icon: Icon = Star, count = false, pClass }: RatingProps = $props();
 
   const { base, p } = $derived(ratingVariants());
   const ratingGroupId = crypto.randomUUID();

@@ -1,8 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type SidebarBrandProps as Props, sitebarbrand } from ".";
+  import { sitebarbrand } from ".";
+  import type { SidebarBrandProps } from "$lib/types";
 
-  let { children, site, imgClass, spanClass, class: className, ...restProps }: Props = $props();
+  let { children, site, imgClass, spanClass, class: className, ...restProps }: SidebarBrandProps = $props();
 
   const { base, img, span } = $derived(sitebarbrand());
 </script>

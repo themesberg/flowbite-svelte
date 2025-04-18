@@ -1,7 +1,8 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type SidebarButtonProps as Props, sidebarbutton } from ".";
-  let { breakpoint = "md", class: className, ...restProps }: Props = $props();
+  import { sidebarbutton } from ".";
+  import type { SidebarButtonProps } from "$lib/types";
+  let { breakpoint = "md", class: className, ...restProps }: SidebarButtonProps = $props();
 
   const base = $derived(sidebarbutton({ breakpoint, class: clsx(className) }));
 </script>

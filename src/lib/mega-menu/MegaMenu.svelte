@@ -3,9 +3,9 @@
   import type { LinkType } from "$lib/types";
   import Popper from "../utils/Popper.svelte";
   import { megamenu } from "./theme";
-  import type { MegaMenuProps as Props } from "./type";
+  import type { MegaMenuProps } from "$lib/types";
 
-  let { children, extra, items = [], full, ulClass, class: className, ...restProps }: Props = $props();
+  let { children, extra, items = [], full, ulClass, class: className, ...restProps }: MegaMenuProps = $props();
 
   /* eslint-disable  @typescript-eslint/no-explicit-any */
   interface LinkTypeLike extends LinkType {

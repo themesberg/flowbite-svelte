@@ -1,10 +1,11 @@
 <script lang="ts">
   import type { Writable } from "svelte/store";
   import { getContext } from "svelte";
-  import { type ToolbarGroupProps as Props, toolbarGroup } from "./";
+  import { toolbarGroup } from ".";
+  import type { ToolbarGroupProps } from "$lib/types";
   import clsx from "clsx";
 
-  let { children, spacing, padding, position = "middle", class: className, ...restProps }: Props = $props();
+  let { children, spacing, padding, position = "middle", class: className, ...restProps }: ToolbarGroupProps = $props();
 
   const groupClass = $derived(toolbarGroup({ spacing, padding, position, class: clsx(className) }));
 

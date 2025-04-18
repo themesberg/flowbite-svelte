@@ -1,9 +1,9 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import { twMerge } from "tailwind-merge";
-  import { type SidebarCtxType, type SidebarItemProps as Props } from "./";
+  import type { SidebarCtxType, SidebarItemProps } from "$lib/types";
 
-  let { icon, subtext, href, label, spanClass = "ms-3", activeClass, nonActiveClass, aClass, active, class: className, ...restProps }: Props = $props();
+  let { icon, subtext, href, label, spanClass = "ms-3", activeClass, nonActiveClass, aClass, active, class: className, ...restProps }: SidebarItemProps = $props();
 
   const context = getContext<SidebarCtxType>("sidebarContext") ?? {};
 

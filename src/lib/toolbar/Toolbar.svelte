@@ -1,10 +1,11 @@
 <script lang="ts">
   import { setContext } from "svelte";
   import { writable } from "svelte/store";
-  import { type ToolbarProps as Props, toolbar } from "./";
+  import { toolbar } from "./";
+  import type { ToolbarProps } from "$lib/types";
   import clsx from "clsx";
 
-  let { children, end, color, embedded, class: className, ...restProps }: Props = $props();
+  let { children, end, color, embedded, class: className, ...restProps }: ToolbarProps = $props();
 
   const separators = writable(false);
   setContext("toolbar", separators);

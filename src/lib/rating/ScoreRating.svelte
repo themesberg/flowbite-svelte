@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { type ScoreRatingProps as Props, scorerating } from ".";
+  import { scorerating } from ".";
+  import type { ScoreRatingProps } from "$lib/types";
 
-  let { ratings, ratings2, headerLabel }: Props = $props();
+  let { ratings, ratings2, headerLabel }: ScoreRatingProps = $props();
 
   const { desc1, desc2, desc3span, desc3p, link, bar } = $derived(scorerating());
 </script>

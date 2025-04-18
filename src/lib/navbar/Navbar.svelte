@@ -3,11 +3,11 @@
   import { setContext } from "svelte";
   import NavContainer from "./NavContainer.svelte";
   import { navbar } from "./theme";
-  import type { NavbarState, NavbarProps as Props } from "./type";
+  import type { NavbarState, NavbarProps } from "$lib/types";
 
   // propagate props type from underlying Frame
 
-  let { children, fluid, navContainerClass, class: className, ...restProps }: Props = $props();
+  let { children, fluid, navContainerClass, class: className, ...restProps }: NavbarProps = $props();
 
   let navState = $state({ hidden: true });
   setContext<NavbarState>("navState", navState);

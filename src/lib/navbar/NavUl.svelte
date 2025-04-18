@@ -6,11 +6,11 @@
 
   import clsx from "clsx";
   import { navbar_ul } from "./theme";
-  import type { NavbarState, NavUlProps as Props } from "./type";
+  import type { NavbarState, NavUlProps } from "$lib/types";
 
   let navState = getContext<NavbarState>("navState");
 
-  let { children, activeUrl, ulClass, slideParams = { delay: 250, duration: 500, easing: sineIn }, activeClass, nonActiveClass, class: clasName, ...restProps }: Props = $props();
+  let { children, activeUrl, ulClass, slideParams = { delay: 250, duration: 500, easing: sineIn }, activeClass, nonActiveClass, class: clasName, ...restProps }: NavUlProps = $props();
 
   const activeUrlStore = writable<string>("");
 

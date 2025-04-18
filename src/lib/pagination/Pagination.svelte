@@ -1,8 +1,9 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { type PaginationProps as Props, pagination, PaginationItem } from ".";
+  import { pagination, PaginationItem } from ".";
+  import type { PaginationProps } from "$lib/types";
 
-  let { pages = [], previous, next, prevContent, nextContent, table, size, ariaLabel, ...restProps }: Props = $props();
+  let { pages = [], previous, next, prevContent, nextContent, table, size, ariaLabel, ...restProps }: PaginationProps = $props();
 
   setContext("group", true);
   setContext("table", table);

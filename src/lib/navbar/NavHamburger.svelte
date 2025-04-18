@@ -4,10 +4,10 @@
   import ToolbarButton from "../toolbar/ToolbarButton.svelte";
   import Menu from "./Menu.svelte";
   import { navbar_hamburger } from "./theme";
-  import type { NavbarState, NavHamburgerProps as Props } from "./type";
+  import type { NavbarState, NavHamburgerProps } from "$lib/types";
   import type { MouseEventHandler } from "svelte/elements";
 
-  let { children, onclick, menuClass, class: className, name = "Open main menu", ...restProps }: Props = $props();
+  let { children, onclick, menuClass, class: className, name = "Open main menu", ...restProps }: NavHamburgerProps = $props();
 
   let { base, menu } = navbar_hamburger();
 

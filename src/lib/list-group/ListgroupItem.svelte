@@ -1,10 +1,10 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { type ListgroupItemProps as Props } from "./type";
-  import { type ListgroupItemVariants, listGroupItem } from "./theme";
+  import type {  ListgroupItemProps } from "$lib/types";
+  import { listGroupItem, type ListgroupItemVariants } from "./theme";
   import clsx from "clsx";
 
-  let { children, active, current, disabled, horizontal, name, Icon, class: className, iconClass = "me-2.5 h-5 w-5", onclick, ...restProps }: Props = $props();
+  let { children, active, current, disabled, horizontal, name, Icon, class: className, iconClass = "me-2.5 h-5 w-5", onclick, ...restProps }: ListgroupItemProps = $props();
 
   active = active ?? getContext("active");
 

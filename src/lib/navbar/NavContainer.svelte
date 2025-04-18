@@ -1,9 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
   import { navbar_container } from "./theme";
-  import type { NavContainerProps as Props } from "./type";
+  import type { NavContainerProps } from "$lib/types";
 
-  let { children, fluid, class: clasName, ...restProps }: Props = $props();
+  let { children, fluid, class: clasName, ...restProps }: NavContainerProps = $props();
 </script>
 
 <div {...restProps} class={navbar_container({ fluid, class: clsx(clasName) })}>

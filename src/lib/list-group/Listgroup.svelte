@@ -1,10 +1,11 @@
 <script lang="ts">
   import { setContext } from "svelte";
   import ListgroupItem from "./ListgroupItem.svelte";
-  import { type ListgroupProps as Props, listGroup } from ".";
+  import { listGroup } from ".";
+  import type { ListgroupProps } from "$lib/types";
   import clsx from "clsx";
 
-  let { children, items, active, onclick, horizontal, rounded, border, class: className, itemClass, iconClass, ...restProps }: Props = $props();
+  let { children, items, active, onclick, horizontal, rounded, border, class: className, itemClass, iconClass, ...restProps }: ListgroupProps = $props();
 
   const base = $derived(listGroup({ rounded, border, horizontal, class: clsx(className) }));
 

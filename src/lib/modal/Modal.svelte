@@ -4,11 +4,12 @@
   import clsx from "clsx";
   import { sineIn } from "svelte/easing";
   import { fade } from "svelte/transition";
-  import { type ModalProps as Props, modal as modalTheme } from ".";
+  import { modal as modalTheme } from ".";
+  import type { ModalProps } from "$lib/types";
 
   // TODO: missing focus trap
 
-  let { children, oncancel, modal = true, autoclose = false, header, footer, title, open = $bindable(false), dismissable = true, closeBtnClass, headerClass, bodyClass, footerClass, outsideclose = true, size = "md", placement, class: className, params = { duration: 100, easing: sineIn }, transition = fade, ...restProps }: Props = $props();
+  let { children, oncancel, modal = true, autoclose = false, header, footer, title, open = $bindable(false), dismissable = true, closeBtnClass, headerClass, bodyClass, footerClass, outsideclose = true, size = "md", placement, class: className, params = { duration: 100, easing: sineIn }, transition = fade, ...restProps }: ModalProps = $props();
 
   const { base, header: headerCls, footer: footerCls, body, closeBtn } = $derived(modalTheme({ placement, size }));
 
