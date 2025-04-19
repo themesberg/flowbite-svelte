@@ -31,56 +31,55 @@
 
   // transition
   type TransitionOption = {
-		name: string;
-		transition: typeof fly | typeof blur | typeof slide | typeof scale;
-		params: FlyParams | BlurParams | SlideParams | ScaleParams;
-	};
+    name: string;
+    transition: typeof fly | typeof blur | typeof slide | typeof scale;
+    params: FlyParams | BlurParams | SlideParams | ScaleParams;
+  };
 
-	const transitions: TransitionOption[] = [
-		{ name: 'Fly', transition: fly, params: { duration: 500, easing: linear, x: 150 } },
-		{ name: 'Blur', transition: blur, params: { duration: 500, easing: linear } },
-		{ name: 'Slide', transition: slide, params: { duration: 500, easing: linear, x: -150 } },
-		{ name: 'Scale', transition: scale, params: { duration: 500, easing: linear } }
-	];
+  const transitions: TransitionOption[] = [
+    { name: "Fly", transition: fly, params: { duration: 500, easing: linear, x: 150 } },
+    { name: "Blur", transition: blur, params: { duration: 500, easing: linear } },
+    { name: "Slide", transition: slide, params: { duration: 500, easing: linear, x: -150 } },
+    { name: "Scale", transition: scale, params: { duration: 500, easing: linear } }
+  ];
 
   let selectedTransition = $state("Fly");
   let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
 
   // code generator
   let generatedCode = $derived(
-		(() => {
-			// position, bannerType color, class
-			let props = [];
-			if (color !== 'primary') props.push(` color="${color}"`);
-			if (bannerClass) props.push(` class="${bannerClass}"`);
-			if (!bannerStatus) props.push(' bannerStatus={false}');
-			if (currentTransition !== transitions[0]) {
-				props.push(` transition={${currentTransition.name.toLowerCase()}}`);
+    (() => {
+      // position, bannerType color, class
+      let props = [];
+      if (color !== "primary") props.push(` color="${color}"`);
+      if (bannerClass) props.push(` class="${bannerClass}"`);
+      if (!bannerStatus) props.push(" bannerStatus={false}");
+      if (currentTransition !== transitions[0]) {
+        props.push(` transition={${currentTransition.name.toLowerCase()}}`);
 
-				// Generate params string without quotes and handle functions
-				const paramsString = Object.entries(currentTransition.params)
-  .map(([key, value]) => {
-    if (key === 'easing') {
-      // For easing, use the name of the easing function
-      return `${key}:${value.name || 'linear'}`; 
-    }
-    // For other values, just use the literal value
-    return `${key}:${value}`;
-  })
-  .join(",");
-				props.push(` params={{${paramsString}}}`);
-			}
+        // Generate params string without quotes and handle functions
+        const paramsString = Object.entries(currentTransition.params)
+          .map(([key, value]) => {
+            if (key === "easing") {
+              // For easing, use the name of the easing function
+              return `${key}:${value.name || "linear"}`;
+            }
+            // For other values, just use the literal value
+            return `${key}:${value}`;
+          })
+          .join(",");
+        props.push(` params={{${paramsString}}}`);
+      }
 
-			const propsString =
-				props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
+      const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
-			return `<div class="relative h-40">
+      return `<div class="relative h-40">
   <Banner${propsString}>
     My Banner
   </Banner>
 </div>`;
-		})()
-	);
+    })()
+  );
 
   // for interactive builder
   let builder = uiHelpers();

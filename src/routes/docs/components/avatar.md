@@ -191,13 +191,13 @@ You can set `size` property to preset values of `xs | sm | md | lg | xl`. Custom
 
 Preset values are equivalents of:
 
-| Size  |     |   Classes   |
-| :---: | --- | :---------: |
-|  xs   |     |  `w-6 h-6`  |
-|  sm   |     |  `w-8 h-8`  |
-|  md   |     | `w-10 h-10` |
-|  lg   |     | `w-20 h-20` |
-|  xl   |     | `w-36 h-36` |
+| Size |     |   Classes   |
+| :--: | --- | :---------: |
+|  xs  |     |  `w-6 h-6`  |
+|  sm  |     |  `w-8 h-8`  |
+|  md  |     | `w-10 h-10` |
+|  lg  |     | `w-20 h-20` |
+|  xl  |     | `w-36 h-36` |
 
 ```svelte example class="flex flex-col gap-4" hideScript hideResponsiveButtons
 <script>

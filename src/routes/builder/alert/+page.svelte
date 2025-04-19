@@ -84,15 +84,15 @@
 
         // Generate params string without quotes and handle functions
         const paramsString = Object.entries(currentTransition.params)
-  .map(([key, value]) => {
-    if (key === 'easing') {
-      // For easing, use the name of the easing function
-      return `${key}:${value.name || 'linear'}`; 
-    }
-    // For other values, just use the literal value
-    return `${key}:${value}`;
-  })
-  .join(",");
+          .map(([key, value]) => {
+            if (key === "easing") {
+              // For easing, use the name of the easing function
+              return `${key}:${value.name || "linear"}`;
+            }
+            // For other values, just use the literal value
+            return `${key}:${value}`;
+          })
+          .join(",");
         props.push(` params={{${paramsString}}}`);
       }
 

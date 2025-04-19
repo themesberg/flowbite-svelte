@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.0-next.15
+
+### Patch Changes
+
+- fix: Controls and JSONView
+
 ## 1.0.0-next.14
 
 ### Patch Changes
