@@ -4,6 +4,7 @@
   import TableDefaultRow from "./TableDefaultRow.svelte";
   import TableProp from "./TableProp.svelte";
   import { A } from "$lib";
+  import JSONView from "./JSONView.svelte";
 
   type TCompoData = {
     data: {
@@ -66,13 +67,7 @@
 {#if compoData}
   <div id="compoData">
     {#each compoData as compo}
-      <h4 class="mt-8 text-xl font-bold text-black dark:text-white">{compo.data.default.name}</h4>
-      <h5 class="mt-4 text-lg font-bold text-black dark:text-white">Types</h5>
-      <A href={compo.data.default.type.link} class="text-lg">{compo.data.default.type.name}</A>
-      <h5 class="mt-4 text-lg font-bold text-black dark:text-white">Props</h5>
-      <TableProp>
-        <TableDefaultRow items={compo.data.default.props} rowState="hover" />
-      </TableProp>
+      <JSONView data={compo.data.default} />
     {/each}
   </div>
 {/if}
