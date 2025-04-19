@@ -32,7 +32,7 @@
 
 <div class="json-view bg-gray-50 border border-gray-200 rounded-md overflow-hidden my-2">
   <button 
-    on:click={toggle} 
+    onclick={toggle} 
     class="toggle-btn w-full flex items-center justify-between p-3 text-left hover:bg-gray-100 transition-colors"
   >
     <div class="flex items-center gap-2">

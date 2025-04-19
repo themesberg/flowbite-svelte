@@ -46,7 +46,7 @@
 
 <!-- Slider controls -->
 {#if children}
-  {@render children(changeSlide)}
+  {@render children()}
 {:else}
   <ControlButton name="Previous" forward={false} onclick={() => changeSlide(false)} class={className} />
   <ControlButton name="Next" forward={true} onclick={() => changeSlide(true)} class={className} />
