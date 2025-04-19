@@ -66,18 +66,20 @@
       if (popoverClass !== "w-64 text-sm font-light") props.push(` class="${popoverClass}"`);
       if (arrow !== true) props.push(" arrow={false}");
       if (currentTransition !== transitions[0]) {
-        props.push(` transition={${currentTransition.transition.name}}`);
+        props.push(` transition={${currentTransition.name.toLowerCase()}}`);
 
         // Generate params string without quotes and handle functions
         let paramValues = currentTransition.params;
-        const paramsString = Object.entries(paramValues)
-          .map(([key, value]) => {
-            if (typeof value === "function") {
-              return `${key}:${value.name}`;
-            }
-            return `${key}:${value}`;
-          })
-          .join(",");
+        const paramsString = Object.entries(currentTransition.params)
+  .map(([key, value]) => {
+    if (key === 'easing') {
+      // For easing, use the name of the easing function
+      return `${key}:${value.name || 'linear'}`; 
+    }
+    // For other values, just use the literal value
+    return `${key}:${value}`;
+  })
+  .join(",");
         props.push(` params={{${paramsString}}}`);
       }
 

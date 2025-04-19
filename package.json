@@ -213,8 +213,8 @@
       "svelte": "./dist/buttons/GradientButton.svelte"
     },
     "./Card.svelte": {
-      "types": "./dist/cards/Card.svelte.d.ts",
-      "svelte": "./dist/cards/Card.svelte"
+      "types": "./dist/card/Card.svelte.d.ts",
+      "svelte": "./dist/card/Card.svelte"
     },
     "./Carousel.svelte": {
       "types": "./dist/carousel/Carousel.svelte.d.ts",

@@ -8,7 +8,7 @@ export * from "./bottom-navigation";
 export * from "./breadcrumb";
 export * from "./buttongroup";
 export * from "./buttons";
-export * from "./cards";
+export * from "./card";
 export * from "./carousel";
 export * from "./chart";
 export * from "./darkmode";

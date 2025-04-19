@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Card from "$lib/cards/Card.svelte";
+  import Card from "$lib/card/Card.svelte";
 
   let { name, dir, path, thumnailSize, ...restProps }: { name: string; dir: string; path: string; thumnailSize: string } = $props();
 

@@ -53,15 +53,17 @@
       if (dismissable !== true) props.push(" dismissable={false}");
       if (toastPosition !== "top-left") props.push(` position="${toastPosition}"`);
       if (currentTransition !== transitions[0] && dismissable) {
-        props.push(` transition={${currentTransition.transition.name}}`);
+        props.push(` transition={${currentTransition.name.toLowerCase()}}`);
         const paramsString = Object.entries(currentTransition.params)
-          .map(([key, value]) => {
-            if (typeof value === "function") {
-              return `${key}:${value.name}`;
-            }
-            return `${key}:${value}`;
-          })
-          .join(",");
+  .map(([key, value]) => {
+    if (key === 'easing') {
+      // For easing, use the name of the easing function
+      return `${key}:${value.name || 'linear'}`; 
+    }
+    // For other values, just use the literal value
+    return `${key}:${value}`;
+  })
+  .join(",");
         props.push(` params={{${paramsString}}}`);
       }
 
