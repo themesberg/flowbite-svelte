@@ -64,12 +64,12 @@ In the provided code, you can customize the primary and secondary color by modif
 </script>
 
 <Button color="primary">Primary</Button>
-<Alert color="primary">Primary</Alert>
-<Card href="/cards" color="primary">
+<Alert color="lime">Primary</Alert>
+<Card href="/cards" color="cyan" class="p-4 sm:p-6">
   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-red-800">Noteworthy technology acquisitions 2021</h5>
   <p class="leading-tight font-normal text-gray-700 dark:text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
 </Card>
-<Navbar color="primary">
+<Navbar color="amber">
   <NavBrand href="/">
     <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-red-800">Flowbite</span>
@@ -83,7 +83,7 @@ In the provided code, you can customize the primary and secondary color by modif
     <NavLi href="/contact">Contact</NavLi>
   </NavUl>
 </Navbar>
-<Toast color="primary">
+<Toast color="rose">
   {#snippet icon()}
     <FireOutline class="h-6 w-6" />
   {/snippet}
