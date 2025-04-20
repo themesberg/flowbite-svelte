@@ -4,7 +4,6 @@ export const card = tv({
   slots: {
     base: "w-full flex max-w-sm bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700",
     image: "rounded-t-lg",
-    content: ""
   },
   variants: {
     size: {
@@ -45,14 +44,6 @@ export const card = tv({
       xl: { base: "shadow-xl" },
       "2xl": { base: "shadow-2xl" },
       inner: { base: "shadow-inner" }
-    },
-    padding: {
-      xs: { content: "p-2" },
-      sm: { content: "p-4 md:p-6" },
-      md: { content: "p-4 sm:p-5 md:p-7" },
-      lg: { content: "p-4 sm:p-6 md:p-8" },
-      xl: { content: "p-4 sm:p-8 md:p-10" },
-      none: { content: "p-0" }
     },
     horizontal: {
       true: {
@@ -189,7 +180,6 @@ export const card = tv({
   defaultVariants: {
     size: "sm",
     shadow: "normal",
-    padding: "lg",
     horizontal: false,
     reverse: false
   }

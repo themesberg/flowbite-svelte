@@ -3,14 +3,13 @@
   import type { CardProps } from "$lib/types";
   import type { HTMLAttributes, HTMLAnchorAttributes } from "svelte/elements";
 
-  let { children, href, color = "gray", horizontal = false, shadow = "md", reverse = false, img, padding = "lg", size = "sm", class: className, imgClass, contentClass, ...restProps }: CardProps = $props();
+  let { children, href, color = "gray", horizontal = false, shadow = "md", reverse = false, img, size = "sm", class: className, imgClass, contentClass, ...restProps }: CardProps = $props();
 
-  const { base, image, content } = $derived(
+  const { base, image } = $derived(
     card({
       size,
       color,
       shadow,
-      padding,
       horizontal,
       reverse,
       href: !!href
@@ -36,13 +35,9 @@
 {#snippet childSlot()}
   {#if img}
     <img class={image({ class: imgClass })} src={img} alt={img} />
-    <div class={content({ class: contentClass })}>
-      {@render children()}
-    </div>
+    {@render children()}
   {:else}
-    <div class={content({ class: contentClass })}>
-      {@render children()}
-    </div>
+    {@render children()}
   {/if}
 {/snippet}
 

@@ -19,8 +19,6 @@
   let cardSize: CardProps["size"] = $state("sm");
   const colors = Object.keys(card.variants.color);
   let color: CardProps["color"] = $state("gray");
-  const paddings = Object.keys(card.variants.padding);
-  let cardPadding: CardProps["padding"] = $state("lg");
   const shadows = Object.keys(card.variants.shadow);
   let cardShadow: CardProps["shadow"] = $state("md");
   let horizontal = $state(false);
@@ -53,7 +51,6 @@
       if (color !== "gray") props.push(` color="${color}"`);
       if (cardShadow !== "md") props.push(` shadow="${cardShadow}"`);
       if (cardClass) props.push(` class="${cardClass}"`);
-      if (cardPadding !== "lg") props.push(` padding="${cardPadding}"`);
       if (link) props.push(` href="${link}"`);
       if (horizontal) props.push(` horizontal`);
       if (reverse) props.push(` reverse`);
@@ -93,7 +90,7 @@
 
 <CodeWrapper>
   <div class="flex justify-center">
-    <Card size={cardSize} {color} padding={cardPadding} shadow={cardShadow} href={link ? link : ""} class={cardClass} img={cardImage?.src} {horizontal} {reverse}>
+    <Card size={cardSize} {color} shadow={cardShadow} href={link ? link : ""} class={cardClass} img={cardImage?.src} {horizontal} {reverse}>
       <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
       <p class="leading-tight font-normal text-gray-700 dark:text-gray-300">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
     </Card>
@@ -108,12 +105,6 @@
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
       <Radio class="my-1 w-24" name="alert_reactive" bind:group={color} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
-    {/each}
-  </div>
-  <div class="my-4 flex flex-wrap space-x-4">
-    <Label class="mb-4 w-full font-bold">Padding</Label>
-    {#each paddings as padding}
-      <Radio class="my-1 w-16" name="interactive_card_padding" bind:group={cardPadding} value={padding}>{padding}</Radio>
     {/each}
   </div>
   <div class="my-4 flex flex-wrap space-x-4">

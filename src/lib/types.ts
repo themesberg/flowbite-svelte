@@ -352,8 +352,6 @@ export interface GradientButtonProps extends GradientButtonVariantes, HTMLButton
 // card
 export type CardSizeType = "sm" | "md" | "lg" | "xl" | "xs" | undefined;
 
-export type PaddingType = "sm" | "lg" | "md" | "xl" | "xs" | "none" | undefined;
-
 export type ShadowType = "sm" | "normal" | "lg" | "md" | "xl" | "2xl" | "inner" | undefined;
 
 export type ColorType = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined;
@@ -366,7 +364,6 @@ export interface BaseCardProps {
   shadow?: ShadowType;
   reverse?: boolean;
   img?: string;
-  padding?: PaddingType;
   size?: CardSizeType;
   class?: string;
   // onclick?: () => void;

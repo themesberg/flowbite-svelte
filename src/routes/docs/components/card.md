@@ -35,7 +35,7 @@ Use the following simple card component with a title and description. Notice the
   import { Card } from "flowbite-svelte";
 </script>
 
-<Card href="/cards">
+<Card href="/cards" class="p-4 sm:p-6 md:p-8">
   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
   <p class="leading-tight font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
 </Card>
@@ -51,7 +51,7 @@ Use the following example of a card element if you also want to have an action b
   import { ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
-<Card>
+<Card class="p-4 sm:p-6 md:p-8">
   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
   <p class="mb-3 leading-tight font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
   <Button class="w-fit">
@@ -70,7 +70,7 @@ This example can be used to show a CTA as a link instead of a button inside the 
   import { GiftBoxSolid, ArrowUpRightFromSquareOutline } from "flowbite-svelte-icons";
 </script>
 
-<Card>
+<Card class="p-4 sm:p-6 md:p-8">
   <GiftBoxSolid class="mb-3 h-8 w-8 text-gray-500 dark:text-gray-400" />
   <a href="/">
     <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Need a help in Claim?</h5>
@@ -98,11 +98,13 @@ You can use the following example of a card element with an image for blog posts
 
 <div class="space-y-4">
   <Card img="/images/image-1.webp" reverse={vCard}>
+    <div class="m-6">
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
     <p class="mb-3 leading-tight font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-    <Button>
+    <Button class="w-40">
       Read more <ArrowRightOutline class="ms-2 h-6 w-6 text-white" />
     </Button>
+    </div>
   </Card>
   <Toggle bind:checked={vCard} class="italic dark:text-gray-500">Reverse</Toggle>
 </div>
@@ -120,8 +122,10 @@ If you want to spice up your cards you can use the following card which has its 
 
 <div class="space-y-4">
   <Card img="/images/image-1.webp" href="/" horizontal size="md" reverse={hCard}>
+    <div class="m-6">
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
     <p class="mb-3 leading-tight font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+    </div>
   </Card>
   <Toggle bind:checked={hCard} class="italic dark:text-gray-500">Reverse</Toggle>
 </div>
@@ -137,7 +141,7 @@ Use this user profile card example if you want to show a dropdown menu and butto
   import { DotsHorizontalOutline } from "flowbite-svelte-icons";
 </script>
 
-<Card padding="md">
+<Card class="p-4 sm:p-5 md:p-7">
   <div class="flex justify-end">
     <DotsHorizontalOutline />
     <Dropdown class="w-36">
@@ -167,7 +171,7 @@ Use this card example where you can add form input elements that can be used for
   import { Card, Button, Label, Input, Checkbox } from "flowbite-svelte";
 </script>
 
-<Card>
+<Card class="p-4 sm:p-6 md:p-8">
   <form class="flex flex-col space-y-6" action="/">
     <h3 class="text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h3>
     <Label class="space-y-2">
@@ -199,7 +203,7 @@ Use this card for your e-commerce websites and show information about the produc
   import { Card, Button, Rating, Badge } from "flowbite-svelte";
 </script>
 
-<Card padding="none">
+<Card class="p-0">
   <a href="/">
     <img class="rounded-t-lg p-8" src="/images/product-1.webp" alt="product 1" />
   </a>
@@ -229,7 +233,7 @@ Use this CTA card example to encourage your users to visit a certain page such a
   import { Card, Button } from "flowbite-svelte";
 </script>
 
-<Card class="text-center" size="lg" padding="xl">
+<Card size="lg" class="text-center p-4 sm:p-8 md:p-10">
   <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Work fast from anywhere</h5>
   <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">Stay up to date and move work forward with Flowbite on iOS & Android. Download the app today.</p>
   <div class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
@@ -268,7 +272,7 @@ Use this card example if you want to show a list of data:
   ];
 </script>
 
-<Card padding="xl" size="md">
+<Card class="p-4 sm:p-8 md:p-10" size="md">
   <div class="mb-4 flex items-center justify-between">
     <h5 class="text-xl leading-none font-bold text-gray-900 dark:text-white">Latest Customers</h5>
     <a href="/" class="text-primary-600 dark:text-primary-500 text-sm font-medium hover:underline">View all</a>
@@ -304,7 +308,7 @@ Show detailed information to potential customers about your product’s pricing 
   import { CheckCircleSolid } from "flowbite-svelte-icons";
 </script>
 
-<Card padding="xl">
+<Card class="p-4 sm:p-8 md:p-10">
   <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Standard plan</h5>
   <div class="flex items-baseline text-gray-900 dark:text-white">
     <span class="text-3xl font-semibold">$</span>
@@ -355,7 +359,7 @@ Use this example to split cards into multiple sections such as for testimonials 
   import { Card } from "flowbite-svelte";
 </script>
 
-<Card padding="none" size="xl" contentClass="grid md:grid-cols-2">
+<Card size="xl" class="grid md:grid-cols-2">
   <figure class="flex flex-col items-center justify-center rounded-t-lg border-b border-gray-200 bg-white p-8 text-center md:rounded-t-none md:rounded-tl-lg md:border-e dark:border-gray-700 dark:bg-gray-800">
     <blockquote class="mx-auto mb-4 max-w-2xl text-gray-500 dark:text-gray-400">
       <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Very easy this was to integrate</h3>
@@ -421,7 +425,7 @@ Use `class="max-w-[250px]` to create a custom size card.
 </script>
 
 <div class="flex justify-center">
-  <Card class="max-w-[250px]">
+  <Card class="max-w-[250px] p-6">
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Technology acquisitions</h5>
     <p class="leading-tight font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions.</p>
   </Card>
