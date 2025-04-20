@@ -52,7 +52,7 @@ This example can be used to apply custom icons instead of the default bullets fo
 </script>
 
 <Heading tag="h2" customSize="text-lg font-semibold" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
-<List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
+<List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400">
   <Li icon>
     <CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />
     At least 10 characters (and up to 100 characters)
@@ -107,7 +107,7 @@ Use this example to nested another list of items inside the parent list element.
 
 ### Unstyled
 
-Use the `list="none"` prop to disable the list style bullets or numbers.
+Use the `tag="dl"` prop to disable the list style bullets or numbers.
 
 ```svelte example
 <script>
@@ -115,7 +115,7 @@ Use the `list="none"` prop to disable the list style bullets or numbers.
 </script>
 
 <Heading tag="h2" customSize="text-lg font-semibold" class="mb-2 text-lg font-semibold  text-gray-900 dark:text-white">Password requirements</Heading>
-<List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
+<List tag="dl" class="space-y-1 text-gray-500 dark:text-gray-400">
   <Li>At least 10 characters (and up to 100 characters)</Li>
   <Li>At least one lowercase character</Li>
   <Li>Inclusion of at least one special character, e.g., ! @ # ?</Li>
@@ -211,7 +211,7 @@ Use this example to create a list of items with custom SVG icons instead of the 
   import { CheckOutline } from "flowbite-svelte-icons";
 </script>
 
-<List tag="ul" class="mb-8 space-y-4 text-gray-500 dark:text-gray-400" list="none">
+<List tag="ul" class="mb-8 space-y-4 text-gray-500 dark:text-gray-400">
   <Li icon class="gap-3">
     <CheckOutline class="h-5 w-5 text-green-500 dark:text-green-400" />
     Individual configuration
@@ -244,7 +244,7 @@ This example can be used to show more details for each list item such as the use
   import { List, Li } from "flowbite-svelte";
 </script>
 
-<List tag="ul" list="none" class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
+<List tag="dl" class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
   <Li class="pb-3 sm:pb-4">
     <div class="flex items-center space-x-4 rtl:space-x-reverse">
       <div class="shrink-0">
@@ -317,7 +317,7 @@ Use this example to create a horizontally aligned list of items.
   import { List, Li, A } from "flowbite-svelte";
 </script>
 
-<List tag="ul" list="none" class="mb-6 flex flex-wrap items-center justify-center">
+<List tag="dl" class="mb-6 flex flex-wrap items-center justify-center">
   <Li>
     <A href="/" class="me-4 hover:underline md:me-6" textColor="text-gray-700 dark:text-white">About</A>
   </Li>
