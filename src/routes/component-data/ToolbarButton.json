@@ -2,7 +2,7 @@
   "name": "ToolbarButton",
   "type": {
     "name": "ToolbarButtonProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L941"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L938"
   },
   "props": [
     ["children", ""],

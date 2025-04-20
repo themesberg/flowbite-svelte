@@ -3,7 +3,7 @@ import { tv } from "tailwind-variants";
 export const card = tv({
   slots: {
     base: "w-full flex max-w-sm bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700",
-    image: "rounded-t-lg",
+    image: "rounded-t-lg"
   },
   variants: {
     size: {

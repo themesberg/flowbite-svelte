@@ -29,7 +29,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[IndicatorsProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L402)
+[IndicatorsProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L399)
 ## Props
 @prop children
 @prop activeClass

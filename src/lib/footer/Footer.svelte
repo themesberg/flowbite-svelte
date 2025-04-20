@@ -15,7 +15,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[FooterProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L586)
+[FooterProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L583)
 ## Props
 @prop children
 @prop footerType = "default"

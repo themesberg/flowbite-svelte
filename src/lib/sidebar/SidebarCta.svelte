@@ -21,7 +21,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[SidebarCtaProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1140)
+[SidebarCtaProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1137)
 ## Props
 @prop children
 @prop icon

@@ -21,7 +21,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1153)
+[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1150)
 ## Props
 @prop children
 @prop site

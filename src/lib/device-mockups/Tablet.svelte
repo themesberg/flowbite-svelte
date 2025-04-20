@@ -23,7 +23,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[TabletProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L527)
+[TabletProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L524)
 ## Props
 @prop children
 @prop divClass

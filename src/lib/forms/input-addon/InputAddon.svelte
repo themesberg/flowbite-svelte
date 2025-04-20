@@ -41,7 +41,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[InputAddonProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L712)
+[InputAddonProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L709)
 ## Props
 @prop children
 @prop class: className

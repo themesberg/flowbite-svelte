@@ -2,7 +2,7 @@
   "name": "Card",
   "type": {
     "name": "CardProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L377"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L374"
   },
   "props": [
     ["children", ""],
@@ -12,7 +12,6 @@
     ["shadow", "\"md\""],
     ["reverse", "false"],
     ["img", ""],
-    ["padding", "\"lg\""],
     ["size", "\"sm\""],
     ["class: className", ""],
     ["imgClass", ""],

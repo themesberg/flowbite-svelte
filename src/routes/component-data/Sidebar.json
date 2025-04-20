@@ -2,7 +2,7 @@
   "name": "Sidebar",
   "type": {
     "name": "SidebarProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1119"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1116"
   },
   "props": [
     ["children", ""],

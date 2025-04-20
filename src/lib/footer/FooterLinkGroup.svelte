@@ -14,7 +14,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[FooterLinkGroupProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L619)
+[FooterLinkGroupProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L616)
 ## Props
 @prop class: ulClass
 @prop children

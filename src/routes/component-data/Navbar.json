@@ -2,7 +2,7 @@
   "name": "Navbar",
   "type": {
     "name": "NavbarProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L903"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L900"
   },
   "props": [
     ["children", ""],

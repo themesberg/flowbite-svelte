@@ -2,7 +2,7 @@
   "name": "SidebarItem",
   "type": {
     "name": "SidebarItemProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1182"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1179"
   },
   "props": [
     ["icon", ""],

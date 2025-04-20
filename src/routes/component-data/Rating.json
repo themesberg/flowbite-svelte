@@ -2,7 +2,7 @@
   "name": "Rating",
   "type": {
     "name": "RatingProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1022"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1019"
   },
   "props": [
     ["children", ""],

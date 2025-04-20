@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.0-next.16
+
+### Patch Changes
+
+- fix: remove padding from Card compo
+
 ## 1.0.0-next.15
 
 ### Patch Changes

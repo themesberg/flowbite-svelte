@@ -35,7 +35,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[NavLiProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L929)
+[NavLiProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L926)
 ## Props
 @prop children
 @prop activeClass

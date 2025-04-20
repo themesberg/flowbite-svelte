@@ -24,7 +24,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[TableBodyCellProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1311)
+[TableBodyCellProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1308)
 ## Props
 @prop children
 @prop class: className

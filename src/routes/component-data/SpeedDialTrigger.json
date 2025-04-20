@@ -2,7 +2,7 @@
   "name": "SpeedDialTrigger",
   "type": {
     "name": "SpeedDialTriggerProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1249"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1246"
   },
   "props": [
     ["children", ""],

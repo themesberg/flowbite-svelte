@@ -2,7 +2,7 @@
   "name": "VideoPlaceholder",
   "type": {
     "name": "VideoPlaceholderProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1217"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1214"
   },
   "props": [
     ["size", "\"sm\""],

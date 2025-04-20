@@ -35,7 +35,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[CheckboxProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L640)
+[CheckboxProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L637)
 ## Props
 @prop children
 @prop color = "primary"

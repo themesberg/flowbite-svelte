@@ -26,7 +26,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[PopoverProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L981)
+[PopoverProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L978)
 ## Props
 @prop title: titleSlot
 @prop color = "default"

@@ -99,11 +99,11 @@ You can use the following example of a card element with an image for blog posts
 <div class="space-y-4">
   <Card img="/images/image-1.webp" reverse={vCard}>
     <div class="m-6">
-    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-    <p class="mb-3 leading-tight font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-    <Button class="w-40">
-      Read more <ArrowRightOutline class="ms-2 h-6 w-6 text-white" />
-    </Button>
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+      <p class="mb-3 leading-tight font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+      <Button class="w-40">
+        Read more <ArrowRightOutline class="ms-2 h-6 w-6 text-white" />
+      </Button>
     </div>
   </Card>
   <Toggle bind:checked={vCard} class="italic dark:text-gray-500">Reverse</Toggle>
@@ -123,8 +123,8 @@ If you want to spice up your cards you can use the following card which has its 
 <div class="space-y-4">
   <Card img="/images/image-1.webp" href="/" horizontal size="md" reverse={hCard}>
     <div class="m-6">
-    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-    <p class="mb-3 leading-tight font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+      <p class="mb-3 leading-tight font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
     </div>
   </Card>
   <Toggle bind:checked={hCard} class="italic dark:text-gray-500">Reverse</Toggle>
@@ -233,7 +233,7 @@ Use this CTA card example to encourage your users to visit a certain page such a
   import { Card, Button } from "flowbite-svelte";
 </script>
 
-<Card size="lg" class="text-center p-4 sm:p-8 md:p-10">
+<Card size="lg" class="p-4 text-center sm:p-8 md:p-10">
   <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Work fast from anywhere</h5>
   <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">Stay up to date and move work forward with Flowbite on iOS & Android. Download the app today.</p>
   <div class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">

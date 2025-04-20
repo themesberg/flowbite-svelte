@@ -2,7 +2,7 @@
   "name": "NavLi",
   "type": {
     "name": "NavLiProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L929"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L926"
   },
   "props": [
     ["children", ""],

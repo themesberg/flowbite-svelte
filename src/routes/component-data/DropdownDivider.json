@@ -2,7 +2,7 @@
   "name": "DropdownDivider",
   "type": {
     "name": "DropdownDividerProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L565"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L562"
   },
   "props": [["class: divClass", ""]]
 }

@@ -188,7 +188,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[CarouselProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L389)
+[CarouselProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L386)
 ## Props
 @prop children
 @prop slide

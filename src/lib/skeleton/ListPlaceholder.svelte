@@ -28,7 +28,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[ListPlaceholderProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1203)
+[ListPlaceholderProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1200)
 ## Props
 @prop itemNumber = 5
 @prop size = "md"

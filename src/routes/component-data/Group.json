@@ -2,7 +2,7 @@
   "name": "Group",
   "type": {
     "name": "GroupProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1428"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1425"
   },
   "props": [
     ["children", ""],

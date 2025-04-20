@@ -2,7 +2,7 @@
   "name": "Activity",
   "type": {
     "name": "ActivityProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1412"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1409"
   },
   "props": [
     ["children", ""],

@@ -55,7 +55,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[CardProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L377)
+[CardProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L374)
 ## Props
 @prop children
 @prop href
@@ -64,7 +64,6 @@
 @prop shadow = "md"
 @prop reverse = false
 @prop img
-@prop padding = "lg"
 @prop size = "sm"
 @prop class: className
 @prop imgClass
