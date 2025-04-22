@@ -13,7 +13,7 @@
     rangeFrom = $bindable(),
     rangeTo = $bindable(),
     locale = "default",
-    firstDayOfWeek = 0, // 0 = Monday, 6 = Sunday
+    firstDayOfWeek = 0,
     dateFormat = { year: "numeric", month: "long", day: "numeric" },
     placeholder = "Select date",
     disabled = false,
@@ -247,9 +247,4 @@
   {/if}
 </div>
 
-<!--
-@component
-[Go to docs](https://flowbite-svelte-next.com/)
-## Props
-@props: 
--->
+
