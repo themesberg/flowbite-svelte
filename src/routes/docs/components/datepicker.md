@@ -28,7 +28,7 @@ The Datepicker component provides an interactive calendar interface for selectin
 Use the Datepicker for single date selection. The selected date is bound to the `value` prop.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Datepicker, P } from "flowbite-svelte";
   let selectedDate = $state();
 </script>
@@ -44,9 +44,13 @@ Use the Datepicker for single date selection. The selected date is bound to the 
 Enable date range selection using the `range` prop. The start and end dates are bound to `rangeFrom` and `rangeTo` respectively.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Datepicker, P } from "flowbite-svelte";
-  let dateRange = { from: null, to: null };
+
+  let dateRange: { from: Date | undefined; to: Date | undefined } = $state({ 
+    from: undefined, 
+    to: undefined 
+  });
 </script>
 
 <div class="mb-64 md:w-1/2">
@@ -64,9 +68,9 @@ Enable date range selection using the `range` prop. The start and end dates are 
 Use the `inline` prop to display the calendar without a popup.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Datepicker, P } from "flowbite-svelte";
-  let selectedDate = null;
+  let selectedDate = $state();
 </script>
 
 <div class="md:w-1/2">
@@ -80,7 +84,7 @@ Use the `inline` prop to display the calendar without a popup.
 Customize the primary color of the Datepicker using the `color` prop.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Datepicker } from "flowbite-svelte";
 </script>
 
@@ -94,7 +98,7 @@ Customize the primary color of the Datepicker using the `color` prop.
 Set a specific locale for date formatting using the `locale` prop.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Datepicker } from "flowbite-svelte";
 </script>
 
@@ -108,7 +112,7 @@ Set a specific locale for date formatting using the `locale` prop.
 Specify a custom date format using the `dateFormat` prop.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Datepicker } from "flowbite-svelte";
 </script>
 
@@ -122,18 +126,20 @@ Specify a custom date format using the `dateFormat` prop.
 Add action buttons (Today, Clear, Apply) using the `showActionButtons` prop. You can also listen for the `clear` and `apply` events to perform specific actions when these buttons are clicked.
 
 ```svelte example
-<script>
-  import { Datepicker, P } from "flowbite-svelte";
-  let selectedDate = null;
-  let lastAction = "";
+<script lang="ts">
+  import { Datepicker, P, type DateOrRange } from "flowbite-svelte";
+  let selectedDate = $state<Date | undefined>();
+  let lastAction = $state<string | undefined>();
 
   function handleClear() {
     lastAction = "Cleared";
   }
 
-  function handleApply(detail) {
+  function handleApply(detail: DateOrRange): void {
     lastAction = "Applied";
-    selectedDate = detail;
+    if (detail instanceof Date) {
+      selectedDate = detail;
+    }
   }
 </script>
 
@@ -149,7 +155,7 @@ Add action buttons (Today, Clear, Apply) using the `showActionButtons` prop. You
 Add a custom title to the Datepicker using the `title` prop.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Datepicker } from "flowbite-svelte";
 </script>
 
@@ -163,7 +169,7 @@ Add a custom title to the Datepicker using the `title` prop.
 Use the `disabled` prop to disable the Datepicker.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Datepicker } from "flowbite-svelte";
 </script>
 
@@ -177,7 +183,7 @@ Use the `disabled` prop to disable the Datepicker.
 Mark the Datepicker as a required field using the `required` prop.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Datepicker } from "flowbite-svelte";
 </script>
 
@@ -191,7 +197,7 @@ Mark the Datepicker as a required field using the `required` prop.
 Set a custom first day of the week using the `firstDayOfWeek` prop.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Datepicker } from "flowbite-svelte";
 </script>
 
@@ -205,10 +211,10 @@ Set a custom first day of the week using the `firstDayOfWeek` prop.
 Listen for date selection events using the `onselect` event.
 
 ```svelte example
-<script>
-  import { Datepicker } from "flowbite-svelte";
-
-  function handleDateSelect(detail) {
+<script lang="ts">
+  import { Datepicker, type DateOrRange } from "flowbite-svelte";
+  
+  function handleDateSelect(detail: DateOrRange) {
     console.log("Selected date:", detail);
   }
 </script>
