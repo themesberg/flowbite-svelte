@@ -6,28 +6,7 @@
   import { datepicker } from "./theme";
   import ToolbarButton from "$lib/toolbar/ToolbarButton.svelte";
 
-  let {
-    value = $bindable(),
-    defaultDate = null,
-    range = false,
-    rangeFrom = $bindable(),
-    rangeTo = $bindable(),
-    locale = "default",
-    firstDayOfWeek = 0,
-    dateFormat = { year: "numeric", month: "long", day: "numeric" },
-    placeholder = "Select date",
-    disabled = false,
-    required = false,
-    inputClass = "",
-    color = "primary",
-    inline = false,
-    autohide = true,
-    showActionButtons = false,
-    title = "",
-    onselect,
-    onclear,
-    onapply
-  }: DatepickerProps = $props();
+  let { value = $bindable(), defaultDate = null, range = false, rangeFrom = $bindable(), rangeTo = $bindable(), locale = "default", firstDayOfWeek = 0, dateFormat = { year: "numeric", month: "long", day: "numeric" }, placeholder = "Select date", disabled = false, required = false, inputClass = "", color = "primary", inline = false, autohide = true, showActionButtons = false, title = "", onselect, onclear, onapply }: DatepickerProps = $props();
 
   // Internal state
   let isOpen: boolean = $state(inline);
@@ -246,5 +225,3 @@
     </div>
   {/if}
 </div>
-
-
