@@ -4,7 +4,7 @@ import { type Writable } from "svelte/store";
 import type { Snippet, Component } from "svelte";
 import type { Placement } from "@floating-ui/utils";
 import { tv, type VariantProps } from "tailwind-variants";
-import type { Picture } from "vite-imagetools";
+// import type { Picture } from "vite-imagetools";
 
 // component variants
 import type { AlertVariants } from "./alert/theme";
@@ -1520,7 +1520,7 @@ export interface HrProps extends HTMLAttributes<HTMLElement> {
 }
 
 // img
-export type EnhancedImgAttributes = Omit<HTMLImgAttributes, "src"> & { src: string | Picture };
+export type EnhancedImgAttributes = Omit<HTMLImgAttributes, "src"> & { src: string };
 
 export interface ImgProps extends HTMLImgAttributes {
   size?: ImgVariants["size"];
