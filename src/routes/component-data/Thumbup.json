@@ -5,14 +5,41 @@
     "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1093"
   },
   "props": [
-    ["fillPercent", "100"],
-    ["fillColor", "\"#00b500\""],
-    ["strokeColor", "\"#00b500\""],
-    ["size", "24"],
-    ["ariaLabel", "\"thumbup\""],
-    ["iconIndex", "0"],
-    ["groupId", "\"star\""],
-    ["role", "\"img\""],
-    ["svgClass", ""]
+    [
+      "fillPercent",
+      "100"
+    ],
+    [
+      "fillColor",
+      "\"#00b500\""
+    ],
+    [
+      "strokeColor",
+      "\"#00b500\""
+    ],
+    [
+      "size",
+      "24"
+    ],
+    [
+      "ariaLabel",
+      "\"thumbup\""
+    ],
+    [
+      "iconIndex",
+      "0"
+    ],
+    [
+      "groupId",
+      "\"star\""
+    ],
+    [
+      "role",
+      "\"img\""
+    ],
+    [
+      "svgClass",
+      ""
+    ]
   ]
 }

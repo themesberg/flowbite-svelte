@@ -1,5 +1,45 @@
 {
   "name": "Radio",
-  "type": null,
-  "props": []
+  "type": {
+    "name": "RadioProps<T>",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L723"
+  },
+  "props": [
+    [
+      "children",
+      ""
+    ],
+    [
+      "\"aria-describedby\": ariaDescribedby",
+      ""
+    ],
+    [
+      "inline",
+      "false"
+    ],
+    [
+      "class: labelClass",
+      ""
+    ],
+    [
+      "color",
+      "\"primary\""
+    ],
+    [
+      "custom",
+      "false"
+    ],
+    [
+      "group",
+      "$bindable<T>()"
+    ],
+    [
+      "value",
+      "$bindable<T>()"
+    ],
+    [
+      "inputClass",
+      ""
+    ]
+  ]
 }

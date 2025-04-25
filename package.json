@@ -68,7 +68,7 @@
     "publint": "^0.3.12",
     "svelte": "^5.28.2",
     "svelte-check": "^4.1.6",
-    "svelte-lib-helpers": "^0.4.25",
+    "svelte-lib-helpers": "^0.4.26",
     "svelte-meta-tags": "^4.2.0",
     "svelte-rune-highlight": "^0.6.6",
     "tailwind-merge": "^3.2.0",
@@ -131,7 +131,7 @@
   "dependencies": {
     "@floating-ui/dom": "^1.6.13",
     "@floating-ui/utils": "^0.2.9",
-    "apexcharts": "^4.6.0",
+    "apexcharts": "^4.7.0",
     "flowbite": "^3.1.2"
   },
   "files": [

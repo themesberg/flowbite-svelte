@@ -249,12 +249,6 @@ Get started with the default example of a select input component to get a single
 <Toggle checked disabled>Disabled checked</Toggle>
 ```
 
-## Component data
-
-The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
-
-<CompoAttributesViewer {dirName}/>
-
 ## References
 
 - [Flowbite Forms](https://flowbite.com/docs/components/forms/)

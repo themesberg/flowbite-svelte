@@ -5,22 +5,73 @@
     "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1116"
   },
   "props": [
-    ["children", ""],
-    ["isOpen", "false"],
-    ["closeSidebar", ""],
-    ["isSingle", "true"],
-    ["breakpoint", "\"md\""],
-    ["position", "\"fixed\""],
-    ["activateClickOutside", "true"],
-    ["backdrop", "true"],
-    ["backdropClass", ""],
-    ["transition", "fly"],
-    ["params", ""],
-    ["divClass", ""],
-    ["ariaLabel", ""],
-    ["nonActiveClass", ""],
-    ["activeClass", ""],
-    ["activeUrl", "\"\""],
-    ["class: className", ""]
+    [
+      "children",
+      ""
+    ],
+    [
+      "isOpen",
+      "false"
+    ],
+    [
+      "closeSidebar",
+      ""
+    ],
+    [
+      "isSingle",
+      "true"
+    ],
+    [
+      "breakpoint",
+      "\"md\""
+    ],
+    [
+      "position",
+      "\"fixed\""
+    ],
+    [
+      "activateClickOutside",
+      "true"
+    ],
+    [
+      "backdrop",
+      "true"
+    ],
+    [
+      "backdropClass",
+      ""
+    ],
+    [
+      "transition",
+      "fly"
+    ],
+    [
+      "params",
+      ""
+    ],
+    [
+      "divClass",
+      ""
+    ],
+    [
+      "ariaLabel",
+      ""
+    ],
+    [
+      "nonActiveClass",
+      ""
+    ],
+    [
+      "activeClass",
+      ""
+    ],
+    [
+      "activeUrl",
+      "\"\""
+    ],
+    [
+      "class: className",
+      ""
+    ]
   ]
 }

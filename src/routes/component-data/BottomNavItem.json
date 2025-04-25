@@ -5,13 +5,37 @@
     "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L295"
   },
   "props": [
-    ["children", ""],
-    ["btnName", ""],
-    ["appBtnPosition", "\"middle\""],
-    ["target", ""],
-    ["activeClass", ""],
-    ["href", "\"\""],
-    ["btnClass", ""],
-    ["spanClass", ""]
+    [
+      "children",
+      ""
+    ],
+    [
+      "btnName",
+      ""
+    ],
+    [
+      "appBtnPosition",
+      "\"middle\""
+    ],
+    [
+      "target",
+      ""
+    ],
+    [
+      "activeClass",
+      ""
+    ],
+    [
+      "href",
+      "\"\""
+    ],
+    [
+      "btnClass",
+      ""
+    ],
+    [
+      "spanClass",
+      ""
+    ]
   ]
 }

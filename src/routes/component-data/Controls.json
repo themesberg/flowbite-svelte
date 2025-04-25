@@ -5,7 +5,13 @@
     "link": null
   },
   "props": [
-    ["children", ""],
-    ["class: className", ""]
+    [
+      "children",
+      ""
+    ],
+    [
+      "class: className",
+      ""
+    ]
   ]
 }

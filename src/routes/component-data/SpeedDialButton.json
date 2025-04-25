@@ -5,13 +5,37 @@
     "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1238"
   },
   "props": [
-    ["children", ""],
-    ["name", "\"\""],
-    ["color", "\"light\""],
-    ["tooltip", "context.tooltip"],
-    ["pill", "context.pill"],
-    ["textOutside", "context.textOutside"],
-    ["textClass", ""],
-    ["class: className", ""]
+    [
+      "children",
+      ""
+    ],
+    [
+      "name",
+      "\"\""
+    ],
+    [
+      "color",
+      "\"light\""
+    ],
+    [
+      "tooltip",
+      "context.tooltip"
+    ],
+    [
+      "pill",
+      "context.pill"
+    ],
+    [
+      "textOutside",
+      "context.textOutside"
+    ],
+    [
+      "textClass",
+      ""
+    ],
+    [
+      "class: className",
+      ""
+    ]
   ]
 }

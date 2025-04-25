@@ -5,10 +5,25 @@
     "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L932"
   },
   "props": [
-    ["children", ""],
-    ["end", ""],
-    ["color", ""],
-    ["embedded", ""],
-    ["class: className", ""]
+    [
+      "children",
+      ""
+    ],
+    [
+      "end",
+      ""
+    ],
+    [
+      "color",
+      ""
+    ],
+    [
+      "embedded",
+      ""
+    ],
+    [
+      "class: className",
+      ""
+    ]
   ]
 }

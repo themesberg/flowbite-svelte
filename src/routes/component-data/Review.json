@@ -5,18 +5,57 @@
     "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1066"
   },
   "props": [
-    ["children", ""],
-    ["address", ""],
-    ["item1", ""],
-    ["item2", ""],
-    ["item3", ""],
-    ["review", ""],
-    ["articleClass", ""],
-    ["divClass", ""],
-    ["div2Class", ""],
-    ["div3Class", ""],
-    ["imgClass", ""],
-    ["ulClass", ""],
-    ["liClass", ""]
+    [
+      "children",
+      ""
+    ],
+    [
+      "address",
+      ""
+    ],
+    [
+      "item1",
+      ""
+    ],
+    [
+      "item2",
+      ""
+    ],
+    [
+      "item3",
+      ""
+    ],
+    [
+      "review",
+      ""
+    ],
+    [
+      "articleClass",
+      ""
+    ],
+    [
+      "divClass",
+      ""
+    ],
+    [
+      "div2Class",
+      ""
+    ],
+    [
+      "div3Class",
+      ""
+    ],
+    [
+      "imgClass",
+      ""
+    ],
+    [
+      "ulClass",
+      ""
+    ],
+    [
+      "liClass",
+      ""
+    ]
   ]
 }

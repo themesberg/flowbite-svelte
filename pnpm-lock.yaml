@@ -15,8 +15,8 @@ importers:
         specifier: ^0.2.9
         version: 0.2.9
       apexcharts:
-        specifier: ^4.6.0
-        version: 4.6.0
+        specifier: ^4.7.0
+        version: 4.7.0
       flowbite:
         specifier: ^3.1.2
         version: 3.1.2(rollup@4.40.0)
@@ -121,8 +121,8 @@ importers:
         specifier: ^4.1.6
         version: 4.1.6(picomatch@4.0.2)(svelte@5.28.2)(typescript@5.8.3)
       svelte-lib-helpers:
-        specifier: ^0.4.25
-        version: 0.4.25
+        specifier: ^0.4.26
+        version: 0.4.26
       svelte-meta-tags:
         specifier: ^4.2.0
         version: 4.2.0(svelte@5.28.2)
@@ -1276,8 +1276,8 @@ packages:
     resolution: {integrity: sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==}
     engines: {node: '>=12'}
 
-  apexcharts@4.6.0:
-    resolution: {integrity: sha512-qOsJ8EDPOopDcTthY7iT3zR5SJbloGLcfBVwRM7kptEQdVFaq04Jry4xvBGy/+dhtpeoC/tnbAlWG9QlhGn6cw==}
+  apexcharts@4.7.0:
+    resolution: {integrity: sha512-iZSrrBGvVlL+nt2B1NpqfDuBZ9jX61X9I2+XV0hlYXHtTwhwLTHDKGXjNXAgFBDLuvSYCB/rq2nPWVPRv2DrGA==}
 
   argparse@1.0.10:
     resolution: {integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==}
@@ -2512,8 +2512,8 @@ packages:
       svelte:
         optional: true
 
-  svelte-lib-helpers@0.4.25:
-    resolution: {integrity: sha512-wa7T5geG9CocarW55bGMq+cACQIu2HqBgHyoPitXikMPMLz/xxCZ0wByKEwOhjgVOz422+aZeS3p78wcTb/AXA==}
+  svelte-lib-helpers@0.4.26:
+    resolution: {integrity: sha512-18sNG9an036dzgoSFV7tTbuukFKwwqHY0NRyzbzWp4PQdgyhkUI7nJKnUWeTKm5XyOz2T2eKVCMel4Ku0t7/fw==}
     hasBin: true
 
   svelte-meta-tags@4.2.0:
@@ -3986,7 +3986,7 @@ snapshots:
 
   ansi-styles@6.2.1: {}
 
-  apexcharts@4.6.0:
+  apexcharts@4.7.0:
     dependencies:
       '@svgdotjs/svg.draggable.js': 3.0.6(@svgdotjs/svg.js@3.2.4)
       '@svgdotjs/svg.filter.js': 3.0.9
@@ -5133,7 +5133,7 @@ snapshots:
     optionalDependencies:
       svelte: 5.28.2
 
-  svelte-lib-helpers@0.4.25:
+  svelte-lib-helpers@0.4.26:
     dependencies:
       jsonc-parser: 3.3.1
       yargs: 17.7.2

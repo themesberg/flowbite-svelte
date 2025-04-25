@@ -6,7 +6,7 @@
   import type { InputProps, InputValue } from "$lib/types";
   import clsx from "clsx";
 
-  let { children, left, right, value = $bindable<InputValue>(), clearable = false, size, color = "default", class: className, classLeft, classRight, divClass, ...restProps }: InputProps<InputValue> = $props();
+  let { children, left, right, value = $bindable(), clearable = false, size, color = "default", class: className, classLeft, classRight, divClass, ...restProps }: InputProps<InputValue> = $props();
 
   // tinted if put in component having its own background
   let background: boolean = getContext("background");

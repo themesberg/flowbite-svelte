@@ -5,15 +5,45 @@
     "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L197"
   },
   "props": [
-    ["children", ""],
-    ["header", ""],
-    ["arrowup", ""],
-    ["arrowdown", ""],
-    ["open", "$bindable(false)"],
-    ["activeClass", ""],
-    ["inactiveClass", ""],
-    ["transitionType", "slide"],
-    ["transitionParams", ""],
-    ["class: className", ""]
+    [
+      "children",
+      ""
+    ],
+    [
+      "header",
+      ""
+    ],
+    [
+      "arrowup",
+      ""
+    ],
+    [
+      "arrowdown",
+      ""
+    ],
+    [
+      "open",
+      "$bindable(false)"
+    ],
+    [
+      "activeClass",
+      ""
+    ],
+    [
+      "inactiveClass",
+      ""
+    ],
+    [
+      "transitionType",
+      "slide"
+    ],
+    [
+      "transitionParams",
+      ""
+    ],
+    [
+      "class: className",
+      ""
+    ]
   ]
 }

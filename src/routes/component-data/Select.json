@@ -1,5 +1,37 @@
 {
   "name": "Select",
-  "type": null,
-  "props": []
+  "type": {
+    "name": "SelectProps<T>",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L760"
+  },
+  "props": [
+    [
+      "children",
+      ""
+    ],
+    [
+      "items",
+      ""
+    ],
+    [
+      "value",
+      "$bindable()"
+    ],
+    [
+      "underline",
+      ""
+    ],
+    [
+      "size",
+      "\"md\""
+    ],
+    [
+      "class: className",
+      ""
+    ],
+    [
+      "placeholder",
+      "\"Choose option ...\""
+    ]
+  ]
 }

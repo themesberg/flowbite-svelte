@@ -9,7 +9,10 @@
 
   // TODO: missing focus trap
 
-  let { children, oncancel, modal = true, autoclose = false, header, footer, title, open = $bindable(false), dismissable = true, closeBtnClass, headerClass, bodyClass, footerClass, outsideclose = true, size = "md", placement, class: className, params = { duration: 100, easing: sineIn }, transition = fade, ...restProps }: ModalProps = $props();
+  let { children, oncancel, modal = true, autoclose = false, header, footer, title, open = $bindable(false), dismissable = true, closeBtnClass, headerClass, bodyClass, footerClass, outsideclose = true, size = "md", placement, class: className, params, transition = fade, ...restProps }: ModalProps = $props();
+
+  const paramsDefault = { duration: 100, easing: sineIn };
+  const paramsOptions = $derived(params ?? paramsDefault);
 
   const { base, header: headerCls, footer: footerCls, body, closeBtn } = $derived(modalTheme({ placement, size }));
 
@@ -43,7 +46,7 @@
 </script>
 
 {#if open}
-  <dialog bind:this={dlg} {...restProps} class={base({ class: clsx(className) })} tabindex="-1" oncancel={_oncancel} onclick={_onclick} transition:transition={params as ParamsType} onintrostart={() => (modal ? dlg?.showModal() : dlg?.show())} onoutroend={() => dlg?.close()}>
+  <dialog bind:this={dlg} {...restProps} class={base({ class: clsx(className) })} tabindex="-1" oncancel={_oncancel} onclick={_onclick} transition:transition={paramsOptions as ParamsType} onintrostart={() => (modal ? dlg?.showModal() : dlg?.show())} onoutroend={() => dlg?.close()}>
     {#if title || header}
       <div class={headerCls({ class: headerClass })}>
         {#if title}

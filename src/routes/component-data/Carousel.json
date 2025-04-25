@@ -5,17 +5,53 @@
     "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L386"
   },
   "props": [
-    ["children", ""],
-    ["slide", ""],
-    ["images", ""],
-    ["index", "$bindable(0)"],
-    ["slideDuration", "1000"],
-    ["transition", ""],
-    ["duration", "0"],
-    ["\"aria-label\": ariaLabel", "\"Draggable Carousel\""],
-    ["disableSwipe", "false"],
-    ["imgClass", "\"\""],
-    ["class: className", ""],
-    ["onchange", ""]
+    [
+      "children",
+      ""
+    ],
+    [
+      "slide",
+      ""
+    ],
+    [
+      "images",
+      ""
+    ],
+    [
+      "index",
+      "$bindable(0)"
+    ],
+    [
+      "slideDuration",
+      "1000"
+    ],
+    [
+      "transition",
+      ""
+    ],
+    [
+      "duration",
+      "0"
+    ],
+    [
+      "\"aria-label\": ariaLabel",
+      "\"Draggable Carousel\""
+    ],
+    [
+      "disableSwipe",
+      "false"
+    ],
+    [
+      "imgClass",
+      "\"\""
+    ],
+    [
+      "class: className",
+      ""
+    ],
+    [
+      "onchange",
+      ""
+    ]
   ]
 }

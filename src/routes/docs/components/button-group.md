@@ -10,7 +10,7 @@ description: Button groups are a Tailwind CSS powered set of buttons sticked tog
 <script>
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, P, A } from '$lib'
-  const dirName = toKebabCase(component_title)
+  const dirName = 'buttongroup'
 </script>
 
 The button group component from flowbite-svelte-next can be used to stack together multiple buttons and links inside a single element.

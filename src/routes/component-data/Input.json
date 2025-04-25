@@ -1,5 +1,53 @@
 {
   "name": "Input",
-  "type": null,
-  "props": []
+  "type": {
+    "name": "InputProps<InputValue>",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L695"
+  },
+  "props": [
+    [
+      "children",
+      ""
+    ],
+    [
+      "left",
+      ""
+    ],
+    [
+      "right",
+      ""
+    ],
+    [
+      "value",
+      "$bindable()"
+    ],
+    [
+      "clearable",
+      "false"
+    ],
+    [
+      "size",
+      ""
+    ],
+    [
+      "color",
+      "\"default\""
+    ],
+    [
+      "class: className",
+      ""
+    ],
+    [
+      "classLeft",
+      ""
+    ],
+    [
+      "classRight",
+      ""
+    ],
+    [
+      "divClass",
+      ""
+    ]
+  ]
 }

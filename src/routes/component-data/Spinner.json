@@ -5,10 +5,25 @@
     "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1254"
   },
   "props": [
-    ["color", "\"primary\""],
-    ["size", "\"8\""],
-    ["class: className", ""],
-    ["currentFill", "\"currentFill\""],
-    ["currentColor", "\"currentColor\""]
+    [
+      "color",
+      "\"primary\""
+    ],
+    [
+      "size",
+      "\"8\""
+    ],
+    [
+      "class: className",
+      ""
+    ],
+    [
+      "currentFill",
+      "\"currentFill\""
+    ],
+    [
+      "currentColor",
+      "\"currentColor\""
+    ]
   ]
 }

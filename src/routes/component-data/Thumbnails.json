@@ -5,12 +5,33 @@
     "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L414"
   },
   "props": [
-    ["children", ""],
-    ["images", "[]"],
-    ["index", "$bindable()"],
-    ["ariaLabel", "\"Click to view image\""],
-    ["imgClass", ""],
-    ["throttleDelay", "650"],
-    ["class: className", ""]
+    [
+      "children",
+      ""
+    ],
+    [
+      "images",
+      "[]"
+    ],
+    [
+      "index",
+      "$bindable()"
+    ],
+    [
+      "ariaLabel",
+      "\"Click to view image\""
+    ],
+    [
+      "imgClass",
+      ""
+    ],
+    [
+      "throttleDelay",
+      "650"
+    ],
+    [
+      "class: className",
+      ""
+    ]
   ]
 }

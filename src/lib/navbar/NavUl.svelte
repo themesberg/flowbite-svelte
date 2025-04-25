@@ -10,7 +10,10 @@
 
   let navState = getContext<NavbarState>("navState");
 
-  let { children, activeUrl, ulClass, slideParams = { delay: 250, duration: 500, easing: sineIn }, activeClass, nonActiveClass, class: clasName, ...restProps }: NavUlProps = $props();
+  let { children, activeUrl, ulClass, slideParams, activeClass, nonActiveClass, class: clasName, ...restProps }: NavUlProps = $props();
+
+  const slideParamsDefault = { delay: 250, duration: 500, easing: sineIn };
+  const slideParamsOptions = $derived( slideParams ?? slideParamsDefault);
 
   const activeUrlStore = writable<string>("");
 
@@ -34,7 +37,7 @@
 </script>
 
 {#if !hidden}
-  <div {...restProps} class={_divClass} transition:slide={slideParams}>
+  <div {...restProps} class={_divClass} transition:slide={slideParamsOptions}>
     <!-- onclick -->
     <ul class={_ulClass}>
       {@render children?.()}

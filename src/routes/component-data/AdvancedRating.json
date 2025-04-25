@@ -5,14 +5,41 @@
     "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1007"
   },
   "props": [
-    ["rating", ""],
-    ["globalText", ""],
-    ["ratings", ""],
-    ["divClass", ""],
-    ["spanClass", ""],
-    ["div2Class", ""],
-    ["div3Class", ""],
-    ["span2Class", ""],
-    ["unit", ""]
+    [
+      "rating",
+      ""
+    ],
+    [
+      "globalText",
+      ""
+    ],
+    [
+      "ratings",
+      ""
+    ],
+    [
+      "divClass",
+      ""
+    ],
+    [
+      "spanClass",
+      ""
+    ],
+    [
+      "div2Class",
+      ""
+    ],
+    [
+      "div3Class",
+      ""
+    ],
+    [
+      "span2Class",
+      ""
+    ],
+    [
+      "unit",
+      ""
+    ]
   ]
 }

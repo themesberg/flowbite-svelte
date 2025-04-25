@@ -5,9 +5,21 @@
     "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L609"
   },
   "props": [
-    ["children", ""],
-    ["href", ""],
-    ["ariaLabel", ""],
-    ["class: aClass", ""]
+    [
+      "children",
+      ""
+    ],
+    [
+      "href",
+      ""
+    ],
+    [
+      "ariaLabel",
+      ""
+    ],
+    [
+      "class: aClass",
+      ""
+    ]
   ]
 }

@@ -5,10 +5,25 @@
     "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1150"
   },
   "props": [
-    ["children", ""],
-    ["site", ""],
-    ["imgClass", ""],
-    ["spanClass", ""],
-    ["class: className", ""]
+    [
+      "children",
+      ""
+    ],
+    [
+      "site",
+      ""
+    ],
+    [
+      "imgClass",
+      ""
+    ],
+    [
+      "spanClass",
+      ""
+    ],
+    [
+      "class: className",
+      ""
+    ]
   ]
 }

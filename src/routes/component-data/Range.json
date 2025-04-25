@@ -5,10 +5,25 @@
     "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L743"
   },
   "props": [
-    ["value", "$bindable()"],
-    ["appearance", "\"none\""],
-    ["color", "\"blue\""],
-    ["size", "\"md\""],
-    ["class: inputClass", ""]
+    [
+      "value",
+      "$bindable()"
+    ],
+    [
+      "appearance",
+      "\"none\""
+    ],
+    [
+      "color",
+      "\"blue\""
+    ],
+    [
+      "size",
+      "\"md\""
+    ],
+    [
+      "class: inputClass",
+      ""
+    ]
   ]
 }

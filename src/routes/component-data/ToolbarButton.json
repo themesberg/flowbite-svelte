@@ -5,12 +5,33 @@
     "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L938"
   },
   "props": [
-    ["children", ""],
-    ["onclick", ""],
-    ["color", ""],
-    ["name", ""],
-    ["\"aria-label\": ariaLabel", ""],
-    ["size", ""],
-    ["class: className", ""]
+    [
+      "children",
+      ""
+    ],
+    [
+      "onclick",
+      ""
+    ],
+    [
+      "color",
+      ""
+    ],
+    [
+      "name",
+      ""
+    ],
+    [
+      "\"aria-label\": ariaLabel",
+      ""
+    ],
+    [
+      "size",
+      ""
+    ],
+    [
+      "class: className",
+      ""
+    ]
   ]
 }

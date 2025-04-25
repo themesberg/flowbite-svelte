@@ -5,8 +5,17 @@
     "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L423"
   },
   "props": [
-    ["image", ""],
-    ["transition", ""],
-    ["class: className", ""]
+    [
+      "image",
+      ""
+    ],
+    [
+      "transition",
+      ""
+    ],
+    [
+      "class: className",
+      ""
+    ]
   ]
 }

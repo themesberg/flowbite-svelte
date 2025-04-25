@@ -6,8 +6,10 @@
   import { datepicker } from "./theme";
   import ToolbarButton from "$lib/toolbar/ToolbarButton.svelte";
 
-  let { value = $bindable(), defaultDate = null, range = false, rangeFrom = $bindable(), rangeTo = $bindable(), locale = "default", firstDayOfWeek = 0, dateFormat = { year: "numeric", month: "long", day: "numeric" }, placeholder = "Select date", disabled = false, required = false, inputClass = "", color = "primary", inline = false, autohide = true, showActionButtons = false, title = "", onselect, onclear, onapply }: DatepickerProps = $props();
+  let { value = $bindable(), defaultDate = null, range = false, rangeFrom = $bindable(), rangeTo = $bindable(), locale = "default", firstDayOfWeek = 0, dateFormat, placeholder = "Select date", disabled = false, required = false, inputClass = "", color = "primary", inline = false, autohide = true, showActionButtons = false, title = "", onselect, onclear, onapply }: DatepickerProps = $props();
 
+  const dateFormatDefault = { year: "numeric", month: "long", day: "numeric" };
+  const dateFormatOptions = $derived(dateFormat ?? dateFormatDefault);
   // Internal state
   let isOpen: boolean = $state(inline);
   let inputElement: HTMLInputElement | null = $state(null);
@@ -225,3 +227,31 @@
     </div>
   {/if}
 </div>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte-next.com/)
+## Type
+[DatepickerProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L446)
+## Props
+@prop value = $bindable()
+@prop defaultDate = null
+@prop range = false
+@prop rangeFrom = $bindable()
+@prop rangeTo = $bindable()
+@prop locale = "default"
+@prop firstDayOfWeek = 0
+@prop dateFormat
+@prop placeholder = "Select date"
+@prop disabled = false
+@prop required = false
+@prop inputClass = ""
+@prop color = "primary"
+@prop inline = false
+@prop autohide = true
+@prop showActionButtons = false
+@prop title = ""
+@prop onselect
+@prop onclear
+@prop onapply
+-->

@@ -47,9 +47,9 @@ Enable date range selection using the `range` prop. The start and end dates are 
 <script lang="ts">
   import { Datepicker, P } from "flowbite-svelte";
 
-  let dateRange: { from: Date | undefined; to: Date | undefined } = $state({ 
-    from: undefined, 
-    to: undefined 
+  let dateRange: { from: Date | undefined; to: Date | undefined } = $state({
+    from: undefined,
+    to: undefined
   });
 </script>
 
@@ -213,7 +213,7 @@ Listen for date selection events using the `onselect` event.
 ```svelte example
 <script lang="ts">
   import { Datepicker, type DateOrRange } from "flowbite-svelte";
-  
+
   function handleDateSelect(detail: DateOrRange) {
     console.log("Selected date:", detail);
   }

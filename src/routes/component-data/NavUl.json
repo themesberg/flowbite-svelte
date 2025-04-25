@@ -1,5 +1,37 @@
 {
   "name": "NavUl",
-  "type": null,
-  "props": []
+  "type": {
+    "name": "NavUlProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L917"
+  },
+  "props": [
+    [
+      "children",
+      ""
+    ],
+    [
+      "activeUrl",
+      ""
+    ],
+    [
+      "ulClass",
+      ""
+    ],
+    [
+      "slideParams",
+      ""
+    ],
+    [
+      "activeClass",
+      ""
+    ],
+    [
+      "nonActiveClass",
+      ""
+    ],
+    [
+      "class: clasName",
+      ""
+    ]
+  ]
 }

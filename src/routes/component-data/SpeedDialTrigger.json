@@ -5,12 +5,33 @@
     "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1246"
   },
   "props": [
-    ["children", ""],
-    ["name", "\"Open actions menu\""],
-    ["gradient", "false"],
-    ["icon", ""],
-    ["pill", "true"],
-    ["color", ""],
-    ["class: className", ""]
+    [
+      "children",
+      ""
+    ],
+    [
+      "name",
+      "\"Open actions menu\""
+    ],
+    [
+      "gradient",
+      "false"
+    ],
+    [
+      "icon",
+      ""
+    ],
+    [
+      "pill",
+      "true"
+    ],
+    [
+      "color",
+      ""
+    ],
+    [
+      "class: className",
+      ""
+    ]
   ]
 }

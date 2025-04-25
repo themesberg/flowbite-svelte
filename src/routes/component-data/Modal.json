@@ -1,5 +1,85 @@
 {
   "name": "Modal",
-  "type": null,
-  "props": []
+  "type": {
+    "name": "ModalProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L871"
+  },
+  "props": [
+    [
+      "children",
+      ""
+    ],
+    [
+      "oncancel",
+      ""
+    ],
+    [
+      "modal",
+      "true"
+    ],
+    [
+      "autoclose",
+      "false"
+    ],
+    [
+      "header",
+      ""
+    ],
+    [
+      "footer",
+      ""
+    ],
+    [
+      "title",
+      ""
+    ],
+    [
+      "open",
+      "$bindable(false)"
+    ],
+    [
+      "dismissable",
+      "true"
+    ],
+    [
+      "closeBtnClass",
+      ""
+    ],
+    [
+      "headerClass",
+      ""
+    ],
+    [
+      "bodyClass",
+      ""
+    ],
+    [
+      "footerClass",
+      ""
+    ],
+    [
+      "outsideclose",
+      "true"
+    ],
+    [
+      "size",
+      "\"md\""
+    ],
+    [
+      "placement",
+      ""
+    ],
+    [
+      "class: className",
+      ""
+    ],
+    [
+      "params",
+      ""
+    ],
+    [
+      "transition",
+      "fade"
+    ]
+  ]
 }
