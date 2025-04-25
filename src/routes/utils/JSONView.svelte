@@ -36,7 +36,7 @@
       <span class="text-gray-600">{expanded ? "▼" : "►"}</span>
       <span class="font-medium">{data.name}</span>
       <a href={data.type.link} target="_blank" rel="noopener noreferrer" class="ml-2 text-sm text-blue-600 hover:underline">
-        {data.type.name}
+        Type: {data.type.name}
       </a>
     </div>
     <span class="text-sm text-gray-500">{data.props.length} props</span>
