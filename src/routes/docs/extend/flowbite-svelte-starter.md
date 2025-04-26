@@ -15,7 +15,7 @@ description: Flowbite Svelte Starters provide all necessary components to get st
 
 <List tag="ul" class="space-y-1 my-4">
   <Li><A href="https://github.com/themesberg/flowbite-svelte-admin-dashboard">GitHub Repo</A></Li>
-  <Li><A href="https://flowbite-svelte-admin-dashboard.vercel.app/">Demo</A></Li>
+  <Li><A href="https://flowbite-svelte-admin-dashboard-next.vercel.app/">Demo</A></Li>
 </List>
 
 ## Flowbite Svelte starter

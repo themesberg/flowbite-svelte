@@ -66,7 +66,7 @@
       <NavLi class="lg:px-2 lg:mb-0" href="/docs/components/accordion">Components</NavLi>
       <NavLi class="lg:px-2 lg:mb-0" href="/icons/svelte-4">Icons</NavLi>
       <NavLi class="lg:px-2 lg:mb-0" href="https://flowbite-svelte-blocks.vercel.app/">Blocks</NavLi>
-      <NavLi class="lg:px-2 lg:mb-0" href="https://flowbite-svelte-admin-dashboard.vercel.app/">Dashboard</NavLi>
+      <NavLi class="lg:px-2 lg:mb-0" href="https://flowbite-svelte-admin-dashboard-next.vercel.app/">Dashboard</NavLi>
     </NavUl>
 
     <div class="flex items-center ms-auto">
