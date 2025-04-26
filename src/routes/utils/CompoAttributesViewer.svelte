@@ -1,9 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { getFilteredFileNames } from "./helpers";
-  import TableDefaultRow from "./TableDefaultRow.svelte";
-  import TableProp from "./TableProp.svelte";
-  import { A } from "$lib";
   import JSONView from "./JSONView.svelte";
 
   type TCompoData = {
