@@ -11,6 +11,13 @@ description: Flowbite Svelte Starters provide all necessary components to get st
   import { A, List, Li } from '$lib'
 </script>
 
+## Flowbite Svelte Blocks
+
+<List tag="ul" class="space-y-1 my-4">
+  <Li><A href="https://github.com/themesberg/flowbite-svelte-blocks">GitHub Repo</A></Li>
+  <Li><A href="https://flowbite-svelte-blocks.vercel.app/">Demo</A></Li>
+</List>
+
 ## Flowbite Svelte Admin Dashboard
 
 <List tag="ul" class="space-y-1 my-4">
