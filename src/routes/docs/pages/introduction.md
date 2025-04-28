@@ -24,6 +24,7 @@ Learn how to get started with Flowbite Svelte by following the quickstart guide 
 You can install SvelteKit or Svelte to start your app. For SvelteKit:
 
 ```bash example
+// install tailwindcss as well
 npx sv create my-app
 cd my-app
 pnpm install

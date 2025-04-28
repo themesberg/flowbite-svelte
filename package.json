@@ -71,8 +71,6 @@
     "svelte-lib-helpers": "^0.4.26",
     "svelte-meta-tags": "^4.2.0",
     "svelte-rune-highlight": "^0.6.6",
-    "tailwind-merge": "^3.2.0",
-    "tailwind-variants": "^1.0.0",
     "tailwindcss": "^4.1.4",
     "tsx": "^4.19.3",
     "typescript": "^5.8.3",
@@ -82,8 +80,7 @@
   },
   "peerDependencies": {
     "svelte": "^5.0.0",
-    "tailwind-merge": "^3.2.0",
-    "tailwind-variants": "^1.0.0"
+    "tailwindcss": "^4.1.4"
   },
   "type": "module",
   "keywords": [
@@ -132,7 +129,9 @@
     "@floating-ui/dom": "^1.6.13",
     "@floating-ui/utils": "^0.2.9",
     "apexcharts": "^4.7.0",
-    "flowbite": "^3.1.2"
+    "flowbite": "^3.1.2",
+    "tailwind-merge": "^3.2.0",
+    "tailwind-variants": "^1.0.0"
   },
   "files": [
     "dist",
