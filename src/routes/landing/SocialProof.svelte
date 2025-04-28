@@ -51,7 +51,7 @@
             <p class="text-sm text-gray-500 md:text-base dark:text-gray-400">Stars on Github</p>
           </div>
         </a>
-        <a href="https://npmjs.com/package/flowbite-svelte-next" class="flex w-full max-w-[272px] flex-col items-start gap-4 rounded-lg text-gray-400 hover:bg-gray-50 lg:px-8 lg:py-6 dark:hover:bg-gray-800">
+        <a href="https://npmjs.com/package/flowbite-svelte" class="flex w-full max-w-[272px] flex-col items-start gap-4 rounded-lg text-gray-400 hover:bg-gray-50 lg:px-8 lg:py-6 dark:hover:bg-gray-800">
           <Npm />
           <div class="mt-1 flex flex-col items-start gap-2">
             <p class="text-2xl leading-tight font-bold text-gray-900 dark:text-white">{format(npm)}</p>
