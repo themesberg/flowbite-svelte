@@ -55,12 +55,12 @@
   });
 
   let spanClass = "";
-  let mainClass = "fixed inset-0 z-40 h-full lg:static lg:h-auto border-gray-200 dark:border-gray-600 lg:overflow-y-visible lg:block bg-transparent dark:bg-gray-900 top-[57px]";
+  let mainClass = "fixed inset-0 z-40 lg:z-39 flex-none h-full w-64 lg:static lg:h-auto border-e border-gray-200 dark:border-gray-600 lg:overflow-y-visible lg:pt-0 lg:block bg-white dark:bg-gray-900";
   let nonActiveClass = "text-sm transition-colors duration-200 relative font-medium hover:text-gray-900 hover:bg-transparent dark:hover:bg-transparent hover:cursor-pointer text-gray-500 dark:text-gray-400 dark:hover:text-white";
   let activeClass = "text-sm relative font-medium cursor-default bg-transparent dark:bg-transparent hover:bg-transparent dark:hover:bg-transparent text-primary-700 dark:text-primary-700";
   let btnClass = "my-0 text-sm font-semibold tracking-wide uppercase text-gray-700 dark:text-gray-200 hover:bg-transparent dark:hover:bg-transparent hover:text-primary-700 dark:hover:text-primary-600";
   let dropdowns = Object.fromEntries(Object.keys(posts).map((x) => [x, false]));
-  let divClass = "overflow-y-auto px-4 lg:mt-24 w-64 lg:mt-0 h-full scrolling-touch max-w-2xs lg:h-[calc(100vh-8rem)] lg:block lg:me-0 lg:sticky bg-white dark:bg-gray-900";
+  let divClass = "overflow-y-auto px-4 pt-20 lg:pt-4 h-full scrolling-touch max-w-2xs lg:h-[calc(100vh-8rem)] lg:block lg:me-0 lg:sticky top-20 dark:bg-gray-900";
 </script>
 
 <SidebarButton breakpoint="lg" onclick={sidebarUi.toggle} class="fixed top-4 sm:top-8 z-40 mb-2" />
