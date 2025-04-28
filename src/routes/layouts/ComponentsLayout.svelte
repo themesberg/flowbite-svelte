@@ -55,21 +55,17 @@
   });
 
   let spanClass = "";
-  let mainClass = "mt-4 lg:static z-50 w-96 bg-white"; // "lg:ms-auto relative fixed inset-0 z-30 w-64 flex-none border1-e border-gray-200 bg-white lg:static lg:block lg:h-auto lg:pt-0 dark:border-gray-600 dark:bg-gray-900";
+  let mainClass = "fixed inset-0 z-40 h-full lg:static lg:h-auto border-gray-200 dark:border-gray-600 lg:overflow-y-visible lg:block bg-transparent dark:bg-gray-900 top-[57px]";
   let nonActiveClass = "text-sm transition-colors duration-200 relative font-medium hover:text-gray-900 hover:bg-transparent dark:hover:bg-transparent hover:cursor-pointer text-gray-500 dark:text-gray-400 dark:hover:text-white";
   let activeClass = "text-sm relative font-medium cursor-default bg-transparent dark:bg-transparent hover:bg-transparent dark:hover:bg-transparent text-primary-700 dark:text-primary-700";
   let btnClass = "my-0 text-sm font-semibold tracking-wide uppercase text-gray-700 dark:text-gray-200 hover:bg-transparent dark:hover:bg-transparent hover:text-primary-700 dark:hover:text-primary-600";
   let dropdowns = Object.fromEntries(Object.keys(posts).map((x) => [x, false]));
-  let divClass = "overflow-y-auto pt-20 lg:pt-0 scrolling-touch max-w-2xs lg:h-[calc(100vh-6rem)] lg:block lg:me-0 lg:sticky top-20 bg-white dark:bg-gray-900";
+  let divClass = "overflow-y-auto px-4 lg:mt-24 w-64 lg:mt-0 h-full scrolling-touch max-w-2xs lg:h-[calc(100vh-8rem)] lg:block lg:me-0 lg:sticky bg-white dark:bg-gray-900";
 </script>
 
-<SidebarButton breakpoint="md" onclick={sidebarUi.toggle} class="z-0 mb-2" />
-
-<Sidebar breakpoint="lg" {isOpen} {nonActiveClass} {activeClass} activeUrl={mainSidebarUrl} {divClass} class={mainClass} transition={() => ({})}>
-  <!-- <Sidebar activeUrl={mainSidebarUrl} {activeClass} {nonActiveClass} backdrop={false} {isOpen} {closeSidebar} params={{ x: -50, duration: 50 }} class="z-10 mt-0 h-full overflow-y-scroll"> -->
+<SidebarButton breakpoint="lg" onclick={sidebarUi.toggle} class="fixed top-4 sm:top-8 z-40 mb-2" />
+<Sidebar breakpoint="lg" backdrop={true} {isOpen} {closeSidebar} {nonActiveClass} {activeClass} activeUrl={mainSidebarUrl} {divClass} class={mainClass} params={{ x: -50, duration: 50 }}>
   <h4 id="sidebar-label" class="sr-only">Browse docs</h4>
-  <!-- SidebarWrapper divClass="overflow-y-auto px-4 pt-20 lg:pt-0 h-full scrolling-touch max-w-2xs lg:h-[calc(100vh-8rem)] lg:block lg:me-0 lg:sticky top-20" -->
-
   <SidebarGroup>
     {#each Object.entries(posts) as [key, values] (key)}
       <SidebarDropdownWrapper label={names_mapping[key] ?? key} ulClass="space-y-0 p-0" {btnClass} class={dropdowns[key] ? "text-primary-700 dark:text-primary-700" : "text-gray-700 dark:text-gray-200"}>

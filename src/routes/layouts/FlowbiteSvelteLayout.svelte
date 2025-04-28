@@ -46,12 +46,12 @@
 </script>
 
 <header class="sticky top-0 z-40 mx-auto w-full flex-none border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-900">
-  <Navbar color="default" fluid class="container mx-auto px-0 py-1.5">
-    <NavBrand href="/">
+  <Navbar color="default" fluid class="mx-auto flex w-full items-center justify-between px-4 py-1.5">
+    <NavBrand href="/" class="pl-8 lg:pl-0">
       <img src={logo} class="me-3 h-8" alt="Flowbite Svelte Logo" />
       <span class="hidden self-center text-2xl font-semibold whitespace-nowrap text-gray-900 lg:block dark:text-white">Flowbite Svelte</span>
     </NavBrand>
-    <NavHamburger />
+    
 
     {#if !isHomePage}
       <AlgoliaSearch />
@@ -61,21 +61,21 @@
       </div>
     {/if}
 
-    <NavUl {activeUrl} class="ms-auto" ulClass="text-sm 2xl:space-x-2">
+    <NavUl {activeUrl} class='w-full ml-auto lg:block lg:w-auto order-1 lg:order-none' ulClass='flex flex-col lg:flex-row lg:my-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-4'>
       <NavLi class="lg:mb-0 lg:px-2" href="/docs/pages/introduction">Docs</NavLi>
       <NavLi class="lg:mb-0 lg:px-2" href="/docs/components/accordion">Components</NavLi>
       <NavLi class="lg:mb-0 lg:px-2" href="/icons/quickstart">Icons</NavLi>
       <NavLi class="lg:mb-0 lg:px-2" href="https://flowbite-svelte-illustrations.codewithshin.com/">Illustrations</NavLi>
     </NavUl>
 
-    <div class="flex items-center">
-      <ToolbarLink class="hidden hover:text-gray-900 focus:ring-0 sm:inline-block dark:hover:text-white" name="View on GitHub" href="https://github.com/themesberg/flowbite-svelte-next">
+    <div class="ml-auto flex items-center">
+      <ToolbarLink class="hidden hover:text-gray-900 sm:inline-block dark:hover:text-white" name="View on GitHub" href="https://github.com/themesberg/flowbite-svelte-next">
         <GitHub />
       </ToolbarLink>
-      <ToolbarLink class="hidden hover:text-gray-900 focus:ring-0 xl:inline-block dark:hover:text-white" name="Join community on Discord" href="https://discord.gg/4eeurUVvTy">
+      <ToolbarLink class="hidden hover:text-gray-900 sm:inline-block dark:hover:text-white" name="Join community on Discord" href="https://discord.gg/4eeurUVvTy">
         <Discord />
       </ToolbarLink>
-      <ToolbarLink class="hidden hover:text-gray-900 focus:ring-0 xl:block xl:inline-block dark:hover:text-white" name="Subscribe to YouTube channel" href="https://www.youtube.com/channel/UC_Ms4V2kYDsh7F_CSsHyQ6A">
+      <ToolbarLink class="hidden hover:text-gray-900 sm:inline-block dark:hover:text-white" name="Subscribe to YouTube channel" href="https://www.youtube.com/channel/UC_Ms4V2kYDsh7F_CSsHyQ6A">
         <YouTube />
       </ToolbarLink>
       <DarkMode size="lg" class="inline-block hover:text-gray-900 dark:hover:text-white" />
@@ -86,9 +86,10 @@
         v{version}
       </Badge>
     </a>
+    <NavHamburger class="m-0 ml-3 lg:hidden" />
   </Navbar>
 </header>
 
-<div class="container md:mx-auto lg:flex">
+<div class="md:mx-auto lg:flex">
   {@render children()}
 </div>
