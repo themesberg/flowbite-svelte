@@ -42,7 +42,8 @@
     none: ''
   };
 
-  let finalDivClass: string = twMerge(
+  let finalDivClass: string;
+  $: finalDivClass = twMerge(
     'flex',
     align ? 'items-center' : 'items-start',
     divClass,
