@@ -64,8 +64,8 @@
     <NavUl {activeUrl} class='w-full ml-auto lg:block lg:w-auto order-1 lg:order-none' ulClass='flex flex-col lg:flex-row lg:my-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-4'>
       <NavLi class="lg:mb-0 lg:px-2" href="/docs/pages/introduction">Docs</NavLi>
       <NavLi class="lg:mb-0 lg:px-2" href="/docs/components/accordion">Components</NavLi>
-      <NavLi class="lg:mb-0 lg:px-2" href="/icons/quickstart">Icons</NavLi>
-      <NavLi class="lg:mb-0 lg:px-2" href="https://flowbite-svelte-illustrations.codewithshin.com/">Illustrations</NavLi>
+      <NavLi class="lg:mb-0 lg:px-2" href="https://flowbite-svelte-blocks.vercel.app/">Blocks</NavLi>
+      <NavLi class="lg:mb-0 lg:px-2" href="https://flowbite-svelte-admin-dashboard-next.vercel.app/">Dashboard</NavLi>
     </NavUl>
 
     <div class="ml-auto flex items-center">
