@@ -30,7 +30,7 @@ Import a button component in the script tag.
 
 ## Default button
 
-Use these default button styles with multiple colors to indicate an action or link within your website. The default `type` is set to `button`. You can change it by using the `type` prop.
+Use these default button styles with multiple colors to indicate an action or link within your website.
 
 ```svelte example class="flex flex-wrap gap-2" hideScript
 <script>
@@ -248,7 +248,7 @@ Sometimes you need a button to indicate an action using only an icon.
 
 ## Loader
 
-Use the spinner components from flowbite-svelte-next to indicate a loader animation inside buttons.
+Use the spinner components to indicate a loader animation inside buttons.
 
 ```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>
@@ -277,7 +277,7 @@ You can add any additional button attributes. The following example shows adding
 
 ## Events
 
-You can use `onclick` or any standard `on:*` to listen to the event.
+You can use `onclick` or any standard `on*` to listen to the event.
 
 ```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>

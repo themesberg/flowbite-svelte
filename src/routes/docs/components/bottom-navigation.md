@@ -102,7 +102,7 @@ The following example shows how to change active class, by using `activeClass` p
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav {activeUrl} position="absolute" class="grid-cols-4" activeClass="font-bold text-green-500 hover:text-green-900 dark:hover:text-green-700 dark:text-green-300">
+<BottomNav {activeUrl} position="absolute" innerClass="grid-cols-4" activeClass="font-bold text-green-500 hover:text-green-900 dark:hover:text-green-700 dark:text-green-300">
   <BottomNavItem btnName="Home" href="/">
     <HomeSolid />
   </BottomNavItem>
