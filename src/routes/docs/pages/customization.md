@@ -11,18 +11,16 @@ When working with components, you may want to customize their default or specifi
 
 ## Understanding Props
 
-Each component has a props section where you can find information on how to customize classes. For example, let's refer to the [Alert Props section](https://flowbite-svelte-next.com/docs/components/alert#Props).
+Each component has a props section where you can find information on how to customize classes. For example, let's refer to the [Alert component data section](https://next.flowbite-svelte.com/docs/components/alert#component-data).
 
-![alert prop](/images/alert-prop.png)
-
-In this case, you can overwrite the `defaultClass` by adding the `class` prop. Here's an example:
+In this case, you can overwrite the outer div class by adding the `class` prop. Here's an example:
 
 ```svelte example
 <script>
   import { Alert } from "flowbite-svelte";
 </script>
 
-<Alert class="text-xl">Add a class to overwrite the default class!</Alert>
+<Alert class="bg-sky-500 text-white">Add a class to overwrite the default class!</Alert>
 ```
 
 Thanks to tailwind-merge, you can efficiently merge Tailwind CSS classes without style conflicts. One of its features is that the last conflicting class wins. Please read more details about [Merging behavior](https://github.com/dcastil/tailwind-merge/blob/v1.13.1/docs/features.md)
@@ -42,7 +40,7 @@ In Tailwind CSS, you can make any utility class important by adding a `!` charac
 
 ## Overwriting Specific Classes
 
-While the `class` prop can be used for most components, some components with a complex structure may require multiple props. For instance, let's consider [the Banner component](https://flowbite-svelte-next.com/docs/components/banner) has two relevant props: `classDiv` for `divClass` and `classInner` for `innerClass`. To overwrite the `divClass`, you can use the `classDiv` prop:
+While the `class` prop can be used for most components, some components with a complex structure may require multiple props. For instance, let's consider [the Banner component](https://next.flowbite-svelte.com/docs/components/banner#component-data) has two relevant props: `class` for `div` and `classInner` for `innerClass`. To overwrite the `div`, you can use the `classDiv` prop:
 
 ```svelte example class="flex flex-col relative"
 <script>
@@ -52,7 +50,7 @@ While the `class` prop can be used for most components, some components with a c
 <Skeleton class="py-4" />
 <ImagePlaceholder class="py-4" />
 
-<Banner id="default-banner" position="absolute" classDiv="dark:bg-green-500 dark:border-green-400">
+<Banner id="default-banner" type="bottom" class="dark:bg-green-500 dark:border-green-400">
   <p class="flex items-center text-sm font-normal text-gray-500 dark:text-white">Overwriting divClass and innerClass</p>
 </Banner>
 ```
@@ -71,11 +69,11 @@ Create a new file for your button component in the lib directory:
 
 ```svelte example hideOutput
 <script>
+  // src/lib/MyButton.svelte
   import { Button } from "flowbite-svelte";
   let { children } = $props();
 </script>
 
-// src/lib/MyButton.svelte
 <Button color="green" pill class="p-8">
   {@render children()}
 </Button>

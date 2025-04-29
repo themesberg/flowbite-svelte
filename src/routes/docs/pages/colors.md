@@ -12,11 +12,7 @@ description: Customize your project and the color of the components from Flowbit
   import { A, Img, P } from '$lib';
 </script>
 
-## Primary color in tailwind.config.cjs
-
-There are 22 colors defined in the <A href="https://github.com/themesberg/flowbite-svelte-next/blob/main/tailwind.config.ts">tailwind.config.ts</A>.
-
-<Img src="/images/colors.webp" alt="Primary colors" class="flex justify-center rounded-lg p-8" />
+## Primary and secondary colors
 
 In the provided code, you can customize the primary and secondary color by modifying the appropriate color values.
 
@@ -64,7 +60,7 @@ In the provided code, you can customize the primary and secondary color by modif
 </script>
 
 <Button color="primary">Primary</Button>
-<Alert color="lime">Primary</Alert>
+<Alert color="secondary">Secondary</Alert>
 <Card href="/cards" color="cyan" class="p-4 sm:p-6">
   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-red-800">Noteworthy technology acquisitions 2021</h5>
   <p class="leading-tight font-normal text-gray-700 dark:text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>

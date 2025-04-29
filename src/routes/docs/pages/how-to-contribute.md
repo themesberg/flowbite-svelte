@@ -87,7 +87,7 @@ git commit -a "feat: change btnClass name to bClass" -m "BREAKING CHANGE: change
 Before submitting a PR, please run a test:
 
 ```sh
-pnpm test:integration
+pnpm test:e2e
 ```
 
 If you want to run an single test file, `tests/typography.spec.ts`:
