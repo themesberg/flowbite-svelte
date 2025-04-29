@@ -53,7 +53,7 @@ Use the following examples of alert components to show messages as feedback to y
   <span class="font-medium">Warning alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert color="dark">
+<Alert color="secondary">
   <span class="font-medium">Dark alert!</span>
   Change a few things up and try submitting again.
 </Alert>
@@ -94,7 +94,7 @@ You can also include a descriptive icon to complement the message inside the ale
   <span class="font-medium">Warning alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert color="dark">
+<Alert color="secondary">
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Dark alert!</span>
   Change a few things up and try submitting again.
@@ -136,7 +136,7 @@ Use this example to add a border accent to the alert component instead of just a
   <span class="font-medium">Warning alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert border color="dark">
+<Alert border color="secondary">
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Dark alert!</span>
   Change a few things up and try submitting again.
@@ -260,7 +260,7 @@ Use the following alert components with a border accent as an alternative style.
   <span class="font-medium">Warning alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert color="dark" rounded={false} class="flex-row-reverse border-t-4">
+<Alert color="secondary" rounded={false} class="flex-row-reverse border-t-4">
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Dark alert!</span>
   Change a few things up and try submitting again.
@@ -303,14 +303,14 @@ The following alert components can be used if you wish to disclose more informat
 
 ## Custom color
 
-Use `color='none'` to disable coloring. Then use `class` to add your custom colors classes.
+Use `class` to add your custom colors classes.
 
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
   import { Alert } from "flowbite-svelte";
 </script>
 
-<Alert color="none" class="bg-sky-500 text-white">Your content</Alert>
+<Alert class="bg-sky-500 text-white">Your content</Alert>
 ```
 
 ## Events

@@ -11,7 +11,6 @@ thumnailSize: w-64
 <script>
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from 'flowbite-svelte'
-  let name;
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -19,11 +18,11 @@ The avatar component can be used as a visual identifier for a user profile on yo
 
 ## Setup
 
-Import `Avatar`. If you are using the user dropdown, import `Dropdown`, `DropdownHeader`, `DropdownItem`, `DropdownDivider`. If you are using tooltip for avatar import `Tooltip`.
+Import `Avatar`. If you are using the user dropdown, import `Dropdown`, `DropdownHeader`, `DropdownItem`. If you are using tooltip for avatar import `Tooltip`.
 
 ```svelte example hideOutput
 <script>
-  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider, Tooltip } from "flowbite-svelte";
+  import { Avatar, Dropdown, DropdownHeader, DropdownItem, Tooltip } from "flowbite-svelte";
 </script>
 ```
 
@@ -38,7 +37,7 @@ Use this example to create a circle and rounded avatar on an image element.
 
 <div class="flex space-x-4 rtl:space-x-reverse">
   <Avatar src="/images/profile-picture-2.webp" />
-  <Avatar src="/images/profile-picture-2.webp" rounded />
+  <Avatar src="/images/profile-picture-2.webp" cornerStyle="rounded" />
 </div>
 ```
 
@@ -67,9 +66,9 @@ When there is no custom image available a placeholder is displayed.
 </script>
 
 <Avatar />
-<Avatar rounded />
+<Avatar cornerStyle="rounded" />
 <Avatar border />
-<Avatar rounded border />
+<Avatar cornerStyle="rounded" border />
 ```
 
 ## Placeholder initials
@@ -93,11 +92,11 @@ Use this example to show a tooltip when hovering over the avatar.
   import { Avatar, Tooltip } from "flowbite-svelte";
 </script>
 
-<Avatar data-name="Jese Leos" rounded-sm src="/images/profile-picture-1.webp" />
+<Avatar data-name="Jese Leos" src="/images/profile-picture-1.webp" />
 <Tooltip>Jese Leos</Tooltip>
-<Avatar data-name="Robert Gouth" rounded-sm src="/images/profile-picture-2.webp" />
+<Avatar data-name="Robert Gouth" src="/images/profile-picture-2.webp" />
 <Tooltip>Robert Gouth</Tooltip>
-<Avatar data-name="Bonnie Green" rounded-sm src="/images/profile-picture-3.webp" />
+<Avatar data-name="Bonnie Green" src="/images/profile-picture-3.webp" />
 <Tooltip>Bonnie Green</Tooltip>
 ```
 
@@ -111,9 +110,9 @@ Use a dot element relative to the avatar component as an indicator for the user 
 </script>
 
 <Avatar src="/images/profile-picture-3.webp" dot={{ color: "red" }} />
-<Avatar src="/images/profile-picture-3.webp" dot={{ placement: "top-right", color: "red" }} rounded />
+<Avatar src="/images/profile-picture-3.webp" dot={{ placement: "top-right", color: "red" }} cornerStyle="rounded" />
 <Avatar src="/images/profile-picture-5.webp" dot={{ placement: "bottom-right", color: "green" }} />
-<Avatar src="/images/profile-picture-5.webp" dot={{ placement: "bottom-right" }} rounded />
+<Avatar src="/images/profile-picture-5.webp" dot={{ placement: "bottom-right" }} cornerStyle="rounded" />
 
 <Avatar dot={{}} />
 ```
@@ -151,7 +150,7 @@ This example can be used if you want to show additional information in the form 
 </script>
 
 <div class="flex items-center space-x-4 rtl:space-x-reverse">
-  <Avatar src="/images/profile-picture-1.webp" rounded />
+  <Avatar src="/images/profile-picture-1.webp" cornerStyle="rounded" />
   <div class="space-y-1 font-medium dark:text-white">
     <div>Jese Leos</div>
     <div class="text-sm text-gray-500 dark:text-gray-400">Joined in August 2014</div>
@@ -191,13 +190,13 @@ You can set `size` property to preset values of `xs | sm | md | lg | xl`. Custom
 
 Preset values are equivalents of:
 
-| Size |     |   Classes   |
-| :--: | --- | :---------: |
-|  xs  |     |  `w-6 h-6`  |
-|  sm  |     |  `w-8 h-8`  |
-|  md  |     | `w-10 h-10` |
-|  lg  |     | `w-20 h-20` |
-|  xl  |     | `w-36 h-36` |
+| Size  |     |   Classes   |
+| :---: | --- | :---------: |
+|  xs   |     |  `w-6 h-6`  |
+|  sm   |     |  `w-8 h-8`  |
+|  md   |     | `w-10 h-10` |
+|  lg   |     | `w-20 h-20` |
+|  xl   |     | `w-36 h-36` |
 
 ```svelte example class="flex flex-col gap-4" hideScript hideResponsiveButtons
 <script>
@@ -205,12 +204,12 @@ Preset values are equivalents of:
 </script>
 
 <div class=" flex flex-wrap justify-center space-x-4 rtl:space-x-reverse">
-  <Avatar src="/images/profile-picture-3.webp" rounded-sm size="xs" />
-  <Avatar src="/images/profile-picture-3.webp" rounded-sm size="sm" />
-  <Avatar src="/images/profile-picture-3.webp" rounded-sm size="md" />
-  <Avatar src="/images/profile-picture-3.webp" rounded-sm size="lg" />
-  <Avatar src="/images/profile-picture-3.webp" rounded-sm size="xl" />
-  <Avatar src="/images/profile-picture-3.webp" rounded-sm size="none" class="h-28 w-28" />
+  <Avatar src="/images/profile-picture-3.webp"  size="xs" />
+  <Avatar src="/images/profile-picture-3.webp"  size="sm" />
+  <Avatar src="/images/profile-picture-3.webp"  size="md" />
+  <Avatar src="/images/profile-picture-3.webp"  size="lg" />
+  <Avatar src="/images/profile-picture-3.webp"  size="xl" />
+  <Avatar src="/images/profile-picture-3.webp"  class="h-28 w-28" />
 </div>
 ```
 

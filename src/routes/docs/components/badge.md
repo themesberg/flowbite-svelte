@@ -87,7 +87,7 @@ Use the `border` prop to add a border accent to the badge component.
 
 ## Pills badge
 
-Use the `rounded-sm` prop to make the corners even more rounded like pills for the badge component.
+Use the `rounded` prop to make the corners even more rounded like pills for the badge component.
 
 ```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
 <script>
@@ -193,7 +193,7 @@ Alternatively you can also use badges which indicate only a SVG icon.
   import { CheckOutline } from "flowbite-svelte-icons";
 </script>
 
-<Badge color="gray" rounded-sm large class="p-1! font-semibold!">
+<Badge color="gray" rounded large class="p-1! font-semibold!">
   <CheckOutline class="h-3 w-3" />
   <span class="sr-only">Icon description</span>
 </Badge>
@@ -266,9 +266,9 @@ The color can be changed dynamically.
 
   setInterval(handleHover, 500);
 
-  let color = "primary";
+  let color = $state("primary");
   function handleHover() {
-    color = color === "primary" ? "dark" : "primary";
+    color = color === "primary" ? "secondary" : "primary";
   }
 </script>
 
