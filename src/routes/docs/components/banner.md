@@ -28,7 +28,7 @@ Explore the following examples based on various styles, sizes, and positionings 
 
 ## Default sticky banner
 
-Use this free example to show a text message for announcement with a CTA link, an icon element and a close button to dismiss the banner.
+Use this example to show a text message for announcement with a CTA link, an icon element and a close button to dismiss the banner.
 
 ```svelte example class="flex flex-col relative"
 <script>
@@ -82,7 +82,7 @@ This example can be used to position the sticky banner to the bottom side of the
 
 ## Marketing CTA banner
 
-Use this free example to show a text message for announcement with a CTA link.
+Use this example to show a text message for announcement with a CTA link.
 
 ```svelte example class="flex flex-col relative"
 <script>

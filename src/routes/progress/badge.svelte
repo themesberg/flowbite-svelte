@@ -1,6 +1,6 @@
 <script>
-  import { Badge, Button, Indicator } from "flowbite-svelte";
-  import { P, A } from 'flowbite-svelte';
+  import { Badge, Button, Indicator } from "$lib";
+
   import { ClockSolid, EnvelopeSolid, CheckOutline, CloseCircleSolid } from "flowbite-svelte-icons";
   
   function handleClose(event) {

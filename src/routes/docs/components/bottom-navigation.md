@@ -60,7 +60,7 @@ Use the default bottom navigation bar example to show a list of menu items as bu
 
 Utilize the `href` prop within the `BottomNavItem` component to incorporate a hyperlink. To initiate the application of the active class, include the `activeUrl` prop within the `BottomNav` component.
 
-By default, the `BottomNavItem` will only be set to active if the `href` and the `activeUrl` are exactly the same. If you want the current item to match nested pages you can set the `exact` prop on `BottomNavItem` to false. In the following example, the `Quickstart` button will match `/docs/pages/quickstart` or `/docs/pages/quickstart/step-1`. All other buttons will only match the exact defined `href`.
+By default, the `BottomNavItem` will only be set to active if the `href` and the `activeUrl` are exactly the same.
 
 ```svelte example class="flex flex-col relative"
 <script>
@@ -77,7 +77,7 @@ By default, the `BottomNavItem` will only be set to active if the `href` and the
   <BottomNavItem btnName="Home" href="/">
     <HomeSolid />
   </BottomNavItem>
-  <BottomNavItem btnName="Quickstart" href="/docs/pages/quickstart" exact={false}>
+  <BottomNavItem btnName="Quickstart" href="/docs/pages/quickstart">
     <WalletSolid />
   </BottomNavItem>
   <BottomNavItem btnName="BottomNav" href="/docs/components/bottom-navigation">
@@ -89,7 +89,7 @@ By default, the `BottomNavItem` will only be set to active if the `href` and the
 </BottomNav>
 ```
 
-The following example shows how to change active class, by overwriting `activeClass` with the `classActive` prop.
+The following example shows how to change active class, by using `activeClass` prop.
 
 ```svelte example class="flex flex-col relative"
 <script>
@@ -102,7 +102,7 @@ The following example shows how to change active class, by overwriting `activeCl
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav {activeUrl} position="absolute" innerClass="grid-cols-4" classActive="font-bold text-green-500 hover:text-green-900 dark:hover:text-green-700 dark:text-green-300">
+<BottomNav {activeUrl} position="absolute" class="grid-cols-4" activeClass="font-bold text-green-500 hover:text-green-900 dark:hover:text-green-700 dark:text-green-300">
   <BottomNavItem btnName="Home" href="/">
     <HomeSolid />
   </BottomNavItem>
@@ -314,10 +314,10 @@ This example can be used to position a bottom navigation bar inside of a card el
 You can even use the other bottom navbar examples to exchange the default one presented here.
 
 ```svelte example class="flex justify-center"
-<script>
-  import { BottomNav, BottomNavItem, Card, Listgroup, Avatar } from "flowbite-svelte";
+<script lang="ts">
+  import { BottomNav, BottomNavItem, Card, Listgroup, Avatar, type ListGroupItemType } from "flowbite-svelte";
   import { ClockSolid, UsersGroupOutline, StarSolid } from "flowbite-svelte-icons";
-  let list = [
+  let list: ListGroupItemType[] = [
     {
       img: { src: "/images/profile-picture-1.webp", alt: "Neil Sims" },
       comment: 'New message from <span class="font-medium text-gray-900 dark:text-white">Jese Leos</span>: "Hey, what\'s up? All set for the presentation?"',
@@ -346,18 +346,20 @@ You can even use the other bottom navbar examples to exchange the default one pr
   ];
 </script>
 
-<Card padding="none" class="relative h-96 overflow-y-scroll rounded-lg border border-gray-100 bg-white dark:border-gray-600 dark:bg-gray-700">
+<Card class="relative h-96 overflow-y-scroll rounded-lg border border-gray-100 bg-white dark:border-gray-600 dark:bg-gray-700">
   <Listgroup items={list} class="border-0 dark:bg-transparent!">
-    {#snippet children(item)}
-      <a href="/" class="flex w-full items-center justify-center px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">
-        <Avatar src={item.img.src} alt={item.img.alt} class="me-3 shrink-0" />
-        <div>
-          <p class="text-sm text-gray-500 dark:text-gray-400">{@html item.comment}</p>
-          <span class="text-primary-600 dark:text-primary-500 text-xs">{@html item.message}</span>
-        </div>
-      </a>
-    {/snippet}
-  </Listgroup>
+      {#snippet children(item)}
+        {#if item && typeof item !== 'string'} 
+        <a href="/" class="flex w-full items-center justify-center px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">
+          <Avatar src={item.img?.src} alt={item.img?.alt} class="me-3 shrink-0" />
+          <div>
+            <p class="text-sm text-gray-500 dark:text-gray-400">{@html item.comment || ''}</p>
+            <span class="text-primary-600 dark:text-primary-500 text-xs">{@html item.message || ''}</span>
+          </div>
+        </a>
+        {/if}
+      {/snippet}
+    </Listgroup>
   <BottomNav position="sticky" navType="card" innerClass="grid-cols-3 pt-2 pb-4">
     <BottomNavItem btnName="Latest" id="card-latest">
       <ClockSolid class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />

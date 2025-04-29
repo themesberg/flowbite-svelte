@@ -220,7 +220,7 @@ This example can be used to show a notification count or helper text inside a bu
 
 <Button class="gap-2">
   Messages
-  <Indicator color="none" class="bg-primary-200 text-primary-800 text-xs font-semibold" size="lg">2</Indicator>
+  <Indicator class="bg-primary-200 text-primary-800 text-xs font-semibold" size="lg">2</Indicator>
 </Button>
 ```
 
@@ -256,7 +256,7 @@ Use the spinner components from flowbite-svelte-next to indicate a loader animat
 </script>
 
 <Button>
-  <Spinner class="me-3" size="4" color="white" />Loading ...
+  <Spinner class="me-3" size="4" color="gray" />Loading ...
 </Button>
 <Button color="alternative">
   <Spinner class="me-3" size="4" />Loading ...

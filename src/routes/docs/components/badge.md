@@ -193,7 +193,7 @@ Alternatively you can also use badges which indicate only a SVG icon.
   import { CheckOutline } from "flowbite-svelte-icons";
 </script>
 
-<Badge color="gray" rounded large class="p-1! font-semibold!">
+<Badge color="gray" large class="p-1! font-semibold!">
   <CheckOutline class="h-3 w-3" />
   <span class="sr-only">Icon description</span>
 </Badge>

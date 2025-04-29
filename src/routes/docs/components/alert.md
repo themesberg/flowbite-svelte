@@ -185,7 +185,7 @@ Use this example to show a list and a description inside an alert component.
 
 Use the following alert elements that are also dismissable.
 
-As `Alert` inhertits from the `Frame` component you can attach the `transition` and `params` prop to control the dissimal animation. By default `fade` svelte function is used. See the example below.
+You can attach the `transition` and `params` prop to control the dissimal animation. By default `fade` svelte function is used. See the example below.
 
 You can use `closeIcon` prop to override the default close button. See the last example.
 
@@ -315,7 +315,7 @@ Use `class` to add your custom colors classes.
 
 ## Events
 
-Use the `click` event with `dismissable` prop.
+Use the `onclick` event with `dismissable` prop.
 
 ```svelte example class="flex flex-col gap-4"
 <script>

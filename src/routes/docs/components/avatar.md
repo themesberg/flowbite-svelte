@@ -45,7 +45,7 @@ Use this example to create a circle and rounded avatar on an image element.
 
 You can apply a border around the avatar component.
 
-If you can use the `ring-&#123;color&#125;` class from Tailwind CSS to modify ring color.
+You can use the `ring-&#123;color&#125;` class from Tailwind CSS to modify ring color.
 
 ```svelte example class="flex justify-center gap-4" hideScript hideResponsiveButtons
 <script>
@@ -186,7 +186,7 @@ Use this example if you want to show a dropdown menu when clicking on the avatar
 
 ## Sizes
 
-You can set `size` property to preset values of `xs | sm | md | lg | xl`. Custom size can be achieved by setting size to `none` and adding any of the Tailwind Css size classes like `w-[x] h-[x]`.
+You can set `size` property to preset values of `xs | sm | md | lg | xl`. Custom size can be achieved by adding any of the Tailwind Css size classes like `w-[x] h-[x]`.
 
 Preset values are equivalents of:
 

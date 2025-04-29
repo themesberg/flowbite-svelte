@@ -1,5 +1,5 @@
 <script>
-  import { Avatar, Dropdown, DropdownHeader, DropdownItem,  DropdownGroup, Tooltip } from "flowbite-svelte";
+  import { Avatar, Dropdown, DropdownHeader, DropdownItem,  DropdownGroup, Tooltip } from "$lib";
 
   let name;
 </script>

@@ -1,5 +1,5 @@
 <script>
-  import { Banner, Skeleton, ImagePlaceholder, Input, Label, Button, A } from "flowbite-svelte";
+  import { Banner, Skeleton, ImagePlaceholder, Input, Label, Button, A } from "$lib";
   import { BullhornSolid, SalePercentSolid, ArrowRightOutline, BookOpenOutline } from "flowbite-svelte-icons";
   import { slide } from "svelte/transition";
   import { quintOut } from "svelte/easing";

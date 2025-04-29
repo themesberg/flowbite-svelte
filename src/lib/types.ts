@@ -828,13 +828,16 @@ export interface KbdProps extends HTMLAttributes<HTMLElement> {
 
 // list-group
 export interface ListGroupItemType {
-  name: string;
+  name?: string;
   Icon?: Component;
   onclick?: () => void;
   href?: string;
   active?: boolean;
   current?: boolean;
   disabled?: boolean;
+  img?: { src: string; alt: string };
+  comment?: string;
+  message?: string;
   [key: string]: any;
 }
 

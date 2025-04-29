@@ -127,7 +127,7 @@ Use `flush` prop to remove the rounded borders.
 
 ## Arrow style
 
-Use the `arrowup` and `arrowdown` slots to set up and down icons.
+Use the `arrowup` and `arrowdown` snippets to set up and down icons.
 
 ```svelte example
 <script>
@@ -160,6 +160,8 @@ Use the `arrowup` and `arrowdown` slots to set up and down icons.
 ```
 
 ## Icon Accordion
+
+Use `header` snippet to add your icon and title.
 
 ```svelte example
 <script>

@@ -1,9 +1,7 @@
 <script>
-  import { A } from 'flowbite-svelte'
-  import { AccordionItem, Accordion } from "flowbite-svelte"
+  import { AccordionItem, Accordion, Button } from "$lib"
   import { ChevronDoubleUpOutline, ChevronDoubleDownOutline } from "flowbite-svelte-icons"
   import { CartSolid, CogOutline } from "flowbite-svelte-icons"
-  import { Button } from "flowbite-svelte"
   import { fade, fly } from "svelte/transition"
   import { quintOut } from "svelte/easing"
   

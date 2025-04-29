@@ -1,9 +1,6 @@
 <script>
-  import { Alert } from "flowbite-svelte"
-  import { InfoCircleSolid } from "flowbite-svelte-icons"
-  import { Li, List } from "flowbite-svelte"
-  import { Button } from "flowbite-svelte"
-  import { EnvelopeSolid, EyeSolid } from "flowbite-svelte-icons"
+  import { Li, List, Alert, Button } from "$lib"
+  import { EnvelopeSolid, EyeSolid, InfoCircleSolid } from "flowbite-svelte-icons"
   import { fly } from "svelte/transition"
   
   const closeAlert = () => {
