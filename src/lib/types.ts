@@ -415,9 +415,9 @@ export interface ThumbnailsProps extends Omit<HTMLAttributes<HTMLDivElement>, "c
   children?: Snippet<[{ image: HTMLImgAttributes; selected: boolean; imgClass: string; Thumbnail: Component }]>;
   images: HTMLImgAttributes[];
   index: number;
-  ariaLabel: string;
-  imgClass: string;
-  throttleDelay: number;
+  ariaLabel?: string;
+  imgClass?: string;
+  throttleDelay?: number;
 }
 
 export interface SlideProps extends HTMLImgAttributes {

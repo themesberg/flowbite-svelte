@@ -30,7 +30,7 @@ Use the Datepicker for single date selection. The selected date is bound to the 
 ```svelte example
 <script lang="ts">
   import { Datepicker, P } from "flowbite-svelte";
-  let selectedDate = $state();
+  let selectedDate = $state<Date | undefined>(undefined);
 </script>
 
 <div class="mb-64 md:w-1/2">
@@ -70,7 +70,7 @@ Use the `inline` prop to display the calendar without a popup.
 ```svelte example
 <script lang="ts">
   import { Datepicker, P } from "flowbite-svelte";
-  let selectedDate = $state();
+  let selectedDate = $state<Date | undefined>(undefined);
 </script>
 
 <div class="md:w-1/2">
@@ -128,7 +128,7 @@ Add action buttons (Today, Clear, Apply) using the `showActionButtons` prop. You
 ```svelte example
 <script lang="ts">
   import { Datepicker, P, type DateOrRange } from "flowbite-svelte";
-  let selectedDate = $state<Date | undefined>();
+  let selectedDate = $state<Date | undefined>(undefined);
   let lastAction = $state<string | undefined>();
 
   function handleClear() {

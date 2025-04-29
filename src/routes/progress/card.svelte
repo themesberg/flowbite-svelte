@@ -1,5 +1,5 @@
 <script>
-  import { Card, Button, Toggle, Dropdown, DropdownItem, Avatar, Label, Input, Checkbox, Listgroup, Rating, Badge } from "flowbite-svelte";
+  import { Card, Button, Toggle, Dropdown, DropdownItem, Avatar, Label, Input, Checkbox, Listgroup, Rating, Badge } from "$lib";
   import { ArrowRightOutline, GiftBoxSolid, ArrowUpRightFromSquareOutline, DotsHorizontalOutline, CheckCircleSolid } from "flowbite-svelte-icons";
   
   let vCard = false;

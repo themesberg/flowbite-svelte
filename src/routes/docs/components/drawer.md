@@ -26,16 +26,14 @@ Use the Drawer component (or “off-canvas”) to show a fixed element relative 
 
 ## Default drawer
 
-To initiate the drawer component you need to set the `let hidden=true`, `width` props to the drawer component itself.
-
-For accessibility you should also set the `id` prop to the element. This will add the drawer `aria-labelledby=id` and `aria-controls=id` to the drawer component.
+For accessibility you should set the `id` prop to the element. This will add the drawer `aria-labelledby=id` and `aria-controls=id` to the drawer component.
 
 ```svelte example hideResponsiveButtons
 <script>
   import { Drawer, Button, CloseButton } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
-  let hidden1 = true;
+  let hidden1 = $state(true);
 </script>
 
 <div class="text-center">
@@ -68,7 +66,7 @@ Use this example to show a navigational sidebar inside the drawer component.
 <script>
   import { Drawer, Button, CloseButton, Sidebar, SidebarBrand, SidebarCta, SidebarWrapper, SidebarDropdownWrapper, SidebarGroup, SidebarItem } from "flowbite-svelte";
   import { ChartPieSolid, CartSolid, GridSolid, MailBoxSolid, UsersSolid, ShoppingBagSolid, ArrowRightToBracketOutline, EditOutline } from "flowbite-svelte-icons";
-  let hidden2 = true;
+  let hidden2 = $state(true);
   let spanClass = "flex-1 ms-3 whitespace-nowrap";
 </script>
 
@@ -81,7 +79,7 @@ Use this example to show a navigational sidebar inside the drawer component.
     <CloseButton onclick={() => (hidden2 = true)} class="dark:text-white" />
   </div>
   <Sidebar class="static">
-    <SidebarWrapper divClass="overflow-y-auto py-4 px-3 rounded-sm dark:bg-gray-800">
+    <SidebarWrapper class="overflow-y-auto py-4 px-3 rounded-sm dark:bg-gray-800">
       <SidebarGroup>
         <SidebarItem label="Dashboard">
           {#snippet icon()}
@@ -147,7 +145,7 @@ Use this example to show a contact form inside the drawer component.
   import { Drawer, Button, CloseButton, Label, Input, Textarea, P, A, Checkbox } from "flowbite-svelte";
   import { InfoCircleSolid } from "flowbite-svelte-icons";
 
-  let hidden3 = true;
+  let hidden3 = $state(true);
 </script>
 
 <div class="text-center">
@@ -171,7 +169,7 @@ Use this example to show a contact form inside the drawer component.
     </div>
     <div class="mb-6">
       <Label for="message" class="mb-2">Your message</Label>
-      <Textarea id="message" placeholder="Your message..." rows="4" name="message" />
+      <Textarea id="message" placeholder="Your message..." rows={4} name="message" />
     </div>
     <Button type="submit" class="w-full">Send message</Button>
   </form>
@@ -193,7 +191,7 @@ Use this example if you want to add form elements inside the drawer component in
   import { Drawer, Button, CloseButton, Label, Input, Textarea } from "flowbite-svelte";
   import { InfoCircleSolid, UserAddOutline, CalendarEditSolid } from "flowbite-svelte-icons";
 
-  let hidden4 = true;
+  let hidden4 = $state(true);
 </script>
 
 <div class="text-center">
@@ -213,15 +211,15 @@ Use this example if you want to add form elements inside the drawer component in
     </div>
     <div class="mb-6">
       <Label for="description" class="mb-2">Description</Label>
-      <Textarea id="message" placeholder="Write event description..." rows="4" name="message" />
+      <Textarea id="message" placeholder="Write event description..." rows={4} name="message" />
     </div>
     <div class="mb-6">
       <Input id="date" name="date" required type="date" />
     </div>
     <div class="mb-4">
       <div class="relative">
-        <Input noBorder id="search" placeholder="Add guest email" class="p-3" />
-        <Button textSize="text-sm" class="bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 absolute end-2 bottom-2 inline-flex items-center rounded-lg px-3 py-1 text-sm font-medium text-white focus:ring-4 focus:outline-hidden" type="submit">
+        <Input id="search" placeholder="Add guest email" class="p-3" />
+        <Button class="text-sm bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 absolute end-2 bottom-2 inline-flex items-center rounded-lg px-3 py-1 text-sm font-medium text-white focus:ring-4 focus:outline-hidden" type="submit">
           <UserAddOutline class="me-1.5 h-3 w-3 text-white" />Add
         </Button>
       </div>
@@ -250,7 +248,7 @@ Use the placement prop to position the drawer component either on the top, right
   import { Drawer, Button, CloseButton, Label, Textarea } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 
-  let hidden5 = true;
+  let hidden5 = $state(true);
 </script>
 
 <div class="text-center">
@@ -287,7 +285,7 @@ Set the `transitionParams` variable to new variables.
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
 
-  let hidden6 = true;
+  let hidden6 = $state(true);
   let transitionParamsRight = {
     x: 320,
     duration: 200,
@@ -327,7 +325,7 @@ Use this example to show the drawer on the top side of the page.
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
 
-  let hidden7 = true;
+  let hidden7 = $state(true);
   let transitionParamsTop = {
     y: -320,
     duration: 200,
@@ -339,7 +337,7 @@ Use this example to show the drawer on the top side of the page.
   <Button onclick={() => (hidden7 = false)}>Show drawer</Button>
 </div>
 
-<Drawer placement="top" width="w-full" transitionParams={transitionParamsTop} bind:hidden={hidden7}>
+<Drawer placement="top" class="w-full" transitionParams={transitionParamsTop} bind:hidden={hidden7}>
   <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Top drawer
@@ -364,7 +362,7 @@ Use this example to show the drawer on the bottom side of the page.
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
 
-  let hidden8 = true;
+  let hidden8 = $state(true);
   let transitionParamsBottom = {
     y: 320,
     duration: 200,
@@ -376,7 +374,7 @@ Use this example to show the drawer on the bottom side of the page.
   <Button onclick={() => (hidden8 = false)}>Show drawer</Button>
 </div>
 
-<Drawer placement="bottom" width="w-full" transitionParams={transitionParamsBottom} bind:hidden={hidden8}>
+<Drawer placement="bottom" class="w-full" transitionParams={transitionParamsBottom} bind:hidden={hidden8}>
   <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
@@ -407,7 +405,7 @@ Use this example to enable the backdrop element by default.
   import { Drawer, Button, CloseButton, A } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 
-  let hiddenBackdropTrue = true;
+  let hiddenBackdropTrue = $state(true);
 </script>
 
 <div class="text-center">
@@ -441,7 +439,7 @@ Use the `backdrop={false}` prop to disable the backdrop element when the drawer 
   import { Drawer, Button, CloseButton, A } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 
-  let hiddenBackdropFalse = true;
+  let hiddenBackdropFalse = $state(true);
 </script>
 
 <div class="text-center">
@@ -509,7 +507,7 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 <script>
   import { Drawer, Button, CloseButton } from "flowbite-svelte";
   import { InfoCircleSolid } from "flowbite-svelte-icons";
-  let hidden10 = true;
+  let hidden10 = $state(true);
   let activateClickOutside = false;
   let backdrop = false;
 </script>
@@ -539,19 +537,19 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
   import { Drawer, Button, CloseButton, A } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 
-  let hiddenBackdropFalse = true;
+  let hiddenDisablingOnlyOutsideClick = $state(true);
 </script>
 
 <div class="text-center">
-  <Button onclick={() => (hiddenBackdropFalse = false)}>Show drawer</Button>
+  <Button onclick={() => (hiddenDisablingOnlyOutsideClick = false)}>Show drawer</Button>
 </div>
 
-<Drawer activateClickOutside={false} bind:hidden={hiddenBackdropFalse}>
+<Drawer activateClickOutside={false} bind:hidden={hiddenDisablingOnlyOutsideClick}>
   <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
     </h5>
-    <CloseButton onclick={() => (hiddenBackdropFalse = true)} class="mb-4 dark:text-white" />
+    <CloseButton onclick={() => (hiddenDisablingOnlyOutsideClick = true)} class="mb-4 dark:text-white" />
   </div>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>

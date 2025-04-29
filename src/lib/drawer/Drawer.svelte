@@ -24,6 +24,7 @@
   let y = $derived(placement === "top" ? -100 : placement === "bottom" ? innerHeight + 100 : undefined);
 
   let transition_params = $derived(Object.assign({}, { x, y, duration: 200, easing: sineIn }));
+  $inspect('backdrop:', backdrop)
 </script>
 
 <svelte:window onkeydown={hidden ? undefined : (ev: KeyboardEvent) => ev.key === "Escape" && (hidden = true)} bind:innerWidth bind:innerHeight />

@@ -79,7 +79,7 @@ The default value for `duration` is set to zero that means no autochange of imag
 </script>
 
 <div class="max-w-4xl">
-  <Carousel {images} duration="3000" />
+  <Carousel {images} duration={3000} />
 </div>
 ```
 
@@ -129,8 +129,7 @@ You can control the `Carousel` component externally by the `index` prop. Here is
   import images from "./imageData/images.json";
 
   let index = $state(0);
-  let forward = true; // sync animation direction between Thumbnails and Carousel
-  $inspect(index);
+
 </script>
 
 <div class="max-w-4xl space-y-4">
@@ -151,8 +150,8 @@ The `Carousel` exposes the `change` event containing info about the currently di
   import { Carousel, Controls, Indicators } from "flowbite-svelte";
   import images from "./imageData/images.json";
 
-  let index = 0;
-  let image;
+  let index = $state(0);
+  let image = $state();
 </script>
 
 <div class="max-w-4xl space-y-4">
@@ -214,7 +213,7 @@ You can use `slide` snippet and internal component `Slide` to control the image 
   import { Button, Carousel, ControlButton, Controls, Indicator, Indicators, Thumbnails } from "flowbite-svelte";
   import { CaretRightOutline } from "flowbite-svelte-icons";
   import images from "./imageData/images.json";
-  let index = 0;
+  let index = $state(0);
 </script>
 
 <div class="max-w-4xl space-y-4">
