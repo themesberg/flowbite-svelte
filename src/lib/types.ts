@@ -407,6 +407,11 @@ export interface ControlButtonProps extends HTMLButtonAttributes {
   name: string;
 }
 
+export interface ControlsProps {
+  children?: Snippet<[(forward: boolean) => void]>;
+  class?: string;
+}
+
 export interface ThumbnailProps extends HTMLImgAttributes {
   selected?: boolean;
 }

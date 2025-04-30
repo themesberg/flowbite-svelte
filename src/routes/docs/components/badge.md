@@ -244,10 +244,10 @@ Use the `icon` snippet to add your desired button.
 A `onclose` callback will be dispatched during the dismissal, listen to it if needed.
 
 ```svelte example class="gap-4"
-<script>
+<script lang="ts">
   import { Badge } from "flowbite-svelte";
 
-  function handleClose(event) {
+  function handleClose(event: Event) {
     event.preventDefault();
     alert("Badge dismissed");
   }
@@ -261,12 +261,12 @@ A `onclose` callback will be dispatched during the dismissal, listen to it if ne
 The color can be changed dynamically.
 
 ```svelte example class="flex flex-wrap gap-4" hideResponsiveButtons
-<script>
-  import { Badge } from "flowbite-svelte";
+<script lang="ts">
+  import { Badge, type BadgeProps } from "flowbite-svelte";
 
   setInterval(handleHover, 500);
 
-  let color = $state("primary");
+  let color: BadgeProps['color']  = $state("primary");
   function handleHover() {
     color = color === "primary" ? "secondary" : "primary";
   }

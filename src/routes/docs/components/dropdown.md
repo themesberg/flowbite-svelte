@@ -76,7 +76,7 @@ To change the active class, use the `activeClass` prop:
 </script>
 
 <Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
-<Dropdown {activeUrl} {activeClass} simple>
+<Dropdown {activeUrl} class={activeClass} simple>
   <DropdownItem href="/">Home</DropdownItem>
   <DropdownItem href="/docs/components/dropdown">Dropdown</DropdownItem>
   <DropdownItem href="/docs/components/accordion">Accordion</DropdownItem>
@@ -163,11 +163,11 @@ When you want to control your dropdown open status via javascript code you can b
 <script>
   import { Button, Dropdown, DropdownItem, DropdownDivider } from "flowbite-svelte";
   import { ChevronDownOutline, ChevronRightOutline } from "flowbite-svelte-icons";
-  let dropdownOpen = false;
+  let dropdownOpen = $state(false);
 </script>
 
 <Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
-<Dropdown bind:open={dropdownOpen} simple>
+<Dropdown simple>
   <DropdownItem onclick={() => (dropdownOpen = false)}>Dashboard (close)</DropdownItem>
   <DropdownItem class="flex items-center justify-between">
     Dropdown<ChevronRightOutline class="text-primary-700 ms-2 h-6 w-6 dark:text-white" />
@@ -265,7 +265,7 @@ Add multiple radio elements inside your dropdown menu to enable more advanced in
 <script>
   import { Button, Dropdown, DropdownItem, Radio } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
-  let group1 = 2;
+  let group1 = $state(2);
 </script>
 
 <Button>
@@ -292,7 +292,7 @@ Use this example to update the background color of a menu item when using a list
 <script>
   import { Button, Dropdown, DropdownItem, Radio } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
-  let group2 = 2;
+  let group2 = $state(2);
 </script>
 
 <Button>Dropdown radio<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
@@ -317,7 +317,7 @@ Add an extra helper text to each radio element inside the dropdown menu list wit
 <script>
   import { Button, Dropdown, DropdownItem, Radio, Helper } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
-  let group3 = 2;
+  let group3 = $state(2);
 </script>
 
 <Button>Dropdown radio<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
@@ -345,7 +345,6 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 <script>
   import { Button, Dropdown, DropdownItem, Toggle } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
-  let group2 = 2;
 </script>
 
 <Button>Dropdown toggle<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
@@ -370,7 +369,6 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 <script>
   import { Button, Dropdown, DropdownItem, DropdownDivider, Navbar, NavBrand, NavHamburger, NavUl, NavLi } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
-  let group3 = 2;
 </script>
 
 <Navbar>
@@ -380,7 +378,7 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
   </NavBrand>
   <NavHamburger />
   <NavUl class="ms-3 pt-1">
-    <NavLi href="/" active={true}>Home</NavLi>
+    <NavLi href="/">Home</NavLi>
     <NavLi class="cursor-pointer">
       Dropdown<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
     </NavLi>
@@ -510,7 +508,7 @@ Use this example to show a list of notifications inside your application by prov
   <div class="py-2 text-center font-bold">Notifications</div>
   <DropdownGroup>
     <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
-      <Avatar src="/images/profile-picture-1.webp" dot={{ color: "bg-gray-300" }} rounded />
+      <Avatar src="/images/profile-picture-1.webp" dot={{ color: "bg-gray-300" }} />
       <div class="w-full ps-3">
         <div class="mb-1.5 text-sm text-gray-500 dark:text-gray-400">
           New message from <span class="font-semibold text-gray-900 dark:text-white">Jese Leos</span>
@@ -520,7 +518,7 @@ Use this example to show a list of notifications inside your application by prov
       </div>
     </DropdownItem>
     <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
-      <Avatar src="/images/profile-picture-2.webp" dot={{ color: "bg-red-400" }} rounded />
+      <Avatar src="/images/profile-picture-2.webp" dot={{ color: "bg-red-400" }} />
       <div class="w-full ps-3">
         <div class="mb-1.5 text-sm text-gray-500 dark:text-gray-400">
           <span class="font-semibold text-gray-900 dark:text-white">Joseph Mcfall</span>
@@ -532,7 +530,7 @@ Use this example to show a list of notifications inside your application by prov
       </div>
     </DropdownItem>
     <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
-      <Avatar src="/images/profile-picture-3.webp" dot={{ color: "bg-green-400" }} rounded />
+      <Avatar src="/images/profile-picture-3.webp" dot={{ color: "bg-green-400" }} />
       <div class="w-full ps-3">
         <div class="mb-1.5 text-sm text-gray-500 dark:text-gray-400">
           <span class="font-semibold text-gray-900 dark:text-white">Bonnie Green</span>
@@ -590,7 +588,7 @@ Use this example to also show the name or email of the user next to the avatar f
   <Avatar src="/images/profile-picture-3.webp" class="me-2" />
   Bonnie Green
 </Button>
-<Dropdown inline triggeredBy="#avatar_with_name">
+<Dropdown triggeredBy="#avatar_with_name">
   <DropdownHeader>
     <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
     <span class="block truncate text-sm font-medium">name@flowbite.com</span>
@@ -638,7 +636,6 @@ You can also use the `placement={top|right|bottom|left}` options to choose the p
 <script>
   import { Button, Dropdown, DropdownItem } from "flowbite-svelte";
   import { ChevronDownOutline, ChevronUpOutline, ChevronRightOutline, ChevronLeftOutline } from "flowbite-svelte-icons";
-  let placement = "left";
 </script>
 
 <Dropdown simple placement="top" triggeredBy="#top-dd">
@@ -685,7 +682,6 @@ As dropdown is implemented using the [Floating UI](https://floating-ui.com) libr
 <script>
   import { Button, Dropdown, DropdownItem } from "flowbite-svelte";
   import { ChevronDownOutline, ChevronUpOutline } from "flowbite-svelte-icons";
-  let placement = "left";
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -698,7 +694,7 @@ As dropdown is implemented using the [Floating UI](https://floating-ui.com) libr
   </Button>
 </div>
 
-<Dropdown simple {placement} triggeredBy="[data-placement]">
+<Dropdown simple placement="left" triggeredBy="[data-placement]">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
@@ -711,10 +707,10 @@ As dropdown is implemented using the [Floating UI](https://floating-ui.com) libr
 `DropdownItem` renders to link or button wrapped with `<li/>` element depending whether you supplied the `href` property. Therefore you can catch standard events on it like `onclick`.
 
 ```svelte example class="flex justify-center items-start h-40" hideResponsiveButtons
-<script>
+<script lang="ts">
   import { Button, Dropdown, DropdownItem, Checkbox } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
-  const handleClick = (e) => {
+  const handleClick = (e: Event) => {
     e.preventDefault();
     alert("Clicked on: " + e.target);
   };

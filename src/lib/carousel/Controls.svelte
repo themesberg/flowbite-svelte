@@ -3,14 +3,9 @@
   import type { Writable } from "svelte/store";
   import { canChangeSlide } from "./CarouselSlide";
   import ControlButton from "./ControlButton.svelte";
-  import type { State } from "$lib/types";
+  import type { State, ControlsProps } from "$lib/types";
 
-  interface Props {
-    children?: Snippet;
-    class?: string;
-  }
-
-  let { children, class: className }: Props = $props();
+  let { children, class: className }: ControlsProps = $props();
 
   const state = getContext<Writable<State>>("state");
   const { update } = state;
@@ -46,7 +41,7 @@
 
 <!-- Slider controls -->
 {#if children}
-  {@render children()}
+  {@render children(changeSlide)}
 {:else}
   <ControlButton name="Previous" forward={false} onclick={() => changeSlide(false)} class={className} />
   <ControlButton name="Next" forward={true} onclick={() => changeSlide(true)} class={className} />

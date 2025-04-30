@@ -146,12 +146,13 @@ You can control the `Carousel` component externally by the `index` prop. Here is
 The `Carousel` exposes the `change` event containing info about the currently displayed image. You can use it to build custom caption for the carousel.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Carousel, Controls, Indicators } from "flowbite-svelte";
   import images from "./imageData/images.json";
+  import type { HTMLImgAttributes } from "svelte/elements";
 
   let index = $state(0);
-  let image = $state();
+  let image: HTMLImgAttributes | undefined = $state();
 </script>
 
 <div class="max-w-4xl space-y-4">
@@ -245,13 +246,13 @@ You can use `slide` snippet and internal component `Slide` to control the image 
 ### Custom Carousel transition
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Carousel, Controls, Indicators } from "flowbite-svelte";
   import images from "./imageData/images.json";
   import { scale } from "svelte/transition";
   import { quintOut } from "svelte/easing";
 
-  const scaleAnimation = (x) => scale(x, { duration: 500, easing: quintOut });
+  const scaleAnimation = (node: HTMLElement) => scale(node, { duration: 500, easing: quintOut });
 </script>
 
 <div class="max-w-4xl">

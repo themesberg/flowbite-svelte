@@ -26,7 +26,7 @@ Use the Drawer component (or “off-canvas”) to show a fixed element relative 
 
 ## Default drawer
 
-For accessibility you should set the `id` prop to the element. This will add the drawer `aria-labelledby=id` and `aria-controls=id` to the drawer component.
+Since `Drawer` component extend Svelte's `HTMLAttributes<HTMLDivElement>`, you can set the `id`,  `aria-labelledby=id` and `aria-controls=id` to the drawer component.
 
 ```svelte example hideResponsiveButtons
 <script>
@@ -40,7 +40,7 @@ For accessibility you should set the `id` prop to the element. This will add the
   <Button onclick={() => (hidden1 = false)}>Show drawer</Button>
 </div>
 
-<Drawer bind:hidden={hidden1}>
+<Drawer bind:hidden={hidden1} id="sidebar1" aria-controls="sidebar1" aria-labelledby="sidebar1">
   <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info

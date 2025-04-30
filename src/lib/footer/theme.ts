@@ -1,15 +1,16 @@
 import { tv } from "tailwind-variants";
 
 const footer = tv({
-  base: "bg-white dark:bg-gray-800 flex items-center justify-between w-full",
+  base: "bg-white dark:bg-gray-800",
   variants: {
     footerType: {
-      default: "p-4 rounded-lg shadow-sm md:flex md:items-center md:justify-between md:p-6",
-      sitemap: "bg-white dark:bg-gray-900",
-      socialmedia: "p-4 sm:p-6",
-      logo: "p-4 rounded-lg shadow-sm md:px-6 md:py-8",
-      sticky: "fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow-sm md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600"
-    }
+			default: 'p-4 rounded-lg shadow md:flex md:items-center md:justify-between md:p-6',
+			sitemap: 'bg-white dark:bg-gray-900',
+			socialmedia: 'p-4 sm:p-6',
+			logo: 'p-4 rounded-lg shadow md:px-6 md:py-8',
+			sticky:
+				'fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600'
+		}
   }
 });
 
@@ -34,7 +35,7 @@ const footerIcon = tv({
 });
 
 const footerLinkGroup = tv({
-  base: "text-sm text-gray-600 dark:text-gray-400 flex flex-wrap items-center"
+  base: 'text-gray-600 dark:text-gray-400'
 });
 
 const footerLink = tv({

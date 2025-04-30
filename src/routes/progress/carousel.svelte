@@ -8,6 +8,7 @@
     Indicators,
     Thumbnails
   } from "$lib";
+  import type { HTMLImgAttributes } from "svelte/elements";
   import { CaretRightOutline } from "flowbite-svelte-icons";
   import { scale } from "svelte/transition";
   import { quintOut } from "svelte/easing";
@@ -55,8 +56,8 @@
     }
   ];
   let index = $state(0);
-  let image = $state();
-  const scaleAnimation = (x) => scale(x, { duration: 500, easing: quintOut });
+  let image: HTMLImgAttributes | undefined = $state();
+  const scaleAnimation = (node: HTMLElement) => scale(node, { duration: 500, easing: quintOut });
 </script>
 
 <h1 class="text-3xl my-4">Svelte Carousel</h1>

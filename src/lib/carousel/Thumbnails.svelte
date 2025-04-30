@@ -4,7 +4,7 @@
   import { thumbnails } from "./theme";
   import type { ThumbnailsProps } from "$lib/types";
 
-  let { children, images = [], index = $bindable(), ariaLabel = "Click to view image", imgClass, throttleDelay = 650, class: className }: ThumbnailsProps = $props();
+  let { children, images = [], index = $bindable(), ariaLabel = "Click to view image", imgClass = "", throttleDelay = 650, class: className }: ThumbnailsProps = $props();
 
   let lastClickedAt = new Date();
 

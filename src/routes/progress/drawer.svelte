@@ -45,7 +45,7 @@
     <Button onclick={() => (hidden1 = false)}>Show drawer</Button>
   </div>
   
-  <Drawer bind:hidden={hidden1}>
+  <Drawer bind:hidden={hidden1} id="sidebar1" aria-controls="sidebar1" aria-labelledby="sidebar1">
     <div class="flex items-center justify-between">
       <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
         <InfoCircleSolid class="me-2.5 h-5 w-5" />Info

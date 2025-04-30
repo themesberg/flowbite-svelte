@@ -34,7 +34,7 @@ The footer is one of the most underestimated sections of a website being located
 
 <Footer>
   <FooterCopyright href="/" by="Flowbite™" year={2022} />
-  <FooterLinkGroup ulClass="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+  <FooterLinkGroup class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
     <FooterLink href="/">About</FooterLink>
     <FooterLink href="/">Privacy Policy</FooterLink>
     <FooterLink href="/">Licensing</FooterLink>
@@ -53,13 +53,15 @@ The footer is one of the most underestimated sections of a website being located
 </script>
 
 <Footer footerType="logo">
+  <div class="sm:flex sm:items-center sm:justify-between">
   <FooterBrand href="https://flowbite.com" src="/images/flowbite-svelte-icon-logo.svg" alt="Flowbite Logo" name="Flowbite" />
-  <FooterLinkGroup ulClass="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
+  <FooterLinkGroup class="mb-6 flex flex-wrap items-center text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
     <FooterLink href="/">About</FooterLink>
     <FooterLink href="/">Privacy Policy</FooterLink>
     <FooterLink href="/">Licensing</FooterLink>
     <FooterLink href="/">Contact</FooterLink>
   </FooterLinkGroup>
+  </div>
   <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8 dark:border-gray-700" />
   <FooterCopyright href="/" by="Flowbite™" />
 </Footer>
@@ -144,7 +146,7 @@ The footer is one of the most underestimated sections of a website being located
   <div class="grid grid-cols-2 gap-8 px-6 py-8 md:grid-cols-4">
     <div>
       <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Company</h2>
-      <FooterLinkGroup ulClass="text-gray-300">
+      <FooterLinkGroup class="text-gray-900 dark:text-gray-200">
         <FooterLink liClass="mb-4" href="/">About</FooterLink>
         <FooterLink liClass="mb-4" href="/">Careers</FooterLink>
         <FooterLink liClass="mb-4" href="/">Brand Center</FooterLink>
@@ -153,7 +155,7 @@ The footer is one of the most underestimated sections of a website being located
     </div>
     <div>
       <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Download</h2>
-      <FooterLinkGroup ulClass="text-gray-300">
+      <FooterLinkGroup class="text-gray-900 dark:text-gray-200">
         <FooterLink liClass="mb-4" href="/">Discord Server</FooterLink>
         <FooterLink liClass="mb-4" href="/">Twitter</FooterLink>
         <FooterLink liClass="mb-4" href="/">Facebook</FooterLink>
@@ -162,7 +164,7 @@ The footer is one of the most underestimated sections of a website being located
     </div>
     <div>
       <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Legal</h2>
-      <FooterLinkGroup ulClass="text-gray-300">
+      <FooterLinkGroup class="text-gray-900 dark:text-gray-200">
         <FooterLink liClass="mb-4" href="/">Privacy Policy</FooterLink>
         <FooterLink liClass="mb-4" href="/">Licensing</FooterLink>
         <FooterLink liClass="mb-4" href="/">Terms & Conditions</FooterLink>
@@ -170,7 +172,7 @@ The footer is one of the most underestimated sections of a website being located
     </div>
     <div>
       <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Download</h2>
-      <FooterLinkGroup ulClass="text-gray-300">
+      <FooterLinkGroup class="text-gray-900 dark:text-gray-200">
         <FooterLink liClass="mb-4" href="/">iOS</FooterLink>
         <FooterLink liClass="mb-4" href="/">Android</FooterLink>
         <FooterLink liClass="mb-4" href="/">Windows</FooterLink>
@@ -179,7 +181,7 @@ The footer is one of the most underestimated sections of a website being located
     </div>
   </div>
   <div class="bg-gray-100 px-4 py-6 md:flex md:items-center md:justify-between dark:bg-gray-700">
-    <FooterCopyright spanClass="text-sm text-gray-300 sm:text-center" href="/" by="Flowbite™" />
+    <FooterCopyright spanClass="text-sm text-gray-900 dark:text-gray-200 sm:text-center" href="/" by="Flowbite™" />
     <div class="mt-4 flex space-x-6 sm:justify-center md:mt-0 rtl:space-x-reverse">
       <FooterIcon href="/">
         <FacebookSolid class="h-5 w-5 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white" />
@@ -217,7 +219,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 </div>
 <Footer class="absolute start-0 bottom-0 z-20 w-full border-t border-gray-200 bg-white p-4 shadow-sm md:flex md:items-center md:justify-between md:p-6 dark:border-gray-600 dark:bg-gray-800">
   <FooterCopyright href="/" by="Flowbite™" year={2022} />
-  <FooterLinkGroup ulClass="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+  <FooterLinkGroup class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
     <FooterLink href="/">About</FooterLink>
     <FooterLink href="/">Privacy Policy</FooterLink>
     <FooterLink href="/">Licensing</FooterLink>

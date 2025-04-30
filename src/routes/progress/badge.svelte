@@ -1,16 +1,16 @@
-<script>
-  import { Badge, Button, Indicator } from "$lib";
+<script lang="ts">
+  import { Badge, Button, Indicator, type BadgeProps } from "$lib";
 
   import { ClockSolid, EnvelopeSolid, CheckOutline, CloseCircleSolid } from "flowbite-svelte-icons";
   
-  function handleClose(event) {
+  function handleClose(event: Event) {
     event.preventDefault();
     alert("Badge dismissed");
   }
   
   setInterval(handleHover, 500);
   
-  let color = $state("primary");
+  let color: BadgeProps['color'] = $state("primary");
   function handleHover() {
     color = color === "primary" ? "secondary" : "primary";
   }
