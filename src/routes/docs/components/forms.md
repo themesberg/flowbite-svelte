@@ -18,7 +18,7 @@ The Input component allows you to change the input size, add disabled, helper te
 
 ## Input Sizes
 
-User the size prop to change the input size. Choose one from 'sm:text-md' | 'text-sm' | 'sm:text-xs'. The default size is text-sm.
+User the size prop to change the input size. Choose one from `"md" | "sm" | "lg"`. The default size is `md`.
 
 ```svelte example
 <script>
@@ -71,7 +71,7 @@ Use the helper prop to add your helper text. You can use HTML in the helper text
 
 ## Input element with icon
 
-With the Input component, you can add <a href="https://flowbite-svelte-next.vercel.app/icons/heroicons" class="text-primary-700 dark:text-primary-500 hover:underline">Heroicons</a> or <a href="https://svelte-svg-icons.vercel.app/" class="text-primary-700 dark:text-primary-500 hover:underline">other icon sets</a>.
+With the Input component, you can add <A href="https://flowbite-svelte-icons.codewithshin.com/">Flowbite Svelte Icons</A> or <A href="https://svelte-svg-icons.codewithshin.com/" >other icon sets</A>.
 
 ```svelte example
 <script>
