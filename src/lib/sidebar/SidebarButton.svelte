@@ -18,7 +18,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[SidebarButtonProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1133)
+[SidebarButtonProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1141)
 ## Props
 @prop breakpoint = "md"
 @prop class: className

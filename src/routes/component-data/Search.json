@@ -2,28 +2,13 @@
   "name": "Search",
   "type": {
     "name": "SearchProps<T>",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L748"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L753"
   },
   "props": [
-    [
-      "children",
-      ""
-    ],
-    [
-      "class: inputClass",
-      ""
-    ],
-    [
-      "size",
-      ""
-    ],
-    [
-      "placeholder",
-      "\"Search\""
-    ],
-    [
-      "value",
-      "$bindable<T>()"
-    ]
+    ["children", ""],
+    ["class: inputClass", ""],
+    ["size", ""],
+    ["placeholder", "\"Search\""],
+    ["value", "$bindable<T>()"]
   ]
 }

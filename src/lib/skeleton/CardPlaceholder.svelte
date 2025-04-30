@@ -32,7 +32,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[CardPlaceholderProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1191)
+[CardPlaceholderProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1199)
 ## Props
 @prop size = "sm"
 @prop class: className

@@ -5,53 +5,17 @@
     "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L212"
   },
   "props": [
-    [
-      "children",
-      ""
-    ],
-    [
-      "icon",
-      ""
-    ],
-    [
-      "alertStatus",
-      "$bindable(true)"
-    ],
-    [
-      "closeIcon: CloseIcon",
-      ""
-    ],
-    [
-      "color",
-      "\"primary\""
-    ],
-    [
-      "rounded",
-      "true"
-    ],
-    [
-      "border",
-      ""
-    ],
-    [
-      "class: className",
-      ""
-    ],
-    [
-      "dismissable",
-      ""
-    ],
-    [
-      "transition",
-      "fade"
-    ],
-    [
-      "params",
-      ""
-    ],
-    [
-      "onclick",
-      "()"
-    ]
+    ["children", ""],
+    ["icon", ""],
+    ["alertStatus", "$bindable(true)"],
+    ["closeIcon: CloseIcon", ""],
+    ["color", "\"primary\""],
+    ["rounded", "true"],
+    ["border", ""],
+    ["class: className", ""],
+    ["dismissable", ""],
+    ["transition", "fade"],
+    ["params", ""],
+    ["onclick", "()"]
   ]
 }

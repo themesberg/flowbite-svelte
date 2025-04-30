@@ -2,44 +2,17 @@
   "name": "Heart",
   "type": {
     "name": "RatingIconProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1093"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1101"
   },
   "props": [
-    [
-      "fillPercent",
-      "100"
-    ],
-    [
-      "fillColor",
-      "\"#ff0000\""
-    ],
-    [
-      "strokeColor",
-      "\"#ff0000\""
-    ],
-    [
-      "size",
-      "24"
-    ],
-    [
-      "ariaLabel",
-      "\"star\""
-    ],
-    [
-      "iconIndex",
-      "0"
-    ],
-    [
-      "groupId",
-      "\"star\""
-    ],
-    [
-      "role",
-      "\"img\""
-    ],
-    [
-      "svgClass",
-      ""
-    ]
+    ["fillPercent", "100"],
+    ["fillColor", "\"#ff0000\""],
+    ["strokeColor", "\"#ff0000\""],
+    ["size", "24"],
+    ["ariaLabel", "\"star\""],
+    ["iconIndex", "0"],
+    ["groupId", "\"star\""],
+    ["role", "\"img\""],
+    ["svgClass", ""]
   ]
 }

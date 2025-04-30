@@ -7,19 +7,9 @@
   };
 </script>
 
-<h1 class="text-3xl my-4">Svelte Button Group</h1>
+<h1 class="my-4 text-3xl">Svelte Button Group</h1>
 
-<h2 class="text-2xl my-4">Setup</h2>
-
-<div class="flex justify-center">
-  <ButtonGroup class="*:ring-primary-700!">
-    <Button>Profile</Button>
-    <Button>Settings</Button>
-    <Button>Messages</Button>
-  </ButtonGroup>
-</div>
-
-<h2 class="text-2xl my-4">Default</h2>
+<h2 class="my-4 text-2xl">Setup</h2>
 
 <div class="flex justify-center">
   <ButtonGroup class="*:ring-primary-700!">
@@ -29,7 +19,17 @@
   </ButtonGroup>
 </div>
 
-<h2 class="text-2xl my-4">More examples</h2>
+<h2 class="my-4 text-2xl">Default</h2>
+
+<div class="flex justify-center">
+  <ButtonGroup class="*:ring-primary-700!">
+    <Button>Profile</Button>
+    <Button>Settings</Button>
+    <Button>Messages</Button>
+  </ButtonGroup>
+</div>
+
+<h2 class="my-4 text-2xl">More examples</h2>
 
 <div class="flex flex-col flex-wrap gap-4 text-gray-900 dark:text-gray-100">
   <div class="py-4">Pills</div>
@@ -75,7 +75,7 @@
   </ButtonGroup>
 </div>
 
-<h2 class="text-2xl my-4">Button group as links</h2>
+<h2 class="my-4 text-2xl">Button group as links</h2>
 
 <div class="flex justify-center">
   <ButtonGroup class="*:ring-primary-700!">
@@ -85,7 +85,7 @@
   </ButtonGroup>
 </div>
 
-<h2 class="text-2xl my-4">Group buttons with icons</h2>
+<h2 class="my-4 text-2xl">Group buttons with icons</h2>
 
 <div class="flex justify-center">
   <ButtonGroup class="*:ring-primary-700!">
@@ -104,7 +104,7 @@
   </ButtonGroup>
 </div>
 
-<h2 class="text-2xl my-4">Outline</h2>
+<h2 class="my-4 text-2xl">Outline</h2>
 
 <div class="flex justify-center">
   <ButtonGroup>
@@ -114,7 +114,7 @@
   </ButtonGroup>
 </div>
 
-<h2 class="text-2xl my-4">Outline with icon</h2>
+<h2 class="my-4 text-2xl">Outline with icon</h2>
 
 <div class="flex justify-center">
   <ButtonGroup>
@@ -133,7 +133,7 @@
   </ButtonGroup>
 </div>
 
-<h2 class="text-2xl my-4">Events</h2>
+<h2 class="my-4 text-2xl">Events</h2>
 
 <div class="flex justify-center">
   <ButtonGroup class="*:ring-primary-700!">

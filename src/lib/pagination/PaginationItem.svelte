@@ -29,7 +29,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[PaginationItemProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L964)
+[PaginationItemProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L972)
 ## Props
 @prop children
 @prop size

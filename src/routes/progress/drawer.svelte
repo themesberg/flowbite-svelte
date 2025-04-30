@@ -2,7 +2,7 @@
   import { Drawer, Button, CloseButton, Label, Input, Textarea, P, A, Checkbox, Sidebar, SidebarBrand, SidebarCta, SidebarWrapper, SidebarDropdownWrapper, SidebarGroup, SidebarItem } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline, ChartPieSolid, CartSolid, GridSolid, MailBoxSolid, UsersSolid, ShoppingBagSolid, ArrowRightToBracketOutline, EditOutline, UserAddOutline, CalendarEditSolid } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
-  
+
   let hidden1 = $state(true);
   let hidden2 = $state(true);
   let hidden3 = $state(true);
@@ -15,21 +15,21 @@
   let hidden10 = $state(true);
   let hiddenBackdropTrue = $state(true);
   let hiddenBackdropFalse = $state(true);
-  let hiddenDisablingOnlyOutsideClick = $state(true)
+  let hiddenDisablingOnlyOutsideClick = $state(true);
   let spanClass = "flex-1 ms-3 whitespace-nowrap";
-  
+
   let transitionParamsRight = {
     x: 320,
     duration: 200,
     easing: sineIn
   };
-  
+
   let transitionParamsTop = {
     y: -320,
     duration: 200,
     easing: sineIn
   };
-  
+
   let transitionParamsBottom = {
     y: 320,
     duration: 200,
@@ -37,14 +37,14 @@
   };
 </script>
 
-<h1 class="text-3xl my-4">Drawer</h1>
+<h1 class="my-4 text-3xl">Drawer</h1>
 
 <div class="my-8">
-  <h2 class="text-2xl my-4">Default drawer</h2>
+  <h2 class="my-4 text-2xl">Default drawer</h2>
   <div class="text-center">
     <Button onclick={() => (hidden1 = false)}>Show drawer</Button>
   </div>
-  
+
   <Drawer bind:hidden={hidden1} id="sidebar1" aria-controls="sidebar1" aria-labelledby="sidebar1">
     <div class="flex items-center justify-between">
       <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
@@ -64,7 +64,7 @@
 </div>
 
 <div class="my-8">
-  <h2 class="text-2xl my-4">Drawer navigation</h2>
+  <h2 class="my-4 text-2xl">Drawer navigation</h2>
   <div class="text-center">
     <Button onclick={() => (hidden2 = false)}>Show navigation</Button>
   </div>
@@ -74,7 +74,7 @@
       <CloseButton onclick={() => (hidden2 = true)} class="dark:text-white" />
     </div>
     <Sidebar class="static">
-      <SidebarWrapper class="overflow-y-auto py-4 px-3 rounded-sm dark:bg-gray-800">
+      <SidebarWrapper class="overflow-y-auto rounded-sm px-3 py-4 dark:bg-gray-800">
         <SidebarGroup>
           <SidebarItem label="Dashboard">
             {#snippet icon()}
@@ -132,7 +132,7 @@
 </div>
 
 <div class="my-8">
-  <h2 class="text-2xl my-4">Contact form</h2>
+  <h2 class="my-4 text-2xl">Contact form</h2>
   <div class="text-center">
     <Button onclick={() => (hidden3 = false)}>Show contact form</Button>
   </div>
@@ -168,7 +168,7 @@
 </div>
 
 <div class="my-8">
-  <h2 class="text-2xl my-4">Form elements</h2>
+  <h2 class="my-4 text-2xl">Form elements</h2>
   <div class="text-center">
     <Button onclick={() => (hidden4 = false)}>Show drawer form</Button>
   </div>
@@ -194,7 +194,7 @@
       <div class="mb-4">
         <div class="relative">
           <Input id="search" placeholder="Add guest email" class="p-3" />
-          <Button class="text-sm bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 absolute end-2 bottom-2 inline-flex items-center rounded-lg px-3 py-1 text-sm font-medium text-white focus:ring-4 focus:outline-hidden" type="submit">
+          <Button class="bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 absolute end-2 bottom-2 inline-flex items-center rounded-lg px-3 py-1 text-sm text-sm font-medium text-white focus:ring-4 focus:outline-hidden" type="submit">
             <UserAddOutline class="me-1.5 h-3 w-3 text-white" />Add
           </Button>
         </div>
@@ -213,13 +213,13 @@
 </div>
 
 <div class="my-8">
-  <h2 class="text-2xl my-4">Placement</h2>
-  
-  <h2 class="text-2xl my-4">Left drawer</h2>
+  <h2 class="my-4 text-2xl">Placement</h2>
+
+  <h2 class="my-4 text-2xl">Left drawer</h2>
   <div class="text-center">
     <Button onclick={() => (hidden5 = false)}>Show drawer</Button>
   </div>
-  
+
   <Drawer placement="left" bind:hidden={hidden5}>
     <div class="flex items-center justify-between">
       <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
@@ -239,11 +239,11 @@
 </div>
 
 <div class="my-8">
-  <h2 class="text-2xl my-4">Right drawer</h2>
+  <h2 class="my-4 text-2xl">Right drawer</h2>
   <div class="text-center">
     <Button onclick={() => (hidden6 = false)}>Show drawer</Button>
   </div>
-  
+
   <Drawer placement="right" transitionParams={transitionParamsRight} bind:hidden={hidden6}>
     <div class="flex items-center justify-between">
       <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
@@ -263,11 +263,11 @@
 </div>
 
 <div class="my-8">
-  <h2 class="text-2xl my-4">Top drawer</h2>
+  <h2 class="my-4 text-2xl">Top drawer</h2>
   <div class="text-center">
     <Button onclick={() => (hidden7 = false)}>Show drawer</Button>
   </div>
-  
+
   <Drawer placement="top" class="w-full" transitionParams={transitionParamsTop} bind:hidden={hidden7}>
     <div class="flex items-center justify-between">
       <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
@@ -284,11 +284,11 @@
 </div>
 
 <div class="my-8">
-  <h2 class="text-2xl my-4">Bottom drawer</h2>
+  <h2 class="my-4 text-2xl">Bottom drawer</h2>
   <div class="text-center">
     <Button onclick={() => (hidden8 = false)}>Show drawer</Button>
   </div>
-  
+
   <Drawer placement="bottom" class="w-full" transitionParams={transitionParamsBottom} bind:hidden={hidden8}>
     <div class="flex items-center justify-between">
       <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
@@ -306,13 +306,13 @@
 </div>
 
 <div class="my-8">
-  <h2 class="text-2xl my-4">Backdrop</h2>
-  
-  <h2 class="text-2xl my-4">Enabled (default)</h2>
+  <h2 class="my-4 text-2xl">Backdrop</h2>
+
+  <h2 class="my-4 text-2xl">Enabled (default)</h2>
   <div class="text-center">
     <Button onclick={() => (hiddenBackdropTrue = false)}>Show drawer</Button>
   </div>
-  
+
   <Drawer backdrop={true} bind:hidden={hiddenBackdropTrue}>
     <div class="flex items-center justify-between">
       <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
@@ -332,11 +332,11 @@
 </div>
 
 <div class="my-8">
-  <h2 class="text-2xl my-4">Disabled backdrop</h2>
+  <h2 class="my-4 text-2xl">Disabled backdrop</h2>
   <div class="text-center">
     <Button onclick={() => (hiddenBackdropFalse = false)}>Show drawer</Button>
   </div>
-  
+
   <Drawer backdrop={false} activateClickOutside={true} bind:hidden={hiddenBackdropFalse}>
     <div class="flex items-center justify-between">
       <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
@@ -349,11 +349,11 @@
 </div>
 
 <div class="my-8">
-  <h2 class="text-2xl my-4">Position</h2>
+  <h2 class="my-4 text-2xl">Position</h2>
   <div class="text-center">
     <Button onclick={() => (hidden9 = false)}>Show drawer</Button>
   </div>
-  
+
   <Drawer position="absolute" placement="right" bind:hidden={hidden9}>
     <div class="flex items-center justify-between">
       <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
@@ -373,11 +373,11 @@
 </div>
 
 <div class="my-8">
-  <h2 class="text-2xl my-4">Disabling outside click and backdrop</h2>
+  <h2 class="my-4 text-2xl">Disabling outside click and backdrop</h2>
   <div class="text-center">
     <Button onclick={() => (hidden10 = false)}>Show drawer</Button>
   </div>
-  
+
   <Drawer activateClickOutside={false} backdrop={false} bind:hidden={hidden10} id="sidebar10">
     <div class="flex items-center justify-between">
       <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
@@ -393,11 +393,11 @@
 </div>
 
 <div class="my-8">
-  <h2 class="text-2xl my-4">Disabling only outside click</h2>
+  <h2 class="my-4 text-2xl">Disabling only outside click</h2>
   <div class="text-center">
     <Button onclick={() => (hiddenDisablingOnlyOutsideClick = false)}>Show drawer</Button>
   </div>
-  
+
   <Drawer activateClickOutside={false} bind:hidden={hiddenDisablingOnlyOutsideClick}>
     <div class="flex items-center justify-between">
       <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">

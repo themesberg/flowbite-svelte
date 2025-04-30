@@ -14,7 +14,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[NavContainerProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L908)
+[NavContainerProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L916)
 ## Props
 @prop children
 @prop fluid

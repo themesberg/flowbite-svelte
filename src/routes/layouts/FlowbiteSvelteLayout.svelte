@@ -51,7 +51,6 @@
       <img src={logo} class="me-3 h-8" alt="Flowbite Svelte Logo" />
       <span class="hidden self-center text-2xl font-semibold whitespace-nowrap text-gray-900 lg:block dark:text-white">Flowbite Svelte</span>
     </NavBrand>
-    
 
     {#if !isHomePage}
       <AlgoliaSearch />
@@ -61,7 +60,7 @@
       </div>
     {/if}
 
-    <NavUl {activeUrl} class='w-full ml-auto lg:block lg:w-auto order-1 lg:order-none' ulClass='flex flex-col lg:flex-row lg:my-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-4'>
+    <NavUl {activeUrl} class="order-1 ml-auto w-full lg:order-none lg:block lg:w-auto" ulClass="flex flex-col lg:flex-row lg:my-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-4">
       <NavLi class="lg:mb-0 lg:px-2" href="/docs/pages/introduction">Docs</NavLi>
       <NavLi class="lg:mb-0 lg:px-2" href="/docs/components/accordion">Components</NavLi>
       <NavLi class="lg:mb-0 lg:px-2" href="https://flowbite-svelte-blocks.vercel.app/">Blocks</NavLi>

@@ -2,11 +2,11 @@
   import { BottomNav, BottomNavItem, BottomNavHeader, BottomNavHeaderItem, Tooltip, Skeleton, ImagePlaceholder, Card, Listgroup, Avatar, type ListGroupItemType } from "$lib";
   import { HomeSolid, WalletSolid, AdjustmentsVerticalOutline, UserCircleSolid, PlusOutline, FileCirclePlusOutline, BookmarkSolid, AngleLeftOutline, AngleRightOutline, ClockSolid, UsersGroupOutline, StarSolid, SearchOutline } from "flowbite-svelte-icons";
   import { page } from "$app/state";
-  
+
   let activeUrl = $derived(page.url.pathname);
   let svgClass = "mb-1 text-pink-500 dark:text-pink-400 group-hover:text-pink-600 dark:group-hover:text-pink-500";
   let svgActiveClass = "mb-1 text-green-500 dark:text-green-500 group-hover:text-green-700 dark:group-hover:text-green-700";
-  
+
   let list: ListGroupItemType[] = [
     {
       img: { src: "/images/profile-picture-1.webp", alt: "Neil Sims" },
@@ -36,11 +36,11 @@
   ];
 </script>
 
-<h1 class="text-3xl my-4">Bottom Navigation</h1>
+<h1 class="my-4 text-3xl">Bottom Navigation</h1>
 
-<h2 class="text-2xl my-4">Default bottom navigation</h2>
+<h2 class="my-4 text-2xl">Default bottom navigation</h2>
 
-<div class="flex flex-col relative">
+<div class="relative flex flex-col">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
@@ -60,9 +60,9 @@
   </BottomNav>
 </div>
 
-<h2 class="text-2xl my-4">Adding links and active class</h2>
+<h2 class="my-4 text-2xl">Adding links and active class</h2>
 
-<div class="flex flex-col relative">
+<div class="relative flex flex-col">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
@@ -82,7 +82,7 @@
   </BottomNav>
 </div>
 
-<div class="flex flex-col relative">
+<div class="relative flex flex-col">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
@@ -102,7 +102,7 @@
   </BottomNav>
 </div>
 
-<div class="flex flex-col relative">
+<div class="relative flex flex-col">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
@@ -122,9 +122,9 @@
   </BottomNav>
 </div>
 
-<h2 class="text-2xl my-4">Menu items with border</h2>
+<h2 class="my-4 text-2xl">Menu items with border</h2>
 
-<div class="flex flex-col relative">
+<div class="relative flex flex-col">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
@@ -144,9 +144,9 @@
   </BottomNav>
 </div>
 
-<h2 class="text-2xl my-4">Application bar example</h2>
+<h2 class="my-4 text-2xl">Application bar example</h2>
 
-<div class="flex flex-col relative">
+<div class="relative flex flex-col">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
@@ -176,9 +176,9 @@
   </BottomNav>
 </div>
 
-<h2 class="text-2xl my-4">Example with pagination</h2>
+<h2 class="my-4 text-2xl">Example with pagination</h2>
 
-<div class="flex flex-col relative">
+<div class="relative flex flex-col">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
@@ -215,7 +215,7 @@
   </BottomNav>
 </div>
 
-<h2 class="text-2xl my-4">Button group bottom bar</h2>
+<h2 class="my-4 text-2xl">Button group bottom bar</h2>
 
 <div class="relative flex flex-col p-6">
   <Skeleton class="py-4" />
@@ -252,20 +252,20 @@
   </BottomNav>
 </div>
 
-<h2 class="text-2xl my-4">Card with bottom bar</h2>
+<h2 class="my-4 text-2xl">Card with bottom bar</h2>
 
 <div class="flex justify-center">
   <Card class="relative h-96 overflow-y-scroll rounded-lg border border-gray-100 bg-white dark:border-gray-600 dark:bg-gray-700">
     <Listgroup items={list} class="border-0 dark:bg-transparent!">
       {#snippet children(item)}
-        {#if item && typeof item !== 'string'} 
-        <a href="/" class="flex w-full items-center justify-center px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">
-          <Avatar src={item.img?.src} alt={item.img?.alt} class="me-3 shrink-0" />
-          <div>
-            <p class="text-sm text-gray-500 dark:text-gray-400">{@html item.comment || ''}</p>
-            <span class="text-primary-600 dark:text-primary-500 text-xs">{@html item.message || ''}</span>
-          </div>
-        </a>
+        {#if item && typeof item !== "string"}
+          <a href="/" class="flex w-full items-center justify-center px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">
+            <Avatar src={item.img?.src} alt={item.img?.alt} class="me-3 shrink-0" />
+            <div>
+              <p class="text-sm text-gray-500 dark:text-gray-400">{@html item.comment || ""}</p>
+              <span class="text-primary-600 dark:text-primary-500 text-xs">{@html item.message || ""}</span>
+            </div>
+          </a>
         {/if}
       {/snippet}
     </Listgroup>

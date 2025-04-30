@@ -2,48 +2,18 @@
   "name": "Toggle",
   "type": {
     "name": "ToggleProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L789"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L794"
   },
   "props": [
-    [
-      "children",
-      ""
-    ],
-    [
-      "size",
-      "\"default\""
-    ],
-    [
-      "value",
-      ""
-    ],
-    [
-      "checked",
-      "$bindable()"
-    ],
-    [
-      "disabled",
-      ""
-    ],
-    [
-      "color",
-      "\"primary\""
-    ],
-    [
-      "class: className",
-      ""
-    ],
-    [
-      "inputClass",
-      ""
-    ],
-    [
-      "spanClass",
-      ""
-    ],
-    [
-      "offLabel",
-      ""
-    ]
+    ["children", ""],
+    ["size", "\"default\""],
+    ["value", ""],
+    ["checked", "$bindable()"],
+    ["disabled", ""],
+    ["color", "\"primary\""],
+    ["class: className", ""],
+    ["inputClass", ""],
+    ["spanClass", ""],
+    ["offLabel", ""]
   ]
 }

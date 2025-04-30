@@ -2,28 +2,28 @@
   import { Badge, Button, Indicator, type BadgeProps } from "$lib";
 
   import { ClockSolid, EnvelopeSolid, CheckOutline, CloseCircleSolid } from "flowbite-svelte-icons";
-  
+
   function handleClose(event: Event) {
     event.preventDefault();
     alert("Badge dismissed");
   }
-  
+
   setInterval(handleHover, 500);
-  
-  let color: BadgeProps['color'] = $state("primary");
+
+  let color: BadgeProps["color"] = $state("primary");
   function handleHover() {
     color = color === "primary" ? "secondary" : "primary";
   }
-  
+
   let openBadgeStatus = $state(false);
   function openBadge() {
     openBadgeStatus = true;
   }
 </script>
 
-<h1 class="text-3xl my-4">Badge</h1>
+<h1 class="my-4 text-3xl">Badge</h1>
 
-<h2 class="text-2xl my-4">Default badge</h2>
+<h2 class="my-4 text-2xl">Default badge</h2>
 
 <div class="flex flex-wrap gap-2">
   <Badge>Default</Badge>
@@ -36,7 +36,7 @@
   <Badge color="pink">Pink</Badge>
 </div>
 
-<h2 class="text-2xl my-4">Large badges</h2>
+<h2 class="my-4 text-2xl">Large badges</h2>
 
 <div class="flex flex-wrap gap-2">
   <Badge large>Default</Badge>
@@ -49,7 +49,7 @@
   <Badge large color="pink">Pink</Badge>
 </div>
 
-<h2 class="text-2xl my-4">Bordered badge</h2>
+<h2 class="my-4 text-2xl">Bordered badge</h2>
 
 <div class="flex flex-wrap gap-2">
   <Badge border>Default</Badge>
@@ -62,7 +62,7 @@
   <Badge border color="pink">Pink</Badge>
 </div>
 
-<h2 class="text-2xl my-4">Pills badge</h2>
+<h2 class="my-4 text-2xl">Pills badge</h2>
 
 <div class="flex flex-wrap gap-2">
   <Badge rounded>Default</Badge>
@@ -75,7 +75,7 @@
   <Badge rounded color="pink">Pink</Badge>
 </div>
 
-<h2 class="text-2xl my-4">Badges as links</h2>
+<h2 class="my-4 text-2xl">Badges as links</h2>
 
 <div class="flex flex-wrap gap-2">
   <Badge href="/">Badge link</Badge>
@@ -84,7 +84,7 @@
   <Badge href="/" rounded>Badge link</Badge>
 </div>
 
-<h2 class="text-2xl my-4">Badges with icon</h2>
+<h2 class="my-4 text-2xl">Badges with icon</h2>
 
 <div class="flex flex-wrap gap-2">
   <Badge color="gray" border>
@@ -97,7 +97,7 @@
   </Badge>
 </div>
 
-<h2 class="text-2xl my-4">Notification badge</h2>
+<h2 class="my-4 text-2xl">Notification badge</h2>
 
 <div class="flex flex-wrap gap-4">
   <Button class="relative" size="sm">
@@ -119,7 +119,7 @@
   </Button>
 </div>
 
-<h2 class="text-2xl my-4">Button with badge</h2>
+<h2 class="my-4 text-2xl">Button with badge</h2>
 
 <div class="flex flex-wrap gap-4">
   <Button>
@@ -128,7 +128,7 @@
   </Button>
 </div>
 
-<h2 class="text-2xl my-4">Badge with icon only</h2>
+<h2 class="my-4 text-2xl">Badge with icon only</h2>
 
 <div>
   <Badge color="gray" large class="p-1! font-semibold!">
@@ -141,7 +141,7 @@
   </Badge>
 </div>
 
-<h2 class="text-2xl my-4">Dismissable badges</h2>
+<h2 class="my-4 text-2xl">Dismissable badges</h2>
 
 <div class="flex flex-wrap gap-4">
   <Badge dismissable large>Default</Badge>
@@ -170,13 +170,13 @@
   <Badge dismissable large onclose={handleClose}>Default</Badge>
 </div>
 
-<h2 class="text-2xl my-4">Dynamic color</h2>
+<h2 class="my-4 text-2xl">Dynamic color</h2>
 
 <div class="flex flex-wrap gap-4">
   <Badge large {color}>Blinking badge</Badge>
 </div>
 
-<h2 class="text-2xl my-4">Opening badge</h2>
+<h2 class="my-4 text-2xl">Opening badge</h2>
 
 <div>
   <Button onclick={openBadge}>Open badge</Button>

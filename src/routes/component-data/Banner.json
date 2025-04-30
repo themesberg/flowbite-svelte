@@ -5,45 +5,15 @@
     "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L253"
   },
   "props": [
-    [
-      "children",
-      ""
-    ],
-    [
-      "header",
-      ""
-    ],
-    [
-      "open",
-      "$bindable(true)"
-    ],
-    [
-      "dismissable",
-      "true"
-    ],
-    [
-      "color",
-      "\"gray\""
-    ],
-    [
-      "type",
-      ""
-    ],
-    [
-      "class: className",
-      ""
-    ],
-    [
-      "innerClass",
-      ""
-    ],
-    [
-      "transition",
-      "fade"
-    ],
-    [
-      "params",
-      ""
-    ]
+    ["children", ""],
+    ["header", ""],
+    ["open", "$bindable(true)"],
+    ["dismissable", "true"],
+    ["color", "\"gray\""],
+    ["type", ""],
+    ["class: className", ""],
+    ["innerClass", ""],
+    ["transition", "fade"],
+    ["params", ""]
   ]
 }

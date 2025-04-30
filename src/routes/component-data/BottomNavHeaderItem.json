@@ -5,17 +5,8 @@
     "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L303"
   },
   "props": [
-    [
-      "itemName",
-      ""
-    ],
-    [
-      "active",
-      ""
-    ],
-    [
-      "class: className",
-      ""
-    ]
+    ["itemName", ""],
+    ["active", ""],
+    ["class: className", ""]
   ]
 }

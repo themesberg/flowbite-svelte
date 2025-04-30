@@ -11,9 +11,9 @@
   };
 </script>
 
-<h1 class="text-3xl my-4">Svelte Buttons</h1>
+<h1 class="my-4 text-3xl">Svelte Buttons</h1>
 
-<h2 class="text-2xl my-4">Setup</h2>
+<h2 class="my-4 text-2xl">Setup</h2>
 
 <div class="flex flex-wrap gap-2">
   <Button>Default</Button>
@@ -27,13 +27,13 @@
   <Button color="purple">Purple</Button>
 </div>
 
-<h2 class="text-2xl my-4">Button with link</h2>
+<h2 class="my-4 text-2xl">Button with link</h2>
 
 <div class="flex flex-wrap gap-2">
   <Button href="/">Home</Button>
 </div>
 
-<h2 class="text-2xl my-4">Button pills</h2>
+<h2 class="my-4 text-2xl">Button pills</h2>
 
 <div class="flex flex-wrap gap-2">
   <Button pill>Default</Button>
@@ -47,7 +47,7 @@
   <Button color="purple" pill>Purple</Button>
 </div>
 
-<h2 class="text-2xl my-4">Gradient monochrome</h2>
+<h2 class="my-4 text-2xl">Gradient monochrome</h2>
 
 <div class="flex flex-wrap gap-2">
   <GradientButton color="blue">Blue</GradientButton>
@@ -60,7 +60,7 @@
   <GradientButton color="purple">Purple</GradientButton>
 </div>
 
-<h2 class="text-2xl my-4">Gradient duotone</h2>
+<h2 class="my-4 text-2xl">Gradient duotone</h2>
 
 <div class="flex flex-wrap gap-2">
   <GradientButton color="purpleToBlue">Purple to Blue</GradientButton>
@@ -72,7 +72,7 @@
   <GradientButton color="redToYellow">Red to Yellow</GradientButton>
 </div>
 
-<h2 class="text-2xl my-4">Gradient outline</h2>
+<h2 class="my-4 text-2xl">Gradient outline</h2>
 
 <div class="flex flex-wrap gap-2">
   <GradientButton outline color="purpleToBlue">Purple to Blue</GradientButton>
@@ -85,7 +85,7 @@
   <GradientButton outline color="redToYellow" class="w-72">Red to Yellow</GradientButton>
 </div>
 
-<h2 class="text-2xl my-4">Colored shadows</h2>
+<h2 class="my-4 text-2xl">Colored shadows</h2>
 
 <div class="flex flex-wrap gap-2">
   <GradientButton shadow color="blue">Blue</GradientButton>
@@ -98,7 +98,7 @@
   <GradientButton shadow color="purple">Purple</GradientButton>
 </div>
 
-<h2 class="text-2xl my-4">Outline buttons</h2>
+<h2 class="my-4 text-2xl">Outline buttons</h2>
 
 <div class="flex flex-wrap gap-2">
   <Button outline>Default</Button>
@@ -109,7 +109,7 @@
   <Button outline color="purple">Purple</Button>
 </div>
 
-<h2 class="text-2xl my-4">Button sizes with icons</h2>
+<h2 class="my-4 text-2xl">Button sizes with icons</h2>
 
 <div class="gap-2">
   <Button size="xs"><EnvelopeSolid class="me-2 h-4 w-4" />Extra small</Button>
@@ -119,7 +119,7 @@
   <Button size="xl"><EnvelopeSolid class="me-2 h-6 w-6" />Extra large</Button>
 </div>
 
-<h2 class="text-2xl my-4">Button with icon</h2>
+<h2 class="my-4 text-2xl">Button with icon</h2>
 
 <div class="flex flex-wrap gap-2">
   <Button>
@@ -130,7 +130,7 @@
   </Button>
 </div>
 
-<h2 class="text-2xl my-4">Button with label</h2>
+<h2 class="my-4 text-2xl">Button with label</h2>
 
 <div class="flex flex-wrap gap-2">
   <Button class="gap-2">
@@ -139,7 +139,7 @@
   </Button>
 </div>
 
-<h2 class="text-2xl my-4">Icon buttons</h2>
+<h2 class="my-4 text-2xl">Icon buttons</h2>
 
 <div class="flex flex-wrap items-center gap-2">
   <Button class="p-2!"><ArrowRightOutline class="h-6 w-6" /></Button>
@@ -152,7 +152,7 @@
   </Button>
 </div>
 
-<h2 class="text-2xl my-4">Loader</h2>
+<h2 class="my-4 text-2xl">Loader</h2>
 
 <div class="flex flex-wrap gap-2">
   <Button>
@@ -163,13 +163,13 @@
   </Button>
 </div>
 
-<h2 class="text-2xl my-4">Disabled</h2>
+<h2 class="my-4 text-2xl">Disabled</h2>
 
 <div class="flex flex-wrap gap-2">
   <Button disabled>Disabled</Button>
 </div>
 
-<h2 class="text-2xl my-4">Events</h2>
+<h2 class="my-4 text-2xl">Events</h2>
 
 <div class="flex flex-wrap gap-2">
   <Button onclick={btn1}>Button 1</Button>

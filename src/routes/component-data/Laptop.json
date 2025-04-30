@@ -2,28 +2,13 @@
   "name": "Laptop",
   "type": {
     "name": "MockupBaseProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L475"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L480"
   },
   "props": [
-    [
-      "children",
-      ""
-    ],
-    [
-      "divClass",
-      ""
-    ],
-    [
-      "div2Class",
-      ""
-    ],
-    [
-      "div3Class",
-      ""
-    ],
-    [
-      "div4Class",
-      ""
-    ]
+    ["children", ""],
+    ["divClass", ""],
+    ["div2Class", ""],
+    ["div3Class", ""],
+    ["div4Class", ""]
   ]
 }

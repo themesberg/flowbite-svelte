@@ -24,7 +24,7 @@
 <ul>
   {#each fileNames as compo}
     <li>
-      <a target="_blank" href="{github}/{forms.includes(compo) ? 'forms' : typography.includes(compo) ? 'typography' : dirName}/{compo}.svelte">{compo} component on GitHub</a>
+      <a target="_blank" href="{github}/{forms.includes(compo) ? `forms/${compo.toLowerCase()}` : typography.includes(compo) ? `typography/${compo.toLowerCase()}` : dirName}/{compo}.svelte">{compo} component on GitHub</a>
     </li>
   {/each}
 </ul>

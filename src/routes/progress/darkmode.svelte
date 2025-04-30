@@ -1,18 +1,15 @@
 <script>
-  import { P, A, DarkMode } from '$lib'
+  import { P, A, DarkMode } from "$lib";
   import { ThumbsUpSolid, ThumbsDownSolid } from "flowbite-svelte-icons";
 </script>
 
 <DarkMode />
 
-
 <h2 class="text-3xl">Switcher style</h2>
 
 <DarkMode class="text-primary-500 dark:text-primary-600 border dark:border-gray-800" />
 
-
-<h2 class="text-3xl my-4">Mode icon</h2>
-
+<h2 class="my-4 text-3xl">Mode icon</h2>
 
 <DarkMode class="text-lg">
   {#snippet lightIcon()}
@@ -22,4 +19,3 @@
     <ThumbsDownSolid color="green" />
   {/snippet}
 </DarkMode>
-

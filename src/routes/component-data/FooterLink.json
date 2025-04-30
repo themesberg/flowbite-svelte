@@ -2,24 +2,12 @@
   "name": "FooterLink",
   "type": {
     "name": "FooterLinkProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L621"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L626"
   },
   "props": [
-    [
-      "children",
-      ""
-    ],
-    [
-      "liClass",
-      ""
-    ],
-    [
-      "aClass",
-      ""
-    ],
-    [
-      "href",
-      ""
-    ]
+    ["children", ""],
+    ["liClass", ""],
+    ["aClass", ""],
+    ["href", ""]
   ]
 }

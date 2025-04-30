@@ -129,7 +129,6 @@ You can control the `Carousel` component externally by the `index` prop. Here is
   import images from "./imageData/images.json";
 
   let index = $state(0);
-
 </script>
 
 <div class="max-w-4xl space-y-4">

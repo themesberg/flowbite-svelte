@@ -1,7 +1,7 @@
 <script>
   import { Card, Button, Toggle, Dropdown, DropdownItem, Avatar, Label, Input, Checkbox, Listgroup, Rating, Badge } from "$lib";
   import { ArrowRightOutline, GiftBoxSolid, ArrowUpRightFromSquareOutline, DotsHorizontalOutline, CheckCircleSolid } from "flowbite-svelte-icons";
-  
+
   let vCard = false;
   let hCard = false;
   let list = [
@@ -26,18 +26,18 @@
   ];
 </script>
 
-<h1 class="text-3xl my-4">Cards</h1>
+<h1 class="my-4 text-3xl">Cards</h1>
 
-<h2 class="text-2xl my-4">Default card</h2>
-<div class="flex justify-center flex-wrap gap-2">
+<h2 class="my-4 text-2xl">Default card</h2>
+<div class="flex flex-wrap justify-center gap-2">
   <Card href="/cards" class="p-4 sm:p-6 md:p-8">
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
     <p class="leading-tight font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
   </Card>
 </div>
 
-<h2 class="text-2xl my-4">Card with action button</h2>
-<div class="flex justify-center flex-wrap gap-2">
+<h2 class="my-4 text-2xl">Card with action button</h2>
+<div class="flex flex-wrap justify-center gap-2">
   <Card class="p-4 sm:p-6 md:p-8">
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
     <p class="mb-3 leading-tight font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
@@ -47,8 +47,8 @@
   </Card>
 </div>
 
-<h2 class="text-2xl my-4">Card with link</h2>
-<div class="flex justify-center flex-wrap gap-2">
+<h2 class="my-4 text-2xl">Card with link</h2>
+<div class="flex flex-wrap justify-center gap-2">
   <Card class="p-4 sm:p-6 md:p-8">
     <GiftBoxSolid class="mb-3 h-8 w-8 text-gray-500 dark:text-gray-400" />
     <a href="/">
@@ -62,8 +62,8 @@
   </Card>
 </div>
 
-<h2 class="text-2xl my-4">Card with image</h2>
-<div class="flex justify-center flex-wrap gap-2">
+<h2 class="my-4 text-2xl">Card with image</h2>
+<div class="flex flex-wrap justify-center gap-2">
   <div class="space-y-4">
     <Card img="/images/image-1.webp" reverse={vCard}>
       <div class="m-6">
@@ -78,8 +78,8 @@
   </div>
 </div>
 
-<h2 class="text-2xl my-4">Horizontal card</h2>
-<div class="flex justify-center flex-wrap gap-2">
+<h2 class="my-4 text-2xl">Horizontal card</h2>
+<div class="flex flex-wrap justify-center gap-2">
   <div class="space-y-4">
     <Card img="/images/image-1.webp" href="/" horizontal size="md" reverse={hCard}>
       <div class="m-6">
@@ -91,8 +91,8 @@
   </div>
 </div>
 
-<h2 class="text-2xl my-4">User profile card</h2>
-<div class="flex justify-center flex-wrap gap-2">
+<h2 class="my-4 text-2xl">User profile card</h2>
+<div class="flex flex-wrap justify-center gap-2">
   <Card class="p-4 sm:p-5 md:p-7">
     <div class="flex justify-end">
       <DotsHorizontalOutline />
@@ -114,8 +114,8 @@
   </Card>
 </div>
 
-<h2 class="text-2xl my-4">Card with form inputs</h2>
-<div class="flex justify-center flex-wrap gap-2">
+<h2 class="my-4 text-2xl">Card with form inputs</h2>
+<div class="flex flex-wrap justify-center gap-2">
   <Card class="p-4 sm:p-6 md:p-8">
     <form class="flex flex-col space-y-6" action="/">
       <h3 class="text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h3>
@@ -139,8 +139,8 @@
   </Card>
 </div>
 
-<h2 class="text-2xl my-4">E-commerce card</h2>
-<div class="flex justify-center flex-wrap gap-2">
+<h2 class="my-4 text-2xl">E-commerce card</h2>
+<div class="flex flex-wrap justify-center gap-2">
   <Card class="p-0">
     <a href="/">
       <img class="rounded-t-lg p-8" src="/images/product-1.webp" alt="product 1" />
@@ -151,7 +151,7 @@
       </a>
       <Rating rating={4} size={24} class="mt-2.5 mb-5">
         {#snippet text()}
-        <Badge class="ms-3">4</Badge>
+          <Badge class="ms-3">4</Badge>
         {/snippet}
       </Rating>
       <div class="flex items-center justify-between">
@@ -162,8 +162,8 @@
   </Card>
 </div>
 
-<h2 class="text-2xl my-4">Call to action card</h2>
-<div class="flex justify-center flex-wrap gap-2">
+<h2 class="my-4 text-2xl">Call to action card</h2>
+<div class="flex flex-wrap justify-center gap-2">
   <Card size="lg" class="p-4 text-center sm:p-8 md:p-10">
     <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Work fast from anywhere</h5>
     <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">Stay up to date and move work forward with Flowbite on iOS & Android. Download the app today.</p>
@@ -174,8 +174,8 @@
   </Card>
 </div>
 
-<h2 class="text-2xl my-4">Card with list</h2>
-<div class="flex justify-center flex-wrap gap-2">
+<h2 class="my-4 text-2xl">Card with list</h2>
+<div class="flex flex-wrap justify-center gap-2">
   <Card class="p-4 sm:p-8 md:p-10" size="md">
     <div class="mb-4 flex items-center justify-between">
       <h5 class="text-xl leading-none font-bold text-gray-900 dark:text-white">Latest Customers</h5>
@@ -202,8 +202,8 @@
   </Card>
 </div>
 
-<h2 class="text-2xl my-4">Pricing card</h2>
-<div class="flex justify-center flex-wrap gap-2">
+<h2 class="my-4 text-2xl">Pricing card</h2>
+<div class="flex flex-wrap justify-center gap-2">
   <Card class="p-4 sm:p-8 md:p-10">
     <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Standard plan</h5>
     <div class="flex items-baseline text-gray-900 dark:text-white">
@@ -246,8 +246,8 @@
   </Card>
 </div>
 
-<h2 class="text-2xl my-4">Testimonial card</h2>
-<div class="flex justify-center flex-wrap gap-2">
+<h2 class="my-4 text-2xl">Testimonial card</h2>
+<div class="flex flex-wrap justify-center gap-2">
   <Card size="xl" class="grid md:grid-cols-2">
     <figure class="flex flex-col items-center justify-center rounded-t-lg border-b border-gray-200 bg-white p-8 text-center md:rounded-t-none md:rounded-tl-lg md:border-e dark:border-gray-700 dark:bg-gray-800">
       <blockquote class="mx-auto mb-4 max-w-2xl text-gray-500 dark:text-gray-400">
@@ -304,7 +304,7 @@
   </Card>
 </div>
 
-<h2 class="text-2xl my-4">Custom size</h2>
+<h2 class="my-4 text-2xl">Custom size</h2>
 <div class="flex justify-center">
   <Card class="max-w-[250px] p-6">
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Technology acquisitions</h5>

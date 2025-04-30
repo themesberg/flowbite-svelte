@@ -2,48 +2,18 @@
   "name": "SidebarItem",
   "type": {
     "name": "SidebarItemProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1179"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1187"
   },
   "props": [
-    [
-      "icon",
-      ""
-    ],
-    [
-      "subtext",
-      ""
-    ],
-    [
-      "href",
-      ""
-    ],
-    [
-      "label",
-      ""
-    ],
-    [
-      "spanClass",
-      "\"ms-3\""
-    ],
-    [
-      "activeClass",
-      ""
-    ],
-    [
-      "nonActiveClass",
-      ""
-    ],
-    [
-      "aClass",
-      ""
-    ],
-    [
-      "active",
-      ""
-    ],
-    [
-      "class: className",
-      ""
-    ]
+    ["icon", ""],
+    ["subtext", ""],
+    ["href", ""],
+    ["label", ""],
+    ["spanClass", "\"ms-3\""],
+    ["activeClass", ""],
+    ["nonActiveClass", ""],
+    ["aClass", ""],
+    ["active", ""],
+    ["class: className", ""]
   ]
 }

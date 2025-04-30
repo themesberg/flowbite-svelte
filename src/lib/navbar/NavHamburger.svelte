@@ -25,7 +25,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L912)
+[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L920)
 ## Props
 @prop children
 @prop onclick

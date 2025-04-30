@@ -5,33 +5,12 @@
     "link": null
   },
   "props": [
-    [
-      "children",
-      ""
-    ],
-    [
-      "color",
-      "\"gray\""
-    ],
-    [
-      "onclick",
-      ""
-    ],
-    [
-      "name",
-      "\"Close\""
-    ],
-    [
-      "ariaLabel",
-      ""
-    ],
-    [
-      "size",
-      "\"md\""
-    ],
-    [
-      "class: className",
-      ""
-    ]
+    ["children", ""],
+    ["color", "\"gray\""],
+    ["onclick", ""],
+    ["name", "\"Close\""],
+    ["ariaLabel", ""],
+    ["size", "\"md\""],
+    ["class: className", ""]
   ]
 }

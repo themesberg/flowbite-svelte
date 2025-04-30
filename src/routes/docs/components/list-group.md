@@ -82,7 +82,7 @@ You can pass extra properties to the `<button>` element by setting the `attrs` a
   ];
 </script>
 
-<Listgroup active items={buttons} class="w-48" onclick={(e) => alert(Object.entries(e.detail))} />
+<Listgroup active items={buttons} class="w-48" onclick={(e) => alert(Object.entries(e?.detail ?? {}))} />
 ```
 
 ## List group with icons
@@ -119,7 +119,7 @@ Use the `horizontal` property to change the direction of list items.
   ];
 </script>
 
-<Listgroup active items={buttons} horizontal onclick={(e) => alert(Object.entries(e.detail))}></Listgroup>
+<Listgroup active items={buttons} horizontal onclick={(e) => alert(Object.entries(e?.detail ?? {}))}></Listgroup>
 ```
 
 ## Advanced

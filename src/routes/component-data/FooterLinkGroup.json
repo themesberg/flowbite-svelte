@@ -2,16 +2,10 @@
   "name": "FooterLinkGroup",
   "type": {
     "name": "FooterLinkGroupProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L616"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L621"
   },
   "props": [
-    [
-      "class: ulClass",
-      ""
-    ],
-    [
-      "children",
-      ""
-    ]
+    ["class: ulClass", ""],
+    ["children", ""]
   ]
 }

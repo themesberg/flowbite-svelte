@@ -62,7 +62,7 @@ Use the helper prop to add your helper text. You can use HTML in the helper text
 </script>
 
 <Label class="mb-2 block">Your email</Label>
-<Input label="Email" id="email" name="email" required placeholder="name@flowbite.com" />
+<Input id="email" name="email" required placeholder="name@flowbite.com" />
 <Helper class="mt-2 text-sm">
   We’ll never share your details. Read our <a href="/" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Privacy Policy</a>
   .
@@ -156,12 +156,12 @@ Use the following example to apply validation styles for success and error messa
 
 Get started with the default example of a select input component to get a single option selection.
 
-```svelte example
-<script>
+```svelte example class="h-48"
+<script lang="ts">
   import { Label, Select } from "flowbite-svelte";
-  let selected;
+  let selected: string = "";
 
-  let countries = [
+  let countries: { value: string; name: string }[] = [
     { value: "us", name: "United States" },
     { value: "ca", name: "Canada" },
     { value: "fr", name: "France" }
@@ -176,14 +176,12 @@ Get started with the default example of a select input component to get a single
 
 ## MultiSelect
 
-**Not implemented yet!**
-
-```html
-<script>
+```svelte example class="h-96"
+<script lang="ts">
   import { MultiSelect } from "flowbite-svelte";
 
-  let selected = [];
-  let countries = [
+  let multiSelected: string[]=[]
+  let countries: { value: string; name: string }[] = [
     { value: "us", name: "United States" },
     { value: "ca", name: "Canada" },
     { value: "fr", name: "France" },
@@ -192,7 +190,7 @@ Get started with the default example of a select input component to get a single
   ];
 </script>
 
-<MultiSelect items="{countries}" bind:value="{selected}" />
+<MultiSelect items={countries} bind:value={multiSelected} />
 ```
 
 ## Checkbox
@@ -225,10 +223,6 @@ Get started with the default example of a select input component to get a single
 
   let fileuploadprops = {
     id: "user_avatar"
-  };
-
-  let fileuploadprops2 = {
-    id: "user_avatar2"
   };
 </script>
 

@@ -26,7 +26,7 @@ Use the Drawer component (or “off-canvas”) to show a fixed element relative 
 
 ## Default drawer
 
-Since `Drawer` component extend Svelte's `HTMLAttributes<HTMLDivElement>`, you can set the `id`,  `aria-labelledby=id` and `aria-controls=id` to the drawer component.
+Since `Drawer` component extend Svelte's `HTMLAttributes<HTMLDivElement>`, you can set the `id`, `aria-labelledby=id` and `aria-controls=id` to the drawer component.
 
 ```svelte example hideResponsiveButtons
 <script>
@@ -79,7 +79,7 @@ Use this example to show a navigational sidebar inside the drawer component.
     <CloseButton onclick={() => (hidden2 = true)} class="dark:text-white" />
   </div>
   <Sidebar class="static">
-    <SidebarWrapper class="overflow-y-auto py-4 px-3 rounded-sm dark:bg-gray-800">
+    <SidebarWrapper class="overflow-y-auto rounded-sm px-3 py-4 dark:bg-gray-800">
       <SidebarGroup>
         <SidebarItem label="Dashboard">
           {#snippet icon()}
@@ -219,7 +219,7 @@ Use this example if you want to add form elements inside the drawer component in
     <div class="mb-4">
       <div class="relative">
         <Input id="search" placeholder="Add guest email" class="p-3" />
-        <Button class="text-sm bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 absolute end-2 bottom-2 inline-flex items-center rounded-lg px-3 py-1 text-sm font-medium text-white focus:ring-4 focus:outline-hidden" type="submit">
+        <Button class="bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 absolute end-2 bottom-2 inline-flex items-center rounded-lg px-3 py-1 text-sm text-sm font-medium text-white focus:ring-4 focus:outline-hidden" type="submit">
           <UserAddOutline class="me-1.5 h-3 w-3 text-white" />Add
         </Button>
       </div>

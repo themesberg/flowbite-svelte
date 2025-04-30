@@ -5,17 +5,8 @@
     "link": null
   },
   "props": [
-    [
-      "children",
-      ""
-    ],
-    [
-      "files",
-      "$bindable<FileList | null>()"
-    ],
-    [
-      "class: className",
-      ""
-    ]
+    ["children", ""],
+    ["files", "$bindable<FileList | null>()"],
+    ["class: className", ""]
   ]
 }

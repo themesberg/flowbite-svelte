@@ -348,18 +348,18 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 <Card class="relative h-96 overflow-y-scroll rounded-lg border border-gray-100 bg-white dark:border-gray-600 dark:bg-gray-700">
   <Listgroup items={list} class="border-0 dark:bg-transparent!">
-      {#snippet children(item)}
-        {#if item && typeof item !== 'string'} 
+    {#snippet children(item)}
+      {#if item && typeof item !== "string"}
         <a href="/" class="flex w-full items-center justify-center px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">
           <Avatar src={item.img?.src} alt={item.img?.alt} class="me-3 shrink-0" />
           <div>
-            <p class="text-sm text-gray-500 dark:text-gray-400">{@html item.comment || ''}</p>
-            <span class="text-primary-600 dark:text-primary-500 text-xs">{@html item.message || ''}</span>
+            <p class="text-sm text-gray-500 dark:text-gray-400">{@html item.comment || ""}</p>
+            <span class="text-primary-600 dark:text-primary-500 text-xs">{@html item.message || ""}</span>
           </div>
         </a>
-        {/if}
-      {/snippet}
-    </Listgroup>
+      {/if}
+    {/snippet}
+  </Listgroup>
   <BottomNav position="sticky" navType="card" innerClass="grid-cols-3 pt-2 pb-4">
     <BottomNavItem btnName="Latest" id="card-latest">
       <ClockSolid class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />

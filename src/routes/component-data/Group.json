@@ -2,28 +2,13 @@
   "name": "Group",
   "type": {
     "name": "GroupProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1425"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1433"
   },
   "props": [
-    [
-      "children",
-      ""
-    ],
-    [
-      "divClass",
-      ""
-    ],
-    [
-      "timeClass",
-      ""
-    ],
-    [
-      "date",
-      ""
-    ],
-    [
-      "olClass",
-      ""
-    ]
+    ["children", ""],
+    ["divClass", ""],
+    ["timeClass", ""],
+    ["date", ""],
+    ["olClass", ""]
   ]
 }

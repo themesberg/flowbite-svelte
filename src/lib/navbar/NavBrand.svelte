@@ -14,7 +14,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[NavBrandProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L906)
+[NavBrandProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L914)
 ## Props
 @prop children
 @prop class: className

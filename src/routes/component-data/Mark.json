@@ -2,16 +2,10 @@
   "name": "Mark",
   "type": {
     "name": "MarkProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1565"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1573"
   },
   "props": [
-    [
-      "children",
-      ""
-    ],
-    [
-      "class: className",
-      ""
-    ]
+    ["children", ""],
+    ["class: className", ""]
   ]
 }

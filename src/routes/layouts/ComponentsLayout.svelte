@@ -63,7 +63,7 @@
   let divClass = "overflow-y-auto px-4 pt-20 lg:pt-4 h-full scrolling-touch max-w-2xs lg:h-[calc(100vh-8rem)] lg:block lg:me-0 lg:sticky top-20 bg-white dark:bg-gray-900";
 </script>
 
-<SidebarButton breakpoint="lg" onclick={sidebarUi.toggle} class="fixed top-4 sm:top-8 z-40 mb-2" />
+<SidebarButton breakpoint="lg" onclick={sidebarUi.toggle} class="fixed top-4 z-40 mb-2 sm:top-8" />
 <Sidebar breakpoint="lg" backdrop={true} {isOpen} {closeSidebar} {nonActiveClass} {activeClass} activeUrl={mainSidebarUrl} {divClass} class={mainClass} params={{ x: -50, duration: 50 }}>
   <h4 id="sidebar-label" class="sr-only">Browse docs</h4>
   <SidebarGroup>

@@ -1,12 +1,12 @@
 <script>
-  import { Avatar, Dropdown, DropdownHeader, DropdownItem,  DropdownGroup, Tooltip } from "$lib";
+  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownGroup, Tooltip } from "$lib";
 
   let name;
 </script>
 
-<h1 class="text-3xl my-4">Avatar</h1>
+<h1 class="my-4 text-3xl">Avatar</h1>
 
-<h2 class="text-2xl my-4">Default avatar</h2>
+<h2 class="my-4 text-2xl">Default avatar</h2>
 
 <div class="flex justify-center gap-4">
   <div class="flex space-x-4 rtl:space-x-reverse">
@@ -15,14 +15,14 @@
   </div>
 </div>
 
-<h2 class="text-2xl my-4">Bordered</h2>
+<h2 class="my-4 text-2xl">Bordered</h2>
 
 <div class="flex justify-center gap-4">
   <Avatar src="/images/profile-picture-2.webp" border />
   <Avatar src="/images/profile-picture-2.webp" border class="ring-red-400 dark:ring-red-300" />
 </div>
 
-<h2 class="text-2xl my-4">Placeholder</h2>
+<h2 class="my-4 text-2xl">Placeholder</h2>
 
 <div class="flex justify-center gap-4">
   <Avatar />
@@ -31,24 +31,24 @@
   <Avatar cornerStyle="rounded" border />
 </div>
 
-<h2 class="text-2xl my-4">Placeholder initials</h2>
+<h2 class="my-4 text-2xl">Placeholder initials</h2>
 
 <div class="flex justify-center gap-4">
   <Avatar>JL</Avatar>
 </div>
 
-<h2 class="text-2xl my-4">Avatar tooltip</h2>
+<h2 class="my-4 text-2xl">Avatar tooltip</h2>
 
 <div class="flex justify-center gap-4">
-  <Avatar data-name="Jese Leos"  src="/images/profile-picture-1.webp" />
+  <Avatar data-name="Jese Leos" src="/images/profile-picture-1.webp" />
   <Tooltip>Jese Leos</Tooltip>
-  <Avatar data-name="Robert Gouth"  src="/images/profile-picture-2.webp" />
+  <Avatar data-name="Robert Gouth" src="/images/profile-picture-2.webp" />
   <Tooltip>Robert Gouth</Tooltip>
-  <Avatar data-name="Bonnie Green"  src="/images/profile-picture-3.webp" />
+  <Avatar data-name="Bonnie Green" src="/images/profile-picture-3.webp" />
   <Tooltip>Bonnie Green</Tooltip>
 </div>
 
-<h2 class="text-2xl my-4">Dot indicator</h2>
+<h2 class="my-4 text-2xl">Dot indicator</h2>
 
 <div class="flex justify-center gap-4">
   <Avatar src="/images/profile-picture-3.webp" dot={{ color: "red" }} />
@@ -58,7 +58,7 @@
   <Avatar dot={{}} />
 </div>
 
-<h2 class="text-2xl my-4">Stacked</h2>
+<h2 class="my-4 text-2xl">Stacked</h2>
 
 <div class="flex flex-col justify-center gap-4">
   <div class="mb-5 flex">
@@ -75,7 +75,7 @@
   </div>
 </div>
 
-<h2 class="text-2xl my-4">Avatar text</h2>
+<h2 class="my-4 text-2xl">Avatar text</h2>
 
 <div class="flex justify-center gap-4">
   <div class="flex items-center space-x-4 rtl:space-x-reverse">
@@ -87,9 +87,9 @@
   </div>
 </div>
 
-<h2 class="text-2xl my-4">User dropdown</h2>
+<h2 class="my-4 text-2xl">User dropdown</h2>
 
-<div class="flex justify-center h-96">
+<div class="flex h-96 justify-center">
   <Avatar id="user-drop" src="/images/profile-picture-3.webp" class="cursor-pointer" dot={{ color: "green" }} />
   <Dropdown triggeredBy="#user-drop">
     <DropdownHeader>
@@ -107,15 +107,15 @@
   </Dropdown>
 </div>
 
-<h2 class="text-2xl my-4">Sizes</h2>
+<h2 class="my-4 text-2xl">Sizes</h2>
 
 <div class="flex flex-col gap-4">
   <div class="flex flex-wrap justify-center space-x-4 rtl:space-x-reverse">
-    <Avatar src="/images/profile-picture-3.webp"  size="xs" />
-    <Avatar src="/images/profile-picture-3.webp"  size="sm" />
-    <Avatar src="/images/profile-picture-3.webp"  size="md" />
-    <Avatar src="/images/profile-picture-3.webp"  size="lg" />
-    <Avatar src="/images/profile-picture-3.webp"  size="xl" />
-    <Avatar src="/images/profile-picture-3.webp"  class="h-28 w-28" />
+    <Avatar src="/images/profile-picture-3.webp" size="xs" />
+    <Avatar src="/images/profile-picture-3.webp" size="sm" />
+    <Avatar src="/images/profile-picture-3.webp" size="md" />
+    <Avatar src="/images/profile-picture-3.webp" size="lg" />
+    <Avatar src="/images/profile-picture-3.webp" size="xl" />
+    <Avatar src="/images/profile-picture-3.webp" class="h-28 w-28" />
   </div>
 </div>

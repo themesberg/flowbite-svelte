@@ -27,7 +27,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[TooltipProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1479)
+[TooltipProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1487)
 ## Props
 @prop type = "dark"
 @prop color = undefined

@@ -2,40 +2,16 @@
   "name": "FooterBrand",
   "type": {
     "name": "FooterBrandProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L589"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L594"
   },
   "props": [
-    [
-      "children",
-      ""
-    ],
-    [
-      "aClass",
-      ""
-    ],
-    [
-      "spanClass",
-      ""
-    ],
-    [
-      "imgClass",
-      ""
-    ],
-    [
-      "href",
-      ""
-    ],
-    [
-      "src",
-      ""
-    ],
-    [
-      "alt",
-      ""
-    ],
-    [
-      "name",
-      ""
-    ]
+    ["children", ""],
+    ["aClass", ""],
+    ["spanClass", ""],
+    ["imgClass", ""],
+    ["href", ""],
+    ["src", ""],
+    ["alt", ""],
+    ["name", ""]
   ]
 }

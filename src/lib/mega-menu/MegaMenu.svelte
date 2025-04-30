@@ -36,7 +36,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[MegaMenuProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L862)
+[MegaMenuProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L870)
 ## Props
 @prop children
 @prop extra

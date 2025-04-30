@@ -2,28 +2,13 @@
   "name": "Drawerhead",
   "type": {
     "name": "DrawerheadProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L545"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L550"
   },
   "props": [
-    [
-      "closeIcon",
-      ""
-    ],
-    [
-      "children",
-      ""
-    ],
-    [
-      "buttonClass",
-      ""
-    ],
-    [
-      "svgClass",
-      ""
-    ],
-    [
-      "class: className",
-      ""
-    ]
+    ["closeIcon", ""],
+    ["children", ""],
+    ["buttonClass", ""],
+    ["svgClass", ""],
+    ["class: className", ""]
   ]
 }

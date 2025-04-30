@@ -2,16 +2,10 @@
   "name": "Theme",
   "type": {
     "name": "ThemeProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1384"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1392"
   },
   "props": [
-    [
-      "children",
-      ""
-    ],
-    [
-      "theme",
-      ""
-    ]
+    ["children", ""],
+    ["theme", ""]
   ]
 }

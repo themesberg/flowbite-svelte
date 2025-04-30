@@ -2,88 +2,28 @@
   "name": "Datepicker",
   "type": {
     "name": "DatepickerProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L446"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L451"
   },
   "props": [
-    [
-      "value",
-      "$bindable()"
-    ],
-    [
-      "defaultDate",
-      "null"
-    ],
-    [
-      "range",
-      "false"
-    ],
-    [
-      "rangeFrom",
-      "$bindable()"
-    ],
-    [
-      "rangeTo",
-      "$bindable()"
-    ],
-    [
-      "locale",
-      "\"default\""
-    ],
-    [
-      "firstDayOfWeek",
-      "0"
-    ],
-    [
-      "dateFormat",
-      ""
-    ],
-    [
-      "placeholder",
-      "\"Select date\""
-    ],
-    [
-      "disabled",
-      "false"
-    ],
-    [
-      "required",
-      "false"
-    ],
-    [
-      "inputClass",
-      "\"\""
-    ],
-    [
-      "color",
-      "\"primary\""
-    ],
-    [
-      "inline",
-      "false"
-    ],
-    [
-      "autohide",
-      "true"
-    ],
-    [
-      "showActionButtons",
-      "false"
-    ],
-    [
-      "title",
-      "\"\""
-    ],
-    [
-      "onselect",
-      ""
-    ],
-    [
-      "onclear",
-      ""
-    ],
-    [
-      "onapply",
-      ""
-    ]
+    ["value", "$bindable()"],
+    ["defaultDate", "null"],
+    ["range", "false"],
+    ["rangeFrom", "$bindable()"],
+    ["rangeTo", "$bindable()"],
+    ["locale", "\"default\""],
+    ["firstDayOfWeek", "0"],
+    ["dateFormat", ""],
+    ["placeholder", "\"Select date\""],
+    ["disabled", "false"],
+    ["required", "false"],
+    ["inputClass", "\"\""],
+    ["color", "\"primary\""],
+    ["inline", "false"],
+    ["autohide", "true"],
+    ["showActionButtons", "false"],
+    ["title", "\"\""],
+    ["onselect", ""],
+    ["onclear", ""],
+    ["onapply", ""]
   ]
 }

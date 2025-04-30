@@ -2,24 +2,12 @@
   "name": "ListPlaceholder",
   "type": {
     "name": "ListPlaceholderProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1200"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1208"
   },
   "props": [
-    [
-      "itemNumber",
-      "5"
-    ],
-    [
-      "size",
-      "\"md\""
-    ],
-    [
-      "rounded",
-      ""
-    ],
-    [
-      "class: className",
-      ""
-    ]
+    ["itemNumber", "5"],
+    ["size", "\"md\""],
+    ["rounded", ""],
+    ["class: className", ""]
   ]
 }

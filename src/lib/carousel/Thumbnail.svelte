@@ -16,7 +16,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[ThumbnailProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L410)
+[ThumbnailProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L415)
 ## Props
 @prop selected
 @prop class: className

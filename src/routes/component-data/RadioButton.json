@@ -2,48 +2,18 @@
   "name": "RadioButton",
   "type": {
     "name": "RadioButtonProps<T>",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L731"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L736"
   },
   "props": [
-    [
-      "children",
-      ""
-    ],
-    [
-      "group",
-      "$bindable<T>()"
-    ],
-    [
-      "value",
-      "$bindable<T>()"
-    ],
-    [
-      "inline",
-      ""
-    ],
-    [
-      "pill",
-      ""
-    ],
-    [
-      "outline",
-      ""
-    ],
-    [
-      "size",
-      ""
-    ],
-    [
-      "color",
-      ""
-    ],
-    [
-      "shadow",
-      ""
-    ],
-    [
-      "class: className",
-      ""
-    ]
+    ["children", ""],
+    ["group", "$bindable<T>()"],
+    ["value", "$bindable<T>()"],
+    ["inline", ""],
+    ["pill", ""],
+    ["outline", ""],
+    ["size", ""],
+    ["color", ""],
+    ["shadow", ""],
+    ["class: className", ""]
   ]
 }

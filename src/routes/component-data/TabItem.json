@@ -2,44 +2,17 @@
   "name": "TabItem",
   "type": {
     "name": "TabitemProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1362"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1370"
   },
   "props": [
-    [
-      "children",
-      ""
-    ],
-    [
-      "titleSlot",
-      ""
-    ],
-    [
-      "open",
-      "false"
-    ],
-    [
-      "title",
-      "\"Tab title\""
-    ],
-    [
-      "activeClass",
-      ""
-    ],
-    [
-      "inactiveClass",
-      ""
-    ],
-    [
-      "class: className",
-      ""
-    ],
-    [
-      "disabled",
-      ""
-    ],
-    [
-      "tabStyle",
-      ""
-    ]
+    ["children", ""],
+    ["titleSlot", ""],
+    ["open", "false"],
+    ["title", "\"Tab title\""],
+    ["activeClass", ""],
+    ["inactiveClass", ""],
+    ["class: className", ""],
+    ["disabled", ""],
+    ["tabStyle", ""]
   ]
 }

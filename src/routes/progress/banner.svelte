@@ -3,15 +3,15 @@
   import { BullhornSolid, SalePercentSolid, ArrowRightOutline, BookOpenOutline } from "flowbite-svelte-icons";
   import { slide } from "svelte/transition";
   import { quintOut } from "svelte/easing";
-  
+
   const params = { delay: 250, duration: 500, easing: quintOut };
 </script>
 
-<h1 class="text-3xl my-4">Banner</h1>
+<h1 class="my-4 text-3xl">Banner</h1>
 
-<h2 class="text-2xl my-4">Default sticky banner</h2>
+<h2 class="my-4 text-2xl">Default sticky banner</h2>
 
-<div class="flex flex-col relative">
+<div class="relative flex flex-col">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="py-4" />
 
@@ -28,13 +28,13 @@
   </Banner>
 </div>
 
-<h2 class="text-2xl my-4">Bottom banner position</h2>
+<h2 class="my-4 text-2xl">Bottom banner position</h2>
 
-<div class="flex flex-col relative">
+<div class="relative flex flex-col">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="py-4" />
 
-  <Banner type="bottom"  class="absolute">
+  <Banner type="bottom" class="absolute">
     <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
       <span class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600">
         <SalePercentSolid class="h-4 w-4 text-gray-500 dark:text-gray-400" />
@@ -49,9 +49,9 @@
   </Banner>
 </div>
 
-<h2 class="text-2xl my-4">Marketing CTA banner</h2>
+<h2 class="my-4 text-2xl">Marketing CTA banner</h2>
 
-<div class="flex flex-col relative">
+<div class="relative flex flex-col">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="py-4" />
 
@@ -64,13 +64,13 @@
   </Banner>
 </div>
 
-<h2 class="text-2xl my-4">Newsletter sign-up banner</h2>
+<h2 class="my-4 text-2xl">Newsletter sign-up banner</h2>
 
-<div class="flex flex-col relative">
+<div class="relative flex flex-col">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="py-4" />
 
-  <Banner innerClass="w-full sm:w-auto"  class="absolute">
+  <Banner innerClass="w-full sm:w-auto" class="absolute">
     <form action="/" class="flex w-full flex-col gap-2 md:flex-row md:items-center md:gap-4">
       <Label for="email" class="shrink-0 text-gray-500 dark:text-gray-400">Sign up for our newsletter</Label>
       <Input type="email" id="email" placeholder="Enter your email" class="bg-white md:w-64 dark:border-gray-500 dark:bg-gray-600" required />
@@ -79,9 +79,9 @@
   </Banner>
 </div>
 
-<h2 class="text-2xl my-4">Informational banner</h2>
+<h2 class="my-4 text-2xl">Informational banner</h2>
 
-<div class="flex flex-col relative">
+<div class="relative flex flex-col">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="py-4" />
 
@@ -101,9 +101,9 @@
   </Banner>
 </div>
 
-<h2 class="text-2xl my-4">Transition</h2>
+<h2 class="my-4 text-2xl">Transition</h2>
 
-<div class="flex flex-col relative">
+<div class="relative flex flex-col">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="py-4" />
 

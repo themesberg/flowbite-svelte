@@ -2,64 +2,22 @@
   "name": "Progressbar",
   "type": {
     "name": "ProgressbarProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L987"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L995"
   },
   "props": [
-    [
-      "progress",
-      "\"45\""
-    ],
-    [
-      "precision",
-      "0"
-    ],
-    [
-      "tweenDuration",
-      "400"
-    ],
-    [
-      "animate",
-      "false"
-    ],
-    [
-      "size",
-      "\"h-2.5\""
-    ],
-    [
-      "labelInside",
-      "false"
-    ],
-    [
-      "labelOutside",
-      "\"\""
-    ],
-    [
-      "easing",
-      "cubicOut"
-    ],
-    [
-      "color",
-      "\"primary\""
-    ],
-    [
-      "labelInsideClass",
-      ""
-    ],
-    [
-      "oustsideSpanClass",
-      ""
-    ],
-    [
-      "oustsideProgressClass",
-      ""
-    ],
-    [
-      "labeloutsidedivClass",
-      ""
-    ],
-    [
-      "divClass",
-      ""
-    ]
+    ["progress", "\"45\""],
+    ["precision", "0"],
+    ["tweenDuration", "400"],
+    ["animate", "false"],
+    ["size", "\"h-2.5\""],
+    ["labelInside", "false"],
+    ["labelOutside", "\"\""],
+    ["easing", "cubicOut"],
+    ["color", "\"primary\""],
+    ["labelInsideClass", ""],
+    ["oustsideSpanClass", ""],
+    ["oustsideProgressClass", ""],
+    ["labeloutsidedivClass", ""],
+    ["divClass", ""]
   ]
 }

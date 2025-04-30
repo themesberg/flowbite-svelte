@@ -2,32 +2,14 @@
   "name": "DropdownItem",
   "type": {
     "name": "DropdownItemProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L568"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L573"
   },
   "props": [
-    [
-      "aClass",
-      ""
-    ],
-    [
-      "children",
-      ""
-    ],
-    [
-      "href",
-      ""
-    ],
-    [
-      "activeClass",
-      ""
-    ],
-    [
-      "liClass",
-      ""
-    ],
-    [
-      "class: className",
-      ""
-    ]
+    ["aClass", ""],
+    ["children", ""],
+    ["href", ""],
+    ["activeClass", ""],
+    ["liClass", ""],
+    ["class: className", ""]
   ]
 }

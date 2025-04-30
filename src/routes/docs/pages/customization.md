@@ -50,7 +50,7 @@ While the `class` prop can be used for most components, some components with a c
 <Skeleton class="py-4" />
 <ImagePlaceholder class="py-4" />
 
-<Banner id="default-banner" type="bottom" class="dark:bg-green-500 dark:border-green-400">
+<Banner id="default-banner" type="bottom" class="dark:border-green-400 dark:bg-green-500">
   <p class="flex items-center text-sm font-normal text-gray-500 dark:text-white">Overwriting divClass and innerClass</p>
 </Banner>
 ```

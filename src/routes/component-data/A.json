@@ -2,20 +2,11 @@
   "name": "A",
   "type": {
     "name": "AnchorProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1486"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1494"
   },
   "props": [
-    [
-      "children",
-      ""
-    ],
-    [
-      "color",
-      "\"primary\""
-    ],
-    [
-      "class: className",
-      ""
-    ]
+    ["children", ""],
+    ["color", "\"primary\""],
+    ["class: className", ""]
   ]
 }

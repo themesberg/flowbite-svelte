@@ -1,23 +1,23 @@
 <script>
   import { Breadcrumb, BreadcrumbItem, Button } from "$lib";
   import { HomeOutline, ChevronDoubleRightOutline } from "flowbite-svelte-icons";
-  
+
   // For the class and olClass example
   let navClass = $state("");
   let olClass = $state("");
-  
+
   const changeNavClass = () => {
     navClass = navClass === "" ? "border border-red-500 p-2" : "";
   };
-  
+
   const changeOlClass = () => {
     olClass = olClass === "" ? "border border-blue-500 p-2" : "";
   };
 </script>
 
-<h1 class="text-3xl my-4">Breadcrumb</h1>
+<h1 class="my-4 text-3xl">Breadcrumb</h1>
 
-<h2 class="text-2xl my-4">Default Breadcrumb</h2>
+<h2 class="my-4 text-2xl">Default Breadcrumb</h2>
 
 <Breadcrumb aria-label="Default breadcrumb example">
   <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
@@ -25,7 +25,7 @@
   <BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
 </Breadcrumb>
 
-<h2 class="text-2xl my-4">Solid Breadcrumb</h2>
+<h2 class="my-4 text-2xl">Solid Breadcrumb</h2>
 
 <Breadcrumb aria-label="Solid background breadcrumb example" solid>
   <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
@@ -33,7 +33,7 @@
   <BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
 </Breadcrumb>
 
-<h2 class="text-2xl my-4">Icons</h2>
+<h2 class="my-4 text-2xl">Icons</h2>
 
 <Breadcrumb aria-label="Solid background breadcrumb example" class="bg-gray-50 px-5 py-3 dark:bg-gray-900">
   <BreadcrumbItem href="/" home>
@@ -55,7 +55,7 @@
   </BreadcrumbItem>
 </Breadcrumb>
 
-<h2 class="text-2xl my-4">Class and olClass</h2>
+<h2 class="my-4 text-2xl">Class and olClass</h2>
 
 <div class="h-20">
   <Breadcrumb class={navClass} {olClass}>

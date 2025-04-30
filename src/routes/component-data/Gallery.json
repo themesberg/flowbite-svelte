@@ -2,28 +2,13 @@
   "name": "Gallery",
   "type": {
     "name": "GalleryProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L806"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L811"
   },
   "props": [
-    [
-      "children",
-      ""
-    ],
-    [
-      "figure",
-      ""
-    ],
-    [
-      "items",
-      "[]"
-    ],
-    [
-      "imgClass",
-      ""
-    ],
-    [
-      "class: className",
-      ""
-    ]
+    ["children", ""],
+    ["figure", ""],
+    ["items", "[]"],
+    ["imgClass", ""],
+    ["class: className", ""]
   ]
 }

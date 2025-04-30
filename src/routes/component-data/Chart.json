@@ -2,16 +2,10 @@
   "name": "Chart",
   "type": {
     "name": "ChartProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L429"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L434"
   },
   "props": [
-    [
-      "options",
-      ""
-    ],
-    [
-      "class: classname",
-      ""
-    ]
+    ["options", ""],
+    ["class: classname", ""]
   ]
 }

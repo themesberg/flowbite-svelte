@@ -190,13 +190,13 @@ You can set `size` property to preset values of `xs | sm | md | lg | xl`. Custom
 
 Preset values are equivalents of:
 
-| Size  |     |   Classes   |
-| :---: | --- | :---------: |
-|  xs   |     |  `w-6 h-6`  |
-|  sm   |     |  `w-8 h-8`  |
-|  md   |     | `w-10 h-10` |
-|  lg   |     | `w-20 h-20` |
-|  xl   |     | `w-36 h-36` |
+| Size |     |   Classes   |
+| :--: | --- | :---------: |
+|  xs  |     |  `w-6 h-6`  |
+|  sm  |     |  `w-8 h-8`  |
+|  md  |     | `w-10 h-10` |
+|  lg  |     | `w-20 h-20` |
+|  xl  |     | `w-36 h-36` |
 
 ```svelte example class="flex flex-col gap-4" hideScript hideResponsiveButtons
 <script>
@@ -204,12 +204,12 @@ Preset values are equivalents of:
 </script>
 
 <div class=" flex flex-wrap justify-center space-x-4 rtl:space-x-reverse">
-  <Avatar src="/images/profile-picture-3.webp"  size="xs" />
-  <Avatar src="/images/profile-picture-3.webp"  size="sm" />
-  <Avatar src="/images/profile-picture-3.webp"  size="md" />
-  <Avatar src="/images/profile-picture-3.webp"  size="lg" />
-  <Avatar src="/images/profile-picture-3.webp"  size="xl" />
-  <Avatar src="/images/profile-picture-3.webp"  class="h-28 w-28" />
+  <Avatar src="/images/profile-picture-3.webp" size="xs" />
+  <Avatar src="/images/profile-picture-3.webp" size="sm" />
+  <Avatar src="/images/profile-picture-3.webp" size="md" />
+  <Avatar src="/images/profile-picture-3.webp" size="lg" />
+  <Avatar src="/images/profile-picture-3.webp" size="xl" />
+  <Avatar src="/images/profile-picture-3.webp" class="h-28 w-28" />
 </div>
 ```
 

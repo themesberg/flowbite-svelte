@@ -2,20 +2,11 @@
   "name": "Slide",
   "type": {
     "name": "SlideProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L423"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L428"
   },
   "props": [
-    [
-      "image",
-      ""
-    ],
-    [
-      "transition",
-      ""
-    ],
-    [
-      "class: className",
-      ""
-    ]
+    ["image", ""],
+    ["transition", ""],
+    ["class: className", ""]
   ]
 }

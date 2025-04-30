@@ -2,56 +2,20 @@
   "name": "Toast",
   "type": {
     "name": "ToastProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1463"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1471"
   },
   "props": [
-    [
-      "children",
-      ""
-    ],
-    [
-      "icon",
-      ""
-    ],
-    [
-      "toastStatus",
-      "$bindable(true)"
-    ],
-    [
-      "dismissable",
-      "true"
-    ],
-    [
-      "color",
-      "\"primary\""
-    ],
-    [
-      "position",
-      ""
-    ],
-    [
-      "baseClass",
-      ""
-    ],
-    [
-      "iconClass",
-      ""
-    ],
-    [
-      "contentClass",
-      ""
-    ],
-    [
-      "align",
-      "true"
-    ],
-    [
-      "params",
-      ""
-    ],
-    [
-      "transition",
-      "fly"
-    ]
+    ["children", ""],
+    ["icon", ""],
+    ["toastStatus", "$bindable(true)"],
+    ["dismissable", "true"],
+    ["color", "\"primary\""],
+    ["position", ""],
+    ["baseClass", ""],
+    ["iconClass", ""],
+    ["contentClass", ""],
+    ["align", "true"],
+    ["params", ""],
+    ["transition", "fly"]
   ]
 }

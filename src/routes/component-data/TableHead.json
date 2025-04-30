@@ -2,40 +2,16 @@
   "name": "TableHead",
   "type": {
     "name": "TableHeadProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1275"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1283"
   },
   "props": [
-    [
-      "children",
-      ""
-    ],
-    [
-      "headerSlot",
-      ""
-    ],
-    [
-      "color",
-      ""
-    ],
-    [
-      "striped",
-      ""
-    ],
-    [
-      "border",
-      ""
-    ],
-    [
-      "class: className",
-      ""
-    ],
-    [
-      "headItems",
-      ""
-    ],
-    [
-      "defaultRow",
-      "true"
-    ]
+    ["children", ""],
+    ["headerSlot", ""],
+    ["color", ""],
+    ["striped", ""],
+    ["border", ""],
+    ["class: className", ""],
+    ["headItems", ""],
+    ["defaultRow", "true"]
   ]
 }

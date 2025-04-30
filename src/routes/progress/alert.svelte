@@ -1,16 +1,16 @@
 <script>
-  import { Li, List, Alert, Button } from "$lib"
-  import { EnvelopeSolid, EyeSolid, InfoCircleSolid } from "flowbite-svelte-icons"
-  import { fly } from "svelte/transition"
-  
+  import { Li, List, Alert, Button } from "$lib";
+  import { EnvelopeSolid, EyeSolid, InfoCircleSolid } from "flowbite-svelte-icons";
+  import { fly } from "svelte/transition";
+
   const closeAlert = () => {
-    alert("Clicked closeAlert.")
-  }
+    alert("Clicked closeAlert.");
+  };
 </script>
 
-<h1 class="text-3xl my-4">Alert</h1>
+<h1 class="my-4 text-3xl">Alert</h1>
 
-<h2 class="text-2xl my-4">Default alert</h2>
+<h2 class="my-4 text-2xl">Default alert</h2>
 
 <div class="flex flex-col gap-4">
   <Alert>
@@ -39,7 +39,7 @@
   </Alert>
 </div>
 
-<h2 class="text-2xl my-4">Alerts with icon</h2>
+<h2 class="my-4 text-2xl">Alerts with icon</h2>
 
 <div class="flex flex-col gap-4">
   <Alert>
@@ -74,7 +74,7 @@
   </Alert>
 </div>
 
-<h2 class="text-2xl my-4">Bordered alerts</h2>
+<h2 class="my-4 text-2xl">Bordered alerts</h2>
 
 <div class="flex flex-col gap-4">
   <Alert border>
@@ -109,7 +109,7 @@
   </Alert>
 </div>
 
-<h2 class="text-2xl my-4">Alerts with list</h2>
+<h2 class="my-4 text-2xl">Alerts with list</h2>
 
 <div class="flex flex-col gap-4">
   <Alert class="items-start!">
@@ -140,7 +140,7 @@
   </Alert>
 </div>
 
-<h2 class="text-2xl my-4">Dismissable alerts</h2>
+<h2 class="my-4 text-2xl">Dismissable alerts</h2>
 
 <div class="flex flex-col gap-4">
   <Alert dismissable>
@@ -177,7 +177,7 @@
   </Alert>
 </div>
 
-<h2 class="text-2xl my-4">Border accent</h2>
+<h2 class="my-4 text-2xl">Border accent</h2>
 
 <div class="flex flex-col gap-4">
   <Alert rounded={false} class="border-t-4">
@@ -207,7 +207,7 @@
   </Alert>
 </div>
 
-<h2 class="text-2xl my-4">Additional content</h2>
+<h2 class="my-4 text-2xl">Additional content</h2>
 
 <div class="flex flex-col gap-4">
   <Alert>
@@ -234,10 +234,10 @@
   </Alert>
 </div>
 
-<h2 class="text-2xl my-4">Custom color</h2>
+<h2 class="my-4 text-2xl">Custom color</h2>
 
 <Alert class="bg-sky-500 text-white">Your content</Alert>
 
-<h2 class="text-2xl my-4">Events</h2>
+<h2 class="my-4 text-2xl">Events</h2>
 
 <Alert dismissable onclick={closeAlert}>Close me</Alert>

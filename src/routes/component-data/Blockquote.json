@@ -2,36 +2,15 @@
   "name": "Blockquote",
   "type": {
     "name": "BlockquoteProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1492"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1500"
   },
   "props": [
-    [
-      "children",
-      ""
-    ],
-    [
-      "class: className",
-      ""
-    ],
-    [
-      "border",
-      ""
-    ],
-    [
-      "italic",
-      "true"
-    ],
-    [
-      "bg",
-      ""
-    ],
-    [
-      "alignment",
-      "\"left\""
-    ],
-    [
-      "size",
-      "\"lg\""
-    ]
+    ["children", ""],
+    ["class: className", ""],
+    ["border", ""],
+    ["italic", "true"],
+    ["bg", ""],
+    ["alignment", "\"left\""],
+    ["size", "\"lg\""]
   ]
 }

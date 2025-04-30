@@ -81,6 +81,27 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+[ModalProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L879)
 ## Props
-@props: 
+@prop children
+@prop oncancel
+@prop modal = true
+@prop autoclose = false
+@prop header
+@prop footer
+@prop title
+@prop open = $bindable(false)
+@prop dismissable = true
+@prop closeBtnClass
+@prop headerClass
+@prop bodyClass
+@prop footerClass
+@prop outsideclose = true
+@prop size = "md"
+@prop placement
+@prop class: className
+@prop params
+@prop transition = fade
+@prop ...restProps
 -->

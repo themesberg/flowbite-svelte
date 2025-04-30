@@ -2,40 +2,16 @@
   "name": "Pagination",
   "type": {
     "name": "PaginationProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L968"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L976"
   },
   "props": [
-    [
-      "pages",
-      "[]"
-    ],
-    [
-      "previous",
-      ""
-    ],
-    [
-      "next",
-      ""
-    ],
-    [
-      "prevContent",
-      ""
-    ],
-    [
-      "nextContent",
-      ""
-    ],
-    [
-      "table",
-      ""
-    ],
-    [
-      "size",
-      ""
-    ],
-    [
-      "ariaLabel",
-      ""
-    ]
+    ["pages", "[]"],
+    ["previous", ""],
+    ["next", ""],
+    ["prevContent", ""],
+    ["nextContent", ""],
+    ["table", ""],
+    ["size", ""],
+    ["ariaLabel", ""]
   ]
 }

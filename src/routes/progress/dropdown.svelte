@@ -2,7 +2,7 @@
   import { Button, Dropdown, DropdownItem, DropdownDivider, DropdownHeader, DropdownGroup, Avatar, Checkbox, Radio, Helper, Toggle, Navbar, NavBrand, NavHamburger, NavUl, NavLi, ToolbarButton, Search } from "$lib";
   import { ChevronDownOutline, ChevronRightOutline, ChevronUpOutline, ChevronLeftOutline, DotsHorizontalOutline, DotsVerticalOutline, BellSolid, EyeSolid, UserRemoveSolid } from "flowbite-svelte-icons";
   import { page } from "$app/state";
-  
+
   let activeUrl = $derived(page.url.pathname);
   let activeClass = "text-green-500 dark:text-green-300 hover:text-green-700 dark:hover:text-green-500";
   let dropdownOpen = $state(false);
@@ -10,13 +10,13 @@
   let group2 = $state(2);
   let group3 = $state(2);
   let searchTerm = $state("");
-  
+
   const people = [
     { name: "Robert Gouth", checked: false },
     { name: "Jese Leos", checked: false },
     { name: "Bonnie Green", checked: true }
   ];
-  
+
   let filteredItems = $derived(people.filter((person) => person.name.toLowerCase().indexOf(searchTerm?.toLowerCase()) !== -1));
 
   const handleClick = (e: Event) => {
@@ -29,13 +29,11 @@
   // };
 </script>
 
-<h1 class="text-3xl my-4">Svelte Dropdown</h1>
+<h1 class="my-4 text-3xl">Svelte Dropdown</h1>
 
-<p>The dropdown component can be used to show a list of menu items when clicking on an element such as a button and hiding it when clicking outside of the triggering element.</p>
+<h2 class="my-4 text-2xl">Examples</h2>
 
-<h2 class="text-2xl my-4">Examples</h2>
-
-<div class="flex justify-center items-start h-64">
+<div class="flex h-64 items-start justify-center">
   <Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <Dropdown simple>
     <DropdownItem>Dashboard</DropdownItem>
@@ -45,9 +43,9 @@
   </Dropdown>
 </div>
 
-<h2 class="text-2xl my-4">Adding links and active class</h2>
+<h2 class="my-4 text-2xl">Adding links and active class</h2>
 
-<div class="flex justify-center items-start h-64">
+<div class="flex h-64 items-start justify-center">
   <Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <Dropdown {activeUrl} simple>
     <DropdownItem href="/">Home</DropdownItem>
@@ -57,7 +55,7 @@
   </Dropdown>
 </div>
 
-<div class="flex justify-center items-start h-64">
+<div class="flex h-64 items-start justify-center">
   <Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <Dropdown {activeUrl} class={activeClass} simple>
     <DropdownItem href="/">Home</DropdownItem>
@@ -67,9 +65,9 @@
   </Dropdown>
 </div>
 
-<h2 class="text-2xl my-4">Dropdown divider</h2>
+<h2 class="my-4 text-2xl">Dropdown divider</h2>
 
-<div class="flex justify-center items-start h-64">
+<div class="flex h-64 items-start justify-center">
   <Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <Dropdown simple>
     <DropdownItem>Dashboard</DropdownItem>
@@ -80,9 +78,9 @@
   </Dropdown>
 </div>
 
-<h2 class="text-2xl my-4">Dropdown header</h2>
+<h2 class="my-4 text-2xl">Dropdown header</h2>
 
-<div class="flex justify-center items-start h-80">
+<div class="flex h-80 items-start justify-center">
   <Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <Dropdown>
     <DropdownHeader>
@@ -98,9 +96,9 @@
   </Dropdown>
 </div>
 
-<h2 class="text-2xl my-4">Multi-level dropdown</h2>
+<h2 class="my-4 text-2xl">Multi-level dropdown</h2>
 
-<div class="flex justify-center items-start h-64">
+<div class="flex h-64 items-start justify-center">
   <Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <Dropdown simple>
     <DropdownItem>Dashboard</DropdownItem>
@@ -117,9 +115,9 @@
   </Dropdown>
 </div>
 
-<h2 class="text-2xl my-4">Programatic open/close</h2>
+<h2 class="my-4 text-2xl">Programatic open/close</h2>
 
-<div class="flex justify-center items-start h-64">
+<div class="flex h-64 items-start justify-center">
   <Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <Dropdown simple>
     <DropdownItem onclick={() => (dropdownOpen = false)}>Dashboard (close)</DropdownItem>
@@ -136,9 +134,9 @@
   </Dropdown>
 </div>
 
-<h2 class="text-2xl my-4">Dropdown with checkbox</h2>
+<h2 class="my-4 text-2xl">Dropdown with checkbox</h2>
 
-<div class="flex justify-center items-start h-52">
+<div class="flex h-52 items-start justify-center">
   <Button>Dropdown checkbox<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <Dropdown simple class="w-44 space-y-3 p-3 text-sm">
     <li>
@@ -153,9 +151,9 @@
   </Dropdown>
 </div>
 
-<h2 class="text-2xl my-4">Background hover</h2>
+<h2 class="my-4 text-2xl">Background hover</h2>
 
-<div class="flex justify-center items-start h-56">
+<div class="flex h-56 items-start justify-center">
   <Button>Dropdown checkbox<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <Dropdown simple class="w-48 space-y-1 p-3 text-sm">
     <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
@@ -170,9 +168,9 @@
   </Dropdown>
 </div>
 
-<h2 class="text-2xl my-4">Helper text</h2>
+<h2 class="my-4 text-2xl">Helper text</h2>
 
-<div class="flex justify-center items-start h-96">
+<div class="flex h-96 items-start justify-center">
   <Button>Dropdown checkbox<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <Dropdown simple class="w-60 space-y-1 p-3 text-sm">
     <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
@@ -190,9 +188,9 @@
   </Dropdown>
 </div>
 
-<h2 class="text-2xl my-4">Dropdown with radio</h2>
+<h2 class="my-4 text-2xl">Dropdown with radio</h2>
 
-<div class="flex justify-center items-start h-64">
+<div class="flex h-64 items-start justify-center">
   <Button>
     Dropdown radio {group1}<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
   </Button>
@@ -209,9 +207,9 @@
   </Dropdown>
 </div>
 
-<h2 class="text-2xl my-4">Background hover</h2>
+<h2 class="my-4 text-2xl">Background hover</h2>
 
-<div class="flex justify-center items-start h-64">
+<div class="flex h-64 items-start justify-center">
   <Button>Dropdown radio<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <Dropdown simple class="w-48 space-y-1 p-3">
     <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
@@ -226,9 +224,9 @@
   </Dropdown>
 </div>
 
-<h2 class="text-2xl my-4">Helper text</h2>
+<h2 class="my-4 text-2xl">Helper text</h2>
 
-<div class="flex justify-center items-start h-96">
+<div class="flex h-96 items-start justify-center">
   <Button>Dropdown radio<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <Dropdown simple class="w-60 space-y-1 p-3">
     <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
@@ -246,9 +244,9 @@
   </Dropdown>
 </div>
 
-<h2 class="text-2xl my-4">Dropdown with toggle switch</h2>
+<h2 class="my-4 text-2xl">Dropdown with toggle switch</h2>
 
-<div class="flex justify-center items-start h-64">
+<div class="flex h-64 items-start justify-center">
   <Button>Dropdown toggle<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <Dropdown simple class="w-56 space-y-1 p-3">
     <li>
@@ -263,9 +261,9 @@
   </Dropdown>
 </div>
 
-<h2 class="text-2xl my-4">Dropdown navbar</h2>
+<h2 class="my-4 text-2xl">Dropdown navbar</h2>
 
-<div class="flex justify-center items-start h-96">
+<div class="flex h-96 items-start justify-center">
   <Navbar>
     <NavBrand href="/">
       <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
@@ -290,9 +288,9 @@
   </Navbar>
 </div>
 
-<h2 class="text-2xl my-4">Dropdown with scrolling</h2>
+<h2 class="my-4 text-2xl">Dropdown with scrolling</h2>
 
-<div class="flex justify-center items-start h-80">
+<div class="flex h-80 items-start justify-center">
   <Button>Project users<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <Dropdown class="h-48 w-48 overflow-y-auto py-1">
     <DropdownGroup>
@@ -321,9 +319,9 @@
   </Dropdown>
 </div>
 
-<h2 class="text-2xl my-4">Dropdown with search</h2>
+<h2 class="my-4 text-2xl">Dropdown with search</h2>
 
-<div class="flex justify-center items-start h-96">
+<div class="flex h-96 items-start justify-center">
   <Button>Dropdown search<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <Dropdown>
     <div class="p-3">
@@ -342,9 +340,9 @@
   </Dropdown>
 </div>
 
-<h2 class="text-2xl my-4">Menu icon</h2>
+<h2 class="my-4 text-2xl">Menu icon</h2>
 
-<div class="flex justify-center items-start gap-4 h-60">
+<div class="flex h-60 items-start justify-center gap-4">
   <DotsHorizontalOutline class="dots-menu dark:text-white" />
   <DotsVerticalOutline class="dots-menu dark:text-white" />
   <Dropdown simple triggeredBy=".dots-menu">
@@ -355,9 +353,9 @@
   </Dropdown>
 </div>
 
-<h2 class="text-2xl my-4">Notification bell</h2>
+<h2 class="my-4 text-2xl">Notification bell</h2>
 
-<div class="flex justify-center items-start h-96">
+<div class="flex h-96 items-start justify-center">
   <div id="bell" class="inline-flex items-center text-center text-sm font-medium text-gray-500 hover:text-gray-900 focus:outline-hidden dark:text-gray-400 dark:hover:text-white">
     <BellSolid class="h-8 w-8" />
     <div class="relative flex">
@@ -411,9 +409,9 @@
   </Dropdown>
 </div>
 
-<h2 class="text-2xl my-4">User avatar</h2>
+<h2 class="my-4 text-2xl">User avatar</h2>
 
-<div class="flex justify-center items-start h-80">
+<div class="flex h-80 items-start justify-center">
   <Avatar class="acs" src="/images/profile-picture-3.webp" dot={{ color: "green" }} />
   <Dropdown triggeredBy=".acs">
     <DropdownHeader>
@@ -429,9 +427,9 @@
   </Dropdown>
 </div>
 
-<h2 class="text-2xl my-4">Avatar with name</h2>
+<h2 class="my-4 text-2xl">Avatar with name</h2>
 
-<div class="flex justify-center items-start h-80">
+<div class="flex h-80 items-start justify-center">
   <Button pill color="light" id="avatar_with_name" class="p-1!">
     <Avatar src="/images/profile-picture-3.webp" class="me-2" />
     Bonnie Green
@@ -450,9 +448,9 @@
   </Dropdown>
 </div>
 
-<h2 class="text-2xl my-4">Sizes</h2>
+<h2 class="my-4 text-2xl">Sizes</h2>
 
-<div class="flex justify-center items-start gap-4 h-80">
+<div class="flex h-80 items-start justify-center gap-4">
   <Dropdown triggeredBy=".sizes">
     <DropdownGroup>
       <DropdownItem>Dashboard</DropdownItem>
@@ -469,7 +467,7 @@
   </Button>
 </div>
 
-<h2 class="text-2xl my-4">Placement</h2>
+<h2 class="my-4 text-2xl">Placement</h2>
 
 <div>
   <Dropdown simple placement="top" triggeredBy="#top-dd">

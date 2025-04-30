@@ -1,17 +1,11 @@
 {
   "name": "Controls",
   "type": {
-    "name": "Props",
-    "link": null
+    "name": "ControlsProps",
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L410"
   },
   "props": [
-    [
-      "children",
-      ""
-    ],
-    [
-      "class: className",
-      ""
-    ]
+    ["children", ""],
+    ["class: className", ""]
   ]
 }

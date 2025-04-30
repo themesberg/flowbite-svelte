@@ -2,40 +2,16 @@
   "name": "Tooltip",
   "type": {
     "name": "TooltipProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1479"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1487"
   },
   "props": [
-    [
-      "type",
-      "\"dark\""
-    ],
-    [
-      "color",
-      "undefined"
-    ],
-    [
-      "trigger",
-      "\"hover\""
-    ],
-    [
-      "arrow",
-      "true"
-    ],
-    [
-      "children",
-      ""
-    ],
-    [
-      "placement",
-      "\"top\""
-    ],
-    [
-      "onbeforetoggle: _onbeforetoggle",
-      ""
-    ],
-    [
-      "class: className",
-      ""
-    ]
+    ["type", "\"dark\""],
+    ["color", "undefined"],
+    ["trigger", "\"hover\""],
+    ["arrow", "true"],
+    ["children", ""],
+    ["placement", "\"top\""],
+    ["onbeforetoggle: _onbeforetoggle", ""],
+    ["class: className", ""]
   ]
 }

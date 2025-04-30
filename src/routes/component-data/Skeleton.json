@@ -2,16 +2,10 @@
   "name": "Skeleton",
   "type": {
     "name": "SkeletonProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1206"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1214"
   },
   "props": [
-    [
-      "size",
-      "\"sm\""
-    ],
-    [
-      "class: className",
-      ""
-    ]
+    ["size", "\"sm\""],
+    ["class: className", ""]
   ]
 }

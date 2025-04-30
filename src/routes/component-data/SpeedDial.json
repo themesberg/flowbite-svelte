@@ -2,40 +2,16 @@
   "name": "SpeedDial",
   "type": {
     "name": "SpeedDialProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1225"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1233"
   },
   "props": [
-    [
-      "children",
-      ""
-    ],
-    [
-      "popperClass",
-      ""
-    ],
-    [
-      "placement",
-      "\"top\""
-    ],
-    [
-      "pill",
-      "true"
-    ],
-    [
-      "tooltip",
-      "\"left\""
-    ],
-    [
-      "trigger",
-      "\"hover\""
-    ],
-    [
-      "textOutside",
-      "false"
-    ],
-    [
-      "class: className",
-      ""
-    ]
+    ["children", ""],
+    ["popperClass", ""],
+    ["placement", "\"top\""],
+    ["pill", "true"],
+    ["tooltip", "\"left\""],
+    ["trigger", "\"hover\""],
+    ["textOutside", "false"],
+    ["class: className", ""]
   ]
 }

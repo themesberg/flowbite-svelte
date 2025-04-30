@@ -2,32 +2,14 @@
   "name": "FooterCopyright",
   "type": {
     "name": "FooterCopyrightProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L600"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L605"
   },
   "props": [
-    [
-      "spanClass",
-      ""
-    ],
-    [
-      "aClass",
-      ""
-    ],
-    [
-      "href",
-      ""
-    ],
-    [
-      "by",
-      ""
-    ],
-    [
-      "copyrightMessage",
-      "\"All Rights Reserved.\""
-    ],
-    [
-      "year",
-      ""
-    ]
+    ["spanClass", ""],
+    ["aClass", ""],
+    ["href", ""],
+    ["by", ""],
+    ["copyrightMessage", "\"All Rights Reserved.\""],
+    ["year", ""]
   ]
 }

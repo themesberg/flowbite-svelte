@@ -2,36 +2,15 @@
   "name": "NavUl",
   "type": {
     "name": "NavUlProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L917"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L925"
   },
   "props": [
-    [
-      "children",
-      ""
-    ],
-    [
-      "activeUrl",
-      ""
-    ],
-    [
-      "ulClass",
-      ""
-    ],
-    [
-      "slideParams",
-      ""
-    ],
-    [
-      "activeClass",
-      ""
-    ],
-    [
-      "nonActiveClass",
-      ""
-    ],
-    [
-      "class: clasName",
-      ""
-    ]
+    ["children", ""],
+    ["activeUrl", ""],
+    ["ulClass", ""],
+    ["slideParams", ""],
+    ["activeClass", ""],
+    ["nonActiveClass", ""],
+    ["class: clasName", ""]
   ]
 }

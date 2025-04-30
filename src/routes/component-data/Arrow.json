@@ -5,21 +5,9 @@
     "link": null
   },
   "props": [
-    [
-      "placement",
-      "\"top\""
-    ],
-    [
-      "cords",
-      ""
-    ],
-    [
-      "strategy",
-      "\"absolute\""
-    ],
-    [
-      "class: className",
-      "\"\""
-    ]
+    ["placement", "\"top\""],
+    ["cords", ""],
+    ["strategy", "\"absolute\""],
+    ["class: className", "\"\""]
   ]
 }

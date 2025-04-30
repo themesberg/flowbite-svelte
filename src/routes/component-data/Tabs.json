@@ -2,28 +2,13 @@
   "name": "Tabs",
   "type": {
     "name": "TabsProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1354"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1362"
   },
   "props": [
-    [
-      "children",
-      ""
-    ],
-    [
-      "tabStyle",
-      "\"none\""
-    ],
-    [
-      "ulClass",
-      ""
-    ],
-    [
-      "contentClass",
-      ""
-    ],
-    [
-      "divider",
-      "true"
-    ]
+    ["children", ""],
+    ["tabStyle", "\"none\""],
+    ["ulClass", ""],
+    ["contentClass", ""],
+    ["divider", "true"]
   ]
 }

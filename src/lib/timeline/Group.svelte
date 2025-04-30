@@ -16,7 +16,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[GroupProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1425)
+[GroupProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1433)
 ## Props
 @prop children
 @prop divClass

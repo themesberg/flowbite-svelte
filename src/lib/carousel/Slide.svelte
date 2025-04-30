@@ -43,7 +43,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[SlideProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L423)
+[SlideProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L428)
 ## Props
 @prop image
 @prop transition

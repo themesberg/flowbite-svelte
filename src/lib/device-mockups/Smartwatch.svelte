@@ -25,7 +25,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[SmartwatchProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L514)
+[SmartwatchProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L519)
 ## Props
 @prop children
 @prop divClass

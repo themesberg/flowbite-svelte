@@ -13,7 +13,7 @@
   let { children, activeUrl, ulClass, slideParams, activeClass, nonActiveClass, class: clasName, ...restProps }: NavUlProps = $props();
 
   const slideParamsDefault = { delay: 250, duration: 500, easing: sineIn };
-  const slideParamsOptions = $derived( slideParams ?? slideParamsDefault);
+  const slideParamsOptions = $derived(slideParams ?? slideParamsDefault);
 
   const activeUrlStore = writable<string>("");
 
@@ -55,6 +55,15 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
+## Type
+[NavUlProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L925)
 ## Props
-@props: 
+@prop children
+@prop activeUrl
+@prop ulClass
+@prop slideParams
+@prop activeClass
+@prop nonActiveClass
+@prop class: clasName
+@prop ...restProps
 -->

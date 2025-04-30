@@ -4,10 +4,5 @@
     "name": "HTMLAttributes<HTMLDivElement>",
     "link": "https://github.com/sveltejs/svelte/blob/main/packages/svelte/elements.d.ts"
   },
-  "props": [
-    [
-      "children",
-      ""
-    ]
-  ]
+  "props": [["children", ""]]
 }

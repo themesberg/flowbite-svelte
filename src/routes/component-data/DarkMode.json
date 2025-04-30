@@ -2,28 +2,13 @@
   "name": "DarkMode",
   "type": {
     "name": "DarkmodeProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L435"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L440"
   },
   "props": [
-    [
-      "class: className",
-      ""
-    ],
-    [
-      "lightIcon",
-      ""
-    ],
-    [
-      "darkIcon",
-      ""
-    ],
-    [
-      "size",
-      "\"md\""
-    ],
-    [
-      "ariaLabel",
-      "\"Dark mode\""
-    ]
+    ["class: className", ""],
+    ["lightIcon", ""],
+    ["darkIcon", ""],
+    ["size", "\"md\""],
+    ["ariaLabel", "\"Dark mode\""]
   ]
 }

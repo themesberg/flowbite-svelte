@@ -1,18 +1,17 @@
 <script>
-  import { AccordionItem, Accordion, Button } from "$lib"
-  import { ChevronDoubleUpOutline, ChevronDoubleDownOutline } from "flowbite-svelte-icons"
-  import { CartSolid, CogOutline } from "flowbite-svelte-icons"
-  import { fade, fly } from "svelte/transition"
-  import { quintOut } from "svelte/easing"
-  
+  import { AccordionItem, Accordion, Button } from "$lib";
+  import { ChevronDoubleUpOutline, ChevronDoubleDownOutline } from "flowbite-svelte-icons";
+  import { CartSolid, CogOutline } from "flowbite-svelte-icons";
+  import { fade, fly } from "svelte/transition";
+  import { quintOut } from "svelte/easing";
 
-  const items = [false, false, false]
+  const items = [false, false, false];
 
-  const open_all = () => items.forEach((_, i) => (items[i] = true))
-  const close_all = () => items.forEach((_, i) => (items[i] = false))
+  const open_all = () => items.forEach((_, i) => (items[i] = true));
+  const close_all = () => items.forEach((_, i) => (items[i] = false));
 </script>
 
-<h2 class="text-2xl my-4">Default accordion</h2>
+<h2 class="my-4 text-2xl">Default accordion</h2>
 
 <Accordion>
   <AccordionItem>
@@ -39,7 +38,7 @@
   </AccordionItem>
 </Accordion>
 
-<h2 class="text-2xl my-4">Always open</h2>
+<h2 class="my-4 text-2xl">Always open</h2>
 
 <Accordion>
   <AccordionItem open>
@@ -52,7 +51,7 @@
   </AccordionItem>
 </Accordion>
 
-<h2 class="text-2xl my-4">Color option</h2>
+<h2 class="my-4 text-2xl">Color option</h2>
 
 <Accordion activeClass="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800" inactiveClass="text-gray-500 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800">
   <AccordionItem class="">
@@ -65,7 +64,7 @@
   </AccordionItem>
 </Accordion>
 
-<h2 class="text-2xl my-4">Flush accordion</h2>
+<h2 class="my-4 text-2xl">Flush accordion</h2>
 
 <Accordion flush>
   <AccordionItem>
@@ -78,7 +77,7 @@
   </AccordionItem>
 </Accordion>
 
-<h2 class="text-2xl my-4">Arrow style</h2>
+<h2 class="my-4 text-2xl">Arrow style</h2>
 
 <Accordion>
   <AccordionItem>
@@ -103,7 +102,7 @@
   </AccordionItem>
 </Accordion>
 
-<h2 class="text-2xl my-4">Icon Accordion</h2>
+<h2 class="my-4 text-2xl">Icon Accordion</h2>
 
 <Accordion>
   <AccordionItem>
@@ -130,7 +129,7 @@
   </AccordionItem>
 </Accordion>
 
-<h2 class="text-2xl my-4">Multiple mode</h2>
+<h2 class="my-4 text-2xl">Multiple mode</h2>
 
 <Accordion multiple>
   <AccordionItem>
@@ -147,8 +146,7 @@
   </AccordionItem>
 </Accordion>
 
-
-<div class="space-y-4 my-4">
+<div class="my-4 space-y-4">
   <Button onclick={open_all}>Open all</Button>
   <Button onclick={close_all}>Close all</Button>
   <Accordion multiple>
@@ -173,7 +171,7 @@
   </Accordion>
 </div>
 
-<h2 class="text-2xl my-4">Custom transitions</h2>
+<h2 class="my-4 text-2xl">Custom transitions</h2>
 
 <Accordion>
   <AccordionItem transitionParams={{ duration: 2000 }}>
@@ -190,7 +188,7 @@
   </AccordionItem>
 </Accordion>
 
-<h2 class="text-2xl my-4">Nesting accordions</h2>
+<h2 class="my-4 text-2xl">Nesting accordions</h2>
 
 <Accordion>
   <AccordionItem open>

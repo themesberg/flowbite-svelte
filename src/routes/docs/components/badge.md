@@ -266,7 +266,7 @@ The color can be changed dynamically.
 
   setInterval(handleHover, 500);
 
-  let color: BadgeProps['color']  = $state("primary");
+  let color: BadgeProps["color"] = $state("primary");
   function handleHover() {
     color = color === "primary" ? "secondary" : "primary";
   }
