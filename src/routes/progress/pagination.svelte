@@ -43,26 +43,26 @@
   ]);
 
   let helper = { start: 1, end: 10, total: 100 };
-  
+
   const handleClick = () => {
     alert("Page clicked");
   };
 </script>
 
-<h1 class="text-3xl my-4">Pagination</h1>
+<h1 class="my-4 text-3xl">Pagination</h1>
 
 <p>The pagination component can be used to navigate across a series of content and data sets for various pages such as blog posts, products, and more. You can use multiple variants of this component with or without icons and even for paginating table data entries.</p>
 
-<h2 class="text-2xl my-4">Default pagination</h2>
+<h2 class="my-4 text-2xl">Default pagination</h2>
 
-<div class="example-container flex flex-col justify-center items-center gap-3">
+<div class="example-container flex flex-col items-center justify-center gap-3">
   <Pagination {pages} {previous} {next} />
   <Pagination {pages} size="large" {previous} {next} />
 </div>
 
-<h2 class="text-2xl my-4">Pagination with icons</h2>
+<h2 class="my-4 text-2xl">Pagination with icons</h2>
 
-<div class="example-container flex flex-col justify-center items-center gap-3">
+<div class="example-container flex flex-col items-center justify-center gap-3">
   <div class="flex flex-col items-center justify-center gap-3">
     <Pagination pages={pagesWithoutHref} {previous} {next}>
       {#snippet prevContent()}
@@ -77,9 +77,9 @@
   </div>
 </div>
 
-<h2 class="text-2xl my-4">Previous and next</h2>
+<h2 class="my-4 text-2xl">Previous and next</h2>
 
-<div class="example-container flex flex-col justify-center items-center gap-3">
+<div class="example-container flex flex-col items-center justify-center gap-3">
   <div class="flex space-x-3 rtl:space-x-reverse">
     <PaginationItem onclick={previous}>Previous</PaginationItem>
     <PaginationItem onclick={next}>Next</PaginationItem>
@@ -90,9 +90,9 @@
   </div>
 </div>
 
-<h2 class="text-2xl my-4">Previous and next with icons</h2>
+<h2 class="my-4 text-2xl">Previous and next with icons</h2>
 
-<div class="example-container flex flex-col justify-center items-center gap-3">
+<div class="example-container flex flex-col items-center justify-center gap-3">
   <div class="flex space-x-3 rtl:space-x-reverse">
     <PaginationItem class="flex items-center" onclick={previous}>
       <ArrowLeftOutline class="me-2 h-3.5 w-3.5" />
@@ -115,9 +115,9 @@
   </div>
 </div>
 
-<h2 class="text-2xl my-4">Table data pagination</h2>
+<h2 class="my-4 text-2xl">Table data pagination</h2>
 
-<div class="example-container flex flex-col justify-center items-center gap-3">
+<div class="example-container flex flex-col items-center justify-center gap-3">
   <div class="flex flex-col items-center justify-center gap-3">
     <div class="flex flex-col items-center justify-center gap-2">
       <div class="text-sm text-gray-700 dark:text-gray-400">
@@ -134,9 +134,9 @@
   </div>
 </div>
 
-<h2 class="text-2xl my-4">Table data pagination with icons</h2>
+<h2 class="my-4 text-2xl">Table data pagination with icons</h2>
 
-<div class="example-container flex flex-col justify-center items-center gap-3">
+<div class="example-container flex flex-col items-center justify-center gap-3">
   <div class="flex flex-col items-center justify-center gap-3">
     <div class="flex flex-col items-center justify-center gap-2">
       <div class="text-sm text-gray-700 dark:text-gray-400">
@@ -166,7 +166,7 @@
   </div>
 </div>
 
-<h2 class="text-2xl my-4">Event example</h2>
+<h2 class="my-4 text-2xl">Event example</h2>
 
 <div class="example-container flex justify-center">
   <Pagination pages={pagesWithoutHref} {previous} {next} onclick={handleClick} />

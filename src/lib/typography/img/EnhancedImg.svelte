@@ -33,7 +33,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[EnhandedImgProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1542)
+[EnhandedImgProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1543)
 ## Props
 @prop src
 @prop href

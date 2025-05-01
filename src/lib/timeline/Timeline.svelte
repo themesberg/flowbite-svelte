@@ -18,7 +18,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[TimelineProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1452)
+[TimelineProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1453)
 ## Props
 @prop children
 @prop order = "default"

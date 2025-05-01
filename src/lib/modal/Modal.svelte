@@ -82,7 +82,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[ModalProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L879)
+[ModalProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L880)
 ## Props
 @prop children
 @prop oncancel

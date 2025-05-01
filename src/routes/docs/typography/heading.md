@@ -102,7 +102,7 @@ Use this example to highlight a portion of the heading text by using a gradient 
 </script>
 
 <Heading tag="h1" class="mb-4 text-3xl font-extrabold  md:text-5xl lg:text-6xl">
-  <Span gradient="tealToLime" >Better Data</Span> Scalable AI.
+  <Span gradient="tealToLime">Better Data</Span> Scalable AI.
 </Heading>
 <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
 ```
@@ -117,7 +117,7 @@ Get started with this example to underline an important part of the heading comp
 </script>
 
 <Heading tag="h1" class="mb-4">
-  We invest in the <Span underline class="decoration-8 decoration-blue-400 dark:decoration-blue-600">world’s potential</Span>
+  We invest in the <Span underline class="decoration-blue-400 decoration-8 dark:decoration-blue-600">world’s potential</Span>
 </Heading>
 <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
 ```

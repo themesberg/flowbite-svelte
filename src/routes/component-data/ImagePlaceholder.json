@@ -2,7 +2,7 @@
   "name": "ImagePlaceholder",
   "type": {
     "name": "ImagePlaceholderProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1203"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1204"
   },
   "props": [
     ["size", "\"md\""],

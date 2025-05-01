@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.0-next.19
+
+### Patch Changes
+
+- fix: some compos and add progress to check API
+
 ## 1.0.0-next.18
 
 ### Patch Changes

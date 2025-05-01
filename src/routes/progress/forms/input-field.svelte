@@ -1,17 +1,17 @@
 <script>
   import { Input, Label, Helper, Button, Checkbox, A, InputAddon, ButtonGroup, CloseButton, Dropdown, DropdownItem } from "$lib";
   import { EnvelopeSolid, EyeOutline, EyeSlashOutline, ChevronDownOutline, SearchOutline } from "flowbite-svelte-icons";
-  
+
   let value = 5;
   let show = false;
   let show1 = false;
 </script>
 
-<h1 class="text-3xl my-4">Input Field</h1>
+<h1 class="my-4 text-3xl">Input Field</h1>
 
 <div class="mb-6">
-  <h2 class="text-2xl my-4">Input fields</h2>
-  
+  <h2 class="my-4 text-2xl">Input fields</h2>
+
   <form>
     <div class="mb-6 grid gap-6 md:grid-cols-2">
       <div>
@@ -59,8 +59,8 @@
 </div>
 
 <div class="mb-6">
-  <h2 class="text-2xl my-4">Input sizes</h2>
-  
+  <h2 class="my-4 text-2xl">Input sizes</h2>
+
   <div class="space-y-6">
     <Label class="space-y-2">
       <div>Small icon input</div>
@@ -80,21 +80,21 @@
 </div>
 
 <div class="mb-6">
-  <h2 class="text-2xl my-4">Disabled state</h2>
-  
+  <h2 class="my-4 text-2xl">Disabled state</h2>
+
   <Input class="mb-6" disabled value="Disabled input" />
   <Input class="mb-6" disabled readonly value="Disabled readonly input" />
 </div>
 
 <div class="mb-6">
-  <h2 class="text-2xl my-4">Clearable</h2>
-  
+  <h2 class="my-4 text-2xl">Clearable</h2>
+
   <Input clearable value="Clearable input" />
 </div>
 
 <div class="mb-6">
-  <h2 class="text-2xl my-4">Validation</h2>
-  
+  <h2 class="my-4 text-2xl">Validation</h2>
+
   <div class="mb-6">
     <Label for="success" color="green" class="mb-2 block">Your name</Label>
     <Input id="success" color="green" placeholder="Success input" />
@@ -114,8 +114,8 @@
 </div>
 
 <div class="mb-6">
-  <h2 class="text-2xl my-4">Input with icon</h2>
-  
+  <h2 class="my-4 text-2xl">Input with icon</h2>
+
   <div class="space-y-6">
     <Label class="space-y-2">
       <div>Small input - left icon</div>
@@ -150,8 +150,8 @@
 </div>
 
 <div class="mb-6">
-  <h2 class="text-2xl my-4">Input group</h2>
-  
+  <h2 class="my-4 text-2xl">Input group</h2>
+
   <div class="space-y-6">
     <div>
       <Label class="mb-2" for="input-addon-sm">Small additional text</Label>
@@ -204,8 +204,8 @@
 </div>
 
 <div class="mb-6">
-  <h2 class="text-2xl my-4">Icon click handler</h2>
-  
+  <h2 class="my-4 text-2xl">Icon click handler</h2>
+
   <div class="gap-6">
     <div>
       <Label for="show-password" class="mb-2">Your password</Label>
@@ -241,20 +241,21 @@
 </div>
 
 <div class="mb-6">
-  <h2 class="text-2xl my-4">Helper text</h2>
-  
+  <h2 class="my-4 text-2xl">Helper text</h2>
+
   <Label class="flex flex-col gap-2">
     <span>Your email</span>
     <Input id="email" name="email" required placeholder="name@flowbite.com" />
     <Helper class="text-sm">
-      We'll never share your details. Read our <a href="/" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Privacy Policy</a>.
+      We'll never share your details. Read our <a href="/" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Privacy Policy</a>
+      .
     </Helper>
   </Label>
 </div>
 
 <div class="mb-6">
-  <h2 class="text-2xl my-4">Number input</h2>
-  
+  <h2 class="my-4 text-2xl">Number input</h2>
+
   <Label class="mb-4 flex flex-col gap-2">
     <span>Your Age</span>
     <Input type="number" bind:value />
@@ -266,8 +267,8 @@
 </div>
 
 <div class="mb-6">
-  <h2 class="text-2xl my-4">Search input</h2>
-  
+  <h2 class="my-4 text-2xl">Search input</h2>
+
   <form>
     <Label for="search" class="mb-2 block">Your Email</Label>
     <Input id="search" placeholder="Search" size="lg" class="ps-9">
@@ -282,8 +283,8 @@
 </div>
 
 <div class="mb-6">
-  <h2 class="text-2xl my-4">Dropdown</h2>
-  
+  <h2 class="my-4 text-2xl">Dropdown</h2>
+
   <div class="h-64">
     <ButtonGroup class="w-full">
       <Button color={undefined} class="shrink-0 border border-gray-300 bg-gray-100 text-gray-900 hover:bg-gray-200 focus:ring-gray-300 dark:border-gray-700 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800">
@@ -304,8 +305,8 @@
 </div>
 
 <div class="mb-6">
-  <h2 class="text-2xl my-4">Advanced usage</h2>
-  
+  <h2 class="my-4 text-2xl">Advanced usage</h2>
+
   <div class="gap-4">
     <Input>
       {#snippet left()}#{/snippet}

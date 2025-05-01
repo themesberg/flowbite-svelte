@@ -2,7 +2,7 @@
   "name": "Textarea",
   "type": {
     "name": "TextareaProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L781"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L782"
   },
   "props": [
     ["header", ""],

@@ -2,7 +2,7 @@
   "name": "Popover",
   "type": {
     "name": "PopoverProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L986"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L987"
   },
   "props": [
     ["title: titleSlot", ""],

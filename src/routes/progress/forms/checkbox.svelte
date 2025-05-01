@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Checkbox, Label, Helper, Listgroup, Dropdown, DropdownItem, DropdownGroup, Button, Search, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, TableBodyRow, ButtonGroup, CheckboxButton } from "$lib";
   import { ChevronDownOutline, UserRemoveSolid, AppleSolid, FacebookSolid, DiscordSolid, DropboxSolid } from "flowbite-svelte-icons";
-  
+
   // For checkbox group examples
   let choices = [
     { value: "svelte", label: "svelte" },
@@ -10,7 +10,7 @@
     { value: "angular", label: "Angular" }
   ];
   let group = $state([]);
-  
+
   // For group variable example
   let choicesNumbers = [
     { value: "1", label: "One" },
@@ -20,23 +20,23 @@
   let groupNumbers = ["2", "3"];
 </script>
 
-<h1 class="text-3xl my-4">Checkbox</h1>
+<h1 class="my-4 text-3xl">Checkbox</h1>
 
-<h2 class="text-2xl my-4">Checkbox examples</h2>
+<h2 class="my-4 text-2xl">Checkbox examples</h2>
 <div class="flex flex-col gap-4">
   <Checkbox>Default checkbox</Checkbox>
   <Checkbox checked>Checked state</Checkbox>
   <Checkbox indeterminate>Indeterminate state</Checkbox>
 </div>
 
-<h2 class="text-2xl my-4">Disabled state</h2>
+<h2 class="my-4 text-2xl">Disabled state</h2>
 <div class="flex flex-col gap-4">
   <Checkbox disabled>Disabled checkbox</Checkbox>
   <Checkbox disabled checked>Disabled checked</Checkbox>
   <Checkbox disabled indeterminate>Disabled indeterminate</Checkbox>
 </div>
 
-<h2 class="text-2xl my-4">Alternative syntax</h2>
+<h2 class="my-4 text-2xl">Alternative syntax</h2>
 <div class="flex flex-col gap-4">
   <Table>
     <TableHead>
@@ -60,7 +60,7 @@
   </Label>
 </div>
 
-<h2 class="text-2xl my-4">Checkbox with a link</h2>
+<h2 class="my-4 text-2xl">Checkbox with a link</h2>
 <div>
   <Checkbox>
     I agree with the
@@ -69,13 +69,13 @@
   </Checkbox>
 </div>
 
-<h2 class="text-2xl my-4">Helper text</h2>
+<h2 class="my-4 text-2xl">Helper text</h2>
 <div>
   <Checkbox aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Checkbox>
   <Helper id="helper-checkbox-text" class="ps-6">For orders shipped from $25 in books or $29 in other categories</Helper>
 </div>
 
-<h2 class="text-2xl my-4">Bordered</h2>
+<h2 class="my-4 text-2xl">Bordered</h2>
 <div>
   <div class="rounded-sm border border-gray-200 dark:border-gray-700">
     <Checkbox class="w-full p-4">Default radio</Checkbox>
@@ -85,7 +85,7 @@
   </div>
 </div>
 
-<h2 class="text-2xl my-4">Checkbox list group</h2>
+<h2 class="my-4 text-2xl">Checkbox list group</h2>
 <div>
   <p class="mb-4 font-semibold text-gray-900 dark:text-white">Technology</p>
   <Listgroup class="w-48">
@@ -94,14 +94,14 @@
     <li><Checkbox class="p-3">React</Checkbox></li>
     <li><Checkbox class="p-3">Angular</Checkbox></li>
   </Listgroup>
-  
+
   <p class="my-2">Choices: {group.join(", ")}</p>
   <Listgroup class="w-48">
     <Checkbox bind:group {choices} class="p-3" />
   </Listgroup>
 </div>
 
-<h2 class="text-2xl my-4">Horizontal list group</h2>
+<h2 class="my-4 text-2xl">Horizontal list group</h2>
 <div>
   <p class="mb-4 font-semibold text-gray-900 dark:text-white">Identification</p>
   <ul class="w-full items-center divide-x divide-gray-200 rounded-lg border border-gray-200 sm:flex rtl:divide-x-reverse dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800">
@@ -112,8 +112,8 @@
   </ul>
 </div>
 
-<h2 class="text-2xl my-4">Checkbox dropdown</h2>
-<div class="flex justify-center items-start h-96">
+<h2 class="my-4 text-2xl">Checkbox dropdown</h2>
+<div class="flex h-96 items-start justify-center">
   <Button>Project users<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <Dropdown>
     <div class="p-3">
@@ -145,7 +145,7 @@
   </Dropdown>
 </div>
 
-<h2 class="text-2xl my-4">Inline layout</h2>
+<h2 class="my-4 text-2xl">Inline layout</h2>
 <div>
   <div class="flex gap-3">
     <Checkbox>Inline 1</Checkbox>
@@ -153,7 +153,7 @@
     <Checkbox checked>Inline checked</Checkbox>
     <Checkbox disabled>Inline disabled</Checkbox>
   </div>
-  
+
   <div class="mt-4">
     <Checkbox inline class="me-2">Inline 1</Checkbox>
     <Checkbox inline class="me-2">Inline 2</Checkbox>
@@ -162,7 +162,7 @@
   </div>
 </div>
 
-<h2 class="text-2xl my-4">Colors</h2>
+<h2 class="my-4 text-2xl">Colors</h2>
 <div>
   <div class="flex gap-4">
     <Checkbox checked color="red">Red</Checkbox>
@@ -178,7 +178,7 @@
   </div>
 </div>
 
-<h2 class="text-2xl my-4">CheckboxButton</h2>
+<h2 class="my-4 text-2xl">CheckboxButton</h2>
 <div class="space-y-4">
   <div>
     <CheckboxButton bind:group value="Apple"><AppleSolid class="me-2 h-6 w-6" />Apple</CheckboxButton>
@@ -195,7 +195,7 @@
   </ButtonGroup>
 </div>
 
-<h2 class="text-2xl my-4">Advanced layout</h2>
+<h2 class="my-4 text-2xl">Advanced layout</h2>
 <div>
   <p class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Choose technology:</p>
   <div class="grid w-full gap-6 md:grid-cols-3">
@@ -223,7 +223,7 @@
   </div>
 </div>
 
-<h2 class="text-2xl my-4">Group variable</h2>
+<h2 class="my-4 text-2xl">Group variable</h2>
 <div>
   <div class="flex gap-2">
     <Checkbox name="flavours" choices={choicesNumbers} bind:group={groupNumbers} />

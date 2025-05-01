@@ -2,7 +2,7 @@
   "name": "NavBrand",
   "type": {
     "name": "NavBrandProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L914"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L915"
   },
   "props": [
     ["children", ""],

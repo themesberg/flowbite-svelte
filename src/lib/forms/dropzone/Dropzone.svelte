@@ -34,12 +34,12 @@
 
   const onDrop: DragEventHandler<HTMLButtonElement> = function (this: Window, event) {
     event.preventDefault();
-    
+
     // When files are dropped, update the files binding
     if (event.dataTransfer?.files && event.dataTransfer.files.length > 0) {
       files = event.dataTransfer.files;
     }
-    
+
     // Then call any custom ondrop handler
     if (ondrop) {
       ondrop.call(this, event);

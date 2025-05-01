@@ -15,7 +15,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[AnchorProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1494)
+[AnchorProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1495)
 ## Props
 @prop children
 @prop color = "primary"

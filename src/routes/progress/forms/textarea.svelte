@@ -1,27 +1,20 @@
 <script>
   import { Textarea, Label, Toolbar, ToolbarGroup, ToolbarButton, Button, Alert } from "$lib";
-  import { 
-    PaperClipOutline, 
-    MapPinAltSolid, 
-    ImageOutline, 
-    CodeOutline, 
-    FaceGrinOutline, 
-    PaperPlaneOutline 
-  } from "flowbite-svelte-icons";
+  import { PaperClipOutline, MapPinAltSolid, ImageOutline, CodeOutline, FaceGrinOutline, PaperPlaneOutline } from "flowbite-svelte-icons";
 </script>
 
-<h1 class="text-3xl my-4">Textarea</h1>
+<h1 class="my-4 text-3xl">Textarea</h1>
 
 <p>The textarea component is a multi-line text field input that can be used to receive longer chunks of text from the user in the form of a comment box, description field, and more.</p>
 
-<h2 class="text-2xl my-4">Textarea example</h2>
+<h2 class="my-4 text-2xl">Textarea example</h2>
 
 <div class="example-container my-4">
   <Label for="textarea-id" class="mb-2">Your message</Label>
   <Textarea id="textarea-id" placeholder="Your message" rows={4} name="message" />
 </div>
 
-<h2 class="text-2xl my-4">WYSIWYG Editor</h2>
+<h2 class="my-4 text-2xl">WYSIWYG Editor</h2>
 
 <div class="example-container my-4">
   <form>
@@ -48,7 +41,7 @@
   </form>
 </div>
 
-<h2 class="text-2xl my-4">Comment box</h2>
+<h2 class="my-4 text-2xl">Comment box</h2>
 
 <div class="example-container my-4 space-y-4">
   <form>
@@ -66,11 +59,12 @@
     </Textarea>
   </form>
   <p class="ms-auto text-xs text-gray-500 dark:text-gray-400">
-    Remember, contributions to this topic should follow our <a href="/" class="text-primary-600 dark:text-primary-500 hover:underline">Community Guidelines</a>.
+    Remember, contributions to this topic should follow our <a href="/" class="text-primary-600 dark:text-primary-500 hover:underline">Community Guidelines</a>
+    .
   </p>
 </div>
 
-<h2 class="text-2xl my-4">Chatroom input</h2>
+<h2 class="my-4 text-2xl">Chatroom input</h2>
 
 <div class="example-container my-4 space-y-4">
   <form>

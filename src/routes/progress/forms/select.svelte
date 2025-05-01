@@ -5,7 +5,7 @@
   import Germany from "../../utils/icons/Germany.svelte";
   import Italy from "../../utils/icons/Italy.svelte";
   import China from "../../utils/icons/China.svelte";
-  
+
   let selected = "";
   let countries = [
     { value: "us", name: "United States" },
@@ -13,7 +13,7 @@
     { value: "de", name: "Germany" },
     { value: "fr", name: "France", disabled: true }
   ];
-  
+
   let states = [
     { value: "CA", name: "California" },
     { value: "TX", name: "Texas" },
@@ -23,7 +23,7 @@
     { value: "GE", name: "Georgia" },
     { value: "MI", name: "Michigan" }
   ];
-  
+
   let multiSelected: string[] = [];
   let multiCountries = [
     { value: "us", name: "United States" },
@@ -32,7 +32,7 @@
     { value: "jp", name: "Japan" },
     { value: "en", name: "England" }
   ];
-  
+
   let multiDisabledCountries = [
     { value: "us", name: "United States" },
     { value: "ca", name: "Canada" },
@@ -40,7 +40,7 @@
     { value: "jp", name: "Japan", disabled: true },
     { value: "en", name: "England", disabled: true }
   ];
-  
+
   let colorCountries: SelectOptionType<string>[] = [
     { value: "us", name: "United States", color: "indigo" },
     { value: "ca", name: "Canada", color: "green" },
@@ -48,16 +48,16 @@
     { value: "jp", name: "Japan", color: "red" },
     { value: "en", name: "England", color: "yellow" }
   ];
-  
+
   let preselected: string[] = ["us", "fr"];
   let placeholder = "placeholder text";
 </script>
 
-<h1 class="text-3xl my-4">Select</h1>
+<h1 class="my-4 text-3xl">Select</h1>
 
 <p>The select input component can be used to gather information from users based on multiple options in the form of a dropdown list and by browsing this page you will find multiple options, styles, sizes, and variants built with the utility classes from Tailwind CSS also available in dark mode.</p>
 
-<h2 class="text-2xl my-4">Select input example</h2>
+<h2 class="my-4 text-2xl">Select input example</h2>
 
 <div class="example-container my-4">
   <Label>
@@ -66,21 +66,21 @@
   </Label>
 </div>
 
-<h2 class="text-2xl my-4">Disabled state</h2>
+<h2 class="my-4 text-2xl">Disabled state</h2>
 
 <div class="example-container my-4">
   <Label for="select-disabled" class="mb-2">Disabled select</Label>
   <Select id="select-disabled" disabled items={countries} placeholder="You can't select anything..." />
 </div>
 
-<h2 class="text-2xl my-4">Underline select</h2>
+<h2 class="my-4 text-2xl">Underline select</h2>
 
 <div class="example-container my-4">
   <Label for="select-underline" class="sr-only">Underline select</Label>
   <Select id="select-underline" underline class="mt-2" items={countries} />
 </div>
 
-<h2 class="text-2xl my-4">Select with dropdown</h2>
+<h2 class="my-4 text-2xl">Select with dropdown</h2>
 
 <div class="example-container my-4 h-64">
   <div class="flex">
@@ -111,7 +111,7 @@
   </div>
 </div>
 
-<h2 class="text-2xl my-4">Sizes</h2>
+<h2 class="my-4 text-2xl">Sizes</h2>
 
 <div class="example-container my-4">
   <Label for="select-sm" class="mb-2">Small select</Label>
@@ -129,7 +129,7 @@
   <Select id="select-lg" underline size="lg" items={countries} class="mb-6" />
 </div>
 
-<h2 class="text-2xl my-4">Custom options</h2>
+<h2 class="my-4 text-2xl">Custom options</h2>
 
 <div class="example-container my-4">
   <Label for="countries">Select an option</Label>
@@ -142,34 +142,33 @@
   </Select>
 </div>
 
-<h2 class="text-2xl my-4">MultiSelect</h2>
+<h2 class="my-4 text-2xl">MultiSelect</h2>
 
-<h3 class="text-xl my-3">Basic example</h3>
-
-<div class="example-container my-4 h-80">
-  <MultiSelect items={multiCountries} value={multiSelected}  size="lg" />
-</div>
-
-<h3 class="text-xl my-3">Placeholder</h3>
+<h3 class="my-3 text-xl">Basic example</h3>
 
 <div class="example-container my-4 h-80">
-  <MultiSelect items={multiCountries} value={multiSelected}
-   size="lg" {placeholder} />
+  <MultiSelect items={multiCountries} value={multiSelected} size="lg" />
 </div>
 
-<h3 class="text-xl my-3">Disabled select</h3>
+<h3 class="my-3 text-xl">Placeholder</h3>
+
+<div class="example-container my-4 h-80">
+  <MultiSelect items={multiCountries} value={multiSelected} size="lg" {placeholder} />
+</div>
+
+<h3 class="my-3 text-xl">Disabled select</h3>
 
 <div class="example-container my-4 h-80">
   <MultiSelect disabled items={multiCountries} value={multiSelected} size="lg" />
 </div>
 
-<h3 class="text-xl my-3">Disabled option</h3>
+<h3 class="my-3 text-xl">Disabled option</h3>
 
 <div class="example-container my-4 h-80">
   <MultiSelect items={multiDisabledCountries} value={multiSelected} size="lg" />
 </div>
 
-<h3 class="text-xl my-3">Pre-select values</h3>
+<h3 class="my-3 text-xl">Pre-select values</h3>
 
 <div class="example-container my-4 h-96">
   <MultiSelect items={colorCountries} value={preselected}>
@@ -181,21 +180,23 @@
   </MultiSelect>
 </div>
 
-<h3 class="text-xl my-3">Keyboard Usage</h3>
+<h3 class="my-3 text-xl">Keyboard Usage</h3>
 
 <p>
-  Some keyboard interaction was implemented. Use 
-  <span class="inline-flex items-center justify-center p-1.5 bg-gray-200 dark:bg-gray-600 rounded"><ArrowUpOutline class="inline-block"/></span>/
-  <span class="inline-flex items-center justify-center p-1.5 bg-gray-200 dark:bg-gray-600 rounded"><ArrowDownOutline class="inline-block"/></span> 
-  to highlight an item, then press 
-  <span class="inline-flex items-center justify-center p-1.5 bg-gray-200 dark:bg-gray-600 rounded">Enter</span> or 
-  <span class="inline-flex items-center justify-center p-1.5 bg-gray-200 dark:bg-gray-600 rounded">SpaceBar</span> 
-  to toggle the highlighted item. Press 
-  <span class="inline-flex items-center justify-center p-1.5 bg-gray-200 dark:bg-gray-600 rounded">Esc</span> 
+  Some keyboard interaction was implemented. Use
+  <span class="inline-flex items-center justify-center rounded bg-gray-200 p-1.5 dark:bg-gray-600"><ArrowUpOutline class="inline-block" /></span>
+  /
+  <span class="inline-flex items-center justify-center rounded bg-gray-200 p-1.5 dark:bg-gray-600"><ArrowDownOutline class="inline-block" /></span>
+  to highlight an item, then press
+  <span class="inline-flex items-center justify-center rounded bg-gray-200 p-1.5 dark:bg-gray-600">Enter</span>
+  or
+  <span class="inline-flex items-center justify-center rounded bg-gray-200 p-1.5 dark:bg-gray-600">SpaceBar</span>
+  to toggle the highlighted item. Press
+  <span class="inline-flex items-center justify-center rounded bg-gray-200 p-1.5 dark:bg-gray-600">Esc</span>
   to close the selection pop-up.
 </p>
 
-<h3 class="text-xl my-3">Customization</h3>
+<h3 class="my-3 text-xl">Customization</h3>
 
 <div class="example-container my-4 h-96">
   <MultiSelect items={colorCountries} value={multiSelected}>

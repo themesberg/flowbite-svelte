@@ -41,7 +41,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[RatingProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1027)
+[RatingProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1028)
 ## Props
 @prop children
 @prop text

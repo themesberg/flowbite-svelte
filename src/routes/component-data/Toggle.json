@@ -2,7 +2,7 @@
   "name": "Toggle",
   "type": {
     "name": "ToggleProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L794"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L795"
   },
   "props": [
     ["children", ""],

@@ -2,7 +2,7 @@
   "name": "Span",
   "type": {
     "name": "SpanProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1597"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1598"
   },
   "props": [
     ["children", ""],

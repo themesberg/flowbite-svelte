@@ -26,7 +26,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[TableBodyRowProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1308)
+[TableBodyRowProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1309)
 ## Props
 @prop children
 @prop class: className

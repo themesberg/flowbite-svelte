@@ -180,7 +180,7 @@ Get started with the default example of a select input component to get a single
 <script lang="ts">
   import { MultiSelect } from "flowbite-svelte";
 
-  let multiSelected: string[]=[]
+  let multiSelected: string[] = [];
   let countries: { value: string; name: string }[] = [
     { value: "us", name: "United States" },
     { value: "ca", name: "Canada" },

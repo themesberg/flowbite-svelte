@@ -17,7 +17,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[VideoProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1611)
+[VideoProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1612)
 ## Props
 @prop children
 @prop type = "video/mp4"

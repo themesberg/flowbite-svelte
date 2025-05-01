@@ -2,7 +2,7 @@
   "name": "Gallery",
   "type": {
     "name": "GalleryProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L811"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L812"
   },
   "props": [
     ["children", ""],

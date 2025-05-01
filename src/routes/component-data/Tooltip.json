@@ -2,7 +2,7 @@
   "name": "Tooltip",
   "type": {
     "name": "TooltipProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1487"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1488"
   },
   "props": [
     ["type", "\"dark\""],

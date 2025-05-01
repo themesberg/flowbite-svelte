@@ -1,11 +1,11 @@
 <script>
-  import { List, Li, Heading } from '$lib';
+  import { List, Li, Heading } from "$lib";
 </script>
 
-<h1 class="text-3xl my-4">Typography</h1>
+<h1 class="my-4 text-3xl">Typography</h1>
 
 <div class="example-container">
-  <h2 class="text-2xl my-4">Font Size</h2>
+  <h2 class="my-4 text-2xl">Font Size</h2>
   <p class="text-xs dark:text-white">Flowbite</p>
   <p class="text-sm dark:text-white">FlowBite</p>
   <p class="text-base dark:text-white">FlowBite</p>
@@ -22,7 +22,7 @@
 </div>
 
 <div class="example-container">
-  <h2 class="text-2xl my-4">Font Weight</h2>
+  <h2 class="my-4 text-2xl">Font Weight</h2>
   <p class="font-thin dark:text-white">FlowBite</p>
   <p class="font-extralight dark:text-white">FlowBite</p>
   <p class="font-light dark:text-white">FlowBite</p>
@@ -35,7 +35,7 @@
 </div>
 
 <div class="example-container">
-  <h2 class="text-2xl my-4">Line Height</h2>
+  <h2 class="my-4 text-2xl">Line Height</h2>
   <p class="leading-none dark:text-gray-400">Themesberg was created to bring quality ...</p>
   <p class="leading-tight dark:text-gray-400">Themesberg was created to bring quality ...</p>
   <p class="leading-snug dark:text-gray-400">Themesberg was created to bring quality ...</p>
@@ -45,7 +45,7 @@
 </div>
 
 <div class="example-container">
-  <h2 class="text-2xl my-4">Lists</h2>
+  <h2 class="my-4 text-2xl">Lists</h2>
   <Heading tag="h5">List disc</Heading>
   <List class="list-disc">
     <Li>Design</Li>
@@ -67,7 +67,7 @@
 </div>
 
 <div class="example-container">
-  <h2 class="text-2xl my-4">List position</h2>
+  <h2 class="my-4 text-2xl">List position</h2>
   <Heading tag="h5">List inside</Heading>
   <List position="inside">
     <Li>Design</Li>
@@ -83,7 +83,7 @@
 </div>
 
 <div class="example-container">
-  <h2 class="text-2xl my-4">Text Decoration</h2>
+  <h2 class="my-4 text-2xl">Text Decoration</h2>
   <p class="underline dark:text-gray-400">please read our terms and services</p>
   <p class="line-through dark:text-gray-400">please read our terms and services</p>
 </div>

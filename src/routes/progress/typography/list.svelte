@@ -1,14 +1,14 @@
 <script>
-  import { List, Li, DescriptionList, Heading, Span, A } from '$lib';
-  import { CheckCircleSolid, CloseCircleSolid, CheckOutline } from 'flowbite-svelte-icons';
+  import { List, Li, DescriptionList, Heading, Span, A } from "$lib";
+  import { CheckCircleSolid, CloseCircleSolid, CheckOutline } from "flowbite-svelte-icons";
 </script>
 
-<h1 class="text-3xl my-4">Svelte Lists</h1>
+<h1 class="my-4 text-3xl">Svelte Lists</h1>
 
-<h2 class="text-2xl my-4">Unordored list</h2>
+<h2 class="my-4 text-2xl">Unordored list</h2>
 
 <div>
-  <Heading tag="h2" class="text-lg font-semibold mb-2 text-lg font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
+  <Heading tag="h2" class="mb-2 text-lg text-lg font-semibold font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
   <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400">
     <Li>At least 10 characters (and up to 100 characters)</Li>
     <Li>At least one lowercase character</Li>
@@ -19,7 +19,7 @@
 <h3>Icons</h3>
 
 <div>
-  <Heading tag="h2" class="text-lg font-semibold mb-2 text-lg font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
+  <Heading tag="h2" class="mb-2 text-lg text-lg font-semibold font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
   <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400">
     <Li icon>
       <CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />
@@ -70,7 +70,7 @@
 <h3>Unstyled</h3>
 
 <div>
-  <Heading tag="h2" class="text-lg font-semibold mb-2 text-lg font-semibold  text-gray-900 dark:text-white">Password requirements</Heading>
+  <Heading tag="h2" class="mb-2 text-lg text-lg font-semibold font-semibold  text-gray-900 dark:text-white">Password requirements</Heading>
   <List tag="dl" class="space-y-1 text-gray-500 dark:text-gray-400">
     <Li>At least 10 characters (and up to 100 characters)</Li>
     <Li>At least one lowercase character</Li>
@@ -78,10 +78,10 @@
   </List>
 </div>
 
-<h2 class="text-2xl my-4">Ordered list</h2>
+<h2 class="my-4 text-2xl">Ordered list</h2>
 
 <div>
-  <Heading tag="h2" class="text-lg font-semibold mb-2 text-lg font-semibold  text-gray-900 dark:text-white">Top students:</Heading>
+  <Heading tag="h2" class="mb-2 text-lg text-lg font-semibold font-semibold  text-gray-900 dark:text-white">Top students:</Heading>
   <List tag="ol" class="space-y-1 text-gray-500 dark:text-gray-400">
     <Li><Span>Bonnie Green</Span> with <Span>70</Span> points</Li>
     <Li><Span>Jese Leos</Span> with <Span>63</Span> points</Li>
@@ -120,7 +120,7 @@
   </List>
 </div>
 
-<h2 class="text-2xl my-4">Description List</h2>
+<h2 class="my-4 text-2xl">Description List</h2>
 
 <div>
   <List tag="dl" class="divide-y divide-gray-200 text-gray-900 dark:divide-gray-700  dark:text-white">
@@ -139,7 +139,7 @@
   </List>
 </div>
 
-<h2 class="text-2xl my-4">List with icon</h2>
+<h2 class="my-4 text-2xl">List with icon</h2>
 
 <div>
   <List tag="ul" class="mb-8 space-y-4 text-gray-500 dark:text-gray-400">
@@ -166,7 +166,7 @@
   </List>
 </div>
 
-<h2 class="text-2xl my-4">Advanced layout</h2>
+<h2 class="my-4 text-2xl">Advanced layout</h2>
 
 <div>
   <List tag="dl" class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
@@ -233,27 +233,27 @@
   </List>
 </div>
 
-<h2 class="text-2xl my-4">Horizontal List</h2>
+<h2 class="my-4 text-2xl">Horizontal List</h2>
 
 <div>
   <List tag="dl" class="mb-6 flex flex-wrap items-center justify-center">
     <Li>
-      <A href="/" class="me-4 hover:underline md:me-6 text-gray-700 dark:text-white">About</A>
+      <A href="/" class="me-4 text-gray-700 hover:underline md:me-6 dark:text-white">About</A>
     </Li>
     <Li>
-      <A href="/" class="me-4 hover:underline md:me-6 text-gray-700 dark:text-white">Premium</A>
+      <A href="/" class="me-4 text-gray-700 hover:underline md:me-6 dark:text-white">Premium</A>
     </Li>
     <Li>
-      <A href="/" class="me-4 hover:underline md:me-6 text-gray-700 dark:text-white">Campaigns</A>
+      <A href="/" class="me-4 text-gray-700 hover:underline md:me-6 dark:text-white">Campaigns</A>
     </Li>
     <Li>
-      <A href="/" class="me-4 hover:underline md:me-6 text-gray-700 dark:text-white">Blog</A>
+      <A href="/" class="me-4 text-gray-700 hover:underline md:me-6 dark:text-white">Blog</A>
     </Li>
     <Li>
-      <A href="/" class="me-4 hover:underline md:me-6 text-gray-700 dark:text-white">Affiliate Program</A>
+      <A href="/" class="me-4 text-gray-700 hover:underline md:me-6 dark:text-white">Affiliate Program</A>
     </Li>
     <Li>
-      <A href="/" class="me-4 hover:underline md:me-6 text-gray-700 dark:text-white">FAQs</A>
+      <A href="/" class="me-4 text-gray-700 hover:underline md:me-6 dark:text-white">FAQs</A>
     </Li>
   </List>
 </div>
