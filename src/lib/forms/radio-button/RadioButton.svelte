@@ -6,11 +6,32 @@
 
   let { children, group = $bindable<T>(), value = $bindable<T>(), inline, pill, outline, size, color, shadow, class: className, ...restProps }: RadioButtonProps<T> = $props();
 
+  let inputEl: HTMLInputElement;
   let base = $derived(radioButton({ inline, checked: value == group, class: clsx(className) }));
+
+  function clickHandler() {
+    inputEl?.click(); // manually trigger the click on the hidden input
+  }
 </script>
 
-<Button tag="label" checked={value === group} {pill} {outline} {size} {color} {shadow} class={base}>
-  <input type="radio" bind:group {value} {...restProps} class="sr-only" />
+<Button
+  tag="label"
+  onclick={clickHandler}
+  {pill}
+  {outline}
+  {size}
+  {color}
+  {shadow}
+  class={base}
+>
+  <input
+    bind:this={inputEl}
+    type="radio"
+    class="sr-only"
+    value={value}
+    bind:group={group}
+    {...restProps}
+  />
   {@render children?.()}
 </Button>
 
