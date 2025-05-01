@@ -67,7 +67,7 @@ Get started with the default toggle component example as a checkbox element to r
 <Toggle size="small">Small toggle</Toggle>
 <Toggle size="default" checked>Default toggle</Toggle>
 <Toggle size="large" checked>Large toggle</Toggle>
-<Toggle size="custom" {customSize}>Custom toggle</Toggle>
+<Toggle size={undefined} spanClass={customSize}>Custom toggle</Toggle>
 ```
 
 ## Label for off state
@@ -91,7 +91,7 @@ Get started with the default toggle component example as a checkbox element to r
 <script lang="ts">
   import { Input, Label, Button, Toggle } from "flowbite-svelte";
   let isDisabled = $state(false);
-  let checked: boolean = $state();
+  let checked: boolean = $state(false);
   const handleClick = () => {
     isDisabled = !isDisabled;
   };

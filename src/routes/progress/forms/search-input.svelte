@@ -1,69 +1,9 @@
----
-layout: componentLayout
-title: Svelte Search Input - Flowbite
-breadcrumb_title: Svelte Search Input
-component_title: Search Input
-dir: Forms
-description: Use the search input component as a text field to allow users to enter search queries and receive relevant page results available in multiple styles and sizes
----
+<script lang="ts">
 
-<script>
-  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
-  import { Badge, A } from '$lib'
-  import componentData1 from '../../component-data/Search.json'
   const components = 'Search'
-</script>
 
-The search input component can be used to let your users search through your website using string queries and it comes in multiple styles, variants, and sizes built with the utility classes from Tailwind CSS.
-
-You will also find more advanced search components on this page including dropdown category selections, search buttons positioned inside the input field, voice search fields and more.
-
-## Setup
-
-```svelte example hideOutput
-<script>
-  import { Search } from "flowbite-svelte";
-</script>
-```
-
-## Search bar example
-
-```svelte example class="flex flex-col gap-4"
-<script>
-  import { Search, Button } from "flowbite-svelte";
-</script>
-
-<Search>
-  <Button class="me-1">Search</Button>
-</Search>
-```
-
-## Simple search input
-
-Use the simplest form of a search input component with an icon and a search button next to the text field.
-
-```svelte example class="flex flex-col gap-4"
-<script>
-  import { Search, Button } from "flowbite-svelte";
-  import { SearchOutline } from "flowbite-svelte-icons";
-</script>
-
-<form class="flex gap-2">
-  <Search size="md" />
-  <Button class="p-2.5!">
-    <SearchOutline class="h-6 w-6" />
-  </Button>
-</form>
-```
-
-## Search with dropdown
-
-Use this search component with a dropdown to let your users select a category in which they would like the search query to be targeted in.
-
-```svelte example class="flex flex-col gap-4 h-72"
-<script>
-  import { Search, Button, Dropdown, DropdownItem } from "flowbite-svelte";
-  import { SearchOutline, ChevronDownOutline } from "flowbite-svelte-icons";
+  import { Search, Button, Dropdown, DropdownItem, P } from "$lib";
+  import { SearchOutline, ChevronDownOutline, MicrophoneSolid } from "flowbite-svelte-icons";
 
   const items = [
     {
@@ -84,43 +24,6 @@ Use this search component with a dropdown to let your users select a category in
   ];
 
   let selectCategory = $state("All categories");
-</script>
-
-<form class="flex">
-  <div class="relative">
-    <Button class="border-primary-700 rounded-e-none border border-e-0 whitespace-nowrap">
-      {selectCategory}
-      <ChevronDownOutline class="ms-2.5 h-6 w-6" />
-    </Button>
-    <Dropdown simple class="w-40">
-      {#each items as { label }}
-        <DropdownItem
-          onclick={() => {
-            selectCategory = label;
-          }}
-          class={selectCategory === label ? "underline" : ""}
-        >
-          {label}
-        </DropdownItem>
-      {/each}
-    </Dropdown>
-  </div>
-  <Search size="md" class="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
-  <Button class="rounded-s-none p-2.5!">
-    <SearchOutline class="h-6 w-6" />
-  </Button>
-</form>
-```
-
-## Location search
-
-Use this example where you can select a country in which you want to search for an address or city.
-
-```svelte example class="flex flex-col gap-4 h-72"
-<script>
-  import { Search, Button, Dropdown, DropdownItem } from "flowbite-svelte";
-  import { SearchOutline, ChevronDownOutline } from "flowbite-svelte-icons";
-
   const countries = [
     {
       label: "United States",
@@ -147,7 +50,83 @@ Use this example where you can select a country in which you want to search for 
   let selectCountry = $state("USA");
 
   let buttonLabel = $derived(countries.find(({ labelSelected }) => labelSelected === selectCountry));
+
+  function handleVoiceBtn() {
+    alert("You clicked voice button");
+  }
+
+let value = $state("");
+
+const submitted = (e: Event) => {
+  e.preventDefault();
+  alert(`You are searching: ${value}`);
+};
 </script>
+
+The search input component can be used to let your users search through your website using string queries and it comes in multiple styles, variants, and sizes built with the utility classes from Tailwind CSS.
+
+You will also find more advanced search components on this page including dropdown category selections, search buttons positioned inside the input field, voice search fields and more.
+
+
+## Search bar example
+
+<div class="m-8">
+<Search>
+  <Button class="me-1">Search</Button>
+</Search>
+</div>
+
+## Simple search input
+
+Use the simplest form of a search input component with an icon and a search button next to the text field.
+
+<div class="m-8">
+
+<form class="flex gap-2">
+  <Search size="md" />
+  <Button class="p-2.5!">
+    <SearchOutline class="h-6 w-6" />
+  </Button>
+</form>
+</div>
+
+## Search with dropdown
+
+Use this search component with a dropdown to let your users select a category in which they would like the search query to be targeted in.
+
+<div class="m-8">
+
+<form class="flex">
+  <div class="relative">
+    <Button class="border-primary-700 rounded-e-none border border-e-0 whitespace-nowrap">
+      {selectCategory}
+      <ChevronDownOutline class="ms-2.5 h-6 w-6" />
+    </Button>
+    <Dropdown simple class="w-40">
+      {#each items as { label }}
+        <DropdownItem
+          onclick={() => {
+            selectCategory = label;
+          }}
+          class={selectCategory === label ? "underline" : ""}
+        >
+          {label}
+        </DropdownItem>
+      {/each}
+    </Dropdown>
+  </div>
+  <Search size="md" class="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
+  <Button class="rounded-s-none p-2.5!">
+    <SearchOutline class="h-6 w-6" />
+  </Button>
+</form>
+</div>
+
+## Location search
+
+Use this example where you can select a country in which you want to search for an address or city.
+
+<div class="m-8">
 
 <form class="flex">
   <div class="relative">
@@ -175,20 +154,13 @@ Use this example where you can select a country in which you want to search for 
     <SearchOutline class="h-6 w-6" />
   </Button>
 </form>
-```
+</div>
 
 ## Voice Search
 
 Get started with this example if you would like to enable voice search for your website and users.
 
-```svelte example class="space-y-4"
-<script>
-  import { Search, Button } from "flowbite-svelte";
-  import { MicrophoneSolid, SearchOutline } from "flowbite-svelte-icons";
-  function handleVoiceBtn() {
-    alert("You clicked voice button");
-  }
-</script>
+<div class="m-8">
 
 <form class="flex gap-2">
   <Search size="md" class="flex items-center gap-2" placeholder="Search Mockups, Logos, Design Templates...">
@@ -201,37 +173,18 @@ Get started with this example if you would like to enable voice search for your 
     Search
   </Button>
 </form>
-```
+</div>
+
+## Events
+
 
 ## Example
 
-```svelte example class="space-y-4"
-<script lang="ts">
-  import { Search, Button, P } from "$lib";
-
-  let value = $state("");
-
-  const submitted = (e: Event) => {
-    e.preventDefault();
-    alert(`You are searching: ${value}`);
-  };
-</script>
+<div class="m-8">
 
 <form id="example-form" onsubmit={submitted}>
   <Search bind:value />
   <P class="my-1">You are searching: {value}</P>
   <Button type="submit">Submit</Button>
 </form>
-```
-
-## Component data
-
-The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
-
-<CompoAttributesViewer {components}/>
-
-## References
-
-- [Flowbite Search Input](https://flowbite.com/docs/forms/search-input/)
-
-<GitHubCompoLinks {components}/>
+</div>

@@ -1,36 +1,7 @@
----
-layout: componentLayout
-title: Svelte Mega Menu - Flowbite
-breadcrumb_title: Svelte Mega Menu
-component_title: Mega menu
-dir: Components
-description: Use the mega menu component as a full-width dropdown inside the navbar to show a list of menu items based on multiple sizes, variants, and styles
----
-
 <script>
-  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils';
-  import { P, A } from '$lib';
-  const dirName = toKebabCase(component_title)
-</script>
 
-The mega menu component is a full-width dropdown that can be triggered by clicking on the menu item and it shows a list of links that you can use to navigate through the pages on a website.
-
-## Setup
-
-```svelte example hideOutput
-<script>
-  import { MegaMenu } from "flowbite-svelte";
-</script>
-```
-
-## Default mega menu
-
-Use this example to show a list of links aligned on three columns inside the mega menu dropdown.
-
-```svelte example class="h-[30rem] md:h-80"
-<script lang="ts">
-  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from "flowbite-svelte";
-  import { ChevronDownOutline } from "flowbite-svelte-icons";
+  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, Button } from "$lib";
+  import { ChevronDownOutline, ArrowRightOutline, UserCircleOutline } from "flowbite-svelte-icons";
   let menu = [
     { name: "About us", href: "/about" },
     { name: "Blog", href: "/blog" },
@@ -45,7 +16,59 @@ Use this example to show a list of links aligned on three columns inside the meg
     { name: "License", href: "/license" }
   ];
   let open = $state();
+  let menu1 = [
+    { name: "About us", href: "/about", icon: UserCircleOutline },
+    { name: "Blog", href: "/blog", icon: UserCircleOutline },
+    { name: "Contact us", href: "/contact", icon: UserCircleOutline },
+    { name: "Library", href: "/library", icon: UserCircleOutline },
+    { name: "Newsletter", href: "/news", icon: UserCircleOutline },
+    { name: "Support Center", href: "/support", icon: UserCircleOutline },
+    { name: "Resources", href: "/resource", icon: UserCircleOutline },
+    { name: "Playground", href: "/play", icon: UserCircleOutline },
+    { name: "Terms", href: "/tersm", icon: UserCircleOutline },
+    { name: "Pro Version", href: "/pro", icon: UserCircleOutline },
+    { name: "License", href: "/license", icon: UserCircleOutline }
+  ];
+  let menu2 = [
+    { name: "Online Stores", help: "Connect with third-party tools that you're already using." },
+    { name: "Segmentation", help: "Connect with third-party tools that you're already using." },
+    { name: "Marketing CRM", help: "Connect with third-party tools that you're already using." },
+
+    { name: "Online Stores", help: "Connect with third-party tools that you're already using." },
+    { name: "Segmentation", help: "Connect with third-party tools that you're already using." },
+    { name: "Marketing CRM", help: "Connect with third-party tools that you're already using." },
+
+    { name: "Audience Management", help: "Connect with third-party tools that you're already using." },
+    { name: "Creative Tools", help: "Connect with third-party tools that you're already using." },
+    { name: "Marketing Automation", help: "Connect with third-party tools that you're already using." }
+  ];
+  let menu3 = [
+    { name: "About us", href: "/about" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contact us", href: "/contact" },
+    { name: "Library", href: "/library" },
+    { name: "Newsletter", href: "/news" },
+    { name: "Support Center", href: "/support" },
+    { name: "Resources", href: "/resource" },
+    { name: "Playground", href: "/play" },
+    { name: "Terms", href: "/tersm" },
+    { name: "Pro Version", href: "/pro" },
+    { name: "License", href: "/license" }
+  ];
+
+  
 </script>
+
+The mega menu component is a full-width dropdown that can be triggered by clicking on the menu item and it shows a list of links that you can use to navigate through the pages on a website.
+
+## Setup
+
+
+## Default mega menu
+
+Use this example to show a list of links aligned on three columns inside the mega menu dropdown.
+
+<div class="my-8"> 
 
 <Navbar>
   <NavBrand href="/">
@@ -68,30 +91,13 @@ Use this example to show a list of links aligned on three columns inside the meg
     <NavLi href="/services">Contact</NavLi>
   </NavUl>
 </Navbar>
-```
+</div>
 
 ## Mega menu with icons
 
 This example of a mega menu dropdown can be used to also show an icon near the text of the link.
 
-```svelte example class="h-[30rem] md:h-80"
-<script lang="ts">
-  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from "flowbite-svelte";
-  import { ChevronDownOutline, UserCircleOutline } from "flowbite-svelte-icons";
-  let menu = [
-    { name: "About us", href: "/about", icon: UserCircleOutline },
-    { name: "Blog", href: "/blog", icon: UserCircleOutline },
-    { name: "Contact us", href: "/contact", icon: UserCircleOutline },
-    { name: "Library", href: "/library", icon: UserCircleOutline },
-    { name: "Newsletter", href: "/news", icon: UserCircleOutline },
-    { name: "Support Center", href: "/support", icon: UserCircleOutline },
-    { name: "Resources", href: "/resource", icon: UserCircleOutline },
-    { name: "Playground", href: "/play", icon: UserCircleOutline },
-    { name: "Terms", href: "/tersm", icon: UserCircleOutline },
-    { name: "Pro Version", href: "/pro", icon: UserCircleOutline },
-    { name: "License", href: "/license", icon: UserCircleOutline }
-  ];
-</script>
+<div class="my-8"> 
 
 <Navbar>
   <NavBrand href="/">
@@ -104,7 +110,7 @@ This example of a mega menu dropdown can be used to also show an icon near the t
     <NavLi class="cursor-pointer">
       Mega menu<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
     </NavLi>
-    <MegaMenu items={menu}>
+    <MegaMenu items={menu1}>
       {#snippet children({ item })}
         <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500 flex items-center">
           <span class="sr-only">{item.name}</span>
@@ -117,30 +123,13 @@ This example of a mega menu dropdown can be used to also show an icon near the t
     <NavLi href="/services">Contact</NavLi>
   </NavUl>
 </Navbar>
-```
+</div>
 
 ## Full width dropdown
 
 Use this example to show a mega menu dropdown that spans the entire width of the document page.
 
-```svelte example class="h-[55rem] md:h-[30rem] relative"
-<script>
-  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from "flowbite-svelte";
-  import { ChevronDownOutline } from "flowbite-svelte-icons";
-  let menu2 = [
-    { name: "Online Stores", help: "Connect with third-party tools that you're already using." },
-    { name: "Segmentation", help: "Connect with third-party tools that you're already using." },
-    { name: "Marketing CRM", help: "Connect with third-party tools that you're already using." },
-
-    { name: "Online Stores", help: "Connect with third-party tools that you're already using." },
-    { name: "Segmentation", help: "Connect with third-party tools that you're already using." },
-    { name: "Marketing CRM", help: "Connect with third-party tools that you're already using." },
-
-    { name: "Audience Management", help: "Connect with third-party tools that you're already using." },
-    { name: "Creative Tools", help: "Connect with third-party tools that you're already using." },
-    { name: "Marketing Automation", help: "Connect with third-party tools that you're already using." }
-  ];
-</script>
+<div class="my-8">
 
 <Navbar>
   <NavBrand href="/">
@@ -166,30 +155,13 @@ Use this example to show a mega menu dropdown that spans the entire width of the
     <NavLi href="/services">Contact</NavLi>
   </NavUl>
 </Navbar>
-```
+</div>
 
 ## Full width with CTA
 
 This example can be used to also show a CTA button or link next to the menu items inside the dropdown.
 
-```svelte example class="h-[40rem] md:h-96 relative"
-<script>
-  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from "flowbite-svelte";
-  import { ChevronDownOutline, ArrowRightOutline } from "flowbite-svelte-icons";
-  let menu = [
-    { name: "About us", href: "/about" },
-    { name: "Blog", href: "/blog" },
-    { name: "Contact us", href: "/contact" },
-    { name: "Library", href: "/library" },
-    { name: "Newsletter", href: "/news" },
-    { name: "Support Center", href: "/support" },
-    { name: "Resources", href: "/resource" },
-    { name: "Playground", href: "/play" },
-    { name: "Terms", href: "/tersm" },
-    { name: "Pro Version", href: "/pro" },
-    { name: "License", href: "/license" }
-  ];
-</script>
+<div class="my-8">
 
 <Navbar>
   <NavBrand href="/">
@@ -223,31 +195,13 @@ This example can be used to also show a CTA button or link next to the menu item
     <NavLi href="/services">Contact</NavLi>
   </NavUl>
 </Navbar>
-```
+</div>
 
 ## Full width with image
 
 This example can be used to also show a CTA with a backdround image inside the dropdown next to the other menu items and links.
 
-```svelte example class="h-[40rem] md:h-96 relative"
-<script>
-  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, Button } from "flowbite-svelte";
-  import { ChevronDownOutline } from "flowbite-svelte-icons";
-  let menu = [
-    { name: "About us", href: "/about" },
-    { name: "Blog", href: "/blog" },
-    { name: "Contact us", href: "/contact" },
-    { name: "Library", href: "/library" },
-    { name: "Newsletter", href: "/news" },
-    { name: "Support Center", href: "/support" },
-    { name: "Resources", href: "/resource" },
-    { name: "Playground", href: "/play" },
-    { name: "Terms", href: "/tersm" },
-    { name: "Pro Version", href: "/pro" },
-    { name: "License", href: "/license" }
-  ];
-</script>
-
+<div class="my-8"> 
 <Navbar>
   <NavBrand href="/">
     <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
@@ -259,7 +213,7 @@ This example can be used to also show a CTA with a backdround image inside the d
     <NavLi class="cursor-pointer">
       Mega menu<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
     </NavLi>
-    <MegaMenu full items={menu}>
+    <MegaMenu full items={menu3}>
       {#snippet children({ item })}
         <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500 hover:underline">
           {item.name}
@@ -277,16 +231,4 @@ This example can be used to also show a CTA with a backdround image inside the d
     <NavLi href="/services">Contact</NavLi>
   </NavUl>
 </Navbar>
-```
-
-## Component data
-
-The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
-
-<CompoAttributesViewer {dirName}/>
-
-## References
-
-- [Flowbite Mega Menu](https://flowbite.com/docs/components/list-group/)
-
-<GitHubCompoLinks />
+</div>
