@@ -34,7 +34,7 @@ Get started with the default example of a textarea component below.
 </script>
 
 <Label for="textarea-id" class="mb-2">Your message</Label>
-<Textarea id="textarea-id" placeholder="Your message" rows="4" name="message" />
+<Textarea id="textarea-id" placeholder="Your message" rows{4} name="message" />
 ```
 
 ## WYSIWYG Editor
@@ -49,7 +49,7 @@ If you want to add other actions as buttons alongside your textarea component, s
 
 <form>
   <label for="editor" class="sr-only">Publish post</label>
-  <Textarea id="editor" rows="8" class="mb-4" placeholder="Write a comment">
+  <Textarea id="editor" rows={8} class="mb-4" placeholder="Write a comment">
     {#snippet header()}
       <Toolbar embedded>
         <ToolbarGroup>
@@ -122,7 +122,7 @@ If you want to build a chatroom component you will usually want to use a textare
       <FaceGrinOutline class="h-6 w-6" />
       <span class="sr-only">Add emoji</span>
     </ToolbarButton>
-    <Textarea id="chat" class="mx-4 bg-white dark:bg-gray-800" rows="1" placeholder="Your message..." />
+    <Textarea id="chat" class="mx-4 bg-white dark:bg-gray-800" rows={1} placeholder="Your message..." />
     <ToolbarButton type="submit" color="blue" class="text-primary-600 dark:text-primary-500 rounded-full">
       <PaperPlaneOutline class="h-6 w-6 rotate-45" />
       <span class="sr-only">Send message</span>

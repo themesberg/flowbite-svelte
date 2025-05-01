@@ -9,8 +9,7 @@ description: Get started with a collection of input fields built with Tailwind C
 
 <script>
   import { TableProp, TableDefaultRow,  CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
-  import { onMount } from 'svelte';
-  import { Badge, A } from '$lib'
+  import { A } from '$lib'
 
   const components = 'Input, InputAddon'
 </script>
@@ -265,7 +264,7 @@ This example shows how to add `onclick` event handler to the icon in `Input`. By
 
 ```svelte example class="gap-6"
 <script>
-  import { Button, Label, Input, ButtonGroup, InputAddon, ToolbarButton } from "flowbite-svelte";
+  import { Button, Label, Input, ButtonGroup, InputAddon } from "flowbite-svelte";
   import { EyeOutline, EyeSlashOutline } from "flowbite-svelte-icons";
   let show = false;
   let show1 = false;
@@ -314,7 +313,7 @@ Use the helper prop to add your helper text. You can use HTML in the helper text
 
 <Label class="flex flex-col gap-2">
   <span>Your email</span>
-  <Input label="Email" id="email" name="email" required placeholder="name@flowbite.com" />
+  <Input id="email" name="email" required placeholder="name@flowbite.com" />
   <Helper class="text-sm">
     We’ll never share your details. Read our <a href="/" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Privacy Policy</a>
     .
@@ -374,10 +373,10 @@ Use this example to show a dropdown menu right next to the input field.
 </script>
 
 <ButtonGroup class="w-full">
-  <Button color="none" class="shrink-0 border border-gray-300 bg-gray-100 text-gray-900 hover:bg-gray-200 focus:ring-gray-300 dark:border-gray-700 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+  <Button color={undefined} class="shrink-0 border border-gray-300 bg-gray-100 text-gray-900 hover:bg-gray-200 focus:ring-gray-300 dark:border-gray-700 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800">
     All categories<ChevronDownOutline class="ms-2 h-6 w-6" />
   </Button>
-  <Dropdown>
+  <Dropdown simple>
     <DropdownItem>Shopping</DropdownItem>
     <DropdownItem>Images</DropdownItem>
     <DropdownItem>News</DropdownItem>

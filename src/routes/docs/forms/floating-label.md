@@ -10,7 +10,6 @@ thumnailSize: w-40
 
 <script>
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
-  import { Badge, A } from '$lib'
 
   const components = 'FloatingLabelInput, Helper'
 </script>
@@ -39,7 +38,7 @@ Get started with the following three styles for the floating label component and
 <div id="exampleWrapper" class="grid w-full items-end gap-6 md:grid-cols-3">
   <FloatingLabelInput variant="filled" id="floating_filled" name="floating_filled" type="text">Floating filled</FloatingLabelInput>
   <FloatingLabelInput variant="outlined" id="floating_outlined" name="floating_outlined" type="text">Floating outlined</FloatingLabelInput>
-  <FloatingLabelInput id="floating_standard" name="floating_standard" type="text" label="Floating standard">Floating standard</FloatingLabelInput>
+  <FloatingLabelInput id="floating_standard" name="floating_standard" type="text">Floating standard</FloatingLabelInput>
 </div>
 ```
 

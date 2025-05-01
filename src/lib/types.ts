@@ -672,7 +672,7 @@ export interface DropzoneProps extends HTMLInputAttributes {
 
 // fileupload
 export interface FileuploadProps extends Omit<HTMLInputAttributes, "size"> {
-  files?: FileList;
+  files?: FileList | null;
   size?: FileuploadViariants["size"];
   color?: InputProps<never>["color"];
   clearable?: boolean;
@@ -760,6 +760,7 @@ export type SelectOptionType<T> = {
   name: string | number;
   value: T;
   disabled?: boolean;
+  [key: string]: any;
 };
 
 export interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttributes, "size"> {

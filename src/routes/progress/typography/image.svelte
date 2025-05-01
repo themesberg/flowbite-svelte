@@ -1,5 +1,5 @@
 <script>
-  import { Img } from 'flowbite-svelte';
+  import { Img } from '$lib';
 </script>
 
 <h1 class="text-3xl my-4">Svelte Images</h1>

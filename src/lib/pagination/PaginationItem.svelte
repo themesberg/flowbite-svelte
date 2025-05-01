@@ -8,7 +8,7 @@
 
   const group = getContext<boolean>("group");
   const table = getContext<boolean>("table");
-  const paginationClass = $derived(paginationItem({ size, active, group, table, class: clsx(className) }));
+  const paginationClass = $derived(paginationItem({ size: getContext("size") ?? size, active, group, table, class: clsx(className) }));
 </script>
 
 {#if href}

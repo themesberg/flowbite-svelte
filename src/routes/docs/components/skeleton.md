@@ -35,7 +35,7 @@ Use the skeleton component to indicate a loading status with placeholder element
 <Skeleton size="md" class="my-8" />
 <Skeleton size="lg" class="my-8" />
 <Skeleton size="xl" class="my-8" />
-<Skeleton size="xxl" class="mt-8 mb-2.5" />
+<Skeleton size="2xl" class="mt-8 mb-2.5" />
 ```
 
 ## Image placeholder
@@ -63,7 +63,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 <VideoPlaceholder size="md" class="mt-8" />
 <VideoPlaceholder size="lg" class="mt-8" />
 <VideoPlaceholder size="xl" class="mt-8" />
-<VideoPlaceholder size="xxl" class="mt-8" />
+<VideoPlaceholder size="2xl" class="mt-8" />
 ```
 
 ## Text placeholder
@@ -77,7 +77,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 <TextPlaceholder size="md" class="mt-8" />
 <TextPlaceholder size="lg" class="mt-8" />
 <TextPlaceholder size="xl" class="mt-8" />
-<TextPlaceholder size="xxl" class="mt-8" />
+<TextPlaceholder size="2xl" class="mt-8" />
 ```
 
 ## Card placeholder
@@ -91,7 +91,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 <CardPlaceholder size="md" class="mt-8" />
 <CardPlaceholder size="lg" class="mt-8" />
 <CardPlaceholder size="xl" class="mt-8" />
-<CardPlaceholder size="xxl" class="mt-8" />
+<CardPlaceholder size="2xl" class="mt-8" />
 ```
 
 ## Widget placeholder

@@ -1,6 +1,5 @@
 <script>
-  import { Gallery, Button } from "flowbite-svelte";
-  import { P, A } from '$lib';
+  import { Gallery, Button } from "$lib";
   
   // Default gallery images
   const images = [

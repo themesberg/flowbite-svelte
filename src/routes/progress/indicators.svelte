@@ -1,5 +1,5 @@
 <script>
-  import { Indicator, Button, Avatar, Badge } from "flowbite-svelte";
+  import { Indicator, Button, Avatar, Badge } from "$lib";
   import { EnvelopeSolid, CheckCircleSolid } from "flowbite-svelte-icons";
 </script>
 

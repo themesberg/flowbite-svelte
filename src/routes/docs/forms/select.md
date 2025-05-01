@@ -204,11 +204,11 @@ If you want custom options, put them directly inside the component and leave the
 
 Get started with the default toggle component example as a checkbox element to receive a true or false selection from the user.
 
-```svelte example class="h-80"
-<script>
+```svelte example class="h-96"
+<script lang="ts">
   import { MultiSelect } from "flowbite-svelte";
 
-  let selected = [];
+  let multiSelected: string = [];
   let countries = [
     { value: "us", name: "United States" },
     { value: "ca", name: "Canada" },
@@ -218,12 +218,12 @@ Get started with the default toggle component example as a checkbox element to r
   ];
 </script>
 
-<MultiSelect items={countries} bind:value={selected} size="lg" />
+<MultiSelect items={countries} value={multiSelected} size="lg" />
 ```
 
 ### Placeholder
 
-```svelte example class="h-80"
+```svelte example class="h-96"
 <script>
   import { MultiSelect } from "flowbite-svelte";
 
@@ -238,12 +238,12 @@ Get started with the default toggle component example as a checkbox element to r
   ];
 </script>
 
-<MultiSelect items={countries} bind:value={selected} size="lg" {placeholder} />
+<MultiSelect items={countries} value={selected} size="lg" {placeholder} />
 ```
 
 ### Disabled select
 
-```svelte example class="h-80"
+```svelte example class="h-24"
 <script>
   import { MultiSelect } from "flowbite-svelte";
 
@@ -257,7 +257,7 @@ Get started with the default toggle component example as a checkbox element to r
   ];
 </script>
 
-<MultiSelect disabled items={countries} bind:value={selected} size="lg" />
+<MultiSelect disabled items={countries} value={selected} size="lg" />
 ```
 
 ### Disabled option
@@ -276,26 +276,32 @@ Get started with the default toggle component example as a checkbox element to r
   ];
 </script>
 
-<MultiSelect items={countries} bind:value={selected} size="lg" />
+<MultiSelect items={countries} value={selected} size="lg" />
 ```
 
 ### Pre-select values
 
-```svelte example class="h-96"
-<script>
-  import { MultiSelect } from "flowbite-svelte";
+```svelte example class="h-80"
+<script lang="ts">
+  import { MultiSelect, Badge, type SelectOptionType } from "flowbite-svelte";
 
-  let countries = [
+  let colorCountries: SelectOptionType<string>[] = [
     { value: "us", name: "United States", color: "indigo" },
     { value: "ca", name: "Canada", color: "green" },
     { value: "fr", name: "France", color: "blue" },
     { value: "jp", name: "Japan", color: "red" },
     { value: "en", name: "England", color: "yellow" }
   ];
-  let selected = ["us", "fr"];
+  let preselected: string[] = ["us", "fr"];
 </script>
 
-<MultiSelect items={countries} bind:value={selected} />
+<MultiSelect items={colorCountries} value={preselected}>
+  {#snippet children({ item, clear })}
+    <Badge color={item.color} dismissable params={{ duration: 100 }} onclose={clear}>
+      {item.name}
+    </Badge>
+  {/snippet}
+</MultiSelect>
 ```
 
 ### Keyboard Usage
@@ -309,11 +315,11 @@ To customize the look and feel use the `children` snippet to insert inner [`Badg
 Remember to connect the `clear` snippet's prop to trigger option removal.
 
 ```svelte example class="h-96"
-<script>
-  import { MultiSelect, Badge } from "flowbite-svelte";
+<script lang="ts">
+  import { MultiSelect, Badge, type SelectOptionType } from "flowbite-svelte";
 
   let selected = [];
-  let countries = [
+  let countries: SelectOptionType<string>[] = [
     { value: "us", name: "United States", color: "indigo" },
     { value: "ca", name: "Canada", color: "green" },
     { value: "fr", name: "France", color: "blue" },
@@ -322,9 +328,9 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
   ];
 </script>
 
-<MultiSelect items={countries} bind:value={selected}>
+<MultiSelect items={countries} value={selected}>
   {#snippet children({ item, clear })}
-    <Badge color={item.color} dismissable params={{ duration: 100 }} on:close={clear}>
+    <Badge color={item.color} dismissable params={{ duration: 100 }} onclose={clear}>
       {item.name}
     </Badge>
   {/snippet}

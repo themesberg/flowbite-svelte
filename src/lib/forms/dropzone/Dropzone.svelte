@@ -34,6 +34,13 @@
 
   const onDrop: DragEventHandler<HTMLButtonElement> = function (this: Window, event) {
     event.preventDefault();
+    
+    // When files are dropped, update the files binding
+    if (event.dataTransfer?.files && event.dataTransfer.files.length > 0) {
+      files = event.dataTransfer.files;
+    }
+    
+    // Then call any custom ondrop handler
     if (ondrop) {
       ondrop.call(this, event);
     }
@@ -59,10 +66,3 @@
 <label class="hidden">
   <input {...restProps} bind:files bind:this={input} onchange={onChange} type="file" />
 </label>
-
-<!--
-@component
-[Go to docs](https://flowbite-svelte-next.com/)
-## Props
-@props: 
--->

@@ -35,17 +35,17 @@ Use the following list of pagination items to indicate a series of content for y
 
   let activeUrl = $derived(page.url.searchParams.get("page"));
   let pages = $state([
-    { name: 1, href: "/docs/components/pagination?page=1" },
-    { name: 2, href: "/docs/components/pagination?page=2" },
-    { name: 3, href: "/docs/components/pagination?page=3" },
-    { name: 4, href: "/docs/components/pagination?page=4" },
-    { name: 5, href: "/docs/components/pagination?page=5" }
+    { name: "1", href: "/docs/components/pagination?page=1" },
+    { name: "2", href: "/docs/components/pagination?page=2" },
+    { name: "3", href: "/docs/components/pagination?page=3" },
+    { name: "4", href: "/docs/components/pagination?page=4" },
+    { name: "5", href: "/docs/components/pagination?page=5" }
   ]);
 
   $effect(() => {
     pages.forEach((page) => {
-      let splitUrl = page.href.split("?");
-      let queryString = splitUrl.slice(1).join("?");
+      let splitUrl = page.href?.split("?");
+      let queryString = splitUrl?.slice(1).join("?");
       const hrefParams = new URLSearchParams(queryString);
       let hrefValue = hrefParams.get("page");
       if (hrefValue === activeUrl) {
@@ -66,7 +66,7 @@ Use the following list of pagination items to indicate a series of content for y
 </script>
 
 <Pagination {pages} {previous} {next} />
-<Pagination {pages} large {previous} {next} />
+<Pagination {pages} size="large" {previous} {next} />
 ```
 
 ## Pagination with icons
@@ -126,8 +126,8 @@ Use the following markup to show simple previous and next elements.
   <PaginationItem onclick={next}>Next</PaginationItem>
 </div>
 <div class="flex space-x-3 rtl:space-x-reverse">
-  <PaginationItem large onclick={previous}>Previous</PaginationItem>
-  <PaginationItem large onclick={next}>Next</PaginationItem>
+  <PaginationItem size="large" onclick={previous}>Previous</PaginationItem>
+  <PaginationItem size="large" onclick={next}>Next</PaginationItem>
 </div>
 ```
 
@@ -148,21 +148,21 @@ Use the following code to show simple previous and next elements with icons.
 </script>
 
 <div class="flex space-x-3 rtl:space-x-reverse">
-  <PaginationItem class="flex items-center" {previous}>
+  <PaginationItem class="flex items-center" onclick={previous}>
     <ArrowLeftOutline class="me-2 h-3.5 w-3.5" />
     Previous
   </PaginationItem>
-  <PaginationItem class="flex items-center" {next}>
+  <PaginationItem class="flex items-center" onclick={next}>
     Next
     <ArrowRightOutline class="ms-2 h-3.5 w-3.5" />
   </PaginationItem>
 </div>
 <div class="flex space-x-3 rtl:space-x-reverse">
-  <PaginationItem large class="flex items-center" {previous}>
+  <PaginationItem size="large" class="flex items-center" onclick={previous}>
     <ArrowLeftOutline class="me-2 h-5 w-5" />
     Previous
   </PaginationItem>
-  <PaginationItem large class="flex items-center" {next}>
+  <PaginationItem size="large" class="flex items-center" onclick={next}>
     Next
     <ArrowRightOutline class="ms-2 h-5 w-5" />
   </PaginationItem>

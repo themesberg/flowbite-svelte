@@ -1,5 +1,5 @@
 <script>
-  import { List, Li, DescriptionList, Heading, Span, A } from 'flowbite-svelte';
+  import { List, Li, DescriptionList, Heading, Span, A } from '$lib';
   import { CheckCircleSolid, CloseCircleSolid, CheckOutline } from 'flowbite-svelte-icons';
 </script>
 

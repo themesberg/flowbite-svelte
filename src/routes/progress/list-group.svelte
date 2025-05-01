@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Listgroup, ListgroupItem, Avatar } from "flowbite-svelte";
+    import { Listgroup, ListgroupItem, Avatar } from "$lib";
   import { TrashBinSolid } from "flowbite-svelte-icons";
 
   let simpleList = ["Profile", "Settings", "Messages", "Download"];

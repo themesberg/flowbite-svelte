@@ -10,7 +10,6 @@ thumnailSize: w-48
 
 <script>
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
-  import { Badge, A } from '$lib'
   const components = 'Fileupload'
 </script>
 
@@ -39,9 +38,9 @@ The file input component can be used to upload one or more files from the device
 ## Clearable and multiple files
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Fileupload, Helper } from "flowbite-svelte";
-  let selectedFiles = $state();
+  let selectedFiles = $state<FileList | null>(null);
   let fileNames = $derived(
     selectedFiles
       ? Array.from(selectedFiles)
@@ -73,68 +72,59 @@ The file input component can be used to upload one or more files from the device
 ## Dropzone
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Dropzone } from "flowbite-svelte";
 
-  let value = [];
-  const dropHandle = (event) => {
-    value = [];
-    event.preventDefault();
-    if (event.dataTransfer.items) {
-      [...event.dataTransfer.items].forEach((item, i) => {
-        if (item.kind === "file") {
-          const file = item.getAsFile();
-          value.push(file.name);
-          value = value;
-        }
-      });
-    } else {
-      [...event.dataTransfer.files].forEach((file, i) => {
-        value = file.name;
-      });
-    }
-  };
+   let value: FileList | null = $state(null);
 
-  const handleChange = (event) => {
-    const files = event.target.files;
-    if (files.length > 0) {
-      value.push(files[0].name);
-      value = value;
-    }
-  };
+function handleChange(event: Event) {
+  const target = event.target as HTMLInputElement;
+  value = target.files;
+}
 
-  const showFiles = (files) => {
-    if (files.length === 1) return files[0];
-    let concat = "";
-    files.map((file) => {
-      concat += file;
-      concat += ",";
-      concat += " ";
-    });
+function dropHandle(event: DragEvent) {
+  event.preventDefault();
+  value = event.dataTransfer?.files ?? null;
+}
 
-    if (concat.length > 40) concat = concat.slice(0, 40);
-    concat += "...";
-    return concat;
-  };
+function showFiles(files: FileList | null): string {
+  if (!files || files.length === 0) return 'No files selected.';
+  return Array.from(files).map(file => file.name).join(', ');
+}
 </script>
 
 <Dropzone
   id="dropzone"
+  bind:files={value}
   ondrop={dropHandle}
-  ondragover={(event) => {
-    event.preventDefault();
-  }}
+  ondragover={(event) => event.preventDefault()}
   onchange={handleChange}
 >
-  <svg aria-hidden="true" class="mb-3 h-10 w-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" /></svg>
-  {#if value.length === 0}
+  <svg 
+    aria-hidden="true" 
+    class="mb-3 h-10 w-10 text-gray-400" 
+    fill="none" 
+    stroke="currentColor" 
+    viewBox="0 0 24 24" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path 
+      stroke-linecap="round" 
+      stroke-linejoin="round" 
+      stroke-width="2" 
+      d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" 
+    />
+  </svg>
+  
+  {#if !value || value.length === 0}
     <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-      <span class="font-semibold">Click to upload</span>
-      or drag and drop
+      <span class="font-semibold">Click to upload</span> or drag and drop
     </p>
-    <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+    <p class="text-xs text-gray-500 dark:text-gray-400">
+      SVG, PNG, JPG or GIF (MAX. 800x400px)
+    </p>
   {:else}
-    <p>{showFiles(value)}</p>
+    <p class="text-sm text-green-600">{showFiles(value)}</p>
   {/if}
 </Dropzone>
 ```
