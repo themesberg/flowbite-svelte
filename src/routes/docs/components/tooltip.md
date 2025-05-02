@@ -27,7 +27,7 @@ flowbite-svelte-next allows you to show extra information when hovering or focus
 ## Default tooltip example
 
 To get started with using tooltips all you need to do is to place `Tooltip` element directly after tiggering element (usually `Button`).
-In the following example you can see the tooltip that will be trigger by the `tooltip-default` element to be shown when hovered or focused.
+In the following example you can see the tooltip that will be trigger by the adjacent element to be shown when hovered or focused.
 
 ```svelte example class="flex items-end h-32" hideResponsiveButtons
 <script>
@@ -65,7 +65,7 @@ You can use choose between dark and light version styles for the tooltip compone
 <Button>Light tooltip</Button>
 <Tooltip type="light">Tooltip content</Tooltip>
 <Button>Default tooltip</Button>
-<Tooltip type="auto">Tooltip content</Tooltip>
+<Tooltip>Tooltip content</Tooltip>
 <Button>Dark tooltip</Button>
 <Tooltip type="dark">Tooltip content</Tooltip>
 ```
@@ -121,11 +121,15 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 If you need the tooltip to be attached to the other element then the tiggering one you can pass a CSS query to `reference` prop.
 
 ```svelte example class="flex gap-4 flex-col justify-center items-center h-72" hideResponsiveButtons
-<script>
+<script lang="ts">
   import { Tooltip, Button } from "flowbite-svelte";
-  let placement = $state("");
-  function onbeforetoggle(ev) {
-    placement = ev.trigger.id.replace("ref-", "");
+  import type { Placement } from "@floating-ui/utils";
+  let placement: Placement = "top";
+  function onbeforetoggle(ev: Event) {
+    const trigger = (ev as any).trigger;
+    if (trigger?.id) {
+      placement = trigger.id.replace("ref-", "");
+    }
   }
 </script>
 
@@ -140,7 +144,7 @@ If you need the tooltip to be attached to the other element then the tiggering o
 
 ## Custom type
 
-Various color palettes can be set for a tooltip by using the `color` property from the underlying `Frame` component. (Setting `color` prop sets the `type` to `custom` implicitly.)
+Various color palettes can be set for a tooltip by using the `color` property. (Setting `color` prop sets the `type` to `custom` implicitly.)
 
 When you want to add a fully custom styles, use `type="custom"`, `defaultClass`, and `class` to modify the tooltip styling.
 
@@ -156,7 +160,7 @@ When you want to add a fully custom styles, use `type="custom"`, `defaultClass`,
 <Tooltip color="yellow">Tooltip content</Tooltip>
 
 <Button>Custom type</Button>
-<Tooltip placement="right" type="custom" defaultClass="" class="bg-purple-500 p-4 text-lg font-medium text-gray-100" arrow={false}>Tooltip content</Tooltip>
+<Tooltip placement="right" type={undefined} class="bg-purple-500 p-4 text-lg font-medium text-gray-100" arrow={false}>Tooltip content</Tooltip>
 ```
 
 ## Component data

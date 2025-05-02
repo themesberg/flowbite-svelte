@@ -9,7 +9,7 @@ export const tooltip = tv({
   },
   variants: {
     type: {
-      light: { base: "bg-white text-gray-800 dark:bg-gray-300 dark:text-gray-800 border border-gray-200 dark:border-gray-200" },
+      light: { base: "bg-white text-gray-800 dark:bg-white dark:text-gray-800 border border-gray-200 dark:border-gray-200" },
       auto: { base: "bg-white text-gray-800 dark:bg-gray-800 dark:text-white border border-gray-200 dark:border-gray-700" },
       dark: { base: "bg-gray-800 text-white dark:bg-gray-800 dark:text-white dark:border dark:border-gray-700" }
     },

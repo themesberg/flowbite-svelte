@@ -1486,7 +1486,7 @@ export interface ToastProps extends HTMLAttributes<HTMLDivElement> {
 
 // tooltip
 export interface TooltipProps extends PopperProps {
-  type?: "light" | "dark";
+  type?: "light" | "dark" | "auto";
   color?: TooltipVariants["color"];
 }
 

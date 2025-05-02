@@ -1,13 +1,16 @@
-<script>
+<script lang="ts">
 
   import { P, A } from '$lib'
-
+  import type { Placement } from "@floating-ui/utils";
   import { Tooltip, Button } from "$lib";
-  let placement = $state("");
-  function onbeforetoggle(ev) {
-    placement = ev.trigger.id.replace("ref-", "");
+  let placement: Placement = "top";
+  function onbeforetoggle(ev: Event) {
+    const trigger = (ev as any).trigger;
+    if (trigger?.id) {
+      placement = trigger.id.replace("ref-", "");
+    }
   }
-
+  let placement2: Placement = "left"
 </script>
 
 flowbite-svelte-next allows you to show extra information when hovering or focusing over an element in multiple positions, styles, and animations.
@@ -41,7 +44,7 @@ You can use choose between dark and light version styles for the tooltip compone
 <Button>Light tooltip</Button>
 <Tooltip type="light">Tooltip content</Tooltip>
 <Button>Default tooltip</Button>
-<Tooltip type="auto">Tooltip content</Tooltip>
+<Tooltip>Tooltip content</Tooltip>
 <Button>Dark tooltip</Button>
 <Tooltip type="dark">Tooltip content</Tooltip>
 </div>
@@ -90,7 +93,7 @@ If you need the tooltip to be attached to the other element then the tiggering o
   <Button id="ref-top">Top</Button>
   <Button id="ref-right">Right</Button>
 </div>
-<Tooltip reference="#ext-ref" triggeredBy="[id^='ref-']" {placement} {onbeforetoggle} class="w-64 text-sm font-light">And here's some amazing content. It's very engaging. Right?</Tooltip>
+<Tooltip reference="#ext-ref" triggeredBy="[id^='ref-']" placement={placement2} {onbeforetoggle} class="w-64 text-sm font-light">And here's some amazing content. It's very engaging. Right?</Tooltip>
 </div>
 
 ## Custom type
@@ -108,6 +111,6 @@ When you want to add a fully custom styles, use `type="custom"`, `defaultClass`,
 <Tooltip color="yellow">Tooltip content</Tooltip>
 
 <Button>Custom type</Button>
-<Tooltip placement="right" type="custom" defaultClass="" class="bg-purple-500 p-4 text-lg font-medium text-gray-100" arrow={false}>Tooltip content</Tooltip>
+<Tooltip placement="right" type={undefined} class="bg-purple-500 p-4 text-lg font-medium text-gray-100" arrow={false}>Tooltip content</Tooltip>
 </div>
 
