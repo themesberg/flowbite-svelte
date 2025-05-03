@@ -1,6 +1,5 @@
 <script lang="ts">
-
-  const components = 'Search'
+  const components = "Search";
 
   import { Search, Button, Dropdown, DropdownItem, P } from "$lib";
   import { SearchOutline, ChevronDownOutline, MicrophoneSolid } from "flowbite-svelte-icons";
@@ -55,136 +54,115 @@
     alert("You clicked voice button");
   }
 
-let value = $state("");
+  let value = $state("");
 
-const submitted = (e: Event) => {
-  e.preventDefault();
-  alert(`You are searching: ${value}`);
-};
+  const submitted = (e: Event) => {
+    e.preventDefault();
+    alert(`You are searching: ${value}`);
+  };
 </script>
 
-The search input component can be used to let your users search through your website using string queries and it comes in multiple styles, variants, and sizes built with the utility classes from Tailwind CSS.
-
-You will also find more advanced search components on this page including dropdown category selections, search buttons positioned inside the input field, voice search fields and more.
-
-
-## Search bar example
+The search input component can be used to let your users search through your website using string queries and it comes in multiple styles, variants, and sizes built with the utility classes from Tailwind CSS. You will also find more advanced search components on this page including dropdown category selections, search buttons positioned inside the input field, voice search fields and more. ## Search bar example
 
 <div class="m-8">
-<Search>
-  <Button class="me-1">Search</Button>
-</Search>
-</div>
-
-## Simple search input
-
-Use the simplest form of a search input component with an icon and a search button next to the text field.
-
-<div class="m-8">
-
-<form class="flex gap-2">
-  <Search size="md" />
-  <Button class="p-2.5!">
-    <SearchOutline class="h-6 w-6" />
-  </Button>
-</form>
-</div>
-
-## Search with dropdown
-
-Use this search component with a dropdown to let your users select a category in which they would like the search query to be targeted in.
-
-<div class="m-8">
-
-<form class="flex">
-  <div class="relative">
-    <Button class="border-primary-700 rounded-e-none border border-e-0 whitespace-nowrap">
-      {selectCategory}
-      <ChevronDownOutline class="ms-2.5 h-6 w-6" />
-    </Button>
-    <Dropdown simple class="w-40">
-      {#each items as { label }}
-        <DropdownItem
-          onclick={() => {
-            selectCategory = label;
-          }}
-          class={selectCategory === label ? "underline" : ""}
-        >
-          {label}
-        </DropdownItem>
-      {/each}
-    </Dropdown>
-  </div>
-  <Search size="md" class="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
-  <Button class="rounded-s-none p-2.5!">
-    <SearchOutline class="h-6 w-6" />
-  </Button>
-</form>
-</div>
-
-## Location search
-
-Use this example where you can select a country in which you want to search for an address or city.
-
-<div class="m-8">
-
-<form class="flex">
-  <div class="relative">
-    <Button class="border-primary-700 rounded-e-none border border-e-0 whitespace-nowrap">
-      <img class="me-2 h-3.5 w-3.5 rounded-full" src={buttonLabel?.icon} alt={buttonLabel?.label} />
-      {buttonLabel?.labelSelected}
-      <ChevronDownOutline class="ms-2.5 h-6 w-6" />
-    </Button>
-    <Dropdown simple class="w-40">
-      {#each countries as country}
-        <DropdownItem
-          onclick={() => {
-            selectCountry = country.labelSelected;
-          }}
-          class="inline-flex items-center {selectCountry === country.labelSelected ? 'underline' : ''}"
-        >
-          <img class="me-2 h-3.5 w-3.5 rounded-full" src={country.icon} alt={country.label} />
-          {country.label}
-        </DropdownItem>
-      {/each}
-    </Dropdown>
-  </div>
-  <Search size="md" class="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
-  <Button class="rounded-s-none p-2.5!">
-    <SearchOutline class="h-6 w-6" />
-  </Button>
-</form>
-</div>
-
-## Voice Search
-
-Get started with this example if you would like to enable voice search for your website and users.
-
-<div class="m-8">
-
-<form class="flex gap-2">
-  <Search size="md" class="flex items-center gap-2" placeholder="Search Mockups, Logos, Design Templates...">
-    <button type="button" onclick={handleVoiceBtn} class="outline-hidden">
-      <MicrophoneSolid class="me-2 h-5 w-5" />
-    </button>
+  <Search>
+    <Button class="me-1">Search</Button>
   </Search>
-  <Button size="sm">
-    <SearchOutline class="-ms-1 me-2 h-6 w-6" />
-    Search
-  </Button>
-</form>
 </div>
 
-## Events
-
-
-## Example
+## Simple search input Use the simplest form of a search input component with an icon and a search button next to the text field.
 
 <div class="m-8">
+  <form class="flex gap-2">
+    <Search size="md" />
+    <Button class="p-2.5!">
+      <SearchOutline class="h-6 w-6" />
+    </Button>
+  </form>
+</div>
 
-<form id="example-form" onsubmit={submitted}>
-  <Search bind:value />
-  <P class="my-1">You are searching: {value}</P>
-  <Button type="submit">Submit</Button>
-</form>
+## Search with dropdown Use this search component with a dropdown to let your users select a category in which they would like the search query to be targeted in.
+
+<div class="m-8">
+  <form class="flex">
+    <div class="relative">
+      <Button class="border-primary-700 rounded-e-none border border-e-0 whitespace-nowrap">
+        {selectCategory}
+        <ChevronDownOutline class="ms-2.5 h-6 w-6" />
+      </Button>
+      <Dropdown simple class="w-40">
+        {#each items as { label }}
+          <DropdownItem
+            onclick={() => {
+              selectCategory = label;
+            }}
+            class={selectCategory === label ? "underline" : ""}
+          >
+            {label}
+          </DropdownItem>
+        {/each}
+      </Dropdown>
+    </div>
+    <Search size="md" class="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
+    <Button class="rounded-s-none p-2.5!">
+      <SearchOutline class="h-6 w-6" />
+    </Button>
+  </form>
+</div>
+
+## Location search Use this example where you can select a country in which you want to search for an address or city.
+
+<div class="m-8">
+  <form class="flex">
+    <div class="relative">
+      <Button class="border-primary-700 rounded-e-none border border-e-0 whitespace-nowrap">
+        <img class="me-2 h-3.5 w-3.5 rounded-full" src={buttonLabel?.icon} alt={buttonLabel?.label} />
+        {buttonLabel?.labelSelected}
+        <ChevronDownOutline class="ms-2.5 h-6 w-6" />
+      </Button>
+      <Dropdown simple class="w-40">
+        {#each countries as country}
+          <DropdownItem
+            onclick={() => {
+              selectCountry = country.labelSelected;
+            }}
+            class="inline-flex items-center {selectCountry === country.labelSelected ? 'underline' : ''}"
+          >
+            <img class="me-2 h-3.5 w-3.5 rounded-full" src={country.icon} alt={country.label} />
+            {country.label}
+          </DropdownItem>
+        {/each}
+      </Dropdown>
+    </div>
+    <Search size="md" class="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
+    <Button class="rounded-s-none p-2.5!">
+      <SearchOutline class="h-6 w-6" />
+    </Button>
+  </form>
+</div>
+
+## Voice Search Get started with this example if you would like to enable voice search for your website and users.
+
+<div class="m-8">
+  <form class="flex gap-2">
+    <Search size="md" class="flex items-center gap-2" placeholder="Search Mockups, Logos, Design Templates...">
+      <button type="button" onclick={handleVoiceBtn} class="outline-hidden">
+        <MicrophoneSolid class="me-2 h-5 w-5" />
+      </button>
+    </Search>
+    <Button size="sm">
+      <SearchOutline class="-ms-1 me-2 h-6 w-6" />
+      Search
+    </Button>
+  </form>
+</div>
+
+## Events ## Example
+
+<div class="m-8">
+  <form id="example-form" onsubmit={submitted}>
+    <Search bind:value />
+    <P class="my-1">You are searching: {value}</P>
+    <Button type="submit">Submit</Button>
+  </form>
 </div>

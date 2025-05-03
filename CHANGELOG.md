@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.0-next.20
+
+### Patch Changes
+
+- fix: API check complete
+
 ## 1.0.0-next.19
 
 ### Patch Changes

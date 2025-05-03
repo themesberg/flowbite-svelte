@@ -172,7 +172,7 @@ By default progress bar has animation disabled, you can activate with `animate`,
 
 ## Custom color
 
-Use the `progressClass` prop to change the color of the progress bar.
+Use the `labelInsideClass` prop to change the color of the progress bar.
 
 ```svelte example
 <script>
@@ -180,9 +180,9 @@ Use the `progressClass` prop to change the color of the progress bar.
 </script>
 
 <div class="space-y-4">
-  <Progressbar progress="40" progressClass="bg-sky-600 dark:bg-sky-400" />
-  <Progressbar progress="40" progressClass="bg-lime-600 dark:bg-lime-400" />
-  <Progressbar progress="40" progressClass="bg-pink-600 dark:bg-pink-400" />
+  <Progressbar progress="40" labelInsideClass="bg-sky-600 dark:bg-sky-400" />
+  <Progressbar progress="40" labelInsideClass="bg-lime-600 dark:bg-lime-400" />
+  <Progressbar progress="40" labelInsideClass="bg-pink-600 dark:bg-pink-400" />
 </div>
 ```
 

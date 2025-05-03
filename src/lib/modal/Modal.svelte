@@ -72,17 +72,12 @@
     {/if}
   </dialog>
 {/if}
-<!-- <style>
-  :global(::backdrop) {
-    /* background-color: pink; */
-  }
-</style> -->
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[ModalProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L880)
+[ModalProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L889)
 ## Props
 @prop children
 @prop oncancel

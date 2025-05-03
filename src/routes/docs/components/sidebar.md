@@ -120,12 +120,12 @@ Utilize the `href` prop within the `SidebarItem` component to incorporate a hype
   <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} {activeClass} {nonActiveClass} position="absolute" class="z-50 h-full">
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Kanban" {spanClass} href="/">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
@@ -133,7 +133,7 @@ Utilize the `href` prop within the `SidebarItem` component to incorporate a hype
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Inbox" {spanClass} href="/">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
@@ -141,7 +141,7 @@ Utilize the `href` prop within the `SidebarItem` component to incorporate a hype
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sidebar" href="/docs/components/sidebar">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <UserSolid class="text-primary-500 h-5 w-5 transition duration-75 " />
         {/snippet}
       </SidebarItem>
@@ -185,12 +185,12 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
   <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" {activeClass} {nonActiveClass} class="z-50 h-full">
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/" active>
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Kanban" {spanClass} active={false}>
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
@@ -198,7 +198,7 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Inbox" {spanClass} active={false}>
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
@@ -206,7 +206,7 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sidebar" href="/components/sidebar" active={false}>
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
@@ -252,12 +252,12 @@ Use this sidebar example to create multi-level menu items by using the SidebarDr
   <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" activeClass="p-2" nonActiveClass="p-2" class="z-50 h-full">
     <SidebarGroup>
       <SidebarItem label="Dashboard">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarDropdownWrapper label="E-commerce" btnClass="p-2">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         <SidebarItem label="Sidebar" href="/docs/components/sidebar" />
@@ -265,7 +265,7 @@ Use this sidebar example to create multi-level menu items by using the SidebarDr
         <SidebarItem label="Invoice" />
       </SidebarDropdownWrapper>
       <SidebarItem label="Kanban" {spanClass} href="/">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
@@ -273,7 +273,7 @@ Use this sidebar example to create multi-level menu items by using the SidebarDr
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Inbox" {spanClass} href="/">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
@@ -281,17 +281,17 @@ Use this sidebar example to create multi-level menu items by using the SidebarDr
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Users">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sign In">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <ArrowRightToBracketOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sign Up">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <EditSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
@@ -333,12 +333,12 @@ You can change the icons using `arrowup` and `arrowdown` slots.
   <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" class="z-50 h-full" activeClass="p-2" nonActiveClass="p-2">
     <SidebarGroup>
       <SidebarItem label="Dashboard">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarDropdownWrapper label="E-commerce" btnClass="p-2">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet arrowup()}
@@ -392,12 +392,12 @@ Separate the content inside the sidebar component by applying a border separator
   <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" activeClass="p-2" nonActiveClass="p-2">
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Kanban" {spanClass} href="/">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
@@ -405,7 +405,7 @@ Separate the content inside the sidebar component by applying a border separator
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Inbox" {spanClass} href="/">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
@@ -413,24 +413,24 @@ Separate the content inside the sidebar component by applying a border separator
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sidebar" href="/components/sidebar">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
     </SidebarGroup>
     <SidebarGroup border>
       <SidebarItem label="Upgrade to Pro" href="/">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <FireSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Documentation" href="/">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <BookSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Components" href="/">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <RestoreWindowOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
@@ -474,12 +474,12 @@ Use this example to add a CTA button inside the sidebar component and encourage 
   <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" activeClass="p-2" nonActiveClass="p-2">
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Kanban" {spanClass} href="/">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
@@ -487,7 +487,7 @@ Use this example to add a CTA button inside the sidebar component and encourage 
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Inbox" {spanClass} href="/">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
@@ -495,7 +495,7 @@ Use this example to add a CTA button inside the sidebar component and encourage 
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sidebar" href="/docs/components/sidebar">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
@@ -557,12 +557,12 @@ Show the logo of your brand and link back to the homepage from the top part of t
     <SidebarGroup>
       <SidebarBrand {site} />
       <SidebarItem label="Dashboard" href="/">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Kanban" {spanClass} href="/">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
@@ -570,7 +570,7 @@ Show the logo of your brand and link back to the homepage from the top part of t
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Inbox" {spanClass} href="/">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
@@ -578,7 +578,7 @@ Show the logo of your brand and link back to the homepage from the top part of t
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sidebar" href="/components/sidebar">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
@@ -627,12 +627,12 @@ The following example shows how to use children for your branding.
         <span class="ml-2 self-center text-xl font-semibold whitespace-nowrap dark:text-white">Svelte 5 UI Lib</span>
       </SidebarBrand>
       <SidebarItem label="Dashboard" href="/">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Kanban" {spanClass} href="/">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
@@ -640,7 +640,7 @@ The following example shows how to use children for your branding.
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Inbox" {spanClass} href="/">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
@@ -648,7 +648,7 @@ The following example shows how to use children for your branding.
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sidebar" href="/components/sidebar">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
@@ -693,12 +693,12 @@ Use the following example to show a close button in the sidebar for a small scre
     <CloseButton onclick={closeDemoSidebar} color="gray" class="absolute top-2 right-2 p-2 md:hidden" />
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Kanban" {spanClass} href="/">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
@@ -706,7 +706,7 @@ Use the following example to show a close button in the sidebar for a small scre
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Inbox" {spanClass} href="/">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
@@ -714,7 +714,7 @@ Use the following example to show a close button in the sidebar for a small scre
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sidebar" href="/components/sidebar">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
@@ -783,7 +783,7 @@ You can use object for the sidebar items as the following example.
     <SidebarGroup>
       {#each sidebarEx1 as { label, href, icon: Icon, subContent }}
         <SidebarItem {label} {href} {spanClass}>
-          {#snippet iconSlot()}
+          {#snippet icon()}
             <Icon class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"></Icon>
           {/snippet}
           {#snippet subtext()}
@@ -833,31 +833,31 @@ The following example shows to open only one dropdown when you click another dro
   <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" activeClass="p-2" nonActiveClass="p-2" class="z-50 h-full">
     <SidebarGroup>
       <SidebarItem label="Dashboard">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarDropdownWrapper label="Shop" btnClass="p-2">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         <SidebarItem label="Products" href="" />
       </SidebarDropdownWrapper>
       <SidebarDropdownWrapper label="Profile" btnClass="p-2">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         <SidebarItem label="Projects" href="/" />
       </SidebarDropdownWrapper>
       <SidebarItem label="Sidebar" {spanClass} href="/components/sidebar">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
     </SidebarGroup>
     <SidebarGroup border>
       <SidebarDropdownWrapper label="Setting" btnClass="p-2">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <EditSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         <SidebarItem label="Account" href="" />
@@ -879,7 +879,7 @@ The following example shows to open only one dropdown when you click another dro
 
 ## All open
 
-The following example shows opening all dropdown menu in a sidebar.
+To open all dropdown menus, set `isSingle={false}`.
 
 ```svelte example class="h-[500px]"
 <script lang="ts">
@@ -903,31 +903,31 @@ The following example shows opening all dropdown menu in a sidebar.
   <Sidebar {activeUrl} isSingle={false} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" activeClass="p-2" nonActiveClass="p-2" class="z-50 h-full">
     <SidebarGroup>
       <SidebarItem label="Dashboard">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarDropdownWrapper label="Shop" btnClass="p-2">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         <SidebarItem label="Products" href="" />
       </SidebarDropdownWrapper>
       <SidebarDropdownWrapper label="Profile" btnClass="p-2">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         <SidebarItem label="Projects" href="/" />
       </SidebarDropdownWrapper>
       <SidebarItem label="Sidebar" {spanClass} href="/components/sidebar">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
     </SidebarGroup>
     <SidebarGroup border>
       <SidebarDropdownWrapper label="Setting" btnClass="p-2">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <EditSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         <SidebarItem label="Account" href="" />
@@ -949,7 +949,7 @@ The following example shows opening all dropdown menu in a sidebar.
 
 ## Transition
 
-You can add own transition by setting `transitionType` and `transitionParams`.
+You can add own transition by setting `transition` and `params` to `SidebarDropdownWrapper`.
 
 ```svelte example
 <script lang="ts">
@@ -979,12 +979,12 @@ You can add own transition by setting `transitionType` and `transitionParams`.
   <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" activeClass="p-2" nonActiveClass="p-2" class="z-50 h-full">
     <SidebarGroup>
       <SidebarItem label="Dashboard">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarDropdownWrapper label="E-commerce" btnClass="p-2" transition={fade} {params}>
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         <SidebarItem label="Sidebar" href="/components/sidebar" />
@@ -992,7 +992,7 @@ You can add own transition by setting `transitionType` and `transitionParams`.
         <SidebarItem label="Invoice" />
       </SidebarDropdownWrapper>
       <SidebarItem label="Kanban" {spanClass} href="/">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
@@ -1000,7 +1000,7 @@ You can add own transition by setting `transitionType` and `transitionParams`.
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Inbox" {spanClass} href="/">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         {#snippet subtext()}
@@ -1008,17 +1008,17 @@ You can add own transition by setting `transitionType` and `transitionParams`.
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Users">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sign In">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <ArrowRightToBracketOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
       <SidebarItem label="Sign Up">
-        {#snippet iconSlot()}
+        {#snippet icon()}
           <EditSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
@@ -1063,12 +1063,12 @@ You can add own transition by setting `transitionType` and `transitionParams`.
       <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50" position="static" activeClass="p-2" nonActiveClass="p-2">
         <SidebarGroup>
           <SidebarItem label="Dashboard" href="/">
-            {#snippet iconSlot()}
+            {#snippet icon()}
               <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
             {/snippet}
           </SidebarItem>
           <SidebarItem label="Kanban" {spanClass} href="/">
-            {#snippet iconSlot()}
+            {#snippet icon()}
               <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
             {/snippet}
             {#snippet subtext()}
@@ -1076,7 +1076,7 @@ You can add own transition by setting `transitionType` and `transitionParams`.
             {/snippet}
           </SidebarItem>
           <SidebarItem label="Inbox" {spanClass} href="/">
-            {#snippet iconSlot()}
+            {#snippet icon()}
               <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
             {/snippet}
             {#snippet subtext()}
@@ -1084,7 +1084,7 @@ You can add own transition by setting `transitionType` and `transitionParams`.
             {/snippet}
           </SidebarItem>
           <SidebarItem label="Sidebar" href="/components/sidebar">
-            {#snippet iconSlot()}
+            {#snippet icon()}
               <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
             {/snippet}
           </SidebarItem>
@@ -1102,51 +1102,7 @@ You can add own transition by setting `transitionType` and `transitionParams`.
 </div>
 ```
 
-## use:action
-
-Svelte Actions are essentially element-level lifecycle functions. They're useful for things like:
-
-- interfacing with third-party libraries
-- lazy-loaded images
-- tooltips
-- adding custom event handlers
-
-The `SidebarItem` component has `use:action` directive you can use:
-
-```svelte example
-<script>
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from "flowbite-svelte";
-  const routes = [
-    {
-      label: "Home",
-      href: "/"
-    },
-    {
-      label: "Contact",
-      href: "/contact"
-    },
-    {
-      label: "Profile",
-      href: "/profile"
-    }
-  ];
-  const myaction = (label) => {
-    console.log("Hello ", label);
-  };
-</script>
-
-<Sidebar position="static">
-  <SidebarWrapper>
-    <SidebarGroup>
-      {#each routes as { label, href }}
-        <SidebarItem {label} {href} action={myaction(label)} />
-      {/each}
-    </SidebarGroup>
-  </SidebarWrapper>
-</Sidebar>
-```
-
-## onclickclick handler on SidebarDropdownWrapper
+## onclick handler on SidebarDropdownWrapper
 
 ```svelte example
 <script>
@@ -1154,7 +1110,7 @@ The `SidebarItem` component has `use:action` directive you can use:
   import { ChartPieSolid, CartSolid, ChevronDoubleUpOutline, ChevronDoubleDownOutline } from "flowbite-svelte-icons";
   let spanClass = "flex-1 ms-3 whitespace-nowrap";
   const handleClick = () => {
-    console.log("Hello from SidebarDropdownWrapper.");
+    alert("Hello from SidebarDropdownWrapper.");
   };
 </script>
 

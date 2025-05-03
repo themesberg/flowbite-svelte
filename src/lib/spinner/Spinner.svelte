@@ -17,7 +17,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[SpinnerProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1263)
+[SpinnerProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1298)
 ## Props
 @prop color = "primary"
 @prop size = "8"

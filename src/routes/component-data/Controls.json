@@ -2,7 +2,7 @@
   "name": "Controls",
   "type": {
     "name": "ControlsProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L410"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L415"
   },
   "props": [
     ["children", ""],

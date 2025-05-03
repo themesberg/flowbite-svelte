@@ -4,8 +4,7 @@
   import { ChevronRightOutline } from "flowbite-svelte-icons";
   import Community from "../utils/icons/Community.svelte";
   import Section from "./utils/Section.svelte";
-  import type { TriggeredToggleEvent } from "$lib/utils/Popper.svelte";
-  import type { PageProps } from "../$types";
+  import type { TriggeredToggleEvent } from "$lib";
 
   let { data } = $props();
 

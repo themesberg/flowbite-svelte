@@ -1,33 +1,8 @@
-<script lang="ts" module>
-  import type { Snippet } from "svelte";
-
-  export interface TriggeredToggleEvent extends ToggleEvent {
-    trigger: HTMLElement;
-  }
-
-  export interface PopperProps extends Omit<HTMLAttributes<HTMLDivElement>, "onbeforetoggle" | "ontoggle"> {
-    triggeredBy?: string;
-    trigger?: "hover" | "click";
-    placement?: Placement;
-    arrow?: boolean;
-    arrowClass?: string;
-    offset?: number;
-    yOnly?: boolean; // special case for megamenu - only move on y axis
-    strategy?: Strategy;
-    reference?: string | undefined;
-    middlewares?: Middleware[];
-    children: Snippet;
-
-    onbeforetoggle?: (ev: TriggeredToggleEvent) => void;
-    ontoggle?: (ev: TriggeredToggleEvent) => void;
-  }
-</script>
-
 <script lang="ts">
-  import type { Coords, Middleware, Placement, Strategy } from "@floating-ui/dom";
+  import type { Coords, Middleware, Placement } from "@floating-ui/dom";
   import * as dom from "@floating-ui/dom";
-  import type { HTMLAttributes } from "svelte/elements";
   import Arrow from "./Arrow.svelte";
+  import type { PopperProps, TriggeredToggleEvent } from "$lib";
 
   const TRIGGER_DELAY = 200;
 
@@ -185,7 +160,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-PopperProps
+[PopperProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1667)
 ## Props
 @prop triggeredBy
 @prop trigger = "click"

@@ -2,7 +2,7 @@
   "name": "DefaultMockup",
   "type": {
     "name": "DefaultMockupProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L499"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L504"
   },
   "props": [
     ["children", ""],

@@ -2,7 +2,7 @@
   "name": "TableHeadCell",
   "type": {
     "name": "TableHeadCellProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1333"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1368"
   },
   "props": [
     ["children", ""],

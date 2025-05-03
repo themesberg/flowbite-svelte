@@ -4,7 +4,7 @@ export type TooltipVariants = VariantProps<typeof tooltip>;
 
 export const tooltip = tv({
   slots: {
-    base: "absolute px-2 py-1 rounded-lg text-sm z-50 pointer-events-none",
+    base: "absolute px-3 py-2 rounded-lg text-sm z-50 pointer-events-none",
     arrowBase: ""
   },
   variants: {

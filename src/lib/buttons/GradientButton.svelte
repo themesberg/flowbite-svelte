@@ -29,7 +29,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[GradientButtonProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L346)
+[GradientButtonProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L350)
 ## Props
 @prop children
 @prop outline

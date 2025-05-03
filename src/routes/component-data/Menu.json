@@ -2,7 +2,7 @@
   "name": "Menu",
   "type": {
     "name": "MenuProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L896"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L905"
   },
   "props": [
     ["size", "\"24\""],

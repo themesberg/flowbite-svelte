@@ -2,7 +2,7 @@
   "name": "Img",
   "type": {
     "name": "ImgProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1534"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1575"
   },
   "props": [
     ["size", "\"none\""],

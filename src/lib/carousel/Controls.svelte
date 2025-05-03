@@ -51,7 +51,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[ControlsProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L410)
+[ControlsProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L415)
 ## Props
 @prop children
 @prop class: className

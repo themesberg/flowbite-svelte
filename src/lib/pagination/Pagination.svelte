@@ -50,7 +50,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[PaginationProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L977)
+[PaginationProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L986)
 ## Props
 @prop pages = []
 @prop previous

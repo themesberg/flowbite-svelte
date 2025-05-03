@@ -264,7 +264,7 @@ You can use the property `inline` as the alternative.
   import { Label, Checkbox } from "flowbite-svelte";
 </script>
 
-<div class="flex gap-4">
+<div class="flex flex-col gap-4 sm:flex-row">
   <Checkbox checked color="red">Red</Checkbox>
   <Checkbox checked color="green">Green</Checkbox>
   <Checkbox checked color="purple">Purple</Checkbox>

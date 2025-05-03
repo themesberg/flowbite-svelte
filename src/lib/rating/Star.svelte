@@ -34,7 +34,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1102)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1111)
 ## Props
 @prop fillPercent = 100
 @prop fillColor = "#F5CA14"

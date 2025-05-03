@@ -2,20 +2,20 @@ import type { HTMLButtonAttributes, HTMLAnchorAttributes, HTMLAttributes, HTMLLi
 import type { TransitionConfig, FadeParams, BlurParams, FlyParams, SlideParams, ScaleParams, EasingFunction } from "svelte/transition";
 import { type Writable } from "svelte/store";
 import type { Snippet, Component } from "svelte";
-import type { Placement } from "@floating-ui/utils";
 import { tv, type VariantProps } from "tailwind-variants";
+import type { Middleware, Placement, Strategy } from "@floating-ui/dom";
 // import type { Picture } from "vite-imagetools";
 
 // component variants
 import type { AlertVariants } from "./alert/theme";
 import type { BadgeVariants } from "./badge/theme";
 import type { BannerVariants } from "./banner/theme";
-import type { ButtonVariants, GradientButtonVariantes } from "./buttons/theme";
+import type { ButtonVariants, GradientButtonVariantes, button, gradientButton } from "./buttons/theme";
 import type { CarouselVariants } from "./carousel/theme";
 import type Slide from "./carousel/Slide.svelte";
 import type { ApexOptions } from "apexcharts";
 import type { DrawerVariants } from "./drawer/theme";
-import type { PopperProps } from "$lib/utils/Popper.svelte";
+// import type { PopperProps } from "$lib/utils/Popper.svelte";
 import type { CheckboxVariants } from "./forms/checkbox/theme";
 import type { FileuploadViariants } from "$lib/forms/fileupload/theme";
 import type { FloatingLabelInputVaratiants } from "$lib/forms/floating-label-input/theme";
@@ -333,6 +333,9 @@ export interface ButtonGroupProps {
 export type ButtonGroupSizeType = "sm" | "md" | "lg" | undefined;
 
 // button
+export type ButtonColor = NonNullable<VariantProps<typeof button>["color"]>;
+export type GradientButtonColor = NonNullable<VariantProps<typeof gradientButton>["color"]>;
+
 export type HTMLButtonOrAnchorAttributes = Omit<HTMLButtonAttributes & HTMLAnchorAttributes, "color">;
 
 export type ButtonProps = ButtonVariants &
@@ -341,12 +344,14 @@ export type ButtonProps = ButtonVariants &
     disabled?: boolean;
     outline?: boolean;
     shadow?: boolean;
+    color?: ButtonColor;
   };
 
 export interface GradientButtonProps extends GradientButtonVariantes, HTMLButtonOrAnchorAttributes {
   tag?: string;
   disabled?: boolean;
   href?: string;
+  color?: GradientButtonColor;
 }
 
 // card
@@ -570,12 +575,15 @@ export interface DropdownHeaderProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
 }
 
-export interface DropdownItemProps extends HTMLAnchorAttributes {
+export type DropdownItemAnchorButtonAttributes = HTMLAnchorAttributes & Omit<HTMLButtonAttributes, keyof HTMLAnchorAttributes | "type">;
+
+export interface DropdownItemProps extends DropdownItemAnchorButtonAttributes {
   children: Snippet;
   aClass?: string;
   href?: string;
   activeClass?: string;
   liClass?: string;
+  onclick?: () => void;
 }
 
 export interface DropdownGroupProps extends HTMLAttributes<HTMLUListElement> {
@@ -1231,6 +1239,29 @@ export interface SpeedCtxType {
   textOutside: boolean;
 }
 
+type BaseSpeedDialTriggerProps = {
+  children?: any;
+  name?: string;
+  pill?: boolean;
+  icon?: Snippet;
+  class?: string;
+  [key: string]: any;
+};
+
+// Two different prop types based on gradient flag
+export type RegularSpeedDialTriggerProps = BaseSpeedDialTriggerProps & {
+  gradient?: false;
+  color?: ButtonColor;
+};
+
+export type GradientSpeedDialTriggerProps = BaseSpeedDialTriggerProps & {
+  gradient: true;
+  color?: GradientButtonColor;
+};
+
+// Union type that forces TypeScript to check properly
+export type SpeedDialTriggerProps = RegularSpeedDialTriggerProps | GradientSpeedDialTriggerProps;
+
 export type SpeedDialProps = PopperProps & {
   children: Snippet;
   button?: Snippet;
@@ -1252,12 +1283,14 @@ export type SpeedDialButtonProps = ButtonProps & {
   textClass?: string;
 };
 
-export type SpeedDialTriggerProps = ButtonProps & {
-  icon?: Snippet;
-  gradient?: boolean;
-  name?: string;
-  color?: GradientButtonProps["color"];
-};
+// export type CombinedButtonColor = ButtonColor | GradientButtonColor;
+
+// export type SpeedDialTriggerProps = ButtonProps & {
+//   icon?: Snippet;
+//   gradient?: boolean;
+//   name?: string;
+//   color?: CombinedButtonColor;
+// };
 
 // spinner
 export interface SpinnerProps extends SVGAttributes<SVGSVGElement> {
@@ -1330,8 +1363,14 @@ export interface TableBodyProps extends HTMLAttributes<HTMLTableSectionElement> 
   bodyItems?: BodyRow[];
 }
 
-export interface TableHeadCellProps extends HTMLThAttributes {
+export interface TableHeadCellProps<T = any> extends HTMLThAttributes {
   children?: Snippet;
+  padding?: string;
+  sort?: ((a: T, b: T) => number) | null;
+  defaultDirection?: "asc" | "desc";
+  defaultSort?: boolean;
+  direction?: "asc" | "desc" | null;
+  class?: string;
 }
 
 export type TableSearchType = {
@@ -1407,9 +1446,9 @@ export interface ActivityType {
 }
 
 export interface GroupTimelineType {
-  name: string | HTMLElement;
-  src: string;
-  alt: string;
+  name?: string | HTMLElement;
+  src?: string;
+  alt?: string;
   href?: string;
   isPrivate?: boolean;
   comment?: string | HTMLElement;
@@ -1616,4 +1655,27 @@ export interface VideoProps extends HTMLVideoAttributes {
   trackSrc?: HTMLTrackAttributes["src"];
   srclang?: HTMLTrackAttributes["lang"];
   label?: HTMLTrackAttributes["label"];
+}
+
+// popper
+export interface TriggeredToggleEvent extends ToggleEvent {
+  trigger: HTMLElement;
+}
+
+export interface PopperProps extends Omit<HTMLAttributes<HTMLDivElement>, "onbeforetoggle" | "ontoggle"> {
+  triggeredBy?: string;
+  trigger?: "hover" | "click";
+  placement?: Placement;
+  arrow?: boolean;
+  arrowClass?: string;
+  offset?: number;
+  yOnly?: boolean; // special case for megamenu - only move on y axis
+  strategy?: Strategy;
+  reference?: string | undefined;
+  middlewares?: Middleware[];
+  children: Snippet;
+  onbeforetoggle?: (ev: TriggeredToggleEvent) => void;
+  ontoggle?: (ev: TriggeredToggleEvent) => void;
+  transition?: TransitionFunc;
+  transitionParams?: ParamsType;
 }

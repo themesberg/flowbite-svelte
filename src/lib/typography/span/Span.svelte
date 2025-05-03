@@ -31,7 +31,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[SpanProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1598)
+[SpanProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1639)
 ## Props
 @prop children
 @prop class: className

@@ -2,7 +2,7 @@
   "name": "Search",
   "type": {
     "name": "SearchProps<T>",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L753"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L762"
   },
   "props": [
     ["children", ""],

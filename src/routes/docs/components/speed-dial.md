@@ -53,7 +53,7 @@ You can use any elment as `SpeedDial` trigger (see the [Custom main button](#cus
 
 ## Colors
 
-The Speed Dial components accommodate a variety of Button component properties, including color options (blue, dark, alternative, light, green, red, yellow, primary, and purple), gradient, shadow, and outline styles. For further information, please refer to **[the Button component](https://flowbite-svelte-next.com/components/button)** documentation.
+The Speed Dial components accommodate color options ("red" | "lime" | "green" | "teal" | "cyan" | "blue" | "purple" | "pink" | undefined), gradient, shadow, and outline styles. For further information, please refer to **[the Button component](https://flowbite-svelte-next.com/components/button)** documentation.
 
 ```svelte example class="relative h-96" hideResponsiveButtons
 <script>
@@ -62,7 +62,7 @@ The Speed Dial components accommodate a variety of Button component properties, 
 </script>
 
 <div class="grid w-fit grid-cols-8 gap-x-6 gap-y-18">
-  <SpeedDialTrigger color="primary" />
+  <SpeedDialTrigger color="red" />
   <SpeedDial>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />
@@ -458,10 +458,12 @@ Align the speed dial menu items by using property `placement="top|right|left|bot
 Control the main button position using the flexbox utility classes from Tailwind CSS through property `class`.
 
 ```svelte example class="relative h-[400px]" hideResponsiveButtons
-<script>
+<script lang="ts">
   import { SpeedDial, SpeedDialTrigger, SpeedDialButton } from "flowbite-svelte";
+  import type { Placement } from "@floating-ui/dom";
   import { ShareNodesSolid, PrinterSolid, DownloadSolid, FileCopySolid } from "flowbite-svelte-icons";
-  const placements = [
+  type ExPosition = [string, Placement, Placement | "none"];
+  const placements: ExPosition[] = [
     ["start-2 top-2", "right", "bottom"],
     ["end-6 top-2", "bottom", "left"],
     ["end-6 bottom-6", "left", "top"],
@@ -530,27 +532,6 @@ The default trigger type is hover for each speed dial component.
   <SpeedDialButton name="Copy">
     <FileCopySolid class="h-6 w-6" />
   </SpeedDialButton>
-</SpeedDial>
-```
-
-## Control open state
-
-Use the `open` property to control the state of the popup menu.
-
-```svelte example class="relative h-96" hideResponsiveButtons
-<script>
-  import { SpeedDial, SpeedDialTrigger, SpeedDialButton } from "flowbite-svelte";
-  let open = false;
-
-  const close = () => {
-    open = false;
-  };
-</script>
-
-<SpeedDialTrigger class="absolute end-6 bottom-6" />
-<SpeedDial bind:open>
-  <SpeedDialButton name="Share" onclick={close}>Share</SpeedDialButton>
-  <SpeedDialButton name="Print" onclick={close}>Print</SpeedDialButton>
 </SpeedDial>
 ```
 

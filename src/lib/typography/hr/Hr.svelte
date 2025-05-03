@@ -23,7 +23,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[HrProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1523)
+[HrProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1564)
 ## Props
 @prop children
 @prop divClass

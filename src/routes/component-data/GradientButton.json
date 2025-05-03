@@ -2,7 +2,7 @@
   "name": "GradientButton",
   "type": {
     "name": "GradientButtonProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L346"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L350"
   },
   "props": [
     ["children", ""],

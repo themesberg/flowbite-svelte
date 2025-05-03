@@ -2,7 +2,7 @@
   "name": "List",
   "type": {
     "name": "ListProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1560"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1601"
   },
   "props": [
     ["children", ""],

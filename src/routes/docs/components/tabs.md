@@ -252,7 +252,7 @@ If you want to show the tabs on the full width relative to the parent element us
   import { Tabs, TabItem } from "flowbite-svelte";
 </script>
 
-<Tabs tabStyle="full" defaultClass="flex rounded-lg divide-x rtl:divide-x-reverse divide-gray-200 shadow-sm dark:divide-gray-700">
+<Tabs tabStyle="full" class="flex divide-x divide-gray-200 rounded-lg shadow-sm rtl:divide-x-reverse dark:divide-gray-700">
   <TabItem class="w-full" open>
     {#snippet titleSlot()}
       <span>Profile</span>
@@ -352,10 +352,6 @@ You can add other components to the `TabItem` component. Here we are adding a ti
   </TabItem>
 </Tabs>
 ```
-
-## Custom style
-
-To get a custom look and feel for the `Tabs` component, set `activeClasses` and `inactiveClasses` properties either on the `Tabs` component or on the individual `TabItem` components.
 
 ## Component data
 

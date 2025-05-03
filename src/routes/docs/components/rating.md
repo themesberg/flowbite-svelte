@@ -33,9 +33,9 @@ Let's import all necessary components in the script tag. We import a heart, thum
 The default rating icon is a star. Set the total and rating props. The `id` prop is required. Use a unique name.
 
 ```svelte example
-<script>
-  import { Rating, Star } from "flowbite-svelte";
-  const wrapper = (props) => (anchor, _props) => Star(anchor, { ..._props, ...props });
+<script lang="ts">
+  import { Rating, Star, type RatingIconProps } from "flowbite-svelte";
+  const wrapper = (props: RatingIconProps) => (anchor: any, _props: RatingIconProps) => Star(anchor, { ..._props, ...props });
 </script>
 
 <Rating id="example-1" total={5} size={50} rating={1.4} />
@@ -67,19 +67,20 @@ You can use the Star component with the `iconIndex` and `fillPercent` props.
 
 ## Rating with text
 
-If you also want to show a text near the stars you can use the `text` slot to add any text.
+If you also want to show a text near the stars you can use the `text` snippet to add any text.
 
-```svelte example hideScript
-<script>
-  import { Rating } from "flowbite-svelte";
+```svelte example
+<script lang="ts">
+  import { Rating, Star, type RatingIconProps } from "flowbite-svelte";
+  const wrapper = (props: RatingIconProps) => (anchor: any, _props: RatingIconProps) => Star(anchor, { ..._props, ...props });
 </script>
 
-<Rating id="example-3" total={5} rating={3.4}>
+<Rating id="example-3a" total={5} rating={3.4}>
   {#snippet text()}
     <p class="ms-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.4 out of 5</p>
   {/snippet}
 </Rating>
-<Rating id="example-3" total={5} rating={2.8} iconFillColor="#008800" iconStrokeColor="#008800">
+<Rating id="example-3" total={5} rating={2.8} icon={wrapper({ fillColor: "#008800", strokeColor: "#008800" })}>
   {#snippet text()}
     <p class="ms-2 text-sm font-medium text-gray-500 dark:text-gray-400">2.8 out of 5</p>
   {/snippet}
@@ -101,30 +102,30 @@ Aggregate more results by using this example to show the amount of reviews and t
 </Rating>
 ```
 
-## Icon size and color
-
-### Size and color
+## Icon and size
 
 The default icon size is `24`. Import your icon and set it in a icon props.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Rating, Heart } from "flowbite-svelte";
+  const heartWrapper = (props: RatingIconProps) => (anchor: any, _props: RatingIconProps) => Heart(anchor, { ..._props, ...props });
 </script>
 
-<Rating total={5} rating={3.3} id="example-5" icon={Heart} />
+<Rating total={5} rating={3.3} size={20} id="example-5" icon={Heart} />
 <Rating total={10} rating={7.6} id="example-5b" icon={Heart} />
-<Rating total={10} rating={7.6} id="example-5b" icon={Heart} iconFillColor="#3752d6" iconStrokeColor="#3752d6" />
+<Rating total={10} rating={7.6} id="example-5b" icon={heartWrapper({ fillColor: "#3752d6", strokeColor: "#3752d6" })} />
 ```
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Rating, Thumbup } from "flowbite-svelte";
+  const thumbWrapper = (props: RatingIconProps) => (anchor: any, _props: RatingIconProps) => Thumbup(anchor, { ..._props, ...props });
 </script>
 
-<Rating total={5} rating={4.7} id="example-5c" icon={Thumbup} />
-<Rating total={10} rating={8.2} id="example-5d" icon={Thumbup} />
-<Rating total={10} rating={8.2} id="example-5d" icon={Thumbup} iconFillColor="#ff3f00" iconStrokeColor="#ff3f00" />
+<Rating total={5} rating={4.7} size={20} id="example-5d" icon={Thumbup} />
+<Rating total={10} rating={8.2} id="example-5e" icon={Thumbup} />
+<Rating total={10} rating={7.6} id="example-5b" icon={thumbWrapper({ fillColor: "#ff3f00", strokeColor: "#ff3f00" })} />
 ```
 
 ## AdvancedRating component

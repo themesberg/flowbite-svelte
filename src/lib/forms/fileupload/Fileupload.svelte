@@ -31,7 +31,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[FileuploadProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L674)
+[FileuploadProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L683)
 ## Props
 @prop files = $bindable<FileList | undefined>()
 @prop size = "md"

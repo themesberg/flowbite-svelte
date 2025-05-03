@@ -313,8 +313,8 @@ By default, the `<TableHead>` component will create a single `<tr>` element with
 <Table>
   <TableHead defaultRow={false}>
     <tr>
-      <TableHeadCell colspan="2">Product</TableHeadCell>
-      <TableHeadCell colspan="3">Info</TableHeadCell>
+      <TableHeadCell colspan={2}>Product</TableHeadCell>
+      <TableHeadCell colspan={3}>Info</TableHeadCell>
     </tr>
     <tr>
       <TableHeadCell>Brand</TableHeadCell>
@@ -782,11 +782,17 @@ Use this example to apply a different color to every second row inside the table
 An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, ImagePlaceholder, Modal } from "flowbite-svelte";
   import { slide } from "svelte/transition";
+  type ItemType = {
+    name: string;
+    color: string;
+    type: string;
+    price: string;
+  };
 
-  const items = [
+  const items: ItemType[] = [
     {
       name: 'Apple MacBook Pro 17"',
       color: "Sliver",
@@ -807,11 +813,11 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
     }
   ];
 
-  let openRow;
-  let details;
-  let doubleClickModal = false;
+  let openRow: number | null | undefined = $state();
+  let details: ItemType | undefined = $state();
+  let doubleClickModal = $state(false);
 
-  const toggleRow = (i) => {
+  const toggleRow = (i: number) => {
     openRow = openRow === i ? null : i;
   };
 </script>
@@ -838,7 +844,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
             details = item;
           }}
         >
-          <TableBodyCell colspan="4" class="p-0">
+          <TableBodyCell colspan={4} class="p-0">
             <div class="px-2 py-3" transition:slide={{ duration: 300, axis: "y" }}>
               <ImagePlaceholder />
             </div>

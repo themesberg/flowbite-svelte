@@ -54,18 +54,17 @@ If you have anything else between the button and tooltip, they won't find each o
 
 ## Tooltip types
 
-You can use choose between dark and light version styles for the tooltip component by changing the utility classes from Tailwind CSS and by applying the `type={light|dark}` data attribute.
+You can use choose between dark and light version styles for the tooltip component by changing the utility classes from Tailwind CSS and by applying the `type={light|dark|auto}` data attribute.
 
 ```svelte example class="flex items-end gap-2 h-32" hideResponsiveButtons
 <script>
   import { Tooltip, Button } from "flowbite-svelte";
-  let type = "dark";
 </script>
 
 <Button>Light tooltip</Button>
 <Tooltip type="light">Tooltip content</Tooltip>
 <Button>Default tooltip</Button>
-<Tooltip>Tooltip content</Tooltip>
+<Tooltip type="auto">Tooltip content</Tooltip>
 <Button>Dark tooltip</Button>
 <Tooltip type="dark">Tooltip content</Tooltip>
 ```
@@ -77,19 +76,20 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 **Note!** This examples shows you also how to share one tooltip between multiple triggering elements using advanced CSS query.
 
 ```svelte example class="flex items-center justify-center gap-2 h-36" hideResponsiveButtons
-<script>
+<script lang="ts">
   import { Tooltip, Button } from "flowbite-svelte";
-  let placement = "left";
+  import type { Placement } from "@floating-ui/utils";
+  let placement: Placement = "left";
 </script>
 
 <Button>Tooltip left</Button>
-<Tooltip placement="left">Tooltip content - Left</Tooltip>
+<Tooltip placement="left">Left</Tooltip>
 <Button>Tooltip top</Button>
-<Tooltip placement="top">Tooltip content - Top</Tooltip>
+<Tooltip placement="top">Top</Tooltip>
 <Button>Tooltip bottom</Button>
-<Tooltip placement="bottom">Tooltip content - Bottom</Tooltip>
+<Tooltip placement="bottom">Bottom</Tooltip>
 <Button>Tooltip right</Button>
-<Tooltip placement="right">Tooltip content - Right</Tooltip>
+<Tooltip placement="right">Right</Tooltip>
 ```
 
 ## Triggering

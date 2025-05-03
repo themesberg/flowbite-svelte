@@ -172,8 +172,8 @@ Use this example of a navbar element to also show a search input element that yo
         <Search size="md" placeholder="Search..." />
       </div>
     {/if}
-    <NavUl tranistion={fade}>
-      <NavLi href="/" active={true}>Home</NavLi>
+    <NavUl>
+      <NavLi href="/">Home</NavLi>
       <NavLi href="/about">About</NavLi>
       <NavLi href="/docs/components/navbar">Navbar</NavLi>
     </NavUl>
@@ -200,7 +200,7 @@ Use the following navbar element to show a call to action button alongside the l
     <NavHamburger />
   </div>
   <NavUl class="order-1">
-    <NavLi href="/" active={true}>Home</NavLi>
+    <NavLi href="/">Home</NavLi>
     <NavLi href="/about">About</NavLi>
     <NavLi href="/docs/components/navbar">Navbar</NavLi>
     <NavLi href="/pricing">Pricing</NavLi>
@@ -226,7 +226,7 @@ Use this example to keep the navbar positioned fixed to the top side as you scro
     </NavBrand>
     <NavHamburger />
     <NavUl>
-      <NavLi href="/" active={true}>Home</NavLi>
+      <NavLi href="/">Home</NavLi>
       <NavLi href="/about">About</NavLi>
       <NavLi href="/docs/components/navbar">Navbar</NavLi>
       <NavLi href="/pricing">Pricing</NavLi>
@@ -257,7 +257,7 @@ Use this example to create a navigation bar with a user profile or button to tog
   </NavBrand>
   <div class="flex items-center md:order-2">
     <Avatar id="avatar-menu" src="/images/profile-picture-3.webp" />
-    <NavHamburger class1="w-full md:flex md:w-auto md:order-1" />
+    <NavHamburger />
   </div>
   <Dropdown placement="bottom" triggeredBy="#avatar-menu">
     <DropdownHeader>
@@ -272,7 +272,7 @@ Use this example to create a navigation bar with a user profile or button to tog
     <DropdownHeader>Sign out</DropdownHeader>
   </Dropdown>
   <NavUl>
-    <NavLi href="/" active={true}>Home</NavLi>
+    <NavLi href="/">Home</NavLi>
     <NavLi href="/about">About</NavLi>
     <NavLi href="/docs/components/navbar">Navbar</NavLi>
     <NavLi href="/pricing">Pricing</NavLi>
@@ -297,7 +297,7 @@ Use this example to show a solid background for the navbar component instead of 
   </NavBrand>
   <NavHamburger />
   <NavUl>
-    <NavLi href="/" active={true}>Home</NavLi>
+    <NavLi href="/">Home</NavLi>
     <NavLi href="/about">About</NavLi>
     <NavLi href="/docs/components/navbar">Navbar</NavLi>
     <NavLi href="/pricing">Pricing</NavLi>

@@ -17,7 +17,7 @@
     { value: "2", label: "Two" },
     { value: "3", label: "Three" }
   ];
-  let groupNumbers = ["2", "3"];
+  let groupNumbers = $state(["2", "3"]);
 </script>
 
 <h1 class="my-4 text-3xl">Checkbox</h1>

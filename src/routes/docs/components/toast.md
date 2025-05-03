@@ -44,7 +44,7 @@ Use this simple toast component with an icon, message, and dismissable close but
 
 ## Colors
 
-Use the `color` prop to easily change the colors of the icons. Set the `color` prop to `none` and use the `extraIconClass` prop to customize your desired icon styles.
+Use the `color` prop to easily change the colors of the icons. Set the `color` prop to `undefined` and use the `class` prop to customize your desired icon styles.
 
 Usually, green, red, and orange are used to show success, danger, or warning alert messages to your users. See the first three examples below.
 
@@ -78,11 +78,11 @@ Usually, green, red, and orange are used to show success, danger, or warning ale
   Improve password difficulty.
 </Toast>
 
-<Toast color="dark">
+<Toast color="gray">
   {#snippet icon()}
     <FireOutline class="h-6 w-6" />
   {/snippet}
-  Dark
+  Gray
 </Toast>
 
 <Toast color="yellow">
@@ -113,7 +113,7 @@ Usually, green, red, and orange are used to show success, danger, or warning ale
   Purple
 </Toast>
 
-<Toast color="none" defaultIconClass="w-8 h-8 text-pink-500 bg-pink-100 dark:bg-pink-800 dark:text-pink-200">
+<Toast color={undefined} class="h-8 w-8 bg-pink-100 text-pink-500 dark:bg-pink-800 dark:text-pink-200">
   {#snippet icon()}
     <FireOutline class="h-6 w-6" />
   {/snippet}
@@ -199,39 +199,39 @@ You can use any [icon components](/icons).
 
 You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" target="_blank" rel="noreferrer" >Svelte/easing</A>.
 
-```svelte example class="flex flex-col items-center"
+```svelte example class="flex flex-col items-center gap-4"
 <script>
   import { Toast } from "flowbite-svelte";
-  import { slide } from "svelte/transition";
+  import { slide, scale } from "svelte/transition";
   import { quintOut, elasticOut } from "svelte/easing";
   import { CheckCircleSolid } from "flowbite-svelte-icons";
 </script>
 
-<Toast transition={slide} class="mb-4">
+<Toast transition={slide}>
   {#snippet icon()}
     <CheckCircleSolid class="h-6 w-6" />
   {/snippet}
   Transition type: slide
 </Toast>
 
-<Toast transition={slide} params={{ delay: 250, duration: 300, easing: quintOut }} class="mb-4">
+<Toast transition={scale} params={{ delay: 250, duration: 300, easing: quintOut }}>
   {#snippet icon()}
     <CheckCircleSolid class="h-6 w-6" />
   {/snippet}
-  Transition type: slide, delay: 250, duration: 300, easing: quintOut
+  Transition type: scale, delay: 250, duration: 300, easing: quintOut
 </Toast>
 
-<Toast transition={slide} params={{ delay: 250, duration: 2000, easing: elasticOut }}>
+<Toast params={{ delay: 250, duration: 1000 }}>
   {#snippet icon()}
     <CheckCircleSolid class="h-6 w-6" />
   {/snippet}
-  Transition type: slide, delay: 250, duration: 2000, easing: elasticOut
+  Transition type: fade, delay: 250, duration: 1000
 </Toast>
 ```
 
 ### Blur examples
 
-```svelte example class="flex flex-col items-center"
+```svelte example class="flex flex-col items-center gap-4"
 <script>
   import { Toast } from "flowbite-svelte";
   import { blur } from "svelte/transition";
@@ -255,7 +255,7 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 
 ### Fly examples
 
-```svelte example class="flex flex-col items-center"
+```svelte example class="flex flex-col items-center gap-4"
 <script>
   import { Toast } from "flowbite-svelte";
   import { fly } from "svelte/transition";
@@ -305,7 +305,7 @@ This component can be used to show messages and a CTA button when receiving chat
   import { Toast, Avatar, Button } from "flowbite-svelte";
 </script>
 
-<Toast align={false} color="none" defaultIconClass="">
+<Toast align={false} color={undefined}>
   {#snippet icon()}
     <Avatar src="/images/profile-picture-1.webp" class="h-8" />
   {/snippet}

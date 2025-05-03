@@ -1,6 +1,5 @@
 <script lang="ts">
-
-  import { P, A } from '$lib'
+  import { P, A } from "$lib";
   import type { Placement } from "@floating-ui/utils";
   import { Tooltip, Button } from "$lib";
   let placement: Placement = "top";
@@ -10,107 +9,86 @@
       placement = trigger.id.replace("ref-", "");
     }
   }
-  let placement2: Placement = "left"
+  let placement2: Placement = "left";
 </script>
 
-flowbite-svelte-next allows you to show extra information when hovering or focusing over an element in multiple positions, styles, and animations.
-
-## Setup
-
-## Default tooltip example
-
-To get started with using tooltips all you need to do is to place `Tooltip` element directly after tiggering element (usually `Button`).
-In the following example you can see the tooltip that will be trigger by the `tooltip-default` element to be shown when hovered or focused.
+flowbite-svelte-next allows you to show extra information when hovering or focusing over an element in multiple positions, styles, and animations. ## Setup ## Default tooltip example To get started with using tooltips all you need to do is to place `Tooltip` element directly after tiggering element (usually `Button`). In the following example you can see the tooltip that will be trigger by the `tooltip-default` element to be shown when hovered or focused.
 
 <div class="my-8">
-<Button>Default tooltip</Button>
-<Tooltip>Tooltip content</Tooltip>
+  <Button>Default tooltip</Button>
+  <Tooltip>Tooltip content</Tooltip>
 </div>
 
 If you have anything else between the button and tooltip, they won't find each other and you will need to specify the link between them by setting the property `triggeredBy` to the CSS query of the element that triggers the tooltip. Most of the time you will want to use the `id` attribute of the element to link them, but you can use any CSS query you want. See the examples further down.
 
 <div class="my-8">
-<Button id="specific-button-anywhere-on-page">Default tooltip</Button>
-<P>hi mom</P>
-<P>lorem ipsum, content blah blah, other stuff</P>
-<Tooltip triggeredBy="#specific-button-anywhere-on-page">Tooltip content</Tooltip>
+  <Button id="specific-button-anywhere-on-page">Default tooltip</Button>
+  <P>hi mom</P>
+  <P>lorem ipsum, content blah blah, other stuff</P>
+  <Tooltip triggeredBy="#specific-button-anywhere-on-page">Tooltip content</Tooltip>
 </div>
 
-## Tooltip types
-
-You can use choose between dark and light version styles for the tooltip component by changing the utility classes from Tailwind CSS and by applying the `type=light|dark` data attribute.
+## Tooltip types You can use choose between dark and light version styles for the tooltip component by changing the utility classes from Tailwind CSS and by applying the `type=light|dark` data attribute.
 
 <div class="my-8">
-<Button>Light tooltip</Button>
-<Tooltip type="light">Tooltip content</Tooltip>
-<Button>Default tooltip</Button>
-<Tooltip>Tooltip content</Tooltip>
-<Button>Dark tooltip</Button>
-<Tooltip type="dark">Tooltip content</Tooltip>
+  <Button>Light tooltip</Button>
+  <Tooltip type="light">Tooltip content</Tooltip>
+  <Button>Default tooltip</Button>
+  <Tooltip type="auto">Tooltip content</Tooltip>
+  <Button>Dark tooltip</Button>
+  <Tooltip type="dark">Tooltip content</Tooltip>
 </div>
 
-## Placement
-
-The positioning of the tooltip element relative to the triggering element (eg. button, link) can be set using the `placement=top|right|bottom|left` attribute.
-
-**Note!** This examples shows you also how to share one tooltip between multiple triggering elements using advanced CSS query.
+## Placement The positioning of the tooltip element relative to the triggering element (eg. button, link) can be set using the `placement=top|right|bottom|left` attribute. **Note!** This examples shows you also how to share one tooltip between multiple triggering elements using advanced CSS query.
 
 <div class="my-8">
-<Button>Tooltip left</Button>
-<Tooltip placement="left">Tooltip content - Left</Tooltip>
-<Button>Tooltip top</Button>
-<Tooltip placement="top">Tooltip content - Top</Tooltip>
-<Button>Tooltip bottom</Button>
-<Tooltip placement="bottom">Tooltip content - Bottom</Tooltip>
-<Button>Tooltip right</Button>
-<Tooltip placement="right">Tooltip content - Right</Tooltip>
+  <Button>Tooltip left</Button>
+  <Tooltip placement="left">Tooltip content - Left</Tooltip>
+  <Button>Tooltip top</Button>
+  <Tooltip placement="top">Tooltip content - Top</Tooltip>
+  <Button>Tooltip bottom</Button>
+  <Tooltip placement="bottom">Tooltip content - Bottom</Tooltip>
+  <Button>Tooltip right</Button>
+  <Tooltip placement="right">Tooltip content - Right</Tooltip>
 </div>
 
 ## Triggering
 
 <div class="my-8">
-<Button id="hover">Tooltip hover</Button>
-<Button id="click">Tooltip click</Button>
-<Tooltip triggeredBy="#hover">Hover tooltip content</Tooltip>
-<Tooltip trigger="click" triggeredBy="#click">Click tooltip content</Tooltip>
+  <Button id="hover">Tooltip hover</Button>
+  <Button id="click">Tooltip click</Button>
+  <Tooltip triggeredBy="#hover">Hover tooltip content</Tooltip>
+  <Tooltip trigger="click" triggeredBy="#click">Click tooltip content</Tooltip>
 </div>
 
 ## Disable arrow
 
-<div class="my-8"> 
-<Button id="disable-arrow">Default tooltip</Button>
-<Tooltip arrow={false} triggeredBy="#disable-arrow">Tooltip content</Tooltip>
+<div class="my-8">
+  <Button id="disable-arrow">Default tooltip</Button>
+  <Tooltip arrow={false} triggeredBy="#disable-arrow">Tooltip content</Tooltip>
 </div>
 
-## External reference
-
-If you need the tooltip to be attached to the other element then the tiggering one you can pass a CSS query to `reference` prop.
+## External reference If you need the tooltip to be attached to the other element then the tiggering one you can pass a CSS query to `reference` prop.
 
 <div class="my-8">
-<div id="ext-ref" class="rounded-lg border border-gray-200 p-2 dark:border-gray-600">External reference</div>
-<div class="space-x-4 rtl:space-x-reverse">
-  <Button id="ref-left">Left</Button>
-  <Button id="ref-top">Top</Button>
-  <Button id="ref-right">Right</Button>
+  <div id="ext-ref" class="rounded-lg border border-gray-200 p-2 dark:border-gray-600">External reference</div>
+  <div class="space-x-4 rtl:space-x-reverse">
+    <Button id="ref-left">Left</Button>
+    <Button id="ref-top">Top</Button>
+    <Button id="ref-right">Right</Button>
+  </div>
+  <Tooltip reference="#ext-ref" triggeredBy="[id^='ref-']" placement={placement2} {onbeforetoggle} class="w-64 text-sm font-light">And here's some amazing content. It's very engaging. Right?</Tooltip>
 </div>
-<Tooltip reference="#ext-ref" triggeredBy="[id^='ref-']" placement={placement2} {onbeforetoggle} class="w-64 text-sm font-light">And here's some amazing content. It's very engaging. Right?</Tooltip>
-</div>
 
-## Custom type
-
-Various color palettes can be set for a tooltip by using the `color` property from the underlying `Frame` component. (Setting `color` prop sets the `type` to `custom` implicitly.)
-
-When you want to add a fully custom styles, use `type="custom"`, `defaultClass`, and `class` to modify the tooltip styling.
+## Custom type Various color palettes can be set for a tooltip by using the `color` property from the underlying `Frame` component. (Setting `color` prop sets the `type` to `custom` implicitly.) When you want to add a fully custom styles, use `type="custom"`, `defaultClass`, and `class` to modify the tooltip styling.
 
 <div class="my-8">
+  <Button>Green tooltip</Button>
+  <Tooltip color="green">Tooltip content</Tooltip>
 
-<Button>Green tooltip</Button>
-<Tooltip color="green">Tooltip content</Tooltip>
+  <Button>Yellow tooltip</Button>
+  <Tooltip color="yellow">Tooltip content</Tooltip>
 
-<Button>Yellow tooltip</Button>
-<Tooltip color="yellow">Tooltip content</Tooltip>
-
-<Button>Custom type</Button>
-<Tooltip placement="right" type={undefined} class="bg-purple-500 p-4 text-lg font-medium text-gray-100" arrow={false}>Tooltip content</Tooltip>
+  <Button>Custom type</Button>
+  <Tooltip placement="right" type={undefined} class="bg-purple-500 p-4 text-lg font-medium text-gray-100" arrow={false}>Tooltip content</Tooltip>
 </div>
-

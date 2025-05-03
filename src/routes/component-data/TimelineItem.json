@@ -2,7 +2,7 @@
   "name": "TimelineItem",
   "type": {
     "name": "TimelineItemProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1458"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1499"
   },
   "props": [
     ["children", ""],

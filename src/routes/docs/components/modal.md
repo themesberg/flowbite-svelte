@@ -52,6 +52,28 @@ An option of automatic closing of the modal can be enabled by setting the `autoc
 </Modal>
 ```
 
+## autoclose
+
+If `autoclose` is set to `false` or omitted, clicking buttons inside the modal will not automatically close it.
+
+```svelte example class="flex justify-center" hideResponsiveButtons
+<script>
+  import { Button, Modal, P } from "flowbite-svelte";
+  let defaultModal = $state(false);
+</script>
+
+<Button onclick={() => (defaultModal = true)}>Default modal</Button>
+<Modal title="Terms of Service" bind:open={defaultModal}>
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
+
+  {#snippet footer()}
+    <Button onclick={() => alert('Handle "success"')}>I accept</Button>
+    <Button color="alternative">Decline</Button>
+  {/snippet}
+</Modal>
+```
+
 ## Clicking outside
 
 `Modal` has got the prop `outsideclose` set to `true` by default, to allow the user to close the modal by clicking outside of it. If you want to block that behaviour set that prop to `false`.
@@ -125,7 +147,7 @@ Use this modal example with form input element to receive information from your 
 
 <Button onclick={() => (formModal = true)}>Form modal</Button>
 
-<Modal bind:open={formModal} size="xs" autoclose={false}>
+<Modal bind:open={formModal} size="xs">
   <form class="flex flex-col space-y-6" method="dialog" action="#">
     <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h3>
     <Label class="space-y-2">
@@ -214,12 +236,13 @@ Use this web3 modal component to show crypto wallet connection options like Meta
 You can use five different modal sizing options starting from extra small to extra large, but keep in mind that the width of these modals will remain the same when browsing on smaller devices.
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
-<script>
-  import { Button, Modal } from "flowbite-svelte";
+<script lang="ts">
+  import { Button, Modal, type ModalProps } from "flowbite-svelte";
+
   let openModal = $state(false);
-  let size = $state();
-  function onclick(ev) {
-    size = ev.target.textContent;
+  let size: ModalProps["size"] = $state();
+  function onclick(ev: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement }) {
+    size = (ev.target as HTMLButtonElement).textContent as ModalProps["size"];
     openModal = true;
   }
 </script>
@@ -245,16 +268,16 @@ You can use five different modal sizing options starting from extra small to ext
 ## Placement
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
-<script>
-  import { Button, Modal } from "flowbite-svelte";
-  let id = $state();
-  let placement = $state();
-  let open = $state(false);
+<script lang="ts">
+  import { Button, Modal, type ModalPlacementType } from "flowbite-svelte";
 
-  const setPlacement = (ev) => {
-    placement = ev.target.textContent; // text in the button
+  let id = $state("placement-modal");
+  let placement: ModalPlacementType = $state("center");
+  let openPlacement = $state(false);
+  const setPlacement = (ev: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement }) => {
+    placement = (ev.target as HTMLButtonElement).textContent as ModalPlacementType;
     id = `${placement}-modal`;
-    open = !open;
+    openPlacement = !openPlacement;
   };
 </script>
 
@@ -270,7 +293,7 @@ You can use five different modal sizing options starting from extra small to ext
   <Button onclick={setPlacement}>bottom-right</Button>
 </div>
 
-<Modal {id} title="Terms of Service" bind:open {placement} autoclose>
+<Modal {id} title="Terms of Service" bind:open={openPlacement} {placement} autoclose>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
   {#snippet footer()}
@@ -283,28 +306,29 @@ You can use five different modal sizing options starting from extra small to ext
 ## Colors
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
-<script>
-  import { Button, Modal, P } from "flowbite-svelte";
-  let open = $state(false);
+<script lang="ts">
+  import { Button, Modal, P, type ButtonProps } from "flowbite-svelte";
+
+  let openColor = $state(false);
   let color = $state();
-  function onclick(ev) {
-    color = ev.target.textContent.split(" ")[0].toLowerCase();
-    open = true;
+  function onclickColor(ev: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement }) {
+    color = (ev.target as HTMLButtonElement).textContent?.split(" ")[0].toLowerCase();
+    openColor = true;
   }
 </script>
 
 <div class="block space-y-4 md:space-y-0 md:space-x-2 rtl:space-x-reverse">
-  <Button color="primary" {onclick}>Primary modal</Button>
-  <Button color="red" {onclick}>Red modal</Button>
-  <Button color="green" {onclick}>Green modal</Button>
-  <Button color="blue" {onclick}>Blue modal</Button>
-  <Button color="yellow" {onclick}>Yellow modal</Button>
+  <Button color="primary" onclick={onclickColor}>Primary modal</Button>
+  <Button color="red" onclick={onclickColor}>Red modal</Button>
+  <Button color="green" onclick={onclickColor}>Green modal</Button>
+  <Button color="blue" onclick={onclickColor}>Blue modal</Button>
+  <Button color="yellow" onclick={onclickColor}>Yellow modal</Button>
 </div>
 
-<Modal title="Terms of Service" bind:open {color} autoclose>
+<Modal title="Terms of Service" bind:open={openColor} {color} autoclose>
   <div class="text-base leading-relaxed">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</div>
   {#snippet footer()}
-    <Button onclick={() => alert('Handle "success"')} {color}>I accept</Button>
+    <Button onclick={() => alert('Handle "success"')} color={color as ButtonProps["color"]}>I accept</Button>
     <Button color="alternative">Decline</Button>
   {/snippet}
 </Modal>

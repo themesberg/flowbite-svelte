@@ -16,7 +16,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[LayoutProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1555)
+[LayoutProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1596)
 ## Props
 @prop children
 @prop class: className

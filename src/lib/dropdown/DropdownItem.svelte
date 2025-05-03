@@ -27,6 +27,10 @@
     <a {href} {...restProps} class={finalClass}>
       {@render children()}
     </a>
+  {:else if restProps.onclick}
+    <button type="button" class={finalClass} onclick={restProps.onclick}>
+      {@render children()}
+    </button>
   {:else}
     <div class={finalClass}>
       {@render children()}
@@ -38,7 +42,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[DropdownItemProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L573)
+[DropdownItemProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L581)
 ## Props
 @prop aClass
 @prop children

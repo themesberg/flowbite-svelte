@@ -291,12 +291,15 @@ Dynamically show the password strength progress when creating a new password pos
 Set the position of the popover component relative to the trigger element by using the `placement={top|right|bottom|left}` data attribute and its values.
 
 ```svelte example class="flex gap-4 flex-col justify-center items-center h-96" hideResponsiveButtons
-<script>
+<script lang="ts">
   import { Popover, Button } from "flowbite-svelte";
   let placement = $state("bottom");
 
-  function onbeforetoggle(ev) {
-    placement = ev.trigger?.id.replace("placement-", "");
+  function onbeforetoggle(ev: Event) {
+    const trigger = (ev as { trigger?: { id?: string } }).trigger;
+    if (trigger?.id) {
+      placement = trigger.id.replace("placement-", "");
+    }
   }
 </script>
 
@@ -306,7 +309,7 @@ Set the position of the popover component relative to the trigger element by usi
   <Button id="placement-right">Right popover</Button>
 </div>
 <Button id="placement-bottom">Bottom popover</Button>
-<Popover triggeredBy="[id^='placement-']" {placement} class="w-64 text-sm font-light " title="Popover {placement}" {onbeforetoggle}>And here's some amazing content. It's very engaging. Right?</Popover>
+<Popover triggeredBy="[id^='placement-']" placement={placement as PopoverProps["placement"]} class="w-64 text-sm font-light " title="Popover {placement}" {onbeforetoggle}>And here's some amazing content. It's very engaging. Right?</Popover>
 ```
 
 ## Triggering
@@ -335,24 +338,6 @@ Increase or decrease the default offset by adding the `offset` attribute where t
 <Popover offset={30} class="w-64 text-sm font-light" title="Popover title">And here's some amazing content. It's very engaging. Right?</Popover>
 ```
 
-## Animation
-
-Customize the animation of the popover component by using the transition functions from Svelte.
-
-```svelte example class="flex h-44 items-end justify-center gap-8" hideResponsiveButtons
-<script>
-  import { Popover, Button } from "flowbite-svelte";
-  import { blur, fade, slide } from "svelte/transition";
-</script>
-
-<Button>Fade popover</Button>
-<Popover class="w-64 text-sm font-light" title="Popover title" transition={fade} params={{ duration: 700 }}>And here's some amazing content. It's very engaging. Right?</Popover>
-<Button>Blur popover</Button>
-<Popover class="w-64 text-sm font-light" title="Popover title" transition={blur} params={{ duration: 500 }}>And here's some amazing content. It's very engaging. Right?</Popover>
-<Button>Slide popover</Button>
-<Popover class="w-64 text-sm font-light" title="Popover title" transition={slide}>And here's some amazing content. It's very engaging. Right?</Popover>
-```
-
 ## Disable arrow
 
 You can also disable the popover arrow by setting `arrow` attribute to `false`.
@@ -370,13 +355,13 @@ You can also disable the popover arrow by setting `arrow` attribute to `false`.
 
 If you need the popover to be attached to the other element then the tiggering one you can pass a CSS query to `reference` prop.
 
-```svelte example class="flex gap-4 flex-col justify-center items-center h-72" hideResponsiveButtons
+```svelte example class="flex gap-4 flex-col justify-end items-center h-64" hideResponsiveButtons
 <script>
   import { Popover, Button } from "flowbite-svelte";
   let placement = "";
 </script>
 
-<div id="ext-ref" class="rounded-lg border border-gray-200 p-2 dark:border-gray-600">External reference</div>
+<div id="ext-ref" class="my-4 rounded-lg border border-gray-200 p-2 dark:border-gray-600">External reference</div>
 <div class="space-x-4 rtl:space-x-reverse">
   <Button id="ref-1">Left</Button>
   <Button id="ref-2">Top</Button>

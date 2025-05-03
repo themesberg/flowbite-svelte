@@ -2,7 +2,7 @@
   "name": "FooterBrand",
   "type": {
     "name": "FooterBrandProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L594"
+    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L603"
   },
   "props": [
     ["children", ""],

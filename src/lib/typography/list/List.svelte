@@ -25,7 +25,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[ListProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1560)
+[ListProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1601)
 ## Props
 @prop children
 @prop tag = "ul"

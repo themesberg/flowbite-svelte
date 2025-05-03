@@ -24,7 +24,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[AndroidProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L488)
+[AndroidProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L493)
 ## Props
 @prop children
 @prop divClass

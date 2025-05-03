@@ -704,7 +704,7 @@ As dropdown is implemented using the [Floating UI](https://floating-ui.com) libr
 
 ## Events
 
-`DropdownItem` renders to link or button wrapped with `<li/>` element depending whether you supplied the `href` property. Therefore you can catch standard events on it like `onclick`.
+`DropdownItem` renders to link or button or div wrapped with `<li/>` element depending whether you supplied the `href` or `onclick` property.
 
 ```svelte example class="flex justify-center items-start h-40" hideResponsiveButtons
 <script lang="ts">
@@ -719,7 +719,7 @@ As dropdown is implemented using the [Floating UI](https://floating-ui.com) libr
 <Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
 <Dropdown simple>
   <DropdownItem href="/link" onclick={handleClick}>Rendered as link</DropdownItem>
-  <DropdownItem>Rendered as button</DropdownItem>
+  <DropdownItem onclick={handleClick}>Rendered as button</DropdownItem>
 </Dropdown>
 ```
 

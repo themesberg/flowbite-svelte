@@ -1,11 +1,10 @@
 <script lang="ts">
   import clsx from "clsx";
-  import type { TriggeredToggleEvent } from "../utils/Popper.svelte";
   import Popper from "../utils/Popper.svelte";
   import { tooltip } from "./theme";
-  import type { TooltipProps } from "$lib/types";
+  import type { TooltipProps, TriggeredToggleEvent } from "$lib";
 
-  let { type = "auto", color = undefined, trigger = "hover", arrow = true, children, placement = "top", onbeforetoggle: _onbeforetoggle, class: className, ...restProps }: TooltipProps = $props();
+  let { type = "dark", color = undefined, trigger = "hover", arrow = true, children, placement = "top", onbeforetoggle: _onbeforetoggle, class: className, ...restProps }: TooltipProps = $props();
 
   let { base } = $derived(tooltip({ color, type }));
 
@@ -27,7 +26,7 @@
 @component
 [Go to docs](https://flowbite-svelte-next.com/)
 ## Type
-[TooltipProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1488)
+[TooltipProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1529)
 ## Props
 @prop type = "dark"
 @prop color = undefined
