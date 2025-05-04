@@ -9,7 +9,7 @@ description: Tips for your apps.
 
 ## Does flowbite-svelte work on Svelte 5?
 
-You can find [the progress report](https://flowbite-svelte-5-dev.vercel.app/) for flowbite-svelte-next on Svelte 5.
+You can find [the progress report](/api-check) for flowbite-svelte-next on Svelte 5.
 
 ## Svelte key blocks
 
