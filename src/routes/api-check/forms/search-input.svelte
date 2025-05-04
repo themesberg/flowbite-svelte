@@ -62,7 +62,7 @@
   };
 </script>
 
-<h1 class="text-3xl my-4">Search input</h1>
+<h1 class="text-3xl my-4">Search Input</h1>
 The search input component can be used to let your users search through your website using string queries and it comes in multiple styles, variants, and sizes built with the utility classes from Tailwind CSS. You will also find more advanced search components on this page including dropdown category selections, search buttons positioned inside the input field, voice search fields and more. 
 
 <h2 class="text-2xl">Search bar example</h2>

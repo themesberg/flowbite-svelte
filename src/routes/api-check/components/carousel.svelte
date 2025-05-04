@@ -52,7 +52,7 @@
   const scaleAnimation = (node: HTMLElement) => scale(node, { duration: 500, easing: quintOut });
 </script>
 
-<h1 class="my-4 text-3xl">Svelte Carousel</h1>
+<h1 class="my-4 text-3xl">Carousel</h1>
 
 <h2 class="my-4 text-2xl">Setup</h2>
 <div class="max-w-4xl">

@@ -7,7 +7,7 @@
   };
 </script>
 
-<h1 class="my-4 text-3xl">Svelte Button Group</h1>
+<h1 class="my-4 text-3xl">Button Group</h1>
 
 <h2 class="my-4 text-2xl">Setup</h2>
 

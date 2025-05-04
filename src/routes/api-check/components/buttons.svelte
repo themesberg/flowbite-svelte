@@ -11,7 +11,7 @@
   };
 </script>
 
-<h1 class="my-4 text-3xl">Svelte Buttons</h1>
+<h1 class="my-4 text-3xl">Buttons</h1>
 
 <h2 class="my-4 text-2xl">Setup</h2>
 

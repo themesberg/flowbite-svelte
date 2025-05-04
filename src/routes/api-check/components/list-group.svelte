@@ -27,7 +27,7 @@
   ];
 </script>
 
-<h1 class="text-3xl my-4">List group</h1>
+<h1 class="text-3xl my-4">List Group</h1>
 <h2 class="text-2xl">Default list group</h2>
 
 <div class="m-8">

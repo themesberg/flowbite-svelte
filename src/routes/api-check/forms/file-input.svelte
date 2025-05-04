@@ -30,7 +30,7 @@
   }
 </script>
 
-<h1 class="my-4 text-3xl">File input</h1>
+<h1 class="my-4 text-3xl">File Input</h1>
 
 <div class="mb-6">
   <h2 class="my-4 text-2xl">Helper text</h2>

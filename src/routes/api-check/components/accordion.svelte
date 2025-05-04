@@ -11,6 +11,8 @@
   const close_all = () => items.forEach((_, i) => (items[i] = false));
 </script>
 
+<h1 class="my-4 text-2xl">Accordion</h1>
+
 <h2 class="my-4 text-2xl">Default accordion</h2>
 
 <Accordion>

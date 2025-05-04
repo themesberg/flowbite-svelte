@@ -3,7 +3,7 @@
   import { CheckCircleSolid, CloseCircleSolid, CheckOutline } from "flowbite-svelte-icons";
 </script>
 
-<h1 class="my-4 text-3xl">Svelte Lists</h1>
+<h1 class="my-4 text-3xl">List</h1>
 
 <h2 class="my-4 text-2xl">Unordored list</h2>
 

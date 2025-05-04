@@ -70,7 +70,7 @@
   ];
 </script>
 
-<h1 class="my-4 text-3xl">Svelte Gallery (Masonry)</h1>
+<h1 class="my-4 text-3xl">Gallery</h1>
 
 <div class="default-gallery-section">
   <h2 class="my-4 text-2xl">Default gallery</h2>

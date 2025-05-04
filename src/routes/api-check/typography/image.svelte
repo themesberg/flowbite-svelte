@@ -2,7 +2,7 @@
   import { Img } from "$lib";
 </script>
 
-<h1 class="my-4 text-3xl">Svelte Images</h1>
+<h1 class="my-4 text-3xl">Images</h1>
 
 <h2 class="my-4 text-2xl">Default image</h2>
 
