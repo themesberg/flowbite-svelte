@@ -48,7 +48,7 @@
   };
 </script>
 
-<h1 class="my-4 text-3xl">Tables</h1>
+<h1 class="my-4 text-3xl">Table</h1>
 
 <div class="example-container my-8">
   <h2 class="my-4 text-2xl">Default table</h2>

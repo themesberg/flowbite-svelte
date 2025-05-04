@@ -3,7 +3,8 @@
   import { CaretUpSolid, CaretDownSolid, CaretRightSolid, CaretLeftSolid } from "flowbite-svelte-icons";
 </script>
 
-<h2>Default KBD</h2>
+<h1 class="text-3xl my-4">Kbd</h1>
+<h2 class="text-2xl">Default KBD</h2>
 
 <div class="my-8">
   <Kbd>Shift</Kbd>
@@ -15,7 +16,7 @@
   <Kbd>Enter</Kbd>
 </div>
 
-<h2>KBD inside text</h2>
+<h2 class="text-2xl">KBD inside text</h2>
 
 <div class="my-8">
   <p class="text-gray-500 dark:text-gray-400">
@@ -23,7 +24,7 @@
   </p>
 </div>
 
-<h2>KBD inside table</h2>
+<h2 class="text-2xl">KBD inside table</h2>
 
 <div class="my-8">
   <Table>
@@ -69,7 +70,7 @@
   </Table>
 </div>
 
-<h2>Arrow keys</h2>
+<h2 class="text-2xl">Arrow keys</h2>
 
 <div class="my-8">
   <Kbd class="me-1 inline-flex items-center px-2 py-1.5">
@@ -90,7 +91,7 @@
   </Kbd>
 </div>
 
-<h2>Letter keys</h2>
+<h2 class="text-2xl">Letter keys</h2>
 
 <div class="my-8">
   <Kbd>Q</Kbd>
@@ -121,7 +122,7 @@
   <Kbd>M</Kbd>
 </div>
 
-<h2>Number keys</h2>
+<h2 class="text-2xl">Number keys</h2>
 
 <div class="my-8">
   <Kbd>1</Kbd>
@@ -136,7 +137,7 @@
   <Kbd>0</Kbd>
 </div>
 
-<h2>Function keys</h2>
+<h2 class="text-2xl">Function keys</h2>
 
 <div class="my-8">
   <Kbd>F1</Kbd>

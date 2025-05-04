@@ -12,8 +12,9 @@
   let placement2: Placement = "left";
 </script>
 
-flowbite-svelte-next allows you to show extra information when hovering or focusing over an element in multiple positions, styles, and animations. ## Setup ## Default tooltip example To get started with using tooltips all you need to do is to place `Tooltip` element directly after tiggering element (usually `Button`). In the following example you can see the tooltip that will be trigger by the `tooltip-default` element to be shown when hovered or focused.
+<h1 class="text-3xl my-4">Tooltip</h1>
 
+<h2 class="text-2xl">Default tooltip example</h2>
 <div class="my-8">
   <Button>Default tooltip</Button>
   <Tooltip>Tooltip content</Tooltip>
@@ -28,7 +29,9 @@ If you have anything else between the button and tooltip, they won't find each o
   <Tooltip triggeredBy="#specific-button-anywhere-on-page">Tooltip content</Tooltip>
 </div>
 
-## Tooltip types You can use choose between dark and light version styles for the tooltip component by changing the utility classes from Tailwind CSS and by applying the `type=light|dark` data attribute.
+
+<h2 class="text-2xl">Tooltip types</h2>
+You can use choose between dark and light version styles for the tooltip component by changing the utility classes from Tailwind CSS and by applying the `type=light|dark` data attribute.
 
 <div class="my-8">
   <Button>Light tooltip</Button>
@@ -39,7 +42,8 @@ If you have anything else between the button and tooltip, they won't find each o
   <Tooltip type="dark">Tooltip content</Tooltip>
 </div>
 
-## Placement The positioning of the tooltip element relative to the triggering element (eg. button, link) can be set using the `placement=top|right|bottom|left` attribute. **Note!** This examples shows you also how to share one tooltip between multiple triggering elements using advanced CSS query.
+<h2 class="text-2xl">Placement</h2>
+The positioning of the tooltip element relative to the triggering element (eg. button, link) can be set using the `placement=top|right|bottom|left` attribute. **Note!** This examples shows you also how to share one tooltip between multiple triggering elements using advanced CSS query.
 
 <div class="my-8">
   <Button>Tooltip left</Button>
@@ -52,7 +56,7 @@ If you have anything else between the button and tooltip, they won't find each o
   <Tooltip placement="right">Tooltip content - Right</Tooltip>
 </div>
 
-## Triggering
+<h2 class="text-2xl">Triggering</h2>
 
 <div class="my-8">
   <Button id="hover">Tooltip hover</Button>
@@ -61,14 +65,15 @@ If you have anything else between the button and tooltip, they won't find each o
   <Tooltip trigger="click" triggeredBy="#click">Click tooltip content</Tooltip>
 </div>
 
-## Disable arrow
+<h2 class="text-2xl">Disable arrow</h2>
 
 <div class="my-8">
   <Button id="disable-arrow">Default tooltip</Button>
   <Tooltip arrow={false} triggeredBy="#disable-arrow">Tooltip content</Tooltip>
 </div>
 
-## External reference If you need the tooltip to be attached to the other element then the tiggering one you can pass a CSS query to `reference` prop.
+<h2 class="text-2xl">External reference</h2>
+If you need the tooltip to be attached to the other element then the tiggering one you can pass a CSS query to `reference` prop.
 
 <div class="my-8">
   <div id="ext-ref" class="rounded-lg border border-gray-200 p-2 dark:border-gray-600">External reference</div>
@@ -80,7 +85,8 @@ If you have anything else between the button and tooltip, they won't find each o
   <Tooltip reference="#ext-ref" triggeredBy="[id^='ref-']" placement={placement2} {onbeforetoggle} class="w-64 text-sm font-light">And here's some amazing content. It's very engaging. Right?</Tooltip>
 </div>
 
-## Custom type Various color palettes can be set for a tooltip by using the `color` property from the underlying `Frame` component. (Setting `color` prop sets the `type` to `custom` implicitly.) When you want to add a fully custom styles, use `type="custom"`, `defaultClass`, and `class` to modify the tooltip styling.
+<h2 class="text-2xl">Custom type</h2>
+ Various color palettes can be set for a tooltip by using the `color` property from the underlying `Frame` component. (Setting `color` prop sets the `type` to `custom` implicitly.) When you want to add a fully custom styles, use `type="custom"`, `defaultClass`, and `class` to modify the tooltip styling.
 
 <div class="my-8">
   <Button>Green tooltip</Button>

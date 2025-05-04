@@ -10,7 +10,11 @@
   };
 </script>
 
-The toggle component can be used to receive a simple “yes” or “no” type of answer from the user by choosing a single option from two options available in multiple sizes, styles, and colors coded with the utility classes from Tailwind CSS and with dark mode support. ## Setup ## Toggle examples Get started with the default toggle component example as a checkbox element to receive a true or false selection from the user.
+<h1 class="text-3xl my-4">Toggle</h1>
+The toggle component can be used to receive a simple “yes” or “no” type of answer from the user by choosing a single option from two options available in multiple sizes, styles, and colors coded with the utility classes from Tailwind CSS and with dark mode support. 
+
+<h2 class="text-2xl">Toggle examples</h2>
+ Get started with the default toggle component example as a checkbox element to receive a true or false selection from the user.
 
 <div class="m-8">
   <Toggle>Toggle me</Toggle>
@@ -19,7 +23,7 @@ The toggle component can be used to receive a simple “yes” or “no” type 
   <Toggle checked disabled>Disabled checked</Toggle>
 </div>
 
-## Colors
+<h2 class="text-2xl">Colors</h2>
 
 <div class="m-8">
   <Toggle color="red" checked>Red</Toggle>
@@ -30,7 +34,7 @@ The toggle component can be used to receive a simple “yes” or “no” type 
   <Toggle color="orange" checked>Orange</Toggle>
 </div>
 
-## Sizes
+<h2 class="text-2xl">Sizes</h2>
 
 <div class="m-8">
   <Toggle size="small">Small toggle</Toggle>
@@ -39,7 +43,7 @@ The toggle component can be used to receive a simple “yes” or “no” type 
   <Toggle size={undefined} spanClass={customSize}>Custom toggle</Toggle>
 </div>
 
-## Label for off state
+<h2 class="text-2xl">Label for off state</h2>
 
 <div class="m-8">
   <Toggle>
@@ -50,7 +54,7 @@ The toggle component can be used to receive a simple “yes” or “no” type 
   </Toggle>
 </div>
 
-## Disabled
+<h2 class="text-2xl">Disabled</h2>
 
 <div class="m-8">
   <Button class="w-48" onclick={handleClick}>Disabled: {isDisabled ? "True" : "False"}</Button>

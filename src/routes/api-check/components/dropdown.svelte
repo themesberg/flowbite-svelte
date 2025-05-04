@@ -29,7 +29,7 @@
   // };
 </script>
 
-<h1 class="my-4 text-3xl">Svelte Dropdown</h1>
+<h1 class="my-4 text-3xl">Dropdown</h1>
 
 <h2 class="my-4 text-2xl">Examples</h2>
 

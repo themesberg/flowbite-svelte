@@ -5,7 +5,8 @@
   const components = "Heading, P, A, Mark, Secondary";
 </script>
 
-## Default heading
+<h1 class="text-3xl my-4">Heading</h1>
+<h2 class="text-2xl">Default heading</h2>
 
 <div class="m-8">
   <div class="text-center">
@@ -18,7 +19,8 @@
   </div>
 </div>
 
-## Second-level heading Use this example of a second-level H2 heading as the main subtitle for each section of your web page.
+<h2 class="text-2xl">Second-level heading</h2>
+ Use this example of a second-level H2 heading as the main subtitle for each section of your web page.
 
 <div class="m-8">
   <Heading tag="h2" class="text-4xl font-extrabold ">Payments tool for companies</Heading>
@@ -30,21 +32,23 @@
   </A>
 </div>
 
-## Highlighted heading
+<h2 class="text-2xl">Highlighted heading</h2>
 
 <div class="m-8">
   <Heading tag="h1" class="mb-4">Get back to growth with <Span highlight="blue">the world's #1</Span> CRM.</Heading>
   <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
 </div>
 
-## Heading mark This example can be used to mark one part of the heading text with a solid background for highlighting.
+<h2 class="text-2xl">Heading mark</h2>
+ This example can be used to mark one part of the heading text with a solid background for highlighting.
 
 <div class="m-8">
   <Heading tag="h1" class="mb-4">Regain <Mark>control</Mark> over your days</Heading>
   <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
 </div>
 
-## Heading gradient Use this example to highlight a portion of the heading text by using a gradient style.
+<h2 class="text-2xl">Heading gradient</h2>
+ Use this example to highlight a portion of the heading text by using a gradient style.
 
 <div class="m-8">
   <Heading tag="h1" class="mb-4 text-3xl font-extrabold  md:text-5xl lg:text-6xl">
@@ -53,7 +57,7 @@
   <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
 </div>
 
-## Heading underline
+<h2 class="text-2xl">Heading underline</h2>
 
 <div class="m-8">
   <Heading tag="h1" class="mb-4">
@@ -62,7 +66,8 @@
   <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
 </div>
 
-## Breadcrumb context Get started with this example to position a breadcrumb component above the heading component.
+<h2 class="text-2xl">Breadcrumb context</h2>
+ Get started with this example to position a breadcrumb component above the heading component.
 
 <div class="m-8">
   <Breadcrumb class="mb-4">
@@ -73,7 +78,8 @@
   <Heading tag="h2" class="mb-4">Team management</Heading>
 </div>
 
-## Badge context Use this example to show a badge component inside the heading text element as a secondary indicator.
+<h2 class="text-2xl">Badge context</h2>
+ Use this example to show a badge component inside the heading text element as a secondary indicator.
 
 <div class="m-8">
   <Heading tag="h1" class="flex items-center text-5xl">
@@ -81,7 +87,8 @@
   </Heading>
 </div>
 
-## Secondary text This example can be used to add a secondary text inside the main heading component.
+<h2 class="text-2xl">Secondary text</h2>
+ This example can be used to add a secondary text inside the main heading component.
 
 <div class="m-8">
   <Heading tag="h1" class="text-5xl font-extrabold">
@@ -89,37 +96,43 @@
   </Heading>
 </div>
 
-## Sizes ### Heading one (H1)
+<h2 class="text-2xl">Sizes</h2>
+<h3 class="text-xl">Heading one (H1)</h3>
 
 <div class="m-8">
   <Heading tag="h1">Heading 1</Heading>
 </div>
 
-### Heading two (H2) The `tag="h2"` can be used as subtitles of the page’s sections.
+<h3 class="text-xl">Heading two (H2)</h3>
+ The `tag="h2"` can be used as subtitles of the page’s sections.
 
 <div class="m-8">
   <Heading tag="h2">Heading 2</Heading>
 </div>
 
-### Heading three (H3) The `tag="h3"` can be used as subtitles of the page’s sections.
+<h3 class="text-xl">Heading three (H3)</h3>
+ The `tag="h3"` can be used as subtitles of the page’s sections.
 
 <div class="m-8">
   <Heading tag="h3">Heading 3</Heading>
 </div>
 
-### Heading four (H4) The `tag="h4"` can be used as subtitles of the page’s sections.
+<h3 class="text-xl">Heading four (H4)</h3>
+ The `tag="h4"` can be used as subtitles of the page’s sections.
 
 <div class="m-8">
   <Heading tag="h4">Heading 4</Heading>
 </div>
 
-### Heading five (H5) The `tag="h5"` can be used as subtitles of the page’s sections.
+<h3 class="text-xl">Heading five (H5)</h3>
+ The `tag="h5"` can be used as subtitles of the page’s sections.
 
 <div class="m-8">
   <Heading tag="h5">Heading 5</Heading>
 </div>
 
-### Heading six (H6) The `tag="h6"` can be used as subtitles of the page’s sections.
+<h3 class="text-xl">Heading six (H6)</h3>
+ The `tag="h6"` can be used as subtitles of the page’s sections.
 
 <div class="m-8">
   <Heading tag="h6">Heading 6</Heading>

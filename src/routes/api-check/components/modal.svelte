@@ -3,11 +3,11 @@
 
   import { ExclamationCircleOutline, QuestionCircleOutline } from "flowbite-svelte-icons";
   import { slide } from "svelte/transition";
-  import MetaMask from "../utils/icons/MetaMask.svelte";
-  import CoinbaseWallet from "../utils/icons/CoinbaseWallet.svelte";
-  import OperaWallet from "../utils/icons/OperaWallet.svelte";
-  import Fortmatic from "../utils/icons/Fortmatic.svelte";
-  import WalletConnect from "../utils/icons/WalletConnect.svelte";
+  import MetaMask from "../../utils/icons/MetaMask.svelte";
+  import CoinbaseWallet from "../../utils/icons/CoinbaseWallet.svelte";
+  import OperaWallet from "../../utils/icons/OperaWallet.svelte";
+  import Fortmatic from "../../utils/icons/Fortmatic.svelte";
+  import WalletConnect from "../../utils/icons/WalletConnect.svelte";
 
   // For default modal
   let defaultModal = $state(false);

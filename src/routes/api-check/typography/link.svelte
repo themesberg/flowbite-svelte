@@ -9,19 +9,24 @@
   const components = "A";
 </script>
 
-## Default link Use this example to set default styles to an inline link element.
+<h1 class="text-3xl my-4">Link</h1>
+
+<h2 class="text-2xl">Default link</h2>
+ Use this example to set default styles to an inline link element.
 
 <div class="m-8">
   <A class="font-medium hover:underline">Read more</A>
 </div>
 
-## Button This example can be used to set a hyperlink on a button component.
+<h2 class="text-2xl">Button</h2>
+ This example can be used to set a hyperlink on a button component.
 
 <div class="m-8">
   <Button href="/">Read more</Button>
 </div>
 
-## Paragraph Use this example to set a link inside a paragraph with an underline style.
+<h2 class="text-2xl">Paragraph</h2>
+ Use this example to set a link inside a paragraph with an underline style.
 
 <div class="m-8">
   <P>
@@ -29,7 +34,8 @@
   </P>
 </div>
 
-## Icon link This example can be used to set a custom SVG icon inside the hyperlink element.
+<h2 class="text-2xl">Icon link</h2>
+ This example can be used to set a custom SVG icon inside the hyperlink element.
 
 <div class="m-8">
   <P>
@@ -41,7 +47,8 @@
   </P>
 </div>
 
-## CTA link Use this example to set a hyperlink on a CTA element with text and a custom icon.
+<h2 class="text-2xl">CTA link</h2>
+ Use this example to set a hyperlink on a CTA element with text and a custom icon.
 
 <div class="m-8">
   <A href="/" class="inline-flex items-center justify-center rounded-lg bg-gray-50 p-5 text-base font-medium hover:bg-gray-100 hover:text-gray-900 hover:no-underline dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white">
@@ -51,7 +58,8 @@
   </A>
 </div>
 
-## Card link Use this example to set a hyperlink on a card component.
+<h2 class="text-2xl">Card link</h2>
+ Use this example to set a hyperlink on a card component.
 
 <div class="m-8">
   <Card href="/cards" class="p-4 sm:p-6">
@@ -60,7 +68,8 @@
   </Card>
 </div>
 
-## Image link This example can be used to set a hyperlink on an image inside a card component.
+<h2 class="text-2xl">Image link</h2>
+ This example can be used to set a hyperlink on an image inside a card component.
 
 <div class="m-8">
   <Card img="/images/image-1.webp" href="/cards">
@@ -74,7 +83,7 @@
   </Card>
 </div>
 
-## use:action
+<h2 class="text-2xl">onclick</h2>
 
 <div class="m-8">
   <A href="/" onclick={myaction}>Read more</A>

@@ -21,7 +21,10 @@
   }
 </script>
 
-## Default toast Use this simple toast component with an icon, message, and dismissable close button to show alert messages to your website visitors.
+<h1 class="text-3xl my-4">Toast</h1>
+
+<h2 class="text-2xl">Default toast</h2>
+Default toast Use this simple toast component with an icon, message, and dismissable close button to show alert messages to your website visitors.
 
 <div class="my-8">
   <Toast>
@@ -32,7 +35,8 @@
   </Toast>
 </div>
 
-## Colors Use the `color` prop to easily change the colors of the icons. Set the `color` prop to `none` and use the `extraIconClass` prop to customize your desired icon styles. Usually, green, red, and orange are used to show success, danger, or warning alert messages to your users. See the first three examples below.
+<h2 class="text-2xl">Colors</h2>
+Colors Use the `color` prop to easily change the colors of the icons. Set the `color` prop to `none` and use the `extraIconClass` prop to customize your desired icon styles. Usually, green, red, and orange are used to show success, danger, or warning alert messages to your users. See the first three examples below.
 
 <div class="my-8">
   <Toast color="green">
@@ -102,7 +106,8 @@
   </Toast>
 </div>
 
-## Simple toast This component can be used to show simple messages and notifications without the use of a close button.
+<h2 class="text-2xl">Simple toast</h2>
+Simple toast This component can be used to show simple messages and notifications without the use of a close button.
 
 <div class="my-8">
   <Toast dismissable={false} contentClass="flex space-x-4 rtl:space-x-reverse divide-x rtl:divide-x-reverse divide-gray-200 dark:divide-gray-700">
@@ -113,7 +118,8 @@
   </Toast>
 </div>
 
-## Icons For the right positioning of the icon use: `{#snippet icon()}...{/snippet}`. You can use any [icon components](/icons).
+<h2 class="text-2xl">Icons</h2>
+Icons For the right positioning of the icon use: `{#snippet icon()}...{/snippet}`. You can use any [icon components](/icons).
 
 <div class="my-8">
   <Toast>
@@ -126,7 +132,7 @@
   <Toast>No icon at all.</Toast>
 </div>
 
-## Autohide example
+<h2 class="text-2xl">Autohide example</h2>
 
 <div class="my-8">
   <div class="flex gap-10">
@@ -140,7 +146,7 @@
   </div>
 </div>
 
-## Transitions
+<h2 class="text-2xl">Transitions</h2>
 
 <div class="my-8">
   <Toast transition={slide} class="mb-4">
@@ -165,7 +171,7 @@
   </Toast>
 </div>
 
-### Blur examples
+<h3 class="text-xl">Blur examples</h3>
 
 <div class="my-8">
   <Toast transition={blur} color="purple" params={{ amount: 10 }} class="mb-4">
@@ -183,7 +189,7 @@
   </Toast>
 </div>
 
-### Fly examples
+<h3 class="text-xl">Fly examples</h3>
 
 <div class="my-8">
   <Toast transition={fly} params={{ x: 200 }} color="green" class="mb-4">
@@ -201,7 +207,8 @@
   </Toast>
 </div>
 
-## Undo button Use this toast component to also show an “undo” button to reverse the action of the user.
+<h2 class="text-2xl">Undo button</h2>
+ Use this toast component to also show an “undo” button to reverse the action of the user.
 
 <div class="my-8">
   <Toast contentClass="w-full text-sm font-normal flex items-center justify-between">
@@ -210,7 +217,8 @@
   </Toast>
 </div>
 
-## Advanced examples If the toast content grows to multiple lines we need to switch off the `items-center` alignment. Notice how the examples below achieve that by setting `align=flase` property. ### Toast message This component can be used to show messages and a CTA button when receiving chat messages, comment notifications, and other use cases.
+<h2 class="text-2xl">Advanced examples</h2>
+ If the toast content grows to multiple lines we need to switch off the `items-center` alignment. Notice how the examples below achieve that by setting `align=flase` property. #Toast message This component can be used to show messages and a CTA button when receiving chat messages, comment notifications, and other use cases.
 
 <div class="my-8">
   <Toast align={false} color={undefined}>
@@ -225,7 +233,8 @@
   </Toast>
 </div>
 
-### Push notification This component can be used to show notifications for an action from another user such as posting a comment, receiving a like, being tagged. You can show an avatar, icon, message, and the time of the notification.
+<h2 class="text-2xl">Push notification</h2>
+ This component can be used to show notifications for an action from another user such as posting a comment, receiving a like, being tagged. You can show an avatar, icon, message, and the time of the notification.
 
 <div class="my-8">
   <Toast align={false}>
@@ -241,7 +250,8 @@
   </Toast>
 </div>
 
-### Interactive toast Use this interactive toast component to encourage users to make a certain action such as updating to the latest software version. You can set an icon, message, and two CTA buttons.
+<h2 class="text-2xl">Interactive toast</h2>
+ Use this interactive toast component to encourage users to make a certain action such as updating to the latest software version. You can set an icon, message, and two CTA buttons.
 
 <p class="italic">This is an example with the icon and extra content at the same time.</p>
 
@@ -262,7 +272,8 @@
   </Toast>
 </div>
 
-## Positioning Use the position property to position these toast components relative to the main content wrapper element from your document.
+<h2 class="text-2xl">Positioning</h2>
+ Use the position property to position these toast components relative to the main content wrapper element from your document.
 
 <div class="my-8">
   <div class="relative h-56">
@@ -273,7 +284,8 @@
   </div>
 </div>
 
-## Events You can use `onclose` to execute custom logic when the toast is closed.
+<h2 class="text-2xl">Events</h2>
+ You can use `onclose` to execute custom logic when the toast is closed.
 
 <div class="my-8">
   <div class="relative h-56">

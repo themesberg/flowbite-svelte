@@ -24,7 +24,7 @@
   };
 </script>
 
-<h1 class="my-4 text-3xl">Svelte Popover - Flowbite</h1>
+<h1 class="my-4 text-3xl">Popover</h1>
 
 <h2 class="my-4 text-2xl">Default popover</h2>
 

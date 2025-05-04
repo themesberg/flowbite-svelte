@@ -62,7 +62,10 @@
   };
 </script>
 
-The search input component can be used to let your users search through your website using string queries and it comes in multiple styles, variants, and sizes built with the utility classes from Tailwind CSS. You will also find more advanced search components on this page including dropdown category selections, search buttons positioned inside the input field, voice search fields and more. ## Search bar example
+<h1 class="text-3xl my-4">Search input</h1>
+The search input component can be used to let your users search through your website using string queries and it comes in multiple styles, variants, and sizes built with the utility classes from Tailwind CSS. You will also find more advanced search components on this page including dropdown category selections, search buttons positioned inside the input field, voice search fields and more. 
+
+<h2 class="text-2xl">Search bar example</h2>
 
 <div class="m-8">
   <Search>
@@ -70,7 +73,8 @@ The search input component can be used to let your users search through your web
   </Search>
 </div>
 
-## Simple search input Use the simplest form of a search input component with an icon and a search button next to the text field.
+<h2 class="text-2xl">Simple search input</h2>
+ Use the simplest form of a search input component with an icon and a search button next to the text field.
 
 <div class="m-8">
   <form class="flex gap-2">
@@ -81,7 +85,8 @@ The search input component can be used to let your users search through your web
   </form>
 </div>
 
-## Search with dropdown Use this search component with a dropdown to let your users select a category in which they would like the search query to be targeted in.
+<h2 class="text-2xl">Search with dropdown</h2>
+ Use this search component with a dropdown to let your users select a category in which they would like the search query to be targeted in.
 
 <div class="m-8">
   <form class="flex">
@@ -110,7 +115,8 @@ The search input component can be used to let your users search through your web
   </form>
 </div>
 
-## Location search Use this example where you can select a country in which you want to search for an address or city.
+<h2 class="text-2xl">Location search</h2>
+ Use this example where you can select a country in which you want to search for an address or city.
 
 <div class="m-8">
   <form class="flex">
@@ -141,7 +147,8 @@ The search input component can be used to let your users search through your web
   </form>
 </div>
 
-## Voice Search Get started with this example if you would like to enable voice search for your website and users.
+<h2 class="text-2xl">Voice Search</h2>
+ Get started with this example if you would like to enable voice search for your website and users.
 
 <div class="m-8">
   <form class="flex gap-2">
@@ -157,7 +164,7 @@ The search input component can be used to let your users search through your web
   </form>
 </div>
 
-## Events ## Example
+<h2 class="text-2xl">Example</h2>
 
 <div class="m-8">
   <form id="example-form" onsubmit={submitted}>

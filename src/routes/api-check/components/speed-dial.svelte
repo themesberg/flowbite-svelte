@@ -17,7 +17,7 @@
   ];
 </script>
 
-<h1 class="my-4 text-3xl">Svelte Speed Dial</h1>
+<h1 class="my-4 text-3xl">Speed Dial</h1>
 
 <Alert>
   <p>Note! Default class for speed dial was `fixed end-6 bottom-6`. Now no positioning is set by default.</p>

@@ -29,7 +29,8 @@
   let multiSelected: string[] = [];
 </script>
 
-<h2>Input Sizes</h2>
+<h1 class="text-3xl">Forms</h1>
+<h2 class="text-2xl">Input Sizes</h2>
 
 <div class="my-8">
   <div class="mb-6">
@@ -46,14 +47,14 @@
   </div>
 </div>
 
-<h2>Disabled</h2>
+<h2 class="text-2xl">Disabled</h2>
 
 <div class="my-8">
   <Input id="disabled-input" class="mb-6" disabled value="Disabled input" />
   <Input id="disabled-input-2" class="mb-6" disabled readonly value="Disabled readonly input" />
 </div>
 
-<h2>Helper text</h2>
+<h2 class="text-2xl">Helper text</h2>
 
 <div class="my-8">
   <Label class="mb-2 block">Your email</Label>
@@ -64,7 +65,7 @@
   </Helper>
 </div>
 
-<h2>Input element with icon</h2>
+<h2 class="text-2xl">Input element with icon</h2>
 
 <div class="my-8">
   <div class="mb-6">
@@ -77,7 +78,7 @@
   </div>
 </div>
 
-<h2>Input element with addon</h2>
+<h2 class="text-2xl">Input element with addon</h2>
 
 <div class="my-8">
   <div class="mb-6">
@@ -91,7 +92,7 @@
   </div>
 </div>
 
-<h2>Form validation</h2>
+<h2 class="text-2xl">Form validation</h2>
 
 <div class="my-8">
   <div class="mb-6">
@@ -112,13 +113,13 @@
   </div>
 </div>
 
-<h2>Textarea</h2>
+<h2 class="text-2xl">Textarea</h2>
 
 <div class="my-8">
   <Textarea {...textareaprops} />
 </div>
 
-<h2>Select input</h2>
+<h2 class="text-2xl">Select input</h2>
 
 <div class="my-8">
   <Label>
@@ -127,34 +128,34 @@
   </Label>
 </div>
 
-<h2>MultiSelect</h2>
+<h2 class="text-2xl">MultiSelect</h2>
 
 <div class="my-8">
   <MultiSelect items={countries2} bind:value={multiSelected} />
 </div>
 
-<h2>Checkbox</h2>
+<h2 class="text-2xl">Checkbox</h2>
 
 <div class="my-8">
   <Checkbox>Default checkbox</Checkbox>
   <Checkbox checked>Checked state</Checkbox>
 </div>
 
-<h2>Radio buttons</h2>
+<h2 class="text-2xl">Radio buttons</h2>
 
 <div class="my-8">
   <Radio name="example">Default radio</Radio>
   <Radio name="example" checked={true}>Checked state</Radio>
 </div>
 
-<h2>File upload</h2>
+<h2 class="text-2xl">File upload</h2>
 
 <div class="my-8">
   <Label class="pb-2">Upload file</Label>
   <Fileupload {...fileuploadprops} />
 </div>
 
-<h2>Toggle Switch</h2>
+<h2 class="text-2xl">Toggle Switch</h2>
 
 <div class="my-8">
   <Toggle>Toggle me</Toggle>

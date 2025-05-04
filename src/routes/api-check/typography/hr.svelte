@@ -4,7 +4,8 @@
   const components = "Hr";
 </script>
 
-## Default HR
+<h1 class="text-3xl my-4">Hr</h1>
+<h2 class="text-2xl">Default HR</h2>
 
 <div class="m-8">
   <P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
@@ -12,7 +13,7 @@
   <P>Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
 </div>
 
-## Trimmed
+<h2 class="text-2xl">Trimmed</h2>
 
 <div class="m-8">
   <P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
@@ -20,7 +21,7 @@
   <P>Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
 </div>
 
-## Icon HR
+<h2 class="text-2xl">Icon HR</h2>
 
 <div class="m-8">
   <div class="text-center">
@@ -32,7 +33,8 @@
   </div>
 </div>
 
-## HR with text Use this example to add a text in the middle of the HR component.
+<h2 class="text-2xl">HR with text</h2>
+ Use this example to add a text in the middle of the HR component.
 
 <div class="m-8">
   <div class="text-center">
@@ -42,7 +44,8 @@
   </div>
 </div>
 
-## HR shape This example can be used to separate content with a HR tag as a shape instead of a line.
+<h2 class="text-2xl">HR shape</h2>
+ This example can be used to separate content with a HR tag as a shape instead of a line.
 
 <div class="m-8">
   <P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>

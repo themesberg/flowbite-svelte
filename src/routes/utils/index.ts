@@ -195,3 +195,41 @@ export const fetchBuilders = async () => {
   // console.log('allBuilders: ', allBuilders)
   return allBuilders;
 };
+
+export const fetchApiCheck = async () => {
+  const apicheckComponents = import.meta.glob("/src/routes/api-check/components/*.svelte");
+  const apicheckForm = import.meta.glob("/src/routes/api-check/forms/*.svelte");
+  const apicheckTypography = import.meta.glob("/src/routes/api-check/typography/*.svelte");
+
+  const iterableApiComponents = Object.entries(apicheckComponents);
+  const componentsApicheck = await Promise.all(
+    iterableApiComponents.map(async ([path, _]) => {
+      return {
+        path: filePath(path)
+      };
+    })
+  );
+
+  const iterableApiForm = Object.entries(apicheckForm);
+  const formApicheck = await Promise.all(
+    iterableApiForm.map(async ([path, _]) => {
+      return {
+        path: filePath(path)
+      };
+    })
+  );
+
+  const iterableApiTypofraphy = Object.entries(apicheckTypography);
+  const typographyApicheck = await Promise.all(
+    iterableApiTypofraphy.map(async ([path, _]) => {
+      return {
+        path: filePath(path)
+      };
+    })
+  );
+  return {
+    components: componentsApicheck,
+    forms: formApicheck,
+    typography: typographyApicheck
+   }
+};

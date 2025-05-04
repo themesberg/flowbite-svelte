@@ -16,13 +16,13 @@ export const highlightcompo = tv({
 
 export const codewrapper = tv({
   slots: {
-    base: "max-w-4xl rounded-md border border-gray-200 bg-white bg-gradient-to-r dark:border-gray-600 dark:bg-gray-950",
+    base: "max-w-4xl mx-auto rounded-md border border-gray-200 bg-white bg-gradient-to-r dark:border-gray-600 dark:bg-gray-950",
     inner: "p-6"
   }
 });
 
 export const h1Cls = tv({
-  base: "my-8 text-3xl"
+  base: "my-8 text-3xl mx-auto max-w-4xl"
 });
 
 export const h2Cls = tv({

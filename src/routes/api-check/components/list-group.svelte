@@ -27,37 +27,38 @@
   ];
 </script>
 
-<h2>Default list group</h2>
+<h1 class="text-3xl my-4">List group</h1>
+<h2 class="text-2xl">Default list group</h2>
 
 <div class="m-8">
   <Listgroup items={simpleList} class="w-48" />
 </div>
 
-<h2>List group with links</h2>
+<h2 class="text-2xl">List group with links</h2>
 
 <div class="m-8">
   <Listgroup active items={links} class="w-48" />
 </div>
 
-<h2>List group with buttons</h2>
+<h2 class="text-2xl">List group with buttons</h2>
 
 <div class="m-8">
   <Listgroup active items={buttons} class="w-48" onclick={(e) => alert(Object.entries(e?.detail ?? {}))} />
 </div>
 
-<h2>List group with icons</h2>
+<h2 class="text-2xl">List group with icons</h2>
 
 <div class="m-8">
   <Listgroup active items={icons} class="w-48" onclick={console.log} />
 </div>
 
-<h2>Horizontal list group</h2>
+<h2 class="text-2xl">Horizontal list group</h2>
 
 <div class="m-8">
   <Listgroup active items={buttons} horizontal onclick={(e) => alert(Object.entries(e?.detail ?? {}))}></Listgroup>
 </div>
 
-<h2>Advanced</h2>
+<h2 class="text-2xl">Advanced</h2>
 
 <div class="m-8">
   <Listgroup active class="w-48">

@@ -2,7 +2,9 @@
   import { P, Span } from "$lib";
 </script>
 
-## Font size
+<h1 class="text-3xl my-4">Text</h1>
+
+<h2 class="text-2xl">Font size</h2>
 
 <div class="m-8">
   <P size="xs">Aa</P>
@@ -20,7 +22,7 @@
   <P size="9xl">Aa</P>
 </div>
 
-## Font weight
+<h2 class="text-2xl">Font weight</h2>
 
 <div class="m-8">
   <P size="4xl" weight="thin">Aa</P>
@@ -34,7 +36,8 @@
   <P size="4xl" weight="black">Aa</P>
 </div>
 
-## Text color Use the `color` prop to set the color of the inline text.
+<h2 class="text-2xl">Text color</h2>
+ Use the `color` prop to set the color of the inline text.
 
 <div class="m-8">
   <P class="text-blue-700 dark:text-blue-500">This text is in the blue color.</P>
@@ -44,7 +47,8 @@
   <P class="text-teal-700 dark:text-teal-500">This text is in the teal color.</P>
 </div>
 
-## Letter spacing Increase or decrease the spacing between letters using the `space` prop.
+<h2 class="text-2xl">Letter spacing</h2>
+ Increase or decrease the spacing between letters using the `space` prop.
 
 <div class="m-8">
   <P space="tighter">Flowbite app will help you improve yourself by analysing your everyday life.</P>
@@ -55,7 +59,10 @@
   <P space="widest">Flowbite app will help you improve yourself by analysing your everyday life.</P>
 </div>
 
-## Text decoration ### Underline Update the text decoration style using the `underline` and `class` props.
+<h2 class="text-2xl">Text decoration</h2>
+
+<h3 class="text-xl">Underline</h3>
+ Update the text decoration style using the `underline` and `class` props.
 
 <div class="m-8">
   <P>
@@ -63,93 +70,113 @@
   </P>
 </div>
 
-### Line through Set a strikethrough line on a text element using the `line-through` class.
+<h3 class="text-xl">Line through</h3>
+ Set a strikethrough line on a text element using the `line-through` class.
 
 <div class="m-8">
   <Span class="line-through">$109</Span><Span class="ms-3">$79</Span>
 </div>
 
-### Uppercase Force uppercase characters for a given portion of text using the uppercase class.
+<h3 class="text-xl">Uppercase</h3>
+ Force uppercase characters for a given portion of text using the uppercase class.
 
 <div class="m-8">
   <P>The crypto <Span class="uppercase">identity</Span> primitive.</P>
 </div>
 
-## Font style Set italic or non italic styles with the props. ### Italic Use the `italic` prop to set italic font style to a text element.
+<h2 class="text-2xl">Font style</h2>
+ Set italic or non italic styles with the props. 
+ <h3 class="text-xl">Italic</h3>
+  Use the `italic` prop to set italic font style to a text element.
 
 <div class="m-8">
   <P italic>The crypto identity primitive.</P>
 </div>
 
-### Normal Text elements by default are non-italic.
+<h3 class="text-xl">Normal</h3>
+ Text elements by default are non-italic.
 
 <div class="m-8">
   <P>The crypto identity primitive.</P>
 </div>
 
-## Line Height Set the height between lines using the `height` prop. ### Leading normal Use the `height="normal"` (default) prop to set default line height.
+<h2 class="text-2xl">Line Height</h2>
+   Set the height between lines using the `height` prop. 
+   <h3 class="text-xl">Leading normal</h3>
+    Use the `height="normal"` (default) prop to set default line height.
 
 <div class="m-8">
   <P size="3xl" height="normal" class="max-w-lg" weight="semibold">The Al-powered app will help you improve yourself by analysing your everyday life.</P>
 </div>
 
-### Leading relaxed Use the `height="relaxed"` prop to increase the space between lines.
+<h3 class="text-xl">Leading relaxed</h3>
+ Use the `height="relaxed"` prop to increase the space between lines.
 
 <div class="m-8">
   <P size="3xl" height="relaxed" class="max-w-lg" weight="semibold">The Al-powered app will help you improve yourself by analysing your everyday life.</P>
 </div>
 
-### Leading loose Use the `height="loose"` prop to set a large amount of space between text lines.
+<h3 class="text-xl">Leading loose</h3>
+ Use the `height="loose"` prop to set a large amount of space between text lines.
 
 <div class="m-8">
   <P size="3xl" height="loose" class="max-w-lg" weight="semibold">The Al-powered app will help you improve yourself by analysing your everyday life.</P>
 </div>
 
-## Text Align ### Left
+<h2 class="text-2xl">Text Align</h2> 
+<h3 class="text-xl">Left</h3>
 
 <div class="m-8">
   <P align="left">Get started with an enterprise-level, profesionally designed, fully responsive, and HTML semantic set of web pages, sections and over 400+ components crafted with the utility classes from Tailwind CSS and based on the Flowbite component library</P>
 </div>
 
-### Center
+<h3 class="text-xl">Center</h3>
 
 <div class="m-8">
   <P align="center">Get started with an enterprise-level, profesionally designed, fully responsive, and HTML semantic set of web pages, sections and over 400+ components crafted with the utility classes from Tailwind CSS and based on the Flowbite component library</P>
 </div>
 
-### Right Use the `align="right"` prop to align the text element to the right side of the page.
+<h3 class="text-xl">Right</h3>
+ Use the `align="right"` prop to align the text element to the right side of the page.
 
 <div class="m-8">
   <P align="right">Get started with an enterprise-level, profesionally designed, fully responsive, and HTML semantic set of web pages, sections and over 400+ components crafted with the utility classes from Tailwind CSS and based on the Flowbite component library</P>
 </div>
 
-### Text justify Use the `justify` prop to justify the text content.
+<h3 class="text-xl">Text justify</h3>
+ Use the `justify` prop to justify the text content.
 
 <div class="m-8">
   <P justify>Get started with an enterprise-level, profesionally designed, fully responsive, and HTML semantic set of web pages, sections and over 400+ components crafted with the utility classes from Tailwind CSS and based on the Flowbite component library</P>
   <P>Get started with an enterprise-level, profesionally designed, fully responsive, and HTML semantic set of web pages, sections and over 400+ components crafted with the utility classes from Tailwind CSS and based on the Flowbite component library</P>
 </div>
 
-## Whitespace Configure the whitespace behaviour of inline text elements using the `whitespace` prop. ### Normal Use the `whitespace="normal"` prop to set the default whitespace behaviour.
+<h2 class="text-2xl">Whitespace</h2>
+ Configure the whitespace behaviour of inline text elements using the `whitespace` prop. 
+ <h3 class="text-xl">Normal</h3>
+  Use the `whitespace="normal"` prop to set the default whitespace behaviour.
 
 <div class="m-8">
   <P whitespace="normal">This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</P>
 </div>
 
-### Nowrap Use the `whitespace="nowrap"` prop to prevent text being added to a new line when the full width has been reached.
+<h3 class="text-xl">Nowrap</h3>
+ Use the `whitespace="nowrap"` prop to prevent text being added to a new line when the full width has been reached.
 
 <div class="m-8">
   class="overflow-y-scroll"
   <P whitespace="nowrap">This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</P>
 </div>
 
-### Pre line Use the `whitespace="preline'` prop to add whitespace exactly how it has been set from the source code.
+<h3 class="text-xl">Pre line</h3>
+ Use the `whitespace="preline'` prop to add whitespace exactly how it has been set from the source code.
 
 <div class="m-8">
   <P whitespace="preline">This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</P>
 </div>
 
-## Text Decoration Style Update the text decoration style using the `underline` and `class` props.
+<h2 class="text-2xl">Text Decoration</h2>
+ Style Update the text decoration style using the `underline` and `class` props.
 
 <div class="m-8">
   <P>

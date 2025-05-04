@@ -1,7 +1,16 @@
 <script lang="ts">
-  let { children } = $props();
+  import type { PageData } from "../$types";
+  import FlowbiteSvelteLayout from "../layouts/FlowbiteSvelteLayout.svelte";
+  import ComponentsLayout from "../layouts/ComponentsLayout.svelte";
+  import type { Snippet } from "svelte";
+
+  let { data, children }: { data: PageData; children: Snippet } = $props();
 </script>
 
-<div class="p-8">
-  {@render children()}
-</div>
+<FlowbiteSvelteLayout>
+  <ComponentsLayout {data} showapicheck>
+    <div class="p-8 max-w-7xl mx-auto">
+      {@render children()}
+    </div>
+  </ComponentsLayout>
+</FlowbiteSvelteLayout>

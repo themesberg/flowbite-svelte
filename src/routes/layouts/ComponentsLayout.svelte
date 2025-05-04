@@ -1,7 +1,7 @@
 <script lang="ts">
   import { afterNavigate } from "$app/navigation";
   import { page } from "$app/state";
-  import { Sidebar, SidebarGroup, SidebarItem, uiHelpers } from "$lib";
+  import { Sidebar, SidebarGroup, SidebarItem, uiHelpers, Label } from "$lib";
   import SidebarButton from "$lib/sidebar/SidebarButton.svelte";
   import SidebarDropdownWrapper from "$lib/sidebar/SidebarDropdownWrapper.svelte";
   import { getContext } from "svelte";
@@ -9,11 +9,12 @@
   import Toc from "../utils/Toc.svelte";
   import { extract } from "./component/Anchor.svelte";
 
-  let { data, children } = $props();
+  let { data, children, showapicheck = false } = $props();
   /* eslint-disable  @typescript-eslint/no-explicit-any */
   const posts: Record<string, any[]> = data.posts.posts || {};
   const builders: Array<{ path: string }> = data.posts.builders || [];
-  // console.log('builders:', builders);
+  const apicheck: Record<string, any[]> = data.posts.apicheck || [];
+  // console.log('apicheck:', apicheck);
   const drawerHidden: Writable<boolean> = getContext("drawer");
   // $inspect('data', JSON.stringify(builders))
   // const closeDrawer = (
@@ -61,11 +62,39 @@
   let btnClass = "my-0 text-sm font-semibold tracking-wide uppercase text-gray-700 dark:text-gray-200 hover:bg-transparent dark:hover:bg-transparent hover:text-primary-700 dark:hover:text-primary-600";
   let dropdowns = Object.fromEntries(Object.keys(posts).map((x) => [x, false]));
   let divClass = "overflow-y-auto px-4 pt-20 lg:pt-4 h-full scrolling-touch max-w-2xs lg:h-[calc(100vh-8rem)] lg:block lg:me-0 lg:sticky top-20 bg-white dark:bg-gray-900";
+//   function convertString(input: string) {
+//   // Remove the leading slash
+//   let result = input.replace("/", "");
+  
+//   // Capitalize the first letter
+//   result = result.charAt(0).toUpperCase() + result.substring(1);
+  
+//   return result;
+// }
+function convertString(path: string): string {
+    return path.replace(/^\/(\w)(\w*)/, (match, firstChar, restOfString) => {
+      return firstChar.toUpperCase() + restOfString;
+    });
+  }
 </script>
 
 <SidebarButton breakpoint="lg" onclick={sidebarUi.toggle} class="fixed top-4 z-40 mb-2 sm:top-8" />
 <Sidebar breakpoint="lg" backdrop={true} {isOpen} {closeSidebar} {nonActiveClass} {activeClass} activeUrl={mainSidebarUrl} {divClass} class={mainClass} params={{ x: -50, duration: 50 }}>
   <h4 id="sidebar-label" class="sr-only">Browse docs</h4>
+  {#if showapicheck}
+    <SidebarGroup>
+      <Label class="text-xl pl-4">API Check</Label>
+      {#each Object.entries(apicheck) as [key, values] (key)}
+        <SidebarDropdownWrapper label={names_mapping[key] ?? key} ulClass="space-y-0 p-0" {btnClass} class={dropdowns[key] ? "text-primary-700 dark:text-primary-700" : "text-gray-700 dark:text-gray-200"}>
+          {#each values as { path }} 
+            {@const href = `/api-check/${key}${path}`}
+            {@const linkLabel = convertString(path)}
+            <SidebarItem label={linkLabel} {href} {spanClass} />
+          {/each}
+        </SidebarDropdownWrapper>
+      {/each}
+    </SidebarGroup>
+  {:else}
   <SidebarGroup>
     {#each Object.entries(posts) as [key, values] (key)}
       <SidebarDropdownWrapper label={names_mapping[key] ?? key} ulClass="space-y-0 p-0" {btnClass} class={dropdowns[key] ? "text-primary-700 dark:text-primary-700" : "text-gray-700 dark:text-gray-200"}>
@@ -90,7 +119,7 @@
     <SidebarItem label="Icons" href="https://flowbite-svelte-icons.codewithshin.com/" spanClass="ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass} />
     <SidebarItem label="Illustration" href="https://flowbite-svelte-illustrations.codewithshin.com/" spanClass="ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass} />
   </SidebarGroup>
-
+ {/if}
   <!-- /SidebarWrapper -->
 </Sidebar>
 

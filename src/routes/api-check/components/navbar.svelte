@@ -9,7 +9,7 @@
   let nonActiveClass = "text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent";
 </script>
 
-<h1 class="my-4 text-3xl">Svelte Navbar - Flowbite</h1>
+<h1 class="my-4 text-3xl">Navbar</h1>
 
 <h2 class="my-4 text-2xl">Default navbar</h2>
 
