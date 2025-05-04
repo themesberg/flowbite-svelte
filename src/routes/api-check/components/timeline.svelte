@@ -50,7 +50,7 @@
 
 <h2 class="my-4 text-2xl">Default timeline</h2>
 
-<div class="example-container my-4">
+<div class="border rounded p-8 my-4">
   <Timeline>
     <TimelineItem title="Application UI code in Tailwind CSS" date="February 2022">
       <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
@@ -67,7 +67,7 @@
 
 <h2 class="my-4 text-2xl">Vertical Timeline</h2>
 
-<div class="example-container my-4">
+<div class="border rounded p-8 my-4">
   <Timeline order="vertical">
     <TimelineItem title="Flowbite Application UI v2.0.0" date="Released on January 13th, 2022">
       {#snippet orientationSlot()}
@@ -98,7 +98,7 @@
 
 <h2 class="my-4 text-2xl">Horizontal Timeline</h2>
 
-<div class="example-container my-4">
+<div class="border rounded p-8 my-4">
   <Timeline order="horizontal">
     <TimelineItem title="Flowbite Library v1.0.0" date="Released on December 2nd, 2021">
       {#snippet orientationSlot()}
@@ -138,7 +138,7 @@
 
 <h2 class="my-4 text-2xl">Activity Log</h2>
 
-<div class="example-container my-4">
+<div class="border rounded p-8 my-4">
   <Activity>
     <ActivityItem {activities} />
   </Activity>
@@ -146,17 +146,9 @@
 
 <h2 class="my-4 text-2xl">Grouped timeline</h2>
 
-<div class="example-container my-4">
+<div class="border rounded p-8 my-4">
   <Group date="January 13th, 2022">
     <GroupItem timelines={groupTimelines} />
   </Group>
 </div>
 
-<style>
-  .example-container {
-    padding: 1rem;
-    margin-bottom: 1.5rem;
-    border: 1px solid #e5e7eb;
-    border-radius: 0.5rem;
-  }
-</style>

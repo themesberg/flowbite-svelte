@@ -89,7 +89,7 @@ Use the `labelOutside` prop to add the progress outside of a progress bar.
   import { Progressbar } from "flowbite-svelte";
 </script>
 
-<Progressbar progress="50" labelOutside="flowbite-svelte-next" />
+<Progressbar progress="50" labelOutside="flowbite-svelte" />
 ```
 
 ## Colors

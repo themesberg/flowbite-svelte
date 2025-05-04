@@ -32,9 +32,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte-next.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DropdownProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L562)
+[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L562)
 ## Props
 @prop children
 @prop simple = false

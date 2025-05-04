@@ -55,14 +55,14 @@
 
 <h2 class="my-4 text-2xl">Default pagination</h2>
 
-<div class="example-container flex flex-col items-center justify-center gap-3">
+<div class="border rounded p-4 my-4 flex flex-col items-center justify-center gap-3">
   <Pagination {pages} {previous} {next} />
   <Pagination {pages} size="large" {previous} {next} />
 </div>
 
 <h2 class="my-4 text-2xl">Pagination with icons</h2>
 
-<div class="example-container flex flex-col items-center justify-center gap-3">
+<div class="border rounded p-4 my-4 flex flex-col items-center justify-center gap-3">
   <div class="flex flex-col items-center justify-center gap-3">
     <Pagination pages={pagesWithoutHref} {previous} {next}>
       {#snippet prevContent()}
@@ -79,7 +79,7 @@
 
 <h2 class="my-4 text-2xl">Previous and next</h2>
 
-<div class="example-container flex flex-col items-center justify-center gap-3">
+<div class="border rounded p-4 my-4 flex flex-col items-center justify-center gap-3">
   <div class="flex space-x-3 rtl:space-x-reverse">
     <PaginationItem onclick={previous}>Previous</PaginationItem>
     <PaginationItem onclick={next}>Next</PaginationItem>
@@ -92,7 +92,7 @@
 
 <h2 class="my-4 text-2xl">Previous and next with icons</h2>
 
-<div class="example-container flex flex-col items-center justify-center gap-3">
+<div class="border rounded p-4 my-4 flex flex-col items-center justify-center gap-3">
   <div class="flex space-x-3 rtl:space-x-reverse">
     <PaginationItem class="flex items-center" onclick={previous}>
       <ArrowLeftOutline class="me-2 h-3.5 w-3.5" />
@@ -117,7 +117,7 @@
 
 <h2 class="my-4 text-2xl">Table data pagination</h2>
 
-<div class="example-container flex flex-col items-center justify-center gap-3">
+<div class="border rounded p-4 my-4 flex flex-col items-center justify-center gap-3">
   <div class="flex flex-col items-center justify-center gap-3">
     <div class="flex flex-col items-center justify-center gap-2">
       <div class="text-sm text-gray-700 dark:text-gray-400">
@@ -136,7 +136,7 @@
 
 <h2 class="my-4 text-2xl">Table data pagination with icons</h2>
 
-<div class="example-container flex flex-col items-center justify-center gap-3">
+<div class="border rounded p-4 my-4 flex flex-col items-center justify-center gap-3">
   <div class="flex flex-col items-center justify-center gap-3">
     <div class="flex flex-col items-center justify-center gap-2">
       <div class="text-sm text-gray-700 dark:text-gray-400">
@@ -168,6 +168,6 @@
 
 <h2 class="my-4 text-2xl">Event example</h2>
 
-<div class="example-container flex justify-center">
+<div class="border rounded p-4 my-4 flex justify-center">
   <Pagination pages={pagesWithoutHref} {previous} {next} onclick={handleClick} />
 </div>

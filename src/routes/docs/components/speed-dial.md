@@ -53,7 +53,7 @@ You can use any elment as `SpeedDial` trigger (see the [Custom main button](#cus
 
 ## Colors
 
-The Speed Dial components accommodate color options ("red" | "lime" | "green" | "teal" | "cyan" | "blue" | "purple" | "pink" | undefined), gradient, shadow, and outline styles. For further information, please refer to **[the Button component](https://flowbite-svelte-next.com/components/button)** documentation.
+The Speed Dial components accommodate color options ("red" | "lime" | "green" | "teal" | "cyan" | "blue" | "purple" | "pink" | undefined), gradient, shadow, and outline styles. For further information, please refer to **[the Button component](https://flowbite-svelte.com/components/button)** documentation.
 
 ```svelte example class="relative h-96" hideResponsiveButtons
 <script>

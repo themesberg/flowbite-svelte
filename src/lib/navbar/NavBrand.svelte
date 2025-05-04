@@ -12,9 +12,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte-next.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Type
-[NavBrandProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L924)
+[NavBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L923)
 ## Props
 @prop children
 @prop class: className

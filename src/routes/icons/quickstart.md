@@ -8,7 +8,7 @@ description: Get started with a collection of open-source Flowbite Svelte Icons 
 ---
 
 <script>
-  import { Banner } from 'flowbite-svelte-next';
+  import { Banner } from 'flowbite-svelte';
   import { A } from '$lib'
   import { removeHyphensAndCapitalize } from './utils/utils';
 </script>

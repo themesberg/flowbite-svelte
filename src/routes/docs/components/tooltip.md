@@ -14,7 +14,7 @@ thumnailSize: w-24
   const dirName = toKebabCase(component_title)
 </script>
 
-flowbite-svelte-next allows you to show extra information when hovering or focusing over an element in multiple positions, styles, and animations.
+flowbite-svelte allows you to show extra information when hovering or focusing over an element in multiple positions, styles, and animations.
 
 ## Setup
 

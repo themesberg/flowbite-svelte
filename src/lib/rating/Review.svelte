@@ -76,9 +76,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte-next.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ReviewProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1084)
+[ReviewProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1083)
 ## Props
 @prop children
 @prop address

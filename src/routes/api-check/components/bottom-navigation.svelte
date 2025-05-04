@@ -40,7 +40,7 @@
 
 <h2 class="my-4 text-2xl">Default bottom navigation</h2>
 
-<div class="relative flex flex-col">
+<div class="border rounded p-4 my-4 relative flex flex-col">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
@@ -62,7 +62,7 @@
 
 <h2 class="my-4 text-2xl">Adding links and active class</h2>
 
-<div class="relative flex flex-col">
+<div class="border rounded p-4 my-4 relative flex flex-col">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
@@ -82,7 +82,7 @@
   </BottomNav>
 </div>
 
-<div class="relative flex flex-col">
+<div class="border rounded p-4 my-4 relative flex flex-col">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
@@ -102,7 +102,7 @@
   </BottomNav>
 </div>
 
-<div class="relative flex flex-col">
+<div class="border rounded p-4 my-4 relative flex flex-col">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
@@ -124,7 +124,7 @@
 
 <h2 class="my-4 text-2xl">Menu items with border</h2>
 
-<div class="relative flex flex-col">
+<div class="border rounded p-4 my-4 relative flex flex-col">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
@@ -146,7 +146,7 @@
 
 <h2 class="my-4 text-2xl">Application bar example</h2>
 
-<div class="relative flex flex-col">
+<div class="border rounded p-4 my-4 relative flex flex-col">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
@@ -178,7 +178,7 @@
 
 <h2 class="my-4 text-2xl">Example with pagination</h2>
 
-<div class="relative flex flex-col">
+<div class="border rounded p-4 my-4 relative flex flex-col">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 

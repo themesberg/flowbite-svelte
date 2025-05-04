@@ -40,7 +40,6 @@ test("API check button-group page should have h1", async ({ page }) => {
   expect(await page.textContent("h1")).toBe("Button Group");
 });
 
-
 test("API check buttons page should have h1", async ({ page }) => {
   await page.goto("/api-check/components/buttons");
   expect(await page.textContent("h1")).toBe("Buttons");

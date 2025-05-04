@@ -41,9 +41,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte-next.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SidebarItemProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1197)
+[SidebarItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1196)
 ## Props
 @prop icon
 @prop subtext

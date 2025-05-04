@@ -50,17 +50,17 @@
 
 <h1 class="my-4 text-3xl">Rating</h1>
 
-<div class="example-section">
-  <h2 class="my-4 text-2xl">Default rating</h2>
 
+  <h2 class="my-4 text-2xl">Default rating</h2>
+  <div class="border rounded p-4 my-4">
   <Rating id="example-1" total={5} size={50} rating={1.4} />
   <Rating id="example-1b" total={5} size={50} rating={4.66} />
   <Rating id="example-1b" icon={wrapper({ fillColor: "#008800", strokeColor: "#008800" })} total={5} size={50} rating={4.66} />
 </div>
 
-<div class="example-section">
-  <h2 class="my-4 text-2xl">Stars</h2>
 
+  <h2 class="my-4 text-2xl">Stars</h2>
+  <div class="border rounded p-4 my-4">
   <div class="flex">
     <Star size={30} iconIndex={0} fillPercent={0} />
     <Star size={30} iconIndex={10} fillPercent={10} />
@@ -76,9 +76,9 @@
   </div>
 </div>
 
-<div class="example-section">
-  <h2 class="my-4 text-2xl">Rating with text</h2>
 
+  <h2 class="my-4 text-2xl">Rating with text</h2>
+  <div class="border rounded p-4 my-4">
   <Rating id="example-3" total={5} rating={3.4}>
     {#snippet text()}
       <p class="ms-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.4 out of 5</p>
@@ -91,18 +91,18 @@
   </Rating>
 </div>
 
-<div class="example-section">
-  <h2 class="my-4 text-2xl">Rating count</h2>
 
+  <h2 class="my-4 text-2xl">Rating count</h2>
+  <div class="border rounded p-4 my-4">
   <Rating count rating={4.95} id="example-4">
     <span class="mx-1.5 h-1 w-1 rounded-full bg-gray-500 dark:bg-gray-400"></span>
     <a href="/" class="text-sm font-medium text-gray-900 underline hover:no-underline dark:text-white">73 reviews</a>
   </Rating>
 </div>
 
-<div class="example-section">
-  <h2 class="my-4 text-2xl">Icon size and color</h2>
 
+  <h2 class="my-4 text-2xl">Icon size and color</h2>
+  <div class="border rounded p-4 my-4">
   <div class="my-4">
     <Rating total={5} rating={3.3} size={20} id="example-5" icon={Heart} />
     <Rating total={10} rating={7.6} id="example-5b" icon={Heart} />
@@ -116,9 +116,9 @@
   </div>
 </div>
 
-<div class="example-section">
-  <h2 class="my-4 text-2xl">AdvancedRating component</h2>
 
+  <h2 class="my-4 text-2xl">AdvancedRating component</h2>
+  <div class="border rounded p-4 my-4">
   <AdvancedRating
     ratings={[
       { label: "5 star", rating: 70 },
@@ -141,9 +141,9 @@
   </AdvancedRating>
 </div>
 
-<div class="example-section">
-  <h2 class="my-4 text-2xl">Different icon</h2>
 
+  <h2 class="my-4 text-2xl">Different icon</h2>
+  <div class="border rounded p-4 my-4">
   <AdvancedRating
     ratings={[
       { label: "5 star", rating: 70 },
@@ -166,9 +166,9 @@
   </AdvancedRating>
 </div>
 
-<div class="example-section">
-  <h2 class="my-4 text-2xl">Score rating</h2>
 
+  <h2 class="my-4 text-2xl">Score rating</h2>
+  <div class="border rounded p-4 my-4">
   <ScoreRating
     {headerLabel}
     ratings={[
@@ -185,9 +185,9 @@
   />
 </div>
 
-<div class="example-section">
-  <h2 class="my-4 text-2xl">Rating comment</h2>
 
+  <h2 class="my-4 text-2xl">Rating comment</h2>
+  <div class="border rounded p-4 my-4">
   <RatingComment {comment} helpfullink="/" abuselink="/">
     <p class="mb-2 font-light text-gray-500 dark:text-gray-400">This is my third Invicta Pro Diver. They are just fantastic value for money. This one arrived yesterday and the first thing I did was set the time, popped on an identical strap from another Invicta and went in the shower with it to test the waterproofing.... No problems.</p>
     <p class="mb-3 font-light text-gray-500 dark:text-gray-400">It is obviously not the same build quality as those very expensive watches. But that is like comparing a Citroën to a Ferrari. This watch was well under £100! An absolute bargain.</p>
@@ -198,9 +198,9 @@
   </RatingComment>
 </div>
 
-<div class="example-section">
-  <h2 class="my-4 text-2xl">Review content</h2>
 
+  <h2 class="my-4 text-2xl">Review content</h2>
+  <div class="border rounded p-4 my-4">
   <Review {review}>
     <p class="mb-2 font-light text-gray-500 dark:text-gray-400">The flat was spotless, very comfortable, and the host was amazing. I highly recommend this accommodation for anyone visiting Brasov city centre. It's quite a while since we are no longer using hotel facilities but self contained places. And the main reason is poor cleanliness and staff not being trained properly. This place exceeded our expectation and will return for sure.</p>
     <p class="mb-5 font-light text-gray-500 dark:text-gray-400">It is obviously not the same build quality as those very expensive watches. But that is like comparing a Citroën to a Ferrari. This watch was well under £100! An absolute bargain.</p>
@@ -235,8 +235,4 @@
   </Review>
 </div>
 
-<style>
-  .example-section {
-    margin-bottom: 2rem;
-  }
-</style>
+

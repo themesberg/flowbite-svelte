@@ -53,9 +53,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte-next.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Type
-[CardProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L379)
+[CardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L379)
 ## Props
 @prop children
 @prop href

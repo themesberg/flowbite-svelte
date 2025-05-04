@@ -21,9 +21,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte-next.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Type
-[IosProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L514)
+[IosProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L514)
 ## Props
 @prop children
 @prop divClass

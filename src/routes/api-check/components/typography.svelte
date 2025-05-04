@@ -4,7 +4,7 @@
 
 <h1 class="my-4 text-3xl">Typography</h1>
 
-<div class="example-container">
+<div class="border rounded p-8 my-4">
   <h2 class="my-4 text-2xl">Font Size</h2>
   <p class="text-xs dark:text-white">Flowbite</p>
   <p class="text-sm dark:text-white">FlowBite</p>
@@ -21,7 +21,7 @@
   <p class="text-9xl dark:text-white">FlowBite</p>
 </div>
 
-<div class="example-container">
+<div class="border rounded p-8 my-4">
   <h2 class="my-4 text-2xl">Font Weight</h2>
   <p class="font-thin dark:text-white">FlowBite</p>
   <p class="font-extralight dark:text-white">FlowBite</p>
@@ -34,7 +34,7 @@
   <p class="font-black dark:text-white">FlowBite</p>
 </div>
 
-<div class="example-container">
+<div class="border rounded p-8 my-4">
   <h2 class="my-4 text-2xl">Line Height</h2>
   <p class="leading-none dark:text-gray-400">Themesberg was created to bring quality ...</p>
   <p class="leading-tight dark:text-gray-400">Themesberg was created to bring quality ...</p>
@@ -44,7 +44,7 @@
   <p class="leading-loose dark:text-gray-400">Themesberg was created to bring quality ...</p>
 </div>
 
-<div class="example-container">
+<div class="border rounded p-8 my-4">
   <h2 class="my-4 text-2xl">Lists</h2>
   <Heading tag="h5">List disc</Heading>
   <List class="list-disc">
@@ -66,7 +66,7 @@
   </List>
 </div>
 
-<div class="example-container">
+<div class="border rounded p-8 my-4">
   <h2 class="my-4 text-2xl">List position</h2>
   <Heading tag="h5">List inside</Heading>
   <List position="inside">
@@ -82,17 +82,8 @@
   </List>
 </div>
 
-<div class="example-container">
+<div class="border rounded p-8 my-4">
   <h2 class="my-4 text-2xl">Text Decoration</h2>
   <p class="underline dark:text-gray-400">please read our terms and services</p>
   <p class="line-through dark:text-gray-400">please read our terms and services</p>
 </div>
-
-<style>
-  .example-container {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    border: 1px solid #e5e7eb;
-    border-radius: 0.5rem;
-  }
-</style>

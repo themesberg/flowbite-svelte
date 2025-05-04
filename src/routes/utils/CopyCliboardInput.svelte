@@ -9,7 +9,7 @@
   const text_copied = "Copied!";
   const text_not_copied = "Copy to clipboard";
 
-  let placeholder: string = "pnpm i -D flowbite-svelte-next flowbite";
+  let placeholder: string = "pnpm i -D flowbite-svelte flowbite";
   let tooltip_text: string = $state(text_not_copied);
 
   function set_tooltip(copied: boolean) {

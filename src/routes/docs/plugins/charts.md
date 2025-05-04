@@ -4,7 +4,7 @@ title: Svelte Charts - Flowbite
 breadcrumb_title: Svelte Charts
 component_title: Charts
 dir: components
-description: Use the chart and graph components from flowbite-svelte-next built with Tailwind CSS and ApexCharts to choose from line, area, bar, column, pie, and radial charts
+description: Use the chart and graph components from flowbite-svelte built with Tailwind CSS and ApexCharts to choose from line, area, bar, column, pie, and radial charts
 ---
 
 <script>

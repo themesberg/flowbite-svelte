@@ -1,19 +1,19 @@
 # FLOWBITE-SVELTE
 
-[![npm version](https://badgen.net/npm/v/flowbite-svelte-next)](https://www.npmjs.com/package/flowbite-svelte-next) [![npm downloads](https://badgen.net/npm/dw/flowbite-svelte-next)](https://www.npmjs.com/package/flowbite-svelte-next) [![npm downloads](https://badgen.net/npm/dt/flowbite-svelte-next)](https://www.npmjs.com/package/flowbite-svelte-next) [![license](https://badgen.net/npm/license/flowbite-svelte-next)](https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE) [![Discord](https://img.shields.io/discord/902911619032576090?color=%237289da&label=Discord)](https://discord.com/invite/4eeurUVvTy)
+[![npm version](https://badgen.net/npm/v/flowbite-svelte)](https://www.npmjs.com/package/flowbite-svelte) [![npm downloads](https://badgen.net/npm/dw/flowbite-svelte)](https://www.npmjs.com/package/flowbite-svelte) [![npm downloads](https://badgen.net/npm/dt/flowbite-svelte)](https://www.npmjs.com/package/flowbite-svelte) [![license](https://badgen.net/npm/license/flowbite-svelte)](https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE) [![Discord](https://img.shields.io/discord/902911619032576090?color=%237289da&label=Discord)](https://discord.com/invite/4eeurUVvTy)
 
 **⚠️ Flowbite Svelte is currently in early development and APIs and packages are likely to change quite often.**
 
 <p>
     <a href="https://next.flowbite-svelte.com" >
-      <img alt="Flowbite Svelte UI components" width="350" src="https://raw.githubusercontent.com/themesberg/flowbite-svelte/main/static/images/flowbite-svelte-next.png">
+      <img alt="Flowbite Svelte UI components" width="350" src="https://raw.githubusercontent.com/themesberg/flowbite-svelte/main/static/images/flowbite-svelte.png">
     </a><br>
     Build websites even faster with Svelte components on top of Tailwind CSS
 </p>
 
 [Flowbite Svelte](https://next.flowbite-svelte.com/) is an official Flowbite UI component library for Svelte. All interactivities are handled by Svelte.
 
-[Visualize this repo's codebase](https://mango-dune-07a8b7110.1.azurestaticapps.net/?repo=themesberg%2Fflowbite-svelte-next)
+[Visualize this repo's codebase](https://mango-dune-07a8b7110.1.azurestaticapps.net/?repo=themesberg%2Fflowbite-svelte)
 
 ## Installation
 
@@ -454,7 +454,7 @@ For full documentation, visit [next.flowbite-svelte.com](https://next.flowbite-s
 
 If you need help or just want to discuss about the library join the community on Github:
 
-⌨️ [Discuss about Flowbite on GitHub](https://github.com/themesberg/flowbite-svelte-next/discussions)
+⌨️ [Discuss about Flowbite on GitHub](https://github.com/themesberg/flowbite-svelte/discussions)
 
 For casual chatting with others using the library:
 
@@ -462,11 +462,11 @@ For casual chatting with others using the library:
 
 ## Contribute
 
-Please read [how to contribute](https://github.com/themesberg/flowbite-svelte-next/blob/main/CONTRIBUTING.md) if you'd like to be part of the Flowbite community of contributors.
+Please read [how to contribute](https://github.com/themesberg/flowbite-svelte/blob/main/CONTRIBUTING.md) if you'd like to be part of the Flowbite community of contributors.
 
 ## Changelog
 
-View the full [changelog](https://github.com/themesberg/flowbite-svelte-next/blob/main/CHANGELOG.md) on this page.
+View the full [changelog](https://github.com/themesberg/flowbite-svelte/blob/main/CHANGELOG.md) on this page.
 
 ## License
 

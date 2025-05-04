@@ -231,5 +231,5 @@ export const fetchApiCheck = async () => {
     components: componentsApicheck,
     forms: formApicheck,
     typography: typographyApicheck
-   }
+  };
 };

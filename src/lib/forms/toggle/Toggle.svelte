@@ -22,9 +22,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte-next.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ToggleProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L804)
+[ToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L803)
 ## Props
 @prop children
 @prop size = "default"

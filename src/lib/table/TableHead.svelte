@@ -47,9 +47,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte-next.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TableHeadProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1319)
+[TableHeadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1317)
 ## Props
 @prop children
 @prop headerSlot

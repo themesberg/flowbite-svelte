@@ -55,9 +55,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte-next.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AlertProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L212)
+[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L212)
 ## Props
 @prop children
 @prop icon

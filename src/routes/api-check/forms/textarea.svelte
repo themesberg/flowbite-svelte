@@ -9,14 +9,14 @@
 
 <h2 class="my-4 text-2xl">Textarea example</h2>
 
-<div class="example-container my-4">
+<div class="border rounded p-4  my-4">
   <Label for="textarea-id" class="mb-2">Your message</Label>
   <Textarea id="textarea-id" placeholder="Your message" rows={4} name="message" />
 </div>
 
 <h2 class="my-4 text-2xl">WYSIWYG Editor</h2>
 
-<div class="example-container my-4">
+<div class="border rounded p-4  my-4">
   <form>
     <label for="editor" class="sr-only">Publish post</label>
     <Textarea id="editor" rows={8} class="mb-4" placeholder="Write a comment">
@@ -43,7 +43,7 @@
 
 <h2 class="my-4 text-2xl">Comment box</h2>
 
-<div class="example-container my-4 space-y-4">
+<div class="border rounded p-4  my-4 space-y-4">
   <form>
     <Textarea class="mb-4" placeholder="Write a comment">
       {#snippet footer()}
@@ -66,7 +66,7 @@
 
 <h2 class="my-4 text-2xl">Chatroom input</h2>
 
-<div class="example-container my-4 space-y-4">
+<div class="border rounded p-4  my-4 space-y-4">
   <form>
     <label for="chat" class="sr-only">Your message</label>
     <div class="flex items-center rounded-lg bg-gray-50 px-3 py-2 dark:bg-gray-700">

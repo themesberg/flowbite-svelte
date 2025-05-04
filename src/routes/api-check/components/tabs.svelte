@@ -9,7 +9,7 @@
 
 <h2 class="my-4 text-2xl">Default tabs</h2>
 
-<div class="example-container my-4">
+<div class="border rounded p-4 my-4 rounded my-4">
   <Tabs>
     <TabItem open title="Profile">
       <p class="text-sm text-gray-500 dark:text-gray-400">
@@ -49,7 +49,7 @@
 
 <h2 class="my-4 text-2xl">Tabs with underline</h2>
 
-<div class="example-container my-4">
+<div class="border rounded p-4 my-4 rounded my-4">
   <Tabs tabStyle="underline">
     <TabItem open title="Profile">
       <p class="text-sm text-gray-500 dark:text-gray-400">
@@ -89,7 +89,7 @@
 
 <h2 class="my-4 text-2xl">Tabs with icons</h2>
 
-<div class="example-container my-4">
+<div class="border rounded p-4 my-4 rounded my-4">
   <Tabs tabStyle="underline">
     <TabItem open>
       {#snippet titleSlot()}
@@ -144,7 +144,7 @@
 
 <h2 class="my-4 text-2xl">Pills tabs</h2>
 
-<div class="example-container my-4">
+<div class="border rounded p-4 my-4 rounded my-4">
   <Tabs tabStyle="pill">
     <TabItem open>
       {#snippet titleSlot()}
@@ -187,7 +187,7 @@
 
 <h2 class="my-4 text-2xl">Full width tabs</h2>
 
-<div class="example-container my-4">
+<div class="border rounded p-4 my-4 rounded my-4">
   <Tabs tabStyle="full" class="flex divide-x divide-gray-200 rounded-lg shadow-sm rtl:divide-x-reverse dark:divide-gray-700">
     <TabItem class="w-full" open>
       {#snippet titleSlot()}
@@ -230,7 +230,7 @@
 
 <h2 class="my-4 text-2xl">Components in tab contents</h2>
 
-<div class="example-container my-4">
+<div class="border rounded p-4 my-4 rounded my-4">
   <Tabs>
     <TabItem open>
       {#snippet titleSlot()}
@@ -282,26 +282,4 @@
   </Tabs>
 </div>
 
-<h2 class="my-4 text-2xl">Custom style</h2>
 
-<p>
-  To get a custom look and feel for the <code>Tabs</code>
-  component, set
-  <code>activeClasses</code>
-  and
-  <code>inactiveClasses</code>
-  properties either on the
-  <code>Tabs</code>
-  component or on the individual
-  <code>TabItem</code>
-   components.
-</p>
-
-<style>
-  .example-container {
-    padding: 1rem;
-    margin-bottom: 1.5rem;
-    border: 1px solid #e5e7eb;
-    border-radius: 0.5rem;
-  }
-</style>

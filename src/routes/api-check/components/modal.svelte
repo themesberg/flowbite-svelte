@@ -59,9 +59,8 @@
 
 <h1 class="my-4 text-3xl">Modal</h1>
 
-<div class="mb-8">
   <h2 class="my-4 text-2xl">Default modal</h2>
-  <div class="example-container">
+  <div class="border rounded p-4 my-4 flex justify-center">
     <Button onclick={() => (defaultModal = true)}>Default modal</Button>
     <Modal title="Terms of Service" bind:open={defaultModal} autoclose>
       <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
@@ -73,11 +72,9 @@
       {/snippet}
     </Modal>
   </div>
-</div>
 
-<div class="mb-8">
   <h2 class="my-4 text-2xl">Clicking outside</h2>
-  <div class="example-container">
+  <div class="border rounded p-4 my-4 flex justify-center">
     <Button onclick={() => (open = true)}>Default modal</Button>
 
     <Modal bind:open autoclose outsideclose={false} class="backdrop:bg-red-900/50 dark:backdrop:bg-green-300/50">
@@ -94,11 +91,9 @@
       {/snippet}
     </Modal>
   </div>
-</div>
 
-<div class="mb-8">
   <h2 class="my-4 text-2xl">Pop-up modal</h2>
-  <div class="example-container">
+  <div class="border rounded p-4 my-4 flex justify-center">
     <Button onclick={() => (popupModal = true)}>Pop-up modal</Button>
 
     <Modal bind:open={popupModal} size="xs" autoclose transition={slide}>
@@ -110,11 +105,9 @@
       </div>
     </Modal>
   </div>
-</div>
 
-<div class="mb-8">
   <h2 class="my-4 text-2xl">Form element</h2>
-  <div class="example-container">
+  <div class="border rounded p-4 my-4 flex justify-center">
     <Button onclick={() => (formModal = true)}>Form modal</Button>
 
     <Modal bind:open={formModal} size="xs" autoclose={false}>
@@ -139,11 +132,9 @@
       </form>
     </Modal>
   </div>
-</div>
 
-<div class="mb-8">
   <h2 class="my-4 text-2xl">Crypto wallet</h2>
-  <div class="example-container">
+  <div class="border rounded p-4 my-4 flex justify-center">
     <Button onclick={() => (walletModal = true)}>Crypto wallet modal</Button>
 
     <Modal title="Connect wallet" bind:open={walletModal} size="xs">
@@ -188,11 +179,9 @@
       </div>
     </Modal>
   </div>
-</div>
 
-<div class="mb-8">
   <h2 class="my-4 text-2xl">Sizes</h2>
-  <div class="example-container">
+  <div class="border rounded p-4 my-4 flex justify-center">
     <div class="block space-y-4 md:space-y-0 md:space-x-4 rtl:space-x-reverse">
       <Button size="xs" {onclick}>xs</Button>
       <Button size="sm" {onclick}>sm</Button>
@@ -210,11 +199,9 @@
       {/snippet}
     </Modal>
   </div>
-</div>
 
-<div class="mb-8">
   <h2 class="my-4 text-2xl">Placement</h2>
-  <div class="example-container">
+  <div class="border rounded p-4 my-4 flex justify-center">
     <div class="inline-grid grid-cols-3 grid-rows-3 gap-4">
       <Button onclick={setPlacement}>top-left</Button>
       <Button onclick={setPlacement}>top-center</Button>
@@ -236,11 +223,9 @@
       {/snippet}
     </Modal>
   </div>
-</div>
 
-<div class="mb-8">
   <h2 class="my-4 text-2xl">Colors</h2>
-  <div class="example-container">
+  <div class="border rounded p-4 my-4 flex justify-center">
     <div class="block space-y-4 md:space-y-0 md:space-x-2 rtl:space-x-reverse">
       <Button color="primary" onclick={onclickColor}>Primary modal</Button>
       <Button color="red" onclick={onclickColor}>Red modal</Button>
@@ -257,11 +242,9 @@
       {/snippet}
     </Modal>
   </div>
-</div>
 
-<div class="mb-8">
   <h2 class="my-4 text-2xl">Scrolling behaviour</h2>
-  <div class="example-container">
+  <div class="border rounded p-4 my-4 flex justify-center">
     <Button onclick={() => (scrollingModal = true)}>Scrolling modal</Button>
 
     <Modal title="Terms of Service" bind:open={scrollingModal}>
@@ -285,11 +268,9 @@
       {/snippet}
     </Modal>
   </div>
-</div>
 
-<div class="mb-8">
   <h2 class="my-4 text-2xl">Non-modal case</h2>
-  <div class="example-container">
+  <div class="border rounded p-4 my-4 flex justify-center">
     <Button onclick={() => (nonModal = true)}>Non modal</Button>
     <Modal title="Terms of Service" bind:open={nonModal} autoclose modal={false} class="z-10 border shadow-xl">
       <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
@@ -300,10 +281,4 @@
       {/snippet}
     </Modal>
   </div>
-</div>
 
-<style>
-  .example-container {
-    margin-bottom: 2rem;
-  }
-</style>

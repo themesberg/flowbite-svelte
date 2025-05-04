@@ -68,7 +68,7 @@
     </NavUl>
 
     <div class="ml-auto flex items-center">
-      <ToolbarLink class="hidden hover:text-gray-900 sm:inline-block dark:hover:text-white" name="View on GitHub" href="https://github.com/themesberg/flowbite-svelte-next">
+      <ToolbarLink class="hidden hover:text-gray-900 sm:inline-block dark:hover:text-white" name="View on GitHub" href="https://github.com/themesberg/flowbite-svelte">
         <GitHub />
       </ToolbarLink>
       <ToolbarLink class="hidden hover:text-gray-900 sm:inline-block dark:hover:text-white" name="Join community on Discord" href="https://discord.gg/4eeurUVvTy">

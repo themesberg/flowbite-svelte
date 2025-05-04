@@ -38,9 +38,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte-next.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DrawerProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L545)
+[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L545)
 ## Props
 @prop children
 @prop hidden = $bindable()

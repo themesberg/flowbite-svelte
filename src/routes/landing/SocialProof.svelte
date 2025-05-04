@@ -44,7 +44,7 @@
     </div>
     <div class="flex w-full flex-col items-start gap-6 md:gap-3">
       <div class="flex flex-row items-start gap-2 self-stretch md:justify-between md:gap-2 md:pe-16 lg:justify-end lg:gap-2 lg:pe-0">
-        <a href="https://github.com/themesberg/flowbite-svelte-next" class="flex w-full max-w-[272px] flex-col items-start gap-4 rounded-lg text-gray-400 hover:bg-gray-50 lg:px-8 lg:py-6 dark:hover:bg-gray-800">
+        <a href="https://github.com/themesberg/flowbite-svelte" class="flex w-full max-w-[272px] flex-col items-start gap-4 rounded-lg text-gray-400 hover:bg-gray-50 lg:px-8 lg:py-6 dark:hover:bg-gray-800">
           <GitHub />
           <div class="flex flex-col items-start gap-2">
             <p class="text-2xl leading-tight font-bold text-gray-900 dark:text-white">{format(github)}</p>

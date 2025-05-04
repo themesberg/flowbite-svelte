@@ -13,7 +13,7 @@ description: Button groups are a Tailwind CSS powered set of buttons sticked tog
   const dirName = 'buttongroup'
 </script>
 
-The button group component from flowbite-svelte-next can be used to stack together multiple buttons and links inside a single element.
+The button group component from flowbite-svelte can be used to stack together multiple buttons and links inside a single element.
 
 ## Setup
 

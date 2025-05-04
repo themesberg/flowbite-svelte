@@ -56,12 +56,12 @@
   ];
 </script>
 
-<h1 class="text-3xl my-4">Megamenu</h1>
+<h1 class="my-4 text-3xl">Megamenu</h1>
 
 The mega menu component is a full-width dropdown that can be triggered by clicking on the menu item and it shows a list of links that you can use to navigate through the pages on a website. Setup Default mega menu Use this example to show a list of links aligned on three columns inside the mega menu dropdown.
 
 <h2 class="text-2xl">Default mega menu</h2>
-<div class="my-8">
+<div class="border rounded p-4 my-4 h-72">
   <Navbar>
     <NavBrand href="/">
       <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
@@ -88,7 +88,7 @@ The mega menu component is a full-width dropdown that can be triggered by clicki
 <h2 class="text-2xl">Mega menu with icons</h2>
 Mega menu with icons This example of a mega menu dropdown can be used to also show an icon near the text of the link.
 
-<div class="my-8">
+<div class="border rounded p-4 my-4 h-72">
   <Navbar>
     <NavBrand href="/">
       <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
@@ -118,7 +118,7 @@ Mega menu with icons This example of a mega menu dropdown can be used to also sh
 <h2 class="text-2xl">Full width dropdown</h2>
 Full width dropdown Use this example to show a mega menu dropdown that spans the entire width of the document page.
 
-<div class="my-8">
+<div class="border rounded p-4 my-4 h-72">
   <Navbar>
     <NavBrand href="/">
       <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
@@ -148,7 +148,7 @@ Full width dropdown Use this example to show a mega menu dropdown that spans the
 <h2 class="text-2xl">Full width with CTA</h2>
 Full width with CTA This example can be used to also show a CTA button or link next to the menu items inside the dropdown.
 
-<div class="my-8">
+<div class="border rounded p-4 my-4 h-72">
   <Navbar>
     <NavBrand href="/">
       <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
@@ -186,7 +186,7 @@ Full width with CTA This example can be used to also show a CTA button or link n
 <h2 class="text-2xl">Fill width with image</h2>
 Full width with image This example can be used to also show a CTA with a backdround image inside the dropdown next to the other menu items and links.
 
-<div class="my-8">
+<div class="border rounded p-4 my-4 h-72">
   <Navbar>
     <NavBrand href="/">
       <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />

@@ -15,6 +15,7 @@
 
 <h2 class="my-4 text-2xl">Default accordion</h2>
 
+<div class="border rounded p-4">
 <Accordion>
   <AccordionItem>
     {#snippet header()}My Header 1{/snippet}
@@ -39,9 +40,11 @@
     </ul>
   </AccordionItem>
 </Accordion>
+</div>
 
 <h2 class="my-4 text-2xl">Always open</h2>
 
+<div class="border rounded p-4">
 <Accordion>
   <AccordionItem open>
     {#snippet header()}Header 2-1{/snippet}
@@ -52,9 +55,11 @@
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
 </Accordion>
+</div>
 
 <h2 class="my-4 text-2xl">Color option</h2>
 
+<div class="border rounded p-4">
 <Accordion activeClass="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800" inactiveClass="text-gray-500 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800">
   <AccordionItem class="">
     {#snippet header()}Header 2-1{/snippet}
@@ -65,9 +70,11 @@
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
 </Accordion>
+</div>
 
 <h2 class="my-4 text-2xl">Flush accordion</h2>
 
+<div class="border rounded p-4">
 <Accordion flush>
   <AccordionItem>
     {#snippet header()}Header 2-1{/snippet}
@@ -78,9 +85,10 @@
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
 </Accordion>
+</div>
 
 <h2 class="my-4 text-2xl">Arrow style</h2>
-
+<div class="border rounded p-4">
 <Accordion>
   <AccordionItem>
     {#snippet header()}Header 2-1{/snippet}
@@ -103,9 +111,10 @@
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
 </Accordion>
+</div>
 
 <h2 class="my-4 text-2xl">Icon Accordion</h2>
-
+<div class="border rounded p-4">
 <Accordion>
   <AccordionItem>
     {#snippet header()}
@@ -130,9 +139,10 @@
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sintexplicabo...</p>
   </AccordionItem>
 </Accordion>
+</div>
 
 <h2 class="my-4 text-2xl">Multiple mode</h2>
-
+<div class="border rounded p-4">
 <Accordion multiple>
   <AccordionItem>
     {#snippet header()}
@@ -147,8 +157,9 @@
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
 </Accordion>
+</div>
 
-<div class="my-4 space-y-4">
+<div class="border rounded my-4 space-y-4 p-4">
   <Button onclick={open_all}>Open all</Button>
   <Button onclick={close_all}>Close all</Button>
   <Accordion multiple>
@@ -174,7 +185,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Custom transitions</h2>
-
+<div class="border rounded rounded p-4">
 <Accordion>
   <AccordionItem transitionParams={{ duration: 2000 }}>
     {#snippet header()}My Header 1{/snippet}
@@ -189,9 +200,10 @@
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
 </Accordion>
+</div>
 
 <h2 class="my-4 text-2xl">Nesting accordions</h2>
-
+<div class="border rounded p-4">
 <Accordion>
   <AccordionItem open>
     {#snippet header()}My Header 1{/snippet}
@@ -227,3 +239,4 @@
     </ul>
   </AccordionItem>
 </Accordion>
+</div>

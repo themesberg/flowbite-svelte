@@ -7,7 +7,7 @@
 
 <h2 class="my-4 text-2xl">Unordored list</h2>
 
-<div>
+<div class="border rounded p-4 my-4">
   <Heading tag="h2" class="mb-2 text-lg text-lg font-semibold font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
   <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400">
     <Li>At least 10 characters (and up to 100 characters)</Li>
@@ -18,7 +18,7 @@
 
 <h3>Icons</h3>
 
-<div>
+<div class="border rounded p-4 my-4">
   <Heading tag="h2" class="mb-2 text-lg text-lg font-semibold font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
   <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400">
     <Li icon>
@@ -38,7 +38,7 @@
 
 <h3>Nested</h3>
 
-<div>
+<div class="border rounded p-4 my-4">
   <List tag="ul" class="space-y-4 text-gray-500 dark:text-gray-400">
     <Li>
       List item one
@@ -69,7 +69,7 @@
 
 <h3>Unstyled</h3>
 
-<div>
+<div class="border rounded p-4 my-4">
   <Heading tag="h2" class="mb-2 text-lg text-lg font-semibold font-semibold  text-gray-900 dark:text-white">Password requirements</Heading>
   <List tag="dl" class="space-y-1 text-gray-500 dark:text-gray-400">
     <Li>At least 10 characters (and up to 100 characters)</Li>
@@ -80,7 +80,7 @@
 
 <h2 class="my-4 text-2xl">Ordered list</h2>
 
-<div>
+<div class="border rounded p-4 my-4">
   <Heading tag="h2" class="mb-2 text-lg text-lg font-semibold font-semibold  text-gray-900 dark:text-white">Top students:</Heading>
   <List tag="ol" class="space-y-1 text-gray-500 dark:text-gray-400">
     <Li><Span>Bonnie Green</Span> with <Span>70</Span> points</Li>
@@ -91,7 +91,7 @@
 
 <h3>Nested</h3>
 
-<div>
+<div class="border rounded p-4 my-4">
   <List tag="ol" class="list-decimal text-gray-500 dark:text-gray-400">
     <Li>
       List item one
@@ -122,7 +122,7 @@
 
 <h2 class="my-4 text-2xl">Description List</h2>
 
-<div>
+<div class="border rounded p-4 my-4">
   <List tag="dl" class="divide-y divide-gray-200 text-gray-900 dark:divide-gray-700  dark:text-white">
     <div class="flex flex-col pb-3">
       <DescriptionList tag="dt" class="mb-1">Email address</DescriptionList>
@@ -141,7 +141,7 @@
 
 <h2 class="my-4 text-2xl">List with icon</h2>
 
-<div>
+<div class="border rounded p-4 my-4">
   <List tag="ul" class="mb-8 space-y-4 text-gray-500 dark:text-gray-400">
     <Li icon class="gap-3">
       <CheckOutline class="h-5 w-5 text-green-500 dark:text-green-400" />
@@ -168,7 +168,7 @@
 
 <h2 class="my-4 text-2xl">Advanced layout</h2>
 
-<div>
+<div class="border rounded p-4 my-4">
   <List tag="dl" class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
     <Li class="pb-3 sm:pb-4">
       <div class="flex items-center space-x-4 rtl:space-x-reverse">
@@ -235,7 +235,7 @@
 
 <h2 class="my-4 text-2xl">Horizontal List</h2>
 
-<div>
+<div class="border rounded p-4 my-4">
   <List tag="dl" class="mb-6 flex flex-wrap items-center justify-center">
     <Li>
       <A href="/" class="me-4 text-gray-700 hover:underline md:me-6 dark:text-white">About</A>

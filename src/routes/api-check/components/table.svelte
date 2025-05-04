@@ -50,8 +50,9 @@
 
 <h1 class="my-4 text-3xl">Table</h1>
 
-<div class="example-container my-8">
+
   <h2 class="my-4 text-2xl">Default table</h2>
+  <div class="border rounded p-4 my-4 my-8">
   <Table>
     <TableHead>
       <TableHeadCell>Product name</TableHeadCell>
@@ -82,8 +83,9 @@
   </Table>
 </div>
 
-<div class="example-container my-8">
+
   <h2 class="my-4 text-2xl">Striped rows</h2>
+  <div class="border rounded p-4 my-4 my-8">
   <Table striped={true}>
     <TableHead>
       <TableHeadCell>Product name</TableHeadCell>
@@ -144,8 +146,9 @@
   </Table>
 </div>
 
-<div class="example-container my-8">
+
   <h2 class="my-4 text-2xl">Hover state</h2>
+  <div class="border rounded p-4 my-4 my-8">
   <Table hoverable={true}>
     <TableHead>
       <TableHeadCell>Product name</TableHeadCell>
@@ -188,8 +191,9 @@
   </Table>
 </div>
 
-<div class="example-container my-8">
+
   <h2 class="my-4 text-2xl">Checkbox</h2>
+  <div class="border rounded p-4 my-4 my-8">
   <Table hoverable={true}>
     <TableHead>
       <TableHeadCell class="p-4!">
@@ -244,13 +248,15 @@
   </Table>
 </div>
 
-<div class="example-container my-8">
+
   <h2 class="my-4 text-2xl">Table from data</h2>
+  <div class="border rounded p-4 my-4 my-8">
   <Table {items} hoverable={true}></Table>
 </div>
 
-<div class="example-container my-8">
+
   <h2 class="my-4 text-2xl">Sorting by column testing</h2>
+  <div class="border rounded p-4 my-4 my-8">
   <Table hoverable={true} {items}>
     <TableHead>
       <TableHeadCell sort={(a, b) => a.id - b.id}>ID</TableHeadCell>
@@ -277,8 +283,9 @@
   </Table>
 </div>
 
-<div class="example-container my-8">
+
   <h2 class="my-4 text-2xl">Table head</h2>
+  <div class="border rounded p-4 my-4 my-8">
   <Table>
     <TableHead defaultRow={false}>
       <tr>
@@ -319,8 +326,9 @@
   </Table>
 </div>
 
-<div class="example-container my-8">
+
   <h2 class="my-4 text-2xl">Table foot</h2>
+  <div class="border rounded p-4 my-4 my-8">
   <Table border={false}>
     <TableHead class="bg-gray-100 text-xs text-gray-700 uppercase dark:bg-gray-700 dark:text-gray-400">
       <TableHeadCell>Product name</TableHeadCell>
@@ -354,8 +362,9 @@
   </Table>
 </div>
 
-<div class="example-container my-8">
+
   <h2 class="my-4 text-2xl">Table caption</h2>
+  <div class="border rounded p-4 my-4 my-8">
   <Table>
     <caption class="bg-white p-5 text-left text-lg font-semibold text-gray-900 dark:bg-gray-800 dark:text-white">
       Our products
@@ -402,8 +411,9 @@
   </Table>
 </div>
 
-<div class="example-container my-8">
+
   <h2 class="my-4 text-2xl">Without border</h2>
+  <div class="border rounded p-4 my-4 my-8">
   <Table border={false}>
     <TableHead>
       <TableHeadCell>Product name</TableHeadCell>
@@ -434,8 +444,9 @@
   </Table>
 </div>
 
-<div class="example-container my-8">
+
   <h2 class="my-4 text-2xl">Table with shadow</h2>
+  <div class="border rounded p-4 my-4 my-8">
   <Table shadow>
     <TableHead>
       <TableHeadCell>Product name</TableHeadCell>
@@ -466,8 +477,9 @@
   </Table>
 </div>
 
-<div class="example-container my-8 w-[700px]">
+
   <h2 class="my-4 text-2xl">Overflow scrolling</h2>
+  <div class="border rounded p-4 my-4 my-8 w-[700px]">
   <Table>
     <TableHead>
       <TableHeadCell class="p-4!">
@@ -537,7 +549,7 @@
 
 <h2 class="my-4 text-2xl">Table colors</h2>
 
-<div class="example-container mb-8">
+<div class="border rounded p-4 my-4 mb-8">
   <Table color="blue" hoverable={true}>
     <TableHead>
       <TableHeadCell>Product name</TableHeadCell>
@@ -568,7 +580,7 @@
   </Table>
 </div>
 
-<div class="example-container mb-8">
+<div class="border rounded p-4 my-4 mb-8">
   <TableSearch color="red" placeholder="Search by maker name" hoverable bind:inputValue={searchTerm}>
     <TableHead>
       <TableHeadCell>ID</TableHeadCell>
@@ -589,7 +601,7 @@
   </TableSearch>
 </div>
 
-<div class="example-container mb-8">
+<div class="border rounded p-4 my-4 mb-8">
   <Table color="green" hoverable={true}>
     <TableHead>
       <TableHeadCell>Product name</TableHeadCell>
@@ -622,7 +634,7 @@
 
 <h2 class="my-4 text-2xl">Striped rows color</h2>
 
-<div class="example-container mb-8">
+<div class="border rounded p-4 my-4 mb-8">
   <Table striped={true} color="purple">
     <TableHead>
       <TableHeadCell>Product name</TableHeadCell>
@@ -685,7 +697,7 @@
 
 <h2 class="my-4 text-2xl">Click and double-click on row</h2>
 
-<div class="example-container mb-8">
+<div class="border rounded p-4 my-4 mb-8">
   <Table>
     <TableHead>
       <TableHeadCell>Product name</TableHeadCell>

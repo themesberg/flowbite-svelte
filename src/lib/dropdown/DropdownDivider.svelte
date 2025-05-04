@@ -11,9 +11,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte-next.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DropdownDividerProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L572)
+[DropdownDividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L572)
 ## Props
 @prop class: divClass
 @prop ...restProps

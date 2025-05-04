@@ -23,9 +23,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte-next.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Type
-[FooterCopyrightProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L614)
+[FooterCopyrightProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L613)
 ## Props
 @prop spanClass
 @prop aClass

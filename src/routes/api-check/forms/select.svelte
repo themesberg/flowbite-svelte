@@ -59,7 +59,7 @@
 
 <h2 class="my-4 text-2xl">Select input example</h2>
 
-<div class="example-container my-4">
+<div class="border rounded p-4  my-4">
   <Label>
     Select an option
     <Select class="mt-2" items={countries} bind:value={selected} />
@@ -68,21 +68,21 @@
 
 <h2 class="my-4 text-2xl">Disabled state</h2>
 
-<div class="example-container my-4">
+<div class="border rounded p-4  my-4">
   <Label for="select-disabled" class="mb-2">Disabled select</Label>
   <Select id="select-disabled" disabled items={countries} placeholder="You can't select anything..." />
 </div>
 
 <h2 class="my-4 text-2xl">Underline select</h2>
 
-<div class="example-container my-4">
+<div class="border rounded p-4  my-4">
   <Label for="select-underline" class="sr-only">Underline select</Label>
   <Select id="select-underline" underline class="mt-2" items={countries} />
 </div>
 
 <h2 class="my-4 text-2xl">Select with dropdown</h2>
 
-<div class="example-container my-4 h-64">
+<div class="border rounded p-4  my-4 h-64">
   <div class="flex">
     <button id="states-button" class="z-10 inline-flex shrink-0 items-center rounded-s-lg border border-gray-300 bg-gray-100 px-4 py-2.5 text-center text-sm font-medium text-gray-500 hover:bg-gray-200 focus:ring-4 focus:ring-gray-100 focus:outline-hidden dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-700" type="button">
       <Usa />
@@ -113,7 +113,7 @@
 
 <h2 class="my-4 text-2xl">Sizes</h2>
 
-<div class="example-container my-4">
+<div class="border rounded p-4  my-4">
   <Label for="select-sm" class="mb-2">Small select</Label>
   <Select id="select-sm" size="sm" items={countries} class="mb-6" />
   <Label for="select-md" class="mb-2">Default select</Label>
@@ -131,7 +131,7 @@
 
 <h2 class="my-4 text-2xl">Custom options</h2>
 
-<div class="example-container my-4">
+<div class="border rounded p-4  my-4">
   <Label for="countries">Select an option</Label>
   <Select id="countries" class="mt-2" bind:value={selected} placeholder="">
     <option selected value="all">All</option>
@@ -146,31 +146,31 @@
 
 <h3 class="my-3 text-xl">Basic example</h3>
 
-<div class="example-container my-4 h-80">
+<div class="border rounded p-4  my-4 h-80">
   <MultiSelect items={multiCountries} value={multiSelected} size="lg" />
 </div>
 
 <h3 class="my-3 text-xl">Placeholder</h3>
 
-<div class="example-container my-4 h-80">
+<div class="border rounded p-4  my-4 h-80">
   <MultiSelect items={multiCountries} value={multiSelected} size="lg" {placeholder} />
 </div>
 
 <h3 class="my-3 text-xl">Disabled select</h3>
 
-<div class="example-container my-4 h-80">
+<div class="border rounded p-4  my-4 h-80">
   <MultiSelect disabled items={multiCountries} value={multiSelected} size="lg" />
 </div>
 
 <h3 class="my-3 text-xl">Disabled option</h3>
 
-<div class="example-container my-4 h-80">
+<div class="border rounded p-4  my-4 h-80">
   <MultiSelect items={multiDisabledCountries} value={multiSelected} size="lg" />
 </div>
 
 <h3 class="my-3 text-xl">Pre-select values</h3>
 
-<div class="example-container my-4 h-96">
+<div class="border rounded p-4  my-4 h-96">
   <MultiSelect items={colorCountries} value={preselected}>
     {#snippet children({ item, clear })}
       <Badge color={item.color} dismissable params={{ duration: 100 }} onclose={clear}>
@@ -198,7 +198,7 @@
 
 <h3 class="my-3 text-xl">Customization</h3>
 
-<div class="example-container my-4 h-96">
+<div class="border rounded p-4  my-4 h-96">
   <MultiSelect items={colorCountries} value={multiSelected}>
     {#snippet children({ item, clear })}
       <Badge color={item.color} dismissable params={{ duration: 100 }} onclose={clear}>

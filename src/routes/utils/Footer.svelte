@@ -14,17 +14,17 @@
 
   const footer_links = {
     Resources: {
-      GitHub: "https://github.com/themesberg/flowbite-svelte-next",
+      GitHub: "https://github.com/themesberg/flowbite-svelte",
       Flowbite: "https://flowbite.com/",
       "Tailwind CSS": "https://tailwindcss.com/",
       "Figma Design": "https://flowbite.com/figma/"
     },
     "Help and Support": {
       "Discord Community": "https://discord.gg/4eeurUVvTy",
-      "GitHub Discussions": "https://github.com/themesberg/flowbite-svelte-next/discussions"
+      "GitHub Discussions": "https://github.com/themesberg/flowbite-svelte/discussions"
     },
     Legal: {
-      License: "https://github.com/themesberg/flowbite-svelte-next/blob/main/LICENSE",
+      License: "https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE",
       "Brand usage": "https://flowbite.com/brand/"
     }
   };
@@ -34,11 +34,11 @@
   <div class="mx-auto flex max-w-screen-xl flex-col py-6 lg:py-12">
     <div class="flex flex-col items-start gap-8 md:justify-between lg:flex-row {isHomePage ? 'px-4 lg:px-4' : ''}">
       <div class="w-full max-w-sm">
-        <FooterBrand href="https://flowbite-svelte-next.com" src={logo} alt="Flowbite Svelte Logo" name="Flowbite Svelte" class="text-gray-900 dark:text-white" />
+        <FooterBrand href="https://flowbite-svelte.com" src={logo} alt="Flowbite Svelte Logo" name="Flowbite Svelte" class="text-gray-900 dark:text-white" />
         <p class="mt-4 mb-3 max-w-sm text-gray-600 dark:text-gray-400">Flowbite Svelte is an open-source UI component library built with Svelte components and Tailwind CSS that can help you build websites faster.</p>
         <p class="mb-3 max-w-sm text-gray-600 dark:text-gray-400">
           Code licensed
-          <a href="https://github.com/themesberg/flowbite-svelte-next/blob/main/LICENSE" class="text-primary-600 hover:underline">MIT</a>
+          <a href="https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE" class="text-primary-600 hover:underline">MIT</a>
           , docs
           <a href="https://creativecommons.org/licenses/by/3.0/" class="text-primary-600 hover:underline">CC BY 3.0</a>
           .

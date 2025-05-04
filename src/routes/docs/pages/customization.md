@@ -61,9 +61,9 @@ We hope these instructions help you confidently customize component classes. Fee
 
 ## Global customization
 
-To customize the flowbite-svelte-next component globally, follow these steps:
+To customize the flowbite-svelte component globally, follow these steps:
 
-Start by creating your own component based on flowbite-svelte-next.
+Start by creating your own component based on flowbite-svelte.
 
 Create a new file for your button component in the lib directory:
 
@@ -93,4 +93,4 @@ Use the custom button component in your project by adding the following code:
 <MyButton>My New Button</MyButton>
 ```
 
-With these steps, you can customize and use your own button component globally based on flowbite-svelte-next. Feel free to modify the styles and properties of the component according to your requirements.
+With these steps, you can customize and use your own button component globally based on flowbite-svelte. Feel free to modify the styles and properties of the component according to your requirements.

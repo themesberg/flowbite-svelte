@@ -51,9 +51,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte-next.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ThemeProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1434)
+[ThemeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1432)
 ## Props
 @prop children
 @prop theme

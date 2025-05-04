@@ -291,7 +291,7 @@ Use the `whitespace="preline'` prop to add whitespace exactly how it has been se
 <!-- prettier-ignore -->
 ```svelte example hideScript
 <script>
-  import { P } from 'flowbite-svelte-next'
+  import { P } from 'flowbite-svelte'
 </script>
 
 <P whitespace="preline">

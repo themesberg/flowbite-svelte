@@ -25,7 +25,7 @@
 
 <h2 class="my-4 text-2xl">Default badge</h2>
 
-<div class="flex flex-wrap gap-2">
+<div class="border rounded p-4 flex flex-wrap gap-2">
   <Badge>Default</Badge>
   <Badge color="gray">Gray</Badge>
   <Badge color="red">Red</Badge>
@@ -38,7 +38,7 @@
 
 <h2 class="my-4 text-2xl">Large badges</h2>
 
-<div class="flex flex-wrap gap-2">
+<div class="border rounded p-4 flex flex-wrap gap-2">
   <Badge large>Default</Badge>
   <Badge large color="gray">Gray</Badge>
   <Badge large color="red">Red</Badge>
@@ -51,7 +51,7 @@
 
 <h2 class="my-4 text-2xl">Bordered badge</h2>
 
-<div class="flex flex-wrap gap-2">
+<div class="border rounded p-4 flex flex-wrap gap-2">
   <Badge border>Default</Badge>
   <Badge border color="gray">Gray</Badge>
   <Badge border color="red">Red</Badge>
@@ -64,7 +64,7 @@
 
 <h2 class="my-4 text-2xl">Pills badge</h2>
 
-<div class="flex flex-wrap gap-2">
+<div class="border rounded p-4 flex flex-wrap gap-2">
   <Badge rounded>Default</Badge>
   <Badge rounded color="gray">Gray</Badge>
   <Badge rounded color="red">Red</Badge>
@@ -77,7 +77,7 @@
 
 <h2 class="my-4 text-2xl">Badges as links</h2>
 
-<div class="flex flex-wrap gap-2">
+<div class="border rounded p-4 flex flex-wrap gap-2">
   <Badge href="/">Badge link</Badge>
   <Badge href="/" large>Badge link</Badge>
   <Badge href="/" border>Badge link</Badge>
@@ -86,7 +86,7 @@
 
 <h2 class="my-4 text-2xl">Badges with icon</h2>
 
-<div class="flex flex-wrap gap-2">
+<div class="border rounded p-4 flex flex-wrap gap-2">
   <Badge color="gray" border>
     <ClockSolid class="me-1.5 h-2.5 w-2.5" />
     3 days ago
@@ -99,7 +99,7 @@
 
 <h2 class="my-4 text-2xl">Notification badge</h2>
 
-<div class="flex flex-wrap gap-4">
+<div class="border rounded p-4 flex flex-wrap gap-4">
   <Button class="relative" size="sm">
     <EnvelopeSolid class="text-white dark:text-white" />
     <span class="sr-only">Notifications</span>
@@ -121,7 +121,7 @@
 
 <h2 class="my-4 text-2xl">Button with badge</h2>
 
-<div class="flex flex-wrap gap-4">
+<div class="border rounded p-4 flex flex-wrap gap-4">
   <Button>
     Messages
     <Badge rounded class="text-primary-800 dark:text-primary-800 ms-2 h-4 w-4 bg-white p-0 font-semibold dark:bg-white">2</Badge>
@@ -130,7 +130,7 @@
 
 <h2 class="my-4 text-2xl">Badge with icon only</h2>
 
-<div>
+<div class="border rounded p-4 flex flex-wrap gap-4">
   <Badge color="gray" large class="p-1! font-semibold!">
     <CheckOutline class="h-3 w-3" />
     <span class="sr-only">Icon description</span>
@@ -143,7 +143,7 @@
 
 <h2 class="my-4 text-2xl">Dismissable badges</h2>
 
-<div class="flex flex-wrap gap-4">
+<div class="border rounded p-4 flex flex-wrap gap-4">
   <Badge dismissable large>Default</Badge>
   <Badge dismissable large color="gray">Gray</Badge>
   <Badge dismissable large color="red">Red</Badge>
@@ -154,7 +154,7 @@
   <Badge dismissable large color="pink">Pink</Badge>
 </div>
 
-<div class="gap-4">
+<div class="border rounded p-4 flex flex-wrap gap-4 my-4">
   <Badge dismissable>
     Default
     {#snippet icon()}
@@ -164,21 +164,19 @@
       </button>
     {/snippet}
   </Badge>
-</div>
 
-<div class="gap-4">
   <Badge dismissable large onclose={handleClose}>Default</Badge>
 </div>
 
 <h2 class="my-4 text-2xl">Dynamic color</h2>
 
-<div class="flex flex-wrap gap-4">
+<div class="border rounded p-4 flex flex-wrap gap-4">
   <Badge large {color}>Blinking badge</Badge>
 </div>
 
 <h2 class="my-4 text-2xl">Opening badge</h2>
 
-<div>
+<div class="border rounded p-4 flex flex-wrap gap-4">
   <Button onclick={openBadge}>Open badge</Button>
   <Badge class="ml-4" color="blue" dismissable large bind:badgeStatus={openBadgeStatus}>Default</Badge>
 </div>

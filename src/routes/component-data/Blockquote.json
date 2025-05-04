@@ -2,7 +2,7 @@
   "name": "Blockquote",
   "type": {
     "name": "BlockquoteProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1542"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1540"
   },
   "props": [
     ["children", ""],

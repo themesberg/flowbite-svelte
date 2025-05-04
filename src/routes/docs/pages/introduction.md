@@ -11,7 +11,7 @@ description: Learn more about the free and open-source Flowbite Svelte UI compon
   
 </script>
 
-[Flowbite Svelte](https://github.com/themesberg/flowbite-svelte-next) is a free and open-source UI component library based on the core Flowbite components and built with native Svelte components and interactivity handling.
+[Flowbite Svelte](https://github.com/themesberg/flowbite-svelte) is a free and open-source UI component library based on the core Flowbite components and built with native Svelte components and interactivity handling.
 
 This library features hundreds of interactive elements such as navbars, dropdowns, modals, and sidebars all handled by Svelte and based on the utility classes from Tailwind CSS.
 
@@ -140,4 +140,4 @@ Check out [contributing guide](/docs/pages/how-to-contribute) to learn how you c
 
 ## License
 
-Flowbite Svelte is a free and open-source UI component library licensed under the [MIT License](https://github.com/themesberg/flowbite-svelte-next/blob/main/LICENSE).
+Flowbite Svelte is a free and open-source UI component library licensed under the [MIT License](https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE).

@@ -29,9 +29,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte-next.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TableBodyProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1363)
+[TableBodyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1361)
 ## Props
 @prop children
 @prop bodyItems

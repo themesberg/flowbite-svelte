@@ -8,7 +8,7 @@
 
 <h2 class="my-4 text-2xl">Default footer</h2>
 
-<div class="example-container mb-8">
+<div class="border rounded p-4 my-4">
   <Footer>
     <FooterCopyright href="/" by="Flowbite™" year={2022} />
     <FooterLinkGroup class="mt-3 flex flex-wrap items-center text-sm text-gray-500 sm:mt-0 dark:text-gray-400">
@@ -22,7 +22,7 @@
 
 <h2 class="my-4 text-2xl">Footer with logo</h2>
 
-<div class="example-container mb-8">
+<div class="border rounded p-4 my-4">
   <Footer footerType="logo">
     <div class="sm:flex sm:items-center sm:justify-between">
       <FooterBrand href="https://flowbite.com" src="/images/flowbite-svelte-icon-logo.svg" alt="Flowbite Logo" name="Flowbite" />
@@ -40,7 +40,7 @@
 
 <h2 class="my-4 text-2xl">Social media icons</h2>
 
-<div class="example-container mb-8">
+<div class="border rounded p-4 my-4">
   <Footer footerType="socialmedia">
     <div class="md:flex md:justify-between">
       <div class="mb-6 md:mb-0">
@@ -96,7 +96,7 @@
 
 <h2 class="my-4 text-2xl">Sitemap links</h2>
 
-<div class="example-container mb-8">
+<div class="border rounded p-4 my-4">
   <Footer footerType="sitemap">
     <div class="grid grid-cols-2 gap-8 px-6 py-8 md:grid-cols-4">
       <div>
@@ -160,7 +160,7 @@
 
 <h2 class="my-4 text-2xl">Sticky footer</h2>
 
-<div class="example-container relative mb-8">
+<div class="border rounded p-4 my-4 relative mb-8">
   <div style="height:300px;" class="overflow-scroll pb-16">
     <Skeleton class="my-8" />
     <ImagePlaceholder class="my-8" />
@@ -176,3 +176,4 @@
     </FooterLinkGroup>
   </Footer>
 </div>
+

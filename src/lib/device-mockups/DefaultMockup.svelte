@@ -21,9 +21,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte-next.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DefaultMockupProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L504)
+[DefaultMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L504)
 ## Props
 @prop children
 @prop divClass

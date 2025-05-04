@@ -32,7 +32,7 @@
 <h1 class="text-3xl">Forms</h1>
 <h2 class="text-2xl">Input Sizes</h2>
 
-<div class="my-8">
+<div class="border rounded p-4 my-4">
   <div class="mb-6">
     <Label for="large-input" class="mb-2 block">Large input</Label>
     <Input id="large-input" size="lg" placeholder="Large input" />
@@ -49,14 +49,14 @@
 
 <h2 class="text-2xl">Disabled</h2>
 
-<div class="my-8">
+<div class="border rounded p-4 my-4">
   <Input id="disabled-input" class="mb-6" disabled value="Disabled input" />
   <Input id="disabled-input-2" class="mb-6" disabled readonly value="Disabled readonly input" />
 </div>
 
 <h2 class="text-2xl">Helper text</h2>
 
-<div class="my-8">
+<div class="border rounded p-4 my-4">
   <Label class="mb-2 block">Your email</Label>
   <Input id="email" name="email" required placeholder="name@flowbite.com" />
   <Helper class="mt-2 text-sm">
@@ -67,7 +67,7 @@
 
 <h2 class="text-2xl">Input element with icon</h2>
 
-<div class="my-8">
+<div class="border rounded p-4 my-4">
   <div class="mb-6">
     <Label for="input-group-1" class="mb-2 block">Your Email</Label>
     <Input id="email" type="email" placeholder="name@flowbite.com" class="pl-8">
@@ -80,7 +80,7 @@
 
 <h2 class="text-2xl">Input element with addon</h2>
 
-<div class="my-8">
+<div class="border rounded p-4 my-4">
   <div class="mb-6">
     <Label for="website-admin" class="mb-2 block">Username</Label>
     <ButtonGroup class="w-full">
@@ -94,7 +94,7 @@
 
 <h2 class="text-2xl">Form validation</h2>
 
-<div class="my-8">
+<div class="border rounded p-4 my-4">
   <div class="mb-6">
     <Label for="success" color="green" class="mb-2 block">Your name</Label>
     <Input id="success" color="green" placeholder="Success input" />
@@ -115,13 +115,13 @@
 
 <h2 class="text-2xl">Textarea</h2>
 
-<div class="my-8">
+<div class="border rounded p-4 my-4">
   <Textarea {...textareaprops} />
 </div>
 
 <h2 class="text-2xl">Select input</h2>
 
-<div class="my-8">
+<div class="border rounded p-4 my-4">
   <Label>
     Select an option
     <Select class="mt-2" items={countries} bind:value={selected} />
@@ -130,34 +130,34 @@
 
 <h2 class="text-2xl">MultiSelect</h2>
 
-<div class="my-8">
+<div class="border rounded p-4 my-4">
   <MultiSelect items={countries2} bind:value={multiSelected} />
 </div>
 
 <h2 class="text-2xl">Checkbox</h2>
 
-<div class="my-8">
+<div class="border rounded p-4 my-4">
   <Checkbox>Default checkbox</Checkbox>
   <Checkbox checked>Checked state</Checkbox>
 </div>
 
 <h2 class="text-2xl">Radio buttons</h2>
 
-<div class="my-8">
+<div class="border rounded p-4 my-4">
   <Radio name="example">Default radio</Radio>
   <Radio name="example" checked={true}>Checked state</Radio>
 </div>
 
 <h2 class="text-2xl">File upload</h2>
 
-<div class="my-8">
+<div class="border rounded p-4 my-4">
   <Label class="pb-2">Upload file</Label>
   <Fileupload {...fileuploadprops} />
 </div>
 
 <h2 class="text-2xl">Toggle Switch</h2>
 
-<div class="my-8">
+<div class="border rounded p-4 my-4">
   <Toggle>Toggle me</Toggle>
   <Toggle checked={true}>Checked toggle</Toggle>
   <Toggle disabled>Disabled toggle</Toggle>

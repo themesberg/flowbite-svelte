@@ -122,7 +122,7 @@
 <h1 class="my-4 text-3xl">Sidebar</h1>
 
 <h2 class="my-4 text-2xl">Default sidebar</h2>
-<div class="example-container">
+<div class="border rounded p-4 my-4">
   <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
   <div class="relative">
     <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" activeClass="p-2" nonActiveClass="p-2">
@@ -168,7 +168,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Adding links and active class</h2>
-<div class="example-container">
+<div class="border rounded p-4 my-4">
   <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
   <div class="relative">
     <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} activeClass="flex items-center p-2 text-base font-normal text-white bg-primary-600 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-800 dark:hover:bg-primary-800" nonActiveClass="flex items-center p-2 text-base font-normal text-green-900 rounded-lg dark:text-white hover:bg-green-100 dark:hover:bg-green-700" position="absolute" class="z-50 h-full">
@@ -213,7 +213,7 @@
   </div>
 </div>
 
-<div class="example-container">
+<div class="border rounded p-4 my-4">
   <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
   <div class="relative">
     <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" {activeClass} {nonActiveClass} class="z-50 h-full">
@@ -259,7 +259,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Multi-level dropdown</h2>
-<div class="example-container">
+<div class="border rounded p-4 my-4 h-[580px]">
   <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
   <div class="relative">
     <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" activeClass="p-2" nonActiveClass="p-2" class="z-50 h-full">
@@ -311,7 +311,7 @@
       </SidebarGroup>
     </Sidebar>
 
-    <div class="h-96 overflow-auto px-4 md:ml-64">
+    <div class="h-[500px] overflow-auto px-4 md:ml-64">
       <div class="rounded-lg border-2 border-dashed border-gray-200 p-4 dark:border-gray-700">
         <PlusPlaceholder colnum={3} rownum={1} />
         <PlusPlaceholder />
@@ -323,7 +323,7 @@
   </div>
 </div>
 
-<div class="example-container">
+<div class="border rounded p-4 my-4">
   <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
   <div class="relative">
     <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" class="z-50 h-full" activeClass="p-2" nonActiveClass="p-2">
@@ -363,7 +363,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Content separator</h2>
-<div class="example-container">
+<div class="border rounded p-4 my-4">
   <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
   <div class="relative">
     <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" activeClass="p-2" nonActiveClass="p-2">
@@ -426,7 +426,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">CTA button</h2>
-<div class="example-container h-[500px]">
+<div class="border rounded p-4 my-4 h-[500px]">
   <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
   <div class="relative">
     <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" activeClass="p-2" nonActiveClass="p-2">
@@ -483,7 +483,7 @@
 
 <h2 class="my-4 text-2xl">Logo branding</h2>
 
-<div class="example-container">
+<div class="border rounded p-4 my-4">
   <SidebarButton onclick={demoSidebarUi1.toggle} class="mb-2" />
   <div class="relative">
     <Sidebar {activeUrl} backdrop={false} isOpen={isDemo1Open} closeSidebar={closeDemo1Sidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" activeClass="p-2" nonActiveClass="p-2">
@@ -532,7 +532,7 @@
 
 <h2 class="my-4 text-2xl">Branding using children</h2>
 
-<div class="example-container">
+<div class="border rounded p-4 my-4">
   <SidebarButton onclick={demoSidebarUi2.toggle} class="mb-2" />
   <div class="relative">
     <Sidebar {activeUrl} backdrop={false} isOpen={isDemo2Open} closeSidebar={closeDemo2Sidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" activeClass="p-2" nonActiveClass="p-2">
@@ -584,7 +584,7 @@
 
 <h2 class="my-4 text-2xl">Close button</h2>
 
-<div class="example-container">
+<div class="border rounded p-4 my-4">
   <SidebarButton onclick={demoSidebarUi3.toggle} class="mb-2" />
   <div class="relative">
     <Sidebar {activeUrl} backdrop={false} isOpen={isDemo3Open} closeSidebar={closeDemo3Sidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full pt-6" position="absolute" activeClass="p-2" nonActiveClass="p-2">
@@ -632,7 +632,7 @@
 
 <h2 class="my-4 text-2xl">Using object</h2>
 
-<div class="example-container">
+<div class="border rounded p-4 my-4">
   <SidebarButton onclick={demoSidebarUi4.toggle} class="mb-2" />
   <div class="relative">
     <Sidebar {activeUrl} backdrop={false} isOpen={isDemo4Open} closeSidebar={closeDemo4Sidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" activeClass="p-2" nonActiveClass="p-2">
@@ -667,7 +667,7 @@
 
 <h2 class="my-4 text-2xl">Single selection</h2>
 
-<div class="example-container">
+<div class="border rounded p-4 my-4">
   <SidebarButton onclick={demoSidebarUi5.toggle} class="mb-2" />
   <div class="relative">
     <Sidebar {activeUrl} backdrop={false} isOpen={isDemo5Open} closeSidebar={closeDemo5Sidebar} params={{ x: -50, duration: 50 }} position="absolute" activeClass="p-2" nonActiveClass="p-2" class="z-50 h-full">
@@ -718,7 +718,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">All open</h2>
-<div class="example-container">
+<div class="border rounded p-4 my-4">
   <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
   <div class="relative">
     <Sidebar {activeUrl} isSingle={false} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" activeClass="p-2" nonActiveClass="p-2" class="z-50 h-full">
@@ -769,7 +769,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Transition</h2>
-<div class="example-container">
+<div class="border rounded p-4 my-4 h-[550px]">
   <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
   <div class="relative">
     <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" activeClass="p-2" nonActiveClass="p-2" class="z-50 h-full">
@@ -821,7 +821,7 @@
       </SidebarGroup>
     </Sidebar>
 
-    <div class="h-96 overflow-auto px-4 md:ml-64">
+    <div class="h-[500px] overflow-auto px-4 md:ml-64">
       <div class="rounded-lg border-2 border-dashed border-gray-200 p-4 dark:border-gray-700">
         <PlusPlaceholder colnum={3} rownum={1} />
         <PlusPlaceholder />
@@ -834,7 +834,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Static positioning</h2>
-<div class="example-container">
+<div class="border rounded p-4 my-4">
   <div class="h-96 overflow-auto px-4">
     <div class="rounded-lg border-2 border-dashed border-gray-200 p-4 dark:border-gray-700">
       <div class="flex w-full flex-row pb-4">
@@ -882,7 +882,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">onclick handler on SidebarDropdownWrapper</h2>
-<div class="example-container">
+<div class="border rounded p-4 my-4">
   <Sidebar position="static">
     <SidebarWrapper>
       <SidebarGroup>
@@ -909,9 +909,3 @@
     </SidebarWrapper>
   </Sidebar>
 </div>
-
-<style>
-  .example-container {
-    margin-bottom: 2rem;
-  }
-</style>

@@ -12,9 +12,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte-next.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Type
-[RangeProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L757)
+[RangeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L756)
 ## Props
 @prop value = $bindable()
 @prop appearance = "none"

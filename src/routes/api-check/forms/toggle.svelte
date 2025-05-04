@@ -10,13 +10,13 @@
   };
 </script>
 
-<h1 class="text-3xl my-4">Toggle</h1>
-The toggle component can be used to receive a simple “yes” or “no” type of answer from the user by choosing a single option from two options available in multiple sizes, styles, and colors coded with the utility classes from Tailwind CSS and with dark mode support. 
+<h1 class="my-4 text-3xl">Toggle</h1>
+The toggle component can be used to receive a simple “yes” or “no” type of answer from the user by choosing a single option from two options available in multiple sizes, styles, and colors coded with the utility classes from Tailwind CSS and with dark mode support.
 
 <h2 class="text-2xl">Toggle examples</h2>
- Get started with the default toggle component example as a checkbox element to receive a true or false selection from the user.
+Get started with the default toggle component example as a checkbox element to receive a true or false selection from the user.
 
-<div class="m-8">
+<div class="border rounded p-4 my-4 flex flex-col gap-4">
   <Toggle>Toggle me</Toggle>
   <Toggle checked={true}>Checked toggle</Toggle>
   <Toggle disabled>Disabled toggle</Toggle>
@@ -25,7 +25,7 @@ The toggle component can be used to receive a simple “yes” or “no” type 
 
 <h2 class="text-2xl">Colors</h2>
 
-<div class="m-8">
+<div class="border rounded p-4 my-4 flex flex-col gap-4">
   <Toggle color="red" checked>Red</Toggle>
   <Toggle color="green" checked>Green</Toggle>
   <Toggle color="purple" checked>Purple</Toggle>
@@ -36,7 +36,7 @@ The toggle component can be used to receive a simple “yes” or “no” type 
 
 <h2 class="text-2xl">Sizes</h2>
 
-<div class="m-8">
+<div class="border rounded p-4 my-4 flex flex-col gap-4">
   <Toggle size="small">Small toggle</Toggle>
   <Toggle size="default" checked>Default toggle</Toggle>
   <Toggle size="large" checked>Large toggle</Toggle>
@@ -45,7 +45,7 @@ The toggle component can be used to receive a simple “yes” or “no” type 
 
 <h2 class="text-2xl">Label for off state</h2>
 
-<div class="m-8">
+<div class="border rounded p-4 my-4 flex flex-col gap-4">
   <Toggle>
     {#snippet offLabel()}
       dark mode
@@ -56,7 +56,7 @@ The toggle component can be used to receive a simple “yes” or “no” type 
 
 <h2 class="text-2xl">Disabled</h2>
 
-<div class="m-8">
+<div class="border rounded p-4 my-4 flex flex-col gap-4">
   <Button class="w-48" onclick={handleClick}>Disabled: {isDisabled ? "True" : "False"}</Button>
 
   <Toggle class="mt-3" bind:checked disabled={isDisabled}>Disabled: {isDisabled}</Toggle>

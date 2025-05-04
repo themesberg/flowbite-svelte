@@ -71,14 +71,14 @@
 </script>
 
 <h1 class="my-4 text-3xl">Gallery</h1>
-
-<div class="default-gallery-section">
-  <h2 class="my-4 text-2xl">Default gallery</h2>
+<h2 class="my-4 text-2xl">Default gallery</h2>
+<div class="border rounded p-4 my-4">
   <Gallery items={images} class="grid-cols-2 gap-4 md:grid-cols-3" />
 </div>
 
-<div class="masonry-grid-section">
+
   <h2 class="my-4 text-2xl">Masonry grid</h2>
+  <div class="border rounded p-4 my-4">
   <Gallery class="grid-cols-2 gap-4 md:grid-cols-4">
     <Gallery items={images1} />
     <Gallery items={images2} />
@@ -87,21 +87,24 @@
   </Gallery>
 </div>
 
-<div class="featured-image-section">
+
   <h2 class="my-4 text-2xl">Featured image</h2>
+  <div class="border rounded p-4 my-4">
   <Gallery class="gap-4">
     <img src={image1.src} alt={image1.alt} class="h-auto max-w-full rounded-lg" />
     <Gallery class="grid-cols-5" items={featuredImages} />
   </Gallery>
 </div>
 
-<div class="quad-gallery-section">
+
   <h2 class="my-4 text-2xl">Quad gallery</h2>
+  <div class="border rounded p-4 my-4">
   <Gallery class="grid-cols-2 gap-2" items={quadImages} />
 </div>
 
-<div class="gallery-with-filters-section">
+
   <h2 class="my-4 text-2xl">Gallery with tag filters</h2>
+  <div class="border rounded p-4 my-4">
   <div class="mx-auto mb-3 flex flex-wrap items-center justify-center gap-3 py-4 md:py-8">
     <Button pill size="xl" outline>All categories</Button>
     <Button pill size="xl" color="alternative">Shoes</Button>
@@ -112,8 +115,9 @@
   <Gallery items={images} class="grid-cols-2 gap-4 md:grid-cols-3" />
 </div>
 
-<div class="heterogeneous-gallery-section">
+
   <h2 class="my-4 text-2xl">Heterogeneous gallery</h2>
+  <div class="border rounded p-4 my-4">
   <Gallery class="grid-cols-2 gap-4">
     <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="shoas" class="max-w- h-auto rounded-lg" />
     <div class="max-w- flex h-auto items-center justify-center rounded-lg bg-red-300 text-6xl font-extrabold">Sale</div>
@@ -122,8 +126,9 @@
   </Gallery>
 </div>
 
-<div class="custom-image-rendering-section">
+
   <h2 class="my-4 text-2xl">Custom image rendering</h2>
+  <div class="border rounded p-4 my-4">
   <Gallery class="grid-cols-3 gap-4" items={customImages}>
     {#snippet figure(item)}
       <div class="p-1 ring-4 ring-red-600 dark:ring-red-400">

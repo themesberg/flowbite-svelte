@@ -13,7 +13,7 @@ description: Use the Datepicker component to allow users to select a date or dat
   const dirName = toKebabCase(component_title)
 </script>
 
-The Datepicker component provides an interactive calendar interface for selecting single dates or date ranges. It's fully integrated with flowbite-svelte-next's design system and offers various customization options.
+The Datepicker component provides an interactive calendar interface for selecting single dates or date ranges. It's fully integrated with flowbite-svelte's design system and offers various customization options.
 
 ## Setup
 

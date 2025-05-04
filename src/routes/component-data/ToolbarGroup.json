@@ -2,7 +2,7 @@
   "name": "ToolbarGroup",
   "type": {
     "name": "ToolbarGroupProps",
-    "link": "https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L954"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L953"
   },
   "props": [
     ["children", ""],

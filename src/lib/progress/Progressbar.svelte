@@ -41,9 +41,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte-next.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ProgressbarProps](https://github.com/themesberg/flowbite-svelte-next/blob/main/src/lib/types.ts#L1005)
+[ProgressbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1004)
 ## Props
 @prop progress = "45"
 @prop precision = 0

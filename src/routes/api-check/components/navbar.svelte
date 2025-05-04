@@ -13,7 +13,7 @@
 
 <h2 class="my-4 text-2xl">Default navbar</h2>
 
-<div class="example-container">
+<div class="border rounded p-4 my-4">
   <Navbar>
     <NavBrand href="/">
       <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
@@ -32,7 +32,7 @@
 
 <h2 class="my-4 text-2xl">Active class</h2>
 
-<div class="example-container">
+<div class="border rounded p-4 my-4">
   <Navbar>
     <NavBrand href="/">
       <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
@@ -49,7 +49,7 @@
   </Navbar>
 </div>
 
-<div class="example-container">
+<div class="border rounded p-4 my-4">
   <Navbar>
     <NavBrand href="/">
       <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
@@ -68,7 +68,7 @@
 
 <h2 class="my-4 text-2xl">Navbar with dropdown</h2>
 
-<div class="example-container">
+<div class="border rounded p-4 my-4">
   <Navbar>
     <NavBrand href="/">
       <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
@@ -96,7 +96,7 @@
 
 <h2 class="my-4 text-2xl">Navbar with search</h2>
 
-<div class="example-container">
+<div class="border rounded p-4 my-4">
   <Navbar>
     {#snippet children({ hidden, toggle, NavContainer })}
       <NavBrand href="/">
@@ -128,7 +128,7 @@
 
 <h2 class="my-4 text-2xl">Navbar with CTA button</h2>
 
-<div class="example-container">
+<div class="border rounded p-4 my-4">
   <Navbar>
     <NavBrand href="/">
       <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
@@ -150,9 +150,9 @@
 
 <h2 class="my-4 text-2xl">Sticky navbar</h2>
 
-<div class="example-container h-96 overflow-hidden p-2 sm:p-6 md:h-80">
+<div class="border rounded h-96 overflow-hidden md:h-80">
   <div class="relative px-8">
-    <Navbar class="fixed start-0 top-0 z-20 w-full border-b px-2 py-2.5 sm:px-4">
+    <Navbar class="absolute start-0 top-0 z-20 w-full border-b px-2 py-2.5 sm:px-4 bg-white">
       <NavBrand href="/">
         <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
         <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
@@ -166,7 +166,7 @@
         <NavLi href="/contact">Contact</NavLi>
       </NavUl>
     </Navbar>
-    <div style="height:300px;" class="overflow-scroll pb-16">
+    <div style="height:300px;" class="overflow-scroll pb-16 pt-16">
       <Skeleton class="mt-16 mb-8" />
       <ImagePlaceholder class="my-8" />
       <TextPlaceholder class="my-8" />
@@ -176,7 +176,7 @@
 
 <h2 class="my-4 text-2xl">User menu dropdown</h2>
 
-<div class="example-container">
+<div class="border rounded p-4 my-4">
   <Navbar>
     <NavBrand href="/">
       <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
@@ -210,7 +210,7 @@
 
 <h2 class="my-4 text-2xl">Solid background</h2>
 
-<div class="example-container">
+<div class="border rounded p-4 my-4">
   <Navbar class="bg-primary-100 dark:bg-primary-700">
     <NavBrand href="/">
       <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
@@ -226,9 +226,3 @@
     </NavUl>
   </Navbar>
 </div>
-
-<style>
-  .example-container {
-    margin-bottom: 2rem;
-  }
-</style>

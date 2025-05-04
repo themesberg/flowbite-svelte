@@ -8,8 +8,8 @@
     "email": "connect@codewithshin.com",
     "url": "https://blog.codewithshin.com"
   },
-  "bugs": "https://github.com/themesberg/flowbite-svelte-next/issues",
-  "homepage": "https://flowbite-svelte-next.com/",
+  "bugs": "https://github.com/themesberg/flowbite-svelte/issues",
+  "homepage": "https://flowbite-svelte.com/",
   "license": "MIT",
   "scripts": {
     "dev": "vite dev",
@@ -26,8 +26,8 @@
     "test:e2e": "playwright test",
     "test:unit": "vitest",
     "gen:exports": "svelte-lib-helpers exports",
-    "gen:docspropvalue": "svelte-lib-helpers docspropvalue themesberg/flowbite-svelte-next",
-    "gen:component-data-prop-value": "svelte-lib-helpers component-data-prop-value themesberg/flowbite-svelte-next",
+    "gen:docspropvalue": "svelte-lib-helpers docspropvalue themesberg/flowbite-svelte",
+    "gen:component-data-prop-value": "svelte-lib-helpers component-data-prop-value themesberg/flowbite-svelte",
     "copy:packagejson": "svelte-lib-helpers package",
     "lib-helpers": "pnpm gen:component-data-prop-value && pnpm gen:docspropvalue && pnpm format && pnpm package && pnpm gen:exports && pnpm copy:packagejson",
     "ch": "npx changeset",
@@ -123,7 +123,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/themesberg/flowbite-svelte-next.git"
+    "url": "git+https://github.com/themesberg/flowbite-svelte.git"
   },
   "dependencies": {
     "@floating-ui/dom": "^1.6.13",
