@@ -1,15 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "SidebarCta",
-	"props": [
-		["children", "any", ""],
-		["icon", "any", ""],
-		["divClass", "any", ""],
-		["spanClass", "any", ""],
-		["label", "any", ""],
-		["class", "string", ""]
-	]
-=======
   "name": "SidebarCta",
   "type": {
     "name": "SidebarCtaProps",
@@ -23,5 +12,4 @@
     ["label", ""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

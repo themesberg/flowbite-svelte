@@ -5,7 +5,7 @@ interface Page {
 	lastmod?: string;
 }
 
-const site = 'https://svelte-5-ui-lib.codewithshin.com';
+const site = 'https://flowbite-svelte.com';
 const pages: Page[] = [
 	{
 		loc: '',

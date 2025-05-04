@@ -1,20 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "CloseButton",
-	"props": [
-		[
-			"color",
-			"| 'primary'\n\t| 'secondary'\n\t| 'gray'\n\t| 'red'\n\t| 'orange'\n\t| 'amber'\n\t| 'yellow'\n\t| 'lime'\n\t| 'green'\n\t| 'emerald'\n\t| 'teal'\n\t| 'cyan'\n\t| 'sky'\n\t| 'blue'\n\t| 'indigo'\n\t| 'violet'\n\t| 'purple'\n\t| 'fuchsia'\n\t| 'pink'\n\t| 'rose'\n\t| undefined",
-			"'gray'"
-		],
-		["onclick", "() => void", ""],
-		["name", "string", "'Close'"],
-		["ariaLabel", "string", ""],
-		["size", "'md' | 'xs' | 'sm' | 'lg' | undefined", "'md'"],
-		["href", "string", ""],
-		["class", "string", ""]
-	]
-=======
   "name": "CloseButton",
   "type": {
     "name": "Props",
@@ -29,5 +13,4 @@
     ["size", "\"md\""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

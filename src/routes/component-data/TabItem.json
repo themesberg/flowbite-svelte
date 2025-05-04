@@ -1,18 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "TabItem",
-	"props": [
-		["children", "any", ""],
-		["titleSlot", "any", ""],
-		["open", "any", "false"],
-		["title", "any", "'Tab title'"],
-		["activeClass", "any", ""],
-		["inactiveClass", "any", ""],
-		["class", "string", ""],
-		["disabled", "any", ""],
-		["tabStyle", "any", ""]
-	]
-=======
   "name": "TabItem",
   "type": {
     "name": "TabitemProps",
@@ -29,5 +15,4 @@
     ["disabled", ""],
     ["tabStyle", ""]
   ]
->>>>>>> next/main
 }

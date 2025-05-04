@@ -1,16 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Video",
-	"props": [
-		["children", "any", ""],
-		["type", "any", "'video/mp4'"],
-		["trackSrc", "any", ""],
-		["src", "any", ""],
-		["srclang", "any", "'en'"],
-		["label", "any", "'english_captions'"],
-		["class", "string", ""]
-	]
-=======
   "name": "Video",
   "type": {
     "name": "VideoProps",
@@ -25,5 +13,4 @@
     ["label", "\"english_captions\""],
     ["class: classname", ""]
   ]
->>>>>>> next/main
 }

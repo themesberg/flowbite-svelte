@@ -1,12 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "BottomNavHeader",
-	"props": [
-		["children", "any", ""],
-		["outerClass", "any", ""],
-		["innerClass", "any", ""]
-	]
-=======
   "name": "BottomNavHeader",
   "type": {
     "name": "BottomNavHeaderProps",
@@ -17,5 +9,4 @@
     ["outerClass", ""],
     ["innerClass", ""]
   ]
->>>>>>> next/main
 }

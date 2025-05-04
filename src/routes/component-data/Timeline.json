@@ -1,12 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Timeline",
-	"props": [
-		["children", "any", ""],
-		["order", "any", "'default'"],
-		["class", "string", ""]
-	]
-=======
   "name": "Timeline",
   "type": {
     "name": "TimelineProps",
@@ -17,5 +9,4 @@
     ["order", "\"default\""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

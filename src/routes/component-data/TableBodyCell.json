@@ -1,13 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "TableBodyCell",
-	"props": [
-		["children", "any", ""],
-		["class", "string", ""],
-		["colspan", "any", ""],
-		["onclick", "any", ""]
-	]
-=======
   "name": "TableBodyCell",
   "type": {
     "name": "TableBodyCellProps",
@@ -19,5 +10,4 @@
     ["colspan", ""],
     ["onclick", ""]
   ]
->>>>>>> next/main
 }

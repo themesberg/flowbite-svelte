@@ -1,12 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "InputAddon",
-	"props": [
-		["children", "any", ""],
-		["class", "string", ""],
-		["size", "any", ""]
-	]
-=======
   "name": "InputAddon",
   "type": {
     "name": "InputAddonProps",
@@ -17,5 +9,4 @@
     ["class: className", ""],
     ["size", ""]
   ]
->>>>>>> next/main
 }

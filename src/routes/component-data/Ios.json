@@ -1,16 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Ios",
-	"props": [
-		["children", "any", ""],
-		["divClass", "any", ""],
-		["div2Class", "any", ""],
-		["div3Class", "any", ""],
-		["div4Class", "any", ""],
-		["div5Class", "any", ""],
-		["div6Class", "any", ""]
-	]
-=======
   "name": "Ios",
   "type": {
     "name": "IosProps",
@@ -25,5 +13,4 @@
     ["div5Class", ""],
     ["div6Class", ""]
   ]
->>>>>>> next/main
 }

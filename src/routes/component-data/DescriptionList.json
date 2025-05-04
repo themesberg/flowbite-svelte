@@ -1,12 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "DescriptionList",
-	"props": [
-		["children", "any", ""],
-		["tag", "any", ""],
-		["class", "string", ""]
-	]
-=======
   "name": "DescriptionList",
   "type": {
     "name": "DescriptionListProps",
@@ -17,5 +9,4 @@
     ["tag", ""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

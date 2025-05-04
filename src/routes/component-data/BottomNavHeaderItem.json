@@ -1,12 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "BottomNavHeaderItem",
-	"props": [
-		["itemName", "any", ""],
-		["active", "any", ""],
-		["class", "string", ""]
-	]
-=======
   "name": "BottomNavHeaderItem",
   "type": {
     "name": "BottomNavHeaderItemProps",
@@ -17,5 +9,4 @@
     ["active", ""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

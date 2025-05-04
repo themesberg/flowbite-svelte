@@ -1,14 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "SidebarBrand",
-	"props": [
-		["children", "any", ""],
-		["site", "any", ""],
-		["imgClass", "any", ""],
-		["spanClass", "any", ""],
-		["class", "string", ""]
-	]
-=======
   "name": "SidebarBrand",
   "type": {
     "name": "SidebarBrandProps",
@@ -21,5 +11,4 @@
     ["spanClass", ""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

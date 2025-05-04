@@ -1,13 +1,8 @@
 {
-<<<<<<< HEAD
-	"name": "TestimonialPlaceholder",
-	"props": [["class", "string", ""]]
-=======
   "name": "TestimonialPlaceholder",
   "type": {
     "name": "HTMLAttributes<HTMLDivElement>",
     "link": "https://github.com/sveltejs/svelte/blob/main/packages/svelte/elements.d.ts"
   },
   "props": [["class: className", ""]]
->>>>>>> next/main
 }

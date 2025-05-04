@@ -1,12 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Heading",
-	"props": [
-		["children", "any", ""],
-		["tag", "any", "'h1'"],
-		["class", "string", ""]
-	]
-=======
   "name": "Heading",
   "type": {
     "name": "HeadingProps",
@@ -17,5 +9,4 @@
     ["tag", "\"h1\""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

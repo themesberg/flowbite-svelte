@@ -1,12 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Helper",
-	"props": [
-		["children", "any", ""],
-		["class", "string", ""],
-		["color", "any", "'gray'"]
-	]
-=======
   "name": "Helper",
   "type": {
     "name": "HelperProps",
@@ -17,5 +9,4 @@
     ["class: className", ""],
     ["color", "\"gray\""]
   ]
->>>>>>> next/main
 }

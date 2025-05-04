@@ -1,20 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Button",
-	"props": [
-		["children", "any", ""],
-		["pill", "any", "false"],
-		["outline", "any", "false"],
-		["size", "any", "group ? 'sm' : 'md'"],
-		["href", "any", ""],
-		["type", "any", "'button'"],
-		["color", "any", "group ? (outline ? 'dark' : 'alternative') : 'primary'"],
-		["shadow", "any", "false"],
-		["tag", "any", "'button'"],
-		["disabled", "any", ""],
-		["class", "string", ""]
-	]
-=======
   "name": "Button",
   "type": {
     "name": "ButtonProps",
@@ -32,5 +16,4 @@
     ["disabled", ""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

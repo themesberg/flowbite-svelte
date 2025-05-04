@@ -1,23 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "SidebarDropdownWrapper",
-	"props": [
-		["children", "any", ""],
-		["arrowup", "any", ""],
-		["arrowdown", "any", ""],
-		["iconSlot", "any", ""],
-		["isOpen", "any", "false"],
-		["btnClass", "any", ""],
-		["label", "any", ""],
-		["spanClass", "any", ""],
-		["ulClass", "any", ""],
-		["transition", "any", "slide"],
-		["params", "any", ""],
-		["svgClass", "any", ""],
-		["class", "string", ""],
-		["onclick", "any", ""]
-	]
-=======
   "name": "SidebarDropdownWrapper",
   "type": {
     "name": "SidebarDropdownWrapperProps",
@@ -39,5 +20,4 @@
     ["class: className", ""],
     ["onclick", ""]
   ]
->>>>>>> next/main
 }

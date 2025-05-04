@@ -1,26 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "TableSearch",
-	"props": [
-		["children", "any", ""],
-		["header", "any", ""],
-		["footer", "any", ""],
-		["divClass", "any", "'relative overflow-x-auto shadow-md sm:rounded-lg'"],
-		["inputValue", "any", "$bindable()"],
-		["striped", "any", ""],
-		["hoverable", "any", ""],
-		["customColor", "any", "''"],
-		["color", "any", "'default'"],
-		["innerDivClass", "any", "'p-4'"],
-		["inputClass", "any", ""],
-		["searchClass", "any", "'relative mt-1'"],
-		["svgDivClass", "any", ""],
-		["svgClass", "any", "'w-5 h-5 text-gray-500 dark:text-gray-400'"],
-		["tableClass", "any", "'w-full text-left text-sm'"],
-		["class", "string", ""],
-		["placeholder", "any", "'Search'"]
-	]
-=======
   "name": "TableSearch",
   "type": {
     "name": "TableSearchProps",
@@ -45,5 +23,4 @@
     ["class: className", ""],
     ["placeholder", "\"Search\""]
   ]
->>>>>>> next/main
 }

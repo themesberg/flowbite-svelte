@@ -1,22 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Checkbox",
-	"props": [
-		["children", "any", ""],
-		["aria_describedby", "any", ""],
-		["color", "any", "'primary'"],
-		["custom", "any", ""],
-		["inline", "any", ""],
-		["tinted", "any", ""],
-		["rounded", "any", ""],
-		["group", "any", "$bindable([])"],
-		["choices", "any", "[]"],
-		["checked", "any", "$bindable(false)"],
-		["classLabel", "any", ""],
-		["indeterminate", "any", ""],
-		["class", "string", ""]
-	]
-=======
   "name": "Checkbox",
   "type": {
     "name": "CheckboxProps",
@@ -36,5 +18,4 @@
     ["class: className", ""],
     ["value", ""]
   ]
->>>>>>> next/main
 }

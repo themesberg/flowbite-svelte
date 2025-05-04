@@ -1,14 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Laptop",
-	"props": [
-		["children", "any", ""],
-		["divClass", "any", ""],
-		["div2Class", "any", ""],
-		["div3Class", "any", ""],
-		["div4Class", "any", ""]
-	]
-=======
   "name": "Laptop",
   "type": {
     "name": "MockupBaseProps",
@@ -21,5 +11,4 @@
     ["div3Class", ""],
     ["div4Class", ""]
   ]
->>>>>>> next/main
 }

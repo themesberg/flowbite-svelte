@@ -1,14 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "NavBrand",
-	"props": [
-		["children", "any", ""],
-		["siteName", "any", ""],
-		["closeNav", "any", ""],
-		["aClass", "any", ""],
-		["spanClass", "any", ""]
-	]
-=======
   "name": "NavBrand",
   "type": {
     "name": "NavBrandProps",
@@ -18,5 +8,4 @@
     ["children", ""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

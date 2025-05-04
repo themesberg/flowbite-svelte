@@ -1,8 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Radio",
-	"props": []
-=======
   "name": "Radio",
   "type": {
     "name": "RadioProps<T>",
@@ -19,5 +15,4 @@
     ["value", "$bindable<T>()"],
     ["inputClass", ""]
   ]
->>>>>>> next/main
 }

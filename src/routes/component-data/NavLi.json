@@ -1,14 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "NavLi",
-	"props": [
-		["closeNav", "any", ""],
-		["href", "any", ""],
-		["children", "any", ""],
-		["aClass", "any", ""],
-		["class", "string", ""]
-	]
-=======
   "name": "NavLi",
   "type": {
     "name": "NavLiProps",
@@ -21,5 +11,4 @@
     ["class: className", ""],
     ["onclick", ""]
   ]
->>>>>>> next/main
 }

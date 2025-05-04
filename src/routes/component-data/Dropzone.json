@@ -1,8 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Dropzone",
-	"props": []
-=======
   "name": "Dropzone",
   "type": {
     "name": "DropzoneProps&{ondrop?:DragEventHandler<HTMLButtonElement>;ondragover?:DragEventHandler<HTMLButtonElement>;onchange?:ChangeEventHandler<HTMLInputElementWithFiles>;}",
@@ -13,5 +9,4 @@
     ["files", "$bindable<FileList | null>()"],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

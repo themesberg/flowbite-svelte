@@ -1,15 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "List",
-	"props": [
-		["children", "any", ""],
-		["tag", "any", "'ul'"],
-		["isContenteditable", "any", "false"],
-		["position", "any", "'inside'"],
-		["ctxClass", "any", ""],
-		["class", "string", ""]
-	]
-=======
   "name": "List",
   "type": {
     "name": "ListProps",
@@ -23,5 +12,4 @@
     ["ctxClass", ""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

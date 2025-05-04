@@ -1,8 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Search",
-	"props": []
-=======
   "name": "Search",
   "type": {
     "name": "SearchProps<T>",
@@ -15,5 +11,4 @@
     ["placeholder", "\"Search\""],
     ["value", "$bindable<T>()"]
   ]
->>>>>>> next/main
 }

@@ -1,14 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "PaginationItem",
-	"props": [
-		["children", "any", ""],
-		["size", "any", ""],
-		["class", "string", ""],
-		["href", "any", ""],
-		["active", "any", ""]
-	]
-=======
   "name": "PaginationItem",
   "type": {
     "name": "PaginationItemProps",
@@ -21,5 +11,4 @@
     ["href", ""],
     ["active", ""]
   ]
->>>>>>> next/main
 }

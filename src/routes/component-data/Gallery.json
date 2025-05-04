@@ -1,13 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Gallery",
-	"props": [
-		["children", "any", ""],
-		["items", "any", "[]"],
-		["imgClass", "any", ""],
-		["divClass", "any", ""]
-	]
-=======
   "name": "Gallery",
   "type": {
     "name": "GalleryProps",
@@ -20,5 +11,4 @@
     ["imgClass", ""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

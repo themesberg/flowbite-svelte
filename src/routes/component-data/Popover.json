@@ -1,20 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Popover",
-	"props": [
-		["children", "any", ""],
-		["titleSlot", "any", ""],
-		["color", "any", "'default'"],
-		["arrow", "any", "true"],
-		["offset", "any", "0"],
-		["triggeredBy", "any", ""],
-		["position", "any", "'top'"],
-		["class", "string", ""],
-		["reference", "any", ""],
-		["transition", "any", "fade"],
-		["params", "any", ""]
-	]
-=======
   "name": "Popover",
   "type": {
     "name": "PopoverProps",
@@ -30,5 +14,4 @@
     ["placement", "\"top\""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

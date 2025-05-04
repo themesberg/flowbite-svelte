@@ -1,14 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Breadcrumb",
-	"props": [
-		["children", "any", ""],
-		["solid", "any", "false"],
-		["navClass", "any", ""],
-		["olClass", "any", ""],
-		["ariaLabel", "any", "'Breadcrumb'"]
-	]
-=======
   "name": "Breadcrumb",
   "type": {
     "name": "BreadcrumbProps",
@@ -21,5 +11,4 @@
     ["olClass", ""],
     ["ariaLabel", "\"Breadcrumb\""]
   ]
->>>>>>> next/main
 }

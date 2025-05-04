@@ -1,14 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Tabs",
-	"props": [
-		["children", "any", ""],
-		["tabStyle", "any", "'none'"],
-		["ulClass", "any", ""],
-		["contentClass", "any", ""],
-		["divider", "any", "true"]
-	]
-=======
   "name": "Tabs",
   "type": {
     "name": "TabsProps",
@@ -21,5 +11,4 @@
     ["contentClass", ""],
     ["divider", "true"]
   ]
->>>>>>> next/main
 }

@@ -1,12 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "TableBody",
-	"props": [
-		["children", "any", ""],
-		["bodyItems", "any", ""],
-		["class", "string", ""]
-	]
-=======
   "name": "TableBody",
   "type": {
     "name": "TableBodyProps",
@@ -17,5 +9,4 @@
     ["bodyItems", ""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

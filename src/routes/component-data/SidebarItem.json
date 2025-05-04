@@ -1,19 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "SidebarItem",
-	"props": [
-		["iconSlot", "any", ""],
-		["subtext", "any", ""],
-		["href", "any", ""],
-		["label", "any", ""],
-		["spanClass", "any", "'ms-3'"],
-		["activeClass", "any", ""],
-		["nonActiveClass", "any", ""],
-		["aClass", "any", ""],
-		["active", "any", ""],
-		["class", "string", ""]
-	]
-=======
   "name": "SidebarItem",
   "type": {
     "name": "SidebarItemProps",
@@ -31,5 +16,4 @@
     ["active", ""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

@@ -1,11 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Mark",
-	"props": [
-		["children", "any", ""],
-		["class", "string", ""]
-	]
-=======
   "name": "Mark",
   "type": {
     "name": "MarkProps",
@@ -15,5 +8,4 @@
     ["children", ""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

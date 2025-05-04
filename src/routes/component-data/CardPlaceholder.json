@@ -1,11 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "CardPlaceholder",
-	"props": [
-		["size", "any", "'sm'"],
-		["class", "string", ""]
-	]
-=======
   "name": "CardPlaceholder",
   "type": {
     "name": "CardPlaceholderProps",
@@ -15,5 +8,4 @@
     ["size", "\"sm\""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

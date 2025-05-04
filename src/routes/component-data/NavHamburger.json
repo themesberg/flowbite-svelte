@@ -1,11 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "NavHamburger",
-	"props": [
-		["toggleNav", "any", ""],
-		["class", "string", ""]
-	]
-=======
   "name": "NavHamburger",
   "type": {
     "name": "NavHamburgerProps",
@@ -18,5 +11,4 @@
     ["class: className", ""],
     ["name", "\"Open main menu\""]
   ]
->>>>>>> next/main
 }

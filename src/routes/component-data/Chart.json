@@ -1,11 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Chart",
-	"props": [
-		["options", "any", ""],
-		["class", "string", ""]
-	]
-=======
   "name": "Chart",
   "type": {
     "name": "ChartProps",
@@ -15,5 +8,4 @@
     ["options", ""],
     ["class: classname", ""]
   ]
->>>>>>> next/main
 }

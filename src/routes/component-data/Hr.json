@@ -1,13 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Hr",
-	"props": [
-		["children", "any", ""],
-		["divClass", "any", ""],
-		["hrClass", "any", ""],
-		["innerDivClass", "any", ""]
-	]
-=======
   "name": "Hr",
   "type": {
     "name": "HrProps",
@@ -19,5 +10,4 @@
     ["class: className", ""],
     ["innerDivClass", ""]
   ]
->>>>>>> next/main
 }

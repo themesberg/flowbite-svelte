@@ -1,15 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "GroupItem",
-	"props": [
-		["timelines", "any", ""],
-		["aClass", "any", ""],
-		["imgClass", "any", ""],
-		["divClass", "any", ""],
-		["titleClass", "any", ""],
-		["spanClass", "any", ""]
-	]
-=======
   "name": "GroupItem",
   "type": {
     "name": "GroupItemProps",
@@ -23,5 +12,4 @@
     ["titleClass", ""],
     ["spanClass", ""]
   ]
->>>>>>> next/main
 }

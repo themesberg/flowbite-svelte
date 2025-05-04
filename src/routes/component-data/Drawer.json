@@ -1,23 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Drawer",
-	"props": [
-		["children", "any", ""],
-		["drawerStatus", "any", ""],
-		["closeDrawer", "any", ""],
-		["activateClickOutside", "any", "true"],
-		["position", "any", ""],
-		["width", "any", ""],
-		["backdrop", "any", "true"],
-		["backdropClass", "any", ""],
-		["placement", "any", "'left'"],
-		["class", "string", ""],
-		["params", "any", "{ x: -320"],
-		["duration", "any", ""],
-		["easing", "any", ""],
-		["transition", "any", "fly"]
-	]
-=======
   "name": "Drawer",
   "type": {
     "name": "DrawerProps",
@@ -37,5 +18,4 @@
     ["transitionParams", ""],
     ["transitionType", "fly"]
   ]
->>>>>>> next/main
 }

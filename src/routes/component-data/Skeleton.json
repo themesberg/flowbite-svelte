@@ -1,11 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Skeleton",
-	"props": [
-		["size", "any", "'sm'"],
-		["class", "string", ""]
-	]
-=======
   "name": "Skeleton",
   "type": {
     "name": "SkeletonProps",
@@ -15,5 +8,4 @@
     ["size", "\"sm\""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

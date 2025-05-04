@@ -1,18 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Heart",
-	"props": [
-		["fillPercent", "any", "100"],
-		["fillColor", "any", "'#ff0000'"],
-		["strokeColor", "any", "'#ff0000'"],
-		["size", "any", "24"],
-		["ariaLabel", "any", "'star'"],
-		["iconIndex", "any", "0"],
-		["groupId", "any", "'star'"],
-		["role", "any", "'img'"],
-		["svgClass", "any", ""]
-	]
-=======
   "name": "Heart",
   "type": {
     "name": "RatingIconProps",
@@ -29,5 +15,4 @@
     ["role", "\"img\""],
     ["svgClass", ""]
   ]
->>>>>>> next/main
 }

@@ -1,19 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "EnhancedImg",
-	"props": [
-		["src", "any", ""],
-		["href", "any", ""],
-		["caption", "any", ""],
-		["size", "any", ""],
-		["alignment", "any", ""],
-		["shadow", "any", ""],
-		["rounded", "any", ""],
-		["figClass", "any", ""],
-		["imgClass", "any", ""],
-		["captionClass", "any", ""]
-	]
-=======
   "name": "EnhancedImg",
   "type": {
     "name": "EnhandedImgProps",
@@ -28,5 +13,4 @@
     ["class: imgClass", ""],
     ["captionClass", ""]
   ]
->>>>>>> next/main
 }

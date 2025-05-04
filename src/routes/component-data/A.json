@@ -1,12 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "A",
-	"props": [
-		["children", "any", ""],
-		["color", "any", "'primary'"],
-		["class", "string", ""]
-	]
-=======
   "name": "A",
   "type": {
     "name": "AnchorProps",
@@ -17,5 +9,4 @@
     ["color", "\"primary\""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

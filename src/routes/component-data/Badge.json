@@ -1,24 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Badge",
-	"props": [
-		["children", "any", ""],
-		["icon", "any", ""],
-		["badgeStatus", "any", "$bindable(true)"],
-		["color", "any", "'primary'"],
-		["large", "any", "false"],
-		["dismissable", "any", "false"],
-		["class", "string", ""],
-		["border", "any", ""],
-		["href", "any", ""],
-		["target", "any", ""],
-		["rounded", "any", ""],
-		["transition", "any", "fade"],
-		["params", "any", ""],
-		["aClass", "any", ""],
-		["onclick", "any", ""]
-	]
-=======
   "name": "Badge",
   "type": {
     "name": "BadgeProps",
@@ -41,5 +21,4 @@
     ["aClass", ""],
     ["onclose", ""]
   ]
->>>>>>> next/main
 }

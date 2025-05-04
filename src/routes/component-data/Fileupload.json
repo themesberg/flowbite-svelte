@@ -1,13 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Fileupload",
-	"props": [
-		["files", "any", "$bindable<FileList | undefined>()"],
-		["size", "any", "'md'"],
-		["clearable", "any", "false"],
-		["class", "string", ""]
-	]
-=======
   "name": "Fileupload",
   "type": {
     "name": "FileuploadProps",
@@ -19,5 +10,4 @@
     ["clearable", "false"],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

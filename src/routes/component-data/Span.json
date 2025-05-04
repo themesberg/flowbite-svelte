@@ -1,20 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Span",
-	"props": [
-		["children", "any", ""],
-		["class", "string", ""],
-		["italic", "any", ""],
-		["underline", "any", ""],
-		["linethrough", "any", ""],
-		["uppercase", "any", ""],
-		["gradient", "any", ""],
-		["highlight", "any", ""],
-		["decoration", "any", ""],
-		["decorationColor", "any", ""],
-		["decorationThickness", "any", ""]
-	]
-=======
   "name": "Span",
   "type": {
     "name": "SpanProps",
@@ -33,5 +17,4 @@
     ["decorationColor", ""],
     ["decorationThickness", ""]
   ]
->>>>>>> next/main
 }

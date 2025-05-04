@@ -1,26 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Sidebar",
-	"props": [
-		["children", "any", ""],
-		["isOpen", "any", "false"],
-		["closeSidebar", "any", ""],
-		["isSingle", "any", "true"],
-		["breakpoint", "any", "'md'"],
-		["position", "any", "'fixed'"],
-		["activateClickOutside", "any", "true"],
-		["backdrop", "any", "true"],
-		["backdropClass", "any", ""],
-		["transition", "any", "fly"],
-		["params", "any", ""],
-		["divClass", "any", ""],
-		["ariaLabel", "any", ""],
-		["nonActiveClass", "any", ""],
-		["activeClass", "any", ""],
-		["activeUrl", "any", "''"],
-		["class", "string", ""]
-	]
-=======
   "name": "Sidebar",
   "type": {
     "name": "SidebarProps",
@@ -45,5 +23,4 @@
     ["activeUrl", "\"\""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

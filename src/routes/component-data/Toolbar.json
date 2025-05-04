@@ -1,14 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Toolbar",
-	"props": [
-		["children", "any", ""],
-		["end", "any", ""],
-		["color", "any", "'default'"],
-		["embedded", "any", ""],
-		["class", "string", ""]
-	]
-=======
   "name": "Toolbar",
   "type": {
     "name": "ToolbarProps",
@@ -21,5 +11,4 @@
     ["embedded", ""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

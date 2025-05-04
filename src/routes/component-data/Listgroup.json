@@ -1,18 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Listgroup",
-	"props": [
-		["children", "any", ""],
-		["items", "any", ""],
-		["active", "any", ""],
-		["onclick", "any", ""],
-		["rounded", "any", "true"],
-		["border", "any", "true"],
-		["class", "string", ""],
-		["itemClass", "any", ""],
-		["iconClass", "any", ""]
-	]
-=======
   "name": "Listgroup",
   "type": {
     "name": "ListgroupProps",
@@ -30,5 +16,4 @@
     ["itemClass", ""],
     ["iconClass", ""]
   ]
->>>>>>> next/main
 }

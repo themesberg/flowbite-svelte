@@ -1,12 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "NavUl",
-	"props": [
-		["children", "any", ""],
-		["activeUrl", "any", "''"],
-		["class", "string", ""]
-	]
-=======
   "name": "NavUl",
   "type": {
     "name": "NavUlProps",
@@ -21,5 +13,4 @@
     ["nonActiveClass", ""],
     ["class: clasName", ""]
   ]
->>>>>>> next/main
 }

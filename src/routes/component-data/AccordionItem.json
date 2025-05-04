@@ -1,19 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "AccordionItem",
-	"props": [
-		["children", "any", ""],
-		["header", "any", ""],
-		["arrowup", "any", ""],
-		["arrowdown", "any", ""],
-		["open", "any", "$bindable(false)"],
-		["activeClass", "any", ""],
-		["inactiveClass", "any", ""],
-		["transition", "any", "slide"],
-		["params", "any", ""],
-		["class", "string", ""]
-	]
-=======
   "name": "AccordionItem",
   "type": {
     "name": "AccordionItemProps",
@@ -31,5 +16,4 @@
     ["transitionParams", ""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

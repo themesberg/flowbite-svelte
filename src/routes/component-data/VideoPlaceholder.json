@@ -1,11 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "VideoPlaceholder",
-	"props": [
-		["size", "any", "'sm'"],
-		["class", "string", ""]
-	]
-=======
   "name": "VideoPlaceholder",
   "type": {
     "name": "VideoPlaceholderProps",
@@ -15,5 +8,4 @@
     ["size", "\"sm\""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

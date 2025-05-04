@@ -1,14 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "RatingComment",
-	"props": [
-		["children", "any", ""],
-		["evaluation", "any", ""],
-		["helpfullink", "any", ""],
-		["abuselink", "any", ""],
-		["comment", "any", ""]
-	]
-=======
   "name": "RatingComment",
   "type": {
     "name": "RatingCommentProps",
@@ -21,5 +11,4 @@
     ["abuselink", ""],
     ["comment", ""]
   ]
->>>>>>> next/main
 }

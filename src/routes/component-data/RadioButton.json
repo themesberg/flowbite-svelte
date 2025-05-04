@@ -1,8 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "RadioButton",
-	"props": []
-=======
   "name": "RadioButton",
   "type": {
     "name": "RadioButtonProps<T>",
@@ -20,5 +16,4 @@
     ["shadow", ""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

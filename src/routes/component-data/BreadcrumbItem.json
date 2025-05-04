@@ -1,17 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "BreadcrumbItem",
-	"props": [
-		["children", "any", ""],
-		["icon", "any", ""],
-		["home", "any", "false"],
-		["href", "any", ""],
-		["linkClass", "any", ""],
-		["spanClass", "any", ""],
-		["homeClass", "any", ""],
-		["class", "string", ""]
-	]
-=======
   "name": "BreadcrumbItem",
   "type": {
     "name": "BreadcrumbItemProps",
@@ -27,5 +14,4 @@
     ["homeClass", ""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

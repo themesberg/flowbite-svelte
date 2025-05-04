@@ -1,11 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "DropdownHeader",
-	"props": [
-		["children", "any", ""],
-		["class", "string", ""]
-	]
-=======
   "name": "DropdownHeader",
   "type": {
     "name": "DropdownHeaderProps",
@@ -15,5 +8,4 @@
     ["children", ""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

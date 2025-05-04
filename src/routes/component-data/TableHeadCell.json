@@ -1,11 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "TableHeadCell",
-	"props": [
-		["children", "any", ""],
-		["class", "string", ""]
-	]
-=======
   "name": "TableHeadCell",
   "type": {
     "name": "TableHeadCellProps",
@@ -15,5 +8,4 @@
     ["children", ""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

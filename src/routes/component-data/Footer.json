@@ -1,12 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Footer",
-	"props": [
-		["children", "any", ""],
-		["footerType", "any", "'default'"],
-		["class", "string", ""]
-	]
-=======
   "name": "Footer",
   "type": {
     "name": "FooterProps",
@@ -17,5 +9,4 @@
     ["footerType", "\"default\""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

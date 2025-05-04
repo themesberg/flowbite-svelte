@@ -1,18 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "GradientButton",
-	"props": [
-		["children", "any", ""],
-		["outline", "any", ""],
-		["pill", "any", ""],
-		["color", "any", "'blue'"],
-		["shadow", "any", ""],
-		["class", "string", ""],
-		["href", "any", ""],
-		["disabled", "any", ""],
-		["size", "any", ""]
-	]
-=======
   "name": "GradientButton",
   "type": {
     "name": "GradientButtonProps",
@@ -29,5 +15,4 @@
     ["disabled", ""],
     ["size", ""]
   ]
->>>>>>> next/main
 }

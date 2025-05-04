@@ -1,17 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "BottomNavItem",
-	"props": [
-		["children", "any", ""],
-		["btnName", "any", ""],
-		["appBtnPosition", "any", "'middle'"],
-		["target", "any", ""],
-		["activeClass", "any", ""],
-		["href", "any", "''"],
-		["btnClass", "any", ""],
-		["spanClass", "any", ""]
-	]
-=======
   "name": "BottomNavItem",
   "type": {
     "name": "BottomNavItemProps",
@@ -27,5 +14,4 @@
     ["btnClass", ""],
     ["spanClass", ""]
   ]
->>>>>>> next/main
 }

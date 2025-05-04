@@ -1,14 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "ToolbarGroup",
-	"props": [
-		["children", "any", ""],
-		["spacing", "any", "'default'"],
-		["padding", "any", "'default'"],
-		["position", "any", "'middle'"],
-		["class", "string", ""]
-	]
-=======
   "name": "ToolbarGroup",
   "type": {
     "name": "ToolbarGroupProps",
@@ -21,5 +11,4 @@
     ["position", "\"middle\""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

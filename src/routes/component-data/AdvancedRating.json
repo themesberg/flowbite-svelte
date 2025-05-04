@@ -1,18 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "AdvancedRating",
-	"props": [
-		["rating", "any", ""],
-		["globalText", "any", ""],
-		["ratings", "any", ""],
-		["divClass", "any", ""],
-		["spanClass", "any", ""],
-		["div2Class", "any", ""],
-		["div3Class", "any", ""],
-		["span2Class", "any", ""],
-		["unit", "any", ""]
-	]
-=======
   "name": "AdvancedRating",
   "type": {
     "name": "AdvancedRatingProps",
@@ -29,5 +15,4 @@
     ["span2Class", ""],
     ["unit", ""]
   ]
->>>>>>> next/main
 }

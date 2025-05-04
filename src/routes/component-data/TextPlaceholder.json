@@ -1,11 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "TextPlaceholder",
-	"props": [
-		["size", "any", "'sm'"],
-		["class", "string", ""]
-	]
-=======
   "name": "TextPlaceholder",
   "type": {
     "name": "TextPlaceholderProps",
@@ -15,5 +8,4 @@
     ["size", "\"sm\""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

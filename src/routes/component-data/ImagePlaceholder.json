@@ -1,12 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "ImagePlaceholder",
-	"props": [
-		["size", "any", "'md'"],
-		["rounded", "any", ""],
-		["class", "string", ""]
-	]
-=======
   "name": "ImagePlaceholder",
   "type": {
     "name": "ImagePlaceholderProps",
@@ -17,5 +9,4 @@
     ["rounded", ""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

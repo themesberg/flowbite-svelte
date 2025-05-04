@@ -1,22 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Review",
-	"props": [
-		["children", "any", ""],
-		["address", "any", ""],
-		["item1", "any", ""],
-		["item2", "any", ""],
-		["item3", "any", ""],
-		["review", "any", ""],
-		["articleClass", "any", ""],
-		["divClass", "any", ""],
-		["div2Class", "any", ""],
-		["div3Class", "any", ""],
-		["imgClass", "any", ""],
-		["ulClass", "any", ""],
-		["liClass", "any", ""]
-	]
-=======
   "name": "Review",
   "type": {
     "name": "ReviewProps",
@@ -37,5 +19,4 @@
     ["ulClass", ""],
     ["liClass", ""]
   ]
->>>>>>> next/main
 }

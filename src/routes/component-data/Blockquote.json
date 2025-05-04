@@ -1,16 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Blockquote",
-	"props": [
-		["children", "any", ""],
-		["class", "string", ""],
-		["border", "any", ""],
-		["italic", "any", "true"],
-		["bg", "any", ""],
-		["alignment", "any", "'left'"],
-		["size", "any", "'lg'"]
-	]
-=======
   "name": "Blockquote",
   "type": {
     "name": "BlockquoteProps",
@@ -25,5 +13,4 @@
     ["alignment", "\"left\""],
     ["size", "\"lg\""]
   ]
->>>>>>> next/main
 }

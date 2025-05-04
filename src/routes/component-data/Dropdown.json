@@ -1,17 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Dropdown",
-	"props": [
-		["children", "any", ""],
-		["dropdownStatus", "any", "$bindable()"],
-		["closeDropdown", "any", ""],
-		["class", "string", ""],
-		["backdropClass", "any", ""],
-		["params", "any", ""],
-		["transition", "any", "fly"],
-		["activeUrl", "any", "''"]
-	]
-=======
   "name": "Dropdown",
   "type": {
     "name": "DropdownProps",
@@ -26,5 +13,4 @@
     ["backdropClass", ""],
     ["activeUrl", "\"\""]
   ]
->>>>>>> next/main
 }

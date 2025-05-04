@@ -1,8 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Input",
-	"props": []
-=======
   "name": "Input",
   "type": {
     "name": "InputProps<InputValue>",
@@ -21,5 +17,4 @@
     ["classRight", ""],
     ["divClass", ""]
   ]
->>>>>>> next/main
 }

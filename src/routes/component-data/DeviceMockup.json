@@ -1,11 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "DeviceMockup",
-	"props": [
-		["children", "any", ""],
-		["device", "any", "'default'"]
-	]
-=======
   "name": "DeviceMockup",
   "type": {
     "name": "DeviceMockupProps",
@@ -15,5 +8,4 @@
     ["children", ""],
     ["device", "\"default\""]
   ]
->>>>>>> next/main
 }

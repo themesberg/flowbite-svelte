@@ -1,19 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "TimelineItem",
-	"props": [
-		["children", "any", ""],
-		["orientationSlot", "any", ""],
-		["title", "any", ""],
-		["date", "any", ""],
-		["dateFormat", "any", "'month-year'"],
-		["svgClass", "any", ""],
-		["liClass", "any", ""],
-		["divClass", "any", ""],
-		["timeClass", "any", ""],
-		["h3Class", "any", ""]
-	]
-=======
   "name": "TimelineItem",
   "type": {
     "name": "TimelineItemProps",
@@ -31,5 +16,4 @@
     ["timeClass", ""],
     ["h3Class", ""]
   ]
->>>>>>> next/main
 }

@@ -1,20 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Banner",
-	"props": [
-		["children", "any", ""],
-		["header", "any", ""],
-		["bannerStatus", "any", "$bindable(true)"],
-		["position", "any", "'sticky'"],
-		["dismissable", "any", "true"],
-		["color", "any", "'gray'"],
-		["bannerType", "any", "'default'"],
-		["class", "string", ""],
-		["innerClass", "any", ""],
-		["transition", "any", "fade"],
-		["params", "any", ""]
-	]
-=======
   "name": "Banner",
   "type": {
     "name": "BannerProps",
@@ -32,5 +16,4 @@
     ["transition", "fade"],
     ["params", ""]
   ]
->>>>>>> next/main
 }

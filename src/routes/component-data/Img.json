@@ -1,19 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Img",
-	"props": [
-		["size", "any", "'none'"],
-		["alignment", "any", "'left'"],
-		["effect", "any", "'none'"],
-		["shadow", "any", "'none'"],
-		["rounded", "any", "'none'"],
-		["caption", "any", ""],
-		["imgClass", "any", ""],
-		["figClass", "any", ""],
-		["captionClass", "any", ""],
-		["href", "any", ""]
-	]
-=======
   "name": "Img",
   "type": {
     "name": "ImgProps",
@@ -28,5 +13,4 @@
     ["captionClass", ""],
     ["href", ""]
   ]
->>>>>>> next/main
 }

@@ -1,21 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Alert",
-	"props": [
-		["children", "any", ""],
-		["icon", "any", ""],
-		["alertStatus", "any", "$bindable(true)"],
-		["closeIcon", "any", ""],
-		["color", "any", "'primary'"],
-		["rounded", "any", "true"],
-		["border", "any", ""],
-		["class", "string", ""],
-		["dismissable", "any", ""],
-		["transition", "any", "fade"],
-		["params", "any", ""],
-		["onclick", "any", ""]
-	]
-=======
   "name": "Alert",
   "type": {
     "name": "AlertProps",
@@ -35,5 +18,4 @@
     ["params", ""],
     ["onclick", "()"]
   ]
->>>>>>> next/main
 }

@@ -1,8 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Select",
-	"props": []
-=======
   "name": "Select",
   "type": {
     "name": "SelectProps<T>",
@@ -17,5 +13,4 @@
     ["class: className", ""],
     ["placeholder", "\"Choose option ...\""]
   ]
->>>>>>> next/main
 }

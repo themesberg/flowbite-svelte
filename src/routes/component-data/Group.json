@@ -1,14 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "Group",
-	"props": [
-		["children", "any", ""],
-		["divClass", "any", ""],
-		["timeClass", "any", ""],
-		["date", "any", ""],
-		["olClass", "any", ""]
-	]
-=======
   "name": "Group",
   "type": {
     "name": "GroupProps",
@@ -21,5 +11,4 @@
     ["date", ""],
     ["olClass", ""]
   ]
->>>>>>> next/main
 }

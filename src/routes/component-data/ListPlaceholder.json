@@ -1,13 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "ListPlaceholder",
-	"props": [
-		["itemNumber", "any", "5"],
-		["size", "any", "'md'"],
-		["rounded", "any", ""],
-		["class", "string", ""]
-	]
-=======
   "name": "ListPlaceholder",
   "type": {
     "name": "ListPlaceholderProps",
@@ -19,5 +10,4 @@
     ["rounded", ""],
     ["class: className", ""]
   ]
->>>>>>> next/main
 }

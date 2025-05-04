@@ -1,12 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "ScoreRating",
-	"props": [
-		["ratings", "any", ""],
-		["ratings2", "any", ""],
-		["headerLabel", "any", ""]
-	]
-=======
   "name": "ScoreRating",
   "type": {
     "name": "ScoreRatingProps",
@@ -17,5 +9,4 @@
     ["ratings2", ""],
     ["headerLabel", ""]
   ]
->>>>>>> next/main
 }

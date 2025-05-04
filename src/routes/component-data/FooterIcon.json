@@ -1,13 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "FooterIcon",
-	"props": [
-		["children", "any", ""],
-		["href", "any", ""],
-		["ariaLabel", "any", ""],
-		["class", "string", ""]
-	]
-=======
   "name": "FooterIcon",
   "type": {
     "name": "FooterIconProps",
@@ -19,5 +10,4 @@
     ["ariaLabel", ""],
     ["class: aClass", ""]
   ]
->>>>>>> next/main
 }

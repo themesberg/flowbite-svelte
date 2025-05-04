@@ -1,18 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "ActivityItem",
-	"props": [
-		["activities", "any", ""],
-		["liClass", "any", ""],
-		["spanClass", "any", ""],
-		["imgClass", "any", ""],
-		["outerDivClass", "any", ""],
-		["innerDivClass", "any", ""],
-		["timeClass", "any", ""],
-		["titleClass", "any", ""],
-		["textClass", "any", ""]
-	]
-=======
   "name": "ActivityItem",
   "type": {
     "name": "ActivityItemProps",
@@ -29,5 +15,4 @@
     ["titleClass", ""],
     ["textClass", ""]
   ]
->>>>>>> next/main
 }
