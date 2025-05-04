@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "TabItem",
 	"props": [
 		["children", "any", ""],
@@ -11,4 +12,22 @@
 		["disabled", "any", ""],
 		["tabStyle", "any", ""]
 	]
+=======
+  "name": "TabItem",
+  "type": {
+    "name": "TabitemProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1410"
+  },
+  "props": [
+    ["children", ""],
+    ["titleSlot", ""],
+    ["open", "false"],
+    ["title", "\"Tab title\""],
+    ["activeClass", ""],
+    ["inactiveClass", ""],
+    ["class: className", ""],
+    ["disabled", ""],
+    ["tabStyle", ""]
+  ]
+>>>>>>> next/main
 }

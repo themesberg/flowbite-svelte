@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "TableSearch",
 	"props": [
 		["children", "any", ""],
@@ -19,4 +20,30 @@
 		["class", "string", ""],
 		["placeholder", "any", "'Search'"]
 	]
+=======
+  "name": "TableSearch",
+  "type": {
+    "name": "TableSearchProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1382"
+  },
+  "props": [
+    ["children", ""],
+    ["header", ""],
+    ["footer", ""],
+    ["divClass", "\"relative overflow-x-auto shadow-md sm:rounded-lg\""],
+    ["inputValue", "$bindable()"],
+    ["striped", ""],
+    ["hoverable", ""],
+    ["customColor", "\"\""],
+    ["color", "\"default\""],
+    ["innerDivClass", "\"p-4\""],
+    ["inputClass", ""],
+    ["searchClass", "\"relative mt-1\""],
+    ["svgDivClass", ""],
+    ["svgClass", "\"w-5 h-5 text-gray-500 dark:text-gray-400\""],
+    ["tableClass", "\"w-full text-left text-sm\""],
+    ["class: className", ""],
+    ["placeholder", "\"Search\""]
+  ]
+>>>>>>> next/main
 }

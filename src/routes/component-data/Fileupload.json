@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "Fileupload",
 	"props": [
 		["files", "any", "$bindable<FileList | undefined>()"],
@@ -6,4 +7,17 @@
 		["clearable", "any", "false"],
 		["class", "string", ""]
 	]
+=======
+  "name": "Fileupload",
+  "type": {
+    "name": "FileuploadProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L682"
+  },
+  "props": [
+    ["files", "$bindable<FileList | undefined>()"],
+    ["size", "\"md\""],
+    ["clearable", "false"],
+    ["class: className", ""]
+  ]
+>>>>>>> next/main
 }

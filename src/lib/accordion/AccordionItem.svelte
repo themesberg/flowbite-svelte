@@ -1,103 +1,81 @@
 <script lang="ts">
-	import { twMerge } from 'tailwind-merge';
-	import { slide } from 'svelte/transition';
-	import { getContext } from 'svelte';
-	import { writable } from 'svelte/store';
-	import { type AccordionCtxType, type AccordionItemProps as Props, accordionitem } from '.';
-	import type { ParamsType } from '../types';
+  import { twMerge } from "tailwind-merge";
+  import { slide } from "svelte/transition";
+  import { getContext } from "svelte";
+  import { writable } from "svelte/store";
 
-	let {
-		children,
-		header,
-		arrowup,
-		arrowdown,
-		open = $bindable(false),
-		activeClass,
-		inactiveClass,
-		transition = slide,
-		params,
-		class: className
-	}: Props = $props();
+  import { accordionitem } from ".";
+  import type { AccordionCtxType, AccordionItemProps, ParamsType, BaseThemes } from "$lib/types";
+  import clsx from "clsx";
 
-	const ctx: AccordionCtxType = getContext('ctx') ?? {};
-	// selected type is writable in AccordionCtxType
-	if (!ctx.selected) {
-		ctx.selected = writable();
-	}
+  let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transitionType = slide, transitionParams, class: className }: AccordionItemProps = $props();
 
-	// single selection
-	const self = {};
-	const selected = ctx.isSingle ? ctx.selected : writable();
+  // Theme context
+  const context = getContext<BaseThemes>("themeConfig");
+  // Use theme context if available, otherwise fallback to default
+  const accordionitemTheme = context?.accordionitem || accordionitem;
 
-	// open && selected.set(self);
-	if (open) selected.set(self);
+  const ctx: AccordionCtxType = getContext("ctx") ?? {};
 
-	selected.subscribe((x) => (open = x === self));
+  // single selection
+  const self = {};
+  const selected = ctx.selected ?? writable();
 
-	const handleToggle = () => selected.set(open ? {} : self);
+  if (open) selected.set(self);
 
-	const { base, button, content, active, inactive } = accordionitem({ flush: ctx.flush, open });
+  selected.subscribe((x) => (open = x === self));
 
-	let buttonClass = $derived(
-		twMerge(
-			button(),
-			open && !ctx.flush && (activeClass || ctx.activeClass || active()),
-			!open && !ctx.flush && (inactiveClass || ctx.inactiveClass || inactive()),
-			className
-		)
-	);
+  const handleToggle = () => selected.set(open ? {} : self);
+
+  const { base, button, content, active, inactive } = $derived(accordionitemTheme({ flush: ctx.flush, open }));
+
+  let buttonClass = $derived(twMerge(button(), open && !ctx.flush && (activeClass || ctx.activeClass || active()), !open && !ctx.flush && (inactiveClass || ctx.inactiveClass || inactive()), clsx(className)));
 </script>
 
 <h2 class={base()}>
-	<button onclick={handleToggle} class={buttonClass} aria-expanded={open}>
-		{#if header}
-			{@render header()}
-			{#if open}
-				{#if !arrowup}
-					<svg
-						class="h-3 w-3 text-gray-800 dark:text-white"
-						aria-hidden="true"
-						xmlns="http://www.w3.org/2000/svg"
-						fill="none"
-						viewBox="0 0 10 6"
-					>
-						<path
-							stroke="currentColor"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="2"
-							d="M9 5 5 1 1 5"
-						/>
-					</svg>
-				{:else}
-					{@render arrowup()}
-				{/if}
-			{:else if !arrowdown}
-				<svg
-					class="h-3 w-3 text-gray-800 dark:text-white"
-					aria-hidden="true"
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 10 6"
-				>
-					<path
-						stroke="currentColor"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						stroke-width="2"
-						d="m1 1 4 4 4-4"
-					/>
-				</svg>
-			{:else}
-				{@render arrowdown()}
-			{/if}
-		{/if}
-	</button>
+  <button onclick={handleToggle} class={buttonClass} aria-expanded={open}>
+    {#if header}
+      {@render header()}
+      {#if open}
+        {#if !arrowup}
+          <svg class="h-3 w-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5" />
+          </svg>
+        {:else}
+          {@render arrowup()}
+        {/if}
+      {:else if !arrowdown}
+        <svg class="h-3 w-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+        </svg>
+      {:else}
+        {@render arrowdown()}
+      {/if}
+    {/if}
+  </button>
 </h2>
 {#if open}
-	<div transition:transition={params as ParamsType}>
-		<div class={content()}>
-			{@render children()}
-		</div>
-	</div>
+  <div transition:transitionType={transitionParams as ParamsType}>
+    <div class={content()}>
+      {@render children()}
+    </div>
+  </div>
 {/if}
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L197)
+## Props
+@prop children
+@prop header
+@prop arrowup
+@prop arrowdown
+@prop open = $bindable(false)
+@prop activeClass
+@prop inactiveClass
+@prop transitionType = slide
+@prop transitionParams
+@prop class: className
+-->

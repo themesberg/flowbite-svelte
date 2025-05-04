@@ -1,4 +1,5 @@
-export { default as Accordion } from './Accordion.svelte';
-export { default as AccordionItem } from './AccordionItem.svelte';
-export { accordion, accordionitem } from './theme';
-export type { AccordionCtxType, AccordionProps, AccordionItemProps } from './type';
+import Accordion from "./Accordion.svelte";
+import AccordionItem from "./AccordionItem.svelte";
+import { accordion, accordionitem } from "./theme";
+
+export { AccordionItem, accordionitem, Accordion, accordion };

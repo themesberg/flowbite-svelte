@@ -1,32 +1,32 @@
 <script lang="ts" generics="T">
-	import { type SelectProps as Props, select as selectCls } from '.';
+  import clsx from "clsx";
+  import { select as selectCls } from ".";
+  import type { SelectProps } from "$lib/types";
 
-	let {
-		children,
-		items,
-		value = $bindable(),
-		underline,
-		size = 'md',
-		class: className,
-		placeholder = 'Choose option ...',
-		...restProps
-	}: Props<T> = $props();
+  let { children, items, value = $bindable(), underline, size = "md", class: className, placeholder = "Choose option ...", ...restProps }: SelectProps<T> = $props();
 
-	const selectStyle = $derived(selectCls({ underline, size, className }));
+  const selectStyle = $derived(selectCls({ underline, size, class: clsx(className) }));
 </script>
 
 <select {...restProps} bind:value class={selectStyle}>
-	{#if placeholder}
-		<option disabled selected value="">{placeholder}</option>
-	{/if}
+  {#if placeholder}
+    <option disabled selected value="">{placeholder}</option>
+  {/if}
 
-	{#if items}
-		{#each items as { value, name }}
-			<option {value}>{name}</option>
-		{/each}
-	{/if}
+  {#if items}
+    {#each items as { value, name }}
+      <option {value}>{name}</option>
+    {/each}
+  {/if}
 
-	{#if children}
-		{@render children()}
-	{/if}
+  {#if children}
+    {@render children()}
+  {/if}
 </select>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@props: 
+-->

@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "Range",
 	"props": [
 		["value", "any", "$bindable()"],
@@ -7,4 +8,18 @@
 		["rangeSize", "any", "'md'"],
 		["inputClass", "any", ""]
 	]
+=======
+  "name": "Range",
+  "type": {
+    "name": "RangeProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L756"
+  },
+  "props": [
+    ["value", "$bindable()"],
+    ["appearance", "\"none\""],
+    ["color", "\"blue\""],
+    ["size", "\"md\""],
+    ["class: inputClass", ""]
+  ]
+>>>>>>> next/main
 }

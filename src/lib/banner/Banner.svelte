@@ -1,60 +1,51 @@
 <script lang="ts">
-	import { CloseButton } from '$lib';
-	import { fade } from 'svelte/transition';
-	import { type BannerProps as Props, banner } from './index';
-	import type { ParamsType } from '../types';
+  import { CloseButton } from "$lib";
+  import { fade } from "svelte/transition";
+  import { banner } from "./index";
+  import type { ParamsType, BannerProps } from "$lib/types";
+  import clsx from "clsx";
 
-	let {
-		children,
-		header,
-		bannerStatus = $bindable(true),
-		position = 'sticky',
-		dismissable = true,
-		color = 'gray',
-		bannerType = 'default',
-		class: className,
-		innerClass,
-		transition = fade,
-		params,
-		...restProps
-	}: Props = $props();
+  let { children, header, open = $bindable(true), dismissable = true, color = "gray", type, class: className, innerClass, transition = fade, params, ...restProps }: BannerProps = $props();
 
-	const { base, insideDiv } = banner({
-		bannerType,
-		color
-	});
-
-	let bannerClass = $derived(base({ position, bannerType, color, className }));
-
-	let innerCls = $derived(insideDiv({ bannerType, class: innerClass }));
+  const { base, insideDiv, dismissable: dismissableClass } = $derived(banner({ type, color }));
 </script>
 
-{#if bannerStatus}
-	<div
-		tabindex="-1"
-		class={bannerClass}
-		{...restProps}
-		transition:transition={params as ParamsType}
-	>
-		{#if header}
-			{@render header()}
-		{/if}
+{#if open}
+  <div tabindex="-1" class={base({ class: clsx(className) })} {...restProps} transition:transition={params as ParamsType}>
+    <div class={insideDiv({ class: innerClass })}>
+      {@render children?.()}
+    </div>
 
-		<div class={innerCls}>
-			{@render children()}
-		</div>
-
-		{#if dismissable}
-			<div class="flex items-center">
-				<CloseButton
-					class="-mx-1.5 -my-1.5"
-					{color}
-					ariaLabel="Remove badge"
-					onclick={() => {
-						bannerStatus = false;
-					}}
-				/>
-			</div>
-		{/if}
-	</div>
+    {#if dismissable}
+      <div class="flex items-center justify-end">
+        <CloseButton
+          class={dismissableClass()}
+          {color}
+          ariaLabel="Remove banner"
+          onclick={() => {
+            open = false;
+          }}
+        />
+      </div>
+    {/if}
+  </div>
 {/if}
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L253)
+## Props
+@prop children
+@prop header
+@prop open = $bindable(true)
+@prop dismissable = true
+@prop color = "gray"
+@prop type
+@prop class: className
+@prop innerClass
+@prop transition = fade
+@prop params
+@prop ...restProps
+-->

@@ -1,10 +1,22 @@
 <script lang="ts">
-	import { twMerge } from 'tailwind-merge';
-	import { type SecondaryProps as Props, secondary } from './index';
+  import clsx from "clsx";
+  import { secondary } from "./index";
+  import type { SecondaryProps } from "$lib/types";
 
-	let { children, class: className, ...restProps }: Props = $props();
+  let { children, class: className, ...restProps }: SecondaryProps = $props();
 </script>
 
-<small {...restProps} class={twMerge(secondary(), className)}>
-	{@render children()}
+<small {...restProps} class={secondary({ class: clsx(className) })}>
+  {@render children()}
 </small>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[SecondaryProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1632)
+## Props
+@prop children
+@prop class: className
+@prop ...restProps
+-->

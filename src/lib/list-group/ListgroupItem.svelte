@@ -1,77 +1,57 @@
 <script lang="ts">
-	import { getContext } from 'svelte';
-	import { twMerge } from 'tailwind-merge';
-	import { tv } from 'tailwind-variants';
-	import { type ListgroupItemProps as Props, listGroupItem } from '.';
+  import { getContext } from "svelte";
+  import type { ListgroupItemProps } from "$lib/types";
+  import { listGroupItem, type ListgroupItemVariants } from "./theme";
+  import clsx from "clsx";
 
-	let {
-		children,
-		onclick,
-		active,
-		current,
-		disabled,
-		name,
-		Icon,
-		href,
-		currentClass = 'text-white bg-primary-700 dark:text-white dark:bg-gray-800',
-		normalClass,
-		disabledClass = 'text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400',
-		liClass = 'py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg',
-		class: className,
-		aClasss,
-		btnClass,
-		iconClass = 'me-2.5 h-5 w-5',
-		...restProps
-	}: Props = $props();
+  let { children, active, current, disabled, horizontal, name, Icon, class: className, iconClass = "me-2.5 h-5 w-5", onclick, ...restProps }: ListgroupItemProps = $props();
 
-	active = getContext('active');
+  active = active ?? getContext("active");
 
-	const itemClass = listGroupItem({
-		state: disabled ? 'disabled' : current ? 'current' : 'normal',
-		active,
-		class: twMerge(
-			liClass,
-			disabled ? disabledClass : current ? currentClass : normalClass,
-			className
-		)
-	});
-
-	const buttonClass = tv({
-		base: 'flex items-center text-left',
-		extend: listGroupItem
-	})({
-		state: disabled ? 'disabled' : current ? 'current' : 'normal',
-		active,
-		class: twMerge(itemClass, btnClass)
-	});
-
-	const linkClass = tv({
-		base: 'block',
-		extend: listGroupItem
-	})({
-		state: disabled ? 'disabled' : current ? 'current' : 'normal',
-		active,
-		class: twMerge(itemClass, aClasss)
-	});
+  let state: ListgroupItemVariants["state"] = $derived(disabled ? "disabled" : current ? "current" : "normal");
+  let itemClass = $derived(listGroupItem({ state, active, horizontal, class: clsx(className) }));
 </script>
 
-{#if !active && children}
-	<li class={itemClass}>
-		{@render children()}
-	</li>
-{:else if href}
-	<a {...restProps} {onclick} {href} class={linkClass} aria-current={current}>
-		{name}
-	</a>
+{#snippet nameOrChildren()}
+  {#if Icon}
+    <Icon class={iconClass} />
+  {/if}
+  {#if children}
+    {@render children()}
+  {:else}
+    {name}
+  {/if}
+{/snippet}
+
+{#if restProps.href === undefined && !active}
+  <li class={itemClass}>
+    {@render nameOrChildren()}
+  </li>
+{:else if restProps.href === undefined}
+  <button type="button" {...restProps} class={itemClass} {disabled} aria-current={current} {onclick}>
+    {@render nameOrChildren()}
+  </button>
 {:else}
-	<button type="button" {onclick} class={buttonClass} {disabled} aria-current={current}>
-		{#if Icon}
-			<Icon class={iconClass} />
-		{/if}
-		{#if name}
-			{name}
-		{:else}
-			{@render children()}
-		{/if}
-	</button>
+  <a {...restProps} class={itemClass} aria-current={current}>
+    {@render nameOrChildren()}
+  </a>
 {/if}
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L869)
+## Props
+@prop children
+@prop active
+@prop current
+@prop disabled
+@prop horizontal
+@prop name
+@prop Icon
+@prop class: className
+@prop iconClass = "me-2.5 h-5 w-5"
+@prop onclick
+@prop ...restProps
+-->

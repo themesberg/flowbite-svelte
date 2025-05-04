@@ -1,7 +1,19 @@
 {
+<<<<<<< HEAD
 	"name": "CardPlaceholder",
 	"props": [
 		["size", "any", "'sm'"],
 		["class", "string", ""]
 	]
+=======
+  "name": "CardPlaceholder",
+  "type": {
+    "name": "CardPlaceholderProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1208"
+  },
+  "props": [
+    ["size", "\"sm\""],
+    ["class: className", ""]
+  ]
+>>>>>>> next/main
 }

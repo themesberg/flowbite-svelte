@@ -1,38 +1,41 @@
 <script lang="ts">
-	import { type FileuploadProps as Props, fileupload } from '.';
-	import { CloseButton } from '$lib';
-	let {
-		files = $bindable<FileList | undefined>(),
-		size = 'md',
-		clearable = false,
-		class: className,
-		...restProps
-	}: Props = $props();
-	const { base, wrapper, right } = $derived(fileupload({ size, class: className }));
+  import { fileupload } from ".";
+  import type { FileuploadProps } from "$lib/types";
+  import { CloseButton } from "$lib";
+  import clsx from "clsx";
+  let { files = $bindable<FileList | undefined>(), size = "md", clearable = false, class: className, ...restProps }: FileuploadProps = $props();
+  const { base, wrapper, right } = fileupload();
 
-	let fileInputRef: HTMLInputElement | undefined = $state();
-	const clearAll = () => {
-		if (fileInputRef) {
-			fileInputRef.value = '';
-			files = undefined;
-		}
-	};
-	const hasFiles = $derived(files && files.length > 0);
+  let fileInputRef: HTMLInputElement | undefined = $state();
+  const clearAll = () => {
+    if (fileInputRef) {
+      fileInputRef.value = "";
+      files = undefined;
+    }
+  };
+  const hasFiles = $derived(files && files.length > 0);
 </script>
 
 {#if clearable}
-	<div class={wrapper()}>
-		<input
-			type="file"
-			bind:files
-			bind:this={fileInputRef}
-			{...restProps}
-			class={base({ className })}
-		/>
-		{#if hasFiles}
-			<CloseButton onclick={clearAll} class={right()} />
-		{/if}
-	</div>
+  <div class={wrapper()}>
+    <input type="file" bind:files bind:this={fileInputRef} {...restProps} class={base({ size, class: clsx(className) })} />
+    {#if hasFiles}
+      <CloseButton onclick={clearAll} class={right()} />
+    {/if}
+  </div>
 {:else}
-	<input type="file" bind:files {...restProps} class={base({ className })} />
+  <input type="file" bind:files {...restProps} class={base({ size, class: clsx(className) })} />
 {/if}
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L682)
+## Props
+@prop files = $bindable<FileList | undefined>()
+@prop size = "md"
+@prop clearable = false
+@prop class: className
+@prop ...restProps
+-->

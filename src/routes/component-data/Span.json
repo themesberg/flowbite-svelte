@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "Span",
 	"props": [
 		["children", "any", ""],
@@ -13,4 +14,24 @@
 		["decorationColor", "any", ""],
 		["decorationThickness", "any", ""]
 	]
+=======
+  "name": "Span",
+  "type": {
+    "name": "SpanProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1637"
+  },
+  "props": [
+    ["children", ""],
+    ["class: className", ""],
+    ["italic", ""],
+    ["underline", ""],
+    ["linethrough", ""],
+    ["uppercase", ""],
+    ["gradient", ""],
+    ["highlight", ""],
+    ["decoration", ""],
+    ["decorationColor", ""],
+    ["decorationThickness", ""]
+  ]
+>>>>>>> next/main
 }

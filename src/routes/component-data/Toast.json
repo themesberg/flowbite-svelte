@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "Toast",
 	"props": [
 		["children", "any", ""],
@@ -14,4 +15,25 @@
 		["params", "any", ""],
 		["transition", "any", "fly"]
 	]
+=======
+  "name": "Toast",
+  "type": {
+    "name": "ToastProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1511"
+  },
+  "props": [
+    ["children", ""],
+    ["icon", ""],
+    ["toastStatus", "$bindable(true)"],
+    ["dismissable", "true"],
+    ["color", "\"primary\""],
+    ["position", ""],
+    ["baseClass", ""],
+    ["iconClass", ""],
+    ["contentClass", ""],
+    ["align", "true"],
+    ["params", ""],
+    ["transition", "fly"]
+  ]
+>>>>>>> next/main
 }

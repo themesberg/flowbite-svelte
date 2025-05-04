@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "AdvancedRating",
 	"props": [
 		["rating", "any", ""],
@@ -11,4 +12,22 @@
 		["span2Class", "any", ""],
 		["unit", "any", ""]
 	]
+=======
+  "name": "AdvancedRating",
+  "type": {
+    "name": "AdvancedRatingProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1024"
+  },
+  "props": [
+    ["rating", ""],
+    ["globalText", ""],
+    ["ratings", ""],
+    ["divClass", ""],
+    ["spanClass", ""],
+    ["div2Class", ""],
+    ["div3Class", ""],
+    ["span2Class", ""],
+    ["unit", ""]
+  ]
+>>>>>>> next/main
 }

@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "Popover",
 	"props": [
 		["children", "any", ""],
@@ -13,4 +14,21 @@
 		["transition", "any", "fade"],
 		["params", "any", ""]
 	]
+=======
+  "name": "Popover",
+  "type": {
+    "name": "PopoverProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L995"
+  },
+  "props": [
+    ["title: titleSlot", ""],
+    ["color", "\"default\""],
+    ["trigger", "\"hover\""],
+    ["defaultClass", ""],
+    ["arrow", "true"],
+    ["children", ""],
+    ["placement", "\"top\""],
+    ["class: className", ""]
+  ]
+>>>>>>> next/main
 }

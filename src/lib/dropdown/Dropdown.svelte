@@ -1,40 +1,47 @@
 <script lang="ts">
-	import { type DropdownProps as Props, dropdown } from './';
-	import { fly } from 'svelte/transition';
-	import type { ParamsType } from '$lib/types';
-	import { setContext } from 'svelte';
-	import { writable } from 'svelte/store';
+  import Popper from "$lib/utils/Popper.svelte";
+  import { setContext } from "svelte";
+  import { writable } from "svelte/store";
+  import { dropdown } from "./";
+  import type { DropdownProps } from "$lib/types";
+  import DropdownGroup from "./DropdownGroup.svelte";
+  import clsx from "clsx";
 
-	let {
-		children,
-		dropdownStatus = $bindable(),
-		closeDropdown,
-		class: className,
-		backdropClass,
-		params,
-		transition = fly,
-		activeUrl = '',
-		...restProps
-	}: Props = $props();
+  let { children, simple = false, placement = "bottom", offset = 2, class: className, backdropClass, activeUrl = "", ...restProps }: DropdownProps = $props();
 
-	const { base, backdrop } = $derived(dropdown());
-	const activeUrlStore = writable('');
-	setContext('activeUrl', activeUrlStore);
+  const { base, backdrop } = $derived(dropdown());
+  const activeUrlStore = writable("");
+  setContext("activeUrl", activeUrlStore);
 
-	$effect(() => {
-		activeUrlStore.set(activeUrl ?? '');
-	});
+  $effect(() => {
+    activeUrlStore.set(activeUrl ?? "");
+  });
 </script>
 
 <!-- Dropdown menu -->
-{#if dropdownStatus}
-	<div
-		{...restProps}
-		class={base({ class: className })}
-		transition:transition={params as ParamsType}
-	>
-		{@render children()}
-	</div>
 
-	<div role="presentation" class={backdrop({ class: backdropClass })} onclick={closeDropdown}></div>
-{/if}
+<Popper {...restProps} {placement} {offset} class={base({ class: clsx(className) })}>
+  {#if simple}
+    <DropdownGroup>
+      {@render children()}
+    </DropdownGroup>
+  {:else}
+    {@render children()}
+  {/if}
+</Popper>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L562)
+## Props
+@prop children
+@prop simple = false
+@prop placement = "bottom"
+@prop offset = 2
+@prop class: className
+@prop backdropClass
+@prop activeUrl = ""
+@prop ...restProps
+-->

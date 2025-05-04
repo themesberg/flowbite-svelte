@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "SidebarBrand",
 	"props": [
 		["children", "any", ""],
@@ -7,4 +8,18 @@
 		["spanClass", "any", ""],
 		["class", "string", ""]
 	]
+=======
+  "name": "SidebarBrand",
+  "type": {
+    "name": "SidebarBrandProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1167"
+  },
+  "props": [
+    ["children", ""],
+    ["site", ""],
+    ["imgClass", ""],
+    ["spanClass", ""],
+    ["class: className", ""]
+  ]
+>>>>>>> next/main
 }

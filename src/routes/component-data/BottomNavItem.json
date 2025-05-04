@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "BottomNavItem",
 	"props": [
 		["children", "any", ""],
@@ -10,4 +11,21 @@
 		["btnClass", "any", ""],
 		["spanClass", "any", ""]
 	]
+=======
+  "name": "BottomNavItem",
+  "type": {
+    "name": "BottomNavItemProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L295"
+  },
+  "props": [
+    ["children", ""],
+    ["btnName", ""],
+    ["appBtnPosition", "\"middle\""],
+    ["target", ""],
+    ["activeClass", ""],
+    ["href", "\"\""],
+    ["btnClass", ""],
+    ["spanClass", ""]
+  ]
+>>>>>>> next/main
 }

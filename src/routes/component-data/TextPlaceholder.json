@@ -1,7 +1,19 @@
 {
+<<<<<<< HEAD
 	"name": "TextPlaceholder",
 	"props": [
 		["size", "any", "'sm'"],
 		["class", "string", ""]
 	]
+=======
+  "name": "TextPlaceholder",
+  "type": {
+    "name": "TextPlaceholderProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1227"
+  },
+  "props": [
+    ["size", "\"sm\""],
+    ["class: className", ""]
+  ]
+>>>>>>> next/main
 }

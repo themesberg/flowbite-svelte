@@ -1,10 +1,24 @@
 <script lang="ts">
-	import { type AnchorProps as Props, anchor } from './index';
+  import clsx from "clsx";
+  import { anchor } from "./index";
+  import type { AnchorProps } from "$lib/types";
 
-	let { children, color = 'primary', class: className, ...restProps }: Props = $props();
-	let linkClass = $derived(anchor({ color, className }));
+  let { children, color = "primary", class: className, ...restProps }: AnchorProps = $props();
+  let linkClass = $derived(anchor({ color, class: clsx(className) }));
 </script>
 
 <a {...restProps} class={linkClass}>
-	{@render children()}
+  {@render children()}
 </a>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[AnchorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1534)
+## Props
+@prop children
+@prop color = "primary"
+@prop class: className
+@prop ...restProps
+-->

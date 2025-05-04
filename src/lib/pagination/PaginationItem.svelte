@@ -1,24 +1,40 @@
 <script lang="ts">
-	import { paginationItem, type PaginationItemProps as Props } from '.';
-	import { getContext } from 'svelte';
+  import clsx from "clsx";
+  import { paginationItem } from ".";
+  import type { PaginationItemProps } from "$lib/types";
+  import { getContext } from "svelte";
 
-	let { children, size, class: className, href, active, ...restProps }: Props = $props();
+  let { children, size, class: className, href, active, ...restProps }: PaginationItemProps = $props();
 
-	const group = getContext<boolean>('group');
-	const table = getContext<boolean>('table');
-	const paginationClass = $derived(paginationItem({ size, active, group, table, className }));
+  const group = getContext<boolean>("group");
+  const table = getContext<boolean>("table");
+  const paginationClass = $derived(paginationItem({ size: getContext("size") ?? size, active, group, table, class: clsx(className) }));
 </script>
 
 {#if href}
-	<a {href} {...restProps} class={paginationClass}>
-		{#if children}
-			{@render children()}
-		{/if}
-	</a>
+  <a {href} {...restProps} class={paginationClass}>
+    {#if children}
+      {@render children()}
+    {/if}
+  </a>
 {:else}
-	<button {...restProps} class={paginationClass}>
-		{#if children}
-			{@render children()}
-		{/if}
-	</button>
+  <button {...restProps} class={paginationClass}>
+    {#if children}
+      {@render children()}
+    {/if}
+  </button>
 {/if}
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L981)
+## Props
+@prop children
+@prop size
+@prop class: className
+@prop href
+@prop active
+@prop ...restProps
+-->

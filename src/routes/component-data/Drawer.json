@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "Drawer",
 	"props": [
 		["children", "any", ""],
@@ -16,4 +17,25 @@
 		["easing", "any", ""],
 		["transition", "any", "fly"]
 	]
+=======
+  "name": "Drawer",
+  "type": {
+    "name": "DrawerProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L545"
+  },
+  "props": [
+    ["children", ""],
+    ["hidden", "$bindable()"],
+    ["closeDrawer", "()"],
+    ["activateClickOutside", "true"],
+    ["position", ""],
+    ["width", ""],
+    ["backdrop", "true"],
+    ["backdropClass", ""],
+    ["placement", "\"left\""],
+    ["class: className", ""],
+    ["transitionParams", ""],
+    ["transitionType", "fly"]
+  ]
+>>>>>>> next/main
 }

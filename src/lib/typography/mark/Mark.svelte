@@ -1,10 +1,22 @@
 <script lang="ts">
-	import { twMerge } from 'tailwind-merge';
-	import { type MarkProps as Props, mark } from './index';
+  import clsx from "clsx";
+  import { mark } from "./index";
+  import type { MarkProps } from "$lib/types";
 
-	let { children, class: className, ...restProps }: Props = $props();
+  let { children, class: className, ...restProps }: MarkProps = $props();
 </script>
 
-<mark {...restProps} class={twMerge(mark(), className)}>
-	{@render children()}
+<mark {...restProps} class={mark({ class: clsx(className) })}>
+  {@render children()}
 </mark>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[MarkProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1613)
+## Props
+@prop children
+@prop class: className
+@prop ...restProps
+-->

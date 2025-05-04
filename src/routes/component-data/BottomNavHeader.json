@@ -1,8 +1,21 @@
 {
+<<<<<<< HEAD
 	"name": "BottomNavHeader",
 	"props": [
 		["children", "any", ""],
 		["outerClass", "any", ""],
 		["innerClass", "any", ""]
 	]
+=======
+  "name": "BottomNavHeader",
+  "type": {
+    "name": "BottomNavHeaderProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L297"
+  },
+  "props": [
+    ["children", ""],
+    ["outerClass", ""],
+    ["innerClass", ""]
+  ]
+>>>>>>> next/main
 }

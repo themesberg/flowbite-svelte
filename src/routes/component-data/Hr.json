@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "Hr",
 	"props": [
 		["children", "any", ""],
@@ -6,4 +7,17 @@
 		["hrClass", "any", ""],
 		["innerDivClass", "any", ""]
 	]
+=======
+  "name": "Hr",
+  "type": {
+    "name": "HrProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1562"
+  },
+  "props": [
+    ["children", ""],
+    ["divClass", ""],
+    ["class: className", ""],
+    ["innerDivClass", ""]
+  ]
+>>>>>>> next/main
 }

@@ -1,5 +1,4 @@
-import type { MegaMenuProps } from './type';
-import MegaMenu from './MegaMenu.svelte';
-import { megamenu } from './theme';
+import MegaMenu from "./MegaMenu.svelte";
+import { megamenu } from "./theme";
 
-export { MegaMenu, type MegaMenuProps, megamenu };
+export { MegaMenu, megamenu };

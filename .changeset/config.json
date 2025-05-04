@@ -1,14 +1,11 @@
 {
-	"$schema": "https://unpkg.com/@changesets/config@3.0.0/schema.json",
-	"changelog": [
-		"@svitejs/changesets-changelog-github-compact",
-		{ "repo": "shinokada/svelte-5-ui-lib" }
-	],
-	"commit": false,
-	"fixed": [],
-	"linked": [],
-	"access": "public",
-	"baseBranch": "main",
-	"updateInternalDependencies": "patch",
-	"ignore": []
+  "$schema": "https://unpkg.com/@changesets/config@3.0.0/schema.json",
+  "changelog": ["@svitejs/changesets-changelog-github-compact", { "repo": "themesberg/flowbite-svelte" }],
+  "commit": false,
+  "fixed": [],
+  "linked": [],
+  "access": "public",
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch",
+  "ignore": []
 }

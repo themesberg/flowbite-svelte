@@ -1,5 +1,4 @@
-import type { ProgressbarProps } from './type';
-import Progressbar from './Progressbar.svelte';
-import { progressbar } from './theme';
+import Progressbar from "./Progressbar.svelte";
+import { progressbar } from "./theme";
 
-export { Progressbar, progressbar, type ProgressbarProps };
+export { Progressbar, progressbar };

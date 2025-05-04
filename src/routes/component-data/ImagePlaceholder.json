@@ -1,8 +1,21 @@
 {
+<<<<<<< HEAD
 	"name": "ImagePlaceholder",
 	"props": [
 		["size", "any", "'md'"],
 		["rounded", "any", ""],
 		["class", "string", ""]
 	]
+=======
+  "name": "ImagePlaceholder",
+  "type": {
+    "name": "ImagePlaceholderProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1212"
+  },
+  "props": [
+    ["size", "\"md\""],
+    ["rounded", ""],
+    ["class: className", ""]
+  ]
+>>>>>>> next/main
 }

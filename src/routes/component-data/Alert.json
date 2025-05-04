@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "Alert",
 	"props": [
 		["children", "any", ""],
@@ -14,4 +15,25 @@
 		["params", "any", ""],
 		["onclick", "any", ""]
 	]
+=======
+  "name": "Alert",
+  "type": {
+    "name": "AlertProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L212"
+  },
+  "props": [
+    ["children", ""],
+    ["icon", ""],
+    ["alertStatus", "$bindable(true)"],
+    ["closeIcon: CloseIcon", ""],
+    ["color", "\"primary\""],
+    ["rounded", "true"],
+    ["border", ""],
+    ["class: className", ""],
+    ["dismissable", ""],
+    ["transition", "fade"],
+    ["params", ""],
+    ["onclick", "()"]
+  ]
+>>>>>>> next/main
 }

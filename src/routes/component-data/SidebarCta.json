@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "SidebarCta",
 	"props": [
 		["children", "any", ""],
@@ -8,4 +9,19 @@
 		["label", "any", ""],
 		["class", "string", ""]
 	]
+=======
+  "name": "SidebarCta",
+  "type": {
+    "name": "SidebarCtaProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1154"
+  },
+  "props": [
+    ["children", ""],
+    ["icon", ""],
+    ["divClass", ""],
+    ["spanClass", ""],
+    ["label", ""],
+    ["class: className", ""]
+  ]
+>>>>>>> next/main
 }

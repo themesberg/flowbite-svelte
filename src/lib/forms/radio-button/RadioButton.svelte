@@ -1,34 +1,27 @@
 <script lang="ts" generics="T">
-	import Button from '$lib/buttons/Button.svelte';
-	import { type RadioButtonProps as Props, radioButton } from '.';
+  import Button from "$lib/buttons/Button.svelte";
+  import clsx from "clsx";
+  import { radioButton } from ".";
+  import type { RadioButtonProps } from "$lib/types";
 
-	let {
-		children,
-		group = $bindable<T>(),
-		value = $bindable<T>(),
-		inline = true,
-		pill,
-		outline,
-		buttonSize,
-		color,
-		shadow,
-		class: className,
-		...restProps
-	}: Props<T> = $props();
+  let { children, group = $bindable<T>(), value = $bindable<T>(), inline, pill, outline, size, color, shadow, class: className, ...restProps }: RadioButtonProps<T> = $props();
 
-	const base = $derived(radioButton({ inline, className }));
+  let inputEl: HTMLInputElement;
+  let base = $derived(radioButton({ inline, checked: value == group, class: clsx(className) }));
+
+  function clickHandler() {
+    inputEl?.click(); // manually trigger the click on the hidden input
+  }
 </script>
 
-<Button
-	tag="label"
-	checked={value === group}
-	{pill}
-	{outline}
-	size={buttonSize}
-	{color}
-	{shadow}
-	class={base}
->
-	<input type="radio" bind:group {value} {...restProps} class="sr-only" />
-	{@render children()}
+<Button tag="label" onclick={clickHandler} {pill} {outline} {size} {color} {shadow} class={base}>
+  <input bind:this={inputEl} type="radio" class="sr-only" {value} bind:group {...restProps} />
+  {@render children?.()}
 </Button>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@props: 
+-->

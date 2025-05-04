@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "P",
 	"props": [
 		["children", "any", ""],
@@ -13,4 +14,24 @@
 		["space", "any", "'normal'"],
 		["weight", "any", "'normal'"]
 	]
+=======
+  "name": "P",
+  "type": {
+    "name": "ParagraphProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1618"
+  },
+  "props": [
+    ["children", ""],
+    ["class: className", "\"text-gray-900 dark:text-white\""],
+    ["height", "\"normal\""],
+    ["align", "\"left\""],
+    ["justify", "false"],
+    ["italic", ""],
+    ["firstUpper", "false"],
+    ["whitespace", "\"normal\""],
+    ["size", "\"base\""],
+    ["space", "\"normal\""],
+    ["weight", "\"normal\""]
+  ]
+>>>>>>> next/main
 }

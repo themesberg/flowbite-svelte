@@ -1,25 +1,33 @@
 <script lang="ts">
-	import { getContext } from 'svelte';
-	import { type HrProps as Props, hr } from './index';
+  import clsx from "clsx";
+  import { hr } from "./index";
+  import type { HrProps } from "$lib/types";
 
-	let { children, divClass, hrClass, innerDivClass, ...restProps }: Props = $props();
+  let { children, divClass, class: className, innerDivClass, ...restProps }: HrProps = $props();
 
-	// Get merged theme from context
-	const context = getContext<Record<string, any>>('themeConfig');
-
-	// Use context theme if available, otherwise fallback to default
-	const usedHr = context?.hr || hr;
-
-	let { base, container, content } = $derived(hr({ withChildren: !!children }));
+  let { base, container, content } = $derived(hr({ withChildren: !!children }));
 </script>
 
 {#if children}
-	<div {...restProps} class={container({ class: divClass })}>
-		<hr class={base({ class: hrClass })} />
-		<div class={content({ class: innerDivClass })}>
-			{@render children()}
-		</div>
-	</div>
+  <div {...restProps} class={container({ class: divClass })}>
+    <hr class={base({ class: clsx(className) })} />
+    <div class={content({ class: innerDivClass })}>
+      {@render children()}
+    </div>
+  </div>
 {:else}
-	<hr class={base({ class: hrClass })} {...restProps} />
+  <hr class={base({ class: clsx(className) })} {...restProps} />
 {/if}
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1562)
+## Props
+@prop children
+@prop divClass
+@prop class: className
+@prop innerDivClass
+@prop ...restProps
+-->

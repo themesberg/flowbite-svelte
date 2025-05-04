@@ -1,35 +1,37 @@
 <script lang="ts">
-	import { idGenerator } from '../../uiHelpers.svelte';
-	import { type FloatingLabelInputProps as Props, floatingLabelInput } from '.';
+  import { idGenerator } from "../../uiHelpers.svelte";
+  import { floatingLabelInput } from ".";
+  import type { FloatingLabelInputProps } from "$lib/types";
+  import clsx from "clsx";
 
-	let {
-		children,
-		id = idGenerator(),
-		value = $bindable(),
-		aria_describedby,
-		inputStyle = 'standard',
-		size = 'default',
-		color = 'default',
-		divClass,
-		inputClass,
-		labelClass,
-		...restProps
-	}: Props = $props();
+  let { children, id = idGenerator(), value = $bindable(), "aria-describedby": ariaDescribedby, variant = "standard", size = "default", color = "default", class: divClass, inputClass, labelClass, ...restProps }: FloatingLabelInputProps = $props();
 
-	const { base, input, label } = $derived(floatingLabelInput({ inputStyle, size, color }));
+  const { base, input, label } = $derived(floatingLabelInput({ variant, size, color }));
 </script>
 
-<div class={base({ class: divClass })}>
-	<input
-		{id}
-		placeholder=" "
-		bind:value
-		{...restProps}
-		aria-describedby={aria_describedby}
-		class={input({ class: inputClass })}
-	/>
+<div class={base({ class: clsx(divClass) })}>
+  <input {id} placeholder=" " bind:value {...restProps} aria-describedby={ariaDescribedby} class={input({ class: inputClass })} />
 
-	<label for={id} class={label({ class: labelClass })}>
-		{@render children()}
-	</label>
+  <label for={id} class={label({ class: labelClass })}>
+    {@render children()}
+  </label>
 </div>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[FloatingLabelInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L690)
+## Props
+@prop children
+@prop id = idGenerator()
+@prop value = $bindable()
+@prop "aria-describedby": ariaDescribedby
+@prop variant = "standard"
+@prop size = "default"
+@prop color = "default"
+@prop class: divClass
+@prop inputClass
+@prop labelClass
+@prop ...restProps
+-->

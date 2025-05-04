@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "GradientButton",
 	"props": [
 		["children", "any", ""],
@@ -11,4 +12,22 @@
 		["disabled", "any", ""],
 		["size", "any", ""]
 	]
+=======
+  "name": "GradientButton",
+  "type": {
+    "name": "GradientButtonProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L350"
+  },
+  "props": [
+    ["children", ""],
+    ["outline", ""],
+    ["pill", ""],
+    ["color", "\"blue\""],
+    ["shadow", ""],
+    ["class: className", ""],
+    ["href", ""],
+    ["disabled", ""],
+    ["size", ""]
+  ]
+>>>>>>> next/main
 }

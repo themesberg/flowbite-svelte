@@ -1,8 +1,21 @@
 {
+<<<<<<< HEAD
 	"name": "InputAddon",
 	"props": [
 		["children", "any", ""],
 		["class", "string", ""],
 		["size", "any", ""]
 	]
+=======
+  "name": "InputAddon",
+  "type": {
+    "name": "InputAddonProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L722"
+  },
+  "props": [
+    ["children", ""],
+    ["class: className", ""],
+    ["size", ""]
+  ]
+>>>>>>> next/main
 }

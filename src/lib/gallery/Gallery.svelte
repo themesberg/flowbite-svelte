@@ -1,27 +1,47 @@
 <script lang="ts">
-	import { type GalleryProps as Props, type ImgType, gallery } from '.';
+  import clsx from "clsx";
+  import { gallery } from ".";
+  import type { GalleryProps, ImgType } from "$lib/types";
 
-	let { children, items = [], imgClass, divClass, ...restProps }: Props = $props();
+  let { children, figure, items = [], imgClass, class: className, ...restProps }: GalleryProps = $props();
 
-	function init(node: HTMLElement) {
-		if (getComputedStyle(node).gap === 'normal') node.style.gap = 'inherit';
-	}
+  function init(node: HTMLElement) {
+    if (getComputedStyle(node).gap === "normal") node.style.gap = "inherit";
+  }
 
-	const { image, div } = gallery();
+  const { image, div } = gallery();
 </script>
 
-{#snippet figure(item: ImgType)}
-	<div>
-		<img src={item.src} alt={item.alt} class={image({ class: imgClass })} {...restProps} />
-	</div>
+{#snippet _figure(item: ImgType)}
+  <div>
+    <img src={item.src} alt={item.alt} class={image({ class: imgClass })} {...restProps} />
+  </div>
 {/snippet}
 
-<div class={div({ class: divClass })} use:init>
-	{#each items as item}
-		{@render figure(item as ImgType)}
-	{:else}
-		{#if children}
-			{@render children()}
-		{/if}
-	{/each}
+<div class={div({ class: clsx(className) })} use:init>
+  {#each items as item}
+    {#if figure}
+      {@render figure(item as ImgType)}
+    {:else}
+      {@render _figure(item as ImgType)}
+    {/if}
+  {:else}
+    {#if children}
+      {@render children()}
+    {/if}
+  {/each}
 </div>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[GalleryProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L820)
+## Props
+@prop children
+@prop figure
+@prop items = []
+@prop imgClass
+@prop class: className
+@prop ...restProps
+-->

@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "SidebarItem",
 	"props": [
 		["iconSlot", "any", ""],
@@ -12,4 +13,23 @@
 		["active", "any", ""],
 		["class", "string", ""]
 	]
+=======
+  "name": "SidebarItem",
+  "type": {
+    "name": "SidebarItemProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1196"
+  },
+  "props": [
+    ["icon", ""],
+    ["subtext", ""],
+    ["href", ""],
+    ["label", ""],
+    ["spanClass", "\"ms-3\""],
+    ["activeClass", ""],
+    ["nonActiveClass", ""],
+    ["aClass", ""],
+    ["active", ""],
+    ["class: className", ""]
+  ]
+>>>>>>> next/main
 }

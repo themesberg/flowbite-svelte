@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "Heart",
 	"props": [
 		["fillPercent", "any", "100"],
@@ -11,4 +12,22 @@
 		["role", "any", "'img'"],
 		["svgClass", "any", ""]
 	]
+=======
+  "name": "Heart",
+  "type": {
+    "name": "RatingIconProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1110"
+  },
+  "props": [
+    ["fillPercent", "100"],
+    ["fillColor", "\"#ff0000\""],
+    ["strokeColor", "\"#ff0000\""],
+    ["size", "24"],
+    ["ariaLabel", "\"star\""],
+    ["iconIndex", "0"],
+    ["groupId", "\"star\""],
+    ["role", "\"img\""],
+    ["svgClass", ""]
+  ]
+>>>>>>> next/main
 }

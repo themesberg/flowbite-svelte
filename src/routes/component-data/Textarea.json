@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "Textarea",
 	"props": [
 		["header", "any", ""],
@@ -12,4 +13,22 @@
 		["class", "string", ""],
 		["cols", "any", ""]
 	]
+=======
+  "name": "Textarea",
+  "type": {
+    "name": "TextareaProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L790"
+  },
+  "props": [
+    ["header", ""],
+    ["footer", ""],
+    ["value", "$bindable()"],
+    ["innerClass", ""],
+    ["headerClass", ""],
+    ["footerClass", ""],
+    ["disabled", ""],
+    ["class: className", ""],
+    ["cols", ""]
+  ]
+>>>>>>> next/main
 }

@@ -1,7 +1,19 @@
 {
+<<<<<<< HEAD
 	"name": "SidebarButton",
 	"props": [
 		["breakpoint", "any", "'md'"],
 		["class", "string", ""]
 	]
+=======
+  "name": "SidebarButton",
+  "type": {
+    "name": "SidebarButtonProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1150"
+  },
+  "props": [
+    ["breakpoint", "\"md\""],
+    ["class: className", ""]
+  ]
+>>>>>>> next/main
 }

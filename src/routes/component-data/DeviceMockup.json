@@ -1,7 +1,19 @@
 {
+<<<<<<< HEAD
 	"name": "DeviceMockup",
 	"props": [
 		["children", "any", ""],
 		["device", "any", "'default'"]
 	]
+=======
+  "name": "DeviceMockup",
+  "type": {
+    "name": "DeviceMockupProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L480"
+  },
+  "props": [
+    ["children", ""],
+    ["device", "\"default\""]
+  ]
+>>>>>>> next/main
 }

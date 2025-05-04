@@ -1,0 +1,21 @@
+{
+  "name": "Carousel",
+  "type": {
+    "name": "CarouselProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L391"
+  },
+  "props": [
+    ["children", ""],
+    ["slide", ""],
+    ["images", ""],
+    ["index", "$bindable(0)"],
+    ["slideDuration", "1000"],
+    ["transition", ""],
+    ["duration", "0"],
+    ["\"aria-label\": ariaLabel", "\"Draggable Carousel\""],
+    ["disableSwipe", "false"],
+    ["imgClass", "\"\""],
+    ["class: className", ""],
+    ["onchange", ""]
+  ]
+}

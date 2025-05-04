@@ -1,4 +1,21 @@
 {
+<<<<<<< HEAD
 	"name": "Select",
 	"props": []
+=======
+  "name": "Select",
+  "type": {
+    "name": "SelectProps<T>",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L774"
+  },
+  "props": [
+    ["children", ""],
+    ["items", ""],
+    ["value", "$bindable()"],
+    ["underline", ""],
+    ["size", "\"md\""],
+    ["class: className", ""],
+    ["placeholder", "\"Choose option ...\""]
+  ]
+>>>>>>> next/main
 }

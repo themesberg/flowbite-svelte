@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "Tooltip",
 	"props": [
 		["children", "any", ""],
@@ -13,4 +14,21 @@
 		["class", "string", ""],
 		["visible", "any", "false"]
 	]
+=======
+  "name": "Tooltip",
+  "type": {
+    "name": "TooltipProps",
+    "link": null
+  },
+  "props": [
+    ["type", "\"dark\""],
+    ["color", "undefined"],
+    ["trigger", "\"hover\""],
+    ["arrow", "true"],
+    ["children", ""],
+    ["placement", "\"top\""],
+    ["onbeforetoggle: _onbeforetoggle", ""],
+    ["class: className", ""]
+  ]
+>>>>>>> next/main
 }

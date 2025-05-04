@@ -1,8 +1,21 @@
 {
+<<<<<<< HEAD
 	"name": "ScoreRating",
 	"props": [
 		["ratings", "any", ""],
 		["ratings2", "any", ""],
 		["headerLabel", "any", ""]
 	]
+=======
+  "name": "ScoreRating",
+  "type": {
+    "name": "ScoreRatingProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1099"
+  },
+  "props": [
+    ["ratings", ""],
+    ["ratings2", ""],
+    ["headerLabel", ""]
+  ]
+>>>>>>> next/main
 }

@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "Spinner",
 	"props": [
 		["color", "any", "'primary'"],
@@ -7,4 +8,18 @@
 		["currentFill", "any", "'currentFill'"],
 		["currentColor", "any", "'currentColor'"]
 	]
+=======
+  "name": "Spinner",
+  "type": {
+    "name": "SpinnerProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1296"
+  },
+  "props": [
+    ["color", "\"primary\""],
+    ["size", "\"8\""],
+    ["class: className", ""],
+    ["currentFill", "\"currentFill\""],
+    ["currentColor", "\"currentColor\""]
+  ]
+>>>>>>> next/main
 }

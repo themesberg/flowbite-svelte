@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "Tabs",
 	"props": [
 		["children", "any", ""],
@@ -7,4 +8,18 @@
 		["contentClass", "any", ""],
 		["divider", "any", "true"]
 	]
+=======
+  "name": "Tabs",
+  "type": {
+    "name": "TabsProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1402"
+  },
+  "props": [
+    ["children", ""],
+    ["tabStyle", "\"none\""],
+    ["ulClass", ""],
+    ["contentClass", ""],
+    ["divider", "true"]
+  ]
+>>>>>>> next/main
 }

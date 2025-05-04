@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "BreadcrumbItem",
 	"props": [
 		["children", "any", ""],
@@ -10,4 +11,21 @@
 		["homeClass", "any", ""],
 		["class", "string", ""]
 	]
+=======
+  "name": "BreadcrumbItem",
+  "type": {
+    "name": "BreadcrumbItemProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L316"
+  },
+  "props": [
+    ["children", ""],
+    ["icon", ""],
+    ["home", "false"],
+    ["href", ""],
+    ["linkClass", ""],
+    ["spanClass", ""],
+    ["homeClass", ""],
+    ["class: className", ""]
+  ]
+>>>>>>> next/main
 }

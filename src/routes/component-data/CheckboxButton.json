@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "CheckboxButton",
 	"props": [
 		["children", "any", ""],
@@ -13,4 +14,24 @@
 		["color", "any", ""],
 		["shadow", "any", ""]
 	]
+=======
+  "name": "CheckboxButton",
+  "type": {
+    "name": "CheckboxButtonProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L663"
+  },
+  "props": [
+    ["children", ""],
+    ["class: className", ""],
+    ["group", "$bindable([])"],
+    ["value", ""],
+    ["checked", ""],
+    ["inline", ""],
+    ["pill", ""],
+    ["outline", ""],
+    ["size", ""],
+    ["color", ""],
+    ["shadow", ""]
+  ]
+>>>>>>> next/main
 }

@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "FooterBrand",
 	"props": [
 		["children", "any", ""],
@@ -10,4 +11,21 @@
 		["alt", "any", ""],
 		["name", "any", ""]
 	]
+=======
+  "name": "FooterBrand",
+  "type": {
+    "name": "FooterBrandProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L602"
+  },
+  "props": [
+    ["children", ""],
+    ["aClass", ""],
+    ["spanClass", ""],
+    ["imgClass", ""],
+    ["href", ""],
+    ["src", ""],
+    ["alt", ""],
+    ["name", ""]
+  ]
+>>>>>>> next/main
 }

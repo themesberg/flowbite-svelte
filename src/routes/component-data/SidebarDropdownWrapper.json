@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "SidebarDropdownWrapper",
 	"props": [
 		["children", "any", ""],
@@ -16,4 +17,27 @@
 		["class", "string", ""],
 		["onclick", "any", ""]
 	]
+=======
+  "name": "SidebarDropdownWrapper",
+  "type": {
+    "name": "SidebarDropdownWrapperProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1173"
+  },
+  "props": [
+    ["children", ""],
+    ["arrowup", ""],
+    ["arrowdown", ""],
+    ["icon", ""],
+    ["isOpen", "false"],
+    ["btnClass", ""],
+    ["label", ""],
+    ["spanClass", ""],
+    ["ulClass", ""],
+    ["transition", "slide"],
+    ["params", ""],
+    ["svgClass", ""],
+    ["class: className", ""],
+    ["onclick", ""]
+  ]
+>>>>>>> next/main
 }

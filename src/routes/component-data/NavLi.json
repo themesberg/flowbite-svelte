@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "NavLi",
 	"props": [
 		["closeNav", "any", ""],
@@ -7,4 +8,18 @@
 		["aClass", "any", ""],
 		["class", "string", ""]
 	]
+=======
+  "name": "NavLi",
+  "type": {
+    "name": "NavLiProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L943"
+  },
+  "props": [
+    ["children", ""],
+    ["activeClass", ""],
+    ["nonActiveClass", ""],
+    ["class: className", ""],
+    ["onclick", ""]
+  ]
+>>>>>>> next/main
 }
