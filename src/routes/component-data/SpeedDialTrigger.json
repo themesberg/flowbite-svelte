@@ -1,0 +1,16 @@
+{
+  "name": "SpeedDialTrigger",
+  "type": {
+    "name": "SpeedDialTriggerProps",
+    "link": null
+  },
+  "props": [
+    ["children", ""],
+    ["name", "\"Open actions menu\""],
+    ["gradient", "false"],
+    ["icon", ""],
+    ["pill", "true"],
+    ["color", ""],
+    ["class: className", ""]
+  ]
+}

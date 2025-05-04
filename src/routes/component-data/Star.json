@@ -1,14 +1,18 @@
 {
   "name": "Star",
-  "slots": [],
-  "events": ["click"],
+  "type": {
+    "name": "RatingIconProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1110"
+  },
   "props": [
-    ["fillPercent?", "number", "100"],
-    ["fillColor?", "string", "'#F5CA14'"],
-    ["strokeColor?", "string", "'#F5CA14'"],
-    ["size?", "number", "24"],
-    ["ariaLabel?", "string", "'star'"],
-    ["id?", "string", "generateId()"],
-    ["role?", "string", "'img'"]
+    ["fillPercent", "100"],
+    ["fillColor", "\"#F5CA14\""],
+    ["strokeColor", "\"#F5CA14\""],
+    ["size", "24"],
+    ["ariaLabel", "\"star\""],
+    ["iconIndex", "0"],
+    ["groupId", "\"star\""],
+    ["role", "\"img\""],
+    ["svgClass", ""]
   ]
 }

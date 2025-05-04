@@ -1,6 +1,14 @@
 {
   "name": "PaginationItem",
-  "slots": [],
-  "events": ["blur", "change", "click", "focus", "keydown", "keypress", "keyup", "mouseenter", "mouseleave", "mouseover"],
-  "props": []
+  "type": {
+    "name": "PaginationItemProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L981"
+  },
+  "props": [
+    ["children", ""],
+    ["size", ""],
+    ["class: className", ""],
+    ["href", ""],
+    ["active", ""]
+  ]
 }

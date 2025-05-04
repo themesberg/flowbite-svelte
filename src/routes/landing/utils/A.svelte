@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let href: string;
+  let { children = undefined, href } = $props();
 </script>
 
-<a {href} class="underline text-lg font-medium hover:no-underline text-gray-900 dark:text-white"><slot /></a>
+<a {href} class="text-lg font-medium text-gray-900 underline hover:no-underline dark:text-white">{@render children?.()}</a>

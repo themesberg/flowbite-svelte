@@ -1,24 +1,29 @@
 {
   "name": "Datepicker",
-  "slots": [],
-  "events": ["select", "clear", "apply"],
+  "type": {
+    "name": "DatepickerProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L456"
+  },
   "props": [
-    ["value", "Date | null", "null"],
-    ["defaultDate", "Date | null", "null"],
-    ["range", "boolean", "false"],
-    ["rangeFrom", "Date | null", "null"],
-    ["rangeTo", "Date | null", "null"],
-    ["locale", "string", "'default'"],
-    ["firstDayOfWeek", "number", "0"],
-    ["dateFormat", "Intl.DateTimeFormatOptions", "{ year: 'numeric', month: 'long', day: 'numeric' }"],
-    ["placeholder", "string", "'Select date'"],
-    ["disabled", "boolean", "false"],
-    ["required", "boolean", "false"],
-    ["inputClass", "string", "''"],
-    ["color", "Button['color']", "'primary'"],
-    ["inline", "boolean", "false"],
-    ["autohide", "boolean", "true"],
-    ["showActionButtons", "boolean", "false"],
-    ["title", "string", "''"]
+    ["value", "$bindable()"],
+    ["defaultDate", "null"],
+    ["range", "false"],
+    ["rangeFrom", "$bindable()"],
+    ["rangeTo", "$bindable()"],
+    ["locale", "\"default\""],
+    ["firstDayOfWeek", "0"],
+    ["dateFormat", ""],
+    ["placeholder", "\"Select date\""],
+    ["disabled", "false"],
+    ["required", "false"],
+    ["inputClass", "\"\""],
+    ["color", "\"primary\""],
+    ["inline", "false"],
+    ["autohide", "true"],
+    ["showActionButtons", "false"],
+    ["title", "\"\""],
+    ["onselect", ""],
+    ["onclear", ""],
+    ["onapply", ""]
   ]
 }

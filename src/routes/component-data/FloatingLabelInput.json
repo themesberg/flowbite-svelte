@@ -1,16 +1,19 @@
 {
   "name": "FloatingLabelInput",
-  "slots": [],
-  "events": ["blur", "change", "click", "focus", "input", "keydown", "keypress", "keyup", "mouseenter", "mouseleave", "mouseover", "paste"],
+  "type": {
+    "name": "FloatingLabelInputProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L690"
+  },
   "props": [
-    ["id?", "string", "generateId()"],
-    ["style?", "'filled' | 'outlined' | 'standard'", ""],
-    ["type?", "InputType", ""],
-    ["size?", "'small' | 'default'", ""],
-    ["color?", "'base' | 'green' | 'red'", ""],
-    ["value?", "string | number | readonly string[] | undefined", "undefined"],
-    ["classDiv?", "string", "''"],
-    ["classInput?", "string", "''"],
-    ["classLabel?", "string", "''"]
+    ["children", ""],
+    ["id", "idGenerator()"],
+    ["value", "$bindable()"],
+    ["\"aria-describedby\": ariaDescribedby", ""],
+    ["variant", "\"standard\""],
+    ["size", "\"default\""],
+    ["color", "\"default\""],
+    ["class: divClass", ""],
+    ["inputClass", ""],
+    ["labelClass", ""]
   ]
 }

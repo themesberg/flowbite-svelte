@@ -62,6 +62,5 @@ git commit -a "feat: change btnClass name to bClass" -m "BREAKING CHANGE: change
 <p>Before submitting a PR, please run a test:</p>
 
 ```sh
-cp .env.example .env
 pnpm test:integration
 ```

@@ -1,41 +1,26 @@
 <script lang="ts">
-  import type { HTMLAnchorAttributes } from 'svelte/elements';
-  import { twMerge } from 'tailwind-merge';
+  import { footerLink } from ".";
+  import type { FooterLinkProps } from "$lib/types";
 
-  interface $$Props extends HTMLAnchorAttributes {
-    liClass?: string;
-    aClass?: string;
-    href?: string;
-    target?: string;
-    classLi?: string;
-    classA?: string;
-  }
-
-  export let liClass: $$Props['liClass'] = 'me-4 last:me-0 md:me-6';
-  export let aClass: $$Props['aClass'] = 'hover:underline';
-  export let href: $$Props['href'] = '';
-  export let target: $$Props['target'] = undefined;
-  export let classLi: $$Props['classLi'] = '';
-  export let classA: $$Props['classA'] = '';
-
-  let liCls: string = twMerge(liClass, classLi);
-  let aCls: string = twMerge(aClass, classA);
+  let { children, liClass, aClass, href, ...restProps }: FooterLinkProps = $props();
+  const { base, link } = $derived(footerLink());
 </script>
 
-<li class={liCls}>
-  <a {...$$restProps} {href} class={aCls} {target}>
-    <slot />
+<li class={base({ class: liClass })}>
+  <a {...restProps} {href} class={link({ class: aClass })}>
+    {@render children()}
   </a>
 </li>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[FooterLinkProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L634)
 ## Props
-@prop export let liClass: $$Props['liClass'] = 'me-4 last:me-0 md:me-6';
-@prop export let aClass: $$Props['aClass'] = 'hover:underline';
-@prop export let href: $$Props['href'] = '';
-@prop export let target: $$Props['target'] = undefined;
-@prop export let classLi: $$Props['classLi'] = '';
-@prop export let classA: $$Props['classA'] = '';
+@prop children
+@prop liClass
+@prop aClass
+@prop href
+@prop ...restProps
 -->

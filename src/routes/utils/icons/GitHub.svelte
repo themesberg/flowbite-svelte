@@ -1,10 +1,14 @@
 <script lang="ts">
-  export let size: 'sm' | 'md' | 'lg' = 'lg';
+  type Props = {
+    size?: "sm" | "md" | "lg";
+  };
+  let { size = "lg" }: Props = $props();
+  // export let size: "sm" | "md" | "lg" = "lg";
 
   const sizes = {
-    sm: 'w-4 h-4',
-    md: 'w-5 h-5',
-    lg: 'w-6 h-6'
+    sm: "w-4 h-4",
+    md: "w-5 h-5",
+    lg: "w-6 h-6"
   };
 </script>
 

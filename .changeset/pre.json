@@ -1,0 +1,8 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "flowbite-svelte": "1.0.0-next.0"
+  },
+  "changesets": ["fast-candies-add", "fifty-corners-look", "heavy-teeth-wink", "hot-apples-care", "kind-eels-yawn", "many-rockets-lick", "olive-states-say", "rotten-badgers-check", "salty-cats-doubt", "soft-emus-float", "spicy-ties-start", "sweet-jars-listen", "swift-beds-beg", "tame-baboons-wash", "thick-breads-type", "thirty-memes-bow", "tricky-teams-enter", "true-peas-push", "whole-parrots-doubt", "yummy-ghosts-argue"]
+}

@@ -1,12 +1,12 @@
 {
   "name": "A",
-  "slots": [],
-  "events": ["click"],
+  "type": {
+    "name": "AnchorProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1534"
+  },
   "props": [
-    ["action?", "Action<HTMLElement, any>", ""],
-    ["params?", "any", "{}"],
-    ["href?", "string", "'#'"],
-    ["color?", "string", "'text-primary-600 dark:text-primary-500'"],
-    ["aClass?", "string", "'inline-flex items-center hover:underline'"]
+    ["children", ""],
+    ["color", "\"primary\""],
+    ["class: className", ""]
   ]
 }

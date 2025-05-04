@@ -1,44 +1,30 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
+  import clsx from "clsx";
+  import { skeleton } from ".";
+  import type { SkeletonProps } from "$lib/types";
 
-  interface Sizes {
-    [key: string]: string;
-  }
-
-  const sizes: Sizes = {
-    sm: 'max-w-sm',
-    md: 'max-w-md',
-    lg: 'max-w-lg',
-    xl: 'max-w-xl',
-    xxl: 'max-w-2xl'
-  };
-
-  interface $$Props {
-    divClass?: string;
-    size?: keyof Sizes;
-    class?: string;
-  }
-
-  export let divClass: $$Props['divClass'] = 'animate-pulse';
-  export let size: NonNullable<$$Props['size']> = 'sm';
-  $: outDivclass = twMerge(sizes[size], divClass, $$props.class);
+  let { size = "sm", class: className, ...restProps }: SkeletonProps = $props();
+  const { wrapper, line } = $derived(skeleton({ size }));
 </script>
 
-<div role="status" class={outDivclass}>
-  <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-1/2 mb-4"></div>
-  <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 w-9/12 mb-2.5"></div>
-  <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
-  <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
-  <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 w-10/12 mb-2.5"></div>
-  <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 w-11/12 mb-2.5"></div>
-  <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 w-9/12"></div>
+<div role="status" {...restProps} class={wrapper({ class: clsx(className) })}>
+  <div class={line({ class: "mb-4 h-2.5 w-1/2" })}></div>
+  <div class={line({ class: "mb-2.5 h-2 w-9/12" })}></div>
+  <div class={line({ class: "mb-2.5 h-2" })}></div>
+  <div class={line({ class: "mb-2.5 h-2" })}></div>
+  <div class={line({ class: "mb-2.5 h-2 w-10/12" })}></div>
+  <div class={line({ class: "mb-2.5 h-2 w-11/12" })}></div>
+  <div class={line({ class: "h-2 w-9/12" })}></div>
   <span class="sr-only">Loading...</span>
 </div>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[SkeletonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1223)
 ## Props
-@prop export let divClass: $$Props['divClass'] = 'animate-pulse';
-@prop export let size: NonNullable<$$Props['size']> = 'sm';
+@prop size = "sm"
+@prop class: className
+@prop ...restProps
 -->

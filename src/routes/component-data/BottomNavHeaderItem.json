@@ -1,11 +1,12 @@
 {
   "name": "BottomNavHeaderItem",
-  "slots": [],
-  "events": ["click", "change", "keydown", "keyup", "focus", "blur", "mouseenter", "mouseleave"],
+  "type": {
+    "name": "BottomNavHeaderItemProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L303"
+  },
   "props": [
-    ["itemName", "string", "''"],
-    ["active", "boolean", "false"],
-    ["defaultClass", "string", "'px-5 py-1.5 text-xs font-medium text-gray-900 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700 rounded-lg'"],
-    ["activeClass", "string", "'px-5 py-1.5 text-xs font-medium text-white bg-gray-900 dark:bg-gray-300 dark:text-gray-900 rounded-lg'"]
+    ["itemName", ""],
+    ["active", ""],
+    ["class: className", ""]
   ]
 }

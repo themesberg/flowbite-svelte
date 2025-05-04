@@ -13,94 +13,75 @@ Use this page to easily search and configure a collection of up to 500 SVG open-
 
 Search by the icon name and you'll find the component name that you need to import in your Svelte app.
 
+```svelte example hideSource hideResponsiveButtons
 <script>
-  import MetaTag from './utils/MetaTag.svelte';
-  import { Range, Label, Tabs, TabItem, TableSearch } from '$lib';
-
-  import {
-    filterIconsByKeyword,
-    random_tailwind_color,
-    random_hex_color_code
-  } from './utils/utils';
-  import * as Icons from 'flowbite-svelte-icons';
-  const keywordsToInclude = 'Outline';
+  import { Label, Range, TabItem, Tabs } from "$lib";
+  import * as Icons from "flowbite-svelte-icons";
+  import { IconOutline } from "flowbite-svelte-icons";
+  import { filterIconsByKeyword, random_hex_color_code, random_tailwind_color } from "../icons/utils/utils";
+  const keywordsToInclude = "Outline";
   const keyIcons = filterIconsByKeyword(Icons, keywordsToInclude);
 
-  const contentClass = ' rounded-lg mt-4';
-  let searchTerm = '';
+  const contentClass = " rounded-lg mt-4";
+  let searchTerm = $state("");
 
-  $: filteredEntries = Object.entries(keyIcons).filter(([name, component]) => {
-    return name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1;
-  });
-  $: size = 6;
+  let filteredEntries = $derived(Object.entries(keyIcons).filter(([name, component]) => name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1));
+  let size = $state(6);
   // for metatag
-  const title = 'Outline Icons - Flowbite Svelte Icons';
-  const subtitle = 'Outline Icons';
-  const path = 'outline';
-  const description = 'Accessible SVG icons - Outline';
-  const tabItemDivcls = 'grid lg:grid-cols-2 grid-cols-1 gap-8 px-4 dark:text-white'
+  const title = "Outline Icons - Flowbite Svelte Icons";
+  const subtitle = "Outline Icons";
+  const path = "outline";
+  const description = "Accessible SVG icons - Outline";
+  const tabItemDivcls = "grid lg:grid-cols-2 grid-cols-1 gap-8 px-4 dark:text-white";
 </script>
 
-<MetaTag {title} {subtitle} {path} {description} />
-
 <div class="w-full">
-    <TableSearch
-      placeholder="Search by icon name"
-      hoverable={true}
-      bind:inputValue={searchTerm}
-      divClass="relative overflow-x-auto [&>div]:p-0"
-    >
-    <div class="w-full max-w-64 mb-4">
-      <Label class="text-lg py-4 ">Icon size: {size}</Label>
-      <Range id="range1" min="4" max="10" bind:value={size} />
-    </div>
-    <Tabs style="pill" {contentClass} class="p-4">
-      <TabItem open>
-        <span slot="title" class="text-lg">Mono</span>
-        <div
-          class={tabItemDivcls}
-        >
-          {#each filteredEntries as [name, component]}
-            <div class="flex gap-4 items-center text-lg">
-              <svelte:component this={component} class="shrink-0 h-{size} w-{size}" />
-              {name}
-            </div>
-          {/each}
-        </div>
-      </TabItem>
-      <TabItem>
-        <span slot="title" class="text-lg">Random Hex Colors</span>
-        <div
-          class={tabItemDivcls}
-        >
-          {#each filteredEntries as [name, component]}
-            <div class="flex gap-4 items-center text-lg">
-              <svelte:component
-                this={component}
-                color={random_hex_color_code()}
-                class="shrink-0 h-{size} w-{size}"
-              />
-              {name}
-            </div>
-          {/each}
-        </div>
-      </TabItem>
-      <TabItem>
-        <span slot="title" class="text-lg">Random Tailwind CSS Colors</span>
-        <div
-          class={tabItemDivcls}
-        >
-          {#each filteredEntries as [name, component]}
-            <div class="flex gap-4 items-center text-lg">
-              <svelte:component
-                this={component}
-                class="{random_tailwind_color()} shrink-0 h-{size} w-{size}"
-              />
-              {name}
-            </div>
-          {/each}
-        </div>
-      </TabItem>
-    </Tabs>
-  </TableSearch>
+  <!-- <TableSearch placeholder="Search by icon name" hoverable={true} bind:inputValue={searchTerm} divClass="relative overflow-x-auto [&>div]:p-0"> -->
+  <div class="mb-4 w-full max-w-64">
+    <Label class="py-4 text-lg ">Icon size: {size}</Label>
+    <Range id="range1" min="4" max="10" bind:value={size} />
+  </div>
+  <Tabs style="pill" {contentClass} class="p-4">
+    <TabItem open>
+      {#snippet titleSlot()}
+        <span class="text-lg">Mono</span>
+      {/snippet}
+      <div class={tabItemDivcls}>
+        {#each filteredEntries as [name, component]}
+          <div class="flex items-center gap-4 text-lg">
+            <IconOutline Icon={component} class="shrink-0 h-{size} w-{size}" />
+            {name}
+          </div>
+        {/each}
+      </div>
+    </TabItem>
+    <TabItem>
+      {#snippet titleSlot()}
+        <span class="text-lg">Random Hex Colors</span>
+      {/snippet}
+      <div class={tabItemDivcls}>
+        {#each filteredEntries as [name, component]}
+          <div class="flex items-center gap-4 text-lg">
+            <IconOutline Icon={component} color={random_hex_color_code()} class="shrink-0 h-{size} w-{size}" />
+            {name}
+          </div>
+        {/each}
+      </div>
+    </TabItem>
+    <TabItem>
+      {#snippet titleSlot()}
+        <span class="text-lg">Random Tailwind CSS Colors</span>
+      {/snippet}
+      <div class={tabItemDivcls}>
+        {#each filteredEntries as [name, component]}
+          <div class="flex items-center gap-4 text-lg">
+            <IconOutline Icon={component} class="{random_tailwind_color()} shrink-0 h-{size} w-{size}" />
+            {name}
+          </div>
+        {/each}
+      </div>
+    </TabItem>
+  </Tabs>
+  <!-- </TableSearch> -->
 </div>
+```

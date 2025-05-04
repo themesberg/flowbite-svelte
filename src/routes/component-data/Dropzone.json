@@ -1,6 +1,12 @@
 {
   "name": "Dropzone",
-  "slots": [],
-  "events": ["focus", "blur", "mouseenter", "mouseleave", "mouseover", "dragenter", "dragleave", "dragover", "drop", "change", "click"],
-  "props": []
+  "type": {
+    "name": "DropzoneProps&{ondrop?:DragEventHandler<HTMLButtonElement>;ondragover?:DragEventHandler<HTMLButtonElement>;onchange?:ChangeEventHandler<HTMLInputElementWithFiles>;}",
+    "link": null
+  },
+  "props": [
+    ["children", ""],
+    ["files", "$bindable<FileList | null>()"],
+    ["class: className", ""]
+  ]
 }

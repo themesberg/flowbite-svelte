@@ -1,9 +1,9 @@
 <script lang="ts">
-  export let tinted: boolean = false;
+  let { children, tinted = false, class: className = undefined } = $props();
 </script>
 
-<section class={tinted ? 'bg-gray-50 dark:bg-gray-800' : ''}>
-  <div class="mx-auto max-w-8xl px-4 lg:px-20 py-8 {$$props.class ?? ''}">
-    <slot />
+<section class={tinted ? "bg-gray-50 dark:bg-gray-800" : ""}>
+  <div class={["mx-auto max-w-screen-xl px-4 py-8 lg:px-4", className]}>
+    {@render children?.()}
   </div>
 </section>

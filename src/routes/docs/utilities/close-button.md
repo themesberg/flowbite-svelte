@@ -23,14 +23,14 @@ Use `CloseButton` component to close a component.
 
 ```svelte example
 <script>
-  import { CloseButton } from 'flowbite-svelte';
-  export let visible = true;
+  import { CloseButton } from "flowbite-svelte";
+  let visible = $state(true);
 </script>
 
 {#if visible}
-  <div id="banner" tabindex="-1" class="flex z-50 gap-8 justify-between items-start py-3 px-4 w-full bg-gray-50 border border-b border-gray-200 sm:items-center dark:border-gray-700 lg:py-4 dark:bg-gray-800">
+  <div id="banner" tabindex="-1" class="z-50 flex w-full items-start justify-between gap-8 border border-b border-gray-200 bg-gray-50 px-4 py-3 sm:items-center lg:py-4 dark:border-gray-700 dark:bg-gray-800">
     <p class="text-sm font-light text-gray-500 dark:text-gray-400">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem, ipsa culpa ea laudantium earum quis? Neque unde aliquam enim, distinctio repellendus delectus? Illo numquam ex fugit dolor esse, cumque nesciunt?</p>
-    <CloseButton on:click={() => (visible = false)} />
+    <CloseButton onclick={() => (visible = false)} />
   </div>
 {/if}
 ```

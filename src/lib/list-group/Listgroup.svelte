@@ -1,50 +1,49 @@
-<script lang="ts" generics="T extends ListGroupItemType | string">
-  import { createEventDispatcher, setContext, type ComponentProps } from 'svelte';
-  import { twMerge } from 'tailwind-merge';
-  import type { ListGroupItemType } from '../types';
-  import Frame from '../utils/Frame.svelte';
-  import ListgroupItem from './ListgroupItem.svelte';
+<script lang="ts">
+  import { setContext } from "svelte";
+  import ListgroupItem from "./ListgroupItem.svelte";
+  import { listGroup } from ".";
+  import type { ListgroupProps } from "$lib/types";
+  import clsx from "clsx";
 
-  const dispatch = createEventDispatcher();
+  let { children, items, active, onclick, horizontal, rounded, border, class: className, itemClass, iconClass, ...restProps }: ListgroupProps = $props();
 
-  interface $$Props extends ComponentProps<Frame> {
-    items?: T[];
-    active?: boolean;
-    defaultClass?: string;
-  }
+  const base = $derived(listGroup({ rounded, border, horizontal, class: clsx(className) }));
 
-  interface $$Slots {
-    default: { item: T; index: number };
-  }
-
-  export let items: NonNullable<$$Props['items']> = [];
-  export let active: $$Props['active'] = false;
-  export let defaultClass: $$Props['defaultClass'] = 'divide-y divide-gray-200 dark:divide-gray-600';
-
-  $: setContext('active', active);
-
-  let groupClass: string;
-  $: groupClass = twMerge(defaultClass, $$props.class);
+  let tag = active ? "div" : "ul";
+  setContext("active", active);
 </script>
 
-<Frame tag={active ? 'div' : 'ul'} {...$$restProps} rounded border class={groupClass}>
-  {#each items as item, index}
-    {#if typeof item === 'string'}
-      <ListgroupItem {active} {index} on:click={() => dispatch('click', item)}><slot {item} {index} /></ListgroupItem>
-    {:else}
-      <ListgroupItem {active} {...item} {index} on:click={() => dispatch('click', item)}><slot {item} {index} /></ListgroupItem>
-    {/if}
+<svelte:element this={tag} {...restProps} class={base}>
+  {#if items?.length}
+    {#each items as item}
+      {#if children}
+        {@render children(item)}
+      {:else if typeof item === "string"}
+        <ListgroupItem href={undefined} class={itemClass} {iconClass} {active} {horizontal} {onclick}>{item}</ListgroupItem>
+      {:else}
+        <ListgroupItem href={item.href} class={itemClass} {iconClass} {active} {horizontal} {...item} onclick={item.onclick ?? onclick} />
+      {/if}
+    {/each}
   {:else}
-    {@const item = items[0]}
-    <slot {item} index={0} />
-  {/each}
-</Frame>
+    {@render children?.(items?.[0])}
+  {/if}
+</svelte:element>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L858)
 ## Props
-@prop export let items: NonNullable<$$Props['items']> = [];
-@prop export let active: $$Props['active'] = false;
-@prop export let defaultClass: $$Props['defaultClass'] = 'divide-y divide-gray-200 dark:divide-gray-600';
+@prop children
+@prop items
+@prop active
+@prop onclick
+@prop horizontal
+@prop rounded
+@prop border
+@prop class: className
+@prop itemClass
+@prop iconClass
+@prop ...restProps
 -->

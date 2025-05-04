@@ -1,14 +1,19 @@
 {
   "name": "TimelineItem",
-  "slots": ["icon"],
-  "events": [],
+  "type": {
+    "name": "TimelineItemProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1497"
+  },
   "props": [
-    ["title?", "string", "''"],
-    ["date?", "string", "''"],
-    ["svgClass?", "string", "'w-3 h-3 text-primary-600 dark:text-primary-400'"],
-    ["classLi?", "string", "''"],
-    ["classDiv?", "string", "''"],
-    ["classTime?", "string", "''"],
-    ["classH3?", "string", "''"]
+    ["children", ""],
+    ["orientationSlot", ""],
+    ["title", ""],
+    ["date", ""],
+    ["dateFormat", "\"month-year\""],
+    ["svgClass", ""],
+    ["liClass", ""],
+    ["divClass", ""],
+    ["timeClass", ""],
+    ["h3Class", ""]
   ]
 }

@@ -1,0 +1,13 @@
+{
+  "name": "Arrow",
+  "type": {
+    "name": "{placement?:Placement;cords:Partial<Coords>;strategy?:\"absolute\"|\"fixed\";class?:string;}",
+    "link": null
+  },
+  "props": [
+    ["placement", "\"top\""],
+    ["cords", ""],
+    ["strategy", "\"absolute\""],
+    ["class: className", "\"\""]
+  ]
+}

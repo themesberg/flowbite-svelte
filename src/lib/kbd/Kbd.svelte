@@ -1,21 +1,23 @@
 <script lang="ts">
-  import type { HTMLAttributes } from 'svelte/elements';
-  import { twMerge } from 'tailwind-merge';
+  import clsx from "clsx";
+  import { kbd } from ".";
+  import type { KbdProps } from "$lib/types";
 
-  interface $$Props extends HTMLAttributes<HTMLDivElement> {
-    kbdClass?: string;
-  }
-
-  export let kbdClass: $$Props['kbdClass'] = 'text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500';
+  let { children, class: className, ...restProps }: KbdProps = $props();
+  const kbdCls = kbd({ class: clsx(className) });
 </script>
 
-<kbd class={twMerge(kbdClass, $$props.class)}>
-  <slot />
+<kbd {...restProps} class={kbdCls}>
+  {@render children()}
 </kbd>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[KbdProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L839)
 ## Props
-@prop export let kbdClass: $$Props['kbdClass'] = 'text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500';
+@prop children
+@prop class: className
+@prop ...restProps
 -->

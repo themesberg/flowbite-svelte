@@ -1,51 +1,63 @@
 <script lang="ts">
-  import type { HTMLAttributes } from 'svelte/elements';
-  import { twMerge } from 'tailwind-merge';
-  import { getContext } from 'svelte';
+  import { getContext } from "svelte";
+  import { TableHeadCell, tablehead } from ".";
+  import type { TableHeadProps, TableCtxType, HeadItemType } from "$lib/types";
+  import clsx from "clsx";
 
-  interface $$Props extends HTMLAttributes<HTMLTableSectionElement> {
-    theadClass?: string;
-    defaultRow?: boolean;
+  let { children, headerSlot, color, striped, border, class: className, headItems, defaultRow = true, ...restProps }: TableHeadProps = $props();
+
+  const tableCtx = getContext<TableCtxType>("tableCtx");
+  // for reactivity with svelte context
+  let compoColor = $derived(color ? color : tableCtx.color || "default");
+  let compoStriped = $derived(striped ? striped : tableCtx.striped || false);
+  let compoBorder = $derived(border ? border : tableCtx.border || false);
+
+  const base = $derived(tablehead({ color: compoColor, border: compoBorder, striped: compoStriped, class: clsx(className) }));
+
+  function getItemText(item: HeadItemType): string {
+    if (typeof item === "object" && "text" in item) {
+      return item.text;
+    }
+    return String(item);
   }
-
-  export let theadClass: $$Props['theadClass'] = 'text-xs uppercase';
-  export let defaultRow: $$Props['defaultRow'] = true;
-
-  let color: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom';
-  color = getContext('color');
-  let noborder: boolean = getContext('noborder');
-  let striped: boolean = getContext('striped');
-  let defaultBgColor = noborder || striped ? '' : 'bg-gray-50 dark:bg-gray-700';
-  const bgColors = {
-    default: defaultBgColor,
-    blue: 'bg-blue-600',
-    green: 'bg-green-600',
-    red: 'bg-red-600',
-    yellow: 'bg-yellow-600',
-    purple: 'bg-purple-600',
-    custom: ''
-  };
-
-  let textColor = color === 'default' ? 'text-gray-700 dark:text-gray-400' : color === 'custom' ? '' : 'text-white  dark:text-white';
-  let borderColors = striped ? '' : color === 'default' ? 'border-gray-700' : color === 'custom' ? '' : `border-${color}-400`;
-
-  $: theadClassfinal = twMerge(theadClass, textColor, striped && borderColors, bgColors[color], $$props.class);
 </script>
 
-<thead {...$$restProps} class={theadClassfinal}>
-  {#if defaultRow}
+<thead {...restProps} class={base}>
+  {#if headItems}
+    {#if headerSlot}
+      {@render headerSlot()}
+    {/if}
     <tr>
-      <slot />
+      {#each headItems as item}
+        <TableHeadCell>
+          {getItemText(item)}
+        </TableHeadCell>
+      {/each}
     </tr>
-  {:else}
-    <slot />
+  {:else if children}
+    {#if defaultRow}
+      <tr>
+        {@render children()}
+      </tr>
+    {:else}
+      {@render children()}
+    {/if}
   {/if}
 </thead>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[TableHeadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1317)
 ## Props
-@prop export let theadClass: $$Props['theadClass'] = 'text-xs uppercase';
-@prop export let defaultRow: $$Props['defaultRow'] = true;
+@prop children
+@prop headerSlot
+@prop color
+@prop striped
+@prop border
+@prop class: className
+@prop headItems
+@prop defaultRow = true
+@prop ...restProps
 -->

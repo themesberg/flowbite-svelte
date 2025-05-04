@@ -1,10 +1,11 @@
 {
   "name": "CardPlaceholder",
-  "slots": [],
-  "events": [],
+  "type": {
+    "name": "CardPlaceholderProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1208"
+  },
   "props": [
-    ["divClass?", "string", "'p-4 rounded-sm border border-gray-200 shadow-sm animate-pulse md:p-6 dark:border-gray-700'"],
-    ["size?", "keyof Sizes", ""],
-    ["class?", "string", ""]
+    ["size", "\"sm\""],
+    ["class: className", ""]
   ]
 }

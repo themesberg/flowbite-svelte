@@ -10,8 +10,7 @@ thumnailSize: w-64
 
 <script>
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
-  import { P, A } from '$lib'
-  let name;
+  import { P, A } from 'flowbite-svelte'
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -19,11 +18,11 @@ The avatar component can be used as a visual identifier for a user profile on yo
 
 ## Setup
 
-Import `Avatar`. If you are using the user dropdown, import `Dropdown`, `DropdownHeader`, `DropdownItem`, `DropdownDivider`. If you are using tooltip for avatar import `Tooltip`.
+Import `Avatar`. If you are using the user dropdown, import `Dropdown`, `DropdownHeader`, `DropdownItem`. If you are using tooltip for avatar import `Tooltip`.
 
 ```svelte example hideOutput
 <script>
-  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider, Tooltip } from 'flowbite-svelte';
+  import { Avatar, Dropdown, DropdownHeader, DropdownItem, Tooltip } from "flowbite-svelte";
 </script>
 ```
 
@@ -33,12 +32,12 @@ Use this example to create a circle and rounded avatar on an image element.
 
 ```svelte example class="flex justify-center gap-4" hideScript hideResponsiveButtons
 <script>
-  import { Avatar } from 'flowbite-svelte';
+  import { Avatar } from "flowbite-svelte";
 </script>
 
 <div class="flex space-x-4 rtl:space-x-reverse">
   <Avatar src="/images/profile-picture-2.webp" />
-  <Avatar src="/images/profile-picture-2.webp" rounded />
+  <Avatar src="/images/profile-picture-2.webp" cornerStyle="rounded" />
 </div>
 ```
 
@@ -46,11 +45,11 @@ Use this example to create a circle and rounded avatar on an image element.
 
 You can apply a border around the avatar component.
 
-If you can use the `ring-&#123;color&#125;` class from Tailwind CSS to modify ring color.
+You can use the `ring-&#123;color&#125;` class from Tailwind CSS to modify ring color.
 
 ```svelte example class="flex justify-center gap-4" hideScript hideResponsiveButtons
 <script>
-  import { Avatar } from 'flowbite-svelte';
+  import { Avatar } from "flowbite-svelte";
 </script>
 
 <Avatar src="/images/profile-picture-2.webp" border />
@@ -63,13 +62,13 @@ When there is no custom image available a placeholder is displayed.
 
 ```svelte example class="flex justify-center gap-4" hideScript hideResponsiveButtons
 <script>
-  import { Avatar } from 'flowbite-svelte';
+  import { Avatar } from "flowbite-svelte";
 </script>
 
 <Avatar />
-<Avatar rounded />
+<Avatar cornerStyle="rounded" />
 <Avatar border />
-<Avatar rounded border />
+<Avatar cornerStyle="rounded" border />
 ```
 
 ## Placeholder initials
@@ -78,7 +77,7 @@ This example can be used to show the initials of the user’s first and last nam
 
 ```svelte example class="flex justify-center gap-4" hideScript hideResponsiveButtons
 <script>
-  import { Avatar } from 'flowbite-svelte';
+  import { Avatar } from "flowbite-svelte";
 </script>
 
 <Avatar>JL</Avatar>
@@ -90,14 +89,14 @@ Use this example to show a tooltip when hovering over the avatar.
 
 ```svelte example class="flex justify-center gap-4" hideResponsiveButtons
 <script>
-  import { Avatar, Tooltip } from 'flowbite-svelte';
+  import { Avatar, Tooltip } from "flowbite-svelte";
 </script>
 
-<Avatar data-name="Jese Leos" rounded-sm src="/images/profile-picture-1.webp" />
+<Avatar data-name="Jese Leos" src="/images/profile-picture-1.webp" />
 <Tooltip>Jese Leos</Tooltip>
-<Avatar data-name="Robert Gouth" rounded-sm src="/images/profile-picture-2.webp" />
+<Avatar data-name="Robert Gouth" src="/images/profile-picture-2.webp" />
 <Tooltip>Robert Gouth</Tooltip>
-<Avatar data-name="Bonnie Green" rounded-sm src="/images/profile-picture-3.webp" />
+<Avatar data-name="Bonnie Green" src="/images/profile-picture-3.webp" />
 <Tooltip>Bonnie Green</Tooltip>
 ```
 
@@ -107,13 +106,13 @@ Use a dot element relative to the avatar component as an indicator for the user 
 
 ```svelte example class="flex justify-center gap-4" hideResponsiveButtons
 <script>
-  import { Avatar } from 'flowbite-svelte';
+  import { Avatar } from "flowbite-svelte";
 </script>
 
-<Avatar src="/images/profile-picture-3.webp" dot={{ color: 'red' }} />
-<Avatar src="/images/profile-picture-3.webp" dot={{ placement: 'top-right', color: 'red' }} rounded />
-<Avatar src="/images/profile-picture-5.webp" dot={{ placement: 'bottom-right', color: 'green' }} />
-<Avatar src="/images/profile-picture-5.webp" dot={{ placement: 'bottom-right' }} rounded />
+<Avatar src="/images/profile-picture-3.webp" dot={{ color: "red" }} />
+<Avatar src="/images/profile-picture-3.webp" dot={{ placement: "top-right", color: "red" }} cornerStyle="rounded" />
+<Avatar src="/images/profile-picture-5.webp" dot={{ placement: "bottom-right", color: "green" }} />
+<Avatar src="/images/profile-picture-5.webp" dot={{ placement: "bottom-right" }} cornerStyle="rounded" />
 
 <Avatar dot={{}} />
 ```
@@ -124,10 +123,10 @@ Use this example if you want to stack a group of users by overlapping the avatar
 
 ```svelte example class="flex flex-col justify-center gap-4" hideScript hideResponsiveButtons
 <script>
-  import { Avatar } from 'flowbite-svelte';
+  import { Avatar } from "flowbite-svelte";
 </script>
 
-<div class="flex mb-5">
+<div class="mb-5 flex">
   <Avatar src="/images/profile-picture-1.webp" stacked />
   <Avatar src="/images/profile-picture-2.webp" stacked />
   <Avatar src="/images/profile-picture-3.webp" stacked />
@@ -137,7 +136,7 @@ Use this example if you want to stack a group of users by overlapping the avatar
   <Avatar src="/images/profile-picture-1.webp" stacked />
   <Avatar src="/images/profile-picture-2.webp" stacked />
   <Avatar src="/images/profile-picture-3.webp" stacked />
-  <Avatar stacked href="/" class="bg-gray-700 text-white hover:bg-gray-600 text-sm">+99</Avatar>
+  <Avatar stacked href="/" class="bg-gray-700 text-sm text-white hover:bg-gray-600">+99</Avatar>
 </div>
 ```
 
@@ -147,11 +146,11 @@ This example can be used if you want to show additional information in the form 
 
 ```svelte example class="flex justify-center gap-4" hideScript hideResponsiveButtons
 <script>
-  import { Avatar } from 'flowbite-svelte';
+  import { Avatar } from "flowbite-svelte";
 </script>
 
 <div class="flex items-center space-x-4 rtl:space-x-reverse">
-  <Avatar src="/images/profile-picture-1.webp" rounded />
+  <Avatar src="/images/profile-picture-1.webp" cornerStyle="rounded" />
   <div class="space-y-1 font-medium dark:text-white">
     <div>Jese Leos</div>
     <div class="text-sm text-gray-500 dark:text-gray-400">Joined in August 2014</div>
@@ -165,26 +164,29 @@ Use this example if you want to show a dropdown menu when clicking on the avatar
 
 ```svelte example class="flex justify-center h-96" hideResponsiveButtons
 <script>
-  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider } from 'flowbite-svelte';
+  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownGroup } from "flowbite-svelte";
 </script>
 
-<Avatar id="user-drop" src="/images/profile-picture-3.webp" class="cursor-pointer" dot={{ color: 'green' }} />
+<Avatar id="user-drop" src="/images/profile-picture-3.webp" class="cursor-pointer" dot={{ color: "green" }} />
 <Dropdown triggeredBy="#user-drop">
   <DropdownHeader>
     <span class="block text-sm">Bonnie Green</span>
     <span class="block truncate text-sm font-medium">name@flowbite.com</span>
   </DropdownHeader>
-  <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem>Settings</DropdownItem>
-  <DropdownItem>Earnings</DropdownItem>
-  <DropdownDivider />
-  <DropdownItem>Sign out</DropdownItem>
+  <DropdownGroup>
+    <DropdownItem>Dashboard</DropdownItem>
+    <DropdownItem>Settings</DropdownItem>
+    <DropdownItem>Earnings</DropdownItem>
+  </DropdownGroup>
+  <DropdownGroup>
+    <DropdownItem>Sign out</DropdownItem>
+  </DropdownGroup>
 </Dropdown>
 ```
 
 ## Sizes
 
-You can set `size` property to preset values of `xs | sm | md | lg | xl`. Custom size can be achieved by setting size to `none` and adding any of the Tailwind Css size classes like `w-[x] h-[x]`.
+You can set `size` property to preset values of `xs | sm | md | lg | xl`. Custom size can be achieved by adding any of the Tailwind Css size classes like `w-[x] h-[x]`.
 
 Preset values are equivalents of:
 
@@ -198,26 +200,22 @@ Preset values are equivalents of:
 
 ```svelte example class="flex flex-col gap-4" hideScript hideResponsiveButtons
 <script>
-  import { Avatar } from 'flowbite-svelte';
+  import { Avatar } from "flowbite-svelte";
 </script>
 
 <div class=" flex flex-wrap justify-center space-x-4 rtl:space-x-reverse">
-  <Avatar src="/images/profile-picture-3.webp" rounded-sm size="xs" />
-  <Avatar src="/images/profile-picture-3.webp" rounded-sm size="sm" />
-  <Avatar src="/images/profile-picture-3.webp" rounded-sm size="md" />
-  <Avatar src="/images/profile-picture-3.webp" rounded-sm size="lg" />
-  <Avatar src="/images/profile-picture-3.webp" rounded-sm size="xl" />
-  <Avatar src="/images/profile-picture-3.webp" rounded-sm size="none" class="w-28 h-28" />
+  <Avatar src="/images/profile-picture-3.webp" size="xs" />
+  <Avatar src="/images/profile-picture-3.webp" size="sm" />
+  <Avatar src="/images/profile-picture-3.webp" size="md" />
+  <Avatar src="/images/profile-picture-3.webp" size="lg" />
+  <Avatar src="/images/profile-picture-3.webp" size="xl" />
+  <Avatar src="/images/profile-picture-3.webp" class="h-28 w-28" />
 </div>
 ```
 
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
-
-### Avatar styling
-
-- Use the `class` prop to overwrite the default class.
 
 <CompoAttributesViewer {dirName}/>
 

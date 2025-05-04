@@ -1,13 +1,18 @@
 {
   "name": "TabItem",
-  "slots": ["title"],
-  "events": ["blur", "click", "contextmenu", "focus", "keydown", "keypress", "keyup", "mouseenter", "mouseleave", "mouseover"],
+  "type": {
+    "name": "TabitemProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1410"
+  },
   "props": [
-    ["open?", "boolean", "false"],
-    ["title?", "string", "'Tab title'"],
-    ["activeClasses?", "string", "undefined"],
-    ["inactiveClasses?", "string", "undefined"],
-    ["defaultClass?", "string", "'inline-block text-sm font-medium text-center disabled:cursor-not-allowed'"],
-    ["divClass?", "string", "''"]
+    ["children", ""],
+    ["titleSlot", ""],
+    ["open", "false"],
+    ["title", "\"Tab title\""],
+    ["activeClass", ""],
+    ["inactiveClass", ""],
+    ["class: className", ""],
+    ["disabled", ""],
+    ["tabStyle", ""]
   ]
 }

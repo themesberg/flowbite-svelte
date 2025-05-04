@@ -1,23 +1,26 @@
 <script lang="ts">
-  import Indicator from '$lib/indicators/Indicator.svelte';
-  import { getContext } from 'svelte';
-  import type { Writable } from 'svelte/store';
-  import { twMerge } from 'tailwind-merge';
-  import type { State } from './Carousel.svelte';
+  import Indicator from "$lib/indicator/Indicator.svelte";
+  import { getContext } from "svelte";
+  import type { Writable } from "svelte/store";
+  import { indicators } from "./theme";
+  import type { IndicatorsProps, State } from "$lib/types";
+  import clsx from "clsx";
 
-  export let activeClass = 'opacity-100';
-  export let inactiveClass = 'opacity-60';
+  let { children, activeClass, inactiveClass, class: className, ...restProps }: IndicatorsProps = $props();
 
-  const state = getContext<Writable<State>>('state');
+  const state = getContext<Writable<State>>("state");
+  const { base, indicator } = indicators();
 </script>
 
-<div class={twMerge('flex absolute bottom-5 start-1/2 z-30 space-x-3 rtl:space-x-reverse -translate-x-1/2 rtl:translate-x-1/2', $$props.class)}>
+<div class={base({ class: clsx(className) })} {...restProps}>
   {#each $state.images as _, idx}
     {@const selected = $state.index === idx}
-    <button on:click={() => ($state.index = idx)}>
-      <slot {Indicator} {selected} index={idx}>
-        <Indicator class={twMerge('bg-gray-100 hover:bg-gray-300', selected ? activeClass : inactiveClass)} />
-      </slot>
+    <button onclick={() => ($state.index = idx)}>
+      {#if children}
+        {@render children({ selected, index: idx })}
+      {:else}
+        <Indicator class={indicator({ selected, class: selected ? activeClass : inactiveClass })} />
+      {/if}
     </button>
   {/each}
 </div>
@@ -25,7 +28,12 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[IndicatorsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L404)
 ## Props
-@prop export let activeClass = 'opacity-100';
-@prop export let inactiveClass = 'opacity-60';
+@prop children
+@prop activeClass
+@prop inactiveClass
+@prop class: className
+@prop ...restProps
 -->

@@ -1,6 +1,0 @@
-{
-  "name": "NumberInput",
-  "slots": [],
-  "events": ["blur", "change", "click", "contextmenu", "focus", "keydown", "keypress", "keyup", "mouseover", "mouseenter", "mouseleave", "paste", "input"],
-  "props": [["value?", "number", "0"]]
-}

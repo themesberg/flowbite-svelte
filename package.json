@@ -1,9 +1,8 @@
 {
   "name": "flowbite-svelte",
-  "version": "0.48.6",
+  "version": "1.0.0-next.20",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
-  "packageManager": "pnpm@8.15.4",
   "author": {
     "name": "Shinichi Okada",
     "email": "connect@codewithshin.com",
@@ -24,61 +23,64 @@
     "lint:format": "prettier --plugin-search-dir . --check .",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
     "format": "prettier --plugin-search-dir . --write .",
-    "test:integration": "playwright test",
+    "test:e2e": "playwright test",
     "test:unit": "vitest",
     "gen:exports": "svelte-lib-helpers exports",
-    "gen:docs": "svelte-lib-helpers docs",
-    "gen:compo-data": "svelte-lib-helpers component-data",
-    "gen:componentData": "svelte-lib-helpers component-data",
-    "copy:package": "svelte-lib-helpers package",
-    "lib-helpers": "pnpm format && pnpm gen:docs && pnpm gen:componentData && pnpm package && pnpm gen:exports && pnpm copy:package",
-    "package:publish": "standard-version && git push --follow-tags origin main && npm publish",
+    "gen:docspropvalue": "svelte-lib-helpers docspropvalue themesberg/flowbite-svelte",
+    "gen:component-data-prop-value": "svelte-lib-helpers component-data-prop-value themesberg/flowbite-svelte",
+    "copy:packagejson": "svelte-lib-helpers package",
+    "lib-helpers": "pnpm gen:component-data-prop-value && pnpm gen:docspropvalue && pnpm format && pnpm package && pnpm gen:exports && pnpm copy:packagejson",
     "ch": "npx changeset",
     "cv": "npx changeset version",
     "cp": "npx changeset publish"
   },
   "devDependencies": {
-    "@changesets/cli": "2.27.10",
+    "@changesets/cli": "2.29.2",
     "@docsearch/css": "^3.9.0",
     "@docsearch/js": "^3.9.0",
-    "@playwright/test": "1.51.1",
-    "@sveltejs/adapter-vercel": "^5.6.2",
-    "@sveltejs/kit": "^2.17.2",
-    "@sveltejs/package": "2.3.7",
-    "@sveltejs/vite-plugin-svelte": "^3.1.2",
+    "@eslint/compat": "^1.2.8",
+    "@eslint/js": "^9.25.1",
+    "@playwright/test": "^1.52.0",
+    "@sveltejs/adapter-auto": "^6.0.0",
+    "@sveltejs/adapter-vercel": "^5.7.0",
+    "@sveltejs/kit": "^2.20.7",
+    "@sveltejs/package": "2.3.11",
+    "@sveltejs/vite-plugin-svelte": "^5.0.3",
     "@svitejs/changesets-changelog-github-compact": "^1.2.0",
-    "@tailwindcss/postcss": "^4.0.7",
-    "@types/eslint": "^9.6.1",
+    "@tailwindcss/vite": "^4.1.4",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/svelte": "^5.2.7",
+    "clsx": "^2.1.1",
     "dayjs": "^1.11.13",
-    "esbuild": "0.24.0",
-    "eslint": "^9.20.1",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-svelte": "^2.46.1",
-    "flowbite-svelte-icons": "^1.6.2",
-    "globals": "^15.15.0",
-    "mdsvex": "^0.12.3",
-    "mdsvexamples": "^0.4.1",
-    "postcss": "^8.5.3",
-    "prettier": "^3.5.1",
+    "deepmerge": "^4.3.1",
+    "eslint": "^9.25.1",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-svelte": "^3.5.1",
+    "flowbite-svelte-icons": "^2.1.1",
+    "globals": "^16.0.0",
+    "jsdom": "^26.1.0",
+    "mdsvex": "^0.12.5",
+    "mdsvexamples": "^0.5.0",
+    "prettier": "^3.5.3",
     "prettier-plugin-svelte": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "prism-themes": "^1.9.0",
-    "publint": "^0.2.12",
-    "svelte": "^4.2.19",
-    "svelte-check": "^4.1.4",
-    "svelte-lib-helpers": "^0.4.16",
-    "svelte-meta-tags": "^3.1.4",
-    "svelte-preprocess": "^6.0.3",
-    "svelte2tsx": "^0.7.34",
-    "tailwind-merge": "^1.13.1",
-    "tailwindcss": "^4.0.7",
-    "tslib": "^2.8.1",
-    "typescript": "^5.7.3",
-    "typescript-eslint": "8.16.0",
-    "vite": "^5.4.14",
-    "vitest": "^2.1.9"
+    "publint": "^0.3.12",
+    "svelte": "^5.28.2",
+    "svelte-check": "^4.1.6",
+    "svelte-lib-helpers": "^0.4.26",
+    "svelte-meta-tags": "^4.2.0",
+    "svelte-rune-highlight": "^0.6.6",
+    "tailwindcss": "^4.1.4",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "8.31.1",
+    "vite": "^6.3.3",
+    "vitest": "^3.1.2"
   },
   "peerDependencies": {
-    "svelte": "^3.55.1 || ^4.0.0 || ^5.0.0"
+    "svelte": "^5.0.0",
+    "tailwindcss": "^4.1.4"
   },
   "type": "module",
   "keywords": [
@@ -125,9 +127,11 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1.6.13",
-    "apexcharts": "^3.54.1",
+    "@floating-ui/utils": "^0.2.9",
+    "apexcharts": "^4.7.0",
     "flowbite": "^3.1.2",
-    "tailwind-merge": "^3.0.1"
+    "tailwind-merge": "^3.2.0",
+    "tailwind-variants": "^1.0.0"
   },
   "files": [
     "dist",
@@ -136,6 +140,11 @@
   ],
   "svelte": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -190,8 +199,8 @@
       "svelte": "./dist/breadcrumb/BreadcrumbItem.svelte"
     },
     "./ButtonGroup.svelte": {
-      "types": "./dist/button-group/ButtonGroup.svelte.d.ts",
-      "svelte": "./dist/button-group/ButtonGroup.svelte"
+      "types": "./dist/buttongroup/ButtonGroup.svelte.d.ts",
+      "svelte": "./dist/buttongroup/ButtonGroup.svelte"
     },
     "./Button.svelte": {
       "types": "./dist/buttons/Button.svelte.d.ts",
@@ -202,8 +211,8 @@
       "svelte": "./dist/buttons/GradientButton.svelte"
     },
     "./Card.svelte": {
-      "types": "./dist/cards/Card.svelte.d.ts",
-      "svelte": "./dist/cards/Card.svelte"
+      "types": "./dist/card/Card.svelte.d.ts",
+      "svelte": "./dist/card/Card.svelte"
     },
     "./Carousel.svelte": {
       "types": "./dist/carousel/Carousel.svelte.d.ts",
@@ -234,8 +243,8 @@
       "svelte": "./dist/carousel/Thumbnails.svelte"
     },
     "./Chart.svelte": {
-      "types": "./dist/charts/Chart.svelte.d.ts",
-      "svelte": "./dist/charts/Chart.svelte"
+      "types": "./dist/chart/Chart.svelte.d.ts",
+      "svelte": "./dist/chart/Chart.svelte"
     },
     "./DarkMode.svelte": {
       "types": "./dist/darkmode/DarkMode.svelte.d.ts",
@@ -281,6 +290,10 @@
       "types": "./dist/drawer/Drawer.svelte.d.ts",
       "svelte": "./dist/drawer/Drawer.svelte"
     },
+    "./Drawerhead.svelte": {
+      "types": "./dist/drawer/Drawerhead.svelte.d.ts",
+      "svelte": "./dist/drawer/Drawerhead.svelte"
+    },
     "./Dropdown.svelte": {
       "types": "./dist/dropdown/Dropdown.svelte.d.ts",
       "svelte": "./dist/dropdown/Dropdown.svelte"
@@ -288,6 +301,10 @@
     "./DropdownDivider.svelte": {
       "types": "./dist/dropdown/DropdownDivider.svelte.d.ts",
       "svelte": "./dist/dropdown/DropdownDivider.svelte"
+    },
+    "./DropdownGroup.svelte": {
+      "types": "./dist/dropdown/DropdownGroup.svelte.d.ts",
+      "svelte": "./dist/dropdown/DropdownGroup.svelte"
     },
     "./DropdownHeader.svelte": {
       "types": "./dist/dropdown/DropdownHeader.svelte.d.ts",
@@ -322,104 +339,80 @@
       "svelte": "./dist/footer/FooterLinkGroup.svelte"
     },
     "./Checkbox.svelte": {
-      "types": "./dist/forms/Checkbox.svelte.d.ts",
-      "svelte": "./dist/forms/Checkbox.svelte"
+      "types": "./dist/forms/checkbox/Checkbox.svelte.d.ts",
+      "svelte": "./dist/forms/checkbox/Checkbox.svelte"
     },
     "./CheckboxButton.svelte": {
-      "types": "./dist/forms/CheckboxButton.svelte.d.ts",
-      "svelte": "./dist/forms/CheckboxButton.svelte"
+      "types": "./dist/forms/checkbox-button/CheckboxButton.svelte.d.ts",
+      "svelte": "./dist/forms/checkbox-button/CheckboxButton.svelte"
     },
     "./Dropzone.svelte": {
-      "types": "./dist/forms/Dropzone.svelte.d.ts",
-      "svelte": "./dist/forms/Dropzone.svelte"
+      "types": "./dist/forms/dropzone/Dropzone.svelte.d.ts",
+      "svelte": "./dist/forms/dropzone/Dropzone.svelte"
     },
     "./Fileupload.svelte": {
-      "types": "./dist/forms/Fileupload.svelte.d.ts",
-      "svelte": "./dist/forms/Fileupload.svelte"
+      "types": "./dist/forms/fileupload/Fileupload.svelte.d.ts",
+      "svelte": "./dist/forms/fileupload/Fileupload.svelte"
     },
     "./FloatingLabelInput.svelte": {
-      "types": "./dist/forms/FloatingLabelInput.svelte.d.ts",
-      "svelte": "./dist/forms/FloatingLabelInput.svelte"
+      "types": "./dist/forms/floating-label-input/FloatingLabelInput.svelte.d.ts",
+      "svelte": "./dist/forms/floating-label-input/FloatingLabelInput.svelte"
     },
     "./Helper.svelte": {
-      "types": "./dist/forms/Helper.svelte.d.ts",
-      "svelte": "./dist/forms/Helper.svelte"
+      "types": "./dist/forms/helper/Helper.svelte.d.ts",
+      "svelte": "./dist/forms/helper/Helper.svelte"
     },
     "./Input.svelte": {
-      "types": "./dist/forms/Input.svelte.d.ts",
-      "svelte": "./dist/forms/Input.svelte"
+      "types": "./dist/forms/input/Input.svelte.d.ts",
+      "svelte": "./dist/forms/input/Input.svelte"
     },
     "./InputAddon.svelte": {
-      "types": "./dist/forms/InputAddon.svelte.d.ts",
-      "svelte": "./dist/forms/InputAddon.svelte"
+      "types": "./dist/forms/input-addon/InputAddon.svelte.d.ts",
+      "svelte": "./dist/forms/input-addon/InputAddon.svelte"
     },
     "./Label.svelte": {
-      "types": "./dist/forms/Label.svelte.d.ts",
-      "svelte": "./dist/forms/Label.svelte"
-    },
-    "./MultiSelect.svelte": {
-      "types": "./dist/forms/MultiSelect.svelte.d.ts",
-      "svelte": "./dist/forms/MultiSelect.svelte"
-    },
-    "./NumberInput.svelte": {
-      "types": "./dist/forms/NumberInput.svelte.d.ts",
-      "svelte": "./dist/forms/NumberInput.svelte"
+      "types": "./dist/forms/label/Label.svelte.d.ts",
+      "svelte": "./dist/forms/label/Label.svelte"
     },
     "./Radio.svelte": {
-      "types": "./dist/forms/Radio.svelte.d.ts",
-      "svelte": "./dist/forms/Radio.svelte"
+      "types": "./dist/forms/radio/Radio.svelte.d.ts",
+      "svelte": "./dist/forms/radio/Radio.svelte"
     },
     "./RadioButton.svelte": {
-      "types": "./dist/forms/RadioButton.svelte.d.ts",
-      "svelte": "./dist/forms/RadioButton.svelte"
+      "types": "./dist/forms/radio-button/RadioButton.svelte.d.ts",
+      "svelte": "./dist/forms/radio-button/RadioButton.svelte"
     },
     "./Range.svelte": {
-      "types": "./dist/forms/Range.svelte.d.ts",
-      "svelte": "./dist/forms/Range.svelte"
+      "types": "./dist/forms/range/Range.svelte.d.ts",
+      "svelte": "./dist/forms/range/Range.svelte"
     },
     "./Search.svelte": {
-      "types": "./dist/forms/Search.svelte.d.ts",
-      "svelte": "./dist/forms/Search.svelte"
+      "types": "./dist/forms/search/Search.svelte.d.ts",
+      "svelte": "./dist/forms/search/Search.svelte"
+    },
+    "./MultiSelect.svelte": {
+      "types": "./dist/forms/select/MultiSelect.svelte.d.ts",
+      "svelte": "./dist/forms/select/MultiSelect.svelte"
     },
     "./Select.svelte": {
-      "types": "./dist/forms/Select.svelte.d.ts",
-      "svelte": "./dist/forms/Select.svelte"
+      "types": "./dist/forms/select/Select.svelte.d.ts",
+      "svelte": "./dist/forms/select/Select.svelte"
     },
     "./Textarea.svelte": {
-      "types": "./dist/forms/Textarea.svelte.d.ts",
-      "svelte": "./dist/forms/Textarea.svelte"
-    },
-    "./Timepicker.svelte": {
-      "types": "./dist/forms/Timepicker.svelte.d.ts",
-      "svelte": "./dist/forms/Timepicker.svelte"
+      "types": "./dist/forms/textarea/Textarea.svelte.d.ts",
+      "svelte": "./dist/forms/textarea/Textarea.svelte"
     },
     "./Toggle.svelte": {
-      "types": "./dist/forms/Toggle.svelte.d.ts",
-      "svelte": "./dist/forms/Toggle.svelte"
+      "types": "./dist/forms/toggle/Toggle.svelte.d.ts",
+      "svelte": "./dist/forms/toggle/Toggle.svelte"
     },
     "./Gallery.svelte": {
       "types": "./dist/gallery/Gallery.svelte.d.ts",
       "svelte": "./dist/gallery/Gallery.svelte"
     },
     "./Indicator.svelte": {
-      "types": "./dist/indicators/Indicator.svelte.d.ts",
-      "svelte": "./dist/indicators/Indicator.svelte"
-    },
-    "./ArrowKeyDown.svelte": {
-      "types": "./dist/kbd/ArrowKeyDown.svelte.d.ts",
-      "svelte": "./dist/kbd/ArrowKeyDown.svelte"
-    },
-    "./ArrowKeyLeft.svelte": {
-      "types": "./dist/kbd/ArrowKeyLeft.svelte.d.ts",
-      "svelte": "./dist/kbd/ArrowKeyLeft.svelte"
-    },
-    "./ArrowKeyRight.svelte": {
-      "types": "./dist/kbd/ArrowKeyRight.svelte.d.ts",
-      "svelte": "./dist/kbd/ArrowKeyRight.svelte"
-    },
-    "./ArrowKeyUp.svelte": {
-      "types": "./dist/kbd/ArrowKeyUp.svelte.d.ts",
-      "svelte": "./dist/kbd/ArrowKeyUp.svelte"
+      "types": "./dist/indicator/Indicator.svelte.d.ts",
+      "svelte": "./dist/indicator/Indicator.svelte"
     },
     "./Kbd.svelte": {
       "types": "./dist/kbd/Kbd.svelte.d.ts",
@@ -432,10 +425,6 @@
     "./ListgroupItem.svelte": {
       "types": "./dist/list-group/ListgroupItem.svelte.d.ts",
       "svelte": "./dist/list-group/ListgroupItem.svelte"
-    },
-    "./Marquee.svelte": {
-      "types": "./dist/marquee/Marquee.svelte.d.ts",
-      "svelte": "./dist/marquee/Marquee.svelte"
     },
     "./MegaMenu.svelte": {
       "types": "./dist/mega-menu/MegaMenu.svelte.d.ts",
@@ -493,6 +482,10 @@
       "types": "./dist/rating/AdvancedRating.svelte.d.ts",
       "svelte": "./dist/rating/AdvancedRating.svelte"
     },
+    "./CustomIcon.svelte": {
+      "types": "./dist/rating/CustomIcon.svelte.d.ts",
+      "svelte": "./dist/rating/CustomIcon.svelte"
+    },
     "./Heart.svelte": {
       "types": "./dist/rating/Heart.svelte.d.ts",
       "svelte": "./dist/rating/Heart.svelte"
@@ -529,13 +522,13 @@
       "types": "./dist/sidebar/SidebarBrand.svelte.d.ts",
       "svelte": "./dist/sidebar/SidebarBrand.svelte"
     },
+    "./SidebarButton.svelte": {
+      "types": "./dist/sidebar/SidebarButton.svelte.d.ts",
+      "svelte": "./dist/sidebar/SidebarButton.svelte"
+    },
     "./SidebarCta.svelte": {
       "types": "./dist/sidebar/SidebarCta.svelte.d.ts",
       "svelte": "./dist/sidebar/SidebarCta.svelte"
-    },
-    "./SidebarDropdownItem.svelte": {
-      "types": "./dist/sidebar/SidebarDropdownItem.svelte.d.ts",
-      "svelte": "./dist/sidebar/SidebarDropdownItem.svelte"
     },
     "./SidebarDropdownWrapper.svelte": {
       "types": "./dist/sidebar/SidebarDropdownWrapper.svelte.d.ts",
@@ -593,13 +586,13 @@
       "types": "./dist/speed-dial/SpeedDialButton.svelte.d.ts",
       "svelte": "./dist/speed-dial/SpeedDialButton.svelte"
     },
+    "./SpeedDialTrigger.svelte": {
+      "types": "./dist/speed-dial/SpeedDialTrigger.svelte.d.ts",
+      "svelte": "./dist/speed-dial/SpeedDialTrigger.svelte"
+    },
     "./Spinner.svelte": {
       "types": "./dist/spinner/Spinner.svelte.d.ts",
       "svelte": "./dist/spinner/Spinner.svelte"
-    },
-    "./StepIndicator.svelte": {
-      "types": "./dist/steps/StepIndicator.svelte.d.ts",
-      "svelte": "./dist/steps/StepIndicator.svelte"
     },
     "./Table.svelte": {
       "types": "./dist/table/Table.svelte.d.ts",
@@ -636,6 +629,10 @@
     "./Tabs.svelte": {
       "types": "./dist/tabs/Tabs.svelte.d.ts",
       "svelte": "./dist/tabs/Tabs.svelte"
+    },
+    "./Theme.svelte": {
+      "types": "./dist/theme/Theme.svelte.d.ts",
+      "svelte": "./dist/theme/Theme.svelte"
     },
     "./Activity.svelte": {
       "types": "./dist/timeline/Activity.svelte.d.ts",
@@ -682,76 +679,72 @@
       "svelte": "./dist/tooltip/Tooltip.svelte"
     },
     "./A.svelte": {
-      "types": "./dist/typography/A.svelte.d.ts",
-      "svelte": "./dist/typography/A.svelte"
+      "types": "./dist/typography/anchor/A.svelte.d.ts",
+      "svelte": "./dist/typography/anchor/A.svelte"
     },
     "./Blockquote.svelte": {
-      "types": "./dist/typography/Blockquote.svelte.d.ts",
-      "svelte": "./dist/typography/Blockquote.svelte"
+      "types": "./dist/typography/blockquote/Blockquote.svelte.d.ts",
+      "svelte": "./dist/typography/blockquote/Blockquote.svelte"
     },
     "./DescriptionList.svelte": {
-      "types": "./dist/typography/DescriptionList.svelte.d.ts",
-      "svelte": "./dist/typography/DescriptionList.svelte"
+      "types": "./dist/typography/descriptionlist/DescriptionList.svelte.d.ts",
+      "svelte": "./dist/typography/descriptionlist/DescriptionList.svelte"
     },
     "./Heading.svelte": {
-      "types": "./dist/typography/Heading.svelte.d.ts",
-      "svelte": "./dist/typography/Heading.svelte"
+      "types": "./dist/typography/heading/Heading.svelte.d.ts",
+      "svelte": "./dist/typography/heading/Heading.svelte"
     },
     "./Hr.svelte": {
-      "types": "./dist/typography/Hr.svelte.d.ts",
-      "svelte": "./dist/typography/Hr.svelte"
+      "types": "./dist/typography/hr/Hr.svelte.d.ts",
+      "svelte": "./dist/typography/hr/Hr.svelte"
+    },
+    "./EnhancedImg.svelte": {
+      "types": "./dist/typography/img/EnhancedImg.svelte.d.ts",
+      "svelte": "./dist/typography/img/EnhancedImg.svelte"
     },
     "./Img.svelte": {
-      "types": "./dist/typography/Img.svelte.d.ts",
-      "svelte": "./dist/typography/Img.svelte"
+      "types": "./dist/typography/img/Img.svelte.d.ts",
+      "svelte": "./dist/typography/img/Img.svelte"
     },
     "./Layout.svelte": {
-      "types": "./dist/typography/Layout.svelte.d.ts",
-      "svelte": "./dist/typography/Layout.svelte"
+      "types": "./dist/typography/layout/Layout.svelte.d.ts",
+      "svelte": "./dist/typography/layout/Layout.svelte"
     },
     "./Li.svelte": {
-      "types": "./dist/typography/Li.svelte.d.ts",
-      "svelte": "./dist/typography/Li.svelte"
+      "types": "./dist/typography/list/Li.svelte.d.ts",
+      "svelte": "./dist/typography/list/Li.svelte"
     },
     "./List.svelte": {
-      "types": "./dist/typography/List.svelte.d.ts",
-      "svelte": "./dist/typography/List.svelte"
+      "types": "./dist/typography/list/List.svelte.d.ts",
+      "svelte": "./dist/typography/list/List.svelte"
     },
     "./Mark.svelte": {
-      "types": "./dist/typography/Mark.svelte.d.ts",
-      "svelte": "./dist/typography/Mark.svelte"
+      "types": "./dist/typography/mark/Mark.svelte.d.ts",
+      "svelte": "./dist/typography/mark/Mark.svelte"
     },
     "./P.svelte": {
-      "types": "./dist/typography/P.svelte.d.ts",
-      "svelte": "./dist/typography/P.svelte"
+      "types": "./dist/typography/paragraph/P.svelte.d.ts",
+      "svelte": "./dist/typography/paragraph/P.svelte"
     },
     "./Secondary.svelte": {
-      "types": "./dist/typography/Secondary.svelte.d.ts",
-      "svelte": "./dist/typography/Secondary.svelte"
+      "types": "./dist/typography/secondary/Secondary.svelte.d.ts",
+      "svelte": "./dist/typography/secondary/Secondary.svelte"
     },
     "./Span.svelte": {
-      "types": "./dist/typography/Span.svelte.d.ts",
-      "svelte": "./dist/typography/Span.svelte"
+      "types": "./dist/typography/span/Span.svelte.d.ts",
+      "svelte": "./dist/typography/span/Span.svelte"
+    },
+    "./Arrow.svelte": {
+      "types": "./dist/utils/Arrow.svelte.d.ts",
+      "svelte": "./dist/utils/Arrow.svelte"
     },
     "./CloseButton.svelte": {
       "types": "./dist/utils/CloseButton.svelte.d.ts",
       "svelte": "./dist/utils/CloseButton.svelte"
     },
-    "./Frame.svelte": {
-      "types": "./dist/utils/Frame.svelte.d.ts",
-      "svelte": "./dist/utils/Frame.svelte"
-    },
     "./Popper.svelte": {
       "types": "./dist/utils/Popper.svelte.d.ts",
       "svelte": "./dist/utils/Popper.svelte"
-    },
-    "./TransitionFrame.svelte": {
-      "types": "./dist/utils/TransitionFrame.svelte.d.ts",
-      "svelte": "./dist/utils/TransitionFrame.svelte"
-    },
-    "./Wrapper.svelte": {
-      "types": "./dist/utils/Wrapper.svelte.d.ts",
-      "svelte": "./dist/utils/Wrapper.svelte"
     },
     "./Video.svelte": {
       "types": "./dist/video/Video.svelte.d.ts",

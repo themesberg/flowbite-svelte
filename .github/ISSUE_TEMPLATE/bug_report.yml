@@ -1,6 +1,6 @@
 name: "\U0001F41E Bug report"
 description: Report an issue with Flowbite-Svelte
-labels: ['triage: bug']
+labels: ["triage: bug"]
 body:
   - type: markdown
     attributes:
@@ -18,14 +18,14 @@ body:
     id: reproduction
     attributes:
       label: Reproduction
-      description: Please use [this Stackblitz template](https://stackblitz.com/~/github.com/shinokada/flowbite-svelte-issue-template) to fork and add your code. If a report is vague (e.g. just a generic error message) and has no reproduction, it will receive a "need reproduction" label. If no reproduction is provided within a reasonable time-frame, the issue will be closed.
-      placeholder: Stackblitz, Repl.
+      description: Please provide code or a link to a repo that can reproduce the problem you ran into. Use [Stackblitz](https://stackblitz.com/) to add your code. If a report is vague (e.g. just a generic error message) and has no reproduction, it will receive a "need reproduction" label. If no reproduction is provided within a reasonable time-frame, the issue will be closed.
+      placeholder: Repo, Stackblitz, demo.
     validations:
       required: true
   - type: textarea
     id: system-info
     attributes:
-      label: Flowbite version and System Info
+      label: Version and System Info
       description: Output of `npx envinfo --system --npmPackages svelte,@sveltejs/kit,flowbite-svelte,vite,rollup,webpack --binaries --browsers`
       render: shell
       placeholder: Version, System, Binaries, Browsers

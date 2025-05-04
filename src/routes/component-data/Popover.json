@@ -1,9 +1,17 @@
 {
   "name": "Popover",
-  "slots": ["title"],
-  "events": ["show"],
+  "type": {
+    "name": "PopoverProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L995"
+  },
   "props": [
-    ["title?", "string", ""],
-    ["defaultClass?", "string", ""]
+    ["title: titleSlot", ""],
+    ["color", "\"default\""],
+    ["trigger", "\"hover\""],
+    ["defaultClass", ""],
+    ["arrow", "true"],
+    ["children", ""],
+    ["placement", "\"top\""],
+    ["class: className", ""]
   ]
 }

@@ -1,15 +1,19 @@
 {
   "name": "RadioButton",
-  "slots": [],
-  "events": ["keyup", "keydown", "keypress", "focus", "blur", "click", "mouseover", "mouseenter", "mouseleave", "paste", "change"],
+  "type": {
+    "name": "RadioButtonProps<T>",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L744"
+  },
   "props": [
-    ["group", "string | number", "''"],
-    ["value", "string | number", "''"],
-    ["inline?", "boolean", "true"],
-    ["pill?", "boolean", "false"],
-    ["outline?", "boolean", "false"],
-    ["size?", "SizeType | undefined", "undefined"],
-    ["color?", "ButtonColorType | undefined", "undefined"],
-    ["shadow?", "boolean", "false"]
+    ["children", ""],
+    ["group", "$bindable<T>()"],
+    ["value", "$bindable<T>()"],
+    ["inline", ""],
+    ["pill", ""],
+    ["outline", ""],
+    ["size", ""],
+    ["color", ""],
+    ["shadow", ""],
+    ["class: className", ""]
   ]
 }

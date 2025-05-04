@@ -1,57 +1,36 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
+  import { tablet } from ".";
+  import type { TabletProps } from "$lib/types";
 
-  interface $$Props {
-    div?: string;
-    slot?: string;
-    leftTop?: string;
-    leftMid?: string;
-    leftBot?: string;
-    right?: string;
-    classLeftTop?: string;
-    classLeftMid?: string;
-    classLeftBot?: string;
-    classRight?: string;
-    classSlot?: string;
-    class?: string;
-  }
+  let { children, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: TabletProps = $props();
 
-  export let div: $$Props['div'] = 'relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[454px] max-w-[341px] md:h-[682px] md:max-w-[512px]';
-  export let slot: $$Props['slot'] = 'rounded-[2rem] overflow-hidden h-[426px] md:h-[654px] bg-white dark:bg-gray-800';
-  export let leftTop: $$Props['leftTop'] = 'h-[32px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[72px] rounded-l-lg';
-  export let leftMid: $$Props['leftMid'] = 'h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[124px] rounded-l-lg';
-  export let leftBot: $$Props['leftBot'] = 'h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg';
-  export let right: $$Props['right'] = 'h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg';
-  export let classLeftTop: $$Props['classLeftTop'] = '';
-  export let classLeftMid: $$Props['classLeftMid'] = '';
-  export let classLeftBot: $$Props['classLeftBot'] = '';
-  export let classRight: $$Props['classRight'] = '';
-  export let classSlot: $$Props['classSlot'] = '';
+  const { div, leftTop, leftMid, leftBot, right, slot } = tablet();
 </script>
 
-<div class={twMerge(div, $$props.class)}>
-  <div class={twMerge(leftTop, classLeftTop)}></div>
-  <div class={twMerge(leftMid, classLeftMid)}></div>
-  <div class={twMerge(leftBot, classLeftBot)}></div>
-  <div class={twMerge(right, classRight)}></div>
-  <div class={twMerge(slot, classSlot)}>
-    <slot></slot>
+<div {...restProps} class={div({ class: divClass })}>
+  <div class={leftTop({ class: div2Class })}></div>
+  <div class={leftMid({ class: div3Class })}></div>
+  <div class={leftBot({ class: div4Class })}></div>
+  <div class={right({ class: div5Class })}></div>
+  <div class={slot({ class: div6Class })}>
+    {#if children}
+      {@render children()}
+    {/if}
   </div>
 </div>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[TabletProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L534)
 ## Props
-@prop export let div: $$Props['div'] = 'relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[454px] max-w-[341px] md:h-[682px] md:max-w-[512px]';
-@prop export let slot: $$Props['slot'] = 'rounded-[2rem] overflow-hidden h-[426px] md:h-[654px] bg-white dark:bg-gray-800';
-@prop export let leftTop: $$Props['leftTop'] = 'h-[32px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[72px] rounded-l-lg';
-@prop export let leftMid: $$Props['leftMid'] = 'h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[124px] rounded-l-lg';
-@prop export let leftBot: $$Props['leftBot'] = 'h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg';
-@prop export let right: $$Props['right'] = 'h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg';
-@prop export let classLeftTop: $$Props['classLeftTop'] = '';
-@prop export let classLeftMid: $$Props['classLeftMid'] = '';
-@prop export let classLeftBot: $$Props['classLeftBot'] = '';
-@prop export let classRight: $$Props['classRight'] = '';
-@prop export let classSlot: $$Props['classSlot'] = '';
+@prop children
+@prop divClass
+@prop div2Class
+@prop div3Class
+@prop div4Class
+@prop div5Class
+@prop div6Class
+@prop ...restProps
 -->

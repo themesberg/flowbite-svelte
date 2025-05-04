@@ -1,32 +1,24 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
-  import type { HTMLButtonAttributes } from 'svelte/elements';
+  import clsx from "clsx";
+  import { bottomnavheaderitem } from ".";
+  import type { BottomNavHeaderItemProps } from "$lib/types";
 
-  interface $$Props extends HTMLButtonAttributes {
-    itemName: string;
-    active: boolean;
-    defaultClass: string;
-    activeClass: string;
-  }
-
-  export let itemName: $$Props['itemName'] = '';
-  export let active: $$Props['active'] = false;
-  export let defaultClass: $$Props['defaultClass'] = 'px-5 py-1.5 text-xs font-medium text-gray-900 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700 rounded-lg';
-  export let activeClass: $$Props['activeClass'] = 'px-5 py-1.5 text-xs font-medium text-white bg-gray-900 dark:bg-gray-300 dark:text-gray-900 rounded-lg';
-
-  $: btnClass = active ? activeClass : defaultClass;
+  let { itemName, active, class: className, ...restProps }: BottomNavHeaderItemProps = $props();
+  let base = $derived(bottomnavheaderitem({ active, class: clsx(className) }));
 </script>
 
-<button class={twMerge(btnClass, $$props.class)} {...$$restProps} on:click on:change on:keydown on:keyup on:focus on:blur on:mouseenter on:mouseleave>
+<button {...restProps} class={base}>
   {itemName}
 </button>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L303)
 ## Props
-@prop export let itemName: $$Props['itemName'] = '';
-@prop export let active: $$Props['active'] = false;
-@prop export let defaultClass: $$Props['defaultClass'] = 'px-5 py-1.5 text-xs font-medium text-gray-900 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700 rounded-lg';
-@prop export let activeClass: $$Props['activeClass'] = 'px-5 py-1.5 text-xs font-medium text-white bg-gray-900 dark:bg-gray-300 dark:text-gray-900 rounded-lg';
+@prop itemName
+@prop active
+@prop class: className
+@prop ...restProps
 -->

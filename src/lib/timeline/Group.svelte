@@ -1,46 +1,27 @@
 <script lang="ts">
-  import type { HTMLOlAttributes } from 'svelte/elements';
-  import { twMerge } from 'tailwind-merge';
-
-  interface $$Props extends HTMLOlAttributes {
-    divClass?: string;
-    timeClass?: string;
-    date?: Date | string;
-    olClass?: string;
-    classDiv?: string;
-    classTime?: string;
-    classOl?: string;
-  }
-
-  export let divClass: $$Props['divClass'] = 'p-5 mb-4 bg-gray-50 rounded-lg border border-gray-100 dark:bg-gray-800 dark:border-gray-700';
-  export let timeClass: $$Props['timeClass'] = 'text-lg font-semibold text-gray-900 dark:text-white';
-  export let date: $$Props['date'] = '';
-  export let olClass: $$Props['olClass'] = 'mt-3 divide-y divider-gray-200 dark:divide-gray-700';
-  export let classDiv: $$Props['classDiv'] = '';
-  export let classTime: $$Props['classTime'] = '';
-  export let classOl: $$Props['classOl'] = '';
-  
-  let divCls: string = twMerge(divClass, classDiv);
-  let timeCls: string = twMerge(timeClass, classTime);
-  let olCls: string = twMerge(olClass, classOl);
+  import { group } from ".";
+  import type { GroupProps } from "$lib/types";
+  let { children, divClass, timeClass, date, olClass, ...restProps }: GroupProps = $props();
+  const { div, time, ol } = $derived(group());
 </script>
 
-<div class={divCls}>
-  <time class={timeCls}>{date}</time>
-  <ol {...$$restProps} class={olCls}>
-    <slot />
+<div class={div({ class: divClass })}>
+  <time class={time({ class: timeClass })}>{date}</time>
+  <ol {...restProps} class={ol({ class: olClass })}>
+    {@render children()}
   </ol>
 </div>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1473)
 ## Props
-@prop export let divClass: $$Props['divClass'] = 'p-5 mb-4 bg-gray-50 rounded-lg border border-gray-100 dark:bg-gray-800 dark:border-gray-700';
-@prop export let timeClass: $$Props['timeClass'] = 'text-lg font-semibold text-gray-900 dark:text-white';
-@prop export let date: $$Props['date'] = '';
-@prop export let olClass: $$Props['olClass'] = 'mt-3 divide-y divider-gray-200 dark:divide-gray-700';
-@prop export let classDiv: $$Props['classDiv'] = '';
-@prop export let classTime: $$Props['classTime'] = '';
-@prop export let classOl: $$Props['classOl'] = '';
+@prop children
+@prop divClass
+@prop timeClass
+@prop date
+@prop olClass
+@prop ...restProps
 -->

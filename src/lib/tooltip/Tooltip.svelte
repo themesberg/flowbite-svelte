@@ -1,41 +1,40 @@
 <script lang="ts">
-  import type { ComponentProps } from 'svelte';
-  import Popper from '../utils/Popper.svelte';
-  import { twMerge } from 'tailwind-merge';
+  import clsx from "clsx";
+  import Popper from "../utils/Popper.svelte";
+  import { tooltip } from "./theme";
+  import type { TooltipProps, TriggeredToggleEvent } from "$lib";
 
-  interface $$Props extends ComponentProps<Popper> {
-    type?: 'dark' | 'light' | 'auto' | 'custom';
-    defaultClass?: string;
-  }
+  let { type = "dark", color = undefined, trigger = "hover", arrow = true, children, placement = "top", onbeforetoggle: _onbeforetoggle, class: className, ...restProps }: TooltipProps = $props();
 
-  export let type: 'dark' | 'light' | 'auto' | 'custom' = 'dark';
-  export let defaultClass: string = 'py-2 px-3 text-sm font-medium';
+  let { base } = $derived(tooltip({ color, type }));
 
-  const types = {
-    dark: 'bg-gray-900 text-white dark:bg-gray-700',
-    light: 'border-gray-200 bg-white text-gray-900',
-    auto: ' bg-white text-gray-900 dark:bg-gray-700 dark:text-white border-gray-200 dark:border-gray-700',
-    custom: ''
-  };
-
-  let toolTipClass: string;
-  $: {
-    if ($$restProps.color) type = 'custom';
-    else $$restProps.color = 'none';
-
-    if (['light', 'auto'].includes(type)) $$restProps.border = true;
-    toolTipClass = twMerge('tooltip', defaultClass, types[type], $$props.class);
+  function onbeforetoggle(ev: TriggeredToggleEvent) {
+    // block all focusable elements inside the tooltip
+    if (ev.target instanceof HTMLElement) {
+      ev.target.querySelectorAll('a, button, input, textarea, select, details, [tabindex], [contenteditable="true"]').forEach((element) => element.setAttribute("tabindex", "-1"));
+    }
+    // bubble event to parent
+    _onbeforetoggle?.(ev);
   }
 </script>
 
-<Popper rounded shadow {...$$restProps} class={toolTipClass} on:show>
-  <slot />
+<Popper {...restProps} {placement} {trigger} {arrow} class={base({ class: clsx(className) })} {onbeforetoggle}>
+  <div class="pointer-events-none">{@render children()}</div>
 </Popper>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[TooltipProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1527)
 ## Props
-@prop export let type: 'dark' | 'light' | 'auto' | 'custom' = 'dark';
-@prop export let defaultClass: string = 'py-2 px-3 text-sm font-medium';
+@prop type = "dark"
+@prop color = undefined
+@prop trigger = "hover"
+@prop arrow = true
+@prop children
+@prop placement = "top"
+@prop onbeforetoggle: _onbeforetoggle
+@prop class: className
+@prop ...restProps
 -->

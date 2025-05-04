@@ -1,6 +1,12 @@
 {
   "name": "Timeline",
-  "slots": [],
-  "events": [],
-  "props": [["order?", "'default' | 'vertical' | 'horizontal' | 'activity' | 'group'", ""]]
+  "type": {
+    "name": "TimelineProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1492"
+  },
+  "props": [
+    ["children", ""],
+    ["order", "\"default\""],
+    ["class: className", ""]
+  ]
 }

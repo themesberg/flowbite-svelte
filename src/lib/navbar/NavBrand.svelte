@@ -1,21 +1,22 @@
 <script lang="ts">
-  import type { HTMLAreaAttributes } from 'svelte/elements';
-  import { twMerge } from 'tailwind-merge';
-  
-  interface $$Props extends HTMLAreaAttributes{
-    href?: string;
-  }
+  import clsx from "clsx";
+  import { navbar_brand } from "./theme";
+  import type { NavBrandProps } from "$lib/types";
 
-  export let href: $$Props['href'] = '';
+  let { children, class: className, ...restProps }: NavBrandProps = $props();
 </script>
 
-<a {href} {...$$restProps} class={twMerge('flex items-center', $$props.class)}>
-  <slot />
+<a {...restProps} class={navbar_brand({ class: clsx(className) })}>
+  {@render children?.()}
 </a>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[NavBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L923)
 ## Props
-@prop export let href: $$Props['href'] = '';
+@prop children
+@prop class: className
+@prop ...restProps
 -->

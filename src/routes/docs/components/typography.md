@@ -98,23 +98,23 @@ Use the following code to create list items with ordered and unordered lists.
 
 ```svelte example hideResponsiveButtons
 <script>
-  import { List, Li, Heading } from 'flowbite-svelte';
+  import { List, Li, Heading } from "flowbite-svelte";
 </script>
 
 <Heading tag="h5">List disc</Heading>
-<List list="disc">
+<List class="list-disc">
   <Li>Design</Li>
   <Li>Develop</Li>
   <Li>Test</Li>
 </List>
 <Heading tag="h5">List decimal</Heading>
-<List list="decimal">
+<List class="list-decimal">
   <Li>Design</Li>
   <Li>Develop</Li>
   <Li>Test</Li>
 </List>
 <Heading tag="h5">List none</Heading>
-<List list="none">
+<List class="list-none">
   <Li>Design</Li>
   <Li>Develop</Li>
   <Li>Test</Li>
@@ -123,11 +123,11 @@ Use the following code to create list items with ordered and unordered lists.
 
 ## List position
 
-Use the list-inside and list-outside classes to set the list item position inside a list component.
+Use the `position="inside"` and `position="outside"` props to set the list item position inside or outside of a list component.
 
 ```svelte example hideResponsiveButtons
 <script>
-  import { List, Li, Heading } from 'flowbite-svelte';
+  import { List, Li, Heading } from "flowbite-svelte";
 </script>
 
 <Heading tag="h5">List inside</Heading>

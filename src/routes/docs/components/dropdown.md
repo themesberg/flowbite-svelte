@@ -9,7 +9,7 @@ thumnailSize: w-28
 ---
 
 <script>
-  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, P, A } from '$lib'
   const dirName = toKebabCase(component_title)
 </script>
@@ -20,7 +20,7 @@ The dropdown component can be used to show a list of menu items when clicking on
 
 ```svelte example hideOutput
 <script>
-  import { Dropdown, DropdownItem, DropdownDivider, DropdownHeader } from 'flowbite-svelte';
+  import { Dropdown, DropdownItem, DropdownDivider, DropdownHeader } from "flowbite-svelte";
 </script>
 ```
 
@@ -30,12 +30,12 @@ If you want to show a dropdown menu when clicking on an element add the `Dropdow
 
 ```svelte example class="flex justify-center items-start h-64" hideResponsiveButtons
 <script>
-  import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Button, Dropdown, DropdownItem } from "flowbite-svelte";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
 </script>
 
-<Button>Dropdown button<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
-<Dropdown>
+<Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
+<Dropdown simple>
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
@@ -49,14 +49,14 @@ Utilize the `href` prop within the `DropdownItem` component to incorporate a hyp
 
 ```svelte example class="flex justify-center items-start h-64" hideResponsiveButtons
 <script>
-  import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
-  import { page } from '$app/stores';
-  $: activeUrl = $page.url.pathname;
+  import { Button, Dropdown, DropdownItem } from "flowbite-svelte";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
+  import { page } from "$app/state";
+  let activeUrl = $derived(page.url.pathname);
 </script>
 
-<Button>Dropdown button<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
-<Dropdown {activeUrl}>
+<Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
+<Dropdown {activeUrl} simple>
   <DropdownItem href="/">Home</DropdownItem>
   <DropdownItem href="/docs/components/dropdown">Dropdown</DropdownItem>
   <DropdownItem href="/docs/components/accordion">Accordion</DropdownItem>
@@ -68,15 +68,15 @@ To change the active class, use the `activeClass` prop:
 
 ```svelte example class="flex justify-center items-start h-64" hideResponsiveButtons
 <script>
-  import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
-  import { page } from '$app/stores';
-  $: activeUrl = $page.url.pathname;
-  let activeClass = 'text-green-500 dark:text-green-300 hover:text-green-700 dark:hover:text-green-500';
+  import { Button, Dropdown, DropdownItem } from "flowbite-svelte";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
+  import { page } from "$app/state";
+  let activeUrl = $derived(page.url.pathname);
+  let activeClass = "text-green-500 dark:text-green-300 hover:text-green-700 dark:hover:text-green-500";
 </script>
 
-<Button>Dropdown button<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
-<Dropdown {activeUrl} {activeClass}>
+<Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
+<Dropdown {activeUrl} class={activeClass} simple>
   <DropdownItem href="/">Home</DropdownItem>
   <DropdownItem href="/docs/components/dropdown">Dropdown</DropdownItem>
   <DropdownItem href="/docs/components/accordion">Accordion</DropdownItem>
@@ -90,17 +90,17 @@ You can use the `DropdownDivider` component to add separate elements inside the 
 
 ```svelte example class="flex justify-center items-start h-64" hideResponsiveButtons
 <script>
-  import { Button, Dropdown, DropdownItem, DropdownDivider } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Button, Dropdown, DropdownItem, DropdownDivider } from "flowbite-svelte";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
 </script>
 
-<Button>Dropdown button<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
-<Dropdown>
+<Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
+<Dropdown simple>
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownDivider />
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem slot="footer">Separated link</DropdownItem>
+  <DropdownItem>Separated link</DropdownItem>
 </Dropdown>
 ```
 
@@ -110,20 +110,22 @@ Use this example to show extra information outside of the list of menu items ins
 
 ```svelte example class="flex justify-center items-start h-80" hideResponsiveButtons
 <script>
-  import { Button, Dropdown, DropdownItem, DropdownDivider, DropdownHeader } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Button, Dropdown, DropdownItem, DropdownDivider, DropdownGroup, DropdownHeader } from "flowbite-svelte";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
 </script>
 
-<Button>Dropdown button<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
+<Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
 <Dropdown>
-  <div slot="header" class="px-4 py-2">
+  <DropdownHeader>
     <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
     <span class="block truncate text-sm font-medium">name@flowbite.com</span>
-  </div>
-  <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem>Settings</DropdownItem>
-  <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem slot="footer">Sign out</DropdownItem>
+  </DropdownHeader>
+  <DropdownGroup>
+    <DropdownItem>Dashboard</DropdownItem>
+    <DropdownItem>Settings</DropdownItem>
+    <DropdownItem>Earnings</DropdownItem>
+    <DropdownItem>Sign out</DropdownItem>
+  </DropdownGroup>
 </Dropdown>
 ```
 
@@ -133,23 +135,23 @@ Use this example to enable multi-level dropdown menus by adding stacked elements
 
 ```svelte example class="flex justify-center items-start h-64" hideResponsiveButtons
 <script>
-  import { Button, Dropdown, DropdownItem, DropdownDivider } from 'flowbite-svelte';
-  import { ChevronDownOutline, ChevronRightOutline } from 'flowbite-svelte-icons';
+  import { Button, Dropdown, DropdownItem, DropdownDivider } from "flowbite-svelte";
+  import { ChevronDownOutline, ChevronRightOutline } from "flowbite-svelte-icons";
 </script>
 
-<Button>Dropdown button<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
-<Dropdown>
+<Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
+<Dropdown simple>
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem class="flex items-center justify-between">
-    Dropdown<ChevronRightOutline class="w-6 h-6 ms-2 text-primary-700 dark:text-white" />
+    Dropdown<ChevronRightOutline class="text-primary-700 ms-2 h-6 w-6 dark:text-white" />
   </DropdownItem>
-  <Dropdown placement="right-start">
+  <Dropdown simple placement="right-start">
     <DropdownItem>Overview</DropdownItem>
     <DropdownItem>My downloads</DropdownItem>
     <DropdownItem>Billing</DropdownItem>
   </Dropdown>
   <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem slot="footer">Sign out</DropdownItem>
+  <DropdownItem>Sign out</DropdownItem>
 </Dropdown>
 ```
 
@@ -159,24 +161,24 @@ When you want to control your dropdown open status via javascript code you can b
 
 ```svelte example class="flex justify-center items-start h-64" hideResponsiveButtons
 <script>
-  import { Button, Dropdown, DropdownItem, DropdownDivider } from 'flowbite-svelte';
-  import { ChevronDownOutline, ChevronRightOutline } from 'flowbite-svelte-icons';
-  let dropdownOpen = false;
+  import { Button, Dropdown, DropdownItem, DropdownDivider } from "flowbite-svelte";
+  import { ChevronDownOutline, ChevronRightOutline } from "flowbite-svelte-icons";
+  let dropdownOpen = $state(false);
 </script>
 
-<Button>Dropdown button<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
-<Dropdown bind:open={dropdownOpen}>
-  <DropdownItem on:click={() => (dropdownOpen = false)}>Dashboard (close)</DropdownItem>
+<Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
+<Dropdown simple>
+  <DropdownItem onclick={() => (dropdownOpen = false)}>Dashboard (close)</DropdownItem>
   <DropdownItem class="flex items-center justify-between">
-    Dropdown<ChevronRightOutline class="w-6 h-6 ms-2 text-primary-700 dark:text-white" />
+    Dropdown<ChevronRightOutline class="text-primary-700 ms-2 h-6 w-6 dark:text-white" />
   </DropdownItem>
-  <Dropdown placement="right-start">
-    <DropdownItem on:click={() => (dropdownOpen = false)}>Overview (close)</DropdownItem>
+  <Dropdown simple placement="right-start">
+    <DropdownItem onclick={() => (dropdownOpen = false)}>Overview (close)</DropdownItem>
     <DropdownItem>My downloads</DropdownItem>
     <DropdownItem>Billing</DropdownItem>
   </Dropdown>
   <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem slot="footer">Sign out</DropdownItem>
+  <DropdownItem>Sign out</DropdownItem>
 </Dropdown>
 ```
 
@@ -186,12 +188,12 @@ Add multiple checkbox elements inside your dropdown menu to enable more advanced
 
 ```svelte example class="flex justify-center items-start h-52" hideResponsiveButtons
 <script>
-  import { Button, Dropdown, DropdownItem, Checkbox } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Button, Dropdown, DropdownItem, Checkbox } from "flowbite-svelte";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
 </script>
 
-<Button>Dropdown checkbox<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
-<Dropdown class="w-44 p-3 space-y-3 text-sm">
+<Button>Dropdown checkbox<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
+<Dropdown simple class="w-44 space-y-3 p-3 text-sm">
   <li>
     <Checkbox>Default checkbox</Checkbox>
   </li>
@@ -210,12 +212,12 @@ Use this example to update the background color of a menu item when using a list
 
 ```svelte example class="flex justify-center items-start h-56" hideResponsiveButtons
 <script>
-  import { Button, Dropdown, DropdownItem, Checkbox } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Button, Dropdown, DropdownItem, Checkbox } from "flowbite-svelte";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
 </script>
 
-<Button>Dropdown checkbox<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
-<Dropdown class="w-48 p-3 space-y-1 text-sm">
+<Button>Dropdown checkbox<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
+<Dropdown simple class="w-48 space-y-1 p-3 text-sm">
   <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Checkbox>Default checkbox</Checkbox>
   </li>
@@ -234,12 +236,12 @@ Add an extra helper text to each checkbox element inside the dropdown menu list 
 
 ```svelte example class="flex justify-center items-start h-96" hideResponsiveButtons
 <script>
-  import { Button, Dropdown, DropdownItem, Checkbox, Helper } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Button, Dropdown, DropdownItem, Checkbox, Helper } from "flowbite-svelte";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
 </script>
 
-<Button>Dropdown checkbox<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
-<Dropdown class="w-60 p-3 space-y-1 text-sm">
+<Button>Dropdown checkbox<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
+<Dropdown simple class="w-60 space-y-1 p-3 text-sm">
   <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Checkbox>Enable notifications</Checkbox>
     <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
@@ -261,15 +263,15 @@ Add multiple radio elements inside your dropdown menu to enable more advanced in
 
 ```svelte example class="flex justify-center items-start h-64" hideResponsiveButtons
 <script>
-  import { Button, Dropdown, DropdownItem, Radio } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
-  let group1 = 2;
+  import { Button, Dropdown, DropdownItem, Radio } from "flowbite-svelte";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
+  let group1 = $state(2);
 </script>
 
 <Button>
-  Dropdown radio {group1}<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" />
+  Dropdown radio {group1}<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
 </Button>
-<Dropdown class="w-44 p-3 space-y-3 text-sm">
+<Dropdown simple class="w-44 space-y-3 p-3 text-sm">
   <li>
     <Radio name="group1" bind:group={group1} value={1}>Default radio</Radio>
   </li>
@@ -288,13 +290,13 @@ Use this example to update the background color of a menu item when using a list
 
 ```svelte example class="flex justify-center items-start h-64" hideResponsiveButtons
 <script>
-  import { Button, Dropdown, DropdownItem, Radio } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
-  let group2 = 2;
+  import { Button, Dropdown, DropdownItem, Radio } from "flowbite-svelte";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
+  let group2 = $state(2);
 </script>
 
-<Button>Dropdown radio<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
-<Dropdown class="w-48 p-3 space-y-1">
+<Button>Dropdown radio<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
+<Dropdown simple class="w-48 space-y-1 p-3">
   <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Radio name="group2" bind:group={group2} value={1}>Default radio</Radio>
   </li>
@@ -313,13 +315,13 @@ Add an extra helper text to each radio element inside the dropdown menu list wit
 
 ```svelte example class="flex justify-center items-start h-96" hideResponsiveButtons
 <script>
-  import { Button, Dropdown, DropdownItem, Radio, Helper } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
-  let group3 = 2;
+  import { Button, Dropdown, DropdownItem, Radio, Helper } from "flowbite-svelte";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
+  let group3 = $state(2);
 </script>
 
-<Button>Dropdown radio<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
-<Dropdown class="w-60 p-3 space-y-1">
+<Button>Dropdown radio<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
+<Dropdown simple class="w-60 space-y-1 p-3">
   <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Radio name="group3" bind:group={group3} value={1}>Enable notifications</Radio>
     <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
@@ -341,13 +343,12 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 
 ```svelte example class="flex justify-center items-start h-64" hideResponsiveButtons
 <script>
-  import { Button, Dropdown, DropdownItem, Toggle } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
-  let group2 = 2;
+  import { Button, Dropdown, DropdownItem, Toggle } from "flowbite-svelte";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
 </script>
 
-<Button>Dropdown toggle<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
-<Dropdown class="w-56 p-3 space-y-1">
+<Button>Dropdown toggle<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
+<Dropdown simple class="w-56 space-y-1 p-3">
   <li>
     <Toggle class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">Default toggle</Toggle>
   </li>
@@ -366,27 +367,26 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 
 ```svelte example class="flex justify-center items-start h-96" hideResponsiveButtons
 <script>
-  import { Button, Dropdown, DropdownItem, DropdownDivider, Navbar, NavBrand, NavHamburger, NavUl, NavLi } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
-  let group3 = 2;
+  import { Button, Dropdown, DropdownItem, DropdownDivider, Navbar, NavBrand, NavHamburger, NavUl, NavLi } from "flowbite-svelte";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
 </script>
 
-<Navbar let:hidden let:toggle>
+<Navbar>
   <NavBrand href="/">
     <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
-    <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
+    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
   </NavBrand>
-  <NavHamburger on:click={toggle} />
-  <NavUl {hidden} class="ms-3 pt-6">
-    <NavLi href="/" active={true}>Home</NavLi>
+  <NavHamburger />
+  <NavUl class="ms-3 pt-1">
+    <NavLi href="/">Home</NavLi>
     <NavLi class="cursor-pointer">
-      Dropdown<ChevronDownOutline class="w-6 h-6 ms-2 text-primary-800 dark:text-white inline" />
+      Dropdown<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
     </NavLi>
-    <Dropdown>
+    <Dropdown simple>
       <DropdownItem>Dashboard</DropdownItem>
       <DropdownItem>Settings</DropdownItem>
       <DropdownItem>Earnings</DropdownItem>
-      <DropdownItem slot="footer">Sign out</DropdownItem>
+      <DropdownItem>Sign out</DropdownItem>
     </Dropdown>
     <NavLi href="/services">Services</NavLi>
     <NavLi href="/pricing">Pricing</NavLi>
@@ -401,32 +401,34 @@ This example can be used when you want to show a long list of items that won’t
 
 ```svelte example class="flex justify-center items-start h-80" hideResponsiveButtons
 <script>
-  import { Button, Dropdown, DropdownItem, Avatar } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Button, Dropdown, DropdownItem, DropdownGroup, Avatar } from "flowbite-svelte";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
 </script>
 
-<Button>Project users<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
-<Dropdown class="w-48 overflow-y-auto py-1 h-48">
-  <DropdownItem class="flex items-center text-base font-semibold gap-2">
-    <Avatar src="/images/profile-picture-1.webp" size="xs" />Jese Leos
-  </DropdownItem>
-  <DropdownItem class="flex items-center text-base font-semibold gap-2">
-    <Avatar src="/images/profile-picture-2.webp" size="xs" />Robert Gouth
-  </DropdownItem>
-  <DropdownItem class="flex items-center text-base font-semibold gap-2">
-    <Avatar src="/images/profile-picture-3.webp" size="xs" />Bonnie Green
-  </DropdownItem>
-  <DropdownItem class="flex items-center text-base font-semibold gap-2">
-    <Avatar src="/images/profile-picture-1.webp" size="xs" />Robert Wall
-  </DropdownItem>
-  <DropdownItem class="flex items-center text-base font-semibold gap-2">
-    <Avatar src="/images/profile-picture-2.webp" size="xs" />Joseph Mcfall
-  </DropdownItem>
-  <DropdownItem class="flex items-center text-base font-semibold gap-2">
-    <Avatar src="/images/profile-picture-3.webp" size="xs" />Leslie Livingston
-  </DropdownItem>
-  <a slot="footer" href="/" class="flex items-center px-3 py-2 -mb-1 text-sm font-medium text-primary-600 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-primary-500 hover:underline">
-    <ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" />Add new user
+<Button>Project users<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
+<Dropdown class="h-48 w-48 overflow-y-auto py-1">
+  <DropdownGroup>
+    <DropdownItem class="flex items-center gap-2 text-base font-semibold">
+      <Avatar src="/images/profile-picture-1.webp" size="xs" />Jese Leos
+    </DropdownItem>
+    <DropdownItem class="flex items-center gap-2 text-base font-semibold">
+      <Avatar src="/images/profile-picture-2.webp" size="xs" />Robert Gouth
+    </DropdownItem>
+    <DropdownItem class="flex items-center gap-2 text-base font-semibold">
+      <Avatar src="/images/profile-picture-3.webp" size="xs" />Bonnie Green
+    </DropdownItem>
+    <DropdownItem class="flex items-center gap-2 text-base font-semibold">
+      <Avatar src="/images/profile-picture-1.webp" size="xs" />Robert Wall
+    </DropdownItem>
+    <DropdownItem class="flex items-center gap-2 text-base font-semibold">
+      <Avatar src="/images/profile-picture-2.webp" size="xs" />Joseph Mcfall
+    </DropdownItem>
+    <DropdownItem class="flex items-center gap-2 text-base font-semibold">
+      <Avatar src="/images/profile-picture-3.webp" size="xs" />Leslie Livingston
+    </DropdownItem>
+  </DropdownGroup>
+  <a href="/" class="text-primary-600 dark:text-primary-500 -mb-1 flex items-center bg-gray-50 px-3 py-2 text-sm font-medium hover:bg-gray-100 hover:underline dark:bg-gray-700 dark:hover:bg-gray-600">
+    <ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" />Add new user
   </a>
 </Dropdown>
 ```
@@ -437,29 +439,31 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
 
 ```svelte example class="flex justify-center items-start h-96" hideResponsiveButtons
 <script>
-  import { Button, Dropdown, DropdownItem, Checkbox, Search } from 'flowbite-svelte';
-  import { ChevronDownOutline, UserRemoveSolid } from 'flowbite-svelte-icons';
-  let searchTerm = ''
+  import { Button, Dropdown, DropdownItem, DropdownHeader, DropdownGroup, Checkbox, Search } from "flowbite-svelte";
+  import { ChevronDownOutline, UserRemoveSolid } from "flowbite-svelte-icons";
+  let searchTerm = $state("");
   const people = [
-    { name: 'Robert Gouth', checked: false },
-    { name: 'Jese Leos', checked: false },
-    { name: 'Bonnie Green', checked: true },
-  ]
-  $: filteredItems = people.filter((person) => person.name.toLowerCase().indexOf(searchTerm?.toLowerCase()) !== -1);
+    { name: "Robert Gouth", checked: false },
+    { name: "Jese Leos", checked: false },
+    { name: "Bonnie Green", checked: true }
+  ];
+  let filteredItems = $derived(people.filter((person) => person.name.toLowerCase().indexOf(searchTerm?.toLowerCase()) !== -1));
 </script>
 
-<Button>Dropdown search<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
-<Dropdown class="overflow-y-auto px-3 pb-3 text-sm h-44">
-  <div slot="header" class="p-3">
-    <Search size="md" bind:value={searchTerm}/>
+<Button>Dropdown search<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
+<Dropdown>
+  <div class="p-3">
+    <Search size="md" bind:value={searchTerm} />
   </div>
-  {#each filteredItems as person (person.name)}
-    <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox bind:checked={person.checked}>{person.name}</Checkbox>
-    </li>
-  {/each}
-  <a slot="footer" href="/" class="flex items-center p-3 -mb-1 text-sm font-medium text-red-600 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
-    <UserRemoveSolid class="w-4 h-4 me-2 text-primary-700 dark:text-primary-700" />Delete user
+  <DropdownGroup class="h-24 overflow-y-auto">
+    {#each filteredItems as person (person.name)}
+      <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox bind:checked={person.checked}>{person.name}</Checkbox>
+      </li>
+    {/each}
+  </DropdownGroup>
+  <a href="/" class="-mb-1 flex items-center bg-gray-50 p-3 text-sm font-medium text-red-600 hover:bg-gray-100 hover:underline dark:bg-gray-700 dark:text-red-500 dark:hover:bg-gray-600">
+    <UserRemoveSolid class="text-primary-700 dark:text-primary-700 me-2 h-4 w-4" />Delete user
   </a>
 </Dropdown>
 ```
@@ -470,17 +474,17 @@ Use the menu icon trigger element on components such as cards as an alternative 
 
 ```svelte example class="flex justify-center items-start gap-4 h-60" hideResponsiveButtons
 <script>
-  import { Button, Dropdown, DropdownItem, ToolbarButton, DropdownDivider } from 'flowbite-svelte';
-  import { DotsHorizontalOutline, DotsVerticalOutline } from 'flowbite-svelte-icons';
+  import { Button, Dropdown, DropdownItem, ToolbarButton, DropdownDivider } from "flowbite-svelte";
+  import { DotsHorizontalOutline, DotsVerticalOutline } from "flowbite-svelte-icons";
 </script>
 
 <DotsHorizontalOutline class="dots-menu dark:text-white" />
 <DotsVerticalOutline class="dots-menu dark:text-white" />
-<Dropdown triggeredBy=".dots-menu">
+<Dropdown simple triggeredBy=".dots-menu">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem slot="footer">Sign out</DropdownItem>
+  <DropdownItem>Sign out</DropdownItem>
 </Dropdown>
 ```
 
@@ -490,55 +494,57 @@ Use this example to show a list of notifications inside your application by prov
 
 ```svelte example class="flex justify-center items-start h-96" hideResponsiveButtons
 <script>
-  import { Button, Dropdown, DropdownItem, DropdownHeader, Avatar } from 'flowbite-svelte';
-  import { BellSolid, EyeSolid } from 'flowbite-svelte-icons';
+  import { Button, Dropdown, DropdownItem, DropdownHeader, DropdownGroup, Avatar } from "flowbite-svelte";
+  import { BellSolid, EyeSolid } from "flowbite-svelte-icons";
 </script>
 
-<div id="bell" class="inline-flex items-center text-sm font-medium text-center text-gray-500 hover:text-gray-900 focus:outline-hidden dark:hover:text-white dark:text-gray-400">
-  <BellSolid class="w-8 h-8" />
-  <div class="flex relative">
-    <div class="inline-flex relative -top-2 end-4 w-3 h-3 bg-red-500 rounded-full border-2 border-white dark:border-gray-900"></div>
+<div id="bell" class="inline-flex items-center text-center text-sm font-medium text-gray-500 hover:text-gray-900 focus:outline-hidden dark:text-gray-400 dark:hover:text-white">
+  <BellSolid class="h-8 w-8" />
+  <div class="relative flex">
+    <div class="relative end-4 -top-2 inline-flex h-3 w-3 rounded-full border-2 border-white bg-red-500 dark:border-gray-900"></div>
   </div>
 </div>
-<Dropdown triggeredBy="#bell" class="w-full max-w-sm rounded-sm divide-y divide-gray-100 shadow-sm dark:bg-gray-800 dark:divide-gray-700">
-  <div slot="header" class="text-center py-2 font-bold">Notifications</div>
-  <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
-    <Avatar src="/images/profile-picture-1.webp" dot={{ color: 'bg-gray-300' }} rounded />
-    <div class="ps-3 w-full">
-      <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400">
-        New message from <span class="font-semibold text-gray-900 dark:text-white">Jese Leos</span>
-        : "Hey, what's up? All set for the presentation?"
+<Dropdown triggeredBy="#bell" class="w-full max-w-sm divide-y divide-gray-100 rounded-sm shadow-sm dark:divide-gray-700 dark:bg-gray-800">
+  <div class="py-2 text-center font-bold">Notifications</div>
+  <DropdownGroup>
+    <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
+      <Avatar src="/images/profile-picture-1.webp" dot={{ color: "bg-gray-300" }} />
+      <div class="w-full ps-3">
+        <div class="mb-1.5 text-sm text-gray-500 dark:text-gray-400">
+          New message from <span class="font-semibold text-gray-900 dark:text-white">Jese Leos</span>
+          : "Hey, what's up? All set for the presentation?"
+        </div>
+        <div class="text-primary-600 dark:text-primary-500 text-xs">a few moments ago</div>
       </div>
-      <div class="text-xs text-primary-600 dark:text-primary-500">a few moments ago</div>
-    </div>
-  </DropdownItem>
-  <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
-    <Avatar src="/images/profile-picture-2.webp" dot={{ color: 'bg-red-400' }} rounded />
-    <div class="ps-3 w-full">
-      <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400">
-        <span class="font-semibold text-gray-900 dark:text-white">Joseph Mcfall</span>
-        and
-        <span class="font-medium text-gray-900 dark:text-white">5 others</span>
-        started following you.
+    </DropdownItem>
+    <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
+      <Avatar src="/images/profile-picture-2.webp" dot={{ color: "bg-red-400" }} />
+      <div class="w-full ps-3">
+        <div class="mb-1.5 text-sm text-gray-500 dark:text-gray-400">
+          <span class="font-semibold text-gray-900 dark:text-white">Joseph Mcfall</span>
+          and
+          <span class="font-medium text-gray-900 dark:text-white">5 others</span>
+          started following you.
+        </div>
+        <div class="text-primary-600 dark:text-primary-500 text-xs">10 minutes ago</div>
       </div>
-      <div class="text-xs text-primary-600 dark:text-primary-500">10 minutes ago</div>
-    </div>
-  </DropdownItem>
-  <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
-    <Avatar src="/images/profile-picture-3.webp" dot={{ color: 'bg-green-400' }} rounded />
-    <div class="ps-3 w-full">
-      <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400">
-        <span class="font-semibold text-gray-900 dark:text-white">Bonnie Green</span>
-        and
-        <span class="font-medium text-gray-900 dark:text-white">141 others</span>
-        love your story. See it and view more stories.
+    </DropdownItem>
+    <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
+      <Avatar src="/images/profile-picture-3.webp" dot={{ color: "bg-green-400" }} />
+      <div class="w-full ps-3">
+        <div class="mb-1.5 text-sm text-gray-500 dark:text-gray-400">
+          <span class="font-semibold text-gray-900 dark:text-white">Bonnie Green</span>
+          and
+          <span class="font-medium text-gray-900 dark:text-white">141 others</span>
+          love your story. See it and view more stories.
+        </div>
+        <div class="text-primary-600 dark:text-primary-500 text-xs">44 minutes ago</div>
       </div>
-      <div class="text-xs text-primary-600 dark:text-primary-500">44 minutes ago</div>
-    </div>
-  </DropdownItem>
-  <a slot="footer" href="/" class="block py-2 -my-1 text-sm font-medium text-center text-gray-900 bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white">
+    </DropdownItem>
+  </DropdownGroup>
+  <a href="/" class="-my-1 block bg-gray-50 py-2 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700">
     <div class="inline-flex items-center">
-      <EyeSolid class="me-2 w-4 h-4 text-gray-500 dark:text-gray-400" />
+      <EyeSolid class="me-2 h-4 w-4 text-gray-500 dark:text-gray-400" />
       View all
     </div>
   </a>
@@ -551,19 +557,21 @@ This example can be used to show a list of menu items and options when a user is
 
 ```svelte example class="flex justify-center items-start h-80" hideResponsiveButtons
 <script>
-  import { Button, Dropdown, DropdownItem, Avatar, DropdownHeader, DropdownDivider } from 'flowbite-svelte';
+  import { Button, Dropdown, DropdownItem, Avatar, DropdownHeader, DropdownGroup, DropdownDivider } from "flowbite-svelte";
 </script>
 
-<Avatar class="acs" src="/images/profile-picture-3.webp" dot={{ color: 'green' }} />
+<Avatar class="acs" src="/images/profile-picture-3.webp" dot={{ color: "green" }} />
 <Dropdown triggeredBy=".acs">
-  <div slot="header" class="px-4 py-2">
+  <DropdownHeader>
     <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
     <span class="block truncate text-sm font-medium">name@flowbite.com</span>
-  </div>
-  <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem>Settings</DropdownItem>
-  <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem slot="footer">Sign out</DropdownItem>
+  </DropdownHeader>
+  <DropdownGroup>
+    <DropdownItem>Dashboard</DropdownItem>
+    <DropdownItem>Settings</DropdownItem>
+    <DropdownItem>Earnings</DropdownItem>
+    <DropdownItem>Sign out</DropdownItem>
+  </DropdownGroup>
 </Dropdown>
 ```
 
@@ -573,22 +581,24 @@ Use this example to also show the name or email of the user next to the avatar f
 
 ```svelte example class="flex justify-center items-start h-80" hideResponsiveButtons
 <script>
-  import { Button, Dropdown, DropdownItem, Avatar, DropdownHeader, DropdownDivider } from 'flowbite-svelte';
+  import { Button, Dropdown, DropdownItem, Avatar, DropdownHeader, DropdownGroup } from "flowbite-svelte";
 </script>
 
 <Button pill color="light" id="avatar_with_name" class="p-1!">
   <Avatar src="/images/profile-picture-3.webp" class="me-2" />
   Bonnie Green
 </Button>
-<Dropdown inline triggeredBy="#avatar_with_name">
-  <div slot="header" class="px-4 py-2">
+<Dropdown triggeredBy="#avatar_with_name">
+  <DropdownHeader>
     <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
     <span class="block truncate text-sm font-medium">name@flowbite.com</span>
-  </div>
-  <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem>Settings</DropdownItem>
-  <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem slot="footer">Sign out</DropdownItem>
+  </DropdownHeader>
+  <DropdownGroup>
+    <DropdownItem>Dashboard</DropdownItem>
+    <DropdownItem>Settings</DropdownItem>
+    <DropdownItem>Earnings</DropdownItem>
+  </DropdownGroup>
+  <DropdownHeader>Sign out</DropdownHeader>
 </Dropdown>
 ```
 
@@ -598,21 +608,23 @@ Use this example to also show the name or email of the user next to the avatar f
 
 ```svelte example class="flex justify-center items-start gap-4 h-80" hideResponsiveButtons
 <script>
-  import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Button, Dropdown, DropdownItem, DropdownHeader, DropdownGroup } from "flowbite-svelte";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
 </script>
 
 <Dropdown triggeredBy=".sizes">
-  <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem>Settings</DropdownItem>
-  <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem slot="footer">Sign out</DropdownItem>
+  <DropdownGroup>
+    <DropdownItem>Dashboard</DropdownItem>
+    <DropdownItem>Settings</DropdownItem>
+    <DropdownItem>Earnings</DropdownItem>
+  </DropdownGroup>
+  <DropdownHeader>Sign out</DropdownHeader>
 </Dropdown>
 <Button class="sizes" size="sm">
-  Small dropdown<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" />
+  Small dropdown<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
 </Button>
 <Button class="sizes" size="lg">
-  Large dropdown<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" />
+  Large dropdown<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
 </Button>
 ```
 
@@ -622,44 +634,43 @@ You can also use the `placement={top|right|bottom|left}` options to choose the p
 
 ```svelte example hideResponsiveButtons
 <script>
-  import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
-  import { ChevronDownOutline, ChevronUpOutline, ChevronRightOutline, ChevronLeftOutline } from 'flowbite-svelte-icons';
-  let placement = 'left';
+  import { Button, Dropdown, DropdownItem } from "flowbite-svelte";
+  import { ChevronDownOutline, ChevronUpOutline, ChevronRightOutline, ChevronLeftOutline } from "flowbite-svelte-icons";
 </script>
 
-<Dropdown placement='top' triggeredBy="#top-dd">
+<Dropdown simple placement="top" triggeredBy="#top-dd">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem slot="footer">Sign out</DropdownItem>
+  <DropdownItem>Sign out</DropdownItem>
 </Dropdown>
-<Dropdown placement='bottom' triggeredBy="#bottom-dd">
+<Dropdown simple placement="bottom" triggeredBy="#bottom-dd">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem slot="footer">Sign out</DropdownItem>
+  <DropdownItem>Sign out</DropdownItem>
 </Dropdown>
-<Dropdown placement='right' triggeredBy="#right-dd">
+<Dropdown simple placement="right" triggeredBy="#right-dd">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem slot="footer">Sign out</DropdownItem>
+  <DropdownItem>Sign out</DropdownItem>
 </Dropdown>
-<Dropdown placement='left' triggeredBy="#left-dd">
+<Dropdown simple placement="left" triggeredBy="#left-dd">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem slot="footer">Sign out</DropdownItem>
+  <DropdownItem>Sign out</DropdownItem>
 </Dropdown>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div id="placements" class="flex flex-col justify-center items-center gap-2 h-96 my-8">
-  <Button id='top-dd'>Dropdown top<ChevronUpOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
+<div id="placements" class="my-8 flex h-96 flex-col items-center justify-center gap-2">
+  <Button id="top-dd">Dropdown top<ChevronUpOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <div class="flex space-x-2 rtl:space-x-reverse">
-    <Button id='left-dd'><ChevronLeftOutline class="w-6 h-6 me-2 text-white dark:text-white" />Dropdown left</Button>
-    <Button id='right-dd'>Dropdown right<ChevronRightOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
+    <Button id="left-dd"><ChevronLeftOutline class="me-2 h-6 w-6 text-white dark:text-white" />Dropdown left</Button>
+    <Button id="right-dd">Dropdown right<ChevronRightOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   </div>
-  <Button id='bottom-dd'>Dropdown bottom<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
+  <Button id="bottom-dd">Dropdown bottom<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
 </div>
 ```
 
@@ -669,72 +680,52 @@ As dropdown is implemented using the [Floating UI](https://floating-ui.com) libr
 
 ```svelte example class="flex justify-center items-center gap-2 h-96" hideResponsiveButtons
 <script>
-  import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
-  import { ChevronDownOutline, ChevronUpOutline } from 'flowbite-svelte-icons';
-  let placement = 'left';
+  import { Button, Dropdown, DropdownItem } from "flowbite-svelte";
+  import { ChevronDownOutline, ChevronUpOutline } from "flowbite-svelte-icons";
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div on:mousedown={(e) => (placement = e.target.dataset.placement)}>
+<div onmousedown={(e) => (placement = e.target.dataset.placement)}>
   <Button data-placement="left-start">
-    Dropdown left start<ChevronUpOutline class="w-6 h-6 ms-2 text-white dark:text-white" />
+    Dropdown left start<ChevronUpOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
   </Button>
   <Button data-placement="right-end">
-    Dropdown right end<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" />
+    Dropdown right end<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
   </Button>
 </div>
 
-<Dropdown {placement} triggeredBy="[data-placement]">
+<Dropdown simple placement="left" triggeredBy="[data-placement]">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem slot="footer">Sign out</DropdownItem>
+  <DropdownItem>Sign out</DropdownItem>
 </Dropdown>
 ```
 
 ## Events
 
-`DropdownItem` renders to link or button wrapped with `<li/>` element depending whether you supplied the `href` property. Therefore you can catch standard events on it like `on:click`.
+`DropdownItem` renders to link or button or div wrapped with `<li/>` element depending whether you supplied the `href` or `onclick` property.
 
 ```svelte example class="flex justify-center items-start h-40" hideResponsiveButtons
-<script>
-  import { Button, Dropdown, DropdownItem, Checkbox } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
-  const handleClick = (e) => {
+<script lang="ts">
+  import { Button, Dropdown, DropdownItem, Checkbox } from "flowbite-svelte";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
+  const handleClick = (e: Event) => {
     e.preventDefault();
-    alert('Clicked on: ' + e.target);
+    alert("Clicked on: " + e.target);
   };
 </script>
 
-<Button>Dropdown button<ChevronDownOutline class="w-6 h-6 ms-2 text-white dark:text-white" /></Button>
-<Dropdown>
-  <DropdownItem href="/link" on:click={handleClick}>Rendered as link</DropdownItem>
-  <DropdownItem on:click={handleClick}>Rendered as button</DropdownItem>
+<Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
+<Dropdown simple>
+  <DropdownItem href="/link" onclick={handleClick}>Rendered as link</DropdownItem>
+  <DropdownItem onclick={handleClick}>Rendered as button</DropdownItem>
 </Dropdown>
 ```
 
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
-
-### Dropdown styling
-
-- Use the `class` prop to style underlying `ul` element.
-- Use the `classContainer` prop to overwrite `containerClass`.
-- Use the `classHeader` prop to overwrite `headerClass`.
-- Use the `classFooter` prop to overwrite `footerClass`.
-
-### DropdownDivider styling
-
-- Use the `class` prop to overwrite `divClass`.
-
-### DropdownHeader styling
-
-- Use the `class` prop to overwrite `divClass`.
-
-### DropdownItem styling
-
-- Use the `class` prop to overwrite `defaultClass`.
 
 <CompoAttributesViewer {dirName}/>
 

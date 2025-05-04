@@ -10,7 +10,7 @@ thumnailSize: w-28
 
 <script>
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
-  import { P, A } from '$lib'
+  import { P, A } from 'flowbite-svelte'
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -24,7 +24,7 @@ Import a badge component in the script tag.
 
 ```svelte example hideOutput
 <script>
-  import { Badge } from 'flowbite-svelte';
+  import { Badge } from "flowbite-svelte";
 </script>
 ```
 
@@ -34,11 +34,11 @@ Use the following badge elements to indicate counts or labels inside or outside 
 
 ```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
 <script>
-  import { Badge } from 'flowbite-svelte';
+  import { Badge } from "flowbite-svelte";
 </script>
 
 <Badge>Default</Badge>
-<Badge color="dark">Dark</Badge>
+<Badge color="gray">Gray</Badge>
 <Badge color="red">Red</Badge>
 <Badge color="green">Green</Badge>
 <Badge color="yellow">Yellow</Badge>
@@ -53,11 +53,11 @@ Use the `large` prop to create a large variant of the badges.
 
 ```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
 <script>
-  import { Badge } from 'flowbite-svelte';
+  import { Badge } from "flowbite-svelte";
 </script>
 
 <Badge large>Default</Badge>
-<Badge large color="dark">Dark</Badge>
+<Badge large color="gray">Gray</Badge>
 <Badge large color="red">Red</Badge>
 <Badge large color="green">Green</Badge>
 <Badge large color="yellow">Yellow</Badge>
@@ -72,11 +72,11 @@ Use the `border` prop to add a border accent to the badge component.
 
 ```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
 <script>
-  import { Badge } from 'flowbite-svelte';
+  import { Badge } from "flowbite-svelte";
 </script>
 
 <Badge border>Default</Badge>
-<Badge border color="dark">Dark</Badge>
+<Badge border color="gray">Gray</Badge>
 <Badge border color="red">Red</Badge>
 <Badge border color="green">Green</Badge>
 <Badge border color="yellow">Yellow</Badge>
@@ -87,15 +87,15 @@ Use the `border` prop to add a border accent to the badge component.
 
 ## Pills badge
 
-Use the `rounded-sm` prop to make the corners even more rounded like pills for the badge component.
+Use the `rounded` prop to make the corners even more rounded like pills for the badge component.
 
 ```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
 <script>
-  import { Badge } from 'flowbite-svelte';
+  import { Badge } from "flowbite-svelte";
 </script>
 
 <Badge rounded>Default</Badge>
-<Badge rounded color="dark">Dark</Badge>
+<Badge rounded color="gray">Gray</Badge>
 <Badge rounded color="red">Red</Badge>
 <Badge rounded color="green">Green</Badge>
 <Badge rounded color="yellow">Yellow</Badge>
@@ -110,7 +110,7 @@ You can also use badges as anchor elements to link to another page.
 
 ```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
 <script>
-  import { Badge } from 'flowbite-svelte';
+  import { Badge } from "flowbite-svelte";
 </script>
 
 <Badge href="/">Badge link</Badge>
@@ -125,16 +125,16 @@ You can also use SVG icons inside the badge elements.
 
 ```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>
-  import { Badge } from 'flowbite-svelte';
-  import { ClockSolid } from 'flowbite-svelte-icons';
+  import { Badge } from "flowbite-svelte";
+  import { ClockSolid } from "flowbite-svelte-icons";
 </script>
 
-<Badge color="dark" border>
-  <ClockSolid class="w-2.5 h-2.5 me-1.5" />
+<Badge color="gray" border>
+  <ClockSolid class="me-1.5 h-2.5 w-2.5" />
   3 days ago
 </Badge>
 <Badge border>
-  <ClockSolid class="text-primary-800 dark:text-primary-400 w-2.5 h-2.5 me-1.5" />
+  <ClockSolid class="text-primary-800 dark:text-primary-400 me-1.5 h-2.5 w-2.5" />
   2 minutes ago
 </Badge>
 ```
@@ -145,8 +145,8 @@ To achive the functionality of the notification badge, use the sibling [`Indicat
 
 ```svelte example class="flex flex-wrap gap-4" hideResponsiveButtons
 <script>
-  import { Button, Indicator } from 'flowbite-svelte';
-  import { EnvelopeSolid } from 'flowbite-svelte-icons';
+  import { Button, Indicator } from "flowbite-svelte";
+  import { EnvelopeSolid } from "flowbite-svelte-icons";
 </script>
 
 <Button class="relative" size="sm">
@@ -164,7 +164,7 @@ To achive the functionality of the notification badge, use the sibling [`Indicat
 <Button class="relative" size="sm">
   <EnvelopeSolid class="text-white dark:text-white" />
   <span class="sr-only">Notifications</span>
-  <Indicator color="dark" border size="xl" placement="bottom-right" class="text-xs font-bold">20</Indicator>
+  <Indicator color="gray" border size="xl" placement="bottom-right" class="text-xs font-bold">20</Indicator>
 </Button>
 ```
 
@@ -174,12 +174,12 @@ Use this example to add a badge inside a button component for a count indicator.
 
 ```svelte example class="flex flex-wrap gap-4" hideResponsiveButtons
 <script>
-  import { Badge, Button } from 'flowbite-svelte';
+  import { Badge, Button } from "flowbite-svelte";
 </script>
 
 <Button>
   Messages
-  <Badge rounded class="w-4 h-4 ms-2 p-0 font-semibold text-primary-800 bg-white dark:text-primary-800 dark:bg-white">2</Badge>
+  <Badge rounded class="text-primary-800 dark:text-primary-800 ms-2 h-4 w-4 bg-white p-0 font-semibold dark:bg-white">2</Badge>
 </Button>
 ```
 
@@ -189,16 +189,16 @@ Alternatively you can also use badges which indicate only a SVG icon.
 
 ```svelte example hideScript hideResponsiveButtons
 <script>
-  import { Badge } from 'flowbite-svelte';
-  import { CheckOutline } from 'flowbite-svelte-icons';
+  import { Badge } from "flowbite-svelte";
+  import { CheckOutline } from "flowbite-svelte-icons";
 </script>
 
-<Badge color="dark" rounded-sm large class="p-1! font-semibold!">
+<Badge color="gray" large class="p-1! font-semibold!">
   <CheckOutline class="h-3 w-3" />
   <span class="sr-only">Icon description</span>
 </Badge>
 <Badge rounded large class="p-1! font-semibold!">
-  <CheckOutline class="h-3 w-3 text-primary-800 dark:text-primary-400" />
+  <CheckOutline class="text-primary-800 dark:text-primary-400 h-3 w-3" />
   <span class="sr-only">Icon description</span>
 </Badge>
 ```
@@ -209,11 +209,11 @@ Use the `dimissable` prop to dismiss the current badge.
 
 ```svelte example class="flex flex-wrap gap-4" hideScript hideResponsiveButtons
 <script>
-  import { Badge } from 'flowbite-svelte';
+  import { Badge } from "flowbite-svelte";
 </script>
 
 <Badge dismissable large>Default</Badge>
-<Badge dismissable large color="dark">Dark</Badge>
+<Badge dismissable large color="gray">Gray</Badge>
 <Badge dismissable large color="red">Red</Badge>
 <Badge dismissable large color="green">Green</Badge>
 <Badge dismissable large color="yellow">Yellow</Badge>
@@ -222,35 +222,38 @@ Use the `dimissable` prop to dismiss the current badge.
 <Badge dismissable large color="pink">Pink</Badge>
 ```
 
-Use the `close-button` slot to add your desired button. Don't forget to use the slot prop `close` to dismiss your badge.
+Use the `icon` snippet to add your desired button.
 
 ```svelte example class="gap-4"
 <script>
-  import { Badge } from 'flowbite-svelte';
-  import { CloseCircleSolid } from 'flowbite-svelte-icons';
+  import { Badge } from "flowbite-svelte";
+  import { CloseCircleSolid } from "flowbite-svelte-icons";
 </script>
 
 <Badge dismissable>
   Default
-  <button slot="close-button" let:close on:click={close} type="button" class="inline-flex items-center rounded-full p-0.5 my-0.5 ms-1.5 -me-1.5 text-sm bg-primary-500 dark:bg-primary-400 text-white dark:text-primary-800 hover:bg-primary-900 hover:text-white dark:hover:bg-red-900 dark:hover:text-yellow-300" aria-label="Remove">
-    <CloseCircleSolid class="h-4 w-4" />
-    <span class="sr-only">Remove badge</span>
-  </button>
+  {#snippet icon()}
+    <button type="button" class="bg-primary-500 dark:bg-primary-400 dark:text-primary-800 hover:bg-primary-900 my-0.5 ms-1.5 -me-1.5 inline-flex items-center rounded-full p-0.5 text-sm text-white hover:text-white dark:hover:bg-red-900 dark:hover:text-yellow-300" aria-label="Remove">
+      <CloseCircleSolid class="h-4 w-4" />
+      <span class="sr-only">Remove badge</span>
+    </button>
+  {/snippet}
 </Badge>
 ```
 
-A `close` event will be dispatched during the dismissal, listen to it if needed.
+A `onclose` callback will be dispatched during the dismissal, listen to it if needed.
 
 ```svelte example class="gap-4"
-<script>
-  import { Badge } from 'flowbite-svelte';
+<script lang="ts">
+  import { Badge } from "flowbite-svelte";
 
-  function handleClose(event) {
-    alert('Badge dismissed');
+  function handleClose(event: Event) {
+    event.preventDefault();
+    alert("Badge dismissed");
   }
 </script>
 
-<Badge dismissable large on:close={handleClose}>Default</Badge>
+<Badge dismissable large onclose={handleClose}>Default</Badge>
 ```
 
 ## Dynamic color
@@ -258,27 +261,38 @@ A `close` event will be dispatched during the dismissal, listen to it if needed.
 The color can be changed dynamically.
 
 ```svelte example class="flex flex-wrap gap-4" hideResponsiveButtons
-<script>
-  import { Badge } from 'flowbite-svelte';
+<script lang="ts">
+  import { Badge, type BadgeProps } from "flowbite-svelte";
 
   setInterval(handleHover, 500);
 
-  let color = 'primary';
+  let color: BadgeProps["color"] = $state("primary");
   function handleHover() {
-    color = color === 'primary' ? 'dark' : 'primary';
+    color = color === "primary" ? "secondary" : "primary";
   }
 </script>
 
 <Badge large {color}>Blinking badge</Badge>
 ```
 
+## Opening badge
+
+```svelte example
+<script lang="ts">
+  import { Badge, Button } from "flowbite-svelte";
+  let openBadgeStatus = $state(false);
+  function openBadge() {
+    openBadgeStatus = true;
+  }
+</script>
+
+<Button onclick={openBadge}>Open badge</Button>
+<Badge class="ml-4" color="blue" dismissable large bind:badgeStatus={openBadgeStatus}>Default</Badge>
+```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
-
-### Badge styling
-
-- Use the `class` prop to overwrite the default class.
 
 <CompoAttributesViewer {dirName}/>
 

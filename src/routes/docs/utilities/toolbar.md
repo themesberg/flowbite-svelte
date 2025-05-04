@@ -18,7 +18,7 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
 
 ```svelte example hideOutput
 <script>
-  import { Toolbar, ToolbarButton, ToolbarGroup } from 'flowbite-svelte';
+  import { Toolbar, ToolbarButton, ToolbarGroup } from "flowbite-svelte";
 </script>
 ```
 
@@ -26,14 +26,14 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
 
 ```svelte example
 <script>
-  import { Toolbar, ToolbarButton, ToolbarGroup } from 'flowbite-svelte';
-  import { HomeOutline, EnvelopeOutline, ImageOutline } from 'flowbite-svelte-icons';
+  import { Toolbar, ToolbarButton, ToolbarGroup } from "flowbite-svelte";
+  import { HomeOutline, EnvelopeOutline, ImageOutline } from "flowbite-svelte-icons";
 </script>
 
 <Toolbar>
-  <ToolbarButton><HomeOutline class="w-6 h-6" /></ToolbarButton>
-  <ToolbarButton><EnvelopeOutline class="w-6 h-6" /></ToolbarButton>
-  <ToolbarButton><ImageOutline class="w-6 h-6" /></ToolbarButton>
+  <ToolbarButton><HomeOutline class="h-6 w-6" /></ToolbarButton>
+  <ToolbarButton><EnvelopeOutline class="h-6 w-6" /></ToolbarButton>
+  <ToolbarButton><ImageOutline class="h-6 w-6" /></ToolbarButton>
 </Toolbar>
 ```
 
@@ -41,19 +41,19 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
 
 ```svelte example class="space-y-4"
 <script>
-  import { Toolbar, ToolbarButton, ToolbarGroup } from 'flowbite-svelte';
-  import { HomeOutline, EnvelopeOutline, ImageOutline } from 'flowbite-svelte-icons';
+  import { Toolbar, ToolbarButton, ToolbarGroup } from "flowbite-svelte";
+  import { HomeOutline, EnvelopeOutline, ImageOutline } from "flowbite-svelte-icons";
 </script>
 
 <Toolbar color="red">
-  <ToolbarButton color="red"><HomeOutline class="w-6 h-6" /></ToolbarButton>
-  <ToolbarButton color="red"><EnvelopeOutline class="w-6 h-6" /></ToolbarButton>
-  <ToolbarButton color="red"><ImageOutline class="w-6 h-6" /></ToolbarButton>
+  <ToolbarButton color="red"><HomeOutline class="h-6 w-6" /></ToolbarButton>
+  <ToolbarButton color="red"><EnvelopeOutline class="h-6 w-6" /></ToolbarButton>
+  <ToolbarButton color="red"><ImageOutline class="h-6 w-6" /></ToolbarButton>
 </Toolbar>
 <Toolbar color="blue">
-  <ToolbarButton color="blue"><HomeOutline class="w-6 h-6" /></ToolbarButton>
-  <ToolbarButton color="blue"><EnvelopeOutline class="w-6 h-6" /></ToolbarButton>
-  <ToolbarButton color="blue"><ImageOutline class="w-6 h-6" /></ToolbarButton>
+  <ToolbarButton color="blue"><HomeOutline class="h-6 w-6" /></ToolbarButton>
+  <ToolbarButton color="blue"><EnvelopeOutline class="h-6 w-6" /></ToolbarButton>
+  <ToolbarButton color="blue"><ImageOutline class="h-6 w-6" /></ToolbarButton>
 </Toolbar>
 ```
 
@@ -61,22 +61,24 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
 
 ```svelte example
 <script>
-  import { Toolbar, ToolbarButton, ToolbarGroup } from 'flowbite-svelte';
-  import { HomeOutline, EnvelopeOutline, ImageOutline, CogOutline } from 'flowbite-svelte-icons';
+  import { Toolbar, ToolbarButton, ToolbarGroup } from "flowbite-svelte";
+  import { HomeOutline, EnvelopeOutline, ImageOutline, CogOutline } from "flowbite-svelte-icons";
 </script>
 
 <Toolbar color="green">
   <ToolbarGroup>
-    <ToolbarButton color="green"><HomeOutline class="w-6 h-6" /></ToolbarButton>
-    <ToolbarButton color="green"><EnvelopeOutline class="w-6 h-6" /></ToolbarButton>
-    <ToolbarButton color="green"><ImageOutline class="w-6 h-6" /></ToolbarButton>
+    <ToolbarButton color="green"><HomeOutline class="h-6 w-6" /></ToolbarButton>
+    <ToolbarButton color="green"><EnvelopeOutline class="h-6 w-6" /></ToolbarButton>
+    <ToolbarButton color="green"><ImageOutline class="h-6 w-6" /></ToolbarButton>
   </ToolbarGroup>
   <ToolbarGroup>
-    <ToolbarButton color="green"><HomeOutline class="w-6 h-6" /></ToolbarButton>
-    <ToolbarButton color="green"><EnvelopeOutline class="w-6 h-6" /></ToolbarButton>
-    <ToolbarButton color="green"><ImageOutline class="w-6 h-6" /></ToolbarButton>
+    <ToolbarButton color="green"><HomeOutline class="h-6 w-6" /></ToolbarButton>
+    <ToolbarButton color="green"><EnvelopeOutline class="h-6 w-6" /></ToolbarButton>
+    <ToolbarButton color="green"><ImageOutline class="h-6 w-6" /></ToolbarButton>
   </ToolbarGroup>
-  <ToolbarButton slot="end" color="green"><CogOutline class="w-6 h-6" /></ToolbarButton>
+  {#snippet end()}
+    <ToolbarButton color="green"><CogOutline class="h-6 w-6" /></ToolbarButton>
+  {/snippet}
 </Toolbar>
 ```
 
@@ -86,25 +88,29 @@ If you want to add other actions as buttons alongside your textarea component, s
 
 ```svelte example
 <script>
-  import { Textarea, Toolbar, ToolbarGroup, ToolbarButton, Button } from 'flowbite-svelte';
-  import { PaperClipOutline, MapPinAltSolid, ImageOutline, CodeOutline, FaceGrinOutline, PaperPlaneOutline } from 'flowbite-svelte-icons';
+  import { Textarea, Toolbar, ToolbarGroup, ToolbarButton, Button } from "flowbite-svelte";
+  import { PaperClipOutline, MapPinAltSolid, ImageOutline, CodeOutline, FaceGrinOutline, PaperPlaneOutline } from "flowbite-svelte-icons";
 </script>
 
 <form>
   <label for="editor" class="sr-only">Publish post</label>
   <Textarea id="editor" rows="8" class="mb-4" placeholder="Write a comment">
-    <Toolbar slot="header" embedded>
-      <ToolbarGroup>
-        <ToolbarButton name="Attach file"><PaperClipOutline class="w-5 h-5 rotate-45" /></ToolbarButton>
-        <ToolbarButton name="Embed map"><MapPinAltSolid class="w-5 h-5" /></ToolbarButton>
-        <ToolbarButton name="Upload image"><ImageOutline class="w-5 h-5" /></ToolbarButton>
-      </ToolbarGroup>
-      <ToolbarGroup>
-        <ToolbarButton name="Format code"><CodeOutline class="w-5 h-5" /></ToolbarButton>
-        <ToolbarButton name="Add emoji"><FaceGrinOutline class="w-5 h-5" /></ToolbarButton>
-      </ToolbarGroup>
-      <ToolbarButton name="send" slot="end"><PaperPlaneOutline class="w-5 h-5 rotate-45" /></ToolbarButton>
-    </Toolbar>
+    {#snippet header()}
+      <Toolbar embedded>
+        <ToolbarGroup>
+          <ToolbarButton name="Attach file"><PaperClipOutline class="h-5 w-5 rotate-45" /></ToolbarButton>
+          <ToolbarButton name="Embed map"><MapPinAltSolid class="h-5 w-5" /></ToolbarButton>
+          <ToolbarButton name="Upload image"><ImageOutline class="h-5 w-5" /></ToolbarButton>
+        </ToolbarGroup>
+        <ToolbarGroup>
+          <ToolbarButton name="Format code"><CodeOutline class="h-5 w-5" /></ToolbarButton>
+          <ToolbarButton name="Add emoji"><FaceGrinOutline class="h-5 w-5" /></ToolbarButton>
+        </ToolbarGroup>
+        {#snippet end()}
+          <ToolbarButton name="send"><PaperPlaneOutline class="h-5 w-5 rotate-45" /></ToolbarButton>
+        {/snippet}
+      </Toolbar>
+    {/snippet}
   </Textarea>
   <Button>Publish post</Button>
 </form>
@@ -116,24 +122,26 @@ Most often the textarea component is used as the main text field input element i
 
 ```svelte example class="space-y-4"
 <script>
-  import { Toolbar, ToolbarButton, ToolbarGroup, Textarea, Button } from 'flowbite-svelte';
-  import { PaperClipOutline, MapPinAltSolid, ImageOutline } from 'flowbite-svelte-icons';
+  import { Toolbar, ToolbarButton, ToolbarGroup, Textarea, Button } from "flowbite-svelte";
+  import { PaperClipOutline, MapPinAltSolid, ImageOutline } from "flowbite-svelte-icons";
 </script>
 
-<form>
-  <Textarea class="mb-4" placeholder="Write a comment">
-    <div slot="footer" class="flex items-center justify-between">
-      <Button type="submit">Post comment</Button>
-      <Toolbar embedded>
-        <ToolbarButton name="Attach file"><PaperClipOutline class="w-5 h-5 rotate-45" /></ToolbarButton>
-        <ToolbarButton name="Embed map"><MapPinAltSolid class="w-5 h-5" /></ToolbarButton>
-        <ToolbarButton name="Upload image"><ImageOutline class="w-5 h-5" /></ToolbarButton>
-      </Toolbar>
-    </div>
+<form class="mb-4">
+  <Textarea placeholder="Write a comment">
+    {#snippet footer()}
+      <div class="flex items-center justify-between">
+        <Button type="submit">Post comment</Button>
+        <Toolbar embedded>
+          <ToolbarButton name="Attach file"><PaperClipOutline class="h-5 w-5 rotate-45" /></ToolbarButton>
+          <ToolbarButton name="Embed map"><MapPinAltSolid class="h-5 w-5" /></ToolbarButton>
+          <ToolbarButton name="Upload image"><ImageOutline class="h-5 w-5" /></ToolbarButton>
+        </Toolbar>
+      </div>
+    {/snippet}
   </Textarea>
 </form>
 <p class="ms-auto text-xs text-gray-500 dark:text-gray-400">
-  Remember, contributions to this topic should follow our <a href="/" class="text-blue-600 dark:text-blue-500 hover:underline"> Community Guidelines </a>
+  Remember, contributions to this topic should follow our <a href="/" class="text-blue-600 hover:underline dark:text-blue-500">Community Guidelines</a>
   .
 </p>
 ```

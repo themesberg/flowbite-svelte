@@ -13,13 +13,13 @@ description: Use the Datepicker component to allow users to select a date or dat
   const dirName = toKebabCase(component_title)
 </script>
 
-The Datepicker component provides an interactive calendar interface for selecting single dates or date ranges. It's fully integrated with Flowbite-Svelte's design system and offers various customization options.
+The Datepicker component provides an interactive calendar interface for selecting single dates or date ranges. It's fully integrated with flowbite-svelte's design system and offers various customization options.
 
 ## Setup
 
 ```svelte example hideOutput
 <script>
-  import { Datepicker } from 'flowbite-svelte';
+  import { Datepicker } from "flowbite-svelte";
 </script>
 ```
 
@@ -28,14 +28,14 @@ The Datepicker component provides an interactive calendar interface for selectin
 Use the Datepicker for single date selection. The selected date is bound to the `value` prop.
 
 ```svelte example
-<script>
-  import { Datepicker, P } from 'flowbite-svelte';
-  let selectedDate = null;
+<script lang="ts">
+  import { Datepicker, P } from "flowbite-svelte";
+  let selectedDate = $state<Date | undefined>(undefined);
 </script>
 
 <div class="mb-64 md:w-1/2">
-  <Datepicker bind:value={selectedDate} />
-  <P class="mt-4">Selected date: {selectedDate ? selectedDate.toLocaleDateString() : 'None'}</P>
+  <Datepicker bind:value={selectedDate} color="green" />
+  <P class="mt-4">Selected date: {selectedDate ? selectedDate.toLocaleDateString() : "None"}</P>
 </div>
 ```
 
@@ -44,17 +44,21 @@ Use the Datepicker for single date selection. The selected date is bound to the 
 Enable date range selection using the `range` prop. The start and end dates are bound to `rangeFrom` and `rangeTo` respectively.
 
 ```svelte example
-<script>
-  import { Datepicker, P } from 'flowbite-svelte';
-  let dateRange = { from: null, to: null };
+<script lang="ts">
+  import { Datepicker, P } from "flowbite-svelte";
+
+  let dateRange: { from: Date | undefined; to: Date | undefined } = $state({
+    from: undefined,
+    to: undefined
+  });
 </script>
 
 <div class="mb-64 md:w-1/2">
-  <Datepicker range bind:rangeFrom={dateRange.from} bind:rangeTo={dateRange.to} />
+  <Datepicker range bind:rangeFrom={dateRange.from} bind:rangeTo={dateRange.to} color="pink" />
   <P class="mt-4">
     Selected range:
-    {dateRange.from ? dateRange.from.toLocaleDateString() : 'None'} -
-    {dateRange.to ? dateRange.to.toLocaleDateString() : 'None'}
+    {dateRange.from ? dateRange.from.toLocaleDateString() : "None"} -
+    {dateRange.to ? dateRange.to.toLocaleDateString() : "None"}
   </P>
 </div>
 ```
@@ -64,14 +68,14 @@ Enable date range selection using the `range` prop. The start and end dates are 
 Use the `inline` prop to display the calendar without a popup.
 
 ```svelte example
-<script>
-  import { Datepicker, P } from 'flowbite-svelte';
-  let selectedDate = null;
+<script lang="ts">
+  import { Datepicker, P } from "flowbite-svelte";
+  let selectedDate = $state<Date | undefined>(undefined);
 </script>
 
 <div class="md:w-1/2">
   <Datepicker inline bind:value={selectedDate} />
-  <P class="mt-4">Selected date: {selectedDate ? selectedDate.toLocaleDateString() : 'None'}</P>
+  <P class="mt-4">Selected date: {selectedDate ? selectedDate.toLocaleDateString() : "None"}</P>
 </div>
 ```
 
@@ -80,8 +84,8 @@ Use the `inline` prop to display the calendar without a popup.
 Customize the primary color of the Datepicker using the `color` prop.
 
 ```svelte example
-<script>
-  import { Datepicker } from 'flowbite-svelte';
+<script lang="ts">
+  import { Datepicker } from "flowbite-svelte";
 </script>
 
 <div class="mb-64 md:w-1/2">
@@ -94,8 +98,8 @@ Customize the primary color of the Datepicker using the `color` prop.
 Set a specific locale for date formatting using the `locale` prop.
 
 ```svelte example
-<script>
-  import { Datepicker } from 'flowbite-svelte';
+<script lang="ts">
+  import { Datepicker } from "flowbite-svelte";
 </script>
 
 <div class="mb-64 md:w-1/2">
@@ -108,12 +112,12 @@ Set a specific locale for date formatting using the `locale` prop.
 Specify a custom date format using the `dateFormat` prop.
 
 ```svelte example
-<script>
-  import { Datepicker } from 'flowbite-svelte';
+<script lang="ts">
+  import { Datepicker } from "flowbite-svelte";
 </script>
 
 <div class="mb-64 md:w-1/2">
-  <Datepicker dateFormat={{ year: 'numeric', month: 'short', day: '2-digit' }} />
+  <Datepicker dateFormat={{ year: "numeric", month: "short", day: "2-digit" }} />
 </div>
 ```
 
@@ -122,30 +126,26 @@ Specify a custom date format using the `dateFormat` prop.
 Add action buttons (Today, Clear, Apply) using the `showActionButtons` prop. You can also listen for the `clear` and `apply` events to perform specific actions when these buttons are clicked.
 
 ```svelte example
-<script>
-  import { Datepicker, P } from 'flowbite-svelte';
-  let selectedDate = null;
-  let lastAction = '';
+<script lang="ts">
+  import { Datepicker, P, type DateOrRange } from "flowbite-svelte";
+  let selectedDate = $state<Date | undefined>(undefined);
+  let lastAction = $state<string | undefined>();
 
   function handleClear() {
-    lastAction = 'Cleared';
+    lastAction = "Cleared";
   }
 
-  function handleApply(event) {
-    lastAction = 'Applied';
-    selectedDate = event.detail;
+  function handleApply(detail: DateOrRange): void {
+    lastAction = "Applied";
+    if (detail instanceof Date) {
+      selectedDate = detail;
+    }
   }
 </script>
 
 <div class="mb-64 md:w-1/2">
-  <Datepicker 
-    bind:value={selectedDate} 
-    showActionButtons 
-    autohide={false}
-    on:clear={handleClear}
-    on:apply={handleApply}
-  />
-  <P class="mt-4">Selected date: {selectedDate ? selectedDate.toLocaleDateString() : 'None'}</P>
+  <Datepicker bind:value={selectedDate} showActionButtons autohide={false} onclear={handleClear} onapply={handleApply} />
+  <P class="mt-4">Selected date: {selectedDate ? selectedDate.toLocaleDateString() : "None"}</P>
   <P class="mt-2">Last action: {lastAction}</P>
 </div>
 ```
@@ -155,8 +155,8 @@ Add action buttons (Today, Clear, Apply) using the `showActionButtons` prop. You
 Add a custom title to the Datepicker using the `title` prop.
 
 ```svelte example
-<script>
-  import { Datepicker } from 'flowbite-svelte';
+<script lang="ts">
+  import { Datepicker } from "flowbite-svelte";
 </script>
 
 <div class="mb-64 md:w-1/2">
@@ -169,8 +169,8 @@ Add a custom title to the Datepicker using the `title` prop.
 Use the `disabled` prop to disable the Datepicker.
 
 ```svelte example
-<script>
-  import { Datepicker } from 'flowbite-svelte';
+<script lang="ts">
+  import { Datepicker } from "flowbite-svelte";
 </script>
 
 <div class="mb-64 md:w-1/2">
@@ -183,8 +183,8 @@ Use the `disabled` prop to disable the Datepicker.
 Mark the Datepicker as a required field using the `required` prop.
 
 ```svelte example
-<script>
-  import { Datepicker } from 'flowbite-svelte';
+<script lang="ts">
+  import { Datepicker } from "flowbite-svelte";
 </script>
 
 <div class="mb-64 md:w-1/2">
@@ -197,41 +197,36 @@ Mark the Datepicker as a required field using the `required` prop.
 Set a custom first day of the week using the `firstDayOfWeek` prop.
 
 ```svelte example
-<script>
-  import { Datepicker } from 'flowbite-svelte';
+<script lang="ts">
+  import { Datepicker } from "flowbite-svelte";
 </script>
 
 <div class="mb-64 md:w-1/2">
-  <Datepicker firstDayOfWeek={0} />
+  <Datepicker firstDayOfWeek={3} />
 </div>
 ```
 
 ## Event Handling
 
-Listen for date selection events using the `on:select` event.
+Listen for date selection events using the `onselect` event.
 
 ```svelte example
-<script>
-  import { Datepicker } from 'flowbite-svelte';
- 
-  function handleDateSelect(event) {
-    console.log('Selected date:', event.detail);
+<script lang="ts">
+  import { Datepicker, type DateOrRange } from "flowbite-svelte";
+
+  function handleDateSelect(detail: DateOrRange) {
+    console.log("Selected date:", detail);
   }
 </script>
 
 <div class="mb-64 md:w-1/2">
-  <Datepicker on:select={handleDateSelect} />
+  <Datepicker onselect={handleDateSelect} />
 </div>
 ```
 
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
-
-### Datepicker styling
-
-- Use the `class` prop to overwrite the input field's default class.
-- Use the `color` prop to set the primary color theme for the date picker.
 
 <CompoAttributesViewer {dirName} />
 

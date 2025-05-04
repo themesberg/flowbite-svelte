@@ -1,62 +1,46 @@
 <script lang="ts">
-  import { getContext } from 'svelte';
-  import { twMerge } from 'tailwind-merge';
-  import type { NavbarLiType } from './NavUl.svelte';
-  import type { HTMLAttributes, HTMLAnchorAttributes  } from 'svelte/elements';
+  import clsx from "clsx";
+  import { getContext } from "svelte";
+  import { navbar_li } from "./theme";
+  import type { NavbarState, NavLiProps } from "$lib/types";
 
-  interface NavLiProps {
-    href?: string;
-    activeClass?: string;
-    nonActiveClass?: string;
-  }
+  let navState = getContext<NavbarState>("navState");
 
-  type $$Props = NavLiProps & (HTMLAnchorAttributes | HTMLAttributes<HTMLDivElement>);
+  let { children, activeClass, nonActiveClass, class: className, onclick, ...restProps }: NavLiProps = $props();
 
-  export let href: $$Props['href'] = '';
-  export let activeClass: $$Props['activeClass'] = undefined;
-  export let nonActiveClass: $$Props['nonActiveClass'] = undefined;
+  const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
 
-  const context = getContext<NavbarLiType>('navbarContext') ?? {};
-  const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
-
-  let navUrl = '';
+  let navUrl = $state("");
   activeUrlStore.subscribe((value) => {
     navUrl = value;
   });
 
-  $: active = navUrl ? href === navUrl : false;
-
-  $: liClass = twMerge('block py-2 pe-4 ps-3 md:p-0 rounded-sm md:border-0', active ? activeClass ?? context.activeClass : nonActiveClass ?? context.nonActiveClass, $$props.class);
-  // $: console.log()
+  let active = $derived(navUrl ? restProps.href === navUrl : false);
+  let liClass = $derived(navbar_li({ hidden: navState.hidden, class: clsx(active ? (activeClass ?? navState.activeClass) : (nonActiveClass ?? navState.nonActiveClass), className) }));
 </script>
 
 <li>
-  <svelte:element
-    this={href ? 'a' : 'div'}
-    role={href ? 'link' : 'presentation'}
-    {href}
-    {...$$restProps}
-    on:blur
-    on:change
-    on:click
-    on:focus
-    on:keydown
-    on:keypress
-    on:keyup
-    on:mouseenter
-    on:mouseleave
-    on:mouseover
-    class={liClass}
-  >
-    <slot />
-  </svelte:element>
+  {#if restProps.href === undefined}
+    <button role="presentation" {...restProps} class={liClass} {onclick}>
+      {@render children?.()}
+    </button>
+  {:else}
+    <a {...restProps} class={liClass}>
+      {@render children?.()}
+    </a>
+  {/if}
 </li>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L943)
 ## Props
-@prop export let href: $$Props['href'] = '';
-@prop export let activeClass: $$Props['activeClass'] = undefined;
-@prop export let nonActiveClass: $$Props['nonActiveClass'] = undefined;
+@prop children
+@prop activeClass
+@prop nonActiveClass
+@prop class: className
+@prop onclick
+@prop ...restProps
 -->

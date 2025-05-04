@@ -1,10 +1,11 @@
 {
   "name": "Mark",
-  "slots": [],
-  "events": [],
+  "type": {
+    "name": "MarkProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1613"
+  },
   "props": [
-    ["color?", "string", "'text-white dark:bg-blue-500'"],
-    ["bgColor?", "string", "'bg-blue-600'"],
-    ["markClass?", "string", "'px-2 rounded-sm'"]
+    ["children", ""],
+    ["class: className", ""]
   ]
 }

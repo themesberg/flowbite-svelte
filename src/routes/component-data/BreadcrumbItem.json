@@ -1,15 +1,17 @@
 {
   "name": "BreadcrumbItem",
-  "slots": ["icon", "icon"],
-  "events": [],
+  "type": {
+    "name": "BreadcrumbItemProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L316"
+  },
   "props": [
-    ["home?", "boolean", "false"],
-    ["href?", "string", "undefined"],
-    ["linkClass?", "string", "'ms-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ms-2 dark:text-gray-400 dark:hover:text-white'"],
-    ["spanClass?", "string", "'ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400'"],
-    ["homeClass?", "string", "'inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'"],
-    ["classHome?", "string", "''"],
-    ["classLink?", "string", "''"],
-    ["classSpan?", "string", "''"]
+    ["children", ""],
+    ["icon", ""],
+    ["home", "false"],
+    ["href", ""],
+    ["linkClass", ""],
+    ["spanClass", ""],
+    ["homeClass", ""],
+    ["class: className", ""]
   ]
 }

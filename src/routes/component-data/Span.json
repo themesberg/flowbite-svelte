@@ -1,16 +1,20 @@
 {
   "name": "Span",
-  "slots": [],
-  "events": [],
+  "type": {
+    "name": "SpanProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1637"
+  },
   "props": [
-    ["italic?", "boolean", "false"],
-    ["underline?", "boolean", "false"],
-    ["linethrough?", "boolean", "false"],
-    ["uppercase?", "boolean", "false"],
-    ["gradient?", "boolean", "false"],
-    ["highlight?", "boolean", "false"],
-    ["highlightClass?", "string", "'text-blue-600 dark:text-blue-500'"],
-    ["decorationClass?", "string", "'decoration-2 decoration-blue-400 dark:decoration-blue-600'"],
-    ["gradientClass?", "string", "'text-transparent bg-clip-text bg-linear-to-r to-emerald-600 from-sky-400'"]
+    ["children", ""],
+    ["class: className", ""],
+    ["italic", ""],
+    ["underline", ""],
+    ["linethrough", ""],
+    ["uppercase", ""],
+    ["gradient", ""],
+    ["highlight", ""],
+    ["decoration", ""],
+    ["decorationColor", ""],
+    ["decorationThickness", ""]
   ]
 }

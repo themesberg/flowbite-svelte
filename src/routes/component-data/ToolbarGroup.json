@@ -1,1 +1,14 @@
-{ "name": "ToolbarGroup", "slots": [], "events": [], "props": [["divClass", "string", "'flex items-center space-x-1 rtl:space-x-reverse sm:pe-4 sm:ps-4 first:sm:ps-0 last:sm:pe-0'"]] }
+{
+  "name": "ToolbarGroup",
+  "type": {
+    "name": "ToolbarGroupProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L953"
+  },
+  "props": [
+    ["children", ""],
+    ["spacing", ""],
+    ["padding", ""],
+    ["position", "\"middle\""],
+    ["class: className", ""]
+  ]
+}

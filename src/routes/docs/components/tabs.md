@@ -9,7 +9,7 @@ thumnailSize: w-64
 ---
 
 <script lang="ts">
-  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, P, A } from '$lib'
   const dirName = toKebabCase(component_title)
 </script>
@@ -20,7 +20,7 @@ The tabs component can be used either as an extra navigational hierarchy complem
 
 ```svelte example hideOutput
 <script>
-  import { Tabs, TabItem } from 'flowbite-svelte';
+  import { Tabs, TabItem } from "flowbite-svelte";
 </script>
 ```
 
@@ -38,7 +38,7 @@ The last tab in that example shows not only how to show a disabled tab, but how 
 
 ```svelte example
 <script>
-  import { Tabs, TabItem } from 'flowbite-svelte';
+  import { Tabs, TabItem } from "flowbite-svelte";
 </script>
 
 <Tabs>
@@ -67,7 +67,9 @@ The last tab in that example shows not only how to show a disabled tab, but how 
     </p>
   </TabItem>
   <TabItem disabled>
-    <span slot="title" class="text-gray-400 dark:text-gray-500">Disabled</span>
+    {#snippet titleSlot()}
+      <span class="text-gray-400 dark:text-gray-500">Disabled</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Disabled:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -90,7 +92,7 @@ Use the `tabStyle="underline"` to achieve this alternative tabs component style 
 
 ```svelte example
 <script>
-  import { Tabs, TabItem } from 'flowbite-svelte';
+  import { Tabs, TabItem } from "flowbite-svelte";
 </script>
 
 <Tabs tabStyle="underline">
@@ -119,7 +121,9 @@ Use the `tabStyle="underline"` to achieve this alternative tabs component style 
     </p>
   </TabItem>
   <TabItem disabled>
-    <span slot="title" class="text-gray-400 dark:text-gray-500">Disabled</span>
+    {#snippet titleSlot()}
+      <span class="text-gray-400 dark:text-gray-500">Disabled</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Disabled:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -134,46 +138,54 @@ This is an example of the tabs component where you can also use a SVG powered ic
 
 ```svelte example
 <script>
-  import { Tabs, TabItem } from 'flowbite-svelte';
-  import { UserCircleSolid, GridSolid, AdjustmentsVerticalSolid, ClipboardSolid } from 'flowbite-svelte-icons';
+  import { Tabs, TabItem } from "flowbite-svelte";
+  import { UserCircleSolid, GridSolid, AdjustmentsVerticalSolid, ClipboardSolid } from "flowbite-svelte-icons";
 </script>
 
 <Tabs tabStyle="underline">
   <TabItem open>
-    <div slot="title" class="flex items-center gap-2">
-      <UserCircleSolid size="md" />
-      Profile
-    </div>
+    {#snippet titleSlot()}
+      <div class="flex items-center gap-2">
+        <UserCircleSolid size="md" />
+        Profile
+      </div>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Profile:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
   <TabItem>
-    <div slot="title" class="flex items-center gap-2">
-      <GridSolid size="md" />
-      Dashboard
-    </div>
+    {#snippet titleSlot()}
+      <div class="flex items-center gap-2">
+        <GridSolid size="md" />
+        Dashboard
+      </div>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Dashboard:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
   <TabItem>
-    <div slot="title" class="flex items-center gap-2">
-      <AdjustmentsVerticalSolid size="md" />
-      Settings
-    </div>
+    {#snippet titleSlot()}
+      <div class="flex items-center gap-2">
+        <AdjustmentsVerticalSolid size="md" />
+        Settings
+      </div>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Settings:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
   <TabItem>
-    <div slot="title" class="flex items-center gap-2">
-      <ClipboardSolid size="md" />
-      Contacts
-    </div>
+    {#snippet titleSlot()}
+      <div class="flex items-center gap-2">
+        <ClipboardSolid size="md" />
+        Contacts
+      </div>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Contacts:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -188,33 +200,41 @@ If you want to use pills as a style for the tabs component use `tabStyle="pill"`
 
 ```svelte example
 <script>
-  import { Tabs, TabItem } from 'flowbite-svelte';
+  import { Tabs, TabItem } from "flowbite-svelte";
 </script>
 
 <Tabs tabStyle="pill">
   <TabItem open>
-    <span slot="title">Profile</span>
+    {#snippet titleSlot()}
+      <span>Profile</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Profile:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
   <TabItem>
-    <span slot="title">Dashboard</span>
+    {#snippet titleSlot()}
+      <span>Dashboard</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Dashboard:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
   <TabItem>
-    <span slot="title">Settings</span>
+    {#snippet titleSlot()}
+      <span>Settings</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Settings:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
   <TabItem>
-    <span slot="title">Users</span>
+    {#snippet titleSlot()}
+      <span>Users</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Users:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -229,33 +249,41 @@ If you want to show the tabs on the full width relative to the parent element us
 
 ```svelte example
 <script>
-  import { Tabs, TabItem } from 'flowbite-svelte';
+  import { Tabs, TabItem } from "flowbite-svelte";
 </script>
 
-<Tabs tabStyle="full" defaultClass="flex rounded-lg divide-x rtl:divide-x-reverse divide-gray-200 shadow-sm dark:divide-gray-700">
+<Tabs tabStyle="full" class="flex divide-x divide-gray-200 rounded-lg shadow-sm rtl:divide-x-reverse dark:divide-gray-700">
   <TabItem class="w-full" open>
-    <span slot="title">Profile</span>
+    {#snippet titleSlot()}
+      <span>Profile</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Profile:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
   <TabItem class="w-full">
-    <span slot="title">Dashboard</span>
+    {#snippet titleSlot()}
+      <span>Dashboard</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Dashboard:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
   <TabItem class="w-full">
-    <span slot="title">Settings</span>
+    {#snippet titleSlot()}
+      <span>Settings</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Settings:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
   <TabItem class="w-full">
-    <span slot="title">Users</span>
+    {#snippet titleSlot()}
+      <span>Users</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Users:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -270,19 +298,21 @@ You can add other components to the `TabItem` component. Here we are adding a ti
 
 ```svelte example class="h-auto"
 <script>
-  import { Tabs, TabItem, Timeline, TimelineItem, Button } from 'flowbite-svelte';
-  import { ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Tabs, TabItem, Timeline, TimelineItem, Button } from "flowbite-svelte";
+  import { ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
 <Tabs>
   <TabItem open>
-    <span slot="title">Profile</span>
+    {#snippet titleSlot()}
+      <span>Profile</span>
+    {/snippet}
     <Timeline>
       <TimelineItem title="Application UI code in Tailwind CSS" date="February 2022">
         <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
         <Button color="alternative">
           Learn more
-          <ArrowRightOutline class="ms-2 w-5 h-5" />
+          <ArrowRightOutline class="ms-2 h-5 w-5" />
         </Button>
       </TimelineItem>
       <TimelineItem title="Application UI code in Tailwind CSS" date="March 2022">
@@ -294,21 +324,27 @@ You can add other components to the `TabItem` component. Here we are adding a ti
     </Timeline>
   </TabItem>
   <TabItem>
-    <span slot="title">Dashboard</span>
+    {#snippet titleSlot()}
+      <span>Dashboard</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Dashboard:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
   <TabItem>
-    <span slot="title">Settings</span>
+    {#snippet titleSlot()}
+      <span>Settings</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Settings:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
   <TabItem>
-    <span slot="title">Users</span>
+    {#snippet titleSlot()}
+      <span>Users</span>
+    {/snippet}
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Users:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -317,21 +353,9 @@ You can add other components to the `TabItem` component. Here we are adding a ti
 </Tabs>
 ```
 
-## Custom style
-
-To get a custom look and feel for the `Tabs` component, set `activeClasses` and `inactiveClasses` properties either on the `Tabs` component or on the individual `TabItem` components.
-
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
-
-### TabItem styling
-
-- Use the `class` prop to overwrite the `li` tag class.
-
-### Tabs styling
-
-- Use the `class` prop to overwrite `defaultClass`.
 
 <CompoAttributesViewer {dirName}/>
 

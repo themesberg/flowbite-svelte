@@ -1,66 +1,53 @@
-<script lang="ts" context="module">
-  export type NavbarLiType = {
-    activeClass: string;
-    nonActiveClass: string;
-  };
-</script>
-
 <script lang="ts">
-  import type { HTMLAttributes } from 'svelte/elements';
-  import { getContext, setContext } from 'svelte';
-  import { sineIn } from 'svelte/easing';
-  import { writable, type Writable } from 'svelte/store';
-  import { slide, type SlideParams } from 'svelte/transition';
-  import { twMerge } from 'tailwind-merge';
-  import Frame from '../utils/Frame.svelte';
+  import { getContext, setContext } from "svelte";
+  import { sineIn } from "svelte/easing";
+  import { writable } from "svelte/store";
+  import { slide } from "svelte/transition";
 
-  interface $$Props extends HTMLAttributes<HTMLDivElement> {
-    activeUrl?: string;
-    divClass?: string;
-    ulClass?: string;
-    hidden?: boolean | undefined;
-    slideParams?: SlideParams;
-    activeClass?: string;
-    nonActiveClass?: string;
-  }
+  import clsx from "clsx";
+  import { navbar_ul } from "./theme";
+  import type { NavbarState, NavUlProps } from "$lib/types";
 
-  export let activeUrl: NonNullable<$$Props['activeUrl']> = '';
-  export let divClass: $$Props['divClass'] = 'w-full md:block md:w-auto';
-  export let ulClass: $$Props['ulClass'] = 'flex flex-col p-4 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:text-sm md:font-medium';
-  export let hidden: $$Props['hidden'] = undefined;
-  export let slideParams: $$Props['slideParams'] = { delay: 250, duration: 500, easing: sineIn };
-  export let activeClass: NonNullable<$$Props['activeClass']> = 'text-white bg-primary-700 md:bg-transparent md:text-primary-700 md:dark:text-white dark:bg-primary-600 md:dark:bg-transparent';
-  export let nonActiveClass: NonNullable<$$Props['nonActiveClass']> = 'text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent';
-  export let classUl: string = '';
+  let navState = getContext<NavbarState>("navState");
 
-  const activeUrlStore = writable('');
-  setContext<NavbarLiType>('navbarContext', { activeClass, nonActiveClass });
-  $: {
-    activeUrlStore.set(activeUrl);
-  }
-  setContext('activeUrl', activeUrlStore);
+  let { children, activeUrl, ulClass, slideParams, activeClass, nonActiveClass, class: clasName, ...restProps }: NavUlProps = $props();
 
-  let hiddenStore = getContext('navHidden') as Writable<boolean>;
-  let _hidden: boolean;
-  $: _hidden = hidden ?? $hiddenStore ?? true;
+  const slideParamsDefault = { delay: 250, duration: 500, easing: sineIn };
+  const slideParamsOptions = $derived(slideParams ?? slideParamsDefault);
 
-  let _divClass: string;
-  $: _divClass = twMerge(divClass, $$props.class);
+  const activeUrlStore = writable<string>("");
 
-  let _ulClass: string;
-  $: _ulClass = twMerge(ulClass, classUl);
+  let hidden: boolean = $derived(navState.hidden ?? true);
+
+  let { base, ul, active, nonActive } = $derived(navbar_ul({ hidden }));
+
+  $effect(() => {
+    // setContext<NavbarLiType>("navbarContext", { activeClass: active({ class: activeClass }), nonActiveClass: nonActive({ class: nonActiveClass }) });
+    navState.activeClass = active({ class: activeClass });
+    navState.nonActiveClass = nonActive({ class: nonActiveClass });
+  });
+
+  $effect(() => {
+    activeUrlStore.set(activeUrl ?? "");
+  });
+  setContext("activeUrl", activeUrlStore);
+
+  let _divClass: string = $derived(base({ class: clsx(clasName) }));
+  let _ulClass: string = $derived(ul({ class: ulClass }));
 </script>
 
-{#if !_hidden}
-  <div {...$$restProps} class={_divClass} transition:slide={slideParams} on:click role="button" tabindex="0">
-    <Frame tag="ul" border rounded color="navbarUl" class={_ulClass}>
-      <slot />
-    </Frame>
+{#if !hidden}
+  <div {...restProps} class={_divClass} transition:slide={slideParamsOptions}>
+    <!-- onclick -->
+    <ul class={_ulClass}>
+      {@render children?.()}
+      <ul></ul>
+    </ul>
   </div>
 {:else}
-  <div {...$$restProps} class={_divClass} class:hidden={_hidden}>
+  <div {...restProps} class={_divClass}>
     <ul class={_ulClass}>
-      <slot />
+      {@render children?.()}
     </ul>
   </div>
 {/if}
@@ -68,13 +55,15 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L934)
 ## Props
-@prop export let activeUrl: NonNullable<$$Props['activeUrl']> = '';
-@prop export let divClass: $$Props['divClass'] = 'w-full md:block md:w-auto';
-@prop export let ulClass: $$Props['ulClass'] = 'flex flex-col p-4 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:text-sm md:font-medium';
-@prop export let hidden: $$Props['hidden'] = undefined;
-@prop export let slideParams: $$Props['slideParams'] = { delay: 250, duration: 500, easing: sineIn };
-@prop export let activeClass: NonNullable<$$Props['activeClass']> = 'text-white bg-primary-700 md:bg-transparent md:text-primary-700 md:dark:text-white dark:bg-primary-600 md:dark:bg-transparent';
-@prop export let nonActiveClass: NonNullable<$$Props['nonActiveClass']> = 'text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent';
-@prop export let classUl: string = '';
+@prop children
+@prop activeUrl
+@prop ulClass
+@prop slideParams
+@prop activeClass
+@prop nonActiveClass
+@prop class: clasName
+@prop ...restProps
 -->

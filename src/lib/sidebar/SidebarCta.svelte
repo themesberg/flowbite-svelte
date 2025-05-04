@@ -1,36 +1,33 @@
 <script lang="ts">
-  import type { HTMLAttributes } from 'svelte/elements';
-  import { twMerge } from 'tailwind-merge';
+  import clsx from "clsx";
+  import { sidebarcta } from ".";
+  import type { SidebarCtaProps } from "$lib/types";
 
-  interface $$Props extends HTMLAttributes<HTMLDivElement> {
-    divWrapperClass?: string;
-    divClass?: string;
-    spanClass?: string;
-    label?: string;
-  }
-
-  export let divWrapperClass: $$Props['divWrapperClass'] = 'p-4 mt-6 bg-primary-50 rounded-lg dark:bg-primary-900';
-  export let divClass: $$Props['divClass'] = 'flex items-center mb-3';
-  export let spanClass: $$Props['spanClass'] = 'bg-primary-100 text-primary-800 text-sm font-semibold me-2 px-2.5 py-0.5 rounded-sm dark:bg-primary-200 dark:text-primary-900';
-  export let label: $$Props['label'] = '';
+  let { children, icon, divClass, spanClass, label, class: className, ...restProps }: SidebarCtaProps = $props();
+  const { base, div, span } = $derived(sidebarcta());
 </script>
 
-<div {...$$restProps} id="dropdown-cta" class={twMerge(divWrapperClass, $$props.class)} role="alert">
-  <div class={divClass}>
-    <span class={spanClass}>{label}</span>
-    {#if $$slots.icon}
-      <slot name="icon" />
+<div {...restProps} id="dropdown-cta" class={base({ class: clsx(className) })} role="alert">
+  <div class={div({ class: divClass })}>
+    <span class={span({ class: spanClass })}>{label}</span>
+    {#if icon}
+      {@render icon()}
     {/if}
   </div>
-  <slot />
+  {@render children?.()}
 </div>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[SidebarCtaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1154)
 ## Props
-@prop export let divWrapperClass: $$Props['divWrapperClass'] = 'p-4 mt-6 bg-primary-50 rounded-lg dark:bg-primary-900';
-@prop export let divClass: $$Props['divClass'] = 'flex items-center mb-3';
-@prop export let spanClass: $$Props['spanClass'] = 'bg-primary-100 text-primary-800 text-sm font-semibold me-2 px-2.5 py-0.5 rounded-sm dark:bg-primary-200 dark:text-primary-900';
-@prop export let label: $$Props['label'] = '';
+@prop children
+@prop icon
+@prop divClass
+@prop spanClass
+@prop label
+@prop class: className
+@prop ...restProps
 -->
