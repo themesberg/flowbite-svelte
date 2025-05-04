@@ -1,5 +1,0 @@
----
-"flowbite-svelte": minor
----
-
-Updates

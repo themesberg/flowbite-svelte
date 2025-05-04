@@ -1,5 +1,51 @@
 # Changelog
 
+## 1.0.0
+
+### Minor Changes
+
+- Updates ([`fefe126`](https://github.com/themesberg/flowbite-svelte/commit/fefe126819a084c79d461ea00d77a20c83cce10a))
+
+### Patch Changes
+
+- fix: #24, #46, #23, #45, #41, #44, #40, #39, #5, #19, #8, #29, #31, #32, #33, #30 ([`e8d6bdc`](https://github.com/themesberg/flowbite-svelte/commit/e8d6bdc47e6ada4ca7d73dc8b55feac0de47ddde))
+
+- fix: bugs, component updates ([`e50568b`](https://github.com/themesberg/flowbite-svelte/commit/e50568bb5ba28fab74b7582650f1589f1fb2256b))
+
+- fix: #73, #74, #75 ([`24fc0d4`](https://github.com/themesberg/flowbite-svelte/commit/24fc0d4954fb07c2ea60830ef5f41cffc364bfb7))
+
+- fix: Controls and JSONView ([`376eb3b`](https://github.com/themesberg/flowbite-svelte/commit/376eb3b17f6654f814cd0fa981ce08d508d1bd2b))
+
+- fix: Footer, Carousel, etc. ([`25eb368`](https://github.com/themesberg/flowbite-svelte/commit/25eb3689ccfe8ba7d80fee59be7c565adaafbdde))
+
+- fix: component docs up to table ([`6717714`](https://github.com/themesberg/flowbite-svelte/commit/6717714f4d0cbfa6e1e795f0c8dbfa999fdd4934))
+
+- fix: version conflict ([`4523a60`](https://github.com/themesberg/flowbite-svelte/commit/4523a6018bdc32c75cb7f061128e2445e59e5f41))
+
+- Feature ready ([`7cf15be`](https://github.com/themesberg/flowbite-svelte/commit/7cf15be4e458c55f3de675668699b7fd909d8098))
+
+- fix: remove padding from Card compo ([`f60b44f`](https://github.com/themesberg/flowbite-svelte/commit/f60b44f607b8b94365c73f589ef669e0cdec9ec3))
+
+- fix: move all types to $lib/types ([`4ae0a36`](https://github.com/themesberg/flowbite-svelte/commit/4ae0a367353f9bd861ccb1471504e502106f0575))
+
+- fix: various bugs ([`6ea5e68`](https://github.com/themesberg/flowbite-svelte/commit/6ea5e683d09a4d4ad73aadc19a78e3387849b274))
+
+- fix: some compos and add progress to check API ([`1c4a7d8`](https://github.com/themesberg/flowbite-svelte/commit/1c4a7d8f74c1e3ea0bffa7a1d60cd8d655b0172a))
+
+- fix: #21, #37, #42, and other bug fix ([`accfe72`](https://github.com/themesberg/flowbite-svelte/commit/accfe72cda5f274c82bbd043e79d7d6e11353b7e))
+
+- fix: components update ([`c4e5b9b`](https://github.com/themesberg/flowbite-svelte/commit/c4e5b9b4428873517b65803e3aeaeb753131a439))
+
+- fix: component docs ([`dfca8aa`](https://github.com/themesberg/flowbite-svelte/commit/dfca8aa8bbd4b8acde592f3be6bcd9fe9870ec6f))
+
+- fix: API check complete ([`41f15bc`](https://github.com/themesberg/flowbite-svelte/commit/41f15bcf9cc08a4e2dab14397e96d869f70a89e6))
+
+- docs: getting started pages ([`9c95fc9`](https://github.com/themesberg/flowbite-svelte/commit/9c95fc9ba92ebbd084ac160b1fc2970206ce52cb))
+
+- fix: datepicker type ([`87e787b`](https://github.com/themesberg/flowbite-svelte/commit/87e787b9a6e2506b47d38e6d0aa5217d4985a84c))
+
+- fix: speedDial, banner, popper and other bugs ([`184244c`](https://github.com/themesberg/flowbite-svelte/commit/184244c85a7bae09261c332f3d9f2b0fdcf5a40e))
+
 ## 1.0.0-next.20
 
 ### Patch Changes
