@@ -282,8 +282,3 @@
   <Popover reference="#ext-ref" triggeredBy="#ref-3" class="w-64 text-sm font-light " placement="right" title="Placement: Right">And here's some amazing content. It's very engaging. Right?</Popover>
 </div>
 
-<style>
-  .border p-4 my-4 {
-    margin-bottom: 2rem;
-  }
-</style>
