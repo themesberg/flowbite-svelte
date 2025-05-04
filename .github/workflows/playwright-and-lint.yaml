@@ -31,4 +31,4 @@ jobs:
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
           FATHOM_ID: "ABCDEFGF"
-        run: pnpm test:integration
+        run: pnpm test:e2e
