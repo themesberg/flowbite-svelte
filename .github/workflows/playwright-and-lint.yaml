@@ -26,7 +26,7 @@ jobs:
       - name: Install dependencies
         run: pnpm i
       - name: Check formatting
-        run: pnpm lint:format
+        run: pnpm format
       - name: Run playwright tests
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
