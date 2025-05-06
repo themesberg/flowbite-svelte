@@ -53,7 +53,8 @@
       checked: true
     },
     datepicker: {
-      checked: true
+      checked: true,
+      notes: 'style update'
     },
     deviceMockups: {
       checked: true
@@ -166,6 +167,9 @@
       checked: true
     },
     textarea: {
+      checked: true
+    },
+    timepicker: {
       checked: true
     },
     toggle: {
