@@ -1335,6 +1335,21 @@ export interface SpinnerProps extends SVGAttributes<SVGSVGElement> {
   currentColor?: string;
 }
 
+// stepindicator
+export type StepColorType = "primary" | "secondary" | "gray" | "red" | "yellow" | "green" | "indigo" | "purple" | "pink" | "blue" | "custom";
+
+export interface StepIndicatorProps extends HTMLAttributes<HTMLElement> {
+  steps: string[];
+  currentStep: number;
+  size?: string;
+  color?: StepColorType;
+  glow?: boolean;
+  hideLabel?: boolean;
+  completedCustom?: string;
+  currentCustom?: string;
+  class?: string;
+}
+
 // tables
 export type TableCtxType = {
   striped?: boolean;

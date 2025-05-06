@@ -160,7 +160,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[PopperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1700)
+[PopperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1715)
 ## Props
 @prop triggeredBy
 @prop trigger = "click"

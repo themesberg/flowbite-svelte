@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -597,6 +597,10 @@
     "./Spinner.svelte": {
       "types": "./dist/spinner/Spinner.svelte.d.ts",
       "svelte": "./dist/spinner/Spinner.svelte"
+    },
+    "./StepIndicator.svelte": {
+      "types": "./dist/steps/StepIndicator.svelte.d.ts",
+      "svelte": "./dist/steps/StepIndicator.svelte"
     },
     "./Table.svelte": {
       "types": "./dist/table/Table.svelte.d.ts",

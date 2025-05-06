@@ -54,7 +54,7 @@
     },
     datepicker: {
       checked: true,
-      notes: 'style update'
+      notes: "style update"
     },
     deviceMockups: {
       checked: true

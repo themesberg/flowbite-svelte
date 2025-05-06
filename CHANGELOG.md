@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.2
+
+### Patch Changes
+
+- feat: StepIndicator
+
 ## 1.0.1
 
 ### Patch Changes

@@ -32,6 +32,7 @@ export * from "./sidebar";
 export * from "./skeleton";
 export * from "./speed-dial";
 export * from "./spinner";
+export * from "./steps";
 export * from "./tabs";
 export * from "./table";
 export * from "./timeline";
