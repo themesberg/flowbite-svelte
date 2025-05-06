@@ -43,8 +43,8 @@
 {#if children}
   {@render children(changeSlide)}
 {:else}
-  <ControlButton name="Previous" forward={false} onclick={() => changeSlide(false)} class={className} {...restProps}/>
-  <ControlButton name="Next" forward={true} onclick={() => changeSlide(true)} class={className} {...restProps}/>
+  <ControlButton name="Previous" forward={false} onclick={() => changeSlide(false)} class={className} {...restProps} />
+  <ControlButton name="Next" forward={true} onclick={() => changeSlide(true)} class={className} {...restProps} />
 {/if}
 
 <!--
@@ -55,4 +55,5 @@
 ## Props
 @prop children
 @prop class: className
+@prop ...restProps
 -->

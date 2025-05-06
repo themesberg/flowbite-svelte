@@ -31,7 +31,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TableBodyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1361)
+[TableBodyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1396)
 ## Props
 @prop children
 @prop bodyItems

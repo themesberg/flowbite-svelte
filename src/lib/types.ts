@@ -490,7 +490,7 @@ export interface MockupBaseProps extends HTMLAttributes<HTMLElement> {
   div4Class?: string;
 }
 
-export interface AndroidProps extends HTMLAttributes<HTMLDivElement>{
+export interface AndroidProps extends HTMLAttributes<HTMLDivElement> {
   children?: Snippet;
   divClass?: string;
   div2Class?: string;
@@ -784,6 +784,41 @@ export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLSelec
   dropdownClass?: string;
   placeholder?: string;
   disabled?: boolean;
+}
+
+// Timepicker
+export type TimePickerType = "default" | "dropdown" | "select" | "range" | "timerange-dropdown" | "timerange-toggle" | "inline-buttons";
+export type ColumnCount = 1 | 2 | 3 | 4;
+export type TimePickerOption = {
+  name: string;
+  value: string;
+};
+
+export interface TimepickerProps {
+  id?: string;
+  endId?: string;
+  value?: string;
+  endValue?: string;
+  min?: string;
+  max?: string;
+  required?: boolean;
+  disabled?: boolean;
+  inputColor?: InputProps["color"];
+  buttonColor?: ButtonProps["color"];
+  Icon?: Component | undefined;
+  type?: TimePickerType;
+  optionLabel?: string;
+  options?: TimePickerOption[];
+  size?: ButtonGroupSizeType; // Use the specific ButtonGroupSizeType
+  divClass?: string;
+  inputClass?: string;
+  selectClass?: string;
+  timerangeLabel?: string;
+  timerangeButtonLabel?: string;
+  timeIntervals?: string[];
+  columns?: ColumnCount;
+  // Callback props instead of events
+  onselect?: (data: { time: string; endTime: string; [key: string]: string }) => void;
 }
 
 // textarea

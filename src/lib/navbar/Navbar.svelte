@@ -29,7 +29,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L917)
+[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L952)
 ## Props
 @prop children
 @prop fluid

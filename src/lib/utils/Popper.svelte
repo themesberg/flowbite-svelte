@@ -160,7 +160,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[PopperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1665)
+[PopperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1700)
 ## Props
 @prop triggeredBy
 @prop trigger = "click"
@@ -176,4 +176,5 @@
 @prop class: className = ""
 @prop arrowClass = ""
 @prop children
+@prop ...restProps
 -->

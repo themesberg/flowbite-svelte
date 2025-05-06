@@ -21,7 +21,7 @@
         </svg>
       {/if}
       {#if name}
-      <span class="sr-only">{name}</span>
+        <span class="sr-only">{name}</span>
       {/if}
     </span>
   {/if}

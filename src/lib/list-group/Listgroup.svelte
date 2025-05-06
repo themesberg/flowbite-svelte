@@ -33,7 +33,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L858)
+[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L893)
 ## Props
 @prop children
 @prop items

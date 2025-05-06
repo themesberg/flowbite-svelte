@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Label } from '$lib';
+  import { Label } from "$lib";
 </script>
 
 <h1 class="my-4 text-3xl">Label</h1>

@@ -1,266 +1,238 @@
 <script lang="ts">
-  import { Label, Timepicker, P, CloseButton, Datepicker, Button, Accordion, AccordionItem, Avatar, Input, Modal, Heading, Select, Toggle, Checkbox, Drawer, Card, Span, type DateOrRange } from '$lib';
-  import { ClockSolid, CalendarMonthSolid, MapPinSolid, InfoCircleSolid, PlusOutline, TrashBinSolid, CloseOutline } from 'flowbite-svelte-icons';
-
+  import { Label, Timepicker, P, CloseButton, Datepicker, Button, Accordion, AccordionItem, Avatar, Input, Modal, Heading, Select, Toggle, Checkbox, Drawer, Card, Span, type DateOrRange } from "$lib";
+  import { ClockSolid, CalendarMonthSolid, MapPinSolid, InfoCircleSolid, PlusOutline, TrashBinSolid, CloseOutline } from "flowbite-svelte-icons";
 
   // Default timepicker
-  
+
   // Timepicker with icon
-  
+
   // Timepicker with custom props
-  
+
   // Timepicker with dropdown
-  let selectedTime = $state({ time: '12:00', duration: '30' });
+  let selectedTime = $state({ time: "12:00", duration: "30" });
   const durations = [
-    { value: '30', name: '30 minutes' },
-    { value: '60', name: '1 hour' },
-    { value: '120', name: '2 hours' }
+    { value: "30", name: "30 minutes" },
+    { value: "60", name: "1 hour" },
+    { value: "120", name: "2 hours" }
   ];
 
-  function handleChange(data: { 
-  time: string; 
-  endTime: string; 
-  [key: string]: string 
-}): void {
-  if (data) {
-    // Extract the duration from the "duration" key in the data object
-    selectedTime = {
-      time: data.time,
-      duration: data.duration || '30' // Fallback to default if not provided
-    };
-    $inspect('data: ', data);
+  function handleChange(data: { time: string; endTime: string; [key: string]: string }): void {
+    if (data) {
+      // Extract the duration from the "duration" key in the data object
+      selectedTime = {
+        time: data.time,
+        duration: data.duration || "30" // Fallback to default if not provided
+      };
+    }
   }
-}
 
   // Timepicker with select
-  let selectedTimeWithTimezone = $state({ time: '12:00', timezone: 'UTC' });
+  let selectedTimeWithTimezone = $state({ time: "12:00", timezone: "UTC" });
   const timezones = [
-    { value: 'UTC', name: 'UTC' },
-    { value: 'EST', name: 'Eastern Time (EST)' },
-    { value: 'CST', name: 'Central Time (CST)' },
-    { value: 'MST', name: 'Mountain Time (MST)' },
-    { value: 'PST', name: 'Pacific Time (PST)' },
-    { value: 'GMT', name: 'Greenwich Mean Time (GMT)' },
-    { value: 'CET', name: 'Central European Time (CET)' },
+    { value: "UTC", name: "UTC" },
+    { value: "EST", name: "Eastern Time (EST)" },
+    { value: "CST", name: "Central Time (CST)" },
+    { value: "MST", name: "Mountain Time (MST)" },
+    { value: "PST", name: "Pacific Time (PST)" },
+    { value: "GMT", name: "Greenwich Mean Time (GMT)" },
+    { value: "CET", name: "Central European Time (CET)" }
   ];
 
-  function handleTimezoneChange(data: { 
-  time: string; 
-  endTime: string; 
-  [key: string]: string 
-}): void {
-  if (data) {
-    // Extract the timezone from the "timezone" key in the data object
-    selectedTimeWithTimezone = {
-      time: data.time,
-      timezone: data.timezone || 'UTC' // Fallback to default if not provided
-    };
+  function handleTimezoneChange(data: { time: string; endTime: string; [key: string]: string }): void {
+    if (data) {
+      // Extract the timezone from the "timezone" key in the data object
+      selectedTimeWithTimezone = {
+        time: data.time,
+        timezone: data.timezone || "UTC" // Fallback to default if not provided
+      };
+    }
   }
-}
   // Timepicker range selector
-  let selectedTimeRange = $state({ time: '09:00', endTime: '17:00' });
+  let selectedTimeRange = $state({ time: "09:00", endTime: "17:00" });
 
-  function handleRangeChange(data: { 
-  time: string; 
-  endTime: string; 
-  [key: string]: string 
-}): void {
-  if (data) {
-    selectedTimeRange = {
-      time: data.time,
-      endTime: data.endTime
-    };
+  function handleRangeChange(data: { time: string; endTime: string; [key: string]: string }): void {
+    if (data) {
+      selectedTimeRange = {
+        time: data.time,
+        endTime: data.endTime
+      };
+    }
   }
-}
 
   // Timerange with dropdown
-  let selectedTimerangeDropdown = $state({ time: '09:00', endTime: '17:00' });
+  let selectedTimerangeDropdown = $state({ time: "09:00", endTime: "17:00" });
 
-  function handleTimerangeDropdownChange(data: { 
-  time: string; 
-  endTime: string; 
-  [key: string]: string 
-}): void {
-  if (data) {
-    selectedTimerangeDropdown = {
-      time: data.time,
-      endTime: data.endTime
-    };
+  function handleTimerangeDropdownChange(data: { time: string; endTime: string; [key: string]: string }): void {
+    if (data) {
+      selectedTimerangeDropdown = {
+        time: data.time,
+        endTime: data.endTime
+      };
+    }
   }
-}
 
   // Timerange picker with toggle
-  let selectedTimerangeToggle = $state({ time: '09:00', endTime: '17:00' });
+  let selectedTimerangeToggle = $state({ time: "09:00", endTime: "17:00" });
 
-  function handleTimerangeToggleChange(data: { 
-  time: string; 
-  endTime: string; 
-  [key: string]: string 
-}): void {
-  if (data) {
-    selectedTimerangeToggle = {
-      time: data.time,
-      endTime: data.endTime
-    };
+  function handleTimerangeToggleChange(data: { time: string; endTime: string; [key: string]: string }): void {
+    if (data) {
+      selectedTimerangeToggle = {
+        time: data.time,
+        endTime: data.endTime
+      };
+    }
   }
-}
 
   // Inline timepicker buttons
-  let selectedDate = $state(new Date('2024-06-30'));
-  let selectedInlineTime = $state({time:'12:00'});
-  let eventTitle = $state('Digital Transformation');
-  let eventLocation = $state('California, USA');
-  let eventDuration = $state('30 min');
-  let eventType = $state('Web conference');
+  let selectedDate = $state(new Date("2024-06-30"));
+  let selectedInlineTime = $state({ time: "12:00" });
+  let eventTitle = $state("Digital Transformation");
+  let eventLocation = $state("California, USA");
+  let eventDuration = $state("30 min");
+  let eventType = $state("Web conference");
   let participants = [
-    { img: '/images/profile-picture-1.webp', alt: 'Participant 1' },
-    { img: '/images/profile-picture-2.webp', alt: 'Participant 2' },
-    { img: '/images/profile-picture-3.webp', alt: 'Participant 3' },
+    { img: "/images/profile-picture-1.webp", alt: "Participant 1" },
+    { img: "/images/profile-picture-2.webp", alt: "Participant 2" },
+    { img: "/images/profile-picture-3.webp", alt: "Participant 3" }
   ];
 
-  const timeIntervals = [
-    '10:00', '10:30', '11:00', '11:30', '12:00', '12:30',
-    '13:00', '13:30', '14:00', '14:30', '15:00', '15:30'
-  ];
+  const timeIntervals = ["10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30"];
 
-//   function handleDateSelect(event: { detail: Date; }): void {
-//     if (event) {
-//       selectedDate = {
-//       detail: detail
-//     };
-//   }
-//   selectedDate = event.detail;
-// }
+  //   function handleDateSelect(event: { detail: Date; }): void {
+  //     if (event) {
+  //       selectedDate = {
+  //       detail: detail
+  //     };
+  //   }
+  //   selectedDate = event.detail;
+  // }
 
-function handleTimeSelect(data: { 
-  time: string; 
-  endTime: string; 
-  [key: string]: string 
-}): void {
-  if (data) {
-    selectedInlineTime = {
-      time: data.time
-    };
+  function handleTimeSelect(data: { time: string; endTime: string; [key: string]: string }): void {
+    if (data) {
+      selectedInlineTime = {
+        time: data.time
+      };
+    }
   }
-}
 
   // Modal with timepicker
   let open = $state(false);
   let modalSelectedDate = $state(new Date());
-  let modalTimeSelection = $state({ time: '10:00', endTime: '11:00' });
+  let modalTimeSelection = $state({ time: "10:00", endTime: "11:00" });
 
-function handleModalDateSelect(selectedDate: DateOrRange): void {
-  if (selectedDate instanceof Date) {
-    modalSelectedDate = selectedDate;
-  } else if (selectedDate && typeof selectedDate === 'object') {
-    // Handle range case if needed
-    if (selectedDate.from) {
-      modalSelectedDate = selectedDate.from;
+  function handleModalDateSelect(selectedDate: DateOrRange): void {
+    if (selectedDate instanceof Date) {
+      modalSelectedDate = selectedDate;
+    } else if (selectedDate && typeof selectedDate === "object") {
+      // Handle range case if needed
+      if (selectedDate.from) {
+        modalSelectedDate = selectedDate.from;
+      }
     }
   }
-}
 
-function handleModalTimeSelect(data?: { 
-  time: string; 
-  endTime: string; 
-  [key: string]: string 
-}): void {
-  if (data) {
-    modalTimeSelection = {
-      time: data.time,
-      endTime: data.endTime
-    };
+  function handleModalTimeSelect(data?: { time: string; endTime: string; [key: string]: string }): void {
+    if (data) {
+      modalTimeSelection = {
+        time: data.time,
+        endTime: data.endTime
+      };
+    }
   }
-}
 
-function handleSave(): void {
-  open = false;
-}
+  function handleSave(): void {
+    open = false;
+  }
 
   // Drawer with timepicker
   let hidden = $state(true);
   let businessHoursEnabled = $state(true);
-  let selectedTimezoneDrawer = $state('');
+  let selectedTimezoneDrawer = $state("");
   let workingDays = $state([
-    { day: 'Mon', enabled: true, startTime: '09:00', endTime: '17:00' },
-    { day: 'Tue', enabled: false, startTime: '09:00', endTime: '17:00' },
-    { day: 'Wed', enabled: true, startTime: '09:00', endTime: '17:00' },
-    { day: 'Thu', enabled: false, startTime: '09:00', endTime: '17:00' },
-    { day: 'Fri', enabled: false, startTime: '09:00', endTime: '17:00' },
+    { day: "Mon", enabled: true, startTime: "09:00", endTime: "17:00" },
+    { day: "Tue", enabled: false, startTime: "09:00", endTime: "17:00" },
+    { day: "Wed", enabled: true, startTime: "09:00", endTime: "17:00" },
+    { day: "Thu", enabled: false, startTime: "09:00", endTime: "17:00" },
+    { day: "Fri", enabled: false, startTime: "09:00", endTime: "17:00" }
   ]);
 
   const drawerTimezones = [
-    { value: 'America/New_York', name: 'EST (Eastern Standard Time) - GMT-5 (New York)' },
-    { value: 'America/Los_Angeles', name: 'PST (Pacific Standard Time) - GMT-8 (Los Angeles)' },
-    { value: 'Europe/London', name: 'GMT (Greenwich Mean Time) - GMT+0 (London)' },
-    { value: 'Europe/Berlin', name: 'CET (Central European Time) - GMT+1 (Berlin)' },
-    { value: 'Asia/Tokyo', name: 'JST (Japan Standard Time) - GMT+9 (Tokyo)' },
+    { value: "America/New_York", name: "EST (Eastern Standard Time) - GMT-5 (New York)" },
+    { value: "America/Los_Angeles", name: "PST (Pacific Standard Time) - GMT-8 (Los Angeles)" },
+    { value: "Europe/London", name: "GMT (Greenwich Mean Time) - GMT+0 (London)" },
+    { value: "Europe/Berlin", name: "CET (Central European Time) - GMT+1 (Berlin)" },
+    { value: "Asia/Tokyo", name: "JST (Japan Standard Time) - GMT+9 (Tokyo)" }
   ];
 
-  let sortedWorkingDays = $derived([...workingDays].sort((a, b) => {
-    const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-    return days.indexOf(a.day) - days.indexOf(b.day);
-  }));
+  let sortedWorkingDays = $derived(
+    [...workingDays].sort((a, b) => {
+      const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+      return days.indexOf(a.day) - days.indexOf(b.day);
+    })
+  );
 
   function toggleDay(index: number): void {
-  workingDays[index].enabled = !workingDays[index].enabled;
-  workingDays = [...workingDays];
-}
-
-function handleTimeChange(index: number, isStartTime: boolean, event: { detail: { time: string } }): void {
-  const newTime = event.detail.time;
-  if (isStartTime) {
-    workingDays[index].startTime = newTime;
-  } else {
-    workingDays[index].endTime = newTime;
+    workingDays[index].enabled = !workingDays[index].enabled;
+    workingDays = [...workingDays];
   }
-  workingDays = [...workingDays];
-}
 
-function addInterval(): void {
-  const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-  const existingDays = new Set(workingDays.map(d => d.day));
-  const availableDays = days.filter(d => !existingDays.has(d));
-  
-  if (availableDays.length > 0) {
-    workingDays = [...workingDays, { 
-      day: availableDays[0], 
-      enabled: true, 
-      startTime: '09:00', 
-      endTime: '17:00' 
-    }];
+  function handleTimeChange(index: number, isStartTime: boolean, event: { time: string }): void {
+    const newTime = event.time;
+    if (isStartTime) {
+      workingDays[index].startTime = newTime;
+    } else {
+      workingDays[index].endTime = newTime;
+    }
+    workingDays = [...workingDays];
   }
-}
 
-function removeInterval(index: number): void {
-  workingDays = workingDays.filter((_, i) => i !== index);
-}
+  function addInterval(): void {
+    const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    const existingDays = new Set(workingDays.map((d) => d.day));
+    const availableDays = days.filter((d) => !existingDays.has(d));
 
-function saveAll(e: Event): void {
-  e.preventDefault();
-  console.log('Saving settings:', { businessHoursEnabled, selectedTimezoneDrawer, workingDays });
-  hidden = true;
-}
+    if (availableDays.length > 0) {
+      workingDays = [
+        ...workingDays,
+        {
+          day: availableDays[0],
+          enabled: true,
+          startTime: "09:00",
+          endTime: "17:00"
+        }
+      ];
+    }
+  }
+
+  function removeInterval(index: number): void {
+    workingDays = workingDays.filter((_, i) => i !== index);
+  }
+
+  function saveAll(e: Event): void {
+    e.preventDefault();
+    console.log("Saving settings:", { businessHoursEnabled, selectedTimezoneDrawer, workingDays });
+    hidden = true;
+  }
 
   const timepickerClasses = {
-    divClass: 'inline-flex rounded-lg shadow-sm text-xs sm:text-sm w-full sm:w-auto',
-    inputClass: 'block disabled:cursor-not-allowed disabled:opacity-50 p-1.5 sm:p-2.5 text-xs sm:text-sm border-r-0 focus:ring-0 focus:outline-none'
+    divClass: "inline-flex rounded-lg shadow-sm text-xs sm:text-sm w-full sm:w-auto",
+    inputClass: "block disabled:cursor-not-allowed disabled:opacity-50 p-1.5 sm:p-2.5 text-xs sm:text-sm border-r-0 focus:ring-0 focus:outline-none"
   };
 </script>
 
-<h1 class="text-3xl my-4">Timepicker</h1>
+<h1 class="my-4 text-3xl">Timepicker</h1>
 
 <div class="mb-8">
-  <h2 class="text-2xl my-4">Default timepicker</h2>
-  <div class="border rounded p-4 my-4">
+  <h2 class="my-4 text-2xl">Default timepicker</h2>
+  <div class="my-4 rounded border p-4">
     <Label>Select Time:</Label>
     <Timepicker />
   </div>
 </div>
 
 <div class="mb-8">
-  <h2 class="text-2xl my-4">Timepicker with icon</h2>
-  <div class="border rounded p-4 my-4">
+  <h2 class="my-4 text-2xl">Timepicker with icon</h2>
+  <div class="my-4 rounded border p-4">
     <Label>Select Time (Flowbite Icon):</Label>
     <Timepicker Icon={ClockSolid} />
 
@@ -270,114 +242,81 @@ function saveAll(e: Event): void {
 </div>
 
 <div class="mb-8">
-  <h2 class="text-2xl my-4">Timepicker with custom props</h2>
-  <div class="border rounded p-4 my-4">
+  <h2 class="my-4 text-2xl">Timepicker with custom props</h2>
+  <div class="my-4 rounded border p-4">
     <Label for="appointment-time">Choose appointment time:</Label>
-    <Timepicker
-      id="appointment-time"
-      value="09:00"
-      min="08:00"
-      max="18:00"
-    />
+    <Timepicker id="appointment-time" value="09:00" min="08:00" max="18:00" />
   </div>
 </div>
 
 <div class="mb-8">
-  <h2 class="text-2xl my-4">Timepicker with dropdown</h2>
-  <div class="border rounded p-4 my-4 h-64">
+  <h2 class="my-4 text-2xl">Timepicker with dropdown</h2>
+  <div class="my-4 h-64 rounded border p-4">
     <Label>Select Time and Duration:</Label>
-    <Timepicker
-    type="dropdown"
-    optionLabel="Duration"
-    options={durations}
-    onselect={handleChange}
-    value={selectedTime.time}
-  />
+    <Timepicker type="dropdown" optionLabel="Duration" options={durations} onselect={handleChange} value={selectedTime.time} />
     <P>Selected: {selectedTime.time}, Duration: {selectedTime.duration}</P>
   </div>
 </div>
 
 <div class="mb-8">
-  <h2 class="text-2xl my-4">Timepicker with select</h2>
-  <div class="border rounded p-4 my-4">
+  <h2 class="my-4 text-2xl">Timepicker with select</h2>
+  <div class="my-4 rounded border p-4">
     <Label>Select Time and Timezone:</Label>
-    <Timepicker
-    type="select"
-    optionLabel="Timezone"
-    options={timezones}
-    onselect={handleTimezoneChange}
-    value={selectedTimeWithTimezone.time}
-    />
+    <Timepicker type="select" optionLabel="Timezone" options={timezones} onselect={handleTimezoneChange} value={selectedTimeWithTimezone.time} />
     <P>Selected: {selectedTimeWithTimezone.time} {selectedTimeWithTimezone.timezone}</P>
   </div>
 </div>
 
 <div class="mb-8">
-  <h2 class="text-2xl my-4">Timepicker range selector</h2>
-  <div class="border rounded p-4 my-4">
+  <h2 class="my-4 text-2xl">Timepicker range selector</h2>
+  <div class="my-4 rounded border p-4">
     <Label>Select Time Range:</Label>
-    <Timepicker
-      type="range"
-      onselect={handleRangeChange}
-      value={selectedTimeRange.time}
-      endValue={selectedTimeRange.endTime}
-    />
+    <Timepicker type="range" onselect={handleRangeChange} value={selectedTimeRange.time} endValue={selectedTimeRange.endTime} />
     <P>Selected Range: {selectedTimeRange.time} - {selectedTimeRange.endTime}</P>
   </div>
 </div>
 
 <div class="mb-8">
-  <h2 class="text-2xl my-4">Timerange with dropdown</h2>
-  <div class="border rounded p-4 my-4 h-80">
+  <h2 class="my-4 text-2xl">Timerange with dropdown</h2>
+  <div class="my-4 h-80 rounded border p-4">
     <Label>Select Time Range:</Label>
-    <Timepicker
-      type="timerange-dropdown"
-      onselect={handleTimerangeDropdownChange}
-      value={selectedTimerangeDropdown.time}
-      endValue={selectedTimerangeDropdown.endTime}
-    />
+    <Timepicker type="timerange-dropdown" onselect={handleTimerangeDropdownChange} value={selectedTimerangeDropdown.time} endValue={selectedTimerangeDropdown.endTime} />
     <P>Selected Range: {selectedTimerangeDropdown.time} - {selectedTimerangeDropdown.endTime}</P>
   </div>
 </div>
 
 <div class="mb-8">
-  <h2 class="text-2xl my-4">Timerange picker with toggle</h2>
-  <div class="border rounded p-4 my-4">
+  <h2 class="my-4 text-2xl">Timerange picker with toggle</h2>
+  <div class="my-4 rounded border p-4">
     <Label class="mb-2" for="timerange-toggle">Toggle Time Range:</Label>
-    <Timepicker
-      type="timerange-toggle"
-      onselect={handleTimerangeToggleChange}
-      value={selectedTimerangeToggle.time}
-      endValue={selectedTimerangeToggle.endTime}
-      divClass=""
-    />
+    <Timepicker type="timerange-toggle" onselect={handleTimerangeToggleChange} value={selectedTimerangeToggle.time} endValue={selectedTimerangeToggle.endTime} divClass="" />
     <P>Selected Range: {selectedTimerangeToggle.time} - {selectedTimerangeToggle.endTime}</P>
   </div>
 </div>
 
 <div class="mb-8">
-  <h2 class="text-2xl my-4">Inline timepicker buttons</h2>
-  <div class="border rounded p-4 my-4 p-4">
-    <div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md">
+  <h2 class="my-4 text-2xl">Inline timepicker buttons</h2>
+  <div class="my-4 rounded border p-4">
+    <div class="mx-auto max-w-2xl rounded-lg bg-white shadow-md dark:bg-gray-800">
       <div class="p-6">
-        <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{eventTitle}</h2>
-        
-        <div class="flex flex-wrap gap-4 mb-6">
+        <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">{eventTitle}</h2>
+
+        <div class="mb-6 flex flex-wrap gap-4">
           <div class="flex items-center">
-            <CalendarMonthSolid class="w-5 h-5 text-gray-500 dark:text-gray-400 mr-2" />
-            <span class="text-gray-900 dark:text-white">{selectedDate.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' })}</span>
+            <CalendarMonthSolid class="mr-2 h-5 w-5 text-gray-500 dark:text-gray-400" />
+            <span class="text-gray-900 dark:text-white">{selectedDate.toLocaleDateString("en-US", { year: "numeric", month: "2-digit", day: "2-digit" })}</span>
           </div>
           <div class="flex items-center">
-            <ClockSolid class="w-5 h-5 text-gray-500 dark:text-gray-400 mr-2" />
+            <ClockSolid class="mr-2 h-5 w-5 text-gray-500 dark:text-gray-400" />
             <span class="text-gray-900 dark:text-white">{selectedInlineTime.time}</span>
           </div>
           <div class="flex items-center">
-            <MapPinSolid class="w-5 h-5 text-gray-500 dark:text-gray-400 mr-2" />
+            <MapPinSolid class="mr-2 h-5 w-5 text-gray-500 dark:text-gray-400" />
             <span class="text-gray-900 dark:text-white">{eventLocation}</span>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div class="mb-6 grid grid-cols-1 gap-6 md:grid-cols-3">
           <div>
             <Label class="mb-2">Participants</Label>
             <div class="flex -space-x-4">
@@ -389,28 +328,23 @@ function saveAll(e: Event): void {
           </div>
           <div>
             <Label class="mb-2">Duration</Label>
-            <span class="text-gray-900 dark:text-white text-lg font-medium">{eventDuration}</span>
+            <span class="text-lg font-medium text-gray-900 dark:text-white">{eventDuration}</span>
           </div>
           <div>
             <Label class="mb-2">Meeting Type</Label>
-            <span class="text-gray-900 dark:text-white text-lg font-medium">{eventType}</span>
+            <span class="text-lg font-medium text-gray-900 dark:text-white">{eventType}</span>
           </div>
         </div>
 
-        <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="border-t border-gray-200 pt-6 dark:border-gray-700">
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div>
               <Label class="mb-2">Select Date</Label>
-              <Datepicker bind:value={selectedDate}  inline />
+              <Datepicker bind:value={selectedDate} inline />
             </div>
             <div>
               <Label class="mb-2">Select Time</Label>
-              <Timepicker 
-                type="inline-buttons"
-                value={selectedInlineTime.time}
-                timeIntervals={timeIntervals}
-                onselect={handleTimeSelect}
-              />
+              <Timepicker type="inline-buttons" value={selectedInlineTime.time} {timeIntervals} onselect={handleTimeSelect} />
             </div>
           </div>
         </div>
@@ -421,7 +355,7 @@ function saveAll(e: Event): void {
           {#snippet header()}
             Additional Options
           {/snippet}
-          <div class="p-4 space-y-4">
+          <div class="space-y-4 p-4">
             <div>
               <Label for="event-title">Event Title</Label>
               <Input id="event-title" bind:value={eventTitle} />
@@ -442,7 +376,7 @@ function saveAll(e: Event): void {
         </AccordionItem>
       </Accordion>
 
-      <div class="p-6 border-t border-gray-200 dark:border-gray-700">
+      <div class="border-t border-gray-200 p-6 dark:border-gray-700">
         <Button color="primary">Schedule Event</Button>
       </div>
     </div>
@@ -450,10 +384,10 @@ function saveAll(e: Event): void {
 </div>
 
 <div class="mb-8">
-  <h2 class="text-2xl my-4">Modal with timepicker</h2>
+  <h2 class="my-4 text-2xl">Modal with timepicker</h2>
   <div class="example-container h-96">
     <Button onclick={() => (open = true)}>
-      <ClockSolid class="w-4 h-4 me-2" />
+      <ClockSolid class="me-2 h-4 w-4" />
       Schedule appointment
     </Button>
 
@@ -462,27 +396,16 @@ function saveAll(e: Event): void {
     {/if}
 
     <Modal bind:open class="w-full max-w-[23rem]">
-        {#snippet header()}
+      {#snippet header()}
         <Heading tag="h5" class="mb-4 font-medium text-gray-900 dark:text-white">Schedule an appointment</Heading>
-        {/snippet}
+      {/snippet}
       <div class="p-4 sm:p-5">
         <div class="mb-4">
-          <Datepicker 
-            bind:value={modalSelectedDate} 
-            onselect={handleModalDateSelect} 
-            inline 
-            class="mx-auto [&>div>div]:shadow-none [&>div>div]:bg-gray-50 [&_div>button]:bg-gray-50"
-          />
+          <Datepicker bind:value={modalSelectedDate} onselect={handleModalDateSelect} inline class="mx-auto [&_div>button]:bg-gray-50 [&>div>div]:bg-gray-50 [&>div>div]:shadow-none" />
         </div>
         <div class="mb-4">
           <Label class="mb-2 block">Pick your time</Label>
-          <Timepicker
-            type="inline-buttons"
-            value={modalTimeSelection.time}
-            timeIntervals={timeIntervals}
-            onselect={handleModalTimeSelect}
-            columns={3}
-          />
+          <Timepicker type="inline-buttons" value={modalTimeSelection.time} {timeIntervals} onselect={handleModalTimeSelect} columns={3} />
         </div>
         <div class="flex items-center space-x-4">
           <Button color="primary" class="w-full" onclick={handleSave}>Save</Button>
@@ -494,38 +417,30 @@ function saveAll(e: Event): void {
 </div>
 
 <div class="mb-8">
-  <h2 class="text-2xl my-4">Drawer with timepicker</h2>
+  <h2 class="my-4 text-2xl">Drawer with timepicker</h2>
   <div class="example-container h-96 p-4">
     <div class="flex justify-center">
       <Button onclick={() => (hidden = false)} class="transform transition-all hover:scale-105">
-        <ClockSolid class="w-4 h-4 me-2" />
+        <ClockSolid class="me-2 h-4 w-4" />
         Set Time Schedule
       </Button>
     </div>
 
-    <Drawer 
-      bind:hidden
-      class="w-96 p-6 bg-gray-50 dark:bg-gray-800"
-      id="drawer-timepicker"
-    >
-      <div class="flex items-center justify-between mb-8">
-        <Heading tag="h5" id="drawer-label" class="inline-flex items-center text-base font-semibold text-gray-800 dark:text-white uppercase">
-          <ClockSolid class="w-6 h-6" />
+    <Drawer bind:hidden class="w-96 bg-gray-50 p-6 dark:bg-gray-800" id="drawer-timepicker">
+      <div class="mb-8 flex items-center justify-between">
+        <Heading tag="h5" id="drawer-label" class="inline-flex items-center text-base font-semibold text-gray-800 uppercase dark:text-white">
+          <ClockSolid class="h-6 w-6" />
           Time schedule
         </Heading>
         <CloseButton onclick={() => (hidden = true)} class="mb-4 dark:text-white" />
       </div>
 
       <form onsubmit={saveAll} class="space-y-8">
-        <Card class="transition-shadow hover:shadow-lg p-4">
-          <div class="flex justify-between items-center">
+        <Card class="p-4 transition-shadow hover:shadow-lg">
+          <div class="flex items-center justify-between">
             <div>
-              <Heading tag="h6" class="text-lg font-semibold text-gray-900 dark:text-white">
-                Business Hours
-              </Heading>
-              <P class="text-sm">
-                Enable or disable business hours scheduling
-              </P>
+              <Heading tag="h6" class="text-lg font-semibold text-gray-900 dark:text-white">Business Hours</Heading>
+              <P class="text-sm">Enable or disable business hours scheduling</P>
             </div>
             <Toggle bind:checked={businessHoursEnabled} class="scale-110" />
           </div>
@@ -534,78 +449,37 @@ function saveAll(e: Event): void {
         <div class="space-y-2">
           <Label for="timezones" class="flex items-center gap-2 text-lg">
             Timezone
-            <InfoCircleSolid class="w-4 h-4 text-gray-400 cursor-help" />
+            <InfoCircleSolid class="h-4 w-4 cursor-help text-gray-400" />
           </Label>
-          <Select 
-            id="timezones" 
-            bind:value={selectedTimezoneDrawer} 
-            items={drawerTimezones}
-            class="w-full"
-          />
+          <Select id="timezones" bind:value={selectedTimezoneDrawer} items={drawerTimezones} class="w-full" />
         </div>
 
         <div class="space-y-2 sm:space-y-4">
           {#each sortedWorkingDays as { day, enabled, startTime, endTime }, index}
-            <div class="flex flex-col gap-2 p-2 bg-white dark:bg-gray-700 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <div class="flex items-center min-w-[65px]">
-                <Checkbox
-                  onchange={() => toggleDay(index)}
-                  checked={enabled}
-                  class="scale-100"
-                >
-                  <Span class="ml-2 text-sm truncate">{day}</Span>
+            <div class="flex flex-col gap-2 rounded-lg bg-white p-2 shadow-sm transition-shadow hover:shadow-md dark:bg-gray-700">
+              <div class="flex min-w-[65px] items-center">
+                <Checkbox onchange={() => toggleDay(index)} checked={enabled} class="scale-100">
+                  <Span class="ml-2 truncate text-sm">{day}</Span>
                 </Checkbox>
               </div>
-              <div class="flex items-center flex-1">
-                <Timepicker
-                  type="range"
-                  value={startTime}
-                  endValue={endTime}
-                  onselect={(e) => handleTimeChange(index, true, e)}
-                  divClass={timepickerClasses.divClass}
-                  inputClass={timepickerClasses.inputClass}
-                  size="sm"
-                />
-                <Button
-                  color="red"
-                  size="xs"
-                  pill={true}
-                  onclick={() => removeInterval(index)}
-                  class="hover:bg-red-600 shrink-0 p-2"
-                >
-                  <TrashBinSolid class="w-2 h-2 sm:w-3 sm:h-3" />
+              <div class="flex flex-1 items-center">
+                <Timepicker type="range" value={startTime} endValue={endTime} onselect={(e) => handleTimeChange(index, true, e)} divClass={timepickerClasses.divClass} inputClass={timepickerClasses.inputClass} size="sm" />
+                <Button color="red" size="xs" pill={true} onclick={() => removeInterval(index)} class="shrink-0 p-2 hover:bg-red-600">
+                  <TrashBinSolid class="h-2 w-2 sm:h-3 sm:w-3" />
                 </Button>
               </div>
             </div>
           {/each}
         </div>
 
-        <Button 
-          type="button" 
-          class="w-full transition-all hover:shadow-lg" 
-          color="alternative" 
-          onclick={addInterval}
-          disabled={workingDays.length >= 7}
-        >
-          <PlusOutline class="w-5 h-5 me-2" />
+        <Button type="button" class="w-full transition-all hover:shadow-lg" color="alternative" onclick={addInterval} disabled={workingDays.length >= 7}>
+          <PlusOutline class="me-2 h-5 w-5" />
           Add Working Day
         </Button>
 
         <div class="flex gap-4">
-          <Button 
-            class="w-1/2" 
-            color="alternative" 
-            onclick={() => (hidden = true)}
-          >
-            Cancel
-          </Button>
-          <Button 
-            type="submit" 
-            class="w-1/2" 
-            color="primary"
-          >
-            Save Changes
-          </Button>
+          <Button class="w-1/2" color="alternative" onclick={() => (hidden = true)}>Cancel</Button>
+          <Button type="submit" class="w-1/2" color="primary">Save Changes</Button>
         </div>
       </form>
     </Drawer>
