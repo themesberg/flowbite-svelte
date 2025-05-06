@@ -19,10 +19,10 @@
 
   let filteredItems = $derived(people.filter((person) => person.name.toLowerCase().indexOf(searchTerm?.toLowerCase()) !== -1));
 
-  const handleClick = (e: Event) => {
-    e.preventDefault();
-    alert("Clicked on: " + e.target);
-  };
+  // const handleClick = (e: Event) => {
+  //   e.preventDefault();
+  //   alert("Clicked on: " + e.target);
+  // };
   // const handleClick2 = (e) => {
   //   e.preventDefault();
   //   alert("Clicked on: " + e.target);

@@ -324,7 +324,7 @@ export interface BreadcrumbItemProps extends HTMLLiAttributes {
 }
 
 // buttongroup
-export interface ButtonGroupProps {
+export interface ButtonGroupProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   size?: ButtonGroupSizeType;
   class?: string;
@@ -409,10 +409,10 @@ export interface IndicatorsProps extends Omit<HTMLAttributes<HTMLDivElement>, "c
 
 export interface ControlButtonProps extends HTMLButtonAttributes {
   forward: boolean;
-  name: string;
+  name?: string | undefined | null;
 }
 
-export interface ControlsProps {
+export interface ControlsProps extends Omit<HTMLButtonAttributes, "children"> {
   children?: Snippet<[(forward: boolean) => void]>;
   class?: string;
 }
@@ -490,7 +490,7 @@ export interface MockupBaseProps extends HTMLAttributes<HTMLElement> {
   div4Class?: string;
 }
 
-export interface AndroidProps {
+export interface AndroidProps extends HTMLAttributes<HTMLDivElement>{
   children?: Snippet;
   divClass?: string;
   div2Class?: string;

@@ -5,7 +5,7 @@
   import ControlButton from "./ControlButton.svelte";
   import type { State, ControlsProps } from "$lib/types";
 
-  let { children, class: className }: ControlsProps = $props();
+  let { children, class: className, ...restProps }: ControlsProps = $props();
 
   const state = getContext<Writable<State>>("state");
   const { update } = state;
@@ -43,8 +43,8 @@
 {#if children}
   {@render children(changeSlide)}
 {:else}
-  <ControlButton name="Previous" forward={false} onclick={() => changeSlide(false)} class={className} />
-  <ControlButton name="Next" forward={true} onclick={() => changeSlide(true)} class={className} />
+  <ControlButton name="Previous" forward={false} onclick={() => changeSlide(false)} class={className} {...restProps}/>
+  <ControlButton name="Next" forward={true} onclick={() => changeSlide(true)} class={className} {...restProps}/>
 {/if}
 
 <!--

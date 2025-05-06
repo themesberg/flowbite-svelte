@@ -1,10 +1,8 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
-  import { Button } from "$lib";
-  import type { DatepickerProps } from "$lib/types";
+  import { Button, ToolbarButton, type DatepickerProps } from "$lib";
   import { datepicker } from "./theme";
-  import ToolbarButton from "$lib/toolbar/ToolbarButton.svelte";
 
   let { value = $bindable(), defaultDate = null, range = false, rangeFrom = $bindable(), rangeTo = $bindable(), locale = "default", firstDayOfWeek = 0, dateFormat, placeholder = "Select date", disabled = false, required = false, inputClass = "", color = "primary", inline = false, autohide = true, showActionButtons = false, title = "", onselect, onclear, onapply }: DatepickerProps = $props();
 

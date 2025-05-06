@@ -33,7 +33,7 @@
 </script>
 
 <h2 class={base()}>
-  <button onclick={handleToggle} class={buttonClass} aria-expanded={open}>
+  <button type="button" onclick={handleToggle} class={buttonClass} aria-expanded={open}>
     {#if header}
       {@render header()}
       {#if open}
