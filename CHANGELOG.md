@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1
+
+### Patch Changes
+
+- feat: timepicker and bug fix
+
 ## 1.0.0
 
 ### Minor Changes
