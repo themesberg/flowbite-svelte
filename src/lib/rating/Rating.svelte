@@ -4,7 +4,7 @@
   import type { RatingProps } from "$lib/types";
   import clsx from "clsx";
 
-  let { children, text, class: divClass, size = 24, total = 5, rating = 4, icon: Icon = Star, count = false, pClass }: RatingProps = $props();
+  let { children, text, class: divClass, size = 24, total = 5, rating = 4, icon: Icon = Star, count = false, pClass, ...restProps }: RatingProps = $props();
 
   const { base, p } = $derived(ratingVariants());
   const ratingGroupId = crypto.randomUUID();
@@ -14,7 +14,7 @@
   let grayStars: number = total - (fullStars + Math.ceil(rateDiffence));
 </script>
 
-<div class={base({ class: clsx(divClass) })}>
+<div class={base({ class: clsx(divClass) })} {...restProps}>
   {#if count && children}
     <Icon fillPercent={100} {size} iconIndex={0} groupId={ratingGroupId} />
     <p class={p({ class: pClass })}>{rating}</p>
