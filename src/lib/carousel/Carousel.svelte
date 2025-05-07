@@ -1,5 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
+  import { twMerge } from "tailwind-merge";
   import { onMount, setContext } from "svelte";
   import { writable } from "svelte/store";
   import { canChangeSlide } from "./CarouselSlide";
@@ -9,7 +10,7 @@
 
   const SLIDE_DURATION_RATIO = 0.25; // TODO: Expose one day?
 
-  let { children, slide, images, index = $bindable(0), slideDuration = 1000, transition, duration = 0, "aria-label": ariaLabel = "Draggable Carousel", disableSwipe = false, imgClass = "", class: className, onchange, ...restProps }: CarouselProps = $props();
+  let { children, slide, images, index = $bindable(0), slideDuration = 1000, transition, duration = 0, "aria-label": ariaLabel = "Draggable Carousel", disableSwipe = false, imgClass = "", class: className, onchange, divClass, ...restProps }: CarouselProps = $props();
 
   const { set, subscribe, update } = writable<State>({ images, index: index ?? 0, forward: true, slideDuration, lastSlideChange: new Date() });
 
@@ -170,7 +171,7 @@
 
 <!-- The move listeners go here, so things keep working if the touch strays out of the element. -->
 <svelte:document onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} />
-<div bind:this={carouselDiv} class="relative" onmousedown={onDragStart} ontouchstart={onDragStart} onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} role="button" aria-label={ariaLabel} tabindex="0">
+<div bind:this={carouselDiv} class={twMerge('relative', divClass)} onmousedown={onDragStart} ontouchstart={onDragStart} onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} role="button" aria-label={ariaLabel} tabindex="0">
   <div {...restProps} class={carousel({ class: clsx(activeDragGesture === undefined ? "transition-transform" : "", className) })} use:loop={duration}>
     {#if slide}
       {@render slide({ index, Slide })}
