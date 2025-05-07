@@ -2,8 +2,6 @@
   import clsx from "clsx";
   import { onMount, setContext } from "svelte";
   import { writable } from "svelte/store";
-  import type { TransitionConfig } from "svelte/transition";
-  import type { ParamsType } from "$lib/types";
   import { canChangeSlide } from "./CarouselSlide";
   import Slide from "./Slide.svelte";
   import { carousel } from "./theme";

@@ -124,7 +124,7 @@ Show the carousel indicators by adding the internal `Indicators` component.
 You can control the `Carousel` component externally by the `index` prop. Here is an example how to use the `Thumbnails` component to achieve that.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Carousel, Controls, Indicators, Thumbnails } from "flowbite-svelte";
   import images from "./imageData/images.json";
 
@@ -132,7 +132,7 @@ You can control the `Carousel` component externally by the `index` prop. Here is
 </script>
 
 <div class="max-w-4xl space-y-4">
-  <Carousel {images} {forward} bind:index>
+  <Carousel {images} bind:index>
     <Controls />
     <Indicators />
   </Carousel>
