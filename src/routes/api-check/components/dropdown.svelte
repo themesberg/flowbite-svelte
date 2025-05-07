@@ -2,10 +2,11 @@
   import { Button, Dropdown, DropdownItem, DropdownDivider, DropdownHeader, DropdownGroup, Avatar, Checkbox, Radio, Helper, Toggle, Navbar, NavBrand, NavHamburger, NavUl, NavLi, ToolbarButton, Search } from "$lib";
   import { ChevronDownOutline, ChevronRightOutline, ChevronUpOutline, ChevronLeftOutline, DotsHorizontalOutline, DotsVerticalOutline, BellSolid, EyeSolid, UserRemoveSolid } from "flowbite-svelte-icons";
   import { page } from "$app/state";
+  import P from "$lib/typography/paragraph/P.svelte";
 
   let activeUrl = $derived(page.url.pathname);
   let activeClass = "text-green-500 dark:text-green-300 hover:text-green-700 dark:hover:text-green-500";
-  let dropdownOpen = $state(false);
+  let isOpen = $state(false);
   let group1 = $state(2);
   let group2 = $state(2);
   let group3 = $state(2);
@@ -18,15 +19,16 @@
   ];
 
   let filteredItems = $derived(people.filter((person) => person.name.toLowerCase().indexOf(searchTerm?.toLowerCase()) !== -1));
-
-  // const handleClick = (e: Event) => {
-  //   e.preventDefault();
-  //   alert("Clicked on: " + e.target);
-  // };
-  // const handleClick2 = (e) => {
-  //   e.preventDefault();
-  //   alert("Clicked on: " + e.target);
-  // };
+  
+  // Function to toggle dropdown
+  function toggleDropdown() {
+    isOpen = !isOpen;
+  }
+  
+  // Function to close dropdown
+  function closeDropdown() {
+    isOpen = false;
+  }
 </script>
 
 <h1 class="my-4 text-3xl">Dropdown</h1>
@@ -117,15 +119,23 @@
 
 <h2 class="my-4 text-2xl">Programatic open/close</h2>
 
-<div class="my-4 flex h-64 items-start justify-center rounded border p-4">
-  <Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
-  <Dropdown simple>
-    <DropdownItem onclick={() => (dropdownOpen = false)}>Dashboard (close)</DropdownItem>
+<div class="my-4 flex flex-col h-64 items-center gap-4 justify-center rounded border p-4">
+  <P>Current dropdown state: {isOpen ? 'Open' : 'Closed'}</P>
+  <Button onclick={() => (isOpen = false)}>
+    Close Btn
+  </Button>
+  
+  <Button onclick={() => (isOpen = true)}>
+    Dropdown<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
+  </Button>
+
+  <Dropdown bind:isOpen={isOpen} simple>
+    <DropdownItem onclick={() => (isOpen = false)}>Dashboard (close)</DropdownItem>
     <DropdownItem class="flex items-center justify-between">
       Dropdown<ChevronRightOutline class="text-primary-700 ms-2 h-6 w-6 dark:text-white" />
     </DropdownItem>
     <Dropdown simple placement="right-start">
-      <DropdownItem onclick={() => (dropdownOpen = false)}>Overview (close)</DropdownItem>
+      <DropdownItem onclick={() => (isOpen = false)}>Overview (close)</DropdownItem>
       <DropdownItem>My downloads</DropdownItem>
       <DropdownItem>Billing</DropdownItem>
     </Dropdown>

@@ -6,7 +6,24 @@
 
   const TRIGGER_DELAY = 200;
 
-  let { triggeredBy, trigger = "click", placement = "top", offset = 8, arrow = false, yOnly = false, strategy = "absolute", reference, middlewares = [dom.flip(), dom.shift()], onbeforetoggle: _onbeforetoggle, ontoggle: _ontoggle, class: className = "", arrowClass = "", children, ...restProps }: PopperProps = $props();
+  let { 
+    triggeredBy, 
+    trigger = "click", 
+    placement = "top", 
+    offset = 8, 
+    arrow = false, 
+    yOnly = false, 
+    strategy = "absolute", 
+    reference, 
+    middlewares = [dom.flip(), dom.shift()], 
+    onbeforetoggle: _onbeforetoggle, 
+    ontoggle: _ontoggle, 
+    class: className = "", 
+    arrowClass = "", 
+    isOpen = $bindable(undefined),
+    children, 
+    ...restProps 
+  }: PopperProps = $props();
 
   let focusable: boolean = true;
   let clickable: boolean = $derived(trigger === "click");
@@ -59,10 +76,17 @@
       invoker = ev.target as HTMLButtonElement;
       // if (invoker) invoker.popoverTargetElement = popover;
       popover?.hidePopover(); // invoker changed need to hide old popover
+      isOpen = false; // Update isOpen state when popover is hidden
     }
 
-    if (ev.type === "mousedown") popover?.togglePopover();
-    else popover?.showPopover();
+    if (ev.type === "mousedown") {
+      popover?.togglePopover();
+      // For toggle, we need to check the current state after toggling
+      // This will be handled by the ontoggle event
+    } else {
+      popover?.showPopover();
+      isOpen = true; // Update isOpen state when popover is shown
+    }
   }
 
   async function close_popover(ev: Event) {
@@ -75,6 +99,8 @@
     if (ev?.type === "focusout" && popover?.contains(popover.ownerDocument.activeElement)) return;
 
     popover?.hidePopover();
+    // Update isOpen state when popover is closed
+    isOpen = false;
   }
 
   let autoUpdateDestroy = () => {};
@@ -85,7 +111,7 @@
     (ev as TriggeredToggleEvent).trigger = invoker;
     _onbeforetoggle?.(ev as TriggeredToggleEvent);
 
-    // Floating UI instance when it’s closed we need to keep a autoUpdate destroy function
+    // Floating UI instance when it's closed we need to keep a autoUpdate destroy function
 
     if (ev.newState === "open") {
       autoUpdateDestroy = dom.autoUpdate(referenceElement ?? invoker, popover, updatePopoverPosition);
@@ -145,36 +171,47 @@
   function closeOnClickOutside(event: MouseEvent) {
     if (popover && !event.composedPath().includes(popover) && !triggerEls.some((el) => event.composedPath().includes(el))) {
       close_popover(event);
+      // Update isOpen state when clicking outside
+      isOpen = false;
     }
+  }
+
+  // Watch for isOpen changes to control popover state and update isOpen when state changes
+  $effect(() => {
+    if (popover) {
+      if (isOpen === true) {
+        popover.showPopover();
+      } else if (isOpen === false) {
+        popover.hidePopover();
+      }
+    }
+  });
+  
+  // Update isOpen value when popover state changes through other means
+  function updateIsOpenState(ev: ToggleEvent) {
+    isOpen = ev.newState === "open";
   }
 </script>
 
-<div popover="manual" role="tooltip" bind:this={popover} use:set_triggers class:overflow-visible={true} onfocusout={close_popover} onmouseleave={hoverable ? close_popover : undefined} onmouseenter={hoverable ? open_popover : undefined} onbeforetoggle={on_before_toggle} ontoggle={on_toggle} class={className} {...restProps}>
+<div 
+  popover="manual" 
+  role="tooltip" 
+  bind:this={popover} 
+  use:set_triggers 
+  class:overflow-visible={true} 
+  onfocusout={close_popover} 
+  onmouseleave={hoverable ? close_popover : undefined} 
+  onmouseenter={hoverable ? open_popover : undefined} 
+  onbeforetoggle={on_before_toggle} 
+  ontoggle={(ev) => {
+    updateIsOpenState(ev);
+    on_toggle(ev);
+  }} 
+  class={className} 
+  {...restProps}
+>
   {@render children()}
   {#if arrow}
     <Arrow {...arrowParams} class={arrowClass} />
   {/if}
 </div>
-
-<!--
-@component
-[Go to docs](https://flowbite-svelte.com/)
-## Type
-[PopperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1715)
-## Props
-@prop triggeredBy
-@prop trigger = "click"
-@prop placement = "top"
-@prop offset = 8
-@prop arrow = false
-@prop yOnly = false
-@prop strategy = "absolute"
-@prop reference
-@prop middlewares = [dom.flip(), dom.shift()]
-@prop onbeforetoggle: _onbeforetoggle
-@prop ontoggle: _ontoggle
-@prop class: className = ""
-@prop arrowClass = ""
-@prop children
-@prop ...restProps
--->

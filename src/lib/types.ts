@@ -567,6 +567,7 @@ export interface DropdownProps extends PopperProps {
   ulClass?: string;
   backdropClass?: string;
   activeUrl?: string;
+  isOpen?: boolean | undefined;
 }
 
 export interface DropdownDividerProps extends HTMLAttributes<HTMLDivElement> {}
@@ -1728,4 +1729,5 @@ export interface PopperProps extends Omit<HTMLAttributes<HTMLDivElement>, "onbef
   ontoggle?: (ev: TriggeredToggleEvent) => void;
   transition?: TransitionFunc;
   transitionParams?: ParamsType;
+  isOpen?: boolean | undefined;
 }

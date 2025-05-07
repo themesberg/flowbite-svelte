@@ -119,7 +119,7 @@
         return (
           importScript +
           `<Badge${propsString}>
-  <ClockSolid class="me-1.5 h-3 w-3" />
+  <ClockSolid class="me-1.5 h-4 w-4" />
   My Badge
 </Badge>`
         );
@@ -149,7 +149,7 @@
   <div class="mb-4 h-10">
     <Badge {color} large={badgeSize} dismissable={badgeDismissable} class={badgeClass} bind:badgeStatus={badgeStatus2} {border} {rounded} transition={currentTransition.transition} params={currentTransition.params} href={link}>
       {#if iconSlot}
-        <ClockSolid class="my-1 me-1.5 h-2.5 w-2.5" />
+        <ClockSolid class="my-1 me-1.5 h-4 w-4" />
       {/if}
       My Badge
     </Badge>

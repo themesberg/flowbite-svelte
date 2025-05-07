@@ -159,21 +159,29 @@ Use this example to enable multi-level dropdown menus by adding stacked elements
 
 When you want to control your dropdown open status via javascript code you can bind to `open` property.
 
-```svelte example class="flex justify-center items-start h-64" hideResponsiveButtons
-<script>
-  import { Button, Dropdown, DropdownItem, DropdownDivider } from "flowbite-svelte";
+```svelte example class="flex flex-col h-96 items-center gap-4 justify-start" hideResponsiveButtons
+<script lang="ts">
+  import { Button, Dropdown, DropdownItem, DropdownDivider, P } from "flowbite-svelte";
   import { ChevronDownOutline, ChevronRightOutline } from "flowbite-svelte-icons";
-  let dropdownOpen = $state(false);
+  let isOpen = $state(false);
 </script>
 
-<Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
-<Dropdown simple>
-  <DropdownItem onclick={() => (dropdownOpen = false)}>Dashboard (close)</DropdownItem>
+<P>Current dropdown state: {isOpen ? 'Open' : 'Closed'}</P>
+<Button onclick={() => (isOpen = false)}>
+  Close Btn
+</Button>
+
+<Button onclick={() => (isOpen = true)}>
+  Dropdown<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
+</Button>
+
+<Dropdown bind:isOpen={isOpen} simple>
+  <DropdownItem onclick={() => (isOpen = false)}>Dashboard (close)</DropdownItem>
   <DropdownItem class="flex items-center justify-between">
     Dropdown<ChevronRightOutline class="text-primary-700 ms-2 h-6 w-6 dark:text-white" />
   </DropdownItem>
   <Dropdown simple placement="right-start">
-    <DropdownItem onclick={() => (dropdownOpen = false)}>Overview (close)</DropdownItem>
+    <DropdownItem onclick={() => (isOpen = false)}>Overview (close)</DropdownItem>
     <DropdownItem>My downloads</DropdownItem>
     <DropdownItem>Billing</DropdownItem>
   </Dropdown>
@@ -663,7 +671,7 @@ You can also use the `placement={top|right|bottom|left}` options to choose the p
   <DropdownItem>Sign out</DropdownItem>
 </Dropdown>
 
-<!-- svelte-ignore a11y-no-static-element-interactions -->
+<!-- svelte-ignore a11y_no_static_element_interactions -->
 <div id="placements" class="my-8 flex h-96 flex-col items-center justify-center gap-2">
   <Button id="top-dd">Dropdown top<ChevronUpOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <div class="flex space-x-2 rtl:space-x-reverse">
@@ -682,19 +690,20 @@ As dropdown is implemented using the [Floating UI](https://floating-ui.com) libr
 <script>
   import { Button, Dropdown, DropdownItem } from "flowbite-svelte";
   import { ChevronDownOutline, ChevronUpOutline } from "flowbite-svelte-icons";
+  let placement = $state('left');
 </script>
 
-<!-- svelte-ignore a11y-no-static-element-interactions -->
+<!-- svelte-ignore a11y_no_static_element_interactions -->
 <div onmousedown={(e) => (placement = e.target.dataset.placement)}>
   <Button data-placement="left-start">
-    Dropdown left start<ChevronUpOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
+    Left start<ChevronUpOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
   </Button>
   <Button data-placement="right-end">
-    Dropdown right end<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
+    Right end<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
   </Button>
 </div>
 
-<Dropdown simple placement="left" triggeredBy="[data-placement]">
+<Dropdown simple {placement} triggeredBy="[data-placement]">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
