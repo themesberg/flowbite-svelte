@@ -19,12 +19,12 @@
   ];
 
   let filteredItems = $derived(people.filter((person) => person.name.toLowerCase().indexOf(searchTerm?.toLowerCase()) !== -1));
-  
+
   // Function to toggle dropdown
   function toggleDropdown() {
     isOpen = !isOpen;
   }
-  
+
   // Function to close dropdown
   function closeDropdown() {
     isOpen = false;
@@ -119,17 +119,15 @@
 
 <h2 class="my-4 text-2xl">Programatic open/close</h2>
 
-<div class="my-4 flex flex-col h-64 items-center gap-4 justify-center rounded border p-4">
-  <P>Current dropdown state: {isOpen ? 'Open' : 'Closed'}</P>
-  <Button onclick={() => (isOpen = false)}>
-    Close Btn
-  </Button>
-  
+<div class="my-4 flex h-64 flex-col items-center justify-center gap-4 rounded border p-4">
+  <P>Current dropdown state: {isOpen ? "Open" : "Closed"}</P>
+  <Button onclick={() => (isOpen = false)}>Close Btn</Button>
+
   <Button onclick={() => (isOpen = true)}>
     Dropdown<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
   </Button>
 
-  <Dropdown bind:isOpen={isOpen} simple>
+  <Dropdown bind:isOpen simple>
     <DropdownItem onclick={() => (isOpen = false)}>Dashboard (close)</DropdownItem>
     <DropdownItem class="flex items-center justify-between">
       Dropdown<ChevronRightOutline class="text-primary-700 ms-2 h-6 w-6 dark:text-white" />

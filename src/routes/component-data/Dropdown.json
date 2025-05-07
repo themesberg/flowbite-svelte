@@ -11,6 +11,7 @@
     ["offset", "2"],
     ["class: className", ""],
     ["backdropClass", ""],
-    ["activeUrl", "\"\""]
+    ["activeUrl", "\"\""],
+    ["isOpen", "$bindable(undefined)"]
   ]
 }

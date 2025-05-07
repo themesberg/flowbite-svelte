@@ -27,44 +27,44 @@
   const changeStacked = () => {
     stacked = !stacked;
   };
-  let classStatus = $state(false)
-  const changeClassStatus = ()=>{
+  let classStatus = $state(false);
+  const changeClassStatus = () => {
     classStatus = !classStatus;
     changeClass();
-  }
+  };
   let avatarClass: AvatarProps["class"] = $state("");
   const changeClass = () => {
     const parts = [];
     if (classStatus) {
       parts.push("mx-0.5");
     }
-    
+
     if (eventStatus) {
       parts.push("hover:cursor-pointer");
     }
-    
+
     avatarClass = parts.join(" ");
   };
 
-  let hrefStatus = $state(false)
+  let hrefStatus = $state(false);
   const changeHrf = () => {
-    hrefStatus = !hrefStatus
+    hrefStatus = !hrefStatus;
     if (!hrefStatus) targetStatus = false;
-  }
-  let dotStatus = $state(false)
+  };
+  let dotStatus = $state(false);
   const changeDot = () => {
     dotStatus = !dotStatus;
-  }
-  let targetStatus = $state(false)
-  const changeTarget = () =>{
+  };
+  let targetStatus = $state(false);
+  const changeTarget = () => {
     targetStatus = !targetStatus;
-    if (targetStatus) hrefStatus = true
-  }
-  let eventStatus = $state(false)
+    if (targetStatus) hrefStatus = true;
+  };
+  let eventStatus = $state(false);
   const changeEventStatus = () => {
-    eventStatus = !eventStatus
+    eventStatus = !eventStatus;
     changeClass();
-  }
+  };
 
   // code generator
   let generatedCode = $derived(
@@ -75,10 +75,10 @@
       if (border) props.push("border");
       if (stacked) props.push("stacked");
       if (avatarClass) props.push(`class="${avatarClass}"`);
-      if (hrefStatus) props.push('href="/"')
-      if (dotStatus) props.push('dot={{ placement: "bottom-right", color: "green" }}')
-      if (targetStatus) props.push('target="_blank"')
-      if (eventStatus) props.push('onclick={()=> alert("Clicked!")}')
+      if (hrefStatus) props.push('href="/"');
+      if (dotStatus) props.push('dot={{ placement: "bottom-right", color: "green" }}');
+      if (targetStatus) props.push('target="_blank"');
+      if (eventStatus) props.push('onclick={()=> alert("Clicked!")}');
 
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
@@ -105,15 +105,9 @@
 
 <CodeWrapper>
   <div class="mb-4 flex h-36 justify-center">
-    <Avatar src="/images/profile-picture-1.webp" alt="Profile picture 1" cornerStyle={isRounded ? "rounded" : undefined} {border} {stacked} class={avatarClass} size={avatarSize} href={hrefStatus ? "/" : ""} dot={dotStatus ? { placement: "bottom-right", color: "green" } : undefined}
-    target={targetStatus ? '_blank' : undefined} onclick={ eventStatus ? ()=> alert('Clicked!'): undefined}
-    />
-    <Avatar src="/images/profile-picture-2.webp" alt="Profile picture 2" cornerStyle={isRounded ? "rounded" : undefined} {border} {stacked} class={avatarClass} size={avatarSize} href={hrefStatus ? "/" : ""} dot={dotStatus ? { placement: "bottom-right", color: "green" } : undefined}
-    target={targetStatus ? '_blank' : undefined} onclick={ eventStatus ? ()=> alert('Clicked!'): undefined}
-    />
-    <Avatar src="/images/profile-picture-3.webp" alt="Profile picture 3" cornerStyle={isRounded ? "rounded" : undefined} {border} {stacked} class={avatarClass} size={avatarSize} href={hrefStatus ? "/" : ""} dot={dotStatus ? { placement: "bottom-right", color: "green" } : undefined}
-    target={targetStatus ? '_blank' : undefined} onclick={ eventStatus ? ()=> alert('Clicked!'): undefined}
-    />
+    <Avatar src="/images/profile-picture-1.webp" alt="Profile picture 1" cornerStyle={isRounded ? "rounded" : undefined} {border} {stacked} class={avatarClass} size={avatarSize} href={hrefStatus ? "/" : ""} dot={dotStatus ? { placement: "bottom-right", color: "green" } : undefined} target={targetStatus ? "_blank" : undefined} onclick={eventStatus ? () => alert("Clicked!") : undefined} />
+    <Avatar src="/images/profile-picture-2.webp" alt="Profile picture 2" cornerStyle={isRounded ? "rounded" : undefined} {border} {stacked} class={avatarClass} size={avatarSize} href={hrefStatus ? "/" : ""} dot={dotStatus ? { placement: "bottom-right", color: "green" } : undefined} target={targetStatus ? "_blank" : undefined} onclick={eventStatus ? () => alert("Clicked!") : undefined} />
+    <Avatar src="/images/profile-picture-3.webp" alt="Profile picture 3" cornerStyle={isRounded ? "rounded" : undefined} {border} {stacked} class={avatarClass} size={avatarSize} href={hrefStatus ? "/" : ""} dot={dotStatus ? { placement: "bottom-right", color: "green" } : undefined} target={targetStatus ? "_blank" : undefined} onclick={eventStatus ? () => alert("Clicked!") : undefined} />
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size</Label>

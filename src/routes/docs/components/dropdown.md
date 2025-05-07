@@ -166,16 +166,14 @@ When you want to control your dropdown open status via javascript code you can b
   let isOpen = $state(false);
 </script>
 
-<P>Current dropdown state: {isOpen ? 'Open' : 'Closed'}</P>
-<Button onclick={() => (isOpen = false)}>
-  Close Btn
-</Button>
+<P>Current dropdown state: {isOpen ? "Open" : "Closed"}</P>
+<Button onclick={() => (isOpen = false)}>Close Btn</Button>
 
 <Button onclick={() => (isOpen = true)}>
   Dropdown<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
 </Button>
 
-<Dropdown bind:isOpen={isOpen} simple>
+<Dropdown bind:isOpen simple>
   <DropdownItem onclick={() => (isOpen = false)}>Dashboard (close)</DropdownItem>
   <DropdownItem class="flex items-center justify-between">
     Dropdown<ChevronRightOutline class="text-primary-700 ms-2 h-6 w-6 dark:text-white" />
@@ -690,7 +688,7 @@ As dropdown is implemented using the [Floating UI](https://floating-ui.com) libr
 <script>
   import { Button, Dropdown, DropdownItem } from "flowbite-svelte";
   import { ChevronDownOutline, ChevronUpOutline } from "flowbite-svelte-icons";
-  let placement = $state('left');
+  let placement = $state("left");
 </script>
 
 <!-- svelte-ignore a11y_no_static_element_interactions -->

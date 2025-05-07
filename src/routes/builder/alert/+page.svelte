@@ -16,7 +16,7 @@
   let title = "Alert builder";
   let dir = "builder";
   // for interactive code builder
-  let alertMessage = $state('My Alert!')
+  let alertMessage = $state("My Alert!");
   const colors = Object.keys(fsalert.variants.color);
   let color: AlertProps["color"] = $state("primary");
   let iconSlot = $state(false);

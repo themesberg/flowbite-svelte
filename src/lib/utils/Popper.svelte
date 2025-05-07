@@ -6,24 +6,7 @@
 
   const TRIGGER_DELAY = 200;
 
-  let { 
-    triggeredBy, 
-    trigger = "click", 
-    placement = "top", 
-    offset = 8, 
-    arrow = false, 
-    yOnly = false, 
-    strategy = "absolute", 
-    reference, 
-    middlewares = [dom.flip(), dom.shift()], 
-    onbeforetoggle: _onbeforetoggle, 
-    ontoggle: _ontoggle, 
-    class: className = "", 
-    arrowClass = "", 
-    isOpen = $bindable(undefined),
-    children, 
-    ...restProps 
-  }: PopperProps = $props();
+  let { triggeredBy, trigger = "click", placement = "top", offset = 8, arrow = false, yOnly = false, strategy = "absolute", reference, middlewares = [dom.flip(), dom.shift()], onbeforetoggle: _onbeforetoggle, ontoggle: _ontoggle, class: className = "", arrowClass = "", isOpen = $bindable(undefined), children, ...restProps }: PopperProps = $props();
 
   let focusable: boolean = true;
   let clickable: boolean = $derived(trigger === "click");
@@ -186,28 +169,28 @@
       }
     }
   });
-  
+
   // Update isOpen value when popover state changes through other means
   function updateIsOpenState(ev: ToggleEvent) {
     isOpen = ev.newState === "open";
   }
 </script>
 
-<div 
-  popover="manual" 
-  role="tooltip" 
-  bind:this={popover} 
-  use:set_triggers 
-  class:overflow-visible={true} 
-  onfocusout={close_popover} 
-  onmouseleave={hoverable ? close_popover : undefined} 
-  onmouseenter={hoverable ? open_popover : undefined} 
-  onbeforetoggle={on_before_toggle} 
+<div
+  popover="manual"
+  role="tooltip"
+  bind:this={popover}
+  use:set_triggers
+  class:overflow-visible={true}
+  onfocusout={close_popover}
+  onmouseleave={hoverable ? close_popover : undefined}
+  onmouseenter={hoverable ? open_popover : undefined}
+  onbeforetoggle={on_before_toggle}
   ontoggle={(ev) => {
     updateIsOpenState(ev);
     on_toggle(ev);
-  }} 
-  class={className} 
+  }}
+  class={className}
   {...restProps}
 >
   {@render children()}
@@ -215,3 +198,27 @@
     <Arrow {...arrowParams} class={arrowClass} />
   {/if}
 </div>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[PopperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1716)
+## Props
+@prop triggeredBy
+@prop trigger = "click"
+@prop placement = "top"
+@prop offset = 8
+@prop arrow = false
+@prop yOnly = false
+@prop strategy = "absolute"
+@prop reference
+@prop middlewares = [dom.flip(), dom.shift()]
+@prop onbeforetoggle: _onbeforetoggle
+@prop ontoggle: _ontoggle
+@prop class: className = ""
+@prop arrowClass = ""
+@prop isOpen = $bindable(undefined)
+@prop children
+@prop ...restProps
+-->

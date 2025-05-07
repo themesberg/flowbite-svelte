@@ -195,7 +195,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TimepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L797)
+[TimepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L798)
 ## Props
 @prop id = "time"
 @prop endId = "end-time"

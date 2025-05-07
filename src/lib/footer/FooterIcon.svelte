@@ -19,7 +19,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[FooterIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L622)
+[FooterIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L623)
 ## Props
 @prop children
 @prop href

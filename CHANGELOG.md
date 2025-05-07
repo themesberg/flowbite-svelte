@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.3
+
+### Patch Changes
+
+- fix: Dropdown and Popper using isOpen
+
 ## 1.0.2
 
 ### Patch Changes

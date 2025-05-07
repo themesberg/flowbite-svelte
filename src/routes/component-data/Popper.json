@@ -18,6 +18,7 @@
     ["ontoggle: _ontoggle", ""],
     ["class: className", "\"\""],
     ["arrowClass", "\"\""],
+    ["isOpen", "$bindable(undefined)"],
     ["children", ""]
   ]
 }

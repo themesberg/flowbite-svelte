@@ -16,7 +16,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[FooterLinkProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L634)
+[FooterLinkProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L635)
 ## Props
 @prop children
 @prop liClass
