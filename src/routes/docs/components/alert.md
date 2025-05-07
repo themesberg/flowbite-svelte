@@ -320,12 +320,14 @@ Use the `onclick` event with `dismissable` prop.
 ```svelte example class="flex flex-col gap-4"
 <script>
   import { Alert } from "flowbite-svelte";
+  let alertStatus = $state(true)
   const closeAlert = () => {
     alert("Clicked closeAlert.");
+    alertStatus = !alertStatus
   };
 </script>
 
-<Alert dismissable onclick={closeAlert}>Close me</Alert>
+<Alert dismissable onclick={closeAlert} bind:alertStatus={alertStatus}>Close me</Alert>
 ```
 
 ## Component data

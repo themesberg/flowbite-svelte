@@ -2,9 +2,10 @@
   import { Li, List, Alert, Button } from "$lib";
   import { EnvelopeSolid, EyeSolid, InfoCircleSolid } from "flowbite-svelte-icons";
   import { fly } from "svelte/transition";
-
+  let alertStatus = $state(true)
   const closeAlert = () => {
     alert("Clicked closeAlert.");
+    alertStatus = !alertStatus
   };
 </script>
 
@@ -241,5 +242,5 @@
 
 <h2 class="my-4 text-2xl">Events</h2>
 <div class="my-4 flex flex-col gap-4 rounded border p-4">
-  <Alert dismissable onclick={closeAlert}>Close me</Alert>
+  <Alert dismissable onclick={closeAlert} bind:alertStatus={alertStatus}>Close me</Alert>
 </div>

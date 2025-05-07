@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Alert, alert as fsalert, Button, Label, Radio, type AlertProps, uiHelpers } from "$lib";
+  import { Alert, alert as fsalert, Button, Label, Radio, type AlertProps, uiHelpers, Input } from "$lib";
   import { InfoCircleSolid } from "flowbite-svelte-icons";
   import { blur, fly, slide, scale } from "svelte/transition";
   import type { FlyParams, BlurParams, SlideParams, ScaleParams } from "svelte/transition";
@@ -16,6 +16,7 @@
   let title = "Alert builder";
   let dir = "builder";
   // for interactive code builder
+  let alertMessage = $state('My Alert!')
   const colors = Object.keys(fsalert.variants.color);
   let color: AlertProps["color"] = $state("primary");
   let iconSlot = $state(false);
@@ -108,7 +109,7 @@
 
       // Add import script at the beginning
       return `  <Alert${propsString}>${iconCode}
-    My Alert
+    ${alertMessage}
   </Alert>`;
     })()
   );
@@ -139,11 +140,15 @@
           <InfoCircleSolid class="h-5 w-5" />
         {/if}
       {/snippet}
-      <span class="font-medium">My Alert!</span>
+      <span class="font-medium">{alertMessage}</span>
     </Alert>
   </div>
   <div class="mb-4 h-12">
     <Button disabled={alertStatusInteractive ? true : false} onclick={changeStatusInteractive}>Open alert</Button>
+  </div>
+  <div class="mb-4 flex flex-wrap space-x-4">
+    <Label class="mb-4 w-full font-bold">Alert message</Label>
+    <Input bind:value={alertMessage} />
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>

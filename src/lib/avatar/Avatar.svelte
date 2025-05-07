@@ -41,7 +41,7 @@
     {/if}
   </svelte:element>
 {:else}
-  <img {alt} {src} {...restProps} class={avatarClass} />
+  <img {alt} {src} {...restProps} {onclick} class={avatarClass} />
 {/if}
 
 <!--
