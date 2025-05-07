@@ -910,6 +910,7 @@ export type ListgroupItemProps = Omit<ListgroupItemVariants, "state"> &
     Icon?: Component;
     iconClass?: string;
     name?: string;
+    children?: Snippet;
   };
 
 // mega-menu
