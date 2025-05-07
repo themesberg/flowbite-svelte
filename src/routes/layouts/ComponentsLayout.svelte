@@ -97,6 +97,7 @@
   {:else}
     <SidebarGroup>
       {#each Object.entries(posts) as [key, values] (key)}
+      {#if key !== 'builders'}
         <SidebarDropdownWrapper label={names_mapping[key] ?? key} ulClass="space-y-0 p-0" {btnClass} class={dropdowns[key] ? "text-primary-700 dark:text-primary-700" : "text-gray-700 dark:text-gray-200"}>
           {#each values as { meta, path }}
             {@const href = key === "icons" ? `/${key}${path}` : `/docs/${key}${path}`}
@@ -105,15 +106,18 @@
             {/if}
           {/each}
         </SidebarDropdownWrapper>
+        {:else}
+        <SidebarDropdownWrapper label="Builders" ulClass="space-y-0 p-0" {btnClass} class={"text-primary-700 dark:text-primary-700"}>
+          {#each values.filter((builder) => builder.path !== "" && builder.path !== "layout") as builder}
+            {@const pathWithoutSlash = builder.path.replace(/^\//, "")}
+            {@const capitalizedPath = pathWithoutSlash.charAt(0).toUpperCase() + pathWithoutSlash.slice(1)}
+            {@const href = `/builder/${builder.path}`}
+            <SidebarItem label={capitalizedPath} {href} {spanClass} />
+          {/each}
+        </SidebarDropdownWrapper>
+        {/if}
       {/each}
-      <SidebarDropdownWrapper label="Builders" ulClass="space-y-0 p-0" {btnClass} class={"text-primary-700 dark:text-primary-700"}>
-        {#each builders.filter((builder) => builder.path !== "" && builder.path !== "layout") as builder}
-          {@const pathWithoutSlash = builder.path.replace(/^\//, "")}
-          {@const capitalizedPath = pathWithoutSlash.charAt(0).toUpperCase() + pathWithoutSlash.slice(1)}
-          {@const href = `/builder/${builder.path}`}
-          <SidebarItem label={capitalizedPath} {href} {spanClass} />
-        {/each}
-      </SidebarDropdownWrapper>
+      
       <SidebarItem label="Blocks" href="https://flowbite-svelte-blocks.vercel.app/" spanClass="ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass} />
       <SidebarItem label="Admin Dashboard" href="https://flowbite-svelte-admin-dashboard-next.vercel.app/" spanClass="ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass} />
       <SidebarItem label="Icons" href="https://flowbite-svelte-icons.codewithshin.com/" spanClass="ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass} />

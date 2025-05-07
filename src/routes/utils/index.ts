@@ -155,22 +155,14 @@ export const fetchMarkdownPosts = async () => {
     })
   );
 
-  // Experimental pages
-  // const allExperimental = await Promise.all(
-  //   iterableExperimentalFiles.map(async ([path, resolver]) => {
-  //     const { metadata } = await resolver();
-  //     return {
-  //       meta: metadata,
-  //       path: filePath(path)
-  //     };
-  //   })
-  // );
+  const builders = await fetchBuilders();
 
   return {
     pages: allPages,
     components: allComponents,
     forms: allForms,
     typography: allTypographys,
+    builders,
     icons: allIcons,
     examples: allExamples,
     extend: allExtends,
