@@ -320,29 +320,13 @@ Use `color` and `class` props to style the `RadioButton` component:
 
 ```svelte example
 <script lang="ts">
-	import { ButtonGroup, RadioButton } from 'flowbite-svelte';
-	let options = $state();
+  import { ButtonGroup, RadioButton } from "flowbite-svelte";
+  let options = $state();
 </script>
 
 <ButtonGroup class="w-full">
-  <RadioButton
-    outline
-    color="purple"
-    name="options"
-    value="Option A"
-    bind:group={options}
-  >
-    Option A
-  </RadioButton>
-  <RadioButton
-    outline
-    color="red"
-    name="options"
-    value="Option B"
-    bind:group={options}
-  >
-  Option B
-  </RadioButton>
+  <RadioButton outline color="purple" name="options" value="Option A" bind:group={options}>Option A</RadioButton>
+  <RadioButton outline color="red" name="options" value="Option B" bind:group={options}>Option B</RadioButton>
 </ButtonGroup>
 ```
 

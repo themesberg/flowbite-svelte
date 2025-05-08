@@ -406,7 +406,7 @@ export interface IndicatorsProps extends Omit<HTMLAttributes<HTMLDivElement>, "c
   children?: Snippet<[{ selected: boolean; index: number }]>;
   activeClass?: string;
   inactiveClass?: string;
-  position?: "top" | "bottom" | "withThumbnails"
+  position?: "top" | "bottom" | "withThumbnails";
 }
 
 export interface ControlButtonProps extends HTMLButtonAttributes {

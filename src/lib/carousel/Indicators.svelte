@@ -2,13 +2,13 @@
   import { getContext } from "svelte";
   import type { Writable } from "svelte/store";
   import { indicators } from "./theme";
-  import { Indicator, type IndicatorsProps,type State } from "$lib";
+  import { Indicator, type IndicatorsProps, type State } from "$lib";
   import clsx from "clsx";
 
   let { children, activeClass, inactiveClass, position = "bottom", class: className, ...restProps }: IndicatorsProps = $props();
 
   const state = getContext<Writable<State>>("state");
-  const { base, indicator } = indicators({position});
+  const { base, indicator } = indicators({ position });
 
   function goToIndex(newIndex: number) {
     state.update((_state) => {
@@ -46,6 +46,7 @@
 @prop children
 @prop activeClass
 @prop inactiveClass
+@prop position = "bottom"
 @prop class: className
 @prop ...restProps
 -->

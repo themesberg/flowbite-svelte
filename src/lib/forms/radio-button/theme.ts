@@ -5,7 +5,7 @@ export const radioButton = tv({
     inline: {
       true: "inline-flex",
       false: "flex"
-    },
+    }
   },
   defaultVariants: {
     inline: true

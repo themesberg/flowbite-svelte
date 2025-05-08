@@ -21,9 +21,9 @@ export const indicators = tv({
       false: { indicator: "opacity-60" }
     },
     position: {
-      top: {base: "top-5"},
-      bottom: {base: "bottom-5"},
-      withThumbnails: { base: "bottom-24"}
+      top: { base: "top-5" },
+      bottom: { base: "bottom-5" },
+      withThumbnails: { base: "bottom-24" }
     }
   }
 });

@@ -76,12 +76,10 @@
 <h2 class="my-4 text-2xl">Thumbnails</h2>
 <div class="my-4 max-w-4xl rounded border p-4">
   <Carousel {images} bind:index>
-    
     <Controls />
     <Indicators position="withThumbnails" />
     <Thumbnails {images} bind:index />
   </Carousel>
-  
 </div>
 
 <h2 class="my-4 text-2xl">Caption</h2>
