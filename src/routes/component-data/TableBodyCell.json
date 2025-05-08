@@ -1,6 +1,13 @@
 {
   "name": "TableBodyCell",
-  "slots": [],
-  "events": [],
-  "props": [["tdClass?", "string", "'px-6 py-4 whitespace-nowrap font-medium '"]]
+  "type": {
+    "name": "TableBodyCellProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1403"
+  },
+  "props": [
+    ["children", ""],
+    ["class: className", ""],
+    ["colspan", ""],
+    ["onclick", ""]
+  ]
 }

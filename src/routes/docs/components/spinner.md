@@ -20,7 +20,7 @@ The spinner component can be used as a loading indicator which comes in multiple
 
 ```svelte example hideOutput
 <script>
-  import { Spinner } from 'flowbite-svelte';
+  import { Spinner } from "flowbite-svelte";
 </script>
 ```
 
@@ -30,7 +30,7 @@ Use the following SVG element to show a loading animation:
 
 ```svelte example hideScript
 <script>
-  import { Spinner } from 'flowbite-svelte';
+  import { Spinner } from "flowbite-svelte";
 </script>
 
 <Spinner />
@@ -42,7 +42,7 @@ You can change the colors of the spinner element using the `color` prop.
 
 ```svelte example hideScript
 <script>
-  import { Spinner } from 'flowbite-svelte';
+  import { Spinner } from "flowbite-svelte";
 </script>
 
 <Spinner />
@@ -60,12 +60,12 @@ Change the size of the spinner component using the `size` prop.
 
 ```svelte example hideScript
 <script>
-  import { Spinner } from 'flowbite-svelte';
+  import { Spinner } from "flowbite-svelte";
 </script>
 
-<Spinner size={4} />
+<Spinner size="4" />
 <Spinner size="6" />
-<Spinner size={8} />
+<Spinner size="8" />
 ```
 
 ## Alignment
@@ -74,7 +74,7 @@ Because the spinner component is an inline HTML element it can easily be aligned
 
 ```svelte example hideScript
 <script>
-  import { Spinner } from 'flowbite-svelte';
+  import { Spinner } from "flowbite-svelte";
 </script>
 
 <div class="text-left"><Spinner /></div><div class="text-center"><Spinner /></div><div class="text-right"><Spinner /></div>
@@ -86,15 +86,15 @@ The spinner component can also be used inside elements such as buttons when subm
 
 ```svelte example
 <script>
-  import { Spinner, Button } from 'flowbite-svelte';
+  import { Spinner, Button } from "flowbite-svelte";
 </script>
 
 <div class="flex flex-wrap items-center gap-2">
   <Button>
-    <Spinner class="me-3" size="4" color="white" />
+    <Spinner class="me-3" size="4" color="blue" />
     Loading ...
   </Button>
-  <Button outline color="dark">
+  <Button outline color="gray">
     <Spinner class="me-3" size="4" />
     Loading ...
   </Button>
@@ -104,10 +104,6 @@ The spinner component can also be used inside elements such as buttons when subm
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
-
-### Spinner styling
-
-- Use the `class` prop to overwrite the default class.
 
 <CompoAttributesViewer {dirName}/>
 

@@ -1,13 +1,18 @@
 {
   "name": "MultiSelect",
-  "slots": [],
-  "events": ["input"],
+  "type": {
+    "name": "MultiSelectProps<T>",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L782"
+  },
   "props": [
-    ["items?", "SelectOptionType<any>[]", ""],
-    ["value?", "(string | number)[]", ""],
-    ["size?", "FormSizeType", ""],
-    ["dropdownClass?", "string", "''"],
-    ["placeholder?", "string", "''"],
-    ["disabled?", "boolean", "false"]
+    ["children", ""],
+    ["items", "[]"],
+    ["value", "$bindable()"],
+    ["size", "\"md\""],
+    ["dropdownClass", "\"\""],
+    ["placeholder", "\"\""],
+    ["disabled", "false"],
+    ["onchange", ""],
+    ["class: className", ""]
   ]
 }

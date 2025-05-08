@@ -1,9 +1,17 @@
 {
   "name": "TableHead",
-  "slots": [],
-  "events": [],
+  "type": {
+    "name": "TableHeadProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1370"
+  },
   "props": [
-    ["theadClass?", "string", "'text-xs uppercase'"],
-    ["defaultRow?", "boolean", "true"]
+    ["children", ""],
+    ["headerSlot", ""],
+    ["color", ""],
+    ["striped", ""],
+    ["border", ""],
+    ["class: className", ""],
+    ["headItems", ""],
+    ["defaultRow", "true"]
   ]
 }

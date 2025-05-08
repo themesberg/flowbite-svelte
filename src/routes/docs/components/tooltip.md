@@ -14,23 +14,24 @@ thumnailSize: w-24
   const dirName = toKebabCase(component_title)
 </script>
 
-Flowbite-Svelte allows you to show extra information when hovering or focusing over an element in multiple positions, styles, and animations.
+flowbite-svelte allows you to show extra information when hovering or focusing over an element in multiple positions, styles, and animations.
 
 ## Setup
 
 ```svelte example hideOutput
 <script>
-  import { Tooltip } from 'flowbite-svelte';
+  import { Tooltip } from "flowbite-svelte";
 </script>
 ```
 
 ## Default tooltip example
 
-To get started with using tooltips all you need to do is set `triggeredBy` attribute of the tooltip component to any CSS query targeting trigger element(s). In the following example you can see the tooltip that will be trigger by the `tooltip-default` element to be shown when hovered or focused.
+To get started with using tooltips all you need to do is to place `Tooltip` element directly after tiggering element (usually `Button`).
+In the following example you can see the tooltip that will be trigger by the adjacent element to be shown when hovered or focused.
 
 ```svelte example class="flex items-end h-32" hideResponsiveButtons
 <script>
-  import { Tooltip, Button } from 'flowbite-svelte';
+  import { Tooltip, Button } from "flowbite-svelte";
 </script>
 
 <!-- only works if the button and tooltip are adjacent on your page. Like this: -->
@@ -40,9 +41,9 @@ To get started with using tooltips all you need to do is set `triggeredBy` attri
 
 If you have anything else between the button and tooltip, they won't find each other and you will need to specify the link between them by setting the property `triggeredBy` to the CSS query of the element that triggers the tooltip. Most of the time you will want to use the `id` attribute of the element to link them, but you can use any CSS query you want. See the examples further down.
 
-```svelte example hideScript class="h-32 flex items-end gap-2"
+```svelte example hideScript class="h-32 flex items-end gap-2" hideResponsiveButtons
 <script>
-  import { Tooltip, Button, P } from 'flowbite-svelte';
+  import { Tooltip, Button, P } from "flowbite-svelte";
 </script>
 
 <Button id="specific-button-anywhere-on-page">Default tooltip</Button>
@@ -53,20 +54,19 @@ If you have anything else between the button and tooltip, they won't find each o
 
 ## Tooltip types
 
-You can use choose between dark and light version styles for the tooltip component by changing the utility classes from Tailwind CSS and by applying the `type={light|dark}` data attribute.
+You can use choose between dark and light version styles for the tooltip component by changing the utility classes from Tailwind CSS and by applying the `type={light|dark|auto}` data attribute.
 
 ```svelte example class="flex items-end gap-2 h-32" hideResponsiveButtons
 <script>
-  import { Tooltip, Button } from 'flowbite-svelte';
-  let type = 'dark';
+  import { Tooltip, Button } from "flowbite-svelte";
 </script>
 
-<Button id="type-1" >Light tooltip</Button>
-<Tooltip type='light' triggeredBy="#type-1">Tooltip content</Tooltip>
-<Button id="type-2" >Default tooltip</Button>
-<Tooltip type='auto' triggeredBy="#type-2">Tooltip content</Tooltip>
-<Button id="type-3" >Dark tooltip</Button>
-<Tooltip type='dark' triggeredBy="#type-3">Tooltip content</Tooltip>
+<Button>Light tooltip</Button>
+<Tooltip type="light">Tooltip content</Tooltip>
+<Button>Default tooltip</Button>
+<Tooltip type="auto">Tooltip content</Tooltip>
+<Button>Dark tooltip</Button>
+<Tooltip type="dark">Tooltip content</Tooltip>
 ```
 
 ## Placement
@@ -76,34 +76,27 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 **Note!** This examples shows you also how to share one tooltip between multiple triggering elements using advanced CSS query.
 
 ```svelte example class="flex items-center justify-center gap-2 h-36" hideResponsiveButtons
-<script>
-  import { Tooltip, Button } from 'flowbite-svelte';
-  let placement = 'left';
+<script lang="ts">
+  import { Tooltip, Button } from "flowbite-svelte";
+  import type { Placement } from "@floating-ui/utils";
+  let placement: Placement = "left";
 </script>
 
-<Button id="placement-1">Tooltip left</Button>
-<Tooltip triggeredBy="#placement-1" placement='left'>
-  Tooltip content - Left
-</Tooltip>
-<Button id="placement-2">Tooltip top</Button>
-<Tooltip triggeredBy="#placement-2" placement='top'>
-  Tooltip content - Top
-</Tooltip>
-<Button id="placement-3">Tooltip bottom</Button>
-<Tooltip triggeredBy="#placement-3" placement='bottom'>
-  Tooltip content - Bottom
-</Tooltip>
-<Button id="placement-4" >Tooltip right</Button>
-<Tooltip triggeredBy="#placement-4" placement='right'>
-  Tooltip content - Right
-</Tooltip>
+<Button>Tooltip left</Button>
+<Tooltip placement="left">Left</Tooltip>
+<Button>Tooltip top</Button>
+<Tooltip placement="top">Top</Tooltip>
+<Button>Tooltip bottom</Button>
+<Tooltip placement="bottom">Bottom</Tooltip>
+<Button>Tooltip right</Button>
+<Tooltip placement="right">Right</Tooltip>
 ```
 
 ## Triggering
 
 ```svelte example class="flex items-end gap-2 h-32" hideResponsiveButtons
 <script>
-  import { Tooltip, Button } from 'flowbite-svelte';
+  import { Tooltip, Button } from "flowbite-svelte";
 </script>
 
 <Button id="hover">Tooltip hover</Button>
@@ -116,7 +109,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 
 ```svelte example class="flex items-end gap-2 h-32" hideResponsiveButtons
 <script>
-  import { Tooltip, Button } from 'flowbite-svelte';
+  import { Tooltip, Button } from "flowbite-svelte";
 </script>
 
 <Button id="disable-arrow">Default tooltip</Button>
@@ -128,29 +121,36 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 If you need the tooltip to be attached to the other element then the tiggering one you can pass a CSS query to `reference` prop.
 
 ```svelte example class="flex gap-4 flex-col justify-center items-center h-72" hideResponsiveButtons
-<script>
-  import { Tooltip, Button } from 'flowbite-svelte';
-  let placement = '';
+<script lang="ts">
+  import { Tooltip, Button } from "flowbite-svelte";
+  import type { Placement } from "@floating-ui/utils";
+  let placement: Placement = "top";
+  function onbeforetoggle(ev: Event) {
+    const trigger = (ev as any).trigger;
+    if (trigger?.id) {
+      placement = trigger.id.replace("ref-", "");
+    }
+  }
 </script>
 
-<div id="ext-ref" class="p-2 rounded-lg border border-gray-200 dark:border-gray-600">External reference</div>
+<div id="ext-ref" class="rounded-lg border border-gray-200 p-2 dark:border-gray-600">External reference</div>
 <div class="space-x-4 rtl:space-x-reverse">
-  <Button id="ref-left" on:mouseenter={() => (placement = 'left')}>Left</Button>
-  <Button id="ref-top" on:mouseenter={() => (placement = 'top')}>Top</Button>
-  <Button id="ref-right" on:mouseenter={() => (placement = 'right')}>Right</Button>
+  <Button id="ref-left">Left</Button>
+  <Button id="ref-top">Top</Button>
+  <Button id="ref-right">Right</Button>
 </div>
-<Tooltip reference="#ext-ref" triggeredBy="[id^='ref-']" {placement} class="w-64 text-sm font-light">And here's some amazing content. It's very engaging. Right?</Tooltip>
+<Tooltip reference="#ext-ref" triggeredBy="[id^='ref-']" {placement} {onbeforetoggle} class="w-64 text-sm font-light">And here's some amazing content. It's very engaging. Right?</Tooltip>
 ```
 
 ## Custom type
 
-Various color palettes can be set for a tooltip by using the `color` property from the underlying `Frame` component. (Setting `color` prop sets the `type` to `custom` implicitly.)
+Various color palettes can be set for a tooltip by using the `color` property. (Setting `color` prop sets the `type` to `custom` implicitly.)
 
 When you want to add a fully custom styles, use `type="custom"`, `defaultClass`, and `class` to modify the tooltip styling.
 
 ```svelte example class="flex items-center h-64 gap-2" hideResponsiveButtons
 <script>
-  import { Tooltip, Button } from 'flowbite-svelte';
+  import { Tooltip, Button } from "flowbite-svelte";
 </script>
 
 <Button>Green tooltip</Button>
@@ -160,12 +160,10 @@ When you want to add a fully custom styles, use `type="custom"`, `defaultClass`,
 <Tooltip color="yellow">Tooltip content</Tooltip>
 
 <Button>Custom type</Button>
-<Tooltip placement="right" type="custom" defaultClass="" class="p-4 text-lg font-medium bg-purple-500 text-gray-100" arrow={false}>Tooltip content</Tooltip>
+<Tooltip placement="right" type={undefined} class="bg-purple-500 p-4 text-lg font-medium text-gray-100" arrow={false}>Tooltip content</Tooltip>
 ```
 
 ## Component data
-
-### Tooltip
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 

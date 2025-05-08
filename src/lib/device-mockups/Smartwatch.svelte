@@ -1,57 +1,38 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
+  import { smartwatch } from ".";
+  import type { SmartwatchProps } from "$lib/types";
 
-  interface $$Props {
-    div?: string;
-    slot?: string;
-    rightTop?: string;
-    rightBot?: string;
-    top?: string;
-    bot?: string;
-    classTop?: string;
-    classRightTop?: string;
-    classRightBot?: string;
-    classSlot?: string;
-    classBot?: string;
-    class?: string;
-  }
+  let { children, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: SmartwatchProps = $props();
 
-  export let div: $$Props['div'] = 'relative mx-auto bg-gray-800 dark:bg-gray-700 rounded-t-[2.5rem] h-[63px] max-w-[133px]';
-  export let slot: $$Props['slot'] = 'rounded-[2rem] overflow-hidden h-[193px] w-[188px]';
-  export let rightTop: $$Props['rightTop'] = 'h-[41px] w-[6px] bg-gray-800 dark:bg-gray-800 absolute -right-[16px] top-[40px] rounded-r-lg';
-  export let rightBot: $$Props['rightBot'] = 'h-[32px] w-[6px] bg-gray-800 dark:bg-gray-800 absolute -right-[16px] top-[88px] rounded-r-lg';
-  export let top: $$Props['top'] = 'relative mx-auto border-gray-900 dark:bg-gray-800 dark:border-gray-800 border-[10px] rounded-[2.5rem] h-[213px] w-[208px]';
-  export let bot: $$Props['bot'] = 'relative mx-auto bg-gray-800 dark:bg-gray-700 rounded-b-[2.5rem] h-[63px] max-w-[133px]';
-  export let classTop: $$Props['classTop'] = '';
-  export let classRightTop: $$Props['classRightTop'] = '';
-  export let classRightBot: $$Props['classRightBot'] = '';
-  export let classSlot: $$Props['classSlot'] = '';
-  export let classBot: $$Props['classBot'] = '';
+  const { div, top, rightTop, rightBot, bot, slot } = smartwatch();
 </script>
 
-<div class={twMerge(div, $$props.class)}></div>
-<div class={twMerge(top, classTop)}>
-  <div class={twMerge(rightTop, classRightTop)}></div>
-  <div class={twMerge(rightBot, classRightBot)}></div>
-  <div class={twMerge(slot, classSlot)}>
-    <slot></slot>
+<div {...restProps}>
+  <div class={div({ class: divClass })}></div>
+  <div class={top({ class: div2Class })}>
+    <div class={rightTop({ class: div3Class })}></div>
+    <div class={rightBot({ class: div4Class })}></div>
+    <div class={slot({ class: div5Class })}>
+      {#if children}
+        {@render children()}
+      {/if}
+    </div>
   </div>
+  <div class={bot({ class: div6Class })}></div>
 </div>
-<div class={twMerge(bot, classBot)}></div>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[SmartwatchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L525)
 ## Props
-@prop export let div: $$Props['div'] = 'relative mx-auto bg-gray-800 dark:bg-gray-700 rounded-t-[2.5rem] h-[63px] max-w-[133px]';
-@prop export let slot: $$Props['slot'] = 'rounded-[2rem] overflow-hidden h-[193px] w-[188px]';
-@prop export let rightTop: $$Props['rightTop'] = 'h-[41px] w-[6px] bg-gray-800 dark:bg-gray-800 absolute -right-[16px] top-[40px] rounded-r-lg';
-@prop export let rightBot: $$Props['rightBot'] = 'h-[32px] w-[6px] bg-gray-800 dark:bg-gray-800 absolute -right-[16px] top-[88px] rounded-r-lg';
-@prop export let top: $$Props['top'] = 'relative mx-auto border-gray-900 dark:bg-gray-800 dark:border-gray-800 border-[10px] rounded-[2.5rem] h-[213px] w-[208px]';
-@prop export let bot: $$Props['bot'] = 'relative mx-auto bg-gray-800 dark:bg-gray-700 rounded-b-[2.5rem] h-[63px] max-w-[133px]';
-@prop export let classTop: $$Props['classTop'] = '';
-@prop export let classRightTop: $$Props['classRightTop'] = '';
-@prop export let classRightBot: $$Props['classRightBot'] = '';
-@prop export let classSlot: $$Props['classSlot'] = '';
-@prop export let classBot: $$Props['classBot'] = '';
+@prop children
+@prop divClass
+@prop div2Class
+@prop div3Class
+@prop div4Class
+@prop div5Class
+@prop div6Class
+@prop ...restProps
 -->

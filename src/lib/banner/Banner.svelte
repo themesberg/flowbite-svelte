@@ -1,71 +1,31 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
-  import CloseButton from '../utils/CloseButton.svelte';
-  import type { HTMLAttributes } from 'svelte/elements';
-  import { fade, type TransitionConfig } from 'svelte/transition';
-  import type { ParamsType } from '../types'
+  import { CloseButton } from "$lib";
+  import { fade } from "svelte/transition";
+  import { banner } from "./index";
+  import type { ParamsType, BannerProps } from "$lib/types";
+  import clsx from "clsx";
 
-  type TransitionFunc = (node: HTMLElement, params: ParamsType) => TransitionConfig;
+  let { children, header, open = $bindable(true), dismissable = true, color = "gray", type, class: className, innerClass, transition = fade, params, ...restProps }: BannerProps = $props();
 
-  interface $$Props extends HTMLAttributes<HTMLDivElement> {
-    position?: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky';
-    dismissable?: boolean;
-    bannerType?: 'default' | 'bottom' | 'cta' | 'signup' | 'info';
-    divClass?: string;
-    innerClass?: string;
-    bannerStatus?: boolean;
-    transition?: TransitionFunc;
-    params?: object;
-    classDiv?: string;
-    classInner?: string;
-  }
-
-  export let position: $$Props['position'] = 'sticky';
-  export let dismissable: $$Props['dismissable'] = true;
-  export let bannerType: NonNullable<$$Props['bannerType']> = 'default';
-  export let divClass: $$Props['divClass'] = 'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600';
-  export let innerClass: $$Props['innerClass'] = 'flex';
-  export let bannerStatus: $$Props['bannerStatus'] = true;
-  export let transition: NonNullable<$$Props['transition']> = fade;
-  export let params: $$Props['params'] = {};
-  export let classDiv: $$Props['classDiv'] = '';
-  export let classInner: $$Props['classInner'] = '';
-
-  const divClasses = {
-    default: 'top-0 start-0 w-full border-b border-gray-200 bg-gray-50',
-    bottom: 'bottom-0 start-0 w-full border-t border-gray-200 bg-gray-50',
-    cta: 'flex-col md:flex-row  w-[calc(100%-2rem)] -translate-x-1/2 rtl:translate-x-1/2 bg-white border border-gray-100 rounded-lg shadow-xs lg:max-w-7xl start-1/2 top-6',
-    signup: 'top-0 start-0 w-full border-b border-gray-200 bg-gray-50',
-    info: 'top-0 start-0 flex-col w-full border-b border-gray-200 md:flex-row bg-gray-50'
-  };
-
-  const insideDivClasses = {
-    default: 'items-center mx-auto',
-    bottom: 'items-center mx-auto',
-    cta: 'flex-col items-start mb-3 me-4 md:items-center md:flex-row md:mb-0',
-    signup: 'items-center shrink-0 w-full mx-auto sm:w-auto',
-    info: 'items-center shrink-0'
-  };
-
-  $: divClass = twMerge(position, divClass, divClasses[bannerType], classDiv);
-  $: div2Class = twMerge(innerClass, insideDivClasses[bannerType], classInner);
-
-  function close(e: MouseEvent) {
-    e.preventDefault();
-    bannerStatus = false;
-  }
+  const { base, insideDiv, dismissable: dismissableClass } = $derived(banner({ type, color }));
 </script>
 
-{#if bannerStatus}
-  <div tabindex="-1" class={divClass} {...$$restProps}
-  transition:transition={params}>
-    <slot name="header" />
-    <div class={div2Class}>
-      <slot />
+{#if open}
+  <div tabindex="-1" class={base({ class: clsx(className) })} {...restProps} transition:transition={params as ParamsType}>
+    <div class={insideDiv({ class: innerClass })}>
+      {@render children?.()}
     </div>
+
     {#if dismissable}
-      <div class="flex items-center">
-        <CloseButton class="-mx-1.5 -my-1.5" color={$$restProps.color} on:click={close} on:click on:change on:keydown on:keyup on:focus on:blur on:mouseenter on:mouseleave />
+      <div class="flex items-center justify-end">
+        <CloseButton
+          class={dismissableClass()}
+          {color}
+          ariaLabel="Remove banner"
+          onclick={() => {
+            open = false;
+          }}
+        />
       </div>
     {/if}
   </div>
@@ -74,15 +34,18 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L253)
 ## Props
-@prop export let position: $$Props['position'] = 'sticky';
-@prop export let dismissable: $$Props['dismissable'] = true;
-@prop export let bannerType: NonNullable<$$Props['bannerType']> = 'default';
-@prop export let divClass: $$Props['divClass'] = 'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600';
-@prop export let innerClass: $$Props['innerClass'] = 'flex';
-@prop export let bannerStatus: $$Props['bannerStatus'] = true;
-@prop export let transition: NonNullable<$$Props['transition']> = fade;
-@prop export let params: $$Props['params'] = {};
-@prop export let classDiv: $$Props['classDiv'] = '';
-@prop export let classInner: $$Props['classInner'] = '';
+@prop children
+@prop header
+@prop open = $bindable(true)
+@prop dismissable = true
+@prop color = "gray"
+@prop type
+@prop class: className
+@prop innerClass
+@prop transition = fade
+@prop params
+@prop ...restProps
 -->

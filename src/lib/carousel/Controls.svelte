@@ -1,12 +1,13 @@
 <script lang="ts">
-  import { getContext } from 'svelte';
-  import type { Writable } from 'svelte/store';
-  import type { State } from './Carousel.svelte';
-  import ControlButton from './ControlButton.svelte';
-  import { twMerge } from 'tailwind-merge';
-  import { canChangeSlide } from './CarouselSlide';
+  import { getContext, type Snippet } from "svelte";
+  import type { Writable } from "svelte/store";
+  import { canChangeSlide } from "./CarouselSlide";
+  import ControlButton from "./ControlButton.svelte";
+  import type { State, ControlsProps } from "$lib/types";
 
-  const state = getContext<Writable<State>>('state');
+  let { children, class: className, ...restProps }: ControlsProps = $props();
+
+  const state = getContext<Writable<State>>("state");
   const { update } = state;
 
   function changeSlide(forward: boolean) {
@@ -39,7 +40,20 @@
 </script>
 
 <!-- Slider controls -->
-<slot {ControlButton} {changeSlide}>
-  <ControlButton name="Previous" forward={false} on:click={() => changeSlide(false)} class={twMerge($$props.class)} />
-  <ControlButton name="Next" forward={true} on:click={() => changeSlide(true)} class={twMerge($$props.class)} />
-</slot>
+{#if children}
+  {@render children(changeSlide)}
+{:else}
+  <ControlButton name="Previous" forward={false} onclick={() => changeSlide(false)} class={className} {...restProps} />
+  <ControlButton name="Next" forward={true} onclick={() => changeSlide(true)} class={className} {...restProps} />
+{/if}
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[ControlsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L416)
+## Props
+@prop children
+@prop class: className
+@prop ...restProps
+-->

@@ -1,91 +1,63 @@
 <script lang="ts">
-  import type { HTMLAttributes } from 'svelte/elements';
-  import { cubicOut } from 'svelte/easing';
-  import { tweened } from 'svelte/motion';
-  import type { EasingFunction } from 'svelte/transition';
-  import { twMerge } from 'tailwind-merge';
+  import { cubicOut } from "svelte/easing";
+  import { twMerge } from "tailwind-merge";
+  import { tweened } from "svelte/motion";
+  import { progressbar } from ".";
+  import type { ProgressbarProps } from "$lib/types";
 
-  interface $$Props extends HTMLAttributes<HTMLDivElement> {
-    progress: string | number;
-    precision?: number;
-    tweenDuration?: number;
-    animate?: boolean;
-    size?: string;
-    labelInside?: boolean;
-    labelOutside?: string;
-    easing?: EasingFunction;
-    color?: 'primary' | 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo';
-    labelInsideClass?: string;
-    divClass?: string;
-    progressClass?: string;
-    classLabelOutside?: string;
-  }
-
-  export let progress: $$Props['progress'] = '45';
-  export let precision: $$Props['precision'] = 0
-  export let tweenDuration: $$Props['tweenDuration'] = 400;
-  export let animate: $$Props['animate'] = false;
-  export let size: $$Props['size'] = 'h-2.5';
-  export let labelInside: $$Props['labelInside'] = false;
-  export let labelOutside: $$Props['labelOutside'] = '';
-  export let easing: $$Props['easing'] = cubicOut;
-  export let color: NonNullable<$$Props['color']> = 'primary';
-  export let labelInsideClass: $$Props['labelInsideClass'] = 'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
-  export let divClass: $$Props['divClass'] = 'w-full bg-gray-200 rounded-full dark:bg-gray-700';
-  export let progressClass: $$Props['progressClass'] = '';
-  export let classLabelOutside: $$Props['classLabelOutside'] = '';
+  let { progress = "45", precision = 0, tweenDuration = 400, animate = false, size = "h-2.5", labelInside = false, labelOutside = "", easing = cubicOut, color = "primary", labelInsideClass, oustsideSpanClass, oustsideProgressClass, labeloutsidedivClass, divClass, ...restProps }: ProgressbarProps = $props();
 
   const _progress = tweened(0, {
     duration: animate ? tweenDuration : 0,
     easing
   });
+  const { base, labelInsideDiv, insideDiv, outsideDiv, oustsideSpan, outsideProgress } = $derived(
+    progressbar({
+      color,
+      labelInside
+    })
+  );
 
-  // let barColor: string;
-  const barColors = {
-    primary: 'bg-primary-600',
-    blue: 'bg-blue-600',
-    gray: 'bg-gray-600 dark:bg-gray-300',
-    red: 'bg-red-600 dark:bg-red-500',
-    green: 'bg-green-600 dark:bg-green-500',
-    yellow: 'bg-yellow-400',
-    purple: 'bg-purple-600 dark:bg-purple-500',
-    indigo: 'bg-indigo-600 dark:bg-indigo-500'
-  };
-
-  $: _progress.set(Number(progress));
+  $effect(() => {
+    _progress.set(Number(progress));
+  });
 </script>
 
 {#if labelOutside}
-  <div {...$$restProps} class={twMerge('flex justify-between mb-1', classLabelOutside)}>
-    <span class="text-base font-medium text-blue-700 dark:text-white">{labelOutside}</span>
-    <span class="text-sm font-medium text-blue-700 dark:text-white">{progress}%</span>
+  <div {...restProps} class={outsideDiv({ class: labeloutsidedivClass })}>
+    <span class={oustsideSpan({ class: oustsideSpanClass })}>{labelOutside}</span>
+    <span class={outsideProgress({ class: oustsideProgressClass })}>{progress}%</span>
   </div>
 {/if}
-<div class={twMerge(divClass, size, $$props.class)}>
+<div {...restProps} class={twMerge(base({ class: divClass }), size)}>
   {#if labelInside}
-    <div class={twMerge(barColors[color], labelInsideClass)} style="width: {$_progress}%">
+    <div class={twMerge(labelInsideDiv({ class: labelInsideClass }), size)} style="width: {$_progress}%">
       {$_progress.toFixed(precision)}%
     </div>
   {:else}
-    <div class={twMerge(barColors[color], size, 'rounded-full', progressClass)} style="width: {$_progress}%"></div>
+    <div class={twMerge(insideDiv({ class: labelInsideClass }), size)} style="width: {$_progress}%"></div>
   {/if}
 </div>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[ProgressbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1042)
 ## Props
-@prop export let progress: $$Props['progress'] = '45';
-@prop export let precision: $$Props['precision'] = 0
-  export let tweenDuration: $$Props['tweenDuration'] = 400;
-@prop export let animate: $$Props['animate'] = false;
-@prop export let size: $$Props['size'] = 'h-2.5';
-@prop export let labelInside: $$Props['labelInside'] = false;
-@prop export let labelOutside: $$Props['labelOutside'] = '';
-@prop export let easing: $$Props['easing'] = cubicOut;
-@prop export let color: NonNullable<$$Props['color']> = 'primary';
-@prop export let labelInsideClass: $$Props['labelInsideClass'] = 'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
-@prop export let divClass: $$Props['divClass'] = 'w-full bg-gray-200 rounded-full dark:bg-gray-700';
-@prop export let progressClass: $$Props['progressClass'] = '';
-@prop export let classLabelOutside: $$Props['classLabelOutside'] = '';
+@prop progress = "45"
+@prop precision = 0
+@prop tweenDuration = 400
+@prop animate = false
+@prop size = "h-2.5"
+@prop labelInside = false
+@prop labelOutside = ""
+@prop easing = cubicOut
+@prop color = "primary"
+@prop labelInsideClass
+@prop oustsideSpanClass
+@prop oustsideProgressClass
+@prop labeloutsidedivClass
+@prop divClass
+@prop ...restProps
 -->

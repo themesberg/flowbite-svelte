@@ -1,10 +1,11 @@
 {
   "name": "VideoPlaceholder",
-  "slots": [],
-  "events": [],
+  "type": {
+    "name": "VideoPlaceholderProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1269"
+  },
   "props": [
-    ["divClass?", "string", "'flex justify-center items-center h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700'"],
-    ["size?", "keyof Sizes", ""],
-    ["class?", "string", ""]
+    ["size", "\"sm\""],
+    ["class: className", ""]
   ]
 }

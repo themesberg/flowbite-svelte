@@ -1,18 +1,15 @@
 <script lang="ts">
-  import type { ComponentType } from 'svelte';
-  import Android from './Android.svelte';
-  import DefaultMockup from './DefaultMockup.svelte';
-  import Desktop from './Desktop.svelte';
-  import Ios from './Ios.svelte';
-  import Laptop from './Laptop.svelte';
-  import Smartwatch from './Smartwatch.svelte';
-  import Tablet from './Tablet.svelte';
+  import type { Component } from "svelte";
+  import Android from "./Android.svelte";
+  import DefaultMockup from "./DefaultMockup.svelte";
+  import Desktop from "./Desktop.svelte";
+  import Ios from "./Ios.svelte";
+  import Laptop from "./Laptop.svelte";
+  import Smartwatch from "./Smartwatch.svelte";
+  import Tablet from "./Tablet.svelte";
+  import type { DeviceMockupProps } from "$lib/types";
 
-  interface $$Props {
-    device?: 'default' | 'ios' | 'android' | 'tablet' | 'laptop' | 'desktop' | 'smartwatch';
-  }
-
-  export let device: NonNullable<$$Props['device']> = 'default';
+  let { children, device = "default" }: DeviceMockupProps = $props();
 
   const componets = {
     android: Android,
@@ -24,19 +21,19 @@
     desktop: Desktop
   };
 
-  let component: ComponentType;
-  $: component = componets[device];
+  let DeviceComponent: Component = $derived(componets[device]);
 </script>
 
-{#if component}
-  <svelte:component this={component}><slot /></svelte:component>
-{:else}
-  <div class="border p-3 text-xl">Unknow device</div>
-{/if}
+<DeviceComponent>
+  {@render children()}
+</DeviceComponent>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[DeviceMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L481)
 ## Props
-@prop export let device: NonNullable<$$Props['device']> = 'default';
+@prop children
+@prop device = "default"
 -->

@@ -1,6 +1,11 @@
 {
   "name": "NavBrand",
-  "slots": [],
-  "events": [],
-  "props": [["href?", "string", "''"]]
+  "type": {
+    "name": "NavBrandProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L961"
+  },
+  "props": [
+    ["children", ""],
+    ["class: className", ""]
+  ]
 }

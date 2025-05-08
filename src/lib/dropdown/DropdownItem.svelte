@@ -1,53 +1,54 @@
 <script lang="ts">
-  import Wrapper from '$lib/utils/Wrapper.svelte';
-  import { twMerge } from 'tailwind-merge';
-  import { getContext } from 'svelte';
-  import type { DropdownType } from './Dropdown.svelte';
-  import type { HTMLButtonAttributes, HTMLAnchorAttributes } from 'svelte/elements';
+  import { getContext } from "svelte";
+  import { dropdownItem } from ".";
+  import type { DropdownItemProps } from "$lib/types";
+  import clsx from "clsx";
 
-  interface DropdownItemProps {
-    defaultClass?: string;
-    href?: string;
-    activeClass?: string;
-  }
+  let { aClass, children, href, activeClass, liClass, class: className, ...restProps }: DropdownItemProps = $props();
 
-  type $$Props = DropdownItemProps & (HTMLAnchorAttributes | HTMLButtonAttributes);
-
-  export let defaultClass: $$Props['defaultClass'] = 'font-medium py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600';
-  export let href: $$Props['href'] = undefined;
-  export let activeClass: $$Props['activeClass'] = undefined;
-  // export let active: boolean = false;
-
-  const context = getContext<DropdownType>('DropdownType') ?? {};
-  const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
-
-  let sidebarUrl = '';
+  const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
+  let sidebarUrl = $state("");
   activeUrlStore.subscribe((value) => {
     // console.log('value: ', value)
     sidebarUrl = value;
   });
 
-  $: active = sidebarUrl ? href === sidebarUrl : false;
-  $: liClass = twMerge(defaultClass, href ? 'block' : 'w-full text-left', active && (activeClass ?? context.activeClass), $$props.class);
+  let active = $state(false);
+  $effect(() => {
+    active = sidebarUrl ? href === sidebarUrl : false;
+  });
 
-  let wrap: boolean = true;
-  function init(node: HTMLElement) {
-    wrap = node.parentElement?.tagName === 'UL';
-  }
+  const { anchor, activeAnchor } = dropdownItem();
+  let finalClass = $derived([active ? activeAnchor({ class: clsx(activeClass, className) }) : anchor({ class: clsx(aClass, className) })]);
 </script>
 
-<Wrapper tag="li" show={wrap} use={init}>
-  <svelte:element this={href ? 'a' : 'button'} {href} type={href ? undefined : 'button'} role={href ? 'link' : 'button'} {...$$restProps} class={liClass} on:click on:change on:keydown on:keyup on:focus on:blur on:mouseenter on:mouseleave>
-    <slot />
-  </svelte:element>
-</Wrapper>
+<li class={liClass}>
+  {#if href}
+    <a {href} {...restProps} class={finalClass}>
+      {@render children()}
+    </a>
+  {:else if restProps.onclick}
+    <button type="button" class={finalClass} onclick={restProps.onclick}>
+      {@render children()}
+    </button>
+  {:else}
+    <div class={finalClass}>
+      {@render children()}
+    </div>
+  {/if}
+</li>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L582)
 ## Props
-@prop export let defaultClass: $$Props['defaultClass'] = 'font-medium py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600';
-@prop export let href: $$Props['href'] = undefined;
-@prop export let activeClass: $$Props['activeClass'] = undefined;
-@prop export let active: boolean = false;
+@prop aClass
+@prop children
+@prop href
+@prop activeClass
+@prop liClass
+@prop class: className
+@prop ...restProps
 -->

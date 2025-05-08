@@ -1,34 +1,41 @@
 <script lang="ts">
-  import type { ComponentProps } from 'svelte';
-  import Popper from '../utils/Popper.svelte';
+  import clsx from "clsx";
+  import Popper from "../utils/Popper.svelte";
+  import { popover } from "./theme";
+  import type { PopoverProps } from "$lib/types";
 
-  // propagate props type from underlying Frame
-  interface $$Props extends ComponentProps<Popper> {
-    title?: string;
-    defaultClass?: string;
-  }
+  let { title: titleSlot, color = "default", trigger = "hover", defaultClass, arrow = true, children, placement = "top", class: className, ...restProps }: PopoverProps = $props();
 
-  export let title: string = '';
-  export let defaultClass: string = 'py-2 px-3';
+  let { base, title, h3, content } = $derived(popover({ color }));
+  $inspect("restProps in Popover: ", restProps);
 </script>
 
-<Popper activeContent border shadow rounded {...$$restProps} class="dark:border-gray-600! {$$props.class}" on:show>
-  {#if $$slots.title || title}
-    <div class="py-2 px-3 bg-gray-100 rounded-t-md border-b border-gray-200 dark:border-gray-600 dark:bg-gray-700">
-      <slot name="title">
-        <h3 class="font-semibold text-gray-900 dark:text-white">{title}</h3>
-      </slot>
+<Popper {...restProps} {placement} {trigger} {arrow} class={base({ class: clsx(className) })}>
+  {#if typeof titleSlot === "string"}
+    <div class={title()}>
+      <h3 class={h3()}>{titleSlot}</h3>
     </div>
+  {:else if titleSlot}
+    {@render titleSlot()}
   {/if}
-  <div class={defaultClass}>
-    <slot />
+  <div class={content({ class: defaultClass })}>
+    {@render children()}
   </div>
 </Popper>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1033)
 ## Props
-@prop export let title: string = '';
-@prop export let defaultClass: string = 'py-2 px-3';
+@prop title: titleSlot
+@prop color = "default"
+@prop trigger = "hover"
+@prop defaultClass
+@prop arrow = true
+@prop children
+@prop placement = "top"
+@prop class: className
+@prop ...restProps
 -->

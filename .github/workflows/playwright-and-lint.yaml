@@ -10,23 +10,25 @@ on:
 
 jobs:
   playwright:
-    name: 'Playwright and Lint'
+    name: "Playwright and Lint"
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.51.1-noble
+      image: mcr.microsoft.com/playwright:v1.52.0-noble
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v3
+        with:
+          version: 10.10.0
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'pnpm'
+          node-version: "20"
+          cache: "pnpm"
       - name: Install dependencies
         run: pnpm i
       - name: Check formatting
-        run: pnpm lint:format
+        run: pnpm format
       - name: Run playwright tests
         env:
-          NODE_OPTIONS: '--max_old_space_size=4096'
-          FATHOM_ID: 'ABCDEFGF'
-        run: pnpm test:integration
+          NODE_OPTIONS: "--max_old_space_size=4096"
+          FATHOM_ID: "ABCDEFGF"
+        run: pnpm test:e2e

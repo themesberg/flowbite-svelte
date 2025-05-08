@@ -1,40 +1,39 @@
 <script lang="ts">
-  import { setContext, type ComponentProps } from 'svelte';
-  import Frame from '../utils/Frame.svelte';
-  import { twMerge } from 'tailwind-merge';
-  import NavContainer from './NavContainer.svelte';
-  import { writable } from 'svelte/store';
+  import clsx from "clsx";
+  import { setContext } from "svelte";
+  import NavContainer from "./NavContainer.svelte";
+  import { navbar } from "./theme";
+  import type { NavbarState, NavbarProps } from "$lib/types";
 
   // propagate props type from underlying Frame
-  interface $$Props extends ComponentProps<Frame> {
-    fluid?: boolean;
-    navContainerClass?: string;
-  }
 
-  export let fluid: $$Props['fluid'] = false;
-  export let navContainerClass: string= '';
+  let { children, fluid, navContainerClass, class: className, ...restProps }: NavbarProps = $props();
 
-  let hidden = writable(true);
-  setContext('navHidden', hidden);
+  let navState = $state({ hidden: true });
+  setContext<NavbarState>("navState", navState);
 
-  $: {
-    // override default Frame value
-    $$restProps.color = $$restProps.color ?? 'navbar';
-  }
-
-  let toggle = () => hidden.update((hidden) => !hidden);
+  let toggle = () => {
+    navState.hidden = !navState.hidden;
+  };
 </script>
 
-<Frame tag="nav" {...$$restProps} class={twMerge('px-2 sm:px-4 py-2.5 w-full', $$props.class)}>
-  <NavContainer {fluid} class={navContainerClass}>
-    <slot hidden={$hidden} {toggle} {NavContainer} />
-  </NavContainer>
-</Frame>
+<nav>
+  <div {...restProps} class={navbar({ class: clsx(className) })}>
+    <NavContainer {fluid} class={navContainerClass}>
+      {@render children({ hidden: navState.hidden, toggle, NavContainer })}
+    </NavContainer>
+  </div>
+</nav>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L955)
 ## Props
-@prop export let fluid: $$Props['fluid'] = false;
-@prop export let navContainerClass: string= '';
+@prop children
+@prop fluid
+@prop navContainerClass
+@prop class: className
+@prop ...restProps
 -->

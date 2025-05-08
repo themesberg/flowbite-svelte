@@ -1,21 +1,23 @@
 <script lang="ts">
-  import type { HTMLAttributes } from 'svelte/elements';
-  import { twMerge } from 'tailwind-merge';
+  import clsx from "clsx";
+  import { navbar_container } from "./theme";
+  import type { NavContainerProps } from "$lib/types";
 
-  interface $$Props extends HTMLAttributes<HTMLDivElement> {
-    fluid?: boolean;
-  }
-
-  export let fluid: boolean = false;
+  let { children, fluid, class: clasName, ...restProps }: NavContainerProps = $props();
 </script>
 
-<div {...$$restProps} class={twMerge('mx-auto flex flex-wrap justify-between items-center ', fluid ? 'w-full' : 'container', $$props.class)} >
-  <slot />
+<div {...restProps} class={navbar_container({ fluid, class: clsx(clasName) })}>
+  {@render children?.()}
 </div>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[NavContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L963)
 ## Props
-@prop export let fluid: boolean = false;
+@prop children
+@prop fluid
+@prop class: clasName
+@prop ...restProps
 -->

@@ -1,19 +1,20 @@
 {
   "name": "P",
-  "slots": [],
-  "events": [],
+  "type": {
+    "name": "ParagraphProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1671"
+  },
   "props": [
-    ["color?", "string", ""],
-    ["height?", "'normal' | 'relaxed' | 'loose'", "'normal'"],
-    ["align?", "'left' | 'center' | 'right'", "'left'"],
-    ["justify?", "boolean", "false"],
-    ["italic?", "boolean", "false"],
-    ["firstupper?", "boolean", "false"],
-    ["upperClass?", "string", "'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:me-3 first-letter:float-left'"],
-    ["opacity?", "number", "undefined"],
-    ["whitespace?", "'normal' | 'nowrap' | 'pre' | 'preline' | 'prewrap'", "'normal'"],
-    ["size?", "PsizeType", "'base'"],
-    ["space?", "'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest'", "undefined"],
-    ["weight?", "PweightType", "'normal'"]
+    ["children", ""],
+    ["class: className", "\"text-gray-900 dark:text-white\""],
+    ["height", "\"normal\""],
+    ["align", "\"left\""],
+    ["justify", "false"],
+    ["italic", ""],
+    ["firstUpper", "false"],
+    ["whitespace", "\"normal\""],
+    ["size", "\"base\""],
+    ["space", "\"normal\""],
+    ["weight", "\"normal\""]
   ]
 }

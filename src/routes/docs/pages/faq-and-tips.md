@@ -7,11 +7,9 @@ dir: Pages
 description: Tips for your apps.
 ---
 
-## Does Flowbite-Svelte work on Svelte 5?
+## Does flowbite-svelte work on Svelte 5?
 
-You can find [the progress report](https://flowbite-svelte-5-dev.vercel.app/) for Flowbite-Svelte on Svelte 5.
-
-For Svelte 5: Runes, we need to rewrite and you can find most of the components at [Svelte 5 UI Lib](https://svelte-5-ui-lib.codewithshin.com/) which is a beta version.
+You can find [the progress report](/api-check) for flowbite-svelte on Svelte 5.
 
 ## Svelte key blocks
 
@@ -37,26 +35,27 @@ For example, if you have a following group routing:
 The following example shows how to add navigation using the key blocks:
 
 ```svelte example hideOutput
-// src/routes/(app)/+layout.svelte
 <script>
-  import { page } from '$app/stores';
-  import { Navbar, NavLi, NavUl } from 'flowbite-svelte';
-  $: activeUrl = $page.url.pathname;
+  import { page } from "$app/state";
+  import { Navbar, NavLi, NavUl } from "flowbite-svelte";
+  let { children } = $props();
+  let activeUrl = $derived(page.url.pathname);
 </script>
 
+// src/routes/(app)/+layout.svelte
 {#key activeUrl}
-<Navbar let:hidden let:toggle>
-  <NavUl {hidden} {activeUrl}>
+  <Navbar>
+    <NavUl {activeUrl}>
       <NavLi href="/">Home</NavLi>
       <NavLi href="/about">About</NavLi>
       <NavLi href="/contact">Contact</NavLi>
       <NavLi href="/orders">Orders</NavLi>
       <NavLi href="/profile">Profile</NavLi>
-  </NavUl>
-</Navbar>
+    </NavUl>
+  </Navbar>
 {/key}
 
-<slot />
+{@render children()}
 ```
 
 ## My compiled CSS size is more than 120K. How can I make it smaller?
@@ -84,15 +83,15 @@ pnpm i -D vite-plugin-tailwind-purgecss
 ### vite.config.ts
 
 ```js
-import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vitest/config';
-import { purgeCss } from 'vite-plugin-tailwind-purgecss';
+import { sveltekit } from "@sveltejs/kit/vite";
+import { defineConfig } from "vitest/config";
+import { purgeCss } from "vite-plugin-tailwind-purgecss";
 
 export default defineConfig({
-	plugins: [sveltekit(), purgeCss()],
-	test: {
-		include: ['src/**/*.{test,spec}.{js,ts}']
-	}
+  plugins: [sveltekit(), purgeCss()],
+  test: {
+    include: ["src/**/*.{test,spec}.{js,ts}"]
+  }
 });
 ```
 

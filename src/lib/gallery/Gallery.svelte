@@ -1,37 +1,47 @@
 <script lang="ts">
-  import type { HTMLAttributes } from 'svelte/elements';
-  import type { ImgType } from '$lib/types';
-  import { twMerge } from 'tailwind-merge';
+  import clsx from "clsx";
+  import { gallery } from ".";
+  import type { GalleryProps, ImgType } from "$lib/types";
 
-  interface $$Props extends HTMLAttributes<HTMLDivElement> {
-    items: ImgType[];
-    imgClass?: string;
-  }
-
-  export let items: $$Props['items'] = [];
-  export let imgClass: $$Props['imgClass'] = 'h-auto max-w-full rounded-lg';
-
-  $: divClass = twMerge('grid', $$props.class);
+  let { children, figure, items = [], imgClass, class: className, ...restProps }: GalleryProps = $props();
 
   function init(node: HTMLElement) {
-    if (getComputedStyle(node).gap === 'normal') node.style.gap = 'inherit';
+    if (getComputedStyle(node).gap === "normal") node.style.gap = "inherit";
   }
+
+  const { image, div } = gallery();
 </script>
 
-<div {...$$restProps} class={divClass} use:init>
+{#snippet _figure(item: ImgType)}
+  <div>
+    <img src={item.src} alt={item.alt} class={image({ class: imgClass })} {...restProps} />
+  </div>
+{/snippet}
+
+<div class={div({ class: clsx(className) })} use:init>
   {#each items as item}
-    <slot {item}>
-      <div><img src={item.src} alt={item.alt} class={twMerge(imgClass, $$props.classImg)} /></div>
-    </slot>
+    {#if figure}
+      {@render figure(item as ImgType)}
+    {:else}
+      {@render _figure(item as ImgType)}
+    {/if}
   {:else}
-    <slot item={items[0]} />
+    {#if children}
+      {@render children()}
+    {/if}
   {/each}
 </div>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[GalleryProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L857)
 ## Props
-@prop export let items: $$Props['items'] = [];
-@prop export let imgClass: $$Props['imgClass'] = 'h-auto max-w-full rounded-lg';
+@prop children
+@prop figure
+@prop items = []
+@prop imgClass
+@prop class: className
+@prop ...restProps
 -->

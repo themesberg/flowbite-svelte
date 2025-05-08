@@ -1,12 +1,14 @@
 <script lang="ts">
-  import type { PageData } from '../$types';
-  import FlowbiteSvelteLayout from '../layouts/FlowbiteSvelteLayout.svelte';
-  import ComponentsLayout from '../layouts/ComponentsLayout.svelte';
-  export let data: PageData;
+  import type { PageData } from "../$types";
+  import FlowbiteSvelteLayout from "../layouts/FlowbiteSvelteLayout.svelte";
+  import ComponentsLayout from "../layouts/ComponentsLayout.svelte";
+  import type { Snippet } from "svelte";
+
+  let { data, children }: { data: PageData; children: Snippet } = $props();
 </script>
 
 <FlowbiteSvelteLayout>
   <ComponentsLayout {data}>
-    <slot />
+    {@render children()}
   </ComponentsLayout>
 </FlowbiteSvelteLayout>

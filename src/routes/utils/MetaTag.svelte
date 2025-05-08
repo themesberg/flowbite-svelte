@@ -1,13 +1,12 @@
 <script lang="ts">
-  import { MetaTags } from 'svelte-meta-tags';
-  export let breadcrumb_title: string = '';
-  export let description: string = '';
-  export let title: string = '';
+  import { MetaTags } from "svelte-meta-tags";
+
+  let { breadcrumb_title = "", description = "", title = "", dir = "" } = $props();
+
   // title = title.replaceAll(' ', '-');
   let imgsrc = `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${encodeURIComponent(breadcrumb_title)}`;
-  export let dir: string = '';
   let dirstring = dir.toLowerCase();
-  let breadcrumb = breadcrumb_title.toLowerCase().replaceAll(' ', '-');
+  let breadcrumb = breadcrumb_title.toLowerCase().replaceAll(" ", "-");
 </script>
 
 <MetaTags
@@ -15,10 +14,10 @@
   titleTemplate="%s - Flowbite"
   {description}
   facebook={{
-    appId: '453670756870545'
+    appId: "453670756870545"
   }}
   openGraph={{
-    type: 'website',
+    type: "website",
     url: `https://flowbite-svelte.com/${dirstring}/${breadcrumb}`,
     title: `${title}`,
     description: `${description}`,
@@ -30,13 +29,14 @@
         alt: `${title}`
       }
     ],
-    siteName: 'Flowbite Svelte'
+    siteName: "Flowbite Svelte"
   }}
   twitter={{
-    handle: '@shinokada',
-    cardType: 'summary_large_image',
+    creator: "@shinokada",
+    cardType: "summary_large_image",
     title: `${title}`,
     description: `${description}`,
     image: imgsrc,
     imageAlt: `${title}`
-  }} />
+  }}
+/>

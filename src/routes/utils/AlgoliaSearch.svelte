@@ -1,23 +1,17 @@
 <script lang="ts">
-  import { browser } from '$app/environment';
-  import { onMount } from 'svelte';
-  import docsearch from '@docsearch/js';
-  import '@docsearch/css';
-  
-  let searchContainer: HTMLElement;
+  import "@docsearch/css";
+  import docsearch from "@docsearch/js";
 
-  onMount(() => {
-    if (browser) {
-      // Algolia docsearch
-      docsearch({
-        container: searchContainer,
-        appId: 'JWUQIZ9PGE',
-        indexName: 'flowbite-svelte',
-        apiKey: 'db6396bd138ab613540d2a2bc07f958d',
-        placeholder: 'Search documentation'
-      });
-    }
-  });
+  const init = (searchContainer: HTMLElement) => {
+    // Algolia docsearch
+    docsearch({
+      container: searchContainer,
+      appId: "JWUQIZ9PGE",
+      indexName: "flowbite-svelte",
+      apiKey: "db6396bd138ab613540d2a2bc07f958d",
+      placeholder: "Search documentation"
+    });
+  };
 </script>
 
-<div bind:this={searchContainer} id="docsearch" class="ms-3 xl:ps-4" ></div>
+<div use:init id="docsearch" class="ms-3 hidden xl:block xl:ps-4"></div>

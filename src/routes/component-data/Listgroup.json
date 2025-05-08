@@ -1,10 +1,19 @@
 {
   "name": "Listgroup",
-  "slots": [],
-  "events": [],
+  "type": {
+    "name": "ListgroupProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L895"
+  },
   "props": [
-    ["items?", "T[]", ""],
-    ["active?", "boolean", "false"],
-    ["defaultClass?", "string", "'divide-y divide-gray-200 dark:divide-gray-600'"]
+    ["children", ""],
+    ["items", ""],
+    ["active", ""],
+    ["onclick", ""],
+    ["horizontal", ""],
+    ["rounded", ""],
+    ["border", ""],
+    ["class: className", ""],
+    ["itemClass", ""],
+    ["iconClass", ""]
   ]
 }

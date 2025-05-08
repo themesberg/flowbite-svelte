@@ -1,21 +1,22 @@
 <script lang="ts">
-  import type { HTMLAttributes } from 'svelte/elements';
-  import { twMerge } from 'tailwind-merge';
+  import { footerLinkGroup } from ".";
+  import type { FooterLinkGroupProps } from "$lib/types";
 
-  interface $$Props extends HTMLAttributes<HTMLUListElement> {
-    ulClass?: string;
-  }
-
-  export let ulClass: $$Props['ulClass'] = 'text-gray-600 dark:text-gray-400';
+  let { class: ulClass, children, ...restProps }: FooterLinkGroupProps = $props();
+  const base = $derived(footerLinkGroup({ class: ulClass }));
 </script>
 
-<ul {...$$restProps} class={twMerge(ulClass, $$props.class)} >
-  <slot />
+<ul {...restProps} class={base}>
+  {@render children()}
 </ul>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[FooterLinkGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L631)
 ## Props
-@prop export let ulClass: $$Props['ulClass'] = 'text-gray-600 dark:text-gray-400';
+@prop class: ulClass
+@prop children
+@prop ...restProps
 -->

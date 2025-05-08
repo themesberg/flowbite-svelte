@@ -1,6 +1,20 @@
 {
   "name": "CheckboxButton",
-  "slots": [],
-  "events": ["keyup", "keydown", "keypress", "focus", "blur", "click", "mouseover", "mouseenter", "mouseleave", "paste", "change"],
-  "props": []
+  "type": {
+    "name": "CheckboxButtonProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L665"
+  },
+  "props": [
+    ["children", ""],
+    ["class: className", ""],
+    ["group", "$bindable([])"],
+    ["value", ""],
+    ["checked", ""],
+    ["inline", ""],
+    ["pill", ""],
+    ["outline", ""],
+    ["size", ""],
+    ["color", ""],
+    ["shadow", ""]
+  ]
 }

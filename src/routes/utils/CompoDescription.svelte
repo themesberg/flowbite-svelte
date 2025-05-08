@@ -1,7 +1,7 @@
 <script lang="ts">
-  export let pClass: string = 'text-lg text-gray-600 dark:text-gray-400';
+  let { children, pClass = "text-lg text-gray-600 dark:text-gray-400" } = $props();
 </script>
 
 <p class={pClass}>
-  <slot />
+  {@render children()}
 </p>

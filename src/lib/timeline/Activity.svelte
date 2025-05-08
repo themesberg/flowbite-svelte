@@ -1,23 +1,23 @@
 <script lang="ts">
-  import type { HTMLOlAttributes } from 'svelte/elements';
-  import { twMerge } from 'tailwind-merge';
+  import clsx from "clsx";
+  import { activity } from ".";
+  import type { ActivityProps } from "$lib/types";
 
-  interface $$Props extends HTMLOlAttributes {
-    olClass?: string;
-  }
-
-  export let olClass: $$Props['olClass'] = 'relative border-s border-gray-200 dark:border-gray-700';
-  
-  let olCls: string = twMerge(olClass, $$props.class);
+  let { children, class: className, ...restProps }: ActivityProps = $props();
+  const base = activity({ class: clsx(className) });
 </script>
 
-<ol class={olCls}>
-  <slot />
+<ol {...restProps} class={base}>
+  {@render children()}
 </ol>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[ActivityProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1510)
 ## Props
-@prop export let olClass: $$Props['olClass'] = 'relative border-s border-gray-200 dark:border-gray-700';
+@prop children
+@prop class: className
+@prop ...restProps
 -->

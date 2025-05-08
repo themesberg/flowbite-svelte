@@ -1,11 +1,13 @@
 {
   "name": "Fileupload",
-  "slots": [],
-  "events": ["change", "keyup", "keydown", "keypress", "focus", "blur", "click", "mouseover", "mouseenter", "mouseleave", "paste", "change", "keyup", "keydown", "keypress", "focus", "blur", "click", "mouseover", "mouseenter", "mouseleave", "paste"],
+  "type": {
+    "name": "FileuploadProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L684"
+  },
   "props": [
-    ["files?", "FileList | undefined", "undefined"],
-    ["inputClass?", "string", "'border p-0! dark:text-gray-400'"],
-    ["clearable?", "boolean", "false"],
-    ["size?", "'sm' | 'md' | 'lg'", "'md'"]
+    ["files", "$bindable<FileList | undefined>()"],
+    ["size", "\"md\""],
+    ["clearable", "false"],
+    ["class: className", ""]
   ]
 }

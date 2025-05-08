@@ -11,18 +11,16 @@ When working with components, you may want to customize their default or specifi
 
 ## Understanding Props
 
-Each component has a props section where you can find information on how to customize classes. For example, let's refer to the [Alert Props section](https://flowbite-svelte.com/docs/components/alert#Props).
+Each component has a props section where you can find information on how to customize classes. For example, let's refer to the [Alert component data section](https://next.flowbite-svelte.com/docs/components/alert#component-data).
 
-![alert prop](/images/alert-prop.png)
-
-In this case, you can overwrite the `defaultClass` by adding the `class` prop. Here's an example:
+In this case, you can overwrite the outer div class by adding the `class` prop. Here's an example:
 
 ```svelte example
 <script>
-  import { Alert } from '$lib';
+  import { Alert } from "flowbite-svelte";
 </script>
 
-<Alert class="text-xl">Add a class to overwrite the default class!</Alert>
+<Alert class="bg-sky-500 text-white">Add a class to overwrite the default class!</Alert>
 ```
 
 Thanks to tailwind-merge, you can efficiently merge Tailwind CSS classes without style conflicts. One of its features is that the last conflicting class wins. Please read more details about [Merging behavior](https://github.com/dcastil/tailwind-merge/blob/v1.13.1/docs/features.md)
@@ -33,26 +31,26 @@ In Tailwind CSS, you can make any utility class important by adding a `!` charac
 
 ```svelte example
 <script>
-  import { Button } from 'flowbite-svelte';
+  import { Button } from "flowbite-svelte";
 </script>
 
-<Button class="!bg-blue-500">Blue Button</Button>
-<Button class="!bg-green-500">Green Button</Button>
+<Button class="bg-blue-500!">Blue Button</Button>
+<Button class="bg-green-500!">Green Button</Button>
 ```
 
 ## Overwriting Specific Classes
 
-While the `class` prop can be used for most components, some components with a complex structure may require multiple props. For instance, let's consider [the Banner component](https://flowbite-svelte.com/docs/components/banner) has two relevant props: `classDiv` for `divClass` and `classInner` for `innerClass`. To overwrite the `divClass`, you can use the `classDiv` prop:
+While the `class` prop can be used for most components, some components with a complex structure may require multiple props. For instance, let's consider [the Banner component](https://next.flowbite-svelte.com/docs/components/banner#component-data) has two relevant props: `class` for `div` and `classInner` for `innerClass`. To overwrite the `div`, you can use the `classDiv` prop:
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { Banner, Skeleton, ImagePlaceholder } from 'flowbite-svelte';
+  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
 </script>
 
 <Skeleton class="py-4" />
 <ImagePlaceholder class="py-4" />
 
-<Banner id="default-banner" position="absolute" classDiv="dark:bg-green-500 dark:border-green-400">
+<Banner id="default-banner" type="bottom" class="dark:border-green-400 dark:bg-green-500">
   <p class="flex items-center text-sm font-normal text-gray-500 dark:text-white">Overwriting divClass and innerClass</p>
 </Banner>
 ```
@@ -63,20 +61,21 @@ We hope these instructions help you confidently customize component classes. Fee
 
 ## Global customization
 
-To customize the Flowbite-Svelte component globally, follow these steps:
+To customize the flowbite-svelte component globally, follow these steps:
 
-Start by creating your own component based on Flowbite-Svelte.
+Start by creating your own component based on flowbite-svelte.
 
 Create a new file for your button component in the lib directory:
 
 ```svelte example hideOutput
-// src/lib/MyButton.svelte
 <script>
-  import { Button } from 'flowbite-svelte'
+  // src/lib/MyButton.svelte
+  import { Button } from "flowbite-svelte";
+  let { children } = $props();
 </script>
 
 <Button color="green" pill class="p-8">
-  <slot />
+  {@render children()}
 </Button>
 ```
 
@@ -85,9 +84,7 @@ Once you have created your button component, you can use it in your project.
 In your project, import your custom button component:
 
 ```js
-<script>
-  import MyButton from "$lib/MyButton.svelte"
-</script>
+<script>import MyButton from "$lib/MyButton.svelte"</script>
 ```
 
 Use the custom button component in your project by adding the following code:
@@ -96,4 +93,4 @@ Use the custom button component in your project by adding the following code:
 <MyButton>My New Button</MyButton>
 ```
 
-With these steps, you can customize and use your own button component globally based on Flowbite-Svelte. Feel free to modify the styles and properties of the component according to your requirements.
+With these steps, you can customize and use your own button component globally based on flowbite-svelte. Feel free to modify the styles and properties of the component according to your requirements.

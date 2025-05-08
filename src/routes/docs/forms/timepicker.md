@@ -18,7 +18,7 @@ The timepicker component can be used to allow the user to select a specific time
 
 ```svelte example hideOutput
 <script>
-  import { Timepicker } from 'flowbite-svelte';
+  import { Timepicker } from "flowbite-svelte";
 </script>
 ```
 
@@ -27,8 +27,8 @@ The timepicker component can be used to allow the user to select a specific time
 Use this example of a default timepicker component to allow the user to select a time value.
 
 ```svelte example
-<script>
-  import { Label, Timepicker } from 'flowbite-svelte';
+<script lang="ts">
+  import { Label, Timepicker } from "flowbite-svelte";
 </script>
 
 <Label>Select Time:</Label>
@@ -40,13 +40,13 @@ Use this example of a default timepicker component to allow the user to select a
 This example can be used to select a time via an input field where you can add an icon to the input group. You can use a Flowbite Svelte icon component or any other icon component.
 
 ```svelte example
-<script>
-  import { Label, Timepicker } from 'flowbite-svelte';
-  import { ClockSolid } from 'flowbite-svelte-icons';
+<script lang="ts">
+  import { Label, Timepicker } from "flowbite-svelte";
+  import { ClockSolid } from "flowbite-svelte-icons";
 </script>
 
 <Label>Select Time (Flowbite Icon):</Label>
-<Timepicker icon={ClockSolid} />
+<Timepicker Icon={ClockSolid} />
 
 <Label>Select Time (Default icon):</Label>
 <Timepicker />
@@ -57,17 +57,12 @@ This example can be used to select a time via an input field where you can add a
 This example shows how to use the timepicker with custom properties.
 
 ```svelte example
-<script>
-  import { Label, Timepicker } from 'flowbite-svelte';
+<script lang="ts">
+  import { Label, Timepicker } from "flowbite-svelte";
 </script>
 
 <Label for="appointment-time">Choose appointment time:</Label>
-<Timepicker
-  id="appointment-time"
-  value="09:00"
-  min="08:00"
-  max="18:00"
-/>
+<Timepicker id="appointment-time" value="09:00" min="08:00" max="18:00" />
 ```
 
 ## Timepicker with dropdown
@@ -75,31 +70,28 @@ This example shows how to use the timepicker with custom properties.
 This example demonstrates how to use the timepicker with a dropdown for selecting duration.
 
 ```svelte example class="h-64"
-<script>
-  import { Label, Timepicker, P } from 'flowbite-svelte';
+<script lang="ts">
+  import { Label, Timepicker, P } from "flowbite-svelte";
 
-  let selectedTime = { time: '12:00', duration: '30' };
+  let selectedTime = $state({ time: "12:00", duration: "30" });
   const durations = [
-    { value: '30', name: '30 minutes' },
-    { value: '60', name: '1 hour' },
-    { value: '120', name: '2 hours' }
+    { value: "30", name: "30 minutes" },
+    { value: "60", name: "1 hour" },
+    { value: "120", name: "2 hours" }
   ];
 
-  function handleChange(event) {
-    selectedTime = event.detail;
+  function handleChange(data: { time: string; endTime: string; [key: string]: string }): void {
+    if (data) {
+      selectedTime = {
+        time: data.time,
+        duration: data.duration || "30"
+      };
+    }
   }
 </script>
 
 <Label>Select Time and Duration:</Label>
-<Timepicker
-  type="dropdown"
-  optionLabel="Duration"
-  options={durations}
-  on:select={handleChange}
-  value={selectedTime.time}
-  selectedOption={selectedTime.duration}
-/>
-
+<Timepicker type="dropdown" optionLabel="Duration" options={durations} onselect={handleChange} value={selectedTime.time} />
 <P>Selected: {selectedTime.time}, Duration: {selectedTime.duration}</P>
 ```
 
@@ -108,35 +100,34 @@ This example demonstrates how to use the timepicker with a dropdown for selectin
 Use this example to show a select input next to the timepicker to select an option like a timezone.
 
 ```svelte example
-<script>
-  import { Label, Timepicker, P } from 'flowbite-svelte';
- 
-  let selectedTime = { time: '12:00', timezone: 'UTC' };
+<script lang="ts">
+  import { Label, Timepicker, P } from "flowbite-svelte";
+
+  let selectedTimeWithTimezone = $state({ time: "12:00", timezone: "UTC" });
   const timezones = [
-    { value: 'UTC', name: 'UTC' },
-    { value: 'EST', name: 'Eastern Time (EST)' },
-    { value: 'CST', name: 'Central Time (CST)' },
-    { value: 'MST', name: 'Mountain Time (MST)' },
-    { value: 'PST', name: 'Pacific Time (PST)' },
-    { value: 'GMT', name: 'Greenwich Mean Time (GMT)' },
-    { value: 'CET', name: 'Central European Time (CET)' },
+    { value: "UTC", name: "UTC" },
+    { value: "EST", name: "Eastern Time (EST)" },
+    { value: "CST", name: "Central Time (CST)" },
+    { value: "MST", name: "Mountain Time (MST)" },
+    { value: "PST", name: "Pacific Time (PST)" },
+    { value: "GMT", name: "Greenwich Mean Time (GMT)" },
+    { value: "CET", name: "Central European Time (CET)" }
   ];
 
-  function handleChange(event) {
-    selectedTime = event.detail;
+  function handleTimezoneChange(data: { time: string; endTime: string; [key: string]: string }): void {
+    if (data) {
+      // Extract the timezone from the "timezone" key in the data object
+      selectedTimeWithTimezone = {
+        time: data.time,
+        timezone: data.timezone || "UTC" // Fallback to default if not provided
+      };
+    }
   }
 </script>
 
 <Label>Select Time and Timezone:</Label>
-<Timepicker
-  type="select"
-  optionLabel="Timezone"
-  options={timezones}
-  on:select={handleChange}
-  value={selectedTime.time}
-  selectedOption={selectedTime.timezone}
-/>
-<P>Selected: {selectedTime.time} {selectedTime.timezone}</P>
+<Timepicker type="select" optionLabel="Timezone" options={timezones} onselect={handleTimezoneChange} value={selectedTimeWithTimezone.time} />
+<P>Selected: {selectedTimeWithTimezone.time} {selectedTimeWithTimezone.timezone}</P>
 ```
 
 ## Timepicker range selector
@@ -144,24 +135,24 @@ Use this example to show a select input next to the timepicker to select an opti
 Use this example to select a time interval using two input fields, often used for the duration of an event. If you set the end time to be earlier than the start time, the component will automatically swap the two times.
 
 ```svelte example
-<script>
-  import { Label, Timepicker, P } from 'flowbite-svelte';
+<script lang="ts">
+  import { Label, Timepicker, P } from "flowbite-svelte";
 
-  let selectedTime = { time: '09:00', endTime: '17:00' };
+  let selectedTimeRange = $state({ time: "09:00", endTime: "17:00" });
 
-  function handleChange(event) {
-    selectedTime = event.detail;
+  function handleRangeChange(data: { time: string; endTime: string; [key: string]: string }): void {
+    if (data) {
+      selectedTimeRange = {
+        time: data.time,
+        endTime: data.endTime
+      };
+    }
   }
 </script>
 
 <Label>Select Time Range:</Label>
-<Timepicker
-  type="range"
-  on:select={handleChange}
-  value={selectedTime.time}
-  endValue={selectedTime.endTime}
-/>
-<P>Selected Range: {selectedTime.time} - {selectedTime.endTime}</P>
+<Timepicker type="range" onselect={handleRangeChange} value={selectedTimeRange.time} endValue={selectedTimeRange.endTime} />
+<P>Selected Range: {selectedTimeRange.time} - {selectedTimeRange.endTime}</P>
 ```
 
 ## Timerange with dropdown
@@ -169,24 +160,24 @@ Use this example to select a time interval using two input fields, often used fo
 This example can be used to show the timerange picker inside a dropdown only when clicking on a button.
 
 ```svelte example class="h-80"
-<script>
-  import { Label, Timepicker, P } from 'flowbite-svelte';
+<script lang="ts">
+  import { Label, Timepicker, P } from "flowbite-svelte";
 
-  let selectedTimerange = { time: '09:00', endTime: '17:00' };
+  let selectedTimerangeDropdown = $state({ time: "09:00", endTime: "17:00" });
 
-  function handleChange(event) {
-    selectedTimerange = event.detail;
+  function handleTimerangeDropdownChange(data: { time: string; endTime: string; [key: string]: string }): void {
+    if (data) {
+      selectedTimerangeDropdown = {
+        time: data.time,
+        endTime: data.endTime
+      };
+    }
   }
 </script>
 
 <Label>Select Time Range:</Label>
-<Timepicker
-  type="timerange-dropdown"
-  on:select={handleChange}
-  value={selectedTimerange.time}
-  endValue={selectedTimerange.endTime}
-/>
-<P>Selected Range: {selectedTimerange.time} - {selectedTimerange.endTime}</P>
+<Timepicker type="timerange-dropdown" onselect={handleTimerangeDropdownChange} value={selectedTimerangeDropdown.time} endValue={selectedTimerangeDropdown.endTime} />
+<P>Selected Range: {selectedTimerangeDropdown.time} - {selectedTimerangeDropdown.endTime}</P>
 ```
 
 ## Timerange picker with toggle
@@ -194,82 +185,78 @@ This example can be used to show the timerange picker inside a dropdown only whe
 This example demonstrates a timerange picker that can be toggled on and off, allowing users to select a start and end time when the picker is visible.
 
 ```svelte example class="h-96"
-<script>
-  import { Label, Timepicker, P } from 'flowbite-svelte';
+<script lang="ts">
+  import { Label, Timepicker, P } from "flowbite-svelte";
 
-  let selectedTimerange = { time: '09:00', endTime: '17:00' };
+  let selectedTimerangeToggle = $state({ time: "09:00", endTime: "17:00" });
 
-  function handleChange(event) {
-    selectedTimerange = event.detail;
+  function handleTimerangeToggleChange(data: { time: string; endTime: string; [key: string]: string }): void {
+    if (data) {
+      selectedTimerangeToggle = {
+        time: data.time,
+        endTime: data.endTime
+      };
+    }
   }
 </script>
 
 <Label class="mb-2" for="timerange-toggle">Toggle Time Range:</Label>
-<Timepicker
-  type="timerange-toggle"
-  on:select={handleChange}
-  value={selectedTimerange.time}
-  endValue={selectedTimerange.endTime}
-/>
-
-<P>Selected Range: {selectedTimerange.time} - {selectedTimerange.endTime}</P>
+<Timepicker type="timerange-toggle" onselect={handleTimerangeToggleChange} value={selectedTimerangeToggle.time} endValue={selectedTimerangeToggle.endTime} divClass="" />
+<P>Selected Range: {selectedTimerangeToggle.time} - {selectedTimerangeToggle.endTime}</P>
 ```
 
 ## Inline timepicker buttons
 
 This is an advanced example that you can use to show the details of an event and select a date of the event based on the Flowbite Datepicker and select the time using a predefined set of time intervals based on checkbox elements.
-  
+
 ```svelte example class="p-4"
-<script>
-  import { Label, Datepicker, Timepicker, Button, Accordion, AccordionItem, Avatar, Input } from 'flowbite-svelte';
-  import { CalendarMonthSolid, ClockSolid, MapPinSolid } from 'flowbite-svelte-icons';
+<script lang="ts">
+  import { Label, Datepicker, Timepicker, Button, Accordion, AccordionItem, Avatar, Input } from "flowbite-svelte";
+  import { CalendarMonthSolid, ClockSolid, MapPinSolid } from "flowbite-svelte-icons";
 
-  let selectedDate = new Date('2024-06-30');
-  let selectedTime = '12:00';
-  let eventTitle = 'Digital Transformation';
-  let eventLocation = 'California, USA';
-  let eventDuration = '30 min';
-  let eventType = 'Web conference';
+  let selectedDate = $state(new Date("2024-06-30"));
+  let selectedInlineTime = $state({ time: "12:00" });
+  let eventTitle = $state("Digital Transformation");
+  let eventLocation = $state("California, USA");
+  let eventDuration = $state("30 min");
+  let eventType = $state("Web conference");
   let participants = [
-    { img: '/images/profile-picture-1.webp', alt: 'Participant 1' },
-    { img: '/images/profile-picture-2.webp', alt: 'Participant 2' },
-    { img: '/images/profile-picture-3.webp', alt: 'Participant 3' },
+    { img: "/images/profile-picture-1.webp", alt: "Participant 1" },
+    { img: "/images/profile-picture-2.webp", alt: "Participant 2" },
+    { img: "/images/profile-picture-3.webp", alt: "Participant 3" }
   ];
 
-  const timeIntervals = [
-    '10:00', '10:30', '11:00', '11:30', '12:00', '12:30',
-    '13:00', '13:30', '14:00', '14:30', '15:00', '15:30'
-  ];
+  const timeIntervals = ["10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30"];
 
-  function handleDateSelect(event) {
-    selectedDate = event.detail;
-  }
-
-  function handleTimeSelect(event) {
-    selectedTime = event.detail.time;
+  function handleTimeSelect(data: { time: string; endTime: string; [key: string]: string }): void {
+    if (data) {
+      selectedInlineTime = {
+        time: data.time
+      };
+    }
   }
 </script>
 
-<div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md">
+<div class="mx-auto max-w-2xl rounded-lg bg-white shadow-md dark:bg-gray-800">
   <div class="p-6">
-    <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{eventTitle}</h2>
-    
-    <div class="flex flex-wrap gap-4 mb-6">
+    <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">{eventTitle}</h2>
+
+    <div class="mb-6 flex flex-wrap gap-4">
       <div class="flex items-center">
-        <CalendarMonthSolid class="w-5 h-5 text-gray-500 dark:text-gray-400 mr-2" />
-        <span class="text-gray-900 dark:text-white">{selectedDate.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' })}</span>
+        <CalendarMonthSolid class="mr-2 h-5 w-5 text-gray-500 dark:text-gray-400" />
+        <span class="text-gray-900 dark:text-white">{selectedDate.toLocaleDateString("en-US", { year: "numeric", month: "2-digit", day: "2-digit" })}</span>
       </div>
       <div class="flex items-center">
-        <ClockSolid class="w-5 h-5 text-gray-500 dark:text-gray-400 mr-2" />
-        <span class="text-gray-900 dark:text-white">{selectedTime}</span>
+        <ClockSolid class="mr-2 h-5 w-5 text-gray-500 dark:text-gray-400" />
+        <span class="text-gray-900 dark:text-white">{selectedInlineTime.time}</span>
       </div>
       <div class="flex items-center">
-        <MapPinSolid class="w-5 h-5 text-gray-500 dark:text-gray-400 mr-2" />
+        <MapPinSolid class="mr-2 h-5 w-5 text-gray-500 dark:text-gray-400" />
         <span class="text-gray-900 dark:text-white">{eventLocation}</span>
       </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+    <div class="mb-6 grid grid-cols-1 gap-6 md:grid-cols-3">
       <div>
         <Label class="mb-2">Participants</Label>
         <div class="flex -space-x-4">
@@ -281,37 +268,34 @@ This is an advanced example that you can use to show the details of an event and
       </div>
       <div>
         <Label class="mb-2">Duration</Label>
-        <span class="text-gray-900 dark:text-white text-lg font-medium">{eventDuration}</span>
+        <span class="text-lg font-medium text-gray-900 dark:text-white">{eventDuration}</span>
       </div>
       <div>
         <Label class="mb-2">Meeting Type</Label>
-        <span class="text-gray-900 dark:text-white text-lg font-medium">{eventType}</span>
+        <span class="text-lg font-medium text-gray-900 dark:text-white">{eventType}</span>
       </div>
     </div>
 
-    <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="border-t border-gray-200 pt-6 dark:border-gray-700">
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
         <div>
           <Label class="mb-2">Select Date</Label>
-          <Datepicker bind:value={selectedDate} on:select={handleDateSelect} inline />
+          <Datepicker bind:value={selectedDate} inline />
         </div>
         <div>
           <Label class="mb-2">Select Time</Label>
-          <Timepicker 
-            type="inline-buttons"
-            value={selectedTime}
-            timeIntervals={timeIntervals}
-            on:select={handleTimeSelect}
-          />
+          <Timepicker type="inline-buttons" value={selectedInlineTime.time} {timeIntervals} onselect={handleTimeSelect} />
         </div>
       </div>
     </div>
   </div>
 
   <Accordion flush>
-    <AccordionItem  class="p-2">
-      <svelte:fragment slot="header">Additional Options</svelte:fragment>
-      <div class="p-4 space-y-4">
+    <AccordionItem class="p-2">
+      {#snippet header()}
+        Additional Options
+      {/snippet}
+      <div class="space-y-4 p-4">
         <div>
           <Label for="event-title">Event Title</Label>
           <Input id="event-title" bind:value={eventTitle} />
@@ -332,7 +316,7 @@ This is an advanced example that you can use to show the details of an event and
     </AccordionItem>
   </Accordion>
 
-  <div class="p-6 border-t border-gray-200 dark:border-gray-700">
+  <div class="border-t border-gray-200 p-6 dark:border-gray-700">
     <Button color="primary">Schedule Event</Button>
   </div>
 </div>
@@ -342,69 +326,65 @@ This is an advanced example that you can use to show the details of an event and
 
 Use this example to select a date and time inside of a modal component based on the Flowbite Datepicker and select a time interval using checkbox elements with predefined time values for event time scheduling.
 
-```svelte example class="h-96"
-<script>
-  import { Button, Modal, Label, Datepicker, Timepicker, Heading, P } from 'flowbite-svelte';
-  import { ClockSolid } from 'flowbite-svelte-icons';
+```svelte example hideResponsiveButtons
+<script lang="ts">
+  import { Button, Modal, Label, Datepicker, Timepicker, Heading, P, type DateOrRange } from "flowbite-svelte";
+  import { ClockSolid } from "flowbite-svelte-icons";
 
-  let open = false;
-  let selectedDate = new Date();
-  let selectedTime = '';
+  let open = $state(false);
+  let modalSelectedDate = $state(new Date());
+  let modalTimeSelection = $state({ time: "10:00", endTime: "11:00" });
+  const timeIntervals = ["10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30"];
 
-  const timeIntervals = [
-    '10:00', '10:30', '11:00', '11:30', '12:00', '12:30',
-    '13:00', '13:30', '14:00', '14:30', '15:00', '15:30'
-  ];
-
-  function handleDateSelect(event) {
-    selectedDate = event.detail;
+  function handleModalDateSelect(selectedDate: DateOrRange): void {
+    if (selectedDate instanceof Date) {
+      modalSelectedDate = selectedDate;
+    } else if (selectedDate && typeof selectedDate === "object") {
+      // Handle range case if needed
+      if (selectedDate.from) {
+        modalSelectedDate = selectedDate.from;
+      }
+    }
   }
 
-  function handleTimeSelect(event) {
-    selectedTime = event.detail.time;
+  function handleModalTimeSelect(data?: { time: string; endTime: string; [key: string]: string }): void {
+    if (data) {
+      modalTimeSelection = {
+        time: data.time,
+        endTime: data.endTime
+      };
+    }
   }
 
-  function handleSave() {
+  function handleSave(): void {
     open = false;
   }
 </script>
 
-<Button on:click={() => (open = true)}>
-  <ClockSolid class="w-4 h-4 me-2" />
+<Button onclick={() => (open = true)}>
+  <ClockSolid class="me-2 h-4 w-4" />
   Schedule appointment
 </Button>
 
-{#if selectedTime}
-  <P>Appointment scheduled for {selectedDate.toDateString()} at {selectedTime}</P>
+{#if modalTimeSelection}
+  <P>Appointment scheduled for {modalSelectedDate.toDateString()} at {modalTimeSelection.time}</P>
 {/if}
 
 <Modal bind:open class="w-full max-w-[23rem]">
-  <svelte:fragment slot="header">
+  {#snippet header()}
     <Heading tag="h5" class="mb-4 font-medium text-gray-900 dark:text-white">Schedule an appointment</Heading>
-  </svelte:fragment>
+  {/snippet}
   <div class="p-4 sm:p-5">
     <div class="mb-4">
-      <Datepicker 
-        bind:value={selectedDate} 
-        on:select={handleDateSelect} 
-        inline 
-        class="mx-auto [&>div>div]:shadow-none [&>div>div]:bg-gray-50 [&_div>button]:bg-gray-50"
-      />
+      <Datepicker bind:value={modalSelectedDate} onselect={handleModalDateSelect} inline class="mx-auto [&_div>button]:bg-gray-50 [&>div>div]:bg-gray-50 [&>div>div]:shadow-none" />
     </div>
     <div class="mb-4">
       <Label class="mb-2 block">Pick your time</Label>
-      <Timepicker
-        type="inline-buttons"
-        value={selectedTime}
-        timeIntervals={timeIntervals}
-        on:select={handleTimeSelect}
-        columns={3}
-        class="mb-4"
-      />
+      <Timepicker type="inline-buttons" value={modalTimeSelection.time} {timeIntervals} onselect={handleModalTimeSelect} columns={3} />
     </div>
     <div class="flex items-center space-x-4">
-      <Button color="primary" class="w-full" on:click={handleSave}>Save</Button>
-      <Button color="alternative" class="w-full" on:click={() => (open = false)}>Discard</Button>
+      <Button color="primary" class="w-full" onclick={handleSave}>Save</Button>
+      <Button color="alternative" class="w-full" onclick={() => (open = false)}>Discard</Button>
     </div>
   </div>
 </Modal>
@@ -414,41 +394,43 @@ Use this example to select a date and time inside of a modal component based on 
 
 Use this example to show multiple time interval selections inside of a drawer component to schedule time based on multiple entries (ie. days of the week) using the native browser time selection input element.
 
-```svelte example class="h-96 p-4"
-<script>
-  import { Button, Drawer, Label, Select, Toggle, Checkbox, Timepicker, Card, P, Heading, Span } from 'flowbite-svelte';
-  import { InfoCircleSolid, ClockSolid, PlusOutline, TrashBinSolid, CloseOutline } from 'flowbite-svelte-icons';
+```svelte example class="flex justify-center p-4" hideResponsiveButtons
+<script lang="ts">
+  import { Button, Drawer, Label, Select, Toggle, Checkbox, Timepicker, Card, P, Heading, Span, CloseButton } from "flowbite-svelte";
+  import { InfoCircleSolid, ClockSolid, PlusOutline, TrashBinSolid, CloseOutline } from "flowbite-svelte-icons";
 
-  let hidden = true;
-  let businessHoursEnabled = true;
-  let selectedTimezone = '';
-  let workingDays = [
-    { day: 'Mon', enabled: true, startTime: '09:00', endTime: '17:00' },
-    { day: 'Tue', enabled: false, startTime: '09:00', endTime: '17:00' },
-    { day: 'Wed', enabled: true, startTime: '09:00', endTime: '17:00' },
-    { day: 'Thu', enabled: false, startTime: '09:00', endTime: '17:00' },
-    { day: 'Fri', enabled: false, startTime: '09:00', endTime: '17:00' },
+  let hidden = $state(true);
+  let businessHoursEnabled = $state(true);
+  let selectedTimezoneDrawer = $state("");
+  let workingDays = $state([
+    { day: "Mon", enabled: true, startTime: "09:00", endTime: "17:00" },
+    { day: "Tue", enabled: false, startTime: "09:00", endTime: "17:00" },
+    { day: "Wed", enabled: true, startTime: "09:00", endTime: "17:00" },
+    { day: "Thu", enabled: false, startTime: "09:00", endTime: "17:00" },
+    { day: "Fri", enabled: false, startTime: "09:00", endTime: "17:00" }
+  ]);
+
+  const drawerTimezones = [
+    { value: "America/New_York", name: "EST (Eastern Standard Time) - GMT-5 (New York)" },
+    { value: "America/Los_Angeles", name: "PST (Pacific Standard Time) - GMT-8 (Los Angeles)" },
+    { value: "Europe/London", name: "GMT (Greenwich Mean Time) - GMT+0 (London)" },
+    { value: "Europe/Berlin", name: "CET (Central European Time) - GMT+1 (Berlin)" },
+    { value: "Asia/Tokyo", name: "JST (Japan Standard Time) - GMT+9 (Tokyo)" }
   ];
 
-   const timezones = [
-    { value: 'America/New_York', name: 'EST (Eastern Standard Time) - GMT-5 (New York)' },
-    { value: 'America/Los_Angeles', name: 'PST (Pacific Standard Time) - GMT-8 (Los Angeles)' },
-    { value: 'Europe/London', name: 'GMT (Greenwich Mean Time) - GMT+0 (London)' },
-    { value: 'Europe/Berlin', name: 'CET (Central European Time) - GMT+1 (Berlin)' },
-    { value: 'Asia/Tokyo', name: 'JST (Japan Standard Time) - GMT+9 (Tokyo)' },
-  ];
+  let sortedWorkingDays = $derived(
+    [...workingDays].sort((a, b) => {
+      const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+      return days.indexOf(a.day) - days.indexOf(b.day);
+    })
+  );
 
-  $: sortedWorkingDays = [...workingDays].sort((a, b) => {
-    const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-    return days.indexOf(a.day) - days.indexOf(b.day);
-  });
-
-  function toggleDay(index) {
+  function toggleDay(index: number): void {
     workingDays[index].enabled = !workingDays[index].enabled;
     workingDays = [...workingDays];
   }
 
-  function handleTimeChange(index, isStartTime, event) {
+  function handleTimeChange(index: number, isStartTime: boolean, event: { detail: { time: string } }): void {
     const newTime = event.detail.time;
     if (isStartTime) {
       workingDays[index].startTime = newTime;
@@ -458,69 +440,62 @@ Use this example to show multiple time interval selections inside of a drawer co
     workingDays = [...workingDays];
   }
 
-  function addInterval() {
-    const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-    const existingDays = new Set(workingDays.map(d => d.day));
-    const availableDays = days.filter(d => !existingDays.has(d));
-    
+  function addInterval(): void {
+    const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    const existingDays = new Set(workingDays.map((d) => d.day));
+    const availableDays = days.filter((d) => !existingDays.has(d));
+
     if (availableDays.length > 0) {
-      workingDays = [...workingDays, { 
-        day: availableDays[0], 
-        enabled: true, 
-        startTime: '09:00', 
-        endTime: '17:00' 
-      }];
+      workingDays = [
+        ...workingDays,
+        {
+          day: availableDays[0],
+          enabled: true,
+          startTime: "09:00",
+          endTime: "17:00"
+        }
+      ];
     }
   }
 
-  function removeInterval(index) {
+  function removeInterval(index: number): void {
     workingDays = workingDays.filter((_, i) => i !== index);
   }
 
-  function saveAll() {
-    console.log('Saving settings:', { businessHoursEnabled, selectedTimezone, workingDays });
+  function saveAll(e: Event): void {
+    e.preventDefault();
+    console.log("Saving settings:", { businessHoursEnabled, selectedTimezoneDrawer, workingDays });
     hidden = true;
   }
 
   const timepickerClasses = {
-    divClass: 'inline-flex rounded-lg shadow-sm text-xs sm:text-sm w-full sm:w-auto',
-    inputClass: 'block disabled:cursor-not-allowed disabled:opacity-50 p-1.5 sm:p-2.5 text-xs sm:text-sm border-r-0 focus:ring-0 focus:outline-none'
+    divClass: "inline-flex rounded-lg shadow-sm text-xs sm:text-sm w-full sm:w-auto",
+    inputClass: "block disabled:cursor-not-allowed disabled:opacity-50 p-1.5 sm:p-2.5 text-xs sm:text-sm border-r-0 focus:ring-0 focus:outline-none"
   };
 </script>
 
 <div class="flex justify-center">
-  <Button on:click={() => (hidden = false)} class="transform transition-all hover:scale-105">
-    <ClockSolid class="w-4 h-4 me-2" />
+  <Button onclick={() => (hidden = false)} class="transform transition-all hover:scale-105">
+    <ClockSolid class="me-2 h-4 w-4" />
     Set Time Schedule
   </Button>
 </div>
 
-<Drawer 
-  bind:hidden 
-  width="w-96"
-  class="p-6 bg-gray-50 dark:bg-gray-800"
-  id="drawer-timepicker"
->
-  <div class="flex items-center justify-between mb-8">
-    <Heading tag="h5" id="drawer-label" class="inline-flex items-center text-base font-semibold text-gray-800 dark:text-white uppercase">
-      <ClockSolid class="w-6 h-6" />
+<Drawer bind:hidden class="w-96 bg-gray-50 p-6 dark:bg-gray-800" id="drawer-timepicker">
+  <div class="mb-8 flex items-center justify-between">
+    <Heading tag="h5" id="drawer-label" class="inline-flex items-center text-base font-semibold text-gray-800 uppercase dark:text-white">
+      <ClockSolid class="h-6 w-6" />
       Time schedule
     </Heading>
-    <Button color="gray" pill={true} size="sm" on:click={() => (hidden = true)}>
-      <CloseOutline class="w-4 h-4 text-gray-500 dark:text-gray-400" />
-    </Button>
+    <CloseButton onclick={() => (hidden = true)} class="mb-4 dark:text-white" />
   </div>
 
-  <form on:submit|preventDefault={saveAll} class="space-y-8">
-    <Card class="transition-shadow hover:shadow-lg">
-      <div class="flex justify-between items-center">
+  <form onsubmit={saveAll} class="space-y-8">
+    <Card class="p-4 transition-shadow hover:shadow-lg">
+      <div class="flex items-center justify-between">
         <div>
-          <Heading tag="h6" class="text-lg font-semibold text-gray-900 dark:text-white">
-            Business Hours
-          </Heading>
-          <P class="text-sm">
-            Enable or disable business hours scheduling
-          </P>
+          <Heading tag="h6" class="text-lg font-semibold text-gray-900 dark:text-white">Business Hours</Heading>
+          <P class="text-sm">Enable or disable business hours scheduling</P>
         </div>
         <Toggle bind:checked={businessHoursEnabled} class="scale-110" />
       </div>
@@ -529,79 +504,37 @@ Use this example to show multiple time interval selections inside of a drawer co
     <div class="space-y-2">
       <Label for="timezones" class="flex items-center gap-2 text-lg">
         Timezone
-        <InfoCircleSolid class="w-4 h-4 text-gray-400 cursor-help" />
+        <InfoCircleSolid class="h-4 w-4 cursor-help text-gray-400" />
       </Label>
-      <Select 
-        id="timezones" 
-        bind:value={selectedTimezone} 
-        items={timezones}
-        class="w-full"
-      />
+      <Select id="timezones" bind:value={selectedTimezoneDrawer} items={drawerTimezones} class="w-full" />
     </div>
 
     <div class="space-y-2 sm:space-y-4">
       {#each sortedWorkingDays as { day, enabled, startTime, endTime }, index}
-        <div class="flex flex-col gap-2 p-2 bg-white dark:bg-gray-700 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-          <div class="flex items-center min-w-[65px]">
-            <Checkbox
-              on:change={() => toggleDay(index)}
-              checked={enabled}
-              class="scale-100"
-            >
-              <Span class="ml-2 text-sm truncate">{day}</Span>
+        <div class="flex flex-col gap-2 rounded-lg bg-white p-2 shadow-sm transition-shadow hover:shadow-md dark:bg-gray-700">
+          <div class="flex min-w-[65px] items-center">
+            <Checkbox onchange={() => toggleDay(index)} checked={enabled} class="scale-100">
+              <Span class="ml-2 truncate text-sm">{day}</Span>
             </Checkbox>
           </div>
-          <div class="flex items-center gap-2 flex-1">
-            <Timepicker
-              type="range"
-              value={startTime}
-              endValue={endTime}
-              on:select={(e) => handleTimeChange(index, true, e)}
-              divClass={timepickerClasses.divClass}
-              inputClass={timepickerClasses.inputClass}
-              size="sm"
-            />
-            <Button
-              color="red"
-              size="xs"
-              sm="sm"
-              pill={true}
-              on:click={() => removeInterval(index)}
-              class="hover:bg-red-600 shrink-0"
-            >
-              <TrashBinSolid class="w-3 h-3 sm:w-4 sm:h-4" />
+          <div class="flex flex-1 items-center">
+            <Timepicker type="range" value={startTime} endValue={endTime} onselect={(e) => handleTimeChange(index, true, e)} divClass={timepickerClasses.divClass} inputClass={timepickerClasses.inputClass} size="sm" />
+            <Button color="red" size="xs" pill={true} onclick={() => removeInterval(index)} class="shrink-0 p-2 hover:bg-red-600">
+              <TrashBinSolid class="h-2 w-2 sm:h-3 sm:w-3" />
             </Button>
           </div>
         </div>
       {/each}
     </div>
 
-    <Button 
-      type="button" 
-      class="w-full transition-all hover:shadow-lg" 
-      color="alternative" 
-      on:click={addInterval}
-      disabled={workingDays.length >= 7}
-    >
-      <PlusOutline class="w-5 h-5 me-2" />
+    <Button type="button" class="w-full transition-all hover:shadow-lg" color="alternative" onclick={addInterval} disabled={workingDays.length >= 7}>
+      <PlusOutline class="me-2 h-5 w-5" />
       Add Working Day
     </Button>
 
     <div class="flex gap-4">
-      <Button 
-        class="w-1/2" 
-        color="alternative" 
-        on:click={() => (hidden = true)}
-      >
-        Cancel
-      </Button>
-      <Button 
-        type="submit" 
-        class="w-1/2" 
-        color="primary"
-      >
-        Save Changes
-      </Button>
+      <Button class="w-1/2" color="alternative" onclick={() => (hidden = true)}>Cancel</Button>
+      <Button type="submit" class="w-1/2" color="primary">Save Changes</Button>
     </div>
   </form>
 </Drawer>

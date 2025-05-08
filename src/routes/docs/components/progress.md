@@ -22,7 +22,7 @@ Import the `Progressbar` component in a script tag.
 
 ```svelte example hideOutput
 <script>
-  import { Progressbar } from 'flowbite-svelte';
+  import { Progressbar } from "flowbite-svelte";
 </script>
 ```
 
@@ -32,7 +32,7 @@ Use the following example of a progress bar element to show a completion rate of
 
 ```svelte example hideScript
 <script>
-  import { Progressbar } from 'flowbite-svelte';
+  import { Progressbar } from "flowbite-svelte";
 </script>
 
 <Progressbar progress="50" />
@@ -44,7 +44,7 @@ Use the `size` prop to change the size of a progress bar.
 
 ```svelte example hideScript
 <script>
-  import { Progressbar } from 'flowbite-svelte';
+  import { Progressbar } from "flowbite-svelte";
 </script>
 
 <div class="my-4">
@@ -74,7 +74,7 @@ Use the `labelInside` prop to add the progress in a progress bar.
 
 ```svelte example hideScript
 <script>
-  import { Progressbar } from 'flowbite-svelte';
+  import { Progressbar } from "flowbite-svelte";
 </script>
 
 <Progressbar progress="50" size="h-4" labelInside />
@@ -86,10 +86,10 @@ Use the `labelOutside` prop to add the progress outside of a progress bar.
 
 ```svelte example hideScript
 <script>
-  import { Progressbar } from 'flowbite-svelte';
+  import { Progressbar } from "flowbite-svelte";
 </script>
 
-<Progressbar progress="50" labelOutside="Flowbite-Svelte" />
+<Progressbar progress="50" labelOutside="flowbite-svelte" />
 ```
 
 ## Colors
@@ -98,7 +98,7 @@ Use the `color` prop to change the color of a progress bar.
 
 ```svelte example hideScript
 <script>
-  import { Progressbar } from 'flowbite-svelte';
+  import { Progressbar } from "flowbite-svelte";
 </script>
 
 <div class="my-4">
@@ -143,14 +143,14 @@ Use `labelInsideClass` prop to style your progressbar.
 
 ```svelte example hideScript
 <script>
-  import { Progressbar } from 'flowbite-svelte';
+  import { Progressbar } from "flowbite-svelte";
 </script>
 
-<Progressbar progress="50" size="h-3" labelInside color="green" labelInsideClass="bg-blue-600 text-blue-100 text-xs font-medium text-center p-0 leading-none rounded-full" class="my-4" labelOutside="Size h-3" />
+<Progressbar progress="50" size="h-3" labelInside color="green" labelInsideClass="text-xs font-medium text-center p-0 leading-none rounded-full" class="my-4" labelOutside="Size h-3" />
 
-<Progressbar progress="50" size="h-10" labelInside color="red" labelInsideClass="bg-blue-600 text-blue-100 text-2xl font-medium text-center p-2 leading-none rounded-full" class="my-4" labelOutside="Size h-10" />
+<Progressbar progress="50" size="h-10" labelInside color="red" labelInsideClass="text-2xl font-medium text-center p-2 leading-none rounded-full" class="my-4" labelOutside="Size h-10" />
 
-<Progressbar progress="50" size="h-6" labelInside labelInsideClass="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full" class="my-4" labelOutside="Size h-6" />
+<Progressbar progress="50" size="h-6" labelInside labelInsideClass="text-base font-medium text-center p-1 leading-none rounded-full" class="my-4" labelOutside="Size h-6" />
 ```
 
 ## Animation
@@ -159,60 +159,36 @@ By default progress bar has animation disabled, you can activate with `animate`,
 
 ```svelte example
 <script>
-  import { Progressbar, Button } from 'flowbite-svelte';
-  import { sineOut } from 'svelte/easing';
+  import { Progressbar, Button } from "flowbite-svelte";
+  import { sineOut } from "svelte/easing";
 
-  let progress = '45'
+  let progress = "45";
 </script>
 
-<Progressbar
-  {progress}
-  animate
-  precision={2}
-  labelOutside="With animation"
-  labelInside
-  tweenDuration={1500}
-  easing={sineOut}
-  size="h-6"
-  labelInsideClass="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
-  class="mb-8"
-/>
-<Progressbar
-  {progress}
-  labelOutside="Without animation"
-  labelInside
-  size="h-6"
-  labelInsideClass="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
-/>
-<Button on:click={() => (progress = `${Math.round(Math.random() * 100)}`)} class="mt-8">
-  Randomize
-</Button>
+<Progressbar {progress} animate precision={2} labelOutside="With animation" labelInside tweenDuration={1500} easing={sineOut} size="h-6" labelInsideClass="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full" class="mb-8" />
+<Progressbar {progress} labelOutside="Without animation" labelInside size="h-6" labelInsideClass="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full" />
+<Button onclick={() => (progress = `${Math.round(Math.random() * 100)}`)} class="mt-8">Randomize</Button>
 ```
 
 ## Custom color
 
-Use the `progressClass` prop to change the color of the progress bar.
+Use the `labelInsideClass` prop to change the color of the progress bar.
 
 ```svelte example
 <script>
-  import { Progressbar } from 'flowbite-svelte';
+  import { Progressbar } from "flowbite-svelte";
 </script>
 
 <div class="space-y-4">
-  <Progressbar progress="40" progressClass="bg-sky-600 dark:bg-sky-400" />
-  <Progressbar progress="40" progressClass="bg-lime-600 dark:bg-lime-400" />
-  <Progressbar progress="40" progressClass="bg-pink-600 dark:bg-pink-400" />
+  <Progressbar progress="40" labelInsideClass="bg-sky-600 dark:bg-sky-400" />
+  <Progressbar progress="40" labelInsideClass="bg-lime-600 dark:bg-lime-400" />
+  <Progressbar progress="40" labelInsideClass="bg-pink-600 dark:bg-pink-400" />
 </div>
 ```
 
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
-
-### Progressbar styling
-
-- Use the `class` prop to overwrite the `div` class.
-- Use the `classLabelOutside` prop to overwrite the outside `div` class.
 
 <CompoAttributesViewer {dirName}/>
 

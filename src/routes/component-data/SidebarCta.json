@@ -1,11 +1,15 @@
 {
   "name": "SidebarCta",
-  "slots": ["icon"],
-  "events": [],
+  "type": {
+    "name": "SidebarCtaProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1192"
+  },
   "props": [
-    ["divWrapperClass?", "string", "'p-4 mt-6 bg-primary-50 rounded-lg dark:bg-primary-900'"],
-    ["divClass?", "string", "'flex items-center mb-3'"],
-    ["spanClass?", "string", "'bg-primary-100 text-primary-800 text-sm font-semibold me-2 px-2.5 py-0.5 rounded-sm dark:bg-primary-200 dark:text-primary-900'"],
-    ["label?", "string", "''"]
+    ["children", ""],
+    ["icon", ""],
+    ["divClass", ""],
+    ["spanClass", ""],
+    ["label", ""],
+    ["class: className", ""]
   ]
 }

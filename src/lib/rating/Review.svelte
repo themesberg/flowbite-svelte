@@ -1,102 +1,96 @@
 <script lang="ts">
-  import type { ReviewType } from '../types';
-  import { twMerge } from 'tailwind-merge';
-  
-  interface $$Props {
-    review: ReviewType;
-    articleClass?: string;
-    divClass?: string;
-    imgClass?: string;
-    ulClass?: string;
-    liClass?: string;
-    classArticle?: string;
-    classDiv?: string;
-    classImg?: string;
-    classUl?: string;
-    classLi?: string;
-  }
+  import { twMerge } from "tailwind-merge";
+  import { review as reviewVariants } from ".";
+  import type { ReviewProps } from "$lib/types";
 
-  export let review: $$Props['review'];
-  export let articleClass: $$Props['articleClass'] = 'md:gap-8 md:grid md:grid-cols-3';
-  export let divClass: $$Props['divClass'] = 'flex items-center mb-6 space-x-4 rtl:space-x-reverse';
-  export let imgClass: $$Props['imgClass'] = 'w-10 h-10 rounded-full';
-  export let ulClass: $$Props['ulClass'] = 'space-y-4 text-sm text-gray-500 dark:text-gray-400';
-  export let liClass: $$Props['liClass'] = 'flex items-center';
-  export let classArticle: $$Props['classArticle'] = '';
-  export let classDiv: $$Props['classDiv'] = '';
-  export let classImg: $$Props['classImg'] = '';
-  export let classUl: $$Props['classUl'] = '';
-  export let classLi: $$Props['classLi'] = '';
+  let { children, address, item1, item2, item3, review, articleClass, divClass, div2Class, div3Class, imgClass, ulClass, liClass }: ReviewProps = $props();
+
+  const { article, div, div2, div3, img, ul, li } = $derived(reviewVariants());
 </script>
 
-<article class={twMerge(articleClass, classArticle)}>
-  <div>
-    <div class={twMerge(divClass, classDiv)}>
-      <img class={twMerge(imgClass, classImg)} src={review.imgSrc} alt={review.imgAlt} />
-      <div class="space-y-1 font-medium dark:text-white">
-        <p>{review.name}</p>
-        {#if review.address}
-          <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
-            <slot name="address" />
-          </div>
-        {/if}
+{#if review}
+  <article class={article({ class: articleClass })}>
+    <div>
+      <div class={div({ class: divClass })}>
+        <img class={img({ class: imgClass })} src={review.imgSrc} alt={review.imgAlt} />
+        <div class={div2({ class: div2Class })}>
+          <p>{review.name}</p>
+          {#if review.address}
+            {#if address}
+              <div class={div3({ class: div3Class })}>
+                {@render address()}
+              </div>
+            {/if}
+          {/if}
+        </div>
       </div>
+      {#if review.item1 || review.item2 || review.item3}
+        <ul class={ul({ class: ulClass })}>
+          {#if review.item1}
+            <li class={twMerge(li({ class: liClass }))}>
+              {#if item1}
+                {@render item1()}
+              {/if}
+            </li>
+          {/if}
+          {#if review.item2}
+            <li class={liClass}>
+              {#if item2}
+                {@render item2()}
+              {/if}
+            </li>
+          {/if}
+          {#if review.item3}
+            <li class={twMerge(liClass)}>
+              {#if item3}
+                {@render item3()}
+              {/if}
+            </li>
+          {/if}
+        </ul>
+      {/if}
     </div>
-    {#if $$slots.item1 || $$slots.item2 || $$slots.item3}
-      <ul class={twMerge(ulClass, classUl)}>
-        {#if $$slots.item1}
-          <li class={twMerge(liClass, classLi)}>
-            <slot name="item1" />
-          </li>
-        {/if}
-        {#if $$slots.item2}
-          <li class={twMerge(liClass, classLi)}>
-            <slot name="item2" />
-          </li>
-        {/if}
-        {#if $$slots.item3}
-          <li class={twMerge(liClass, classLi)}>
-            <slot name="item3" />
-          </li>
-        {/if}
-      </ul>
-    {/if}
-  </div>
-  <div class="col-span-2 mt-6 md:mt-0">
-    <div class="flex items-start mb-5">
-      <div class="pe-4">
-        {#if review.reviewDate}
-          <footer>
-            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-              Reviewed: {review.reviewDate}
-            </p>
-          </footer>
-        {/if}
-        <h4 class="text-xl font-bold text-gray-900 dark:text-white">
-          {review.title}
-        </h4>
+
+    <div class="col-span-2 mt-6 md:mt-0">
+      <div class="mb-5 flex items-start">
+        <div class="pe-4">
+          {#if review.reviewDate}
+            <footer>
+              <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                Reviewed: {review.reviewDate}
+              </p>
+            </footer>
+          {/if}
+          <h4 class="text-xl font-bold text-gray-900 dark:text-white">
+            {review.title}
+          </h4>
+        </div>
+        <p class="bg-primary-700 inline-flex items-center rounded-sm p-1.5 text-sm font-semibold text-white">
+          {review.rating}
+        </p>
       </div>
-      <p class="bg-primary-700 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded-sm">
-        {review.rating}
-      </p>
+      {@render children()}
     </div>
-    <slot />
-  </div>
-</article>
+  </article>
+{/if}
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[ReviewProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1121)
 ## Props
-@prop export let review: $$Props['review'];
-@prop export let articleClass: $$Props['articleClass'] = 'md:gap-8 md:grid md:grid-cols-3';
-@prop export let divClass: $$Props['divClass'] = 'flex items-center mb-6 space-x-4 rtl:space-x-reverse';
-@prop export let imgClass: $$Props['imgClass'] = 'w-10 h-10 rounded-full';
-@prop export let ulClass: $$Props['ulClass'] = 'space-y-4 text-sm text-gray-500 dark:text-gray-400';
-@prop export let liClass: $$Props['liClass'] = 'flex items-center';
-@prop export let classArticle: $$Props['classArticle'] = '';
-@prop export let classDiv: $$Props['classDiv'] = '';
-@prop export let classImg: $$Props['classImg'] = '';
-@prop export let classUl: $$Props['classUl'] = '';
-@prop export let classLi: $$Props['classLi'] = '';
+@prop children
+@prop address
+@prop item1
+@prop item2
+@prop item3
+@prop review
+@prop articleClass
+@prop divClass
+@prop div2Class
+@prop div3Class
+@prop imgClass
+@prop ulClass
+@prop liClass
 -->

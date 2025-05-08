@@ -1,6 +1,14 @@
 {
   "name": "NavHamburger",
-  "slots": [],
-  "events": [],
-  "props": []
+  "type": {
+    "name": "NavHamburgerProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L967"
+  },
+  "props": [
+    ["children", ""],
+    ["onclick", ""],
+    ["menuClass", ""],
+    ["class: className", ""],
+    ["name", "\"Open main menu\""]
+  ]
 }

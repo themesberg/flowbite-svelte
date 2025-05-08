@@ -20,7 +20,7 @@ The toast component can be used to enhance your website’s interactivity by pus
 
 ```svelte example hideOutput
 <script>
-  import { Toast } from 'flowbite-svelte';
+  import { Toast } from "flowbite-svelte";
 </script>
 ```
 
@@ -30,79 +30,93 @@ Use this simple toast component with an icon, message, and dismissable close but
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Toast } from 'flowbite-svelte';
-  import { FireOutline } from 'flowbite-svelte-icons';
+  import { Toast } from "flowbite-svelte";
+  import { FireOutline } from "flowbite-svelte-icons";
 </script>
 
 <Toast>
-  <FireOutline slot="icon" class="w-6 h-6 text-primary-500 bg-primary-100 dark:bg-primary-800 dark:text-primary-200" />
+  {#snippet icon()}
+    <FireOutline class="text-primary-500 bg-primary-100 dark:bg-primary-800 dark:text-primary-200 h-6 w-6" />
+  {/snippet}
   Set yourself free.
 </Toast>
 ```
 
 ## Colors
 
-Use the `color` prop to easily change the colors of the icons. Set the `color` prop to `none` and use the `extraIconClass` prop to customize your desired icon styles.
+Use the `color` prop to easily change the colors of the icons. Set the `color` prop to `undefined` and use the `class` prop to customize your desired icon styles.
 
 Usually, green, red, and orange are used to show success, danger, or warning alert messages to your users. See the first three examples below.
 
 ```svelte example class="flex flex-col items-center gap-4"
 <script>
-  import { Toast } from 'flowbite-svelte';
-  import { CheckCircleSolid, ExclamationCircleSolid, FireOutline, CloseCircleSolid } from 'flowbite-svelte-icons';
+  import { Toast } from "flowbite-svelte";
+  import { CheckCircleSolid, ExclamationCircleSolid, FireOutline, CloseCircleSolid } from "flowbite-svelte-icons";
 </script>
 
 <Toast color="green">
-  <svelte:fragment slot="icon">
-    <CheckCircleSolid class="w-5 h-5" />
+  {#snippet icon()}
+    <CheckCircleSolid class="h-5 w-5" />
     <span class="sr-only">Check icon</span>
-  </svelte:fragment>
+  {/snippet}
   Item moved successfully.
 </Toast>
 
 <Toast color="red">
-  <svelte:fragment slot="icon">
-    <CloseCircleSolid class="w-5 h-5" />
+  {#snippet icon()}
+    <CloseCircleSolid class="h-5 w-5" />
     <span class="sr-only">Error icon</span>
-  </svelte:fragment>
+  {/snippet}
   Item has been deleted.
 </Toast>
 
 <Toast color="red">
-  <svelte:fragment slot="icon">
-    <ExclamationCircleSolid class="w-5 h-5" />
+  {#snippet icon()}
+    <ExclamationCircleSolid class="h-5 w-5" />
     <span class="sr-only">Warning icon</span>
-  </svelte:fragment>
+  {/snippet}
   Improve password difficulty.
 </Toast>
 
-<Toast color="dark">
-  <FireOutline slot="icon" class="w-6 h-6" />
-  Dark
+<Toast color="gray">
+  {#snippet icon()}
+    <FireOutline class="h-6 w-6" />
+  {/snippet}
+  Gray
 </Toast>
 
 <Toast color="yellow">
-  <FireOutline slot="icon" class="w-6 h-6" />
+  {#snippet icon()}
+    <FireOutline class="h-6 w-6" />
+  {/snippet}
   Yellow
 </Toast>
 
 <Toast color="blue">
-  <FireOutline slot="icon" class="w-6 h-6" />
+  {#snippet icon()}
+    <FireOutline class="h-6 w-6" />
+  {/snippet}
   Blue
 </Toast>
 
 <Toast color="indigo">
-  <FireOutline slot="icon" class="w-6 h-6" />
+  {#snippet icon()}
+    <FireOutline class="h-6 w-6" />
+  {/snippet}
   Indigo
 </Toast>
 
 <Toast color="purple">
-  <FireOutline slot="icon" class="w-6 h-6" />
+  {#snippet icon()}
+    <FireOutline class="h-6 w-6" />
+  {/snippet}
   Purple
 </Toast>
 
-<Toast color="none" defaultIconClass="w-8 h-8 text-pink-500 bg-pink-100 dark:bg-pink-800 dark:text-pink-200">
-  <FireOutline slot="icon" class="w-6 h-6" />
+<Toast color={undefined} class="h-8 w-8 bg-pink-100 text-pink-500 dark:bg-pink-800 dark:text-pink-200">
+  {#snippet icon()}
+    <FireOutline class="h-6 w-6" />
+  {/snippet}
   Customize your colors.
 </Toast>
 ```
@@ -113,30 +127,34 @@ This component can be used to show simple messages and notifications without the
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Toast } from 'flowbite-svelte';
-  import { PaperPlaneOutline } from 'flowbite-svelte-icons';
+  import { Toast } from "flowbite-svelte";
+  import { PaperPlaneOutline } from "flowbite-svelte-icons";
 </script>
 
 <Toast dismissable={false} contentClass="flex space-x-4 rtl:space-x-reverse divide-x rtl:divide-x-reverse divide-gray-200 dark:divide-gray-700">
-  <PaperPlaneOutline class="w-5 h-5 text-primary-600 dark:text-primary-500 rotate-45" />
+  {#snippet icon()}
+    <PaperPlaneOutline class="text-primary-600 dark:text-primary-500 h-5 w-5 rotate-45" />
+  {/snippet}
   <div class="ps-4 text-sm font-normal">Message sent successfully.</div>
 </Toast>
 ```
 
 ## Icons
 
-For the right positioning of the icon use: `slot="icon"`.
+For the right positioning of the icon use: `{#snippet icon()}...{/snippet}`.
 
 You can use any [icon components](/icons).
 
 ```svelte example class="flex flex-col items-center gap-4"
 <script>
-  import { Toast } from 'flowbite-svelte';
-  import { ImageOutline } from 'flowbite-svelte-icons';
+  import { Toast } from "flowbite-svelte";
+  import { ImageOutline } from "flowbite-svelte-icons";
 </script>
 
 <Toast>
-  <ImageOutline slot="icon" class="w-6 h-6" />
+  {#snippet icon()}
+    <ImageOutline class="h-6 w-6" />
+  {/snippet}
   There is a box icon.
 </Toast>
 
@@ -147,9 +165,9 @@ You can use any [icon components](/icons).
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Toast, Button } from 'flowbite-svelte';
-  import { slide } from 'svelte/transition';
-  import { CheckCircleSolid } from 'flowbite-svelte-icons';
+  import { Toast, Button } from "flowbite-svelte";
+  import { slide } from "svelte/transition";
+  import { CheckCircleSolid } from "flowbite-svelte-icons";
 
   let toastStatus = true;
   let counter = 6;
@@ -167,9 +185,11 @@ You can use any [icon components](/icons).
 </script>
 
 <div class="flex gap-10">
-  <Button on:click={trigger} class="my-3">Restart</Button>
+  <Button onclick={trigger} class="my-3">Restart</Button>
   <Toast dismissable={false} transition={slide} bind:toastStatus>
-    <CheckCircleSolid slot="icon" class="w-5 h-5" />
+    {#snippet icon()}
+      <CheckCircleSolid class="h-5 w-5" />
+    {/snippet}
     Autohide in {counter}s.
   </Toast>
 </div>
@@ -179,66 +199,80 @@ You can use any [icon components](/icons).
 
 You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" target="_blank" rel="noreferrer" >Svelte/easing</A>.
 
-```svelte example class="flex flex-col items-center"
+```svelte example class="flex flex-col items-center gap-4"
 <script>
-  import { Toast } from 'flowbite-svelte';
-  import { slide } from 'svelte/transition';
-  import { quintOut, elasticOut } from 'svelte/easing';
-  import { CheckCircleSolid } from 'flowbite-svelte-icons';
+  import { Toast } from "flowbite-svelte";
+  import { slide, scale } from "svelte/transition";
+  import { quintOut, elasticOut } from "svelte/easing";
+  import { CheckCircleSolid } from "flowbite-svelte-icons";
 </script>
 
-<Toast transition={slide} class="mb-4">
-  <CheckCircleSolid slot="icon" class="w-6 h-6" />
+<Toast transition={slide}>
+  {#snippet icon()}
+    <CheckCircleSolid class="h-6 w-6" />
+  {/snippet}
   Transition type: slide
 </Toast>
 
-<Toast transition={slide} params={{ delay: 250, duration: 300, easing: quintOut }} class="mb-4">
-  <CheckCircleSolid slot="icon" class="w-6 h-6" />
-  Transition type: slide, delay: 250, duration: 300, easing: quintOut
+<Toast transition={scale} params={{ delay: 250, duration: 300, easing: quintOut }}>
+  {#snippet icon()}
+    <CheckCircleSolid class="h-6 w-6" />
+  {/snippet}
+  Transition type: scale, delay: 250, duration: 300, easing: quintOut
 </Toast>
 
-<Toast transition={slide} params={{ delay: 250, duration: 2000, easing: elasticOut }}>
-  <CheckCircleSolid slot="icon" class="w-6 h-6" />
-  Transition type: slide, delay: 250, duration: 2000, easing: elasticOut
+<Toast params={{ delay: 250, duration: 1000 }}>
+  {#snippet icon()}
+    <CheckCircleSolid class="h-6 w-6" />
+  {/snippet}
+  Transition type: fade, delay: 250, duration: 1000
 </Toast>
 ```
 
 ### Blur examples
 
-```svelte example class="flex flex-col items-center"
+```svelte example class="flex flex-col items-center gap-4"
 <script>
-  import { Toast } from 'flowbite-svelte';
-  import { blur } from 'svelte/transition';
-  import { BellOutline } from 'flowbite-svelte-icons';
+  import { Toast } from "flowbite-svelte";
+  import { blur } from "svelte/transition";
+  import { BellOutline } from "flowbite-svelte-icons";
 </script>
 
 <Toast transition={blur} color="purple" params={{ amount: 10 }} class="mb-4">
-  <BellOutline slot="icon" class="w-6 h-6" />
+  {#snippet icon()}
+    <BellOutline class="h-6 w-6" />
+  {/snippet}
   Transition type: blur, amount: 10
 </Toast>
 
 <Toast transition={blur} color="purple" params={{ amount: 50, delay: 1000 }}>
-  <BellOutline slot="icon" class="w-6 h-6" />
+  {#snippet icon()}
+    <BellOutline class="h-6 w-6" />
+  {/snippet}
   Transition type: blur, amount: 50, delay 1000
 </Toast>
 ```
 
 ### Fly examples
 
-```svelte example class="flex flex-col items-center"
+```svelte example class="flex flex-col items-center gap-4"
 <script>
-  import { Toast } from 'flowbite-svelte';
-  import { fly } from 'svelte/transition';
-  import { DownloadOutline } from 'flowbite-svelte-icons';
+  import { Toast } from "flowbite-svelte";
+  import { fly } from "svelte/transition";
+  import { DownloadOutline } from "flowbite-svelte-icons";
 </script>
 
 <Toast transition={fly} params={{ x: 200 }} color="green" class="mb-4">
-  <DownloadOutline slot="icon" class="w-6 h-6" />
+  {#snippet icon()}
+    <DownloadOutline class="h-6 w-6" />
+  {/snippet}
   Transition type: fly right
 </Toast>
 
 <Toast transition={fly} params={{ y: 200 }} color="green">
-  <DownloadOutline slot="icon" class="w-6 h-6" />
+  {#snippet icon()}
+    <DownloadOutline class="h-6 w-6" />
+  {/snippet}
   Transition type: fly down
 </Toast>
 ```
@@ -249,12 +283,12 @@ Use this toast component to also show an “undo” button to reverse the action
 
 ```svelte example class="flex justify-center" hideScript
 <script>
-  import { Toast } from 'flowbite-svelte';
+  import { Toast } from "flowbite-svelte";
 </script>
 
 <Toast contentClass="w-full text-sm font-normal flex items-center justify-between">
   Conversation archived.
-  <a class="ms-auto font-medium text-primary-600 p-1.5 hover:bg-primary-100 rounded-lg dark:text-primary-500 dark:hover:bg-gray-700" href="/"> Undo </a>
+  <a class="text-primary-600 hover:bg-primary-100 dark:text-primary-500 ms-auto rounded-lg p-1.5 font-medium dark:hover:bg-gray-700" href="/">Undo</a>
 </Toast>
 ```
 
@@ -268,11 +302,13 @@ This component can be used to show messages and a CTA button when receiving chat
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Toast, Avatar, Button } from 'flowbite-svelte';
+  import { Toast, Avatar, Button } from "flowbite-svelte";
 </script>
 
-<Toast align={false} color="none" defaultIconClass="">
-  <Avatar slot="icon" src="/images/profile-picture-1.webp" />
+<Toast align={false} color={undefined}>
+  {#snippet icon()}
+    <Avatar src="/images/profile-picture-1.webp" class="h-8" />
+  {/snippet}
   <div class="ms-3 text-sm font-normal">
     <span class="mb-1 text-sm font-semibold text-gray-900 dark:text-white">Jese Leos</span>
     <div class="mb-2 text-sm font-normal">Hi Neil, thanks for sharing your thoughts regarding Flowbite.</div>
@@ -287,17 +323,17 @@ This component can be used to show notifications for an action from another user
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Toast, Avatar } from 'flowbite-svelte';
+  import { Toast, Avatar } from "flowbite-svelte";
 </script>
 
 <Toast align={false}>
   <span class="font-semibold text-gray-900 dark:text-white">New notification</span>
-  <div class="flex items-center mt-3">
+  <div class="mt-3 flex items-center">
     <Avatar src="/images/profile-picture-3.webp" />
     <div class="ms-3">
       <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Bonnie Green</h4>
       <div class="text-sm font-normal">commented on your photo</div>
-      <span class="text-xs font-medium text-primary-600 dark:text-primary-500">a few seconds ago</span>
+      <span class="text-primary-600 dark:text-primary-500 text-xs font-medium">a few seconds ago</span>
     </div>
   </div>
 </Toast>
@@ -311,12 +347,14 @@ Use this interactive toast component to encourage users to make a certain action
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Toast, Button } from 'flowbite-svelte';
-  import { CameraPhotoOutline } from 'flowbite-svelte-icons';
+  import { Toast, Button } from "flowbite-svelte";
+  import { CameraPhotoOutline } from "flowbite-svelte-icons";
 </script>
 
 <Toast align={false}>
-  <CameraPhotoOutline slot="icon" class="w-6 h-6" />
+  {#snippet icon()}
+    <CameraPhotoOutline class="h-6 w-6" />
+  {/snippet}
 
   <span class="font-semibold text-gray-900 dark:text-white">Update available</span>
   <div class="mt-3">
@@ -335,7 +373,7 @@ Use the position property to position these toast components relative to the mai
 
 ```svelte example hideScript
 <script>
-  import { Toast } from 'flowbite-svelte';
+  import { Toast } from "flowbite-svelte";
 </script>
 
 <div class="relative h-56">
@@ -345,27 +383,24 @@ Use the position property to position these toast components relative to the mai
   <Toast dismissable={false} position="bottom-right">Bottom right positioning.</Toast>
 </div>
 ```
+
 ## Events
 
-You can use on:close to execute custom logic when the toast is closed. 
+You can use `onclose` to execute custom logic when the toast is closed.
 
 ```svelte example hideScript
 <script>
-  import { Toast } from 'flowbite-svelte';
+  import { Toast } from "flowbite-svelte";
 </script>
 
 <div class="relative h-56">
-  <Toast on:close={() => alert('Toast closed')}>Click the close button to see the event.</Toast>
+  <Toast onclick={() => alert("Toast closed")}>Click the close button to see the event.</Toast>
 </div>
 ```
 
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
-
-### Toast styling
-
-- Use the `class` prop to overwrite `divClass`.
 
 <CompoAttributesViewer {dirName}/>
 

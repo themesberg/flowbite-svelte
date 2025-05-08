@@ -1,97 +1,82 @@
 <script lang="ts">
-  import { getContext } from 'svelte';
-  import type { ButtonClassesTypes } from '../types';
-  import type { BottomNavType } from './BottomNav.svelte';
-  import { twMerge } from 'tailwind-merge';
-  import type { HTMLButtonAttributes, HTMLAnchorAttributes } from 'svelte/elements';
+  import { getContext } from "svelte";
+  import type { HTMLButtonAttributes, HTMLAnchorAttributes } from "svelte/elements";
+  import { bottomNavItem } from "./index";
+  import type { BottomNavItemProps, BottomNavContextType, BottomNavVariantType } from "$lib/types";
+  import { twMerge } from "tailwind-merge";
 
-  type CommonProps = {
-    btnName?: string;
-    appBtnPosition?: 'left' | 'middle' | 'right';
-    activeClass?: string;
-    exact?: boolean;
-    spanClass?: string;
-  }
+  let { children, btnName, appBtnPosition = "middle", target, activeClass, href = "", btnClass, spanClass, ...restProps }: BottomNavItemProps = $props();
 
-  type AnchorProps = CommonProps & Omit<HTMLAnchorAttributes, 'type'> & {
-    href?: string | undefined;
-  };
+  const navType: BottomNavVariantType = getContext("navType");
+  const context = getContext<BottomNavContextType>("bottomNavType") ?? {};
 
-  type ButtonProps = CommonProps & HTMLButtonAttributes & {
-    disabled?: HTMLButtonAttributes['disabled'];
-  };
+  let active: boolean = $state(false);
 
-  type $$Props = AnchorProps | ButtonProps;
+  const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
 
-  export let btnName: $$Props['btnName'] = '';
-  export let appBtnPosition: NonNullable<$$Props['appBtnPosition']> = 'middle';
-  export let activeClass: $$Props['activeClass'] = undefined;
-  export let href: string = '';
-  export let exact: $$Props['exact'] = true;
-  export let spanClass: $$Props['spanClass'] = '';
-
-  const navType: 'default' | 'border' | 'application' | 'pagination' | 'group' | 'card' | 'meeting' | 'video' = getContext('navType');
-
-  const context = getContext<BottomNavType>('bottomNavType') ?? {};
-  const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
-
-  let navUrl = '';
+  let navUrl = $state("");
   activeUrlStore.subscribe((value) => {
     navUrl = value;
   });
 
-  $: active = navUrl && exact ? href === navUrl : navUrl ? navUrl.startsWith(href) : false;
-  const btnClasses: ButtonClassesTypes = {
-    default: 'inline-flex flex-col items-center justify-center px-5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 group',
-    border: 'inline-flex flex-col items-center justify-center px-5 border-gray-200 border-x text-gray-500 dark:text-gray-400  hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600',
-    application: '',
-    pagination: 'inline-flex flex-col items-center justify-center px-5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 group',
-    group: 'inline-flex flex-col items-center justify-center p-4 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 group',
-    card: 'inline-flex flex-col items-center justify-center px-5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 group',
-    meeting: '',
-    video: ''
-  };
+  const { base, span } = bottomNavItem({ navType, appBtnPosition });
 
-  const spanClasses: ButtonClassesTypes = {
-    default: 'text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500',
-    border: 'text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500',
-    application: 'sr-only',
-    pagination: 'sr-only',
-    group: 'sr-only',
-    card: 'text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500',
-    meeting: '',
-    video: ''
-  };
+  $effect(() => {
+    active = navUrl ? href === navUrl : navUrl ? navUrl.startsWith(href) : false;
+  });
 
-  const appBtnClasses = {
-    left: 'inline-flex flex-col items-center justify-center px-5 rounded-s-full hover:bg-gray-50 dark:hover:bg-gray-800 group',
-    middle: 'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
-    right: 'inline-flex flex-col items-center justify-center px-5 rounded-e-full hover:bg-gray-50 dark:hover:bg-gray-800 group'
-  };
-  let btnClass: string;
+  function getCommonClass() {
+    return twMerge(base({ class: btnClass }), active && (activeClass ?? context.activeClass));
+  }
 
-  // let active = navUrl ? href === navUrl : false;
+  function getSpanClass() {
+    return twMerge(span({ class: spanClass }), active && (activeClass ?? context.activeClass));
+  }
 
-  $: btnClass = twMerge(btnClasses[navType], appBtnClasses[appBtnPosition], active && (activeClass ?? context.activeClass), $$props.btnClass);
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
+  const commonProps: Record<string, any> = $derived({
+    "aria-label": btnName,
+    class: getCommonClass(),
+    ...restProps
+  });
 
-  let spanCls: string;
+  const anchorProps: HTMLAnchorAttributes = $derived({
+    ...commonProps,
+    href,
+    target
+  });
 
-  $: spanCls = twMerge(spanClasses[navType], active && (activeClass ?? context.activeClass), spanClass);
+  const buttonProps: HTMLButtonAttributes = $derived({
+    ...commonProps,
+    type: "button" as const
+  });
 </script>
 
-<svelte:element this={href ? 'a' : 'button'} aria-label={btnName} {href} role={href ? 'link' : 'button'} {...$$restProps} class={btnClass} on:click on:change on:keydown on:keyup on:focus on:blur on:mouseenter on:mouseleave>
-  <slot />
-  <span class={spanCls}>{btnName}</span>
-</svelte:element>
+{#if href}
+  <a {...anchorProps}>
+    {@render children()}
+    <span class={getSpanClass()}>{btnName}</span>
+  </a>
+{:else}
+  <button {...buttonProps}>
+    {@render children()}
+    <span class={getSpanClass()}>{btnName}</span>
+  </button>
+{/if}
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L295)
 ## Props
-@prop export let btnName: $$Props['btnName'] = '';
-@prop export let appBtnPosition: NonNullable<$$Props['appBtnPosition']> = 'middle';
-@prop export let activeClass: $$Props['activeClass'] = undefined;
-@prop export let href: string = '';
-@prop export let exact: $$Props['exact'] = true;
-@prop export let spanClass: $$Props['spanClass'] = '';
+@prop children
+@prop btnName
+@prop appBtnPosition = "middle"
+@prop target
+@prop activeClass
+@prop href = ""
+@prop btnClass
+@prop spanClass
+@prop ...restProps
 -->

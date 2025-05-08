@@ -1,6 +1,19 @@
 {
   "name": "Button",
-  "slots": [],
-  "events": ["click", "change", "keydown", "keyup", "touchend", "touchcancel", "mouseenter", "mouseleave", "mouseup", "mousedown", "click", "change", "keydown", "keyup", "touchend", "touchcancel", "mouseenter", "mouseleave", "mouseup", "mousedown"],
-  "props": []
+  "type": {
+    "name": "ButtonProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L341"
+  },
+  "props": [
+    ["children", ""],
+    ["onclick", ""],
+    ["pill", ""],
+    ["outline", "false"],
+    ["size", "group ? \"sm\" : \"md\""],
+    ["color", "group ? (outline ? \"dark\" : \"alternative\") : \"primary\""],
+    ["shadow", "false"],
+    ["tag", "\"button\""],
+    ["disabled", ""],
+    ["class: className", ""]
+  ]
 }

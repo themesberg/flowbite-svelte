@@ -1,1 +1,16 @@
-{ "name": "CloseButton", "slots": [], "events": ["on:click"], "props": [["name", "string", "'Close'"]] }
+{
+  "name": "CloseButton",
+  "type": {
+    "name": "Props",
+    "link": null
+  },
+  "props": [
+    ["children", ""],
+    ["color", "\"gray\""],
+    ["onclick", ""],
+    ["name", "\"Close\""],
+    ["ariaLabel", ""],
+    ["size", "\"md\""],
+    ["class: className", ""]
+  ]
+}

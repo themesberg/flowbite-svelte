@@ -15,7 +15,7 @@ Here are some guidelines we'd like you to follow before submitting a PR.
 
 ## Create a fork
 
-Create a fork from [Flowbite-Svelte](https://github.com/themesberg/flowbite-svelte) to your repository first.
+Create a fork from [flowbite-svelte](https://github.com/themesberg/flowbite-svelte) to your repository first.
 
 ## Please use pnpm to install
 
@@ -39,48 +39,13 @@ Always use complete class names:
 
 ## Types and Props
 
-Add a type to `export`-ed variables. When we generate props files, it will automatically pick up types from your file. If you don't add a type, it will break.
-
-Use `lib/types file for nested objects.
-
-```js
-// these work
-export let icons: AccordionIconType = {
-  up: 'chevron-up-solid',
-  down: 'chevron-down-solid'
-};
-
-export let child: TopMenuType[] | undefined = undefined;
-...
-
-// doesn't work
-export let comment: CommentType = {
-  id: number | string;
-  user: {
-    name: string;
-    joined: string;
-  };
-};
-// put it in lib/types
-export interface CommentType {
-  id: number | string;
-  user: {
-    name: string;
-    joined: string;
-  };
-};
-
-// then
-export let comment: CommentType;
-```
-
 Please run the following to update prop files.
 
 ```sh
-pnpm gen:docs && pnpm gen:compo-data
+pnpm svelte-helpers
 ```
 
-This first command is to generate component documentation for all Svelte files within the src/lib directory. The second command is to generate JSON files containing props, slots, events information from all Svelte files in the src/lib directory, placing them in the routes/component-data directory.
+This command is to generate component documentation for all Svelte files within the src/lib directory and generate JSON files containing props information from all Svelte files in the src/lib directory, placing them in the routes/component-data directory.
 
 ## Format and check
 
@@ -122,7 +87,7 @@ git commit -a "feat: change btnClass name to bClass" -m "BREAKING CHANGE: change
 Before submitting a PR, please run a test:
 
 ```sh
-pnpm test:integration
+pnpm test:e2e
 ```
 
 If you want to run an single test file, `tests/typography.spec.ts`:

@@ -1,10 +1,11 @@
 {
   "name": "Skeleton",
-  "slots": [],
-  "events": [],
+  "type": {
+    "name": "SkeletonProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1261"
+  },
   "props": [
-    ["divClass?", "string", "'animate-pulse'"],
-    ["size?", "keyof Sizes", ""],
-    ["class?", "string", ""]
+    ["size", "\"sm\""],
+    ["class: className", ""]
   ]
 }

@@ -1,29 +1,19 @@
 <script lang="ts">
-  import type { HTMLButtonAttributes } from 'svelte/elements';
-  import { getContext } from 'svelte';
-  import type { TabCtxType } from './Tabs.svelte';
-  import { writable } from 'svelte/store';
-  import { twMerge } from 'tailwind-merge';
+  import { getContext } from "svelte";
+  import { writable } from "svelte/store";
+  import { tabItem, tabs } from ".";
+  import type { TabitemProps, TabCtxType } from "$lib/types";
+  import clsx from "clsx";
 
-  interface $$Props extends HTMLButtonAttributes {
-    open?: boolean;
-    title?: string;
-    activeClasses?: string;
-    inactiveClasses?: string;
-    defaultClass?: string;
-    divClass?: string;
-  }
+  let { children, titleSlot, open = false, title = "Tab title", activeClass, inactiveClass, class: className, disabled, tabStyle, ...restProps }: TabitemProps = $props();
 
-  export let open: $$Props['open'] = false;
-  export let title: $$Props['title'] = 'Tab title';
-  export let activeClasses: $$Props['activeClasses'] = undefined;
-  export let inactiveClasses: $$Props['inactiveClasses'] = undefined;
-  export let defaultClass: $$Props['defaultClass'] = 'inline-block text-sm font-medium text-center disabled:cursor-not-allowed';
-  export let divClass: $$Props['divClass'] = '';
+  const ctx: TabCtxType = getContext("ctx");
+  let compoTabStyle = $derived(tabStyle ? tabStyle : ctx.tabStyle || "full");
 
-  const ctx = getContext<TabCtxType>('ctx') ?? {};
-  // single selection
-  const selected = ctx.selected ?? writable<HTMLElement>();
+  const { active, inactive } = $derived(tabs({ tabStyle: compoTabStyle, hasDivider: true }));
+  let selected = ctx.selected ?? writable<HTMLElement>();
+  // Generate a unique ID for this tab button
+  const tabId = `tab-${Math.random().toString(36).substring(2)}`;
 
   function init(node: HTMLElement) {
     selected.set(node);
@@ -37,24 +27,33 @@
     return { destroy };
   }
 
-  let buttonClass: string;
-  $: buttonClass = twMerge(
-    defaultClass,
-    open ? activeClasses ?? ctx.activeClasses : inactiveClasses ?? ctx.inactiveClasses,
-    open && 'active'
-    // $$restProps.disabled && 'cursor-not-allowed pointer-events-none'
-  );
+  const { base, button, content } = $derived(tabItem({ open, disabled }));
 </script>
 
-<li class={twMerge('group', $$props.class)} role="presentation">
-  <button type="button" on:click={() => (open = true)} on:blur on:click on:contextmenu on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover role="tab" {...$$restProps} class={buttonClass}>
-    <slot name="title">{title}</slot>
+<li {...restProps} class={base({ class: clsx(className) })} role="presentation">
+  <button
+    type="button"
+    onclick={() => (open = true)}
+    role="tab"
+    id={tabId}
+    aria-controls={ctx.panelId}
+    aria-selected={open}
+    {disabled}
+    class={button({
+      class: open ? (activeClass ?? active()) : (inactiveClass ?? inactive())
+    })}
+  >
+    {#if titleSlot}
+      {@render titleSlot()}
+    {:else}
+      {title}
+    {/if}
   </button>
 
-  {#if open}
-    <div class="hidden tab_content_placeholder">
-      <div use:init class={divClass}>
-        <slot />
+  {#if open && children}
+    <div class={content()}>
+      <div use:init>
+        {@render children()}
       </div>
     </div>
   {/if}
@@ -63,11 +62,17 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1463)
 ## Props
-@prop export let open: $$Props['open'] = false;
-@prop export let title: $$Props['title'] = 'Tab title';
-@prop export let activeClasses: $$Props['activeClasses'] = undefined;
-@prop export let inactiveClasses: $$Props['inactiveClasses'] = undefined;
-@prop export let defaultClass: $$Props['defaultClass'] = 'inline-block text-sm font-medium text-center disabled:cursor-not-allowed';
-@prop export let divClass: $$Props['divClass'] = '';
+@prop children
+@prop titleSlot
+@prop open = false
+@prop title = "Tab title"
+@prop activeClass
+@prop inactiveClass
+@prop class: className
+@prop disabled
+@prop tabStyle
+@prop ...restProps
 -->

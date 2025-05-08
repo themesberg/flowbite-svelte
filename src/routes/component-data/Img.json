@@ -1,17 +1,16 @@
 {
   "name": "Img",
-  "slots": [],
-  "events": [],
+  "type": {
+    "name": "ImgProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1626"
+  },
   "props": [
-    ["caption?", "string", "undefined"],
-    ["src?", "string", "undefined"],
-    ["srcset?", "string", "undefined"],
-    ["size?", "string", "'max-w-full'"],
-    ["alignment?", "string", "''"],
-    ["imgClass?", "string", "'h-auto'"],
-    ["figClass?", "string", "'max-w-lg'"],
-    ["alt?", "string", "''"],
-    ["effect?", "string", "''"],
-    ["captionClass?", "string", "'mt-2 text-sm text-center text-gray-500 dark:text-gray-400'"]
+    ["size", "\"none\""],
+    ["effect", "\"none\""],
+    ["caption", ""],
+    ["class: imgClass", ""],
+    ["figClass", ""],
+    ["captionClass", ""],
+    ["href", ""]
   ]
 }

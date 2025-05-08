@@ -1,39 +1,37 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
-  import type { HTMLAttributes } from 'svelte/elements';
+  import { getContext } from "svelte";
+  import { breadcrumb } from "./index";
+  import type { BreadcrumbProps, BaseThemes } from "$lib/types";
+  import clsx from "clsx";
 
-  interface $$Props extends HTMLAttributes<HTMLDivElement> {
-    solid?: boolean;
-    navClass?: string;
-    solidClass?: string;
-    olClass?: string;
-    ariaLabel?: string;
-    classOl?: string;
-  }
+  let { children, solid = false, class: className, olClass, ariaLabel = "Breadcrumb", ...restProps }: BreadcrumbProps = $props();
 
-  export let solid: $$Props['solid'] = false;
-  export let navClass: NonNullable<$$Props['navClass']> = 'flex';
-  export let solidClass: NonNullable<$$Props['solidClass']> = 'flex px-5 py-3 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700';
-  export let olClass: $$Props['olClass'] = 'inline-flex items-center space-x-1 rtl:space-x-reverse md:space-x-3 rtl:space-x-reverse';
-  export let ariaLabel: $$Props['ariaLabel'] = 'Breadcrumb';
-  export let classOl: $$Props['classOl'] = '';
-  let classNav: string = solid ? solidClass : navClass;
+  // Get merged theme from context
+  const context = getContext<BaseThemes>("themeConfig");
+  // Use context theme if available, otherwise fallback to default
+  const breadcrumbTheme = context?.breadcrumb || breadcrumb;
+
+  const { nav, list } = breadcrumbTheme({ solid });
+  let classNav = $derived(nav({ class: clsx(className) }));
+  let classList = $derived(list({ class: olClass }));
 </script>
 
-<nav aria-label={ariaLabel} {...$$restProps} class={twMerge(classNav, $$props.class)}>
-  <ol class={twMerge(olClass, classOl)}>
-    <slot />
+<nav aria-label={ariaLabel} {...restProps} class={classNav}>
+  <ol class={classList}>
+    {@render children()}
   </ol>
 </nav>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[BreadcrumbProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L309)
 ## Props
-@prop export let solid: $$Props['solid'] = false;
-@prop export let navClass: NonNullable<$$Props['navClass']> = 'flex';
-@prop export let solidClass: NonNullable<$$Props['solidClass']> = 'flex px-5 py-3 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700';
-@prop export let olClass: $$Props['olClass'] = 'inline-flex items-center space-x-1 rtl:space-x-reverse md:space-x-3 rtl:space-x-reverse';
-@prop export let ariaLabel: $$Props['ariaLabel'] = 'Breadcrumb';
-@prop export let classOl: $$Props['classOl'] = '';
+@prop children
+@prop solid = false
+@prop class: className
+@prop olClass
+@prop ariaLabel = "Breadcrumb"
+@prop ...restProps
 -->

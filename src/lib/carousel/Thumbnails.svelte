@@ -1,19 +1,16 @@
 <script lang="ts">
-  import type { HTMLImgAttributes } from 'svelte/elements';
-  import { twMerge } from 'tailwind-merge';
-  import Thumbnail from './Thumbnail.svelte';
+  import clsx from "clsx";
+  import Thumbnail from "./Thumbnail.svelte";
+  import { thumbnails } from "./theme";
+  import type { ThumbnailsProps } from "$lib/types";
 
-  export let images: HTMLImgAttributes[] = [];
-  export let index: number = 0;
-  export let ariaLabel: string = 'Click to view image';
-  export let imgClass: string = '';
-  export let throttleDelay: number = 650; // ms
+  let { children, images = [], index = $bindable(), ariaLabel = "Click to view image", imgClass = "", throttleDelay = 650, class: className }: ThumbnailsProps = $props();
 
   let lastClickedAt = new Date();
 
   const btnClick = (idx: number) => {
     if (new Date().getTime() - lastClickedAt.getTime() < throttleDelay) {
-      console.warn('Thumbnail action throttled');
+      console.warn("Thumbnail action throttled");
       return;
     }
     if (idx === index) {
@@ -24,16 +21,20 @@
     lastClickedAt = new Date();
   };
 
-  $: index = (index + images.length) % images.length;
+  $effect(() => {
+    index = (index + images.length) % images.length;
+  });
 </script>
 
-<div class={twMerge('flex flex-row justify-center bg-gray-100 w-full', $$props.class)}>
+<div class={thumbnails({ class: clsx(className) })}>
   {#each images as image, idx}
     {@const selected = index === idx}
-    <button on:click={() => btnClick(idx)} aria-label={ariaLabel}>
-      <slot {Thumbnail} {image} {selected} {imgClass}>
-        <Thumbnail {...image} {selected} class={imgClass} />
-      </slot>
+    <button onclick={() => btnClick(idx)} aria-label={ariaLabel}>
+      {#if children}
+        {@render children({ image, selected, imgClass, Thumbnail })}
+      {:else}
+        <Thumbnail {selected} {...image} class={imgClass} />
+      {/if}
     </button>
   {/each}
 </div>
@@ -41,10 +42,14 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L425)
 ## Props
-@prop export let images: HTMLImgAttributes[] = [];
-@prop export let index: number = 0;
-@prop export let ariaLabel: string = 'Click to view image';
-@prop export let imgClass: string = '';
-@prop export let throttleDelay: number = 650;
+@prop children
+@prop images = []
+@prop index = $bindable()
+@prop ariaLabel = "Click to view image"
+@prop imgClass = ""
+@prop throttleDelay = 650
+@prop class: className
 -->

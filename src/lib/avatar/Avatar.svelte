@@ -1,75 +1,66 @@
 <script lang="ts">
-  import Indicator from '$lib/indicators/Indicator.svelte';
-  import { twMerge } from 'tailwind-merge';
-  import type { HTMLAttributes, HTMLAnchorAttributes } from 'svelte/elements';
+  import { Indicator } from "$lib";
+  import clsx from "clsx";
+  import { getContext } from "svelte";
+  import { avatar } from ".";
+  import type { AvatarProps, BaseThemes } from "$lib/types";
 
-  interface AvatarProps {
-    href?: string;
-    src?: string;
-    rounded?: boolean;
-    border?: boolean;
-    stacked?: boolean;
-    dot?: object | undefined;
-    alt?: string;
-    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none';
-  }
+  let { children, src, href, target, cornerStyle = "circular", border = false, stacked = false, dot, class: className, alt, size = "md", onclick, ...restProps }: AvatarProps = $props();
 
-  type $$Props = AvatarProps & (HTMLAnchorAttributes | HTMLAttributes<HTMLDivElement>);
+  // Get merged theme from context
+  const context = getContext<BaseThemes>("themeConfig");
+  // Use context theme if available, otherwise fallback to default
+  const avatarTheme = context?.avatar || avatar;
 
-  export let src: $$Props['src'] = '';
-  export let href: $$Props['href'] = undefined;
-  export let rounded: $$Props['rounded'] = false;
-  export let border: $$Props['border'] = false;
-  export let stacked: $$Props['stacked'] = false;
-  export let dot: $$Props['dot'] = undefined;
-  export let alt: $$Props['alt'] = '';
-  export let size: NonNullable<$$Props['size']> = 'md';
+  dot = dot && { placement: "top-right", color: "gray", size: "lg", ...dot };
 
-  $: dot = dot && { placement: 'top-right', color: 'gray', size: 'lg', ...dot };
-
-  const sizes = {
-    xs: 'w-6 h-6',
-    sm: 'w-8 h-8',
-    md: 'w-10 h-10',
-    lg: 'w-20 h-20',
-    xl: 'w-36 h-36',
-    none: ''
-  };
-
-  let avatarClass: string;
-  $: avatarClass = twMerge(rounded ? 'rounded' : 'rounded-full', border && 'p-1 ring-2 ring-gray-300 dark:ring-gray-500', sizes[size], stacked && 'border-2 -ms-4 border-white dark:border-gray-800', 'bg-gray-100 dark:bg-gray-600 text-gray-600 dark:text-gray-300 object-cover', $$props.class);
+  let avatarClass = $derived(
+    avatarTheme({
+      cornerStyle,
+      border,
+      stacked,
+      size,
+      class: clsx(className)
+    })
+  );
 </script>
 
-{#if !src || !!href || $$slots.default || dot}
-  <svelte:element this={href ? 'a' : 'div'} {href} {...$$restProps} class="relative flex justify-center items-center {avatarClass}">
+{#if !src || !!href || children || dot}
+  <svelte:element this={href ? "a" : "div"} role={href ? undefined : "button"} {onclick} {href} {target} {...restProps} class={avatarClass}>
     {#if src}
-      <img {alt} {src} class={rounded ? 'rounded' : 'rounded-full'} />
+      <img {alt} {src} class={cornerStyle === "circular" ? "rounded-full" : "rounded-sm"} />
+    {:else if children}
+      {@render children()}
     {:else}
-      <slot>
-        <!-- default avatar placeholder -->
-        <svg class="w-full h-full {rounded ? 'rounded' : 'rounded-full'}" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-        </svg>
-      </slot>
+      <svg class="h-full w-full {cornerStyle === 'circular' ? 'rounded-full' : 'rounded-sm'}" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+      </svg>
     {/if}
     {#if dot}
-      <Indicator border offset={rounded} {...dot} />
+      <Indicator border offset={cornerStyle === "circular" ? true : false} {...dot} />
     {/if}
   </svelte:element>
 {:else}
-  <img {alt} {src} {...$$restProps} class={avatarClass} />
+  <img {alt} {src} {...restProps} {onclick} class={avatarClass} />
 {/if}
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[AvatarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L223)
 ## Props
-@prop export let src: $$Props['src'] = '';
-@prop export let href: $$Props['href'] = undefined;
-@prop export let rounded: $$Props['rounded'] = false;
-@prop export let border: $$Props['border'] = false;
-@prop export let stacked: $$Props['stacked'] = false;
-@prop export let dot: $$Props['dot'] = undefined;
-@prop export let alt: $$Props['alt'] = '';
-@prop export let size: NonNullable<$$Props['size']> = 'md';
+@prop children
+@prop src
+@prop href
+@prop target
+@prop cornerStyle = "circular"
+@prop border = false
+@prop stacked = false
+@prop dot
+@prop class: className
+@prop alt
+@prop size = "md"
+@prop onclick
+@prop ...restProps
 -->

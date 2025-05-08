@@ -1,60 +1,41 @@
 <script lang="ts">
-  import type { ComponentProps } from'svelte';
-  import Button from '$lib/buttons/Button.svelte';
-  import Tooltip from '$lib/tooltip/Tooltip.svelte';
-  import type { Placement } from '@floating-ui/dom';
-  import { twMerge } from 'tailwind-merge';
-  import { getContext } from 'svelte';
-  import type { SpeedCtxType } from './SpeedDial.svelte';
+  import Button from "$lib/buttons/Button.svelte";
+  import Tooltip from "$lib/tooltip/Tooltip.svelte";
+  import { getContext } from "svelte";
+  import { speed_dial_button } from "./theme";
+  import type { SpeedCtxType, SpeedDialButtonProps } from "$lib/types";
+  import clsx from "clsx";
 
-  type $$Props = ComponentProps<Button> & {
-    defaultClass?: string;
-    name?: string;
-    tooltip?: Placement | 'none';
-    pill?: boolean;
-    textOutside?: boolean;
-    textOutsideClass?: string;
-    textDefaultClass?: string;
-  }
+  const context = getContext<SpeedCtxType>("speed-dial");
 
-  const context = getContext<SpeedCtxType>('speed-dial');
+  let { children, name = "", color = "light", tooltip = context.tooltip, pill = context.pill, textOutside = context.textOutside, textClass, class: className, ...restProps }: SpeedDialButtonProps = $props();
 
-  export let btnDefaultClass: $$Props['defaultClass'] = 'w-[52px] h-[52px] shadow-xs p-2!';
-  export let name: $$Props['name'] = '';
-  export let tooltip: $$Props['tooltip'] = context.tooltip;
-  export let pill: $$Props['pill'] = context.pill;
-  export let textOutside: $$Props['textOutside'] = context.textOutside;
-  export let textOutsideClass: $$Props['textOutsideClass'] = 'block absolute -start-14 top-1/2 mb-px text-sm font-medium -translate-y-1/2';
-  export let textDefaultClass: $$Props['textDefaultClass'] = 'block mb-px text-xs font-medium';
-  
-  let btnClass: string;
-  $: btnClass = twMerge(btnDefaultClass, tooltip === 'none' && 'flex-col', textOutside && 'relative', $$props.class);
+  let { base, span } = $derived(speed_dial_button({ textOutside, tooltip: tooltip == "none" }));
+  let spanClass = $derived(tooltip === "none" ? span({ class: textClass }) : "sr-only");
 </script>
 
-<Button {pill} outline color="light" {...$$restProps} class={btnClass} on:click>
-  <slot />
-  {#if tooltip !== 'none'}
-    <span class="sr-only">{name}</span>
-  {:else if textOutside}
-    <span class={textOutsideClass}>{name}</span>
-  {:else}
-    <span class={textDefaultClass}>{name}</span>
-  {/if}
+<Button {pill} {color} {...restProps} class={base({ class: clsx(className) })}>
+  {@render children?.()}
+  <span class={spanClass}>{name}</span>
 </Button>
 
-{#if tooltip !== 'none'}
-  <Tooltip placement={tooltip} style="dark">{name}</Tooltip>
+{#if tooltip !== "none"}
+  <Tooltip placement={tooltip} type="dark">{name}</Tooltip>
 {/if}
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1316)
 ## Props
-@prop export let btnDefaultClass: $$Props['defaultClass'] = 'w-[52px] h-[52px] shadow-xs p-2!';
-@prop export let name: $$Props['name'] = '';
-@prop export let tooltip: $$Props['tooltip'] = context.tooltip;
-@prop export let pill: $$Props['pill'] = context.pill;
-@prop export let textOutside: $$Props['textOutside'] = context.textOutside;
-@prop export let textOutsideClass: $$Props['textOutsideClass'] = 'block absolute -start-14 top-1/2 mb-px text-sm font-medium -translate-y-1/2';
-@prop export let textDefaultClass: $$Props['textDefaultClass'] = 'block mb-px text-xs font-medium';
+@prop children
+@prop name = ""
+@prop color = "light"
+@prop tooltip = context.tooltip
+@prop pill = context.pill
+@prop textOutside = context.textOutside
+@prop textClass
+@prop class: className
+@prop ...restProps
 -->

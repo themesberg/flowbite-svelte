@@ -1,45 +1,35 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
+  import { laptop } from ".";
+  import type { MockupBaseProps } from "$lib/types";
 
-  interface $$Props {
-    div?: string;
-    inner?: string;
-    bot?: string;
-    botCen?: string;
-    classInner?: string;
-    classBot?: string;
-    classBotCen?: string;
-    class?: string;
-  }
-
-  export let div: $$Props['div'] = 'relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]';
-  export let inner: $$Props['inner'] = 'rounded-lg overflow-hidden h-[156px] md:h-[278px] bg-white dark:bg-gray-800';
-  export let bot: $$Props['bot'] = 'relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[17px] max-w-[351px] md:h-[21px] md:max-w-[597px]';
-  export let botCen: $$Props['botCen'] = 'absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[56px] h-[5px] md:w-[96px] md:h-[8px] bg-gray-800';
-  export let classInner: $$Props['classInner'] = '';
-  export let classBot: $$Props['classBot'] = '';
-  export let classBotCen: $$Props['classBotCen'] = '';
+  let { children, divClass, div2Class, div3Class, div4Class, ...restProps }: MockupBaseProps = $props();
+  const { div, inner, bot, botCen } = laptop();
 </script>
 
-<div class={twMerge(div, $$props.class)}>
-  <div class={twMerge(inner, classInner)}>
-    <slot></slot>
+<div {...restProps}>
+  <div class={div({ class: divClass })}>
+    <div class={inner({ class: div2Class })}>
+      {#if children}
+        {@render children()}
+      {/if}
+    </div>
   </div>
-</div>
 
-<div class={twMerge(bot, classBot)}>
-  <div class={twMerge(botCen, classBotCen)}></div>
+  <div class={bot({ class: div3Class })}>
+    <div class={botCen({ class: div4Class })}></div>
+  </div>
 </div>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[MockupBaseProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L486)
 ## Props
-@prop export let div: $$Props['div'] = 'relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]';
-@prop export let inner: $$Props['inner'] = 'rounded-lg overflow-hidden h-[156px] md:h-[278px] bg-white dark:bg-gray-800';
-@prop export let bot: $$Props['bot'] = 'relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[17px] max-w-[351px] md:h-[21px] md:max-w-[597px]';
-@prop export let botCen: $$Props['botCen'] = 'absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[56px] h-[5px] md:w-[96px] md:h-[8px] bg-gray-800';
-@prop export let classInner: $$Props['classInner'] = '';
-@prop export let classBot: $$Props['classBot'] = '';
-@prop export let classBotCen: $$Props['classBotCen'] = '';
+@prop children
+@prop divClass
+@prop div2Class
+@prop div3Class
+@prop div4Class
+@prop ...restProps
 -->

@@ -1,17 +1,20 @@
 <script lang="ts">
-  import type { HTMLAttributes } from 'svelte/elements';
-  import { twMerge } from 'tailwind-merge';
-  interface $$Props extends HTMLAttributes<HTMLDivElement> {
-    divClass?: string;
-  }
-  export let divClass: $$Props['divClass'] = 'my-1 h-px bg-gray-100 dark:bg-gray-600';
+  import clsx from "clsx";
+  import { dropdownDivider } from "./";
+  import type { DropdownDividerProps } from "$lib/types";
+
+  let { class: divClass, ...restProps }: DropdownDividerProps = $props();
+  const base = dropdownDivider({ class: clsx(divClass) });
 </script>
 
-<div {...$$restProps} class={twMerge(divClass, $$props.class)}></div>
+<div {...restProps} class={base}></div>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[DropdownDividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L574)
 ## Props
-@prop export let divClass: $$Props['divClass'] = 'my-1 h-px bg-gray-100 dark:bg-gray-600';
+@prop class: divClass
+@prop ...restProps
 -->

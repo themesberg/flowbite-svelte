@@ -10,7 +10,7 @@ thumnailSize: w-48
 
 <script>
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
-  import { P, A } from '$lib'  
+  import { P, A, Alert } from '$lib'  
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -22,54 +22,86 @@ Get started with multiple sizes, colors, and styles built with the utility class
 
 ```svelte example class="flex justify-center" hideOutput
 <script>
-  import { Modal } from 'flowbite-svelte';
+  import { Modal } from "flowbite-svelte";
 </script>
 ```
 
 ## Default modal
 
-Modal visibility (open/close) is controlled by the `open` property. You can bind it to a variable that other element (usually button) will toggle. You can also use the `open=true` attribute to show open the modal by default. Opening and closing the modal will trigger the `open` and `close` events.
+Modal visibility (open/close) is controlled by the `open` property. You can bind it to a variable that other element (usually button) will toggle.
 
-<p class="p-2"></p>
+Closing the modal will trigger the `close` or `cancel` events - see [`<dialog>`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement) API for details.
 
 An option of automatic closing of the modal can be enabled by setting the `autoclose` property. Any `<button>` element put in the modal will close it on click.
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Button, Modal } from 'flowbite-svelte';
-  let defaultModal = false;
+  import { Button, Modal, P } from "flowbite-svelte";
+  let defaultModal = $state(false);
 </script>
 
-<Button on:click={() => (defaultModal = true)}>Default modal</Button>
+<Button onclick={() => (defaultModal = true)}>Default modal</Button>
 <Modal title="Terms of Service" bind:open={defaultModal} autoclose>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
-  <svelte:fragment slot="footer">
-    <Button on:click={() => alert('Handle "success"')}>I accept</Button>
+
+  {#snippet footer()}
+    <Button onclick={() => alert('Handle "success"')}>I accept</Button>
     <Button color="alternative">Decline</Button>
-  </svelte:fragment>
+  {/snippet}
 </Modal>
 ```
 
-## Closing by clicking outside
+## autoclose
 
-You can use the `outsideclose` prop to allow the user to close the modal by clicking outside of it.
+If `autoclose` is set to `false` or omitted, clicking buttons inside the modal will not automatically close it.
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Button, Modal } from 'flowbite-svelte';
-  let clickOutsideModal = false;
+  import { Button, Modal, P } from "flowbite-svelte";
+  let defaultModal = $state(false);
 </script>
 
-<Button on:click={() => (clickOutsideModal = true)}>Default modal</Button>
-
-<Modal title="Terms of Service" bind:open={clickOutsideModal} autoclose outsideclose>
+<Button onclick={() => (defaultModal = true)}>Default modal</Button>
+<Modal title="Terms of Service" bind:open={defaultModal}>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
-  <svelte:fragment slot="footer">
-    <Button on:click={() => alert('Handle "success"')}>I accept</Button>
+
+  {#snippet footer()}
+    <Button onclick={() => alert('Handle "success"')}>I accept</Button>
     <Button color="alternative">Decline</Button>
-  </svelte:fragment>
+  {/snippet}
+</Modal>
+```
+
+## Clicking outside
+
+`Modal` has got the prop `outsideclose` set to `true` by default, to allow the user to close the modal by clicking outside of it. If you want to block that behaviour set that prop to `false`.
+
+You can control that outside space - called backdrop - by passing the `backdrop:` Tailwind class.
+
+This example shows the `header` customization as well.
+
+```svelte example class="flex justify-center" hideResponsiveButtons
+<script>
+  import { Button, Modal } from "flowbite-svelte";
+  let open = $state(false);
+</script>
+
+<Button onclick={() => (open = true)}>Default modal</Button>
+
+<Modal bind:open autoclose outsideclose={false} class="backdrop:bg-red-900/50 dark:backdrop:bg-green-300/50">
+  {#snippet header()}
+    <h3>
+      Terms of Service <small class="font-normal">(Revised)</small>
+    </h3>
+  {/snippet}
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
+  {#snippet footer()}
+    <Button onclick={() => alert('Handle "success"')}>I accept</Button>
+    <Button color="alternative">Decline</Button>
+  {/snippet}
 </Modal>
 ```
 
@@ -77,20 +109,21 @@ You can use the `outsideclose` prop to allow the user to close the modal by clic
 
 You can use this modal example to show a pop-up decision dialog to your users especially when deleting an item and making sure if the user really wants to do that by double confirming.
 
-Notice lack of the `footer` slot.
+Notice lack of the `footer` snippet and the transition set to `slide`.
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Button, Modal } from 'flowbite-svelte';
-  import { ExclamationCircleOutline } from 'flowbite-svelte-icons';
-  let popupModal = false;
+  import { Button, Modal } from "flowbite-svelte";
+  import { ExclamationCircleOutline } from "flowbite-svelte-icons";
+  import { slide } from "svelte/transition";
+  let popupModal = $state(false);
 </script>
 
-<Button on:click={() => (popupModal = true)}>Pop-up modal</Button>
+<Button onclick={() => (popupModal = true)}>Pop-up modal</Button>
 
-<Modal bind:open={popupModal} size="xs" autoclose>
+<Modal bind:open={popupModal} size="xs" autoclose transition={slide}>
   <div class="text-center">
-    <ExclamationCircleOutline class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" />
+    <ExclamationCircleOutline class="mx-auto mb-4 h-12 w-12 text-gray-400 dark:text-gray-200" />
     <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this product?</h3>
     <Button color="red" class="me-2">Yes, I'm sure</Button>
     <Button color="alternative">No, cancel</Button>
@@ -102,16 +135,20 @@ Notice lack of the `footer` slot.
 
 Use this modal example with form input element to receive information from your users with the advantage of not having to link to another page but keeping the user on the currently active page. A great example would be a login or a register form.
 
+<Alert color="none" border>
+<b>Note!</b> Remember to set <code>method="dialog"</code> on your form inside that <code>dialog</code> component.
+</Alert>
+
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Button, Modal, Label, Input, Checkbox } from 'flowbite-svelte';
-  let formModal = false;
+  import { Button, Modal, Label, Input, Checkbox } from "flowbite-svelte";
+  let formModal = $state(false);
 </script>
 
-<Button on:click={() => (formModal = true)}>Form modal</Button>
+<Button onclick={() => (formModal = true)}>Form modal</Button>
 
-<Modal bind:open={formModal} size="xs" autoclose={false} class="w-full">
-  <form class="flex flex-col space-y-6" action="#">
+<Modal bind:open={formModal} size="xs">
+  <form class="flex flex-col space-y-6" method="dialog" action="#">
     <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h3>
     <Label class="space-y-2">
       <span>Email</span>
@@ -123,11 +160,11 @@ Use this modal example with form input element to receive information from your 
     </Label>
     <div class="flex items-start">
       <Checkbox>Remember me</Checkbox>
-      <a href="/" class="ms-auto text-sm text-primary-700 hover:underline dark:text-primary-500"> Lost password? </a>
+      <a href="/" class="text-primary-700 dark:text-primary-500 ms-auto text-sm hover:underline">Lost password?</a>
     </div>
     <Button type="submit" class="w-full1">Login to your account</Button>
     <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-      Not registered? <a href="/" class="text-primary-700 hover:underline dark:text-primary-500"> Create account </a>
+      Not registered? <a href="/" class="text-primary-700 dark:text-primary-500 hover:underline">Create account</a>
     </div>
   </form>
 </Modal>
@@ -139,56 +176,56 @@ Use this web3 modal component to show crypto wallet connection options like Meta
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Button, Modal, Label, Input, Checkbox } from 'flowbite-svelte';
-  import MetaMask from '../../utils/icons/MetaMask.svelte';
-  import CoinbaseWallet from '../../utils/icons/CoinbaseWallet.svelte';
-  import OperaWallet from '../../utils/icons/OperaWallet.svelte';
-  import Fortmatic from '../../utils/icons/Fortmatic.svelte';
-  import WalletConnect from '../../utils/icons/WalletConnect.svelte';
-  import { QuestionCircleOutline } from 'flowbite-svelte-icons';
-  let walletModal = false;
+  import { Button, Modal, Label, Input, Checkbox } from "flowbite-svelte";
+  import MetaMask from "../../utils/icons/MetaMask.svelte";
+  import CoinbaseWallet from "../../utils/icons/CoinbaseWallet.svelte";
+  import OperaWallet from "../../utils/icons/OperaWallet.svelte";
+  import Fortmatic from "../../utils/icons/Fortmatic.svelte";
+  import WalletConnect from "../../utils/icons/WalletConnect.svelte";
+  import { QuestionCircleOutline } from "flowbite-svelte-icons";
+  let walletModal = $state(false);
 </script>
 
-<Button on:click={() => (walletModal = true)}>Crypto wallet modal</Button>
+<Button onclick={() => (walletModal = true)}>Crypto wallet modal</Button>
 
 <Modal title="Connect wallet" bind:open={walletModal} size="xs">
   <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Connect with one of our available wallet providers or create a new one.</p>
   <ul class="my-4 space-y-3">
     <li>
-      <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow-sm dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+      <a href="/" class="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow-sm dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500">
         <MetaMask />
-        <span class="flex-1 ms-3 whitespace-nowrap">MetaMask</span>
-        <span class="inline-flex items-center justify-center px-2 py-0.5 ms-3 text-xs font-medium text-gray-500 bg-gray-200 rounded-sm dark:bg-gray-700 dark:text-gray-400"> Popular </span>
+        <span class="ms-3 flex-1 whitespace-nowrap">MetaMask</span>
+        <span class="ms-3 inline-flex items-center justify-center rounded-sm bg-gray-200 px-2 py-0.5 text-xs font-medium text-gray-500 dark:bg-gray-700 dark:text-gray-400">Popular</span>
       </a>
     </li>
     <li>
-      <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow-sm dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+      <a href="/" class="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow-sm dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500">
         <CoinbaseWallet />
-        <span class="flex-1 ms-3 whitespace-nowrap">Coinbase Wallet</span>
+        <span class="ms-3 flex-1 whitespace-nowrap">Coinbase Wallet</span>
       </a>
     </li>
     <li>
-      <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow-sm dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+      <a href="/" class="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow-sm dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500">
         <OperaWallet />
-        <span class="flex-1 ms-3 whitespace-nowrap">Opera Wallet</span>
+        <span class="ms-3 flex-1 whitespace-nowrap">Opera Wallet</span>
       </a>
     </li>
     <li>
-      <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow-sm dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+      <a href="/" class="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow-sm dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500">
         <WalletConnect />
-        <span class="flex-1 ms-3 whitespace-nowrap">WalletConnect</span>
+        <span class="ms-3 flex-1 whitespace-nowrap">WalletConnect</span>
       </a>
     </li>
     <li>
-      <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow-sm dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+      <a href="/" class="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow-sm dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500">
         <Fortmatic />
-        <span class="flex-1 ms-3 whitespace-nowrap">Fortmatic</span>
+        <span class="ms-3 flex-1 whitespace-nowrap">Fortmatic</span>
       </a>
     </li>
   </ul>
   <div>
     <a href="/" class="inline-flex items-center text-xs font-normal text-gray-500 hover:underline dark:text-gray-400">
-      <QuestionCircleOutline class="w-3 h-3 me-2" /> Why do I need to connect with my wallet?
+      <QuestionCircleOutline class="me-2 h-3 w-3" /> Why do I need to connect with my wallet?
     </a>
   </div>
 </Modal>
@@ -199,91 +236,101 @@ Use this web3 modal component to show crypto wallet connection options like Meta
 You can use five different modal sizing options starting from extra small to extra large, but keep in mind that the width of these modals will remain the same when browsing on smaller devices.
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
-<script>
-  import { Button, Modal } from 'flowbite-svelte';
-  let openModal = false;
-  let size;
+<script lang="ts">
+  import { Button, Modal, type ModalProps } from "flowbite-svelte";
+
+  let openModal = $state(false);
+  let size: ModalProps["size"] = $state();
+  function onclick(ev: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement }) {
+    size = (ev.target as HTMLButtonElement).textContent as ModalProps["size"];
+    openModal = true;
+  }
 </script>
 
 <div class="block space-y-4 md:space-y-0 md:space-x-4 rtl:space-x-reverse">
-  <Button size="xs" on:click={() => { size = 'xs'; openModal = true; }}>xs</Button>
-  <Button size="sm" on:click={() => { size = 'sm'; openModal = true; }}>sm</Button>
-  <Button size="md" on:click={() => { size = 'md'; openModal = true; }}>md</Button>
-  <Button size="lg" on:click={() => { size = 'lg'; openModal = true; }}>lg</Button>
-  <Button size="xl" on:click={() => { size = 'xl'; openModal = true; }}>xl</Button>
+  <Button size="xs" {onclick}>xs</Button>
+  <Button size="sm" {onclick}>sm</Button>
+  <Button size="md" {onclick}>md</Button>
+  <Button size="lg" {onclick}>lg</Button>
+  <Button size="xl" {onclick}>xl</Button>
 </div>
 
 <Modal title="Terms of Service" bind:open={openModal} {size} autoclose>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
-  <svelte:fragment slot="footer">
+  {#snippet footer()}
     <Button>I accept</Button>
     <Button color="alternative">Decline</Button>
-  </svelte:fragment>
+  {/snippet}
 </Modal>
 ```
 
 ## Placement
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
-<script>
-  import { Button, Modal } from 'flowbite-svelte';
-  let id;
-  let placement;
-  let open = false;
+<script lang="ts">
+  import { Button, Modal, type ModalPlacementType } from "flowbite-svelte";
 
-  const setPlacement = (ev) => {
-    placement = ev.target.textContent; // text in the button
+  let id = $state("placement-modal");
+  let placement: ModalPlacementType = $state("center");
+  let openPlacement = $state(false);
+  const setPlacement = (ev: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement }) => {
+    placement = (ev.target as HTMLButtonElement).textContent as ModalPlacementType;
     id = `${placement}-modal`;
-    open = !open;
+    openPlacement = !openPlacement;
   };
 </script>
 
 <div class="inline-grid grid-cols-3 grid-rows-3 gap-4">
-  <Button on:click={setPlacement}>top-left</Button>
-  <Button on:click={setPlacement}>top-center</Button>
-  <Button on:click={setPlacement}>top-right</Button>
-  <Button on:click={setPlacement}>center-left</Button>
-  <Button on:click={setPlacement}>center</Button>
-  <Button on:click={setPlacement}>center-right</Button>
-  <Button on:click={setPlacement}>bottom-left</Button>
-  <Button on:click={setPlacement}>bottom-center</Button>
-  <Button on:click={setPlacement}>bottom-right</Button>
+  <Button onclick={setPlacement}>top-left</Button>
+  <Button onclick={setPlacement}>top-center</Button>
+  <Button onclick={setPlacement}>top-right</Button>
+  <Button onclick={setPlacement}>center-left</Button>
+  <Button onclick={setPlacement}>center</Button>
+  <Button onclick={setPlacement}>center-right</Button>
+  <Button onclick={setPlacement}>bottom-left</Button>
+  <Button onclick={setPlacement}>bottom-center</Button>
+  <Button onclick={setPlacement}>bottom-right</Button>
 </div>
 
-<Modal {id} title="Terms of Service" bind:open {placement} autoclose>
+<Modal {id} title="Terms of Service" bind:open={openPlacement} {placement} autoclose>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
-  <svelte:fragment slot="footer">
+  {#snippet footer()}
     <Button>I accept</Button>
     <Button color="alternative">Decline</Button>
-  </svelte:fragment>
+  {/snippet}
 </Modal>
 ```
 
 ## Colors
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
-<script>
-  import { Button, Modal, P } from 'flowbite-svelte';
-  let open = false;
-  let color;
+<script lang="ts">
+  import { Button, Modal, P, type ButtonProps } from "flowbite-svelte";
+
+  let openColor = $state(false);
+  let color = $state();
+  function onclickColor(ev: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement }) {
+    color = (ev.target as HTMLButtonElement).textContent?.split(" ")[0].toLowerCase();
+    openColor = true;
+  }
 </script>
 
-<div class="block space-y-4 md:space-y-0 md:space-x-4 rtl:space-x-reverse">
-  <Button on:click={() => {color = 'primary'; open = true;}}>Primary modal</Button>
-  <Button color="red" on:click={() => { color = 'red'; open = true; }}>Red modal</Button>
-  <Button color="green" on:click={() => { color = 'green'; open = true; }}>Green modal</Button>
-  <Button color="blue" on:click={() => { color = 'blue'; open = true; }}>Blue modal</Button>
-  <Button color="yellow" on:click={() => { color = 'yellow'; open = true; }}>Yellow modal</Button>
+<div class="block space-y-4 md:space-y-0 md:space-x-2 rtl:space-x-reverse">
+  <Button color="primary" onclick={onclickColor}>Primary modal</Button>
+  <Button color="red" onclick={onclickColor}>Red modal</Button>
+  <Button color="green" onclick={onclickColor}>Green modal</Button>
+  <Button color="blue" onclick={onclickColor}>Blue modal</Button>
+  <Button color="yellow" onclick={onclickColor}>Yellow modal</Button>
 </div>
 
-<Modal title="Terms of Service" bind:open {color} autoclose>
+<Modal title="Terms of Service" bind:open={openColor} {color} autoclose>
   <div class="text-base leading-relaxed">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</div>
-  <svelte:fragment slot="footer">
-    <Button on:click={() => alert('Handle "success"')} {color}>I accept</Button>
+  {#snippet footer()}
+    <Button onclick={() => alert('Handle "success"')} color={color as ButtonProps["color"]}>I accept</Button>
     <Button color="alternative">Decline</Button>
-  </svelte:fragment>
+  {/snippet}
 </Modal>
 ```
 
@@ -291,11 +338,11 @@ You can use five different modal sizing options starting from extra small to ext
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Button, Modal } from 'flowbite-svelte';
-  let scrollingModal = false;
+  import { Button, Modal } from "flowbite-svelte";
+  let scrollingModal = $state(false);
 </script>
 
-<Button on:click={() => (scrollingModal = true)} autoclose>Scrolling modal</Button>
+<Button onclick={() => (scrollingModal = true)}>Scrolling modal</Button>
 
 <Modal title="Terms of Service" bind:open={scrollingModal}>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
@@ -312,25 +359,37 @@ You can use five different modal sizing options starting from extra small to ext
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
-  <svelte:fragment slot="footer">
-    <Button on:click={() => alert('Handle "success"')}>I accept</Button>
+  {#snippet footer()}
+    <Button onclick={() => alert('Handle "success"')}>I accept</Button>
     <Button color="alternative">Decline</Button>
-  </svelte:fragment>
+  {/snippet}
+</Modal>
+```
+
+## Non-modal case
+
+Rarely you would need a non-modal dialog. You can get it by setting `modal` property to `false`. Note, however, that in that mode dialog does not have a backdrop, is not a top level window (notice `z-10` class below), does not manage `Esc` key.
+
+```svelte example class="flex justify-center" hideResponsiveButtons
+<script>
+  import { Button, Modal } from "flowbite-svelte";
+  let defaultModal = $state(false);
+</script>
+
+<Button onclick={() => (defaultModal = true)}>Non modal</Button>
+<Modal title="Terms of Service" bind:open={defaultModal} autoclose modal={false} class="z-10 border shadow-xl">
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
+  {#snippet footer()}
+    <Button onclick={() => alert('Handle "success"')}>I accept</Button>
+    <Button color="alternative">Decline</Button>
+  {/snippet}
 </Modal>
 ```
 
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
-
-### Modal styling
-
-- Use the `class` prop to overwrite `defaultClass`.
-- Use the `classBackdrop` prop to overwrite `backdropClass`.
-- Use the `classDialog` prop to overwrite `dialogClass`.
-- Use the `classHeader` prop to overwrite `headerClass`.
-- Use the `classBody` prop to overwrite `bodyClass`.
-- Use the `classFooter` prop to overwrite `footerClass`.
 
 <CompoAttributesViewer {dirName}/>
 

@@ -1,32 +1,40 @@
-<script lang="ts" generics="T">
-  import type { HTMLAttributes } from 'svelte/elements';
-  import { getContext } from 'svelte';
-  import type { Writable } from 'svelte/store';
+<script lang="ts">
+  import { TableBodyRow, TableBodyCell } from ".";
+  import type { TableBodyProps, CellValue, BodyRow } from "$lib/types";
 
-  interface $$Props extends HTMLAttributes<HTMLTableSectionElement> {
-    tableBodyClass?: string;
+  let { children, bodyItems, class: className, ...restProps }: TableBodyProps = $props();
+
+  function getCellValues(row: BodyRow): CellValue[] {
+    if (Array.isArray(row)) {
+      return row;
+    } else {
+      return Object.values(row);
+    }
   }
-  
-  export let tableBodyClass: $$Props['tableBodyClass'] = undefined;
-
-  $: items = getContext('items') as T[] || [];
-  let filter = getContext('filter') as Writable<((t: T, term: string) => boolean) | null>;
-  let searchTerm = getContext('searchTerm') as Writable<string>;
-  $: filtered = $filter ? items.filter(item => $filter(item, $searchTerm)) : items;
-  let sorter = getContext('sorter') as Writable<{id: string, sort: (a: T, b: T) => number, sortDirection: -1 | 1} | null>;
-  $: sorted = $sorter ? filtered.toSorted((a, b) => $sorter.sortDirection * $sorter.sort(a, b)) : filtered;
 </script>
 
-<tbody {...$$restProps} class={tableBodyClass}>
-  <slot />
-  {#each sorted as item}
-    <slot name="row" {item} />
-  {/each}
+<tbody {...restProps} class={className}>
+  {#if bodyItems}
+    {#each bodyItems as row}
+      <TableBodyRow>
+        {#each getCellValues(row) as cellValue}
+          <TableBodyCell>{cellValue ?? ""}</TableBodyCell>
+        {/each}
+      </TableBodyRow>
+    {/each}
+  {:else if children}
+    {@render children()}
+  {/if}
 </tbody>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[TableBodyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1414)
 ## Props
-@prop export let tableBodyClass: $$Props['tableBodyClass'] = undefined;
+@prop children
+@prop bodyItems
+@prop class: className
+@prop ...restProps
 -->

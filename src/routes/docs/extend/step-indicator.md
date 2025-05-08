@@ -21,7 +21,7 @@ Import the `StepIndicator` component in a script tag.
 
 ```svelte example hideOutput
 <script>
-  import { StepIndicator } from 'flowbite-svelte';
+  import { StepIndicator } from "flowbite-svelte";
 </script>
 ```
 
@@ -31,9 +31,9 @@ Use the following example of a step indicator element to show a progress of step
 
 ```svelte example
 <script>
-  import { StepIndicator } from 'flowbite-svelte';
+  import { StepIndicator } from "flowbite-svelte";
   let currentStep = 2;
-  let steps = ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'];
+  let steps = ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"];
 </script>
 
 <StepIndicator {currentStep} {steps} />
@@ -45,9 +45,9 @@ Use the `glow` prop to add a glow effect to the current step.
 
 ```svelte example
 <script>
-  import { StepIndicator } from 'flowbite-svelte';
+  import { StepIndicator } from "flowbite-svelte";
   let currentStep = 2;
-  let steps = ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'];
+  let steps = ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"];
 </script>
 
 <StepIndicator {currentStep} {steps} glow />
@@ -59,9 +59,9 @@ Use the `hideLabel` prop to hide the label of the current step.
 
 ```svelte example
 <script>
-  import { StepIndicator } from 'flowbite-svelte';
+  import { StepIndicator } from "flowbite-svelte";
   let currentStep = 2;
-  let steps = ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'];
+  let steps = ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"];
 </script>
 
 <StepIndicator {currentStep} {steps} hideLabel />
@@ -73,9 +73,9 @@ Use the `size` prop to change the size of a step indicator.
 
 ```svelte example
 <script>
-  import { StepIndicator } from 'flowbite-svelte';
+  import { StepIndicator } from "flowbite-svelte";
   let currentStep = 2;
-  let steps = ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'];
+  let steps = ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"];
 </script>
 
 <div class="my-4">
@@ -105,9 +105,9 @@ Use the `color` prop to change the color of a step indicator.
 
 ```svelte example
 <script>
-  import { StepIndicator } from 'flowbite-svelte';
+  import { StepIndicator } from "flowbite-svelte";
   let currentStep = 2;
-  let steps = ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'];
+  let steps = ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"];
 </script>
 
 <div class="my-4">

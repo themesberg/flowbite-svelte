@@ -1,9 +1,9 @@
 ---
 layout: homeLayout
 title: Accessible SVG Icons - Flowbite Svelte Icons
-subtitle: Accessible SVG Icons 
-path: 
-description: 480+ SVG Flowbite icons components for Svelte 3/4/5/Runes.
+subtitle: Accessible SVG Icons
+path:
+description: 500+ SVG Flowbite icons components for Svelte 3/4/5/Runes.
 ---
 
 <script>
@@ -27,8 +27,7 @@ description: 480+ SVG Flowbite icons components for Svelte 3/4/5/Runes.
   </p>
   </Card>
 
-
-  <Card href='/icons/outline-icons'>
+  <Card href='/icons/outline-icons' class="p-4 sm:p-6">
   <BadgeCheckOutline class="w-8 h-8 mb-3 text-pink-500 dark:text-green-400" />
   <h3 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Outline Icons</h3>
   <p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">
@@ -36,7 +35,7 @@ description: 480+ SVG Flowbite icons components for Svelte 3/4/5/Runes.
   </p>
   </Card>
 
-  <Card href='/icons/solid-icons'>
+  <Card href='/icons/solid-icons' class="p-4 sm:p-6">
   <BadgeCheckOutline class="w-8 h-8 mb-3 text-green-500 dark:text-green-400" />
   <h3 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Solid Icons</h3>
   <p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">
@@ -44,8 +43,7 @@ description: 480+ SVG Flowbite icons components for Svelte 3/4/5/Runes.
   </p>
   </Card>
 
-
-  <Card>
+  <Card class="p-4 sm:p-6">
   <StarOutline class="w-8 h-8 mb-3 text-red-500 dark:text-red-400" />
   <h3 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Accessible SVGs</h3>
   <p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">
@@ -53,7 +51,7 @@ description: 480+ SVG Flowbite icons components for Svelte 3/4/5/Runes.
   </p>
   </Card>
 
-  <Card>
+  <Card class="p-4 sm:p-6">
   <BellRingOutline class="w-8 h-8 mb-3 text-purple-500 dark:text-purple-400" />
   <h3 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Faster Compiling</h3>
   <p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">
@@ -61,7 +59,7 @@ description: 480+ SVG Flowbite icons components for Svelte 3/4/5/Runes.
   </p>
   </Card>
 
-  <Card>
+  <Card class="p-4 sm:p-6">
   <BullhornOutline class="w-8 h-8 mb-3 text-pink-500 dark:text-pink-400" />
   <h3 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">IDE Support</h3>
   <p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">
@@ -69,7 +67,7 @@ description: 480+ SVG Flowbite icons components for Svelte 3/4/5/Runes.
   </p>
   </Card>
 
-  <Card>
+  <Card class="p-4 sm:p-6">
   <CogOutline class="w-8 h-8 mb-3 text-yellow-500 dark:text-yellow-400" />
   <h3 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Global Icons</h3>
   <p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">
@@ -81,7 +79,7 @@ description: 480+ SVG Flowbite icons components for Svelte 3/4/5/Runes.
 <h2 class='flex justify-center my-8 text-3xl dark:text-white'>Other information</h2>
 
 <div class='grid grid-cols-2 md:grid-cols-3 gap-4 mx-8 mb-32'>
-  <Card href='https://svelte-svg-icons.codewithshin.com/'>
+  <Card href='https://svelte-svg-icons.codewithshin.com/' class="p-4 sm:p-6">
   <InfoCircleOutline class="w-8 h-8 mb-3 text-oragne-500 dark:text-orange-400" />
   <h3 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Svelte Icon Family</h3>
   <p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">
@@ -89,7 +87,7 @@ description: 480+ SVG Flowbite icons components for Svelte 3/4/5/Runes.
   </p>
   </Card>
 
-  <Card href='https://github.com/shinokada/flowbite-svelte-icons/blob/main/LICENSE'>
+  <Card href='https://github.com/shinokada/flowbite-svelte-icons/blob/main/LICENSE' class="p-4 sm:p-6">
   <InfoCircleOutline class="w-8 h-8 mb-3 text-blue-500 dark:text-blue-400" />
   <h3 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">License</h3>
   <p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">
@@ -97,7 +95,7 @@ description: 480+ SVG Flowbite icons components for Svelte 3/4/5/Runes.
   </p>
   </Card>
 
-  <Card href='https://github.com/themesberg/flowbite-icons'>
+  <Card href='https://github.com/themesberg/flowbite-icons' class="p-4 sm:p-6">
   <InfoCircleOutline class="w-8 h-8 mb-3 text-green-500 dark:text-green-400" />
   <h3 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Original source</h3>
   <p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">

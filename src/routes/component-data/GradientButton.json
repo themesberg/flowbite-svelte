@@ -1,9 +1,18 @@
 {
   "name": "GradientButton",
-  "slots": [],
-  "events": ["click", "change", "keydown", "keyup", "mouseenter", "mouseleave", "click", "change", "keydown", "keyup", "touchstart", "touchend", "touchcancel", "mouseenter", "mouseleave"],
+  "type": {
+    "name": "GradientButtonProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L350"
+  },
   "props": [
-    ["color?", "keyof typeof gradientClasses", ""],
-    ["shadow?", "boolean", "false"]
+    ["children", ""],
+    ["outline", ""],
+    ["pill", ""],
+    ["color", "\"blue\""],
+    ["shadow", ""],
+    ["class: className", ""],
+    ["href", ""],
+    ["disabled", ""],
+    ["size", ""]
   ]
 }

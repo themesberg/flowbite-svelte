@@ -1,6 +1,12 @@
 {
   "name": "TableBody",
-  "slots": ["row"],
-  "events": [],
-  "props": [["tableBodyClass?", "string", "undefined"]]
+  "type": {
+    "name": "TableBodyProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1414"
+  },
+  "props": [
+    ["children", ""],
+    ["bodyItems", ""],
+    ["class: className", ""]
+  ]
 }

@@ -1,10 +1,13 @@
 {
   "name": "SidebarGroup",
-  "slots": [],
-  "events": [],
+  "type": {
+    "name": "SidebarGroupProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1228"
+  },
   "props": [
-    ["ulClass?", "string", "'space-y-2'"],
-    ["borderClass?", "string", "'pt-4 mt-4 border-t border-gray-200 dark:border-gray-700'"],
-    ["border?", "boolean", "false"]
+    ["children", ""],
+    ["class: className", "\"space-y-2\""],
+    ["borderClass", "\"pt-4 mt-4 border-t border-gray-200 dark:border-gray-700\""],
+    ["border", "false"]
   ]
 }

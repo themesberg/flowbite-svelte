@@ -1,13 +1,17 @@
 {
   "name": "Indicator",
-  "slots": [],
-  "events": [],
+  "type": {
+    "name": "IndicatorProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L865"
+  },
   "props": [
-    ["color?", "IndicatorColorType", ""],
-    ["rounded?", "boolean", "false"],
-    ["size?", "'xs' | 'sm' | 'md' | 'lg' | 'xl'", ""],
-    ["border?", "boolean", "false"],
-    ["placement?", "IndicatorPlacementType", "undefined"],
-    ["offset?", "boolean", "true"]
+    ["children", ""],
+    ["color", "\"primary\""],
+    ["cornerStyle", "\"circular\""],
+    ["size", "\"md\""],
+    ["border", "false"],
+    ["placement", ""],
+    ["offset", "true"],
+    ["class: className", ""]
   ]
 }

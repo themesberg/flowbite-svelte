@@ -1,6 +1,8 @@
 {
   "name": "SidebarWrapper",
-  "slots": [],
-  "events": [],
-  "props": [["divClass?", "string", "'overflow-y-auto py-4 px-3 bg-gray-50 rounded-sm dark:bg-gray-800'"]]
+  "type": {
+    "name": "HTMLAttributes<HTMLDivElement>",
+    "link": "https://github.com/sveltejs/svelte/blob/main/packages/svelte/elements.d.ts"
+  },
+  "props": [["children", ""]]
 }

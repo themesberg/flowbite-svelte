@@ -1,85 +1,31 @@
 <script lang="ts">
-  import { createEventDispatcher, onMount } from 'svelte';
-  import { fade } from 'svelte/transition';
-  import { Button } from '$lib';
+  import { onMount } from "svelte";
+  import { fade } from "svelte/transition";
+  import { Button, ToolbarButton, type DatepickerProps } from "$lib";
+  import { datepicker } from "./theme";
 
-  export let value: Date | null = null;
-  export let defaultDate: Date | null = null;
-  export let range: boolean = false;
-  export let rangeFrom: Date | null = null;
-  export let rangeTo: Date | null = null;
-  export let locale: string = 'default';
-  export let firstDayOfWeek: number = 0; // 0 = Monday, 6 = Sunday
-  export let dateFormat: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-  export let placeholder: string = 'Select date';
-  export let disabled: boolean = false;
-  export let required: boolean = false;
-  export let inputClass: string = '';
-  export let color: Button['color'] = 'primary';
-  export let inline: boolean = false;
-  export let autohide: boolean = true;
-  export let showActionButtons: boolean = false;
-  export let title: string = '';
+  let { value = $bindable(), defaultDate = null, range = false, rangeFrom = $bindable(), rangeTo = $bindable(), locale = "default", firstDayOfWeek = 0, dateFormat, placeholder = "Select date", disabled = false, required = false, inputClass = "", color = "primary", inline = false, autohide = true, showActionButtons = false, title = "", onselect, onclear, onapply }: DatepickerProps = $props();
 
+  const dateFormatDefault = { year: "numeric", month: "long", day: "numeric" };
+  const dateFormatOptions = $derived(dateFormat ?? dateFormatDefault);
   // Internal state
-  const dispatch = createEventDispatcher();
-  let isOpen: boolean = inline;
-  let inputElement: HTMLInputElement;
+  let isOpen: boolean = $state(inline);
+  let inputElement: HTMLInputElement | null = $state(null);
   let datepickerContainerElement: HTMLDivElement;
-  let currentMonth: Date = value || defaultDate || new Date();
+  let currentMonth: Date = $state(value || defaultDate || new Date());
   let focusedDate: Date | null = null;
-  let calendarRef: HTMLDivElement;
+  let calendarRef: HTMLDivElement | null = $state(null);
 
-  $: daysInMonth = getDaysInMonth(currentMonth);
-  $: weekdays = getWeekdays();
+  let daysInMonth = $derived(getDaysInMonth(currentMonth));
 
   onMount(() => {
     if (!inline) {
-      document.addEventListener('click', handleClickOutside);
+      datepickerContainerElement?.ownerDocument.addEventListener("click", handleClickOutside);
       return () => {
-        document.removeEventListener('click', handleClickOutside);
+        datepickerContainerElement?.ownerDocument.removeEventListener("click", handleClickOutside);
       };
     }
   });
-
-  // Color handling functions
-  function getFocusRingClass(color: Button['color']): string {
-    switch (color) {
-      case 'primary':
-        return 'focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400';
-      case 'blue':
-        return 'focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400';
-      case 'red':
-        return 'focus:ring-2 focus:ring-red-500 dark:focus:ring-red-400';
-      case 'green':
-        return 'focus:ring-2 focus:ring-green-500 dark:focus:ring-green-400';
-      case 'yellow':
-        return 'focus:ring-2 focus:ring-yellow-500 dark:focus:ring-yellow-400';
-      case 'purple':
-        return 'focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400';
-      default:
-        return '';
-    }
-  }
-
-  function getRangeBackgroundClass(color: Button['color']): string {
-    switch (color) {
-      case 'primary':
-        return 'bg-primary-100 dark:bg-primary-900';
-      case 'blue':
-        return 'bg-blue-100 dark:bg-blue-900';
-      case 'red':
-        return 'bg-red-100 dark:bg-red-900';
-      case 'green':
-        return 'bg-green-100 dark:bg-green-900';
-      case 'yellow':
-        return 'bg-yellow-100 dark:bg-yellow-900';
-      case 'purple':
-        return 'bg-purple-100 dark:bg-purple-900';
-      default:
-        return '';
-    }
-  }
 
   function getDaysInMonth(date: Date): Date[] {
     const year = date.getFullYear();
@@ -111,14 +57,13 @@
     return daysArray;
   }
 
-  function getWeekdays(): string[] {
-    const weekdays = [];
-    for (let i = 0; i < 7; i++) {
-      const day = new Date(2021, 5, i + firstDayOfWeek);
-      weekdays.push(day.toLocaleString(locale, { weekday: 'short' }));
-    }
-    return weekdays;
-  }
+  const getWeekdayNames = (locale = "en-US"): string[] => {
+    return Array.from({ length: 7 }, (_, i) => new Date(1970, 0, 4 + i).toLocaleDateString(locale, { weekday: "short" }));
+  };
+  let weekdays = getWeekdayNames();
+
+  const addMonth = (date: Date, increment: number): Date => new Date(date.getFullYear(), date.getMonth() + increment, 1);
+  const addDay = (date: Date, increment: number): Date => new Date(date.getFullYear(), date.getMonth(), date.getDate() + increment);
 
   function changeMonth(increment: number) {
     currentMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth() + increment, 1);
@@ -128,23 +73,23 @@
     if (range) {
       if (!rangeFrom || (rangeFrom && rangeTo)) {
         rangeFrom = day;
-        rangeTo = null;
+        rangeTo = undefined;
       } else if (day < rangeFrom) {
-        rangeTo = rangeFrom;
         rangeFrom = day;
+        rangeTo = rangeFrom;
       } else {
         rangeTo = day;
       }
-      dispatch('select', { from: rangeFrom, to: rangeTo });
+      onselect?.({ from: rangeFrom, to: rangeTo });
     } else {
       value = day;
-      dispatch('select', value);
+      onselect?.(value);
       if (autohide && !inline) isOpen = false;
     }
   }
 
   function handleInputChange() {
-    const date = new Date(inputElement.value);
+    const date = new Date(inputElement?.value ?? "");
     if (!isNaN(date.getTime())) {
       handleDaySelect(date);
     }
@@ -156,32 +101,12 @@
     }
   }
 
-  function formatDate(date: Date | null): string {
-    if (!date) return '';
-    return date.toLocaleDateString(locale, dateFormat);
-  }
+  const formatDate = (date?: Date): string => date?.toLocaleDateString(locale, dateFormat) ?? "";
+  const isSameDate = (date1?: Date, date2?: Date): boolean => date1?.toDateString() === date2?.toDateString();
+  const isToday = (day: Date): boolean => isSameDate(day, new Date());
+  const isInRange = (day: Date): boolean => !!(range && rangeFrom && rangeTo && day > rangeFrom && day < rangeTo);
 
-  function isSameDate(date1: Date | null, date2: Date | null): boolean {
-    if (!date1 || !date2) return false;
-    return date1.toDateString() === date2.toDateString();
-  }
-
-  $: isSelected = (day: Date): boolean => {
-    if (range) {
-      return isSameDate(day, rangeFrom) || isSameDate(day, rangeTo);
-    }
-    return isSameDate(day, value);
-  };
-
-  function isInRange(day: Date): boolean {
-    if (!range || !rangeFrom || !rangeTo) return false;
-    return day > rangeFrom && day < rangeTo;
-  }
-
-  function isToday(day: Date): boolean {
-    const today = new Date();
-    return day.toDateString() === today.toDateString();
-  }
+  let isSelected = $derived((day: Date): boolean => (range ? isSameDate(day, rangeFrom) || isSameDate(day, rangeTo) : isSameDate(day, value)));
 
   function handleCalendarKeydown(event: KeyboardEvent) {
     if (!isOpen) return;
@@ -191,24 +116,24 @@
     }
 
     switch (event.key) {
-      case 'ArrowLeft':
-        focusedDate = new Date(focusedDate.getFullYear(), focusedDate.getMonth(), focusedDate.getDate() - 1);
+      case "ArrowLeft":
+        focusedDate = addDay(focusedDate, -1);
         break;
-      case 'ArrowRight':
-        focusedDate = new Date(focusedDate.getFullYear(), focusedDate.getMonth(), focusedDate.getDate() + 1);
+      case "ArrowRight":
+        focusedDate = addDay(focusedDate, 1);
         break;
-      case 'ArrowUp':
-        focusedDate = new Date(focusedDate.getFullYear(), focusedDate.getMonth(), focusedDate.getDate() - 7);
+      case "ArrowUp":
+        focusedDate = addDay(focusedDate, -7);
         break;
-      case 'ArrowDown':
-        focusedDate = new Date(focusedDate.getFullYear(), focusedDate.getMonth(), focusedDate.getDate() + 7);
+      case "ArrowDown":
+        focusedDate = addDay(focusedDate, 7);
         break;
-      case 'Enter':
+      case "Enter":
         handleDaySelect(focusedDate);
         break;
-      case 'Escape':
+      case "Escape":
         isOpen = false;
-        inputElement.focus();
+        inputElement?.focus();
         break;
       default:
         return;
@@ -221,41 +146,46 @@
 
     // Focus the button for the focused date
     setTimeout(() => {
-      const focusedButton = calendarRef.querySelector(`button[aria-label="${focusedDate!.toLocaleDateString(locale, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}"]`) as HTMLButtonElement | null;
+      const focusedButton = calendarRef?.querySelector(`button[aria-label="${focusedDate!.toLocaleDateString(locale, { weekday: "long", year: "numeric", month: "long", day: "numeric" })}"]`) as HTMLButtonElement | null;
       focusedButton?.focus();
     }, 0);
   }
 
   function handleInputKeydown(event: KeyboardEvent) {
-    if (event.key === 'Enter' || event.key === ' ') {
+    if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
       isOpen = !isOpen;
     }
   }
 
-  function handleToday() {
-    handleDaySelect(new Date());
-  }
-
   function handleClear() {
-    value = null;
-    rangeFrom = null;
-    rangeTo = null;
-    dispatch('clear');
+    value = rangeFrom = rangeTo = undefined;
+    onclear?.();
   }
 
   function handleApply() {
-    dispatch('apply', range ? { from: rangeFrom, to: rangeTo } : value);
+    const result = range ? { from: rangeFrom, to: rangeTo } : value;
+    if (result) onapply?.(result);
     if (!inline) isOpen = false;
   }
+
+  let { base, input, button, titleVariant, actionButtons, columnHeader, polite, grid, nav, dayButton } = datepicker();
 </script>
 
-<div bind:this={datepickerContainerElement} class="relative {inline ? 'inline-block' : ''}">
+{#snippet navButton(forward: boolean)}
+  <ToolbarButton color="dark" onclick={() => changeMonth(forward ? 1 : -1)} size="lg" aria-label={forward ? "Next month" : "Previous month"}>
+    <svg class="h-3 w-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={forward ? "M1 5h12m0 0L9 1m4 4L9 9" : "M13 5H1m0 0 4 4M1 5l4-4"}></path>
+    </svg>
+  </ToolbarButton>
+{/snippet}
+
+<div bind:this={datepickerContainerElement} class={["relative", inline && "inline-block"]}>
   {#if !inline}
     <div class="relative">
-      <input bind:this={inputElement} type="text" class="w-full px-4 py-2 text-sm border rounded-md focus:outline-hidden dark:bg-gray-700 dark:text-white dark:border-gray-600 {getFocusRingClass(color)} {inputClass}" {placeholder} value={range ? `${formatDate(rangeFrom)} - ${formatDate(rangeTo)}` : formatDate(value)} on:focus={() => (isOpen = true)} on:input={handleInputChange} on:keydown={handleInputKeydown} {disabled} {required} aria-haspopup="dialog" />
-      <button type="button" class="absolute inset-y-0 right-0 flex items-center px-3 text-gray-500 dark:text-gray-400 focus:outline-hidden" on:click={() => (isOpen = !isOpen)} {disabled} aria-label={isOpen ? 'Close date picker' : 'Open date picker'}>
-        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+      <input bind:this={inputElement} type="text" class={input({ color, class: inputClass })} {placeholder} value={range ? `${formatDate(rangeFrom)} - ${formatDate(rangeTo)}` : formatDate(value)} onfocus={() => (isOpen = true)} oninput={handleInputChange} onkeydown={handleInputKeydown} {disabled} {required} aria-haspopup="dialog" />
+      <button type="button" class={button()} onclick={() => (isOpen = !isOpen)} {disabled} aria-label={isOpen ? "Close date picker" : "Open date picker"}>
+        <svg class="h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
           <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"></path>
         </svg>
       </button>
@@ -263,48 +193,35 @@
   {/if}
 
   {#if isOpen || inline}
-    <div
-      bind:this={calendarRef}
-      id="datepicker-dropdown"
-      class="
-        {inline ? '' : 'absolute z-10 mt-1'}
-        bg-white dark:bg-gray-800 rounded-md shadow-lg"
-      transition:fade={{ duration: 100 }}
-      role="dialog"
-      aria-label="Calendar">
-      <div class="p-4" role="application">
-        {#if title}
-          <h2 class="text-lg font-semibold mb-4 dark:text-white">{title}</h2>
-        {/if}
-        <div class="flex items-center justify-between mb-4">
-          <Button on:click={() => changeMonth(-1)} {color} size="sm" aria-label="Previous month">
-            <svg class="w-3 h-3 rtl:rotate-180 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"></path></svg>
-          </Button>
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white" aria-live="polite">
-            {currentMonth.toLocaleString(locale, { month: 'long', year: 'numeric' })}
-          </h3>
-          <Button on:click={() => changeMonth(1)} {color} size="sm" aria-label="Next month">
-            <svg class="w-3 h-3 rtl:rotate-180 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"></path></svg>
-          </Button>
-        </div>
-        <div class="grid grid-cols-7 gap-1" role="grid">
-          {#each weekdays as day}
-            <div class="text-center text-sm font-medium text-gray-500 dark:text-gray-400" role="columnheader">{day}</div>
-          {/each}
-          {#each daysInMonth as day}
-            <Button color={isSelected(day) ? color : 'alternative'} size="sm" class="w-full h-8 {day.getMonth() !== currentMonth.getMonth() ? 'text-gray-300 dark:text-gray-600' : ''} {isToday(day) ? 'font-bold' : ''} {isInRange(day) ? getRangeBackgroundClass(color) : ''}" on:click={() => handleDaySelect(day)} on:keydown={handleCalendarKeydown} aria-label={day.toLocaleDateString(locale, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })} aria-selected={isSelected(day)} role="gridcell">
-              {day.getDate()}
-            </Button>
-          {/each}
-        </div>
-        {#if showActionButtons}
-          <div class="mt-4 flex justify-between">
-            <Button on:click={handleToday} {color} size="sm">Today</Button>
-            <Button on:click={handleClear} color="red" size="sm">Clear</Button>
-            <Button on:click={handleApply} {color} size="sm">Apply</Button>
-          </div>
-        {/if}
+    <div bind:this={calendarRef} id="datepicker-dropdown" class={base({ inline })} transition:fade={{ duration: 100 }} role="dialog" aria-label="Calendar">
+      {#if title}
+        <h2 class={titleVariant()}>{title}</h2>
+      {/if}
+      <div class={nav()}>
+        {@render navButton(false)}
+        <h3 class={polite()} aria-live="polite">
+          {currentMonth.toLocaleString(locale, { month: "long", year: "numeric" })}
+        </h3>
+        {@render navButton(true)}
       </div>
+      <div class={grid()} role="grid">
+        {#each weekdays as day}
+          <div class={columnHeader()} role="columnheader">{day}</div>
+        {/each}
+        {#each daysInMonth as day}
+          {@const current = day.getMonth() !== currentMonth.getMonth()}
+          <button color={isSelected(day) ? color : "alternative"} class={dayButton({ current, today: isToday(day), color: isInRange(day) ? color : undefined })} onclick={() => handleDaySelect(day)} onkeydown={handleCalendarKeydown} aria-label={day.toLocaleDateString(locale, { weekday: "long", year: "numeric", month: "long", day: "numeric" })} aria-selected={isSelected(day)} role="gridcell">
+            {day.getDate()}
+          </button>
+        {/each}
+      </div>
+      {#if showActionButtons}
+        <div class={actionButtons()}>
+          <Button onclick={() => handleDaySelect(new Date())} {color} size="sm">Today</Button>
+          <Button onclick={handleClear} color="red" size="sm">Clear</Button>
+          <Button onclick={handleApply} {color} size="sm">Apply</Button>
+        </div>
+      {/if}
     </div>
   {/if}
 </div>
@@ -312,22 +229,27 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L457)
 ## Props
-@prop export let value: Date | null = null;
-@prop export let defaultDate: Date | null = null;
-@prop export let range: boolean = false;
-@prop export let rangeFrom: Date | null = null;
-@prop export let rangeTo: Date | null = null;
-@prop export let locale: string = 'default';
-@prop export let firstDayOfWeek: number = 0;
-@prop export let dateFormat: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-@prop export let placeholder: string = 'Select date';
-@prop export let disabled: boolean = false;
-@prop export let required: boolean = false;
-@prop export let inputClass: string = '';
-@prop export let color: Button['color'] = 'primary';
-@prop export let inline: boolean = false;
-@prop export let autohide: boolean = true;
-@prop export let showActionButtons: boolean = false;
-@prop export let title: string = '';
+@prop value = $bindable()
+@prop defaultDate = null
+@prop range = false
+@prop rangeFrom = $bindable()
+@prop rangeTo = $bindable()
+@prop locale = "default"
+@prop firstDayOfWeek = 0
+@prop dateFormat
+@prop placeholder = "Select date"
+@prop disabled = false
+@prop required = false
+@prop inputClass = ""
+@prop color = "primary"
+@prop inline = false
+@prop autohide = true
+@prop showActionButtons = false
+@prop title = ""
+@prop onselect
+@prop onclear
+@prop onapply
 -->

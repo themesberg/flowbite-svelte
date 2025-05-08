@@ -1,20 +1,19 @@
 <script lang="ts">
-  import Input from '$lib/forms/Input.svelte';
-  import Tooltip from '$lib/tooltip/Tooltip.svelte';
-  import Check from './icons/Check.svelte';
-  import Clipboard from './icons/Clipboard.svelte';
+  import Input from "$lib/forms/input/Input.svelte";
+  import Tooltip from "$lib/tooltip/Tooltip.svelte";
+  import Check from "./icons/Check.svelte";
+  import Clipboard from "./icons/Clipboard.svelte";
 
-  const show = ({ detail }: { detail: boolean }) => detail || set_tooltip(false);
-  const text_copied = 'Copied!';
-  const text_not_copied = 'Copy to clipboard';
+  let { class: clasName = "" } = $props();
+  const show = (ev: ToggleEvent) => ev.newState == "open" || set_tooltip(false);
+  const text_copied = "Copied!";
+  const text_not_copied = "Copy to clipboard";
 
-  let placeholder: string = 'pnpm i -D flowbite-svelte flowbite';
-  let tooltip_text: string = text_not_copied;
-  let open: boolean | undefined = undefined;
+  let placeholder: string = "pnpm i -D flowbite-svelte flowbite";
+  let tooltip_text: string = $state(text_not_copied);
 
   function set_tooltip(copied: boolean) {
     tooltip_text = copied ? text_copied : text_not_copied;
-    open = copied || undefined;
   }
 
   const copyToClipboard = async (e: MouseEvent) => {
@@ -26,20 +25,20 @@
       return String.fromCharCode(num);
     });
 
-    open = false; // must be before `await`
     await window.navigator.clipboard.writeText(decodedText);
 
-    // (e?.target as HTMLButtonElement)?.blur();
     set_tooltip(true);
   };
 </script>
 
-<Input size="lg" {placeholder} readonly class="text-sm py-3 sm:text-sm focus:ring-primary-600 focus:border-primary-600 md:min-w-[315px] {$$props.class ?? ''}">
-  <div slot="right" class="flex items-center ps-32">
-    <button on:click={copyToClipboard} class="hover:text-primary-700 py-2 px-1">
-      {#if tooltip_text == text_not_copied}<Clipboard />{:else}<Check />{/if}
-    </button>
+<Input size="lg" {placeholder} readonly class="focus:ring-primary-600 focus:border-primary-600 py-3 text-sm sm:text-sm md:min-w-[315px] {clasName}">
+  {#snippet right()}
+    <div class="flex items-center ps-32">
+      <button onclick={copyToClipboard} class="hover:text-primary-700 px-1 py-2">
+        {#if tooltip_text == text_not_copied}<Clipboard />{:else}<Check />{/if}
+      </button>
 
-    <Tooltip bind:open on:show={show}>{tooltip_text}</Tooltip>
-  </div>
+      <Tooltip ontoggle={show}>{tooltip_text}</Tooltip>
+    </div>
+  {/snippet}
 </Input>

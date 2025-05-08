@@ -1,6 +1,16 @@
 {
   "name": "ToolbarButton",
-  "slots": [],
-  "events": ["click"],
-  "props": []
+  "type": {
+    "name": "ToolbarButtonProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L993"
+  },
+  "props": [
+    ["children", ""],
+    ["onclick", ""],
+    ["color", ""],
+    ["name", ""],
+    ["\"aria-label\": ariaLabel", ""],
+    ["size", ""],
+    ["class: className", ""]
+  ]
 }
