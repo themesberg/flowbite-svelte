@@ -121,7 +121,7 @@ Show the carousel indicators by adding the internal `Indicators` component.
 
 ## Thumbnails
 
-You can control the `Carousel` component externally by the `index` prop. Here is an example how to use the `Thumbnails` component to achieve that.
+You can use the `Thumbnails` component as a child of the `Carousel` component to display thumbnail images. This component shares the same state store with the Carousel, so the thumbnails are always in sync with the current image.
 
 ```svelte example
 <script lang="ts">
@@ -135,8 +135,10 @@ You can control the `Carousel` component externally by the `index` prop. Here is
   <Carousel {images} bind:index>
     <Controls />
     <Indicators />
+    {#snippet thumbnail()}
+      <Thumbnails />
+    {/snippet}
   </Carousel>
-  <Thumbnails {images} bind:index />
 </div>
 ```
 
@@ -233,12 +235,14 @@ You can use `slide` snippet and internal component `Slide` to control the image 
         </Button>
       {/snippet}
     </Controls>
-  </Carousel>
-  <Thumbnails class="gap-3 bg-transparent" {images} bind:index>
-    {#snippet children({ image, selected, Thumbnail })}
-      <Thumbnail {selected} {...image} class="hover:outline-primary-500 rounded-md shadow-xl hover:outline {selected ? 'outline-primary-400 outline-4' : ''}" />
+    {#snippet thumbnail()}
+      <Thumbnails class="gap-3 bg-transparent">
+        {#snippet children({ image, selected, Thumbnail })}
+          <Thumbnail {selected} {...image} class="hover:outline-primary-500 rounded-md shadow-xl hover:outline {selected ? 'outline-primary-400 outline-4' : ''}" />
+        {/snippet}
+      </Thumbnails>
     {/snippet}
-  </Thumbnails>
+  </Carousel>
 </div>
 ```
 

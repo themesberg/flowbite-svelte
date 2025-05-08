@@ -10,7 +10,7 @@
 
   const SLIDE_DURATION_RATIO = 0.25; // TODO: Expose one day?
 
-  let { children, slide, images, index = $bindable(0), slideDuration = 1000, transition, duration = 0, "aria-label": ariaLabel = "Draggable Carousel", disableSwipe = false, imgClass = "", class: className, onchange, divClass, ...restProps }: CarouselProps = $props();
+  let { children, thumbnail, slide, images, index = $bindable(0), slideDuration = 1000, transition, duration = 0, "aria-label": ariaLabel = "Draggable Carousel", disableSwipe = false, imgClass = "", class: className, onchange, divClass, ...restProps }: CarouselProps = $props();
 
   const { set, subscribe, update } = writable<State>({ images, index: index ?? 0, forward: true, slideDuration, lastSlideChange: new Date() });
 
@@ -184,6 +184,7 @@
   {@render children?.(index)}
 </div>
 
+{@render thumbnail?.()}
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)

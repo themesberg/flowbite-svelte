@@ -390,6 +390,7 @@ export type State = {
 
 export interface CarouselProps extends CarouselVariants, Omit<HTMLAttributes<HTMLDivElement>, "children" | "onchange"> {
   children?: Snippet<[number]>;
+  thumbnail?: Snippet<[]>;
   slide?: Snippet<[{ index: number; Slide: typeof Slide }]>;
   images: HTMLImgAttributes[];
   index?: number;
@@ -424,8 +425,7 @@ export interface ThumbnailProps extends HTMLImgAttributes {
 
 export interface ThumbnailsProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
   children?: Snippet<[{ image: HTMLImgAttributes; selected: boolean; imgClass: string; Thumbnail: Component }]>;
-  images: HTMLImgAttributes[];
-  index: number;
+  images?: HTMLImgAttributes[];
   ariaLabel?: string;
   imgClass?: string;
   throttleDelay?: number;

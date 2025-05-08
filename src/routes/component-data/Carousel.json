@@ -6,6 +6,7 @@
   },
   "props": [
     ["children", ""],
+    ["thumbnail", ""],
     ["slide", ""],
     ["images", ""],
     ["index", "$bindable(0)"],
