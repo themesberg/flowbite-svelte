@@ -282,10 +282,10 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
     { id: 4, maker: "Saab", type: "IJK", make: 2020 }
   ];
   let items2: ItemType[] = [
-    { id: 5, maker: "Nissan", type: "ABC", make: 2017 },
-    { id: 6, maker: "VW", type: "CDE", make: 2018 },
-    { id: 7, maker: "Honda", type: "FGH", make: 2019 },
-    { id: 8, maker: "Audi", type: "IJK", make: 2020 }
+    { id: 5, maker: "Nissan", type: "LMN", make: 2019 },
+    { id: 6, maker: "VW", type: "OPQ", make: 2020 },
+    { id: 7, maker: "Honda", type: "RST", make: 2021 },
+    { id: 8, maker: "Audi", type: "UVW", make: 2023 }
   ];
   let carList: ItemType[] = $state(items);
   const changeItems = () => {
@@ -634,6 +634,43 @@ Use this example to enable horizontal scrolling if the content inside the table 
 </Table>
 ```
 
+## TableSearch
+
+Use the following example to search in a table.
+
+```svelte example
+<script>
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, TableSearch } from "flowbite-svelte";
+  let searchTerm = $state("");
+  let items = [
+    { id: 1, maker: "Toyota", type: "ABC", make: 2017 },
+    { id: 2, maker: "Ford", type: "CDE", make: 2018 },
+    { id: 3, maker: "Volvo", type: "FGH", make: 2019 },
+    { id: 4, maker: "Saab", type: "IJK", make: 2020 }
+  ];
+  let filteredItems = $derived(items.filter((item) => !searchTerm || item.maker.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1));
+</script>
+
+<TableSearch placeholder="Search by maker name" hoverable bind:inputValue={searchTerm}>
+  <TableHead>
+    <TableHeadCell>ID</TableHeadCell>
+    <TableHeadCell>Maker</TableHeadCell>
+    <TableHeadCell>Type</TableHeadCell>
+    <TableHeadCell>Make</TableHeadCell>
+  </TableHead>
+  <TableBody>
+    {#each filteredItems as item}
+      <TableBodyRow>
+        <TableBodyCell>{item.id}</TableBodyCell>
+        <TableBodyCell>{item.maker}</TableBodyCell>
+        <TableBodyCell>{item.type}</TableBodyCell>
+        <TableBodyCell>{item.make}</TableBodyCell>
+      </TableBodyRow>
+    {/each}
+  </TableBody>
+</TableSearch>
+```
+
 ## Table colors
 
 Use one of colors from blue, green, red, yellow, purple for the `color` prop. The default color is gray. You can reset all color by using the `color="custom"`.
@@ -671,39 +708,6 @@ Use one of colors from blue, green, red, yellow, purple for the `color` prop. Th
     </TableBodyRow>
   </TableBody>
 </Table>
-```
-
-```svelte example
-<script>
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, TableSearch } from "flowbite-svelte";
-  let searchTerm = $state("");
-  let items = [
-    { id: 1, maker: "Toyota", type: "ABC", make: 2017 },
-    { id: 2, maker: "Ford", type: "CDE", make: 2018 },
-    { id: 3, maker: "Volvo", type: "FGH", make: 2019 },
-    { id: 4, maker: "Saab", type: "IJK", make: 2020 }
-  ];
-  let filteredItems = $derived(items.filter((item) => !searchTerm || item.maker.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1));
-</script>
-
-<TableSearch color="red" placeholder="Search by maker name" hoverable bind:inputValue={searchTerm}>
-  <TableHead>
-    <TableHeadCell>ID</TableHeadCell>
-    <TableHeadCell>Maker</TableHeadCell>
-    <TableHeadCell>Type</TableHeadCell>
-    <TableHeadCell>Make</TableHeadCell>
-  </TableHead>
-  <TableBody>
-    {#each filteredItems as item}
-      <TableBodyRow>
-        <TableBodyCell>{item.id}</TableBodyCell>
-        <TableBodyCell>{item.maker}</TableBodyCell>
-        <TableBodyCell>{item.type}</TableBodyCell>
-        <TableBodyCell>{item.make}</TableBodyCell>
-      </TableBodyRow>
-    {/each}
-  </TableBody>
-</TableSearch>
 ```
 
 ```svelte example
