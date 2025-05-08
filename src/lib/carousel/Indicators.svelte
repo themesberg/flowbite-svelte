@@ -17,7 +17,11 @@
     {@const selected = $state.index === idx}
     <button
       onclick={() => {
-        const isForward = idx > $state.index;
+        const len = $state.images.length;
+        const distance = (idx - $state.index + len) % len;
+        // Treat the shorter path as the intended direction; ties favour forward.
+        const isForward = distance !== 0 && distance <= len / 2;
+
         state.update((_state) => {
           _state.forward = isForward;
           _state.index = idx;

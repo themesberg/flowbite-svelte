@@ -29,7 +29,10 @@
     }
 
     const imageArray = images || $state.images;
-    const isForward = (idx > $state.index && !(idx === imageArray.length - 1 && $state.index === 0)) || (idx === 0 && $state.index === imageArray.length - 1);
+    const len = imageArray.length;
+    const distance = (idx - $state.index + len) % len; // 0‥len-1
+    // Treat the shorter path as the intended direction; ties favour forward.
+    const isForward = distance !== 0 && distance <= len / 2;
 
     state.update((_state) => {
       _state.forward = isForward;
