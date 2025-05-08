@@ -4,7 +4,6 @@
   import CarbonAds from "./utils/CarbonAds.svelte";
 
   let { children, data } = $props();
-  // console.log('data in +layout: ', data)
 </script>
 
 <FathomAnalytics FATHOM_ID={data.FATHOM_ID} />

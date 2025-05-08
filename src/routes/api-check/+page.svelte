@@ -251,7 +251,6 @@
   const componentsAnalysis = analyzeComponents(components);
   const formsAnalysis = analyzeComponents(forms);
   const typographyAnalysis = analyzeComponents(typography);
-  // console.log('data in +page: ', data)
 </script>
 
 <h1 class="my-4 text-3xl">API check</h1>

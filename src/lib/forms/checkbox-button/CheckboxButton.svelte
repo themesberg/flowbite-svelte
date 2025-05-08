@@ -21,7 +21,6 @@
   }
 
   function onChange() {
-    console.log("onChange", value);
     if (!value) return;
 
     // There's a bug in Svelte and bind:group is not working with wrapped checkbox

@@ -9,7 +9,6 @@
   const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
   let sidebarUrl = $state("");
   activeUrlStore.subscribe((value) => {
-    // console.log('value: ', value)
     sidebarUrl = value;
   });
 
