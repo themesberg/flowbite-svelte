@@ -1,8 +1,7 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import type { SizeType } from "$lib/types";
+  import type { SizeType, ButtonProps } from "$lib";
   import { button } from ".";
-  import type { ButtonProps } from "$lib/types";
   import clsx from "clsx";
   import { twMerge } from "tailwind-merge";
 

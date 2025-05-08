@@ -1,13 +1,13 @@
 <script lang="ts" generics="T">
-  import Button from "$lib/buttons/Button.svelte";
+  import { Button, type RadioButtonProps } from "$lib";
   import clsx from "clsx";
   import { radioButton } from ".";
-  import type { RadioButtonProps } from "$lib/types";
 
   let { children, group = $bindable<T>(), value = $bindable<T>(), inline, pill, outline, size, color, shadow, class: className, ...restProps }: RadioButtonProps<T> = $props();
 
   let inputEl: HTMLInputElement;
-  let base = $derived(radioButton({ inline, checked: value == group, class: clsx(className) }));
+  // let isChecked = $derived(value == group);
+  let base = $derived(radioButton({ inline, class: clsx(className) }));
 
   function clickHandler() {
     inputEl?.click(); // manually trigger the click on the hidden input

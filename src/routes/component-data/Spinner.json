@@ -2,7 +2,7 @@
   "name": "Spinner",
   "type": {
     "name": "SpinnerProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1334"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1336"
   },
   "props": [
     ["color", "\"primary\""],

@@ -14,6 +14,7 @@
     ["size", ""],
     ["color", ""],
     ["shadow", ""],
+    ["checkedClass", "\"outline outline-solid outline-4 outline-green-500\""],
     ["class: className", ""]
   ]
 }

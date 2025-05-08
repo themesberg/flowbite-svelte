@@ -12,13 +12,18 @@ export const carousel = tv({
 
 export const indicators = tv({
   slots: {
-    base: "absolute start-1/2 bottom-5 z-30 flex -translate-x-1/2 space-x-3 rtl:translate-x-1/2 rtl:space-x-reverse",
+    base: "absolute start-1/2 z-30 flex -translate-x-1/2 space-x-3 rtl:translate-x-1/2 rtl:space-x-reverse",
     indicator: "bg-gray-100 hover:bg-gray-300"
   },
   variants: {
     selected: {
       true: { indicator: "opacity-100" },
       false: { indicator: "opacity-60" }
+    },
+    position: {
+      top: {base: "top-5"},
+      bottom: {base: "bottom-5"},
+      withThumbnails: { base: "bottom-24"}
     }
   }
 });

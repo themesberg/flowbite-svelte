@@ -406,6 +406,7 @@ export interface IndicatorsProps extends Omit<HTMLAttributes<HTMLDivElement>, "c
   children?: Snippet<[{ selected: boolean; index: number }]>;
   activeClass?: string;
   inactiveClass?: string;
+  position?: "top" | "bottom" | "withThumbnails"
 }
 
 export interface ControlButtonProps extends HTMLButtonAttributes {
@@ -752,6 +753,7 @@ export interface RadioButtonProps<T> extends Omit<HTMLInputAttributes, "size"> {
   size?: ButtonProps["size"];
   color?: ButtonProps["color"];
   shadow?: boolean;
+  class?: string;
 }
 
 // range

@@ -12,7 +12,7 @@ thumnailSize: w-72
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, A } from '$lib'
 
-  const components = 'Radio, Label, Helper'
+  const components = 'Radio, RadioButton, Label, Helper'
 </script>
 
 The radio component can be used to allow the user to choose a single option from one or more available options coded with the utility classes from Tailwind CSS and available in multiple styles, variants, and colors and support dark mode.
@@ -306,12 +306,44 @@ This component accepts all props from the [Button](/docs/components/buttons) for
 </div>
 
 <ButtonGroup>
-  <RadioButton value="notes" bind:group={radioGroup}><ListMusicSolid class="h-7 w-7" /></RadioButton>
-  <RadioButton value="numbers" bind:group={radioGroup}><OrderedListOutline class="h-7 w-7" /></RadioButton>
-  <RadioButton value="bullets" bind:group={radioGroup}><ListOutline class="h-7 w-7" /></RadioButton>
+  <RadioButton color="green" value="notes" bind:group={radioGroup}><ListMusicSolid class="h-7 w-7" /></RadioButton>
+  <RadioButton color="green" value="numbers" bind:group={radioGroup}><OrderedListOutline class="h-7 w-7" /></RadioButton>
+  <RadioButton color="green" value="bullets" bind:group={radioGroup}><ListOutline class="h-7 w-7" /></RadioButton>
 </ButtonGroup>
 
 <p>List style: {radioGroup}</p>
+```
+
+## RadioButton style
+
+Use `color` and `class` props to style the `RadioButton` component:
+
+```svelte example
+<script lang="ts">
+	import { ButtonGroup, RadioButton } from 'flowbite-svelte';
+	let options = $state();
+</script>
+
+<ButtonGroup class="w-full">
+  <RadioButton
+    outline
+    color="purple"
+    name="options"
+    value="Option A"
+    bind:group={options}
+  >
+    Option A
+  </RadioButton>
+  <RadioButton
+    outline
+    color="red"
+    name="options"
+    value="Option B"
+    bind:group={options}
+  >
+  Option B
+  </RadioButton>
+</ButtonGroup>
 ```
 
 ## Component data
