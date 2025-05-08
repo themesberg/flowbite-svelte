@@ -28,7 +28,7 @@ export const sidebar = tv({
       "2xl": { base: "2xl:block" }
     },
     backdrop: {
-      true: { backdrop: "bg-gray-900 bg-opacity-75" }
+      true: { backdrop: "bg-gray-900 opacity-75" }
     }
   }
 });

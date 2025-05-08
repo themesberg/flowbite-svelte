@@ -185,7 +185,7 @@ export const gradientButton = tv({
     outline: {
       true: {
         base: "p-0.5",
-        outlineWrapper: "bg-white text-gray-900! dark:bg-gray-900 dark:text-white! hover:bg-transparent hover:text-inherit! group-hover:bg-opacity-0! group-hover:text-inherit!"
+        outlineWrapper: "bg-white text-gray-900! dark:bg-gray-900 dark:text-white! hover:bg-transparent hover:text-inherit! group-hover:opacity-0! group-hover:text-inherit!"
       }
     },
     pill: {
