@@ -274,7 +274,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
     maker: string;
     type: string;
     make: number;
-  }
+  };
   let items: ItemType[] = [
     { id: 1, maker: "Toyota", type: "ABC", make: 2017 },
     { id: 2, maker: "Ford", type: "CDE", make: 2018 },
@@ -287,15 +287,14 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
     { id: 7, maker: "Honda", type: "FGH", make: 2019 },
     { id: 8, maker: "Audi", type: "IJK", make: 2020 }
   ];
-  let carList: ItemType[] = $state(items)
-  const changeItems = () =>{
+  let carList: ItemType[] = $state(items);
+  const changeItems = () => {
     carList = carList[0].id === items[0].id ? items2 : items;
-  }
+  };
 </script>
 
 <Button onclick={changeItems} class="mb-4">Change data</Button>
 <Table items={carList} hoverable={true}></Table>
-
 ```
 
 ## Sorting by column

@@ -24,13 +24,9 @@
   };
 
   setContext("tableCtx", tableCtx);
-  let headItems = $derived(items && items.length > 0 
-    ? Object.keys(items[0]).map((key) => ({ text: key.charAt(0).toUpperCase() + key.slice(1) }))
-    : []);
+  let headItems = $derived(items && items.length > 0 ? Object.keys(items[0]).map((key) => ({ text: key.charAt(0).toUpperCase() + key.slice(1) })) : []);
 
-   let bodyItems = $derived(items && items.length > 0 
-    ? items.map((item) => Object.values(item))
-    : []);
+  let bodyItems = $derived(items && items.length > 0 ? items.map((item) => Object.values(item)) : []);
 </script>
 
 <div class={base({ class: divClass })}>
@@ -59,7 +55,7 @@
 @prop children
 @prop footerSlot
 @prop captionSlot
-@prop items: items
+@prop items
 @prop divClass = "relative overflow-x-auto"
 @prop striped
 @prop hoverable

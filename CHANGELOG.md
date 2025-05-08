@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.5
+
+### Patch Changes
+
+- fix: #1559 use derived in Table for items
+
 ## 1.0.4
 
 ### Patch Changes
