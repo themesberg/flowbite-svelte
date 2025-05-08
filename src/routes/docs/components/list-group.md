@@ -129,38 +129,32 @@ Use the following example when you want to use `Tooltip` with a horizontal list.
 ```svelte example class="space-x-8 h-64 flex justify-center items-center" hideResponsiveButtons
 <script lang="ts">
   import { Listgroup, ListgroupItem, Tooltip } from "flowbite-svelte";
-  import { BellOutline, ClockOutline, PenOutline, TrashBinOutline } from "flowbite-svelte-icons"
+  import { BellOutline, ClockOutline, PenOutline, TrashBinOutline } from "flowbite-svelte-icons";
 </script>
 
 <Listgroup horizontal active>
-    <ListgroupItem  >
-      <BellOutline />
-    </ListgroupItem>
-    <Tooltip>Tooltip bell</Tooltip>
-    <ListgroupItem  >
-      <ClockOutline />
-    </ListgroupItem>
-    <Tooltip>Tooltip clock</Tooltip>
-    <ListgroupItem id="trash" >
-      <TrashBinOutline />
-    </ListgroupItem>
-  </Listgroup>
-  <Tooltip triggeredBy="#trash">Tooltip trash</Tooltip>
-  
-  <Listgroup horizontal active>
-    <ListgroupItem id="profile" >
-      Profile
-    </ListgroupItem>
-    <ListgroupItem id="settings" >
-      Settings
-    </ListgroupItem>
-    <ListgroupItem id="message" >
-      Messages
-    </ListgroupItem>
-  </Listgroup>
-  <Tooltip triggeredBy="#profile">Tooltip profile</Tooltip>
-  <Tooltip triggeredBy="#settings">Tooltip settings</Tooltip>
-  <Tooltip triggeredBy="#message">Tooltip messages</Tooltip>
+  <ListgroupItem>
+    <BellOutline />
+  </ListgroupItem>
+  <Tooltip>Tooltip bell</Tooltip>
+  <ListgroupItem>
+    <ClockOutline />
+  </ListgroupItem>
+  <Tooltip>Tooltip clock</Tooltip>
+  <ListgroupItem id="trash">
+    <TrashBinOutline />
+  </ListgroupItem>
+</Listgroup>
+<Tooltip triggeredBy="#trash">Tooltip trash</Tooltip>
+
+<Listgroup horizontal active>
+  <ListgroupItem id="profile">Profile</ListgroupItem>
+  <ListgroupItem id="settings">Settings</ListgroupItem>
+  <ListgroupItem id="message">Messages</ListgroupItem>
+</Listgroup>
+<Tooltip triggeredBy="#profile">Tooltip profile</Tooltip>
+<Tooltip triggeredBy="#settings">Tooltip settings</Tooltip>
+<Tooltip triggeredBy="#message">Tooltip messages</Tooltip>
 ```
 
 ## Advanced

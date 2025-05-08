@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Listgroup, ListgroupItem, Avatar, Tooltip } from "$lib";
-  import { BellOutline, ClockOutline, TrashBinOutline, TrashBinSolid } from "flowbite-svelte-icons"
+  import { BellOutline, ClockOutline, TrashBinOutline, TrashBinSolid } from "flowbite-svelte-icons";
   let simpleList = ["Profile", "Settings", "Messages", "Download"];
 
   let links = [
@@ -59,32 +59,26 @@
 
 <h2 class="text-2xl">Horizontal list with tooltip</h2>
 
-<div class="my-4 rounded border p-4 space-x-8 h-64 flex justify-center items-center">
+<div class="my-4 flex h-64 items-center justify-center space-x-8 rounded border p-4">
   <Listgroup horizontal active>
-    <ListgroupItem  >
+    <ListgroupItem>
       <BellOutline />
     </ListgroupItem>
     <Tooltip>Tooltip bell</Tooltip>
-    <ListgroupItem  >
+    <ListgroupItem>
       <ClockOutline />
     </ListgroupItem>
     <Tooltip>Tooltip clock</Tooltip>
-    <ListgroupItem id="trash" >
+    <ListgroupItem id="trash">
       <TrashBinOutline />
     </ListgroupItem>
   </Listgroup>
   <Tooltip triggeredBy="#trash">Tooltip trash</Tooltip>
-  
+
   <Listgroup horizontal active>
-    <ListgroupItem id="profile" >
-      Profile
-    </ListgroupItem>
-    <ListgroupItem id="settings" >
-      Settings
-    </ListgroupItem>
-    <ListgroupItem id="message" >
-      Messages
-    </ListgroupItem>
+    <ListgroupItem id="profile">Profile</ListgroupItem>
+    <ListgroupItem id="settings">Settings</ListgroupItem>
+    <ListgroupItem id="message">Messages</ListgroupItem>
   </Listgroup>
   <Tooltip triggeredBy="#profile">Tooltip profile</Tooltip>
   <Tooltip triggeredBy="#settings">Tooltip settings</Tooltip>

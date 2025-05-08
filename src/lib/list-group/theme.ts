@@ -60,7 +60,7 @@ export const listGroupItem = tv({
       active: true,
       state: "normal",
       class: "hover:bg-gray-100 hover:text-primary-700 dark:hover:bg-gray-600 dark:hover:text-white focus:z-40 focus:outline-hidden focus:ring-2 focus:ring-primary-700 focus:text-primary-700 dark:focus:ring-gray-500 dark:focus:text-white"
-    },
+    }
     // {
     //   horizontal: true,
     //   class: "focus:first:rounded-s-lg focus:last:rounded-e-lg"

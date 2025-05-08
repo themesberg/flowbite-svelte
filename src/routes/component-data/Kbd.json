@@ -2,7 +2,7 @@
   "name": "Kbd",
   "type": {
     "name": "KbdProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L875"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L876"
   },
   "props": [
     ["children", ""],

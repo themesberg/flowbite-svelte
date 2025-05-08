@@ -171,7 +171,7 @@
 
 <!-- The move listeners go here, so things keep working if the touch strays out of the element. -->
 <svelte:document onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} />
-<div bind:this={carouselDiv} class={twMerge('relative', divClass)} onmousedown={onDragStart} ontouchstart={onDragStart} onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} role="button" aria-label={ariaLabel} tabindex="0">
+<div bind:this={carouselDiv} class={twMerge("relative", divClass)} onmousedown={onDragStart} ontouchstart={onDragStart} onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} role="button" aria-label={ariaLabel} tabindex="0">
   <div {...restProps} class={carousel({ class: clsx(activeDragGesture === undefined ? "transition-transform" : "", className) })} use:loop={duration}>
     {#if slide}
       {@render slide({ index, Slide })}
@@ -200,5 +200,6 @@
 @prop imgClass = ""
 @prop class: className
 @prop onchange
+@prop divClass
 @prop ...restProps
 -->

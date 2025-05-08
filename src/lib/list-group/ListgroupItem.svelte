@@ -7,7 +7,7 @@
   let { children, active, current, disabled, horizontal, name, Icon, class: className, iconClass = "me-2.5 h-5 w-5", onclick, ...restProps }: ListgroupItemProps = $props();
 
   active = active ?? getContext("listGrpActive");
-  horizontal = horizontal ?? getContext("listGrpHorizontal")
+  horizontal = horizontal ?? getContext("listGrpHorizontal");
 
   let state: ListgroupItemVariants["state"] = $derived(disabled ? "disabled" : current ? "current" : "normal");
   let itemClass = $derived(listGroupItem({ state, active, horizontal, class: clsx(className) }));
@@ -42,7 +42,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L905)
+[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L906)
 ## Props
 @prop children
 @prop active

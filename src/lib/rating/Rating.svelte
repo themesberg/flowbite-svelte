@@ -41,7 +41,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[RatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1072)
+[RatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1074)
 ## Props
 @prop children
 @prop text
@@ -52,4 +52,5 @@
 @prop icon: Icon = Star
 @prop count = false
 @prop pClass
+@prop ...restProps
 -->

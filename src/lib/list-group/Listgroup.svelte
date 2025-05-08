@@ -11,10 +11,10 @@
 
   let tag = active ? "div" : "ul";
   setContext("listGrpActive", active);
-  setContext("listGrpHorizontal", horizontal)
+  setContext("listGrpHorizontal", horizontal);
 
   function createItemClickHandler(item: any) {
-    return function(event: MouseEvent) {
+    return function (event: MouseEvent) {
       if (onclick) {
         // Create an event with the item data in the detail property
         const itemClickEvent = { ...event, detail: item };
@@ -30,7 +30,7 @@
       {#if children}
         {@render children(item)}
       {:else if typeof item === "string"}
-        <ListgroupItem href={undefined} class={itemClass} {iconClass} {active} {horizontal} onclick={createItemClickHandler(item)} >{item}</ListgroupItem>
+        <ListgroupItem href={undefined} class={itemClass} {iconClass} {active} {horizontal} onclick={createItemClickHandler(item)}>{item}</ListgroupItem>
       {:else}
         <ListgroupItem href={item.href} class={itemClass} {iconClass} {active} {horizontal} {...item} onclick={item.onclick ?? createItemClickHandler(item)} />
       {/if}
@@ -44,7 +44,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L894)
+[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L895)
 ## Props
 @prop children
 @prop items
