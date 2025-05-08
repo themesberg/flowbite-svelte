@@ -2,9 +2,9 @@
   import { setContext } from "svelte";
   import { table as tableCls, TableHead, TableBody } from ".";
   import clsx from "clsx";
-  import type { TableProps, TableCtxType, HeadItemType } from "$lib/types";
+  import type { TableProps, TableCtxType } from "$lib";
 
-  let { children, footerSlot, captionSlot, items: tableItems, divClass = "relative overflow-x-auto", striped, hoverable, border = true, shadow, color = "default", class: className, ...restProps }: TableProps = $props();
+  let { children, footerSlot, captionSlot, items, divClass = "relative overflow-x-auto", striped, hoverable, border = true, shadow, color = "default", class: className, ...restProps }: TableProps = $props();
 
   const { base, table } = $derived(tableCls({ color, shadow }));
 
@@ -24,12 +24,13 @@
   };
 
   setContext("tableCtx", tableCtx);
-  let headItems: (string | HeadItemType)[] = $state([]);
-  let bodyItems: (string | number | boolean)[][] = $state([]);
-  if (tableItems) {
-    headItems = Object.keys(tableItems[0]).map((key) => ({ text: key.charAt(0).toUpperCase() + key.slice(1) }));
-    bodyItems = tableItems.map((item) => Object.values(item));
-  }
+  let headItems = $derived(items && items.length > 0 
+    ? Object.keys(items[0]).map((key) => ({ text: key.charAt(0).toUpperCase() + key.slice(1) }))
+    : []);
+
+   let bodyItems = $derived(items && items.length > 0 
+    ? items.map((item) => Object.values(item))
+    : []);
 </script>
 
 <div class={base({ class: divClass })}>
@@ -37,7 +38,7 @@
     {#if captionSlot}
       {@render captionSlot()}
     {/if}
-    {#if tableItems}
+    {#if items && items.length > 0}
       <TableHead {headItems} />
       <TableBody {bodyItems} />
     {:else if children}
@@ -58,7 +59,7 @@
 @prop children
 @prop footerSlot
 @prop captionSlot
-@prop items: tableItems
+@prop items: items
 @prop divClass = "relative overflow-x-auto"
 @prop striped
 @prop hoverable

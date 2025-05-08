@@ -264,6 +264,40 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
 <Table {items} hoverable={true}></Table>
 ```
 
+## Dynamic data
+
+```svelte example
+<script lang="ts">
+  import { Table, Button } from "flowbite-svelte";
+  type ItemType = {
+    id: number;
+    maker: string;
+    type: string;
+    make: number;
+  }
+  let items: ItemType[] = [
+    { id: 1, maker: "Toyota", type: "ABC", make: 2017 },
+    { id: 2, maker: "Ford", type: "CDE", make: 2018 },
+    { id: 3, maker: "Volvo", type: "FGH", make: 2019 },
+    { id: 4, maker: "Saab", type: "IJK", make: 2020 }
+  ];
+  let items2: ItemType[] = [
+    { id: 5, maker: "Nissan", type: "ABC", make: 2017 },
+    { id: 6, maker: "VW", type: "CDE", make: 2018 },
+    { id: 7, maker: "Honda", type: "FGH", make: 2019 },
+    { id: 8, maker: "Audi", type: "IJK", make: 2020 }
+  ];
+  let carList: ItemType[] = $state(items)
+  const changeItems = () =>{
+    carList = carList[0].id === items[0].id ? items2 : items;
+  }
+</script>
+
+<Button onclick={changeItems} class="mb-4">Change data</Button>
+<Table items={carList} hoverable={true}></Table>
+
+```
+
 ## Sorting by column
 
 ```svelte example
