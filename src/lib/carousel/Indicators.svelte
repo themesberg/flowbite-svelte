@@ -15,7 +15,17 @@
 <div class={base({ class: clsx(className) })} {...restProps}>
   {#each $state.images as _, idx}
     {@const selected = $state.index === idx}
-    <button onclick={() => ($state.index = idx)}>
+    <button
+      onclick={() => {
+        const isForward = idx > $state.index;
+        state.update((_state) => {
+          _state.forward = isForward;
+          _state.index = idx;
+          _state.lastSlideChange = new Date();
+          return { ..._state };
+        });
+      }}
+    >
       {#if children}
         {@render children({ selected, index: idx })}
       {:else}
