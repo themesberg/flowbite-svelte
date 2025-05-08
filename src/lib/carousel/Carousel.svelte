@@ -61,12 +61,12 @@
     /* eslint-disable  @typescript-eslint/no-explicit-any */
     let intervalId: any;
 
-    if (duration > 0) intervalId = setInterval(nextSlide, duration);
+    if (duration > 0) intervalId = setInterval(() => (forward ? nextSlide() : prevSlide()), duration);
 
     return {
       update: (duration: number) => {
         clearInterval(intervalId);
-        if (duration > 0) intervalId = setInterval(nextSlide, duration);
+        if (duration > 0) intervalId = setInterval(() => (forward ? nextSlide() : prevSlide()), duration);
       },
       destroy: () => clearInterval(intervalId)
     };
