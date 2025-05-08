@@ -6,7 +6,8 @@
 
   let { children, active, current, disabled, horizontal, name, Icon, class: className, iconClass = "me-2.5 h-5 w-5", onclick, ...restProps }: ListgroupItemProps = $props();
 
-  active = active ?? getContext("active");
+  active = active ?? getContext("listGrpActive");
+  horizontal = horizontal ?? getContext("listGrpHorizontal")
 
   let state: ListgroupItemVariants["state"] = $derived(disabled ? "disabled" : current ? "current" : "normal");
   let itemClass = $derived(listGroupItem({ state, active, horizontal, class: clsx(className) }));

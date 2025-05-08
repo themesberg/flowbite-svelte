@@ -10,7 +10,8 @@
   const base = $derived(listGroup({ rounded, border, horizontal, class: clsx(className) }));
 
   let tag = active ? "div" : "ul";
-  setContext("active", active);
+  setContext("listGrpActive", active);
+  setContext("listGrpHorizontal", horizontal)
 
   function createItemClickHandler(item: any) {
     return function(event: MouseEvent) {
