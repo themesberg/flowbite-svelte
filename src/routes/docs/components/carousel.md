@@ -134,9 +134,9 @@ You can control the `Carousel` component externally by the `index` prop. Here is
 <div class="max-w-4xl space-y-4">
   <Carousel {images} bind:index>
     <Controls />
-    <Indicators />
+    <Indicators position="withThumbnails" />
+    <Thumbnails {images} bind:index />
   </Carousel>
-  <Thumbnails {images} bind:index />
 </div>
 ```
 
