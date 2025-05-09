@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.7
+
+### Patch Changes
+
+- fix: add chechedClass to RadioButton
+
 ## 1.0.6
 
 ### Patch Changes

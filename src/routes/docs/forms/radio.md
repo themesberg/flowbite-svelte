@@ -32,7 +32,7 @@ Use the default example of a radio component with the checked and unchecked stat
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
   import { Radio } from "flowbite-svelte";
-  let selectedValue = "2";
+  let selectedValue = $state("2");
 </script>
 
 <Radio name="example1" value="1" bind:group={selectedValue}>Default radio</Radio>
@@ -48,7 +48,7 @@ This example can be used for the disabled state of the radio component by applyi
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
   import { Radio } from "flowbite-svelte";
-  let selectedValue = "2";
+  let selectedValue = $state("2");
 </script>
 
 <Radio name="disabled-state" disabled value="1" bind:group={selectedValue}>Disabled radio</Radio>
@@ -121,7 +121,7 @@ Use this example of a radio inside a card element to enable a larger area of cli
 ```svelte example hideScript
 <script>
   import { Radio } from "flowbite-svelte";
-  let selectedValue3 = "2";
+  let selectedValue3 = $state("2");
 </script>
 
 <div class="grid grid-cols-2 gap-6">
@@ -141,7 +141,7 @@ Use this example to show a list of radio items grouped inside a card.
 ```svelte example
 <script>
   import { Radio } from "flowbite-svelte";
-  let technology = "svelte";
+  let technology = $state("svelte");
 </script>
 
 <p class="mb-4 font-semibold text-gray-900 dark:text-white">
@@ -181,7 +181,7 @@ Here’s an example of a list group that you can use right away.
 <script>
   import { Radio, Dropdown, DropdownItem, Button, Helper } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
-  let group3 = 2;
+  let group3 = $state(2);
 </script>
 
 <Button>Dropdown radio<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
@@ -208,7 +208,7 @@ You can align the radio elements horizontally by using a wrapper tag and applyin
 ```svelte example
 <script>
   import { Radio } from "flowbite-svelte";
-  let inline1 = "second";
+  let inline1 = $state("second");
 </script>
 
 <div class="flex gap-3">
@@ -224,7 +224,7 @@ You can use the property `inline` as the alternative.
 ```svelte example
 <script>
   import { Radio } from "flowbite-svelte";
-  let inline2 = "third";
+  let inline2 = $state("third");
 </script>
 
 <Radio bind:group={inline2} inline value="first" class="me-2">Inline 1</Radio>
@@ -238,7 +238,7 @@ You can use the property `inline` as the alternative.
 ```svelte example hideResponsiveButtons
 <script>
   import { Radio } from "flowbite-svelte";
-  let colors = "text-purple-500";
+  let colors = $state("text-purple-500");
 </script>
 
 <p class="mb-4 font-semibold {colors}">Select color</p>
@@ -292,11 +292,11 @@ The special case component - `RadioButton` - is the `Radio` with the [Button](/d
 This component accepts all props from the [Button](/docs/components/buttons) for styling and `Radio` for behaviour.
 
 ```svelte example class="space-y-4"
-<script>
+<script lang="ts">
   import { RadioButton, ButtonGroup } from "flowbite-svelte";
   import { ListMusicSolid, OrderedListOutline, ListOutline } from "flowbite-svelte-icons";
 
-  let radioGroup = "notes";
+  let radioGroup = $state("notes");
 </script>
 
 <div>
@@ -325,12 +325,8 @@ Use `color` and `checkedClass` props to style the checked state:
 </script>
 
 <ButtonGroup>
-  <RadioButton color="amber" outline checkedClass="outline-4 outline-amber-500" name="options" value="Option 1" bind:group={options} >
-    Option 1
-  </RadioButton>
-  <RadioButton color="blue" outline checkedClass="outline-4 outline-blue-500" name="options" value="Option 2" bind:group={options} >
-  Option 2
-  </RadioButton>
+  <RadioButton color="amber" outline checkedClass="outline-4 outline-amber-500" name="options" value="Option 1" bind:group={options}>Option 1</RadioButton>
+  <RadioButton color="blue" outline checkedClass="outline-4 outline-blue-500" name="options" value="Option 2" bind:group={options}>Option 2</RadioButton>
 </ButtonGroup>
 ```
 

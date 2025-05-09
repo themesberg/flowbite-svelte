@@ -14,6 +14,7 @@
     ["size", ""],
     ["color", ""],
     ["shadow", ""],
+    ["checkedClass", ""],
     ["class: className", ""]
   ]
 }
