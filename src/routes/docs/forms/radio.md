@@ -300,15 +300,15 @@ This component accepts all props from the [Button](/docs/components/buttons) for
 </script>
 
 <div>
-  <RadioButton value="notes" bind:group={radioGroup}><ListMusicSolid class="h-7 w-7" /></RadioButton>
-  <RadioButton value="numbers" bind:group={radioGroup}><OrderedListOutline class="h-7 w-7" /></RadioButton>
-  <RadioButton value="bullets" bind:group={radioGroup}><ListOutline class="h-7 w-7" /></RadioButton>
+  <RadioButton value="notes" checkedClass="outline-4 outline-primary-500" bind:group={radioGroup}><ListMusicSolid class="h-7 w-7" /></RadioButton>
+  <RadioButton value="numbers" checkedClass="outline-4 outline-primary-500" bind:group={radioGroup}><OrderedListOutline class="h-7 w-7" /></RadioButton>
+  <RadioButton value="bullets" checkedClass="outline-4 outline-primary-500" bind:group={radioGroup}><ListOutline class="h-7 w-7" /></RadioButton>
 </div>
 
 <ButtonGroup>
-  <RadioButton color="green" value="notes" bind:group={radioGroup}><ListMusicSolid class="h-7 w-7" /></RadioButton>
-  <RadioButton color="green" value="numbers" bind:group={radioGroup}><OrderedListOutline class="h-7 w-7" /></RadioButton>
-  <RadioButton color="green" value="bullets" bind:group={radioGroup}><ListOutline class="h-7 w-7" /></RadioButton>
+  <RadioButton color="green" outline value="notes" checkedClass="outline-4 outline-green-500" bind:group={radioGroup}><ListMusicSolid class="h-7 w-7" /></RadioButton>
+  <RadioButton color="green" outline value="numbers" checkedClass="outline-4 outline-green-500" bind:group={radioGroup}><OrderedListOutline class="h-7 w-7" /></RadioButton>
+  <RadioButton color="green" outline value="bullets" checkedClass="outline-4 outline-green-500" bind:group={radioGroup}><ListOutline class="h-7 w-7" /></RadioButton>
 </ButtonGroup>
 
 <p>List style: {radioGroup}</p>
@@ -316,7 +316,7 @@ This component accepts all props from the [Button](/docs/components/buttons) for
 
 ## RadioButton style
 
-Use `color` and `class` props to style the `RadioButton` component:
+Use `color` and `checkedClass` props to style the checked state:
 
 ```svelte example
 <script lang="ts">
@@ -324,9 +324,13 @@ Use `color` and `class` props to style the `RadioButton` component:
   let options = $state();
 </script>
 
-<ButtonGroup class="w-full">
-  <RadioButton outline color="purple" name="options" value="Option A" bind:group={options}>Option A</RadioButton>
-  <RadioButton outline color="red" name="options" value="Option B" bind:group={options}>Option B</RadioButton>
+<ButtonGroup>
+  <RadioButton color="amber" outline checkedClass="outline-4 outline-amber-500" name="options" value="Option 1" bind:group={options} >
+    Option 1
+  </RadioButton>
+  <RadioButton color="blue" outline checkedClass="outline-4 outline-blue-500" name="options" value="Option 2" bind:group={options} >
+  Option 2
+  </RadioButton>
 </ButtonGroup>
 ```
 

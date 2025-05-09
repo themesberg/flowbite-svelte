@@ -754,6 +754,7 @@ export interface RadioButtonProps<T> extends Omit<HTMLInputAttributes, "size"> {
   color?: ButtonProps["color"];
   shadow?: boolean;
   class?: string;
+  checkedClass?: string;
 }
 
 // range
