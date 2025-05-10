@@ -81,6 +81,38 @@ Use this example as a generic form element which includes multiple input fields 
 </form>
 ```
 
+
+## Clearable
+
+```svelte example
+<script>
+  import { Input } from "flowbite-svelte";
+</script>
+
+  <Input clearable class="my-4"/>
+```
+
+## Event
+
+```svelte example
+<script>
+  import { Input } from "flowbite-svelte";
+</script>
+
+<Input clearable clearableOnClick={()=>{alert('Clicked close button!')}} class="my-4"/>
+```
+
+## Accessing Input Element with elementRef
+
+```svelte example
+<script lang="ts">
+  import { Input, Button } from 'flowbite-svelte';
+  let elementRef = $state() as HTMLInputElement;
+</script>
+  <Input bind:elementRef={elementRef} class="my-4"/>
+  <Button onclick={() => elementRef?.focus()}>Focus on Input</Button>
+```
+
 ## Input sizes
 
 Use the following examples to apply a small, default or large size for the input fields.
@@ -387,17 +419,6 @@ Use this example to show a dropdown menu right next to the input field.
     <SearchOutline class="h-5 w-5" />
   </Button>
 </ButtonGroup>
-```
-
-## Accessing Input Element with elementRef
-
-```svelte example
-<script lang="ts">
-  import { Input, Button } from 'flowbite-svelte';
-  let elementRef = $state() as HTMLInputElement;
-</script>
-  <Input bind:elementRef={elementRef} class="my-4"/>
-  <Button onclick={() => elementRef?.focus()}>Focus on Input</Button>
 ```
 
 ## Advanced usage

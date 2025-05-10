@@ -7,7 +7,8 @@ export const input = tv({
     base: "relative w-full",
     input: "block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right focus:outline-hidden",
     left: "flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400 pointer-events-none start-0 p-2.5",
-    right: "flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400 end-0 p-2.5"
+    right: "flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400 end-0 p-2.5",
+    clearbtn: "absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black"
   },
   variants: {
     size: {

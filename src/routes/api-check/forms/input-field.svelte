@@ -305,9 +305,22 @@
   </div>
 </div>
 
-<h2>Accessing Input element using elementRef</h2>
+<h2 class="my-4 text-2xl">Accessing Input element using elementRef</h2>
 
 <div class="my-4 rounded border p-4">
   <Input bind:elementRef={elementRef} class="my-4"/>
   <Button onclick={() => elementRef?.focus()}>Focus on Input</Button>
 </div>
+
+<h2 class="my-4 text-2xl">Clearable</h2>
+
+<div class="my-4 rounded border p-4">
+  <Input clearable class="my-4"/>
+</div>
+
+<h2 class="my-4 text-2xl">Event</h2>
+
+<div class="my-4 rounded border p-4 mb-40">
+  <Input clearable clearableOnClick={()=>{alert('Clicked close button!')}} class="my-4"/>
+</div>
+

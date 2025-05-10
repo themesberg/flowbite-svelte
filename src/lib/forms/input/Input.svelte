@@ -4,7 +4,7 @@
   import { input, clampSize } from ".";
   import clsx from "clsx";
 
-  let { children, left, right, value = $bindable(), elementRef = $bindable(), clearable = false, size, color = "default", class: className, classLeft, classRight, divClass, ...restProps }: InputProps<InputValue> = $props();
+  let { children, left, right, value = $bindable(), elementRef = $bindable(), clearable = false, size, color = "default", class: className, classLeft, classRight, divClass, clearableSvgClass, clearableClass, clearableOnClick, ...restProps }: InputProps<InputValue> = $props();
 
   // tinted if put in component having its own background
   let background: boolean = getContext("background");
@@ -14,10 +14,14 @@
   let _size = $derived(size || clampSize(group?.size) || "md");
   const _color = $derived(color === "default" && background ? "tinted" : color);
 
-  const { base, input: inputCls, left: leftCls, right: rightCls } = $derived(input({ size: _size, color: _color, group: isGroup, class: clsx(className) }));
+  const { base, input: inputCls, left: leftCls, right: rightCls, clearbtn } = $derived(input({ size: _size, color: _color, group: isGroup, class: clsx(className) }));
 
   const clearAll = () => {
-    value = undefined;
+    if (elementRef) {
+      elementRef.value = "";
+      value = undefined;
+    }
+    if(clearableOnClick) clearableOnClick();
   };
 </script>
 
@@ -31,20 +35,20 @@
     {@render children({ ...restProps, class: inputCls() })}
   {:else}
     <input {...restProps} bind:value bind:this={elementRef} class={inputCls({ class: clsx(className) })} />
+    {#if value !== undefined && value !== '' && clearable}
+      <CloseButton onclick={clearAll} class={clearbtn({class: clearableClass})} color="none" aria-label="Clear search value" svgClass={clearableSvgClass} />
+    {/if}
   {/if}
   {#if right}
     <div class={rightCls({ class: classRight })}>
       {@render right()}
     </div>
   {/if}
-  {#if clearable && value && `${value}`.length > 0}
-    <CloseButton {size} onclick={clearAll} class={rightCls({ class: classRight })} />
-  {/if}
 {/snippet}
 
 {#if group}
   {@render inputContent()}
-{:else if right || left}
+{:else if right || left || clearable}
   <div class={base({ class: divClass })}>
     {@render inputContent()}
   </div>

@@ -19,7 +19,7 @@
 
 <div class={base({ class: clsx(divClass) })}>
   <input {id} placeholder=" " bind:value bind:this={elementRef} {...restProps} aria-describedby={ariaDescribedby} class={input({ class: inputClass })} />
-  {#if value && clearable}
+  {#if value !== undefined && value !== '' && clearable}
     <CloseButton onclick={clearAll} class={clearbtn({class: clearableClass})} color="none" aria-label="Clear search value" svgClass={clearableSvgClass} />
   {/if}
   <label for={id} class={label({ class: labelClass })}>

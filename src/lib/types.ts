@@ -701,8 +701,8 @@ export interface FileuploadProps extends Omit<HTMLInputAttributes, "size"> {
   files?: FileList | null;
   size?: FileuploadViariants["size"];
   color?: InputProps<never>["color"];
-  clearable?: boolean;
   elementRef?: HTMLInputElement;
+  clearable?: boolean;
   clearableSvgClass?: string;
   clearableOnClick?: () => void;
   clearableClass?: string;
@@ -739,11 +739,14 @@ export interface InputProps<T extends InputValue = string> extends Omit<HTMLInpu
   size?: InputVariants["size"];
   value?: T;
   elementRef?: HTMLInputElement;
-  clearable?: boolean;
   color?: InputVariants["color"];
   classLeft?: string;
   classRight?: string;
   divClass?: string;
+  clearable?: boolean;
+  clearableSvgClass?: string;
+  clearableClass?: string;
+  clearableOnClick?: () => void;
 }
 
 // input-addon

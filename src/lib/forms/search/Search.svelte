@@ -28,7 +28,7 @@
       {@render children()}
     </div>
   {/if}
-  {#if value && clearable}
+  {#if value !== undefined && value !== '' && clearable}
     <CloseButton onclick={clearAll} class={clearbtn({class: clearableClass})} color="none" aria-label="Clear search value" svgClass={clearableSvgClass} />
   {/if}
 </div>

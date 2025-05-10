@@ -55,6 +55,8 @@
   }
 
   let value = $state("");
+  let eventValue = $state("");
+  let clearableValue = $state("");
 
   const submitted = (e: Event) => {
     e.preventDefault();
@@ -186,4 +188,16 @@ Get started with this example if you would like to enable voice search for your 
   }}
   >Update text</Button>
 </form>
+</div>
+
+<h2 class="text-2xl">Clearable</h2>
+
+<div class="my-4 rounded border p-4">
+  <Search bind:value={clearableValue} clearable/>
+</div>
+
+<h2 class="text-2xl">Event</h2>
+
+<div class="my-4 rounded border p-4 mb-32">
+  <Search bind:value={eventValue} clearable clearableOnClick={()=>{alert('Clicked clear button!')}}/>
 </div>
