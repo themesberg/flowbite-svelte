@@ -704,6 +704,7 @@ export interface FileuploadProps extends Omit<HTMLInputAttributes, "size"> {
   elementRef?: HTMLInputElement;
   clearable?: boolean;
   clearableSvgClass?: string;
+  clearableColor?: CloseButtonVariants['color'];
   clearableOnClick?: () => void;
   clearableClass?: string;
 }
@@ -722,6 +723,7 @@ export interface FloatingLabelInputProps extends Omit<HTMLInputAttributes, "size
   labelClass?: string;
   clearable?: boolean;
   clearableSvgClass?: string;
+  clearableColor?: CloseButtonVariants['color'];
   clearableClass?: string;
   clearableOnClick?: () => void;
 }
@@ -745,6 +747,7 @@ export interface InputProps<T extends InputValue = string> extends Omit<HTMLInpu
   divClass?: string;
   clearable?: boolean;
   clearableSvgClass?: string;
+  clearableColor?: CloseButtonVariants['color'];
   clearableClass?: string;
   clearableOnClick?: () => void;
 }
@@ -797,6 +800,7 @@ export interface SearchProps extends SearchVariants, Omit<HTMLInputAttributes, "
   elementRef?: HTMLInputElement;
   clearable?: boolean;
   clearableSvgClass?: string;
+  clearableColor?: CloseButtonVariants['color'];
   clearableClass?: string;
   clearableOnClick?: () => void;
 }
@@ -817,6 +821,7 @@ export interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttribute
   selectClass?: string;
   clearable?: boolean;
   clearableSvgClass?: string;
+  clearableColor?: CloseButtonVariants['color'];
   clearableClass?: string;
   clearableOnClick?: () => void;
 }
@@ -877,6 +882,11 @@ export interface TextareaProps extends HTMLTextareaAttributes {
   headerClass?: string;
   footerClass?: string;
   cols?: number;
+  clearable?: boolean;
+  clearableSvgClass?: string;
+  clearableColor?: CloseButtonVariants['color'];
+  clearableClass?: string;
+  clearableOnClick?: () => void;
 }
 
 // toggle

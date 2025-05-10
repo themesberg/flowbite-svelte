@@ -3,7 +3,7 @@
   import { search } from ".";
   import  { CloseButton, type SearchProps } from "$lib";
 
-  let { children, class: inputClass, size, placeholder = "Search", value = $bindable(), elementRef = $bindable(), clearable = false, clearableSvgClass, clearableClass, clearableOnClick, ...restProps }: SearchProps = $props();
+  let { children, class: inputClass, size, placeholder = "Search", value = $bindable(), elementRef = $bindable(), clearable = false, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, ...restProps }: SearchProps = $props();
 
   const { base, content, icon, clearbtn, input: inputCls, leftDiv } = $derived(search({ size }));
 
@@ -29,7 +29,7 @@
     </div>
   {/if}
   {#if value !== undefined && value !== '' && clearable}
-    <CloseButton onclick={clearAll} class={clearbtn({class: clearableClass})} color="none" aria-label="Clear search value" svgClass={clearableSvgClass} />
+    <CloseButton onclick={clearAll} class={clearbtn({class: clearableClass})} color={clearableColor} aria-label="Clear search value" svgClass={clearableSvgClass} />
   {/if}
 </div>
 

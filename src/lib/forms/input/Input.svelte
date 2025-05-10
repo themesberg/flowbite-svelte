@@ -4,7 +4,7 @@
   import { input, clampSize } from ".";
   import clsx from "clsx";
 
-  let { children, left, right, value = $bindable(), elementRef = $bindable(), clearable = false, size, color = "default", class: className, classLeft, classRight, divClass, clearableSvgClass, clearableClass, clearableOnClick, ...restProps }: InputProps<InputValue> = $props();
+  let { children, left, right, value = $bindable(), elementRef = $bindable(), clearable = false, size, color = "default", class: className, classLeft, classRight, divClass, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, ...restProps }: InputProps<InputValue> = $props();
 
   // tinted if put in component having its own background
   let background: boolean = getContext("background");
@@ -36,7 +36,7 @@
   {:else}
     <input {...restProps} bind:value bind:this={elementRef} class={inputCls({ class: clsx(className) })} />
     {#if value !== undefined && value !== '' && clearable}
-      <CloseButton onclick={clearAll} class={clearbtn({class: clearableClass})} color="none" aria-label="Clear search value" svgClass={clearableSvgClass} />
+      <CloseButton onclick={clearAll} class={clearbtn({class: clearableClass})} color={clearableColor} aria-label="Clear search value" svgClass={clearableSvgClass} />
     {/if}
   {/if}
   {#if right}

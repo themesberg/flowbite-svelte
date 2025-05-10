@@ -17,6 +17,20 @@
   <Textarea id="textarea-id" placeholder="Your message" rows={4} name="message" />
 </div>
 
+<h2 class="my-4 text-2xl">Clearable</h2>
+
+<div class="my-4 rounded border p-4">
+  <Label for="textarea-id" class="mb-2">Your message</Label>
+  <Textarea clearable id="textarea-clearable" placeholder="Your message" rows={4} name="message" />
+</div>
+
+<h2 class="my-4 text-2xl">Event</h2>
+
+<div class="my-4 rounded border p-4">
+  <Label for="textarea-id" class="mb-2">Your message</Label>
+  <Textarea clearable clearableOnClick={()=>{alert('Clicked clear button!')}} class="textarea-event" placeholder="Your message" rows={4} name="message" />
+</div>
+
 <h2 class="my-4 text-2xl">WYSIWYG Editor</h2>
 
 <div class="my-4 rounded border p-4">

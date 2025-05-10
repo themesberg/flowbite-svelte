@@ -3,7 +3,7 @@
   import { select as selectCls } from ".";
   import {type SelectProps, CloseButton } from "$lib";
 
-  let { children, items, value = $bindable(), elementRef = $bindable(), underline, size = "md", selectClass, class: className, placeholder = "Choose option ...", clearable, clearableSvgClass, clearableClass, clearableOnClick, ...restProps }: SelectProps<T> = $props();
+  let { children, items, value = $bindable(), elementRef = $bindable(), underline, size = "md", selectClass, class: className, placeholder = "Choose option ...", clearable, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, ...restProps }: SelectProps<T> = $props();
 
   const {base, select, clearbtn} = $derived(selectCls({ underline, size}));
 
@@ -33,7 +33,7 @@
   {/if}
 </select>
   {#if value !== undefined && value !== '' && clearable}
-    <CloseButton onclick={clearAll} class={clearbtn({class: clearableClass})} color="none" aria-label="Clear search value" svgClass={clearableSvgClass} />
+    <CloseButton onclick={clearAll} class={clearbtn({class: clearableClass})} color={clearableColor} aria-label="Clear search value" svgClass={clearableSvgClass} />
   {/if}
 </div>
 <!--
