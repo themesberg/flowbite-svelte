@@ -24,7 +24,6 @@
   let y = $derived(placement === "top" ? -100 : placement === "bottom" ? innerHeight + 100 : undefined);
 
   let transition_params = $derived(Object.assign({}, { x, y, duration: 200, easing: sineIn }));
-
 </script>
 
 <svelte:window onkeydown={hidden ? undefined : (ev: KeyboardEvent) => ev.key === "Escape" && (hidden = true)} bind:innerWidth bind:innerHeight />
@@ -40,7 +39,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L547)
+[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L562)
 ## Props
 @prop children
 @prop hidden = $bindable()

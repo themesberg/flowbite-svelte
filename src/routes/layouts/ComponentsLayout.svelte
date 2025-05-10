@@ -15,7 +15,6 @@
   const builders: Array<{ path: string }> = data.posts.builders || [];
   const apicheck: Record<string, any[]> = data.posts.apicheck || [];
   const drawerHidden: Writable<boolean> = getContext("drawer");
- 
 
   let activeUrl = $state(page.url.pathname);
   const hasPath = (key: string) => activeUrl.includes(key);

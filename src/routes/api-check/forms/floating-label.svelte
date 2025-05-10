@@ -14,7 +14,6 @@
   <FloatingLabelInput id="floating_standard" name="floating_standard" type="text">Floating standard</FloatingLabelInput>
 </div>
 
-
 <h2 class="my-4 text-2xl">Clearable</h2>
 
 <div id="exampleWrapper" class="my-4 grid w-full items-end gap-6 rounded border p-4 md:grid-cols-3">
@@ -25,17 +24,32 @@
 
 <h2 class="my-4 text-2xl">Event</h2>
 
-<div id="exampleWrapper" class="my-4 w-full items-endrounded border p-4 ">
-  <FloatingLabelInput clearable clearableOnClick={()=>{alert('Clicked clear button')}} variant="filled" id="event_filled" name="event_illed" type="text">Floating filled</FloatingLabelInput>
+<div id="exampleWrapper" class="items-endrounded my-4 w-full border p-4">
+  <FloatingLabelInput
+    clearable
+    clearableOnClick={() => {
+      alert("Clicked clear button");
+    }}
+    variant="filled"
+    id="event_filled"
+    name="event_illed"
+    type="text"
+  >
+    Floating filled
+  </FloatingLabelInput>
 </div>
 
 <h2 class="my-4 text-2xl">Accessing FloatingLabelInput Element with elementRef</h2>
 
-<div id="exampleWrapper" class="my-4 w-full items-endrounded border p-4 ">
+<div id="exampleWrapper" class="items-endrounded my-4 w-full border p-4">
   <FloatingLabelInput bind:elementRef={floatingRef} variant="outlined" id="element_outlined" name="element_outlined" type="text" class="my-4">Floating filled</FloatingLabelInput>
-  <Button 
-  onclick={()=>{ floatingRef?.select() }}
-  >Select</Button>
+  <Button
+    onclick={() => {
+      floatingRef?.select();
+    }}
+  >
+    Select
+  </Button>
 </div>
 
 <h2 class="my-4 text-2xl">Disabled state</h2>

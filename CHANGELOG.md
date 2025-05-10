@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.0
+
+### Minor Changes
+
+- feat: elementRef and clearable to form components
+
 ## 1.0.7
 
 ### Patch Changes

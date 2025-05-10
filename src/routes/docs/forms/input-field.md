@@ -81,7 +81,6 @@ Use this example as a generic form element which includes multiple input fields 
 </form>
 ```
 
-
 ## Clearable
 
 ```svelte example
@@ -89,7 +88,7 @@ Use this example as a generic form element which includes multiple input fields 
   import { Input } from "flowbite-svelte";
 </script>
 
-  <Input clearable class="my-4"/>
+<Input clearable class="my-4" />
 ```
 
 ## Event
@@ -99,18 +98,25 @@ Use this example as a generic form element which includes multiple input fields 
   import { Input } from "flowbite-svelte";
 </script>
 
-<Input clearable clearableOnClick={()=>{alert('Clicked close button!')}} class="my-4"/>
+<Input
+  clearable
+  clearableOnClick={() => {
+    alert("Clicked close button!");
+  }}
+  class="my-4"
+/>
 ```
 
 ## Accessing Input Element with elementRef
 
 ```svelte example
 <script lang="ts">
-  import { Input, Button } from 'flowbite-svelte';
+  import { Input, Button } from "flowbite-svelte";
   let elementRef = $state() as HTMLInputElement;
 </script>
-  <Input bind:elementRef={elementRef} class="my-4"/>
-  <Button onclick={() => elementRef?.focus()}>Focus on Input</Button>
+
+<Input bind:elementRef class="my-4" />
+<Button onclick={() => elementRef?.focus()}>Focus on Input</Button>
 ```
 
 ## Input sizes

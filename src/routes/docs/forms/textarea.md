@@ -56,7 +56,16 @@ Get started with the default example of a textarea component below.
 </script>
 
 <Label for="textarea-id" class="mb-2">Your message</Label>
-<Textarea clearable clearableOnClick={()=>{alert('Clicked clear button!')}} class="textarea-event" placeholder="Your message" rows={4} name="message" />
+<Textarea
+  clearable
+  clearableOnClick={() => {
+    alert("Clicked clear button!");
+  }}
+  class="textarea-event"
+  placeholder="Your message"
+  rows={4}
+  name="message"
+/>
 ```
 
 ## Accessing Textarea Element with elementRef
@@ -64,21 +73,20 @@ Get started with the default example of a textarea component below.
 ```svelte example
 <script lang="ts">
   import { Textarea, Button } from "flowbite-svelte";
-  
+
   let textareaRef = $state() as HTMLTextAreaElement;
   let textContent = $state("This is some example text that will be selected when you click the button.");
 </script>
 
-<Textarea 
-  bind:elementRef={textareaRef}
-  bind:value={textContent}
-  placeholder="Type something here..."
-  class="my-4"
-/>
-<Button onclick={() => {
-  textareaRef?.focus();
-  textareaRef?.setSelectionRange(0, textareaRef.value.length);
-}}>Select All Text</Button>
+<Textarea bind:elementRef={textareaRef} bind:value={textContent} placeholder="Type something here..." class="my-4" />
+<Button
+  onclick={() => {
+    textareaRef?.focus();
+    textareaRef?.setSelectionRange(0, textareaRef.value.length);
+  }}
+>
+  Select All Text
+</Button>
 ```
 
 ## WYSIWYG Editor

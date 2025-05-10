@@ -65,7 +65,18 @@ Use `clearable` and `clearableOnClick` props.
   import { FloatingLabelInput } from "flowbite-svelte";
 </script>
 
-<FloatingLabelInput clearable clearableOnClick={()=>{alert('Clicked clear button')}} variant="filled" id="event_filled" name="event_illed" type="text">Floating filled</FloatingLabelInput>
+<FloatingLabelInput
+  clearable
+  clearableOnClick={() => {
+    alert("Clicked clear button");
+  }}
+  variant="filled"
+  id="event_filled"
+  name="event_illed"
+  type="text"
+>
+  Floating filled
+</FloatingLabelInput>
 ```
 
 ## Accessing FloatingLabelInput Element with elementRef
@@ -77,7 +88,13 @@ Use `clearable` and `clearableOnClick` props.
 </script>
 
 <FloatingLabelInput bind:elementRef={floatingRef} variant="outlined" id="element_outlined" name="element_outlined" type="text" class="my-4">Floating filled</FloatingLabelInput>
-<Button onclick={()=>{ floatingRef?.select() }}>Select</Button>
+<Button
+  onclick={() => {
+    floatingRef?.select();
+  }}
+>
+  Select
+</Button>
 ```
 
 ## Disabled state

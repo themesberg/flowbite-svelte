@@ -59,13 +59,25 @@
 
 <h2 class="my-4 text-2xl">Events</h2>
 <div class="my-4 rounded border p-4">
-  <Fileupload id="event" clearable clearableOnClick={()=>{alert('Clicked close button!')}} />
+  <Fileupload
+    id="event"
+    clearable
+    clearableOnClick={() => {
+      alert("Clicked close button!");
+    }}
+  />
 </div>
 
 <h2 class="my-4 text-2xl">Accessing Fileupload Element with elementRef</h2>
 <div class="my-4 rounded border p-4">
-  <Fileupload id="event" bind:elementRef={fileUploadRef} class="my-4"/>
-  <Button onclick={()=>{ fileUploadRef?.select() }}>Focus on Fileupload</Button>
+  <Fileupload id="event" bind:elementRef={fileUploadRef} class="my-4" />
+  <Button
+    onclick={() => {
+      fileUploadRef?.select();
+    }}
+  >
+    Focus on Fileupload
+  </Button>
 </div>
 
 <h2 class="my-4 text-2xl">Dropzone</h2>

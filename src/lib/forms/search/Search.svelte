@@ -1,7 +1,7 @@
 <script lang="ts">
   import clsx from "clsx";
   import { search } from ".";
-  import  { CloseButton, type SearchProps } from "$lib";
+  import { CloseButton, type SearchProps } from "$lib";
 
   let { children, class: inputClass, size, placeholder = "Search", value = $bindable(), elementRef = $bindable(), clearable = false, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, ...restProps }: SearchProps = $props();
 
@@ -12,7 +12,7 @@
       elementRef.value = "";
       value = undefined;
     }
-    if(clearableOnClick) clearableOnClick();
+    if (clearableOnClick) clearableOnClick();
   };
 </script>
 
@@ -28,14 +28,27 @@
       {@render children()}
     </div>
   {/if}
-  {#if value !== undefined && value !== '' && clearable}
-    <CloseButton onclick={clearAll} class={clearbtn({class: clearableClass})} color={clearableColor} aria-label="Clear search value" svgClass={clearableSvgClass} />
+  {#if value !== undefined && value !== "" && clearable}
+    <CloseButton onclick={clearAll} class={clearbtn({ class: clearableClass })} color={clearableColor} aria-label="Clear search value" svgClass={clearableSvgClass} />
   {/if}
 </div>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[SearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L797)
 ## Props
-@props: 
+@prop children
+@prop class: inputClass
+@prop size
+@prop placeholder = "Search"
+@prop value = $bindable()
+@prop elementRef = $bindable()
+@prop clearable = false
+@prop clearableSvgClass
+@prop clearableColor = "none"
+@prop clearableClass
+@prop clearableOnClick
+@prop ...restProps
 -->

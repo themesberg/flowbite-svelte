@@ -221,38 +221,41 @@
 <h2>Accessing Select Element with elementRef</h2>
 
 <div class="my-4 h-96 rounded border p-4">
-  <Select 
-  bind:elementRef={selectRef}
-  bind:value={selectedValue}
-  items={options}
-  class="my-4"
-/>
+  <Select bind:elementRef={selectRef} bind:value={selectedValue} items={options} class="my-4" />
 
-<Button 
-  onclick={() => {
-    selectRef?.focus();
-    console.log(`Selected index: ${selectRef?.selectedIndex}`);
-    // programmatically change the selection
-    // selectRef.selectedIndex = 1; // This would select Option 2
-  }}
->
-  Focus Select
-</Button>
+  <Button
+    onclick={() => {
+      selectRef?.focus();
+      console.log(`Selected index: ${selectRef?.selectedIndex}`);
+      // programmatically change the selection
+      // selectRef.selectedIndex = 1; // This would select Option 2
+    }}
+  >
+    Focus Select
+  </Button>
 </div>
 
 <h2>Clearable</h2>
 
 <div class="my-4 rounded border p-4">
-<Label>
-  Select an option
-  <Select class="mt-2" items={countries} bind:value={clearableSelected} clearable/>
-</Label>
+  <Label>
+    Select an option
+    <Select class="mt-2" items={countries} bind:value={clearableSelected} clearable />
+  </Label>
 </div>
 
 <h2>Event</h2>
 <div class="my-4 rounded border p-4">
-<Label>
-  Select an option
-  <Select class="mt-2" items={countries} bind:value={eventSelected} clearable clearableOnClick={()=>{alert('Clicked clear button!')}}/>
-</Label>
+  <Label>
+    Select an option
+    <Select
+      class="mt-2"
+      items={countries}
+      bind:value={eventSelected}
+      clearable
+      clearableOnClick={() => {
+        alert("Clicked clear button!");
+      }}
+    />
+  </Label>
 </div>

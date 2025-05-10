@@ -39,7 +39,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1567)
+[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1617)
 ## Props
 @prop children
 @prop icon
@@ -47,11 +47,11 @@
 @prop dismissable = true
 @prop color = "primary"
 @prop position
-@prop baseClass
 @prop iconClass
 @prop contentClass
 @prop align = true
 @prop params
 @prop transition = fly
+@prop class: className
 @prop ...restProps
 -->

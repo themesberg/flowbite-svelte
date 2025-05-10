@@ -12,27 +12,31 @@
       elementRef.value = "";
       files = undefined;
     }
-    if(clearableOnClick) clearableOnClick();
+    if (clearableOnClick) clearableOnClick();
   };
 </script>
 
 <div class={wrapper()}>
   <input type="file" bind:files bind:this={elementRef} {...restProps} class={base({ size, class: clsx(className) })} />
   {#if files && files.length > 0 && clearable}
-    <CloseButton onclick={clearAll} class={right({class: clearableClass})} color={clearableColor} aria-label="Clear selected files" svgClass={clearableSvgClass} />
+    <CloseButton onclick={clearAll} class={right({ class: clearableClass })} color={clearableColor} aria-label="Clear selected files" svgClass={clearableSvgClass} />
   {/if}
 </div>
-
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L685)
+[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L700)
 ## Props
-@prop files = $bindable<FileList | undefined>()
+@prop files = $bindable()
 @prop size = "md"
 @prop clearable = false
+@prop elementRef = $bindable()
 @prop class: className
+@prop clearableSvgClass
+@prop clearableColor = "none"
+@prop clearableClass
+@prop clearableOnClick
 @prop ...restProps
 -->

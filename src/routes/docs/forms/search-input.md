@@ -47,7 +47,7 @@ Use the simplest form of a search input component with an icon and a search butt
   import { Search } from "flowbite-svelte";
 </script>
 
-<Search size="md" clearable/>
+<Search size="md" clearable />
 ```
 
 ## Event
@@ -57,26 +57,33 @@ Use the simplest form of a search input component with an icon and a search butt
   import { Search } from "flowbite-svelte";
 </script>
 
-<Search clearable clearableOnClick={()=>{alert('Clicked clear button!')}}/>
+<Search
+  clearable
+  clearableOnClick={() => {
+    alert("Clicked clear button!");
+  }}
+/>
 ```
 
 ## Accessing Search Element with elementRef
 
 ```svelte example
 <script lang="ts">
-  import { Search, Button } from "flowbite-svelte"
+  import { Search, Button } from "flowbite-svelte";
   let searchRef = $state() as HTMLInputElement;
-  let elementTxt = $state('This text has NOT been updated.')
+  let elementTxt = $state("This text has NOT been updated.");
 </script>
 
 <form id="example-form" onsubmit={submitted}>
-  <Search bind:value={elementTxt} bind:elementRef={searchRef} class="my-4"/>
-  <Button 
-  onclick={()=>{
-    searchRef?.setRangeText("ALREADY", 14, 17, "select")
-    searchRef?.select()
-  }}
-  >Update text</Button>
+  <Search bind:value={elementTxt} bind:elementRef={searchRef} class="my-4" />
+  <Button
+    onclick={() => {
+      searchRef?.setRangeText("ALREADY", 14, 17, "select");
+      searchRef?.select();
+    }}
+  >
+    Update text
+  </Button>
 </form>
 ```
 
@@ -220,7 +227,7 @@ Get started with this example if you would like to enable voice search for your 
       <MicrophoneSolid class="me-2 h-5 w-5" />
     </button>
   </Search>
-  <Button size="sm" class="p-2!" >
+  <Button size="sm" class="p-2!">
     <SearchOutline class="-ms-1 me-2 h-6 w-6" />
     Search
   </Button>

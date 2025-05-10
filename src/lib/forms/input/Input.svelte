@@ -21,7 +21,7 @@
       elementRef.value = "";
       value = undefined;
     }
-    if(clearableOnClick) clearableOnClick();
+    if (clearableOnClick) clearableOnClick();
   };
 </script>
 
@@ -35,8 +35,8 @@
     {@render children({ ...restProps, class: inputCls() })}
   {:else}
     <input {...restProps} bind:value bind:this={elementRef} class={inputCls({ class: clsx(className) })} />
-    {#if value !== undefined && value !== '' && clearable}
-      <CloseButton onclick={clearAll} class={clearbtn({class: clearableClass})} color={clearableColor} aria-label="Clear search value" svgClass={clearableSvgClass} />
+    {#if value !== undefined && value !== "" && clearable}
+      <CloseButton onclick={clearAll} class={clearbtn({ class: clearableClass })} color={clearableColor} aria-label="Clear search value" svgClass={clearableSvgClass} />
     {/if}
   {/if}
   {#if right}

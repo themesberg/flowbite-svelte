@@ -7,7 +7,6 @@
   let { title: titleSlot, color = "default", trigger = "hover", defaultClass, arrow = true, children, placement = "top", class: className, ...restProps }: PopoverProps = $props();
 
   let { base, title, h3, content } = $derived(popover({ color }));
-
 </script>
 
 <Popper {...restProps} {placement} {trigger} {arrow} class={base({ class: clsx(className) })}>
@@ -27,7 +26,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1036)
+[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1086)
 ## Props
 @prop title: titleSlot
 @prop color = "default"

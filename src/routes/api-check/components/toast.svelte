@@ -288,12 +288,12 @@ Use the position property to position these toast components relative to the mai
 
 <div class="my-4 rounded border p-8">
   <div class="relative h-56">
-    <Toast class="border" iconClass="border" contentClass="border"
-    >
-    {#snippet icon()}
-    <CameraPhotoOutline class="h-6 w-6" />
-  {/snippet}
-    Click the close button to see the event.</Toast>
+    <Toast class="border" iconClass="border" contentClass="border">
+      {#snippet icon()}
+        <CameraPhotoOutline class="h-6 w-6" />
+      {/snippet}
+      Click the close button to see the event.
+    </Toast>
   </div>
 </div>
 

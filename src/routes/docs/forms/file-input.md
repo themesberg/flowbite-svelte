@@ -78,7 +78,13 @@ Add `clearable` and `clearableOnClick` props.
   import { Fileupload } from "flowbite-svelte";
 </script>
 
-<Fileupload id="event" clearable clearableOnClick={()=>{alert('Clicked close button!')}} />
+<Fileupload
+  id="event"
+  clearable
+  clearableOnClick={() => {
+    alert("Clicked close button!");
+  }}
+/>
 ```
 
 ## Accessing Fileupload Element with elementRef
@@ -89,8 +95,14 @@ Add `clearable` and `clearableOnClick` props.
   let fileUploadRef = $state() as HTMLInputElement;
 </script>
 
-<Fileupload id="event" bind:elementRef={fileUploadRef} class="my-4"/>
-<Button onclick={()=>{ fileUploadRef?.select() }}>Focus on Fileupload</Button>
+<Fileupload id="event" bind:elementRef={fileUploadRef} class="my-4" />
+<Button
+  onclick={() => {
+    fileUploadRef?.select();
+  }}
+>
+  Focus on Fileupload
+</Button>
 ```
 
 ## Dropzone

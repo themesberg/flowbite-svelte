@@ -64,7 +64,7 @@
   };
 
   let searchRef = $state() as HTMLInputElement;
-  let elementTxt = $state('This text has NOT been updated.')
+  let elementTxt = $state("This text has NOT been updated.");
 </script>
 
 <h1 class="my-4 text-3xl">Search Input</h1>
@@ -81,7 +81,7 @@
 
 <div class="my-4 rounded border p-4">
   <form class="flex gap-2">
-    <Search size="md" clearable/>
+    <Search size="md" clearable />
     <Button class="p-2.5!">
       <SearchOutline class="h-5 w-5" />
     </Button>
@@ -179,25 +179,33 @@ Get started with this example if you would like to enable voice search for your 
 <h2 class="text-2xl">Accessing Search Element with elementRef</h2>
 
 <div class="my-4 rounded border p-4">
-<form id="example-form" onsubmit={submitted}>
-  <Search bind:value={elementTxt} bind:elementRef={searchRef} class="my-4"/>
-  <Button 
-  onclick={()=>{
-    searchRef?.setRangeText("ALREADY", 14, 17, "select")
-    searchRef?.select()
-  }}
-  >Update text</Button>
-</form>
+  <form id="example-form" onsubmit={submitted}>
+    <Search bind:value={elementTxt} bind:elementRef={searchRef} class="my-4" />
+    <Button
+      onclick={() => {
+        searchRef?.setRangeText("ALREADY", 14, 17, "select");
+        searchRef?.select();
+      }}
+    >
+      Update text
+    </Button>
+  </form>
 </div>
 
 <h2 class="text-2xl">Clearable</h2>
 
 <div class="my-4 rounded border p-4">
-  <Search bind:value={clearableValue} clearable/>
+  <Search bind:value={clearableValue} clearable />
 </div>
 
 <h2 class="text-2xl">Event</h2>
 
-<div class="my-4 rounded border p-4 mb-32">
-  <Search bind:value={eventValue} clearable clearableOnClick={()=>{alert('Clicked clear button!')}}/>
+<div class="my-4 mb-32 rounded border p-4">
+  <Search
+    bind:value={eventValue}
+    clearable
+    clearableOnClick={() => {
+      alert("Clicked clear button!");
+    }}
+  />
 </div>

@@ -16,12 +16,11 @@
       elementRef.value = "";
       value = undefined;
     }
-    if(clearableOnClick) clearableOnClick();
+    if (clearableOnClick) clearableOnClick();
   };
-
 </script>
 
-<div class={divWrapper({class: divClass})}>
+<div class={divWrapper({ class: divClass })}>
   {#if !wrapped}
     <textarea bind:value bind:this={elementRef} {disabled} {...restProps} class={wrapper({ class: clsx(className) })}></textarea>
   {:else}
@@ -41,8 +40,8 @@
       {/if}
     </div>
   {/if}
-  {#if value !== undefined && value !== '' && clearable}
-    <CloseButton onclick={clearAll} class={clearbtn({class: clearableClass})} color={clearableColor} aria-label="Clear search value" svgClass={clearableSvgClass} />
+  {#if value !== undefined && value !== "" && clearable}
+    <CloseButton onclick={clearAll} class={clearbtn({ class: clearableClass })} color={clearableColor} aria-label="Clear search value" svgClass={clearableSvgClass} />
   {/if}
 </div>
 
@@ -50,16 +49,23 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TextareaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L830)
+[TextareaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L874)
 ## Props
 @prop header
 @prop footer
 @prop value = $bindable()
+@prop elementRef = $bindable()
+@prop divClass
 @prop innerClass
 @prop headerClass
 @prop footerClass
 @prop disabled
 @prop class: className
 @prop cols
+@prop clearable
+@prop clearableSvgClass
+@prop clearableColor = "none"
+@prop clearableClass
+@prop clearableOnClick
 @prop ...restProps
 -->

@@ -46,7 +46,6 @@ Get started with the default example of a select input component to get a single
 </Label>
 ```
 
-
 ## Clearable
 
 ```svelte example
@@ -63,7 +62,7 @@ Get started with the default example of a select input component to get a single
 
 <Label>
   Select an option
-  <Select class="mt-2" items={countries} bind:value={clearableSelected} clearable/>
+  <Select class="mt-2" items={countries} bind:value={clearableSelected} clearable />
 </Label>
 ```
 
@@ -82,7 +81,15 @@ Get started with the default example of a select input component to get a single
 
 <Label>
   Select an option
-  <Select class="mt-2" items={countries} bind:value={eventSelected} clearable clearableOnClick={()=>{alert('Clicked clear button!')}}/>
+  <Select
+    class="mt-2"
+    items={countries}
+    bind:value={eventSelected}
+    clearable
+    clearableOnClick={() => {
+      alert("Clicked clear button!");
+    }}
+  />
 </Label>
 ```
 
@@ -232,13 +239,12 @@ If you want custom options, put them directly inside the component and leave the
 </Select>
 ```
 
-
 ## Accessing Select Element with elementRef
 
 ```svelte example
 <script lang="ts">
   import { Select, Button } from "flowbite-svelte";
-  
+
   let selectRef = $state() as HTMLSelectElement;
   const options = [
     { value: "option1", name: "Option 1" },
@@ -248,14 +254,9 @@ If you want custom options, put them directly inside the component and leave the
   let selectedValue = $state("option1");
 </script>
 
-<Select
-  bind:elementRef={selectRef}
-  bind:value={selectedValue}
-  items={options}
-  class="my-4"
-/>
+<Select bind:elementRef={selectRef} bind:value={selectedValue} items={options} class="my-4" />
 
-<Button 
+<Button
   onclick={() => {
     // programmatically change the selection
     selectRef.selectedIndex = 1; // This would select Option 2
@@ -412,7 +413,6 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
   {/snippet}
 </MultiSelect>
 ```
-
 
 ## Component data
 

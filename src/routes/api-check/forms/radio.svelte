@@ -178,20 +178,19 @@
 
 <h2 class="my-4 text-2xl">RadioButton</h2>
 <div class="my-4 space-y-4 rounded border p-4">
-  
-<div>
-  <RadioButton value="notes" checkedClass="outline-4 outline-primary-500" bind:group={radioGroup}><ListMusicSolid class="h-7 w-7" /></RadioButton>
-  <RadioButton value="numbers" checkedClass="outline-4 outline-primary-500" bind:group={radioGroup}><OrderedListOutline class="h-7 w-7" /></RadioButton>
-  <RadioButton value="bullets" checkedClass="outline-4 outline-primary-500" bind:group={radioGroup}><ListOutline class="h-7 w-7" /></RadioButton>
-</div>
+  <div>
+    <RadioButton value="notes" checkedClass="outline-4 outline-primary-500" bind:group={radioGroup}><ListMusicSolid class="h-7 w-7" /></RadioButton>
+    <RadioButton value="numbers" checkedClass="outline-4 outline-primary-500" bind:group={radioGroup}><OrderedListOutline class="h-7 w-7" /></RadioButton>
+    <RadioButton value="bullets" checkedClass="outline-4 outline-primary-500" bind:group={radioGroup}><ListOutline class="h-7 w-7" /></RadioButton>
+  </div>
 
-<ButtonGroup>
-  <RadioButton color="green" outline value="notes" checkedClass="outline-4 outline-green-500" bind:group={radioGroup}><ListMusicSolid class="h-7 w-7" /></RadioButton>
-  <RadioButton color="green" outline value="numbers" checkedClass="outline-4 outline-green-500" bind:group={radioGroup}><OrderedListOutline class="h-7 w-7" /></RadioButton>
-  <RadioButton color="green" outline value="bullets" checkedClass="outline-4 outline-green-500" bind:group={radioGroup}><ListOutline class="h-7 w-7" /></RadioButton>
-</ButtonGroup>
+  <ButtonGroup>
+    <RadioButton color="green" outline value="notes" checkedClass="outline-4 outline-green-500" bind:group={radioGroup}><ListMusicSolid class="h-7 w-7" /></RadioButton>
+    <RadioButton color="green" outline value="numbers" checkedClass="outline-4 outline-green-500" bind:group={radioGroup}><OrderedListOutline class="h-7 w-7" /></RadioButton>
+    <RadioButton color="green" outline value="bullets" checkedClass="outline-4 outline-green-500" bind:group={radioGroup}><ListOutline class="h-7 w-7" /></RadioButton>
+  </ButtonGroup>
 
-<p>List style: {radioGroup}</p>
+  <p>List style: {radioGroup}</p>
 </div>
 
 <h2 class="my-4 text-2xl">RadioButton style</h2>
