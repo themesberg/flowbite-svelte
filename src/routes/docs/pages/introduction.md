@@ -60,7 +60,7 @@ pnpm dev
 Run the following command to install all Flowbite dependencies and libraries:
 
 ```sh
-pnpm i -D flowbite-svelte@next
+pnpm i -D flowbite-svelte flowbite
 ```
 
 ### Optional
