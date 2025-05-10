@@ -39,16 +39,23 @@ Use this example to set default styles to an inline link element.
 <A class="font-medium hover:underline">Read more</A>
 ```
 
-## Button
+## A Link as Button
 
-This example can be used to set a hyperlink on a button component.
+This example can be used to use as a button.
 
-```svelte example
+```svelte example class="h-24"
 <script>
-  import { Button } from "flowbite-svelte";
+  import { A } from "flowbite-svelte";
+  let show_full_link = $state(false);
 </script>
 
-<Button href="/">Read more</Button>
+<A asButton onclick={() => show_full_link = !show_full_link}>
+  view full link
+</A>
+
+{#if show_full_link}
+  <p>The full link is now visible.</p>
+{/if}
 ```
 
 ## Paragraph

@@ -3,13 +3,48 @@
   import { anchor } from "./index";
   import type { AnchorProps } from "$lib/types";
 
-  let { children, color = "primary", class: className, ...restProps }: AnchorProps = $props();
+  let { children, color = "primary", asButton = false, onclick, href = "#", class: className, ...restProps }: AnchorProps = $props();
+
   let linkClass = $derived(anchor({ color, class: clsx(className) }));
+
+  // Handle click events when in button mode
+  function handleClick(event: MouseEvent) {
+    if (asButton) {
+      event.preventDefault(); // Prevent default anchor behavior
+    }
+    // Forward the onclick handler if provided
+    if (onclick) {
+      onclick(event);
+    }
+  }
+
+  let buttonProps = $derived(() => {
+    const { href, target, rel, download, ...filtered } = restProps;
+    return filtered;
+  });
 </script>
 
-<a {...restProps} class={linkClass}>
-  {@render children()}
-</a>
+{#if asButton}
+  <!-- Render as a button that looks like a link -->
+  <button
+    type="button"
+    class={linkClass}
+    onclick={handleClick}
+     {...buttonProps}
+  >
+    {@render children()}
+  </button>
+{:else}
+  <!-- Standard anchor behavior -->
+  <a
+    {href}
+    class={linkClass}
+    onclick={handleClick}
+    {...restProps}
+  >
+    {@render children()}
+  </a>
+{/if}
 
 <!--
 @component

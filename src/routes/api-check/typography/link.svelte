@@ -7,6 +7,7 @@
     console.log("Action triggered");
   };
   const components = "A";
+  let show_full_link = $state(false);
 </script>
 
 <h1 class="my-4 text-3xl">Link</h1>
@@ -18,11 +19,17 @@ Use this example to set default styles to an inline link element.
   <A class="font-medium hover:underline">Read more</A>
 </div>
 
-<h2 class="text-2xl">Button</h2>
-This example can be used to set a hyperlink on a button component.
+<h2 class="text-2xl">A link as a button</h2>
+
 
 <div class="my-4 rounded border p-4">
-  <Button href="/">Read more</Button>
+  <A asButton onclick={() => show_full_link = !show_full_link}>
+  view full link
+</A>
+
+{#if show_full_link}
+  <p>The full link is now visible.</p>
+{/if}
 </div>
 
 <h2 class="text-2xl">Paragraph</h2>
