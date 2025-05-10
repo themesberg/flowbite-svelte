@@ -814,6 +814,11 @@ export interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttribute
   items?: SelectOptionType<T>[];
   elementRef?: HTMLSelectElement;
   placeholder?: string;
+  selectClass?: string;
+  clearable?: boolean;
+  clearableSvgClass?: string;
+  clearableClass?: string;
+  clearableOnClick?: () => void;
 }
 
 export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLSelectAttributes, "size" | "children"> {
