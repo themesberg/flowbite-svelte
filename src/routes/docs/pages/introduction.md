@@ -110,6 +110,13 @@ If you use SvelteKit the main css file is `src/app.css`.
 
 @source "../node_modules/flowbite-svelte/dist";
 @source "../node_modules/flowbite-svelte-icons/dist";
+
+@layer base {
+  /* disable chrome cancel button */
+  input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+  }
+}
 ```
 
 Now you should be able to work with the Flowbite Svelte library and import components such as the navbar, dropdown, modal, and more.
