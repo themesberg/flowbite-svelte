@@ -3,7 +3,6 @@
   import ComponentsLayout from "../layouts/ComponentsLayout.svelte";
 
   let { data, children } = $props();
-  // console.log('data.posts: ', data.posts)
 </script>
 
 <FlowbiteSvelteLayout>

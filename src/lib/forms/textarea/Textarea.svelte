@@ -10,7 +10,7 @@
   let wrapped: boolean = $derived(hasHeader || hasFooter);
 
   const { base, wrapper, innerWrapper, headerCls, footerCls } = $derived(textarea({ wrapped, hasHeader, hasFooter, cols: !!cols }));
-  // $inspect('wrapped: ', wrapped);
+
 </script>
 
 {#if !wrapped}

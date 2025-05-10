@@ -22,7 +22,6 @@
   let placement: ModalPlacementType = $state("center");
 
   const sizes = Object.keys(modal.variants.size);
-  // console.log('sizes', sizes);
   let modalSize: ModalProps["size"] = $state("md");
   let backdrop = $state(true);
   const changeBackdrop = () => {

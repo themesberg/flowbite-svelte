@@ -19,7 +19,7 @@
   // interactive example
   const colors = Object.keys(banner.variants.color);
   let color: BannerProps["color"] = $state("primary");
-  $inspect("color", color);
+
   let bannerClass: BannerProps["class"] = $state("absolute");
   const changeClass = () => {
     bannerClass = bannerClass === "" ? "mt-4" : "";

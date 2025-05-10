@@ -14,18 +14,13 @@
   const posts: Record<string, any[]> = data.posts.posts || {};
   const builders: Array<{ path: string }> = data.posts.builders || [];
   const apicheck: Record<string, any[]> = data.posts.apicheck || [];
-  // console.log('apicheck:', apicheck);
   const drawerHidden: Writable<boolean> = getContext("drawer");
-  // $inspect('data', JSON.stringify(builders))
-  // const closeDrawer = (
-  // ) => {
-  //   drawerHidden.set(true);
-  // };
+ 
 
   let activeUrl = $state(page.url.pathname);
   const hasPath = (key: string) => activeUrl.includes(key);
   let isBuilderPage = $derived(hasPath("builder"));
-  // $inspect('pageStatus:', pageStatus)
+
   const sidebarUi = uiHelpers();
   let isOpen = $state(true);
   const closeSidebar = sidebarUi.close;

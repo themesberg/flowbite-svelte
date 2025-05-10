@@ -8,12 +8,7 @@
 
   let { items, html, rowState }: Props = $props();
 
-  // export let items: Array<Array<string>>;
-  // export let html: boolean = false;
-  // export let rowState: "striped" | "hover" | undefined = undefined;
-
   const category = getContext("category");
-  // console.log('category: ', category)
   let trClass: string = $state("");
   let trLastClass: string = $state("");
   if (rowState === "striped") {

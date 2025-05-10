@@ -79,7 +79,7 @@
 
   let selectedTransition = $state("Fly");
   let currentTransition = $derived(transitions.find((t) => t.name === selectedTransition) || transitions[0]);
-  // $inspect("currentTransition:", currentTransition);
+
   let generatedCode = $derived(
     (() => {
       let importScript: string =

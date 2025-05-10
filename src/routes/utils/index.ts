@@ -176,7 +176,6 @@ export const fetchBuilders = async () => {
   const builderFiles = import.meta.glob("/src/routes/builder/**/*.svelte");
 
   const iterableBuilderFiles = Object.entries(builderFiles);
-  // console.log('iterableBuilderFiles: ', iterableBuilderFiles);
   const allBuilders = await Promise.all(
     iterableBuilderFiles.map(async ([path, _]) => {
       return {
@@ -184,7 +183,6 @@ export const fetchBuilders = async () => {
       };
     })
   );
-  // console.log('allBuilders: ', allBuilders)
   return allBuilders;
 };
 

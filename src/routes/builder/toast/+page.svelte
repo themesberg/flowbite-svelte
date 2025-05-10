@@ -25,7 +25,6 @@
   };
   const positions = Object.keys(toast.variants.position) as ToastProps["position"][];
   let toastPosition: ToastProps["position"] = $state("top-left");
-  // console.log('positions', positions);
   // transition example
   type TransitionOption = {
     name: string;

@@ -36,7 +36,6 @@
     if (imgSize !== "none") {
       imgEffect = "none";
     }
-    $inspect("imgSize: ", imgSize, "imgEffect:", imgEffect);
   });
 
   // code generator
