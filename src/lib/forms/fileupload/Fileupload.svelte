@@ -3,7 +3,7 @@
   import { CloseButton, type FileuploadProps } from "$lib";
   import clsx from "clsx";
 
-  let { files = $bindable(), size = "md", clearable = false, elementRef = $bindable(), class: className, clearableSvgClass, clearableClass, clearableOnClick,  ...restProps }: FileuploadProps = $props();
+  let { files = $bindable(), size = "md", clearable = false, elementRef = $bindable(), class: className, clearableSvgClass, clearableClass, clearableOnClick, ...restProps }: FileuploadProps = $props();
 
   const { base, wrapper, right } = fileupload();
 

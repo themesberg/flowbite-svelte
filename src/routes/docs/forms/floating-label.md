@@ -42,6 +42,44 @@ Get started with the following three styles for the floating label component and
 </div>
 ```
 
+## Clearable
+
+```svelte example
+<script>
+  import { FloatingLabelInput } from "flowbite-svelte";
+</script>
+
+<div id="exampleWrapper" class="grid w-full items-end gap-6 md:grid-cols-3">
+  <FloatingLabelInput clearable variant="filled" id="clearable_filled" name="clearable_illed" type="text">Floating filled</FloatingLabelInput>
+  <FloatingLabelInput clearable variant="outlined" id="clearable_outlined" name="clearable_outlined" type="text">Floating outlined</FloatingLabelInput>
+  <FloatingLabelInput clearable id="clearable_standard" name="clearable_standard" type="text">Floating standard</FloatingLabelInput>
+</div>
+```
+
+## Event
+
+Use `clearable` and `clearableOnClick` props.
+
+```svelte example
+<script>
+  import { FloatingLabelInput } from "flowbite-svelte";
+</script>
+
+<FloatingLabelInput clearable clearableOnClick={()=>{alert('Clicked clear button')}} variant="filled" id="event_filled" name="event_illed" type="text">Floating filled</FloatingLabelInput>
+```
+
+## Accessing FloatingLabelInput Element with elementRef
+
+```svelte example
+<script lang="ts">
+  import { FloatingLabelInput, Button } from "flowbite-svelte";
+  let floatingRef = $state();
+</script>
+
+<FloatingLabelInput bind:elementRef={floatingRef} variant="outlined" id="element_outlined" name="element_outlined" type="text" class="my-4">Floating filled</FloatingLabelInput>
+<Button onclick={()=>{ floatingRef?.select() }}>Select</Button>
+```
+
 ## Disabled state
 
 Apply the disabled attribute to the input fields to disallow the user from changing the content.

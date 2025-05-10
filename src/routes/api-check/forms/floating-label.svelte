@@ -1,5 +1,7 @@
-<script>
+<script lang="ts">
   import { FloatingLabelInput, Helper } from "$lib";
+  import Button from "$lib/buttons/Button.svelte";
+  let floatingRef = $state() as HTMLInputElement;
 </script>
 
 <h1 class="my-4 text-3xl">Floating Label</h1>
@@ -10,6 +12,30 @@
   <FloatingLabelInput variant="filled" id="floating_filled" name="floating_filled" type="text">Floating filled</FloatingLabelInput>
   <FloatingLabelInput variant="outlined" id="floating_outlined" name="floating_outlined" type="text">Floating outlined</FloatingLabelInput>
   <FloatingLabelInput id="floating_standard" name="floating_standard" type="text">Floating standard</FloatingLabelInput>
+</div>
+
+
+<h2 class="my-4 text-2xl">Clearable</h2>
+
+<div id="exampleWrapper" class="my-4 grid w-full items-end gap-6 rounded border p-4 md:grid-cols-3">
+  <FloatingLabelInput clearable variant="filled" id="clearable_filled" name="clearable_illed" type="text">Floating filled</FloatingLabelInput>
+  <FloatingLabelInput clearable variant="outlined" id="clearable_outlined" name="clearable_outlined" type="text">Floating outlined</FloatingLabelInput>
+  <FloatingLabelInput clearable id="clearable_standard" name="clearable_standard" type="text">Floating standard</FloatingLabelInput>
+</div>
+
+<h2 class="my-4 text-2xl">Event</h2>
+
+<div id="exampleWrapper" class="my-4 w-full items-endrounded border p-4 ">
+  <FloatingLabelInput clearable clearableOnClick={()=>{alert('Clicked clear button')}} variant="filled" id="event_filled" name="event_illed" type="text">Floating filled</FloatingLabelInput>
+</div>
+
+<h2 class="my-4 text-2xl">Accessing FloatingLabelInput Element with elementRef</h2>
+
+<div id="exampleWrapper" class="my-4 w-full items-endrounded border p-4 ">
+  <FloatingLabelInput bind:elementRef={floatingRef} variant="outlined" id="element_outlined" name="element_outlined" type="text" class="my-4">Floating filled</FloatingLabelInput>
+  <Button 
+  onclick={()=>{ floatingRef?.select() }}
+  >Select</Button>
 </div>
 
 <h2 class="my-4 text-2xl">Disabled state</h2>

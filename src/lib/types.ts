@@ -720,6 +720,10 @@ export interface FloatingLabelInputProps extends Omit<HTMLInputAttributes, "size
   color?: FloatingLabelInputVaratiants["color"];
   inputClass?: string;
   labelClass?: string;
+  clearable?: boolean;
+  clearableSvgClass?: string;
+  clearableClass?: string;
+  clearableOnClick?: () => void;
 }
 
 // helper
