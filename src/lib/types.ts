@@ -12,6 +12,7 @@ import type { BadgeVariants } from "./badge/theme";
 import type { BannerVariants } from "./banner/theme";
 import type { ButtonVariants, GradientButtonVariantes, button, gradientButton } from "./buttons/theme";
 import type { CarouselVariants } from "./carousel/theme";
+import type { closeButtonVariants } from "./utils/theme";
 import type Slide from "./carousel/Slide.svelte";
 import type { ApexOptions } from "apexcharts";
 import type { DrawerVariants } from "./drawer/theme";
@@ -110,6 +111,20 @@ export type FormSizeType = "sm" | "md" | "lg";
 //   custom?: string;
 // }
 
+// closebutton
+
+export type CloseButtonVariants = VariantProps<typeof closeButtonVariants>;
+  
+export type CloseButtonProps = CloseButtonVariants &
+  AnchorButtonAttributes & {
+    onclick?: (ev: MouseEvent) => void;
+    name?: string;
+  ariaLabel?: string;
+  class?: string;
+  svgClass?: string;
+};
+  
+// Navbar
 export type NavbarType = {
   navStatus: boolean | undefined;
   breakPoint: "md" | "lg" | "xl" | "xxl";
@@ -687,6 +702,10 @@ export interface FileuploadProps extends Omit<HTMLInputAttributes, "size"> {
   size?: FileuploadViariants["size"];
   color?: InputProps<never>["color"];
   clearable?: boolean;
+  elementRef?: HTMLInputElement;
+  clearableSvgClass?: string;
+  clearableOnClick?: () => void;
+  clearableClass?: string;
 }
 
 // floatinglabel-input
@@ -694,6 +713,7 @@ export interface FloatingLabelInputProps extends Omit<HTMLInputAttributes, "size
   children: Snippet;
   id?: string;
   value?: string | number | readonly string[] | undefined;
+  elementRef?: HTMLInputElement;
   "aria-describedby"?: string;
   variant?: FloatingLabelInputVaratiants["variant"];
   size?: FloatingLabelInputVaratiants["size"];
@@ -714,6 +734,7 @@ export interface InputProps<T extends InputValue = string> extends Omit<HTMLInpu
   right?: Snippet;
   size?: InputVariants["size"];
   value?: T;
+  elementRef?: HTMLInputElement;
   clearable?: boolean;
   color?: InputVariants["color"];
   classLeft?: string;
@@ -763,9 +784,14 @@ export interface RangeProps extends RangeVariants, Omit<HTMLInputAttributes, "si
 }
 
 // search
-export interface SearchProps<T> extends SearchVariants, Omit<HTMLInputAttributes, "size"> {
+export interface SearchProps extends SearchVariants, Omit<HTMLInputAttributes, "size"> {
   children?: Snippet;
-  value?: T;
+  value?: string;
+  elementRef?: HTMLInputElement;
+  clearable?: boolean;
+  clearableSvgClass?: string;
+  clearableClass?: string;
+  clearableOnClick?: () => void;
 }
 
 // select
@@ -779,6 +805,7 @@ export type SelectOptionType<T> = {
 export interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttributes, "size"> {
   children?: Snippet;
   items?: SelectOptionType<T>[];
+  elementRef?: HTMLSelectElement;
   placeholder?: string;
 }
 
@@ -831,6 +858,7 @@ export interface TextareaProps extends HTMLTextareaAttributes {
   header?: Snippet;
   footer?: Snippet;
   value?: string;
+  elementRef?: HTMLTextAreaElement;
   wrapped?: boolean;
   divClass?: string | null;
   innerClass?: string;
@@ -1571,12 +1599,12 @@ export interface ToastProps extends HTMLAttributes<HTMLDivElement> {
   dismissable?: boolean;
   color?: ToastVaraints["color"];
   position?: ToastVaraints["position"];
-  baseClass?: string;
   iconClass?: string;
   contentClass?: string;
   align?: boolean;
   params?: ParamsType;
   transition?: TransitionFunc;
+  class?: string;
 }
 
 // tooltip

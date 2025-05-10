@@ -1,6 +1,9 @@
-<script>
+<script lang="ts">
   import { Textarea, Label, Toolbar, ToolbarGroup, ToolbarButton, Button, Alert } from "$lib";
   import { PaperClipOutline, MapPinAltSolid, ImageOutline, CodeOutline, FaceGrinOutline, PaperPlaneOutline } from "flowbite-svelte-icons";
+  let textareaRef = $state() as HTMLTextAreaElement;
+  let textContent = $state("This is some example text that will be selected when you click the button.");
+
 </script>
 
 <h1 class="my-4 text-3xl">Textarea</h1>
@@ -85,4 +88,19 @@
       </ToolbarButton>
     </div>
   </form>
+</div>
+
+
+<h2>Accessing Textarea Element with elementRef</h2>
+<div class="my-4 space-y-4 rounded border p-4">
+<Textarea 
+  bind:elementRef={textareaRef}
+  bind:value={textContent}
+  placeholder="Type something here..."
+/>
+<Button onclick={() => {
+  textareaRef?.focus();
+  textareaRef?.setSelectionRange(0, textareaRef.value.length);
+}}>Select All Text</Button>
+
 </div>

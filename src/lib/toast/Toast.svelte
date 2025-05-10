@@ -5,13 +5,13 @@
   import type { ToastProps } from "$lib/types";
   import { fly } from "svelte/transition";
 
-  let { children, icon, toastStatus = $bindable(true), dismissable = true, color = "primary", position, baseClass, iconClass, contentClass, align = true, params, transition = fly, ...restProps }: ToastProps = $props();
+  let { children, icon, toastStatus = $bindable(true), dismissable = true, color = "primary", position, iconClass, contentClass, align = true, params, transition = fly, class: className, ...restProps }: ToastProps = $props();
 
   const { base, icon: iconVariants, content, close } = $derived(toast({ color, position, align }));
 </script>
 
 {#if toastStatus}
-  <div role="alert" transition:transition={params as ParamsType} {...restProps} class={base({ class: baseClass })}>
+  <div role="alert" transition:transition={params as ParamsType} {...restProps} class={base({ class: className })}>
     {#if icon}
       <div class={iconVariants({ class: iconClass })}>
         {@render icon()}

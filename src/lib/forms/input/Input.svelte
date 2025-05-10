@@ -1,12 +1,10 @@
 <script lang="ts">
-  import type { SizeType } from "$lib/types";
   import { getContext } from "svelte";
-  import { CloseButton } from "$lib";
+  import { CloseButton, type SizeType, type InputProps, type InputValue } from "$lib";
   import { input, clampSize } from ".";
-  import type { InputProps, InputValue } from "$lib/types";
   import clsx from "clsx";
 
-  let { children, left, right, value = $bindable(), clearable = false, size, color = "default", class: className, classLeft, classRight, divClass, ...restProps }: InputProps<InputValue> = $props();
+  let { children, left, right, value = $bindable(), elementRef = $bindable(), clearable = false, size, color = "default", class: className, classLeft, classRight, divClass, ...restProps }: InputProps<InputValue> = $props();
 
   // tinted if put in component having its own background
   let background: boolean = getContext("background");
@@ -32,7 +30,7 @@
   {#if children}
     {@render children({ ...restProps, class: inputCls() })}
   {:else}
-    <input {...restProps} bind:value class={inputCls({ class: clsx(className) })} />
+    <input {...restProps} bind:value bind:this={elementRef} class={inputCls({ class: clsx(className) })} />
   {/if}
   {#if right}
     <div class={rightCls({ class: classRight })}>

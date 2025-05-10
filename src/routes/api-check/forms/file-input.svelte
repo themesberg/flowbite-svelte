@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Fileupload, Label, Helper, Dropzone } from "$lib";
+  import { Fileupload, Label, Helper, Dropzone, Button } from "$lib";
 
   let selectedFiles = $state<FileList | null>(null);
   let fileNames = $derived(
@@ -28,6 +28,8 @@
       .map((file) => file.name)
       .join(", ");
   }
+
+  let fileUploadRef = $state() as HTMLInputElement;
 </script>
 
 <h1 class="my-4 text-3xl">File Input</h1>
@@ -53,6 +55,17 @@
   <Fileupload id="default_size" />
   <Label class="py-2" for="larg_size">Large file input</Label>
   <Fileupload id="larg_size" size="lg" />
+</div>
+
+<h2 class="my-4 text-2xl">Events</h2>
+<div class="my-4 rounded border p-4">
+  <Fileupload id="event" clearable clearableOnClick={()=>{alert('Clicked close button!')}} />
+</div>
+
+<h2 class="my-4 text-2xl">Accessing Fileupload Element with elementRef</h2>
+<div class="my-4 rounded border p-4">
+  <Fileupload id="event" bind:elementRef={fileUploadRef} class="my-4"/>
+  <Button onclick={()=>{ fileUploadRef?.select() }}>Focus on Fileupload</Button>
 </div>
 
 <h2 class="my-4 text-2xl">Dropzone</h2>

@@ -192,6 +192,42 @@ If you want custom options, put them directly inside the component and leave the
 </Select>
 ```
 
+
+## Accessing Select Element with elementRef
+
+```svelte example
+<script lang="ts">
+  import { Select, Button } from "flowbite-svelte";
+  
+  let selectRef = $state() as HTMLSelectElement;
+  const options = [
+    { value: "option1", name: "Option 1" },
+    { value: "option2", name: "Option 2" },
+    { value: "option3", name: "Option 3" }
+  ];
+  let selectedValue = $state("option1");
+</script>
+
+<Select
+  bind:elementRef={selectRef}
+  bind:value={selectedValue}
+  items={options}
+  class="my-4"
+/>
+
+<Button 
+  onclick={() => {
+    // programmatically change the selection
+    selectRef.selectedIndex = 1; // This would select Option 2
+    selectedValue = "option2";
+    selectRef?.focus();
+    console.log(`Selected index: ${selectRef?.selectedIndex}`);
+  }}
+>
+  Access Select
+</Button>
+```
+
 ## MultiSelect
 
 ```svelte example hideOutput
@@ -260,7 +296,7 @@ Get started with the default toggle component example as a checkbox element to r
 <MultiSelect disabled items={countries} value={selected} size="lg" />
 ```
 
-### Disabled option
+### MultiSelect Disabled Option
 
 ```svelte example class="h-80"
 <script>
@@ -336,6 +372,7 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
   {/snippet}
 </MultiSelect>
 ```
+
 
 ## Component data
 

@@ -1,31 +1,28 @@
 <script lang="ts">
   import { fileupload } from ".";
-  import type { FileuploadProps } from "$lib/types";
-  import { CloseButton } from "$lib";
+  import { CloseButton, type FileuploadProps } from "$lib";
   import clsx from "clsx";
-  let { files = $bindable<FileList | undefined>(), size = "md", clearable = false, class: className, ...restProps }: FileuploadProps = $props();
+
+  let { files = $bindable(), size = "md", clearable = false, elementRef = $bindable(), class: className, clearableSvgClass, clearableClass, clearableOnClick,  ...restProps }: FileuploadProps = $props();
+
   const { base, wrapper, right } = fileupload();
 
-  let fileInputRef: HTMLInputElement | undefined = $state();
   const clearAll = () => {
-    if (fileInputRef) {
-      fileInputRef.value = "";
+    if (elementRef) {
+      elementRef.value = "";
       files = undefined;
     }
+    if(clearableOnClick) clearableOnClick();
   };
-  const hasFiles = $derived(files && files.length > 0);
 </script>
 
-{#if clearable}
-  <div class={wrapper()}>
-    <input type="file" bind:files bind:this={fileInputRef} {...restProps} class={base({ size, class: clsx(className) })} />
-    {#if hasFiles}
-      <CloseButton onclick={clearAll} class={right()} />
-    {/if}
-  </div>
-{:else}
-  <input type="file" bind:files {...restProps} class={base({ size, class: clsx(className) })} />
-{/if}
+<div class={wrapper()}>
+  <input type="file" bind:files bind:this={elementRef} {...restProps} class={base({ size, class: clsx(className) })} />
+  {#if files && files.length > 0 && clearable}
+    <CloseButton onclick={clearAll} class={right({class: clearableClass})} color="none" aria-label="Clear selected files" svgClass={clearableSvgClass} />
+  {/if}
+</div>
+
 
 <!--
 @component

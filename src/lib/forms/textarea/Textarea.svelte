@@ -3,7 +3,7 @@
   import { textarea } from ".";
   import type { TextareaProps } from "$lib/types";
 
-  let { header, footer, value = $bindable(), innerClass, headerClass, footerClass, disabled, class: className, cols, ...restProps }: TextareaProps = $props();
+  let { header, footer, value = $bindable(), elementRef = $bindable(), innerClass, headerClass, footerClass, disabled, class: className, cols, ...restProps }: TextareaProps = $props();
 
   let hasHeader = $derived(!!header);
   let hasFooter = $derived(!!footer);
@@ -14,7 +14,7 @@
 </script>
 
 {#if !wrapped}
-  <textarea bind:value {disabled} {...restProps} class={wrapper({ class: clsx(className) })}></textarea>
+  <textarea bind:value bind:this={elementRef} {disabled} {...restProps} class={wrapper({ class: clsx(className) })}></textarea>
 {:else}
   <div class={wrapper({ class: clsx(className) })}>
     {#if header}
@@ -23,7 +23,7 @@
       </div>
     {/if}
     <div class={innerWrapper({ class: innerClass })}>
-      <textarea bind:value {disabled} {...restProps} class={base()}></textarea>
+      <textarea bind:value bind:this={elementRef} {disabled} {...restProps} class={base()}></textarea>
     </div>
     {#if footer}
       <div class={footerCls({ class: footerClass })}>

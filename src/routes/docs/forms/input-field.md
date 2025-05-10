@@ -266,8 +266,8 @@ This example shows how to add `onclick` event handler to the icon in `Input`. By
 <script>
   import { Button, Label, Input, ButtonGroup, InputAddon } from "flowbite-svelte";
   import { EyeOutline, EyeSlashOutline } from "flowbite-svelte-icons";
-  let show = false;
-  let show1 = false;
+  let show = $state(false);
+  let show1 = $state(false);
 </script>
 
 <div>
@@ -326,9 +326,9 @@ Use the helper prop to add your helper text. You can use HTML in the helper text
 By default the `Input` component binds the `value` as `string`. If you need a variable bound as `number` you need to use a specialised version of `Input` called `NumberInput`.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Input, Label } from "flowbite-svelte";
-  let value = 5;
+  let value = $state(5);
 </script>
 
 <Label class="mb-4 flex flex-col gap-2">
@@ -389,6 +389,17 @@ Use this example to show a dropdown menu right next to the input field.
 </ButtonGroup>
 ```
 
+## Accessing Input Element with elementRef
+
+```svelte example
+<script lang="ts">
+  import { Input, Button } from 'flowbite-svelte';
+  let elementRef = $state() as HTMLInputElement;
+</script>
+  <Input bind:elementRef={elementRef} class="my-4"/>
+  <Button onclick={() => elementRef?.focus()}>Focus on Input</Button>
+```
+
 ## Advanced usage
 
 If you need a full control over `input` HTML element while still re-using the Flowbite formatting, you can put the `input` element as a default slot. The example below is in fact the implementation of the above mentioned `NumberInput`.
@@ -396,7 +407,7 @@ If you need a full control over `input` HTML element while still re-using the Fl
 ```svelte example class="gap-4"
 <script>
   import { Input } from "flowbite-svelte";
-  let value = 5;
+  let value = $state(5);
 </script>
 
 <Input>

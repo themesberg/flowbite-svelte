@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Coords, MiddlewareData, Placement, Side } from "@floating-ui/dom";
+  import type { Coords, Placement, Side } from "@floating-ui/dom";
   import { getOppositePlacement, getSide } from "@floating-ui/utils";
 
   let {

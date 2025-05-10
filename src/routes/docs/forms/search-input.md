@@ -33,12 +33,12 @@ You will also find more advanced search components on this page including dropdo
   import { Search, Button } from "flowbite-svelte";
 </script>
 
-<Search>
+<Search clearBtnClass="right-[100px]">
   <Button class="me-1">Search</Button>
 </Search>
 ```
 
-## Simple search input
+## Search input with clearable
 
 Use the simplest form of a search input component with an icon and a search button next to the text field.
 
@@ -49,9 +49,9 @@ Use the simplest form of a search input component with an icon and a search butt
 </script>
 
 <form class="flex gap-2">
-  <Search size="md" />
+  <Search size="md" clearable/>
   <Button class="p-2.5!">
-    <SearchOutline class="h-6 w-6" />
+    <SearchOutline class="h-5 w-5" />
   </Button>
 </form>
 ```
@@ -105,8 +105,8 @@ Use this search component with a dropdown to let your users select a category in
       {/each}
     </Dropdown>
   </div>
-  <Search size="md" class="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
-  <Button class="rounded-s-none p-2.5!">
+  <Search size="lg" class="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
+  <Button class="rounded-s-none p-2!">
     <SearchOutline class="h-6 w-6" />
   </Button>
 </form>
@@ -170,8 +170,8 @@ Use this example where you can select a country in which you want to search for 
       {/each}
     </Dropdown>
   </div>
-  <Search size="md" class="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
-  <Button class="rounded-s-none p-2.5!">
+  <Search size="lg" class="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
+  <Button class="rounded-s-none p-2!">
     <SearchOutline class="h-6 w-6" />
   </Button>
 </form>
@@ -191,15 +191,36 @@ Get started with this example if you would like to enable voice search for your 
 </script>
 
 <form class="flex gap-2">
-  <Search size="md" class="flex items-center gap-2" placeholder="Search Mockups, Logos, Design Templates...">
+  <Search hideClear size="lg" class="flex items-center gap-2" placeholder="Search Mockups, Logos, Design Templates...">
     <button type="button" onclick={handleVoiceBtn} class="outline-hidden">
       <MicrophoneSolid class="me-2 h-5 w-5" />
     </button>
   </Search>
-  <Button size="sm">
+  <Button size="sm" class="p-2!" >
     <SearchOutline class="-ms-1 me-2 h-6 w-6" />
     Search
   </Button>
+</form>
+```
+
+
+## Accessing Search Element with elementRef
+
+```svelte example
+<script lang="ts">
+  import { Search, Button } from "flowbite-svelte"
+  let searchRef = $state() as HTMLInputElement;
+  let elementTxt = $state('This text has NOT been updated.')
+</script>
+
+<form id="example-form" onsubmit={submitted}>
+  <Search bind:value={elementTxt} bind:elementRef={searchRef} class="my-4"/>
+  <Button 
+  onclick={()=>{
+    searchRef?.setRangeText("ALREADY", 14, 17, "select")
+    searchRef?.select()
+  }}
+  >Update text</Button>
 </form>
 ```
 
@@ -207,7 +228,7 @@ Get started with this example if you would like to enable voice search for your 
 
 ```svelte example class="space-y-4"
 <script lang="ts">
-  import { Search, Button, P } from "$lib";
+  import { Search, Button, P } from "flowbite-svelte";
 
   let value = $state("");
 

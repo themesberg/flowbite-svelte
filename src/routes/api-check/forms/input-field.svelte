@@ -1,10 +1,11 @@
-<script>
+<script lang="ts">
   import { Input, Label, Helper, Button, Checkbox, A, InputAddon, ButtonGroup, CloseButton, Dropdown, DropdownItem } from "$lib";
   import { EnvelopeSolid, EyeOutline, EyeSlashOutline, ChevronDownOutline, SearchOutline } from "flowbite-svelte-icons";
 
-  let value = 5;
-  let show = false;
-  let show1 = false;
+  let elementRef = $state() as HTMLInputElement;
+  let value = $state(5);
+  let show = $state(false);
+  let show1 = $state(false);
 </script>
 
 <h1 class="my-4 text-3xl">Input Field</h1>
@@ -302,4 +303,11 @@
       {/snippet}
     </Input>
   </div>
+</div>
+
+<h2>Accessing Input element using elementRef</h2>
+
+<div class="my-4 rounded border p-4">
+  <Input bind:elementRef={elementRef} class="my-4"/>
+  <Button onclick={() => elementRef?.focus()}>Focus on Input</Button>
 </div>

@@ -69,6 +69,30 @@ The file input component can be used to upload one or more files from the device
 <Fileupload id="larg_size" size="lg" />
 ```
 
+## Events
+
+Add `clearable` and `clearableOnClick` props.
+
+```svelte example
+<script>
+  import { Fileupload } from "flowbite-svelte";
+</script>
+
+<Fileupload id="event" clearable clearableOnClick={()=>{alert('Clicked close button!')}} />
+```
+
+## Accessing Fileupload Element with elementRef
+
+```svelte example
+<script lang="ts">
+  import { Fileupload, Button } from "flowbite-svelte";
+  let fileUploadRef = $state() as HTMLInputElement;
+</script>
+
+<Fileupload id="event" bind:elementRef={fileUploadRef} class="my-4"/>
+<Button onclick={()=>{ fileUploadRef?.select() }}>Focus on Fileupload</Button>
+```
+
 ## Dropzone
 
 ```svelte example

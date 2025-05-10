@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { Select, Label, MultiSelect, Dropdown, DropdownItem, Badge, type SelectOptionType } from "$lib";
+  import { Select, Label, MultiSelect, Dropdown, DropdownItem, Badge, Button, type SelectOptionType } from "$lib";
   import { ChevronDownOutline, ArrowUpOutline, ArrowDownOutline } from "flowbite-svelte-icons";
   import Usa from "../../utils/icons/Usa.svelte";
   import Germany from "../../utils/icons/Germany.svelte";
   import Italy from "../../utils/icons/Italy.svelte";
   import China from "../../utils/icons/China.svelte";
 
-  let selected = "";
+  let selected = $state("");
   let countries = [
     { value: "us", name: "United States" },
     { value: "ca", name: "Canada" },
@@ -24,8 +24,8 @@
     { value: "MI", name: "Michigan" }
   ];
 
-  let multiSelected: string[] = [];
-  let multiCountries = [
+  let multiSelected: string[] = $state([]);
+  const multiCountries = [
     { value: "us", name: "United States" },
     { value: "ca", name: "Canada" },
     { value: "fr", name: "France" },
@@ -33,7 +33,7 @@
     { value: "en", name: "England" }
   ];
 
-  let multiDisabledCountries = [
+  const multiDisabledCountries = [
     { value: "us", name: "United States" },
     { value: "ca", name: "Canada" },
     { value: "fr", name: "France" },
@@ -41,7 +41,7 @@
     { value: "en", name: "England", disabled: true }
   ];
 
-  let colorCountries: SelectOptionType<string>[] = [
+  const colorCountries: SelectOptionType<string>[] = [
     { value: "us", name: "United States", color: "indigo" },
     { value: "ca", name: "Canada", color: "green" },
     { value: "fr", name: "France", color: "blue" },
@@ -49,8 +49,16 @@
     { value: "en", name: "England", color: "yellow" }
   ];
 
-  let preselected: string[] = ["us", "fr"];
-  let placeholder = "placeholder text";
+  let preselected: string[] = $state(["us", "fr"]);
+  const placeholder = "placeholder text";
+
+  let selectRef = $state() as HTMLSelectElement;
+  const options = [
+    { value: "option1", name: "Option 1" },
+    { value: "option2", name: "Option 2" },
+    { value: "option3", name: "Option 3" }
+  ];
+  let selectedValue = $state("");
 </script>
 
 <h1 class="my-4 text-3xl">Select</h1>
@@ -206,4 +214,25 @@
       </Badge>
     {/snippet}
   </MultiSelect>
+</div>
+
+<h2>Accessing Select Element with elementRef</h2>
+
+<div>
+  <Select 
+  bind:elementRef={selectRef}
+  bind:value={selectedValue}
+  items={options}
+/>
+
+<Button 
+  onclick={() => {
+    selectRef?.focus();
+    console.log(`Selected index: ${selectRef?.selectedIndex}`);
+    // programmatically change the selection
+    // selectRef.selectedIndex = 1; // This would select Option 2
+  }}
+>
+  Focus Select
+</Button>
 </div>

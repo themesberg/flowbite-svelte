@@ -4,13 +4,13 @@
   import type { FloatingLabelInputProps } from "$lib/types";
   import clsx from "clsx";
 
-  let { children, id = idGenerator(), value = $bindable(), "aria-describedby": ariaDescribedby, variant = "standard", size = "default", color = "default", class: divClass, inputClass, labelClass, ...restProps }: FloatingLabelInputProps = $props();
+  let { children, id = idGenerator(), value = $bindable(), elementRef = $bindable(),"aria-describedby": ariaDescribedby, variant = "standard", size = "default", color = "default", class: divClass, inputClass, labelClass, ...restProps }: FloatingLabelInputProps = $props();
 
   const { base, input, label } = $derived(floatingLabelInput({ variant, size, color }));
 </script>
 
 <div class={base({ class: clsx(divClass) })}>
-  <input {id} placeholder=" " bind:value {...restProps} aria-describedby={ariaDescribedby} class={input({ class: inputClass })} />
+  <input {id} placeholder=" " bind:value bind:this={elementRef} {...restProps} aria-describedby={ariaDescribedby} class={input({ class: inputClass })} />
 
   <label for={id} class={label({ class: labelClass })}>
     {@render children()}

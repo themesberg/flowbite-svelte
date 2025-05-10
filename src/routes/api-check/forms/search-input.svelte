@@ -60,10 +60,12 @@
     e.preventDefault();
     alert(`You are searching: ${value}`);
   };
+
+  let searchRef = $state() as HTMLInputElement;
+  let elementTxt = $state('This text has NOT been updated.')
 </script>
 
 <h1 class="my-4 text-3xl">Search Input</h1>
-The search input component can be used to let your users search through your website using string queries and it comes in multiple styles, variants, and sizes built with the utility classes from Tailwind CSS. You will also find more advanced search components on this page including dropdown category selections, search buttons positioned inside the input field, voice search fields and more.
 
 <h2 class="text-2xl">Search bar example</h2>
 
@@ -73,20 +75,18 @@ The search input component can be used to let your users search through your web
   </Search>
 </div>
 
-<h2 class="text-2xl">Simple search input</h2>
-Use the simplest form of a search input component with an icon and a search button next to the text field.
+<h2 class="text-2xl">Search input with clearable</h2>
 
 <div class="my-4 rounded border p-4">
   <form class="flex gap-2">
-    <Search size="md" />
+    <Search size="md" clearable/>
     <Button class="p-2.5!">
-      <SearchOutline class="h-6 w-6" />
+      <SearchOutline class="h-5 w-5" />
     </Button>
   </form>
 </div>
 
 <h2 class="text-2xl">Search with dropdown</h2>
-Use this search component with a dropdown to let your users select a category in which they would like the search query to be targeted in.
 
 <div class="my-4 rounded border p-4">
   <form class="flex">
@@ -108,7 +108,7 @@ Use this search component with a dropdown to let your users select a category in
         {/each}
       </Dropdown>
     </div>
-    <Search size="md" class="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
+    <Search size="lg" class="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
     <Button class="rounded-s-none p-2.5!">
       <SearchOutline class="h-6 w-6" />
     </Button>
@@ -140,7 +140,7 @@ Use this example where you can select a country in which you want to search for 
         {/each}
       </Dropdown>
     </div>
-    <Search size="md" class="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
+    <Search size="lg" class="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
     <Button class="rounded-s-none p-2.5!">
       <SearchOutline class="h-6 w-6" />
     </Button>
@@ -172,4 +172,18 @@ Get started with this example if you would like to enable voice search for your 
     <P class="my-1">You are searching: {value}</P>
     <Button type="submit">Submit</Button>
   </form>
+</div>
+
+<h2 class="text-2xl">Accessing Search Element with elementRef</h2>
+
+<div class="my-4 rounded border p-4">
+<form id="example-form" onsubmit={submitted}>
+  <Search bind:value={elementTxt} bind:elementRef={searchRef} class="my-4"/>
+  <Button 
+  onclick={()=>{
+    searchRef?.setRangeText("ALREADY", 14, 17, "select")
+    searchRef?.select()
+  }}
+  >Update text</Button>
+</form>
 </div>

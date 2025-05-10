@@ -284,6 +284,19 @@ Use the position property to position these toast components relative to the mai
   </div>
 </div>
 
+<h2>Toast style</h2>
+
+<div class="my-4 rounded border p-8">
+  <div class="relative h-56">
+    <Toast class="border" iconClass="border" contentClass="border"
+    >
+    {#snippet icon()}
+    <CameraPhotoOutline class="h-6 w-6" />
+  {/snippet}
+    Click the close button to see the event.</Toast>
+  </div>
+</div>
+
 <h2 class="text-2xl">Events</h2>
 You can use `onclose` to execute custom logic when the toast is closed.
 
