@@ -9,14 +9,17 @@
 
   // TODO: missing focus trap
 
-  let { children, oncancel, modal = true, autoclose = false, header, footer, title, open = $bindable(false), dismissable = true, closeBtnClass, headerClass, bodyClass, footerClass, outsideclose = true, size = "md", placement, class: className, params, transition = fade, ...restProps }: ModalProps = $props();
+  let { children, oncancel, onclose, modal = true, autoclose = false, header, footer, title, open = $bindable(false), dismissable = true, closeBtnClass, headerClass, bodyClass, footerClass, outsideclose = true, size = "md", placement, class: className, params, transition = fade, ...restProps }: ModalProps = $props();
 
   const paramsDefault = { duration: 100, easing: sineIn };
   const paramsOptions = $derived(params ?? paramsDefault);
 
   const { base, header: headerCls, footer: footerCls, body, closeBtn } = $derived(modalTheme({ placement, size }));
 
-  const closeModal = () => (open = false);
+   const closeModal = () => {
+    open = false;
+    onclose?.();
+  };
 
   function _oncancel(ev: Event & { currentTarget: HTMLDialogElement }) {
     // this event get called when user press ESC key
@@ -54,9 +57,6 @@
         {:else if header}
           {@render header()}
         {/if}
-        <!-- {#if dismissable}
-          <CloseButton onclick={closeModal} class={closeBtnClass} tabindex={-1} />
-        {/if} -->
       </div>
     {/if}
     <div class={body({ class: bodyClass })}>

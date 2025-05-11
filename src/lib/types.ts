@@ -989,6 +989,7 @@ export interface ModalProps extends ModalVariants, HTMLDialogAttributes {
   bodyClass?: string;
   footerClass?: string;
   closeBtnClass?: string;
+  onclose?: () => void; 
 }
 
 // navbar

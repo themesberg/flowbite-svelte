@@ -92,6 +92,26 @@
   </Modal>
 </div>
 
+<h2 class="my-4 text-2xl">Modal with onclose</h2>
+
+<div class="my-4 flex justify-center rounded border p-4">
+  <Button onclick={() => (open = true)}>Default modal</Button>
+
+  <Modal bind:open autoclose onclose={()=>{alert('Using onclose prop.')}} >
+    {#snippet header()}
+      <h3>
+        Terms of Service <small class="font-normal">(Revised)</small>
+      </h3>
+    {/snippet}
+    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
+    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union's General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
+    {#snippet footer()}
+      <Button onclick={() => alert('Handle "success"')}>I accept</Button>
+      <Button color="alternative">Decline</Button>
+    {/snippet}
+  </Modal>
+</div>
+
 <h2 class="my-4 text-2xl">Pop-up modal</h2>
 <div class="my-4 flex justify-center rounded border p-4">
   <Button onclick={() => (popupModal = true)}>Pop-up modal</Button>
