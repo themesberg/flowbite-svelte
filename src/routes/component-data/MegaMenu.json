@@ -10,6 +10,7 @@
     ["items", "[]"],
     ["full", ""],
     ["ulClass", ""],
+    ["isOpen", "$bindable()"],
     ["class: className", ""]
   ]
 }

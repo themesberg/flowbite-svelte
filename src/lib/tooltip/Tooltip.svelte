@@ -26,7 +26,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TooltipProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1634)
+[TooltipProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1637)
 ## Props
 @prop type = "dark"
 @prop color = undefined
@@ -36,5 +36,6 @@
 @prop placement = "top"
 @prop onbeforetoggle: _onbeforetoggle
 @prop class: className
+@prop isOpen = $bindable()
 @prop ...restProps
 -->

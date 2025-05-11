@@ -94,7 +94,7 @@
 
 <div class="my-4 h-64 rounded border p-4">
   <div class="flex">
-    <button id="states-button" class="z-10 inline-flex shrink-0 items-center rounded-s-lg border border-gray-300 bg-gray-100 px-4 py-2.5 text-center text-sm font-medium text-gray-500 hover:bg-gray-200 focus:ring-4 focus:ring-gray-100 focus:outline-hidden dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-700" type="button">
+    <button id="states-button" class="z-10 inline-flex shrink-0 items-center rounded-s-lg border border-gray-300 bg-gray-100 px-4 py-1.5 text-center text-sm font-medium text-gray-500 hover:bg-gray-200 focus:ring-4 focus:ring-gray-100 focus:outline-hidden dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-700" type="button">
       <Usa />
       USA
       <ChevronDownOutline class="ms-2 h-6 w-6" />
@@ -117,7 +117,7 @@
         China
       </DropdownItem>
     </Dropdown>
-    <Select items={states} placeholder="Choose the state" class="rounded-s-none!" />
+    <Select items={states} placeholder="Choose the state" selectClass="rounded-s-none!" class="w-full" />
   </div>
 </div>
 

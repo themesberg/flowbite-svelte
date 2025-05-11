@@ -5,7 +5,7 @@
   import { megamenu } from "./theme";
   import type { MegaMenuProps } from "$lib/types";
 
-  let { children, extra, items = [], full, ulClass, isOpen=$bindable(),class: className, ...restProps }: MegaMenuProps = $props();
+  let { children, extra, items = [], full, ulClass, isOpen = $bindable(), class: className, ...restProps }: MegaMenuProps = $props();
 
   /* eslint-disable  @typescript-eslint/no-explicit-any */
   interface LinkTypeLike extends LinkType {
@@ -43,6 +43,7 @@
 @prop items = []
 @prop full
 @prop ulClass
+@prop isOpen = $bindable()
 @prop class: className
 @prop ...restProps
 -->

@@ -12,6 +12,7 @@
     ["children", ""],
     ["placement", "\"top\""],
     ["onbeforetoggle: _onbeforetoggle", ""],
-    ["class: className", ""]
+    ["class: className", ""],
+    ["isOpen", "$bindable()"]
   ]
 }

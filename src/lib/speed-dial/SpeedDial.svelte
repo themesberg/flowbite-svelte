@@ -6,7 +6,7 @@
   import { speed_dial } from "./theme";
   import type { SpeedDialProps, SpeedCtxType } from "$lib/types";
 
-  let { children, popperClass, placement = "top", pill = true, tooltip = "left", trigger = "hover", textOutside = false, class: className, isOpen = $bindable() , ...restProps }: SpeedDialProps = $props();
+  let { children, popperClass, placement = "top", pill = true, tooltip = "left", trigger = "hover", textOutside = false, class: className, isOpen = $bindable(), ...restProps }: SpeedDialProps = $props();
 
   setContext<SpeedCtxType>("speed-dial", { pill, tooltip, textOutside });
 
@@ -27,7 +27,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1357)
+[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1359)
 ## Props
 @prop children
 @prop popperClass
@@ -37,5 +37,6 @@
 @prop trigger = "hover"
 @prop textOutside = false
 @prop class: className
+@prop isOpen = $bindable()
 @prop ...restProps
 -->

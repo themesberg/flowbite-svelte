@@ -26,7 +26,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1087)
+[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1088)
 ## Props
 @prop title: titleSlot
 @prop color = "default"
@@ -36,5 +36,6 @@
 @prop children
 @prop placement = "top"
 @prop class: className
+@prop isOpen = $bindable(undefined)
 @prop ...restProps
 -->
