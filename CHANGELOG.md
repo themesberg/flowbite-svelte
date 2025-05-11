@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.1
+
+### Patch Changes
+
+- feat: allow A.svelte as a button, onclose event handler to Modal'
+
 ## 1.1.0
 
 ### Minor Changes

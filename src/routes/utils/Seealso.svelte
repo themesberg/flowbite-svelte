@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'; 
-  import { tv } from 'tailwind-variants';
+  import { twMerge } from "tailwind-merge";
+  import { tv } from "tailwind-variants";
 
   // Define the component's types
   type Link = {
@@ -17,14 +17,10 @@
   };
 
   // Use $props() rune instead of export let
-  let { 
-    links = [], 
-    showDescriptions = true, 
-    class: className = ""
-  }: SeeAlsoProps = $props();
+  let { links = [], showDescriptions = true, class: className = "" }: SeeAlsoProps = $props();
 
   let expanded = $state(false);
-  
+
   function toggleExpanded() {
     expanded = !expanded;
   }
@@ -43,25 +39,20 @@
   });
 
   const { base, span, toggleButton, list, item, linkcls, description } = seeAlso();
- 
-  // const visibleLinks = $derived(expanded ? links : links.slice(0, 3));
 
+  // const visibleLinks = $derived(expanded ? links : links.slice(0, 3));
 </script>
 
 {#if links.length > 0}
   <section class={twMerge(base(), className)}>
     {#if links.length > 3}
-    <span class={span()}>
-        <button 
-          class={toggleButton()}
-          onclick={toggleExpanded}
-          aria-expanded={expanded}
-        >
-          {expanded ? 'Show less' : `Show all (${links.length})`}
+      <span class={span()}>
+        <button class={toggleButton()} onclick={toggleExpanded} aria-expanded={expanded}>
+          {expanded ? "Show less" : `Show all (${links.length})`}
         </button>
       </span>
     {/if}
-    
+
     <ul class={list()}>
       {#each expanded ? links : links.slice(0, 3) as link}
         <li class={item()}>

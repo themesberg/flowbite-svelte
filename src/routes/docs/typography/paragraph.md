@@ -32,7 +32,7 @@ Use this example of a paragraph element to use inside article content or a landi
 
 ## contenteditable
 
-Since `P.svelte` extends `HTMLAttributes<HTMLElement>`, you can use `contenteditable` attribute. 
+Since `P.svelte` extends `HTMLAttributes<HTMLElement>`, you can use `contenteditable` attribute.
 
 ```svelte example
 <script>

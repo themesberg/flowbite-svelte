@@ -7,6 +7,7 @@
   "props": [
     ["children", ""],
     ["oncancel", ""],
+    ["onclose", ""],
     ["modal", "true"],
     ["autoclose", "false"],
     ["header", ""],

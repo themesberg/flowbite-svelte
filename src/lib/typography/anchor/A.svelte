@@ -26,22 +26,12 @@
 
 {#if asButton}
   <!-- Render as a button that looks like a link -->
-  <button
-    type="button"
-    class={linkClass}
-    onclick={handleClick}
-     {...buttonProps}
-  >
+  <button type="button" class={linkClass} onclick={handleClick} {...buttonProps}>
     {@render children()}
   </button>
 {:else}
   <!-- Standard anchor behavior -->
-  <a
-    {href}
-    class={linkClass}
-    onclick={handleClick}
-    {...restProps}
-  >
+  <a {href} class={linkClass} onclick={handleClick} {...restProps}>
     {@render children()}
   </a>
 {/if}
@@ -50,10 +40,13 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AnchorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1640)
+[AnchorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1641)
 ## Props
 @prop children
 @prop color = "primary"
+@prop asButton = false
+@prop onclick
+@prop href = "#"
 @prop class: className
 @prop ...restProps
 -->

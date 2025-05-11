@@ -97,7 +97,13 @@
 <div class="my-4 flex justify-center rounded border p-4">
   <Button onclick={() => (open = true)}>Default modal</Button>
 
-  <Modal bind:open autoclose onclose={()=>{alert('Using onclose prop.')}} >
+  <Modal
+    bind:open
+    autoclose
+    onclose={() => {
+      alert("Using onclose prop.");
+    }}
+  >
     {#snippet header()}
       <h3>
         Terms of Service <small class="font-normal">(Revised)</small>

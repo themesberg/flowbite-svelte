@@ -11,7 +11,7 @@ export { default as CompoAttributesViewer } from "./CompoAttributesViewer.svelte
 export { default as GitHubCompoLinks } from "./GitHubCompoLinks.svelte";
 export { default as Toc } from "./Toc.svelte";
 export { toKebabCase, getFilteredFileNames } from "./helpers";
-export { default as Seealso } from './Seealso.svelte'
+export { default as Seealso } from "./Seealso.svelte";
 
 const basename = (path: string) => path.split("/").pop()?.split(".").shift() ?? "";
 const filePath = (path: string) => "/" + basename(path);

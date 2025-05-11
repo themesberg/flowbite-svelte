@@ -16,7 +16,7 @@
 
   const { base, header: headerCls, footer: footerCls, body, closeBtn } = $derived(modalTheme({ placement, size }));
 
-   const closeModal = () => {
+  const closeModal = () => {
     open = false;
     onclose?.();
   };
@@ -81,6 +81,7 @@
 ## Props
 @prop children
 @prop oncancel
+@prop onclose
 @prop modal = true
 @prop autoclose = false
 @prop header

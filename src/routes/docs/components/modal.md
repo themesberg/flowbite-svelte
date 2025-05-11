@@ -105,7 +105,6 @@ This example shows the `header` customization as well.
 </Modal>
 ```
 
-
 ## Modal with onclose
 
 Use the `onclose` prop to run code when the modal closes, regardless of how it was triggered (close button, outside click, ESC key, or autoclose).
@@ -118,7 +117,13 @@ Use the `onclose` prop to run code when the modal closes, regardless of how it w
 
 <Button onclick={() => (open = true)}>Default modal</Button>
 
-<Modal bind:open autoclose onclose={()=>{alert('Using onclose prop.')}} >
+<Modal
+  bind:open
+  autoclose
+  onclose={() => {
+    alert("Using onclose prop.");
+  }}
+>
   {#snippet header()}
     <h3>
       Terms of Service <small class="font-normal">(Revised)</small>

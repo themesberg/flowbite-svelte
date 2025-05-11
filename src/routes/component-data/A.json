@@ -2,11 +2,14 @@
   "name": "A",
   "type": {
     "name": "AnchorProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1640"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1641"
   },
   "props": [
     ["children", ""],
     ["color", "\"primary\""],
+    ["asButton", "false"],
+    ["onclick", ""],
+    ["href", "\"#\""],
     ["class: className", ""]
   ]
 }

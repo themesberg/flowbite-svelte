@@ -21,15 +21,12 @@ Use this example to set default styles to an inline link element.
 
 <h2 class="text-2xl">A link as a button</h2>
 
-
 <div class="my-4 rounded border p-4">
-  <A asButton onclick={() => show_full_link = !show_full_link}>
-  view full link
-</A>
+  <A asButton onclick={() => (show_full_link = !show_full_link)}>view full link</A>
 
-{#if show_full_link}
-  <p>The full link is now visible.</p>
-{/if}
+  {#if show_full_link}
+    <p>The full link is now visible.</p>
+  {/if}
 </div>
 
 <h2 class="text-2xl">Paragraph</h2>

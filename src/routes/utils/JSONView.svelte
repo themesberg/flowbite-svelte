@@ -30,12 +30,12 @@
   }
 </script>
 
-<div class="json-view my-2 overflow-hidden rounded-md border border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-600">
+<div class="json-view my-2 overflow-hidden rounded-md border border-gray-200 bg-gray-50 dark:border-gray-600 dark:bg-gray-800">
   <button onclick={toggle} class="toggle-btn flex w-full items-center justify-between p-3 text-left transition-colors hover:bg-gray-100 dark:hover:bg-gray-700">
     <div class="flex items-center gap-2">
       <span class="text-gray-600 dark:text-gray-100">{expanded ? "▼" : "►"}</span>
       <span class="font-medium">{data.name}</span>
-      <a href={data.type.link} target="_blank" rel="noopener noreferrer" class="ml-2 text-sm text-blue-600 dark:text-blue-500 hover:underline">
+      <a href={data.type.link} target="_blank" rel="noopener noreferrer" class="ml-2 text-sm text-blue-600 hover:underline dark:text-blue-500">
         Type: {data.type.name}
       </a>
     </div>
@@ -50,7 +50,7 @@
         <div class="p-2">
           {#each data.props as propArray}
             <div class="prop-item flex rounded p-1.5 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">
-              <div class="prop-name flex-grow font-mono ">{propArray[0]}</div>
+              <div class="prop-name flex-grow font-mono">{propArray[0]}</div>
               {#if hasDefaultValue(propArray)}
                 <div class="prop-value text-gray-600">
                   default: <span class="font-mono">{propArray[1]}</span>
