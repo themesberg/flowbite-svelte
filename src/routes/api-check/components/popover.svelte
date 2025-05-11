@@ -22,6 +22,9 @@
   const handler = () => {
     alert("Submitted!");
   };
+
+  let isOpen = $state(true)
+
 </script>
 
 <h1 class="my-4 text-3xl">Popover</h1>
@@ -280,4 +283,13 @@
   <Popover reference="#ext-ref" triggeredBy="#ref-1" class="w-64 text-sm font-light " placement="left" title="Placement: Left">And here's some amazing content. It's very engaging. Right?</Popover>
   <Popover reference="#ext-ref" triggeredBy="#ref-2" class="w-64 text-sm font-light " placement="top" title="Placement: Top">And here's some amazing content. It's very engaging. Right?</Popover>
   <Popover reference="#ext-ref" triggeredBy="#ref-3" class="w-64 text-sm font-light " placement="right" title="Placement: Right">And here's some amazing content. It's very engaging. Right?</Popover>
+</div>
+
+
+<h2 class="my-4 text-2xl">Binding isOpen</h2>
+
+<div class="my-4 flex flex-col space-y-4 h-44 items-center justify-center rounded border p-4">
+
+<Button>Hover me</Button>
+<Popover bind:isOpen={isOpen} class="w-64 text-sm font-light " title="Popover title">And here's some amazing content. It's very engaging. Right?</Popover>
 </div>

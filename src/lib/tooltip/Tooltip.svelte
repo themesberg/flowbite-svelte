@@ -4,7 +4,7 @@
   import { tooltip } from "./theme";
   import type { TooltipProps, TriggeredToggleEvent } from "$lib";
 
-  let { type = "dark", color = undefined, trigger = "hover", arrow = true, children, placement = "top", onbeforetoggle: _onbeforetoggle, class: className, ...restProps }: TooltipProps = $props();
+  let { type = "dark", color = undefined, trigger = "hover", arrow = true, children, placement = "top", onbeforetoggle: _onbeforetoggle, class: className, isOpen = $bindable(), ...restProps }: TooltipProps = $props();
 
   let { base } = $derived(tooltip({ color, type }));
 
@@ -18,7 +18,7 @@
   }
 </script>
 
-<Popper {...restProps} {placement} {trigger} {arrow} class={base({ class: clsx(className) })} {onbeforetoggle}>
+<Popper {...restProps} bind:isOpen {placement} {trigger} {arrow} class={base({ class: clsx(className) })} {onbeforetoggle}>
   <div class="pointer-events-none">{@render children()}</div>
 </Popper>
 

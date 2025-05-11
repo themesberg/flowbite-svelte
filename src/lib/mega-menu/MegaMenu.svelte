@@ -5,7 +5,7 @@
   import { megamenu } from "./theme";
   import type { MegaMenuProps } from "$lib/types";
 
-  let { children, extra, items = [], full, ulClass, class: className, ...restProps }: MegaMenuProps = $props();
+  let { children, extra, items = [], full, ulClass, isOpen=$bindable(),class: className, ...restProps }: MegaMenuProps = $props();
 
   /* eslint-disable  @typescript-eslint/no-explicit-any */
   interface LinkTypeLike extends LinkType {
@@ -17,7 +17,7 @@
   let ulCls = $derived(ul({ class: ulClass }));
 </script>
 
-<Popper color={full ? "default" : "dropdown"} arrow={false} trigger="click" placement="bottom" yOnly={full} {...restProps} class={wrapperClass}>
+<Popper color={full ? "default" : "dropdown"} arrow={false} bind:isOpen trigger="click" placement="bottom" yOnly={full} {...restProps} class={wrapperClass}>
   <div class={div()}>
     <ul class={ulCls}>
       {#each items as item, index}

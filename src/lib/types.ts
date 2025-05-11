@@ -973,6 +973,7 @@ export interface MegaMenuProps extends Omit<PopperProps, "children"> {
   items?: LinkType[];
   full?: boolean;
   ulClass?: string;
+  isOpen?: boolean | undefined;
 }
 
 // modal
@@ -1090,6 +1091,7 @@ export interface PopoverProps extends Omit<PopperProps, "title"> {
   params?: ParamsType | undefined;
   defaultClass?: string;
   transition?: TransitionFunc;
+  isOpen?: boolean | undefined;
 }
 
 // progress
@@ -1365,6 +1367,7 @@ export type SpeedDialProps = PopperProps & {
   pill?: boolean;
   ontoggle?: PopperProps["ontoggle"];
   onbeforetoggle?: PopperProps["onbeforetoggle"];
+  isOpen?: boolean | undefined;
 };
 
 export type SpeedDialButtonProps = ButtonProps & {
@@ -1634,6 +1637,7 @@ export interface ToastProps extends HTMLAttributes<HTMLDivElement> {
 export interface TooltipProps extends PopperProps {
   type?: "light" | "dark" | "auto";
   color?: TooltipVariants["color"];
+  isOpen?: boolean | undefined;
 }
 
 // typography

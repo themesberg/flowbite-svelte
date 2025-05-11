@@ -4,12 +4,12 @@
   import { popover } from "./theme";
   import type { PopoverProps } from "$lib/types";
 
-  let { title: titleSlot, color = "default", trigger = "hover", defaultClass, arrow = true, children, placement = "top", class: className, ...restProps }: PopoverProps = $props();
+  let { title: titleSlot, color = "default", trigger = "hover", defaultClass, arrow = true, children, placement = "top", class: className, isOpen = $bindable(undefined), ...restProps }: PopoverProps = $props();
 
   let { base, title, h3, content } = $derived(popover({ color }));
 </script>
 
-<Popper {...restProps} {placement} {trigger} {arrow} class={base({ class: clsx(className) })}>
+<Popper {...restProps} bind:isOpen {placement} {trigger} {arrow} class={base({ class: clsx(className) })}>
   {#if typeof titleSlot === "string"}
     <div class={title()}>
       <h3 class={h3()}>{titleSlot}</h3>

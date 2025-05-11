@@ -6,7 +6,7 @@
   import { speed_dial } from "./theme";
   import type { SpeedDialProps, SpeedCtxType } from "$lib/types";
 
-  let { children, popperClass, placement = "top", pill = true, tooltip = "left", trigger = "hover", textOutside = false, class: className, ...restProps }: SpeedDialProps = $props();
+  let { children, popperClass, placement = "top", pill = true, tooltip = "left", trigger = "hover", textOutside = false, class: className, isOpen = $bindable() , ...restProps }: SpeedDialProps = $props();
 
   setContext<SpeedCtxType>("speed-dial", { pill, tooltip, textOutside });
 
@@ -17,7 +17,7 @@
 
 <!-- class="bg-transparent" -->
 
-<Popper {...restProps} {trigger} arrow={false} {placement} class={base({ class: clsx(className) })}>
+<Popper {...restProps} bind:isOpen {trigger} arrow={false} {placement} class={base({ class: clsx(className) })}>
   <div class={popper({ class: popperClass })}>
     {@render children()}
   </div>
