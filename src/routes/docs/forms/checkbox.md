@@ -280,7 +280,7 @@ You can use the property `inline` as the alternative.
 
 ## CheckboxButton
 
-The special case component - `CheckboxButton` - is the `Checkbox` with the [Button](/docs/components/buttons) look and feel. I can be used as standalone element or be wrapped inside [ButtonGroup](/docs/components/button-group).
+The special case component - `CheckboxButton` - is the `Checkbox` with the [Button](/docs/components/buttons) look and feel. It can be used as standalone element or be wrapped inside [ButtonGroup](/docs/components/button-group).
 
 This component accepts all props from the [Button](/docs/components/buttons) for styling and `Checkbox` for behaviour.
 

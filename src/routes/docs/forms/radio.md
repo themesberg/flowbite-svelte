@@ -287,7 +287,7 @@ Use this example of an advanced layout of radio elements where the label parent 
 
 ## RadioButton
 
-The special case component - `RadioButton` - is the `Radio` with the [Button](/docs/components/buttons) look and feel. I can be used as standalone element or be wrapped inside [ButtonGroup](/docs/components/button-group).
+The special case component - `RadioButton` - is the `Radio` with the [Button](/docs/components/buttons) look and feel. It can be used as standalone element or be wrapped inside [ButtonGroup](/docs/components/button-group).
 
 This component accepts all props from the [Button](/docs/components/buttons) for styling and `Radio` for behaviour.
 

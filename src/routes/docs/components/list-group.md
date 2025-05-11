@@ -9,9 +9,16 @@ thumnailSize: w-36
 ---
 
 <script>
-  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, Seealso } from '../../utils'
   import { Badge, Heading, P, A } from '$lib'
   const dirName = toKebabCase(component_title)
+  const relatedLinks = [
+    {
+      title: "ButtonGroup component",
+      url: "/docs/components/button-group",
+      description: "A set of buttons sticked together in a horizontal line"
+    }
+  ];
 </script>
 
 The list group component can be used to display a series of elements, buttons or links inside a single card component similar to a sidebar.
@@ -184,6 +191,10 @@ When non standard usage is needed you can omit the `items` props and add element
   </a>
 </Listgroup>
 ```
+
+## See also
+
+<Seealso links={relatedLinks} />
 
 ## Component data
 

@@ -13,7 +13,7 @@ thumnailSize: w-64
   import { P, A, Heading } from '$lib'; 
 
   const components = 'Blockquote'
-   const relatedLinks = [
+  const relatedLinks = [
     {
       title: "Heading component",
       url: "/docs/typography/heading",
