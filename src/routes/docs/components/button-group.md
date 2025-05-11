@@ -11,38 +11,7 @@ description: Button groups are a Tailwind CSS powered set of buttons sticked tog
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, Seealso } from '../../utils'
   import { Badge, P, A } from '$lib'
   const dirName = 'buttongroup'
-  const relatedLinks = [
-    {
-      title: "Button component",
-      url: "/docs/components/buttons",
-      description: "With support for multiple styles, colors, sizes, gradients, and shadows"
-    },
-    {
-      title: "ButtonGroup component",
-      url: "/docs/components/button-group",
-      description: "A set of buttons sticked together in a horizontal line"
-    },
-    {
-      title: "Listgroup component",
-      url: "/docs/components/list-group",
-      description: "Display a series of items, buttons or links inside a single element"
-    },
-    {
-      title: "CloseButton component",
-      url: "/docs/utilities/close-button",
-      description: "Hide a target element using Svelte interactivity"
-    },
-    {
-      title: "RadioButton component",
-      url: "/docs/forms/radio#radiobutton",
-      description: "Use as standalone element or be wrapped inside ButtonGroup"
-    },
-    {
-      title: "CheckboxButton component",
-      url: "/docs/forms/checkbox#checkboxbutton",
-      description: "Use as standalone element or be wrapped inside ButtonGroup"
-    }
-  ];
+  const relatedLinks = ['/docs/components/buttons','/docs/components/button-group' ,'/docs/components/list-group','/docs/utilities/close-button','/docs/forms/radio#radiobutton' , '/docs/forms/checkbox#checkboxbutton'];
 </script>
 
 The button group component from flowbite-svelte can be used to stack together multiple buttons and links inside a single element.

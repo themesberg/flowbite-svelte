@@ -13,28 +13,7 @@ thumnailSize: w-64
   import { P, A, Heading } from '$lib'; 
 
   const components = 'Blockquote'
-  const relatedLinks = [
-    {
-      title: "Heading component",
-      url: "/docs/typography/heading",
-      description: "Define six levels of title elements from H1 to H6 "
-    },
-    {
-      title: "Paragraph component",
-      url: "/docs/typography/paragraph",
-      description: "Create multiple blocks of text separated by blank lines and write content based on multiple layouts and styles"
-    },
-    {
-      title: "Link component",
-      url: "/docs/typography/link",
-      description: "Set hyperlinks from one page to another or to an external website."
-    },
-    {
-      title: "List component",
-      url: "/docs/typography/list",
-      description: "Show an unordered or ordered list of items "
-    }
-  ];
+  const relatedLinks = ["/docs/typography/heading","/docs/typography/paragraph","/docs/typography/link","/docs/typography/list"];
 </script>
 
 Get started with Blockquote component when quoting external sources such as quotes inside an article, user reviews, and testimonials based on multiple examples of layouts, styles, and contexts.
