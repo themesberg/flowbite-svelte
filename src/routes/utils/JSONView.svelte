@@ -30,12 +30,12 @@
   }
 </script>
 
-<div class="json-view my-2 overflow-hidden rounded-md border border-gray-200 bg-gray-50">
-  <button onclick={toggle} class="toggle-btn flex w-full items-center justify-between p-3 text-left transition-colors hover:bg-gray-100">
+<div class="json-view my-2 overflow-hidden rounded-md border border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-600">
+  <button onclick={toggle} class="toggle-btn flex w-full items-center justify-between p-3 text-left transition-colors hover:bg-gray-100 dark:hover:bg-gray-700">
     <div class="flex items-center gap-2">
-      <span class="text-gray-600">{expanded ? "▼" : "►"}</span>
+      <span class="text-gray-600 dark:text-gray-100">{expanded ? "▼" : "►"}</span>
       <span class="font-medium">{data.name}</span>
-      <a href={data.type.link} target="_blank" rel="noopener noreferrer" class="ml-2 text-sm text-blue-600 hover:underline">
+      <a href={data.type.link} target="_blank" rel="noopener noreferrer" class="ml-2 text-sm text-blue-600 dark:text-blue-500 hover:underline">
         Type: {data.type.name}
       </a>
     </div>
@@ -43,14 +43,14 @@
   </button>
 
   {#if expanded}
-    <div class="props-content border-t border-gray-200">
+    <div class="props-content border-t border-gray-200 dark:border-gray-700">
       {#if data.props.length === 0}
         <div class="p-3 text-sm text-gray-500 italic">No props available</div>
       {:else}
         <div class="p-2">
           {#each data.props as propArray}
-            <div class="prop-item flex rounded p-1.5 text-sm hover:bg-gray-100">
-              <div class="prop-name flex-grow font-mono text-violet-700">{propArray[0]}</div>
+            <div class="prop-item flex rounded p-1.5 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">
+              <div class="prop-name flex-grow font-mono ">{propArray[0]}</div>
               {#if hasDefaultValue(propArray)}
                 <div class="prop-value text-gray-600">
                   default: <span class="font-mono">{propArray[1]}</span>

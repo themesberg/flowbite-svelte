@@ -11,6 +11,12 @@
   <P weight="light" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions. Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
 </div>
 
+<h2>contenteditable</h2>
+
+<div class="my-4 rounded border p-4">
+  <P contenteditable>Track work across the enterprise through an open, collaborative platform.</P>
+</div>
+
 <h2 class="my-4 text-2xl">Leading paragraph</h2>
 <div class="my-4 rounded border p-4">
   <P class="mb-3 md:text-xl" weight="light" size="lg" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work and deploy.</P>

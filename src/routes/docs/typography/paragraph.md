@@ -30,6 +30,18 @@ Use this example of a paragraph element to use inside article content or a landi
 <P weight="light" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions. Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
 ```
 
+## contenteditable
+
+Since `P.svelte` extends `HTMLAttributes<HTMLElement>`, you can use `contenteditable` attribute. 
+
+```svelte example
+<script>
+  import { P } from "flowbite-svelte";
+</script>
+
+<P contenteditable>Track work across the enterprise through an open, collaborative platform.</P>
+```
+
 ## Leading paragraph
 
 The leading text can be used as the first paragraph inside an article content page.
