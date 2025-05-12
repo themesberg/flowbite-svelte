@@ -16,11 +16,7 @@
     class?: string;
   };
 
-  let {
-    links = [],
-    showDescriptions = true,
-    class: className = ""
-  }: SeeAlsoProps = $props();
+  let { links = [], showDescriptions = true, class: className = "" }: SeeAlsoProps = $props();
 
   let expanded = $state(false);
   let processedLinks = $state<Link[]>([]);
@@ -44,21 +40,21 @@
 
   const { base, span, toggleButton, list, item, linkcls, description } = seeAlso();
 
-  const modules = import.meta.glob('../docs/**/*.md', { query: '?raw', import: 'default' });
+  const modules = import.meta.glob("../docs/**/*.md", { query: "?raw", import: "default" });
 
   function extractFrontmatter(content: string) {
     const match = content.match(/^---\s*\n([\s\S]*?)\n---/);
     if (!match || !match[1]) return null;
 
     const frontmatter: Record<string, string> = {};
-    const lines = match[1].split('\n');
+    const lines = match[1].split("\n");
 
     for (const line of lines) {
-      const colonIndex = line.indexOf(':');
+      const colonIndex = line.indexOf(":");
       if (colonIndex > 0) {
         const key = line.slice(0, colonIndex).trim();
         let value = line.slice(colonIndex + 1).trim();
-        value = value.replace(/^['"](.*)['"]$/, '$1');
+        value = value.replace(/^['"](.*)['"]$/, "$1");
         if (value) frontmatter[key] = value;
       }
     }
@@ -69,16 +65,16 @@
   async function processUrlArray(urlList: string[]): Promise<Link[]> {
     return await Promise.all(
       urlList.map(async (url) => {
-        let filePath = url.startsWith('/') ? url.substring(1) : url;
-        if (!filePath.endsWith('.md')) filePath += '.md';
+        let filePath = url.startsWith("/") ? url.substring(1) : url;
+        if (!filePath.endsWith(".md")) filePath += ".md";
         const fullPath = `../${filePath}`;
 
         const loader = modules[fullPath];
         if (loader) {
           try {
-            const raw = await loader() as string;
+            const raw = (await loader()) as string;
             const frontmatter = extractFrontmatter(raw);
-            const desc = frontmatter?.description || '';
+            const desc = frontmatter?.description || "";
             return {
               title: frontmatter?.component_title || frontmatter?.title || url,
               url,
@@ -89,7 +85,12 @@
           }
         }
 
-        const fallbackTitle = url.split('/').pop()?.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()) || url;
+        const fallbackTitle =
+          url
+            .split("/")
+            .pop()
+            ?.replace(/-/g, " ")
+            .replace(/\b\w/g, (c) => c.toUpperCase()) || url;
         return { title: fallbackTitle, url };
       })
     );
@@ -109,11 +110,7 @@
   <section class={twMerge(base(), className)}>
     {#if processedLinks.length > 3}
       <span class={span()}>
-        <button
-          class={toggleButton()}
-          onclick={toggleExpanded}
-          aria-expanded={expanded}
-        >
+        <button class={toggleButton()} onclick={toggleExpanded} aria-expanded={expanded}>
           {expanded ? "Show less" : `Show all (${processedLinks.length})`}
         </button>
       </span>

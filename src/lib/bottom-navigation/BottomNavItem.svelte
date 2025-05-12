@@ -5,12 +5,10 @@
   import type { BottomNavItemProps, BottomNavContextType, BottomNavVariantType } from "$lib/types";
   import { twMerge } from "tailwind-merge";
 
-  let { children, btnName, appBtnPosition = "middle", target, activeClass, href = "", btnClass, spanClass, ...restProps }: BottomNavItemProps = $props();
+  let { children, btnName, appBtnPosition = "middle", target, activeClass, href = "", btnClass, spanClass, active: manualActive, ...restProps }: BottomNavItemProps = $props();
 
   const navType: BottomNavVariantType = getContext("navType");
   const context = getContext<BottomNavContextType>("bottomNavType") ?? {};
-
-  let active: boolean = $state(false);
 
   const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
 
@@ -21,16 +19,15 @@
 
   const { base, span } = bottomNavItem({ navType, appBtnPosition });
 
-  $effect(() => {
-    active = navUrl ? href === navUrl : navUrl ? navUrl.startsWith(href) : false;
-  });
+  // Determine active state based on manual prop or URL matching
+  let isActive = $derived(manualActive !== undefined ? !!manualActive : navUrl ? (href === "/" ? navUrl === "/" : href && (navUrl === href || navUrl.startsWith(href + "/") || (href !== "/" && navUrl.replace(/^https?:\/\/[^/]+/, "").startsWith(href)))) : false);
 
   function getCommonClass() {
-    return twMerge(base({ class: btnClass }), active && (activeClass ?? context.activeClass));
+    return twMerge(base({ class: btnClass }), isActive && (activeClass ?? context.activeClass));
   }
 
   function getSpanClass() {
-    return twMerge(span({ class: spanClass }), active && (activeClass ?? context.activeClass));
+    return twMerge(span({ class: spanClass }), isActive && (activeClass ?? context.activeClass));
   }
 
   /* eslint-disable  @typescript-eslint/no-explicit-any */
@@ -52,7 +49,7 @@
   });
 </script>
 
-{#if href}
+{#if typeof href === "string" && href.length > 0}
   <a {...anchorProps}>
     {@render children()}
     <span class={getSpanClass()}>{btnName}</span>
@@ -68,7 +65,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L310)
+[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L300)
 ## Props
 @prop children
 @prop btnName
@@ -78,5 +75,6 @@
 @prop href = ""
 @prop btnClass
 @prop spanClass
+@prop active: manualActive
 @prop ...restProps
 -->

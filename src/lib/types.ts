@@ -297,17 +297,41 @@ export interface BottomNavProps extends HTMLAttributes<HTMLDivElement> {
   activeClass?: string;
 }
 
-export interface BaseBottomNavItemProps {
+export interface BottomNavItemProps {
   children: Snippet;
   btnName?: string;
   appBtnPosition?: AppBtnPositionType;
-  target?: string;
   activeClass?: string;
   btnClass?: string;
   spanClass?: string;
+  active?: boolean;
+  // Common attributes that make sense for both button and anchor
+  id?: string;
+  class?: string;
+  style?: string;
+  tabindex?: number;
+  title?: string;
+  role?: string;
+  "aria-label"?: string;
+  "data-testid"?: string;
+  // Anchor-specific attributes
+  href?: string;
+  target?: string;
+  rel?: string;
+  download?: string | boolean;
+  // Button-specific attributes
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
+  name?: string;
+  value?: string | number | string[];
+  // Allow any other attributes (like data-* attributes)
+  [key: string]: any;
 }
 
-export type BottomNavItemProps = BaseBottomNavItemProps & (({ href: string } & HTMLAnchorAttributes) | ({ href?: never } & HTMLButtonAttributes));
+// export type BottomNavItemProps = BaseBottomNavItemProps & (
+//   ({ href: string } & HTMLAnchorAttributes & { active?: boolean }) |
+//   ({ href?: never } & HTMLButtonAttributes & { active?: boolean })
+// );
 
 export interface BottomNavHeaderProps {
   children: Snippet;

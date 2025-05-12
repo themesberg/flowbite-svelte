@@ -34,7 +34,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L579)
+[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L603)
 ## Props
 @prop children
 @prop simple = false
@@ -43,6 +43,6 @@
 @prop class: className
 @prop backdropClass
 @prop activeUrl = ""
-@prop isOpen = $bindable(undefined)
+@prop isOpen = $bindable(false)
 @prop ...restProps
 -->

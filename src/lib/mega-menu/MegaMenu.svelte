@@ -36,14 +36,14 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[MegaMenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L970)
+[MegaMenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L994)
 ## Props
 @prop children
 @prop extra
 @prop items = []
 @prop full
 @prop ulClass
-@prop isOpen = $bindable()
+@prop isOpen = $bindable(false)
 @prop class: className
 @prop ...restProps
 -->

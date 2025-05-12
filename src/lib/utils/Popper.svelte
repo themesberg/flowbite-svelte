@@ -203,7 +203,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[PopperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1799)
+[PopperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1823)
 ## Props
 @prop triggeredBy
 @prop trigger = "click"
@@ -218,7 +218,7 @@
 @prop ontoggle: _ontoggle
 @prop class: className = ""
 @prop arrowClass = ""
-@prop isOpen = $bindable(undefined)
+@prop isOpen = $bindable(false)
 @prop children
 @prop ...restProps
 -->

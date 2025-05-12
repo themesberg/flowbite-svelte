@@ -2,7 +2,7 @@
   import { P, A } from "$lib";
   import type { Placement } from "@floating-ui/utils";
   import { Tooltip, Button } from "$lib";
-  let placement: Placement = "top";
+  let placement: Placement = $state("top");
   function onbeforetoggle(ev: Event) {
     const trigger = (ev as any).trigger;
     if (trigger?.id) {
@@ -10,7 +10,7 @@
     }
   }
   let placement2: Placement = "left";
-  let isOpen = $state(true)
+  let isOpen = $state(true);
 </script>
 
 <h1 class="my-4 text-3xl">Tooltip</h1>

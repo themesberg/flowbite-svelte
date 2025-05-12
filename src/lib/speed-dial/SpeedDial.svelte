@@ -27,7 +27,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1359)
+[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1383)
 ## Props
 @prop children
 @prop popperClass
@@ -37,6 +37,6 @@
 @prop trigger = "hover"
 @prop textOutside = false
 @prop class: className
-@prop isOpen = $bindable()
+@prop isOpen = $bindable(false)
 @prop ...restProps
 -->

@@ -15,7 +15,7 @@
     ["end-6 bottom-6", "left", "top"],
     ["start-2 bottom-6", "top", "right"]
   ];
-  let isOpen = $state(true)
+  let isOpen = $state(true);
 </script>
 
 <h1 class="my-4 text-3xl">Speed Dial</h1>
@@ -479,7 +479,6 @@
     </SpeedDialButton>
   </SpeedDial>
 </div>
-
 
 <h2 class="my-4 text-2xl">Binding isOpen</h2>
 

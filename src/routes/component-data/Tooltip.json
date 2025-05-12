@@ -13,6 +13,6 @@
     ["placement", "\"top\""],
     ["onbeforetoggle: _onbeforetoggle", ""],
     ["class: className", ""],
-    ["isOpen", "$bindable()"]
+    ["isOpen", "$bindable(false)"]
   ]
 }

@@ -54,7 +54,7 @@
     { name: "Pro Version", href: "/pro" },
     { name: "License", href: "/license" }
   ];
-  let isOpen = $state(true)
+  let isOpen = $state(true);
 </script>
 
 <h1 class="my-4 text-3xl">Megamenu</h1>
