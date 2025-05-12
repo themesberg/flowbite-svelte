@@ -4,7 +4,7 @@
   import { popover } from "./theme";
   import type { PopoverProps } from "$lib/types";
 
-  let { title: titleSlot, color = "default", trigger = "hover", defaultClass, arrow = true, children, placement = "top", class: className, isOpen = $bindable(undefined), ...restProps }: PopoverProps = $props();
+  let { title: titleSlot, color = "default", trigger = "hover", defaultClass, arrow = true, children, placement = "top", class: className, isOpen = $bindable(false), ...restProps }: PopoverProps = $props();
 
   let { base, title, h3, content } = $derived(popover({ color }));
 </script>

@@ -6,7 +6,7 @@
   import { speed_dial } from "./theme";
   import type { SpeedDialProps, SpeedCtxType } from "$lib/types";
 
-  let { children, popperClass, placement = "top", pill = true, tooltip = "left", trigger = "hover", textOutside = false, class: className, isOpen = $bindable(), ...restProps }: SpeedDialProps = $props();
+  let { children, popperClass, placement = "top", pill = true, tooltip = "left", trigger = "hover", textOutside = false, class: className, isOpen = $bindable(false), ...restProps }: SpeedDialProps = $props();
 
   setContext<SpeedCtxType>("speed-dial", { pill, tooltip, textOutside });
 

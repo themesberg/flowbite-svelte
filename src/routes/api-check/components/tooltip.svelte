@@ -10,6 +10,7 @@
     }
   }
   let placement2: Placement = "left";
+  let isOpen = $state(true)
 </script>
 
 <h1 class="my-4 text-3xl">Tooltip</h1>
@@ -96,4 +97,10 @@ Various color palettes can be set for a tooltip by using the `color` property fr
 
   <Button>Custom type</Button>
   <Tooltip placement="right" type={undefined} class="bg-purple-500 p-4 text-lg font-medium text-gray-100" arrow={false}>Tooltip content</Tooltip>
+</div>
+
+<h2 class="text-2xl">Binding isOpen</h2>
+<div class="my-4 flex h-32 items-end justify-center rounded border p-8">
+  <Button>Default tooltip</Button>
+  <Tooltip bind:isOpen>Tooltip content</Tooltip>
 </div>

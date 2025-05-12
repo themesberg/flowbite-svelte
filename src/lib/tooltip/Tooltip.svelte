@@ -4,7 +4,7 @@
   import { tooltip } from "./theme";
   import type { TooltipProps, TriggeredToggleEvent } from "$lib";
 
-  let { type = "dark", color = undefined, trigger = "hover", arrow = true, children, placement = "top", onbeforetoggle: _onbeforetoggle, class: className, isOpen = $bindable(), ...restProps }: TooltipProps = $props();
+  let { type = "dark", color = undefined, trigger = "hover", arrow = true, children, placement = "top", onbeforetoggle: _onbeforetoggle, class: className, isOpen = $bindable(false), ...restProps }: TooltipProps = $props();
 
   let { base } = $derived(tooltip({ color, type }));
 

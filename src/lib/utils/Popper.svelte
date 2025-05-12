@@ -6,7 +6,7 @@
 
   const TRIGGER_DELAY = 200;
 
-  let { triggeredBy, trigger = "click", placement = "top", offset = 8, arrow = false, yOnly = false, strategy = "absolute", reference, middlewares = [dom.flip(), dom.shift()], onbeforetoggle: _onbeforetoggle, ontoggle: _ontoggle, class: className = "", arrowClass = "", isOpen = $bindable(undefined), children, ...restProps }: PopperProps = $props();
+  let { triggeredBy, trigger = "click", placement = "top", offset = 8, arrow = false, yOnly = false, strategy = "absolute", reference, middlewares = [dom.flip(), dom.shift()], onbeforetoggle: _onbeforetoggle, ontoggle: _ontoggle, class: className = "", arrowClass = "", isOpen = $bindable(false), children, ...restProps }: PopperProps = $props();
 
   let focusable: boolean = true;
   let clickable: boolean = $derived(trigger === "click");

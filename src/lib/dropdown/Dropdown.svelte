@@ -7,7 +7,7 @@
   import DropdownGroup from "./DropdownGroup.svelte";
   import clsx from "clsx";
 
-  let { children, simple = false, placement = "bottom", offset = 2, class: className, backdropClass, activeUrl = "", isOpen = $bindable(undefined), ...restProps }: DropdownProps = $props();
+  let { children, simple = false, placement = "bottom", offset = 2, class: className, backdropClass, activeUrl = "", isOpen = $bindable(false), ...restProps }: DropdownProps = $props();
 
   const { base, backdrop } = $derived(dropdown());
   const activeUrlStore = writable("");

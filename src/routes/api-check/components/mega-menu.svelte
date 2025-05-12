@@ -54,6 +54,7 @@
     { name: "Pro Version", href: "/pro" },
     { name: "License", href: "/license" }
   ];
+  let isOpen = $state(true)
 </script>
 
 <h1 class="my-4 text-3xl">Megamenu</h1>
@@ -209,6 +210,31 @@ Full width with image This example can be used to also show a CTA with a backdro
             <p class="mb-5 max-w-xl p-0 text-sm leading-tight font-extrabold tracking-tight text-white">Preview the new Flowbite dashboard navigation.</p>
             <Button>Get started</Button>
           </a>
+        {/snippet}
+      </MegaMenu>
+      <NavLi href="/services">Services</NavLi>
+      <NavLi href="/services">Products</NavLi>
+      <NavLi href="/services">Contact</NavLi>
+    </NavUl>
+  </Navbar>
+</div>
+
+<h2 class="text-2xl">isOpen example</h2>
+<div class="my-4 h-72 rounded border p-4">
+  <Navbar>
+    <NavBrand href="/">
+      <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
+      <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+    </NavBrand>
+    <NavHamburger />
+    <NavUl>
+      <NavLi href="/">Home</NavLi>
+      <NavLi class="cursor-pointer" onclick={() => (open = true)}>
+        Mega menu<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
+      </NavLi>
+      <MegaMenu items={menu} bind:isOpen>
+        {#snippet children({ item })}
+          <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
         {/snippet}
       </MegaMenu>
       <NavLi href="/services">Services</NavLi>

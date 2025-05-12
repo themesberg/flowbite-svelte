@@ -15,6 +15,7 @@
     ["end-6 bottom-6", "left", "top"],
     ["start-2 bottom-6", "top", "right"]
   ];
+  let isOpen = $state(true)
 </script>
 
 <h1 class="my-4 text-3xl">Speed Dial</h1>
@@ -464,6 +465,27 @@
     <Rating total={1} rating={0.5} size={48} /> Rating
   </Button>
   <SpeedDial placement="top-end">
+    <SpeedDialButton name="Share">
+      <ShareNodesSolid class="h-6 w-6" />
+    </SpeedDialButton>
+    <SpeedDialButton name="Print">
+      <PrinterSolid class="h-6 w-6" />
+    </SpeedDialButton>
+    <SpeedDialButton name="Download">
+      <DownloadSolid class="h-6 w-6" />
+    </SpeedDialButton>
+    <SpeedDialButton name="Copy">
+      <FileCopySolid class="h-6 w-6" />
+    </SpeedDialButton>
+  </SpeedDial>
+</div>
+
+
+<h2 class="my-4 text-2xl">Binding isOpen</h2>
+
+<div class="relative my-4 h-96 rounded border p-4">
+  <SpeedDialTrigger class="absolute end-6 bottom-6" />
+  <SpeedDial bind:isOpen>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />
     </SpeedDialButton>
