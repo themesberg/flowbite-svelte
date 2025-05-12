@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.3
+
+### Patch Changes
+
+- fix: Checkbox, BottomNavItem, isOpen to component using Popper
+
 ## 1.1.2
 
 ### Patch Changes

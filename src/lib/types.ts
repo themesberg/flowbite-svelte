@@ -645,35 +645,18 @@ export interface CheckboxItem {
   [key: string]: any;
 }
 
-export type CheckboxColorType =
-  | 'primary'
-  | 'secondary'
-  | 'gray'
-  | 'red'
-  | 'orange'
-  | 'amber'
-  | 'yellow'
-  | 'lime'
-  | 'green'
-  | 'emerald'
-  | 'teal'
-  | 'cyan'
-  | 'sky'
-  | 'blue'
-  | 'indigo'
-  | 'violet'
-  | 'purple'
-  | 'fuchsia'
-  | 'pink'
-  | 'rose';
+export type CheckboxColorType = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose";
 
 export interface CheckboxProps extends Omit<HTMLInputAttributes, "children" | "color"> {
-  children?: Snippet<[
-    { 
-      value?: string | number; 
-      checked: boolean 
-    } | CheckboxItem
-  ]>;
+  children?: Snippet<
+    [
+      | {
+          value?: string | number;
+          checked: boolean;
+        }
+      | CheckboxItem
+    ]
+  >;
   color?: CheckboxColorType;
   custom?: boolean;
   inline?: boolean;

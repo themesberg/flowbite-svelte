@@ -2,7 +2,7 @@
   "name": "Datepicker",
   "type": {
     "name": "DatepickerProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L497"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L453"
   },
   "props": [
     ["value", "$bindable()"],

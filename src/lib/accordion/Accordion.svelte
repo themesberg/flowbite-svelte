@@ -31,7 +31,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L201)
+[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L157)
 ## Props
 @prop children
 @prop flush

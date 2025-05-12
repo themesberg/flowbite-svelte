@@ -13,7 +13,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DropdownDividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L614)
+[DropdownDividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L570)
 ## Props
 @prop class: divClass
 @prop ...restProps

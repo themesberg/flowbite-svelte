@@ -41,7 +41,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[IndicatorsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L444)
+[IndicatorsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L400)
 ## Props
 @prop children
 @prop activeClass

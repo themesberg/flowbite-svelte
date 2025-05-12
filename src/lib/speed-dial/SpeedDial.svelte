@@ -27,7 +27,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1383)
+[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1368)
 ## Props
 @prop children
 @prop popperClass

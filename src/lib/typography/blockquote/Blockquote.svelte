@@ -25,7 +25,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BlockquoteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1698)
+[BlockquoteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1683)
 ## Props
 @prop children
 @prop class: className

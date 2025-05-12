@@ -15,7 +15,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ActivityProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1591)
+[ActivityProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1576)
 ## Props
 @prop children
 @prop class: className

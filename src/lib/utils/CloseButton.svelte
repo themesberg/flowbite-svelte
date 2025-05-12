@@ -36,7 +36,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[CloseButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L118)
+[CloseButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L86)
 ## Props
 @prop children
 @prop color = "gray"
