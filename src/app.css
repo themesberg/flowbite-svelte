@@ -1,6 +1,3 @@
-/* @import '../node_modules/flowbite/dist/flowbite.css' layer(base); */
-
-/* Write your global styles here, in PostCSS syntax */
 @import "tailwindcss";
 
 @plugin 'flowbite/plugin';

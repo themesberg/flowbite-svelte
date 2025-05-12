@@ -1,53 +1,72 @@
 <script lang="ts">
   import Label from "../label/Label.svelte";
   import { checkbox } from ".";
-  import type { CheckboxProps } from "$lib/types";
+  import {type CheckboxProps, type CheckboxItem } from "$lib";
   import clsx from "clsx";
 
-  let { children, color = "primary", custom, inline, tinted, rounded, group = $bindable([]), choices = [], checked = $bindable(false), indeterminate, class: className, value, ...restProps }: CheckboxProps = $props();
+  let { 
+    children, 
+    color = "primary", 
+    custom, 
+    inline, 
+    tinted, 
+    rounded, 
+    group = $bindable([]), 
+    choices = [], 
+    checked = $bindable(false), 
+    indeterminate, 
+    class: className, 
+    divClass, 
+    disabled = false,
+    value, 
+    labelProps = {}, 
+    ...restProps 
+  }: CheckboxProps = $props();
 
-  const { base, label: labelStyle } = $derived(checkbox({ color, tinted, custom, rounded, inline }));
+  const disabledValue = $derived(disabled === null ? undefined : disabled);
+  const { base, div: divStyle } = $derived(checkbox({ color, tinted, custom, rounded, inline, disabled: disabledValue }));
 
-  // see the discussion for bind:group - https://github.com/sveltejs/svelte/issues/2308
+  // Separate label rendering logic
+  function renderLabel(choice?: CheckboxItem) {
+    if (!choice) return '';
+    
+    if (children) {
+      return children(choice);
+    }
+    return choice.label || '';
+  }
 </script>
 
 {#if choices.length > 0}
   {#each choices as choice, i}
-    <Label class={labelStyle({ class: clsx(className) })}>
-      <input type="checkbox" value={choice.value} checked={choice.checked} bind:group {...restProps} class={base()} />
-      {#if children}
-        {@render children(choice)}
-      {:else}
-        {choice.label}
-      {/if}
-    </Label>
+    <div class={divStyle({ class: clsx(divClass) })}>
+      <input 
+        type="checkbox" 
+        value={choice.value} 
+        checked={choice.checked ?? false} 
+        {disabled}
+        bind:group 
+        {...restProps} 
+        class={base({ class: clsx(className) })} 
+      />
+      <Label show={true} {...labelProps}>
+        {renderLabel(choice)}
+      </Label>
+    </div>
   {/each}
 {:else}
-  <Label class={labelStyle({ class: clsx(className) })}>
-    <input type="checkbox" {value} bind:checked {indeterminate} {...restProps} class={base()} />
+  <div class={divStyle({ class: clsx(divClass) })}>
+    <input 
+      type="checkbox" 
+      {value} 
+      bind:checked 
+      {indeterminate}
+      {disabled}
+      {...restProps} 
+      class={base({ class: clsx(className) })} 
+    />
     {#if children}
-      {@render children({ value, checked })}
+      {@render children({ value, checked, disabled })}
     {/if}
-  </Label>
+  </div>
 {/if}
-
-<!--
-@component
-[Go to docs](https://flowbite-svelte.com/)
-## Type
-[CheckboxProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L692)
-## Props
-@prop children
-@prop color = "primary"
-@prop custom
-@prop inline
-@prop tinted
-@prop rounded
-@prop group = $bindable([])
-@prop choices = []
-@prop checked = $bindable(false)
-@prop indeterminate
-@prop class: className
-@prop value
-@prop ...restProps
--->

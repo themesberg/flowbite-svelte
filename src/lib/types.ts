@@ -4,7 +4,6 @@ import { type Writable } from "svelte/store";
 import type { Snippet, Component } from "svelte";
 import { tv, type VariantProps } from "tailwind-variants";
 import type { Middleware, Placement, Strategy } from "@floating-ui/dom";
-// import type { Picture } from "vite-imagetools";
 
 // component variants
 import type { AlertVariants } from "./alert/theme";
@@ -16,8 +15,6 @@ import type { closeButtonVariants } from "./utils/theme";
 import type Slide from "./carousel/Slide.svelte";
 import type { ApexOptions } from "apexcharts";
 import type { DrawerVariants } from "./drawer/theme";
-// import type { PopperProps } from "$lib/utils/Popper.svelte";
-import type { CheckboxVariants } from "./forms/checkbox/theme";
 import type { FileuploadViariants } from "$lib/forms/fileupload/theme";
 import type { FloatingLabelInputVaratiants } from "$lib/forms/floating-label-input/theme";
 import type { HelperVariants } from "$lib/forms/helper/theme";
@@ -82,35 +79,6 @@ export interface drawerTransitionParamTypes {
 
 export type FormSizeType = "sm" | "md" | "lg";
 
-// export type drawerTransitionTypes = 'fade' | 'fly' | 'slide' | 'blur' | 'in:fly' | 'out:fly' | 'in:slide' | 'out:slide' | 'in:fade' | 'out:fade' | 'in:blur' | 'out:blur' | undefined;
-
-// export type PsizeType = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | '8xl' | '9xl';
-
-// export type PweightType = 'thin' | 'extralight' | 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'extrabold' | 'black';
-
-// export type BlockQuoteType = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | '8xl' | '9xl';
-
-// export type FormColorType = 'blue' | 'red' | 'green' | 'purple' | 'teal' | 'yellow' | 'orange' | 'primary' | 'secondary';
-
-// export type ButtonColorType = 'alternative' | 'blue' | 'dark' | 'green' | 'light' | 'primary' | 'purple' | 'red' | 'yellow' | 'none';
-
-// export type SidebarType = {
-//   activeClass: string | undefined | null;
-//   nonActiveClass: string | undefined | null;
-// };
-
-// export interface ButtonClassesTypes {
-//   default?: string;
-//   border?: string;
-//   application?: string;
-//   pagination?: string;
-//   group?: string;
-//   card?: string;
-//   meeting?: string;
-//   video?: string;
-//   custom?: string;
-// }
-
 // closebutton
 
 export type CloseButtonVariants = VariantProps<typeof closeButtonVariants>;
@@ -135,19 +103,7 @@ export type NavbarType = {
 
 export type ColorVariant = "gray" | "red" | "yellow" | "green" | "indigo" | "purple" | "pink" | "blue" | "primary" | "none";
 
-// export type BottomNavVariantType = 'default' | 'border' | 'application' | 'pagination' | 'group' | 'card' | 'meeting' | 'video';
-
 export type DeviceVariantType = "default" | "ios" | "android" | "tablet" | "laptop" | "desktop" | "smartwatch";
-
-// export type ProgressBarColorType = 'primary' | 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo';
-
-// export type SpinnerColorType = 'primary' | 'blue' | 'gray' | 'green' | 'red' | 'yellow' | 'pink' | 'purple' | 'white' | 'custom';
-
-// export type ToastPositionType = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none';
-
-// export type SpaceType = 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest' | undefined;
-
-// export type ToolbarButtonType = 'dark' | 'default' | 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue';
 
 export declare type SizeType = typeof xs | typeof sm | typeof md | typeof lg | typeof xl;
 
@@ -683,15 +639,42 @@ export interface FooterLinkProps extends HTMLAnchorAttributes {
 // forms
 // checkbox
 export interface CheckboxItem {
-  value: string;
+  value: string | number;
   label?: string;
   checked?: boolean | null;
   [key: string]: any;
 }
 
-export interface CheckboxProps extends Omit<HTMLInputAttributes, "children"> {
-  children?: Snippet<[CheckboxItem]>;
-  color?: CheckboxVariants["color"];
+export type CheckboxColorType =
+  | 'primary'
+  | 'secondary'
+  | 'gray'
+  | 'red'
+  | 'orange'
+  | 'amber'
+  | 'yellow'
+  | 'lime'
+  | 'green'
+  | 'emerald'
+  | 'teal'
+  | 'cyan'
+  | 'sky'
+  | 'blue'
+  | 'indigo'
+  | 'violet'
+  | 'purple'
+  | 'fuchsia'
+  | 'pink'
+  | 'rose';
+
+export interface CheckboxProps extends Omit<HTMLInputAttributes, "children" | "color"> {
+  children?: Snippet<[
+    { 
+      value?: string | number; 
+      checked: boolean 
+    } | CheckboxItem
+  ]>;
+  color?: CheckboxColorType;
   custom?: boolean;
   inline?: boolean;
   tinted?: boolean;
@@ -699,6 +682,8 @@ export interface CheckboxProps extends Omit<HTMLInputAttributes, "children"> {
   group?: (string | number)[];
   choices?: CheckboxItem[];
   indeterminate?: boolean;
+  divClass?: string;
+  labelProps?: Record<string, any>;
 }
 
 // checkbox-button
