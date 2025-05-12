@@ -24,7 +24,7 @@ let {
   meta = undefined, 
   example, 
   code, 
-  divClass = "relative w-full mx-auto bg-linear-to-r bg-white dark:bg-gray-900 p-6" 
+  divClass = "relative w-full mx-auto bg-linear-to-r p-6" 
 }: Props = $props();
 
 type NotificationDirection = "ltr" | "rtl" | "auto";
