@@ -1,185 +1,246 @@
 <script lang="ts">
-  /**
-   * I removed the iFrames. They where used for resizing. I'm not sure they still needed.
-   */
-  import Button from "$lib/buttons/Button.svelte";
-  import Tooltip from "$lib/tooltip/Tooltip.svelte";
-  import { DesktopPcOutline, MobilePhoneOutline, TabletOutline } from "flowbite-svelte-icons";
-  import { mount, onMount } from "svelte";
-  import { twJoin, twMerge } from "tailwind-merge";
-  import ExampleDarkMode from "./ExampleDarkMode.svelte";
-  import ExampleHelper from "./ExampleHelper.svelte";
-  import ExampleRtl from "./ExampleRTL.svelte";
-  import GitHub from "./icons/GitHub.svelte";
+import Button from "$lib/buttons/Button.svelte";
+import Tooltip from "$lib/tooltip/Tooltip.svelte";
+import { DesktopPcOutline, MobilePhoneOutline, TabletOutline } from "flowbite-svelte-icons";
+import { mount, onMount } from "svelte";
+import { twJoin, twMerge } from "tailwind-merge";
+import ExampleDarkMode from "./ExampleDarkMode.svelte";
+import ExampleHelper from "./ExampleHelper.svelte";
+import ExampleRtl from "./ExampleRTL.svelte";
+import GitHub from "./icons/GitHub.svelte";
 
-  let { src = undefined, meta = undefined, example, code, divClass = "relative w-full mx-auto bg-linear-to-r bg-white dark:bg-gray-900 p-6" } = $props();
+// Define the props properly with TypeScript
+type Props = {
+  src?: any;
+  meta?: any;
+  example?: any;
+  code?: any;
+  divClass?: string;
+};
 
-  type NotificationDirection = "ltr" | "rtl" | "auto";
+// Use typed props
+let { 
+  src = undefined, 
+  meta = undefined, 
+  example, 
+  code, 
+  divClass = "relative w-full mx-auto bg-linear-to-r bg-white dark:bg-gray-900 p-6" 
+}: Props = $props();
 
-  // suppress vite-plugin-svelte warning about unused props
-  // the source of the example, if you want it
-  src;
-  // all meta tags of the code block
-  meta;
+type NotificationDirection = "ltr" | "rtl" | "auto";
 
-  /* eslint-disable  @typescript-eslint/no-explicit-any */
+// State variables
+let browserSupport = $state(false);
+let codeEl: HTMLElement | undefined = $state(undefined);
+let codeResponsiveContent: HTMLDivElement | undefined = $state(undefined);
+let path: URL | undefined = $state(undefined);
+let showExpandButton = $state(false);
+let expand = $state(false);
+let dark = $state(false);
+let rtl: NotificationDirection = $state("auto");
+let responsiveDevice: keyof typeof responsiveSize = $state("desktop");
+let iframe: HTMLIFrameElement | undefined = $state(undefined);
+let iframeLoad = $state(false);
+let copy_text = "Copy";
+let documentObserver: MutationObserver | undefined = $state(undefined);
 
-  let browserSupport: boolean = $state(false);
-  let codeEl: HTMLElement | undefined = $state();
-  let codeResponsiveContent: HTMLDivElement | undefined = $state();
+const responsiveSize = {
+  mobile: "max-w-sm",
+  tablet: "max-w-lg",
+  desktop: ""
+};
 
-  // https://github.com/themesberg/flowbite-svelte/blob/main/src/routes/docs/components/accordion.md#always-open
-  const gitHub = new URL("https://github.com/themesberg/flowbite-svelte/blob/main/src/routes/");
+const gitHub = new URL("https://github.com/themesberg/flowbite-svelte/blob/main/src/routes/");
 
-  let path: URL | undefined = $state();
-
-  let showExpandButton: boolean = $state(false);
-  let expand: boolean = $state(false);
-  let dark: boolean = $state(false);
-  let rtl: NotificationDirection = $state("auto");
-  let responsiveDevice: keyof typeof responsiveSize = $state("desktop");
-
-  const responsiveSize = {
-    mobile: "max-w-sm",
-    tablet: "max-w-lg",
-    desktop: ""
-  };
-
-  function updateDarkMode(ev: Event) {
-    const target = ev.target as HTMLElement,
-      isDark = target.ownerDocument.documentElement.classList.contains("dark");
+// This function will be called when document classes change
+function checkDarkMode(): void {
+  if (document && document.documentElement) {
+    // Get the current dark mode state from document
+    const isDark = document.documentElement.classList.contains("dark");
+    console.log("Dark mode detected from document:", isDark);
     dark = isDark;
+    
+    // Update iframe if it exists
+    syncIframeDarkMode();
   }
+}
 
-  function init(node: HTMLElement) {
-    browserSupport = !!window?.navigator?.clipboard;
-    const button: HTMLButtonElement = node.ownerDocument.querySelector('button[aria-label="Dark mode"]') as HTMLButtonElement;
-    button?.addEventListener("click", updateDarkMode);
+// Sync the iframe dark mode with the current dark state
+function syncIframeDarkMode(): void {
+  if (iframe && iframe.contentDocument) {
+    console.log("Syncing iframe dark mode:", dark);
+    if (dark) {
+      iframe.contentDocument.documentElement.classList.add("dark");
+    } else {
+      iframe.contentDocument.documentElement.classList.remove("dark");
+    }
+  }
+}
 
-    dark = node.ownerDocument.documentElement.classList.contains("dark");
-    setTimeout(() => find_sections(node), 0);
-
-    return {
-      destroy() {
-        button?.removeEventListener("click", updateDarkMode);
+// Initialize component
+function init(node: HTMLElement) {
+  browserSupport = !!window?.navigator?.clipboard;
+  
+  // Initial dark mode check
+  dark = document.documentElement.classList.contains("dark");
+  console.log("Initial dark mode state:", dark);
+  
+  // Set up a mutation observer to watch for class changes on documentElement
+  documentObserver = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.attributeName === 'class') {
+        checkDarkMode();
       }
-    };
-  }
-
-  function find_sections(node: HTMLElement) {
-    // find closes previous section anchor
-    const section = [...node.ownerDocument.querySelectorAll("#mainContent > :where(h2, h3) > [id]")]
-      .map((x: Element) => ({ id: x.id, top: x.parentElement?.offsetTop ?? Infinity, obj: x }))
-      .filter((x) => x.top < (node?.offsetTop ?? Infinity))
-      .filter((x) => x.id)
-      .slice(-1)
-      .shift();
-
-    if (section) {
-      const pathname = new URL(node.baseURI).pathname;
-      path = new URL(pathname.slice(1) + ".md", gitHub);
-      path.hash = section.id.replaceAll("_", "-").replaceAll("/", "").toLowerCase();
-    }
-  }
-
-  const copyToClipboard = async (e: MouseEvent) => {
-    const REG_HEX = /&#x([a-fA-F0-9]+);/g;
-    const decodedText =
-      codeEl?.innerText.replace(REG_HEX, function (_match: string, group1: string) {
-        const num = parseInt(group1, 16);
-        return String.fromCharCode(num);
-      }) ?? "";
-
-    await window.navigator.clipboard.writeText(decodedText);
-
-    const button: HTMLButtonElement | null = e?.target as HTMLButtonElement;
-    button?.blur();
-
-    const lastChild = button?.lastChild;
-    if (lastChild) {
-      lastChild.textContent = "Copied";
-      setTimeout(() => (lastChild.textContent = "Copy"), 3000);
-    }
-  };
-
-  function checkOverflow(el: HTMLElement) {
-    const isOverflowingY = el.clientHeight < el.scrollHeight;
-    showExpandButton = isOverflowingY;
-    el.firstElementChild?.classList.add("-mb-8");
-  }
-
-  let copy_text = "Copy";
-
-  // iFrame support
-  let iframe: HTMLIFrameElement | undefined = $state();
-  let iframeLoad: boolean = $state(false);
-
-  const injectContent = () => {
-    if (!iframe?.contentDocument) return;
-    if (!iframe?.contentWindow) return;
-
-    iframeLoad = true;
-    // get only css and style frome head
-    const externalCss = document.querySelectorAll('head link[href*="https://"][rel="stylesheet"], head style');
-    const internalCss = Array.from(document.styleSheets).filter((el) => el.href?.includes(document.location.hostname));
-    // extract style to avoid multiple network request to css
-    const extractInlineCss = internalCss.reduce((acc, el) => {
-      acc += Array.from(el.cssRules)
-        .map((rule) => rule.cssText)
-        .join(" ");
-      return acc;
-    }, "");
-    const styleTag = document.createElement("style");
-    styleTag.innerHTML = extractInlineCss;
-    // extract outerHtlm in order to clone html
-
-    const headContent = Array.from(externalCss).reduce((acc, el) => (acc += el.outerHTML), "");
-    // put the content of head in the head of the iframe
-    iframe.contentDocument.head.insertAdjacentHTML("beforeend", `${headContent}${styleTag.outerHTML}` || "");
-
-    // mount component
-    mount(ExampleHelper, {
-      target: iframe.contentDocument.body,
-      props: { snippet: example, class: twMerge(divClass, meta.class) }
     });
+  });
+  
+  // Start observing document element for class changes
+  documentObserver.observe(document.documentElement, { 
+    attributes: true, 
+    attributeFilter: ['class'] 
+  });
+  
+  // Find sections after a small delay to ensure DOM is ready
+  setTimeout(() => find_sections(node), 0);
 
-    updateHeightContent();
-    // listen change on height of the iframe content and update the preview height
-    if (iframe.contentDocument?.body.firstChild) {
-      const resizeObserver = new ResizeObserver(updateHeightContent);
-      resizeObserver.observe(iframe.contentDocument.body.firstElementChild as Element);
-    }
-    iframe = iframe;
-  };
-
-  const updateHeightContent = () => {
-    if (codeResponsiveContent) {
-      codeResponsiveContent.style.height = `${(iframe?.contentDocument?.body?.firstElementChild as HTMLDivElement)?.offsetHeight || 0}px`;
-    }
-  };
-
-  onMount(() => {
-    // workaround for svelte issue https://github.com/sveltejs/svelte/issues/6967
-    setTimeout(() => {
-      if (iframe && !iframeLoad) {
-        iframe.dispatchEvent(new Event("load"));
+  return {
+    destroy() {
+      // Clean up the observer when component is destroyed
+      if (documentObserver) {
+        documentObserver.disconnect();
       }
-    }, 500);
+    }
+  };
+}
+
+function find_sections(node: HTMLElement): void {
+  // find closest previous section anchor
+  const sections = [...node.ownerDocument.querySelectorAll("#mainContent > :where(h2, h3) > [id]")];
+  const sectionData = sections.map((x: Element) => ({ 
+    id: x.id, 
+    top: x.parentElement?.offsetTop ?? Infinity, 
+    obj: x 
+  }));
+  
+  const filteredSections = sectionData
+    .filter((x) => x.top < (node?.offsetTop ?? Infinity))
+    .filter((x) => x.id);
+  
+  const section = filteredSections.slice(-1).shift();
+
+  if (section) {
+    const pathname = new URL(node.baseURI).pathname;
+    path = new URL(pathname.slice(1) + ".md", gitHub);
+    path.hash = section.id.replaceAll("_", "-").replaceAll("/", "").toLowerCase();
+  }
+}
+
+const copyToClipboard = async (e: MouseEvent): Promise<void> => {
+  if (!codeEl) return;
+  
+  const REG_HEX = /&#x([a-fA-F0-9]+);/g;
+  const decodedText = codeEl.innerText.replace(REG_HEX, function (_match: string, group1: string) {
+    const num = parseInt(group1, 16);
+    return String.fromCharCode(num);
   });
 
-  $effect(() => {
-    if (iframe) {
-      // toggle dark mode class in the iframe
-      dark ? iframe?.contentDocument?.documentElement.classList.add("dark") : iframe?.contentDocument?.documentElement.classList.remove("dark");
+  if (window?.navigator?.clipboard) {
+    await window.navigator.clipboard.writeText(decodedText);
+  }
+
+  const button = e.target as HTMLButtonElement | null;
+  button?.blur();
+
+  const lastChild = button?.lastChild as Text | null;
+  if (lastChild) {
+    lastChild.textContent = "Copied";
+    setTimeout(() => (lastChild.textContent = "Copy"), 3000);
+  }
+};
+
+function checkOverflow(el: HTMLElement): void {
+  const isOverflowingY = el.clientHeight < el.scrollHeight;
+  showExpandButton = isOverflowingY;
+  el.firstElementChild?.classList.add("-mb-8");
+}
+
+const injectContent = (): void => {
+  if (!iframe) return;
+  if (!iframe.contentDocument) return;
+  if (!iframe.contentWindow) return;
+
+  iframeLoad = true;
+  
+  // get only css and style from head
+  const externalCss = document.querySelectorAll('head link[href*="https://"][rel="stylesheet"], head style');
+  const internalCss = Array.from(document.styleSheets).filter((el) => el.href?.includes(document.location.hostname));
+  
+  // extract style to avoid multiple network request to css
+  const extractInlineCss = internalCss.reduce((acc, el) => {
+    acc += Array.from(el.cssRules)
+      .map((rule) => rule.cssText)
+      .join(" ");
+    return acc;
+  }, "");
+  
+  const styleTag = document.createElement("style");
+  styleTag.innerHTML = extractInlineCss;
+  
+  // extract outerHtml in order to clone html
+  const headContent = Array.from(externalCss).reduce((acc, el) => (acc += el.outerHTML), "");
+  
+  // put the content of head in the head of the iframe
+  iframe.contentDocument.head.insertAdjacentHTML("beforeend", `${headContent}${styleTag.outerHTML}` || "");
+
+  // mount component
+  mount(ExampleHelper, {
+    target: iframe.contentDocument.body,
+    props: { 
+      snippet: example, 
+      class: twMerge(divClass, meta?.class ?? "") 
     }
   });
 
-  $effect(() => {
-    if (iframe && iframe.contentDocument) {
-      // toggle dir value in the iframe
-      iframe.contentDocument.documentElement.dir = rtl ?? "";
+  // Initial sync of dark mode to iframe
+  syncIframeDarkMode();
+  
+  updateHeightContent();
+  
+  // listen change on height of the iframe content and update the preview height
+  if (iframe.contentDocument?.body.firstChild) {
+    const resizeObserver = new ResizeObserver(updateHeightContent);
+    resizeObserver.observe(iframe.contentDocument.body.firstElementChild as Element);
+  }
+};
+
+const updateHeightContent = (): void => {
+  if (!codeResponsiveContent) return;
+  if (!iframe?.contentDocument?.body?.firstElementChild) return;
+  
+  const element = iframe.contentDocument.body.firstElementChild as HTMLElement;
+  const height = element.offsetHeight || 0;
+  codeResponsiveContent.style.height = `${height}px`;
+};
+
+onMount(() => {
+  // Initialize dark mode on mount
+  dark = document.documentElement.classList.contains("dark");
+  
+  // workaround for svelte issue https://github.com/sveltejs/svelte/issues/6967
+  setTimeout(() => {
+    if (iframe && !iframeLoad) {
+      iframe.dispatchEvent(new Event("load"));
     }
-  });
+  }, 500);
+});
+
+// RTL effect with proper type checking
+$effect(() => {
+  if (!iframe) return;
+  if (!iframe.contentDocument) return;
+  
+  iframe.contentDocument.documentElement.dir = rtl || "";
+});
 </script>
 
 <div class="code-example mt-8" use:init>

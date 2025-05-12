@@ -9,9 +9,10 @@ thumnailSize: w-24
 ---
 
 <script>
-  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, Seealso } from '../../utils'
   import { P, A } from '$lib'
   const dirName = toKebabCase(component_title)
+  const relatedLinks = ['/docs/components/popover','/docs/components/speed-dial' ,'/docs/components/tooltip'];
 </script>
 
 flowbite-svelte allows you to show extra information when hovering or focusing over an element in multiple positions, styles, and animations.
@@ -162,6 +163,10 @@ When you want to add a fully custom styles, use `type="custom"`, `defaultClass`,
 <Button>Custom type</Button>
 <Tooltip placement="right" type={undefined} class="bg-purple-500 p-4 text-lg font-medium text-gray-100" arrow={false}>Tooltip content</Tooltip>
 ```
+
+## See also
+
+<Seealso links={relatedLinks} />
 
 ## Component data
 

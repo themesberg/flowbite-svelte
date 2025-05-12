@@ -1,5 +1,6 @@
 <script lang="ts">
   let { dark, onclick }: { dark: boolean; onclick: () => void } = $props();
+  console.log('dark in example: ', dark)
 </script>
 
 <button {onclick} type="button" class="hover:text-primary-700 dark:hover:text-primary-600 me-2 flex items-center rounded-lg border border-gray-200 bg-white p-2 text-xs font-medium text-gray-700 hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-gray-300 focus:outline-hidden dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-500">
