@@ -24,7 +24,7 @@ let {
   meta = undefined, 
   example, 
   code, 
-  divClass = "relative w-full mx-auto bg-linear-to-r p-6" 
+  divClass = "relative w-full mx-auto bg-linear-to-r p-6 bg-white dark:bg-gray-900" 
 }: Props = $props();
 
 type NotificationDirection = "ltr" | "rtl" | "auto";
@@ -37,6 +37,8 @@ let path: URL | undefined = $state(undefined);
 let showExpandButton = $state(false);
 let expand = $state(false);
 let dark = $state(false);
+let independentDarkMode = $state(false); // Track if dark mode is independent
+let independentDark = $state(false); // Track the independent dark mode state
 let rtl: NotificationDirection = $state("auto");
 let responsiveDevice: keyof typeof responsiveSize = $state("desktop");
 let iframe: HTMLIFrameElement | undefined = $state(undefined);
@@ -58,9 +60,15 @@ function checkDarkMode(): void {
     // Get the current dark mode state from document
     const isDark = document.documentElement.classList.contains("dark");
     console.log("Dark mode detected from document:", isDark);
-    dark = isDark;
     
-    // Update iframe if it exists
+    // Reset independent mode when document dark mode changes
+    if (independentDarkMode) {
+      independentDarkMode = false;
+      independentDark = false;
+    }
+    
+    // Update local dark mode
+    dark = isDark;
     syncIframeDarkMode();
   }
 }
@@ -75,6 +83,19 @@ function syncIframeDarkMode(): void {
       iframe.contentDocument.documentElement.classList.remove("dark");
     }
   }
+}
+
+// Toggle dark mode in ExampleWrapper
+function toggleDarkMode(): void {
+  // Set independent mode
+  independentDarkMode = true;
+  
+  // Toggle the independent dark mode state
+  independentDark = !independentDark;
+  
+  // Use the independent dark mode state for iframe
+  dark = independentDark;
+  syncIframeDarkMode();
 }
 
 // Initialize component
@@ -265,7 +286,7 @@ $effect(() => {
             </div>
           {/if}
           <div class="ms-auto flex">
-            <ExampleDarkMode onclick={() => (dark = !dark)} {dark} />
+            <ExampleDarkMode onclick={() => toggleDarkMode()} {dark} />
             <ExampleRtl bind:rtl />
           </div>
         {/if}
