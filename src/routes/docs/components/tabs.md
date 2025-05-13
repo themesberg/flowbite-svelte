@@ -357,9 +357,8 @@ You can add other components to the `TabItem` component. Here we are adding a ti
 
 ```svelte example class="h-auto"
 <script lang="ts">
-  import { Tabs, TabItem, Label, Button, Input } from "flowbite-svelte";
+  import { Tabs, TabItem, Label, Button, Input, Textarea } from "flowbite-svelte";
   import type { Snapshot } from './$types';
-  import Textarea from "$lib/forms/textarea/Textarea.svelte";
   let name = $state('');
   let email = $state('');
   let comment = $state('');

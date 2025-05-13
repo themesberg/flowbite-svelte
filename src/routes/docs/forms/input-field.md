@@ -482,9 +482,8 @@ If you need a full control over `input` HTML element while still re-using the Fl
 
 ```svelte example class="h-auto"
 <script lang="ts">
-  import { Tabs, TabItem, Label, Button, Input } from "flowbite-svelte";
+  import { Tabs, TabItem, Label, Button, Input, Textarea } from "flowbite-svelte";
   import type { Snapshot } from './$types';
-  import Textarea from "$lib/forms/textarea/Textarea.svelte";
   let name = $state('');
   let email = $state('');
   let comment = $state('');
