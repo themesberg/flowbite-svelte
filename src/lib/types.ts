@@ -1299,6 +1299,7 @@ export interface CardPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
 export interface ImagePlaceholderProps extends HTMLAttributes<HTMLDivElement> {
   size?: ImagePlaceholderVariants["size"];
   rounded?: ImagePlaceholderVariants["rounded"];
+  imgOnly?: boolean;
 }
 
 export interface ListPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
