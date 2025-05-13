@@ -193,6 +193,7 @@ export interface AlertProps extends Omit<AlertVariants, "icon">, Omit<HTMLAttrib
 // avatar
 export interface AvatarProps extends HTMLAttributes<HTMLDivElement> {
   children?: Snippet;
+  indicator?: Snippet;
   href?: HTMLAnchorAttributes["href"];
   target?: HTMLAnchorAttributes["target"];
   src?: string;

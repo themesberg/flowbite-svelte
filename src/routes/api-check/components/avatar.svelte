@@ -1,6 +1,6 @@
 <script>
-  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownGroup, Tooltip } from "$lib";
-
+  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownGroup, Tooltip, Indicator } from "$lib";
+  import { BugOutline } from "flowbite-svelte-icons";
   let name;
 </script>
 
@@ -118,4 +118,25 @@
     <Avatar src="/images/profile-picture-3.webp" size="xl" />
     <Avatar src="/images/profile-picture-3.webp" class="h-28 w-28" />
   </div>
+</div>
+
+<h2 class="my-4 text-2xl">Icon avatar</h2>
+
+<div class="my-4 flex flex-col gap-4 rounded border p-4">
+<Avatar>
+  <BugOutline />
+</Avatar>
+</div>
+
+<h2 class="my-4 text-2xl">Custom dot</h2>
+
+<div class="my-4 flex flex-col gap-4 rounded border p-4">
+
+<Avatar src="/images/profile-picture-3.webp">
+  {#snippet indicator()}
+  <Indicator color="gray" border size="xl" placement="top-right" >
+    <BugOutline />
+  </Indicator>
+  {/snippet}
+</Avatar>
 </div>

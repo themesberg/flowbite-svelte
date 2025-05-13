@@ -5,7 +5,7 @@
   import { avatar } from ".";
   import type { AvatarProps, BaseThemes } from "$lib/types";
 
-  let { children, src, href, target, cornerStyle = "circular", border = false, stacked = false, dot, class: className, alt, size = "md", onclick, ...restProps }: AvatarProps = $props();
+  let { children, indicator, src, href, target, cornerStyle = "circular", border = false, stacked = false, dot, class: className, alt, size = "md", onclick, ...restProps }: AvatarProps = $props();
 
   // Get merged theme from context
   const context = getContext<BaseThemes>("themeConfig");
@@ -25,7 +25,7 @@
   );
 </script>
 
-{#if !src || !!href || children || dot}
+{#if !src || !!href || children || dot || indicator}
   <svelte:element this={href ? "a" : "div"} role={href ? undefined : "button"} {onclick} {href} {target} {...restProps} class={avatarClass}>
     {#if src}
       <img {alt} {src} class={cornerStyle === "circular" ? "rounded-full" : "rounded-sm"} />
@@ -38,6 +38,9 @@
     {/if}
     {#if dot}
       <Indicator border offset={cornerStyle === "circular" ? true : false} {...dot} />
+    {/if}
+    {#if indicator}
+      {@render indicator()}
     {/if}
   </svelte:element>
 {:else}
