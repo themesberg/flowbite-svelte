@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.4
+
+### Patch Changes
+
+- feat: add indicator snippet to Avatar, fix: select theme to match input theme
+
 ## 1.1.3
 
 ### Patch Changes

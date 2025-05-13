@@ -31,7 +31,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L336)
+[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L337)
 ## Props
 @prop children
 @prop onclick

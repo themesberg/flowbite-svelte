@@ -41,7 +41,6 @@ Use this example to create a circle and rounded avatar on an image element.
 </div>
 ```
 
-
 ## Icon avatar
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
@@ -49,6 +48,7 @@ Use this example to create a circle and rounded avatar on an image element.
   import { Avatar } from "flowbite-svelte";
   import { BugOutline } from "flowbite-svelte-icons";
 </script>
+
 <Avatar>
   <BugOutline />
 </Avatar>
@@ -64,9 +64,9 @@ Use this example to create a circle and rounded avatar on an image element.
 
 <Avatar src="/images/profile-picture-3.webp">
   {#snippet indicator()}
-  <Indicator color="gray" border size="xl" placement="top-right" >
-    <BugOutline />
-  </Indicator>
+    <Indicator color="gray" border size="xl" placement="top-right">
+      <BugOutline />
+    </Indicator>
   {/snippet}
 </Avatar>
 ```
@@ -220,13 +220,13 @@ You can set `size` property to preset values of `xs | sm | md | lg | xl`. Custom
 
 Preset values are equivalents of:
 
-| Size  |     |   Classes   |
-| :---: | --- | :---------: |
-|  xs   |     |  `w-6 h-6`  |
-|  sm   |     |  `w-8 h-8`  |
-|  md   |     | `w-10 h-10` |
-|  lg   |     | `w-20 h-20` |
-|  xl   |     | `w-36 h-36` |
+| Size |     |   Classes   |
+| :--: | --- | :---------: |
+|  xs  |     |  `w-6 h-6`  |
+|  sm  |     |  `w-8 h-8`  |
+|  md  |     | `w-10 h-10` |
+|  lg  |     | `w-20 h-20` |
+|  xl  |     | `w-36 h-36` |
 
 ```svelte example class="flex flex-col gap-4" hideScript hideResponsiveButtons
 <script>

@@ -25,7 +25,7 @@ export const select = tv({
     },
     disabled: {
       true: {
-        select: "cursor-not-allowed opacity-50" 
+        select: "cursor-not-allowed opacity-50"
       },
       false: {}
     }

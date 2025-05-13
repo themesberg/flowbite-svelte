@@ -33,7 +33,7 @@
     {/if}
   </select>
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton onclick={clearAll} class={clearbtn({ class: clearableClass })} color={clearableColor} aria-label="Clear search value" svgClass={clearableSvgClass} disabled={disabled}/>
+    <CloseButton onclick={clearAll} class={clearbtn({ class: clearableClass })} color={clearableColor} aria-label="Clear search value" svgClass={clearableSvgClass} {disabled} />
   {/if}
 </div>
 <!--

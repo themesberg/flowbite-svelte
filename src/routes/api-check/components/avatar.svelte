@@ -123,20 +123,19 @@
 <h2 class="my-4 text-2xl">Icon avatar</h2>
 
 <div class="my-4 flex flex-col gap-4 rounded border p-4">
-<Avatar>
-  <BugOutline />
-</Avatar>
+  <Avatar>
+    <BugOutline />
+  </Avatar>
 </div>
 
 <h2 class="my-4 text-2xl">Custom dot</h2>
 
 <div class="my-4 flex flex-col gap-4 rounded border p-4">
-
-<Avatar src="/images/profile-picture-3.webp">
-  {#snippet indicator()}
-  <Indicator color="gray" border size="xl" placement="top-right" >
-    <BugOutline />
-  </Indicator>
-  {/snippet}
-</Avatar>
+  <Avatar src="/images/profile-picture-3.webp">
+    {#snippet indicator()}
+      <Indicator color="gray" border size="xl" placement="top-right">
+        <BugOutline />
+      </Indicator>
+    {/snippet}
+  </Avatar>
 </div>

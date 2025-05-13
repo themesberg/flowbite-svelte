@@ -54,6 +54,7 @@
 [AvatarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L194)
 ## Props
 @prop children
+@prop indicator
 @prop src
 @prop href
 @prop target

@@ -27,7 +27,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[FooterBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L600)
+[FooterBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L601)
 ## Props
 @prop children
 @prop aClass
