@@ -31,7 +31,7 @@
   }
 </script>
 
-<ul {...restProps} class={base({ class: ulClass })}>
+<ul role="tablist" {...restProps} class={base({ class: ulClass })}>
   {@render children()}
 </ul>
 {#if dividerBool}
