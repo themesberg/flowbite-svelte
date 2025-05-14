@@ -20,15 +20,15 @@
     </svg>
   </div>
   {#if !imgOnly}
-  <div class={content()}>
-    <div class={line({ class: "mb-4 h-2.5 w-1/2" })}></div>
-    <div class={line({ class: "mb-2.5 h-2 w-9/12" })}></div>
-    <div class={line({ class: "mb-2.5 h-2" })}></div>
-    <div class={line({ class: "mb-2.5 h-2" })}></div>
-    <div class={line({ class: "mb-2.5 h-2 w-10/12" })}></div>
-    <div class={line({ class: "mb-2.5 h-2 w-11/12" })}></div>
-    <div class={line({ class: "h-2 w-9/12" })}></div>
-  </div>
+    <div class={content()}>
+      <div class={line({ class: "mb-4 h-2.5 w-1/2" })}></div>
+      <div class={line({ class: "mb-2.5 h-2 w-9/12" })}></div>
+      <div class={line({ class: "mb-2.5 h-2" })}></div>
+      <div class={line({ class: "mb-2.5 h-2" })}></div>
+      <div class={line({ class: "mb-2.5 h-2 w-10/12" })}></div>
+      <div class={line({ class: "mb-2.5 h-2 w-11/12" })}></div>
+      <div class={line({ class: "h-2 w-9/12" })}></div>
+    </div>
   {/if}
   <span class="sr-only">Loading...</span>
 </div>
@@ -37,10 +37,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ImagePlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1299)
+[ImagePlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1321)
 ## Props
 @prop size = "md"
 @prop rounded
+@prop imgOnly = false
 @prop class: className
 @prop ...restProps
 -->

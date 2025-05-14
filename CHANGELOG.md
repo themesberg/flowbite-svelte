@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.0
+
+### Minor Changes
+
+- feat: Progressradial
+
 ## 1.1.4
 
 ### Patch Changes

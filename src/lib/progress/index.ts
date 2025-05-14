@@ -1,4 +1,3 @@
-import Progressbar from "./Progressbar.svelte";
-import { progressbar } from "./theme";
-
-export { Progressbar, progressbar };
+export { default as Progressbar } from "./Progressbar.svelte";
+export { default as Progressradial } from "./Progressradial.svelte";
+export { progressbar } from "./theme";

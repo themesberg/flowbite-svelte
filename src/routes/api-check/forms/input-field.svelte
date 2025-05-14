@@ -1,18 +1,18 @@
 <script lang="ts">
   import { Input, Label, Helper, Button, Checkbox, A, InputAddon, ButtonGroup, CloseButton, Dropdown, DropdownItem, Tabs, TabItem, Textarea } from "$lib";
   import { EnvelopeSolid, EyeOutline, EyeSlashOutline, ChevronDownOutline, SearchOutline } from "flowbite-svelte-icons";
-  import type { Snapshot } from '../$types';
+  import type { Snapshot } from "../$types";
 
   let elementRef = $state() as HTMLInputElement;
   let value = $state(5);
   let show = $state(false);
   let show1 = $state(false);
 
-  let comment = $state('');
-	export const snapshot: Snapshot<string> = {
-		capture: () => comment,
-		restore: (value) => comment = value
-	};
+  let comment = $state("");
+  export const snapshot: Snapshot<string> = {
+    capture: () => comment,
+    restore: (value) => (comment = value)
+  };
 </script>
 
 <h1 class="my-4 text-3xl">Input Field</h1>
@@ -340,20 +340,19 @@
 <h2 class="my-4 text-2xl">Using Svelte's snapshot to preserve the input</h2>
 
 <div class="my-4 mb-40 rounded border p-4">
-
-<Tabs role="tablist">
-  <TabItem open title="Profile">
-    <form method="POST">
-	<Label for="comment">Comment</Label>
-	<Textarea id="comment" bind:value={comment} />
-	<Button>Post comment</Button>
-</form>
-  </TabItem>
-  <TabItem title="Settings">
-    <p class="text-sm text-gray-500 dark:text-gray-400">
-      <b>Settings:</b>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-  </TabItem>
-</Tabs>
+  <Tabs role="tablist">
+    <TabItem open title="Profile">
+      <form method="POST">
+        <Label for="comment">Comment</Label>
+        <Textarea id="comment" bind:value={comment} />
+        <Button>Post comment</Button>
+      </form>
+    </TabItem>
+    <TabItem title="Settings">
+      <p class="text-sm text-gray-500 dark:text-gray-400">
+        <b>Settings:</b>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </TabItem>
+  </Tabs>
 </div>

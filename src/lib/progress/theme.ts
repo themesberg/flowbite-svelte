@@ -115,3 +115,102 @@ export const progressbar = tv({
     labelInside: false
   }
 });
+
+export const progressradial = tv({
+  slots: {
+    base: "relative inline-flex",
+    labelInsideDiv: "absolute inset-0 flex items-center justify-center text-sm font-medium",
+    circleBackground: "opacity-25",
+    circleForeground: "transition-all",
+    outsideDiv: "flex flex-col items-center mb-2 text-center",
+    outsideSpan: "text-base font-medium",
+    outsideProgress: "text-sm font-medium ml-1"
+  },
+  variants: {
+    color: {
+      primary: {
+        circleBackground: "stroke-primary-600",
+        circleForeground: "stroke-primary-600"
+      },
+      secondary: {
+        circleBackground: "stroke-secondary-600",
+        circleForeground: "stroke-secondary-600"
+      },
+      gray: {
+        circleBackground: "stroke-gray-600 dark:stroke-gray-300",
+        circleForeground: "stroke-gray-600 dark:stroke-gray-300"
+      },
+      red: {
+        circleBackground: "stroke-red-600 dark:stroke-red-500",
+        circleForeground: "stroke-red-600 dark:stroke-red-500"
+      },
+      orange: {
+        circleBackground: "stroke-orange-600 dark:stroke-orange-500",
+        circleForeground: "stroke-orange-600 dark:stroke-orange-500"
+      },
+      amber: {
+        circleBackground: "stroke-amber-600 dark:stroke-amber-500",
+        circleForeground: "stroke-amber-600 dark:stroke-amber-500"
+      },
+      yellow: {
+        circleBackground: "stroke-yellow-400",
+        circleForeground: "stroke-yellow-400"
+      },
+      lime: {
+        circleBackground: "stroke-lime-600 dark:stroke-lime-500",
+        circleForeground: "stroke-lime-600 dark:stroke-lime-500"
+      },
+      green: {
+        circleBackground: "stroke-green-600 dark:stroke-green-500",
+        circleForeground: "stroke-green-600 dark:stroke-green-500"
+      },
+      emerald: {
+        circleBackground: "stroke-emerald-600 dark:stroke-emerald-500",
+        circleForeground: "stroke-emerald-600 dark:stroke-emerald-500"
+      },
+      teal: {
+        circleBackground: "stroke-teal-600 dark:stroke-teal-500",
+        circleForeground: "stroke-teal-600 dark:stroke-teal-500"
+      },
+      cyan: {
+        circleBackground: "stroke-cyan-600 dark:stroke-cyan-500",
+        circleForeground: "stroke-cyan-600 dark:stroke-cyan-500"
+      },
+      sky: {
+        circleBackground: "stroke-sky-600 dark:stroke-sky-500",
+        circleForeground: "stroke-sky-600 dark:stroke-sky-500"
+      },
+      blue: {
+        circleBackground: "stroke-blue-600",
+        circleForeground: "stroke-blue-600"
+      },
+      indigo: {
+        circleBackground: "stroke-indigo-600 dark:stroke-indigo-500",
+        circleForeground: "stroke-indigo-600 dark:stroke-indigo-500"
+      },
+      violet: {
+        circleBackground: "stroke-violet-600 dark:stroke-violet-500",
+        circleForeground: "stroke-violet-600 dark:stroke-violet-500"
+      },
+      purple: {
+        circleBackground: "stroke-purple-600 dark:stroke-purple-500",
+        circleForeground: "stroke-purple-600 dark:stroke-purple-500"
+      },
+      fuchsia: {
+        circleBackground: "stroke-fuchsia-600 dark:stroke-fuchsia-500",
+        circleForeground: "stroke-fuchsia-600 dark:stroke-fuchsia-500"
+      },
+      pink: {
+        circleBackground: "stroke-pink-600 dark:stroke-pink-500",
+        circleForeground: "stroke-pink-600 dark:stroke-pink-500"
+      },
+      rose: {
+        circleBackground: "stroke-rose-600 dark:stroke-rose-500",
+        circleForeground: "stroke-rose-600 dark:stroke-rose-500"
+      }
+    },
+    labelInside: {
+      true: {}
+    }
+  }
+});

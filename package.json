@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -480,6 +480,10 @@
     "./Progressbar.svelte": {
       "types": "./dist/progress/Progressbar.svelte.d.ts",
       "svelte": "./dist/progress/Progressbar.svelte"
+    },
+    "./Progressradial.svelte": {
+      "types": "./dist/progress/Progressradial.svelte.d.ts",
+      "svelte": "./dist/progress/Progressradial.svelte"
     },
     "./AdvancedRating.svelte": {
       "types": "./dist/rating/AdvancedRating.svelte.d.ts",

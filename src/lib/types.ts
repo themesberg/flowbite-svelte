@@ -806,7 +806,7 @@ export type SelectOptionType<T> = {
   [key: string]: any;
 };
 
-export interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttributes, "size"> {
+export interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttributes, "size" | "disabled"> {
   children?: Snippet;
   items?: SelectOptionType<T>[];
   elementRef?: HTMLSelectElement;
@@ -817,6 +817,7 @@ export interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttribute
   clearableColor?: CloseButtonVariants["color"];
   clearableClass?: string;
   clearableOnClick?: () => void;
+  disabled?: boolean;
 }
 
 export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLSelectAttributes, "size" | "children"> {
@@ -1103,6 +1104,27 @@ export interface ProgressbarProps extends HTMLAttributes<HTMLDivElement> {
   labeloutsidedivClass?: string;
   labelInsideClass?: string;
   divClass?: string;
+}
+
+export interface ProgressradialProps {
+  progress?: number | string;
+  radius?: number;
+  startingPosition?: "top" | "right" | "bottom" | "left";
+  precision?: number;
+  tweenDuration?: number;
+  animate?: boolean;
+  size?: string;
+  thickness?: number | string;
+  labelInside?: boolean;
+  labelOutside?: string;
+  easing?: (t: number) => number;
+  color?: ColorType;
+  labelInsideClass?: string;
+  outsideSpanClass?: string;
+  outsideProgressClass?: string;
+  labelOutsideDivClass?: string;
+  divClass?: string;
+  [key: string]: any;
 }
 
 // rating

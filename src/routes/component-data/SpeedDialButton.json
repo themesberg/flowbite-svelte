@@ -2,7 +2,7 @@
   "name": "SpeedDialButton",
   "type": {
     "name": "SpeedDialButtonProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1366"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1389"
   },
   "props": [
     ["children", ""],

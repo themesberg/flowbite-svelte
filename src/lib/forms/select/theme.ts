@@ -1,4 +1,3 @@
-import { dropdown, dropdownItem } from "$lib/dropdown";
 import { tv, type VariantProps } from "tailwind-variants";
 
 export type SelectVariants = VariantProps<typeof select>;
