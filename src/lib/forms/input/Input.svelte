@@ -4,28 +4,28 @@
   import { input, clampSize } from ".";
   import clsx from "clsx";
 
-  let { 
-    children, 
-    left, 
-    right, 
-    value = $bindable(), 
-    elementRef = $bindable(), 
-    clearable = false, 
-    size, 
-    color = "default", 
-    class: className, 
-    classLeft, 
-    classRight, 
-    divClass, 
-    clearableSvgClass, 
-    clearableColor = "none", 
-    clearableClass, 
+  let {
+    children,
+    left,
+    right,
+    value = $bindable(),
+    elementRef = $bindable(),
+    clearable = false,
+    size,
+    color = "default",
+    class: className,
+    classLeft,
+    classRight,
+    divClass,
+    clearableSvgClass,
+    clearableColor = "none",
+    clearableClass,
     clearableOnClick,
     // Combobox props
     data = [],
     maxSuggestions = 5,
     onSelect,
-    ...restProps 
+    ...restProps
   }: InputProps<InputValue> = $props();
 
   // Automatically enable combobox when data is provided
@@ -68,33 +68,31 @@
   let filteredSuggestions: string[] = $state([]);
   let selectedIndex = $state(-1);
   let backspaceUsed = $state(false); // Track if backspace was used to clear
-  
+
   function updateSuggestions() {
     if (!isCombobox || !isFocused) {
       filteredSuggestions = [];
       return;
     }
-    
-    const searchTerm = ((value as string) || '').toLowerCase();
-    
+
+    const searchTerm = ((value as string) || "").toLowerCase();
+
     // Show suggestions if:
     // 1. There's actual input text, OR
     // 2. The input is empty but backspace was just used to clear it
-    if (searchTerm === '' && !backspaceUsed) {
+    if (searchTerm === "" && !backspaceUsed) {
       filteredSuggestions = [];
     } else {
       // If there's text, filter suggestions
       if (searchTerm) {
-        filteredSuggestions = data
-          .filter(item => item.toLowerCase().includes(searchTerm))
-          .slice(0, maxSuggestions);
-      } 
+        filteredSuggestions = data.filter((item) => item.toLowerCase().includes(searchTerm)).slice(0, maxSuggestions);
+      }
       // If empty but backspace was used, show all suggestions
       else if (backspaceUsed) {
         filteredSuggestions = [...data].slice(0, maxSuggestions);
       }
     }
-    
+
     selectedIndex = -1;
   }
 
@@ -129,34 +127,34 @@
 
   function handleKeydown(event: KeyboardEvent) {
     if (!isCombobox) return;
-    
+
     // Special handling for backspace/delete - track when it's used to clear the input
-    if ((event.key === 'Backspace' || event.key === 'Delete')) {
+    if (event.key === "Backspace" || event.key === "Delete") {
       const currentValue = value as string;
       // If this keypress will make the input empty
       if (currentValue.length <= 1) {
         backspaceUsed = true;
       }
     }
-    
+
     if (!filteredSuggestions.length) return;
-    
+
     switch (event.key) {
-      case 'ArrowDown':
+      case "ArrowDown":
         event.preventDefault();
         selectedIndex = (selectedIndex + 1) % filteredSuggestions.length;
         break;
-      case 'ArrowUp':
+      case "ArrowUp":
         event.preventDefault();
         selectedIndex = selectedIndex <= 0 ? filteredSuggestions.length - 1 : selectedIndex - 1;
         break;
-      case 'Enter':
+      case "Enter":
         if (selectedIndex >= 0) {
           event.preventDefault();
           selectItem(filteredSuggestions[selectedIndex]);
         }
         break;
-      case 'Escape':
+      case "Escape":
         event.preventDefault();
         filteredSuggestions = [];
         break;
@@ -165,14 +163,14 @@
 
   function selectItem(item: string) {
     value = item;
-    
+
     if (onSelect) {
       onSelect(item);
     }
-    
+
     filteredSuggestions = [];
     selectedIndex = -1;
-    
+
     if (elementRef) {
       elementRef.focus();
     }
@@ -195,14 +193,9 @@
   {/if}
 
   {#if isCombobox && isFocused && filteredSuggestions.length > 0}
-    <div class="absolute left-0 right-0 top-full mt-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg z-10 max-h-60 overflow-y-auto">
+    <div class="absolute top-full right-0 left-0 z-10 mt-1 max-h-60 overflow-y-auto rounded-md border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800">
       {#each filteredSuggestions as item, i}
-        <button
-          type="button"
-          class="w-full text-left px-3 py-2 {i === selectedIndex ? 'bg-gray-100 dark:bg-gray-700' : 'hover:bg-gray-50 dark:hover:bg-gray-700'} focus:outline-none"
-          onclick={() => selectItem(item)}
-          onmouseenter={() => selectedIndex = i}
-        >
+        <button type="button" class="w-full px-3 py-2 text-left {i === selectedIndex ? 'bg-gray-100 dark:bg-gray-700' : 'hover:bg-gray-50 dark:hover:bg-gray-700'} focus:outline-none" onclick={() => selectItem(item)} onmouseenter={() => (selectedIndex = i)}>
           {item}
         </button>
       {/each}
@@ -219,16 +212,7 @@
   {#if children}
     {@render children({ ...restProps, class: inputCls() })}
   {:else}
-    <input 
-      {...restProps} 
-      bind:value 
-      bind:this={elementRef} 
-      oninput={handleInput} 
-      onfocus={handleFocus} 
-      onblur={handleBlur} 
-      onkeydown={handleKeydown}
-      class={inputCls({ class: clsx(className) })} 
-    />
+    <input {...restProps} bind:value bind:this={elementRef} oninput={handleInput} onfocus={handleFocus} onblur={handleBlur} onkeydown={handleKeydown} class={inputCls({ class: clsx(className) })} />
     {#if value !== undefined && value !== "" && clearable}
       <CloseButton onclick={clearAll} class={clearbtn({ class: clearableClass })} color={clearableColor} aria-label="Clear search value" svgClass={clearableSvgClass} />
     {/if}

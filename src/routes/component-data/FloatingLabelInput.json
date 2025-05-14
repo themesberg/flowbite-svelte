@@ -20,6 +20,9 @@
     ["clearableSvgClass", ""],
     ["clearableColor", "\"none\""],
     ["clearableClass", ""],
-    ["clearableOnClick", ""]
+    ["clearableOnClick", ""],
+    ["data", "[]"],
+    ["maxSuggestions", "5"],
+    ["onSelect", ""]
   ]
 }

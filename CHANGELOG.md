@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.1
+
+### Patch Changes
+
+- feat: add combobox to input and floatinglabelinput
+
 ## 1.2.0
 
 ### Minor Changes
