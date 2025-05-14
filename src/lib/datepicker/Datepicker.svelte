@@ -57,8 +57,8 @@
     return daysArray;
   }
 
-  const getWeekdayNames = (locale = "en-US"): string[] => {
-    return Array.from({ length: 7 }, (_, i) => new Date(1970, 0, 4 + i).toLocaleDateString(locale, { weekday: "short" }));
+  const getWeekdayNames = (): string[] => {
+    return Array.from({ length: 7 }, (_, i) => new Date(1970, 0, 5 + i + firstDayOfWeek).toLocaleDateString(locale, { weekday: "short" }));
   };
   let weekdays = getWeekdayNames();
 
