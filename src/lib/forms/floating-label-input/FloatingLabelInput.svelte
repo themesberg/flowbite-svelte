@@ -24,6 +24,7 @@
 
   const isCombobox = $derived(Array.isArray(data) && data.length > 0);
 
+  // svelte-ignore non_reactive_update
   let dummyFocusDiv: HTMLDivElement;
 
   let isFocused = $state(false);
@@ -123,7 +124,7 @@
   <div tabindex="-1" bind:this={dummyFocusDiv} class="sr-only"></div>
 {/if}
 
-<div class={clsx(base({ class: divClass }), isCombobox ? "relative" : "")}>
+<div class={clsx(base({ class: clsx(divClass) }), isCombobox ? "relative" : "")}>
   <input {id} placeholder=" " bind:value bind:this={elementRef} {...restProps} aria-describedby={ariaDescribedby} class={input({ class: inputClass })} oninput={handleInput} onfocus={handleFocus} onblur={handleBlur} onkeydown={handleKeydown} />
   {#if value !== undefined && value !== "" && clearable}
     <CloseButton onclick={clearAll} class={clearbtn({ class: clearableClass })} color={clearableColor} aria-label="Clear search value" svgClass={clearableSvgClass} />
