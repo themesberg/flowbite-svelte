@@ -9,9 +9,10 @@ thumnailSize: w-48
 ---
 
 <script>
-  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, Seealso } from '../../utils'
   import { P, A } from '$lib'
   const dirName = toKebabCase(component_title)
+  const relatedLinks = ['/docs/components/progress','/docs/extend/progressradial' ]
 </script>
 
 The progress bar component can be used as an indicator to show the completion rate of data sets or it can be used as an animated loader component. There are multiple sizes, colors, and styles available.
@@ -36,6 +37,21 @@ Use the following example of a progress bar element to show a completion rate of
 </script>
 
 <Progressbar progress="50" />
+```
+
+## Progressradial
+
+Please see more details on [the extend page](/extend/progressradial).
+
+```svelte example class="grid grid-cols-1"
+<script>
+  import { Progressradial, Button } from "flowbite-svelte";
+  import { sineOut } from "svelte/easing";
+  let progress = $state(45);
+</script>
+
+<Progressradial {progress} animate precision={1} labelOutside="Animation" labelInside tweenDuration={1000} easing={sineOut} />
+<Button onclick={() => (progress = `${Math.round(Math.random() * 100)}`)} class="mx-auto mt-8 w-24">Randomize</Button>
 ```
 
 ## Sizes
@@ -185,6 +201,10 @@ Use the `labelInsideClass` prop to change the color of the progress bar.
   <Progressbar progress="40" labelInsideClass="bg-pink-600 dark:bg-pink-400" />
 </div>
 ```
+
+## See also
+
+<Seealso links={relatedLinks} />
 
 ## Component data
 

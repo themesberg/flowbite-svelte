@@ -8,9 +8,10 @@ description: Use the progress radial component to show the progress of a process
 ---
 
 <script>
-  import {  TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import {  TableProp, TableDefaultRow, CompoAttributesViewer, Seealso } from '../../utils'
   import { P, A } from '$lib'
-  const components = 'StepIndicator'
+  const dirName = "progress"
+  const relatedLinks = ['/docs/components/progress','/docs/extend/progressradial' ]
 </script>
 
 ## Setup
@@ -30,8 +31,10 @@ Import the `Progressradial` component in a script tag.
   import { Progressradial } from "flowbite-svelte";
 </script>
 
+<Progressradial progress={20} />
+<Progressradial progress="40" />
 <Progressradial progress={65} />
-<Progressradial progress="65" />
+<Progressradial progress="83" />
 ```
 
 ## Colors and labelOutside
@@ -127,3 +130,13 @@ Import the `Progressradial` component in a script tag.
 <Progressradial progress={50} startingPosition="bottom" />
 <Progressradial progress={50} startingPosition="left" />
 ```
+
+## See also
+
+<Seealso links={relatedLinks} />
+
+## Component data
+
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
+
+<CompoAttributesViewer {dirName}/>
