@@ -743,6 +743,9 @@ export interface InputProps<T extends InputValue = string> extends Omit<HTMLInpu
   clearableColor?: CloseButtonVariants["color"];
   clearableClass?: string;
   clearableOnClick?: () => void;
+  data?: string[];
+  maxSuggestions?: number;
+  onSelect?: (item: string) => void;
 }
 
 // input-addon

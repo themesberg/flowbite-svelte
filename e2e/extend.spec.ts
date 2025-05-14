@@ -6,11 +6,11 @@ test("Flowbite Svelte Starter page should have h1", async ({ page }) => {
   expect(await page.textContent("h1")).toBe("Flowbite Svelte Starters");
 });
 
-// // Step indicator
-// test("Step indicator page should have h1", async ({ page }) => {
-//   await page.goto("/docs/extend/step-indicator");
-//   expect(await page.textContent("h1")).toBe("Svelte Step Indicator");
-// });
+// Progressradial
+test("Progressradial page should have h1", async ({ page }) => {
+  await page.goto("/docs/extend/progressradial");
+  expect(await page.textContent("h1")).toBe("Svelte Progressradial");
+});
 
 // marquee
 // test("Marquee page should have h1", async ({ page }) => {

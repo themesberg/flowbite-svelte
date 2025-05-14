@@ -83,12 +83,15 @@ Use this example as a generic form element which includes multiple input fields 
 
 ## Clearable
 
+This example shows how to create an input field where the user can remove the
+text with one click.
+
 ```svelte example
 <script>
   import { Input } from "flowbite-svelte";
 </script>
 
-<Input clearable class="my-4" />
+<Input clearable value="Clearable input" />
 ```
 
 ## Event
@@ -151,6 +154,26 @@ Use this example as a generic form element which includes multiple input fields 
 </Modal>
 ```
 
+## Combobox
+
+```svelte example class="h-80"
+<script>
+  import { Input } from "flowbite-svelte";
+  const carMakers = [
+    "Toyota", "Ford", "Honda", "Chevrolet", "Nissan", "BMW", "Mercedes-Benz", "Volkswagen", "Hyundai", "Kia",
+    "Mazda", "Subaru", "Lexus", "Audi", "Jeep", "Dodge", "Ram", "GMC", "Cadillac", "Chrysler",
+    "Buick", "Infiniti", "Acura", "Volvo", "Porsche", "Jaguar", "Land Rover", "Mini", "Mitsubishi", "Genesis",
+    "Tesla", "Fiat", "Peugeot", "Renault", "Alfa Romeo", "Citroën", "SEAT", "Skoda", "Saab", "Suzuki",
+    "Isuzu", "Scion", "Hummer", "Lincoln", "Opel", "Daewoo", "Rivian", "Lucid", "Polestar", "Bugatti",
+    "Maserati", "Ferrari", "Lamborghini", "Bentley", "Rolls-Royce", "Aston Martin", "McLaren", "Pagani", "Koenigsegg", "Maybach",
+    "Tata", "Mahindra", "Perodua", "Proton", "Chery", "Geely", "Great Wall", "BYD", "NIO", "XPeng",
+    "VinFast", "Zotye", "FAW", "BAIC", "Lancia", "Dacia", "Cupra", "Roewe", "Holden", "Smart"
+  ];
+</script>
+
+<Input clearable data={carMakers} placeholder="Type to search cars..." />
+```
+
 ## Input sizes
 
 Use the following examples to apply a small, default or large size for the input fields.
@@ -189,19 +212,6 @@ Get started with this example if you want to apply the disabled state to an inpu
 
 <Input class="mb-6" disabled value="Disabled input" />
 <Input class="mb-6" disabled readonly value="Disabled readonly input" />
-```
-
-## Clearable
-
-This example shows how to create an input field where the user can remove the
-text with one click.
-
-```svelte example hideScript
-<script>
-  import { Input } from "flowbite-svelte";
-</script>
-
-<Input clearable value="Clearable input" />
 ```
 
 ## Validation
